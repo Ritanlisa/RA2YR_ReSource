@@ -154,10 +154,8 @@ LABEL_16:
 namespace gamemd {
 int TerrainClass::CheckFrameUpdate(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TerrainClass::CheckFrameUpdate(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x71cf44*/
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
 }
 }
 } // namespace gamemd

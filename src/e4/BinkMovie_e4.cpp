@@ -828,47 +828,44 @@ void __thiscall sub_6C9930(void **this)
 namespace gamemd {
 int * BinkMovie::CreateSurfaceTracker()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall BinkMovie::CreateSurfaceTracker(char *this)
 {
-  int *v2; // esi
-  _DWORD *v3; // eax
-  _DWORD *v4; // edi
-  ObjectClass Filename; // [esp+Ch] [ebp-100h] BYREF
-
-  if ( !this || !strlen(this) ) /*0x6c99e7*/
-    return 0; /*0x6c9ab2*/
-  v2 = (int *)__2_YAPAXI_Z(0x34u); /*0x6c99ff*/
-  if ( !v2 ) /*0x6c9a06*/
-    return 0; /*0x6c9aa3*/
-  *v2 = 0; /*0x6c9a14*/
-  v2[1] = 0; /*0x6c9a16*/
-  v2[2] = 0; /*0x6c9a19*/
-  v2[3] = 0; /*0x6c9a1c*/
-  v2[4] = 0; /*0x6c9a1f*/
-  v2[5] = 0; /*0x6c9a23*/
-  v2[6] = 0; /*0x6c9a26*/
-  v2[7] = 0; /*0x6c9a29*/
-  v2[8] = 0; /*0x6c9a2c*/
-  _splitpath(this, 0, 0, &Filename, 0); /*0x6c9a2f*/
-  if ( BinkMovie::InitKeyframeTracking(v2, Filename.__pad_0) == 1 ) /*0x6c9a45*/
+    int *v2;
+    int *v3;
+    int *v4;
+    ObjectClass Filename;
+    if ( !this || !strlen(this) )
+    return 0;
+    v2 = (int *)__2_YAPAXI_Z(0x34u);
+    if ( !v2 )
+    return 0;
+    *v2 = 0;
+    v2[1] = 0;
+    v2[2] = 0;
+    v2[3] = 0;
+    v2[4] = 0;
+    v2[5] = 0;
+    v2[6] = 0;
+    v2[7] = 0;
+    v2[8] = 0;
+    _splitpath(this, 0, 0, &Filename, 0);
+    if ( BinkMovie::InitKeyframeTracking(v2, Filename.__pad_0) == 1 )
   {
-    v3 = (_DWORD *)__2_YAPAXI_Z(0x20u); /*0x6c9a49*/
-    v4 = v3; /*0x6c9a4e*/
-    if ( v3 ) /*0x6c9a55*/
+    v3 = (int *)__2_YAPAXI_Z(0x20u);
+    v4 = v3;
+    if ( v3 )
     {
-      v3[1] = 640; /*0x6c9a60*/
-      v3[2] = 255; /*0x6c9a67*/
-      v3[3] = 0; /*0x6c9a6e*/
-      *v3 = &XSurface_Vtable; /*0x6c9a71*/
-      v3[4] = 2; /*0x6c9a77*/
-      Buffer::Init(v3 + 5, 0, (AbstractClass *)0x4FB00); /*0x6c9a7e*/
-      *v4 = &BSurface_Vtable; /*0x6c9a83*/
-      (*(void (__thiscall **)(_DWORD *, _DWORD))(*v4 + 24))(v4, 0); /*0x6c9a8e*/
-      v2[4] = (int)v4; /*0x6c9a91*/
+    v3[1] = 640;
+    v3[2] = 255;
+    v3[3] = 0;
+    *v3 = &XSurface_Vtable;
+    v3[4] = 2;
+    Buffer::Init(v3 + 5, 0, (AbstractClass *)0x4FB00);
+    *v4 = &BSurface_Vtable;
+    (*(void (__thiscall **)(int *, int))(*v4 + 24))(v4, 0);
+    v2[4] = (int)v4;
     }
   }
-  return v2; /*0x6c9a97*/
+    return v2;
 }
 }
 } // namespace gamemd

@@ -2215,14 +2215,12 @@ retn    4
 // 0x4598a0
 bool InfantryClass::updateDeployAnimation()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4598a0
-BOOL __thiscall InfantryClass::updateDeployAnimation(_DWORD *this)
+    int __thiscall InfantryClass::updateDeployAnimation(int *(void**)this)
 {
-  int v1; // eax
-
-  v1 = *(this + 328);
-  return *(_BYTE *)(v1 + 5806) || *(_BYTE *)(v1 + 5807);
+    int v1;
+    v1 = this->FootClass_field_520;
+    return *(char *)(v1 + 5806) || *(char *)(v1 + 5807);
 }
 
 /* ASM:
@@ -4691,22 +4689,19 @@ retn
 // 0x522bc0
 bool InfantryClass::CanEnterBuilding()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x522bc0
-bool __thiscall InfantryClass::CanEnterBuilding(_DWORD *this)
+    bool __thiscall InfantryClass::CanEnterBuilding(int *(void**)this)
 {
-  int v2; // eax
-  bool result; // al
-
-  result = 0;
-  if ( (*(int (__thiscall **)(_DWORD *))(*this + 388))(this) == 5
-    || (*(int (__thiscall **)(_DWORD *))(*this + 388))(this) == 11 )
+    int v2;
+    bool result;
+    result = 0;
+    if ( this->GetPrimaryOrFallback() == 5 || this->GetPrimaryOrFallback() == 11 )
   {
-    v2 = *(this + 433);
+    v2 = this->SequenceAnim;
     if ( !v2 || v2 == 9 || v2 == 10 || v2 == 32 )
-      return 1;
+    return 1;
   }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -4757,16 +4752,14 @@ int InfantryClass::FindIdleMovePosition()
 // 0x51f640
 int InfantryClass::FindIdleAITarget()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51f640
-int __thiscall InfantryClass::FindIdleAITarget(int *this)
+    int __thiscall InfantryClass::FindIdleAITarget(int *(void**)this)
 {
-  int result; // eax
-
-  result = InfantryClass::GetIdleTimer(this);
-  if ( result == -1 )
+    int result;
+    result = InfantryClass::GetIdleTimer(this);
+    if ( result == -1 )
     return FootClass::FindAITarget(this);
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -8658,13 +8651,10 @@ retn    4
 // 0x772ac0
 void InfantryClass::startPanic()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_772AC0(_DWORD *this)
 {
-  int v1; // eax
-
-  v1 = *(this + 43);
-  return v1 && *(_BYTE *)(v1 + 324);
+    int v1;
+    v1 = this->currentMission;
+    return v1 && *(char *)(v1 + 324);
 }
 
 /* ASM:
@@ -8698,339 +8688,7 @@ int InfantryClass::CheckHealthDiff_0()
 // 0x518f90
 void InfantryClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge InfantryClass::Draw@<eax>(
-{
-  int v17; // edx
-  int v18; // eax
-  int v19; // edx
-  char v20; // al
-  int v21; // eax
-  int v22; // edx
-  unsigned __int8 v23; // bl
-  int v24; // eax
-  int v25; // edx
-  int v26; // ecx
-  int v27; // eax
-  _DWORD *v28; // eax
-  _DWORD *v29; // eax
-  int v30; // eax
-  int **v31; // ebx
-  int v32; // eax
-  _DWORD *v33; // eax
-  int *v34; // edi
-  int v35; // edx
-  int v36; // ecx
-  bool v37; // zf
-  int *v38; // esi
-  unsigned int v39; // eax
-  int *v40; // ebx
-  int v41; // ecx
-  int v42; // eax
-  int result; // eax
-  int v44; // ebx
-  int *v45; // esi
-  int v46; // edi
-  int v47; // ecx
-  int v48; // eax
-  unsigned int v49; // esi
-  int v50; // esi
-  int v51; // edi
-  int v52; // esi
-  int v53; // ebx
-  _DWORD *v54; // ecx
-  int v55; // edx
-  int v56; // eax
-  int v57; // edi
-  int v58; // eax
-  int v59; // eax
-  int v60; // edi
-  int v61; // eax
-  int *v62; // [esp+8h] [ebp-88h]
-  int v63; // [esp+14h] [ebp-7Ch]
-  int v64; // [esp+14h] [ebp-7Ch]
-  int v65; // [esp+20h] [ebp-70h]
-  unsigned __int8 v66; // [esp+4Eh] [ebp-42h]
-  unsigned __int8 v67; // [esp+4Fh] [ebp-41h]
-  int v68; // [esp+50h] [ebp-40h]
-  int v69; // [esp+54h] [ebp-3Ch] BYREF
-  int v70; // [esp+58h] [ebp-38h] BYREF
-  _DWORD *v71; // [esp+5Ch] [ebp-34h] BYREF
-  int v72; // [esp+60h] [ebp-30h]
-  int v73; // [esp+64h] [ebp-2Ch] BYREF
-  int v74; // [esp+68h] [ebp-28h] BYREF
-  _DWORD *v75; // [esp+6Ch] [ebp-24h] BYREF
-  int v76; // [esp+70h] [ebp-20h]
-  int v77; // [esp+74h] [ebp-1Ch] BYREF
-  int v78; // [esp+78h] [ebp-18h]
-  int v79; // [esp+7Ch] [ebp-14h]
-  _DWORD v80[4]; // [esp+80h] [ebp-10h] BYREF
 
-  v17 = a2[1];
-  v18 = *a1;
-  v75 = (_DWORD *)*a2;
-  v76 = v17;
-  v19 = *(_DWORD *)(*(int (__thiscall **)(int *, int *))(v18 + 448))(a1, &v73);
-  v20 = *((_BYTE *)a1 + 664);
-  v70 = v19;
-  v68 = 0;
-  if ( v20 )
-  {
-    v21 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 6316);
-    v22 = MEMORY[0x87F7E8][7806] + 2 * v21;
-    v23 = *(_BYTE *)(v21 + v22 + 4174 + 2087);
-    v66 = *(_BYTE *)(v21 + v22 + 6260);
-    v67 = *(_BYTE *)(v21 + v22 + 6262);
-    v24 = DDraw::GetStatus() - 1;
-    if ( v24 )
-    {
-      v27 = v24 - 1;
-      if ( v27 )
-      {
-LABEL_6:
-        LOWORD(v25) = v66;
-        LOWORD(v27) = v67;
-        LOWORD(v26) = v23 >> 1;
-        v68 |= v27 | (32 * ((32 * v25) | v26));
-        goto LABEL_7;
-      }
-      LOWORD(v25) = v67;
-      LOWORD(v26) = v23;
-      v24 = v25 | (32 * (v26 | (v66 << 6)));
-      v68 = v24;
-    }
-    LOWORD(v25) = v66;
-    LOWORD(v26) = v23 >> 1;
-    LOWORD(v24) = v67;
-    v25 *= 32;
-    v26 = v24 | ((v25 | v26) << 6);
-    HIWORD(v27) = HIWORD(v26) | HIWORD(v68);
-    v68 |= v26;
-    goto LABEL_6;
-  }
-LABEL_7:
-  v28 = (_DWORD *)(*(int (__thiscall **)(int *, int *))(*a1 + 72))(a1, &v77);
-  LOWORD(v69) = *v28 / 256;
-  HIWORD(v69) = v28[1] / 256;
-  v71 = (_DWORD *)v69;
-  v29 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v71);
-  if ( CellClass::QuickPassable(v29) )
-    v68 = 0;
-  if ( *((_BYTE *)a1 + 1668) != 0xFF )
-  {
-    TacticalClass::AddToDrawQueue((_DWORD *)MEMORY[0x87F7E8][7887], (int)a1, (int)v75, v76);
-    return AbstractClass::COMStub_Return0_69((int)&v75, (int)a3);
-  }
-  v30 = a1[413];
-  v31 = (int **)(a1 + 413);
-  v69 = 0;
-  if ( !v30 )
-    goto LABEL_15;
-  v32 = StreamClass::Set2(&v69, a1 + 413);
-  if ( v32 < 0 && v32 != -2147467262 )
-    WinAPI::Wrapper(v32);
-  if ( !v69 )
-LABEL_15:
-    WinAPI::Wrapper(-2147467261);
-  (*(void (__stdcall **)(int, _DWORD *))(*(_DWORD *)v69 + 12))(v69, v80);
-  if ( (*(int (__thiscall **)(int *))(*a1 + 456))(a1) > 0 && !memcmp(v80, &g_CLSID_DriveLocomotion, 0x10u) )
-  {
-    v71 = (_DWORD *)SearchMIXFile(aPodShp, 0);
-    if ( !*v31 )
-      WinAPI::Wrapper(-2147467261);
-    v33 = (_DWORD *)(*(int (__stdcall **)(int *, int *))(**v31 + 48))(*v31, &v77);
-    v34 = a2;
-    v35 = v33[1];
-    v36 = a2[1];
-    v73 = *v33 + *a2;
-    v37 = *v31 == 0;
-    v74 = v35 + v36;
-    if ( v37 )
-      WinAPI::Wrapper(-2147467261);
-    v38 = *v31;
-    v65 = (*(int (__thiscall **)(int *, _DWORD))(*a1 + 748))(a1, 0) - 2;
-    v63 = a4;
-    v39 = (*(int (**)(void))(*v38 + 136))();
-    DrawToSurfaceSHP(
-      (int *)MEMORY[0x87F7E8][7883],
-      (_DWORD *)MEMORY[0x87F6C0][1],
-      (int)v71,
-      v39,
-      v38,
-      &v74,
-      v63,
-      11777,
-      0,
-      v65,
-      1000,
-      v68,
-      0,
-      0,
-      0,
-      0);
-    CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v70);
-    CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v70);
-    if ( !*v31 )
-      WinAPI::Wrapper(-2147467261);
-    v40 = *v31;
-    v41 = *v40;
-    a2 = (int *)*a1;
-    v42 = (*(int (__stdcall **)(int *, int *, int *, _DWORD, int, _DWORD, int, _DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(v41 + 136))(
-            v40,
-            v34,
-            a3,
-            0,
-            256,
-            0,
-            2,
-            0,
-            1000,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0);
-    (*(void (__thiscall **)(int *, int *, int))(a16 + 1292))(a1, a2, v42);
-LABEL_53:
-    if ( v69 )
-      (*(void (__stdcall **)(int))(*(_DWORD *)v69 + 8))(v69);
-    return AbstractClass::COMStub_Return0_69((int)&v75, (int)a3);
-  }
-  v73 = (*(int (__thiscall **)(int *))(*a1 + 108))(a1);
-  if ( v73 )
-  {
-    a2 = *(int **)(*(int (__thiscall **)(int *, _DWORD **))(*a1 + 448))(a1, &v71);
-    TacticalClass::AddToDrawQueue((_DWORD *)MEMORY[0x87F7E8][7887], (int)a1, (int)v75, v76);
-    if ( LightningStorm::IsActive() )
-    {
-      v44 = *(_DWORD *)(MEMORY[0x87F7E8][536210] + 13660);
-    }
-    else if ( PsyDom::IsActive() )
-    {
-      v44 = *(_DWORD *)(MEMORY[0x87F7E8][536210] + 13712);
-    }
-    else if ( (unsigned __int8)NukeFlash::IsActive() )
-    {
-      v44 = *(_DWORD *)(MEMORY[0x87F7E8][536210] + 13684);
-    }
-    else
-    {
-      v44 = *(_DWORD *)(MEMORY[0x87F7E8][536210] + 13636);
-    }
-    if ( *((_BYTE *)a1 + 140) )
-      goto LABEL_39;
-    v45 = a1 + 39;
-    v77 = a1[39];
-    v78 = a1[40];
-    v79 = a1[41];
-    if ( (*((_DWORD *)Coord::To_Cell(MEMORY[0x87F7E8], &v77) + 80) & 0x10000) == 0 )
-      goto LABEL_38;
-    v77 = *v45;
-    v78 = a1[40];
-    v46 = a1[41];
-    v77 = *v45;
-    v78 = a1[40];
-    v79 = a1[41];
-    if ( v46 > dword_A8ED54[312] / 2 + Cell::GetGroundHeight(&v77) )
-    {
-LABEL_39:
-      v51 = v44 * ((*(int (__thiscall **)(int *))(*a1 + 456))(a1) / (2 * dword_A8ED54[315]));
-      v50 = v51 + *((__int16 *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&a2) + 133);
-    }
-    else
-    {
-LABEL_38:
-      v47 = a1[41];
-      v48 = a1[40];
-      v77 = *v45;
-      v79 = v47;
-      v78 = v48;
-      v49 = (*((_DWORD *)Coord::To_Cell(MEMORY[0x87F7E8], &v77) + 80) & 0x10000) != 0 ? 0xFFFFFE0C : 0;
-      v50 = *((__int16 *)CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&a2) + 133) + v49;
-    }
-    v52 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 6104) + v50;
-    v53 = (*(int (__thiscall **)(int *))(*a1 + 456))(a1);
-    v77 = a1[39];
-    v78 = a1[40];
-    v79 = a1[41];
-    v54 = Coord::To_Cell(MEMORY[0x87F7E8], &v77);
-    v71 = v54;
-    v55 = v54[80];
-    if ( (v55 & 0x100) == 0 || v53 < dword_A8ED54[312] )
-      goto LABEL_48;
-    if ( (v55 & 0x800) != 0 )
-    {
-      if ( (*((_DWORD *)Cell::GetNeighbourContent(v54, 0) + 80) & 0x100) != 0 )
-      {
-LABEL_47:
-        v53 -= dword_A8ED54[312];
-LABEL_48:
-        if ( v53 > 0 && (dword_A8ED54[316] || (dword_A8ED54[316] = SearchMIXFile(aInfshdwShp, 0)) != 0) )
-        {
-          v56 = a1[40];
-          v57 = a1[41];
-          v77 = a1[39];
-          v78 = v56;
-          v58 = ZCoordToScreenY(v53);
-          v72 = v76 - *((char *)a1 + 1716) + v58;
-          v71 = v75;
-          v59 = ZCoordToScreenY(v57 - v53);
-          DrawToSurfaceSHP(
-            (int *)MEMORY[0x87F7E8][7883],
-            (_DWORD *)MEMORY[0x87F6C0][1],
-            dword_A8ED54[316],
-            1u,
-            (int *)&v71,
-            a3,
-            9729,
-            0,
-            -5 - v59,
-            0,
-            1000,
-            0,
-            0,
-            0,
-            0,
-            0);
-        }
-        v72 = v76 - *((char *)a1 + 1716);
-        v64 = dword_825500;
-        v62 = a3;
-        v71 = v75;
-        v60 = *a1;
-        v61 = CalculateLocomotionFrameIndex(a1);
-        (*(void (__thiscall **)(int *, int, int, _DWORD **, int *, _DWORD, int, int, int, _DWORD, int, int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(v60 + 1292))(
-          a1,
-          v73,
-          v61,
-          &v71,
-          v62,
-          0,
-          256,
-          v64,
-          2,
-          0,
-          v52,
-          v68,
-          0,
-          0,
-          0,
-          0,
-          0);
-        goto LABEL_53;
-      }
-      v54 = v71;
-    }
-    if ( (v54[80] & 0x800) != 0 || (*((_DWORD *)Cell::GetNeighbourContent(v54, 6u) + 80) & 0x100) == 0 )
-      goto LABEL_48;
-    goto LABEL_47;
-  }
-  result = v69;
-  if ( v69 )
-    return (*(int (__stdcall **)(int))(*(_DWORD *)v69 + 8))(v69);
-  return result;
-}
 /* ASM:
 sub     esp, 44h
 mov     eax, [esp+44h+arg_0]

@@ -7,13 +7,11 @@
 namespace gamemd {
 char Movie::GetSectionID(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Movie_GetSectionID(int this, _DWORD *a2)
 {
-  if ( !(unsigned char)this->Movie_field_0x6C ) /*0x49bc80*/
-    return 0; /*0x49bc87*/
-  *a2 = this->Movie_field_0x44; /*0x49bc93*/
-  return 1; /*0x49bc89*/
+    if ( !(unsigned char)this->Movie_field_0x6C )
+    return 0;
+    *a2 = this->Movie_field_0x44;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -22,13 +20,11 @@ char __thiscall Movie_GetSectionID(int this, _DWORD *a2)
 namespace gamemd {
 char Movie::GetState(CCINIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Movie::GetState(int this, CCINIClass *aP1)
 {
-  if ( !(unsigned char)this->Movie_field_0x6C ) /*0x49bcc0*/
-    return 0; /*0x49bcc7*/
-  *(_DWORD *)aP1->__pad_0 = this->Movie_field_0x38; /*0x49bcd3*/
-  return 1; /*0x49bcc9*/
+    if ( !(unsigned char)this->Movie_field_0x6C )
+    return 0;
+    *(int *)aP1->__pad_0 = this->Movie_field_0x38;
+    return 1;
 }
 }
 } // namespace gamemd

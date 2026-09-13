@@ -6,10 +6,8 @@
 namespace gamemd {
 LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LRESULT __fastcall Diplomacy_Helper(HWND hWnd, unsigned __int8 a2)
 {
-  return SendMessageA(hWnd, 0x4E5u, 0, a2); /*0x603dc5*/
+    return SendMessageA(hWnd, 0x4E5u, 0, a2);
 }
 }
 } // namespace gamemd

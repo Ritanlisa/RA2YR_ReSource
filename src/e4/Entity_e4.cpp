@@ -34,17 +34,14 @@ int sub_53AB70()
 namespace gamemd {
 char sub_5C0080(char ** a1, unsigned char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_5C0080(char **a1, _BYTE *a2)
 {
-  char result; // al
-
-  if ( MEMORY[0xABF3F4] ) /*0x5c0087*/
-    return 0; /*0x5c0089*/
-  MEMORY[0xABF3F4] = (int)a1; /*0x5c008c*/
-  result = VQAClass::AdvanceFrame(*a1, a2); /*0x5c0095*/
-  MEMORY[0xABF3F4] = 0; /*0x5c009a*/
-  return result; /*0x5c008b*/
+    char result;
+    if ( g_BigIntPool )
+    return 0;
+    g_BigIntPool = (int)a1;
+    result = VQAClass::AdvanceFrame(*a1, a2);
+    g_BigIntPool = 0;
+    return result;
 }
 }
 } // namespace gamemd

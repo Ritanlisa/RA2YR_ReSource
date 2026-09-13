@@ -57,20 +57,16 @@ LABEL_9:
 // 0x74EEE0
 int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VeinholeMonsterClass::Update(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x74eef4*/
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
 }
 }
 
 // 0x74EF00
 int VeinholeMonsterClass::CheckStatus()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int VeinholeMonsterClass::_vt34()
 {
-  return MEMORY[0x8871E0]->?; /*0x74ef0b*/
+    return g_RulesClass_Instance->?;
 }
 }
 

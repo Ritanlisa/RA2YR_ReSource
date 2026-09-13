@@ -235,12 +235,9 @@ int __thiscall AbstractTypeClass::ProcessPower(char *this, AbstractClass *aP1)
 // 0x410C20
 int AbstractTypeClass::StubReturnFalse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractTypeClass::StubReturnFalse(#376 *this)
 {
-  int result; // eax
-
-  return result; /*0x410c20*/
+    int result;
+    return result;
 }
 }
 

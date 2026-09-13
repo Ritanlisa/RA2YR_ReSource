@@ -458,15 +458,12 @@ int __stdcall TriggerTypeClass::LoadTypeData(AbstractTypeClass *aP0, int aP1)
 namespace gamemd {
 int TriggerTypeClass::Write(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TriggerTypeClass::Write(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x727c8f*/
-  if ( result >= 0 ) /*0x727c96*/
-    return 0; /*0x727c98*/
-  return result; /*0x727c9a*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd

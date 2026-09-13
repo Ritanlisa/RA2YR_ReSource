@@ -68,28 +68,25 @@ char *__thiscall sub_5D67B0(char **this)
 } }
 // 0x77E7A0
 namespace gamemd { int GameConfig::BuildChecksum() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-INIClass *__thiscall GameConfig::BuildChecksum(char *Buffer)
 {
-  int v2; // ecx
-  void **p_attachedTag; // eax
-  INIClass *Entry; // eax
-
-  v2 = dword_B76B1C; /*0x77e7a5*/
-  if ( dword_B76B1C > 0 ) /*0x77e7ad*/
+    int v2;
+    void **p_attachedTag;
+    INIClass *Entry;
+    v2 = DataGlobal_B76B1C;
+    if ( DataGlobal_B76B1C > 0 )
   {
-    p_attachedTag = &g_WOL_LoginObject.attachedTag; /*0x77e7af*/
-    do /*0x77e7c0*/
+    p_attachedTag = &g_WOL_LoginObject.attachedTag;
+    do
     {
-      p_attachedTag += 37; /*0x77e7b6*/
-      --v2; /*0x77e7bb*/
+    p_attachedTag += 37;
+    --v2;
     }
-    while ( v2 ); /*0x77e7c0*/
+    while ( v2 );
   }
-  GameOption::CheckDuplicate(); /*0x77e7dd*/
-  Hash_Check_5E9580(); /*0x77e7e8*/
-  Hash_Check_5E94D0(); /*0x77e7f3*/
-  Entry = GameOptions::GetEntry(); /*0x77e7fa*/
-  return (INIClass *)sprintf(Buffer, (ObjectClass *)&stru_84A52C.sectionHead[1], Entry); /*0x77e80e*/
+    GameOption::CheckDuplicate();
+    Hash_Check_5E9580();
+    Hash_Check_5E94D0();
+    Entry = GameOptions::GetEntry();
+    return (INIClass *)sprintf(Buffer, (ObjectClass *)&g_INI_Key_WOnline.sectionHead[1], Entry);
 }
 } }

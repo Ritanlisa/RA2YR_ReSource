@@ -120,36 +120,33 @@ namespace ra2 {
 namespace game {
 void AudioController::GetVolume()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_72D170()
 {
-  void *v0; // esi
-
-  if ( MEMORY[0xB0FCCE] ) /*0x72d17a*/
+    void *v0;
+    if ( DataGlobal_B0FCCE )
   {
-    if ( MEMORY[0xB0FCCD] ) /*0x72d182*/
+    if ( DataGlobal_B0FCCD )
     {
-      v0 = MEMORY[0xB0FAB8]; /*0x72d185*/
-      if ( MEMORY[0xB0FAB8] ) /*0x72d18d*/
+    v0 = DataGlobal_B0FAB8;
+    if ( DataGlobal_B0FAB8 )
       {
-        FileTreeNode::Destroy(MEMORY[0xB0FAB8]); /*0x72d191*/
-        __3_YAXPAX_Z(v0); /*0x72d197*/
+    FileTreeNode::Destroy(DataGlobal_B0FAB8);
+    __3_YAXPAX_Z(v0);
       }
-      MEMORY[0xB0FCCD] = 0; /*0x72d19f*/
+    DataGlobal_B0FCCD = 0;
     }
-    MEMORY[0xB0FAB8] = 0; /*0x72d1ab*/
-    if ( MEMORY[0xB0FCD0] ) /*0x72d1b3*/
+    DataGlobal_B0FAB8 = 0;
+    if ( DataGlobal_B0FCD0 )
     {
-      __3_YAXPAX_Z(MEMORY[0xB0FCD0]); /*0x72d1b6*/
-      MEMORY[0xB0FCD0] = 0; /*0x72d1be*/
+    __3_YAXPAX_Z(DataGlobal_B0FCD0);
+    DataGlobal_B0FCD0 = 0;
     }
-    if ( MEMORY[0xB0FCD4] ) /*0x72d1cc*/
+    if ( DataGlobal_B0FCD4 )
     {
-      (**(void (__thiscall ***)(int, int))MEMORY[0xB0FCD4])(MEMORY[0xB0FCD4], 1); /*0x72d1d2*/
-      MEMORY[0xB0FCD4] = 0; /*0x72d1d4*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FCD4)(DataGlobal_B0FCD4, 1);
+    DataGlobal_B0FCD4 = 0;
     }
   }
-  MEMORY[0xB0FCCE] = 0; /*0x72d1da*/
+    DataGlobal_B0FCCE = 0;
 }
 }
 } // namespace game

@@ -46,13 +46,11 @@ int __thiscall CampaignProperties_WorldDominationTour_22_::_vt04(int this, _DWOR
 namespace gamemd {
 unsigned int CampaignProperties_WorldDominationTour_22::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall CampaignProperties_WorldDominationTour_22_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->CampaignProperties_WorldDominationTour_22_field_0xC ) /*0x5d2940*/
-    return (unsigned int)(a2 - this->CampaignProperties_WorldDominationTour_22_field_0x4) >> 2; /*0x5d2955*/
-  else
-    return 0; /*0x5d2947*/
+    if ( (unsigned char)this->CampaignProperties_WorldDominationTour_22_field_0xC )
+    return (unsigned int)(a2 - this->CampaignProperties_WorldDominationTour_22_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

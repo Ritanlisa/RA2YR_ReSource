@@ -509,15 +509,12 @@ int __stdcall VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 namespace gamemd {
 int VoxelAnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VoxelAnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, ObjectTypeClass *aP1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2); /*0x74b8df*/
-  if ( result >= 0 ) /*0x74b8e6*/
-    return 0; /*0x74b8e8*/
-  return result; /*0x74b8ea*/
+    int result;
+    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd

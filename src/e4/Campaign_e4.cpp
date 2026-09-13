@@ -7,40 +7,37 @@
 // 0x60D380
 LONG Campaign::Screen(char a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall sub_60D380(char a1)
 {
-  HWND v1; // esi
-  LONG result; // eax
-  LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
-
-  v1 = (HWND)CreateDialog(0); /*0x60d389*/
-  result = 0; /*0x60d38b*/
-  dwNewLong = 0; /*0x60d38f*/
-  if ( v1 ) /*0x60d393*/
+    HWND v1;
+    LONG result;
+    LONG dwNewLong;
+    v1 = (HWND)CreateDialog(0);
+    result = 0;
+    dwNewLong = 0;
+    if ( v1 )
   {
-    SetWindowLongA(v1, 8, (LONG)&dwNewLong); /*0x60d3a1*/
-    ShowWindow(v1, 1); /*0x60d3aa*/
-    SetForegroundWindow(v1); /*0x60d3b1*/
-    Timer::PumpMessages(MEMORY[0x87F770]); /*0x60d3bd*/
-    if ( a1 ) /*0x60d3c8*/
-      BINK::Background_Setup(v1); /*0x60d3cc*/
-    while ( !dwNewLong ) /*0x60d3d7*/
+    SetWindowLongA(v1, 8, (LONG)&dwNewLong);
+    ShowWindow(v1, 1);
+    SetForegroundWindow(v1);
+    Timer::PumpMessages(g_BinkMoviePlayer);
+    if ( a1 )
+    BINK::Background_Setup(v1);
+    while ( !dwNewLong )
     {
-      MessageLoop(); /*0x60d3d9*/
-      if ( !MEMORY[0xA8B238] || MEMORY[0xA8B238] == 5 || MEMORY[0xA8D60E] || MEMORY[0xA8DAB4] ) /*0x60d3fc*/
+    MessageLoop();
+    if ( !g_GameMode_Current || g_GameMode_Current == 5 || g_NetworkQuitFlag || g_GameFlags_Campaign )
       {
-        Event::Dispatch(); /*0x60d412*/
+    Event::Dispatch();
       }
-      else if ( !(unsigned __int8)VtableStub::Method_55CBF0() && GameFrameLoop() ) /*0x60d407*/
+    else if ( !(unsigned char)VtableStub::Method_55CBF0() && GameFrameLoop() )
       {
-        break; /*0x60d40e*/
+    break;
       }
     }
-    Dialog::Destroy(v1); /*0x60d41f*/
-    return dwNewLong; /*0x60d426*/
+    Dialog::Destroy(v1);
+    return dwNewLong;
   }
-  return result; /*0x60d42a*/
+    return result;
 }
 }
 
@@ -290,13 +287,11 @@ int __thiscall Campaign_WorldDominationTour_16_::_vt04(int this, int a2)
 namespace gamemd {
 unsigned int Campaign_WorldDominationTour_16::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall Campaign_WorldDominationTour_16_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->Campaign_WorldDominationTour_16_field_0xC ) /*0x7659d0*/
-    return (unsigned int)(a2 - this->Campaign_WorldDominationTour_16_field_0x4) >> 3; /*0x7659e5*/
-  else
-    return 0; /*0x7659d7*/
+    if ( (unsigned char)this->Campaign_WorldDominationTour_16_field_0xC )
+    return (unsigned int)(a2 - this->Campaign_WorldDominationTour_16_field_0x4) >> 3;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

@@ -828,40 +828,34 @@ char __thiscall MPCooperative::_vt04(_DWORD *this)
 namespace gamemd {
 int sub_5C1980()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5C1980()
 {
-  int result; // eax
-  int v1; // ebp
-  int i; // ebx
-  int v3; // [esp+4h] [ebp-8h]
-  int v4; // [esp+8h] [ebp-4h] BYREF
-
-  result = -1; /*0x5c198a*/
-  v1 = 0; /*0x5c198d*/
-  v3 = -1; /*0x5c1991*/
-  if ( MEMORY[0x89F574] > 0 ) /*0x5c1995*/
+    int result;
+    int v1;
+    int i;
+    int v3;
+    int v4;
+    result = -1;
+    v1 = 0;
+    v3 = -1;
+    if ( DataGlobal_89F574 > 0 )
   {
-    do /*0x5c1a00*/
+    do
     {
-      Movie::GetSection((int)&MEMORY[0x89F518], v1, &v4); /*0x5c19a5*/
-      for ( i = 0; i < 780; i += 260 ) /*0x5c19aa*/
+    Movie::GetSection((int)&g_DDrawSurfaceManager, v1, &v4);
+    for ( i = 0; i < 780; i += 260 )
       {
-        if ( MEMORY[0xA8B254] ) /*0x5c19b3*/
+    if ( g_GameRulesOptions )
         {
-          if ( !_strnicmp( /*0x5c19da*/
-                  (const char *)(*(_DWORD *)(MEMORY[0xA8B8CC] + 4 * MEMORY[0xA8B254]) + 88),
-                  (const char *)(*(_DWORD *)(v4 + 12) + i),
-                  strlen((const char *)(*(_DWORD *)(v4 + 12) + i))) )
-            v3 = v1; /*0x5c19e6*/
+    if ( !_strnicmp( (const char *)(*(int *)(g_MultiplayerGameState + 4 * g_GameRulesOptions) + 88), (const char *)(*(int *)(v4 + 12) + i), strlen((const char *)(*(int *)(v4 + 12) + i))) )
+    v3 = v1;
         }
       }
-      ++v1; /*0x5c19fd*/
+    ++v1;
     }
-    while ( v1 < MEMORY[0x89F574] ); /*0x5c1a00*/
-    return v3; /*0x5c1a02*/
+    while ( v1 < DataGlobal_89F574 );
+    return v3;
   }
-  return result; /*0x5c1a09*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1401,15 +1395,12 @@ char __thiscall MPCooperative::_vt23(int this, int a2, int a3, int a4)
 namespace gamemd {
 HWND MPCooperative::CheckReady(HWND hDlg)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __stdcall MPCooperative::_vt30(HWND hDlg)
 {
-  HWND result; // eax
-
-  result = GetDlgItem(hDlg, 1842); /*0x5c21aa*/
-  if ( result ) /*0x5c21b2*/
-    return (HWND)PostMessageA(result, 0x405u, 1u, MEMORY[0xA8EB68]); /*0x5c21c3*/
-  return result; /*0x5c21c9*/
+    HWND result;
+    result = GetDlgItem(hDlg, 1842);
+    if ( result )
+    return (HWND)PostMessageA(result, 0x405u, 1u, DataGlobal_A8EB68);
+    return result;
 }
 }
 } // namespace gamemd
@@ -1418,22 +1409,19 @@ HWND __stdcall MPCooperative::_vt30(HWND hDlg)
 namespace gamemd {
 void MPCooperative::Clone(HWND hDlg)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MPCooperative::Clone(int *this, HWND hDlg)
 {
-  int v3; // edi
-  char *i; // esi
-  int ResourceID2CSF; // eax
-
-  if ( hDlg ) /*0x5c264a*/
+    int v3;
+    char *i;
+    int ResourceID2CSF;
+    if ( hDlg )
   {
-    v3 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_430[24]; /*0x5c264e*/
-    for ( i = 0; (int)i < v3; ++i ) /*0x5c2658*/
+    v3 = *(int *)&g_NetworkPlayerBuffer.__pad_430[24];
+    for ( i = 0; (int)i < v3; ++i )
     {
-      ResourceID2CSF = GetResourceID2CSF(i); /*0x5c265c*/
-      MovieClass::ReadConfig(this, (IUnknown *)hDlg, ResourceID2CSF); /*0x5c2665*/
+    ResourceID2CSF = GetResourceID2CSF(i);
+    MovieClass::ReadConfig(this, (IUnknown *)hDlg, ResourceID2CSF);
     }
-    CampaignCoop::Setup(this, hDlg, 1); /*0x5c2674*/
+    CampaignCoop::Setup(this, hDlg, 1);
   }
 }
 }
@@ -1796,15 +1784,12 @@ const char *__thiscall MPCooperative::_vt29(_DWORD *this, const char *a2, char *
 namespace gamemd {
 char MPCooperative::ValidateSettings()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MPCooperative::_vt31(int *this)
 {
-  HWND GameUI; // eax
-
-  GameUI = (HWND)Dialog::FindGameUI(); /*0x5c2cb3*/
-  if ( GameUI || (GameUI = (HWND)Dialog::FindByHandle((void *)0xBC6)) != 0 ) /*0x5c2cc8*/
-    CampaignCoop::Setup(this, GameUI, 1); /*0x5c2ccf*/
-  return 1; /*0x5c2cd6*/
+    HWND GameUI;
+    GameUI = (HWND)Dialog::FindGameUI();
+    if ( GameUI || (GameUI = (HWND)Dialog::FindByHandle((void *)0xBC6)) != 0 )
+    CampaignCoop::Setup(this, GameUI, 1);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1813,10 +1798,8 @@ char __thiscall MPCooperative::_vt31(int *this)
 namespace gamemd {
 int MPCooperative::SaveSettings(HWND hWnd, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MPCooperative::_vt20(_DWORD *this, HWND hWnd, int a3)
 {
-  return ListBox::FillPlayers(this, hWnd, a3); /*0x5c2cef*/
+    return ListBox::FillPlayers(this, hWnd, a3);
 }
 }
 } // namespace gamemd
@@ -2569,23 +2552,20 @@ LABEL_47:
 namespace gamemd {
 int MPCooperative::Cleanup()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MPCooperative::_vt39(int *this)
 {
-  HWND GameUI; // eax
-  HWND v3; // esi
-  int result; // eax
-
-  GameUI = (HWND)Dialog::FindGameUI(); /*0x5c3f34*/
-  v3 = GameUI; /*0x5c3f39*/
-  if ( GameUI ) /*0x5c3f3d*/
+    HWND GameUI;
+    HWND v3;
+    int result;
+    GameUI = (HWND)Dialog::FindGameUI();
+    v3 = GameUI;
+    if ( GameUI )
   {
-    CampaignCoop::Setup(this, GameUI, 0); /*0x5c3f44*/
-    SkirmishDialog::FillComboBoxes(v3); /*0x5c3f4b*/
+    CampaignCoop::Setup(this, GameUI, 0);
+    SkirmishDialog::FillComboBoxes(v3);
   }
-  for ( result = 0; result < MEMORY[0xA8DA84]; ++result ) /*0x5c3f5c*/
-    *(_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * result) + 107) = result; /*0x5c3f67*/
-  return result; /*0x5c3f58*/
+    for ( result = 0; result < Game_PlayerCount; ++result )
+    *(int *)(*(int *)(Game_PlayerInfoArray + 4 * result) + 107) = result;
+    return result;
 }
 }
 } // namespace gamemd
@@ -3261,13 +3241,11 @@ void __thiscall MPCooperative::sub_5C5010(int this)
 namespace gamemd {
 unsigned int MPCooperative::syncPlayers(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MPCooperative::sub_5C5040(int this, int a2)
 {
-  if ( (unsigned char)this->MPCooperative_field_0xC ) /*0x5c5040*/
-    return (unsigned int)(a2 - this->MPCooperative_field_0x4) >> 2; /*0x5c5055*/
-  else
-    return 0; /*0x5c5047*/
+    if ( (unsigned char)this->MPCooperative_field_0xC )
+    return (unsigned int)(a2 - this->MPCooperative_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -3310,13 +3288,11 @@ void __thiscall MPCooperative::sub_5C50D0(int this)
 namespace gamemd {
 unsigned int MPCooperative::updateGameClock(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MPCooperative::sub_5C5100(int this, int a2)
 {
-  if ( (unsigned char)this->MPCooperative_field_0xC ) /*0x5c5100*/
-    return (unsigned int)(a2 - this->MPCooperative_field_0x4) >> 2; /*0x5c5115*/
-  else
-    return 0; /*0x5c5107*/
+    if ( (unsigned char)this->MPCooperative_field_0xC )
+    return (unsigned int)(a2 - this->MPCooperative_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -3456,13 +3432,11 @@ int __thiscall MPCooperative::sub_5C5250(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int MPCooperative::handleDisconnect(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MPCooperative::sub_5C5290(int this, int a2)
 {
-  if ( (unsigned char)this->MPCooperative_field_0xC ) /*0x5c5290*/
-    return (unsigned int)(a2 - this->MPCooperative_field_0x4) >> 2; /*0x5c52a5*/
-  else
-    return 0; /*0x5c5297*/
+    if ( (unsigned char)this->MPCooperative_field_0xC )
+    return (unsigned int)(a2 - this->MPCooperative_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -3645,13 +3619,11 @@ int __thiscall MPCooperative::sub_5C54B0(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int MPCooperative::evaluateAIStrategy(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MPCooperative::sub_5C54F0(int this, int a2)
 {
-  if ( (unsigned char)this->MPCooperative_field_0xC ) /*0x5c54f0*/
-    return (unsigned int)(a2 - this->MPCooperative_field_0x4) >> 2; /*0x5c5505*/
-  else
-    return 0; /*0x5c54f7*/
+    if ( (unsigned char)this->MPCooperative_field_0xC )
+    return (unsigned int)(a2 - this->MPCooperative_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -3838,10 +3810,8 @@ _DWORD *__thiscall sub_5C59E0(_DWORD *this, int a2, int a3)
 namespace gamemd {
 LRESULT sub_5E66D0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LRESULT sub_5E66D0()
 {
-  return SendDlgItemMessageA(MEMORY[0xAC0D40], 1363, 0x188u, 0, 0); /*0x5e66ea*/
+    return SendDlgItemMessageA(hDlg, 1363, 0x188u, 0, 0);
 }
 }
 } // namespace gamemd

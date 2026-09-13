@@ -289,10 +289,8 @@ void __thiscall WWMouseClass::_vt05(_BYTE *this)
 // 0x7B9D80
 int WWMouseClass::checkVisible()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WWMouseClass::_vt09(void *this)
 {
-  return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 16))(this);
+    return this->showCursor();
 }
 }
 

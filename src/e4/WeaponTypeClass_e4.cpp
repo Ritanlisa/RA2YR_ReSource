@@ -5,93 +5,77 @@
 // 0x475B70
 char WeaponTypeClass::ReadTrajectoryData(WeaponTypeClass * aP1, char * a2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall WeaponTypeClass::ReadTrajectoryData(char *this, WeaponTypeClass *aP1, char *a2, int a4)
 {
-  BuildingTypeClass *v4; // eax
-  int v5; // edx
-  ObjectClass *v6; // ebx
-  BuildingTypeClass *v8; // [esp+4h] [ebp-88h]
-  _BYTE Source[125]; // [esp+Ch] [ebp-80h] BYREF
-  __int16 v10; // [esp+89h] [ebp-3h]
-  char v11; // [esp+8Bh] [ebp-1h]
-
-  Source[0] = stru_87C374.__pad_579C[33876]; /*0x475b80*/
-  memset(&Source[1], 0, 0x7Cu); /*0x475b8f*/
-  v10 = 0; /*0x475b91*/
-  v11 = 0; /*0x475b93*/
-  v4 = g_TriggerClassCount; /*0x475b94*/
-  if ( (int)g_TriggerClassCount > 32 ) /*0x475b9c*/
-    v4 = (BuildingTypeClass *)32; /*0x475b9e*/
-  v5 = 0; /*0x475ba3*/
-  v8 = v4; /*0x475ba5*/
-  if ( (int)v4 > 0 ) /*0x475bab*/
+    BuildingTypeClass *v4;
+    int v5;
+    ObjectClass *v6;
+    BuildingTypeClass *v8;
+    char Source[125];
+    short v10;
+    char v11;
+    Source[0] = DataGlobal_87C374.__pad_579C[33876];
+    memset(&Source[1], 0, 0x7Cu);
+    v10 = 0;
+    v11 = 0;
+    v4 = g_TriggerClassCount;
+    if ( (int)g_TriggerClassCount > 32 )
+    v4 = (BuildingTypeClass *)32;
+    v5 = 0;
+    v8 = v4;
+    if ( (int)v4 > 0 )
   {
-    v6 = (ObjectClass *)g_TriggerTypeCount; /*0x475bb2*/
-    do /*0x475c3a*/
+    v6 = (ObjectClass *)g_TriggerTypeCount;
+    do
     {
-      if ( ((1 << v5) & a4) != 0 ) /*0x475bca*/
+    if ( ((1 << v5) & a4) != 0 )
       {
-        if ( Source[0] ) /*0x475bd2*/
-          strcat(Source, (const char *)&stru_817F40.nextObject); /*0x475bf9*/
-        strcat(Source, (const char *)(*(_DWORD *)v6->__pad_0 + 36)); /*0x475c27*/
-        v4 = v8; /*0x475c29*/
+    if ( Source[0] )
+    strcat(Source, (const char *)&DataGlobal_817F40.nextObject);
+    strcat(Source, (const char *)(*(int *)v6->__pad_0 + 36));
+    v4 = v8;
       }
-      ++v5; /*0x475c34*/
-      v6 = (ObjectClass *)((char *)v6 + 4); /*0x475c35*/
+    ++v5;
+    v6 = (ObjectClass *)((char *)(v6) + 4);
     }
-    while ( v5 < (int)v4 ); /*0x475c3a*/
+    while ( v5 < (int)v4 );
   }
-  return INIClass::SetString(this, (INIClass *)aP1, (INIClass *)a2, (INIClass *)Source); /*0x475c61*/
+    return INIClass::SetString(this, (INIClass *)aP1, (INIClass *)a2, (INIClass *)Source);
 }
 }
 
 // 0x475C70
 char WeaponTypeClass::ReadVeteranData(unsigned char * a2, char * a3, int a4, int * Block, int a6, short a7, int a8, int a9, int a10)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_475C70(
-        char *this,
-        unsigned __int8 *a2,
-        char *a3,
-        int a4,
-        int *Block,
-        int a6,
-        __int16 a7,
-        int a8,
-        int a9,
-        int a10)
 {
-  int *v10; // ebx
-  int v11; // ebp
-  char *SampleNameByIndex; // edi
-  char v13; // bl
-  _BYTE Source[125]; // [esp+Ch] [ebp-80h] BYREF
-  __int16 v17; // [esp+89h] [ebp-3h]
-  char v18; // [esp+8Bh] [ebp-1h]
-
-  Source[0] = MEMORY[0x889F64]; /*0x475c81*/
-  memset(&Source[1], 0, 0x7Cu); /*0x475c90*/
-  v17 = 0; /*0x475c92*/
-  v18 = 0; /*0x475c94*/
-  if ( a8 > 0 ) /*0x475c9e*/
+    int *v10;
+    int v11;
+    char *SampleNameByIndex;
+    char v13;
+    char Source[125];
+    short v17;
+    char v18;
+    Source[0] = g_INI_DefaultBuffer;
+    memset(&Source[1], 0, 0x7Cu);
+    v17 = 0;
+    v18 = 0;
+    if ( a8 > 0 )
   {
-    v10 = Block; /*0x475ca0*/
-    v11 = a8; /*0x475ca9*/
-    do /*0x475d17*/
+    v10 = Block;
+    v11 = a8;
+    do
     {
-      if ( Source[0] ) /*0x475cb1*/
-        strcat(Source, MEMORY[0x817F70]); /*0x475cd8*/
-      SampleNameByIndex = VocClass::GetSampleNameByIndex(*v10++); /*0x475ce8*/
-      strcat(Source, SampleNameByIndex); /*0x475d0d*/
-      --v11; /*0x475d14*/
+    if ( Source[0] )
+    strcat(Source, Delimiter);
+    SampleNameByIndex = VocClass::GetSampleNameByIndex(*v10++);
+    strcat(Source, SampleNameByIndex);
+    --v11;
     }
-    while ( v11 ); /*0x475d17*/
+    while ( v11 );
   }
-  v13 = INIClass::SetString(this, a2, a3, Source); /*0x475d39*/
-  if ( Block && HIBYTE(a7) ) /*0x475d4f*/
-    __3_YAXPAX_Z(Block); /*0x475d52*/
-  return v13; /*0x475d5c*/
+    v13 = INIClass::SetString(this, a2, a3, Source);
+    if ( Block && HIBYTE(a7) )
+    __3_YAXPAX_Z(Block);
+    return v13;
 }
 }
 

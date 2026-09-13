@@ -229,16 +229,14 @@ void __thiscall ParticleClass::AdjustHeight(ParticleClass *this)
 namespace gamemd {
 int * ParticleClass::CheckDrawFlags(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__stdcall ParticleClass::_vt66(int a1)
 {
-  if ( (MEMORY[0xAC4998] & 1) == 0 ) /*0x62d71b*/
+    if ( (DataGlobal_AC4998 & 1) == 0 )
   {
-    MEMORY[0xAC4998] |= 1u; /*0x62d739*/
-    MEMORY[0xAC49D0] = 2147450879; /*0x62d73f*/
-    atexit(nullsub_214); /*0x62d744*/
+    DataGlobal_AC4998 |= 1u;
+    DataGlobal_AC49D0 = 2147450879;
+    atexit(nullsub_214);
   }
-  return &MEMORY[0xAC49D0]; /*0x62d752*/
+    return &DataGlobal_AC49D0;
 }
 }
 } // namespace gamemd
@@ -278,14 +276,11 @@ int __thiscall ParticleClass::LoadParticleData(void *this, ObjectClass *aP1, int
 namespace gamemd {
 int ParticleClass::CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ParticleClass::CheckCollisionFlags(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x62d820*/
-  LOBYTE(aP0->ChargerBarrels[11]) = 1; /*0x62d825*/
-  return result; /*0x62d82c*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    LOBYTE(aP0->ChargerBarrels[11]) = 1;
+    return result;
 }
 }
 } // namespace gamemd

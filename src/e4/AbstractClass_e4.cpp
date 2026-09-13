@@ -22,33 +22,26 @@ void __thiscall AbstractClass::DTOR(_DWORD *this)
 namespace gamemd {
 int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall AbstractClass::SaveLoad_Prefix_0(AbstractClass *aP0, AbstractClass *aP1)
 {
-  AbstractClass *v2; // edi
-  int result; // eax
-  int referenceCount; // ebx
-  int v5; // ebp
-  int v6; // eax
-
-  v2 = aP1; /*0x410381*/
-  if ( !aP1 ) /*0x410387*/
-    return -2147467261; /*0x410389*/
-  result = (*(int (__stdcall **)(AbstractClass *, AbstractClass **, int, _DWORD))(*(_DWORD *)aP1->__pad_0 + 12))( /*0x41039e*/
-             aP1,
-             &aP1,
-             4,
-             0);
-  if ( result >= 0 ) /*0x4103a3*/
+    AbstractClass *v2;
+    int result;
+    int referenceCount;
+    int v5;
+    int v6;
+    v2 = aP1;
+    if ( !aP1 )
+    return -2147467261;
+    result = (*(int (__stdcall **)(AbstractClass *, AbstractClass **, int, int))(*(int *)aP1->__pad_0 + 12))( aP1, &aP1, 4, 0);
+    if ( result >= 0 )
   {
-    SwizzleManagerClass::Here_I_Am((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], aP1, aP0); /*0x4103b7*/
-    referenceCount = aP0->referenceCount; /*0x4103be*/
-    v5 = *(_DWORD *)v2->__pad_0; /*0x4103c1*/
-    v6 = (*(int (__thiscall **)(AbstractClass *, _DWORD))(*(_DWORD *)aP0->__pad_0 + 48))(aP0, 0); /*0x4103c7*/
-    result = (*(int (__stdcall **)(AbstractClass *, AbstractClass *, int))(v5 + 12))(v2, aP0, v6); /*0x4103cd*/
-    aP0->referenceCount = referenceCount; /*0x4103d0*/
+    SwizzleManagerClass::Here_I_Am((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], aP1, aP0);
+    referenceCount = aP0->referenceCount;
+    v5 = *(int *)v2->__pad_0;
+    v6 = (*(int (__thiscall **)(AbstractClass *, int))(*(int *)aP0->__pad_0 + 48))(aP0, 0);
+    result = (*(int (__stdcall **)(AbstractClass *, AbstractClass *, int))(v5 + 12))(v2, aP0, v6);
+    aP0->referenceCount = referenceCount;
   }
-  return result; /*0x41038e*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -72,10 +65,8 @@ Surface *__thiscall AbstractClass::getObjectValue(std::locale::facet *this, char
 namespace gamemd {
 unsigned int AbstractClass::updateLayer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall AbstractClass::updateLayer(Concurrency::details::SchedulerBase *this)
 {
-  return *((_DWORD *)this + 50); /*0x425526*/
+    return this->infantrySelfHeal;
 }
 }
 } // namespace gamemd
@@ -282,10 +273,8 @@ RLEBlitter *__thiscall AbstractClass::clearOverlayFlags(std::locale::facet *this
 namespace gamemd {
 int AbstractClass::GetType()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractClass_GetType(_DWORD *this)
 {
-  return *(this + 22); /*0x4ca163*/
+    return this->repairStationsCapacity;
 }
 }
 } // namespace gamemd
@@ -505,10 +494,8 @@ void ***__userpurge RemoveObjectFromHouse@<eax>(_DWORD *a1@<ecx>, int a2@<edi>, 
 namespace gamemd {
 int AbstractClass::checkPassability()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractClass::sub_50E370(_DWORD *this)
 {
-  return *(this + 12); /*0x50e373*/
+    return this->nextObject;
 }
 }
 } // namespace gamemd
@@ -659,10 +646,8 @@ _DWORD *__thiscall AbstractClass::updateShroudMap(InitializerBase_MultiplayerGam
 namespace gamemd {
 void AbstractClass::resetTeamState()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall AbstractClass::resetTeamState(RAMFileClass *this)
 {
-  *((_BYTE *)this + 28) = 0; /*0x65c540*/
+    this->referenceCount = 0;
 }
 }
 } // namespace gamemd

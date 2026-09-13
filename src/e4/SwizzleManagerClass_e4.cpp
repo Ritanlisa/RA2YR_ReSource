@@ -6,13 +6,11 @@
 // 0x6CF490
 int SwizzleManagerClass::Add(SwizzleManagerClass * aP0, SwizzleManagerClass * aP1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SwizzleManagerClass::Add(SwizzleManagerClass *aP0, SwizzleManagerClass *aP1, _DWORD *a2)
 {
-  if ( !aP1 || !a2 ) /*0x6cf49e*/
-    return -2147467261; /*0x6cf4a7*/
-  *a2 = aP1; /*0x6cf4a0*/
-  return 0; /*0x6cf4a4*/
+    if ( !aP1 || !a2 )
+    return -2147467261;
+    *a2 = aP1;
+    return 0;
 }
 }
 
@@ -42,13 +40,11 @@ void __thiscall SwizzleManagerClass_19_::sub_6CF4F0(int this)
 namespace gamemd {
 unsigned int SwizzleManagerClass_19::PointerToIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall SwizzleManagerClass_19_::sub_6CF520(int this, int a2)
 {
-  if ( (unsigned char)this->SwizzleManagerClass_19_field_0xC ) /*0x6cf520*/
-    return (unsigned int)(a2 - this->SwizzleManagerClass_19_field_0x4) >> 3; /*0x6cf535*/
-  else
-    return 0; /*0x6cf527*/
+    if ( (unsigned char)this->SwizzleManagerClass_19_field_0xC )
+    return (unsigned int)(a2 - this->SwizzleManagerClass_19_field_0x4) >> 3;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -263,13 +259,11 @@ int __thiscall SwizzleManagerClass_19_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int SwizzleManagerClass_19::Add(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall SwizzleManagerClass_19_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->SwizzleManagerClass_19_field_0xC ) /*0x6cf700*/
-    return (unsigned int)(a2 - this->SwizzleManagerClass_19_field_0x4) >> 3; /*0x6cf715*/
-  else
-    return 0; /*0x6cf707*/
+    if ( (unsigned char)this->SwizzleManagerClass_19_field_0xC )
+    return (unsigned int)(a2 - this->SwizzleManagerClass_19_field_0x4) >> 3;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

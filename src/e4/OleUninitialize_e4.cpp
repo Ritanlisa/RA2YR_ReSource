@@ -6,11 +6,10 @@
 namespace gamemd {
 int OleUninitialize_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-void __stdcall OleUninitialize::0()
+// 0x7c891a
+    void __stdcall OleUninitialize::0()
 {
-  OleUninitialize(); /*0x7c891a*/
+    OleUninitialize();
 }
 }
 } // namespace gamemd

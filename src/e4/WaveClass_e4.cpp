@@ -166,27 +166,24 @@ LABEL_17:
 namespace gamemd {
 int WaveClass::ProcessWaveTick(int * a1, int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall WaveClass::_vt06(int *a1, int *a2, int a3)
 {
-  int v3; // edx
-  int result; // eax
-  int i; // ebx
-
-  AbstractClass::SaveLoad_Prefix(a1, a2, a3); /*0x75f7e2*/
-  v3 = *a2; /*0x75f7ed*/
-  a3 = a1[128]; /*0x75f7f9*/
-  result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v3 + 16))(a2, &a3, 4, 0); /*0x75f7fd*/
-  if ( result >= 0 ) /*0x75f802*/
+    int v3;
+    int result;
+    int i;
+    AbstractClass::SaveLoad_Prefix(a1, a2, a3);
+    v3 = *a2;
+    a3 = *((int*)(a1) + 128);
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v3 + 16))(a2, &a3, 4, 0);
+    if ( result >= 0 )
   {
-    for ( i = 0; i < a3; ++i ) /*0x75f80c*/
+    for ( i = 0; i < a3; ++i )
     {
-      result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*a2 + 16))(a2, a1[125] + 4 * i, 4, 0); /*0x75f81f*/
-      if ( result < 0 ) /*0x75f824*/
-        break; /*0x75f824*/
+    result = (*(int (__stdcall **)(int *, int, int, int))(*a2 + 16))(a2, *((int*)(a1) + 125) + 4 * i, 4, 0);
+    if ( result < 0 )
+    break;
     }
   }
-  return result; /*0x75f82f*/
+    return result;
 }
 }
 } // namespace gamemd

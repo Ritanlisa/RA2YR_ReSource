@@ -6,10 +6,8 @@
 namespace gamemd {
 BOOL sub_53A0E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL sub_53A0E0()
 {
-  return unk_A9FAB4 || unk_A9FAB8 > 0; /*0x53a0f4*/
+    return LightningStorm_Active || LightningStorm_Deferment > 0;
 }
 }
 } // namespace gamemd

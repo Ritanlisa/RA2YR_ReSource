@@ -9,13 +9,11 @@
 namespace gamemd {
 unsigned int Conflict_WorldDominationTour_12::PointerToIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall Conflict_WorldDominationTour_12_::sub_766830(int this, int a2)
 {
-  if ( (unsigned char)this->Conflict_WorldDominationTour_12_field_0xC ) /*0x766830*/
-    return (unsigned int)(a2 - this->Conflict_WorldDominationTour_12_field_0x4) >> 3; /*0x766845*/
-  else
-    return 0; /*0x766837*/
+    if ( (unsigned char)this->Conflict_WorldDominationTour_12_field_0xC )
+    return (unsigned int)(a2 - this->Conflict_WorldDominationTour_12_field_0x4) >> 3;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -251,13 +249,11 @@ int __thiscall Conflict_WorldDominationTour_12_::_vt04(int this, int a2)
 namespace gamemd {
 unsigned int Conflict_WorldDominationTour_12::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall Conflict_WorldDominationTour_12_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->Conflict_WorldDominationTour_12_field_0xC ) /*0x766da0*/
-    return (unsigned int)(a2 - this->Conflict_WorldDominationTour_12_field_0x4) >> 3; /*0x766db5*/
-  else
-    return 0; /*0x766da7*/
+    if ( (unsigned char)this->Conflict_WorldDominationTour_12_field_0xC )
+    return (unsigned int)(a2 - this->Conflict_WorldDominationTour_12_field_0x4) >> 3;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -441,12 +437,10 @@ DynamicVector *__thiscall Conflict_WorldDominationTour_12_::Constructor_2(_DWORD
 namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_12::Constructor_3()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_7670D0(_DWORD *this)
 {
-  ComPtr::Constructor(this); /*0x7670d3*/
-  *this = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x7670d8*/
-  return this; /*0x7670e0*/
+    ComPtr::Constructor(this);
+    *(void**)this = &vt_rc_ptr_WorldDominationTour_GameOption;
+    return this;
 }
 }
 } // namespace gamemd

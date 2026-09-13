@@ -58,28 +58,8 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::CallBlit0(
-        BlitTransLucent75ZReadWrite_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8)
 {
-  return (*((int (__thiscall **)(BlitTransLucent75ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x4939fa*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTransLucent75ZReadWrite_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 } // namespace gamemd
@@ -88,30 +68,8 @@ int __thiscall BlitTransXlatAlpha_ushort::CallBlit0(
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_0(
-        BlitTransLucent75ZReadWrite_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10)
 {
-  return (*((int (__thiscall **)(BlitTransLucent75ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x493a2a*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTransLucent75ZReadWrite_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 } // namespace gamemd
@@ -120,29 +78,8 @@ int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_0(
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_1(
-        BlitTransLucent75ZReadWrite_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9)
 {
-  return (*((int (__thiscall **)(BlitTransLucent75ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x493a5a*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTransLucent75ZReadWrite_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 } // namespace gamemd
@@ -205,28 +142,8 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_2(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_2(
-        BlitTransLucent50ZReadWrite_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8)
 {
-  return (*((int (__thiscall **)(BlitTransLucent50ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x493b2a*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTransLucent50ZReadWrite_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 } // namespace gamemd
@@ -235,30 +152,8 @@ int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_2(
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_3(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_3(
-        BlitTransLucent50ZReadWrite_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10)
 {
-  return (*((int (__thiscall **)(BlitTransLucent50ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x493b5a*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTransLucent50ZReadWrite_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 } // namespace gamemd
@@ -267,29 +162,8 @@ int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_3(
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_4(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_4(
-        BlitTransLucent50ZReadWrite_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9)
 {
-  return (*((int (__thiscall **)(BlitTransLucent50ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x493b8a*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTransLucent50ZReadWrite_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 } // namespace gamemd
@@ -349,28 +223,8 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_5(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_5(
-        BlitTransLucent25ZReadWrite_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8)
 {
-  return (*((int (__thiscall **)(BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x493c5a*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 } // namespace gamemd
@@ -379,30 +233,8 @@ int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_5(
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_6(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_6(
-        BlitTransLucent25ZReadWrite_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10)
 {
-  return (*((int (__thiscall **)(BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x493c8a*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 } // namespace gamemd
@@ -411,29 +243,8 @@ int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_6(
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_7(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::CallBlit0_7(
-        BlitTransLucent25ZReadWrite_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9)
 {
-  return (*((int (__thiscall **)(BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x493cba*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 } // namespace gamemd

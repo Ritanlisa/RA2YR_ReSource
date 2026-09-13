@@ -449,31 +449,28 @@ char __thiscall SkirmishSetup::PlayButtonClickAnim(HWND this)
 namespace gamemd {
 WPARAM SkirmishSetup_Setup_5E70D0(HWND hDlg, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-WPARAM __fastcall SkirmishSetup_Setup_5E70D0(HWND hDlg, int a2)
 {
-  WPARAM v4; // ebp
-  signed int v5; // esi
-  LRESULT v7; // [esp+8h] [ebp-4h]
-
-  if ( !a2 ) /*0x5e70dc*/
-    return -1; /*0x5e70de*/
-  v4 = 0; /*0x5e70ee*/
-  v5 = 0; /*0x5e7100*/
-  v7 = SendDlgItemMessageA(hDlg, 1363, 0x18Bu, 0, 0); /*0x5e7104*/
-  if ( v7 > 0 ) /*0x5e7108*/
+    WPARAM v4;
+    signed int v5;
+    LRESULT v7;
+    if ( !a2 )
+    return -1;
+    v4 = 0;
+    v5 = 0;
+    v7 = SendDlgItemMessageA(hDlg, 1363, 0x18Bu, 0, 0);
+    if ( v7 > 0 )
   {
-    do /*0x5e7129*/
+    do
     {
-      if ( SendDlgItemMessageA(hDlg, 1363, 0x199u, v5, 0) == a2 ) /*0x5e711e*/
-        v4 = v5; /*0x5e7120*/
-      ++v5; /*0x5e7126*/
+    if ( SendDlgItemMessageA(hDlg, 1363, 0x199u, v5, 0) == a2 )
+    v4 = v5;
+    ++v5;
     }
-    while ( v5 < v7 ); /*0x5e7129*/
+    while ( v5 < v7 );
   }
-  SendDlgItemMessageA(hDlg, 1363, 0x186u, v4, 0); /*0x5e7139*/
-  SendDlgItemMessageA(hDlg, 1363, 0x197u, v4, 0); /*0x5e7149*/
-  return v4; /*0x5e70e1*/
+    SendDlgItemMessageA(hDlg, 1363, 0x186u, v4, 0);
+    SendDlgItemMessageA(hDlg, 1363, 0x197u, v4, 0);
+    return v4;
 }
 }
 } // namespace gamemd

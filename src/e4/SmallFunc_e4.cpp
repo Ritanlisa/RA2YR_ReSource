@@ -35,30 +35,27 @@ void __cdecl sub_40D1B0()
 namespace gamemd {
 int sub_59B6D0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_59B6D0()
 {
-  int result; // eax
-  int *i; // ebx
-  signed int j; // esi
-  _DWORD *NeighbourContent; // edi
-
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x59b6d6*/
-  result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x59b6e0*/
-  for ( i = (int *)result; result; i = (int *)result ) /*0x59b6e9*/
+    int result;
+    int *i;
+    signed int j;
+    int *NeighbourContent;
+    LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
+    result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8);
+    for ( i = (int *)result; result; i = (int *)result )
   {
-    if ( CellClass::IsTerrainType(i) ) /*0x59b6ef*/
+    if ( CellClass::IsTerrainType(i) )
     {
-      for ( j = 0; j < 8; j += 2 ) /*0x59b6f8*/
+    for ( j = 0; j < 8; j += 2 )
       {
-        NeighbourContent = Cell::GetNeighbourContent(i, j); /*0x59b702*/
-        if ( Cell::IsEmpty(NeighbourContent) ) /*0x59b706*/
-          NeighbourContent[14] = unk_AA0E18; /*0x59b714*/
+    NeighbourContent = Cell::GetNeighbourContent(i, j);
+    if ( Cell::IsEmpty(NeighbourContent) )
+    NeighbourContent[14] = DataGlobal_AA0E18;
       }
     }
-    result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x59b724*/
+    result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8);
   }
-  return result; /*0x59b731*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -67,25 +64,21 @@ int sub_59B6D0()
 namespace gamemd {
 int sub_59C530()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_59C530()
 {
-  int result; // eax
-  int v1; // ecx
-
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x59c536*/
-  for ( result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x59c549*/
-        result;
-        result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) )
-  {
-    v1 = *(_DWORD *)(result + 56); /*0x59c54b*/
-    if ( v1 >= dword_ABAD28 && v1 < dword_ABAD28 + 42 ) /*0x59c55d*/
+    int result;
+    int v1;
+    LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
+    for ( result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8);
+    re sult;
+    result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) ) {
+    v1 = *(int *)(result + 56);
+    if ( v1 >= DataGlobal_ABAD28 && v1 < DataGlobal_ABAD28 + 42 )
     {
-      *(_DWORD *)(result + 56) = 0; /*0x59c55f*/
-      *(_BYTE *)(result + 282) = 0; /*0x59c562*/
+    *(int *)(result + 56) = 0;
+    *(char *)(result + 282) = 0;
     }
   }
-  return result; /*0x59c576*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -94,22 +87,19 @@ int sub_59C530()
 namespace gamemd {
 char sub_5A1F60()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_5A1F60()
 {
-  char v0; // bl
-  int i; // eax
-
-  v0 = 1; /*0x5a1f68*/
-  Mouse::SetBounds((int)&MEMORY[0x87F7E8], 0); /*0x5a1f6a*/
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x5a1f74*/
-  for ( i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); i; i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) ) /*0x5a1f85*/
+    char v0;
+    int i;
+    v0 = 1;
+    Mouse::SetBounds((int)&DataGlobal_87F7E8, 0);
+    LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
+    for ( i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); i; i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) )
   {
-    if ( !v0 ) /*0x5a1f89*/
-      break; /*0x5a1f89*/
-    v0 = Cliff::ProcessTransitions(i, -1); /*0x5a1f9d*/
+    if ( !v0 )
+    break;
+    v0 = Cliff::ProcessTransitions(i, -1);
   }
-  return v0; /*0x5a1faa*/
+    return v0;
 }
 }
 } // namespace gamemd
@@ -143,15 +133,12 @@ int __thiscall sub_5AFEF0(int this)
 namespace gamemd {
 int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall SmallFunc_67B500(unsigned __int8 ***a1, INIClass *edx0, unsigned __int8 *a2, int a4)
 {
-  INIClass Destination[2]; // [esp+0h] [ebp-80h] BYREF
-
-  if ( INIClass::GetString(a1, edx0, a2, (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760], Destination, 128) ) /*0x67b51e*/
-    return WarheadTypeClass::FindOrCreate(Destination[0].__pad_0); /*0x67b52b*/
-  else
-    return a4; /*0x67b539*/
+    INIClass Destination[2];
+    if ( INIClass::GetString(a1, edx0, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
+    return WarheadTypeClass::FindOrCreate(Destination[0].__pad_0);
+    else
+    return a4;
 }
 }
 } // namespace gamemd
@@ -160,15 +147,12 @@ int __fastcall SmallFunc_67B500(unsigned __int8 ***a1, INIClass *edx0, unsigned 
 namespace gamemd {
 BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BuildingTypeClass *__fastcall SmallFunc_67BCE0(unsigned __int8 ***a0, INIClass *aP1, unsigned __int8 *a2, int a4)
 {
-  INIClass Destination[2]; // [esp+0h] [ebp-80h] BYREF
-
-  if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&stru_87C374.__pad_579C[33876], Destination, 128) ) /*0x67bcfe*/
-    return BuildingTypeClass::FindOrCreate(Destination[0].__pad_0); /*0x67bd0b*/
-  else
-    return (BuildingTypeClass *)a4; /*0x67bd19*/
+    INIClass Destination[2];
+    if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&DataGlobal_87C374.__pad_579C[33876], Destination, 128) )
+    return BuildingTypeClass::FindOrCreate(Destination[0].__pad_0);
+    else
+    return (BuildingTypeClass *)a4;
 }
 }
 } // namespace gamemd
@@ -177,15 +161,12 @@ BuildingTypeClass *__fastcall SmallFunc_67BCE0(unsigned __int8 ***a0, INIClass *
 namespace gamemd {
 TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsigned char * a2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TerrainTypeClass *__fastcall SmallFunc_67BD80(unsigned __int8 ***a1, INIClass *edx0, unsigned __int8 *a2, int a4)
 {
-  INIClass Destination[2]; // [esp+0h] [ebp-80h] BYREF
-
-  if ( INIClass::GetString(a1, edx0, a2, (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760], Destination, 128) ) /*0x67bd9e*/
-    return TerrainTypeClass::FindOrCreate(Destination[0].__pad_0); /*0x67bdab*/
-  else
-    return (TerrainTypeClass *)a4; /*0x67bdb9*/
+    INIClass Destination[2];
+    if ( INIClass::GetString(a1, edx0, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
+    return TerrainTypeClass::FindOrCreate(Destination[0].__pad_0);
+    else
+    return (TerrainTypeClass *)a4;
 }
 }
 } // namespace gamemd
@@ -194,20 +175,18 @@ TerrainTypeClass *__fastcall SmallFunc_67BD80(unsigned __int8 ***a1, INIClass *e
 namespace gamemd {
 char sub_6E2660(int a1, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall sub_6E2660(int a1, int a2, int a3, int a4)
 {
-  MEMORY[0x88098C] = 0; /*0x6e2669*/
-  MEMORY[0x880990] = 0; /*0x6e266f*/
-  MEMORY[0x880994] = -1; /*0x6e2675*/
-  Mouse::SetBounds((int)&MEMORY[0x87F7E8], 0); /*0x6e267f*/
-  BuildingClass::TogglePower2(&MEMORY[0x87F7E8], 0); /*0x6e268a*/
-  BuildingClass::TogglePower(&MEMORY[0x87F7E8], 0); /*0x6e2695*/
-  MEMORY[0x88099A] = 0; /*0x6e269a*/
-  MEMORY[0x88099B] = 0; /*0x6e26a0*/
-  MEMORY[0x88099C] = 0; /*0x6e26a6*/
-  Scenario::ClearScreen(); /*0x6e26ac*/
-  return 1; /*0x6e26b3*/
+    g_RadarBlipPool = 0;
+    g_RadarBlipManager = 0;
+    DataGlobal_880994 = -1;
+    Mouse::SetBounds((int)&DataGlobal_87F7E8, 0);
+    BuildingClass::TogglePower2(&DataGlobal_87F7E8, 0);
+    BuildingClass::TogglePower(&DataGlobal_87F7E8, 0);
+    DataGlobal_88099A = 0;
+    DataGlobal_88099B = 0;
+    DataGlobal_88099C = 0;
+    Scenario::ClearScreen();
+    return 1;
 }
 }
 } // namespace gamemd
@@ -216,35 +195,32 @@ char __stdcall sub_6E2660(int a1, int a2, int a3, int a4)
 namespace gamemd {
 char SmallFunc_6E3120(int _8, _UNKNOWN ** a1, unsigned int * a2, IUnknown * aP3, int _18, unsigned int * a5, int a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char SmallFunc_6E3120(int _8, _UNKNOWN **a1, _DWORD *a2, IUnknown *aP3, int _18, _DWORD *a5, int a7)
 {
-  int v7; // ecx
-  _UNKNOWN **v8; // ebx
-  _DWORD *v9; // edi
-  void *v10; // esi
-  int Field11; // eax
-
-  v10 = *(void **)(v7 + 144); /*0x6e3121*/
-  if ( !a2 ) /*0x6e312d*/
-    return 0; /*0x6e312d*/
-  if ( v10 == (void *)8997 ) /*0x6e3135*/
+    int v7;
+    _UNKNOWN **v8;
+    int *v9;
+    void *v10;
+    int Field11;
+    v10 = *(void **)(v7 + 144);
+    if ( !a2 )
+    return 0;
+    if ( v10 == (void *)8997 )
   {
-    Field11 = Property::GetField11(a2); /*0x6e3137*/
+    Field11 = Property::GetField11(a2);
   }
-  else
-  {
-    if ( v10 == (void *)-1 ) /*0x6e3141*/
-      return 0; /*0x6e3163*/
-    if ( BuildingType::IsSpecialType(v10) ) /*0x6e3145*/
-      Field11 = BuildingType::FindOwnerHouse(v10); /*0x6e3150*/
     else
-      Field11 = HouseClass::FindOwner(v10); /*0x6e3157*/
+  {
+    if ( v10 == (void *)-1 )
+    return 0;
+    if ( BuildingType::IsSpecialType(v10) )
+    Field11 = BuildingType::FindOwnerHouse(v10);
+    else
+    Field11 = HouseClass::FindOwner(v10);
   }
-  if ( !Field11 ) /*0x6e315e*/
-    return 0; /*0x6e315e*/
-  HouseClass::RespawnStartingBuildings(Field11, v8, v9, (int)v10); /*0x6e3168*/
-  return 1; /*0x6e3162*/
+    if ( !Field11 )
+    return 0;
+    HouseClass::RespawnStartingBuildings(Field11, v8, v9, (int)v10);
+    return 1;
 }
 }
 } // namespace gamemd

@@ -7,10 +7,8 @@
 namespace gamemd {
 double BuildingLight::CalcIntensity(double a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double __cdecl BuildingLight_CalcIntensity(double a1)
 {
-  return *((float *)&MEMORY[0x859094] - Math::RoundToInt((a1 + 1.0) * -2048.0)); /*0x4cada1*/
+    return *((float *)&DataGlobal_859094 - Math::RoundToInt((a1 + 1.0) * -2048.0));
 }
 }
 } // namespace gamemd

@@ -105,16 +105,13 @@ BOOL __stdcall Rect::Union(IUnknown *aP0, const RECT *lprcSrc1, const RECT *lprc
 // 0x72A9E0
 BOOL Rect::Inflate(LPRECT lprc, int dx, int dy)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __stdcall Rect::Inflate(LPRECT lprc, int dx, int dy)
 {
-  int v3; // edx
-  _DWORD *v4; // ecx
-
-  *v4 += v3; /*0x72a9e4*/
-  v4[1] += v3; /*0x72a9eb*/
-  v4[2] -= 2 * v3; /*0x72a9f6*/
-  v4[3] -= 2 * v3; /*0x72a9fe*/
-  return 2 * v3; /*0x72aa01*/
+    int v3;
+    int *v4;
+    *v4 += v3;
+    v4[1] += v3;
+    v4[2] -= 2 * v3;
+    v4[3] -= 2 * v3;
+    return 2 *v3;
 }
 }

@@ -32,21 +32,18 @@ char __thiscall sub_4FCDC0(int this)
 namespace gamemd {
 int TActionClass::executeAttackAction(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_50D290(void *this, int a2)
 {
-  int i; // edi
-  _DWORD *v4; // esi
-  int result; // eax
-
-  for ( i = *(_DWORD *)(a2 + 120) - 1; i >= 0; v4[179] = this ) /*0x50d29d*/
+    int i;
+    int *v4;
+    int result;
+    for ( i = *(int *)(a2 + 120) - 1; i >= 0; v4[179] = this )
   {
-    v4 = *(_DWORD **)(*(_DWORD *)(a2 + 108) + 4 * i); /*0x50d2a6*/
-    result = (*(int (__thiscall **)(_DWORD *, void *, _DWORD))(*v4 + 980))(v4, this, 0); /*0x50d2ad*/
-    --i; /*0x50d2b3*/
-    v4[184] = a2; /*0x50d2b4*/
+    v4 = *(int **)(*(int *)(a2 + 108) + 4 * i);
+    result = (*(int (__thiscall **)(int *, void *, int))(*v4 + 980))(v4, this, 0);
+    --i;
+    v4[184] = a2;
   }
-  return result; /*0x50d2c3*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1615,15 +1612,12 @@ int __stdcall TActionClass::SaveLoad_Prefix(AbstractClass *aP0, int aP1)
 namespace gamemd {
 int TActionClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TActionClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6e3e3f*/
-  if ( result >= 0 ) /*0x6e3e46*/
-    return 0; /*0x6e3e48*/
-  return result; /*0x6e3e4a*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd
@@ -1967,10 +1961,8 @@ char __thiscall TActionClass::executeEMPulseAction(int this, int a2, int a3, int
 namespace gamemd {
 int TActionClass::Stub()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TActionClass::_vt16(_DWORD *this)
 {
-  return *(this + 9); /*0x6e4653*/
+    return this->idxArray;
 }
 }
 } // namespace gamemd

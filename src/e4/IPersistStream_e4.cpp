@@ -24,12 +24,9 @@ namespace ra2 {
 namespace game {
 int IPersistStream::StubReturnFalse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IPersistStream::StubReturnFalse(#374 *this)
 {
-  int result; // eax
-
-  return result; /*0x5b3a50*/
+    int result;
+    return result;
 }
 }
 } // namespace game
@@ -40,11 +37,9 @@ namespace ra2 {
 namespace game {
 int IPersistStream::GetSizeMax(int a0, RadioClass * aP1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall IPersistStream::GetSizeMax(int a0, RadioClass *aP1, int a3)
 {
-  RadioClass::SaveState((int *)a0, aP1, a3); /*0x70c25f*/
-  return 0; /*0x70c266*/
+    RadioClass::SaveState((int *)a0, aP1, a3);
+    return 0;
 }
 }
 } // namespace game

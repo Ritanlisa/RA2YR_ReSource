@@ -327,19 +327,12 @@ int __thiscall Scenario::ReadTeams(CCINIClass *this)
 namespace gamemd {
 int Scenario::FindBuildingTypeByName(unsigned char * a1, unsigned char * a2, CCINIClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Scenario::FindBuildingTypeByName(
-        unsigned __int8 ***this,
-        unsigned __int8 *a1,
-        unsigned __int8 *a2,
-        CCINIClass *aP3)
 {
-  INIClass Destination[2]; // [esp+0h] [ebp-80h] BYREF
-
-  if ( INIClass::GetString(this, (INIClass *)a1, a2, (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760], Destination, 128) ) /*0x475912*/
-    return StringList::Find(&g_BuildingTypeClass_Count, Destination[0].__pad_0); /*0x475925*/
-  else
-    return (int)aP3->__pad_0; /*0x475933*/
+    INIClass Destination[2];
+    if ( INIClass::GetString(this, (INIClass *)a1, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
+    return StringList::Find(&g_BuildingTypeClass_Count, Destination[0].__pad_0);
+    else
+    return (int)aP3->__pad_0;
 }
 }
 } // namespace gamemd
@@ -950,13 +943,11 @@ char __thiscall Scenario::LoadOrReloadOptions(_DWORD *this, IUnknown *aP1)
 namespace gamemd {
 void * Scenario::ResetDisplayArrays()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall sub_5C9700(void *this)
 {
-  MEMORY[0xABF9F4] = 0; /*0x5c970f*/
-  memset(MEMORY[0xABF958], 0, sizeof(MEMORY[0xABF958])); /*0x5c9714*/
-  MEMORY[0xABF9F8] = 0; /*0x5c9716*/
-  return this; /*0x5c971d*/
+    DataGlobal_ABF9F4 = 0;
+    memset(DataGlobal_ABF958, 0, sizeof(DataGlobal_ABF958));
+    DataGlobal_ABF9F8 = 0;
+    return this;
 }
 }
 } // namespace gamemd
@@ -1005,11 +996,9 @@ void __thiscall Scenario::SetByte96(ProgressScreenClass *this)
 namespace gamemd {
 int Scenario::SetDword32(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Scenario::SetDword32(ProgressScreenClass *this, int a2)
 {
-  this->Scenario_field_0x80 = a2; /*0x642b14*/
-  return a2; /*0x642b1a*/
+    this->Scenario_field_0x80 = a2;
+    return a2;
 }
 }
 } // namespace gamemd
@@ -1018,11 +1007,9 @@ int __thiscall Scenario::SetDword32(ProgressScreenClass *this, int a2)
 namespace gamemd {
 int Scenario::SetDword30(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Scenario::SetDword30(ProgressScreenClass *this, int a2)
 {
-  this->Scenario_field_0x78 = a2; /*0x642df4*/
-  return a2; /*0x642df7*/
+    this->Scenario_field_0x78 = a2;
+    return a2;
 }
 }
 } // namespace gamemd

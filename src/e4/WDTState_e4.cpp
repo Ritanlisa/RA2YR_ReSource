@@ -31,13 +31,11 @@ int __thiscall WDTState_4_::_vt03(int this)
 namespace gamemd {
 unsigned int WDTState_4::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall WDTState_4_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->WDTState_4_field_0xC ) /*0x76b740*/
-    return (unsigned int)(a2 - this->WDTState_4_field_0x4) >> 3; /*0x76b755*/
-  else
-    return 0; /*0x76b747*/
+    if ( (unsigned char)this->WDTState_4_field_0xC )
+    return (unsigned int)(a2 - this->WDTState_4_field_0x4) >> 3;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -196,12 +194,10 @@ DynamicVector *__thiscall WDTState_4_::QueryInterface(_DWORD *this, char a2)
 namespace gamemd {
 unsigned int * WDTState_4::Constructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_76BC60(_DWORD *this)
 {
-  ComPtr::Constructor(this); /*0x76bc63*/
-  *this = &vt_rc_ptr_WDTTerritory; /*0x76bc68*/
-  return this; /*0x76bc70*/
+    ComPtr::Constructor(this);
+    *(void**)this = &vt_rc_ptr_WDTTerritory;
+    return this;
 }
 }
 } // namespace gamemd

@@ -30,13 +30,11 @@ void __thiscall BlowPipe_23_::sub_63DC80(int this)
 namespace gamemd {
 unsigned int BlowPipe_23::GetCount(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall BlowPipe_23_::sub_63DCB0(int this, int a2)
 {
-  if ( (unsigned char)this->BlowPipe_23_field_0xC ) /*0x63dcb0*/
-    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2; /*0x63dcc5*/
-  else
-    return 0; /*0x63dcb7*/
+    if ( (unsigned char)this->BlowPipe_23_field_0xC )
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -79,13 +77,11 @@ void __thiscall BlowPipe_23_::sub_63DCE0(int this)
 namespace gamemd {
 unsigned int BlowPipe_23::GetCount_0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall BlowPipe_23_::sub_63DD10(int this, int a2)
 {
-  if ( (unsigned char)this->BlowPipe_23_field_0xC ) /*0x63dd10*/
-    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2; /*0x63dd25*/
-  else
-    return 0; /*0x63dd17*/
+    if ( (unsigned char)this->BlowPipe_23_field_0xC )
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -192,13 +188,11 @@ int __thiscall BlowPipe_23_::sub_63E430(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int BlowPipe_23::GetCount_1(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall BlowPipe_23_::sub_63E470(int this, int a2)
 {
-  if ( (unsigned char)this->BlowPipe_23_field_0xC ) /*0x63e470*/
-    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2; /*0x63e485*/
-  else
-    return 0; /*0x63e477*/
+    if ( (unsigned char)this->BlowPipe_23_field_0xC )
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -338,13 +332,11 @@ int __thiscall BlowPipe_23_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int BlowPipe_23::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall BlowPipe_23_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->BlowPipe_23_field_0xC ) /*0x63e7b0*/
-    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2; /*0x63e7c5*/
-  else
-    return 0; /*0x63e7b7*/
+    if ( (unsigned char)this->BlowPipe_23_field_0xC )
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -627,13 +619,11 @@ void __thiscall BlowPipe_31_::_vt03(int this)
 namespace gamemd {
 unsigned int BlowPipe_31::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall BlowPipe_31_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->BlowPipe_31_field_0xC ) /*0x63dc50*/
-    return (unsigned int)(a2 - this->BlowPipe_31_field_0x4) >> 2; /*0x63dc65*/
-  else
-    return 0; /*0x63dc57*/
+    if ( (unsigned char)this->BlowPipe_31_field_0xC )
+    return (unsigned int)(a2 - this->BlowPipe_31_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

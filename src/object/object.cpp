@@ -423,19 +423,17 @@ void ObjectClass::Reveal()
 // 0x5f4d10
 void ObjectClass::MarkForRedraw()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5f4d10
-int __thiscall ObjectClass::MarkForRedraw(#374 *this)
+    int __thiscall ObjectClass::MarkForRedraw(#374 *(void**)this)
 {
-  int result; // eax
-
-  LOBYTE(result) = *((_BYTE *)this + 128);
-  if ( !(_BYTE)result )
+    int result;
+    LOBYTE(result) = this->needsRedraw;
+    if ( !(char)result )
   {
-    *((_BYTE *)this + 128) = 1;
-    return MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0);
+    this->needsRedraw = 1;
+    return MapClass::MarkForRedraw(&DataGlobal_87F7E8, 0);
   }
-  return result;
+    return result;
 }
     // TODO stub - translate quarantined IDA block above
 

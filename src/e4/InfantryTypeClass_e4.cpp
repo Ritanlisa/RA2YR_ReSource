@@ -158,16 +158,13 @@ _DWORD *__thiscall InfantryTypeClass::Constructor_523980(_DWORD *this, ObjectTyp
 // 0x523B10
 InfantryClass * InfantryTypeClass::ConstructInfantry(AbstractClass * ppv)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-InfantryClass *__thiscall InfantryTypeClass::ConstructInfantry(AbstractClass *this, AbstractClass *ppv)
 {
-  int v3; // eax
-
-  v3 = __2_YAPAXI_Z(0x6F0u); /*0x523b18*/
-  if ( v3 ) /*0x523b22*/
-    return (InfantryClass *)InfantryClass::Construct(v3, this, ppv); /*0x523b2c*/
-  else
-    return 0; /*0x523b35*/
+    int v3;
+    v3 = __2_YAPAXI_Z(0x6F0u);
+    if ( v3 )
+    return (InfantryClass *)InfantryClass::Construct(v3, this, ppv);
+    else
+    return 0;
 }
 }
 
@@ -221,17 +218,15 @@ char __thiscall InfantryTypeClass::CreateInfantry(AbstractClass *this, __int16 *
 // 0x523C20
 int * InfantryTypeClass::GetDimensions(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__stdcall InfantryTypeClass::_vt36(int a1)
 {
-  if ( (MEMORY[0xA8F2C8] & 1) == 0 ) /*0x523c2b*/
+    if ( (DataGlobal_A8F2C8 & 1) == 0 )
   {
-    MEMORY[0xA8F2C8] |= 1u; /*0x523c46*/
-    MEMORY[0xA8F28C] = 0; /*0x523c4c*/
-    MEMORY[0xA8F290] = 2147450879; /*0x523c64*/
-    atexit(nullsub_147); /*0x523c6a*/
+    DataGlobal_A8F2C8 |= 1u;
+    DataGlobal_A8F28C = 0;
+    DataGlobal_A8F290 = 2147450879;
+    atexit(nullsub_147);
   }
-  return &MEMORY[0xA8F28C]; /*0x523c78*/
+    return &DataGlobal_A8F28C;
 }
 }
 
@@ -586,16 +581,13 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
 // 0x524760
 unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall InfantryTypeClass::_vt31(_DWORD *a1)
 {
-  int v1; // esi
-
-  v1 = 2 * MEMORY[0xA8F2CC]; /*0x52476c*/
-  *a1 = 85; /*0x524777*/
-  a1[1] = 85; /*0x524779*/
-  a1[2] = v1; /*0x52477c*/
-  return a1; /*0x52477f*/
+    int v1;
+    v1 = 2 * DataGlobal_A8F2CC;
+    *a1 = 85;
+    *((int*)(a1) + 1) = 85;
+    *((int*)(a1) + 2) = v1;
+    return a1;
 }
 }
 
@@ -612,26 +604,23 @@ int InfantryTypeClass::_vt45()
 // 0x5247D0
 unsigned int * InfantryTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall InfantryTypeClass::_vt27(_DWORD *a1, int *a2)
 {
-  int GroundHeight; // eax
-  int v3; // ecx
-  int v5; // [esp+0h] [ebp-Ch] BYREF
-  int v6; // [esp+4h] [ebp-8h]
-  int v7; // [esp+8h] [ebp-4h]
-
-  v5 = *a2; /*0x5247d9*/
-  v6 = a2[1]; /*0x5247ea*/
-  v7 = a2[2]; /*0x5247f1*/
-  GroundHeight = Cell::GetGroundHeight(&v5); /*0x5247f5*/
-  v3 = v7; /*0x5247fa*/
-  if ( v7 < GroundHeight ) /*0x524800*/
-    v3 = Cell::GetGroundHeight(&v5); /*0x524811*/
-  *a1 = v5; /*0x52481e*/
-  a1[1] = v6; /*0x524824*/
-  a1[2] = v3; /*0x524828*/
-  return a1; /*0x52482b*/
+    int GroundHeight;
+    int v3;
+    int v5;
+    int v6;
+    int v7;
+    v5 = *a2;
+    v6 = *((int*)(a2) + 1);
+    v7 = *((int*)(a2) + 2);
+    GroundHeight = Cell::GetGroundHeight(&v5);
+    v3 = v7;
+    if ( v7 < GroundHeight )
+    v3 = Cell::GetGroundHeight(&v5);
+    *a1 = v5;
+    *((int*)(a1) + 1) = v6;
+    *((int*)(a1) + 2) = v3;
+    return a1;
 }
 }
 
@@ -820,10 +809,8 @@ int __userpurge InfantryTypeClass::SaveLoad_Prefix@<eax>(int a1@<ebx>, _DWORD *a
 // 0x524D60
 int InfantryTypeClass::GetAuxField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall InfantryTypeClass::_vt16(_DWORD *this)
 {
-  return *(this + 894); /*0x524d66*/
+    return this->ArrayIndex;
 }
 }
 

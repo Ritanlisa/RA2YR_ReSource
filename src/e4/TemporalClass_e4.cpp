@@ -89,10 +89,8 @@ namespace ra2 {
 namespace game {
 int TemporalClass::SetTarget(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TemporalClass::SetTarget(void *this, AbstractClass *aP1)
 {
-  return AbstractClass::ProcessPower((#378 *)this); /*0x71a65a*/
+    return AbstractClass::ProcessPower((#378 *)this);
 }
 }
 } // namespace game
@@ -147,10 +145,8 @@ namespace ra2 {
 namespace game {
 int TemporalClass::SaveTemporal(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TemporalClass::SaveTemporal(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x71a714*/
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
 }
 }
 } // namespace game
@@ -405,41 +401,38 @@ namespace ra2 {
 namespace game {
 char TemporalClass::CanWarpTarget(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall TemporalClass::CanWarpTarget(_DWORD *a1)
 {
-  int Member; // eax
-  _DWORD *v3; // edi
-  _DWORD *v4; // eax
-  _DWORD v5[3]; // [esp+8h] [ebp-Ch] BYREF
-
-  if ( !a1 ) /*0x71ae5b*/
-    return 0; /*0x71ae5e*/
-  if ( !*(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*a1 + 132))(a1) + 3386) ) /*0x71ae71*/
-    return 0; /*0x71ae7c*/
-  if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*a1 + 352))(a1) ) /*0x71ae89*/
-    return 0; /*0x71ae94*/
-  if ( (*(int (__thiscall **)(_DWORD *))(*a1 + 44))(a1) == 1 ) /*0x71aea7*/
+    int Member;
+    int *v3;
+    int *v4;
+    int v5[3];
+    if ( !a1 )
+    return 0;
+    if ( !*(char *)((*(int (__thiscall **)(int *))(*a1 + 132))(a1) + 3386) )
+    return 0;
+    if ( (*(unsigned char (__thiscall **)(int *))(*a1 + 352))(a1) )
+    return 0;
+    if ( (*(int (__thiscall **)(int *))(*a1 + 44))(a1) == 1 )
   {
-    Member = Team::GetMember(a1, 0); /*0x71aead*/
-    v3 = (_DWORD *)Member; /*0x71aeb2*/
-    if ( Member ) /*0x71aeb6*/
+    Member = Team::GetMember(a1, 0);
+    v3 = (int *)Member;
+    if ( Member )
     {
-      if ( (*(int (__thiscall **)(int))(*(_DWORD *)Member + 44))(Member) == 6 ) /*0x71aec2*/
+    if ( (*(int (__thiscall **)(int))(*(int *)(Member) + 44))(Member) == 6 )
       {
-        if ( *(_BYTE *)(v3[328] + 5821) ) /*0x71aeca*/
+    if ( *(char *)(v3[328] + 5821) )
         {
-          v5[0] = a1[39]; /*0x71aedc*/
-          v5[1] = a1[40]; /*0x71aeed*/
-          v5[2] = a1[41]; /*0x71aef4*/
-          v4 = Coord::To_Cell(&MEMORY[0x87F7E8], v5); /*0x71aef8*/
-          if ( Cell::IsBridge(v4) == v3 ) /*0x71af06*/
-            return 0; /*0x71af09*/
+    v5[0] = *((int*)(a1) + 39);
+    v5[1] = *((int*)(a1) + 40);
+    v5[2] = *((int*)(a1) + 41);
+    v4 = Coord::To_Cell(&DataGlobal_87F7E8, v5);
+    if ( Cell::IsBridge(v4) == v3 )
+    return 0;
         }
       }
     }
   }
-  return 1; /*0x71ae5d*/
+    return 1;
 }
 }
 } // namespace game

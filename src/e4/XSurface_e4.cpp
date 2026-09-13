@@ -5,10 +5,8 @@
 // 0x410600
 int XSurface::vt_entry_40(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall INoticeSource_Stub1(int a1)
 {
-  return AbstractClass::COMStub_Release(a1 - 4);
+    return AbstractClass::COMStub_Release(a1 - 4);
 }
 }
 
@@ -422,34 +420,31 @@ char __thiscall XSurface_WalkLine(_DWORD *this, int a2, _DWORD *a3, _DWORD *a4, 
 // 0x7BADC0
 char XSurface::DrawRectEx(int a2, unsigned int * a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall XSurface_DrawRectEx(void *this, int a2, _DWORD *a3, int a4)
 {
-  int v5; // edx
-  int v6; // eax
-  int v7; // edi
-  _DWORD v9[2]; // [esp+20h] [ebp-20h] BYREF
-  _DWORD v10[2]; // [esp+28h] [ebp-18h] BYREF
-  _DWORD v11[2]; // [esp+30h] [ebp-10h] BYREF
-  int v12; // [esp+38h] [ebp-8h] BYREF
-  int v13; // [esp+3Ch] [ebp-4h]
-
-  v5 = a3[1]; /*0x7badcd*/
-  v6 = a3[3]; /*0x7badd4*/
-  v7 = a3[2] + *a3 - 1; /*0x7baddb*/
-  v9[0] = *a3; /*0x7baddf*/
-  v10[0] = v7; /*0x7bade7*/
-  v11[0] = v7; /*0x7badeb*/
-  v13 = v6 + v5 - 1; /*0x7badf3*/
-  v11[1] = v13; /*0x7badf7*/
-  v12 = v9[0]; /*0x7badfb*/
-  v9[1] = v5; /*0x7bae08*/
-  v10[1] = v5; /*0x7bae0c*/
-  (*(void (__thiscall **)(void *, int, _DWORD *, _DWORD *, int))(*(_DWORD *)this + 44))(this, a2, v9, v10, a4); /*0x7bae17*/
-  (*(void (__thiscall **)(void *, int, _DWORD *, int *, int))(*(_DWORD *)this + 44))(this, a2, v9, &v12, a4); /*0x7bae2a*/
-  (*(void (__thiscall **)(void *, int, _DWORD *, _DWORD *, int))(*(_DWORD *)this + 44))(this, a2, v10, v11, a4); /*0x7bae3d*/
-  (*(void (__thiscall **)(void *, int, int *, _DWORD *, int))(*(_DWORD *)this + 44))(this, a2, &v12, v11, a4); /*0x7bae50*/
-  return 1; /*0x7bae53*/
+    int v5;
+    int v6;
+    int v7;
+    int v9[2];
+    int v10[2];
+    int v11[2];
+    int v12;
+    int v13;
+    v5 = *((int*)(a3) + 1);
+    v6 = *((int*)(a3) + 3);
+    v7 = *((int*)(a3) + 2) + *a3 - 1;
+    v9[0] = *a3;
+    v10[0] = v7;
+    v11[0] = v7;
+    v13 = v6 + v5 - 1;
+    v11[1] = v13;
+    v12 = v9[0];
+    v9[1] = v5;
+    v10[1] = v5;
+    this->DrawLineEx(a2, v9, v10, a4);
+    this->DrawLineEx(a2, v9, &v12, a4);
+    this->DrawLineEx(a2, v10, v11, a4);
+    this->DrawLineEx(a2, &v12, v11, a4);
+    return 1;
 }
 }
 

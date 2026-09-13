@@ -32,13 +32,11 @@ void __thiscall TypeList::_vt03(int this)
 // 0x477870
 unsigned int TypeList::GetCapacity(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall TypeList::_vt05(int this, int a2)
 {
-  if ( this->IsInitialized ) /*0x477870*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x477885*/
-  else
-    return 0; /*0x477877*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 }
 
@@ -132,25 +130,23 @@ _DWORD *__thiscall TypeList_Copy(_DWORD *this, _DWORD *a2)
 // 0x478790
 unsigned int * TypeList::TechnoTypeConstructor(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TypeList_TechnoType_Constructor(_DWORD *this, int a2, int a3)
 {
-  *(this + 1) = 0; /*0x47879b*/
-  *(this + 2) = a2; /*0x47879e*/
-  this->IsInitialized = 1; /*0x4787a1*/
-  this->IsAllocated = 0; /*0x4787a5*/
-  *this = &vt_VectorClass_TechnoTypeClass; /*0x4787a8*/
-  if ( a2 ) /*0x4787ae*/
+    this->Items = 0;
+    this->Capacity = a2;
+    this->IsInitialized = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_TechnoTypeClass;
+    if ( a2 )
   {
-    if ( a3 ) /*0x4787b6*/
+    if ( a3 )
     {
-      *(this + 1) = a3; /*0x4787b8*/
-      return this; /*0x4787be*/
+    this->Items = a3;
+    return this;
     }
-    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x4787cd*/
-    this->IsAllocated = 1; /*0x4787d0*/
+    this->Items = __2_YAPAXI_Z(4 * a2);
+    this->IsAllocated = 1;
   }
-  return this; /*0x4787bd*/
+    return this;
 }
 }
 
@@ -821,13 +817,11 @@ void __thiscall TypeList_cptr_ParticleSystemTypeClass::_vt03(int this)
 namespace gamemd {
 unsigned int TypeList_cptr_ParticleSystemTypeClass::LoadTypeData(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall TypeList_cptr_ParticleSystemTypeClass::_vt05(int this, int a2)
 {
-  if ( this->IsInitialized ) /*0x459fc0*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x459fd5*/
-  else
-    return 0; /*0x459fc7*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -959,13 +953,11 @@ void __thiscall TypeList_cptr_TerrainTypeClass::_vt03(int this)
 namespace gamemd {
 unsigned int TypeList_cptr_TerrainTypeClass::GetIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall TypeList_cptr_TerrainTypeClass::GetIndex(int this, int a2)
 {
-  if ( this->IsInitialized ) /*0x67a960*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x67a975*/
-  else
-    return 0; /*0x67a967*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1142,13 +1134,11 @@ int __thiscall TypeList_cptr_TerrainTypeClass::sub_67B310(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int TypeList_cptr_TerrainTypeClass::PointerToIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall TypeList_cptr_TerrainTypeClass::sub_67B350(int this, int a2)
 {
-  if ( this->IsInitialized ) /*0x67b350*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x67b365*/
-  else
-    return 0; /*0x67b357*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1280,13 +1270,11 @@ void __thiscall TypeList_Infantry::_vt03(int this)
 namespace gamemd {
 unsigned int TypeList_Infantry::GetIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall TypeList_Infantry::GetIndex(int this, int a2)
 {
-  if ( this->IsInitialized ) /*0x5128d0*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x5128e5*/
-  else
-    return 0; /*0x5128d7*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1641,13 +1629,11 @@ int __thiscall TypeList_Particle::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int TypeList_Particle::GetCapacity(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall TypeList_Particle::_vt05(int this, int a2)
 {
-  if ( this->IsInitialized ) /*0x45a2e0*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x45a2f5*/
-  else
-    return 0; /*0x45a2e7*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1824,13 +1810,11 @@ int __thiscall TypeList_TechnoType::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int TypeList_TechnoType::GetIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall TypeList_TechnoType::GetIndex(int this, int a2)
 {
-  if ( this->IsInitialized ) /*0x478120*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x478135*/
-  else
-    return 0; /*0x478127*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1886,13 +1870,11 @@ void __thiscall TypeList_VoxelAnim::_vt03(int this)
 namespace gamemd {
 unsigned int TypeList_VoxelAnim::GetIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall TypeList_VoxelAnim::GetIndex(int this, int a2)
 {
-  if ( this->IsInitialized ) /*0x67a440*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x67a455*/
-  else
-    return 0; /*0x67a447*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1935,13 +1917,11 @@ void __thiscall TypeList_VoxelAnim::TypeList_vt03(int this)
 namespace gamemd {
 unsigned int TypeList_VoxelAnim::TypeList_vt05(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall TypeList_VoxelAnim::TypeList_vt05(int this, int a2)
 {
-  if ( this->IsInitialized ) /*0x67a6b0*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x67a6c5*/
-  else
-    return 0; /*0x67a6b7*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -2113,13 +2093,11 @@ int __thiscall TypeList_VoxelAnim::sub_67AC10(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int TypeList_VoxelAnim::PointerToIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall TypeList_VoxelAnim::sub_67AC50(int this, int a2)
 {
-  if ( this->IsInitialized ) /*0x67ac50*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x67ac65*/
-  else
-    return 0; /*0x67ac57*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

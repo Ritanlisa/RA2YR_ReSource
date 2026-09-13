@@ -129,16 +129,14 @@ LABEL_31:
 namespace gamemd {
 int sub_6107A0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6107A0()
 {
-  MEMORY[0xAC1CB8] = 0u; /*0x6107a2*/
-  MEMORY[0xAC1CC8] = 0; /*0x6107b6*/
-  MEMORY[0xAC1CCC] = 0; /*0x6107bb*/
-  MEMORY[0xAC1DCC] = 0; /*0x6107c1*/
-  MEMORY[0xAC1DD0] = 0; /*0x6107c6*/
-  MEMORY[0xAC1DD4] = 0; /*0x6107cb*/
-  return 0; /*0x6107d0*/
+    DataGlobal_AC1CB8 = 0u;
+    DataGlobal_AC1CC8 = 0;
+    DataGlobal_AC1CCC = 0;
+    DataGlobal_AC1DCC = 0;
+    DataGlobal_AC1DD0 = 0;
+    DataGlobal_AC1DD4 = 0;
+    return 0;
 }
 }
 } // namespace gamemd
@@ -147,19 +145,17 @@ int sub_6107A0()
 namespace gamemd {
 unsigned int * E4Recv_6107E0::sub_6107E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_6107E0(_DWORD *this)
 {
-  *this = 0; /*0x6107e4*/
-  *(this + 1) = 0; /*0x6107e6*/
-  *(this + 2) = 0; /*0x6107e9*/
-  *(this + 3) = 0; /*0x6107ec*/
-  *(this + 4) = 0; /*0x6107ef*/
-  *((_WORD *)this + 10) = 0; /*0x6107f2*/
-  *(this + 69) = 0; /*0x6107f6*/
-  *(this + 70) = 0; /*0x6107fc*/
-  *(this + 71) = 0; /*0x610802*/
-  return this; /*0x610808*/
+    *(void**)this = 0;
+    this->M4 = 0;
+    this->M8 = 0;
+    this->M12 = 0;
+    this->M16 = 0;
+    this->M20 = 0;
+    this->M276 = 0;
+    this->M280 = 0;
+    this->M284 = 0;
+    return this;
 }
 }
 } // namespace gamemd
@@ -305,11 +301,9 @@ LABEL_6:
 namespace gamemd {
 void sub_612910()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_612910()
 {
-  MEMORY[0xAC1DE0] = 0; /*0x612915*/
-  __3_YAXPAX_Z(MEMORY[0xAC1DE8]); /*0x612920*/
+    g_ComboBoxState = 0;
+    __3_YAXPAX_Z(DataGlobal_AC1DE8);
 }
 }
 } // namespace gamemd

@@ -37,48 +37,45 @@ char __thiscall BuildingTypeClass_Enqueue(int this, int a2)
 // 0x41C590
 size_t BuildingTypeClass::Dequeue(BuildingClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-size_t __thiscall BuildingTypeClass::Dequeue(char **this, BuildingClass *aP1)
 {
-  size_t result; // eax
-  ObjectClass *v4; // edi
-  ObjectClass *v5; // ebx
-  int v6; // ecx
-  ObjectClass *v7; // esi
-
-  result = (size_t)*(this + 1); /*0x41c593*/
-  if ( result ) /*0x41c598*/
+    size_t result;
+    ObjectClass *v4;
+    ObjectClass *v5;
+    int v6;
+    ObjectClass *v7;
+    result = (size_t)this->vtable1;
+    if ( result )
   {
-    if ( !(unsigned char)this->vtable3 ) /*0x41c59e*/
+    if ( !(unsigned char)this->vtable3 )
     {
-      qsort(*this, result, 8u, CompareFunction); /*0x41c5b0*/
-      *(this + 4) = 0; /*0x41c5b8*/
-      *((_BYTE *)this + 12) = 1; /*0x41c5bf*/
+    qsort(*(void**)this, result, 8u, CompareFunction);
+    this->uniqueId = 0;
+    this->vtable3 = 1;
     }
-    v4 = (ObjectClass *)*this; /*0x41c5c9*/
-    v5 = *(ObjectClass **)aP1->__pad_0; /*0x41c5cb*/
-    v6 = (int)*(this + 1); /*0x41c5cd*/
-    if ( v6 <= 0 ) /*0x41c5d2*/
-      return 0; /*0x41c5fe*/
-    while ( 1 ) /*0x41c5db*/
+    v4 = (ObjectClass *)*(void**)this;
+    v5 = *(ObjectClass **)aP1->__pad_0;
+    v6 = (int)this->vtable1;
+    if ( v6 <= 0 )
+    return 0;
+    while ( 1 )
     {
-      v7 = *(ObjectClass **)&v4->__pad_0[8 * (v6 / 2)]; /*0x41c5db*/
-      if ( (int)v7 <= (int)v5 ) /*0x41c5e3*/
+    v7 = *(ObjectClass **)&v4->__pad_0[8 * (v6 / 2)];
+    if ( (int)v7 <= (int)v5 )
       {
-        if ( v7 == v5 ) /*0x41c5e9*/
-          return (size_t)v4 + 8 * (v6 / 2); /*0x41c603*/
-        v4 = (ObjectClass *)((char *)v4 + 8 * (v6 / 2) + 8); /*0x41c5eb*/
-        v6 += -1 - v6 / 2; /*0x41c5f3*/
+    if ( v7 == v5 )
+    return (size_t)v4 + 8 * (v6 / 2);
+    v4 = (ObjectClass *)((char *)(v4) + 8 * (v6 / 2) + 8);
+    v6 += -1 - v6 / 2;
       }
-      else
+    else
       {
-        v6 /= 2; /*0x41c5e5*/
+    v6 /= 2;
       }
-      if ( v6 <= 0 ) /*0x41c5f7*/
-        return 0; /*0x41c5f7*/
+    if ( v6 <= 0 )
+    return 0;
     }
   }
-  return result; /*0x41c59a*/
+    return result;
 }
 }
 
@@ -556,22 +553,19 @@ int __fastcall BuildingTypeClass::CleanupMembers(AbstractClass *a1, AbstractClas
 // 0x45E7B0
 int BuildingTypeClass::FindIndexByName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingTypeClass::FindIndexByName(void *this)
 {
-  int v2; // esi
-
-  if ( !this ) /*0x45e7b6*/
-    return -1; /*0x45e7b6*/
-  v2 = 0; /*0x45e7bd*/
-  if ( (int)g_TriggerClassCount <= 0 ) /*0x45e7c1*/
-    return -1; /*0x45e7e6*/
-  while ( _strcmpi((const void *)(*((_DWORD *)g_TriggerTypeCount + v2) + 36), this) ) /*0x45e7da*/
+    int v2;
+    if ( !this )
+    return -1;
+    v2 = 0;
+    if ( (int)g_TriggerClassCount <= 0 )
+    return -1;
+    while ( _strcmpi((const void *)(*((int *)(g_TriggerTypeCount) + v2) + 36), this) )
   {
-    if ( ++v2 >= (int)g_TriggerClassCount ) /*0x45e7e4*/
-      return -1; /*0x45e7e4*/
+    if ( ++v2 >= (int)g_TriggerClassCount )
+    return -1;
   }
-  return v2; /*0x45e7e6*/
+    return v2;
 }
 }
 
@@ -1234,23 +1228,20 @@ void __thiscall BuildingTypeClass_LoadVoxel(int this)
 // 0x464AF0
 unsigned int * BuildingTypeClass::GetSizeInLeptons(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BuildingTypeClass::GetSizeInLeptons(_DWORD *this, _DWORD *a2)
 {
-  int v2; // eax
-  int v3; // ecx
-  int v4; // edx
-  int v5; // eax
-
-  v2 = *(this + 956); /*0x464af0*/
-  v3 = unk_89DDB8 * *(this + 957); /*0x464afc*/
-  v2 *= 4; /*0x464b03*/
-  v4 = *(int *)((char *)dword_8192B8 + v2); /*0x464b0b*/
-  v5 = *(int *)((char *)dword_819310 + v2); /*0x464b11*/
-  *a2 = v4 << 8; /*0x464b1d*/
-  a2[1] = v5 << 8; /*0x464b22*/
-  a2[2] = v3; /*0x464b27*/
-  return a2; /*0x464b2a*/
+    int v2;
+    int v3;
+    int v4;
+    int v5;
+    v2 = this->Foundation;
+    v3 = DataGlobal_89DDB8 *(void**)this->Height;
+    v2 *= 4;
+    v4 = *(int *)((char *)(DataGlobal_8192B8) + v2);
+    v5 = *(int *)((char *)(DataGlobal_819310) + v2);
+    *a2 = v4 << 8;
+    *((int*)(a2) + 1) = v5 << 8;
+    *((int*)(a2) + 2) = v3;
+    return a2;
 }
 }
 
@@ -1602,63 +1593,57 @@ LABEL_32:
 // 0x465300
 int BuildingTypeClass::SaveLoad_Prefix_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingTypeClass::SaveLoad_Prefix_0(#376 *this)
 {
-  int result; // eax
-  int v2; // edx
-  int v3; // ebp
-  int i; // edi
-  int v5; // [esp+4h] [ebp-10h]
-  _DWORD *v6; // [esp+18h] [ebp+4h]
-  int *v7; // [esp+1Ch] [ebp+8h]
-  int v8; // [esp+20h] [ebp+Ch] BYREF
-
-  result = TechnoTypeClass::SaveLoad_Prefix_0((int)v6, v6, v7, v8, v5); /*0x465313*/
-  if ( result >= 0 ) /*0x46531a*/
+    int result;
+    int v2;
+    int v3;
+    int i;
+    int v5;
+    int *v6;
+    int *v7;
+    int v8;
+    result = TechnoTypeClass::SaveLoad_Prefix_0((int)v6, v6, v7, v8, v5);
+    if ( result >= 0 )
   {
-    v2 = *v7; /*0x465322*/
-    v8 = v6[1507]; /*0x46532e*/
-    result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v2 + 16))(v7, &v8, 4, 0); /*0x465332*/
-    if ( result >= 0 ) /*0x465337*/
+    v2 = *v7;
+    v8 = v6[1507];
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v2 + 16))(v7, &v8, 4, 0);
+    if ( result >= 0 )
     {
-      v3 = 0; /*0x46533d*/
-      if ( v8 <= 0 ) /*0x465341*/
+    v3 = 0;
+    if ( v8 <= 0 )
       {
-        return 0; /*0x465368*/
+    return 0;
       }
-      else
+    else
       {
-        for ( i = 0; ; i += 12 ) /*0x465343*/
+    for ( i = 0; ; i += 12 )
         {
-          result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*v7 + 16))(v7, i + v6[1506], 12, 0); /*0x465355*/
-          if ( result < 0 ) /*0x46535a*/
-            break; /*0x46535a*/
-          if ( ++v3 >= v8 ) /*0x465366*/
-            return 0; /*0x465366*/
+    result = (*(int (__stdcall **)(int *, int, int, int))(*v7 + 16))(v7, i + v6[1506], 12, 0);
+    if ( result < 0 )
+    break;
+    if ( ++v3 >= v8 )
+    return 0;
         }
       }
     }
   }
-  return result; /*0x46536a*/
+    return result;
 }
 }
 
 // 0x465380
 int BuildingTypeClass::GetClassIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingTypeClass::_vt03(#376 *this)
 {
-  _DWORD *v2; // [esp+8h] [ebp+8h]
-
-  if ( !v2 ) /*0x465386*/
-    return -2147467261; /*0x465388*/
-  *v2 = -1366608933; /*0x465396*/
-  v2[1] = 298976796; /*0x46539e*/
-  v2[2] = 1610654892; /*0x4653a7*/
-  v2[3] = -1252326136; /*0x4653b0*/
-  return 0; /*0x46538d*/
+    int *v2;
+    if ( !v2 )
+    return -2147467261;
+    *v2 = -1366608933;
+    v2[1] = 298976796;
+    v2[2] = 1610654892;
+    v2[3] = -1252326136;
+    return 0;
 }
 }
 
@@ -1712,64 +1697,46 @@ void __thiscall BuildingTypeClass_IsPowered(int this)
 // 0x465DB0
 int BuildingTypeClass::GetAuxField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingTypeClass::_vt16(#376 *this)
 {
-  return this->ArrayIndex; /*0x465db6*/
+    return this->ArrayIndex;
 }
 }
 
 // 0x465DC0
 int BuildingTypeClass::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingTypeClass::ddtor(#376 *this)
 {
-  char v3; // [esp+8h] [ebp+4h]
-
-  BuildingTypeClass::CleanupMembers((void **)this); /*0x465dc3*/
-  if ( (v3 & 1) != 0 ) /*0x465dcd*/
-    __3_YAXPAX_Z(this); /*0x465dd0*/
-  return (int)this; /*0x465dda*/
+    char v3;
+    BuildingTypeClass::CleanupMembers((void **)this);
+    if ( (v3 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (int)this;
 }
 }
 
 // 0x474A90
 int BuildingTypeClass::FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTypeClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingTypeClass::FindAnimByName(
-        unsigned __int8 ***this,
-        INIClass *aP1,
-        unsigned __int8 *a2,
-        AnimTypeClass *aP3)
 {
-  int v4; // esi
-  IUnknown *v5; // eax
-  bool v6; // zf
-  char Destination[32]; // [esp+8h] [ebp-20h] BYREF
-
-  INIClass::GetString( /*0x474aba*/
-    this,
-    aP1,
-    a2,
-    *(INIClass **)(*(_DWORD *)(stru_B05488.field_4C + 4 * (_DWORD)aP3) + 772),
-    (INIClass *)Destination,
-    32);
-  v4 = 0; /*0x474ac4*/
-  if ( *(int *)stru_B05488.__pad_58 <= 0 ) /*0x474ac8*/
-    return (int)aP3->__pad_0; /*0x474b06*/
-  v5 = (IUnknown *)stru_B05488.field_4C; /*0x474aca*/
-  while ( 1 ) /*0x474ae6*/
+    int v4;
+    IUnknown *v5;
+    bool v6;
+    char Destination[32];
+    INIClass::GetString( this, aP1, a2, *(INIClass **)(*(int *)(DataGlobal_B05488.field_4C + 4 * (int)aP3) + 772), (INIClass *)Destination, 32);
+    v4 = 0;
+    if ( *(int *)DataGlobal_B05488.__pad_58 <= 0 )
+    return (int)aP3->__pad_0;
+    v5 = (IUnknown *)DataGlobal_B05488.field_4C;
+    while ( 1 )
   {
-    v6 = _strcmpi(*(const void **)(*(&v5->field_0 + v4) + 772), Destination) == 0; /*0x474ae6*/
-    v5 = (IUnknown *)stru_B05488.field_4C; /*0x474ae8*/
-    if ( v6 && *(_DWORD *)(*(_DWORD *)(stru_B05488.field_4C + 4 * v4) + 784) != 1 ) /*0x474af9*/
-      break; /*0x474af9*/
-    if ( ++v4 >= *(int *)stru_B05488.__pad_58 ) /*0x474b04*/
-      return (int)aP3->__pad_0; /*0x474b04*/
+    v6 = _strcmpi(*(const void **)(*(&v5->field_0 + v4) + 772), Destination) == 0;
+    v5 = (IUnknown *)DataGlobal_B05488.field_4C;
+    if ( v6 && *(int *)(*(int *)(DataGlobal_B05488.field_4C + 4 * v4) + 784) != 1 )
+    break;
+    if ( ++v4 >= *(int *)DataGlobal_B05488.__pad_58 )
+    return (int)aP3->__pad_0;
   }
-  return v4; /*0x474b08*/
+    return v4;
 }
 }
 
@@ -1841,19 +1808,16 @@ _DWORD *__thiscall sub_478850(_DWORD *this, int a2, int a3)
 // 0x4C9680
 int BuildingTypeClass::GetPowerOutput(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingTypeClass::GetPowerOutput(_WORD *this, ObjectClass *aP1)
 {
-  ObjectClass *result; // eax
-  __int16 v3; // dx
-
-  result = aP1; /*0x4c9680*/
-  if ( (int)aP1 >= 127 ) /*0x4c9687*/
-    result = (ObjectClass *)127; /*0x4c9689*/
-  LOBYTE(v3) = 0; /*0x4c968e*/
-  HIBYTE(v3) = (_BYTE)result; /*0x4c9690*/
-  *(this + 10) = v3; /*0x4c9692*/
-  return (int)result->__pad_0; /*0x4c9696*/
+    ObjectClass *result;
+    short v3;
+    result = aP1;
+    if ( (int)aP1 >= 127 )
+    result = (ObjectClass *)127;
+    LOBYTE(v3) = 0;
+    HIBYTE(v3) = (char)result;
+    this->abstractFlags = v3;
+    return (int)result->__pad_0;
 }
 }
 
@@ -2452,22 +2416,19 @@ bool __thiscall BuildingTypeClass::IsPlacementValid(void *this, IUnknown *aP1, I
 // 0x747370
 int BuildingTypeClass::FindIndex()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingTypeClass::FindIndex(void *this)
 {
-  int v2; // esi
-
-  if ( !this ) /*0x747376*/
-    return -1; /*0x747376*/
-  v2 = 0; /*0x74737d*/
-  if ( (int)g_CrateCount <= 0 ) /*0x747381*/
-    return -1; /*0x7473a6*/
-  while ( _strcmpi((const void *)(*(_DWORD *)&g_UnitTypeCount2->__pad_0[4 * v2] + 36), this) ) /*0x74739a*/
+    int v2;
+    if ( !this )
+    return -1;
+    v2 = 0;
+    if ( (int)g_CrateCount <= 0 )
+    return -1;
+    while ( _strcmpi((const void *)(*(int *)&g_UnitTypeCount2->__pad_0[4 * v2] + 36), this) )
   {
-    if ( ++v2 >= (int)g_CrateCount ) /*0x7473a4*/
-      return -1; /*0x7473a4*/
+    if ( ++v2 >= (int)g_CrateCount )
+    return -1;
   }
-  return v2; /*0x7473a6*/
+    return v2;
 }
 }
 

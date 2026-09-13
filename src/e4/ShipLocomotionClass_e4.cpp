@@ -39,58 +39,55 @@ HRESULT __stdcall ShipLocomotionClass::_vt05(int *a1, int *pStm)
 // 0x69EF10
 HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HRESULT __stdcall ShipLocomotionClass::LoadFromStream(int *a1, int *pPStm, int a3)
 {
-  IStream *v3; // esi
-  int *v4; // edi
-  int IPersistStream; // ebx
-  int v6; // ecx
-  int (__stdcall ***v7)(_DWORD, void *, int **); // eax
-  int v8; // edi
-  int *v9; // ebx
-  HRESULT v10; // esi
-  int v12; // edx
-
-  v3 = (IStream *)pPStm; /*0x69ef16*/
-  v4 = a1; /*0x69ef1b*/
-  IPersistStream = LoadIPersistStream(a1, pPStm, a3); /*0x69ef27*/
-  if ( IPersistStream < 0 ) /*0x69ef2b*/
-    return IPersistStream; /*0x69ef2b*/
-  if ( !v4[26] ) /*0x69ef36*/
+    IStream *v3;
+    int *v4;
+    int IPersistStream;
+    int v6;
+    int (__stdcall ***v7)(int, void *, int **);
+    int v8;
+    int *v9;
+    HRESULT v10;
+    int v12;
+    v3 = (IStream *)pPStm;
+    v4 = a1;
+    IPersistStream = LoadIPersistStream(a1, pPStm, a3);
+    if ( IPersistStream < 0 )
+    return IPersistStream;
+    if ( !v4[26] )
   {
-    v12 = *(_DWORD *)v3->__pad_0; /*0x69efd3*/
-    LOBYTE(a3) = 0; /*0x69efdf*/
-    (*(void (__stdcall **)(IStream *, int *, int, _DWORD))(v12 + 16))(v3, &a3, 1, 0); /*0x69efe4*/
-    return IPersistStream; /*0x69efe8*/
+    v12 = *(int *)v3->__pad_0;
+    LOBYTE(a3) = 0;
+    (*(void (__stdcall **)(IStream *, int *, int, int))(v12 + 16))(v3, &a3, 1, 0);
+    return IPersistStream;
   }
-  v6 = *(_DWORD *)v3->__pad_0; /*0x69ef3c*/
-  LOBYTE(a3) = 1; /*0x69ef48*/
-  (*(void (__stdcall **)(IStream *, int *, int, _DWORD))(v6 + 16))(v3, &a3, 1, 0); /*0x69ef4d*/
-  v7 = (int (__stdcall ***)(_DWORD, void *, int **))v4[26]; /*0x69ef50*/
-  pPStm = 0; /*0x69ef53*/
-  if ( v7 ) /*0x69ef5d*/
+    v6 = *(int *)v3->__pad_0;
+    LOBYTE(a3) = 1;
+    (*(void (__stdcall **)(IStream *, int *, int, int))(v6 + 16))(v3, &a3, 1, 0);
+    v7 = (int (__stdcall ***)(int, void *, int **))v4[26];
+    pPStm = 0;
+    if ( v7 )
   {
-    v8 = (**v7)(v7, &unk_820270, &a1); /*0x69ef6e*/
-    if ( v8 >= 0 ) /*0x69ef72*/
+    v8 = (**v7)(v7, &DataGlobal_820270, &a1);
+    if ( v8 >= 0 )
     {
-      v9 = a1; /*0x69ef8b*/
-      if ( pPStm ) /*0x69ef91*/
-        (*(void (__stdcall **)(int *))(*pPStm + 8))(pPStm); /*0x69ef96*/
-      pPStm = v9; /*0x69ef99*/
+    v9 = a1;
+    if ( pPStm )
+    (*(void (__stdcall **)(int *))(*pPStm + 8))(pPStm);
+    pPStm = v9;
     }
     else
     {
-      Function::Method_4B4D60((int *)&pPStm); /*0x69ef78*/
-      pPStm = 0; /*0x69ef7d*/
+    Function::Method_4B4D60((int *)&pPStm);
+    pPStm = 0;
     }
-    if ( v8 < 0 && v8 != -2147467262 ) /*0x69efa7*/
-      WinAPI::Wrapper(v8); /*0x69efaa*/
+    if ( v8 < 0 && v8 != -2147467262 )
+    WinAPI::Wrapper(v8);
   }
-  v10 = OleSaveToStream((LPPERSISTSTREAM)pPStm, v3); /*0x69efbb*/
-  if ( pPStm ) /*0x69efc3*/
-    (*(void (__stdcall **)(int *))(*pPStm + 8))(pPStm); /*0x69efc8*/
-  return v10; /*0x69efcd*/
+    v10 = OleSaveToStream((LPPERSISTSTREAM)pPStm, v3);
+    if ( pPStm )
+    (*(void (__stdcall **)(int *))(*pPStm + 8))(pPStm);
+    return v10;
 }
 }
 

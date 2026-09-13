@@ -112,12 +112,10 @@ char __thiscall sub_6E2790(int *this, int a2, int a3, int a4, int a5)
 namespace gamemd {
 char globalHelper_0E2C20(int a1, int a2, int a3, IUnknown * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall globalHelper_0E2C20(int a1, int a2, int a3, IUnknown *aP3)
 {
-  LayerClass::ClearFactoryCellAssignments(&stru_87C374.__pad_14B0[8132]); /*0x6e2c25*/
-  MapClass::MarkForRedraw(&stru_87C374.__pad_14B0[8132], 1); /*0x6e2c31*/
-  return 1; /*0x6e2c38*/
+    LayerClass::ClearFactoryCellAssignments(&DataGlobal_87C374.__pad_14B0[8132]);
+    MapClass::MarkForRedraw(&DataGlobal_87C374.__pad_14B0[8132], 1);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -291,17 +289,15 @@ _DWORD *__thiscall Tactical_42_::loc_6E4B00(_DWORD *this, char a2)
 namespace gamemd {
 int sub_6E4D60()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6E4D60()
 {
-  MEMORY[0xB0E724] = 0; /*0x6e4d67*/
-  MEMORY[0xB0E728] = 0; /*0x6e4d6c*/
-  MEMORY[0xB0E72C] = 1; /*0x6e4d71*/
-  MEMORY[0xB0E72D] = 0; /*0x6e4d78*/
-  MEMORY[0xB0E720] = (int)&vt_DynamicVectorClass_TagClass; /*0x6e4d7d*/
-  MEMORY[0xB0E734] = 10; /*0x6e4d87*/
-  MEMORY[0xB0E730] = 0; /*0x6e4d91*/
-  return atexit(sub_6E4DA0); /*0x6e4d9c*/
+    g_TagClassCount = 0;
+    DataGlobal_B0E728 = 0;
+    DataGlobal_B0E72C = 1;
+    DataGlobal_B0E72D = 0;
+    TagClass_Array = (int)&vt_DynamicVectorClass_TagClass;
+    DataGlobal_B0E734 = 10;
+    g_GameObjectCleanup = 0;
+    return atexit(sub_6E4DA0);
 }
 }
 } // namespace gamemd
@@ -310,17 +306,15 @@ int sub_6E4D60()
 namespace gamemd {
 void sub_6E4DA0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_6E4DA0()
 {
-  MEMORY[0xB0E720] = (int)&vt_VectorClass_TagClass; /*0x6e4da8*/
-  if ( MEMORY[0xB0E724] && MEMORY[0xB0E72D] ) /*0x6e4dbc*/
+    TagClass_Array = (int)&vt_VectorClass_TagClass;
+    if ( g_TagClassCount && DataGlobal_B0E72D )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0E724]); /*0x6e4dbf*/
-    MEMORY[0xB0E724] = 0; /*0x6e4dc7*/
+    __3_YAXPAX_Z(g_TagClassCount);
+    g_TagClassCount = 0;
   }
-  MEMORY[0xB0E72D] = 0; /*0x6e4dcd*/
-  MEMORY[0xB0E728] = 0; /*0x6e4dd3*/
+    DataGlobal_B0E72D = 0;
+    DataGlobal_B0E728 = 0;
 }
 }
 } // namespace gamemd
@@ -329,17 +323,15 @@ void __cdecl sub_6E4DA0()
 namespace gamemd {
 int sub_6E5AE0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6E5AE0()
 {
-  MEMORY[0xB0E784] = 0; /*0x6e5ae7*/
-  MEMORY[0xB0E788] = 0; /*0x6e5aec*/
-  MEMORY[0xB0E78C] = 1; /*0x6e5af1*/
-  MEMORY[0xB0E78D] = 0; /*0x6e5af8*/
-  MEMORY[0xB0E780] = (int)&vt_DynamicVectorClass_TagTypeClass; /*0x6e5afd*/
-  MEMORY[0xB0E794] = 10; /*0x6e5b07*/
-  MEMORY[0xB0E790] = 0; /*0x6e5b11*/
-  return atexit(sub_6E5B20); /*0x6e5b1c*/
+    DataGlobal_B0E784 = 0;
+    DataGlobal_B0E788 = 0;
+    DataGlobal_B0E78C = 1;
+    DataGlobal_B0E78D = 0;
+    DataGlobal_B0E780 = (int)&vt_DynamicVectorClass_TagTypeClass;
+    DataGlobal_B0E794 = 10;
+    g_MultiplayerCleanup = 0;
+    return atexit(sub_6E5B20);
 }
 }
 } // namespace gamemd
@@ -348,17 +340,15 @@ int sub_6E5AE0()
 namespace gamemd {
 void sub_6E5B20()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_6E5B20()
 {
-  MEMORY[0xB0E780] = (int)&vt_VectorClass_TagTypeClass; /*0x6e5b28*/
-  if ( MEMORY[0xB0E784] && MEMORY[0xB0E78D] ) /*0x6e5b3c*/
+    DataGlobal_B0E780 = (int)&vt_VectorClass_TagTypeClass;
+    if ( DataGlobal_B0E784 && DataGlobal_B0E78D )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0E784]); /*0x6e5b3f*/
-    MEMORY[0xB0E784] = 0; /*0x6e5b47*/
+    __3_YAXPAX_Z(DataGlobal_B0E784);
+    DataGlobal_B0E784 = 0;
   }
-  MEMORY[0xB0E78D] = 0; /*0x6e5b4d*/
-  MEMORY[0xB0E788] = 0; /*0x6e5b53*/
+    DataGlobal_B0E78D = 0;
+    DataGlobal_B0E788 = 0;
 }
 }
 } // namespace gamemd

@@ -5,14 +5,11 @@
 // 0x6260D0
 void * Block::Copy(const void * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall Block_Copy(void *this, const void *a2)
 {
-  void *result; // eax
-
-  result = this; /*0x6260d5*/
-  if ( this != a2 ) /*0x6260d9*/
-    qmemcpy(this, a2, 0x300u); /*0x6260e3*/
-  return result; /*0x6260e6*/
+    void *result;
+    result = this;
+    if ( this != a2 )
+    qmemcpy(this, a2, 0x300u);
+    return result;
 }
 }

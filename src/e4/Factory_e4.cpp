@@ -7,24 +7,21 @@
 namespace gamemd {
 int Factory::FindExitCellByName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Factory::FindExitCellByName(void *this)
 {
-  int v2; // esi
-
-  if ( !_strcmpi(this, &stru_817460.sectionHead[1]) ) /*0x523c9a*/
-    return -1; /*0x523c9a*/
-  if ( !_strcmpi(this, g_Str_none) ) /*0x523cac*/
-    return -1; /*0x523cac*/
-  v2 = 0; /*0x523cbd*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[20644] <= 0 ) /*0x523cc1*/
-    return -1; /*0x523ce6*/
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20632] + 4 * v2) + 36), this) ) /*0x523cda*/
+    int v2;
+    if ( !_strcmpi(this, &DataGlobal_817460.sectionHead[1]) )
+    return -1;
+    if ( !_strcmpi(this, g_Str_none) )
+    return -1;
+    v2 = 0;
+    if ( *(int *)&HouseClass_Player.__pad_5568[20644] <= 0 )
+    return -1;
+    while ( _strcmpi((const void *)(*(int *)(*(int *)&HouseClass_Player.__pad_5568[20632] + 4 * v2) + 36), this) )
   {
-    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[20644] ) /*0x523ce4*/
-      return -1; /*0x523ce4*/
+    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[20644] )
+    return -1;
   }
-  return v2; /*0x523ce6*/
+    return v2;
 }
 }
 } // namespace gamemd
@@ -391,10 +388,8 @@ char __userpurge Factory_CalculateExitCell@<al>(_DWORD *a1@<ecx>, int a2@<ebx>, 
 namespace gamemd {
 int Factory::IdleHandler()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Factory_IdleHandler()
 {
-  return System_Handle(77, 0); /*0x731cde*/
+    return System_Handle(77, 0);
 }
 }
 } // namespace gamemd

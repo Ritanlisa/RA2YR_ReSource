@@ -31,13 +31,11 @@ void __thiscall ParticleSystemClass::_vt03(int this)
 namespace gamemd {
 unsigned int ParticleSystemClass::LoadTypeData(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall ParticleSystemClass::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->vtable3 ) /*0x4e84a0*/
-    return (unsigned int)(a2 - this->vtable1) >> 2; /*0x4e84b5*/
-  else
-    return 0; /*0x4e84a7*/
+    if ( (unsigned char)this->vtable3 )
+    return (unsigned int)(a2 - this->vtable1) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -244,13 +242,11 @@ int __thiscall ParticleSystemClass_16_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int ParticleSystemClass_16::Read(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall ParticleSystemClass_16_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->ParticleSystemClass_16_field_0xC ) /*0x4eb3c0*/
-    return (unsigned int)(a2 - this->ParticleSystemClass_16_field_0x4) >> 2; /*0x4eb3d5*/
-  else
-    return 0; /*0x4eb3c7*/
+    if ( (unsigned char)this->ParticleSystemClass_16_field_0xC )
+    return (unsigned int)(a2 - this->ParticleSystemClass_16_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -306,13 +302,11 @@ void __thiscall ParticleSystemClass_32_::sub_4E82F0(int this)
 namespace gamemd {
 unsigned int ParticleSystemClass_32::PointerToIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall ParticleSystemClass_32_::sub_4E8320(int this, int a2)
 {
-  if ( (unsigned char)this->ParticleSystemClass_32_field_0xC ) /*0x4e8320*/
-    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2; /*0x4e8335*/
-  else
-    return 0; /*0x4e8327*/
+    if ( (unsigned char)this->ParticleSystemClass_32_field_0xC )
+    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -343,13 +337,11 @@ void __thiscall ParticleSystemClass_32_::sub_4E87E0(int this)
 namespace gamemd {
 unsigned int ParticleSystemClass_32::GetIndex2(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall ParticleSystemClass_32_::sub_4E8810(int this, int a2)
 {
-  if ( (unsigned char)this->ParticleSystemClass_32_field_0xC ) /*0x4e8810*/
-    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2; /*0x4e8825*/
-  else
-    return 0; /*0x4e8817*/
+    if ( (unsigned char)this->ParticleSystemClass_32_field_0xC )
+    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -599,13 +591,11 @@ int __thiscall ParticleSystemClass_32_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int ParticleSystemClass_32::Read(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall ParticleSystemClass_32_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->ParticleSystemClass_32_field_0xC ) /*0x4eb620*/
-    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2; /*0x4eb635*/
-  else
-    return 0; /*0x4eb627*/
+    if ( (unsigned char)this->ParticleSystemClass_32_field_0xC )
+    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -790,13 +780,11 @@ DynamicVector *__thiscall ParticleSystemClass_32_::Constructor_VectorClass_Aircr
 namespace gamemd {
 unsigned int ParticleSystemClass_32_::GetElementIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall ParticleSystemClass_32_::sub_4E8870(int this, int a2)
 {
-  if ( (unsigned char)this->ParticleSystemClass_32__field_0xC ) /*0x4e8870*/
-    return (unsigned int)(a2 - this->ParticleSystemClass_32__field_0x4) >> 2; /*0x4e8885*/
-  else
-    return 0; /*0x4e8877*/
+    if ( (unsigned char)this->ParticleSystemClass_32__field_0xC )
+    return (unsigned int)(a2 - this->ParticleSystemClass_32__field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

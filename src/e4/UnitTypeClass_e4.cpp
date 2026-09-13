@@ -170,39 +170,33 @@ int UnitTypeClass_ConstructUnit()
 // 0x747590
 int * UnitTypeClass::GetDimensions(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall UnitTypeClass::_vt30(_DWORD *this, int *a2)
 {
-  int v2; // eax
-  int v3; // ecx
-
-  v2 = *(this + 123) - *(this + 123) / 4; /*0x7475a3*/
-  v3 = v2; /*0x7475a5*/
-  if ( v2 >= 60 ) /*0x7475aa*/
+    int v2;
+    int v3;
+    v2 = this->MaxDimension - this->MaxDimension / 4;
+    v3 = v2;
+    if ( v2 >= 60 )
   {
-    v3 = 60; /*0x7475ac*/
-    v2 = 60; /*0x7475b6*/
+    v3 = 60;
+    v2 = 60;
   }
-  *a2 = v3; /*0x7475c2*/
-  a2[1] = v3; /*0x7475c4*/
-  a2[2] = v2; /*0x7475c7*/
-  return a2; /*0x7475cd*/
+    *a2 = v3;
+    *((int*)(a2) + 1) = v3;
+    *((int*)(a2) + 2) = v2;
+    return a2;
 }
 }
 
 // 0x7475D0
 unsigned int * UnitTypeClass::GetDefaultDimensions(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall UnitTypeClass::_vt31(_DWORD *a1)
 {
-  int v1; // esi
-
-  v1 = 2 * unk_B1D138; /*0x7475dc*/
-  *a1 = 256; /*0x7475e7*/
-  a1[1] = 256; /*0x7475e9*/
-  a1[2] = v1; /*0x7475ec*/
-  return a1; /*0x7475ef*/
+    int v1;
+    v1 = 2 * DataGlobal_B1D138;
+    *a1 = 256;
+    *((int*)(a1) + 1) = 256;
+    *((int*)(a1) + 2) = v1;
+    return a1;
 }
 }
 
@@ -484,26 +478,23 @@ char __userpurge UnitTypeClass::LoadFromINI@<al>(int a1@<ecx>, double a2@<st0>, 
 // 0x747EB0
 unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall UnitTypeClass::_vt27(_DWORD *a1, int *a2)
 {
-  int GroundHeight; // eax
-  int v3; // ecx
-  int v5; // [esp+0h] [ebp-Ch] BYREF
-  int v6; // [esp+4h] [ebp-8h]
-  int v7; // [esp+8h] [ebp-4h]
-
-  v5 = *a2; /*0x747eb9*/
-  v6 = a2[1]; /*0x747eca*/
-  v7 = a2[2]; /*0x747ed1*/
-  GroundHeight = Cell::GetGroundHeight(&v5); /*0x747ed5*/
-  v3 = v7; /*0x747eda*/
-  if ( v7 < GroundHeight ) /*0x747ee0*/
-    v3 = Cell::GetGroundHeight(&v5); /*0x747ef1*/
-  *a1 = v5; /*0x747efe*/
-  a1[1] = v6; /*0x747f04*/
-  a1[2] = v3; /*0x747f08*/
-  return a1; /*0x747f0b*/
+    int GroundHeight;
+    int v3;
+    int v5;
+    int v6;
+    int v7;
+    v5 = *a2;
+    v6 = *((int*)(a2) + 1);
+    v7 = *((int*)(a2) + 2);
+    GroundHeight = Cell::GetGroundHeight(&v5);
+    v3 = v7;
+    if ( v7 < GroundHeight )
+    v3 = Cell::GetGroundHeight(&v5);
+    *a1 = v5;
+    *((int*)(a1) + 1) = v6;
+    *((int*)(a1) + 2) = v3;
+    return a1;
 }
 }
 
@@ -520,39 +511,36 @@ int UnitTypeClass::_vt45()
 // 0x747F70
 int UnitTypeClass::PowerDrainUpdate(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall UnitTypeClass::_vt13(int this, int *a2)
 {
-  int v3; // ecx
-  int v4; // edx
-  int v5; // eax
-  int v6; // ecx
-  int v7; // edx
-  int v8; // eax
-  int v9; // ecx
-  int v10; // edx
-  int v11; // eax
-
-  BuildingTypeClass::ProcessPower(this, a2); /*0x747f79*/
-  Power::TimerProcess(this->MovementRestrictedTo); /*0x747f87*/
-  LOBYTE(v3) = this->Passive; /*0x747f8c*/
-  Power::FlagProcess(a2, v3); /*0x747f95*/
-  LOBYTE(v4) = this->CrateGoodie; /*0x747f9a*/
-  v5 = Power::FlagProcess(a2, v4); /*0x747fa3*/
-  LOBYTE(v5) = this->Harvester; /*0x747fa8*/
-  Power::FlagProcess(a2, v5); /*0x747fb1*/
-  LOBYTE(v6) = this->Weeder; /*0x747fb6*/
-  Power::FlagProcess(a2, v6); /*0x747fbf*/
-  LOBYTE(v7) = this->unknown_E10; /*0x747fc4*/
-  v8 = Power::FlagProcess(a2, v7); /*0x747fcd*/
-  LOBYTE(v8) = this->HasTurret; /*0x747fd2*/
-  Power::FlagProcess(a2, v8); /*0x747fdb*/
-  LOBYTE(v9) = this->IsTilter; /*0x747fe0*/
-  Power::FlagProcess(a2, v9); /*0x747fe9*/
-  LOBYTE(v10) = this->IsSimpleDeployer; /*0x747fee*/
-  v11 = Power::FlagProcess(a2, v10); /*0x747ff7*/
-  LOBYTE(v11) = this->UseTurretShadow; /*0x747ffc*/
-  return Power::FlagProcess(a2, v11); /*0x74800a*/
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    int v11;
+    BuildingTypeClass::ProcessPower(this, a2);
+    Power::TimerProcess(this->MovementRestrictedTo);
+    LOBYTE(v3) = this->Passive;
+    Power::FlagProcess(a2, v3);
+    LOBYTE(v4) = this->CrateGoodie;
+    v5 = Power::FlagProcess(a2, v4);
+    LOBYTE(v5) = this->Harvester;
+    Power::FlagProcess(a2, v5);
+    LOBYTE(v6) = this->Weeder;
+    Power::FlagProcess(a2, v6);
+    LOBYTE(v7) = this->unknown_E10;
+    v8 = Power::FlagProcess(a2, v7);
+    LOBYTE(v8) = this->HasTurret;
+    Power::FlagProcess(a2, v8);
+    LOBYTE(v9) = this->IsTilter;
+    Power::FlagProcess(a2, v9);
+    LOBYTE(v10) = this->IsSimpleDeployer;
+    v11 = Power::FlagProcess(a2, v10);
+    LOBYTE(v11) = this->UseTurretShadow;
+    return Power::FlagProcess(a2, v11);
 }
 }
 
@@ -593,25 +581,20 @@ int __stdcall UnitTypeClass::_vt05(int a1, int a2)
 // 0x7480B0
 int UnitTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall UnitTypeClass::SaveToINI(void *a0, TechnoTypeClass *aP1, int a3)
 {
-  int result; // eax
-
-  result = TechnoTypeClass::SaveLoad_Prefix_0(aP1, a0, aP1, (TechnoTypeClass *)a3); /*0x7480bf*/
-  if ( result >= 0 ) /*0x7480c6*/
-    return 0; /*0x7480c8*/
-  return result; /*0x7480ca*/
+    int result;
+    result = TechnoTypeClass::SaveLoad_Prefix_0(aP1, a0, aP1, (TechnoTypeClass *)a3);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 
 // 0x748180
 int UnitTypeClass::GetAuxField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall UnitTypeClass::_vt16(_DWORD *this)
 {
-  return *(this + 894); /*0x748186*/
+    return this->ArrayIndex;
 }
 }
 

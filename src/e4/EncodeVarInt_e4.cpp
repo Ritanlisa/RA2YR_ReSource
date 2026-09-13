@@ -6,34 +6,31 @@
 namespace gamemd {
 int sub_5C6490(unsigned char * a1, char * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_5C6490(_BYTE *a1, char *a2, int a3)
 {
-  char *v4; // esi
-  char i; // bl
-  int v6; // edi
-  int j; // edi
-  char v8; // cl
-
-  v4 = &a2[a3 - 1]; /*0x5c64a4*/
-  for ( i = -(*(int *)&a2[4 * a3 - 4] < 0); v4 > a2; --v4 ) /*0x5c64b5*/
+    char *v4;
+    char i;
+    int v6;
+    int j;
+    char v8;
+    v4 = &a2[a3 - 1];
+    for ( i = -(*(int *)&a2[4 * a3 - 4] < 0); v4 > a2; --v4 )
   {
-    if ( *v4 != i ) /*0x5c64b9*/
-      break; /*0x5c64b9*/
+    if ( *v4 != i )
+    break;
   }
-  v6 = 0; /*0x5c64c2*/
-  if ( *v4 < 0 && *(int *)&a2[4 * a3 - 4] >= 0 || (*v4 & 0x80) == 0 && *(int *)&a2[4 * a3 - 4] < 0 ) /*0x5c64d2*/
+    v6 = 0;
+    if ( *v4 < 0 && *(int *)&a2[4 * a3 - 4] >= 0 || (*v4 & 0x80) == 0 && *(int *)&a2[4 * a3 - 4] < 0 )
   {
-    *a1 = i; /*0x5c64d4*/
-    v6 = 1; /*0x5c64d7*/
+    *a1 = i;
+    v6 = 1;
   }
-  a1[v6] = *v4; /*0x5c64de*/
-  for ( j = v6 + 1; v4 != a2; ++j ) /*0x5c64e4*/
+    a1[v6] = *v4;
+    for ( j = v6 + 1; v4 != a2; ++j )
   {
-    v8 = *--v4; /*0x5c64e6*/
-    a1[j] = v8; /*0x5c64ea*/
+    v8 = *--v4;
+    a1[j] = v8;
   }
-  return j; /*0x5c64f4*/
+    return j;
 }
 }
 } // namespace gamemd

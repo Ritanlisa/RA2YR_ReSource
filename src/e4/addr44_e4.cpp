@@ -48,23 +48,20 @@ _DWORD *__thiscall sub_44F6E0(void *this, _DWORD *a2, int a3)
 namespace gamemd {
 int INIClass::sub_44FE60()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_44FE60(INIClass *this)
 {
-  int result; // eax
-  int i; // esi
-  int v4; // ecx
-
-  INIClass::ClearSection((int)this, (INIClass *)aStructures, 0); /*0x44fe6c*/
-  result = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[100]; /*0x44fe71*/
-  for ( i = 0; i < *(int *)&MEMORY[0xA8D63C].__pad_14B0[100]; ++i ) /*0x44fe7a*/
+    int result;
+    int i;
+    int v4;
+    INIClass::ClearSection((int)this, (INIClass *)aStructures, 0);
+    result = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[100];
+    for ( i = 0; i < *(int *)&g_NetworkPlayerBuffer.__pad_14B0[100]; ++i )
   {
-    v4 = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[88] + 4 * i); /*0x44fe82*/
-    if ( !*(_BYTE *)(v4 + 129) && !*(_BYTE *)(*(_DWORD *)(v4 + 1312) + 5823) ) /*0x44fe95*/
-      BuildingClass::ReadConstructionData(v4, this); /*0x44fea0*/
-    result = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[100]; /*0x44fea5*/
+    v4 = *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[88] + 4 * i);
+    if ( !*(char *)(v4 + 129) && !*(char *)(*(int *)(v4 + 1312) + 5823) )
+    BuildingClass::ReadConstructionData(v4, this);
+    result = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[100];
   }
-  return result; /*0x44feaf*/
+    return result;
 }
 }
 } // namespace gamemd

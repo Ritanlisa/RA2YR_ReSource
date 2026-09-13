@@ -38813,57 +38813,54 @@ namespace gamemd { int Gap2Recv_779C90::ReadSettingsWOL() {
 } }
 // 0x779DD0
 namespace gamemd { char* Gap2Recv_779DD0::LoadConfigWOL() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char **__thiscall WOL_LoadConfig(char **this)
 {
-  void *v3; // [esp+8h] [ebp-A4h] BYREF
-  void *v4; // [esp+Ch] [ebp-A0h] BYREF
-  void *v5; // [esp+10h] [ebp-9Ch] BYREF
-  void *v6[4]; // [esp+14h] [ebp-98h] BYREF
-  _DWORD v7[3]; // [esp+24h] [ebp-88h] BYREF
-  _DWORD v8[6]; // [esp+30h] [ebp-7Ch] BYREF
-  char v9; // [esp+48h] [ebp-64h]
-  int v10; // [esp+4Ch] [ebp-60h]
-  int v11; // [esp+50h] [ebp-5Ch]
-  _DWORD v12[22]; // [esp+54h] [ebp-58h] BYREF
-
-  BufferIOFile::Constructor(v12, MEMORY[0x849F8C]); /*0x779de3*/
-  if ( File::IsReady(v12, 0) ) /*0x779def*/
+    void *v3;
+    void *v4;
+    void *v5;
+    void *v6[4];
+    int v7[3];
+    int v8[6];
+    char v9;
+    int v10;
+    int v11;
+    int v12[22];
+    BufferIOFile::Constructor(v12, g_Str_File_wolinfoMD_ini);
+    if ( File::IsReady(v12, 0) )
   {
-    v7[0] = &vt_GenericNode; /*0x779e0e*/
-    v8[0] = &vt_GenericNode; /*0x779e12*/
-    v6[1] = 0; /*0x779e1a*/
-    v6[2] = 0; /*0x779e1f*/
-    v7[1] = 0; /*0x779e23*/
-    v7[2] = 0; /*0x779e27*/
-    v8[1] = 0; /*0x779e2b*/
-    v8[2] = 0; /*0x779e2f*/
-    LinkedList::Prepend(v7, (int)v8); /*0x779e3b*/
-    v6[3] = &vt_List_INIClass_INISection; /*0x779e44*/
-    memset(&v8[3], 0, 12); /*0x779e52*/
-    v9 = 0; /*0x779e5e*/
-    v10 = 0; /*0x779e62*/
-    v11 = 0; /*0x779e66*/
-    v6[0] = &vt_INIClass; /*0x779e6a*/
-    FileStraw::Open(v6, (int)v12, 0); /*0x779e72*/
-    CCFileClass::Close(v12); /*0x779e7b*/
-    unknown_libname_73(&v3); /*0x779e84*/
-    String::Assign((char **)&v4, MEMORY[0x84A14C]); /*0x779e92*/
-    String::Assign((char **)&v5, MEMORY[0x84A13C]); /*0x779ea0*/
-    INIClass::ReadString(v6, (char **)&v5, (char **)&v4, (char **)&v3, (int)&v3); /*0x779ebd*/
-    DeleteAndZero(&v5); /*0x779ec6*/
-    DeleteAndZero(&v4); /*0x779ecf*/
-    String::AssignFromPtr(this, (const char **)&v3); /*0x779edb*/
-    DeleteAndZero(&v3); /*0x779ee4*/
-    HashTable::DestroyHashTableINIClass(v6); /*0x779eed*/
+    v7[0] = &vt_GenericNode;
+    v8[0] = &vt_GenericNode;
+    v6[1] = 0;
+    v6[2] = 0;
+    v7[1] = 0;
+    v7[2] = 0;
+    v8[1] = 0;
+    v8[2] = 0;
+    LinkedList::Prepend(v7, (int)v8);
+    v6[3] = &vt_List_INIClass_INISection;
+    memset(&v8[3], 0, 12);
+    v9 = 0;
+    v10 = 0;
+    v11 = 0;
+    v6[0] = &vt_INIClass;
+    FileStraw::Open(v6, (int)v12, 0);
+    CCFileClass::Close(v12);
+    unknown_libname_73(&v3);
+    String::Assign((char **)&v4, DataGlobal_84A14C);
+    String::Assign((char **)&v5, g_INI_Key_DefaultPersona);
+    INIClass::ReadString(v6, (char **)&v5, (char **)&v4, (char **)&v3, (int)&v3);
+    DeleteAndZero(&v5);
+    DeleteAndZero(&v4);
+    String::AssignFromPtr(this, (const char **)&v3);
+    DeleteAndZero(&v3);
+    HashTable::DestroyHashTableINIClass(v6);
   }
-  else
+    else
   {
-    String::Assign(this, 0); /*0x779dfb*/
+    String::Assign(this, 0);
   }
-  v12[0] = &off_7E1668; /*0x779ef6*/
-  BufferIOFileClass::Dtor(v12); /*0x779efe*/
-  return this; /*0x779f05*/
+    v12[0] = &DataGlobal_7E1668;
+    BufferIOFileClass::Dtor(v12);
+    return this;
 }
 } }
 // 0x779F10

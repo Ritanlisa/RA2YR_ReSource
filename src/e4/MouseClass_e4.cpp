@@ -51,31 +51,28 @@ char __stdcall MouseClass::sub_6D1770(int a1, int a2)
 // 0x72DDB0
 char MouseClass::LoadCursors()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char MouseClass_LoadCursors()
 {
-  char result; // al
-
-  result = MEMORY[0xB0FBE0]; /*0x72ddb0*/
-  if ( !MEMORY[0xB0FBE0] ) /*0x72ddb7*/
+    char result;
+    result = DataGlobal_B0FBE0;
+    if ( !DataGlobal_B0FBE0 )
   {
-    AssetClass::ReleaseAndReload(); /*0x72ddbd*/
-    MEMORY[0xB0FAC4] = LoadFileSHP(MEMORY[0x844CD4], (bool *)&MEMORY[0xB0FC95]); /*0x72dddd*/
-    MEMORY[0xB0F9DC] = LoadFileSHP(MEMORY[0x844CD8], (bool *)&MEMORY[0xB0FC96]); /*0x72ddf2*/
-    MEMORY[0xB0FAC0] = LoadFileSHP(MEMORY[0x844CDC], (bool *)&MEMORY[0xB0FC97]); /*0x72de07*/
-    MEMORY[0xB0FB50] = LoadFileSHP(MEMORY[0x844CE0], (bool *)&MEMORY[0xB0FC98]); /*0x72de1c*/
-    MEMORY[0xB0FA04] = LoadFileSHP(MEMORY[0x844CE4], (bool *)&MEMORY[0xB0FC99]); /*0x72de31*/
-    MEMORY[0xB0FAF8] = LoadFileSHP(MEMORY[0x844CE8], (bool *)&MEMORY[0xB0FC9A]); /*0x72de46*/
-    MEMORY[0xB0FA74] = LoadFileSHP(MEMORY[0x844CEC], (bool *)&MEMORY[0xB0FC9B]); /*0x72de5b*/
-    MEMORY[0xB0FA38] = LoadFileSHP(MEMORY[0x844CF0], (bool *)&MEMORY[0xB0FC9C]); /*0x72de70*/
-    MEMORY[0xB0FAE8] = LoadFileSHP(MEMORY[0x844CF4], (bool *)&MEMORY[0xB0FC9D]); /*0x72de85*/
-    MEMORY[0xB0FA54] = LoadFileSHP(MEMORY[0x844CF8], (bool *)&MEMORY[0xB0FC9E]); /*0x72de9f*/
-    LoadPaletteSimple(MEMORY[0x844BE4], &MEMORY[0xB0FBC8], &MEMORY[0xB0FBCC]); /*0x72dea4*/
-    LoadPaletteSimple(MEMORY[0x844BE8], &MEMORY[0xB0FBD0], &MEMORY[0xB0FBD4]); /*0x72deb9*/
-    LoadPaletteSimple(MEMORY[0x844BEC], &MEMORY[0xB0FBD8], &MEMORY[0xB0FBDC]); /*0x72dece*/
-    result = SetupMouseClassResources(MEMORY[0x8A00A4], MEMORY[0x8A00A8]); /*0x72dedf*/
-    MEMORY[0xB0FBE0] = 1; /*0x72dee4*/
+    AssetClass::ReleaseAndReload();
+    DataGlobal_B0FAC4 = LoadFileSHP(DataGlobal_844CD4, (bool *)&DataGlobal_B0FC95);
+    DataGlobal_B0F9DC = LoadFileSHP(DataGlobal_844CD8, (bool *)&DataGlobal_B0FC96);
+    DataGlobal_B0FAC0 = LoadFileSHP(DataGlobal_844CDC, (bool *)&DataGlobal_B0FC97);
+    g_DialogControlPool = LoadFileSHP(DataGlobal_844CE0, (bool *)&DataGlobal_B0FC98);
+    DataGlobal_B0FA04 = LoadFileSHP(DataGlobal_844CE4, (bool *)&DataGlobal_B0FC99);
+    DataGlobal_B0FAF8 = LoadFileSHP(DataGlobal_844CE8, (bool *)&DataGlobal_B0FC9A);
+    DataGlobal_B0FA74 = LoadFileSHP(DataGlobal_844CEC, (bool *)&DataGlobal_B0FC9B);
+    DataGlobal_B0FA38 = LoadFileSHP(DataGlobal_844CF0, (bool *)&DataGlobal_B0FC9C);
+    DataGlobal_B0FAE8 = LoadFileSHP(DataGlobal_844CF4, (bool *)&DataGlobal_B0FC9D);
+    DataGlobal_B0FA54 = LoadFileSHP(DataGlobal_844CF8, (bool *)&DataGlobal_B0FC9E);
+    LoadPaletteSimple(DataGlobal_844BE4, &DataGlobal_B0FBC8, &DataGlobal_B0FBCC);
+    LoadPaletteSimple(DataGlobal_844BE8, &DataGlobal_B0FBD0, &DataGlobal_B0FBD4);
+    LoadPaletteSimple(DataGlobal_844BEC, &DataGlobal_B0FBD8, &DataGlobal_B0FBDC);
+    result = SetupMouseClassResources(g_DisplayWidth, DataGlobal_8A00A8);
+    DataGlobal_B0FBE0 = 1;
   }
-  return result; /*0x72deeb*/
+    return result;
 }
 }

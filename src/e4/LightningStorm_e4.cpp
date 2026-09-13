@@ -79,15 +79,12 @@ int __fastcall LightningStorm::Start(int a1, int a2, int a3, #375 *a4)
 namespace gamemd {
 char LightningStorm::End()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char LightningStorm_End()
 {
-  char result; // al
-
-  result = unk_A9FAB4; /*0x53a090*/
-  if ( unk_A9FAB4 ) /*0x53a097*/
-    unk_A9FAD0 = 1; /*0x53a099*/
-  return result; /*0x53a0a0*/
+    char result;
+    result = LightningStorm_Active;
+    if ( LightningStorm_Active )
+    LightningStorm_TimeToEnd = 1;
+    return result;
 }
 }
 } // namespace gamemd

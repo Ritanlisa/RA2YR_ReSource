@@ -20,32 +20,29 @@ _BYTE *__thiscall Palette_6BitTo16Bit(_BYTE *this, char a2, char a3, char a4)
 // 0x626200
 int Palette::FindClosestColor(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Palette_FindClosestColor(char *this, int a2)
 {
-  int v2; // ebx
-  int v3; // esi
-  int v5; // eax
-  char *v7; // [esp-4h] [ebp-18h]
-  int v8; // [esp+10h] [ebp-4h]
-
-  v2 = 0; /*0x626208*/
-  v8 = 0; /*0x62620b*/
-  v3 = -1; /*0x62620f*/
-  do /*0x626237*/
+    int v2;
+    int v3;
+    int v5;
+    char *v7;
+    int v8;
+    v2 = 0;
+    v8 = 0;
+    v3 = -1;
+    do
   {
-    v7 = this; /*0x626218*/
-    this += 3; /*0x626219*/
-    v5 = Palette::CalcColorDistance(v7); /*0x62621c*/
-    if ( v3 == -1 || v5 < v3 ) /*0x626228*/
+    v7 = this;
+    this += 3;
+    v5 = Palette::CalcColorDistance(v7);
+    if ( v3 == -1 || v5 < v3 )
     {
-      v3 = v5; /*0x62622a*/
-      v8 = v2; /*0x62622c*/
+    v3 = v5;
+    v8 = v2;
     }
-    ++v2; /*0x626230*/
+    ++v2;
   }
-  while ( v2 < 256 ); /*0x626237*/
-  return v8; /*0x62623d*/
+    while ( v2 < 256 );
+    return v8;
 }
 }
 
@@ -363,19 +360,17 @@ int __thiscall sub_661350(unsigned __int8 *this, unsigned __int8 *a2)
 // 0x72B820
 int Palette::LoadFile()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Palette_LoadFile(char *this)
 {
-  if ( MEMORY[0xB0FBA0] ) /*0x72b82b*/
+    if ( DataGlobal_B0FBA0 )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0xB0FBA0])(MEMORY[0xB0FBA0], 1); /*0x72b831*/
-    MEMORY[0xB0FBA0] = 0; /*0x72b833*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBA0)(DataGlobal_B0FBA0, 1);
+    DataGlobal_B0FBA0 = 0;
   }
-  if ( MEMORY[0xB0FB9C] ) /*0x72b844*/
+    if ( DataGlobal_B0FB9C )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FB9C]); /*0x72b847*/
-    MEMORY[0xB0FB9C] = 0; /*0x72b84f*/
+    __3_YAXPAX_Z(DataGlobal_B0FB9C);
+    DataGlobal_B0FB9C = 0;
   }
-  return LoadPaletteSimple(this, &MEMORY[0xB0FB9C], &MEMORY[0xB0FBA0]); /*0x72b86a*/
+    return LoadPaletteSimple(this, &DataGlobal_B0FB9C, &DataGlobal_B0FBA0);
 }
 }

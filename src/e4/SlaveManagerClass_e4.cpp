@@ -357,29 +357,26 @@ namespace ra2 {
 namespace game {
 wchar_t * SlaveManagerClass::CreateSlave(wchar_t ** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall SlaveManagerClass::CreateSlave(_DWORD **this, wchar_t **a2)
 {
-  int v3; // edi
-  int v4; // eax
-  wchar_t *result; // eax
-  wchar_t *v6; // [esp+Ch] [ebp-8h]
-
-  v3 = **(this + 10); /*0x6af65f*/
-  v4 = (*(int (__thiscall **)(_DWORD))(**(this + 9) + 60))(*(this + 9)); /*0x6af661*/
-  result = (wchar_t *)(*(int (__thiscall **)(_DWORD, int))(v3 + 140))(*(this + 10), v4); /*0x6af668*/
-  *a2 = result; /*0x6af674*/
-  if ( result ) /*0x6af676*/
+    int v3;
+    int v4;
+    wchar_t *result;
+    wchar_t *v6;
+    v3 = *(void**)this->house;
+    v4 = (*(int (__thiscall **)(int))(*(void**)this->master + 60))(this->master);
+    result = (wchar_t *)(*(int (__thiscall **)(int, int))(v3 + 140))(this->house, v4);
+    *a2 = result;
+    if ( result )
   {
-    (*(void (__thiscall **)(wchar_t *))(*(_DWORD *)result + 212))(result); /*0x6af67c*/
-    *((_DWORD *)*a2 + 183) = *(this + 9); /*0x6af68b*/
-    a2[1] = 0; /*0x6af691*/
-    result = MEMORY[0xA8ED84]; /*0x6af698*/
-    a2[2] = MEMORY[0xA8ED84]; /*0x6af6a2*/
-    a2[3] = v6; /*0x6af6a4*/
-    a2[4] = 0; /*0x6af6a7*/
+    (*(void (__thiscall **)(wchar_t *))(*(int *)(result) + 212))(result);
+    *((int *)*a2 + 183) = this->master;
+    *((int*)(a2) + 1) = 0;
+    result = g_CurrentFrame;
+    *((int*)(a2) + 2) = g_CurrentFrame;
+    *((int*)(a2) + 3) = v6;
+    *((int*)(a2) + 4) = 0;
   }
-  return result; /*0x6af6aa*/
+    return result;
 }
 }
 } // namespace game
@@ -981,34 +978,27 @@ namespace ra2 {
 namespace game {
 int SlaveManagerClass::SaveManager(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SlaveManagerClass::SaveManager(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-  int v4; // edx
-  int i; // edi
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6b1312*/
-  if ( result >= 0 ) /*0x6b1319*/
+    int result;
+    int v4;
+    int i;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
   {
-    v4 = *a1; /*0x6b131e*/
-    aP2 = *(_DWORD *)&aP0->UINameLabel[11]; /*0x6b132a*/
-    result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v4 + 16))(a1, &aP2, 4, 0); /*0x6b132e*/
-    if ( result >= 0 ) /*0x6b1333*/
+    v4 = *a1;
+    aP2 = *(int *)&aP0->UINameLabel[11];
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
+    if ( result >= 0 )
     {
-      for ( i = 0; i < aP2; ++i ) /*0x6b133d*/
+    for ( i = 0; i < aP2; ++i )
       {
-        result = (*(int (__stdcall **)(int *, _DWORD, int, _DWORD))(*a1 + 16))( /*0x6b134d*/
-                   a1,
-                   *(_DWORD *)(*(_DWORD *)&aP0->zero_3C + 4 * i),
-                   20,
-                   0);
-        if ( result < 0 ) /*0x6b1352*/
-          break; /*0x6b1352*/
+    result = (*(int (__stdcall **)(int *, int, int, int))(*a1 + 16))( a1, *(int *)(*(int *)&aP0->zero_3C + 4 * i), 20, 0);
+    if ( result < 0 )
+    break;
       }
     }
   }
-  return result; /*0x6b135d*/
+    return result;
 }
 }
 } // namespace game
@@ -1074,13 +1064,11 @@ void __thiscall SlaveManagerClass_25_::_vt03(int this)
 namespace gamemd {
 unsigned int SlaveManagerClass_25::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall SlaveManagerClass_25_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->SlaveManagerClass_25_field_0xC ) /*0x6b13e0*/
-    return (unsigned int)(a2 - this->SlaveManagerClass_25_field_0x4) >> 2; /*0x6b13f5*/
-  else
-    return 0; /*0x6b13e7*/
+    if ( (unsigned char)this->SlaveManagerClass_25_field_0xC )
+    return (unsigned int)(a2 - this->SlaveManagerClass_25_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

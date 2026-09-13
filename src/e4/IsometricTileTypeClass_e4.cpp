@@ -87,15 +87,12 @@ int __stdcall IsometricTileTypeClass::_vt05(int *a1, int a2)
 // 0x549D70
 int IsometricTileTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall IsometricTileTypeClass::SaveToINI(TechnoTypeClass *aP0, ObjectTypeClass *aP1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2); /*0x549d7f*/
-  if ( result >= 0 ) /*0x549d86*/
-    return 0; /*0x549d88*/
-  return result; /*0x549d8a*/
+    int result;
+    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 
@@ -162,13 +159,11 @@ void __thiscall IsometricTileTypeClass::sub_54A190(int this)
 // 0x54A1C0
 unsigned int IsometricTileTypeClass::PointerToIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall IsometricTileTypeClass::sub_54A1C0(int this, int a2)
 {
-  if ( (unsigned char)this->IsometricTileTypeClass_field_0x0C ) /*0x54a1c0*/
-    return (unsigned int)(a2 - this->IsometricTileTypeClass_field_0x04) >> 2; /*0x54a1d5*/
-  else
-    return 0; /*0x54a1c7*/
+    if ( (unsigned char)this->IsometricTileTypeClass_field_0x0C )
+    return (unsigned int)(a2 - this->IsometricTileTypeClass_field_0x04) >> 2;
+    else
+    return 0;
 }
 }
 

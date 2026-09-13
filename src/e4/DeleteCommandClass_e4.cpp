@@ -6,41 +6,33 @@
 // 0x537F10
 unsigned int * DeleteCommandClass::Constructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_537F10(_DWORD *this)
 {
-  *this = &vt_DeleteCommandClass; /*0x537f12*/
-  return this; /*0x537f18*/
+    *(void**)this = &vt_DeleteCommandClass;
+    return this;
 }
 }
 
 // 0x537F30
 wchar_t * DeleteCommandClass::Release()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *DeleteCommandClass::_vt02()
 {
-  return GetStringCSF(aCmndDelete, 0, g_Str_File_Init_CPP, 6559); /*0x537f46*/
+    return GetStringCSF(aCmndDelete, 0, g_Str_File_Init_CPP, 6559);
 }
 }
 
 // 0x537F50
 wchar_t * DeleteCommandClass::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *DeleteCommandClass::_vt03()
 {
-  return GetStringCSF(MEMORY[0x826FEC], 0, g_Str_File_Init_CPP, 6561); /*0x537f66*/
+    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 6561);
 }
 }
 
 // 0x537F70
 wchar_t * DeleteCommandClass::Read()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *DeleteCommandClass::_vt04()
 {
-  return GetStringCSF(aCmndDeletedesc, 0, g_Str_File_Init_CPP, 6563); /*0x537f86*/
+    return GetStringCSF(aCmndDeletedesc, 0, g_Str_File_Init_CPP, 6563);
 }
 }
 
@@ -83,13 +75,11 @@ void __thiscall DeleteCommandClass_28_::sub_53C4C0(int this)
 namespace gamemd {
 unsigned int DeleteCommandClass_28::PointerToIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall DeleteCommandClass_28_::sub_53C4F0(int this, int a2)
 {
-  if ( (unsigned char)this->DeleteCommandClass_28_field_0xC ) /*0x53c4f0*/
-    return (unsigned int)(a2 - this->DeleteCommandClass_28_field_0x4) >> 2; /*0x53c505*/
-  else
-    return 0; /*0x53c4f7*/
+    if ( (unsigned char)this->DeleteCommandClass_28_field_0xC )
+    return (unsigned int)(a2 - this->DeleteCommandClass_28_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -241,13 +231,11 @@ int __thiscall DeleteCommandClass_28_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int DeleteCommandClass_28::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall DeleteCommandClass_28_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->DeleteCommandClass_28_field_0xC ) /*0x53c680*/
-    return (unsigned int)(a2 - this->DeleteCommandClass_28_field_0x4) >> 2; /*0x53c695*/
-  else
-    return 0; /*0x53c687*/
+    if ( (unsigned char)this->DeleteCommandClass_28_field_0xC )
+    return (unsigned int)(a2 - this->DeleteCommandClass_28_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

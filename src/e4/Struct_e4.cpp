@@ -5,11 +5,9 @@
 // 0x4085A0
 int Struct::ZeroInit32()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Struct_ZeroInit32(void *this)
 {
-  memset(this, 0, 0x20u); /*0x4085aa*/
-  return 0; /*0x4085ac*/
+    memset(this, 0, 0x20u);
+    return 0;
 }
 }
 
@@ -149,15 +147,12 @@ int __thiscall Struct::ZeroInitAndSetup_0_0(NullModemConnClass *this)
 // 0x5F75E0
 unsigned int * Struct::InitTriple256(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall Struct_InitTriple256(_DWORD *a1)
 {
-  int v1; // esi
-
-  v1 = 2 * MEMORY[0xAC1474]; /*0x5f75ec*/
-  *a1 = 256; /*0x5f75f7*/
-  a1[1] = 256; /*0x5f75f9*/
-  a1[2] = v1; /*0x5f75fc*/
-  return a1; /*0x5f75ff*/
+    int v1;
+    v1 = 2 * DataGlobal_AC1474;
+    *a1 = 256;
+    *((int*)(a1) + 1) = 256;
+    *((int*)(a1) + 2) = v1;
+    return a1;
 }
 }

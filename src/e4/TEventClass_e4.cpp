@@ -590,29 +590,26 @@ int __thiscall TEventClass::_vt10(_DWORD *this, int a2, int a3)
 namespace gamemd {
 int TEventClass::ProcessEvent(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TEventClass::_vt13(int this, int a2)
 {
-  int v3; // eax
-  int v4; // eax
-  int v5; // eax
-  int v6; // eax
-
-  AbstractClass::ProcessPower((#378 *)this); /*0x71f829*/
-  v3 = this->TEventClass_field_28; /*0x71f82e*/
-  if ( v3 ) /*0x71f833*/
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    AbstractClass::ProcessPower((#378 *)this);
+    v3 = this->TEventClass_field_28;
+    if ( v3 )
   {
-    v4 = (*(int (__stdcall **)(int))(*(_DWORD *)(v3 + 4) + 16))(v3 + 4); /*0x71f83c*/
-    Power::TimerProcess(v4); /*0x71f842*/
+    v4 = (*(int (__stdcall **)(int))(*(int *)(v3 + 4) + 16))(v3 + 4);
+    Power::TimerProcess(v4);
   }
-  Power::TimerProcess(this->TEventClass_field_2C); /*0x71f84d*/
-  v5 = this->TEventClass_field_30; /*0x71f852*/
-  if ( v5 ) /*0x71f857*/
+    Power::TimerProcess(this->TEventClass_field_2C);
+    v5 = this->TEventClass_field_30;
+    if ( v5 )
   {
-    v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(v5 + 4) + 16))(v5 + 4); /*0x71f860*/
-    Power::TimerProcess(v6); /*0x71f866*/
+    v6 = (*(int (__stdcall **)(int))(*(int *)(v5 + 4) + 16))(v5 + 4);
+    Power::TimerProcess(v6);
   }
-  return Power::TimerProcess(this->TEventClass_field_34); /*0x71f876*/
+    return Power::TimerProcess(this->TEventClass_field_34);
 }
 }
 } // namespace gamemd
@@ -657,15 +654,12 @@ int __stdcall TEventClass::SaveLoad_Prefix(AbstractClass *aP0, int aP1)
 namespace gamemd {
 int TEventClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TEventClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x71f93f*/
-  if ( result >= 0 ) /*0x71f946*/
-    return 0; /*0x71f948*/
-  return result; /*0x71f94a*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd
@@ -674,10 +668,8 @@ int __stdcall TEventClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int 
 namespace gamemd {
 int TEventClass::Stub()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TEventClass::_vt16(_DWORD *this)
 {
-  return *(this + 9); /*0x71fa73*/
+    return this->eventType;
 }
 }
 } // namespace gamemd

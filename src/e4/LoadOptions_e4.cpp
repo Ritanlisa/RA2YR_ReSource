@@ -64,10 +64,8 @@ char __stdcall LoadOptions::_vt02(LPCCH lpMultiByteStr, wchar_t *Source)
 namespace gamemd {
 bool LoadOptions::ddtor(LPCSTR lpFileName)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __stdcall LoadOptions::_vt03(LPCSTR lpFileName)
 {
-  return DeleteFileA(lpFileName); /*0x559ec1*/
+    return DeleteFileA(lpFileName);
 }
 }
 } // namespace gamemd
@@ -76,49 +74,46 @@ bool __stdcall LoadOptions::_vt03(LPCSTR lpFileName)
 namespace gamemd {
 char LoadOptions::Read(wchar_t * Destination, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall LoadOptions::_vt04(wchar_t *Destination, int a2)
 {
-  const CHAR *v2; // edi
-  char v3; // bl
-  const wchar_t *v4; // eax
-  const wchar_t *v5; // eax
-  char *v6; // eax
-  _DWORD v8[253]; // [esp+Ch] [ebp-3F4h] BYREF
-
-  if ( !Destination && !a2 ) /*0x559eed*/
-    return 0; /*0x559eed*/
-  v2 = (const CHAR *)(a2 + 44); /*0x559eff*/
-  if ( !_strcmpi((const void *)(a2 + 44), MultiByteStr) ) /*0x559f03*/
-    return 0; /*0x559f03*/
-  GameState::Reset(v8); /*0x559f17*/
-  v3 = LoadOptions_Load(v2, (int)v8); /*0x559f27*/
-  if ( !v3 ) /*0x559f2b*/
-    return 0; /*0x55a03f*/
-  if ( ReadPointerFromECX3(v8) == MEMORY[0x83D560] ) /*0x559f46*/
+    const CHAR *v2;
+    char v3;
+    const wchar_t *v4;
+    const wchar_t *v5;
+    char *v6;
+    int v8[253];
+    if ( !Destination && !a2 )
+    return 0;
+    v2 = (const CHAR *)(a2 + 44);
+    if ( !_strcmpi((const void *)(a2 + 44), MultiByteStr) )
+    return 0;
+    GameState::Reset(v8);
+    v3 = LoadOptions_Load(v2, (int)v8);
+    if ( !v3 )
+    return 0;
+    if ( ReadPointerFromECX3(v8) == DataGlobal_83D560 )
   {
-    v5 = (const wchar_t *)_raw_name_type_info__QBEPBDXZ((type_info *)v8); /*0x559f60*/
-    wcscpy(Destination, v5); /*0x559f67*/
-    *((_BYTE *)Destination + 437) = 0; /*0x559f6f*/
+    v5 = (const wchar_t *)_raw_name_type_info__QBEPBDXZ((type_info *)v8);
+    wcscpy(Destination, v5);
+    *((char *)(Destination) + 437) = 0;
   }
-  else
+    else
   {
-    v4 = (const wchar_t *)_raw_name_type_info__QBEPBDXZ((type_info *)v8); /*0x559f48*/
-    wcscpy(Destination, v4); /*0x559f4f*/
-    *((_BYTE *)Destination + 437) = 1; /*0x559f57*/
+    v4 = (const wchar_t *)_raw_name_type_info__QBEPBDXZ((type_info *)v8);
+    wcscpy(Destination, v4);
+    *((char *)(Destination) + 437) = 1;
   }
-  *((_BYTE *)Destination + 436) = v3; /*0x559f7b*/
-  *((_DWORD *)Destination + 72) = LoadOptions::GetFlag99(v8); /*0x559f8a*/
-  *((_DWORD *)Destination + 106) = LoadOptions::GetFlag98(v8); /*0x559f99*/
-  *((_DWORD *)Destination + 110) = LoadOptions::GetFlag252(v8); /*0x559fa4*/
-  strcpy((char *)Destination + 256, v2); /*0x559fc4*/
-  v6 = LoadOptions::GetData((char *)v8); /*0x559fd1*/
-  wcscpy(Destination + 148, (const wchar_t *)v6); /*0x559fde*/
-  if ( !strlen((const char *)Destination + 256) ) /*0x559fed*/
-    strcpy((char *)Destination + 256, (const char *)(a2 + 304)); /*0x55a013*/
-  *((_DWORD *)Destination + 108) = *(_DWORD *)(a2 + 24); /*0x55a020*/
-  *((_DWORD *)Destination + 107) = *(_DWORD *)(a2 + 20); /*0x55a029*/
-  return 1; /*0x55a02f*/
+    *((char *)(Destination) + 436) = v3;
+    *((int *)(Destination) + 72) = LoadOptions::GetFlag99(v8);
+    *((int *)(Destination) + 106) = LoadOptions::GetFlag98(v8);
+    *((int *)(Destination) + 110) = LoadOptions::GetFlag252(v8);
+    strcpy((char *)(Destination) + 256, v2);
+    v6 = LoadOptions::GetData((char *)v8);
+    wcscpy(Destination + 148, (const wchar_t *)v6);
+    if ( !strlen((const char *)(Destination) + 256) )
+    strcpy((char *)(Destination) + 256, (const char *)(a2 + 304));
+    *((int *)(Destination) + 108) = *(int *)(a2 + 24);
+    *((int *)(Destination) + 107) = *(int *)(a2 + 20);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -127,10 +122,8 @@ char __stdcall LoadOptions::_vt04(wchar_t *Destination, int a2)
 namespace gamemd {
 wchar_t * LoadOptions::Write()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *LoadOptions::_vt05()
 {
-  return GetStringCSF(aGuiLoadmission, 0, MEMORY[0x829F5C], 1216); /*0x55a066*/
+    return GetStringCSF(aGuiLoadmission, 0, g_Str_File_LoadDlg_CPP, 1216);
 }
 }
 } // namespace gamemd
@@ -139,10 +132,8 @@ wchar_t *LoadOptions::_vt05()
 namespace gamemd {
 wchar_t * LoadOptions::Seek()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *LoadOptions::_vt06()
 {
-  return GetStringCSF(aGuiSavemission, 0, MEMORY[0x829F5C], 1222); /*0x55a086*/
+    return GetStringCSF(aGuiSavemission, 0, g_Str_File_LoadDlg_CPP, 1222);
 }
 }
 } // namespace gamemd
@@ -151,10 +142,8 @@ wchar_t *LoadOptions::_vt06()
 namespace gamemd {
 wchar_t * LoadOptions::Open()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *LoadOptions::_vt07()
 {
-  return GetStringCSF(aGuiDeletemissi, 0, MEMORY[0x829F5C], 1228); /*0x55a0a6*/
+    return GetStringCSF(aGuiDeletemissi, 0, g_Str_File_LoadDlg_CPP, 1228);
 }
 }
 } // namespace gamemd
@@ -163,10 +152,8 @@ wchar_t *LoadOptions::_vt07()
 namespace gamemd {
 wchar_t * LoadOptions::Close()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *LoadOptions::_vt08()
 {
-  return GetStringCSF(aTxtGameWasSave, 0, MEMORY[0x829F5C], 1234); /*0x55a0c6*/
+    return GetStringCSF(aTxtGameWasSave, 0, g_Str_File_LoadDlg_CPP, 1234);
 }
 }
 } // namespace gamemd

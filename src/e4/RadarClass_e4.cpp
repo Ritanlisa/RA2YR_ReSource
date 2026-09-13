@@ -78,21 +78,19 @@ int __thiscall RadarClass_Destructor(_DWORD *this)
 namespace gamemd {
 void RadarClass::Destru_vt50()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void RadarClass::Destru_vt50()
 {
-  if ( MEMORY[0xB048F9] ) /*0x652d9a*/
+    if ( DataGlobal_B048F9 )
   {
-    __3_YAXPAX_Z(dword_B048E0); /*0x652da2*/
-    MEMORY[0xB048F9] = 0; /*0x652daa*/
+    __3_YAXPAX_Z(DataGlobal_B048E0);
+    DataGlobal_B048F9 = 0;
   }
-  dword_B048E0 = 0; /*0x652db5*/
-  if ( stru_B048F8 ) /*0x652dbd*/
+    DataGlobal_B048E0 = 0;
+    if ( DataGlobal_B048F8 )
   {
-    __3_YAXPAX_Z(dword_B048AC); /*0x652dc6*/
-    stru_B048F8 = 0; /*0x652dce*/
+    __3_YAXPAX_Z(DataGlobal_B048AC);
+    DataGlobal_B048F8 = 0;
   }
-  dword_B048AC = 0; /*0x652dd4*/
+    DataGlobal_B048AC = 0;
 }
 }
 } // namespace gamemd

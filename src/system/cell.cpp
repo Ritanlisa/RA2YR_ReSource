@@ -1029,24 +1029,21 @@ int GetGroundHeight(int x_leptons, int y_leptons)
 // 0x487950
 bool CellClass::QuickPassable() const
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall CellClass_QuickPassable(_DWORD *this)
 {
-  int v1; // esi
-  int v2; // edi
-  int inited; // eax
-  _DWORD v5[2]; // [esp+8h] [ebp-14h] BYREF
-  _DWORD v6[3]; // [esp+10h] [ebp-Ch] BYREF
-
-  v1 = ((__int16)*(this + 9) << 8) + 128;
-  v2 = ((__int16)HIWORD(*(this + 9)) << 8) + 128;
-  v5[0] = 128;
-  v5[1] = 128;
-  inited = Isometric::InitTables((int)this, v5);
-  v6[0] = v1;
-  v6[1] = v2;
-  v6[2] = inited;
-  return Cell::IsPassable(v6);
+    int v1;
+    int v2;
+    int inited;
+    int v5[2];
+    int v6[3];
+    v1 = ((short)this->smudgeTypeIndex << 8) + 128;
+    v2 = ((short)HIWORD(this->smudgeTypeIndex) << 8) + 128;
+    v5[0] = 128;
+    v5[1] = 128;
+    inited = Isometric::InitTables((int)this, v5);
+    v6[0] = v1;
+    v6[1] = v2;
+    v6[2] = inited;
+    return Cell::IsPassable(v6);
 }
 /* ASM:
 sub     esp, 14h

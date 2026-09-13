@@ -6,10 +6,8 @@
 namespace gamemd {
 int * sub_7B0210()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *sub_7B0210()
 {
-  return &stru_B77F58; /*0x7b0215*/
+    return &DataGlobal_B77F58;
 }
 }
 } // namespace gamemd

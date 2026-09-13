@@ -29,13 +29,11 @@ void __thiscall Dial8Class_48_::sub_4A7D20(int this)
 namespace gamemd {
 unsigned int Dial8Class_48::PointerToIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall Dial8Class_48_::sub_4A7D50(int this, int a2)
 {
-  if ( (unsigned char)this->Dial8Class_48_field_0xC ) /*0x4a7d50*/
-    return (unsigned int)(a2 - this->Dial8Class_48_field_0x4) >> 2; /*0x4a7d65*/
-  else
-    return 0; /*0x4a7d57*/
+    if ( (unsigned char)this->Dial8Class_48_field_0xC )
+    return (unsigned int)(a2 - this->Dial8Class_48_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -187,13 +185,11 @@ int __thiscall Dial8Class_48_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int Dial8Class_48::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall Dial8Class_48_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->Dial8Class_48_field_0xC ) /*0x4a7ee0*/
-    return (unsigned int)(a2 - this->Dial8Class_48_field_0x4) >> 2; /*0x4a7ef5*/
-  else
-    return 0; /*0x4a7ee7*/
+    if ( (unsigned char)this->Dial8Class_48_field_0xC )
+    return (unsigned int)(a2 - this->Dial8Class_48_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

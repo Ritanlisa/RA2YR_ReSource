@@ -213,16 +213,13 @@ double __thiscall Animation::GetProgress(int this)
 // 0x661D80
 long long Animation::UpdateBobOffset()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 Animation_UpdateBobOffset()
 {
-  double v0; // st7
-  __int64 result; // rax
-
-  v0 = Math::Sin(dbl_B04E00 - dbl_B04E28); /*0x661d92*/
-  result = Math::RoundToInt(v0 * dbl_B04E20 * 0.5); /*0x661da6*/
-  dword_B04E78 = result; /*0x661dab*/
-  return result; /*0x661db0*/
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_B04E00 - DataGlobal_B04E28);
+    result = Math::RoundToInt(v0 * DataGlobal_B04E20 * 0.5);
+    DataGlobal_B04E78 = result;
+    return result;
 }
 }
 

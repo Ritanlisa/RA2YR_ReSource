@@ -251,10 +251,8 @@ __int16 __thiscall COMObject_DeactivateGlobal(_DWORD *this)
 } }
 // 0x4E19F0
 namespace gamemd { bool COMObject::IsPrimaryInstance() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall COMObject_IsPrimaryInstance(void *this)
 {
-  return this == (void *)MEMORY[0x8B3E90]; /*0x4e19fd*/
+    return this == (void *)DataGlobal_8B3E90;
 }
 } }
 // 0x4E2AF0
@@ -563,15 +561,12 @@ int __thiscall ComPtr::Set(rc_ptr_base *this, int a2)
 } }
 // 0x67FDD0
 namespace gamemd { int ComPtr::ReleaseSimple() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ComPtr_ReleaseSimple(int *this)
 {
-  int result; // eax
-
-  result = *this; /*0x67fdd0*/
-  if ( *this ) /*0x67fdd0*/
-    return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result); /*0x67fdd9*/
-  return result; /*0x67fddc*/
+    int result;
+    result = *(void**)this;
+    if ( *(void**)this )
+    return (*(int (__stdcall **)(int))(*(int *)(result) + 8))(result);
+    return result;
 }
 } }
 // 0x683030
@@ -1082,12 +1077,10 @@ namespace gamemd { void* COMClass::createInstance(int a1) { return nullptr; } }
 namespace gamemd { void* COMClass::getInterface(int a1) { return nullptr; } }
 // 0x765C70
 namespace gamemd { void* COMClass::releaseInterface() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_765C70(_DWORD *this)
 {
-  ComPtr::Constructor(this); /*0x765c73*/
-  *this = &vt_rc_ptr_WorldDominationTour_Conflict; /*0x765c78*/
-  return this; /*0x765c80*/
+    ComPtr::Constructor(this);
+    *(void**)this = &vt_rc_ptr_WorldDominationTour_Conflict;
+    return this;
 }
 } }
 // 0x7669C0
@@ -1203,11 +1196,9 @@ rc_ptr *__thiscall COMClass::marshalInterface(_DWORD *Block, char a2)
 } }
 // 0x76F060
 namespace gamemd { void* ComPtr::Territory_Dtor() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ComPtr_Territory_Dtor(_DWORD *this)
 {
-  *this = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76f060*/
-  return ComPtr::Release(this);
+    *(void**)this = &vt_rc_ptr_WorldDominationTour_Territory;
+    return ComPtr::Release(this);
 }
 } }
 // 0x7AE5D0

@@ -6,10 +6,8 @@
 namespace gamemd {
 void RetVtableStubZero_eax_27()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void RetVtableStubZero_eax_27()
 {
-  GameSetup::DisplayPlayers(); /*0x5dafd2*/
+    GameSetup::DisplayPlayers();
 }
 }
 } // namespace gamemd

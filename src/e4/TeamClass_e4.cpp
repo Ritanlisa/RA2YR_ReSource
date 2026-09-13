@@ -61,31 +61,27 @@ BOOL __thiscall sub_4E0080(_BYTE *this)
 namespace gamemd {
 int TeamClass::CountActiveTeamsForType(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TeamClass::CountActiveTeamsForType(void *this, ObjectClass *aP1)
 {
-  int result; // eax
-  int v3; // edi
-  int *v4; // esi
-  int v5; // edx
-
-  result = 0; /*0x5095d6*/
-  if ( *(_DWORD *)&MEMORY[0x89F690].__pad_579C[62156] - 1 >= 0 ) /*0x5095db*/
+    int result;
+    int v3;
+    int *v4;
+    int v5;
+    result = 0;
+    if ( *(int *)&g_CellDirectionOffsets.__pad_579C[62156] - 1 >= 0 )
   {
-    v3 = *(_DWORD *)&MEMORY[0x89F690].__pad_579C[62156]; /*0x5095ea*/
-    v4 = (int *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62144] /*0x5095ed*/
-               + 4 * (*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62156] - 1));
-    do /*0x509605*/
+    v3 = *(int *)&g_CellDirectionOffsets.__pad_579C[62156];
+    v4 = (int *)(*(int *)&g_CellDirectionOffsets.__pad_579C[62144] + 4 * (*(int *)&g_CellDirectionOffsets.__pad_579C[62156] - 1));
+    do
     {
-      v5 = *v4; /*0x5095f0*/
-      if ( *v4 && *(void **)(v5 + 44) == this && aP1 == *(ObjectClass **)(v5 + 36) ) /*0x5095fe*/
-        ++result; /*0x509600*/
-      --v4; /*0x509601*/
-      --v3; /*0x509604*/
+    v5 = *v4;
+    if ( *v4 && *(void **)(v5 + 44) == this && aP1 == *(ObjectClass **)(v5 + 36) )
+    ++result;
+    --v4;
+    --v3;
     }
-    while ( v3 ); /*0x509605*/
+    while ( v3 );
   }
-  return result; /*0x50960a*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -281,42 +277,39 @@ int __thiscall TeamClass_GetLeaderIndex(_DWORD *this)
 namespace gamemd {
 unsigned int * TeamClass::FindScriptAction(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_633EA0(_DWORD *this, _DWORD *a2)
 {
-  _DWORD *Type; // esi
-  int v4; // eax
-  int v5; // eax
-  int v6; // edi
-  int v8; // eax
-  int v9; // edx
-  int v10; // ecx
-
-  Type = (_DWORD *)BuildingClass::GetPlanningToken(a2); /*0x633eae*/
-  v4 = Type[1]; /*0x633eb0*/
-  a2 = this; /*0x633eb7*/
-  v5 = (*(int (__thiscall **)(_DWORD *, _DWORD **))(v4 + 16))(Type + 1, &a2); /*0x633ebf*/
-  if ( v5 == -1 ) /*0x633ec5*/
-    return 0; /*0x633ec5*/
-  v6 = Type[5]; /*0x633ec7*/
-  if ( v6 == 1 ) /*0x633ecd*/
-    return this; /*0x633ed4*/
-  v8 = v5 - 1; /*0x633ed7*/
-  if ( v8 < 0 ) /*0x633ed8*/
-    v8 = v6 - 1; /*0x633eda*/
-  v9 = v8; /*0x633edf*/
-  if ( !v6 ) /*0x633ee1*/
-    return 0; /*0x633ee1*/
-  if ( v8 >= v6 ) /*0x633ee5*/
+    int *Type;
+    int v4;
+    int v5;
+    int v6;
+    int v8;
+    int v9;
+    int v10;
+    Type = (int *)BuildingClass::GetPlanningToken(a2);
+    v4 = Type[1];
+    a2 = this;
+    v5 = (*(int (__thiscall **)(int *, int **))(v4 + 16))(Type + 1, &a2);
+    if ( v5 == -1 )
+    return 0;
+    v6 = Type[5];
+    if ( v6 == 1 )
+    return this;
+    v8 = v5 - 1;
+    if ( v8 < 0 )
+    v8 = v6 - 1;
+    v9 = v8;
+    if ( !v6 )
+    return 0;
+    if ( v8 >= v6 )
   {
-    v10 = Type[37]; /*0x633ee7*/
-    if ( v10 < 0 ) /*0x633eef*/
-      return 0; /*0x633eef*/
-    v9 = v10 + (v8 - v10) % Type[36]; /*0x633efc*/
+    v10 = Type[37];
+    if ( v10 < 0 )
+    return 0;
+    v9 = v10 + (v8 - v10) % Type[36];
   }
-  if ( v9 >= 0 && v9 < v6 ) /*0x633f04*/
-    return *(_DWORD **)(Type[2] + 4 * v9); /*0x633f0f*/
-  return 0; /*0x633ecf*/
+    if ( v9 >= 0 && v9 < v6 )
+    return *(int **)(Type[2] + 4 * v9);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -325,42 +318,39 @@ _DWORD *__thiscall sub_633EA0(_DWORD *this, _DWORD *a2)
 namespace gamemd {
 unsigned int * TeamClass::GetNextScriptAction(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_633F20(_DWORD *this, _DWORD *a2)
 {
-  _DWORD *Type; // esi
-  int v4; // eax
-  int v5; // eax
-  int v6; // edi
-  int v8; // eax
-  int v9; // edx
-  int v10; // ecx
-
-  Type = (_DWORD *)BuildingClass::GetPlanningToken(a2); /*0x633f2e*/
-  v4 = Type[1]; /*0x633f30*/
-  a2 = this; /*0x633f37*/
-  v5 = (*(int (__thiscall **)(_DWORD *, _DWORD **))(v4 + 16))(Type + 1, &a2); /*0x633f3f*/
-  if ( v5 == -1 ) /*0x633f45*/
-    return 0; /*0x633f45*/
-  v6 = Type[5]; /*0x633f47*/
-  if ( v6 == 1 ) /*0x633f4d*/
-    return this; /*0x633f54*/
-  v8 = v5 + 1; /*0x633f57*/
-  if ( v8 >= v6 ) /*0x633f5a*/
-    v8 = 0; /*0x633f5c*/
-  v9 = v8; /*0x633f60*/
-  if ( !v6 ) /*0x633f62*/
-    return 0; /*0x633f62*/
-  if ( v8 >= v6 ) /*0x633f66*/
+    int *Type;
+    int v4;
+    int v5;
+    int v6;
+    int v8;
+    int v9;
+    int v10;
+    Type = (int *)BuildingClass::GetPlanningToken(a2);
+    v4 = Type[1];
+    a2 = this;
+    v5 = (*(int (__thiscall **)(int *, int **))(v4 + 16))(Type + 1, &a2);
+    if ( v5 == -1 )
+    return 0;
+    v6 = Type[5];
+    if ( v6 == 1 )
+    return this;
+    v8 = v5 + 1;
+    if ( v8 >= v6 )
+    v8 = 0;
+    v9 = v8;
+    if ( !v6 )
+    return 0;
+    if ( v8 >= v6 )
   {
-    v10 = Type[37]; /*0x633f68*/
-    if ( v10 < 0 ) /*0x633f70*/
-      return 0; /*0x633f70*/
-    v9 = v10 + (v8 - v10) % Type[36]; /*0x633f7d*/
+    v10 = Type[37];
+    if ( v10 < 0 )
+    return 0;
+    v9 = v10 + (v8 - v10) % Type[36];
   }
-  if ( v9 >= 0 && v9 < v6 ) /*0x633f85*/
-    return *(_DWORD **)(Type[2] + 4 * v9); /*0x633f90*/
-  return 0; /*0x633f4f*/
+    if ( v9 >= 0 && v9 < v6 )
+    return *(int **)(Type[2] + 4 * v9);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1192,11 +1182,9 @@ LABEL_4:
 namespace gamemd {
 char TeamClass::SetField11(ScriptClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TeamClass::SetField11(_DWORD *this, ScriptClass *aP1)
 {
-  *(this + 11) = aP1; /*0x6915a4*/
-  return 1; /*0x6915a9*/
+    this->owner = aP1;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -2158,37 +2146,34 @@ int __thiscall TeamClass::RecruitMember(_DWORD *this, int a2)
 namespace gamemd {
 int TeamClass::ExecuteAction(int a2, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TeamClass::_vt10(_DWORD *this, int a2, char a3)
 {
-  int result; // eax
-  int v4; // edx
-
-  result = a2; /*0x6eae60*/
-  if ( a2 == *(this + 28) ) /*0x6eae6c*/
-    *(this + 28) = 0; /*0x6eae6e*/
-  v4 = *(this + 21); /*0x6eae71*/
-  if ( a2 == v4 && a3 ) /*0x6eae7c*/
-    *(this + 21) = *(_DWORD *)(v4 + 1496); /*0x6eae84*/
-  if ( a2 == *(this + 11) ) /*0x6eae8a*/
-    *(this + 11) = 0; /*0x6eae8c*/
-  if ( a2 == *(this + 10) ) /*0x6eae92*/
-    *(this + 10) = 0; /*0x6eae94*/
-  if ( *(this + 16) == a2 ) /*0x6eae9a*/
-    *(this + 16) = 0; /*0x6eae9c*/
-  if ( *(this + 15) == a2 ) /*0x6eaea2*/
-    *(this + 15) = 0; /*0x6eaea4*/
-  if ( *(this + 13) == a2 ) /*0x6eaeaa*/
-    *(this + 13) = 0; /*0x6eaeac*/
-  if ( *(this + 9) == a2 ) /*0x6eaeb2*/
-    *(this + 9) = 0; /*0x6eaeb4*/
-  if ( *(this + 14) == a2 ) /*0x6eaeba*/
-    *(this + 14) = 0; /*0x6eaebc*/
-  if ( *(this + 17) == a2 ) /*0x6eaec2*/
-    *(this + 17) = 0; /*0x6eaec4*/
-  if ( *(this + 12) == a2 ) /*0x6eaeca*/
-    *(this + 12) = 0; /*0x6eaecc*/
-  return result; /*0x6eaecf*/
+    int result;
+    int v4;
+    result = a2;
+    if ( a2 == this->tag )
+    this->tag = 0;
+    v4 = this->firstUnit;
+    if ( a2 == v4 && a3 )
+    this->firstUnit = *(int *)(v4 + 1496);
+    if ( a2 == this->owner )
+    this->owner = 0;
+    if ( a2 == this->currentScript )
+    this->currentScript = 0;
+    if ( this->focus == a2 )
+    this->focus = 0;
+    if ( this->queuedFocus == a2 )
+    this->queuedFocus = 0;
+    if ( this->spawnCell == a2 )
+    this->spawnCell = 0;
+    if ( this->buildingType == a2 )
+    this->buildingType = 0;
+    if ( this->unknown38 == a2 )
+    this->unknown38 = 0;
+    if ( this->unknown44 == a2 )
+    this->unknown44 = 0;
+    if ( this->target == a2 )
+    this->target = 0;
+    return result;
 }
 }
 } // namespace gamemd
@@ -2876,19 +2861,17 @@ char __thiscall sub_6EBF50(int this)
 namespace gamemd {
 char TeamClass::WakeUpAllMembers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TeamClass::WakeUpAllMembers(_DWORD *this)
 {
-  char result; // al
-  int i; // esi
-
-  result = TeamClass::SelectMember((int)this, 0); /*0x6ec3a5*/
-  for ( i = *(this + 21); i; i = *(_DWORD *)(i + 1496) ) /*0x6ec3af*/
+    char result;
+    int i;
+    result = TeamClass::SelectMember((int)this, 0);
+    i = this->firstUnit;
+    for ( ; i; i = *(int *)(i + 1496) )
   {
-    result = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)i + 968))(i, 0); /*0x6ec3b7*/
-    *(_BYTE *)(i + 1672) = 1; /*0x6ec3bd*/
+    result = (*(int (__thiscall **)(int, int))(*(int *)(i) + 968))(i, 0);
+    *(char *)(i + 1672) = 1;
   }
-  return result; /*0x6ec3ce*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -2954,15 +2937,12 @@ int __stdcall TeamClass::SaveLoad_Prefix(AbstractClass *aP0, int aP1)
 namespace gamemd {
 int TeamClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TeamClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6ec54f*/
-  if ( result >= 0 ) /*0x6ec556*/
-    return 0; /*0x6ec558*/
-  return result; /*0x6ec55a*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd

@@ -183,42 +183,39 @@ void __cdecl __spoils<ecx> sub_7E01D2(_BYTE *a1, _BYTE *a2, _BYTE *a3, int a4)
 namespace gamemd {
 void sub_7E01FB(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_7E01FB(int *a1, char *a2, int a3, unsigned int a4, unsigned int a5)
 {
-  _BYTE *v5; // [esp-24h] [ebp-34h]
-  _BYTE *v6; // [esp+0h] [ebp-10h]
-  _DWORD *v7; // [esp+4h] [ebp-Ch]
-  unsigned int v8; // [esp+8h] [ebp-8h]
-  char *v10; // [esp+Ch] [ebp-4h]
-  int *v11; // [esp+18h] [ebp+8h]
-  int v12; // [esp+20h] [ebp+10h]
-  unsigned int v13; // [esp+28h] [ebp+18h]
-
-  v8 = a4 >> 1; /*0x7e021b*/
-  v13 = a5 >> 1; /*0x7e021e*/
-  ObfuscateDataBlock(a1, dword_877D20, a4); /*0x7e022a*/
-  v7 = &unk_878720; /*0x7e023b*/
-  v6 = dword_877D20; /*0x7e023e*/
-  v11 = (int *)((char *)a1 + a4); /*0x7e0241*/
-  v12 = a3 - 1; /*0x7e0244*/
-  do /*0x7e02aa*/
+    char *v5;
+    char *v6;
+    int *v7;
+    unsigned int v8;
+    char *v10;
+    int *v11;
+    int v12;
+    unsigned int v13;
+    v8 = a4 >> 1;
+    v13 = a5 >> 1;
+    ObfuscateDataBlock(a1, DataGlobal_877D20, a4);
+    v7 = &DataGlobal_878720;
+    v6 = DataGlobal_877D20;
+    v11 = (int *)((char *)(a1) + a4);
+    v12 = a3 - 1;
+    do
   {
-    ObfuscateDataBlock(v11, v7, a4); /*0x7e0250*/
-    sub_7E01D2(v6, v7, byte_879124, a4); /*0x7e0266*/
-    qmemcpy(a2, v6, 4 * v8); /*0x7e0277*/
-    v10 = &a2[v13]; /*0x7e0287*/
-    qmemcpy(v10, byte_879124, 4 * v8); /*0x7e028a*/
-    v11 = (int *)((char *)v11 + a4); /*0x7e0295*/
-    a2 = &v10[v13]; /*0x7e0298*/
-    v5 = v7; /*0x7e029b*/
-    v7 = v6; /*0x7e02a1*/
-    v6 = v5; /*0x7e02a4*/
-    --v12; /*0x7e02a7*/
+    ObfuscateDataBlock(v11, v7, a4);
+    sub_7E01D2(v6, v7, DataGlobal_879124, a4);
+    qmemcpy(a2, v6, 4 * v8);
+    v10 = &a2[v13];
+    qmemcpy(v10, DataGlobal_879124, 4 * v8);
+    v11 = (int *)((char *)(v11) + a4);
+    a2 = &v10[v13];
+    v5 = v7;
+    v7 = v6;
+    v6 = v5;
+    --v12;
   }
-  while ( v12 ); /*0x7e02aa*/
-  ObfuscateDataBlock(v11, v7, a4); /*0x7e02b5*/
-  qmemcpy(a2, v7, 4 * v8); /*0x7e02c6*/
+    while ( v12 );
+    ObfuscateDataBlock(v11, v7, a4);
+    qmemcpy(a2, v7, 4 * v8);
 }
 }
 } // namespace gamemd

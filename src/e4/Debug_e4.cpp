@@ -74,23 +74,20 @@ char __thiscall Debug::ScrollText(int this, CellStruct *aP1)
 namespace gamemd {
 char Debug::Printf()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Debug::Printf(IUnknown *this)
 {
-  char result; // al
-  char Buffer[256]; // [esp+0h] [ebp-100h] BYREF
-  int v3; // [esp+104h] [ebp+4h]
-  char *Format; // [esp+108h] [ebp+8h]
-  char ArgList; // [esp+10Ch] [ebp+Ch] BYREF
-
-  result = MEMORY[0xABF23A]; /*0x5bd1f0*/
-  if ( MEMORY[0xABF23A] ) /*0x5bd1fd*/
+    char result;
+    char Buffer[256];
+    int v3;
+    char *Format;
+    char ArgList;
+    result = g_MiscFlag;
+    if ( g_MiscFlag )
   {
-    vsprintf(Buffer, Format, &ArgList); /*0x5bd214*/
-    Buffer[255] = 0; /*0x5bd227*/
-    return Debug::ScrollText(v3, Buffer); /*0x5bd230*/
+    vsprintf(Buffer, Format, &ArgList);
+    Buffer[255] = 0;
+    return Debug::ScrollText(v3, Buffer);
   }
-  return result; /*0x5bd235*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -99,39 +96,18 @@ char __thiscall Debug::Printf(IUnknown *this)
 namespace gamemd {
 char Debug_Helper(ObjectClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall Debug_Helper(ObjectClass *aP0)
 {
-  char result; // al
-
-  result = (char)aP0; /*0x5bd360*/
-  switch ( (_BYTE)aP0 ) /*0x5bd366*/
+    char result;
+    result = (char)aP0;
+    switch ( (char)aP0 )
   {
-    case 0xA: /*0x5bd366*/
-      return 32; /*0x5bd368*/
-    case 0xB3: /*0x5bd366*/
-      return 124; /*0x5bd371*/
-    case 0xC4: /*0x5bd366*/
-      return 45; /*0x5bd37a*/
-    case 0xCD: /*0x5bd366*/
-      return 61; /*0x5bd383*/
-    case 0xDA: /*0x5bd366*/
-    case 0xC2: /*0x5bd366*/
-    case 0xBF: /*0x5bd366*/
-    case 0xC6: /*0x5bd366*/
-    case 0xC3: /*0x5bd366*/
-    case 0xD1: /*0x5bd366*/
-    case 0xC5: /*0x5bd366*/
-    case 0xD8: /*0x5bd366*/
-    case 0xB5: /*0x5bd366*/
-    case 0xC0: /*0x5bd366*/
-    case 0xC1: /*0x5bd366*/
-    case 0xD9: /*0x5bd366*/
-    case 0xD5: /*0x5bd366*/
-    case 0xB4: /*0x5bd366*/
-      return 43; /*0x5bd3c0*/
+    case 0xA: return 32;
+    case 0xB3: return 124;
+    case 0xC4: return 45;
+    case 0xCD: return 61;
+    case 0xDA: case 0xC2: case 0xBF: case 0xC6: case 0xC3: case 0xD1: case 0xC5: case 0xD8: case 0xB5: case 0xC0: case 0xC1: case 0xD9: case 0xD5: case 0xB4: return 43;
   }
-  return result; /*0x5bd36a*/
+    return result;
 }
 }
 } // namespace gamemd

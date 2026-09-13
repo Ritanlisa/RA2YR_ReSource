@@ -5,26 +5,23 @@
 // 0x49F8B0
 LSTATUS WinMain::CleanupResource()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LSTATUS __thiscall WinMain::CleanupResource(AnimClass *this)
 {
-  LSTATUS result; // eax
-  HKEY phkResult; // [esp+0h] [ebp-4h] BYREF
-
-  phkResult = (HKEY)this; /*0x49f8b0*/
-  Debug::Log(); /*0x49f8b6*/
-  if ( MEMORY[0x89F75C] ) /*0x49f8c5*/
+    LSTATUS result;
+    HKEY phkResult;
+    phkResult = (HKEY)this;
+    Debug::Log();
+    if ( lpBaseAddress )
   {
-    UnmapViewOfFile(MEMORY[0x89F75C]); /*0x49f8c8*/
-    MEMORY[0x89F75C] = 0; /*0x49f8ce*/
+    UnmapViewOfFile(lpBaseAddress);
+    lpBaseAddress = 0;
   }
-  result = RegOpenKeyExA(HKEY_CLASSES_ROOT, SubKey, 0, 0xF003Fu, &phkResult); /*0x49f8ee*/
-  if ( !result ) /*0x49f8f6*/
+    result = RegOpenKeyExA(HKEY_CLASSES_ROOT, SubKey, 0, 0xF003Fu, &phkResult);
+    if ( !result )
   {
-    RegDeleteValueA(phkResult, ValueName); /*0x49f902*/
-    return RegCloseKey(phkResult); /*0x49f90d*/
+    RegDeleteValueA(phkResult, ValueName);
+    return RegCloseKey(phkResult);
   }
-  return result; /*0x49f914*/
+    return result;
 }
 }
 
@@ -321,18 +318,16 @@ char sub_5D7E50()
 namespace gamemd {
 int sub_637070()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_637070()
 {
-  MEMORY[0xAC4CF4] = 0; /*0x637074*/
-  MEMORY[0xAC4CF5] = 0; /*0x637079*/
-  MEMORY[0xAC4CCC] = 0; /*0x63707e*/
-  MEMORY[0xAC4C38] = 0; /*0x637083*/
-  MEMORY[0xAC4BF0] = 0; /*0x637088*/
-  MEMORY[0xAC4C68] = 0; /*0x63708d*/
-  MEMORY[0xAC4C6C] = 0; /*0x637092*/
-  MEMORY[0xAC4CB0] = 0; /*0x637098*/
-  return 0; /*0x63709d*/
+    DataGlobal_AC4CF4 = 0;
+    DataGlobal_AC4CF5 = 0;
+    g_ScriptPool = 0;
+    g_ScriptState = 0;
+    g_ScriptActionPool = 0;
+    DataGlobal_AC4C68 = 0;
+    DataGlobal_AC4C6C = 0;
+    DataGlobal_AC4CB0 = 0;
+    return 0;
 }
 }
 } // namespace gamemd
@@ -393,24 +388,21 @@ HANDLE sub_7B84F0()
 namespace gamemd {
 void sub_53E6B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_53E6B0()
 {
-  signed int SampleSize; // eax
-
-  if ( unk_AA0448 ) /*0x53e6b7*/
+    signed int SampleSize;
+    if ( g_StreamPool )
   {
-    EnterCriticalSection(&unk_AA0418); /*0x53e6be*/
-    if ( unk_AA0468 && unk_AA045C && unk_AA0444 == 1 ) /*0x53e6dd*/
+    EnterCriticalSection(&DataGlobal_AA0418);
+    if ( Stream && DataGlobal_AA045C && g_StreamBufferState == 1 )
     {
-      if ( unk_AA0464 ) /*0x53e6e7*/
+    if ( g_StreamConfig )
       {
-        SampleSize = Audio::GetSampleSize((_DWORD *)unk_AA0464); /*0x53e6eb*/
-        WriteAudioStreamToFile(unk_AA0464, unk_AA0468, SampleSize, 0); /*0x53e6fd*/
-        fflush(unk_AA0468); /*0x53e708*/
+    SampleSize = Audio::GetSampleSize((int *)g_StreamConfig);
+    WriteAudioStreamToFile(g_StreamConfig, Stream, SampleSize, 0);
+    fflush(Stream);
       }
     }
-    LeaveCriticalSection(&unk_AA0418); /*0x53e715*/
+    LeaveCriticalSection(&DataGlobal_AA0418);
   }
 }
 }

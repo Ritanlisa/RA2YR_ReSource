@@ -463,35 +463,32 @@ LABEL_11:
 } }
 // 0x67C690
 namespace gamemd { int Stream::ReadOLEObjects() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HRESULT __thiscall Stream::ReadOLEObjects(LPSTREAM pStm)
 {
-  HRESULT result; // eax
-  int v3; // ebx
-  int v4; // [esp+10h] [ebp-8h] BYREF
-  LPVOID ppvObj; // [esp+14h] [ebp-4h] BYREF
-
-  result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)pStm->__pad_0 + 12))(pStm, &v4, 4, 0); /*0x67c6a4*/
-  if ( result >= 0 ) /*0x67c6a9*/
+    HRESULT result;
+    int v3;
+    int v4;
+    LPVOID ppvObj;
+    result = (*(int (__stdcall **)(LPSTREAM, int *, int, int))(*(int *)pStm->__pad_0 + 12))(pStm, &v4, 4, 0);
+    if ( result >= 0 )
   {
-    v3 = 0; /*0x67c6af*/
-    if ( v4 <= 0 ) /*0x67c6b3*/
+    v3 = 0;
+    if ( v4 <= 0 )
     {
-      return 0; /*0x67c6d5*/
+    return 0;
     }
     else
     {
-      while ( 1 ) /*0x67c6c6*/
+    while ( 1 )
       {
-        result = OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj); /*0x67c6c6*/
-        if ( result < 0 ) /*0x67c6ca*/
-          break; /*0x67c6ca*/
-        if ( ++v3 >= v4 ) /*0x67c6d3*/
-          return 0; /*0x67c6d3*/
+    result = OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj);
+    if ( result < 0 )
+    break;
+    if ( ++v3 >= v4 )
+    return 0;
       }
     }
   }
-  return result; /*0x67c6d7*/
+    return result;
 }
 } }
 // 0x7B0440
@@ -535,9 +532,7 @@ int __thiscall Stream::GetField(_DWORD *this)
 } }
 // 0x7BE640
 namespace gamemd { void Stream::CopyFromTemplate() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_7BE640(void *this)
 {
-  qmemcpy(this, &MEMORY[0x84E738], 0x88u); /*0x7be64e*/
+    qmemcpy(this, &DataGlobal_84E738, 0x88u);
 }
 } }

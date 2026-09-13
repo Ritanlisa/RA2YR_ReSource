@@ -6,10 +6,8 @@
 namespace gamemd {
 void * sub_5C61D0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *sub_5C61D0()
 {
-  return &unk_82E174; /*0x5c61d5*/
+    return &DataGlobal_82E174;
 }
 }
 } // namespace gamemd
@@ -18,24 +16,21 @@ void *sub_5C61D0()
 namespace gamemd {
 int sub_5E94D0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5E94D0()
 {
-  int result; // eax
-  LPARAM *v1; // edx
-  LPARAM v2; // ecx
-
-  result = 0; /*0x5e94e5*/
-  v1 = &MEMORY[0xA8DA90]; /*0x5e94e7*/
-  do /*0x5e9508*/
+    int result;
+    LPARAM *v1;
+    LPARAM v2;
+    result = 0;
+    v1 = &g_NetworkPlayerName;
+    do
   {
-    v2 = *v1; /*0x5e94ec*/
-    if ( *v1 && (v2 == MEMORY[0xAC11A4] || v2 == MEMORY[0xAC11A8] || v2 == MEMORY[0xAC11AC]) ) /*0x5e94fc*/
-      ++result; /*0x5e94fe*/
-    ++v1; /*0x5e94ff*/
+    v2 = *v1;
+    if ( *v1 && (v2 == g_Lobby_PlayerTeam || v2 == g_Lobby_PlayerSide || v2 == g_Lobby_PlayerColor) )
+    ++result;
+    ++v1;
   }
-  while ( (int)v1 < (int)&MEMORY[0xA8DAB0] ); /*0x5e9508*/
-  return result; /*0x5e950a*/
+    while ( (int)v1 < (int)&g_PlayerNameListEnd );
+    return result;
 }
 }
 } // namespace gamemd
@@ -44,36 +39,28 @@ int sub_5E94D0()
 namespace gamemd {
 char sub_5E9580()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_5E9580()
 {
-  int v0; // edx
-  LPARAM *v1; // ecx
-  LPARAM v2; // eax
-
-  v0 = 0; /*0x5e9595*/
-  v1 = &MEMORY[0xA8DA90]; /*0x5e9597*/
-  while ( 1 ) /*0x5e959c*/
+    int v0;
+    LPARAM *v1;
+    LPARAM v2;
+    v0 = 0;
+    v1 = &g_NetworkPlayerName;
+    while ( 1 )
   {
-    v2 = *v1; /*0x5e959c*/
-    if ( *v1 ) /*0x5e959c*/
+    v2 = *v1;
+    if ( *v1 )
     {
-      if ( v2 != MEMORY[0xAC119C] /*0x5e95c2*/
-        && v2 != MEMORY[0xAC11A0]
-        && v2 != MEMORY[0xAC11B4]
-        && (wchar_t *)v2 != MEMORY[0xAC11B0]
-        && v0 == MEMORY[0x8316A4]
-        && *(_DWORD *)(v2 + 107) == -1 )
+    if ( v2 != g_HouseClass_ObserverFlags && v2 != g_Lobby_PlayerCount && v2 != g_Lobby_MaxPlayers && (wchar_t *)v2 != g_Lobby_PlayerReady && v0 == g_MPCooperativeState && *(int *)(v2 + 107) == -1 )
       {
-        break; /*0x5e95c2*/
+    break;
       }
     }
-    ++v1; /*0x5e95c4*/
-    ++v0; /*0x5e95c7*/
-    if ( (int)v1 >= (int)&MEMORY[0xA8DAB0] ) /*0x5e95ce*/
-      return 0; /*0x5e95d5*/
+    ++v1;
+    ++v0;
+    if ( (int)v1 >= (int)&g_PlayerNameListEnd )
+    return 0;
   }
-  return 1; /*0x5e95d0*/
+    return 1;
 }
 }
 } // namespace gamemd

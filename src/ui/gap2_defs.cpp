@@ -9426,10 +9426,8 @@ int __thiscall WWMouseClass::showCursor(int this)
 } }
 // 0x7B9D70
 namespace gamemd { int WWMouseClass::checkStatus(int a1, int a2, int a3, int a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WWMouseClass::_vt08(void *this, int a2, int a3, int a4, int a5)
 {
-  return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x7b9d75*/
+    return this->hideCursor();
 }
 } }
 // 0x7B9D90

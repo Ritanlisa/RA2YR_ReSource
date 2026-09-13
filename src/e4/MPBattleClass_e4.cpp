@@ -57,78 +57,30 @@ _DWORD *__thiscall MPBattleClass::MPFreeForAllClass(
 // 0x5C6150
 unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerManBattle * aP2, const char ** a3, MultiplayerManBattle * aP4, char aP5, MultiplayerManBattle * aP6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MPBattleClass::MPManBattleClass(
-        _DWORD *this,
-        const wchar_t **a1,
-        MultiplayerManBattle *aP2,
-        const char **a3,
-        MultiplayerManBattle *aP4,
-        char aP5,
-        MultiplayerManBattle *aP6)
 {
-  MultiplayerGameMode::Construct( /*0x5c6173*/
-    this,
-    (MultiplayerGameMode *)a1,
-    (MultiplayerGameMode *)aP2,
-    (MultiplayerGameMode *)a3,
-    (MultiplayerGameMode *)aP4,
-    (MultiplayerGameMode *)aP5,
-    (MultiplayerGameMode *)aP6);
-  *this = &vt_MultiplayerManBattle; /*0x5c6178*/
-  return this; /*0x5c6180*/
+    MultiplayerGameMode::Construct( this, (MultiplayerGameMode *)a1, (MultiplayerGameMode *)aP2, (MultiplayerGameMode *)a3, (MultiplayerGameMode *)aP4, (MultiplayerGameMode *)aP5, (MultiplayerGameMode *)aP6);
+    *(void**)this = &vt_MultiplayerManBattle;
+    return this;
 }
 }
 
 // 0x5C93E0
 unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, MPCooperative * aP4, char aP5, int aP6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MPBattleClass::MPMegawealthClass(
-        _DWORD *this,
-        const wchar_t **a1,
-        const wchar_t **a2,
-        const char **a3,
-        MPCooperative *aP4,
-        char aP5,
-        int aP6)
 {
-  MultiplayerGameMode::Construct( /*0x5c9403*/
-    this,
-    (MultiplayerGameMode *)a1,
-    (MultiplayerGameMode *)a2,
-    (MultiplayerGameMode *)a3,
-    (MultiplayerGameMode *)aP4,
-    (MultiplayerGameMode *)aP5,
-    (MultiplayerGameMode *)aP6);
-  *this = &vt_Megawealth; /*0x5c9408*/
-  return this; /*0x5c9410*/
+    MultiplayerGameMode::Construct( this, (MultiplayerGameMode *)a1, (MultiplayerGameMode *)a2, (MultiplayerGameMode *)a3, (MultiplayerGameMode *)aP4, (MultiplayerGameMode *)aP5, (MultiplayerGameMode *)aP6);
+    *(void**)this = &vt_Megawealth;
+    return this;
 }
 }
 
 // 0x5CA630
 unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege * aP2, const char ** a3, MultiplayerSiege * aP4, char aP5, MultiplayerSiege * aP6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MPBattleClass::MPSiegeClass(
-        _DWORD *this,
-        const wchar_t **a1,
-        MultiplayerSiege *aP2,
-        const char **a3,
-        MultiplayerSiege *aP4,
-        char aP5,
-        MultiplayerSiege *aP6)
 {
-  MultiplayerGameMode::Construct( /*0x5ca653*/
-    this,
-    (MultiplayerGameMode *)a1,
-    (MultiplayerGameMode *)aP2,
-    (MultiplayerGameMode *)a3,
-    (MultiplayerGameMode *)aP4,
-    (MultiplayerGameMode *)aP5,
-    (MultiplayerGameMode *)aP6);
-  *this = &vt_MultiplayerSiege; /*0x5ca658*/
-  return this; /*0x5ca660*/
+    MultiplayerGameMode::Construct( this, (MultiplayerGameMode *)a1, (MultiplayerGameMode *)aP2, (MultiplayerGameMode *)a3, (MultiplayerGameMode *)aP4, (MultiplayerGameMode *)aP5, (MultiplayerGameMode *)aP6);
+    *(void**)this = &vt_MultiplayerSiege;
+    return this;
 }
 }
 
@@ -148,481 +100,380 @@ bool __thiscall MPBattleClass::vt_entry_18(std::codecvt_base *this)
 // 0x5CACF0
 long long MPBattleClass::isValidMap()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 sub_5CACF0()
 {
-  double v0; // st7
-  __int64 result; // rax
-
-  v0 = Math::Sin(MEMORY[0xABFA80] - MEMORY[0xABFAA8]); /*0x5cad02*/
-  result = Math::RoundToInt(v0 * MEMORY[0xABFAA0] * 0.5); /*0x5cad16*/
-  MEMORY[0xABFAF8] = result; /*0x5cad1b*/
-  return result; /*0x5cad20*/
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_ABFA80 - DataGlobal_ABFAA8);
+    result = Math::RoundToInt(v0 * DataGlobal_ABFAA0 * 0.5);
+    DataGlobal_ABFAF8 = result;
+    return result;
 }
 }
 
 // 0x5CAD30
 void MPBattleClass::needsHouseSelection()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5CAD30()
 {
-  MEMORY[0xABFAB0] = Math::ArcTan((double)MEMORY[0xABFAF8] * 0.00390625); /*0x5cad47*/
+    DataGlobal_ABFAB0 = Math::ArcTan((double)DataGlobal_ABFAF8 * 0.00390625);
 }
 }
 
 // 0x5CAD60
 void MPBattleClass::validatePlayer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5CAD60()
 {
-  MEMORY[0xABFAC8] = Math::ArcTan((double)(2 * MEMORY[0xABFAF8]) / MEMORY[0xABFAA0]); /*0x5cad82*/
+    DataGlobal_ABFAC8 = Math::ArcTan((double)(2 * DataGlobal_ABFAF8) / DataGlobal_ABFAA0);
 }
 }
 
 // 0x5CAD90
 long long MPBattleClass::startGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 sub_5CAD90()
 {
-  __int64 result; // rax
-
-  result = Math::RoundToInt((double)(4 * MEMORY[0xABFAF8]) + 0.5); /*0x5cadab*/
-  MEMORY[0xABFAEC] = result; /*0x5cadb0*/
-  return result; /*0x5cadb6*/
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_ABFAF8) + 0.5);
+    DataGlobal_ABFAEC = result;
+    return result;
 }
 }
 
 // 0x5CADC0
 int MPBattleClass::stopGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5CADC0()
 {
-  MEMORY[0xABFA98] = 0; /*0x5cadc2*/
-  MEMORY[0xABFA9A] = 0; /*0x5cadc8*/
-  return 0; /*0x5cadce*/
+    DataGlobal_ABFA98 = 0;
+    DataGlobal_ABFA9A = 0;
+    return 0;
 }
 }
 
 // 0x5CADD0
 int MPBattleClass::areTeamChangesAllowed()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5CADD0()
 {
-  MEMORY[0xABFAB8] = 0; /*0x5cadd2*/
-  MEMORY[0xABFABC] = 0; /*0x5cadd7*/
-  MEMORY[0xABFAC0] = 0; /*0x5caddc*/
-  return 0; /*0x5cade1*/
+    DataGlobal_ABFAB8 = 0;
+    DataGlobal_ABFABC = 0;
+    DataGlobal_ABFAC0 = 0;
+    return 0;
 }
 }
 
 // 0x5CADF0
 int MPBattleClass::isHouseAllyChangeAllowed()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5CADF0()
 {
-  MEMORY[0xABFAE8] = 0; /*0x5cadf5*/
-  MEMORY[0xABFAE0] = 128; /*0x5cadff*/
-  MEMORY[0xABFAE4] = 128; /*0x5cae04*/
-  return 128; /*0x5cae09*/
+    DataGlobal_ABFAE8 = 0;
+    DataGlobal_ABFAE0 = 128;
+    DataGlobal_ABFAE4 = 128;
+    return 128;
 }
 }
 
 // 0x5CB190
 void MPBattleClass::onPlayerConnect()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5CB190()
 {
-  long double v0; // st7
-
-  v0 = pow(256.0, 2.0); /*0x5cb19c*/
-  MEMORY[0xABFB28] = Math::Sqrt(v0 + v0); /*0x5cb1ae*/
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_ABFB28 = Math::Sqrt(v0 + v0);
 }
 }
 
 // 0x5CB1C0
 void MPBattleClass::onPlayerDisconnect()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5CB1C0()
 {
-  MEMORY[0xABFB78] = MEMORY[0xABFB28] / 60.0; /*0x5cb1cc*/
+    DataGlobal_ABFB78 = DataGlobal_ABFB28 / 60.0;
 }
 }
 
 // 0x5CB1E0
 void MPBattleClass::getMaximumPlayers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5CB1E0()
 {
-  MEMORY[0xABFB60] = 1.0 / MEMORY[0xABFB78]; /*0x5cb1ec*/
+    DataGlobal_ABFB60 = 1.0 / DataGlobal_ABFB78;
 }
 }
 
 // 0x5CB200
 void MPBattleClass::getMinimumPlayers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5CB200()
 {
-  MEMORY[0xABFB58] = 0.0174532925199433 * 45.0; /*0x5cb20c*/
+    DataGlobal_ABFB58 = 0.0174532925199433 * 45.0;
 }
 }
 
 // 0x5CB220
 void MPBattleClass::getAlliesLimit()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5CB220()
 {
-  MEMORY[0xABFB30] = 0.0174532925199433 * 60.0; /*0x5cb22c*/
+    DataGlobal_ABFB30 = 0.0174532925199433 * 60.0;
 }
 }
 
 // 0x5CB260
 long long MPBattleClass::canAllyWith()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 sub_5CB260()
 {
-  double v0; // st7
-  __int64 result; // rax
-
-  v0 = Math::Sin(MEMORY[0xABFB08] - MEMORY[0xABFB30]); /*0x5cb272*/
-  result = Math::RoundToInt(v0 * MEMORY[0xABFB28] * 0.5); /*0x5cb286*/
-  MEMORY[0xABFB80] = result; /*0x5cb28b*/
-  return result; /*0x5cb290*/
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_ABFB08 - DataGlobal_ABFB30);
+    result = Math::RoundToInt(v0 * DataGlobal_ABFB28 * 0.5);
+    DataGlobal_ABFB80 = result;
+    return result;
 }
 }
 
 // 0x5CB2D0
 void MPBattleClass::onGameBegin()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5CB2D0()
 {
-  MEMORY[0xABFB50] = Math::ArcTan((double)(2 * MEMORY[0xABFB80]) / MEMORY[0xABFB28]); /*0x5cb2f2*/
+    DataGlobal_ABFB50 = Math::ArcTan((double)(2 * DataGlobal_ABFB80) / DataGlobal_ABFB28);
 }
 }
 
 // 0x5CB380
 int MPBattleClass::isAIAllowed()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5CB380()
 {
-  MEMORY[0xABFB10] = 0; /*0x5cb382*/
-  MEMORY[0xABFB14] = 0; /*0x5cb387*/
-  MEMORY[0xABFB18] = 0; /*0x5cb38c*/
-  MEMORY[0xABFB1C] = 0; /*0x5cb391*/
-  return 0; /*0x5cb396*/
+    DataGlobal_ABFB10 = 0;
+    DataGlobal_ABFB14 = 0;
+    DataGlobal_ABFB18 = 0;
+    DataGlobal_ABFB1C = 0;
+    return 0;
 }
 }
 
 // 0x5CB3A0
 unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyAlliance * aP2, const char ** a3, UnholyAlliance * aP4, char aP5, UnholyAlliance * aP6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MPBattleClass::MPUnholyAllianceClass(
-        _DWORD *this,
-        const wchar_t **a1,
-        UnholyAlliance *aP2,
-        const char **a3,
-        UnholyAlliance *aP4,
-        char aP5,
-        UnholyAlliance *aP6)
 {
-  MultiplayerGameMode::Construct( /*0x5cb3c3*/
-    this,
-    (MultiplayerGameMode *)a1,
-    (MultiplayerGameMode *)aP2,
-    (MultiplayerGameMode *)a3,
-    (MultiplayerGameMode *)aP4,
-    (MultiplayerGameMode *)aP5,
-    (MultiplayerGameMode *)aP6);
-  *this = &vt_UnholyAlliance; /*0x5cb3c8*/
-  return this; /*0x5cb3d0*/
+    MultiplayerGameMode::Construct( this, (MultiplayerGameMode *)a1, (MultiplayerGameMode *)aP2, (MultiplayerGameMode *)a3, (MultiplayerGameMode *)aP4, (MultiplayerGameMode *)aP5, (MultiplayerGameMode *)aP6);
+    *(void**)this = &vt_UnholyAlliance;
+    return this;
 }
 }
 
 // 0x5CB570
 int MPBattleClass::isTeamsAllowed()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5CB570()
 {
-  MEMORY[0xABFB88] = 0; /*0x5cb572*/
-  MEMORY[0xABFB8C] = 0; /*0x5cb577*/
-  MEMORY[0xABFB90] = 0; /*0x5cb57c*/
-  MEMORY[0xABFB94] = 0; /*0x5cb581*/
-  return 0; /*0x5cb586*/
+    DataGlobal_ABFB88 = 0;
+    DataGlobal_ABFB8C = 0;
+    DataGlobal_ABFB90 = 0;
+    DataGlobal_ABFB94 = 0;
+    return 0;
 }
 }
 
 // 0x5CEDB0
 int MPBattleClass::firstValidMapIndex()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5CEDB0()
 {
-  MEMORY[0xABFBB0] = 0; /*0x5cedb2*/
-  MEMORY[0xABFBB4] = 0; /*0x5cedb7*/
-  MEMORY[0xABFBB8] = 0; /*0x5cedbc*/
-  MEMORY[0xABFBBC] = 0; /*0x5cedc1*/
-  return 0; /*0x5cedc6*/
+    DataGlobal_ABFBB0 = 0;
+    DataGlobal_ABFBB4 = 0;
+    DataGlobal_ABFBB8 = 0;
+    DataGlobal_ABFBBC = 0;
+    return 0;
 }
 }
 
 // 0x5D1A80
 int MPBattleClass::populateTeamDropdown()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5D1A80()
 {
-  MEMORY[0xABFBC0] = 0; /*0x5d1a82*/
-  MEMORY[0xABFBC4] = 0; /*0x5d1a87*/
-  MEMORY[0xABFBC8] = 0; /*0x5d1a8c*/
-  MEMORY[0xABFBCC] = 0; /*0x5d1a91*/
-  return 0; /*0x5d1a96*/
+    DataGlobal_ABFBC0 = 0;
+    DataGlobal_ABFBC4 = 0;
+    DataGlobal_ABFBC8 = 0;
+    DataGlobal_ABFBCC = 0;
+    return 0;
 }
 }
 
 // 0x5D2DE0
 int MPBattleClass::drawTeamDropdown()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5D2DE0()
 {
-  MEMORY[0xABFBD0] = 0; /*0x5d2de2*/
-  MEMORY[0xABFBD4] = 0; /*0x5d2de7*/
-  MEMORY[0xABFBD8] = 0; /*0x5d2dec*/
-  MEMORY[0xABFBDC] = 0; /*0x5d2df1*/
-  return 0; /*0x5d2df6*/
+    DataGlobal_ABFBD0 = 0;
+    DataGlobal_ABFBD4 = 0;
+    DataGlobal_ABFBD8 = 0;
+    DataGlobal_ABFBDC = 0;
+    return 0;
 }
 }
 
 // 0x5D3470
 int MPBattleClass::populateTeamDropdownForPlayer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5D3470()
 {
-  MEMORY[0xABFC00] = 0; /*0x5d3472*/
-  MEMORY[0xABFC04] = 0; /*0x5d3477*/
-  MEMORY[0xABFC08] = 0; /*0x5d347c*/
-  MEMORY[0xABFC0C] = 0; /*0x5d3481*/
-  return 0; /*0x5d3486*/
+    DataGlobal_ABFC00 = 0;
+    DataGlobal_ABFC04 = 0;
+    DataGlobal_ABFC08 = 0;
+    DataGlobal_ABFC0C = 0;
+    return 0;
 }
 }
 
 // 0x5D3810
 void MPBattleClass::validateHouse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D3810()
 {
-  MEMORY[0xABFC80] = MEMORY[0xABFC30] / 60.0; /*0x5d381c*/
+    DataGlobal_ABFC80 = DataGlobal_ABFC30 / 60.0;
 }
 }
 
 // 0x5D3830
 void MPBattleClass::validateOwner()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D3830()
 {
-  MEMORY[0xABFC68] = 1.0 / MEMORY[0xABFC80]; /*0x5d383c*/
+    DataGlobal_ABFC68 = 1.0 / DataGlobal_ABFC80;
 }
 }
 
 // 0x5D38F0
 void MPBattleClass::validateColor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D38F0()
 {
-  MEMORY[0xABFC40] = Math::ArcTan((double)MEMORY[0xABFC88] * 0.00390625); /*0x5d3907*/
+    DataGlobal_ABFC40 = Math::ArcTan((double)DataGlobal_ABFC88 * 0.00390625);
 }
 }
 
 // 0x5D3920
 void MPBattleClass::validateStartPosition()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D3920()
 {
-  MEMORY[0xABFC58] = Math::ArcTan((double)(2 * MEMORY[0xABFC88]) / MEMORY[0xABFC30]); /*0x5d3942*/
+    DataGlobal_ABFC58 = Math::ArcTan((double)(2 * DataGlobal_ABFC88) / DataGlobal_ABFC30);
 }
 }
 
 // 0x5D3950
 long long MPBattleClass::isDefaultFix()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 sub_5D3950()
 {
-  __int64 result; // rax
-
-  result = Math::RoundToInt((double)(4 * MEMORY[0xABFC88]) + 0.5); /*0x5d396b*/
-  MEMORY[0xABFC7C] = result; /*0x5d3970*/
-  return result; /*0x5d3976*/
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_ABFC88) + 0.5);
+    DataGlobal_ABFC7C = result;
+    return result;
 }
 }
 
 // 0x5D3980
 int MPBattleClass::isDefaultAI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5D3980()
 {
-  MEMORY[0xABFC28] = 0; /*0x5d3982*/
-  MEMORY[0xABFC2A] = 0; /*0x5d3988*/
-  return 0; /*0x5d398e*/
+    DataGlobal_ABFC28 = 0;
+    DataGlobal_ABFC2A = 0;
+    return 0;
 }
 }
 
 // 0x5D3990
 int MPBattleClass::randomHumanCountryIndex()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5D3990()
 {
-  MEMORY[0xABFC48] = 0; /*0x5d3992*/
-  MEMORY[0xABFC4C] = 0; /*0x5d3997*/
-  MEMORY[0xABFC50] = 0; /*0x5d399c*/
-  return 0; /*0x5d39a1*/
+    DataGlobal_ABFC48 = 0;
+    DataGlobal_ABFC4C = 0;
+    DataGlobal_ABFC50 = 0;
+    return 0;
 }
 }
 
 // 0x5D39B0
 int MPBattleClass::randomAICountryIndex()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5D39B0()
 {
-  MEMORY[0xABFC78] = 0; /*0x5d39b5*/
-  MEMORY[0xABFC70] = 128; /*0x5d39bf*/
-  MEMORY[0xABFC74] = 128; /*0x5d39c4*/
-  return 128; /*0x5d39c9*/
+    DataGlobal_ABFC78 = 0;
+    DataGlobal_ABFC70 = 128;
+    DataGlobal_ABFC74 = 128;
+    return 128;
 }
 }
 
 // 0x5D4C30
 int MPBattleClass::onDialogCreated()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5D4C30()
 {
-  MEMORY[0xABFCA8] = 0; /*0x5d4c32*/
-  MEMORY[0xABFCAC] = 0; /*0x5d4c37*/
-  MEMORY[0xABFCB0] = 0; /*0x5d4c3c*/
-  MEMORY[0xABFCB4] = 0; /*0x5d4c41*/
-  return 0; /*0x5d4c46*/
+    DataGlobal_ABFCA8 = 0;
+    DataGlobal_ABFCAC = 0;
+    DataGlobal_ABFCB0 = 0;
+    DataGlobal_ABFCB4 = 0;
+    return 0;
 }
 }
 
 // 0x5D4C50
 int MPBattleClass::onDialogDestroyed()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5D4C50()
 {
-  MEMORY[0xABFC94] = 0; /*0x5d4c57*/
-  MEMORY[0xABFC98] = 0; /*0x5d4c5c*/
-  MEMORY[0xABFC9C] = 1; /*0x5d4c61*/
-  MEMORY[0xABFC9D] = 0; /*0x5d4c68*/
-  MEMORY[0xABFC90] = (int)&vt_DynamicVectorClass_HWND; /*0x5d4c6d*/
-  MEMORY[0xABFCA4] = 10; /*0x5d4c77*/
-  MEMORY[0xABFCA0] = 0; /*0x5d4c81*/
-  return atexit(sub_5D4C90); /*0x5d4c8c*/
+    DataGlobal_ABFC94 = 0;
+    DataGlobal_ABFC98 = 0;
+    DataGlobal_ABFC9C = 1;
+    DataGlobal_ABFC9D = 0;
+    DataGlobal_ABFC90 = (int)&vt_DynamicVectorClass_HWND;
+    DataGlobal_ABFCA4 = 10;
+    DataGlobal_ABFCA0 = 0;
+    return atexit(sub_5D4C90);
 }
 }
 
 // 0x5D4CD0
 int MPBattleClass::unfixAlliances()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5D4CD0()
 {
-  MEMORY[0xABFCBC] = 0; /*0x5d4cd7*/
-  MEMORY[0xABFCC0] = 0; /*0x5d4cdc*/
-  MEMORY[0xABFCC4] = 1; /*0x5d4ce1*/
-  MEMORY[0xABFCC5] = 0; /*0x5d4ce8*/
-  MEMORY[0xABFCB8] = (int)&vt_DynamicVectorClass_AcceleratorTracker; /*0x5d4ced*/
-  MEMORY[0xABFCCC] = 10; /*0x5d4cf7*/
-  MEMORY[0xABFCC8] = 0; /*0x5d4d01*/
-  return atexit(sub_5D4D10); /*0x5d4d0c*/
+    DataGlobal_ABFCBC = 0;
+    DataGlobal_ABFCC0 = 0;
+    DataGlobal_ABFCC4 = 1;
+    DataGlobal_ABFCC5 = 0;
+    DataGlobal_ABFCB8 = (int)&vt_DynamicVectorClass_AcceleratorTracker;
+    DataGlobal_ABFCCC = 10;
+    DataGlobal_ABFCC8 = 0;
+    return atexit(sub_5D4D10);
 }
 }
 
 // 0x5D58B0
 void MPBattleClass::startingPositionsToHouseBaseCells()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D58B0()
 {
-  long double v0; // st7
-
-  v0 = pow(256.0, 2.0); /*0x5d58bc*/
-  MEMORY[0xABFD58] = Math::Sqrt(v0 + v0); /*0x5d58ce*/
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_ABFD58 = Math::Sqrt(v0 + v0);
 }
 }
 
 // 0x5D58E0
 void MPBattleClass::allyTeams()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D58E0()
 {
-  MEMORY[0xABFDC8] = MEMORY[0xABFD58] / 60.0; /*0x5d58ec*/
+    DataGlobal_ABFDC8 = DataGlobal_ABFD58 / 60.0;
 }
 }
 
 // 0x5D5900
 void MPBattleClass::isMegawealthAllowed()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D5900()
 {
-  MEMORY[0xABFD98] = 1.0 / MEMORY[0xABFDC8]; /*0x5d590c*/
+    DataGlobal_ABFD98 = 1.0 / DataGlobal_ABFDC8;
 }
 }
 
 // 0x5D5920
 void MPBattleClass::onAIJoined()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D5920()
 {
-  MEMORY[0xABFD90] = 0.0174532925199433 * 45.0; /*0x5d592c*/
+    DataGlobal_ABFD90 = 0.0174532925199433 * 45.0;
 }
 }
 
 // 0x5D8170
 unsigned int * MPBattleClass::MPBattleClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall MPBattleClass::MPBattleClass(
-        const wchar_t **a1,
-        const wchar_t **a2,
-        const char **a3,
-        const char **a4,
-        char a5,
-        int a6)
 {
-  _DWORD *v6; // eax
-
-  v6 = __2_YAPAXI_Z(0x40u); /*0x5d8172*/
-  if ( v6 ) /*0x5d817c*/
-    return MPBattleClass::initGame(v6, a1, a2, a3, a4, a5, a6); /*0x5d819e*/
-  else
-    return 0; /*0x5d81a6*/
+    int *v6;
+    v6 = __2_YAPAXI_Z(0x40u);
+    if ( v6 )
+    return MPBattleClass::initGame(v6, a1, a2, a3, a4, a5, a6);
+    else
+    return 0;
 }
 }

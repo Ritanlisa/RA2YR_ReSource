@@ -6,28 +6,21 @@
 namespace gamemd {
 int SuperWeaponTypeClass::loadSWProperties(CCINIClass * aP1, unsigned char * a2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SuperWeaponTypeClass::loadSWProperties(
-        unsigned __int8 ***this,
-        CCINIClass *aP1,
-        unsigned __int8 *a2,
-        int a4)
 {
-  int v4; // edi
-  ObjectClass *v5; // esi
-  char Destination[32]; // [esp+8h] [ebp-20h] BYREF
-
-  INIClass::GetString(this, (INIClass *)aP1, a2, *(&off_7E4C50 + a4), (INIClass *)Destination, 32); /*0x474f02*/
-  v4 = 0; /*0x474f07*/
-  v5 = (ObjectClass *)&off_7E4C50; /*0x474f09*/
-  while ( _strcmpi(Destination, *(char **)v5->__pad_0) ) /*0x474f20*/
+    int v4;
+    ObjectClass *v5;
+    char Destination[32];
+    INIClass::GetString(this, (INIClass *)aP1, a2, *(&DataGlobal_7E4C50 + a4), (INIClass *)Destination, 32);
+    v4 = 0;
+    v5 = (ObjectClass *)&DataGlobal_7E4C50;
+    while ( _strcmpi(Destination, *(char **)v5->__pad_0) )
   {
-    v5 = (ObjectClass *)((char *)v5 + 4); /*0x474f22*/
-    ++v4; /*0x474f25*/
-    if ( (int)v5 >= (int)&off_7E4D74 ) /*0x474f2c*/
-      return 0; /*0x474f35*/
+    v5 = (ObjectClass *)((char *)(v5) + 4);
+    ++v4;
+    if ( (int)v5 >= (int)&DataGlobal_7E4D74 )
+    return 0;
   }
-  return v4; /*0x474f2e*/
+    return v4;
 }
 }
 } // namespace gamemd
@@ -36,52 +29,44 @@ int __thiscall SuperWeaponTypeClass::loadSWProperties(
 namespace gamemd {
 int SuperWeaponTypeClass::FindOrCreate(INIClass * aP1, unsigned char * a2, CCINIClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SuperWeaponTypeClass::FindOrCreate(
-        unsigned __int8 ***this,
-        INIClass *aP1,
-        unsigned __int8 *a2,
-        CCINIClass *aP3)
 {
-  void *v4; // esi
-  HouseTypeClass *result; // eax
-  _BYTE *eax5; // eax
-  HouseTypeClass *v6; // eax
-  int v8; // ecx
-  CCINIClass *i; // edx
-  INIClass Destination[2]; // [esp+4h] [ebp-80h] BYREF
-
-  if ( !INIClass::GetString(this, aP1, a2, (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760], Destination, 128) ) /*0x475563*/
-    return (int)aP3->__pad_0; /*0x4755f8*/
-  v4 = (void *)PlayerSlot::NameToDialogID(Destination[0].__pad_0); /*0x475579*/
-  if ( BuildingType::IsSpecialType(v4) ) /*0x47557d*/
-    return (int)v4; /*0x475586*/
-  result = (HouseTypeClass *)SuperWeaponTypeClass::FindByName(Destination); /*0x475596*/
-  if ( result == (HouseTypeClass *)-1 ) /*0x47559e*/
+    void *v4;
+    HouseTypeClass *result;
+    char *eax5;
+    HouseTypeClass *v6;
+    int v8;
+    CCINIClass *i;
+    INIClass Destination[2];
+    if ( !INIClass::GetString(this, aP1, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
+    return (int)aP3->__pad_0;
+    v4 = (void *)PlayerSlot::NameToDialogID(Destination[0].__pad_0);
+    if ( BuildingType::IsSpecialType(v4) )
+    return (int)v4;
+    result = (HouseTypeClass *)SuperWeaponTypeClass::FindByName(Destination);
+    if ( result == (HouseTypeClass *)-1 )
   {
-    eax5 = (_BYTE *)__2_YAPAXI_Z(0x1B0u); /*0x4755a5*/
-    if ( eax5 ) /*0x4755af*/
-      v6 = (HouseTypeClass *)SuperWeaponTypeClass::Construct(eax5, Destination[0].__pad_0); /*0x4755b8*/
+    eax5 = (char *)__2_YAPAXI_Z(0x1B0u);
+    if ( eax5 )
+    v6 = (HouseTypeClass *)SuperWeaponTypeClass::Construct(eax5, Destination[0].__pad_0);
     else
-      v6 = 0; /*0x4755bf*/
-    v8 = 0; /*0x4755c7*/
-    if ( g_SuperWeaponTypeArray <= 0 ) /*0x4755cb*/
+    v6 = 0;
+    v8 = 0;
+    if ( g_SuperWeaponTypeArray <= 0 )
     {
-      return -1; /*0x4755df*/
+    return -1;
     }
     else
     {
-      for ( i = (CCINIClass *)g_SuperWeaponTypeCount; /*0x4755cd*/
-            *(HouseTypeClass **)i->__pad_0 != v6;
-            i = (CCINIClass *)((char *)i + 4) )
-      {
-        if ( ++v8 >= g_SuperWeaponTypeArray ) /*0x4755dd*/
-          return -1; /*0x4755dd*/
+    for ( i = (CCINIClass *)g_SuperWeaponTypeCount;
+    *(HouseTypeClass **)i->__pad_0 != v6;
+    i = (CCINIClass *)((char *)(i) + 4) ) {
+    if ( ++v8 >= g_SuperWeaponTypeArray )
+    return -1;
       }
-      return v8; /*0x4755ec*/
+    return v8;
     }
   }
-  return (int)result->__pad_0; /*0x475588*/
+    return (int)result->__pad_0;
 }
 }
 } // namespace gamemd
@@ -410,28 +395,25 @@ LABEL_16:
 namespace gamemd {
 int SuperWeaponTypeClass::FindByName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SuperWeaponTypeClass::FindByName(void *this)
 {
-  int v3; // ebx
-  _DWORD *v4; // esi
-
-  if ( !_strcmpi(this, &g_INI_Key_Digest.__pad_20[8]) ) /*0x5117db*/
-    return -2; /*0x5117e9*/
-  if ( !this ) /*0x5117f2*/
-    return -1; /*0x5117f2*/
-  v3 = 0; /*0x5117f9*/
-  if ( g_SuperWeaponTypeArray <= 0 ) /*0x5117fd*/
-    return -1; /*0x511833*/
-  while ( 1 ) /*0x511805*/
+    int v3;
+    int *v4;
+    if ( !_strcmpi(this, &g_INI_Key_Digest.__pad_20[8]) )
+    return -2;
+    if ( !this )
+    return -1;
+    v3 = 0;
+    if ( g_SuperWeaponTypeArray <= 0 )
+    return -1;
+    while ( 1 )
   {
-    v4 = (_DWORD *)*((_DWORD *)g_SuperWeaponTypeCount + v3); /*0x511805*/
-    if ( !_strcmpi(v4 + 25, this) || !_strcmpi(v4 + 9, this) ) /*0x51181d*/
-      break; /*0x51181d*/
-    if ( ++v3 >= g_SuperWeaponTypeArray ) /*0x511831*/
-      return -1; /*0x511831*/
+    v4 = (int *)*((int *)(g_SuperWeaponTypeCount) + v3);
+    if ( !_strcmpi(v4 + 25, this) || !_strcmpi(v4 + 9, this) )
+    break;
+    if ( ++v3 >= g_SuperWeaponTypeArray )
+    return -1;
   }
-  return v4[46]; /*0x5117e7*/
+    return v4[46];
 }
 }
 } // namespace gamemd
@@ -537,15 +519,12 @@ int __stdcall SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
 namespace gamemd {
 int SuperWeaponTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SuperWeaponTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6ce8df*/
-  if ( result >= 0 ) /*0x6ce8e6*/
-    return 0; /*0x6ce8e8*/
-  return result; /*0x6ce8ea*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd
@@ -597,10 +576,8 @@ int __thiscall SuperWeaponTypeClass::SD_vt13(int this, int *a2)
 namespace gamemd {
 int SuperWeaponTypeClass::SD_vt16()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SuperWeaponTypeClass::SD_vt16(_DWORD *this)
 {
-  return *(this + 38); /*0x6cea16*/
+    return this->ArrayIndex;
 }
 }
 } // namespace gamemd

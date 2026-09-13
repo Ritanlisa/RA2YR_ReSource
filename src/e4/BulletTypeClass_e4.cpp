@@ -480,26 +480,23 @@ char __thiscall BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
 // 0x46C4F0
 unsigned int * BulletTypeClass::GetROF(unsigned int * a1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall BulletTypeClass::_vt27(_DWORD *a1, int *a2)
 {
-  int GroundHeight; // eax
-  int v3; // ecx
-  int v5; // [esp+0h] [ebp-Ch] BYREF
-  int v6; // [esp+4h] [ebp-8h]
-  int v7; // [esp+8h] [ebp-4h]
-
-  v5 = *a2; /*0x46c4f9*/
-  v6 = a2[1]; /*0x46c50a*/
-  v7 = a2[2]; /*0x46c511*/
-  GroundHeight = Cell::GetGroundHeight(&v5); /*0x46c515*/
-  v3 = v7; /*0x46c51a*/
-  if ( v7 <= GroundHeight ) /*0x46c520*/
-    v3 = Cell::GetGroundHeight(&v5) + 1; /*0x46c533*/
-  *a1 = v5; /*0x46c53f*/
-  a1[1] = v6; /*0x46c545*/
-  a1[2] = v3; /*0x46c549*/
-  return a1; /*0x46c54c*/
+    int GroundHeight;
+    int v3;
+    int v5;
+    int v6;
+    int v7;
+    v5 = *a2;
+    v6 = *((int*)(a2) + 1);
+    v7 = *((int*)(a2) + 2);
+    GroundHeight = Cell::GetGroundHeight(&v5);
+    v3 = v7;
+    if ( v7 <= GroundHeight )
+    v3 = Cell::GetGroundHeight(&v5) + 1;
+    *a1 = v5;
+    *((int*)(a1) + 1) = v6;
+    *((int*)(a1) + 2) = v3;
+    return a1;
 }
 }
 
@@ -605,15 +602,12 @@ int __stdcall BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 // 0x46C730
 int BulletTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall BulletTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, ObjectTypeClass *aP1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2); /*0x46c73f*/
-  if ( result >= 0 ) /*0x46c746*/
-    return 0; /*0x46c748*/
-  return result; /*0x46c74a*/
+    int result;
+    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 
@@ -679,39 +673,36 @@ BulletTypeClass *__thiscall BulletTypeClass::ddtor(void **this, char a2)
 // 0x475150
 char BulletTypeClass::ReadTrajectoryFlags(unsigned char * Block, char * a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_475150(char *this, unsigned __int8 *Block, char *a3, int a4)
 {
-  char v4; // bl
-  char *v5; // ebp
-  int v6; // edx
-  int v8; // [esp+4h] [ebp-88h]
-  char Source[128]; // [esp+Ch] [ebp-80h] BYREF
-
-  v4 = 0; /*0x47515e*/
-  Source[0] = 0; /*0x475166*/
-  if ( !a4 || g_SuperWeaponTypeArray <= 0 ) /*0x475177*/
-    return 1; /*0x475177*/
-  v5 = (char *)g_SuperWeaponTypeCount; /*0x47517e*/
-  v8 = g_SuperWeaponTypeArray; /*0x475186*/
-  do /*0x475213*/
+    char v4;
+    char *v5;
+    int v6;
+    int v8;
+    char Source[128];
+    v4 = 0;
+    Source[0] = 0;
+    if ( !a4 || g_SuperWeaponTypeArray <= 0 )
+    return 1;
+    v5 = (char *)g_SuperWeaponTypeCount;
+    v8 = g_SuperWeaponTypeArray;
+    do
   {
-    v6 = *(_DWORD *)v5; /*0x47518a*/
-    if ( ((1 << *(_DWORD *)(*(_DWORD *)v5 + 184)) & a4) != 0 ) /*0x4751a3*/
+    v6 = *(int *)v5;
+    if ( ((1 << *(int *)(*(int *)(v5) + 184)) & a4) != 0 )
     {
-      if ( v4 ) /*0x4751a7*/
-        strcat(Source, MEMORY[0x817F70]); /*0x4751ce*/
-      strcat(Source, (const char *)(v6 + 36)); /*0x4751fa*/
-      v4 = Source[0]; /*0x475203*/
+    if ( v4 )
+    strcat(Source, Delimiter);
+    strcat(Source, (const char *)(v6 + 36));
+    v4 = Source[0];
     }
-    v5 += 4; /*0x47520b*/
-    --v8; /*0x47520f*/
+    v5 += 4;
+    --v8;
   }
-  while ( v8 ); /*0x475213*/
-  if ( v4 ) /*0x47521e*/
-    return INIClass::SetString(this, Block, a3, Source); /*0x475239*/
-  else
-    return 1; /*0x475248*/
+    while ( v8 );
+    if ( v4 )
+    return INIClass::SetString(this, Block, a3, Source);
+    else
+    return 1;
 }
 }
 

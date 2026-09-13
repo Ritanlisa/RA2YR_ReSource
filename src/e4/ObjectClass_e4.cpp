@@ -7,10 +7,8 @@ namespace ra2 {
 namespace game {
 int ObjectClass::GetMember06()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Accessor_401940(_DWORD *this)
 {
-  return *(this + 6); /*0x401943*/
+    return this->nextArrayIndex;
 }
 }
 } // namespace game
@@ -21,13 +19,10 @@ namespace ra2 {
 namespace game {
 bool ObjectClass::HasLinkedObject(VectorClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __stdcall ObjectClass::HasLinkedObject(VectorClass *aP0)
 {
-  VectorClass *v1; // eax
-
-  v1 = *(VectorClass **)((*(int (__thiscall **)(VectorClass *))(*(_DWORD *)aP0->vtable0 + 444))(aP0) + 224); /*0x4135af*/
-  return v1 && v1 != aP0; /*0x4135bf*/
+    VectorClass *v1;
+    v1 = *(VectorClass **)((*(int (__thiscall **)(VectorClass *))(*(int *)aP0->vtable0 + 444))(aP0) + 224);
+    return v1 && v1 != aP0;
 }
 }
 } // namespace game
@@ -74,10 +69,8 @@ namespace ra2 {
 namespace game {
 char ObjectClass::GetStateFlag()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ObjectClass_GetStateFlag(_BYTE *this)
 {
-  return *(this + 28); /*0x4886a3*/
+    return this->referenceCount;
 }
 }
 } // namespace game
@@ -88,10 +81,8 @@ namespace ra2 {
 namespace game {
 int ObjectClass::GetMember09()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass_GetMember09(_DWORD *this)
 {
-  return *(this + 9); /*0x4ca123*/
+    return this->objectTypeFlags;
 }
 }
 } // namespace game
@@ -910,15 +901,12 @@ namespace ra2 {
 namespace game {
 int ObjectClass::updateStateFlags()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4E02C0(int *this)
 {
-  int result; // eax
-
-  result = *this; /*0x4e02c0*/
-  if ( *this ) /*0x4e02c0*/
-    return (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result); /*0x4e02c9*/
-  return result; /*0x4e02cc*/
+    int result;
+    result = *(void**)this;
+    if ( *(void**)this )
+    return (*(int (__stdcall **)(int))(*(int *)(result) + 8))(result);
+    return result;
 }
 }
 } // namespace game
@@ -1103,10 +1091,8 @@ namespace ra2 {
 namespace game {
 int ObjectClass::GetWidth()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass_GetWidth(_DWORD *this)
 {
-  return *(this + 1); /*0x556623*/
+    return this->vtable1;
 }
 }
 } // namespace game
@@ -1166,16 +1152,13 @@ namespace ra2 {
 namespace game {
 int ObjectClass::updateMissionState(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_556B50(_DWORD *this, int a2)
 {
-  int result; // eax
-
-  result = a2; /*0x556b57*/
-  if ( !MEMORY[0xA8EB78] ) /*0x556b5b*/
-    result = 2 * a2; /*0x556b5d*/
-  *(this + 2) = result; /*0x556b5f*/
-  return result; /*0x556b62*/
+    int result;
+    result = a2;
+    if ( !g_lParam )
+    result = 2 * a2;
+    this->vtable2 = result;
+    return result;
 }
 }
 } // namespace game
@@ -1186,17 +1169,14 @@ namespace ra2 {
 namespace game {
 unsigned int * ObjectClass::ComputeScreenYOffset(BuildingTypeClass * aP0, unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall ObjectClass::ComputeScreenYOffset(BuildingTypeClass *aP0, _DWORD *a1)
 {
-  IUnknown *v2; // eax
-  BuildingTypeClass *v3; // ecx
-
-  v2 = (IUnknown *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)&aP0->vtable0[8] + 456))(*(_DWORD *)&aP0->vtable0[8]); /*0x55a8cc*/
-  v3 = (BuildingTypeClass *)ZCoordToScreenY(v2); /*0x55a8d9*/
-  *a1 = 0; /*0x55a8df*/
-  a1[1] = v3; /*0x55a8e1*/
-  return a1; /*0x55a8e4*/
+    IUnknown *v2;
+    BuildingTypeClass *v3;
+    v2 = (IUnknown *)(*(int (__thiscall **)(int))(**(int **)&aP0->vtable0[8] + 456))(*(int *)&aP0->vtable0[8]);
+    v3 = (BuildingTypeClass *)ZCoordToScreenY(v2);
+    *a1 = 0;
+    *((int*)(a1) + 1) = v3;
+    return a1;
 }
 }
 } // namespace game
@@ -1207,17 +1187,14 @@ namespace ra2 {
 namespace game {
 char ObjectClass::SetDeployState(ObjectClass * aP0, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall ObjectClass::SetDeployState(ObjectClass *aP0, char a2)
 {
-  int v2; // ecx
-
-  if ( aP0->isInLogic ) /*0x55baa5*/
-    return 1; /*0x55baaf*/
-  if ( !DisplayClass::RenderStatusText(v2, (IUnknown *)aP0, a2) ) /*0x55babb*/
-    return 0; /*0x55bad0*/
-  aP0->isInLogic = 1; /*0x55bac6*/
-  return 1; /*0x55bab1*/
+    int v2;
+    if ( aP0->isInLogic )
+    return 1;
+    if ( !DisplayClass::RenderStatusText(v2, (IUnknown *)aP0, a2) )
+    return 0;
+    aP0->isInLogic = 1;
+    return 1;
 }
 }
 } // namespace game
@@ -1907,19 +1884,16 @@ namespace ra2 {
 namespace game {
 int ObjectClass::GetZAboveGround()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::GetZAboveGround(#374 *this)
 {
-  int v2; // ecx
-  _DWORD v4[3]; // [esp+4h] [ebp-Ch] BYREF
-
-  v4[0] = this->location; /*0x5f5f52*/
-  v4[1] = *((_DWORD *)this + 40); /*0x5f5f63*/
-  v4[2] = *((_DWORD *)this + 41); /*0x5f5f6a*/
-  v2 = *((_DWORD *)this + 41) - Cell::GetGroundHeight(v4); /*0x5f5f79*/
-  if ( this->onBridge ) /*0x5f5f7b*/
-    v2 -= MEMORY[0xAC13BC]; /*0x5f5f86*/
-  return v2; /*0x5f5f83*/
+    int v2;
+    int v4[3];
+    v4[0] = this->location;
+    v4[1] = this->WaveClass_field_14C;
+    v4[2] = this->WaveClass_field_150;
+    v2 = this->WaveClass_field_150 - Cell::GetGroundHeight(v4);
+    if ( this->onBridge )
+    v2 -= DataGlobal_AC13BC;
+    return v2;
 }
 }
 } // namespace game
@@ -1972,14 +1946,11 @@ namespace ra2 {
 namespace game {
 int ObjectClass::IsAboveScreenMargin()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::IsAboveScreenMargin(#374 *this)
 {
-  int result; // eax
-
-  result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 456))(this); /*0x5f6c12*/
-  LOBYTE(result) = result > -20; /*0x5f6c20*/
-  return result; /*0x5f6c22*/
+    int result;
+    result = this->DropAsBomb();
+    LOBYTE(result) = result > -20;
+    return result;
 }
 }
 } // namespace game
@@ -1990,15 +1961,12 @@ namespace ra2 {
 namespace game {
 int ObjectClass::CreateInstance()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::CreateInstance(#374 *this)
 {
-  char v3; // [esp+8h] [ebp+4h]
-
-  ObjectClass::Dtor(this); /*0x5f6dc3*/
-  if ( (v3 & 1) != 0 ) /*0x5f6dcd*/
-    __3_YAXPAX_Z(this); /*0x5f6dd0*/
-  return (int)this; /*0x5f6dda*/
+    char v3;
+    ObjectClass::Dtor(this);
+    if ( (v3 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (int)this;
 }
 }
 } // namespace game
@@ -2009,10 +1977,8 @@ namespace ra2 {
 namespace game {
 char ObjectClass::Release()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ObjectClass::Release(SimpleDialogControl_OwnerDraw *this)
 {
-  return (unsigned char)this->vtable2; /*0x6241c3*/
+    return (unsigned char)this->vtable2;
 }
 }
 } // namespace game
@@ -2023,10 +1989,8 @@ namespace ra2 {
 namespace game {
 int ObjectClass::GetMember01()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::GetMember01(SimpleDialogControl_OwnerDraw *this)
 {
-  return this->vtable1; /*0x6241d3*/
+    return this->vtable1;
 }
 }
 } // namespace game
@@ -2063,22 +2027,19 @@ namespace ra2 {
 namespace game {
 int ObjectClass::processDamage()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::sub_6A5000(int *this)
 {
-  int v1; // esi
-  int result; // eax
-
-  PowerClass::Stub(this); /*0x6a5001*/
-  v1 = 4; /*0x6a5006*/
-  do /*0x6a501d*/
+    int v1;
+    int result;
+    PowerClass::Stub(this);
+    v1 = 4;
+    do
   {
-    result = SearchMIXFile(MEMORY[0x83F92C], 0); /*0x6a5012*/
-    --v1; /*0x6a5017*/
-    MEMORY[0xB07BC0] = result; /*0x6a5018*/
+    result = SearchMIXFile(DataGlobal_83F92C, 0);
+    --v1;
+    DataGlobal_B07BC0 = result;
   }
-  while ( v1 ); /*0x6a501d*/
-  return result; /*0x6a501f*/
+    while ( v1 );
+    return result;
 }
 }
 } // namespace game
@@ -2373,11 +2334,9 @@ namespace ra2 {
 namespace game {
 int ObjectClass::checkHealth()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::checkHealth(SBGadgetClass_SidebarClass *this)
 {
-  Mouse::SetCursor((int)&MEMORY[0x87F7E8], 0, 0); /*0x6aba49*/
-  return 1; /*0x6aba53*/
+    Mouse::SetCursor((int)&DataGlobal_87F7E8, 0, 0);
+    return 1;
 }
 }
 } // namespace game
@@ -2388,13 +2347,11 @@ namespace ra2 {
 namespace game {
 unsigned int * ObjectClass::updateAnimation(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ObjectClass::updateAnimation(SBGadgetClass_SidebarClass *this, char a2)
 {
-  GadgetClass::Dtor(this); /*0x6ac7a3*/
-  if ( (a2 & 1) != 0 ) /*0x6ac7ad*/
-    __3_YAXPAX_Z(this); /*0x6ac7b0*/
-  return &this->vfptr; /*0x6ac7ba*/
+    GadgetClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
 }
 }
 } // namespace game
@@ -2405,18 +2362,16 @@ namespace ra2 {
 namespace game {
 int ObjectClass::FindOwner(unsigned int * a0, AnimClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ObjectClass::FindOwner(_DWORD *a0, AnimClass *aP1)
 {
-  if ( !a0 ) /*0x6e45e6*/
-    return 0; /*0x6e45e8*/
-  if ( aP1 == (AnimClass *)8997 ) /*0x6e45f8*/
-    return Property::GetField11(a0); /*0x6e45fa*/
-  if ( aP1 == (AnimClass *)-1 ) /*0x6e4606*/
-    return 0; /*0x6e4608*/
-  if ( BuildingType::IsSpecialType(aP1) ) /*0x6e4610*/
-    return BuildingType::FindOwnerHouse(aP1); /*0x6e461b*/
-  return HouseClass::FindOwner(aP1); /*0x6e45ea*/
+    if ( !a0 )
+    return 0;
+    if ( aP1 == (AnimClass *)8997 )
+    return Property::GetField11(a0);
+    if ( aP1 == (AnimClass *)-1 )
+    return 0;
+    if ( BuildingType::IsSpecialType(aP1) )
+    return BuildingType::FindOwnerHouse(aP1);
+    return HouseClass::FindOwner(aP1);
 }
 }
 } // namespace game
@@ -2665,14 +2620,11 @@ char __thiscall ObjectClass_FindPlacementPosition(_DWORD *this, int a2, int a3, 
 // 0x72A660
 namespace ra2 {
 namespace game {
-int ObjectClass::setTarget(int a2)
-{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ObjectClass::setTarget(TextLabelClass *this, int a2)
 {
   *(_DWORD *)&this->__pad_2C[4] = a2; /*0x72a664*/
   return a2; /*0x72a667*/
-}
 }
 } // namespace game
 } // namespace ra2
@@ -2682,13 +2634,11 @@ namespace ra2 {
 namespace game {
 unsigned int * ObjectClass::clearTarget(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ObjectClass::clearTarget(TextLabelClass *this, char a2)
 {
-  GadgetClass::Dtor(this); /*0x72a673*/
-  if ( (a2 & 1) != 0 ) /*0x72a67d*/
-    __3_YAXPAX_Z(this); /*0x72a680*/
-  return this->__pad_0; /*0x72a68a*/
+    GadgetClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this->__pad_0;
 }
 }
 } // namespace game

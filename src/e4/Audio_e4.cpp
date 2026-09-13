@@ -252,38 +252,36 @@ LABEL_10:
 namespace gamemd {
 void Audio::Shutdown()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_406D40()
 {
-  if ( MEMORY[0x87E728] ) /*0x406d4b*/
-    AudioQueue::StopAllVoices((int)MEMORY[0x87E728], 1); /*0x406d52*/
-  AudioStream::CleanupChannels(); /*0x406d57*/
-  AudioQueue::HaltVoices(); /*0x406d5c*/
-  Audio_Cleanup(); /*0x406d61*/
-  Audio_Cleanup_752B40(); /*0x406d66*/
-  sub_403FA0(); /*0x406d6b*/
-  sub_407780(); /*0x406d70*/
-  if ( MEMORY[0x87E724] ) /*0x406d7d*/
+    if ( DataGlobal_87E728 )
+    AudioQueue::StopAllVoices((int)DataGlobal_87E728, 1);
+    AudioStream::CleanupChannels();
+    AudioQueue::HaltVoices();
+    Audio_Cleanup();
+    Audio_Cleanup_752B40();
+    sub_403FA0();
+    sub_407780();
+    if ( g_AudioFileData )
   {
-    sub_401580((void **)MEMORY[0x87E724]); /*0x406d7f*/
-    MEMORY[0x87E724] = 0; /*0x406d84*/
+    sub_401580((void **)g_AudioFileData);
+    g_AudioFileData = 0;
   }
-  if ( MEMORY[0x87E734] ) /*0x406d92*/
+    if ( g_MixFile_AUDIO )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0x87E734])(MEMORY[0x87E734], 1); /*0x406d98*/
-    MEMORY[0x87E734] = 0; /*0x406d9a*/
+    (**(void (__thiscall ***)(int, int))g_MixFile_AUDIO)(g_MixFile_AUDIO, 1);
+    g_MixFile_AUDIO = 0;
   }
-  if ( MEMORY[0x87E738] ) /*0x406da8*/
+    if ( g_MixFile_THEME )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0x87E738])(MEMORY[0x87E738], 1); /*0x406dae*/
-    MEMORY[0x87E738] = 0; /*0x406db0*/
+    (**(void (__thiscall ***)(int, int))g_MixFile_THEME)(g_MixFile_THEME, 1);
+    g_MixFile_THEME = 0;
   }
-  if ( MEMORY[0x87E728] ) /*0x406dbe*/
+    if ( DataGlobal_87E728 )
   {
-    AudioStream::DestroyAll(MEMORY[0x87E728]); /*0x406dc0*/
-    MEMORY[0x87E728] = 0; /*0x406dc5*/
+    AudioStream::DestroyAll(DataGlobal_87E728);
+    DataGlobal_87E728 = 0;
   }
-  sub_402990(); /*0x406dcc*/
+    sub_402990();
 }
 }
 } // namespace gamemd
@@ -292,10 +290,8 @@ void sub_406D40()
 namespace gamemd {
 BOOL Audio::IsSoundEnabled()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL Audio_IsSoundEnabled()
 {
-  return MEMORY[0x87E728] != 0; /*0x40700d*/
+    return DataGlobal_87E728 != 0;
 }
 }
 } // namespace gamemd
@@ -304,10 +300,8 @@ BOOL Audio_IsSoundEnabled()
 namespace gamemd {
 void * Audio::GetEnabled()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *Audio_GetEnabled()
 {
-  return MEMORY[0x87E728]; /*0x407015*/
+    return DataGlobal_87E728;
 }
 }
 } // namespace gamemd
@@ -316,10 +310,8 @@ void *Audio_GetEnabled()
 namespace gamemd {
 int Audio::GetFlag()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Audio::GetFlag(unsigned int *this)
 {
-  return RequestBufferMixer(this, 0);
+    return RequestBufferMixer(this, 0);
 }
 }
 } // namespace gamemd
@@ -415,13 +407,11 @@ int __thiscall Audio_GetSampleSize(_DWORD *this)
 namespace gamemd {
 int Audio::Callback()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Audio_Callback()
 {
-  if ( MEMORY[0x87E848] ) /*0x4093b7*/
-    return MEMORY[0x87E848](); /*0x4093b9*/
-  else
-    return 0; /*0x4093bb*/
+    if ( DataGlobal_87E848 )
+    return DataGlobal_87E848();
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -430,10 +420,8 @@ int Audio_Callback()
 namespace gamemd {
 LPDIRECTSOUND Audio::GetDirectSound()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LPDIRECTSOUND Audio_GetDirectSound()
 {
-  return MEMORY[0x87E89C]; /*0x40a7a5*/
+    return DataGlobal_87E89C;
 }
 }
 } // namespace gamemd
@@ -590,20 +578,17 @@ char **__thiscall sub_5D5820(char **this, char *Source, int a3)
 namespace gamemd {
 unsigned int sub_5EF240(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __fastcall sub_5EF240(int a1, int a2)
 {
-  unsigned int result; // eax
-  int i; // edi
-  int v4; // esi
-
-  result = 0; /*0x5ef242*/
-  for ( i = 0; i < a2; result = v4 + 2 * result ) /*0x5ef24a*/
+    unsigned int result;
+    int i;
+    int v4;
+    result = 0;
+    for ( i = 0; i < a2; result = v4 + 2 * result )
   {
-    v4 = *(unsigned __int8 *)(i + a1) + (result >> 31); /*0x5ef257*/
-    ++i; /*0x5ef259*/
+    v4 = *(unsigned char *)(i + a1) + (result >> 31);
+    ++i;
   }
-  return result; /*0x5ef262*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1063,15 +1048,13 @@ void *Audio_LoadSoundINI()
 namespace gamemd {
 void sub_752340()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_752340()
 {
-  ThemeClass::ClearQueues(); /*0x752340*/
-  if ( MEMORY[0xB1D4CC] ) /*0x75234d*/
+    ThemeClass::ClearQueues();
+    if ( g_InfantryDrawState )
   {
-    Audio::Release(MEMORY[0xB1D4CC]); /*0x75234f*/
-    AudioSample::Destructor(MEMORY[0xB1D4CC]); /*0x75235a*/
-    MEMORY[0xB1D4CC] = 0; /*0x75235f*/
+    Audio::Release(g_InfantryDrawState);
+    AudioSample::Destructor(g_InfantryDrawState);
+    g_InfantryDrawState = 0;
   }
 }
 }
@@ -1125,28 +1108,22 @@ void __fastcall sub_752590(int a1, int a2, int a3)
 namespace gamemd {
 int Audio::IsPlaying()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Audio_IsPlaying()
 {
-  char *v0; // eax
-
-  UpdateThemes(); /*0x7529e0*/
-  if ( !MEMORY[0xB1D4CC] ) /*0x7529ed*/
-    return 0; /*0x752a2d*/
-  if ( !Audio::IsSoundPlaying(MEMORY[0xB1D4CC]) /*0x752a17*/
-    && (_UNKNOWN *)MEMORY[0xB1D3CC] == &MEMORY[0xB1D3C8]
-    && (_UNKNOWN *)MEMORY[0xB1D3F4] == &MEMORY[0xB1D3F0]
-    && !MEMORY[0xB1D4B8] )
+    char *v0;
+    UpdateThemes();
+    if ( !g_InfantryDrawState )
+    return 0;
+    if ( !Audio::IsSoundPlaying(g_InfantryDrawState) && (_UNKNOWN *)DataGlobal_B1D3CC == &DataGlobal_B1D3C8 && (_UNKNOWN *)DataGlobal_B1D3F4 == &DataGlobal_B1D3F0 && !DataGlobal_B1D4B8 )
   {
-    v0 = MEMORY[0xB1D450]; /*0x752a19*/
-    while ( *((char **)v0 + 1) == v0 ) /*0x752a21*/
+    v0 = DataGlobal_B1D450;
+    while ( *((char **)(v0) + 1) == v0 )
     {
-      v0 += 12; /*0x752a23*/
-      if ( (int)v0 >= (int)&MEMORY[0xB1D480] ) /*0x752a2b*/
-        return 0; /*0x752a2b*/
+    v0 += 12;
+    if ( (int)v0 >= (int)&DataGlobal_B1D480 )
+    return 0;
     }
   }
-  return 1; /*0x752a2f*/
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1155,42 +1132,32 @@ int Audio_IsPlaying()
 namespace gamemd {
 char Audio_Render(unsigned int * a0, SomeVoxelCache * edx0, ObjectClass * aP2, float * a3, float * a4, float * a5, float a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Audio_Render(
-        _DWORD *a0,
-        SomeVoxelCache *edx0,
-        ObjectClass *aP2,
-        float *a3,
-        float *a4,
-        float *a5,
-        float a7)
 {
-  float *v9; // eax
-  float *v10; // eax
-  int Info; // eax
-  float v13[3]; // [esp+10h] [ebp-C0h] BYREF
-  float v14[3]; // [esp+1Ch] [ebp-B4h] BYREF
-  float v15[3]; // [esp+28h] [ebp-A8h] BYREF
-  float v16[3]; // [esp+34h] [ebp-9Ch] BYREF
-  float v17[12]; // [esp+40h] [ebp-90h] BYREF
-  float v18[12]; // [esp+70h] [ebp-60h] BYREF
-  float v19[12]; // [esp+A0h] [ebp-30h] BYREF
-
-  qmemcpy(v18, InvertMatrix3x3Signs(v19, a3), sizeof(v18)); /*0x753d33*/
-  qmemcpy(v17, InvertMatrix3x3Signs(v19, a4), sizeof(v17)); /*0x753d53*/
-  v9 = Matrix3x3::TransformPoint(v18, (IUnknown *)v13, a5); /*0x753d5f*/
-  v15[0] = *v9; /*0x753d66*/
-  v15[1] = v9[1]; /*0x753d6d*/
-  v15[2] = v9[2]; /*0x753d82*/
-  v13[0] = 0.0; /*0x753d86*/
-  v13[1] = 0.0; /*0x753d8e*/
-  v13[2] = 1.0; /*0x753d96*/
-  v10 = Matrix3x3::TransformPoint(v17, (IUnknown *)v16, v13); /*0x753d9e*/
-  v14[0] = *v10; /*0x753da5*/
-  v14[1] = v10[1]; /*0x753dac*/
-  v14[2] = v10[2]; /*0x753dbe*/
-  Info = VoxelSection::GetInfo(a0, edx0, (SomeVoxelCache *)aP2); /*0x753dc2*/
-  return VoxelAnim::ComputeTransform(v15, v14, a7, *(unsigned __int8 *)(Info + 163)); /*0x753de7*/
+    float *v9;
+    float *v10;
+    int Info;
+    float v13[3];
+    float v14[3];
+    float v15[3];
+    float v16[3];
+    float v17[12];
+    float v18[12];
+    float v19[12];
+    qmemcpy(v18, InvertMatrix3x3Signs(v19, a3), sizeof(v18));
+    qmemcpy(v17, InvertMatrix3x3Signs(v19, a4), sizeof(v17));
+    v9 = Matrix3x3::TransformPoint(v18, (IUnknown *)v13, a5);
+    v15[0] = *v9;
+    v15[1] = v9[1];
+    v15[2] = v9[2];
+    v13[0] = 0.0;
+    v13[1] = 0.0;
+    v13[2] = 1.0;
+    v10 = Matrix3x3::TransformPoint(v17, (IUnknown *)v16, v13);
+    v14[0] = *v10;
+    v14[1] = v10[1];
+    v14[2] = v10[2];
+    Info = VoxelSection::GetInfo(a0, edx0, (SomeVoxelCache *)aP2);
+    return VoxelAnim::ComputeTransform(v15, v14, a7, *(unsigned char *)(Info + 163));
 }
 }
 } // namespace gamemd
@@ -1199,29 +1166,26 @@ char __fastcall Audio_Render(
 namespace gamemd {
 rc_ptr * Audio_Create(rc_ptr_base * a1, const char ** a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__fastcall Audio_Create(rc_ptr_base *a1, const char **a2, int a3)
 {
-  char *v6; // eax
-  ReferenceCounted *v7; // edi
-
-  if ( *(_DWORD *)(a3 + 4) ) /*0x764b37*/
+    char *v6;
+    ReferenceCounted *v7;
+    if ( *(int *)(a3 + 4) )
   {
-    v6 = (char *)__2_YAPAXI_Z(0x4Cu); /*0x764b57*/
-    if ( v6 ) /*0x764b61*/
-      v7 = (ReferenceCounted *)CampaignConstructorWDT(v6, a2, a3); /*0x764b6c*/
+    v6 = (char *)__2_YAPAXI_Z(0x4Cu);
+    if ( v6 )
+    v7 = (ReferenceCounted *)CampaignConstructorWDT(v6, a2, a3);
     else
-      v7 = 0; /*0x764b70*/
-    ComPtr::Constructor(a1); /*0x764b74*/
-    a1->vfptr = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x764b7b*/
-    ComPtr::Set(a1, (int)v7); /*0x764b82*/
-    return (rc_ptr *)a1; /*0x764b87*/
+    v7 = 0;
+    ComPtr::Constructor(a1);
+    a1->vfptr = &vt_rc_ptr_WorldDominationTour_Campaign;
+    ComPtr::Set(a1, (int)v7);
+    return (rc_ptr *)a1;
   }
-  else
+    else
   {
-    ComPtr::Constructor(a1); /*0x764b42*/
-    a1->vfptr = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x764b47*/
-    return (rc_ptr *)a1; /*0x764b4d*/
+    ComPtr::Constructor(a1);
+    a1->vfptr = &vt_rc_ptr_WorldDominationTour_Campaign;
+    return (rc_ptr *)a1;
   }
 }
 }
@@ -1231,21 +1195,18 @@ rc_ptr *__fastcall Audio_Create(rc_ptr_base *a1, const char **a2, int a3)
 namespace gamemd {
 rc_ptr * Audio_Set(rc_ptr_base * a1, void * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__fastcall Audio_Set(rc_ptr_base *a1, void *a2)
 {
-  char *v4; // eax
-  WDTState *WDT; // edi
-
-  v4 = (char *)__2_YAPAXI_Z(0x4Cu); /*0x76aba8*/
-  if ( v4 ) /*0x76abb2*/
-    WDT = (WDTState *)File::LoadWDT(v4, a2); /*0x76abbc*/
-  else
-    WDT = 0; /*0x76abc0*/
-  ComPtr::Constructor(a1); /*0x76abc4*/
-  a1->vfptr = &vt_rc_ptr_WDTState; /*0x76abcb*/
-  ComPtr::Set(a1, (int)WDT); /*0x76abd2*/
-  return (rc_ptr *)a1; /*0x76abd9*/
+    char *v4;
+    WDTState *WDT;
+    v4 = (char *)__2_YAPAXI_Z(0x4Cu);
+    if ( v4 )
+    WDT = (WDTState *)File::LoadWDT(v4, a2);
+    else
+    WDT = 0;
+    ComPtr::Constructor(a1);
+    a1->vfptr = &vt_rc_ptr_WDTState;
+    ComPtr::Set(a1, (int)WDT);
+    return (rc_ptr *)a1;
 }
 }
 } // namespace gamemd
@@ -1254,18 +1215,15 @@ rc_ptr *__fastcall Audio_Set(rc_ptr_base *a1, void *a2)
 namespace gamemd {
 int sub_7B84D0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7B84D0()
 {
-  int result; // eax
-
-  result = dword_B7816C; /*0x7b84d0*/
-  if ( !dword_B7816C ) /*0x7b84d7*/
+    int result;
+    result = DataGlobal_B7816C;
+    if ( !DataGlobal_B7816C )
   {
-    if ( dword_B78164 ) /*0x7b84e1*/
-      return WWMouseClass::UpdateCursorMovement((LONG *)dword_B78164); /*0x7b84e3*/
+    if ( DataGlobal_B78164 )
+    return WWMouseClass::UpdateCursorMovement((LONG *)DataGlobal_B78164);
   }
-  return result; /*0x7b84e8*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1297,15 +1255,12 @@ unsigned int __thiscall Audio::GetSamplePosition(int this, MouseClass *aP1, Mous
 namespace gamemd {
 size_t sub_7C94BC(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-size_t __cdecl sub_7C94BC(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream)
 {
-  size_t v4; // esi
-
-  _lock_file(Stream); /*0x7c94c3*/
-  v4 = fread(Buffer, ElementSize, ElementCount, Stream); /*0x7c94dc*/
-  _unlock_file(Stream); /*0x7c94de*/
-  return v4; /*0x7c94e8*/
+    size_t v4;
+    _lock_file(Stream);
+    v4 = fread(Buffer, ElementSize, ElementCount, Stream);
+    _unlock_file(Stream);
+    return v4;
 }
 }
 } // namespace gamemd
@@ -1314,14 +1269,12 @@ size_t __cdecl sub_7C94BC(void *Buffer, size_t ElementSize, size_t ElementCount,
 namespace gamemd {
 void sub_752B40()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_752B40()
 {
-  if ( MEMORY[0xB1D4D8] ) /*0x752b48*/
+    if ( DataGlobal_B1D4D8 )
   {
-    Audio::Release(MEMORY[0xB1D4D8]); /*0x752b4a*/
-    AudioSample::Destructor(MEMORY[0xB1D4D8]); /*0x752b55*/
-    MEMORY[0xB1D4D8] = 0; /*0x752b5a*/
+    Audio::Release(DataGlobal_B1D4D8);
+    AudioSample::Destructor(DataGlobal_B1D4D8);
+    DataGlobal_B1D4D8 = 0;
   }
 }
 }
@@ -1331,21 +1284,18 @@ void sub_752B40()
 namespace gamemd {
 rc_ptr * Audio_Create_76BE90(rc_ptr_base * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__fastcall Audio_Create_76BE90(rc_ptr_base *a1, int a2)
 {
-  char *v4; // eax
-  ReferenceCounted *v5; // edi
-
-  v4 = (char *)__2_YAPAXI_Z(0x18u); /*0x76be98*/
-  if ( v4 ) /*0x76bea2*/
-    v5 = (ReferenceCounted *)Audio_Create_76BF00(v4, a2); /*0x76beac*/
-  else
-    v5 = 0; /*0x76beb0*/
-  ComPtr::Constructor(a1); /*0x76beb4*/
-  a1->vfptr = &vt_rc_ptr_WorldDominationTour_CampaignProperties; /*0x76bebb*/
-  ComPtr::Set(a1, (int)v5); /*0x76bec2*/
-  return (rc_ptr *)a1; /*0x76bec9*/
+    char *v4;
+    ReferenceCounted *v5;
+    v4 = (char *)__2_YAPAXI_Z(0x18u);
+    if ( v4 )
+    v5 = (ReferenceCounted *)Audio_Create_76BF00(v4, a2);
+    else
+    v5 = 0;
+    ComPtr::Constructor(a1);
+    a1->vfptr = &vt_rc_ptr_WorldDominationTour_CampaignProperties;
+    ComPtr::Set(a1, (int)v5);
+    return (rc_ptr *)a1;
 }
 }
 } // namespace gamemd
@@ -1354,29 +1304,26 @@ rc_ptr *__fastcall Audio_Create_76BE90(rc_ptr_base *a1, int a2)
 namespace gamemd {
 int sub_7C1D90(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_7C1D90(int a1, int a2)
 {
-  int v3; // eax
-  _DWORD *v4; // ebp
-  int v5; // edi
-  int v6; // ebx
-
-  v3 = a2 + 1; /*0x7c1d9c*/
-  v4 = *(_DWORD **)(a1 + 356); /*0x7c1d9e*/
-  LOBYTE(v3) = (a2 + 1) & 0xFE; /*0x7c1daa*/
-  v5 = *(_DWORD *)(a1 + 1896) - v3; /*0x7c1daf*/
-  v6 = v5 + *v4; /*0x7c1db1*/
-  if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v6, v3) ) /*0x7c1db8*/
-    return -4; /*0x7c1dc5*/
-  *(_DWORD *)(a1 + 372) = 0; /*0x7c1dcd*/
-  v4[3] = 10; /*0x7c1dd7*/
-  v4[4] = v5; /*0x7c1dde*/
-  *(_DWORD *)(a1 + 360) = v4; /*0x7c1de1*/
-  *(_DWORD *)(a1 + 356) = v4[1]; /*0x7c1dea*/
-  if ( *(_WORD *)(a1 + 232) < 3u ) /*0x7c1df8*/
-    *(_BYTE *)(v6 + a2 + 1) = 0x80; /*0x7c1dfe*/
-  return -1; /*0x7c1dc2*/
+    int v3;
+    int *v4;
+    int v5;
+    int v6;
+    v3 = a2 + 1;
+    v4 = *(int **)(a1 + 356);
+    LOBYTE(v3) = (a2 + 1) & 0xFE;
+    v5 = *(int *)(a1 + 1896) - v3;
+    v6 = v5 + *v4;
+    if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v6, v3) )
+    return -4;
+    *(int *)(a1 + 372) = 0;
+    v4[3] = 10;
+    v4[4] = v5;
+    *(int *)(a1 + 360) = v4;
+    *(int *)(a1 + 356) = v4[1];
+    if ( *(short *)(a1 + 232) < 3u )
+    *(char *)(v6 + a2 + 1) = 0x80;
+    return -1;
 }
 }
 } // namespace gamemd
@@ -1553,47 +1500,41 @@ LABEL_17:
 namespace gamemd {
 int sub_7C20B0(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_7C20B0(int a1, int a2)
 {
-  int v3; // eax
-  int v4; // ebx
-  int v5; // esi
-  int v6; // edi
-  int v8; // edx
-  char *v9; // eax
-  const void *v10; // esi
-  int v11; // eax
-
-  v3 = a2 + 1; /*0x7c20bb*/
-  v4 = *(_DWORD *)(a1 + 368); /*0x7c20bc*/
-  LOBYTE(v3) = (a2 + 1) & 0xFE; /*0x7c20c9*/
-  v5 = *(_DWORD *)(a1 + 1904) - v3; /*0x7c20cf*/
-  v6 = v5 + *(_DWORD *)(v4 + 8); /*0x7c20d2*/
-  if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v6, v3) ) /*0x7c20d8*/
-    return -4; /*0x7c20e5*/
-  v8 = *(_DWORD *)(v4 + 20) | 8; /*0x7c20f4*/
-  *(_DWORD *)(v4 + 36) = v5; /*0x7c20f7*/
-  *(_DWORD *)(v4 + 20) = v8; /*0x7c20fa*/
-  *(_DWORD *)(v4 + 40) = a2; /*0x7c20fd*/
-  if ( *(_WORD *)(a1 + 232) < 3u ) /*0x7c2108*/
-    *(_BYTE *)(v6 + a2 + 1) = 0x80; /*0x7c210a*/
-  if ( *(_WORD *)(a1 + 1880) == 1 ) /*0x7c2117*/
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v8;
+    char *v9;
+    const void *v10;
+    int v11;
+    v3 = a2 + 1;
+    v4 = *(int *)(a1 + 368);
+    LOBYTE(v3) = (a2 + 1) & 0xFE;
+    v5 = *(int *)(a1 + 1904) - v3;
+    v6 = v5 + *(int *)(v4 + 8);
+    if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v6, v3) )
+    return -4;
+    v8 = *(int *)(v4 + 20) | 8;
+    *(int *)(v4 + 36) = v5;
+    *(int *)(v4 + 20) = v8;
+    *(int *)(v4 + 40) = a2;
+    if ( *(short *)(a1 + 232) < 3u )
+    *(char *)(v6 + a2 + 1) = 0x80;
+    if ( *(short *)(a1 + 1880) == 1 )
   {
-    v9 = AudioCodec::Decode( /*0x7c212a*/
-           (unsigned __int8 *)(*(_DWORD *)(v4 + 8) + *(_DWORD *)(v4 + 36)),
-           *(char **)(v4 + 8),
-           *(_DWORD *)(a1 + 1904));
-    *(_DWORD *)(v4 + 20) &= ~8u; /*0x7c213d*/
-    v10 = *(const void **)(v4 + 8); /*0x7c2140*/
-    *(_DWORD *)(v4 + 40) = v9; /*0x7c2146*/
-    qmemcpy((void *)(a1 + 452), v10, (unsigned int)v9); /*0x7c214c*/
-    v11 = *(_DWORD *)(a1 + 420); /*0x7c2155*/
-    LOBYTE(v11) = v11 | 1; /*0x7c215e*/
-    *(_DWORD *)(a1 + 448) = *(_DWORD *)(v4 + 40); /*0x7c2160*/
-    *(_DWORD *)(a1 + 420) = v11; /*0x7c2166*/
+    v9 = AudioCodec::Decode( (unsigned char *)(*(int *)(v4 + 8) + *(int *)(v4 + 36)), *(char **)(v4 + 8), *(int *)(a1 + 1904));
+    *(int *)(v4 + 20) &= ~8u;
+    v10 = *(const void **)(v4 + 8);
+    *(int *)(v4 + 40) = v9;
+    qmemcpy((void *)(a1 + 452), v10, (unsigned int)v9);
+    v11 = *(int *)(a1 + 420);
+    LOBYTE(v11) = v11 | 1;
+    *(int *)(a1 + 448) = *(int *)(v4 + 40);
+    *(int *)(a1 + 420) = v11;
   }
-  return -1; /*0x7c20e2*/
+    return -1;
 }
 }
 } // namespace gamemd
@@ -1602,52 +1543,49 @@ int __fastcall sub_7C20B0(int a1, int a2)
 namespace gamemd {
 int sub_7C2180(int a1, unsigned int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_7C2180(int a1, unsigned int a2)
 {
-  unsigned int v4; // eax
-  int v5; // ecx
-  unsigned int v7; // ecx
-  int v8; // eax
-
-  v4 = a2 + 1; /*0x7c218c*/
-  LOBYTE(v4) = (a2 + 1) & 0xFE; /*0x7c218f*/
-  if ( (*(_BYTE *)(a1 + 132) & 1) != 0 && (v5 = *(_DWORD *)(a1 + 1932)) != 0 ) /*0x7c21a2*/
+    unsigned int v4;
+    int v5;
+    unsigned int v7;
+    int v8;
+    v4 = a2 + 1;
+    LOBYTE(v4) = (a2 + 1) & 0xFE;
+    if ( (*(char *)(a1 + 132) & 1) != 0 && (v5 = *(int *)(a1 + 1932)) != 0 )
   {
-    if ( v4 <= *(_DWORD *)(a1 + 1972) || *(_DWORD *)(a1 + 1936) ) /*0x7c21b0*/
+    if ( v4 <= *(int *)(a1 + 1972) || *(int *)(a1 + 1936) )
     {
-      if ( (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(a1 + 64))(a1, 5, *(_DWORD *)(a1 + 1960), v4) ) /*0x7c2219*/
+    if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, *(int *)(a1 + 1960), v4) )
       {
-        return -4; /*0x7c2224*/
+    return -4;
       }
-      else
+    else
       {
-        *(_DWORD *)(a1 + 1968) = a2; /*0x7c222b*/
-        return -1; /*0x7c2232*/
+    *(int *)(a1 + 1968) = a2;
+    return -1;
       }
     }
-    else if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, v5, v4) ) /*0x7c21bf*/
+    else if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, v5, v4) )
     {
-      return -4; /*0x7c21ca*/
+    return -4;
     }
     else
     {
-      v7 = 0; /*0x7c21db*/
-      *(_DWORD *)(a1 + 1936) += a2; /*0x7c21dd*/
-      if ( a2 / *(_DWORD *)(a1 + 156) ) /*0x7c21e5*/
+    v7 = 0;
+    *(int *)(a1 + 1936) += a2;
+    if ( a2 / *(int *)(a1 + 156) )
       {
-        do /*0x7c2206*/
-          *(_BYTE *)(*(_DWORD *)(a1 + 1940) + v7++) = 1; /*0x7c21f7*/
-        while ( v7 < a2 / *(_DWORD *)(a1 + 156) ); /*0x7c2206*/
+    do
+    *(char *)(*(int *)(a1 + 1940) + v7++) = 1;
+    while ( v7 < a2 / *(int *)(a1 + 156) );
       }
-      return -1; /*0x7c2209*/
+    return -1;
     }
   }
-  else
+    else
   {
-    v8 = -((*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, v4) != 0); /*0x7c2245*/
-    LOBYTE(v8) = v8 & 0xFB; /*0x7c2248*/
-    return v8 - 1; /*0x7c224b*/
+    v8 = -((*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, v4) != 0);
+    LOBYTE(v8) = v8 & 0xFB;
+    return v8 - 1;
   }
 }
 }
@@ -1971,38 +1909,32 @@ int __usercall sub_7C7F20@<eax>(int a1@<edx>, _WORD *a2, _BYTE *a3, int a4)
 namespace gamemd {
 int sub_752290()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_752290()
 {
-  char *v0; // esi
-  int result; // eax
-  void *Enabled; // eax
-
-  MEMORY[0xB1D3D8] = 0; /*0x752291*/
-  MEMORY[0xB1D428] = 0; /*0x75229b*/
-  v0 = MEMORY[0xB1D450]; /*0x7522a5*/
-  do /*0x7522ba*/
+    char *v0;
+    int result;
+    void *Enabled;
+    DataGlobal_B1D3D8 = 0;
+    DataGlobal_B1D428 = 0;
+    v0 = DataGlobal_B1D450;
+    do
   {
-    DListNode::Init(v0); /*0x7522ac*/
-    v0 += 12; /*0x7522b1*/
+    DListNode::Init(v0);
+    v0 += 12;
   }
-  while ( (int)v0 < (int)&MEMORY[0xB1D480] ); /*0x7522ba*/
-  DListNode::Init(&MEMORY[0xB1D3F0]); /*0x7522c1*/
-  DListNode::Init(&MEMORY[0xB1D3C8]); /*0x7522cb*/
-  result = (int)MEMORY[0xB1D4CC]; /*0x7522d0*/
-  MEMORY[0xB1D4B8] = 0; /*0x7522d5*/
-  MEMORY[0xB1D4BC] = 1; /*0x7522e1*/
-  if ( MEMORY[0xB1D4CC] /*0x752307*/
-    || (Enabled = Audio::GetEnabled(),
-        result = (int)AudioStream::Constructor(Enabled, 0xBB8u),
-        (MEMORY[0xB1D4CC] = (void *)result) != 0) )
+    while ( (int)v0 < (int)&DataGlobal_B1D480 );
+    DListNode::Init(&DataGlobal_B1D3F0);
+    DListNode::Init(&DataGlobal_B1D3C8);
+    result = (int)g_InfantryDrawState;
+    DataGlobal_B1D4B8 = 0;
+    DataGlobal_B1D4BC = 1;
+    if ( g_InfantryDrawState || (Enabled = Audio::GetEnabled(), result = (int)AudioStream::Constructor(Enabled, 0xBB8u), (g_InfantryDrawState = (void *)result) != 0) )
   {
-    SetAudioFileName(result, unk_84667C); /*0x752311*/
-    AudioQueue::IsEmpty((int)MEMORY[0xB1D4CC], MEMORY[0x87E740]); /*0x752322*/
-    AudioQueue::IsNotEmpty((int)MEMORY[0xB1D4CC], MEMORY[0x87E750]); /*0x752333*/
-    return 1; /*0x752338*/
+    SetAudioFileName(result, DataGlobal_84667C);
+    AudioQueue::IsEmpty((int)g_InfantryDrawState, g_MixerChannel_Voice);
+    AudioQueue::IsNotEmpty((int)g_InfantryDrawState, g_MixerChannel_Ambient);
+    return 1;
   }
-  return result; /*0x752309*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -2011,25 +1943,19 @@ int sub_752290()
 namespace gamemd {
 int sub_752AD0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_752AD0()
 {
-  int result; // eax
-  void *Enabled; // eax
-
-  result = (int)MEMORY[0xB1D4D8]; /*0x752ad0*/
-  if ( MEMORY[0xB1D4D8] /*0x752af2*/
-    || (Enabled = Audio::GetEnabled(),
-        result = (int)AudioStream::Constructor(Enabled, 0xBB8u),
-        (MEMORY[0xB1D4D8] = (void *)result) != 0) )
+    int result;
+    void *Enabled;
+    result = (int)DataGlobal_B1D4D8;
+    if ( DataGlobal_B1D4D8 || (Enabled = Audio::GetEnabled(), result = (int)AudioStream::Constructor(Enabled, 0xBB8u), (DataGlobal_B1D4D8 = (void *)result) != 0) )
   {
-    SetAudioFileName(result, unk_846688); /*0x752afc*/
-    AudioQueue::IsEmpty((int)MEMORY[0xB1D4CC], MEMORY[0x87E740]); /*0x752b0d*/
-    AudioQueue::IsNotEmpty((int)MEMORY[0xB1D4CC], MEMORY[0x87E750]); /*0x752b1e*/
-    MEMORY[0xB1D480] = 0; /*0x752b23*/
-    return 1; /*0x752b2d*/
+    SetAudioFileName(result, DataGlobal_846688);
+    AudioQueue::IsEmpty((int)g_InfantryDrawState, g_MixerChannel_Voice);
+    AudioQueue::IsNotEmpty((int)g_InfantryDrawState, g_MixerChannel_Ambient);
+    DataGlobal_B1D480 = 0;
+    return 1;
   }
-  return result; /*0x752af4*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -2235,30 +2161,27 @@ signed int __fastcall sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
 namespace gamemd {
 char sub_7C04E0(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_7C04E0(int a1, int a2)
 {
-  int v3; // eax
-  unsigned __int16 *v4; // esi
-  int v5; // ecx
-
-  if ( !a2 ) /*0x7c04e4*/
-    return 1; /*0x7c04ea*/
-  v3 = *(unsigned __int16 *)(a1 + 1812); /*0x7c04ed*/
-  if ( (_WORD)v3 && (*(_BYTE *)(a1 + 1814) & 3) != 0 ) /*0x7c0503*/
+    int v3;
+    unsigned short *v4;
+    int v5;
+    if ( !a2 )
+    return 1;
+    v3 = *(unsigned short *)(a1 + 1812);
+    if ( (short)v3 && (*(char *)(a1 + 1814) & 3) != 0 )
   {
-    v4 = *(unsigned __int16 **)(a1 + 1820); /*0x7c0505*/
-    v5 = 0; /*0x7c050b*/
-    while ( a2 != *v4 ) /*0x7c0518*/
+    v4 = *(unsigned short **)(a1 + 1820);
+    v5 = 0;
+    while ( a2 != *v4 )
     {
-      ++v5; /*0x7c051a*/
-      v4 += 2; /*0x7c051b*/
-      if ( v5 >= v3 ) /*0x7c0520*/
-        return 0; /*0x7c0520*/
+    ++v5;
+    v4 += 2;
+    if ( v5 >= v3 )
+    return 0;
     }
-    return 1; /*0x7c0518*/
+    return 1;
   }
-  return 0; /*0x7c04e6*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -2599,10 +2522,8 @@ LABEL_22:
 namespace gamemd {
 void sub_7C3950(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall sub_7C3950(int a1, int a2)
 {
-  *(_DWORD *)(a1 + 328) += a2; /*0x7c3950*/
+    *(int *)(a1 + 328) += a2;
 }
 }
 } // namespace gamemd
@@ -3077,14 +2998,11 @@ LABEL_4:
 namespace gamemd {
 int sub_7C1130(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_7C1130(int a1, int a2)
 {
-  int v2; // eax
-
-  v2 = -((*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, a1 + 274, (a2 + 1) & 0xFFFFFFFE) != 0); /*0x7c1147*/
-  LOBYTE(v2) = v2 & 0xFD; /*0x7c1149*/
-  return v2 - 1; /*0x7c114c*/
+    int v2;
+    v2 = -((*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, a1 + 274, (a2 + 1) & 0xFFFFFFFE) != 0);
+    LOBYTE(v2) = v2 & 0xFD;
+    return v2 - 1;
 }
 }
 } // namespace gamemd
@@ -3093,22 +3011,19 @@ int __fastcall sub_7C1130(int a1, int a2)
 namespace gamemd {
 int sub_7C1D40(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_7C1D40(int a1, int a2)
 {
-  int v2; // eax
-
-  v2 = *(_DWORD *)(a1 + 1892); /*0x7c1d40*/
-  if ( v2 ) /*0x7c1d48*/
+    int v2;
+    v2 = *(int *)(a1 + 1892);
+    if ( v2 )
   {
-    if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, v2, (a2 + 1) & 0xFFFFFFFE) ) /*0x7c1d53*/
-      return -4; /*0x7c1d62*/
+    if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, v2, (a2 + 1) & 0xFFFFFFFE) )
+    return -4;
   }
-  else if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, (a2 + 1) & 0xFFFFFFFE) ) /*0x7c1d6d*/
+    else if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, (a2 + 1) & 0xFFFFFFFE) )
   {
-    return -6; /*0x7c1d7c*/
+    return -6;
   }
-  return -1; /*0x7c1d62*/
+    return -1;
 }
 }
 } // namespace gamemd
@@ -3200,27 +3115,22 @@ int __fastcall sub_7C2410(int a1, int a2)
 namespace gamemd {
 int Audio_Render_7C3430(DSurface * aP0, int a2, int a3, unsigned int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Audio_Render_7C3430(DSurface *aP0, int a2, int a3, unsigned int a4)
 {
-  int v6; // edx
-  unsigned __int16 v7; // ax
-  int result; // eax
-
-  if ( a2 >= *(unsigned __int16 *)&aP0->__pad_518[508] /*0x7c3436*/
-    || a2 < 0
-    || (aP0->__pad_2C[88] & 1) != 0 && !*(_WORD *)&aP0->__pad_518[508] )
+    int v6;
+    unsigned short v7;
+    int result;
+    if ( a2 >= *(unsigned short *)&aP0->__pad_518[508] || a2 < 0 || (aP0->__pad_2C[88] & 1) != 0 && !*(short *)&aP0->__pad_518[508] )
   {
-    return -23; /*0x7c3498*/
+    return -23;
   }
-  v6 = *(_DWORD *)&aP0->__pad_518[516]; /*0x7c345b*/
-  v7 = *(_WORD *)(v6 + 4 * a2 + 2); /*0x7c3463*/
-  LOWORD(v6) = *(_WORD *)(v6 + 4 * a2); /*0x7c346d*/
-  *(_DWORD *)&aP0->__pad_11F[1] = a2; /*0x7c347d*/
-  result = SeekAudioStream((int)aP0, (DSurface *)(unsigned __int16)v6, (DSurface *)v7, a3, a4); /*0x7c3483*/
-  if ( result == -1 ) /*0x7c348b*/
-    *(_DWORD *)&aP0->__pad_11F[1] = a2; /*0x7c348d*/
-  return result; /*0x7c3493*/
+    v6 = *(int *)&aP0->__pad_518[516];
+    v7 = *(short *)(v6 + 4 * a2 + 2);
+    LOWORD(v6) = *(short *)(v6 + 4 * a2);
+    *(int *)&aP0->__pad_11F[1] = a2;
+    result = SeekAudioStream((int)aP0, (DSurface *)(unsigned short)v6, (DSurface *)v7, a3, a4);
+    if ( result == -1 )
+    *(int *)&aP0->__pad_11F[1] = a2;
+    return result;
 }
 }
 } // namespace gamemd
@@ -3288,14 +3198,12 @@ LABEL_8:
 namespace gamemd {
 int sub_7C7350(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl sub_7C7350(int a1)
 {
-  *(_WORD *)(a1 + 4) = 0; /*0x7c7356*/
-  *(_DWORD *)a1 = 0; /*0x7c735c*/
-  *(_WORD *)(a1 + 10) = 0; /*0x7c7362*/
-  *(_DWORD *)(a1 + 6) = 0; /*0x7c7368*/
-  return a1; /*0x7c736f*/
+    *(short *)(a1 + 4) = 0;
+    *(int *)a1 = 0;
+    *(short *)(a1 + 10) = 0;
+    *(int *)(a1 + 6) = 0;
+    return a1;
 }
 }
 } // namespace gamemd
@@ -3304,15 +3212,12 @@ int __cdecl sub_7C7350(int a1)
 namespace gamemd {
 size_t sub_7C95D3(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-size_t __cdecl sub_7C95D3(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream)
 {
-  size_t v4; // esi
-
-  _lock_file(Stream); /*0x7c95da*/
-  v4 = fwrite(Buffer, ElementSize, ElementCount, Stream); /*0x7c95f3*/
-  _unlock_file(Stream); /*0x7c95f5*/
-  return v4; /*0x7c95ff*/
+    size_t v4;
+    _lock_file(Stream);
+    v4 = fwrite(Buffer, ElementSize, ElementCount, Stream);
+    _unlock_file(Stream);
+    return v4;
 }
 }
 } // namespace gamemd

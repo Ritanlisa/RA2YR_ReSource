@@ -6,20 +6,17 @@
 namespace gamemd {
 char sub_72C060()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_72C060()
 {
-  char result; // al
-
-  result = MEMORY[0xB0FD2D]; /*0x72c060*/
-  if ( !MEMORY[0xB0FD2D] ) /*0x72c067*/
+    char result;
+    result = DataGlobal_B0FD2D;
+    if ( !DataGlobal_B0FD2D )
   {
-    if ( MEMORY[0x8A00A4] == 800 ) /*0x72c073*/
-      MEMORY[0xB0FA4C] = LoadFileSHP(MEMORY[0x844DA4], (bool *)&MEMORY[0xB0FD2C]); /*0x72c085*/
-    result = LoadPaletteSimple(MEMORY[0x844DA8], &MEMORY[0xB0FD30], &MEMORY[0xB0FD34]); /*0x72c09a*/
-    MEMORY[0xB0FD2D] = 1; /*0x72c09f*/
+    if ( g_DisplayWidth == 800 )
+    DataGlobal_B0FA4C = LoadFileSHP(DataGlobal_844DA4, (bool *)&DataGlobal_B0FD2C);
+    result = LoadPaletteSimple(DataGlobal_844DA8, &DataGlobal_B0FD30, &DataGlobal_B0FD34);
+    DataGlobal_B0FD2D = 1;
   }
-  return result; /*0x72c0a6*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -28,36 +25,33 @@ char sub_72C060()
 namespace gamemd {
 void sub_72C0B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_72C0B0()
 {
-  void *v0; // esi
-
-  if ( MEMORY[0xB0FD2D] ) /*0x72c0ba*/
+    void *v0;
+    if ( DataGlobal_B0FD2D )
   {
-    if ( MEMORY[0xB0FD2C] ) /*0x72c0c2*/
+    if ( DataGlobal_B0FD2C )
     {
-      v0 = MEMORY[0xB0FA4C]; /*0x72c0c5*/
-      if ( MEMORY[0xB0FA4C] ) /*0x72c0cd*/
+    v0 = DataGlobal_B0FA4C;
+    if ( DataGlobal_B0FA4C )
       {
-        FileTreeNode::Destroy(MEMORY[0xB0FA4C]); /*0x72c0d1*/
-        __3_YAXPAX_Z(v0); /*0x72c0d7*/
+    FileTreeNode::Destroy(DataGlobal_B0FA4C);
+    __3_YAXPAX_Z(v0);
       }
-      MEMORY[0xB0FD2C] = 0; /*0x72c0df*/
+    DataGlobal_B0FD2C = 0;
     }
-    MEMORY[0xB0FA4C] = 0; /*0x72c0eb*/
-    if ( MEMORY[0xB0FD30] ) /*0x72c0f3*/
+    DataGlobal_B0FA4C = 0;
+    if ( DataGlobal_B0FD30 )
     {
-      __3_YAXPAX_Z(MEMORY[0xB0FD30]); /*0x72c0f6*/
-      MEMORY[0xB0FD30] = 0; /*0x72c0fe*/
+    __3_YAXPAX_Z(DataGlobal_B0FD30);
+    DataGlobal_B0FD30 = 0;
     }
-    if ( MEMORY[0xB0FD34] ) /*0x72c10c*/
+    if ( DataGlobal_B0FD34 )
     {
-      (**(void (__thiscall ***)(int, int))MEMORY[0xB0FD34])(MEMORY[0xB0FD34], 1); /*0x72c112*/
-      MEMORY[0xB0FD34] = 0; /*0x72c114*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FD34)(DataGlobal_B0FD34, 1);
+    DataGlobal_B0FD34 = 0;
     }
   }
-  MEMORY[0xB0FD2D] = 0; /*0x72c11a*/
+    DataGlobal_B0FD2D = 0;
 }
 }
 } // namespace gamemd

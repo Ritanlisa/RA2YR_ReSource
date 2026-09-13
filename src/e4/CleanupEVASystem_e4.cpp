@@ -6,58 +6,55 @@
 namespace gamemd {
 void sub_72DC20()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_72DC20()
 {
-  void *v0; // esi
-  void *v1; // esi
-  void *v2; // esi
-  void *v3; // esi
-
-  if ( MEMORY[0xB0FCC8] ) /*0x72dc2b*/
+    void *v0;
+    void *v1;
+    void *v2;
+    void *v3;
+    if ( DataGlobal_B0FCC8 )
   {
-    v0 = MEMORY[0xB0FB48]; /*0x72dc2d*/
-    if ( MEMORY[0xB0FB48] ) /*0x72dc35*/
+    v0 = DataGlobal_B0FB48;
+    if ( DataGlobal_B0FB48 )
     {
-      FileTreeNode::Destroy(MEMORY[0xB0FB48]); /*0x72dc39*/
-      __3_YAXPAX_Z(v0); /*0x72dc3f*/
+    FileTreeNode::Destroy(DataGlobal_B0FB48);
+    __3_YAXPAX_Z(v0);
     }
-    MEMORY[0xB0FCC8] = 0; /*0x72dc47*/
+    DataGlobal_B0FCC8 = 0;
   }
-  MEMORY[0xB0FB48] = 0; /*0x72dc52*/
-  if ( MEMORY[0xB0FCCA] ) /*0x72dc5a*/
+    DataGlobal_B0FB48 = 0;
+    if ( DataGlobal_B0FCCA )
   {
-    v1 = MEMORY[0xB0FB10]; /*0x72dc5c*/
-    if ( MEMORY[0xB0FB10] ) /*0x72dc64*/
+    v1 = DataGlobal_B0FB10;
+    if ( DataGlobal_B0FB10 )
     {
-      FileTreeNode::Destroy(MEMORY[0xB0FB10]); /*0x72dc68*/
-      __3_YAXPAX_Z(v1); /*0x72dc6e*/
+    FileTreeNode::Destroy(DataGlobal_B0FB10);
+    __3_YAXPAX_Z(v1);
     }
-    MEMORY[0xB0FCCA] = 0; /*0x72dc76*/
+    DataGlobal_B0FCCA = 0;
   }
-  MEMORY[0xB0FB10] = 0; /*0x72dc81*/
-  if ( MEMORY[0xB0FCCB] ) /*0x72dc89*/
+    DataGlobal_B0FB10 = 0;
+    if ( DataGlobal_B0FCCB )
   {
-    v2 = MEMORY[0xB0F9F8]; /*0x72dc8b*/
-    if ( MEMORY[0xB0F9F8] ) /*0x72dc93*/
+    v2 = DataGlobal_B0F9F8;
+    if ( DataGlobal_B0F9F8 )
     {
-      FileTreeNode::Destroy(MEMORY[0xB0F9F8]); /*0x72dc97*/
-      __3_YAXPAX_Z(v2); /*0x72dc9d*/
+    FileTreeNode::Destroy(DataGlobal_B0F9F8);
+    __3_YAXPAX_Z(v2);
     }
-    MEMORY[0xB0FCCB] = 0; /*0x72dca5*/
+    DataGlobal_B0FCCB = 0;
   }
-  MEMORY[0xB0F9F8] = 0; /*0x72dcb0*/
-  if ( MEMORY[0xB0FCCC] ) /*0x72dcb8*/
+    DataGlobal_B0F9F8 = 0;
+    if ( DataGlobal_B0FCCC )
   {
-    v3 = MEMORY[0xB0FA6C]; /*0x72dcba*/
-    if ( MEMORY[0xB0FA6C] ) /*0x72dcc2*/
+    v3 = DataGlobal_B0FA6C;
+    if ( DataGlobal_B0FA6C )
     {
-      FileTreeNode::Destroy(MEMORY[0xB0FA6C]); /*0x72dcc6*/
-      __3_YAXPAX_Z(v3); /*0x72dccc*/
+    FileTreeNode::Destroy(DataGlobal_B0FA6C);
+    __3_YAXPAX_Z(v3);
     }
-    MEMORY[0xB0FCCC] = 0; /*0x72dcd4*/
+    DataGlobal_B0FCCC = 0;
   }
-  MEMORY[0xB0FA6C] = 0; /*0x72dcda*/
+    DataGlobal_B0FA6C = 0;
 }
 }
 } // namespace gamemd

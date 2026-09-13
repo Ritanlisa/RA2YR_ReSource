@@ -21,26 +21,23 @@ int __thiscall AudioMixer::Init(int *this)
 // 0x4061D0
 int AudioMixer::PlayBuffer(unsigned int * a1, unsigned int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall AudioMixer::PlayBuffer(_DWORD *a1, unsigned int a2)
 {
-  int v2; // eax
-  _DWORD *v4; // esi
-
-  v2 = a2; /*0x4061d6*/
-  if ( a1[7] == 3 ) /*0x4061d8*/
+    int v2;
+    int *v4;
+    v2 = a2;
+    if ( *((int*)(a1) + 7) == 3 )
   {
-    if ( a2 > 0x4000 ) /*0x4061e0*/
-      v2 = 0x4000; /*0x4061e2*/
-    return RequestBufferMixer(a1 + 46, (unsigned int)(v2 * HIWORD(*(_DWORD *)(a1[9] + 28))) >> 14); /*0x406204*/
+    if ( a2 > 0x4000 )
+    v2 = 0x4000;
+    return RequestBufferMixer(a1 + 46, (unsigned int)(v2 * HIWORD(*(int *)(*((int*)(a1) + 9) + 28))) >> 14);
   }
-  else
+    else
   {
-    if ( a2 > 0x4000 ) /*0x40620f*/
-      v2 = 0x4000; /*0x406211*/
-    v4 = a1 + 46; /*0x40621f*/
-    EndBufferMixer(a1 + 46, (unsigned int)(v2 * HIWORD(*(_DWORD *)(a1[9] + 28))) >> 14); /*0x406236*/
-    return AudioMixer::PlaySample(v4); /*0x40623e*/
+    if ( a2 > 0x4000 )
+    v2 = 0x4000;
+    v4 = a1 + 46;
+    EndBufferMixer(a1 + 46, (unsigned int)(v2 * HIWORD(*(int *)(*((int*)(a1) + 9) + 28))) >> 14);
+    return AudioMixer::PlaySample(v4);
   }
 }
 }
@@ -48,20 +45,18 @@ int __fastcall AudioMixer::PlayBuffer(_DWORD *a1, unsigned int a2)
 // 0x406270
 int AudioMixer::RequestOrEndBuffer(int a1, unsigned int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall AudioMixer::RequestOrEndBuffer(int a1, unsigned int a2)
 {
-  if ( *(_DWORD *)(a1 + 28) == 3 ) /*0x406276*/
+    if ( *(int *)(a1 + 28) == 3 )
   {
-    if ( a2 > 0x4000 ) /*0x40627e*/
-      a2 = 0x4000; /*0x406280*/
-    return RequestBufferMixer((unsigned int *)(a1 + 264), a2); /*0x406293*/
+    if ( a2 > 0x4000 )
+    a2 = 0x4000;
+    return RequestBufferMixer((unsigned int *)(a1 + 264), a2);
   }
-  else
+    else
   {
-    if ( a2 > 0x4000 ) /*0x40629e*/
-      a2 = 0x4000; /*0x4062a0*/
-    return EndBufferMixer((int *)(a1 + 264), a2); /*0x4062b3*/
+    if ( a2 > 0x4000 )
+    a2 = 0x4000;
+    return EndBufferMixer((int *)(a1 + 264), a2);
   }
 }
 }
@@ -84,12 +79,10 @@ int __thiscall AudioMixer::SetVolume(int this)
 // 0x406E80
 int AudioMixer::Shutdown()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int AudioMixer_Shutdown()
 {
-  if ( MEMORY[0x87E728] ) /*0x406e88*/
-    AudioQueue::StopAllVoices(MEMORY[0x87E728], 1); /*0x406e8f*/
-  return AudioStream::CleanupChannels();
+    if ( DataGlobal_87E728 )
+    AudioQueue::StopAllVoices(DataGlobal_87E728, 1);
+    return AudioStream::CleanupChannels();
 }
 }
 
@@ -189,20 +182,17 @@ int __thiscall AudioMixer_PlaySample(_DWORD *this)
 // 0x753620
 int AudioMixer::Pump()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int AudioMixer_Pump()
 {
-  int result; // eax
-
-  if ( MEMORY[0xB1D4CC] ) /*0x753628*/
-    AudioMixer::ProcessAudioFrame(); /*0x75362a*/
-  result = MEMORY[0xB1D428]; /*0x75362f*/
-  if ( MEMORY[0xB1D428] ) /*0x753636*/
+    int result;
+    if ( g_InfantryDrawState )
+    AudioMixer::ProcessAudioFrame();
+    result = DataGlobal_B1D428;
+    if ( DataGlobal_B1D428 )
   {
-    result = --MEMORY[0xB1D428]; /*0x75363d*/
-    if ( MEMORY[0xB1D428] < 0 ) /*0x753643*/
-      MEMORY[0xB1D428] = 0; /*0x753645*/
+    result = --DataGlobal_B1D428;
+    if ( DataGlobal_B1D428 < 0 )
+    DataGlobal_B1D428 = 0;
   }
-  return result; /*0x75364f*/
+    return result;
 }
 }

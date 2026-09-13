@@ -377,23 +377,19 @@ LABEL_48:
 // 0x5B2930
 unsigned int * Movement::Check(unsigned int * a2, unsigned short * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_5B2930(_WORD *this, _DWORD *a2, _WORD *a3)
 {
-  LOWORD(a3) = *this + *a3; /*0x5b293e*/
-  *a2 = a3; /*0x5b2947*/
-  return a2; /*0x5b2949*/
+    LOWORD(a3) = *(void**)(this) + *a3;
+    *a2 = a3;
+    return a2;
 }
 }
 
 // 0x5B2970
 int * Movement::DivideAndStoreScaled(int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall sub_5B2970(__int16 *this, int *a2, int a3)
 {
-  LOWORD(a3) = *this / a3; /*0x5b2978*/
-  *a2 = a3; /*0x5b2985*/
-  return a2; /*0x5b2987*/
+    LOWORD(a3) = *(void**)this / a3;
+    *a2 = a3;
+    return a2;
 }
 }

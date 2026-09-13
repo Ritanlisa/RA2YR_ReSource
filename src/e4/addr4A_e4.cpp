@@ -1080,20 +1080,17 @@ unsigned int sub_4A4130()
 namespace gamemd {
 int sub_4A45C0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_4A45C0()
 {
-  int v1[16]; // [esp+0h] [ebp-23Ch] BYREF
-  int v2; // [esp+40h] [ebp-1FCh]
-  char Buffer[256]; // [esp+13Ch] [ebp-100h] BYREF
-
-  if ( !MEMORY[0x8A0094] ) /*0x4a45cd*/
-    return 0; /*0x4a45cd*/
-  v1[0] = 316; /*0x4a45d3*/
-  if ( MEMORY[0x8A0094]->lpVtbl->GetCaps(MEMORY[0x8A0094], (LPDDCAPS)v1, 0) ) /*0x4a45e1*/
-    return 0; /*0x4a460d*/
-  sprintf(Buffer, stru_81FE6C, v2); /*0x4a45fa*/
-  return v2; /*0x4a4606*/
+    int v1[16];
+    int v2;
+    char Buffer[256];
+    if ( !g_lpDirectDraw7 )
+    return 0;
+    v1[0] = 316;
+    if ( g_lpDirectDraw7->lpVtbl->GetCaps(g_lpDirectDraw7, (LPDDCAPS)v1, 0) )
+    return 0;
+    sprintf(Buffer, DataGlobal_81FE6C, v2);
+    return v2;
 }
 }
 } // namespace gamemd
@@ -1184,25 +1181,23 @@ LABEL_13:
 namespace gamemd {
 unsigned int * E4Recv_4A4E30::sub_4A4E30(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_4A4E30(_DWORD *this, int a2, int a3)
 {
-  *(this + 1) = 0; /*0x4a4e3b*/
-  *(this + 2) = a2; /*0x4a4e3e*/
-  *((_BYTE *)this + 12) = 1; /*0x4a4e41*/
-  *((_BYTE *)this + 13) = 0; /*0x4a4e45*/
-  *this = &vt_VectorClass_DDSURFACEDESC; /*0x4a4e48*/
-  if ( a2 ) /*0x4a4e4e*/
+    this->M4 = 0;
+    this->M8 = a2;
+    this->M12 = 1;
+    this->M13 = 0;
+    *(void**)this = &vt_VectorClass_DDSURFACEDESC;
+    if ( a2 )
   {
-    if ( a3 ) /*0x4a4e56*/
+    if ( a3 )
     {
-      *(this + 1) = a3; /*0x4a4e58*/
-      return this; /*0x4a4e5e*/
+    this->M4 = a3;
+    return this;
     }
-    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x4a4e6d*/
-    *((_BYTE *)this + 13) = 1; /*0x4a4e70*/
+    this->M4 = __2_YAPAXI_Z(4 * a2);
+    this->M13 = 1;
   }
-  return this; /*0x4a4e5d*/
+    return this;
 }
 }
 } // namespace gamemd
@@ -1739,44 +1734,19 @@ int *__fastcall RenderTextLabelWordWrap(
 namespace gamemd {
 unsigned int * FillRectangle(IUnknown * aP0, IUnknown * aP1, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall FillRectangle(
-        IUnknown *aP0,
-        IUnknown *aP1,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10)
 {
-  int v12; // eax
-  int *v13; // eax
-  int v14; // edx
-  int v16; // [esp+8h] [ebp-8h] BYREF
-
-  v12 = Color::ConvertToRGB((unsigned __int8 *)(a6 + 776), (int)&a6); /*0x4a6518*/
-  LOWORD(v16) = *(_WORD *)v12; /*0x4a6526*/
-  BYTE2(v16) = *(_BYTE *)(v12 + 2); /*0x4a652e*/
-  v13 = RenderTextLabelWordWrap( /*0x4a65a7*/
-          &v16,
-          (const wchar_t *)aP1,
-          a3,
-          (_DWORD *)a4,
-          (int *)a5,
-          ((unsigned __int8)v16 >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120])
-        | (BYTE1(v16) >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136])
-        | (BYTE2(v16) >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128]),
-          a7,
-          a8,
-          a9,
-          (unsigned int *)a10);
-  aP0->field_0 = *v13; /*0x4a65ae*/
-  v14 = v13[1]; /*0x4a65b1*/
-  aP0->field_4 = v14; /*0x4a65b6*/
-  return &aP0->field_0; /*0x4a65b0*/
+    int v12;
+    int *v13;
+    int v14;
+    int v16;
+    v12 = Color::ConvertToRGB((unsigned char *)(a6 + 776), (int)&a6);
+    LOWORD(v16) = *(short *)v12;
+    BYTE2(v16) = *(char *)(v12 + 2);
+    v13 = RenderTextLabelWordWrap( &v16, (const wchar_t *)aP1, a3, (int *)a4, (int *)a5, ((unsigned char)v16 >> DataGlobal_89E138.__pad_14B0[6124] << DataGlobal_89E138.__pad_14B0[6120]) | (BYTE1(v16) >> DataGlobal_89E138.__pad_14B0[6140] << DataGlobal_89E138.__pad_14B0[6136]) | (BYTE2(v16) >> DataGlobal_89E138.__pad_14B0[6132] << DataGlobal_89E138.__pad_14B0[6128]), a7, a8, a9, (unsigned int *)a10);
+    aP0->field_0 = *v13;
+    v14 = v13[1];
+    aP0->field_4 = v14;
+    return &aP0->field_0;
 }
 }
 } // namespace gamemd
@@ -1959,17 +1929,15 @@ LABEL_12:
 namespace gamemd {
 int sub_4A6C70()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_4A6C70()
 {
-  MEMORY[0x8A020C] = 0; /*0x4a6c77*/
-  MEMORY[0x8A0210] = 0; /*0x4a6c7c*/
-  MEMORY[0x8A0214] = 1; /*0x4a6c81*/
-  MEMORY[0x8A0215] = 0; /*0x4a6c88*/
-  MEMORY[0x8A0208] = (int)&vt_DynamicVectorClass_DiskLaserClass; /*0x4a6c8d*/
-  MEMORY[0x8A021C] = 10; /*0x4a6c97*/
-  MEMORY[0x8A0218] = 0; /*0x4a6ca1*/
-  return atexit(sub_4A6CB0); /*0x4a6cac*/
+    DataGlobal_8A020C = 0;
+    DataGlobal_8A0210 = 0;
+    DataGlobal_8A0214 = 1;
+    DataGlobal_8A0215 = 0;
+    DataGlobal_8A0208 = (int)&vt_DynamicVectorClass_DiskLaserClass;
+    DataGlobal_8A021C = 10;
+    DataGlobal_8A0218 = 0;
+    return atexit(sub_4A6CB0);
 }
 }
 } // namespace gamemd
@@ -1978,17 +1946,15 @@ int sub_4A6C70()
 namespace gamemd {
 void sub_4A6CB0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_4A6CB0()
 {
-  MEMORY[0x8A0208] = (int)&vt_VectorClass_DiskLaserClass; /*0x4a6cb8*/
-  if ( MEMORY[0x8A020C] && MEMORY[0x8A0215] ) /*0x4a6ccc*/
+    DataGlobal_8A0208 = (int)&vt_VectorClass_DiskLaserClass;
+    if ( DataGlobal_8A020C && DataGlobal_8A0215 )
   {
-    __3_YAXPAX_Z(MEMORY[0x8A020C]); /*0x4a6ccf*/
-    MEMORY[0x8A020C] = 0; /*0x4a6cd7*/
+    __3_YAXPAX_Z(DataGlobal_8A020C);
+    DataGlobal_8A020C = 0;
   }
-  MEMORY[0x8A0215] = 0; /*0x4a6cdd*/
-  MEMORY[0x8A0210] = 0; /*0x4a6ce3*/
+    DataGlobal_8A0215 = 0;
+    DataGlobal_8A0210 = 0;
 }
 }
 } // namespace gamemd
@@ -2212,13 +2178,10 @@ LABEL_12:
 namespace gamemd {
 bool sub_4A83D0(INIClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __stdcall sub_4A83D0(INIClass *aP0)
 {
-  char Buffer[256]; // [esp+0h] [ebp-100h] BYREF
-
-  sprintf(Buffer, &stru_81FFCC, aP0); /*0x4a83e5*/
-  return MessageBoxA(0, Buffer, aHey, 1u) == 1; /*0x4a8407*/
+    char Buffer[256];
+    sprintf(Buffer, &DataGlobal_81FFCC, aP0);
+    return MessageBoxA(0, Buffer, aHey, 1u) == 1;
 }
 }
 } // namespace gamemd
@@ -2227,30 +2190,27 @@ bool __stdcall sub_4A83D0(INIClass *aP0)
 namespace gamemd {
 int sub_4A8630()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_4A8630()
 {
-  _DWORD *v0; // eax
-  int v1; // edx
-
-  v0 = &MEMORY[0x8A0368]; /*0x4a8630*/
-  v1 = 5; /*0x4a8635*/
-  do /*0x4a866b*/
+    int *v0;
+    int v1;
+    v0 = &DataGlobal_8A0368;
+    v1 = 5;
+    do
   {
-    *(v0 - 1) = 0; /*0x4a863c*/
-    *v0 = 0; /*0x4a863f*/
-    *((_BYTE *)v0 + 4) = 1; /*0x4a8641*/
-    *((_BYTE *)v0 + 5) = 0; /*0x4a8645*/
-    *(v0 - 2) = &vt_VectorClass_ObjectClass; /*0x4a8648*/
-    *(v0 - 2) = &vt_DynamicVectorClass_ObjectClass; /*0x4a864f*/
-    v0[3] = 10; /*0x4a8656*/
-    v0[2] = 0; /*0x4a865d*/
-    *(v0 - 2) = &off_7E6060; /*0x4a8660*/
-    v0 += 6; /*0x4a8667*/
-    --v1; /*0x4a866a*/
+    *(v0 - 1) = 0;
+    *v0 = 0;
+    *((char *)(v0) + 4) = 1;
+    *((char *)(v0) + 5) = 0;
+    *(v0 - 2) = &vt_VectorClass_ObjectClass;
+    *(v0 - 2) = &vt_DynamicVectorClass_ObjectClass;
+    v0[3] = 10;
+    v0[2] = 0;
+    *(v0 - 2) = &DataGlobal_7E6060;
+    v0 += 6;
+    --v1;
   }
-  while ( v1 ); /*0x4a866b*/
-  return atexit(sub_4A8680); /*0x4a8678*/
+    while ( v1 );
+    return atexit(sub_4A8680);
 }
 }
 } // namespace gamemd
@@ -2259,36 +2219,33 @@ int sub_4A8630()
 namespace gamemd {
 void sub_4A8680()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_4A8680()
 {
-  int v0; // esi
-  int v1; // edi
-  void *v2; // eax
-
-  if ( (MEMORY[0x8A03E1] & 1) == 0 ) /*0x4a868a*/
+    int v0;
+    int v1;
+    void *v2;
+    if ( (DataGlobal_8A03E1 & 1) == 0 )
   {
-    MEMORY[0x8A03E1] |= 1u; /*0x4a8691*/
-    v0 = 9044956; /*0x4a8697*/
-    v1 = 5; /*0x4a869c*/
-    do /*0x4a86cb*/
+    DataGlobal_8A03E1 |= 1u;
+    v0 = 9044956;
+    v1 = 5;
+    do
     {
-      v2 = *(void **)(v0 - 24); /*0x4a86a3*/
-      v0 -= 24; /*0x4a86a6*/
-      *(_DWORD *)(v0 - 4) = &vt_VectorClass_ObjectClass; /*0x4a86ab*/
-      if ( v2 ) /*0x4a86b2*/
+    v2 = *(void **)(v0 - 24);
+    v0 -= 24;
+    *(int *)(v0 - 4) = &vt_VectorClass_ObjectClass;
+    if ( v2 )
       {
-        if ( *(_BYTE *)(v0 + 9) ) /*0x4a86b4*/
+    if ( *(char *)(v0 + 9) )
         {
-          __3_YAXPAX_Z(v2); /*0x4a86ba*/
-          *(_DWORD *)v0 = 0; /*0x4a86c2*/
+    __3_YAXPAX_Z(v2);
+    *(int *)v0 = 0;
         }
       }
-      --v1; /*0x4a86c4*/
-      *(_BYTE *)(v0 + 9) = 0; /*0x4a86c5*/
-      *(_DWORD *)(v0 + 4) = 0; /*0x4a86c8*/
+    --v1;
+    *(char *)(v0 + 9) = 0;
+    *(int *)(v0 + 4) = 0;
     }
-    while ( v1 ); /*0x4a86cb*/
+    while ( v1 );
   }
 }
 }

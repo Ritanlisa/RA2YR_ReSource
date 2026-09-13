@@ -4326,45 +4326,34 @@ int AircraftClass::ValidateLandingCell()
 // 0x415a50
 int AircraftClass::ProcessReturnToBase()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AircraftClass::_vt140(unsigned int **this)
 {
-  unsigned int *v2; // ecx
-  unsigned int TransitionCount; // eax
-  unsigned int *v4; // edi
-  void *v5; // eax
-  int v7; // [esp+4h] [ebp-8h] BYREF
-  int v8; // [esp+8h] [ebp-4h] BYREF
-
-  if ( *(this + 361) )
+    unsigned int *v2;
+    unsigned int TransitionCount;
+    unsigned int *v4;
+    void *v5;
+    int v7;
+    int v8;
+    if ( this->FootClass_field_5A4 )
   {
-    if ( *(this + 361) == (unsigned int *)((int (__thiscall *)(unsigned int **))(*this)[111])(this) )
-      ((void (__thiscall *)(unsigned int **, _DWORD, int))(*this)[288])(this, 0, 1);
+    if ( this->FootClass_field_5A4 == (unsigned int *)((int (__thiscall *)(unsigned int **))(*(void**)this)[111])(this) )
+    ((void (__thiscall *)(unsigned int **, int, int))(*(void**)this)[288])(this, 0, 1);
   }
-  else
+    else
   {
-    v2 = *(this + 135);
+    v2 = this->focus;
     TransitionCount = v2[120];
     if ( TransitionCount >= 4 )
-      TransitionCount = HouseClass::GetTransitionCount(v2);
-    v7 = *CellClass::FindOpenNeighbor(
-            (int *)&MEMORY[0x87F7E8],
-            &v8,
-            TransitionCount,
-            (int)&MEMORY[0x889E68],
-            (int)&MEMORY[0x889E68],
-            4,
-            1,
-            0);
-    if ( v7 != MEMORY[0x889E68] )
+    TransitionCount = HouseClass::GetTransitionCount(v2);
+    v7 = *CellClass::FindOpenNeighbor( (int *)&DataGlobal_87F7E8, &v8, TransitionCount, (int)&g_AircraftStatusFlag, (int)&g_AircraftStatusFlag, 4, 1, 0);
+    if ( v7 != g_AircraftStatusFlag )
     {
-      v4 = *this;
-      v5 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v7);
-      ((void (__thiscall *)(unsigned int **, void *, int))v4[288])(this, v5, 1);
-      return 3;
+    v4 = *(void**)this;
+    v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v7);
+    ((void (__thiscall *)(unsigned int **, void *, int))v4[288])(this, v5, 1);
+    return 3;
     }
   }
-  return 3;
+    return 3;
 }
 
 /* ASM:

@@ -102,13 +102,11 @@ void __thiscall MoveFeedback::sub_40BE50(int this)
 // 0x40BE80
 unsigned int MoveFeedback::GetIndex2(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MoveFeedback::sub_40BE80(int this, int a2)
 {
-  if ( (unsigned char)this->MoveFeedback_field_0x0C ) /*0x40be80*/
-    return (unsigned int)(a2 - this->MoveFeedback_field_0x04) >> 2; /*0x40be95*/
-  else
-    return 0; /*0x40be87*/
+    if ( (unsigned char)this->MoveFeedback_field_0x0C )
+    return (unsigned int)(a2 - this->MoveFeedback_field_0x04) >> 2;
+    else
+    return 0;
 }
 }
 

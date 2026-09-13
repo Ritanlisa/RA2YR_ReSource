@@ -105,55 +105,46 @@ LABEL_28:
 namespace gamemd {
 AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-AITriggerTypeClass *__fastcall CCINIClass::ReadInfantryTypeList(char *a1, int a2)
 {
-  CCINIClass *KeyCount; // ebx
-  CCINIClass *i; // edi
-  unsigned __int8 *StringByIndex; // eax
-  AITriggerTypeClass *result; // eax
-  int j; // edi
-  _DWORD *v9; // ecx
-  INIClass *v10; // edx
-  int k; // edi
-  int v12; // eax
-  char Destination[32]; // [esp+10h] [ebp-20h] BYREF
-
-  KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes); /*0x41f4a6*/
-  for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)i + 1) ) /*0x41f4ac*/
+    CCINIClass *KeyCount;
+    CCINIClass *i;
+    unsigned char *StringByIndex;
+    AITriggerTypeClass *result;
+    int j;
+    int *v9;
+    INIClass *v10;
+    int k;
+    int v12;
+    char Destination[32];
+    KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes);
+    for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)(i) + 1) )
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes, i); /*0x41f4b8*/
-    INIClass::GetString( /*0x41f4d2*/
-      (unsigned __int8 ***)a1,
-      (INIClass *)aAitriggertypes,
-      StringByIndex,
-      (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
-      (INIClass *)Destination,
-      32);
-    INIClass::ClearSection((int)a1, (INIClass *)Destination, 0); /*0x41f4e0*/
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes, i);
+    INIClass::GetString( (unsigned char ***)a1, (INIClass *)aAitriggertypes, StringByIndex, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], (INIClass *)Destination, 32);
+    INIClass::ClearSection((int)a1, (INIClass *)Destination, 0);
   }
-  INIClass::ClearSection((int)a1, (INIClass *)aAitriggertypes, 0); /*0x41f4f5*/
-  result = MEMORY[0xA8B210]; /*0x41f4fa*/
-  for ( j = 0; j < (int)MEMORY[0xA8B210]; ++j ) /*0x41f503*/
+    INIClass::ClearSection((int)a1, (INIClass *)aAitriggertypes, 0);
+    result = g_AnimTypeInitQueue;
+    for ( j = 0; j < (int)g_AnimTypeInitQueue; ++j )
   {
-    v9 = *(_DWORD **)&MEMORY[0xA8B204]->__pad_0[4 * j]; /*0x41f50a*/
-    if ( v9[39] == a2 ) /*0x41f513*/
-      (*(void (__thiscall **)(_DWORD *, char *))(*v9 + 104))(v9, a1); /*0x41f518*/
-    result = MEMORY[0xA8B210]; /*0x41f51b*/
+    v9 = *(int **)&DataGlobal_A8B204->__pad_0[4 * j];
+    if ( v9[39] == a2 )
+    (*(void (__thiscall **)(int *, char *))(*v9 + 104))(v9, a1);
+    result = g_AnimTypeInitQueue;
   }
-  if ( !a2 ) /*0x41f527*/
+    if ( !a2 )
   {
-    INIClass::ClearSection((int)a1, (INIClass *)aAitriggertypes_0, 0); /*0x41f532*/
-    result = MEMORY[0xA8B210]; /*0x41f537*/
-    for ( k = 0; k < (int)MEMORY[0xA8B210]; ++k ) /*0x41f540*/
+    INIClass::ClearSection((int)a1, (INIClass *)aAitriggertypes_0, 0);
+    result = g_AnimTypeInitQueue;
+    for ( k = 0; k < (int)g_AnimTypeInitQueue; ++k )
     {
-      v12 = *(_DWORD *)&MEMORY[0xA8B204]->__pad_0[4 * k]; /*0x41f548*/
-      LOBYTE(v10) = *(_BYTE *)(v12 + 164); /*0x41f54d*/
-      INIClass::SetBool(a1, (INIClass *)aAitriggertypes_0, (char *)(v12 + 36), v10); /*0x41f55e*/
-      result = MEMORY[0xA8B210]; /*0x41f563*/
+    v12 = *(int *)&DataGlobal_A8B204->__pad_0[4 * k];
+    LOBYTE(v10) = *(char *)(v12 + 164);
+    INIClass::SetBool(a1, (INIClass *)aAitriggertypes_0, (char *)(v12 + 36), v10);
+    result = g_AnimTypeInitQueue;
     }
   }
-  return result; /*0x41f56d*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -174,35 +165,32 @@ int __thiscall CCINIClass_GetDB(_DWORD *this)
 namespace gamemd {
 IUnknown * CCINIClass::WriteHouses()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-IUnknown *__thiscall CCINIClass::WriteHouses(INIClass *this)
 {
-  IUnknown *result; // eax
-  INIClass *i; // ebx
-  int v4; // esi
-  INIClass Source; // [esp+Ch] [ebp-40h] BYREF
-
-  INIClass::ClearSection((int)this, (INIClass *)&g_INI_Key_Country.headNode[1], 0); /*0x50116f*/
-  result = HouseClass_Count; /*0x501174*/
-  for ( i = 0; (int)i < (int)HouseClass_Count; i = (INIClass *)((char *)i + 1) ) /*0x50117d*/
+    IUnknown *result;
+    INIClass *i;
+    int v4;
+    INIClass Source;
+    INIClass::ClearSection((int)this, (INIClass *)&g_INI_Key_Country.headNode[1], 0);
+    result = HouseClass_Count;
+    for ( i = 0; (int)i < (int)HouseClass_Count; i = (INIClass *)((char *)(i) + 1) )
   {
-    strcpy(Source.__pad_0, (const char *)(*(_DWORD *)&HouseClass_Array->__pad_0[4 * (_DWORD)i] + 90100)); /*0x5011ac*/
-    sprintf(Source.__pad_20, MEMORY[0x817F6C], i); /*0x5011ba*/
-    INIClass::SetString(this->__pad_0, (INIClass *)&g_INI_Key_Country.headNode[1], (INIClass *)Source.__pad_20, &Source); /*0x5011d3*/
-    result = HouseClass_Count; /*0x5011d8*/
+    strcpy(Source.__pad_0, (const char *)(*(int *)&HouseClass_Array->__pad_0[4 * (int)i] + 90100));
+    sprintf(Source.__pad_20, g_Str_Trace__d, i);
+    INIClass::SetString(this->__pad_0, (INIClass *)&g_INI_Key_Country.headNode[1], (INIClass *)Source.__pad_20, &Source);
+    result = HouseClass_Count;
   }
-  v4 = 0; /*0x5011e3*/
-  if ( (int)result > 0 ) /*0x5011e7*/
+    v4 = 0;
+    if ( (int)result > 0 )
   {
-    do /*0x501200*/
+    do
     {
-      HouseClass::SaveToINI(*(_DWORD *)&HouseClass_Array->__pad_0[4 * v4], this); /*0x5011f3*/
-      result = HouseClass_Count; /*0x5011f8*/
-      ++v4; /*0x5011fd*/
+    HouseClass::SaveToINI(*(int *)&HouseClass_Array->__pad_0[4 * v4], this);
+    result = HouseClass_Count;
+    ++v4;
     }
-    while ( v4 < (int)HouseClass_Count ); /*0x501200*/
+    while ( v4 < (int)HouseClass_Count );
   }
-  return result; /*0x501202*/
+    return result;
 }
 }
 } // namespace gamemd

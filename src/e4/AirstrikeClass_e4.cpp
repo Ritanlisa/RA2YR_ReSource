@@ -72,10 +72,8 @@ namespace ra2 {
 namespace game {
 int AirstrikeClass::Stat(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AirstrikeClass::Stat(void *this, AbstractClass *aP1)
 {
-  return AbstractClass::ProcessPower((#378 *)this); /*0x41d6ea*/
+    return AbstractClass::ProcessPower((#378 *)this);
 }
 }
 } // namespace game
@@ -127,10 +125,8 @@ namespace ra2 {
 namespace game {
 int AirstrikeClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall AirstrikeClass::Seek(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x41d794*/
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
 }
 }
 } // namespace game

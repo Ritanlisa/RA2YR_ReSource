@@ -147,54 +147,51 @@ LABEL_7:
 // 0x4A4620
 char DDraw::CheckCapabilities()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_4A4620()
 {
-  int v0; // eax
-  HRESULT v1; // eax
-  CHAR Text[80]; // [esp+Ch] [ebp-18Ch] BYREF
-  _DWORD v4[79]; // [esp+5Ch] [ebp-13Ch] BYREF
-
-  if ( MEMORY[0x8A0094] ) /*0x4a462e*/
+    int v0;
+    HRESULT v1;
+    CHAR Text[80];
+    int v4[79];
+    if ( g_lpDirectDraw7 )
   {
-    memset(v4, 0, sizeof(v4)); /*0x4a4645*/
-    v4[0] = 316; /*0x4a464b*/
-    v1 = MEMORY[0x8A0094]->lpVtbl->GetCaps(MEMORY[0x8A0094], (LPDDCAPS)v4, 0); /*0x4a4659*/
-    if ( v1 ) /*0x4a465f*/
+    memset(v4, 0, sizeof(v4));
+    v4[0] = 316;
+    v1 = g_lpDirectDraw7->lpVtbl->GetCaps(g_lpDirectDraw7, (LPDDCAPS)v4, 0);
+    if ( v1 )
     {
-      if ( MEMORY[0x8A00B0] ) /*0x4a4669*/
+    if ( g_DDraw_ErrorCallback )
       {
-        MEMORY[0x8A00B0](v1); /*0x4a466d*/
+    g_DDraw_ErrorCallback(v1);
       }
-      else
+    else
       {
-        sprintf(Text, g_Str_Trace_DDRAW_DLL_Error_code____08X, v1); /*0x4a4683*/
-        MessageBoxA(g_hWnd, Text, g_Str_Direct_X, 0x30u); /*0x4a469e*/
+    sprintf(Text, g_Str_Trace_DDRAW_DLL_Error_code____08X, v1);
+    MessageBoxA(g_hWnd, Text, g_Str_Direct_X, 0x30u);
       }
-      LOBYTE(v0) = 0; /*0x4a466f*/
+    LOBYTE(v0) = 0;
     }
     else
     {
-      v0 = (v4[1] & 0x40) != 0; /*0x4a46b8*/
-      if ( SLOBYTE(v4[1]) < 0 ) /*0x4a46c0*/
-        LOBYTE(v0) = v0 | 2; /*0x4a46c2*/
-      if ( (v4[1] & 0x10000) != 0 ) /*0x4a46ca*/
-        LOBYTE(v0) = v0 | 4; /*0x4a46cc*/
-      if ( (v4[1] & 0x8000000) != 0 ) /*0x4a46d4*/
-        LOBYTE(v0) = v0 | 8; /*0x4a46d6*/
-      if ( (v4[1] & 0x4000000) != 0 ) /*0x4a46de*/
-        LOBYTE(v0) = v0 | 0x10; /*0x4a46e0*/
-      if ( (v4[1] & 0x2000000) != 0 ) /*0x4a46e8*/
-        LOBYTE(v0) = v0 | 0x20; /*0x4a46ea*/
-      if ( (v4[1] & 0x200) != 0 ) /*0x4a46ef*/
-        LOBYTE(v0) = v0 | 0x40; /*0x4a46f1*/
+    v0 = (v4[1] & 0x40) != 0;
+    if ( SLOBYTE(v4[1]) < 0 )
+    LOBYTE(v0) = v0 | 2;
+    if ( (v4[1] & 0x10000) != 0 )
+    LOBYTE(v0) = v0 | 4;
+    if ( (v4[1] & 0x8000000) != 0 )
+    LOBYTE(v0) = v0 | 8;
+    if ( (v4[1] & 0x4000000) != 0 )
+    LOBYTE(v0) = v0 | 0x10;
+    if ( (v4[1] & 0x2000000) != 0 )
+    LOBYTE(v0) = v0 | 0x20;
+    if ( (v4[1] & 0x200) != 0 )
+    LOBYTE(v0) = v0 | 0x40;
     }
   }
-  else
+    else
   {
-    LOBYTE(v0) = 0; /*0x4a4630*/
+    LOBYTE(v0) = 0;
   }
-  return v0; /*0x4a4632*/
+    return v0;
 }
 }
 

@@ -36,10 +36,8 @@ void __thiscall Math_Hypotenuse2D(double *this)
 namespace gamemd {
 void Math::InitArcTan()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void Math_InitArcTan()
 {
-  MEMORY[0x89E230] = Math::ArcTan((double)MEMORY[0x89E278] * 0.00390625); /*0x473667*/
+    DataGlobal_89E230 = Math::ArcTan((double)DataGlobal_89E278 * 0.00390625);
 }
 }
 } // namespace gamemd
@@ -144,10 +142,8 @@ double __cdecl Math_Sin(double a1)
 namespace gamemd {
 double Math::ArcTan2_Table(double a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double __cdecl Math_ArcTan2_Table(double a1)
 {
-  return 1.570796326794897 - *((float *)&MEMORY[0x859094] - Math::RoundToInt((a1 + 1.0) * -2048.0)); /*0x4cadd7*/
+    return 1.570796326794897 - *((float *)&DataGlobal_859094 - Math::RoundToInt((a1 + 1.0) * -2048.0));
 }
 }
 } // namespace gamemd
@@ -278,12 +274,10 @@ float *__thiscall Math_BuildRotationMatrix(float *this, float *a2, float a3)
 namespace gamemd {
 IUnknown * Math::Sub16(BuildingTypeClass * aP1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-IUnknown *__thiscall Math::Sub16(_WORD *this, BuildingTypeClass *aP1, IUnknown *aP2)
 {
-  LOWORD(aP2) = *this - LOWORD(aP2->field_0); /*0x5b295a*/
-  *(_DWORD *)aP1->vtable0 = aP2; /*0x5b2967*/
-  return (IUnknown *)aP1; /*0x5b2969*/
+    LOWORD(aP2) = *(void**)this - LOWORD(aP2->field_0);
+    *(int *)aP1->vtable0 = aP2;
+    return (IUnknown *)aP1;
 }
 }
 } // namespace gamemd
@@ -292,10 +286,8 @@ IUnknown *__thiscall Math::Sub16(_WORD *this, BuildingTypeClass *aP1, IUnknown *
 namespace gamemd {
 bool Math::Abs16Cmp(IUnknown * aP1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall Math::Abs16Cmp(_WORD *this, IUnknown *aP1, IUnknown *aP2)
 {
-  return abs16(aP2->field_0) >= (int)abs16(*this - LOWORD(aP1->field_0)); /*0x5b29b3*/
+    return abs16(aP2->field_0) >= (int)abs16(*(void**)this - LOWORD(aP1->field_0));
 }
 }
 } // namespace gamemd
@@ -304,34 +296,31 @@ bool __thiscall Math::Abs16Cmp(_WORD *this, IUnknown *aP1, IUnknown *aP2)
 namespace gamemd {
 void sub_5C7DB0(unsigned short * a1, unsigned short * a2, unsigned short a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall sub_5C7DB0(_WORD *a1, unsigned __int16 *a2, unsigned __int16 a3, int a4)
 {
-  int v4; // ebx
-  unsigned int v5; // esi
-  unsigned __int16 v6; // ax
-  unsigned int v7; // eax
-  unsigned int v8; // eax
-
-  v4 = a4; /*0x5c7db1*/
-  v5 = 0; /*0x5c7db6*/
-  if ( a4 <= 0 ) /*0x5c7dba*/
+    int v4;
+    unsigned int v5;
+    unsigned short v6;
+    unsigned int v7;
+    unsigned int v8;
+    v4 = a4;
+    v5 = 0;
+    if ( a4 <= 0 )
   {
-    *a1 = *a1; /*0x5c7df4*/
+    *a1 = *a1;
   }
-  else
+    else
   {
-    do /*0x5c7de8*/
+    do
     {
-      v6 = *a2++; /*0x5c7dcc*/
-      v7 = v5 + (unsigned __int16)*a1 + a3 * v6; /*0x5c7dda*/
-      *a1++ = v7; /*0x5c7ddc*/
-      v8 = HIWORD(v7); /*0x5c7de2*/
-      --v4; /*0x5c7de5*/
-      v5 = v8; /*0x5c7de6*/
+    v6 = *a2++;
+    v7 = v5 + (unsigned short)*a1 + a3 * v6;
+    *a1++ = v7;
+    v8 = HIWORD(v7);
+    --v4;
+    v5 = v8;
     }
-    while ( v4 ); /*0x5c7de8*/
-    *a1 += v8; /*0x5c7dea*/
+    while ( v4 );
+    *a1 += v8;
   }
 }
 }

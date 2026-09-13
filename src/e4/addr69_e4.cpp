@@ -64,19 +64,16 @@ int __thiscall sub_690400(int *this)
 namespace gamemd {
 void E4Recv_690530::sub_690530(void * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_690530(_DWORD *this, void *a2, int a3)
 {
-  int i; // esi
-
-  if ( a2 ) /*0x69053b*/
+    int i;
+    if ( a2 )
   {
-    if ( Audio::IsSoundEnabled() ) /*0x69053d*/
+    if ( Audio::IsSoundEnabled() )
     {
-      for ( i = 0; i < *(this + 17); ++i ) /*0x69054d*/
+    for ( i = 0; i < this->M68; ++i )
       {
-        if ( !_strcmpi(a2, **(const void ***)(*(this + 14) + 4 * i)) ) /*0x690559*/
-          break; /*0x690563*/
+    if ( !_strcmpi(a2, **(const void ***)(this->M56 + 4 * i)) )
+    break;
       }
     }
   }
@@ -1736,28 +1733,25 @@ int __stdcall sub_69BCC0(ObjectClass *aP0)
 namespace gamemd {
 int sub_69BD00(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_69BD00(int a1)
 {
-  int v1; // ebx
-  char *v2; // esi
-  char *v3; // edi
-  char *v4; // eax
-
-  v1 = 0; /*0x69bd07*/
-  if ( MEMORY[0xA8DA84] <= 0 ) /*0x69bd0d*/
-    return 0; /*0x69bd48*/
-  while ( 1 ) /*0x69bd18*/
+    int v1;
+    char *v2;
+    char *v3;
+    char *v4;
+    v1 = 0;
+    if ( Game_PlayerCount <= 0 )
+    return 0;
+    while ( 1 )
   {
-    v2 = (char *)*(&MEMORY[0xA8DA90] + a1); /*0x69bd18*/
-    v3 = ToWideStringChar(*(char **)(MEMORY[0xA8DA78] + 4 * v1)); /*0x69bd29*/
-    v4 = ToWideStringChar(v2); /*0x69bd2b*/
-    if ( !_strcmpi(v3, v4) ) /*0x69bd32*/
-      break; /*0x69bd32*/
-    if ( ++v1 >= MEMORY[0xA8DA84] ) /*0x69bd46*/
-      return 0; /*0x69bd46*/
+    v2 = (char *)*(&g_NetworkPlayerName + a1);
+    v3 = ToWideStringChar(*(char **)(Game_PlayerInfoArray + 4 * v1));
+    v4 = ToWideStringChar(v2);
+    if ( !_strcmpi(v3, v4) )
+    break;
+    if ( ++v1 >= Game_PlayerCount )
+    return 0;
   }
-  return v1; /*0x69bd48*/
+    return v1;
 }
 }
 } // namespace gamemd

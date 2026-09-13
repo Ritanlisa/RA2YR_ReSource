@@ -5,18 +5,15 @@
 // 0x5E9560
 char GameOption::CheckDuplicate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char GameOption_CheckDuplicate()
 {
-  LPARAM *v0; // eax
-
-  v0 = &MEMORY[0xA8DA90]; /*0x5e9566*/
-  while ( *v0 != MEMORY[0xAC11B4] ) /*0x5e956d*/
+    LPARAM *v0;
+    v0 = &g_NetworkPlayerName;
+    while ( *v0 != g_Lobby_MaxPlayers )
   {
-    if ( (int)++v0 >= (int)&MEMORY[0xA8DAB0] ) /*0x5e9577*/
-      return 1; /*0x5e957b*/
+    if ( (int)++v0 >= (int)&g_PlayerNameListEnd )
+    return 1;
   }
-  return 0; /*0x5e957b*/
+    return 0;
 }
 }
 

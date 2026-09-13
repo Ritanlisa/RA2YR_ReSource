@@ -207,35 +207,32 @@ LABEL_17:
 namespace gamemd {
 char AnimTypeClass::GetLoopCount(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall AnimTypeClass::_vt24(void *this, int a2)
 {
-  int v2; // eax
-  char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
-
-  LOBYTE(v2) = MEMORY[0xA8ED6B]; /*0x427a80*/
-  if ( MEMORY[0xA8ED6B] || a2 != dword_822CF8 ) /*0x427aa0*/
+    int v2;
+    char Buffer[512];
+    LOBYTE(v2) = g_ArmageddonMode;
+    if ( g_ArmageddonMode || a2 != DataGlobal_822CF8 )
   {
-    if ( !this->Theater || this->DemandLoad ) /*0x427ab0*/
+    if ( !this->Theater || this->DemandLoad )
     {
-      LOBYTE(v2) = this->NewTheater; /*0x427b2b*/
-      if ( (_BYTE)v2 ) /*0x427b33*/
-        LOBYTE(v2) = (*(int (__thiscall **)(void *, int))(*(_DWORD *)this + 160))(this, a2); /*0x427b3a*/
+    LOBYTE(v2) = this->NewTheater;
+    if ( (char)v2 )
+    LOBYTE(v2) = this->GetWarhead(a2);
     }
     else
     {
-      if ( this->Image && this->ImageAllocated ) /*0x427ac4*/
+    if ( this->Image && this->ImageAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 41)); /*0x427acf*/
-        this->ImageAllocated = 0; /*0x427ad7*/
+    __3_YAXPAX_Z(*((void **)(this) + 41));
+    this->ImageAllocated = 0;
       }
-      this->Image = 0; /*0x427af6*/
-      _makepath(Buffer, 0, 0, (const char *)this + 36, (const char *)&off_7E1BC6 + 112 * a2); /*0x427b07*/
-      v2 = SearchMIXFile(Buffer, 1); /*0x427b15*/
-      this->Image = v2; /*0x427b1a*/
+    this->Image = 0;
+    _makepath(Buffer, 0, 0, (const char *)(this) + 36, (const char *)&DataGlobal_7E1BC6 + 112 * a2);
+    v2 = SearchMIXFile(Buffer, 1);
+    this->Image = v2;
     }
   }
-  return v2; /*0x427b20*/
+    return v2;
 }
 }
 } // namespace gamemd
@@ -316,22 +313,19 @@ char __thiscall AnimTypeClass::_vt40(int this, int a2)
 namespace gamemd {
 int AnimTypeClass::FindIndex()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AnimTypeClass::FindIndex(void *this)
 {
-  int v2; // esi
-
-  if ( !this ) /*0x427cb6*/
-    return -1; /*0x427cb6*/
-  v2 = 0; /*0x427cbd*/
-  if ( *(int *)&stru_89E138.__pad_1600D[27] <= 0 ) /*0x427cc1*/
-    return -1; /*0x427ce6*/
-  while ( _strcmpi((const void *)(*(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * v2) + 36), this) ) /*0x427cda*/
+    int v2;
+    if ( !this )
+    return -1;
+    v2 = 0;
+    if ( *(int *)&DataGlobal_89E138.__pad_1600D[27] <= 0 )
+    return -1;
+    while ( _strcmpi((const void *)(*(int *)(*(int *)&DataGlobal_89E138.__pad_1600D[15] + 4 * v2) + 36), this) )
   {
-    if ( ++v2 >= *(int *)&stru_89E138.__pad_1600D[27] ) /*0x427ce4*/
-      return -1; /*0x427ce4*/
+    if ( ++v2 >= *(int *)&DataGlobal_89E138.__pad_1600D[27] )
+    return -1;
   }
-  return v2; /*0x427ce6*/
+    return v2;
 }
 }
 } // namespace gamemd
@@ -447,15 +441,12 @@ int __stdcall AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
 namespace gamemd {
 int AnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall AnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, ObjectTypeClass *aP1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2); /*0x42897f*/
-  if ( result >= 0 ) /*0x428986*/
-    return 0; /*0x428988*/
-  return result; /*0x42898a*/
+    int result;
+    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd
@@ -705,17 +696,14 @@ AnimTypeClass *__thiscall AnimTypeClass::ddtor(_DWORD *this, char a2)
 namespace gamemd {
 int AnimTypeClass::ReadINIString(INIClass * aP1, unsigned char * a2, Layer a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AnimTypeClass::ReadINIString(unsigned __int8 ***this, INIClass *aP1, unsigned __int8 *a2, Layer a3)
 {
-  INIClass *v5; // eax
-  INIClass Destination[2]; // [esp+8h] [ebp-80h] BYREF
-
-  v5 = (INIClass *)globalHelper_08E090(a3); /*0x47706d*/
-  if ( INIClass::GetString(this, aP1, a2, v5, Destination, 128) ) /*0x477085*/
-    return AnimTypeClass::LookupByName(Destination); /*0x477092*/
-  else
-    return a3; /*0x4770a2*/
+    INIClass *v5;
+    INIClass Destination[2];
+    v5 = (INIClass *)globalHelper_08E090(a3);
+    if ( INIClass::GetString(this, aP1, a2, v5, Destination, 128) )
+    return AnimTypeClass::LookupByName(Destination);
+    else
+    return a3;
 }
 }
 } // namespace gamemd

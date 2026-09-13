@@ -42,13 +42,11 @@ void __thiscall MSFont_18_::sub_5D5080(int this)
 namespace gamemd {
 unsigned int MSFont_18::PointerToIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MSFont_18_::sub_5D50B0(int this, int a2)
 {
-  if ( (unsigned char)this->MSFont_18_field_0xC ) /*0x5d50b0*/
-    return (unsigned int)(a2 - this->MSFont_18_field_0x4) >> 2; /*0x5d50c5*/
-  else
-    return 0; /*0x5d50b7*/
+    if ( (unsigned char)this->MSFont_18_field_0xC )
+    return (unsigned int)(a2 - this->MSFont_18_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -91,13 +89,11 @@ void __thiscall MSFont_18_::sub_5D50E0(int this)
 namespace gamemd {
 unsigned int MSFont_18::PointerToIndex8(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MSFont_18_::sub_5D5110(int this, int a2)
 {
-  if ( (unsigned char)this->MSFont_18_field_0xC ) /*0x5d5110*/
-    return (unsigned int)(a2 - this->MSFont_18_field_0x4) >> 3; /*0x5d5125*/
-  else
-    return 0; /*0x5d5117*/
+    if ( (unsigned char)this->MSFont_18_field_0xC )
+    return (unsigned int)(a2 - this->MSFont_18_field_0x4) >> 3;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -237,13 +233,11 @@ int __thiscall MSFont_18_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int MSFont_18::Draw(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MSFont_18_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->MSFont_18_field_0xC ) /*0x5d52b0*/
-    return (unsigned int)(a2 - this->MSFont_18_field_0x4) >> 2; /*0x5d52c5*/
-  else
-    return 0; /*0x5d52b7*/
+    if ( (unsigned char)this->MSFont_18_field_0xC )
+    return (unsigned int)(a2 - this->MSFont_18_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

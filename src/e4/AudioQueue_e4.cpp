@@ -43,34 +43,31 @@ _DWORD *__thiscall sub_402AF0(int this)
 namespace gamemd {
 int AudioQueue::PreallocateChannels(unsigned int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_403530(_DWORD *a1, int a2)
 {
-  int v4; // edi
-  int *v5; // eax
-  int v6; // eax
-
-  v4 = 0; /*0x403537*/
-  do /*0x40359e*/
+    int v4;
+    int *v5;
+    int v6;
+    v4 = 0;
+    do
   {
-    if ( a1[60] >= a1[61] ) /*0x403547*/
-      break; /*0x403547*/
-    v5 = AudioController::Constructor(a1); /*0x40354b*/
-    if ( !v5 ) /*0x403552*/
-      break; /*0x403552*/
-    v5[43] = (int)a1; /*0x403554*/
-    ++a1[60]; /*0x403561*/
-    ++a1[65]; /*0x40356e*/
-    InsertAfterDListNode((int)(a1 + 62), v5); /*0x40357c*/
-    v6 = a1[65] - 1; /*0x403587*/
-    a1[65] = v6; /*0x40358a*/
-    if ( v6 < 0 ) /*0x403590*/
-      a1[65] = 0; /*0x403592*/
-    ++v4; /*0x40359c*/
-    --a2; /*0x40359d*/
+    if ( *((int*)(a1) + 60) >= *((int*)(a1) + 61) )
+    break;
+    v5 = AudioController::Constructor(a1);
+    if ( !v5 )
+    break;
+    v5[43] = (int)a1;
+    ++*((int*)(a1) + 60);
+    ++*((int*)(a1) + 65);
+    InsertAfterDListNode((int)(a1 + 62), v5);
+    v6 = *((int*)(a1) + 65) - 1;
+    *((int*)(a1) + 65) = v6;
+    if ( v6 < 0 )
+    *((int*)(a1) + 65) = 0;
+    ++v4;
+    --a2;
   }
-  while ( a2 ); /*0x40359e*/
-  return v4; /*0x4035a2*/
+    while ( a2 );
+    return v4;
 }
 }
 } // namespace gamemd
@@ -79,15 +76,12 @@ int __fastcall sub_403530(_DWORD *a1, int a2)
 namespace gamemd {
 int * AudioQueue::IteratorNext()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall sub_4035D0(int **this)
 {
-  int *v2; // ecx
-
-  v2 = *this; /*0x4035d3*/
-  if ( v2 ) /*0x4035d7*/
-    *this = (int *)AudioQueue::GetNextAlt(v2); /*0x4035de*/
-  return *this; /*0x4035e2*/
+    int *v2;
+    v2 = *(void**)this;
+    if ( v2 )
+    *(void**)this = (int *)AudioQueue::GetNextAlt(v2);
+    return *this;
 }
 }
 } // namespace gamemd
@@ -209,22 +203,19 @@ int (__thiscall *__fastcall AudioQueue::StopAllVoices(int a1, int a2))(int)
 namespace gamemd {
 int AudioQueue::DeactivateAllMatching(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_403770(int a1, int a2)
 {
-  int result; // eax
-  int i; // esi
-
-  result = AudioQueue::GetNext((int *)(a1 + 248)); /*0x40377a*/
-  for ( i = result; result; i = result ) /*0x403783*/
+    int result;
+    int i;
+    result = AudioQueue::GetNext((int *)(a1 + 248));
+    for ( i = result; result; i = result )
   {
-    if ( (*(_BYTE *)(i + 164) & 1) != 0 && (a2 == -1 || *(_DWORD *)(i + 12) == a2) ) /*0x403796*/
-      result = AudioChannel::DeactivatePlay((_DWORD *)i); /*0x40379a*/
-    if ( !i ) /*0x4037a1*/
-      break; /*0x4037a1*/
-    result = AudioQueue::GetNextAlt((int *)i); /*0x4037a5*/
+    if ( (*(char *)(i + 164) & 1) != 0 && (a2 == -1 || *(int *)(i + 12) == a2) )
+    result = AudioChannel::DeactivatePlay((int *)i);
+    if ( !i )
+    break;
+    result = AudioQueue::GetNextAlt((int *)i);
   }
-  return result; /*0x4037b0*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -233,20 +224,17 @@ int __fastcall sub_403770(int a1, int a2)
 namespace gamemd {
 int AudioQueue::GetNext()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AudioQueue_GetNext(int *this)
 {
-  int result; // eax
-
-  if ( !this ) /*0x4073c2*/
-    return 0; /*0x4073c2*/
-  result = *this; /*0x4073c4*/
-  if ( *this ) /*0x4073c4*/
+    int result;
+    if ( !this )
+    return 0;
+    result = *(void**)this;
+    if ( *(void**)this )
   {
-    if ( result == *(_DWORD *)(result + 8) ) /*0x4073cd*/
-      return 0; /*0x4073cf*/
+    if ( result == *(int *)(result + 8) )
+    return 0;
   }
-  return result; /*0x4073d1*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -255,20 +243,17 @@ int __thiscall AudioQueue_GetNext(int *this)
 namespace gamemd {
 int AudioQueue::GetNextAlt()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AudioQueue_GetNext_Alt(int *this)
 {
-  int result; // eax
-
-  if ( !this ) /*0x4073e2*/
-    return 0; /*0x4073e2*/
-  result = *this; /*0x4073e4*/
-  if ( *this ) /*0x4073e4*/
+    int result;
+    if ( !this )
+    return 0;
+    result = *(void**)this;
+    if ( *(void**)this )
   {
-    if ( result == *(_DWORD *)(result + 8) ) /*0x4073ed*/
-      return 0; /*0x4073ef*/
+    if ( result == *(int *)(result + 8) )
+    return 0;
   }
-  return result; /*0x4073f1*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -277,14 +262,11 @@ int __thiscall AudioQueue_GetNext_Alt(int *this)
 namespace gamemd {
 int AudioQueue::IsEmpty(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall AudioQueue::IsEmpty(int a1, int a2)
 {
-  int result; // eax
-
-  result = *(_DWORD *)(a1 + 20); /*0x407b40*/
-  *(_DWORD *)(result + 148) = a2; /*0x407b43*/
-  return result; /*0x407b49*/
+    int result;
+    result = *(int *)(a1 + 20);
+    *(int *)(result + 148) = a2;
+    return result;
 }
 }
 } // namespace gamemd
@@ -293,14 +275,11 @@ int __fastcall AudioQueue::IsEmpty(int a1, int a2)
 namespace gamemd {
 int AudioQueue::IsNotEmpty(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall AudioQueue::IsNotEmpty(int a1, int a2)
 {
-  int result; // eax
-
-  result = *(_DWORD *)(a1 + 20); /*0x407b50*/
-  *(_DWORD *)(result + 156) = a2; /*0x407b53*/
-  return result; /*0x407b59*/
+    int result;
+    result = *(int *)(a1 + 20);
+    *(int *)(result + 156) = a2;
+    return result;
 }
 }
 } // namespace gamemd
@@ -309,31 +288,28 @@ int __fastcall AudioQueue::IsNotEmpty(int a1, int a2)
 namespace gamemd {
 int AudioQueue::HaltVoices()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_4081A0()
 {
-  int result; // eax
-  int *i; // esi
-
-  result = MEMORY[0x87E81C]; /*0x4081a0*/
-  if ( MEMORY[0x87E81C] ) /*0x4081a8*/
+    int result;
+    int *i;
+    result = DataGlobal_87E81C;
+    if ( DataGlobal_87E81C )
   {
-    result = AudioQueue::GetNext(MEMORY[0x87E810]); /*0x4081af*/
-    for ( i = (int *)result; result; i = (int *)result ) /*0x4081b8*/
+    result = AudioQueue::GetNext(DataGlobal_87E810);
+    for ( i = (int *)result; result; i = (int *)result )
     {
-      if ( !i[34] ) /*0x4081c8*/
+    if ( !i[34] )
       {
-        if ( i[5] ) /*0x4081d2*/
+    if ( i[5] )
         {
-          EnterCriticalSection(&MEMORY[0x87E7F8]); /*0x4081de*/
-          Voice::Stop(i[5]); /*0x4081e3*/
-          LeaveCriticalSection(&MEMORY[0x87E7F8]); /*0x4081ed*/
+    EnterCriticalSection(&CriticalSection);
+    Voice::Stop(i[5]);
+    LeaveCriticalSection(&CriticalSection);
         }
       }
-      result = AudioQueue::GetNextAlt(i); /*0x4081f1*/
+    result = AudioQueue::GetNextAlt(i);
     }
   }
-  return result; /*0x4081fe*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -342,18 +318,15 @@ int sub_4081A0()
 namespace gamemd {
 int * AudioQueue::IncrementPriority()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *AudioQueue_IncrementPriority()
 {
-  int *result; // eax
-
-  result = (int *)MEMORY[0x87E81C]; /*0x408200*/
-  if ( MEMORY[0x87E81C] ) /*0x408207*/
+    int *result;
+    result = (int *)DataGlobal_87E81C;
+    if ( DataGlobal_87E81C )
   {
-    for ( result = (int *)AudioQueue::GetNext(MEMORY[0x87E810]); result; result = (int *)AudioQueue::GetNextAlt(result) ) /*0x408215*/
-      ++result[34]; /*0x40821e*/
+    for ( result = (int *)AudioQueue::GetNext(DataGlobal_87E810); result; result = (int *)AudioQueue::GetNextAlt(result) )
+    ++result[34];
   }
-  return result; /*0x40822f*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -362,36 +335,33 @@ int *AudioQueue_IncrementPriority()
 namespace gamemd {
 int AudioQueue::ReleaseBuffers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int AudioQueue_ReleaseBuffers()
 {
-  int result; // eax
-  int *i; // esi
-  int v2; // eax
-
-  result = MEMORY[0x87E81C]; /*0x408270*/
-  if ( MEMORY[0x87E81C] ) /*0x408278*/
+    int result;
+    int *i;
+    int v2;
+    result = DataGlobal_87E81C;
+    if ( DataGlobal_87E81C )
   {
-    result = AudioQueue::GetNext(MEMORY[0x87E810]); /*0x40827f*/
-    for ( i = (int *)result; result; i = (int *)result ) /*0x408288*/
+    result = AudioQueue::GetNext(DataGlobal_87E810);
+    for ( i = (int *)result; result; i = (int *)result )
     {
-      if ( !i[32] && i[5] ) /*0x4082a2*/
+    if ( !i[32] && i[5] )
       {
-        EnterCriticalSection(&MEMORY[0x87E7F8]); /*0x4082ae*/
-        AudioChannel::DeactivatePlay(i[5]); /*0x4082b3*/
-        v2 = i[3]; /*0x4082b8*/
-        if ( (v2 & 1) != 0 ) /*0x4082bd*/
+    EnterCriticalSection(&CriticalSection);
+    AudioChannel::DeactivatePlay(i[5]);
+    v2 = i[3];
+    if ( (v2 & 1) != 0 )
         {
-          LOBYTE(v2) = v2 & 0xFC | 2; /*0x4082c1*/
-          i[3] = v2; /*0x4082c3*/
+    LOBYTE(v2) = v2 & 0xFC | 2;
+    i[3] = v2;
         }
-        LeaveCriticalSection(&MEMORY[0x87E7F8]); /*0x4082cb*/
+    LeaveCriticalSection(&CriticalSection);
       }
-      ++i[32]; /*0x4082d4*/
-      result = AudioQueue::GetNextAlt(i); /*0x4082dc*/
+    ++i[32];
+    result = AudioQueue::GetNextAlt(i);
     }
   }
-  return result; /*0x4082e9*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -400,29 +370,26 @@ int AudioQueue_ReleaseBuffers()
 namespace gamemd {
 int AudioQueue::DrainAll()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int AudioQueue_DrainAll()
 {
-  int result; // eax
-  int *v1; // esi
-  int Next_Alt; // edi
-
-  result = AudioQueue::GetNext(MEMORY[0xB1D320]); /*0x750fa6*/
-  v1 = (int *)result; /*0x750fab*/
-  if ( result ) /*0x750faf*/
+    int result;
+    int *v1;
+    int Next_Alt;
+    result = AudioQueue::GetNext(DataGlobal_B1D320);
+    v1 = (int *)result;
+    if ( result )
   {
-    do /*0x750fe8*/
+    do
     {
-      Next_Alt = AudioQueue::GetNextAlt(v1); /*0x750fbc*/
-      AudioController::Stop(v1 + 3); /*0x750fbe*/
-      LinkedList::Init((_DWORD **)v1); /*0x750fc5*/
-      result = PushFrontLinkedListAlt(MEMORY[0xB1D3A4], (int)v1); /*0x750fd2*/
-      v1 = (int *)Next_Alt; /*0x750fdd*/
-      --MEMORY[0xB1D3A8]; /*0x750fe2*/
+    Next_Alt = AudioQueue::GetNextAlt(v1);
+    AudioController::Stop(v1 + 3);
+    LinkedList::Init((int **)v1);
+    result = PushFrontLinkedListAlt(DataGlobal_B1D3A4, (int)v1);
+    v1 = (int *)Next_Alt;
+    --DataGlobal_B1D3A8;
     }
-    while ( Next_Alt ); /*0x750fe8*/
+    while ( Next_Alt );
   }
-  return result; /*0x750feb*/
+    return result;
 }
 }
 } // namespace gamemd

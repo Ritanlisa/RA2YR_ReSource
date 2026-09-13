@@ -1827,17 +1827,14 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
 // 0x69A310
 unsigned int SessionClass::GetPlayerColorScheme(ObjectClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __stdcall SessionClass::GetPlayerColorScheme(ObjectClass *aP0)
 {
-  ObjectClass *result; // eax
-
-  result = aP0; /*0x69a310*/
-  if ( aP0 == (ObjectClass *)-2 ) /*0x69a317*/
-    return stru_830620.__pad_579C[36704]; /*0x69a31e*/
-  if ( (unsigned int)aP0 < 9 ) /*0x69a32b*/
-    return stru_830620.__pad_579C[(_DWORD)aP0 + 36696]; /*0x69a32d*/
-  return (unsigned int)result; /*0x69a325*/
+    ObjectClass *result;
+    result = aP0;
+    if ( aP0 == (ObjectClass *)-2 )
+    return DataGlobal_830620.__pad_579C[36704];
+    if ( (unsigned int)aP0 < 9 )
+    return DataGlobal_830620.__pad_579C[(int)aP0 + 36696];
+    return (unsigned int)result;
 }
 }
 
@@ -1990,37 +1987,34 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
 // 0x69B760
 int SessionClass::AssignSide(int a2, MPCooperative * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SessionClass::AssignSide(_DWORD *this, int a2, MPCooperative *aP2)
 {
-  int result; // eax
-  int v5; // edx
-
-  result = a2; /*0x69b760*/
-  if ( a2 == -2 ) /*0x69b76a*/
+    int result;
+    int v5;
+    result = a2;
+    if ( a2 == -2 )
   {
-    LOBYTE(result) = (_BYTE)aP2; /*0x69b76c*/
-    if ( (_BYTE)aP2 ) /*0x69b772*/
+    LOBYTE(result) = (char)aP2;
+    if ( (char)aP2 )
     {
-      result = Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)9); /*0x69b783*/
-      *(this + 97) = result; /*0x69b788*/
-      *(this + 98) = -2; /*0x69b78e*/
+    result = Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)9);
+    this->Side = result;
+    this->Side2 = -2;
     }
     else
     {
-      *(this + 97) = 0; /*0x69b79a*/
-      *(this + 98) = -2; /*0x69b7a4*/
+    this->Side = 0;
+    this->Side2 = -2;
     }
   }
-  else
+    else
   {
-    *(this + 97) = a2; /*0x69b7b0*/
-    *(this + 98) = -1; /*0x69b7b6*/
+    this->Side = a2;
+    this->Side2 = -1;
   }
-  v5 = *(this + 98); /*0x69b7c6*/
-  *(this + 93) = *(this + 97); /*0x69b7cc*/
-  *(this + 94) = v5; /*0x69b7d2*/
-  return result; /*0x69b7d8*/
+    v5 = this->Side2;
+    this->idxSide = this->Side;
+    this->idxSide2 = v5;
+    return result;
 }
 }
 
@@ -2110,10 +2104,8 @@ LABEL_15:
 // 0x69BBE0
 char SessionClass::GetGameSpeed()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall SessionClass_GetGameSpeed(_BYTE *this)
 {
-  return *(this + 12504); /*0x69bbe6*/
+    return this->CurrentlyInGame;
 }
 }
 
@@ -2505,13 +2497,11 @@ void __thiscall SessionClass::_vt03(int this)
 // 0x69C4D0
 unsigned int SessionClass::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall SessionClass::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->unknown_0C ) /*0x69c4d0*/
-    return (unsigned int)(a2 - this->MPGameMode) >> 2; /*0x69c4e5*/
-  else
-    return 0; /*0x69c4d7*/
+    if ( (unsigned char)this->unknown_0C )
+    return (unsigned int)(a2 - this->MPGameMode) >> 2;
+    else
+    return 0;
 }
 }
 
@@ -2674,13 +2664,11 @@ int __thiscall SessionClass::sub_69C830(int this, _DWORD *a2)
 // 0x69C870
 unsigned int SessionClass::updatePlayer(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall SessionClass::sub_69C870(int this, int a2)
 {
-  if ( (unsigned char)this->unknown_0C ) /*0x69c870*/
-    return (unsigned int)(a2 - this->MPGameMode) >> 2; /*0x69c885*/
-  else
-    return 0; /*0x69c877*/
+    if ( (unsigned char)this->unknown_0C )
+    return (unsigned int)(a2 - this->MPGameMode) >> 2;
+    else
+    return 0;
 }
 }
 
@@ -2901,9 +2889,7 @@ LABEL_15:
 // 0x7B2720
 void SessionClass::SetInstance()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_7B2720(void *this)
 {
-  dword_B780A0 = (int)this; /*0x7b2720*/
+    DataGlobal_B780A0 = (int)this;
 }
 }

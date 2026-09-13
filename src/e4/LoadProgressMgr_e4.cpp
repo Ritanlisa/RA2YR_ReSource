@@ -6,38 +6,36 @@
 namespace gamemd {
 void sub_72B460()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_72B460()
 {
-  if ( MEMORY[0xB0FB7C] ) /*0x72b46a*/
+    if ( DataGlobal_B0FB7C )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FB7C]); /*0x72b46d*/
-    MEMORY[0xB0FB7C] = 0; /*0x72b475*/
+    __3_YAXPAX_Z(DataGlobal_B0FB7C);
+    DataGlobal_B0FB7C = 0;
   }
-  if ( MEMORY[0xB0FB80] ) /*0x72b483*/
+    if ( DataGlobal_B0FB80 )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0xB0FB80])(MEMORY[0xB0FB80], 1); /*0x72b489*/
-    MEMORY[0xB0FB80] = 0; /*0x72b48b*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FB80)(DataGlobal_B0FB80, 1);
+    DataGlobal_B0FB80 = 0;
   }
-  if ( MEMORY[0xB0FB84] ) /*0x72b498*/
+    if ( DataGlobal_B0FB84 )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FB84]); /*0x72b49b*/
-    MEMORY[0xB0FB84] = 0; /*0x72b4a3*/
+    __3_YAXPAX_Z(DataGlobal_B0FB84);
+    DataGlobal_B0FB84 = 0;
   }
-  if ( MEMORY[0xB0FB88] ) /*0x72b4b1*/
+    if ( DataGlobal_B0FB88 )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0xB0FB88])(MEMORY[0xB0FB88], 1); /*0x72b4b7*/
-    MEMORY[0xB0FB88] = 0; /*0x72b4b9*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FB88)(DataGlobal_B0FB88, 1);
+    DataGlobal_B0FB88 = 0;
   }
-  if ( MEMORY[0xB0FB8C] ) /*0x72b4c6*/
+    if ( DataGlobal_B0FB8C )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FB8C]); /*0x72b4c9*/
-    MEMORY[0xB0FB8C] = 0; /*0x72b4d1*/
+    __3_YAXPAX_Z(DataGlobal_B0FB8C);
+    DataGlobal_B0FB8C = 0;
   }
-  if ( MEMORY[0xB0FB90] ) /*0x72b4df*/
+    if ( DataGlobal_B0FB90 )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0xB0FB90])(MEMORY[0xB0FB90], 1); /*0x72b4e5*/
-    MEMORY[0xB0FB90] = 0; /*0x72b4e7*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FB90)(DataGlobal_B0FB90, 1);
+    DataGlobal_B0FB90 = 0;
   }
 }
 }
@@ -47,28 +45,26 @@ void sub_72B460()
 namespace gamemd {
 void sub_72B870()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_72B870()
 {
-  if ( MEMORY[0xB0FBA0] ) /*0x72b87b*/
+    if ( DataGlobal_B0FBA0 )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0xB0FBA0])(MEMORY[0xB0FBA0], 1); /*0x72b881*/
-    MEMORY[0xB0FBA0] = 0; /*0x72b883*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBA0)(DataGlobal_B0FBA0, 1);
+    DataGlobal_B0FBA0 = 0;
   }
-  if ( MEMORY[0xB0FB9C] ) /*0x72b890*/
+    if ( DataGlobal_B0FB9C )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FB9C]); /*0x72b893*/
-    MEMORY[0xB0FB9C] = 0; /*0x72b89b*/
+    __3_YAXPAX_Z(DataGlobal_B0FB9C);
+    DataGlobal_B0FB9C = 0;
   }
-  if ( MEMORY[0xB0FB94] ) /*0x72b8a8*/
+    if ( DataGlobal_B0FB94 )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FB94]); /*0x72b8ab*/
-    MEMORY[0xB0FB94] = 0; /*0x72b8b3*/
+    __3_YAXPAX_Z(DataGlobal_B0FB94);
+    DataGlobal_B0FB94 = 0;
   }
-  if ( MEMORY[0xB0FB98] ) /*0x72b8c1*/
+    if ( g_PaletteManagerPool )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0xB0FB98])(MEMORY[0xB0FB98], 1); /*0x72b8c7*/
-    MEMORY[0xB0FB98] = 0; /*0x72b8c9*/
+    (**(void (__thiscall ***)(int, int))g_PaletteManagerPool)(g_PaletteManagerPool, 1);
+    g_PaletteManagerPool = 0;
   }
 }
 }

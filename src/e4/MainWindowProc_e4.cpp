@@ -7,10 +7,8 @@
 namespace gamemd {
 BOOL sub_5C0980()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL sub_5C0980()
 {
-  return MEMORY[0xABF3F4] || MEMORY[0xABF3F8]; /*0x5c0994*/
+    return g_BigIntPool || DataGlobal_ABF3F8;
 }
 }
 } // namespace gamemd

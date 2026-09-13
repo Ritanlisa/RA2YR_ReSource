@@ -6,28 +6,25 @@
 namespace gamemd {
 int SideClass::FindByName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SideClass::FindByName(void *this)
 {
-  int v3; // ebx
-  int v4; // esi
-
-  if ( !_strcmpi(this, &g_INI_Key_Digest.__pad_20[8]) ) /*0x49d9fb*/
-    return -2; /*0x49da09*/
-  if ( !this ) /*0x49da12*/
-    return -1; /*0x49da12*/
-  v3 = 0; /*0x49da19*/
-  if ( g_SuperWeaponTypeArray <= 0 ) /*0x49da1d*/
-    return -1; /*0x49da53*/
-  while ( 1 ) /*0x49da25*/
+    int v3;
+    int v4;
+    if ( !_strcmpi(this, &g_INI_Key_Digest.__pad_20[8]) )
+    return -2;
+    if ( !this )
+    return -1;
+    v3 = 0;
+    if ( g_SuperWeaponTypeArray <= 0 )
+    return -1;
+    while ( 1 )
   {
-    v4 = *((_DWORD *)g_SuperWeaponTypeCount + v3); /*0x49da25*/
-    if ( !_strcmpi((const void *)(v4 + 100), this) || !_strcmpi((const void *)(v4 + 36), this) ) /*0x49da3d*/
-      break; /*0x49da3d*/
-    if ( ++v3 >= g_SuperWeaponTypeArray ) /*0x49da51*/
-      return -1; /*0x49da51*/
+    v4 = *((int *)(g_SuperWeaponTypeCount) + v3);
+    if ( !_strcmpi((const void *)(v4 + 100), this) || !_strcmpi((const void *)(v4 + 36), this) )
+    break;
+    if ( ++v3 >= g_SuperWeaponTypeArray )
+    return -1;
   }
-  return v3; /*0x49da07*/
+    return v3;
 }
 }
 } // namespace gamemd
@@ -36,34 +33,32 @@ int __thiscall SideClass::FindByName(void *this)
 namespace gamemd {
 wchar_t * SideClass::GetName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall SideClass_GetName(void *this)
 {
-  if ( this == (void *)-2 ) /*0x4e38a3*/
-    return GetStringCSF(aSttPlayersider, 0, g_Str_File_GDlgSupp_cpp, 237); /*0x4e38b6*/
-  if ( this == (void *)-3 ) /*0x4e38bf*/
-    return GetStringCSF(aSttPlayersideo, 0, g_Str_File_GDlgSupp_cpp, 239); /*0x4e38d2*/
-  if ( !this ) /*0x4e38da*/
-    return GetStringCSF(aSttPlayersidea, 0, g_Str_File_GDlgSupp_cpp, 241); /*0x4e38ed*/
-  if ( this == (void *)1 ) /*0x4e38f6*/
-    return GetStringCSF(aSttPlayersidek, 0, g_Str_File_GDlgSupp_cpp, 243); /*0x4e3909*/
-  if ( this == (void *)2 ) /*0x4e3912*/
-    return GetStringCSF(aSttPlayersidef, 0, g_Str_File_GDlgSupp_cpp, 245); /*0x4e3925*/
-  if ( this == (void *)3 ) /*0x4e392e*/
-    return GetStringCSF(aSttPlayersideg, 0, g_Str_File_GDlgSupp_cpp, 247); /*0x4e3941*/
-  if ( this == (void *)4 ) /*0x4e394a*/
-    return GetStringCSF(aSttPlayersideb, 0, g_Str_File_GDlgSupp_cpp, 249); /*0x4e395d*/
-  if ( this == (void *)5 ) /*0x4e3966*/
-    return GetStringCSF(aSttPlayersidel, 0, g_Str_File_GDlgSupp_cpp, 251); /*0x4e3979*/
-  if ( this == (void *)6 ) /*0x4e3982*/
-    return GetStringCSF(aSttPlayersidei, 0, g_Str_File_GDlgSupp_cpp, 253); /*0x4e3995*/
-  if ( this == (void *)7 ) /*0x4e399e*/
-    return GetStringCSF(aSttPlayersidec, 0, g_Str_File_GDlgSupp_cpp, 255); /*0x4e39b1*/
-  if ( this == (void *)8 ) /*0x4e39ba*/
-    return GetStringCSF(aSttPlayersider_0, 0, g_Str_File_GDlgSupp_cpp, 257); /*0x4e39cd*/
-  if ( this == (void *)9 ) /*0x4e39d6*/
-    return GetStringCSF(aSttPlayersidey, 0, g_Str_File_GDlgSupp_cpp, 259); /*0x4e39e9*/
-  return 0; /*0x4e38bb*/
+    if ( this == (void *)-2 )
+    return GetStringCSF(aSttPlayersider, 0, g_Str_File_GDlgSupp_cpp, 237);
+    if ( this == (void *)-3 )
+    return GetStringCSF(aSttPlayersideo, 0, g_Str_File_GDlgSupp_cpp, 239);
+    if ( !this )
+    return GetStringCSF(aSttPlayersidea, 0, g_Str_File_GDlgSupp_cpp, 241);
+    if ( this == (void *)1 )
+    return GetStringCSF(aSttPlayersidek, 0, g_Str_File_GDlgSupp_cpp, 243);
+    if ( this == (void *)2 )
+    return GetStringCSF(aSttPlayersidef, 0, g_Str_File_GDlgSupp_cpp, 245);
+    if ( this == (void *)3 )
+    return GetStringCSF(aSttPlayersideg, 0, g_Str_File_GDlgSupp_cpp, 247);
+    if ( this == (void *)4 )
+    return GetStringCSF(aSttPlayersideb, 0, g_Str_File_GDlgSupp_cpp, 249);
+    if ( this == (void *)5 )
+    return GetStringCSF(aSttPlayersidel, 0, g_Str_File_GDlgSupp_cpp, 251);
+    if ( this == (void *)6 )
+    return GetStringCSF(aSttPlayersidei, 0, g_Str_File_GDlgSupp_cpp, 253);
+    if ( this == (void *)7 )
+    return GetStringCSF(aSttPlayersidec, 0, g_Str_File_GDlgSupp_cpp, 255);
+    if ( this == (void *)8 )
+    return GetStringCSF(aSttPlayersider_0, 0, g_Str_File_GDlgSupp_cpp, 257);
+    if ( this == (void *)9 )
+    return GetStringCSF(aSttPlayersidey, 0, g_Str_File_GDlgSupp_cpp, 259);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -327,24 +322,21 @@ int __stdcall SideClass::SaveLoad_Prefix(_DWORD *a0, AbstractTypeClass *aP1)
 namespace gamemd {
 int SideClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SideClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-  int v4; // edx
-  int i; // esi
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6a48b1*/
-  if ( result >= 0 ) /*0x6a48b8*/
+    int result;
+    int v4;
+    int i;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
   {
-    v4 = *a1; /*0x6a48c0*/
-    aP2 = *(_DWORD *)&aP0->ImageAllocated; /*0x6a48cd*/
-    (*(void (__stdcall **)(int *, int *, int, _DWORD))(v4 + 16))(a1, &aP2, 4, 0); /*0x6a48d1*/
-    for ( i = 0; i < aP2; ++i ) /*0x6a48dc*/
-      (*(void (__stdcall **)(int *, int, int, _DWORD))(*a1 + 16))(a1, aP0->Armor[0] + 4 * i, 4, 0); /*0x6a48ef*/
-    return 0; /*0x6a48f9*/
+    v4 = *a1;
+    aP2 = *(int *)&aP0->ImageAllocated;
+    (*(void (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
+    for ( i = 0; i < aP2; ++i )
+    (*(void (__stdcall **)(int *, int, int, int))(*a1 + 16))(a1, aP0->Armor[0] + 4 * i, 4, 0);
+    return 0;
   }
-  return result; /*0x6a48fc*/
+    return result;
 }
 }
 } // namespace gamemd

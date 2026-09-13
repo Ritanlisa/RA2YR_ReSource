@@ -152,30 +152,26 @@ char __thiscall DisplayClass::_vt08(void *this)
 // 0x4A9700
 void DisplayClass::Update(PowerClass * aP1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall DisplayClass::Update(int *this, PowerClass *aP1, int a3)
 {
-  VectorCursor_uint_DynamicVectorClass_uint____13::Count(this, (int)aP1, a3); /*0x4a970a*/
+    VectorCursor_uint_DynamicVectorClass_uint____13::Count(this, (int)aP1, a3);
 }
 }
 
 // 0x4A9840
 bool DisplayClass::SetCoordVisible(IUnknown * aP0, MouseClass * aP1, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __stdcall DisplayClass::SetCoordVisible(IUnknown *aP0, MouseClass *aP1, char a3)
 {
-  if ( aP1->field_0 ) /*0x4a9848*/
+    if ( aP1->field_0 )
   {
-    if ( !a3 ) /*0x4a9859*/
-      return DisplayClass::GetCoordDelta(*(_DWORD **)&stru_87C374.__pad_579C[22548], (AbstractClass *)aP0) != -1; /*0x4a9875*/
+    if ( !a3 )
+    return DisplayClass::GetCoordDelta(*(int **)&DataGlobal_87C374.__pad_579C[22548], (AbstractClass *)aP0) != -1;
   }
-  else if ( !a3 ) /*0x4a9850*/
+    else if ( !a3 )
   {
-    return 0; /*0x4a9854*/
+    return 0;
   }
-  DisplayClass::ScrollTacticalView(*(_DWORD **)&stru_87C374.__pad_579C[22548], aP0, (IUnknown *)aP1->field_0); /*0x4a9884*/
-  return 1; /*0x4a9854*/
+    DisplayClass::ScrollTacticalView(*(int **)&DataGlobal_87C374.__pad_579C[22548], aP0, (IUnknown *)aP1->field_0);
+    return 1;
 }
 }
 
@@ -600,45 +596,40 @@ LABEL_12:
 // 0x4AAC10
 int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DisplayClass::ProcessTacticalMouseInput(TacticalClass_DisplayClass *this, char a2, int a3, int a4)
 {
-  int v5; // eax
-  int *v6; // eax
-  __int16 v8; // [esp+6h] [ebp-2Ah] BYREF
-  int v9; // [esp+8h] [ebp-28h] BYREF
-  int v10; // [esp+Ch] [ebp-24h] BYREF
-  _DWORD v11[3]; // [esp+10h] [ebp-20h] BYREF
-  int v12; // [esp+1Ch] [ebp-14h] BYREF
-  int v13; // [esp+20h] [ebp-10h]
-  int v14[3]; // [esp+24h] [ebp-Ch] BYREF
-
-  v10 = 0; /*0x4aac1c*/
-  v12 = 0; /*0x4aac24*/
-  v13 = 0; /*0x4aac2c*/
-  if ( (a2 & 0x55) != 0 ) /*0x4aac34*/
+    int v5;
+    int *v6;
+    short v8;
+    int v9;
+    int v10;
+    int v11[3];
+    int v12;
+    int v13;
+    int v14[3];
+    v10 = 0;
+    v12 = 0;
+    v13 = 0;
+    if ( (a2 & 0x55) != 0 )
   {
-    v5 = MEMORY[0x87F770]->headNode[0]; /*0x4aac3d*/
-    v12 = *(_DWORD *)MEMORY[0x87F770]->__pad_0; /*0x4aac40*/
-    v13 = v5; /*0x4aac44*/
+    v5 = g_BinkMoviePlayer->headNode[0];
+    v12 = *(int *)g_BinkMoviePlayer->__pad_0;
+    v13 = v5;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[10228] + 44))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228]); /*0x4aac52*/
-    (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[10228] + 48))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228]); /*0x4aac5d*/
-    v6 = (int *)(*(int (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[10228] + 52))( /*0x4aac6d*/
-                  *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228],
-                  v11);
-    v12 = *v6; /*0x4aac72*/
-    v13 = v6[1]; /*0x4aac79*/
+    (*(void (__thiscall **)(int))(**(int **)&DataGlobal_87F8E4.__pad_5568[10228] + 44))(*(int *)&DataGlobal_87F8E4.__pad_5568[10228]);
+    (*(void (__thiscall **)(int))(**(int **)&DataGlobal_87F8E4.__pad_5568[10228] + 48))(*(int *)&DataGlobal_87F8E4.__pad_5568[10228]);
+    v6 = (int *)(*(int (__thiscall **)(int, int *))(**(int **)&DataGlobal_87F8E4.__pad_5568[10228] + 52))( *(int *)&DataGlobal_87F8E4.__pad_5568[10228], v11);
+    v12 = *v6;
+    v13 = v6[1];
   }
-  TacticalClass::TransformPixel(*(int *)&MEMORY[0x87F8E4].__pad_5568[9432], (IUnknown *)v11, (MouseClass *)&v12); /*0x4aac8d*/
-  v12 -= *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8532]; /*0x4aaca3*/
-  v13 -= *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]; /*0x4aacb1*/
-  Tactical::MouseOver(&v12, (__int16 *)&v9, v14, &v10, (bool *)&v8 + 1, (bool *)&a2); /*0x4aacd4*/
-  if ( v9 != *(_DWORD *)&MEMORY[0x87F8E4].__pad_1D4[3748] ) /*0x4aace5*/
-    Tactical::MouseMove((int)&MEMORY[0x87F7E8], (MouseClass *)v11, (MouseClass *)&v9); /*0x4aad04*/
-  return COMObject::ActivateThunk(this, 0, a3, 0); /*0x4aad19*/
+    TacticalClass::TransformPixel(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], (IUnknown *)v11, (MouseClass *)&v12);
+    v12 -= *(int *)&DataGlobal_87F8E4.__pad_5568[8532];
+    v13 -= *(int *)&DataGlobal_87F8E4.__pad_5568[8536];
+    Tactical::MouseOver(&v12, (short *)&v9, v14, &v10, (bool *)&v8 + 1, (bool *)&a2);
+    if ( v9 != *(int *)&DataGlobal_87F8E4.__pad_1D4[3748] )
+    Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)v11, (MouseClass *)&v9);
+    return COMObject::ActivateThunk(this, 0, a3, 0);
 }
 }
 
@@ -756,60 +747,51 @@ wchar_t *__thiscall DisplayClass::_vt33(_DWORD *this, int a2)
 // 0x4AE6B0
 HWND DisplayClass::Render()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND DisplayClass::_vt34()
 {
-  HWND result; // eax
-
-  result = hWnd; /*0x4ae6b0*/
-  if ( hWnd ) /*0x4ae6b7*/
+    HWND result;
+    result = hWnd;
+    if ( hWnd )
   {
-    result = (HWND)CloseWindow(hWnd); /*0x4ae6ba*/
-    hWnd = 0; /*0x4ae6c0*/
+    result = (HWND)CloseWindow(hWnd);
+    hWnd = 0;
   }
-  return result; /*0x4ae6ca*/
+    return result;
 }
 }
 
 // 0x4AE6F0
 int DisplayClass::SetSurface(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall DisplayClass::_vt30(_DWORD *a1)
 {
-  int *v1; // esi
-  int result; // eax
-
-  v1 = MEMORY[0x8A0360]; /*0x4ae6f6*/
-  do /*0x4ae70c*/
+    int *v1;
+    int result;
+    v1 = DataGlobal_8A0360;
+    do
   {
-    result = LayerClass::Load(v1, a1); /*0x4ae6fe*/
-    v1 += 6; /*0x4ae703*/
+    result = LayerClass::Load(v1, a1);
+    v1 += 6;
   }
-  while ( (int)v1 < (int)&MEMORY[0x8A03D8] ); /*0x4ae70c*/
-  return result; /*0x4ae70e*/
+    while ( (int)v1 < (int)&DataGlobal_8A03D8 );
+    return result;
 }
 }
 
 // 0x4AE720
 int DisplayClass::GetSurface(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall DisplayClass::_vt31(_DWORD *a1)
 {
-  int *v1; // esi
-  int result; // eax
-
-  v1 = MEMORY[0x8A0360]; /*0x4ae726*/
-  do /*0x4ae740*/
+    int *v1;
+    int result;
+    v1 = DataGlobal_8A0360;
+    do
   {
-    result = LayerClass::Save(v1, a1); /*0x4ae72e*/
-    if ( result < 0 ) /*0x4ae735*/
-      break; /*0x4ae735*/
-    v1 += 6; /*0x4ae737*/
+    result = LayerClass::Save(v1, a1);
+    if ( result < 0 )
+    break;
+    v1 += 6;
   }
-  while ( (int)v1 < (int)&MEMORY[0x8A03D8] ); /*0x4ae740*/
-  return result; /*0x4ae742*/
+    while ( (int)v1 < (int)&DataGlobal_8A03D8 );
+    return result;
 }
 }
 
@@ -854,13 +836,11 @@ _DWORD *__thiscall DisplayClass::loc_4AEB50(_DWORD *this, char a2)
 // 0x4AEBB0
 unsigned int * DisplayClass::updateRenderState(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall DisplayClass::updateRenderState(TacticalClass_DisplayClass *this, char a2)
 {
-  GadgetClass::Dtor(this); /*0x4aebb3*/
-  if ( (a2 & 1) != 0 ) /*0x4aebbd*/
-    __3_YAXPAX_Z(this); /*0x4aebc0*/
-  return &this->vfptr; /*0x4aebca*/
+    GadgetClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
 }
 }
 

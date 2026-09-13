@@ -182,16 +182,13 @@ char __thiscall sub_6C8900(int *this)
 namespace gamemd {
 unsigned int * E4Recv_6C89B0::sub_6C89B0(size_t Size)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_6C89B0(_DWORD *this, size_t Size)
 {
-  void *v3; // eax
-
-  *this = Size; /*0x6c89b8*/
-  v3 = __2_YAPAXI_Z(Size); /*0x6c89ba*/
-  *(this + 1) = v3; /*0x6c89c2*/
-  *(this + 2) = v3; /*0x6c89c5*/
-  return this; /*0x6c89ca*/
+    void *v3;
+    *(void**)this = Size;
+    v3 = __2_YAPAXI_Z(Size);
+    this->M4 = v3;
+    this->M8 = v3;
+    return this;
 }
 }
 } // namespace gamemd
@@ -486,19 +483,17 @@ _DWORD *__thiscall sub_6C9780(char *this, _DWORD *a2, float *a3)
 namespace gamemd {
 unsigned int * E4Recv_6C9AC0::sub_6C9AC0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_6C9AC0(_DWORD *this)
 {
-  *this = 0; /*0x6c9ac4*/
-  *(this + 1) = 0; /*0x6c9ac6*/
-  *(this + 2) = 0; /*0x6c9ac9*/
-  *(this + 3) = 0; /*0x6c9acc*/
-  *(this + 4) = 0; /*0x6c9acf*/
-  *(this + 5) = 0; /*0x6c9ad2*/
-  *(this + 6) = 0; /*0x6c9ad5*/
-  *(this + 7) = 0; /*0x6c9ad8*/
-  *(this + 8) = 0; /*0x6c9adb*/
-  return this; /*0x6c9ade*/
+    *(void**)this = 0;
+    this->M4 = 0;
+    this->M8 = 0;
+    this->M12 = 0;
+    this->M16 = 0;
+    this->M20 = 0;
+    this->M24 = 0;
+    this->M28 = 0;
+    this->M32 = 0;
+    return this;
 }
 }
 } // namespace gamemd
@@ -738,22 +733,19 @@ LABEL_8:
 namespace gamemd {
 ObjectClass * E4Recv_6CE570::sub_6CE570()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall sub_6CE570(void *this)
 {
-  ObjectClass *v2; // edi
-  const void **v3; // esi
-
-  v2 = 0; /*0x6ce575*/
-  v3 = (const void **)&stru_830620.__pad_579C[51204]; /*0x6ce577*/
-  while ( _strcmpi(*v3, this) ) /*0x6ce58a*/
+    ObjectClass *v2;
+    const void **v3;
+    v2 = 0;
+    v3 = (const void **)&DataGlobal_830620.__pad_579C[51204];
+    while ( _strcmpi(*v3, this) )
   {
-    ++v3; /*0x6ce58c*/
-    v2 = (ObjectClass *)((char *)v2 + 1); /*0x6ce58f*/
-    if ( (int)v3 >= (int)&stru_830620.__pad_579C[51252] ) /*0x6ce596*/
-      return (ObjectClass *)-1; /*0x6ce59e*/
+    ++v3;
+    v2 = (ObjectClass *)((char *)(v2) + 1);
+    if ( (int)v3 >= (int)&DataGlobal_830620.__pad_579C[51252] )
+    return (ObjectClass *)-1;
   }
-  return v2; /*0x6ce598*/
+    return v2;
 }
 }
 } // namespace gamemd
@@ -762,20 +754,18 @@ ObjectClass *__thiscall sub_6CE570(void *this)
 namespace gamemd {
 int sub_6CF070()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6CF070()
 {
-  sub_6CF8F0(&MEMORY[0xB0C114], 0, 0); /*0x6cf079*/
-  MEMORY[0xB0C114] = (int)&vt_DynamicVectorClass_SwizzlePointerClass; /*0x6cf087*/
-  MEMORY[0xB0C128] = 10; /*0x6cf091*/
-  MEMORY[0xB0C124] = 0; /*0x6cf09b*/
-  sub_6CF8F0(&MEMORY[0xB0C12C], 0, 0); /*0x6cf0a5*/
-  MEMORY[0xB0C12C] = (int)&vt_DynamicVectorClass_SwizzlePointerClass; /*0x6cf0b4*/
-  MEMORY[0xB0C13C] = 0; /*0x6cf0be*/
-  MEMORY[0xB0C110] = (int)&vt_SwizzleManagerClass; /*0x6cf0c8*/
-  MEMORY[0xB0C128] = 1000; /*0x6cf0d2*/
-  MEMORY[0xB0C140] = 1000; /*0x6cf0d7*/
-  return atexit(SwizzleManagerClass::Register); /*0x6cf0e2*/
+    sub_6CF8F0(&DataGlobal_B0C114, 0, 0);
+    DataGlobal_B0C114 = (int)&vt_DynamicVectorClass_SwizzlePointerClass;
+    DataGlobal_B0C128 = 10;
+    DataGlobal_B0C124 = 0;
+    sub_6CF8F0(&DataGlobal_B0C12C, 0, 0);
+    DataGlobal_B0C12C = (int)&vt_DynamicVectorClass_SwizzlePointerClass;
+    DataGlobal_B0C13C = 0;
+    SwizzleManagerClass_Instance = (int)&vt_SwizzleManagerClass;
+    DataGlobal_B0C128 = 1000;
+    DataGlobal_B0C140 = 1000;
+    return atexit(SwizzleManagerClass::Register);
 }
 }
 } // namespace gamemd
@@ -799,67 +789,64 @@ int __cdecl globalHelper_0CF320(_DWORD *a1, _DWORD *a2)
 namespace gamemd {
 unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_6CF8F0(_DWORD *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // eax
-  int v5; // ecx
-  _DWORD *v7; // eax
-  _DWORD *v8; // ecx
-  int v9; // edx
-
-  *(this + 1) = 0; /*0x6cf8fd*/
-  *(this + 2) = a2; /*0x6cf900*/
-  *((_BYTE *)this + 12) = 1; /*0x6cf903*/
-  *((_BYTE *)this + 13) = 0; /*0x6cf907*/
-  *this = &vt_VectorClass_SwizzlePointerClass; /*0x6cf90a*/
-  if ( !a2 ) /*0x6cf910*/
-    return this; /*0x6cf910*/
-  if ( !a3 ) /*0x6cf918*/
+    int *v4;
+    int v5;
+    int *v7;
+    int *v8;
+    int v9;
+    this->M4 = 0;
+    this->M8 = a2;
+    this->M12 = 1;
+    this->M13 = 0;
+    *(void**)this = &vt_VectorClass_SwizzlePointerClass;
+    if ( !a2 )
+    return this;
+    if ( !a3 )
   {
-    v7 = __2_YAPAXI_Z(8 * a2); /*0x6cf942*/
-    if ( v7 ) /*0x6cf94c*/
+    v7 = __2_YAPAXI_Z(8 * a2);
+    if ( v7 )
     {
-      v8 = v7; /*0x6cf951*/
-      if ( a2 - 1 >= 0 ) /*0x6cf955*/
+    v8 = v7;
+    if ( a2 - 1 >= 0 )
       {
-        v9 = a2; /*0x6cf957*/
-        do /*0x6cf961*/
+    v9 = a2;
+    do
         {
-          *v8 = 0; /*0x6cf958*/
-          v8[1] = 0; /*0x6cf95a*/
-          v8 += 2; /*0x6cf95d*/
-          --v9; /*0x6cf960*/
+    *v8 = 0;
+    v8[1] = 0;
+    v8 += 2;
+    --v9;
         }
-        while ( v9 ); /*0x6cf961*/
-        *(this + 1) = v7; /*0x6cf963*/
-        *((_BYTE *)this + 13) = 1; /*0x6cf966*/
-        return this; /*0x6cf96f*/
+    while ( v9 );
+    this->M4 = v7;
+    this->M13 = 1;
+    return this;
       }
     }
     else
     {
-      v7 = 0; /*0x6cf972*/
+    v7 = 0;
     }
-    *(this + 1) = v7; /*0x6cf974*/
-    *((_BYTE *)this + 13) = 1; /*0x6cf977*/
-    return this; /*0x6cf97b*/
+    this->M4 = v7;
+    this->M13 = 1;
+    return this;
   }
-  v4 = a3; /*0x6cf91d*/
-  if ( a2 - 1 >= 0 ) /*0x6cf921*/
+    v4 = a3;
+    if ( a2 - 1 >= 0 )
   {
-    v5 = a2; /*0x6cf923*/
-    do /*0x6cf92d*/
+    v5 = a2;
+    do
     {
-      *v4 = 0; /*0x6cf924*/
-      v4[1] = 0; /*0x6cf926*/
-      v4 += 2; /*0x6cf929*/
-      --v5; /*0x6cf92c*/
+    *v4 = 0;
+    v4[1] = 0;
+    v4 += 2;
+    --v5;
     }
-    while ( v5 ); /*0x6cf92d*/
+    while ( v5 );
   }
-  *(this + 1) = a3; /*0x6cf92f*/
-  return this; /*0x6cf934*/
+    this->M4 = a3;
+    return this;
 }
 }
 } // namespace gamemd

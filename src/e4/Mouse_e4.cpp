@@ -79,15 +79,12 @@ SHORT __thiscall Mouse::GetKeyState(unsigned __int8 this)
 namespace gamemd {
 BOOL Mouse::IsButtonDown(unsigned char a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __stdcall Mouse_IsButtonDown(unsigned __int8 a1)
 {
-  unsigned __int16 v1; // si
-
-  v1 = a1; /*0x54f5c5*/
-  if ( (a1 == 1 || a1 == 2) && GetSystemMetrics(23) == 1 ) /*0x54f5e2*/
-    v1 = 2 - (a1 != 1); /*0x54f5eb*/
-  return (unsigned __int16)Mouse::GetKeyState(v1) != 0; /*0x54f600*/
+    unsigned short v1;
+    v1 = a1;
+    if ( (a1 == 1 || a1 == 2) && GetSystemMetrics(23) == 1 )
+    v1 = 2 - (a1 != 1);
+    return (unsigned short)Mouse::GetKeyState(v1) != 0;
 }
 }
 } // namespace gamemd
@@ -96,19 +93,16 @@ BOOL __stdcall Mouse_IsButtonDown(unsigned __int8 a1)
 namespace gamemd {
 HWND Mouse::HideWindow()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND Mouse_HideWindow()
 {
-  HWND result; // eax
-
-  result = MEMORY[0xABF240]; /*0x5bc400*/
-  MEMORY[0xABF239] = 0; /*0x5bc409*/
-  if ( MEMORY[0xABF240] ) /*0x5bc40f*/
+    HWND result;
+    result = DataGlobal_ABF240;
+    DataGlobal_ABF239 = 0;
+    if ( DataGlobal_ABF240 )
   {
-    MEMORY[0xABF23A] = 0; /*0x5bc413*/
-    return (HWND)ShowWindow(MEMORY[0xABF240], 0); /*0x5bc419*/
+    g_MiscFlag = 0;
+    return (HWND)ShowWindow(DataGlobal_ABF240, 0);
   }
-  return result; /*0x5bc41f*/
+    return result;
 }
 }
 } // namespace gamemd

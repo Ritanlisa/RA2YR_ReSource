@@ -749,29 +749,26 @@ LABEL_21:
 namespace gamemd {
 int E4Recv_412610::sub_412610()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_412610(char *this)
 {
-  char *v1; // edi
-  int v2; // esi
-  char v3; // al
-  int v4; // esi
-
-  v1 = this; /*0x412612*/
-  v2 = 0; /*0x412614*/
-  while ( v1 ) /*0x412618*/
+    char *v1;
+    int v2;
+    char v3;
+    int v4;
+    v1 = this;
+    v2 = 0;
+    while ( v1 )
   {
-    if ( !isxdigit(*v1) ) /*0x41261e*/
-      break; /*0x412628*/
-    v3 = *v1; /*0x41262a*/
-    v4 = 16 * v2; /*0x41262c*/
-    ++v1; /*0x41262f*/
-    if ( v3 < 48 || v3 > 57 ) /*0x412636*/
-      v2 = v4 + toupper(v3) - 55; /*0x41264d*/
+    if ( !isxdigit(*v1) )
+    break;
+    v3 = *v1;
+    v4 = 16 * v2;
+    ++v1;
+    if ( v3 < 48 || v3 > 57 )
+    v2 = v4 + toupper(v3) - 55;
     else
-      v2 = v4 + v3 - 48; /*0x41263b*/
+    v2 = v4 + v3 - 48;
   }
-  return v2; /*0x412657*/
+    return v2;
 }
 }
 } // namespace gamemd
@@ -780,32 +777,29 @@ int __thiscall sub_412610(char *this)
 namespace gamemd {
 int sub_412870()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_412870()
 {
-  _DWORD *v0; // esi
-  int v1; // edi
-
-  v0 = MEMORY[0x887888]; /*0x412873*/
-  v1 = 400; /*0x412878*/
-  do /*0x41289c*/
+    int *v0;
+    int v1;
+    v0 = g_CellClassManager;
+    v1 = 400;
+    do
   {
-    EventClass::resetEvent(v0, 0, 0); /*0x412883*/
-    *v0 = &vt_DynamicVectorClass_TechnoClass; /*0x412888*/
-    v0[5] = 10; /*0x41288e*/
-    v0[4] = 0; /*0x412895*/
-    v0 += 6; /*0x412898*/
-    --v1; /*0x41289b*/
+    EventClass::resetEvent(v0, 0, 0);
+    *v0 = &vt_DynamicVectorClass_TechnoClass;
+    v0[5] = 10;
+    v0[4] = 0;
+    v0 += 6;
+    --v1;
   }
-  while ( v1 ); /*0x41289c*/
-  MEMORY[0x889E0C] = 0; /*0x4128a3*/
-  MEMORY[0x889E10] = 0; /*0x4128a9*/
-  MEMORY[0x889E14] = 1; /*0x4128af*/
-  MEMORY[0x889E15] = 0; /*0x4128b6*/
-  MEMORY[0x889E08] = (int)&vt_DynamicVectorClass_TechnoClass; /*0x4128bc*/
-  MEMORY[0x889E1C] = 10; /*0x4128c6*/
-  MEMORY[0x889E18] = 0; /*0x4128d0*/
-  return atexit(sub_4128F0); /*0x4128de*/
+    while ( v1 );
+    DataGlobal_889E0C = 0;
+    DataGlobal_889E10 = 0;
+    DataGlobal_889E14 = 1;
+    DataGlobal_889E15 = 0;
+    DataGlobal_889E08 = (int)&vt_DynamicVectorClass_TechnoClass;
+    DataGlobal_889E1C = 10;
+    DataGlobal_889E18 = 0;
+    return atexit(sub_4128F0);
 }
 }
 } // namespace gamemd
@@ -814,59 +808,56 @@ int sub_412870()
 namespace gamemd {
 void sub_4128F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_4128F0()
 {
-  _DWORD *v0; // esi
-  int v1; // ebp
-  int v2; // edi
-  int v3; // esi
-  void **v4; // esi
-  int v5; // edi
-  void *v6; // eax
-
-  v0 = MEMORY[0x887888]; /*0x4128f4*/
-  v1 = 400; /*0x4128f9*/
-  do /*0x412917*/
+    int *v0;
+    int v1;
+    int v2;
+    int v3;
+    void **v4;
+    int v5;
+    void *v6;
+    v0 = g_CellClassManager;
+    v1 = 400;
+    do
   {
-    v2 = v0[2]; /*0x412902*/
-    (*(void (__thiscall **)(_DWORD *))(*v0 + 12))(v0); /*0x412907*/
-    (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*v0 + 8))(v0, v2, 0); /*0x412910*/
-    v0 += 6; /*0x412913*/
-    --v1; /*0x412916*/
+    v2 = v0[2];
+    (*(void (__thiscall **)(int *))(*v0 + 12))(v0);
+    (*(void (__thiscall **)(int *, int, int))(*v0 + 8))(v0, v2, 0);
+    v0 += 6;
+    --v1;
   }
-  while ( v1 ); /*0x412917*/
-  v3 = MEMORY[0x889E10]; /*0x41291e*/
-  (*(void (__thiscall **)(int *))(MEMORY[0x889E08] + 12))(&MEMORY[0x889E08]); /*0x412929*/
-  (*(void (__thiscall **)(int *, int, _DWORD))(MEMORY[0x889E08] + 8))(&MEMORY[0x889E08], v3, 0); /*0x412939*/
-  MEMORY[0x889E08] = (int)&vt_VectorClass_TechnoClass; /*0x412948*/
-  if ( MEMORY[0x889E0C] && MEMORY[0x889E15] ) /*0x412956*/
+    while ( v1 );
+    v3 = DataGlobal_889E10;
+    (*(void (__thiscall **)(int *))(DataGlobal_889E08 + 12))(&DataGlobal_889E08);
+    (*(void (__thiscall **)(int *, int, int))(DataGlobal_889E08 + 8))(&DataGlobal_889E08, v3, 0);
+    DataGlobal_889E08 = (int)&vt_VectorClass_TechnoClass;
+    if ( DataGlobal_889E0C && DataGlobal_889E15 )
   {
-    __3_YAXPAX_Z(MEMORY[0x889E0C]); /*0x412959*/
-    MEMORY[0x889E0C] = 0; /*0x412961*/
+    __3_YAXPAX_Z(DataGlobal_889E0C);
+    DataGlobal_889E0C = 0;
   }
-  MEMORY[0x889E15] = 0; /*0x412967*/
-  MEMORY[0x889E10] = 0; /*0x41296d*/
-  v4 = &MEMORY[0x889E0C]; /*0x412973*/
-  v5 = 400; /*0x412978*/
-  do /*0x4129a1*/
+    DataGlobal_889E15 = 0;
+    DataGlobal_889E10 = 0;
+    v4 = &DataGlobal_889E0C;
+    v5 = 400;
+    do
   {
-    v6 = *(v4 - 6); /*0x41297d*/
-    v4 -= 6; /*0x412980*/
-    *(v4 - 1) = &vt_VectorClass_TechnoClass; /*0x412985*/
-    if ( v6 ) /*0x412988*/
+    v6 = *(v4 - 6);
+    v4 -= 6;
+    *(v4 - 1) = &vt_VectorClass_TechnoClass;
+    if ( v6 )
     {
-      if ( *((_BYTE *)v4 + 9) ) /*0x41298a*/
+    if ( *((char *)(v4) + 9) )
       {
-        __3_YAXPAX_Z(v6); /*0x412990*/
-        *v4 = 0; /*0x412998*/
+    __3_YAXPAX_Z(v6);
+    *v4 = 0;
       }
     }
-    --v5; /*0x41299a*/
-    *((_BYTE *)v4 + 9) = 0; /*0x41299b*/
-    v4[1] = 0; /*0x41299e*/
+    --v5;
+    *((char *)(v4) + 9) = 0;
+    v4[1] = 0;
   }
-  while ( v5 ); /*0x4129a1*/
+    while ( v5 );
 }
 }
 } // namespace gamemd
@@ -1069,17 +1060,15 @@ int __cdecl CompareFunction(_DWORD *a1, _DWORD *a2)
 namespace gamemd {
 int sub_41D280()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_41D280()
 {
-  MEMORY[0x889FBC] = 0; /*0x41d287*/
-  MEMORY[0x889FC0] = 0; /*0x41d28c*/
-  MEMORY[0x889FC4] = 1; /*0x41d291*/
-  MEMORY[0x889FC5] = 0; /*0x41d298*/
-  MEMORY[0x889FB8] = (int)&vt_DynamicVectorClass_AirstrikeClass; /*0x41d29d*/
-  MEMORY[0x889FCC] = 10; /*0x41d2a7*/
-  MEMORY[0x889FC8] = 0; /*0x41d2b1*/
-  return atexit(sub_41D2C0); /*0x41d2bc*/
+    DataGlobal_889FBC = 0;
+    DataGlobal_889FC0 = 0;
+    DataGlobal_889FC4 = 1;
+    DataGlobal_889FC5 = 0;
+    DataGlobal_889FB8 = (int)&vt_DynamicVectorClass_AirstrikeClass;
+    DataGlobal_889FCC = 10;
+    DataGlobal_889FC8 = 0;
+    return atexit(sub_41D2C0);
 }
 }
 } // namespace gamemd
@@ -1088,17 +1077,15 @@ int sub_41D280()
 namespace gamemd {
 void sub_41D2C0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_41D2C0()
 {
-  MEMORY[0x889FB8] = (int)&vt_VectorClass_AirstrikeClass; /*0x41d2c8*/
-  if ( MEMORY[0x889FBC] && MEMORY[0x889FC5] ) /*0x41d2dc*/
+    DataGlobal_889FB8 = (int)&vt_VectorClass_AirstrikeClass;
+    if ( DataGlobal_889FBC && DataGlobal_889FC5 )
   {
-    __3_YAXPAX_Z(MEMORY[0x889FBC]); /*0x41d2df*/
-    MEMORY[0x889FBC] = 0; /*0x41d2e7*/
+    __3_YAXPAX_Z(DataGlobal_889FBC);
+    DataGlobal_889FBC = 0;
   }
-  MEMORY[0x889FC5] = 0; /*0x41d2ed*/
-  MEMORY[0x889FC0] = 0; /*0x41d2f3*/
+    DataGlobal_889FC5 = 0;
+    DataGlobal_889FC0 = 0;
 }
 }
 } // namespace gamemd
@@ -1122,45 +1109,38 @@ char __thiscall sub_41DD10(int this)
 namespace gamemd {
 bool globalHelper_01FEE0(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __stdcall globalHelper_01FEE0(IUnknown *aP0, _DWORD *a1, _DWORD *a2)
 {
-  IUnknown *v3; // edi
-  AbstractClass *v4; // esi
-  ObjectClass *CurrentOption; // eax
-  MouseClass *v6; // esi
-  int v7; // edi
-  MouseClass *v8; // esi
-  MouseClass *TileIndex; // edi
-
-  v3 = aP0; /*0x41fee2*/
-  if ( aP0->__pad_EC[4] ) /*0x41fee6*/
+    IUnknown *v3;
+    AbstractClass *v4;
+    ObjectClass *CurrentOption;
+    MouseClass *v6;
+    int v7;
+    MouseClass *v8;
+    MouseClass *TileIndex;
+    v3 = aP0;
+    if ( aP0->__pad_EC[4] )
   {
-    v4 = (AbstractClass *)a2; /*0x41fef4*/
-    if ( a2 ) /*0x41fefa*/
+    v4 = (AbstractClass *)a2;
+    if ( a2 )
     {
-      a2 = *(_DWORD **)HouseClass::GetCurrentOption(a1, (IUnknown *)&a1)->__pad_0; /*0x41ff14*/
-      CurrentOption = HouseClass::GetCurrentOption(v4, (IUnknown *)&a1); /*0x41ff1b*/
-      v6 = *(MouseClass **)v3->__pad_EC; /*0x41ff22*/
-      aP0 = *(IUnknown **)CurrentOption->__pad_0; /*0x41ff28*/
-      if ( !v3->__pad_EC[5] ) /*0x41ff37*/
+    a2 = *(int **)HouseClass::GetCurrentOption(a1, (IUnknown *)&a1)->__pad_0;
+    CurrentOption = HouseClass::GetCurrentOption(v4, (IUnknown *)&a1);
+    v6 = *(MouseClass **)v3->__pad_EC;
+    aP0 = *(IUnknown **)CurrentOption->__pad_0;
+    if ( !v3->__pad_EC[5] )
       {
-        TileIndex = (MouseClass *)MapClass::GetTileIndex( /*0x41ffa2*/
-                                    &stru_87C374.__pad_14B0[8132],
-                                    (IUnknown *)&aP0,
-                                    (IUnknown *)v6,
-                                    0);
-        return MapClass::GetTileIndex(&stru_87C374.__pad_14B0[8132], (IUnknown *)&a2, (IUnknown *)v6, 0) == (_DWORD)TileIndex; /*0x41ffbd*/
+    TileIndex = (MouseClass *)MapClass::GetTileIndex( &DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&aP0, (IUnknown *)v6, 0);
+    return MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&a2, (IUnknown *)v6, 0) == (int)TileIndex;
       }
-      v7 = MapClass::GetTileIndex(&stru_87C374.__pad_14B0[8132], (IUnknown *)&aP0, (IUnknown *)v6, 0); /*0x41ff55*/
-      if ( MapClass::GetTileIndex(&stru_87C374.__pad_14B0[8132], (IUnknown *)&a2, (IUnknown *)v6, 0) == v7 ) /*0x41ff5e*/
-        return 0; /*0x41ff5e*/
-      v8 = (MouseClass *)MapClass::GetTileIndex(&stru_87C374.__pad_14B0[8132], (IUnknown *)&aP0, (IUnknown *)5, 0); /*0x41ff81*/
-      if ( (MouseClass *)MapClass::GetTileIndex(&stru_87C374.__pad_14B0[8132], (IUnknown *)&a2, (IUnknown *)5, 0) != v8 ) /*0x41ff8a*/
-        return 0; /*0x41ff90*/
+    v7 = MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&aP0, (IUnknown *)v6, 0);
+    if ( MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&a2, (IUnknown *)v6, 0) == v7 )
+    return 0;
+    v8 = (MouseClass *)MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&aP0, (IUnknown *)5, 0);
+    if ( (MouseClass *)MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&a2, (IUnknown *)5, 0) != v8 )
+    return 0;
     }
   }
-  return 1; /*0x41ff8c*/
+    return 1;
 }
 }
 } // namespace gamemd

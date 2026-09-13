@@ -7,12 +7,10 @@
 namespace gamemd {
 unsigned short * CellStruct::Set(short a2, short a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_WORD *__thiscall CellStruct::Set(rc_ptr_base *this, __int16 a2, __int16 a3)
 {
-  LOWORD(this->vfptr) = a2; /*0x42d47c*/
-  HIWORD(this->vfptr) = a3; /*0x42d47f*/
-  return this; /*0x42d483*/
+    LOWORD(this->vfptr) = a2;
+    HIWORD(this->vfptr) = a3;
+    return this;
 }
 }
 } // namespace gamemd

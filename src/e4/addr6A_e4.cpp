@@ -68,12 +68,10 @@ char __thiscall sub_6A04C0(int this, IUnknown *aP1)
 namespace gamemd {
 int sub_6A4C10()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6A4C10()
 {
-  GadgetClass::Construct(&MEMORY[0xB07E58], 0, 0, 1, 1, 8, 0); /*0x6a4c21*/
-  MEMORY[0xB07E58] = (int)&vt_SidebarClass_SBGadgetClass; /*0x6a4c2b*/
-  return atexit(sub_6A4C40); /*0x6a4c3b*/
+    GadgetClass::Construct(&DataGlobal_B07E58, 0, 0, 1, 1, 8, 0);
+    DataGlobal_B07E58 = (int)&vt_SidebarClass_SBGadgetClass;
+    return atexit(sub_6A4C40);
 }
 }
 } // namespace gamemd
@@ -82,25 +80,22 @@ int sub_6A4C10()
 namespace gamemd {
 int sub_6A4DC0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6A4DC0()
 {
-  _DWORD *v0; // esi
-  int v1; // ebx
-
-  v0 = &MEMORY[0xB07E80]; /*0x6a4dc3*/
-  v1 = 240; /*0x6a4dc8*/
-  do /*0x6a4df0*/
+    int *v0;
+    int v1;
+    v0 = &DataGlobal_B07E80;
+    v1 = 240;
+    do
   {
-    ControlClass::Construct(v0, 0, 0, 0, 60, 48, 25, 0); /*0x6a4ddb*/
-    v0[11] = 0; /*0x6a4de0*/
-    v0[12] = 0; /*0x6a4de3*/
-    *v0 = &vt_SidebarClass_StripClass_SelectClass; /*0x6a4de6*/
-    v0 += 14; /*0x6a4dec*/
-    --v1; /*0x6a4def*/
+    ControlClass::Construct(v0, 0, 0, 0, 60, 48, 25, 0);
+    v0[11] = 0;
+    v0[12] = 0;
+    *v0 = &vt_SidebarClass_StripClass_SelectClass;
+    v0 += 14;
+    --v1;
   }
-  while ( v1 ); /*0x6a4df0*/
-  return atexit(sub_6A4E10); /*0x6a4dff*/
+    while ( v1 );
+    return atexit(sub_6A4E10);
 }
 }
 } // namespace gamemd
@@ -690,17 +685,15 @@ bool __usercall Skirmish_Setup_Screen@<al>(int a1@<ebx>, int a2@<ebp>)
 namespace gamemd {
 int sub_6AF120()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6AF120()
 {
-  MEMORY[0xB0B5F4] = 0; /*0x6af127*/
-  MEMORY[0xB0B5F8] = 0; /*0x6af12c*/
-  MEMORY[0xB0B5FC] = 1; /*0x6af131*/
-  MEMORY[0xB0B5FD] = 0; /*0x6af138*/
-  MEMORY[0xB0B5F0] = (int)&vt_DynamicVectorClass_SlaveManagerClass; /*0x6af13d*/
-  MEMORY[0xB0B604] = 10; /*0x6af147*/
-  MEMORY[0xB0B600] = 0; /*0x6af151*/
-  return atexit(sub_6AF160); /*0x6af15c*/
+    DataGlobal_B0B5F4 = 0;
+    DataGlobal_B0B5F8 = 0;
+    DataGlobal_B0B5FC = 1;
+    DataGlobal_B0B5FD = 0;
+    SlaveManagerClass_Array = (int)&vt_DynamicVectorClass_SlaveManagerClass;
+    DataGlobal_B0B604 = 10;
+    DataGlobal_B0B600 = 0;
+    return atexit(sub_6AF160);
 }
 }
 } // namespace gamemd
@@ -709,17 +702,15 @@ int sub_6AF120()
 namespace gamemd {
 void sub_6AF160()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_6AF160()
 {
-  MEMORY[0xB0B5F0] = (int)&vt_VectorClass_SlaveManagerClass; /*0x6af168*/
-  if ( MEMORY[0xB0B5F4] && MEMORY[0xB0B5FD] ) /*0x6af17c*/
+    SlaveManagerClass_Array = (int)&vt_VectorClass_SlaveManagerClass;
+    if ( DataGlobal_B0B5F4 && DataGlobal_B0B5FD )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0B5F4]); /*0x6af17f*/
-    MEMORY[0xB0B5F4] = 0; /*0x6af187*/
+    __3_YAXPAX_Z(DataGlobal_B0B5F4);
+    DataGlobal_B0B5F4 = 0;
   }
-  MEMORY[0xB0B5FD] = 0; /*0x6af18d*/
-  MEMORY[0xB0B5F8] = 0; /*0x6af193*/
+    DataGlobal_B0B5FD = 0;
+    DataGlobal_B0B5F8 = 0;
 }
 }
 } // namespace gamemd

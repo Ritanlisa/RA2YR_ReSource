@@ -136,11 +136,9 @@ double __thiscall Timer_GetHighPrecision(double *this)
 namespace gamemd {
 void * Timer::EnableHighPrecision()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall Timer_EnableHighPrecision(void *this)
 {
-  timeBeginPeriod(1u); /*0x5d5875*/
-  return this; /*0x5d587d*/
+    timeBeginPeriod(1u);
+    return this;
 }
 }
 } // namespace gamemd
@@ -149,10 +147,8 @@ void *__thiscall Timer_EnableHighPrecision(void *this)
 namespace gamemd {
 MMRESULT Timer::DisableHighPrecision()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-MMRESULT Timer_DisableHighPrecision()
 {
-  return timeEndPeriod(1u); /*0x5d5888*/
+    return timeEndPeriod(1u);
 }
 }
 } // namespace gamemd
@@ -178,17 +174,14 @@ int __thiscall Timer_GetElapsed(_DWORD *this)
 namespace gamemd {
 int Timer::UpdateDelta()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Timer_UpdateDelta()
 {
-  DWORD Ticks; // eax
-  int result; // eax
-
-  Ticks = Timer::GetTicks(); /*0x6c8825*/
-  MEMORY[0xB0BDB4] = 0; /*0x6c8830*/
-  result = Ticks - MEMORY[0xB0BD28]; /*0x6c8837*/
-  MEMORY[0xB0BD48] = result; /*0x6c8839*/
-  return result; /*0x6c883e*/
+    DWORD Ticks;
+    int result;
+    Ticks = Timer::GetTicks();
+    DataGlobal_B0BDB4 = 0;
+    result = Ticks - DataGlobal_B0BD28;
+    DataGlobal_B0BD48 = result;
+    return result;
 }
 }
 } // namespace gamemd
@@ -197,10 +190,8 @@ int Timer_UpdateDelta()
 namespace gamemd {
 DWORD Timer::GetTicks()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DWORD Timer_GetTicks()
 {
-  return timeGetTime() >> 4; /*0x6c8c49*/
+    return timeGetTime() >> 4;
 }
 }
 } // namespace gamemd
@@ -209,17 +200,14 @@ DWORD Timer_GetTicks()
 namespace gamemd {
 char Timer::SetFlag(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Timer_SetFlag(_DWORD *this, char a2)
 {
-  char result; // al
-
-  result = a2; /*0x7500b0*/
-  if ( a2 ) /*0x7500b6*/
-    *this = 0x40000000; /*0x7500b8*/
-  else
-    *this = 0; /*0x7500c1*/
-  return result; /*0x7500be*/
+    char result;
+    result = a2;
+    if ( a2 )
+    *(void**)this = 0x40000000;
+    else
+    *(void**)this = 0;
+    return result;
 }
 }
 } // namespace gamemd
@@ -228,14 +216,11 @@ char __thiscall Timer_SetFlag(_DWORD *this, char a2)
 namespace gamemd {
 unsigned long long Timer::ReadTSC(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int64 __cdecl sub_7C6064(_DWORD *a1)
 {
-  unsigned __int64 result; // rax
-
-  result = __rdtsc(); /*0x7c6068*/
-  *a1 = HIDWORD(result); /*0x7c606d*/
-  return result; /*0x7c606f*/
+    unsigned __int64 result;
+    result = __rdtsc();
+    *a1 = HIDWORD(result);
+    return result;
 }
 }
 } // namespace gamemd

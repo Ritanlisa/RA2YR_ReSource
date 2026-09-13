@@ -297,22 +297,20 @@ void GameClass_InitDifficultyButtons()
 namespace gamemd {
 wchar_t * GameClass::GetDifficultyString()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall GameClass_GetDifficultyString(void *this)
 {
-  if ( this == (void *)MEMORY[0xAC119C] ) /*0x5e99c6*/
-    return GetStringCSF(MEMORY[0x831D34], 0, MEMORY[0x8317D8], 4948); /*0x5e99d9*/
-  if ( this == (void *)MEMORY[0xAC11A0] ) /*0x5e99e5*/
-    return GetStringCSF(MEMORY[0x831D20], 0, MEMORY[0x8317D8], 4950); /*0x5e99f8*/
-  if ( this == (void *)MEMORY[0xAC11A4] ) /*0x5e9a04*/
-    return GetStringCSF(MEMORY[0x831D0C], 0, MEMORY[0x8317D8], 4952); /*0x5e9a17*/
-  if ( this == (void *)MEMORY[0xAC11A8] ) /*0x5e9a23*/
-    return GetStringCSF(MEMORY[0x831CF8], 0, MEMORY[0x8317D8], 4954); /*0x5e9a36*/
-  if ( this == (void *)MEMORY[0xAC11AC] ) /*0x5e9a42*/
-    return GetStringCSF(MEMORY[0x831CE4], 0, MEMORY[0x8317D8], 4956); /*0x5e9a55*/
-  if ( this == (void *)MEMORY[0xAC11B4] ) /*0x5e9a61*/
-    return GetStringCSF(MEMORY[0x831CCC], 0, MEMORY[0x8317D8], 4958); /*0x5e9a74*/
-  return GetStringCSF(MEMORY[0x831CBC], 0, MEMORY[0x8317D8], 4960); /*0x5e99de*/
+    if ( this == (void *)g_HouseClass_ObserverFlags )
+    return GetStringCSF(DataGlobal_831D34, 0, g_Str_File_netshare_cpp, 4948);
+    if ( this == (void *)g_Lobby_PlayerCount )
+    return GetStringCSF(DataGlobal_831D20, 0, g_Str_File_netshare_cpp, 4950);
+    if ( this == (void *)g_Lobby_PlayerTeam )
+    return GetStringCSF(g_Str_STT_PlayerDumbAI, 0, g_Str_File_netshare_cpp, 4952);
+    if ( this == (void *)g_Lobby_PlayerSide )
+    return GetStringCSF(g_Str_STT_PlayerSmartAI, 0, g_Str_File_netshare_cpp, 4954);
+    if ( this == (void *)g_Lobby_PlayerColor )
+    return GetStringCSF(g_Str_STT_PlayerGeniusAI, 0, g_Str_File_netshare_cpp, 4956);
+    if ( this == (void *)g_Lobby_MaxPlayers )
+    return GetStringCSF(DataGlobal_831CCC, 0, g_Str_File_netshare_cpp, 4958);
+    return GetStringCSF(DataGlobal_831CBC, 0, g_Str_File_netshare_cpp, 4960);
 }
 }
 } // namespace gamemd
@@ -417,10 +415,8 @@ Pipe *__thiscall GameClass::WriteEncryptedStream(int this, BombClass *Src, signe
 namespace gamemd {
 int GameClass::loadGameState(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall GameClass::sub_632FE0(void *this, int a2)
 {
-  return (*(int (__thiscall **)(void *, int))(*(_DWORD *)this + 12))(this, a2); /*0x632fea*/
+    return this->SetDelegate(a2);
 }
 }
 } // namespace gamemd
@@ -540,10 +536,8 @@ int __thiscall GameClass::ReadEncryptedStream(int this, char *a2, signed int Siz
 namespace gamemd {
 int GameClass::parseGameOptions(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall GameClass::sub_633360(void *this, int a2)
 {
-  return (*(int (__thiscall **)(void *, int))(*(_DWORD *)this + 4))(this, a2); /*0x63336a*/
+    return this->GetRelatedObject(a2);
 }
 }
 } // namespace gamemd
@@ -606,30 +600,27 @@ bool __thiscall sub_69AE10(int *this, const char **a2)
 namespace gamemd {
 int GameClass::FindPlayerName(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall GameClass_FindPlayerName(int a1)
 {
-  int v1; // ebp
-  char **v2; // esi
-  char *v3; // edi
-  char *v4; // ebx
-  char *v5; // eax
-
-  v1 = 0; /*0x69bc64*/
-  v2 = (char **)&MEMORY[0xA8DA90]; /*0x69bc66*/
-  while ( 1 ) /*0x69bc74*/
+    int v1;
+    char **v2;
+    char *v3;
+    char *v4;
+    char *v5;
+    v1 = 0;
+    v2 = (char **)&g_NetworkPlayerName;
+    while ( 1 )
   {
-    v3 = *v2; /*0x69bc74*/
-    v4 = ToWideStringChar(*(char **)(MEMORY[0xA8DA78] + 4 * a1)); /*0x69bc80*/
-    v5 = ToWideStringChar(v3); /*0x69bc82*/
-    if ( !_strcmpi(v4, v5) ) /*0x69bc89*/
-      break; /*0x69bc89*/
-    ++v2; /*0x69bc95*/
-    ++v1; /*0x69bc98*/
-    if ( (int)v2 >= (int)&MEMORY[0xA8DAB0] ) /*0x69bc9f*/
-      return 0; /*0x69bca7*/
+    v3 = *v2;
+    v4 = ToWideStringChar(*(char **)(Game_PlayerInfoArray + 4 * a1));
+    v5 = ToWideStringChar(v3);
+    if ( !_strcmpi(v4, v5) )
+    break;
+    ++v2;
+    ++v1;
+    if ( (int)v2 >= (int)&g_PlayerNameListEnd )
+    return 0;
   }
-  return v1; /*0x69bca1*/
+    return v1;
 }
 }
 } // namespace gamemd

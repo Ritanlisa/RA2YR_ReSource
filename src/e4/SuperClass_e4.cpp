@@ -1166,15 +1166,12 @@ int __stdcall SuperClass::LoadFromStream(AbstractClass *aP0, int aP1)
 namespace gamemd {
 int SuperClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SuperClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6cdfdf*/
-  if ( result >= 0 ) /*0x6cdfe6*/
-    return 0; /*0x6cdfe8*/
-  return result; /*0x6cdfea*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd

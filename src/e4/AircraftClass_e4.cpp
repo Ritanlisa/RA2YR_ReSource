@@ -828,10 +828,8 @@ LABEL_18:
 namespace gamemd {
 HRESULT AircraftClass::CheckPassengerCount(IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HRESULT __stdcall AircraftClass::CheckPassengerCount(IPersistStream *a0, FootClass *aP1, struct IPersistStreamVtbl *a2)
 {
-  return ObjectClass::SaveToStream_Common(a0, aP1, a2); /*0x41b5d4*/
+    return ObjectClass::SaveToStream_Common(a0, aP1, a2);
 }
 }
 } // namespace gamemd
@@ -942,12 +940,9 @@ LABEL_4:
 namespace gamemd {
 int AircraftClass::CheckStateFlag()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AircraftClass::CheckStateFlag(#374 *this)
 {
-  int result; // eax
-
-  return result; /*0x41be80*/
+    int result;
+    return result;
 }
 }
 } // namespace gamemd
@@ -956,12 +951,9 @@ int __thiscall AircraftClass::CheckStateFlag(#374 *this)
 namespace gamemd {
 int AircraftClass::CheckStateFlag2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AircraftClass::CheckStateFlag2(#374 *this)
 {
-  int result; // eax
-
-  return result; /*0x41be90*/
+    int result;
+    return result;
 }
 }
 } // namespace gamemd
@@ -970,13 +962,10 @@ int __thiscall AircraftClass::CheckStateFlag2(#374 *this)
 namespace gamemd {
 int AircraftClass::CheckReloadState()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AircraftClass::_vt49(#377 *this)
 {
-  int result; // eax
-
-  LOBYTE(result) = (unsigned char)this->drainAnim; /*0x41c010*/
-  return result; /*0x41c016*/
+    int result;
+    LOBYTE(result) = (unsigned char)this->drainAnim;
+    return result;
 }
 }
 } // namespace gamemd
@@ -985,13 +974,10 @@ int __thiscall AircraftClass::_vt49(#377 *this)
 namespace gamemd {
 int AircraftClass::CheckReloadTimer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AircraftClass::_vt50(#377 *this)
 {
-  int result; // eax
-
-  LOBYTE(result) = (unsigned char)this->drainAnim; /*0x41c020*/
-  return result; /*0x41c026*/
+    int result;
+    LOBYTE(result) = (unsigned char)this->drainAnim;
+    return result;
 }
 }
 } // namespace gamemd
@@ -1000,10 +986,8 @@ int __thiscall AircraftClass::_vt50(#377 *this)
 namespace gamemd {
 char AircraftClass::CheckDockState()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MiniStub_41c070(_BYTE *this)
 {
-  return *(this + 1718); /*0x41c076*/
+    return this->FootClass_field_6B6;
 }
 }
 } // namespace gamemd
@@ -1024,10 +1008,8 @@ int __thiscall AircraftClass::_vt36(_DWORD *this)
 namespace gamemd {
 int AircraftClass::CheckMissionFail()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AircraftClass::_vt34(_DWORD *this)
 {
-  return *(this + 433); /*0x41c206*/
+    return this->Type;
 }
 }
 } // namespace gamemd

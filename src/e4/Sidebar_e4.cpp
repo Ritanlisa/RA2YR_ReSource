@@ -688,52 +688,49 @@ int __thiscall Sidebar::ActivateTab(int this, IUnknown *aP1)
 namespace gamemd {
 char Sidebar::FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Sidebar::FindProductionType(_DWORD *this, FactoryClass *aP1, MouseClass *aP2, int a4)
 {
-  int v5; // eax
-  int v6; // edx
-  int v7; // eax
-  _DWORD *v8; // ecx
-  int v9; // esi
-  _DWORD *i; // edx
-
-  if ( aP2 == (MouseClass *)15 || aP2 == (MouseClass *)16 ) /*0x6a6155*/
+    int v5;
+    int v6;
+    int v7;
+    int *v8;
+    int v9;
+    int *i;
+    if ( aP2 == (MouseClass *)15 || aP2 == (MouseClass *)16 )
   {
-    v5 = 2; /*0x6a61ac*/
+    v5 = 2;
   }
-  else if ( aP2 == (MouseClass *)1 || aP2 == (MouseClass *)40 || aP2 == (MouseClass *)2 || aP2 == (MouseClass *)3 ) /*0x6a6169*/
+    else if ( aP2 == (MouseClass *)1 || aP2 == (MouseClass *)40 || aP2 == (MouseClass *)2 || aP2 == (MouseClass *)3 )
   {
-    v5 = 3; /*0x6a61a5*/
+    v5 = 3;
   }
-  else if ( aP2 == (MouseClass *)6 || aP2 == (MouseClass *)7 ) /*0x6a6173*/
+    else if ( aP2 == (MouseClass *)6 || aP2 == (MouseClass *)7 )
   {
-    v5 = GetHouseTechLevel((int)aP2, a4) == 5; /*0x6a61a1*/
+    v5 = GetHouseTechLevel((int)aP2, a4) == 5;
   }
-  else if ( aP2 == (MouseClass *)57 || aP2 == (MouseClass *)32 || aP2 == (MouseClass *)31 ) /*0x6a6182*/
+    else if ( aP2 == (MouseClass *)57 || aP2 == (MouseClass *)32 || aP2 == (MouseClass *)31 )
   {
-    v5 = 1; /*0x6a6189*/
+    v5 = 1;
   }
-  else
+    else
   {
-    v5 = -1; /*0x6a6184*/
+    v5 = -1;
   }
-  v6 = 997 * v5; /*0x6a61bb*/
-  v7 = 0; /*0x6a61be*/
-  v8 = this + v6 + 1361; /*0x6a61c0*/
-  v9 = *(this + v6 + 1382); /*0x6a61c7*/
-  if ( v9 <= 0 ) /*0x6a61d0*/
-    return 0; /*0x6a61e6*/
-  for ( i = v8 + 22; (MouseClass *)i[1] != aP2 || *i != a4; i += 13 ) /*0x6a61d2*/
+    v6 = 997 * v5;
+    v7 = 0;
+    v8 = this + v6 + 1361;
+    v9 = *(this + v6 + 1382);
+    if ( v9 <= 0 )
+    return 0;
+    for ( i = v8 + 22; (MouseClass *)i[1] != aP2 || *i != a4; i += 13 )
   {
-    if ( ++v7 >= v9 ) /*0x6a61e4*/
-      return 0; /*0x6a61e4*/
+    if ( ++v7 >= v9 )
+    return 0;
   }
-  v8[13 * v7 + 25] = aP1; /*0x6a61fa*/
-  *((_BYTE *)v8 + 61) = 1; /*0x6a61fe*/
-  *((_BYTE *)v8 + 60) = 1; /*0x6a6202*/
-  MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6a620b*/
-  return 1; /*0x6a61e6*/
+    v8[13 * v7 + 25] = aP1;
+    *((char *)(v8) + 61) = 1;
+    *((char *)(v8) + 60) = 1;
+    MapClass::MarkForRedraw(&DataGlobal_87F7E8, 0);
+    return 1;
 }
 }
 } // namespace gamemd

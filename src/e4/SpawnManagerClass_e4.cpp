@@ -502,34 +502,27 @@ namespace ra2 {
 namespace game {
 int SpawnManagerClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SpawnManagerClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-  int v4; // edx
-  int i; // edi
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6b80c2*/
-  if ( result >= 0 ) /*0x6b80c9*/
+    int result;
+    int v4;
+    int i;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
   {
-    v4 = *a1; /*0x6b80ce*/
-    aP2 = *(_DWORD *)&aP0->UINameLabel[11]; /*0x6b80da*/
-    result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v4 + 16))(a1, &aP2, 4, 0); /*0x6b80de*/
-    if ( result >= 0 ) /*0x6b80e3*/
+    v4 = *a1;
+    aP2 = *(int *)&aP0->UINameLabel[11];
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
+    if ( result >= 0 )
     {
-      for ( i = 0; i < aP2; ++i ) /*0x6b80ed*/
+    for ( i = 0; i < aP2; ++i )
       {
-        result = (*(int (__stdcall **)(int *, _DWORD, int, _DWORD))(*a1 + 16))( /*0x6b80fd*/
-                   a1,
-                   *(_DWORD *)(*(_DWORD *)&aP0->zero_3C + 4 * i),
-                   24,
-                   0);
-        if ( result < 0 ) /*0x6b8102*/
-          break; /*0x6b8102*/
+    result = (*(int (__stdcall **)(int *, int, int, int))(*a1 + 16))( a1, *(int *)(*(int *)&aP0->zero_3C + 4 * i), 24, 0);
+    if ( result < 0 )
+    break;
       }
     }
   }
-  return result; /*0x6b810d*/
+    return result;
 }
 }
 } // namespace game
@@ -612,13 +605,11 @@ void __thiscall SpawnManagerClass_25_::_vt03(int this)
 namespace gamemd {
 unsigned int SpawnManagerClass_25::LoadState(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall SpawnManagerClass_25_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->SpawnManagerClass_25_field_0xC ) /*0x6b8190*/
-    return (unsigned int)(a2 - this->SpawnManagerClass_25_field_0x4) >> 2; /*0x6b81a5*/
-  else
-    return 0; /*0x6b8197*/
+    if ( (unsigned char)this->SpawnManagerClass_25_field_0xC )
+    return (unsigned int)(a2 - this->SpawnManagerClass_25_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

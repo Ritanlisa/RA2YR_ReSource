@@ -6,27 +6,18 @@
 namespace gamemd {
 rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, ReferenceCounted * Source, char ** a4, ReferenceCounted * aP5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__fastcall ArtConfig_Read(
-        rc_ptr_base *a1,
-        int edx0,
-        _DWORD *a2,
-        ReferenceCounted *Source,
-        char **a4,
-        ReferenceCounted *aP5)
 {
-  char *v8; // eax
-  ReferenceCounted *v9; // edi
-
-  v8 = (char *)__2_YAPAXI_Z(0x30u); /*0x76f918*/
-  if ( v8 ) /*0x76f922*/
-    v9 = (ReferenceCounted *)WorldDominationTour::Territory::Constructor(v8, edx0, a2, Source, (const char **)a4, aP5); /*0x76f940*/
-  else
-    v9 = 0; /*0x76f944*/
-  ComPtr::Constructor(a1); /*0x76f948*/
-  a1->vfptr = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76f94f*/
-  ComPtr::Set(a1, (int)v9); /*0x76f956*/
-  return (rc_ptr *)a1; /*0x76f95d*/
+    char *v8;
+    ReferenceCounted *v9;
+    v8 = (char *)__2_YAPAXI_Z(0x30u);
+    if ( v8 )
+    v9 = (ReferenceCounted *)WorldDominationTour::Territory::Constructor(v8, edx0, a2, Source, (const char **)a4, aP5);
+    else
+    v9 = 0;
+    ComPtr::Constructor(a1);
+    a1->vfptr = &vt_rc_ptr_WorldDominationTour_Territory;
+    ComPtr::Set(a1, (int)v9);
+    return (rc_ptr *)a1;
 }
 }
 } // namespace gamemd

@@ -272,22 +272,18 @@ int *__thiscall Coord::WorldToScreen(int this, MouseClass *aP1, MouseClass *aP2,
 namespace gamemd {
 int * Coord::To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__stdcall Coord::To_ScreenRaw(AbstractClass *aP0, IUnknown *aP1)
 {
-  int v2; // edi
-  int v3; // esi
-  int v4; // esi
-  int v6; // [esp+10h] [ebp-4h]
-
-  v6 = aP1->field_4; /*0x6d1f1f*/
-  v2 = (-60 * v6 / 2 + 60 * aP1->field_0 / 2) / 256; /*0x6d1f95*/
-  v3 = (30 * v6 / 2 + 30 * aP1->field_0 / 2) / 256; /*0x6d1f98*/
-  v4 = v3 /*0x6d1fc4*/
-     - Math::RoundToInt((double)aP1->field_8 * *(double *)&stru_B05488.__pad_579C[8484] + (double)(aP1->field_8 >= 728) + 0.5);
-  *(_DWORD *)aP0->__pad_0 = v2; /*0x6d1fca*/
-  *(_DWORD *)&aP0->__pad_0[4] = v4; /*0x6d1fcc*/
-  return (int *)aP0->__pad_0; /*0x6d1fcf*/
+    int v2;
+    int v3;
+    int v4;
+    int v6;
+    v6 = aP1->field_4;
+    v2 = (-60 * v6 / 2 + 60 * aP1->field_0 / 2) / 256;
+    v3 = (30 * v6 / 2 + 30 * aP1->field_0 / 2) / 256;
+    v4 = v3 - Math::RoundToInt((double)aP1->field_8 * *(double *)&DataGlobal_B05488.__pad_579C[8484] + (double)(aP1->field_8 >= 728) + 0.5);
+    *(int *)aP0->__pad_0 = v2;
+    *(int *)&aP0->__pad_0[4] = v4;
+    return (int *)aP0->__pad_0;
 }
 }
 } // namespace gamemd
@@ -296,10 +292,8 @@ int *__stdcall Coord::To_ScreenRaw(AbstractClass *aP0, IUnknown *aP1)
 namespace gamemd {
 long long Coord::ScaleToScreenY()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 __thiscall Coord::ScaleToScreenY(void *this)
 {
-  return Math::RoundToInt(((double)(int)this - 0.5) * MEMORY[0xB0CDD8]); /*0x6d213b*/
+    return Math::RoundToInt(((double)(int)this - 0.5) * LightningStorm_CloudHeightFactor);
 }
 }
 } // namespace gamemd

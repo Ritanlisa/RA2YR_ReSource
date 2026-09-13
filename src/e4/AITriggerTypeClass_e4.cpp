@@ -690,13 +690,11 @@ void __thiscall AITriggerTypeClass_40_::sub_420370(int this)
 namespace gamemd {
 unsigned int AITriggerTypeClass_40::PointerToIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall AITriggerTypeClass_40_::sub_4203A0(int this, int a2)
 {
-  if ( (unsigned char)this->AITriggerTypeClass_40_field_0xC ) /*0x4203a0*/
-    return (unsigned int)(a2 - this->AITriggerTypeClass_40_field_0x4) >> 2; /*0x4203b5*/
-  else
-    return 0; /*0x4203a7*/
+    if ( (unsigned char)this->AITriggerTypeClass_40_field_0xC )
+    return (unsigned int)(a2 - this->AITriggerTypeClass_40_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -848,13 +846,11 @@ int __thiscall AITriggerTypeClass_40_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int AITriggerTypeClass_40::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall AITriggerTypeClass_40_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->AITriggerTypeClass_40_field_0xC ) /*0x420530*/
-    return (unsigned int)(a2 - this->AITriggerTypeClass_40_field_0x4) >> 2; /*0x420545*/
-  else
-    return 0; /*0x420537*/
+    if ( (unsigned char)this->AITriggerTypeClass_40_field_0xC )
+    return (unsigned int)(a2 - this->AITriggerTypeClass_40_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

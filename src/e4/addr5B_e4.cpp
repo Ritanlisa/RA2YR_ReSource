@@ -61,17 +61,15 @@ double *__thiscall sub_5B1D90(double *this)
 namespace gamemd {
 int sub_5B3AC0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5B3AC0()
 {
-  MEMORY[0xABEFE4] = 0; /*0x5b3acc*/
-  MEMORY[0xABEFDC] = (int)&vt_GenericNode; /*0x5b3ad2*/
-  MEMORY[0xABEFE8] = (int)&vt_GenericNode; /*0x5b3ad7*/
-  MEMORY[0xABEFEC] = 0; /*0x5b3adc*/
-  MEMORY[0xABEFF0] = (int)&MEMORY[0xABEFDC]; /*0x5b3ae2*/
-  MEMORY[0xABEFE0] = (int)&MEMORY[0xABEFE8]; /*0x5b3aec*/
-  MEMORY[0xABEFD8] = (int)&vt_List_MixFileClass; /*0x5b3af6*/
-  return atexit(sub_5B3B10); /*0x5b3b06*/
+    DataGlobal_ABEFE4 = 0;
+    DataGlobal_ABEFDC = (int)&vt_GenericNode;
+    DataGlobal_ABEFE8 = (int)&vt_GenericNode;
+    DataGlobal_ABEFEC = 0;
+    g_MixFilePool_Root = (int)&DataGlobal_ABEFDC;
+    DataGlobal_ABEFE0 = (int)&DataGlobal_ABEFE8;
+    DataGlobal_ABEFD8 = (int)&vt_List_MixFileClass;
+    return atexit(sub_5B3B10);
 }
 }
 } // namespace gamemd
@@ -142,31 +140,28 @@ LABEL_3:
 namespace gamemd {
 char E4Recv_5B3E90::sub_5B3E90()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_5B3E90(void *this)
 {
-  int i; // esi
-  ObjectClass Filename; // [esp+8h] [ebp-304h] BYREF
-  char Ext[256]; // [esp+108h] [ebp-204h] BYREF
-  char Buffer[260]; // [esp+208h] [ebp-104h] BYREF
-
-  for ( i = (int)*(&g_MatrixTransformState + 116); ; i = *(_DWORD *)(i + 4) ) /*0x5b3e97*/
+    int i;
+    ObjectClass Filename;
+    char Ext[256];
+    char Buffer[260];
+    for ( i = (int)*(&g_MatrixTransformState + 116); ; i = *(int *)(i + 4) )
   {
-    if ( !i || !*(_DWORD *)(i + 4) || !*(_DWORD *)(i + 8) ) /*0x5b3eb3*/
-      return 0; /*0x5b3f42*/
-    _splitpath(*(const char **)(i + 12), 0, 0, &Filename, Ext); /*0x5b3ed3*/
-    _makepath(Buffer, 0, 0, &Filename, Ext); /*0x5b3ef1*/
-    if ( !_strcmpi(Buffer, this) ) /*0x5b3eff*/
-      break; /*0x5b3eff*/
+    if ( !i || !*(int *)(i + 4) || !*(int *)(i + 8) )
+    return 0;
+    _splitpath(*(const char **)(i + 12), 0, 0, &Filename, Ext);
+    _makepath(Buffer, 0, 0, &Filename, Ext);
+    if ( !_strcmpi(Buffer, this) )
+    break;
   }
-  if ( *(_DWORD *)(i + 36) ) /*0x5b3f14*/
+    if ( *(int *)(i + 36) )
   {
-    if ( *(_BYTE *)(i + 18) ) /*0x5b3f1b*/
-      __3_YAXPAX_Z(*(void **)(i + 36)); /*0x5b3f23*/
+    if ( *(char *)(i + 18) )
+    __3_YAXPAX_Z(*(void **)(i + 36));
   }
-  *(_DWORD *)(i + 36) = 0; /*0x5b3f2b*/
-  *(_BYTE *)(i + 18) = 0; /*0x5b3f32*/
-  return 1; /*0x5b3f36*/
+    *(int *)(i + 36) = 0;
+    *(char *)(i + 18) = 0;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -921,55 +916,49 @@ void __thiscall sub_5B6DA0(HWND *this, wchar_t *Source)
 namespace gamemd {
 HWND sub_5B6F30()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND sub_5B6F30()
 {
-  wchar_t *StringCSF; // eax
-  HWND MessageBox; // eax
-  HWND v2; // ebx
-  int v3; // edi
-  int v4; // esi
-  HWND result; // eax
-  _BYTE v6[4]; // [esp+8h] [ebp-1FCh] BYREF
-  _DWORD v7[62]; // [esp+Ch] [ebp-1F8h] BYREF
-  __int16 v8; // [esp+104h] [ebp-100h]
-  _DWORD v9[6]; // [esp+108h] [ebp-FCh] BYREF
-  int v10; // [esp+120h] [ebp-E4h]
-
-  memset(v7, 0, sizeof(v7)); /*0x5b6f45*/
-  v8 = 0; /*0x5b6f51*/
-  LOBYTE(v7[6]) = MEMORY[0xA8DB30]; /*0x5b6f58*/
-  v7[0] = 102; /*0x5b6f67*/
-  BYTE1(v7[7]) = MEMORY[0xA8B394]; /*0x5b6f6f*/
-  Stream::WriteBlock((int)&MEMORY[0xA8EA70], (int)v7, 250, 1); /*0x5b6f73*/
-  StringCSF = GetStringCSF(aTxtSigningOff, 0, g_Str_File_ModemGst_cpp, 1683); /*0x5b6f8b*/
-  MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x5b6f94*/
-  v2 = MessageBox; /*0x5b6f99*/
-  if ( MessageBox ) /*0x5b6f9d*/
-    Dialog::Show(MessageBox); /*0x5b6fa1*/
-  v3 = MEMORY[0x887340]; /*0x5b6fab*/
-  if ( MEMORY[0x887338] != -1 ) /*0x5b6fb4*/
-    v3 += Timer::GetTicks() - MEMORY[0x887338]; /*0x5b6fc6*/
-  while ( Count::GetCountQueue(&MEMORY[0xA8EA70]) ) /*0x5b6fcd*/
+    wchar_t *StringCSF;
+    HWND MessageBox;
+    HWND v2;
+    int v3;
+    int v4;
+    HWND result;
+    char v6[4];
+    int v7[62];
+    short v8;
+    int v9[6];
+    int v10;
+    memset(v7, 0, sizeof(v7));
+    v8 = 0;
+    LOBYTE(v7[6]) = g_EventDispatchState;
+    v7[0] = 102;
+    BYTE1(v7[7]) = g_TauntCommandState;
+    Stream::WriteBlock((int)&g_EventManager, (int)v7, 250, 1);
+    StringCSF = GetStringCSF(aTxtSigningOff, 0, g_Str_File_ModemGst_cpp, 1683);
+    MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0);
+    v2 = MessageBox;
+    if ( MessageBox )
+    Dialog::Show(MessageBox);
+    v3 = g_PerformanceTickOffset;
+    if ( g_LastPerformanceTick != -1 )
+    v3 += Timer::GetTicks() - g_LastPerformanceTick;
+    while ( Count::GetCountQueue(&g_EventManager) )
   {
-    v4 = MEMORY[0x887340]; /*0x5b6fe0*/
-    if ( MEMORY[0x887338] != -1 ) /*0x5b6fe9*/
-      v4 += Timer::GetTicks() - MEMORY[0x887338]; /*0x5b6ffb*/
-    if ( (unsigned int)(v4 - v3) >= 0x12C /*0x5b7040*/
-      || ObjectTypeClass::CreateInstance((int)&MEMORY[0xA8EA70], (int)v9, (int)v6) > 0
-      && v9[0] == 102
-      && (unsigned __int8)v10 == MEMORY[0xA8DB30] )
+    v4 = g_PerformanceTickOffset;
+    if ( g_LastPerformanceTick != -1 )
+    v4 += Timer::GetTicks() - g_LastPerformanceTick;
+    if ( (unsigned int)(v4 - v3) >= 0x12C || ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v9, (int)v6) > 0 && v9[0] == 102 && (unsigned char)v10 == g_EventDispatchState )
     {
-      break; /*0x5b7040*/
+    break;
     }
-    Event::Dispatch(); /*0x5b7042*/
-    MessageLoop(); /*0x5b7047*/
-    Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x5b7051*/
+    Event::Dispatch();
+    MessageLoop();
+    Stream::ReadPacket((int)&g_EventManager);
   }
-  result = (HWND)Network::CleanupOnDisconnect(); /*0x5b7069*/
-  if ( v2 ) /*0x5b7070*/
-    return Dialog::Destroy(v2); /*0x5b7074*/
-  return result; /*0x5b7079*/
+    result = (HWND)Network::CleanupOnDisconnect();
+    if ( v2 )
+    return Dialog::Destroy(v2);
+    return result;
 }
 }
 } // namespace gamemd
@@ -1167,55 +1156,49 @@ void __thiscall sub_5BAA80(HWND *this, wchar_t *Format, unsigned int a3, int a4)
 namespace gamemd {
 HWND sub_5BAB00()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND sub_5BAB00()
 {
-  wchar_t *StringCSF; // eax
-  HWND MessageBox; // eax
-  HWND v2; // ebx
-  int v3; // edi
-  int v4; // esi
-  HWND result; // eax
-  _BYTE v6[4]; // [esp+8h] [ebp-1FCh] BYREF
-  _DWORD v7[62]; // [esp+Ch] [ebp-1F8h] BYREF
-  __int16 v8; // [esp+104h] [ebp-100h]
-  _DWORD v9[6]; // [esp+108h] [ebp-FCh] BYREF
-  int v10; // [esp+120h] [ebp-E4h]
-
-  memset(v7, 0, sizeof(v7)); /*0x5bab15*/
-  v8 = 0; /*0x5bab21*/
-  LOBYTE(v7[6]) = MEMORY[0xA8DB30]; /*0x5bab28*/
-  v7[0] = 102; /*0x5bab37*/
-  BYTE1(v7[7]) = MEMORY[0xA8B394]; /*0x5bab3f*/
-  Stream::WriteBlock((int)&MEMORY[0xA8EA70], (int)v7, 250, 1); /*0x5bab43*/
-  StringCSF = GetStringCSF(aTxtSigningOff, 0, g_Str_File_ModemHst_cpp, 2398); /*0x5bab5b*/
-  MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x5bab64*/
-  v2 = MessageBox; /*0x5bab69*/
-  if ( MessageBox ) /*0x5bab6d*/
-    Dialog::Show(MessageBox); /*0x5bab71*/
-  v3 = MEMORY[0x887340]; /*0x5bab7b*/
-  if ( MEMORY[0x887338] != -1 ) /*0x5bab84*/
-    v3 += Timer::GetTicks() - MEMORY[0x887338]; /*0x5bab96*/
-  while ( Count::GetCountQueue(&MEMORY[0xA8EA70]) ) /*0x5bab9d*/
+    wchar_t *StringCSF;
+    HWND MessageBox;
+    HWND v2;
+    int v3;
+    int v4;
+    HWND result;
+    char v6[4];
+    int v7[62];
+    short v8;
+    int v9[6];
+    int v10;
+    memset(v7, 0, sizeof(v7));
+    v8 = 0;
+    LOBYTE(v7[6]) = g_EventDispatchState;
+    v7[0] = 102;
+    BYTE1(v7[7]) = g_TauntCommandState;
+    Stream::WriteBlock((int)&g_EventManager, (int)v7, 250, 1);
+    StringCSF = GetStringCSF(aTxtSigningOff, 0, g_Str_File_ModemHst_cpp, 2398);
+    MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0);
+    v2 = MessageBox;
+    if ( MessageBox )
+    Dialog::Show(MessageBox);
+    v3 = g_PerformanceTickOffset;
+    if ( g_LastPerformanceTick != -1 )
+    v3 += Timer::GetTicks() - g_LastPerformanceTick;
+    while ( Count::GetCountQueue(&g_EventManager) )
   {
-    v4 = MEMORY[0x887340]; /*0x5babb0*/
-    if ( MEMORY[0x887338] != -1 ) /*0x5babb9*/
-      v4 += Timer::GetTicks() - MEMORY[0x887338]; /*0x5babcb*/
-    if ( (unsigned int)(v4 - v3) >= 0x12C /*0x5bac10*/
-      || ObjectTypeClass::CreateInstance((int)&MEMORY[0xA8EA70], (int)v9, (int)v6) > 0
-      && v9[0] == 102
-      && (unsigned __int8)v10 == MEMORY[0xA8DB30] )
+    v4 = g_PerformanceTickOffset;
+    if ( g_LastPerformanceTick != -1 )
+    v4 += Timer::GetTicks() - g_LastPerformanceTick;
+    if ( (unsigned int)(v4 - v3) >= 0x12C || ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v9, (int)v6) > 0 && v9[0] == 102 && (unsigned char)v10 == g_EventDispatchState )
     {
-      break; /*0x5bac10*/
+    break;
     }
-    Event::Dispatch(); /*0x5bac12*/
-    MessageLoop(); /*0x5bac17*/
-    Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x5bac21*/
+    Event::Dispatch();
+    MessageLoop();
+    Stream::ReadPacket((int)&g_EventManager);
   }
-  result = (HWND)Network::CleanupOnDisconnect(); /*0x5bac39*/
-  if ( v2 ) /*0x5bac40*/
-    return Dialog::Destroy(v2); /*0x5bac44*/
-  return result; /*0x5bac49*/
+    result = (HWND)Network::CleanupOnDisconnect();
+    if ( v2 )
+    return Dialog::Destroy(v2);
+    return result;
 }
 }
 } // namespace gamemd
@@ -1804,21 +1787,18 @@ char __thiscall sub_5BCE10(int *this, int a2)
 namespace gamemd {
 char sub_5BD240(int a1, size_t BufferCount, wchar_t Format)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __cdecl sub_5BD240(int a1, size_t BufferCount, wchar_t Format)
 {
-  char result; // al
-  char v4[256]; // [esp+0h] [ebp-300h] BYREF
-  wchar_t Buffer[256]; // [esp+100h] [ebp-200h] BYREF
-
-  result = MEMORY[0xABF23A]; /*0x5bd240*/
-  if ( MEMORY[0xABF23A] ) /*0x5bd24d*/
+    char result;
+    char v4[256];
+    wchar_t Buffer[256];
+    result = g_MiscFlag;
+    if ( g_MiscFlag )
   {
-    vswprintf(Buffer, BufferCount, &Format, *(va_list *)v4); /*0x5bd267*/
-    sprintf(v4, stru_82D020, Buffer); /*0x5bd27e*/
-    return Debug::ScrollText(a1, v4); /*0x5bd292*/
+    vswprintf(Buffer, BufferCount, &Format, *(va_list *)v4);
+    sprintf(v4, DataGlobal_82D020, Buffer);
+    return Debug::ScrollText(a1, v4);
   }
-  return result; /*0x5bd297*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1827,23 +1807,20 @@ char __cdecl sub_5BD240(int a1, size_t BufferCount, wchar_t Format)
 namespace gamemd {
 char E4Recv_5BD2E0::sub_5BD2E0(ObjectClass * aP1, int a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_5BD2E0(_DWORD *this, ObjectClass *aP1, int a3, int a4, int a5)
 {
-  char result; // al
-  CellStruct Buffer; // [esp+4h] [ebp-400h] BYREF
-
-  result = *((_BYTE *)&(&g_MatrixTransformState)[22] + 10); /*0x5bd2e0*/
-  if ( *((_BYTE *)&(&g_MatrixTransformState)[22] + 10) ) /*0x5bd2f0*/
+    char result;
+    CellStruct Buffer;
+    result = *((char *)&(&g_MatrixTransformState)[22] + 10);
+    if ( *((char *)&(&g_MatrixTransformState)[22] + 10) )
   {
-    *(this + 2503) = a3; /*0x5bd300*/
-    *(this + 2504) = a4; /*0x5bd306*/
-    if ( *((_BYTE *)&(&g_MatrixTransformState)[22] + 10) ) /*0x5bd313*/
-      *(this + 2500) = a5; /*0x5bd31c*/
-    sprintf((char *const)&Buffer, &stru_82D020, (INIClass *)aP1); /*0x5bd334*/
-    return Debug::ScrollText((int)this, &Buffer); /*0x5bd343*/
+    this->M10012 = a3;
+    this->M10016 = a4;
+    if ( *((char *)&(&g_MatrixTransformState)[22] + 10) )
+    this->M10000 = a5;
+    sprintf((char *const)&Buffer, &DataGlobal_82D020, (INIClass *)aP1);
+    return Debug::ScrollText((int)this, &Buffer);
   }
-  return result; /*0x5bd348*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1868,17 +1845,15 @@ _DWORD *__thiscall sub_5BD560(_DWORD *this)
 namespace gamemd {
 unsigned char * E4Recv_5BDA40::sub_5BDA40()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__thiscall sub_5BDA40(_BYTE *this)
 {
-  SmallFunc_692290((int)this); /*0x5bda43*/
-  *(_DWORD *)this = &MouseClass::`vftable'; /*0x5bda4a*/
-  *(this + 21852) = 0; /*0x5bda50*/
-  this->M21856 = 0; /*0x5bda56*/
-  this->M21860 = 0; /*0x5bda5c*/
-  this->M21864 = 0; /*0x5bda62*/
-  this->M21784 = &vt_MouseClass; /*0x5bda68*/
-  return this; /*0x5bda74*/
+    SmallFunc_692290((int)this);
+    *(void**)this = vt_MouseClass;
+    this->M21852 = 0;
+    this->M21856 = 0;
+    this->M21860 = 0;
+    this->M21864 = 0;
+    this->M21784 = &vt_MouseClass;
+    return this;
 }
 }
 } // namespace gamemd
@@ -1960,17 +1935,15 @@ void __fastcall sub_5BF390(int a1, char a2)
 namespace gamemd {
 int sub_5BF7D0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5BF7D0()
 {
-  MEMORY[0xABF394] = 0; /*0x5bf7d7*/
-  MEMORY[0xABF398] = 0; /*0x5bf7dc*/
-  MEMORY[0xABF39C] = 1; /*0x5bf7e1*/
-  MEMORY[0xABF39D] = 0; /*0x5bf7e8*/
-  MEMORY[0xABF390] = (int)&vt_DynamicVectorClass_char_const; /*0x5bf7ed*/
-  MEMORY[0xABF3A4] = 10; /*0x5bf7f7*/
-  MEMORY[0xABF3A0] = 0; /*0x5bf801*/
-  return atexit(sub_5BF810); /*0x5bf80c*/
+    DataGlobal_ABF394 = 0;
+    DataGlobal_ABF398 = 0;
+    DataGlobal_ABF39C = 1;
+    DataGlobal_ABF39D = 0;
+    MovieInfo_Array = (int)&vt_DynamicVectorClass_char_const;
+    DataGlobal_ABF3A4 = 10;
+    DataGlobal_ABF3A0 = 0;
+    return atexit(sub_5BF810);
 }
 }
 } // namespace gamemd
@@ -1979,17 +1952,15 @@ int sub_5BF7D0()
 namespace gamemd {
 void sub_5BF810()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_5BF810()
 {
-  MEMORY[0xABF390] = (int)&vt_VectorClass_char_const; /*0x5bf818*/
-  if ( MEMORY[0xABF394] && MEMORY[0xABF39D] ) /*0x5bf82c*/
+    MovieInfo_Array = (int)&vt_VectorClass_char_const;
+    if ( DataGlobal_ABF394 && DataGlobal_ABF39D )
   {
-    __3_YAXPAX_Z(MEMORY[0xABF394]); /*0x5bf82f*/
-    MEMORY[0xABF394] = 0; /*0x5bf837*/
+    __3_YAXPAX_Z(DataGlobal_ABF394);
+    DataGlobal_ABF394 = 0;
   }
-  MEMORY[0xABF39D] = 0; /*0x5bf83d*/
-  MEMORY[0xABF398] = 0; /*0x5bf843*/
+    DataGlobal_ABF39D = 0;
+    DataGlobal_ABF398 = 0;
 }
 }
 } // namespace gamemd

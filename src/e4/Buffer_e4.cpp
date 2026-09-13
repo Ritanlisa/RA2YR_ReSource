@@ -46,15 +46,12 @@ DynamicVector *__thiscall Buffer::Constructor_VectorClass_ObjectClass___(_DWORD 
 // 0x632B70
 int * Buffer::RotateBufferCrypto(int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall Crypto_RotateBuffer(const void *this, int *a2, int a3)
 {
-  int v4[64]; // [esp+8h] [ebp-100h] BYREF
-
-  qmemcpy(v4, this, sizeof(v4)); /*0x632b8c*/
-  RotateBitBufferLeft(v4, a3, 64); /*0x632b92*/
-  qmemcpy(a2, v4, 0x100u); /*0x632ba9*/
-  return a2; /*0x632bab*/
+    int v4[64];
+    qmemcpy(v4, this, sizeof(v4));
+    RotateBitBufferLeft(v4, a3, 64);
+    qmemcpy(a2, v4, 0x100u);
+    return a2;
 }
 }
 

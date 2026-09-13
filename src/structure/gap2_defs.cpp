@@ -1021,31 +1021,25 @@ int __thiscall BuildingLightClass::SD_vt10(int this, int a2, ObjectClass *aP2)
 } }
 // 0x436E80
 namespace gamemd { int BuildingLightClass::CalculateDistanceIntensity() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_436E80(_DWORD **this)
 {
-  _DWORD *v2; // edi
-  _DWORD *v3; // eax
-  double v4; // st7
-  int v5; // edi
-  int v6; // esi
-  int v8; // [esp+20h] [ebp-1Ch]
-  _BYTE v9[12]; // [esp+24h] [ebp-18h] BYREF
-  _BYTE v10[12]; // [esp+30h] [ebp-Ch] BYREF
-
-  v2 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(this + 57) + 72))(*(this + 57), v9); /*0x436e9b*/
-  v3 = (_DWORD *)((int (__thiscall *)(_DWORD **, _BYTE *))(*this)[18])(this, v10); /*0x436ea2*/
-  v8 = v3[2] - v2[2]; /*0x436eca*/
-  v4 = Math::Sqrt( /*0x436eef*/
-         (double)(*v3 - *v2) * (double)(*v3 - *v2)
-       + (double)v8 * (double)v8
-       + (double)(v3[1] - v2[1]) * (double)(v3[1] - v2[1]));
-  v5 = Math::RoundToInt(v4); /*0x436efc*/
-  v6 = MEMORY[0x8871E0]->NodGateOne[1]; /*0x436f03*/
-  if ( v5 >= v6 ) /*0x436f0b*/
-    return (v5 - v6) / ((MEMORY[0x8871E0]->NodGateOne[0] - v6) / 10); /*0x436f36*/
-  else
-    return 0; /*0x436f0e*/
+    int *v2;
+    int *v3;
+    double v4;
+    int v5;
+    int v6;
+    int v8;
+    char v9[12];
+    char v10[12];
+    v2 = (int *)(*(int (__thiscall **)(int, char *))(*(void**)this->FollowingObject + 72))(this->FollowingObject, v9);
+    v3 = (int *)((int (__thiscall *)(int **, char *))(*(void**)this)[18])(this, v10);
+    v8 = v3[2] - v2[2];
+    v4 = Math::Sqrt( (double)(*v3 - *v2) * (double)(*v3 - *v2) + (double)v8 * (double)v8 + (double)(v3[1] - v2[1]) * (double)(v3[1] - v2[1]));
+    v5 = Math::RoundToInt(v4);
+    v6 = g_RulesClass_Instance->NodGateOne[1];
+    if ( v5 >= v6 )
+    return (v5 - v6) / ((g_RulesClass_Instance->NodGateOne[0] - v6) / 10);
+    else
+    return 0;
 }
 } }
 // 0x436F40
@@ -1988,10 +1982,8 @@ LABEL_16:
 } }
 // 0x5176A0
 namespace gamemd { bool InfantryClass::SetField6() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall InfantryClass::SetField6(_DWORD *this)
 {
-  return (*this & 1) == 0; /*0x5176a6*/
+    return (*(void**)this & 1) == 0;
 }
 } }
 // 0x517A50
@@ -4414,17 +4406,14 @@ void __thiscall sub_5AEB20(float *this, float a2)
 } }
 // 0x63D540
 namespace gamemd { int BuildingClass::updateAnimationState() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_63D540(char *this)
 {
-  int v1; // eax
-
-  v1 = *(this + 12); /*0x63d540*/
-  if ( v1 == 11 ) /*0x63d547*/
-    return Memory::Alloc76(); /*0x63d549*/
-  if ( v1 == 29 ) /*0x63d551*/
-    return Factory::IdleHandler(); /*0x63d553*/
-  return -1; /*0x63d55b*/
+    int v1;
+    v1 = this->vtable3;
+    if ( v1 == 11 )
+    return Memory::Alloc76();
+    if ( v1 == 29 )
+    return Factory::IdleHandler();
+    return -1;
 }
 } }
 // 0x6A60E0
@@ -4778,10 +4767,8 @@ LABEL_31:
 } }
 // 0x70DDC0
 namespace gamemd { int BuildingClass::checkPlacement() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_70DDC0(_DWORD *this)
 {
-  return *(this + 80); /*0x70ddc6*/
+    return this->currentRank;
 }
 } }
 // 0x7353C0

@@ -220,17 +220,15 @@ BOOL __usercall sub_798DE0@<eax>(int a1@<ebx>, int a2@<ebp>)
 namespace gamemd {
 long long sub_799CD0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 sub_799CD0()
 {
-  memset(&g_WOL_ProcessIdle, 0, 0x10Cu); /*0x799cdd*/
-  byte_84A210 = 1; /*0x799ceb*/
-  memset(&dword_B73BE8, 0, 0x10Cu); /*0x799cf2*/
-  g_WOL_AuthPool = 0; /*0x799cf4*/
-  g_WOL_ChatState = 0; /*0x799cfa*/
-  g_WOL_State = 0; /*0x799d00*/
-  g_WOL_ChannelState = 0; /*0x799d06*/
-  return 0; /*0x799d0c*/
+    memset(&g_WOL_ProcessIdle, 0, 0x10Cu);
+    DataGlobal_84A210 = 1;
+    memset(&DataGlobal_B73BE8, 0, 0x10Cu);
+    g_WOL_AuthPool = 0;
+    g_WOL_ChatState = 0;
+    g_WOL_State = 0;
+    g_WOL_ChannelState = 0;
+    return 0;
 }
 }
 } // namespace gamemd
@@ -239,79 +237,63 @@ __int64 sub_799CD0()
 namespace gamemd {
 int sub_799D30()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_799D30()
 {
-  int result; // eax
-  wchar_t *StringCSF; // eax
-  int v2; // ecx
-  int v3; // eax
-  int v4; // esi
-  char *v5; // eax
-  int v6; // esi
-  char *v7; // eax
-  BOOL v8; // esi
-  int v9; // [esp+18h] [ebp-28h]
-  int v10; // [esp+24h] [ebp-1Ch]
-  void *v11; // [esp+30h] [ebp-10h] BYREF
-  _DWORD v12[3]; // [esp+34h] [ebp-Ch] BYREF
-
-  result = LoginFlowWOL_Reset(); /*0x799d33*/
-  if ( result == 1 ) /*0x799d3b*/
+    int result;
+    wchar_t *StringCSF;
+    int v2;
+    int v3;
+    int v4;
+    char *v5;
+    int v6;
+    char *v7;
+    int v8;
+    int v9;
+    int v10;
+    void *v11;
+    int v12[3];
+    result = LoginFlowWOL_Reset();
+    if ( result == 1 )
   {
-    StringCSF = GetStringCSF(g_Str_TXT_FETCHING_SERVLIST, 0, g_Str_File_wonline_cpp, 24300); /*0x799d52*/
-    WideString::Assign((wchar_t **)&v11, StringCSF); /*0x799d5c*/
-    ShowUIMessage(16, (wchar_t **)&v11, 0); /*0x799d6c*/
-    DeleteAndZero::Alt(&v11); /*0x799d75*/
-    v2 = 8960; /*0x799d7f*/
-    if ( MEMORY[0xA8B244] != 3 ) /*0x799d87*/
-      v2 = 10496; /*0x799d89*/
-    v3 = LoginWOL(v2); /*0x799d8e*/
-    if ( v3 ) /*0x799d96*/
+    StringCSF = GetStringCSF(g_Str_TXT_FETCHING_SERVLIST, 0, g_Str_File_wonline_cpp, 24300);
+    WideString::Assign((wchar_t **)&v11, StringCSF);
+    ShowUIMessage(16, (wchar_t **)&v11, 0);
+    DeleteAndZero::Alt(&v11);
+    v2 = 8960;
+    if ( g_GameOptionsFlags != 3 )
+    v2 = 10496;
+    v3 = LoginWOL(v2);
+    if ( v3 )
     {
-      if ( v3 == 2 ) /*0x799d9b*/
-        return -1; /*0x799da6*/
-      else
-        return -2; /*0x799d9d*/
+    if ( v3 == 2 )
+    return -1;
+    else
+    return -2;
     }
     else
     {
-      if ( MEMORY[0xAC1170] && strlen(g_WOL_ConnectFlag) && String::Length((const char **)&g_WebBrowser) ) /*0x799dd2*/
+    if ( g_UIPointerTable && strlen(g_WOL_ConnectFlag) && String::Length((const char **)&g_WebBrowser) )
       {
-        v4 = *(_DWORD *)MEMORY[0xAC1170]; /*0x799dea*/
-        v9 = g_NetworkRematchState & 0xFFFF00; /*0x799df4*/
-        v5 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x799dfa*/
-        (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, _DWORD, _DWORD))(v4 + 20))( /*0x799e12*/
-          MEMORY[0xAC1170],
-          g_WOL_ConnectFlag,
-          g_WOL_GameConfig,
-          v5,
-          v9,
-          -1,
-          0,
-          0);
-        v6 = *(_DWORD *)MEMORY[0xAC1170]; /*0x799e27*/
-        v10 = g_NetworkRematchState & 0xFFFF00; /*0x799e29*/
-        v7 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x799e2f*/
-        (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(v6 + 56))( /*0x799e47*/
-          MEMORY[0xAC1170],
-          g_WOL_ConnectFlag,
-          g_WOL_GameConfig,
-          v7,
-          v10);
+    v4 = *(int *)g_UIPointerTable;
+    v9 = g_NetworkRematchState & 0xFFFF00;
+    v5 = String::GetOrEmpty((char **)&g_WebBrowser);
+    (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, int, int))(v4 + 20))( g_UIPointerTable, g_WOL_ConnectFlag, g_WOL_GameConfig, v5, v9, -1, 0, 0);
+    v6 = *(int *)g_UIPointerTable;
+    v10 = g_NetworkRematchState & 0xFFFF00;
+    v7 = String::GetOrEmpty((char **)&g_WebBrowser);
+    (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(v6 + 56))( g_UIPointerTable, g_WOL_ConnectFlag, g_WOL_GameConfig, v7, v10);
       }
-      System_Init_72C9C0(); /*0x799e4a*/
-      SimpleDialogControl::Constructor(v12); /*0x799e53*/
-      v12[0] = &off_7F7624; /*0x799e6c*/
-      RunDialog(0x114u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))MainLobbyDlgProcWOL, (LPARAM)v12); /*0x799e70*/
-      System_Init_72CA10(); /*0x799e75*/
-      v8 = MEMORY[0xA8B244] != 0; /*0x799e8b*/
-      v12[0] = &off_7F7624; /*0x799e8d*/
-      OwnerDrawControl::InitVtable(v12); /*0x799e91*/
-      return v8; /*0x799e96*/
+    System_Init_72C9C0();
+    SimpleDialogControl::Constructor(v12);
+    v12[0] = &DataGlobal_7F7624;
+    RunDialog(0x114u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))MainLobbyDlgProcWOL, (LPARAM)v12);
+    System_Init_72CA10();
+    v8 = g_GameOptionsFlags != 0;
+    v12[0] = &DataGlobal_7F7624;
+    OwnerDrawControl::InitVtable(v12);
+    return v8;
     }
   }
-  return result; /*0x799da2*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -320,20 +302,17 @@ int sub_799D30()
 namespace gamemd {
 char sub_72C7E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_72C7E0()
 {
-  char result; // al
-
-  result = MEMORY[0xB0FCFD]; /*0x72c7e0*/
-  if ( !MEMORY[0xB0FCFD] ) /*0x72c7e7*/
+    char result;
+    result = DataGlobal_B0FCFD;
+    if ( !DataGlobal_B0FCFD )
   {
-    if ( MEMORY[0x8A00A4] == 800 ) /*0x72c7f3*/
-      MEMORY[0xB0F9E8] = LoadFileSHP(MEMORY[0x844D84], (bool *)&MEMORY[0xB0FCFC]); /*0x72c805*/
-    result = LoadPaletteSimple(MEMORY[0x844D88], &MEMORY[0xB0FD00], &MEMORY[0xB0FD04]); /*0x72c81a*/
-    MEMORY[0xB0FCFD] = 1; /*0x72c81f*/
+    if ( g_DisplayWidth == 800 )
+    DataGlobal_B0F9E8 = LoadFileSHP(DataGlobal_844D84, (bool *)&DataGlobal_B0FCFC);
+    result = LoadPaletteSimple(DataGlobal_844D88, &DataGlobal_B0FD00, &DataGlobal_B0FD04);
+    DataGlobal_B0FCFD = 1;
   }
-  return result; /*0x72c826*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -342,21 +321,18 @@ char sub_72C7E0()
 namespace gamemd {
 void sub_7A2970()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7A2970()
 {
-  _DWORD v0[3]; // [esp+0h] [ebp-Ch] BYREF
-
-  g_NetworkLobby_Init = 0; /*0x7a297a*/
-  if ( !byte_B77DC2 && ReadWOLLobbyHouseOption() ) /*0x7a2983*/
+    int v0[3];
+    g_NetworkLobby_Init = 0;
+    if ( !DataGlobal_B77DC2 && ReadWOLLobbyHouseOption() )
   {
-    if ( MapSeed::CheckName((const char **)&dword_B76AC4) ) /*0x7a2991*/
+    if ( MapSeed::CheckName((const char **)&DataGlobal_B76AC4) )
     {
-      SimpleDialogControl::Constructor(v0); /*0x7a299e*/
-      v0[0] = &off_7F7624; /*0x7a29b2*/
-      RunDialog(0x122u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))BuddyDlgProcWOL, (LPARAM)v0); /*0x7a29ba*/
-      v0[0] = &off_7F7624; /*0x7a29c3*/
-      OwnerDrawControl::InitVtable(v0); /*0x7a29cb*/
+    SimpleDialogControl::Constructor(v0);
+    v0[0] = &DataGlobal_7F7624;
+    RunDialog(0x122u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))BuddyDlgProcWOL, (LPARAM)v0);
+    v0[0] = &DataGlobal_7F7624;
+    OwnerDrawControl::InitVtable(v0);
     }
   }
 }
@@ -367,36 +343,33 @@ void sub_7A2970()
 namespace gamemd {
 void sub_72C830()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_72C830()
 {
-  void *v0; // esi
-
-  if ( MEMORY[0xB0FCFD] ) /*0x72c83a*/
+    void *v0;
+    if ( DataGlobal_B0FCFD )
   {
-    if ( MEMORY[0xB0FCFC] ) /*0x72c842*/
+    if ( DataGlobal_B0FCFC )
     {
-      v0 = MEMORY[0xB0F9E8]; /*0x72c845*/
-      if ( MEMORY[0xB0F9E8] ) /*0x72c84d*/
+    v0 = DataGlobal_B0F9E8;
+    if ( DataGlobal_B0F9E8 )
       {
-        FileTreeNode::Destroy(MEMORY[0xB0F9E8]); /*0x72c851*/
-        __3_YAXPAX_Z(v0); /*0x72c857*/
+    FileTreeNode::Destroy(DataGlobal_B0F9E8);
+    __3_YAXPAX_Z(v0);
       }
-      MEMORY[0xB0FCFC] = 0; /*0x72c85f*/
+    DataGlobal_B0FCFC = 0;
     }
-    MEMORY[0xB0F9E8] = 0; /*0x72c86b*/
-    if ( MEMORY[0xB0FD00] ) /*0x72c873*/
+    DataGlobal_B0F9E8 = 0;
+    if ( DataGlobal_B0FD00 )
     {
-      __3_YAXPAX_Z(MEMORY[0xB0FD00]); /*0x72c876*/
-      MEMORY[0xB0FD00] = 0; /*0x72c87e*/
+    __3_YAXPAX_Z(DataGlobal_B0FD00);
+    DataGlobal_B0FD00 = 0;
     }
-    if ( MEMORY[0xB0FD04] ) /*0x72c88c*/
+    if ( DataGlobal_B0FD04 )
     {
-      (**(void (__thiscall ***)(int, int))MEMORY[0xB0FD04])(MEMORY[0xB0FD04], 1); /*0x72c892*/
-      MEMORY[0xB0FD04] = 0; /*0x72c894*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FD04)(DataGlobal_B0FD04, 1);
+    DataGlobal_B0FD04 = 0;
     }
   }
-  MEMORY[0xB0FCFD] = 0; /*0x72c89a*/
+    DataGlobal_B0FCFD = 0;
 }
 }
 } // namespace gamemd

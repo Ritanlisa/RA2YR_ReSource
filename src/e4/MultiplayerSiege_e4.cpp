@@ -205,135 +205,120 @@ LABEL_26:
 // 0x5CA9B0
 char MultiplayerSiege::CheckStatus(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall MultiplayerSiege::_vt48(int a1)
 {
-  wchar_t **v1; // eax
-  wchar_t **v2; // edi
-  int v3; // ecx
-  int v4; // eax
-  int v5; // eax
-  int v6; // edx
-  wchar_t **v7; // eax
-  wchar_t **v8; // edi
-  int v9; // ecx
-  int v10; // eax
-  int v11; // eax
-  int v12; // edx
-  wchar_t **v13; // eax
-  wchar_t **v14; // edi
-  int v15; // ecx
-  int v16; // eax
-  int v17; // edx
-
-  v1 = (wchar_t **)__2_YAPAXI_Z(0xCu); /*0x5ca9b4*/
-  if ( v1 ) /*0x5ca9be*/
-    v2 = MPCombatTeam::Constructor(v1); /*0x5ca9c7*/
-  else
-    v2 = 0; /*0x5ca9cb*/
-  v3 = *(_DWORD *)(a1 + 8); /*0x5ca9d1*/
-  if ( *(_DWORD *)(a1 + 16) < v3 /*0x5ca9f6*/
-    || (*(_BYTE *)(a1 + 13) || !v3)
-    && (v4 = *(_DWORD *)(a1 + 20), v4 > 0)
-    && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)a1 + 8))(a1, v3 + v4, 0) )
+    wchar_t **v1;
+    wchar_t **v2;
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    wchar_t **v7;
+    wchar_t **v8;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    wchar_t **v13;
+    wchar_t **v14;
+    int v15;
+    int v16;
+    int v17;
+    v1 = (wchar_t **)__2_YAPAXI_Z(0xCu);
+    if ( v1 )
+    v2 = MPCombatTeam::Constructor(v1);
+    else
+    v2 = 0;
+    v3 = *(int *)(a1 + 8);
+    if ( *(int *)(a1 + 16) < v3 || (*(char *)(a1 + 13) || !v3) && (v4 = *(int *)(a1 + 20), v4 > 0) && (*(unsigned char (__thiscall **)(int, int, int))(*(int *)(a1) + 8))(a1, v3 + v4, 0) )
   {
-    v5 = *(_DWORD *)(a1 + 16); /*0x5ca9fd*/
-    v6 = *(_DWORD *)(a1 + 4); /*0x5caa00*/
-    *(_DWORD *)(a1 + 16) = v5 + 1; /*0x5caa06*/
-    *(_DWORD *)(v6 + 4 * v5) = v2; /*0x5caa09*/
+    v5 = *(int *)(a1 + 16);
+    v6 = *(int *)(a1 + 4);
+    *(int *)(a1 + 16) = v5 + 1;
+    *(int *)(v6 + 4 * v5) = v2;
   }
-  v7 = (wchar_t **)__2_YAPAXI_Z(0xCu); /*0x5caa0e*/
-  if ( v7 ) /*0x5caa18*/
-    v8 = MPCombatTeam::MPTeam(v7); /*0x5caa21*/
-  else
-    v8 = 0; /*0x5caa25*/
-  v9 = *(_DWORD *)(a1 + 8); /*0x5caa27*/
-  if ( *(_DWORD *)(a1 + 16) < v9 /*0x5caa4c*/
-    || (*(_BYTE *)(a1 + 13) || !v9)
-    && (v10 = *(_DWORD *)(a1 + 20), v10 > 0)
-    && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)a1 + 8))(a1, v9 + v10, 0) )
+    v7 = (wchar_t **)__2_YAPAXI_Z(0xCu);
+    if ( v7 )
+    v8 = MPCombatTeam::MPTeam(v7);
+    else
+    v8 = 0;
+    v9 = *(int *)(a1 + 8);
+    if ( *(int *)(a1 + 16) < v9 || (*(char *)(a1 + 13) || !v9) && (v10 = *(int *)(a1 + 20), v10 > 0) && (*(unsigned char (__thiscall **)(int, int, int))(*(int *)(a1) + 8))(a1, v9 + v10, 0) )
   {
-    v11 = *(_DWORD *)(a1 + 16); /*0x5caa53*/
-    v12 = *(_DWORD *)(a1 + 4); /*0x5caa56*/
-    *(_DWORD *)(a1 + 16) = v11 + 1; /*0x5caa5c*/
-    *(_DWORD *)(v12 + 4 * v11) = v8; /*0x5caa5f*/
+    v11 = *(int *)(a1 + 16);
+    v12 = *(int *)(a1 + 4);
+    *(int *)(a1 + 16) = v11 + 1;
+    *(int *)(v12 + 4 * v11) = v8;
   }
-  v13 = (wchar_t **)__2_YAPAXI_Z(0xCu); /*0x5caa64*/
-  if ( v13 ) /*0x5caa6e*/
-    v14 = MPCombatTeam::Constructor2(v13); /*0x5caa77*/
-  else
-    v14 = 0; /*0x5caa7b*/
-  v15 = *(_DWORD *)(a1 + 8); /*0x5caa7d*/
-  if ( *(_DWORD *)(a1 + 16) < v15 /*0x5caaa7*/
-    || ((LOBYTE(v16) = *(_BYTE *)(a1 + 13), (_BYTE)v16) || !v15)
-    && (v16 = *(_DWORD *)(a1 + 20), v16 > 0)
-    && (LOBYTE(v16) = (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)a1 + 8))(a1, v15 + v16, 0), (_BYTE)v16) )
+    v13 = (wchar_t **)__2_YAPAXI_Z(0xCu);
+    if ( v13 )
+    v14 = MPCombatTeam::Constructor2(v13);
+    else
+    v14 = 0;
+    v15 = *(int *)(a1 + 8);
+    if ( *(int *)(a1 + 16) < v15 || ((LOBYTE(v16) = *(char *)(a1 + 13), (char)v16) || !v15) && (v16 = *(int *)(a1 + 20), v16 > 0) && (LOBYTE(v16) = (*(int (__thiscall **)(int, int, int))(*(int *)(a1) + 8))(a1, v15 + v16, 0), (char)v16) )
   {
-    v16 = *(_DWORD *)(a1 + 16); /*0x5caaa9*/
-    v17 = *(_DWORD *)(a1 + 4); /*0x5caaac*/
-    *(_DWORD *)(a1 + 16) = v16 + 1; /*0x5caab2*/
-    *(_DWORD *)(v17 + 4 * v16) = v14; /*0x5caab5*/
+    v16 = *(int *)(a1 + 16);
+    v17 = *(int *)(a1 + 4);
+    *(int *)(a1 + 16) = v16 + 1;
+    *(int *)(v17 + 4 * v16) = v14;
   }
-  return v16; /*0x5caab8*/
+    return v16;
 }
 }
 
 // 0x5CAAC0
 char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall MultiplayerSiege::_vt50(_DWORD *ppv, int a2)
 {
-  int v2; // eax
-  int v3; // esi
-  _DWORD *BuildableFromArray; // esi
-  void *v6; // eax
-  int *v7; // eax
-  int *v8; // esi
-  int v9; // ebx
-  _DWORD *StartCoords; // eax
-  __int16 *CurrentOption; // eax
-  _DWORD v12[3]; // [esp+14h] [ebp-Ch] BYREF
-
-  v2 = 0; /*0x5caad2*/
-  if ( MEMORY[0xA8DA84] > 0 ) /*0x5caadf*/
+    int v2;
+    int v3;
+    int *BuildableFromArray;
+    void *v6;
+    int *v7;
+    int *v8;
+    int v9;
+    int *StartCoords;
+    short *CurrentOption;
+    int v12[3];
+    v2 = 0;
+    if ( Game_PlayerCount > 0 )
   {
-    v3 = MEMORY[0xA8DA78]; /*0x5caae4*/
-    do /*0x5caaf3*/
+    v3 = Game_PlayerInfoArray;
+    do
     {
-      if ( *(_DWORD *)(*(_DWORD *)v3 + 111) == ppv[12] ) /*0x5caaeb*/
-        break; /*0x5caaeb*/
-      ++v2; /*0x5caaed*/
-      v3 += 4; /*0x5caaee*/
+    if ( *(int *)(*(int *)(v3) + 111) == ppv[12] )
+    break;
+    ++v2;
+    v3 += 4;
     }
-    while ( v2 < MEMORY[0xA8DA84] ); /*0x5caaf3*/
+    while ( v2 < Game_PlayerCount );
   }
-  if ( v2 >= MEMORY[0xA8DA84] ) /*0x5caafb*/
+    if ( v2 >= Game_PlayerCount )
   {
-    AI::CreateMCV(ppv, a2); /*0x5cab03*/
-    return 0; /*0x5cab11*/
+    AI::CreateMCV(ppv, a2);
+    return 0;
   }
-  if ( *(_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * v2) + 107) != 1 ) /*0x5cab1c*/
-    return AI::CreateMCV(ppv, a2); /*0x5cab24*/
-  BuildableFromArray = HouseClass::FirstBuildableFromArray(ppv, (int)&MEMORY[0x8871E0]->IvanWarhead[1]); /*0x5cab45*/
-  if ( !BuildableFromArray ) /*0x5cab49*/
-    return 0; /*0x5cab49*/
-  v6 = __2_YAPAXI_Z(0x720u); /*0x5cab50*/
-  if ( !v6 ) /*0x5cab5a*/
-    return 0; /*0x5cab5a*/
-  v7 = (int *)BuildingClass::Construct((int)v6, (int)BuildableFromArray, (int)ppv); /*0x5cab60*/
-  v8 = v7; /*0x5cab65*/
-  if ( !v7 ) /*0x5cab69*/
-    return 0; /*0x5cab69*/
-  v9 = *v7; /*0x5cab6b*/
-  StartCoords = HouseClass::GetStartCoords(ppv, v12); /*0x5cab76*/
-  if ( (*(unsigned __int8 (__thiscall **)(int *, _DWORD *, _DWORD))(v9 + 216))(v8, StartCoords, 0) ) /*0x5cab7e*/
-    return 1; /*0x5cab7e*/
-  CurrentOption = (__int16 *)HouseClass::GetCurrentOption(ppv, &a2); /*0x5cab91*/
-  if ( FindInfantryDeployPosition(v8, CurrentOption, 1) ) /*0x5cab9a*/
-    return 1; /*0x5cabbb*/
-  (*(void (__thiscall **)(int *, int))(*v8 + 32))(v8, 1); /*0x5caba9*/
-  return 0; /*0x5cab08*/
+    if ( *(int *)(*(int *)(Game_PlayerInfoArray + 4 * v2) + 107) != 1 )
+    return AI::CreateMCV(ppv, a2);
+    BuildableFromArray = HouseClass::FirstBuildableFromArray(ppv, (int)&g_RulesClass_Instance->IvanWarhead[1]);
+    if ( !BuildableFromArray )
+    return 0;
+    v6 = __2_YAPAXI_Z(0x720u);
+    if ( !v6 )
+    return 0;
+    v7 = (int *)BuildingClass::Construct((int)v6, (int)BuildableFromArray, (int)ppv);
+    v8 = v7;
+    if ( !v7 )
+    return 0;
+    v9 = *v7;
+    StartCoords = HouseClass::GetStartCoords(ppv, v12);
+    if ( (*(unsigned char (__thiscall **)(int *, int *, int))(v9 + 216))(v8, StartCoords, 0) )
+    return 1;
+    CurrentOption = (short *)HouseClass::GetCurrentOption(ppv, &a2);
+    if ( FindInfantryDeployPosition(v8, CurrentOption, 1) )
+    return 1;
+    (*(void (__thiscall **)(int *, int))(*v8 + 32))(v8, 1);
+    return 0;
 }
 }
 

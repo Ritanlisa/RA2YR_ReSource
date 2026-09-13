@@ -68,11 +68,10 @@ void *ScenarioClass_CopyStartPositions()
 namespace gamemd {
 int ScenarioClass_ClearFlag_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-char ScenarioClass::ClearFlag_0()
+// 0x5ca7f0
+    char ScenarioClass::ClearFlag_0()
 {
-  return ScenarioClass::ClearFlag();
+    return ScenarioClass::ClearFlag();
 }
 }
 } // namespace gamemd
@@ -282,15 +281,12 @@ int __thiscall ScenarioClass::_vt28(void *this)
 namespace gamemd {
 char ScenarioClass::ClearFlag()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char ScenarioClass_ClearFlag()
 {
-  int v0; // ecx
-
-  v0 = *(_DWORD *)MEMORY[0xA8B230]; /*0x5d6795*/
-  BYTE1(v0) = BYTE1(*(_DWORD *)MEMORY[0xA8B230]) & 0xFB; /*0x5d6797*/
-  *(_DWORD *)MEMORY[0xA8B230] = v0; /*0x5d679a*/
-  return 1; /*0x5d679e*/
+    int v0;
+    v0 = *(int *)g_ScenarioClass_Instance;
+    BYTE1(v0) = BYTE1(*(int *)g_ScenarioClass_Instance) & 0xFB;
+    *(int *)g_ScenarioClass_Instance = v0;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -884,14 +880,11 @@ char ScenarioClass::ReadMapINI(CCINIClass * aP1)
 namespace gamemd {
 unsigned int ScenarioClass::ResetIntroFlags()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall sub_6B8AE0(unsigned int *this)
 {
-  unsigned int result; // eax
-
-  result = *this & 0xFFF80000 | 0x8088; /*0x6b8ae7*/
-  *this = result; /*0x6b8aec*/
-  return result; /*0x6b8aee*/
+    unsigned int result;
+    result = *(void**)this & 0xFFF80000 | 0x8088;
+    *(void**)this = result;
+    return result;
 }
 }
 } // namespace gamemd

@@ -15,10 +15,8 @@
 
 // 0x45EC90
 namespace gamemd { short BuildingTypeClass::GetFoundationWidth() const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingTypeClass_GetFoundationWidth(_DWORD *this)
 {
-  return dword_8192B8[*(this + 956)]; /*0x45ec9d*/
+    return DataGlobal_8192B8[this->Foundation];
 }
 } }
 // 0x0 (lnk)

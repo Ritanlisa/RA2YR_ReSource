@@ -139,49 +139,46 @@ int __thiscall Array::GetClamped(_DWORD *this, CheckListClass *aP1)
 namespace gamemd {
 void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall Array::RemoveItemByValue(AbstractClass *aP0, int a2)
 {
-  ParticleSystemClass *v2; // ecx
-  int v3; // edx
-  ParticleSystemClass *v4; // esi
-  int v5; // eax
-
-  if ( aP0 ) /*0x55b887*/
+    ParticleSystemClass *v2;
+    int v3;
+    ParticleSystemClass *v4;
+    int v5;
+    if ( aP0 )
   {
-    if ( (*(int (__thiscall **)(AbstractClass *))(*(_DWORD *)aP0->__pad_0 + 44))(aP0) == 44 ) /*0x55b893*/
+    if ( (*(int (__thiscall **)(AbstractClass *))(*(int *)aP0->__pad_0 + 44))(aP0) == 44 )
     {
-      v2 = *(ParticleSystemClass **)&stru_89E138.__pad_579C[67588]; /*0x55b895*/
-      v3 = 0; /*0x55b89b*/
-      if ( *(int *)&stru_89E138.__pad_579C[67588] > 0 ) /*0x55b89f*/
+    v2 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67588];
+    v3 = 0;
+    if ( *(int *)&DataGlobal_89E138.__pad_579C[67588] > 0 )
       {
-        v4 = *(ParticleSystemClass **)&stru_89E138.__pad_579C[67576]; /*0x55b8a2*/
-        do /*0x55b8da*/
+    v4 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67576];
+    do
         {
-          if ( aP0 == *(AbstractClass **)&v4->__pad_0[4 * v3] ) /*0x55b8ab*/
+    if ( aP0 == *(AbstractClass **)&v4->__pad_0[4 * v3] )
           {
-            if ( v3 < (int)v2 ) /*0x55b8af*/
+    if ( v3 < (int)v2 )
             {
-              v2 = (ParticleSystemClass *)((char *)v2 - 1); /*0x55b8b1*/
-              v5 = v3; /*0x55b8b2*/
-              *(_DWORD *)&stru_89E138.__pad_579C[67588] = v2; /*0x55b8b6*/
-              if ( v3 < (int)v2 ) /*0x55b8bc*/
+    v2 = (ParticleSystemClass *)((char *)v2 - 1);
+    v5 = v3;
+    *(int *)&DataGlobal_89E138.__pad_579C[67588] = v2;
+    if ( v3 < (int)v2 )
               {
-                do /*0x55b8d4*/
+    do
                 {
-                  *(_DWORD *)&v4->__pad_0[4 * v5] = *(_DWORD *)&v4->__pad_0[4 * v5 + 4]; /*0x55b8c2*/
-                  v2 = *(ParticleSystemClass **)&stru_89E138.__pad_579C[67588]; /*0x55b8c5*/
-                  v4 = *(ParticleSystemClass **)&stru_89E138.__pad_579C[67576]; /*0x55b8cb*/
-                  ++v5; /*0x55b8d1*/
+    *(int *)&v4->__pad_0[4 * v5] = *(int *)&v4->__pad_0[4 * v5 + 4];
+    v2 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67588];
+    v4 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67576];
+    ++v5;
                 }
-                while ( v5 < *(int *)&stru_89E138.__pad_579C[67588] ); /*0x55b8d4*/
+    while ( v5 < *(int *)&DataGlobal_89E138.__pad_579C[67588] );
               }
             }
-            --v3; /*0x55b8d6*/
+    --v3;
           }
-          ++v3; /*0x55b8d7*/
+    ++v3;
         }
-        while ( v3 < (int)v2 ); /*0x55b8da*/
+    while ( v3 < (int)v2 );
       }
     }
   }

@@ -6,10 +6,8 @@
 namespace gamemd {
 void sub_58BC20()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_58BC20()
 {
-  dword_ABED0C = 0; /*0x58bc20*/
+    DataGlobal_ABED0C = 0;
 }
 }
 } // namespace gamemd

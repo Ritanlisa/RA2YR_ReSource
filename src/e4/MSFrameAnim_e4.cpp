@@ -7,12 +7,10 @@
 namespace gamemd {
 char MSFrameAnim::Load(int a1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall MSFrameAnim::_vt04(int a1, int *a2)
 {
-  if ( byte_8487BC ) /*0x767ed7*/
-    RenderScoreScreen(a1, a2, 1); /*0x767ee3*/
-  return 0; /*0x767eea*/
+    if ( DataGlobal_8487BC )
+    RenderScoreScreen(a1, a2, 1);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -21,41 +19,38 @@ char __stdcall MSFrameAnim::_vt04(int a1, int *a2)
 namespace gamemd {
 void MSFrameAnim::Draw(int a1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall MSFrameAnim::_vt05(int a1, int *a2)
 {
-  int v2; // edi
-  int v3; // eax
-  int v4; // edx
-  int v5; // eax
-  int v6; // ecx
-  int v7; // [esp+8h] [ebp-10h] BYREF
-  int v8; // [esp+Ch] [ebp-Ch]
-  int v9; // [esp+10h] [ebp-8h]
-  int v10; // [esp+14h] [ebp-4h]
-
-  if ( byte_8487BD ) /*0x767efc*/
+    int v2;
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    if ( DataGlobal_8487BD )
   {
-    v2 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 124))(a1); /*0x767f0d*/
-    v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 128))(a1); /*0x767f0f*/
-    if ( a2 ) /*0x767f1b*/
+    v2 = (*(int (__thiscall **)(int))(*(int *)(a1) + 124))(a1);
+    v3 = (*(int (__thiscall **)(int))(*(int *)(a1) + 128))(a1);
+    if ( a2 )
     {
-      v4 = a2[1]; /*0x767f1f*/
-      v7 = *a2; /*0x767f22*/
-      v5 = a2[2]; /*0x767f26*/
-      v6 = a2[3]; /*0x767f29*/
-      v8 = v4; /*0x767f2c*/
-      v10 = v6; /*0x767f30*/
-      v9 = v5; /*0x767f3c*/
+    v4 = *((int*)(a2) + 1);
+    v7 = *a2;
+    v5 = *((int*)(a2) + 2);
+    v6 = *((int*)(a2) + 3);
+    v8 = v4;
+    v10 = v6;
+    v9 = v5;
     }
     else
     {
-      v7 = 0; /*0x767f55*/
-      v8 = 0; /*0x767f5d*/
-      v9 = v2; /*0x767f65*/
-      v10 = v3; /*0x767f69*/
+    v7 = 0;
+    v8 = 0;
+    v9 = v2;
+    v10 = v3;
     }
-    RenderScoreScreen(a1, &v7, 1); /*0x767f40*/
+    RenderScoreScreen(a1, &v7, 1);
   }
 }
 }
@@ -65,14 +60,12 @@ void __stdcall MSFrameAnim::_vt05(int a1, int *a2)
 namespace gamemd {
 unsigned int * MSFrameAnim::UpdateFrame(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall MSFrameAnim::_vt06(_DWORD *a1)
 {
-  *a1 = 0; /*0x767f8c*/
-  a1[1] = 0; /*0x767f99*/
-  a1[2] = 640; /*0x767f9c*/
-  a1[3] = 480; /*0x767f9f*/
-  return a1; /*0x767fa2*/
+    *a1 = 0;
+    *((int*)(a1) + 1) = 0;
+    *((int*)(a1) + 2) = 640;
+    *((int*)(a1) + 3) = 480;
+    return a1;
 }
 }
 } // namespace gamemd
@@ -121,13 +114,11 @@ int __thiscall MSFrameAnim::sub_769C50(int this)
 namespace gamemd {
 unsigned int MSFrameAnim::startAnimation(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MSFrameAnim::sub_769C80(int this, int a2)
 {
-  if ( (unsigned char)this->MSFrameAnim_field_0xC ) /*0x769c80*/
-    return (unsigned int)(a2 - this->MSFrameAnim_field_0x4) >> 3; /*0x769c95*/
-  else
-    return 0; /*0x769c87*/
+    if ( (unsigned char)this->MSFrameAnim_field_0xC )
+    return (unsigned int)(a2 - this->MSFrameAnim_field_0x4) >> 3;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -158,13 +149,11 @@ void __thiscall MSFrameAnim::sub_769CD0(int this)
 namespace gamemd {
 unsigned int MSFrameAnim::pauseAnimation(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MSFrameAnim::sub_769D00(int this, int a2)
 {
-  if ( (unsigned char)this->MSFrameAnim_field_0xC ) /*0x769d00*/
-    return (unsigned int)(a2 - this->MSFrameAnim_field_0x4) >> 2; /*0x769d15*/
-  else
-    return 0; /*0x769d07*/
+    if ( (unsigned char)this->MSFrameAnim_field_0xC )
+    return (unsigned int)(a2 - this->MSFrameAnim_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -440,12 +429,10 @@ DynamicVector *__thiscall MSFrameAnim::setScale(_DWORD *this, char a2)
 namespace gamemd {
 unsigned int * MSFrameAnim::drawFrame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_76A7C0(_DWORD *this)
 {
-  ComPtr::Constructor(this); /*0x76a7c3*/
-  *this = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76a7c8*/
-  return this; /*0x76a7d0*/
+    ComPtr::Constructor(this);
+    *(void**)this = &vt_rc_ptr_WorldDominationTour_Territory;
+    return this;
 }
 }
 } // namespace gamemd

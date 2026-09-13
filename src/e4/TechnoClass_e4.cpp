@@ -48,10 +48,8 @@ namespace ra2 {
 namespace game {
 BOOL TechnoClass::processDamageAnimation(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __stdcall TechnoClass::sub_41B7D0(int a1)
 {
-  return *(_DWORD *)(a1 - 1448) != 0; /*0x41b7e4*/
+    return *(int *)(a1 - 1448) != 0;
 }
 }
 } // namespace game
@@ -62,10 +60,8 @@ namespace ra2 {
 namespace game {
 BOOL TechnoClass::updateWeaponCooldown(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __stdcall TechnoClass::sub_41B840(int a1)
 {
-  return *(_BYTE *)(*(_DWORD *)(a1 + 4) + 3598) != 0; /*0x41b854*/
+    return *(char *)(*(int *)(a1 + 4) + 3598) != 0;
 }
 }
 } // namespace game
@@ -76,10 +72,8 @@ namespace ra2 {
 namespace game {
 int TechnoClass::checkAmmo(AircraftClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TechnoClass::checkAmmo(AircraftClass *aP0)
 {
-  return BYTE2(aP0->uniqueId); /*0x41b869*/
+    return BYTE2(aP0->uniqueId);
 }
 }
 } // namespace game
@@ -90,10 +84,8 @@ namespace ra2 {
 namespace game {
 int TechnoClass::processPowerDrain()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4722D0(_DWORD *this)
 {
-  return *(this + 13); /*0x4722d3*/
+    return this->attachedTag;
 }
 }
 } // namespace game
@@ -104,16 +96,11 @@ namespace ra2 {
 namespace game {
 void TechnoClass::updateSightRange(IUnknown * aP1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall TechnoClass::updateSightRange(_DWORD *this, IUnknown *aP1, int a3)
 {
-  if ( aP1 /*0x4c2bf2*/
-    && (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 44))(aP1) == 1
-    && aP1->__pad_8C[4]
-    && !aP1->__pad_68[25] )
+    if ( aP1 && (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 44))(aP1) == 1 && aP1->__pad_8C[4] && !aP1->__pad_68[25] )
   {
-    *(this + 8) = aP1; /*0x4c2c00*/
-    *(this + 9) = a3; /*0x4c2c03*/
+    this->needsSave = aP1;
+    this->objectTypeFlags = a3;
   }
 }
 }
@@ -1181,12 +1168,9 @@ namespace ra2 {
 namespace game {
 int TechnoClass::COMStub_Return0_287()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass::COMStub_Return0_287(#377 *this)
 {
-  int result; // eax
-
-  return result; /*0x709a20*/
+    int result;
+    return result;
 }
 }
 } // namespace game
@@ -1221,13 +1205,10 @@ namespace ra2 {
 namespace game {
 int TechnoClass::StubReturnFalse5()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt299(#377 *this)
 {
-  int result; // eax
-
-  LOBYTE(result) = 0; /*0x70f020*/
-  return result; /*0x70f022*/
+    int result;
+    LOBYTE(result) = 0;
+    return result;
 }
 }
 } // namespace game
@@ -1238,13 +1219,10 @@ namespace ra2 {
 namespace game {
 int TechnoClass::StubReturnFalse6()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt300(#377 *this)
 {
-  int result; // eax
-
-  LOBYTE(result) = 0; /*0x70f030*/
-  return result; /*0x70f032*/
+    int result;
+    LOBYTE(result) = 0;
+    return result;
 }
 }
 } // namespace game
@@ -1255,13 +1233,10 @@ namespace ra2 {
 namespace game {
 int TechnoClass::StubReturnFalse7()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt305(#377 *this)
 {
-  int result; // eax
-
-  LOBYTE(result) = 0; /*0x70f0e0*/
-  return result; /*0x70f0e2*/
+    int result;
+    LOBYTE(result) = 0;
+    return result;
 }
 }
 } // namespace game
@@ -1272,13 +1247,10 @@ namespace ra2 {
 namespace game {
 int TechnoClass::StubReturnFalse8()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt306(#377 *this)
 {
-  int result; // eax
-
-  LOBYTE(result) = 0; /*0x70f0f0*/
-  return result; /*0x70f0f2*/
+    int result;
+    LOBYTE(result) = 0;
+    return result;
 }
 }
 } // namespace game
@@ -1289,13 +1261,10 @@ namespace ra2 {
 namespace game {
 int TechnoClass::StubReturnFalse9()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt308(#377 *this)
 {
-  int result; // eax
-
-  LOBYTE(result) = 0; /*0x70f110*/
-  return result; /*0x70f112*/
+    int result;
+    LOBYTE(result) = 0;
+    return result;
 }
 }
 } // namespace game
@@ -1306,10 +1275,8 @@ namespace ra2 {
 namespace game {
 void TechnoClass::GetField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void TechnoClass::GetField()
 {
-  MEMORY[0xB0FE58] = 0; /*0x731cf0*/
+    DataGlobal_B0FE58 = 0;
 }
 }
 } // namespace game

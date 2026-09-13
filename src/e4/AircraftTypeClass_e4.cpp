@@ -79,33 +79,28 @@ LABEL_11:
 // 0x41CB20
 AircraftClass * AircraftTypeClass::ConstructAircraft(AbstractClass * ppv)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-AircraftClass *__thiscall AircraftTypeClass::ConstructAircraft(IUnknown *this, AbstractClass *ppv)
 {
-  int v3; // eax
-
-  v3 = __2_YAPAXI_Z(0x6D8u); /*0x41cb28*/
-  if ( v3 ) /*0x41cb32*/
-    return (AircraftClass *)AircraftClass::Construct(v3, this, ppv); /*0x41cb3c*/
-  else
-    return 0; /*0x41cb45*/
+    int v3;
+    v3 = __2_YAPAXI_Z(0x6D8u);
+    if ( v3 )
+    return (AircraftClass *)AircraftClass::Construct(v3, this, ppv);
+    else
+    return 0;
 }
 }
 
 // 0x41CB70
 int * AircraftTypeClass::CreateAircraft(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__stdcall AircraftTypeClass::_vt36(int a1)
 {
-  if ( (MEMORY[0x889F38] & 1) == 0 ) /*0x41cb7b*/
+    if ( (DataGlobal_889F38 & 1) == 0 )
   {
-    MEMORY[0x889F38] |= 1u; /*0x41cb96*/
-    MEMORY[0x889F20] = 0; /*0x41cb9c*/
-    MEMORY[0x889F24] = 2147450879; /*0x41cbb4*/
-    atexit(nullsub_85); /*0x41cbba*/
+    DataGlobal_889F38 |= 1u;
+    DataGlobal_889F20 = 0;
+    DataGlobal_889F24 = 2147450879;
+    atexit(nullsub_85);
   }
-  return &MEMORY[0x889F20]; /*0x41cbc8*/
+    return &DataGlobal_889F20;
 }
 }
 
@@ -178,27 +173,24 @@ char __userpurge AircraftTypeClass::vt_25_@<al>(int a1@<ecx>, double a2@<st0>, u
 // 0x41CDB0
 int AircraftTypeClass::PowerDrainUpdate(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AircraftTypeClass::_vt13(int this, int *a2)
 {
-  int v3; // eax
-  int v4; // ecx
-  int v5; // edx
-  int v6; // eax
-  int v7; // ecx
-
-  v3 = BuildingTypeClass::ProcessPower(this, a2); /*0x41cdb9*/
-  LOBYTE(v3) = this->Rotors; /*0x41cdbe*/
-  Power::FlagProcess(a2, v3); /*0x41cdc7*/
-  LOBYTE(v4) = this->CustomRotor; /*0x41cdcc*/
-  Power::FlagProcess(a2, v4); /*0x41cdd5*/
-  LOBYTE(v5) = this->Landable; /*0x41cdda*/
-  v6 = Power::FlagProcess(a2, v5); /*0x41cde3*/
-  LOBYTE(v6) = this->AirportBound; /*0x41cde8*/
-  Power::FlagProcess(a2, v6); /*0x41cdf1*/
-  LOBYTE(v7) = this->Fighter; /*0x41cdf6*/
-  Power::FlagProcess(a2, v7); /*0x41cdff*/
-  return Power::TimerProcess(this->ArrayIndex); /*0x41ce12*/
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    v3 = BuildingTypeClass::ProcessPower(this, a2);
+    LOBYTE(v3) = this->Rotors;
+    Power::FlagProcess(a2, v3);
+    LOBYTE(v4) = this->CustomRotor;
+    Power::FlagProcess(a2, v4);
+    LOBYTE(v5) = this->Landable;
+    v6 = Power::FlagProcess(a2, v5);
+    LOBYTE(v6) = this->AirportBound;
+    Power::FlagProcess(a2, v6);
+    LOBYTE(v7) = this->Fighter;
+    Power::FlagProcess(a2, v7);
+    return Power::TimerProcess(this->ArrayIndex);
 }
 }
 
@@ -235,25 +227,20 @@ int __stdcall AircraftTypeClass::LoadFromINI(ObjectTypeClass *aP0, int aP1)
 // 0x41CE90
 int AircraftTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall AircraftTypeClass::SaveToINI(void *a0, TechnoTypeClass *aP1, int a3)
 {
-  int result; // eax
-
-  result = TechnoTypeClass::SaveLoad_Prefix_0(aP1, a0, aP1, (TechnoTypeClass *)a3); /*0x41ce9f*/
-  if ( result >= 0 ) /*0x41cea6*/
-    return 0; /*0x41cea8*/
-  return result; /*0x41ceaa*/
+    int result;
+    result = TechnoTypeClass::SaveLoad_Prefix_0(aP1, a0, aP1, (TechnoTypeClass *)a3);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 
 // 0x41CFD0
 int AircraftTypeClass::GetAuxField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AircraftTypeClass::_vt16(_DWORD *this)
 {
-  return *(this + 894); /*0x41cfd6*/
+    return this->ArrayIndex;
 }
 }
 

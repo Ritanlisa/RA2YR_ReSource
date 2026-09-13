@@ -146,15 +146,12 @@ int __stdcall CampaignClass::Write(AbstractTypeClass *aP0, int aP1)
 namespace gamemd {
 int CampaignClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CampaignClass::Seek(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x46d05f*/
-  if ( result >= 0 ) /*0x46d066*/
-    return 0; /*0x46d068*/
-  return result; /*0x46d06a*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd

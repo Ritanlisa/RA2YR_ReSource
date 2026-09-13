@@ -177,10 +177,8 @@ void PsyDom::Fire()
 namespace gamemd {
 bool PsyDom::IsActive()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool PsyDom_IsActive()
 {
-  return unk_A9FAC0 != 0; /*0x53b40a*/
+    return PsyDom_Status != 0;
 }
 }
 } // namespace gamemd

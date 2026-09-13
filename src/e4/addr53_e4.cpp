@@ -1219,17 +1219,15 @@ int sub_539570()
 namespace gamemd {
 int sub_539580()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_539580()
 {
-  unk_A9FA64 = 0; /*0x539587*/
-  dword_A9FA68 = 0; /*0x53958c*/
-  unk_A9FA6C = 1; /*0x539591*/
-  unk_A9FA6D = 0; /*0x539598*/
-  dword_A9FA60 = (int)&vt_DynamicVectorClass_AnimClass_const; /*0x53959d*/
-  dword_A9FA74 = 10; /*0x5395a7*/
-  dword_A9FA70 = 0; /*0x5395b1*/
-  return atexit(sub_5395C0); /*0x5395bc*/
+    DataGlobal_A9FA64 = 0;
+    DataGlobal_A9FA68 = 0;
+    DataGlobal_A9FA6C = 1;
+    DataGlobal_A9FA6D = 0;
+    LightningStorm_CloudsManifesting = (int)&vt_DynamicVectorClass_AnimClass_const;
+    DataGlobal_A9FA74 = 10;
+    DataGlobal_A9FA70 = 0;
+    return atexit(sub_5395C0);
 }
 }
 } // namespace gamemd
@@ -1238,23 +1236,21 @@ int sub_539580()
 namespace gamemd {
 void sub_5395C0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_5395C0()
 {
-  if ( (unk_A9F9A9 & 1) == 0 ) /*0x5395ca*/
+    if ( (DataGlobal_A9F9A9 & 1) == 0 )
   {
-    dword_A9FA60 = (int)&vt_VectorClass_AnimClass_const; /*0x5395ce*/
-    unk_A9F9A9 |= 1u; /*0x5395e1*/
-    if ( unk_A9FA64 ) /*0x5395e7*/
+    LightningStorm_CloudsManifesting = (int)&vt_VectorClass_AnimClass_const;
+    DataGlobal_A9F9A9 |= 1u;
+    if ( DataGlobal_A9FA64 )
     {
-      if ( unk_A9FA6D ) /*0x5395f1*/
+    if ( DataGlobal_A9FA6D )
       {
-        __3_YAXPAX_Z(unk_A9FA64); /*0x5395f4*/
-        unk_A9FA64 = 0; /*0x5395fc*/
+    __3_YAXPAX_Z(DataGlobal_A9FA64);
+    DataGlobal_A9FA64 = 0;
       }
     }
-    unk_A9FA6D = 0; /*0x539606*/
-    dword_A9FA68 = 0; /*0x53960d*/
+    DataGlobal_A9FA6D = 0;
+    DataGlobal_A9FA68 = 0;
   }
 }
 }
@@ -1264,17 +1260,15 @@ void __cdecl sub_5395C0()
 namespace gamemd {
 int sub_539620()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_539620()
 {
-  unk_A9F9D4 = 0; /*0x539627*/
-  dword_A9F9D8 = 0; /*0x53962c*/
-  unk_A9F9DC = 1; /*0x539631*/
-  unk_A9F9DD = 0; /*0x539638*/
-  dword_A9F9D0 = (int)&vt_DynamicVectorClass_AnimClass_const; /*0x53963d*/
-  dword_A9F9E4 = 10; /*0x539647*/
-  dword_A9F9E0 = 0; /*0x539651*/
-  return atexit(sub_539660); /*0x53965c*/
+    DataGlobal_A9F9D4 = 0;
+    DataGlobal_A9F9D8 = 0;
+    DataGlobal_A9F9DC = 1;
+    DataGlobal_A9F9DD = 0;
+    LightningStorm_CloudsPresent = (int)&vt_DynamicVectorClass_AnimClass_const;
+    DataGlobal_A9F9E4 = 10;
+    DataGlobal_A9F9E0 = 0;
+    return atexit(sub_539660);
 }
 }
 } // namespace gamemd
@@ -1283,23 +1277,21 @@ int sub_539620()
 namespace gamemd {
 void sub_539660()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_539660()
 {
-  if ( (unk_A9F9A8 & 1) == 0 ) /*0x53966a*/
+    if ( (DataGlobal_A9F9A8 & 1) == 0 )
   {
-    dword_A9F9D0 = (int)&vt_VectorClass_AnimClass_const; /*0x53966e*/
-    unk_A9F9A8 |= 1u; /*0x539681*/
-    if ( unk_A9F9D4 ) /*0x539687*/
+    LightningStorm_CloudsPresent = (int)&vt_VectorClass_AnimClass_const;
+    DataGlobal_A9F9A8 |= 1u;
+    if ( DataGlobal_A9F9D4 )
     {
-      if ( unk_A9F9DD ) /*0x539691*/
+    if ( DataGlobal_A9F9DD )
       {
-        __3_YAXPAX_Z(unk_A9F9D4); /*0x539694*/
-        unk_A9F9D4 = 0; /*0x53969c*/
+    __3_YAXPAX_Z(DataGlobal_A9F9D4);
+    DataGlobal_A9F9D4 = 0;
       }
     }
-    unk_A9F9DD = 0; /*0x5396a6*/
-    dword_A9F9D8 = 0; /*0x5396ad*/
+    DataGlobal_A9F9DD = 0;
+    DataGlobal_A9F9D8 = 0;
   }
 }
 }
@@ -1309,17 +1301,15 @@ void __cdecl sub_539660()
 namespace gamemd {
 int sub_5396C0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5396C0()
 {
-  unk_A9FA1C = 0; /*0x5396c7*/
-  unk_A9FA20 = 0; /*0x5396cc*/
-  unk_A9FA24 = 1; /*0x5396d1*/
-  unk_A9FA25 = 0; /*0x5396d8*/
-  unk_A9FA18 = (int)&vt_DynamicVectorClass_AnimClass_const; /*0x5396dd*/
-  unk_A9FA2C = 10; /*0x5396e7*/
-  unk_A9FA28 = 0; /*0x5396f1*/
-  return atexit(sub_539700); /*0x5396fc*/
+    DataGlobal_A9FA1C = 0;
+    DataGlobal_A9FA20 = 0;
+    DataGlobal_A9FA24 = 1;
+    DataGlobal_A9FA25 = 0;
+    LightningStorm_BoltsPresent = (int)&vt_DynamicVectorClass_AnimClass_const;
+    DataGlobal_A9FA2C = 10;
+    DataGlobal_A9FA28 = 0;
+    return atexit(sub_539700);
 }
 }
 } // namespace gamemd
@@ -1328,23 +1318,21 @@ int sub_5396C0()
 namespace gamemd {
 void sub_539700()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_539700()
 {
-  if ( (unk_A9F9A8 & 2) == 0 ) /*0x53970a*/
+    if ( (DataGlobal_A9F9A8 & 2) == 0 )
   {
-    unk_A9FA18 = (int)&vt_VectorClass_AnimClass_const; /*0x53970e*/
-    unk_A9F9A8 |= 2u; /*0x539721*/
-    if ( unk_A9FA1C ) /*0x539727*/
+    LightningStorm_BoltsPresent = (int)&vt_VectorClass_AnimClass_const;
+    DataGlobal_A9F9A8 |= 2u;
+    if ( DataGlobal_A9FA1C )
     {
-      if ( unk_A9FA25 ) /*0x539731*/
+    if ( DataGlobal_A9FA25 )
       {
-        __3_YAXPAX_Z(unk_A9FA1C); /*0x539734*/
-        unk_A9FA1C = 0; /*0x53973c*/
+    __3_YAXPAX_Z(DataGlobal_A9FA1C);
+    DataGlobal_A9FA1C = 0;
       }
     }
-    unk_A9FA25 = 0; /*0x539746*/
-    unk_A9FA20 = 0; /*0x53974d*/
+    DataGlobal_A9FA25 = 0;
+    DataGlobal_A9FA20 = 0;
   }
 }
 }
@@ -1599,59 +1587,44 @@ LABEL_52:
 namespace gamemd {
 int UpdateSurfaceAnimations(int a1, AnimClass * aP1, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall UpdateSurfaceAnimations(int a1, AnimClass *aP1, int a3, int a4)
 {
-  int i; // esi
-  int j; // esi
-  int v9; // eax
-  int v10; // esi
-  int v11; // ecx
-  int v13; // [esp+30h] [ebp-10h]
-  _DWORD v14[2]; // [esp+34h] [ebp-Ch] BYREF
-  char v15; // [esp+3Ch] [ebp-4h]
-  int k; // [esp+44h] [ebp+4h]
-
-  for ( i = 0; i < *(int *)&stru_87C374.__pad_14B0[7812]; ++i ) /*0x53ad18*/
-    (*(void (__thiscall **)(_DWORD, int, AnimClass *, int, int))(**(_DWORD **)(*(_DWORD *)&stru_87C374.__pad_14B0[7800] /*0x53ad2c*/
-                                                                             + 4 * i)
-                                                               + 4))(
-      *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_14B0[7800] + 4 * i),
-      a1,
-      aP1,
-      a3,
-      a4);
-  for ( j = 0; j < *(int *)stru_B05488.__pad_58; ++j ) /*0x53ad42*/
+    int i;
+    int j;
+    int v9;
+    int v10;
+    int v11;
+    int v13;
+    int v14[2];
+    char v15;
+    int k;
+    for ( i = 0; i < *(int *)&DataGlobal_87C374.__pad_14B0[7812]; ++i )
+    (*(void (__thiscall **)(int, int, AnimClass *, int, int))(**(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[7800] + 4 * i) + 4))( *(int *)(*(int *)&DataGlobal_87C374.__pad_14B0[7800] + 4 * i), a1, aP1, a3, a4);
+    for ( j = 0; j < *(int *)DataGlobal_B05488.__pad_58; ++j )
   {
-    v9 = *(_DWORD *)(stru_B05488.field_4C + 4 * j); /*0x53ad4a*/
-    if ( *(int *)(v9 + 784) > 1 ) /*0x53ad54*/
-      (*(void (__thiscall **)(_DWORD, int, AnimClass *, int, int))(**(_DWORD **)(v9 + 780) + 4))( /*0x53ad66*/
-        *(_DWORD *)(v9 + 780),
-        a1,
-        aP1,
-        a3,
-        a4);
+    v9 = *(int *)(DataGlobal_B05488.field_4C + 4 * j);
+    if ( *(int *)(v9 + 784) > 1 )
+    (*(void (__thiscall **)(int, int, AnimClass *, int, int))(**(int **)(v9 + 780) + 4))( *(int *)(v9 + 780), a1, aP1, a3, a4);
   }
-  v14[0] = 0; /*0x53ad79*/
-  v14[1] = 0; /*0x53ad7d*/
-  v15 = 0; /*0x53ad81*/
-  for ( k = FlagSystem::GetNextActive(v14); k; k = FlagSystem::GetNextActive(v14) ) /*0x53ad90*/
+    v14[0] = 0;
+    v14[1] = 0;
+    v15 = 0;
+    for ( k = FlagSystem::GetNextActive(v14); k; k = FlagSystem::GetNextActive(v14) )
   {
-    v10 = 0; /*0x53ad97*/
-    v13 = Surface_Update(); /*0x53ad99*/
-    if ( v13 > 0 ) /*0x53ad9f*/
+    v10 = 0;
+    v13 = Surface_Update();
+    if ( v13 > 0 )
     {
-      do /*0x53adc3*/
+    do
       {
-        v11 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(k + 4) + 4 * v10) + 780); /*0x53adab*/
-        (*(void (__thiscall **)(int, int, AnimClass *, int, int))(*(_DWORD *)v11 + 4))(v11, a1, aP1, a3, a4); /*0x53adbb*/
-        ++v10; /*0x53adbe*/
+    v11 = *(int *)(*(int *)(*(int *)(k + 4) + 4 * v10) + 780);
+    (*(void (__thiscall **)(int, int, AnimClass *, int, int))(*(int *)(v11) + 4))(v11, a1, aP1, a3, a4);
+    ++v10;
       }
-      while ( v10 < v13 ); /*0x53adc3*/
+    while ( v10 < v13 );
     }
   }
-  MapClass::UpdateLightingPostProcess(); /*0x53addb*/
-  return MapClass::MarkForRedraw(&stru_87C374.__pad_14B0[8132], 1); /*0x53adec*/
+    MapClass::UpdateLightingPostProcess();
+    return MapClass::MarkForRedraw(&DataGlobal_87C374.__pad_14B0[8132], 1);
 }
 }
 } // namespace gamemd
@@ -2110,17 +2083,15 @@ int __fastcall RenderChronosphereScreenEffect(char a1)
 namespace gamemd {
 int sub_53CA70()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_53CA70()
 {
-  unk_AA011C = 0; /*0x53ca77*/
-  unk_AA0120 = 0; /*0x53ca7c*/
-  unk_AA0124 = 1; /*0x53ca81*/
-  unk_AA0125 = 0; /*0x53ca88*/
-  dword_AA0118 = (int)&vt_DynamicVectorClass_IonBlastClass; /*0x53ca8d*/
-  unk_AA012C = 10; /*0x53ca97*/
-  unk_AA0128 = 0; /*0x53caa1*/
-  return atexit(sub_53CAB0); /*0x53caac*/
+    DataGlobal_AA011C = 0;
+    DataGlobal_AA0120 = 0;
+    DataGlobal_AA0124 = 1;
+    DataGlobal_AA0125 = 0;
+    DataGlobal_AA0118 = (int)&vt_DynamicVectorClass_IonBlastClass;
+    DataGlobal_AA012C = 10;
+    DataGlobal_AA0128 = 0;
+    return atexit(sub_53CAB0);
 }
 }
 } // namespace gamemd
@@ -2129,23 +2100,21 @@ int sub_53CA70()
 namespace gamemd {
 void sub_53CAB0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_53CAB0()
 {
-  if ( (unk_A9FAD8 & 1) == 0 ) /*0x53caba*/
+    if ( (DataGlobal_A9FAD8 & 1) == 0 )
   {
-    dword_AA0118 = (int)&vt_VectorClass_IonBlastClass; /*0x53cabe*/
-    unk_A9FAD8 |= 1u; /*0x53cad1*/
-    if ( unk_AA011C ) /*0x53cad7*/
+    DataGlobal_AA0118 = (int)&vt_VectorClass_IonBlastClass;
+    DataGlobal_A9FAD8 |= 1u;
+    if ( DataGlobal_AA011C )
     {
-      if ( unk_AA0125 ) /*0x53cae1*/
+    if ( DataGlobal_AA0125 )
       {
-        __3_YAXPAX_Z(unk_AA011C); /*0x53cae4*/
-        unk_AA011C = 0; /*0x53caec*/
+    __3_YAXPAX_Z(DataGlobal_AA011C);
+    DataGlobal_AA011C = 0;
       }
     }
-    unk_AA0125 = 0; /*0x53caf6*/
-    unk_AA0120 = 0; /*0x53cafd*/
+    DataGlobal_AA0125 = 0;
+    DataGlobal_AA0120 = 0;
   }
 }
 }

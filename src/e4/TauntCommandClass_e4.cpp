@@ -47,9 +47,7 @@ wchar_t *__thiscall TauntCommandClass::_vt02(const wchar_t **this)
 // 0x536300
 wchar_t * TauntCommandClass::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *TauntCommandClass::_vt03()
 {
-  return GetStringCSF(MEMORY[0x827218], 0, g_Str_File_Init_CPP, 6405); /*0x536316*/
+    return GetStringCSF(DataGlobal_827218, 0, g_Str_File_Init_CPP, 6405);
 }
 }

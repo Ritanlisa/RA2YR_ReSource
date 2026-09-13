@@ -86,14 +86,11 @@ LABEL_18:
 // 0x432BD0
 int BinkMovieHandle::Check(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_432BD0(_DWORD *this, int a2)
 {
-  int result; // eax
-
-  result = BinkGoto(*(this + 1), a2, 1); /*0x432bde*/
-  *(this + 12) = 0; /*0x432be4*/
-  return result; /*0x432beb*/
+    int result;
+    result = BinkGoto(this->tempPath, a2, 1);
+    this->memoryBuffer = 0;
+    return result;
 }
 }
 
@@ -156,82 +153,66 @@ LABEL_6:
 // 0x5C0550
 int BinkMovieHandle::InitFromFile()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BinkMovieHandle::_vt04(_BYTE **this)
 {
-  int result; // eax
-
-  MEMORY[0xABF3F8] = (int)this; /*0x5c0550*/
-  result = BinkMovie::Play(*(this + 4)); /*0x5c0559*/
-  MEMORY[0xABF3F8] = 0; /*0x5c055e*/
-  return result; /*0x5c0568*/
+    int result;
+    DataGlobal_ABF3F8 = (int)this;
+    result = BinkMovie::Play(this->height);
+    DataGlobal_ABF3F8 = 0;
+    return result;
 }
 }
 
 // 0x5C0570
 BOOL BinkMovieHandle::COMStub()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall BinkMovieHandle::_vt05(_DWORD **this)
 {
-  return BinkMovie::IsAtEnd(*(this + 4));
+    return BinkMovie::IsAtEnd(this->height);
 }
 }
 
 // 0x5C0580
 bool BinkMovieHandle::AddRef()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall BinkMovieHandle::_vt01(int **this)
 {
-  return BinkMovie::RenderFrameToSurface(*(this + 4));
+    return BinkMovie::RenderFrameToSurface(this->height);
 }
 }
 
 // 0x5C0590
 int BinkMovieHandle::Release()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BinkMovieHandle::_vt02(_DWORD *this)
 {
-  int v1; // esi
-  int result; // eax
-
-  v1 = *(this + 4); /*0x433021*/
-  result = BinkWait(*(_DWORD *)(v1 + 4)); /*0x433027*/
-  if ( !result ) /*0x43302f*/
-    *(_BYTE *)(v1 + 45) = 1; /*0x433031*/
-  return result; /*0x433036*/
+    int v1;
+    int result;
+    v1 = this->height;
+    result = BinkWait(*(int *)(v1 + 4));
+    if ( !result )
+    *(char *)(v1 + 45) = 1;
+    return result;
 }
 }
 
 // 0x5C05A0
 int BinkMovieHandle::Pause(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BinkMovieHandle::_vt06(int *this, int a2, int a3)
 {
-  return BinkMovieHandle::RenderFrameClipped(*(this + 4), a2, a3); /*0x5c05b2*/
+    return BinkMovieHandle::RenderFrameClipped(this->height, a2, a3);
 }
 }
 
 // 0x5C05C0
 int BinkMovieHandle::RenderLoop(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BinkMovieHandle::_vt08(_DWORD **this, int a2)
 {
-  return COMStub_432C10(*(this + 4), a2); /*0x5c05cd*/
+    return COMStub_432C10(this->height, a2);
 }
 }
 
 // 0x5C05D0
 int BinkMovieHandle::AdjustSurfaceFormat(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5C05D0(_DWORD **this, int a2)
 {
-  return BinkMovieHandle::Check(*(this + 4), a2); /*0x5c05dd*/
+    return BinkMovieHandle::Check(this->height, a2);
 }
 }
 
@@ -249,10 +230,8 @@ unsigned int __thiscall BinkMovieHandle::_vt09(_DWORD *this)
 // 0x5C05F0
 unsigned int * BinkMovieHandle::Close()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BinkMovieHandle::_vt10(int **this)
 {
-  return BinkMovieHandle::CopyFrameToSurface(*(this + 4));
+    return BinkMovieHandle::CopyFrameToSurface(this->height);
 }
 }
 

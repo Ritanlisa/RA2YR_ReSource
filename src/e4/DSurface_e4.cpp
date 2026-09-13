@@ -33,16 +33,13 @@ void __thiscall DSurface::Process(int this, IUnknown *aP1, int *a2)
 // 0x4BA480
 long long DSurface::ConstructFromHandle()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 sub_4BA480()
 {
-  double v0; // st7
-  __int64 result; // rax
-
-  v0 = Math::Sin(MEMORY[0x8A0928] - MEMORY[0x8A0970]); /*0x4ba492*/
-  result = Math::RoundToInt(v0 * MEMORY[0x8A0968] * 0.5); /*0x4ba4a6*/
-  MEMORY[0x8A0DC8] = result; /*0x4ba4ab*/
-  return result; /*0x4ba4b0*/
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_8A0928 - DataGlobal_8A0970);
+    result = Math::RoundToInt(v0 * DataGlobal_8A0968 * 0.5);
+    DataGlobal_8A0DC8 = result;
+    return result;
 }
 }
 
@@ -3756,11 +3753,9 @@ void *__thiscall DSurface::loc_4C1AC0(void *this, char a2)
 // 0x5D1E50
 int DSurface::Flip2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5D1E50()
 {
-  MEMORY[0x8A00A0] = 1; /*0x5d1e55*/
-  return DSurface::RenderToSurface(MEMORY[0x88730C]); /*0x5d1e62*/
+    g_LoadScreenFlag = 1;
+    return DSurface::RenderToSurface(g_DSurface_Hidden);
 }
 }
 
@@ -3960,44 +3955,34 @@ int __fastcall DSurface::FillRectWithColor(int *a0, ObjectClass *aP1, __int16 a3
 // 0x63D400
 int DSurface::DrawMarker(AbstractClass * aP1, ObjectClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DSurface::DrawMarker(void *this, AbstractClass *aP1, ObjectClass *aP2)
 {
-  int *Viewport; // eax
-  int v6[4]; // [esp+8h] [ebp-30h] BYREF
-  _DWORD v7[4]; // [esp+18h] [ebp-20h] BYREF
-  _DWORD v8[4]; // [esp+28h] [ebp-10h] BYREF
-
-  Viewport = Display::GetViewport(v6); /*0x63d40b*/
-  v8[0] = *Viewport; /*0x63d412*/
-  v8[1] = Viewport[1]; /*0x63d41a*/
-  v8[2] = Viewport[2]; /*0x63d421*/
-  v8[3] = Viewport[3]; /*0x63d430*/
-  v6[0] = (int)aP1; /*0x63d434*/
-  v7[2] = 6; /*0x63d442*/
-  v7[0] = (char *)aP1 - 3; /*0x63d446*/
-  v7[1] = (char *)aP2 - 3; /*0x63d458*/
-  v7[3] = 6; /*0x63d45c*/
-  return (*(int (__thiscall **)(_DWORD, _DWORD *, _DWORD *, void *))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9424] + 84))( /*0x63d46a*/
-           *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9424],
-           v8,
-           v7,
-           this);
+    int *Viewport;
+    int v6[4];
+    int v7[4];
+    int v8[4];
+    Viewport = Display::GetViewport(v6);
+    v8[0] = *Viewport;
+    v8[1] = Viewport[1];
+    v8[2] = Viewport[2];
+    v8[3] = Viewport[3];
+    v6[0] = (int)aP1;
+    v7[2] = 6;
+    v7[0] = (char *)aP1 - 3;
+    v7[1] = (char *)aP2 - 3;
+    v7[3] = 6;
+    return (*(int (__thiscall **)(int, int *, int *, void *))(**(int **)&DataGlobal_87F8E4.__pad_5568[9424] + 84))( *(int *)&DataGlobal_87F8E4.__pad_5568[9424], v8, v7, this);
 }
 }
 
 // 0x759E60
 char DSurface::FlipIfNeeded()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DSurface_FlipIfNeeded(int this)
 {
-  char result; // al
-
-  result = (unsigned char)this->DSurface_field_0x514; /*0x759e60*/
-  if ( result ) /*0x759e68*/
-    return DSurface::Flip(this->DSurface_field_0x200); /*0x759e70*/
-  return result; /*0x759e75*/
+    char result;
+    result = (unsigned char)this->DSurface_field_0x514;
+    if ( result )
+    return DSurface::Flip(this->DSurface_field_0x200);
+    return result;
 }
 }
 

@@ -180,10 +180,8 @@ namespace ra2 {
 namespace game {
 int ParasiteClass::SaveParasite(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ParasiteClass::SaveParasite(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6296c4*/
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
 }
 }
 } // namespace game
@@ -656,38 +654,35 @@ namespace ra2 {
 namespace game {
 bool ParasiteClass::CanInfect(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall ParasiteClass::CanInfect(_DWORD *this, _DWORD *a2)
 {
-  int v3; // ecx
-  int *v4; // eax
-  bool result; // al
-
-  result = 0; /*0x62a977*/
-  if ( a2 ) /*0x62a8ea*/
+    int v3;
+    int *v4;
+    bool result;
+    result = 0;
+    if ( a2 )
   {
-    if ( !*((_BYTE *)a2 + 129) ) /*0x62a8f0*/
+    if ( !*((char *)(a2) + 129) )
     {
-      if ( *((_BYTE *)a2 + 144) ) /*0x62a8fa*/
+    if ( *((char *)(a2) + 144) )
       {
-        if ( a2[27] ) /*0x62a904*/
+    if ( *((int*)(a2) + 27) )
         {
-          if ( !a2[421] ) /*0x62a90b*/
+    if ( !*((int*)(a2) + 421) )
           {
-            if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*a2 + 132))(a2) + 3384) ) /*0x62a91f*/
+    if ( *(char *)((*(int (__thiscall **)(int *))(*a2 + 132))(a2) + 3384) )
             {
-              if ( !a2[185] ) /*0x62a929*/
+    if ( !*((int*)(a2) + 185) )
               {
-                v3 = *(this + 9); /*0x62a933*/
-                if ( !v3 ) /*0x62a938*/
-                  return 1; /*0x62a938*/
-                if ( !*(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v3 + 132))(v3) + 3278) ) /*0x62a942*/
-                  return 1; /*0x62a942*/
-                if ( !(*(int (__thiscall **)(_DWORD *))(*a2 + 444))(a2) ) /*0x62a950*/
-                  return 1; /*0x62a950*/
-                v4 = (int *)(*(int (__thiscall **)(_DWORD *))(*a2 + 444))(a2); /*0x62a95e*/
-                if ( Cell::IsValidHeight(v4) ) /*0x62a966*/
-                  return 1; /*0x62a8ea*/
+    v3 = this->creationFrame;
+    if ( !v3 )
+    return 1;
+    if ( !*(char *)((*(int (__thiscall **)(int))(*(int *)(v3) + 132))(v3) + 3278) )
+    return 1;
+    if ( !(*(int (__thiscall **)(int *))(*a2 + 444))(a2) )
+    return 1;
+    v4 = (int *)(*(int (__thiscall **)(int *))(*a2 + 444))(a2);
+    if ( Cell::IsValidHeight(v4) )
+    return 1;
               }
             }
           }
@@ -695,7 +690,7 @@ bool __thiscall ParasiteClass::CanInfect(_DWORD *this, _DWORD *a2)
       }
     }
   }
-  return result; /*0x62a96f*/
+    return result;
 }
 }
 } // namespace game

@@ -29,13 +29,10 @@ int __thiscall Techno_GetOwnerHouse(int this)
 namespace gamemd {
 BuildingTypeClass * Techno::StartInvulnerability(BuildingTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BuildingTypeClass *__thiscall Techno::StartInvulnerability(_DWORD *this, BuildingTypeClass *aP1)
 {
-  BuildingTypeClass *v1; // eax
-
-  v1 = TechnoClass::InvulnerabilityIntensity_SetContext(this, aP1); /*0x70e368*/
-  return TechnoClass::CalcFlashAlpha(this, v1); /*0x70e375*/
+    BuildingTypeClass *v1;
+    v1 = TechnoClass::InvulnerabilityIntensity_SetContext(this, aP1);
+    return TechnoClass::CalcFlashAlpha(this, v1);
 }
 }
 } // namespace gamemd

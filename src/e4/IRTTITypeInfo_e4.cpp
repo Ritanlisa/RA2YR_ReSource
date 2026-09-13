@@ -7,10 +7,8 @@ namespace ra2 {
 namespace game {
 int IRTTITypeInfo::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall IRTTITypeInfo_QueryInterface(int a1, const void *a2, _DWORD *a3)
 {
-  return AbstractClass::QueryInterface(a1 - 4, a2, a3);
+    return AbstractClass::QueryInterface(a1 - 4, a2, a3);
 }
 }
 } // namespace game

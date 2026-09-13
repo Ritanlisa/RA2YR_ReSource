@@ -248,11 +248,9 @@ int __cdecl ThemeClass_ClearQueues()
 // 0x752AB0
 void ThemeClass::GetField(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall ThemeClass::GetField(int a1)
 {
-  MEMORY[0x846614] = a1; /*0x752ab6*/
-  if ( a1 >= 255 ) /*0x752abc*/
-    MEMORY[0x846614] = 255; /*0x752abe*/
+    DataGlobal_846614 = a1;
+    if ( a1 >= 255 )
+    DataGlobal_846614 = 255;
 }
 }

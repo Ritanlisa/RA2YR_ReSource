@@ -590,23 +590,20 @@ namespace ra2 {
 namespace game {
 int CaptureManagerClass::GetOriginalOwner(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CaptureManagerClass::GetOriginalOwner(_DWORD *this, int a2)
 {
-  int v2; // eax
-  int v3; // edx
-  _DWORD **i; // ecx
-
-  v2 = *(this + 13) - 1; /*0x4722f4*/
-  if ( v2 < 0 ) /*0x4722f6*/
-    return 0; /*0x472310*/
-  v3 = *(this + 10); /*0x4722f8*/
-  for ( i = (_DWORD **)(v3 + 4 * v2); **i != a2; --i ) /*0x4722ff*/
+    int v2;
+    int v3;
+    int **i;
+    v2 = this->originalOwner - 1;
+    if ( v2 < 0 )
+    return 0;
+    v3 = this->controlNodeCount;
+    for ( i = (int **)(v3 + 4 * v2); **i != a2; --i )
   {
-    if ( --v2 < 0 ) /*0x47230e*/
-      return 0; /*0x47230e*/
+    if ( --v2 < 0 )
+    return 0;
   }
-  return *(_DWORD *)(*(_DWORD *)(v3 + 4 * v2) + 4); /*0x472310*/
+    return *(int *)(*(int *)(v3 + 4 * v2) + 4);
 }
 }
 } // namespace game
@@ -770,8 +767,6 @@ LABEL_33:
 // 0x472640
 namespace ra2 {
 namespace game {
-char CaptureManagerClass::NeedsToDrawLinks()
-{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall CaptureManagerClass::NeedsToDrawLinks(_DWORD *this)
 {
@@ -815,7 +810,6 @@ LABEL_12:
   }
   return 0; /*0x472650*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -841,21 +835,18 @@ namespace ra2 {
 namespace game {
 int CaptureManagerClass::PowerDrainUpdate(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CaptureManagerClass::_vt13(int this, int a2)
 {
-  int result; // eax
-  int v4; // esi
-  int v5; // eax
-
-  result = AbstractClass::ProcessPower((#378 *)this); /*0x4726f9*/
-  v4 = this->overloadCount; /*0x4726fe*/
-  if ( v4 ) /*0x472703*/
+    int result;
+    int v4;
+    int v5;
+    result = AbstractClass::ProcessPower((#378 *)this);
+    v4 = this->overloadCount;
+    if ( v4 )
   {
-    v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x47270c*/
-    return Power::TimerProcess(v5); /*0x472712*/
+    v5 = (*(int (__stdcall **)(int))(*(int *)(v4 + 4) + 16))(v4 + 4);
+    return Power::TimerProcess(v5);
   }
-  return result; /*0x472717*/
+    return result;
 }
 }
 } // namespace game
@@ -1077,13 +1068,11 @@ namespace ra2 {
 namespace game {
 unsigned int CaptureManagerClass::LoadTypeData(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall CaptureManagerClass::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->vtable3 ) /*0x472ab0*/
-    return (unsigned int)(a2 - this->vtable1) >> 2; /*0x472ac5*/
-  else
-    return 0; /*0x472ab7*/
+    if ( (unsigned char)this->vtable3 )
+    return (unsigned int)(a2 - this->vtable1) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace game
@@ -1233,13 +1222,11 @@ namespace ra2 {
 namespace game {
 unsigned int CaptureManagerClass::PointerToIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall CaptureManagerClass::sub_472CA0(int this, int a2)
 {
-  if ( (unsigned char)this->vtable3 ) /*0x472ca0*/
-    return (unsigned int)(a2 - this->vtable1) >> 2; /*0x472cb5*/
-  else
-    return 0; /*0x472ca7*/
+    if ( (unsigned char)this->vtable3 )
+    return (unsigned int)(a2 - this->vtable1) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace game
@@ -1413,10 +1400,8 @@ namespace ra2 {
 namespace game {
 char CaptureManagerClass::AddMember(TechnoClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CaptureManagerClass::AddMember(void *this, TechnoClass *aP1)
 {
-  return TeamClass::AddMember((int)this, (IUnknown *)aP1, (IUnknown *)1); /*0x6ea4fc*/
+    return TeamClass::AddMember((int)this, (IUnknown *)aP1, (IUnknown *)1);
 }
 }
 } // namespace game

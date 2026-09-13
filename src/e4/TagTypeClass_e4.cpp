@@ -311,15 +311,12 @@ int __stdcall TagTypeClass::LoadTypeData(AbstractTypeClass *aP0, int aP1)
 namespace gamemd {
 int TagTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TagTypeClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6e647f*/
-  if ( result >= 0 ) /*0x6e6486*/
-    return 0; /*0x6e6488*/
-  return result; /*0x6e648a*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd

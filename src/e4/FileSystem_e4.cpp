@@ -5,46 +5,43 @@
 // 0x5F76B0
 void FileSystem::InitPipShapes()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void FileSystem_InitPipShapes()
 {
-  int v0[9]; // [esp+0h] [ebp-24h] BYREF
-
-  if ( !MEMORY[0xAC1478] ) /*0x5f76ba*/
+    int v0[9];
+    if ( !FileSystem_PIPBRD_SHP )
   {
-    RawFileClass::Construct(v0, (int)MEMORY[0x832AA8]); /*0x5f76c5*/
-    MEMORY[0xAC1478] = (int)CCFileClass::ReadEntireFile(v0); /*0x5f76da*/
-    MEMORY[0xAC1488] = MEMORY[0xAC1478] != 0; /*0x5f76df*/
-    if ( !MEMORY[0xAC1478] ) /*0x5f76e5*/
-      MEMORY[0xAC1478] = SearchMIXFile(MEMORY[0x832AA8], 0); /*0x5f76f3*/
-    RawFileClass::Dtor(v0); /*0x5f76fc*/
+    RawFileClass::Construct(v0, (int)DataGlobal_832AA8);
+    FileSystem_PIPBRD_SHP = (int)CCFileClass::ReadEntireFile(v0);
+    DataGlobal_AC1488 = FileSystem_PIPBRD_SHP != 0;
+    if ( !FileSystem_PIPBRD_SHP )
+    FileSystem_PIPBRD_SHP = SearchMIXFile(DataGlobal_832AA8, 0);
+    RawFileClass::Dtor(v0);
   }
-  if ( !MEMORY[0xAC147C] ) /*0x5f7708*/
+    if ( !FileSystem_PIPS_SHP )
   {
-    RawFileClass::Construct(v0, (int)MEMORY[0x832A9C]); /*0x5f7713*/
-    MEMORY[0xAC147C] = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7728*/
-    MEMORY[0xAC1489] = MEMORY[0xAC147C] != 0; /*0x5f772d*/
-    if ( !MEMORY[0xAC147C] ) /*0x5f7733*/
-      MEMORY[0xAC147C] = SearchMIXFile(MEMORY[0x832A9C], 0); /*0x5f7741*/
-    RawFileClass::Dtor(v0); /*0x5f774a*/
+    RawFileClass::Construct(v0, (int)DataGlobal_832A9C);
+    FileSystem_PIPS_SHP = (int)CCFileClass::ReadEntireFile(v0);
+    DataGlobal_AC1489 = FileSystem_PIPS_SHP != 0;
+    if ( !FileSystem_PIPS_SHP )
+    FileSystem_PIPS_SHP = SearchMIXFile(DataGlobal_832A9C, 0);
+    RawFileClass::Dtor(v0);
   }
-  if ( !MEMORY[0xAC1480] ) /*0x5f7756*/
+    if ( !FileSystem_PIPS2_SHP )
   {
-    RawFileClass::Construct(v0, (int)MEMORY[0x832A90]); /*0x5f7761*/
-    MEMORY[0xAC1480] = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7776*/
-    MEMORY[0xAC148A] = MEMORY[0xAC1480] != 0; /*0x5f777b*/
-    if ( !MEMORY[0xAC1480] ) /*0x5f7781*/
-      MEMORY[0xAC1480] = SearchMIXFile(MEMORY[0x832A90], 0); /*0x5f778f*/
-    RawFileClass::Dtor(v0); /*0x5f7798*/
+    RawFileClass::Construct(v0, (int)DataGlobal_832A90);
+    FileSystem_PIPS2_SHP = (int)CCFileClass::ReadEntireFile(v0);
+    DataGlobal_AC148A = FileSystem_PIPS2_SHP != 0;
+    if ( !FileSystem_PIPS2_SHP )
+    FileSystem_PIPS2_SHP = SearchMIXFile(DataGlobal_832A90, 0);
+    RawFileClass::Dtor(v0);
   }
-  if ( !MEMORY[0xAC1484] ) /*0x5f77a4*/
+    if ( !FileSystem_TALKBUBL_SHP )
   {
-    RawFileClass::Construct(v0, (int)MEMORY[0x832A80]); /*0x5f77af*/
-    MEMORY[0xAC1484] = (int)CCFileClass::ReadEntireFile(v0); /*0x5f77c4*/
-    MEMORY[0xAC148B] = MEMORY[0xAC1484] != 0; /*0x5f77c9*/
-    if ( !MEMORY[0xAC1484] ) /*0x5f77cf*/
-      MEMORY[0xAC1484] = SearchMIXFile(MEMORY[0x832A80], 0); /*0x5f77dd*/
-    RawFileClass::Dtor(v0); /*0x5f77e6*/
+    RawFileClass::Construct(v0, (int)DataGlobal_832A80);
+    FileSystem_TALKBUBL_SHP = (int)CCFileClass::ReadEntireFile(v0);
+    DataGlobal_AC148B = FileSystem_TALKBUBL_SHP != 0;
+    if ( !FileSystem_TALKBUBL_SHP )
+    FileSystem_TALKBUBL_SHP = SearchMIXFile(DataGlobal_832A80, 0);
+    RawFileClass::Dtor(v0);
   }
 }
 }
@@ -219,58 +216,55 @@ LABEL_36:
 // 0x72D350
 void FileSystem::CleanupTrees()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void FileSystem_CleanupTrees()
 {
-  void *v0; // esi
-  void *v1; // esi
-  void *v2; // esi
-
-  if ( MEMORY[0xB0FBAC] ) /*0x72d35a*/
+    void *v0;
+    void *v1;
+    void *v2;
+    if ( DataGlobal_B0FBAC )
   {
-    MEMORY[0xB0FBAC] = 0; /*0x72d368*/
-    if ( MEMORY[0xB0FC70] ) /*0x72d36e*/
+    DataGlobal_B0FBAC = 0;
+    if ( DataGlobal_B0FC70 )
     {
-      v0 = MEMORY[0xB0FB34]; /*0x72d370*/
-      if ( MEMORY[0xB0FB34] ) /*0x72d378*/
+    v0 = DataGlobal_B0FB34;
+    if ( DataGlobal_B0FB34 )
       {
-        FileTreeNode::Destroy(MEMORY[0xB0FB34]); /*0x72d37c*/
-        __3_YAXPAX_Z(v0); /*0x72d382*/
+    FileTreeNode::Destroy(DataGlobal_B0FB34);
+    __3_YAXPAX_Z(v0);
       }
-      MEMORY[0xB0FC70] = 0; /*0x72d38a*/
+    DataGlobal_B0FC70 = 0;
     }
-    MEMORY[0xB0FB34] = 0; /*0x72d395*/
-    if ( MEMORY[0xB0FC71] ) /*0x72d39d*/
+    DataGlobal_B0FB34 = 0;
+    if ( DataGlobal_B0FC71 )
     {
-      v1 = MEMORY[0xB0FB00]; /*0x72d39f*/
-      if ( MEMORY[0xB0FB00] ) /*0x72d3a7*/
+    v1 = DataGlobal_B0FB00;
+    if ( DataGlobal_B0FB00 )
       {
-        FileTreeNode::Destroy(MEMORY[0xB0FB00]); /*0x72d3ab*/
-        __3_YAXPAX_Z(v1); /*0x72d3b1*/
+    FileTreeNode::Destroy(DataGlobal_B0FB00);
+    __3_YAXPAX_Z(v1);
       }
-      MEMORY[0xB0FC71] = 0; /*0x72d3b9*/
+    DataGlobal_B0FC71 = 0;
     }
-    MEMORY[0xB0FB00] = 0; /*0x72d3c4*/
-    if ( MEMORY[0xB0FC72] ) /*0x72d3cc*/
+    DataGlobal_B0FB00 = 0;
+    if ( DataGlobal_B0FC72 )
     {
-      v2 = MEMORY[0xB0FB30]; /*0x72d3ce*/
-      if ( MEMORY[0xB0FB30] ) /*0x72d3d6*/
+    v2 = DataGlobal_B0FB30;
+    if ( DataGlobal_B0FB30 )
       {
-        FileTreeNode::Destroy(MEMORY[0xB0FB30]); /*0x72d3da*/
-        __3_YAXPAX_Z(v2); /*0x72d3e0*/
+    FileTreeNode::Destroy(DataGlobal_B0FB30);
+    __3_YAXPAX_Z(v2);
       }
-      MEMORY[0xB0FC72] = 0; /*0x72d3e8*/
+    DataGlobal_B0FC72 = 0;
     }
-    MEMORY[0xB0FB30] = 0; /*0x72d3f3*/
-    if ( MEMORY[0xB0FBA4] ) /*0x72d3fc*/
+    DataGlobal_B0FB30 = 0;
+    if ( DataGlobal_B0FBA4 )
     {
-      __3_YAXPAX_Z(MEMORY[0xB0FBA4]); /*0x72d3ff*/
-      MEMORY[0xB0FBA4] = 0; /*0x72d407*/
+    __3_YAXPAX_Z(DataGlobal_B0FBA4);
+    DataGlobal_B0FBA4 = 0;
     }
-    if ( MEMORY[0xB0FBA8] ) /*0x72d415*/
+    if ( DataGlobal_B0FBA8 )
     {
-      (**(void (__thiscall ***)(int, int))MEMORY[0xB0FBA8])(MEMORY[0xB0FBA8], 1); /*0x72d41b*/
-      MEMORY[0xB0FBA8] = 0; /*0x72d41d*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBA8)(DataGlobal_B0FBA8, 1);
+    DataGlobal_B0FBA8 = 0;
     }
   }
 }

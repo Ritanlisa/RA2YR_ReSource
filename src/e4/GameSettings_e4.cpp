@@ -372,24 +372,21 @@ void __thiscall GameSettings::SetScoreVolume(GameSettings *this, int volume)
 // 0x7931A0
 char * GameSettings::FindFlagged()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *GameSettings_FindFlagged()
 {
-  int v0; // eax
-  char *i; // edx
-
-  v0 = 0; /*0x7931a7*/
-  if ( (int)g_WOL_State <= 0 ) /*0x7931ad*/
-    return 0; /*0x7931dc*/
-  for ( i = (char *)g_WOL_ConnectionFlags; ; i += 108 ) /*0x7931af*/
+    int v0;
+    char *i;
+    v0 = 0;
+    if ( (int)g_WOL_State <= 0 )
+    return 0;
+    for ( i = (char *)g_WOL_ConnectionFlags; ; i += 108 )
   {
-    if ( v0 >= 0 && v0 < (int)g_WOL_State ) /*0x7931bb*/
-      qmemcpy(&g_IsMultiplayerSession, i, 0x6Cu); /*0x7931c9*/
-    if ( (g_IsMultiplayerSession & 1) != 0 ) /*0x7931d2*/
-      break; /*0x7931d2*/
-    if ( ++v0 >= (int)g_WOL_State ) /*0x7931da*/
-      return 0; /*0x7931da*/
+    if ( v0 >= 0 && v0 < (int)g_WOL_State )
+    qmemcpy(&g_IsMultiplayerSession, i, 0x6Cu);
+    if ( (g_IsMultiplayerSession & 1) != 0 )
+    break;
+    if ( ++v0 >= (int)g_WOL_State )
+    return 0;
   }
-  return &g_IsMultiplayerSession; /*0x7931dc*/
+    return &g_IsMultiplayerSession;
 }
 }

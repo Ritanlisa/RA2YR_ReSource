@@ -242,62 +242,59 @@ int __thiscall sub_490400(int this)
 namespace gamemd {
 int sub_491100(ObjectClass * aP0, char a2, int a3, ObjectClass * aP3, short a5, char a6, short a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_491100(ObjectClass *aP0, char a2, int a3, ObjectClass *aP3, __int16 a5, char a6, __int16 a7)
 {
-  char v7; // dl
-  char v8; // cl
-  int v9; // ebx
-  ObjectClass *result; // eax
-  char v11; // bp
-  _DWORD *v12; // ecx
-  _WORD *v13; // esi
-  int v14; // edi
-  int v15; // eax
-  int v16; // edx
-  __int16 v17; // ax
-  unsigned __int8 v18; // dl
-  ObjectClass *i; // [esp+4h] [ebp-Ch]
-  char v20; // [esp+8h] [ebp-8h]
-  int v21; // [esp+Ch] [ebp-4h]
-
-  v20 = v8; /*0x491103*/
-  result = 0; /*0x491107*/
-  v11 = v7; /*0x491112*/
-  for ( i = 0; (int)result < *(int *)&stru_89E138.__pad_BC0[16]; i = result ) /*0x491118*/
+    char v7;
+    char v8;
+    int v9;
+    ObjectClass *result;
+    char v11;
+    int *v12;
+    short *v13;
+    int v14;
+    int v15;
+    int v16;
+    short v17;
+    unsigned char v18;
+    ObjectClass *i;
+    char v20;
+    int v21;
+    v20 = v8;
+    result = 0;
+    v11 = v7;
+    for ( i = 0; (int)result < *(int *)&DataGlobal_89E138.__pad_BC0[16]; i = result )
   {
-    v12 = *(_DWORD **)(*(_DWORD *)&stru_89E138.__pad_BC0[4] + 4 * (_DWORD)result); /*0x491127*/
-    v21 = (int)v12; /*0x49112a*/
-    if ( v12[1] == 2 ) /*0x491132*/
+    v12 = *(int **)(*(int *)&DataGlobal_89E138.__pad_BC0[4] + 4 * (int)result);
+    v21 = (int)v12;
+    if ( v12[1] == 2 )
     {
-      v13 = (_WORD *)v12[92]; /*0x491138*/
-      v14 = 256; /*0x49113e*/
-      do /*0x4911ba*/
+    v13 = (short *)v12[92];
+    v14 = 256;
+    do
       {
-        LOWORD(v9) = *v13; /*0x491143*/
-        HIWORD(v15) = HIWORD(v9); /*0x491149*/
-        HIWORD(v16) = HIWORD(v9); /*0x49114b*/
-        v17 = *v13++ >> v11; /*0x49114d*/
-        v18 = (unsigned __int8)((unsigned __int16)v9 >> a2) << (char)aP0; /*0x491165*/
-        LOWORD(v9) = (unsigned __int8)((unsigned __int8)((unsigned __int8)((unsigned __int16)v9 >> (char)aP3) << a3) >> stru_89E138.__pad_14B0[6132]); /*0x491183*/
-        LOWORD(v15) = (unsigned __int8)((unsigned __int8)((_BYTE)v17 << v20) >> stru_89E138.__pad_14B0[6124]); /*0x491197*/
-        LOWORD(v16) = (unsigned __int8)(v18 >> stru_89E138.__pad_14B0[6140]); /*0x4911ad*/
-        v9 = (v16 << stru_89E138.__pad_14B0[6136]) /*0x4911b3*/
-           | (v15 << stru_89E138.__pad_14B0[6120])
-           | (v9 << stru_89E138.__pad_14B0[6128]);
-        --v14; /*0x4911b5*/
-        *(v13 - 1) = v9; /*0x4911b6*/
+    LOWORD(v9) = *v13;
+    HIWORD(v15) = HIWORD(v9);
+    HIWORD(v16) = HIWORD(v9);
+    v17 = *v13++ >> v11;
+    v18 = (unsigned char)((unsigned short)v9 >> a2) << (char)aP0;
+    LOWORD(v9) = (unsigned char)((unsigned char)((unsigned char)((unsigned short)v9 >> (char)aP3) << a3) >> DataGlobal_89E138.__pad_14B0[6132]);
+    LOWORD(v15) = (unsigned char)((unsigned char)((char)v17 << v20) >> DataGlobal_89E138.__pad_14B0[6124]);
+    LOWORD(v16) = (unsigned char)(v18 >> DataGlobal_89E138.__pad_14B0[6140]);
+    v9 = (v16 << DataGlobal_89E138.__pad_14B0[6136])
+    | (v15 << DataGlobal_89E138.__pad_14B0[6120])
+    | (v9 << DataGlobal_89E138.__pad_14B0[6128]);
+    --v14;
+    *(v13 - 1) = v9;
       }
-      while ( v14 ); /*0x4911ba*/
-      v12[96] = *(unsigned __int16 *)&stru_89E138.__pad_14B0[6144]; /*0x4911ca*/
-      v12[97] = *(unsigned __int16 *)&stru_89E138.__pad_14B0[6146]; /*0x4911d7*/
-      COMClass::RegisterAll(v12); /*0x4911df*/
-      ConvertClass::InitTables(v21); /*0x4911e6*/
-      result = i; /*0x4911eb*/
+    while ( v14 );
+    v12[96] = *(unsigned short *)&DataGlobal_89E138.__pad_14B0[6144];
+    v12[97] = *(unsigned short *)&DataGlobal_89E138.__pad_14B0[6146];
+    COMClass::RegisterAll(v12);
+    ConvertClass::InitTables(v21);
+    result = i;
     }
-    result = (ObjectClass *)((char *)result + 1); /*0x4911f5*/
+    result = (ObjectClass *)((char *)(result) + 1);
   }
-  return (int)result->__pad_0; /*0x491205*/
+    return (int)result->__pad_0;
 }
 }
 } // namespace gamemd
@@ -2113,77 +2110,63 @@ int __thiscall sub_4966D0(
 namespace gamemd {
 int E4Recv_496820::sub_496820(unsigned short * a1, unsigned char * a2, RLEBlitTransDarkenZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_496820(
-        RLEBlitTransDarkenZRead_G *this,
-        _WORD *a1,
-        unsigned __int8 *a2,
-        RLEBlitTransDarkenZRead_G *aP3,
-        int a5,
-        int a6,
-        unsigned int a7,
-        int a8,
-        int a9,
-        int _38,
-        char *a10)
 {
-  int result; // eax
-  unsigned int v12; // edx
-  _WORD *v14; // esi
-  int v17; // eax
-  RLEBlitTransDarkenZRead_G *v18; // ebx
-  unsigned __int8 v20; // al
-  int v21; // edi
-
-  result = a5; /*0x496821*/
-  v12 = a7; /*0x496825*/
-  v14 = a1; /*0x496830*/
-  if ( a5 <= 0 ) /*0x496845*/
+    int result;
+    unsigned int v12;
+    short *v14;
+    int v17;
+    RLEBlitTransDarkenZRead_G *v18;
+    unsigned char v20;
+    int v21;
+    result = a5;
+    v12 = a7;
+    v14 = a1;
+    if ( a5 <= 0 )
   {
-    v18 = aP3; /*0x496878*/
+    v18 = aP3;
   }
-  else
+    else
   {
-    do /*0x49685c*/
+    do
     {
-      if ( *a2++ ) /*0x496847*/
-        --result; /*0x496859*/
-      else
-        result -= *a2++; /*0x496854*/
+    if ( *a2++ )
+    --result;
+    else
+    result -= *a2++;
     }
-    while ( result > 0 ); /*0x49685c*/
-    v17 = -result; /*0x496862*/
-    v18 = (RLEBlitTransDarkenZRead_G *)((char *)aP3 - v17); /*0x496864*/
-    v14 = &a1[v17]; /*0x496866*/
-    result = a7 + 2 * v17; /*0x496869*/
-    if ( (unsigned int)result >= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 28) ) /*0x49686f*/
-      result -= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 32); /*0x496871*/
-    v12 = result; /*0x496874*/
+    while ( result > 0 );
+    v17 = -result;
+    v18 = (RLEBlitTransDarkenZRead_G *)((char *)aP3 - v17);
+    v14 = &a1[v17];
+    result = a7 + 2 * v17;
+    if ( (unsigned int)result >= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 28) )
+    result -= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 32);
+    v12 = result;
   }
-  while ( (int)v18 > 0 ) /*0x49687e*/
+    while ( (int)v18 > 0 )
   {
-    if ( *a2++ ) /*0x496880*/
+    if ( *a2++ )
     {
-      v12 += 2; /*0x4968ad*/
-      v21 = a6 - *a10++; /*0x4968b0*/
-      if ( v21 < *(unsigned __int16 *)(v12 - 2) ) /*0x4968bb*/
-        *v14 = (unsigned short)this->M1 & (*v14 >> 1); /*0x4968cb*/
-      v18 = (RLEBlitTransDarkenZRead_G *)((char *)v18 - 1); /*0x4968ce*/
-      ++v14; /*0x4968cf*/
+    v12 += 2;
+    v21 = a6 - *a10++;
+    if ( v21 < *(unsigned short *)(v12 - 2) )
+    *v14 = (unsigned short)this->M1 & (*v14 >> 1);
+    v18 = (RLEBlitTransDarkenZRead_G *)((char *)v18 - 1);
+    ++v14;
     }
     else
     {
-      v20 = *a2++; /*0x496888*/
-      v18 = (RLEBlitTransDarkenZRead_G *)((char *)v18 - v20); /*0x496899*/
-      a10 += v20; /*0x49689b*/
-      v14 += v20; /*0x4968a0*/
-      v12 += 2 * v20; /*0x4968a2*/
+    v20 = *a2++;
+    v18 = (RLEBlitTransDarkenZRead_G *)((char *)v18 - v20);
+    a10 += v20;
+    v14 += v20;
+    v12 += 2 * v20;
     }
-    result = *(_DWORD *)&stru_87C374.__pad_579C[23348]; /*0x4968d2*/
-    if ( v12 >= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 28) ) /*0x4968da*/
-      v12 -= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[23348] + 32); /*0x4968dc*/
+    result = *(int *)&DataGlobal_87C374.__pad_579C[23348];
+    if ( v12 >= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 28) )
+    v12 -= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 32);
   }
-  return result; /*0x4968e3*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -3115,26 +3098,24 @@ RLEBlitTransXlatZRead *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_58(std::locale
 namespace gamemd {
 int sub_49B390()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_49B390()
 {
-  MEMORY[0x89F51C] = 0; /*0x49b398*/
-  MEMORY[0x89F520] = 0; /*0x49b39e*/
-  GenericNode::Constructor(MEMORY[0x89F528]); /*0x49b3a4*/
-  GenericNode::Constructor(MEMORY[0x89F534]); /*0x49b3ae*/
-  MEMORY[0x89F524] = (int)&vt_GenericList; /*0x49b3bd*/
-  LinkedList::Prepend(MEMORY[0x89F528], (int)MEMORY[0x89F534]); /*0x49b3c7*/
-  MEMORY[0x89F524] = (int)&vt_List_INIClass_INISection; /*0x49b3d1*/
-  MEMORY[0x89F540] = 0; /*0x49b3db*/
-  MEMORY[0x89F544] = 0; /*0x49b3e1*/
-  MEMORY[0x89F548] = 0; /*0x49b3e7*/
-  MEMORY[0x89F54C] = 0; /*0x49b3ed*/
-  MEMORY[0x89F550] = 0; /*0x49b3f3*/
-  MEMORY[0x89F554] = 0; /*0x49b3f9*/
-  MEMORY[0x89F558] = 0; /*0x49b3ff*/
-  MEMORY[0x89F518] = (int)&CCINIClass_Vtable; /*0x49b405*/
-  MEMORY[0x89F578] = 0; /*0x49b40f*/
-  return atexit(unknown_libname_12); /*0x49b41d*/
+    DataGlobal_89F51C = 0;
+    DataGlobal_89F520 = 0;
+    GenericNode::Constructor(DataGlobal_89F528);
+    GenericNode::Constructor(DataGlobal_89F534);
+    DataGlobal_89F524 = (int)&vt_GenericList;
+    LinkedList::Prepend(DataGlobal_89F528, (int)DataGlobal_89F534);
+    DataGlobal_89F524 = (int)&vt_List_INIClass_INISection;
+    DataGlobal_89F540 = 0;
+    DataGlobal_89F544 = 0;
+    DataGlobal_89F548 = 0;
+    DataGlobal_89F54C = 0;
+    DataGlobal_89F550 = 0;
+    DataGlobal_89F554 = 0;
+    DataGlobal_89F558 = 0;
+    g_DDrawSurfaceManager = (int)&CCINIClass_Vtable;
+    DataGlobal_89F578 = 0;
+    return atexit(unknown_libname_12);
 }
 }
 } // namespace gamemd
@@ -4204,28 +4185,25 @@ int sub_49F3A0()
 namespace gamemd {
 IUnknown * globalHelper_09F550(int * a1, IUnknown * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-IUnknown *__fastcall globalHelper_09F550(int *a1, IUnknown *a2, int a3)
 {
-  int v4; // eax
-  IUnknown *v5; // edi
-  char *v6; // edi
-  int GroundHeight; // eax
-  int v9; // [esp+8h] [ebp-Ch] BYREF
-  int v10; // [esp+Ch] [ebp-8h]
-  IUnknown *v11; // [esp+10h] [ebp-4h]
-
-  v4 = *(_DWORD *)&stru_89E138.__pad_14B0[8 * a3 + 240] + a2->field_0; /*0x49f56c*/
-  v5 = (IUnknown *)a2->field_8; /*0x49f573*/
-  v10 = a2->field_4 + *(_DWORD *)&stru_89E138.__pad_14B0[8 * a3 + 244]; /*0x49f576*/
-  v9 = v4; /*0x49f57f*/
-  v11 = v5; /*0x49f583*/
-  v6 = (char *)v5 - Cell::GetGroundHeight(a2); /*0x49f595*/
-  GroundHeight = Cell::GetGroundHeight((IUnknown *)&v9); /*0x49f59c*/
-  *a1 = v9; /*0x49f5aa*/
-  a1[1] = v10; /*0x49f5b0*/
-  a1[2] = (int)&v6[GroundHeight]; /*0x49f5b3*/
-  return (IUnknown *)a1; /*0x49f5a9*/
+    int v4;
+    IUnknown *v5;
+    char *v6;
+    int GroundHeight;
+    int v9;
+    int v10;
+    IUnknown *v11;
+    v4 = *(int *)&DataGlobal_89E138.__pad_14B0[8 * a3 + 240] + a2->field_0;
+    v5 = (IUnknown *)a2->field_8;
+    v10 = a2->field_4 + *(int *)&DataGlobal_89E138.__pad_14B0[8 * a3 + 244];
+    v9 = v4;
+    v11 = v5;
+    v6 = (char *)v5 - Cell::GetGroundHeight(a2);
+    GroundHeight = Cell::GetGroundHeight((IUnknown *)&v9);
+    *a1 = v9;
+    *((int*)(a1) + 1) = v10;
+    *((int*)(a1) + 2) = (int)&v6[GroundHeight];
+    return (IUnknown *)a1;
 }
 }
 } // namespace gamemd

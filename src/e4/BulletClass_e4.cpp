@@ -117,16 +117,14 @@ int __thiscall BulletClass::Dtor(#374 *this)
 namespace gamemd {
 int * BulletClass::CalculateSpreadAngle(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__stdcall BulletClass::_vt66(int a1)
 {
-  if ( (unk_89DE10 & 1) == 0 ) /*0x46666b*/
+    if ( (DataGlobal_89DE10 & 1) == 0 )
   {
-    unk_89DE10 |= 1u; /*0x466689*/
-    unk_89DDF4 = 2147450879; /*0x46668f*/
-    atexit(nullsub_108); /*0x466694*/
+    DataGlobal_89DE10 |= 1u;
+    DataGlobal_89DDF4 = 2147450879;
+    atexit(nullsub_108);
   }
-  return &unk_89DDF4; /*0x4666a2*/
+    return &DataGlobal_89DDF4;
 }
 }
 } // namespace gamemd
@@ -135,10 +133,8 @@ int *__stdcall BulletClass::_vt66(int a1)
 namespace gamemd {
 int BulletClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall BulletClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x46afc4*/
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
 }
 }
 } // namespace gamemd
@@ -147,11 +143,9 @@ int __stdcall BulletClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int 
 namespace gamemd {
 LONG BulletClass::CheckTargetValidity(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall BulletClass::_vt01(int a1)
 {
-  ++g_BulletClassPool; /*0x46afdf*/
-  return InterlockedIncrement((volatile LONG *)(a1 + 28)); /*0x46afeb*/
+    ++g_BulletClassPool;
+    return InterlockedIncrement((volatile LONG *)(a1 + 28));
 }
 }
 } // namespace gamemd
@@ -160,16 +154,13 @@ LONG __stdcall BulletClass::_vt01(int a1)
 namespace gamemd {
 LONG BulletClass::ValidateTarget(volatile LONG * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall BulletClass::_vt02(volatile LONG *a1)
 {
-  LONG v1; // esi
-
-  --g_BulletClassPool; /*0x46b000*/
-  v1 = InterlockedDecrement(a1 + 7); /*0x46b00d*/
-  if ( !v1 && a1 ) /*0x46b015*/
-    (*(void (__thiscall **)(volatile LONG *, int))(*a1 + 32))(a1, 1); /*0x46b01d*/
-  return v1; /*0x46b022*/
+    LONG v1;
+    --g_BulletClassPool;
+    v1 = InterlockedDecrement(a1 + 7);
+    if ( !v1 && a1 )
+    (*(void (__thiscall **)(volatile LONG *, int))(*a1 + 32))(a1, 1);
+    return v1;
 }
 }
 } // namespace gamemd

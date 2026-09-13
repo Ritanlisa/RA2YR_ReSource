@@ -5,9 +5,7 @@
 // 0x60D430
 void Init::StubPlaceholder()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void Init::StubPlaceholder()
 {
-  ; /*0x60d430*/
+    ;
 }
 }

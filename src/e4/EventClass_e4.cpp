@@ -289,17 +289,15 @@ _DWORD *__thiscall EventClass::resetEvent(_DWORD *this, BuildingClass *aP1, Buil
 namespace gamemd {
 void EventClass::finalizeEvent()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_40BE10()
 {
-  MEMORY[0x87F658] = (int)&vt_VectorClass_CommandClass_const; /*0x40be18*/
-  if ( MEMORY[0x87F65C] && MEMORY[0x87F665] ) /*0x40be2c*/
+    g_CommandClassVector = (int)&vt_VectorClass_CommandClass_const;
+    if ( g_CommandClass_Capacity && g_CommandClass_HasInit )
   {
-    __3_YAXPAX_Z(MEMORY[0x87F65C]); /*0x40be2f*/
-    MEMORY[0x87F65C] = 0; /*0x40be37*/
+    __3_YAXPAX_Z(g_CommandClass_Capacity);
+    g_CommandClass_Capacity = 0;
   }
-  MEMORY[0x87F665] = 0; /*0x40be3d*/
-  MEMORY[0x87F660] = 0; /*0x40be43*/
+    g_CommandClass_HasInit = 0;
+    g_CommandClass_Size = 0;
 }
 }
 } // namespace gamemd
@@ -333,13 +331,11 @@ VectorClass *__thiscall EventClass::queueEvent(_DWORD *this, char a2)
 namespace gamemd {
 unsigned int EventClass::dequeueEvent(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall VectorClass_ptr_LightConvertClass::sub_40C260(int this, int a2)
 {
-  if ( (unsigned char)this->EventClass_field_0xC ) /*0x40c260*/
-    return (unsigned int)(a2 - this->EventClass_field_0x4) >> 2; /*0x40c275*/
-  else
-    return 0; /*0x40c267*/
+    if ( (unsigned char)this->EventClass_field_0xC )
+    return (unsigned int)(a2 - this->EventClass_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -399,13 +395,10 @@ char __thiscall VectorClass_ptr_LightConvertClass::sub_40C410(void *this, int a2
 namespace gamemd {
 void EventClass::getEventCount()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_40C590()
 {
-  long double v0; // st7
-
-  v0 = pow(256.0, 2.0); /*0x40c59c*/
-  MEMORY[0x87F6F8] = Math::Sqrt(v0 + v0); /*0x40c5ae*/
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_87F6F8 = Math::Sqrt(v0 + v0);
 }
 }
 } // namespace gamemd

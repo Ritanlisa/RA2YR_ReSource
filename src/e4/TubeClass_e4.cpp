@@ -33,15 +33,12 @@ int __stdcall TubeClass::LoadState(AbstractClass *aP0, int aP1)
 namespace gamemd {
 int TubeClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TubeClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x7281ef*/
-  if ( result >= 0 ) /*0x7281f6*/
-    return 0; /*0x7281f8*/
-  return result; /*0x7281fa*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd

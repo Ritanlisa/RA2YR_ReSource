@@ -237,13 +237,11 @@ int __thiscall NeuronClass_25_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int NeuronClass_25::Fire(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall NeuronClass_25_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->NeuronClass_25_field_0xC ) /*0x43ac90*/
-    return (unsigned int)(a2 - this->NeuronClass_25_field_0x4) >> 2; /*0x43aca5*/
-  else
-    return 0; /*0x43ac97*/
+    if ( (unsigned char)this->NeuronClass_25_field_0xC )
+    return (unsigned int)(a2 - this->NeuronClass_25_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

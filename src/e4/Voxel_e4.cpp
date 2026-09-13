@@ -241,29 +241,26 @@ float *__thiscall Voxel_RenderFrame(float *this)
 namespace gamemd {
 int Voxel::SetProjectionAngle(float a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_754C00(float a1)
 {
-  int *v1; // eax
-  float v3[3]; // [esp+0h] [ebp-48h] BYREF
-  float v4[3]; // [esp+Ch] [ebp-3Ch] BYREF
-  float v5[12]; // [esp+18h] [ebp-30h] BYREF
-
-  Matrix3x4::Identity(v5); /*0x754c07*/
-  MEMORY[0x88746C] = a1; /*0x754c12*/
-  Matrix3D::RotateZ(v5, a1); /*0x754c1c*/
-  v3[0] = -0.70710599; /*0x754c2e*/
-  v3[1] = -0.70710599; /*0x754c36*/
-  v3[2] = 0.0; /*0x754c3e*/
-  v1 = (int *)TransformMatrix3x4Point(v4, v5, v3); /*0x754c46*/
-  MEMORY[0x887470] = *v1; /*0x754c4d*/
-  MEMORY[0x887474] = v1[1]; /*0x754c62*/
-  MEMORY[0x887478] = v1[2]; /*0x754c6b*/
-  MEMORY[0x887424] = 0; /*0x754c88*/
-  v3[0] = *(float *)&MEMORY[0x887470] * -6.0; /*0x754c8e*/
-  MEMORY[0x887428] = 0; /*0x754c96*/
-  MEMORY[0x887420] = LODWORD(v3[0]); /*0x754c9b*/
-  return 0; /*0x754ca1*/
+    int *v1;
+    float v3[3];
+    float v4[3];
+    float v5[12];
+    Matrix3x4::Identity(v5);
+    DataGlobal_88746C = a1;
+    Matrix3D::RotateZ(v5, a1);
+    v3[0] = -0.70710599;
+    v3[1] = -0.70710599;
+    v3[2] = 0.0;
+    v1 = (int *)TransformMatrix3x4Point(v4, v5, v3);
+    DataGlobal_887470 = *v1;
+    DataGlobal_887474 = v1[1];
+    DataGlobal_887478 = v1[2];
+    DataGlobal_887424 = 0;
+    v3[0] = *(float *)&DataGlobal_887470 * -6.0;
+    DataGlobal_887428 = 0;
+    DataGlobal_887420 = LODWORD(v3[0]);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1367,57 +1364,54 @@ int __thiscall Voxel::BlendShadowColor(_DWORD *this, int a2, WaveClass *aP2, int
 namespace gamemd {
 int Voxel::InitDistanceTable()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Voxel_InitDistanceTable()
 {
-  int v0; // ebp
-  __int16 *v1; // edi
-  int i; // esi
-  double v3; // st7
-  __int16 *v4; // esi
-  double v5; // st7
-  __int16 *v6; // esi
-  double v7; // st7
-  int *v8; // ecx
-  int result; // eax
-  int v10; // [esp+1Ch] [ebp-4h]
-  int v11; // [esp+1Ch] [ebp-4h]
-
-  byte_B725CC = 1; /*0x75f02d*/
-  v0 = 0; /*0x75f034*/
-  v1 = MEMORY[0xB4669C]; /*0x75f036*/
-  do /*0x75f07a*/
+    int v0;
+    short *v1;
+    int i;
+    double v3;
+    short *v4;
+    double v5;
+    short *v6;
+    double v7;
+    int *v8;
+    int result;
+    int v10;
+    int v11;
+    DataGlobal_B725CC = 1;
+    v0 = 0;
+    v1 = DataGlobal_B4669C;
+    do
   {
-    for ( i = 0; i < 300; ++i ) /*0x75f03d*/
+    for ( i = 0; i < 300; ++i )
     {
-      v3 = Math::Sqrt((double)(v0 * v0 + i * i)); /*0x75f057*/
-      *v1++ = Math::RoundToInt(v3); /*0x75f064*/
+    v3 = Math::Sqrt((double)(v0 * v0 + i * i));
+    *v1++ = Math::RoundToInt(v3);
     }
-    ++v0; /*0x75f073*/
+    ++v0;
   }
-  while ( (int)v1 < (int)&dword_B725BC ); /*0x75f07a*/
-  v4 = MEMORY[0xB46254]; /*0x75f07e*/
-  v10 = 0; /*0x75f083*/
-  do /*0x75f0c5*/
+    while ( (int)v1 < (int)&DataGlobal_B725BC );
+    v4 = DataGlobal_B46254;
+    v10 = 0;
+    do
   {
-    v5 = Math::SinCos((double)v10 * 0.125); /*0x75f097*/
-    *v4++ = Math::RoundToInt(v5 * 12.0 + 0.49); /*0x75f0b4*/
-    ++v10; /*0x75f0c1*/
+    v5 = Math::SinCos((double)v10 * 0.125);
+    *v4++ = Math::RoundToInt(v5 * 12.0 + 0.49);
+    ++v10;
   }
-  while ( (int)v4 < (int)MEMORY[0xB4663C] ); /*0x75f0c5*/
-  v11 = 0; /*0x75f0c7*/
-  v6 = MEMORY[0xB45E68]; /*0x75f0cb*/
-  do /*0x75f10e*/
+    while ( (int)v4 < (int)DataGlobal_B4663C );
+    v11 = 0;
+    v6 = DataGlobal_B45E68;
+    do
   {
-    v7 = Math::SinCos((double)v11 * 0.1); /*0x75f0e0*/
-    *v6++ = Math::RoundToInt(v7 * 12.0 + 0.49); /*0x75f0fd*/
-    ++v11; /*0x75f10a*/
+    v7 = Math::SinCos((double)v11 * 0.1);
+    *v6++ = Math::RoundToInt(v7 * 12.0 + 0.49);
+    ++v11;
   }
-  while ( (int)v6 < (int)&MEMORY[0xB46248] ); /*0x75f10e*/
-  v8 = MEMORY[0xB46648]; /*0x75f110*/
-  for ( result = 110; result < 214; result += 8 ) /*0x75f115*/
-    *v8++ = result; /*0x75f11a*/
-  return result; /*0x75f129*/
+    while ( (int)v6 < (int)&DataGlobal_B46248 );
+    v8 = DataGlobal_B46648;
+    for ( result = 110; result < 214; result += 8 )
+    *v8++ = result;
+    return result;
 }
 }
 } // namespace gamemd

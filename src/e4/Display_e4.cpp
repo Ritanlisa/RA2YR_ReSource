@@ -7,14 +7,11 @@
 namespace gamemd {
 long long Display::CalculateDefaultSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 sub_5D5A20()
 {
-  __int64 result; // rax
-
-  result = Math::RoundToInt((double)(4 * MEMORY[0xABFDD0]) + 0.5); /*0x5d5a3b*/
-  MEMORY[0xABFDC4] = result; /*0x5d5a40*/
-  return result; /*0x5d5a46*/
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_ABFDD0) + 0.5);
+    DataGlobal_ABFDC4 = result;
+    return result;
 }
 }
 } // namespace gamemd
@@ -23,25 +20,22 @@ __int64 sub_5D5A20()
 namespace gamemd {
 int * Display::GetViewport()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall Display_GetViewport(int *this)
 {
-  int *result; // eax
-  int v2; // ecx
-  int v3; // edx
-  int v4; // esi
-
-  result = this; /*0x72ad29*/
-  v2 = 0; /*0x72ad44*/
-  if ( !MEMORY[0xA8EB7C] && !MEMORY[0xA8ED6B] ) /*0x72ad5e*/
-    v2 = 168; /*0x72ad60*/
-  v3 = MEMORY[0x886FB8] - 168; /*0x72ad67*/
-  v4 = MEMORY[0x886FBC] - 32; /*0x72ad6d*/
-  *result = v2; /*0x72ad70*/
-  result[1] = 0; /*0x72ad72*/
-  result[2] = v3; /*0x72ad76*/
-  result[3] = v4; /*0x72ad79*/
-  return result; /*0x72ad75*/
+    int *result;
+    int v2;
+    int v3;
+    int v4;
+    result = this;
+    v2 = 0;
+    if ( !DataGlobal_A8EB7C && !g_ArmageddonMode )
+    v2 = 168;
+    v3 = g_CreditsScreenBounds - 168;
+    v4 = g_CreditsScreenConfig - 32;
+    *result = v2;
+    result[1] = 0;
+    result[2] = v3;
+    result[3] = v4;
+    return result;
 }
 }
 } // namespace gamemd

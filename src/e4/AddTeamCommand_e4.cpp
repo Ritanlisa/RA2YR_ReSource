@@ -47,9 +47,7 @@ wchar_t *__thiscall AddTeamCommand::_vt02(const wchar_t **this)
 // 0x536120
 wchar_t * AddTeamCommand::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *AddTeamCommand::_vt03()
 {
-  return GetStringCSF(MEMORY[0x826FA4], 0, g_Str_File_Init_CPP, 6328); /*0x536136*/
+    return GetStringCSF(g_Str_TXT_TEAM, 0, g_Str_File_Init_CPP, 6328);
 }
 }

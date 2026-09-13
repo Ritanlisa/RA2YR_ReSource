@@ -487,24 +487,21 @@ int __stdcall TiberiumClass::SaveLoad_Prefix(int a1, int a2)
 namespace gamemd {
 int TiberiumClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TiberiumClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-  int v4; // edx
-  int i; // esi
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x7220e1*/
-  if ( result >= 0 ) /*0x7220e8*/
+    int result;
+    int v4;
+    int i;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
   {
-    v4 = *a1; /*0x7220f0*/
-    aP2 = aP0->ChargerTurrets[6]; /*0x7220fd*/
-    (*(void (__stdcall **)(int *, int *, int, _DWORD))(v4 + 16))(a1, &aP2, 4, 0); /*0x722101*/
-    for ( i = 0; i < aP2; ++i ) /*0x72210c*/
-      (*(void (__stdcall **)(int *, int, int, _DWORD))(*a1 + 16))(a1, aP0->ChargerTurrets[3] + 4 * i, 4, 0); /*0x72211f*/
-    return 0; /*0x722129*/
+    v4 = *a1;
+    aP2 = aP0->ChargerTurrets[6];
+    (*(void (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
+    for ( i = 0; i < aP2; ++i )
+    (*(void (__stdcall **)(int *, int, int, int))(*a1 + 16))(a1, aP0->ChargerTurrets[3] + 4 * i, 4, 0);
+    return 0;
   }
-  return result; /*0x72212c*/
+    return result;
 }
 }
 } // namespace gamemd

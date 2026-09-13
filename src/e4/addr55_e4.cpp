@@ -13,8 +13,6 @@
 // 0x550080
 namespace ra2 {
 namespace game {
-void ObjectClass::sub_550080()
-{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_550080(ObjectClass **this)
 {
@@ -73,7 +71,6 @@ LABEL_8:
     }
     __3_YAXPAX_Z(this); /*0x550138*/
   }
-}
 }
 } // namespace game
 } // namespace ra2
@@ -1090,17 +1087,15 @@ char __thiscall sub_554400(_DWORD *this, int a2, int a3)
 namespace gamemd {
 int sub_554640()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_554640()
 {
-  dword_ABCA14 = 0; /*0x554647*/
-  dword_ABCA18 = 0; /*0x55464c*/
-  byte_ABCA1C = 1; /*0x554651*/
-  byte_ABCA1D = 0; /*0x554658*/
-  dword_ABCA10 = (int)&vt_DynamicVectorClass_LightSourceClass; /*0x55465d*/
-  dword_ABCA24 = 10; /*0x554667*/
-  g_BridgeCellPool = 0; /*0x554671*/
-  return atexit(sub_554680); /*0x55467c*/
+    DataGlobal_ABCA14 = 0;
+    DataGlobal_ABCA18 = 0;
+    DataGlobal_ABCA1C = 1;
+    DataGlobal_ABCA1D = 0;
+    DataGlobal_ABCA10 = (int)&vt_DynamicVectorClass_LightSourceClass;
+    DataGlobal_ABCA24 = 10;
+    g_BridgeCellPool = 0;
+    return atexit(sub_554680);
 }
 }
 } // namespace gamemd
@@ -1109,17 +1104,15 @@ int sub_554640()
 namespace gamemd {
 void sub_554680()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_554680()
 {
-  dword_ABCA10 = (int)&vt_VectorClass_LightSourceClass; /*0x554688*/
-  if ( dword_ABCA14 && byte_ABCA1D ) /*0x55469c*/
+    DataGlobal_ABCA10 = (int)&vt_VectorClass_LightSourceClass;
+    if ( DataGlobal_ABCA14 && DataGlobal_ABCA1D )
   {
-    __3_YAXPAX_Z(dword_ABCA14); /*0x55469f*/
-    dword_ABCA14 = 0; /*0x5546a7*/
+    __3_YAXPAX_Z(DataGlobal_ABCA14);
+    DataGlobal_ABCA14 = 0;
   }
-  byte_ABCA1D = 0; /*0x5546ad*/
-  dword_ABCA18 = 0; /*0x5546b3*/
+    DataGlobal_ABCA1D = 0;
+    DataGlobal_ABCA18 = 0;
 }
 }
 } // namespace gamemd
@@ -1128,17 +1121,15 @@ void __cdecl sub_554680()
 namespace gamemd {
 int sub_5546C0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5546C0()
 {
-  dword_ABCA44 = 0; /*0x5546c7*/
-  dword_ABCA48 = 0; /*0x5546cc*/
-  byte_ABCA4C = 1; /*0x5546d1*/
-  byte_ABCA4D = 0; /*0x5546d8*/
-  dword_ABCA40 = (int)&vt_DynamicVectorClass_LightSourceClass_PendingCellClass; /*0x5546dd*/
-  dword_ABCA54 = 10; /*0x5546e7*/
-  dword_ABCA50 = 0; /*0x5546f1*/
-  return atexit(sub_554700); /*0x5546fc*/
+    DataGlobal_ABCA44 = 0;
+    DataGlobal_ABCA48 = 0;
+    DataGlobal_ABCA4C = 1;
+    DataGlobal_ABCA4D = 0;
+    DataGlobal_ABCA40 = (int)&vt_DynamicVectorClass_LightSourceClass_PendingCellClass;
+    DataGlobal_ABCA54 = 10;
+    DataGlobal_ABCA50 = 0;
+    return atexit(sub_554700);
 }
 }
 } // namespace gamemd
@@ -1147,23 +1138,21 @@ int sub_5546C0()
 namespace gamemd {
 void sub_554700()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_554700()
 {
-  if ( (byte_ABC9C0 & 1) == 0 ) /*0x55470a*/
+    if ( (DataGlobal_ABC9C0 & 1) == 0 )
   {
-    dword_ABCA40 = (int)&vt_VectorClass_LightSourceClass_PendingCellClass; /*0x55470e*/
-    byte_ABC9C0 |= 1u; /*0x554721*/
-    if ( dword_ABCA44 ) /*0x554727*/
+    DataGlobal_ABCA40 = (int)&vt_VectorClass_LightSourceClass_PendingCellClass;
+    DataGlobal_ABC9C0 |= 1u;
+    if ( DataGlobal_ABCA44 )
     {
-      if ( byte_ABCA4D ) /*0x554731*/
+    if ( DataGlobal_ABCA4D )
       {
-        __3_YAXPAX_Z(dword_ABCA44); /*0x554734*/
-        dword_ABCA44 = 0; /*0x55473c*/
+    __3_YAXPAX_Z(DataGlobal_ABCA44);
+    DataGlobal_ABCA44 = 0;
       }
     }
-    byte_ABCA4D = 0; /*0x554746*/
-    dword_ABCA48 = 0; /*0x55474d*/
+    DataGlobal_ABCA4D = 0;
+    DataGlobal_ABCA48 = 0;
   }
 }
 }
@@ -1314,17 +1303,15 @@ LightConvertClass *__thiscall sub_556520(_DWORD *this, char a2)
 namespace gamemd {
 int sub_5569A0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5569A0()
 {
-  dword_ABCB7C = 0; /*0x5569a7*/
-  dword_ABCB80 = 0; /*0x5569ac*/
-  byte_ABCB84 = 1; /*0x5569b1*/
-  byte_ABCB85 = 0; /*0x5569b8*/
-  dword_ABCB78 = (int)&vt_DynamicVectorClass_LineTrail; /*0x5569bd*/
-  dword_ABCB8C = 10; /*0x5569c7*/
-  dword_ABCB88 = 0; /*0x5569d1*/
-  return atexit(sub_5569E0); /*0x5569dc*/
+    DataGlobal_ABCB7C = 0;
+    DataGlobal_ABCB80 = 0;
+    DataGlobal_ABCB84 = 1;
+    DataGlobal_ABCB85 = 0;
+    DataGlobal_ABCB78 = (int)&vt_DynamicVectorClass_LineTrail;
+    DataGlobal_ABCB8C = 10;
+    DataGlobal_ABCB88 = 0;
+    return atexit(sub_5569E0);
 }
 }
 } // namespace gamemd
@@ -1333,17 +1320,15 @@ int sub_5569A0()
 namespace gamemd {
 void sub_5569E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_5569E0()
 {
-  dword_ABCB78 = (int)&vt_VectorClass_LineTrail; /*0x5569e8*/
-  if ( dword_ABCB7C && byte_ABCB85 ) /*0x5569fc*/
+    DataGlobal_ABCB78 = (int)&vt_VectorClass_LineTrail;
+    if ( DataGlobal_ABCB7C && DataGlobal_ABCB85 )
   {
-    __3_YAXPAX_Z(dword_ABCB7C); /*0x5569ff*/
-    dword_ABCB7C = 0; /*0x556a07*/
+    __3_YAXPAX_Z(DataGlobal_ABCB7C);
+    DataGlobal_ABCB7C = 0;
   }
-  byte_ABCB85 = 0; /*0x556a0d*/
-  dword_ABCB80 = 0; /*0x556a13*/
+    DataGlobal_ABCB85 = 0;
+    DataGlobal_ABCB80 = 0;
 }
 }
 } // namespace gamemd
@@ -1502,65 +1487,56 @@ bool __thiscall ShowSaveLoadDialog(int this, CampaignScore *aP1)
 namespace gamemd {
 int sub_558A30(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_558A30(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
-  int result; // eax
-  unsigned int v5; // ebx
-  LONG WindowLongA; // eax
-  LONG v7; // edi
-
-  result = BaseDialogProc(hWnd, a2, a3, (unsigned int)a4); /*0x558a4a*/
-  if ( !result ) /*0x558a51*/
+    int result;
+    unsigned int v5;
+    LONG WindowLongA;
+    LONG v7;
+    result = BaseDialogProc(hWnd, a2, a3, (unsigned int)a4);
+    if ( !result )
   {
-    if ( a2 > 0x216 ) /*0x558a5d*/
+    if ( a2 > 0x216 )
     {
-      if ( a2 == 1175 ) /*0x558b38*/
+    if ( a2 == 1175 )
       {
-        SendDlgItemMessageA(hWnd, 1317, 0x4A6u, 0xF9u, 2); /*0x558b52*/
-        SendDlgItemMessageA(hWnd, 1317, 0x4A6u, 0x38u, 255); /*0x558b66*/
-        SendDlgItemMessageA(hWnd, 1317, 0x4A6u, 0, 315); /*0x558b7a*/
+    SendDlgItemMessageA(hWnd, 1317, 0x4A6u, 0xF9u, 2);
+    SendDlgItemMessageA(hWnd, 1317, 0x4A6u, 0x38u, 255);
+    SendDlgItemMessageA(hWnd, 1317, 0x4A6u, 0, 315);
       }
     }
     else
     {
-      switch ( a2 ) /*0x558a63*/
+    switch ( a2 )
       {
-        case 0x216u: /*0x558a63*/
-          return (unsigned __int8)Window::ClampToScreen((int *)a4); /*0x558b2f*/
-        case 0xFu: /*0x558a63*/
-          Dialog::StopBink(hWnd); /*0x558b0b*/
-          return 1; /*0x558b19*/
-        case 0x111u: /*0x558a63*/
-          v5 = HIWORD(a3); /*0x558a89*/
-          WindowLongA = GetWindowLongA(hWnd, 8); /*0x558a8c*/
-          v7 = WindowLongA; /*0x558a98*/
-          switch ( (unsigned __int16)a3 ) /*0x558a9a*/
+    case 0x216u: return (unsigned char)Window::ClampToScreen((int *)a4);
+    case 0xFu: Dialog::StopBink(hWnd);
+    return 1;
+    case 0x111u: v5 = HIWORD(a3);
+    WindowLongA = GetWindowLongA(hWnd, 8);
+    v7 = WindowLongA;
+    switch ( (unsigned short)a3 )
           {
-            case 0x40Fu: /*0x558a9a*/
-              if ( !v5 ) /*0x558af3*/
+    case 0x40Fu: if ( !v5 )
               {
-                *(_DWORD *)(WindowLongA + 24) = 1039; /*0x558af9*/
-                return 0; /*0x558b06*/
+    *(int *)(WindowLongA + 24) = 1039;
+    return 0;
               }
-              break;
-            case 0x525u: /*0x558a9a*/
-              if ( v5 == 2 && SendMessageA(a4, 0x18Bu, 0, 0) > 0 ) /*0x558adb*/
+    break;
+    case 0x525u: if ( v5 == 2 && SendMessageA(a4, 0x18Bu, 0, 0) > 0 )
               {
-                *(_DWORD *)(v7 + 24) = 1039; /*0x558ae1*/
-                return 0; /*0x558aee*/
+    *(int *)(v7 + 24) = 1039;
+    return 0;
               }
-              break;
-            case 0x686u: /*0x558a9a*/
-              *(_DWORD *)(WindowLongA + 24) = 2; /*0x558ab0*/
-              return 0; /*0x558abd*/
+    break;
+    case 0x686u: *(int *)(WindowLongA + 24) = 2;
+    return 0;
           }
-          break;
+    break;
       }
     }
-    return 0; /*0x558b7c*/
+    return 0;
   }
-  return result; /*0x558ab7*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1569,56 +1545,50 @@ int __stdcall sub_558A30(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 namespace gamemd {
 int sub_558CB0(HWND hWnd, unsigned int a2, unsigned int a3, int * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_558CB0(HWND hWnd, unsigned int a2, unsigned int a3, int *a4)
 {
-  int result; // eax
-  unsigned int v5; // ebx
-  LONG WindowLongA; // eax
-
-  result = BaseDialogProc(hWnd, a2, a3, (unsigned int)a4); /*0x558cca*/
-  if ( !result ) /*0x558cd1*/
+    int result;
+    unsigned int v5;
+    LONG WindowLongA;
+    result = BaseDialogProc(hWnd, a2, a3, (unsigned int)a4);
+    if ( !result )
   {
-    if ( a2 > 0x216 ) /*0x558cdd*/
+    if ( a2 > 0x216 )
     {
-      if ( a2 == 1175 ) /*0x558d7a*/
+    if ( a2 == 1175 )
       {
-        SendDlgItemMessageA(hWnd, 1320, 0x4A6u, 0xF9u, 2); /*0x558d94*/
-        SendDlgItemMessageA(hWnd, 1320, 0x4A6u, 0x38u, 255); /*0x558da8*/
-        SendDlgItemMessageA(hWnd, 1320, 0x4A6u, 0, 315); /*0x558dbc*/
+    SendDlgItemMessageA(hWnd, 1320, 0x4A6u, 0xF9u, 2);
+    SendDlgItemMessageA(hWnd, 1320, 0x4A6u, 0x38u, 255);
+    SendDlgItemMessageA(hWnd, 1320, 0x4A6u, 0, 315);
       }
     }
     else
     {
-      switch ( a2 ) /*0x558ce3*/
+    switch ( a2 )
       {
-        case 0x216u: /*0x558ce3*/
-          return (unsigned __int8)Window::ClampToScreen(a4); /*0x558d71*/
-        case 0xFu: /*0x558ce3*/
-          Dialog::StopBink(hWnd); /*0x558d4d*/
-          return 1; /*0x558d5b*/
-        case 0x111u: /*0x558ce3*/
-          v5 = HIWORD(a3); /*0x558cfb*/
-          WindowLongA = GetWindowLongA(hWnd, 8); /*0x558cfe*/
-          if ( (unsigned __int16)a3 == 1670 ) /*0x558d10*/
+    case 0x216u: return (unsigned char)Window::ClampToScreen(a4);
+    case 0xFu: Dialog::StopBink(hWnd);
+    return 1;
+    case 0x111u: v5 = HIWORD(a3);
+    WindowLongA = GetWindowLongA(hWnd, 8);
+    if ( (unsigned short)a3 == 1670 )
           {
-            if ( !v5 ) /*0x558d35*/
+    if ( !v5 )
             {
-              *(_DWORD *)(WindowLongA + 24) = 2; /*0x558d3d*/
-              return 0; /*0x558d48*/
+    *(int *)(WindowLongA + 24) = 2;
+    return 0;
             }
           }
-          else if ( (unsigned __int16)a3 == 1736 && !v5 ) /*0x558d1d*/
+    else if ( (unsigned short)a3 == 1736 && !v5 )
           {
-            *(_DWORD *)(WindowLongA + 24) = 1; /*0x558d25*/
-            return 0; /*0x558d30*/
+    *(int *)(WindowLongA + 24) = 1;
+    return 0;
           }
-          break;
+    break;
       }
     }
-    return 0; /*0x558dbe*/
+    return 0;
   }
-  return result; /*0x558d23*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1627,29 +1597,26 @@ int __stdcall sub_558CB0(HWND hWnd, unsigned int a2, unsigned int a3, int *a4)
 namespace gamemd {
 int E4Recv_5595F0::sub_5595F0(char * Buffer)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5595F0(const char **this, char *Buffer)
 {
-  int v3; // eax
-  const char *v5; // [esp-4h] [ebp-78h]
-  _DWORD v6[22]; // [esp+8h] [ebp-6Ch] BYREF
-  _BYTE v7[12]; // [esp+60h] [ebp-14h] BYREF
-  int v8; // [esp+6Ch] [ebp-8h]
-
-  CCFileClass::Construct3((int)v6); /*0x5595fb*/
-  do /*0x559633*/
+    int v3;
+    const char *v5;
+    int v6[22];
+    char v7[12];
+    int v8;
+    CCFileClass::Construct3((int)v6);
+    do
   {
-    v5 = *(this + 2); /*0x559607*/
-    v3 = rand(); /*0x559608*/
-    sprintf(Buffer, stru_829EE8, v3, v5); /*0x559614*/
-    FileClass::SetFileName(v6, Buffer); /*0x559621*/
+    v5 = this->M8;
+    v3 = rand();
+    sprintf(Buffer, DataGlobal_829EE8, v3, v5);
+    FileClass::SetFileName(v6, Buffer);
   }
-  while ( CCFileClass::Open(v6, 0) == 1 ); /*0x559633*/
-  v6[0] = &vt_CCFileClass; /*0x559639*/
-  v8 = 0; /*0x559641*/
-  Vector::Clear((int)v7); /*0x559649*/
-  v6[0] = &off_7E1668; /*0x559652*/
-  return BufferIOFileClass::Dtor(v6); /*0x55965f*/
+    while ( CCFileClass::Open(v6, 0) == 1 );
+    v6[0] = &vt_CCFileClass;
+    v8 = 0;
+    Vector::Clear((int)v7);
+    v6[0] = &DataGlobal_7E1668;
+    return BufferIOFileClass::Dtor(v6);
 }
 }
 } // namespace gamemd

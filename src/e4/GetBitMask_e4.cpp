@@ -6,10 +6,8 @@
 namespace gamemd {
 int GetBitMask_Green()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int GetBitMask_Green()
 {
-  return MEMORY[0x8A0DE0]; /*0x4bbc55*/
+    return g_BitMask_Green;
 }
 }
 } // namespace gamemd
@@ -18,10 +16,8 @@ int GetBitMask_Green()
 namespace gamemd {
 int GetBitMask_Blue()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int GetBitMask_Blue()
 {
-  return MEMORY[0x8A0DE4]; /*0x4bbc65*/
+    return g_BitMask_Blue;
 }
 }
 } // namespace gamemd
@@ -30,10 +26,8 @@ int GetBitMask_Blue()
 namespace gamemd {
 int GetBitMask_Red()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int GetBitMask_Red()
 {
-  return MEMORY[0x8A0DDC]; /*0x4bbc85*/
+    return g_BitMask_Red;
 }
 }
 } // namespace gamemd

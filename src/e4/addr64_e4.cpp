@@ -76,22 +76,19 @@ _DWORD *__thiscall sub_6429E0(ProgressScreenClass *this)
 namespace gamemd {
 ObjectClass * E4Recv_644850::sub_644850()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall sub_644850(void *this)
 {
-  ObjectClass *v2; // edi
-  const void **v3; // esi
-
-  v2 = 0; /*0x644855*/
-  v3 = (const void **)&stru_830620.__pad_579C[4388]; /*0x644857*/
-  while ( _strcmpi(this, *v3) ) /*0x64486a*/
+    ObjectClass *v2;
+    const void **v3;
+    v2 = 0;
+    v3 = (const void **)&DataGlobal_830620.__pad_579C[4388];
+    while ( _strcmpi(this, *v3) )
   {
-    ++v3; /*0x64486c*/
-    v2 = (ObjectClass *)((char *)v2 + 1); /*0x64486f*/
-    if ( (int)v3 >= (int)&stru_830620.__pad_579C[4408] ) /*0x644876*/
-      return (ObjectClass *)-1; /*0x64487e*/
+    ++v3;
+    v2 = (ObjectClass *)((char *)(v2) + 1);
+    if ( (int)v3 >= (int)&DataGlobal_830620.__pad_579C[4408] )
+    return (ObjectClass *)-1;
   }
-  return v2; /*0x644878*/
+    return v2;
 }
 }
 } // namespace gamemd
@@ -100,22 +97,19 @@ ObjectClass *__thiscall sub_644850(void *this)
 namespace gamemd {
 ObjectClass * E4Recv_6458D0::sub_6458D0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall sub_6458D0(void *this)
 {
-  ObjectClass *v2; // edi
-  const void **v3; // esi
-
-  v2 = 0; /*0x6458d5*/
-  v3 = (const void **)&stru_830620.__pad_579C[4864]; /*0x6458d7*/
-  while ( _strcmpi(this, *v3) ) /*0x6458ea*/
+    ObjectClass *v2;
+    const void **v3;
+    v2 = 0;
+    v3 = (const void **)&DataGlobal_830620.__pad_579C[4864];
+    while ( _strcmpi(this, *v3) )
   {
-    ++v3; /*0x6458ec*/
-    v2 = (ObjectClass *)((char *)v2 + 1); /*0x6458ef*/
-    if ( (int)v3 >= (int)&stru_830620.__pad_579C[4884] ) /*0x6458f6*/
-      return (ObjectClass *)-1; /*0x6458fe*/
+    ++v3;
+    v2 = (ObjectClass *)((char *)(v2) + 1);
+    if ( (int)v3 >= (int)&DataGlobal_830620.__pad_579C[4884] )
+    return (ObjectClass *)-1;
   }
-  return v2; /*0x6458f8*/
+    return v2;
 }
 }
 } // namespace gamemd
@@ -148,13 +142,11 @@ ObjectClass *__thiscall sub_645B60(void *this)
 namespace gamemd {
 void E4Recv_645CD0::sub_645CD0(float a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_645CD0(float *this, float a2)
 {
-  *this = a2 * *this; /*0x645cd6*/
-  *(this + 1) = a2 * *(this + 1); /*0x645cdf*/
-  *(this + 2) = a2 * *(this + 2); /*0x645ce9*/
-  *(this + 3) = a2 * *(this + 3); /*0x645cf3*/
+    *(void**)this = a2 * *(void**)this;
+    this->M4 = a2 *(void**)this->M4;
+    this->M8 = a2 *(void**)this->M8;
+    this->M12 = a2 *(void**)this->M12;
 }
 }
 } // namespace gamemd
@@ -368,16 +360,14 @@ float *__fastcall ConvertMatrixToQuaternion(float *a1, float *a2)
 namespace gamemd {
 unsigned int * E4Recv_646D00::sub_646D00()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_646D00(_DWORD *this)
 {
-  *this = -1; /*0x646d04*/
-  *(this + 1) = 0; /*0x646d0a*/
-  *(this + 2) = 0; /*0x646d0d*/
-  *(this + 3) = 0; /*0x646d10*/
-  *(this + 4) = 0; /*0x646d13*/
-  *(this + 5) = 0; /*0x646d16*/
-  return this; /*0x646d19*/
+    *(void**)this = -1;
+    this->M4 = 0;
+    this->M8 = 0;
+    this->M12 = 0;
+    this->M16 = 0;
+    this->M20 = 0;
+    return this;
 }
 }
 } // namespace gamemd

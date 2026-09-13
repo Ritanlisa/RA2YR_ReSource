@@ -517,40 +517,36 @@ LABEL_84:
 namespace gamemd {
 int RandomMap::GenerateTerrainForAllCells()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_58CF90(void *this)
 {
-  int result; // eax
-  int v2; // ebx
-  int v3; // esi
-  int *v4; // edi
-  void *v5; // [esp+0h] [ebp-4h] BYREF
-
-  v5 = this; /*0x58cf90*/
-  result = unk_89C2DC * unk_89C2DC; /*0x58cf96*/
-  if ( unk_89C2DC * unk_89C2DC > 0 ) /*0x58cf9b*/
+    int result;
+    int v2;
+    int v3;
+    int *v4;
+    void *v5;
+    v5 = this;
+    result = g_MapCellWidth * g_MapCellWidth;
+    if ( g_MapCellWidth * g_MapCellWidth > 0 )
   {
-    v2 = unk_89C2DC * unk_89C2DC; /*0x58cf9f*/
-    result = (int)g_MapTileArray; /*0x58cfa1*/
-    v3 = 0; /*0x58cfa7*/
-    do /*0x58d002*/
+    v2 = g_MapCellWidth * g_MapCellWidth;
+    result = (int)g_MapTileArray;
+    v3 = 0;
+    do
     {
-      v5 = *(void **)(v3 + result); /*0x58cfb6*/
-      v4 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v5); /*0x58cfbf*/
-      result = (int)g_MapTileArray; /*0x58cfc1*/
-      if ( *(_DWORD *)((char *)g_MapTileArray + v3 + 56) == -1 /*0x58cfd4*/
-        && (*(_WORD *)((char *)g_MapTileArray + v3) || *(_WORD *)((char *)g_MapTileArray + v3 + 2)) )
+    v5 = *(void **)(v3 + result);
+    v4 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v5);
+    result = (int)g_MapTileArray;
+    if ( *(int *)((char *)(g_MapTileArray) + v3 + 56) == -1 && (*(short *)((char *)(g_MapTileArray) + v3) || *(short *)((char *)(g_MapTileArray) + v3 + 2)) )
       {
-        if ( Cell::IsGroundTypeRange(v4) || Cell::IsShore(v4) ) /*0x58cfe9*/
-          RandomMap::GenerateTerrain((int)v4); /*0x58cff4*/
-        result = (int)g_MapTileArray; /*0x58cff9*/
+    if ( Cell::IsGroundTypeRange(v4) || Cell::IsShore(v4) )
+    RandomMap::GenerateTerrain((int)v4);
+    result = (int)g_MapTileArray;
       }
-      v3 += 80; /*0x58cffe*/
-      --v2; /*0x58d001*/
+    v3 += 80;
+    --v2;
     }
-    while ( v2 ); /*0x58d002*/
+    while ( v2 );
   }
-  return result; /*0x58d008*/
+    return result;
 }
 }
 } // namespace gamemd

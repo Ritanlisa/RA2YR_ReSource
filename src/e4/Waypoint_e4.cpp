@@ -87,21 +87,19 @@ IPXManagerClass *__thiscall Waypoint::InitInvalid(_BYTE *this)
 namespace gamemd {
 CHAR * Waypoint::To_String(CCINIClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-CHAR *__fastcall Waypoint::To_String(CCINIClass *aP0)
 {
-  if ( aP0 == (CCINIClass *)-1 ) /*0x763613*/
+    if ( aP0 == (CCINIClass *)-1 )
   {
-    byte_B72654 = 0; /*0x763615*/
-    return &byte_B72654; /*0x76361c*/
+    DataGlobal_B72654 = 0;
+    return &DataGlobal_B72654;
   }
-  else
-  {
-    if ( (int)aP0 >= 26 ) /*0x763625*/
-      wsprintfA(&byte_B72654, "%c%c", (int)aP0 / 26 + 64, (int)aP0 % 26 + 65); /*0x763671*/
     else
-      wsprintfA(&byte_B72654, "%c", aP0->__pad_41); /*0x763635*/
-    return &byte_B72654; /*0x76363e*/
+  {
+    if ( (int)aP0 >= 26 )
+    wsprintfA(&DataGlobal_B72654, "%c%c", (int)aP0 / 26 + 64, (int)aP0 % 26 + 65);
+    else
+    wsprintfA(&DataGlobal_B72654, "%c", aP0->__pad_41);
+    return &DataGlobal_B72654;
   }
 }
 }

@@ -6,59 +6,56 @@
 namespace gamemd {
 char * GameConfig::ComputeCRC()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *GameConfig_ComputeCRC()
 {
-  unsigned int v0; // ebx
-  int *v1; // ebp
-  int v2; // edx
-  unsigned int v3; // edi
-  int v4; // eax
-  int v5; // eax
-  int *v6; // esi
-  int v7; // ebp
-  char *v8; // ebp
-  int *v10; // [esp+10h] [ebp-104h]
-  _BYTE v11[256]; // [esp+14h] [ebp-100h] BYREF
-
-  v0 = 0; /*0x5e84e8*/
-  qmemcpy(v11, &word_ABE050, sizeof(v11)); /*0x5e84ea*/
-  v1 = &dword_ABE010; /*0x5e84ec*/
-  v10 = &dword_ABE010; /*0x5e84fd*/
-  v2 = 320; /*0x5e8501*/
-  memset(&word_ABE050, 0, 0x100u); /*0x5e8506*/
-  do /*0x5e854a*/
+    unsigned int v0;
+    int *v1;
+    int v2;
+    unsigned int v3;
+    int v4;
+    int v5;
+    int *v6;
+    int v7;
+    char *v8;
+    int *v10;
+    char v11[256];
+    v0 = 0;
+    qmemcpy(v11, &DataGlobal_ABE050, sizeof(v11));
+    v1 = &DataGlobal_ABE010;
+    v10 = &DataGlobal_ABE010;
+    v2 = 320;
+    memset(&DataGlobal_ABE050, 0, 0x100u);
+    do
   {
-    v3 = v0 >> 31; /*0x5e850a*/
-    if ( v2 < 4 ) /*0x5e8510*/
+    v3 = v0 >> 31;
+    if ( v2 < 4 )
     {
-      v5 = 0; /*0x5e8526*/
-      v6 = v1; /*0x5e8528*/
-      v7 = v2; /*0x5e852e*/
-      v2 = 0; /*0x5e8530*/
-      do /*0x5e853d*/
+    v5 = 0;
+    v6 = v1;
+    v7 = v2;
+    v2 = 0;
+    do
       {
-        v5 = *(unsigned __int8 *)v6 | (v5 << 8); /*0x5e8539*/
-        v6 = (int *)((char *)v6 + 1); /*0x5e853b*/
-        --v7; /*0x5e853c*/
+    v5 = *(unsigned char *)v6 | (v5 << 8);
+    v6 = (int *)((char *)(v6) + 1);
+    --v7;
       }
-      while ( v7 ); /*0x5e853d*/
-      v1 = v10; /*0x5e853f*/
-      v0 = v3 + v5 + 2 * v0; /*0x5e8546*/
+    while ( v7 );
+    v1 = v10;
+    v0 = v3 + v5 + 2 * v0;
     }
     else
     {
-      v4 = *v1++; /*0x5e8512*/
-      v10 = v1; /*0x5e8518*/
-      v0 = v3 + v4 + 2 * v0; /*0x5e851f*/
-      v2 -= 4; /*0x5e8521*/
+    v4 = *v1++;
+    v10 = v1;
+    v0 = v3 + v4 + 2 * v0;
+    v2 -= 4;
     }
   }
-  while ( v2 > 0 ); /*0x5e854a*/
-  v8 = (char *)__2_YAPAXI_Z(0xCu); /*0x5e8553*/
-  sprintf(v8, stru_817828, v0); /*0x5e855c*/
-  qmemcpy(&word_ABE050, v11, 0x100u); /*0x5e8572*/
-  return v8; /*0x5e8574*/
+    while ( v2 > 0 );
+    v8 = (char *)__2_YAPAXI_Z(0xCu);
+    sprintf(v8, Format, v0);
+    qmemcpy(&DataGlobal_ABE050, v11, 0x100u);
+    return v8;
 }
 }
 } // namespace gamemd
@@ -67,58 +64,55 @@ char *GameConfig_ComputeCRC()
 namespace gamemd {
 int GameConfig::ComputeHash()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int GameConfig_ComputeHash()
 {
-  int v0; // edi
-  int v1; // ebp
-  int i; // esi
-  int v3; // eax
-  int v4; // eax
-  void *v6[3]; // [esp+10h] [ebp-C4h] BYREF
-  _DWORD v7[10]; // [esp+1Ch] [ebp-B8h] BYREF
-  char v8; // [esp+44h] [ebp-90h]
-  int v9; // [esp+48h] [ebp-8Ch]
-  int v10; // [esp+4Ch] [ebp-88h]
-  char v11; // [esp+50h] [ebp-84h]
-  _DWORD v12[22]; // [esp+68h] [ebp-6Ch] BYREF
-  _BYTE v13[12]; // [esp+C0h] [ebp-14h] BYREF
-  int v14; // [esp+CCh] [ebp-8h]
-
-  v0 = Hash::ComputeHashSHA1(MEMORY[0x887048]); /*0x679da5*/
-  v1 = MultiplayerGameMode::ListGet(); /*0x679dac*/
-  for ( i = 1; i <= v1; ++i ) /*0x679db7*/
+    int v0;
+    int v1;
+    int i;
+    int v3;
+    int v4;
+    void *v6[3];
+    int v7[10];
+    char v8;
+    int v9;
+    int v10;
+    char v11;
+    int v12[22];
+    char v13[12];
+    int v14;
+    v0 = Hash::ComputeHashSHA1(DataGlobal_887048);
+    v1 = MultiplayerGameMode::ListGet();
+    for ( i = 1; i <= v1; ++i )
   {
-    v3 = MultiplayerGameMode::Find((void *)i); /*0x679dbb*/
-    if ( v3 ) /*0x679dc2*/
+    v3 = MultiplayerGameMode::Find((void *)i);
+    if ( v3 )
     {
-      v4 = GameConfig::Constructor(v3); /*0x679dc6*/
-      v0 += Hash::ComputeHashSHA1(v4); /*0x679dd2*/
+    v4 = GameConfig::Constructor(v3);
+    v0 += Hash::ComputeHashSHA1(v4);
     }
   }
-  if ( byte_B053B8 ) /*0x679ddf*/
-    return dword_B053B4 + v0; /*0x679ea8*/
-  v6[1] = 0; /*0x679de9*/
-  v6[2] = 0; /*0x679ded*/
-  GenericList::Constructor(v7); /*0x679df1*/
-  v7[0] = &vt_List_INIClass_INISection; /*0x679dfa*/
-  memset(&v7[7], 0, 12); /*0x679e07*/
-  v8 = 0; /*0x679e13*/
-  v9 = 0; /*0x679e17*/
-  v10 = 0; /*0x679e1b*/
-  v11 = 0; /*0x679e1f*/
-  v6[0] = &CCINIClass_Vtable; /*0x679e23*/
-  CCFileClass::Construct(v12, aCoopcampmdIni); /*0x679e2b*/
-  if ( CCINIClass::Load(v6, (int)v12, 0, 0) ) /*0x679e3b*/
-    dword_B053B4 = Hash::ComputeHashSHA1((int)v6); /*0x679e4d*/
-  byte_B053B8 = 1; /*0x679e59*/
-  v12[0] = &vt_CCFileClass; /*0x679e60*/
-  v14 = 0; /*0x679e68*/
-  Vector::Clear((int)v13); /*0x679e6f*/
-  v12[0] = &off_7E1668; /*0x679e78*/
-  BufferIOFileClass::Dtor(v12); /*0x679e80*/
-  HashTable::DestroyHashTableINIClass(v6); /*0x679e89*/
-  return dword_B053B4 + v0; /*0x679e97*/
+    if ( DataGlobal_B053B8 )
+    return DataGlobal_B053B4 + v0;
+    v6[1] = 0;
+    v6[2] = 0;
+    GenericList::Constructor(v7);
+    v7[0] = &vt_List_INIClass_INISection;
+    memset(&v7[7], 0, 12);
+    v8 = 0;
+    v9 = 0;
+    v10 = 0;
+    v11 = 0;
+    v6[0] = &CCINIClass_Vtable;
+    CCFileClass::Construct(v12, aCoopcampmdIni);
+    if ( CCINIClass::Load(v6, (int)v12, 0, 0) )
+    DataGlobal_B053B4 = Hash::ComputeHashSHA1((int)v6);
+    DataGlobal_B053B8 = 1;
+    v12[0] = &vt_CCFileClass;
+    v14 = 0;
+    Vector::Clear((int)v13);
+    v12[0] = &DataGlobal_7E1668;
+    BufferIOFileClass::Dtor(v12);
+    HashTable::DestroyHashTableINIClass(v6);
+    return DataGlobal_B053B4 + v0;
 }
 }
 } // namespace gamemd

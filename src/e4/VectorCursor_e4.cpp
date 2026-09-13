@@ -29,10 +29,8 @@ _DWORD *__thiscall VectorCursor::_vt03(_DWORD *this)
 namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Add()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void VectorCursor_uint_DynamicVectorClass_uint____13_::_vt05()
 {
-  MEMORY[0xA8EF54] = 0; /*0x4f42a0*/
+    DataGlobal_A8EF54 = 0;
 }
 }
 } // namespace gamemd
@@ -53,10 +51,8 @@ void __thiscall VectorCursor_uint_DynamicVectorClass_uint____13_::_vt07(_DWORD *
 namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Get()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void VectorCursor_uint_DynamicVectorClass_uint____13_::_vt08()
 {
-  MEMORY[0xA8EF54] = 0; /*0x4f42e0*/
+    DataGlobal_A8EF54 = 0;
 }
 }
 } // namespace gamemd

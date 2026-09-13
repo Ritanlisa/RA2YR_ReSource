@@ -1287,16 +1287,14 @@ retn
 // 0x459f20
 int BuildingClass::ScalarDtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x459f20
-int __thiscall BuildingClass::ScalarDtor(#377 *this)
+    int __thiscall BuildingClass::ScalarDtor(#377 *(void**)this)
 {
-  char v3; // [esp+8h] [ebp+4h]
-
-  BuildingClass::Dtor((void **)this);
-  if ( (v3 & 1) != 0 )
+    char v3;
+    BuildingClass::Dtor((void **)this);
+    if ( (v3 & 1) != 0 )
     __3_YAXPAX_Z(this);
-  return (int)this;
+    return (int)this;
 }
 
 /* ASM:
@@ -1448,19 +1446,17 @@ retn
 // 0x459e80
 void BuildingClass::Destroyed(ObjectClass* killer)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x459e80
-int __thiscall BuildingClass::Destroyed(#377 *this)
+    int __thiscall BuildingClass::Destroyed(#377 *(void**)this)
 {
-  _DWORD *v2; // [esp+8h] [ebp+8h]
-
-  if ( !v2 )
+    int *v2;
+    if ( !v2 )
     return -2147467261;
-  *v2 = 237448646;
-  v2[1] = 298949647;
-  v2[2] = -1610610249;
-  v2[3] = -777003740;
-  return 0;
+    *v2 = 237448646;
+    v2[1] = 298949647;
+    v2[2] = -1610610249;
+    v2[3] = -777003740;
+    return 0;
 }
 
 /* ASM:
@@ -2078,99 +2074,6 @@ LABEL_6:
       goto LABEL_6;
   }
 }
-
-/* ASM:
-mov     eax, [esp+arg_8]
-push    ebx
-push    ebp
-push    esi
-mov     esi, [esp+0Ch+arg_4]
-push    edi
-mov     edi, [esp+10h+arg_0]
-push    eax
-push    esi
-push    edi
-call    IPersistStream__GetSizeMax
-mov     ebp, eax
-test    ebp, ebp
-jl      loc_454242
-mov     ecx, [edi+67Ch]
-mov     edx, [esi]
-push    0
-lea     eax, [esp+14h+arg_8]
-push    4
-push    eax
-push    esi
-mov     [esp+20h+arg_8], ecx
-call    dword ptr [edx+10h]
-test    eax, eax
-jl      short loc_454244
-mov     eax, [esp+10h+arg_8]
-xor     ebx, ebx
-test    eax, eax
-jle     short loc_4541FA
-
-loc_4541D9:                             ; CODE XREF: BuildingClass__Size+68↓j
-mov     edx, [edi+670h]
-mov     ecx, [esi]
-push    0
-push    4
-lea     eax, [edx+ebx*4]
-push    eax
-push    esi
-call    dword ptr [ecx+10h]
-test    eax, eax
-jl      short loc_454244
-mov     eax, [esp+10h+arg_8]
-inc     ebx
-cmp     ebx, eax
-jl      short loc_4541D9
-
-loc_4541FA:                             ; CODE XREF: BuildingClass__Size+47↑j
-mov     ecx, [edi+694h]
-mov     edx, [esi]
-push    0
-lea     eax, [esp+14h+arg_8]
-push    4
-push    eax
-push    esi
-mov     [esp+20h+arg_8], ecx
-call    dword ptr [edx+10h]
-test    eax, eax
-jl      short loc_454244
-mov     eax, [esp+10h+arg_8]
-xor     ebx, ebx
-test    eax, eax
-jle     short loc_454242
-
-loc_454221:                             ; CODE XREF: BuildingClass__Size+B0↓j
-mov     edx, [edi+688h]
-mov     ecx, [esi]
-push    0
-push    4
-lea     eax, [edx+ebx*4]
-push    eax
-push    esi
-call    dword ptr [ecx+10h]
-test    eax, eax
-jl      short loc_454244
-mov     eax, [esp+10h+arg_8]
-inc     ebx
-cmp     ebx, eax
-jl      short loc_454221
-
-loc_454242:                             ; CODE XREF: BuildingClass__Size+1C↑j
-; BuildingClass__Size+8F↑j
-mov     eax, ebp
-
-loc_454244:                             ; CODE XREF: BuildingClass__Size+3D↑j
-; BuildingClass__Size+5F↑j ...
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn    0Ch
-*/
 }
 
 // ============================================================
@@ -21294,21 +21197,19 @@ retn
 // 0x465d40
 bool BuildingTypeClass::Is1x1AndUndeployable_BuildingMassSelectable()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x465d40
-BOOL __thiscall BuildingTypeClass::Is1x1AndUndeployable_BuildingMassSelectable(_DWORD *this)
+    int __thiscall BuildingTypeClass::Is1x1AndUndeployable_BuildingMassSelectable(int *(void**)this)
 {
-  int v1; // eax
-  BOOL result; // eax
-
-  result = 0;
-  if ( *(this + 258) )
+    int v1;
+    int result;
+    result = 0;
+    if ( this->UndeploysInto )
   {
-    v1 = *(this + 956);
-    if ( dword_8192B8[v1] == 1 && dword_819310[v1] == 1 )
-      return 1;
+    v1 = this->Foundation;
+    if ( DataGlobal_8192B8[v1] == 1 && DataGlobal_819310[v1] == 1 )
+    return 1;
   }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -22550,16 +22451,13 @@ bool BuildingClass::HasActiveParam()
 // 0x455da0
 void BuildingClass::CheckSpecialUpdateFlags()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt161(#377 *this)
 {
-  int result; // eax
-  int v2; // ecx
-
-  result = *((_DWORD *)this + 328);
-  v2 = *(_DWORD *)(result + 3768);
-  LOBYTE(result) = v2 == 40 || v2 == 16 || *(_BYTE *)(result + 5804) || *(_BYTE *)(result + 5801);
-  return result;
+    int result;
+    int v2;
+    result = this->Type;
+    v2 = *(int *)(result + 3768);
+    LOBYTE(result) = v2 == 40 || v2 == 16 || *(char *)(result + 5804) || *(char *)(result + 5801);
+    return result;
 }
 
 /* ASM:
@@ -22638,21 +22536,19 @@ void BuildingClass::AddRectToDrawList(RectangleStruct*) const {}
 // 0x43e900
 int BuildingClass::GetZDrawOffset() const
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x43e900
-int __thiscall BuildingClass::GetZDrawOffset(#377 *this)
+    int __thiscall BuildingClass::GetZDrawOffset(#377 *(void**)this)
 {
-  int v2; // eax
-  int v3; // eax
-  int v4; // esi
-
-  v2 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 464))(this); /*0x43e905*/
-  v3 = ZCoordToScreenY(v2); /*0x43e90d*/
-  v4 = *((_DWORD *)this + 328); /*0x43e912*/
-  if ( *(_BYTE *)(v4 + 5829) ) /*0x43e91c*/
-    return *(_DWORD *)(v4 + 4584) - v3; /*0x43e92d*/
-  else
-    return -v3; /*0x43e930*/
+    int v2;
+    int v3;
+    int v4;
+    v2 = this->GetBuildAnim();
+    v3 = ZCoordToScreenY(v2);
+    v4 = this->Type;
+    if ( *(char *)(v4 + 5829) )
+    return *(int *)(v4 + 4584) - v3;
+    else
+    return -v3;
 }
     return {}; // TODO stub - retranslate via C-line pipeline
 }
@@ -22873,11 +22769,10 @@ BuildingTypeClass* BuildingClass::GetType_Thunk() { return Type; }
 // 0x449a40
 HouseClass* BuildingClass::GetOwnerHouse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x449a40
-int __thiscall BuildingClass::GetOwnerHouse(#377 *this)
+    int __thiscall BuildingClass::GetOwnerHouse(#377 *(void**)this)
 {
-  return (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 540))(this);
+    return this->UpdateProduction_0();
 }
 
 /* ASM:
@@ -24029,50 +23924,46 @@ void BuildingClass::BeginCrumblingTimer() {}
 // 0x453d60
 void BuildingClass::MarkCellOccupied(int cell_x, int cell_y)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x453d60
-int __thiscall BuildingClass::MarkCellOccupied(#377 *this)
+    int __thiscall BuildingClass::MarkCellOccupied(#377 *(void**)this)
 {
-  _DWORD *v1; // ecx
-  _DWORD *v2; // eax
-  int v3; // ecx
-  int result; // eax
-  _DWORD *v5; // [esp+4h] [ebp+4h] BYREF
-
-  v1 = v5; /*0x453d60*/
-  LOWORD(v5) = *v5 / 256; /*0x453d72*/
-  HIWORD(v5) = v1[1] / 256; /*0x453d8b*/
-  v2 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v5); /*0x453d9d*/
-  v3 = v2[73]; /*0x453da2*/
-  result = (int)(v2 + 73); /*0x453da8*/
-  LOBYTE(v3) = v3 | 0x80; /*0x453dad*/
-  *(_DWORD *)result = v3; /*0x453db0*/
-  return result; /*0x453db2*/
+    int *v1;
+    int *v2;
+    int v3;
+    int result;
+    int *v5;
+    v1 = v5;
+    LOWORD(v5) = *v5 / 256;
+    HIWORD(v5) = v1[1] / 256;
+    v2 = CellCoord::To_CellObj(&MapClass_Instance, (short *)&v5);
+    v3 = v2[73];
+    result = (int)(v2 + 73);
+    LOBYTE(v3) = v3 | 0x80;
+    *(int *)result = v3;
+    return result;
 }
 }
 
 // 0x453dc0
 void BuildingClass::ClearCellOccupied(int cell_x, int cell_y)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x453dc0
-int __thiscall BuildingClass::ClearCellOccupied(#377 *this)
+    int __thiscall BuildingClass::ClearCellOccupied(#377 *(void**)this)
 {
-  _DWORD *v1; // ecx
-  _DWORD *v2; // eax
-  int v3; // ecx
-  int result; // eax
-  _DWORD *v5; // [esp+4h] [ebp+4h] BYREF
-
-  v1 = v5; /*0x453dc0*/
-  LOWORD(v5) = *v5 / 256; /*0x453dd2*/
-  HIWORD(v5) = v1[1] / 256; /*0x453deb*/
-  v2 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v5); /*0x453dfd*/
-  v3 = v2[73]; /*0x453e02*/
-  result = (int)(v2 + 73); /*0x453e08*/
-  LOBYTE(v3) = v3 & 0x7F; /*0x453e0d*/
-  *(_DWORD *)result = v3; /*0x453e10*/
-  return result; /*0x453e12*/
+    int *v1;
+    int *v2;
+    int v3;
+    int result;
+    int *v5;
+    v1 = v5;
+    LOWORD(v5) = *v5 / 256;
+    HIWORD(v5) = v1[1] / 256;
+    v2 = CellCoord::To_CellObj(&MapClass_Instance, (short *)&v5);
+    v3 = v2[73];
+    result = (int)(v2 + 73);
+    LOBYTE(v3) = v3 & 0x7F;
+    *(int *)result = v3;
+    return result;
 }
 }
 

@@ -128,21 +128,18 @@ int __thiscall NetworkLobby::MessageList_Append(_DWORD *this, int a2, int a3, Ce
 namespace gamemd {
 int NetworkLobby::GetPlayerCount(char a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall NetworkLobby::GetPlayerCount(char a1)
 {
-  int result; // eax
-
-  result = 2; /*0x5da084*/
-  if ( (a1 & 1) != 0 ) /*0x5da08c*/
-    result = 3; /*0x5da08e*/
-  if ( (a1 & 2) != 0 ) /*0x5da096*/
-    ++result; /*0x5da098*/
-  if ( (a1 & 4) != 0 ) /*0x5da09c*/
-    ++result; /*0x5da09e*/
-  if ( (a1 & 0x20) != 0 ) /*0x5da0a2*/
-    result += 5; /*0x5da0a4*/
-  return result; /*0x5da0a7*/
+    int result;
+    result = 2;
+    if ( (a1 & 1) != 0 )
+    result = 3;
+    if ( (a1 & 2) != 0 )
+    ++result;
+    if ( (a1 & 4) != 0 )
+    ++result;
+    if ( (a1 & 0x20) != 0 )
+    result += 5;
+    return result;
 }
 }
 } // namespace gamemd
@@ -210,51 +207,48 @@ int __usercall NetworkLobby::UpdatePlayerList@<eax>(CampaignScore *a1@<edi>)
 namespace gamemd {
 char NetworkLobby::ValidateSerialNumber()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_5DC170(char *this)
 {
-  int v2; // esi
-  FILE *v3; // eax
-  FILE *v4; // ebp
-  int i; // ecx
-  HKEY phkResult; // [esp+10h] [ebp-18Ch] BYREF
-  DWORD cbData; // [esp+14h] [ebp-188h] BYREF
-  DWORD Type; // [esp+18h] [ebp-184h] BYREF
-  BYTE Data[128]; // [esp+1Ch] [ebp-180h] BYREF
-  CHAR SubKey[256]; // [esp+9Ch] [ebp-100h] BYREF
-
-  strcpy((char *)Data, "0000000000000000000000"); /*0x5dc17c*/
-  strcpy(this, (const char *)Data); /*0x5dc1b7*/
-  memset(Data, 0, sizeof(Data)); /*0x5dc1c9*/
-  if ( MEMORY[0x8313B0] ) /*0x5dc1d2*/
+    int v2;
+    FILE *v3;
+    FILE *v4;
+    int i;
+    HKEY phkResult;
+    DWORD cbData;
+    DWORD Type;
+    BYTE Data[128];
+    CHAR SubKey[256];
+    strcpy((char *)Data, "0000000000000000000000");
+    strcpy(this, (const char *)Data);
+    memset(Data, 0, sizeof(Data));
+    if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven )
   {
-    if ( strlen(MEMORY[0x8313B0]) ) /*0x5dc1da*/
+    if ( strlen(g_Str_SOFTWARE_Westwood_Yuri_s_Reven) )
     {
-      strcpy(SubKey, MEMORY[0x8313B0]); /*0x5dc20b*/
-      if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) ) /*0x5dc226*/
+    strcpy(SubKey, g_Str_SOFTWARE_Westwood_Yuri_s_Reven);
+    if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) )
       {
-        cbData = 128; /*0x5dc24b*/
-        RegQueryValueExA(phkResult, MEMORY[0x8313A8], 0, &Type, Data, &cbData); /*0x5dc253*/
-        RegCloseKey(phkResult); /*0x5dc25e*/
+    cbData = 128;
+    RegQueryValueExA(phkResult, DataGlobal_8313A8, 0, &Type, Data, &cbData);
+    RegCloseKey(phkResult);
       }
     }
   }
-  Data[22] = 0; /*0x5dc26d*/
-  strcpy(this, (const char *)Data); /*0x5dc28b*/
-  v2 = 0; /*0x5dc294*/
-  v3 = fopen(MEMORY[0x831398], MEMORY[0x8313A4]); /*0x5dc296*/
-  v4 = v3; /*0x5dc29b*/
-  if ( !v3 ) /*0x5dc2a2*/
-    return 0; /*0x5dc2a7*/
-  for ( i = fgetc(v3); i != -1; i = fgetc(v4) ) /*0x5dc2bf*/
+    Data[22] = 0;
+    strcpy(this, (const char *)Data);
+    v2 = 0;
+    v3 = fopen(DataGlobal_831398, DataGlobal_8313A4);
+    v4 = v3;
+    if ( !v3 )
+    return 0;
+    for ( i = fgetc(v3); i != -1; i = fgetc(v4) )
   {
-    Data[v2] = (((char)Data[v2] - 48) % 10 - i + 1000) % 10 + 48; /*0x5dc2eb*/
-    if ( ++v2 == strlen((const char *)Data) ) /*0x5dc2f7*/
-      v2 = 0; /*0x5dc2f9*/
+    Data[v2] = (((char)Data[v2] - 48) % 10 - i + 1000) % 10 + 48;
+    if ( ++v2 == strlen((const char *)Data) )
+    v2 = 0;
   }
-  fclose(v4); /*0x5dc30c*/
-  strcpy(this, (const char *)Data); /*0x5dc32e*/
-  return 1; /*0x5dc2a4*/
+    fclose(v4);
+    strcpy(this, (const char *)Data);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -717,14 +711,8 @@ char __thiscall sub_5E9290(void *this)
 namespace gamemd {
 BOOL NetworkLobby::IsValidPlayerName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall NetworkLobby::IsValidPlayerName(wchar_t *this)
 {
-  return this /*0x5e9499*/
-      && this != (wchar_t *)MEMORY[0xAC119C]
-      && this != (wchar_t *)MEMORY[0xAC11A0]
-      && this != (wchar_t *)MEMORY[0xAC11B4]
-      && this != MEMORY[0xAC11B0];
+    return this && this != (wchar_t *)g_HouseClass_ObserverFlags && this != (wchar_t *)g_Lobby_PlayerCount && this != (wchar_t *)g_Lobby_MaxPlayers && this != g_Lobby_PlayerReady;
 }
 }
 } // namespace gamemd
@@ -733,27 +721,24 @@ BOOL __thiscall NetworkLobby::IsValidPlayerName(wchar_t *this)
 namespace gamemd {
 bool NetworkLobby::CheckMinPlayers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool NetworkLobby_CheckMinPlayers()
 {
-  int v0; // ecx
-  int v1; // eax
-  LPARAM *i; // edx
-
-  v0 = MEMORY[0xA8BB0C]; /*0x5e9515*/
-  if ( MEMORY[0xA8B548] < MEMORY[0xA8BB0C] ) /*0x5e951d*/
-    v0 = MEMORY[0xA8B548]; /*0x5e951f*/
-  v1 = 0; /*0x5e9521*/
-  if ( v0 > 0 ) /*0x5e952c*/
+    int v0;
+    int v1;
+    LPARAM *i;
+    v0 = DataGlobal_A8BB0C;
+    if ( DataGlobal_A8B548 < DataGlobal_A8BB0C )
+    v0 = DataGlobal_A8B548;
+    v1 = 0;
+    if ( v0 > 0 )
   {
-    for ( i = &MEMORY[0xA8DA90]; *i != MEMORY[0xAC119C]; ++i ) /*0x5e952e*/
+    for ( i = &g_NetworkPlayerName; *i != g_HouseClass_ObserverFlags; ++i )
     {
-      if ( ++v1 >= v0 ) /*0x5e953d*/
-        return MEMORY[0x8316A4] || v0 >= 8 || *(&MEMORY[0xA8DA90] + v0) != MEMORY[0xAC119C]; /*0x5e953d*/
+    if ( ++v1 >= v0 )
+    return g_MPCooperativeState || v0 >= 8 || *(&g_NetworkPlayerName + v0) != g_HouseClass_ObserverFlags;
     }
-    return 0; /*0x5e9535*/
+    return 0;
   }
-  return MEMORY[0x8316A4] || v0 >= 8 || *(&MEMORY[0xA8DA90] + v0) != MEMORY[0xAC119C]; /*0x5e9554*/
+    return g_MPCooperativeState || v0 >= 8 || *(&g_NetworkPlayerName + v0) != g_HouseClass_ObserverFlags;
 }
 }
 } // namespace gamemd
@@ -762,45 +747,35 @@ bool NetworkLobby_CheckMinPlayers()
 namespace gamemd {
 char NetworkLobby::CheckPlayerNameValid()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_5E96A0(void *this)
 {
-  wchar_t **v2; // esi
-  wchar_t *v3; // ecx
-  int *v4; // eax
-
-  if ( this == (void *)-2 ) /*0x5e96a7*/
-    return 0; /*0x5e9713*/
-  v2 = (wchar_t **)&MEMORY[0xA8DA90]; /*0x5e96a9*/
-  while ( 1 ) /*0x5e96ae*/
+    wchar_t **v2;
+    wchar_t *v3;
+    int *v4;
+    if ( this == (void *)-2 )
+    return 0;
+    v2 = (wchar_t **)&g_NetworkPlayerName;
+    while ( 1 )
   {
-    v3 = *v2; /*0x5e96ae*/
-    if ( *v2 ) /*0x5e96ae*/
+    v3 = *v2;
+    if ( *v2 )
     {
-      if ( v3 != (wchar_t *)MEMORY[0xAC119C] /*0x5e96f3*/
-        && v3 != (wchar_t *)MEMORY[0xAC11A0]
-        && v3 != MEMORY[0xAC11B0]
-        && v3 != (wchar_t *)MEMORY[0xAC11B4]
-        && v3 != (wchar_t *)MEMORY[0xAC11A4]
-        && v3 != (wchar_t *)MEMORY[0xAC11A8]
-        && v3 != (wchar_t *)MEMORY[0xAC11AC]
-        && (void *)SessionClass::GetPlayerColor((int)v3) == this )
+    if ( v3 != (wchar_t *)g_HouseClass_ObserverFlags && v3 != (wchar_t *)g_Lobby_PlayerCount && v3 != g_Lobby_PlayerReady && v3 != (wchar_t *)g_Lobby_MaxPlayers && v3 != (wchar_t *)g_Lobby_PlayerTeam && v3 != (wchar_t *)g_Lobby_PlayerSide && v3 != (wchar_t *)g_Lobby_PlayerColor && (void *)SessionClass::GetPlayerColor((int)v3) == this )
       {
-        break; /*0x5e96f3*/
+    break;
       }
     }
-    if ( (int)++v2 >= (int)&MEMORY[0xA8DAB0] ) /*0x5e96fe*/
+    if ( (int)++v2 >= (int)&g_PlayerNameListEnd )
     {
-      v4 = MEMORY[0xA8B2BC]; /*0x5e9700*/
-      while ( (void *)*v4 != this ) /*0x5e9707*/
+    v4 = g_CampaignConfig;
+    while ( (void *)*v4 != this )
       {
-        if ( (int)++v4 >= (int)MEMORY[0xA8B2DC] ) /*0x5e9711*/
-          return 0; /*0x5e9711*/
+    if ( (int)++v4 >= (int)g_CampaignSideIndex )
+    return 0;
       }
-      return 1; /*0x5e9707*/
+    return 1;
     }
   }
-  return 1; /*0x5e9713*/
+    return 1;
 }
 }
 } // namespace gamemd
@@ -809,45 +784,35 @@ char __thiscall sub_5E96A0(void *this)
 namespace gamemd {
 char NetworkLobby::CheckPlayerNames()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_5E9720(void *this)
 {
-  wchar_t **v2; // esi
-  wchar_t *v3; // ecx
-  int *v4; // eax
-
-  if ( this == (void *)-2 ) /*0x5e9727*/
-    return 0; /*0x5e9793*/
-  v2 = (wchar_t **)&MEMORY[0xA8DA90]; /*0x5e9729*/
-  while ( 1 ) /*0x5e972e*/
+    wchar_t **v2;
+    wchar_t *v3;
+    int *v4;
+    if ( this == (void *)-2 )
+    return 0;
+    v2 = (wchar_t **)&g_NetworkPlayerName;
+    while ( 1 )
   {
-    v3 = *v2; /*0x5e972e*/
-    if ( *v2 ) /*0x5e972e*/
+    v3 = *v2;
+    if ( *v2 )
     {
-      if ( v3 != (wchar_t *)MEMORY[0xAC119C] /*0x5e9773*/
-        && v3 != (wchar_t *)MEMORY[0xAC11A0]
-        && v3 != MEMORY[0xAC11B0]
-        && v3 != (wchar_t *)MEMORY[0xAC11B4]
-        && v3 != (wchar_t *)MEMORY[0xAC11A4]
-        && v3 != (wchar_t *)MEMORY[0xAC11A8]
-        && v3 != (wchar_t *)MEMORY[0xAC11AC]
-        && (void *)SessionClass::GetOption((int)v3) == this )
+    if ( v3 != (wchar_t *)g_HouseClass_ObserverFlags && v3 != (wchar_t *)g_Lobby_PlayerCount && v3 != g_Lobby_PlayerReady && v3 != (wchar_t *)g_Lobby_MaxPlayers && v3 != (wchar_t *)g_Lobby_PlayerTeam && v3 != (wchar_t *)g_Lobby_PlayerSide && v3 != (wchar_t *)g_Lobby_PlayerColor && (void *)SessionClass::GetOption((int)v3) == this )
       {
-        break; /*0x5e9773*/
+    break;
       }
     }
-    if ( (int)++v2 >= (int)&MEMORY[0xA8DAB0] ) /*0x5e977e*/
+    if ( (int)++v2 >= (int)&g_PlayerNameListEnd )
     {
-      v4 = MEMORY[0xA8B2DC]; /*0x5e9780*/
-      while ( (void *)*v4 != this ) /*0x5e9787*/
+    v4 = g_CampaignSideIndex;
+    while ( (void *)*v4 != this )
       {
-        if ( (int)++v4 >= (int)MEMORY[0xA8B2FC] ) /*0x5e9791*/
-          return 0; /*0x5e9791*/
+    if ( (int)++v4 >= (int)g_CampaignFactionSlot )
+    return 0;
       }
-      return 1; /*0x5e9787*/
+    return 1;
     }
   }
-  return 1; /*0x5e9793*/
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1205,29 +1170,26 @@ LABEL_19:
 namespace gamemd {
 void NetworkLobby::UpdateLabels()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5EE6A0(HWND this)
 {
-  char *v2; // ebp
-  int *v3; // edi
-  int ResourceID3CSF; // esi
-  LRESULT v5; // eax
-
-  if ( this ) /*0x5ee6a5*/
+    char *v2;
+    int *v3;
+    int ResourceID3CSF;
+    LRESULT v5;
+    if ( this )
   {
-    v2 = 0; /*0x5ee6aa*/
-    v3 = &MEMORY[0xA8DA90]; /*0x5ee6ac*/
-    do /*0x5ee6e4*/
+    v2 = 0;
+    v3 = &g_NetworkPlayerName;
+    do
     {
-      ResourceID3CSF = GetResourceID3CSF(v2); /*0x5ee6b8*/
-      FillComboBoxSides(this, ResourceID3CSF); /*0x5ee6be*/
-      v5 = SetComboBoxSelection(this, ResourceID3CSF, -1); /*0x5ee6c9*/
-      if ( *v3 ) /*0x5ee6ce*/
-        SessionClass::SetOption(*v3, v5); /*0x5ee6d5*/
-      ++v3; /*0x5ee6da*/
-      ++v2; /*0x5ee6dd*/
+    ResourceID3CSF = GetResourceID3CSF(v2);
+    FillComboBoxSides(this, ResourceID3CSF);
+    v5 = SetComboBoxSelection(this, ResourceID3CSF, -1);
+    if ( *v3 )
+    SessionClass::SetOption(*v3, v5);
+    ++v3;
+    ++v2;
     }
-    while ( (int)v3 < (int)&MEMORY[0xA8DAB0] ); /*0x5ee6e4*/
+    while ( (int)v3 < (int)&g_PlayerNameListEnd );
   }
 }
 }

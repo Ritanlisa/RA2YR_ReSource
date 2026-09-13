@@ -754,10 +754,8 @@ int __thiscall sub_636CE0(int this)
 namespace gamemd {
 bool ScriptAction::SetField10()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall ScriptAction::SetField10(void *this)
 {
-  return !MEMORY[0xAC4CF4] || this != (void *)4; /*0x637dc0*/
+    return !DataGlobal_AC4CF4 || this != (void *)4;
 }
 }
 } // namespace gamemd
@@ -1008,48 +1006,45 @@ char __thiscall sub_638C70(_DWORD **this)
 namespace gamemd {
 int ScriptAction::ClassifyAction(int * a1, char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_638CE0(int *a1, char *a2)
 {
-  char v3; // cl
-  int *Type; // eax
-  int v6; // ecx
-  int *v7; // esi
-  int Value; // eax
-  int v9; // eax
-  _BYTE *v10; // esi
-  _BYTE v11[108]; // [esp+8h] [ebp-70h] BYREF
-  __int16 v12; // [esp+74h] [ebp-4h]
-  char v13; // [esp+76h] [ebp-2h]
-
-  v3 = *a2; /*0x638ce8*/
-  if ( *a2 == 9 || v3 == 6 || v3 == 7 ) /*0x638cf8*/
-    return 0; /*0x638d01*/
-  if ( Team_Load(a1, a2[12], *(_DWORD *)(a2 + 14), a2[18]) ) /*0x638d1a*/
-    return 0; /*0x638d2a*/
-  Type = (int *)BuildingClass::GetPlanningToken(a1); /*0x638d2d*/
-  if ( !Type ) /*0x638d34*/
-    return -1; /*0x638d34*/
-  v6 = Type[5]; /*0x638d36*/
-  if ( v6 <= 0 ) /*0x638d3b*/
-    return -1; /*0x638d3b*/
-  v7 = *(int **)(Type[2] + 4 * v6 - 4); /*0x638d43*/
-  Value = Array::FindValue(v7, *Type); /*0x638d49*/
-  if ( Value == -1 ) /*0x638d51*/
-    v9 = 0; /*0x638d53*/
-  else
-    v9 = *(_DWORD *)(v7[1] + 4 * Value); /*0x638d5a*/
-  v10 = *(_BYTE **)(v9 + 4); /*0x638d5d*/
-  qmemcpy(v11, v10, sizeof(v11)); /*0x638d69*/
-  v10 += 108; /*0x638d69*/
-  v12 = *(_WORD *)v10; /*0x638d6b*/
-  v13 = v10[2]; /*0x638d6d*/
-  if ( v11[12] == 7 || v11[12] == 8 || v11[12] == 9 ) /*0x638d80*/
-    return 1; /*0x638d8c*/
-  if ( (v11[12] == 1 || v11[12] == 11) && (v11[18] == 11 || v11[12] == 11 && !v11[18]) ) /*0x638da7*/
-    return 2; /*0x638da9*/
-  else
-    return -1; /*0x638db5*/
+    char v3;
+    int *Type;
+    int v6;
+    int *v7;
+    int Value;
+    int v9;
+    char *v10;
+    char v11[108];
+    short v12;
+    char v13;
+    v3 = *a2;
+    if ( *a2 == 9 || v3 == 6 || v3 == 7 )
+    return 0;
+    if ( Team_Load(a1, *((int*)(a2) + 12), *(int *)(a2 + 14), *((int*)(a2) + 18)) )
+    return 0;
+    Type = (int *)BuildingClass::GetPlanningToken(a1);
+    if ( !Type )
+    return -1;
+    v6 = Type[5];
+    if ( v6 <= 0 )
+    return -1;
+    v7 = *(int **)(Type[2] + 4 * v6 - 4);
+    Value = Array::FindValue(v7, *Type);
+    if ( Value == -1 )
+    v9 = 0;
+    else
+    v9 = *(int *)(v7[1] + 4 * Value);
+    v10 = *(char **)(v9 + 4);
+    qmemcpy(v11, v10, sizeof(v11));
+    v10 += 108;
+    v12 = *(short *)v10;
+    v13 = v10[2];
+    if ( v11[12] == 7 || v11[12] == 8 || v11[12] == 9 )
+    return 1;
+    if ( (v11[12] == 1 || v11[12] == 11) && (v11[18] == 11 || v11[12] == 11 && !v11[18]) )
+    return 2;
+    else
+    return -1;
 }
 }
 } // namespace gamemd
@@ -2344,13 +2339,11 @@ IUnknown *__thiscall ScriptAction::CopyStringField(char *this, char *Source)
 namespace gamemd {
 void * ScriptAction::CopyStructField(void * a2, const void * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall ScriptAction::CopyStructField(void *this, void *a2, const void *a3)
 {
-  if ( a3 != this ) /*0x6e47ca*/
-    qmemcpy(this, a3, 0x20u); /*0x6e47d3*/
-  qmemcpy(a2, this, 0x20u); /*0x6e47e2*/
-  return a2; /*0x6e47e4*/
+    if ( a3 != this )
+    qmemcpy(this, a3, 0x20u);
+    qmemcpy(a2, this, 0x20u);
+    return a2;
 }
 }
 } // namespace gamemd

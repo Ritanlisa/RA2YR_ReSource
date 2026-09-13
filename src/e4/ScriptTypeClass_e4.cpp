@@ -33,15 +33,12 @@ int __stdcall ScriptTypeClass::LoadTypeData(AbstractTypeClass *aP0, int aP1)
 namespace gamemd {
 int ScriptTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ScriptTypeClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x691def*/
-  if ( result >= 0 ) /*0x691df6*/
-    return 0; /*0x691df8*/
-  return result; /*0x691dfa*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd
@@ -84,50 +81,41 @@ ScriptTypeClass *__thiscall ScriptTypeClass::ddtor(void **this, char a2)
 namespace gamemd {
 TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TaskForceClass *__fastcall ScriptTypeClass::ReadINI(char *a1, int a2)
 {
-  CCINIClass *KeyCount; // ebx
-  CCINIClass *i; // edi
-  unsigned __int8 *StringByIndex; // eax
-  TaskForceClass *result; // eax
-  INIClass *v7; // ebx
-  int j; // ebp
-  int v9; // edi
-  INIClass *v10; // [esp-4h] [ebp-38h]
-  char Buffer[32]; // [esp+14h] [ebp-20h] BYREF
-
-  KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&stru_830620.__pad_579C[53244]); /*0x6e8357*/
-  for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)i + 1) ) /*0x6e835d*/
+    CCINIClass *KeyCount;
+    CCINIClass *i;
+    unsigned char *StringByIndex;
+    TaskForceClass *result;
+    INIClass *v7;
+    int j;
+    int v9;
+    INIClass *v10;
+    char Buffer[32];
+    KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&DataGlobal_830620.__pad_579C[53244]);
+    for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)(i) + 1) )
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1, (CCINIClass *)&stru_830620.__pad_579C[53244], i); /*0x6e8367*/
-    INIClass::GetString( /*0x6e8380*/
-      (unsigned __int8 ***)a1,
-      (INIClass *)&stru_830620.__pad_579C[53244],
-      StringByIndex,
-      (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
-      (INIClass *)Buffer,
-      32);
-    INIClass::ClearSection((int)a1, (INIClass *)Buffer, 0); /*0x6e838e*/
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(a1, (CCINIClass *)&DataGlobal_830620.__pad_579C[53244], i);
+    INIClass::GetString( (unsigned char ***)a1, (INIClass *)&DataGlobal_830620.__pad_579C[53244], StringByIndex, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], (INIClass *)Buffer, 32);
+    INIClass::ClearSection((int)a1, (INIClass *)Buffer, 0);
   }
-  INIClass::ClearSection((int)a1, (INIClass *)&stru_830620.__pad_579C[53244], 0); /*0x6e83a1*/
-  result = *(TaskForceClass **)&MEMORY[0xA8D63C].__pad_1258[76]; /*0x6e83a6*/
-  v7 = 0; /*0x6e83ab*/
-  for ( j = 0; j < *(int *)&MEMORY[0xA8D63C].__pad_1258[76]; ++j ) /*0x6e83b1*/
+    INIClass::ClearSection((int)a1, (INIClass *)&DataGlobal_830620.__pad_579C[53244], 0);
+    result = *(TaskForceClass **)&g_NetworkPlayerBuffer.__pad_1258[76];
+    v7 = 0;
+    for ( j = 0; j < *(int *)&g_NetworkPlayerBuffer.__pad_1258[76]; ++j )
   {
-    v9 = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_1258[64] + 4 * j); /*0x6e83bc*/
-    if ( *(_DWORD *)(v9 + 160) == a2 ) /*0x6e83c5*/
+    v9 = *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_1258[64] + 4 * j);
+    if ( *(int *)(v9 + 160) == a2 )
     {
-      v10 = v7; /*0x6e83cd*/
-      v7 = (INIClass *)((char *)v7 + 1); /*0x6e83d4*/
-      sprintf(Buffer, MEMORY[0x817F6C], v10); /*0x6e83d5*/
-      String::Trim(Buffer); /*0x6e83e1*/
-      INIClass::SetString(a1, (INIClass *)&stru_830620.__pad_579C[53244], (INIClass *)Buffer, (INIClass *)(v9 + 36)); /*0x6e83f6*/
-      (*(void (__thiscall **)(int, char *))(*(_DWORD *)v9 + 104))(v9, a1); /*0x6e8400*/
+    v10 = v7;
+    v7 = (INIClass *)((char *)(v7) + 1);
+    sprintf(Buffer, g_Str_Trace__d, v10);
+    String::Trim(Buffer);
+    INIClass::SetString(a1, (INIClass *)&DataGlobal_830620.__pad_579C[53244], (INIClass *)Buffer, (INIClass *)(v9 + 36));
+    (*(void (__thiscall **)(int, char *))(*(int *)(v9) + 104))(v9, a1);
     }
-    result = *(TaskForceClass **)&MEMORY[0xA8D63C].__pad_1258[76]; /*0x6e8403*/
+    result = *(TaskForceClass **)&g_NetworkPlayerBuffer.__pad_1258[76];
   }
-  return result; /*0x6e840d*/
+    return result;
 }
 }
 } // namespace gamemd

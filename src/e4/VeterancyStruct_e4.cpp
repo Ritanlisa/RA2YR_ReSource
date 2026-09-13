@@ -7,10 +7,8 @@ namespace ra2 {
 namespace game {
 BOOL VeterancyStruct::IsVeteran()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Audio_IsMediumVolume(float *this)
 {
-  return *this >= 1.0 && *this < 2.0; /*0x74ffb3*/
+    return *(void**)this >= 1.0 && *(void**)this < 2.0;
 }
 }
 } // namespace game
@@ -21,10 +19,8 @@ namespace ra2 {
 namespace game {
 BOOL VeterancyStruct::IsElite()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Audio_IsLoud(float *this)
 {
-  return *this >= 2.0; /*0x750024*/
+    return *(void**)this >= 2.0;
 }
 }
 } // namespace game

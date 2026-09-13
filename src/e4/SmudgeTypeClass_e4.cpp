@@ -70,42 +70,36 @@ LABEL_11:
 // 0x6B5550
 bool SmudgeTypeClass::GetType(short * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall SmudgeTypeClass::GetType(AbstractClass *this, __int16 *a2, int a3)
 {
-  void **v4; // eax
-  int v5; // edx
-  bool result; // al
-  int v7[3]; // [esp+4h] [ebp-Ch] BYREF
-
-  v4 = (void **)__2_YAPAXI_Z(0xB0u); /*0x6b555b*/
-  result = 0; /*0x6b55a7*/
-  if ( v4 ) /*0x6b5565*/
+    void **v4;
+    int v5;
+    bool result;
+    int v7[3];
+    v4 = (void **)__2_YAPAXI_Z(0xB0u);
+    result = 0;
+    if ( v4 )
   {
-    v7[2] = 0; /*0x6b556d*/
-    v5 = a2[1]; /*0x6b5578*/
-    v7[0] = (*a2 << 8) + 128; /*0x6b5585*/
-    v7[1] = (v5 << 8) + 128; /*0x6b559a*/
-    if ( UnitClass::Create(v4, this, (AbstractClass *)v7, -1) ) /*0x6b559e*/
-      return 1; /*0x6b5565*/
+    v7[2] = 0;
+    v5 = *((int*)(a2) + 1);
+    v7[0] = (*a2 << 8) + 128;
+    v7[1] = (v5 << 8) + 128;
+    if ( UnitClass::Create(v4, this, (AbstractClass *)v7, -1) )
+    return 1;
   }
-  return result; /*0x6b55a9*/
+    return result;
 }
 }
 
 // 0x6B55C0
 SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-SmudgeClass *__thiscall SmudgeTypeClass::GetFlag(AbstractClass *this, int a2)
 {
-  void **v3; // eax
-
-  v3 = (void **)__2_YAPAXI_Z(0xB0u); /*0x6b55c8*/
-  if ( v3 ) /*0x6b55d2*/
-    return UnitClass::Create(v3, this, (AbstractClass *)&stru_B05488.__pad_579C[2948], -1); /*0x6b55de*/
-  else
-    return 0; /*0x6b55e7*/
+    void **v3;
+    v3 = (void **)__2_YAPAXI_Z(0xB0u);
+    if ( v3 )
+    return UnitClass::Create(v3, this, (AbstractClass *)&DataGlobal_B05488.__pad_579C[2948], -1);
+    else
+    return 0;
 }
 }
 
@@ -242,25 +236,20 @@ int __stdcall SmudgeTypeClass::LoadTypeData(ObjectTypeClass *aP0, int aP1)
 // 0x6B58B0
 int SmudgeTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SmudgeTypeClass::SaveToINI(TechnoTypeClass *aP0, ObjectTypeClass *aP1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2); /*0x6b58bf*/
-  if ( result >= 0 ) /*0x6b58c6*/
-    return 0; /*0x6b58c8*/
-  return result; /*0x6b58ca*/
+    int result;
+    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 
 // 0x6B6150
 int SmudgeTypeClass::GetAuxField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SmudgeTypeClass::_vt16(_DWORD *this)
 {
-  return *(this + 165); /*0x6b6156*/
+    return this->Width;
 }
 }
 

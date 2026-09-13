@@ -3117,55 +3117,52 @@ LABEL_72:
 namespace gamemd {
 unsigned int * Terrain::ClimbCheck(AbstractClass * aP0, AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall Terrain::ClimbCheck(AbstractClass *aP0, AbstractClass *aP1)
 {
-  int v2; // ecx
-  IUnknown *v3; // esi
-  IUnknown *v4; // edi
-  bool v5; // bl
-  int v6; // ebp
-  int v7; // edi
-  _DWORD *v8; // eax
-  int v9; // ecx
-  int v10; // ecx
-  TechnoClass *v12; // [esp+10h] [ebp-18h] BYREF
-  TechnoClass *v13; // [esp+14h] [ebp-14h]
-  int v14; // [esp+18h] [ebp-10h]
-  int v15; // [esp+24h] [ebp-4h]
-
-  v2 = *(_DWORD *)aP1->__pad_0 / 256; /*0x6d6434*/
-  HIWORD(aP1) = *(_DWORD *)&aP1->__pad_0[4] / 256; /*0x6d6440*/
-  LOWORD(aP1) = v2; /*0x6d6445*/
-  v3 = (IUnknown *)(((__int16)v2 << 8) + 128); /*0x6d6462*/
-  v4 = (IUnknown *)((SHIWORD(aP1) << 8) + 128); /*0x6d6468*/
-  v5 = (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP1) + 80) & 0x1000) != 0; /*0x6d6486*/
-  v6 = (int)&v4->__pad_524[220]; /*0x6d649d*/
-  v14 = *((char *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP1) + 283); /*0x6d64a3*/
-  v7 = (int)&v3->__pad_524[220]; /*0x6d64a7*/
-  v15 = 0; /*0x6d64a9*/
-  while ( 1 ) /*0x6d64b1*/
+    int v2;
+    IUnknown *v3;
+    IUnknown *v4;
+    bool v5;
+    int v6;
+    int v7;
+    int *v8;
+    int v9;
+    int v10;
+    TechnoClass *v12;
+    TechnoClass *v13;
+    int v14;
+    int v15;
+    v2 = *(int *)aP1->__pad_0 / 256;
+    HIWORD(aP1) = *(int *)&aP1->__pad_0[4] / 256;
+    LOWORD(aP1) = v2;
+    v3 = (IUnknown *)(((short)v2 << 8) + 128);
+    v4 = (IUnknown *)((SHIWORD(aP1) << 8) + 128);
+    v5 = (*((int *)CellCoord::To_CellObj(&DataGlobal_87C374.__pad_14B0[8132], (short *)&aP1) + 80) & 0x1000) != 0;
+    v6 = (int)&v4->__pad_524[220];
+    v14 = *((char *)CellCoord::To_CellObj(&DataGlobal_87C374.__pad_14B0[8132], (short *)&aP1) + 283);
+    v7 = (int)&v3->__pad_524[220];
+    v15 = 0;
+    while ( 1 )
   {
-    v7 -= 8; /*0x6d64b1*/
-    v6 -= 8; /*0x6d64c1*/
-    LOWORD(v13) = v7 / 256; /*0x6d64c9*/
-    HIWORD(v13) = v6 / 256; /*0x6d64e0*/
-    v12 = v13; /*0x6d64e9*/
-    v8 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v12); /*0x6d64f3*/
-    v9 = *((char *)v8 + 283) - v14; /*0x6d64ff*/
-    if ( v5 ) /*0x6d6505*/
-      v9 += 4 * ((v8[80] >> 8) & 1); /*0x6d6513*/
-    v10 = v9 << 7; /*0x6d6516*/
-    if ( (__int16)((v7 - v10) / 256) <= (__int16)aP1 && (__int16)((v6 - v10) / 256) <= SHIWORD(aP1) ) /*0x6d654e*/
-      break; /*0x6d654e*/
-    if ( v12 == (TechnoClass *)aP1 ) /*0x6d6555*/
+    v7 -= 8;
+    v6 -= 8;
+    LOWORD(v13) = v7 / 256;
+    HIWORD(v13) = v6 / 256;
+    v12 = v13;
+    v8 = CellCoord::To_CellObj(&DataGlobal_87C374.__pad_14B0[8132], (short *)&v12);
+    v9 = *((char *)(v8) + 283) - v14;
+    if ( v5 )
+    v9 += 4 * ((v8[80] >> 8) & 1);
+    v10 = v9 << 7;
+    if ( (short)((v7 - v10) / 256) <= (short)aP1 && (short)((v6 - v10) / 256) <= SHIWORD(aP1) )
+    break;
+    if ( v12 == (TechnoClass *)aP1 )
     {
-      *(_DWORD *)aP0->__pad_0 = aP1; /*0x6d6582*/
-      return aP0->__pad_0; /*0x6d655b*/
+    *(int *)aP0->__pad_0 = aP1;
+    return aP0->__pad_0;
     }
   }
-  *(_DWORD *)aP0->__pad_0 = v12; /*0x6d6572*/
-  return aP0->__pad_0; /*0x6d656f*/
+    *(int *)aP0->__pad_0 = v12;
+    return aP0->__pad_0;
 }
 }
 } // namespace gamemd
@@ -3174,22 +3171,19 @@ _DWORD *__stdcall Terrain::ClimbCheck(AbstractClass *aP0, AbstractClass *aP1)
 namespace gamemd {
 int Terrain::LookupByName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Terrain::LookupByName(void *this)
 {
-  int v2; // esi
-
-  if ( !this ) /*0x71dd86*/
-    return -1; /*0x71dd86*/
-  v2 = 0; /*0x71dd8d*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[20596] <= 0 ) /*0x71dd91*/
-    return -1; /*0x71ddb6*/
-  while ( _strcmpi(this, (const void *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20584] + 4 * v2) + 36)) ) /*0x71ddaa*/
+    int v2;
+    if ( !this )
+    return -1;
+    v2 = 0;
+    if ( *(int *)&HouseClass_Player.__pad_5568[20596] <= 0 )
+    return -1;
+    while ( _strcmpi(this, (const void *)(*(int *)(*(int *)&HouseClass_Player.__pad_5568[20584] + 4 * v2) + 36)) )
   {
-    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[20596] ) /*0x71ddb4*/
-      return -1; /*0x71ddb4*/
+    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[20596] )
+    return -1;
   }
-  return v2; /*0x71ddb6*/
+    return v2;
 }
 }
 } // namespace gamemd

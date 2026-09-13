@@ -104,23 +104,18 @@ _DWORD *__fastcall TrajectoryHelper::FindFirstObstacle(IUnknown *aP0, int *a1, i
 namespace gamemd {
 unsigned int * TrajectoryHelper::FindFirstImpenetrableObstacle(IUnknown * aP0, int * a1, int arg0, void * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall TrajectoryHelper::FindFirstImpenetrableObstacle(IUnknown *aP0, int *a1, int arg0, void *a3)
 {
-  IUnknown *FirstObstacle; // eax
-  IUnknown *v5; // esi
-
-  FirstObstacle = (IUnknown *)TrajectoryHelper::FindFirstObstacle(aP0, a1, *(_DWORD *)(arg0 + 160), a3); /*0x4cc322*/
-  v5 = FirstObstacle; /*0x4cc327*/
-  if ( FirstObstacle /*0x4cc342*/
-    && BuildingPlacement::ValidateType(FirstObstacle, (AbstractClass *)0xFFFFFFFF, (IUnknown *)0xFFFFFFFF)
-    && *(_BYTE *)(*(_DWORD *)(arg0 + 172) + 324) )
+    IUnknown *FirstObstacle;
+    IUnknown *v5;
+    FirstObstacle = (IUnknown *)TrajectoryHelper::FindFirstObstacle(aP0, a1, *(int *)(arg0 + 160), a3);
+    v5 = FirstObstacle;
+    if ( FirstObstacle && BuildingPlacement::ValidateType(FirstObstacle, (AbstractClass *)0xFFFFFFFF, (IUnknown *)0xFFFFFFFF) && *(char *)(*(int *)(arg0 + 172) + 324) )
   {
-    return 0; /*0x4cc34d*/
+    return 0;
   }
-  else
+    else
   {
-    return &v5->field_0; /*0x4cc353*/
+    return &v5->field_0;
   }
 }
 }

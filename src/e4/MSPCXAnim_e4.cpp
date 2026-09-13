@@ -59,13 +59,11 @@ void __thiscall MSPCXAnim_26_::_vt03(int this)
 namespace gamemd {
 unsigned int MSPCXAnim_26::Draw(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MSPCXAnim_26_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->MSPCXAnim_26_field_0xC ) /*0x5d0700*/
-    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2; /*0x5d0715*/
-  else
-    return 0; /*0x5d0707*/
+    if ( (unsigned char)this->MSPCXAnim_26_field_0xC )
+    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -108,13 +106,11 @@ void __thiscall MSPCXAnim_26_::sub_5D0730(int this)
 namespace gamemd {
 unsigned int MSPCXAnim_26::GetCount(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MSPCXAnim_26_::sub_5D0760(int this, int a2)
 {
-  if ( (unsigned char)this->MSPCXAnim_26_field_0xC ) /*0x5d0760*/
-    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2; /*0x5d0775*/
-  else
-    return 0; /*0x5d0767*/
+    if ( (unsigned char)this->MSPCXAnim_26_field_0xC )
+    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -145,13 +141,11 @@ void __thiscall MSPCXAnim_26_::sub_5D0790(int this)
 namespace gamemd {
 unsigned int MSPCXAnim_26::GetCount_0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MSPCXAnim_26_::sub_5D07C0(int this, int a2)
 {
-  if ( (unsigned char)this->MSPCXAnim_26_field_0xC ) /*0x5d07c0*/
-    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2; /*0x5d07d5*/
-  else
-    return 0; /*0x5d07c7*/
+    if ( (unsigned char)this->MSPCXAnim_26_field_0xC )
+    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -291,13 +285,11 @@ int __thiscall MSPCXAnim_26_::sub_5D10C0(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int MSPCXAnim_26::GetCount_1(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MSPCXAnim_26_::sub_5D1100(int this, int a2)
 {
-  if ( (unsigned char)this->MSPCXAnim_26_field_0xC ) /*0x5d1100*/
-    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2; /*0x5d1115*/
-  else
-    return 0; /*0x5d1107*/
+    if ( (unsigned char)this->MSPCXAnim_26_field_0xC )
+    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -656,13 +648,11 @@ void __thiscall MSPCXAnim_42_::sub_5D05A0(int this)
 namespace gamemd {
 unsigned int MSPCXAnim_42::GetCount_8B(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MSPCXAnim_42_::sub_5D05D0(int this, int a2)
 {
-  if ( (unsigned char)this->MSPCXAnim_42_field_0xC ) /*0x5d05d0*/
-    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 3; /*0x5d05e5*/
-  else
-    return 0; /*0x5d05d7*/
+    if ( (unsigned char)this->MSPCXAnim_42_field_0xC )
+    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 3;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -693,13 +683,11 @@ void __thiscall MSPCXAnim_42_::sub_5D0610(int this)
 namespace gamemd {
 unsigned int MSPCXAnim_42::GetCount(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MSPCXAnim_42_::sub_5D0640(int this, int a2)
 {
-  if ( (unsigned char)this->MSPCXAnim_42_field_0xC ) /*0x5d0640*/
-    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 2; /*0x5d0655*/
-  else
-    return 0; /*0x5d0647*/
+    if ( (unsigned char)this->MSPCXAnim_42_field_0xC )
+    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -730,13 +718,11 @@ void __thiscall MSPCXAnim_42_::sub_5D0670(int this)
 namespace gamemd {
 unsigned int MSPCXAnim_42::GetCount_0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MSPCXAnim_42_::sub_5D06A0(int this, int a2)
 {
-  if ( (unsigned char)this->MSPCXAnim_42_field_0xC ) /*0x5d06a0*/
-    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 2; /*0x5d06b5*/
-  else
-    return 0; /*0x5d06a7*/
+    if ( (unsigned char)this->MSPCXAnim_42_field_0xC )
+    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1139,13 +1125,11 @@ int __thiscall MSPCXAnim_42_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int MSPCXAnim_42::Draw(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MSPCXAnim_42_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->MSPCXAnim_42_field_0xC ) /*0x5d1360*/
-    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 2; /*0x5d1375*/
-  else
-    return 0; /*0x5d1367*/
+    if ( (unsigned char)this->MSPCXAnim_42_field_0xC )
+    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

@@ -243,41 +243,37 @@ char __thiscall sub_770B30(int *this, int a2, void **a3)
 namespace gamemd {
 void sub_770D70(const char ** a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall sub_770D70(const char **a1, _DWORD *a2)
 {
-  int i; // edi
-  int v5; // ecx
-  int v6; // eax
-  int v7; // ebp
-  int v8; // eax
-  int v9; // eax
-  int v10; // edx
-  int v11; // [esp+Ch] [ebp-4h] BYREF
-
-  (*(void (__thiscall **)(_DWORD *))(*a2 + 12))(a2); /*0x770d7c*/
-  unknown_libname_73(&v11); /*0x770d83*/
-  for ( i = String::Tokenize(a1, 0, &MEMORY[0x817F70], (ObjectClass *)&v11); /*0x770da0*/
-        i != -1;
-        i = String::Tokenize(a1, i, &MEMORY[0x817F70], (ObjectClass *)&v11) )
-  {
-    __1_Timevec_std__QAE_XZ((std::_Timevec *)&v11); /*0x770da7*/
-    v5 = a2[2]; /*0x770dac*/
-    v7 = v6; /*0x770daf*/
-    if ( a2[4] >= v5 ) /*0x770db4*/
+    int i;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    int v11;
+    (*(void (__thiscall **)(int *))(*a2 + 12))(a2);
+    unknown_libname_73(&v11);
+    for ( i = String::Tokenize(a1, 0, &Delimiter, (ObjectClass *)&v11);
+    i != -1;
+    i = String::Tokenize(a1, i, &Delimiter, (ObjectClass *)&v11) ) {
+    __1_Timevec_std__QAE_XZ((std::_Timevec *)&v11);
+    v5 = *((int*)(a2) + 2);
+    v7 = v6;
+    if ( *((int*)(a2) + 4) >= v5 )
     {
-      if ( !*((_BYTE *)a2 + 13) && v5 ) /*0x770dbf*/
-        continue; /*0x770dbf*/
-      v8 = a2[5]; /*0x770dc1*/
-      if ( v8 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*a2 + 8))(a2, v5 + v8, 0) ) /*0x770dd1*/
-        continue; /*0x770dd1*/
+    if ( !*((char *)(a2) + 13) && v5 )
+    continue;
+    v8 = *((int*)(a2) + 5);
+    if ( v8 <= 0 || !(*(unsigned char (__thiscall **)(int *, int, int))(*a2 + 8))(a2, v5 + v8, 0) )
+    continue;
     }
-    v9 = a2[4]; /*0x770dd8*/
-    v10 = a2[1]; /*0x770ddb*/
-    a2[4] = v9 + 1; /*0x770de1*/
-    *(_DWORD *)(v10 + 4 * v9) = v7; /*0x770de4*/
+    v9 = *((int*)(a2) + 4);
+    v10 = *((int*)(a2) + 1);
+    *((int*)(a2) + 4) = v9 + 1;
+    *(int *)(v10 + 4 * v9) = v7;
   }
-  DeleteAndZero((void **)&v11); /*0x770e05*/
+    DeleteAndZero((void **)&v11);
 }
 }
 } // namespace gamemd
@@ -353,17 +349,15 @@ int __thiscall sub_771710(int this)
 namespace gamemd {
 unsigned int * E4Recv_771850::sub_771850(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_771850(_DWORD *this, int a2)
 {
-  *(this + 1) = 0; /*0x771859*/
-  *(this + 2) = 0; /*0x77185c*/
-  *((_BYTE *)this + 12) = 0; /*0x77185f*/
-  *(this + 4) = Timer::GetTicks(); /*0x771867*/
-  *(this + 6) = 0; /*0x77186e*/
-  *(this + 7) = a2; /*0x771871*/
-  *this = &vt_WorldDominationTour_Voices_Anim; /*0x771874*/
-  return this; /*0x77187c*/
+    this->M4 = 0;
+    this->M8 = 0;
+    this->M12 = 0;
+    this->M16 = Timer::GetTicks();
+    this->M24 = 0;
+    this->M28 = a2;
+    *(void**)this = &vt_WorldDominationTour_Voices_Anim;
+    return this;
 }
 }
 } // namespace gamemd
@@ -407,36 +401,33 @@ void __thiscall sub_771A00(void *this)
 namespace gamemd {
 unsigned int * sub_773450(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall sub_773450(int a1, int a2)
 {
-  _DWORD *v4; // esi
-  _DWORD *result; // eax
-  _DWORD *v6; // edi
-
-  v4 = __2_YAPAXI_Z(0x414u); /*0x773462*/
-  result = 0; /*0x773464*/
-  if ( v4 ) /*0x77346b*/
+    int *v4;
+    int *result;
+    int *v6;
+    v4 = __2_YAPAXI_Z(0x414u);
+    result = 0;
+    if ( v4 )
   {
-    v6 = v4 + 2; /*0x773471*/
-    v4[1] = 1; /*0x773474*/
-    v4[2] = 0; /*0x773480*/
-    *((_BYTE *)v4 + 1036) = 0; /*0x773482*/
-    v4[260] = 0; /*0x773488*/
-    *v4 = &vt_WebBrowser; /*0x77348e*/
-    Debug::Log(); /*0x773494*/
-    v4[260] = a1; /*0x77349c*/
-    Debug::Log(); /*0x7734a7*/
-    if ( CoCreateInstance(&stru_7F7C60, 0, 1u, &stru_7F7C30, (LPVOID *)v4 + 2) >= 0 ) /*0x7734c6*/
+    v6 = v4 + 2;
+    v4[1] = 1;
+    v4[2] = 0;
+    *((char *)(v4) + 1036) = 0;
+    v4[260] = 0;
+    *v4 = &vt_WebBrowser;
+    Debug::Log();
+    v4[260] = a1;
+    Debug::Log();
+    if ( CoCreateInstance(&DataGlobal_7F7C60, 0, 1u, &DataGlobal_7F7C30, (LPVOID *)(v4) + 2) >= 0 )
     {
-      Debug::Log(); /*0x7734cd*/
-      (*(void (__stdcall **)(_DWORD, _DWORD *))(*(_DWORD *)*v6 + 20))(*v6, v4); /*0x7734db*/
-      (*(void (__stdcall **)(_DWORD, int, int))(*(_DWORD *)*v6 + 12))(*v6, a1, a2); /*0x7734e5*/
-      (*(void (__stdcall **)(_DWORD, int))(*(_DWORD *)*v6 + 60))(*v6, 1); /*0x7734ef*/
+    Debug::Log();
+    (*(void (__stdcall **)(int, int *))(*(int *)*v6 + 20))(*v6, v4);
+    (*(void (__stdcall **)(int, int, int))(*(int *)*v6 + 12))(*v6, a1, a2);
+    (*(void (__stdcall **)(int, int))(*(int *)*v6 + 60))(*v6, 1);
     }
-    return v4; /*0x7734f2*/
+    return v4;
   }
-  return result; /*0x7734f4*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -469,24 +460,21 @@ char __thiscall sub_773590(AnimClass *this, int a2, int a3)
 namespace gamemd {
 BOOL E4Recv_7738A0::sub_7738A0(const char * cbData, LPBYTE lpData, const char * Type)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_7738A0(_DWORD *this, const char *cbData, LPBYTE lpData, const char *Type)
 {
-  LSTATUS Value; // esi
-  HKEY phkResult; // [esp+8h] [ebp-44h] BYREF
-  CHAR ValueName[64]; // [esp+Ch] [ebp-40h] BYREF
-
-  Value = RegOpenKeyExA(HKEY_LOCAL_MACHINE, MEMORY[0x849690], 0, 0x20019u, &phkResult); /*0x7738c3*/
-  if ( !Value ) /*0x7738c7*/
+    LSTATUS Value;
+    HKEY phkResult;
+    CHAR ValueName[64];
+    Value = RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_Str_WOL_URL_RegKey, 0, 0x20019u, &phkResult);
+    if ( !Value )
   {
-    strcpy(ValueName, cbData); /*0x7738e8*/
-    if ( !*(this + 2) ) /*0x7738ec*/
-      strcat(ValueName, stru_84968C); /*0x77391d*/
-    cbData = Type; /*0x773932*/
-    Value = RegQueryValueExA(phkResult, ValueName, 0, (LPDWORD)&Type, lpData, (LPDWORD)&cbData); /*0x77394f*/
-    RegCloseKey(phkResult); /*0x773956*/
+    strcpy(ValueName, cbData);
+    if ( !this->M8 )
+    strcat(ValueName, DataGlobal_84968C);
+    cbData = Type;
+    Value = RegQueryValueExA(phkResult, ValueName, 0, (LPDWORD)&Type, lpData, (LPDWORD)&cbData);
+    RegCloseKey(phkResult);
   }
-  return Value == 0; /*0x773961*/
+    return Value == 0;
 }
 }
 } // namespace gamemd
@@ -1164,33 +1152,30 @@ void __thiscall sub_776570(void *this)
 namespace gamemd {
 void SaveWOLLobbySettings(unsigned char * a1, HWND a2, LPARAM lParam)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall SaveWOLLobbySettings(unsigned __int8 *a1, HWND a2, LPARAM lParam)
 {
-  int Int_Overwrite; // esi
-  int v6; // edi
-  int SystemMetrics; // eax
-  int v8; // eax
-  struct tagRECT Rect; // [esp+8h] [ebp-10h] BYREF
-
-  if ( a2 ) /*0x776a7b*/
+    int Int_Overwrite;
+    int v6;
+    int SystemMetrics;
+    int v8;
+    struct tagRECT Rect;
+    if ( a2 )
   {
-    GetWindowRect(a2, &Rect); /*0x776a89*/
-    Int_Overwrite = INIClass::ReadInt_Overwrite(lParam, a1, &stru_84968C, (INIClass *)Rect.left); /*0x776aa7*/
-    v6 = INIClass::ReadInt_Overwrite(lParam, a1, &stru_849E64, (INIClass *)Rect.top); /*0x776ab9*/
-    SystemMetrics = GetSystemMetrics(0); /*0x776abd*/
-    if ( Int_Overwrite + Rect.right - Rect.left > SystemMetrics ) /*0x776ad1*/
-      Int_Overwrite = Rect.left + SystemMetrics - Rect.right; /*0x776ad9*/
-    v8 = GetSystemMetrics(1); /*0x776add*/
-    if ( v6 + Rect.bottom - Rect.top > v8 ) /*0x776af1*/
-      v6 = Rect.top + v8 - Rect.bottom; /*0x776af9*/
-    if ( Int_Overwrite < 0 ) /*0x776afd*/
-      Int_Overwrite = 0; /*0x776aff*/
-    if ( v6 < 0 ) /*0x776b03*/
-      v6 = 0; /*0x776b05*/
-    SetWindowPos(a2, 0, Int_Overwrite, v6, 0, 0, 5u); /*0x776b12*/
-    dword_B73098 = a1; /*0x776b18*/
-    EnumChildWindows(a2, LoadWOLSettings, lParam); /*0x776b29*/
+    GetWindowRect(a2, &Rect);
+    Int_Overwrite = INIClass::ReadInt_Overwrite(lParam, a1, &DataGlobal_84968C, (INIClass *)Rect.left);
+    v6 = INIClass::ReadInt_Overwrite(lParam, a1, &DataGlobal_849E64, (INIClass *)Rect.top);
+    SystemMetrics = GetSystemMetrics(0);
+    if ( Int_Overwrite + Rect.right - Rect.left > SystemMetrics )
+    Int_Overwrite = Rect.left + SystemMetrics - Rect.right;
+    v8 = GetSystemMetrics(1);
+    if ( v6 + Rect.bottom - Rect.top > v8 )
+    v6 = Rect.top + v8 - Rect.bottom;
+    if ( Int_Overwrite < 0 )
+    Int_Overwrite = 0;
+    if ( v6 < 0 )
+    v6 = 0;
+    SetWindowPos(a2, 0, Int_Overwrite, v6, 0, 0, 5u);
+    DataGlobal_B73098 = a1;
+    EnumChildWindows(a2, LoadWOLSettings, lParam);
   }
 }
 }
@@ -1200,21 +1185,18 @@ void __fastcall SaveWOLLobbySettings(unsigned __int8 *a1, HWND a2, LPARAM lParam
 namespace gamemd {
 BOOL sub_776CD0(INIClass * Block, HWND hWndParent, char * lParam)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __fastcall sub_776CD0(INIClass *Block, HWND hWndParent, char *lParam)
 {
-  BOOL result; // eax
-  struct tagRECT Rect; // [esp+8h] [ebp-10h] BYREF
-
-  if ( hWndParent ) /*0x776cdb*/
+    int result;
+    struct tagRECT Rect;
+    if ( hWndParent )
   {
-    GetWindowRect(hWndParent, &Rect); /*0x776ce4*/
-    INIClass::SetInt(lParam, Block, &stru_84968C, (INIClass *)Rect.left, 0); /*0x776cfd*/
-    INIClass::SetInt(lParam, Block, &stru_849E64, (INIClass *)Rect.top, 0); /*0x776d11*/
-    dword_B73098 = Block; /*0x776d16*/
-    return EnumChildWindows(hWndParent, (WNDENUMPROC)SaveWOLUISettings, (LPARAM)lParam); /*0x776d23*/
+    GetWindowRect(hWndParent, &Rect);
+    INIClass::SetInt(lParam, Block, &DataGlobal_84968C, (INIClass *)Rect.left, 0);
+    INIClass::SetInt(lParam, Block, &DataGlobal_849E64, (INIClass *)Rect.top, 0);
+    DataGlobal_B73098 = Block;
+    return EnumChildWindows(hWndParent, (WNDENUMPROC)SaveWOLUISettings, (LPARAM)lParam);
   }
-  return result; /*0x776d2a*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -2181,53 +2163,46 @@ void __fastcall ConvertDateMonthNames(wchar_t **a1, void **a2)
 namespace gamemd {
 char sub_779730()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_779730()
 {
-  char Bool_Overwrite; // bl
-  void *v2[4]; // [esp+4h] [ebp-98h] BYREF
-  _DWORD v3[3]; // [esp+14h] [ebp-88h] BYREF
-  _DWORD v4[6]; // [esp+20h] [ebp-7Ch] BYREF
-  char v5; // [esp+38h] [ebp-64h]
-  int v6; // [esp+3Ch] [ebp-60h]
-  int v7; // [esp+40h] [ebp-5Ch]
-  _DWORD v8[22]; // [esp+44h] [ebp-58h] BYREF
-
-  BufferIOFile::Constructor(v8, MEMORY[0x849F8C]); /*0x779740*/
-  if ( File::IsReady(v8, 0) ) /*0x77974c*/
+    char Bool_Overwrite;
+    void *v2[4];
+    int v3[3];
+    int v4[6];
+    char v5;
+    int v6;
+    int v7;
+    int v8[22];
+    BufferIOFile::Constructor(v8, g_Str_File_wolinfoMD_ini);
+    if ( File::IsReady(v8, 0) )
   {
-    v3[0] = &vt_GenericNode; /*0x779779*/
-    v4[0] = &vt_GenericNode; /*0x77977d*/
-    v2[1] = 0; /*0x779785*/
-    v2[2] = 0; /*0x77978a*/
-    v3[1] = 0; /*0x77978e*/
-    v3[2] = 0; /*0x779792*/
-    v4[1] = 0; /*0x779796*/
-    v4[2] = 0; /*0x77979a*/
-    LinkedList::Prepend(v3, (int)v4); /*0x7797a6*/
-    v2[3] = &vt_List_INIClass_INISection; /*0x7797af*/
-    memset(&v4[3], 0, 12); /*0x7797bd*/
-    v5 = 0; /*0x7797c9*/
-    v6 = 0; /*0x7797cd*/
-    v7 = 0; /*0x7797d1*/
-    v2[0] = &vt_INIClass; /*0x7797d5*/
-    FileStraw::Open(v2, (int)v8, 0); /*0x7797dd*/
-    CCFileClass::Close(v8); /*0x7797e6*/
-    Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x779804*/
-                       (int)v2,
-                       (unsigned __int8 *)&stru_84A11C,
-                       (unsigned __int8 *)MEMORY[0x84A120],
-                       1);
-    HashTable::DestroyHashTableINIClass(v2); /*0x779806*/
-    v8[0] = &off_7E1668; /*0x77980f*/
-    BufferIOFileClass::Dtor(v8); /*0x779817*/
-    return Bool_Overwrite; /*0x77981c*/
+    v3[0] = &vt_GenericNode;
+    v4[0] = &vt_GenericNode;
+    v2[1] = 0;
+    v2[2] = 0;
+    v3[1] = 0;
+    v3[2] = 0;
+    v4[1] = 0;
+    v4[2] = 0;
+    LinkedList::Prepend(v3, (int)v4);
+    v2[3] = &vt_List_INIClass_INISection;
+    memset(&v4[3], 0, 12);
+    v5 = 0;
+    v6 = 0;
+    v7 = 0;
+    v2[0] = &vt_INIClass;
+    FileStraw::Open(v2, (int)v8, 0);
+    CCFileClass::Close(v8);
+    Bool_Overwrite = INIClass::ReadBool_Overwrite( (int)v2, (unsigned char *)&DataGlobal_84A11C, (unsigned char *)g_INI_Key_AutoLogin, 1);
+    HashTable::DestroyHashTableINIClass(v2);
+    v8[0] = &DataGlobal_7E1668;
+    BufferIOFileClass::Dtor(v8);
+    return Bool_Overwrite;
   }
-  else
+    else
   {
-    v8[0] = &off_7E1668; /*0x779759*/
-    BufferIOFileClass::Dtor(v8); /*0x779761*/
-    return 0; /*0x779766*/
+    v8[0] = &DataGlobal_7E1668;
+    BufferIOFileClass::Dtor(v8);
+    return 0;
   }
 }
 }
@@ -2237,51 +2212,48 @@ char sub_779730()
 namespace gamemd {
 int ReadWOLGameOption(INIClass * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ReadWOLGameOption(INIClass *a1)
 {
-  char v3[4]; // [esp+8h] [ebp-98h] BYREF
-  int v4; // [esp+Ch] [ebp-94h]
-  int v5; // [esp+10h] [ebp-90h]
-  void **v6; // [esp+14h] [ebp-8Ch]
-  _DWORD v7[3]; // [esp+18h] [ebp-88h] BYREF
-  _DWORD v8[6]; // [esp+24h] [ebp-7Ch] BYREF
-  char v9; // [esp+3Ch] [ebp-64h]
-  int v10; // [esp+40h] [ebp-60h]
-  int v11; // [esp+44h] [ebp-5Ch]
-  _DWORD v12[22]; // [esp+48h] [ebp-58h] BYREF
-
-  BufferIOFile::Constructor(v12, MEMORY[0x849F8C]); /*0x779843*/
-  if ( !File::IsReady(v12, 0) ) /*0x77984f*/
+    char v3[4];
+    int v4;
+    int v5;
+    void **v6;
+    int v7[3];
+    int v8[6];
+    char v9;
+    int v10;
+    int v11;
+    int v12[22];
+    BufferIOFile::Constructor(v12, g_Str_File_wolinfoMD_ini);
+    if ( !File::IsReady(v12, 0) )
   {
-    FileClass::Close(v12); /*0x77985c*/
-    CCFileClass::Close(v12); /*0x779865*/
-    CCFileClass::Reopen(v12, MEMORY[0x849F8C], (CDFileClass *)1); /*0x779875*/
+    FileClass::Close(v12);
+    CCFileClass::Close(v12);
+    CCFileClass::Reopen(v12, g_Str_File_wolinfoMD_ini, (CDFileClass *)1);
   }
-  v7[0] = &vt_GenericNode; /*0x779883*/
-  v8[0] = &vt_GenericNode; /*0x779887*/
-  v4 = 0; /*0x77988f*/
-  v5 = 0; /*0x779894*/
-  v7[1] = 0; /*0x779898*/
-  v7[2] = 0; /*0x77989c*/
-  v8[1] = 0; /*0x7798a0*/
-  v8[2] = 0; /*0x7798a4*/
-  LinkedList::Prepend(v7, (int)v8); /*0x7798b0*/
-  v6 = &vt_List_INIClass_INISection; /*0x7798b9*/
-  memset(&v8[3], 0, 12); /*0x7798c2*/
-  v9 = 0; /*0x7798ce*/
-  v10 = 0; /*0x7798d2*/
-  v11 = 0; /*0x7798d6*/
-  *(_DWORD *)v3 = &vt_INIClass; /*0x7798da*/
-  if ( File::IsReady(v12, 0) ) /*0x7798e2*/
+    v7[0] = &vt_GenericNode;
+    v8[0] = &vt_GenericNode;
+    v4 = 0;
+    v5 = 0;
+    v7[1] = 0;
+    v7[2] = 0;
+    v8[1] = 0;
+    v8[2] = 0;
+    LinkedList::Prepend(v7, (int)v8);
+    v6 = &vt_List_INIClass_INISection;
+    memset(&v8[3], 0, 12);
+    v9 = 0;
+    v10 = 0;
+    v11 = 0;
+    *(int *)v3 = &vt_INIClass;
+    if ( File::IsReady(v12, 0) )
   {
-    FileStraw::Open(v3, (int)v12, 0); /*0x7798f5*/
-    INIClass::SetBool(v3, &stru_84A11C, (char *)stru_84A11C.headNode, a1); /*0x779909*/
-    INIClass::SaveToPipe(v3, (int)v12); /*0x779917*/
+    FileStraw::Open(v3, (int)v12, 0);
+    INIClass::SetBool(v3, &DataGlobal_84A11C, (char *)DataGlobal_84A11C.headNode, a1);
+    INIClass::SaveToPipe(v3, (int)v12);
   }
-  HashTable::DestroyHashTableINIClass((void **)v3); /*0x779920*/
-  v12[0] = &off_7E1668; /*0x779929*/
-  return BufferIOFileClass::Dtor(v12); /*0x779936*/
+    HashTable::DestroyHashTableINIClass((void **)v3);
+    v12[0] = &DataGlobal_7E1668;
+    return BufferIOFileClass::Dtor(v12);
 }
 }
 } // namespace gamemd
@@ -2290,53 +2262,46 @@ int __fastcall ReadWOLGameOption(INIClass *a1)
 namespace gamemd {
 char sub_779940()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_779940()
 {
-  char Bool_Overwrite; // bl
-  void *v2[4]; // [esp+4h] [ebp-98h] BYREF
-  _DWORD v3[3]; // [esp+14h] [ebp-88h] BYREF
-  _DWORD v4[6]; // [esp+20h] [ebp-7Ch] BYREF
-  char v5; // [esp+38h] [ebp-64h]
-  int v6; // [esp+3Ch] [ebp-60h]
-  int v7; // [esp+40h] [ebp-5Ch]
-  _DWORD v8[22]; // [esp+44h] [ebp-58h] BYREF
-
-  BufferIOFile::Constructor(v8, MEMORY[0x849F8C]); /*0x779950*/
-  if ( File::IsReady(v8, 0) ) /*0x77995c*/
+    char Bool_Overwrite;
+    void *v2[4];
+    int v3[3];
+    int v4[6];
+    char v5;
+    int v6;
+    int v7;
+    int v8[22];
+    BufferIOFile::Constructor(v8, g_Str_File_wolinfoMD_ini);
+    if ( File::IsReady(v8, 0) )
   {
-    v3[0] = &vt_GenericNode; /*0x779989*/
-    v4[0] = &vt_GenericNode; /*0x77998d*/
-    v2[1] = 0; /*0x779995*/
-    v2[2] = 0; /*0x77999a*/
-    v3[1] = 0; /*0x77999e*/
-    v3[2] = 0; /*0x7799a2*/
-    v4[1] = 0; /*0x7799a6*/
-    v4[2] = 0; /*0x7799aa*/
-    LinkedList::Prepend(v3, (int)v4); /*0x7799b6*/
-    v2[3] = &vt_List_INIClass_INISection; /*0x7799bf*/
-    memset(&v4[3], 0, 12); /*0x7799cd*/
-    v5 = 0; /*0x7799d9*/
-    v6 = 0; /*0x7799dd*/
-    v7 = 0; /*0x7799e1*/
-    v2[0] = &vt_INIClass; /*0x7799e5*/
-    FileStraw::Open(v2, (int)v8, 0); /*0x7799ed*/
-    CCFileClass::Close(v8); /*0x7799f6*/
-    Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x779a14*/
-                       (int)v2,
-                       (unsigned __int8 *)&stru_84A11C,
-                       (unsigned __int8 *)MEMORY[0x84A12C],
-                       1);
-    HashTable::DestroyHashTableINIClass(v2); /*0x779a16*/
-    v8[0] = &off_7E1668; /*0x779a1f*/
-    BufferIOFileClass::Dtor(v8); /*0x779a27*/
-    return Bool_Overwrite; /*0x779a2c*/
+    v3[0] = &vt_GenericNode;
+    v4[0] = &vt_GenericNode;
+    v2[1] = 0;
+    v2[2] = 0;
+    v3[1] = 0;
+    v3[2] = 0;
+    v4[1] = 0;
+    v4[2] = 0;
+    LinkedList::Prepend(v3, (int)v4);
+    v2[3] = &vt_List_INIClass_INISection;
+    memset(&v4[3], 0, 12);
+    v5 = 0;
+    v6 = 0;
+    v7 = 0;
+    v2[0] = &vt_INIClass;
+    FileStraw::Open(v2, (int)v8, 0);
+    CCFileClass::Close(v8);
+    Bool_Overwrite = INIClass::ReadBool_Overwrite( (int)v2, (unsigned char *)&DataGlobal_84A11C, (unsigned char *)DataGlobal_84A12C, 1);
+    HashTable::DestroyHashTableINIClass(v2);
+    v8[0] = &DataGlobal_7E1668;
+    BufferIOFileClass::Dtor(v8);
+    return Bool_Overwrite;
   }
-  else
+    else
   {
-    v8[0] = &off_7E1668; /*0x779969*/
-    BufferIOFileClass::Dtor(v8); /*0x779971*/
-    return 0; /*0x779976*/
+    v8[0] = &DataGlobal_7E1668;
+    BufferIOFileClass::Dtor(v8);
+    return 0;
   }
 }
 }
@@ -2346,51 +2311,48 @@ char sub_779940()
 namespace gamemd {
 int ReadWOLLobbyOption(INIClass * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ReadWOLLobbyOption(INIClass *a1)
 {
-  char v3[4]; // [esp+8h] [ebp-98h] BYREF
-  int v4; // [esp+Ch] [ebp-94h]
-  int v5; // [esp+10h] [ebp-90h]
-  void **v6; // [esp+14h] [ebp-8Ch]
-  _DWORD v7[3]; // [esp+18h] [ebp-88h] BYREF
-  _DWORD v8[6]; // [esp+24h] [ebp-7Ch] BYREF
-  char v9; // [esp+3Ch] [ebp-64h]
-  int v10; // [esp+40h] [ebp-60h]
-  int v11; // [esp+44h] [ebp-5Ch]
-  _DWORD v12[22]; // [esp+48h] [ebp-58h] BYREF
-
-  BufferIOFile::Constructor(v12, MEMORY[0x849F8C]); /*0x779a53*/
-  if ( !File::IsReady(v12, 0) ) /*0x779a5f*/
+    char v3[4];
+    int v4;
+    int v5;
+    void **v6;
+    int v7[3];
+    int v8[6];
+    char v9;
+    int v10;
+    int v11;
+    int v12[22];
+    BufferIOFile::Constructor(v12, g_Str_File_wolinfoMD_ini);
+    if ( !File::IsReady(v12, 0) )
   {
-    FileClass::Close(v12); /*0x779a6c*/
-    CCFileClass::Close(v12); /*0x779a75*/
-    CCFileClass::Reopen(v12, MEMORY[0x849F8C], (CDFileClass *)1); /*0x779a85*/
+    FileClass::Close(v12);
+    CCFileClass::Close(v12);
+    CCFileClass::Reopen(v12, g_Str_File_wolinfoMD_ini, (CDFileClass *)1);
   }
-  v7[0] = &vt_GenericNode; /*0x779a93*/
-  v8[0] = &vt_GenericNode; /*0x779a97*/
-  v4 = 0; /*0x779a9f*/
-  v5 = 0; /*0x779aa4*/
-  v7[1] = 0; /*0x779aa8*/
-  v7[2] = 0; /*0x779aac*/
-  v8[1] = 0; /*0x779ab0*/
-  v8[2] = 0; /*0x779ab4*/
-  LinkedList::Prepend(v7, (int)v8); /*0x779ac0*/
-  v6 = &vt_List_INIClass_INISection; /*0x779ac9*/
-  memset(&v8[3], 0, 12); /*0x779ad2*/
-  v9 = 0; /*0x779ade*/
-  v10 = 0; /*0x779ae2*/
-  v11 = 0; /*0x779ae6*/
-  *(_DWORD *)v3 = &vt_INIClass; /*0x779aea*/
-  if ( File::IsReady(v12, 0) ) /*0x779af2*/
+    v7[0] = &vt_GenericNode;
+    v8[0] = &vt_GenericNode;
+    v4 = 0;
+    v5 = 0;
+    v7[1] = 0;
+    v7[2] = 0;
+    v8[1] = 0;
+    v8[2] = 0;
+    LinkedList::Prepend(v7, (int)v8);
+    v6 = &vt_List_INIClass_INISection;
+    memset(&v8[3], 0, 12);
+    v9 = 0;
+    v10 = 0;
+    v11 = 0;
+    *(int *)v3 = &vt_INIClass;
+    if ( File::IsReady(v12, 0) )
   {
-    FileStraw::Open(v3, (int)v12, 0); /*0x779b05*/
-    INIClass::SetBool(v3, &stru_84A11C, (char *)stru_84A11C.sectionHead, a1); /*0x779b19*/
-    INIClass::SaveToPipe(v3, (int)v12); /*0x779b27*/
+    FileStraw::Open(v3, (int)v12, 0);
+    INIClass::SetBool(v3, &DataGlobal_84A11C, (char *)DataGlobal_84A11C.sectionHead, a1);
+    INIClass::SaveToPipe(v3, (int)v12);
   }
-  HashTable::DestroyHashTableINIClass((void **)v3); /*0x779b30*/
-  v12[0] = &off_7E1668; /*0x779b39*/
-  return BufferIOFileClass::Dtor(v12); /*0x779b46*/
+    HashTable::DestroyHashTableINIClass((void **)v3);
+    v12[0] = &DataGlobal_7E1668;
+    return BufferIOFileClass::Dtor(v12);
 }
 }
 } // namespace gamemd
@@ -3268,12 +3230,10 @@ void __cdecl sub_77CCD0()
 namespace gamemd {
 int sub_77D120()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_77D120()
 {
-  ComPtr::Constructor(&stru_B75E48); /*0x77d125*/
-  stru_B75E48 = (int)&vt_rc_ptr_PlayerProfile; /*0x77d12f*/
-  return atexit(sub_77D140); /*0x77d13f*/
+    ComPtr::Constructor(&DataGlobal_B75E48);
+    DataGlobal_B75E48 = (int)&vt_rc_ptr_PlayerProfile;
+    return atexit(sub_77D140);
 }
 }
 } // namespace gamemd
@@ -3282,11 +3242,9 @@ int sub_77D120()
 namespace gamemd {
 void sub_77D140()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_77D140()
 {
-  stru_B75E48 = (int)&vt_rc_ptr_PlayerProfile; /*0x77d140*/
-  ComPtr::Release(&stru_B75E48); /*0x77d14f*/
+    DataGlobal_B75E48 = (int)&vt_rc_ptr_PlayerProfile;
+    ComPtr::Release(&DataGlobal_B75E48);
 }
 }
 } // namespace gamemd
@@ -3295,32 +3253,29 @@ void __cdecl sub_77D140()
 namespace gamemd {
 int E4Recv_77D240::sub_77D240()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_77D240(char **this)
 {
-  signed int v1; // eax
-  char *v2; // ebx
-  signed int v3; // esi
-  int i; // edi
-  char *v6; // eax
-
-  v1 = g_WOL_State; /*0x77d240*/
-  v2 = 0; /*0x77d248*/
-  v3 = 0; /*0x77d24a*/
-  if ( (int)g_WOL_State <= 0 ) /*0x77d251*/
-    return -1; /*0x77d28a*/
-  for ( i = 0; ; i += 108 ) /*0x77d253*/
+    signed int v1;
+    char *v2;
+    signed int v3;
+    int i;
+    char *v6;
+    v1 = g_WOL_State;
+    v2 = 0;
+    v3 = 0;
+    if ( (int)g_WOL_State <= 0 )
+    return -1;
+    for ( i = 0; ; i += 108 )
   {
-    if ( i >= 0 && v3 < v1 ) /*0x77d25b*/
-      v2 = (char *)g_WOL_ConnectionFlags + i; /*0x77d262*/
-    v6 = String::GetOrEmpty_Alt(this); /*0x77d26b*/
-    if ( !_strcmpi(v6, v2 + 36) ) /*0x77d271*/
-      break; /*0x77d271*/
-    v1 = g_WOL_State; /*0x77d27d*/
-    if ( ++v3 >= (int)g_WOL_State ) /*0x77d288*/
-      return -1; /*0x77d288*/
+    if ( i >= 0 && v3 < v1 )
+    v2 = (char *)(g_WOL_ConnectionFlags) + i;
+    v6 = String::GetOrEmpty_Alt(this);
+    if ( !_strcmpi(v6, v2 + 36) )
+    break;
+    v1 = g_WOL_State;
+    if ( ++v3 >= (int)g_WOL_State )
+    return -1;
   }
-  return v3; /*0x77d28a*/
+    return v3;
 }
 }
 } // namespace gamemd
@@ -3490,63 +3445,20 @@ char __fastcall OpenURLWOL(INIClass *a1, int a2)
 namespace gamemd {
 int sub_77DED0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_77DED0()
 {
-  int result; // eax
-
-  dword_B76234 = INIClass::ReadInt_Overwrite( /*0x77deeb*/
-                   (int)&MEMORY[0x8870C0],
-                   (unsigned __int8 *)stru_84A52C,
-                   (unsigned __int8 *)MEMORY[0x84A534],
-                   1);
-  dword_B779F0 = INIClass::ReadInt_Overwrite( /*0x77df06*/
-                   (int)&MEMORY[0x8870C0],
-                   (unsigned __int8 *)stru_84A52C,
-                   (unsigned __int8 *)unk_84A520,
-                   1);
-  dword_B779BC = INIClass::ReadInt_Overwrite( /*0x77df21*/
-                   (int)&MEMORY[0x8870C0],
-                   (unsigned __int8 *)stru_84A52C,
-                   (unsigned __int8 *)MEMORY[0x84A514],
-                   1);
-  dword_B7690C = INIClass::ReadInt_Overwrite( /*0x77df3c*/
-                   (int)&MEMORY[0x8870C0],
-                   (unsigned __int8 *)stru_84A52C,
-                   (unsigned __int8 *)MEMORY[0x84A508],
-                   1);
-  dword_B77784 = INIClass::ReadInt_Overwrite( /*0x77df57*/
-                   (int)&MEMORY[0x8870C0],
-                   (unsigned __int8 *)stru_84A52C,
-                   (unsigned __int8 *)MEMORY[0x84A500],
-                   1);
-  dword_B779DC = INIClass::ReadInt_Overwrite( /*0x77df72*/
-                   (int)&MEMORY[0x8870C0],
-                   (unsigned __int8 *)stru_84A52C,
-                   (unsigned __int8 *)MEMORY[0x84A4F0],
-                   1);
-  dword_B779C0 = INIClass::ReadInt_Overwrite( /*0x77df8d*/
-                   (int)&MEMORY[0x8870C0],
-                   (unsigned __int8 *)stru_84A52C,
-                   (unsigned __int8 *)MEMORY[0x84A4E0],
-                   1);
-  byte_B76AF0 = INIClass::ReadBool_Overwrite( /*0x77dfa8*/
-                  (int)&MEMORY[0x8870C0],
-                  (unsigned __int8 *)stru_84A52C,
-                  (unsigned __int8 *)MEMORY[0x84A4D0],
-                  0);
-  MEMORY[0xB73AD0] = INIClass::ReadBool_Overwrite( /*0x77dfbe*/
-                       (int)&MEMORY[0x8870C0],
-                       (unsigned __int8 *)stru_84A52C,
-                       (unsigned __int8 *)stru_84A4C4,
-                       0);
-  result = INIClass::ReadInt_Overwrite( /*0x5ee1a1*/
-             (int)&MEMORY[0x8870C0],
-             (unsigned __int8 *)MEMORY[0x82642C],
-             (unsigned __int8 *)MEMORY[0x831DA4],
-             0);
-  MEMORY[0xAC10C8] = result; /*0x5ee1a6*/
-  return result; /*0x5ee1ab*/
+    int result;
+    DataGlobal_B76234 = INIClass::ReadInt_Overwrite( (int)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, (unsigned char *)DataGlobal_84A534, 1);
+    DataGlobal_B779F0 = INIClass::ReadInt_Overwrite( (int)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, (unsigned char *)DataGlobal_84A520, 1);
+    DataGlobal_B779BC = INIClass::ReadInt_Overwrite( (int)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, (unsigned char *)DataGlobal_84A514, 1);
+    DataGlobal_B7690C = INIClass::ReadInt_Overwrite( (int)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, (unsigned char *)DataGlobal_84A508, 1);
+    DataGlobal_B77784 = INIClass::ReadInt_Overwrite( (int)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, (unsigned char *)DataGlobal_84A500, 1);
+    DataGlobal_B779DC = INIClass::ReadInt_Overwrite( (int)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, (unsigned char *)DataGlobal_84A4F0, 1);
+    DataGlobal_B779C0 = INIClass::ReadInt_Overwrite( (int)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, (unsigned char *)DataGlobal_84A4E0, 1);
+    DataGlobal_B76AF0 = INIClass::ReadBool_Overwrite( (int)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, (unsigned char *)DataGlobal_84A4D0, 0);
+    DataGlobal_B73AD0 = INIClass::ReadBool_Overwrite( (int)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, (unsigned char *)DataGlobal_84A4C4, 0);
+    result = INIClass::ReadInt_Overwrite( (int)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_MultiPlayer, (unsigned char *)DataGlobal_831DA4, 0);
+    g_MenuStateFlags = result;
+    return result;
 }
 }
 } // namespace gamemd
@@ -3555,24 +3467,21 @@ int sub_77DED0()
 namespace gamemd {
 void sub_77DFD0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_77DFD0()
 {
-  int v0[9]; // [esp+0h] [ebp-24h] BYREF
-
-  RawFileClass::Construct(v0, (int)MEMORY[0x826444]); /*0x77dfdc*/
-  INIClass::SetInt((char *)&MEMORY[0x8870C0], (unsigned __int8 *)stru_84A52C, MEMORY[0x84A534], dword_B76234, 0); /*0x77dff8*/
-  INIClass::SetInt((char *)&MEMORY[0x8870C0], (unsigned __int8 *)stru_84A52C, unk_84A520, dword_B779F0, 0); /*0x77e015*/
-  INIClass::SetInt((char *)&MEMORY[0x8870C0], (unsigned __int8 *)stru_84A52C, MEMORY[0x84A514], dword_B779BC, 0); /*0x77e032*/
-  INIClass::SetInt((char *)&MEMORY[0x8870C0], (unsigned __int8 *)stru_84A52C, MEMORY[0x84A508], dword_B7690C, 0); /*0x77e04e*/
-  INIClass::SetInt((char *)&MEMORY[0x8870C0], (unsigned __int8 *)stru_84A52C, MEMORY[0x84A500], dword_B77784, 0); /*0x77e06b*/
-  INIClass::SetInt((char *)&MEMORY[0x8870C0], (unsigned __int8 *)stru_84A52C, MEMORY[0x84A4F0], dword_B779DC, 0); /*0x77e088*/
-  INIClass::SetInt((char *)&MEMORY[0x8870C0], (unsigned __int8 *)stru_84A52C, MEMORY[0x84A4E0], dword_B779C0, 0); /*0x77e0a4*/
-  INIClass::SetBool((char *)&MEMORY[0x8870C0], (unsigned __int8 *)stru_84A52C, MEMORY[0x84A4D0], byte_B76AF0); /*0x77e0bf*/
-  INIClass::SetBool((char *)&MEMORY[0x8870C0], (unsigned __int8 *)stru_84A52C, stru_84A4C4, MEMORY[0xB73AD0]); /*0x77e0da*/
-  INIClass::WriteDigest(&MEMORY[0x8870C0], (int)v0, 0); /*0x77e0eb*/
-  Config::SaveObserverMode(); /*0x77e0f0*/
-  RawFileClass::Dtor(v0); /*0x77e0f9*/
+    int v0[9];
+    RawFileClass::Construct(v0, (int)g_Str_File_RA2MD_INI);
+    INIClass::SetInt((char *)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, DataGlobal_84A534, DataGlobal_B76234, 0);
+    INIClass::SetInt((char *)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, DataGlobal_84A520, DataGlobal_B779F0, 0);
+    INIClass::SetInt((char *)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, DataGlobal_84A514, DataGlobal_B779BC, 0);
+    INIClass::SetInt((char *)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, DataGlobal_84A508, DataGlobal_B7690C, 0);
+    INIClass::SetInt((char *)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, DataGlobal_84A500, DataGlobal_B77784, 0);
+    INIClass::SetInt((char *)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, DataGlobal_84A4F0, DataGlobal_B779DC, 0);
+    INIClass::SetInt((char *)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, DataGlobal_84A4E0, DataGlobal_B779C0, 0);
+    INIClass::SetBool((char *)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, DataGlobal_84A4D0, DataGlobal_B76AF0);
+    INIClass::SetBool((char *)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_WOnline, DataGlobal_84A4C4, DataGlobal_B73AD0);
+    INIClass::WriteDigest(&CCINIClass_INI_RA2MD, (int)v0, 0);
+    Config::SaveObserverMode();
+    RawFileClass::Dtor(v0);
 }
 }
 } // namespace gamemd
@@ -3581,53 +3490,50 @@ void sub_77DFD0()
 namespace gamemd {
 void ** ParseStringCommaInts(char * String, int * a2, int * a3, int * a4, int * a5, int * a6, void ** a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void **__fastcall ParseStringCommaInts(char *String, int *a2, int *a3, int *a4, int *a5, int *a6, void **a7)
 {
-  char *v8; // eax
-  int v9; // eax
-  char *v10; // eax
-  int v11; // eax
-  char *v12; // eax
-  int v13; // eax
-  char *v14; // eax
-  int v15; // eax
-  char *v16; // eax
-  int v17; // eax
-  CCINIClass *v18; // eax
-
-  v8 = strtok(String, (ObjectClass *)&stru_817F40.nextObject); /*0x77e829*/
-  if ( v8 ) /*0x77e833*/
-    v9 = atol(v8); /*0x77e836*/
-  else
-    v9 = 0; /*0x77e840*/
-  *a2 = v9; /*0x77e849*/
-  v10 = strtok(0, (ObjectClass *)&stru_817F40.nextObject); /*0x77e84b*/
-  if ( v10 ) /*0x77e856*/
-    v11 = atol(v10); /*0x77e859*/
-  else
-    v11 = 0; /*0x77e863*/
-  *a3 = v11; /*0x77e870*/
-  v12 = strtok(0, (ObjectClass *)&stru_817F40.nextObject); /*0x77e872*/
-  if ( v12 ) /*0x77e87c*/
-    v13 = atol(v12); /*0x77e87f*/
-  else
-    v13 = 0; /*0x77e889*/
-  *a4 = v13; /*0x77e896*/
-  v14 = strtok(0, (ObjectClass *)&stru_817F40.nextObject); /*0x77e898*/
-  if ( v14 ) /*0x77e8a2*/
-    v15 = atol(v14); /*0x77e8a5*/
-  else
-    v15 = 0; /*0x77e8af*/
-  *a5 = v15; /*0x77e8bc*/
-  v16 = strtok(0, (ObjectClass *)&stru_817F40.nextObject); /*0x77e8be*/
-  if ( v16 ) /*0x77e8c8*/
-    v17 = atol(v16); /*0x77e8cb*/
-  else
-    v17 = 0; /*0x77e8d5*/
-  *a6 = v17; /*0x77e8e2*/
-  v18 = (CCINIClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject); /*0x77e8e4*/
-  return String::Assign_Alt(a7, v18); /*0x77e8f6*/
+    char *v8;
+    int v9;
+    char *v10;
+    int v11;
+    char *v12;
+    int v13;
+    char *v14;
+    int v15;
+    char *v16;
+    int v17;
+    CCINIClass *v18;
+    v8 = strtok(String, (ObjectClass *)&DataGlobal_817F40.nextObject);
+    if ( v8 )
+    v9 = atol(v8);
+    else
+    v9 = 0;
+    *a2 = v9;
+    v10 = strtok(0, (ObjectClass *)&DataGlobal_817F40.nextObject);
+    if ( v10 )
+    v11 = atol(v10);
+    else
+    v11 = 0;
+    *a3 = v11;
+    v12 = strtok(0, (ObjectClass *)&DataGlobal_817F40.nextObject);
+    if ( v12 )
+    v13 = atol(v12);
+    else
+    v13 = 0;
+    *a4 = v13;
+    v14 = strtok(0, (ObjectClass *)&DataGlobal_817F40.nextObject);
+    if ( v14 )
+    v15 = atol(v14);
+    else
+    v15 = 0;
+    *a5 = v15;
+    v16 = strtok(0, (ObjectClass *)&DataGlobal_817F40.nextObject);
+    if ( v16 )
+    v17 = atol(v16);
+    else
+    v17 = 0;
+    *a6 = v17;
+    v18 = (CCINIClass *)strtok(0, (ObjectClass *)&DataGlobal_817F40.nextObject);
+    return String::Assign_Alt(a7, v18);
 }
 }
 } // namespace gamemd

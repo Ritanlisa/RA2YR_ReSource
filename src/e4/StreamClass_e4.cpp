@@ -120,54 +120,44 @@ int __thiscall StreamClass::Set(_DWORD *this, IUnknown *aP1)
 // 0x4B4C30
 BOOL StreamClass::IsInactive(IUnknown * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __stdcall StreamClass::IsInactive(IUnknown *aP0)
 {
-  return aP0->__pad_10[1] == 0; /*0x4b4c3e*/
+    return aP0->__pad_10[1] == 0;
 }
 }
 
 // 0x4B4C50
 int StreamClass::Vt32Thunk(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall StreamClass_Vt32Thunk(int a1)
 {
-  return (*(int (__stdcall **)(int))(*(_DWORD *)a1 + 128))(a1); /*0x4b4c5d*/
+    return (*(int (__stdcall **)(int))(*(int *)(a1) + 128))(a1);
 }
 }
 
 // 0x55A710
 int StreamClass::ResetPosition(LocomotionClass * aP0, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall StreamClass::ResetPosition(LocomotionClass *aP0, int a2)
 {
-  aP0->Owner = (void *)a2; /*0x55a718*/
-  *(_DWORD *)&aP0->__pad_0[4] = a2; /*0x55a71b*/
-  return 0; /*0x55a720*/
+    aP0->Owner = (void *)a2;
+    *(int *)&aP0->__pad_0[4] = a2;
+    return 0;
 }
 }
 
 // 0x55A8F0
 int StreamClass::SetDirty(unsigned char * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall StreamClass_SetDirty(_BYTE *a1)
 {
-  a1[12] = 1; /*0x55a8f5*/
-  return (*(int (__stdcall **)(_BYTE *))(*(_DWORD *)a1 + 96))(a1); /*0x55a8fe*/
+    *((int*)(a1) + 12) = 1;
+    return (*(int (__stdcall **)(char *))(*(int *)(a1) + 96))(a1);
 }
 }
 
 // 0x55A910
 int StreamClass::ClearDirty(unsigned char * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall StreamClass_ClearDirty(_BYTE *a1)
 {
-  a1[12] = 0; /*0x55a915*/
-  return (*(int (__stdcall **)(_BYTE *))(*(_DWORD *)a1 + 96))(a1); /*0x55a91e*/
+    *((int*)(a1) + 12) = 0;
+    return (*(int (__stdcall **)(char *))(*(int *)(a1) + 96))(a1);
 }
 }
 

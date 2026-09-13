@@ -7,13 +7,10 @@ namespace ra2 {
 namespace game {
 int MissionClass::vt_entry_1FC()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MissionClass::vt_entry_1FC(#377 *this)
 {
-  int result; // eax
-
-  LOBYTE(result) = 0; /*0x41bf30*/
-  return result; /*0x41bf32*/
+    int result;
+    LOBYTE(result) = 0;
+    return result;
 }
 }
 } // namespace game
@@ -136,10 +133,8 @@ namespace ra2 {
 namespace game {
 int MissionClass::HasValidTarget()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MissionClass::HasValidTarget(#377 *this)
 {
-  return this->suspendedMission != -1; /*0x5b3a1e*/
+    return this->suspendedMission != -1;
 }
 }
 } // namespace game

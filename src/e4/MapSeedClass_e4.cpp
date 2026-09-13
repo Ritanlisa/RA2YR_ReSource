@@ -6,30 +6,24 @@
 // 0x597FA0
 wchar_t * MapSeedClass::GetCell()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *MapSeedClass::_vt06()
 {
-  return GetStringCSF(aGuiSavemapmenu, 0, g_Str_File_MapGen_cpp, 5578); /*0x597fb6*/
+    return GetStringCSF(aGuiSavemapmenu, 0, g_Str_File_MapGen_cpp, 5578);
 }
 }
 
 // 0x597FC0
 wchar_t * MapSeedClass::SetCell()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *MapSeedClass::_vt07()
 {
-  return GetStringCSF(aGuiDeletemapme, 0, g_Str_File_MapGen_cpp, 5584); /*0x597fd6*/
+    return GetStringCSF(aGuiDeletemapme, 0, g_Str_File_MapGen_cpp, 5584);
 }
 }
 
 // 0x597FE0
 wchar_t * MapSeedClass::Validate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *MapSeedClass::_vt08()
 {
-  return GetStringCSF(aGuiMapsaved, 0, g_Str_File_MapGen_cpp, 5590); /*0x597ff6*/
+    return GetStringCSF(aGuiMapsaved, 0, g_Str_File_MapGen_cpp, 5590);
 }
 }
 
@@ -589,13 +583,11 @@ void __thiscall MapSeedClass_18_::sub_5AC4C0(int this)
 namespace gamemd {
 unsigned int MapSeedClass_18::PointerToIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MapSeedClass_18_::sub_5AC4F0(int this, int a2)
 {
-  if ( (unsigned char)this->MapSeedClass_18_field_0xC ) /*0x5ac4f0*/
-    return (unsigned int)(a2 - this->MapSeedClass_18_field_0x4) >> 2; /*0x5ac505*/
-  else
-    return 0; /*0x5ac4f7*/
+    if ( (unsigned char)this->MapSeedClass_18_field_0xC )
+    return (unsigned int)(a2 - this->MapSeedClass_18_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -720,13 +712,11 @@ void __thiscall MapSeedClass_18_::_vt03(int this)
 namespace gamemd {
 unsigned int MapSeedClass_18::Generate(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MapSeedClass_18_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->MapSeedClass_18_field_0xC ) /*0x5acbc0*/
-    return (unsigned int)(a2 - this->MapSeedClass_18_field_0x4) >> 2; /*0x5acbd5*/
-  else
-    return 0; /*0x5acbc7*/
+    if ( (unsigned char)this->MapSeedClass_18_field_0xC )
+    return (unsigned int)(a2 - this->MapSeedClass_18_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

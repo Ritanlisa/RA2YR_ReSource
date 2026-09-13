@@ -6,43 +6,35 @@
 namespace gamemd {
 float * ParticleSystemTypeClass::ReadXYZFromINI(float * a1, CCINIClass * aP2, unsigned char * a3, float * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-float *__thiscall ParticleSystemTypeClass::ReadXYZFromINI(
-        unsigned __int8 ***this,
-        float *a1,
-        CCINIClass *aP2,
-        unsigned __int8 *a3,
-        float *a4)
 {
-  char *v5; // eax
-  char *v6; // eax
-  char *v7; // eax
-  double v8; // st7
-  float v10; // [esp+4h] [ebp-20Ch]
-  float v11; // [esp+8h] [ebp-208h]
-  float v12; // [esp+Ch] [ebp-204h]
-  INIClass String[8]; // [esp+10h] [ebp-200h] BYREF
-
-  if ( INIClass::GetString(this, (INIClass *)aP2, a3, (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760], String, 512) ) /*0x476383*/
+    char *v5;
+    char *v6;
+    char *v7;
+    double v8;
+    float v10;
+    float v11;
+    float v12;
+    INIClass String[8];
+    if ( INIClass::GetString(this, (INIClass *)aP2, a3, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], String, 512) )
   {
-    v5 = strtok(String[0].__pad_0, MEMORY[0x817F70].__pad_0); /*0x476396*/
-    v10 = atof(v5); /*0x4763a1*/
-    v6 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x4763ac*/
-    v11 = atof(v6); /*0x4763b7*/
-    v7 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x4763c2*/
-    v8 = atof(v7); /*0x4763c8*/
-    v12 = v8; /*0x4763d8*/
-    *a1 = v10; /*0x4763e1*/
-    a1[1] = v11; /*0x4763e8*/
-    a1[2] = v12; /*0x4763ef*/
-    return a1; /*0x4763cd*/
+    v5 = strtok(String[0].__pad_0, Delimiter.__pad_0);
+    v10 = atof(v5);
+    v6 = strtok(0, Delimiter.__pad_0);
+    v11 = atof(v6);
+    v7 = strtok(0, Delimiter.__pad_0);
+    v8 = atof(v7);
+    v12 = v8;
+    *a1 = v10;
+    *((int*)(a1) + 1) = v11;
+    *((int*)(a1) + 2) = v12;
+    return a1;
   }
-  else
+    else
   {
-    *a1 = *a4; /*0x476406*/
-    a1[1] = a4[1]; /*0x47640b*/
-    a1[2] = a4[2]; /*0x476412*/
-    return a1; /*0x4763fb*/
+    *a1 = *a4;
+    *((int*)(a1) + 1) = *((int*)(a4) + 1);
+    *((int*)(a1) + 2) = *((int*)(a4) + 2);
+    return a1;
   }
 }
 }
@@ -314,11 +306,9 @@ int __stdcall ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int
 namespace gamemd {
 int ParticleSystemTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ParticleSystemTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, ObjectTypeClass *aP1, int aP2)
 {
-  AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2); /*0x64483f*/
-  return 0; /*0x644846*/
+    AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
+    return 0;
 }
 }
 } // namespace gamemd

@@ -66,12 +66,10 @@ void __thiscall sub_5BA970(HWND *this, wchar_t *Source)
 // 0x5BB560
 unsigned int * NetworkGameSetup::DeleteComPtr(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall NetworkGameSetup::DeleteComPtr(_DWORD *this, char a2)
 {
-  ComPtr::Dtor(this); /*0x5bb563*/
-  if ( (a2 & 1) != 0 ) /*0x5bb56d*/
-    __3_YAXPAX_Z(this); /*0x5bb570*/
-  return this; /*0x5bb57a*/
+    ComPtr::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }

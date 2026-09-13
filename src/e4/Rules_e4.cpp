@@ -7,22 +7,19 @@
 namespace gamemd {
 char * Rules::GetProductionTimeMult(CellStruct * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall Rules::GetProductionTimeMult(int *this, CellStruct *aP1)
 {
-  CellStruct *result; // eax
-  int v3; // ecx
-
-  result = aP1; /*0x5fb2e0*/
-  if ( aP1 ) /*0x5fb2e6*/
+    CellStruct *result;
+    int v3;
+    result = aP1;
+    if ( aP1 )
   {
-    v3 = *this; /*0x5fb2e8*/
-    if ( (int)aP1 >= 5 ) /*0x5fb2ed*/
-      return (char *)(8 * (int)aP1 / (v3 + 1)); /*0x5fb301*/
+    v3 = *(void**)this;
+    if ( (int)aP1 >= 5 )
+    return (char *)(8 * (int)aP1 / (v3 + 1));
     else
-      return *(char **)&stru_830620.__pad_14B0[32 * (_DWORD)aP1 + 4636 + 4 * v3]; /*0x5fb2f2*/
+    return *(char **)&DataGlobal_830620.__pad_14B0[32 * (int)aP1 + 4636 + 4 * v3];
   }
-  return (char *)result; /*0x5fb2f9*/
+    return (char *)result;
 }
 }
 } // namespace gamemd

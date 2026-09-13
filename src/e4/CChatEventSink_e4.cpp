@@ -546,52 +546,49 @@ char __thiscall sub_7AEE90(int *this, _DWORD *a2, int a3)
 // 0x7B5E30
 char CChatEventSink::EncodeString(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_7B5E30(const char **this, char a2)
 {
-  char *v4; // eax
-  size_t v5; // eax
-  size_t v6; // esi
-  char *v7; // edi
-  char *v8; // eax
-  char *v9; // ebp
-  const char *v10; // esi
-  size_t v11; // ecx
-  const char *v12; // eax
-
-  if ( !*this ) /*0x7b5e33*/
-    return 0; /*0x7b5e39*/
-  v4 = strchr(*this, a2); /*0x7b5e46*/
-  if ( !v4 ) /*0x7b5e50*/
-    return 0; /*0x7b5e52*/
-  v5 = v4 - *this; /*0x7b5e5c*/
-  v6 = v5; /*0x7b5e5f*/
-  v7 = &MEMORY[0x889F64]; /*0x7b5e63*/
-  if ( *this ) /*0x7b5e58*/
-    v7 = (char *)*this; /*0x7b5e6a*/
-  v8 = (char *)__2_YAPAXI_Z(v5 + 1); /*0x7b5e70*/
-  v9 = v8; /*0x7b5e75*/
-  *v8 = 0; /*0x7b5e7c*/
-  if ( v7 ) /*0x7b5e80*/
-    strncpy(v8, v7, v6); /*0x7b5e85*/
-  v9[v6] = 0; /*0x7b5e8d*/
-  v10 = &MEMORY[0x889F64]; /*0x7b5e91*/
-  if ( v9 ) /*0x7b5e98*/
-    v10 = v9; /*0x7b5e9a*/
-  if ( *this ) /*0x7b5e9c*/
-    __3_YAXPAX_Z((void *)*this); /*0x7b5ea3*/
-  *this = 0; /*0x7b5ead*/
-  if ( v10 ) /*0x7b5eb3*/
-    v11 = strlen(v10) + 1; /*0x7b5ebc*/
-  else
-    v11 = 1; /*0x7b5ec2*/
-  v12 = (const char *)__2_YAPAXI_Z(v11); /*0x7b5ec8*/
-  *this = v12; /*0x7b5ed0*/
-  *v12 = 0; /*0x7b5ed4*/
-  if ( v10 ) /*0x7b5ed7*/
-    strcpy((char *)*this, v10); /*0x7b5eef*/
-  if ( v9 ) /*0x7b5efa*/
-    __3_YAXPAX_Z(v9); /*0x7b5efd*/
-  return 1; /*0x7b5e3b*/
+    char *v4;
+    size_t v5;
+    size_t v6;
+    char *v7;
+    char *v8;
+    char *v9;
+    const char *v10;
+    size_t v11;
+    const char *v12;
+    if ( !*(void**)this )
+    return 0;
+    v4 = strchr(*(void**)this, a2);
+    if ( !v4 )
+    return 0;
+    v5 = v4 - *(void**)this;
+    v6 = v5;
+    v7 = &g_INI_DefaultBuffer;
+    if ( *(void**)this )
+    v7 = (char *)*(void**)this;
+    v8 = (char *)__2_YAPAXI_Z(v5 + 1);
+    v9 = v8;
+    *v8 = 0;
+    if ( v7 )
+    strncpy(v8, v7, v6);
+    v9[v6] = 0;
+    v10 = &g_INI_DefaultBuffer;
+    if ( v9 )
+    v10 = v9;
+    if ( *(void**)this )
+    __3_YAXPAX_Z((void *)*(void**)this);
+    *(void**)this = 0;
+    if ( v10 )
+    v11 = strlen(v10) + 1;
+    else
+    v11 = 1;
+    v12 = (const char *)__2_YAPAXI_Z(v11);
+    *(void**)this = v12;
+    *v12 = 0;
+    if ( v10 )
+    strcpy((char *)*(void**)this, v10);
+    if ( v9 )
+    __3_YAXPAX_Z(v9);
+    return 1;
 }
 }

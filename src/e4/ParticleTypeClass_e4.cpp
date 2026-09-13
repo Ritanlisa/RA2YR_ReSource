@@ -28,13 +28,11 @@ void __thiscall ParticleTypeClass::_vt03(int this)
 namespace gamemd {
 unsigned int ParticleTypeClass::LoadTypeData(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall ParticleTypeClass::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->ParticleTypeClass_field_0xC ) /*0x477930*/
-    return (a2 - this->ParticleTypeClass_field_28C) / 3u; /*0x47794e*/
-  else
-    return 0; /*0x477937*/
+    if ( (unsigned char)this->ParticleTypeClass_field_0xC )
+    return (a2 - this->ParticleTypeClass_field_28C) / 3u;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -727,39 +725,36 @@ LABEL_14:
 namespace gamemd {
 int ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int aP1, int aP2)
 {
-  int result; // eax
-  int v4; // edx
-  int v5; // ebp
-  int v6; // edi
-
-  result = AbstractClass::SaveLoad_PrefixWrapper(aP0, (ObjectTypeClass *)aP1, (TechnoTypeClass *)aP2); /*0x6457b3*/
-  if ( result >= 0 ) /*0x6457ba*/
+    int result;
+    int v4;
+    int v5;
+    int v6;
+    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, (ObjectTypeClass *)aP1, (TechnoTypeClass *)aP2);
+    if ( result >= 0 )
   {
-    v4 = *(_DWORD *)aP1; /*0x6457c2*/
-    aP2 = aP0->MyEffectivenessCoefficient; /*0x6457ce*/
-    result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v4 + 16))(aP1, &aP2, 4, 0); /*0x6457d2*/
-    if ( result >= 0 ) /*0x6457d7*/
+    v4 = *(int *)aP1;
+    aP2 = aP0->MyEffectivenessCoefficient;
+    result = (*(int (__stdcall **)(int, int *, int, int))(v4 + 16))(aP1, &aP2, 4, 0);
+    if ( result >= 0 )
     {
-      v5 = 0; /*0x6457dd*/
-      if ( aP2 > 0 ) /*0x6457e1*/
+    v5 = 0;
+    if ( aP2 > 0 )
       {
-        v6 = 0; /*0x6457e3*/
-        do /*0x645806*/
+    v6 = 0;
+    do
         {
-          if ( (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)aP1 + 16))(aP1, v6 + aP0->?, 3, 0) < 0 ) /*0x6457fa*/
-            break; /*0x6457fa*/
-          ++v5; /*0x645800*/
-          v6 += 3; /*0x645801*/
+    if ( (*(int (__stdcall **)(int, int, int, int))(*(int *)(aP1) + 16))(aP1, v6 + aP0->?, 3, 0) < 0 )
+    break;
+    ++v5;
+    v6 += 3;
         }
-        while ( v5 < aP2 ); /*0x645806*/
+    while ( v5 < aP2 );
       }
-      return 0; /*0x645808*/
+    return 0;
     }
   }
-  return result; /*0x64580a*/
+    return result;
 }
 }
 } // namespace gamemd

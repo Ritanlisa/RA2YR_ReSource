@@ -84,135 +84,94 @@ LABEL_23:
 // 0x4A2E00
 int CStreamClass::Read(int a1, int a2, int a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CStreamClass::_vt05(int a1, int a2, int a3, int a4, int a5)
 {
-  if ( *(_BYTE *)(a1 + 16) || *(_BYTE *)(a1 + 17) ) /*0x4a2e0c*/
-    return -2147467259; /*0x4a2e45*/
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2e13*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2e1f*/
-  return (*(int (__stdcall **)(_DWORD, int, int, int, int))(**(_DWORD **)(a1 + 8) + 20))( /*0x4a2e41*/
-           *(_DWORD *)(a1 + 8),
-           a2,
-           a3,
-           a4,
-           a5);
+    if ( *(char *)(a1 + 16) || *(char *)(a1 + 17) )
+    return -2147467259;
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int, int, int, int))(**(int **)(a1 + 8) + 20))( *(int *)(a1 + 8), a2, a3, a4, a5);
 }
 }
 
 // 0x4A2E50
 int CStreamClass::Write(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CStreamClass::_vt06(int a1, int a2, int a3)
 {
-  if ( *(_BYTE *)(a1 + 16) || *(_BYTE *)(a1 + 17) ) /*0x4a2e5c*/
-    return -2147467259; /*0x4a2e8b*/
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2e63*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2e6f*/
-  return (*(int (__stdcall **)(_DWORD, int, int))(**(_DWORD **)(a1 + 8) + 24))(*(_DWORD *)(a1 + 8), a2, a3); /*0x4a2e87*/
+    if ( *(char *)(a1 + 16) || *(char *)(a1 + 17) )
+    return -2147467259;
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int, int))(**(int **)(a1 + 8) + 24))(*(int *)(a1 + 8), a2, a3);
 }
 }
 
 // 0x4A2EA0
 int CStreamClass::Seek(int a1, int a2, int a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CStreamClass::_vt07(int a1, int a2, int a3, int a4, int a5, int a6)
 {
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2ea5*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2eb1*/
-  return (*(int (__stdcall **)(_DWORD, int, int, int, int, int))(**(_DWORD **)(a1 + 8) + 28))( /*0x4a2ed8*/
-           *(_DWORD *)(a1 + 8),
-           a2,
-           a3,
-           a4,
-           a5,
-           a6);
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int, int, int, int, int))(**(int **)(a1 + 8) + 28))( *(int *)(a1 + 8), a2, a3, a4, a5, a6);
 }
 }
 
 // 0x4A2EE0
 int CStreamClass::SetSize(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CStreamClass::_vt08(int a1, int a2)
 {
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2ee5*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2ef1*/
-  return (*(int (__stdcall **)(_DWORD, int))(**(_DWORD **)(a1 + 8) + 32))(*(_DWORD *)(a1 + 8), a2); /*0x4a2f04*/
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int))(**(int **)(a1 + 8) + 32))(*(int *)(a1 + 8), a2);
 }
 }
 
 // 0x4A2F10
 int CStreamClass::Commit(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CStreamClass::_vt09(int a1)
 {
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2f15*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2f21*/
-  return (*(int (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 36))(*(_DWORD *)(a1 + 8)); /*0x4a2f2f*/
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int))(**(int **)(a1 + 8) + 36))(*(int *)(a1 + 8));
 }
 }
 
 // 0x4A2F40
 int CStreamClass::Revert(int a1, int a2, int a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CStreamClass::_vt10(int a1, int a2, int a3, int a4, int a5, int a6)
 {
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2f45*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2f51*/
-  return (*(int (__stdcall **)(_DWORD, int, int, int, int, int))(**(_DWORD **)(a1 + 8) + 40))( /*0x4a2f78*/
-           *(_DWORD *)(a1 + 8),
-           a2,
-           a3,
-           a4,
-           a5,
-           a6);
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int, int, int, int, int))(**(int **)(a1 + 8) + 40))( *(int *)(a1 + 8), a2, a3, a4, a5, a6);
 }
 }
 
 // 0x4A2F80
 int CStreamClass::LockRegion(int a1, int a2, int a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CStreamClass::_vt11(int a1, int a2, int a3, int a4, int a5, int a6)
 {
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2f85*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2f91*/
-  return (*(int (__stdcall **)(_DWORD, int, int, int, int, int))(**(_DWORD **)(a1 + 8) + 44))( /*0x4a2fb8*/
-           *(_DWORD *)(a1 + 8),
-           a2,
-           a3,
-           a4,
-           a5,
-           a6);
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int, int, int, int, int))(**(int **)(a1 + 8) + 44))( *(int *)(a1 + 8), a2, a3, a4, a5, a6);
 }
 }
 
 // 0x4A2FC0
 int CStreamClass::UnlockRegion(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CStreamClass::_vt12(int a1, int a2, int a3)
 {
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2fc5*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2fd1*/
-  return (*(int (__stdcall **)(_DWORD, int, int))(**(_DWORD **)(a1 + 8) + 48))(*(_DWORD *)(a1 + 8), a2, a3); /*0x4a2fe9*/
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int, int))(**(int **)(a1 + 8) + 48))(*(int *)(a1 + 8), a2, a3);
 }
 }
 
 // 0x4A2FF0
 int CStreamClass::Stat(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CStreamClass::_vt13(int a1, int a2)
 {
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2ff5*/
-    WinAPI::Wrapper(-2147467261); /*0x4a3001*/
-  return (*(int (__stdcall **)(_DWORD, int))(**(_DWORD **)(a1 + 8) + 52))(*(_DWORD *)(a1 + 8), a2); /*0x4a3014*/
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int))(**(int **)(a1 + 8) + 52))(*(int *)(a1 + 8), a2);
 }
 }
 
@@ -270,30 +229,24 @@ CStreamClass *__userpurge CStreamClass::ddtor@<eax>(void *Block@<ecx>, ULONG a2@
 // 0x4A3220
 int CStreamClass::IStreamQueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CStreamClass::sub_4A3220(int a1, const void *a2, _DWORD *a3)
 {
-  return CStreamClass::QueryInterface(a1 - 4, a2, a3);
+    return CStreamClass::QueryInterface(a1 - 4, a2, a3);
 }
 }
 
 // 0x4A3230
 LONG CStreamClass::IStreamAddRef(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall CStreamClass::sub_4A3230(int a1)
 {
-  return CStreamClass::AddRef(a1 - 4);
+    return CStreamClass::AddRef(a1 - 4);
 }
 }
 
 // 0x4A3240
 LONG CStreamClass::IStreamRelease(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall CStreamClass::sub_4A3240(int a1)
 {
-  return CStreamClass::Release((volatile LONG *)(a1 - 4));
+    return CStreamClass::Release((volatile LONG *)(a1 - 4));
 }
 }
 
@@ -444,13 +397,11 @@ int __thiscall CStreamClass_16_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int CStreamClass_16::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall CStreamClass_16_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->CStreamClass_16_field_0xC ) /*0x4a4c90*/
-    return (unsigned int)(a2 - this->CStreamClass_16_field_0x4) >> 2; /*0x4a4ca5*/
-  else
-    return 0; /*0x4a4c97*/
+    if ( (unsigned char)this->CStreamClass_16_field_0xC )
+    return (unsigned int)(a2 - this->CStreamClass_16_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

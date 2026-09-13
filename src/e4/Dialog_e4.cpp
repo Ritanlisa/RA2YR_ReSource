@@ -24,28 +24,25 @@ void __thiscall sub_49F740(int this)
 namespace gamemd {
 int Dialog::SideIDToIndex()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Dialog_SideIDToIndex(void *this)
 {
-  int v2; // eax
-
-  if ( this == (void *)1699 ) /*0x4e4ec7*/
-    return 0; /*0x4e4ec9*/
-  if ( this == (void *)1700 ) /*0x4e4ed1*/
-    return 1; /*0x4e4ed3*/
-  if ( this == (void *)1701 ) /*0x4e4ede*/
-    return 2; /*0x4e4ee0*/
-  if ( this == (void *)1702 ) /*0x4e4eeb*/
-    return 3; /*0x4e4eed*/
-  if ( this == (void *)1703 ) /*0x4e4ef8*/
-    return 4; /*0x4e4efa*/
-  if ( this == (void *)1704 ) /*0x4e4f05*/
-    return 5; /*0x4e4f07*/
-  if ( this == (void *)1706 ) /*0x4e4f12*/
-    return 6; /*0x4e4f14*/
-  v2 = -(this != (void *)1707); /*0x4e4f21*/
-  LOBYTE(v2) = v2 & 0xF8; /*0x4e4f23*/
-  return v2 + 7; /*0x4e4ecb*/
+    int v2;
+    if ( this == (void *)1699 )
+    return 0;
+    if ( this == (void *)1700 )
+    return 1;
+    if ( this == (void *)1701 )
+    return 2;
+    if ( this == (void *)1702 )
+    return 3;
+    if ( this == (void *)1703 )
+    return 4;
+    if ( this == (void *)1704 )
+    return 5;
+    if ( this == (void *)1706 )
+    return 6;
+    v2 = -(this != (void *)1707);
+    LOBYTE(v2) = v2 & 0xF8;
+    return v2 + 7;
 }
 }
 } // namespace gamemd
@@ -54,28 +51,25 @@ int __thiscall Dialog_SideIDToIndex(void *this)
 namespace gamemd {
 int Dialog::OptionIDToIndex()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Dialog_OptionIDToIndex(void *this)
 {
-  int v2; // eax
-
-  if ( this == (void *)1901 ) /*0x4e59a7*/
-    return 0; /*0x4e59a9*/
-  if ( this == (void *)1902 ) /*0x4e59b1*/
-    return 1; /*0x4e59b3*/
-  if ( this == (void *)1903 ) /*0x4e59be*/
-    return 2; /*0x4e59c0*/
-  if ( this == (void *)1904 ) /*0x4e59cb*/
-    return 3; /*0x4e59cd*/
-  if ( this == (void *)1905 ) /*0x4e59d8*/
-    return 4; /*0x4e59da*/
-  if ( this == (void *)1906 ) /*0x4e59e5*/
-    return 5; /*0x4e59e7*/
-  if ( this == (void *)1907 ) /*0x4e59f2*/
-    return 6; /*0x4e59f4*/
-  v2 = -(this != (void *)1908); /*0x4e5a01*/
-  LOBYTE(v2) = v2 & 0xF8; /*0x4e5a03*/
-  return v2 + 7; /*0x4e59ab*/
+    int v2;
+    if ( this == (void *)1901 )
+    return 0;
+    if ( this == (void *)1902 )
+    return 1;
+    if ( this == (void *)1903 )
+    return 2;
+    if ( this == (void *)1904 )
+    return 3;
+    if ( this == (void *)1905 )
+    return 4;
+    if ( this == (void *)1906 )
+    return 5;
+    if ( this == (void *)1907 )
+    return 6;
+    v2 = -(this != (void *)1908);
+    LOBYTE(v2) = v2 & 0xF8;
+    return v2 + 7;
 }
 }
 } // namespace gamemd
@@ -297,23 +291,20 @@ int __thiscall Dialog_GetMode3(_BYTE *this)
 namespace gamemd {
 int Dialog::FindGameUI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Dialog_FindGameUI()
 {
-  int result; // eax
-
-  result = Dialog::FindByHandle((void *)0xC2); /*0x5e26c5*/
-  if ( !result ) /*0x5e26cc*/
+    int result;
+    result = Dialog::FindByHandle((void *)0xC2);
+    if ( !result )
   {
-    result = Dialog::FindByHandle((void *)0xC9); /*0x5e26d3*/
-    if ( !result ) /*0x5e26da*/
+    result = Dialog::FindByHandle((void *)0xC9);
+    if ( !result )
     {
-      result = Dialog::FindByHandle((void *)0xBC); /*0x5e26e1*/
-      if ( !result ) /*0x5e26e8*/
-        return Dialog::FindByHandle((void *)0xBD); /*0x5e26ef*/
+    result = Dialog::FindByHandle((void *)0xBC);
+    if ( !result )
+    return Dialog::FindByHandle((void *)0xBD);
     }
   }
-  return result; /*0x5e26f4*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -322,43 +313,40 @@ int Dialog_FindGameUI()
 namespace gamemd {
 HWND Dialog::ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ... a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND Dialog::ShowMessage(ObjectClass *aP0, CampaignScore *BufferCount, ObjectClass Format, ...)
 {
-  HWND result; // eax
-  ObjectClass *Current; // esi
-  HWND DlgItem; // eax
-  ObjectClass *v5; // [esp+0h] [ebp-808h]
-  wchar_t Buffer[1024]; // [esp+8h] [ebp-800h] BYREF
-  va_list va; // [esp+8C0h] [ebp+B8h]
-
-  va_start(va, Format);
-  memset(Buffer, 0, sizeof(Buffer)); /*0x5e2717*/
-  vswprintf(Buffer, BufferCount, &Format, (SessionClass *)v5); /*0x5e272a*/
-  result = Dialog::GetCurrent(); /*0x5e2732*/
-  if ( result ) /*0x5e2739*/
+    HWND result;
+    ObjectClass *Current;
+    HWND DlgItem;
+    ObjectClass *v5;
+    wchar_t Buffer[1024];
+    va_list va;
+    va_start(va, Format);
+    memset(Buffer, 0, sizeof(Buffer));
+    vswprintf(Buffer, BufferCount, &Format, (SessionClass *)v5);
+    result = Dialog::GetCurrent();
+    if ( result )
   {
-    Current = (ObjectClass *)Dialog::GetCurrent(); /*0x5e2746*/
-    DlgItem = GetDlgItem((HWND)Current, 1343); /*0x5e274e*/
-    if ( DlgItem ) /*0x5e2752*/
+    Current = (ObjectClass *)Dialog::GetCurrent();
+    DlgItem = GetDlgItem((HWND)Current, 1343);
+    if ( DlgItem )
     {
-      return (HWND)DrawDialogText(aP0, Buffer, DlgItem); /*0x5e276d*/
+    return (HWND)DrawDialogText(aP0, Buffer, DlgItem);
     }
     else
     {
-      while ( 1 ) /*0x5e2756*/
+    while ( 1 )
       {
-        result = (HWND)Dialog::FindByPtr(Current); /*0x5e2756*/
-        Current = (ObjectClass *)result; /*0x5e275b*/
-        if ( !result ) /*0x5e275f*/
-          break; /*0x5e275f*/
-        DlgItem = GetDlgItem(result, 1343); /*0x5e2767*/
-        if ( DlgItem ) /*0x5e276b*/
-          return (HWND)DrawDialogText(aP0, Buffer, DlgItem); /*0x5e276b*/
+    result = (HWND)Dialog::FindByPtr(Current);
+    Current = (ObjectClass *)result;
+    if ( !result )
+    break;
+    DlgItem = GetDlgItem(result, 1343);
+    if ( DlgItem )
+    return (HWND)DrawDialogText(aP0, Buffer, DlgItem);
       }
     }
   }
-  return result; /*0x5e277e*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -367,41 +355,38 @@ HWND Dialog::ShowMessage(ObjectClass *aP0, CampaignScore *BufferCount, ObjectCla
 namespace gamemd {
 HWND Dialog::ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignScore * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND Dialog::ShowStatusText(SessionClass *aP0, CampaignScore *aP1, CampaignScore *aP2)
 {
-  HWND result; // eax
-  ObjectClass *Current; // esi
-  HWND DlgItem; // eax
-  CampaignScore *v5; // [esp+0h] [ebp-808h]
-  wchar_t Buffer[1024]; // [esp+8h] [ebp-800h] BYREF
-
-  memset(Buffer, 0, sizeof(Buffer)); /*0x5e27a7*/
-  vswprintf(Buffer, aP1, (ObjectClass *)&aP2, (SessionClass *)v5); /*0x5e27ba*/
-  result = Dialog::GetCurrent(); /*0x5e27c2*/
-  if ( result ) /*0x5e27c9*/
+    HWND result;
+    ObjectClass *Current;
+    HWND DlgItem;
+    CampaignScore *v5;
+    wchar_t Buffer[1024];
+    memset(Buffer, 0, sizeof(Buffer));
+    vswprintf(Buffer, aP1, (ObjectClass *)&aP2, (SessionClass *)v5);
+    result = Dialog::GetCurrent();
+    if ( result )
   {
-    Current = (ObjectClass *)Dialog::GetCurrent(); /*0x5e27d6*/
-    DlgItem = GetDlgItem((HWND)Current, 1461); /*0x5e27de*/
-    if ( DlgItem ) /*0x5e27e2*/
+    Current = (ObjectClass *)Dialog::GetCurrent();
+    DlgItem = GetDlgItem((HWND)Current, 1461);
+    if ( DlgItem )
     {
-      return (HWND)DrawDialogText((ObjectClass *)aP0, Buffer, DlgItem); /*0x5e27fd*/
+    return (HWND)DrawDialogText((ObjectClass *)aP0, Buffer, DlgItem);
     }
     else
     {
-      while ( 1 ) /*0x5e27e6*/
+    while ( 1 )
       {
-        result = (HWND)Dialog::FindByPtr(Current); /*0x5e27e6*/
-        Current = (ObjectClass *)result; /*0x5e27eb*/
-        if ( !result ) /*0x5e27ef*/
-          break; /*0x5e27ef*/
-        DlgItem = GetDlgItem(result, 1461); /*0x5e27f7*/
-        if ( DlgItem ) /*0x5e27fb*/
-          return (HWND)DrawDialogText((ObjectClass *)aP0, Buffer, DlgItem); /*0x5e27fb*/
+    result = (HWND)Dialog::FindByPtr(Current);
+    Current = (ObjectClass *)result;
+    if ( !result )
+    break;
+    DlgItem = GetDlgItem(result, 1461);
+    if ( DlgItem )
+    return (HWND)DrawDialogText((ObjectClass *)aP0, Buffer, DlgItem);
       }
     }
   }
-  return result; /*0x5e280e*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -410,13 +395,10 @@ HWND Dialog::ShowStatusText(SessionClass *aP0, CampaignScore *aP1, CampaignScore
 namespace gamemd {
 LRESULT Dialog::ShowPlayerName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LRESULT __thiscall Dialog::ShowPlayerName(HWND this)
 {
-  HWND DlgItem; // eax
-
-  DlgItem = GetDlgItem(this, 1448); /*0x5e2f66*/
-  return SendMessageA(DlgItem, 0x4B2u, 0, 11055906); /*0x5e2f7f*/
+    HWND DlgItem;
+    DlgItem = GetDlgItem(this, 1448);
+    return SendMessageA(DlgItem, 0x4B2u, 0, 11055906);
 }
 }
 } // namespace gamemd
@@ -425,28 +407,25 @@ LRESULT __thiscall Dialog::ShowPlayerName(HWND this)
 namespace gamemd {
 int Dialog::MapPlayerIDToIndex()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Dialog_MapPlayerIDToIndex(void *this)
 {
-  int v2; // eax
-
-  if ( this == (void *)1041 ) /*0x5e9957*/
-    return 0; /*0x5e9959*/
-  if ( this == (void *)1042 ) /*0x5e9961*/
-    return 1; /*0x5e9963*/
-  if ( this == (void *)1043 ) /*0x5e996e*/
-    return 2; /*0x5e9970*/
-  if ( this == (void *)1044 ) /*0x5e997b*/
-    return 3; /*0x5e997d*/
-  if ( this == (void *)1045 ) /*0x5e9988*/
-    return 4; /*0x5e998a*/
-  if ( this == (void *)1046 ) /*0x5e9995*/
-    return 5; /*0x5e9997*/
-  if ( this == (void *)1047 ) /*0x5e99a2*/
-    return 6; /*0x5e99a4*/
-  v2 = -(this != (void *)1048); /*0x5e99b1*/
-  LOBYTE(v2) = v2 & 0xF8; /*0x5e99b3*/
-  return v2 + 7; /*0x5e995b*/
+    int v2;
+    if ( this == (void *)1041 )
+    return 0;
+    if ( this == (void *)1042 )
+    return 1;
+    if ( this == (void *)1043 )
+    return 2;
+    if ( this == (void *)1044 )
+    return 3;
+    if ( this == (void *)1045 )
+    return 4;
+    if ( this == (void *)1046 )
+    return 5;
+    if ( this == (void *)1047 )
+    return 6;
+    v2 = -(this != (void *)1048);
+    LOBYTE(v2) = v2 & 0xF8;
+    return v2 + 7;
 }
 }
 } // namespace gamemd
@@ -627,24 +606,13 @@ LABEL_36:
 namespace gamemd {
 unsigned int Dialog::CheckButtonState()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int Dialog_CheckButtonState()
 {
-  int v0; // esi
-  _BYTE v2[84]; // [esp+4h] [ebp-54h] BYREF
-
-  v0 = (*(int (__thiscall **)(HWND))(*(_DWORD *)g_ClipboardBuffer + 12))(g_ClipboardBuffer); /*0x5f3467*/
-  if ( (*(int (__thiscall **)(HWND, char *, int, _BYTE *, int, int, int, int))(*(_DWORD *)g_ClipboardBuffer + 28))( /*0x5f3483*/
-         g_ClipboardBuffer,
-         MEMORY[0x832678],
-         13,
-         v2,
-         81,
-         90,
-         1,
-         -1) == 2 )
-    return v0 & 0xFFFFFF7F; /*0x5f3485*/
-  return v0; /*0x5f348d*/
+    int v0;
+    char v2[84];
+    v0 = (*(int (__thiscall **)(HWND))(*(int *)(g_ClipboardBuffer) + 12))(g_ClipboardBuffer);
+    if ( (*(int (__thiscall **)(HWND, char *, int, char *, int, int, int, int))(*(int *)(g_ClipboardBuffer) + 28))( g_ClipboardBuffer, DataGlobal_832678, 13, v2, 81, 90, 1, -1) == 2 )
+    return v0 & 0xFFFFFF7F;
+    return v0;
 }
 }
 } // namespace gamemd
@@ -653,27 +621,8 @@ unsigned int Dialog_CheckButtonState()
 namespace gamemd {
 BOOL Dialog::IsSpecialTemplate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Dialog_IsSpecialTemplate(void *this)
 {
-  return this == (void *)293 /*0x602b7a*/
-      || this == (void *)231
-      || this == (void *)278
-      || this == (void *)194
-      || this == (void *)201
-      || this == (void *)285
-      || this == (void *)284
-      || this == (void *)276
-      || this == (void *)700
-      || this == (void *)275
-      || this == (void *)265
-      || this == (void *)271
-      || this == (void *)279
-      || this == (void *)230
-      || this == (void *)243
-      || this == (void *)244
-      || this == (void *)270
-      || this == (void *)274;
+    return this == (void *)293 || this == (void *)231 || this == (void *)278 || this == (void *)194 || this == (void *)201 || this == (void *)285 || this == (void *)284 || this == (void *)276 || this == (void *)700 || this == (void *)275 || this == (void *)265 || this == (void *)271 || this == (void *)279 || this == (void *)230 || this == (void *)243 || this == (void *)244 || this == (void *)270 || this == (void *)274;
 }
 }
 } // namespace gamemd
@@ -1450,10 +1399,8 @@ LABEL_74:
 namespace gamemd {
 BOOL Dialog::EnumAndCleanup()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Dialog::EnumAndCleanup(HWND this)
 {
-  return EnumChildWindows(this, sub_60AA60, 0); /*0x60aaae*/
+    return EnumChildWindows(this, sub_60AA60, 0);
 }
 }
 } // namespace gamemd
@@ -1462,61 +1409,46 @@ BOOL __thiscall Dialog::EnumAndCleanup(HWND this)
 namespace gamemd {
 BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __stdcall Dialog_SubclassEditControl(HWND hWnd, LPARAM a2)
 {
-  LONG WindowLongA; // ebx
-  HWND Parent; // esi
-  DWORD v4; // edx
-  HWND Window; // esi
-  _DWORD *v6; // ebx
-  LONG v7; // eax
-  LONG dwNewLong; // [esp+10h] [ebp-A4h]
-  struct tagRECT Rect; // [esp+14h] [ebp-A0h] BYREF
-  struct tagRECT v11; // [esp+24h] [ebp-90h] BYREF
-  CHAR ClassName[128]; // [esp+34h] [ebp-80h] BYREF
-
-  WindowLongA = GetWindowLongA(hWnd, -16); /*0x60f341*/
-  SetWindowLongA(hWnd, -21, 0); /*0x60f343*/
-  if ( (WindowLongA & 0x10000000) != 0 && (WindowLongA & 0x8000000) == 0 ) /*0x60f35b*/
+    LONG WindowLongA;
+    HWND Parent;
+    DWORD v4;
+    HWND Window;
+    int *v6;
+    LONG v7;
+    LONG dwNewLong;
+    struct tagRECT Rect;
+    struct tagRECT v11;
+    CHAR ClassName[128];
+    WindowLongA = GetWindowLongA(hWnd, -16);
+    SetWindowLongA(hWnd, -21, 0);
+    if ( (WindowLongA & 0x10000000) != 0 && (WindowLongA & 0x8000000) == 0 )
   {
-    GetClassNameA(hWnd, ClassName, 128); /*0x60f36c*/
-    if ( !strcmp(ClassName, MEMORY[0x833728]) ) /*0x60f381*/
+    GetClassNameA(hWnd, ClassName, 128);
+    if ( !strcmp(ClassName, g_INI_Key_Edit) )
     {
-      Parent = GetParent(hWnd); /*0x60f3b9*/
-      ScreenDialogToClient(hWnd, &Rect); /*0x60f3bb*/
-      ScreenDialogToClient(Parent, &v11); /*0x60f3c6*/
-      v4 = 1073742096; /*0x60f3df*/
-      if ( (WindowLongA & 0x10000) != 0 ) /*0x60f3ea*/
-        v4 = 1073807632; /*0x60f3ec*/
-      Window = CreateWindowExA( /*0x60f427*/
-                 0,
-                 MEMORY[0x833718],
-                 0,
-                 v4,
-                 Rect.left - v11.left,
-                 Rect.top - v11.top,
-                 Rect.right - Rect.left,
-                 Rect.bottom - Rect.top,
-                 Parent,
-                 0,
-                 g_hInstance,
-                 0);
-      v6 = __2_YAPAXI_Z(8u); /*0x60f431*/
-      *v6 = MEMORY[0x833720]; /*0x60f436*/
-      v6[1] = GetWindowLongA(hWnd, -16); /*0x60f43f*/
-      SetWindowLongA(Window, -21, (LONG)v6); /*0x60f44b*/
-      EnableWindow(hWnd, 0); /*0x60f450*/
-      ShowWindow(hWnd, 0); /*0x60f459*/
-      EnableWindow(Window, 1); /*0x60f462*/
-      ShowWindow(Window, 1); /*0x60f46b*/
-      dwNewLong = GetWindowLongA(hWnd, -12); /*0x60f479*/
-      v7 = GetWindowLongA(Window, -12); /*0x60f47d*/
-      SetWindowLongA(hWnd, -12, v7); /*0x60f483*/
-      SetWindowLongA(Window, -12, dwNewLong); /*0x60f48d*/
+    Parent = GetParent(hWnd);
+    ScreenDialogToClient(hWnd, &Rect);
+    ScreenDialogToClient(Parent, &v11);
+    v4 = 1073742096;
+    if ( (WindowLongA & 0x10000) != 0 )
+    v4 = 1073807632;
+    Window = CreateWindowExA( 0, g_INI_Key_ListBox, 0, v4, Rect.left - v11.left, Rect.top - v11.top, Rect.right - Rect.left, Rect.bottom - Rect.top, Parent, 0, g_hInstance, 0);
+    v6 = __2_YAPAXI_Z(8u);
+    *v6 = g_INI_Key_NewEdit;
+    v6[1] = GetWindowLongA(hWnd, -16);
+    SetWindowLongA(Window, -21, (LONG)v6);
+    EnableWindow(hWnd, 0);
+    ShowWindow(hWnd, 0);
+    EnableWindow(Window, 1);
+    ShowWindow(Window, 1);
+    dwNewLong = GetWindowLongA(hWnd, -12);
+    v7 = GetWindowLongA(Window, -12);
+    SetWindowLongA(hWnd, -12, v7);
+    SetWindowLongA(Window, -12, dwNewLong);
     }
   }
-  return 1; /*0x60f48f*/
+    return 1;
 }
 }
 } // namespace gamemd
@@ -2876,12 +2808,10 @@ HWND __thiscall Dialog::Destroy(SkirmishDialog *this)
 namespace gamemd {
 HWND Dialog::Show()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall Dialog::Show(HWND this)
 {
-  ShowWindow(this, 1); /*0x622806*/
-  SetForegroundWindow(this); /*0x62280d*/
-  return Timer::PumpMessages((HWND *)MEMORY[0x87F770]); /*0x62281e*/
+    ShowWindow(this, 1);
+    SetForegroundWindow(this);
+    return Timer::PumpMessages((HWND *)g_BinkMoviePlayer);
 }
 }
 } // namespace gamemd
@@ -2890,19 +2820,17 @@ HWND __thiscall Dialog::Show(HWND this)
 namespace gamemd {
 char Dialog::PumpMessages()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char Dialog_PumpMessages()
 {
-  MessageLoop(); /*0x623120*/
-  if ( !MEMORY[0xA8B238] || MEMORY[0xA8B238] == 5 || MEMORY[0xA8D60E] || MEMORY[0xA8DAB4] ) /*0x623143*/
+    MessageLoop();
+    if ( !g_GameMode_Current || g_GameMode_Current == 5 || g_NetworkQuitFlag || g_GameFlags_Campaign )
   {
-    Event::Dispatch(); /*0x62315a*/
+    Event::Dispatch();
   }
-  else if ( !(unsigned __int8)VtableStub::Method_55CBF0() && GameFrameLoop() ) /*0x62314e*/
+    else if ( !(unsigned char)VtableStub::Method_55CBF0() && GameFrameLoop() )
   {
-    return 1; /*0x623159*/
+    return 1;
   }
-  return 0; /*0x623159*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -3392,21 +3320,18 @@ int __thiscall Dialog_FindByHandle(void *this)
 namespace gamemd {
 int Dialog::FindByPtr()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Dialog_FindByPtr(void *this)
 {
-  int v1; // eax
-  void **i; // edx
-
-  v1 = g_DialogTrackingList - 1; /*0x7759b5*/
-  if ( g_DialogTrackingList - 1 < 0 ) /*0x7759b8*/
-    return 0; /*0x7759d1*/
-  for ( i = (void **)(8 * v1 + 12004648); this != *i || v1 <= 0; i -= 2 ) /*0x7759ba*/
+    int v1;
+    void **i;
+    v1 = g_DialogTrackingList - 1;
+    if ( g_DialogTrackingList - 1 < 0 )
+    return 0;
+    for ( i = (void **)(8 * v1 + 12004648); this != *i || v1 <= 0; i -= 2 )
   {
-    if ( --v1 < 0 ) /*0x7759cf*/
-      return 0; /*0x7759cf*/
+    if ( --v1 < 0 )
+    return 0;
   }
-  return (int)*(&g_ClipboardBuffer + 2 * v1); /*0x7759d3*/
+    return (int)*(&g_ClipboardBuffer + 2 * v1);
 }
 }
 } // namespace gamemd
@@ -3452,15 +3377,12 @@ BOOL __thiscall Dialog::GetField(HWND this)
 namespace gamemd {
 HWND Dialog::RestoreParent()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall Dialog::RestoreParent(HWND this)
 {
-  HWND result; // eax
-
-  result = (HWND)GetWindowLongA(this, -8); /*0x777066*/
-  if ( result ) /*0x77706e*/
-    return (HWND)SetDialogParent(this, result); /*0x777074*/
-  return result; /*0x777079*/
+    HWND result;
+    result = (HWND)GetWindowLongA(this, -8);
+    if ( result )
+    return (HWND)SetDialogParent(this, result);
+    return result;
 }
 }
 } // namespace gamemd
@@ -3469,16 +3391,13 @@ HWND __thiscall Dialog::RestoreParent(HWND this)
 namespace gamemd {
 char Dialog::UpdateGameUI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char Dialog_UpdateGameUI()
 {
-  HWND GameUI; // eax
-
-  Dialog::PumpMessages(); /*0x77d820*/
-  GameUI = (HWND)Dialog::FindGameUI(); /*0x77d825*/
-  if ( GameUI ) /*0x77d82c*/
-    InvalidateRect(GameUI, 0, 1); /*0x77d833*/
-  return 0; /*0x77d83b*/
+    HWND GameUI;
+    Dialog::PumpMessages();
+    GameUI = (HWND)Dialog::FindGameUI();
+    if ( GameUI )
+    InvalidateRect(GameUI, 0, 1);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -3487,14 +3406,11 @@ char Dialog_UpdateGameUI()
 namespace gamemd {
 HWND Dialog::CloseAll()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND Dialog_CloseAll()
 {
-  HWND result; // eax
-
-  for ( result = Dialog::GetCurrent(); result; result = Dialog::GetCurrent() ) /*0x799d17*/
-    CloseDialog(result, 0); /*0x799d1d*/
-  return result; /*0x799d2b*/
+    HWND result;
+    for ( result = Dialog::GetCurrent(); result; result = Dialog::GetCurrent() )
+    CloseDialog(result, 0);
+    return result;
 }
 }
 } // namespace gamemd

@@ -5,34 +5,8 @@
 // 0x497880
 int RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1(
-        RLEBlitTransLucent25ZReadWrite_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10,
-        int a11,
-        int a12)
 {
-  return (*((int (__thiscall **)(RLEBlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, int, int, int))this->vfptr /*0x4978b7*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           a9,
-           a10,
-           a11);
+    return (*((int (__thiscall **)(RLEBlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
 }
 }
 

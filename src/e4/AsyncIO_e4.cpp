@@ -49,17 +49,12 @@ char AsyncIO_Shutdown()
 // 0x5BF500
 int AsyncIO::Read()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AsyncIO_Read(void *this)
 {
-  int result; // eax
-
-  result = g_AsyncIOState; /*0x5bf500*/
-  if ( g_AsyncIOState > 0 ) /*0x5bf507*/
-    return (*(int (__thiscall **)(_DWORD, void *))(**(_DWORD **)AsyncIO_Instance + 12))( /*0x5bf515*/
-             *(_DWORD *)AsyncIO_Instance,
-             this);
-  return result; /*0x5bf518*/
+    int result;
+    result = g_AsyncIOState;
+    if ( g_AsyncIOState > 0 )
+    return (*(int (__thiscall **)(int, void *))(**(int **)(AsyncIO_Instance) + 12))( *(int *)AsyncIO_Instance, this);
+    return result;
 }
 }
 

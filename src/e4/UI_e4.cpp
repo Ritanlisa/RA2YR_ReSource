@@ -472,69 +472,34 @@ void sub_6D0E60()
 namespace gamemd {
 void UI_Draw_72E730(ConvertClass * aP0, int * a1, int a3, int aP2, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall UI_Draw_72E730(ConvertClass *aP0, int *a1, int a3, int aP2, int a5)
 {
-  int v5; // esi
-  int v6; // eax
-  int v7; // eax
-  int v8; // [esp+0h] [ebp-18h] BYREF
-  int v9; // [esp+4h] [ebp-14h]
-  _DWORD v10[2]; // [esp+8h] [ebp-10h] BYREF
-  ConvertClass *v11; // [esp+10h] [ebp-8h]
-  int v12; // [esp+14h] [ebp-4h]
-
-  v5 = a1[3]; /*0x72e736*/
-  v10[0] = *a1; /*0x72e739*/
-  v6 = a1[1]; /*0x72e73d*/
-  v8 = 0; /*0x72e740*/
-  v10[1] = v6; /*0x72e748*/
-  v7 = a1[2]; /*0x72e74c*/
-  v9 = 0; /*0x72e754*/
-  v11 = (ConvertClass *)v7; /*0x72e75c*/
-  v12 = v5; /*0x72e760*/
-  if ( v7 > 800 ) /*0x72e764*/
-    v11 = (ConvertClass *)((v7 - 800) / 2 + 800); /*0x72e775*/
-  if ( v5 > 600 ) /*0x72e77f*/
-    v12 = (v5 - 600) / 2 + 600; /*0x72e791*/
-  v8 = **(_DWORD **)&stru_B05488.__pad_579C[20472]; /*0x72e79d*/
-  v9 = *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[20472] + 4); /*0x72e7a4*/
-  if ( *(_DWORD *)&stru_89E138.__pad_14B0[2748] == 640 ) /*0x72e7b2*/
-    DrawToSurfaceSHP( /*0x72e7df*/
-      (int)aP0,
-      a3,
-      (ConvertClass *)aP2,
-      0,
-      (ConvertClass *)&v8,
-      (ConvertClass *)v10,
-      (ConvertClass *)0x400,
-      0,
-      0,
-      0,
-      (ConvertClass *)0x3E8,
-      0,
-      0,
-      0,
-      0,
-      0);
-  else
-    DrawToSurfaceSHP( /*0x72e815*/
-      (int)aP0,
-      a3,
-      (ConvertClass *)a5,
-      0,
-      (ConvertClass *)&v8,
-      (ConvertClass *)v10,
-      (ConvertClass *)0x400,
-      0,
-      0,
-      0,
-      (ConvertClass *)0x3E8,
-      0,
-      0,
-      0,
-      0,
-      0);
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10[2];
+    ConvertClass *v11;
+    int v12;
+    v5 = *((int*)(a1) + 3);
+    v10[0] = *a1;
+    v6 = *((int*)(a1) + 1);
+    v8 = 0;
+    v10[1] = v6;
+    v7 = *((int*)(a1) + 2);
+    v9 = 0;
+    v11 = (ConvertClass *)v7;
+    v12 = v5;
+    if ( v7 > 800 )
+    v11 = (ConvertClass *)((v7 - 800) / 2 + 800);
+    if ( v5 > 600 )
+    v12 = (v5 - 600) / 2 + 600;
+    v8 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
+    v9 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20472] + 4);
+    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2748] == 640 )
+    DrawToSurfaceSHP( (int)aP0, a3, (ConvertClass *)aP2, 0, (ConvertClass *)&v8, (ConvertClass *)v10, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
+    else
+    DrawToSurfaceSHP( (int)aP0, a3, (ConvertClass *)a5, 0, (ConvertClass *)&v8, (ConvertClass *)v10, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
 }
 }
 } // namespace gamemd
@@ -543,33 +508,14 @@ void __fastcall UI_Draw_72E730(ConvertClass *aP0, int *a1, int a3, int aP2, int 
 namespace gamemd {
 void UI_Draw_72E860(int a1, ConvertClass * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall UI_Draw_72E860(int a1, ConvertClass *a2)
 {
-  int v2; // [esp+8h] [ebp-8h] BYREF
-  int v3; // [esp+Ch] [ebp-4h]
-
-  v2 = 0; /*0x72e86c*/
-  v3 = 0; /*0x72e870*/
-  v2 = **(_DWORD **)&stru_B05488.__pad_579C[20464]; /*0x72e877*/
-  v3 = *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[20464] + 4); /*0x72e87e*/
-  DrawToSurfaceSHP( /*0x72e8a8*/
-    a1,
-    *(int *)&stru_B05488.__pad_579C[20392],
-    *(ConvertClass **)&stru_B05488.__pad_579C[19896],
-    0,
-    (ConvertClass *)&v2,
-    a2,
-    (ConvertClass *)0x400,
-    0,
-    0,
-    0,
-    (ConvertClass *)0x3E8,
-    0,
-    0,
-    0,
-    0,
-    0);
+    int v2;
+    int v3;
+    v2 = 0;
+    v3 = 0;
+    v2 = **(int **)&DataGlobal_B05488.__pad_579C[20464];
+    v3 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20464] + 4);
+    DrawToSurfaceSHP( a1, *(int *)&DataGlobal_B05488.__pad_579C[20392], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[19896], 0, (ConvertClass *)&v2, a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
 }
 }
 } // namespace gamemd
@@ -578,33 +524,14 @@ void __fastcall UI_Draw_72E860(int a1, ConvertClass *a2)
 namespace gamemd {
 void UI_Draw_72E8C0(int a1, ConvertClass * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall UI_Draw_72E8C0(int a1, ConvertClass *a2)
 {
-  int v2; // [esp+8h] [ebp-8h] BYREF
-  int v3; // [esp+Ch] [ebp-4h]
-
-  v2 = 0; /*0x72e8cc*/
-  v3 = 0; /*0x72e8d0*/
-  v2 = **(_DWORD **)&stru_B05488.__pad_579C[20476]; /*0x72e8d7*/
-  v3 = *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[20476] + 4); /*0x72e8de*/
-  DrawToSurfaceSHP( /*0x72e909*/
-    a1,
-    *(int *)&stru_B05488.__pad_579C[20392],
-    *(ConvertClass **)&stru_B05488.__pad_579C[20180],
-    1u,
-    (ConvertClass *)&v2,
-    a2,
-    (ConvertClass *)0x400,
-    0,
-    0,
-    0,
-    (ConvertClass *)0x3E8,
-    0,
-    0,
-    0,
-    0,
-    0);
+    int v2;
+    int v3;
+    v2 = 0;
+    v3 = 0;
+    v2 = **(int **)&DataGlobal_B05488.__pad_579C[20476];
+    v3 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20476] + 4);
+    DrawToSurfaceSHP( a1, *(int *)&DataGlobal_B05488.__pad_579C[20392], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[20180], 1u, (ConvertClass *)&v2, a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
 }
 }
 } // namespace gamemd
@@ -613,37 +540,18 @@ void __fastcall UI_Draw_72E8C0(int a1, ConvertClass *a2)
 namespace gamemd {
 void UI_Draw_72E920(int a1, ConvertClass * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall UI_Draw_72E920(int a1, ConvertClass *a2)
 {
-  int v2; // edi
-  int v3; // [esp+8h] [ebp-8h] BYREF
-  int v4; // [esp+Ch] [ebp-4h]
-
-  v3 = 0; /*0x72e92c*/
-  v4 = 0; /*0x72e930*/
-  v2 = **(_DWORD **)&stru_B05488.__pad_579C[20472]; /*0x72e934*/
-  v3 = **(_DWORD **)&stru_B05488.__pad_579C[20472]; /*0x72e936*/
-  v4 = *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[20472] + 4); /*0x72e93d*/
-  if ( *(int *)&stru_89E138.__pad_14B0[2748] >= 800 ) /*0x72e94b*/
-    v3 = v2 + 80; /*0x72e952*/
-  DrawToSurfaceSHP( /*0x72e97d*/
-    a1,
-    *(int *)&stru_B05488.__pad_579C[20356],
-    *(ConvertClass **)&stru_B05488.__pad_579C[20188],
-    0,
-    (ConvertClass *)&v3,
-    a2,
-    (ConvertClass *)0x400,
-    0,
-    0,
-    0,
-    (ConvertClass *)0x3E8,
-    0,
-    0,
-    0,
-    0,
-    0);
+    int v2;
+    int v3;
+    int v4;
+    v3 = 0;
+    v4 = 0;
+    v2 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
+    v3 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
+    v4 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20472] + 4);
+    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2748] >= 800 )
+    v3 = v2 + 80;
+    DrawToSurfaceSHP( a1, *(int *)&DataGlobal_B05488.__pad_579C[20356], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[20188], 0, (ConvertClass *)&v3, a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
 }
 }
 } // namespace gamemd
@@ -1095,10 +1003,8 @@ int sub_6D0FD0()
 namespace gamemd {
 CCINIClass * UI_Load_72F4A0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-CCINIClass *UI_Load_72F4A0()
 {
-  return *(CCINIClass **)&stru_B05488.__pad_579C[20416]; /*0x72f4a5*/
+    return *(CCINIClass **)&DataGlobal_B05488.__pad_579C[20416];
 }
 }
 } // namespace gamemd
@@ -1107,10 +1013,8 @@ CCINIClass *UI_Load_72F4A0()
 namespace gamemd {
 CCINIClass * UI_Load_72F4E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-CCINIClass *UI_Load_72F4E0()
 {
-  return *(CCINIClass **)&stru_B05488.__pad_579C[20440]; /*0x72f4e5*/
+    return *(CCINIClass **)&DataGlobal_B05488.__pad_579C[20440];
 }
 }
 } // namespace gamemd
@@ -1213,29 +1117,26 @@ void __fastcall UI_Setup_5EBDD0(SkirmishDialog *aP0, int a2, int a3, int a4)
 namespace gamemd {
 bool sub_7930A0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool sub_7930A0()
 {
-  int v0; // eax
-  char *i; // edx
-  char *v3; // eax
-
-  v0 = 0; /*0x7930a7*/
-  if ( (int)g_WOL_State <= 0 ) /*0x7930ad*/
-    return 0; /*0x7930ad*/
-  for ( i = (char *)g_WOL_ConnectionFlags; ; i += 108 ) /*0x7930af*/
+    int v0;
+    char *i;
+    char *v3;
+    v0 = 0;
+    if ( (int)g_WOL_State <= 0 )
+    return 0;
+    for ( i = (char *)g_WOL_ConnectionFlags; ; i += 108 )
   {
-    if ( v0 >= 0 && v0 < (int)g_WOL_State ) /*0x7930bb*/
-      qmemcpy(&g_IsMultiplayerSession, i, 0x6Cu); /*0x7930c9*/
-    if ( (g_IsMultiplayerSession & 1) != 0 ) /*0x7930d2*/
-      break; /*0x7930d2*/
-    if ( ++v0 >= (int)g_WOL_State ) /*0x7930da*/
-      return 0; /*0x7930e1*/
+    if ( v0 >= 0 && v0 < (int)g_WOL_State )
+    qmemcpy(&g_IsMultiplayerSession, i, 0x6Cu);
+    if ( (g_IsMultiplayerSession & 1) != 0 )
+    break;
+    if ( ++v0 >= (int)g_WOL_State )
+    return 0;
   }
-  if ( !&g_IsMultiplayerSession ) /*0x7930e9*/
-    return 0; /*0x7930ed*/
-  v3 = String::GetOrEmpty_Alt((char **)&g_WebBrowser); /*0x7930f6*/
-  return _strcmpi(byte_B777D4, v3) == 0; /*0x7930dc*/
+    if ( !&g_IsMultiplayerSession )
+    return 0;
+    v3 = String::GetOrEmpty_Alt((char **)&g_WebBrowser);
+    return _strcmpi(DataGlobal_B777D4, v3) == 0;
 }
 }
 } // namespace gamemd
@@ -1306,30 +1207,27 @@ ObjectClass *__fastcall UI_Setup_793930(void *a1, void *a2, int a3)
 namespace gamemd {
 ObjectClass * UI_Setup_793A10(void * a1, short a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__fastcall UI_Setup_793A10(void *a1, __int16 a2)
 {
-  int v4; // edi
-  SessionClass *v5; // esi
-  char *v6; // eax
-  ObjectClass *result; // eax
-
-  Debug::Log(); /*0x793a26*/
-  v4 = 0; /*0x793a2e*/
-  v5 = (SessionClass *)&HouseClass_Player.__pad_5568[18396]; /*0x793a30*/
-  while ( 1 ) /*0x793a38*/
+    int v4;
+    SessionClass *v5;
+    char *v6;
+    ObjectClass *result;
+    Debug::Log();
+    v4 = 0;
+    v5 = (SessionClass *)&HouseClass_Player.__pad_5568[18396];
+    while ( 1 )
   {
-    v6 = ToWideStringChar((IUnknown *)v5->GameMode[0]); /*0x793a38*/
-    result = (ObjectClass *)_strcmpi(v6, a1); /*0x793a3e*/
-    if ( !result ) /*0x793a48*/
-      break; /*0x793a48*/
-    v5 = (SessionClass *)((char *)v5 + 4); /*0x793a4a*/
-    ++v4; /*0x793a4d*/
-    if ( (int)v5 >= (int)&HouseClass_Player.__pad_5568[18428] ) /*0x793a54*/
-      return result; /*0x793a54*/
+    v6 = ToWideStringChar((IUnknown *)v5->GameMode[0]);
+    result = (ObjectClass *)_strcmpi(v6, a1);
+    if ( !result )
+    break;
+    v5 = (SessionClass *)((char *)(v5) + 4);
+    ++v4;
+    if ( (int)v5 >= (int)&HouseClass_Player.__pad_5568[18428] )
+    return result;
   }
-  *(_WORD *)&HouseClass_Player.__pad_5568[2 * v4 + 19868] = a2; /*0x793a5b*/
-  return result; /*0x793a56*/
+    *(short *)&HouseClass_Player.__pad_5568[2 * v4 + 19868] = a2;
+    return result;
 }
 }
 } // namespace gamemd

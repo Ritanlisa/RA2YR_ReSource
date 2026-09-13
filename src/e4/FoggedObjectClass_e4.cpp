@@ -645,39 +645,36 @@ LABEL_21:
 // 0x4D24A0
 int FoggedObjectClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall FoggedObjectClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-  int v4; // edx
-  int v5; // ebp
-  int v6; // edi
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x4d24b3*/
-  if ( result >= 0 ) /*0x4d24ba*/
+    int result;
+    int v4;
+    int v5;
+    int v6;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
   {
-    v4 = *a1; /*0x4d24bf*/
-    aP2 = *(_DWORD *)&aP0->Name[8]; /*0x4d24cb*/
-    result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v4 + 16))(a1, &aP2, 4, 0); /*0x4d24cf*/
-    if ( result >= 0 ) /*0x4d24d4*/
+    v4 = *a1;
+    aP2 = *(int *)&aP0->Name[8];
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
+    if ( result >= 0 )
     {
-      v5 = 0; /*0x4d24da*/
-      if ( aP2 > 0 ) /*0x4d24de*/
+    v5 = 0;
+    if ( aP2 > 0 )
       {
-        v6 = 0; /*0x4d24e0*/
-        do /*0x4d2500*/
+    v6 = 0;
+    do
         {
-          if ( (*(int (__stdcall **)(int *, char *, int, _DWORD))(*a1 + 16))(a1, (char *)aP0->UIName + v6, 16, 0) < 0 ) /*0x4d24f4*/
-            break; /*0x4d24f4*/
-          ++v5; /*0x4d24fa*/
-          v6 += 16; /*0x4d24fb*/
+    if ( (*(int (__stdcall **)(int *, char *, int, int))(*a1 + 16))(a1, (char *)aP0->UIName + v6, 16, 0) < 0 )
+    break;
+    ++v5;
+    v6 += 16;
         }
-        while ( v5 < aP2 ); /*0x4d2500*/
+    while ( v5 < aP2 );
       }
-      return 0; /*0x4d2502*/
+    return 0;
     }
   }
-  return result; /*0x4d2504*/
+    return result;
 }
 }
 
@@ -1083,13 +1080,11 @@ void __thiscall FoggedObjectClass_42_::sub_4E01F0(int this)
 namespace gamemd {
 unsigned int FoggedObjectClass_42::PointerToIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall FoggedObjectClass_42_::sub_4E0220(int this, int a2)
 {
-  if ( (unsigned char)this->FoggedObjectClass_42_field_0xC ) /*0x4e0220*/
-    return (unsigned int)(a2 - this->FoggedObjectClass_42_field_0x4) >> 2; /*0x4e0235*/
-  else
-    return 0; /*0x4e0227*/
+    if ( (unsigned char)this->FoggedObjectClass_42_field_0xC )
+    return (unsigned int)(a2 - this->FoggedObjectClass_42_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1241,13 +1236,11 @@ int __thiscall FoggedObjectClass_42_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int FoggedObjectClass_42::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall FoggedObjectClass_42_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->FoggedObjectClass_42_field_0xC ) /*0x4e06e0*/
-    return (unsigned int)(a2 - this->FoggedObjectClass_42_field_0x4) >> 2; /*0x4e06f5*/
-  else
-    return 0; /*0x4e06e7*/
+    if ( (unsigned char)this->FoggedObjectClass_42_field_0xC )
+    return (unsigned int)(a2 - this->FoggedObjectClass_42_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

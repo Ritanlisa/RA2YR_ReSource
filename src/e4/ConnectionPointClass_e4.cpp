@@ -46,37 +46,34 @@ int __stdcall ConnectionPointClass::_vt05(int a1, int (__stdcall ***a2)(_DWORD, 
 // 0x4A0700
 int ConnectionPointClass::EnumConnections(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ConnectionPointClass::_vt06(int a1, int a2)
 {
-  int v2; // eax
-  int v3; // esi
-  _DWORD *i; // ecx
-  int v6; // ecx
-  int v7; // ecx
-  int v8; // ecx
-
-  v2 = 0; /*0x4a0705*/
-  v3 = *(_DWORD *)(a1 + 44); /*0x4a0707*/
-  if ( v3 <= 0 ) /*0x4a070d*/
-    return -2147220992; /*0x4a0725*/
-  for ( i = (_DWORD *)(*(_DWORD *)(a1 + 32) + 4); *i != a2; i += 2 ) /*0x4a0716*/
+    int v2;
+    int v3;
+    int *i;
+    int v6;
+    int v7;
+    int v8;
+    v2 = 0;
+    v3 = *(int *)(a1 + 44);
+    if ( v3 <= 0 )
+    return -2147220992;
+    for ( i = (int *)(*(int *)(a1 + 32) + 4); *i != a2; i += 2 )
   {
-    if ( ++v2 >= v3 ) /*0x4a0723*/
-      return -2147220992; /*0x4a0723*/
+    if ( ++v2 >= v3 )
+    return -2147220992;
   }
-  v6 = *(_DWORD *)(a1 + 44); /*0x4a072f*/
-  if ( v2 < v6 ) /*0x4a0734*/
+    v6 = *(int *)(a1 + 44);
+    if ( v2 < v6 )
   {
-    v7 = v6 - 1; /*0x4a0736*/
-    for ( *(_DWORD *)(a1 + 44) = v7; v2 < *(_DWORD *)(a1 + 44); *(_DWORD *)(v8 + 8 * v2 - 4) = *(_DWORD *)(v8 + 8 * v2 + 4) ) /*0x4a073c*/
+    v7 = v6 - 1;
+    for ( *(int *)(a1 + 44) = v7; v2 < *(int *)(a1 + 44); *(int *)(v8 + 8 * v2 - 4) = *(int *)(v8 + 8 * v2 + 4) )
     {
-      v8 = *(_DWORD *)(a1 + 32); /*0x4a073e*/
-      ++v2; /*0x4a0741*/
-      *(_DWORD *)(v8 + 8 * v2 - 8) = *(_DWORD *)(v8 + 8 * v2); /*0x4a0745*/
+    v8 = *(int *)(a1 + 32);
+    ++v2;
+    *(int *)(v8 + 8 * v2 - 8) = *(int *)(v8 + 8 * v2);
     }
   }
-  return 0; /*0x4a0725*/
+    return 0;
 }
 }
 
@@ -308,13 +305,11 @@ int __thiscall ConnectionPointClass_9_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int ConnectionPointClass_9::Unadvise(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall ConnectionPointClass_9_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->ConnectionPointClass_9_field_0xC ) /*0x4a13a0*/
-    return (unsigned int)(a2 - this->ConnectionPointClass_9_field_0x4) >> 2; /*0x4a13b5*/
-  else
-    return 0; /*0x4a13a7*/
+    if ( (unsigned char)this->ConnectionPointClass_9_field_0xC )
+    return (unsigned int)(a2 - this->ConnectionPointClass_9_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

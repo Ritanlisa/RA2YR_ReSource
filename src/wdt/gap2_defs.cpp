@@ -13,15 +13,12 @@
 
 // 0x4104C0
 namespace gamemd { namespace wdt { int Map::GetInvalidCoord() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Map::GetInvalidCoord(#376 *this)
 {
-  _DWORD *v2; // [esp+4h] [ebp+4h]
-
-  *v2 = MEMORY[0x887680]; /*0x4104cc*/
-  v2[1] = MEMORY[0x887684]; /*0x4104d4*/
-  v2[2] = MEMORY[0x887688]; /*0x4104dd*/
-  return (int)v2; /*0x4104e0*/
+    int *v2;
+    *v2 = DataGlobal_887680;
+    v2[1] = DataGlobal_887684;
+    v2[2] = DataGlobal_887688;
+    return (int)v2;
 }
 } } }
 // 0x4F28B0

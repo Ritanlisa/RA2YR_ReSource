@@ -29,13 +29,11 @@ void __thiscall MSEngine::sub_5AC520(int this)
 namespace gamemd {
 unsigned int MSEngine::PointerToIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MSEngine::sub_5AC550(int this, int a2)
 {
-  if ( (unsigned char)this->MSEngine_field_0xC ) /*0x5ac550*/
-    return (unsigned int)(a2 - this->MSEngine_field_0x4) >> 4; /*0x5ac565*/
-  else
-    return 0; /*0x5ac557*/
+    if ( (unsigned char)this->MSEngine_field_0xC )
+    return (unsigned int)(a2 - this->MSEngine_field_0x4) >> 4;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -230,13 +228,11 @@ int __thiscall MSEngine::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int MSEngine::Run(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MSEngine::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->MSEngine_field_0xC ) /*0x5aceb0*/
-    return (unsigned int)(a2 - this->MSEngine_field_0x4) >> 4; /*0x5acec5*/
-  else
-    return 0; /*0x5aceb7*/
+    if ( (unsigned char)this->MSEngine_field_0xC )
+    return (unsigned int)(a2 - this->MSEngine_field_0x4) >> 4;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -591,11 +587,9 @@ int __thiscall MSEngine::ProcessEvents(_DWORD *this, MSVQAnim *aP1, int a3)
 namespace gamemd {
 void MSEngine::DestroyData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5D5850(void **this)
 {
-  if ( *this ) /*0x5d5850*/
-    free(*this); /*0x5d5857*/
+    if ( *(void**)this )
+    free(*(void**)this);
 }
 }
 } // namespace gamemd

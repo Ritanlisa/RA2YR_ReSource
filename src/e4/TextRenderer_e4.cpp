@@ -18,48 +18,32 @@ AbstractClass *TextRenderer::GetInstance()
 namespace gamemd {
 unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, ObjectClass * aP2, ConvertClass * aP3, int a2, int a6, int a7, int a8, CampaignScore * aP8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__cdecl TextRenderer::Printf(
-        ConvertClass *aP0,
-        size_t BufferCount,
-        ObjectClass *aP2,
-        ConvertClass *aP3,
-        int a2,
-        int a6,
-        int a7,
-        int a8,
-        CampaignScore *aP8)
 {
-  wchar_t *v9; // ecx
-  AbstractClass *v11; // edx
-  AbstractClass v12[29]; // [esp-10h] [ebp-418h] BYREF
-
-  if ( BufferCount ) /*0x4a60ec*/
+    wchar_t *v9;
+    AbstractClass *v11;
+    AbstractClass v12[29];
+    if ( BufferCount )
   {
-    vswprintf( /*0x4a60fc*/
-      (wchar_t *const)&v12[0].nextArrayIndex,
-      (CampaignScore *)BufferCount,
-      (ObjectClass *)&aP8,
-      (SessionClass *)v12[0].uniqueId);
-    *(_DWORD *)&v12[0].__pad_0[12] = 1; /*0x4a6119*/
-    *(_DWORD *)&v12[0].__pad_0[8] = a8; /*0x4a611b*/
-    *(_DWORD *)&v12[0].__pad_0[4] = a7; /*0x4a6123*/
-    *(_DWORD *)v12[0].__pad_0 = a6; /*0x4a612b*/
-    v9 = (wchar_t *)RenderTextLabel((int *)aP2->__pad_0, (AbstractClass *)aP3, (int *)a2, v12[0]); /*0x4a6143*/
-    *(_DWORD *)aP0->__pad_0 = *(_DWORD *)v9; /*0x4a614e*/
-    *(_DWORD *)&aP0->field_2[2] = *((_DWORD *)v9 + 1); /*0x4a6153*/
-    return aP0->__pad_0; /*0x4a6145*/
+    vswprintf( (wchar_t *const)&v12[0].nextArrayIndex, (CampaignScore *)BufferCount, (ObjectClass *)&aP8, (SessionClass *)v12[0].uniqueId);
+    *(int *)&v12[0].__pad_0[12] = 1;
+    *(int *)&v12[0].__pad_0[8] = a8;
+    *(int *)&v12[0].__pad_0[4] = a7;
+    *(int *)v12[0].__pad_0 = a6;
+    v9 = (wchar_t *)RenderTextLabel((int *)aP2->__pad_0, (AbstractClass *)aP3, (int *)a2, v12[0]);
+    *(int *)aP0->__pad_0 = *(int *)v9;
+    *(int *)&aP0->field_2[2] = *((int *)(v9) + 1);
+    return aP0->__pad_0;
   }
-  else
+    else
   {
-    *(_DWORD *)&v12[0].__pad_0[12] = 1; /*0x4a6172*/
-    *(_DWORD *)&v12[0].__pad_0[8] = a8; /*0x4a6174*/
-    *(_DWORD *)&v12[0].__pad_0[4] = a7; /*0x4a617c*/
-    *(_DWORD *)v12[0].__pad_0 = a6; /*0x4a6184*/
-    v11 = (AbstractClass *)RenderTextLabel((int *)aP2->__pad_0, (AbstractClass *)aP3, (int *)a2, v12[0]); /*0x4a619a*/
-    *(_DWORD *)aP0->__pad_0 = *(_DWORD *)v11->__pad_0; /*0x4a61a5*/
-    *(_DWORD *)&aP0->field_2[2] = *(_DWORD *)&v11->__pad_0[4]; /*0x4a61aa*/
-    return aP0->__pad_0; /*0x4a619c*/
+    *(int *)&v12[0].__pad_0[12] = 1;
+    *(int *)&v12[0].__pad_0[8] = a8;
+    *(int *)&v12[0].__pad_0[4] = a7;
+    *(int *)v12[0].__pad_0 = a6;
+    v11 = (AbstractClass *)RenderTextLabel((int *)aP2->__pad_0, (AbstractClass *)aP3, (int *)a2, v12[0]);
+    *(int *)aP0->__pad_0 = *(int *)v11->__pad_0;
+    *(int *)&aP0->field_2[2] = *(int *)&v11->__pad_0[4];
+    return aP0->__pad_0;
   }
 }
 }

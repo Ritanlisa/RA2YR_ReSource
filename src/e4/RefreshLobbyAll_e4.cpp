@@ -6,26 +6,23 @@
 namespace gamemd {
 int sub_5E8D40()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5E8D40()
 {
-  const wchar_t *v1; // ebx
-  int v2; // edi
-  const wchar_t **v3; // esi
-
-  if ( !MEMORY[0xA8DA84] ) /*0x5e8d47*/
-    return -1; /*0x5e8d49*/
-  v1 = *(const wchar_t **)MEMORY[0xA8DA78]; /*0x5e8d55*/
-  v2 = 0; /*0x5e8d57*/
-  v3 = (const wchar_t **)&MEMORY[0xA8DA90]; /*0x5e8d59*/
-  while ( !*v3 || _wcsicmp(v1, *v3) ) /*0x5e8d70*/
+    const wchar_t *v1;
+    int v2;
+    const wchar_t **v3;
+    if ( !Game_PlayerCount )
+    return -1;
+    v1 = *(const wchar_t **)Game_PlayerInfoArray;
+    v2 = 0;
+    v3 = (const wchar_t **)&g_NetworkPlayerName;
+    while ( !*v3 || _wcsicmp(v1, *v3) )
   {
-    ++v3; /*0x5e8d72*/
-    ++v2; /*0x5e8d75*/
-    if ( (int)v3 >= (int)&MEMORY[0xA8DAB0] ) /*0x5e8d7c*/
-      return -1; /*0x5e8d84*/
+    ++v3;
+    ++v2;
+    if ( (int)v3 >= (int)&g_PlayerNameListEnd )
+    return -1;
   }
-  return v2; /*0x5e8d4c*/
+    return v2;
 }
 }
 } // namespace gamemd
@@ -138,17 +135,14 @@ int __fastcall sub_5EAA70(int a1)
 namespace gamemd {
 int sub_5EA8E0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_5EA8E0(int a1)
 {
-  int v1; // ecx
-  int result; // eax
-
-  v1 = *(&MEMORY[0xA8DA90] + a1); /*0x5ea8e0*/
-  result = 0; /*0x5ea8e7*/
-  if ( v1 && (v1 == MEMORY[0xAC11A4] || v1 == MEMORY[0xAC11A8] || v1 == MEMORY[0xAC11AC]) || *(_DWORD *)(v1 + 119) == 1 ) /*0x5ea909*/
-    return 1; /*0x5ea90b*/
-  return result; /*0x5ea910*/
+    int v1;
+    int result;
+    v1 = *(&g_NetworkPlayerName + a1);
+    result = 0;
+    if ( v1 && (v1 == g_Lobby_PlayerTeam || v1 == g_Lobby_PlayerSide || v1 == g_Lobby_PlayerColor) || *(int *)(v1 + 119) == 1 )
+    return 1;
+    return result;
 }
 }
 } // namespace gamemd

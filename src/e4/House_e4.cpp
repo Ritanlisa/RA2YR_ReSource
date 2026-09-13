@@ -1045,60 +1045,30 @@ bool __thiscall sub_544C20(_DWORD *this, int a2, char a3)
 namespace gamemd {
 char sub_637A10()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_637A10()
 {
-  char result; // al
-  _BYTE v1[108]; // [esp-70h] [ebp-ECh] BYREF
-  int v2; // [esp-4h] [ebp-80h]
-  char v3[108]; // [esp+Ch] [ebp-70h] BYREF
-  __int16 v4; // [esp+78h] [ebp-4h]
-  char v5; // [esp+7Ah] [ebp-2h]
-
-  result = MEMORY[0xAC4CF4]; /*0x637a10*/
-  if ( MEMORY[0xAC4CF4] ) /*0x637a1f*/
+    char result;
+    char v1[108];
+    int v2;
+    char v3[108];
+    short v4;
+    char v5;
+    result = DataGlobal_AC4CF4;
+    if ( DataGlobal_AC4CF4 )
   {
-    EventClass::AddEvent(v3, *((_DWORD *)HouseClass_Player + 12), 0x2Bu); /*0x637a30*/
-    qmemcpy(v1, v3, sizeof(v1)); /*0x637a43*/
-    LOWORD(v2) = v4; /*0x637a45*/
-    BYTE2(v2) = v5; /*0x637a47*/
-    Network::RecordEvent( /*0x637a48*/
-      *(__int64 *)v1,
-      *(int *)&v1[8],
-      *(int *)&v1[12],
-      *(int *)&v1[16],
-      *(int *)&v1[20],
-      *(int *)&v1[24],
-      *(int *)&v1[28],
-      *(int *)&v1[32],
-      *(int *)&v1[36],
-      *(int *)&v1[40],
-      *(int *)&v1[44],
-      *(int *)&v1[48],
-      *(int *)&v1[52],
-      *(int *)&v1[56],
-      *(int *)&v1[60],
-      *(int *)&v1[64],
-      *(int *)&v1[68],
-      *(int *)&v1[72],
-      *(int *)&v1[76],
-      *(int *)&v1[80],
-      *(int *)&v1[84],
-      *(int *)&v1[88],
-      *(int *)&v1[92],
-      *(int *)&v1[96],
-      *(int *)&v1[100],
-      *(int *)&v1[104],
-      v2);
-    MEMORY[0xAC4CCC] = 0; /*0x637a52*/
-    MEMORY[0xAC4C38] = 0; /*0x637a58*/
-    MEMORY[0xAC4BF0] = 0; /*0x637a5e*/
-    MEMORY[0xAC4CF4] = 0; /*0x637a64*/
-    result = PlayVocClass(MEMORY[0x8871E0]->EnterBioReactorSound, 0x2000, 1.0, 0); /*0x637a7b*/
-    if ( MEMORY[0xAC4B80] ) /*0x637a88*/
-      return (**(int (__thiscall ***)(int, int, _DWORD))MEMORY[0xAC4B80])(MEMORY[0xAC4B80], 4552, 0); /*0x637a92*/
+    EventClass::AddEvent(v3, *((int *)(HouseClass_Player) + 12), 0x2Bu);
+    qmemcpy(v1, v3, sizeof(v1));
+    LOWORD(v2) = v4;
+    BYTE2(v2) = v5;
+    Network::RecordEvent( *(__int64 *)v1, *(int *)&v1[8], *(int *)&v1[12], *(int *)&v1[16], *(int *)&v1[20], *(int *)&v1[24], *(int *)&v1[28], *(int *)&v1[32], *(int *)&v1[36], *(int *)&v1[40], *(int *)&v1[44], *(int *)&v1[48], *(int *)&v1[52], *(int *)&v1[56], *(int *)&v1[60], *(int *)&v1[64], *(int *)&v1[68], *(int *)&v1[72], *(int *)&v1[76], *(int *)&v1[80], *(int *)&v1[84], *(int *)&v1[88], *(int *)&v1[92], *(int *)&v1[96], *(int *)&v1[100], *(int *)&v1[104], v2);
+    g_ScriptPool = 0;
+    g_ScriptState = 0;
+    g_ScriptActionPool = 0;
+    DataGlobal_AC4CF4 = 0;
+    result = PlayVocClass(g_RulesClass_Instance->EnterBioReactorSound, 0x2000, 1.0, 0);
+    if ( DataGlobal_AC4B80 )
+    return (**(int (__thiscall ***)(int, int, int))DataGlobal_AC4B80)(DataGlobal_AC4B80, 4552, 0);
   }
-  return result; /*0x637a94*/
+    return result;
 }
 }
 } // namespace gamemd

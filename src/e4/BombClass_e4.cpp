@@ -7,17 +7,15 @@ namespace ra2 {
 namespace game {
 int BombClass::InitPool()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int BombClass_InitPool()
 {
-  unk_89C66C = 0; /*0x438557*/
-  dword_89C670 = 0; /*0x43855c*/
-  unk_89C674 = 1; /*0x438561*/
-  unk_89C675 = 0; /*0x438568*/
-  dword_89C668 = (int)&vt_DynamicVectorClass_BombClass; /*0x43856d*/
-  dword_89C67C = 10; /*0x438577*/
-  dword_89C678 = 0; /*0x438581*/
-  return atexit(globalHelper_038590); /*0x43858c*/
+    DataGlobal_89C66C = 0;
+    DataGlobal_89C670 = 0;
+    DataGlobal_89C674 = 1;
+    DataGlobal_89C675 = 0;
+    DataGlobal_89C668 = (int)&vt_DynamicVectorClass_BombClass;
+    DataGlobal_89C67C = 10;
+    DataGlobal_89C678 = 0;
+    return atexit(globalHelper_038590);
 }
 }
 } // namespace game
@@ -66,10 +64,8 @@ namespace ra2 {
 namespace game {
 int BombClass::IsDeathBomb()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BombClass::IsDeathBomb(_DWORD *this)
 {
-  return *(this + 12); /*0x4389f3*/
+    return this->audioController;
 }
 }
 } // namespace game
@@ -197,10 +193,8 @@ namespace ra2 {
 namespace game {
 int BombClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall BombClass::Seek(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x438be4*/
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
 }
 }
 } // namespace game

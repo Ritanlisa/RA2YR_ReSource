@@ -347,33 +347,28 @@ LABEL_16:
 namespace gamemd {
 int Surface_Render(ObjectClass * aP0, unsigned short * a1, int * yTop, unsigned char * a3, int aP1, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Surface_Render(ObjectClass *aP0, _WORD *a1, int *yTop, _BYTE *a3, int aP1, int a6)
 {
-  AbstractClass *v6; // edi
-  int v8; // ebx
-  AbstractClass *v9; // ebp
-  AbstractClass *v10; // ebx
-  int v12; // [esp+10h] [ebp-Ch]
-  int *yTopa; // [esp+20h] [ebp+4h]
-  AbstractClass *aP1a; // [esp+28h] [ebp+Ch]
-
-  v6 = (AbstractClass *)a3; /*0x620fab*/
-  v8 = yTop[2]; /*0x620fc5*/
-  v9 = (AbstractClass *)(yTop[3] - yTop[1]); /*0x620fd0*/
-  yTopa = (int *)yTop[1]; /*0x620fd2*/
-  v10 = (AbstractClass *)(v8 - *yTop); /*0x620fda*/
-  aP1a = (AbstractClass *)(((unsigned __int8)aP1 >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120]) /*0x620fdc*/
-                         | (BYTE2(aP1) >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128])
-                         | (BYTE1(aP1) >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136]));
-  v12 = *yTop; /*0x620fe2*/
-  if ( !a3 ) /*0x620fe6*/
-    v6 = ::aP0; /*0x620fe8*/
-  Char::Swap(v6, (ObjectClass *)1); /*0x620ff2*/
-  TextGroup::SetRect(v6, (AbstractClass *)yTop); /*0x620ffa*/
-  Property::Set(v6, aP1a); /*0x621006*/
-  Font::Print(v6, (AbstractClass *)aP0, (AbstractClass *)a1, v12, (AbstractClass *)yTopa, v10, v9, 0, 0, 0); /*0x62102e*/
-  return 0; /*0x621035*/
+    AbstractClass *v6;
+    int v8;
+    AbstractClass *v9;
+    AbstractClass *v10;
+    int v12;
+    int *yTopa;
+    AbstractClass *aP1a;
+    v6 = (AbstractClass *)a3;
+    v8 = yTop[2];
+    v9 = (AbstractClass *)(yTop[3] - yTop[1]);
+    yTopa = (int *)yTop[1];
+    v10 = (AbstractClass *)(v8 - *yTop);
+    aP1a = (AbstractClass *)(((unsigned char)aP1 >> DataGlobal_89E138.__pad_14B0[6124] << DataGlobal_89E138.__pad_14B0[6120]) | (BYTE2(aP1) >> DataGlobal_89E138.__pad_14B0[6132] << DataGlobal_89E138.__pad_14B0[6128]) | (BYTE1(aP1) >> DataGlobal_89E138.__pad_14B0[6140] << DataGlobal_89E138.__pad_14B0[6136]));
+    v12 = *yTop;
+    if ( !a3 )
+    v6 = ::aP0;
+    Char::Swap(v6, (ObjectClass *)1);
+    TextGroup::SetRect(v6, (AbstractClass *)yTop);
+    Property::Set(v6, aP1a);
+    Font::Print(v6, (AbstractClass *)aP0, (AbstractClass *)a1, v12, (AbstractClass *)yTopa, v10, v9, 0, 0, 0);
+    return 0;
 }
 }
 } // namespace gamemd

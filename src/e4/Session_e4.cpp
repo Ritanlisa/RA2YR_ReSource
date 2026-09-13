@@ -259,31 +259,28 @@ LABEL_12:
 namespace gamemd {
 int Session::StartGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Session::StartGame(HWND this)
 {
-  ObjectClass *v2; // esi
-  _DWORD *v3; // eax
-  ObjectClass *v4; // eax
-
-  if ( !IsRandMap::Sed(*(_DWORD *)(MEMORY[0xA8B8CC] + 4 * MEMORY[0xA8B254])) ) /*0x5ed381*/
-    return Session::PrepareGame(this); /*0x5ed3f1*/
-  v2 = (ObjectClass *)MEMORY[0xAC1154]; /*0x5ed38b*/
-  if ( MEMORY[0xAC1154] ) /*0x5ed393*/
+    ObjectClass *v2;
+    int *v3;
+    ObjectClass *v4;
+    if ( !IsRandMap::Sed(*(int *)(g_MultiplayerGameState + 4 * g_GameRulesOptions)) )
+    return Session::PrepareGame(this);
+    v2 = (ObjectClass *)g_UIControlState;
+    if ( g_UIControlState )
   {
-    ComPtr::Dtor(MEMORY[0xAC1154]); /*0x5ed397*/
-    __3_YAXPAX_Z(v2); /*0x5ed39d*/
+    ComPtr::Dtor(g_UIControlState);
+    __3_YAXPAX_Z(v2);
   }
-  v3 = __2_YAPAXI_Z(4u); /*0x5ed3a7*/
-  if ( v3 ) /*0x5ed3b2*/
-    v4 = (ObjectClass *)unknown_libname_27(v3); /*0x5ed3b6*/
-  else
-    v4 = 0; /*0x5ed3bd*/
-  MEMORY[0xAC1154] = v4; /*0x5ed3c6*/
-  Surface::LoadToSurfaceSHP((char **)v4, stru_829ABC); /*0x5ed3cb*/
-  if ( !*(_DWORD *)MEMORY[0xAC1154] ) /*0x5ed3d6*/
-    Session::PrepareGame(this); /*0x5ed3dd*/
-  return InvalidateRect(this, 0, 0); /*0x5ed3ed*/
+    v3 = __2_YAPAXI_Z(4u);
+    if ( v3 )
+    v4 = (ObjectClass *)unknown_libname_27(v3);
+    else
+    v4 = 0;
+    g_UIControlState = v4;
+    Surface::LoadToSurfaceSHP((char **)v4, ExistingFileName);
+    if ( !*(int *)g_UIControlState )
+    Session::PrepareGame(this);
+    return InvalidateRect(this, 0, 0);
 }
 }
 } // namespace gamemd

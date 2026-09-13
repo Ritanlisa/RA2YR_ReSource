@@ -30,10 +30,8 @@ int __thiscall NullModemClass::_vt11(int *this, int a2)
 // 0x5F3540
 int NullModemClass::Disconnect(int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NullModemClass::_vt14(void *this, int a2, int a3, int a4)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int))(*(_DWORD *)this + 52))(this, a2, a3, a4, 1); /*0x5f3556*/
+    return this->Connect(a2, a3, a4, 1);
 }
 }
 

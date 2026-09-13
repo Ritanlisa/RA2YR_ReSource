@@ -55,11 +55,9 @@ _DWORD *__thiscall sub_4C4EF0(_DWORD *this, char *Buffer)
 namespace gamemd {
 ObjectClass * TaskForceClass::Check()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall TaskForceClass::Check(_DWORD *this)
 {
-  sprintf((char *const)&stru_89E138.field_5668, (ObjectClass *)&stru_82083C.CampaignScore_field_0x20, (INIClass *)*this); /*0x4c4fa4*/
-  return (ObjectClass *)&stru_89E138.field_5668; /*0x4c4fb1*/
+    sprintf((char *const)&DataGlobal_89E138.field_5668, (ObjectClass *)&DataGlobal_82083C.CampaignScore_field_0x20, (INIClass *)*(void**)this);
+    return (ObjectClass *)&DataGlobal_89E138.field_5668;
 }
 }
 } // namespace gamemd
@@ -280,15 +278,12 @@ char __thiscall TaskForceClass::_vt26(int this, char *a2)
 namespace gamemd {
 int TaskForceClass::SaveTaskForce(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TaskForceClass::SaveTaskForce(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6e868f*/
-  if ( result >= 0 ) /*0x6e8696*/
-    return 0; /*0x6e8698*/
-  return result; /*0x6e869a*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd

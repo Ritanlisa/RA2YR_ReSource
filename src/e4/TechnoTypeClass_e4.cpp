@@ -5,10 +5,8 @@
 // 0x41CB50
 char TechnoTypeClass::vt_entry_A0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char TechnoTypeClass::vt_entry_A0()
 {
-  return 0; /*0x41cb52*/
+    return 0;
 }
 }
 
@@ -1037,24 +1035,19 @@ int __thiscall TechnoTypeClass::DTOR(int this)
 // 0x711E90
 bool TechnoTypeClass::CanAttackMove_IgnoreWeapon()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall TechnoTypeClass::CanAttackMove_IgnoreWeapon(int this)
 {
-  return this->Weapon && !this->PreventAttackMove; /*0x711ea6*/
+    return this->Weapon && !this->PreventAttackMove;
 }
 }
 
 // 0x711EE0
 double TechnoTypeClass::ComputeBuildTime()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall TechnoTypeClass_ComputeBuildTime(int *this)
 {
-  double result; // st7
-
-  result = (double)*(this + 388) * *((double *)MEMORY[0x8871E0] + 745) * 0.9; /*0x711ef1*/
-  Math::RoundToInt(result); /*0x711ef7*/
-  return result;
+    double result;
+    result = (double)this->Cost * *((double *)g_RulesClass_Instance + 745) * 0.9;
+    Math::RoundToInt(result);
+    return result;
 }
 }
 
@@ -1649,39 +1642,30 @@ _DWORD *__thiscall sub_717AF0(_DWORD *this)
 // 0x717B20
 int TechnoTypeClass::SaveLoadDataArray(TechnoTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoTypeClass::SaveLoadDataArray(_DWORD *this, TechnoTypeClass *aP1)
 {
-  int v3; // ecx
-  int result; // eax
-  int i; // esi
-  int v6; // [esp+20h] [ebp-4h] BYREF
-
-  v3 = *(_DWORD *)aP1->vtable0; /*0x717b2c*/
-  v6 = *(this + 4); /*0x717b39*/
-  (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x717b3d*/
-  result = v6; /*0x717b40*/
-  for ( i = 0; i < v6; ++i ) /*0x717b48*/
+    int v3;
+    int result;
+    int i;
+    int v6;
+    v3 = *(int *)aP1->vtable0;
+    v6 = this->uniqueId;
+    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
+    result = v6;
+    for ( i = 0; i < v6; ++i )
   {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->vtable0 + 16))( /*0x717b58*/
-      aP1,
-      *(this + 1) + 4 * i,
-      4,
-      0);
-    result = v6; /*0x717b5b*/
+    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->vtable1 + 4 * i, 4, 0);
+    result = v6;
   }
-  return result; /*0x717b64*/
+    return result;
 }
 }
 
 // 0x717BC0
 unsigned int * TechnoTypeClass::Constructor_0(ObjectTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TechnoTypeClass::Constructor_0(_DWORD *this, ObjectTypeClass *aP1)
 {
-  *this = &vt_DynamicVectorClass_VoxelAnimTypeClass_const; /*0x717bc2*/
-  return this; /*0x717bc8*/
+    *(void**)this = &vt_DynamicVectorClass_VoxelAnimTypeClass_const;
+    return this;
 }
 }
 

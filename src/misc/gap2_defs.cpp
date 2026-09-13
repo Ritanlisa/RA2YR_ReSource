@@ -12323,31 +12323,22 @@ retn    4
 } }
 // 0x6722F0
 namespace gamemd { int RulesClass::LoadCountries() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RulesClass::LoadCountries(RulesClass *this)
 {
-  int KeyCount; // ebx
-  int i; // esi
-  unsigned __int8 *StringByIndex; // eax
-  char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
-  char *v6; // [esp+30h] [ebp+4h]
-
-  KeyCount = INIClass::GetKeyCount(v6, (unsigned __int8 *)MEMORY[0x839E28]); /*0x672307*/
-  for ( i = 0; i < KeyCount; ++i ) /*0x67230d*/
+    int KeyCount;
+    int i;
+    unsigned char *StringByIndex;
+    char Destination[32];
+    char *v6;
+    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)DataGlobal_839E28);
+    for ( i = 0; i < KeyCount; ++i )
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6, (unsigned __int8 *)MEMORY[0x839E28], i); /*0x672325*/
-    if ( INIClass::GetString( /*0x672333*/
-           (unsigned __int8 ***)v6,
-           (unsigned __int8 *)MEMORY[0x839E28],
-           StringByIndex,
-           &MEMORY[0x889F64],
-           Destination,
-           32) )
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)DataGlobal_839E28, i);
+    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)DataGlobal_839E28, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
-      WeaponTypeClass::Create(Destination); /*0x672340*/
+    WeaponTypeClass::Create(Destination);
     }
   }
-  return KeyCount > 0; /*0x67234c*/
+    return KeyCount > 0;
 }
 } }
 // 0x672440
@@ -12480,124 +12471,88 @@ LABEL_17:
 } }
 // 0x672660
 namespace gamemd { int RulesClass::LoadBuildingTypes() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_672660(RulesClass *this)
 {
-  int KeyCount; // ebx
-  int i; // esi
-  unsigned __int8 *StringByIndex; // eax
-  char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
-  char *v6; // [esp+30h] [ebp+4h]
-
-  KeyCount = INIClass::GetKeyCount(v6, (unsigned __int8 *)MEMORY[0x839DDC]); /*0x672677*/
-  for ( i = 0; i < KeyCount; ++i ) /*0x67267d*/
+    int KeyCount;
+    int i;
+    unsigned char *StringByIndex;
+    char Destination[32];
+    char *v6;
+    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)DataGlobal_839DDC);
+    for ( i = 0; i < KeyCount; ++i )
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6, (unsigned __int8 *)MEMORY[0x839DDC], i); /*0x672695*/
-    if ( INIClass::GetString( /*0x6726a3*/
-           (unsigned __int8 ***)v6,
-           (unsigned __int8 *)MEMORY[0x839DDC],
-           StringByIndex,
-           &MEMORY[0x889F64],
-           Destination,
-           32) )
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)DataGlobal_839DDC, i);
+    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)DataGlobal_839DDC, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
-      BuildingTypeClass::FindOrCreate(Destination); /*0x6726b0*/
+    BuildingTypeClass::FindOrCreate(Destination);
     }
   }
-  return KeyCount > 0; /*0x6726bc*/
+    return KeyCount > 0;
 }
 } }
 // 0x672740
 namespace gamemd { int RulesClass::ReadSideData() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_672740(RulesClass *this)
 {
-  int KeyCount; // ebx
-  int i; // edi
-  unsigned __int8 *StringByIndex; // eax
-  _DWORD *v4; // eax
-  char Destination[128]; // [esp+Ch] [ebp-80h] BYREF
-  char *v7; // [esp+90h] [ebp+4h]
-
-  KeyCount = INIClass::GetKeyCount(v7, (unsigned __int8 *)MEMORY[0x839DC4]); /*0x67275d*/
-  for ( i = 0; i < KeyCount; ++i ) /*0x672763*/
+    int KeyCount;
+    int i;
+    unsigned char *StringByIndex;
+    int *v4;
+    char Destination[128];
+    char *v7;
+    KeyCount = INIClass::GetKeyCount(v7, (unsigned char *)DataGlobal_839DC4);
+    for ( i = 0; i < KeyCount; ++i )
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v7, (unsigned __int8 *)MEMORY[0x839DC4], i); /*0x67276f*/
-    if ( INIClass::GetString( /*0x67278c*/
-           (unsigned __int8 ***)v7,
-           (unsigned __int8 *)MEMORY[0x839DC4],
-           StringByIndex,
-           &MEMORY[0x889F64],
-           Destination,
-           128) )
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v7, (unsigned char *)DataGlobal_839DC4, i);
+    if ( INIClass::GetString( (unsigned char ***)v7, (unsigned char *)DataGlobal_839DC4, StringByIndex, &g_INI_DefaultBuffer, Destination, 128) )
     {
-      v4 = TechnoClass::Create(Destination); /*0x672799*/
+    v4 = TechnoClass::Create(Destination);
     }
     else
     {
-      v4 = 0; /*0x6727a0*/
+    v4 = 0;
     }
-    (*(void (__thiscall **)(_DWORD *, char *))(*v4 + 100))(v4, v7); /*0x6727a7*/
+    (*(void (__thiscall **)(int *, char *))(*v4 + 100))(v4, v7);
   }
-  return KeyCount > 0; /*0x6727b1*/
+    return KeyCount > 0;
 }
 } }
 // 0x6728B0
 namespace gamemd { int RulesClass::LoadAnimTypes() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6728B0(RulesClass *this)
 {
-  int KeyCount; // ebx
-  int i; // esi
-  unsigned __int8 *StringByIndex; // eax
-  char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
-  char *v6; // [esp+30h] [ebp+4h]
-
-  KeyCount = INIClass::GetKeyCount(v6, (unsigned __int8 *)MEMORY[0x83D0DC]); /*0x6728c6*/
-  for ( i = 0; i < KeyCount; ++i ) /*0x6728cc*/
+    int KeyCount;
+    int i;
+    unsigned char *StringByIndex;
+    char Destination[32];
+    char *v6;
+    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)g_INI_Key_Animations);
+    for ( i = 0; i < KeyCount; ++i )
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6, (unsigned __int8 *)MEMORY[0x83D0DC], i); /*0x6728e2*/
-    if ( INIClass::GetString( /*0x6728ef*/
-           (unsigned __int8 ***)v6,
-           (unsigned __int8 *)MEMORY[0x83D0DC],
-           StringByIndex,
-           &MEMORY[0x889F64],
-           Destination,
-           32) )
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)g_INI_Key_Animations, i);
+    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)g_INI_Key_Animations, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
-      AnimTypeClass::FindOrCreate(Destination); /*0x6728fc*/
+    AnimTypeClass::FindOrCreate(Destination);
     }
   }
-  return KeyCount > 0; /*0x672908*/
+    return KeyCount > 0;
 }
 } }
 // 0x672A00
 namespace gamemd { int RulesClass::readColors() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_672A00(RulesClass *this)
 {
-  int KeyCount; // ebx
-  int i; // esi
-  unsigned __int8 *StringByIndex; // eax
-  char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
-  char *v6; // [esp+30h] [ebp+4h]
-
-  KeyCount = INIClass::GetKeyCount(v6, (unsigned __int8 *)MEMORY[0x83D0F4]); /*0x672a16*/
-  for ( i = 0; i < KeyCount; ++i ) /*0x672a1c*/
+    int KeyCount;
+    int i;
+    unsigned char *StringByIndex;
+    char Destination[32];
+    char *v6;
+    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)g_INI_Key_Particles);
+    for ( i = 0; i < KeyCount; ++i )
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6, (unsigned __int8 *)MEMORY[0x83D0F4], i); /*0x672a32*/
-    if ( INIClass::GetString( /*0x672a3f*/
-           (unsigned __int8 ***)v6,
-           (unsigned __int8 *)MEMORY[0x83D0F4],
-           StringByIndex,
-           &MEMORY[0x889F64],
-           Destination,
-           32) )
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)g_INI_Key_Particles, i);
+    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)g_INI_Key_Particles, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
-      NetworkEventClass::Process(Destination); /*0x672a4c*/
+    NetworkEventClass::Process(Destination);
     }
   }
-  return KeyCount > 0; /*0x672a58*/
+    return KeyCount > 0;
 }
 } }
 // 0x672AE0
@@ -22395,15 +22350,12 @@ SuperClass *__thiscall SuperClass::ProcessEvent(void *Block, char a2)
 } }
 // 0x6CE270
 namespace gamemd { int SuperClass::SetFieldX() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6CE270(int *this)
 {
-  int result; // eax
-
-  result = *this; /*0x6ce270*/
-  if ( *this ) /*0x6ce270*/
-    return (*(int (__stdcall **)(int))(*(_DWORD *)result + 4))(result); /*0x6ce279*/
-  return result; /*0x6ce27c*/
+    int result;
+    result = *(void**)this;
+    if ( *(void**)this )
+    return (*(int (__stdcall **)(int))(*(int *)(result) + 4))(result);
+    return result;
 }
 } }
 // 0x6CE280
@@ -22435,17 +22387,14 @@ void __thiscall sub_6CE280(int *this)
 } }
 // 0x6CE2C0
 namespace gamemd { void* SuperClass::SetCurrentFrame() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall sub_6CE2C0(_DWORD *this)
 {
-  wchar_t *result; // eax
-
-  if ( *this == -1 ) /*0x6ce2c3*/
+    wchar_t *result;
+    if ( *(void**)this == -1 )
   {
-    result = MEMORY[0xA8ED84]; /*0x6ce2c5*/
-    *this = MEMORY[0xA8ED84]; /*0x6ce2ca*/
+    result = g_CurrentFrame;
+    *(void**)this = g_CurrentFrame;
   }
-  return result; /*0x6ce2cc*/
+    return result;
 }
 } }
 // 0x6CE320
@@ -25162,20 +25111,17 @@ int __thiscall sub_74E6B0(int this)
 } }
 // 0x7534E0
 namespace gamemd { int VoxClass::SetEVAIndex() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VoxClass::SetEVAIndex(void *this)
 {
-  int result; // eax
-
-  if ( this == (void *)-1 ) /*0x7534e3*/
+    int result;
+    if ( this == (void *)-1 )
   {
-    MEMORY[0xB1D4C8] = 0; /*0x7534e7*/
-    return 0; /*0x7534e5*/
+    DataGlobal_B1D4C8 = 0;
+    return 0;
   }
-  else
+    else
   {
-    MEMORY[0xB1D4C8] = (int)this; /*0x7534ed*/
+    DataGlobal_B1D4C8 = (int)this;
   }
-  return result; /*0x7534ec*/
+    return result;
 }
 } }

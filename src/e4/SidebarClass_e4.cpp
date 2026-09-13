@@ -38,30 +38,28 @@ int __thiscall sub_4CA170(_DWORD *this)
 // 0x653010
 void SidebarClass::CreateScrollButtons()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass_CreateScrollButtons()
 {
-  DisplayClass::ddtor(); /*0x653011*/
-  if ( !MEMORY[0xA8ED6B] ) /*0x65301f*/
+    DisplayClass::ddtor();
+    if ( !g_ArmageddonMode )
   {
-    MEMORY[0xB0499C] = 242; /*0x65303d*/
-    MEMORY[0xB049C4] = 1; /*0x653047*/
-    MEMORY[0xB049C8] = MEMORY[0x87F6CC]; /*0x65304e*/
-    MEMORY[0xB049A5] = 0; /*0x653053*/
-    MEMORY[0xB049A8] = 0; /*0x653059*/
-    MEMORY[0xB04998] = 5; /*0x65305f*/
-    Rect_Point::Set(MEMORY[0xB04978], MEMORY[0xB04A00], MEMORY[0xB04A04]); /*0x653069*/
-    ShapeButton::SetShape((int)MEMORY[0xB04978], (int)dword_B048E0, 0, 0); /*0x65307b*/
-    VectorClass_ptr_ConvertClass::MarkDirty(MEMORY[0xB04978]); /*0x653085*/
-    MEMORY[0xB04960] = MEMORY[0x87F6CC]; /*0x65309b*/
-    MEMORY[0xB04934] = 243; /*0x6530a8*/
-    MEMORY[0xB0495C] = 1; /*0x6530b2*/
-    MEMORY[0xB0493D] = 0; /*0x6530b9*/
-    MEMORY[0xB04940] = 0; /*0x6530bf*/
-    MEMORY[0xB04930] = 5; /*0x6530c5*/
-    Rect_Point::Set(MEMORY[0xB04910], dword_B048C8, dword_B048CC); /*0x6530cf*/
-    ShapeButton::SetShape((int)MEMORY[0xB04910], (int)dword_B048AC, 0, 0); /*0x6530e2*/
-    VectorClass_ptr_ConvertClass::MarkDirty(MEMORY[0xB04910]); /*0x6530ec*/
+    DataGlobal_B0499C = 242;
+    DataGlobal_B049C4 = 1;
+    DataGlobal_B049C8 = g_SidebarConfig;
+    DataGlobal_B049A5 = 0;
+    DataGlobal_B049A8 = 0;
+    DataGlobal_B04998 = 5;
+    Rect_Point::Set(DataGlobal_B04978, DataGlobal_B04A00, DataGlobal_B04A04);
+    ShapeButton::SetShape((int)DataGlobal_B04978, (int)DataGlobal_B048E0, 0, 0);
+    VectorClass_ptr_ConvertClass::MarkDirty(DataGlobal_B04978);
+    DataGlobal_B04960 = g_SidebarConfig;
+    DataGlobal_B04934 = 243;
+    DataGlobal_B0495C = 1;
+    DataGlobal_B0493D = 0;
+    DataGlobal_B04940 = 0;
+    DataGlobal_B04930 = 5;
+    Rect_Point::Set(DataGlobal_B04910, DataGlobal_B048C8, DataGlobal_B048CC);
+    ShapeButton::SetShape((int)DataGlobal_B04910, (int)DataGlobal_B048AC, 0, 0);
+    VectorClass_ptr_ConvertClass::MarkDirty(DataGlobal_B04910);
   }
 }
 }

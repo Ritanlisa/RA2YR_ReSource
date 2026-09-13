@@ -58,39 +58,33 @@ int __thiscall VocClass_Cleanup(int this)
 // 0x751590
 char * VocClass::GetSampleNameByIndex(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__fastcall VocClass::GetSampleNameByIndex(int a1)
 {
-  char *v1; // ecx
-
-  if ( a1 < 0 || a1 >= MEMORY[0xB1D388] ) /*0x75159a*/
-    return MEMORY[0x817474]; /*0x7515b5*/
-  v1 = (char *)**((_DWORD **)MEMORY[0xB1D37C] + a1); /*0x7515a4*/
-  if ( v1 ) /*0x7515a8*/
-    return VocClass::GetSampleName(v1); /*0x7515aa*/
-  else
-    return MEMORY[0x846574]; /*0x7515af*/
+    char *v1;
+    if ( a1 < 0 || a1 >= g_VocPlayState )
+    return g_Str__none_;
+    v1 = (char *)**((int **)g_VocAudioConfig + a1);
+    if ( v1 )
+    return VocClass::GetSampleName(v1);
+    else
+    return g_Str_Invalid_Voc;
 }
 }
 
 // 0x753250
 int VocClass::FindByName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VocClass::FindByName(void *this)
 {
-  int v3; // esi
-
-  if ( !this ) /*0x753255*/
-    return -1; /*0x753257*/
-  v3 = 0; /*0x753262*/
-  if ( *(int *)&stru_B1D188.__pad_2B8[112] <= 0 ) /*0x753266*/
-    return -1; /*0x753288*/
-  while ( _strcmpi(this, *(const void **)(*(_DWORD *)&stru_B1D188.__pad_2B8[100] + 4 * v3)) ) /*0x75327c*/
+    int v3;
+    if ( !this )
+    return -1;
+    v3 = 0;
+    if ( *(int *)&DataGlobal_B1D188.__pad_2B8[112] <= 0 )
+    return -1;
+    while ( _strcmpi(this, *(const void **)(*(int *)&DataGlobal_B1D188.__pad_2B8[100] + 4 * v3)) )
   {
-    if ( ++v3 >= *(int *)&stru_B1D188.__pad_2B8[112] ) /*0x753286*/
-      return -1; /*0x753286*/
+    if ( ++v3 >= *(int *)&DataGlobal_B1D188.__pad_2B8[112] )
+    return -1;
   }
-  return v3; /*0x75325a*/
+    return v3;
 }
 }

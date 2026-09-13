@@ -120,8 +120,6 @@ int __thiscall RadioClass::PowerDrainUpdate(int *this, AbstractClass *aP1)
 // 0x65AB80
 namespace ra2 {
 namespace game {
-int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
-{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RadioClass::LoadState(void *this, ObjectClass *aP1, ObjectClass *aP2)
 {
@@ -190,7 +188,6 @@ LABEL_8:
   }
   return result; /*0x65ac37*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -199,44 +196,37 @@ namespace ra2 {
 namespace game {
 int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall RadioClass::SaveState(int *a0, RadioClass *aP1, int aP2)
 {
-  int result; // eax
-  int v4; // edx
-  int v5; // ebx
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)a0, (ObjectTypeClass *)aP1, (ObjectTypeClass *)aP2); /*0x65ac52*/
-  if ( result >= 0 ) /*0x65ac59*/
+    int result;
+    int v4;
+    int v5;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)a0, (ObjectTypeClass *)aP1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
   {
-    v4 = *(_DWORD *)aP1->__pad_0; /*0x65ac61*/
-    aP2 = a0[58]; /*0x65ac6d*/
-    result = (*(int (__stdcall **)(RadioClass *, int *, int, _DWORD))(v4 + 16))(aP1, &aP2, 4, 0); /*0x65ac71*/
-    if ( result >= 0 ) /*0x65ac76*/
+    v4 = *(int *)aP1->__pad_0;
+    aP2 = *((int*)(a0) + 58);
+    result = (*(int (__stdcall **)(RadioClass *, int *, int, int))(v4 + 16))(aP1, &aP2, 4, 0);
+    if ( result >= 0 )
     {
-      v5 = 0; /*0x65ac7c*/
-      if ( aP2 <= 0 ) /*0x65ac80*/
+    v5 = 0;
+    if ( aP2 <= 0 )
       {
-        return 0; /*0x65aca3*/
+    return 0;
       }
-      else
+    else
       {
-        while ( 1 ) /*0x65ac93*/
+    while ( 1 )
         {
-          result = (*(int (__stdcall **)(RadioClass *, int, int, _DWORD))(*(_DWORD *)aP1->__pad_0 + 16))( /*0x65ac93*/
-                     aP1,
-                     a0[57] + 4 * v5,
-                     4,
-                     0);
-          if ( result < 0 ) /*0x65ac98*/
-            break; /*0x65ac98*/
-          if ( ++v5 >= aP2 ) /*0x65aca1*/
-            return 0; /*0x65aca1*/
+    result = (*(int (__stdcall **)(RadioClass *, int, int, int))(*(int *)aP1->__pad_0 + 16))( aP1, *((int*)(a0) + 57) + 4 * v5, 4, 0);
+    if ( result < 0 )
+    break;
+    if ( ++v5 >= aP2 )
+    return 0;
         }
       }
     }
   }
-  return result; /*0x65aca5*/
+    return result;
 }
 }
 } // namespace game

@@ -178,63 +178,60 @@ LABEL_19:
 namespace gamemd {
 int E4Recv_5942F0::sub_5942F0(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5942F0(_DWORD *this, int *a2)
 {
-  int *v2; // ebp
-  int v3; // ebx
-  int result; // eax
-  int v5; // edx
-  int v6; // edi
-  int v7; // esi
-  int v8; // eax
-  _BYTE *v9; // eax
-  int v10; // [esp+8h] [ebp-Ch]
-  __int16 v11[2]; // [esp+Ch] [ebp-8h] BYREF
-  _DWORD *v12; // [esp+10h] [ebp-4h]
-
-  v2 = a2; /*0x5942f5*/
-  v12 = this; /*0x5942f9*/
-  v3 = a2[1]; /*0x5942fd*/
-  result = v3 + a2[3]; /*0x594303*/
-  v10 = v3; /*0x594305*/
-  if ( v3 < result ) /*0x59430b*/
+    int *v2;
+    int v3;
+    int result;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    char *v9;
+    int v10;
+    short v11[2];
+    int *v12;
+    v2 = a2;
+    v12 = this;
+    v3 = *((int*)(a2) + 1);
+    result = v3 + *((int*)(a2) + 3);
+    v10 = v3;
+    if ( v3 < result )
   {
-    v5 = g_MapCellHeight_Value; /*0x594311*/
-    do /*0x5943c8*/
+    v5 = g_MapCellHeight_Value;
+    do
     {
-      v6 = *v2; /*0x594319*/
-      if ( *v2 < *v2 + v2[2] ) /*0x594323*/
+    v6 = *v2;
+    if ( *v2 < *v2 + v2[2] )
       {
-        v7 = (__int16)v3; /*0x594329*/
-        do /*0x5943b3*/
+    v7 = (short)v3;
+    do
         {
-          v11[0] = v6; /*0x59432f*/
-          v11[1] = v3; /*0x594334*/
-          v8 = v7 + (__int16)v6; /*0x594339*/
-          if ( v8 > v5 ) /*0x59433e*/
+    v11[0] = v6;
+    v11[1] = v3;
+    v8 = v7 + (short)v6;
+    if ( v8 > v5 )
           {
-            if ( (__int16)v6 - v7 < v5 && v7 - (__int16)v6 < v5 && v8 <= g_MapCellCount ) /*0x594356*/
+    if ( (short)v6 - v7 < v5 && v7 - (short)v6 < v5 && v8 <= g_MapCellCount )
             {
-              if ( g_MapTileArray ) /*0x594360*/
-                *((_DWORD *)g_MapTileArray + 20 * (__int16)v6 + 20 * unk_89C2DC * v7 + 14) = v12[2]; /*0x59437a*/
-              v9 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v11); /*0x594388*/
-              v9[283] = *((_BYTE *)v12 + 16); /*0x594394*/
-              v5 = g_MapCellHeight_Value; /*0x59439a*/
+    if ( g_MapTileArray )
+    *((int *)(g_MapTileArray) + 20 * (short)v6 + 20 * g_MapCellWidth * v7 + 14) = v12[2];
+    v9 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v11);
+    v9[283] = *((char *)(v12) + 16);
+    v5 = g_MapCellHeight_Value;
             }
-            v3 = v10; /*0x5943a0*/
-            v2 = a2; /*0x5943a4*/
+    v3 = v10;
+    v2 = a2;
           }
-          ++v6; /*0x5943ae*/
-          result = *v2 + v2[2]; /*0x5943af*/
+    ++v6;
+    result = *v2 + v2[2];
         }
-        while ( v6 < result ); /*0x5943b3*/
+    while ( v6 < result );
       }
-      v10 = ++v3; /*0x5943c4*/
+    v10 = ++v3;
     }
-    while ( v3 < v2[1] + v2[3] ); /*0x5943c8*/
+    while ( v3 < v2[1] + v2[3] );
   }
-  return result; /*0x5943d0*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -899,11 +896,10 @@ LABEL_39:
 namespace gamemd {
 int j_Options_GetValue()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-bool __thiscall j_Options::GetValue(const char **dwNewLong)
+// 0x597d40
+    bool __thiscall j_Options::GetValue(const char **dwNewLong)
 {
-  return Options::PrepareSaveLoadDlg(dwNewLong);
+    return Options::PrepareSaveLoadDlg(dwNewLong);
 }
 }
 } // namespace gamemd
@@ -912,10 +908,8 @@ bool __thiscall j_Options::GetValue(const char **dwNewLong)
 namespace gamemd {
 double sub_598000()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double sub_598000()
 {
-  return (double)(unsigned int)Random::State(&g_Randomizer) * 2.328306437080797e-10; /*0x598023*/
+    return (double)(unsigned int)Random::State(&g_Randomizer) * 2.328306437080797e-10;
 }
 }
 } // namespace gamemd
@@ -1250,19 +1244,14 @@ LABEL_25:
 namespace gamemd {
 double sub_59D480(short * a1, short * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double __stdcall sub_59D480(__int16 *a1, __int16 *a2, int a3)
 {
-  int v3; // eax
-  int v4; // edx
-  float v6; // [esp+18h] [ebp+4h]
-
-  v3 = *a1 - *a2; /*0x59d49c*/
-  v4 = a1[1] - a2[1]; /*0x59d49e*/
-  v6 = Math::Sqrt((double)(v3 * v3 + v4 * v4)); /*0x59d4bd*/
-  return (double)(unsigned int)Random::State(&g_Randomizer) * 2.328306437080797e-10 * 10.0 /*0x59d503*/
-       + 0.5 * v6
-       - (double)a3 * 0.02;
+    int v3;
+    int v4;
+    float v6;
+    v3 = *a1 - *a2;
+    v4 = *((int*)(a1) + 1) - *((int*)(a2) + 1);
+    v6 = Math::Sqrt((double)(v3 * v3 + v4 * v4));
+    return (double)(unsigned int)Random::State(&g_Randomizer) * 2.328306437080797e-10 * 10.0 + 0.5 * v6 - (double)a3 * 0.02;
 }
 }
 } // namespace gamemd

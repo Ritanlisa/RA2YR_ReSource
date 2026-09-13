@@ -22,106 +22,92 @@ int __thiscall LoadingScreen::GetColorScheme(ProgressScreenClass *this)
 // 0x72B2F0
 char * LoadingScreen::GetBackgroundImage(ScenarioClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall LoadingScreen::GetBackgroundImage(void *this, ScenarioClass *aP1)
 {
-  char *result; // eax
-
-  result = *(char **)&stru_830620.__pad_579C[61048]; /*0x72b2f0*/
-  if ( this != (void *)640 ) /*0x72b2fb*/
-    return *(char **)&stru_830620.__pad_579C[61052]; /*0x72b2fd*/
-  return result; /*0x72b302*/
+    char *result;
+    result = *(char **)&DataGlobal_830620.__pad_579C[61048];
+    if ( this != (void *)640 )
+    return *(char **)&DataGlobal_830620.__pad_579C[61052];
+    return result;
 }
 }
 
 // 0x72B310
 char * LoadingScreen::GetOverlayImage(ScenarioClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall LoadingScreen::GetOverlayImage(void *this, ScenarioClass *aP1)
 {
-  char *result; // eax
-
-  result = *(char **)&stru_830620.__pad_579C[61056]; /*0x72b310*/
-  if ( this != (void *)640 ) /*0x72b31b*/
-    return *(char **)&stru_830620.__pad_579C[61060]; /*0x72b31d*/
-  return result; /*0x72b322*/
+    char *result;
+    result = *(char **)&DataGlobal_830620.__pad_579C[61056];
+    if ( this != (void *)640 )
+    return *(char **)&DataGlobal_830620.__pad_579C[61060];
+    return result;
 }
 }
 
 // 0x72B390
 int LoadingScreen::ReleaseAnimObjects()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_72B390(char *this)
 {
-  if ( MEMORY[0xB0FB88] ) /*0x72b39b*/
+    if ( DataGlobal_B0FB88 )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0xB0FB88])(MEMORY[0xB0FB88], 1); /*0x72b3a1*/
-    MEMORY[0xB0FB88] = 0; /*0x72b3a3*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FB88)(DataGlobal_B0FB88, 1);
+    DataGlobal_B0FB88 = 0;
   }
-  if ( MEMORY[0xB0FB84] ) /*0x72b3b4*/
+    if ( DataGlobal_B0FB84 )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FB84]); /*0x72b3b7*/
-    MEMORY[0xB0FB84] = 0; /*0x72b3bf*/
+    __3_YAXPAX_Z(DataGlobal_B0FB84);
+    DataGlobal_B0FB84 = 0;
   }
-  return LoadPaletteSimple(this, &MEMORY[0xB0FB84], &MEMORY[0xB0FB88]); /*0x72b3da*/
+    return LoadPaletteSimple(this, &DataGlobal_B0FB84, &DataGlobal_B0FB88);
 }
 }
 
 // 0x72CF40
 char LoadingScreen::Init()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char LoadingScreen_Init()
 {
-  char result; // al
-
-  result = MEMORY[0xB0FCD9]; /*0x72cf40*/
-  if ( !MEMORY[0xB0FCD9] ) /*0x72cf47*/
+    char result;
+    result = DataGlobal_B0FCD9;
+    if ( !DataGlobal_B0FCD9 )
   {
-    if ( MEMORY[0x8A00A4] == 800 ) /*0x72cf53*/
-      MEMORY[0xB0FA18] = LoadFileSHP(MEMORY[0x844D6C], (bool *)&MEMORY[0xB0FCD8]); /*0x72cf65*/
-    result = LoadPaletteSimple(MEMORY[0x844D70], &MEMORY[0xB0FCDC], &MEMORY[0xB0FCE0]); /*0x72cf7a*/
-    MEMORY[0xB0FCD9] = 1; /*0x72cf7f*/
+    if ( g_DisplayWidth == 800 )
+    DataGlobal_B0FA18 = LoadFileSHP(DataGlobal_844D6C, (bool *)&DataGlobal_B0FCD8);
+    result = LoadPaletteSimple(DataGlobal_844D70, &DataGlobal_B0FCDC, &DataGlobal_B0FCE0);
+    DataGlobal_B0FCD9 = 1;
   }
-  return result; /*0x72cf86*/
+    return result;
 }
 }
 
 // 0x72DEF0
 char LoadingScreen::FreeResources3()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char LoadingScreen_FreeResources3()
 {
-  char result; // al
-
-  result = MEMORY[0xB0FBE0]; /*0x72def0*/
-  if ( MEMORY[0xB0FBE0] ) /*0x72defa*/
+    char result;
+    result = DataGlobal_B0FBE0;
+    if ( DataGlobal_B0FBE0 )
   {
-    MEMORY[0xB0FBE0] = 0; /*0x72df00*/
-    LoadingScreen::DestroyFileTrees(); /*0x72df06*/
-    LoadingScreen::CleanupObjects(); /*0x72df0b*/
-    __3_YAXPAX_Z(MEMORY[0xB0FC10]); /*0x72df16*/
-    MEMORY[0xB0FC10] = 0; /*0x72df21*/
-    __3_YAXPAX_Z(MEMORY[0xB0FC14]); /*0x72df28*/
-    MEMORY[0xB0FC14] = 0; /*0x72df33*/
-    __3_YAXPAX_Z(MEMORY[0xB0FC18]); /*0x72df3a*/
-    MEMORY[0xB0FC18] = 0; /*0x72df44*/
-    __3_YAXPAX_Z(MEMORY[0xB0FC1C]); /*0x72df4b*/
-    MEMORY[0xB0FC1C] = 0; /*0x72df56*/
-    __3_YAXPAX_Z(MEMORY[0xB0FC20]); /*0x72df5d*/
-    MEMORY[0xB0FC20] = 0; /*0x72df68*/
-    __3_YAXPAX_Z(MEMORY[0xB0FC24]); /*0x72df6f*/
-    MEMORY[0xB0FC24] = 0; /*0x72df79*/
-    __3_YAXPAX_Z(MEMORY[0xB0FC28]); /*0x72df80*/
-    MEMORY[0xB0FC28] = 0; /*0x72df8b*/
-    __3_YAXPAX_Z(MEMORY[0xB0FC2C]); /*0x72df92*/
-    MEMORY[0xB0FC2C] = 0; /*0x72df9a*/
-    return ReleaseLoadingResources(); /*0x72dfa0*/
+    DataGlobal_B0FBE0 = 0;
+    LoadingScreen::DestroyFileTrees();
+    LoadingScreen::CleanupObjects();
+    __3_YAXPAX_Z(DataGlobal_B0FC10);
+    DataGlobal_B0FC10 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC14);
+    DataGlobal_B0FC14 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC18);
+    DataGlobal_B0FC18 = 0;
+    __3_YAXPAX_Z(g_GadgetAnimState);
+    g_GadgetAnimState = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC20);
+    DataGlobal_B0FC20 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC24);
+    DataGlobal_B0FC24 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC28);
+    DataGlobal_B0FC28 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC2C);
+    DataGlobal_B0FC2C = 0;
+    return ReleaseLoadingResources();
   }
-  return result; /*0x72dfa5*/
+    return result;
 }
 }
 
@@ -258,38 +244,36 @@ void LoadingScreen_DestroyFileTrees()
 // 0x72F140
 void LoadingScreen::CleanupObjects()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void LoadingScreen_CleanupObjects()
 {
-  if ( MEMORY[0xB0FBC8] ) /*0x72f14a*/
+    if ( DataGlobal_B0FBC8 )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FBC8]); /*0x72f14d*/
-    MEMORY[0xB0FBC8] = 0; /*0x72f155*/
+    __3_YAXPAX_Z(DataGlobal_B0FBC8);
+    DataGlobal_B0FBC8 = 0;
   }
-  if ( MEMORY[0xB0FBCC] ) /*0x72f163*/
+    if ( DataGlobal_B0FBCC )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0xB0FBCC])(MEMORY[0xB0FBCC], 1); /*0x72f169*/
-    MEMORY[0xB0FBCC] = 0; /*0x72f16b*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBCC)(DataGlobal_B0FBCC, 1);
+    DataGlobal_B0FBCC = 0;
   }
-  if ( MEMORY[0xB0FBD0] ) /*0x72f178*/
+    if ( DataGlobal_B0FBD0 )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FBD0]); /*0x72f17b*/
-    MEMORY[0xB0FBD0] = 0; /*0x72f183*/
+    __3_YAXPAX_Z(DataGlobal_B0FBD0);
+    DataGlobal_B0FBD0 = 0;
   }
-  if ( MEMORY[0xB0FBD4] ) /*0x72f191*/
+    if ( DataGlobal_B0FBD4 )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0xB0FBD4])(MEMORY[0xB0FBD4], 1); /*0x72f197*/
-    MEMORY[0xB0FBD4] = 0; /*0x72f199*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBD4)(DataGlobal_B0FBD4, 1);
+    DataGlobal_B0FBD4 = 0;
   }
-  if ( MEMORY[0xB0FBD8] ) /*0x72f1a6*/
+    if ( DataGlobal_B0FBD8 )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FBD8]); /*0x72f1a9*/
-    MEMORY[0xB0FBD8] = 0; /*0x72f1b1*/
+    __3_YAXPAX_Z(DataGlobal_B0FBD8);
+    DataGlobal_B0FBD8 = 0;
   }
-  if ( MEMORY[0xB0FBDC] ) /*0x72f1bf*/
+    if ( DataGlobal_B0FBDC )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0xB0FBDC])(MEMORY[0xB0FBDC], 1); /*0x72f1c5*/
-    MEMORY[0xB0FBDC] = 0; /*0x72f1c7*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBDC)(DataGlobal_B0FBDC, 1);
+    DataGlobal_B0FBDC = 0;
   }
 }
 }
@@ -340,107 +324,102 @@ void *LoadingScreen_LoadSHPs()
 // 0x730400
 int LoadingScreen::FreeResources()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int LoadingScreen_FreeResources()
 {
-  int result; // eax
-
-  if ( MEMORY[0xB0FC04] ) /*0x73040a*/
+    int result;
+    if ( DataGlobal_B0FC04 )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FC04]); /*0x73040d*/
-    MEMORY[0xB0FC04] = 0; /*0x730415*/
+    __3_YAXPAX_Z(DataGlobal_B0FC04);
+    DataGlobal_B0FC04 = 0;
   }
-  HashTree::MarkEntry(MEMORY[0x844C08]); /*0x730421*/
-  if ( MEMORY[0xB0FC08] ) /*0x73042e*/
+    HashTree::MarkEntry(DataGlobal_844C08);
+    if ( DataGlobal_B0FC08 )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0xB0FC08])(MEMORY[0xB0FC08], 1); /*0x730434*/
-    MEMORY[0xB0FC08] = 0; /*0x730436*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FC08)(DataGlobal_B0FC08, 1);
+    DataGlobal_B0FC08 = 0;
   }
-  if ( MEMORY[0xB0FBFC] ) /*0x730443*/
+    if ( DataGlobal_B0FBFC )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FBFC]); /*0x730446*/
-    MEMORY[0xB0FBFC] = 0; /*0x73044e*/
+    __3_YAXPAX_Z(DataGlobal_B0FBFC);
+    DataGlobal_B0FBFC = 0;
   }
-  HashTree::MarkEntry(MEMORY[0x844C04]); /*0x73045a*/
-  if ( MEMORY[0xB0FC00] ) /*0x730467*/
+    HashTree::MarkEntry(DataGlobal_844C04);
+    if ( DataGlobal_B0FC00 )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0xB0FC00])(MEMORY[0xB0FC00], 1); /*0x73046d*/
-    MEMORY[0xB0FC00] = 0; /*0x73046f*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FC00)(DataGlobal_B0FC00, 1);
+    DataGlobal_B0FC00 = 0;
   }
-  if ( MEMORY[0xB0FBF4] ) /*0x73047c*/
+    if ( DataGlobal_B0FBF4 )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FBF4]); /*0x73047f*/
-    MEMORY[0xB0FBF4] = 0; /*0x730487*/
+    __3_YAXPAX_Z(DataGlobal_B0FBF4);
+    DataGlobal_B0FBF4 = 0;
   }
-  HashTree::MarkEntry(MEMORY[0x844C00]); /*0x730493*/
-  if ( MEMORY[0xB0FBF8] ) /*0x7304a0*/
+    HashTree::MarkEntry(DataGlobal_844C00);
+    if ( DataGlobal_B0FBF8 )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0xB0FBF8])(MEMORY[0xB0FBF8], 1); /*0x7304a6*/
-    MEMORY[0xB0FBF8] = 0; /*0x7304a8*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBF8)(DataGlobal_B0FBF8, 1);
+    DataGlobal_B0FBF8 = 0;
   }
-  if ( MEMORY[0xB0FBE4] ) /*0x7304b5*/
+    if ( DataGlobal_B0FBE4 )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FBE4]); /*0x7304b8*/
-    MEMORY[0xB0FBE4] = 0; /*0x7304c0*/
+    __3_YAXPAX_Z(DataGlobal_B0FBE4);
+    DataGlobal_B0FBE4 = 0;
   }
-  HashTree::MarkEntry(MEMORY[0x844BF0]); /*0x7304cc*/
-  if ( MEMORY[0xB0FBE8] ) /*0x7304d9*/
+    HashTree::MarkEntry(DataGlobal_844BF0);
+    if ( DataGlobal_B0FBE8 )
   {
-    (**(void (__thiscall ***)(int, int))MEMORY[0xB0FBE8])(MEMORY[0xB0FBE8], 1); /*0x7304df*/
-    MEMORY[0xB0FBE8] = 0; /*0x7304e1*/
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBE8)(DataGlobal_B0FBE8, 1);
+    DataGlobal_B0FBE8 = 0;
   }
-  if ( MEMORY[0xB0FBEC] ) /*0x7304ee*/
+    if ( DataGlobal_B0FBEC )
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FBEC]); /*0x7304f1*/
-    MEMORY[0xB0FBEC] = 0; /*0x7304f9*/
+    __3_YAXPAX_Z(DataGlobal_B0FBEC);
+    DataGlobal_B0FBEC = 0;
   }
-  result = HashTree::MarkEntry(MEMORY[0x844BF4]); /*0x730505*/
-  if ( MEMORY[0xB0FBF0] ) /*0x730512*/
+    result = HashTree::MarkEntry(DataGlobal_844BF4);
+    if ( DataGlobal_B0FBF0 )
   {
-    result = (**(int (__thiscall ***)(int, int))MEMORY[0xB0FBF0])(MEMORY[0xB0FBF0], 1); /*0x730518*/
-    MEMORY[0xB0FBF0] = 0; /*0x73051a*/
+    result = (**(int (__thiscall ***)(int, int))DataGlobal_B0FBF0)(DataGlobal_B0FBF0, 1);
+    DataGlobal_B0FBF0 = 0;
   }
-  return result; /*0x730520*/
+    return result;
 }
 }
 
 // 0x730530
 void LoadingScreen::FreeResources2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void LoadingScreen_FreeResources2()
 {
-  __3_YAXPAX_Z(MEMORY[0xB0FC30]); /*0x730537*/
-  MEMORY[0xB0FC30] = 0; /*0x730545*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC34]); /*0x73054b*/
-  MEMORY[0xB0FC34] = 0; /*0x730556*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC38]); /*0x73055d*/
-  MEMORY[0xB0FC38] = 0; /*0x730567*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC3C]); /*0x73056e*/
-  MEMORY[0xB0FC3C] = 0; /*0x730579*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC40]); /*0x730580*/
-  MEMORY[0xB0FC40] = 0; /*0x73058b*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC44]); /*0x730592*/
-  MEMORY[0xB0FC44] = 0; /*0x73059c*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC48]); /*0x7305a3*/
-  MEMORY[0xB0FC48] = 0; /*0x7305ae*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC4C]); /*0x7305b5*/
-  MEMORY[0xB0FC4C] = 0; /*0x7305c0*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC50]); /*0x7305c7*/
-  MEMORY[0xB0FC50] = 0; /*0x7305d1*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC54]); /*0x7305d8*/
-  MEMORY[0xB0FC54] = 0; /*0x7305e3*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC58]); /*0x7305ea*/
-  MEMORY[0xB0FC58] = 0; /*0x7305f5*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC5C]); /*0x7305fc*/
-  MEMORY[0xB0FC5C] = 0; /*0x730606*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC60]); /*0x73060d*/
-  MEMORY[0xB0FC60] = 0; /*0x730618*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC64]); /*0x73061f*/
-  MEMORY[0xB0FC64] = 0; /*0x73062a*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC68]); /*0x730631*/
-  MEMORY[0xB0FC68] = 0; /*0x73063b*/
-  __3_YAXPAX_Z(MEMORY[0xB0FC6C]); /*0x730642*/
-  MEMORY[0xB0FC6C] = 0; /*0x73064a*/
+    __3_YAXPAX_Z(DataGlobal_B0FC30);
+    DataGlobal_B0FC30 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC34);
+    DataGlobal_B0FC34 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC38);
+    DataGlobal_B0FC38 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC3C);
+    DataGlobal_B0FC3C = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC40);
+    DataGlobal_B0FC40 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC44);
+    DataGlobal_B0FC44 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC48);
+    DataGlobal_B0FC48 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC4C);
+    DataGlobal_B0FC4C = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC50);
+    DataGlobal_B0FC50 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC54);
+    DataGlobal_B0FC54 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC58);
+    DataGlobal_B0FC58 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC5C);
+    DataGlobal_B0FC5C = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC60);
+    DataGlobal_B0FC60 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC64);
+    DataGlobal_B0FC64 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC68);
+    DataGlobal_B0FC68 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC6C);
+    DataGlobal_B0FC6C = 0;
 }
 }

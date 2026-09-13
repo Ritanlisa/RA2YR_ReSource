@@ -5,29 +5,24 @@
 // 0x41CBF0
 unsigned int * ObjectTypeClass::vt_entry_7C(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall ObjectTypeClass::vt_entry_7C(_DWORD *a1)
 {
-  int v1; // esi
-
-  v1 = 2 * MEMORY[0x889F58]; /*0x41cbfc*/
-  *a1 = 256; /*0x41cc07*/
-  a1[1] = 256; /*0x41cc09*/
-  a1[2] = v1; /*0x41cc0c*/
-  return a1; /*0x41cc0f*/
+    int v1;
+    v1 = 2 * DataGlobal_889F58;
+    *a1 = 256;
+    *((int*)(a1) + 1) = 256;
+    *((int*)(a1) + 2) = v1;
+    return a1;
 }
 }
 
 // 0x41CF80
 unsigned int * ObjectTypeClass::Copy(unsigned int * a0, ObjectTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall ObjectTypeClass::Copy(_DWORD *a0, ObjectTypeClass *aP1)
 {
-  *a0 = *(_DWORD *)aP1->__pad_0; /*0x41cf8d*/
-  a0[1] = *(_DWORD *)&aP1->__pad_0[4]; /*0x41cf92*/
-  a0[2] = *(_DWORD *)&aP1->__pad_0[8]; /*0x41cf99*/
-  return a0; /*0x41cf95*/
+    *a0 = *(int *)aP1->__pad_0;
+    *((int*)(a0) + 1) = *(int *)&aP1->__pad_0[4];
+    *((int*)(a0) + 2) = *(int *)&aP1->__pad_0[8];
+    return a0;
 }
 }
 
@@ -87,55 +82,41 @@ int __thiscall ObjectTypeClass::loadTypeMember_473980(void *this)
 // 0x474690
 char ObjectTypeClass::ReadBool(INIClass * Block, INIClass * aP2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ObjectTypeClass::ReadBool(char *this, INIClass *Block, INIClass *aP2, int a4)
 {
-  char Buffer[32]; // [esp+4h] [ebp-20h] BYREF
-
-  sprintf(Buffer, MEMORY[0x817F6C], 360 * a4 / 256); /*0x4746ba*/
-  return INIClass::SetString(this, Block, aP2, (INIClass *)Buffer); /*0x4746d8*/
+    char Buffer[32];
+    sprintf(Buffer, g_Str_Trace__d, 360 * a4 / 256);
+    return INIClass::SetString(this, Block, aP2, (INIClass *)Buffer);
 }
 }
 
 // 0x4746E0
 int ObjectTypeClass::ReadPrerequisite(unsigned char * a2, unsigned char * a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4746E0(unsigned __int8 ***this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
 {
-  char String[32]; // [esp+0h] [ebp-20h] BYREF
-
-  if ( INIClass::GetString(this, a2, a3, &MEMORY[0x889F64], String, 32) ) /*0x4746f9*/
-    return (atoi(String) << 8) / 360; /*0x474727*/
-  else
-    return a4; /*0x47472f*/
+    char String[32];
+    if ( INIClass::GetString(this, a2, a3, &g_INI_DefaultBuffer, String, 32) )
+    return (atoi(String) << 8) / 360;
+    else
+    return a4;
 }
 }
 
 // 0x474740
 unsigned char ** ObjectTypeClass::ReadSoundList(unsigned char ** a2, unsigned char * a3, unsigned char * a4, unsigned char ** a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int8 **__thiscall sub_474740(
-        unsigned __int8 ***this,
-        unsigned __int8 **a2,
-        unsigned __int8 *a3,
-        unsigned __int8 *a4,
-        unsigned __int8 **a5)
 {
-  char Buffer[64]; // [esp+0h] [ebp-40h] BYREF
-
-  if ( INIClass::GetString(this, a3, a4, &MEMORY[0x889F64], Buffer, 64) ) /*0x474759*/
+    char Buffer[64];
+    if ( INIClass::GetString(this, a3, a4, &g_INI_DefaultBuffer, Buffer, 64) )
   {
-    sscanf(Buffer, MEMORY[0x81C000], &a4, &a3); /*0x474776*/
-    HIWORD(a4) = (_WORD)a3; /*0x47478e*/
-    *a2 = a4; /*0x47479a*/
-    return a2; /*0x474785*/
+    sscanf(Buffer, g_Str_Trace__d__d, &a4, &a3);
+    HIWORD(a4) = (short)a3;
+    *a2 = a4;
+    return a2;
   }
-  else
+    else
   {
-    *a2 = *a5; /*0x4747ac*/
-    return a2; /*0x4747a6*/
+    *a2 = *a5;
+    return a2;
   }
 }
 }
@@ -143,13 +124,10 @@ unsigned __int8 **__thiscall sub_474740(
 // 0x4747C0
 char ObjectTypeClass::ReadBool2(INIClass * Block, INIClass * aP2, short * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ObjectTypeClass::ReadBool2(char *this, INIClass *Block, INIClass *aP2, __int16 *a4)
 {
-  INIClass Buffer; // [esp+4h] [ebp-40h] BYREF
-
-  sprintf(Buffer.__pad_0, g_INI_Key_Digest.__pad_20, *a4, a4[1]); /*0x4747dd*/
-  return INIClass::SetString(this, Block, aP2, &Buffer); /*0x4747fb*/
+    INIClass Buffer;
+    sprintf(Buffer.__pad_0, g_INI_Key_Digest.__pad_20, *a4, *((int*)(a4) + 1));
+    return INIClass::SetString(this, Block, aP2, &Buffer);
 }
 }
 
@@ -191,60 +169,43 @@ int __thiscall ObjectTypeClass::loadTypeMember_5474940(
 // 0x4749E0
 int ObjectTypeClass::loadTypeMember_54749E0(CCINIClass * aP1, unsigned char * a2, unsigned int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::loadTypeMember_54749E0(
-        unsigned __int8 ***this,
-        CCINIClass *aP1,
-        unsigned __int8 *a2,
-        unsigned int a4)
 {
-  INIClass *v5; // eax
-  char Destination[32]; // [esp+4h] [ebp-20h] BYREF
-
-  v5 = (INIClass *)sub_473960(a4); /*0x4749f1*/
-  INIClass::GetString(this, (INIClass *)aP1, a2, v5, (INIClass *)Destination, 32); /*0x474a03*/
-  return ObjectTypeClass::loadTypeMember_473980(Destination); /*0x474a11*/
+    INIClass *v5;
+    char Destination[32];
+    v5 = (INIClass *)sub_473960(a4);
+    INIClass::GetString(this, (INIClass *)aP1, a2, v5, (INIClass *)Destination, 32);
+    return ObjectTypeClass::loadTypeMember_473980(Destination);
 }
 }
 
 // 0x474D50
 char ObjectTypeClass::ReadString(INIClass * Block, INIClass * aP2, unsigned char * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ObjectTypeClass::ReadString(char *this, INIClass *Block, INIClass *aP2, unsigned __int8 *a4)
 {
-  INIClass Buffer; // [esp+4h] [ebp-40h] BYREF
-
-  sprintf(Buffer.__pad_0, (const char *const)&MEMORY[0x818994].sectionCount, *a4, a4[1], a4[2]); /*0x474d75*/
-  return INIClass::SetString(this, Block, aP2, &Buffer); /*0x474d93*/
+    INIClass Buffer;
+    sprintf(Buffer.__pad_0, (const char *const)&DataGlobal_818994.sectionCount, *a4, *((int*)(a4) + 1), *((int*)(a4) + 2));
+    return INIClass::SetString(this, Block, aP2, &Buffer);
 }
 }
 
 // 0x474E40
 int ObjectTypeClass::loadTypeMember_5474E40(INIClass * aP1, unsigned char * a2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::loadTypeMember_5474E40(
-        unsigned __int8 ***this,
-        INIClass *aP1,
-        unsigned __int8 *a2,
-        int a4)
 {
-  int v4; // edi
-  ObjectClass *v5; // esi
-  char Destination[32]; // [esp+8h] [ebp-20h] BYREF
-
-  INIClass::GetString(this, aP1, a2, *(&off_81BA88 + a4), (INIClass *)Destination, 32); /*0x474e62*/
-  v4 = 0; /*0x474e67*/
-  v5 = (ObjectClass *)&off_81BA88; /*0x474e69*/
-  while ( _strcmpi(Destination, *(char **)v5->__pad_0) ) /*0x474e80*/
+    int v4;
+    ObjectClass *v5;
+    char Destination[32];
+    INIClass::GetString(this, aP1, a2, *(&DataGlobal_81BA88 + a4), (INIClass *)Destination, 32);
+    v4 = 0;
+    v5 = (ObjectClass *)&DataGlobal_81BA88;
+    while ( _strcmpi(Destination, *(char **)v5->__pad_0) )
   {
-    v5 = (ObjectClass *)((char *)v5 + 4); /*0x474e82*/
-    ++v4; /*0x474e85*/
-    if ( (int)v5 >= (int)&off_81BABC ) /*0x474e8c*/
-      return -1; /*0x474e96*/
+    v5 = (ObjectClass *)((char *)(v5) + 4);
+    ++v4;
+    if ( (int)v5 >= (int)&DataGlobal_81BABC )
+    return -1;
   }
-  return v4; /*0x474e8e*/
+    return v4;
 }
 }
 
@@ -275,163 +236,134 @@ int __thiscall sub_474F50(unsigned __int8 ***this, unsigned __int8 *a2, unsigned
 // 0x474FA0
 int ObjectTypeClass::ReadDouble(unsigned char * a2, unsigned char * a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_474FA0(unsigned __int8 ***this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
 {
-  char Destination[100]; // [esp+4h] [ebp-64h] BYREF
-
-  INIClass::GetString(this, a2, a3, &MEMORY[0x889F64], Destination, 100); /*0x474fba*/
-  if ( strlen(Destination) ) /*0x474fc3*/
-    return VocClass::FindByName(Destination); /*0x474fd4*/
-  else
-    return a4; /*0x474fdf*/
+    char Destination[100];
+    INIClass::GetString(this, a2, a3, &g_INI_DefaultBuffer, Destination, 100);
+    if ( strlen(Destination) )
+    return VocClass::FindByName(Destination);
+    else
+    return a4;
 }
 }
 
 // 0x474FF0
 int ObjectTypeClass::ReadDouble2(INIClass * aP1, unsigned char * a2, void * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::ReadDouble2(unsigned __int8 ***this, INIClass *aP1, unsigned __int8 *a2, void *a4)
 {
-  INIClass *Name; // eax
-  char Destination[32]; // [esp+4h] [ebp-20h] BYREF
-
-  Name = (INIClass *)AbstractType::FindName(a4); /*0x475001*/
-  INIClass::GetString(this, aP1, a2, Name, (INIClass *)Destination, 32); /*0x475013*/
-  return StringTable::Lookup(Destination); /*0x475021*/
+    INIClass *Name;
+    char Destination[32];
+    Name = (INIClass *)AbstractType::FindName(a4);
+    INIClass::GetString(this, aP1, a2, Name, (INIClass *)Destination, 32);
+    return StringTable::Lookup(Destination);
 }
 }
 
 // 0x475060
 int ObjectTypeClass::ReadBool3(INIClass * aP1, unsigned char * a2, void * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::ReadBool3(unsigned __int8 ***this, INIClass *aP1, unsigned __int8 *a2, void *a4)
 {
-  INIClass *v5; // eax
-  char Destination[32]; // [esp+4h] [ebp-20h] BYREF
-
-  v5 = (INIClass *)sub_45DD20(a4); /*0x475071*/
-  INIClass::GetString(this, aP1, a2, v5, (INIClass *)Destination, 32); /*0x475083*/
-  return sub_45DD50(Destination); /*0x475091*/
+    INIClass *v5;
+    char Destination[32];
+    v5 = (INIClass *)sub_45DD20(a4);
+    INIClass::GetString(this, aP1, a2, v5, (INIClass *)Destination, 32);
+    return sub_45DD50(Destination);
 }
 }
 
 // 0x476240
 char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTypeClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ObjectTypeClass::ReadTypeListINI(char *this, unsigned __int8 *Block, char *a2, ObjectTypeClass *aP3)
 {
-  int i; // ebp
-  int v5; // eax
-  int v6; // ecx
-  CCINIClass *v8; // [esp+Ch] [ebp-20Ch] BYREF
-  char v9; // [esp+10h] [ebp-208h]
-  char *v10; // [esp+14h] [ebp-204h]
-  _BYTE Source[509]; // [esp+18h] [ebp-200h] BYREF
-  __int16 v12; // [esp+215h] [ebp-3h]
-  char v13; // [esp+217h] [ebp-1h]
-
-  v10 = this; /*0x47624d*/
-  Source[0] = stru_87C374.__pad_579C[33876]; /*0x476252*/
-  memset(&Source[1], 0, 0x1FCu); /*0x476268*/
-  v12 = 0; /*0x47626a*/
-  v13 = 0; /*0x47626c*/
-  for ( i = 0; i < aP3->uniqueId; ++i ) /*0x476274*/
+    int i;
+    int v5;
+    int v6;
+    CCINIClass *v8;
+    char v9;
+    char *v10;
+    char Source[509];
+    short v12;
+    char v13;
+    v10 = this;
+    Source[0] = DataGlobal_87C374.__pad_579C[33876];
+    memset(&Source[1], 0, 0x1FCu);
+    v12 = 0;
+    v13 = 0;
+    for ( i = 0; i < aP3->uniqueId; ++i )
   {
-    if ( Source[0] ) /*0x476281*/
-      strcat(Source, (const char *)&stru_817F40.nextObject); /*0x4762a8*/
-    v5 = *(_DWORD *)&aP3->__pad_0[4]; /*0x4762b1*/
-    v9 = 0; /*0x4762b4*/
-    v6 = *(_DWORD *)(v5 + 4 * i); /*0x4762bc*/
-    v9 = HIBYTE(v6); /*0x4762c6*/
-    v8 = (CCINIClass *)(v6 & 0xFFFFFF); /*0x4762ce*/
-    strcat(Source, (const char *)(System_Read_6E7330(&v8) + 36)); /*0x4762fa*/
+    if ( Source[0] )
+    strcat(Source, (const char *)&DataGlobal_817F40.nextObject);
+    v5 = *(int *)&aP3->__pad_0[4];
+    v9 = 0;
+    v6 = *(int *)(v5 + 4 * i);
+    v9 = HIBYTE(v6);
+    v8 = (CCINIClass *)(v6 & 0xFFFFFF);
+    strcat(Source, (const char *)(System_Read_6E7330(&v8) + 36));
   }
-  return INIClass::SetString(v10, (INIClass *)Block, (INIClass *)a2, (INIClass *)Source); /*0x47632e*/
+    return INIClass::SetString(v10, (INIClass *)Block, (INIClass *)a2, (INIClass *)Source);
 }
 }
 
 // 0x476FC0
 int ObjectTypeClass::loadTypeMember_476FC0(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::loadTypeMember_476FC0(
-        unsigned __int8 ***this,
-        CCINIClass *aP1,
-        unsigned __int8 *a2,
-        CCINIClass *aP3)
 {
-  INIClass *v5; // eax
-  INIClass Destination[2]; // [esp+8h] [ebp-80h] BYREF
-
-  v5 = (INIClass *)sub_48E030((unsigned int)aP3); /*0x476fdd*/
-  if ( INIClass::GetString(this, (INIClass *)aP1, a2, v5, Destination, 128) ) /*0x476ff5*/
-    return ObjectTypeClass::loadTypeMember_48DFF0(Destination); /*0x477002*/
-  else
-    return (int)aP3->__pad_0; /*0x477012*/
+    INIClass *v5;
+    INIClass Destination[2];
+    v5 = (INIClass *)sub_48E030((unsigned int)aP3);
+    if ( INIClass::GetString(this, (INIClass *)aP1, a2, v5, Destination, 128) )
+    return ObjectTypeClass::loadTypeMember_48DFF0(Destination);
+    else
+    return (int)aP3->__pad_0;
 }
 }
 
 // 0x477590
 int ObjectTypeClass::loadTypeMember_5477590(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::loadTypeMember_5477590(
-        unsigned __int8 ***this,
-        CCINIClass *aP1,
-        unsigned __int8 *a2,
-        CCINIClass *aP3)
 {
-  char *v4; // esi
-  ObjectClass *result; // eax
-  bool v6; // zf
-  INIClass String[2]; // [esp+8h] [ebp-80h] BYREF
-
-  INIClass::GetString(this, (INIClass *)aP1, a2, *(&off_81BABC + (_DWORD)aP3), String, 128); /*0x4775c1*/
-  v4 = strtok(String[0].__pad_0, MEMORY[0x817F70].__pad_0); /*0x4775d5*/
-  result = (ObjectClass *)_strcmpi(v4, MEMORY[0x817F64]); /*0x4775dd*/
-  if ( result ) /*0x4775e7*/
+    char *v4;
+    ObjectClass *result;
+    bool v6;
+    INIClass String[2];
+    INIClass::GetString(this, (INIClass *)aP1, a2, *(&DataGlobal_81BABC + (int)aP3), String, 128);
+    v4 = strtok(String[0].__pad_0, Delimiter.__pad_0);
+    result = (ObjectClass *)_strcmpi(v4, g_INI_Key_None);
+    if ( result )
   {
-    if ( _strcmpi(v4, (char *)&stru_81BB58.headNode[1]) ) /*0x4775fa*/
+    if ( _strcmpi(v4, (char *)&DataGlobal_81BB58.headNode[1]) )
     {
-      v6 = _strcmpi(v4, aStrong) == 0; /*0x477624*/
-      result = (ObjectClass *)2; /*0x477626*/
-      if ( !v6 ) /*0x47762b*/
-        return (int)aP3->__pad_0; /*0x47762d*/
+    v6 = _strcmpi(v4, aStrong) == 0;
+    result = (ObjectClass *)2;
+    if ( !v6 )
+    return (int)aP3->__pad_0;
     }
     else
     {
-      return 1; /*0x477607*/
+    return 1;
     }
   }
-  return (int)result->__pad_0; /*0x4775e9*/
+    return (int)result->__pad_0;
 }
 }
 
 // 0x48DFF0
 int ObjectTypeClass::loadTypeMember_48DFF0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::loadTypeMember_48DFF0(void *this)
 {
-  int v2; // edi
-  const void **v3; // esi
-
-  if ( !this ) /*0x48dff7*/
-    return -1; /*0x48e01c*/
-  v2 = 0; /*0x48dff9*/
-  v3 = (const void **)&unk_81DA58; /*0x48dffb*/
-  while ( _strcmpi(*v3, this) ) /*0x48e00e*/
+    int v2;
+    const void **v3;
+    if ( !this )
+    return -1;
+    v2 = 0;
+    v3 = (const void **)&DataGlobal_81DA58;
+    while ( _strcmpi(*v3, this) )
   {
-    ++v3; /*0x48e010*/
-    ++v2; /*0x48e013*/
-    if ( (int)v3 >= (int)off_81DA78 ) /*0x48e01a*/
-      return -1; /*0x48e01a*/
+    ++v3;
+    ++v2;
+    if ( (int)v3 >= (int)DataGlobal_81DA78 )
+    return -1;
   }
-  return v2; /*0x48e01c*/
+    return v2;
 }
 }
 
@@ -757,13 +689,11 @@ int __thiscall ObjectTypeClass::Destruct(int this)
 // 0x5F75C0
 unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall Struct_InitTripleTen(_DWORD *a1)
 {
-  *a1 = 10; /*0x5f75cd*/
-  a1[1] = 10; /*0x5f75d3*/
-  a1[2] = 10; /*0x5f75d6*/
-  return a1; /*0x5f75d9*/
+    *a1 = 10;
+    *((int*)(a1) + 1) = 10;
+    *((int*)(a1) + 2) = 10;
+    return a1;
 }
 }
 
@@ -1471,26 +1401,23 @@ int __thiscall ObjectTypeClass::FreeLoaderBuffer(int this)
 // 0x6E5E70
 int ObjectTypeClass::FindByName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::FindByName(void *this)
 {
-  int v2; // ebx
-  int v3; // esi
-
-  if ( !this ) /*0x6e5e77*/
-    return 0; /*0x6e5e77*/
-  v2 = 0; /*0x6e5e7e*/
-  if ( *(int *)&stru_B05488.__pad_579C[15212] <= 0 ) /*0x6e5e82*/
-    return 0; /*0x6e5eb8*/
-  while ( 1 ) /*0x6e5e8a*/
+    int v2;
+    int v3;
+    if ( !this )
+    return 0;
+    v2 = 0;
+    if ( *(int *)&DataGlobal_B05488.__pad_579C[15212] <= 0 )
+    return 0;
+    while ( 1 )
   {
-    v3 = *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[15200] + 4 * v2); /*0x6e5e8a*/
-    if ( !_strcmpi((const void *)(v3 + 36), this) || !_strcmpi((const void *)(v3 + 100), this) ) /*0x6e5ea2*/
-      break; /*0x6e5ea2*/
-    if ( ++v2 >= *(int *)&stru_B05488.__pad_579C[15212] ) /*0x6e5eb6*/
-      return 0; /*0x6e5eb6*/
+    v3 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[15200] + 4 * v2);
+    if ( !_strcmpi((const void *)(v3 + 36), this) || !_strcmpi((const void *)(v3 + 100), this) )
+    break;
+    if ( ++v2 >= *(int *)&DataGlobal_B05488.__pad_579C[15212] )
+    return 0;
   }
-  return v3; /*0x6e5eb8*/
+    return v3;
 }
 }
 
@@ -1697,11 +1624,9 @@ int __thiscall ObjectTypeClass::loadTypeMember_57179D0(_DWORD *this, WeaponTypeC
 // 0x717A30
 int ObjectTypeClass::loadTypeMember_5717A30(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_717A30(_DWORD *this, int a2)
 {
-  *this = a2; /*0x717a34*/
-  return a2; /*0x717a36*/
+    *(void**)this = a2;
+    return a2;
 }
 }
 
@@ -1724,10 +1649,8 @@ int __thiscall sub_717A50(_DWORD *this, int a2)
 // 0x717A70
 int ObjectTypeClass::loadTypeMember_5717A70()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_717A70(_DWORD *this)
 {
-  return *(this + 1); /*0x717a73*/
+    return this->unused_9B;
 }
 }
 
@@ -1750,10 +1673,8 @@ int __thiscall sub_717A80(_DWORD *this, int a2)
 // 0x717AA0
 int ObjectTypeClass::loadTypeMember_5717AA0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_717AA0(_DWORD *this)
 {
-  return *(this + 2); /*0x717aa3*/
+    return this->Armor;
 }
 }
 
@@ -1776,31 +1697,25 @@ int __thiscall sub_717AB0(_DWORD *this, int a2)
 // 0x717AD0
 int ObjectTypeClass::loadTypeMember_5717AD0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_717AD0(_DWORD *this)
 {
-  return *(this + 3); /*0x717ad3*/
+    return this->Strength;
 }
 }
 
 // 0x717AE0
 BOOL ObjectTypeClass::loadTypeMember_5717AE0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_717AE0(_BYTE *this)
 {
-  return *this == 0; /*0x717ae9*/
+    return *(void**)this == 0;
 }
 }
 
 // 0x717BF0
 unsigned int * ObjectTypeClass::CheckFlag(ObjectTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ObjectTypeClass::CheckFlag(_DWORD *this, ObjectTypeClass *aP1)
 {
-  *this = &vt_DynamicVectorClass_AnimTypeClass_const; /*0x717bf2*/
-  return this; /*0x717bf8*/
+    *(void**)this = &vt_DynamicVectorClass_AnimTypeClass_const;
+    return this;
 }
 }
 
@@ -1848,32 +1763,29 @@ _DWORD *__thiscall sub_717C00(_DWORD *this, _DWORD *a2)
 // 0x71CB90
 int ObjectTypeClass::ReadDestroyAnim()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::ReadDestroyAnim(char *this)
 {
-  int result; // eax
-  int i; // ebx
-  int v4; // esi
-  int v5; // [esp+8h] [ebp-14h]
-  char v6[4]; // [esp+Ch] [ebp-10h] BYREF
-  char Buffer[12]; // [esp+10h] [ebp-Ch] BYREF
-
-  INIClass::ClearSection((int)this, (INIClass *)aTerrain, 0); /*0x71cb9f*/
-  result = *(_DWORD *)&MEMORY[0xA8D63C].__pad_1258[260]; /*0x71cba4*/
-  for ( i = 0; i < *(int *)&MEMORY[0xA8D63C].__pad_1258[260]; ++i ) /*0x71cbad*/
+    int result;
+    int i;
+    int v4;
+    int v5;
+    char v6[4];
+    char Buffer[12];
+    INIClass::ClearSection((int)this, (INIClass *)aTerrain, 0);
+    result = *(int *)&g_NetworkPlayerBuffer.__pad_1258[260];
+    for ( i = 0; i < *(int *)&g_NetworkPlayerBuffer.__pad_1258[260]; ++i )
   {
-    v4 = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_1258[248] + 4 * i); /*0x71cbba*/
-    if ( v4 && !*(_BYTE *)(v4 + 129) ) /*0x71cbc1*/
+    v4 = *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_1258[248] + 4 * i);
+    if ( v4 && !*(char *)(v4 + 129) )
     {
-      if ( *(_BYTE *)(v4 + 144) ) /*0x71cbcb*/
+    if ( *(char *)(v4 + 144) )
       {
-        v5 = *(_DWORD *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)v4 + 440))(v4, v6); /*0x71cbe6*/
-        sprintf(Buffer, MEMORY[0x817F6C], (__int16)v5 + 1000 * SHIWORD(v5)); /*0x71cc09*/
-        INIClass::SetString(this, (INIClass *)aTerrain, (INIClass *)Buffer, (INIClass *)(*(_DWORD *)(v4 + 200) + 36)); /*0x71cc29*/
+    v5 = *(int *)(*(int (__thiscall **)(int, char *))(*(int *)(v4) + 440))(v4, v6);
+    sprintf(Buffer, g_Str_Trace__d, (short)v5 + 1000 * SHIWORD(v5));
+    INIClass::SetString(this, (INIClass *)aTerrain, (INIClass *)Buffer, (INIClass *)(*(int *)(v4 + 200) + 36));
       }
     }
-    result = *(_DWORD *)&MEMORY[0xA8D63C].__pad_1258[260]; /*0x71cc2e*/
+    result = *(int *)&g_NetworkPlayerBuffer.__pad_1258[260];
   }
-  return result; /*0x71cc3d*/
+    return result;
 }
 }

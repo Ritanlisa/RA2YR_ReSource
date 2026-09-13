@@ -5,10 +5,8 @@
 // 0x488EE0
 int ColorListClass::GetColor(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ColorListClass::_vt34(void *this, int a2)
 {
-  return (*(int (__thiscall **)(void *, int, _DWORD))(*(_DWORD *)this + 204))(this, a2, 0); /*0x488eef*/
+    return this->GetIndex(a2, 0);
 }
 }
 

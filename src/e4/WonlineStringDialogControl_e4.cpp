@@ -50,13 +50,11 @@ void __thiscall WonlineStringDialogControl_12_::sub_7AC970(int this)
 namespace gamemd {
 unsigned int WonlineStringDialogControl_12::PointerToIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall WonlineStringDialogControl_12_::sub_7AC9A0(int this, int a2)
 {
-  if ( (unsigned char)this->WonlineStringDialogControl_12_field_0xC ) /*0x7ac9a0*/
-    return (unsigned int)(a2 - this->WonlineStringDialogControl_12_field_0x4) >> 2; /*0x7ac9b5*/
-  else
-    return 0; /*0x7ac9a7*/
+    if ( (unsigned char)this->WonlineStringDialogControl_12_field_0xC )
+    return (unsigned int)(a2 - this->WonlineStringDialogControl_12_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -208,13 +206,11 @@ int __thiscall WonlineStringDialogControl_12_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int WonlineStringDialogControl_12::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall WonlineStringDialogControl_12_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->WonlineStringDialogControl_12_field_0xC ) /*0x7ad1f0*/
-    return (unsigned int)(a2 - this->WonlineStringDialogControl_12_field_0x4) >> 2; /*0x7ad205*/
-  else
-    return 0; /*0x7ad1f7*/
+    if ( (unsigned char)this->WonlineStringDialogControl_12_field_0xC )
+    return (unsigned int)(a2 - this->WonlineStringDialogControl_12_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -351,14 +347,11 @@ DynamicVector *__thiscall WonlineStringDialogControl_12_::Constructor_VectorClas
 namespace gamemd {
 int WonlineStringDialogControl_28::ddtor(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall WonlineStringDialogControl_28_::_vt03(int a1)
 {
-  HWND Current; // eax
-
-  Current = Dialog::GetCurrent(); /*0x7ad449*/
-  SendMessageA(Current, 0x5F4u, 0, 0); /*0x7ad44f*/
-  return 0; /*0x7ad457*/
+    HWND Current;
+    Current = Dialog::GetCurrent();
+    SendMessageA(Current, 0x5F4u, 0, 0);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -367,14 +360,11 @@ int __stdcall WonlineStringDialogControl_28_::_vt03(int a1)
 namespace gamemd {
 int WonlineStringDialogControl_28::Read(int a1, LPARAM lParam)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall WonlineStringDialogControl_28_::_vt04(int a1, LPARAM lParam)
 {
-  HWND Current; // eax
-
-  Current = Dialog::GetCurrent(); /*0x7ad46c*/
-  SendMessageA(Current, 0x5F5u, 0, lParam); /*0x7ad472*/
-  return 0; /*0x7ad47a*/
+    HWND Current;
+    Current = Dialog::GetCurrent();
+    SendMessageA(Current, 0x5F5u, 0, lParam);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -383,37 +373,34 @@ int __stdcall WonlineStringDialogControl_28_::_vt04(int a1, LPARAM lParam)
 namespace gamemd {
 int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall WonlineStringDialogControl_28_::_vt05(int a1, wchar_t *Format, unsigned int a3, int a4, int a5)
 {
-  HWND Current; // eax
-  wchar_t *v6; // eax
-  wchar_t *StringCSF; // eax
-  HWND v8; // eax
-  HWND DlgItem; // eax
-  wchar_t Buffer[200]; // [esp+8h] [ebp-190h] BYREF
-
-  Buffer[0] = 0; /*0x7ad49d*/
-  Current = Dialog::GetCurrent(); /*0x7ad4b7*/
-  SendDlgItemMessageA(Current, 1478, 0x402u, 100 * (int)Format / a3, 0); /*0x7ad4bd*/
-  if ( a5 <= 0 ) /*0x7ad4cc*/
+    HWND Current;
+    wchar_t *v6;
+    wchar_t *StringCSF;
+    HWND v8;
+    HWND DlgItem;
+    wchar_t Buffer[200];
+    Buffer[0] = 0;
+    Current = Dialog::GetCurrent();
+    SendDlgItemMessageA(Current, 1478, 0x402u, 100 * (int)Format / a3, 0);
+    if ( a5 <= 0 )
   {
-    StringCSF = GetStringCSF(MEMORY[0x84D730], 0, g_Str_File_wonline_cpp, 5172); /*0x7ad50a*/
-    swprintf(Buffer, (const size_t)StringCSF, Format, a3); /*0x7ad515*/
+    StringCSF = GetStringCSF(DataGlobal_84D730, 0, g_Str_File_wonline_cpp, 5172);
+    swprintf(Buffer, (const size_t)StringCSF, Format, a3);
   }
-  else
+    else
   {
-    v6 = GetStringCSF(aTxtBytesWTime, 0, g_Str_File_wonline_cpp, 5167); /*0x7ad4e2*/
-    swprintf(Buffer, (const size_t)v6, Format, a3, a5); /*0x7ad4ed*/
+    v6 = GetStringCSF(aTxtBytesWTime, 0, g_Str_File_wonline_cpp, 5167);
+    swprintf(Buffer, (const size_t)v6, Format, a3, a5);
   }
-  if ( time(0) != dword_B77EA8 ) /*0x7ad52d*/
+    if ( time(0) != DataGlobal_B77EA8 )
   {
-    v8 = Dialog::GetCurrent(); /*0x7ad538*/
-    DlgItem = GetDlgItem(v8, 1480); /*0x7ad53e*/
-    SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x7ad551*/
-    dword_B77EA8 = time(0); /*0x7ad561*/
+    v8 = Dialog::GetCurrent();
+    DlgItem = GetDlgItem(v8, 1480);
+    SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer);
+    DataGlobal_B77EA8 = time(0);
   }
-  return 0; /*0x7ad52f*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -422,30 +409,27 @@ int __stdcall WonlineStringDialogControl_28_::_vt05(int a1, wchar_t *Format, uns
 namespace gamemd {
 int WonlineStringDialogControl_28::Draw(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall WonlineStringDialogControl_28_::_vt07(int a1, int a2)
 {
-  HWND Current; // eax
-  HWND DlgItem; // eax
-  wchar_t *v5; // [esp-4h] [ebp-194h]
-  wchar_t *StringCSF; // [esp-4h] [ebp-194h]
-  wchar_t Buffer[200]; // [esp+0h] [ebp-190h] BYREF
-
-  Buffer[0] = 0; /*0x7ad58d*/
-  if ( a2 == 2 ) /*0x7ad597*/
+    HWND Current;
+    HWND DlgItem;
+    wchar_t *v5;
+    wchar_t *StringCSF;
+    wchar_t Buffer[200];
+    Buffer[0] = 0;
+    if ( a2 == 2 )
   {
-    StringCSF = GetStringCSF(aTxtConnecting, 0, g_Str_File_wonline_cpp, 5191); /*0x7ad5d6*/
-    swprintf(Buffer, (const size_t)StringCSF, *(const wchar_t *const *)Buffer); /*0x7ad5d8*/
+    StringCSF = GetStringCSF(aTxtConnecting, 0, g_Str_File_wonline_cpp, 5191);
+    swprintf(Buffer, (const size_t)StringCSF, *(const wchar_t *const *)Buffer);
   }
-  else if ( a2 == 4 ) /*0x7ad59c*/
+    else if ( a2 == 4 )
   {
-    v5 = GetStringCSF(aTxtFindingPatc, 0, g_Str_File_wonline_cpp, 5195); /*0x7ad5b4*/
-    swprintf(Buffer, (const size_t)v5, *(const wchar_t *const *)Buffer); /*0x7ad5ba*/
+    v5 = GetStringCSF(aTxtFindingPatc, 0, g_Str_File_wonline_cpp, 5195);
+    swprintf(Buffer, (const size_t)v5, *(const wchar_t *const *)Buffer);
   }
-  Current = Dialog::GetCurrent(); /*0x7ad5e5*/
-  DlgItem = GetDlgItem(Current, 1480); /*0x7ad5eb*/
-  SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x7ad5fe*/
-  return 0; /*0x7ad606*/
+    Current = Dialog::GetCurrent();
+    DlgItem = GetDlgItem(Current, 1480);
+    SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -454,10 +438,8 @@ int __stdcall WonlineStringDialogControl_28_::_vt07(int a1, int a2)
 namespace gamemd {
 LONG WonlineStringDialogControl_28::AddRef(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall WonlineStringDialogControl_28_::_vt01(int a1)
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x7ad62e*/
+    return InterlockedIncrement((volatile LONG *)(a1 + 4));
 }
 }
 } // namespace gamemd
@@ -466,21 +448,18 @@ LONG __stdcall WonlineStringDialogControl_28_::_vt01(int a1)
 namespace gamemd {
 LONG WonlineStringDialogControl_28::Release(char * Block)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __stdcall WonlineStringDialogControl_28_::_vt02(char *Block)
 {
-  LONG v1; // ebx
-
-  v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ad654*/
-  if ( !v1 && Block ) /*0x7ad65c*/
+    LONG v1;
+    v1 = InterlockedDecrement((volatile LONG *)(Block) + 1);
+    if ( !v1 && Block )
   {
-    *(_DWORD *)Block = &vt_ATL_CComObject_CDownloadEventSink; /*0x7ad663*/
-    *((_DWORD *)Block + 1) = 1; /*0x7ad669*/
-    InterlockedDecrement(&Addend); /*0x7ad66f*/
-    DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ad675*/
-    __3_YAXPAX_Z(Block); /*0x7ad67c*/
+    *(int *)Block = &vt_ATL_CComObject_CDownloadEventSink;
+    *((int *)(Block) + 1) = 1;
+    InterlockedDecrement(&Addend);
+    DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8));
+    __3_YAXPAX_Z(Block);
   }
-  return v1; /*0x7ad684*/
+    return v1;
 }
 }
 } // namespace gamemd

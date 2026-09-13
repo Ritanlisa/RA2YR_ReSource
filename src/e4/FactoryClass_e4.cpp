@@ -372,30 +372,27 @@ LABEL_14:
 namespace gamemd {
 int FactoryClass::Seek(int * a1, int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall FactoryClass::_vt06(int *a1, int *a2, int a3)
 {
-  int result; // eax
-  int v4; // edx
-  int i; // ebx
-
-  result = AbstractClass::SaveLoad_Prefix(a1, a2, a3); /*0x4ca3d2*/
-  if ( result >= 0 ) /*0x4ca3d9*/
+    int result;
+    int v4;
+    int i;
+    result = AbstractClass::SaveLoad_Prefix(a1, a2, a3);
+    if ( result >= 0 )
   {
-    v4 = *a2; /*0x4ca3de*/
-    a3 = a1[20]; /*0x4ca3ea*/
-    result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v4 + 16))(a2, &a3, 4, 0); /*0x4ca3ee*/
-    if ( result >= 0 ) /*0x4ca3f3*/
+    v4 = *a2;
+    a3 = *((int*)(a1) + 20);
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a2, &a3, 4, 0);
+    if ( result >= 0 )
     {
-      for ( i = 0; i < a3; ++i ) /*0x4ca3fd*/
+    for ( i = 0; i < a3; ++i )
       {
-        if ( (*(int (__stdcall **)(int *, int, int, _DWORD))(*a2 + 16))(a2, a1[17] + 4 * i, 4, 0) < 0 ) /*0x4ca412*/
-          break; /*0x4ca412*/
+    if ( (*(int (__stdcall **)(int *, int, int, int))(*a2 + 16))(a2, *((int*)(a1) + 17) + 4 * i, 4, 0) < 0 )
+    break;
       }
-      return 0; /*0x4ca41d*/
+    return 0;
     }
   }
-  return result; /*0x4ca41f*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -724,10 +721,8 @@ char __thiscall sub_635060(int this, int a2)
 namespace gamemd {
 int FactoryClass::GetState()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall FactoryClass::GetState(_DWORD *this)
 {
-  return *(this + 5); /*0x636dc3*/
+    return this->abstractFlags;
 }
 }
 } // namespace gamemd
@@ -736,10 +731,8 @@ int __thiscall FactoryClass::GetState(_DWORD *this)
 namespace gamemd {
 char FactoryClass::GetFlag()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char FactoryClass_GetFlag()
 {
-  return MEMORY[0xAC4CF4]; /*0x637aa5*/
+    return DataGlobal_AC4CF4;
 }
 }
 } // namespace gamemd
@@ -891,13 +884,11 @@ int __thiscall FactoryClass_33_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 unsigned int FactoryClass_33::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall FactoryClass_33_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->FactoryClass_33_field_0xC ) /*0x4caa50*/
-    return (unsigned int)(a2 - this->FactoryClass_33_field_0x4) >> 2; /*0x4caa65*/
-  else
-    return 0; /*0x4caa57*/
+    if ( (unsigned char)this->FactoryClass_33_field_0xC )
+    return (unsigned int)(a2 - this->FactoryClass_33_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

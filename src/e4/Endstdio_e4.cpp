@@ -6,10 +6,8 @@
 namespace gamemd {
 int sub_7CB255()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7CB255()
 {
-  return flsall(1); /*0x7cb25d*/
+    return flsall(1);
 }
 }
 } // namespace gamemd

@@ -91,10 +91,8 @@ int __thiscall sub_554830(int this)
 // 0x555070
 int LightSourceClass::Stat(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LightSourceClass::Stat(void *this, AbstractClass *aP1)
 {
-  return AbstractClass::ProcessPower((#378 *)this); /*0x55507a*/
+    return AbstractClass::ProcessPower((#378 *)this);
 }
 }
 
@@ -126,15 +124,12 @@ int __stdcall LightSourceClass::Write(AbstractClass *aP0, int aP1)
 // 0x555110
 int LightSourceClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall LightSourceClass::Seek(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x55511f*/
-  if ( result >= 0 ) /*0x555126*/
-    return 0; /*0x555128*/
-  return result; /*0x55512a*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 

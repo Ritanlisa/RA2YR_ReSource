@@ -83,12 +83,10 @@ int __thiscall WaypointPathClass::Construct(int this, WaypointClass *aP1)
 namespace gamemd {
 int WaypointPathClass::PowerDrainUpdate(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WaypointPathClass::_vt13(int this, int a2)
 {
-  AbstractClass::ProcessPower((#378 *)this); /*0x763c09*/
-  Power::TimerProcess(this->idxArray); /*0x763c14*/
-  return Power::TimerProcess(this->waypoints.Count); /*0x763c24*/
+    AbstractClass::ProcessPower((#378 *)this);
+    Power::TimerProcess(this->idxArray);
+    return Power::TimerProcess(this->waypoints.Count);
 }
 }
 } // namespace gamemd
@@ -189,45 +187,38 @@ int __stdcall WaypointPathClass::_vt05(_DWORD *a1, int a2)
 namespace gamemd {
 int WaypointPathClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall WaypointPathClass::SaveState(TechnoTypeClass *aP0, int *a1, int aP2)
 {
-  int result; // eax
-  int v4; // edx
-  int v5; // ebp
-  int i; // edi
-
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x763da3*/
-  if ( result >= 0 ) /*0x763daa*/
+    int result;
+    int v4;
+    int v5;
+    int i;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
   {
-    v4 = *a1; /*0x763daf*/
-    aP2 = *(_DWORD *)&aP0->BarrelVoxel[20]; /*0x763dbb*/
-    result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v4 + 16))(a1, &aP2, 4, 0); /*0x763dbf*/
-    if ( result >= 0 ) /*0x763dc4*/
+    v4 = *a1;
+    aP2 = *(int *)&aP0->BarrelVoxel[20];
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
+    if ( result >= 0 )
     {
-      v5 = 0; /*0x763dca*/
-      if ( aP2 <= 0 ) /*0x763dce*/
+    v5 = 0;
+    if ( aP2 <= 0 )
       {
-        return 0; /*0x763df4*/
+    return 0;
       }
-      else
+    else
       {
-        for ( i = 0; ; i += 12 ) /*0x763dd0*/
+    for ( i = 0; ; i += 12 )
         {
-          result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*a1 + 16))( /*0x763de1*/
-                     a1,
-                     *(_DWORD *)&aP0->BarrelVoxel[8] + i,
-                     12,
-                     0);
-          if ( result < 0 ) /*0x763de6*/
-            break; /*0x763de6*/
-          if ( ++v5 >= aP2 ) /*0x763df2*/
-            return 0; /*0x763df2*/
+    result = (*(int (__stdcall **)(int *, int, int, int))(*a1 + 16))( a1, *(int *)&aP0->BarrelVoxel[8] + i, 12, 0);
+    if ( result < 0 )
+    break;
+    if ( ++v5 >= aP2 )
+    return 0;
         }
       }
     }
   }
-  return result; /*0x763df6*/
+    return result;
 }
 }
 } // namespace gamemd

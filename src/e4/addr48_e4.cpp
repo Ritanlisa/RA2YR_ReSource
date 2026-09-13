@@ -415,49 +415,38 @@ int PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obje
 namespace gamemd {
 int GetWarheadVersusMultiplier(CoordStruct * aP0, BuildingTypeClass * aP1, CoordStruct * aP2, BulletClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall GetWarheadVersusMultiplier(CoordStruct *aP0, BuildingTypeClass *aP1, CoordStruct *aP2, BulletClass *aP3)
 {
-  CoordStruct *v4; // edi
-  int v6; // ecx
-  int v7; // ecx
-  int v9; // eax
-  int v10; // eax
-
-  v4 = aP0; /*0x48a4f3*/
-  if ( !aP0 || !aP1 ) /*0x48a501*/
-    return 0; /*0x48a501*/
-  if ( aP2 == (CoordStruct *)2 /*0x48a54f*/
-    && aP1->__pad_14D[0]
-    && (*((_DWORD *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)aP3) + 80) & 0x100) == 0
-    && (int)aP3->field_8 < Cell::GetGroundHeight((IUnknown *)aP3) + 2 * *(_DWORD *)&stru_89E138.__pad_71C[28] )
+    CoordStruct *v4;
+    int v6;
+    int v7;
+    int v9;
+    int v10;
+    v4 = aP0;
+    if ( !aP0 || !aP1 )
+    return 0;
+    if ( aP2 == (CoordStruct *)2 && aP1->__pad_14D[0] && (*((int *)Coord::To_Cell(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)aP3) + 80) & 0x100) == 0 && (int)aP3->field_8 < Cell::GetGroundHeight((IUnknown *)aP3) + 2 * *(int *)&DataGlobal_89E138.__pad_71C[28] )
   {
-    v6 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 3024); /*0x48a557*/
-    if ( v6 ) /*0x48a55f*/
+    v6 = *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 3024);
+    if ( v6 )
     {
-      v7 = 35 * v6 - 1; /*0x48a56e*/
-      if ( (int)v4 < v7 ) /*0x48a574*/
-        v7 = (int)v4; /*0x48a576*/
-      return *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 3012) + 4 * (v7 / 35)); /*0x48a597*/
+    v7 = 35 * v6 - 1;
+    if ( (int)v4 < v7 )
+    v7 = (int)v4;
+    return *(int *)(*(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 3012) + 4 * (v7 / 35));
     }
-    return 0; /*0x48a61a*/
+    return 0;
   }
-  if ( aP1 == *(BuildingTypeClass **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 6068) ) /*0x48a5a5*/
-    return *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 756); /*0x48a5b0*/
-  v9 = aP1->ChargerBarrels[4]; /*0x48a5b3*/
-  if ( !v9 ) /*0x48a5bb*/
-    return 0; /*0x48a5bb*/
-  if ( aP1->__pad_14D[7] ) /*0x48a5bd*/
-    return *(_DWORD *)(aP1->ChargerBarrels[1] /*0x48a5e4*/
-                     + 4
-                     * Random::Range(
-                         (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
-                         0,
-                         (IUnknown *)(v9 - 1)));
-  v10 = 25 * v9 - 1; /*0x48a5ee*/
-  if ( (int)v4 >= v10 ) /*0x48a5f4*/
-    v4 = (CoordStruct *)v10; /*0x48a5f6*/
-  return *(_DWORD *)(aP1->ChargerBarrels[1] + 4 * ((int)v4 / 25)); /*0x48a57d*/
+    if ( aP1 == *(BuildingTypeClass **)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 6068) )
+    return *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 756);
+    v9 = aP1->ChargerBarrels[4];
+    if ( !v9 )
+    return 0;
+    if ( aP1->__pad_14D[7] )
+    return *(int *)(aP1->ChargerBarrels[1] + 4 * Random::Range( (int *)(*(int *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)(v9 - 1)));
+    v10 = 25 * v9 - 1;
+    if ( (int)v4 >= v10 )
+    v4 = (CoordStruct *)v10;
+    return *(int *)(aP1->ChargerBarrels[1] + 4 * ((int)v4 / 25));
 }
 }
 } // namespace gamemd
@@ -574,25 +563,23 @@ char __fastcall Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5,
 namespace gamemd {
 unsigned int * E4Recv_48B070::sub_48B070(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_48B070(_DWORD *this, int a2, int a3)
 {
-  *(this + 1) = 0; /*0x48b07b*/
-  *(this + 2) = a2; /*0x48b07e*/
-  *((_BYTE *)this + 12) = 1; /*0x48b081*/
-  *((_BYTE *)this + 13) = 0; /*0x48b085*/
-  *this = &vt_VectorClass_DamageGroup; /*0x48b088*/
-  if ( a2 ) /*0x48b08e*/
+    this->M4 = 0;
+    this->M8 = a2;
+    this->M12 = 1;
+    this->M13 = 0;
+    *(void**)this = &vt_VectorClass_DamageGroup;
+    if ( a2 )
   {
-    if ( a3 ) /*0x48b096*/
+    if ( a3 )
     {
-      *(this + 1) = a3; /*0x48b098*/
-      return this; /*0x48b09e*/
+    this->M4 = a3;
+    return this;
     }
-    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x48b0ad*/
-    *((_BYTE *)this + 13) = 1; /*0x48b0b0*/
+    this->M4 = __2_YAPAXI_Z(4 * a2);
+    this->M13 = 1;
   }
-  return this; /*0x48b09d*/
+    return this;
 }
 }
 } // namespace gamemd
@@ -1263,17 +1250,15 @@ int sub_48E480()
 namespace gamemd {
 int sub_48E6A0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_48E6A0()
 {
-  MEMORY[0x89ECFC] = 0; /*0x48e6a7*/
-  MEMORY[0x89ED00] = 0; /*0x48e6ac*/
-  MEMORY[0x89ED04] = 1; /*0x48e6b1*/
-  MEMORY[0x89ED05] = 0; /*0x48e6b8*/
-  MEMORY[0x89ECF8] = (int)&vt_DynamicVectorClass_ConvertClass; /*0x48e6bd*/
-  MEMORY[0x89ED0C] = 10; /*0x48e6c7*/
-  MEMORY[0x89ED08] = 0; /*0x48e6d1*/
-  return atexit(sub_48E6E0); /*0x48e6dc*/
+    DataGlobal_89ECFC = 0;
+    DataGlobal_89ED00 = 0;
+    DataGlobal_89ED04 = 1;
+    DataGlobal_89ED05 = 0;
+    DataGlobal_89ECF8 = (int)&vt_DynamicVectorClass_ConvertClass;
+    DataGlobal_89ED0C = 10;
+    DataGlobal_89ED08 = 0;
+    return atexit(sub_48E6E0);
 }
 }
 } // namespace gamemd
@@ -1282,23 +1267,21 @@ int sub_48E6A0()
 namespace gamemd {
 void sub_48E6E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_48E6E0()
 {
-  if ( (MEMORY[0x89ED10] & 1) == 0 ) /*0x48e6ea*/
+    if ( (DataGlobal_89ED10 & 1) == 0 )
   {
-    MEMORY[0x89ECF8] = (int)&vt_VectorClass_ConvertClass; /*0x48e6ee*/
-    MEMORY[0x89ED10] |= 1u; /*0x48e701*/
-    if ( MEMORY[0x89ECFC] ) /*0x48e707*/
+    DataGlobal_89ECF8 = (int)&vt_VectorClass_ConvertClass;
+    DataGlobal_89ED10 |= 1u;
+    if ( DataGlobal_89ECFC )
     {
-      if ( MEMORY[0x89ED05] ) /*0x48e711*/
+    if ( DataGlobal_89ED05 )
       {
-        __3_YAXPAX_Z(MEMORY[0x89ECFC]); /*0x48e714*/
-        MEMORY[0x89ECFC] = 0; /*0x48e71c*/
+    __3_YAXPAX_Z(DataGlobal_89ECFC);
+    DataGlobal_89ECFC = 0;
       }
     }
-    MEMORY[0x89ED05] = 0; /*0x48e726*/
-    MEMORY[0x89ED00] = 0; /*0x48e72d*/
+    DataGlobal_89ED05 = 0;
+    DataGlobal_89ED00 = 0;
   }
 }
 }

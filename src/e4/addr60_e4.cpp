@@ -8,14 +8,12 @@
 namespace gamemd {
 int sub_600320()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_600320()
 {
-  MEMORY[0xAC18B0] = 0; /*0x600322*/
-  MEMORY[0xAC18B4] = 0; /*0x600327*/
-  MEMORY[0xAC18B8] = 0; /*0x60032c*/
-  MEMORY[0xAC18BC] = 0; /*0x600331*/
-  return 0; /*0x600336*/
+    DataGlobal_AC18B0 = 0;
+    DataGlobal_AC18B4 = 0;
+    DataGlobal_AC18B8 = 0;
+    DataGlobal_AC18BC = 0;
+    return 0;
 }
 }
 } // namespace gamemd
@@ -24,13 +22,10 @@ int sub_600320()
 namespace gamemd {
 void sub_600340()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_600340()
 {
-  long double v0; // st7
-
-  v0 = pow(256.0, 2.0); /*0x60034c*/
-  MEMORY[0xAC1B40] = Math::Sqrt(v0 + v0); /*0x60035e*/
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_AC1B40 = Math::Sqrt(v0 + v0);
 }
 }
 } // namespace gamemd
@@ -39,10 +34,8 @@ void sub_600340()
 namespace gamemd {
 void sub_600370()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_600370()
 {
-  MEMORY[0xAC48A0] = MEMORY[0xAC1B40] / 60.0; /*0x60037c*/
+    DataGlobal_AC48A0 = DataGlobal_AC1B40 / 60.0;
 }
 }
 } // namespace gamemd
@@ -51,10 +44,8 @@ void sub_600370()
 namespace gamemd {
 void sub_600390()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_600390()
 {
-  MEMORY[0xAC4838] = 1.0 / MEMORY[0xAC48A0]; /*0x60039c*/
+    DataGlobal_AC4838 = 1.0 / DataGlobal_AC48A0;
 }
 }
 } // namespace gamemd
@@ -63,10 +54,8 @@ void sub_600390()
 namespace gamemd {
 void sub_6003B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6003B0()
 {
-  MEMORY[0xAC4830] = 0.0174532925199433 * 45.0; /*0x6003bc*/
+    DataGlobal_AC4830 = 0.0174532925199433 * 45.0;
 }
 }
 } // namespace gamemd
@@ -75,10 +64,8 @@ void sub_6003B0()
 namespace gamemd {
 void sub_6003D0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6003D0()
 {
-  MEMORY[0xAC1B88] = 0.0174532925199433 * 60.0; /*0x6003dc*/
+    DataGlobal_AC1B88 = 0.0174532925199433 * 60.0;
 }
 }
 } // namespace gamemd
@@ -87,10 +74,8 @@ void sub_6003D0()
 namespace gamemd {
 void sub_6003F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6003F0()
 {
-  MEMORY[0xAC1898] = 0.0174532925199433 * 90.0; /*0x6003fc*/
+    DataGlobal_AC1898 = 0.0174532925199433 * 90.0;
 }
 }
 } // namespace gamemd
@@ -99,16 +84,13 @@ void sub_6003F0()
 namespace gamemd {
 long long sub_600410()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 sub_600410()
 {
-  double v0; // st7
-  __int64 result; // rax
-
-  v0 = Math::Sin(MEMORY[0xAC1898] - MEMORY[0xAC1B88]); /*0x600422*/
-  result = Math::RoundToInt(v0 * MEMORY[0xAC1B40] * 0.5); /*0x600436*/
-  MEMORY[0xAC48AC] = result; /*0x60043b*/
-  return result; /*0x600440*/
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_AC1898 - DataGlobal_AC1B88);
+    result = Math::RoundToInt(v0 * DataGlobal_AC1B40 * 0.5);
+    DataGlobal_AC48AC = result;
+    return result;
 }
 }
 } // namespace gamemd
@@ -117,10 +99,8 @@ __int64 sub_600410()
 namespace gamemd {
 void sub_600450()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_600450()
 {
-  MEMORY[0xAC1CA0] = Math::ArcTan((double)MEMORY[0xAC48AC] * 0.00390625); /*0x600467*/
+    DataGlobal_AC1CA0 = Math::ArcTan((double)DataGlobal_AC48AC * 0.00390625);
 }
 }
 } // namespace gamemd
@@ -129,10 +109,8 @@ void sub_600450()
 namespace gamemd {
 void sub_600480()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_600480()
 {
-  MEMORY[0xAC4610] = Math::ArcTan((double)(2 * MEMORY[0xAC48AC]) / MEMORY[0xAC1B40]); /*0x6004a2*/
+    DataGlobal_AC4610 = Math::ArcTan((double)(2 * DataGlobal_AC48AC) / DataGlobal_AC1B40);
 }
 }
 } // namespace gamemd
@@ -141,14 +119,11 @@ void sub_600480()
 namespace gamemd {
 long long sub_6004B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 sub_6004B0()
 {
-  __int64 result; // rax
-
-  result = Math::RoundToInt((double)(4 * MEMORY[0xAC48AC]) + 0.5); /*0x6004cb*/
-  MEMORY[0xAC489C] = result; /*0x6004d0*/
-  return result; /*0x6004d6*/
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_AC48AC) + 0.5);
+    DataGlobal_AC489C = result;
+    return result;
 }
 }
 } // namespace gamemd
@@ -157,12 +132,10 @@ __int64 sub_6004B0()
 namespace gamemd {
 int sub_6004E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6004E0()
 {
-  MEMORY[0xAC1B38] = 0; /*0x6004e2*/
-  MEMORY[0xAC1B3A] = 0; /*0x6004e8*/
-  return 0; /*0x6004ee*/
+    DataGlobal_AC1B38 = 0;
+    DataGlobal_AC1B3A = 0;
+    return 0;
 }
 }
 } // namespace gamemd
@@ -171,13 +144,11 @@ int sub_6004E0()
 namespace gamemd {
 int sub_6004F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6004F0()
 {
-  MEMORY[0xAC1DF8] = 0; /*0x6004f2*/
-  MEMORY[0xAC1DFC] = 0; /*0x6004f7*/
-  MEMORY[0xAC1E00] = 0; /*0x6004fc*/
-  return 0; /*0x600501*/
+    DataGlobal_AC1DF8 = 0;
+    DataGlobal_AC1DFC = 0;
+    DataGlobal_AC1E00 = 0;
+    return 0;
 }
 }
 } // namespace gamemd
@@ -186,13 +157,11 @@ int sub_6004F0()
 namespace gamemd {
 int sub_600510()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_600510()
 {
-  MEMORY[0xAC4890] = 0; /*0x600515*/
-  MEMORY[0xAC4888] = 128; /*0x60051f*/
-  MEMORY[0xAC488C] = 128; /*0x600524*/
-  return 128; /*0x600529*/
+    DataGlobal_AC4890 = 0;
+    DataGlobal_AC4888 = 128;
+    DataGlobal_AC488C = 128;
+    return 128;
 }
 }
 } // namespace gamemd
@@ -201,11 +170,9 @@ int sub_600510()
 namespace gamemd {
 int sub_600530()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_600530()
 {
-  sub_6B9450(MEMORY[0xAC4848]); /*0x600535*/
-  return atexit(unknown_libname_26); /*0x600545*/
+    sub_6B9450(g_DialogHashTable);
+    return atexit(unknown_libname_26);
 }
 }
 } // namespace gamemd
@@ -214,11 +181,9 @@ int sub_600530()
 namespace gamemd {
 int unknown_libname_26()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// Microsoft VisualC 2-14/net runtime
-void __cdecl unknown_libname_26()
+    void __cdecl unknown_libname_26()
 {
-  HashTable::Clear((int)MEMORY[0xAC4848]); /*0x600555*/
+    HashTable::Clear((int)g_DialogHashTable);
 }
 }
 } // namespace gamemd
@@ -227,10 +192,8 @@ void __cdecl unknown_libname_26()
 namespace gamemd {
 ObjectClass * E4Recv_600660::ReadPointerFromECX()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall ReadPointerFromECX(void *this)
 {
-  return *(ObjectClass **)this; /*0x600662*/
+    return *(ObjectClass **)this;
 }
 }
 } // namespace gamemd
@@ -239,32 +202,29 @@ ObjectClass *__thiscall ReadPointerFromECX(void *this)
 namespace gamemd {
 int sub_6006B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6006B0()
 {
-  unsigned int v0; // eax
-  int v1; // ecx
-
-  v0 = 128; /*0x6006b0*/
-  MEMORY[0xAC1B68] = 0.2; /*0x6006b7*/
-  MEMORY[0xAC1B70] = 0.8; /*0x6006cb*/
-  MEMORY[0xAC1B78] = 128; /*0x6006df*/
-  v1 = 0; /*0x6006e4*/
-  do /*0x6006e9*/
+    unsigned int v0;
+    int v1;
+    v0 = 128;
+    DataGlobal_AC1B68 = 0.2;
+    DataGlobal_AC1B70 = 0.8;
+    DataGlobal_AC1B78 = 128;
+    v1 = 0;
+    do
   {
-    ++v1; /*0x6006e6*/
-    v0 >>= 1; /*0x6006e7*/
+    ++v1;
+    v0 >>= 1;
   }
-  while ( v0 ); /*0x6006e9*/
-  MEMORY[0xAC1B58] = 0; /*0x6006eb*/
-  MEMORY[0xAC1B54] = v1 - 1; /*0x6006f9*/
-  MEMORY[0xAC1B4C] = 0; /*0x6006ff*/
-  MEMORY[0xAC1B5C] = 0; /*0x600705*/
-  MEMORY[0xAC1B50] = 1 << (v1 - 1); /*0x60070b*/
-  MEMORY[0xAC1B48] = __2_YAPAXI_Z(4 * (1 << (v1 - 1))); /*0x600723*/
-  memset(MEMORY[0xAC1B48], 0, 4 * MEMORY[0xAC1B50]); /*0x600729*/
-  MEMORY[0xAC1B60] = (int (__thiscall *)(_DWORD))ReadPointerFromECX; /*0x600730*/
-  return atexit(sub_600750); /*0x600742*/
+    while ( v0 );
+    DataGlobal_AC1B58 = 0;
+    g_DialogHashMap_Insert = v1 - 1;
+    g_DialogHashMap_Grow = 0;
+    DataGlobal_AC1B5C = 0;
+    DataGlobal_AC1B50 = 1 << (v1 - 1);
+    g_DialogHashMap_Entries = __2_YAPAXI_Z(4 * (1 << (v1 - 1)));
+    memset(g_DialogHashMap_Entries, 0, 4 * DataGlobal_AC1B50);
+    g_DialogHashMap_Callback = (int (__thiscall *)(int))ReadPointerFromECX;
+    return atexit(sub_600750);
 }
 }
 } // namespace gamemd
@@ -356,32 +316,29 @@ void __cdecl sub_600750()
 namespace gamemd {
 int sub_600880()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_600880()
 {
-  unsigned int v0; // eax
-  int v1; // ecx
-
-  v0 = 128; /*0x600880*/
-  MEMORY[0xAC18E0] = 0.2; /*0x600887*/
-  MEMORY[0xAC18E8] = 0.8; /*0x60089b*/
-  MEMORY[0xAC18F0] = 128; /*0x6008af*/
-  v1 = 0; /*0x6008b4*/
-  do /*0x6008b9*/
+    unsigned int v0;
+    int v1;
+    v0 = 128;
+    DataGlobal_AC18E0 = 0.2;
+    DataGlobal_AC18E8 = 0.8;
+    DataGlobal_AC18F0 = 128;
+    v1 = 0;
+    do
   {
-    ++v1; /*0x6008b6*/
-    v0 >>= 1; /*0x6008b7*/
+    ++v1;
+    v0 >>= 1;
   }
-  while ( v0 ); /*0x6008b9*/
-  MEMORY[0xAC18D0] = 0; /*0x6008bb*/
-  MEMORY[0xAC18CC] = v1 - 1; /*0x6008c9*/
-  MEMORY[0xAC18C4] = 0; /*0x6008cf*/
-  MEMORY[0xAC18D4] = 0; /*0x6008d5*/
-  MEMORY[0xAC18C8] = 1 << (v1 - 1); /*0x6008db*/
-  MEMORY[0xAC18C0] = __2_YAPAXI_Z(4 * (1 << (v1 - 1))); /*0x6008f3*/
-  memset(MEMORY[0xAC18C0], 0, 4 * MEMORY[0xAC18C8]); /*0x6008f9*/
-  MEMORY[0xAC18D8] = (int (__thiscall *)(_DWORD))ReadPointerFromECX; /*0x600900*/
-  return atexit(sub_600920); /*0x600912*/
+    while ( v0 );
+    DataGlobal_AC18D0 = 0;
+    DataGlobal_AC18CC = v1 - 1;
+    g_DialogPoolCount = 0;
+    DataGlobal_AC18D4 = 0;
+    g_DialogBuffer = 1 << (v1 - 1);
+    g_DialogPool = __2_YAPAXI_Z(4 * (1 << (v1 - 1)));
+    memset(g_DialogPool, 0, 4 * g_DialogBuffer);
+    DataGlobal_AC18D8 = (int (__thiscall *)(int))ReadPointerFromECX;
+    return atexit(sub_600920);
 }
 }
 } // namespace gamemd
@@ -473,32 +430,29 @@ void __cdecl sub_600920()
 namespace gamemd {
 int sub_600A50()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_600A50()
 {
-  unsigned int v0; // eax
-  int v1; // ecx
-
-  v0 = 128; /*0x600a50*/
-  MEMORY[0xAC1B20] = 0.2; /*0x600a57*/
-  MEMORY[0xAC1B28] = 0.8; /*0x600a6b*/
-  MEMORY[0xAC1B30] = 128; /*0x600a7f*/
-  v1 = 0; /*0x600a84*/
-  do /*0x600a89*/
+    unsigned int v0;
+    int v1;
+    v0 = 128;
+    DataGlobal_AC1B20 = 0.2;
+    DataGlobal_AC1B28 = 0.8;
+    DataGlobal_AC1B30 = 128;
+    v1 = 0;
+    do
   {
-    ++v1; /*0x600a86*/
-    v0 >>= 1; /*0x600a87*/
+    ++v1;
+    v0 >>= 1;
   }
-  while ( v0 ); /*0x600a89*/
-  MEMORY[0xAC1B10] = 0; /*0x600a8b*/
-  MEMORY[0xAC1B0C] = v1 - 1; /*0x600a99*/
-  MEMORY[0xAC1B04] = 0; /*0x600a9f*/
-  MEMORY[0xAC1B14] = 0; /*0x600aa5*/
-  MEMORY[0xAC1B08] = 1 << (v1 - 1); /*0x600aab*/
-  MEMORY[0xAC1B00] = __2_YAPAXI_Z(4 * (1 << (v1 - 1))); /*0x600ac3*/
-  memset(MEMORY[0xAC1B00], 0, 4 * MEMORY[0xAC1B08]); /*0x600ac9*/
-  MEMORY[0xAC1B18] = (int (__thiscall *)(_DWORD))ReadPointerFromECX; /*0x600ad0*/
-  return atexit(sub_600AF0); /*0x600ae2*/
+    while ( v0 );
+    DataGlobal_AC1B10 = 0;
+    g_DialogHashMap_Buckets = v1 - 1;
+    g_DialogHashMap_Count = 0;
+    DataGlobal_AC1B14 = 0;
+    DataGlobal_AC1B08 = 1 << (v1 - 1);
+    g_DialogHashMap_Base = __2_YAPAXI_Z(4 * (1 << (v1 - 1)));
+    memset(g_DialogHashMap_Base, 0, 4 * DataGlobal_AC1B08);
+    g_DialogHashMap_Hasher = (int (__thiscall *)(int))ReadPointerFromECX;
+    return atexit(sub_600AF0);
 }
 }
 } // namespace gamemd
@@ -1948,10 +1902,8 @@ HWND *__fastcall CacheDialogInvalidate(HWND hWnd, HWND a2)
 namespace gamemd {
 LRESULT globalHelper_003DD0(HWND hWnd, unsigned char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LRESULT __fastcall globalHelper_003DD0(HWND hWnd, unsigned __int8 a2)
 {
-  return SendMessageA(hWnd, 0x4E6u, 0, a2); /*0x603de5*/
+    return SendMessageA(hWnd, 0x4E6u, 0, a2);
 }
 }
 } // namespace gamemd
@@ -1992,23 +1944,20 @@ _DWORD *__fastcall sub_603E40(int a1, int a2)
 namespace gamemd {
 wchar_t ** sub_603FC0(wchar_t ** a1, HWND a2, HWND hWnd, unsigned short a4, void * a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t **__fastcall sub_603FC0(wchar_t **a1, HWND a2, HWND hWnd, unsigned __int16 a4, void *a5)
 {
-  LPARAM lParam[2]; // [esp+10h] [ebp-Ch] BYREF
-  void *v9; // [esp+18h] [ebp-4h] BYREF
-  LRESULT v10; // [esp+24h] [ebp+8h]
-
-  v10 = SendMessageA(hWnd, 0x4E8u, 0, a4 | ((unsigned __int16)a5 << 16)); /*0x603ffc*/
-  unknown_libname_74(&v9); /*0x604000*/
-  lParam[0] = (LPARAM)hWnd; /*0x604016*/
-  lParam[1] = v10; /*0x60401a*/
-  SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x60401e*/
-  WideString::AssignFromPtr((wchar_t **)&a5, (const wchar_t **)&v9); /*0x604029*/
-  DeleteAndZero::Alt(&v9); /*0x604032*/
-  WideString::AssignFromPtr(a1, (const wchar_t **)&a5); /*0x60403e*/
-  DeleteAndZero::Alt(&a5); /*0x604047*/
-  return a1; /*0x60404e*/
+    LPARAM lParam[2];
+    void *v9;
+    LRESULT v10;
+    v10 = SendMessageA(hWnd, 0x4E8u, 0, a4 | ((unsigned short)a5 << 16));
+    unknown_libname_74(&v9);
+    lParam[0] = (LPARAM)hWnd;
+    lParam[1] = v10;
+    SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam);
+    WideString::AssignFromPtr((wchar_t **)&a5, (const wchar_t **)&v9);
+    DeleteAndZero::Alt(&v9);
+    WideString::AssignFromPtr(a1, (const wchar_t **)&a5);
+    DeleteAndZero::Alt(&a5);
+    return a1;
 }
 }
 } // namespace gamemd
@@ -3493,15 +3442,12 @@ BOOL __stdcall sub_60A250(HWND hWnd, LPARAM a2)
 namespace gamemd {
 BOOL sub_60AA60(HWND hWnd, LPARAM a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __stdcall sub_60AA60(HWND hWnd, LPARAM a2)
 {
-  HWND Parent; // eax
-
-  Parent = GetParent(hWnd); /*0x60aa66*/
-  if ( IsValidActionDialog((int)Parent, hWnd) ) /*0x60aa70*/
-    SendMessageA(hWnd, 0x4EEu, 0, 0); /*0x60aa83*/
-  return 1; /*0x60aa8e*/
+    HWND Parent;
+    Parent = GetParent(hWnd);
+    if ( IsValidActionDialog((int)Parent, hWnd) )
+    SendMessageA(hWnd, 0x4EEu, 0, 0);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -3582,17 +3528,14 @@ BOOL __fastcall RepositionGameSpeedIndicator(HWND hWnd, int a2)
 namespace gamemd {
 BOOL E4Recv_60B740::sub_60B740()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_60B740(HWND this)
 {
-  HWND Parent; // eax
-  struct tagRECT v4; // [esp+8h] [ebp-20h] BYREF
-  struct tagRECT Rect; // [esp+18h] [ebp-10h] BYREF
-
-  Parent = GetParent(this); /*0x60b748*/
-  GetWindowRect(Parent, &Rect); /*0x60b75a*/
-  GetWindowRect(this, &v4); /*0x60b762*/
-  return MoveWindow(this, v4.left - Rect.left, v4.top - Rect.top, v4.right - v4.left, v4.bottom - v4.top, 0); /*0x60b791*/
+    HWND Parent;
+    struct tagRECT v4;
+    struct tagRECT Rect;
+    Parent = GetParent(this);
+    GetWindowRect(Parent, &Rect);
+    GetWindowRect(this, &v4);
+    return MoveWindow(this, v4.left - Rect.left, v4.top - Rect.top, v4.right - v4.left, v4.bottom - v4.top, 0);
 }
 }
 } // namespace gamemd
@@ -3845,10 +3788,8 @@ BOOL __thiscall ResizeDialogAndEnum(SkirmishDialog *this)
 namespace gamemd {
 LRESULT sub_60D520(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LRESULT __stdcall sub_60D520(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
-  return DefWindowProcA(hWnd, Msg, wParam, lParam); /*0x60d53a*/
+    return DefWindowProcA(hWnd, Msg, wParam, lParam);
 }
 }
 } // namespace gamemd

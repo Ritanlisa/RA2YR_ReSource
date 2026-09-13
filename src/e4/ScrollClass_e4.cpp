@@ -5,11 +5,9 @@
 // 0x6922E0
 int ScrollClass::Scroll(int * a1, MouseClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ScrollClass::Scroll(int *this, int *a1, MouseClass *aP2)
 {
-  TacticalClass::ProcessView(this); /*0x6922e3*/
-  return BlowStraw_29::Seek(this, a1, aP2); /*0x6922f9*/
+    TacticalClass::ProcessView(this);
+    return BlowStraw_29::Seek(this, a1, aP2);
 }
 }
 

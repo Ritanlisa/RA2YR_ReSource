@@ -109,19 +109,16 @@ void __thiscall Territory_WorldDominationTour_8_::_vt05(int *this, int a2, int a
 namespace gamemd {
 unsigned int * Territory_WorldDominationTour_8::Seek(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall Territory_WorldDominationTour_8_::_vt06(_DWORD *a1)
 {
-  int v2; // [esp+0h] [ebp-10h]
-  int v3; // [esp+4h] [ebp-Ch]
-  int v4; // [esp+8h] [ebp-8h]
-  int v5; // [esp+Ch] [ebp-4h]
-
-  *a1 = v2; /*0x77199d*/
-  a1[1] = v3; /*0x7719a3*/
-  a1[2] = v4; /*0x7719aa*/
-  a1[3] = v5; /*0x7719b1*/
-  return a1; /*0x7719b4*/
+    int v2;
+    int v3;
+    int v4;
+    int v5;
+    *a1 = v2;
+    *((int*)(a1) + 1) = v3;
+    *((int*)(a1) + 2) = v4;
+    *((int*)(a1) + 3) = v5;
+    return a1;
 }
 }
 } // namespace gamemd
@@ -130,10 +127,8 @@ _DWORD *__stdcall Territory_WorldDominationTour_8_::_vt06(_DWORD *a1)
 namespace gamemd {
 BOOL Territory_WorldDominationTour_8::Open()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL Territory_WorldDominationTour_8_::_vt07()
 {
-  return (unsigned __int8)Audio::IsPlaying() == 0; /*0x7719ca*/
+    return (unsigned char)Audio::IsPlaying() == 0;
 }
 }
 } // namespace gamemd

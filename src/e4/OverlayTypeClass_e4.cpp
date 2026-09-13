@@ -5,45 +5,35 @@
 // 0x4754B0
 int OverlayTypeClass::ReadINIString(CCINIClass * aP1, unsigned char * a2, AnimTypeClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall OverlayTypeClass::ReadINIString(
-        unsigned __int8 ***this,
-        CCINIClass *aP1,
-        unsigned __int8 *a2,
-        AnimTypeClass *aP3)
 {
-  INIClass *v5; // eax
-  INIClass Destination[2]; // [esp+8h] [ebp-80h] BYREF
-
-  v5 = (INIClass *)sub_48DFD0((unsigned int)aP3); /*0x4754cd*/
-  if ( INIClass::GetString(this, (INIClass *)aP1, a2, v5, Destination, 128) ) /*0x4754e5*/
-    return OverlayTypeClass::LookupByName(Destination); /*0x4754f2*/
-  else
-    return (int)aP3->__pad_0; /*0x475502*/
+    INIClass *v5;
+    INIClass Destination[2];
+    v5 = (INIClass *)sub_48DFD0((unsigned int)aP3);
+    if ( INIClass::GetString(this, (INIClass *)aP1, a2, v5, Destination, 128) )
+    return OverlayTypeClass::LookupByName(Destination);
+    else
+    return (int)aP3->__pad_0;
 }
 }
 
 // 0x48DF80
 int OverlayTypeClass::LookupByName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall OverlayTypeClass::LookupByName(void *this)
 {
-  int v2; // edi
-  const void **v3; // esi
-
-  if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !this ) /*0x48df99*/
-    return -1; /*0x48dfbe*/
-  v2 = 0; /*0x48df9b*/
-  v3 = (const void **)&unk_81DA28; /*0x48df9d*/
-  while ( _strcmpi(*v3, this) ) /*0x48dfb0*/
+    int v2;
+    const void **v3;
+    if ( !_strcmpi(&DataGlobal_817460.sectionHead[1], this) || !this )
+    return -1;
+    v2 = 0;
+    v3 = (const void **)&DataGlobal_81DA28;
+    while ( _strcmpi(*v3, this) )
   {
-    ++v3; /*0x48dfb2*/
-    ++v2; /*0x48dfb5*/
-    if ( (int)v3 >= (int)&unk_81DA58 ) /*0x48dfbc*/
-      return -1; /*0x48dfbc*/
+    ++v3;
+    ++v2;
+    if ( (int)v3 >= (int)&DataGlobal_81DA58 )
+    return -1;
   }
-  return v2; /*0x48dfbe*/
+    return v2;
 }
 }
 
@@ -131,68 +121,53 @@ LABEL_11:
 // 0x5FE4C0
 int * OverlayTypeClass::GetTile(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__stdcall OverlayTypeClass::_vt36(int a1)
 {
-  if ( (MEMORY[0xAC15E8] & 1) == 0 ) /*0x5fe4cb*/
+    if ( (DataGlobal_AC15E8 & 1) == 0 )
   {
-    MEMORY[0xAC15E8] |= 1u; /*0x5fe4e6*/
-    MEMORY[0xAC1640] = 0; /*0x5fe4ec*/
-    MEMORY[0xAC1644] = 2147450879; /*0x5fe504*/
-    atexit(nullsub_213); /*0x5fe50a*/
+    DataGlobal_AC15E8 |= 1u;
+    DataGlobal_AC1640 = 0;
+    DataGlobal_AC1644 = 2147450879;
+    atexit(nullsub_213);
   }
-  return &MEMORY[0xAC1640]; /*0x5fe518*/
+    return &DataGlobal_AC1640;
 }
 }
 
 // 0x5FE530
 bool OverlayTypeClass::GetType(IUnknown * aP2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall OverlayTypeClass::GetType(IUnknown *this, IUnknown *aP2, int a3)
 {
-  void *v4; // eax
-
-  v4 = (void *)__2_YAPAXI_Z(0xB0u); /*0x5fe538*/
-  return v4 && Object::SpawnAtCell(v4, this, aP2, (BuildingTypeClass *)0xFFFFFFFF); /*0x5fe559*/
+    void *v4;
+    v4 = (void *)__2_YAPAXI_Z(0xB0u);
+    return v4 && Object::SpawnAtCell(v4, this, aP2, (BuildingTypeClass *)0xFFFFFFFF);
 }
 }
 
 // 0x5FE570
 OverlayClass * OverlayTypeClass::GetDamage(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-OverlayClass *__thiscall OverlayTypeClass::GetDamage(IUnknown *this, int a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)__2_YAPAXI_Z(0xB0u); /*0x5fe578*/
-  if ( v3 ) /*0x5fe582*/
-    return Object::SpawnAtCell( /*0x5fe58e*/
-             v3,
-             this,
-             (IUnknown *)(&(&g_MatrixTransformState)[213] + 2),
-             (BuildingTypeClass *)0xFFFFFFFF);
-  else
-    return 0; /*0x5fe597*/
+    void *v3;
+    v3 = (void *)__2_YAPAXI_Z(0xB0u);
+    if ( v3 )
+    return Object::SpawnAtCell( v3, this, (IUnknown *)(&(&g_MatrixTransformState)[213] + 2), (BuildingTypeClass *)0xFFFFFFFF);
+    else
+    return 0;
 }
 }
 
 // 0x5FE5A0
 void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall OverlayTypeClass::_vt40(void *this, _DWORD *a2, int *a3, unsigned int a4)
 {
-  int v4; // edx
-  int v5; // eax
-  int v6[2]; // [esp+8h] [ebp-8h] BYREF
-
-  v4 = MEMORY[0x886FA4] + a2[1] + 15; /*0x5fe5c1*/
-  v6[0] = MEMORY[0x886FA0] + *a2 + 30; /*0x5fe5c4*/
-  v6[1] = v4; /*0x5fe5c8*/
-  v5 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 156))(this); /*0x5fe5f3*/
-  DrawToSurfaceSHP(MEMORY[0x887314], MEMORY[0x87F6B8], v5, a4, v6, a3, 1536, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x5fe606*/
+    int v4;
+    int v5;
+    int v6[2];
+    v4 = g_Map_VisibleRect + *((int*)(a2) + 1) + 15;
+    v6[0] = DSurface_ViewBounds + *a2 + 30;
+    v6[1] = v4;
+    v5 = this->GetCategory();
+    DrawToSurfaceSHP(g_DSurface_Hidden_2, DataGlobal_87F6B8, v5, a4, v6, a3, 1536, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
 }
 }
 
@@ -371,13 +346,11 @@ char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 // 0x5FEA30
 unsigned int * OverlayTypeClass::vt_entry_6C(unsigned int * a0, OverlayTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall OverlayTypeClass::vt_entry_6C(_DWORD *a0, OverlayTypeClass *aP1)
 {
-  *a0 = *(_DWORD *)aP1->__pad_0; /*0x5fea3d*/
-  a0[1] = *(_DWORD *)&aP1->__pad_0[4]; /*0x5fea42*/
-  a0[2] = *(_DWORD *)&aP1->__pad_0[8]; /*0x5fea49*/
-  return a0; /*0x5fea45*/
+    *a0 = *(int *)aP1->__pad_0;
+    *((int*)(a0) + 1) = *(int *)&aP1->__pad_0[4];
+    *((int*)(a0) + 2) = *(int *)&aP1->__pad_0[8];
+    return a0;
 }
 }
 
@@ -463,60 +436,54 @@ int __stdcall OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
 // 0x5FEC10
 int OverlayTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall OverlayTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, ObjectTypeClass *aP1, int aP2)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2); /*0x5fec1f*/
-  if ( result >= 0 ) /*0x5fec26*/
-    return 0; /*0x5fec28*/
-  return result; /*0x5fec2a*/
+    int result;
+    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 
 // 0x5FED00
 int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall OverlayTypeClass::GetRadarColor(int *this, int a2, unsigned int a3)
 {
-  char **v4; // eax
-  int v5; // ecx
-  int v6; // esi
-  int v7; // eax
-  char v8; // cl
-  int PixelData; // ecx
-  __int16 v11; // [esp+4h] [ebp-4h]
-
-  v4 = (char **)(*(int (__thiscall **)(int *))(*this + 156))(this); /*0x5fed06*/
-  if ( v4 || (v5 = *(this + 167)) != 0 && (v4 = (char **)(*(int (__thiscall **)(int))(*(_DWORD *)v5 + 156))(v5)) != 0 ) /*0x5fed28*/
+    char **v4;
+    int v5;
+    int v6;
+    int v7;
+    char v8;
+    int PixelData;
+    short v11;
+    v4 = (char **)this->GetCategory();
+    if ( v4 || (v5 = this->DamageLevels) != 0 && (v4 = (char **)(*(int (__thiscall **)(int))(*(int *)(v5) + 156))(v5)) != 0 )
   {
-    v6 = *(this + 165); /*0x5fed2e*/
-    if ( (v6 < 127 || v6 > 138) && (v6 < 147 || v6 > 158) ) /*0x5fed4f*/
+    v6 = this->LandType;
+    if ( (v6 < 127 || v6 > 138) && (v6 < 147 || v6 > 158) )
     {
-      PixelData = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5feda2*/
-      *(_WORD *)a2 = *(_WORD *)PixelData; /*0x5fedad*/
-      *(_BYTE *)(a2 + 2) = *(_BYTE *)(PixelData + 2); /*0x5fedb4*/
-      return a2; /*0x5feda4*/
+    PixelData = MixFileClass::GetPixelData(v4, (int)&a3, a3);
+    *(short *)a2 = *(short *)PixelData;
+    *(char *)(a2 + 2) = *(char *)(PixelData + 2);
+    return a2;
     }
     else
     {
-      v7 = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5fed5d*/
-      v11 = *(_WORD *)v7; /*0x5fed67*/
-      v8 = HIBYTE(*(_WORD *)v7); /*0x5fed6f*/
-      BYTE1(a3) = *(_BYTE *)(v7 + 2); /*0x5fed73*/
-      LOBYTE(a3) = v11; /*0x5fed7b*/
-      *(_WORD *)a2 = a3; /*0x5fed86*/
-      *(_BYTE *)(a2 + 2) = v8; /*0x5fed8a*/
-      return a2; /*0x5fed77*/
+    v7 = MixFileClass::GetPixelData(v4, (int)&a3, a3);
+    v11 = *(short *)v7;
+    v8 = HIBYTE(*(short *)v7);
+    BYTE1(a3) = *(char *)(v7 + 2);
+    LOBYTE(a3) = v11;
+    *(short *)a2 = a3;
+    *(char *)(a2 + 2) = v8;
+    return a2;
     }
   }
-  else
+    else
   {
-    *(_WORD *)a2 = 0; /*0x5fedd2*/
-    *(_BYTE *)(a2 + 2) = 0; /*0x5fedd6*/
-    return a2; /*0x5fedbb*/
+    *(short *)a2 = 0;
+    *(char *)(a2 + 2) = 0;
+    return a2;
   }
 }
 }
@@ -571,10 +538,8 @@ void *__thiscall sub_5FEDE0(int this)
 // 0x5FEF20
 int OverlayTypeClass::GetAuxField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall OverlayTypeClass::_vt16(_DWORD *this)
 {
-  return *(this + 165); /*0x5fef26*/
+    return this->LandType;
 }
 }
 

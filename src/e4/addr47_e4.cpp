@@ -26,13 +26,11 @@ void __thiscall sub_470C30(CampaignEndScoreClass *this)
 namespace gamemd {
 int sub_4716F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_4716F0()
 {
-  stru_89E138 = 0; /*0x4716f2*/
-  MEMORY[0x89E13C] = 0; /*0x4716f7*/
-  MEMORY[0x89E140] = 0; /*0x4716fc*/
-  return 0; /*0x471701*/
+    DataGlobal_89E138 = 0;
+    DataGlobal_89E13C = 0;
+    DataGlobal_89E140 = 0;
+    return 0;
 }
 }
 } // namespace gamemd
@@ -41,17 +39,15 @@ int sub_4716F0()
 namespace gamemd {
 int sub_471750()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_471750()
 {
-  unk_89E0F4 = 0; /*0x471757*/
-  dword_89E0F8 = 0; /*0x47175c*/
-  unk_89E0FC = 1; /*0x471761*/
-  unk_89E0FD = 0; /*0x471768*/
-  dword_89E0F0 = (int)&vt_DynamicVectorClass_CaptureManagerClass; /*0x47176d*/
-  dword_89E104 = 10; /*0x471777*/
-  dword_89E100 = 0; /*0x471781*/
-  return atexit(sub_471790); /*0x47178c*/
+    DataGlobal_89E0F4 = 0;
+    DataGlobal_89E0F8 = 0;
+    DataGlobal_89E0FC = 1;
+    DataGlobal_89E0FD = 0;
+    DataGlobal_89E0F0 = (int)&vt_DynamicVectorClass_CaptureManagerClass;
+    DataGlobal_89E104 = 10;
+    DataGlobal_89E100 = 0;
+    return atexit(sub_471790);
 }
 }
 } // namespace gamemd
@@ -60,17 +56,15 @@ int sub_471750()
 namespace gamemd {
 void sub_471790()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_471790()
 {
-  dword_89E0F0 = (int)&vt_VectorClass_CaptureManagerClass; /*0x471798*/
-  if ( unk_89E0F4 && unk_89E0FD ) /*0x4717ac*/
+    DataGlobal_89E0F0 = (int)&vt_VectorClass_CaptureManagerClass;
+    if ( DataGlobal_89E0F4 && DataGlobal_89E0FD )
   {
-    __3_YAXPAX_Z(unk_89E0F4); /*0x4717af*/
-    unk_89E0F4 = 0; /*0x4717b7*/
+    __3_YAXPAX_Z(DataGlobal_89E0F4);
+    DataGlobal_89E0F4 = 0;
   }
-  unk_89E0FD = 0; /*0x4717bd*/
-  dword_89E0F8 = 0; /*0x4717c3*/
+    DataGlobal_89E0FD = 0;
+    DataGlobal_89E0F8 = 0;
 }
 }
 } // namespace gamemd
@@ -113,39 +107,36 @@ int __thiscall CaptureManagerClass::vt_06_(_DWORD *this, int a2)
 namespace gamemd {
 unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_473750(_DWORD *this, _DWORD *a2)
 {
-  _DWORD *v3; // edi
-  int v4; // eax
-  int v5; // eax
-  int v6; // eax
-  int v7; // eax
-
-  v3 = a2; /*0x473754*/
-  *(this + 1) = 0; /*0x47375a*/
-  *(this + 2) = 0; /*0x47375d*/
-  *(this + 3) = 0; /*0x473760*/
-  *((_WORD *)this + 10) = 0; /*0x473763*/
-  *((_WORD *)this + 11) = 0; /*0x473767*/
-  *(this + 6) = 0; /*0x47376d*/
-  *(this + 7) = -1; /*0x473770*/
-  *this = &vt_CarryoverClass; /*0x473777*/
-  if ( v3 ) /*0x47377d*/
+    int *v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    v3 = a2;
+    this->M4 = 0;
+    this->M8 = 0;
+    this->M12 = 0;
+    this->M20 = 0;
+    this->M22 = 0;
+    this->M24 = 0;
+    this->M28 = -1;
+    *(void**)this = &vt_CarryoverClass;
+    if ( v3 )
   {
-    v4 = (*(int (__thiscall **)(_DWORD *))(*v3 + 44))(v3); /*0x473783*/
-    *(this + 3) = v4; /*0x473786*/
-    v5 = v4 - 1; /*0x473789*/
-    if ( !v5 || (v6 = v5 - 5) == 0 || v6 == 9 ) /*0x473794*/
+    v4 = (*(int (__thiscall **)(int *))(*v3 + 44))(v3);
+    this->M12 = v4;
+    v5 = v4 - 1;
+    if ( !v5 || (v6 = v5 - 5) == 0 || v6 == 9 )
     {
-      v7 = (*(int (__thiscall **)(_DWORD *))(*v3 + 132))(v3); /*0x4737a6*/
-      *(this + 4) = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 64))(v7); /*0x4737b3*/
+    v7 = (*(int (__thiscall **)(int *))(*v3 + 132))(v3);
+    this->M16 = (*(int (__thiscall **)(int))(*(int *)(v7) + 64))(v7);
     }
-    *(this + 7) = *(_DWORD *)(*(_DWORD *)(v3[135] + 52) + 184); /*0x4737c7*/
-    *(this + 6) = v3[27]; /*0x4737cd*/
-    *(this + 5) = *(_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD **))(*v3 + 440))(v3, &a2); /*0x4737df*/
+    this->M28 = *(int *)(*(int *)(v3[135] + 52) + 184);
+    this->M24 = v3[27];
+    this->M20 = *(int *)(*(int (__thiscall **)(int *, int **))(*v3 + 440))(v3, &a2);
   }
-  return this; /*0x4737e4*/
+    return this;
 }
 }
 } // namespace gamemd
@@ -661,8 +652,6 @@ LABEL_13:
 // 0x47A080
 namespace ra2 {
 namespace game {
-void ObjectClass::sub_47A080(DWORD a2)
-{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_47A080(ObjectClass *this, DWORD a2)
 {
@@ -702,7 +691,6 @@ LABEL_8:
 LABEL_9:
   DriveControlCD(this, FileA, a2); /*0x47a18e*/
   CloseHandle(FileA); /*0x47a19b*/
-}
 }
 } // namespace game
 } // namespace ra2

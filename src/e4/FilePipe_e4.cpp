@@ -30,13 +30,11 @@ void __thiscall FilePipe_30_::_vt03(int this)
 namespace gamemd {
 unsigned int FilePipe_30::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall FilePipe_30_::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->FilePipe_30_field_0xC ) /*0x4778d0*/
-    return (unsigned int)(a2 - this->FilePipe_30_field_0x4) >> 2; /*0x4778e5*/
-  else
-    return 0; /*0x4778d7*/
+    if ( (unsigned char)this->FilePipe_30_field_0xC )
+    return (unsigned int)(a2 - this->FilePipe_30_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -168,13 +166,11 @@ void __thiscall FilePipe_30_::sub_4B9BE0(int this)
 namespace gamemd {
 unsigned int FilePipe_30::GetCount(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall FilePipe_30_::sub_4B9C10(int this, int a2)
 {
-  if ( (unsigned char)this->FilePipe_30_field_0xC ) /*0x4b9c10*/
-    return (unsigned int)(a2 - this->FilePipe_30_field_0x4) >> 2; /*0x4b9c25*/
-  else
-    return 0; /*0x4b9c17*/
+    if ( (unsigned char)this->FilePipe_30_field_0xC )
+    return (unsigned int)(a2 - this->FilePipe_30_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -205,13 +201,11 @@ void __thiscall FilePipe_30_::sub_4B9C40(int this)
 namespace gamemd {
 unsigned int FilePipe_30::GetCount_0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall FilePipe_30_::sub_4B9C70(int this, int a2)
 {
-  if ( (unsigned char)this->FilePipe_30_field_0xC ) /*0x4b9c70*/
-    return (unsigned int)(a2 - this->FilePipe_30_field_0x4) >> 2; /*0x4b9c85*/
-  else
-    return 0; /*0x4b9c77*/
+    if ( (unsigned char)this->FilePipe_30_field_0xC )
+    return (unsigned int)(a2 - this->FilePipe_30_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

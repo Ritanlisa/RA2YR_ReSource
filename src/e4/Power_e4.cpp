@@ -110,12 +110,9 @@ int __thiscall Power::FlagProcess(AbstractClass *this, int a2)
 namespace gamemd {
 int Power::TimerProcess()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Power::TimerProcess(AbstractClass *this)
 {
-  int v2; // [esp+4h] [ebp+4h] BYREF
-
-  return Checksummer::Add_Buffer((unsigned int *)this, (unsigned __int8 *)&v2, 4); /*0x4a1d64*/
+    int v2;
+    return Checksummer::Add_Buffer((unsigned int *)this, (unsigned char *)&v2, 4);
 }
 }
 } // namespace gamemd
@@ -527,17 +524,14 @@ int __thiscall ComputeHousePowerChecksum(int this, unsigned int *a2)
 namespace gamemd {
 char Power::ChangedHouse(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall House_PowerChanged(_DWORD *this, char a2)
 {
-  char result; // al
-
-  result = a2; /*0x750090*/
-  if ( a2 ) /*0x750096*/
-    *this = 1065353216; /*0x750098*/
-  else
-    *this = 0; /*0x7500a1*/
-  return result; /*0x75009e*/
+    char result;
+    result = a2;
+    if ( a2 )
+    *(void**)this = 1065353216;
+    else
+    *(void**)this = 0;
+    return result;
 }
 }
 } // namespace gamemd

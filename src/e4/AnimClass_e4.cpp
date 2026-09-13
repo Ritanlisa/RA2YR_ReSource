@@ -750,16 +750,14 @@ LABEL_99:
 namespace gamemd {
 int * AnimClass::CheckMirrorFlags(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__stdcall AnimClass::_vt66(int a1)
 {
-  if ( (unk_89A190 & 1) == 0 ) /*0x4238db*/
+    if ( (DataGlobal_89A190 & 1) == 0 )
   {
-    unk_89A190 |= 1u; /*0x4238f9*/
-    unk_89A160 = 2147450879; /*0x4238ff*/
-    atexit(nullsub_89); /*0x423904*/
+    DataGlobal_89A190 |= 1u;
+    DataGlobal_89A160 = 2147450879;
+    atexit(nullsub_89);
   }
-  return &unk_89A160; /*0x423912*/
+    return &DataGlobal_89A160;
 }
 }
 } // namespace gamemd
@@ -822,30 +820,27 @@ LABEL_6:
 namespace gamemd {
 char AnimClass::ProcessAreaEffect(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall AnimClass::_vt61(_DWORD *a1)
 {
-  char v1; // bl
-  _BYTE *v2; // esi
-  char result; // al
-
-  v1 = Input::OffsetToDirection(a1); /*0x426314*/
-  v2 = Coord::To_Cell(&MEMORY[0x87F7E8], a1); /*0x426321*/
-  if ( Cell::GetGroundHeight(a1) + unk_89A1B4 > a1[2] ) /*0x426335*/
+    char v1;
+    char *v2;
+    char result;
+    v1 = Input::OffsetToDirection(a1);
+    v2 = Coord::To_Cell(&DataGlobal_87F7E8, a1);
+    if ( Cell::GetGroundHeight(a1) + Map_MaxHeight > *((int*)(a1) + 2) )
   {
-    result = ~(1 << v1) & v2[292]; /*0x426370*/
-    v2[292] = result; /*0x426372*/
-    if ( (result & 0x1C) == 0 ) /*0x42637a*/
-      *((_DWORD *)v2 + 21) = -1; /*0x42637c*/
+    result = ~(1 << v1) & v2[292];
+    v2[292] = result;
+    if ( (result & 0x1C) == 0 )
+    *((int *)(v2) + 21) = -1;
   }
-  else
+    else
   {
-    result = ~(1 << v1) & v2[296]; /*0x426347*/
-    v2[296] = result; /*0x426349*/
-    if ( (result & 0x1C) == 0 ) /*0x426351*/
-      *((_DWORD *)v2 + 22) = -1; /*0x426353*/
+    result = ~(1 << v1) & v2[296];
+    v2[296] = result;
+    if ( (result & 0x1C) == 0 )
+    *((int *)(v2) + 22) = -1;
   }
-  return result; /*0x42635a*/
+    return result;
 }
 }
 } // namespace gamemd

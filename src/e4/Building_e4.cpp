@@ -224,36 +224,33 @@ int __thiscall Building_GetNthOfType(int this)
 namespace gamemd {
 unsigned int * Building::GetFoundationSize(unsigned int * a1, unsigned int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall Building_GetFoundationSize(_DWORD *a1, unsigned int a2)
 {
-  int v2; // eax
-  __int16 *v3; // eax
-  int v4; // ecx
-  int v5; // edx
-  int v6; // esi
-  int v7; // edi
-
-  v2 = MixFileClass::LoadSubFile(); /*0x69e7e0*/
-  if ( v2 && a2 < *(__int16 *)(v2 + 6) && (v3 = (__int16 *)(v2 + 24 * a2 + 8)) != 0 ) /*0x69e7fe*/
+    int v2;
+    short *v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    v2 = MixFileClass::LoadSubFile();
+    if ( v2 && a2 < *(short *)(v2 + 6) && (v3 = (short *)(v2 + 24 * a2 + 8)) != 0 )
   {
-    v4 = *v3; /*0x69e800*/
-    v5 = v3[1]; /*0x69e803*/
-    v6 = v3[2]; /*0x69e809*/
-    v7 = v3[3]; /*0x69e80e*/
-    *a1 = v4; /*0x69e818*/
-    a1[1] = v5; /*0x69e81a*/
-    a1[2] = v6; /*0x69e81d*/
-    a1[3] = v7; /*0x69e820*/
-    return a1; /*0x69e812*/
+    v4 = *v3;
+    v5 = v3[1];
+    v6 = v3[2];
+    v7 = v3[3];
+    *a1 = v4;
+    *((int*)(a1) + 1) = v5;
+    *((int*)(a1) + 2) = v6;
+    *((int*)(a1) + 3) = v7;
+    return a1;
   }
-  else
+    else
   {
-    *a1 = MEMORY[0xB077A0]; /*0x69e835*/
-    a1[1] = MEMORY[0xB077A4]; /*0x69e83d*/
-    a1[2] = MEMORY[0xB077A8]; /*0x69e846*/
-    a1[3] = MEMORY[0xB077AC]; /*0x69e84f*/
-    return a1; /*0x69e829*/
+    *a1 = DataGlobal_B077A0;
+    *((int*)(a1) + 1) = DataGlobal_B077A4;
+    *((int*)(a1) + 2) = DataGlobal_B077A8;
+    *((int*)(a1) + 3) = DataGlobal_B077AC;
+    return a1;
   }
 }
 }

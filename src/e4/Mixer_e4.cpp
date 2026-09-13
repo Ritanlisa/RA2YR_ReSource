@@ -52,22 +52,19 @@ LABEL_14:
 // 0x4083D0
 int Mixer::RequestAllBuffers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Mixer_RequestAllBuffers()
 {
-  int result; // eax
-  int *i; // esi
-
-  result = MEMORY[0x87E81C]; /*0x4083d0*/
-  if ( MEMORY[0x87E81C] ) /*0x4083d8*/
+    int result;
+    int *i;
+    result = DataGlobal_87E81C;
+    if ( DataGlobal_87E81C )
   {
-    result = AudioQueue::GetNext(MEMORY[0x87E810]); /*0x4083df*/
-    for ( i = (int *)result; result; i = (int *)result ) /*0x4083e8*/
+    result = AudioQueue::GetNext(DataGlobal_87E810);
+    for ( i = (int *)result; result; i = (int *)result )
     {
-      RequestBufferMixer((unsigned int *)(i[5] + 16), 0x4000); /*0x4083f5*/
-      result = AudioQueue::GetNextAlt(i); /*0x4083fc*/
+    RequestBufferMixer((unsigned int *)(i[5] + 16), 0x4000);
+    result = AudioQueue::GetNextAlt(i);
     }
   }
-  return result; /*0x408407*/
+    return result;
 }
 }

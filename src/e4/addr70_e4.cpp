@@ -752,10 +752,8 @@ LABEL_8:
 namespace gamemd {
 void GlobalFlag_Set(char a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall GlobalFlag_Set(char a1)
 {
-  MEMORY[0x843108] = a1; /*0x70d180*/
+    DataGlobal_843108 = a1;
 }
 }
 } // namespace gamemd
@@ -764,11 +762,9 @@ void __fastcall GlobalFlag_Set(char a1)
 namespace gamemd {
 int E4Recv_70DE20::sub_70DE20(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_70DE20(_DWORD *this, int a2)
 {
-  *(this + 81) += a2; /*0x70de2c*/
-  return a2; /*0x70de32*/
+    this->M324 += a2;
+    return a2;
 }
 }
 } // namespace gamemd
@@ -1050,11 +1046,9 @@ int __thiscall sub_70F740(_DWORD *this, int a2)
 namespace gamemd {
 int E4Recv_70FE40::sub_70FE40(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_70FE40(_DWORD *this, int a2)
 {
-  *(this + 116) = a2; /*0x70fe44*/
-  return a2; /*0x70fe4a*/
+    this->M464 = a2;
+    return a2;
 }
 }
 } // namespace gamemd

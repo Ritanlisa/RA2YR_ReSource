@@ -1629,27 +1629,16 @@ LABEL_11:
 } }
 // 0x6E3EE0
 namespace gamemd { int TriggerTypeClass::Dispatch() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6E3EE0(void *this)
 {
-  int result; // eax
-
-  result = 0; /*0x6e3ee3*/
-  switch ( (unsigned int)this ) /*0x6e3ef2*/
+    int result;
+    result = 0;
+    switch ( (unsigned int)this )
   {
-    case 0xEu: /*0x6e3ef2*/
-    case 0x20u: /*0x6e3ef2*/
-    case 0x3Cu: /*0x6e3ef2*/
-    case 0x3Du: /*0x6e3ef2*/
-    case 0x3Eu: /*0x6e3ef2*/
-    case 0x5Bu: /*0x6e3ef2*/
-    case 0x6Fu: /*0x6e3ef2*/
-      result = 2; /*0x6e3ef9*/
-      break; /*0x6e3ef9*/
-    default:
-      return result;
+    case 0xEu: case 0x20u: case 0x3Cu: case 0x3Du: case 0x3Eu: case 0x5Bu: case 0x6Fu: result = 2;
+    break;
+    default: return result;
   }
-  return result; /*0x6e3efe*/
+    return result;
 }
 } }
 // 0x6E8160
@@ -3051,111 +3040,36 @@ char *__thiscall sub_71F4E0(int this)
 } }
 // 0x71F680
 namespace gamemd { int TriggerTypeClass::GetActionCategoryFlags() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_71F680(void *this)
 {
-  int v1; // esi
-
-  v1 = 0; /*0x71f681*/
-  switch ( (unsigned int)this ) /*0x71f690*/
+    int v1;
+    v1 = 0;
+    switch ( (unsigned int)this )
   {
-    case 0u: /*0x71f690*/
-    case 1u: /*0x71f690*/
-    case 4u: /*0x71f690*/
-    case 8u: /*0x71f690*/
-    case 0x18u: /*0x71f690*/
-    case 0x19u: /*0x71f690*/
-    case 0x1Au: /*0x71f690*/
-    case 0x1Fu: /*0x71f690*/
-    case 0x35u: /*0x71f690*/
-    case 0x36u: /*0x71f690*/
-    case 0x3Bu: /*0x71f690*/
-      v1 = 1; /*0x71f697*/
-      break; /*0x71f697*/
-    default:
-      break;
+    case 0u: case 1u: case 4u: case 8u: case 0x18u: case 0x19u: case 0x1Au: case 0x1Fu: case 0x35u: case 0x36u: case 0x3Bu: v1 = 1;
+    break;
+    default: break;
   }
-  switch ( (unsigned int)this ) /*0x71f6a9*/
+    switch ( (unsigned int)this )
   {
-    case 0u: /*0x71f6a9*/
-    case 1u: /*0x71f6a9*/
-    case 2u: /*0x71f6a9*/
-    case 4u: /*0x71f6a9*/
-    case 6u: /*0x71f6a9*/
-    case 7u: /*0x71f6a9*/
-    case 8u: /*0x71f6a9*/
-    case 0x1Du: /*0x71f6a9*/
-    case 0x21u: /*0x71f6a9*/
-    case 0x22u: /*0x71f6a9*/
-    case 0x23u: /*0x71f6a9*/
-    case 0x26u: /*0x71f6a9*/
-    case 0x27u: /*0x71f6a9*/
-    case 0x28u: /*0x71f6a9*/
-    case 0x29u: /*0x71f6a9*/
-    case 0x2Au: /*0x71f6a9*/
-    case 0x2Bu: /*0x71f6a9*/
-    case 0x2Cu: /*0x71f6a9*/
-    case 0x30u: /*0x71f6a9*/
-    case 0x31u: /*0x71f6a9*/
-      v1 |= 2u; /*0x71f6b0*/
-      break; /*0x71f6b0*/
-    default:
-      break;
+    case 0u: case 1u: case 2u: case 4u: case 6u: case 7u: case 8u: case 0x1Du: case 0x21u: case 0x22u: case 0x23u: case 0x26u: case 0x27u: case 0x28u: case 0x29u: case 0x2Au: case 0x2Bu: case 0x2Cu: case 0x30u: case 0x31u: v1 |= 2u;
+    break;
+    default: break;
   }
-  if ( this == (void *)8 || this == (void *)24 ) /*0x71f6bb*/
-    v1 |= 4u; /*0x71f6bd*/
-  switch ( (unsigned int)this ) /*0x71f6d0*/
+    if ( this == (void *)8 || this == (void *)24 )
+    v1 |= 4u;
+    switch ( (unsigned int)this )
   {
-    case 3u: /*0x71f6d0*/
-    case 5u: /*0x71f6d0*/
-    case 8u: /*0x71f6d0*/
-    case 9u: /*0x71f6d0*/
-    case 0xAu: /*0x71f6d0*/
-    case 0xBu: /*0x71f6d0*/
-    case 0xCu: /*0x71f6d0*/
-    case 0xFu: /*0x71f6d0*/
-    case 0x10u: /*0x71f6d0*/
-    case 0x11u: /*0x71f6d0*/
-    case 0x12u: /*0x71f6d0*/
-    case 0x13u: /*0x71f6d0*/
-    case 0x14u: /*0x71f6d0*/
-    case 0x15u: /*0x71f6d0*/
-    case 0x16u: /*0x71f6d0*/
-    case 0x1Eu: /*0x71f6d0*/
-    case 0x20u: /*0x71f6d0*/
-    case 0x34u: /*0x71f6d0*/
-    case 0x37u: /*0x71f6d0*/
-    case 0x38u: /*0x71f6d0*/
-    case 0x39u: /*0x71f6d0*/
-    case 0x3Au: /*0x71f6d0*/
-      v1 |= 8u; /*0x71f6d7*/
-      break; /*0x71f6d7*/
-    default:
-      break;
+    case 3u: case 5u: case 8u: case 9u: case 0xAu: case 0xBu: case 0xCu: case 0xFu: case 0x10u: case 0x11u: case 0x12u: case 0x13u: case 0x14u: case 0x15u: case 0x16u: case 0x1Eu: case 0x20u: case 0x34u: case 0x37u: case 0x38u: case 0x39u: case 0x3Au: v1 |= 8u;
+    break;
+    default: break;
   }
-  switch ( (unsigned int)this ) /*0x71f6ea*/
+    switch ( (unsigned int)this )
   {
-    case 8u: /*0x71f6ea*/
-    case 0xDu: /*0x71f6ea*/
-    case 0xEu: /*0x71f6ea*/
-    case 0x17u: /*0x71f6ea*/
-    case 0x1Bu: /*0x71f6ea*/
-    case 0x1Cu: /*0x71f6ea*/
-    case 0x24u: /*0x71f6ea*/
-    case 0x25u: /*0x71f6ea*/
-    case 0x2Du: /*0x71f6ea*/
-    case 0x2Eu: /*0x71f6ea*/
-    case 0x2Fu: /*0x71f6ea*/
-    case 0x32u: /*0x71f6ea*/
-    case 0x33u: /*0x71f6ea*/
-    case 0x3Cu: /*0x71f6ea*/
-    case 0x3Du: /*0x71f6ea*/
-      v1 |= 0x10u; /*0x71f6f1*/
-      break; /*0x71f6f1*/
-    default:
-      return v1;
+    case 8u: case 0xDu: case 0xEu: case 0x17u: case 0x1Bu: case 0x1Cu: case 0x24u: case 0x25u: case 0x2Du: case 0x2Eu: case 0x2Fu: case 0x32u: case 0x33u: case 0x3Cu: case 0x3Du: v1 |= 0x10u;
+    break;
+    default: return v1;
   }
-  return v1; /*0x71f6f6*/
+    return v1;
 }
 } }
 // 0x723CA0

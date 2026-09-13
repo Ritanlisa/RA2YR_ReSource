@@ -5,87 +5,24 @@
 // 0x494890
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_2(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_2(
-        BlitTranslucentWriteAlpha_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8)
 {
-  return (*((int (__thiscall **)(BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x4948ba*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 
 // 0x4948C0
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_3(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_3(
-        BlitTranslucentWriteAlpha_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10)
 {
-  return (*((int (__thiscall **)(BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x4948ea*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 
 // 0x4948F0
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_4(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_4(
-        BlitTranslucentWriteAlpha_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9)
 {
-  return (*((int (__thiscall **)(BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x49491a*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 
@@ -138,87 +75,24 @@ _WORD *__thiscall BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(
 // 0x4949B0
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_5(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_5(
-        BlitTranslucent50NonzeroAlpha_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8)
 {
-  return (*((int (__thiscall **)(BlitTranslucent50NonzeroAlpha_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x4949da*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTranslucent50NonzeroAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 
 // 0x4949E0
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_6(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_6(
-        BlitTranslucent50NonzeroAlpha_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10)
 {
-  return (*((int (__thiscall **)(BlitTranslucent50NonzeroAlpha_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x494a0a*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTranslucent50NonzeroAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 
 // 0x494A10
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_7(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_7(
-        BlitTranslucent50NonzeroAlpha_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9)
 {
-  return (*((int (__thiscall **)(BlitTranslucent50NonzeroAlpha_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x494a3a*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTranslucent50NonzeroAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 
@@ -271,87 +145,24 @@ _WORD *__thiscall BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(
 // 0x494AD0
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_8(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_8(
-        BlitTranslucent50ZeroAlpha_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8)
 {
-  return (*((int (__thiscall **)(BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x494afa*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 
 // 0x494B00
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_9(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_9(
-        BlitTranslucent50ZeroAlpha_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10)
 {
-  return (*((int (__thiscall **)(BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x494b2a*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 
 // 0x494B30
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_10(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_10(
-        BlitTranslucent50ZeroAlpha_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9)
 {
-  return (*((int (__thiscall **)(BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x494b5a*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 

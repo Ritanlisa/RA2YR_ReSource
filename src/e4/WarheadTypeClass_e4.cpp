@@ -54,13 +54,11 @@ void __thiscall WarheadTypeClass::_vt03(int this)
 // 0x524F00
 unsigned int WarheadTypeClass::LoadTypeData(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall WarheadTypeClass::_vt05(int this, int a2)
 {
-  if ( (unsigned char)this->WarheadTypeClass_field_0xC ) /*0x524f00*/
-    return (unsigned int)(a2 - this->WarheadTypeClass_field_0x4) >> 2; /*0x524f15*/
-  else
-    return 0; /*0x524f07*/
+    if ( (unsigned char)this->WarheadTypeClass_field_0xC )
+    return (unsigned int)(a2 - this->WarheadTypeClass_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 
@@ -515,31 +513,22 @@ LABEL_6:
 // 0x672990
 int WarheadTypeClass::LoadType()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_672990(RulesClass *this)
 {
-  int KeyCount; // ebx
-  int i; // esi
-  unsigned __int8 *StringByIndex; // eax
-  char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
-  char *v6; // [esp+30h] [ebp+4h]
-
-  KeyCount = INIClass::GetKeyCount(v6, (unsigned __int8 *)MEMORY[0x83A0D0]); /*0x6729a6*/
-  for ( i = 0; i < KeyCount; ++i ) /*0x6729ac*/
+    int KeyCount;
+    int i;
+    unsigned char *StringByIndex;
+    char Destination[32];
+    char *v6;
+    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)g_INI_Key_Warheads);
+    for ( i = 0; i < KeyCount; ++i )
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6, (unsigned __int8 *)MEMORY[0x83A0D0], i); /*0x6729c2*/
-    if ( INIClass::GetString( /*0x6729cf*/
-           (unsigned __int8 ***)v6,
-           (unsigned __int8 *)MEMORY[0x83A0D0],
-           StringByIndex,
-           &MEMORY[0x889F64],
-           Destination,
-           32) )
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)g_INI_Key_Warheads, i);
+    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)g_INI_Key_Warheads, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
-      WarheadTypeClass::FindOrCreate(Destination); /*0x6729dc*/
+    WarheadTypeClass::FindOrCreate(Destination);
     }
   }
-  return KeyCount > 0; /*0x6729e8*/
+    return KeyCount > 0;
 }
 }
 

@@ -6,17 +6,14 @@
 namespace gamemd {
 INIClass * INIClass::ReadCoord(double aP1, int a2, INIClass * aP2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-INIClass *INIClass::ReadCoord(double aP1, int a2, INIClass *aP2, int a4)
 {
-  int v4; // ecx
-  double Double_Overwrite; // st7
-
-  Double_Overwrite = INIClass::ReadDouble_Overwrite(v4, (INIClass *)LODWORD(aP1), (unsigned __int8 *)HIDWORD(aP1), 0); /*0x474631*/
-  if ( Double_Overwrite == -1.0 ) /*0x474641*/
-    return (INIClass *)a2; /*0x474645*/
-  else
-    return (INIClass *)Math::RoundToInt(Double_Overwrite * 256.0); /*0x474652*/
+    int v4;
+    double Double_Overwrite;
+    Double_Overwrite = INIClass::ReadDouble_Overwrite(v4, (INIClass *)LODWORD(aP1), (unsigned char *)HIDWORD(aP1), 0);
+    if ( Double_Overwrite == -1.0 )
+    return (INIClass *)a2;
+    else
+    return (INIClass *)Math::RoundToInt(Double_Overwrite * 256.0);
 }
 }
 } // namespace gamemd
@@ -232,15 +229,12 @@ int __thiscall INIClass::GetStringByIndex(char *this, CCINIClass *aP1, CCINIClas
 namespace gamemd {
 int INIClass::ReadInt(ObjectClass * aP1, ReferenceCounted * aP2, INIClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall INIClass::ReadInt(void *this, ObjectClass *aP1, ReferenceCounted *aP2, INIClass *aP3)
 {
-  unsigned __int8 *eax1a; // eax
-  ObjectClass *v5; // [esp-8h] [ebp-Ch]
-
-  v5 = (ObjectClass *)String::GetOrEmpty_Alt((char **)aP2); /*0x527905*/
-  eax1a = (unsigned __int8 *)String::GetOrEmpty_Alt((char **)aP1); /*0x527906*/
-  return INIClass::ReadInt_Overwrite((int)this, eax1a, (CCINIClass *)v5, aP3); /*0x527913*/
+    unsigned char *eax1a;
+    ObjectClass *v5;
+    v5 = (ObjectClass *)String::GetOrEmpty_Alt((char **)aP2);
+    eax1a = (unsigned char *)String::GetOrEmpty_Alt((char **)aP1);
+    return INIClass::ReadInt_Overwrite((int)this, eax1a, (CCINIClass *)v5, aP3);
 }
 }
 } // namespace gamemd

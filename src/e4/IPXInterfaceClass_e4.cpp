@@ -447,38 +447,35 @@ void __thiscall IPXInterfaceClass::_vt05(int this)
 // 0x7B1FD0
 int IPXInterfaceClass::SetAddress(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall IPXInterfaceClass::_vt21(_DWORD *a1)
 {
-  int v1; // ebx
-  _DWORD *v2; // ebp
-  int v3; // eax
-  int *v4; // esi
-  int result; // eax
-  int v6; // edx
-  int v7; // edi
-
-  v1 = 0; /*0x7b1fd8*/
-  v2 = a1 + 7; /*0x7b1fdd*/
-  v3 = a1[4]; /*0x7b1fe0*/
-  a1[7] = 0; /*0x7b1fe4*/
-  v4 = a1 + 8; /*0x7b1fed*/
-  result = v3 / 4; /*0x7b1ff0*/
-  if ( result > 0 ) /*0x7b1ff5*/
+    int v1;
+    int *v2;
+    int v3;
+    int *v4;
+    int result;
+    int v6;
+    int v7;
+    v1 = 0;
+    v2 = a1 + 7;
+    v3 = *((int*)(a1) + 4);
+    *((int*)(a1) + 7) = 0;
+    v4 = a1 + 8;
+    result = v3 / 4;
+    if ( result > 0 )
   {
-    do /*0x7b2012*/
+    do
     {
-      v6 = *v4++; /*0x7b1ff7*/
-      ComputeHash(v2, v6); /*0x7b1ffe*/
-      ++v1; /*0x7b2006*/
-      result = a1[4] / 4; /*0x7b200d*/
+    v6 = *v4++;
+    ComputeHash(v2, v6);
+    ++v1;
+    result = *((int*)(a1) + 4) / 4;
     }
-    while ( v1 < result ); /*0x7b2012*/
+    while ( v1 < result );
   }
-  v7 = a1[4] & 3; /*0x7b2017*/
-  if ( v7 ) /*0x7b201a*/
-    return ComputeHash(v2, *v4 & (0xFFFFFFFF >> (32 - 8 * v7))); /*0x7b2035*/
-  return result; /*0x7b203a*/
+    v7 = *((int*)(a1) + 4) & 3;
+    if ( v7 )
+    return ComputeHash(v2, *v4 & (0xFFFFFFFF >> (32 - 8 * v7)));
+    return result;
 }
 }
 
@@ -588,36 +585,31 @@ __int16 __thiscall IPXInterfaceClass::Connect(int this, const void *a1, unsigned
 // 0x7B25E0
 int IPXInterfaceClass::GetAddress(SOCKET s)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall IPXInterfaceClass::_vt09(SOCKET s)
 {
-  SOCKET v1; // esi
-  int optlen; // [esp+4h] [ebp-4h] BYREF
-
-  v1 = s; /*0x7b25e6*/
-  optlen = 4; /*0x7b25fb*/
-  getsockopt(s, 0xFFFF, 4103, (char *)&s, &optlen); /*0x7b2603*/
-  s = 0; /*0x7b261d*/
-  return setsockopt(v1, 0xFFFF, 4103, (const char *)&s, optlen); /*0x7b262a*/
+    SOCKET v1;
+    int optlen;
+    v1 = s;
+    optlen = 4;
+    getsockopt(s, 0xFFFF, 4103, (char *)&s, &optlen);
+    s = 0;
+    return setsockopt(v1, 0xFFFF, 4103, (const char *)&s, optlen);
 }
 }
 
 // 0x7B26D0
 char IPXInterfaceClass::ReceivePacket(char * name, AnimClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall IPXInterfaceClass::ReceivePacket(char *name, AnimClass *aP1)
 {
-  if ( gethostname((IUnknown *)name, aP1) == -1 ) /*0x7b26e3*/
+    if ( gethostname((IUnknown *)name, aP1) == -1 )
   {
-    WSAGetLastError(); /*0x7b26e5*/
-    Debug::Log(); /*0x7b26f0*/
-    return 0; /*0x7b26f8*/
+    WSAGetLastError();
+    Debug::Log();
+    return 0;
   }
-  else
+    else
   {
-    Debug::Log(); /*0x7b2704*/
-    return 1; /*0x7b270c*/
+    Debug::Log();
+    return 1;
   }
 }
 }

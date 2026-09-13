@@ -30,10 +30,8 @@ void __thiscall VtableStub::643E70(_DWORD *this)
 namespace gamemd {
 int VtableStub_72D450()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int VtableStub_72D450()
 {
-  return MEMORY[0xB0FBA8]; /*0x72d455*/
+    return DataGlobal_B0FBA8;
 }
 }
 } // namespace gamemd
@@ -42,10 +40,8 @@ int VtableStub_72D450()
 namespace gamemd {
 ConvertClass * VtableStub_72E280()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ConvertClass *VtableStub_72E280()
 {
-  return *(ConvertClass **)&stru_B05488.__pad_579C[20392]; /*0x72e285*/
+    return *(ConvertClass **)&DataGlobal_B05488.__pad_579C[20392];
 }
 }
 } // namespace gamemd
@@ -54,10 +50,8 @@ ConvertClass *VtableStub_72E280()
 namespace gamemd {
 int VtableStub_72F510()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int VtableStub::72F510()
 {
-  return MEMORY[0xB0FBF8]; /*0x72f515*/
+    return DataGlobal_B0FBF8;
 }
 }
 } // namespace gamemd

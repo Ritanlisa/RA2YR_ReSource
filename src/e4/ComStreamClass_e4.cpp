@@ -136,81 +136,72 @@ LABEL_16:
 // 0x7A4070
 int ComStreamClass::Seek()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ComStreamClass::Seek(CNetUtilEventSink *this)
 {
-  HWND v1; // eax
-  HWND Current; // eax
-  HWND DlgItem; // eax
-  int v5; // [esp+8h] [ebp+8h]
-  CampaignScore *v6; // [esp+Ch] [ebp+Ch]
-  int v7; // [esp+10h] [ebp+10h]
-
-  Debug::Log(); /*0x7a4075*/
-  dword_B77DF4 = v5; /*0x7a4083*/
-  if ( !v5 ) /*0x7a4088*/
+    HWND v1;
+    HWND Current;
+    HWND DlgItem;
+    int v5;
+    CampaignScore *v6;
+    int v7;
+    Debug::Log();
+    DataGlobal_B77DF4 = v5;
+    if ( !v5 )
   {
-    dword_B77E60 = v6; /*0x7a4092*/
-    dword_B77E64 = v7; /*0x7a4097*/
+    DataGlobal_B77E60 = v6;
+    DataGlobal_B77E64 = v7;
   }
-  v1 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x7a40a2*/
-  if ( v1 ) /*0x7a40a9*/
+    v1 = (HWND)Dialog::FindByHandle((void *)0xC4);
+    if ( v1 )
   {
-    g_WOL_ChannelList = (MPCooperative *)((unsigned int)g_WOL_ChannelList & 0xFFFFFEFF); /*0x7a40b7*/
-    if ( !g_WOL_ChannelList ) /*0x7a40bd*/
-      CloseDialog(v1, 0); /*0x7a40c3*/
+    g_WOL_ChannelList = (MPCooperative *)((unsigned int)g_WOL_ChannelList & 0xFFFFFEFF);
+    if ( !g_WOL_ChannelList )
+    CloseDialog(v1, 0);
   }
-  Current = Dialog::GetCurrent(); /*0x7a40c8*/
-  DlgItem = GetDlgItem(Current, 1344); /*0x7a40d3*/
-  if ( DlgItem ) /*0x7a40db*/
-    SetFocus(DlgItem); /*0x7a40de*/
-  return 0; /*0x7a40e6*/
+    Current = Dialog::GetCurrent();
+    DlgItem = GetDlgItem(Current, 1344);
+    if ( DlgItem )
+    SetFocus(DlgItem);
+    return 0;
 }
 }
 
 // 0x7A40F0
 int ComStreamClass::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ComStreamClass::ddtor(CNetUtilEventSink *this)
 {
-  int v2; // [esp+8h] [ebp+8h]
-  unsigned int v3; // [esp+Ch] [ebp+Ch]
-
-  if ( g_NetworkLobby_Init && dword_B77780 ) /*0x7a4100*/
+    int v2;
+    unsigned int v3;
+    if ( g_NetworkLobby_Init && DataGlobal_B77780 )
   {
-    if ( !v2 && v3 < 0x3E8 ) /*0x7a4114*/
+    if ( !v2 && v3 < 0x3E8 )
     {
-      dword_B77CE0 = (ObjectClass *)((char *)dword_B77CE0 + 1); /*0x7a4123*/
-      return 0; /*0x7a412a*/
+    DataGlobal_B77CE0 = (ObjectClass *)((char *)(DataGlobal_B77CE0) + 1);
+    return 0;
     }
-    return 0; /*0x7a4114*/
+    return 0;
   }
-  if ( MEMORY[0xA8B244] != 3 && MEMORY[0xA8B244] != 1 && MEMORY[0xA8B244] != 2 ) /*0x7a413f*/
+    if ( g_GameOptionsFlags != 3 && g_GameOptionsFlags != 1 && g_GameOptionsFlags != 2 )
   {
-    if ( g_WOL_ProcessIdle ) /*0x7a4188*/
-      DisplayRankingsWOL(0, 0); /*0x7a418e*/
-    return 0; /*0x7a418e*/
+    if ( g_WOL_ProcessIdle )
+    DisplayRankingsWOL(0, 0);
+    return 0;
   }
-  Debug::Log(); /*0x7a4146*/
-  if ( ++dword_B736F4 < (int)g_WOL_LoginPool ) /*0x7a4161*/
-    return 0; /*0x7a4193*/
-  if ( g_WOL_IdleHandler == 4 || g_WOL_IdleHandler == 5 ) /*0x7a4170*/
-    UpdateWOLLobbyPings(); /*0x7a4172*/
-  ProcessPingRequestsWOL(); /*0x7a4177*/
-  return 0; /*0x7a412a*/
+    Debug::Log();
+    if ( ++DataGlobal_B736F4 < (int)g_WOL_LoginPool )
+    return 0;
+    if ( g_WOL_IdleHandler == 4 || g_WOL_IdleHandler == 5 )
+    UpdateWOLLobbyPings();
+    ProcessPingRequestsWOL();
+    return 0;
 }
 }
 
 // 0x7AC800
 LONG ComStreamClass::AddRef()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __thiscall ComStreamClass::AddRef(CComObject_VCNetUtilEventSink___ATL *this)
 {
-  int v2; // [esp+4h] [ebp+4h]
-
-  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x7ac80e*/
+    int v2;
+    return InterlockedIncrement((volatile LONG *)(v2 + 4));
 }
 }
 
@@ -355,13 +346,11 @@ void __thiscall sub_7AE0E0(_DWORD *this)
 // 0x7AED20
 void ** ComStreamClass::writeData(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void **__thiscall ComStreamClass::writeData(void **this, char a2)
 {
-  DeleteAndZero(this); /*0x7aed23*/
-  if ( (a2 & 1) != 0 ) /*0x7aed2d*/
-    __3_YAXPAX_Z(this); /*0x7aed30*/
-  return this; /*0x7aed3a*/
+    DeleteAndZero(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 

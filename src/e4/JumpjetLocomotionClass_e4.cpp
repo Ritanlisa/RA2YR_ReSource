@@ -459,66 +459,57 @@ LABEL_5:
 // 0x4AFC20
 bool JumpjetLocomotionClass::StubReturnTrue_0(InfantryClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __stdcall JumpjetLocomotionClass::StubReturnTrue_0(InfantryClass *aP0)
 {
-  if ( TimerClass::Active(*(_DWORD *)&aP0->__pad_0[8] + 904) ) /*0x4afc2e*/
-    return 1; /*0x4afc37*/
-  return (*(unsigned __int8 (__stdcall **)(InfantryClass *))(*(_DWORD *)aP0->__pad_0 + 16))(aP0) /*0x4afc79*/
-      && (aP0->ambientSoundController[0] != *(_DWORD *)&stru_89E138.__pad_14B0[4520]
-       || aP0->ambientSoundController[1] != *(_DWORD *)&stru_89E138.__pad_14B0[4524]
-       || aP0->ambientSoundController[2] != *(_DWORD *)&stru_89E138.__pad_14B0[4528])
-      && (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&aP0->__pad_0[8] + 1336))(*(_DWORD *)&aP0->__pad_0[8]) > 0;
+    if ( TimerClass::Active(*(int *)&aP0->__pad_0[8] + 904) )
+    return 1;
+    return (*(unsigned char (__stdcall **)(InfantryClass *))(*(int *)aP0->__pad_0 + 16))(aP0)
+    && (aP0->ambientSoundController[0] != *(int *)&DataGlobal_89E138.__pad_14B0[4520] || aP0->ambientSoundController[1] != *(int *)&DataGlobal_89E138.__pad_14B0[4524] || aP0->ambientSoundController[2] != *(int *)&DataGlobal_89E138.__pad_14B0[4528])
+    && (*(int (__thiscall **)(int))(**(int **)&aP0->__pad_0[8] + 1336))(*(int *)&aP0->__pad_0[8]) > 0;
 }
 }
 
 // 0x4AFD40
 unsigned int * JumpjetLocomotionClass::ConvertCoordToCell(int arg0, unsigned int * a1, unsigned int aP1_4, IUnknown * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall JumpjetLocomotionClass::ConvertCoordToCell(int arg0, _DWORD *a1, unsigned int aP1_4, IUnknown *aP3)
 {
-  _DWORD *result; // eax
-  unsigned int v5; // ecx
-  IUnknown *v6; // edx
-
-  result = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(arg0 + 8) + 892))(*(_DWORD *)(arg0 + 8)); /*0x4afd4b*/
-  if ( !(_BYTE)result ) /*0x4afd53*/
+    int *result;
+    unsigned int v5;
+    IUnknown *v6;
+    result = (int *)(*(int (__thiscall **)(int))(**(int **)(arg0 + 8) + 892))(*(int *)(arg0 + 8));
+    if ( !(char)result )
   {
-    result = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(arg0 + 8) + 896))(*(_DWORD *)(arg0 + 8)); /*0x4afd5e*/
-    if ( !(_BYTE)result ) /*0x4afd66*/
+    result = (int *)(*(int (__thiscall **)(int))(**(int **)(arg0 + 8) + 896))(*(int *)(arg0 + 8));
+    if ( !(char)result )
     {
-      result = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(arg0 + 8) + 468))(*(_DWORD *)(arg0 + 8)); /*0x4afd71*/
-      if ( !(_BYTE)result ) /*0x4afd79*/
+    result = (int *)(*(int (__thiscall **)(int))(**(int **)(arg0 + 8) + 468))(*(int *)(arg0 + 8));
+    if ( !(char)result )
       {
-        result = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(arg0 + 8) + 472))(*(_DWORD *)(arg0 + 8)); /*0x4afd80*/
-        if ( !(_BYTE)result ) /*0x4afd88*/
+    result = (int *)(*(int (__thiscall **)(int))(**(int **)(arg0 + 8) + 472))(*(int *)(arg0 + 8));
+    if ( !(char)result )
         {
-          result = a1; /*0x4afd8a*/
-          v5 = aP1_4; /*0x4afd8e*/
-          v6 = aP3; /*0x4afd92*/
-          *(_DWORD *)(arg0 + 48) = a1; /*0x4afd99*/
-          *(_DWORD *)(arg0 + 52) = v5; /*0x4afd9c*/
-          *(_DWORD *)(arg0 + 56) = v6; /*0x4afd9f*/
-          if ( result != *(_DWORD **)&stru_89E138.__pad_14B0[4520] /*0x4afdba*/
-            || v5 != *(_DWORD *)&stru_89E138.__pad_14B0[4524]
-            || v6 != *(IUnknown **)&stru_89E138.__pad_14B0[4528] )
+    result = a1;
+    v5 = aP1_4;
+    v6 = aP3;
+    *(int *)(arg0 + 48) = a1;
+    *(int *)(arg0 + 52) = v5;
+    *(int *)(arg0 + 56) = v6;
+    if ( result != *(int **)&DataGlobal_89E138.__pad_14B0[4520] || v5 != *(int *)&DataGlobal_89E138.__pad_14B0[4524] || v6 != *(IUnknown **)&DataGlobal_89E138.__pad_14B0[4528] )
           {
-            a1 = result; /*0x4afdbc*/
-            aP1_4 = v5; /*0x4afdc4*/
-            aP3 = v6; /*0x4afdce*/
-            result = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)&a1); /*0x4afdd2*/
-            if ( (result[80] & 0x100) != 0 ) /*0x4afde0*/
+    a1 = result;
+    aP1_4 = v5;
+    aP3 = v6;
+    result = Coord::To_Cell(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&a1);
+    if ( (result[80] & 0x100) != 0 )
             {
-              result = (_DWORD *)(*(_DWORD *)&stru_89E138.__pad_14B0[4572] + *(_DWORD *)(arg0 + 56)); /*0x4afdeb*/
-              *(_DWORD *)(arg0 + 56) = result; /*0x4afded*/
+    result = (int *)(*(int *)&DataGlobal_89E138.__pad_14B0[4572] + *(int *)(arg0 + 56));
+    *(int *)(arg0 + 56) = result;
             }
           }
         }
       }
     }
   }
-  return result; /*0x4afdf0*/
+    return result;
 }
 }
 
@@ -823,19 +814,14 @@ char __stdcall JumpjetLocomotionClass::sub_4B0C40(int a1, int a2, unsigned int a
 // 0x4B48D0
 char JumpjetLocomotionClass::MoveToChecked(DriveLocomotionClass * aP0, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall JumpjetLocomotionClass::MoveToChecked(DriveLocomotionClass *aP0, int a2)
 {
-  char result; // al
-
-  result = (_BYTE)aP0 + 60; /*0x4b48de*/
-  if ( aP0->Dest[2] != *(_DWORD *)&stru_89E138.__pad_14B0[4520] /*0x4b48fd*/
-    || aP0->HeadToCoord[0] != *(_DWORD *)&stru_89E138.__pad_14B0[4524]
-    || aP0->HeadToCoord[1] != *(_DWORD *)&stru_89E138.__pad_14B0[4528] )
+    char result;
+    result = (char)aP0 + 60;
+    if ( aP0->Dest[2] != *(int *)&DataGlobal_89E138.__pad_14B0[4520] || aP0->HeadToCoord[0] != *(int *)&DataGlobal_89E138.__pad_14B0[4524] || aP0->HeadToCoord[1] != *(int *)&DataGlobal_89E138.__pad_14B0[4528] )
   {
-    return JumpjetLocomotion::MoveTo((int)&aP0[-1].Piggybackee, (IUnknown *)&aP0->Dest[2], a2); /*0x4b4908*/
+    return JumpjetLocomotion::MoveTo((int)&aP0[-1].Piggybackee, (IUnknown *)&aP0->Dest[2], a2);
   }
-  return result; /*0x4b490d*/
+    return result;
 }
 }
 
@@ -2565,42 +2551,39 @@ _DWORD *__thiscall JumpjetLocomotionClass::ClampToCellBounds(int *this, MouseCla
 // 0x5B0080
 int JumpjetLocomotionClass::ConvertCoordToCell_1(int a1, int aP1, IUnknown * aP2, IUnknown * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall JumpjetLocomotionClass::ConvertCoordToCell_1(int a1, int aP1, IUnknown *aP2, IUnknown *aP3)
 {
-  int result; // eax
-  IUnknown *v5; // ecx
-  IUnknown *v6; // edx
-
-  result = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 892))(*(_DWORD *)(a1 + 8)); /*0x5b008a*/
-  if ( !(_BYTE)result ) /*0x5b0092*/
+    int result;
+    IUnknown *v5;
+    IUnknown *v6;
+    result = (*(int (__thiscall **)(int))(**(int **)(a1 + 8) + 892))(*(int *)(a1 + 8));
+    if ( !(char)result )
   {
-    result = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 896))(*(_DWORD *)(a1 + 8)); /*0x5b0099*/
-    if ( !(_BYTE)result ) /*0x5b00a1*/
+    result = (*(int (__thiscall **)(int))(**(int **)(a1 + 8) + 896))(*(int *)(a1 + 8));
+    if ( !(char)result )
     {
-      result = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 468))(*(_DWORD *)(a1 + 8)); /*0x5b00a8*/
-      if ( !(_BYTE)result ) /*0x5b00b0*/
+    result = (*(int (__thiscall **)(int))(**(int **)(a1 + 8) + 468))(*(int *)(a1 + 8));
+    if ( !(char)result )
       {
-        result = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 472))(*(_DWORD *)(a1 + 8)); /*0x5b00b7*/
-        if ( !(_BYTE)result ) /*0x5b00bf*/
+    result = (*(int (__thiscall **)(int))(**(int **)(a1 + 8) + 472))(*(int *)(a1 + 8));
+    if ( !(char)result )
         {
-          v5 = aP2; /*0x5b00c5*/
-          v6 = aP3; /*0x5b00ca*/
-          *(_DWORD *)(a1 + 20) = aP1; /*0x5b00dd*/
-          *(_DWORD *)(a1 + 24) = v5; /*0x5b00e4*/
-          *(_DWORD *)(a1 + 28) = v6; /*0x5b00ec*/
-          result = (int)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)&aP1); /*0x5b00ef*/
-          if ( (*(_DWORD *)(result + 320) & 0x100) != 0 ) /*0x5b00fe*/
+    v5 = aP2;
+    v6 = aP3;
+    *(int *)(a1 + 20) = aP1;
+    *(int *)(a1 + 24) = v5;
+    *(int *)(a1 + 28) = v6;
+    result = (int)Coord::To_Cell(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&aP1);
+    if ( (*(int *)(result + 320) & 0x100) != 0 )
           {
-            result = Coord::ScaleToScreenY((void *)0x3C); /*0x5b0105*/
-            *(_DWORD *)(a1 + 28) += result; /*0x5b010a*/
+    result = Coord::ScaleToScreenY((void *)0x3C);
+    *(int *)(a1 + 28) += result;
           }
-          *(_BYTE *)(a1 + 44) = 1; /*0x5b010d*/
+    *(char *)(a1 + 44) = 1;
         }
       }
     }
   }
-  return result; /*0x5b0111*/
+    return result;
 }
 }
 
@@ -2683,66 +2666,57 @@ LABEL_15:
 // 0x69F330
 bool JumpjetLocomotionClass::StubReturnTrue_6(InfantryClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __stdcall JumpjetLocomotionClass::StubReturnTrue_6(InfantryClass *aP0)
 {
-  if ( TimerClass::Active(*(_DWORD *)&aP0->__pad_0[8] + 904) ) /*0x69f33e*/
-    return 1; /*0x69f347*/
-  return (*(unsigned __int8 (__stdcall **)(InfantryClass *))(*(_DWORD *)aP0->__pad_0 + 16))(aP0) /*0x69f389*/
-      && (aP0->ambientSoundController[0] != *(_DWORD *)&stru_B05488.__pad_14B0[3776]
-       || aP0->ambientSoundController[1] != *(_DWORD *)&stru_B05488.__pad_14B0[3780]
-       || aP0->ambientSoundController[2] != *(_DWORD *)&stru_B05488.__pad_14B0[3784])
-      && (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&aP0->__pad_0[8] + 1336))(*(_DWORD *)&aP0->__pad_0[8]) > 0;
+    if ( TimerClass::Active(*(int *)&aP0->__pad_0[8] + 904) )
+    return 1;
+    return (*(unsigned char (__stdcall **)(InfantryClass *))(*(int *)aP0->__pad_0 + 16))(aP0)
+    && (aP0->ambientSoundController[0] != *(int *)&DataGlobal_B05488.__pad_14B0[3776] || aP0->ambientSoundController[1] != *(int *)&DataGlobal_B05488.__pad_14B0[3780] || aP0->ambientSoundController[2] != *(int *)&DataGlobal_B05488.__pad_14B0[3784])
+    && (*(int (__thiscall **)(int))(**(int **)&aP0->__pad_0[8] + 1336))(*(int *)&aP0->__pad_0[8]) > 0;
 }
 }
 
 // 0x69F450
 unsigned int * JumpjetLocomotionClass::ConvertCoordToCell_2(int arg0, unsigned int * a1, unsigned int aP1_4, IUnknown * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall JumpjetLocomotionClass::ConvertCoordToCell_2(int arg0, _DWORD *a1, unsigned int aP1_4, IUnknown *aP3)
 {
-  _DWORD *result; // eax
-  unsigned int v5; // ecx
-  IUnknown *v6; // edx
-
-  result = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(arg0 + 8) + 892))(*(_DWORD *)(arg0 + 8)); /*0x69f45b*/
-  if ( !(_BYTE)result ) /*0x69f463*/
+    int *result;
+    unsigned int v5;
+    IUnknown *v6;
+    result = (int *)(*(int (__thiscall **)(int))(**(int **)(arg0 + 8) + 892))(*(int *)(arg0 + 8));
+    if ( !(char)result )
   {
-    result = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(arg0 + 8) + 896))(*(_DWORD *)(arg0 + 8)); /*0x69f46e*/
-    if ( !(_BYTE)result ) /*0x69f476*/
+    result = (int *)(*(int (__thiscall **)(int))(**(int **)(arg0 + 8) + 896))(*(int *)(arg0 + 8));
+    if ( !(char)result )
     {
-      result = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(arg0 + 8) + 468))(*(_DWORD *)(arg0 + 8)); /*0x69f481*/
-      if ( !(_BYTE)result ) /*0x69f489*/
+    result = (int *)(*(int (__thiscall **)(int))(**(int **)(arg0 + 8) + 468))(*(int *)(arg0 + 8));
+    if ( !(char)result )
       {
-        result = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(arg0 + 8) + 472))(*(_DWORD *)(arg0 + 8)); /*0x69f490*/
-        if ( !(_BYTE)result ) /*0x69f498*/
+    result = (int *)(*(int (__thiscall **)(int))(**(int **)(arg0 + 8) + 472))(*(int *)(arg0 + 8));
+    if ( !(char)result )
         {
-          result = a1; /*0x69f49a*/
-          v5 = aP1_4; /*0x69f49e*/
-          v6 = aP3; /*0x69f4a2*/
-          *(_DWORD *)(arg0 + 48) = a1; /*0x69f4a9*/
-          *(_DWORD *)(arg0 + 52) = v5; /*0x69f4ac*/
-          *(_DWORD *)(arg0 + 56) = v6; /*0x69f4af*/
-          if ( result != *(_DWORD **)&stru_B05488.__pad_14B0[3776] /*0x69f4ca*/
-            || v5 != *(_DWORD *)&stru_B05488.__pad_14B0[3780]
-            || v6 != *(IUnknown **)&stru_B05488.__pad_14B0[3784] )
+    result = a1;
+    v5 = aP1_4;
+    v6 = aP3;
+    *(int *)(arg0 + 48) = a1;
+    *(int *)(arg0 + 52) = v5;
+    *(int *)(arg0 + 56) = v6;
+    if ( result != *(int **)&DataGlobal_B05488.__pad_14B0[3776] || v5 != *(int *)&DataGlobal_B05488.__pad_14B0[3780] || v6 != *(IUnknown **)&DataGlobal_B05488.__pad_14B0[3784] )
           {
-            a1 = result; /*0x69f4cc*/
-            aP1_4 = v5; /*0x69f4d4*/
-            aP3 = v6; /*0x69f4de*/
-            result = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)&a1); /*0x69f4e2*/
-            if ( (result[80] & 0x100) != 0 ) /*0x69f4f0*/
+    a1 = result;
+    aP1_4 = v5;
+    aP3 = v6;
+    result = Coord::To_Cell(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&a1);
+    if ( (result[80] & 0x100) != 0 )
             {
-              result = (_DWORD *)(*(_DWORD *)&stru_B05488.__pad_14B0[3828] + *(_DWORD *)(arg0 + 56)); /*0x69f4fb*/
-              *(_DWORD *)(arg0 + 56) = result; /*0x69f4fd*/
+    result = (int *)(*(int *)&DataGlobal_B05488.__pad_14B0[3828] + *(int *)(arg0 + 56));
+    *(int *)(arg0 + 56) = result;
             }
           }
         }
       }
     }
   }
-  return result; /*0x69f500*/
+    return result;
 }
 }
 
@@ -2978,19 +2952,14 @@ LABEL_52:
 // 0x6A3F00
 char JumpjetLocomotionClass::MoveToChecked_0(ShipLocomotionClass * aP0, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall JumpjetLocomotionClass::MoveToChecked_0(ShipLocomotionClass *aP0, int a2)
 {
-  char result; // al
-
-  result = (_BYTE)aP0 + 60; /*0x6a3f0e*/
-  if ( aP0->Dest[2] != *(_DWORD *)&stru_B05488.__pad_14B0[3776] /*0x6a3f2d*/
-    || aP0->HeadToCoord[0] != *(_DWORD *)&stru_B05488.__pad_14B0[3780]
-    || aP0->HeadToCoord[1] != *(_DWORD *)&stru_B05488.__pad_14B0[3784] )
+    char result;
+    result = (char)aP0 + 60;
+    if ( aP0->Dest[2] != *(int *)&DataGlobal_B05488.__pad_14B0[3776] || aP0->HeadToCoord[0] != *(int *)&DataGlobal_B05488.__pad_14B0[3780] || aP0->HeadToCoord[1] != *(int *)&DataGlobal_B05488.__pad_14B0[3784] )
   {
-    return WalkLocomotion::MoveTo((int)&aP0[-1].Piggybackee, (IUnknown *)&aP0->Dest[2], a2); /*0x6a3f38*/
+    return WalkLocomotion::MoveTo((int)&aP0[-1].Piggybackee, (IUnknown *)&aP0->Dest[2], a2);
   }
-  return result; /*0x6a3f3d*/
+    return result;
 }
 }
 
