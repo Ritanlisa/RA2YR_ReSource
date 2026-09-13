@@ -182,11 +182,11 @@ LoadOptions *__thiscall LoadOptions::QueryInterface(char *this, char a2)
   void *v4; // eax
 
   v3 = 0; /*0x55a0d4*/
-  for ( *(_DWORD *)this = &LoadOptionsClass::`vftable'; v3 < this->capacity; ++v3 ) /*0x55a0e1*/
+  for ( *(_DWORD *)this = &vt_LoadOptionsClass; v3 < this->capacity; ++v3 ) /*0x55a0e1*/
     __3_YAXPAX_Z(*(void **)(*((_DWORD *)this + 9) + 4 * v3)); /*0x55a0ea*/
   (*(void (__thiscall **)(char *))(*((_DWORD *)this + 8) + 12))(this + 32); /*0x55a102*/
   v4 = (void *)*((_DWORD *)this + 9); /*0x55a105*/
-  *((_DWORD *)this + 8) = &VectorClass<FileEntryClass *>::`vftable'; /*0x55a108*/
+  *((_DWORD *)this + 8) = &vt_VectorClass_FileEntryClass; /*0x55a108*/
   if ( v4 && *(this + 45) ) /*0x55a112*/
   {
     __3_YAXPAX_Z(v4); /*0x55a11a*/
@@ -347,7 +347,7 @@ VectorClass *__thiscall LoadOptions::Constructor_VectorClass_FileEntryClass___(_
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x55a413*/
-  *this = &VectorClass<FileEntryClass *>::`vftable'; /*0x55a416*/
+  *this = &vt_VectorClass_FileEntryClass; /*0x55a416*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x55a420*/
   {
     __3_YAXPAX_Z(v3); /*0x55a428*/
@@ -372,7 +372,7 @@ DynamicVector *__thiscall LoadOptions::vt00(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x55a463*/
-  *this = &VectorClass<FileEntryClass *>::`vftable'; /*0x55a466*/
+  *this = &vt_VectorClass_FileEntryClass; /*0x55a466*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x55a470*/
   {
     __3_YAXPAX_Z(v3); /*0x55a478*/

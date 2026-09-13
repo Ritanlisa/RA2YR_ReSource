@@ -74,7 +74,7 @@ char __thiscall WDTState_4_::_vt02(_BYTE *this, int a2, _DWORD *a3)
         do /*0x76baf5*/
         {
           ComPtr::Constructor(v8); /*0x76bae6*/
-          *v8 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76baeb*/
+          *v8 = &vt_rc_ptr_WDTTerritory; /*0x76baeb*/
           v8 += 2; /*0x76baf1*/
           --v9; /*0x76baf4*/
         }
@@ -177,7 +177,7 @@ DynamicVector *__thiscall WDTState_4_::QueryInterface(_DWORD *this, char a2)
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v3 = (void (__thiscall ***)(_DWORD, int))*(this + 1); /*0x76bc13*/
-  *this = &VectorClass<rc_ptr<WDTTerritory>>::`vftable'; /*0x76bc16*/
+  *this = &vt_VectorClass_rc_ptr_WDTTerritory; /*0x76bc16*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x76bc20*/
   {
     (**v3)(v3, 3); /*0x76bc2f*/
@@ -200,7 +200,7 @@ unsigned int * WDTState_4::Constructor()
 _DWORD *__thiscall sub_76BC60(_DWORD *this)
 {
   ComPtr::Constructor(this); /*0x76bc63*/
-  *this = &rc_ptr<WDTTerritory>::`vftable'; /*0x76bc68*/
+  *this = &vt_rc_ptr_WDTTerritory; /*0x76bc68*/
   return this; /*0x76bc70*/
 }
 }

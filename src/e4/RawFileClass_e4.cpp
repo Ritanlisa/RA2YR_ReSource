@@ -12,7 +12,7 @@ void __thiscall RawFileClass_Dtor(int *this)
   DWORD LastError; // eax
   int v4; // [esp-8h] [ebp-Ch]
 
-  *this = (int)&RawFileClass::`vftable'; /*0x65ca03*/
+  *this = (int)&vt_RawFileClass; /*0x65ca03*/
   if ( (unsigned __int8)RawFileClass::Write() ) /*0x65ca09*/
   {
     if ( !CloseHandle((HANDLE)*(this + 5)) ) /*0x65ca17*/
@@ -30,7 +30,7 @@ void __thiscall RawFileClass_Dtor(int *this)
     *(this + 6) = 0; /*0x65ca54*/
     *((_BYTE *)this + 32) = 0; /*0x65ca5b*/
   }
-  *this = (int)&FileClass::`vftable'; /*0x65ca5f*/
+  *this = (int)&vt_FileClass; /*0x65ca5f*/
 }
 }
 

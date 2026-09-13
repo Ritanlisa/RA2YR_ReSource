@@ -145,7 +145,7 @@ NullModemClass *__thiscall NullModemClass::QueryInterface(void ***this, char a2)
   void **v3; // edi
 
   v3 = *(this + 13); /*0x5f3654*/
-  *this = &NullModemClass::`vftable'; /*0x5f3657*/
+  *this = &vt_NullModemClass; /*0x5f3657*/
   if ( v3 ) /*0x5f365f*/
   {
     FileFind::Close(v3); /*0x5f3663*/
@@ -169,7 +169,7 @@ NullModemClass *__thiscall NullModemClass::QueryInterface(void ***this, char a2)
     g_ClipboardBuffer = 0; /*0x5f36c5*/
   }
 LABEL_10:
-  *this = &ConnManClass::`vftable'; /*0x5f36cf*/
+  *this = &vt_ConnManClass; /*0x5f36cf*/
   if ( (a2 & 1) != 0 ) /*0x5f36db*/
     __3_YAXPAX_Z(this); /*0x5f36de*/
   return (NullModemClass *)this; /*0x5f36e8*/

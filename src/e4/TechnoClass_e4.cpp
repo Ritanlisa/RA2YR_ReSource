@@ -326,21 +326,21 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   *(this + 274) = 0; /*0x6f3057*/
   this->currentTargetThreatValues.IsInitialized = 1; /*0x6f305d*/
   this->currentTargetThreatValues.IsAllocated = 0; /*0x6f3064*/
-  *(this + 272) = &DynamicVectorClass<int>::`vftable'; /*0x6f306a*/
+  *(this + 272) = &vt_DynamicVectorClass_int; /*0x6f306a*/
   *(this + 277) = 10; /*0x6f3074*/
   *(this + 276) = 0; /*0x6f307a*/
   *(this + 279) = 0; /*0x6f3080*/
   *(this + 280) = 0; /*0x6f3086*/
   *((_BYTE *)this + 1124) = 1; /*0x6f308c*/
   *((_BYTE *)this + 1125) = 0; /*0x6f3093*/
-  *(this + 278) = &DynamicVectorClass<AbstractClass *>::`vftable'; /*0x6f3099*/
+  *(this + 278) = &vt_DynamicVectorClass_AbstractClass; /*0x6f3099*/
   *(this + 283) = 10; /*0x6f309f*/
   *(this + 282) = 0; /*0x6f30a5*/
   *(this + 285) = 0; /*0x6f30ab*/
   *(this + 286) = 0; /*0x6f30b1*/
   *((_BYTE *)this + 1148) = 1; /*0x6f30b7*/
   *((_BYTE *)this + 1149) = 0; /*0x6f30be*/
-  *(this + 284) = &DynamicVectorClass<AbstractClass *>::`vftable'; /*0x6f30c4*/
+  *(this + 284) = &vt_DynamicVectorClass_AbstractClass; /*0x6f30c4*/
   *(this + 289) = 10; /*0x6f30ca*/
   *(this + 288) = 0; /*0x6f30d0*/
   *(this + 295) = 1; /*0x6f30d6*/
@@ -359,7 +359,7 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   *(this + 327) = 0; /*0x6f312a*/
   *this = &TechnoClass::`vftable'; /*0x6f3130*/
   *(this + 1) = &TechnoClass::`vftable'; /*0x6f3136*/
-  *(this + 2) = &TechnoClass::`vftable'; /*0x6f313d*/
+  *(this + 2) = &vt_TechnoClass; /*0x6f313d*/
   *(this + 3) = &off_7F4934; /*0x6f314a*/
   AudioController::Init(this + 290); /*0x6f3151*/
   AudioController::Init(this + 297); /*0x6f315c*/
@@ -617,7 +617,7 @@ int __thiscall TechnoClass::DTOR(int this)
   v2 = *(_DWORD **)(this + 1300); /*0x6f4507*/
   *(_DWORD *)this = &TechnoClass::`vftable'; /*0x6f450d*/
   this->vtable1 = &TechnoClass::`vftable'; /*0x6f4515*/
-  this->vtable2 = &TechnoClass::`vftable'; /*0x6f451c*/
+  this->vtable2 = &vt_TechnoClass; /*0x6f451c*/
   this->vtable3 = &off_7F4934; /*0x6f4523*/
   if ( v2 ) /*0x6f452a*/
   {
@@ -686,10 +686,10 @@ int __thiscall TechnoClass::DTOR(int this)
     (*(void (__thiscall **)(int))(*(_DWORD *)v12 + 248))(v12); /*0x6f468b*/
     *(_DWORD *)(this + 304) = 0; /*0x6f4691*/
   }
-  this->attackedTargets = &VectorClass<AbstractClass *>::`vftable'; /*0x6f469d*/
+  this->attackedTargets = &vt_VectorClass_AbstractClass; /*0x6f469d*/
   AbstractClassVector::ddtor(this + 1136); /*0x6f46a3*/
   v13 = *(void **)(this + 1116); /*0x6f46a8*/
-  this->currentTargets = &VectorClass<AbstractClass *>::`vftable'; /*0x6f46ae*/
+  this->currentTargets = &vt_VectorClass_AbstractClass; /*0x6f46ae*/
   if ( v13 && *(_BYTE *)(this + 1125) ) /*0x6f46bc*/
   {
     __3_YAXPAX_Z(v13); /*0x6f46c5*/
@@ -698,7 +698,7 @@ int __thiscall TechnoClass::DTOR(int this)
   *(_BYTE *)(this + 1125) = 0; /*0x6f46d3*/
   this->audioController3 = 0; /*0x6f46d9*/
   v14 = *(void **)(this + 1092); /*0x6f46df*/
-  this->currentTargetThreatValues = &VectorClass<int>::`vftable'; /*0x6f46e5*/
+  this->currentTargetThreatValues = &vt_VectorClass_int; /*0x6f46e5*/
   if ( v14 && this->currentTargetThreatValues.IsAllocated ) /*0x6f46f3*/
   {
     __3_YAXPAX_Z(v14); /*0x6f46fc*/
@@ -710,9 +710,9 @@ int __thiscall TechnoClass::DTOR(int this)
   *(_DWORD *)this = &RadioClass::`vftable'; /*0x6f4721*/
   this->vtable1 = &RadioClass::`vftable'; /*0x6f4727*/
   this->vtable2 = &RadioClass::`vftable'; /*0x6f472e*/
-  this->vtable3 = &RadioClass::`vftable'; /*0x6f4735*/
+  this->vtable3 = &vt_RadioClass; /*0x6f4735*/
   v15 = *(void **)(this + 228); /*0x6f473c*/
-  this->radioLinks = &VectorClass<TechnoClass *>::`vftable'; /*0x6f4742*/
+  this->radioLinks = &vt_VectorClass_TechnoClass; /*0x6f4742*/
   if ( v15 && *(_BYTE *)(this + 237) ) /*0x6f4750*/
   {
     __3_YAXPAX_Z(v15); /*0x6f4759*/
@@ -723,7 +723,7 @@ int __thiscall TechnoClass::DTOR(int this)
   *(_DWORD *)this = &MissionClass::`vftable'; /*0x6f4775*/
   this->vtable1 = &MissionClass::`vftable'; /*0x6f477b*/
   this->vtable2 = &MissionClass::`vftable'; /*0x6f4782*/
-  this->vtable3 = &MissionClass::`vftable'; /*0x6f4789*/
+  this->vtable3 = &vt_MissionClass; /*0x6f4789*/
   return ObjectClass::Dtor((_DWORD *)this); /*0x6f4795*/
 }
 }
@@ -1548,7 +1548,7 @@ int TechnoClass_DrawVoxel()
 //   int v41; // edi
 //   int *v42; // eax
 //   BuildingTypeClass *v43; // eax
-//   int v44; // ed... [29060 chars total]
+//   int v44; // ed... [28522 chars total]
 // end truncated pseudocode
 }
 } // namespace gamemd

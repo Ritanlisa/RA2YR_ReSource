@@ -52,7 +52,7 @@ void *__thiscall Trigger::initTrigger(
   *((_DWORD *)this + 10) = 0; /*0x5cbd62*/
   *((_BYTE *)this + 52) = 0; /*0x5cbd65*/
   *((_BYTE *)this + 60) = 0; /*0x5cbd68*/
-  *(_DWORD *)this = &MSShapeAnim::`vftable'; /*0x5cbd6a*/
+  *(_DWORD *)this = &vt_MSShapeAnim; /*0x5cbd6a*/
   FileClassToBuffer = LoadFileClassToBuffer((char **)aP1, (bool *)this + 60); /*0x5cbd70*/
   *((_DWORD *)this + 7) = FileClassToBuffer; /*0x5cbd75*/
   this->Trigger_field_0x2C = 0; /*0x5cbd78*/
@@ -60,7 +60,7 @@ void *__thiscall Trigger::initTrigger(
   *((_DWORD *)this + 17) = aP7; /*0x5cbd84*/
   *((_DWORD *)this + 12) = v10; /*0x5cbd87*/
   *((_DWORD *)this + 16) = 0; /*0x5cbd8a*/
-  *(_DWORD *)this = &MSFadeAnim::`vftable'; /*0x5cbd8d*/
+  *(_DWORD *)this = &vt_MSFadeAnim; /*0x5cbd8d*/
   return this; /*0x5cbd95*/
 }
 }
@@ -140,12 +140,12 @@ void __userpurge Trigger::ProcessMapEvents(int this@<ecx>, int *a2@<ebp>, int a3
   v26 = a2; /*0x76d544*/
   v25 = a3; /*0x76d545*/
   Trigger::checkCondition(&v47, 0, 0); /*0x76d54c*/
-  v47 = &DynamicVectorClass<MSAnim *>::`vftable'; /*0x76d561*/
+  v47 = &vt_DynamicVectorClass_MSAnim; /*0x76d561*/
   v52 = 10; /*0x76d565*/
   v51 = 0; /*0x76d569*/
   Trigger::checkCondition(&v41, 0, 0); /*0x76d56d*/
   v11 = *(_DWORD *)(this + 1116); /*0x76d572*/
-  v41 = &DynamicVectorClass<MSAnim *>::`vftable'; /*0x76d57c*/
+  v41 = &vt_DynamicVectorClass_MSAnim; /*0x76d57c*/
   v39 = (ObjectClass *)10; /*0x76d585*/
   v45 = 0; /*0x76d589*/
   VectorCursor::Construct(&v31, v11 + 44, 0); /*0x76d58d*/
@@ -197,7 +197,7 @@ void __userpurge Trigger::ProcessMapEvents(int this@<ecx>, int *a2@<ebp>, int a3
           }
           v5 = 0; /*0x76d734*/
         }
-        v53[0] = &CCFileClass::`vftable'; /*0x76d73d*/
+        v53[0] = &vt_CCFileClass; /*0x76d73d*/
         v55 = 0; /*0x76d745*/
         Vector::Clear((int)v54); /*0x76d74c*/
         v53[0] = &off_7E1668; /*0x76d755*/
@@ -231,7 +231,7 @@ void __userpurge Trigger::ProcessMapEvents(int this@<ecx>, int *a2@<ebp>, int a3
           *((_DWORD *)Block + v23) = v18; /*0x76d837*/
         }
       }
-      v56[0] = &CCFileClass::`vftable'; /*0x76d841*/
+      v56[0] = &vt_CCFileClass; /*0x76d841*/
       v58 = 0; /*0x76d84c*/
       Vector::Clear((int)v57); /*0x76d853*/
       BufferIOFileClass::Destruct(v56); /*0x76d85f*/
@@ -240,10 +240,10 @@ void __userpurge Trigger::ProcessMapEvents(int this@<ecx>, int *a2@<ebp>, int a3
   }
   v35 = &v47; /*0x76d88b*/
   v36 = 0; /*0x76d897*/
-  v34 = &VectorCursor<MSAnim *,DynamicVectorClass<MSAnim *>>::`vftable'; /*0x76d89b*/
+  v34 = &vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76d89b*/
   var110 = &v41; /*0x76d89f*/
   v33 = 0; /*0x76d8a3*/
-  v38 = &VectorCursor<MSAnim *,DynamicVectorClass<MSAnim *>>::`vftable'; /*0x76d8a7*/
+  v38 = &vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76d8a7*/
   if ( CampaignProperties_WorldDominationTour_22::AddRef(&v38) ) /*0x76d8ab*/
   {
     do /*0x76da41*/
@@ -276,7 +276,7 @@ void __userpurge Trigger::ProcessMapEvents(int this@<ecx>, int *a2@<ebp>, int a3
             }
             if ( ((unsigned __int8 (__thiscall *)(void ***))v28[1])(&v28) ) /*0x76d9b5*/
               nullsub_24(); /*0x76d9ca*/
-            v28 = &VectorCursor<MSSfxEntry *,DynamicVectorClass<MSSfxEntry *>>::`vftable'; /*0x76d9cf*/
+            v28 = &vt_VectorCursor_MSSfxEntry_DynamicVectorClass_MSSfxEntry; /*0x76d9cf*/
           }
           DeleteAndZero((int)&v37); /*0x76d9d7*/
           PriorityQueue::Add((Selection_WorldDominationTour *)this, (MSAnim *)v35[1][v36]); /*0x76d9ed*/
@@ -290,16 +290,16 @@ void __userpurge Trigger::ProcessMapEvents(int this@<ecx>, int *a2@<ebp>, int a3
     while ( ((unsigned __int8 (__thiscall *)(void ***))v38[1])(&v38) ); /*0x76da41*/
   }
   ComPtr::Set((rc_ptr_base *)(this + 1160), *(_DWORD *)(a4 + 4)); /*0x76da5d*/
-  v38 = &VectorCursor<MSAnim *,DynamicVectorClass<MSAnim *>>::`vftable'; /*0x76da66*/
-  v34 = &VectorCursor<MSAnim *,DynamicVectorClass<MSAnim *>>::`vftable'; /*0x76da6a*/
-  v31 = &VectorCursor<rc_ptr<WorldDominationTour::Territory>,DynamicVectorClass<rc_ptr<WorldDominationTour::Territory>>>::`vftable'; /*0x76da76*/
-  v41 = &VectorClass<MSAnim *>::`vftable'; /*0x76da7e*/
+  v38 = &vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76da66*/
+  v34 = &vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76da6a*/
+  v31 = &vt_VectorCursor_rc_ptr_WorldDominationTour_Territory_DynamicVectorClass_rc_ptr_WorldDominationTour_Territory; /*0x76da76*/
+  v41 = &vt_VectorClass_MSAnim; /*0x76da7e*/
   if ( Block && BYTE1(v44) ) /*0x76da8b*/
   {
     __3_YAXPAX_Z(Block); /*0x76da8e*/
     Block = 0; /*0x76da96*/
   }
-  v47 = &VectorClass<MSAnim *>::`vftable'; /*0x76da9e*/
+  v47 = &vt_VectorClass_MSAnim; /*0x76da9e*/
   v43 = 0; /*0x76daa2*/
   BYTE1(v44) = 0; /*0x76daa9*/
   if ( v48 ) /*0x76daaf*/
@@ -320,7 +320,7 @@ _DWORD *__thiscall sub_76F090(_DWORD *this, int a2, int a3)
 {
   *(this + 1) = a2; /*0x76f09a*/
   *(this + 2) = a3; /*0x76f09d*/
-  *this = &VectorCursor<MSSfxEntry *,DynamicVectorClass<MSSfxEntry *>>::`vftable'; /*0x76f0a0*/
+  *this = &vt_VectorCursor_MSSfxEntry_DynamicVectorClass_MSSfxEntry; /*0x76f0a0*/
   return this; /*0x76f0a6*/
 }
 }
@@ -337,7 +337,7 @@ _DWORD *__thiscall Trigger::checkCondition(_DWORD *this, ObjectClass *aP1, Objec
   *(this + 2) = aP1; /*0x76f1ce*/
   *((_BYTE *)this + 12) = 1; /*0x76f1d1*/
   *((_BYTE *)this + 13) = 0; /*0x76f1d5*/
-  *this = &VectorClass<MSAnim *>::`vftable'; /*0x76f1d8*/
+  *this = &vt_VectorClass_MSAnim; /*0x76f1d8*/
   if ( aP1 ) /*0x76f1de*/
   {
     if ( aP2 ) /*0x76f1e6*/

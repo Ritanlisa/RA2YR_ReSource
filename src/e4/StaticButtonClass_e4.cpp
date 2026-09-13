@@ -11,7 +11,7 @@ StaticButtonClass *__thiscall StaticButtonClass::QueryInterface(_DWORD *this, ch
   void *v3; // eax
 
   v3 = (void *)*(this + 12); /*0x6c6883*/
-  *this = &StaticButtonClass::`vftable'; /*0x6c6886*/
+  *this = &vt_StaticButtonClass; /*0x6c6886*/
   if ( v3 ) /*0x6c688e*/
     __3_YAXPAX_Z(v3); /*0x6c6891*/
   Vector::Clear((int)(this + 9)); /*0x6c689c*/

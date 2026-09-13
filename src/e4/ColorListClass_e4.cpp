@@ -24,11 +24,11 @@ ColorListClass *__thiscall ColorListClass::QueryInterface(char *this, char a2)
 
   v3 = *((_DWORD *)this + 93); /*0x488f05*/
   v4 = this + 372; /*0x488f0b*/
-  *(_DWORD *)this = &ColorListClass::`vftable'; /*0x488f13*/
+  *(_DWORD *)this = &vt_ColorListClass; /*0x488f13*/
   (*(void (__thiscall **)(char *))(v3 + 12))(this + 372); /*0x488f19*/
   *((_DWORD *)this + 100) = 0; /*0x488f1e*/
   v5 = (void *)*((_DWORD *)v4 + 1); /*0x488f24*/
-  *(_DWORD *)v4 = &VectorClass<int>::`vftable'; /*0x488f29*/
+  *(_DWORD *)v4 = &vt_VectorClass_int; /*0x488f29*/
   if ( v5 && v4[13] ) /*0x488f31*/
   {
     __3_YAXPAX_Z(v5); /*0x488f37*/

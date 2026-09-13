@@ -29,7 +29,7 @@ DynamicVector *__thiscall Buffer::Constructor_VectorClass_ObjectClass___(_DWORD 
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x488033*/
-  *this = &VectorClass<ObjectClass *>::`vftable'; /*0x488036*/
+  *this = &vt_VectorClass_ObjectClass; /*0x488036*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x488040*/
   {
     __3_YAXPAX_Z(v3); /*0x488048*/

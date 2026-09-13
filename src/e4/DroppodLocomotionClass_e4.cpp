@@ -203,7 +203,7 @@ HRESULT __stdcall DropPodLocomotionClass::_vt05(int *a1, int *pStm)
     a1[11] = 0; /*0x4b625c*/
     *a1 = (int)&DropPodLocomotionClass::`vftable'; /*0x4b6263*/
     a1[1] = (int)&DropPodLocomotionClass::`vftable'; /*0x4b6269*/
-    a1[6] = (int)&DropPodLocomotionClass::`vftable'; /*0x4b6270*/
+    a1[6] = (int)&vt_DropPodLocomotionClass; /*0x4b6270*/
   }
   v2->__pad_0->Read(v2, &pStm, 1, 0); /*0x4b6283*/
   if ( !(_BYTE)pStm ) /*0x4b628c*/
@@ -289,7 +289,7 @@ DropPodLocomotionClass *__thiscall DropPodLocomotionClass::ProcessMove(ILocomoti
 
   *this = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b66f3*/
   *(this + 1) = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b66f9*/
-  *(this + 6) = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b6700*/
+  *(this + 6) = (ILocomotion *)&vt_DropPodLocomotionClass; /*0x4b6700*/
   v3 = *(this + 11); /*0x4b6707*/
   if ( v3 ) /*0x4b670c*/
     (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x4b6711*/

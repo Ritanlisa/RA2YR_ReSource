@@ -205,11 +205,11 @@ _DWORD *__thiscall SideClass::Construct(_DWORD *this, CCINIClass *aP1)
   *((_BYTE *)this + 165) = 0; /*0x6a4576*/
   *(this + 43) = 10; /*0x6a457c*/
   *(this + 42) = 0; /*0x6a4586*/
-  *(this + 38) = &TypeList<int>::`vftable'; /*0x6a458c*/
+  *(this + 38) = &vt_TypeList_int; /*0x6a458c*/
   *this = &SideClass::`vftable'; /*0x6a4597*/
   *(this + 1) = &SideClass::`vftable'; /*0x6a459d*/
   *(this + 2) = &SideClass::`vftable'; /*0x6a45a3*/
-  *(this + 3) = &SideClass::`vftable'; /*0x6a45aa*/
+  *(this + 3) = &vt_SideClass; /*0x6a45aa*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x6a45b1*/
   if ( *(int *)stru_89E138.__pad_15FF8 < *(int *)&stru_89E138.__pad_579C[67668] /*0x6a45ea*/
     || (BYTE1(stru_89E138.field_15FF4) || !*(_DWORD *)&stru_89E138.__pad_579C[67668])
@@ -271,11 +271,11 @@ int __stdcall SideClass::SaveLoad_Prefix(_DWORD *a0, AbstractTypeClass *aP1)
       v2[1].__pad_0[13] = 0; /*0x6a47c5*/
       v2[1].abstractFlags = 10; /*0x6a47cb*/
       v2[1].uniqueId = 0; /*0x6a47d1*/
-      *(_DWORD *)v2[1].__pad_0 = &TypeList<int>::`vftable'; /*0x6a47d7*/
+      *(_DWORD *)v2[1].__pad_0 = &vt_TypeList_int; /*0x6a47d7*/
       *(_DWORD *)v2->__pad_0 = &SideClass::`vftable'; /*0x6a47e1*/
       *(_DWORD *)&v2->__pad_0[4] = &SideClass::`vftable'; /*0x6a47e7*/
       *(_DWORD *)&v2->__pad_0[8] = &SideClass::`vftable'; /*0x6a47ee*/
-      *(_DWORD *)&v2->__pad_0[12] = &SideClass::`vftable'; /*0x6a47f5*/
+      *(_DWORD *)&v2->__pad_0[12] = &vt_SideClass; /*0x6a47f5*/
     }
     v5 = v2 + 1; /*0x6a47fc*/
     if ( v5 ) /*0x6a4804*/
@@ -286,7 +286,7 @@ int __stdcall SideClass::SaveLoad_Prefix(_DWORD *a0, AbstractTypeClass *aP1)
       v5->__pad_0[13] = 0; /*0x6a4810*/
       v5->abstractFlags = 10; /*0x6a4813*/
       v5->uniqueId = 0; /*0x6a4816*/
-      *(_DWORD *)v5->__pad_0 = &TypeList<int>::`vftable'; /*0x6a4819*/
+      *(_DWORD *)v5->__pad_0 = &vt_TypeList_int; /*0x6a4819*/
     }
     (*(void (__stdcall **)(AbstractClass *, AbstractTypeClass **, int, _DWORD))(*(_DWORD *)v3->__pad_0 + 12))( /*0x6a482a*/
       v3,
@@ -363,7 +363,7 @@ SideClass *__thiscall SideClass::Init(void **this, char a2)
   *this = &SideClass::`vftable'; /*0x6a4936*/
   *(this + 1) = &SideClass::`vftable'; /*0x6a493c*/
   *(this + 2) = &SideClass::`vftable'; /*0x6a4943*/
-  *(this + 3) = &SideClass::`vftable'; /*0x6a494a*/
+  *(this + 3) = &vt_SideClass; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6a4951*/
   v6 = this; /*0x6a4966*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0x8B4120] + 16))(&MEMORY[0x8B4120], &v6); /*0x6a496a*/
@@ -377,7 +377,7 @@ SideClass *__thiscall SideClass::Init(void **this, char a2)
     while ( v3 < MEMORY[0x8B4130] ); /*0x6a499d*/
   }
   v4 = *(this + 39); /*0x6a499f*/
-  *(this + 38) = &VectorClass<int>::`vftable'; /*0x6a49a5*/
+  *(this + 38) = &vt_VectorClass_int; /*0x6a49a5*/
   if ( v4 && *((_BYTE *)this + 165) ) /*0x6a49b3*/
   {
     __3_YAXPAX_Z(v4); /*0x6a49be*/

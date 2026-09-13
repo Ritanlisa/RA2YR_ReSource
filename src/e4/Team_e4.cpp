@@ -492,18 +492,18 @@ rc_ptr_base *__fastcall Team_Create_765F60(rc_ptr_base *a1, int a2)
   {
     v6 = v4 + 2; /*0x765f78*/
     v4[1].vfptr = 0; /*0x765f7d*/
-    v4->vfptr = &ReferenceCounted::`vftable'; /*0x765f84*/
+    v4->vfptr = &vt_ReferenceCounted; /*0x765f84*/
     ComPtr::Constructor(v4 + 2); /*0x765f8a*/
-    v6->vfptr = &rc_ptr<WDTTerritory>::`vftable'; /*0x765f8f*/
+    v6->vfptr = &vt_rc_ptr_WDTTerritory; /*0x765f8f*/
     ComPtr::Set(v5 + 2, *(_DWORD *)(a2 + 4)); /*0x765f9b*/
-    v5->vfptr = &WorldDominationTour::Conflict::`vftable'; /*0x765fa0*/
+    v5->vfptr = &vt_WorldDominationTour_Conflict; /*0x765fa0*/
   }
   else
   {
     v5 = 0; /*0x765fa9*/
   }
   ComPtr::Constructor(a1); /*0x765fad*/
-  a1->vfptr = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x765fb4*/
+  a1->vfptr = &vt_rc_ptr_WorldDominationTour_Conflict; /*0x765fb4*/
   ComPtr::Set(a1, (int)v5); /*0x765fbc*/
   return a1; /*0x765fc3*/
 }
@@ -527,18 +527,18 @@ rc_ptr_base *__fastcall Team_Create_767B00(rc_ptr_base *a1, int a2)
   {
     v6 = v4 + 2; /*0x767b18*/
     v4[1].vfptr = 0; /*0x767b1d*/
-    v4->vfptr = &ReferenceCounted::`vftable'; /*0x767b24*/
+    v4->vfptr = &vt_ReferenceCounted; /*0x767b24*/
     ComPtr::Constructor(v4 + 2); /*0x767b2a*/
-    v6->vfptr = &rc_ptr<WDTState>::`vftable'; /*0x767b2f*/
+    v6->vfptr = &vt_rc_ptr_WDTState; /*0x767b2f*/
     ComPtr::Set(v5 + 2, *(_DWORD *)(a2 + 4)); /*0x767b3b*/
-    v5->vfptr = &WorldDominationTour::History::`vftable'; /*0x767b40*/
+    v5->vfptr = &vt_WorldDominationTour_History; /*0x767b40*/
   }
   else
   {
     v5 = 0; /*0x767b49*/
   }
   ComPtr::Constructor(a1); /*0x767b4d*/
-  a1->vfptr = &rc_ptr<WorldDominationTour::History>::`vftable'; /*0x767b54*/
+  a1->vfptr = &vt_rc_ptr_WorldDominationTour_History; /*0x767b54*/
   ComPtr::Set(a1, (int)v5); /*0x767b5c*/
   return a1; /*0x767b63*/
 }
@@ -667,10 +667,10 @@ bool __usercall Team_Start_76ED10@<al>(int a1@<ecx>, int a2@<edx>, int a3@<ebx>)
     {
       v7 = 0; /*0x76ee77*/
     }
-    v10[0].ScoreScreen_field_0x0C = (int)&rc_ptr<WDTTerritory>::`vftable'; /*0x76ee7d*/
+    v10[0].ScoreScreen_field_0x0C = (int)&vt_rc_ptr_WDTTerritory; /*0x76ee7d*/
     ComPtr::Release((rc_ptr_base *)&v10[0].ScoreScreen_field_0x0C); /*0x76ee85*/
   }
-  v10[0].ScoreScreen_field_0x14 = (int)&rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76ee8e*/
+  v10[0].ScoreScreen_field_0x14 = (int)&vt_rc_ptr_WorldDominationTour_Territory; /*0x76ee8e*/
   ComPtr::Release((rc_ptr_base *)&v10[0].ScoreScreen_field_0x14); /*0x76ee96*/
   SelectionInitializeWOL((Selection_WorldDominationTour *)&v10[0].ScoreScreen_field_0x1C); /*0x76ee9f*/
   return v7; /*0x76ed22*/

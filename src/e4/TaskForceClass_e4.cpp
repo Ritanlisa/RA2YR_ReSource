@@ -82,7 +82,7 @@ _DWORD *__thiscall TaskForceClass::Construct(_DWORD *this, ObjectClass *aP1)
   *this = &TaskForceClass::`vftable'; /*0x6e7ead*/
   *(this + 1) = &TaskForceClass::`vftable'; /*0x6e7eb3*/
   *(this + 2) = &TaskForceClass::`vftable'; /*0x6e7eba*/
-  *(this + 3) = &TaskForceClass::`vftable'; /*0x6e7ec1*/
+  *(this + 3) = &vt_TaskForceClass; /*0x6e7ec1*/
   if ( *(int *)&HouseClass_Player.__pad_5568[22060] < *(int *)&HouseClass_Player.__pad_5568[22052] /*0x6e7f05*/
     || (HouseClass_Player.__pad_5568[22057] || !*(_DWORD *)&HouseClass_Player.__pad_5568[22052])
     && *(int *)&HouseClass_Player.__pad_5568[22064] > 0
@@ -313,7 +313,7 @@ int __stdcall TaskForceClass::LoadTaskForce(AbstractTypeClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &TaskForceClass::`vftable'; /*0x6e86c4*/
       *(_DWORD *)&aP0->__pad_0[4] = &TaskForceClass::`vftable'; /*0x6e86ca*/
       *(_DWORD *)&aP0->__pad_0[8] = &TaskForceClass::`vftable'; /*0x6e86d1*/
-      *(_DWORD *)&aP0->__pad_0[12] = &TaskForceClass::`vftable'; /*0x6e86d8*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_TaskForceClass; /*0x6e86d8*/
     }
     v3 = (MouseClass *)&aP0[1].uniqueId; /*0x6e86e0*/
     v4 = 6; /*0x6e86e6*/
@@ -358,7 +358,7 @@ TaskForceClass *__thiscall TaskForceClass::ExecuteAction(void **this, char a2)
   *this = &TaskForceClass::`vftable'; /*0x6e87f6*/
   *(this + 1) = &TaskForceClass::`vftable'; /*0x6e87fc*/
   *(this + 2) = &TaskForceClass::`vftable'; /*0x6e8803*/
-  *(this + 3) = &TaskForceClass::`vftable'; /*0x6e880a*/
+  *(this + 3) = &vt_TaskForceClass; /*0x6e880a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6e8811*/
   v5 = this; /*0x6e8826*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8E8D0] + 16))(&MEMORY[0xA8E8D0], &v5); /*0x6e882a*/

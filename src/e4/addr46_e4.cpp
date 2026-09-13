@@ -236,7 +236,7 @@ void __cdecl sub_466320()
 {
   if ( (unk_89DDD0 & 1) == 0 ) /*0x46632a*/
   {
-    unk_89DE18 = (int)&VectorClass<BulletClass *>::`vftable'; /*0x46632e*/
+    unk_89DE18 = (int)&vt_VectorClass_BulletClass; /*0x46632e*/
     unk_89DDD0 |= 1u; /*0x466341*/
     if ( unk_89DE1C ) /*0x466347*/
     {
@@ -858,7 +858,7 @@ void E4Recv_46D350::sub_46D350()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_46D350(_DWORD *this)
 {
-  *this = &CampaignScoreClass::`vftable'; /*0x46d350*/
+  *this = &vt_CampaignScoreClass; /*0x46d350*/
 }
 }
 } // namespace gamemd

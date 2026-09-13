@@ -500,7 +500,7 @@ void *__fastcall TechnoClass_RenderVoxel(
   v42 = a7[1]; /*0x7070b5*/
   v43 = a7[2]; /*0x7070bc*/
   v44 = a7[3]; /*0x7070c9*/
-  if ( MEMORY[0x887314] != unk_B1D13C ) /*0x7070d4*/
+  if ( MEMORY[0x887314] != dword_B1D13C ) /*0x7070d4*/
   {
     v21 = *((_WORD *)a1 + 485); /*0x7070da*/
     if ( v21 <= 0 ) /*0x7070e6*/
@@ -645,12 +645,12 @@ LABEL_8:
       }
     }
     AbstractClassVector::Construct(&v35, 0, 0); /*0x7095e2*/
-    v35 = &DynamicVectorClass<AbstractClass *>::`vftable'; /*0x7095f2*/
+    v35 = &vt_DynamicVectorClass_AbstractClass; /*0x7095f2*/
     v40 = 10; /*0x7095fa*/
     v39 = 0; /*0x7095fe*/
     VectorClass::Construct(&v29, 0, 0); /*0x709602*/
     v10 = a1[288]; /*0x709607*/
-    v29 = &DynamicVectorClass<int>::`vftable'; /*0x70960d*/
+    v29 = &vt_DynamicVectorClass_int; /*0x70960d*/
     v34 = 10; /*0x709617*/
     v33 = 0; /*0x70961b*/
     if ( v10 > 0 ) /*0x70961f*/
@@ -725,7 +725,7 @@ LABEL_8:
       }
       (*(void (__thiscall **)(_DWORD *))(*a1 + 968))(a1); /*0x70975d*/
     }
-    v29 = &VectorClass<int>::`vftable'; /*0x7097a0*/
+    v29 = &vt_VectorClass_int; /*0x7097a0*/
     if ( Block && BYTE1(v32) ) /*0x7097b0*/
     {
       __3_YAXPAX_Z(Block); /*0x7097b3*/
@@ -733,7 +733,7 @@ LABEL_8:
     }
     v31 = 0; /*0x7097c3*/
     BYTE1(v32) = 0; /*0x7097ca*/
-    v35 = &VectorClass<AbstractClass *>::`vftable'; /*0x7097cf*/
+    v35 = &vt_VectorClass_AbstractClass; /*0x7097cf*/
     if ( v36 ) /*0x7097d8*/
     {
       if ( v38 ) /*0x7097e0*/

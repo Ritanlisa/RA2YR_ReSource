@@ -377,7 +377,7 @@ DropListClass *__thiscall sub_4B4E10(
     (ControlClass *)aP4,
     a10,
     a11);
-  *(_DWORD *)this = &DropListClass::`vftable'; /*0x4b4eac*/
+  *(_DWORD *)this = &vt_DropListClass; /*0x4b4eac*/
   Instance = TextRenderer::GetInstance(); /*0x4b4eb2*/
   v13 = this->M176; /*0x4b4eba*/
   this->M24 = Instance->referenceCount + 1; /*0x4b4ebf*/
@@ -405,14 +405,14 @@ int __thiscall sub_4B53E0(int this, int a2)
   this->M60 = *(_DWORD *)(a2 + 60); /*0x4b540e*/
   this->M64 = *(_DWORD *)(a2 + 64); /*0x4b5414*/
   this->M68 = *(_DWORD *)(a2 + 68); /*0x4b541a*/
-  *(_DWORD *)this = &EditClass::`vftable'; /*0x4b541d*/
+  *(_DWORD *)this = &vt_EditClass; /*0x4b541d*/
   *(_BYTE *)(this + 72) = *(_BYTE *)(a2 + 72); /*0x4b5429*/
   this->M76 = *(_DWORD *)(a2 + 76); /*0x4b5432*/
   ControlClass::CtorFromData((_DWORD *)(this + 80), a2 + 80); /*0x4b5435*/
   *(_BYTE *)(this + 124) = *(_BYTE *)(a2 + 124); /*0x4b5443*/
   *(_BYTE *)(this + 125) = *(_BYTE *)(a2 + 125); /*0x4b5449*/
   this->M128 = *(_DWORD *)(a2 + 128); /*0x4b544f*/
-  this->M80 = &ToggleClass::`vftable'; /*0x4b5452*/
+  this->M80 = &vt_ToggleClass; /*0x4b5452*/
   *(_BYTE *)(this + 132) = *(_BYTE *)(a2 + 132); /*0x4b545c*/
   this->M136 = *(_DWORD *)(a2 + 136); /*0x4b5462*/
   this->M140 = *(_DWORD *)(a2 + 140); /*0x4b5468*/
@@ -425,10 +425,10 @@ int __thiscall sub_4B53E0(int this, int a2)
   *(_BYTE *)(this + 165) = *(_BYTE *)(a2 + 165); /*0x4b5492*/
   this->M168 = *(_DWORD *)(a2 + 168); /*0x4b5498*/
   *(_BYTE *)(this + 172) = *(_BYTE *)(a2 + 172); /*0x4b54a4*/
-  this->M80 = &ShapeButtonClass::`vftable'; /*0x4b54a9*/
+  this->M80 = &vt_ShapeButtonClass; /*0x4b54a9*/
   sub_557380(this + 176, a2 + 176); /*0x4b54af*/
   v3 = this->M176; /*0x4b54b4*/
-  *(_DWORD *)this = &DropListClass::`vftable'; /*0x4b54b9*/
+  *(_DWORD *)this = &vt_DropListClass; /*0x4b54b9*/
   (*(void (__thiscall **)(int, int))(v3 + 132))(this + 176, this); /*0x4b54bf*/
   (*(void (__thiscall **)(int, int))(this->M80 + 132))(this + 80, this); /*0x4b54ca*/
   return this; /*0x4b54d3*/

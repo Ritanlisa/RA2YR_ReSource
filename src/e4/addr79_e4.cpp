@@ -3417,7 +3417,7 @@ int __stdcall Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, u
           LoadPlayerProfile(&Type, (const char **)&g_WebBrowser); /*0x7989b5*/
           if ( v35 ) /*0x7989c0*/
             FillPersonaInfoWOL(v35, hWnd, (char **)&g_WebBrowser, (wchar_t **)1); /*0x7989ca*/
-          Type = (DWORD)&rc_ptr<PlayerProfile>::`vftable'; /*0x7989d3*/
+          Type = (DWORD)&vt_rc_ptr_PlayerProfile; /*0x7989d3*/
           ComPtr::Release(&Type); /*0x7989db*/
         }
         DlgItem = GetDlgItem(hWnd, 1862); /*0x7989fa*/
@@ -3551,7 +3551,7 @@ int MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass a3)
 //   LRESULT v40; // eax
 //   HWND v41; // eax
 //   HWND v42; // eax
-//   LRESULT v43; // ea... [18507 chars total]
+//   LRESULT v43; // ea... [18462 chars total]
 // end truncated pseudocode
 }
 } // namespace gamemd

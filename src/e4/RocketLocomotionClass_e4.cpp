@@ -29,7 +29,7 @@ int __thiscall RocketLocomotionClass::RocketLocomotionClass(int this)
   this->RocketLocomotionClass_field_58 = 0; /*0x661f12*/
   this->RocketLocomotionClass_field_bool_4C = 1; /*0x661f15*/
   *(_DWORD *)this = &RocketLocomotionClass::`vftable'; /*0x661f19*/
-  *(_DWORD *)(this + 4) = &RocketLocomotionClass::`vftable'; /*0x661f1f*/
+  *(_DWORD *)(this + 4) = &vt_RocketLocomotionClass; /*0x661f1f*/
   return this; /*0x661f28*/
 }
 }
@@ -49,12 +49,12 @@ int __stdcall RocketLocomotionClass::_vt05(int *a1, int *a2)
     if ( a1 ) /*0x663426*/
     {
       *a1 = (int)&LocomotionClass::`vftable'; /*0x663428*/
-      a1[1] = (int)&LocomotionClass::`vftable'; /*0x66342e*/
+      a1[1] = (int)&vt_LocomotionClass; /*0x66342e*/
       v3 = MEMORY[0xA8ED84]; /*0x663435*/
       a1[15] = 0; /*0x66343b*/
       a1[13] = (int)v3; /*0x663442*/
       *a1 = (int)&RocketLocomotionClass::`vftable'; /*0x663445*/
-      a1[1] = (int)&RocketLocomotionClass::`vftable'; /*0x66344b*/
+      a1[1] = (int)&vt_RocketLocomotionClass; /*0x66344b*/
     }
   }
   return result; /*0x663452*/
@@ -68,7 +68,7 @@ RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2)
 RocketLocomotionClass *__thiscall RocketLocomotionClass::ProcessMove(_DWORD *this, char a2)
 {
   *this = &RocketLocomotionClass::`vftable'; /*0x6635c3*/
-  *(this + 1) = &RocketLocomotionClass::`vftable'; /*0x6635c9*/
+  *(this + 1) = &vt_RocketLocomotionClass; /*0x6635c9*/
   LocomotionClass::Construct(this); /*0x6635d0*/
   if ( (a2 & 1) != 0 ) /*0x6635da*/
     __3_YAXPAX_Z(this); /*0x6635dd*/
@@ -357,7 +357,7 @@ VectorClass *__thiscall RocketLocomotionClass_17_::Constructor(_DWORD *this, cha
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x664a73*/
-  *this = &VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x664a76*/
+  *this = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct; /*0x664a76*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x664a80*/
   {
     __3_YAXPAX_Z(v3); /*0x664a88*/
@@ -382,7 +382,7 @@ DynamicVector *__thiscall RocketLocomotionClass_17_::QueryInterface(_DWORD *this
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x664ac3*/
-  *this = &VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x664ac6*/
+  *this = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct; /*0x664ac6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x664ad0*/
   {
     __3_YAXPAX_Z(v3); /*0x664ad8*/

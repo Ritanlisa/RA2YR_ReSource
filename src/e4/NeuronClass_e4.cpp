@@ -20,7 +20,7 @@ int __thiscall NeuronClass::NeuronClass(int this)
   *(_DWORD *)this = &NeuronClass::`vftable'; /*0x43a375*/
   this->NeuronClass_field_0x04 = &NeuronClass::`vftable'; /*0x43a37b*/
   this->NeuronClass_field_0x08 = &NeuronClass::`vftable'; /*0x43a382*/
-  this->NeuronClass_field_0x0C = &NeuronClass::`vftable'; /*0x43a389*/
+  this->NeuronClass_field_0x0C = &vt_NeuronClass; /*0x43a389*/
   if ( MEMORY[0xB0F5E8] < MEMORY[0xB0F5E0] /*0x43a3c5*/
     || (MEMORY[0xB0F5E5] || !MEMORY[0xB0F5E0])
     && MEMORY[0xB0F5EC] > 0
@@ -60,7 +60,7 @@ NeuronClass *__thiscall NeuronClass::Reset(_DWORD *this, char a2)
   *this = &NeuronClass::`vftable'; /*0x43a9cd*/
   *(this + 1) = &NeuronClass::`vftable'; /*0x43a9d3*/
   *(this + 2) = &NeuronClass::`vftable'; /*0x43a9da*/
-  *(this + 3) = &NeuronClass::`vftable'; /*0x43a9e1*/
+  *(this + 3) = &vt_NeuronClass; /*0x43a9e1*/
   v6 = this; /*0x43a9ef*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x43a9f3*/
   if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x43aa0e*/
@@ -258,7 +258,7 @@ VectorClass *__thiscall NeuronClass_25_::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x43acb3*/
-  *this = &VectorClass<NeuronClass *>::`vftable'; /*0x43acb6*/
+  *this = &vt_VectorClass_NeuronClass; /*0x43acb6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x43acc0*/
   {
     __3_YAXPAX_Z(v3); /*0x43acc8*/

@@ -121,34 +121,34 @@ __int64 Movement::CalcVelocity(
     {
       LOWORD(v71) = (_WORD)v71 - *(_WORD *)a1; /*0x5b21ba*/
     }
-    v81 = (double *)((__int16)*Vector::ToFacingMath((double *)v13->__pad_0, v83) - 0x3FFF); /*0x5b21de*/
+    v81 = (double *)((__int16)*Vector::ToFacingMath((double *)v13->vtable0, v83) - 0x3FFF); /*0x5b21de*/
     v16 = (double)(int)v81 * -0.00009587672516830327; /*0x5b21e8*/
     *(double *)v83 = v16; /*0x5b21ee*/
-    Vector3::Magnitude((double *)v13->__pad_0); /*0x5b21f2*/
+    Vector3::Magnitude((double *)v13->vtable0); /*0x5b21f2*/
     v82[0] = v16; /*0x5b21f7*/
     if ( *(double *)v83 != 0.0 ) /*0x5b220a*/
     {
       v17 = Math::ArcTan2(v83[0]); /*0x5b2216*/
       v72 = v83[0]; /*0x5b2222*/
-      *(double *)v13->__pad_0 = *(double *)v13->__pad_0 / v17; /*0x5b2223*/
-      *(double *)&v13->__pad_0[8] = *(double *)&v13->__pad_0[8] / Math::ArcTan2(v72); /*0x5b2230*/
+      *(double *)v13->vtable0 = *(double *)v13->vtable0 / v17; /*0x5b2223*/
+      *(double *)&v13->vtable0[8] = *(double *)&v13->vtable0[8] / Math::ArcTan2(v72); /*0x5b2230*/
     }
     v81 = (double *)((__int16)v71 - 0x3FFF); /*0x5b2241*/
     v18 = Math::ArcTan2((IUnknown *)COERCE_UNSIGNED_INT64((double)(int)v81 * -0.00009587672516830327)); /*0x5b2252*/
     v19 = (__int16)v71; /*0x5b2259*/
-    *(double *)v13->__pad_0 = v18 * *(double *)v13->__pad_0; /*0x5b225e*/
+    *(double *)v13->vtable0 = v18 * *(double *)v13->vtable0; /*0x5b225e*/
     v81 = (double *)(v19 - 0x3FFF); /*0x5b2266*/
     v20 = Math::ArcTan2((IUnknown *)COERCE_UNSIGNED_INT64((double)(v19 - 0x3FFF) * -0.00009587672516830327)); /*0x5b2277*/
     v21 = (__int16)v71; /*0x5b227f*/
-    *(double *)&v13->__pad_0[8] = v20 * *(double *)&v13->__pad_0[8]; /*0x5b2284*/
+    *(double *)&v13->vtable0[8] = v20 * *(double *)&v13->vtable0[8]; /*0x5b2284*/
     v81 = (double *)(v21 - 0x3FFF); /*0x5b228c*/
     v22 = Math::SinCos((IUnknown *)COERCE_UNSIGNED_INT64((double)(v21 - 0x3FFF) * -0.00009587672516830327)); /*0x5b229d*/
     v23 = v22 * v82[0]; /*0x5b22a2*/
-    v24 = *(_DWORD *)v13->__pad_0; /*0x5b22ab*/
+    v24 = *(_DWORD *)v13->vtable0; /*0x5b22ab*/
     *(double *)&v13->uniqueId = v23; /*0x5b22ad*/
-    *(_QWORD *)&aP1.nextArrayIndex = __PAIR64__(*(_DWORD *)&v13->__pad_0[4], v24); /*0x5b22b3*/
-    eax10a = *(_DWORD *)&v13->__pad_0[12]; /*0x5b22c2*/
-    aP1.NeedsSaveOrLink = *(void **)&v13->__pad_0[8]; /*0x5b22c5*/
+    *(_QWORD *)&aP1.nextArrayIndex = __PAIR64__(*(_DWORD *)&v13->vtable0[4], v24); /*0x5b22b3*/
+    eax10a = *(_DWORD *)&v13->vtable0[12]; /*0x5b22c2*/
+    aP1.NeedsSaveOrLink = *(void **)&v13->vtable0[8]; /*0x5b22c5*/
     v85 = eax10a; /*0x5b22c9*/
     v26 = Math::RoundToInt(v23); /*0x5b22d6*/
     aP1.referenceCount = Math::RoundToInt(v23); /*0x5b22dd*/
@@ -164,15 +164,15 @@ __int64 Movement::CalcVelocity(
     v12[1] = v29; /*0x5b2310*/
     v12[2] = v30; /*0x5b2313*/
     v31 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64( /*0x5b233a*/
-                                        *(double *)&v13->__pad_0[8] * *(double *)&v13->__pad_0[8]
-                                      + *(double *)v13->__pad_0 * *(double *)v13->__pad_0
+                                        *(double *)&v13->vtable0[8] * *(double *)&v13->vtable0[8]
+                                      + *(double *)v13->vtable0 * *(double *)v13->vtable0
                                       + *(double *)&v13->uniqueId * *(double *)&v13->uniqueId));
     return Math::RoundToInt(v31); /*0x5b234d*/
   }
   v33 = *(double *)(v9 + 16); /*0x5b2352*/
   *(_QWORD *)&aP1.nextArrayIndex = *(_QWORD *)v9; /*0x5b2357*/
   edx11 = *(_DWORD *)(v9 + 12); /*0x5b2369*/
-  aP1.NeedsSaveOrLink = *(void **)&v13->__pad_0[8]; /*0x5b236c*/
+  aP1.NeedsSaveOrLink = *(void **)&v13->vtable0[8]; /*0x5b236c*/
   v85 = edx11; /*0x5b2370*/
   v35 = Math::RoundToInt(v33); /*0x5b237d*/
   aP1.referenceCount = Math::RoundToInt(v33); /*0x5b2384*/
@@ -237,18 +237,18 @@ __int64 Movement::CalcVelocity(
   {
     LOWORD(v79) = (_WORD)v79 - *(_WORD *)a1; /*0x5b2546*/
   }
-  Vector2::NormalizeNonZero((double *)v48->__pad_0); /*0x5b2557*/
-  Function::Method_41C430((double *)v48->__pad_0); /*0x5b255e*/
+  Vector2::NormalizeNonZero((double *)v48->vtable0); /*0x5b2557*/
+  Function::Method_41C430((double *)v48->vtable0); /*0x5b255e*/
   v80[0] = v53; /*0x5b2568*/
   v81 = (double *)((__int16)v79 - 0x3FFF); /*0x5b2575*/
   v54 = Math::ArcTan2((IUnknown *)COERCE_UNSIGNED_INT64((double)(int)v81 * -0.00009587672516830327)); /*0x5b2586*/
   v55 = (__int16)v79; /*0x5b258f*/
-  *(double *)v48->__pad_0 = v54 * v80[0]; /*0x5b2594*/
+  *(double *)v48->vtable0 = v54 * v80[0]; /*0x5b2594*/
   v81 = (double *)(v55 - 0x3FFF); /*0x5b259c*/
   v56 = Math::SinCos((IUnknown *)COERCE_UNSIGNED_INT64((double)(v55 - 0x3FFF) * -0.00009587672516830327)); /*0x5b25ad*/
   v57 = -(v56 * v80[0]); /*0x5b25bb*/
-  *(double *)&v48->__pad_0[8] = v57; /*0x5b25bd*/
-  Math::Hypotenuse2D((double *)v48->__pad_0); /*0x5b25c0*/
+  *(double *)&v48->vtable0[8] = v57; /*0x5b25bd*/
+  Math::Hypotenuse2D((double *)v48->vtable0); /*0x5b25c0*/
   *(double *)&v76[4] = v57; /*0x5b25ce*/
   *(_DWORD *)v76 = v48->abstractFlags; /*0x5b25d1*/
   v58 = Math::CalcAngle((AbstractClass *)v48->uniqueId, *(double *)v76); /*0x5b25d3*/
@@ -264,14 +264,14 @@ __int64 Movement::CalcVelocity(
       eax47 = (__int16 *)Movement::Check(a1, &v81, v83); /*0x5b28bd*/
       v70 = (BuildingTypeClass *)Movement::DivideAndStoreScaled(eax47, (int *)v82, 2); /*0x5b28cd*/
       eax47a = Vector::ToFacingMath(v86, v80); /*0x5b28d6*/
-      Movement::CompareAbsCoords((__int16 *)&v71, eax47a, (__int16 *)v70->__pad_0); /*0x5b28e0*/
+      Movement::CompareAbsCoords((__int16 *)&v71, eax47a, (__int16 *)v70->vtable0); /*0x5b28e0*/
     }
     goto LABEL_48; /*0x5b28e0*/
   }
   v59 = *(double *)&v48->uniqueId; /*0x5b2640*/
-  *(_QWORD *)aP1.__pad_0 = *(_QWORD *)v48->__pad_0; /*0x5b2645*/
-  ecx20 = *(_DWORD *)&v48->__pad_0[12]; /*0x5b2657*/
-  *(_DWORD *)&aP1.__pad_0[8] = *(_DWORD *)&v48->__pad_0[8]; /*0x5b265a*/
+  *(_QWORD *)aP1.__pad_0 = *(_QWORD *)v48->vtable0; /*0x5b2645*/
+  ecx20 = *(_DWORD *)&v48->vtable0[12]; /*0x5b2657*/
+  *(_DWORD *)&aP1.__pad_0[8] = *(_DWORD *)&v48->vtable0[8]; /*0x5b265a*/
   *(_DWORD *)&aP1.__pad_0[12] = ecx20; /*0x5b265e*/
   edi20a = Math::RoundToInt(v59); /*0x5b266b*/
   *(_DWORD *)&aP1.__pad_0[4] = Math::RoundToInt(v59); /*0x5b2672*/
@@ -364,7 +364,7 @@ LABEL_33:
     }
   }
 LABEL_48:
-  Movement::UpdateLocomotion((double *)v48->__pad_0, (IUnknown *)&v71); /*0x5b28e5*/
+  Movement::UpdateLocomotion((double *)v48->vtable0, (IUnknown *)&v71); /*0x5b28e5*/
   if ( BYTE4(a3) ) /*0x5b28f6*/
     aP1.NeedsSaveOrLink = 0; /*0x5b28f8*/
   else

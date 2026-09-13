@@ -200,7 +200,7 @@ int __fastcall InfantryClass::Destruct(IUnknown *a1, AbstractClass *edx0)
 
   edi1 = (AbstractClass *)&a1->field_4; /*0x517d9a*/
   a1->field_0 = (int)&InfantryClass::`vftable'; /*0x517d9d*/
-  a1->field_8 = (int)&InfantryClass::`vftable'; /*0x517da3*/
+  a1->field_8 = (int)&vt_InfantryClass; /*0x517da3*/
   a1->field_C = (int)&off_7EB02C; /*0x517daa*/
   a1->field_4 = (int)&InfantryClass::`vftable'; /*0x517db1*/
   if ( HouseClass_Player.__pad_5568[22252] ) /*0x517dbe*/

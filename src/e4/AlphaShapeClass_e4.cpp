@@ -33,7 +33,7 @@ int __stdcall AlphaShapeClass::SD_vt05(AbstractClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &AlphaShapeClass::`vftable'; /*0x420e07*/
       *(_DWORD *)&aP0->__pad_0[4] = &AlphaShapeClass::`vftable'; /*0x420e0d*/
       *(_DWORD *)&aP0->__pad_0[8] = &AlphaShapeClass::`vftable'; /*0x420e14*/
-      *(_DWORD *)&aP0->__pad_0[12] = &AlphaShapeClass::`vftable'; /*0x420e1b*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_AlphaShapeClass; /*0x420e1b*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x420e2b*/
     aP0[1].abstractFlags = 0; /*0x420e30*/
@@ -83,7 +83,7 @@ AlphaShapeClass *__thiscall AlphaShapeClass::SDDTOR(_DWORD *this, char a2)
   *this = &AlphaShapeClass::`vftable'; /*0x42173d*/
   *(this + 1) = &AlphaShapeClass::`vftable'; /*0x421743*/
   *(this + 2) = &AlphaShapeClass::`vftable'; /*0x42174a*/
-  *(this + 3) = &AlphaShapeClass::`vftable'; /*0x421751*/
+  *(this + 3) = &vt_AlphaShapeClass; /*0x421751*/
   v6 = this; /*0x42175f*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0x88A0F0] + 16))(&MEMORY[0x88A0F0], &v6); /*0x421763*/
   if ( v3 != -1 && v3 < MEMORY[0x88A100] && v3 < --MEMORY[0x88A100] ) /*0x42177e*/

@@ -15,7 +15,7 @@ void __cdecl sub_40D1B0()
   int v1; // edi
 
   MEMORY[0x87F7E8].field_0 = (struct IUnknownVtbl *)&MouseClass::`vftable'; /*0x40d1b2*/
-  MEMORY[0x884D00] = (int)&MouseClass::`vftable'; /*0x40d1bc*/
+  MEMORY[0x884D00] = (int)&vt_MouseClass; /*0x40d1bc*/
   v0 = &MEMORY[0x884B84]; /*0x40d1c6*/
   v1 = 4; /*0x40d1cb*/
   do /*0x40d1f0*/
@@ -133,7 +133,7 @@ int __thiscall sub_5AFEF0(int this)
   *(_BYTE *)(this + 48) = 0; /*0x5aff2e*/
   *(_DWORD *)this = &MechLocomotionClass::`vftable'; /*0x5aff32*/
   this->M44 = v2; /*0x5aff38*/
-  this->M4 = &MechLocomotionClass::`vftable'; /*0x5aff3b*/
+  this->M4 = &vt_MechLocomotionClass; /*0x5aff3b*/
   return this; /*0x5aff44*/
 }
 }
@@ -323,7 +323,7 @@ int __thiscall sub_728A00(int this)
   this->M52 = 0; /*0x728a36*/
   *(_BYTE *)(this + 56) = 0; /*0x728a39*/
   *(_DWORD *)this = &TunnelLocomotionClass::`vftable'; /*0x728a3c*/
-  this->M4 = &TunnelLocomotionClass::`vftable'; /*0x728a42*/
+  this->M4 = &vt_TunnelLocomotionClass; /*0x728a42*/
   return this; /*0x728a4b*/
 }
 }

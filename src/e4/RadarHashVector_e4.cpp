@@ -221,7 +221,7 @@ char *__thiscall RadarHashVector::Destructor(_DWORD *this, char a2)
       {
         v9 = (void *)*(v7 - 5); /*0x658c82*/
         v7 -= 6; /*0x658c85*/
-        *v7 = &VectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658c8a*/
+        *v7 = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658c8a*/
         if ( v9 && *((_BYTE *)v7 + 13) ) /*0x658c92*/
         {
           __3_YAXPAX_Z(v9); /*0x658c98*/
@@ -240,7 +240,7 @@ char *__thiscall RadarHashVector::Destructor(_DWORD *this, char a2)
   else
   {
     v11 = (void *)*(this + 1); /*0x658cc5*/
-    *this = &VectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658ccc*/
+    *this = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658ccc*/
     if ( v11 && *((_BYTE *)this + 13) ) /*0x658cd4*/
     {
       __3_YAXPAX_Z(v11); /*0x658cda*/
@@ -264,7 +264,7 @@ VectorClass *__thiscall RadarHashVector::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x658d13*/
-  *this = &VectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658d16*/
+  *this = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658d16*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x658d20*/
   {
     __3_YAXPAX_Z(v3); /*0x658d28*/
@@ -294,7 +294,7 @@ _DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapCl
   *(this + 2) = aP1; /*0x658df0*/
   *((_BYTE *)this + 12) = 1; /*0x658df3*/
   *((_BYTE *)this + 13) = 0; /*0x658df7*/
-  *this = &VectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658dfa*/
+  *this = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658dfa*/
   if ( aP1 ) /*0x658e00*/
   {
     if ( aP2 ) /*0x658e08*/
@@ -343,7 +343,7 @@ _DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapCl
       *((_BYTE *)this + 13) = 1; /*0x658e5a*/
     }
   }
-  *this = &DynamicVectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658e5e*/
+  *this = &vt_DynamicVectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658e5e*/
   *(this + 5) = 10; /*0x658e64*/
   *(this + 4) = 0; /*0x658e6b*/
   return this; /*0x658e70*/

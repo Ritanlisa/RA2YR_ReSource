@@ -480,7 +480,7 @@ OverlayClass *__thiscall Object::SpawnAtCell(void *this, IUnknown *aP1, IUnknown
   this->Object_field_0xAC = v5; /*0x5fc395*/
   this->Object_field_0x8 = &OverlayClass::`vftable'; /*0x5fc39f*/
   *((_DWORD *)this + 1) = &OverlayClass::`vftable'; /*0x5fc3a6*/
-  *((_DWORD *)this + 3) = &OverlayClass::`vftable'; /*0x5fc3ac*/
+  *((_DWORD *)this + 3) = &vt_OverlayClass; /*0x5fc3ac*/
   AbstractClass::GenerateUniqueID((int)this + 4); /*0x5fc3b3*/
   if ( *(int *)&HouseClass_Player.__pad_5568[22956] < *(int *)&HouseClass_Player.__pad_5568[22948] /*0x5fc3ef*/
     || (HouseClass_Player.__pad_5568[22953] || !*(_DWORD *)&HouseClass_Player.__pad_5568[22948])
@@ -549,7 +549,7 @@ int __thiscall Object::LoadObject(void *this, ObjectClass *aP1, int aP1a)
       *(_DWORD *)aP1->__pad_0 = &OverlayClass::`vftable'; /*0x5fd917*/
       *(_DWORD *)&aP1->__pad_0[4] = &OverlayClass::`vftable'; /*0x5fd91d*/
       *(_DWORD *)&aP1->__pad_0[8] = &OverlayClass::`vftable'; /*0x5fd924*/
-      *(_DWORD *)&aP1->__pad_0[12] = &OverlayClass::`vftable'; /*0x5fd92b*/
+      *(_DWORD *)&aP1->__pad_0[12] = &vt_OverlayClass; /*0x5fd92b*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]); /*0x5fd93e*/
   }
@@ -625,7 +625,7 @@ LABEL_5:
   else
   {
     v8 = MEMORY[0xA83D84]; /*0x5fd9d1*/
-    while ( *(_DWORD *)v8->__pad_0 != this->Object_field_0xAC ) /*0x5fd9d9*/
+    while ( *(_DWORD *)v8->vtable0 != this->Object_field_0xAC ) /*0x5fd9d9*/
     {
       ++v7; /*0x5fd9db*/
       v8 = (BuildingTypeClass *)((char *)v8 + 4); /*0x5fd9dc*/
@@ -634,7 +634,7 @@ LABEL_5:
     }
   }
   v9 = 0; /*0x5fd9ec*/
-  v10 = *(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * v7]; /*0x5fd9ee*/
+  v10 = *(_DWORD *)&MEMORY[0xA83D84]->vtable0[4 * v7]; /*0x5fd9ee*/
   if ( *(_BYTE *)(v10 + 681) || *(_BYTE *)(v10 + 680) || *(_DWORD *)(v10 + 660) == 126 || *(_BYTE *)(v10 + 682) ) /*0x5fda0a*/
     v9 = -12; /*0x5fda12*/
   if ( *(_DWORD *)(v10 + 664) == 9 ) /*0x5fda1e*/
@@ -656,7 +656,7 @@ LABEL_20:
     else
     {
       v14 = MEMORY[0xA83D84]; /*0x5fda60*/
-      while ( *(_DWORD *)v14->__pad_0 != v12 ) /*0x5fda68*/
+      while ( *(_DWORD *)v14->vtable0 != v12 ) /*0x5fda68*/
       {
         ++v13; /*0x5fda6a*/
         v14 = (BuildingTypeClass *)((char *)v14 + 4); /*0x5fda6b*/
@@ -666,7 +666,7 @@ LABEL_20:
     }
     v15 = *(_DWORD *)&MEMORY[0xB0F4EC]->__pad_0[4 * FindBuildingByTiberiumType(v13)]; /*0x5fda8b*/
     v16 = *((_DWORD *)MEMORY[0xB054D4] + *(_DWORD *)(v15 + 192)); /*0x5fda93*/
-    v17 = *(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * *(_DWORD *)(*(_DWORD *)(v15 + 224) + 660)]; /*0x5fdaa8*/
+    v17 = *(_DWORD *)&MEMORY[0xA83D84]->vtable0[4 * *(_DWORD *)(*(_DWORD *)(v15 + 224) + 660)]; /*0x5fdaa8*/
     v18 = (*(int (__thiscall **)(int))(*(_DWORD *)v17 + 156))(v17); /*0x5fdaad*/
     if ( !v18 ) /*0x5fdab5*/
     {
@@ -797,7 +797,7 @@ OverlayClass *__thiscall Object::DrawObject(void **this, char a2)
   *this = &OverlayClass::`vftable'; /*0x5fdf76*/
   *(this + 1) = &OverlayClass::`vftable'; /*0x5fdf7c*/
   *(this + 2) = &OverlayClass::`vftable'; /*0x5fdf83*/
-  *(this + 3) = &OverlayClass::`vftable'; /*0x5fdf8a*/
+  *(this + 3) = &vt_OverlayClass; /*0x5fdf8a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x5fdf91*/
   v5 = this; /*0x5fdfa6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8EC50] + 16))(&MEMORY[0xA8EC50], &v5); /*0x5fdfaa*/

@@ -245,7 +245,7 @@ std::locale::facet * HouseClass::initAngerStruct(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall HouseClass::initAngerStruct(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &VersionClass::`vftable'; /*0x4e8279*/
+  *(_DWORD *)this = &vt_VersionClass; /*0x4e8279*/
   if ( (a2 & 1) != 0 ) /*0x4e827f*/
     __3_YAXPAX_Z(this); /*0x4e8282*/
   return this; /*0x4e828c*/
@@ -260,7 +260,7 @@ VectorCursor * HouseClass::vt_placeholder_07(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 VectorCursor *__thiscall HouseClass::vt_placeholder_07(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f28c9*/
+  *(_DWORD *)this = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem; /*0x4f28c9*/
   if ( (a2 & 1) != 0 ) /*0x4f28cf*/
     __3_YAXPAX_Z(this); /*0x4f28d2*/
   return (VectorCursor *)this; /*0x4f28dc*/
@@ -1055,7 +1055,7 @@ LABEL_20:
         if ( ++v8 >= v7[4] ) /*0x505455*/
           return 0; /*0x505455*/
       }
-      v11 = *(_DWORD **)&aP1->field_1[3]; /*0x505440*/
+      v11 = *(_DWORD **)&aP1->?[3]; /*0x505440*/
       while ( *v11 != v9 ) /*0x505445*/
       {
         ++v10; /*0x505447*/
@@ -1070,7 +1070,7 @@ LABEL_20:
       if ( (int)aP2 <= 0 ) /*0x5053a0*/
         return 0; /*0x5053a0*/
       v5 = *((_DWORD *)g_TriggerTypeCount + v3); /*0x5053ac*/
-      for ( j = *(_DWORD **)&aP1->field_1[3]; *j != v5; ++j ) /*0x5053af*/
+      for ( j = *(_DWORD **)&aP1->?[3]; *j != v5; ++j ) /*0x5053af*/
       {
         if ( ++v4 >= (int)aP2 ) /*0x5053c0*/
           return 0; /*0x5053c0*/
@@ -1805,12 +1805,12 @@ char __stdcall HouseClass::AIDecision(ObjectClass *aP0, int *a1)
     return 1; /*0x5d7492*/
   v28 = *a1; /*0x5d710d*/
   UnitTypeVector::Construct2(&v36, 0, 0); /*0x5d7111*/
-  v36 = &DynamicVectorClass<UnitTypeClass *>::`vftable'; /*0x5d711c*/
+  v36 = &vt_DynamicVectorClass_UnitTypeClass; /*0x5d711c*/
   v41 = 10; /*0x5d7124*/
   v40 = 0; /*0x5d712c*/
   InfantryTypeVector::ConstructFromData(&v30, 0, 0); /*0x5d7130*/
   v3 = 10; /*0x5d7139*/
-  v30 = &DynamicVectorClass<InfantryTypeClass *>::`vftable'; /*0x5d713e*/
+  v30 = &vt_DynamicVectorClass_InfantryTypeClass; /*0x5d713e*/
   v35 = 10; /*0x5d7146*/
   attachedTag = aP0->attachedTag; /*0x5d714a*/
   v34 = 0; /*0x5d714d*/
@@ -1948,7 +1948,7 @@ LABEL_34:
         v16 = v40; /*0x5d732b*/
       }
     }
-    v30 = &VectorClass<InfantryTypeClass *>::`vftable'; /*0x5d7446*/
+    v30 = &vt_VectorClass_InfantryTypeClass; /*0x5d7446*/
     if ( Block && BYTE1(v33) ) /*0x5d7456*/
     {
       __3_YAXPAX_Z(Block); /*0x5d7459*/
@@ -1956,12 +1956,12 @@ LABEL_34:
     }
     BYTE1(v33) = 0; /*0x5d7469*/
     v32 = 0; /*0x5d7470*/
-    v36 = &VectorClass<UnitTypeClass *>::`vftable'; /*0x5d7474*/
+    v36 = &vt_VectorClass_UnitTypeClass; /*0x5d7474*/
     if ( v37 && v39 ) /*0x5d7484*/
       __3_YAXPAX_Z(v37); /*0x5d7487*/
     return 1; /*0x5d7487*/
   }
-  v30 = &VectorClass<InfantryTypeClass *>::`vftable'; /*0x5d72bf*/
+  v30 = &vt_VectorClass_InfantryTypeClass; /*0x5d72bf*/
   if ( Block && BYTE1(v33) ) /*0x5d72d1*/
   {
     __3_YAXPAX_Z(Block); /*0x5d72d4*/
@@ -1969,7 +1969,7 @@ LABEL_34:
   }
   BYTE1(v33) = 0; /*0x5d72e4*/
   v32 = 0; /*0x5d72eb*/
-  v36 = &VectorClass<UnitTypeClass *>::`vftable'; /*0x5d72ef*/
+  v36 = &vt_VectorClass_UnitTypeClass; /*0x5d72ef*/
   if ( v37 ) /*0x5d72f7*/
   {
     if ( v39 ) /*0x5d72ff*/
@@ -2127,7 +2127,7 @@ void sub_5EE9D0()
     }
     while ( v10 < HouseClass_Count ); /*0x5eeb7e*/
   }
-  v17 = &VectorClass<Cell>::`vftable'; /*0x5eeb8b*/
+  v17 = &vt_VectorClass_Cell; /*0x5eeb8b*/
   if ( Block ) /*0x5eeb94*/
   {
     if ( v19 ) /*0x5eeb9c*/
@@ -2343,7 +2343,7 @@ VectorClass *__thiscall HouseClass_24_::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f2b63*/
-  *this = &VectorClass<GraphicMenuItem *>::`vftable'; /*0x4f2b66*/
+  *this = &vt_VectorClass_GraphicMenuItem; /*0x4f2b66*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4f2b70*/
   {
     __3_YAXPAX_Z(v3); /*0x4f2b78*/

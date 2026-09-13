@@ -41,18 +41,18 @@ int sub_679CC0()
     v1[1] = 0; /*0x679cda*/
     v1[2] = 0; /*0x679cde*/
     GenericList::Constructor(v2); /*0x679ce2*/
-    v2[0] = &List<INIClass::INISection *>::`vftable'; /*0x679ceb*/
+    v2[0] = &vt_List_INIClass_INISection; /*0x679ceb*/
     memset(&v2[7], 0, 12); /*0x679cf8*/
     v3 = 0; /*0x679d04*/
     v4 = 0; /*0x679d08*/
     v5 = 0; /*0x679d0c*/
     v6 = 0; /*0x679d10*/
     v1[0] = &CCINIClass_Vtable; /*0x679d14*/
-    CCFileClass::Construct(v7, unk_81F3C0); /*0x679d1c*/
+    CCFileClass::Construct(v7, aCoopcampmdIni); /*0x679d1c*/
     if ( CCINIClass::Load(v1, (int)v7, 0, 0) ) /*0x679d2c*/
       dword_B053B4 = Hash::ComputeHashSHA1((int)v1); /*0x679d3e*/
     byte_B053B8 = 1; /*0x679d4a*/
-    v7[0] = &CCFileClass::`vftable'; /*0x679d51*/
+    v7[0] = &vt_CCFileClass; /*0x679d51*/
     v9 = 0; /*0x679d59*/
     Vector::Clear((int)v8); /*0x679d60*/
     v7[0] = &off_7E1668; /*0x679d69*/
@@ -104,7 +104,7 @@ int ArtINI_Load()
   INIClass::ClearSection((int)&MEMORY[0x887180], 0, 0); /*0x679eec*/
   CCFileClass::Construct(v1, aArtmdIni); /*0x679efa*/
   CCINIClass::Load(&MEMORY[0x887180], (int)v1, 0, 0); /*0x679f0d*/
-  v1[0] = &CCFileClass::`vftable'; /*0x679f16*/
+  v1[0] = &vt_CCFileClass; /*0x679f16*/
   v3 = 0; /*0x679f1e*/
   Vector::Clear((int)v2); /*0x679f26*/
   v1[0] = &off_7E1668; /*0x679f2f*/
@@ -148,7 +148,7 @@ int __fastcall ReadINIClassBuildingTypeList(
     VectorClass::BuildingTypeConstructor(&v17, 0, 0); /*0x67b591*/
     v22 = 10; /*0x67b59a*/
     v21 = 0; /*0x67b5a8*/
-    v17 = (VectorClass *)&TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b5ac*/
+    v17 = (VectorClass *)&vt_TypeList_BuildingTypeClass_const; /*0x67b5ac*/
     for ( i = strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject); /*0x67b5be*/
           i;
           i = strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
@@ -160,7 +160,7 @@ int __fastcall ReadINIClassBuildingTypeList(
         && (v21 < v19
          || (v20 || !v19)
          && v22 > 0
-         && ((unsigned __int8 (__thiscall *)(VectorClass **, int, _DWORD))v17->field_8)(&v17, v22 + v19, 0)) )
+         && ((unsigned __int8 (__thiscall *)(VectorClass **, int, _DWORD))v17->Capacity)(&v17, v22 + v19, 0)) )
       {
         v8 = v21++; /*0x67b606*/
         *((_DWORD *)Block + v8) = v7; /*0x67b611*/
@@ -170,10 +170,10 @@ int __fastcall ReadINIClassBuildingTypeList(
     aP0->headNode[1] = 0; /*0x67b630*/
     LOBYTE(aP0->headNode[2]) = 1; /*0x67b633*/
     BYTE1(aP0->headNode[2]) = 0; /*0x67b637*/
-    *(_DWORD *)aP0->__pad_0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b63a*/
+    *(_DWORD *)aP0->__pad_0 = &vt_VectorClass_BuildingTypeClass_const; /*0x67b63a*/
     VectorClass::CopyBuilding(aP0, (VectorClass *)&v17); /*0x67b640*/
-    *(_DWORD *)aP0->__pad_0 = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b645*/
-    v17 = (VectorClass *)&VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b64b*/
+    *(_DWORD *)aP0->__pad_0 = &vt_TypeList_BuildingTypeClass_const; /*0x67b645*/
+    v17 = (VectorClass *)&vt_VectorClass_BuildingTypeClass_const; /*0x67b64b*/
     v9 = (VectorClass *)v22; /*0x67b657*/
     aP0->sectionHead[0] = v21; /*0x67b65b*/
     v10 = Block; /*0x67b65e*/
@@ -191,7 +191,7 @@ int __fastcall ReadINIClassBuildingTypeList(
     aP0->headNode[1] = 0; /*0x67b69c*/
     LOBYTE(aP0->headNode[2]) = 1; /*0x67b69f*/
     BYTE1(aP0->headNode[2]) = 0; /*0x67b6a3*/
-    *(_DWORD *)aP0->__pad_0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b6a6*/
+    *(_DWORD *)aP0->__pad_0 = &vt_VectorClass_BuildingTypeClass_const; /*0x67b6a6*/
     if ( aP0 != (INIClass *)a4 ) /*0x67b6ac*/
     {
       DynamicVectorClass::Destroy((int)aP0); /*0x67b6b0*/
@@ -225,7 +225,7 @@ int __fastcall ReadINIClassBuildingTypeList(
     }
     aP0->sectionHead[0] = a4[4]; /*0x67b703*/
     aP0->sectionHead[1] = a4[5]; /*0x67b709*/
-    *(_DWORD *)aP0->__pad_0 = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b70c*/
+    *(_DWORD *)aP0->__pad_0 = &vt_TypeList_BuildingTypeClass_const; /*0x67b70c*/
   }
   return (int)aP0->__pad_0; /*0x67b682*/
 }
@@ -284,7 +284,7 @@ InfantryTypeClass *__fastcall ReadINIClassInfantryTypeList(
     InfantryTypeVector::Construct2(&v17, 0, 0); /*0x67bb51*/
     v22 = 10; /*0x67bb5a*/
     v21 = 0; /*0x67bb68*/
-    v17 = (VectorClass *)&TypeList<InfantryTypeClass const *>::`vftable'; /*0x67bb6c*/
+    v17 = (VectorClass *)&vt_TypeList_InfantryTypeClass_const; /*0x67bb6c*/
     for ( i = (ObjectClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject); /*0x67bb7e*/
           i;
           i = (ObjectClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
@@ -296,7 +296,7 @@ InfantryTypeClass *__fastcall ReadINIClassInfantryTypeList(
         && (v21 < v19
          || (v20 || !v19)
          && v22 > 0
-         && ((unsigned __int8 (__thiscall *)(VectorClass **, int, _DWORD))v17->field_8)(&v17, v22 + v19, 0)) )
+         && ((unsigned __int8 (__thiscall *)(VectorClass **, int, _DWORD))v17->Capacity)(&v17, v22 + v19, 0)) )
       {
         v8 = v21++; /*0x67bbc6*/
         *((_DWORD *)Block + v8) = v7; /*0x67bbd1*/
@@ -306,10 +306,10 @@ InfantryTypeClass *__fastcall ReadINIClassInfantryTypeList(
     aP0->headNode[1] = 0; /*0x67bbf0*/
     LOBYTE(aP0->headNode[2]) = 1; /*0x67bbf3*/
     BYTE1(aP0->headNode[2]) = 0; /*0x67bbf7*/
-    *(_DWORD *)aP0->__pad_0 = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x67bbfa*/
+    *(_DWORD *)aP0->__pad_0 = &vt_VectorClass_InfantryTypeClass_const; /*0x67bbfa*/
     HouseTypeClass::readStartInfantry(aP0, (InfantryTypeClass *)&v17); /*0x67bc00*/
-    *(_DWORD *)aP0->__pad_0 = &TypeList<InfantryTypeClass const *>::`vftable'; /*0x67bc05*/
-    v17 = (VectorClass *)&VectorClass<InfantryTypeClass const *>::`vftable'; /*0x67bc0b*/
+    *(_DWORD *)aP0->__pad_0 = &vt_TypeList_InfantryTypeClass_const; /*0x67bc05*/
+    v17 = (VectorClass *)&vt_VectorClass_InfantryTypeClass_const; /*0x67bc0b*/
     v9 = (VectorClass *)v22; /*0x67bc17*/
     aP0->sectionHead[0] = v21; /*0x67bc1b*/
     v10 = Block; /*0x67bc1e*/
@@ -327,7 +327,7 @@ InfantryTypeClass *__fastcall ReadINIClassInfantryTypeList(
     aP0->headNode[1] = 0; /*0x67bc5c*/
     LOBYTE(aP0->headNode[2]) = 1; /*0x67bc5f*/
     BYTE1(aP0->headNode[2]) = 0; /*0x67bc63*/
-    *(_DWORD *)aP0->__pad_0 = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x67bc66*/
+    *(_DWORD *)aP0->__pad_0 = &vt_VectorClass_InfantryTypeClass_const; /*0x67bc66*/
     if ( aP0 != (INIClass *)a4 ) /*0x67bc6c*/
     {
       Vector::Cleanup((int)aP0); /*0x67bc70*/
@@ -361,7 +361,7 @@ InfantryTypeClass *__fastcall ReadINIClassInfantryTypeList(
     }
     aP0->sectionHead[0] = a4[4]; /*0x67bcc3*/
     aP0->sectionHead[1] = a4[5]; /*0x67bcc9*/
-    *(_DWORD *)aP0->__pad_0 = &TypeList<InfantryTypeClass const *>::`vftable'; /*0x67bccc*/
+    *(_DWORD *)aP0->__pad_0 = &vt_TypeList_InfantryTypeClass_const; /*0x67bccc*/
   }
   return (InfantryTypeClass *)aP0; /*0x67bc42*/
 }

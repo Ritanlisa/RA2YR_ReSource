@@ -21,7 +21,7 @@ char *__thiscall TagTypeClass::Construct(char *this, ObjectClass *aP1)
   *(_DWORD *)this = &TagTypeClass::`vftable'; /*0x6e5b8e*/
   this->vtable1 = &TagTypeClass::`vftable'; /*0x6e5b95*/
   this->vtable2 = &TagTypeClass::`vftable'; /*0x6e5b9c*/
-  this->vtable3 = &TagTypeClass::`vftable'; /*0x6e5ba3*/
+  this->vtable3 = &vt_TagTypeClass; /*0x6e5ba3*/
   if ( this == (char *)-36 ) /*0x6e5baa*/
   {
     Destination[0] = 0; /*0x6e5bac*/
@@ -83,7 +83,7 @@ int __thiscall sub_6E5CA0(int this)
   *(_DWORD *)this = &TagTypeClass::`vftable'; /*0x6e5ca7*/
   this->vtable1 = &TagTypeClass::`vftable'; /*0x6e5cad*/
   this->vtable2 = &TagTypeClass::`vftable'; /*0x6e5cb4*/
-  this->vtable3 = &TagTypeClass::`vftable'; /*0x6e5cbb*/
+  this->vtable3 = &vt_TagTypeClass; /*0x6e5cbb*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x6e5cc2*/
   v2 = *(_DWORD **)(this + 160); /*0x6e5cc7*/
   *(_DWORD *)(this + 160) = 0; /*0x6e5ccd*/
@@ -295,7 +295,7 @@ int __stdcall TagTypeClass::LoadTypeData(AbstractTypeClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &TagTypeClass::`vftable'; /*0x6e6434*/
       *(_DWORD *)&aP0->__pad_0[4] = &TagTypeClass::`vftable'; /*0x6e643a*/
       *(_DWORD *)&aP0->__pad_0[8] = &TagTypeClass::`vftable'; /*0x6e6441*/
-      *(_DWORD *)&aP0->__pad_0[12] = &TagTypeClass::`vftable'; /*0x6e6448*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_TagTypeClass; /*0x6e6448*/
     }
     ObjectPtr::RegisterForTracking( /*0x6e645b*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],

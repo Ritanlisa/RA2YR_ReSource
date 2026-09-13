@@ -174,15 +174,15 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   VectorClass::Construct(this + 47, 0, 0); /*0x771cc5*/
   *(this + 52) = 10; /*0x771cca*/
   *(this + 51) = 0; /*0x771cd1*/
-  *(this + 47) = &TypeList<int>::`vftable'; /*0x771cd4*/
+  *(this + 47) = &vt_TypeList_int; /*0x771cd4*/
   VectorClass::Construct(this + 54, 0, 0); /*0x771ce4*/
   *(this + 59) = 10; /*0x771ce9*/
   *(this + 58) = 0; /*0x771cf0*/
-  *(this + 54) = &TypeList<int>::`vftable'; /*0x771cf3*/
+  *(this + 54) = &vt_TypeList_int; /*0x771cf3*/
   AnimTypeVector::Constructor(this + 61, 0, 0); /*0x771d03*/
   *(this + 66) = 10; /*0x771d08*/
   *(this + 65) = 0; /*0x771d0f*/
-  *(this + 61) = &TypeList<AnimTypeClass const *>::`vftable'; /*0x771d12*/
+  *(this + 61) = &vt_TypeList_AnimTypeClass_const; /*0x771d12*/
   *(this + 68) = 0; /*0x771d18*/
   *(this + 69) = 0; /*0x771d1e*/
   *(this + 70) = 0; /*0x771d24*/
@@ -231,7 +231,7 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   *this = &WeaponTypeClass::`vftable'; /*0x771e77*/
   *(this + 1) = &WeaponTypeClass::`vftable'; /*0x771e7d*/
   *(this + 2) = &WeaponTypeClass::`vftable'; /*0x771e83*/
-  *(this + 3) = &WeaponTypeClass::`vftable'; /*0x771e8a*/
+  *(this + 3) = &vt_WeaponTypeClass; /*0x771e8a*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x771e91*/
   if ( *(int *)&stru_87C374.__pad_579C[23144] < *(int *)&stru_87C374.__pad_579C[23136] /*0x771eca*/
     || (stru_87C374.__pad_579C[23141] || !*(_DWORD *)&stru_87C374.__pad_579C[23136])
@@ -255,13 +255,13 @@ unsigned int * WeaponTypeClass::loadWeaponProperties(AbstractTypeClass * aP1)
 _DWORD *__thiscall WeaponTypeClass::loadWeaponProperties(_DWORD *this, AbstractTypeClass *aP1)
 {
   AbstractTypeClass::Init((int)this, aP1); /*0x771f08*/
-  *(this + 47) = &TypeList<int>::`vftable'; /*0x771f12*/
-  *(this + 54) = &TypeList<int>::`vftable'; /*0x771f18*/
-  *(this + 61) = &TypeList<AnimTypeClass const *>::`vftable'; /*0x771f1e*/
+  *(this + 47) = &vt_TypeList_int; /*0x771f12*/
+  *(this + 54) = &vt_TypeList_int; /*0x771f18*/
+  *(this + 61) = &vt_TypeList_AnimTypeClass_const; /*0x771f1e*/
   *this = &WeaponTypeClass::`vftable'; /*0x771f28*/
   *(this + 1) = &WeaponTypeClass::`vftable'; /*0x771f2e*/
   *(this + 2) = &WeaponTypeClass::`vftable'; /*0x771f35*/
-  *(this + 3) = &WeaponTypeClass::`vftable'; /*0x771f3c*/
+  *(this + 3) = &vt_WeaponTypeClass; /*0x771f3c*/
   return this; /*0x771f45*/
 }
 }
@@ -281,7 +281,7 @@ int __thiscall sub_771F50(int this)
   *(_DWORD *)this = &WeaponTypeClass::`vftable'; /*0x771f57*/
   this->vtable1 = &WeaponTypeClass::`vftable'; /*0x771f5d*/
   this->vtable2 = &WeaponTypeClass::`vftable'; /*0x771f64*/
-  this->vtable3 = &WeaponTypeClass::`vftable'; /*0x771f6b*/
+  this->vtable3 = &vt_WeaponTypeClass; /*0x771f6b*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x771f72*/
   this->Damage = 0; /*0x771f7d*/
   this->ROF = 0; /*0x771f83*/
@@ -297,7 +297,7 @@ int __thiscall sub_771F50(int this)
     while ( v2 < MEMORY[0x887578] ); /*0x771fcc*/
   }
   v3 = *(void **)(this + 248); /*0x771fce*/
-  *(_DWORD *)(this + 244) = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x771fd4*/
+  *(_DWORD *)(this + 244) = &vt_VectorClass_AnimTypeClass_const; /*0x771fd4*/
   if ( v3 && this->IsHouseColor ) /*0x771fe2*/
   {
     __3_YAXPAX_Z(v3); /*0x771feb*/
@@ -306,7 +306,7 @@ int __thiscall sub_771F50(int this)
   this->IsHouseColor = 0; /*0x771ff9*/
   *(_DWORD *)(this + 252) = 0; /*0x771fff*/
   v4 = *(void **)(this + 220); /*0x772005*/
-  *(_DWORD *)(this + 216) = &VectorClass<int>::`vftable'; /*0x77200b*/
+  *(_DWORD *)(this + 216) = &vt_VectorClass_int; /*0x77200b*/
   if ( v4 && this->Spawner ) /*0x772019*/
   {
     __3_YAXPAX_Z(v4); /*0x772022*/
@@ -315,7 +315,7 @@ int __thiscall sub_771F50(int this)
   this->Spawner = 0; /*0x772030*/
   *(_DWORD *)(this + 224) = 0; /*0x772036*/
   v5 = *(void **)(this + 192); /*0x77203c*/
-  this->DownReport = &VectorClass<int>::`vftable'; /*0x772042*/
+  this->DownReport = &vt_VectorClass_int; /*0x772042*/
   if ( v5 && *(_BYTE *)(this + 201) ) /*0x772050*/
   {
     __3_YAXPAX_Z(v5); /*0x772059*/
@@ -462,7 +462,7 @@ int __userpurge WeaponTypeClass::SaveLoad_Prefix@<eax>(int a1@<ebx>, int *a2, in
     if ( v4 != (int *)-244 ) /*0x772d23*/
     {
       DynamicVectorClass::AnimTypeConstructor(v4 + 61, 0, 0); /*0x772d2b*/
-      v4[61] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x772d30*/
+      v4[61] = (int)&vt_TypeList_AnimTypeClass_const; /*0x772d30*/
     }
     (*(void (__stdcall **)(int, int **, int, _DWORD, int))(*(_DWORD *)v6 + 12))(v6, &a2, 4, 0, a1); /*0x772d42*/
     for ( i = 0; i < a3; ++i ) /*0x772d4d*/
@@ -473,7 +473,7 @@ int __userpurge WeaponTypeClass::SaveLoad_Prefix@<eax>(int a1@<ebx>, int *a2, in
     if ( v5 ) /*0x772d77*/
     {
       DynamicVectorClass::Construct(v5, 0, 0); /*0x772d7f*/
-      *v5 = &TypeList<int>::`vftable'; /*0x772d84*/
+      *v5 = &vt_TypeList_int; /*0x772d84*/
     }
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v6 + 12))(v6, &a3, 4, 0); /*0x772d97*/
     for ( j = 0; j < a3; ++j ) /*0x772da2*/
@@ -559,7 +559,7 @@ WeaponTypeClass *__thiscall WeaponTypeClass::ddtor(void **this, char a2)
   *this = &WeaponTypeClass::`vftable'; /*0x7730f7*/
   *(this + 1) = &WeaponTypeClass::`vftable'; /*0x7730fd*/
   *(this + 2) = &WeaponTypeClass::`vftable'; /*0x773104*/
-  *(this + 3) = &WeaponTypeClass::`vftable'; /*0x77310b*/
+  *(this + 3) = &vt_WeaponTypeClass; /*0x77310b*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x773112*/
   *(this + 40) = 0; /*0x77311d*/
   *(this + 43) = 0; /*0x773123*/
@@ -575,7 +575,7 @@ WeaponTypeClass *__thiscall WeaponTypeClass::ddtor(void **this, char a2)
     while ( v3 < MEMORY[0x887578] ); /*0x77316c*/
   }
   v4 = *(this + 62); /*0x77316e*/
-  *(this + 61) = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x773174*/
+  *(this + 61) = &vt_VectorClass_AnimTypeClass_const; /*0x773174*/
   if ( v4 && this->IsHouseColor ) /*0x773182*/
   {
     __3_YAXPAX_Z(v4); /*0x77318b*/
@@ -584,7 +584,7 @@ WeaponTypeClass *__thiscall WeaponTypeClass::ddtor(void **this, char a2)
   this->IsHouseColor = 0; /*0x773199*/
   *(this + 63) = 0; /*0x77319f*/
   v5 = *(this + 55); /*0x7731a5*/
-  *(this + 54) = &VectorClass<int>::`vftable'; /*0x7731ab*/
+  *(this + 54) = &vt_VectorClass_int; /*0x7731ab*/
   if ( v5 && this->Spawner ) /*0x7731b9*/
   {
     __3_YAXPAX_Z(v5); /*0x7731c2*/
@@ -593,7 +593,7 @@ WeaponTypeClass *__thiscall WeaponTypeClass::ddtor(void **this, char a2)
   this->Spawner = 0; /*0x7731d0*/
   *(this + 56) = 0; /*0x7731d6*/
   v6 = (DynamicVector *)*(this + 48); /*0x7731dc*/
-  *(this + 47) = &VectorClass<int>::`vftable'; /*0x7731e2*/
+  *(this + 47) = &vt_VectorClass_int; /*0x7731e2*/
   if ( v6 && *((_BYTE *)this + 201) ) /*0x7731f0*/
   {
     __3_YAXPAX_Z(v6); /*0x7731f9*/

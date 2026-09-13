@@ -123,7 +123,7 @@ char *__thiscall sub_724000(char *this, int a2)
   *((_DWORD *)v3 + 2) = 0; /*0x724030*/
   v3[12] = 1; /*0x724033*/
   v3[13] = 0; /*0x724037*/
-  *(_DWORD *)v3 = &DynamicVectorClass<ToolTip const *>::`vftable'; /*0x72403a*/
+  *(_DWORD *)v3 = &vt_DynamicVectorClass_ToolTip_const; /*0x72403a*/
   *((_DWORD *)v3 + 5) = 10; /*0x724040*/
   *((_DWORD *)v3 + 4) = 0; /*0x724047*/
   this->M588 = 0; /*0x72404a*/
@@ -132,7 +132,7 @@ char *__thiscall sub_724000(char *this, int a2)
   *(this + 600) = 0; /*0x72405c*/
   this->M604 = 0; /*0x724062*/
   v4 = *(_DWORD *)v3; /*0x724068*/
-  *(_DWORD *)this = &ToolTipManager::`vftable'; /*0x72406a*/
+  *(_DWORD *)this = &vt_ToolTipManager; /*0x72406a*/
   (*(void (__thiscall **)(char *))(v4 + 12))(v3); /*0x724070*/
   __3_YAXPAX_Z(*((void **)this + 147)); /*0x72407a*/
   this->M588 = 0; /*0x724082*/

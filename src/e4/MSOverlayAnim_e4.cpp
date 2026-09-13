@@ -21,14 +21,14 @@ MSShapeAnim *__thiscall MSOverlayAnim::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 7); /*0x5ceb83*/
-  *this = &MSShapeAnim::`vftable'; /*0x5ceb86*/
+  *this = &vt_MSShapeAnim; /*0x5ceb86*/
   if ( v3 && *((_BYTE *)this + 60) ) /*0x5ceb90*/
   {
     __3_YAXPAX_Z(v3); /*0x5ceb98*/
     *(this + 7) = 0; /*0x5ceba0*/
     *((_BYTE *)this + 60) = 0; /*0x5ceba7*/
   }
-  *this = &MSAnim::`vftable'; /*0x5cebaf*/
+  *this = &vt_MSAnim; /*0x5cebaf*/
   if ( (a2 & 1) != 0 ) /*0x5cebb7*/
     __3_YAXPAX_Z(this); /*0x5cebba*/
   return (MSShapeAnim *)this; /*0x5cebc4*/

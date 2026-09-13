@@ -12,7 +12,7 @@ _DWORD *__thiscall VectorClass_Constructor_UnitType(_DWORD *this, int a2, int a3
   *(this + 2) = a2; /*0x51394e*/
   *((_BYTE *)this + 12) = 1; /*0x513951*/
   *((_BYTE *)this + 13) = 0; /*0x513955*/
-  *this = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x513958*/
+  *this = &vt_VectorClass_UnitTypeClass_const; /*0x513958*/
   if ( a2 ) /*0x51395e*/
   {
     if ( a3 ) /*0x513966*/
@@ -37,7 +37,7 @@ _DWORD *__thiscall sub_5D8950(_DWORD *this, int a2, int a3)
   *(this + 2) = a2; /*0x5d895e*/
   *((_BYTE *)this + 12) = 1; /*0x5d8961*/
   *((_BYTE *)this + 13) = 0; /*0x5d8965*/
-  *this = &VectorClass<UnitTypeClass *>::`vftable'; /*0x5d8968*/
+  *this = &vt_VectorClass_UnitTypeClass; /*0x5d8968*/
   if ( a2 ) /*0x5d896e*/
   {
     if ( a3 ) /*0x5d8976*/

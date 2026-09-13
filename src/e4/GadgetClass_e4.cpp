@@ -29,7 +29,7 @@ ControlClass *__thiscall GadgetClass::Construct(
   *((_BYTE *)this + 30) = 0; /*0x4e1322*/
   *((_BYTE *)this + 29) = (_BYTE)aP6; /*0x4e1327*/
   *(this + 8) = aP5; /*0x4e132a*/
-  *this = &GadgetClass::`vftable'; /*0x4e132d*/
+  *this = &vt_GadgetClass; /*0x4e132d*/
   if ( (_BYTE)aP6 ) /*0x4e1334*/
     *(this + 8) = (unsigned int)aP5 | 5; /*0x4e1339*/
   return (ControlClass *)result; /*0x4e1333*/
@@ -47,7 +47,7 @@ int __thiscall GadgetClass_Dtor(_DWORD *this)
   int v1; // eax
   int v2; // eax
 
-  *this = &GadgetClass::`vftable'; /*0x4e1390*/
+  *this = &vt_GadgetClass; /*0x4e1390*/
   v1 = MEMORY[0x8B3E90]; /*0x4e1396*/
   if ( this == (_DWORD *)MEMORY[0x8B3E90] ) /*0x4e139f*/
   {
@@ -285,6 +285,35 @@ LABEL_86:
     goto LABEL_87; /*0x60af17*/
   }
   return 1; /*0x60af23*/
+}
+}
+} // namespace gamemd
+
+// 0x623560
+namespace gamemd {
+void GadgetClass::SetTooltip(CCINIClass * aP1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void __thiscall GadgetClass::SetTooltip(void **this, CCINIClass *aP1)
+{
+  size_t v3; // eax
+  void *v4; // eax
+
+  if ( *(this + 10) ) /*0x623564*/
+  {
+    __3_YAXPAX_Z(*(this + 10)); /*0x62356c*/
+    *(this + 10) = 0; /*0x623574*/
+  }
+  if ( aP1 ) /*0x623581*/
+  {
+    if ( *(_WORD *)aP1->__pad_0 ) /*0x623583*/
+    {
+      v3 = wcslen((const wchar_t *)aP1); /*0x62358a*/
+      v4 = (void *)__2_YAPAXI_Z(2 * v3 + 2); /*0x623594*/
+      *(this + 10) = v4; /*0x62359b*/
+      wcscpy((wchar_t *)v4, (const wchar_t *)aP1); /*0x62359e*/
+    }
+  }
 }
 }
 } // namespace gamemd

@@ -353,168 +353,6 @@ int InitializeRadialGradientTexture()
 }
 } // namespace gamemd
 
-// 0x4C1B80
-namespace gamemd {
-void sub_4C1B80()
-{
-{
-    long double v0;
-    v0 = pow(256.0, 2.0);
-    DataGlobal_8A0E38 = Math::Sqrt(v0 + v0);
-}
-}
-} // namespace gamemd
-
-// 0x4C1BB0
-namespace gamemd {
-void sub_4C1BB0()
-{
-{
-    DataGlobal_8A0EA8 = DataGlobal_8A0E38 / 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C1BD0
-namespace gamemd {
-void sub_4C1BD0()
-{
-{
-    DataGlobal_8A0E70 = 1.0 / DataGlobal_8A0EA8;
-}
-}
-} // namespace gamemd
-
-// 0x4C1BF0
-namespace gamemd {
-void sub_4C1BF0()
-{
-{
-    DataGlobal_8A0E68 = 0.0174532925199433 * 45.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C1C10
-namespace gamemd {
-void sub_4C1C10()
-{
-{
-    DataGlobal_8A0E40 = 0.0174532925199433 * 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C1C30
-namespace gamemd {
-void sub_4C1C30()
-{
-{
-    DataGlobal_8A0E18 = 0.0174532925199433 * 90.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C1C50
-namespace gamemd {
-long long sub_4C1C50()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_8A0E18 - DataGlobal_8A0E40);
-    result = Math::RoundToInt(v0 * DataGlobal_8A0E38 * 0.5);
-    DataGlobal_8A0EB0 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4C1C90
-namespace gamemd {
-void sub_4C1C90()
-{
-{
-    DataGlobal_8A0E48 = Math::ArcTan((double)DataGlobal_8A0EB0 * 0.00390625);
-}
-}
-} // namespace gamemd
-
-// 0x4C1CC0
-namespace gamemd {
-void sub_4C1CC0()
-{
-{
-    DataGlobal_8A0E60 = Math::ArcTan((double)(2 * DataGlobal_8A0EB0) / DataGlobal_8A0E38);
-}
-}
-} // namespace gamemd
-
-// 0x4C1CF0
-namespace gamemd {
-long long sub_4C1CF0()
-{
-{
-    __int64 result;
-    result = Math::RoundToInt((double)(4 * DataGlobal_8A0EB0) + 0.5);
-    DataGlobal_8A0EA0 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4C1D20
-namespace gamemd {
-int sub_4C1D20()
-{
-{
-    DataGlobal_8A0E30 = 0;
-    DataGlobal_8A0E32 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C1D30
-namespace gamemd {
-int sub_4C1D30()
-{
-{
-    DataGlobal_8A0E50 = 0;
-    DataGlobal_8A0E54 = 0;
-    DataGlobal_8A0E58 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C1D50
-namespace gamemd {
-int sub_4C1D50()
-{
-{
-    DataGlobal_8A0E80 = 0;
-    DataGlobal_8A0E78 = 128;
-    DataGlobal_8A0E7C = 128;
-    return 128;
-}
-}
-} // namespace gamemd
-
-// 0x4C1D70
-namespace gamemd {
-int sub_4C1D70()
-{
-{
-    DataGlobal_8A0E20 = 0;
-    DataGlobal_8A0E24 = 0;
-    DataGlobal_8A0E28 = 0;
-    DataGlobal_8A0E2C = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4C1D90
 namespace gamemd {
 int sub_4C1D90()
@@ -526,7 +364,7 @@ int sub_4C1D90()
   MEMORY[0x8A0E90] = 0; /*0x4c1d9c*/
   MEMORY[0x8A0E94] = 1; /*0x4c1da1*/
   MEMORY[0x8A0E95] = 0; /*0x4c1da8*/
-  MEMORY[0x8A0E88] = (int)&DynamicVectorClass<EBolt *>::`vftable'; /*0x4c1dad*/
+  MEMORY[0x8A0E88] = (int)&vt_DynamicVectorClass_EBolt; /*0x4c1dad*/
   MEMORY[0x8A0E9C] = 10; /*0x4c1db7*/
   MEMORY[0x8A0E98] = 0; /*0x4c1dc1*/
   return atexit(sub_4C1DD0); /*0x4c1dcc*/
@@ -541,7 +379,7 @@ void sub_4C1DD0()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __cdecl sub_4C1DD0()
 {
-  MEMORY[0x8A0E88] = (int)&VectorClass<EBolt *>::`vftable'; /*0x4c1dd8*/
+  MEMORY[0x8A0E88] = (int)&vt_VectorClass_EBolt; /*0x4c1dd8*/
   if ( MEMORY[0x8A0E8C] && MEMORY[0x8A0E95] ) /*0x4c1dec*/
   {
     __3_YAXPAX_Z(MEMORY[0x8A0E8C]); /*0x4c1def*/
@@ -764,58 +602,6 @@ void sub_4C29E0()
 }
 } // namespace gamemd
 
-// 0x4C2B40
-namespace gamemd {
-unsigned int * E4Recv_4C2B40::sub_4C2B40(unsigned int * a2)
-{
-{
-    int v2;
-    int *v3;
-    char v5[12];
-    v2 = this->M32;
-    if ( v2 )
-  {
-    v3 = (int *)(*(int (__thiscall **)(int, char *, int, int, int, int))(*(int *)(v2) + 176))( v2, v5, this->M36, 0, 0, 0);
-    *a2 = *v3;
-    *((int*)(a2) + 1) = v3[1];
-    *((int*)(a2) + 2) = v3[2];
-    return a2;
-  }
-    else
-  {
-    *a2 = DataGlobal_8A0E50;
-    *((int*)(a2) + 1) = DataGlobal_8A0E54;
-    *((int*)(a2) + 2) = DataGlobal_8A0E58;
-    return a2;
-  }
-}
-}
-} // namespace gamemd
-
-// 0x4C2C30
-namespace gamemd {
-Iostream_init * E4Recv_4C2C30::__0Iostream_init_QAE_XZ_3()
-{
-{
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x4C2FA0
-namespace gamemd {
-int sub_4C2FA0()
-{
-{
-    DataGlobal_8A0EB8 = 0;
-    DataGlobal_8A0EBC = 0;
-    DataGlobal_8A0EC0 = 0;
-    DataGlobal_8A0EC4 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4C2FC0
 namespace gamemd {
 int * E4Recv_4C2FC0::sub_4C2FC0(DropListClass * aP1, ControlClass * aP2, int a4, DropListClass * aP4, ControlClass * aP5, ControlClass * aP6, ControlClass * aP7, int a9, int a10)
@@ -841,7 +627,7 @@ int *__thiscall sub_4C2FC0(
   v11 = aP4; /*0x4c2ff6*/
   BYTE1(v11) = BYTE1(aP4) & 0xFE; /*0x4c2ff8*/
   *(this + 11) = (int)v11; /*0x4c2ffc*/
-  *this = (int)&EditClass::`vftable'; /*0x4c3004*/
+  *this = (int)&vt_EditClass; /*0x4c3004*/
   *(this + 12) = a10; /*0x4c300a*/
   *(this + 13) = (int)aP2; /*0x4c300d*/
   *(this + 14) = a4 - 1; /*0x4c3010*/
@@ -867,249 +653,6 @@ int *__thiscall sub_4C2FC0(
   }
   *(this + 17) = 0; /*0x4c309d*/
   return this; /*0x4c307d*/
-}
-}
-} // namespace gamemd
-
-// 0x4C35A0
-namespace gamemd {
-void sub_4C35A0()
-{
-{
-    long double v0;
-    v0 = pow(256.0, 2.0);
-    DataGlobal_8A0EE8 = Math::Sqrt(v0 + v0);
-}
-}
-} // namespace gamemd
-
-// 0x4C35D0
-namespace gamemd {
-void sub_4C35D0()
-{
-{
-    DataGlobal_8A0F38 = DataGlobal_8A0EE8 / 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C35F0
-namespace gamemd {
-void sub_4C35F0()
-{
-{
-    DataGlobal_8A0F20 = 1.0 / DataGlobal_8A0F38;
-}
-}
-} // namespace gamemd
-
-// 0x4C3610
-namespace gamemd {
-void sub_4C3610()
-{
-{
-    DataGlobal_8A0F18 = 0.0174532925199433 * 45.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C3630
-namespace gamemd {
-void sub_4C3630()
-{
-{
-    DataGlobal_8A0EF0 = 0.0174532925199433 * 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C3650
-namespace gamemd {
-void sub_4C3650()
-{
-{
-    DataGlobal_8A0EC8 = 0.0174532925199433 * 90.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C3670
-namespace gamemd {
-long long sub_4C3670()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_8A0EC8 - DataGlobal_8A0EF0);
-    result = Math::RoundToInt(v0 * DataGlobal_8A0EE8 * 0.5);
-    DataGlobal_8A0F40 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4C36B0
-namespace gamemd {
-void sub_4C36B0()
-{
-{
-    DataGlobal_8A0EF8 = Math::ArcTan((double)DataGlobal_8A0F40 * 0.00390625);
-}
-}
-} // namespace gamemd
-
-// 0x4C36E0
-namespace gamemd {
-void sub_4C36E0()
-{
-{
-    DataGlobal_8A0F10 = Math::ArcTan((double)(2 * DataGlobal_8A0F40) / DataGlobal_8A0EE8);
-}
-}
-} // namespace gamemd
-
-// 0x4C3710
-namespace gamemd {
-long long sub_4C3710()
-{
-{
-    __int64 result;
-    result = Math::RoundToInt((double)(4 * DataGlobal_8A0F40) + 0.5);
-    DataGlobal_8A0F34 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4C3740
-namespace gamemd {
-int sub_4C3740()
-{
-{
-    DataGlobal_8A0EE0 = 0;
-    DataGlobal_8A0EE2 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C3750
-namespace gamemd {
-int sub_4C3750()
-{
-{
-    DataGlobal_8A0F00 = 0;
-    DataGlobal_8A0F04 = 0;
-    DataGlobal_8A0F08 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C3770
-namespace gamemd {
-int sub_4C3770()
-{
-{
-    DataGlobal_8A0F30 = 0;
-    DataGlobal_8A0F28 = 128;
-    DataGlobal_8A0F2C = 128;
-    return 128;
-}
-}
-} // namespace gamemd
-
-// 0x4C3790
-namespace gamemd {
-int sub_4C3790()
-{
-{
-    DataGlobal_8A0ED0 = 0;
-    DataGlobal_8A0ED4 = 0;
-    DataGlobal_8A0ED8 = 0;
-    DataGlobal_8A0EDC = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C37B0
-namespace gamemd {
-int sub_4C37B0()
-{
-{
-    DataGlobal_8A0F48 = 0;
-    DataGlobal_8A0F4C = 0;
-    DataGlobal_8A0F50 = 0;
-    DataGlobal_8A0F54 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C37D0
-namespace gamemd {
-unsigned char * sub_4C37D0(int a1, unsigned char * a2, int a3, unsigned char a4)
-{
-{
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int i;
-    int v10;
-    char *v12;
-    short v13;
-    char v14;
-    int v15;
-    char *v16;
-    v16 = a2;
-    if ( !a2 )
-    return 0;
-    v5 = 0;
-    v12 = a2;
-    v15 = 0;
-    do
-  {
-    if ( v5 <= 240 && v5 )
-    {
-    v6 = a1 + 2 * (v5 % 256) + v5 % 256;
-    v13 = *(short *)v6;
-    v14 = *(char *)(v6 + 2);
-    Color::Lerp((unsigned char *)&v13, a4, (unsigned char *)(a1 + 2 * (a3 % 256) + a3 % 256));
-    v7 = -1;
-    v8 = 0;
-    for ( i = 240; i < 255; ++i )
-      {
-    v10 = Palette::CalcColorDistance((unsigned char *)(a1 + 2 * (i % 256) + i % 256), (unsigned char *)&v13);
-    if ( v7 == -1 || v10 < v8 )
-        {
-    v7 = i;
-    v8 = v10;
-        }
-      }
-    a2 = v16;
-    *v12++ = v7;
-    v5 = v15;
-    }
-    else
-    {
-    *v12++ = v5;
-    }
-    v15 = ++v5;
-  }
-    while ( v5 < 256 );
-    return a2;
-}
-}
-} // namespace gamemd
-
-// 0x4C38D0
-namespace gamemd {
-int E4Recv_4C38D0::sub_4C38D0()
-{
-{
-    return ((int)this + 1) << 8;
 }
 }
 } // namespace gamemd
@@ -1186,113 +729,6 @@ LABEL_6:
 }
 } // namespace gamemd
 
-// 0x4C3A20
-namespace gamemd {
-char * sub_4C3A20(int a1, int a2, int a3, char * a4)
-{
-{
-    char *v4;
-    int v5;
-    char *v6;
-    unsigned char *v7;
-    if ( !a3 || !a2 )
-    return a4;
-    v4 = a4;
-    if ( a4 || (v4 = (char *)__2_YAPAXI_Z((a3 + 1) << 8)) != 0 )
-  {
-    v5 = 0;
-    memset(v4, 0xFFu, 0x100u);
-    v6 = v4 + 256;
-    if ( a3 > 0 )
-    {
-    v7 = (unsigned char *)(a2 + 1);
-    do
-      {
-    v4[*(v7 - 1)] = v5;
-    sub_4C37D0(a1, v6, *v7, v7[1]);
-    v6 += 256;
-    ++v5;
-    v7 += 4;
-      }
-    while ( v5 < a3 );
-    }
-  }
-    return v4;
-}
-}
-} // namespace gamemd
-
-// 0x4C3AD0
-namespace gamemd {
-int sub_4C3AD0(char * a1, int a2, int a3, unsigned char a4)
-{
-{
-    int v6;
-    unsigned char *v7;
-    int v8;
-    if ( !a2 )
-    return 0;
-    v6 = 0;
-    v7 = (unsigned char *)&a1[2 * (a3 % 256) + a3 % 256];
-    do
-  {
-    v8 = (int)&a1[2 * (v6 % 256) + v6 % 256];
-    LOWORD(a3) = *(short *)v8;
-    BYTE2(a3) = *(char *)(v8 + 2);
-    Color::Lerp((unsigned char *)&a3, a4, v7);
-    *(char *)(v6 + a2) = Palette::FindClosestColor(a1, (int)&a3);
-    ++v6;
-  }
-    while ( v6 < 256 );
-    return a2;
-}
-}
-} // namespace gamemd
-
-// 0x4C3B60
-namespace gamemd {
-unsigned char * sub_4C3B60(char * a1, unsigned char * a2, int a3, int a4)
-{
-{
-    unsigned char v6;
-    int v7;
-    int v8;
-    int v9;
-    v6 = a4;
-    v7 = (int)&a1[2 * (a3 % 256) + a3 % 256];
-    v8 = 1;
-    LOWORD(a3) = *(short *)v7;
-    LOBYTE(v7) = *(char *)(v7 + 2);
-    *a2 = 0;
-    BYTE2(a3) = v7;
-    do
-  {
-    v9 = (int)&a1[2 * (v8 % 256) + v8 % 256];
-    LOWORD(a4) = *(short *)v9;
-    BYTE2(a4) = *(char *)(v9 + 2);
-    Color::Lerp((unsigned char *)&a4, v6, (unsigned char *)&a3);
-    a2[v8++] = Palette::FindClosestColor(a1, (int)&a4);
-  }
-    while ( v8 < 256 );
-    return a2;
-}
-}
-} // namespace gamemd
-
-// 0x4C3BF0
-namespace gamemd {
-int sub_4C3BF0()
-{
-{
-    DataGlobal_8A3760 = 0;
-    DataGlobal_8A3764 = 0;
-    DataGlobal_8A3768 = 0;
-    DataGlobal_8A376C = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4C3C10
 namespace gamemd {
 int sub_4C3C10()
@@ -1304,7 +740,7 @@ int sub_4C3C10()
   MEMORY[0x8A3778] = 0; /*0x4c3c1c*/
   MEMORY[0x8A377C] = 1; /*0x4c3c21*/
   MEMORY[0x8A377D] = 0; /*0x4c3c28*/
-  MEMORY[0x8A3770] = (int)&DynamicVectorClass<EgoClass *>::`vftable'; /*0x4c3c2d*/
+  MEMORY[0x8A3770] = (int)&vt_DynamicVectorClass_EgoClass; /*0x4c3c2d*/
   MEMORY[0x8A3784] = 10; /*0x4c3c37*/
   MEMORY[0x8A3780] = 0; /*0x4c3c41*/
   return atexit(sub_4C3C50); /*0x4c3c4c*/
@@ -1319,7 +755,7 @@ void sub_4C3C50()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __cdecl sub_4C3C50()
 {
-  MEMORY[0x8A3770] = (int)&VectorClass<EgoClass *>::`vftable'; /*0x4c3c58*/
+  MEMORY[0x8A3770] = (int)&vt_VectorClass_EgoClass; /*0x4c3c58*/
   if ( MEMORY[0x8A3774] && MEMORY[0x8A377D] ) /*0x4c3c6c*/
   {
     __3_YAXPAX_Z(MEMORY[0x8A3774]); /*0x4c3c6f*/
@@ -1381,154 +817,6 @@ int __thiscall sub_4C3DD0(int *this, int a2)
 }
 } // namespace gamemd
 
-// 0x4C4D00
-namespace gamemd {
-void sub_4C4D00()
-{
-{
-    long double v0;
-    v0 = pow(256.0, 2.0);
-    DataGlobal_8A3798 = Math::Sqrt(v0 + v0);
-}
-}
-} // namespace gamemd
-
-// 0x4C4D30
-namespace gamemd {
-void sub_4C4D30()
-{
-{
-    DataGlobal_8A3808 = DataGlobal_8A3798 / 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C4D50
-namespace gamemd {
-void sub_4C4D50()
-{
-{
-    DataGlobal_8A37F0 = 1.0 / DataGlobal_8A3808;
-}
-}
-} // namespace gamemd
-
-// 0x4C4D70
-namespace gamemd {
-void sub_4C4D70()
-{
-{
-    DataGlobal_8A37E8 = 0.0174532925199433 * 45.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C4D90
-namespace gamemd {
-void sub_4C4D90()
-{
-{
-    DataGlobal_8A37C0 = 0.0174532925199433 * 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C4DB0
-namespace gamemd {
-void sub_4C4DB0()
-{
-{
-    DataGlobal_8A3788 = 0.0174532925199433 * 90.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C4DD0
-namespace gamemd {
-long long sub_4C4DD0()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_8A3788 - DataGlobal_8A37C0);
-    result = Math::RoundToInt(v0 * DataGlobal_8A3798 * 0.5);
-    DataGlobal_8A3810 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4C4E10
-namespace gamemd {
-void sub_4C4E10()
-{
-{
-    DataGlobal_8A37C8 = Math::ArcTan((double)DataGlobal_8A3810 * 0.00390625);
-}
-}
-} // namespace gamemd
-
-// 0x4C4E40
-namespace gamemd {
-void sub_4C4E40()
-{
-{
-    DataGlobal_8A37E0 = Math::ArcTan((double)(2 * DataGlobal_8A3810) / DataGlobal_8A3798);
-}
-}
-} // namespace gamemd
-
-// 0x4C4E70
-namespace gamemd {
-long long sub_4C4E70()
-{
-{
-    __int64 result;
-    result = Math::RoundToInt((double)(4 * DataGlobal_8A3810) + 0.5);
-    DataGlobal_8A3804 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4C4EA0
-namespace gamemd {
-int sub_4C4EA0()
-{
-{
-    DataGlobal_8A3790 = 0;
-    DataGlobal_8A3792 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C4EB0
-namespace gamemd {
-int sub_4C4EB0()
-{
-{
-    DataGlobal_8A37D0 = 0;
-    DataGlobal_8A37D4 = 0;
-    DataGlobal_8A37D8 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C4ED0
-namespace gamemd {
-int sub_4C4ED0()
-{
-{
-    DataGlobal_8A3800 = 0;
-    DataGlobal_8A37F8 = 128;
-    DataGlobal_8A37FC = 128;
-    return 128;
-}
-}
-} // namespace gamemd
-
 // 0x4C4FC0
 namespace gamemd {
 int E4Recv_4C4FC0::sub_4C4FC0(int a2)
@@ -1555,167 +843,6 @@ int __thiscall sub_4C4FC0(int *this, int a2)
 }
 } // namespace gamemd
 
-// 0x4C5000
-namespace gamemd {
-void sub_4C5000()
-{
-{
-    long double v0;
-    v0 = pow(256.0, 2.0);
-    DataGlobal_8A3840 = Math::Sqrt(v0 + v0);
-}
-}
-} // namespace gamemd
-
-// 0x4C5030
-namespace gamemd {
-void sub_4C5030()
-{
-{
-    DataGlobal_8A38A8 = DataGlobal_8A3840 / 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C5050
-namespace gamemd {
-void sub_4C5050()
-{
-{
-    DataGlobal_8A3890 = 1.0 / DataGlobal_8A38A8;
-}
-}
-} // namespace gamemd
-
-// 0x4C5070
-namespace gamemd {
-void sub_4C5070()
-{
-{
-    DataGlobal_8A3888 = 0.0174532925199433 * 45.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C5090
-namespace gamemd {
-void sub_4C5090()
-{
-{
-    DataGlobal_8A3848 = 0.0174532925199433 * 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C50B0
-namespace gamemd {
-void sub_4C50B0()
-{
-{
-    DataGlobal_8A3820 = 0.0174532925199433 * 90.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C50D0
-namespace gamemd {
-long long sub_4C50D0()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_8A3820 - DataGlobal_8A3848);
-    result = Math::RoundToInt(v0 * DataGlobal_8A3840 * 0.5);
-    DataGlobal_8A38B0 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4C5110
-namespace gamemd {
-void sub_4C5110()
-{
-{
-    DataGlobal_8A3850 = Math::ArcTan((double)DataGlobal_8A38B0 * 0.00390625);
-}
-}
-} // namespace gamemd
-
-// 0x4C5140
-namespace gamemd {
-void sub_4C5140()
-{
-{
-    DataGlobal_8A3868 = Math::ArcTan((double)(2 * DataGlobal_8A38B0) / DataGlobal_8A3840);
-}
-}
-} // namespace gamemd
-
-// 0x4C5170
-namespace gamemd {
-long long sub_4C5170()
-{
-{
-    __int64 result;
-    result = Math::RoundToInt((double)(4 * DataGlobal_8A38B0) + 0.5);
-    DataGlobal_8A38A4 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4C51A0
-namespace gamemd {
-int sub_4C51A0()
-{
-{
-    DataGlobal_8A3838 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C51B0
-namespace gamemd {
-int sub_4C51B0()
-{
-{
-    DataGlobal_8A3858 = 0;
-    DataGlobal_8A385C = 0;
-    DataGlobal_8A3860 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C51D0
-namespace gamemd {
-int sub_4C51D0()
-{
-{
-    DataGlobal_8A38A0 = 0;
-    DataGlobal_8A3898 = 128;
-    DataGlobal_8A389C = 128;
-    return 128;
-}
-}
-} // namespace gamemd
-
-// 0x4C51F0
-namespace gamemd {
-int sub_4C51F0()
-{
-{
-    DataGlobal_8A3828 = 0;
-    DataGlobal_8A382C = 0;
-    DataGlobal_8A3830 = 0;
-    DataGlobal_8A3834 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4C5210
 namespace gamemd {
 int sub_4C5210()
@@ -1727,7 +854,7 @@ int sub_4C5210()
   MEMORY[0x8A3878] = 0; /*0x4c521c*/
   MEMORY[0x8A387C] = 1; /*0x4c5221*/
   MEMORY[0x8A387D] = 0; /*0x4c5228*/
-  MEMORY[0x8A3870] = (int)&DynamicVectorClass<EMPulseClass *>::`vftable'; /*0x4c522d*/
+  MEMORY[0x8A3870] = (int)&vt_DynamicVectorClass_EMPulseClass; /*0x4c522d*/
   MEMORY[0x8A3884] = 10; /*0x4c5237*/
   MEMORY[0x8A3880] = 0; /*0x4c5241*/
   return atexit(sub_4C5250); /*0x4c524c*/
@@ -1744,7 +871,7 @@ void __cdecl sub_4C5250()
 {
   if ( (MEMORY[0x8A3818] & 1) == 0 ) /*0x4c525a*/
   {
-    MEMORY[0x8A3870] = (int)&VectorClass<EMPulseClass *>::`vftable'; /*0x4c525e*/
+    MEMORY[0x8A3870] = (int)&vt_VectorClass_EMPulseClass; /*0x4c525e*/
     MEMORY[0x8A3818] |= 1u; /*0x4c5271*/
     if ( MEMORY[0x8A3874] ) /*0x4c5277*/
     {
@@ -1757,361 +884,6 @@ void __cdecl sub_4C5250()
     MEMORY[0x8A387D] = 0; /*0x4c5296*/
     MEMORY[0x8A3878] = 0; /*0x4c529d*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x4C5470
-namespace gamemd {
-int sub_4C5470()
-{
-{
-    int result;
-    for ( result = DataGlobal_8A3880; DataGlobal_8A3880; result = DataGlobal_8A3880 )
-  {
-    if ( *(int *)DataGlobal_8A3874 )
-    (*(void (__thiscall **)(int, int))(**(int **)DataGlobal_8A3874 + 32))(*(int *)DataGlobal_8A3874, 1);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4C5EE0
-namespace gamemd {
-void sub_4C5EE0()
-{
-{
-    long double v0;
-    v0 = pow(256.0, 2.0);
-    DataGlobal_8A38D8 = Math::Sqrt(v0 + v0);
-}
-}
-} // namespace gamemd
-
-// 0x4C5F10
-namespace gamemd {
-void sub_4C5F10()
-{
-{
-    DataGlobal_8A3970 = DataGlobal_8A38D8 / 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C5F30
-namespace gamemd {
-void sub_4C5F30()
-{
-{
-    DataGlobal_8A3958 = 1.0 / DataGlobal_8A3970;
-}
-}
-} // namespace gamemd
-
-// 0x4C5F50
-namespace gamemd {
-void sub_4C5F50()
-{
-{
-    DataGlobal_8A3950 = 0.0174532925199433 * 45.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C5F70
-namespace gamemd {
-void sub_4C5F70()
-{
-{
-    DataGlobal_8A3928 = 0.0174532925199433 * 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C5F90
-namespace gamemd {
-void sub_4C5F90()
-{
-{
-    DataGlobal_8A38B8 = 0.0174532925199433 * 90.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C5FB0
-namespace gamemd {
-long long sub_4C5FB0()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_8A38B8 - DataGlobal_8A3928);
-    result = Math::RoundToInt(v0 * DataGlobal_8A38D8 * 0.5);
-    DataGlobal_8A3978 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4C5FF0
-namespace gamemd {
-void sub_4C5FF0()
-{
-{
-    DataGlobal_8A3930 = Math::ArcTan((double)DataGlobal_8A3978 * 0.00390625);
-}
-}
-} // namespace gamemd
-
-// 0x4C6020
-namespace gamemd {
-void sub_4C6020()
-{
-{
-    DataGlobal_8A3948 = Math::ArcTan((double)(2 * DataGlobal_8A3978) / DataGlobal_8A38D8);
-}
-}
-} // namespace gamemd
-
-// 0x4C6050
-namespace gamemd {
-long long sub_4C6050()
-{
-{
-    __int64 result;
-    result = Math::RoundToInt((double)(4 * DataGlobal_8A3978) + 0.5);
-    DataGlobal_8A396C = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4C6080
-namespace gamemd {
-int sub_4C6080()
-{
-{
-    DataGlobal_8A38D0 = 0;
-    DataGlobal_8A38D2 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C6090
-namespace gamemd {
-int sub_4C6090()
-{
-{
-    DataGlobal_8A3938 = 0;
-    DataGlobal_8A393C = 0;
-    DataGlobal_8A3940 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C60B0
-namespace gamemd {
-int sub_4C60B0()
-{
-{
-    DataGlobal_8A3968 = 0;
-    DataGlobal_8A3960 = 128;
-    DataGlobal_8A3964 = 128;
-    return 128;
-}
-}
-} // namespace gamemd
-
-// 0x4C60D0
-namespace gamemd {
-int sub_4C60D0()
-{
-{
-    DataGlobal_8A38C0 = 0;
-    DataGlobal_8A38C4 = 0;
-    DataGlobal_8A38C8 = 0;
-    DataGlobal_8A38CC = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C60F0
-namespace gamemd {
-int sub_4C60F0()
-{
-{
-    DataGlobal_8A3914 = 0;
-    DataGlobal_8A3918 = 0;
-    DataGlobal_8A391C = 1;
-    DataGlobal_8A3920 = 0;
-    memset(&DataGlobal_8A38E0, 0, 0x30u);
-    DataGlobal_8A3910 = 0;
-    return atexit(nullsub_129);
-}
-}
-} // namespace gamemd
-
-// 0x4C6360
-namespace gamemd {
-void sub_4C6360()
-{
-{
-    long double v0;
-    v0 = pow(256.0, 2.0);
-    DataGlobal_8A39A0 = Math::Sqrt(v0 + v0);
-}
-}
-} // namespace gamemd
-
-// 0x4C6390
-namespace gamemd {
-void sub_4C6390()
-{
-{
-    DataGlobal_8A39F0 = DataGlobal_8A39A0 / 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C63B0
-namespace gamemd {
-void sub_4C63B0()
-{
-{
-    DataGlobal_8A39D8 = 1.0 / DataGlobal_8A39F0;
-}
-}
-} // namespace gamemd
-
-// 0x4C63D0
-namespace gamemd {
-void sub_4C63D0()
-{
-{
-    DataGlobal_8A39D0 = 0.0174532925199433 * 45.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C63F0
-namespace gamemd {
-void sub_4C63F0()
-{
-{
-    DataGlobal_8A39A8 = 0.0174532925199433 * 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C6410
-namespace gamemd {
-void sub_4C6410()
-{
-{
-    DataGlobal_8A3980 = 0.0174532925199433 * 90.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C6430
-namespace gamemd {
-long long sub_4C6430()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_8A3980 - DataGlobal_8A39A8);
-    result = Math::RoundToInt(v0 * DataGlobal_8A39A0 * 0.5);
-    DataGlobal_8A39F8 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4C6470
-namespace gamemd {
-void sub_4C6470()
-{
-{
-    DataGlobal_8A39B0 = Math::ArcTan((double)DataGlobal_8A39F8 * 0.00390625);
-}
-}
-} // namespace gamemd
-
-// 0x4C64A0
-namespace gamemd {
-void sub_4C64A0()
-{
-{
-    DataGlobal_8A39C8 = Math::ArcTan((double)(2 * DataGlobal_8A39F8) / DataGlobal_8A39A0);
-}
-}
-} // namespace gamemd
-
-// 0x4C64D0
-namespace gamemd {
-long long sub_4C64D0()
-{
-{
-    __int64 result;
-    result = Math::RoundToInt((double)(4 * DataGlobal_8A39F8) + 0.5);
-    DataGlobal_8A39EC = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4C6500
-namespace gamemd {
-int sub_4C6500()
-{
-{
-    DataGlobal_8A3998 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C6510
-namespace gamemd {
-int sub_4C6510()
-{
-{
-    DataGlobal_8A39B8 = 0;
-    DataGlobal_8A39BC = 0;
-    DataGlobal_8A39C0 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C6530
-namespace gamemd {
-int sub_4C6530()
-{
-{
-    DataGlobal_8A39E8 = 0;
-    DataGlobal_8A39E0 = 128;
-    DataGlobal_8A39E4 = 128;
-    return 128;
-}
-}
-} // namespace gamemd
-
-// 0x4C6550
-namespace gamemd {
-int sub_4C6550()
-{
-{
-    DataGlobal_8A3988 = 0;
-    DataGlobal_8A398C = 0;
-    DataGlobal_8A3990 = 0;
-    DataGlobal_8A3994 = 0;
-    return 0;
 }
 }
 } // namespace gamemd
@@ -2329,16 +1101,6 @@ void sub_4C8280()
 }
 } // namespace gamemd
 
-// 0x4C82A0
-namespace gamemd {
-void sub_4C82A0()
-{
-{
-    DataGlobal_8A3A00 = 0.0174532925199433 * 90.0;
-}
-}
-} // namespace gamemd
-
 // 0x4C82C0
 namespace gamemd {
 long long sub_4C82C0()
@@ -2490,63 +1252,6 @@ INT_PTR __stdcall DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
 }
 } // namespace gamemd
 
-// 0x4C84E0
-namespace gamemd {
-int sub_4C84E0()
-{
-{
-    const DLGTEMPLATE *Resource;
-    INT_PTR v1;
-    WinMain_Write_53E6B0();
-    switch ( DataGlobal_820E5C )
-  {
-    case 1: if ( !AllocConsole() )
-      {
-    FreeConsole();
-    AllocConsole();
-      }
-    _cwprintf(aErrorRecursive);
-    Sleep(0xFA0u);
-    sub_7DD1D7();
-    FreeConsole();
-    return 1153;
-    case 2: return 1153;
-    case 3: ExitProcess(0);
-  }
-    ShowCursor(1);
-    Resource = (const DLGTEMPLATE *)FindResource(0xF7u, (const CHAR *)5);
-    Debug::Log();
-    if ( Resource )
-    v1 = DialogBoxIndirectParamA(g_hInstance, Resource, g_hWnd, DialogFunc, 0);
-    else
-    v1 = DialogBoxParamA(g_hInstance, (LPCSTR)0xF7, g_hWnd, DialogFunc, 0);
-    ShowCursor(0);
-    return v1;
-}
-}
-} // namespace gamemd
-
-// 0x4C9160
-namespace gamemd {
-char sub_4C9160()
-{
-{
-    char v0;
-    int v2[22];
-    char v3[12];
-    int v4;
-    CCFileClass::Construct(v2, aExpandDat);
-    v0 = CCFileClass::Open(v2, 0);
-    v2[0] = (unsigned int)vt_CCFileClass;
-    v4 = 0;
-    Vector::Clear((int)v3);
-    v2[0] = &DataGlobal_7E1668;
-    BufferIOFileClass::Dtor(v2);
-    return v0;
-}
-}
-} // namespace gamemd
-
 // 0x4C95D0
 namespace gamemd {
 unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a2, unsigned short * a3)
@@ -2609,168 +1314,6 @@ LABEL_15:
   LOWORD(a3) = *a3 - v12; /*0x4c9651*/
   *a2 = a3; /*0x4c966b*/
   return a2; /*0x4c9655*/
-}
-}
-} // namespace gamemd
-
-// 0x4C96A0
-namespace gamemd {
-void sub_4C96A0()
-{
-{
-    long double v0;
-    v0 = pow(256.0, 2.0);
-    DataGlobal_8B3AD0 = Math::Sqrt(v0 + v0);
-}
-}
-} // namespace gamemd
-
-// 0x4C96D0
-namespace gamemd {
-void sub_4C96D0()
-{
-{
-    DataGlobal_8B3B20 = DataGlobal_8B3AD0 / 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C96F0
-namespace gamemd {
-void sub_4C96F0()
-{
-{
-    DataGlobal_8B3B08 = 1.0 / DataGlobal_8B3B20;
-}
-}
-} // namespace gamemd
-
-// 0x4C9710
-namespace gamemd {
-void sub_4C9710()
-{
-{
-    DataGlobal_8B3B00 = 0.0174532925199433 * 45.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C9730
-namespace gamemd {
-void sub_4C9730()
-{
-{
-    DataGlobal_8B3AD8 = 0.0174532925199433 * 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C9750
-namespace gamemd {
-void sub_4C9750()
-{
-{
-    DataGlobal_8B3AB0 = 0.0174532925199433 * 90.0;
-}
-}
-} // namespace gamemd
-
-// 0x4C9770
-namespace gamemd {
-long long sub_4C9770()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_8B3AB0 - DataGlobal_8B3AD8);
-    result = Math::RoundToInt(v0 * DataGlobal_8B3AD0 * 0.5);
-    DataGlobal_8B3B28 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4C97B0
-namespace gamemd {
-void sub_4C97B0()
-{
-{
-    DataGlobal_8B3AE0 = Math::ArcTan((double)DataGlobal_8B3B28 * 0.00390625);
-}
-}
-} // namespace gamemd
-
-// 0x4C97E0
-namespace gamemd {
-void sub_4C97E0()
-{
-{
-    DataGlobal_8B3AF8 = Math::ArcTan((double)(2 * DataGlobal_8B3B28) / DataGlobal_8B3AD0);
-}
-}
-} // namespace gamemd
-
-// 0x4C9810
-namespace gamemd {
-long long sub_4C9810()
-{
-{
-    __int64 result;
-    result = Math::RoundToInt((double)(4 * DataGlobal_8B3B28) + 0.5);
-    DataGlobal_8B3B1C = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4C9840
-namespace gamemd {
-int sub_4C9840()
-{
-{
-    DataGlobal_8B3AC8 = 0;
-    DataGlobal_8B3ACA = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C9850
-namespace gamemd {
-int sub_4C9850()
-{
-{
-    DataGlobal_8B3AE8 = 0;
-    DataGlobal_8B3AEC = 0;
-    DataGlobal_8B3AF0 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4C9870
-namespace gamemd {
-int sub_4C9870()
-{
-{
-    DataGlobal_8B3B18 = 0;
-    DataGlobal_8B3B10 = 128;
-    DataGlobal_8B3B14 = 128;
-    return 128;
-}
-}
-} // namespace gamemd
-
-// 0x4C9890
-namespace gamemd {
-int sub_4C9890()
-{
-{
-    DataGlobal_8B3AB8 = 0;
-    DataGlobal_8B3ABC = 0;
-    DataGlobal_8B3AC0 = 0;
-    DataGlobal_8B3AC4 = 0;
-    return 0;
 }
 }
 } // namespace gamemd
@@ -3021,6 +1564,1856 @@ u_short __thiscall sub_4CB8B0(int this)
   *(_WORD *)(this + 6) = result; /*0x4cb904*/
   return result; /*0x4cb908*/
 }
+}
+} // namespace gamemd
+
+// 0x4CCA70
+namespace gamemd {
+void E4Recv_4CCA70::sub_4CCA70()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void __thiscall sub_4CCA70(_DWORD *this)
+{
+  *this = &FlyLocomotionClass::`vftable'; /*0x4cca70*/
+  *(this + 1) = &vt_FlyLocomotionClass; /*0x4cca76*/
+  LocomotionClass::Construct(this); /*0x4cca7d*/
+}
+}
+} // namespace gamemd
+
+// 0x4CEFB0
+namespace gamemd {
+int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __fastcall FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
+{
+  int **v6; // esi
+  int *v7; // eax
+  int v8; // eax
+  int *v9; // edi
+  unsigned int v10; // eax
+  int v11; // ebp
+  int v12; // ebx
+  _DWORD *v13; // eax
+  _DWORD *v14; // edi
+  int *v15; // ecx
+  void *NearbyCell; // eax
+  int *v17; // eax
+  int *v18; // eax
+  int *v19; // eax
+  int v20; // ecx
+  int v21; // eax
+  int *v22; // eax
+  int v23; // ebx
+  int v24; // edi
+  int v25; // ebp
+  int *v26; // ecx
+  int *v27; // eax
+  int v28; // ebx
+  int *v29; // eax
+  int v30; // ecx
+  int v31; // eax
+  int v32; // eax
+  int *v33; // ecx
+  int *v34; // eax
+  float *Height; // eax
+  char *v36; // ecx
+  int *v37; // eax
+  int v38; // eax
+  double v39; // st7
+  int v40; // ebp
+  int v41; // eax
+  int *v42; // ecx
+  bool v43; // cc
+  int v44; // eax
+  int v45; // eax
+  int *v46; // ecx
+  int v47; // edx
+  int *v48; // edi
+  int v49; // eax
+  int v50; // edx
+  int v51; // eax
+  int v52; // ecx
+  int v53; // ecx
+  int v55; // [esp+50h] [ebp-38h] BYREF
+  int *v56; // [esp+54h] [ebp-34h] BYREF
+  float v57; // [esp+58h] [ebp-30h] BYREF
+  float v58; // [esp+5Ch] [ebp-2Ch] BYREF
+  int v59; // [esp+60h] [ebp-28h]
+  float v60; // [esp+64h] [ebp-24h] BYREF
+  int v61; // [esp+68h] [ebp-20h]
+  int v62; // [esp+6Ch] [ebp-1Ch]
+  int v63[3]; // [esp+70h] [ebp-18h] BYREF
+  _DWORD v64[3]; // [esp+7Ch] [ebp-Ch] BYREF
+
+  v6 = (int **)(a1 + 12); /*0x4cefb6*/
+  v59 = a1; /*0x4cefb9*/
+  (*(void (__thiscall **)(_DWORD, float *))(**(_DWORD **)(a1 + 12) + 440))(*(_DWORD *)(a1 + 12), &v58); /*0x4cefc7*/
+  v7 = *v6; /*0x4cefcd*/
+  v55 = 0; /*0x4cefcf*/
+  if ( v7 ) /*0x4cefd9*/
+  {
+    v8 = ComPtr::ReleaseAndSet(&v55, v6); /*0x4cefe0*/
+    if ( v8 < 0 && v8 != -2147467262 ) /*0x4cefee*/
+      WinAPI::Wrapper(v8); /*0x4ceff1*/
+    if ( v55 && (*v6)[173] && (*v6)[191] && (*(int (__stdcall **)(int))(*(_DWORD *)v55 + 24))(v55) ) /*0x4cf017*/
+      a3 = 0; /*0x4cf01e*/
+  }
+  if ( *v6 && (*(int (__thiscall **)(int *))(**v6 + 44))(*v6) == 2 )
+  {
+    if ( *v6 )
+    {
+      v9 = *v6; /*0x4cf033*/
+      v10 = (*(int (__thiscall **)(int *))(*v9 + 44))(*v6) == 2 ? (unsigned int)v9 : 0;
+    }
+    else
+    {
+      v10 = 0; /*0x4cf039*/
+    }
+    if ( *(_BYTE *)(*(_DWORD *)(v10 + 1732) + 3595) ) /*0x4cf055*/
+      a3 = 0; /*0x4cf05f*/
+  }
+  v11 = LODWORD(a4); /*0x4cf06c*/
+  v62 = a6; /*0x4cf06e*/
+  v12 = a5; /*0x4cf072*/
+  LOWORD(v56) = SLODWORD(a4) / 256; /*0x4cf08c*/
+  HIWORD(v56) = a5 / 256; /*0x4cf09f*/
+  v13 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v56); /*0x4cf0ac*/
+  v14 = Cell::IsBridge(v13); /*0x4cf0b8*/
+  if ( v14 && !*(_BYTE *)((*(int (__thiscall **)(int *))(**v6 + 132))(*v6) + 3367) ) /*0x4cf0cc*/
+  {
+    if ( Array::Contains(*v6, (int)v14) ) /*0x4cf0d9*/
+    {
+      v18 = (int *)(*(int (__thiscall **)(_DWORD *, int *, int *))(*v14 + 168))(v14, v63, *v6); /*0x4cf142*/
+      v11 = *v18; /*0x4cf148*/
+      v12 = v18[1]; /*0x4cf14a*/
+      v62 = v18[2]; /*0x4cf150*/
+    }
+    else
+    {
+      v15 = *v6; /*0x4cf0e2*/
+      v56 = *v6; /*0x4cf0e6*/
+      if ( v56 && (*(int (__thiscall **)(int *))(*v15 + 44))(v15) == 2 ) /*0x4cf0f4*/
+      {
+        NearbyCell = InfantryClass::FindNearbyCell(v56, (int)v14); /*0x4cf0fb*/
+        if ( NearbyCell ) /*0x4cf102*/
+        {
+          v17 = (int *)(*(int (__thiscall **)(void *, int *))(*(_DWORD *)NearbyCell + 72))(NearbyCell, v63); /*0x4cf125*/
+          v11 = *v17; /*0x4cf128*/
+          v12 = v17[1]; /*0x4cf12a*/
+          v62 = v17[2]; /*0x4cf130*/
+        }
+        else
+        {
+          v11 = MEMORY[0x8B3C78]; /*0x4cf10a*/
+          v12 = MEMORY[0x8B3C7C]; /*0x4cf110*/
+          v62 = MEMORY[0x8B3C80]; /*0x4cf116*/
+        }
+      }
+    }
+  }
+  (*(void (__thiscall **)(int *))(**v6 + 464))(*v6); /*0x4cf158*/
+  v19 = (int *)(*(int (__thiscall **)(int *, int *))(**v6 + 72))(*v6, v63); /*0x4cf167*/
+  v20 = *v19; /*0x4cf16a*/
+  v21 = v19[1] - v12; /*0x4cf171*/
+  LODWORD(v60) = v20 - v11; /*0x4cf173*/
+  v61 = v21; /*0x4cf17b*/
+  Vector::2DMagnitudeMath((int *)&v60); /*0x4cf17f*/
+  v23 = (int)v22; /*0x4cf184*/
+  v56 = v22; /*0x4cf18c*/
+  if ( !v55 || !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 32))(v55) ) /*0x4cf197*/
+  {
+    v24 = LODWORD(a4); /*0x4cf1a2*/
+    v25 = a5; /*0x4cf1a6*/
+    v26 = *v6; /*0x4cf1ae*/
+    v60 = a4; /*0x4cf1b4*/
+    v61 = a5; /*0x4cf1b9*/
+    v62 = a6; /*0x4cf1bd*/
+    v27 = (int *)(*(int (__thiscall **)(int *, int *))(*v26 + 72))(v26, v63); /*0x4cf1c8*/
+    v28 = *(_DWORD *)Cell::GetHeight(&v58, v27, (int *)&v60); /*0x4cf1d5*/
+    if ( !v55 ) /*0x4cf1dd*/
+      goto LABEL_32; /*0x4cf1dd*/
+    if ( !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 24))(v55) ) /*0x4cf1e2*/
+      goto LABEL_32; /*0x4cf1e2*/
+    v29 = (int *)(*(int (__thiscall **)(int *, int *))(**v6 + 72))(*v6, v63); /*0x4cf1f2*/
+    v30 = *v29; /*0x4cf1f5*/
+    v31 = v29[1] - v25; /*0x4cf1fc*/
+    LODWORD(v60) = v30 - v24; /*0x4cf1fe*/
+    v61 = v31; /*0x4cf206*/
+    Vector::2DMagnitudeMath((int *)&v60); /*0x4cf20a*/
+    if ( v32 > 768 /*0x4cf248*/
+      || (LOWORD(v58) = 0x2000,
+          LOWORD(v57) = v28 - *(_WORD *)ProgressTimer::GetValue((_WORD *)*v6 + 452, &v60),
+          (unsigned __int8)UnitClass::CompareCoordinateMagnitude(&v57)) )
+    {
+LABEL_32:
+      v63[2] = a6; /*0x4cf259*/
+      v33 = *v6; /*0x4cf25d*/
+      v63[0] = v24; /*0x4cf260*/
+      v63[1] = v25; /*0x4cf264*/
+      v34 = (int *)(*(int (__thiscall **)(int *, _DWORD *))(*v33 + 72))(v33, v64); /*0x4cf26f*/
+      Height = (float *)Cell::GetHeight(&v60, v34, v63); /*0x4cf277*/
+      v36 = (char *)(*v6 + 226); /*0x4cf285*/
+      v58 = *Height; /*0x4cf28b*/
+      FacingClass::Update(v36, &v58); /*0x4cf28f*/
+    }
+    v23 = (int)v56; /*0x4cf294*/
+  }
+  if ( v23 >= 256 || !a3 || *(_BYTE *)((*(int (__thiscall **)(int *))(**v6 + 132))(*v6) + 3367) ) /*0x4cf2bc*/
+  {
+    if ( !v55 || !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 32))(v55) ) /*0x4cf363*/
+    {
+      v38 = (*(int (__thiscall **)(int *, _DWORD *))(**v6 + 72))(*v6, v64); /*0x4cf373*/
+      v58 = *(float *)v38; /*0x4cf37f*/
+      v39 = Math::CalcAngle((double)*(int *)(v38 + 4) - (double)a5, (double)SLODWORD(a4) - (double)SLODWORD(v58)); /*0x4cf398*/
+      LOWORD(a4) = Math::RoundToInt((v39 - 1.570796326794897) * -10430.06004058427); /*0x4cf3b1*/
+      v57 = a4; /*0x4cf3ba*/
+      v37 = (int *)&v57; /*0x4cf3be*/
+      goto LABEL_51; /*0x4cf3be*/
+    }
+  }
+  else
+  {
+    if ( !(*v6)[173] || !(*v6)[191] ) /*0x4cf2d4*/
+      goto LABEL_44; /*0x4cf2d4*/
+    if ( !v55 ) /*0x4cf2e2*/
+    {
+LABEL_43:
+      v37 = ObjectClass::CalcTargetFacing(*v6, (int *)&a4, (*v6)[173]); /*0x4cf304*/
+LABEL_51:
+      FacingClass::Update((char *)*v6 + 928, v37); /*0x4cf3c2*/
+      goto LABEL_52; /*0x4cf3cb*/
+    }
+    if ( !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 24))(v55) ) /*0x4cf2e7*/
+    {
+      if ( !v55 || !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 32))(v55) ) /*0x4cf2f9*/
+        goto LABEL_43; /*0x4cf2fe*/
+    }
+    else
+    {
+LABEL_44:
+      LOWORD(a4) = 0; /*0x4cf320*/
+      if ( !v55 /*0x4cf34a*/
+        || (LOWORD(a4) = (*(unsigned __int16 (__stdcall **)(int))(*(_DWORD *)v55 + 16))(v55) << 13, !v55)
+        || !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 32))(v55) )
+      {
+        FacingClass::Update((char *)*v6 + 928, &a4); /*0x4cf356*/
+      }
+    }
+  }
+LABEL_52:
+  v40 = v59; /*0x4cf3d0*/
+  if ( !*(_BYTE *)(v59 + 92) || v23 >= 768 ) /*0x4cf3e1*/
+  {
+    v41 = (*(int (__thiscall **)(int *))(**v6 + 132))(*v6); /*0x4cf402*/
+    v42 = *v6; /*0x4cf410*/
+    if ( *(_BYTE *)(v41 + 3221) ) /*0x4cf408*/
+    {
+      v43 = v23 < *(_DWORD *)((*(int (__thiscall **)(int *))(*v42 + 132))(v42) + 760); /*0x4cf426*/
+      v44 = **v6; /*0x4cf42a*/
+      if ( v43 ) /*0x4cf42c*/
+      {
+        v45 = (*(int (**)(void))(v44 + 132))(); /*0x4cf432*/
+        v46 = *v6; /*0x4cf443*/
+        v47 = **v6; /*0x4cf445*/
+        a4 = (float)(v23 / *(_DWORD *)(v45 + 760)); /*0x4cf44f*/
+        v48 = (int *)(*(int (__thiscall **)(int *))(v47 + 132))(v46); /*0x4cf45b*/
+        v49 = (*(int (__thiscall **)(int *))(**v6 + 132))(*v6); /*0x4cf45f*/
+        v59 = (*(int (__thiscall **)(int))(*(_DWORD *)v49 + 188))(v49) / 3; /*0x4cf481*/
+        v50 = *v48; /*0x4cf485*/
+        v58 = (double)v59 * (1.0 - a4); /*0x4cf497*/
+        v59 = (*(int (__thiscall **)(int *))(v50 + 188))(v48); /*0x4cf4a1*/
+        *(_DWORD *)(v40 + 56) = Math::RoundToInt((double)v59 * a4 + v58); /*0x4cf4b6*/
+        goto LABEL_60; /*0x4cf4bb*/
+      }
+    }
+    else
+    {
+      v44 = *v42; /*0x4cf4bd*/
+    }
+    v51 = (*(int (**)(void))(v44 + 132))(); /*0x4cf4bf*/
+    *(_DWORD *)(v40 + 56) = (*(int (__thiscall **)(int))(*(_DWORD *)v51 + 188))(v51); /*0x4cf4cf*/
+    goto LABEL_60; /*0x4cf4cf*/
+  }
+  *(_DWORD *)(v40 + 56) = *(_DWORD *)(v40 + 36) - Cell::GetGroundHeight((_DWORD *)(v59 + 28)); /*0x4cf3f6*/
+LABEL_60:
+  if ( !*(_BYTE *)((*(int (__thiscall **)(int *))(**v6 + 132))(*v6) + 3367) /*0x4cf4e8*/
+    && (unsigned __int8)DamageArea::CheckOccupancyEligibility(v40) )
+  {
+    if ( v23 >= 128 ) /*0x4cf4f7*/
+    {
+      if ( v23 >= 512 ) /*0x4cf52d*/
+      {
+        if ( v23 < 768 && a3 ) /*0x4cf551*/
+        {
+          *(_DWORD *)(v40 + 64) = 0; /*0x4cf553*/
+          *(_DWORD *)(v40 + 68) = 1072168960; /*0x4cf556*/
+        }
+      }
+      else if ( a3 ) /*0x4cf535*/
+      {
+        *(_DWORD *)(v40 + 64) = 0; /*0x4cf537*/
+        *(_DWORD *)(v40 + 68) = 1071644672; /*0x4cf53a*/
+      }
+    }
+    else
+    {
+      if ( a3 ) /*0x4cf4ff*/
+      {
+        *(_DWORD *)(v40 + 64) = 0; /*0x4cf501*/
+        *(_DWORD *)(v40 + 68) = 0; /*0x4cf504*/
+      }
+      if ( !*(_BYTE *)(v40 + 92) && *(double *)(v40 + 72) < 0.05 ) /*0x4cf51c*/
+        LocomotionClass::CheckBridgeBlock(v40); /*0x4cf520*/
+    }
+  }
+  if ( *((_BYTE *)*v6 + 131) ) /*0x4cf55f*/
+  {
+    if ( !(unsigned __int8)House::IsHumanPlayer((#375 *)(*v6)[135]) ) /*0x4cf573*/
+    {
+      v52 = (int)(*v6 + 39); /*0x4cf57e*/
+      a4 = *(float *)v52; /*0x4cf586*/
+      a5 = *(_DWORD *)(v52 + 4); /*0x4cf592*/
+      a6 = *(_DWORD *)(v52 + 8); /*0x4cf599*/
+      if ( Cell::IsPassable(&a4) /*0x4cf5dd*/
+        || (*(_DWORD *)MEMORY[0xA8B230] & 0x1000) != 0
+        && (v53 = (int)(*v6 + 39),
+            a4 = *(float *)v53,
+            a5 = *(_DWORD *)(v53 + 4),
+            a6 = *(_DWORD *)(v53 + 8),
+            Game::Stub3((int)&a4)) )
+      {
+        (*(void (__thiscall **)(int *))(**v6 + 336))(*v6); /*0x4cf5ec*/
+      }
+    }
+  }
+  if ( v55 ) /*0x4cf5f8*/
+    (*(void (__stdcall **)(int))(*(_DWORD *)v55 + 8))(v55); /*0x4cf5fd*/
+  return v23; /*0x4cf600*/
+}
+}
+} // namespace gamemd
+
+// 0x4C1B80
+namespace gamemd {
+void sub_4C1B80()
+{
+{
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_8A0E38 = Math::Sqrt(v0 + v0);
+}
+}
+} // namespace gamemd
+
+// 0x4C1BB0
+namespace gamemd {
+void sub_4C1BB0()
+{
+{
+    DataGlobal_8A0EA8 = DataGlobal_8A0E38 / 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C1BD0
+namespace gamemd {
+void sub_4C1BD0()
+{
+{
+    DataGlobal_8A0E70 = 1.0 / DataGlobal_8A0EA8;
+}
+}
+} // namespace gamemd
+
+// 0x4C1BF0
+namespace gamemd {
+void sub_4C1BF0()
+{
+{
+    DataGlobal_8A0E68 = 0.0174532925199433 * 45.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C1C10
+namespace gamemd {
+void sub_4C1C10()
+{
+{
+    DataGlobal_8A0E40 = 0.0174532925199433 * 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C1C30
+namespace gamemd {
+void sub_4C1C30()
+{
+{
+    DataGlobal_8A0E18 = 0.0174532925199433 * 90.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C1C50
+namespace gamemd {
+long long sub_4C1C50()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_8A0E18 - DataGlobal_8A0E40);
+    result = Math::RoundToInt(v0 * DataGlobal_8A0E38 * 0.5);
+    DataGlobal_8A0EB0 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C1C90
+namespace gamemd {
+void sub_4C1C90()
+{
+{
+    DataGlobal_8A0E48 = Math::ArcTan((double)DataGlobal_8A0EB0 * 0.00390625);
+}
+}
+} // namespace gamemd
+
+// 0x4C1CC0
+namespace gamemd {
+void sub_4C1CC0()
+{
+{
+    DataGlobal_8A0E60 = Math::ArcTan((double)(2 * DataGlobal_8A0EB0) / DataGlobal_8A0E38);
+}
+}
+} // namespace gamemd
+
+// 0x4C1CF0
+namespace gamemd {
+long long sub_4C1CF0()
+{
+{
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_8A0EB0) + 0.5);
+    DataGlobal_8A0EA0 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C1D20
+namespace gamemd {
+int sub_4C1D20()
+{
+{
+    DataGlobal_8A0E30 = 0;
+    DataGlobal_8A0E32 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C1D30
+namespace gamemd {
+int sub_4C1D30()
+{
+{
+    DataGlobal_8A0E50 = 0;
+    DataGlobal_8A0E54 = 0;
+    DataGlobal_8A0E58 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C1D50
+namespace gamemd {
+int sub_4C1D50()
+{
+{
+    DataGlobal_8A0E80 = 0;
+    DataGlobal_8A0E78 = 128;
+    DataGlobal_8A0E7C = 128;
+    return 128;
+}
+}
+} // namespace gamemd
+
+// 0x4C1D70
+namespace gamemd {
+int sub_4C1D70()
+{
+{
+    DataGlobal_8A0E20 = 0;
+    DataGlobal_8A0E24 = 0;
+    DataGlobal_8A0E28 = 0;
+    DataGlobal_8A0E2C = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C2B40
+namespace gamemd {
+unsigned int * E4Recv_4C2B40::sub_4C2B40(unsigned int * a2)
+{
+{
+    int v2;
+    int *v3;
+    char v5[12];
+    v2 = this->M32;
+    if ( v2 )
+  {
+    v3 = (int *)(*(int (__thiscall **)(int, char *, int, int, int, int))(*(int *)(v2) + 176))( v2, v5, this->M36, 0, 0, 0);
+    *a2 = *v3;
+    *((int*)(a2) + 1) = v3[1];
+    *((int*)(a2) + 2) = v3[2];
+    return a2;
+  }
+    else
+  {
+    *a2 = DataGlobal_8A0E50;
+    *((int*)(a2) + 1) = DataGlobal_8A0E54;
+    *((int*)(a2) + 2) = DataGlobal_8A0E58;
+    return a2;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x4C2C30
+namespace gamemd {
+Iostream_init * E4Recv_4C2C30::__0Iostream_init_QAE_XZ_3()
+{
+{
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x4C2FA0
+namespace gamemd {
+int sub_4C2FA0()
+{
+{
+    DataGlobal_8A0EB8 = 0;
+    DataGlobal_8A0EBC = 0;
+    DataGlobal_8A0EC0 = 0;
+    DataGlobal_8A0EC4 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C35A0
+namespace gamemd {
+void sub_4C35A0()
+{
+{
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_8A0EE8 = Math::Sqrt(v0 + v0);
+}
+}
+} // namespace gamemd
+
+// 0x4C35D0
+namespace gamemd {
+void sub_4C35D0()
+{
+{
+    DataGlobal_8A0F38 = DataGlobal_8A0EE8 / 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C35F0
+namespace gamemd {
+void sub_4C35F0()
+{
+{
+    DataGlobal_8A0F20 = 1.0 / DataGlobal_8A0F38;
+}
+}
+} // namespace gamemd
+
+// 0x4C3610
+namespace gamemd {
+void sub_4C3610()
+{
+{
+    DataGlobal_8A0F18 = 0.0174532925199433 * 45.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C3630
+namespace gamemd {
+void sub_4C3630()
+{
+{
+    DataGlobal_8A0EF0 = 0.0174532925199433 * 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C3650
+namespace gamemd {
+void sub_4C3650()
+{
+{
+    DataGlobal_8A0EC8 = 0.0174532925199433 * 90.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C3670
+namespace gamemd {
+long long sub_4C3670()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_8A0EC8 - DataGlobal_8A0EF0);
+    result = Math::RoundToInt(v0 * DataGlobal_8A0EE8 * 0.5);
+    DataGlobal_8A0F40 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C36B0
+namespace gamemd {
+void sub_4C36B0()
+{
+{
+    DataGlobal_8A0EF8 = Math::ArcTan((double)DataGlobal_8A0F40 * 0.00390625);
+}
+}
+} // namespace gamemd
+
+// 0x4C36E0
+namespace gamemd {
+void sub_4C36E0()
+{
+{
+    DataGlobal_8A0F10 = Math::ArcTan((double)(2 * DataGlobal_8A0F40) / DataGlobal_8A0EE8);
+}
+}
+} // namespace gamemd
+
+// 0x4C3710
+namespace gamemd {
+long long sub_4C3710()
+{
+{
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_8A0F40) + 0.5);
+    DataGlobal_8A0F34 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C3740
+namespace gamemd {
+int sub_4C3740()
+{
+{
+    DataGlobal_8A0EE0 = 0;
+    DataGlobal_8A0EE2 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C3750
+namespace gamemd {
+int sub_4C3750()
+{
+{
+    DataGlobal_8A0F00 = 0;
+    DataGlobal_8A0F04 = 0;
+    DataGlobal_8A0F08 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C3770
+namespace gamemd {
+int sub_4C3770()
+{
+{
+    DataGlobal_8A0F30 = 0;
+    DataGlobal_8A0F28 = 128;
+    DataGlobal_8A0F2C = 128;
+    return 128;
+}
+}
+} // namespace gamemd
+
+// 0x4C3790
+namespace gamemd {
+int sub_4C3790()
+{
+{
+    DataGlobal_8A0ED0 = 0;
+    DataGlobal_8A0ED4 = 0;
+    DataGlobal_8A0ED8 = 0;
+    DataGlobal_8A0EDC = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C37B0
+namespace gamemd {
+int sub_4C37B0()
+{
+{
+    DataGlobal_8A0F48 = 0;
+    DataGlobal_8A0F4C = 0;
+    DataGlobal_8A0F50 = 0;
+    DataGlobal_8A0F54 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C37D0
+namespace gamemd {
+unsigned char * sub_4C37D0(int a1, unsigned char * a2, int a3, unsigned char a4)
+{
+{
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int i;
+    int v10;
+    char *v12;
+    short v13;
+    char v14;
+    int v15;
+    char *v16;
+    v16 = a2;
+    if ( !a2 )
+    return 0;
+    v5 = 0;
+    v12 = a2;
+    v15 = 0;
+    do
+  {
+    if ( v5 <= 240 && v5 )
+    {
+    v6 = a1 + 2 * (v5 % 256) + v5 % 256;
+    v13 = *(short *)v6;
+    v14 = *(char *)(v6 + 2);
+    Color::Lerp((unsigned char *)&v13, a4, (unsigned char *)(a1 + 2 * (a3 % 256) + a3 % 256));
+    v7 = -1;
+    v8 = 0;
+    for ( i = 240; i < 255; ++i )
+      {
+    v10 = Palette::CalcColorDistance((unsigned char *)(a1 + 2 * (i % 256) + i % 256), (unsigned char *)&v13);
+    if ( v7 == -1 || v10 < v8 )
+        {
+    v7 = i;
+    v8 = v10;
+        }
+      }
+    a2 = v16;
+    *v12++ = v7;
+    v5 = v15;
+    }
+    else
+    {
+    *v12++ = v5;
+    }
+    v15 = ++v5;
+  }
+    while ( v5 < 256 );
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x4C38D0
+namespace gamemd {
+int E4Recv_4C38D0::sub_4C38D0()
+{
+{
+    return ((int)this + 1) << 8;
+}
+}
+} // namespace gamemd
+
+// 0x4C3A20
+namespace gamemd {
+char * sub_4C3A20(int a1, int a2, int a3, char * a4)
+{
+{
+    char *v4;
+    int v5;
+    char *v6;
+    unsigned char *v7;
+    if ( !a3 || !a2 )
+    return a4;
+    v4 = a4;
+    if ( a4 || (v4 = (char *)__2_YAPAXI_Z((a3 + 1) << 8)) != 0 )
+  {
+    v5 = 0;
+    memset(v4, 0xFFu, 0x100u);
+    v6 = v4 + 256;
+    if ( a3 > 0 )
+    {
+    v7 = (unsigned char *)(a2 + 1);
+    do
+      {
+    v4[*(v7 - 1)] = v5;
+    sub_4C37D0(a1, v6, *v7, v7[1]);
+    v6 += 256;
+    ++v5;
+    v7 += 4;
+      }
+    while ( v5 < a3 );
+    }
+  }
+    return v4;
+}
+}
+} // namespace gamemd
+
+// 0x4C3AD0
+namespace gamemd {
+int sub_4C3AD0(char * a1, int a2, int a3, unsigned char a4)
+{
+{
+    int v6;
+    unsigned char *v7;
+    int v8;
+    if ( !a2 )
+    return 0;
+    v6 = 0;
+    v7 = (unsigned char *)&a1[2 * (a3 % 256) + a3 % 256];
+    do
+  {
+    v8 = (int)&a1[2 * (v6 % 256) + v6 % 256];
+    LOWORD(a3) = *(short *)v8;
+    BYTE2(a3) = *(char *)(v8 + 2);
+    Color::Lerp((unsigned char *)&a3, a4, v7);
+    *(char *)(v6 + a2) = Palette::FindClosestColor(a1, (int)&a3);
+    ++v6;
+  }
+    while ( v6 < 256 );
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x4C3B60
+namespace gamemd {
+unsigned char * sub_4C3B60(char * a1, unsigned char * a2, int a3, int a4)
+{
+{
+    unsigned char v6;
+    int v7;
+    int v8;
+    int v9;
+    v6 = a4;
+    v7 = (int)&a1[2 * (a3 % 256) + a3 % 256];
+    v8 = 1;
+    LOWORD(a3) = *(short *)v7;
+    LOBYTE(v7) = *(char *)(v7 + 2);
+    *a2 = 0;
+    BYTE2(a3) = v7;
+    do
+  {
+    v9 = (int)&a1[2 * (v8 % 256) + v8 % 256];
+    LOWORD(a4) = *(short *)v9;
+    BYTE2(a4) = *(char *)(v9 + 2);
+    Color::Lerp((unsigned char *)&a4, v6, (unsigned char *)&a3);
+    a2[v8++] = Palette::FindClosestColor(a1, (int)&a4);
+  }
+    while ( v8 < 256 );
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x4C3BF0
+namespace gamemd {
+int sub_4C3BF0()
+{
+{
+    DataGlobal_8A3760 = 0;
+    DataGlobal_8A3764 = 0;
+    DataGlobal_8A3768 = 0;
+    DataGlobal_8A376C = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C4D00
+namespace gamemd {
+void sub_4C4D00()
+{
+{
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_8A3798 = Math::Sqrt(v0 + v0);
+}
+}
+} // namespace gamemd
+
+// 0x4C4D30
+namespace gamemd {
+void sub_4C4D30()
+{
+{
+    DataGlobal_8A3808 = DataGlobal_8A3798 / 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C4D50
+namespace gamemd {
+void sub_4C4D50()
+{
+{
+    DataGlobal_8A37F0 = 1.0 / DataGlobal_8A3808;
+}
+}
+} // namespace gamemd
+
+// 0x4C4D70
+namespace gamemd {
+void sub_4C4D70()
+{
+{
+    DataGlobal_8A37E8 = 0.0174532925199433 * 45.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C4D90
+namespace gamemd {
+void sub_4C4D90()
+{
+{
+    DataGlobal_8A37C0 = 0.0174532925199433 * 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C4DB0
+namespace gamemd {
+void sub_4C4DB0()
+{
+{
+    DataGlobal_8A3788 = 0.0174532925199433 * 90.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C4DD0
+namespace gamemd {
+long long sub_4C4DD0()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_8A3788 - DataGlobal_8A37C0);
+    result = Math::RoundToInt(v0 * DataGlobal_8A3798 * 0.5);
+    DataGlobal_8A3810 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C4E10
+namespace gamemd {
+void sub_4C4E10()
+{
+{
+    DataGlobal_8A37C8 = Math::ArcTan((double)DataGlobal_8A3810 * 0.00390625);
+}
+}
+} // namespace gamemd
+
+// 0x4C4E40
+namespace gamemd {
+void sub_4C4E40()
+{
+{
+    DataGlobal_8A37E0 = Math::ArcTan((double)(2 * DataGlobal_8A3810) / DataGlobal_8A3798);
+}
+}
+} // namespace gamemd
+
+// 0x4C4E70
+namespace gamemd {
+long long sub_4C4E70()
+{
+{
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_8A3810) + 0.5);
+    DataGlobal_8A3804 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C4EA0
+namespace gamemd {
+int sub_4C4EA0()
+{
+{
+    DataGlobal_8A3790 = 0;
+    DataGlobal_8A3792 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C4EB0
+namespace gamemd {
+int sub_4C4EB0()
+{
+{
+    DataGlobal_8A37D0 = 0;
+    DataGlobal_8A37D4 = 0;
+    DataGlobal_8A37D8 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C4ED0
+namespace gamemd {
+int sub_4C4ED0()
+{
+{
+    DataGlobal_8A3800 = 0;
+    DataGlobal_8A37F8 = 128;
+    DataGlobal_8A37FC = 128;
+    return 128;
+}
+}
+} // namespace gamemd
+
+// 0x4C5000
+namespace gamemd {
+void sub_4C5000()
+{
+{
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_8A3840 = Math::Sqrt(v0 + v0);
+}
+}
+} // namespace gamemd
+
+// 0x4C5030
+namespace gamemd {
+void sub_4C5030()
+{
+{
+    DataGlobal_8A38A8 = DataGlobal_8A3840 / 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C5050
+namespace gamemd {
+void sub_4C5050()
+{
+{
+    DataGlobal_8A3890 = 1.0 / DataGlobal_8A38A8;
+}
+}
+} // namespace gamemd
+
+// 0x4C5070
+namespace gamemd {
+void sub_4C5070()
+{
+{
+    DataGlobal_8A3888 = 0.0174532925199433 * 45.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C5090
+namespace gamemd {
+void sub_4C5090()
+{
+{
+    DataGlobal_8A3848 = 0.0174532925199433 * 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C50B0
+namespace gamemd {
+void sub_4C50B0()
+{
+{
+    DataGlobal_8A3820 = 0.0174532925199433 * 90.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C50D0
+namespace gamemd {
+long long sub_4C50D0()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_8A3820 - DataGlobal_8A3848);
+    result = Math::RoundToInt(v0 * DataGlobal_8A3840 * 0.5);
+    DataGlobal_8A38B0 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C5110
+namespace gamemd {
+void sub_4C5110()
+{
+{
+    DataGlobal_8A3850 = Math::ArcTan((double)DataGlobal_8A38B0 * 0.00390625);
+}
+}
+} // namespace gamemd
+
+// 0x4C5140
+namespace gamemd {
+void sub_4C5140()
+{
+{
+    DataGlobal_8A3868 = Math::ArcTan((double)(2 * DataGlobal_8A38B0) / DataGlobal_8A3840);
+}
+}
+} // namespace gamemd
+
+// 0x4C5170
+namespace gamemd {
+long long sub_4C5170()
+{
+{
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_8A38B0) + 0.5);
+    DataGlobal_8A38A4 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C51A0
+namespace gamemd {
+int sub_4C51A0()
+{
+{
+    DataGlobal_8A3838 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C51B0
+namespace gamemd {
+int sub_4C51B0()
+{
+{
+    DataGlobal_8A3858 = 0;
+    DataGlobal_8A385C = 0;
+    DataGlobal_8A3860 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C51D0
+namespace gamemd {
+int sub_4C51D0()
+{
+{
+    DataGlobal_8A38A0 = 0;
+    DataGlobal_8A3898 = 128;
+    DataGlobal_8A389C = 128;
+    return 128;
+}
+}
+} // namespace gamemd
+
+// 0x4C51F0
+namespace gamemd {
+int sub_4C51F0()
+{
+{
+    DataGlobal_8A3828 = 0;
+    DataGlobal_8A382C = 0;
+    DataGlobal_8A3830 = 0;
+    DataGlobal_8A3834 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C5470
+namespace gamemd {
+int sub_4C5470()
+{
+{
+    int result;
+    for ( result = DataGlobal_8A3880; DataGlobal_8A3880; result = DataGlobal_8A3880 )
+  {
+    if ( *(int *)DataGlobal_8A3874 )
+    (*(void (__thiscall **)(int, int))(**(int **)DataGlobal_8A3874 + 32))(*(int *)DataGlobal_8A3874, 1);
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C5EC0
+namespace gamemd {
+void nullsub_127()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4C5ED0
+namespace gamemd {
+void nullsub_128()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4C5EE0
+namespace gamemd {
+void sub_4C5EE0()
+{
+{
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_8A38D8 = Math::Sqrt(v0 + v0);
+}
+}
+} // namespace gamemd
+
+// 0x4C5F10
+namespace gamemd {
+void sub_4C5F10()
+{
+{
+    DataGlobal_8A3970 = DataGlobal_8A38D8 / 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C5F30
+namespace gamemd {
+void sub_4C5F30()
+{
+{
+    DataGlobal_8A3958 = 1.0 / DataGlobal_8A3970;
+}
+}
+} // namespace gamemd
+
+// 0x4C5F50
+namespace gamemd {
+void sub_4C5F50()
+{
+{
+    DataGlobal_8A3950 = 0.0174532925199433 * 45.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C5F70
+namespace gamemd {
+void sub_4C5F70()
+{
+{
+    DataGlobal_8A3928 = 0.0174532925199433 * 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C5F90
+namespace gamemd {
+void sub_4C5F90()
+{
+{
+    DataGlobal_8A38B8 = 0.0174532925199433 * 90.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C5FB0
+namespace gamemd {
+long long sub_4C5FB0()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_8A38B8 - DataGlobal_8A3928);
+    result = Math::RoundToInt(v0 * DataGlobal_8A38D8 * 0.5);
+    DataGlobal_8A3978 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C5FF0
+namespace gamemd {
+void sub_4C5FF0()
+{
+{
+    DataGlobal_8A3930 = Math::ArcTan((double)DataGlobal_8A3978 * 0.00390625);
+}
+}
+} // namespace gamemd
+
+// 0x4C6020
+namespace gamemd {
+void sub_4C6020()
+{
+{
+    DataGlobal_8A3948 = Math::ArcTan((double)(2 * DataGlobal_8A3978) / DataGlobal_8A38D8);
+}
+}
+} // namespace gamemd
+
+// 0x4C6050
+namespace gamemd {
+long long sub_4C6050()
+{
+{
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_8A3978) + 0.5);
+    DataGlobal_8A396C = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C6080
+namespace gamemd {
+int sub_4C6080()
+{
+{
+    DataGlobal_8A38D0 = 0;
+    DataGlobal_8A38D2 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C6090
+namespace gamemd {
+int sub_4C6090()
+{
+{
+    DataGlobal_8A3938 = 0;
+    DataGlobal_8A393C = 0;
+    DataGlobal_8A3940 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C60B0
+namespace gamemd {
+int sub_4C60B0()
+{
+{
+    DataGlobal_8A3968 = 0;
+    DataGlobal_8A3960 = 128;
+    DataGlobal_8A3964 = 128;
+    return 128;
+}
+}
+} // namespace gamemd
+
+// 0x4C60D0
+namespace gamemd {
+int sub_4C60D0()
+{
+{
+    DataGlobal_8A38C0 = 0;
+    DataGlobal_8A38C4 = 0;
+    DataGlobal_8A38C8 = 0;
+    DataGlobal_8A38CC = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C60F0
+namespace gamemd {
+int sub_4C60F0()
+{
+{
+    DataGlobal_8A3914 = 0;
+    DataGlobal_8A3918 = 0;
+    DataGlobal_8A391C = 1;
+    DataGlobal_8A3920 = 0;
+    memset(&DataGlobal_8A38E0, 0, 0x30u);
+    DataGlobal_8A3910 = 0;
+    return atexit(nullsub_129);
+}
+}
+} // namespace gamemd
+
+// 0x4C6130
+namespace gamemd {
+void nullsub_129()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4C6170
+namespace gamemd {
+void nullsub_130()
+// 0x4c6130
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4C6360
+namespace gamemd {
+void sub_4C6360()
+{
+{
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_8A39A0 = Math::Sqrt(v0 + v0);
+}
+}
+} // namespace gamemd
+
+// 0x4C6390
+namespace gamemd {
+void sub_4C6390()
+{
+{
+    DataGlobal_8A39F0 = DataGlobal_8A39A0 / 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C63B0
+namespace gamemd {
+void sub_4C63B0()
+{
+{
+    DataGlobal_8A39D8 = 1.0 / DataGlobal_8A39F0;
+}
+}
+} // namespace gamemd
+
+// 0x4C63D0
+namespace gamemd {
+void sub_4C63D0()
+{
+{
+    DataGlobal_8A39D0 = 0.0174532925199433 * 45.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C63F0
+namespace gamemd {
+void sub_4C63F0()
+{
+{
+    DataGlobal_8A39A8 = 0.0174532925199433 * 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C6410
+namespace gamemd {
+void sub_4C6410()
+{
+{
+    DataGlobal_8A3980 = 0.0174532925199433 * 90.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C6430
+namespace gamemd {
+long long sub_4C6430()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_8A3980 - DataGlobal_8A39A8);
+    result = Math::RoundToInt(v0 * DataGlobal_8A39A0 * 0.5);
+    DataGlobal_8A39F8 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C6470
+namespace gamemd {
+void sub_4C6470()
+{
+{
+    DataGlobal_8A39B0 = Math::ArcTan((double)DataGlobal_8A39F8 * 0.00390625);
+}
+}
+} // namespace gamemd
+
+// 0x4C64A0
+namespace gamemd {
+void sub_4C64A0()
+{
+{
+    DataGlobal_8A39C8 = Math::ArcTan((double)(2 * DataGlobal_8A39F8) / DataGlobal_8A39A0);
+}
+}
+} // namespace gamemd
+
+// 0x4C64D0
+namespace gamemd {
+long long sub_4C64D0()
+{
+{
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_8A39F8) + 0.5);
+    DataGlobal_8A39EC = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C6500
+namespace gamemd {
+int sub_4C6500()
+{
+{
+    DataGlobal_8A3998 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C6510
+namespace gamemd {
+int sub_4C6510()
+{
+{
+    DataGlobal_8A39B8 = 0;
+    DataGlobal_8A39BC = 0;
+    DataGlobal_8A39C0 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C6530
+namespace gamemd {
+int sub_4C6530()
+{
+{
+    DataGlobal_8A39E8 = 0;
+    DataGlobal_8A39E0 = 128;
+    DataGlobal_8A39E4 = 128;
+    return 128;
+}
+}
+} // namespace gamemd
+
+// 0x4C6550
+namespace gamemd {
+int sub_4C6550()
+{
+{
+    DataGlobal_8A3988 = 0;
+    DataGlobal_8A398C = 0;
+    DataGlobal_8A3990 = 0;
+    DataGlobal_8A3994 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C82A0
+namespace gamemd {
+void sub_4C82A0()
+{
+{
+    DataGlobal_8A3A00 = 0.0174532925199433 * 90.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C84E0
+namespace gamemd {
+int sub_4C84E0()
+{
+{
+    const DLGTEMPLATE *Resource;
+    INT_PTR v1;
+    WinMain_Write_53E6B0();
+    switch ( DataGlobal_820E5C )
+  {
+    case 1: if ( !AllocConsole() )
+      {
+    FreeConsole();
+    AllocConsole();
+      }
+    _cwprintf(aErrorRecursive);
+    Sleep(0xFA0u);
+    sub_7DD1D7();
+    FreeConsole();
+    return 1153;
+    case 2: return 1153;
+    case 3: ExitProcess(0);
+  }
+    ShowCursor(1);
+    Resource = (const DLGTEMPLATE *)FindResource(0xF7u, (const CHAR *)5);
+    Debug::Log();
+    if ( Resource )
+    v1 = DialogBoxIndirectParamA(g_hInstance, Resource, g_hWnd, DialogFunc, 0);
+    else
+    v1 = DialogBoxParamA(g_hInstance, (LPCSTR)0xF7, g_hWnd, DialogFunc, 0);
+    ShowCursor(0);
+    return v1;
+}
+}
+} // namespace gamemd
+
+// 0x4C9160
+namespace gamemd {
+char sub_4C9160()
+{
+{
+    char v0;
+    int v2[22];
+    char v3[12];
+    int v4;
+    CCFileClass::Construct(v2, aExpandDat);
+    v0 = CCFileClass::Open(v2, 0);
+    v2[0] = (unsigned int)vt_CCFileClass;
+    v4 = 0;
+    Vector::Clear((int)v3);
+    v2[0] = &DataGlobal_7E1668;
+    BufferIOFileClass::Dtor(v2);
+    return v0;
+}
+}
+} // namespace gamemd
+
+// 0x4C91B0
+namespace gamemd {
+char _do_always_noconv_codecvt_base_std__MBE_NXZ_5()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x4C96A0
+namespace gamemd {
+void sub_4C96A0()
+{
+{
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_8B3AD0 = Math::Sqrt(v0 + v0);
+}
+}
+} // namespace gamemd
+
+// 0x4C96D0
+namespace gamemd {
+void sub_4C96D0()
+{
+{
+    DataGlobal_8B3B20 = DataGlobal_8B3AD0 / 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C96F0
+namespace gamemd {
+void sub_4C96F0()
+{
+{
+    DataGlobal_8B3B08 = 1.0 / DataGlobal_8B3B20;
+}
+}
+} // namespace gamemd
+
+// 0x4C9710
+namespace gamemd {
+void sub_4C9710()
+{
+{
+    DataGlobal_8B3B00 = 0.0174532925199433 * 45.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C9730
+namespace gamemd {
+void sub_4C9730()
+{
+{
+    DataGlobal_8B3AD8 = 0.0174532925199433 * 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C9750
+namespace gamemd {
+void sub_4C9750()
+{
+{
+    DataGlobal_8B3AB0 = 0.0174532925199433 * 90.0;
+}
+}
+} // namespace gamemd
+
+// 0x4C9770
+namespace gamemd {
+long long sub_4C9770()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_8B3AB0 - DataGlobal_8B3AD8);
+    result = Math::RoundToInt(v0 * DataGlobal_8B3AD0 * 0.5);
+    DataGlobal_8B3B28 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C97B0
+namespace gamemd {
+void sub_4C97B0()
+{
+{
+    DataGlobal_8B3AE0 = Math::ArcTan((double)DataGlobal_8B3B28 * 0.00390625);
+}
+}
+} // namespace gamemd
+
+// 0x4C97E0
+namespace gamemd {
+void sub_4C97E0()
+{
+{
+    DataGlobal_8B3AF8 = Math::ArcTan((double)(2 * DataGlobal_8B3B28) / DataGlobal_8B3AD0);
+}
+}
+} // namespace gamemd
+
+// 0x4C9810
+namespace gamemd {
+long long sub_4C9810()
+{
+{
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_8B3B28) + 0.5);
+    DataGlobal_8B3B1C = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C9840
+namespace gamemd {
+int sub_4C9840()
+{
+{
+    DataGlobal_8B3AC8 = 0;
+    DataGlobal_8B3ACA = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C9850
+namespace gamemd {
+int sub_4C9850()
+{
+{
+    DataGlobal_8B3AE8 = 0;
+    DataGlobal_8B3AEC = 0;
+    DataGlobal_8B3AF0 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4C9870
+namespace gamemd {
+int sub_4C9870()
+{
+{
+    DataGlobal_8B3B18 = 0;
+    DataGlobal_8B3B10 = 128;
+    DataGlobal_8B3B14 = 128;
+    return 128;
+}
+}
+} // namespace gamemd
+
+// 0x4C9890
+namespace gamemd {
+int sub_4C9890()
+{
+{
+    DataGlobal_8B3AB8 = 0;
+    DataGlobal_8B3ABC = 0;
+    DataGlobal_8B3AC0 = 0;
+    DataGlobal_8B3AC4 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4CAEF0
+namespace gamemd {
+void nullsub_131()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4CAF00
+namespace gamemd {
+void nullsub_132()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4CAF10
+namespace gamemd {
+void nullsub_133()
+{
+  ;
 }
 } // namespace gamemd
 
@@ -3540,398 +3933,5 @@ int sub_4CC980()
     DataGlobal_8B3C54 = 0;
     return 0;
 }
-}
-} // namespace gamemd
-
-// 0x4CCA70
-namespace gamemd {
-void E4Recv_4CCA70::sub_4CCA70()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_4CCA70(_DWORD *this)
-{
-  *this = &FlyLocomotionClass::`vftable'; /*0x4cca70*/
-  *(this + 1) = &FlyLocomotionClass::`vftable'; /*0x4cca76*/
-  LocomotionClass::Construct(this); /*0x4cca7d*/
-}
-}
-} // namespace gamemd
-
-// 0x4CEFB0
-namespace gamemd {
-int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
-{
-  int **v6; // esi
-  int *v7; // eax
-  int v8; // eax
-  int *v9; // edi
-  unsigned int v10; // eax
-  int v11; // ebp
-  int v12; // ebx
-  _DWORD *v13; // eax
-  _DWORD *v14; // edi
-  int *v15; // ecx
-  void *NearbyCell; // eax
-  int *v17; // eax
-  int *v18; // eax
-  int *v19; // eax
-  int v20; // ecx
-  int v21; // eax
-  int *v22; // eax
-  int v23; // ebx
-  int v24; // edi
-  int v25; // ebp
-  int *v26; // ecx
-  int *v27; // eax
-  int v28; // ebx
-  int *v29; // eax
-  int v30; // ecx
-  int v31; // eax
-  int v32; // eax
-  int *v33; // ecx
-  int *v34; // eax
-  float *Height; // eax
-  char *v36; // ecx
-  int *v37; // eax
-  int v38; // eax
-  double v39; // st7
-  int v40; // ebp
-  int v41; // eax
-  int *v42; // ecx
-  bool v43; // cc
-  int v44; // eax
-  int v45; // eax
-  int *v46; // ecx
-  int v47; // edx
-  int *v48; // edi
-  int v49; // eax
-  int v50; // edx
-  int v51; // eax
-  int v52; // ecx
-  int v53; // ecx
-  int v55; // [esp+50h] [ebp-38h] BYREF
-  int *v56; // [esp+54h] [ebp-34h] BYREF
-  float v57; // [esp+58h] [ebp-30h] BYREF
-  float v58; // [esp+5Ch] [ebp-2Ch] BYREF
-  int v59; // [esp+60h] [ebp-28h]
-  float v60; // [esp+64h] [ebp-24h] BYREF
-  int v61; // [esp+68h] [ebp-20h]
-  int v62; // [esp+6Ch] [ebp-1Ch]
-  int v63[3]; // [esp+70h] [ebp-18h] BYREF
-  _DWORD v64[3]; // [esp+7Ch] [ebp-Ch] BYREF
-
-  v6 = (int **)(a1 + 12); /*0x4cefb6*/
-  v59 = a1; /*0x4cefb9*/
-  (*(void (__thiscall **)(_DWORD, float *))(**(_DWORD **)(a1 + 12) + 440))(*(_DWORD *)(a1 + 12), &v58); /*0x4cefc7*/
-  v7 = *v6; /*0x4cefcd*/
-  v55 = 0; /*0x4cefcf*/
-  if ( v7 ) /*0x4cefd9*/
-  {
-    v8 = ComPtr::ReleaseAndSet(&v55, v6); /*0x4cefe0*/
-    if ( v8 < 0 && v8 != -2147467262 ) /*0x4cefee*/
-      WinAPI::Wrapper(v8); /*0x4ceff1*/
-    if ( v55 && (*v6)[173] && (*v6)[191] && (*(int (__stdcall **)(int))(*(_DWORD *)v55 + 24))(v55) ) /*0x4cf017*/
-      a3 = 0; /*0x4cf01e*/
-  }
-  if ( *v6 && (*(int (__thiscall **)(int *))(**v6 + 44))(*v6) == 2 )
-  {
-    if ( *v6 )
-    {
-      v9 = *v6; /*0x4cf033*/
-      v10 = (*(int (__thiscall **)(int *))(*v9 + 44))(*v6) == 2 ? (unsigned int)v9 : 0;
-    }
-    else
-    {
-      v10 = 0; /*0x4cf039*/
-    }
-    if ( *(_BYTE *)(*(_DWORD *)(v10 + 1732) + 3595) ) /*0x4cf055*/
-      a3 = 0; /*0x4cf05f*/
-  }
-  v11 = LODWORD(a4); /*0x4cf06c*/
-  v62 = a6; /*0x4cf06e*/
-  v12 = a5; /*0x4cf072*/
-  LOWORD(v56) = SLODWORD(a4) / 256; /*0x4cf08c*/
-  HIWORD(v56) = a5 / 256; /*0x4cf09f*/
-  v13 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v56); /*0x4cf0ac*/
-  v14 = Cell::IsBridge(v13); /*0x4cf0b8*/
-  if ( v14 && !*(_BYTE *)((*(int (__thiscall **)(int *))(**v6 + 132))(*v6) + 3367) ) /*0x4cf0cc*/
-  {
-    if ( Array::Contains(*v6, (int)v14) ) /*0x4cf0d9*/
-    {
-      v18 = (int *)(*(int (__thiscall **)(_DWORD *, int *, int *))(*v14 + 168))(v14, v63, *v6); /*0x4cf142*/
-      v11 = *v18; /*0x4cf148*/
-      v12 = v18[1]; /*0x4cf14a*/
-      v62 = v18[2]; /*0x4cf150*/
-    }
-    else
-    {
-      v15 = *v6; /*0x4cf0e2*/
-      v56 = *v6; /*0x4cf0e6*/
-      if ( v56 && (*(int (__thiscall **)(int *))(*v15 + 44))(v15) == 2 ) /*0x4cf0f4*/
-      {
-        NearbyCell = InfantryClass::FindNearbyCell(v56, (int)v14); /*0x4cf0fb*/
-        if ( NearbyCell ) /*0x4cf102*/
-        {
-          v17 = (int *)(*(int (__thiscall **)(void *, int *))(*(_DWORD *)NearbyCell + 72))(NearbyCell, v63); /*0x4cf125*/
-          v11 = *v17; /*0x4cf128*/
-          v12 = v17[1]; /*0x4cf12a*/
-          v62 = v17[2]; /*0x4cf130*/
-        }
-        else
-        {
-          v11 = MEMORY[0x8B3C78]; /*0x4cf10a*/
-          v12 = MEMORY[0x8B3C7C]; /*0x4cf110*/
-          v62 = MEMORY[0x8B3C80]; /*0x4cf116*/
-        }
-      }
-    }
-  }
-  (*(void (__thiscall **)(int *))(**v6 + 464))(*v6); /*0x4cf158*/
-  v19 = (int *)(*(int (__thiscall **)(int *, int *))(**v6 + 72))(*v6, v63); /*0x4cf167*/
-  v20 = *v19; /*0x4cf16a*/
-  v21 = v19[1] - v12; /*0x4cf171*/
-  LODWORD(v60) = v20 - v11; /*0x4cf173*/
-  v61 = v21; /*0x4cf17b*/
-  Vector::2DMagnitudeMath((int *)&v60); /*0x4cf17f*/
-  v23 = (int)v22; /*0x4cf184*/
-  v56 = v22; /*0x4cf18c*/
-  if ( !v55 || !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 32))(v55) ) /*0x4cf197*/
-  {
-    v24 = LODWORD(a4); /*0x4cf1a2*/
-    v25 = a5; /*0x4cf1a6*/
-    v26 = *v6; /*0x4cf1ae*/
-    v60 = a4; /*0x4cf1b4*/
-    v61 = a5; /*0x4cf1b9*/
-    v62 = a6; /*0x4cf1bd*/
-    v27 = (int *)(*(int (__thiscall **)(int *, int *))(*v26 + 72))(v26, v63); /*0x4cf1c8*/
-    v28 = *(_DWORD *)Cell::GetHeight(&v58, v27, (int *)&v60); /*0x4cf1d5*/
-    if ( !v55 ) /*0x4cf1dd*/
-      goto LABEL_32; /*0x4cf1dd*/
-    if ( !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 24))(v55) ) /*0x4cf1e2*/
-      goto LABEL_32; /*0x4cf1e2*/
-    v29 = (int *)(*(int (__thiscall **)(int *, int *))(**v6 + 72))(*v6, v63); /*0x4cf1f2*/
-    v30 = *v29; /*0x4cf1f5*/
-    v31 = v29[1] - v25; /*0x4cf1fc*/
-    LODWORD(v60) = v30 - v24; /*0x4cf1fe*/
-    v61 = v31; /*0x4cf206*/
-    Vector::2DMagnitudeMath((int *)&v60); /*0x4cf20a*/
-    if ( v32 > 768 /*0x4cf248*/
-      || (LOWORD(v58) = 0x2000,
-          LOWORD(v57) = v28 - *(_WORD *)ProgressTimer::GetValue((_WORD *)*v6 + 452, &v60),
-          (unsigned __int8)UnitClass::CompareCoordinateMagnitude(&v57)) )
-    {
-LABEL_32:
-      v63[2] = a6; /*0x4cf259*/
-      v33 = *v6; /*0x4cf25d*/
-      v63[0] = v24; /*0x4cf260*/
-      v63[1] = v25; /*0x4cf264*/
-      v34 = (int *)(*(int (__thiscall **)(int *, _DWORD *))(*v33 + 72))(v33, v64); /*0x4cf26f*/
-      Height = (float *)Cell::GetHeight(&v60, v34, v63); /*0x4cf277*/
-      v36 = (char *)(*v6 + 226); /*0x4cf285*/
-      v58 = *Height; /*0x4cf28b*/
-      FacingClass::Update(v36, &v58); /*0x4cf28f*/
-    }
-    v23 = (int)v56; /*0x4cf294*/
-  }
-  if ( v23 >= 256 || !a3 || *(_BYTE *)((*(int (__thiscall **)(int *))(**v6 + 132))(*v6) + 3367) ) /*0x4cf2bc*/
-  {
-    if ( !v55 || !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 32))(v55) ) /*0x4cf363*/
-    {
-      v38 = (*(int (__thiscall **)(int *, _DWORD *))(**v6 + 72))(*v6, v64); /*0x4cf373*/
-      v58 = *(float *)v38; /*0x4cf37f*/
-      v39 = Math::CalcAngle((double)*(int *)(v38 + 4) - (double)a5, (double)SLODWORD(a4) - (double)SLODWORD(v58)); /*0x4cf398*/
-      LOWORD(a4) = Math::RoundToInt((v39 - 1.570796326794897) * -10430.06004058427); /*0x4cf3b1*/
-      v57 = a4; /*0x4cf3ba*/
-      v37 = (int *)&v57; /*0x4cf3be*/
-      goto LABEL_51; /*0x4cf3be*/
-    }
-  }
-  else
-  {
-    if ( !(*v6)[173] || !(*v6)[191] ) /*0x4cf2d4*/
-      goto LABEL_44; /*0x4cf2d4*/
-    if ( !v55 ) /*0x4cf2e2*/
-    {
-LABEL_43:
-      v37 = ObjectClass::CalcTargetFacing(*v6, (int *)&a4, (*v6)[173]); /*0x4cf304*/
-LABEL_51:
-      FacingClass::Update((char *)*v6 + 928, v37); /*0x4cf3c2*/
-      goto LABEL_52; /*0x4cf3cb*/
-    }
-    if ( !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 24))(v55) ) /*0x4cf2e7*/
-    {
-      if ( !v55 || !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 32))(v55) ) /*0x4cf2f9*/
-        goto LABEL_43; /*0x4cf2fe*/
-    }
-    else
-    {
-LABEL_44:
-      LOWORD(a4) = 0; /*0x4cf320*/
-      if ( !v55 /*0x4cf34a*/
-        || (LOWORD(a4) = (*(unsigned __int16 (__stdcall **)(int))(*(_DWORD *)v55 + 16))(v55) << 13, !v55)
-        || !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 32))(v55) )
-      {
-        FacingClass::Update((char *)*v6 + 928, &a4); /*0x4cf356*/
-      }
-    }
-  }
-LABEL_52:
-  v40 = v59; /*0x4cf3d0*/
-  if ( !*(_BYTE *)(v59 + 92) || v23 >= 768 ) /*0x4cf3e1*/
-  {
-    v41 = (*(int (__thiscall **)(int *))(**v6 + 132))(*v6); /*0x4cf402*/
-    v42 = *v6; /*0x4cf410*/
-    if ( *(_BYTE *)(v41 + 3221) ) /*0x4cf408*/
-    {
-      v43 = v23 < *(_DWORD *)((*(int (__thiscall **)(int *))(*v42 + 132))(v42) + 760); /*0x4cf426*/
-      v44 = **v6; /*0x4cf42a*/
-      if ( v43 ) /*0x4cf42c*/
-      {
-        v45 = (*(int (**)(void))(v44 + 132))(); /*0x4cf432*/
-        v46 = *v6; /*0x4cf443*/
-        v47 = **v6; /*0x4cf445*/
-        a4 = (float)(v23 / *(_DWORD *)(v45 + 760)); /*0x4cf44f*/
-        v48 = (int *)(*(int (__thiscall **)(int *))(v47 + 132))(v46); /*0x4cf45b*/
-        v49 = (*(int (__thiscall **)(int *))(**v6 + 132))(*v6); /*0x4cf45f*/
-        v59 = (*(int (__thiscall **)(int))(*(_DWORD *)v49 + 188))(v49) / 3; /*0x4cf481*/
-        v50 = *v48; /*0x4cf485*/
-        v58 = (double)v59 * (1.0 - a4); /*0x4cf497*/
-        v59 = (*(int (__thiscall **)(int *))(v50 + 188))(v48); /*0x4cf4a1*/
-        *(_DWORD *)(v40 + 56) = Math::RoundToInt((double)v59 * a4 + v58); /*0x4cf4b6*/
-        goto LABEL_60; /*0x4cf4bb*/
-      }
-    }
-    else
-    {
-      v44 = *v42; /*0x4cf4bd*/
-    }
-    v51 = (*(int (**)(void))(v44 + 132))(); /*0x4cf4bf*/
-    *(_DWORD *)(v40 + 56) = (*(int (__thiscall **)(int))(*(_DWORD *)v51 + 188))(v51); /*0x4cf4cf*/
-    goto LABEL_60; /*0x4cf4cf*/
-  }
-  *(_DWORD *)(v40 + 56) = *(_DWORD *)(v40 + 36) - Cell::GetGroundHeight((_DWORD *)(v59 + 28)); /*0x4cf3f6*/
-LABEL_60:
-  if ( !*(_BYTE *)((*(int (__thiscall **)(int *))(**v6 + 132))(*v6) + 3367) /*0x4cf4e8*/
-    && (unsigned __int8)DamageArea::CheckOccupancyEligibility(v40) )
-  {
-    if ( v23 >= 128 ) /*0x4cf4f7*/
-    {
-      if ( v23 >= 512 ) /*0x4cf52d*/
-      {
-        if ( v23 < 768 && a3 ) /*0x4cf551*/
-        {
-          *(_DWORD *)(v40 + 64) = 0; /*0x4cf553*/
-          *(_DWORD *)(v40 + 68) = 1072168960; /*0x4cf556*/
-        }
-      }
-      else if ( a3 ) /*0x4cf535*/
-      {
-        *(_DWORD *)(v40 + 64) = 0; /*0x4cf537*/
-        *(_DWORD *)(v40 + 68) = 1071644672; /*0x4cf53a*/
-      }
-    }
-    else
-    {
-      if ( a3 ) /*0x4cf4ff*/
-      {
-        *(_DWORD *)(v40 + 64) = 0; /*0x4cf501*/
-        *(_DWORD *)(v40 + 68) = 0; /*0x4cf504*/
-      }
-      if ( !*(_BYTE *)(v40 + 92) && *(double *)(v40 + 72) < 0.05 ) /*0x4cf51c*/
-        LocomotionClass::CheckBridgeBlock(v40); /*0x4cf520*/
-    }
-  }
-  if ( *((_BYTE *)*v6 + 131) ) /*0x4cf55f*/
-  {
-    if ( !(unsigned __int8)House::IsHumanPlayer((#375 *)(*v6)[135]) ) /*0x4cf573*/
-    {
-      v52 = (int)(*v6 + 39); /*0x4cf57e*/
-      a4 = *(float *)v52; /*0x4cf586*/
-      a5 = *(_DWORD *)(v52 + 4); /*0x4cf592*/
-      a6 = *(_DWORD *)(v52 + 8); /*0x4cf599*/
-      if ( Cell::IsPassable(&a4) /*0x4cf5dd*/
-        || (*(_DWORD *)MEMORY[0xA8B230] & 0x1000) != 0
-        && (v53 = (int)(*v6 + 39),
-            a4 = *(float *)v53,
-            a5 = *(_DWORD *)(v53 + 4),
-            a6 = *(_DWORD *)(v53 + 8),
-            Game::Stub3((int)&a4)) )
-      {
-        (*(void (__thiscall **)(int *))(**v6 + 336))(*v6); /*0x4cf5ec*/
-      }
-    }
-  }
-  if ( v55 ) /*0x4cf5f8*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v55 + 8))(v55); /*0x4cf5fd*/
-  return v23; /*0x4cf600*/
-}
-}
-} // namespace gamemd
-
-// 0x4C5EC0
-namespace gamemd {
-void nullsub_127()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x4C5ED0
-namespace gamemd {
-void nullsub_128()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x4C6130
-namespace gamemd {
-void nullsub_129()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x4C6170
-namespace gamemd {
-void nullsub_130()
-// 0x4c6130
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x4C91B0
-namespace gamemd {
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_5()
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x4CAEF0
-namespace gamemd {
-void nullsub_131()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x4CAF00
-namespace gamemd {
-void nullsub_132()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x4CAF10
-namespace gamemd {
-void nullsub_133()
-{
-  ;
 }
 } // namespace gamemd

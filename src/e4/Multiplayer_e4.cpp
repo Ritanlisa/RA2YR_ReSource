@@ -52,13 +52,13 @@ VectorClass *__thiscall Multiplayer::FindStartPositions(VectorClass *this)
   v2 = this; /*0x688389*/
   v21 = this; /*0x688391*/
   VectorClass::CellConstructor(&v25, 0, 0); /*0x688395*/
-  v3 = MEMORY[0xA8B230]; /*0x68839a*/
+  v3 = *(ScenarioClass **)&HouseClass_Player.__pad_5568[8060]; /*0x68839a*/
   v4 = 10; /*0x6883a0*/
-  v25 = &DynamicVectorClass<Cell>::`vftable'; /*0x6883a5*/
+  v25 = (void **)&vt_DynamicVectorClass_Cell; /*0x6883a5*/
   v30 = 10; /*0x6883ad*/
   v29 = 0; /*0x6883b1*/
   v5 = 0; /*0x6883b5*/
-  waypoints = MEMORY[0xA8B230]->waypoints; /*0x6883b7*/
+  waypoints = (char *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 1586); /*0x6883b7*/
   do /*0x6883e9*/
   {
     if ( v5 < 0 ) /*0x6883c6*/
@@ -71,10 +71,10 @@ VectorClass *__thiscall Multiplayer::FindStartPositions(VectorClass *this)
   }
   while ( v5 < 8 ); /*0x6883e9*/
   v7 = 0; /*0x6883f0*/
-  if ( *(int *)&MEMORY[0xA8D63C].__pad_430[24] > 0 ) /*0x6883f4*/
+  if ( *(int *)&HouseClass_Player.__pad_5568[18384] > 0 ) /*0x6883f4*/
   {
-    v8 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_430[12]; /*0x6883f6*/
-    v9 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_430[24]; /*0x6883fc*/
+    v8 = *(_DWORD *)&HouseClass_Player.__pad_5568[18372]; /*0x6883f6*/
+    v9 = *(_DWORD *)&HouseClass_Player.__pad_5568[18384]; /*0x6883fc*/
     do /*0x68840b*/
     {
       if ( *(_DWORD *)(*(_DWORD *)v8 + 107) == -1 ) /*0x688404*/
@@ -86,9 +86,11 @@ VectorClass *__thiscall Multiplayer::FindStartPositions(VectorClass *this)
     v4 = v30; /*0x68840d*/
     v2 = v21; /*0x688411*/
   }
-  if ( (int)v1 <= (int)&MEMORY[0xA8B274]->__pad_0[*(_DWORD *)&MEMORY[0xA8D63C].__pad_430[24] - v7] ) /*0x688421*/
+  if ( (int)v1 <= *(_DWORD *)&HouseClass_Player.__pad_5568[8128] + *(_DWORD *)&HouseClass_Player.__pad_5568[18384] - v7 ) /*0x688421*/
   {
-    v20 = (IUnknown *)&MEMORY[0xA8B274]->__pad_0[*(_DWORD *)&MEMORY[0xA8D63C].__pad_430[24] - v7]; /*0x68842b*/
+    v20 = (IUnknown *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8128] /*0x68842b*/
+                     + *(_DWORD *)&HouseClass_Player.__pad_5568[18384]
+                     - v7);
     v10 = v20; /*0x68842f*/
   }
   else
@@ -112,12 +114,12 @@ LABEL_22:
       v29 = (IUnknown *)((char *)v29 + 1); /*0x6884ae*/
       *((_DWORD *)Block + (_DWORD)v13) = v12; /*0x6884b6*/
     }
-    v3 = MEMORY[0xA8B230]; /*0x6884b9*/
+    v3 = *(ScenarioClass **)&HouseClass_Player.__pad_5568[8060]; /*0x6884b9*/
 LABEL_24:
     v23 = *(_DWORD *)&v3->waypoints[4 * i]; /*0x6884bf*/
     Debug::Log(); /*0x6884d9*/
     v4 = v30; /*0x6884de*/
-    v3 = MEMORY[0xA8B230]; /*0x6884e2*/
+    v3 = *(ScenarioClass **)&HouseClass_Player.__pad_5568[8060]; /*0x6884e2*/
     v2 = v21; /*0x6884e8*/
   }
   if ( (char *)v10 - (char *)v29 > 0 ) /*0x688502*/
@@ -128,33 +130,33 @@ LABEL_24:
       do /*0x688643*/
       {
         v14 = Random::Range( /*0x688551*/
-                &MEMORY[0xA8B230]->random[1],
+                (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
                 0,
-                (IUnknown *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_31[3] - 10));
-        LOWORD(v22) = LOWORD(MEMORY[0x87F8E4].field_28) /*0x688573*/
+                (IUnknown *)(*(_DWORD *)&stru_87C374.__pad_14B0[8436] - 10));
+        LOWORD(v22) = *(_WORD *)&stru_87C374.__pad_14B0[8424] /*0x688573*/
                     + Random::Range(
-                        &MEMORY[0xA8B230]->random[1],
+                        (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
                         (IUnknown *)0xA,
-                        (IUnknown *)(*(_DWORD *)&MEMORY[0x87F8E4].field_2D[3] - 10));
-        HIWORD(v22) = v14 + *(_WORD *)MEMORY[0x87F8E4].__pad_2C + 10; /*0x688588*/
+                        (IUnknown *)(*(_DWORD *)&stru_87C374.__pad_14B0[8432] - 10));
+        HIWORD(v22) = v14 + *(_WORD *)&stru_87C374.__pad_14B0[8428] + 10; /*0x688588*/
         v19 = v22; /*0x688594*/
         v23 = 0; /*0x6885ab*/
         v19 = *LayerClass::Pathfinding_Find( /*0x6885c3*/
-                 &MEMORY[0x87F7E8],
-                 (int)&v23,
-                 &v24,
-                 (__int16 *)&v19,
-                 1,
-                 -1,
+                 (IUnknown *)&stru_87C374.__pad_14B0[8132],
+                 (IUnknown *)&v23,
+                 (IUnknown *)&v24,
+                 (IUnknown *)&v19,
+                 (IUnknown *)1,
+                 (IUnknown *)-1,
                  0,
                  0,
-                 8,
-                 8,
+                 (IUnknown *)8,
+                 (IUnknown *)8,
                  0,
                  0,
                  0,
-                 1,
-                 (__int16 *)&v23,
+                 (IUnknown *)1,
+                 (IUnknown *)&v23,
                  0,
                  0);
         if ( v19 != dword_B05458 ) /*0x6885c7*/
@@ -175,18 +177,18 @@ LABEL_24:
       v2 = v21; /*0x688649*/
     }
   }
-  *(_DWORD *)&v2->field_1[3] = 0; /*0x688651*/
-  v2->field_8 = 0; /*0x688654*/
-  BYTE1(v2->field_C) = 0; /*0x688657*/
-  LOBYTE(v2->field_C) = 1; /*0x68865f*/
-  *(_DWORD *)v2->__pad_0 = &VectorClass<Cell>::`vftable'; /*0x688663*/
+  v2->Items = 0; /*0x688651*/
+  v2->Capacity = 0; /*0x688654*/
+  v2->IsAllocated = 0; /*0x688657*/
+  v2->IsInitialized = 1; /*0x68865f*/
+  v2->vtable0 = &vt_VectorClass_Cell; /*0x688663*/
   Multiplayer::CopyDataArray(v2, (ObjectClass *)&v25); /*0x688669*/
-  *(_DWORD *)v2->__pad_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x68866e*/
-  v25 = &VectorClass<Cell>::`vftable'; /*0x688674*/
+  v2->vtable0 = &vt_DynamicVectorClass_Cell; /*0x68866e*/
+  v25 = (void **)&vt_VectorClass_Cell; /*0x688674*/
   v16 = (WinModemClass *)Block; /*0x68867c*/
   v17 = (IUnknown *)v30; /*0x688684*/
-  v2->field_10 = v29; /*0x688688*/
-  v2->field_14 = (int)v17; /*0x68868d*/
+  v2[1].vtable0 = v29; /*0x688688*/
+  v2[1].Items = v17; /*0x68868d*/
   if ( v16 && v28 ) /*0x688698*/
     __3_YAXPAX_Z(v16); /*0x68869b*/
   return v2; /*0x6886a5*/

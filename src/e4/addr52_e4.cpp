@@ -398,7 +398,7 @@ VectorClass *__fastcall GetINIClassIntList(
     VectorClass::Construct(&v22, 0, 0); /*0x525471*/
     v27 = 10; /*0x52547a*/
     v26 = 0; /*0x525488*/
-    v22 = (VectorClass *)&TypeList<int>::`vftable'; /*0x52548c*/
+    v22 = (VectorClass *)&vt_TypeList_int; /*0x52548c*/
     for ( i = strtok(String[0].__pad_0, MEMORY[0x817F70].__pad_0); i; i = strtok(0, MEMORY[0x817F70].__pad_0) ) /*0x52549e*/
     {
       if ( !*i ) /*0x5254a0*/
@@ -410,7 +410,7 @@ VectorClass *__fastcall GetINIClassIntList(
         if ( v26 < v24 /*0x5254e2*/
           || (v25 || !v24)
           && v27 > 0
-          && ((unsigned __int8 (__thiscall *)(VectorClass **, int, _DWORD))v22->field_8)(&v22, v27 + v24, 0) )
+          && ((unsigned __int8 (__thiscall *)(VectorClass **, int, _DWORD))v22->Capacity)(&v22, v27 + v24, 0) )
         {
           v15 = v26++; /*0x5254ed*/
           *((_DWORD *)Block + v15) = v14; /*0x5254f8*/
@@ -418,13 +418,13 @@ VectorClass *__fastcall GetINIClassIntList(
       }
     }
     IntVector::Copy((_DWORD *)a1, (VectorClass *)&v22); /*0x525514*/
-    *(_DWORD *)a1 = &TypeList<int>::`vftable'; /*0x52551e*/
+    *(_DWORD *)a1 = &vt_TypeList_int; /*0x52551e*/
     v16 = (VectorClass *)v27; /*0x525528*/
     *(_DWORD *)(a1 + 16) = v26; /*0x52552c*/
     v17 = Block; /*0x52552f*/
     v18 = Block == 0; /*0x525533*/
     *(_DWORD *)(a1 + 20) = v16; /*0x525535*/
-    v22 = (VectorClass *)&VectorClass<int>::`vftable'; /*0x525538*/
+    v22 = (VectorClass *)&vt_VectorClass_int; /*0x525538*/
     if ( !v18 && v25 ) /*0x525542*/
     {
       __3_YAXPAX_Z(v17); /*0x525545*/
@@ -433,7 +433,7 @@ VectorClass *__fastcall GetINIClassIntList(
     v19 = a6; /*0x525551*/
     v25 = 0; /*0x525558*/
     v24 = 0; /*0x52555e*/
-    a5 = &VectorClass<int>::`vftable'; /*0x525562*/
+    a5 = &vt_VectorClass_int; /*0x525562*/
     if ( a6 && HIBYTE(a8) ) /*0x525572*/
       goto LABEL_20; /*0x525572*/
   }
@@ -443,10 +443,10 @@ VectorClass *__fastcall GetINIClassIntList(
     *(_DWORD *)(a1 + 8) = 0; /*0x52558a*/
     *(_BYTE *)(a1 + 12) = 1; /*0x52558d*/
     *(_BYTE *)(a1 + 13) = 0; /*0x525591*/
-    *(_DWORD *)a1 = &VectorClass<int>::`vftable'; /*0x525594*/
+    *(_DWORD *)a1 = &vt_VectorClass_int; /*0x525594*/
     TypeList::Copy((_DWORD *)a1, &a5); /*0x525596*/
-    *(_DWORD *)a1 = &TypeList<int>::`vftable'; /*0x52559b*/
-    a5 = &VectorClass<int>::`vftable'; /*0x5255a1*/
+    *(_DWORD *)a1 = &vt_TypeList_int; /*0x52559b*/
+    a5 = &vt_VectorClass_int; /*0x5255a1*/
     v20 = a10; /*0x5255af*/
     *(_DWORD *)(a1 + 16) = a9; /*0x5255b6*/
     v19 = a6; /*0x5255b9*/
@@ -1052,7 +1052,7 @@ void __thiscall sub_52AAF0(INIEntry_INIClass *this)
   void *v7; // [esp-8h] [ebp-10h]
 
   v2 = (CCINIClass *)this->field_C; /*0x52aaf4*/
-  *(_DWORD *)this->__pad_0 = &INIClass::INIEntry::`vftable'; /*0x52aaf7*/
+  *(_DWORD *)this->__pad_0 = &vt_INIClass_INIEntry; /*0x52aaf7*/
   free(v2); /*0x52aafe*/
   v7 = (void *)this->field_10; /*0x52ab08*/
   this->field_C = 0; /*0x52ab09*/
@@ -1072,7 +1072,7 @@ void __thiscall sub_52AAF0(INIEntry_INIClass *this)
   }
   free((void *)this->field_18); /*0x52ab47*/
   this->field_18 = 0; /*0x52ab51*/
-  *(_DWORD *)this->__pad_0 = &GenericNode::`vftable'; /*0x52ab54*/
+  *(_DWORD *)this->__pad_0 = &vt_GenericNode; /*0x52ab54*/
   if ( this ) /*0x52ab5a*/
   {
     v5 = *(_DWORD *)&this->__pad_0[4]; /*0x52ab5c*/
@@ -1350,7 +1350,7 @@ int InitGame()
 //   IUnknown *v40; // edx
 //   AbstractClass *eax40; // eax
 //   int ii; // edi
-// ... [29276 chars total]
+// ... [29244 chars total]
 // end truncated pseudocode
 }
 } // namespace gamemd
@@ -1413,7 +1413,7 @@ char InitRules()
   struct _WIN32_FIND_DATAA FindFileData; // [esp+1DCh] [ebp-140h] BYREF
 
   RulesClass::InitINIChain(&dwInitParam, 0, 0); /*0x52cd82*/
-  dwInitParam = (LPARAM)&DynamicVectorClass<CCINIClass *>::`vftable'; /*0x52cd8e*/
+  dwInitParam = (LPARAM)&vt_DynamicVectorClass_CCINIClass; /*0x52cd8e*/
   v21 = 10; /*0x52cd9c*/
   v20 = 0; /*0x52cda4*/
   v15 = 0; /*0x52cda8*/
@@ -1469,7 +1469,7 @@ LABEL_15:
       ++v20; /*0x52ce9b*/
     }
 LABEL_24:
-    *(_DWORD *)aP1[0].__pad_0 = &CCFileClass::`vftable'; /*0x52cee4*/
+    *(_DWORD *)aP1[0].__pad_0 = &vt_CCFileClass; /*0x52cee4*/
     v25 = 0; /*0x52cef3*/
     Vector::Clear((int)v24); /*0x52cefa*/
     *(_DWORD *)aP1[0].__pad_0 = &off_7E1668; /*0x52cf03*/
@@ -1510,7 +1510,7 @@ LABEL_36:
       v8 = v20; /*0x52cfa9*/
       goto LABEL_36; /*0x52cfa9*/
     }
-    *(_DWORD *)aP1[0].__pad_0 = &CCFileClass::`vftable'; /*0x52cfe1*/
+    *(_DWORD *)aP1[0].__pad_0 = &vt_CCFileClass; /*0x52cfe1*/
     v25 = 0; /*0x52cfe5*/
     Vector::Clear((int)v24); /*0x52cfec*/
     *(_DWORD *)aP1[0].__pad_0 = &off_7E1668; /*0x52cffa*/
@@ -1518,7 +1518,7 @@ LABEL_36:
   }
   if ( v20 <= 0 ) /*0x52d013*/
   {
-    dwInitParam = (LPARAM)&VectorClass<CCINIClass *>::`vftable'; /*0x52d019*/
+    dwInitParam = (LPARAM)&vt_VectorClass_CCINIClass; /*0x52d019*/
     VectorClass_ptr_CCINIClass::ddtor((int)&dwInitParam); /*0x52d021*/
     return 0; /*0x52d032*/
   }
@@ -1526,12 +1526,12 @@ LABEL_36:
   if ( !CCINIClass::Load(&MEMORY[0x87F8E4].__pad_5568[9012], &v26, 0, 0) ) /*0x52d053*/
   {
     Debug::Log(); /*0x52d061*/
-    *(_DWORD *)v26.__pad_0 = &CCFileClass::`vftable'; /*0x52d070*/
+    *(_DWORD *)v26.__pad_0 = &vt_CCFileClass; /*0x52d070*/
     v28 = 0; /*0x52d077*/
     Vector::Clear((int)v27); /*0x52d07e*/
     *(_DWORD *)v26.__pad_0 = &off_7E1668; /*0x52d08a*/
     BufferIOFileClass::Dtor(&v26); /*0x52d091*/
-    dwInitParam = (LPARAM)&VectorClass<CCINIClass *>::`vftable'; /*0x52d09a*/
+    dwInitParam = (LPARAM)&vt_VectorClass_CCINIClass; /*0x52d09a*/
     VectorClass_ptr_CCINIClass::ddtor((int)&dwInitParam); /*0x52d0a2*/
     return 0; /*0x52d0b3*/
   }
@@ -1584,17 +1584,17 @@ LABEL_36:
     if ( CCINIClass::Load(aP1, &v29, 1, 0) > 1 ) /*0x52d277*/
     {
       HashTable::DestroyHashTableINIClass((void **)aP1); /*0x52d281*/
-      *(_DWORD *)v29.__pad_0 = &CCFileClass::`vftable'; /*0x52d28d*/
+      *(_DWORD *)v29.__pad_0 = &vt_CCFileClass; /*0x52d28d*/
       v31 = 0; /*0x52d294*/
       Vector::Clear((int)v30); /*0x52d29b*/
       *(_DWORD *)v29.__pad_0 = &off_7E1668; /*0x52d2a7*/
       BufferIOFileClass::Dtor(&v29); /*0x52d2ae*/
-      *(_DWORD *)v26.__pad_0 = &CCFileClass::`vftable'; /*0x52d2ba*/
+      *(_DWORD *)v26.__pad_0 = &vt_CCFileClass; /*0x52d2ba*/
       v28 = 0; /*0x52d2c1*/
       Vector::Clear((int)v27); /*0x52d2c8*/
       *(_DWORD *)v26.__pad_0 = &off_7E1668; /*0x52d2d4*/
       BufferIOFileClass::Dtor(&v26); /*0x52d2db*/
-      dwInitParam = (LPARAM)&VectorClass<CCINIClass *>::`vftable'; /*0x52d2e4*/
+      dwInitParam = (LPARAM)&vt_VectorClass_CCINIClass; /*0x52d2e4*/
       if ( Src ) /*0x52d2ee*/
       {
         if ( v19 ) /*0x52d2f4*/
@@ -1623,22 +1623,22 @@ LABEL_36:
   }
   CCFileClass::Construct(&v32, aAimdIni); /*0x52d363*/
   CCINIClass::Load(&MEMORY[0x87F8E4].__pad_5568[8924], &v32, 1, 0); /*0x52d378*/
-  *(_DWORD *)v32.__pad_0 = &CCFileClass::`vftable'; /*0x52d384*/
+  *(_DWORD *)v32.__pad_0 = &vt_CCFileClass; /*0x52d384*/
   v33[3] = 0; /*0x52d38b*/
   Vector::Clear((int)v33); /*0x52d392*/
   *(_DWORD *)v32.__pad_0 = &off_7E1668; /*0x52d39e*/
   BufferIOFileClass::Dtor(&v32); /*0x52d3a5*/
-  *(_DWORD *)v29.__pad_0 = &CCFileClass::`vftable'; /*0x52d3b1*/
+  *(_DWORD *)v29.__pad_0 = &vt_CCFileClass; /*0x52d3b1*/
   v31 = 0; /*0x52d3b8*/
   Vector::Clear((int)v30); /*0x52d3bf*/
   *(_DWORD *)v29.__pad_0 = &off_7E1668; /*0x52d3cb*/
   BufferIOFileClass::Dtor(&v29); /*0x52d3d2*/
-  *(_DWORD *)v26.__pad_0 = &CCFileClass::`vftable'; /*0x52d3de*/
+  *(_DWORD *)v26.__pad_0 = &vt_CCFileClass; /*0x52d3de*/
   v28 = 0; /*0x52d3e5*/
   Vector::Clear((int)v27); /*0x52d3ec*/
   *(_DWORD *)v26.__pad_0 = &off_7E1668; /*0x52d3f8*/
   BufferIOFileClass::Dtor(&v26); /*0x52d3ff*/
-  dwInitParam = (LPARAM)&VectorClass<CCINIClass *>::`vftable'; /*0x52d408*/
+  dwInitParam = (LPARAM)&vt_VectorClass_CCINIClass; /*0x52d408*/
   if ( Src && v19 ) /*0x52d418*/
     __3_YAXPAX_Z(Src); /*0x52d41b*/
   return 1; /*0x52d028*/
@@ -1889,7 +1889,7 @@ char MenuSelect()
 //   int v42; // esi
 //   char result; // al
 //   int v44; // eax
-//   M... [39299 chars total]
+//   M... [39302 chars total]
 // end truncated pseudocode
 }
 } // namespace gamemd

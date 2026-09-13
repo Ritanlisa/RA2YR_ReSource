@@ -224,7 +224,7 @@ int *__thiscall Weapon::DestroyTerrain(int *this, int *a1, IUnknown *aP2, Infant
   v56 = v69 - v72; /*0x70c764*/
   v57 = v70 - v73; /*0x70c773*/
   ObjectVector::Construct(&v48, 0, 0); /*0x70c777*/
-  v48 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x70c77c*/
+  v48 = &vt_DynamicVectorClass_ObjectClass; /*0x70c77c*/
   v53 = 10; /*0x70c784*/
   v52 = 0; /*0x70c78c*/
   v47 = 0; /*0x70c790*/
@@ -390,7 +390,7 @@ LABEL_55:
           LayerClass::DestroyCliff((int *)&MEMORY[0x87F7E8], v41, (int)aP3); /*0x70cc39*/
       }
       v42 = v66; /*0x70cc45*/
-      v48 = &VectorClass<ObjectClass *>::`vftable'; /*0x70cc4b*/
+      v48 = &vt_VectorClass_ObjectClass; /*0x70cc4b*/
       *a1 = v65; /*0x70cc53*/
       v43 = v67; /*0x70cc55*/
       a1[1] = (int)v42; /*0x70cc59*/
@@ -414,7 +414,7 @@ LABEL_55:
     }
   }
   v36 = (CCINIClass *)v60; /*0x70cb37*/
-  v48 = &VectorClass<ObjectClass *>::`vftable'; /*0x70cb3d*/
+  v48 = &vt_VectorClass_ObjectClass; /*0x70cb3d*/
   *a1 = v59; /*0x70cb45*/
   v37 = (VectorClass *)v61; /*0x70cb47*/
   a1[1] = (int)v36; /*0x70cb4b*/

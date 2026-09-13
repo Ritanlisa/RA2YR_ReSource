@@ -284,7 +284,7 @@ VectorClass *__thiscall Dial8Class_48_::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4a8033*/
-  *this = &VectorClass<DiskLaserClass *>::`vftable'; /*0x4a8036*/
+  *this = &vt_VectorClass_DiskLaserClass; /*0x4a8036*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4a8040*/
   {
     __3_YAXPAX_Z(v3); /*0x4a8048*/
@@ -309,7 +309,7 @@ DynamicVector *__thiscall Dial8Class_48_::Constructor_VectorClass_DiskLaserClass
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4a8083*/
-  *this = &VectorClass<DiskLaserClass *>::`vftable'; /*0x4a8086*/
+  *this = &vt_VectorClass_DiskLaserClass; /*0x4a8086*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4a8090*/
   {
     __3_YAXPAX_Z(v3); /*0x4a8098*/

@@ -282,11 +282,11 @@ char __thiscall SessionClass::LoadMapSelection(char *this, char **a1)
   *(_DWORD *)&v49.__pad_0[4] = 0; /*0x5cef0f*/
   *(_DWORD *)&v49.__pad_0[8] = 0; /*0x5cef13*/
   GenericList::Constructor(&v49.__pad_0[12]); /*0x5cef17*/
-  *(_DWORD *)&v49.__pad_0[12] = &List<INIClass::INISection *>::`vftable'; /*0x5cef20*/
+  *(_DWORD *)&v49.__pad_0[12] = &vt_List_INIClass_INISection; /*0x5cef20*/
   memset(&v49.owningHouseIndex, 0, 13); /*0x5cef28*/
   v49.attachedBomb = 0; /*0x5cef39*/
   v49.ambientSoundController[0] = 0; /*0x5cef3d*/
-  *(_DWORD *)v49.__pad_0 = &INIClass::`vftable'; /*0x5cef41*/
+  *(_DWORD *)v49.__pad_0 = &vt_INIClass; /*0x5cef41*/
   unknown_libname_73(&v46); /*0x5cef49*/
   unknown_libname_73(&v44); /*0x5cef52*/
   SessionClass::Destruct(v2); /*0x5cef59*/
@@ -486,7 +486,7 @@ char __thiscall SessionClass::LoadMapSelection(char *this, char **a1)
     DeleteAndZero((void **)&v44); /*0x5cf59a*/
     DeleteAndZero((void **)&v46); /*0x5cf5a3*/
     HashTable::DestroyHashTableINIClass((void **)&v49); /*0x5cf5ac*/
-    v49.ambientSoundController[1] = (int)&CCFileClass::`vftable'; /*0x5cf5b8*/
+    v49.ambientSoundController[1] = (int)&vt_CCFileClass; /*0x5cf5b8*/
     v49.location[2] = 0; /*0x5cf5c0*/
     Vector::Clear((int)&v49.isInLogic); /*0x5cf5c7*/
     v49.ambientSoundController[1] = (int)&off_7E1668; /*0x5cf5d0*/
@@ -500,7 +500,7 @@ LABEL_17:
     DeleteAndZero((void **)&v44); /*0x5cf089*/
     DeleteAndZero((void **)&v46); /*0x5cf092*/
     HashTable::DestroyHashTableINIClass((void **)&v49); /*0x5cf09b*/
-    v49.ambientSoundController[1] = (int)&CCFileClass::`vftable'; /*0x5cf0a7*/
+    v49.ambientSoundController[1] = (int)&vt_CCFileClass; /*0x5cf0a7*/
     v49.location[2] = 0; /*0x5cf0af*/
     Vector::Clear((int)&v49.isInLogic); /*0x5cf0b6*/
     v49.ambientSoundController[1] = (int)&off_7E1668; /*0x5cf0bf*/
@@ -603,7 +603,7 @@ void __thiscall SessionClass::loadSettings(int this)
     }
   }
   v7 = *(CCINIClass **)(this + 88); /*0x5d00cf*/
-  *(_DWORD *)(this + 84) = &VectorClass<MapSelection *>::`vftable'; /*0x5d00d2*/
+  *(_DWORD *)(this + 84) = &vt_VectorClass_MapSelection; /*0x5d00d2*/
   if ( v7 && *(_BYTE *)(this + 97) ) /*0x5d00dd*/
   {
     __3_YAXPAX_Z(v7); /*0x5d00e3*/
@@ -612,7 +612,7 @@ void __thiscall SessionClass::loadSettings(int this)
   *(_BYTE *)(this + 97) = 0; /*0x5d00ee*/
   *(_DWORD *)(this + 92) = 0; /*0x5d00f1*/
   v8 = *(CCINIClass **)(this + 64); /*0x5d00f4*/
-  *(_DWORD *)(this + 60) = &VectorClass<MSTextEntry *>::`vftable'; /*0x5d00f7*/
+  *(_DWORD *)(this + 60) = &vt_VectorClass_MSTextEntry; /*0x5d00f7*/
   if ( v8 && *(_BYTE *)(this + 73) ) /*0x5d0102*/
   {
     __3_YAXPAX_Z(v8); /*0x5d0108*/
@@ -621,7 +621,7 @@ void __thiscall SessionClass::loadSettings(int this)
   *(_BYTE *)(this + 73) = 0; /*0x5d0113*/
   *(_DWORD *)(this + 68) = 0; /*0x5d0116*/
   v9 = *(CCINIClass **)(this + 40); /*0x5d0119*/
-  *(_DWORD *)(this + 36) = &VectorClass<Point2D>::`vftable'; /*0x5d011c*/
+  *(_DWORD *)(this + 36) = &vt_VectorClass_Point2D; /*0x5d011c*/
   if ( v9 && *(_BYTE *)(this + 49) ) /*0x5d0127*/
   {
     __3_YAXPAX_Z(v9); /*0x5d012d*/
@@ -1081,7 +1081,7 @@ char *__thiscall sub_6970A0(char *this)
   *((_DWORD *)this + 422) = 0; /*0x6971f3*/
   *(this + 1692) = 1; /*0x6971f9*/
   *(this + 1693) = 0; /*0x697200*/
-  *((_DWORD *)this + 420) = &DynamicVectorClass<MultiMission *>::`vftable'; /*0x697206*/
+  *((_DWORD *)this + 420) = &vt_DynamicVectorClass_MultiMission; /*0x697206*/
   *((_DWORD *)this + 425) = 10; /*0x697210*/
   *((_DWORD *)this + 424) = 0; /*0x697216*/
   Waypoint::InitInvalid(this + 2276); /*0x69721c*/
@@ -1089,7 +1089,7 @@ char *__thiscall sub_6970A0(char *this)
   *((_DWORD *)this + 574) = 0; /*0x69722d*/
   *(this + 2300) = 1; /*0x697233*/
   *(this + 2301) = 0; /*0x69723a*/
-  *((_DWORD *)this + 572) = &DynamicVectorClass<GlobalPacketType *>::`vftable'; /*0x697240*/
+  *((_DWORD *)this + 572) = &vt_DynamicVectorClass_GlobalPacketType; /*0x697240*/
   *((_DWORD *)this + 577) = 10; /*0x69724a*/
   *((_DWORD *)this + 576) = 0; /*0x697250*/
   SessionClass::saveSettings(this + 2600); /*0x697256*/
@@ -1101,21 +1101,21 @@ char *__thiscall sub_6970A0(char *this)
   this->unknown_vector_280C.Capacity = 0; /*0x697292*/
   *(this + 10264) = 1; /*0x697298*/
   *(this + 10265) = 0; /*0x69729f*/
-  this->unknown_vector_280C = &DynamicVectorClass<NodeNameType *>::`vftable'; /*0x6972a5*/
+  this->unknown_vector_280C = &vt_DynamicVectorClass_NodeNameType; /*0x6972a5*/
   this->unknown_vector_280C.CapacityIncrement = 10; /*0x6972ab*/
   this->unknown_vector_280C.Count = 0; /*0x6972b1*/
   this->unknown_vector_2824.Items = 0; /*0x6972b7*/
   this->unknown_vector_2824.Capacity = 0; /*0x6972bd*/
   *(this + 10288) = 1; /*0x6972c3*/
   *(this + 10289) = 0; /*0x6972ca*/
-  this->unknown_vector_2824 = &DynamicVectorClass<NodeNameType *>::`vftable'; /*0x6972d0*/
+  this->unknown_vector_2824 = &vt_DynamicVectorClass_NodeNameType; /*0x6972d0*/
   this->unknown_vector_2824.CapacityIncrement = 10; /*0x6972d6*/
   this->unknown_vector_2824.Count = 0; /*0x6972dc*/
   this->StartSpots.Items = 0; /*0x6972e2*/
   this->StartSpots.Capacity = 0; /*0x6972e8*/
   *(this + 10312) = 1; /*0x6972ee*/
   *(this + 10313) = 0; /*0x6972f5*/
-  this->StartSpots = &DynamicVectorClass<NodeNameType *>::`vftable'; /*0x6972fb*/
+  this->StartSpots = &vt_DynamicVectorClass_NodeNameType; /*0x6972fb*/
   this->StartSpots.CapacityIncrement = 10; /*0x697301*/
   this->StartSpots.Count = 0; /*0x697307*/
   *((_DWORD *)this + 2624) = 0; /*0x69730d*/
@@ -1129,14 +1129,14 @@ char *__thiscall sub_6970A0(char *this)
   *((_DWORD *)this + 2631) = 0; /*0x697342*/
   *(this + 10528) = 1; /*0x697348*/
   *(this + 10529) = 0; /*0x69734f*/
-  *((_DWORD *)this + 2629) = &DynamicVectorClass<char *>::`vftable'; /*0x697355*/
+  *((_DWORD *)this + 2629) = &vt_DynamicVectorClass_char; /*0x697355*/
   *((_DWORD *)this + 2634) = 10; /*0x69735f*/
   *((_DWORD *)this + 2633) = 0; /*0x697365*/
   *((_DWORD *)this + 2636) = 0; /*0x697371*/
   *((_DWORD *)this + 2637) = 0; /*0x697377*/
   *(this + 10552) = 1; /*0x69737d*/
   *(this + 10553) = 0; /*0x697384*/
-  *((_DWORD *)this + 2635) = &DynamicVectorClass<unsigned short const *>::`vftable'; /*0x69738a*/
+  *((_DWORD *)this + 2635) = &vt_DynamicVectorClass_unsigned_short_const; /*0x69738a*/
   *((_DWORD *)this + 2640) = 10; /*0x697394*/
   *((_DWORD *)this + 2639) = 0; /*0x69739a*/
   Waypoint::InitInvalid(this + 10604); /*0x6973a0*/
@@ -1540,12 +1540,12 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
   GenericList::Constructor(v61); /*0x69999a*/
   v3 = *(this + 420); /*0x69999f*/
   v4 = this + 420; /*0x6999a5*/
-  v61[0] = &List<INIClass::INISection *>::`vftable'; /*0x6999ad*/
+  v61[0] = &vt_List_INIClass_INISection; /*0x6999ad*/
   memset(&v61[7], 0, 12); /*0x6999b5*/
   v62 = 0; /*0x6999c1*/
   v63 = 0; /*0x6999c6*/
   v64 = 0; /*0x6999ca*/
-  v60[0] = (int)&INIClass::`vftable'; /*0x6999ce*/
+  v60[0] = (int)&vt_INIClass; /*0x6999ce*/
   (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v4); /*0x6999d6*/
   CCFileClass::Construct(v67, MEMORY[0x83F520]); /*0x6999e2*/
   if ( CCFileClass::Open(v67, 0) ) /*0x6999ec*/
@@ -1815,7 +1815,7 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
     while ( FindNextFileA(hFindFileb, &FindFileData) ); /*0x69a190*/
     FindClose(hFindFileb); /*0x69a1a3*/
   }
-  v67[0] = &CCFileClass::`vftable'; /*0x69a1b2*/
+  v67[0] = &vt_CCFileClass; /*0x69a1b2*/
   v69 = 0; /*0x69a1ba*/
   Vector::Clear((int)v68); /*0x69a1c1*/
   v67[0] = &off_7E1668; /*0x69a1ca*/
@@ -1862,11 +1862,11 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
   wchar_t *StringCSF; // eax
   char v13; // cl
   int v14; // eax
-  int v15; // edx
-  void *v16; // ecx
+  void (__thiscall **v15)(VectorClass *); // edx
+  char *v16; // ecx
   int v17; // eax
   void *v18; // eax
-  int v19; // edx
+  _DWORD *v19; // edx
   ObjectClass *i; // edi
   CampaignScore *v21; // ecx
   int v22; // eax
@@ -1876,12 +1876,12 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
   v9 = (VectorClass *)(this + 196); /*0x69a989*/
   MapFile::Constructor((_DWORD *)this + 98, 0, 0); /*0x69a997*/
   v10 = v8 + 210; /*0x69a99c*/
-  v9->field_14 = 10; /*0x69a9ad*/
-  v9->field_10 = 0; /*0x69a9b0*/
-  *(_DWORD *)v9->__pad_0 = &TypeList<enum DiskID>::`vftable'; /*0x69a9b7*/
+  v9[1].Items = (void *)10; /*0x69a9ad*/
+  v9[1].vtable0 = 0; /*0x69a9b0*/
+  v9->vtable0 = &vt_TypeList_enum_DiskID; /*0x69a9b7*/
   VectorClass::WstringConstructor((_DWORD *)v8 + 105, 0, 0); /*0x69a9bd*/
   v11 = Source; /*0x69a9c2*/
-  *((_DWORD *)v8 + 105) = &DynamicVectorClass<Wstring>::`vftable'; /*0x69a9c6*/
+  *((_DWORD *)v8 + 105) = &vt_DynamicVectorClass_Wstring; /*0x69a9c6*/
   *((_DWORD *)v8 + 110) = 10; /*0x69a9cf*/
   *((_DWORD *)v8 + 109) = 0; /*0x69a9d2*/
   if ( v11 ) /*0x69a9d9*/
@@ -1901,7 +1901,11 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
   }
   else
   {
-    StringCSF = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[38652], 0, &stru_830620.__pad_579C[37116], 2845); /*0x69aa4c*/
+    StringCSF = GetStringCSF( /*0x69aa4c*/
+                  (wchar_t *)&stru_830620.__pad_579C[38652],
+                  0,
+                  (CampaignScore *)&stru_830620.__pad_579C[37116],
+                  2845);
     wcscpy(v8, StringCSF); /*0x69aa53*/
   }
   if ( aP3 ) /*0x69aa61*/
@@ -1917,23 +1921,20 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
   v13 = (char)aP4; /*0x69aaae*/
   v14 = a8; /*0x69aab2*/
   *((_DWORD *)v8 + 96) = aP6; /*0x69aab6*/
-  v15 = *(_DWORD *)v9->__pad_0; /*0x69aabc*/
+  v15 = (void (__thiscall **)(VectorClass *))v9->vtable0; /*0x69aabc*/
   *((_BYTE *)v8 + 380) = v13; /*0x69aabe*/
   *((_DWORD *)v8 + 97) = v14; /*0x69aac6*/
-  (*(void (__thiscall **)(VectorClass *))(v15 + 12))(v9); /*0x69aacc*/
-  v16 = v9->field_8; /*0x69aacf*/
-  if ( (int)v9->field_10 < (int)v16 /*0x69aaf4*/
-    || (BYTE1(v9->field_C) || !v16)
-    && (v17 = v9->field_14, v17 > 0)
-    && (*(unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))(*(_DWORD *)v9->__pad_0 + 8))(
-         v9,
-         (int)v16 + v17,
-         0) )
+  v15[3](v9); /*0x69aacc*/
+  v16 = (char *)v9->Capacity; /*0x69aacf*/
+  if ( (int)v9[1].vtable0 < (int)v16 /*0x69aaf4*/
+    || (v9->IsAllocated || !v16)
+    && (v17 = (int)v9[1].Items, v17 > 0)
+    && (*((unsigned __int8 (__thiscall **)(VectorClass *, char *, _DWORD))v9->vtable0 + 2))(v9, &v16[v17], 0) )
   {
-    v18 = v9->field_10; /*0x69aafb*/
-    v19 = *(_DWORD *)&v9->field_1[3]; /*0x69aafe*/
-    v9->field_10 = (char *)v18 + 1; /*0x69ab04*/
-    *(_DWORD *)(v19 + 4 * (_DWORD)v18) = -2; /*0x69ab07*/
+    v18 = v9[1].vtable0; /*0x69aafb*/
+    v19 = v9->Items; /*0x69aafe*/
+    v9[1].vtable0 = (char *)v18 + 1; /*0x69ab04*/
+    v19[(_DWORD)v18] = -2; /*0x69ab07*/
   }
   if ( a5 ) /*0x69ab14*/
   {
@@ -1955,10 +1956,10 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
       {
         String::Assign((char **)&aP2, &stru_830620.__pad_3BC[56]); /*0x69ab67*/
         String::TrimLeft((const char **)&aP4, (ObjectClass *)&aP2); /*0x69ab75*/
-        DeleteAndZero((int)&aP2); /*0x69ab7e*/
+        DeleteAndZero((void **)&aP2); /*0x69ab7e*/
         String::Assign((char **)&aP3, &stru_830620.__pad_3BC[56]); /*0x69ab8c*/
         String::TrimRight((const char **)&aP4, (ObjectClass *)&aP3); /*0x69ab9a*/
-        DeleteAndZero((int)&aP3); /*0x69aba3*/
+        DeleteAndZero((void **)&aP3); /*0x69aba3*/
         v21 = (CampaignScore *)*((_DWORD *)v10 + 2); /*0x69aba8*/
         if ( *((_DWORD *)v10 + 4) >= (int)v21 ) /*0x69abb0*/
         {
@@ -1978,9 +1979,9 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
         *((_DWORD *)v10 + 4) = &v23->__pad_0[1]; /*0x69abe0*/
         String::Reassign((char **)(*((_DWORD *)v10 + 1) + 4 * (_DWORD)v23), (AbstractClass *)&aP4); /*0x69abe9*/
       }
-      DeleteAndZero((int)&aP4); /*0x69ac11*/
+      DeleteAndZero((void **)&aP4); /*0x69ac11*/
     }
-    DeleteAndZero((int)&Source); /*0x69ac1a*/
+    DeleteAndZero((void **)&Source); /*0x69ac1a*/
   }
   return v8; /*0x69ac21*/
 }
@@ -2192,13 +2193,13 @@ void __thiscall sub_69BD60(int this)
   v1 = 0; /*0x69bd65*/
   v55 = 1; /*0x69bd6f*/
   AbstractClass::updateAnimationState(0, 0); /*0x69bd77*/
-  v62 = &DynamicVectorClass<NodeNameType *>::`vftable'; /*0x69bd81*/
+  v62 = &vt_DynamicVectorClass_NodeNameType; /*0x69bd81*/
   v67 = 10; /*0x69bd89*/
   v66 = 0; /*0x69bd91*/
   Debug::Log(); /*0x69bd95*/
   if ( *(int *)(this + 10316) < 2 ) /*0x69bda6*/
   {
-    v62 = &VectorClass<NodeNameType *>::`vftable'; /*0x69bdac*/
+    v62 = &vt_VectorClass_NodeNameType; /*0x69bdac*/
     MPCooperative::updateScoreBoard(&v62); /*0x69bdb4*/
     return; /*0x69bdbe*/
   }
@@ -2472,7 +2473,7 @@ LABEL_58:
     (*(void (__thiscall **)(int, int))(*(_DWORD *)MEMORY[0x887628] + 92))(MEMORY[0x887628], v47); /*0x69c457*/
     (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887628] + 28))(MEMORY[0x887628]); /*0x69c462*/
   }
-  v62 = &VectorClass<NodeNameType *>::`vftable'; /*0x69c469*/
+  v62 = &vt_VectorClass_NodeNameType; /*0x69c469*/
   if ( Block ) /*0x69c473*/
   {
     if ( v65 ) /*0x69c47b*/
@@ -2533,7 +2534,7 @@ TypeList *__thiscall SessionClass::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x69c6c3*/
-  *this = &VectorClass<enum DiskID>::`vftable'; /*0x69c6c6*/
+  *this = &vt_VectorClass_enum_DiskID; /*0x69c6c6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x69c6d0*/
   {
     __3_YAXPAX_Z(v3); /*0x69c6d8*/
@@ -2764,7 +2765,7 @@ VectorClass *__thiscall SessionClass::validateGame(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x69d463*/
-  *this = &VectorClass<enum DiskID>::`vftable'; /*0x69d466*/
+  *this = &vt_VectorClass_enum_DiskID; /*0x69d466*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x69d470*/
   {
     __3_YAXPAX_Z(v3); /*0x69d478*/

@@ -31,7 +31,7 @@ int __thiscall Coord::ToGridIndex(char *this, VectorClass *aP1, VectorClass *aP2
   int v22; // ecx
   int v23; // edx
 
-  (*(void (__thiscall **)(VectorClass *, VectorClass *))(*(_DWORD *)aP1->__pad_0 + 760))(aP1, aP3); /*0x4138d4*/
+  (*(void (__thiscall **)(VectorClass *, VectorClass *))(*(_DWORD *)aP1->vtable0 + 760))(aP1, aP3); /*0x4138d4*/
   if ( (__int16)aP2 >= 0 ) /*0x4138e1*/
     v4 = (__int16)aP2; /*0x4138e7*/
   else

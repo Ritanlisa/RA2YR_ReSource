@@ -160,7 +160,7 @@ std::locale::facet *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::Constructor_R
         std::locale::facet *this,
         char a2)
 {
-  *(_DWORD *)this = &RLEBlitter::`vftable'; /*0x49a9a9*/
+  *(_DWORD *)this = &vt_RLEBlitter; /*0x49a9a9*/
   if ( (a2 & 1) != 0 ) /*0x49a9af*/
     __3_YAXPAX_Z(this); /*0x49a9b2*/
   return this; /*0x49a9bc*/
@@ -175,7 +175,7 @@ std::locale::facet *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::Constructor_R
         std::locale::facet *this,
         char a2)
 {
-  *(_DWORD *)this = &RLEBlitter::`vftable'; /*0x49a9c9*/
+  *(_DWORD *)this = &vt_RLEBlitter; /*0x49a9c9*/
   if ( (a2 & 1) != 0 ) /*0x49a9cf*/
     __3_YAXPAX_Z(this); /*0x49a9d2*/
   return this; /*0x49a9dc*/
@@ -190,7 +190,7 @@ std::locale::facet *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::Constructor_R
         std::locale::facet *this,
         char a2)
 {
-  *(_DWORD *)this = &RLEBlitter::`vftable'; /*0x49a9e9*/
+  *(_DWORD *)this = &vt_RLEBlitter; /*0x49a9e9*/
   if ( (a2 & 1) != 0 ) /*0x49a9ef*/
     __3_YAXPAX_Z(this); /*0x49a9f2*/
   return this; /*0x49a9fc*/
@@ -208,10 +208,10 @@ RLEBlitTransZRemapXlatAlpha_ushort *__thiscall RLEBlitTransZRemapXlatAlpha_ushor
   void *v3; // eax
 
   v3 = (void *)*(this + 3); /*0x49aa48*/
-  *this = &RLEBlitTransZRemapXlatAlpha<unsigned short>::`vftable'; /*0x49aa4b*/
+  *this = &vt_RLEBlitTransZRemapXlatAlpha_unsigned_short; /*0x49aa4b*/
   FractalNoise::Release(v3); /*0x49aa52*/
   *(this + 3) = 0; /*0x49aa5b*/
-  *this = &RLEBlitter::`vftable'; /*0x49aa64*/
+  *this = &vt_RLEBlitter; /*0x49aa64*/
   if ( (a2 & 1) != 0 ) /*0x49aa6a*/
     __3_YAXPAX_Z(this); /*0x49aa6d*/
   return (RLEBlitTransZRemapXlatAlpha_ushort *)this; /*0x49aa77*/

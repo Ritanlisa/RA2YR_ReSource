@@ -16,7 +16,7 @@ DynamicVector *__thiscall MapFile::QueryInterface(_DWORD *this, char a2)
   int v8; // ebp
 
   v3 = *(this + 1); /*0x69d523*/
-  *this = &VectorClass<Wstring>::`vftable'; /*0x69d526*/
+  *this = &vt_VectorClass_Wstring; /*0x69d526*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x69d530*/
   {
     v4 = *(_DWORD *)(v3 - 4); /*0x69d53b*/
@@ -54,7 +54,7 @@ _DWORD *__thiscall sub_69D770(_DWORD *this, int a2, int a3)
   *(this + 2) = a2; /*0x69d77e*/
   *((_BYTE *)this + 12) = 1; /*0x69d781*/
   *((_BYTE *)this + 13) = 0; /*0x69d785*/
-  *this = &VectorClass<enum DiskID>::`vftable'; /*0x69d788*/
+  *this = &vt_VectorClass_enum_DiskID; /*0x69d788*/
   if ( a2 ) /*0x69d78e*/
   {
     if ( a3 ) /*0x69d796*/

@@ -201,7 +201,7 @@ _DWORD *__fastcall TrajectoryHelper::GetObstacle(
   if ( *(_BYTE *)(a7 + 664) ) /*0x4cc405*/
   {
     v13 = v10[17]; /*0x4cc413*/
-    v14 = v13 != -1 && *(_BYTE *)(*(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * v13] + 680); /*0x4cc432*/
+    v14 = v13 != -1 && *(_BYTE *)(*(_DWORD *)&MEMORY[0xA83D84]->vtable0[4 * v13] + 680); /*0x4cc432*/
     if ( v10 != (_DWORD *)v8 /*0x4cc47c*/
       && v14
       && a1[283] <= v8[283]
@@ -257,7 +257,7 @@ LABEL_22:
           if ( *(_BYTE *)(a7 + 664) ) /*0x4cc5d2*/
           {
             v37 = v33[17]; /*0x4cc5e0*/
-            v38 = v37 != -1 && *(_BYTE *)(*(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * v37] + 680); /*0x4cc5ff*/
+            v38 = v37 != -1 && *(_BYTE *)(*(_DWORD *)&MEMORY[0xA83D84]->vtable0[4 * v37] + 680); /*0x4cc5ff*/
             if ( v33 != (_DWORD *)a2 && v38 && v44[283] <= a2[283] ) /*0x4cc61f*/
             {
               if ( !LOBYTE(MEMORY[0x8871E0][1].?[3]) ) /*0x4cc627*/

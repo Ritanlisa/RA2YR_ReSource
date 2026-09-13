@@ -20,7 +20,7 @@ int __stdcall ScriptTypeClass::LoadTypeData(AbstractTypeClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &ScriptTypeClass::`vftable'; /*0x691db4*/
       *(_DWORD *)&aP0->__pad_0[4] = &ScriptTypeClass::`vftable'; /*0x691dba*/
       *(_DWORD *)&aP0->__pad_0[8] = &ScriptTypeClass::`vftable'; /*0x691dc1*/
-      *(_DWORD *)&aP0->__pad_0[12] = &ScriptTypeClass::`vftable'; /*0x691dc8*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_ScriptTypeClass; /*0x691dc8*/
     }
     return 0; /*0x691dcf*/
   }
@@ -59,7 +59,7 @@ ScriptTypeClass *__thiscall ScriptTypeClass::ddtor(void **this, char a2)
   *this = &ScriptTypeClass::`vftable'; /*0x691fa6*/
   *(this + 1) = &ScriptTypeClass::`vftable'; /*0x691fac*/
   *(this + 2) = &ScriptTypeClass::`vftable'; /*0x691fb3*/
-  *(this + 3) = &ScriptTypeClass::`vftable'; /*0x691fba*/
+  *(this + 3) = &vt_ScriptTypeClass; /*0x691fba*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x691fc1*/
   v5 = this; /*0x691fd6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_8B41C8 + 16))(&dword_8B41C8, &v5); /*0x691fda*/

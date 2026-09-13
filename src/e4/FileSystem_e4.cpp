@@ -98,7 +98,7 @@ int FileSystem::ProcessNextFileExtension()
       if ( v2 ) /*0x626ddb*/
       {
         StringVector::Construct(v2, 0, 0); /*0x626de1*/
-        *v3 = &DynamicVectorClass<char *>::`vftable'; /*0x626de6*/
+        *v3 = &vt_DynamicVectorClass_char; /*0x626de6*/
         v3[5] = 10; /*0x626dec*/
         v3[4] = 0; /*0x626df3*/
       }

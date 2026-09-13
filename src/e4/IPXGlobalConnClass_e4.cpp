@@ -339,7 +339,7 @@ IPXGlobalConnClass *__thiscall IPXGlobalConnClass::QueryInterface(_DWORD *this, 
   void *v3; // eax
 
   v3 = (void *)*(this + 52); /*0x540673*/
-  *this = &IPXGlobalConnClass::`vftable'; /*0x540679*/
+  *this = &vt_IPXGlobalConnClass; /*0x540679*/
   if ( v3 ) /*0x540681*/
   {
     __3_YAXPAX_Z(v3); /*0x540684*/
@@ -350,7 +350,7 @@ IPXGlobalConnClass *__thiscall IPXGlobalConnClass::QueryInterface(_DWORD *this, 
     __3_YAXPAX_Z((void *)*(this + 51)); /*0x5406a1*/
     *(this + 51) = 0; /*0x5406a9*/
   }
-  *this = &IPXConnClass::`vftable'; /*0x5406b5*/
+  *this = &vt_IPXConnClass; /*0x5406b5*/
   ConnectionClass::dtor(this); /*0x5406bb*/
   if ( (a2 & 1) != 0 ) /*0x5406c5*/
     __3_YAXPAX_Z(this); /*0x5406c8*/

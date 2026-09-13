@@ -55,7 +55,7 @@ bool MixFile::LoadAll()
 //   char v41; // bl
 //   _DWORD *eax97; // eax
 //   _DWORD *v43; // eax
-//   char v44; /... [24838 chars total]
+//   char v44; /... [24750 chars total]
 // end truncated pseudocode
 }
 } // namespace gamemd
@@ -140,7 +140,7 @@ char __thiscall MixFile_LoadSide(int this)
   Debug::Log(); /*0x5350f0*/
   v6 = CCFileClass::Construct(v19, Buffer); /*0x535101*/
   v7 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v6 + 20))(v6, 0); /*0x535115*/
-  v19[0] = &CCFileClass::`vftable'; /*0x535117*/
+  v19[0] = &vt_CCFileClass; /*0x535117*/
   v21 = 0; /*0x53511f*/
   Vector::Clear((int)v20); /*0x535126*/
   v19[0] = &off_7E1668; /*0x535134*/
@@ -158,7 +158,7 @@ char __thiscall MixFile_LoadSide(int this)
   Debug::Log(); /*0x535193*/
   v9 = CCFileClass::Construct(v19, Buffer); /*0x5351a4*/
   v10 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v9 + 20))(v9, 0); /*0x5351b8*/
-  v19[0] = &CCFileClass::`vftable'; /*0x5351ba*/
+  v19[0] = &vt_CCFileClass; /*0x5351ba*/
   v21 = 0; /*0x5351c2*/
   Vector::Clear((int)v20); /*0x5351c9*/
   v19[0] = &off_7E1668; /*0x5351d2*/
@@ -186,7 +186,7 @@ char __thiscall MixFile_LoadSide(int this)
     Debug::Log(); /*0x53526a*/
     v13 = CCFileClass::Construct(v19, Buffer); /*0x53527b*/
     v14 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 20))(v13, 0); /*0x535294*/
-    v19[0] = &CCFileClass::`vftable'; /*0x535296*/
+    v19[0] = &vt_CCFileClass; /*0x535296*/
     v21 = 0; /*0x53529a*/
     Vector::Clear((int)v20); /*0x5352a1*/
     v19[0] = &off_7E1668; /*0x5352aa*/
@@ -207,7 +207,7 @@ char __thiscall MixFile_LoadSide(int this)
       v16 = MEMORY[0xA8B238][0] && MEMORY[0xA8B238][0] != 5; /*0x53532f*/
       SidebarClass::ReadButtonList(&MEMORY[0x887208], v16); /*0x53533d*/
       SidebarClass::LoadButtonSHPs(&MEMORY[0x87F7E8]); /*0x535347*/
-      v22[0] = &CCFileClass::`vftable'; /*0x535353*/
+      v22[0] = &vt_CCFileClass; /*0x535353*/
       v24 = 0; /*0x53535a*/
       Vector::Clear((int)v23); /*0x535361*/
       v22[0] = &off_7E1668; /*0x53536d*/
@@ -217,7 +217,7 @@ char __thiscall MixFile_LoadSide(int this)
     else
     {
       Debug::Log(); /*0x53538b*/
-      v22[0] = &CCFileClass::`vftable'; /*0x53539a*/
+      v22[0] = &vt_CCFileClass; /*0x53539a*/
       v24 = 0; /*0x5353a1*/
       Vector::Clear((int)v23); /*0x5353a8*/
       v22[0] = &off_7E1668; /*0x5353b4*/
@@ -317,10 +317,10 @@ _DWORD *__thiscall MIXFile::Load(_DWORD *this, ObjectClass *aP1)
     *(_DWORD *)(v13 + 8) = 20; /*0x627733*/
     *(_BYTE *)(v13 + 12) = 1; /*0x62773a*/
     *(_BYTE *)(v13 + 13) = 0; /*0x62773e*/
-    *(_DWORD *)v13 = &VectorClass<ColorScheme *>::`vftable'; /*0x627742*/
+    *(_DWORD *)v13 = &vt_VectorClass_ColorScheme; /*0x627742*/
     *(_DWORD *)(v13 + 4) = __2_YAPAXI_Z(0x50u); /*0x627750*/
     *((_BYTE *)v14 + 13) = 1; /*0x627753*/
-    *v14 = &DynamicVectorClass<ColorScheme *>::`vftable'; /*0x627757*/
+    *v14 = &vt_DynamicVectorClass_ColorScheme; /*0x627757*/
     v14[5] = 10; /*0x62775d*/
     v14[4] = 0; /*0x627764*/
   }

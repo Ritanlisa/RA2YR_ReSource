@@ -468,7 +468,7 @@ VectorClass *__thiscall MSFont_18_::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5d56e3*/
-  *this = &VectorClass<HWND__ *>::`vftable'; /*0x5d56e6*/
+  *this = &vt_VectorClass_HWND; /*0x5d56e6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x5d56f0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d56f8*/
@@ -493,7 +493,7 @@ DynamicVector *__thiscall MSFont_18_::Constructor_VectorClass_HWND_____(_DWORD *
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5d5733*/
-  *this = &VectorClass<HWND__ *>::`vftable'; /*0x5d5736*/
+  *this = &vt_VectorClass_HWND; /*0x5d5736*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x5d5740*/
   {
     __3_YAXPAX_Z(v3); /*0x5d5748*/
@@ -518,7 +518,7 @@ DynamicVector *__thiscall MSFont_18_::Constructor_VectorClass_AcceleratorTracker
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5d57d3*/
-  *this = &VectorClass<AcceleratorTracker>::`vftable'; /*0x5d57d6*/
+  *this = &vt_VectorClass_AcceleratorTracker; /*0x5d57d6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x5d57e0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d57e8*/

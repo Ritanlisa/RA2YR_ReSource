@@ -39,7 +39,7 @@ int WOL_ResetSystem()
 
   v0 = LoadAccountInfoWOL(v24); /*0x78011b*/
   ComPtr::Set(&stru_B75E48, *(_DWORD *)(v0 + 4)); /*0x780129*/
-  v24[0] = &rc_ptr<PlayerProfile>::`vftable'; /*0x780132*/
+  v24[0] = &vt_rc_ptr_PlayerProfile; /*0x780132*/
   ComPtr::Release(v24); /*0x78013a*/
   v1 = 0; /*0x780146*/
   g_WOL_AuthPool = 0; /*0x78014a*/
@@ -3000,7 +3000,7 @@ int WOL_LoginFlow()
         if ( v6 == -1 ) /*0x78724d*/
 LABEL_29:
           v6 = dword_B76468; /*0x78724f*/
-        v38 = (const char *)&rc_ptr<PlayerProfile>::`vftable'; /*0x787255*/
+        v38 = (const char *)&vt_rc_ptr_PlayerProfile; /*0x787255*/
       }
       else
       {
@@ -3037,7 +3037,7 @@ LABEL_40:
             v6 = dword_B76468; /*0x787283*/
           }
         }
-        v38 = (const char *)&rc_ptr<PlayerProfile>::`vftable'; /*0x7872f4*/
+        v38 = (const char *)&vt_rc_ptr_PlayerProfile; /*0x7872f4*/
       }
       ComPtr::Release(&v38); /*0x7872fc*/
       if ( v6 != -1 ) /*0x787304*/
@@ -3124,12 +3124,12 @@ LABEL_98:
   v37 = 0; /*0x7874ca*/
   ReadRegistryOptionsWOL(&v36); /*0x7874cf*/
   ComPtr::Constructor(&v38); /*0x7874d8*/
-  v38 = (const char *)&rc_ptr<PlayerProfile>::`vftable'; /*0x7874e6*/
+  v38 = (const char *)&vt_rc_ptr_PlayerProfile; /*0x7874e6*/
   if ( Flag::IsNot2(&v36) ) /*0x7874ea*/
   {
     v17 = LoadPlayerProfile(v34, (const char **)&g_WebBrowser); /*0x7874fc*/
     ComPtr::Set(&v38, v17[1]); /*0x787509*/
-    v34[0] = &rc_ptr<PlayerProfile>::`vftable'; /*0x787512*/
+    v34[0] = &vt_rc_ptr_PlayerProfile; /*0x787512*/
     ComPtr::Release(v34); /*0x787516*/
   }
   else
@@ -3185,7 +3185,7 @@ LABEL_78:
       if ( v24 >= 1 ) /*0x7875f0*/
         goto LABEL_87; /*0x7875f0*/
 LABEL_96:
-      v38 = (const char *)&rc_ptr<PlayerProfile>::`vftable'; /*0x7876f1*/
+      v38 = (const char *)&vt_rc_ptr_PlayerProfile; /*0x7876f1*/
       ComPtr::Release(&v38); /*0x7876fd*/
       goto LABEL_97; /*0x7876fd*/
     }
@@ -3221,7 +3221,7 @@ LABEL_87:
     v34[0] = &off_7F7624; /*0x7876bd*/
     OwnerDrawControl::InitVtable(v34); /*0x7876c1*/
   }
-  v38 = (const char *)&rc_ptr<PlayerProfile>::`vftable'; /*0x7876ca*/
+  v38 = (const char *)&vt_rc_ptr_PlayerProfile; /*0x7876ca*/
   ComPtr::Release(&v38); /*0x7876d2*/
   v42[0] = &off_7F7624; /*0x7876db*/
   OwnerDrawControl::InitVtable(v42); /*0x7876df*/
@@ -3398,7 +3398,7 @@ LABEL_25:
         {
           v13 = String::GetOrEmpty((char **)&MEMORY[0xB73AE0]); /*0x787a4a*/
           v62 = (int)MEMORY[0x83F328]; /*0x787a51*/
-          v61 = strcpy(v12->__pad_0, v13); /*0x787a66*/
+          v61 = strcpy(v12->vtable0, v13); /*0x787a66*/
           v15 = strtok(v61, (const char *)v62); /*0x787a74*/
           while ( v15 ) /*0x787a7b*/
           {
@@ -3616,7 +3616,7 @@ LABEL_88:
         while ( v49 ) /*0x78804a*/
         {
           v50 = v49; /*0x78804c*/
-          v49 = (SessionClass *)v49->SessionClass_field_08; /*0x78804e*/
+          v49 = (SessionClass *)v49->unknown_08; /*0x78804e*/
           DeleteAndZero((void **)v50); /*0x788057*/
           __3_YAXPAX_Z(v50); /*0x78805d*/
         }
@@ -3733,12 +3733,12 @@ int __fastcall WOL_FindLobbyID(char a1)
     GenericNode::Constructor(v19); /*0x78822c*/
     GenericNode::Constructor(v20); /*0x788235*/
     LinkedList::Prepend(v19, (int)v20); /*0x78824b*/
-    v18[3] = &List<INIClass::INISection *>::`vftable'; /*0x788257*/
+    v18[3] = &vt_List_INIClass_INISection; /*0x788257*/
     memset(&v20[3], 0, 12); /*0x788264*/
     v21 = 0; /*0x788270*/
     v22 = 0; /*0x788275*/
     v23 = 0; /*0x788279*/
-    v18[0] = &INIClass::`vftable'; /*0x78827d*/
+    v18[0] = &vt_INIClass; /*0x78827d*/
     CCFileClass::Construct(v28, aWdtmapmdIni); /*0x788285*/
     FileStraw::Open(v18, (int)v28, 0); /*0x788297*/
     sprintf(Buffer, MEMORY[0x84B62C], *(_DWORD *)MEMORY[0xA8B240]); /*0x7882ad*/
@@ -3770,7 +3770,7 @@ int __fastcall WOL_FindLobbyID(char a1)
     dword_B75E50 = (int)_wcsdup(String2); /*0x788364*/
     if ( v4 ) /*0x788369*/
       (*(void (__thiscall **)(_DWORD *, int))*v4)(v4, 1); /*0x788372*/
-    v28[0] = &CCFileClass::`vftable'; /*0x78837b*/
+    v28[0] = &vt_CCFileClass; /*0x78837b*/
     v30 = 0; /*0x788386*/
     Vector::Clear((int)v29); /*0x78838d*/
     v28[0] = &off_7E1668; /*0x788399*/
@@ -4599,12 +4599,12 @@ char __fastcall PopulateWOLUserList(HWND hWnd, char a2)
     v29 = 0; /*0x789712*/
     ReadRegistryOptionsWOL(&v28); /*0x789717*/
     ComPtr::Constructor(&v26); /*0x789720*/
-    v26 = &rc_ptr<PlayerProfile>::`vftable'; /*0x78972e*/
+    v26 = &vt_rc_ptr_PlayerProfile; /*0x78972e*/
     if ( Flag::IsNot2(&v28) ) /*0x789732*/
     {
       PlayerProfile = LoadPlayerProfile(v25, (const char **)&g_WebBrowser); /*0x789744*/
       ComPtr::Set(&v26, PlayerProfile[1]); /*0x789751*/
-      v25[0] = &rc_ptr<PlayerProfile>::`vftable'; /*0x78975a*/
+      v25[0] = &vt_rc_ptr_PlayerProfile; /*0x78975a*/
       ComPtr::Release(v25); /*0x78975e*/
     }
     else
@@ -4681,7 +4681,7 @@ LABEL_30:
       SendMessageA(hWnd, 0x186u, v14, 0); /*0x78992d*/
       SendMessageA(hWnd, 0x197u, v14, 0); /*0x789938*/
     }
-    v26 = &rc_ptr<PlayerProfile>::`vftable'; /*0x78993e*/
+    v26 = &vt_rc_ptr_PlayerProfile; /*0x78993e*/
     ComPtr::Release(&v26); /*0x789946*/
     DeleteAndZero(&v21); /*0x78994f*/
     return 1; /*0x789954*/
@@ -4751,13 +4751,13 @@ char __usercall ValidateJoinWOL@<al>(ObjectClass *a1@<edx>, BlowStraw *a2@<ecx>,
       SimpleDialogControl::Constructor(&v18); /*0x789a7a*/
       v18.vfptr = &off_7F7624; /*0x789a88*/
       unknown_libname_73(&v19); /*0x789a8c*/
-      v18.vfptr = &WonlineStringDialogControl::`vftable'; /*0x789aa5*/
+      v18.vfptr = &vt_WonlineStringDialogControl; /*0x789aa5*/
       if ( RunDialog( /*0x789ab1*/
              0xE1u,
              (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))WOLGameClass::ParseChatMessage,
              (LPARAM)&v18) == 2 )
       {
-        v18.vfptr = &WonlineStringDialogControl::`vftable'; /*0x789ab7*/
+        v18.vfptr = &vt_WonlineStringDialogControl; /*0x789ab7*/
         DeleteAndZero((int)&v19); /*0x789abb*/
         v18.vfptr = &off_7F7624; /*0x789ac4*/
         OwnerDrawControl::InitVtable((DialogControl_OwnerDraw *)&v18); /*0x789ac8*/
@@ -4766,7 +4766,7 @@ char __usercall ValidateJoinWOL@<al>(ObjectClass *a1@<edx>, BlowStraw *a2@<ecx>,
       }
       String::Reassign((char **)&v16, (AbstractClass *)&v19); /*0x789ae8*/
       String::Replace((char **)&v16, &stru_830620.__pad_3BC[56], asc_818D7C); /*0x789afb*/
-      v18.vfptr = &WonlineStringDialogControl::`vftable'; /*0x789b04*/
+      v18.vfptr = &vt_WonlineStringDialogControl; /*0x789b04*/
       DeleteAndZero((int)&v19); /*0x789b08*/
       v18.vfptr = &off_7F7624; /*0x789b11*/
       OwnerDrawControl::InitVtable((DialogControl_OwnerDraw *)&v18); /*0x789b15*/
@@ -4852,7 +4852,7 @@ char __usercall CreateGameWOL@<al>(int a1@<edi>, int a2@<esi>)
   *(_WORD *)&aP0_16.__pad_0[4] = 0; /*0x789bb4*/
   aP0_16.__pad_0[6] = HIBYTE(v43); /*0x789bbe*/
   aP0_16.__pad_0[7] = v2; /*0x789bc2*/
-  aP0_4.vfptr = &CreateGameDialogControl::`vftable'; /*0x789bc6*/
+  aP0_4.vfptr = &vt_CreateGameDialogControl; /*0x789bc6*/
   byte_B77DEC = 0; /*0x789bce*/
   if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8080] == 3 /*0x789bde*/
     || *(_DWORD *)&HouseClass_Player.__pad_5568[8080] == 1
@@ -4865,7 +4865,7 @@ char __usercall CreateGameWOL@<al>(int a1@<edi>, int a2@<esi>)
     Screen::Capture(1, 0, v2, 1); /*0x789bf0*/
     if ( RunDialog(0xC3u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))WOLLogin::DlgProc, (LPARAM)&aP0_4) == 2 ) /*0x789c0c*/
     {
-      aP0_4.vfptr = &WonlineStringDialogControl::`vftable'; /*0x789c12*/
+      aP0_4.vfptr = &vt_WonlineStringDialogControl; /*0x789c12*/
       DeleteAndZero((int)&aP0_16); /*0x789c1a*/
       ConnectAndLoginWOL_Connect((SimpleWonlineDialogControl *)&aP0_4); /*0x789c23*/
       DeleteAndZero((int)&v42); /*0x789c2c*/
@@ -4971,12 +4971,12 @@ LABEL_22:
   LOBYTE(aP0_56) = 0; /*0x789f2c*/
   ReadRegistryOptionsWOL(&aP0_52); /*0x789f31*/
   ComPtr::Constructor((rc_ptr_base *)&aP0_4); /*0x789f3a*/
-  aP0_4.vfptr = &rc_ptr<PlayerProfile>::`vftable'; /*0x789f48*/
+  aP0_4.vfptr = &vt_rc_ptr_PlayerProfile; /*0x789f48*/
   if ( Flag::IsNot2(&aP0_52) ) /*0x789f4c*/
   {
     PlayerProfile = LoadPlayerProfile(&aP0_16.abstractFlags, (const char **)&g_WebBrowser); /*0x789f5e*/
     ComPtr::Set((rc_ptr_base *)&aP0_4, PlayerProfile[1]); /*0x789f6b*/
-    aP0_16.abstractFlags = (int)&rc_ptr<PlayerProfile>::`vftable'; /*0x789f74*/
+    aP0_16.abstractFlags = (int)&vt_rc_ptr_PlayerProfile; /*0x789f74*/
     ComPtr::Release((rc_ptr_base *)&aP0_16.abstractFlags); /*0x789f78*/
   }
   else
@@ -5059,10 +5059,10 @@ LABEL_22:
 LABEL_50:
     SetFocus(DlgItem); /*0x78a136*/
 LABEL_72:
-    v45.vfptr = &rc_ptr<PlayerProfile>::`vftable'; /*0x78a29d*/
+    v45.vfptr = &vt_rc_ptr_PlayerProfile; /*0x78a29d*/
     ComPtr::Release(&v45); /*0x78a2a5*/
     DeleteAndZero::Alt((void **)&v44); /*0x78a2ae*/
-    aP0_4.vfptr = &WonlineStringDialogControl::`vftable'; /*0x78a2b7*/
+    aP0_4.vfptr = &vt_WonlineStringDialogControl; /*0x78a2b7*/
     DeleteAndZero((int)&aP0_16); /*0x78a2bf*/
     aP0_4.vfptr = &off_7F7624; /*0x78a2c8*/
     OwnerDrawControl::InitVtable(&aP0_4); /*0x78a2d0*/
@@ -5151,10 +5151,10 @@ LABEL_71:
       ShowWindow(v40, 0); /*0x78a40b*/
   }
   DeleteAndZero::Alt((void **)&aP0_16.nextArrayIndex); /*0x78a411*/
-  v45.vfptr = &rc_ptr<PlayerProfile>::`vftable'; /*0x78a41a*/
+  v45.vfptr = &vt_rc_ptr_PlayerProfile; /*0x78a41a*/
   ComPtr::Release(&v45); /*0x78a422*/
   DeleteAndZero::Alt((void **)&v44); /*0x78a42b*/
-  aP0_4.vfptr = &WonlineStringDialogControl::`vftable'; /*0x78a434*/
+  aP0_4.vfptr = &vt_WonlineStringDialogControl; /*0x78a434*/
   DeleteAndZero((int)&aP0_16); /*0x78a43c*/
   aP0_4.vfptr = &off_7F7624; /*0x78a445*/
   OwnerDrawControl::InitVtable(&aP0_4); /*0x78a44d*/

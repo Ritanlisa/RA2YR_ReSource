@@ -106,7 +106,7 @@ LABEL_14:
         goto LABEL_14; /*0x7a3f97*/
     }
   }
-  v19.vfptr = &rc_ptr<PlayerProfile>::`vftable'; /*0x7a3fd1*/
+  v19.vfptr = &vt_rc_ptr_PlayerProfile; /*0x7a3fd1*/
   ComPtr::Release(&v19); /*0x7a3fdd*/
 LABEL_16:
   if ( v26 ) /*0x7a3fed*/
@@ -442,9 +442,9 @@ _DWORD *__thiscall sub_7B0220(int *this)
   v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
   v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b0249*/
   ComPtr::Set(&stru_B77F68, v3[1]); /*0x7b0257*/
-  v5[0] = &rc_ptr<WorldDominationTour::Campaign>::`vftable'; /*0x7b0260*/
+  v5[0] = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x7b0260*/
   ComPtr::Release(v5); /*0x7b0268*/
-  v6[0] = &rc_ptr<WorldDominationTour::CampaignProperties>::`vftable'; /*0x7b0271*/
+  v6[0] = &vt_rc_ptr_WorldDominationTour_CampaignProperties; /*0x7b0271*/
   return ComPtr::Release(v6); /*0x7b027e*/
 }
 }
@@ -464,9 +464,9 @@ _DWORD *__thiscall sub_7B02A0(int *this)
   v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
   v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b02c9*/
   ComPtr::Set(&stru_B77F78, v3[1]); /*0x7b02d7*/
-  v5[0] = &rc_ptr<WorldDominationTour::Campaign>::`vftable'; /*0x7b02e0*/
+  v5[0] = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x7b02e0*/
   ComPtr::Release(v5); /*0x7b02e8*/
-  v6[0] = &rc_ptr<WorldDominationTour::CampaignProperties>::`vftable'; /*0x7b02f1*/
+  v6[0] = &vt_rc_ptr_WorldDominationTour_CampaignProperties; /*0x7b02f1*/
   return ComPtr::Release(v6); /*0x7b02fe*/
 }
 }

@@ -35,7 +35,7 @@ char *__thiscall sub_770270(char *this, int a2)
   do /*0x7702e2*/
   {
     VectorClassUInt::Constructor(v6, 0, 0); /*0x7702c9*/
-    *v6 = &DynamicVectorClass<unsigned int>::`vftable'; /*0x7702ce*/
+    *v6 = &vt_DynamicVectorClass_unsigned_int; /*0x7702ce*/
     v6[5] = 10; /*0x7702d4*/
     v6[4] = 0; /*0x7702db*/
     v6 += 6; /*0x7702de*/
@@ -47,7 +47,7 @@ char *__thiscall sub_770270(char *this, int a2)
   *(this + 952) = 1; /*0x770305*/
   *((_DWORD *)this + 239) = 0; /*0x77030c*/
   VectorClass::WstringConstructor((_DWORD *)this + 240, 0, 0); /*0x770312*/
-  *((_DWORD *)this + 240) = &DynamicVectorClass<Wstring>::`vftable'; /*0x770317*/
+  *((_DWORD *)this + 240) = &vt_DynamicVectorClass_Wstring; /*0x770317*/
   *((_DWORD *)this + 245) = 10; /*0x77031d*/
   *((_DWORD *)this + 244) = 0; /*0x770324*/
   *((_DWORD *)this + 246) = 0; /*0x770327*/

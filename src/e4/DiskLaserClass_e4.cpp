@@ -14,7 +14,7 @@ int __thiscall DiskLaserClass::DiskLaserClass(int this)
   *(_DWORD *)this = &DiskLaserClass::`vftable'; /*0x4a7a3a*/
   this->DiskLaserClass_field_0x04 = &DiskLaserClass::`vftable'; /*0x4a7a40*/
   this->DiskLaserClass_field_0x08 = &DiskLaserClass::`vftable'; /*0x4a7a47*/
-  this->DiskLaserClass_field_0x0C = &DiskLaserClass::`vftable'; /*0x4a7a4e*/
+  this->DiskLaserClass_field_0x0C = &vt_DiskLaserClass; /*0x4a7a4e*/
   this->DiskLaserClass_field_0x24 = 0; /*0x4a7a55*/
   this->DiskLaserClass_field_0x28 = 0; /*0x4a7a58*/
   *(_DWORD *)(this + 44) = 0; /*0x4a7a5b*/
@@ -54,7 +54,7 @@ int __stdcall DiskLaserClass::Write(AbstractClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &DiskLaserClass::`vftable'; /*0x4a7bb7*/
       *(_DWORD *)&aP0->__pad_0[4] = &DiskLaserClass::`vftable'; /*0x4a7bbd*/
       *(_DWORD *)&aP0->__pad_0[8] = &DiskLaserClass::`vftable'; /*0x4a7bc4*/
-      *(_DWORD *)&aP0->__pad_0[12] = &DiskLaserClass::`vftable'; /*0x4a7bcb*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_DiskLaserClass; /*0x4a7bcb*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x4a7bdb*/
     ObjectPtr::RegisterForTracking( /*0x4a7be9*/
@@ -90,7 +90,7 @@ DiskLaserClass *__thiscall DiskLaserClass::CopyTo(_DWORD *this, char a2)
   *this = &DiskLaserClass::`vftable'; /*0x4a7c9d*/
   *(this + 1) = &DiskLaserClass::`vftable'; /*0x4a7ca3*/
   *(this + 2) = &DiskLaserClass::`vftable'; /*0x4a7caa*/
-  *(this + 3) = &DiskLaserClass::`vftable'; /*0x4a7cb1*/
+  *(this + 3) = &vt_DiskLaserClass; /*0x4a7cb1*/
   v5 = this; /*0x4a7cbf*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0x8A0208] + 16))(&MEMORY[0x8A0208], &v5); /*0x4a7cc3*/
   if ( v3 != -1 && v3 < MEMORY[0x8A0218] && v3 < --MEMORY[0x8A0218] ) /*0x4a7cde*/

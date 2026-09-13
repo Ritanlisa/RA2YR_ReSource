@@ -59,7 +59,7 @@ char *__thiscall ConstructTacticalSurface(char *this)
   do /*0x42a73d*/
   {
     VectorClassUInt::Constructor(0, 0); /*0x42a724*/
-    *v2 = &DynamicVectorClass<unsigned int>::`vftable'; /*0x42a729*/
+    *v2 = &vt_DynamicVectorClass_unsigned_int; /*0x42a729*/
     v2[5] = 10; /*0x42a72f*/
     v2[4] = 0; /*0x42a736*/
     v2 += 6; /*0x42a739*/
@@ -1456,11 +1456,11 @@ _DWORD *__thiscall Tactical::PixelToCell(int this, AbstractClass *aP1, IUnknown 
   v46 = 0; /*0x6d65ab*/
   v5 = *(_DWORD *)(this + 176) + v3; /*0x6d65bf*/
   v6 = aP2->field_4 + *(_DWORD *)(this + 180); /*0x6d65c6*/
-  v41 = v5 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8532]; /*0x6d65c8*/
-  v42 = v6 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]; /*0x6d65d2*/
-  v44 = (float)(v5 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8532]); /*0x6d65e1*/
-  v45 = (float)(v6 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]); /*0x6d65ed*/
-  v7 = TransformMatrix3x4Point(v50, (float *)(this + 3556), &v44); /*0x6d65f1*/
+  v41 = v5 - *(_DWORD *)&stru_87C374.__pad_579C[21648]; /*0x6d65c8*/
+  v42 = v6 - *(_DWORD *)&stru_87C374.__pad_579C[21652]; /*0x6d65d2*/
+  v44 = (float)(v5 - *(_DWORD *)&stru_87C374.__pad_579C[21648]); /*0x6d65e1*/
+  v45 = (float)(v6 - *(_DWORD *)&stru_87C374.__pad_579C[21652]); /*0x6d65ed*/
+  v7 = TransformMatrix3x4Point((AbstractClass *)v50, (IUnknown *)(this + 3556), (IUnknown *)&v44); /*0x6d65f1*/
   v44 = *v7; /*0x6d65f8*/
   v45 = v7[1]; /*0x6d6603*/
   v46 = *((_DWORD *)v7 + 2); /*0x6d660a*/
@@ -1471,9 +1471,9 @@ _DWORD *__thiscall Tactical::PixelToCell(int this, AbstractClass *aP1, IUnknown 
   LODWORD(v48) = (unsigned __int8)v9; /*0x6d664c*/
   HIWORD(v37) = v9 / 256; /*0x6d6663*/
   v49 = 0; /*0x6d6668*/
-  Coord::To_ScreenRaw(v43, &v47); /*0x6d666c*/
-  v10 = aP2->field_4 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536]; /*0x6d6684*/
-  v41 = aP2->field_0 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8532]; /*0x6d668a*/
+  Coord::To_ScreenRaw((AbstractClass *)v43, (IUnknown *)&v47); /*0x6d666c*/
+  v10 = aP2->field_4 - *(_DWORD *)&stru_87C374.__pad_579C[21652]; /*0x6d6684*/
+  v41 = aP2->field_0 - *(_DWORD *)&stru_87C374.__pad_579C[21648]; /*0x6d668a*/
   v11 = v10 + 180; /*0x6d668e*/
   v42 = v10; /*0x6d6694*/
   v39 = v41; /*0x6d6698*/
@@ -1486,7 +1486,7 @@ _DWORD *__thiscall Tactical::PixelToCell(int this, AbstractClass *aP1, IUnknown 
     v47 = (float)v43[0]; /*0x6d66d5*/
     v49 = 0; /*0x6d66e1*/
     v48 = (float)(v11 + v12); /*0x6d66e9*/
-    v13 = TransformMatrix3x4Point(v51, (float *)(this + 3556), &v47); /*0x6d66ed*/
+    v13 = TransformMatrix3x4Point((AbstractClass *)v51, (IUnknown *)(this + 3556), (IUnknown *)&v47); /*0x6d66ed*/
     v47 = *v13; /*0x6d66f4*/
     v48 = v13[1]; /*0x6d66ff*/
     v49 = *((_DWORD *)v13 + 2); /*0x6d6706*/
@@ -1494,46 +1494,47 @@ _DWORD *__thiscall Tactical::PixelToCell(int this, AbstractClass *aP1, IUnknown 
     v15 = Math::RoundToInt(v48); /*0x6d6715*/
     LOWORD(v38) = (int)v14 / 256; /*0x6d672a*/
     HIWORD(v38) = v15 / 256; /*0x6d6747*/
-    v16 = (VectorClass *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v38); /*0x6d6751*/
-    v33 = v11 - 15 * v16->__pad_4C[207]; /*0x6d6768*/
-    if ( (*(_DWORD *)&v16->__pad_4C[244] & 0x100) != 0 )
+    v16 = (VectorClass *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v38); /*0x6d6751*/
+    v33 = v11 - 15 * SHIBYTE(v16[17].Capacity); /*0x6d6768*/
+    if ( ((int)v16[20].vtable0 & 0x100) != 0 )
     {
       NeighbourContent = Cell::GetNeighbourContent(v16, 2u); /*0x6d6786*/
       v35 = Cell::GetNeighbourContent(v16, 4u); /*0x6d678f*/
-      if ( (*(_DWORD *)&v16->__pad_4C[244] & 0x800) == 0 /*0x6d67b7*/
+      if ( ((int)v16[20].vtable0 & 0x800) == 0 /*0x6d67b7*/
         || (aP2a = 1, (*((_DWORD *)Cell::GetNeighbourContent(v16, 0) + 80) & 0x100) != 0) )
       {
         aP2a = 0; /*0x6d67b9*/
       }
-      if ( (*(_DWORD *)&v16->__pad_4C[244] & 0x800) != 0 /*0x6d67e2*/
+      if ( ((int)v16[20].vtable0 & 0x800) != 0 /*0x6d67e2*/
         || (v28 = 1, (*((_DWORD *)Cell::GetNeighbourContent(v16, 6u) + 80) & 0x100) != 0) )
       {
         v28 = 0; /*0x6d67e4*/
       }
-      v17 = *(_DWORD *)&v16->__pad_4C[244] & 0x800; /*0x6d67ef*/
+      v17 = (int)v16[20].vtable0 & 0x800; /*0x6d67ef*/
       if ( !v17 || (v29 = 1, (v35[80] & 0x100) != 0) ) /*0x6d6806*/
         v29 = 0; /*0x6d6808*/
       if ( v17 || (v31 = 1, (NeighbourContent[80] & 0x100) != 0) ) /*0x6d6820*/
         v31 = 0; /*0x6d6822*/
       if ( !v17 /*0x6d6858*/
-        || (v18 = v16->__pad_4C[207] - *((char *)NeighbourContent + 283), (int)((HIDWORD(v18) ^ v18) - HIDWORD(v18)) > 1)
+        || (v18 = SHIBYTE(v16[17].Capacity) - *((char *)NeighbourContent + 283),
+            (int)((HIDWORD(v18) ^ v18) - HIDWORD(v18)) > 1)
         || (v32 = 1, (NeighbourContent[80] & 0x100) != 0) )
       {
         v32 = 0; /*0x6d685a*/
       }
       if ( v17 /*0x6d688e*/
-        || (v19 = v16->__pad_4C[207] - *((char *)v35 + 283), (int)((HIDWORD(v19) ^ v19) - HIDWORD(v19)) > 1)
+        || (v19 = SHIBYTE(v16[17].Capacity) - *((char *)v35 + 283), (int)((HIDWORD(v19) ^ v19) - HIDWORD(v19)) > 1)
         || (v30 = 1, (v35[80] & 0x100) != 0) )
       {
         v30 = 0; /*0x6d6890*/
       }
-      v20 = *(__int16 *)&v16->__pad_18[12]; /*0x6d6899*/
-      v21 = *(__int16 *)&v16->__pad_18[14] << 8; /*0x6d68a8*/
+      v20 = SLOWORD(v16[2].Items); /*0x6d6899*/
+      v21 = SHIWORD(v16[2].Items) << 8; /*0x6d68a8*/
       v50[2] = 0.0; /*0x6d68ab*/
       LODWORD(v50[1]) = v21; /*0x6d68b2*/
       LODWORD(v50[0]) = v20 << 8; /*0x6d68ca*/
-      v22 = Coord::To_ScreenRaw((int *)&v44, v50); /*0x6d68ce*/
-      v23 = -30 * v16->__pad_4C[207] / 2 + v22[1] - *(_DWORD *)(this + 180); /*0x6d68ff*/
+      v22 = Coord::To_ScreenRaw((AbstractClass *)&v44, (IUnknown *)v50); /*0x6d68ce*/
+      v23 = -30 * SHIBYTE(v16[17].Capacity) / 2 + v22[1] - *(_DWORD *)(this + 180); /*0x6d68ff*/
       if ( v23 <= v10 ) /*0x6d6903*/
       {
         if ( v29 || v30 ) /*0x6d6917*/
@@ -1554,12 +1555,12 @@ _DWORD *__thiscall Tactical::PixelToCell(int this, AbstractClass *aP1, IUnknown 
         v24 = v41 - (*v22 - *(_DWORD *)(this + 176)); /*0x6d6971*/
         v25 = v42 - v23; /*0x6d6977*/
         if ( aP2a && v25 - v24 / 2 > 15 || v28 && v25 + v24 / 2 > 15 )
-          v33 -= (*(_DWORD *)&v16->__pad_4C[244] & 0x100) != 0 ? 0x3C : 0;
+          v33 -= ((int)v16[20].vtable0 & 0x100) != 0 ? 0x3C : 0;
         v10 = v42; /*0x6d69c0*/
       }
       else
       {
-        v33 -= (*(_DWORD *)&v16->__pad_4C[244] & 0x100) != 0 ? 0x3C : 0;
+        v33 -= ((int)v16[20].vtable0 & 0x100) != 0 ? 0x3C : 0;
       }
     }
     if ( v33 <= v10 ) /*0x6d69c8*/
@@ -1937,20 +1938,20 @@ char __thiscall Tactical::DrawOverlay(_DWORD *this, int *a1, BuildingTypeClass *
   v12 = *(this + 44); /*0x6dbbb7*/
   v32[0] = v8; /*0x6dbbbd*/
   v13 = v8 - v12; /*0x6dbbc3*/
-  v14 = *(Tactical **)&aP2->__pad_0[4]; /*0x6dbbc5*/
+  v14 = *(Tactical **)&aP2->vtable0[4]; /*0x6dbbc5*/
   v32[1] = v11 - v10; /*0x6dbbc8*/
-  v26 = *(_DWORD *)aP2->__pad_0; /*0x6dbbcf*/
+  v26 = *(_DWORD *)aP2->vtable0; /*0x6dbbcf*/
   v32[0] = v13; /*0x6dbbd4*/
   v15 = IsoCoord::ToPixel(&v28, v26, v14); /*0x6dbbd8*/
   v16 = v15[1]; /*0x6dbbe1*/
   v17 = (int)*v15; /*0x6dbbe4*/
   v30 = v16; /*0x6dbbeb*/
   v18 = (BYTE4(v17) + (int)v17) >> 8; /*0x6dbbf6*/
-  v19 = ZCoordToScreenY(*(_DWORD *)&aP2->__pad_0[8]); /*0x6dbbf9*/
+  v19 = ZCoordToScreenY(*(_DWORD *)&aP2->vtable0[8]); /*0x6dbbf9*/
   v31[0] = v18; /*0x6dbc0b*/
   v20 = v18 - *(this + 44); /*0x6dbc22*/
   v31[1] = v30 / 256 - v19 - *(this + 45); /*0x6dbc28*/
-  v21 = *(_DWORD *)&aP2->__pad_0[8]; /*0x6dbc2c*/
+  v21 = *(_DWORD *)&aP2->vtable0[8]; /*0x6dbc2c*/
   v31[0] = v20; /*0x6dbc34*/
   v28 = v21; /*0x6dbc38*/
   v29 = a1[2]; /*0x6dbc58*/
@@ -2062,7 +2063,7 @@ Tactical *__thiscall Tactical::UpdateView(_DWORD *this, char a2)
   *this = &Tactical::`vftable'; /*0x6dc473*/
   *(this + 1) = &Tactical::`vftable'; /*0x6dc479*/
   *(this + 2) = &Tactical::`vftable'; /*0x6dc480*/
-  *(this + 3) = &Tactical::`vftable'; /*0x6dc487*/
+  *(this + 3) = &vt_Tactical; /*0x6dc487*/
   MEMORY[0x887324] = 0; /*0x6dc48e*/
   AbstractClass::DTOR(this); /*0x6dc498*/
   if ( (a2 & 1) != 0 ) /*0x6dc4a2*/
@@ -2353,7 +2354,7 @@ VectorClass *__thiscall Tactical_42_::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x6e4ab3*/
-  *this = &VectorClass<TActionClass *>::`vftable'; /*0x6e4ab6*/
+  *this = &vt_VectorClass_TActionClass; /*0x6e4ab6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x6e4ac0*/
   {
     __3_YAXPAX_Z(v3); /*0x6e4ac8*/

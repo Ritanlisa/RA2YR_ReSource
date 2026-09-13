@@ -150,16 +150,19 @@
 // 0x40B120
 int VectorClass::Clear(int a2, int a3)
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall VectorClass::_vt06(_DWORD *this, int a2, int a3)
 {
-    int v3;
-    int v4;
-    int v5;
-    v3 = this->Items;
-    v4 = *(int *)(v3 + 8 * a3);
-    v5 = v3 + 8 * a3;
-    *(int *)a2 = v4;
-    *(char *)(a2 + 4) = *(char *)(v5 + 4);
-    return a2;
+  int v3; // eax
+  int v4; // edx
+  int v5; // ecx
+
+  v3 = *(this + 1); /*0x40b120*/
+  v4 = *(_DWORD *)(v3 + 8 * a3); /*0x40b127*/
+  v5 = v3 + 8 * a3; /*0x40b12a*/
+  *(_DWORD *)a2 = v4; /*0x40b131*/
+  *(_BYTE *)(a2 + 4) = *(_BYTE *)(v5 + 4); /*0x40b136*/
+  return a2; /*0x40b139*/
 }
 }
 
@@ -207,7 +210,7 @@ unsigned int * VectorClass::Copy(VectorClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall VectorClass::Copy(_DWORD *this, VectorClass *aP1)
 {
-  void *v3; // eax
+  int v3; // eax
   int v4; // eax
   int v5; // ecx
   int v6; // eax
@@ -216,15 +219,15 @@ _DWORD *__thiscall VectorClass::Copy(_DWORD *this, VectorClass *aP1)
   *(this + 2) = 0; /*0x4777c0*/
   this->IsInitialized = 1; /*0x4777c3*/
   this->IsAllocated = 0; /*0x4777c7*/
-  *this = &VectorClass<int>::`vftable'; /*0x4777ca*/
+  *this = &vt_VectorClass_int; /*0x4777ca*/
   if ( this != (_DWORD *)aP1 ) /*0x4777d0*/
   {
     VectorClass::Destroy((int)this); /*0x4777d2*/
-    v3 = aP1->field_8; /*0x4777d8*/
+    v3 = aP1->Capacity; /*0x4777d8*/
     *(this + 2) = v3; /*0x4777dd*/
     if ( v3 ) /*0x4777e0*/
     {
-      v4 = __2_YAPAXI_Z(4 * (_DWORD)v3); /*0x4777e6*/
+      v4 = __2_YAPAXI_Z(4 * v3); /*0x4777e6*/
       *(this + 1) = v4; /*0x4777f0*/
       if ( v4 ) /*0x4777f3*/
       {
@@ -235,7 +238,7 @@ _DWORD *__thiscall VectorClass::Copy(_DWORD *this, VectorClass *aP1)
         {
           do /*0x477814*/
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x47780b*/
+            *(_DWORD *)(*(this + 1) + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x47780b*/
             ++v6; /*0x477811*/
           }
           while ( v6 < *(this + 2) ); /*0x477814*/
@@ -248,9 +251,9 @@ _DWORD *__thiscall VectorClass::Copy(_DWORD *this, VectorClass *aP1)
       this->IsAllocated = 0; /*0x47781b*/
     }
   }
-  *(this + 4) = aP1->field_10; /*0x477821*/
-  *(this + 5) = aP1->field_14; /*0x477827*/
-  *this = &TypeList<int>::`vftable'; /*0x47782a*/
+  *(this + 4) = aP1[1].vtable0; /*0x477821*/
+  *(this + 5) = aP1[1].Items; /*0x477827*/
+  *this = &vt_TypeList_int; /*0x47782a*/
   return this; /*0x477832*/
 }
 }
@@ -342,7 +345,7 @@ char __thiscall VectorClass::PushBack(_DWORD *this, VectorClass *aP1)
   v6 = *(this + 4); /*0x513325*/
   v7 = (VectorClass *)*(this + 1); /*0x513328*/
   *(this + 4) = v6 + 1; /*0x51332e*/
-  *(_DWORD *)&v7->__pad_0[4 * v6] = *(_DWORD *)aP1->__pad_0; /*0x513338*/
+  *(_DWORD *)&v7->vtable0[4 * v6] = *(_DWORD *)aP1->vtable0; /*0x513338*/
   return 1; /*0x513321*/
 }
 }
@@ -430,7 +433,7 @@ char __thiscall VectorClass::Append(_DWORD *this, VectorClass *aP1)
   v6 = *(this + 4); /*0x63e575*/
   v7 = *(this + 1); /*0x63e578*/
   *(this + 4) = v6 + 1; /*0x63e57e*/
-  *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->__pad_0; /*0x63e588*/
+  *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->vtable0; /*0x63e588*/
   return 1; /*0x63e571*/
 }
 }
@@ -539,13 +542,13 @@ int __thiscall VectorClass::LoadStream(_DWORD *this, TechnoTypeClass *aP1)
   int i; // esi
   int v6; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *(_DWORD *)aP1->__pad_0; /*0x67a63c*/
+  v3 = *(_DWORD *)aP1->vtable0; /*0x67a63c*/
   v6 = *(this + 4); /*0x67a649*/
   (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a64d*/
   result = v6; /*0x67a650*/
   for ( i = 0; i < v6; ++i ) /*0x67a658*/
   {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->__pad_0 + 16))( /*0x67a668*/
+    (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->vtable0 + 16))( /*0x67a668*/
       aP1,
       *(this + 1) + 4 * i,
       4,
@@ -567,13 +570,13 @@ int __thiscall VectorClass::SaveLoad(_DWORD *this, TechnoTypeClass *aP1)
   int i; // esi
   int v6; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *(_DWORD *)aP1->__pad_0; /*0x67a85c*/
+  v3 = *(_DWORD *)aP1->vtable0; /*0x67a85c*/
   v6 = *(this + 4); /*0x67a869*/
   (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a86d*/
   result = v6; /*0x67a870*/
   for ( i = 0; i < v6; ++i ) /*0x67a878*/
   {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->__pad_0 + 16))( /*0x67a888*/
+    (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->vtable0 + 16))( /*0x67a888*/
       aP1,
       *(this + 1) + 4 * i,
       4,
@@ -599,7 +602,7 @@ _DWORD *__thiscall VectorClass::CopyParticle(_DWORD *this, DynamicVector *aP1)
   *(this + 2) = 0; /*0x717d30*/
   this->IsInitialized = 1; /*0x717d33*/
   this->IsAllocated = 0; /*0x717d37*/
-  *this = &VectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x717d3a*/
+  *this = &vt_VectorClass_ParticleSystemTypeClass_const; /*0x717d3a*/
   if ( this != (_DWORD *)aP1 ) /*0x717d40*/
   {
     VectorClass::Cleanup((int)this); /*0x717d42*/
@@ -633,7 +636,7 @@ _DWORD *__thiscall VectorClass::CopyParticle(_DWORD *this, DynamicVector *aP1)
   }
   *(this + 4) = aP1->field_10; /*0x717d91*/
   *(this + 5) = *(_DWORD *)aP1->__pad_14; /*0x717d97*/
-  *this = &TypeList<ParticleSystemTypeClass const *>::`vftable'; /*0x717d9a*/
+  *this = &vt_TypeList_ParticleSystemTypeClass_const; /*0x717d9a*/
   return this; /*0x717da2*/
 }
 }
@@ -776,30 +779,12 @@ _DWORD *__thiscall VectorClass_cptr_MultiMission::j_vt00(NullModemConnClass *thi
   IPXConnClass *v3; // eax
 
   v3 = (IPXConnClass *)this->field_50; /*0x5ef293*/
-  *(_DWORD *)this->__pad_0 = &NullModemConnClass::`vftable'; /*0x5ef296*/
+  *(_DWORD *)this->__pad_0 = &vt_NullModemConnClass; /*0x5ef296*/
   __3_YAXPAX_Z(v3); /*0x5ef29d*/
   ConnectionClass::dtor(this); /*0x5ef2a7*/
   if ( (a2 & 1) != 0 ) /*0x5ef2b1*/
     __3_YAXPAX_Z(this); /*0x5ef2b4*/
   return this->__pad_0; /*0x5ef2be*/
-}
-}
-} // namespace gamemd
-
-// 0x4E0250
-namespace gamemd {
-unsigned int * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Clear(unsigned int * a2, int a3)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    v3 = this->Items;
-    v4 = *(int *)(v3 + 8 * a3);
-    v5 = v3 + 8 * a3;
-    *a2 = v4;
-    *((int*)(a2) + 1) = *(int *)(v5 + 4);
-    return a2;
 }
 }
 } // namespace gamemd
@@ -956,51 +941,6 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4e0935*/
     return 1; /*0x4e093b*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x4E09E0
-namespace gamemd {
-unsigned int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::GetCapacity(int a2)
-{
-{
-    if ( this->IsInitialized )
-    return (unsigned int)(a2 - this->Items) >> 3;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E0AB0
-namespace gamemd {
-void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Destroy()
-{
-{
-    int v2;
-    v2 = this->Items;
-    this->Count = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z((void *)(v2 - 4));
-    this->Items = 0;
-  }
-    this->IsAllocated = 0;
-    this->Capacity = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E0AF0
-namespace gamemd {
-unsigned int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::GetItemIndex(int a2)
-{
-{
-    if ( this->IsInitialized )
-    return (unsigned int)(a2 - this->Items) >> 3;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -1164,7 +1104,7 @@ VectorClass *__thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteD
   int v3; // eax
 
   v3 = *(this + 1); /*0x4e0d83*/
-  *this = &VectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0d86*/
+  *this = &vt_VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0d86*/
   if ( v3 && this->IsAllocated ) /*0x4e0d90*/
   {
     __3_YAXPAX_Z((void *)(v3 - 4)); /*0x4e0da3*/
@@ -1191,7 +1131,7 @@ DynamicVector *__thiscall VectorClass_DistributionObject_ptr_CellClass___Discret
   int v3; // eax
 
   v3 = *(this + 1); /*0x4e0e23*/
-  *this = &VectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0e26*/
+  *this = &vt_VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0e26*/
   if ( v3 && this->IsAllocated ) /*0x4e0e30*/
   {
     __3_YAXPAX_Z((void *)(v3 - 4)); /*0x4e0e43*/
@@ -1202,114 +1142,6 @@ DynamicVector *__thiscall VectorClass_DistributionObject_ptr_CellClass___Discret
   if ( (a2 & 1) != 0 ) /*0x4e0e63*/
     __3_YAXPAX_Z(this); /*0x4e0e66*/
   return (DynamicVector *)this; /*0x4e0e70*/
-}
-}
-} // namespace gamemd
-
-// 0x6BEFD0
-namespace gamemd {
-int VectorClass_K_14::QueryInterface(int a1, const void * a2, unsigned int * a3)
-{
-{
-    if ( !a3 )
-    return -2147467261;
-    *a3 = 0;
-    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
-    *a3 = a1;
-    if ( !*a3 )
-    return -2147467262;
-    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x6BF150
-namespace gamemd {
-int VectorClass_K_20::QueryInterface(int a1, const void * a2, unsigned int * a3)
-{
-{
-    if ( !a3 )
-    return -2147467261;
-    *a3 = 0;
-    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
-    *a3 = a1;
-    if ( !*a3 )
-    return -2147467262;
-    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x6BF2D0
-namespace gamemd {
-int VectorClass_K_26::QueryInterface(int a1, const void * a2, unsigned int * a3)
-{
-{
-    if ( !a3 )
-    return -2147467261;
-    *a3 = 0;
-    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
-    *a3 = a1;
-    if ( !*a3 )
-    return -2147467262;
-    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x6BF450
-namespace gamemd {
-int VectorClass_K_32::QueryInterface(int a1, const void * a2, unsigned int * a3)
-{
-{
-    if ( !a3 )
-    return -2147467261;
-    *a3 = 0;
-    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
-    *a3 = a1;
-    if ( !*a3 )
-    return -2147467262;
-    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x6BF5D0
-namespace gamemd {
-int VectorClass_K_38::QueryInterface(int a1, const void * a2, unsigned int * a3)
-{
-{
-    if ( !a3 )
-    return -2147467261;
-    *a3 = 0;
-    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
-    *a3 = a1;
-    if ( !*a3 )
-    return -2147467262;
-    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x6BF750
-namespace gamemd {
-int VectorClass_K_44::QueryInterface(int a1, const void * a2, unsigned int * a3)
-{
-{
-    if ( !a3 )
-    return -2147467261;
-    *a3 = 0;
-    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
-    *a3 = a1;
-    if ( !*a3 )
-    return -2147467262;
-    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
-    return 0;
 }
 }
 } // namespace gamemd
@@ -1330,27 +1162,9 @@ _DWORD *__thiscall sub_4A2820(_DWORD *this)
   *(this + 7) = __2_YAPAXI_Z(0x10000u); /*0x4a2850*/
   *(this + 8) = __2_YAPAXI_Z(0x10000u); /*0x4a285b*/
   *this = &CStreamClass::`vftable'; /*0x4a285e*/
-  *(this + 1) = &CStreamClass::`vftable'; /*0x4a2864*/
+  *(this + 1) = &vt_CStreamClass; /*0x4a2864*/
   *(this + 9) = 0xFFFF; /*0x4a286b*/
   return this; /*0x4a2874*/
-}
-}
-} // namespace gamemd
-
-// 0x6BEE50
-namespace gamemd {
-int VectorClass_K_8::QueryInterface(int a1, const void * a2, unsigned int * a3)
-{
-{
-    if ( !a3 )
-    return -2147467261;
-    *a3 = 0;
-    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
-    *a3 = a1;
-    if ( !*a3 )
-    return -2147467262;
-    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
-    return 0;
 }
 }
 } // namespace gamemd
@@ -1418,7 +1232,7 @@ DynamicVector *__thiscall VectorClass_ptr_AircraftTypeClass::Constructor_VectorC
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0843*/
-  *this = &VectorClass<AircraftTypeClass *>::`vftable'; /*0x4f0846*/
+  *this = &vt_VectorClass_AircraftTypeClass; /*0x4f0846*/
   if ( v3 && this->IsAllocated ) /*0x4f0850*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0858*/
@@ -1445,7 +1259,7 @@ DynamicVector *__thiscall VectorClass_ptr_AircraftTypeClass::Constructor_VectorC
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f08e3*/
-  *this = &VectorClass<UnitTypeClass *>::`vftable'; /*0x4f08e6*/
+  *this = &vt_VectorClass_UnitTypeClass; /*0x4f08e6*/
   if ( v3 && this->IsAllocated ) /*0x4f08f0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f08f8*/
@@ -1472,7 +1286,7 @@ DynamicVector *__thiscall VectorClass_ptr_AirstrikeClass::Constructor_VectorClas
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x41e0f3*/
-  *this = &VectorClass<AirstrikeClass *>::`vftable'; /*0x41e0f6*/
+  *this = &vt_VectorClass_AirstrikeClass; /*0x41e0f6*/
   if ( v3 && this->IsAllocated ) /*0x41e100*/
   {
     __3_YAXPAX_Z(v3); /*0x41e108*/
@@ -1499,7 +1313,7 @@ DynamicVector *__thiscall VectorClass_ptr_AITriggerTypeClass::Constructor_Vector
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4ef713*/
-  *this = &VectorClass<AITriggerTypeClass *>::`vftable'; /*0x4ef716*/
+  *this = &vt_VectorClass_AITriggerTypeClass; /*0x4ef716*/
   if ( v3 && this->IsAllocated ) /*0x4ef720*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef728*/
@@ -1526,7 +1340,7 @@ DynamicVector *__thiscall VectorClass_ptr_AITriggerTypeClass::Constructor_Vector
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4ef9e3*/
-  *this = &VectorClass<TriggerClass *>::`vftable'; /*0x4ef9e6*/
+  *this = &vt_VectorClass_TriggerClass; /*0x4ef9e6*/
   if ( v3 && this->IsAllocated ) /*0x4ef9f0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef9f8*/
@@ -1553,7 +1367,7 @@ DynamicVector *__thiscall VectorClass_ptr_AITriggerTypeClass::Constructor_Vector
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4efa83*/
-  *this = &VectorClass<TriggerTypeClass *>::`vftable'; /*0x4efa86*/
+  *this = &vt_VectorClass_TriggerTypeClass; /*0x4efa86*/
   if ( v3 && this->IsAllocated ) /*0x4efa90*/
   {
     __3_YAXPAX_Z(v3); /*0x4efa98*/
@@ -1580,7 +1394,7 @@ DynamicVector *__thiscall VectorClass_ptr_AnimTypeClass::Constructor_VectorClass
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0983*/
-  *this = &VectorClass<AnimTypeClass *>::`vftable'; /*0x4f0986*/
+  *this = &vt_VectorClass_AnimTypeClass; /*0x4f0986*/
   if ( v3 && this->IsAllocated ) /*0x4f0990*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0998*/
@@ -1607,7 +1421,7 @@ DynamicVector *__thiscall VectorClass_ptr_AnimTypeClass::Constructor_VectorClass
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0a23*/
-  *this = &VectorClass<InfantryTypeClass *>::`vftable'; /*0x4f0a26*/
+  *this = &vt_VectorClass_InfantryTypeClass; /*0x4f0a26*/
   if ( v3 && this->IsAllocated ) /*0x4f0a30*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0a38*/
@@ -1634,7 +1448,7 @@ DynamicVector *__thiscall VectorClass_ptr_AnimTypeClass::Constructor_VectorClass
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0ac3*/
-  *this = &VectorClass<BulletTypeClass *>::`vftable'; /*0x4f0ac6*/
+  *this = &vt_VectorClass_BulletTypeClass; /*0x4f0ac6*/
   if ( v3 && this->IsAllocated ) /*0x4f0ad0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0ad8*/
@@ -1673,7 +1487,7 @@ _DWORD *__thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(
   *(this + 5) = 0; /*0x4a0c3a*/
   *((_BYTE *)this + 24) = 1; /*0x4a0c3d*/
   *((_BYTE *)this + 25) = 0; /*0x4a0c41*/
-  *(this + 3) = &VectorClass<IConnectionPoint *>::`vftable'; /*0x4a0c44*/
+  *(this + 3) = &vt_VectorClass_IConnectionPoint; /*0x4a0c44*/
   if ( this + 3 != (_DWORD *)aP1 ) /*0x4a0c4a*/
   {
     VectorClass::CleanupTyped((int)(this + 3)); /*0x4a0c4e*/
@@ -1707,27 +1521,14 @@ _DWORD *__thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(
   }
   v3[4] = aP1->EnumConnectionPointsClass_field_0x10; /*0x4a0c9d*/
   v3[5] = aP1->EnumConnectionPointsClass_field_0x14; /*0x4a0ca3*/
-  *v3 = &DynamicVectorClass<IConnectionPoint *>::`vftable'; /*0x4a0ca6*/
-  *this = &EnumConnectionPointsClass::`vftable'; /*0x4a0cac*/
+  *v3 = &vt_DynamicVectorClass_IConnectionPoint; /*0x4a0ca6*/
+  *this = &vt_EnumConnectionPointsClass; /*0x4a0cac*/
   for ( i = 0; i < *(this + 7); ++i ) /*0x4a0cb9*/
   {
     v10 = *(_DWORD *)(*(this + 4) + 4 * i); /*0x4a0cc1*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v10 + 4))(v10); /*0x4a0cc4*/
   }
   return this; /*0x4a0cd1*/
-}
-}
-} // namespace gamemd
-
-// 0x4F6930
-namespace gamemd {
-void * VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_0(int a2)
-{
-{
-    void *v3;
-    v3 = this;
-    sub_429360((int)&punk, &DataGlobal_7E36C0, &v3);
-    return v3;
 }
 }
 } // namespace gamemd
@@ -2209,7 +2010,7 @@ DynamicVector *__thiscall VectorClass_ptr_BuildingLightClass::Constructor_Vector
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4ef7b3*/
-  *this = &VectorClass<BuildingLightClass *>::`vftable'; /*0x4ef7b6*/
+  *this = &vt_VectorClass_BuildingLightClass; /*0x4ef7b6*/
   if ( v3 && this->IsAllocated ) /*0x4ef7c0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef7c8*/
@@ -2236,7 +2037,7 @@ DynamicVector *__thiscall VectorClass_ptr_BuildingLightClass::Constructor_Vector
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4efbc3*/
-  *this = &VectorClass<ParticleSystemClass *>::`vftable'; /*0x4efbc6*/
+  *this = &vt_VectorClass_ParticleSystemClass; /*0x4efbc6*/
   if ( v3 && this->IsAllocated ) /*0x4efbd0*/
   {
     __3_YAXPAX_Z(v3); /*0x4efbd8*/
@@ -2316,7 +2117,7 @@ DynamicVector *__thiscall VectorClass_ptr_CampaignClass::Constructor_VectorClass
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0203*/
-  *this = &VectorClass<CampaignClass *>::`vftable'; /*0x4f0206*/
+  *this = &vt_VectorClass_CampaignClass; /*0x4f0206*/
   if ( v3 && this->IsAllocated ) /*0x4f0210*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0218*/
@@ -2343,7 +2144,7 @@ DynamicVector *__thiscall VectorClass_ptr_CaptureManagerClass::Constructor_Vecto
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4730f3*/
-  *this = &VectorClass<CaptureManagerClass *>::`vftable'; /*0x4730f6*/
+  *this = &vt_VectorClass_CaptureManagerClass; /*0x4730f6*/
   if ( v3 && this->IsAllocated ) /*0x473100*/
   {
     __3_YAXPAX_Z(v3); /*0x473108*/
@@ -2483,7 +2284,7 @@ ConvertClass *__thiscall VectorClass_ptr_ConvertClass::Constructor_ConvertClass(
   int v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &ConvertClass::`vftable'; /*0x491214*/
+  *this = &vt_ConvertClass; /*0x491214*/
   COMClass::RegisterAll(this); /*0x49121a*/
   __3_YAXPAX_Z(*(this + 92)); /*0x491226*/
   v3 = *(this + 94); /*0x49122b*/
@@ -2532,7 +2333,7 @@ DynamicVector *__thiscall VectorClass_ptr_FoggedObjectClass::Constructor_VectorC
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x45ab03*/
-  *this = &VectorClass<FoggedObjectClass *>::`vftable'; /*0x45ab06*/
+  *this = &vt_VectorClass_FoggedObjectClass; /*0x45ab06*/
   if ( v3 && this->IsAllocated ) /*0x45ab10*/
   {
     __3_YAXPAX_Z(v3); /*0x45ab18*/
@@ -2559,7 +2360,7 @@ DynamicVector *__thiscall VectorClass_ptr_GlobalPacketType::Constructor_VectorCl
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x69d5e3*/
-  *this = &VectorClass<MultiMission *>::`vftable'; /*0x69d5e6*/
+  *this = &vt_VectorClass_MultiMission; /*0x69d5e6*/
   if ( v3 && this->IsAllocated ) /*0x69d5f0*/
   {
     __3_YAXPAX_Z(v3); /*0x69d5f8*/
@@ -2586,7 +2387,7 @@ DynamicVector *__thiscall VectorClass_ptr_GlobalPacketType::Constructor_VectorCl
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x69d683*/
-  *this = &VectorClass<GlobalPacketType *>::`vftable'; /*0x69d686*/
+  *this = &vt_VectorClass_GlobalPacketType; /*0x69d686*/
   if ( v3 && this->IsAllocated ) /*0x69d690*/
   {
     __3_YAXPAX_Z(v3); /*0x69d698*/
@@ -2613,7 +2414,7 @@ DynamicVector *__thiscall VectorClass_ptr_HouseTypeClass::Constructor_VectorClas
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0343*/
-  *this = &VectorClass<HouseTypeClass *>::`vftable'; /*0x4f0346*/
+  *this = &vt_VectorClass_HouseTypeClass; /*0x4f0346*/
   if ( v3 && this->IsAllocated ) /*0x4f0350*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0358*/
@@ -2640,7 +2441,7 @@ DynamicVector *__thiscall VectorClass_ptr_HouseTypeClass::Constructor_VectorClas
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f03e3*/
-  *this = &VectorClass<TaskForceClass *>::`vftable'; /*0x4f03e6*/
+  *this = &vt_VectorClass_TaskForceClass; /*0x4f03e6*/
   if ( v3 && this->IsAllocated ) /*0x4f03f0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f03f8*/
@@ -2667,7 +2468,7 @@ DynamicVector *__thiscall VectorClass_ptr_HouseTypeClass::Constructor_VectorClas
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0483*/
-  *this = &VectorClass<TeamTypeClass *>::`vftable'; /*0x4f0486*/
+  *this = &vt_VectorClass_TeamTypeClass; /*0x4f0486*/
   if ( v3 && this->IsAllocated ) /*0x4f0490*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0498*/
@@ -2694,7 +2495,7 @@ DynamicVector *__thiscall VectorClass_ptr_IonBlastClass::Constructor_VectorClass
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x53dd53*/
-  *this = &VectorClass<IonBlastClass *>::`vftable'; /*0x53dd56*/
+  *this = &vt_VectorClass_IonBlastClass; /*0x53dd56*/
   if ( v3 && this->IsAllocated ) /*0x53dd60*/
   {
     __3_YAXPAX_Z(v3); /*0x53dd68*/
@@ -2721,7 +2522,7 @@ DynamicVector *__thiscall VectorClass_ptr_IsometricTileClass::Constructor_Vector
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x40cb33*/
-  *this = &VectorClass<IsometricTileClass *>::`vftable'; /*0x40cb36*/
+  *this = &vt_VectorClass_IsometricTileClass; /*0x40cb36*/
   if ( v3 && this->IsAllocated ) /*0x40cb40*/
   {
     __3_YAXPAX_Z(v3); /*0x40cb48*/
@@ -2748,7 +2549,7 @@ LogicClass *__thiscall VectorClass_ptr_IsometricTileClass::Constructor_VectorCla
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x40cc23*/
-  *this = &VectorClass<ObjectClass *>::`vftable'; /*0x40cc26*/
+  *this = &vt_VectorClass_ObjectClass; /*0x40cc26*/
   if ( v3 && this->IsAllocated ) /*0x40cc30*/
   {
     __3_YAXPAX_Z(v3); /*0x40cc38*/
@@ -2775,7 +2576,7 @@ DynamicVector *__thiscall VectorClass_ptr_LaserDrawClass::Constructor_VectorClas
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5515e3*/
-  *this = &VectorClass<LaserDrawClass *>::`vftable'; /*0x5515e6*/
+  *this = &vt_VectorClass_LaserDrawClass; /*0x5515e6*/
   if ( v3 && this->IsAllocated ) /*0x5515f0*/
   {
     __3_YAXPAX_Z(v3); /*0x5515f8*/
@@ -2802,7 +2603,7 @@ DynamicVector *__thiscall VectorClass_ptr_LightConvertClass::Constructor_VectorC
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x40c543*/
-  *this = &VectorClass<LightConvertClass *>::`vftable'; /*0x40c546*/
+  *this = &vt_VectorClass_LightConvertClass; /*0x40c546*/
   if ( v3 && this->IsAllocated ) /*0x40c550*/
   {
     __3_YAXPAX_Z(v3); /*0x40c558*/
@@ -2829,7 +2630,7 @@ DynamicVector *__thiscall VectorClass_ptr_LightSourceClass::Constructor_VectorCl
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5557d3*/
-  *this = &VectorClass<LightSourceClass *>::`vftable'; /*0x5557d6*/
+  *this = &vt_VectorClass_LightSourceClass; /*0x5557d6*/
   if ( v3 && this->IsAllocated ) /*0x5557e0*/
   {
     __3_YAXPAX_Z(v3); /*0x5557e8*/
@@ -2856,7 +2657,7 @@ DynamicVector *__thiscall VectorClass_ptr_ObjectTypeClass::Constructor_VectorCla
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5f9e33*/
-  *this = &VectorClass<ObjectTypeClass *>::`vftable'; /*0x5f9e36*/
+  *this = &vt_VectorClass_ObjectTypeClass; /*0x5f9e36*/
   if ( v3 && this->IsAllocated ) /*0x5f9e40*/
   {
     __3_YAXPAX_Z(v3); /*0x5f9e48*/
@@ -2883,7 +2684,7 @@ DynamicVector *__thiscall VectorClass_ptr_ParasiteClass::Constructor_VectorClass
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x62b383*/
-  *this = &VectorClass<ParasiteClass *>::`vftable'; /*0x62b386*/
+  *this = &vt_VectorClass_ParasiteClass; /*0x62b386*/
   if ( v3 && this->IsAllocated ) /*0x62b390*/
   {
     __3_YAXPAX_Z(v3); /*0x62b398*/
@@ -2910,7 +2711,7 @@ DynamicVector *__thiscall VectorClass_ptr_ParticleTypeClass::Constructor_VectorC
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0ca3*/
-  *this = &VectorClass<ParticleTypeClass *>::`vftable'; /*0x4f0ca6*/
+  *this = &vt_VectorClass_ParticleTypeClass; /*0x4f0ca6*/
   if ( v3 && this->IsAllocated ) /*0x4f0cb0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0cb8*/
@@ -2937,7 +2738,7 @@ DynamicVector *__thiscall VectorClass_ptr_ParticleTypeClass::Constructor_VectorC
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0d43*/
-  *this = &VectorClass<ParticleSystemTypeClass *>::`vftable'; /*0x4f0d46*/
+  *this = &vt_VectorClass_ParticleSystemTypeClass; /*0x4f0d46*/
   if ( v3 && this->IsAllocated ) /*0x4f0d50*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0d58*/
@@ -2964,7 +2765,7 @@ DynamicVector *__thiscall VectorClass_ptr_ParticleTypeClass::Constructor_VectorC
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0de3*/
-  *this = &VectorClass<SuperWeaponTypeClass *>::`vftable'; /*0x4f0de6*/
+  *this = &vt_VectorClass_SuperWeaponTypeClass; /*0x4f0de6*/
   if ( v3 && this->IsAllocated ) /*0x4f0df0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0df8*/
@@ -3044,7 +2845,7 @@ DynamicVector *__thiscall VectorClass_ptr_PlanningMemberClass::Constructor_Vecto
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x63eca3*/
-  *this = &VectorClass<PlanningMemberClass *>::`vftable'; /*0x63eca6*/
+  *this = &vt_VectorClass_PlanningMemberClass; /*0x63eca6*/
   if ( v3 && this->IsAllocated ) /*0x63ecb0*/
   {
     __3_YAXPAX_Z(v3); /*0x63ecb8*/
@@ -3071,7 +2872,7 @@ DynamicVector *__thiscall VectorClass_ptr_PlanningMemberClass::Constructor_Vecto
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x63ed43*/
-  *this = &VectorClass<PlanningBranchClass *>::`vftable'; /*0x63ed46*/
+  *this = &vt_VectorClass_PlanningBranchClass; /*0x63ed46*/
   if ( v3 && this->IsAllocated ) /*0x63ed50*/
   {
     __3_YAXPAX_Z(v3); /*0x63ed58*/
@@ -3098,7 +2899,7 @@ DynamicVector *__thiscall VectorClass_ptr_ScriptTypeClass::Constructor_VectorCla
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0523*/
-  *this = &VectorClass<ScriptTypeClass *>::`vftable'; /*0x4f0526*/
+  *this = &vt_VectorClass_ScriptTypeClass; /*0x4f0526*/
   if ( v3 && this->IsAllocated ) /*0x4f0530*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0538*/
@@ -3125,7 +2926,7 @@ DynamicVector *__thiscall VectorClass_ptr_ScriptTypeClass::Constructor_VectorCla
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f05c3*/
-  *this = &VectorClass<OverlayTypeClass *>::`vftable'; /*0x4f05c6*/
+  *this = &vt_VectorClass_OverlayTypeClass; /*0x4f05c6*/
   if ( v3 && this->IsAllocated ) /*0x4f05d0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f05d8*/
@@ -3152,7 +2953,7 @@ DynamicVector *__thiscall VectorClass_ptr_SlaveManagerClass::Constructor_VectorC
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x6b1a23*/
-  *this = &VectorClass<SlaveManagerClass *>::`vftable'; /*0x6b1a26*/
+  *this = &vt_VectorClass_SlaveManagerClass; /*0x6b1a26*/
   if ( v3 && this->IsAllocated ) /*0x6b1a30*/
   {
     __3_YAXPAX_Z(v3); /*0x6b1a38*/
@@ -3179,7 +2980,7 @@ DynamicVector *__thiscall VectorClass_ptr_SmudgeTypeClass::Constructor_VectorCla
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0663*/
-  *this = &VectorClass<SmudgeTypeClass *>::`vftable'; /*0x4f0666*/
+  *this = &vt_VectorClass_SmudgeTypeClass; /*0x4f0666*/
   if ( v3 && this->IsAllocated ) /*0x4f0670*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0678*/
@@ -3206,7 +3007,7 @@ DynamicVector *__thiscall VectorClass_ptr_SmudgeTypeClass::Constructor_VectorCla
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0703*/
-  *this = &VectorClass<TerrainTypeClass *>::`vftable'; /*0x4f0706*/
+  *this = &vt_VectorClass_TerrainTypeClass; /*0x4f0706*/
   if ( v3 && this->IsAllocated ) /*0x4f0710*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0718*/
@@ -3233,7 +3034,7 @@ DynamicVector *__thiscall VectorClass_ptr_SmudgeTypeClass::Constructor_VectorCla
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f07a3*/
-  *this = &VectorClass<BuildingTypeClass *>::`vftable'; /*0x4f07a6*/
+  *this = &vt_VectorClass_BuildingTypeClass; /*0x4f07a6*/
   if ( v3 && this->IsAllocated ) /*0x4f07b0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f07b8*/
@@ -3260,7 +3061,7 @@ DynamicVector *__thiscall VectorClass_ptr_SpawnManagerClass::Constructor_VectorC
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x6b8833*/
-  *this = &VectorClass<SpawnManagerClass *>::`vftable'; /*0x6b8836*/
+  *this = &vt_VectorClass_SpawnManagerClass; /*0x6b8836*/
   if ( v3 && this->IsAllocated ) /*0x6b8840*/
   {
     __3_YAXPAX_Z(v3); /*0x6b8848*/
@@ -3287,7 +3088,7 @@ DynamicVector *__thiscall VectorClass_ptr_SpotLightClass::Constructor_VectorClas
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x6002d3*/
-  *this = &VectorClass<SpotLightClass *>::`vftable'; /*0x6002d6*/
+  *this = &vt_VectorClass_SpotLightClass; /*0x6002d6*/
   if ( v3 && this->IsAllocated ) /*0x6002e0*/
   {
     __3_YAXPAX_Z(v3); /*0x6002e8*/
@@ -3314,7 +3115,7 @@ DynamicVector *__thiscall VectorClass_ptr_SuperClass::Constructor_VectorClass_Ab
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0e83*/
-  *this = &VectorClass<AbstractTypeClass *>::`vftable'; /*0x4f0e86*/
+  *this = &vt_VectorClass_AbstractTypeClass; /*0x4f0e86*/
   if ( v3 && this->IsAllocated ) /*0x4f0e90*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0e98*/
@@ -3341,7 +3142,7 @@ DynamicVector *__thiscall VectorClass_ptr_TemporalClass::Constructor_VectorClass
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x71b553*/
-  *this = &VectorClass<TemporalClass *>::`vftable'; /*0x71b556*/
+  *this = &vt_VectorClass_TemporalClass; /*0x71b556*/
   if ( v3 && this->IsAllocated ) /*0x71b560*/
   {
     __3_YAXPAX_Z(v3); /*0x71b568*/
@@ -3368,7 +3169,7 @@ DynamicVector *__thiscall VectorClass_ptr_TiberiumClass::Constructor_VectorClass
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x723a43*/
-  *this = &VectorClass<TiberiumClass *>::`vftable'; /*0x723a46*/
+  *this = &vt_VectorClass_TiberiumClass; /*0x723a46*/
   if ( v3 && this->IsAllocated ) /*0x723a50*/
   {
     __3_YAXPAX_Z(v3); /*0x723a58*/
@@ -3395,7 +3196,7 @@ VectorClass *__thiscall VectorClass_ptr_TileInsertType_uint_sometricTileTypeClas
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x54a7b3*/
-  *this = &VectorClass<IsometricTileTypeClass::TileInsertType *>::`vftable'; /*0x54a7b6*/
+  *this = &vt_VectorClass_IsometricTileTypeClass_TileInsertType; /*0x54a7b6*/
   if ( v3 && this->IsAllocated ) /*0x54a7c0*/
   {
     __3_YAXPAX_Z(v3); /*0x54a7c8*/
@@ -3422,7 +3223,7 @@ DynamicVector *__thiscall VectorClass_ptr_TileInsertType_uint_sometricTileTypeCl
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x54a803*/
-  *this = &VectorClass<IsometricTileTypeClass::TileInsertType *>::`vftable'; /*0x54a806*/
+  *this = &vt_VectorClass_IsometricTileTypeClass_TileInsertType; /*0x54a806*/
   if ( v3 && this->IsAllocated ) /*0x54a810*/
   {
     __3_YAXPAX_Z(v3); /*0x54a818*/
@@ -3449,7 +3250,7 @@ DynamicVector *__thiscall VectorClass_ptr_VoxelAnimClass::Constructor_VectorClas
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x40f1d3*/
-  *this = &VectorClass<VoxelAnimClass *>::`vftable'; /*0x40f1d6*/
+  *this = &vt_VectorClass_VoxelAnimClass; /*0x40f1d6*/
   if ( v3 && this->IsAllocated ) /*0x40f1e0*/
   {
     __3_YAXPAX_Z(v3); /*0x40f1e8*/
@@ -3476,7 +3277,7 @@ DynamicVector *__thiscall VectorClass_ptr_VoxelAnimTypeClass::Constructor_Vector
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0b63*/
-  *this = &VectorClass<VoxelAnimTypeClass *>::`vftable'; /*0x4f0b66*/
+  *this = &vt_VectorClass_VoxelAnimTypeClass; /*0x4f0b66*/
   if ( v3 && this->IsAllocated ) /*0x4f0b70*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0b78*/
@@ -3503,7 +3304,7 @@ DynamicVector *__thiscall VectorClass_ptr_VoxelAnimTypeClass::Constructor_Vector
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4f0c03*/
-  *this = &VectorClass<IsometricTileTypeClass *>::`vftable'; /*0x4f0c06*/
+  *this = &vt_VectorClass_IsometricTileTypeClass; /*0x4f0c06*/
   if ( v3 && this->IsAllocated ) /*0x4f0c10*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0c18*/
@@ -3530,7 +3331,7 @@ DynamicVector *__thiscall VectorClass_ptr_WarheadTypeClass::Constructor_VectorCl
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x40f8f3*/
-  *this = &VectorClass<WarheadTypeClass *>::`vftable'; /*0x40f8f6*/
+  *this = &vt_VectorClass_WarheadTypeClass; /*0x40f8f6*/
   if ( v3 && this->IsAllocated ) /*0x40f900*/
   {
     __3_YAXPAX_Z(v3); /*0x40f908*/
@@ -3557,7 +3358,7 @@ DynamicVector *__thiscall VectorClass_ptr_WaypointPathClass::Constructor_VectorC
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x764713*/
-  *this = &VectorClass<WaypointPathClass *>::`vftable'; /*0x764716*/
+  *this = &vt_VectorClass_WaypointPathClass; /*0x764716*/
   if ( v3 && this->IsAllocated ) /*0x764720*/
   {
     __3_YAXPAX_Z(v3); /*0x764728*/
@@ -3584,7 +3385,7 @@ DynamicVector *__thiscall VectorClass_ptr_WeaponTypeClass::Constructor_VectorCla
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x40fec3*/
-  *this = &VectorClass<WeaponTypeClass *>::`vftable'; /*0x40fec6*/
+  *this = &vt_VectorClass_WeaponTypeClass; /*0x40fec6*/
   if ( v3 && this->IsAllocated ) /*0x40fed0*/
   {
     __3_YAXPAX_Z(v3); /*0x40fed8*/
@@ -3649,7 +3450,7 @@ char __thiscall VectorClass_rc_ptr_WDTTerritory::_vt02(_BYTE *this, int a2, _DWO
       do /*0x76b947*/
       {
         ComPtr::Constructor(v6); /*0x76b938*/
-        *v6 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76b93d*/
+        *v6 = &vt_rc_ptr_WDTTerritory; /*0x76b93d*/
         v6 += 2; /*0x76b943*/
         --v9; /*0x76b946*/
       }
@@ -3674,7 +3475,7 @@ char __thiscall VectorClass_rc_ptr_WDTTerritory::_vt02(_BYTE *this, int a2, _DWO
       do /*0x76b917*/
       {
         ComPtr::Constructor(v6); /*0x76b908*/
-        *v6 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76b90d*/
+        *v6 = &vt_rc_ptr_WDTTerritory; /*0x76b90d*/
         v6 += 2; /*0x76b913*/
         --v7; /*0x76b916*/
       }
@@ -4035,7 +3836,7 @@ DynamicVector *__thiscall VectorClass_UDirtyAreaStruct::Constructor_VectorClass_
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x6dcd23*/
-  *this = &VectorClass<ShadowControlClass *>::`vftable'; /*0x6dcd26*/
+  *this = &vt_VectorClass_ShadowControlClass; /*0x6dcd26*/
   if ( v3 && this->IsAllocated ) /*0x6dcd30*/
   {
     __3_YAXPAX_Z(v3); /*0x6dcd38*/
@@ -11330,6 +11131,24 @@ DynamicVector * VectorClass_ptr_EMPulseClass::Constructor_VectorClass_EMPulseCla
 }
 } // namespace gamemd
 
+// 0x4E0250
+namespace gamemd {
+unsigned int * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Clear(unsigned int * a2, int a3)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    v3 = this->Items;
+    v4 = *(int *)(v3 + 8 * a3);
+    v5 = v3 + 8 * a3;
+    *a2 = v4;
+    *((int*)(a2) + 1) = *(int *)(v5 + 4);
+    return a2;
+}
+}
+} // namespace gamemd
+
 // 0x4E0950
 namespace gamemd {
 void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::ddtor()
@@ -11364,6 +11183,51 @@ while ( i[0] != a2[0] || i[1] != a2[1] )
         return -1;
 }
 return result;
+}
+} // namespace gamemd
+
+// 0x4E09E0
+namespace gamemd {
+unsigned int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::GetCapacity(int a2)
+{
+{
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 3;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E0AB0
+namespace gamemd {
+void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Destroy()
+{
+{
+    int v2;
+    v2 = this->Items;
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z((void *)(v2 - 4));
+    this->Items = 0;
+  }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E0AF0
+namespace gamemd {
+unsigned int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::GetItemIndex(int a2)
+{
+{
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 3;
+    else
+    return 0;
+}
 }
 } // namespace gamemd
 
@@ -21350,6 +21214,19 @@ bool VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex(int a1)
 {
 {
     return *(int*)(a1 + 21372) >= *(int*)(a1 + 21376);
+}
+}
+} // namespace gamemd
+
+// 0x4F6930
+namespace gamemd {
+void * VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_0(int a2)
+{
+{
+    void *v3;
+    v3 = this;
+    sub_429360((int)&punk, &DataGlobal_7E36C0, &v3);
+    return v3;
 }
 }
 } // namespace gamemd
@@ -35144,6 +35021,24 @@ return this->Items[a2];
 }
 } // namespace gamemd
 
+// 0x6BEE50
+namespace gamemd {
+int VectorClass_K_8::QueryInterface(int a1, const void * a2, unsigned int * a3)
+{
+{
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
+    *a3 = a1;
+    if ( !*a3 )
+    return -2147467262;
+    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x6BEEC0
 namespace gamemd {
 LONG VectorClass_K_8::AddRef(int a1)
@@ -35210,6 +35105,24 @@ int VectorClass_K_8::GetSize(int a1, int a2)
     else
     v3 = v2 - 1;
     *(int*)(a1 + 4) = v3;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6BEFD0
+namespace gamemd {
+int VectorClass_K_14::QueryInterface(int a1, const void * a2, unsigned int * a3)
+{
+{
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
+    *a3 = a1;
+    if ( !*a3 )
+    return -2147467262;
+    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
     return 0;
 }
 }
@@ -35286,6 +35199,24 @@ int VectorClass_K_14::GetSize(int a1, int a2)
 }
 } // namespace gamemd
 
+// 0x6BF150
+namespace gamemd {
+int VectorClass_K_20::QueryInterface(int a1, const void * a2, unsigned int * a3)
+{
+{
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
+    *a3 = a1;
+    if ( !*a3 )
+    return -2147467262;
+    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x6BF1C0
 namespace gamemd {
 LONG VectorClass_K_20::AddRef(int a1)
@@ -35352,6 +35283,24 @@ int VectorClass_K_20::GetSize(int a1, int a2)
     else
     v3 = v2 - 1;
     *(int*)(a1 + 4) = v3;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6BF2D0
+namespace gamemd {
+int VectorClass_K_26::QueryInterface(int a1, const void * a2, unsigned int * a3)
+{
+{
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
+    *a3 = a1;
+    if ( !*a3 )
+    return -2147467262;
+    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
     return 0;
 }
 }
@@ -35428,6 +35377,24 @@ int VectorClass_K_26::GetSize(int a1, int a2)
 }
 } // namespace gamemd
 
+// 0x6BF450
+namespace gamemd {
+int VectorClass_K_32::QueryInterface(int a1, const void * a2, unsigned int * a3)
+{
+{
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
+    *a3 = a1;
+    if ( !*a3 )
+    return -2147467262;
+    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x6BF4C0
 namespace gamemd {
 LONG VectorClass_K_32::AddRef(int a1)
@@ -35499,6 +35466,24 @@ int VectorClass_K_32::GetSize(int a1, int a2)
 }
 } // namespace gamemd
 
+// 0x6BF5D0
+namespace gamemd {
+int VectorClass_K_38::QueryInterface(int a1, const void * a2, unsigned int * a3)
+{
+{
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
+    *a3 = a1;
+    if ( !*a3 )
+    return -2147467262;
+    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x6BF640
 namespace gamemd {
 LONG VectorClass_K_38::AddRef(int a1)
@@ -35565,6 +35550,24 @@ int VectorClass_K_38::GetSize(int a1, int a2)
     else
     v3 = v2 - 1;
     *(int*)(a1 + 4) = v3;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6BF750
+namespace gamemd {
+int VectorClass_K_44::QueryInterface(int a1, const void * a2, unsigned int * a3)
+{
+{
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &DataGlobal_7F7CA0, 0x10u) )
+    *a3 = a1;
+    if ( !*a3 )
+    return -2147467262;
+    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
     return 0;
 }
 }

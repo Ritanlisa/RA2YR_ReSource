@@ -24,7 +24,7 @@ rc_ptr *__fastcall ArtConfig_Read(
   else
     v9 = 0; /*0x76f944*/
   ComPtr::Constructor(a1); /*0x76f948*/
-  a1->vfptr = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76f94f*/
+  a1->vfptr = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76f94f*/
   ComPtr::Set(a1, (int)v9); /*0x76f956*/
   return (rc_ptr *)a1; /*0x76f95d*/
 }
@@ -65,7 +65,7 @@ int __thiscall ArtConfig::validateConfig(
     (*(void (__thiscall **)(MSShapeAnim *, _DWORD))(*(_DWORD *)v9->__pad_0 + 4))(v9, 0); /*0x76fcc8*/
     PriorityQueue::Add(aP1, *(MSAnim **)(this + 40)); /*0x76fcd6*/
   }
-  v11[0] = &CCFileClass::`vftable'; /*0x76fcdf*/
+  v11[0] = &vt_CCFileClass; /*0x76fcdf*/
   v13 = 0; /*0x76fce7*/
   Vector::Clear((int)v12); /*0x76fcef*/
   v11[0] = &off_7E1668; /*0x76fcf8*/

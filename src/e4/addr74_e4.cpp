@@ -1191,7 +1191,7 @@ char *__thiscall sub_74BBA0(char *this, int a2, int a3)
   *((_DWORD *)v4 + 2) = 0; /*0x74bbc3*/
   v4[12] = 1; /*0x74bbc6*/
   v4[13] = 0; /*0x74bbca*/
-  *(_DWORD *)v4 = &VectorClass<unsigned char>::`vftable'; /*0x74bbcd*/
+  *(_DWORD *)v4 = &vt_VectorClass_unsigned_char_7F65F4; /*0x74bbcd*/
   (*(void (__thiscall **)(char *, unsigned int, int))(*(_DWORD *)v4 + 8))(v4, (unsigned int)(a2 + 7) >> 3, a3); /*0x74bbda*/
   return this; /*0x74bbdf*/
 }
@@ -1216,7 +1216,7 @@ _DWORD *__thiscall sub_74BBF0(_DWORD *this, int a2)
   *(this + 5) = 0; /*0x74bc07*/
   *((_BYTE *)this + 24) = 1; /*0x74bc0a*/
   *((_BYTE *)this + 25) = 0; /*0x74bc0e*/
-  *(this + 3) = &VectorClass<unsigned char>::`vftable'; /*0x74bc11*/
+  *(this + 3) = &vt_VectorClass_unsigned_char_7F65F4; /*0x74bc11*/
   *(this + 2) = -1; /*0x74bc17*/
   *((_BYTE *)this + 4) = *(_BYTE *)(a2 + 4); /*0x74bc21*/
   *(this + 2) = *(_DWORD *)(a2 + 8); /*0x74bc27*/
@@ -1627,7 +1627,7 @@ void __cdecl sub_74C3C0()
 {
   if ( (MEMORY[0xB1D250] & 1) == 0 ) /*0x74c3ca*/
   {
-    MEMORY[0xB1D290] = (int)&VectorClass<VeinholeMonsterClass *>::`vftable'; /*0x74c3ce*/
+    MEMORY[0xB1D290] = (int)&vt_VectorClass_VeinholeMonsterClass; /*0x74c3ce*/
     MEMORY[0xB1D250] |= 1u; /*0x74c3e1*/
     if ( MEMORY[0xB1D294] ) /*0x74c3e7*/
     {
@@ -1973,7 +1973,7 @@ VectorClass *__thiscall _::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x74f653*/
-  *this = &VectorClass<VeinholeMonsterClass *>::`vftable'; /*0x74f656*/
+  *this = &vt_VectorClass_VeinholeMonsterClass; /*0x74f656*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x74f660*/
   {
     __3_YAXPAX_Z(v3); /*0x74f668*/
@@ -2004,7 +2004,7 @@ _DWORD *__thiscall sub_74F730(VersionClass *this)
   this->field_3C = 0; /*0x74f745*/
   this->M64 = 0; /*0x74f748*/
   this->M68 = v2 & 0xFFFFFFF0; /*0x74f74b*/
-  *(_DWORD *)this->__pad_0 = &VersionClass::`vftable'; /*0x74f74e*/
+  *(_DWORD *)this->__pad_0 = &vt_VersionClass; /*0x74f74e*/
   this->__pad_0[42] = 0; /*0x74f754*/
   this->__pad_0[12] = 0; /*0x74f757*/
   return this->__pad_0; /*0x74f75a*/

@@ -18,292 +18,136 @@
 // 0x71F950
 namespace gamemd { int TEventClass::GetStateA() const {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x71f950
 char __thiscall TEventClass::GetStateA(_DWORD *this)
 {
   char result; // al
 
-  switch ( *(this + 11) )
+  switch ( *(this + 11) ) /*0x71f963*/
   {
-    case 1:
-    case 2:
-    case 3:
-    case 4:
-    case 6:
-    case 7:
-    case 0x12:
-    case 0x13:
-    case 0x14:
-    case 0x15:
-    case 0x16:
-    case 0x17:
-    case 0x18:
-    case 0x19:
-    case 0x1A:
-    case 0x1D:
-    case 0x1F:
-    case 0x21:
-    case 0x22:
-    case 0x23:
-    case 0x26:
-    case 0x27:
-    case 0x28:
-    case 0x29:
-    case 0x2A:
-    case 0x2B:
-    case 0x2C:
-    case 0x30:
-    case 0x31:
-    case 0x32:
-    case 0x35:
-    case 0x36:
-    case 0x3B:
-      result = 1;
-      break;
+    case 1: /*0x71f963*/
+    case 2: /*0x71f963*/
+    case 3: /*0x71f963*/
+    case 4: /*0x71f963*/
+    case 6: /*0x71f963*/
+    case 7: /*0x71f963*/
+    case 0x12: /*0x71f963*/
+    case 0x13: /*0x71f963*/
+    case 0x14: /*0x71f963*/
+    case 0x15: /*0x71f963*/
+    case 0x16: /*0x71f963*/
+    case 0x17: /*0x71f963*/
+    case 0x18: /*0x71f963*/
+    case 0x19: /*0x71f963*/
+    case 0x1A: /*0x71f963*/
+    case 0x1D: /*0x71f963*/
+    case 0x1F: /*0x71f963*/
+    case 0x21: /*0x71f963*/
+    case 0x22: /*0x71f963*/
+    case 0x23: /*0x71f963*/
+    case 0x26: /*0x71f963*/
+    case 0x27: /*0x71f963*/
+    case 0x28: /*0x71f963*/
+    case 0x29: /*0x71f963*/
+    case 0x2A: /*0x71f963*/
+    case 0x2B: /*0x71f963*/
+    case 0x2C: /*0x71f963*/
+    case 0x30: /*0x71f963*/
+    case 0x31: /*0x71f963*/
+    case 0x32: /*0x71f963*/
+    case 0x35: /*0x71f963*/
+    case 0x36: /*0x71f963*/
+    case 0x3B: /*0x71f963*/
+      result = 1; /*0x71f96a*/
+      break; /*0x71f96c*/
     default:
-      result = 0;
-      break;
+      result = 0; /*0x71f96d*/
+      break; /*0x71f96d*/
   }
-  return result;
+  return result; /*0x71f96c*/
 }
-/* ASM:
-mov     ecx, [ecx+2Ch]
-lea     eax, [ecx-1]    ; switch 59 cases
-cmp     eax, 3Ah
-ja      short def_71F963 ; jumptable 0071F963 default case, cases 5,8-17,27,28,30,32,36,37,45-47,51,52,55-58
-xor     ecx, ecx
-mov     cl, ds:byte_71F978[eax]
-jmp     ds:jpt_71F963[ecx*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_71F96A:                             ; CODE XREF: TEventClass__GetStateA+13↑j
-; DATA XREF: .text:jpt_71F963↓o
-mov     al, 1           ; jumptable 0071F963 cases 1-4,6,7,18-26,29,31,33-35,38-44,48-50,53,54,59
-retn
-; ---------------------------------------------------------------------------
-
-def_71F963:                             ; CODE XREF: TEventClass__GetStateA+9↑j
-; TEventClass__GetStateA+13↑j
-; DATA XREF: ...
-xor     al, al          ; jumptable 0071F963 default case, cases 5,8-17,27,28,30,32,36,37,45-47,51,52,55-58
-retn
-*/
-    return {}; // TODO stub - translate quarantined IDA block above
 } }
 // 0x71F9C0
 namespace gamemd { int TEventClass::GetStateB_SpyEvent() const {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x71f9c0
 char __thiscall TEventClass::GetStateB_SpyEvent(_DWORD *this)
 {
   char result; // al
 
-  switch ( *(this + 11) )
+  switch ( *(this + 11) ) /*0x71f9d3*/
   {
-    case 1:
-    case 6:
-    case 0x1F:
-    case 0x2C:
-    case 0x3B:
-      result = 0;
-      break;
+    case 1: /*0x71f9d3*/
+    case 6: /*0x71f9d3*/
+    case 0x1F: /*0x71f9d3*/
+    case 0x2C: /*0x71f9d3*/
+    case 0x3B: /*0x71f9d3*/
+      result = 0; /*0x71f9da*/
+      break; /*0x71f9dc*/
     default:
-      result = 1;
-      break;
+      result = 1; /*0x71f9dd*/
+      break; /*0x71f9dd*/
   }
-  return result;
+  return result; /*0x71f9dc*/
 }
-/* ASM:
-mov     ecx, [ecx+2Ch]
-lea     eax, [ecx-1]    ; switch 59 cases
-cmp     eax, 3Ah
-ja      short def_71F9D3 ; jumptable 0071F9D3 default case, cases 2-5,7-30,32-43,45-58
-xor     ecx, ecx
-mov     cl, ds:byte_71F9E8[eax]
-jmp     ds:jpt_71F9D3[ecx*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_71F9DA:                             ; CODE XREF: TEventClass__GetStateB_SpyEvent+13↑j
-; DATA XREF: .text:jpt_71F9D3↓o
-xor     al, al          ; jumptable 0071F9D3 cases 1,6,31,44,59
-retn
-; ---------------------------------------------------------------------------
-
-def_71F9D3:                             ; CODE XREF: TEventClass__GetStateB_SpyEvent+9↑j
-; TEventClass__GetStateB_SpyEvent+13↑j
-; DATA XREF: ...
-mov     al, 1           ; jumptable 0071F9D3 default case, cases 2-5,7-30,32-43,45-58
-retn
-*/
-    return {}; // TODO stub - translate quarantined IDA block above
 } }
 // 0x6E4660
 namespace gamemd { void TActionClass::Destructor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x6e4660
-void **__thiscall TActionClass::Destructor(void **Block, char a2)
+TActionClass *__thiscall TActionClass::Destructor(void **Block, char a2)
 {
   int v3; // eax
   int v4; // eax
   int v5; // eax
   void **v7; // [esp+8h] [ebp-4h] BYREF
 
-  *Block = &TActionClass::`vftable';
-  *(Block + 1) = &TActionClass::`vftable';
-  *(Block + 2) = &TActionClass::`vftable';
-  *(Block + 3) = &TActionClass::`vftable';
-  AbstractClass::AnnounceExpiredPointer(Block);
-  v7 = Block;
-  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v7);
-  if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] )
+  *Block = &TActionClass::`vftable'; /*0x6e4666*/
+  *(Block + 1) = &TActionClass::`vftable'; /*0x6e466c*/
+  *(Block + 2) = &TActionClass::`vftable'; /*0x6e4673*/
+  *(Block + 3) = &vt_TActionClass; /*0x6e467a*/
+  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6e4681*/
+  v7 = Block; /*0x6e4696*/
+  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v7); /*0x6e469a*/
+  if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x6e46b5*/
   {
-    do
+    do /*0x6e46cd*/
     {
-      ++v3;
-      *((_DWORD *)MEMORY[0xB0F674] + v3 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v3);
+      ++v3; /*0x6e46bd*/
+      *((_DWORD *)MEMORY[0xB0F674] + v3 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v3); /*0x6e46c1*/
     }
-    while ( v3 < MEMORY[0xB0F680] );
+    while ( v3 < MEMORY[0xB0F680] ); /*0x6e46cd*/
   }
-  v7 = Block;
-  v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F658] + 16))(&MEMORY[0xB0F658], &v7);
-  if ( v4 != -1 && v4 < MEMORY[0xB0F668] && v4 < --MEMORY[0xB0F668] )
+  v7 = Block; /*0x6e46df*/
+  v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F658] + 16))(&MEMORY[0xB0F658], &v7); /*0x6e46e3*/
+  if ( v4 != -1 && v4 < MEMORY[0xB0F668] && v4 < --MEMORY[0xB0F668] ) /*0x6e46fe*/
   {
-    do
+    do /*0x6e4716*/
     {
-      ++v4;
-      *((_DWORD *)MEMORY[0xB0F65C] + v4 - 1) = *((_DWORD *)MEMORY[0xB0F65C] + v4);
+      ++v4; /*0x6e4706*/
+      *((_DWORD *)MEMORY[0xB0F65C] + v4 - 1) = *((_DWORD *)MEMORY[0xB0F65C] + v4); /*0x6e470a*/
     }
-    while ( v4 < MEMORY[0xB0F668] );
+    while ( v4 < MEMORY[0xB0F668] ); /*0x6e4716*/
   }
-  v7 = Block;
-  v5 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0E658] + 16))(&MEMORY[0xB0E658], &v7);
-  if ( v5 != -1 && v5 < MEMORY[0xB0E668] && v5 < --MEMORY[0xB0E668] )
+  v7 = Block; /*0x6e4728*/
+  v5 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0E658] + 16))(&MEMORY[0xB0E658], &v7); /*0x6e472c*/
+  if ( v5 != -1 && v5 < MEMORY[0xB0E668] && v5 < --MEMORY[0xB0E668] ) /*0x6e4747*/
   {
-    do
+    do /*0x6e475f*/
     {
-      ++v5;
-      *((_DWORD *)MEMORY[0xB0E65C] + v5 - 1) = *((_DWORD *)MEMORY[0xB0E65C] + v5);
+      ++v5; /*0x6e474f*/
+      *((_DWORD *)MEMORY[0xB0E65C] + v5 - 1) = *((_DWORD *)MEMORY[0xB0E65C] + v5); /*0x6e4753*/
     }
-    while ( v5 < MEMORY[0xB0E668] );
+    while ( v5 < MEMORY[0xB0E668] ); /*0x6e475f*/
   }
-  *((_BYTE *)Block + 109) = 0;
-  AbstractClass::DTOR(Block);
-  if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(Block);
-  return Block;
+  *((_BYTE *)Block + 109) = 0; /*0x6e4763*/
+  AbstractClass::DTOR(Block); /*0x6e4767*/
+  if ( (a2 & 1) != 0 ) /*0x6e4771*/
+    __3_YAXPAX_Z(Block); /*0x6e4774*/
+  return (TActionClass *)Block; /*0x6e477e*/
 }
-
-/* ASM:
-push    ecx
-push    esi
-mov     esi, ecx
-mov     dl, 1
-mov     dword ptr [esi], offset ??_7TActionClass@@6B@ ; const TActionClass::`vftable'
-mov     dword ptr [esi+4], offset ??_7TActionClass@@6B@_0 ; const TActionClass::`vftable'
-mov     dword ptr [esi+8], offset ??_7TActionClass@@6B@_1 ; const TActionClass::`vftable'
-mov     dword ptr [esi+0Ch], offset ??_7TActionClass@@6B@_2 ; const TActionClass::`vftable'
-call    AbstractClass__AnnounceExpiredPointer
-mov     edx, dword_A8ED54+8091Ch
-lea     eax, [esp+8+var_4]
-push    eax
-mov     ecx, (offset dword_A8ED54+8091Ch)
-mov     [esp+0Ch+var_4], esi
-call    dword ptr [edx+10h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_6E46CF
-mov     ecx, dword_A8ED54+8092Ch
-cmp     eax, ecx
-jge     short loc_6E46CF
-dec     ecx
-cmp     eax, ecx
-mov     dword_A8ED54+8092Ch, ecx
-jge     short loc_6E46CF
-
-loc_6E46B7:                             ; CODE XREF: TActionClass__Destructor+6D↓j
-mov     ecx, dword_A8ED54+80920h
-inc     eax
-mov     edx, [ecx+eax*4]
-mov     [ecx+eax*4-4], edx
-mov     ecx, dword_A8ED54+8092Ch
-cmp     eax, ecx
-jl      short loc_6E46B7
-
-loc_6E46CF:                             ; CODE XREF: TActionClass__Destructor+40↑j
-; TActionClass__Destructor+4A↑j ...
-mov     edx, dword_A8ED54+80904h
-lea     eax, [esp+8+var_4]
-push    eax
-mov     ecx, (offset dword_A8ED54+80904h)
-mov     [esp+0Ch+var_4], esi
-call    dword ptr [edx+10h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_6E4718
-mov     ecx, dword_A8ED54+80914h
-cmp     eax, ecx
-jge     short loc_6E4718
-dec     ecx
-cmp     eax, ecx
-mov     dword_A8ED54+80914h, ecx
-jge     short loc_6E4718
-
-loc_6E4700:                             ; CODE XREF: TActionClass__Destructor+B6↓j
-mov     ecx, dword_A8ED54+80908h
-inc     eax
-mov     edx, [ecx+eax*4]
-mov     [ecx+eax*4-4], edx
-mov     ecx, dword_A8ED54+80914h
-cmp     eax, ecx
-jl      short loc_6E4700
-
-loc_6E4718:                             ; CODE XREF: TActionClass__Destructor+89↑j
-; TActionClass__Destructor+93↑j ...
-mov     edx, dword_A8ED54+7F904h
-lea     eax, [esp+8+var_4]
-push    eax
-mov     ecx, (offset dword_A8ED54+7F904h)
-mov     [esp+0Ch+var_4], esi
-call    dword ptr [edx+10h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_6E4761
-mov     ecx, dword_A8ED54+7F914h
-cmp     eax, ecx
-jge     short loc_6E4761
-dec     ecx
-cmp     eax, ecx
-mov     dword_A8ED54+7F914h, ecx
-jge     short loc_6E4761
-
-loc_6E4749:                             ; CODE XREF: TActionClass__Destructor+FF↓j
-mov     ecx, dword_A8ED54+7F908h
-inc     eax
-mov     edx, [ecx+eax*4]
-mov     [ecx+eax*4-4], edx
-mov     ecx, dword_A8ED54+7F914h
-cmp     eax, ecx
-jl      short loc_6E4749
-
-loc_6E4761:                             ; CODE XREF: TActionClass__Destructor+D2↑j
-; TActionClass__Destructor+DC↑j ...
-mov     ecx, esi
-mov     byte ptr [esi+6Dh], 0
-call    AbstractClass__DTOR
-test    [esp+8+arg_0], 1
-jz      short loc_6E477C
-push    esi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_6E477C:                             ; CODE XREF: TActionClass__Destructor+111↑j
-mov     eax, esi
-pop     esi
-pop     ecx
-retn    4
-*/
 } }
 // 0x41E720
 namespace gamemd { int TriggerClass::EvaluateCondition(void* a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TriggerClass_EvaluateCondition(int this, _DWORD *a2, _DWORD *a3, char a4)
+char __thiscall TriggerClass_EvaluateCondition(int this, _DWORD *a2, int a3, char a4)
 {
   int v5; // ecx
   int v6; // eax
@@ -322,698 +166,183 @@ char __thiscall TriggerClass_EvaluateCondition(int this, _DWORD *a2, _DWORD *a3,
   int v19; // [esp+1Ch] [ebp+Ch]
   int v20; // [esp+1Ch] [ebp+Ch]
 
-  v5 = *(_DWORD *)(this + 220);
-  v7 = 1;
-  if ( !v5 || !*(_BYTE *)(v5 + 246) )
+  v5 = *(_DWORD *)(this + 220); /*0x41e726*/
+  v7 = 1; /*0x41e74e*/
+  if ( !v5 || !*(_BYTE *)(v5 + 246) ) /*0x41e730*/
   {
-    v6 = *(_DWORD *)(this + 224);
-    if ( !v6 || !*(_BYTE *)(v6 + 246) )
-      v7 = 0;
+    v6 = *(_DWORD *)(this + 224); /*0x41e73a*/
+    if ( !v6 || !*(_BYTE *)(v6 + 246) ) /*0x41e744*/
+      v7 = 0; /*0x41e738*/
   }
-  if ( !v5 )
-    return 0;
-  if ( a3 )
+  if ( !v5 ) /*0x41e756*/
+    return 0; /*0x41e756*/
+  if ( a3 ) /*0x41e762*/
   {
-    v8 = a2;
-    if ( !*(_BYTE *)(MEMORY[0x87F7E8][7806] + 6131)
-      || a2[5531] >= *(_DWORD *)(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 5012) + 4 * a2[97]) )
+    v8 = a2; /*0x41e769*/
+    if ( !HIBYTE(MEMORY[0x8871E0][1].?) || a2[5531] >= *(_DWORD *)(HIDWORD(MEMORY[0x8871E0]->?) + 4 * a2[97]) ) /*0x41e78c*/
     {
-      if ( !v7 )
-        goto LABEL_17;
-      goto LABEL_16;
+      if ( !v7 ) /*0x41e7a3*/
+        goto LABEL_17; /*0x41e7a3*/
+      goto LABEL_16; /*0x41e7a3*/
     }
   }
   else
   {
-    v8 = a2;
+    v8 = a2; /*0x41e790*/
   }
-  if ( !v7 )
-    return 0;
+  if ( !v7 ) /*0x41e796*/
+    return 0; /*0x41e79e*/
 LABEL_16:
-  if ( a4 )
-    return 0;
+  if ( a4 ) /*0x41e7ab*/
+    return 0; /*0x41e7ab*/
 LABEL_17:
-  if ( *(_DWORD *)(this + 156) == 1 && *(_BYTE *)(MEMORY[0x87F7E8][536210] + 13492) == 1 || !*(_BYTE *)(this + 164) )
-    return 0;
-  if ( MEMORY[0x87F7E8][536212] )
+  if ( *(_DWORD *)(this + 156) == 1 && *((_BYTE *)MEMORY[0xA8B230] + 13492) == 1 || !*(_BYTE *)(this + 164) ) /*0x41e7cd*/
+    return 0; /*0x41e7d5*/
+  if ( MEMORY[0xA8B238][0] ) /*0x41e7df*/
   {
-    if ( !*(_BYTE *)(this + 208) )
-      return 0;
-    v11 = v8[97];
-    if ( !v11 )
+    if ( !*(_BYTE *)(this + 208) ) /*0x41e7e1*/
+      return 0; /*0x41e7f1*/
+    v11 = v8[97]; /*0x41e809*/
+    if ( !v11 ) /*0x41e811*/
     {
 LABEL_28:
-      if ( !*(_BYTE *)(this + 212) )
-        return 0;
-      goto LABEL_36;
+      if ( !*(_BYTE *)(this + 212) ) /*0x41e813*/
+        return 0; /*0x41e823*/
+      goto LABEL_36; /*0x41e81b*/
     }
-    if ( v11 == 1 )
-      goto LABEL_31;
-    if ( v11 != 2 )
-      goto LABEL_36;
-    goto LABEL_34;
+    if ( v11 == 1 ) /*0x41e828*/
+      goto LABEL_31; /*0x41e828*/
+    if ( v11 != 2 ) /*0x41e840*/
+      goto LABEL_36; /*0x41e840*/
+    goto LABEL_34; /*0x41e840*/
   }
-  v10 = *(_DWORD *)(MEMORY[0x87F7E8][536210] + 1548);
-  if ( !v10 )
+  v10 = *((_DWORD *)MEMORY[0xA8B230] + 387); /*0x41e7f4*/
+  if ( !v10 ) /*0x41e7fc*/
   {
 LABEL_34:
-    if ( *(_BYTE *)(this + 210) )
-      goto LABEL_36;
-    return 0;
+    if ( *(_BYTE *)(this + 210) ) /*0x41e842*/
+      goto LABEL_36; /*0x41e84a*/
+    return 0; /*0x41e852*/
   }
-  if ( v10 != 1 )
+  if ( v10 != 1 ) /*0x41e800*/
   {
-    if ( v10 != 2 )
-      goto LABEL_36;
-    goto LABEL_28;
+    if ( v10 != 2 ) /*0x41e805*/
+      goto LABEL_36; /*0x41e805*/
+    goto LABEL_28; /*0x41e805*/
   }
 LABEL_31:
-  if ( !*(_BYTE *)(this + 211) )
-    return 0;
+  if ( !*(_BYTE *)(this + 211) ) /*0x41e82a*/
+    return 0; /*0x41e83a*/
 LABEL_36:
-  v12 = *(_DWORD *)(this + 160);
-  if ( !v12 )
-    return 0;
-  if ( v12 == 1 && *(_DWORD *)(v8[13] + 184) != *(_DWORD *)(this + 168) )
-    return 0;
-  v13 = *(_DWORD *)(this + 172);
-  if ( v13 == 1 )
+  v12 = *(_DWORD *)(this + 160); /*0x41e855*/
+  if ( !v12 ) /*0x41e85d*/
+    return 0; /*0x41e865*/
+  if ( v12 == 1 && *(_DWORD *)(v8[13] + 184) != *(_DWORD *)(this + 168) ) /*0x41e882*/
+    return 0; /*0x41e88a*/
+  v13 = *(_DWORD *)(this + 172); /*0x41e88d*/
+  if ( v13 == 1 ) /*0x41e895*/
   {
-    if ( v8[122] )
-      return 0;
+    if ( v8[122] ) /*0x41e897*/
+      return 0; /*0x41e8a7*/
   }
-  else if ( v13 == 2 )
+  else if ( v13 == 2 ) /*0x41e8ad*/
   {
-    if ( v8[122] != 1 )
-      return 0;
+    if ( v8[122] != 1 ) /*0x41e8b5*/
+      return 0; /*0x41e8bd*/
   }
-  else if ( v13 == 3 && v8[122] != 2 )
+  else if ( v13 == 3 && v8[122] != 2 ) /*0x41e8cc*/
   {
-    return 0;
+    return 0; /*0x41e8d4*/
   }
-  if ( *(_DWORD *)(this + 176) > v8[117] )
-    return 0;
-  v14 = *(_DWORD *)(this + 152);
-  if ( a3 )
+  if ( *(_DWORD *)(this + 176) > v8[117] ) /*0x41e8e5*/
+    return 0; /*0x41e8ea*/
+  v14 = *(_DWORD *)(this + 152); /*0x41e8f0*/
+  if ( a3 ) /*0x41e8f8*/
   {
-    switch ( v14 )
+    switch ( v14 ) /*0x41e908*/
     {
-      case -1:
+      case -1: /*0x41e908*/
         goto LABEL_70;
-      case 0:
-        v15 = ((_DWORD (__stdcall *)(_DWORD *, _DWORD *))AITriggerTypeClass::EnemyHouseOwns)(v8, a3);
-        break;
-      case 1:
-        v15 = ((_DWORD (__stdcall *)(_DWORD *, _DWORD *))AITriggerTypeClass::OwnerHouseOwns)(v8, a3);
-        break;
-      case 2:
-        v19 = (*(int (__stdcall **)(_DWORD *))(a3[9] + 36))(a3 + 9);
-        if ( (double)((*(int (__stdcall **)(_DWORD *))(a3[9] + 32))(a3 + 9) - v19) >= 100.0 )
-          goto LABEL_58;
-        v15 = 1;
-        break;
-      case 3:
-        v20 = (*(int (__stdcall **)(_DWORD *))(a3[9] + 36))(a3 + 9);
-        if ( (double)((*(int (__stdcall **)(_DWORD *))(a3[9] + 32))(a3 + 9) - v20) >= 0.0 )
+      case 0: /*0x41e908*/
+        v15 = AITriggerTypeClass::EnemyHouseOwns(v8, a3); /*0x41e913*/
+        break; /*0x41e918*/
+      case 1: /*0x41e908*/
+        v15 = AITriggerTypeClass::OwnerHouseOwns(v8, a3); /*0x41e921*/
+        break; /*0x41e926*/
+      case 2: /*0x41e908*/
+        v19 = (*(int (__stdcall **)(int))(*(_DWORD *)(a3 + 36) + 36))(a3 + 36); /*0x41e93b*/
+        if ( (double)((*(int (__stdcall **)(int))(*(_DWORD *)(a3 + 36) + 32))(a3 + 36) - v19) >= 100.0 ) /*0x41e95b*/
+          goto LABEL_58; /*0x41e95b*/
+        v15 = 1; /*0x41e95d*/
+        break; /*0x41e95f*/
+      case 3: /*0x41e908*/
+        v20 = (*(int (__stdcall **)(int))(*(_DWORD *)(a3 + 36) + 36))(a3 + 36); /*0x41e975*/
+        if ( (double)((*(int (__stdcall **)(int))(*(_DWORD *)(a3 + 36) + 32))(a3 + 36) - v20) >= 0.0 ) /*0x41e995*/
 LABEL_58:
-          v15 = 0;
+          v15 = 0; /*0x41e961*/
         else
-          v15 = 1;
-        break;
-      case 4:
-        v15 = ((_DWORD (__stdcall *)(_DWORD *, _DWORD *))AITriggerTypeClass::HouseCredits)(v8, a3);
-        break;
-      case 5:
-        v15 = AITriggerTypeClass::IronCurtainCharged((int)v8, (int)a3);
-        break;
-      case 6:
-        v15 = AITriggerTypeClass::ChronoSphereCharged((int)v8, (int)a3);
-        break;
-      case 7:
-        v15 = ((_DWORD (__stdcall *)(_DWORD *, _DWORD *))AITriggerTypeClass::CivilianHouseOwns)(v8, a3);
-        break;
+          v15 = 1; /*0x41e997*/
+        break; /*0x41e999*/
+      case 4: /*0x41e908*/
+        v15 = AITriggerTypeClass::HouseCredits(v8, a3); /*0x41e99f*/
+        break; /*0x41e9a4*/
+      case 5: /*0x41e908*/
+        v15 = AITriggerTypeClass::IronCurtainCharged(v8, a3); /*0x41e9aa*/
+        break; /*0x41e9af*/
+      case 6: /*0x41e908*/
+        v15 = AITriggerTypeClass::ChronoSphereCharged(v8, a3); /*0x41e9b5*/
+        break; /*0x41e9ba*/
+      case 7: /*0x41e908*/
+        v15 = AITriggerTypeClass::CivilianHouseOwns(v8, a3); /*0x41e9c0*/
+        break; /*0x41e9c5*/
       default:
         return 0;
     }
   }
-  else if ( v14 == 1 )
+  else if ( v14 == 1 ) /*0x41e9c9*/
   {
-    v15 = ((_DWORD (__stdcall *)(_DWORD *, _DWORD))AITriggerTypeClass::OwnerHouseOwns)(v8, 0);
+    v15 = AITriggerTypeClass::OwnerHouseOwns(v8, 0); /*0x41e9d0*/
   }
   else
   {
-    v15 = v14 == -1;
+    v15 = v14 == -1; /*0x41e9da*/
   }
-  if ( !v15 )
-    return 0;
+  if ( !v15 ) /*0x41e9df*/
+    return 0; /*0x41e9e1*/
 LABEL_70:
-  result = globalHelper_01FEE0(*(_DWORD *)(this + 220), v8, a3);
-  if ( result )
+  result = globalHelper_01FEE0(*(_DWORD *)(this + 220), v8, a3); /*0x41e9ea*/
+  if ( result ) /*0x41e9fc*/
   {
-    v16 = *(_DWORD *)(this + 224);
-    if ( !v16 || (result = globalHelper_01FEE0(v16, v8, a3)) != 0 )
+    v16 = *(_DWORD *)(this + 224); /*0x41ea05*/
+    if ( !v16 || (result = globalHelper_01FEE0(v16, v8, a3)) != 0 ) /*0x41ea1b*/
     {
-      result = ((_DWORD (__stdcall *)(_DWORD))TriggerClass::ValidateTeamTriggerConditions)(*(_DWORD *)(this + 220));
-      if ( result )
+      result = TriggerClass::ValidateTeamTriggerConditions(*(_DWORD *)(this + 220)); /*0x41ea2d*/
+      if ( result ) /*0x41ea34*/
       {
-        if ( !*(_DWORD *)(this + 224)
-          || (result = ((_DWORD (__stdcall *)(_DWORD))TriggerClass::ValidateTeamTriggerConditions)(*(_DWORD *)(this + 224))) != 0 )
+        if ( !*(_DWORD *)(this + 224) /*0x41ea51*/
+          || (result = TriggerClass::ValidateTeamTriggerConditions(*(_DWORD *)(this + 224))) != 0 )
         {
-          v17 = *(_DWORD *)(this + 220);
-          if ( v17
+          v17 = *(_DWORD *)(this + 220); /*0x41ea5a*/
+          if ( v17 /*0x41ea82*/
             && *(int *)(v17 + 184) >= 0
-            && ((_DWORD (__stdcall *)(_DWORD))TeamClass::CountActiveTeamsForType)(*(_DWORD *)(this + 220)) >= *(_DWORD *)(*(_DWORD *)(this + 220) + 184) )
+            && TeamClass::CountActiveTeamsForType(*(_DWORD *)(this + 220)) >= *(_DWORD *)(*(_DWORD *)(this + 220) + 184) )
           {
-            return 0;
+            return 0; /*0x41ea87*/
           }
           else
           {
-            v18 = *(_DWORD *)(this + 224);
-            return !v18
+            v18 = *(_DWORD *)(this + 224); /*0x41ea8d*/
+            return !v18 /*0x41eaba*/
                 || *(int *)(v18 + 184) < 0
-                || ((_DWORD (__stdcall *)(_DWORD))TeamClass::CountActiveTeamsForType)(*(_DWORD *)(this + 224)) < *(_DWORD *)(*(_DWORD *)(this + 224) + 184);
+                || TeamClass::CountActiveTeamsForType(*(_DWORD *)(this + 224)) < *(_DWORD *)(*(_DWORD *)(this + 224)
+                                                                                           + 184);
           }
         }
       }
     }
   }
-  return result;
+  return result; /*0x41e798*/
 }
-
-/* ASM:
-push    ebx
-push    ebp
-push    esi
-mov     esi, ecx
-push    edi
-mov     ecx, [esi+0DCh]
-test    ecx, ecx
-jz      short loc_41E73A
-mov     al, [ecx+0F6h]
-test    al, al
-jnz     short loc_41E74E
-
-loc_41E73A:                             ; CODE XREF: TriggerClass__EvaluateCondition+E↑j
-mov     eax, [esi+0E0h]
-test    eax, eax
-jz      short loc_41E752
-mov     dl, [eax+0F6h]
-test    dl, dl
-jz      short loc_41E752
-
-loc_41E74E:                             ; CODE XREF: TriggerClass__EvaluateCondition+18↑j
-mov     dl, 1
-jmp     short loc_41E754
-; ---------------------------------------------------------------------------
-
-loc_41E752:                             ; CODE XREF: TriggerClass__EvaluateCondition+22↑j
-; TriggerClass__EvaluateCondition+2C↑j
-xor     dl, dl
-
-loc_41E754:                             ; CODE XREF: TriggerClass__EvaluateCondition+30↑j
-test    ecx, ecx
-jz      loc_41E84C
-mov     ebx, [esp+10h+arg_4]
-test    ebx, ebx
-jz      short loc_41E790
-mov     eax, ds:8871E0h
-mov     edi, [esp+10h+arg_0]
-mov     cl, [eax+17F3h]
-test    cl, cl
-jz      short loc_41E7A1
-mov     ecx, [edi+184h]
-mov     eax, [eax+1394h]
-mov     ebp, [edi+566Ch]
-cmp     ebp, [eax+ecx*4]
-jge     short loc_41E7A1
-jmp     short loc_41E794
-; ---------------------------------------------------------------------------
-
-loc_41E790:                             ; CODE XREF: TriggerClass__EvaluateCondition+42↑j
-mov     edi, [esp+10h+arg_0]
-
-loc_41E794:                             ; CODE XREF: TriggerClass__EvaluateCondition+6E↑j
-test    dl, dl
-jnz     short loc_41E7A5
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41E7A1:                             ; CODE XREF: TriggerClass__EvaluateCondition+55↑j
-; TriggerClass__EvaluateCondition+6C↑j
-test    dl, dl
-jz      short loc_41E7B1
-
-loc_41E7A5:                             ; CODE XREF: TriggerClass__EvaluateCondition+76↑j
-mov     al, [esp+10h+arg_8]
-test    al, al
-jnz     loc_41E84C
-
-loc_41E7B1:                             ; CODE XREF: TriggerClass__EvaluateCondition+83↑j
-mov     eax, [esi+9Ch]
-mov     ecx, 1
-cmp     eax, ecx
-mov     eax, ds:0A8B230h
-jnz     short loc_41E7CD
-cmp     [eax+34B4h], cl
-jz      short loc_41E84C
-
-loc_41E7CD:                             ; CODE XREF: TriggerClass__EvaluateCondition+A3↑j
-mov     dl, [esi+0A4h]
-test    dl, dl
-jz      short loc_41E84C
-mov     edx, ds:0A8B238h
-test    edx, edx
-jz      short loc_41E7F4
-mov     al, [esi+0D0h]
-test    al, al
-jnz     short loc_41E809
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41E7F4:                             ; CODE XREF: TriggerClass__EvaluateCondition+BF↑j
-mov     eax, [eax+60Ch]
-test    eax, eax
-jz      short loc_41E842
-cmp     eax, ecx
-jz      short loc_41E82A
-cmp     eax, 2
-jnz     short loc_41E855
-jmp     short loc_41E813
-; ---------------------------------------------------------------------------
-
-loc_41E809:                             ; CODE XREF: TriggerClass__EvaluateCondition+C9↑j
-mov     eax, [edi+184h]
-test    eax, eax
-jnz     short loc_41E826
-
-loc_41E813:                             ; CODE XREF: TriggerClass__EvaluateCondition+E7↑j
-mov     al, [esi+0D4h]
-test    al, al
-jnz     short loc_41E855
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41E826:                             ; CODE XREF: TriggerClass__EvaluateCondition+F1↑j
-cmp     eax, ecx
-jnz     short loc_41E83D
-
-loc_41E82A:                             ; CODE XREF: TriggerClass__EvaluateCondition+E0↑j
-mov     al, [esi+0D3h]
-test    al, al
-jnz     short loc_41E855
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41E83D:                             ; CODE XREF: TriggerClass__EvaluateCondition+108↑j
-cmp     eax, 2
-jnz     short loc_41E855
-
-loc_41E842:                             ; CODE XREF: TriggerClass__EvaluateCondition+DC↑j
-mov     al, [esi+0D2h]
-test    al, al
-jnz     short loc_41E855
-
-loc_41E84C:                             ; CODE XREF: TriggerClass__EvaluateCondition+36↑j
-; TriggerClass__EvaluateCondition+8B↑j ...
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41E855:                             ; CODE XREF: TriggerClass__EvaluateCondition+E5↑j
-; TriggerClass__EvaluateCondition+FB↑j ...
-mov     eax, [esi+0A0h]
-test    eax, eax
-jnz     short loc_41E868
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41E868:                             ; CODE XREF: TriggerClass__EvaluateCondition+13D↑j
-cmp     eax, 2
-jz      short loc_41E88D
-cmp     eax, ecx
-jnz     short loc_41E88D
-mov     edx, [edi+34h]
-mov     eax, [edx+0B8h]
-mov     edx, [esi+0A8h]
-cmp     eax, edx
-jz      short loc_41E88D
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41E88D:                             ; CODE XREF: TriggerClass__EvaluateCondition+14B↑j
-; TriggerClass__EvaluateCondition+14F↑j ...
-mov     eax, [esi+0ACh]
-cmp     eax, ecx
-jnz     short loc_41E8AA
-mov     eax, [edi+1E8h]
-test    eax, eax
-jz      short loc_41E8D7
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41E8AA:                             ; CODE XREF: TriggerClass__EvaluateCondition+175↑j
-cmp     eax, 2
-jnz     short loc_41E8C0
-cmp     [edi+1E8h], ecx
-jz      short loc_41E8D7
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41E8C0:                             ; CODE XREF: TriggerClass__EvaluateCondition+18D↑j
-cmp     eax, 3
-jnz     short loc_41E8D7
-cmp     dword ptr [edi+1E8h], 2
-jz      short loc_41E8D7
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41E8D7:                             ; CODE XREF: TriggerClass__EvaluateCondition+17F↑j
-; TriggerClass__EvaluateCondition+195↑j ...
-mov     edx, [esi+0B0h]
-mov     eax, [edi+1D4h]
-cmp     edx, eax
-jle     short loc_41E8F0
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41E8F0:                             ; CODE XREF: TriggerClass__EvaluateCondition+1C5↑j
-mov     eax, [esi+98h]
-test    ebx, ebx
-jz      loc_41E9C7
-inc     eax             ; switch 9 cases
-cmp     eax, 8
-ja      def_41E908      ; jumptable 0041E908 default case
-jmp     ds:jpt_41E908[eax*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_41E90F:                             ; CODE XREF: TriggerClass__EvaluateCondition+1E8↑j
-; DATA XREF: .text:jpt_41E908↓o
-push    ebx             ; jumptable 0041E908 case 0
-push    edi
-mov     ecx, esi
-call    AITriggerTypeClass__EnemyHouseOwns
-jmp     loc_41E9DD
-; ---------------------------------------------------------------------------
-
-loc_41E91D:                             ; CODE XREF: TriggerClass__EvaluateCondition+1E8↑j
-; DATA XREF: .text:jpt_41E908↓o
-push    ebx             ; jumptable 0041E908 case 1
-push    edi
-mov     ecx, esi
-call    AITriggerTypeClass__OwnerHouseOwns
-jmp     loc_41E9DD
-; ---------------------------------------------------------------------------
-
-loc_41E92B:                             ; CODE XREF: TriggerClass__EvaluateCondition+1E8↑j
-; DATA XREF: .text:jpt_41E908↓o
-mov     eax, [ebx+24h]  ; jumptable 0041E908 case 2
-lea     ebp, [ebx+24h]
-push    ebp
-call    dword ptr [eax+24h]
-mov     ecx, [ebp+0]
-mov     edx, eax
-push    ebp
-mov     dword ptr [esp+14h+arg_8], edx
-call    dword ptr [ecx+20h]
-mov     edx, dword ptr [esp+10h+arg_8]
-sub     eax, edx
-mov     dword ptr [esp+10h+arg_8], eax
-fild    dword ptr [esp+10h+arg_8]
-fcomp   ds:dbl_7E2AC0
-fnstsw  ax
-test    ah, 1
-jz      short loc_41E961
-mov     al, 1
-jmp     short loc_41E9DD
-; ---------------------------------------------------------------------------
-
-loc_41E961:                             ; CODE XREF: TriggerClass__EvaluateCondition+23B↑j
-; TriggerClass__EvaluateCondition+275↓j
-xor     al, al
-jmp     short loc_41E9DD
-; ---------------------------------------------------------------------------
-
-loc_41E965:                             ; CODE XREF: TriggerClass__EvaluateCondition+1E8↑j
-; DATA XREF: .text:jpt_41E908↓o
-mov     eax, [ebx+24h]  ; jumptable 0041E908 case 3
-lea     ebp, [ebx+24h]
-push    ebp
-call    dword ptr [eax+24h]
-mov     ecx, [ebp+0]
-mov     edx, eax
-push    ebp
-mov     dword ptr [esp+14h+arg_8], edx
-call    dword ptr [ecx+20h]
-mov     edx, dword ptr [esp+10h+arg_8]
-sub     eax, edx
-mov     dword ptr [esp+10h+arg_8], eax
-fild    dword ptr [esp+10h+arg_8]
-fcomp   ds:dbl_7E2800
-fnstsw  ax
-test    ah, 1
-jz      short loc_41E961
-mov     al, 1
-jmp     short loc_41E9DD
-; ---------------------------------------------------------------------------
-
-loc_41E99B:                             ; CODE XREF: TriggerClass__EvaluateCondition+1E8↑j
-; DATA XREF: .text:jpt_41E908↓o
-push    ebx             ; jumptable 0041E908 case 4
-push    edi
-mov     ecx, esi
-call    AITriggerTypeClass__HouseCredits
-jmp     short loc_41E9DD
-; ---------------------------------------------------------------------------
-
-loc_41E9A6:                             ; CODE XREF: TriggerClass__EvaluateCondition+1E8↑j
-; DATA XREF: .text:jpt_41E908↓o
-push    ebx             ; jumptable 0041E908 case 5
-push    edi
-mov     ecx, esi
-call    AITriggerTypeClass__IronCurtainCharged
-jmp     short loc_41E9DD
-; ---------------------------------------------------------------------------
-
-loc_41E9B1:                             ; CODE XREF: TriggerClass__EvaluateCondition+1E8↑j
-; DATA XREF: .text:jpt_41E908↓o
-push    ebx             ; jumptable 0041E908 case 6
-push    edi
-mov     ecx, esi
-call    AITriggerTypeClass__ChronoSphereCharged
-jmp     short loc_41E9DD
-; ---------------------------------------------------------------------------
-
-loc_41E9BC:                             ; CODE XREF: TriggerClass__EvaluateCondition+1E8↑j
-; DATA XREF: .text:jpt_41E908↓o
-push    ebx             ; jumptable 0041E908 case 7
-push    edi
-mov     ecx, esi
-call    AITriggerTypeClass__CivilianHouseOwns
-jmp     short loc_41E9DD
-; ---------------------------------------------------------------------------
-
-loc_41E9C7:                             ; CODE XREF: TriggerClass__EvaluateCondition+1D8↑j
-cmp     eax, ecx
-jnz     short loc_41E9D7
-push    0
-push    edi
-mov     ecx, esi
-call    AITriggerTypeClass__OwnerHouseOwns
-jmp     short loc_41E9DD
-; ---------------------------------------------------------------------------
-
-loc_41E9D7:                             ; CODE XREF: TriggerClass__EvaluateCondition+2A9↑j
-cmp     eax, 0FFFFFFFFh
-setz    al
-
-loc_41E9DD:                             ; CODE XREF: TriggerClass__EvaluateCondition+1F8↑j
-; TriggerClass__EvaluateCondition+206↑j ...
-test    al, al
-jnz     short loc_41E9EA ; jumptable 0041E908 case -1
-
-def_41E908:                             ; CODE XREF: TriggerClass__EvaluateCondition+1E2↑j
-pop     edi             ; jumptable 0041E908 default case
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41E9EA:                             ; CODE XREF: TriggerClass__EvaluateCondition+1E8↑j
-; TriggerClass__EvaluateCondition+2BF↑j
-; DATA XREF: ...
-mov     eax, [esi+0DCh] ; jumptable 0041E908 case -1
-push    ebx
-push    edi
-push    eax
-mov     ecx, esi
-call    globalHelper_01FEE0
-test    al, al
-jnz     short loc_41EA05
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41EA05:                             ; CODE XREF: TriggerClass__EvaluateCondition+2DC↑j
-mov     eax, [esi+0E0h]
-test    eax, eax
-jz      short loc_41EA24
-push    ebx
-push    edi
-push    eax
-mov     ecx, esi
-call    globalHelper_01FEE0
-test    al, al
-jnz     short loc_41EA24
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41EA24:                             ; CODE XREF: TriggerClass__EvaluateCondition+2ED↑j
-; TriggerClass__EvaluateCondition+2FB↑j
-mov     ecx, [esi+0DCh]
-push    ecx
-mov     ecx, edi
-call    TriggerClass__ValidateTeamTriggerConditions
-test    al, al
-jnz     short loc_41EA3D
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41EA3D:                             ; CODE XREF: TriggerClass__EvaluateCondition+314↑j
-mov     eax, [esi+0E0h]
-test    eax, eax
-jz      short loc_41EA5A
-push    eax
-mov     ecx, edi
-call    TriggerClass__ValidateTeamTriggerConditions
-test    al, al
-jnz     short loc_41EA5A
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41EA5A:                             ; CODE XREF: TriggerClass__EvaluateCondition+325↑j
-; TriggerClass__EvaluateCondition+331↑j
-mov     eax, [esi+0DCh]
-test    eax, eax
-jz      short loc_41EA8D
-mov     ecx, [eax+0B8h]
-test    ecx, ecx
-jl      short loc_41EA8D
-push    eax
-mov     ecx, edi
-call    TeamClass__CountActiveTeamsForType
-mov     edx, [esi+0DCh]
-cmp     eax, [edx+0B8h]
-jl      short loc_41EA8D
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41EA8D:                             ; CODE XREF: TriggerClass__EvaluateCondition+342↑j
-; TriggerClass__EvaluateCondition+34C↑j ...
-mov     eax, [esi+0E0h]
-test    eax, eax
-jz      short loc_41EAC0
-mov     ecx, [eax+0B8h]
-test    ecx, ecx
-jl      short loc_41EAC0
-push    eax
-mov     ecx, edi
-call    TeamClass__CountActiveTeamsForType
-mov     ecx, [esi+0E0h]
-cmp     eax, [ecx+0B8h]
-jl      short loc_41EAC0
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41EAC0:                             ; CODE XREF: TriggerClass__EvaluateCondition+375↑j
-; TriggerClass__EvaluateCondition+37F↑j ...
-pop     edi
-pop     esi
-pop     ebp
-mov     al, 1
-pop     ebx
-retn    0Ch
-*/
 } }
 // 0x41FB10
 namespace gamemd { int TriggerTypeClass::SaveToINI(void* a1) {
@@ -1034,42 +363,42 @@ char __thiscall TriggerTypeClass_SaveToINI(int this, char *a2)
   char Buffer[512]; // [esp+1Ch] [ebp-400h] BYREF
   char Source[512]; // [esp+21Ch] [ebp-200h] BYREF
 
-  v12 = (const char *)off_818114;
-  v13 = (const char *)off_818114;
-  v3 = (const char *)off_818114;
-  v14 = (const char *)off_818114;
-  v4 = *(_DWORD *)(this + 220);
-  if ( v4 )
-    v12 = (const char *)(v4 + 36);
-  v5 = *(_DWORD *)(this + 224);
-  if ( v5 )
-    v13 = (const char *)(v5 + 36);
-  if ( *(_DWORD *)(this + 160) == 1 )
+  v12 = (const char *)off_818114; /*0x41fb20*/
+  v13 = (const char *)off_818114; /*0x41fb24*/
+  v3 = (const char *)off_818114; /*0x41fb28*/
+  v14 = (const char *)off_818114; /*0x41fb2a*/
+  v4 = *(_DWORD *)(this + 220); /*0x41fb2e*/
+  if ( v4 ) /*0x41fb37*/
+    v12 = (const char *)(v4 + 36); /*0x41fb3c*/
+  v5 = *(_DWORD *)(this + 224); /*0x41fb40*/
+  if ( v5 ) /*0x41fb48*/
+    v13 = (const char *)(v5 + 36); /*0x41fb4d*/
+  if ( *(_DWORD *)(this + 160) == 1 ) /*0x41fb58*/
   {
-    v6 = *(_DWORD *)(this + 168);
-    if ( v6 != -1 )
-      v3 = (const char *)(*((_DWORD *)MEMORY[0xA83C9C] + v6) + 36);
+    v6 = *(_DWORD *)(this + 168); /*0x41fb65*/
+    if ( v6 != -1 ) /*0x41fb6e*/
+      v3 = (const char *)(*((_DWORD *)g_SuperWeaponTypeCount + v6) + 36); /*0x41fb79*/
   }
-  else if ( *(_DWORD *)(this + 160) == 2 )
+  else if ( *(_DWORD *)(this + 160) == 2 ) /*0x41fb5b*/
   {
-    v3 = (const char *)off_818118;
+    v3 = (const char *)off_818118; /*0x41fb5d*/
   }
-  v7 = *(_DWORD *)(this + 216);
-  if ( v7 )
-    v14 = (const char *)(v7 + 36);
-  v8 = 0;
-  v9 = Buffer;
-  do
+  v7 = *(_DWORD *)(this + 216); /*0x41fb7c*/
+  if ( v7 ) /*0x41fb84*/
+    v14 = (const char *)(v7 + 36); /*0x41fb89*/
+  v8 = 0; /*0x41fb8d*/
+  v9 = Buffer; /*0x41fb8f*/
+  do /*0x41fbb2*/
   {
-    sprintf(v9, "%02x", *(unsigned __int8 *)(this + v8++ + 228));
-    v9 += 2;
+    sprintf(v9, MEMORY[0x8181B0], *(unsigned __int8 *)(this + v8++ + 228)); /*0x41fba3*/
+    v9 += 2; /*0x41fbac*/
   }
-  while ( v8 < 0x20 );
-  v10 = *(_BYTE *)(this + 212) == 0;
-  *v9 = 0;
-  sprintf(
+  while ( v8 < 0x20 ); /*0x41fbb2*/
+  v10 = *(_BYTE *)(this + 212) == 0; /*0x41fbbc*/
+  *v9 = 0; /*0x41fbbe*/
+  sprintf( /*0x41fc64*/
     Source,
-    "%s,%s,%s,%d,%d,%s,%s,%lf,%lf,%lf,%d,%d,%d,%d,%s,%d,%d,%d",
+    stru_818174,
     (const char *)(this + 100),
     v12,
     v3,
@@ -1088,394 +417,102 @@ char __thiscall TriggerTypeClass_SaveToINI(int this, char *a2)
     *(_BYTE *)(this + 210) != 0,
     *(_BYTE *)(this + 211) != 0,
     !v10);
-  return INIClass::SetString(a2, (unsigned __int8 *)aAitriggertypes, (char *)(this + 36), Source);
+  return INIClass::SetString(a2, (unsigned __int8 *)aAitriggertypes, (char *)(this + 36), Source); /*0x41fc8a*/
 }
-
-/* ASM:
-Buffer          = byte ptr -400h
-Source          = byte ptr -200h
-arg_0           = dword ptr  4
-
-sub     esp, 40Ch
-mov     eax, off_818114 ; "<none>"
-push    ebx
-push    ebp
-push    esi
-mov     esi, ecx
-mov     [esp+418h+var_40C], eax
-mov     [esp+418h+var_408], eax
-mov     ebp, eax
-mov     [esp+418h+var_404], eax
-mov     eax, [esi+0DCh]
-test    eax, eax
-push    edi
-jz      short loc_41FB40
-add     eax, 24h ; '$'
-mov     [esp+41Ch+var_40C], eax
-
-loc_41FB40:                             ; CODE XREF: TriggerTypeClass__SaveToINI+27↑j
-mov     eax, [esi+0E0h]
-test    eax, eax
-jz      short loc_41FB51
-add     eax, 24h ; '$'
-mov     [esp+41Ch+var_408], eax
-
-loc_41FB51:                             ; CODE XREF: TriggerTypeClass__SaveToINI+38↑j
-mov     eax, [esi+0A0h]
-dec     eax
-jz      short loc_41FB65
-dec     eax
-jnz     short loc_41FB7C
-mov     ebp, off_818118 ; "<all>"
-jmp     short loc_41FB7C
-; ---------------------------------------------------------------------------
-
-loc_41FB65:                             ; CODE XREF: TriggerTypeClass__SaveToINI+48↑j
-mov     eax, [esi+0A8h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_41FB7C
-mov     ecx, ds:0A83C9Ch
-mov     ebp, [ecx+eax*4]
-add     ebp, 24h ; '$'
-
-loc_41FB7C:                             ; CODE XREF: TriggerTypeClass__SaveToINI+4B↑j
-; TriggerTypeClass__SaveToINI+53↑j ...
-mov     eax, [esi+0D8h]
-test    eax, eax
-jz      short loc_41FB8D
-add     eax, 24h ; '$'
-mov     [esp+41Ch+var_404], eax
-
-loc_41FB8D:                             ; CODE XREF: TriggerTypeClass__SaveToINI+74↑j
-xor     edi, edi
-lea     ebx, [esp+41Ch+Buffer]
-
-loc_41FB93:                             ; CODE XREF: TriggerTypeClass__SaveToINI+A2↓j
-xor     edx, edx
-mov     dl, [esi+edi+0E4h]
-push    edx
-push    offset a02x_0   ; "%02x"
-push    ebx             ; Buffer
-call    _sprintf
-add     esp, 0Ch
-inc     edi
-add     ebx, 2
-cmp     edi, 20h ; ' '
-jb      short loc_41FB93
-mov     dl, [esi+0D4h]
-xor     eax, eax
-test    dl, dl
-mov     byte ptr [ebx], 0
-mov     bl, [esi+0D3h]
-setnz   al
-xor     ecx, ecx
-push    eax
-mov     al, [esi+0D2h]
-test    bl, bl
-setnz   cl
-xor     edx, edx
-push    ecx
-test    al, al
-mov     eax, [esp+424h+var_408]
-setnz   dl
-push    edx
-mov     dl, [esi+0D1h]
-xor     ecx, ecx
-push    eax
-test    dl, dl
-mov     edx, [esi+0ACh]
-setnz   cl
-push    ecx
-mov     ecx, [esi+0CCh]
-push    edx
-mov     dl, [esi+0D0h]
-xor     eax, eax
-push    0
-test    dl, dl
-mov     edx, [esi+0C8h]
-setnz   al
-push    eax
-mov     eax, [esi+0C4h]
-push    ecx
-mov     ecx, [esi+0C0h]
-push    edx
-mov     edx, [esi+0BCh]
-push    eax
-mov     eax, [esi+0B8h]
-push    ecx
-push    edx
-mov     edx, [esp+450h+var_404]
-lea     ecx, [esp+450h+Buffer]
-push    eax
-mov     eax, [esi+98h]
-push    ecx
-mov     ecx, [esi+0B0h]
-push    edx
-mov     edx, [esp+45Ch+var_40C]
-push    eax
-push    ecx
-push    ebp
-lea     eax, [esi+64h]
-push    edx
-push    eax
-lea     ecx, [esp+470h+Source]
-push    offset aSSSDDSSLfLfLfD ; "%s,%s,%s,%d,%d,%s,%s,%lf,%lf,%lf,%d,%d,"...
-push    ecx             ; Buffer
-call    _sprintf
-mov     eax, ds:off_7E2A18 ; "AITriggerTypes"
-mov     ecx, [esp+478h+arg_0]
-add     esp, 5Ch
-lea     edx, [esp+41Ch+Source]
-add     esi, 24h ; '$'
-push    edx             ; Source
-push    esi             ; char *
-push    eax             ; Block
-call    INIClass__SetString
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 40Ch
-retn    4
-*/
 } }
 // 0x46CCD0
 namespace gamemd { int CampaignClass::GetMapData(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x46ccd0
-char __thiscall CampaignClass::GetMapData(int this, unsigned __int8 ***a2)
+char __thiscall CampaignClass::GetMapData(int this, unsigned __int8 ***aP1)
 {
   int Int_Overwrite; // eax
-  int v4; // ecx
-  char Destination[1024]; // [esp+8h] [ebp-400h] BYREF
+  CCINIClass *v4; // ecx
+  INIClass Destination[16]; // [esp+8h] [ebp-400h] BYREF
 
-  INIClass::ResetSection(a2);
-  if ( !AbstractTypeClass::LoadFromINI(this, a2) )
-    return 0;
-  Int_Overwrite = INIClass::ReadInt_Overwrite(
-                    (int)a2,
+  INIClass::ResetSection(aP1); /*0x46cce3*/
+  if ( !AbstractTypeClass::LoadFromINI(this, (AbstractTypeClass *)aP1) ) /*0x46cceb*/
+    return 0; /*0x46cdf7*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x46cd0c*/
+                    (int)aP1,
                     (unsigned __int8 *)(this + 36),
-                    (unsigned __int8 *)aCd,
-                    *(_DWORD *)(this + 152));
-  v4 = *(_DWORD *)(this + 668);
-  *(_DWORD *)(this + 152) = Int_Overwrite;
-  *(_DWORD *)(this + 668) = INIClass::GetBool(a2, (unsigned __int8 *)(this + 36), (unsigned __int8 *)aFinalmovie, v4);
-  INIClass::GetString(
-    a2,
-    (unsigned __int8 *)(this + 36),
-    (unsigned __int8 *)g_INI_Key_Scenario,
-    (char *)(this + 156),
-    (char *)(this + 156),
+                    (CCINIClass *)&stru_81B1A4.unknown30,
+                    *(INIClass **)(this + 152));
+  v4 = *(CCINIClass **)(this + 668); /*0x46cd11*/
+  *(_DWORD *)(this + 152) = Int_Overwrite; /*0x46cd17*/
+  *(_DWORD *)(this + 668) = INIClass::GetBool( /*0x46cd40*/
+                              aP1,
+                              (INIClass *)(this + 36),
+                              (unsigned __int8 *)&stru_81B1A4.__pad_20[4],
+                              (int)v4);
+  INIClass::GetString( /*0x46cd46*/
+    aP1,
+    (INIClass *)(this + 36),
+    (unsigned __int8 *)&stru_81B1A4.sectionHead[2],
+    (INIClass *)(this + 156),
+    (INIClass *)(this + 156),
     512);
-  _strupr((char *)(this + 156));
-  if ( INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), (unsigned __int8 *)aDebugonly, 0) )
+  _strupr((char *)(this + 156)); /*0x46cd4c*/
+  if ( INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), (CCINIClass *)&stru_81B1A4.headNode[2], 0) ) /*0x46cd5e*/
   {
-    INIClass::GetString(
-      a2,
-      (unsigned __int8 *)(this + 36),
-      (unsigned __int8 *)g_INI_Key_Description,
-      0,
-      Destination,
-      1024);
-    strcat(Destination, aForDebugTestin);
-    BulkCharToWide((_WORD *)(this + 672), (unsigned __int8 *)Destination, -1);
+    INIClass::GetString(aP1, (INIClass *)(this + 36), (unsigned __int8 *)&stru_81B1A4, 0, Destination, 1024); /*0x46cda3*/
+    strcat(Destination[0].__pad_0, (const char *)&stru_81B138.unknown54); /*0x46cdcf*/
+    BulkCharToWide((_WORD *)(this + 672), (unsigned __int8 *)Destination, -1); /*0x46cde2*/
   }
   else
   {
-    INIClass::GetStringEx(this + 36, g_INI_Key_Description, (#72 *)(this + 672), 128);
+    INIClass::GetStringEx((int)aP1, (INIClass *)(this + 36), &stru_81B1A4, (CCINIClass *)(this + 672), 0x80u); /*0x46cd7b*/
   }
-  return 1;
+  return 1; /*0x46cd82*/
 }
-
-/* ASM:
-Destination     = byte ptr -400h
-arg_0           = dword ptr  4
-
-sub     esp, 400h
-push    ebx
-push    edi
-mov     edi, [esp+408h+arg_0]
-mov     ebx, ecx
-mov     ecx, edi
-call    INIClass__ResetSection
-push    edi
-mov     ecx, ebx
-call    AbstractTypeClass__LoadFromINI
-test    al, al
-jz      loc_46CDF6
-mov     eax, [ebx+98h]
-push    ebp
-push    esi
-lea     esi, [ebx+24h]
-push    eax
-push    offset aCd      ; "CD"
-push    esi
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     ecx, [ebx+29Ch]
-mov     [ebx+98h], eax
-push    ecx
-push    offset aFinalmovie ; "FinalMovie"
-push    esi
-mov     ecx, edi
-call    INIClass__GetBool
-lea     ebp, [ebx+9Ch]
-push    200h            ; Count
-push    ebp             ; Destination
-push    ebp             ; Source
-push    offset g_INI_Key_Scenario ; "Scenario"
-push    esi             ; int
-mov     ecx, edi
-mov     [ebx+29Ch], eax
-call    INIClass__GetString
-push    ebp             ; String
-call    __strupr
-add     esp, 4
-mov     ecx, edi
-push    0
-push    offset aDebugonly ; "DebugOnly"
-push    esi
-call    INIClass__ReadBool_Overwrite
-test    al, al
-jnz     short loc_46CD8F
-add     ebx, 2A0h
-push    80h             ; Count
-push    ebx             ; String
-push    offset g_INI_Key_Description ; "Description"
-push    esi             ; int
-mov     ecx, edi
-call    INIClass__GetStringEx
-pop     esi
-pop     ebp
-pop     edi
-mov     al, 1
-pop     ebx
-add     esp, 400h
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_46CD8F:                             ; CODE XREF: CampaignClass__GetMapData+95↑j
-lea     edx, [esp+410h+Destination]
-push    400h            ; Count
-push    edx             ; Destination
-push    0               ; Source
-push    offset g_INI_Key_Description ; "Description"
-push    esi             ; int
-mov     ecx, edi
-call    INIClass__GetString
-mov     edi, offset aForDebugTestin ; " - for debug/testing"
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-lea     edx, [esp+410h+Destination]
-repne scasb
-not     ecx
-sub     edi, ecx
-push    0FFFFFFFFh
-mov     esi, edi
-mov     ebp, ecx
-mov     edi, edx
-or      ecx, 0FFFFFFFFh
-repne scasb
-mov     ecx, ebp
-dec     edi
-shr     ecx, 2
-rep movsd
-mov     ecx, ebp
-lea     edx, [esp+414h+Destination]
-and     ecx, 3
-rep movsb
-lea     ecx, [ebx+2A0h]
-call    BulkCharToWide
-pop     esi
-pop     ebp
-pop     edi
-mov     al, 1
-pop     ebx
-add     esp, 400h
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_46CDF6:                             ; CODE XREF: CampaignClass__GetMapData+22↑j
-pop     edi
-xor     al, al
-pop     ebx
-add     esp, 400h
-retn    4
-*/
 } }
 // 0x46CFC0
 namespace gamemd { int CampaignClass::Stat(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CampaignClass::_vt13(int this, int *a2)
 {
-  AbstractTypeClass::ProcessPower((char *)this, a2);
-  Power::TimerProcess(*(_DWORD *)(this + 152));
-  Checksum::AddString((unsigned int *)a2, (unsigned __int8 *)(this + 156));
-  return Power::TimerProcess(*(_DWORD *)(this + 668));
+  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x46cfc9*/
+  Power::TimerProcess(*(_DWORD *)(this + 152)); /*0x46cfd7*/
+  Checksum::AddString((unsigned int *)a2, (unsigned __int8 *)(this + 156)); /*0x46cfe5*/
+  return Power::TimerProcess(*(_DWORD *)(this + 668)); /*0x46cff8*/
 }
-
-/* ASM:
-push    esi
-push    edi
-mov     edi, [esp+8+arg_0]
-mov     esi, ecx
-push    edi
-call    AbstractTypeClass__ProcessPower
-mov     eax, [esi+98h]
-mov     ecx, edi
-push    eax
-call    Power__TimerProcess
-lea     ecx, [esi+9Ch]
-push    ecx
-mov     ecx, edi
-call    Checksum__AddString
-mov     edx, [esi+29Ch]
-mov     ecx, edi
-push    edx
-call    Power__TimerProcess
-pop     edi
-pop     esi
-retn    4
-*/
 } }
 // 0x49DB00
 namespace gamemd { int CampaignClass::LoadFromINI() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x49db00
 int __thiscall CampaignClass::LoadFromINI(int this)
 {
   int v2; // ebx
-  int KeyCount; // esi
-  int *v5; // eax
-  _DWORD *v6; // edi
-  int v7; // eax
-  _DWORD *v8; // esi
-  int v9; // ebx
-  _DWORD *v10; // eax
-  int v11; // esi
+  MultiplayerGameMode *KeyCount; // esi
+  MultiplayerGameMode **v5; // eax
+  VectorClass *v6; // edi
+  char *v7; // eax
+  VectorClass *v8; // esi
+  char *v9; // ebx
+  VectorClass *v10; // eax
+  CCINIClass *v11; // esi
   unsigned __int8 *StringByIndex; // eax
-  #72 *StringCSF; // esi
-  #72 *v14; // eax
-  int v15; // eax
+  INIClass *String; // esi
+  wchar_t *v14; // eax
+  INIClass *v15; // eax
   char *v16; // eax
   char *v17; // eax
   char *v18; // eax
-  int v19; // esi
+  TechnoTypeClass *v19; // esi
   int v20; // ecx
   int v21; // eax
   _DWORD *v22; // edi
   int v23; // ecx
   int v24; // eax
   int v25; // edx
-  char *v26; // eax
-  const char *v27; // esi
-  char *v28; // edx
+  INIClass *v26; // eax
+  INIClass *v27; // esi
+  CCINIClass *v28; // edx
   int v29; // esi
   int v30; // eax
   int v31; // ecx
   int v32; // eax
   char *i; // esi
-  char *v34; // edx
+  CCINIClass *v34; // edx
   int v35; // esi
   int v36; // eax
   int v37; // ecx
@@ -1487,15 +524,15 @@ int __thiscall CampaignClass::LoadFromINI(int this)
   int v43; // ecx
   int v44; // eax
   int v45; // edx
-  char *v46; // eax
-  const char *v47; // esi
-  char *v48; // edx
+  INIClass *v46; // eax
+  INIClass *v47; // esi
+  CCINIClass *v48; // edx
   int v49; // esi
   int v50; // eax
   int v51; // ecx
   int v52; // eax
   char *j; // esi
-  char *v54; // edx
+  CCINIClass *v54; // edx
   int v55; // esi
   int v56; // eax
   int v57; // ecx
@@ -1503,1183 +540,372 @@ int __thiscall CampaignClass::LoadFromINI(int this)
   bool v59; // cc
   int Int_Overwrite; // [esp+30h] [ebp-134h]
   int v61; // [esp+30h] [ebp-134h]
-  char *v62; // [esp+34h] [ebp-130h]
-  char *v63; // [esp+34h] [ebp-130h]
-  char *v64; // [esp+34h] [ebp-130h]
-  char *v65; // [esp+34h] [ebp-130h]
-  int v66; // [esp+38h] [ebp-12Ch]
+  CCINIClass *v62; // [esp+34h] [ebp-130h]
+  CCINIClass *v63; // [esp+34h] [ebp-130h]
+  CCINIClass *v64; // [esp+34h] [ebp-130h]
+  CCINIClass *v65; // [esp+34h] [ebp-130h]
+  CCINIClass *v66; // [esp+38h] [ebp-12Ch]
   int v67; // [esp+3Ch] [ebp-128h]
-  int v68; // [esp+40h] [ebp-124h]
+  CCINIClass *v68; // [esp+40h] [ebp-124h]
   int v69; // [esp+44h] [ebp-120h]
   char Buffer[48]; // [esp+48h] [ebp-11Ch] BYREF
-  _DWORD v71[22]; // [esp+78h] [ebp-ECh] BYREF
+  MultiplayerGameMode aP1; // [esp+78h] [ebp-ECh] BYREF
   _BYTE v72[12]; // [esp+D0h] [ebp-94h] BYREF
   int v73; // [esp+DCh] [ebp-88h]
-  char Destination[128]; // [esp+E4h] [ebp-80h] BYREF
+  INIClass Destination[2]; // [esp+E4h] [ebp-80h] BYREF
 
-  CCFileClass::Construct(v71, g_Str_File_CoopCampMD_ini);
-  v2 = 0;
-  if ( !CCINIClass::Load((char *)this, (int)v71, 0, 0) )
+  CCFileClass::Construct(&aP1, aCoopcampmdIni); /*0x49db13*/
+  v2 = 0; /*0x49db18*/
+  if ( !CCINIClass::Load((_BYTE *)this, &aP1, 0, 0) ) /*0x49db23*/
   {
-    *(_DWORD *)(this + 92) = 0;
-    *(_DWORD *)(this + 88) = 0;
-    *(_BYTE *)(this + 96) = 0;
-    v71[0] = &CCFileClass::`vftable';
-    v73 = 0;
-    Vector::Clear((int)v72);
-    v71[0] = &off_7E1668;
-    return BufferIOFileClass::Dtor(v71);
+    *(_DWORD *)(this + 92) = 0; /*0x49db33*/
+    *(_DWORD *)(this + 88) = 0; /*0x49db36*/
+    *(_BYTE *)(this + 96) = 0; /*0x49db39*/
+    *(_DWORD *)aP1.__pad_0 = &vt_CCFileClass; /*0x49db3c*/
+    v73 = 0; /*0x49db44*/
+    Vector::Clear((int)v72); /*0x49db4b*/
+    *(_DWORD *)aP1.__pad_0 = &off_7E1668; /*0x49db54*/
+    return BufferIOFileClass::Dtor(&aP1); /*0x49db69*/
   }
-  KeyCount = INIClass::GetKeyCount((char *)this, (unsigned __int8 *)g_INI_Key_Campaigns);
-  *(_DWORD *)(this + 92) = KeyCount;
-  if ( KeyCount > 0 )
+  KeyCount = (MultiplayerGameMode *)INIClass::GetKeyCount((char *)this, &unk_81F3B4); /*0x49db78*/
+  *(_DWORD *)(this + 92) = KeyCount; /*0x49db7c*/
+  if ( (int)KeyCount > 0 ) /*0x49db7f*/
   {
-    v5 = (int *)__2_YAPAXI_Z(76 * KeyCount + 4);
-    if ( v5 )
+    v5 = (MultiplayerGameMode **)__2_YAPAXI_Z(76 * (_DWORD)KeyCount + 4); /*0x49db9a*/
+    if ( v5 ) /*0x49dba4*/
     {
-      *v5 = KeyCount;
-      v6 = v5 + 1;
-      v7 = KeyCount - 1;
-      if ( KeyCount - 1 >= 0 )
+      *v5 = KeyCount; /*0x49dba6*/
+      v6 = (VectorClass *)(v5 + 1); /*0x49dba8*/
+      v7 = (char *)&KeyCount[-1].MultiplayerGameMode_field_0x18 + 3; /*0x49dbab*/
+      if ( (int)&KeyCount[-1].MultiplayerGameMode_field_0x18 + 3 >= 0 ) /*0x49dbb0*/
       {
-        v8 = v6 + 4;
-        v9 = v7 + 1;
-        do
+        v8 = v6 + 1; /*0x49dbb2*/
+        v9 = v7 + 1; /*0x49dbb5*/
+        do /*0x49dbf7*/
         {
-          CampaignClass::Constructor_0(v8, 0, 0);
-          *v8 = &DynamicVectorClass<DynamicVectorClass<char *> *>::`vftable';
-          v8[5] = 10;
-          v8[4] = 0;
-          CampaignClass::Constructor(v8 + 6, 0, 0);
-          unknown_libname_73(v8 + 13);
-          unknown_libname_73(v8 + 14);
-          v8 += 19;
-          --v9;
+          CampaignClass::Constructor_0(v8, 0, 0); /*0x49dbbe*/
+          v8->vtable0 = &DynamicVectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49dbca*/
+          v8[1].Items = (void *)10; /*0x49dbd0*/
+          v8[1].vtable0 = 0; /*0x49dbd7*/
+          CampaignClass::Constructor(&v8[1].Capacity, 0, 0); /*0x49dbde*/
+          unknown_libname_73(&v8[3].Items); /*0x49dbe6*/
+          unknown_libname_73(&v8[3].Capacity); /*0x49dbee*/
+          v8 = (VectorClass *)((char *)v8 + 76); /*0x49dbf3*/
+          --v9; /*0x49dbf6*/
         }
-        while ( v9 );
-        v2 = 0;
+        while ( v9 ); /*0x49dbf7*/
+        v2 = 0; /*0x49dbf9*/
       }
-      v10 = v6;
+      v10 = v6; /*0x49dbfb*/
     }
     else
     {
-      v10 = 0;
+      v10 = 0; /*0x49dbff*/
     }
-    *(_DWORD *)(this + 88) = v10;
-    if ( !v10 )
-      goto LABEL_80;
-    v11 = 0;
-    v68 = 0;
-    if ( *(int *)(this + 92) <= 0 )
-      goto LABEL_80;
-    while ( 1 )
+    *(_DWORD *)(this + 88) = v10; /*0x49dc03*/
+    if ( !v10 ) /*0x49dc06*/
+      goto LABEL_80; /*0x49dc06*/
+    v11 = 0; /*0x49dc0f*/
+    v68 = 0; /*0x49dc13*/
+    if ( *(int *)(this + 92) <= 0 ) /*0x49dc17*/
+      goto LABEL_80; /*0x49dc17*/
+    while ( 1 ) /*0x49dc25*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(
-                                           (char *)this,
-                                           (unsigned __int8 *)g_INI_Key_Campaigns,
-                                           v11);
-      if ( StringByIndex )
+      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex((char *)this, (CCINIClass *)&unk_81F3B4, v11); /*0x49dc25*/
+      if ( StringByIndex ) /*0x49dc2c*/
       {
-        INIClass::GetString(
-          (unsigned __int8 ***)this,
-          (unsigned __int8 *)g_INI_Key_Campaigns,
-          StringByIndex,
-          0,
-          Destination,
-          128);
-        Int_Overwrite = INIClass::ReadInt_Overwrite(
-                          this,
-                          (unsigned __int8 *)Destination,
-                          (unsigned __int8 *)aNumberofcampai,
-                          0);
-        if ( INIClass::GetString(
+        INIClass::GetString((unsigned __int8 ***)this, &unk_81F3B4, StringByIndex, 0, Destination, 128); /*0x49dc49*/
+        Int_Overwrite = INIClass::ReadInt_Overwrite(this, (unsigned __int8 *)Destination, &unk_81F39C, 0); /*0x49dc69*/
+        if ( INIClass::GetString( /*0x49dc83*/
                (unsigned __int8 ***)this,
-               (unsigned __int8 *)Destination,
-               (unsigned __int8 *)aCampaignname,
+               Destination,
+               &unk_81F38C,
                0,
-               (char *)&MEMORY[0x87F7E8][32636],
+               (INIClass *)&stru_89E138.__pad_1258[584],
                128) )
         {
-          StringCSF = GetStringCSF((#72 *)&MEMORY[0x87F7E8][32636], 0, aDRa2mdpostCoop, 1048);
-          *(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 4) = __2_YAPAXI_Z(258);
-          v14 = *(#72 **)(*(_DWORD *)(this + 88) + v2 + 4);
-          if ( v14 )
-            wcscpy(v14, StringCSF);
+          String = (INIClass *)GetStringCSF( /*0x49dca7*/
+                                 (wchar_t *)&stru_89E138.__pad_1258[584],
+                                 0,
+                                 (CampaignScore *)"D:\\ra2mdpost\\coopcamp.cpp",
+                                 1048);
+          *(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 4) = __2_YAPAXI_Z(0x102u); /*0x49dcb4*/
+          v14 = *(wchar_t **)(*(_DWORD *)(this + 88) + v2 + 4); /*0x49dcbb*/
+          if ( v14 ) /*0x49dcc1*/
+            wcscpy(v14, (const wchar_t *)String); /*0x49dcc5*/
         }
-        INIClass::GetString(
+        INIClass::GetString( /*0x49dce8*/
           (unsigned __int8 ***)this,
-          (unsigned __int8 *)Destination,
-          (unsigned __int8 *)aCampaignloadsc,
+          Destination,
+          &unk_81F35C,
           0,
-          (char *)&MEMORY[0x87F7E8][32636],
+          (INIClass *)&stru_89E138.__pad_1258[584],
           128);
-        String::Assign_Alt((void **)(*(_DWORD *)(this + 88) + v2 + 68), (const char *)&MEMORY[0x87F7E8][32636]);
-        INIClass::GetString(
+        String::Assign_Alt((void **)(*(_DWORD *)(this + 88) + v2 + 68), (CCINIClass *)&stru_89E138.__pad_1258[584]); /*0x49dcf9*/
+        INIClass::GetString( /*0x49dd19*/
           (unsigned __int8 ***)this,
-          (unsigned __int8 *)Destination,
-          (unsigned __int8 *)aCampaignloadsc_0,
+          Destination,
+          (unsigned __int8 *)&stru_81F30C.needsSave_flag,
           0,
-          (char *)&MEMORY[0x87F7E8][32636],
+          (INIClass *)&stru_89E138.__pad_1258[584],
           128);
-        String::Assign_Alt((void **)(*(_DWORD *)(this + 88) + v2 + 72), (const char *)&MEMORY[0x87F7E8][32636]);
-        INIClass::GetString(
+        String::Assign_Alt((void **)(*(_DWORD *)(this + 88) + v2 + 72), (CCINIClass *)&stru_89E138.__pad_1258[584]); /*0x49dd2a*/
+        INIClass::GetString( /*0x49dd4d*/
           (unsigned __int8 ***)this,
-          (unsigned __int8 *)Destination,
-          (unsigned __int8 *)aCampaignai,
-          g_INI_Key_Easy,
-          (char *)&MEMORY[0x87F7E8][32636],
+          Destination,
+          (unsigned __int8 *)&stru_81F30C.__pad_20[8],
+          &g_INI_Key_Easy,
+          (INIClass *)&stru_89E138.__pad_1258[584],
           128);
-        *(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 64) = __2_YAPAXI_Z(strlen((const char *)&MEMORY[0x87F7E8][32636]) + 1);
-        strcpy(*(char **)(*(_DWORD *)(this + 88) + v2 + 64), (const char *)&MEMORY[0x87F7E8][32636]);
-        *(_DWORD *)(*(_DWORD *)(this + 88) + v2) = v68;
-        *(_BYTE *)(*(_DWORD *)(this + 88) + v2 + 8) = Int_Overwrite;
-        *(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 12) = __2_YAPAXI_Z(780 * Int_Overwrite);
-        v15 = 1;
-        v67 = 1;
-        v69 = Int_Overwrite + 1;
-        if ( Int_Overwrite + 1 > 1 )
+        *(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 64) = __2_YAPAXI_Z(strlen(&stru_89E138.__pad_1258[584]) + 1); /*0x49dd71*/
+        strcpy(*(char **)(*(_DWORD *)(this + 88) + v2 + 64), &stru_89E138.__pad_1258[584]); /*0x49dd8f*/
+        *(_DWORD *)(*(_DWORD *)(this + 88) + v2) = v68; /*0x49dd9b*/
+        *(_BYTE *)(*(_DWORD *)(this + 88) + v2 + 8) = Int_Overwrite; /*0x49dda5*/
+        *(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 12) = __2_YAPAXI_Z(780 * Int_Overwrite); /*0x49ddc7*/
+        v15 = (INIClass *)1; /*0x49ddcb*/
+        v67 = 1; /*0x49ddd2*/
+        v69 = Int_Overwrite + 1; /*0x49ddd6*/
+        if ( Int_Overwrite + 1 > 1 ) /*0x49ddda*/
         {
-          v66 = 4;
-          v61 = 780;
-          while ( 2 )
+          v66 = (CCINIClass *)4; /*0x49dde0*/
+          v61 = 780; /*0x49dde8*/
+          while ( 2 ) /*0x49ddf0*/
           {
-            sprintf(Buffer, "Map%d", v15);
-            if ( INIClass::GetString(
+            ((void (*)(char *const, const char *const, ...))sprintf)( /*0x49ddf0*/
+              Buffer,
+              (const char *const)&stru_81F0A8.health,
+              v15);
+            if ( INIClass::GetString( /*0x49de1e*/
                    (unsigned __int8 ***)this,
-                   (unsigned __int8 *)Destination,
+                   Destination,
                    (unsigned __int8 *)Buffer,
                    0,
-                   (char *)&MEMORY[0x87F7E8][32636],
+                   (INIClass *)&stru_89E138.__pad_1258[584],
                    128) )
             {
-              v16 = strtok((char *)&MEMORY[0x87F7E8][32636], Delimiter);
-              if ( v16 )
-                strcpy((char *)(*(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 12) + v61 - 780), v16);
-              v17 = strtok(0, Delimiter);
-              if ( v17 )
-                strcpy((char *)(*(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 12) + v61 - 520), v17);
-              v18 = strtok(0, Delimiter);
-              if ( v18 )
-                strcpy((char *)(*(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 12) + v61 - 260), v18);
+              v16 = strtok(&stru_89E138.__pad_1258[584], (ObjectClass *)&stru_817F40.nextObject); /*0x49de35*/
+              if ( v16 ) /*0x49de3f*/
+                strcpy((char *)(*(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 12) + v61 - 780), v16); /*0x49de69*/
+              v17 = strtok(0, (ObjectClass *)&stru_817F40.nextObject); /*0x49de79*/
+              if ( v17 ) /*0x49de83*/
+                strcpy((char *)(*(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 12) + v61 - 520), v17); /*0x49dead*/
+              v18 = strtok(0, (ObjectClass *)&stru_817F40.nextObject); /*0x49debd*/
+              if ( v18 ) /*0x49dec7*/
+                strcpy((char *)(*(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 12) + v61 - 260), v18); /*0x49def1*/
             }
-            v19 = __2_YAPAXI_Z(24);
-            if ( !v19 )
-              goto LABEL_77;
-            *(_DWORD *)(v19 + 4) = 0;
-            *(_DWORD *)(v19 + 8) = 0;
-            *(_BYTE *)(v19 + 12) = 1;
-            *(_BYTE *)(v19 + 13) = 0;
-            *(_DWORD *)v19 = &DynamicVectorClass<char *>::`vftable';
-            *(_DWORD *)(v19 + 20) = 10;
-            *(_DWORD *)(v19 + 16) = 0;
-            v20 = *(_DWORD *)(this + 88);
-            v21 = *(_DWORD *)(v20 + v2 + 24);
-            v22 = (_DWORD *)(v20 + v2 + 16);
-            if ( *(_DWORD *)(v20 + v2 + 32) < v21
+            v19 = (TechnoTypeClass *)__2_YAPAXI_Z(0x18u); /*0x49df01*/
+            if ( !v19 ) /*0x49df0a*/
+              goto LABEL_77; /*0x49df0a*/
+            v19->vtable1 = 0; /*0x49df10*/
+            v19->vtable2 = 0; /*0x49df13*/
+            LOBYTE(v19->vtable3) = 1; /*0x49df16*/
+            BYTE1(v19->vtable3) = 0; /*0x49df1a*/
+            v19->vtable0 = (int)&vt_DynamicVectorClass_char; /*0x49df1d*/
+            v19->abstractFlags = 10; /*0x49df23*/
+            v19->uniqueId = 0; /*0x49df2a*/
+            v20 = *(_DWORD *)(this + 88); /*0x49df2d*/
+            v21 = *(_DWORD *)(v20 + v2 + 24); /*0x49df30*/
+            v22 = (_DWORD *)(v20 + v2 + 16); /*0x49df34*/
+            if ( *(_DWORD *)(v20 + v2 + 32) < v21 /*0x49df5b*/
               || (*(_BYTE *)(v20 + v2 + 29) || !v21)
               && (v23 = *(_DWORD *)(v20 + v2 + 36), v23 > 0)
               && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v22 + 8))(v22, v21 + v23, 0) )
             {
-              v24 = v22[4];
-              v25 = v22[1];
-              v22[4] = v24 + 1;
-              *(_DWORD *)(v25 + 4 * v24) = v19;
+              v24 = v22[4]; /*0x49df62*/
+              v25 = v22[1]; /*0x49df65*/
+              v22[4] = v24 + 1; /*0x49df6b*/
+              *(_DWORD *)(v25 + 4 * v24) = v19; /*0x49df6e*/
             }
-            sprintf(Buffer, "%s%d", aCampaignplayer, v67);
-            if ( INIClass::GetString(
+            ((void (*)(char *const, const char *const, ...))sprintf)( /*0x49df85*/
+              Buffer,
+              (const char *const)stru_81F30C.sectionHead,
+              (const char *)&stru_81F30C.sectionHead[2],
+              v67);
+            if ( INIClass::GetString( /*0x49dfa8*/
                    (unsigned __int8 ***)this,
-                   (unsigned __int8 *)Destination,
+                   Destination,
                    (unsigned __int8 *)Buffer,
                    0,
-                   (char *)&MEMORY[0x87F7E8][32636],
+                   (INIClass *)&stru_89E138.__pad_1258[584],
                    128) )
             {
-              v26 = strtok((char *)&MEMORY[0x87F7E8][32636], Delimiter);
-              v27 = v26;
-              if ( v26 )
+              v26 = (INIClass *)strtok(&stru_89E138.__pad_1258[584], (ObjectClass *)&stru_817F40.nextObject); /*0x49dfbf*/
+              v27 = v26; /*0x49dfc4*/
+              if ( v26 ) /*0x49dfcb*/
               {
-                v28 = (char *)__2_YAPAXI_Z(strlen(v26) + 1);
-                v62 = v28;
-                strcpy(v28, v27);
-                v29 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 20) + v66 - 4);
-                v30 = *(_DWORD *)(v29 + 8);
-                if ( *(_DWORD *)(v29 + 16) < v30 )
-                  goto LABEL_42;
-                if ( *(_BYTE *)(v29 + 13) || !v30 )
+                v28 = (CCINIClass *)__2_YAPAXI_Z(strlen(v26->__pad_0) + 1); /*0x49dfe2*/
+                v62 = v28; /*0x49dfee*/
+                strcpy(v28->__pad_0, v27->__pad_0); /*0x49e001*/
+                v29 = *(_DWORD *)&v66->__pad_0[*(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 20) - 4]; /*0x49e015*/
+                v30 = *(_DWORD *)(v29 + 8); /*0x49e019*/
+                if ( *(_DWORD *)(v29 + 16) < v30 ) /*0x49e021*/
+                  goto LABEL_42; /*0x49e021*/
+                if ( *(_BYTE *)(v29 + 13) || !v30 ) /*0x49e02c*/
                 {
-                  v31 = *(_DWORD *)(v29 + 20);
-                  if ( v31 > 0 )
+                  v31 = *(_DWORD *)(v29 + 20); /*0x49e02e*/
+                  if ( v31 > 0 ) /*0x49e033*/
                   {
-                    if ( (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v29 + 8))(v29, v30 + v31, 0) )
+                    if ( (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v29 + 8))(v29, v30 + v31, 0) ) /*0x49e03e*/
                     {
-                      v28 = v62;
+                      v28 = v62; /*0x49e045*/
 LABEL_42:
-                      v32 = *(_DWORD *)(v29 + 16);
-                      *(_DWORD *)(v29 + 16) = v32 + 1;
-                      *(_DWORD *)(*(_DWORD *)(v29 + 4) + 4 * v32) = v28;
+                      v32 = *(_DWORD *)(v29 + 16); /*0x49e049*/
+                      *(_DWORD *)(v29 + 16) = v32 + 1; /*0x49e04f*/
+                      *(_DWORD *)(*(_DWORD *)(v29 + 4) + 4 * v32) = v28; /*0x49e055*/
                     }
                   }
                 }
               }
-              for ( i = strtok(0, Delimiter); i; i = strtok(0, Delimiter) )
+              for ( i = strtok(0, (ObjectClass *)&stru_817F40.nextObject); /*0x49e06b*/
+                    i;
+                    i = strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
               {
-                v34 = (char *)__2_YAPAXI_Z(strlen(i) + 1);
-                v63 = v34;
-                strcpy(v34, i);
-                v35 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 20) + v66 - 4);
-                v36 = *(_DWORD *)(v35 + 8);
-                if ( *(_DWORD *)(v35 + 16) >= v36 )
+                v34 = (CCINIClass *)__2_YAPAXI_Z(strlen(i) + 1); /*0x49e082*/
+                v63 = v34; /*0x49e08e*/
+                strcpy(v34->__pad_0, i); /*0x49e0a1*/
+                v35 = *(_DWORD *)&v66->__pad_0[*(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 20) - 4]; /*0x49e0b5*/
+                v36 = *(_DWORD *)(v35 + 8); /*0x49e0b9*/
+                if ( *(_DWORD *)(v35 + 16) >= v36 ) /*0x49e0c1*/
                 {
-                  if ( !*(_BYTE *)(v35 + 13) && v36 )
-                    continue;
-                  v37 = *(_DWORD *)(v35 + 20);
-                  if ( v37 <= 0
+                  if ( !*(_BYTE *)(v35 + 13) && v36 ) /*0x49e0cc*/
+                    continue; /*0x49e0cc*/
+                  v37 = *(_DWORD *)(v35 + 20); /*0x49e0ce*/
+                  if ( v37 <= 0 /*0x49e0de*/
                     || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v35 + 8))(v35, v36 + v37, 0) )
                   {
-                    continue;
+                    continue; /*0x49e0e3*/
                   }
-                  v34 = v63;
+                  v34 = v63; /*0x49e0e5*/
                 }
-                v38 = *(_DWORD *)(v35 + 16);
-                *(_DWORD *)(v35 + 16) = v38 + 1;
-                *(_DWORD *)(*(_DWORD *)(v35 + 4) + 4 * v38) = v34;
+                v38 = *(_DWORD *)(v35 + 16); /*0x49e0e9*/
+                *(_DWORD *)(v35 + 16) = v38 + 1; /*0x49e0ef*/
+                *(_DWORD *)(*(_DWORD *)(v35 + 4) + 4 * v38) = v34; /*0x49e0f5*/
               }
             }
-            v39 = __2_YAPAXI_Z(24);
-            if ( v39 )
+            v39 = __2_YAPAXI_Z(0x18u); /*0x49e111*/
+            if ( v39 ) /*0x49e121*/
             {
-              *(_DWORD *)(v39 + 4) = 0;
-              *(_DWORD *)(v39 + 8) = 0;
-              *(_BYTE *)(v39 + 12) = 1;
-              *(_BYTE *)(v39 + 13) = 0;
-              *(_DWORD *)v39 = &DynamicVectorClass<char *>::`vftable';
-              *(_DWORD *)(v39 + 20) = 10;
-              *(_DWORD *)(v39 + 16) = 0;
-              v40 = *(_DWORD *)(this + 88);
-              v41 = *(_DWORD *)(v40 + v2 + 48);
-              v42 = (_DWORD *)(v40 + v2 + 40);
-              if ( *(_DWORD *)(v40 + v2 + 56) < v41
+              *(_DWORD *)(v39 + 4) = 0; /*0x49e127*/
+              *(_DWORD *)(v39 + 8) = 0; /*0x49e12a*/
+              *(_BYTE *)(v39 + 12) = 1; /*0x49e12d*/
+              *(_BYTE *)(v39 + 13) = 0; /*0x49e131*/
+              *(_DWORD *)v39 = &vt_DynamicVectorClass_char; /*0x49e134*/
+              *(_DWORD *)(v39 + 20) = 10; /*0x49e13a*/
+              *(_DWORD *)(v39 + 16) = 0; /*0x49e141*/
+              v40 = *(_DWORD *)(this + 88); /*0x49e144*/
+              v41 = *(_DWORD *)(v40 + v2 + 48); /*0x49e147*/
+              v42 = (_DWORD *)(v40 + v2 + 40); /*0x49e14f*/
+              if ( *(_DWORD *)(v40 + v2 + 56) < v41 /*0x49e172*/
                 || (*(_BYTE *)(v40 + v2 + 53) || !v41)
                 && (v43 = *(_DWORD *)(v40 + v2 + 60), v43 > 0)
                 && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v42 + 8))(v42, v43 + v41, 0) )
               {
-                v44 = v42[4];
-                v45 = v42[1];
-                v42[4] = v44 + 1;
-                *(_DWORD *)(v45 + 4 * v44) = v39;
+                v44 = v42[4]; /*0x49e179*/
+                v45 = v42[1]; /*0x49e17c*/
+                v42[4] = v44 + 1; /*0x49e182*/
+                *(_DWORD *)(v45 + 4 * v44) = v39; /*0x49e185*/
               }
-              sprintf(Buffer, "%s%d", aCampaignenemy, v67);
-              if ( INIClass::GetString(
+              ((void (*)(char *const, const char *const, ...))sprintf)( /*0x49e19c*/
+                Buffer,
+                (const char *const)stru_81F30C.sectionHead,
+                stru_81F30C.__pad_0,
+                v67);
+              if ( INIClass::GetString( /*0x49e1bf*/
                      (unsigned __int8 ***)this,
-                     (unsigned __int8 *)Destination,
+                     Destination,
                      (unsigned __int8 *)Buffer,
                      0,
-                     (char *)&MEMORY[0x87F7E8][32636],
+                     (INIClass *)&stru_89E138.__pad_1258[584],
                      128) )
               {
-                v46 = strtok((char *)&MEMORY[0x87F7E8][32636], Delimiter);
-                v47 = v46;
-                if ( v46 )
+                v46 = (INIClass *)strtok(&stru_89E138.__pad_1258[584], (ObjectClass *)&stru_817F40.nextObject); /*0x49e1d6*/
+                v47 = v46; /*0x49e1db*/
+                if ( v46 ) /*0x49e1e2*/
                 {
-                  v48 = (char *)__2_YAPAXI_Z(strlen(v46) + 1);
-                  v64 = v48;
-                  strcpy(v48, v47);
-                  v49 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 44) + v66 - 4);
-                  v50 = *(_DWORD *)(v49 + 8);
-                  if ( *(_DWORD *)(v49 + 16) < v50 )
-                    goto LABEL_67;
-                  if ( *(_BYTE *)(v49 + 13) || !v50 )
+                  v48 = (CCINIClass *)__2_YAPAXI_Z(strlen(v46->__pad_0) + 1); /*0x49e1f9*/
+                  v64 = v48; /*0x49e205*/
+                  strcpy(v48->__pad_0, v47->__pad_0); /*0x49e218*/
+                  v49 = *(_DWORD *)&v66->__pad_0[*(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 44) - 4]; /*0x49e22c*/
+                  v50 = *(_DWORD *)(v49 + 8); /*0x49e230*/
+                  if ( *(_DWORD *)(v49 + 16) < v50 ) /*0x49e238*/
+                    goto LABEL_67; /*0x49e238*/
+                  if ( *(_BYTE *)(v49 + 13) || !v50 ) /*0x49e243*/
                   {
-                    v51 = *(_DWORD *)(v49 + 20);
-                    if ( v51 > 0 )
+                    v51 = *(_DWORD *)(v49 + 20); /*0x49e245*/
+                    if ( v51 > 0 ) /*0x49e24a*/
                     {
-                      if ( (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v49 + 8))(v49, v51 + v50, 0) )
+                      if ( (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v49 + 8))(v49, v51 + v50, 0) ) /*0x49e255*/
                       {
-                        v48 = v64;
+                        v48 = v64; /*0x49e25c*/
 LABEL_67:
-                        v52 = *(_DWORD *)(v49 + 16);
-                        *(_DWORD *)(v49 + 16) = v52 + 1;
-                        *(_DWORD *)(*(_DWORD *)(v49 + 4) + 4 * v52) = v48;
+                        v52 = *(_DWORD *)(v49 + 16); /*0x49e260*/
+                        *(_DWORD *)(v49 + 16) = v52 + 1; /*0x49e266*/
+                        *(_DWORD *)(*(_DWORD *)(v49 + 4) + 4 * v52) = v48; /*0x49e26c*/
                       }
                     }
                   }
                 }
-                for ( j = strtok(0, Delimiter); j; j = strtok(0, Delimiter) )
+                for ( j = strtok(0, (ObjectClass *)&stru_817F40.nextObject); /*0x49e282*/
+                      j;
+                      j = strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
                 {
-                  v54 = (char *)__2_YAPAXI_Z(strlen(j) + 1);
-                  v65 = v54;
-                  strcpy(v54, j);
-                  v55 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 44) + v66 - 4);
-                  v56 = *(_DWORD *)(v55 + 8);
-                  if ( *(_DWORD *)(v55 + 16) >= v56 )
+                  v54 = (CCINIClass *)__2_YAPAXI_Z(strlen(j) + 1); /*0x49e299*/
+                  v65 = v54; /*0x49e2a5*/
+                  strcpy(v54->__pad_0, j); /*0x49e2b8*/
+                  v55 = *(_DWORD *)&v66->__pad_0[*(_DWORD *)(*(_DWORD *)(this + 88) + v2 + 44) - 4]; /*0x49e2cc*/
+                  v56 = *(_DWORD *)(v55 + 8); /*0x49e2d0*/
+                  if ( *(_DWORD *)(v55 + 16) >= v56 ) /*0x49e2d8*/
                   {
-                    if ( !*(_BYTE *)(v55 + 13) && v56 )
-                      continue;
-                    v57 = *(_DWORD *)(v55 + 20);
-                    if ( v57 <= 0
+                    if ( !*(_BYTE *)(v55 + 13) && v56 ) /*0x49e2e3*/
+                      continue; /*0x49e2e3*/
+                    v57 = *(_DWORD *)(v55 + 20); /*0x49e2e5*/
+                    if ( v57 <= 0 /*0x49e2f5*/
                       || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v55 + 8))(v55, v57 + v56, 0) )
                     {
-                      continue;
+                      continue; /*0x49e2fa*/
                     }
-                    v54 = v65;
+                    v54 = v65; /*0x49e2fc*/
                   }
-                  v58 = *(_DWORD *)(v55 + 16);
-                  *(_DWORD *)(v55 + 16) = v58 + 1;
-                  *(_DWORD *)(*(_DWORD *)(v55 + 4) + 4 * v58) = v54;
+                  v58 = *(_DWORD *)(v55 + 16); /*0x49e300*/
+                  *(_DWORD *)(v55 + 16) = v58 + 1; /*0x49e306*/
+                  *(_DWORD *)(*(_DWORD *)(v55 + 4) + 4 * v58) = v54; /*0x49e30c*/
                 }
               }
             }
 LABEL_77:
-            v15 = v67 + 1;
-            v59 = ++v67 < v69;
-            v61 += 780;
-            v66 += 4;
-            if ( !v59 )
-              break;
-            continue;
+            v15 = (INIClass *)(v67 + 1); /*0x49e328*/
+            v59 = ++v67 < v69; /*0x49e342*/
+            v61 += 780; /*0x49e348*/
+            v66 = (CCINIClass *)((char *)v66 + 4); /*0x49e34c*/
+            if ( !v59 ) /*0x49e350*/
+              break; /*0x49e350*/
+            continue; /*0x49e350*/
           }
         }
-        v11 = v68;
+        v11 = v68; /*0x49e356*/
       }
-      ++v11;
-      v2 += 76;
-      v68 = v11;
-      if ( v11 >= *(_DWORD *)(this + 92) )
-        goto LABEL_80;
+      v11 = (CCINIClass *)((char *)v11 + 1); /*0x49e35d*/
+      v2 += 76; /*0x49e35e*/
+      v68 = v11; /*0x49e363*/
+      if ( (int)v11 >= *(_DWORD *)(this + 92) ) /*0x49e367*/
+        goto LABEL_80; /*0x49e367*/
     }
   }
-  *(_DWORD *)(this + 92) = 0;
-  *(_DWORD *)(this + 88) = 0;
+  *(_DWORD *)(this + 92) = 0; /*0x49db81*/
+  *(_DWORD *)(this + 88) = 0; /*0x49db84*/
 LABEL_80:
-  *(_BYTE *)(this + 96) = 1;
-  v71[0] = &CCFileClass::`vftable';
-  v73 = 0;
-  Vector::Clear((int)v72);
-  v71[0] = &off_7E1668;
-  return BufferIOFileClass::Dtor(v71);
+  *(_BYTE *)(this + 96) = 1; /*0x49e36f*/
+  *(_DWORD *)aP1.__pad_0 = &vt_CCFileClass; /*0x49e37a*/
+  v73 = 0; /*0x49e382*/
+  Vector::Clear((int)v72); /*0x49e389*/
+  *(_DWORD *)aP1.__pad_0 = &off_7E1668; /*0x49e392*/
+  return BufferIOFileClass::Dtor(&aP1); /*0x49db61*/
 }
-
-/* ASM:
-Buffer          = byte ptr -11Ch
-var_EC          = dword ptr -0ECh
-var_94          = byte ptr -94h
-var_88          = dword ptr -88h
-Destination     = byte ptr -80h
-
-sub     esp, 134h
-push    ebx
-push    ebp
-mov     ebp, ecx
-push    offset g_Str_File_CoopCampMD_ini ; "CoopCampMD.ini"
-lea     ecx, [esp+140h+var_EC]
-call    CCFileClass__Construct
-xor     ebx, ebx
-lea     eax, [esp+13Ch+var_EC]
-push    ebx
-push    ebx
-push    eax
-mov     ecx, ebp
-call    CCINIClass__Load
-test    eax, eax
-jnz     short loc_49DB6A
-lea     ecx, [esp+13Ch+var_94]
-mov     [ebp+5Ch], ebx
-mov     [ebp+58h], ebx
-mov     [ebp+60h], al
-mov     [esp+13Ch+var_EC], offset ??_7CCFileClass@@6B@ ; const CCFileClass::`vftable'
-mov     [esp+13Ch+var_88], ebx
-call    Vector__Clear
-lea     ecx, [esp+13Ch+var_EC]
-mov     [esp+13Ch+var_EC], offset off_7E1668
-call    BufferIOFileClass__Dtor
-pop     ebp
-pop     ebx
-add     esp, 134h
-retn
-; ---------------------------------------------------------------------------
-
-loc_49DB6A:                             ; CODE XREF: CampaignClass__LoadFromINI+2A↑j
-push    esi
-push    edi
-push    offset g_INI_Key_Campaigns ; "Campaigns"
-mov     ecx, ebp
-call    INIClass__GetKeyCount
-mov     esi, eax
-cmp     esi, ebx
-mov     [ebp+5Ch], esi
-jg      short loc_49DB8C
-mov     [ebp+5Ch], ebx
-mov     [ebp+58h], ebx
-jmp     loc_49E36F
-; ---------------------------------------------------------------------------
-
-loc_49DB8C:                             ; CODE XREF: CampaignClass__LoadFromINI+7F↑j
-lea     ecx, [esi+esi*8]
-lea     edx, [esi+ecx*2]
-lea     eax, ds:4[edx*4]
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-cmp     eax, ebx
-jz      short loc_49DBFF
-mov     [eax], esi
-lea     edi, [eax+4]
-lea     eax, [esi-1]
-cmp     eax, ebx
-jl      short loc_49DBFB
-lea     esi, [edi+10h]
-lea     ebx, [eax+1]
-
-loc_49DBB8:                             ; CODE XREF: CampaignClass__LoadFromINI+F7↓j
-push    0
-push    0
-mov     ecx, esi
-call    CampaignClass__Constructor_0
-push    0
-push    0
-lea     ecx, [esi+18h]
-mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@PAV?$DynamicVectorClass@PAD@@@@6B@ ; const DynamicVectorClass<DynamicVectorClass<char *> *>::`vftable'
-mov     dword ptr [esi+14h], 0Ah
-mov     dword ptr [esi+10h], 0
-call    CampaignClass__Constructor
-lea     ecx, [esi+34h]
-call    unknown_libname_73 ; Microsoft VisualC 2-14/net runtime
-lea     ecx, [esi+38h]
-call    unknown_libname_73 ; Microsoft VisualC 2-14/net runtime
-add     esi, 4Ch ; 'L'
-dec     ebx
-jnz     short loc_49DBB8
-xor     ebx, ebx
-
-loc_49DBFB:                             ; CODE XREF: CampaignClass__LoadFromINI+B0↑j
-mov     eax, edi
-jmp     short loc_49DC01
-; ---------------------------------------------------------------------------
-
-loc_49DBFF:                             ; CODE XREF: CampaignClass__LoadFromINI+A4↑j
-xor     eax, eax
-
-loc_49DC01:                             ; CODE XREF: CampaignClass__LoadFromINI+FD↑j
-cmp     eax, ebx
-mov     [ebp+58h], eax
-jz      loc_49E36F
-mov     eax, [ebp+5Ch]
-xor     esi, esi
-cmp     eax, ebx
-mov     [esp+144h+var_124], esi
-jle     loc_49E36F
-
-loc_49DC1D:                             ; CODE XREF: CampaignClass__LoadFromINI+867↓j
-push    esi
-push    offset g_INI_Key_Campaigns ; "Campaigns"
-mov     ecx, ebp
-call    INIClass__GetStringByIndex
-test    eax, eax
-jz      loc_49E35A
-lea     ecx, [esp+144h+Destination]
-push    80h             ; Count
-push    ecx             ; Destination
-push    0               ; Source
-push    eax             ; int
-push    offset g_INI_Key_Campaigns ; "Campaigns"
-mov     ecx, ebp
-call    INIClass__GetString
-push    0
-lea     edx, [esp+148h+Destination]
-push    offset aNumberofcampai ; "NumberOfCampaignMaps"
-push    edx
-mov     ecx, ebp
-call    INIClass__ReadInt_Overwrite
-push    80h             ; Count
-mov     [esp+148h+var_134], eax
-push    89F5D8h         ; Destination
-push    0               ; Source
-lea     eax, [esp+150h+Destination]
-push    offset aCampaignname ; "CampaignName"
-push    eax             ; int
-mov     ecx, ebp
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_49DCCD
-push    418h            ; int
-push    offset aDRa2mdpostCoop ; "D:\\ra2mdpost\\coopcamp.cpp"
-xor     edx, edx
-mov     ecx, 89F5D8h    ; Format
-call    GetStringCSF
-push    102h            ; Size
-mov     esi, eax
-call    ??2_YAPAXI_Z
-mov     ecx, [ebp+58h]
-add     esp, 4
-mov     [ecx+ebx+4], eax
-mov     edx, [ebp+58h]
-mov     eax, [edx+ebx+4]
-test    eax, eax
-jz      short loc_49DCCD
-push    esi             ; Source
-push    eax             ; Destination
-call    _wcscpy
-add     esp, 8
-
-loc_49DCCD:                             ; CODE XREF: CampaignClass__LoadFromINI+18A↑j
-; CampaignClass__LoadFromINI+1C1↑j
-push    80h             ; Count
-push    89F5D8h         ; Destination
-push    0               ; Source
-lea     eax, [esp+150h+Destination]
-push    offset aCampaignloadsc ; "CampaignLoadScreen"
-push    eax             ; int
-mov     ecx, ebp
-call    INIClass__GetString
-mov     ecx, [ebp+58h]
-push    89F5D8h
-lea     ecx, [ecx+ebx+44h]
-call    String__Assign_Alt
-push    80h             ; Count
-push    89F5D8h         ; Destination
-push    0               ; Source
-lea     edx, [esp+150h+Destination]
-push    offset aCampaignloadsc_0 ; "CampaignLoadScreenPallet"
-push    edx             ; int
-mov     ecx, ebp
-call    INIClass__GetString
-mov     eax, [ebp+58h]
-push    89F5D8h
-lea     ecx, [eax+ebx+48h]
-call    String__Assign_Alt
-push    80h             ; Count
-push    89F5D8h         ; Destination
-push    offset g_INI_Key_Easy ; "Easy"
-lea     ecx, [esp+150h+Destination]
-push    offset aCampaignai ; "CampaignAI"
-push    ecx             ; int
-mov     ecx, ebp
-call    INIClass__GetString
-mov     edi, 89F5D8h
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-repne scasb
-not     ecx
-push    ecx             ; Size
-call    ??2_YAPAXI_Z
-mov     edx, [ebp+58h]
-mov     edi, 89F5D8h
-or      ecx, 0FFFFFFFFh
-mov     [edx+ebx+40h], eax
-xor     eax, eax
-repne scasb
-mov     edx, [ebp+58h]
-not     ecx
-sub     edi, ecx
-mov     eax, ecx
-mov     esi, edi
-mov     edi, [edx+ebx+40h]
-mov     edx, [esp+148h+var_124]
-shr     ecx, 2
-rep movsd
-mov     ecx, eax
-and     ecx, 3
-rep movsb
-mov     ecx, [ebp+58h]
-mov     [ecx+ebx], edx
-mov     eax, [ebp+58h]
-mov     ecx, [esp+148h+var_134]
-mov     [eax+ebx+8], cl
-mov     eax, ecx
-shl     eax, 6
-add     eax, ecx
-lea     ecx, [eax+eax*2]
-shl     ecx, 2
-push    ecx             ; Size
-call    ??2_YAPAXI_Z
-mov     edx, [ebp+58h]
-mov     ecx, [esp+14Ch+var_134]
-add     esp, 8
-inc     ecx
-mov     [edx+ebx+0Ch], eax
-mov     eax, 1
-cmp     ecx, eax
-mov     [esp+144h+var_128], eax
-mov     [esp+144h+var_120], ecx
-jle     loc_49E356
-mov     [esp+144h+var_12C], 4
-mov     [esp+144h+var_134], 30Ch
-
-loc_49DDF0:                             ; CODE XREF: CampaignClass__LoadFromINI+850↓j
-push    eax
-lea     edx, [esp+148h+Buffer]
-push    offset g_Str_Trace_Map_d ; "Map%d"
-push    edx             ; Buffer
-call    _sprintf
-add     esp, 0Ch
-lea     eax, [esp+144h+Buffer]
-lea     ecx, [esp+144h+Destination]
-push    80h             ; Count
-push    89F5D8h         ; Destination
-push    0               ; Source
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, ebp
-call    INIClass__GetString
-test    eax, eax
-jz      loc_49DEFA
-push    offset Delimiter ; ","
-push    89F5D8h         ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_49DE72
-mov     edx, [ebp+58h]
-mov     edi, eax
-xor     eax, eax
-mov     ecx, [edx+ebx+0Ch]
-mov     edx, [esp+144h+var_134]
-lea     edx, [ecx+edx-30Ch]
-or      ecx, 0FFFFFFFFh
-repne scasb
-not     ecx
-sub     edi, ecx
-mov     eax, ecx
-mov     esi, edi
-mov     edi, edx
-shr     ecx, 2
-rep movsd
-mov     ecx, eax
-and     ecx, 3
-rep movsb
-
-loc_49DE72:                             ; CODE XREF: CampaignClass__LoadFromINI+33F↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_49DEB6
-mov     ecx, [ebp+58h]
-mov     edi, eax
-xor     eax, eax
-mov     edx, [ecx+ebx+0Ch]
-mov     ecx, [esp+144h+var_134]
-lea     edx, [edx+ecx-208h]
-or      ecx, 0FFFFFFFFh
-repne scasb
-not     ecx
-sub     edi, ecx
-mov     eax, ecx
-mov     esi, edi
-mov     edi, edx
-shr     ecx, 2
-rep movsd
-mov     ecx, eax
-and     ecx, 3
-rep movsb
-
-loc_49DEB6:                             ; CODE XREF: CampaignClass__LoadFromINI+383↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_49DEFA
-mov     ecx, [ebp+58h]
-mov     edi, eax
-xor     eax, eax
-mov     edx, [ecx+ebx+0Ch]
-mov     ecx, [esp+144h+var_134]
-lea     edx, [edx+ecx-104h]
-or      ecx, 0FFFFFFFFh
-repne scasb
-not     ecx
-sub     edi, ecx
-mov     eax, ecx
-mov     esi, edi
-mov     edi, edx
-shr     ecx, 2
-rep movsd
-mov     ecx, eax
-and     ecx, 3
-rep movsb
-
-loc_49DEFA:                             ; CODE XREF: CampaignClass__LoadFromINI+325↑j
-; CampaignClass__LoadFromINI+3C7↑j
-push    18h             ; Size
-call    ??2_YAPAXI_Z
-mov     esi, eax
-xor     eax, eax
-add     esp, 4
-cmp     esi, eax
-jz      loc_49E328
-mov     [esi+4], eax
-mov     [esi+8], eax
-mov     byte ptr [esi+0Ch], 1
-mov     [esi+0Dh], al
-mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@PAD@@6B@ ; const DynamicVectorClass<char *>::`vftable'
-mov     dword ptr [esi+14h], 0Ah
-mov     [esi+10h], eax
-mov     ecx, [ebp+58h]
-mov     eax, [ecx+ebx+18h]
-lea     edi, [ecx+ebx+10h]
-mov     ecx, [ecx+ebx+20h]
-cmp     ecx, eax
-jl      short loc_49DF62
-mov     cl, [edi+0Dh]
-test    cl, cl
-jnz     short loc_49DF4B
-test    eax, eax
-jnz     short loc_49DF71
-
-loc_49DF4B:                             ; CODE XREF: CampaignClass__LoadFromINI+445↑j
-mov     ecx, [edi+14h]
-test    ecx, ecx
-jle     short loc_49DF71
-mov     edx, [edi]
-add     ecx, eax
-push    0
-push    ecx
-mov     ecx, edi
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_49DF71
-
-loc_49DF62:                             ; CODE XREF: CampaignClass__LoadFromINI+43E↑j
-mov     eax, [edi+10h]
-mov     edx, [edi+4]
-lea     ecx, [eax+1]
-mov     [edi+10h], ecx
-mov     [edx+eax*4], esi
-
-loc_49DF71:                             ; CODE XREF: CampaignClass__LoadFromINI+449↑j
-; CampaignClass__LoadFromINI+450↑j ...
-mov     eax, [esp+144h+var_128]
-lea     ecx, [esp+144h+Buffer]
-push    eax
-push    offset aCampaignplayer ; "CampaignPlayer"
-push    offset g_Str_Trace__s_d ; "%s%d"
-push    ecx             ; Buffer
-call    _sprintf
-add     esp, 10h
-lea     edx, [esp+144h+Buffer]
-lea     eax, [esp+144h+Destination]
-mov     ecx, ebp
-push    80h             ; Count
-push    89F5D8h         ; Destination
-push    0               ; Source
-push    edx             ; int
-push    eax             ; int
-call    INIClass__GetString
-test    eax, eax
-jz      loc_49E111
-push    offset Delimiter ; ","
-push    89F5D8h         ; String
-call    _strtok
-mov     esi, eax
-add     esp, 8
-test    esi, esi
-jz      loc_49E058
-mov     edi, esi
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-repne scasb
-not     ecx
-push    ecx             ; Size
-call    ??2_YAPAXI_Z
-mov     edx, eax
-mov     edi, esi
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-add     esp, 4
-mov     [esp+144h+var_130], edx
-repne scasb
-not     ecx
-sub     edi, ecx
-mov     eax, ecx
-mov     esi, edi
-mov     edi, edx
-shr     ecx, 2
-rep movsd
-mov     ecx, eax
-and     ecx, 3
-rep movsb
-mov     ecx, [ebp+58h]
-mov     eax, [ecx+ebx+14h]
-mov     ecx, [esp+144h+var_12C]
-mov     esi, [eax+ecx-4]
-mov     eax, [esi+8]
-mov     ecx, [esi+10h]
-cmp     ecx, eax
-jl      short loc_49E049
-mov     cl, [esi+0Dh]
-test    cl, cl
-jnz     short loc_49E02E
-test    eax, eax
-jnz     short loc_49E058
-
-loc_49E02E:                             ; CODE XREF: CampaignClass__LoadFromINI+528↑j
-mov     ecx, [esi+14h]
-test    ecx, ecx
-jle     short loc_49E058
-mov     edx, [esi]
-add     ecx, eax
-push    0
-push    ecx
-mov     ecx, esi
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_49E058
-mov     edx, [esp+144h+var_130]
-
-loc_49E049:                             ; CODE XREF: CampaignClass__LoadFromINI+521↑j
-mov     eax, [esi+10h]
-lea     ecx, [eax+1]
-mov     [esi+10h], ecx
-mov     ecx, [esi+4]
-mov     [ecx+eax*4], edx
-
-loc_49E058:                             ; CODE XREF: CampaignClass__LoadFromINI+4CB↑j
-; CampaignClass__LoadFromINI+52C↑j ...
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-mov     esi, eax
-add     esp, 8
-test    esi, esi
-jz      loc_49E111
-
-loc_49E071:                             ; CODE XREF: CampaignClass__LoadFromINI+60B↓j
-mov     edi, esi
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-repne scasb
-not     ecx
-push    ecx             ; Size
-call    ??2_YAPAXI_Z
-mov     edx, eax
-mov     edi, esi
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-add     esp, 4
-mov     [esp+144h+var_130], edx
-repne scasb
-not     ecx
-sub     edi, ecx
-mov     eax, ecx
-mov     esi, edi
-mov     edi, edx
-shr     ecx, 2
-rep movsd
-mov     ecx, eax
-and     ecx, 3
-rep movsb
-mov     ecx, [ebp+58h]
-mov     eax, [ecx+ebx+14h]
-mov     ecx, [esp+144h+var_12C]
-mov     esi, [eax+ecx-4]
-mov     eax, [esi+8]
-mov     ecx, [esi+10h]
-cmp     ecx, eax
-jl      short loc_49E0E9
-mov     cl, [esi+0Dh]
-test    cl, cl
-jnz     short loc_49E0CE
-test    eax, eax
-jnz     short loc_49E0F8
-
-loc_49E0CE:                             ; CODE XREF: CampaignClass__LoadFromINI+5C8↑j
-mov     ecx, [esi+14h]
-test    ecx, ecx
-jle     short loc_49E0F8
-mov     edx, [esi]
-add     ecx, eax
-push    0
-push    ecx
-mov     ecx, esi
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_49E0F8
-mov     edx, [esp+144h+var_130]
-
-loc_49E0E9:                             ; CODE XREF: CampaignClass__LoadFromINI+5C1↑j
-mov     eax, [esi+10h]
-lea     ecx, [eax+1]
-mov     [esi+10h], ecx
-mov     ecx, [esi+4]
-mov     [ecx+eax*4], edx
-
-loc_49E0F8:                             ; CODE XREF: CampaignClass__LoadFromINI+5CC↑j
-; CampaignClass__LoadFromINI+5D3↑j ...
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-mov     esi, eax
-add     esp, 8
-test    esi, esi
-jnz     loc_49E071
-
-loc_49E111:                             ; CODE XREF: CampaignClass__LoadFromINI+4AF↑j
-; CampaignClass__LoadFromINI+56B↑j
-push    18h             ; Size
-call    ??2_YAPAXI_Z
-mov     esi, eax
-xor     eax, eax
-add     esp, 4
-cmp     esi, eax
-jz      loc_49E328
-mov     [esi+4], eax
-mov     [esi+8], eax
-mov     byte ptr [esi+0Ch], 1
-mov     [esi+0Dh], al
-mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@PAD@@6B@ ; const DynamicVectorClass<char *>::`vftable'
-mov     dword ptr [esi+14h], 0Ah
-mov     [esi+10h], eax
-mov     edx, [ebp+58h]
-mov     eax, [edx+ebx+30h]
-mov     ecx, [edx+ebx+38h]
-lea     edi, [edx+ebx+28h]
-cmp     ecx, eax
-jl      short loc_49E179
-mov     cl, [edi+0Dh]
-test    cl, cl
-jnz     short loc_49E162
-test    eax, eax
-jnz     short loc_49E188
-
-loc_49E162:                             ; CODE XREF: CampaignClass__LoadFromINI+65C↑j
-mov     ecx, [edi+14h]
-test    ecx, ecx
-jle     short loc_49E188
-mov     edx, [edi]
-add     eax, ecx
-push    0
-push    eax
-mov     ecx, edi
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_49E188
-
-loc_49E179:                             ; CODE XREF: CampaignClass__LoadFromINI+655↑j
-mov     eax, [edi+10h]
-mov     edx, [edi+4]
-lea     ecx, [eax+1]
-mov     [edi+10h], ecx
-mov     [edx+eax*4], esi
-
-loc_49E188:                             ; CODE XREF: CampaignClass__LoadFromINI+660↑j
-; CampaignClass__LoadFromINI+667↑j ...
-mov     eax, [esp+144h+var_128]
-lea     ecx, [esp+144h+Buffer]
-push    eax
-push    offset aCampaignenemy ; "CampaignEnemy"
-push    offset g_Str_Trace__s_d ; "%s%d"
-push    ecx             ; Buffer
-call    _sprintf
-add     esp, 10h
-lea     edx, [esp+144h+Buffer]
-lea     eax, [esp+144h+Destination]
-mov     ecx, ebp
-push    80h             ; Count
-push    89F5D8h         ; Destination
-push    0               ; Source
-push    edx             ; int
-push    eax             ; int
-call    INIClass__GetString
-test    eax, eax
-jz      loc_49E328
-push    offset Delimiter ; ","
-push    89F5D8h         ; String
-call    _strtok
-mov     esi, eax
-add     esp, 8
-test    esi, esi
-jz      loc_49E26F
-mov     edi, esi
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-repne scasb
-not     ecx
-push    ecx             ; Size
-call    ??2_YAPAXI_Z
-mov     edx, eax
-mov     edi, esi
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-add     esp, 4
-mov     [esp+144h+var_130], edx
-repne scasb
-not     ecx
-sub     edi, ecx
-mov     eax, ecx
-mov     esi, edi
-mov     edi, edx
-shr     ecx, 2
-rep movsd
-mov     ecx, eax
-and     ecx, 3
-rep movsb
-mov     ecx, [ebp+58h]
-mov     eax, [ecx+ebx+2Ch]
-mov     ecx, [esp+144h+var_12C]
-mov     esi, [eax+ecx-4]
-mov     eax, [esi+8]
-mov     ecx, [esi+10h]
-cmp     ecx, eax
-jl      short loc_49E260
-mov     cl, [esi+0Dh]
-test    cl, cl
-jnz     short loc_49E245
-test    eax, eax
-jnz     short loc_49E26F
-
-loc_49E245:                             ; CODE XREF: CampaignClass__LoadFromINI+73F↑j
-mov     ecx, [esi+14h]
-test    ecx, ecx
-jle     short loc_49E26F
-mov     edx, [esi]
-add     eax, ecx
-push    0
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_49E26F
-mov     edx, [esp+144h+var_130]
-
-loc_49E260:                             ; CODE XREF: CampaignClass__LoadFromINI+738↑j
-mov     eax, [esi+10h]
-lea     ecx, [eax+1]
-mov     [esi+10h], ecx
-mov     ecx, [esi+4]
-mov     [ecx+eax*4], edx
-
-loc_49E26F:                             ; CODE XREF: CampaignClass__LoadFromINI+6E2↑j
-; CampaignClass__LoadFromINI+743↑j ...
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-mov     esi, eax
-add     esp, 8
-test    esi, esi
-jz      loc_49E328
-
-loc_49E288:                             ; CODE XREF: CampaignClass__LoadFromINI+822↓j
-mov     edi, esi
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-repne scasb
-not     ecx
-push    ecx             ; Size
-call    ??2_YAPAXI_Z
-mov     edx, eax
-mov     edi, esi
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-add     esp, 4
-mov     [esp+144h+var_130], edx
-repne scasb
-not     ecx
-sub     edi, ecx
-mov     eax, ecx
-mov     esi, edi
-mov     edi, edx
-shr     ecx, 2
-rep movsd
-mov     ecx, eax
-and     ecx, 3
-rep movsb
-mov     ecx, [ebp+58h]
-mov     eax, [ecx+ebx+2Ch]
-mov     ecx, [esp+144h+var_12C]
-mov     esi, [eax+ecx-4]
-mov     eax, [esi+8]
-mov     ecx, [esi+10h]
-cmp     ecx, eax
-jl      short loc_49E300
-mov     cl, [esi+0Dh]
-test    cl, cl
-jnz     short loc_49E2E5
-test    eax, eax
-jnz     short loc_49E30F
-
-loc_49E2E5:                             ; CODE XREF: CampaignClass__LoadFromINI+7DF↑j
-mov     ecx, [esi+14h]
-test    ecx, ecx
-jle     short loc_49E30F
-mov     edx, [esi]
-add     eax, ecx
-push    0
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_49E30F
-mov     edx, [esp+144h+var_130]
-
-loc_49E300:                             ; CODE XREF: CampaignClass__LoadFromINI+7D8↑j
-mov     eax, [esi+10h]
-lea     ecx, [eax+1]
-mov     [esi+10h], ecx
-mov     ecx, [esi+4]
-mov     [ecx+eax*4], edx
-
-loc_49E30F:                             ; CODE XREF: CampaignClass__LoadFromINI+7E3↑j
-; CampaignClass__LoadFromINI+7EA↑j ...
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-mov     esi, eax
-add     esp, 8
-test    esi, esi
-jnz     loc_49E288
-
-loc_49E328:                             ; CODE XREF: CampaignClass__LoadFromINI+40A↑j
-; CampaignClass__LoadFromINI+621↑j ...
-mov     eax, [esp+144h+var_128]
-mov     esi, [esp+144h+var_134]
-mov     edx, [esp+144h+var_12C]
-mov     ecx, [esp+144h+var_120]
-inc     eax
-add     esi, 30Ch
-add     edx, 4
-cmp     eax, ecx
-mov     [esp+144h+var_128], eax
-mov     [esp+144h+var_134], esi
-mov     [esp+144h+var_12C], edx
-jl      loc_49DDF0
-
-loc_49E356:                             ; CODE XREF: CampaignClass__LoadFromINI+2DA↑j
-mov     esi, [esp+144h+var_124]
-
-loc_49E35A:                             ; CODE XREF: CampaignClass__LoadFromINI+12C↑j
-mov     eax, [ebp+5Ch]
-inc     esi
-add     ebx, 4Ch ; 'L'
-cmp     esi, eax
-mov     [esp+144h+var_124], esi
-jl      loc_49DC1D
-xor     ebx, ebx
-
-loc_49E36F:                             ; CODE XREF: CampaignClass__LoadFromINI+87↑j
-; CampaignClass__LoadFromINI+106↑j ...
-lea     ecx, [esp+144h+var_94]
-mov     byte ptr [ebp+60h], 1
-mov     [esp+144h+var_EC], offset ??_7CCFileClass@@6B@ ; const CCFileClass::`vftable'
-mov     [esp+144h+var_88], ebx
-call    Vector__Clear
-lea     ecx, [esp+144h+var_EC]
-mov     [esp+144h+var_EC], offset off_7E1668
-call    BufferIOFileClass__Dtor
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 134h
-retn
-*/
 } }
 // 0x49E400
 namespace gamemd { int CampaignClass::FindMission(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x49e400
-char __thiscall CampaignClass::FindMission(int this, char *String1, _DWORD *a3)
+char __thiscall CampaignClass::FindMission(int this, char *String1, CCINIClass *aP2)
 {
   int v4; // esi
   int v5; // eax
@@ -2689,476 +915,177 @@ char __thiscall CampaignClass::FindMission(int this, char *String1, _DWORD *a3)
   int v10; // [esp+14h] [ebp-8h]
   int v11; // [esp+18h] [ebp-4h]
 
-  if ( !*(_BYTE *)(this + 96) )
-    CampaignClass::LoadFromINI(this);
-  v10 = 0;
-  if ( *(int *)(this + 92) > 0 )
+  if ( !*(_BYTE *)(this + 96) ) /*0x49e409*/
+    CampaignClass::LoadFromINI(this); /*0x49e410*/
+  v10 = 0; /*0x49e41c*/
+  if ( *(int *)(this + 92) > 0 ) /*0x49e420*/
   {
-    v9 = 0;
-    while ( 2 )
+    v9 = 0; /*0x49e426*/
+    while ( 2 ) /*0x49e42a*/
     {
-      v4 = 0;
-      v11 = 0;
-      do
+      v4 = 0; /*0x49e42a*/
+      v11 = 0; /*0x49e42c*/
+      do /*0x49e494*/
       {
-        v5 = v9 + *(_DWORD *)(this + 88);
-        v6 = 0;
-        if ( *(char *)(v5 + 8) > 0 )
+        v5 = v9 + *(_DWORD *)(this + 88); /*0x49e437*/
+        v6 = 0; /*0x49e439*/
+        if ( *(char *)(v5 + 8) > 0 ) /*0x49e440*/
         {
-          while ( _strnicmp(
+          while ( _strnicmp( /*0x49e464*/
                     String1,
                     (const char *)(v4 + *(_DWORD *)(v5 + 12)),
                     strlen((const char *)(v4 + *(_DWORD *)(v5 + 12)))) )
           {
-            ++v6;
-            v4 += 780;
-            v5 = *(_DWORD *)(this + 88) + v9;
-            if ( v6 >= *(char *)(v5 + 8) )
+            ++v6; /*0x49e46d*/
+            v4 += 780; /*0x49e46e*/
+            v5 = *(_DWORD *)(this + 88) + v9; /*0x49e474*/
+            if ( v6 >= *(char *)(v5 + 8) ) /*0x49e47e*/
             {
-              v4 = v11;
-              goto LABEL_10;
+              v4 = v11; /*0x49e480*/
+              goto LABEL_10; /*0x49e480*/
             }
           }
-          *a3 = *(_DWORD *)(this + 88) + 76 * v10;
-          return 1;
+          *(_DWORD *)aP2->__pad_0 = *(_DWORD *)(this + 88) + 76 * v10; /*0x49e4d9*/
+          return 1; /*0x49e4db*/
         }
 LABEL_10:
-        v4 += 260;
-        v11 = v4;
+        v4 += 260; /*0x49e484*/
+        v11 = v4; /*0x49e490*/
       }
-      while ( v4 < 780 );
-      v7 = ++v10 < *(_DWORD *)(this + 92);
-      v9 += 76;
-      if ( v7 )
-        continue;
+      while ( v4 < 780 ); /*0x49e494*/
+      v7 = ++v10 < *(_DWORD *)(this + 92); /*0x49e4a5*/
+      v9 += 76; /*0x49e4ab*/
+      if ( v7 ) /*0x49e4af*/
+        continue; /*0x49e4af*/
       break;
     }
   }
-  return 0;
+  return 0; /*0x49e4b5*/
 }
-
-/* ASM:
-String1         = dword ptr  4
-arg_4           = dword ptr  8
-
-sub     esp, 0Ch
-push    ebx
-push    ebp
-mov     ebp, ecx
-push    esi
-push    edi
-mov     al, [ebp+60h]
-test    al, al
-jnz     short loc_49E415
-call    CampaignClass__LoadFromINI
-
-loc_49E415:                             ; CODE XREF: CampaignClass__FindMission+E↑j
-mov     ecx, [ebp+5Ch]
-xor     eax, eax
-cmp     ecx, eax
-mov     [esp+1Ch+var_8], eax
-jle     loc_49E4B5
-mov     [esp+1Ch+var_C], eax
-
-loc_49E42A:                             ; CODE XREF: CampaignClass__FindMission+AF↓j
-xor     esi, esi
-mov     [esp+1Ch+var_4], esi
-
-loc_49E430:                             ; CODE XREF: CampaignClass__FindMission+94↓j
-mov     eax, [ebp+58h]
-mov     ecx, [esp+1Ch+var_C]
-add     eax, ecx
-xor     ebx, ebx
-mov     cl, [eax+8]
-test    cl, cl
-jle     short loc_49E484
-
-loc_49E442:                             ; CODE XREF: CampaignClass__FindMission+7E↓j
-mov     edx, [eax+0Ch]
-or      ecx, 0FFFFFFFFh
-add     edx, esi
-xor     eax, eax
-mov     edi, edx
-repne scasb
-mov     eax, [esp+1Ch+String1]
-not     ecx
-dec     ecx
-push    ecx             ; MaxCount
-push    edx             ; String2
-push    eax             ; String1
-call    __strnicmp
-add     esp, 0Ch
-test    eax, eax
-jz      short loc_49E4C1
-mov     ecx, [ebp+58h]
-mov     edx, [esp+1Ch+var_C]
-inc     ebx
-add     esi, 30Ch
-lea     eax, [ecx+edx]
-movsx   ecx, byte ptr [ecx+edx+8]
-cmp     ebx, ecx
-jl      short loc_49E442
-mov     esi, [esp+1Ch+var_4]
-
-loc_49E484:                             ; CODE XREF: CampaignClass__FindMission+40↑j
-add     esi, 104h
-cmp     esi, 30Ch
-mov     [esp+1Ch+var_4], esi
-jl      short loc_49E430
-mov     eax, [esp+1Ch+var_8]
-mov     edx, [esp+1Ch+var_C]
-mov     ecx, [ebp+5Ch]
-inc     eax
-add     edx, 4Ch ; 'L'
-cmp     eax, ecx
-mov     [esp+1Ch+var_8], eax
-mov     [esp+1Ch+var_C], edx
-jl      loc_49E42A
-
-loc_49E4B5:                             ; CODE XREF: CampaignClass__FindMission+20↑j
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-add     esp, 0Ch
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_49E4C1:                             ; CODE XREF: CampaignClass__FindMission+64↑j
-mov     eax, [esp+1Ch+var_8]
-mov     ecx, [ebp+58h]
-pop     edi
-pop     esi
-lea     edx, [eax+eax*8]
-pop     ebp
-pop     ebx
-lea     eax, [eax+edx*2]
-lea     edx, [ecx+eax*4]
-mov     eax, [esp+0Ch+arg_4]
-mov     [eax], edx
-mov     al, 1
-add     esp, 0Ch
-retn    8
-*/
 } }
 // 0x49E4F0
 namespace gamemd { int CampaignClass::GetValue(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CampaignClass_GetValue(int this, _DWORD *a2)
+char __thiscall CampaignClass::GetValue(int this, CCINIClass *aP1)
 {
-  if ( !*(_BYTE *)(this + 96) )
-    CampaignClass::LoadFromINI(this);
-  *a2 = *(_DWORD *)(this + 92);
-  return *(_BYTE *)(this + 96);
+  if ( !*(_BYTE *)(this + 96) ) /*0x49e4f3*/
+    CampaignClass::LoadFromINI(this); /*0x49e4fa*/
+  *(_DWORD *)aP1->__pad_0 = *(_DWORD *)(this + 92); /*0x49e506*/
+  return *(_BYTE *)(this + 96); /*0x49e50b*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     al, [esi+60h]
-test    al, al
-jnz     short loc_49E4FF
-call    CampaignClass__LoadFromINI
-
-loc_49E4FF:                             ; CODE XREF: CampaignClass__GetValue+8↑j
-mov     ecx, [esp+4+arg_0]
-mov     eax, [esi+5Ch]
-mov     [ecx], eax
-mov     al, [esi+60h]
-pop     esi
-retn    4
-*/
 } }
 // 0x49ECD0
 namespace gamemd { void* CampaignClass::Constructor(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x49ecd0
-_DWORD *__thiscall CampaignClass::Constructor(_DWORD *this, int a2, int a3)
+_DWORD *__thiscall sub_49ECD0(_DWORD *this, int a2, int a3)
 {
-  *(this + 1) = 0;
-  *(this + 2) = a2;
-  *((_BYTE *)this + 12) = 1;
-  *((_BYTE *)this + 13) = 0;
-  *this = &VectorClass<DynamicVectorClass<char *> *>::`vftable';
-  if ( a2 )
+  *(this + 1) = 0; /*0x49ecd9*/
+  *(this + 2) = a2; /*0x49ece0*/
+  *((_BYTE *)this + 12) = 1; /*0x49ece3*/
+  *((_BYTE *)this + 13) = 0; /*0x49ece7*/
+  *this = &vt_VectorClass_DynamicVectorClass_char; /*0x49eceb*/
+  if ( a2 ) /*0x49ecf1*/
   {
-    if ( a3 )
+    if ( a3 ) /*0x49ecf9*/
     {
-      *(this + 1) = a3;
+      *(this + 1) = a3; /*0x49ecfb*/
     }
     else
     {
-      *(this + 1) = __2_YAPAXI_Z(4 * a2);
-      *((_BYTE *)this + 13) = 1;
+      *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x49ed0c*/
+      *((_BYTE *)this + 13) = 1; /*0x49ed0f*/
     }
   }
-  *this = &DynamicVectorClass<DynamicVectorClass<char *> *>::`vftable';
-  *(this + 5) = 10;
-  *(this + 4) = 0;
-  return this;
+  *this = &DynamicVectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49ed13*/
+  *(this + 5) = 10; /*0x49ed19*/
+  *(this + 4) = 0; /*0x49ed20*/
+  return this; /*0x49ed29*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-push    esi
-mov     esi, ecx
-test    eax, eax
-mov     dword ptr [esi+4], 0
-mov     [esi+8], eax
-mov     byte ptr [esi+0Ch], 1
-mov     byte ptr [esi+0Dh], 0
-mov     dword ptr [esi], offset ??_7?$VectorClass@PAV?$DynamicVectorClass@PAD@@@@6B@ ; const VectorClass<DynamicVectorClass<char *> *>::`vftable'
-jz      short loc_49ED13
-mov     ecx, [esp+4+arg_4]
-test    ecx, ecx
-jz      short loc_49ED00
-mov     [esi+4], ecx
-jmp     short loc_49ED13
-; ---------------------------------------------------------------------------
-
-loc_49ED00:                             ; CODE XREF: CampaignClass__Constructor+29↑j
-shl     eax, 2
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-mov     [esi+4], eax
-mov     byte ptr [esi+0Dh], 1
-
-loc_49ED13:                             ; CODE XREF: CampaignClass__Constructor+21↑j
-; CampaignClass__Constructor+2E↑j
-mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@PAV?$DynamicVectorClass@PAD@@@@6B@ ; const DynamicVectorClass<DynamicVectorClass<char *> *>::`vftable'
-mov     dword ptr [esi+14h], 0Ah
-mov     dword ptr [esi+10h], 0
-mov     eax, esi
-pop     esi
-retn    8
-*/
 } }
 // 0x49F090
 namespace gamemd { void* CampaignClass::Constructor_0(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x49f090
-_DWORD *__thiscall CampaignClass::Constructor_0(_DWORD *this, int a2, int a3)
+_DWORD *__thiscall sub_49F090(_DWORD *this, int a2, int a3)
 {
-  *(this + 1) = 0;
-  *(this + 2) = a2;
-  *((_BYTE *)this + 12) = 1;
-  *((_BYTE *)this + 13) = 0;
-  *this = &VectorClass<DynamicVectorClass<char *> *>::`vftable';
-  if ( a2 )
+  *(this + 1) = 0; /*0x49f09b*/
+  *(this + 2) = a2; /*0x49f09e*/
+  *((_BYTE *)this + 12) = 1; /*0x49f0a1*/
+  *((_BYTE *)this + 13) = 0; /*0x49f0a5*/
+  *this = &vt_VectorClass_DynamicVectorClass_char; /*0x49f0a8*/
+  if ( a2 ) /*0x49f0ae*/
   {
-    if ( a3 )
+    if ( a3 ) /*0x49f0b6*/
     {
-      *(this + 1) = a3;
-      return this;
+      *(this + 1) = a3; /*0x49f0b8*/
+      return this; /*0x49f0be*/
     }
-    *(this + 1) = __2_YAPAXI_Z(4 * a2);
-    *((_BYTE *)this + 13) = 1;
+    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x49f0cd*/
+    *((_BYTE *)this + 13) = 1; /*0x49f0d0*/
   }
-  return this;
+  return this; /*0x49f0bd*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-push    esi
-mov     esi, ecx
-xor     edx, edx
-cmp     eax, edx
-mov     [esi+4], edx
-mov     [esi+8], eax
-mov     byte ptr [esi+0Ch], 1
-mov     [esi+0Dh], dl
-mov     dword ptr [esi], offset ??_7?$VectorClass@PAV?$DynamicVectorClass@PAD@@@@6B@ ; const VectorClass<DynamicVectorClass<char *> *>::`vftable'
-jz      short loc_49F0D4
-mov     ecx, [esp+4+arg_4]
-cmp     ecx, edx
-jz      short loc_49F0C1
-mov     [esi+4], ecx
-mov     eax, esi
-pop     esi
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_49F0C1:                             ; CODE XREF: CampaignClass__Constructor_0+26↑j
-shl     eax, 2
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-mov     [esi+4], eax
-mov     byte ptr [esi+0Dh], 1
-
-loc_49F0D4:                             ; CODE XREF: CampaignClass__Constructor_0+1E↑j
-mov     eax, esi
-pop     esi
-retn    8
-*/
 } }
 // 0x509610
 namespace gamemd { int TriggerClass::ValidateTeamTriggerConditions(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_509610(void *this, int a2)
+char __thiscall TriggerClass::ValidateTeamTriggerConditions(void *this, ObjectClass *aP1)
 {
-  int v2; // esi
-  int v4; // eax
+  ObjectClass *v2; // esi
+  _DWORD *attachedBomb; // eax
   int v5; // ebx
   int v6; // edi
-  _DWORD *v7; // esi
+  TechnoClass *v7; // esi
   bool v8; // cc
   int v10; // [esp+10h] [ebp-8h]
   int v11; // [esp+14h] [ebp-4h]
 
-  v2 = a2;
-  if ( !a2 )
-    return 0;
-  v4 = *(_DWORD *)(a2 + 228);
-  if ( !v4 )
-    return 0;
-  v11 = 0;
-  if ( *(int *)(v4 + 156) > 0 )
+  v2 = aP1; /*0x509616*/
+  if ( !aP1 ) /*0x50961f*/
+    return 0; /*0x50961f*/
+  attachedBomb = aP1[1].attachedBomb; /*0x509625*/
+  if ( !attachedBomb ) /*0x50962d*/
+    return 0; /*0x5096f1*/
+  v11 = 0; /*0x509639*/
+  if ( (int)attachedBomb[39] > 0 ) /*0x509643*/
   {
-    v10 = 168;
-    do
+    v10 = 42; /*0x509649*/
+    do /*0x509655*/
     {
-      v5 = *(_DWORD *)(v10 + v4);
-      if ( !v5 || !(*(int (__thiscall **)(int, int, int, _DWORD, void *))(*(_DWORD *)v5 + 148))(v5, 1, 1, 0, this) )
+      v5 = attachedBomb[v10]; /*0x509655*/
+      if ( !v5 || !(*(int (__thiscall **)(int, int, int, _DWORD, void *))(*(_DWORD *)v5 + 148))(v5, 1, 1, 0, this) ) /*0x509667*/
       {
-        if ( MEMORY[0xA8B238][0] )
-          return 0;
-        v6 = MEMORY[0x8B3DD0] - 1;
-        if ( MEMORY[0x8B3DD0] - 1 < 0 )
-          return 0;
-        while ( 1 )
+        if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] ) /*0x509678*/
+          return 0; /*0x509678*/
+        v6 = *(_DWORD *)&stru_89E138.__pad_579C[66812] - 1; /*0x50967f*/
+        if ( *(_DWORD *)&stru_89E138.__pad_579C[66812] - 1 < 0 ) /*0x509684*/
+          return 0; /*0x509684*/
+        while ( 1 ) /*0x50968c*/
         {
-          v7 = (_DWORD *)*((_DWORD *)MEMORY[0x8B3DC4] + v6);
-          if ( (void *)v7[135] == this
-            && v5 == (*(int (__thiscall **)(_DWORD))(*v7 + 132))(*((_DWORD *)MEMORY[0x8B3DC4] + v6))
-// 0x6f1e20
-            && TriggerClass::EvaluateObjectForTrigger(a2, (int)v7, (int)this) )
+          v7 = *(TechnoClass **)(*(_DWORD *)&stru_89E138.__pad_579C[66800] + 4 * v6); /*0x50968c*/
+          if ( v7->focus == this /*0x5096ab*/
+            && v5 == (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v7->__pad_0 + 132))(*(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_579C[66800]
+                                                                                              + 4 * v6))
+            && TriggerClass::EvaluateObjectForTrigger((int)aP1, v7, (int)this) )
           {
-            break;
+            break; /*0x5096ab*/
           }
-          if ( --v6 < 0 )
-            return 0;
+          if ( --v6 < 0 ) /*0x5096b5*/
+            return 0; /*0x5096b5*/
         }
-        v2 = a2;
+        v2 = aP1; /*0x5096b9*/
       }
-      v4 = *(_DWORD *)(v2 + 228);
-      v8 = ++v11 < *(_DWORD *)(v4 + 156);
-      v10 += 8;
+      attachedBomb = v2[1].attachedBomb; /*0x5096bd*/
+      v8 = ++v11 < attachedBomb[39]; /*0x5096d5*/
+      v10 += 2; /*0x5096db*/
     }
-    while ( v8 );
+    while ( v8 ); /*0x509655*/
   }
-  return 1;
+  return 1; /*0x5096e5*/
 }
-
-/* ASM:
-sub     esp, 8
-push    ebx
-push    ebp
-push    esi
-mov     esi, [esp+14h+arg_0]
-test    esi, esi
-push    edi
-mov     ebp, ecx
-jz      loc_5096F1
-mov     eax, [esi+0E4h]
-test    eax, eax
-jz      loc_5096F1
-mov     ecx, [eax+9Ch]
-mov     [esp+18h+var_4], 0
-test    ecx, ecx
-jle     loc_5096E5
-mov     [esp+18h+var_8], 0A8h
-
-loc_509651:                             ; CODE XREF: TriggerClass__ValidateTeamTriggerConditions+CF↓j
-mov     ecx, [esp+18h+var_8]
-mov     ebx, [ecx+eax]
-test    ebx, ebx
-jz      short loc_509671
-mov     edx, [ebx]
-push    ebp
-push    0
-push    1
-push    1
-mov     ecx, ebx
-call    dword ptr [edx+94h]
-test    eax, eax
-jnz     short loc_5096BD
-
-loc_509671:                             ; CODE XREF: TriggerClass__ValidateTeamTriggerConditions+4A↑j
-mov     eax, ds:0A8B238h
-test    eax, eax
-jnz     short loc_5096F1
-mov     eax, ds:8B3DD0h
-lea     edi, [eax-1]
-test    edi, edi
-jl      short loc_5096F1
-
-loc_509686:                             ; CODE XREF: TriggerClass__ValidateTeamTriggerConditions+A7↓j
-mov     ecx, ds:8B3DC4h
-mov     esi, [ecx+edi*4]
-cmp     [esi+21Ch], ebp
-jnz     short loc_5096B4
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-cmp     ebx, eax
-jnz     short loc_5096B4
-mov     ecx, [esp+18h+arg_0]
-push    ebp
-push    esi
-call    TriggerClass__EvaluateObjectForTrigger
-test    al, al
-jnz     short loc_5096B9
-
-loc_5096B4:                             ; CODE XREF: TriggerClass__ValidateTeamTriggerConditions+85↑j
-; TriggerClass__ValidateTeamTriggerConditions+93↑j
-dec     edi
-js      short loc_5096F1
-jmp     short loc_509686
-; ---------------------------------------------------------------------------
-
-loc_5096B9:                             ; CODE XREF: TriggerClass__ValidateTeamTriggerConditions+A2↑j
-mov     esi, [esp+18h+arg_0]
-
-loc_5096BD:                             ; CODE XREF: TriggerClass__ValidateTeamTriggerConditions+5F↑j
-mov     eax, [esi+0E4h]
-mov     ecx, [esp+18h+var_4]
-mov     edi, [esp+18h+var_8]
-inc     ecx
-mov     edx, [eax+9Ch]
-add     edi, 8
-cmp     ecx, edx
-mov     [esp+18h+var_4], ecx
-mov     [esp+18h+var_8], edi
-jl      loc_509651
-
-loc_5096E5:                             ; CODE XREF: TriggerClass__ValidateTeamTriggerConditions+33↑j
-pop     edi
-pop     esi
-pop     ebp
-mov     al, 1
-pop     ebx
-add     esp, 8
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_5096F1:                             ; CODE XREF: TriggerClass__ValidateTeamTriggerConditions+F↑j
-; TriggerClass__ValidateTeamTriggerConditions+1D↑j ...
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-add     esp, 8
-retn    4
-*/
 } }
 // 0x5AE220
 namespace gamemd { int CampaignClass::LoadMovieDisplay(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5ae220
 char __thiscall CampaignClass::LoadMovieDisplay(int this, int a2)
 {
   int v2; // ebp
@@ -3166,295 +1093,81 @@ char __thiscall CampaignClass::LoadMovieDisplay(int this, int a2)
   int v6; // edi
   bool v7; // bl
   int v8; // edi
-  _BYTE *v9; // eax
-  _BYTE *v10; // eax
-  int v11; // eax
-  int v12; // ebx
-  int Ticks; // eax
-  int v14; // [esp+14h] [ebp-8h] BYREF
+  int v9; // eax
+  int v10; // eax
+  int v11; // ebx
+  DWORD Ticks; // eax
+  int v13; // [esp+14h] [ebp-8h]
 
-  v2 = a2;
-  v4 = a2 == 0;
-  *(_DWORD *)(this + 172) = 0;
-  *(_DWORD *)(this + 176) = 0;
-  *(_DWORD *)(this + 180) = 0;
+  v2 = a2; /*0x5ae227*/
+  v4 = a2 == 0; /*0x5ae22e*/
+  *(_DWORD *)(this + 172) = 0; /*0x5ae231*/
+  *(_DWORD *)(this + 176) = 0; /*0x5ae237*/
+  *(_DWORD *)(this + 180) = 0; /*0x5ae23d*/
   if ( v4
-    || (v6 = *(_DWORD *)(MEMORY[0x87F7E8][53839]
-                       + 4 * *(_DWORD *)(*(_DWORD *)(MEMORY[0x87F7E8][528685] + 4 * *(_DWORD *)(v2 + 7284)) + 188))) == 0 )
+    || (v6 = *((_DWORD *)MEMORY[0x8B4124]
+             + *(_DWORD *)(*((_DWORD *)g_SuperWeaponTypeCount + *(_DWORD *)(v2 + 7284)) + 188))) == 0 )
   {
-    Debug::Log();
-    return 0;
+    Debug::Log(); /*0x5ae24a*/
+    return 0; /*0x5ae252*/
   }
   else
   {
-    Debug::Log();
-    String::Assign((char **)&a2, (const char *)(v6 + 36));
-    v7 = SessionClass::LoadMapSelection((_DWORD *)(this + 80), (char **)&a2) == 0;
-    DeleteAndZero((void **)&a2);
+    Debug::Log(); /*0x5ae2a2*/
+    String::Assign((char **)&a2, (const char *)(v6 + 36)); /*0x5ae2af*/
+    v7 = SessionClass::LoadMapSelection((_DWORD *)(this + 80), (char **)&a2) == 0; /*0x5ae2c9*/
+    DeleteAndZero((void **)&a2); /*0x5ae2cc*/
     if ( v7 )
     {
-      SessionClass::Destruct((_DWORD *)(this + 80));
-      Debug::Log();
-      return 0;
+      SessionClass::Destruct((_DWORD *)(this + 80)); /*0x5ae2d7*/
+      Debug::Log(); /*0x5ae2e1*/
+      return 0; /*0x5ae2e9*/
     }
     else
     {
-      String::Assign((char **)&a2, (const char *)(v2 + 4700));
-      v8 = CampaignClass::DeleteAndZero((_DWORD *)(this + 80), (const char **)&a2);
-      DeleteAndZero((void **)&a2);
+      String::Assign((char **)&a2, (const char *)(v2 + 4700)); /*0x5ae300*/
+      v8 = CampaignClass::DeleteAndZero(&a2); /*0x5ae315*/
+      DeleteAndZero((void **)&a2); /*0x5ae317*/
       if ( v8
-        && ((v9 = (_BYTE *)__2_YAPAXI_Z(32)) == 0 ? (v10 = 0) : (v10 = CampaignClass::Constructor_1(v9, 1)),
-            (*(_DWORD *)(this + 180) = v10) != 0) )
+        && (!__2_YAPAXI_Z(0x20u) ? (v9 = 0) : (v9 = CampaignClass::Constructor_1(1)), (*(_DWORD *)(this + 180) = v9) != 0) )
       {
-        *(_DWORD *)(this + 72) = ((*(int (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7881] + 124))(MEMORY[0x87F7E8][7881])
+        *(_DWORD *)(this + 72) = ((*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x88730C] + 124))(MEMORY[0x88730C]) /*0x5ae381*/
                                 - 640)
                                / 2;
-        v11 = ((*(int (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7881] + 128))(MEMORY[0x87F7E8][7881]) - 400)
-            / 2;
-        *(_DWORD *)(this + 76) = v11;
-        *(_DWORD *)(this + 184) = *(_DWORD *)(this + 104);
-        *(_DWORD *)(this + 188) = *(_DWORD *)(this + 108);
-        *(_DWORD *)(this + 192) = *(_DWORD *)(this + 112);
-        *(_DWORD *)(this + 196) = *(_DWORD *)(this + 116);
-        *(_DWORD *)(this + 184) += *(_DWORD *)(this + 72);
-        v12 = 0;
-        *(_DWORD *)(this + 188) += v11;
-        do
+        v10 = ((*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x88730C] + 128))(MEMORY[0x88730C]) - 400) / 2; /*0x5ae3a3*/
+        *(_DWORD *)(this + 76) = v10; /*0x5ae3a5*/
+        *(_DWORD *)(this + 184) = *(_DWORD *)(this + 104); /*0x5ae3ac*/
+        *(_DWORD *)(this + 188) = *(_DWORD *)(this + 108); /*0x5ae3b1*/
+        *(_DWORD *)(this + 192) = *(_DWORD *)(this + 112); /*0x5ae3b7*/
+        *(_DWORD *)(this + 196) = *(_DWORD *)(this + 116); /*0x5ae3bd*/
+        *(_DWORD *)(this + 184) += *(_DWORD *)(this + 72); /*0x5ae3c7*/
+        v11 = 0; /*0x5ae3d1*/
+        *(_DWORD *)(this + 188) += v10; /*0x5ae3d3*/
+        do /*0x5ae413*/
         {
-          WideString::AssignFromPtr((#72 **)&a2, (const #72 **)(v8 + 16));
-          WrapWideStringText((const #72 **)&a2, *(int **)(this + 180), *(_DWORD *)(this + 192));
-          v8 = CampaignClass::Check((_DWORD *)(this + 80), ++v12);
-          DeleteAndZero::Alt((void **)&a2);
+          WideString::AssignFromPtr((wchar_t **)&a2, (const wchar_t **)(v8 + 16)); /*0x5ae3e1*/
+          WrapWideStringText((const wchar_t **)&a2, *(int **)(this + 180), *(_DWORD *)(this + 192)); /*0x5ae3f7*/
+          v8 = CampaignClass::Check(++v11); /*0x5ae40a*/
+          DeleteAndZero::Alt((void **)&a2); /*0x5ae40c*/
         }
-        while ( v8 );
-        String::Assign_Alt((void **)(this + 200), 0);
-        Ticks = Timer::GetTicks(&v14);
-        *(_DWORD *)(this + 216) = -1;
-        *(_DWORD *)(this + 204) = Ticks;
-        *(_DWORD *)(this + 208) = v14;
-        *(_DWORD *)(this + 212) = 0;
-        return 1;
+        while ( v8 ); /*0x5ae413*/
+        String::Assign_Alt((void **)(this + 200), 0); /*0x5ae41c*/
+        Ticks = Timer::GetTicks(); /*0x5ae425*/
+        *(_DWORD *)(this + 216) = -1; /*0x5ae430*/
+        *(_DWORD *)(this + 204) = Ticks; /*0x5ae43d*/
+        *(_DWORD *)(this + 208) = v13; /*0x5ae445*/
+        *(_DWORD *)(this + 212) = 0; /*0x5ae44b*/
+        return 1; /*0x5ae448*/
       }
       else
       {
-        Debug::Log();
-        CampaignClass::ReleaseSubobjectsAndDestruct((_DWORD *)this);
-        return 0;
+        Debug::Log(); /*0x5ae351*/
+        CampaignClass::ReleaseSubobjectsAndDestruct(this); /*0x5ae35b*/
+        return 0; /*0x5ae363*/
       }
     }
   }
 }
-
-/* ASM:
-sub     esp, 0Ch
-xor     eax, eax
-push    ebx
-push    ebp
-mov     ebp, [esp+14h+arg_0]
-push    esi
-mov     esi, ecx
-cmp     ebp, eax
-push    edi
-mov     [esi+0ACh], eax
-mov     [esi+0B0h], eax
-mov     [esi+0B4h], eax
-jnz     short loc_5AE25E
-push    offset aMapselectInval_1 ; "MapSelect: Invalid Scenario pointer!\n"
-call    Debug__Log
-add     esp, 4
-xor     al, al
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 0Ch
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_5AE25E:                             ; CODE XREF: CampaignClass__LoadMovieDisplay+23↑j
-mov     ecx, [ebp+1C74h]
-mov     edx, ds:0A83C9Ch
-mov     ecx, [edx+ecx*4]
-mov     edx, [ecx+0BCh]
-mov     ecx, ds:8B4124h
-mov     edi, [ecx+edx*4]
-cmp     edi, eax
-jnz     short loc_5AE299
-push    offset aMapselectInval ; "MapSelect: Invalid side!\n"
-call    Debug__Log
-add     esp, 4
-xor     al, al
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 0Ch
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_5AE299:                             ; CODE XREF: CampaignClass__LoadMovieDisplay+5E↑j
-add     edi, 24h ; '$'
-push    edi
-push    offset aMapselectSideS ; "MapSelect: Side %s\n"
-call    Debug__Log
-add     esp, 8
-lea     ecx, [esp+1Ch+arg_0]
-push    edi
-call    String__Assign
-lea     edi, [esi+50h]
-lea     edx, [esp+1Ch+arg_0]
-push    edx
-mov     ecx, edi
-call    SessionClass__LoadMapSelection
-test    al, al
-lea     ecx, [esp+1Ch+arg_0]
-setz    bl
-call    DeleteAndZero
-test    bl, bl
-jz      short loc_5AE2F5
-mov     ecx, edi
-call    SessionClass__Destruct
-push    offset aMapselectUnabl ; "MapSelect: Unable to initialize choices"...
-call    Debug__Log
-add     esp, 4
-xor     al, al
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 0Ch
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_5AE2F5:                             ; CODE XREF: CampaignClass__LoadMovieDisplay+B3↑j
-add     ebp, 125Ch
-lea     ecx, [esp+1Ch+arg_0]
-push    ebp
-call    String__Assign
-lea     eax, [esp+1Ch+arg_0]
-mov     ecx, edi
-push    eax
-call    CampaignClass__DeleteAndZero
-lea     ecx, [esp+1Ch+arg_0]
-mov     edi, eax
-call    DeleteAndZero
-test    edi, edi
-jnz     short loc_5AE327
-push    offset aMapselectInval_0 ; "MapSelect: Invalid stage!\n"
-jmp     short loc_5AE351
-; ---------------------------------------------------------------------------
-
-loc_5AE327:                             ; CODE XREF: CampaignClass__LoadMovieDisplay+FE↑j
-push    20h ; ' '       ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-test    eax, eax
-jz      short loc_5AE340
-push    1
-mov     ecx, eax
-call    CampaignClass__Constructor_1
-jmp     short loc_5AE342
-; ---------------------------------------------------------------------------
-
-loc_5AE340:                             ; CODE XREF: CampaignClass__LoadMovieDisplay+113↑j
-xor     eax, eax
-
-loc_5AE342:                             ; CODE XREF: CampaignClass__LoadMovieDisplay+11E↑j
-test    eax, eax
-mov     [esi+0B4h], eax
-jnz     short loc_5AE36C
-push    offset aMapselectUnabl_0 ; "MapSelect: Unable to create font!\n"
-
-loc_5AE351:                             ; CODE XREF: CampaignClass__LoadMovieDisplay+105↑j
-call    Debug__Log
-add     esp, 4
-mov     ecx, esi
-call    CampaignClass__ReleaseSubobjectsAndDestruct
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-add     esp, 0Ch
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_5AE36C:                             ; CODE XREF: CampaignClass__LoadMovieDisplay+12A↑j
-mov     ecx, ds:88730Ch
-mov     edx, [ecx]
-call    dword ptr [edx+7Ch]
-sub     eax, 280h
-cdq
-sub     eax, edx
-sar     eax, 1
-mov     [esi+48h], eax
-mov     ecx, ds:88730Ch
-mov     eax, [ecx]
-call    dword ptr [eax+80h]
-sub     eax, 190h
-lea     ecx, [esi+0B8h]
-cdq
-sub     eax, edx
-lea     edx, [esi+68h]
-sar     eax, 1
-mov     [esi+4Ch], eax
-mov     ebp, [edx]
-mov     ebx, ecx
-mov     [ebx], ebp
-mov     ebp, [edx+4]
-mov     [ebx+4], ebp
-mov     ebp, [edx+8]
-mov     [ebx+8], ebp
-mov     edx, [edx+0Ch]
-mov     [ebx+0Ch], edx
-mov     edx, [esi+48h]
-mov     ebx, [ecx]
-add     ebx, edx
-mov     [ecx], ebx
-mov     ecx, [esi+0BCh]
-add     ecx, eax
-xor     ebx, ebx
-mov     [esi+0BCh], ecx
-
-loc_5AE3D9:                             ; CODE XREF: CampaignClass__LoadMovieDisplay+1F3↓j
-add     edi, 10h
-lea     ecx, [esp+1Ch+arg_0]
-push    edi
-call    WideString__AssignFromPtr
-mov     eax, [esi+0C0h]
-mov     edx, [esi+0B4h]
-push    eax
-lea     ecx, [esp+20h+arg_0]
-call    WrapWideStringText
-inc     ebx
-lea     ecx, [esi+50h]
-push    ebx
-call    CampaignClass__Check
-lea     ecx, [esp+1Ch+arg_0]
-mov     edi, eax
-call    DeleteAndZero__Alt
-test    edi, edi
-jnz     short loc_5AE3D9
-push    edi
-lea     ecx, [esi+0C8h]
-call    String__Assign_Alt
-lea     ecx, [esp+1Ch+var_8]
-call    Timer__GetTicks
-lea     edx, [esi+0CCh]
-mov     dword ptr [esi+0D8h], 0FFFFFFFFh
-pop     edi
-xor     ecx, ecx
-mov     [edx], eax
-mov     eax, [esp+18h+var_8]
-pop     esi
-pop     ebp
-mov     [edx+4], eax
-mov     al, 1
-pop     ebx
-mov     [edx+8], ecx
-add     esp, 0Ch
-retn    4
-*/
 } }
 // 0x5AE460
 namespace gamemd { int CampaignClass::ReleaseSubobjectsAndDestruct() {
@@ -3465,456 +1178,177 @@ int __thiscall sub_5AE460(_DWORD *this)
   void (__thiscall ***v3)(_DWORD, int); // ecx
   void (__thiscall ***v4)(_DWORD, int); // ecx
 
-  v2 = (void (__thiscall ***)(_DWORD, int))*(this + 45);
-  if ( v2 )
+  v2 = (void (__thiscall ***)(_DWORD, int))*(this + 45); /*0x5ae463*/
+  if ( v2 ) /*0x5ae46b*/
   {
-    (**v2)(v2, 1);
-    *(this + 45) = 0;
+    (**v2)(v2, 1); /*0x5ae471*/
+    *(this + 45) = 0; /*0x5ae473*/
   }
-  v3 = (void (__thiscall ***)(_DWORD, int))*(this + 44);
-  if ( v3 )
+  v3 = (void (__thiscall ***)(_DWORD, int))*(this + 44); /*0x5ae47d*/
+  if ( v3 ) /*0x5ae485*/
   {
-    (**v3)(v3, 1);
-    *(this + 44) = 0;
+    (**v3)(v3, 1); /*0x5ae48b*/
+    *(this + 44) = 0; /*0x5ae48d*/
   }
-  v4 = (void (__thiscall ***)(_DWORD, int))*(this + 43);
-  if ( v4 )
+  v4 = (void (__thiscall ***)(_DWORD, int))*(this + 43); /*0x5ae497*/
+  if ( v4 ) /*0x5ae49f*/
   {
-    (**v4)(v4, 1);
-    *(this + 43) = 0;
+    (**v4)(v4, 1); /*0x5ae4a5*/
+    *(this + 43) = 0; /*0x5ae4a7*/
   }
-  return SessionClass::Destruct(this + 20);
+  return SessionClass::Destruct(this + 20); /*0x5ae4b9*/
 }
-
-/* ASM:
-push    esi             ; TODO: classify (grp=blit, sz=0x5b)
-mov     esi, ecx
-mov     ecx, [esi+0B4h]
-test    ecx, ecx
-jz      short loc_5AE47D
-mov     eax, [ecx]
-push    1
-call    dword ptr [eax]
-mov     dword ptr [esi+0B4h], 0
-
-loc_5AE47D:                             ; CODE XREF: CampaignClass__ReleaseSubobjectsAndDestruct+B↑j
-mov     ecx, [esi+0B0h]
-test    ecx, ecx
-jz      short loc_5AE497
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx]
-mov     dword ptr [esi+0B0h], 0
-
-loc_5AE497:                             ; CODE XREF: CampaignClass__ReleaseSubobjectsAndDestruct+25↑j
-mov     ecx, [esi+0ACh]
-test    ecx, ecx
-jz      short loc_5AE4B1
-mov     eax, [ecx]
-push    1
-call    dword ptr [eax]
-mov     dword ptr [esi+0ACh], 0
-
-loc_5AE4B1:                             ; CODE XREF: CampaignClass__ReleaseSubobjectsAndDestruct+3F↑j
-lea     ecx, [esi+50h]
-call    SessionClass__Destruct
-pop     esi
-retn
-*/
 } }
 // 0x5CF760
 namespace gamemd { int CampaignClass::DeleteAndZero(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5CF760(_DWORD *this, const char **a2)
+int __thiscall CampaignClass::DeleteAndZero(MapSelect *this, MSFont *aP1)
 {
-  const char **v2; // ebx
+  ObjectClass *v2; // ebx
   int v4; // esi
   int v6; // esi
   void *v7; // [esp+Ch] [ebp-4h] BYREF
 
-  v2 = a2;
-  if ( !String::NotEquals(a2, 0) )
-    return 0;
-  v4 = 0;
-  if ( (int)*(this + 4) <= 0 )
-    return 0;
-  while ( 1 )
+  v2 = (ObjectClass *)aP1; /*0x5cf762*/
+  if ( !String::NotEquals((const char **)aP1, 0) ) /*0x5cf76e*/
+    return 0; /*0x5cf76e*/
+  v4 = 0; /*0x5cf77a*/
+  if ( *((int *)this + 4) <= 0 ) /*0x5cf77e*/
+    return 0; /*0x5cf7db*/
+  while ( 1 ) /*0x5cf785*/
   {
-    String::AssignFromPtr((char **)&v7, v2);
-    String::ToLower((const char **)&v7);
-    String::AssignFromPtr((char **)&a2, (const char **)(*(_DWORD *)(*(this + 1) + 4 * v4) + 4));
-    String::ToLower((const char **)&a2);
-    if ( String::Compare((const char **)&v7, (const char **)&a2) )
-      break;
-    DeleteAndZero((void **)&a2);
-    DeleteAndZero(&v7);
-    if ( ++v4 >= *(this + 4) )
-      return 0;
+    String::AssignFromPtr((char **)&v7, (const char **)v2); /*0x5cf785*/
+    String::ToLower((const char **)&v7); /*0x5cf78e*/
+    String::AssignFromPtr((char **)&aP1, (const char **)(*(_DWORD *)(*((_DWORD *)this + 1) + 4 * v4) + 4)); /*0x5cf7a1*/
+    String::ToLower((const char **)&aP1); /*0x5cf7aa*/
+    if ( String::Compare((const char **)&v7, (const char **)&aP1) ) /*0x5cf7b8*/
+      break; /*0x5cf7b8*/
+    DeleteAndZero((void **)&aP1); /*0x5cf7c5*/
+    DeleteAndZero(&v7); /*0x5cf7ce*/
+    if ( ++v4 >= *((_DWORD *)this + 4) ) /*0x5cf7d9*/
+      return 0; /*0x5cf7d9*/
   }
-  v6 = *(_DWORD *)(*(this + 1) + 4 * v4);
-  DeleteAndZero((void **)&a2);
-  DeleteAndZero(&v7);
-  return v6;
+  v6 = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * v4); /*0x5cf7eb*/
+  DeleteAndZero((void **)&aP1); /*0x5cf7ee*/
+  DeleteAndZero(&v7); /*0x5cf7f7*/
+  return v6; /*0x5cf7db*/
 }
-
-/* ASM:
-push    ecx             ; TODO: classify (grp=blit, sz=0xa5)
-push    ebx
-mov     ebx, [esp+8+arg_0]
-push    esi
-push    edi
-mov     edi, ecx
-push    0
-mov     ecx, ebx
-call    String__NotEquals
-test    al, al
-jz      short loc_5CF7DB
-mov     eax, [edi+10h]
-xor     esi, esi
-test    eax, eax
-jle     short loc_5CF7DB
-
-loc_5CF780:                             ; CODE XREF: CampaignClass__DeleteAndZero+79↓j
-push    ebx
-lea     ecx, [esp+14h+var_4]
-call    String__AssignFromPtr
-lea     ecx, [esp+10h+var_4]
-call    String__ToLower
-mov     eax, [edi+4]
-mov     ecx, [eax+esi*4]
-add     ecx, 4
-push    ecx
-lea     ecx, [esp+14h+arg_0]
-call    String__AssignFromPtr
-lea     ecx, [esp+10h+arg_0]
-call    String__ToLower
-lea     edx, [esp+10h+arg_0]
-lea     ecx, [esp+10h+var_4]
-push    edx
-call    String__Compare
-test    al, al
-jnz     short loc_5CF7E4
-lea     ecx, [esp+10h+arg_0]
-call    DeleteAndZero
-lea     ecx, [esp+10h+var_4]
-call    DeleteAndZero
-mov     eax, [edi+10h]
-inc     esi
-cmp     esi, eax
-jl      short loc_5CF780
-
-loc_5CF7DB:                             ; CODE XREF: CampaignClass__DeleteAndZero+15↑j
-; CampaignClass__DeleteAndZero+1E↑j
-pop     edi
-pop     esi
-xor     eax, eax
-pop     ebx
-pop     ecx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_5CF7E4:                             ; CODE XREF: CampaignClass__DeleteAndZero+5F↑j
-mov     eax, [edi+4]
-lea     ecx, [esp+10h+arg_0]
-mov     esi, [eax+esi*4]
-call    DeleteAndZero
-lea     ecx, [esp+10h+var_4]
-call    DeleteAndZero
-mov     eax, esi
-pop     edi
-pop     esi
-pop     ebx
-pop     ecx
-retn    4
-*/
 } }
 // 0x5CF810
 namespace gamemd { int CampaignClass::Check(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5CF810(_DWORD *this, unsigned __int16 a2)
 {
-  if ( *(this + 4) > (int)a2 )
-    return *(_DWORD *)(*(this + 1) + 4 * a2);
+  if ( *(this + 4) > (int)a2 ) /*0x5cf81e*/
+    return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x5cf828*/
   else
-    return 0;
+    return 0; /*0x5cf820*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0] ; TODO: classify (grp=blit, sz=0x1e)
-mov     edx, [ecx+10h]
-and     eax, 0FFFFh
-cmp     edx, eax
-jg      short loc_5CF825
-xor     eax, eax
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_5CF825:                             ; CODE XREF: CampaignClass__Check+E↑j
-mov     ecx, [ecx+4]
-mov     eax, [ecx+eax*4]
-retn    4
-*/
 } }
 // 0x5D2E00
 namespace gamemd { void* CampaignClass::Constructor_1(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__thiscall sub_5D2E00(_BYTE *this, __int16 a2)
 {
-  *(this + 12) = 0;
-  *(this + 13) = 0;
-  *(this + 14) = 0;
-  *(_DWORD *)this = &MSFont::`vftable';
-  FontClass::LoadFontResources((int)this, a2);
-  ++MEMORY[0xABFBE0];
-  return this;
+  *(this + 12) = 0; /*0x5d2e05*/
+  *(this + 13) = 0; /*0x5d2e08*/
+  *(this + 14) = 0; /*0x5d2e0b*/
+  *(_DWORD *)this = &MSFont::`vftable'; /*0x5d2e13*/
+  FontClass::LoadFontResources((int)this, a2); /*0x5d2e19*/
+  ++MEMORY[0xABFBE0]; /*0x5d2e24*/
+  return this; /*0x5d2e2b*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-xor     al, al
-mov     [esi+0Ch], al
-mov     [esi+0Dh], al
-mov     [esi+0Eh], al
-mov     eax, [esp+4+arg_0]
-push    eax
-mov     dword ptr [esi], offset ??_7MSFont@@6B@ ; const MSFont::`vftable'
-call    FontClass__LoadFontResources
-mov     eax, dword_A8ED54+30E8Ch
-inc     eax
-mov     dword_A8ED54+30E8Ch, eax
-mov     eax, esi
-pop     esi
-retn    4
-*/
 } }
 // 0x6913C0
 namespace gamemd { void* ScriptClass::Construct(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-#373 *__thiscall ScriptClass_Constructor(#373 *this, int a2)
+AbstractClass *__thiscall ScriptClass::Construct(AbstractClass *this, AbstractClass *aP1)
 {
   int v3; // eax
 
-  AbstractClass::Constructor(this);
-  *((_DWORD *)this + 10) = 0;
-  *((_DWORD *)this + 9) = a2;
-  *((_DWORD *)this + 11) = -1;
-  *(_DWORD *)this = &ScriptClass::`vftable';
-  *((_DWORD *)this + 1) = &ScriptClass::`vftable';
-  *((_DWORD *)this + 2) = &ScriptClass::`vftable';
-  *((_DWORD *)this + 3) = &ScriptClass::`vftable';
-  if ( MEMORY[0x87F7E8][7862] < MEMORY[0x87F7E8][7860]
-    || (BYTE1(MEMORY[0x87F7E8][7861]) || !MEMORY[0x87F7E8][7860])
-    && MEMORY[0x87F7E8][7863] > 0
-    && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(MEMORY[0x87F7E8][7858] + 8))(
-         &MEMORY[0x87F7E8][7858],
-         MEMORY[0x87F7E8][7860] + MEMORY[0x87F7E8][7863],
+  AbstractClass::Constructor(this); /*0x6913c3*/
+  *((_DWORD *)this + 10) = 0; /*0x6913cc*/
+  *((_DWORD *)this + 9) = aP1; /*0x6913d3*/
+  *((_DWORD *)this + 11) = -1; /*0x6913d6*/
+  *(_DWORD *)this->__pad_0 = &ScriptClass::`vftable'; /*0x6913dd*/
+  *(_DWORD *)&this->__pad_0[4] = &ScriptClass::`vftable'; /*0x6913e3*/
+  *(_DWORD *)&this->__pad_0[8] = &ScriptClass::`vftable'; /*0x6913ea*/
+  *(_DWORD *)&this->__pad_0[12] = &vt_ScriptClass; /*0x6913f1*/
+  if ( *(int *)&MEMORY[0x87F8E4].__pad_5568[9332] < *(int *)&MEMORY[0x87F8E4].__pad_5568[9324] /*0x69142f*/
+    || (MEMORY[0x87F8E4].__pad_5568[9329] || !*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9324])
+    && *(int *)&MEMORY[0x87F8E4].__pad_5568[9336] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9316] + 8))(
+         &MEMORY[0x87F8E4].__pad_5568[9316],
+         *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9324] + *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9336],
          0) )
   {
-    v3 = MEMORY[0x87F7E8][7862]++;
-    *(_DWORD *)(MEMORY[0x87F7E8][7859] + 4 * v3) = this;
+    v3 = (*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9332])++; /*0x69143c*/
+    *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9320] + 4 * v3) = this; /*0x69144b*/
   }
-  return this;
+  return this; /*0x691450*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-call    AbstractClass__Constructor
-mov     eax, [esp+4+arg_0]
-mov     dword ptr [esi+28h], 0
-mov     [esi+24h], eax
-mov     dword ptr [esi+2Ch], 0FFFFFFFFh
-mov     dword ptr [esi], offset ??_7ScriptClass@@6B@ ; const ScriptClass::`vftable'
-mov     dword ptr [esi+4], offset ??_7ScriptClass@@6B@_0 ; const ScriptClass::`vftable'
-mov     dword ptr [esi+8], offset ??_7ScriptClass@@6B@_1 ; const ScriptClass::`vftable'
-mov     dword ptr [esi+0Ch], offset ??_7ScriptClass@@6B@_2 ; const ScriptClass::`vftable'
-mov     eax, ds:8872B8h
-mov     ecx, ds:8872C0h
-cmp     ecx, eax
-jl      short loc_691436
-mov     cl, ds:8872BDh
-test    cl, cl
-jnz     short loc_691415
-test    eax, eax
-jnz     short loc_69144E
-
-loc_691415:                             ; CODE XREF: ScriptClass__Construct+4F↑j
-mov     ecx, ds:8872C4h
-test    ecx, ecx
-jle     short loc_69144E
-mov     edx, ds:8872B0h
-add     ecx, eax
-push    0
-push    ecx
-mov     ecx, 8872B0h
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_69144E
-
-loc_691436:                             ; CODE XREF: ScriptClass__Construct+45↑j
-mov     ecx, ds:8872C0h
-mov     eax, ecx
-inc     ecx
-mov     ds:8872C0h, ecx
-mov     ecx, ds:8872B4h
-mov     [ecx+eax*4], esi
-
-loc_69144E:                             ; CODE XREF: ScriptClass__Construct+53↑j
-; ScriptClass__Construct+5D↑j ...
-mov     eax, esi
-pop     esi
-retn    4
-*/
 } }
 // 0x6914E0
 namespace gamemd { int ScriptClass::PowerDrainUpdate(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ScriptClass::_vt13(int this, int a2)
 {
-  AbstractClass::ProcessPower((#378 *)this);
-  return Power::TimerProcess(*(_DWORD *)(this + 44));
+  AbstractClass::ProcessPower((#378 *)this); /*0x6914e9*/
+  return Power::TimerProcess(*(_DWORD *)(this + 44)); /*0x6914f9*/
 }
-
-/* ASM:
-push    esi
-push    edi
-mov     edi, [esp+8+arg_0]
-mov     esi, ecx
-push    edi
-call    AbstractClass__ProcessPower
-mov     eax, [esi+2Ch]
-mov     ecx, edi
-push    eax
-call    Power__TimerProcess
-pop     edi
-pop     esi
-retn    4
-*/
 } }
 // 0x6916B0
 namespace gamemd { void* ScriptTypeClass::Constructor(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ScriptTypeClass_Constructor(_DWORD *this, char *Source)
+_DWORD *__thiscall ScriptTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
 {
   int v3; // ecx
   char v4; // al
   int v5; // eax
-  _DWORD *v6; // edx
+  CCINIClass *v6; // edx
 
-  AbstractTypeClass::Constructor((int)this, Source);
-  *(this + 39) = 0;
-  *(this + 40) = 0;
-  *this = &ScriptTypeClass::`vftable';
-  *(this + 1) = &ScriptTypeClass::`vftable';
-  *(this + 2) = &ScriptTypeClass::`vftable';
-  *(this + 3) = &ScriptTypeClass::`vftable';
-  v3 = MEMORY[0x8B41D8];
-  if ( MEMORY[0x8B41D8] < MEMORY[0x8B41D0]
-    || (MEMORY[0x8B41D5] || !MEMORY[0x8B41D0])
-    && MEMORY[0x8B41DC] > 0
-    && (v4 = (*(int (__thiscall **)(int *, int, _DWORD))(MEMORY[0x8B41C8] + 8))(
-               &MEMORY[0x8B41C8],
-               MEMORY[0x8B41D0] + MEMORY[0x8B41DC],
+  AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6916b8*/
+  *(this + 39) = 0; /*0x6916bd*/
+  *(this + 40) = 0; /*0x6916c7*/
+  *this = &ScriptTypeClass::`vftable'; /*0x6916d1*/
+  *(this + 1) = &ScriptTypeClass::`vftable'; /*0x6916d7*/
+  *(this + 2) = &ScriptTypeClass::`vftable'; /*0x6916de*/
+  *(this + 3) = &vt_ScriptTypeClass; /*0x6916e5*/
+  v3 = dword_8B41D8; /*0x6916ec*/
+  if ( dword_8B41D8 < dword_8B41D0 /*0x69172e*/
+    || (unk_8B41D5 || !dword_8B41D0)
+    && dword_8B41DC > 0
+    && (v4 = (*(int (__thiscall **)(_DWORD *, int, _DWORD))(dword_8B41C8 + 8))(
+               &dword_8B41C8,
+               dword_8B41D0 + dword_8B41DC,
                0),
-        v3 = MEMORY[0x8B41D8],
+        v3 = dword_8B41D8,
         v4) )
   {
-    MEMORY[0x8B41D8] = v3 + 1;
-    *((_DWORD *)MEMORY[0x8B41CC] + v3) = this;
-    v3 = MEMORY[0x8B41D8];
+    dword_8B41D8 = v3 + 1; /*0x691733*/
+    *((_DWORD *)unk_8B41CC + v3) = this; /*0x69173f*/
+    v3 = dword_8B41D8; /*0x691742*/
   }
-  v5 = 0;
-  if ( v3 <= 0 )
+  v5 = 0; /*0x691748*/
+  if ( v3 <= 0 ) /*0x69174c*/
   {
 LABEL_11:
-    v5 = -1;
+    v5 = -1; /*0x691760*/
   }
   else
   {
-    v6 = MEMORY[0x8B41CC];
-    while ( (_DWORD *)*v6 != this )
+    v6 = (CCINIClass *)unk_8B41CC; /*0x69174e*/
+    while ( *(_DWORD **)v6->__pad_0 != this ) /*0x691756*/
     {
-      ++v5;
-      ++v6;
-      if ( v5 >= v3 )
-        goto LABEL_11;
+      ++v5; /*0x691758*/
+      v6 = (CCINIClass *)((char *)v6 + 4); /*0x691759*/
+      if ( v5 >= v3 ) /*0x69175e*/
+        goto LABEL_11; /*0x69175e*/
     }
   }
-  *(this + 38) = v5;
-  return this;
+  *(this + 38) = v5; /*0x691763*/
+  return this; /*0x69176b*/
 }
-
-/* ASM:
-Source          = dword ptr  4
-
-mov     eax, [esp+Source]
-push    esi
-mov     esi, ecx
-push    eax             ; Source
-call    AbstractTypeClass__Constructor
-mov     dword ptr [esi+9Ch], 0
-mov     dword ptr [esi+0A0h], 0
-mov     dword ptr [esi], offset ??_7ScriptTypeClass@@6B@ ; const ScriptTypeClass::`vftable'
-mov     dword ptr [esi+4], offset ??_7ScriptTypeClass@@6B@_0 ; const ScriptTypeClass::`vftable'
-mov     dword ptr [esi+8], offset ??_7ScriptTypeClass@@6B@_1 ; const ScriptTypeClass::`vftable'
-mov     dword ptr [esi+0Ch], offset ??_7ScriptTypeClass@@6B@_2 ; const ScriptTypeClass::`vftable'
-mov     ecx, ds:8B41D8h
-mov     eax, ds:8B41D0h
-cmp     ecx, eax
-jl      short loc_691730
-mov     dl, ds:8B41D5h
-test    dl, dl
-jnz     short loc_691709
-test    eax, eax
-jnz     short loc_691748
-
-loc_691709:                             ; CODE XREF: ScriptTypeClass__Constructor+53↑j
-mov     edx, ds:8B41DCh
-test    edx, edx
-jle     short loc_691748
-add     edx, eax
-push    0
-push    edx
-mov     edx, ds:8B41C8h
-mov     ecx, 8B41C8h
-call    dword ptr [edx+8]
-mov     ecx, ds:8B41D8h
-test    al, al
-jz      short loc_691748
-
-loc_691730:                             ; CODE XREF: ScriptTypeClass__Constructor+49↑j
-mov     eax, ecx
-inc     ecx
-mov     ds:8B41D8h, ecx
-mov     ecx, ds:8B41CCh
-mov     [ecx+eax*4], esi
-mov     ecx, ds:8B41D8h
-
-loc_691748:                             ; CODE XREF: ScriptTypeClass__Constructor+57↑j
-; ScriptTypeClass__Constructor+61↑j ...
-xor     eax, eax
-test    ecx, ecx
-jle     short loc_691760
-mov     edx, ds:8B41CCh
-
-loc_691754:                             ; CODE XREF: ScriptTypeClass__Constructor+AE↓j
-cmp     [edx], esi
-jz      short loc_691763
-inc     eax
-add     edx, 4
-cmp     eax, ecx
-jl      short loc_691754
-
-loc_691760:                             ; CODE XREF: ScriptTypeClass__Constructor+9C↑j
-or      eax, 0FFFFFFFFh
-
-loc_691763:                             ; CODE XREF: ScriptTypeClass__Constructor+A6↑j
-mov     [esi+98h], eax
-mov     eax, esi
-pop     esi
-retn    4
-*/
 } }
 // 0x6917F0
 namespace gamemd { int ScriptTypeClass::GetParameter(void* a1) {
@@ -3926,252 +1360,81 @@ char __thiscall ScriptTypeClass::_vt26(int this, char *a2)
   char Buffer[16]; // [esp+8h] [ebp-90h] BYREF
   char Source[128]; // [esp+18h] [ebp-80h] BYREF
 
-  if ( !AbstractTypeClass::WriteINI((char *)this, a2) )
-    return 0;
-  v3 = 0;
-  v4 = (_DWORD *)(this + 164);
-  do
+  if ( !AbstractTypeClass::WriteINI((char *)this, a2) ) /*0x691802*/
+    return 0; /*0x691885*/
+  v3 = 0; /*0x69180d*/
+  v4 = (_DWORD *)(this + 164); /*0x69180f*/
+  do /*0x691873*/
   {
-    sprintf(Buffer, "%d", v3);
-    String::Trim(Buffer);
-    if ( v3 >= *(_DWORD *)(this + 160) )
+    sprintf(Buffer, MEMORY[0x817F6C], v3); /*0x691820*/
+    String::Trim(Buffer); /*0x69182c*/
+    if ( v3 >= *(_DWORD *)(this + 160) ) /*0x691837*/
     {
-      INIClass::ClearSection((int)a2, this + 36, (unsigned __int8 *)Buffer);
+      INIClass::ClearSection((int)a2, this + 36, (unsigned __int8 *)Buffer); /*0x691867*/
     }
     else
     {
-      ScriptTypeClass::FormatToString(v4, Source);
-      INIClass::SetString(a2, (unsigned __int8 *)(this + 36), Buffer, Source);
+      ScriptTypeClass::FormatToString(v4, Source); /*0x691840*/
+      INIClass::SetString(a2, (unsigned __int8 *)(this + 36), Buffer, Source); /*0x691855*/
     }
-    ++v3;
-    v4 += 2;
+    ++v3; /*0x69186c*/
+    v4 += 2; /*0x69186d*/
   }
-  while ( v3 < 50 );
-  return 1;
+  while ( v3 < 50 ); /*0x691873*/
+  return 1; /*0x691877*/
 }
-
-/* ASM:
-Buffer          = byte ptr -90h
-Source          = byte ptr -80h
-arg_0           = dword ptr  4
-
-sub     esp, 90h
-push    ebp
-mov     ebp, [esp+94h+arg_0]
-push    edi
-mov     edi, ecx
-push    ebp
-call    AbstractTypeClass__WriteINI
-test    al, al
-jz      short loc_691884
-push    ebx
-push    esi
-xor     esi, esi
-lea     ebx, [edi+0A4h]
-
-loc_691815:                             ; CODE XREF: ScriptTypeClass__GetParameter+83↓j
-push    esi
-lea     eax, [esp+0A4h+Buffer]
-push    offset g_Str_Trace__d ; "%d"
-push    eax             ; Buffer
-call    _sprintf
-add     esp, 0Ch
-lea     ecx, [esp+0A0h+Buffer]
-call    String__Trim
-cmp     esi, [edi+0A0h]
-jge     short loc_69185C
-lea     ecx, [esp+0A0h+Source]
-push    ecx             ; Buffer
-mov     ecx, ebx
-call    ScriptTypeClass__FormatToString
-lea     edx, [esp+0A0h+Source]
-lea     eax, [esp+0A0h+Buffer]
-push    edx             ; Source
-lea     ecx, [edi+24h]
-push    eax             ; char *
-push    ecx             ; Block
-mov     ecx, ebp
-call    INIClass__SetString
-jmp     short loc_69186C
-; ---------------------------------------------------------------------------
-
-loc_69185C:                             ; CODE XREF: ScriptTypeClass__GetParameter+47↑j
-lea     edx, [esp+0A0h+Buffer]
-lea     eax, [edi+24h]
-push    edx
-push    eax
-mov     ecx, ebp
-call    INIClass__ClearSection
-
-loc_69186C:                             ; CODE XREF: ScriptTypeClass__GetParameter+6A↑j
-inc     esi
-add     ebx, 8
-cmp     esi, 32h ; '2'
-jl      short loc_691815
-pop     esi
-pop     ebx
-pop     edi
-mov     al, 1
-pop     ebp
-add     esp, 90h
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_691884:                             ; CODE XREF: ScriptTypeClass__GetParameter+19↑j
-pop     edi
-xor     al, al
-pop     ebp
-add     esp, 90h
-retn    4
-*/
 } }
 // 0x6918A0
 namespace gamemd { int ScriptTypeClass::GetEvent(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ScriptTypeClass::_vt25(int this, unsigned __int8 ***a2)
+char __thiscall ScriptTypeClass::GetEvent(int this, unsigned __int8 ***aP1)
 {
-  int v3; // edi
-  int v4; // eax
+  INIClass *v3; // edi
+  INIClass *v4; // eax
   _DWORD v6[2]; // [esp+8h] [ebp-98h] BYREF
   char Buffer[16]; // [esp+10h] [ebp-90h] BYREF
-  char Destination[128]; // [esp+20h] [ebp-80h] BYREF
+  INIClass Destination[2]; // [esp+20h] [ebp-80h] BYREF
 
-  INIClass::ResetSection(a2);
-  if ( !AbstractTypeClass::LoadFromINI(this, a2) )
-    return 0;
-  v3 = 0;
-  *(_DWORD *)(this + 160) = 0;
-  do
+  INIClass::ResetSection(aP1); /*0x6918b3*/
+  if ( !AbstractTypeClass::LoadFromINI(this, (AbstractTypeClass *)aP1) ) /*0x6918bb*/
+    return 0; /*0x691963*/
+  v3 = 0; /*0x6918ca*/
+  *(_DWORD *)(this + 160) = 0; /*0x6918cf*/
+  do /*0x691951*/
   {
-    sprintf(Buffer, "%d", v3);
-    String::Trim(Buffer);
-    if ( (int)INIClass::GetString(
-                a2,
-                (unsigned __int8 *)(this + 36),
+    sprintf(Buffer, MEMORY[0x817F6C], v3); /*0x6918e0*/
+    String::Trim(Buffer); /*0x6918ec*/
+    if ( (int)INIClass::GetString( /*0x69190f*/
+                aP1,
+                (INIClass *)(this + 36),
                 (unsigned __int8 *)Buffer,
-                &MEMORY[0x889F64],
+                (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
                 Destination,
                 128) > 0 )
     {
-      ScriptTypeClass::SetField(v6, Destination);
-      v4 = *(_DWORD *)(this + 160);
-      if ( v4 < 50 )
+      ScriptTypeClass::SetField(v6, (Color *)Destination); /*0x69191a*/
+      v4 = *(INIClass **)(this + 160); /*0x69191f*/
+      if ( (int)v4 < 50 ) /*0x691928*/
       {
-        *(_DWORD *)(this + 8 * v4 + 164) = v6[0];
-        *(_DWORD *)(this + 8 * v4 + 168) = v6[1];
-        ++*(_DWORD *)(this + 160);
+        *(_DWORD *)(this + 8 * (_DWORD)v4 + 164) = v6[0]; /*0x69192e*/
+        *(_DWORD *)(this + 8 * (_DWORD)v4 + 168) = v6[1]; /*0x691939*/
+        ++*(_DWORD *)(this + 160); /*0x691947*/
       }
     }
-    ++v3;
+    v3 = (INIClass *)((char *)v3 + 1); /*0x69194d*/
   }
-  while ( v3 < 50 );
-  return 1;
+  while ( (int)v3 < 50 ); /*0x691951*/
+  return 1; /*0x691955*/
 }
-
-/* ASM:
-Buffer          = byte ptr -90h
-Destination     = byte ptr -80h
-arg_0           = dword ptr  4
-
-sub     esp, 98h
-push    ebp
-mov     ebp, [esp+9Ch+arg_0]
-push    esi
-mov     esi, ecx
-mov     ecx, ebp
-call    INIClass__ResetSection
-push    ebp
-mov     ecx, esi
-call    AbstractTypeClass__LoadFromINI
-test    al, al
-jz      loc_691962
-push    ebx
-push    edi
-xor     edi, edi
-lea     ebx, [esi+24h]
-mov     [esi+0A0h], edi
-
-loc_6918D5:                             ; CODE XREF: ScriptTypeClass__GetEvent+B1↓j
-push    edi
-lea     eax, [esp+0ACh+Buffer]
-push    offset g_Str_Trace__d ; "%d"
-push    eax             ; Buffer
-call    _sprintf
-add     esp, 0Ch
-lea     ecx, [esp+0A8h+Buffer]
-call    String__Trim
-lea     ecx, [esp+0A8h+Destination]
-push    80h             ; Count
-push    ecx             ; Destination
-lea     edx, [esp+0B0h+Buffer]
-push    889F64h         ; Source
-push    edx             ; int
-push    ebx             ; int
-mov     ecx, ebp
-call    INIClass__GetString
-test    eax, eax
-jle     short loc_69194D
-lea     eax, [esp+0A8h+Destination]
-lea     ecx, [esp+0A8h+var_98]
-push    eax             ; Buffer
-call    ScriptTypeClass__SetField
-mov     eax, [esi+0A0h]
-cmp     eax, 32h ; '2'
-jge     short loc_69194D
-mov     ecx, [esp+0A8h+var_98]
-mov     [esi+eax*8+0A4h], ecx
-mov     edx, [esp+0A8h+var_94]
-mov     [esi+eax*8+0A8h], edx
-mov     eax, [esi+0A0h]
-inc     eax
-mov     [esi+0A0h], eax
-
-loc_69194D:                             ; CODE XREF: ScriptTypeClass__GetEvent+6F↑j
-; ScriptTypeClass__GetEvent+88↑j
-inc     edi
-cmp     edi, 32h ; '2'
-jl      short loc_6918D5
-pop     edi
-pop     ebx
-pop     esi
-mov     al, 1
-pop     ebp
-add     esp, 98h
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_691962:                             ; CODE XREF: ScriptTypeClass__GetEvent+22↑j
-pop     esi
-xor     al, al
-pop     ebp
-add     esp, 98h
-retn    4
-*/
 } }
 // 0x691E00
 namespace gamemd { int ScriptTypeClass::PowerDrainUpdate(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ScriptTypeClass::_vt13(int this, int *a2)
 {
-  AbstractTypeClass::ProcessPower((char *)this, a2);
-  return Power::TimerProcess(*(_DWORD *)(this + 160));
+  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x691e09*/
+  return Power::TimerProcess(*(_DWORD *)(this + 160)); /*0x691e1c*/
 }
-
-/* ASM:
-push    esi
-push    edi
-mov     edi, [esp+8+arg_0]
-mov     esi, ecx
-push    edi
-call    AbstractTypeClass__ProcessPower
-mov     eax, [esi+0A0h]
-mov     ecx, edi
-push    eax
-call    Power__TimerProcess
-pop     edi
-pop     esi
-retn    4
-*/
 } }
 // 0x691E30
 namespace gamemd { void ScriptTypeClass::GetAction(int a1, int a2) {
@@ -4185,231 +1448,94 @@ void __thiscall ScriptTypeClass::_vt10(int *this, int a2, int a3)
   int v8; // eax
   _DWORD *i; // ecx
 
-  if ( a2 )
+  if ( a2 ) /*0x691e3c*/
   {
-    if ( (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 44))(a2) == 35 )
+    if ( (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 44))(a2) == 35 ) /*0x691e49*/
     {
-      v4 = -1;
-      v5 = 0;
-      if ( *(this + 40) > 0 )
+      v4 = -1; /*0x691e51*/
+      v5 = 0; /*0x691e54*/
+      if ( *(this + 40) > 0 ) /*0x691e58*/
       {
-        v6 = MEMORY[0xA8ECB0];
-        v7 = this + 42;
-        do
+        v6 = MEMORY[0xA8ECB0]; /*0x691e5a*/
+        v7 = this + 42; /*0x691e60*/
+        do /*0x691e66*/
         {
-          if ( *(v7 - 1) == 18 )
+          if ( *(v7 - 1) == 18 ) /*0x691e6a*/
           {
-            if ( v4 == -1 )
+            if ( v4 == -1 ) /*0x691e6f*/
             {
-              v8 = 0;
-              if ( v6 <= 0 )
-                return;
-              for ( i = MEMORY[0xA8ECA4]; *i != a2; ++i )
+              v8 = 0; /*0x691e71*/
+              if ( v6 <= 0 ) /*0x691e75*/
+                return; /*0x691e75*/
+              for ( i = MEMORY[0xA8ECA4]; *i != a2; ++i ) /*0x691e77*/
               {
-                if ( ++v8 >= v6 )
-                  return;
+                if ( ++v8 >= v6 ) /*0x691e87*/
+                  return; /*0x691e87*/
               }
-              v4 = v8;
-              if ( v8 == -1 )
-                return;
+              v4 = v8; /*0x691e8e*/
+              if ( v8 == -1 ) /*0x691e90*/
+                return; /*0x691e90*/
             }
-            if ( *v7 > v4 )
+            if ( *v7 > v4 ) /*0x691e96*/
             {
-              --*v7;
+              --*v7; /*0x691e99*/
 LABEL_17:
-              v6 = MEMORY[0xA8ECB0];
-              goto LABEL_18;
+              v6 = MEMORY[0xA8ECB0]; /*0x691ea5*/
+              goto LABEL_18; /*0x691ea5*/
             }
-            if ( *v7 == v4 )
+            if ( *v7 == v4 ) /*0x691e9d*/
             {
-              *v7 = 0;
-              goto LABEL_17;
+              *v7 = 0; /*0x691e9f*/
+              goto LABEL_17; /*0x691e9f*/
             }
           }
 LABEL_18:
-          ++v5;
-          v7 += 2;
+          ++v5; /*0x691eab*/
+          v7 += 2; /*0x691eb2*/
         }
-        while ( v5 < *(this + 40) );
+        while ( v5 < *(this + 40) ); /*0x691e66*/
       }
     }
   }
 }
-
-/* ASM:
-push    ebx
-push    ebp
-mov     ebp, [esp+8+arg_0]
-push    esi
-test    ebp, ebp
-push    edi
-mov     ebx, ecx
-jz      short loc_691EB9
-mov     eax, [ebp+0]
-mov     ecx, ebp
-call    dword ptr [eax+2Ch]
-cmp     eax, 23h ; '#'
-jnz     short loc_691EB9
-mov     eax, [ebx+0A0h]
-or      ecx, 0FFFFFFFFh
-xor     edi, edi
-test    eax, eax
-jle     short loc_691EB9
-mov     esi, ds:0A8ECB0h
-lea     edx, [ebx+0A8h]
-
-loc_691E66:                             ; CODE XREF: ScriptTypeClass__GetAction+87↓j
-cmp     dword ptr [edx-4], 12h
-jnz     short loc_691EAB
-cmp     ecx, 0FFFFFFFFh
-jnz     short loc_691E92
-xor     eax, eax
-test    esi, esi
-jle     short loc_691EB9
-mov     ecx, ds:0A8ECA4h
-
-loc_691E7D:                             ; CODE XREF: ScriptTypeClass__GetAction+59↓j
-cmp     [ecx], ebp
-jz      short loc_691E8B
-inc     eax
-add     ecx, 4
-cmp     eax, esi
-jge     short loc_691EB9
-jmp     short loc_691E7D
-; ---------------------------------------------------------------------------
-
-loc_691E8B:                             ; CODE XREF: ScriptTypeClass__GetAction+4F↑j
-cmp     eax, 0FFFFFFFFh
-mov     ecx, eax
-jz      short loc_691EB9
-
-loc_691E92:                             ; CODE XREF: ScriptTypeClass__GetAction+3F↑j
-mov     eax, [edx]
-cmp     eax, ecx
-jle     short loc_691E9D
-dec     eax
-mov     [edx], eax
-jmp     short loc_691EA5
-; ---------------------------------------------------------------------------
-
-loc_691E9D:                             ; CODE XREF: ScriptTypeClass__GetAction+66↑j
-jnz     short loc_691EAB
-mov     dword ptr [edx], 0
-
-loc_691EA5:                             ; CODE XREF: ScriptTypeClass__GetAction+6B↑j
-mov     esi, ds:0A8ECB0h
-
-loc_691EAB:                             ; CODE XREF: ScriptTypeClass__GetAction+3A↑j
-; ScriptTypeClass__GetAction:loc_691E9D↑j
-mov     eax, [ebx+0A0h]
-inc     edi
-add     edx, 8
-cmp     edi, eax
-jl      short loc_691E66
-
-loc_691EB9:                             ; CODE XREF: ScriptTypeClass__GetAction+C↑j
-; ScriptTypeClass__GetAction+19↑j ...
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn    8
-*/
 } }
 // 0x691EE0
 namespace gamemd { void* ScriptClass::ProcessEvent(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void **__thiscall ScriptClass::_vt08(void **Block, char a2)
+ScriptClass *__thiscall ScriptClass::ProcessEvent(void **Block, char a2)
 {
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &ScriptClass::`vftable';
-  *(Block + 1) = &ScriptClass::`vftable';
-  *(Block + 2) = &ScriptClass::`vftable';
-  *(Block + 3) = &ScriptClass::`vftable';
-  AbstractClass::AnnounceExpiredPointer(Block, 1);
-  v5 = Block;
-  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0x8872B0] + 16))(&MEMORY[0x8872B0], &v5);
-  if ( v3 != -1 && v3 < MEMORY[0x8872C0] && v3 < --MEMORY[0x8872C0] )
+  *Block = &ScriptClass::`vftable'; /*0x691ee6*/
+  *(Block + 1) = &ScriptClass::`vftable'; /*0x691eec*/
+  *(Block + 2) = &ScriptClass::`vftable'; /*0x691ef3*/
+  *(Block + 3) = &vt_ScriptClass; /*0x691efa*/
+  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x691f01*/
+  v5 = Block; /*0x691f16*/
+  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0x8872B0] + 16))(&MEMORY[0x8872B0], &v5); /*0x691f1a*/
+  if ( v3 != -1 && v3 < MEMORY[0x8872C0] && v3 < --MEMORY[0x8872C0] ) /*0x691f35*/
   {
-    do
+    do /*0x691f4d*/
     {
-      ++v3;
-      *((_DWORD *)MEMORY[0x8872B4] + v3 - 1) = *((_DWORD *)MEMORY[0x8872B4] + v3);
+      ++v3; /*0x691f3d*/
+      *((_DWORD *)MEMORY[0x8872B4] + v3 - 1) = *((_DWORD *)MEMORY[0x8872B4] + v3); /*0x691f41*/
     }
-    while ( v3 < MEMORY[0x8872C0] );
+    while ( v3 < MEMORY[0x8872C0] ); /*0x691f4d*/
   }
-  AbstractClass::DTOR(Block);
-  if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(Block);
-  return Block;
+  AbstractClass::DTOR(Block); /*0x691f51*/
+  if ( (a2 & 1) != 0 ) /*0x691f5b*/
+    __3_YAXPAX_Z(Block); /*0x691f5e*/
+  return (ScriptClass *)Block; /*0x691f68*/
 }
-
-/* ASM:
-push    ecx
-push    esi
-mov     esi, ecx
-mov     dl, 1
-mov     dword ptr [esi], offset ??_7ScriptClass@@6B@ ; const ScriptClass::`vftable'
-mov     dword ptr [esi+4], offset ??_7ScriptClass@@6B@_0 ; const ScriptClass::`vftable'
-mov     dword ptr [esi+8], offset ??_7ScriptClass@@6B@_1 ; const ScriptClass::`vftable'
-mov     dword ptr [esi+0Ch], offset ??_7ScriptClass@@6B@_2 ; const ScriptClass::`vftable'
-call    AbstractClass__AnnounceExpiredPointer
-mov     edx, ds:8872B0h
-lea     eax, [esp+8+var_4]
-push    eax
-mov     ecx, 8872B0h
-mov     [esp+0Ch+var_4], esi
-call    dword ptr [edx+10h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_691F4F
-mov     ecx, ds:8872C0h
-cmp     eax, ecx
-jge     short loc_691F4F
-dec     ecx
-cmp     eax, ecx
-mov     ds:8872C0h, ecx
-jge     short loc_691F4F
-
-loc_691F37:                             ; CODE XREF: ScriptClass__ProcessEvent+6D↓j
-mov     ecx, ds:8872B4h
-inc     eax
-mov     edx, [ecx+eax*4]
-mov     [ecx+eax*4-4], edx
-mov     ecx, ds:8872C0h
-cmp     eax, ecx
-jl      short loc_691F37
-
-loc_691F4F:                             ; CODE XREF: ScriptClass__ProcessEvent+40↑j
-; ScriptClass__ProcessEvent+4A↑j ...
-mov     ecx, esi
-call    AbstractClass__DTOR
-test    [esp+8+arg_0], 1
-jz      short loc_691F66
-push    esi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_691F66:                             ; CODE XREF: ScriptClass__ProcessEvent+7B↑j
-mov     eax, esi
-pop     esi
-pop     ecx
-retn    4
-*/
 } }
 // 0x691F90
 namespace gamemd { int ScriptTypeClass::GetAuxField() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ScriptTypeClass::_vt16(_DWORD *this)
 {
-  return *(this + 38);
+  return *(this + 38); /*0x691f96*/
 }
-
-/* ASM:
-mov     eax, [ecx+98h]
-retn
-*/
 } }
 // 0x6DD000
 namespace gamemd { int TActionClass::ctor() {
@@ -4423,26 +1549,26 @@ int __thiscall sub_6DD000(int this)
   int v6; // eax
   int v7; // eax
 
-  AbstractClass::Constructor((#373 *)this);
-  *(_DWORD *)(this + 36) = -1;
-  *(_DWORD *)(this + 40) = 0;
-  *(_DWORD *)(this + 44) = 0;
-  *(_DWORD *)(this + 48) = 0;
-  *(_DWORD *)(this + 52) = 0;
-  *(_DWORD *)(this + 56) = 0;
-  *(_DWORD *)(this + 60) = 0;
-  *(_DWORD *)(this + 64) = 0;
-  *(_DWORD *)(this + 68) = 0;
-  *(_DWORD *)(this + 72) = 0;
-  *(_DWORD *)(this + 76) = 0;
-  *(_DWORD *)(this + 80) = 0;
-  *(_BYTE *)(this + 84) = 0;
-  *(_DWORD *)this = &TActionClass::`vftable';
-  *(_DWORD *)(this + 4) = &TActionClass::`vftable';
-  *(_DWORD *)(this + 8) = &TActionClass::`vftable';
-  *(_DWORD *)(this + 12) = &TActionClass::`vftable';
-  v2 = MEMORY[0xB0E668];
-  if ( MEMORY[0xB0E668] < MEMORY[0xB0E660]
+  AbstractClass::Constructor((AbstractClass *)this); /*0x6dd004*/
+  *(_DWORD *)(this + 36) = -1; /*0x6dd00b*/
+  *(_DWORD *)(this + 40) = 0; /*0x6dd012*/
+  *(_DWORD *)(this + 44) = 0; /*0x6dd015*/
+  *(_DWORD *)(this + 48) = 0; /*0x6dd018*/
+  *(_DWORD *)(this + 52) = 0; /*0x6dd01b*/
+  *(_DWORD *)(this + 56) = 0; /*0x6dd01e*/
+  *(_DWORD *)(this + 60) = 0; /*0x6dd021*/
+  *(_DWORD *)(this + 64) = 0; /*0x6dd024*/
+  *(_DWORD *)(this + 68) = 0; /*0x6dd027*/
+  *(_DWORD *)(this + 72) = 0; /*0x6dd02a*/
+  *(_DWORD *)(this + 76) = 0; /*0x6dd02d*/
+  *(_DWORD *)(this + 80) = 0; /*0x6dd030*/
+  *(_BYTE *)(this + 84) = 0; /*0x6dd033*/
+  *(_DWORD *)this = &TActionClass::`vftable'; /*0x6dd036*/
+  *(_DWORD *)(this + 4) = &TActionClass::`vftable'; /*0x6dd03c*/
+  *(_DWORD *)(this + 8) = &TActionClass::`vftable'; /*0x6dd043*/
+  *(_DWORD *)(this + 12) = &vt_TActionClass; /*0x6dd04a*/
+  v2 = MEMORY[0xB0E668]; /*0x6dd051*/
+  if ( MEMORY[0xB0E668] < MEMORY[0xB0E660] /*0x6dd08f*/
     || (MEMORY[0xB0E665] || !MEMORY[0xB0E660])
     && MEMORY[0xB0E66C] > 0
     && (v3 = (*(int (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0E658] + 8))(
@@ -4452,29 +1578,29 @@ int __thiscall sub_6DD000(int this)
         v2 = MEMORY[0xB0E668],
         v3) )
   {
-    MEMORY[0xB0E668] = v2 + 1;
-    *((_DWORD *)MEMORY[0xB0E65C] + v2) = this;
-    v2 = MEMORY[0xB0E668];
+    MEMORY[0xB0E668] = v2 + 1; /*0x6dd094*/
+    *((_DWORD *)MEMORY[0xB0E65C] + v2) = this; /*0x6dd0a0*/
+    v2 = MEMORY[0xB0E668]; /*0x6dd0a3*/
   }
-  v4 = 0;
-  if ( v2 <= 0 )
+  v4 = 0; /*0x6dd0a9*/
+  if ( v2 <= 0 ) /*0x6dd0ad*/
   {
 LABEL_11:
-    v4 = -1;
+    v4 = -1; /*0x6dd0c1*/
   }
   else
   {
-    v5 = MEMORY[0xB0E65C];
-    while ( *v5 != this )
+    v5 = MEMORY[0xB0E65C]; /*0x6dd0af*/
+    while ( *v5 != this ) /*0x6dd0b7*/
     {
-      ++v4;
-      ++v5;
-      if ( v4 >= v2 )
-        goto LABEL_11;
+      ++v4; /*0x6dd0b9*/
+      ++v5; /*0x6dd0ba*/
+      if ( v4 >= v2 ) /*0x6dd0bf*/
+        goto LABEL_11; /*0x6dd0bf*/
     }
   }
-  *(_DWORD *)(this + 36) = v4;
-  if ( MEMORY[0xB0F680] < MEMORY[0xB0F678]
+  *(_DWORD *)(this + 36) = v4; /*0x6dd0c4*/
+  if ( MEMORY[0xB0F680] < MEMORY[0xB0F678] /*0x6dd0fb*/
     || (MEMORY[0xB0F67D] || !MEMORY[0xB0F678])
     && MEMORY[0xB0F684] > 0
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0F670] + 8))(
@@ -4482,10 +1608,10 @@ LABEL_11:
          MEMORY[0xB0F678] + MEMORY[0xB0F684],
          0) )
   {
-    v6 = MEMORY[0xB0F680]++;
-    *((_DWORD *)MEMORY[0xB0F674] + v6) = this;
+    v6 = MEMORY[0xB0F680]++; /*0x6dd108*/
+    *((_DWORD *)MEMORY[0xB0F674] + v6) = this; /*0x6dd117*/
   }
-  if ( MEMORY[0xB0F668] < MEMORY[0xB0F660]
+  if ( MEMORY[0xB0F668] < MEMORY[0xB0F660] /*0x6dd14e*/
     || (MEMORY[0xB0F665] || !MEMORY[0xB0F660])
     && MEMORY[0xB0F66C] > 0
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0F658] + 8))(
@@ -4493,159 +1619,13 @@ LABEL_11:
          MEMORY[0xB0F660] + MEMORY[0xB0F66C],
          0) )
   {
-    v7 = MEMORY[0xB0F668]++;
-    *((_DWORD *)MEMORY[0xB0F65C] + v7) = this;
+    v7 = MEMORY[0xB0F668]++; /*0x6dd15b*/
+    *((_DWORD *)MEMORY[0xB0F65C] + v7) = this; /*0x6dd16a*/
   }
-  *(_BYTE *)(this + 109) = 0;
-  *(_DWORD *)(this + 144) = 0;
-  return this;
+  *(_BYTE *)(this + 109) = 0; /*0x6dd16d*/
+  *(_DWORD *)(this + 144) = 0; /*0x6dd170*/
+  return this; /*0x6dd178*/
 }
-
-/* ASM:
-push    ebx
-push    esi
-mov     esi, ecx
-call    AbstractClass__Constructor
-xor     ebx, ebx
-mov     dword ptr [esi+24h], 0FFFFFFFFh
-mov     [esi+28h], ebx
-mov     [esi+2Ch], ebx
-mov     [esi+30h], ebx
-mov     [esi+34h], ebx
-mov     [esi+38h], ebx
-mov     [esi+3Ch], ebx
-mov     [esi+40h], ebx
-mov     [esi+44h], ebx
-mov     [esi+48h], ebx
-mov     [esi+4Ch], ebx
-mov     [esi+50h], ebx
-mov     [esi+54h], bl
-mov     dword ptr [esi], offset ??_7TActionClass@@6B@ ; const TActionClass::`vftable'
-mov     dword ptr [esi+4], offset ??_7TActionClass@@6B@_0 ; const TActionClass::`vftable'
-mov     dword ptr [esi+8], offset ??_7TActionClass@@6B@_1 ; const TActionClass::`vftable'
-mov     dword ptr [esi+0Ch], offset ??_7TActionClass@@6B@_2 ; const TActionClass::`vftable'
-mov     ecx, dword_A8ED54+7F914h
-mov     eax, dword_A8ED54+7F90Ch
-cmp     ecx, eax
-jl      short loc_6DD091
-cmp     byte ptr dword_A8ED54+7F911h, bl
-jnz     short loc_6DD06C
-cmp     eax, ebx
-jnz     short loc_6DD0A9
-
-loc_6DD06C:                             ; CODE XREF: TActionClass__ctor+66↑j
-mov     edx, dword_A8ED54+7F918h
-cmp     edx, ebx
-jle     short loc_6DD0A9
-add     edx, eax
-mov     eax, dword_A8ED54+7F904h
-push    ebx
-push    edx
-mov     ecx, (offset dword_A8ED54+7F904h)
-call    dword ptr [eax+8]
-mov     ecx, dword_A8ED54+7F914h
-test    al, al
-jz      short loc_6DD0A9
-
-loc_6DD091:                             ; CODE XREF: TActionClass__ctor+5E↑j
-mov     eax, ecx
-inc     ecx
-mov     dword_A8ED54+7F914h, ecx
-mov     ecx, dword_A8ED54+7F908h
-mov     [ecx+eax*4], esi
-mov     ecx, dword_A8ED54+7F914h
-
-loc_6DD0A9:                             ; CODE XREF: TActionClass__ctor+6A↑j
-; TActionClass__ctor+74↑j ...
-xor     eax, eax
-cmp     ecx, ebx
-jle     short loc_6DD0C1
-mov     edx, dword_A8ED54+7F908h
-
-loc_6DD0B5:                             ; CODE XREF: TActionClass__ctor+BF↓j
-cmp     [edx], esi
-jz      short loc_6DD0C4
-inc     eax
-add     edx, 4
-cmp     eax, ecx
-jl      short loc_6DD0B5
-
-loc_6DD0C1:                             ; CODE XREF: TActionClass__ctor+AD↑j
-or      eax, 0FFFFFFFFh
-
-loc_6DD0C4:                             ; CODE XREF: TActionClass__ctor+B7↑j
-mov     [esi+24h], eax
-mov     eax, dword_A8ED54+80924h
-mov     ecx, dword_A8ED54+8092Ch
-cmp     ecx, eax
-jl      short loc_6DD102
-cmp     byte ptr dword_A8ED54+80929h, bl
-jnz     short loc_6DD0E2
-cmp     eax, ebx
-jnz     short loc_6DD11A
-
-loc_6DD0E2:                             ; CODE XREF: TActionClass__ctor+DC↑j
-mov     ecx, dword_A8ED54+80930h
-cmp     ecx, ebx
-jle     short loc_6DD11A
-mov     edx, dword_A8ED54+8091Ch
-add     ecx, eax
-push    ebx
-push    ecx
-mov     ecx, (offset dword_A8ED54+8091Ch)
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_6DD11A
-
-loc_6DD102:                             ; CODE XREF: TActionClass__ctor+D4↑j
-mov     ecx, dword_A8ED54+8092Ch
-mov     eax, ecx
-inc     ecx
-mov     dword_A8ED54+8092Ch, ecx
-mov     ecx, dword_A8ED54+80920h
-mov     [ecx+eax*4], esi
-
-loc_6DD11A:                             ; CODE XREF: TActionClass__ctor+E0↑j
-; TActionClass__ctor+EA↑j ...
-mov     eax, dword_A8ED54+8090Ch
-mov     ecx, dword_A8ED54+80914h
-cmp     ecx, eax
-jl      short loc_6DD155
-cmp     byte ptr dword_A8ED54+80911h, bl
-jnz     short loc_6DD135
-cmp     eax, ebx
-jnz     short loc_6DD16D
-
-loc_6DD135:                             ; CODE XREF: TActionClass__ctor+12F↑j
-mov     ecx, dword_A8ED54+80918h
-cmp     ecx, ebx
-jle     short loc_6DD16D
-mov     edx, dword_A8ED54+80904h
-add     ecx, eax
-push    ebx
-push    ecx
-mov     ecx, (offset dword_A8ED54+80904h)
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_6DD16D
-
-loc_6DD155:                             ; CODE XREF: TActionClass__ctor+127↑j
-mov     ecx, dword_A8ED54+80914h
-mov     eax, ecx
-inc     ecx
-mov     dword_A8ED54+80914h, ecx
-mov     ecx, dword_A8ED54+80908h
-mov     [ecx+eax*4], esi
-
-loc_6DD16D:                             ; CODE XREF: TActionClass__ctor+133↑j
-; TActionClass__ctor+13D↑j ...
-mov     [esi+6Dh], bl
-mov     [esi+90h], ebx
-mov     eax, esi
-pop     esi
-pop     ebx
-retn
-*/
 } }
 // 0x6E3EE0
 namespace gamemd { int TriggerTypeClass::Dispatch() {
@@ -4654,43 +1634,23 @@ int __thiscall sub_6E3EE0(void *this)
 {
   int result; // eax
 
-  result = 0;
-  switch ( (unsigned int)this )
+  result = 0; /*0x6e3ee3*/
+  switch ( (unsigned int)this ) /*0x6e3ef2*/
   {
-    case 0xEu:
-    case 0x20u:
-    case 0x3Cu:
-    case 0x3Du:
-    case 0x3Eu:
-    case 0x5Bu:
-    case 0x6Fu:
-      result = 2;
-      break;
+    case 0xEu: /*0x6e3ef2*/
+    case 0x20u: /*0x6e3ef2*/
+    case 0x3Cu: /*0x6e3ef2*/
+    case 0x3Du: /*0x6e3ef2*/
+    case 0x3Eu: /*0x6e3ef2*/
+    case 0x5Bu: /*0x6e3ef2*/
+    case 0x6Fu: /*0x6e3ef2*/
+      result = 2; /*0x6e3ef9*/
+      break; /*0x6e3ef9*/
     default:
       return result;
   }
-  return result;
+  return result; /*0x6e3efe*/
 }
-
-/* ASM:
-add     ecx, 0FFFFFFF2h ; TODO: classify (grp=blit, sz=0x1f)
-xor     eax, eax
-cmp     ecx, 61h
-ja      short def_6E3EF2 ; jumptable 006E3EF2 default case, cases 15-31,33-59,63-90,92-110
-xor     edx, edx
-mov     dl, ds:byte_6E3F08[ecx]
-jmp     ds:jpt_6E3EF2[edx*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_6E3EF9:                             ; CODE XREF: TriggerTypeClass__Dispatch+12↑j
-; DATA XREF: .text:jpt_6E3EF2↓o
-mov     eax, 2          ; jumptable 006E3EF2 cases 14,32,60-62,91,111
-
-def_6E3EF2:                             ; CODE XREF: TriggerTypeClass__Dispatch+8↑j
-; TriggerTypeClass__Dispatch+12↑j
-; DATA XREF: ...
-retn                    ; jumptable 006E3EF2 default case, cases 15-31,33-59,63-90,92-110
-*/
 } }
 // 0x6E8160
 namespace gamemd { int TeamClass::SumMemberCounts() {
@@ -4702,782 +1662,294 @@ int __thiscall sub_6E8160(int *this)
   int *v3; // ecx
   int v4; // esi
 
-  v1 = *(this + 39);
-  result = 0;
-  if ( v1 > 0 )
+  v1 = *(this + 39); /*0x6e8160*/
+  result = 0; /*0x6e8166*/
+  if ( v1 > 0 ) /*0x6e816a*/
   {
-    v3 = this + 41;
-    do
+    v3 = this + 41; /*0x6e816d*/
+    do /*0x6e817b*/
     {
-      v4 = *v3;
-      v3 += 2;
-      result += v4;
-      --v1;
+      v4 = *v3; /*0x6e8173*/
+      v3 += 2; /*0x6e8175*/
+      result += v4; /*0x6e8178*/
+      --v1; /*0x6e817a*/
     }
-    while ( v1 );
+    while ( v1 ); /*0x6e817b*/
   }
-  return result;
+  return result; /*0x6e817e*/
 }
-
-/* ASM:
-mov     edx, [ecx+9Ch]  ; TODO: classify (grp=blit, sz=0x1f)
-xor     eax, eax
-test    edx, edx
-jle     short locret_6E817E
-push    esi
-add     ecx, 0A4h
-
-loc_6E8173:                             ; CODE XREF: TeamClass__SumMemberCounts+1B↓j
-mov     esi, [ecx]
-add     ecx, 8
-add     eax, esi
-dec     edx
-jnz     short loc_6E8173
-pop     esi
-
-locret_6E817E:                          ; CODE XREF: TeamClass__SumMemberCounts+A↑j
-retn
-*/
 } }
 // 0x6EC9A0
 namespace gamemd { int TeamClass::SelectWaypointTarget(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6EC9A0(int this, int a2, char a3)
+char __thiscall TeamClass::SelectWaypointTarget(int this, TeamClass *aP1, char a3)
 {
-  _DWORD *CellFromArray; // eax
-  _DWORD *v5; // esi
+  TechnoClass *CellFromArray; // eax
+  TechnoClass *v5; // esi
   char v6; // al
-  int ObjectCell; // eax
-  int *v8; // esi
+  TechnoClass *ObjectCell; // eax
+  FootClass *v8; // esi
   char result; // al
   _DWORD v10[2]; // [esp+8h] [ebp-8h] BYREF
 
-  if ( a3 )
+  if ( a3 ) /*0x6ec9ad*/
   {
-    CellFromArray = ScenarioClass::GetCellFromArray((__int16 *)MEMORY[0xA8B230], *(_DWORD *)(a2 + 4));
-    v5 = CellFromArray;
-    if ( CellFromArray )
+    CellFromArray = (TechnoClass *)ScenarioClass::GetCellFromArray( /*0x6ec9bd*/
+                                     *(__int16 **)&HouseClass_Player.__pad_5568[8060],
+                                     *(ScenarioClass **)&aP1->__pad_0[4]);
+    v5 = CellFromArray; /*0x6ec9c2*/
+    if ( CellFromArray ) /*0x6ec9c6*/
     {
-      if ( (*(int (__thiscall **)(_DWORD *))(*CellFromArray + 44))(CellFromArray) == 11 )
+      if ( (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)CellFromArray->__pad_0 + 44))(CellFromArray) == 11 ) /*0x6ec9d2*/
       {
-        v6 = BYTE1(v5[80]) & 1;
-        v10[0] = 0;
-        v10[1] = 0;
-        ObjectCell = Object::FindObjectCell(v5, v10, v6);
-        if ( ObjectCell )
-          v5 = (_DWORD *)ObjectCell;
+        v6 = BYTE1(v5->currentRank) & 1; /*0x6ec9e1*/
+        v10[0] = 0; /*0x6ec9e3*/
+        v10[1] = 0; /*0x6ec9ef*/
+        ObjectCell = (TechnoClass *)Object::FindObjectCell(v5, (TechnoClass *)v10, v6); /*0x6ec9f7*/
+        if ( ObjectCell ) /*0x6ec9fe*/
+          v5 = ObjectCell; /*0x6eca00*/
       }
     }
-    TeamClass::SelectMember(this, (int)v5);
+    TeamClass::SelectMember(this, (AbstractClass *)v5); /*0x6eca05*/
   }
-  if ( *(_DWORD *)(this + 60) && (v8 = *(int **)(this + 84)) != 0 )
+  if ( *(_DWORD *)(this + 60) && (v8 = *(FootClass **)(this + 84)) != 0 ) /*0x6eca16*/
   {
-    while ( *(int *)((*(int (__thiscall **)(int *))(*v8 + 132))(v8) + 1668) > 0 && v8[191] <= 0 )
+    while ( *(int *)((*(int (__thiscall **)(FootClass *))(*(_DWORD *)v8->__pad_0 + 132))(v8) + 1668) > 0 /*0x6eca34*/
+         && SLODWORD(v8->pitchAngle) <= 0 )
     {
-      v8 = (int *)v8[374];
-      if ( !v8 )
-        goto LABEL_12;
+      v8 = (FootClass *)v8->nextTeamMember; /*0x6eca36*/
+      if ( !v8 ) /*0x6eca3e*/
+        goto LABEL_12; /*0x6eca3e*/
     }
-    return TeamClass::AttackCoordinator((int *)this);
+    return TeamClass::AttackCoordinator((int *)this); /*0x6eca5a*/
   }
   else
   {
 LABEL_12:
-    result = TeamClass::SelectMember(this, 0);
-    *(_BYTE *)(this + 128) = 1;
+    result = TeamClass::SelectMember(this, 0); /*0x6eca40*/
+    *(_BYTE *)(this + 128) = 1; /*0x6eca49*/
   }
-  return result;
+  return result; /*0x6eca50*/
 }
-
-/* ASM:
-mov     al, [esp+arg_4]
-sub     esp, 8
-test    al, al
-push    esi
-push    edi
-mov     edi, ecx
-jz      short loc_6ECA0A
-mov     eax, [esp+10h+arg_0]
-mov     ecx, [eax+4]
-push    ecx
-mov     ecx, ds:0A8B230h
-call    ScenarioClass__GetCellFromArray
-mov     esi, eax
-test    esi, esi
-jz      short loc_6ECA02
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+2Ch]
-cmp     eax, 0Bh
-jnz     short loc_6ECA02
-mov     eax, [esi+140h]
-lea     ecx, [esp+10h+var_8]
-shr     eax, 8
-and     al, 1
-mov     [esp+10h+var_8], 0
-push    eax
-push    ecx
-mov     ecx, esi
-mov     [esp+18h+var_4], 0
-call    Object__FindObjectCell
-test    eax, eax
-jz      short loc_6ECA02
-mov     esi, eax
-
-loc_6ECA02:                             ; CODE XREF: TeamClass__SelectWaypointTarget+26↑j
-; TeamClass__SelectWaypointTarget+32↑j ...
-push    esi
-mov     ecx, edi
-call    TeamClass__SelectMember
-
-loc_6ECA0A:                             ; CODE XREF: TeamClass__SelectWaypointTarget+D↑j
-mov     eax, [edi+3Ch]
-test    eax, eax
-jz      short loc_6ECA40
-mov     esi, [edi+54h]
-test    esi, esi
-jz      short loc_6ECA40
-
-loc_6ECA18:                             ; CODE XREF: TeamClass__SelectWaypointTarget+9E↓j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-mov     ecx, [eax+684h]
-test    ecx, ecx
-jle     short loc_6ECA58
-mov     eax, [esi+2FCh]
-test    eax, eax
-jg      short loc_6ECA58
-mov     esi, [esi+5D8h]
-test    esi, esi
-jnz     short loc_6ECA18
-
-loc_6ECA40:                             ; CODE XREF: TeamClass__SelectWaypointTarget+6F↑j
-; TeamClass__SelectWaypointTarget+76↑j
-push    0
-mov     ecx, edi
-call    TeamClass__SelectMember
-mov     byte ptr [edi+80h], 1
-pop     edi
-pop     esi
-add     esp, 8
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_6ECA58:                             ; CODE XREF: TeamClass__SelectWaypointTarget+8A↑j
-; TeamClass__SelectWaypointTarget+94↑j
-mov     ecx, edi
-call    TeamClass__AttackCoordinator
-pop     edi
-pop     esi
-add     esp, 8
-retn    8
-*/
 } }
 // 0x6ECA70
 namespace gamemd { int TeamClass::SelectAttackTarget(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6ECA70(int this, int a2, char a3)
+char __thiscall TeamClass::SelectAttackTarget(int this, ScriptClass *aP1, char a3)
 {
-  _DWORD *CellFromArray; // eax
-  _DWORD *v5; // esi
+  TechnoClass *CellFromArray; // eax
+  TechnoClass *v5; // esi
   char v6; // al
   int ObjectCell; // eax
-  int v8; // esi
+  AbstractClass *v8; // esi
   int *v9; // esi
   char result; // al
   _DWORD v11[2]; // [esp+8h] [ebp-8h] BYREF
 
-  if ( a3 )
+  if ( a3 ) /*0x6eca7d*/
   {
-    CellFromArray = ScenarioClass::GetCellFromArray((__int16 *)MEMORY[0xA8B230], *(_DWORD *)(a2 + 4));
-    v5 = CellFromArray;
-    if ( !CellFromArray
-      || (*(int (__thiscall **)(_DWORD *))(*CellFromArray + 44))(CellFromArray) != 11
-      || (v6 = BYTE1(v5[80]) & 1,
+    CellFromArray = (TechnoClass *)ScenarioClass::GetCellFromArray( /*0x6eca8d*/
+                                     *(__int16 **)&HouseClass_Player.__pad_5568[8060],
+                                     *(ScenarioClass **)&aP1->__pad_0[4]);
+    v5 = CellFromArray; /*0x6eca92*/
+    if ( !CellFromArray /*0x6ecadc*/
+      || (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)CellFromArray->__pad_0 + 44))(CellFromArray) != 11
+      || (v6 = BYTE1(v5->currentRank) & 1,
           v11[0] = 0,
           v11[1] = 0,
-          ObjectCell = Object::FindObjectCell(v5, v11, v6),
-          (v8 = ObjectCell) == 0)
+          ObjectCell = Object::FindObjectCell(v5, (TechnoClass *)v11, v6),
+          (v8 = (AbstractClass *)ObjectCell) == 0)
       || (*(int (__thiscall **)(int))(*(_DWORD *)ObjectCell + 44))(ObjectCell) != 6 )
     {
-      v8 = 0;
+      v8 = 0; /*0x6ecade*/
     }
-    TeamClass::SelectMember(this, v8);
+    TeamClass::SelectMember(this, v8); /*0x6ecae3*/
   }
-  if ( *(_DWORD *)(this + 60) && (v9 = *(int **)(this + 84)) != 0 )
+  if ( *(_DWORD *)(this + 60) && (v9 = *(int **)(this + 84)) != 0 ) /*0x6ecaf4*/
   {
-    while ( *(int *)((*(int (__thiscall **)(int *))(*v9 + 132))(v9) + 1668) > 0 && v9[191] <= 0 )
+    while ( *(int *)((*(int (__thiscall **)(int *))(*v9 + 132))(v9) + 1668) > 0 && v9[191] <= 0 ) /*0x6ecb12*/
     {
-      v9 = (int *)v9[374];
-      if ( !v9 )
-        goto LABEL_13;
+      v9 = (int *)v9[374]; /*0x6ecb14*/
+      if ( !v9 ) /*0x6ecb1c*/
+        goto LABEL_13; /*0x6ecb1c*/
     }
-    return TeamClass::AttackCoordinator((int *)this);
+    return TeamClass::AttackCoordinator((int *)this); /*0x6ecb38*/
   }
   else
   {
 LABEL_13:
-    result = TeamClass::SelectMember(this, 0);
-    *(_BYTE *)(this + 128) = 1;
+    result = TeamClass::SelectMember(this, 0); /*0x6ecb1e*/
+    *(_BYTE *)(this + 128) = 1; /*0x6ecb27*/
   }
-  return result;
+  return result; /*0x6ecb2e*/
 }
-
-/* ASM:
-mov     al, [esp+arg_4]
-sub     esp, 8
-test    al, al
-push    esi
-push    edi
-mov     edi, ecx
-jz      short loc_6ECAE8
-mov     eax, [esp+10h+arg_0]
-mov     ecx, [eax+4]
-push    ecx
-mov     ecx, ds:0A8B230h
-call    ScenarioClass__GetCellFromArray
-mov     esi, eax
-test    esi, esi
-jz      short loc_6ECADE
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+2Ch]
-cmp     eax, 0Bh
-jnz     short loc_6ECADE
-mov     eax, [esi+140h]
-lea     ecx, [esp+10h+var_8]
-shr     eax, 8
-and     al, 1
-mov     [esp+10h+var_8], 0
-push    eax
-push    ecx
-mov     ecx, esi
-mov     [esp+18h+var_4], 0
-call    Object__FindObjectCell
-mov     esi, eax
-test    esi, esi
-jz      short loc_6ECADE
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+2Ch]
-cmp     eax, 6
-jz      short loc_6ECAE0
-
-loc_6ECADE:                             ; CODE XREF: TeamClass__SelectAttackTarget+26↑j
-; TeamClass__SelectAttackTarget+32↑j ...
-xor     esi, esi
-
-loc_6ECAE0:                             ; CODE XREF: TeamClass__SelectAttackTarget+6C↑j
-push    esi
-mov     ecx, edi
-call    TeamClass__SelectMember
-
-loc_6ECAE8:                             ; CODE XREF: TeamClass__SelectAttackTarget+D↑j
-mov     eax, [edi+3Ch]
-test    eax, eax
-jz      short loc_6ECB1E
-mov     esi, [edi+54h]
-test    esi, esi
-jz      short loc_6ECB1E
-
-loc_6ECAF6:                             ; CODE XREF: TeamClass__SelectAttackTarget+AC↓j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+84h]
-mov     ecx, [eax+684h]
-test    ecx, ecx
-jle     short loc_6ECB36
-mov     eax, [esi+2FCh]
-test    eax, eax
-jg      short loc_6ECB36
-mov     esi, [esi+5D8h]
-test    esi, esi
-jnz     short loc_6ECAF6
-
-loc_6ECB1E:                             ; CODE XREF: TeamClass__SelectAttackTarget+7D↑j
-; TeamClass__SelectAttackTarget+84↑j
-push    0
-mov     ecx, edi
-call    TeamClass__SelectMember
-mov     byte ptr [edi+80h], 1
-pop     edi
-pop     esi
-add     esp, 8
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_6ECB36:                             ; CODE XREF: TeamClass__SelectAttackTarget+98↑j
-; TeamClass__SelectAttackTarget+A2↑j
-mov     ecx, edi
-call    TeamClass__AttackCoordinator
-pop     edi
-pop     esi
-add     esp, 8
-retn    8
-*/
 } }
 // 0x6ECCE0
 namespace gamemd { void TeamClass::MoveToCellAndAttack(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_6ECCE0(void *this, int a2, char a3)
+void __thiscall TeamClass::MoveToCellAndAttack(void *this, ScriptClass *aP1, char a3)
 {
-  int v3; // edi
-  void *CellFromArray; // esi
+  TeamClass *v3; // edi
+  AbstractClass *CellFromArray; // esi
   _DWORD *Entry; // eax
-  int *v6; // esi
+  int *firstUnit; // esi
   int v7; // ebp
   int *v8; // ebx
   int v9; // edi
   int v10; // edx
-  int v11; // eax
-  int v12; // eax
+  AbstractClass *v11; // eax
+  _BYTE *focus; // eax
   int v14; // [esp+10h] [ebp-14h] BYREF
   _DWORD v15[3]; // [esp+18h] [ebp-Ch] BYREF
-  void *v16; // [esp+28h] [ebp+4h]
+  AbstractClass *aP1a; // [esp+28h] [ebp+4h]
 
-  v3 = (int)this;
-  CellFromArray = ScenarioClass::GetCellFromArray((__int16 *)MEMORY[0x87F7E8][536210], *(_DWORD *)(a2 + 4));
-  v16 = CellFromArray;
-  if ( a3 )
-    TeamClass::SelectMember(v3, (int)CellFromArray);
-  if ( !*(_DWORD *)(v3 + 64) )
+  v3 = (TeamClass *)this; /*0x6eccea*/
+  CellFromArray = (AbstractClass *)ScenarioClass::GetCellFromArray( /*0x6eccff*/
+                                     *(__int16 **)&HouseClass_Player.__pad_5568[8060],
+                                     *(ScenarioClass **)&aP1->__pad_0[4]);
+  aP1a = CellFromArray; /*0x6ecd07*/
+  if ( a3 ) /*0x6ecd0b*/
+    TeamClass::SelectMember((int)v3, CellFromArray); /*0x6ecd10*/
+  if ( !v3->focus ) /*0x6ecd15*/
   {
-    Entry = SessionClass::GetEntry(*(_DWORD **)(v3 + 40), &v14);
-    v15[0] = *Entry;
-    if ( Entry[1] < 0x2BEu )
-      TeamClass::SelectMember(v3, (int)CellFromArray);
+    Entry = SessionClass::GetEntry((_DWORD *)v3->currentScript, (IUnknown *)&v14); /*0x6ecd24*/
+    v15[0] = *Entry; /*0x6ecd2b*/
+    if ( Entry[1] < 0x2BEu ) /*0x6ecd36*/
+      TeamClass::SelectMember((int)v3, CellFromArray); /*0x6ecd3b*/
   }
-  if ( !(dword_A8ED54[12] % (int)Math::RoundToInt(*(double *)(MEMORY[0x87F7E8][7806] + 4432) * 900.0)) )
+  if ( !(*(_DWORD *)&HouseClass_Player.__pad_5568[23248] /*0x6ecd5f*/
+       % (int)Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4432) * 900.0)) )
   {
-    v6 = *(int **)(v3 + 84);
-    v7 = -1;
-    v8 = v6;
-    if ( v6 )
+    firstUnit = (int *)v3->firstUnit; /*0x6ecd69*/
+    v7 = -1; /*0x6ecd6d*/
+    v8 = firstUnit; /*0x6ecd70*/
+    if ( firstUnit ) /*0x6ecd74*/
     {
-      do
+      do /*0x6ecdd4*/
       {
-        v9 = *(_DWORD *)((*(int (__thiscall **)(int *))(*v6 + 132))(v6) + 1532);
-        if ( *((_BYTE *)v6 + 144)
-          && v6[27]
-          && (MEMORY[0x87F7E8][539633] || !*((_BYTE *)v6 + 129))
-          && (*((_BYTE *)v6 + 1673) || (*(int (__thiscall **)(int *))(*v6 + 44))(v6) == 2)
+        v9 = *(_DWORD *)((*(int (__thiscall **)(int *))(*firstUnit + 132))(firstUnit) + 1532); /*0x6ecd80*/
+        if ( *((_BYTE *)firstUnit + 144) /*0x6ecdc6*/
+          && firstUnit[27]
+          && (*(_DWORD *)&HouseClass_Player.__pad_5568[21752] || !*((_BYTE *)firstUnit + 129))
+          && (*((_BYTE *)firstUnit + 1673) || (*(int (__thiscall **)(int *))(*firstUnit + 44))(firstUnit) == 2)
           && v9 > v7 )
         {
-          v8 = v6;
-          v7 = v9;
+          v8 = firstUnit; /*0x6ecdc8*/
+          v7 = v9; /*0x6ecdca*/
         }
-        v6 = (int *)v6[374];
+        firstUnit = (int *)firstUnit[374]; /*0x6ecdcc*/
       }
-      while ( v6 );
-      v3 = (int)this;
+      while ( firstUnit ); /*0x6ecdd4*/
+      v3 = (TeamClass *)this; /*0x6ecdd6*/
     }
-    if ( v8 )
+    if ( v8 ) /*0x6ecddd*/
     {
-      v15[0] = v8[39];
-      v10 = *v8;
-      v15[1] = v8[40];
-      v15[2] = v8[41];
-      v11 = (*(int (__thiscall **)(int *, int, _DWORD *, _DWORD))(v10 + 964))(v8, 1, v15, 0);
-      if ( v11 )
+      v15[0] = v8[39]; /*0x6ecde9*/
+      v10 = *v8; /*0x6ecded*/
+      v15[1] = v8[40]; /*0x6ecdf2*/
+      v15[2] = v8[41]; /*0x6ecdfe*/
+      v11 = (AbstractClass *)(*(int (__thiscall **)(int *, int, _DWORD *, _DWORD))(v10 + 964))(v8, 1, v15, 0); /*0x6ece06*/
+      if ( v11 ) /*0x6ece0e*/
       {
-        TeamClass::SelectMember(v3, v11);
+        TeamClass::SelectMember((int)v3, v11); /*0x6ece11*/
       }
-      else if ( *(void **)(v3 + 64) != v16 )
+      else if ( v3->focus != aP1a ) /*0x6ece1c*/
       {
-        TeamClass::SelectMember(v3, 0);
+        TeamClass::SelectMember((int)v3, 0); /*0x6ece22*/
       }
     }
   }
-  v12 = *(_DWORD *)(v3 + 64);
-  if ( v12 && (*(_BYTE *)(v12 + 20) & 2) != 0 )
-    TeamClass::AttackCoordinator((int *)v3);
+  focus = v3->focus; /*0x6ece27*/
+  if ( focus && (focus[20] & 2) != 0 ) /*0x6ece32*/
+    TeamClass::AttackCoordinator((int *)v3->__pad_0); /*0x6ece36*/
   else
-    TeamClass::UpdateMembers(v3);
+    TeamClass::UpdateMembers((int)v3); /*0x6ece46*/
 }
-
-/* ASM:
-sub     esp, 18h
-mov     eax, [esp+18h+arg_0]
-push    ebx
-push    esi
-push    edi
-mov     edi, ecx
-mov     ecx, [eax+4]
-mov     [esp+24h+var_18], edi
-push    ecx
-mov     ecx, ds:0A8B230h
-call    ScenarioClass__GetCellFromArray
-mov     esi, eax
-mov     al, [esp+24h+arg_4]
-test    al, al
-mov     [esp+24h+arg_0], esi
-jz      short loc_6ECD15
-push    esi
-mov     ecx, edi
-call    TeamClass__SelectMember
-
-loc_6ECD15:                             ; CODE XREF: TeamClass__MoveToCellAndAttack+2B↑j
-mov     eax, [edi+40h]
-test    eax, eax
-jnz     short loc_6ECD40
-mov     ecx, [edi+28h]
-lea     edx, [esp+24h+var_14]
-push    edx
-call    SessionClass__GetEntry
-mov     ecx, [eax]
-mov     [esp+24h+var_C], ecx
-cmp     dword ptr [eax+4], 2BEh
-jnb     short loc_6ECD40
-push    esi
-mov     ecx, edi
-call    TeamClass__SelectMember
-
-loc_6ECD40:                             ; CODE XREF: TeamClass__MoveToCellAndAttack+3A↑j
-; TeamClass__MoveToCellAndAttack+56↑j
-mov     edx, ds:8871E0h
-fld     qword ptr [edx+1150h]
-fmul    ds:dbl_7E27F8
-call    Math__RoundToInt
-mov     ecx, eax
-mov     eax, dword_A8ED54+30h
-cdq
-idiv    ecx
-test    edx, edx
-jnz     loc_6ECE27
-mov     esi, [edi+54h]
-push    ebp
-or      ebp, 0FFFFFFFFh
-mov     ebx, esi
-test    esi, esi
-jz      short loc_6ECDDA
-
-loc_6ECD76:                             ; CODE XREF: TeamClass__MoveToCellAndAttack+F4↓j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-mov     edi, [eax+5FCh]
-test    esi, esi
-jz      short loc_6ECDCC
-mov     al, [esi+90h]
-test    al, al
-jz      short loc_6ECDCC
-mov     eax, [esi+6Ch]
-test    eax, eax
-jz      short loc_6ECDCC
-mov     eax, ds:0A8E7ACh
-test    eax, eax
-jnz     short loc_6ECDAE
-mov     al, [esi+81h]
-test    al, al
-jnz     short loc_6ECDCC
-
-loc_6ECDAE:                             ; CODE XREF: TeamClass__MoveToCellAndAttack+C2↑j
-mov     al, [esi+689h]
-test    al, al
-jnz     short loc_6ECDC4
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+2Ch]
-cmp     eax, 2
-jnz     short loc_6ECDCC
-
-loc_6ECDC4:                             ; CODE XREF: TeamClass__MoveToCellAndAttack+D6↑j
-cmp     edi, ebp
-jle     short loc_6ECDCC
-mov     ebx, esi
-mov     ebp, edi
-
-loc_6ECDCC:                             ; CODE XREF: TeamClass__MoveToCellAndAttack+A8↑j
-; TeamClass__MoveToCellAndAttack+B2↑j ...
-mov     esi, [esi+5D8h]
-test    esi, esi
-jnz     short loc_6ECD76
-mov     edi, [esp+28h+var_18]
-
-loc_6ECDDA:                             ; CODE XREF: TeamClass__MoveToCellAndAttack+94↑j
-test    ebx, ebx
-pop     ebp
-jz      short loc_6ECE27
-lea     ecx, [ebx+9Ch]
-push    0
-mov     edx, [ecx]
-mov     [esp+28h+var_C], edx
-mov     edx, [ebx]
-mov     eax, [ecx+4]
-mov     [esp+28h+var_8], eax
-lea     eax, [esp+28h+var_C]
-mov     ecx, [ecx+8]
-push    eax
-mov     [esp+2Ch+var_4], ecx
-push    1
-mov     ecx, ebx
-call    dword ptr [edx+3C4h]
-test    eax, eax
-jz      short loc_6ECE13
-push    eax
-jmp     short loc_6ECE20
-; ---------------------------------------------------------------------------
-
-loc_6ECE13:                             ; CODE XREF: TeamClass__MoveToCellAndAttack+12E↑j
-mov     ecx, [esp+24h+arg_0]
-mov     eax, [edi+40h]
-cmp     eax, ecx
-jz      short loc_6ECE27
-push    0
-
-loc_6ECE20:                             ; CODE XREF: TeamClass__MoveToCellAndAttack+131↑j
-mov     ecx, edi
-call    TeamClass__SelectMember
-
-loc_6ECE27:                             ; CODE XREF: TeamClass__MoveToCellAndAttack+83↑j
-; TeamClass__MoveToCellAndAttack+FD↑j ...
-mov     eax, [edi+40h]
-test    eax, eax
-jz      short loc_6ECE44
-test    byte ptr [eax+14h], 2
-jz      short loc_6ECE44
-mov     ecx, edi
-call    TeamClass__AttackCoordinator
-pop     edi
-pop     esi
-pop     ebx
-add     esp, 18h
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_6ECE44:                             ; CODE XREF: TeamClass__MoveToCellAndAttack+14C↑j
-; TeamClass__MoveToCellAndAttack+152↑j
-mov     ecx, edi
-call    TeamClass__UpdateMembers
-pop     edi
-pop     esi
-pop     ebx
-add     esp, 18h
-retn    8
-*/
 } }
 // 0x6ECE60
 namespace gamemd { int TeamClass::AssignMemberToCoordinator(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6ECE60(int this, int a2, char a3)
+char __thiscall TeamClass::AssignMemberToCoordinator(int this, ScriptClass *aP1, TeamClass *aP2)
 {
-  void *CellFromArray; // eax
+  AbstractClass *CellFromArray; // eax
   int v5; // ecx
   int v6; // esi
   _DWORD *v7; // eax
-  int ObjectCell; // eax
+  AbstractClass *ObjectCell; // eax
   _DWORD v10[2]; // [esp+4h] [ebp-8h] BYREF
 
-  if ( a3 )
+  if ( (_BYTE)aP2 ) /*0x6ece6c*/
   {
-    CellFromArray = ScenarioClass::GetCellFromArray((__int16 *)MEMORY[0xA8B230], *(_DWORD *)(a2 + 4));
-    TeamClass::SelectMember(this, (int)CellFromArray);
+    CellFromArray = (AbstractClass *)ScenarioClass::GetCellFromArray( /*0x6ece7c*/
+                                       *(__int16 **)&HouseClass_Player.__pad_5568[8060],
+                                       *(ScenarioClass **)&aP1->__pad_0[4]);
+    TeamClass::SelectMember(this, CellFromArray); /*0x6ece84*/
   }
-  v5 = *(_DWORD *)(this + 60);
+  v5 = *(_DWORD *)(this + 60); /*0x6ece89*/
   if ( v5 && (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 44))(v5) == 11 )
   {
-    v6 = *(_DWORD *)(this + 60);
+    v6 = *(_DWORD *)(this + 60); /*0x6ece9b*/
     if ( v6 )
       v7 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v6 + 44))(*(_DWORD *)(this + 60)) == 11 ? (_DWORD *)v6 : 0;
     else
-      v7 = 0;
-    v10[0] = 0;
-    v10[1] = 0;
-    ObjectCell = Object::FindObjectCell(v7, v10, 0);
-    if ( ObjectCell )
+      v7 = 0; /*0x6ecea2*/
+    v10[0] = 0; /*0x6ecec1*/
+    v10[1] = 0; /*0x6ecec9*/
+    ObjectCell = (AbstractClass *)Object::FindObjectCell(v7, (TechnoClass *)v10, 0); /*0x6eced1*/
+    if ( ObjectCell ) /*0x6eced9*/
     {
-      TeamClass::SelectMember(this, ObjectCell);
+      TeamClass::SelectMember(this, ObjectCell); /*0x6ecede*/
 LABEL_10:
-      LOBYTE(ObjectCell) = TeamClass::AttackCoordinator((int *)this);
+      LOBYTE(ObjectCell) = TeamClass::AttackCoordinator((int *)this); /*0x6ecee3*/
     }
   }
   else
   {
-    if ( *(_DWORD *)(this + 60) )
-      goto LABEL_10;
-    LOBYTE(ObjectCell) = TeamClass::SelectMember(this, 0);
-    *(_BYTE *)(this + 128) = 1;
+    if ( *(_DWORD *)(this + 60) ) /*0x6ecef1*/
+      goto LABEL_10; /*0x6ecef6*/
+    LOBYTE(ObjectCell) = TeamClass::SelectMember(this, 0); /*0x6ecefc*/
+    *(_BYTE *)(this + 128) = 1; /*0x6ecf01*/
   }
-  return ObjectCell;
+  return (char)ObjectCell; /*0x6eceea*/
 }
-
-/* ASM:
-mov     al, [esp+arg_4] ; TODO: classify (grp=blit, sz=0xaf)
-sub     esp, 8
-test    al, al
-push    edi
-mov     edi, ecx
-jz      short loc_6ECE89
-mov     eax, [esp+0Ch+arg_0]
-mov     ecx, [eax+4]
-push    ecx
-mov     ecx, ds:0A8B230h
-call    ScenarioClass__GetCellFromArray
-push    eax
-mov     ecx, edi
-call    TeamClass__SelectMember
-
-loc_6ECE89:                             ; CODE XREF: TeamClass__AssignMemberToCoordinator+C↑j
-mov     ecx, [edi+3Ch]
-test    ecx, ecx
-jz      short loc_6ECEF1
-mov     edx, [ecx]
-call    dword ptr [edx+2Ch]
-cmp     eax, 0Bh
-jnz     short loc_6ECEF1
-push    esi
-mov     esi, [edi+3Ch]
-test    esi, esi
-jnz     short loc_6ECEA6
-xor     eax, eax
-jmp     short loc_6ECEB8
-; ---------------------------------------------------------------------------
-
-loc_6ECEA6:                             ; CODE XREF: TeamClass__AssignMemberToCoordinator+40↑j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+2Ch]
-sub     eax, 0Bh
-neg     eax
-sbb     eax, eax
-not     eax
-and     eax, esi
-
-loc_6ECEB8:                             ; CODE XREF: TeamClass__AssignMemberToCoordinator+44↑j
-lea     ecx, [esp+10h+var_8]
-push    0
-push    ecx
-mov     ecx, eax
-mov     [esp+18h+var_8], 0
-mov     [esp+18h+var_4], 0
-call    Object__FindObjectCell
-test    eax, eax
-pop     esi
-jz      short loc_6ECEEA
-push    eax
-mov     ecx, edi
-call    TeamClass__SelectMember
-
-loc_6ECEE3:                             ; CODE XREF: TeamClass__AssignMemberToCoordinator+96↓j
-mov     ecx, edi
-call    TeamClass__AttackCoordinator
-
-loc_6ECEEA:                             ; CODE XREF: TeamClass__AssignMemberToCoordinator+79↑j
-pop     edi
-add     esp, 8
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_6ECEF1:                             ; CODE XREF: TeamClass__AssignMemberToCoordinator+2E↑j
-; TeamClass__AssignMemberToCoordinator+38↑j
-mov     eax, [edi+3Ch]
-test    eax, eax
-jnz     short loc_6ECEE3
-push    0
-mov     ecx, edi
-call    TeamClass__SelectMember
-mov     byte ptr [edi+80h], 1
-pop     edi
-add     esp, 8
-retn    8
-*/
 } }
 // 0x6ECFB0
 namespace gamemd { int TeamClass::Create(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x6ecfb0
 char __thiscall TeamClass::Create(int *this, int a2, int a3)
 {
-  int v4; // eax
-  int v5; // ebx
-  int i; // esi
+  TeamClass *v4; // eax
+  TeamClass *v5; // ebx
+  FootClass *i; // esi
 
-  v4 = __2_YAPAXI_Z(160);
-  if ( v4 )
+  v4 = (TeamClass *)__2_YAPAXI_Z(0xA0u); /*0x6ecfba*/
+  if ( v4 ) /*0x6ecfc4*/
   {
-    v4 = MissionClass::Construct(v4, *(_DWORD *)(MEMORY[0x87F7E8][539951] + 4 * *(_DWORD *)(a2 + 4)), *(this + 11), 0);
-    v5 = v4;
+    v4 = (TeamClass *)MissionClass::Construct( /*0x6ecfdf*/
+                        (int)v4,
+                        *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[440] + 4 * *(_DWORD *)(a2 + 4)),
+                        *(this + 11),
+                        0);
+    v5 = v4; /*0x6ecfe4*/
   }
   else
   {
-    v5 = 0;
+    v5 = 0; /*0x6ecfe8*/
   }
-  for ( i = *(this + 21); i; i = *(this + 21) )
+  for ( i = (FootClass *)*(this + 21); i; i = (FootClass *)*(this + 21) ) /*0x6ecfef*/
   {
-    TeamClass::LiberateMember_Start((int)this, i, 0xFFFFFFFF, 0);
-    LOBYTE(v4) = TeamClass::AddMember(v5, i, 0);
+    TeamClass::LiberateMember_Start((int)this, (IUnknown *)i, 0xFFFFFFFF, 0); /*0x6ecff8*/
+    LOBYTE(v4) = TeamClass::AddMember((int)v5, (IUnknown *)i, 0); /*0x6ed002*/
   }
-  if ( this )
-    LOBYTE(v4) = (*(char (__thiscall **)(int *, int))(*this + 32))(this, 1);
-  return v4;
+  if ( this ) /*0x6ed010*/
+    LOBYTE(v4) = (*(char (__thiscall **)(int *, int))(*this + 32))(this, 1); /*0x6ed018*/
+  return (char)v4; /*0x6ed01b*/
 }
-
-/* ASM:
-push    ebx
-push    esi
-push    edi
-mov     edi, ecx
-push    0A0h            ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-test    eax, eax
-jz      short loc_6ECFE8
-mov     ecx, [edi+2Ch]
-mov     edx, [esp+0Ch+arg_0]
-push    0
-push    ecx
-mov     ecx, [edx+4]
-mov     edx, ds:0A8ECA4h
-mov     ecx, [edx+ecx*4]
-push    ecx
-mov     ecx, eax
-call    MissionClass__Construct
-mov     ebx, eax
-jmp     short loc_6ECFEA
-; ---------------------------------------------------------------------------
-
-loc_6ECFE8:                             ; CODE XREF: TeamClass__Create+14↑j
-xor     ebx, ebx
-
-loc_6ECFEA:                             ; CODE XREF: TeamClass__Create+36↑j
-mov     esi, [edi+54h]
-test    esi, esi
-jz      short loc_6ED00E
-
-loc_6ECFF1:                             ; CODE XREF: TeamClass__Create+5C↓j
-push    0
-push    0FFFFFFFFh
-push    esi
-mov     ecx, edi
-call    TeamClass__LiberateMember_Start
-push    0
-push    esi
-mov     ecx, ebx
-call    TeamClass__AddMember
-mov     esi, [edi+54h]
-test    esi, esi
-jnz     short loc_6ECFF1
-
-loc_6ED00E:                             ; CODE XREF: TeamClass__Create+3F↑j
-test    edi, edi
-jz      short loc_6ED01B
-mov     edx, [edi]
-push    1
-mov     ecx, edi
-call    dword ptr [edx+20h]
-
-loc_6ED01B:                             ; CODE XREF: TeamClass__Create+60↑j
-pop     edi
-pop     esi
-pop     ebx
-retn    8
-*/
 } }
 // 0x6ED090
 namespace gamemd { int TeamClass::CoordinateSuperWeaponAttack(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6ED090(int this, int a2, int a3)
+char __thiscall TeamClass::CoordinateSuperWeaponAttack(int this, ScriptClass *aP1, int a3)
 {
   int v3; // ebp
   int *v4; // esi
@@ -5487,281 +1959,137 @@ char __thiscall sub_6ED090(int this, int a2, int a3)
   int SuperWeaponTypeFlag; // eax
   int v9; // edx
   int v10; // ecx
-  int v11; // eax
+  AbstractClass *v11; // eax
   int *v12; // esi
   int *v13; // esi
   _DWORD v16[3]; // [esp+Ch] [ebp-Ch] BYREF
 
-  v3 = this;
-  if ( !*(_DWORD *)(this + 60) )
+  v3 = this; /*0x6ed094*/
+  if ( !*(_DWORD *)(this + 60) ) /*0x6ed09b*/
   {
-    v4 = *(int **)(this + 84);
-    if ( v4 )
+    v4 = *(int **)(this + 84); /*0x6ed0a6*/
+    if ( v4 ) /*0x6ed0ab*/
     {
-      v5 = -1;
-      v6 = *(int **)(this + 84);
-      do
+      v5 = -1; /*0x6ed0b2*/
+      v6 = *(int **)(this + 84); /*0x6ed0b6*/
+      do /*0x6ed11a*/
       {
-        v7 = *(_DWORD *)((*(int (__thiscall **)(int *))(*v4 + 132))(v4) + 1532);
-        if ( *((_BYTE *)v4 + 144)
+        v7 = *(_DWORD *)((*(int (__thiscall **)(int *))(*v4 + 132))(v4) + 1532); /*0x6ed0c6*/
+        if ( *((_BYTE *)v4 + 144) /*0x6ed10c*/
           && v4[27]
-          && (MEMORY[0xA8E7AC] || !*((_BYTE *)v4 + 129))
+          && (*(_DWORD *)&HouseClass_Player.__pad_5568[21752] || !*((_BYTE *)v4 + 129))
           && (*((_BYTE *)v4 + 1673) || (*(int (__thiscall **)(int *))(*v4 + 44))(v4) == 2)
           && v7 > v5 )
         {
-          v6 = v4;
-          v5 = v7;
+          v6 = v4; /*0x6ed10e*/
+          v5 = v7; /*0x6ed110*/
         }
-        v4 = (int *)v4[374];
+        v4 = (int *)v4[374]; /*0x6ed112*/
       }
-      while ( v4 );
-      v3 = this;
-      SuperWeaponTypeFlag = GetSuperWeaponTypeFlag(*(void **)(a2 + 4));
-      v16[0] = v6[39];
-      v16[1] = v6[40];
-      v9 = *v6;
-      v16[2] = v6[41];
-      v10 = *(_DWORD *)(this + 36);
-      LOBYTE(v10) = *(_BYTE *)(v10 + 247);
-      v11 = (*(int (__thiscall **)(int *, int, _DWORD *, int))(v9 + 964))(v6, SuperWeaponTypeFlag, v16, v10);
-      TeamClass::SelectMember(this, v11);
-      if ( *(_DWORD *)(this + 60) && (v12 = *(int **)(this + 84)) != 0 )
+      while ( v4 ); /*0x6ed11a*/
+      v3 = this; /*0x6ed11c*/
+      SuperWeaponTypeFlag = GetSuperWeaponTypeFlag(*(void **)&aP1->__pad_0[4]); /*0x6ed127*/
+      v16[0] = v6[39]; /*0x6ed138*/
+      v16[1] = v6[40]; /*0x6ed13f*/
+      v9 = *v6; /*0x6ed143*/
+      v16[2] = v6[41]; /*0x6ed148*/
+      v10 = *(_DWORD *)(this + 36); /*0x6ed14c*/
+      LOBYTE(v10) = *(_BYTE *)(v10 + 247); /*0x6ed14f*/
+      v11 = (AbstractClass *)(*(int (__thiscall **)(int *, int, _DWORD *, int))(v9 + 964))( /*0x6ed15e*/
+                               v6,
+                               SuperWeaponTypeFlag,
+                               v16,
+                               v10);
+      TeamClass::SelectMember(this, v11); /*0x6ed167*/
+      if ( *(_DWORD *)(this + 60) && (v12 = *(int **)(this + 84)) != 0 ) /*0x6ed17a*/
       {
-        while ( *(int *)((*(int (__thiscall **)(int *))(*v12 + 132))(v12) + 1668) > 0 && v12[191] <= 0 )
+        while ( *(int *)((*(int (__thiscall **)(int *))(*v12 + 132))(v12) + 1668) > 0 && v12[191] <= 0 ) /*0x6ed198*/
         {
-          v12 = (int *)v12[374];
-          if ( !v12 )
-            goto LABEL_19;
+          v12 = (int *)v12[374]; /*0x6ed19a*/
+          if ( !v12 ) /*0x6ed1a2*/
+            goto LABEL_19; /*0x6ed1a2*/
         }
       }
       else
       {
 LABEL_19:
-        *(_BYTE *)(this + 128) = 1;
+        *(_BYTE *)(this + 128) = 1; /*0x6ed1a4*/
       }
     }
-    if ( !*(_DWORD *)(v3 + 60) )
-      goto LABEL_25;
+    if ( !*(_DWORD *)(v3 + 60) ) /*0x6ed1ab*/
+      goto LABEL_25; /*0x6ed1ab*/
   }
-  v13 = *(int **)(v3 + 84);
-  if ( v13 )
+  v13 = *(int **)(v3 + 84); /*0x6ed1b2*/
+  if ( v13 ) /*0x6ed1b7*/
   {
-    while ( *(int *)((*(int (__thiscall **)(int *))(*v13 + 132))(v13) + 1668) > 0 && v13[191] <= 0 )
+    while ( *(int *)((*(int (__thiscall **)(int *))(*v13 + 132))(v13) + 1668) > 0 && v13[191] <= 0 ) /*0x6ed1d5*/
     {
-      v13 = (int *)v13[374];
-      if ( !v13 )
-        goto LABEL_25;
+      v13 = (int *)v13[374]; /*0x6ed1d7*/
+      if ( !v13 ) /*0x6ed1df*/
+        goto LABEL_25; /*0x6ed1df*/
     }
   }
   else
   {
 LABEL_25:
-    *(_BYTE *)(v3 + 128) = 1;
+    *(_BYTE *)(v3 + 128) = 1; /*0x6ed1e1*/
   }
-  return TeamClass::AttackCoordinator((int *)v3);
+  return TeamClass::AttackCoordinator((int *)v3); /*0x6ed1ef*/
 }
-
-/* ASM:
-sub     esp, 10h
-push    ebp
-mov     ebp, ecx
-push    esi
-mov     [esp+18h+var_10], ebp
-mov     eax, [ebp+3Ch]
-test    eax, eax
-jnz     loc_6ED1B2
-mov     esi, [ebp+54h]
-test    esi, esi
-jz      loc_6ED1AB
-push    ebx
-or      ebx, 0FFFFFFFFh
-push    edi
-mov     edi, esi
-test    esi, esi
-jz      short loc_6ED120
-
-loc_6ED0BC:                             ; CODE XREF: TeamClass__CoordinateSuperWeaponAttack+8A↓j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+84h]
-mov     ebp, [eax+5FCh]
-test    esi, esi
-jz      short loc_6ED112
-mov     al, [esi+90h]
-test    al, al
-jz      short loc_6ED112
-mov     eax, [esi+6Ch]
-test    eax, eax
-jz      short loc_6ED112
-mov     eax, ds:0A8E7ACh
-test    eax, eax
-jnz     short loc_6ED0F4
-mov     al, [esi+81h]
-test    al, al
-jnz     short loc_6ED112
-
-loc_6ED0F4:                             ; CODE XREF: TeamClass__CoordinateSuperWeaponAttack+58↑j
-mov     al, [esi+689h]
-test    al, al
-jnz     short loc_6ED10A
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+2Ch]
-cmp     eax, 2
-jnz     short loc_6ED112
-
-loc_6ED10A:                             ; CODE XREF: TeamClass__CoordinateSuperWeaponAttack+6C↑j
-cmp     ebp, ebx
-jle     short loc_6ED112
-mov     edi, esi
-mov     ebx, ebp
-
-loc_6ED112:                             ; CODE XREF: TeamClass__CoordinateSuperWeaponAttack+3E↑j
-; TeamClass__CoordinateSuperWeaponAttack+48↑j ...
-mov     esi, [esi+5D8h]
-test    esi, esi
-jnz     short loc_6ED0BC
-mov     ebp, [esp+20h+var_10]
-
-loc_6ED120:                             ; CODE XREF: TeamClass__CoordinateSuperWeaponAttack+2A↑j
-mov     eax, [esp+20h+arg_0]
-mov     ecx, [eax+4]
-call    GetSuperWeaponTypeFlag
-lea     ecx, [edi+9Ch]
-mov     edx, [edi+9Ch]
-mov     [esp+20h+var_C], edx
-mov     edx, [ecx+4]
-mov     [esp+20h+var_8], edx
-mov     edx, [edi]
-mov     ecx, [ecx+8]
-mov     [esp+20h+var_4], ecx
-mov     ecx, [ebp+24h]
-mov     cl, [ecx+0F7h]
-push    ecx
-lea     ecx, [esp+24h+var_C]
-push    ecx
-push    eax
-mov     ecx, edi
-call    dword ptr [edx+3C4h]
-push    eax
-mov     ecx, ebp
-call    TeamClass__SelectMember
-mov     eax, [ebp+3Ch]
-pop     edi
-test    eax, eax
-pop     ebx
-jz      short loc_6ED1A4
-mov     esi, [ebp+54h]
-test    esi, esi
-jz      short loc_6ED1A4
-
-loc_6ED17C:                             ; CODE XREF: TeamClass__CoordinateSuperWeaponAttack+112↓j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-mov     ecx, [eax+684h]
-test    ecx, ecx
-jle     short loc_6ED1AB
-mov     eax, [esi+2FCh]
-test    eax, eax
-jg      short loc_6ED1AB
-mov     esi, [esi+5D8h]
-test    esi, esi
-jnz     short loc_6ED17C
-
-loc_6ED1A4:                             ; CODE XREF: TeamClass__CoordinateSuperWeaponAttack+E3↑j
-; TeamClass__CoordinateSuperWeaponAttack+EA↑j
-mov     byte ptr [ebp+80h], 1
-
-loc_6ED1AB:                             ; CODE XREF: TeamClass__CoordinateSuperWeaponAttack+1B↑j
-; TeamClass__CoordinateSuperWeaponAttack+FE↑j ...
-mov     eax, [ebp+3Ch]
-test    eax, eax
-jz      short loc_6ED1E1
-
-loc_6ED1B2:                             ; CODE XREF: TeamClass__CoordinateSuperWeaponAttack+10↑j
-mov     esi, [ebp+54h]
-test    esi, esi
-jz      short loc_6ED1E1
-
-loc_6ED1B9:                             ; CODE XREF: TeamClass__CoordinateSuperWeaponAttack+14F↓j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+84h]
-mov     ecx, [eax+684h]
-test    ecx, ecx
-jle     short loc_6ED1E8
-mov     eax, [esi+2FCh]
-test    eax, eax
-jg      short loc_6ED1E8
-mov     esi, [esi+5D8h]
-test    esi, esi
-jnz     short loc_6ED1B9
-
-loc_6ED1E1:                             ; CODE XREF: TeamClass__CoordinateSuperWeaponAttack+120↑j
-; TeamClass__CoordinateSuperWeaponAttack+127↑j
-mov     byte ptr [ebp+80h], 1
-
-loc_6ED1E8:                             ; CODE XREF: TeamClass__CoordinateSuperWeaponAttack+13B↑j
-; TeamClass__CoordinateSuperWeaponAttack+145↑j
-mov     ecx, ebp
-call    TeamClass__AttackCoordinator
-pop     esi
-pop     ebp
-add     esp, 10h
-retn    8
-*/
 } }
 // 0x6EDB50
 namespace gamemd { int TeamClass::AssignAttackTarget(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6EDB50(int this, int a2, int a3)
+char __thiscall TeamClass::AssignAttackTarget(int this, TeamClass *aP1, IUnknown *aP2)
 {
-  void **v4; // edi
-  _DWORD *v5; // eax
-  _DWORD *v6; // edi
-  _BYTE *i; // esi
-  int v8; // eax
+  ObjectClass *v4; // edi
+  int health; // eax
+  AbstractClass *v6; // edi
+  FootClass *i; // esi
+  int sprayOffsetIndex; // eax
 
-  v4 = (void **)(this + 52);
-  TeamClass::FindClosestEnemy(this, (void **)(this + 52), (int *)(this + 56));
-  *(_DWORD *)(this + 64) = *v4;
-  TeamClass::UpdateMembers(this);
-  v5 = AbstractClass::IsTechnoType(*v4);
-  v6 = v5;
-  if ( v5 )
+  v4 = (ObjectClass *)(this + 52); /*0x6edb57*/
+  TeamClass::FindClosestEnemy(this, (AbstractClass *)(this + 52), (AbstractClass *)(this + 56)); /*0x6edb5c*/
+  *(_DWORD *)(this + 64) = *(_DWORD *)v4->__pad_0; /*0x6edb63*/
+  TeamClass::UpdateMembers(this); /*0x6edb68*/
+  health = (int)AbstractClass::IsTechnoType(*(void **)v4->__pad_0); /*0x6edb6f*/
+  v6 = (AbstractClass *)health; /*0x6edb74*/
+  if ( health ) /*0x6edb78*/
   {
-    for ( i = *(_BYTE **)(this + 84); i; i = (_BYTE *)*((_DWORD *)i + 374) )
+    for ( i = *(FootClass **)(this + 84); i; i = (FootClass *)i->nextTeamMember ) /*0x6edb83*/
     {
-      LOBYTE(v5) = i[144];
-      if ( (_BYTE)v5 )
+      LOBYTE(health) = i->isAliveFlag; /*0x6edb89*/
+      if ( (_BYTE)health ) /*0x6edb91*/
       {
-        v5 = (_DWORD *)*((_DWORD *)i + 27);
-        if ( v5 )
+        health = i->health; /*0x6edb97*/
+        if ( health ) /*0x6edb9c*/
         {
-          if ( MEMORY[0xA8E7AC] || (LOBYTE(v5) = i[129], !(_BYTE)v5) )
+          if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_1140[48] || (health = (unsigned __int8)i->inLimbo, !(_BYTE)health) ) /*0x6edbb3*/
           {
-            if ( i[1673] || (v5 = (_DWORD *)(*(int (__thiscall **)(_BYTE *))(*(_DWORD *)i + 44))(i), v5 == (_DWORD *)2) )
+            if ( i->isTeamLeader /*0x6edbcd*/
+              || (health = (*(int (__thiscall **)(FootClass *))(*(_DWORD *)i->__pad_0 + 44))(i), health == 2) )
             {
-              v8 = *((_DWORD *)i + 173);
-              if ( v8 && v8 != v6[173] )
-                (*(void (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)i + 968))(i, 0);
-              v5 = (_DWORD *)v6[173];
-              if ( v5 )
+              sprayOffsetIndex = i->sprayOffsetIndex; /*0x6edbd3*/
+              if ( sprayOffsetIndex && sprayOffsetIndex != *(_DWORD *)&v6[19].__pad_0[8] ) /*0x6edbe3*/
+                (*(void (__thiscall **)(FootClass *, _DWORD))(*(_DWORD *)i->__pad_0 + 968))(i, 0); /*0x6edbeb*/
+              health = *(_DWORD *)&v6[19].__pad_0[8]; /*0x6edbf1*/
+              if ( health ) /*0x6edbf9*/
               {
-                if ( !*((_DWORD *)i + 413) )
-                  WinAPI::Wrapper(-2147467261);
-                LOBYTE(v5) = (*(int (__stdcall **)(_DWORD))(**((_DWORD **)i + 413) + 16))(*((_DWORD *)i + 413));
-                if ( !(_BYTE)v5 )
+                if ( !i->locomotor[0] ) /*0x6edbfb*/
+                  WinAPI::Wrapper(-2147467261); /*0x6edc0a*/
+                LOBYTE(health) = (*(int (__stdcall **)(int))(*(_DWORD *)i->locomotor[0] + 16))(i->locomotor[0]); /*0x6edc18*/
+                if ( !(_BYTE)health ) /*0x6edc1d*/
                 {
-                  LOBYTE(v5) = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)i + 684))(i);
-                  if ( (_BYTE)v5 )
+                  LOBYTE(health) = (*(int (__thiscall **)(FootClass *))(*(_DWORD *)i->__pad_0 + 684))(i); /*0x6edc23*/
+                  if ( (_BYTE)health ) /*0x6edc2b*/
                   {
-                    v5 = (_DWORD *)(*(int (__thiscall **)(_BYTE *))(*(_DWORD *)i + 388))(i);
-                    if ( v5 == (_DWORD *)5 )
+                    health = (*(int (__thiscall **)(FootClass *))(*(_DWORD *)i->__pad_0 + 388))(i); /*0x6edc31*/
+                    if ( health == 5 ) /*0x6edc3a*/
                     {
-                      (*(void (__thiscall **)(_BYTE *, int, _DWORD))(*(_DWORD *)i + 488))(i, 1, 0);
-                      LOBYTE(v5) = (*(int (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)i + 968))(i, v6[173]);
+                      (*(void (__thiscall **)(FootClass *, int, _DWORD))(*(_DWORD *)i->__pad_0 + 488))(i, 1, 0); /*0x6edc44*/
+                      LOBYTE(health) = (*(int (__thiscall **)(FootClass *, _DWORD))(*(_DWORD *)i->__pad_0 + 968))( /*0x6edc55*/
+                                         i,
+                                         *(_DWORD *)&v6[19].__pad_0[8]);
                     }
                   }
                 }
@@ -5772,118 +2100,8 @@ char __thiscall sub_6EDB50(int this, int a2, int a3)
       }
     }
   }
-  return (char)v5;
+  return health; /*0x6edc69*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-push    edi
-lea     eax, [esi+38h]
-lea     edi, [esi+34h]
-push    eax
-push    edi
-call    TeamClass__FindClosestEnemy
-mov     ecx, [edi]
-mov     [esi+40h], ecx
-mov     ecx, esi
-call    TeamClass__UpdateMembers
-mov     ecx, [edi]
-call    AbstractClass__IsTechnoType
-mov     edi, eax
-test    edi, edi
-jz      loc_6EDC69
-mov     esi, [esi+54h]
-test    esi, esi
-jz      loc_6EDC69
-
-loc_6EDB89:                             ; CODE XREF: TeamClass__AssignAttackTarget+113↓j
-mov     al, [esi+90h]
-test    al, al
-jz      loc_6EDC5B
-mov     eax, [esi+6Ch]
-test    eax, eax
-jz      loc_6EDC5B
-mov     eax, ds:0A8E7ACh
-test    eax, eax
-jnz     short loc_6EDBB9
-mov     al, [esi+81h]
-test    al, al
-jnz     loc_6EDC5B
-
-loc_6EDBB9:                             ; CODE XREF: TeamClass__AssignAttackTarget+59↑j
-mov     al, [esi+689h]
-test    al, al
-jnz     short loc_6EDBD3
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+2Ch]
-cmp     eax, 2
-jnz     loc_6EDC5B
-
-loc_6EDBD3:                             ; CODE XREF: TeamClass__AssignAttackTarget+71↑j
-mov     eax, [esi+2B4h]
-test    eax, eax
-jz      short loc_6EDBF1
-cmp     eax, [edi+2B4h]
-jz      short loc_6EDBF1
-mov     eax, [esi]
-push    0
-mov     ecx, esi
-call    dword ptr [eax+3C8h]
-
-loc_6EDBF1:                             ; CODE XREF: TeamClass__AssignAttackTarget+8B↑j
-; TeamClass__AssignAttackTarget+93↑j
-mov     eax, [edi+2B4h]
-test    eax, eax
-jz      short loc_6EDC5B
-mov     eax, [esi+674h]
-test    eax, eax
-jnz     short loc_6EDC0F
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_6EDC0F:                             ; CODE XREF: TeamClass__AssignAttackTarget+B3↑j
-mov     eax, [esi+674h]
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+10h]
-test    al, al
-jnz     short loc_6EDC5B
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+2ACh]
-test    al, al
-jz      short loc_6EDC5B
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+184h]
-cmp     eax, 5
-jnz     short loc_6EDC5B
-mov     edx, [esi]
-push    0
-push    1
-mov     ecx, esi
-call    dword ptr [edx+1E8h]
-mov     ecx, [edi+2B4h]
-mov     eax, [esi]
-push    ecx
-mov     ecx, esi
-call    dword ptr [eax+3C8h]
-
-loc_6EDC5B:                             ; CODE XREF: TeamClass__AssignAttackTarget+41↑j
-; TeamClass__AssignAttackTarget+4C↑j ...
-mov     esi, [esi+5D8h]
-test    esi, esi
-jnz     loc_6EDB89
-
-loc_6EDC69:                             ; CODE XREF: TeamClass__AssignAttackTarget+28↑j
-; TeamClass__AssignAttackTarget+33↑j
-pop     edi
-pop     esi
-retn    8
-*/
 } }
 // 0x6EDCA0
 namespace gamemd { void TeamClass::SyncMemberFacing(int a1, int a2) {
@@ -5897,267 +2115,94 @@ void __thiscall sub_6EDCA0(int this, int a2, int a3)
   int v7; // [esp+Ch] [ebp-8h]
   int v8; // [esp+10h] [ebp-4h] BYREF
 
-  v3 = *(_DWORD *)(this + 84);
-  v7 = this;
-  v4 = 1;
-  if ( !v3 )
-    goto LABEL_14;
-  v5 = a2;
-  do
+  v3 = *(_DWORD *)(this + 84); /*0x6edca5*/
+  v7 = this; /*0x6edca8*/
+  v4 = 1; /*0x6edcae*/
+  if ( !v3 ) /*0x6edcb0*/
+    goto LABEL_14; /*0x6edcb0*/
+  v5 = a2; /*0x6edcb7*/
+  do /*0x6edd37*/
   {
-    if ( !*(_DWORD *)(v3 + 1652) )
-      WinAPI::Wrapper(-2147467261);
-    if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(v3 + 1652) + 16))(*(_DWORD *)(v3 + 1652)) )
+    if ( !*(_DWORD *)(v3 + 1652) ) /*0x6edcbc*/
+      WinAPI::Wrapper(-2147467261); /*0x6edccb*/
+    if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(v3 + 1652) + 16))(*(_DWORD *)(v3 + 1652)) ) /*0x6edcd9*/
     {
-      v4 = 0;
+      v4 = 0; /*0x6edce0*/
     }
     else
     {
-      v6 = *(_DWORD *)(v5 + 4);
-      if ( *(_WORD *)ProgressTimer::GetValue((_WORD *)(v3 + 904), &v8) != (_WORD)v6 << 13 )
+      v6 = *(_DWORD *)(v5 + 4); /*0x6edce4*/
+      if ( *(_WORD *)ProgressTimer::GetValue((_WORD *)(v3 + 904), &v8) != (_WORD)v6 << 13 ) /*0x6edcfd*/
       {
-        if ( !*(_DWORD *)(v3 + 1652) )
-          WinAPI::Wrapper(-2147467261);
-        LOWORD(a2) = (unsigned __int16)*(_DWORD *)(v5 + 4) << 13;
-        (*(void (__stdcall **)(_DWORD, int))(**(_DWORD **)(v3 + 1652) + 76))(*(_DWORD *)(v3 + 1652), a2);
+        if ( !*(_DWORD *)(v3 + 1652) ) /*0x6edd0a*/
+          WinAPI::Wrapper(-2147467261); /*0x6edd19*/
+        LOWORD(a2) = (unsigned __int16)*(_DWORD *)(v5 + 4) << 13; /*0x6edd05*/
+        (*(void (__stdcall **)(_DWORD, int))(**(_DWORD **)(v3 + 1652) + 76))(*(_DWORD *)(v3 + 1652), a2); /*0x6edd2c*/
       }
     }
-    v3 = *(_DWORD *)(v3 + 1496);
+    v3 = *(_DWORD *)(v3 + 1496); /*0x6edd2f*/
   }
-  while ( v3 );
-  if ( v4 )
+  while ( v3 ); /*0x6edd37*/
+  if ( v4 ) /*0x6edd3d*/
   {
-    this = v7;
+    this = v7; /*0x6edd3f*/
 LABEL_14:
-    *(_BYTE *)(this + 128) = 1;
+    *(_BYTE *)(this + 128) = 1; /*0x6edd43*/
   }
 }
-
-/* ASM:
-sub     esp, 8
-push    ebx
-push    esi
-mov     esi, [ecx+54h]
-mov     [esp+10h+var_8], ecx
-test    esi, esi
-mov     bl, 1
-jz      loc_6EDD43
-push    ebp
-mov     ebp, [esp+14h+arg_0]
-push    edi
-
-loc_6EDCBC:                             ; CODE XREF: TeamClass__SyncMemberFacing+97↓j
-mov     eax, [esi+674h]
-test    eax, eax
-jnz     short loc_6EDCD0
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_6EDCD0:                             ; CODE XREF: TeamClass__SyncMemberFacing+24↑j
-mov     eax, [esi+674h]
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+10h]
-test    al, al
-jz      short loc_6EDCE4
-xor     bl, bl
-jmp     short loc_6EDD2F
-; ---------------------------------------------------------------------------
-
-loc_6EDCE4:                             ; CODE XREF: TeamClass__SyncMemberFacing+3E↑j
-mov     edi, [ebp+4]
-lea     edx, [esp+18h+var_4]
-push    edx
-lea     ecx, [esi+388h]
-call    ProgressTimer__GetValue
-shl     edi, 0Dh
-cmp     [eax], di
-jz      short loc_6EDD2F
-mov     eax, [ebp+4]
-shl     eax, 0Dh
-mov     word ptr [esp+18h+arg_0], ax
-mov     eax, [esi+674h]
-test    eax, eax
-jnz     short loc_6EDD1E
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_6EDD1E:                             ; CODE XREF: TeamClass__SyncMemberFacing+72↑j
-mov     eax, [esi+674h]
-mov     edx, [esp+18h+arg_0]
-push    edx
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+4Ch]
-
-loc_6EDD2F:                             ; CODE XREF: TeamClass__SyncMemberFacing+42↑j
-; TeamClass__SyncMemberFacing+5D↑j
-mov     esi, [esi+5D8h]
-test    esi, esi
-jnz     short loc_6EDCBC
-pop     edi
-pop     ebp
-test    bl, bl
-jz      short loc_6EDD4A
-mov     ecx, [esp+10h+var_8]
-
-loc_6EDD43:                             ; CODE XREF: TeamClass__SyncMemberFacing+10↑j
-mov     byte ptr [ecx+80h], 1
-
-loc_6EDD4A:                             ; CODE XREF: TeamClass__SyncMemberFacing+9D↑j
-pop     esi
-pop     ebx
-add     esp, 8
-retn    8
-*/
 } }
 // 0x6EE310
 namespace gamemd { int TeamClass::SelectAreaAttackTarget(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6EE310(int this, int a2, char a3)
+char __thiscall TeamClass::SelectAreaAttackTarget(int this, ScriptClass *aP1, TeamClass *aP2)
 {
-  int v4; // edi
-  #375 *v5; // edx
+  FootClass *v4; // edi
+  void *v5; // edx
   int v6; // ebx
-  _DWORD *v7; // eax
+  AbstractClass *v7; // eax
   int *v8; // esi
   char result; // al
 
-  if ( a3 )
+  if ( (_BYTE)aP2 ) /*0x6ee31b*/
   {
-    if ( *(_DWORD *)(this + 60) )
-      goto LABEL_9;
-    v4 = *(_DWORD *)(this + 84);
-    if ( v4 )
+    if ( *(_DWORD *)(this + 60) ) /*0x6ee31d*/
+      goto LABEL_9; /*0x6ee322*/
+    v4 = *(FootClass **)(this + 84); /*0x6ee324*/
+    if ( v4 ) /*0x6ee329*/
     {
-      v5 = 0;
-      v6 = *(_DWORD *)(*(_DWORD *)(v4 + 540) + 22016);
-      if ( v6 != -1 )
-        v5 = *(#375 **)(MEMORY[0x87F7E8][524945] + 4 * v6);
-      v7 = DamageMapClassArea(
-             *(_DWORD *)(MEMORY[0x87F7E8][528673] + 4 * (unsigned __int16)*(_DWORD *)(a2 + 4)),
-             v5,
-             v4,
-             (unsigned __int16)HIWORD(*(_DWORD *)(a2 + 4)),
-             *(_BYTE *)(*(_DWORD *)(this + 36) + 247));
-      if ( v7 )
-        TeamClass::SelectMember(this, (int)v7);
+      v5 = 0; /*0x6ee336*/
+      v6 = *((_DWORD *)v4->focus + 5504); /*0x6ee354*/
+      if ( v6 != -1 ) /*0x6ee35d*/
+        v5 = *(void **)&HouseClass_Array->__pad_0[4 * v6]; /*0x6ee365*/
+      v7 = (AbstractClass *)DamageMapClassArea( /*0x6ee376*/
+                              *((_DWORD *)g_TriggerTypeCount + (unsigned __int16)*(_DWORD *)&aP1->__pad_0[4]),
+                              v5,
+                              v4,
+                              (unsigned __int16)HIWORD(*(_DWORD *)&aP1->__pad_0[4]),
+                              *(_BYTE *)(*(_DWORD *)(this + 36) + 247));
+      if ( v7 ) /*0x6ee37e*/
+        TeamClass::SelectMember(this, v7); /*0x6ee383*/
     }
   }
-  if ( !*(_DWORD *)(this + 60) )
+  if ( !*(_DWORD *)(this + 60) ) /*0x6ee38d*/
   {
 LABEL_13:
-    result = TeamClass::SelectMember(this, 0);
-    *(_BYTE *)(this + 128) = 1;
-    return result;
+    result = TeamClass::SelectMember(this, 0); /*0x6ee3be*/
+    *(_BYTE *)(this + 128) = 1; /*0x6ee3c8*/
+    return result; /*0x6ee3d1*/
   }
 LABEL_9:
-  v8 = *(int **)(this + 84);
-  if ( !v8 )
-    goto LABEL_13;
-  while ( *(int *)((*(int (__thiscall **)(int *))(*v8 + 132))(v8) + 1668) > 0 && v8[191] <= 0 )
+  v8 = *(int **)(this + 84); /*0x6ee38f*/
+  if ( !v8 ) /*0x6ee394*/
+    goto LABEL_13; /*0x6ee394*/
+  while ( *(int *)((*(int (__thiscall **)(int *))(*v8 + 132))(v8) + 1668) > 0 && v8[191] <= 0 ) /*0x6ee3b2*/
   {
-    v8 = (int *)v8[374];
-    if ( !v8 )
-      goto LABEL_13;
+    v8 = (int *)v8[374]; /*0x6ee3b4*/
+    if ( !v8 ) /*0x6ee3bc*/
+      goto LABEL_13; /*0x6ee3bc*/
   }
-  return TeamClass::AttackCoordinator((int *)this);
+  return TeamClass::AttackCoordinator((int *)this); /*0x6ee3c7*/
 }
-
-/* ASM:
-mov     al, [esp+arg_4]
-push    ebp
-push    esi
-push    edi
-test    al, al
-mov     ebp, ecx
-jz      short loc_6EE388
-mov     eax, [ebp+3Ch]
-test    eax, eax
-jnz     short loc_6EE38F
-mov     edi, [ebp+54h]
-test    edi, edi
-jz      short loc_6EE388
-mov     eax, [esp+0Ch+arg_0]
-mov     ecx, ds:0A83C6Ch
-push    ebx
-xor     edx, edx
-mov     eax, [eax+4]
-mov     esi, eax
-and     eax, 0FFFFh
-sar     esi, 10h
-mov     eax, [ecx+eax*4]
-mov     ecx, [edi+21Ch]
-and     esi, 0FFFFh
-mov     ebx, [ecx+5600h]
-cmp     ebx, 0FFFFFFFFh
-jz      short loc_6EE368
-mov     edx, ds:0A8022Ch
-mov     edx, [edx+ebx*4]
-
-loc_6EE368:                             ; CODE XREF: TeamClass__SelectAreaAttackTarget+4D↑j
-mov     ecx, [ebp+24h]
-mov     cl, [ecx+0F7h]
-push    ecx
-push    esi
-push    edi
-mov     ecx, eax
-call    DamageMapClassArea
-test    eax, eax
-pop     ebx
-jz      short loc_6EE388
-push    eax
-mov     ecx, ebp
-call    TeamClass__SelectMember
-
-loc_6EE388:                             ; CODE XREF: TeamClass__SelectAreaAttackTarget+B↑j
-; TeamClass__SelectAreaAttackTarget+19↑j ...
-mov     eax, [ebp+3Ch]
-test    eax, eax
-jz      short loc_6EE3BE
-
-loc_6EE38F:                             ; CODE XREF: TeamClass__SelectAreaAttackTarget+12↑j
-mov     esi, [ebp+54h]
-test    esi, esi
-jz      short loc_6EE3BE
-
-loc_6EE396:                             ; CODE XREF: TeamClass__SelectAreaAttackTarget+AC↓j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-mov     ecx, [eax+684h]
-test    ecx, ecx
-jle     short loc_6EE3D4
-mov     eax, [esi+2FCh]
-test    eax, eax
-jg      short loc_6EE3D4
-mov     esi, [esi+5D8h]
-test    esi, esi
-jnz     short loc_6EE396
-
-loc_6EE3BE:                             ; CODE XREF: TeamClass__SelectAreaAttackTarget+7D↑j
-; TeamClass__SelectAreaAttackTarget+84↑j
-push    0
-mov     ecx, ebp
-call    TeamClass__SelectMember
-pop     edi
-mov     byte ptr [ebp+80h], 1
-pop     esi
-pop     ebp
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_6EE3D4:                             ; CODE XREF: TeamClass__SelectAreaAttackTarget+98↑j
-; TeamClass__SelectAreaAttackTarget+A2↑j
-mov     ecx, ebp
-call    TeamClass__AttackCoordinator
-pop     edi
-pop     esi
-pop     ebp
-retn    8
-*/
 } }
 // 0x6EE3F0
 namespace gamemd { void TeamClass::ProcessTeamMovement(int a1, int a2) {
@@ -6187,43 +2232,43 @@ void __thiscall sub_6EE3F0(int *this, int a2, int a3)
   int v24; // [esp+28h] [ebp-4h]
   int v25; // [esp+30h] [ebp+4h]
 
-  v3 = (int)this;
-  if ( !*(this + 15) )
+  v3 = (int)this; /*0x6ee3f4*/
+  if ( !*(this + 15) ) /*0x6ee3fb*/
   {
-    v4 = *(this + 21);
-    if ( v4 )
+    v4 = *(this + 21); /*0x6ee406*/
+    if ( v4 ) /*0x6ee40b*/
     {
-      v5 = 0;
-      v6 = *(_DWORD *)(*(_DWORD *)(v4 + 540) + 22016);
-      if ( v6 != -1 )
-        v5 = *(#375 **)(MEMORY[0x87F7E8][524945] + 4 * v6);
-      v7 = DamageMapClassArea(
-             *(_DWORD *)(MEMORY[0x87F7E8][528673] + 4 * (unsigned __int16)*(_DWORD *)(a2 + 4)),
+      v5 = 0; /*0x6ee420*/
+      v6 = *(_DWORD *)(*(_DWORD *)(v4 + 540) + 22016); /*0x6ee43b*/
+      if ( v6 != -1 ) /*0x6ee444*/
+        v5 = *(#375 **)&HouseClass_Array->__pad_0[4 * v6]; /*0x6ee44c*/
+      v7 = DamageMapClassArea( /*0x6ee462*/
+             *((_DWORD *)g_TriggerTypeCount + (unsigned __int16)*(_DWORD *)(a2 + 4)),
              v5,
              v4,
              (unsigned __int16)HIWORD(*(_DWORD *)(a2 + 4)),
              *(_BYTE *)(*(this + 9) + 247));
-      if ( v7 )
+      if ( v7 ) /*0x6ee466*/
       {
-        v8 = *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)v4 + 132))(v4) + 1460);
-        v9 = v7 + 39;
-        v10 = *v9;
-        v11 = v9[1];
-        v24 = v9[2];
-        LOWORD(v25) = v10 / 256;
-        v12 = *(_DWORD *)v4;
-        HIWORD(v25) = v11 / 256;
-        v21 = v25;
-        v18 = 0;
-        v13 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(v12 + 72))(v4, v23);
-        LOWORD(v25) = *v13 / 256;
-        HIWORD(v25) = v13[1] / 256;
-        LOBYTE(v13) = *(_BYTE *)(v4 + 140);
-        v20 = v25;
-        TileIndex = MapClass::GetTileIndex(MEMORY[0x87F7E8], (__int16 *)&v20, v8, (char)v13);
-        v14 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 132))(v4);
-        v19 = *LayerClass::Pathfinding_Find(
-                 MEMORY[0x87F7E8],
+        v8 = *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)v4 + 132))(v4) + 1460); /*0x6ee476*/
+        v9 = v7 + 39; /*0x6ee47c*/
+        v10 = *v9; /*0x6ee482*/
+        v11 = v9[1]; /*0x6ee484*/
+        v24 = v9[2]; /*0x6ee48f*/
+        LOWORD(v25) = v10 / 256; /*0x6ee4a1*/
+        v12 = *(_DWORD *)v4; /*0x6ee4b3*/
+        HIWORD(v25) = v11 / 256; /*0x6ee4b8*/
+        v21 = v25; /*0x6ee4c1*/
+        v18 = 0; /*0x6ee4c7*/
+        v13 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(v12 + 72))(v4, v23); /*0x6ee4d6*/
+        LOWORD(v25) = *v13 / 256; /*0x6ee4ed*/
+        HIWORD(v25) = v13[1] / 256; /*0x6ee50d*/
+        LOBYTE(v13) = *(_BYTE *)(v4 + 140); /*0x6ee516*/
+        v20 = v25; /*0x6ee520*/
+        TileIndex = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v20, v8, (char)v13); /*0x6ee538*/
+        v14 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 132))(v4); /*0x6ee53b*/
+        v19 = *LayerClass::Pathfinding_Find( /*0x6ee565*/
+                 &MEMORY[0x87F7E8],
                  (int)&v22,
                  &v22,
                  (__int16 *)&v21,
@@ -6240,520 +2285,145 @@ void __thiscall sub_6EE3F0(int *this, int a2, int a3)
                  (__int16 *)&v18,
                  0,
                  0);
-        if ( v19 == dword_A8ED54[130813] )
+        if ( v19 == MEMORY[0xB0E948] ) /*0x6ee569*/
         {
-          TeamClass::SelectMember((int)this, 0);
+          TeamClass::SelectMember((int)this, 0); /*0x6ee591*/
         }
         else
         {
-          v16 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v19);
-          TeamClass::SelectMember((int)this, (int)v16);
+          v16 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v19); /*0x6ee588*/
+          TeamClass::SelectMember((int)this, (int)v16); /*0x6ee589*/
         }
-        v3 = (int)this;
+        v3 = (int)this; /*0x6ee596*/
       }
-      if ( !*(_DWORD *)(v3 + 60) )
-        *(_BYTE *)(v3 + 128) = 1;
+      if ( !*(_DWORD *)(v3 + 60) ) /*0x6ee59a*/
+        *(_BYTE *)(v3 + 128) = 1; /*0x6ee5a3*/
     }
   }
-  TeamClass::UpdateMembers(v3);
+  TeamClass::UpdateMembers(v3); /*0x6ee5ac*/
 }
-
-/* ASM:
-sub     esp, 24h
-push    ebp
-mov     ebp, ecx
-push    esi
-mov     [esp+2Ch+var_24], ebp
-mov     eax, [ebp+3Ch]
-test    eax, eax
-jnz     loc_6EE5AA
-mov     esi, [ebp+54h]
-test    esi, esi
-jz      loc_6EE5AA
-mov     eax, [esp+2Ch+arg_0]
-mov     ecx, ds:0A83C6Ch
-push    ebx
-push    edi
-mov     eax, [eax+4]
-xor     edx, edx
-mov     edi, eax
-and     eax, 0FFFFh
-sar     edi, 10h
-mov     eax, [ecx+eax*4]
-mov     ecx, [esi+21Ch]
-and     edi, 0FFFFh
-mov     ebx, [ecx+5600h]
-cmp     ebx, 0FFFFFFFFh
-jz      short loc_6EE44F
-mov     edx, ds:0A8022Ch
-mov     edx, [edx+ebx*4]
-
-loc_6EE44F:                             ; CODE XREF: TeamClass__ProcessTeamMovement+54↑j
-mov     ecx, [ebp+24h]
-mov     cl, [ecx+0F7h]
-push    ecx
-push    edi
-push    esi
-mov     ecx, eax
-call    DamageMapClassArea
-mov     ebx, eax
-test    ebx, ebx
-jz      loc_6EE59A
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-mov     edi, [eax+5B4h]
-add     ebx, 9Ch
-mov     eax, [ebx]
-mov     ecx, [ebx+4]
-mov     edx, [ebx+8]
-mov     ebx, 1
-mov     [esp+34h+var_4], edx
-mov     ebp, ebx
-cdq
-and     edx, 0FFh
-add     eax, edx
-sar     eax, 8
-mov     word ptr [esp+34h+arg_0], ax
-mov     eax, ecx
-cdq
-and     edx, 0FFh
-mov     ecx, esi
-add     eax, edx
-mov     edx, [esi]
-sar     eax, 8
-mov     word ptr [esp+34h+arg_0+2], ax
-mov     eax, [esp+34h+arg_0]
-mov     [esp+34h+var_14], eax
-xor     eax, eax
-mov     word ptr [esp+34h+var_20], ax
-mov     word ptr [esp+34h+var_20+2], ax
-lea     eax, [esp+34h+var_C]
-push    eax
-call    dword ptr [edx+48h]
-mov     ecx, eax
-push    0
-push    0
-mov     eax, [ecx]
-cdq
-and     edx, 0FFh
-add     eax, edx
-sar     eax, 8
-mov     word ptr [esp+3Ch+arg_0], ax
-mov     eax, [ecx+4]
-cdq
-and     edx, 0FFh
-add     eax, edx
-lea     edx, [esp+3Ch+var_20]
-push    edx
-push    ebx
-push    0
-push    0
-sar     eax, 8
-push    0
-mov     word ptr [esp+50h+arg_0+2], ax
-mov     ecx, [esp+50h+arg_0]
-mov     al, [esi+8Ch]
-push    ebp
-push    ebx
-push    0
-mov     [esp+5Ch+var_18], ecx
-push    edi
-push    eax
-lea     ecx, [esp+64h+var_18]
-push    edi
-push    ecx
-mov     ecx, 87F7E8h
-call    MapClass__GetTileIndex
-mov     edx, [esi]
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+84h]
-mov     eax, [eax+67Ch]
-lea     ecx, [esp+64h+var_14]
-push    eax
-lea     edx, [esp+68h+var_10]
-push    ecx
-push    edx
-mov     ecx, 87F7E8h
-call    LayerClass__Pathfinding_Find
-mov     eax, [eax]
-cmp     ax, word ptr dword_A8ED54+7FBF4h
-mov     [esp+34h+var_1C], eax
-jnz     short loc_6EE579
-mov     ax, word ptr [esp+34h+var_1C+2]
-cmp     ax, word ptr dword_A8ED54+7FBF6h
-jz      short loc_6EE58B
-
-loc_6EE579:                             ; CODE XREF: TeamClass__ProcessTeamMovement+179↑j
-lea     ecx, [esp+34h+var_1C]
-push    ecx
-mov     ecx, 87F7E8h
-call    CellCoord__To_CellObj
-push    eax
-jmp     short loc_6EE58D
-; ---------------------------------------------------------------------------
-
-loc_6EE58B:                             ; CODE XREF: TeamClass__ProcessTeamMovement+187↑j
-push    0
-
-loc_6EE58D:                             ; CODE XREF: TeamClass__ProcessTeamMovement+199↑j
-mov     ecx, [esp+38h+var_24]
-call    TeamClass__SelectMember
-mov     ebp, [esp+34h+var_24]
-
-loc_6EE59A:                             ; CODE XREF: TeamClass__ProcessTeamMovement+76↑j
-mov     eax, [ebp+3Ch]
-pop     edi
-test    eax, eax
-pop     ebx
-jnz     short loc_6EE5AA
-mov     byte ptr [ebp+80h], 1
-
-loc_6EE5AA:                             ; CODE XREF: TeamClass__ProcessTeamMovement+10↑j
-; TeamClass__ProcessTeamMovement+1B↑j ...
-mov     ecx, ebp
-call    TeamClass__UpdateMembers
-pop     esi
-pop     ebp
-add     esp, 24h
-retn    8
-*/
 } }
 // 0x6EE5C0
 namespace gamemd { void TeamClass::SelectBestMember(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x6ee5c0
-void __thiscall TeamClass::SelectBestMember(_DWORD *this, int a2, int a3)
+void __thiscall TeamClass::SelectBestMember(_DWORD *this, ScriptClass *aP1, int a3)
 {
-  int v3; // ebp
-  _BYTE *v4; // esi
+  _DWORD *v3; // ebp
+  _DWORD *v4; // esi
   _DWORD *v5; // edi
   int v6; // ebx
   int v7; // ebp
-  int v8; // ebx
-  int v9; // edi
+  _DWORD *v8; // ebx
+  MouseClass *v9; // edi
   int *v10; // ebx
   int v11; // eax
   int v12; // ecx
   int v13; // edx
   _DWORD *v14; // eax
   int v15; // eax
+  int v16; // eax
   int TileIndex; // [esp-30h] [ebp-60h]
-  void *v17; // [esp-4h] [ebp-34h]
-  int v19; // [esp+14h] [ebp-1Ch] BYREF
-  int v20; // [esp+18h] [ebp-18h] BYREF
-  int v21; // [esp+1Ch] [ebp-14h] BYREF
-  int v22; // [esp+20h] [ebp-10h] BYREF
-  _BYTE v23[8]; // [esp+24h] [ebp-Ch] BYREF
-  int v24; // [esp+2Ch] [ebp-4h]
+  void *v18; // [esp-4h] [ebp-34h]
+  MouseClass *v19; // [esp+14h] [ebp-1Ch] BYREF
+  int v21; // [esp+18h] [ebp-18h] BYREF
+  int v22; // [esp+1Ch] [ebp-14h] BYREF
+  int v23; // [esp+20h] [ebp-10h] BYREF
+  _BYTE v24[8]; // [esp+24h] [ebp-Ch] BYREF
+  int v25; // [esp+2Ch] [ebp-4h]
 
-  v3 = (int)this;
-  if ( (_BYTE)a3 )
+  v3 = this; /*0x6ee5c9*/
+  if ( (_BYTE)a3 ) /*0x6ee5d3*/
   {
-    if ( *(this + 15) )
-      goto LABEL_22;
-    v4 = (_BYTE *)*(this + 21);
-    if ( v4 )
+    if ( *(this + 15) ) /*0x6ee5d9*/
+      goto LABEL_22; /*0x6ee5de*/
+    v4 = (_DWORD *)*(this + 21); /*0x6ee5e4*/
+    if ( v4 ) /*0x6ee5e9*/
     {
-      v5 = (_DWORD *)*(this + 21);
-      a3 = -1;
-      v6 = (unsigned __int16)HIWORD(*(_DWORD *)(a2 + 4));
-      a2 = *((_DWORD *)MEMORY[0xA83C6C] + (unsigned __int16)*(_DWORD *)(a2 + 4));
-      do
+      v5 = (_DWORD *)*(this + 21); /*0x6ee5f9*/
+      a3 = -1; /*0x6ee5fb*/
+      v6 = (unsigned __int16)HIWORD(*(_DWORD *)&aP1->__pad_0[4]); /*0x6ee613*/
+      aP1 = (ScriptClass *)*((_DWORD *)g_TriggerTypeCount + (unsigned __int16)*(_DWORD *)&aP1->__pad_0[4]); /*0x6ee61b*/
+      do /*0x6ee683*/
       {
-        v7 = *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*v5 + 132))(v5) + 1532);
-        if ( v5
+        v7 = *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*v5 + 132))(v5) + 1532); /*0x6ee62b*/
+        if ( v5 /*0x6ee673*/
           && *((_BYTE *)v5 + 144)
           && v5[27]
-          && (MEMORY[0xA8E7AC] || !*((_BYTE *)v5 + 129))
+          && (*(_DWORD *)&MEMORY[0xA8D63C].__pad_1140[48] || !*((_BYTE *)v5 + 129))
           && (*((_BYTE *)v5 + 1673) || (*(int (__thiscall **)(_DWORD *))(*v5 + 44))(v5) == 2)
           && v7 > a3 )
         {
-          v4 = v5;
-          a3 = v7;
+          v4 = v5; /*0x6ee675*/
+          a3 = v7; /*0x6ee677*/
         }
-        v5 = (_DWORD *)v5[374];
+        v5 = (_DWORD *)v5[374]; /*0x6ee67b*/
       }
-      while ( v5 );
-      v3 = (int)this;
-      v8 = TeamClass::ScoreMember(v4, v6, 0);
-      if ( v8 )
+      while ( v5 ); /*0x6ee683*/
+      v3 = this; /*0x6ee685*/
+      v8 = TeamClass::ScoreMember(aP1, v4, v6, 0); /*0x6ee698*/
+      if ( v8 ) /*0x6ee69c*/
       {
-        v9 = *(_DWORD *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v4 + 132))(v4) + 1460);
-        v10 = (int *)(v8 + 156);
-        v11 = *v10;
-        v12 = v10[1];
-        v24 = v10[2];
-        LOWORD(a3) = v11 / 256;
-        v13 = *(_DWORD *)v4;
-        HIWORD(a3) = v12 / 256;
-        v21 = a3;
-        a2 = 0;
-        v14 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, _BYTE *))(v13 + 72))(v4, v23);
-        LOWORD(a3) = *v14 / 256;
-        HIWORD(a3) = v14[1] / 256;
-        LOBYTE(v14) = v4[140];
-        v20 = a3;
-        TileIndex = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v20, v9, (char)v14);
-        v15 = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v4 + 132))(v4);
-        v19 = *LayerClass::Pathfinding_Find(
-                 &MEMORY[0x87F7E8],
-                 (int)&v22,
-                 &v22,
-                 (__int16 *)&v21,
-                 *(_DWORD *)(v15 + 1660),
-                 TileIndex,
-                 v9,
-                 0,
-                 1,
-                 1,
-                 0,
-                 0,
-                 0,
-                 1,
-                 (__int16 *)&a2,
-                 0,
-                 0);
-        if ( v19 == MEMORY[0xB0E948] )
+        v9 = *(MouseClass **)((*(int (__thiscall **)(_DWORD *))(*v4 + 132))(v4) + 1460); /*0x6ee6ac*/
+        v10 = v8 + 39; /*0x6ee6b2*/
+        v11 = *v10; /*0x6ee6bd*/
+        v12 = v10[1]; /*0x6ee6bf*/
+        v25 = v10[2]; /*0x6ee6c7*/
+        LOWORD(a3) = v11 / 256; /*0x6ee6d7*/
+        v13 = *v4; /*0x6ee6e9*/
+        HIWORD(a3) = v12 / 256; /*0x6ee6ee*/
+        v22 = a3; /*0x6ee6f7*/
+        aP1 = 0; /*0x6ee6fd*/
+        v14 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(v13 + 72))(v4, v24); /*0x6ee70c*/
+        LOWORD(a3) = *v14 / 256; /*0x6ee723*/
+        v15 = v14[1] / 256; /*0x6ee73e*/
+        HIWORD(a3) = v15; /*0x6ee743*/
+        LOBYTE(v15) = *((_BYTE *)v4 + 140); /*0x6ee74c*/
+        v21 = a3; /*0x6ee756*/
+        TileIndex = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (IUnknown *)&v21, (IUnknown *)v9, (IUnknown *)v15); /*0x6ee76e*/
+        v16 = (*(int (__thiscall **)(_DWORD *))(*v4 + 132))(v4); /*0x6ee771*/
+        v19 = (MouseClass *)*LayerClass::Pathfinding_Find( /*0x6ee79b*/
+                               &MEMORY[0x87F7E8],
+                               (int)&v23,
+                               &v23,
+                               (__int16 *)&v22,
+                               *(_DWORD *)(v16 + 1660),
+                               TileIndex,
+                               (int)v9,
+                               0,
+                               1,
+                               1,
+                               0,
+                               0,
+                               0,
+                               1,
+                               (__int16 *)&aP1,
+                               0,
+                               0);
+        if ( v19 == *(MouseClass **)&MEMORY[0xB077F8].__pad_579C[6580] ) /*0x6ee79f*/
         {
-          TeamClass::SelectMember((int)this, 0);
+          TeamClass::SelectMember((int)this, 0); /*0x6ee7c7*/
         }
         else
         {
-          v17 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v19);
-          TeamClass::SelectMember((int)this, (int)v17);
+          v18 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v19); /*0x6ee7be*/
+          TeamClass::SelectMember((int)this, (int)v18); /*0x6ee7bf*/
         }
-        v3 = (int)this;
+        v3 = this; /*0x6ee7cc*/
       }
     }
   }
-  if ( !*(_DWORD *)(v3 + 60) )
+  if ( !v3[15] ) /*0x6ee7d0*/
   {
-    *(_BYTE *)(v3 + 128) = 1;
-    return;
+    *((_BYTE *)v3 + 128) = 1; /*0x6ee7d8*/
+    return; /*0x6ee7e5*/
   }
 LABEL_22:
-  TeamClass::UpdateMembers(v3);
+  TeamClass::UpdateMembers((int)v3); /*0x6ee7e8*/
 }
-
-/* ASM:
-sub     esp, 20h
-mov     al, byte ptr [esp+20h+arg_4]
-push    ebx
-push    ebp
-mov     ebp, ecx
-push    esi
-push    edi
-test    al, al
-mov     [esp+30h+var_20], ebp
-jz      loc_6EE7D0
-mov     eax, [ebp+3Ch]
-test    eax, eax
-jnz     loc_6EE7E8
-mov     esi, [ebp+54h]
-test    esi, esi
-jz      loc_6EE7D0
-mov     eax, [esp+30h+arg_0]
-mov     ecx, ds:0A83C6Ch
-mov     edi, esi
-mov     [esp+30h+arg_4], 0FFFFFFFFh
-mov     eax, [eax+4]
-mov     ebx, eax
-and     eax, 0FFFFh
-sar     ebx, 10h
-mov     edx, [ecx+eax*4]
-and     ebx, 0FFFFh
-test    edi, edi
-mov     [esp+30h+arg_0], edx
-jz      short loc_6EE689
-
-loc_6EE621:                             ; CODE XREF: TeamClass__SelectBestMember+C3↓j
-mov     eax, [edi]
-mov     ecx, edi
-call    dword ptr [eax+84h]
-mov     ebp, [eax+5FCh]
-test    edi, edi
-jz      short loc_6EE67B
-mov     al, [edi+90h]
-test    al, al
-jz      short loc_6EE67B
-mov     eax, [edi+6Ch]
-test    eax, eax
-jz      short loc_6EE67B
-mov     eax, ds:0A8E7ACh
-test    eax, eax
-jnz     short loc_6EE659
-mov     al, [edi+81h]
-test    al, al
-jnz     short loc_6EE67B
-
-loc_6EE659:                             ; CODE XREF: TeamClass__SelectBestMember+8D↑j
-mov     al, [edi+689h]
-test    al, al
-jnz     short loc_6EE66F
-mov     edx, [edi]
-mov     ecx, edi
-call    dword ptr [edx+2Ch]
-cmp     eax, 2
-jnz     short loc_6EE67B
-
-loc_6EE66F:                             ; CODE XREF: TeamClass__SelectBestMember+A1↑j
-cmp     ebp, [esp+30h+arg_4]
-jle     short loc_6EE67B
-mov     esi, edi
-mov     [esp+30h+arg_4], ebp
-
-loc_6EE67B:                             ; CODE XREF: TeamClass__SelectBestMember+73↑j
-; TeamClass__SelectBestMember+7D↑j ...
-mov     edi, [edi+5D8h]
-test    edi, edi
-jnz     short loc_6EE621
-mov     ebp, [esp+30h+var_20]
-
-loc_6EE689:                             ; CODE XREF: TeamClass__SelectBestMember+5F↑j
-mov     ecx, [esp+30h+arg_0]
-push    0
-push    ebx
-push    esi
-xor     edx, edx
-call    TeamClass__ScoreMember
-mov     ebx, eax
-test    ebx, ebx
-jz      loc_6EE7D0
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+84h]
-mov     edi, [eax+5B4h]
-add     ebx, 9Ch
-mov     ebp, 1
-mov     eax, [ebx]
-mov     ecx, [ebx+4]
-mov     edx, [ebx+8]
-mov     ebx, ebp
-mov     [esp+30h+var_4], edx
-cdq
-and     edx, 0FFh
-add     eax, edx
-sar     eax, 8
-mov     word ptr [esp+30h+arg_4], ax
-mov     eax, ecx
-cdq
-and     edx, 0FFh
-mov     ecx, esi
-add     eax, edx
-mov     edx, [esi]
-sar     eax, 8
-mov     word ptr [esp+30h+arg_4+2], ax
-mov     eax, [esp+30h+arg_4]
-mov     [esp+30h+var_14], eax
-xor     eax, eax
-mov     word ptr [esp+30h+arg_0], ax
-mov     word ptr [esp+30h+arg_0+2], ax
-lea     eax, [esp+30h+var_C]
-push    eax
-call    dword ptr [edx+48h]
-mov     ecx, eax
-push    0
-push    0
-mov     eax, [ecx]
-cdq
-and     edx, 0FFh
-add     eax, edx
-sar     eax, 8
-mov     word ptr [esp+38h+arg_4], ax
-mov     eax, [ecx+4]
-cdq
-and     edx, 0FFh
-add     eax, edx
-lea     edx, [esp+38h+arg_0]
-push    edx
-push    ebp
-push    0
-push    0
-sar     eax, 8
-push    0
-mov     word ptr [esp+4Ch+arg_4+2], ax
-mov     ecx, [esp+4Ch+arg_4]
-mov     al, [esi+8Ch]
-push    ebx
-push    ebp
-push    0
-mov     [esp+58h+var_18], ecx
-push    edi
-push    eax
-lea     ecx, [esp+60h+var_18]
-push    edi
-push    ecx
-mov     ecx, 87F7E8h
-call    MapClass__GetTileIndex
-mov     edx, [esi]
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+84h]
-mov     eax, [eax+67Ch]
-lea     ecx, [esp+60h+var_14]
-push    eax
-lea     edx, [esp+64h+var_10]
-push    ecx
-push    edx
-mov     ecx, 87F7E8h
-call    LayerClass__Pathfinding_Find
-mov     eax, [eax]
-cmp     ax, word ptr dword_A8ED54+7FBF4h
-mov     [esp+30h+var_1C], eax
-jnz     short loc_6EE7AF
-mov     ax, word ptr [esp+30h+var_1C+2]
-cmp     ax, word ptr dword_A8ED54+7FBF6h
-jz      short loc_6EE7C1
-
-loc_6EE7AF:                             ; CODE XREF: TeamClass__SelectBestMember+1DF↑j
-lea     ecx, [esp+30h+var_1C]
-push    ecx
-mov     ecx, 87F7E8h
-call    CellCoord__To_CellObj
-push    eax
-jmp     short loc_6EE7C3
-; ---------------------------------------------------------------------------
-
-loc_6EE7C1:                             ; CODE XREF: TeamClass__SelectBestMember+1ED↑j
-push    0
-
-loc_6EE7C3:                             ; CODE XREF: TeamClass__SelectBestMember+1FF↑j
-mov     ecx, [esp+34h+var_20]
-call    TeamClass__SelectMember
-mov     ebp, [esp+30h+var_20]
-
-loc_6EE7D0:                             ; CODE XREF: TeamClass__SelectBestMember+13↑j
-; TeamClass__SelectBestMember+29↑j ...
-mov     eax, [ebp+3Ch]
-test    eax, eax
-jnz     short loc_6EE7E8
-pop     edi
-mov     byte ptr [ebp+80h], 1
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 20h
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_6EE7E8:                             ; CODE XREF: TeamClass__SelectBestMember+1E↑j
-; TeamClass__SelectBestMember+215↑j
-mov     ecx, ebp
-call    TeamClass__UpdateMembers
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 20h
-retn    8
-*/
 } }
 // 0x6EEEA0
 namespace gamemd { void* TeamClass::ScoreMember(void* a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x6eeea0
 _DWORD *__thiscall TeamClass::ScoreMember(void *this, _DWORD *a2, int a3, int a4)
 {
   _DWORD *result; // eax
@@ -6797,450 +2467,143 @@ _DWORD *__thiscall TeamClass::ScoreMember(void *this, _DWORD *a2, int a3, int a4
   char v43[12]; // [esp+70h] [ebp-18h] BYREF
   char v44[12]; // [esp+7Ch] [ebp-Ch] BYREF
 
-  result = 0;
-  v5 = a2[135];
-  v6 = 0;
-  v26 = 0;
-  v25 = -1;
-  v28 = v5;
-  v32 = *(_DWORD *)(v5 + 120);
-  v27 = 0;
-  if ( v32 > 0 )
+  result = 0; /*0x6eeeb3*/
+  v5 = a2[135]; /*0x6eeeb5*/
+  v6 = 0; /*0x6eeebb*/
+  v26 = 0; /*0x6eeebd*/
+  v25 = -1; /*0x6eeec1*/
+  v28 = v5; /*0x6eeecc*/
+  v32 = *(_DWORD *)(v5 + 120); /*0x6eeed2*/
+  v27 = 0; /*0x6eeed6*/
+  if ( v32 > 0 ) /*0x6eeeda*/
   {
-    v7 = a3;
-    while ( 1 )
+    v7 = a3; /*0x6eeee0*/
+    while ( 1 ) /*0x6eeeef*/
     {
-      v8 = *(_DWORD **)(*(_DWORD *)(v5 + 108) + 4 * v6);
-      if ( (void *)v8[328] == this )
+      v8 = *(_DWORD **)(*(_DWORD *)(v5 + 108) + 4 * v6); /*0x6eeeef*/
+      if ( (void *)v8[328] == this ) /*0x6eeefc*/
       {
-        v9 = -1;
-        switch ( v7 )
+        v9 = -1; /*0x6eef02*/
+        switch ( v7 ) /*0x6eef0e*/
         {
-          case 0:
-            v10 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v8 + 72))(v8, v43);
-            LOWORD(v23) = *v10 / 256;
-            v11 = a2[135];
-            HIWORD(v23) = v10[1] / 256;
-            v30 = v23;
-            v9 = 0x7FFFFFFF - CellClass::GetTileData((__int16 *)&v30, v11);
-            break;
-          case 1:
-            v12 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v8 + 72))(v8, v44);
-            LOWORD(v24) = *v12 / 256;
-            v13 = a2[135];
-            HIWORD(v24) = v12[1] / 256;
-            v31 = v24;
-            TileData = CellClass::GetTileData((__int16 *)&v31, v13);
-            goto LABEL_10;
-          case 2:
-            v15 = a2[39];
-            v39 = a2[40];
-            v40 = a2[41];
-            v16 = v8[40];
-            v33 = v8[39] - v15;
-            v17 = v8[41];
-            v34 = v16 - v39;
-            v35 = v17 - v40;
-            v18 = Math::Sqrt(
+          case 0: /*0x6eef0e*/
+            v10 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v8 + 72))(v8, v43); /*0x6eef1e*/
+            LOWORD(v23) = *v10 / 256; /*0x6eef31*/
+            v11 = a2[135]; /*0x6eef42*/
+            HIWORD(v23) = v10[1] / 256; /*0x6eef4b*/
+            v30 = v23; /*0x6eef58*/
+            v9 = 0x7FFFFFFF - CellClass::GetTileData((__int16 *)&v30, v11); /*0x6eef6d*/
+            break; /*0x6eef6f*/
+          case 1: /*0x6eef0e*/
+            v12 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v8 + 72))(v8, v44); /*0x6eef7d*/
+            LOWORD(v24) = *v12 / 256; /*0x6eef90*/
+            v13 = a2[135]; /*0x6eefa1*/
+            HIWORD(v24) = v12[1] / 256; /*0x6eefaa*/
+            v31 = v24; /*0x6eefb7*/
+            TileData = CellClass::GetTileData((__int16 *)&v31, v13); /*0x6eefc2*/
+            goto LABEL_10; /*0x6eefc7*/
+          case 2: /*0x6eef0e*/
+            v15 = a2[39]; /*0x6eefd5*/
+            v39 = a2[40]; /*0x6eefda*/
+            v40 = a2[41]; /*0x6eefe9*/
+            v16 = v8[40]; /*0x6eeff5*/
+            v33 = v8[39] - v15; /*0x6eeff8*/
+            v17 = v8[41]; /*0x6eeffe*/
+            v34 = v16 - v39; /*0x6ef001*/
+            v35 = v17 - v40; /*0x6ef00f*/
+            v18 = Math::Sqrt( /*0x6ef034*/
                     (double)v33 * (double)v33
                   + (double)(v17 - v40) * (double)(v17 - v40)
                   + (double)(v16 - v39) * (double)(v16 - v39));
-            v9 = 0x7FFFFFFF - Math::RoundToInt(v18);
-            break;
-          case 3:
-            v19 = a2[39];
-            v41 = a2[40];
-            v42 = a2[41];
-            v20 = v8[40];
-            v36 = v8[39] - v19;
-            v21 = v8[41];
-            v37 = v20 - v41;
-            v38 = v21 - v42;
-            v22 = Math::Sqrt(
+            v9 = 0x7FFFFFFF - Math::RoundToInt(v18); /*0x6ef046*/
+            break; /*0x6ef048*/
+          case 3: /*0x6eef0e*/
+            v19 = a2[39]; /*0x6ef053*/
+            v41 = a2[40]; /*0x6ef058*/
+            v42 = a2[41]; /*0x6ef065*/
+            v20 = v8[40]; /*0x6ef073*/
+            v36 = v8[39] - v19; /*0x6ef076*/
+            v21 = v8[41]; /*0x6ef07e*/
+            v37 = v20 - v41; /*0x6ef083*/
+            v38 = v21 - v42; /*0x6ef08d*/
+            v22 = Math::Sqrt( /*0x6ef0b2*/
                     (double)v36 * (double)v36
                   + (double)(v21 - v42) * (double)(v21 - v42)
                   + (double)(v20 - v41) * (double)(v20 - v41));
-            TileData = Math::RoundToInt(v22);
+            TileData = Math::RoundToInt(v22); /*0x6ef0ba*/
 LABEL_10:
-            v9 = TileData;
-            break;
+            v9 = TileData; /*0x6ef0bf*/
+            break; /*0x6ef0bf*/
           default:
             break;
         }
-        if ( v9 <= v25 )
+        if ( v9 <= v25 ) /*0x6ef0c5*/
         {
-          result = v26;
+          result = v26; /*0x6ef0d3*/
         }
         else
         {
-          result = v8;
-          v25 = v9;
-          v26 = v8;
+          result = v8; /*0x6ef0c7*/
+          v25 = v9; /*0x6ef0c9*/
+          v26 = v8; /*0x6ef0cd*/
         }
       }
-      v6 = ++v27;
-      if ( v27 >= v32 )
-        break;
-      v7 = a3;
-      v5 = v28;
+      v6 = ++v27; /*0x6ef0df*/
+      if ( v27 >= v32 ) /*0x6ef0e6*/
+        break; /*0x6ef0e6*/
+      v7 = a3; /*0x6eeee5*/
+      v5 = v28; /*0x6eeee8*/
     }
   }
-  return result;
+  return result; /*0x6ef0ec*/
 }
-
-/* ASM:
-push    ebp
-mov     ebp, esp
-and     esp, 0FFFFFFF8h
-sub     esp, 74h
-push    ebx
-push    esi
-push    edi
-mov     edi, [ebp+arg_0]
-mov     [esp+80h+var_58], ecx
-xor     eax, eax
-mov     ecx, [edi+21Ch]
-xor     esi, esi
-mov     [esp+80h+var_64], eax
-mov     [esp+80h+var_68], 0FFFFFFFFh
-mov     edx, [ecx+78h]
-mov     [esp+80h+var_5C], ecx
-test    edx, edx
-mov     [esp+80h+var_4C], edx
-mov     [esp+80h+var_60], esi
-jle     loc_6EF0EC
-mov     edx, [ebp+arg_4]
-jmp     short loc_6EEEEC
-; ---------------------------------------------------------------------------
-
-loc_6EEEE5:                             ; CODE XREF: TeamClass__ScoreMember+246↓j
-mov     edx, [ebp+arg_4]
-mov     ecx, [esp+80h+var_5C]
-
-loc_6EEEEC:                             ; CODE XREF: TeamClass__ScoreMember+43↑j
-mov     ecx, [ecx+6Ch]
-mov     esi, [ecx+esi*4]
-mov     ecx, [esp+80h+var_58]
-cmp     [esi+520h], ecx
-jnz     loc_6EF0D7
-or      ecx, 0FFFFFFFFh
-cmp     edx, 3          ; switch 4 cases
-ja      def_6EEF0E      ; jumptable 006EEF0E default case
-jmp     ds:jpt_6EEF0E[edx*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_6EEF15:                             ; CODE XREF: TeamClass__ScoreMember+6E↑j
-; DATA XREF: .text:jpt_6EEF0E↓o
-mov     edx, [esi]      ; jumptable 006EEF0E case 0
-lea     eax, [esp+80h+var_18]
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+48h]
-mov     ecx, eax
-mov     eax, [ecx]
-cdq
-and     edx, 0FFh
-add     eax, edx
-sar     eax, 8
-mov     word ptr [esp+80h+var_70], ax
-mov     eax, [ecx+4]
-cdq
-and     edx, 0FFh
-add     eax, edx
-mov     edx, [edi+21Ch]
-sar     eax, 8
-mov     word ptr [esp+80h+var_70+2], ax
-mov     ecx, [esp+80h+var_70]
-lea     eax, [esp+80h+var_54]
-mov     [esp+80h+var_54], ecx
-push    edx
-push    eax
-mov     ecx, 87F7E8h
-call    CellClass__GetTileData
-mov     ecx, 7FFFFFFFh
-sub     ecx, eax
-jmp     def_6EEF0E      ; jumptable 006EEF0E default case
-; ---------------------------------------------------------------------------
-
-loc_6EEF74:                             ; CODE XREF: TeamClass__ScoreMember+6E↑j
-; DATA XREF: .text:jpt_6EEF0E↓o
-mov     edx, [esi]      ; jumptable 006EEF0E case 1
-lea     eax, [esp+80h+var_C]
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+48h]
-mov     ecx, eax
-mov     eax, [ecx]
-cdq
-and     edx, 0FFh
-add     eax, edx
-sar     eax, 8
-mov     word ptr [esp+80h+var_6C], ax
-mov     eax, [ecx+4]
-cdq
-and     edx, 0FFh
-add     eax, edx
-mov     edx, [edi+21Ch]
-sar     eax, 8
-mov     word ptr [esp+80h+var_6C+2], ax
-mov     ecx, [esp+80h+var_6C]
-lea     eax, [esp+80h+var_50]
-mov     [esp+80h+var_50], ecx
-push    edx
-push    eax
-mov     ecx, 87F7E8h
-call    CellClass__GetTileData
-jmp     loc_6EF0BF
-; ---------------------------------------------------------------------------
-
-loc_6EEFCC:                             ; CODE XREF: TeamClass__ScoreMember+6E↑j
-; DATA XREF: .text:jpt_6EEF0E↓o
-lea     ecx, [edi+9Ch]  ; jumptable 006EEF0E case 2
-sub     esp, 8
-mov     ebx, [ecx]
-mov     edx, [ecx+4]
-mov     [esp+88h+var_2C], edx
-mov     eax, [ecx+8]
-lea     ecx, [esi+9Ch]
-mov     edx, ecx
-mov     [esp+88h+var_28], eax
-mov     eax, [edx]
-sub     eax, ebx
-mov     ebx, [esp+88h+var_2C]
-mov     ecx, [edx+4]
-mov     [esp+88h+var_48], eax
-sub     ecx, ebx
-mov     edx, [edx+8]
-mov     [esp+88h+var_44], ecx
-mov     ecx, [esp+88h+var_28]
-fild    [esp+88h+var_44]
-sub     edx, ecx
-mov     [esp+88h+var_40], edx
-fild    [esp+88h+var_40]
-fild    [esp+88h+var_48]
-fld     st
-fmul    st, st(1)
-fld     st(2)
-fmul    st, st(3)
-faddp   st(1), st
-fld     st(3)
-fmul    st, st(4)
-faddp   st(1), st
-fstp    [esp+88h+var_88] ; double
-fstp    st
-fstp    st
-fstp    st
-call    Math__Sqrt
-add     esp, 8
-call    Math__RoundToInt
-mov     ecx, 7FFFFFFFh
-sub     ecx, eax
-jmp     short def_6EEF0E ; jumptable 006EEF0E default case
-; ---------------------------------------------------------------------------
-
-loc_6EF04A:                             ; CODE XREF: TeamClass__ScoreMember+6E↑j
-; DATA XREF: .text:jpt_6EEF0E↓o
-lea     eax, [edi+9Ch]  ; jumptable 006EEF0E case 3
-sub     esp, 8
-mov     ebx, [eax]
-mov     ecx, [eax+4]
-mov     [esp+88h+var_20], ecx
-mov     edx, [eax+8]
-lea     eax, [esi+9Ch]
-mov     [esp+88h+var_1C], edx
-mov     edx, eax
-mov     eax, [edx]
-sub     eax, ebx
-mov     ebx, [esp+88h+var_1C]
-mov     ecx, [edx+4]
-mov     [esp+88h+var_3C], eax
-mov     eax, [esp+88h+var_20]
-mov     edx, [edx+8]
-sub     ecx, eax
-mov     [esp+88h+var_38], ecx
-sub     edx, ebx
-fild    [esp+88h+var_38]
-mov     [esp+88h+var_34], edx
-fild    [esp+88h+var_34]
-fild    [esp+88h+var_3C]
-fld     st
-fmul    st, st(1)
-fld     st(2)
-fmul    st, st(3)
-faddp   st(1), st
-fld     st(3)
-fmul    st, st(4)
-faddp   st(1), st
-fstp    [esp+88h+var_88] ; double
-fstp    st
-fstp    st
-fstp    st
-call    Math__Sqrt
-add     esp, 8
-call    Math__RoundToInt
-
-loc_6EF0BF:                             ; CODE XREF: TeamClass__ScoreMember+127↑j
-mov     ecx, eax
-
-def_6EEF0E:                             ; CODE XREF: TeamClass__ScoreMember+68↑j
-; TeamClass__ScoreMember+CF↑j ...
-cmp     ecx, [esp+80h+var_68] ; jumptable 006EEF0E default case
-jle     short loc_6EF0D3
-mov     eax, esi
-mov     [esp+80h+var_68], ecx
-mov     [esp+80h+var_64], eax
-jmp     short loc_6EF0D7
-; ---------------------------------------------------------------------------
-
-loc_6EF0D3:                             ; CODE XREF: TeamClass__ScoreMember+225↑j
-mov     eax, [esp+80h+var_64]
-
-loc_6EF0D7:                             ; CODE XREF: TeamClass__ScoreMember+5C↑j
-; TeamClass__ScoreMember+231↑j
-mov     esi, [esp+80h+var_60]
-mov     ecx, [esp+80h+var_4C]
-inc     esi
-cmp     esi, ecx
-mov     [esp+80h+var_60], esi
-jl      loc_6EEEE5
-
-loc_6EF0EC:                             ; CODE XREF: TeamClass__ScoreMember+3A↑j
-pop     edi
-pop     esi
-pop     ebx
-mov     esp, ebp
-pop     ebp
-retn    0Ch
-*/
 } }
 // 0x6EF610
 namespace gamemd { void TeamClass::PlayMemberAnimation(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x6ef610
-void __thiscall TeamClass::PlayMemberAnimation(int this, int a2, char a3)
+void __thiscall TeamClass::PlayMemberAnimation(int this, ScriptClass *aP1, char a3)
 {
   int v3; // eax
-  int v4; // esi
-  int v5; // ebx
-  void *v6; // ebp
-  void **v7; // edi
-  int *v8; // eax
-  void **v9; // eax
+  IUnknown *v4; // esi
+  CoordStruct *v5; // ebx
+  CoordStruct *v6; // ebp
+  ObjectClass *v7; // edi
+  CoordStruct *v8; // eax
+  AnimClass *v9; // eax
   _BYTE v11[12]; // [esp+10h] [ebp-Ch] BYREF
 
-  v3 = *(_DWORD *)(a2 + 4);
-  if ( a3
-    && (unsigned __int16)v3 < MEMORY[0x87F7E8][53854]
-    && (v4 = *(_DWORD *)(this + 84),
-        v5 = HIWORD(v3),
-        v6 = *(void **)(MEMORY[0x87F7E8][53851] + 4 * (unsigned __int16)v3),
+  v3 = *(_DWORD *)&aP1->__pad_0[4]; /*0x6ef61e*/
+  if ( a3 /*0x6ef65e*/
+    && (unsigned __int16)v3 < *(int *)&MEMORY[0x89F690].__pad_579C[62260]
+    && (v4 = *(IUnknown **)(this + 84),
+        v5 = (CoordStruct *)HIWORD(v3),
+        v6 = *(CoordStruct **)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * (unsigned __int16)v3),
         v4) )
   {
-    do
+    do /*0x6ef6a9*/
     {
-      v7 = (void **)__2_YAPAXI_Z(456);
-      if ( v7 )
+      v7 = (ObjectClass *)__2_YAPAXI_Z(0x1C8u); /*0x6ef66b*/
+      if ( v7 ) /*0x6ef672*/
       {
-        v8 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v4 + 72))(v4, v11);
-        v9 = AnimClass::ctor(v7, v6, v8, 0, v5, (void *)0x600, 0, 0);
-        if ( v9 )
-          BuildingClass::AimTurret(v9, (_BYTE *)v4);
+        v8 = (CoordStruct *)(*(int (__thiscall **)(IUnknown *, _BYTE *))(v4->field_0 + 72))(v4, v11); /*0x6ef689*/
+        v9 = AnimClass::ctor((void **)v7, v6, v8, 0, v5, (void *)0x600, 0, 0); /*0x6ef690*/
+        if ( v9 ) /*0x6ef697*/
+          BuildingClass::AimTurret(v9, v4); /*0x6ef69c*/
       }
-      v4 = *(_DWORD *)(v4 + 1496);
+      v4 = *(IUnknown **)&v4->__pad_524[180]; /*0x6ef6a1*/
     }
-    while ( v4 );
-    *(_BYTE *)(this + 128) = 1;
+    while ( v4 ); /*0x6ef6a9*/
+    *(_BYTE *)(this + 128) = 1; /*0x6ef6b2*/
   }
   else
   {
-    *(_BYTE *)(this + 128) = 1;
+    *(_BYTE *)(this + 128) = 1; /*0x6ef6c2*/
   }
 }
-
-/* ASM:
-sub     esp, 10h
-mov     eax, [esp+10h+arg_0]
-mov     edx, ecx
-push    ebx
-mov     bl, [esp+14h+arg_4]
-mov     eax, [eax+4]
-push    ebp
-mov     ecx, eax
-push    esi
-and     ecx, 0FFFFh
-mov     [esp+1Ch+var_10], edx
-test    bl, bl
-jz      loc_6EF6C0
-test    ecx, ecx
-jl      loc_6EF6C0
-cmp     ecx, ds:8B4160h
-jge     short loc_6EF6C0
-mov     esi, [edx+54h]
-sar     eax, 10h
-and     eax, 0FFFFh
-mov     ebx, eax
-mov     eax, ds:8B4154h
-test    esi, esi
-mov     ebp, [eax+ecx*4]
-jz      short loc_6EF6C0
-push    edi
-
-loc_6EF661:                             ; CODE XREF: TeamClass__PlayMemberAnimation+99↓j
-push    1C8h            ; Size
-call    ??2_YAPAXI_Z
-mov     edi, eax
-add     esp, 4
-test    edi, edi
-jz      short loc_6EF6A1
-mov     edx, [esi]
-push    0               ; char
-push    0               ; int
-push    600h            ; int
-push    ebx             ; int
-lea     eax, [esp+30h+var_C]
-push    0               ; int
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+48h]
-push    eax             ; int
-push    ebp             ; int
-mov     ecx, edi        ; void **
-call    AnimClass__ctor
-test    eax, eax
-jz      short loc_6EF6A1
-push    esi
-mov     ecx, eax
-call    BuildingClass__AimTurret
-
-loc_6EF6A1:                             ; CODE XREF: TeamClass__PlayMemberAnimation+62↑j
-; TeamClass__PlayMemberAnimation+87↑j
-mov     esi, [esi+5D8h]
-test    esi, esi
-jnz     short loc_6EF661
-mov     ecx, [esp+20h+var_10]
-pop     edi
-pop     esi
-pop     ebp
-mov     byte ptr [ecx+80h], 1
-pop     ebx
-add     esp, 10h
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_6EF6C0:                             ; CODE XREF: TeamClass__PlayMemberAnimation+21↑j
-; TeamClass__PlayMemberAnimation+29↑j ...
-pop     esi
-pop     ebp
-mov     byte ptr [edx+80h], 1
-pop     ebx
-add     esp, 10h
-retn    8
-*/
 } }
 // 0x6EFA10
 namespace gamemd { void TeamClass::SelectDeploymentTarget(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x6efa10
 void __thiscall TeamClass::SelectDeploymentTarget(int *this, int a2, char a3)
 {
   int v3; // esi
@@ -7273,69 +2636,69 @@ void __thiscall TeamClass::SelectDeploymentTarget(int *this, int a2, char a3)
   int v30; // [esp+50h] [ebp-8h]
   int v31; // [esp+54h] [ebp-4h]
 
-  v25 = this;
-  if ( a3 )
+  v25 = this; /*0x6efa21*/
+  if ( a3 ) /*0x6efa25*/
   {
-    v3 = *(this + 21);
-    LODWORD(v24) = -1;
-    for ( i = (_DWORD *)v3; v3; v3 = *(_DWORD *)(v3 + 1496) )
+    v3 = *(this + 21); /*0x6efa2b*/
+    LODWORD(v24) = -1; /*0x6efa2e*/
+    for ( i = (_DWORD *)v3; v3; v3 = *(_DWORD *)(v3 + 1496) ) /*0x6efa3a*/
     {
-      v5 = *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)v3 + 132))(v3) + 1532);
-      if ( TechnoClass::IsDeployed(v3)
+      v5 = *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)v3 + 132))(v3) + 1532); /*0x6efa46*/
+      if ( TechnoClass::IsDeployed(v3) /*0x6efa71*/
         && (*(_BYTE *)(v3 + 1673) || (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3) == 2)
         && v5 > SLODWORD(v24) )
       {
-        i = (_DWORD *)v3;
-        LODWORD(v24) = v5;
+        i = (_DWORD *)v3; /*0x6efa73*/
+        LODWORD(v24) = v5; /*0x6efa75*/
       }
     }
-    v6 = 0;
-    if ( i )
+    v6 = 0; /*0x6efa83*/
+    if ( i ) /*0x6efa87*/
     {
-      v7 = *(_DWORD *)(i[135] + 22016);
-      if ( v7 != -1 )
-        v6 = *(_DWORD **)(MEMORY[0x87F7E8][524945] + 4 * v7);
+      v7 = *(_DWORD *)(i[135] + 22016); /*0x6efa8f*/
+      if ( v7 != -1 ) /*0x6efa98*/
+        v6 = *(_DWORD **)&HouseClass_Array->__pad_0[4 * v7]; /*0x6efaa0*/
     }
-    StartCoords = HouseClass::GetStartCoords((_DWORD *)i[135], &v27);
-    v9 = *StartCoords;
-    v10 = StartCoords[1];
-    v29 = *StartCoords;
-    v30 = v10;
-    v31 = StartCoords[2];
-    if ( v6 )
+    StartCoords = HouseClass::GetStartCoords((_DWORD *)i[135], &v27); /*0x6efaae*/
+    v9 = *StartCoords; /*0x6efab3*/
+    v10 = StartCoords[1]; /*0x6efab7*/
+    v29 = *StartCoords; /*0x6efaba*/
+    v30 = v10; /*0x6efabe*/
+    v31 = StartCoords[2]; /*0x6efac5*/
+    if ( v6 ) /*0x6efac9*/
     {
-      v14 = HouseClass::GetStartCoords(v6, &v27);
-      v15 = v14[1] - v30;
-      v16 = v14[2];
-      LODWORD(v27) = *v14 - v9;
-      LODWORD(v24) = -v15;
-      v28 = v16;
-      v17 = Math::CalcAngle((double)-v15, (double)SLODWORD(v27));
-      v13 = Math::RoundToInt((v17 - 1.570796326794897) * -10430.06004058427);
-      LOWORD(v24) = v13;
+      v14 = HouseClass::GetStartCoords(v6, &v27); /*0x6efaf7*/
+      v15 = v14[1] - v30; /*0x6efb0f*/
+      v16 = v14[2]; /*0x6efb11*/
+      LODWORD(v27) = *v14 - v9; /*0x6efb14*/
+      LODWORD(v24) = -v15; /*0x6efb1e*/
+      v28 = v16; /*0x6efb22*/
+      v17 = Math::CalcAngle((double)-v15, (double)SLODWORD(v27)); /*0x6efb31*/
+      v13 = Math::RoundToInt((v17 - 1.570796326794897) * -10430.06004058427); /*0x6efb45*/
+      LOWORD(v24) = v13; /*0x6efb4a*/
     }
     else
     {
-      v11 = Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 0, 255);
-      LOBYTE(v12) = 0;
-      HIBYTE(v12) = v11;
-      v13 = v12;
+      v11 = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 255); /*0x6efadc*/
+      LOBYTE(v12) = 0; /*0x6efae1*/
+      HIBYTE(v12) = v11; /*0x6efae3*/
+      v13 = v12; /*0x6efaea*/
     }
-    LODWORD(v24) = v13 - 0x3FFF;
-    v18 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3444) << 8;
-    v24 = (double)SLODWORD(v24) * -0.00009587672516830327;
-    v27 = (double)v18;
-    v26 = (double)v30;
-    v19 = Math::SinCos(v24);
-    LODWORD(v26) = Math::RoundToInt(v26 - v19 * v27);
-    v20 = Math::ArcTan2(v24);
-    LOWORD(v24) = (int)Math::RoundToInt(v20 * v27 + (double)v29) / 256;
-    WORD1(v24) = SLODWORD(v26) / 256;
-    v23 = LODWORD(v24);
-    LODWORD(v24) = 0;
-    v21 = (*(int (__thiscall **)(_DWORD *))(*i + 132))(i);
-    v23 = *LayerClass::Pathfinding_Find(
-             MEMORY[0x87F7E8],
+    LODWORD(v24) = v13 - 0x3FFF; /*0x6efb61*/
+    v18 = HIDWORD(MEMORY[0x8871E0]->?) << 8; /*0x6efb6f*/
+    v24 = (double)SLODWORD(v24) * -0.00009587672516830327; /*0x6efb7c*/
+    v27 = (double)v18; /*0x6efb8e*/
+    v26 = (double)v30; /*0x6efb96*/
+    v19 = Math::SinCos(v24); /*0x6efb9a*/
+    LODWORD(v26) = Math::RoundToInt(v26 - v19 * v27); /*0x6efbae*/
+    v20 = Math::ArcTan2(v24); /*0x6efbb2*/
+    LOWORD(v24) = (int)Math::RoundToInt(v20 * v27 + (double)v29) / 256; /*0x6efbd7*/
+    WORD1(v24) = SLODWORD(v26) / 256; /*0x6efbef*/
+    v23 = LODWORD(v24); /*0x6efc01*/
+    LODWORD(v24) = 0; /*0x6efc0d*/
+    v21 = (*(int (__thiscall **)(_DWORD *))(*i + 132))(i); /*0x6efc1e*/
+    v23 = *LayerClass::Pathfinding_Find( /*0x6efc4b*/
+             &MEMORY[0x87F7E8],
              (int)&v26,
              &v26,
              (__int16 *)&v23,
@@ -7352,226 +2715,16 @@ void __thiscall TeamClass::SelectDeploymentTarget(int *this, int a2, char a3)
              (__int16 *)&v24,
              0,
              0);
-    v22 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v23);
-    TeamClass::SelectMember((int)v25, (int)v22);
-    this = v25;
+    v22 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v23); /*0x6efc4f*/
+    TeamClass::SelectMember((int)v25, (int)v22); /*0x6efc59*/
+    this = v25; /*0x6efc5e*/
   }
-  TeamClass::UpdateMembers((int)this);
+  TeamClass::UpdateMembers((int)this); /*0x6efc62*/
 }
-
-/* ASM:
-push    ebp
-mov     ebp, esp
-and     esp, 0FFFFFFF8h
-sub     esp, 3Ch
-mov     al, [ebp+arg_4]
-push    ebx
-push    esi
-push    edi
-test    al, al
-mov     [esp+48h+var_2C], ecx
-jz      loc_6EFC62
-mov     esi, [ecx+54h]
-mov     dword ptr [esp+48h+var_38], 0FFFFFFFFh
-test    esi, esi
-mov     edi, esi
-jz      short loc_6EFA83
-
-loc_6EFA3C:                             ; CODE XREF: TeamClass__SelectDeploymentTarget+71↓j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+84h]
-mov     ebx, [eax+5FCh]
-mov     ecx, esi
-call    TechnoClass__IsDeployed
-test    al, al
-jz      short loc_6EFA79
-mov     al, [esi+689h]
-test    al, al
-jnz     short loc_6EFA6D
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+2Ch]
-cmp     eax, 2
-jnz     short loc_6EFA79
-
-loc_6EFA6D:                             ; CODE XREF: TeamClass__SelectDeploymentTarget+4F↑j
-cmp     ebx, dword ptr [esp+48h+var_38]
-jle     short loc_6EFA79
-mov     edi, esi
-mov     dword ptr [esp+48h+var_38], ebx
-
-loc_6EFA79:                             ; CODE XREF: TeamClass__SelectDeploymentTarget+45↑j
-; TeamClass__SelectDeploymentTarget+5B↑j ...
-mov     esi, [esi+5D8h]
-test    esi, esi
-jnz     short loc_6EFA3C
-
-loc_6EFA83:                             ; CODE XREF: TeamClass__SelectDeploymentTarget+2A↑j
-xor     esi, esi
-test    edi, edi
-jz      short loc_6EFAA3
-mov     eax, [edi+21Ch]
-mov     eax, [eax+5600h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_6EFAA3
-mov     ecx, ds:0A8022Ch
-mov     esi, [ecx+eax*4]
-
-loc_6EFAA3:                             ; CODE XREF: TeamClass__SelectDeploymentTarget+77↑j
-; TeamClass__SelectDeploymentTarget+88↑j
-mov     ecx, [edi+21Ch]
-lea     edx, [esp+48h+var_20]
-push    edx
-call    HouseClass__GetStartCoords
-mov     ebx, [eax]
-test    esi, esi
-mov     ecx, [eax+4]
-mov     [esp+48h+var_C], ebx
-mov     [esp+48h+var_8], ecx
-mov     edx, [eax+8]
-mov     [esp+48h+var_4], edx
-jnz     short loc_6EFAF0
-mov     eax, ds:0A8B230h
-push    0FFh
-push    esi
-lea     ecx, [eax+218h]
-call    Random__Range
-xor     ecx, ecx
-mov     ch, al
-mov     word ptr [esp+48h+var_38], cx
-mov     eax, dword ptr [esp+48h+var_38]
-jmp     short loc_6EFB53
-; ---------------------------------------------------------------------------
-
-loc_6EFAF0:                             ; CODE XREF: TeamClass__SelectDeploymentTarget+B9↑j
-lea     edx, [esp+48h+var_20]
-mov     ecx, esi
-push    edx
-call    HouseClass__GetStartCoords
-mov     edx, eax
-sub     esp, 8
-sub     esp, 8
-mov     eax, [edx]
-sub     eax, ebx
-mov     ebx, [esp+58h+var_8]
-mov     ecx, [edx+4]
-sub     ecx, ebx
-mov     edx, [edx+8]
-mov     dword ptr [esp+58h+var_20], eax
-fild    dword ptr [esp+58h+var_20]
-neg     ecx
-mov     dword ptr [esp+58h+var_38], ecx
-mov     [esp+58h+var_18], edx
-fstp    [esp+58h+var_50] ; double
-fild    dword ptr [esp+58h+var_38]
-fstp    [esp+58h+var_58] ; double
-call    Math__CalcAngle
-fsub    ds:dbl_7E2820
-add     esp, 10h
-fmul    ds:dbl_7E2818
-call    Math__RoundToInt
-mov     word ptr [esp+48h+var_38], ax
-mov     eax, dword ptr [esp+48h+var_38]
-
-loc_6EFB53:                             ; CODE XREF: TeamClass__SelectDeploymentTarget+DE↑j
-movsx   eax, ax
-mov     ecx, ds:8871E0h
-sub     eax, 3FFFh
-mov     dword ptr [esp+48h+var_38], eax
-fild    dword ptr [esp+48h+var_38]
-mov     edx, [ecx+0D74h]
-shl     edx, 8
-fmul    ds:dbl_7E2810
-mov     dword ptr [esp+48h+var_28], edx
-fstp    [esp+48h+var_38]
-fild    dword ptr [esp+48h+var_28]
-mov     esi, dword ptr [esp+48h+var_38+4]
-mov     ebx, dword ptr [esp+48h+var_38]
-push    esi
-push    ebx             ; double
-fstp    [esp+50h+var_20]
-fild    [esp+50h+var_8]
-fstp    [esp+50h+var_28]
-call    Math__SinCos
-fmul    [esp+50h+var_20]
-fsubr   [esp+50h+var_28]
-call    Math__RoundToInt
-push    esi
-push    ebx             ; double
-mov     dword ptr [esp+58h+var_28], eax
-call    Math__ArcTan2
-fmul    [esp+58h+var_20]
-add     esp, 10h
-fiadd   [esp+48h+var_C]
-call    Math__RoundToInt
-cdq
-and     edx, 0FFh
-lea     esi, [esp+48h+var_38]
-add     eax, edx
-sar     eax, 8
-mov     word ptr [esp+48h+var_38], ax
-mov     eax, dword ptr [esp+48h+var_28]
-cdq
-and     edx, 0FFh
-add     eax, edx
-xor     edx, edx
-sar     eax, 8
-push    edx
-mov     word ptr [esp+4Ch+var_38+2], ax
-mov     ecx, dword ptr [esp+4Ch+var_38]
-push    edx
-push    esi
-mov     eax, 3
-push    1
-mov     [esp+58h+var_3C], ecx
-push    edx
-mov     ecx, eax
-push    edx
-push    edx
-push    ecx
-push    eax
-push    edx
-mov     word ptr [esp+70h+var_38], dx
-mov     word ptr [esp+70h+var_38+2], dx
-push    edx
-mov     edx, [edi]
-push    0FFFFFFFFh
-mov     ecx, edi
-call    dword ptr [edx+84h]
-mov     eax, [eax+67Ch]
-lea     ecx, [esp+78h+var_3C]
-push    eax
-lea     edx, [esp+7Ch+var_28]
-push    ecx
-push    edx
-mov     ecx, 87F7E8h
-call    LayerClass__Pathfinding_Find
-mov     eax, [eax]
-lea     ecx, [esp+48h+var_3C]
-push    ecx
-mov     ecx, 87F7E8h
-mov     [esp+4Ch+var_3C], eax
-call    CellCoord__To_CellObj
-mov     ecx, [esp+48h+var_2C]
-push    eax
-call    TeamClass__SelectMember
-mov     ecx, [esp+48h+var_2C]
-
-loc_6EFC62:                             ; CODE XREF: TeamClass__SelectDeploymentTarget+15↑j
-call    TeamClass__UpdateMembers
-pop     edi
-pop     esi
-pop     ebx
-mov     esp, ebp
-pop     ebp
-retn    8
-*/
 } }
 // 0x6F0130
 namespace gamemd { void TeamClass::CheckMemberSuperWeapon(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x6f0130
 void __thiscall TeamClass::CheckMemberSuperWeapon(int this, int a2, int a3)
 {
   int *v3; // esi
@@ -7601,629 +2754,199 @@ void __thiscall TeamClass::CheckMemberSuperWeapon(int this, int a2, int a3)
   int v27; // [esp+38h] [ebp+4h]
   int v28; // [esp+38h] [ebp+4h]
 
-  v3 = *(int **)(this + 84);
-  v4 = -1;
-  v23 = this;
-  v5 = v3;
-  if ( v3 )
+  v3 = *(int **)(this + 84); /*0x6f0136*/
+  v4 = -1; /*0x6f0139*/
+  v23 = this; /*0x6f013f*/
+  v5 = v3; /*0x6f0143*/
+  if ( v3 ) /*0x6f0145*/
   {
-    do
+    do /*0x6f0188*/
     {
-      v6 = *(_DWORD *)((*(int (__thiscall **)(int *))(*v3 + 132))(v3) + 1532);
-      if ( TechnoClass::IsDeployed((int)v3)
+      v6 = *(_DWORD *)((*(int (__thiscall **)(int *))(*v3 + 132))(v3) + 1532); /*0x6f0151*/
+      if ( TechnoClass::IsDeployed((int)v3) /*0x6f017a*/
         && (*((_BYTE *)v3 + 1673) || (*(int (__thiscall **)(int *))(*v3 + 44))(v3) == 2)
         && v6 > v4 )
       {
-        v5 = v3;
-        v4 = v6;
+        v5 = v3; /*0x6f017c*/
+        v4 = v6; /*0x6f017e*/
       }
-      v3 = (int *)v3[374];
+      v3 = (int *)v3[374]; /*0x6f0180*/
     }
-    while ( v3 );
-    this = v23;
+    while ( v3 ); /*0x6f0188*/
+    this = v23; /*0x6f018a*/
   }
-  v7 = 0;
-  if ( !v5 )
-    goto LABEL_33;
-  v8 = (int *)v5[135];
-  DefaultTimer = 0;
-  if ( v8[153] <= 0 )
-    goto LABEL_33;
-  v9 = (int *)v8[150];
-  v10 = v8[153];
-  do
+  v7 = 0; /*0x6f018e*/
+  if ( !v5 ) /*0x6f0192*/
+    goto LABEL_33; /*0x6f0192*/
+  v8 = (int *)v5[135]; /*0x6f0198*/
+  DefaultTimer = 0; /*0x6f019e*/
+  if ( v8[153] <= 0 ) /*0x6f01aa*/
+    goto LABEL_33; /*0x6f01aa*/
+  v9 = (int *)v8[150]; /*0x6f01b0*/
+  v10 = v8[153]; /*0x6f01b6*/
+  do /*0x6f01d7*/
   {
-    v11 = *(_DWORD *)(*(_DWORD *)(*v9 + 40) + 180);
-    if ( v11 == 3 )
-      v7 = *v9;
-    if ( v11 == 4 )
-      DefaultTimer = *v9;
-    ++v9;
-    --v10;
+    v11 = *(_DWORD *)(*(_DWORD *)(*v9 + 40) + 180); /*0x6f01bd*/
+    if ( v11 == 3 ) /*0x6f01c6*/
+      v7 = *v9; /*0x6f01c8*/
+    if ( v11 == 4 ) /*0x6f01cd*/
+      DefaultTimer = *v9; /*0x6f01cf*/
+    ++v9; /*0x6f01d3*/
+    --v10; /*0x6f01d6*/
   }
-  while ( v10 );
-  if ( !v7 || !DefaultTimer )
+  while ( v10 ); /*0x6f01d7*/
+  if ( !v7 || !DefaultTimer ) /*0x6f01e7*/
   {
 LABEL_32:
-    this = v23;
+    this = v23; /*0x6f038d*/
 LABEL_33:
-    *(_BYTE *)(this + 128) = 1;
-    return;
+    *(_BYTE *)(this + 128) = 1; /*0x6f0391*/
+    return; /*0x6f0391*/
   }
-  if ( !*(_BYTE *)(v7 + 111) || HouseClass::GetPowerRatio(v8) < 1.0 )
+  if ( !*(_BYTE *)(v7 + 111) || HouseClass::GetPowerRatio(v8) < 1.0 ) /*0x6f020a*/
   {
-    v21 = *(_DWORD *)(v7 + 48);
-    v22 = *(_DWORD *)(v7 + 56);
-    if ( v21 != -1 )
+    v21 = *(_DWORD *)(v7 + 48); /*0x6f032b*/
+    v22 = *(_DWORD *)(v7 + 56); /*0x6f032e*/
+    if ( v21 != -1 ) /*0x6f0334*/
     {
-      if ( dword_A8ED54[12] - v21 >= v22 )
+      if ( (int)MEMORY[0xA8ED84] - v21 >= v22 ) /*0x6f033f*/
       {
-        v28 = 0;
-        goto LABEL_28;
+        v28 = 0; /*0x6f0381*/
+        goto LABEL_28; /*0x6f0389*/
       }
-      v22 -= dword_A8ED54[12] - v21;
+      v22 -= (int)MEMORY[0xA8ED84] - v21; /*0x6f0341*/
     }
-    v28 = v22;
+    v28 = v22; /*0x6f0343*/
 LABEL_28:
-    DefaultTimer = Super::GetDefaultTimer((_DWORD *)v7);
-    if ( *(_BYTE *)(v7 + 109) && 1.0 - *(float *)(MEMORY[0x87F7E8][7806] + 3440) >= (double)v28 / (double)DefaultTimer )
-      return;
-    goto LABEL_32;
+    DefaultTimer = Super::GetDefaultTimer((_DWORD *)v7); /*0x6f0347*/
+    if ( *(_BYTE *)(v7 + 109) && 1.0 - *(float *)&MEMORY[0x8871E0]->? >= (double)v28 / (double)DefaultTimer ) /*0x6f037d*/
+      return; /*0x6f037d*/
+    goto LABEL_32; /*0x6f037d*/
   }
-  v12 = GetSuperWeaponTypeFlag(*(void **)(a2 + 4));
-  v25[0] = v5[39];
-  v25[1] = v5[40];
-  v13 = *v5;
-  v25[2] = v5[41];
-  v14 = *(_DWORD *)(v23 + 36);
-  LOBYTE(v14) = *(_BYTE *)(v14 + 247);
-  v15 = (*(int (__thiscall **)(int *, int, _DWORD *, int))(v13 + 964))(v5, v12, v25, v14);
-  v16 = v23;
-  v17 = v15;
-  if ( v15 )
+  v12 = GetSuperWeaponTypeFlag(*(_DWORD *)(a2 + 4)); /*0x6f0217*/
+  v25[0] = v5[39]; /*0x6f0228*/
+  v25[1] = v5[40]; /*0x6f022f*/
+  v13 = *v5; /*0x6f0233*/
+  v25[2] = v5[41]; /*0x6f0239*/
+  v14 = *(_DWORD *)(v23 + 36); /*0x6f0241*/
+  LOBYTE(v14) = *(_BYTE *)(v14 + 247); /*0x6f0244*/
+  v15 = (*(int (__thiscall **)(int *, int, _DWORD *, int))(v13 + 964))(v5, v12, v25, v14); /*0x6f0253*/
+  v16 = v23; /*0x6f0259*/
+  v17 = v15; /*0x6f025d*/
+  if ( v15 ) /*0x6f0261*/
   {
-    v18 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(v23 + 52) + 72))(*(_DWORD *)(v23 + 52), v26);
-    LOWORD(v27) = *v18 / 256;
-    HIWORD(v27) = v18[1] / 256;
-    v19 = *(_DWORD *)(v7 + 40);
-    v23 = v27;
-    SuperWeapon::FireSuperWeaponHouseClass((#375 *)v8, *(_DWORD *)(v19 + 180), (int)&v23);
-    v20 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)v17 + 72))(v17, v26);
-    LOWORD(v27) = *v20 / 256;
-    HIWORD(v27) = v20[1] / 256;
-    v23 = v27;
-    SuperWeapon::FireSuperWeaponHouseClass((#375 *)v8, *(_DWORD *)(*(_DWORD *)(DefaultTimer + 40) + 180), (int)&v23);
-    TeamClass::SelectMember(v16, v17);
+    v18 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(v23 + 52) + 72))(*(_DWORD *)(v23 + 52), v26); /*0x6f0271*/
+    LOWORD(v27) = *v18 / 256; /*0x6f0284*/
+    HIWORD(v27) = v18[1] / 256; /*0x6f029c*/
+    v19 = *(_DWORD *)(v7 + 40); /*0x6f02a5*/
+    v23 = v27; /*0x6f02a8*/
+    SuperWeapon::FireSuperWeaponHouseClass((#375 *)v8, *(_DWORD *)(v19 + 180), (int)&v23); /*0x6f02b6*/
+    v20 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)v17 + 72))(v17, v26); /*0x6f02c4*/
+    LOWORD(v27) = *v20 / 256; /*0x6f02d7*/
+    HIWORD(v27) = v20[1] / 256; /*0x6f02ef*/
+    v23 = v27; /*0x6f02fc*/
+    SuperWeapon::FireSuperWeaponHouseClass((#375 *)v8, *(_DWORD *)(*(_DWORD *)(DefaultTimer + 40) + 180), (int)&v23); /*0x6f030d*/
+    TeamClass::SelectMember(v16, v17); /*0x6f0315*/
   }
-  *(_BYTE *)(v16 + 128) = 1;
+  *(_BYTE *)(v16 + 128) = 1; /*0x6f031b*/
 }
-
-/* ASM:
-sub     esp, 20h
-push    ebx
-push    ebp
-push    esi
-mov     esi, [ecx+54h]
-or      ebx, 0FFFFFFFFh
-push    edi
-test    esi, esi
-mov     [esp+30h+var_20], ecx
-mov     ebp, esi
-jz      short loc_6F018E
-
-loc_6F0147:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+58↓j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+84h]
-mov     edi, [eax+5FCh]
-mov     ecx, esi
-call    TechnoClass__IsDeployed
-test    al, al
-jz      short loc_6F0180
-mov     al, [esi+689h]
-test    al, al
-jnz     short loc_6F0178
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+2Ch]
-cmp     eax, 2
-jnz     short loc_6F0180
-
-loc_6F0178:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+3A↑j
-cmp     edi, ebx
-jle     short loc_6F0180
-mov     ebp, esi
-mov     ebx, edi
-
-loc_6F0180:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+30↑j
-; TeamClass__CheckMemberSuperWeapon+46↑j ...
-mov     esi, [esi+5D8h]
-test    esi, esi
-jnz     short loc_6F0147
-mov     ecx, [esp+30h+var_20]
-
-loc_6F018E:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+15↑j
-xor     ebx, ebx
-cmp     ebp, ebx
-jz      loc_6F0391
-mov     edi, [ebp+21Ch]
-mov     [esp+30h+var_1C], ebx
-mov     eax, [edi+264h]
-cmp     eax, ebx
-jle     loc_6F0391
-mov     edx, [edi+258h]
-mov     esi, eax
-
-loc_6F01B8:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+A7↓j
-mov     eax, [edx]
-mov     ecx, [eax+28h]
-mov     ecx, [ecx+0B4h]
-cmp     ecx, 3
-jnz     short loc_6F01CA
-mov     ebx, eax
-
-loc_6F01CA:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+96↑j
-cmp     ecx, 4
-jnz     short loc_6F01D3
-mov     [esp+30h+var_1C], eax
-
-loc_6F01D3:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+9D↑j
-add     edx, 4
-dec     esi
-jnz     short loc_6F01B8
-test    ebx, ebx
-jz      loc_6F038D
-mov     eax, [esp+30h+var_1C]
-test    eax, eax
-jz      loc_6F038D
-mov     al, [ebx+6Fh]
-test    al, al
-jz      loc_6F032B
-mov     ecx, edi
-call    HouseClass__GetPowerRatio
-fcomp   ds:dbl_7E1718
-fnstsw  ax
-test    ah, 1
-jnz     loc_6F032B
-mov     edx, [esp+30h+arg_0]
-mov     ecx, [edx+4]
-call    GetSuperWeaponTypeFlag
-lea     ecx, [ebp+9Ch]
-mov     edx, [ebp+9Ch]
-mov     [esp+30h+var_18], edx
-mov     edx, [ecx+4]
-mov     [esp+30h+var_14], edx
-mov     edx, [ebp+0]
-mov     ecx, [ecx+8]
-mov     [esp+30h+var_10], ecx
-mov     ecx, [esp+30h+var_20]
-mov     ecx, [ecx+24h]
-mov     cl, [ecx+0F7h]
-push    ecx
-lea     ecx, [esp+34h+var_18]
-push    ecx
-push    eax
-mov     ecx, ebp
-call    dword ptr [edx+3C4h]
-mov     ebp, [esp+30h+var_20]
-mov     esi, eax
-test    esi, esi
-jz      loc_6F031A
-mov     ecx, [ebp+34h]
-lea     eax, [esp+30h+var_C]
-push    eax
-mov     edx, [ecx]
-call    dword ptr [edx+48h]
-mov     ecx, eax
-mov     eax, [ecx]
-cdq
-and     edx, 0FFh
-add     eax, edx
-sar     eax, 8
-mov     word ptr [esp+30h+arg_0], ax
-mov     eax, [ecx+4]
-cdq
-and     edx, 0FFh
-add     eax, edx
-lea     edx, [esp+30h+var_20]
-sar     eax, 8
-mov     word ptr [esp+30h+arg_0+2], ax
-mov     ecx, [esp+30h+arg_0]
-mov     eax, [ebx+28h]
-mov     [esp+30h+var_20], ecx
-push    edx
-mov     ecx, [eax+0B4h]
-push    ecx
-mov     ecx, edi
-call    SuperWeapon__FireSuperWeaponHouseClass
-mov     edx, [esi]
-lea     eax, [esp+30h+var_C]
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+48h]
-mov     ecx, eax
-mov     eax, [ecx]
-cdq
-and     edx, 0FFh
-add     eax, edx
-sar     eax, 8
-mov     word ptr [esp+30h+arg_0], ax
-mov     eax, [ecx+4]
-cdq
-and     edx, 0FFh
-add     eax, edx
-lea     edx, [esp+30h+var_20]
-sar     eax, 8
-mov     word ptr [esp+30h+arg_0+2], ax
-mov     ecx, [esp+30h+arg_0]
-mov     eax, [esp+30h+var_1C]
-mov     [esp+30h+var_20], ecx
-push    edx
-mov     ecx, [eax+28h]
-mov     edx, [ecx+0B4h]
-mov     ecx, edi
-push    edx
-call    SuperWeapon__FireSuperWeaponHouseClass
-push    esi
-mov     ecx, ebp
-call    TeamClass__SelectMember
-
-loc_6F031A:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+131↑j
-pop     edi
-mov     byte ptr [ebp+80h], 1
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 20h
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_6F032B:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+C2↑j
-; TeamClass__CheckMemberSuperWeapon+DA↑j
-mov     edx, [ebx+30h]
-mov     ecx, [ebx+38h]
-cmp     edx, 0FFFFFFFFh
-jz      short loc_6F0343
-mov     eax, dword_A8ED54+30h
-sub     eax, edx
-cmp     eax, ecx
-jge     short loc_6F0381
-sub     ecx, eax
-
-loc_6F0343:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+204↑j
-mov     [esp+30h+arg_0], ecx
-
-loc_6F0347:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+259↓j
-mov     ecx, ebx
-call    Super__GetDefaultTimer
-mov     [esp+30h+var_1C], eax
-mov     al, [ebx+6Dh]
-fild    [esp+30h+var_1C]
-test    al, al
-jz      short loc_6F038B
-fild    [esp+30h+arg_0]
-mov     eax, ds:8871E0h
-fdiv    st, st(1)
-fld     ds:flt_7E2AC8
-fsub    dword ptr [eax+0D70h]
-fcompp
-fnstsw  ax
-test    ah, 1
-fstp    st
-jz      short loc_6F0398
-jmp     short loc_6F038D
-; ---------------------------------------------------------------------------
-
-loc_6F0381:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+20F↑j
-mov     [esp+30h+arg_0], 0
-jmp     short loc_6F0347
-; ---------------------------------------------------------------------------
-
-loc_6F038B:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+22B↑j
-fstp    st
-
-loc_6F038D:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+AB↑j
-; TeamClass__CheckMemberSuperWeapon+B7↑j ...
-mov     ecx, [esp+30h+var_20]
-
-loc_6F0391:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+62↑j
-; TeamClass__CheckMemberSuperWeapon+7A↑j
-mov     byte ptr [ecx+80h], 1
-
-loc_6F0398:                             ; CODE XREF: TeamClass__CheckMemberSuperWeapon+24D↑j
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 20h
-retn    8
-*/
 } }
 // 0x6F0450
 namespace gamemd { void* TeamClass::ProcessEvent(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void **__thiscall TeamClass::_vt08(void **Block, char a2)
+TeamClass *__thiscall TeamClass::ProcessEvent(void **Block, char a2)
 {
-  TeamClass::Destructor(Block);
-  if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(Block);
-  return Block;
+  TeamClass::Destructor(Block); /*0x6f0453*/
+  if ( (a2 & 1) != 0 ) /*0x6f045d*/
+    __3_YAXPAX_Z(Block); /*0x6f0460*/
+  return (TeamClass *)Block; /*0x6f046a*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-call    TeamClass__Destructor
-test    [esp+4+arg_0], 1
-jz      short loc_6F0468
-push    esi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_6F0468:                             ; CODE XREF: TeamClass__ProcessEvent+D↑j
-mov     eax, esi
-pop     esi
-retn    4
-*/
 } }
 // 0x6F09C0
 namespace gamemd { int TeamClass::CreateOneOf(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x6f09c0
-int __thiscall TeamClass::CreateOneOf(int this, void *a2)
+int __thiscall TeamClass::CreateOneOf(int this, HouseClass *aP1)
 {
-  void *OwnerHouse; // edi
+  HouseClass *OwnerHouse; // edi
   int v4; // eax
   int v6; // eax
 
-  Debug::Log();
-  OwnerHouse = a2;
-  if ( !a2 )
+  Debug::Log(); /*0x6f09c9*/
+  OwnerHouse = aP1; /*0x6f09ce*/
+  if ( !aP1 ) /*0x6f09d7*/
   {
-    OwnerHouse = *(void **)(this + 196);
-    if ( !OwnerHouse )
+    OwnerHouse = *(HouseClass **)(this + 196); /*0x6f09d9*/
+    if ( !OwnerHouse ) /*0x6f09e1*/
     {
-      if ( !BuildingType::IsSpecialType(*(void **)(this + 200)) )
-        return 0;
-      OwnerHouse = (void *)BuildingType::FindOwnerHouse(*(void **)(this + 200));
-      if ( !OwnerHouse )
-        return 0;
+      if ( !BuildingType::IsSpecialType(*(void **)(this + 200)) ) /*0x6f09e9*/
+        return 0; /*0x6f09e9*/
+      OwnerHouse = (HouseClass *)BuildingType::FindOwnerHouse(*(void **)(this + 200)); /*0x6f09fd*/
+      if ( !OwnerHouse ) /*0x6f0a01*/
+        return 0; /*0x6f0a01*/
     }
   }
-  if ( !MEMORY[0x87F7E8][539633] )
+  if ( !*(_DWORD *)&HouseClass_Player.__pad_5568[21752] ) /*0x6f0a0a*/
   {
-    v4 = *(_DWORD *)(this + 184);
-    if ( v4 >= 0 )
+    v4 = *(_DWORD *)(this + 184); /*0x6f0a0c*/
+    if ( v4 >= 0 ) /*0x6f0a14*/
     {
-      if ( MEMORY[0x87F7E8][536212] )
+      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] ) /*0x6f0a1e*/
       {
-        if ( TeamClass::CountActiveTeamsForType(OwnerHouse, this) >= *(_DWORD *)(this + 184) )
-          return 0;
+        if ( TeamClass::CountActiveTeamsForType(OwnerHouse, (ObjectClass *)this) >= *(_DWORD *)(this + 184) ) /*0x6f0a3d*/
+          return 0; /*0x6f0a3d*/
       }
-      else if ( *(_DWORD *)(this + 220) >= v4 )
+      else if ( *(_DWORD *)(this + 220) >= v4 ) /*0x6f0a26*/
       {
-        return 0;
+        return 0; /*0x6f0a2c*/
       }
     }
   }
-  Debug::Log();
-  v6 = __2_YAPAXI_Z(160);
-  if ( !v6 )
-    return 0;
-  return MissionClass::Construct(v6, this, (int)OwnerHouse, 0);
+  Debug::Log(); /*0x6f0a48*/
+  v6 = __2_YAPAXI_Z(0xA0u); /*0x6f0a52*/
+  if ( !v6 ) /*0x6f0a5c*/
+    return 0; /*0x6f0a5c*/
+  return MissionClass::Construct(v6, (AbstractClass *)this, (AbstractClass *)OwnerHouse, 0); /*0x6f0a28*/
 }
-
-/* ASM:
-push    esi
-push    edi
-mov     esi, ecx
-push    offset aCreateOneOf ; "Create_One_Of...\n"
-call    Debug__Log
-mov     edi, [esp+0Ch+arg_0]
-add     esp, 4
-test    edi, edi
-jnz     short loc_6F0A03
-mov     edi, [esi+0C4h]
-test    edi, edi
-jnz     short loc_6F0A03
-mov     ecx, [esi+0C8h]
-call    BuildingType__IsSpecialType
-test    al, al
-jz      short loc_6F0A28
-mov     ecx, [esi+0C8h]
-call    BuildingType__FindOwnerHouse
-mov     edi, eax
-test    edi, edi
-jz      short loc_6F0A28
-
-loc_6F0A03:                             ; CODE XREF: TeamClass__CreateOneOf+17↑j
-; TeamClass__CreateOneOf+21↑j
-mov     eax, ds:0A8E7ACh
-test    eax, eax
-jnz     short loc_6F0A3F
-mov     eax, [esi+0B8h]
-test    eax, eax
-jl      short loc_6F0A3F
-mov     ecx, ds:0A8B238h
-test    ecx, ecx
-jnz     short loc_6F0A2F
-cmp     [esi+0DCh], eax
-jl      short loc_6F0A3F
-
-loc_6F0A28:                             ; CODE XREF: TeamClass__CreateOneOf+30↑j
-; TeamClass__CreateOneOf+41↑j ...
-pop     edi
-xor     eax, eax
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_6F0A2F:                             ; CODE XREF: TeamClass__CreateOneOf+5E↑j
-push    esi
-mov     ecx, edi
-call    TeamClass__CountActiveTeamsForType
-cmp     eax, [esi+0B8h]
-jge     short loc_6F0A28
-
-loc_6F0A3F:                             ; CODE XREF: TeamClass__CreateOneOf+4A↑j
-; TeamClass__CreateOneOf+54↑j ...
-lea     eax, [esi+64h]
-push    eax
-push    offset aCreatingANewTe ; "Creating a new team named '%s'.\n"
-call    Debug__Log
-push    0A0h            ; Size
-call    ??2_YAPAXI_Z
-add     esp, 0Ch
-test    eax, eax
-jz      short loc_6F0A28
-push    0
-push    edi
-push    esi
-mov     ecx, eax
-call    MissionClass__Construct
-pop     edi
-pop     esi
-retn    4
-*/
 } }
 // 0x6F1E20
 namespace gamemd { bool TriggerClass::EvaluateObjectForTrigger(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_6F1E20(int this, int a2, int a3)
+bool __thiscall TriggerClass::EvaluateObjectForTrigger(int this, TechnoClass *aP1, int a3)
 {
-  int v4; // eax
+  int queuedMission; // eax
   int v5; // eax
   int v6; // eax
   bool result; // al
 
-  v4 = *(_DWORD *)(a2 + 1492);
-  result = 0;
-  if ( (!v4 || this != *(_DWORD *)(v4 + 36)) && *(int *)(a2 + 108) > 0 )
+  queuedMission = aP1[1].queuedMission; /*0x6f1e28*/
+  result = 0; /*0x6f1f1b*/
+  if ( (!queuedMission || this != *(_DWORD *)(queuedMission + 36)) && aP1->health > 0 ) /*0x6f1e40*/
   {
-    if ( *(_BYTE *)(a2 + 144) )
+    if ( aP1->isAliveFlag ) /*0x6f1e46*/
     {
-      if ( !*(_BYTE *)(a2 + 129) && !Team::AllMembersValid((int *)a2) && *(_DWORD *)(a2 + 540) == a3 )
+      if ( !aP1->inLimbo && !Team::AllMembersValid((int *)aP1->__pad_0) && aP1->focus == (void *)a3 ) /*0x6f1e7d*/
       {
-        if ( (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 388))(a2) == -1
-          || (v5 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 388))(a2), IPersistStream::SetField(v5)) )
+        if ( (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)aP1->__pad_0 + 388))(aP1) == -1 /*0x6f1e9e*/
+          || (v5 = (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)aP1->__pad_0 + 388))(aP1),
+              IPersistStream::SetField(v5)) )
         {
-          if ( (*(_BYTE *)(a2 + 1057) || *(_BYTE *)(this + 169)) && (*(_BYTE *)(a2 + 1058) || !*(_BYTE *)(this + 169)) )
+          if ( (aP1->__pad_3F7[42] || *(_BYTE *)(this + 169)) && (aP1->__pad_3F7[43] || !*(_BYTE *)(this + 169)) ) /*0x6f1ec5*/
           {
-            v6 = *(_DWORD *)(a2 + 1492);
-            if ( (!v6 || *(_DWORD *)(*(_DWORD *)(v6 + 36) + 180) < *(_DWORD *)(this + 180))
-              && ((*(int (__thiscall **)(int))(*(_DWORD *)a2 + 44))(a2) != 2
-               || !*(_DWORD *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)a2 + 1016))(a2, 0)
-               || *(_DWORD *)(a2 + 764)) )
+            v6 = aP1[1].queuedMission; /*0x6f1ecf*/
+            if ( (!v6 || *(_DWORD *)(*(_DWORD *)(v6 + 36) + 180) < *(_DWORD *)(this + 180)) /*0x6f1f09*/
+              && ((*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)aP1->__pad_0 + 44))(aP1) != 2
+               || !*(_DWORD *)(*(int (__thiscall **)(TechnoClass *, _DWORD))(*(_DWORD *)aP1->__pad_0 + 1016))(aP1, 0)
+               || LODWORD(aP1->pitchAngle)) )
             {
-              return 1;
+              return 1; /*0x6f1e35*/
             }
           }
         }
       }
     }
   }
-  return result;
+  return result; /*0x6f1f13*/
 }
-
-/* ASM:
-push    esi
-mov     esi, [esp+4+arg_0]
-push    edi
-mov     edi, ecx
-mov     eax, [esi+5D4h]
-test    eax, eax
-jz      short loc_6F1E3B
-cmp     edi, [eax+24h]
-jz      loc_6F1F1A
-
-loc_6F1E3B:                             ; CODE XREF: TriggerClass__EvaluateObjectForTrigger+10↑j
-mov     eax, [esi+6Ch]
-test    eax, eax
-jle     loc_6F1F1A
-mov     al, [esi+90h]
-test    al, al
-jz      loc_6F1F1A
-mov     al, [esi+81h]
-test    al, al
-jnz     loc_6F1F1A
-mov     ecx, esi
-call    Team__AllMembersValid
-test    al, al
-jnz     loc_6F1F1A
-mov     eax, [esi+21Ch]
-mov     ecx, [esp+8+arg_4]
-cmp     eax, ecx
-jnz     loc_6F1F1A
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+184h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_6F1EA7
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+184h]
-mov     ecx, eax
-call    IPersistStream__SetField
-test    al, al
-jz      short loc_6F1F1A
-
-loc_6F1EA7:                             ; CODE XREF: TriggerClass__EvaluateObjectForTrigger+70↑j
-mov     al, [esi+421h]
-test    al, al
-jnz     short loc_6F1EBB
-mov     al, [edi+0A9h]
-test    al, al
-jz      short loc_6F1F1A
-
-loc_6F1EBB:                             ; CODE XREF: TriggerClass__EvaluateObjectForTrigger+8F↑j
-mov     al, [esi+422h]
-test    al, al
-jnz     short loc_6F1ECF
-mov     al, [edi+0A9h]
-test    al, al
-jnz     short loc_6F1F1A
-
-loc_6F1ECF:                             ; CODE XREF: TriggerClass__EvaluateObjectForTrigger+A3↑j
-mov     eax, [esi+5D4h]
-test    eax, eax
-jz      short loc_6F1EEC
-mov     ecx, [eax+24h]
-mov     eax, [edi+0B4h]
-mov     edx, [ecx+0B4h]
-cmp     edx, eax
-jge     short loc_6F1F1A
-
-loc_6F1EEC:                             ; CODE XREF: TriggerClass__EvaluateObjectForTrigger+B7↑j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+2Ch]
-cmp     eax, 2
-jnz     short loc_6F1F13
-mov     edx, [esi]
-push    0
-mov     ecx, esi
-call    dword ptr [edx+3F8h]
-cmp     dword ptr [eax], 0
-jz      short loc_6F1F13
-mov     eax, [esi+2FCh]
-test    eax, eax
-jz      short loc_6F1F1A
-
-loc_6F1F13:                             ; CODE XREF: TriggerClass__EvaluateObjectForTrigger+D6↑j
-; TriggerClass__EvaluateObjectForTrigger+E7↑j
-pop     edi
-mov     al, 1
-pop     esi
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_6F1F1A:                             ; CODE XREF: TriggerClass__EvaluateObjectForTrigger+15↑j
-; TriggerClass__EvaluateObjectForTrigger+20↑j ...
-pop     edi
-xor     al, al
-pop     esi
-retn    8
-*/
 } }
 // 0x71AD40
 namespace gamemd { int TriggerClass::UnlinkTags() {
@@ -8234,90 +2957,40 @@ int __thiscall TriggerClass_UnlinkTags(int this)
   int v3; // eax
   int result; // eax
 
-  v2 = *(_DWORD *)(this + 40);
-  if ( v2 )
+  v2 = *(_DWORD *)(this + 40); /*0x71ad46*/
+  if ( v2 ) /*0x71ad4b*/
   {
-    *(_BYTE *)(v2 + 624) = 0;
-    *(_DWORD *)(*(_DWORD *)(this + 40) + 632) = 0;
-    *(_DWORD *)(this + 40) = 0;
+    *(_BYTE *)(v2 + 624) = 0; /*0x71ad4d*/
+    *(_DWORD *)(*(_DWORD *)(this + 40) + 632) = 0; /*0x71ad56*/
+    *(_DWORD *)(this + 40) = 0; /*0x71ad5c*/
   }
-  v3 = *(_DWORD *)(this + 68);
-  if ( v3 )
+  v3 = *(_DWORD *)(this + 68); /*0x71ad5f*/
+  if ( v3 ) /*0x71ad64*/
   {
-    if ( *(_DWORD *)(v3 + 64) == this )
-      *(_DWORD *)(v3 + 64) = 0;
-    TagClass::Unlink(*(int **)(this + 68));
-    *(_DWORD *)(this + 68) = 0;
+    if ( *(_DWORD *)(v3 + 64) == this ) /*0x71ad69*/
+      *(_DWORD *)(v3 + 64) = 0; /*0x71ad6b*/
+    TagClass::Unlink(*(int **)(this + 68)); /*0x71ad71*/
+    *(_DWORD *)(this + 68) = 0; /*0x71ad76*/
   }
-  result = *(_DWORD *)(this + 64);
-  if ( result )
+  result = *(_DWORD *)(this + 64); /*0x71ad79*/
+  if ( result ) /*0x71ad7e*/
   {
-    if ( *(_DWORD *)(result + 68) == this )
-      *(_DWORD *)(result + 68) = 0;
-    result = TagClass::Unlink(*(int **)(this + 64));
-    *(_DWORD *)(this + 64) = 0;
+    if ( *(_DWORD *)(result + 68) == this ) /*0x71ad83*/
+      *(_DWORD *)(result + 68) = 0; /*0x71ad85*/
+    result = TagClass::Unlink(*(int **)(this + 64)); /*0x71ad8b*/
+    *(_DWORD *)(this + 64) = 0; /*0x71ad90*/
   }
-  *(_DWORD *)(this + 68) = 0;
-  *(_DWORD *)(this + 64) = 0;
-  *(_DWORD *)(this + 60) = 0;
-  *(_DWORD *)(this + 56) = 0;
-  return result;
+  *(_DWORD *)(this + 68) = 0; /*0x71ad93*/
+  *(_DWORD *)(this + 64) = 0; /*0x71ad96*/
+  *(_DWORD *)(this + 60) = 0; /*0x71ad99*/
+  *(_DWORD *)(this + 56) = 0; /*0x71ad9c*/
+  return result; /*0x71ad9f*/
 }
-
-/* ASM:
-push    ebx
-push    esi
-mov     esi, ecx
-xor     ebx, ebx
-mov     eax, [esi+28h]
-cmp     eax, ebx
-jz      short loc_71AD5F
-mov     [eax+270h], bl
-mov     eax, [esi+28h]
-mov     [eax+278h], ebx
-mov     [esi+28h], ebx
-
-loc_71AD5F:                             ; CODE XREF: TriggerClass__UnlinkTags+B↑j
-mov     eax, [esi+44h]
-cmp     eax, ebx
-jz      short loc_71AD79
-cmp     [eax+40h], esi
-jnz     short loc_71AD6E
-mov     [eax+40h], ebx
-
-loc_71AD6E:                             ; CODE XREF: TriggerClass__UnlinkTags+29↑j
-mov     ecx, [esi+44h]
-call    TagClass__Unlink
-mov     [esi+44h], ebx
-
-loc_71AD79:                             ; CODE XREF: TriggerClass__UnlinkTags+24↑j
-mov     eax, [esi+40h]
-cmp     eax, ebx
-jz      short loc_71AD93
-cmp     [eax+44h], esi
-jnz     short loc_71AD88
-mov     [eax+44h], ebx
-
-loc_71AD88:                             ; CODE XREF: TriggerClass__UnlinkTags+43↑j
-mov     ecx, [esi+40h]
-call    TagClass__Unlink
-mov     [esi+40h], ebx
-
-loc_71AD93:                             ; CODE XREF: TriggerClass__UnlinkTags+3E↑j
-mov     [esi+44h], ebx
-mov     [esi+40h], ebx
-mov     [esi+3Ch], ebx
-mov     [esi+38h], ebx
-pop     esi
-pop     ebx
-retn
-*/
 } }
 // 0x71F4E0
 namespace gamemd { void* TriggerTypeClass::ParseActionData() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x71f4e0
-char *__thiscall TriggerTypeClass::ParseActionData(int this)
+char *__thiscall sub_71F4E0(int this)
 {
   char *v2; // eax
   char *v3; // eax
@@ -8329,156 +3002,52 @@ char *__thiscall TriggerTypeClass::ParseActionData(int this)
   char Destination[24]; // [esp+10h] [ebp-1Ch] BYREF
   char v10; // [esp+28h] [ebp-4h]
 
-  *(_DWORD *)(this + 52) = 0;
-  v2 = strtok(0, Delimiter);
-  *(_DWORD *)(this + 44) = atoi(v2);
-  v3 = strtok(0, Delimiter);
-  v4 = atoi(v3);
-  v5 = strtok(0, Delimiter);
-  v6 = atoi(v5);
-  result = 0;
-  if ( v4 == 2 )
-    result = strtok(0, Delimiter);
-  if ( v4 )
+  *(_DWORD *)(this + 52) = 0; /*0x71f4f0*/
+  v2 = strtok(0, MEMORY[0x817F70]); /*0x71f4f7*/
+  *(_DWORD *)(this + 44) = atoi(v2); /*0x71f509*/
+  v3 = strtok(0, MEMORY[0x817F70]); /*0x71f50c*/
+  v4 = atoi(v3); /*0x71f51e*/
+  v5 = strtok(0, MEMORY[0x817F70]); /*0x71f525*/
+  v6 = atoi(v5); /*0x71f52d*/
+  result = 0; /*0x71f532*/
+  if ( v4 == 2 ) /*0x71f537*/
+    result = strtok(0, MEMORY[0x817F70]); /*0x71f53f*/
+  if ( v4 ) /*0x71f54a*/
   {
-    v8 = v4 - 1;
-    if ( v8 )
+    v8 = v4 - 1; /*0x71f54c*/
+    if ( v8 ) /*0x71f54d*/
     {
-      if ( v8 == 1 )
+      if ( v8 == 1 ) /*0x71f550*/
       {
-        *(_DWORD *)(this + 52) = v6;
-        if ( result )
+        *(_DWORD *)(this + 52) = v6; /*0x71f554*/
+        if ( result ) /*0x71f557*/
         {
-          result = (char *)strncpy(Destination, result, 24);
-          v10 = 0;
+          result = strncpy(Destination, result, 0x18u); /*0x71f567*/
+          v10 = 0; /*0x71f56f*/
         }
         else
         {
-          Destination[0] = 0;
+          Destination[0] = 0; /*0x71f559*/
         }
-        if ( Destination != (char *)(this + 56) )
+        if ( Destination != (char *)(this + 56) ) /*0x71f57d*/
         {
-          qmemcpy((void *)(this + 56), Destination, 0x18u);
-          *(_BYTE *)(this + 80) = v10;
+          qmemcpy((void *)(this + 56), Destination, 0x18u); /*0x71f588*/
+          *(_BYTE *)(this + 80) = v10; /*0x71f58a*/
         }
       }
     }
     else
     {
-      result = (char *)TeamTypeClass::FindByName(v5);
-      *(_DWORD *)(this + 48) = result;
+      result = (char *)TeamTypeClass::FindByName(v5); /*0x71f595*/
+      *(_DWORD *)(this + 48) = result; /*0x71f59a*/
     }
   }
   else
   {
-    *(_DWORD *)(this + 52) = v6;
+    *(_DWORD *)(this + 52) = v6; /*0x71f5a5*/
   }
-  return result;
+  return result; /*0x71f58b*/
 }
-
-/* ASM:
-Destination     = byte ptr -1Ch
-var_4           = byte ptr -4
-
-sub     esp, 1Ch
-push    ebx
-push    ebp
-push    esi
-push    edi
-mov     esi, ecx
-push    offset Delimiter ; ","
-push    0               ; String
-mov     dword ptr [esi+34h], 0
-call    _strtok
-push    eax             ; String
-call    _atoi
-push    offset Delimiter ; ","
-push    0               ; String
-mov     [esi+2Ch], eax
-call    _strtok
-push    eax             ; String
-call    _atoi
-push    offset Delimiter ; ","
-push    0               ; String
-mov     edi, eax
-call    _strtok
-mov     ebp, eax
-push    ebp             ; String
-call    _atoi
-mov     ebx, eax
-add     esp, 24h
-xor     eax, eax
-cmp     edi, 2
-jnz     short loc_71F547
-push    offset Delimiter ; ","
-push    eax             ; String
-call    _strtok
-add     esp, 8
-
-loc_71F547:                             ; CODE XREF: TriggerTypeClass__ParseActionData+57↑j
-sub     edi, 0
-jz      short loc_71F5A5
-dec     edi
-jz      short loc_71F593
-dec     edi
-jnz     short loc_71F5A8
-test    eax, eax
-mov     [esi+34h], ebx
-jnz     short loc_71F55F
-mov     [esp+2Ch+Destination], al
-jmp     short loc_71F574
-; ---------------------------------------------------------------------------
-
-loc_71F55F:                             ; CODE XREF: TriggerTypeClass__ParseActionData+77↑j
-push    18h             ; Count
-push    eax             ; Source
-lea     eax, [esp+34h+Destination]
-push    eax             ; Destination
-call    _strncpy
-add     esp, 0Ch
-mov     [esp+2Ch+var_4], 0
-
-loc_71F574:                             ; CODE XREF: TriggerTypeClass__ParseActionData+7D↑j
-lea     edi, [esi+38h]
-lea     ecx, [esp+2Ch+Destination]
-cmp     ecx, edi
-jz      short loc_71F5A8
-mov     ecx, 6
-lea     esi, [esp+2Ch+Destination]
-rep movsd
-movsb
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 1Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_71F593:                             ; CODE XREF: TriggerTypeClass__ParseActionData+6D↑j
-mov     ecx, ebp        ; void *
-call    TeamTypeClass__FindByName
-mov     [esi+30h], eax
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 1Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_71F5A5:                             ; CODE XREF: TriggerTypeClass__ParseActionData+6A↑j
-mov     [esi+34h], ebx
-
-loc_71F5A8:                             ; CODE XREF: TriggerTypeClass__ParseActionData+70↑j
-; TriggerTypeClass__ParseActionData+9D↑j
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 1Ch
-retn
-*/
 } }
 // 0x71F680
 namespace gamemd { int TriggerTypeClass::GetActionCategoryFlags() {
@@ -8487,628 +3056,262 @@ int __thiscall sub_71F680(void *this)
 {
   int v1; // esi
 
-  v1 = 0;
-  switch ( (unsigned int)this )
+  v1 = 0; /*0x71f681*/
+  switch ( (unsigned int)this ) /*0x71f690*/
   {
-    case 0u:
-    case 1u:
-    case 4u:
-    case 8u:
-    case 0x18u:
-    case 0x19u:
-    case 0x1Au:
-    case 0x1Fu:
-    case 0x35u:
-    case 0x36u:
-    case 0x3Bu:
-      v1 = 1;
-      break;
+    case 0u: /*0x71f690*/
+    case 1u: /*0x71f690*/
+    case 4u: /*0x71f690*/
+    case 8u: /*0x71f690*/
+    case 0x18u: /*0x71f690*/
+    case 0x19u: /*0x71f690*/
+    case 0x1Au: /*0x71f690*/
+    case 0x1Fu: /*0x71f690*/
+    case 0x35u: /*0x71f690*/
+    case 0x36u: /*0x71f690*/
+    case 0x3Bu: /*0x71f690*/
+      v1 = 1; /*0x71f697*/
+      break; /*0x71f697*/
     default:
       break;
   }
-  switch ( (unsigned int)this )
+  switch ( (unsigned int)this ) /*0x71f6a9*/
   {
-    case 0u:
-    case 1u:
-    case 2u:
-    case 4u:
-    case 6u:
-    case 7u:
-    case 8u:
-    case 0x1Du:
-    case 0x21u:
-    case 0x22u:
-    case 0x23u:
-    case 0x26u:
-    case 0x27u:
-    case 0x28u:
-    case 0x29u:
-    case 0x2Au:
-    case 0x2Bu:
-    case 0x2Cu:
-    case 0x30u:
-    case 0x31u:
-      v1 |= 2u;
-      break;
+    case 0u: /*0x71f6a9*/
+    case 1u: /*0x71f6a9*/
+    case 2u: /*0x71f6a9*/
+    case 4u: /*0x71f6a9*/
+    case 6u: /*0x71f6a9*/
+    case 7u: /*0x71f6a9*/
+    case 8u: /*0x71f6a9*/
+    case 0x1Du: /*0x71f6a9*/
+    case 0x21u: /*0x71f6a9*/
+    case 0x22u: /*0x71f6a9*/
+    case 0x23u: /*0x71f6a9*/
+    case 0x26u: /*0x71f6a9*/
+    case 0x27u: /*0x71f6a9*/
+    case 0x28u: /*0x71f6a9*/
+    case 0x29u: /*0x71f6a9*/
+    case 0x2Au: /*0x71f6a9*/
+    case 0x2Bu: /*0x71f6a9*/
+    case 0x2Cu: /*0x71f6a9*/
+    case 0x30u: /*0x71f6a9*/
+    case 0x31u: /*0x71f6a9*/
+      v1 |= 2u; /*0x71f6b0*/
+      break; /*0x71f6b0*/
     default:
       break;
   }
-  if ( this == (void *)8 || this == (void *)24 )
-    v1 |= 4u;
-  switch ( (unsigned int)this )
+  if ( this == (void *)8 || this == (void *)24 ) /*0x71f6bb*/
+    v1 |= 4u; /*0x71f6bd*/
+  switch ( (unsigned int)this ) /*0x71f6d0*/
   {
-    case 3u:
-    case 5u:
-    case 8u:
-    case 9u:
-    case 0xAu:
-    case 0xBu:
-    case 0xCu:
-    case 0xFu:
-    case 0x10u:
-    case 0x11u:
-    case 0x12u:
-    case 0x13u:
-    case 0x14u:
-    case 0x15u:
-    case 0x16u:
-    case 0x1Eu:
-    case 0x20u:
-    case 0x34u:
-    case 0x37u:
-    case 0x38u:
-    case 0x39u:
-    case 0x3Au:
-      v1 |= 8u;
-      break;
+    case 3u: /*0x71f6d0*/
+    case 5u: /*0x71f6d0*/
+    case 8u: /*0x71f6d0*/
+    case 9u: /*0x71f6d0*/
+    case 0xAu: /*0x71f6d0*/
+    case 0xBu: /*0x71f6d0*/
+    case 0xCu: /*0x71f6d0*/
+    case 0xFu: /*0x71f6d0*/
+    case 0x10u: /*0x71f6d0*/
+    case 0x11u: /*0x71f6d0*/
+    case 0x12u: /*0x71f6d0*/
+    case 0x13u: /*0x71f6d0*/
+    case 0x14u: /*0x71f6d0*/
+    case 0x15u: /*0x71f6d0*/
+    case 0x16u: /*0x71f6d0*/
+    case 0x1Eu: /*0x71f6d0*/
+    case 0x20u: /*0x71f6d0*/
+    case 0x34u: /*0x71f6d0*/
+    case 0x37u: /*0x71f6d0*/
+    case 0x38u: /*0x71f6d0*/
+    case 0x39u: /*0x71f6d0*/
+    case 0x3Au: /*0x71f6d0*/
+      v1 |= 8u; /*0x71f6d7*/
+      break; /*0x71f6d7*/
     default:
       break;
   }
-  switch ( (unsigned int)this )
+  switch ( (unsigned int)this ) /*0x71f6ea*/
   {
-    case 8u:
-    case 0xDu:
-    case 0xEu:
-    case 0x17u:
-    case 0x1Bu:
-    case 0x1Cu:
-    case 0x24u:
-    case 0x25u:
-    case 0x2Du:
-    case 0x2Eu:
-    case 0x2Fu:
-    case 0x32u:
-    case 0x33u:
-    case 0x3Cu:
-    case 0x3Du:
-      v1 |= 0x10u;
-      break;
+    case 8u: /*0x71f6ea*/
+    case 0xDu: /*0x71f6ea*/
+    case 0xEu: /*0x71f6ea*/
+    case 0x17u: /*0x71f6ea*/
+    case 0x1Bu: /*0x71f6ea*/
+    case 0x1Cu: /*0x71f6ea*/
+    case 0x24u: /*0x71f6ea*/
+    case 0x25u: /*0x71f6ea*/
+    case 0x2Du: /*0x71f6ea*/
+    case 0x2Eu: /*0x71f6ea*/
+    case 0x2Fu: /*0x71f6ea*/
+    case 0x32u: /*0x71f6ea*/
+    case 0x33u: /*0x71f6ea*/
+    case 0x3Cu: /*0x71f6ea*/
+    case 0x3Du: /*0x71f6ea*/
+      v1 |= 0x10u; /*0x71f6f1*/
+      break; /*0x71f6f1*/
     default:
       return v1;
   }
-  return v1;
+  return v1; /*0x71f6f6*/
 }
-
-/* ASM:
-push    esi
-xor     esi, esi
-cmp     ecx, 3Bh        ; switch 60 cases
-ja      short def_71F690 ; jumptable 0071F690 default case, cases 2,3,5-7,9-23,27-30,32-52,55-58
-xor     eax, eax
-mov     al, ds:byte_71F700[ecx]
-jmp     ds:jpt_71F690[eax*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_71F697:                             ; CODE XREF: TriggerTypeClass__GetActionCategoryFlags+10↑j
-; DATA XREF: .text:jpt_71F690↓o
-mov     esi, 1          ; jumptable 0071F690 cases 0,1,4,8,24-26,31,53,54,59
-
-def_71F690:                             ; CODE XREF: TriggerTypeClass__GetActionCategoryFlags+6↑j
-; TriggerTypeClass__GetActionCategoryFlags+10↑j
-; DATA XREF: ...
-cmp     ecx, 31h        ; jumptable 0071F690 default case, cases 2,3,5-7,9-23,27-30,32-52,55-58
-ja      short def_71F6A9 ; jumptable 0071F6A9 default case, cases 3,5,9-28,30-32,36,37,45-47
-xor     edx, edx
-mov     dl, ds:byte_71F744[ecx]
-jmp     ds:jpt_71F6A9[edx*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_71F6B0:                             ; CODE XREF: TriggerTypeClass__GetActionCategoryFlags+29↑j
-; DATA XREF: .text:jpt_71F6A9↓o
-or      esi, 2          ; jumptable 0071F6A9 cases 0-2,4,6-8,29,33-35,38-44,48,49
-
-def_71F6A9:                             ; CODE XREF: TriggerTypeClass__GetActionCategoryFlags+1F↑j
-; TriggerTypeClass__GetActionCategoryFlags+29↑j
-; DATA XREF: ...
-cmp     ecx, 8          ; jumptable 0071F6A9 default case, cases 3,5,9-28,30-32,36,37,45-47
-jz      short loc_71F6BD
-cmp     ecx, 18h
-jnz     short loc_71F6C0
-
-loc_71F6BD:                             ; CODE XREF: TriggerTypeClass__GetActionCategoryFlags+36↑j
-or      esi, 4
-
-loc_71F6C0:                             ; CODE XREF: TriggerTypeClass__GetActionCategoryFlags+3B↑j
-lea     edx, [ecx-3]    ; switch 56 cases
-cmp     edx, 37h
-ja      short def_71F6D0 ; jumptable 0071F6D0 default case, cases 4,6,7,13,14,23-29,31,33-51,53,54
-xor     eax, eax
-mov     al, ds:byte_71F780[edx]
-jmp     ds:jpt_71F6D0[eax*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_71F6D7:                             ; CODE XREF: TriggerTypeClass__GetActionCategoryFlags+50↑j
-; DATA XREF: .text:jpt_71F6D0↓o
-or      esi, 8          ; jumptable 0071F6D0 cases 3,5,8-12,15-22,30,32,52,55-58
-
-def_71F6D0:                             ; CODE XREF: TriggerTypeClass__GetActionCategoryFlags+46↑j
-; TriggerTypeClass__GetActionCategoryFlags+50↑j
-; DATA XREF: ...
-add     ecx, 0FFFFFFF8h ; jumptable 0071F6D0 default case, cases 4,6,7,13,14,23-29,31,33-51,53,54
-cmp     ecx, 35h
-ja      short def_71F6EA ; jumptable 0071F6EA default case, cases 9-12,15-22,24-26,29-35,38-44,48,49,52-59
-xor     edx, edx
-mov     dl, ds:byte_71F7C0[ecx]
-jmp     ds:jpt_71F6EA[edx*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_71F6F1:                             ; CODE XREF: TriggerTypeClass__GetActionCategoryFlags+6A↑j
-; DATA XREF: .text:jpt_71F6EA↓o
-or      esi, 10h        ; jumptable 0071F6EA cases 8,13,14,23,27,28,36,37,45-47,50,51,60,61
-
-def_71F6EA:                             ; CODE XREF: TriggerTypeClass__GetActionCategoryFlags+60↑j
-; TriggerTypeClass__GetActionCategoryFlags+6A↑j
-; DATA XREF: ...
-mov     eax, esi        ; jumptable 0071F6EA default case, cases 9-12,15-22,24-26,29-35,38-44,48,49,52-59
-pop     esi
-retn
-*/
 } }
 // 0x723CA0
 namespace gamemd { void* ScriptTypeClass::SetField(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_723CA0(_DWORD *this, char *Buffer)
+char *__thiscall ScriptTypeClass::SetField(_DWORD *this, Color *aP1)
 {
-  char *result; // eax
+  Color *result; // eax
   int v4; // ecx
   int v5; // [esp+4h] [ebp-4h] BYREF
 
-  result = Buffer;
-  if ( Buffer )
+  result = aP1; /*0x723ca1*/
+  if ( aP1 ) /*0x723caa*/
   {
-    sscanf(Buffer, "%d,%d", &Buffer, &v5);
-    result = Buffer;
-    v4 = v5;
-    *this = Buffer;
-    *(this + 1) = v4;
+    sscanf((const char *const)aP1, g_INI_Key_Digest.__pad_20, &aP1, &v5); /*0x723cbc*/
+    result = aP1; /*0x723cc1*/
+    v4 = v5; /*0x723cc5*/
+    *this = aP1; /*0x723ccc*/
+    *(this + 1) = v4; /*0x723cce*/
   }
-  return result;
+  return (char *)result; /*0x723cd1*/
 }
-
-/* ASM:
-Buffer          = dword ptr  4
-
-push    ecx             ; TODO: classify (grp=blit, sz=0x36)
-mov     eax, [esp+4+Buffer]
-push    esi
-test    eax, eax
-mov     esi, ecx
-jz      short loc_723CD1
-lea     ecx, [esp+8+var_4]
-lea     edx, [esp+8+Buffer]
-push    ecx
-push    edx
-push    offset g_Str_Trace__d__d ; "%d,%d"
-push    eax             ; Buffer
-call    _sscanf
-mov     eax, [esp+18h+Buffer]
-mov     ecx, [esp+18h+var_4]
-add     esp, 10h
-mov     [esi], eax
-mov     [esi+4], ecx
-
-loc_723CD1:                             ; CODE XREF: ScriptTypeClass__SetField+A↑j
-pop     esi
-pop     ecx
-retn    4
-*/
 } }
 // 0x723CE0
 namespace gamemd { int ScriptTypeClass::FormatToString(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall sub_723CE0(_DWORD *this, char *Buffer)
+unsigned int __thiscall ScriptTypeClass::FormatToString(_DWORD *this, AbstractClass *aP1)
 {
-  if ( !Buffer )
-    return 0;
-  sprintf(Buffer, "%d,%d", *this, *(this + 1));
-  return strlen(Buffer);
+  if ( !aP1 ) /*0x723ce7*/
+    return 0; /*0x723d0e*/
+  sprintf(aP1->__pad_0, (ObjectClass *)g_INI_Key_Digest.__pad_20, (INIClass *)*this); /*0x723cf6*/
+  return strlen(aP1->__pad_0); /*0x723d08*/
 }
-
-/* ASM:
-Buffer          = dword ptr  4
-
-push    edi             ; TODO: classify (grp=blit, sz=0x34)
-mov     edi, [esp+4+Buffer]
-test    edi, edi
-jz      short loc_723D0E
-mov     eax, [ecx+4]
-mov     ecx, [ecx]
-push    eax
-push    ecx
-push    offset g_Str_Trace__d__d ; "%d,%d"
-push    edi             ; Buffer
-call    _sprintf
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-add     esp, 10h
-repne scasb
-not     ecx
-dec     ecx
-pop     edi
-mov     eax, ecx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_723D0E:                             ; CODE XREF: ScriptTypeClass__FormatToString+7↑j
-xor     eax, eax
-pop     edi
-retn    4
-*/
 } }
 // 0x725FA0
 namespace gamemd { int TriggerClass::Construct(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TriggerClass_Constructor(int this, int a2)
+int __thiscall TriggerClass::Construct(int this, TriggerClass *aP1)
 {
-  #72 *v3; // ecx
+  TimerStruct *v3; // ecx
   int v4; // eax
-  int v5; // eax
+  TriggerClass *v5; // eax
   int v6; // eax
-  _BYTE *v7; // eax
+  AbstractClass *v7; // eax
   int v8; // ecx
 
-  AbstractClass::Constructor((#373 *)this);
-  *(_DWORD *)(this + 36) = a2;
-  *(_DWORD *)(this + 40) = 0;
-  *(_DWORD *)(this + 44) = 0;
-  *(_BYTE *)(this + 48) = 0;
-  v3 = MEMORY[0xA8ED84];
-  *(_DWORD *)(this + 60) = 0;
-  *(_DWORD *)(this + 52) = v3;
-  *(_DWORD *)(this + 64) = 0;
-  *(_BYTE *)(this + 68) = 1;
-  *(_DWORD *)this = &TriggerClass::`vftable';
-  *(_DWORD *)(this + 4) = &TriggerClass::`vftable';
-  *(_DWORD *)(this + 8) = &TriggerClass::`vftable';
-  *(_DWORD *)(this + 12) = &TriggerClass::`vftable';
-  if ( MEMORY[0xB0F680] < MEMORY[0xB0F678]
-    || (MEMORY[0xB0F67D] || !MEMORY[0xB0F678])
-    && MEMORY[0xB0F684] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0F670] + 8))(
-         &MEMORY[0xB0F670],
-         MEMORY[0xB0F678] + MEMORY[0xB0F684],
+  AbstractClass::Constructor((AbstractClass *)this); /*0x725fa4*/
+  *(_DWORD *)(this + 36) = aP1; /*0x725faf*/
+  *(_DWORD *)(this + 40) = 0; /*0x725fb2*/
+  *(_DWORD *)(this + 44) = 0; /*0x725fb5*/
+  *(_BYTE *)(this + 48) = 0; /*0x725fb8*/
+  v3 = *(TimerStruct **)&HouseClass_Player.__pad_5568[23248]; /*0x725fbb*/
+  *(_DWORD *)(this + 60) = 0; /*0x725fc1*/
+  *(_DWORD *)(this + 52) = v3; /*0x725fc4*/
+  *(_DWORD *)(this + 64) = 0; /*0x725fc7*/
+  *(_BYTE *)(this + 68) = 1; /*0x725fca*/
+  *(_DWORD *)this = &TriggerClass::`vftable'; /*0x725fce*/
+  *(_DWORD *)(this + 4) = &TriggerClass::`vftable'; /*0x725fd4*/
+  *(_DWORD *)(this + 8) = &TriggerClass::`vftable'; /*0x725fdb*/
+  *(_DWORD *)(this + 12) = &vt_TriggerClass; /*0x725fe2*/
+  if ( *(int *)&stru_B05488.__pad_579C[19036] < *(int *)&stru_B05488.__pad_579C[19028] /*0x72601b*/
+    || (stru_B05488.__pad_579C[19033] || !*(_DWORD *)&stru_B05488.__pad_579C[19028])
+    && *(int *)&stru_B05488.__pad_579C[19040] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[19020] + 8))(
+         &stru_B05488.__pad_579C[19020],
+         *(_DWORD *)&stru_B05488.__pad_579C[19028] + *(_DWORD *)&stru_B05488.__pad_579C[19040],
          0) )
   {
-    v4 = MEMORY[0xB0F680]++;
-    *((_DWORD *)MEMORY[0xB0F674] + v4) = this;
+    v4 = (*(_DWORD *)&stru_B05488.__pad_579C[19036])++; /*0x726028*/
+    *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19024] + 4 * v4) = this; /*0x726037*/
   }
-  if ( MEMORY[0xB0F718] < MEMORY[0xB0F710]
-    || (MEMORY[0xB0F715] || !MEMORY[0xB0F710])
-    && MEMORY[0xB0F71C] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0F708] + 8))(
-         &MEMORY[0xB0F708],
-         MEMORY[0xB0F710] + MEMORY[0xB0F71C],
+  if ( *(int *)&stru_B05488.__pad_579C[19188] < *(int *)&stru_B05488.__pad_579C[19180] /*0x72606e*/
+    || (stru_B05488.__pad_579C[19185] || !*(_DWORD *)&stru_B05488.__pad_579C[19180])
+    && *(int *)&stru_B05488.__pad_579C[19192] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[19172] + 8))(
+         &stru_B05488.__pad_579C[19172],
+         *(_DWORD *)&stru_B05488.__pad_579C[19180] + *(_DWORD *)&stru_B05488.__pad_579C[19192],
          0) )
   {
-    v5 = MEMORY[0xB0F718]++;
-    *((_DWORD *)MEMORY[0xB0F70C] + v5) = this;
+    v5 = (TriggerClass *)(*(_DWORD *)&stru_B05488.__pad_579C[19188])++; /*0x72607b*/
+    *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19176] + 4 * (_DWORD)v5) = this; /*0x72608a*/
   }
-  if ( MEMORY[0xA8EAF8] < MEMORY[0xA8EAF0]
-    || (MEMORY[0xA8EAF5] || !MEMORY[0xA8EAF0])
-    && MEMORY[0xA8EAFC] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xA8EAE8] + 8))(
-         &MEMORY[0xA8EAE8],
-         MEMORY[0xA8EAF0] + MEMORY[0xA8EAFC],
+  if ( *(int *)&HouseClass_Player.__pad_5568[22596] < *(int *)&HouseClass_Player.__pad_5568[22588] /*0x7260c1*/
+    || (HouseClass_Player.__pad_5568[22593] || !*(_DWORD *)&HouseClass_Player.__pad_5568[22588])
+    && *(int *)&HouseClass_Player.__pad_5568[22600] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player.__pad_5568[22580] + 8))(
+         &HouseClass_Player.__pad_5568[22580],
+         *(_DWORD *)&HouseClass_Player.__pad_5568[22588] + *(_DWORD *)&HouseClass_Player.__pad_5568[22600],
          0) )
   {
-    v6 = MEMORY[0xA8EAF8]++;
-    *((_DWORD *)MEMORY[0xA8EAEC] + v6) = this;
+    v6 = (*(_DWORD *)&HouseClass_Player.__pad_5568[22596])++; /*0x7260ce*/
+    *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22584] + 4 * v6) = this; /*0x7260dd*/
   }
-  if ( *(_DWORD *)(this + 36) )
+  if ( *(_DWORD *)(this + 36) ) /*0x7260e0*/
   {
-    if ( (BuildingClass::ProcessUpgradeEffects((int *)this), v7 = *(_BYTE **)(this + 36), !v7[159])
-      || (v8 = *((_DWORD *)MEMORY[0xA8B230] + 387)) == 0 && !v7[156]
-      || v8 == 1 && !v7[157]
-      || v8 == 2 && !v7[158] )
+    if ( (BuildingClass::ProcessUpgradeEffects((int *)this), v7 = *(AbstractClass **)(this + 36), !v7[4].__pad_0[15]) /*0x726121*/
+      || (v8 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 1548)) == 0 && !v7[4].__pad_0[12]
+      || v8 == 1 && !v7[4].__pad_0[13]
+      || v8 == 2 && !v7[4].__pad_0[14] )
     {
-      *(_BYTE *)(this + 68) = 0;
+      *(_BYTE *)(this + 68) = 0; /*0x726129*/
     }
   }
-  return this;
+  return this; /*0x72612e*/
 }
-
-/* ASM:
-push    ebx
-push    esi
-mov     esi, ecx
-call    AbstractClass__Constructor
-mov     eax, [esp+8+arg_0]
-xor     ebx, ebx
-mov     [esi+24h], eax
-mov     [esi+28h], ebx
-mov     [esi+2Ch], ebx
-mov     [esi+30h], bl
-mov     ecx, dword_A8ED54+30h
-mov     [esi+3Ch], ebx
-mov     [esi+34h], ecx
-mov     [esi+40h], ebx
-mov     byte ptr [esi+44h], 1
-mov     dword ptr [esi], offset ??_7TriggerClass@@6B@ ; const TriggerClass::`vftable'
-mov     dword ptr [esi+4], offset ??_7TriggerClass@@6B@_0 ; const TriggerClass::`vftable'
-mov     dword ptr [esi+8], offset ??_7TriggerClass@@6B@_1 ; const TriggerClass::`vftable'
-mov     dword ptr [esi+0Ch], offset ??_7TriggerClass@@6B@_2 ; const TriggerClass::`vftable'
-mov     eax, dword_A8ED54+80924h
-cmp     dword_A8ED54+8092Ch, eax
-jl      short loc_726022
-cmp     byte ptr dword_A8ED54+80929h, bl
-jnz     short loc_726002
-cmp     eax, ebx
-jnz     short loc_72603A
-
-loc_726002:                             ; CODE XREF: TriggerClass__Construct+5C↑j
-mov     ecx, dword_A8ED54+80930h
-cmp     ecx, ebx
-jle     short loc_72603A
-mov     edx, dword_A8ED54+8091Ch
-add     ecx, eax
-push    ebx
-push    ecx
-mov     ecx, (offset dword_A8ED54+8091Ch)
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_72603A
-
-loc_726022:                             ; CODE XREF: TriggerClass__Construct+54↑j
-mov     ecx, dword_A8ED54+8092Ch
-mov     eax, ecx
-inc     ecx
-mov     dword_A8ED54+8092Ch, ecx
-mov     ecx, dword_A8ED54+80920h
-mov     [ecx+eax*4], esi
-
-loc_72603A:                             ; CODE XREF: TriggerClass__Construct+60↑j
-; TriggerClass__Construct+6A↑j ...
-mov     eax, dword_A8ED54+809BCh
-mov     ecx, dword_A8ED54+809C4h
-cmp     ecx, eax
-jl      short loc_726075
-cmp     byte ptr dword_A8ED54+809C1h, bl
-jnz     short loc_726055
-cmp     eax, ebx
-jnz     short loc_72608D
-
-loc_726055:                             ; CODE XREF: TriggerClass__Construct+AF↑j
-mov     ecx, dword_A8ED54+809C8h
-cmp     ecx, ebx
-jle     short loc_72608D
-mov     edx, dword_A8ED54+809B4h
-add     ecx, eax
-push    ebx
-push    ecx
-mov     ecx, (offset dword_A8ED54+809B4h)
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_72608D
-
-loc_726075:                             ; CODE XREF: TriggerClass__Construct+A7↑j
-mov     ecx, dword_A8ED54+809C4h
-mov     eax, ecx
-inc     ecx
-mov     dword_A8ED54+809C4h, ecx
-mov     ecx, dword_A8ED54+809B8h
-mov     [ecx+eax*4], esi
-
-loc_72608D:                             ; CODE XREF: TriggerClass__Construct+B3↑j
-; TriggerClass__Construct+BD↑j ...
-mov     eax, ds:0A8EAF0h
-mov     ecx, ds:0A8EAF8h
-cmp     ecx, eax
-jl      short loc_7260C8
-cmp     ds:0A8EAF5h, bl
-jnz     short loc_7260A8
-cmp     eax, ebx
-jnz     short loc_7260E0
-
-loc_7260A8:                             ; CODE XREF: TriggerClass__Construct+102↑j
-mov     ecx, ds:0A8EAFCh
-cmp     ecx, ebx
-jle     short loc_7260E0
-mov     edx, ds:0A8EAE8h
-add     ecx, eax
-push    ebx
-push    ecx
-mov     ecx, 0A8EAE8h
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_7260E0
-
-loc_7260C8:                             ; CODE XREF: TriggerClass__Construct+FA↑j
-mov     ecx, ds:0A8EAF8h
-mov     eax, ecx
-inc     ecx
-mov     ds:0A8EAF8h, ecx
-mov     ecx, ds:0A8EAECh
-mov     [ecx+eax*4], esi
-
-loc_7260E0:                             ; CODE XREF: TriggerClass__Construct+106↑j
-; TriggerClass__Construct+110↑j ...
-cmp     [esi+24h], ebx
-jz      short loc_72612C
-mov     ecx, esi
-call    BuildingClass__ProcessUpgradeEffects
-mov     eax, [esi+24h]
-cmp     [eax+9Fh], bl
-jz      short loc_726129
-mov     edx, ds:0A8B230h
-mov     ecx, [edx+60Ch]
-cmp     ecx, ebx
-jnz     short loc_72610F
-cmp     [eax+9Ch], bl
-jz      short loc_726129
-
-loc_72610F:                             ; CODE XREF: TriggerClass__Construct+165↑j
-cmp     ecx, 1
-jnz     short loc_72611C
-cmp     [eax+9Dh], bl
-jz      short loc_726129
-
-loc_72611C:                             ; CODE XREF: TriggerClass__Construct+172↑j
-cmp     ecx, 2
-jnz     short loc_72612C
-cmp     [eax+9Eh], bl
-jnz     short loc_72612C
-
-loc_726129:                             ; CODE XREF: TriggerClass__Construct+155↑j
-; TriggerClass__Construct+16D↑j ...
-mov     [esi+44h], bl
-
-loc_72612C:                             ; CODE XREF: TriggerClass__Construct+143↑j
-; TriggerClass__Construct+17F↑j ...
-mov     eax, esi
-pop     esi
-pop     ebx
-retn    4
-*/
 } }
 // 0x726630
 namespace gamemd { int TriggerClass::Create() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x726630
-int __thiscall TriggerClass::Create(void *this)
+TriggerClass *__thiscall TriggerClass::Create(TriggerClass *this)
 {
   int v2; // eax
-  int v3; // ecx
+  CCINIClass *v3; // ecx
   int v4; // eax
 
-  if ( !this )
-    return 0;
-  v2 = 0;
-  if ( MEMORY[0x87F7E8][539844] <= 0 )
+  if ( !this ) /*0x726637*/
+    return 0; /*0x72667f*/
+  v2 = 0; /*0x72663f*/
+  if ( *(int *)&HouseClass_Player.__pad_5568[22596] <= 0 ) /*0x726643*/
   {
 LABEL_6:
-    v4 = __2_YAPAXI_Z(72);
-    if ( v4 )
-      return TriggerClass::Construct(v4, (int)this);
-    return 0;
+    v4 = __2_YAPAXI_Z(0x48u); /*0x72665c*/
+    if ( v4 ) /*0x726668*/
+      return (TriggerClass *)TriggerClass::Construct(v4, this); /*0x726675*/
+    return 0; /*0x726668*/
   }
-  v3 = MEMORY[0x87F7E8][539841];
-  while ( this != *(void **)(*(_DWORD *)v3 + 36) )
+  v3 = *(CCINIClass **)&HouseClass_Player.__pad_5568[22584]; /*0x72664b*/
+  while ( this != *(TriggerClass **)(*(_DWORD *)v3->__pad_0 + 36) ) /*0x726652*/
   {
-    ++v2;
-    v3 += 4;
-    if ( v2 >= MEMORY[0x87F7E8][539844] )
-      goto LABEL_6;
+    ++v2; /*0x726654*/
+    v3 = (CCINIClass *)((char *)v3 + 4); /*0x726655*/
+    if ( v2 >= *(int *)&HouseClass_Player.__pad_5568[22596] ) /*0x72665a*/
+      goto LABEL_6; /*0x72665a*/
   }
-  return *(_DWORD *)(MEMORY[0x87F7E8][539841] + 4 * v2);
+  return *(TriggerClass **)(*(_DWORD *)&HouseClass_Player.__pad_5568[22584] + 4 * v2); /*0x726672*/
 }
-
-/* ASM:
-push    ebx
-push    esi
-mov     esi, ecx
-test    esi, esi
-push    edi
-jz      short loc_72667D
-mov     edx, ds:0A8EAF8h
-xor     eax, eax
-test    edx, edx
-jle     short loc_72665C
-mov     edi, ds:0A8EAECh
-mov     ecx, edi
-
-loc_72664D:                             ; CODE XREF: TriggerClass__Create+2A↓j
-mov     ebx, [ecx]
-cmp     esi, [ebx+24h]
-jz      short loc_726676
-inc     eax
-add     ecx, 4
-cmp     eax, edx
-jl      short loc_72664D
-
-loc_72665C:                             ; CODE XREF: TriggerClass__Create+13↑j
-push    48h ; 'H'       ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-test    eax, eax
-jz      short loc_72667D
-push    esi
-mov     ecx, eax
-call    TriggerClass__Construct
-pop     edi
-pop     esi
-pop     ebx
-retn
-; ---------------------------------------------------------------------------
-
-loc_726676:                             ; CODE XREF: TriggerClass__Create+22↑j
-mov     eax, [edi+eax*4]
-pop     edi
-pop     esi
-pop     ebx
-retn
-; ---------------------------------------------------------------------------
-
-loc_72667D:                             ; CODE XREF: TriggerClass__Create+7↑j
-; TriggerClass__Create+38↑j
-pop     edi
-pop     esi
-xor     eax, eax
-pop     ebx
-retn
-*/
 } }
 // 0x726690
 namespace gamemd { int TriggerClass::FireAction(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TriggerClass::_vt10(_DWORD *this, int a2, int a3)
+int __thiscall TriggerClass::FireAction(_DWORD *this, HouseClass *aP1, int a3)
 {
-  int result; // eax
+  TriggerClass *result; // eax
 
-  if ( *(this + 9) == a2 )
-    *(this + 9) = 0;
-  result = *(this + 10);
-  if ( result == a2 )
+  if ( (HouseClass *)*(this + 9) == aP1 ) /*0x726699*/
+    *(this + 9) = 0; /*0x72669b*/
+  result = (TriggerClass *)*(this + 10); /*0x7266a2*/
+  if ( result == (TriggerClass *)aP1 ) /*0x7266a7*/
   {
-    result = *(_DWORD *)(result + 40);
-    *(this + 10) = result;
+    result = (TriggerClass *)result->nextTrigger; /*0x7266a9*/
+    *(this + 10) = result; /*0x7266ac*/
   }
-  if ( *(this + 11) == a2 )
-    *(this + 11) = 0;
-  return result;
+  if ( (HouseClass *)*(this + 11) == aP1 ) /*0x7266b2*/
+    *(this + 11) = 0; /*0x7266b4*/
+  return (int)result->__pad_0; /*0x7266bb*/
 }
-
-/* ASM:
-mov     edx, [esp+arg_0]
-mov     eax, [ecx+24h]
-cmp     eax, edx
-jnz     short loc_7266A2
-mov     dword ptr [ecx+24h], 0
-
-loc_7266A2:                             ; CODE XREF: TriggerClass__FireAction+9↑j
-mov     eax, [ecx+28h]
-cmp     eax, edx
-jnz     short loc_7266AF
-mov     eax, [eax+28h]
-mov     [ecx+28h], eax
-
-loc_7266AF:                             ; CODE XREF: TriggerClass__FireAction+17↑j
-cmp     [ecx+2Ch], edx
-jnz     short locret_7266BB
-mov     dword ptr [ecx+2Ch], 0
-
-locret_7266BB:                          ; CODE XREF: TriggerClass__FireAction+22↑j
-retn    8
-*/
 } }
 // 0x726720
 namespace gamemd { int TeamClass::AddToBuildQueue() {
@@ -9117,9 +3320,9 @@ int __thiscall TeamClass_AddToBuildQueue(_BYTE *this)
 {
   int result; // eax
 
-  *(this + 48) = 1;
-  result = MEMORY[0xB0F6A0];
-  if ( MEMORY[0xB0F6A8] < MEMORY[0xB0F6A0]
+  *(this + 48) = 1; /*0x726723*/
+  result = MEMORY[0xB0F6A0]; /*0x726727*/
+  if ( MEMORY[0xB0F6A8] < MEMORY[0xB0F6A0] /*0x726760*/
     || (MEMORY[0xB0F6A5] || !MEMORY[0xB0F6A0])
     && MEMORY[0xB0F6AC] > 0
     && (result = (*(int (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0F698] + 8))(
@@ -9128,51 +3331,11 @@ int __thiscall TeamClass_AddToBuildQueue(_BYTE *this)
                    0),
         (_BYTE)result) )
   {
-    result = MEMORY[0xB0F6A8]++;
-    *((_DWORD *)MEMORY[0xB0F69C] + result) = this;
+    result = MEMORY[0xB0F6A8]++; /*0x726768*/
+    *((_DWORD *)MEMORY[0xB0F69C] + result) = this; /*0x726777*/
   }
-  return result;
+  return result; /*0x72677a*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     byte ptr [esi+30h], 1
-mov     eax, dword_A8ED54+8094Ch
-cmp     dword_A8ED54+80954h, eax
-jl      short loc_726762
-mov     cl, byte ptr dword_A8ED54+80951h
-test    cl, cl
-jnz     short loc_726742
-test    eax, eax
-jnz     short loc_72677A
-
-loc_726742:                             ; CODE XREF: TeamClass__AddToBuildQueue+1C↑j
-mov     ecx, dword_A8ED54+80958h
-test    ecx, ecx
-jle     short loc_72677A
-add     ecx, eax
-mov     eax, dword_A8ED54+80944h
-push    0
-push    ecx
-mov     ecx, (offset dword_A8ED54+80944h)
-call    dword ptr [eax+8]
-test    al, al
-jz      short loc_72677A
-
-loc_726762:                             ; CODE XREF: TeamClass__AddToBuildQueue+12↑j
-mov     ecx, dword_A8ED54+80954h
-mov     eax, ecx
-inc     ecx
-mov     dword_A8ED54+80954h, ecx
-mov     ecx, dword_A8ED54+80948h
-mov     [ecx+eax*4], esi
-
-loc_72677A:                             ; CODE XREF: TeamClass__AddToBuildQueue+20↑j
-; TeamClass__AddToBuildQueue+2A↑j ...
-pop     esi
-retn
-*/
 } }
 // 0x726790
 namespace gamemd { int TriggerClass::FireTrigger(void* a1) {
@@ -9186,444 +3349,146 @@ int __thiscall TriggerClass::_vt13(int this, int *a2)
   int v7; // edx
   int v8; // eax
 
-  AbstractClass::ProcessPower((#378 *)this);
-  v3 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(_DWORD *)(this + 36) + 4) + 16))(*(_DWORD *)(this + 36) + 4);
-  Power::TimerProcess(v3);
-  v4 = *(_DWORD *)(this + 40);
-  if ( v4 )
+  AbstractClass::ProcessPower((#378 *)this); /*0x726799*/
+  v3 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(_DWORD *)(this + 36) + 4) + 16))(*(_DWORD *)(this + 36) + 4); /*0x7267a7*/
+  Power::TimerProcess(v3); /*0x7267ad*/
+  v4 = *(_DWORD *)(this + 40); /*0x7267b2*/
+  if ( v4 ) /*0x7267b7*/
   {
-    v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4);
-    v4 = Power::TimerProcess(v5);
+    v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x7267c0*/
+    v4 = Power::TimerProcess(v5); /*0x7267c6*/
   }
-  LOBYTE(v4) = *(_BYTE *)(this + 48);
-  Power::FlagProcess(a2, v4);
-  LOBYTE(v6) = *(_BYTE *)(this + 68);
-  Power::FlagProcess(a2, v6);
-  v7 = *(_DWORD *)(this + 52);
-  v8 = *(_DWORD *)(this + 60);
-  if ( v7 != -1 )
+  LOBYTE(v4) = *(_BYTE *)(this + 48); /*0x7267cb*/
+  Power::FlagProcess(a2, v4); /*0x7267d1*/
+  LOBYTE(v6) = *(_BYTE *)(this + 68); /*0x7267d6*/
+  Power::FlagProcess(a2, v6); /*0x7267dc*/
+  v7 = *(_DWORD *)(this + 52); /*0x7267e1*/
+  v8 = *(_DWORD *)(this + 60); /*0x7267e4*/
+  if ( v7 != -1 ) /*0x7267ea*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v7 >= v8 )
-      v8 = 0;
+    if ( (int)MEMORY[0xA8ED84] - v7 >= v8 ) /*0x7267f6*/
+      v8 = 0; /*0x7267fc*/
     else
-      v8 -= (int)MEMORY[0xA8ED84] - v7;
+      v8 -= (int)MEMORY[0xA8ED84] - v7; /*0x7267f8*/
   }
-  Power::TimerProcess(v8);
-  return Power::TimerProcess(*(_DWORD *)(this + 64));
+  Power::TimerProcess(v8); /*0x726801*/
+  return Power::TimerProcess(*(_DWORD *)(this + 64)); /*0x726811*/
 }
-
-/* ASM:
-push    esi
-push    edi
-mov     edi, [esp+8+arg_0]
-mov     esi, ecx
-push    edi
-call    AbstractClass__ProcessPower
-mov     eax, [esi+24h]
-add     eax, 4
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+10h]
-push    eax
-mov     ecx, edi
-call    Power__TimerProcess
-mov     eax, [esi+28h]
-test    eax, eax
-jz      short loc_7267CB
-mov     edx, [eax+4]
-add     eax, 4
-push    eax
-call    dword ptr [edx+10h]
-push    eax
-mov     ecx, edi
-call    Power__TimerProcess
-
-loc_7267CB:                             ; CODE XREF: TriggerClass__FireTrigger+27↑j
-mov     al, [esi+30h]
-mov     ecx, edi
-push    eax
-call    Power__FlagProcess
-mov     cl, [esi+44h]
-push    ecx
-mov     ecx, edi
-call    Power__FlagProcess
-mov     edx, [esi+34h]
-mov     eax, [esi+3Ch]
-cmp     edx, 0FFFFFFFFh
-jz      short loc_7267FE
-mov     ecx, dword_A8ED54+30h
-sub     ecx, edx
-cmp     ecx, eax
-jge     short loc_7267FC
-sub     eax, ecx
-jmp     short loc_7267FE
-; ---------------------------------------------------------------------------
-
-loc_7267FC:                             ; CODE XREF: TriggerClass__FireTrigger+66↑j
-xor     eax, eax
-
-loc_7267FE:                             ; CODE XREF: TriggerClass__FireTrigger+5A↑j
-; TriggerClass__FireTrigger+6A↑j
-push    eax
-mov     ecx, edi
-call    Power__TimerProcess
-mov     edx, [esi+40h]
-mov     ecx, edi
-push    edx
-call    Power__TimerProcess
-pop     edi
-pop     esi
-retn    4
-*/
 } }
 // 0x726950
 namespace gamemd { void* TriggerClass::CheckCondition(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void **__thiscall TriggerClass::_vt08(void **Block, char a2)
+TriggerClass *__thiscall TriggerClass::CheckCondition(void **Block, char a2)
 {
   int v3; // eax
   int v4; // eax
   int v5; // eax
   void **v7; // [esp+8h] [ebp-4h] BYREF
 
-  *Block = &TriggerClass::`vftable';
-  *(Block + 1) = &TriggerClass::`vftable';
-  *(Block + 2) = &TriggerClass::`vftable';
-  *(Block + 3) = &TriggerClass::`vftable';
-  AbstractClass::AnnounceExpiredPointer(Block, 1);
-  v7 = Block;
-  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8EAE8] + 16))(&MEMORY[0xA8EAE8], &v7);
-  if ( v3 != -1 && v3 < MEMORY[0xA8EAF8] && v3 < --MEMORY[0xA8EAF8] )
+  *Block = &TriggerClass::`vftable'; /*0x726956*/
+  *(Block + 1) = &TriggerClass::`vftable'; /*0x72695c*/
+  *(Block + 2) = &TriggerClass::`vftable'; /*0x726963*/
+  *(Block + 3) = &vt_TriggerClass; /*0x72696a*/
+  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x726971*/
+  v7 = Block; /*0x726986*/
+  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8EAE8] + 16))(&MEMORY[0xA8EAE8], &v7); /*0x72698a*/
+  if ( v3 != -1 && v3 < MEMORY[0xA8EAF8] && v3 < --MEMORY[0xA8EAF8] ) /*0x7269a5*/
   {
-    do
+    do /*0x7269bd*/
     {
-      ++v3;
-      *((_DWORD *)MEMORY[0xA8EAEC] + v3 - 1) = *((_DWORD *)MEMORY[0xA8EAEC] + v3);
+      ++v3; /*0x7269ad*/
+      *((_DWORD *)MEMORY[0xA8EAEC] + v3 - 1) = *((_DWORD *)MEMORY[0xA8EAEC] + v3); /*0x7269b1*/
     }
-    while ( v3 < MEMORY[0xA8EAF8] );
+    while ( v3 < MEMORY[0xA8EAF8] ); /*0x7269bd*/
   }
-  v7 = Block;
-  v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v7);
-  if ( v4 != -1 && v4 < MEMORY[0xB0F680] && v4 < --MEMORY[0xB0F680] )
+  v7 = Block; /*0x7269cf*/
+  v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v7); /*0x7269d3*/
+  if ( v4 != -1 && v4 < MEMORY[0xB0F680] && v4 < --MEMORY[0xB0F680] ) /*0x7269ee*/
   {
-    do
+    do /*0x726a06*/
     {
-      ++v4;
-      *((_DWORD *)MEMORY[0xB0F674] + v4 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v4);
+      ++v4; /*0x7269f6*/
+      *((_DWORD *)MEMORY[0xB0F674] + v4 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v4); /*0x7269fa*/
     }
-    while ( v4 < MEMORY[0xB0F680] );
+    while ( v4 < MEMORY[0xB0F680] ); /*0x726a06*/
   }
-  v7 = Block;
-  v5 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F708] + 16))(&MEMORY[0xB0F708], &v7);
-  if ( v5 != -1 && v5 < MEMORY[0xB0F718] && v5 < --MEMORY[0xB0F718] )
+  v7 = Block; /*0x726a18*/
+  v5 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F708] + 16))(&MEMORY[0xB0F708], &v7); /*0x726a1c*/
+  if ( v5 != -1 && v5 < MEMORY[0xB0F718] && v5 < --MEMORY[0xB0F718] ) /*0x726a37*/
   {
-    do
+    do /*0x726a4f*/
     {
-      ++v5;
-      *((_DWORD *)MEMORY[0xB0F70C] + v5 - 1) = *((_DWORD *)MEMORY[0xB0F70C] + v5);
+      ++v5; /*0x726a3f*/
+      *((_DWORD *)MEMORY[0xB0F70C] + v5 - 1) = *((_DWORD *)MEMORY[0xB0F70C] + v5); /*0x726a43*/
     }
-    while ( v5 < MEMORY[0xB0F718] );
+    while ( v5 < MEMORY[0xB0F718] ); /*0x726a4f*/
   }
-  AbstractClass::DTOR(Block);
-  if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(Block);
-  return Block;
+  AbstractClass::DTOR(Block); /*0x726a53*/
+  if ( (a2 & 1) != 0 ) /*0x726a5d*/
+    __3_YAXPAX_Z(Block); /*0x726a60*/
+  return (TriggerClass *)Block; /*0x726a6a*/
 }
-
-/* ASM:
-push    ecx
-push    esi
-mov     esi, ecx
-mov     dl, 1
-mov     dword ptr [esi], offset ??_7TriggerClass@@6B@ ; const TriggerClass::`vftable'
-mov     dword ptr [esi+4], offset ??_7TriggerClass@@6B@_0 ; const TriggerClass::`vftable'
-mov     dword ptr [esi+8], offset ??_7TriggerClass@@6B@_1 ; const TriggerClass::`vftable'
-mov     dword ptr [esi+0Ch], offset ??_7TriggerClass@@6B@_2 ; const TriggerClass::`vftable'
-call    AbstractClass__AnnounceExpiredPointer
-mov     edx, ds:0A8EAE8h
-lea     eax, [esp+8+var_4]
-push    eax
-mov     ecx, 0A8EAE8h
-mov     [esp+0Ch+var_4], esi
-call    dword ptr [edx+10h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_7269BF
-mov     ecx, ds:0A8EAF8h
-cmp     eax, ecx
-jge     short loc_7269BF
-dec     ecx
-cmp     eax, ecx
-mov     ds:0A8EAF8h, ecx
-jge     short loc_7269BF
-
-loc_7269A7:                             ; CODE XREF: TriggerClass__CheckCondition+6D↓j
-mov     ecx, ds:0A8EAECh
-inc     eax
-mov     edx, [ecx+eax*4]
-mov     [ecx+eax*4-4], edx
-mov     ecx, ds:0A8EAF8h
-cmp     eax, ecx
-jl      short loc_7269A7
-
-loc_7269BF:                             ; CODE XREF: TriggerClass__CheckCondition+40↑j
-; TriggerClass__CheckCondition+4A↑j ...
-mov     edx, dword_A8ED54+8091Ch
-lea     eax, [esp+8+var_4]
-push    eax
-mov     ecx, (offset dword_A8ED54+8091Ch)
-mov     [esp+0Ch+var_4], esi
-call    dword ptr [edx+10h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_726A08
-mov     ecx, dword_A8ED54+8092Ch
-cmp     eax, ecx
-jge     short loc_726A08
-dec     ecx
-cmp     eax, ecx
-mov     dword_A8ED54+8092Ch, ecx
-jge     short loc_726A08
-
-loc_7269F0:                             ; CODE XREF: TriggerClass__CheckCondition+B6↓j
-mov     ecx, dword_A8ED54+80920h
-inc     eax
-mov     edx, [ecx+eax*4]
-mov     [ecx+eax*4-4], edx
-mov     ecx, dword_A8ED54+8092Ch
-cmp     eax, ecx
-jl      short loc_7269F0
-
-loc_726A08:                             ; CODE XREF: TriggerClass__CheckCondition+89↑j
-; TriggerClass__CheckCondition+93↑j ...
-mov     edx, dword_A8ED54+809B4h
-lea     eax, [esp+8+var_4]
-push    eax
-mov     ecx, (offset dword_A8ED54+809B4h)
-mov     [esp+0Ch+var_4], esi
-call    dword ptr [edx+10h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_726A51
-mov     ecx, dword_A8ED54+809C4h
-cmp     eax, ecx
-jge     short loc_726A51
-dec     ecx
-cmp     eax, ecx
-mov     dword_A8ED54+809C4h, ecx
-jge     short loc_726A51
-
-loc_726A39:                             ; CODE XREF: TriggerClass__CheckCondition+FF↓j
-mov     ecx, dword_A8ED54+809B8h
-inc     eax
-mov     edx, [ecx+eax*4]
-mov     [ecx+eax*4-4], edx
-mov     ecx, dword_A8ED54+809C4h
-cmp     eax, ecx
-jl      short loc_726A39
-
-loc_726A51:                             ; CODE XREF: TriggerClass__CheckCondition+D2↑j
-; TriggerClass__CheckCondition+DC↑j ...
-mov     ecx, esi
-call    AbstractClass__DTOR
-test    [esp+8+arg_0], 1
-jz      short loc_726A68
-push    esi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_726A68:                             ; CODE XREF: TriggerClass__CheckCondition+10D↑j
-mov     eax, esi
-pop     esi
-pop     ecx
-retn    4
-*/
 } }
 // 0x726C80
 namespace gamemd { void* TriggerTypeClass::Construct(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TriggerTypeClass_Constructor(_DWORD *this, char *Source)
+_DWORD *__thiscall TriggerTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
 {
   int v3; // eax
   int v4; // eax
-  int v5; // eax
+  TriggerTypeClass *v5; // eax
 
-  AbstractTypeClass::Constructor((int)this, Source);
-  *(this + 38) = -1;
-  *((_BYTE *)this + 156) = 1;
-  *((_BYTE *)this + 157) = 1;
-  *((_BYTE *)this + 158) = 1;
-  *((_BYTE *)this + 159) = 1;
-  *((_BYTE *)this + 160) = 0;
-  *(this + 41) = 0;
-  *(this + 42) = 0;
-  *(this + 43) = 0;
-  *(this + 44) = 0;
-  *this = &TriggerTypeClass::`vftable';
-  *(this + 1) = &TriggerTypeClass::`vftable';
-  *(this + 2) = &TriggerTypeClass::`vftable';
-  *(this + 3) = &TriggerTypeClass::`vftable';
-  if ( MEMORY[0xB0F668] < MEMORY[0xB0F660]
-    || (MEMORY[0xB0F665] || !MEMORY[0xB0F660])
-    && MEMORY[0xB0F66C] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0F658] + 8))(
-         &MEMORY[0xB0F658],
-         MEMORY[0xB0F660] + MEMORY[0xB0F66C],
+  AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x726c89*/
+  *(this + 38) = -1; /*0x726c92*/
+  *((_BYTE *)this + 156) = 1; /*0x726c9c*/
+  *((_BYTE *)this + 157) = 1; /*0x726ca2*/
+  *((_BYTE *)this + 158) = 1; /*0x726ca8*/
+  *((_BYTE *)this + 159) = 1; /*0x726cae*/
+  *((_BYTE *)this + 160) = 0; /*0x726cb4*/
+  *(this + 41) = 0; /*0x726cba*/
+  *(this + 42) = 0; /*0x726cc0*/
+  *(this + 43) = 0; /*0x726cc6*/
+  *(this + 44) = 0; /*0x726ccc*/
+  *this = &TriggerTypeClass::`vftable'; /*0x726cd2*/
+  *(this + 1) = &TriggerTypeClass::`vftable'; /*0x726cd8*/
+  *(this + 2) = &TriggerTypeClass::`vftable'; /*0x726cdf*/
+  *(this + 3) = &vt_TriggerTypeClass; /*0x726ce6*/
+  if ( *(int *)&stru_B05488.__pad_579C[19012] < *(int *)&stru_B05488.__pad_579C[19004] /*0x726d21*/
+    || (stru_B05488.__pad_579C[19009] || !*(_DWORD *)&stru_B05488.__pad_579C[19004])
+    && *(int *)&stru_B05488.__pad_579C[19016] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[18996] + 8))(
+         &stru_B05488.__pad_579C[18996],
+         *(_DWORD *)&stru_B05488.__pad_579C[19004] + *(_DWORD *)&stru_B05488.__pad_579C[19016],
          0) )
   {
-    v3 = MEMORY[0xB0F668]++;
-    *((_DWORD *)MEMORY[0xB0F65C] + v3) = this;
+    v3 = (*(_DWORD *)&stru_B05488.__pad_579C[19012])++; /*0x726d2e*/
+    *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19000] + 4 * v3) = this; /*0x726d3d*/
   }
-  if ( MEMORY[0xB0F680] < MEMORY[0xB0F678]
-    || (MEMORY[0xB0F67D] || !MEMORY[0xB0F678])
-    && MEMORY[0xB0F684] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB0F670] + 8))(
-         &MEMORY[0xB0F670],
-         MEMORY[0xB0F678] + MEMORY[0xB0F684],
+  if ( *(int *)&stru_B05488.__pad_579C[19036] < *(int *)&stru_B05488.__pad_579C[19028] /*0x726d74*/
+    || (stru_B05488.__pad_579C[19033] || !*(_DWORD *)&stru_B05488.__pad_579C[19028])
+    && *(int *)&stru_B05488.__pad_579C[19040] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[19020] + 8))(
+         &stru_B05488.__pad_579C[19020],
+         *(_DWORD *)&stru_B05488.__pad_579C[19028] + *(_DWORD *)&stru_B05488.__pad_579C[19040],
          0) )
   {
-    v4 = MEMORY[0xB0F680]++;
-    *((_DWORD *)MEMORY[0xB0F674] + v4) = this;
+    v4 = (*(_DWORD *)&stru_B05488.__pad_579C[19036])++; /*0x726d81*/
+    *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19024] + 4 * v4) = this; /*0x726d90*/
   }
-  *(this + 38) = MEMORY[0x8B4188];
-  if ( MEMORY[0x8B4188] < MEMORY[0x8B4180]
-    || (MEMORY[0x8B4185] || !MEMORY[0x8B4180])
-    && MEMORY[0x8B418C] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0x8B4178] + 8))(
-         &MEMORY[0x8B4178],
-         MEMORY[0x8B4180] + MEMORY[0x8B418C],
+  *(this + 38) = dword_8B4188; /*0x726d99*/
+  if ( dword_8B4188 < dword_8B4180 /*0x726dd0*/
+    || (unk_8B4185 || !dword_8B4180)
+    && dword_8B418C > 0
+    && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(dword_8B4178 + 8))(
+         &dword_8B4178,
+         dword_8B4180 + dword_8B418C,
          0) )
   {
-    v5 = MEMORY[0x8B4188]++;
-    *((_DWORD *)MEMORY[0x8B417C] + v5) = this;
+    v5 = (TriggerTypeClass *)dword_8B4188++; /*0x726ddd*/
+    *((_DWORD *)unk_8B417C + (_DWORD)v5) = this; /*0x726dec*/
   }
-  return this;
+  return this; /*0x726df1*/
 }
-
-/* ASM:
-Source          = dword ptr  4
-
-mov     eax, [esp+Source]
-push    ebx
-push    esi
-mov     esi, ecx
-push    eax             ; Source
-call    AbstractTypeClass__Constructor
-mov     al, 1
-xor     ebx, ebx
-mov     dword ptr [esi+98h], 0FFFFFFFFh
-mov     [esi+9Ch], al
-mov     [esi+9Dh], al
-mov     [esi+9Eh], al
-mov     [esi+9Fh], al
-mov     [esi+0A0h], bl
-mov     [esi+0A4h], ebx
-mov     [esi+0A8h], ebx
-mov     [esi+0ACh], ebx
-mov     [esi+0B0h], ebx
-mov     dword ptr [esi], offset ??_7TriggerTypeClass@@6B@ ; const TriggerTypeClass::`vftable'
-mov     dword ptr [esi+4], offset ??_7TriggerTypeClass@@6B@_0 ; const TriggerTypeClass::`vftable'
-mov     dword ptr [esi+8], offset ??_7TriggerTypeClass@@6B@_1 ; const TriggerTypeClass::`vftable'
-mov     dword ptr [esi+0Ch], offset ??_7TriggerTypeClass@@6B@_2 ; const TriggerTypeClass::`vftable'
-mov     eax, dword_A8ED54+8090Ch
-mov     ecx, dword_A8ED54+80914h
-cmp     ecx, eax
-jl      short loc_726D28
-cmp     byte ptr dword_A8ED54+80911h, bl
-jnz     short loc_726D08
-cmp     eax, ebx
-jnz     short loc_726D40
-
-loc_726D08:                             ; CODE XREF: TriggerTypeClass__Construct+82↑j
-mov     ecx, dword_A8ED54+80918h
-cmp     ecx, ebx
-jle     short loc_726D40
-mov     edx, dword_A8ED54+80904h
-add     ecx, eax
-push    ebx
-push    ecx
-mov     ecx, (offset dword_A8ED54+80904h)
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_726D40
-
-loc_726D28:                             ; CODE XREF: TriggerTypeClass__Construct+7A↑j
-mov     ecx, dword_A8ED54+80914h
-mov     eax, ecx
-inc     ecx
-mov     dword_A8ED54+80914h, ecx
-mov     ecx, dword_A8ED54+80908h
-mov     [ecx+eax*4], esi
-
-loc_726D40:                             ; CODE XREF: TriggerTypeClass__Construct+86↑j
-; TriggerTypeClass__Construct+90↑j ...
-mov     eax, dword_A8ED54+80924h
-mov     ecx, dword_A8ED54+8092Ch
-cmp     ecx, eax
-jl      short loc_726D7B
-cmp     byte ptr dword_A8ED54+80929h, bl
-jnz     short loc_726D5B
-cmp     eax, ebx
-jnz     short loc_726D93
-
-loc_726D5B:                             ; CODE XREF: TriggerTypeClass__Construct+D5↑j
-mov     ecx, dword_A8ED54+80930h
-cmp     ecx, ebx
-jle     short loc_726D93
-mov     edx, dword_A8ED54+8091Ch
-add     ecx, eax
-push    ebx
-push    ecx
-mov     ecx, (offset dword_A8ED54+8091Ch)
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_726D93
-
-loc_726D7B:                             ; CODE XREF: TriggerTypeClass__Construct+CD↑j
-mov     ecx, dword_A8ED54+8092Ch
-mov     eax, ecx
-inc     ecx
-mov     dword_A8ED54+8092Ch, ecx
-mov     ecx, dword_A8ED54+80920h
-mov     [ecx+eax*4], esi
-
-loc_726D93:                             ; CODE XREF: TriggerTypeClass__Construct+D9↑j
-; TriggerTypeClass__Construct+E3↑j ...
-mov     edx, ds:8B4188h
-mov     [esi+98h], edx
-mov     eax, ds:8B4180h
-cmp     ds:8B4188h, eax
-jl      short loc_726DD7
-cmp     ds:8B4185h, bl
-jnz     short loc_726DB8
-cmp     eax, ebx
-jnz     short loc_726DEF
-
-loc_726DB8:                             ; CODE XREF: TriggerTypeClass__Construct+132↑j
-mov     ecx, ds:8B418Ch
-cmp     ecx, ebx
-jle     short loc_726DEF
-add     ecx, eax
-mov     eax, ds:8B4178h
-push    ebx
-push    ecx
-mov     ecx, 8B4178h
-call    dword ptr [eax+8]
-test    al, al
-jz      short loc_726DEF
-
-loc_726DD7:                             ; CODE XREF: TriggerTypeClass__Construct+12A↑j
-mov     ecx, ds:8B4188h
-mov     eax, ecx
-inc     ecx
-mov     ds:8B4188h, ecx
-mov     ecx, ds:8B417Ch
-mov     [ecx+eax*4], esi
-
-loc_726DEF:                             ; CODE XREF: TriggerTypeClass__Construct+136↑j
-; TriggerTypeClass__Construct+140↑j ...
-mov     eax, esi
-pop     esi
-pop     ebx
-retn    4
-*/
 } }
 // 0x726E00
 namespace gamemd { int TriggerClass::ProcessEvents() {
@@ -9639,206 +3504,70 @@ int __thiscall sub_726E00(int this)
   int v8; // eax
   int v10; // [esp+10h] [ebp-4h] BYREF
 
-  *(_DWORD *)this = &TriggerTypeClass::`vftable';
-  *(_DWORD *)(this + 4) = &TriggerTypeClass::`vftable';
-  *(_DWORD *)(this + 8) = &TriggerTypeClass::`vftable';
-  *(_DWORD *)(this + 12) = &TriggerTypeClass::`vftable';
-  AbstractClass::AnnounceExpiredPointer((void **)this, 1);
-  v10 = this;
-  v2 = (*(int (__thiscall **)(int *, int *))(MEMORY[0x8B4178] + 16))(&MEMORY[0x8B4178], &v10);
-  if ( v2 != -1 && v2 < MEMORY[0x8B4188] && v2 < --MEMORY[0x8B4188] )
+  *(_DWORD *)this = &TriggerTypeClass::`vftable'; /*0x726e06*/
+  *(_DWORD *)(this + 4) = &TriggerTypeClass::`vftable'; /*0x726e0c*/
+  *(_DWORD *)(this + 8) = &TriggerTypeClass::`vftable'; /*0x726e13*/
+  *(_DWORD *)(this + 12) = &vt_TriggerTypeClass; /*0x726e1a*/
+  AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x726e21*/
+  v10 = this; /*0x726e36*/
+  v2 = (*(int (__thiscall **)(int *, int *))(dword_8B4178 + 16))(&dword_8B4178, &v10); /*0x726e3a*/
+  if ( v2 != -1 && v2 < dword_8B4188 && v2 < --dword_8B4188 ) /*0x726e55*/
   {
-    do
+    do /*0x726e6d*/
     {
-      ++v2;
-      *((_DWORD *)MEMORY[0x8B417C] + v2 - 1) = *((_DWORD *)MEMORY[0x8B417C] + v2);
+      ++v2; /*0x726e5d*/
+      *((_DWORD *)unk_8B417C + v2 - 1) = *((_DWORD *)unk_8B417C + v2); /*0x726e61*/
     }
-    while ( v2 < MEMORY[0x8B4188] );
+    while ( v2 < dword_8B4188 ); /*0x726e6d*/
   }
-  v3 = *(_DWORD **)(this + 176);
-  if ( v3 )
+  v3 = *(_DWORD **)(this + 176); /*0x726e6f*/
+  if ( v3 ) /*0x726e78*/
   {
-    do
+    do /*0x726e8c*/
     {
-      v4 = (_DWORD *)v3[10];
-      if ( v3 )
-        (*(void (__thiscall **)(_DWORD *, int))(*v3 + 32))(v3, 1);
-      v3 = v4;
+      v4 = (_DWORD *)v3[10]; /*0x726e7a*/
+      if ( v3 ) /*0x726e7f*/
+        (*(void (__thiscall **)(_DWORD *, int))(*v3 + 32))(v3, 1); /*0x726e85*/
+      v3 = v4; /*0x726e8a*/
     }
-    while ( v4 );
+    while ( v4 ); /*0x726e8c*/
   }
-  v5 = *(_DWORD **)(this + 172);
-  if ( v5 )
+  v5 = *(_DWORD **)(this + 172); /*0x726e8e*/
+  if ( v5 ) /*0x726e96*/
   {
-    do
+    do /*0x726eaa*/
     {
-      v6 = (_DWORD *)v5[10];
-      if ( v5 )
-        (*(void (__thiscall **)(_DWORD *, int))(*v5 + 32))(v5, 1);
-      v5 = v6;
+      v6 = (_DWORD *)v5[10]; /*0x726e98*/
+      if ( v5 ) /*0x726e9d*/
+        (*(void (__thiscall **)(_DWORD *, int))(*v5 + 32))(v5, 1); /*0x726ea3*/
+      v5 = v6; /*0x726ea8*/
     }
-    while ( v6 );
+    while ( v6 ); /*0x726eaa*/
   }
-  v10 = this;
-  v7 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v10);
-  if ( v7 != -1 && v7 < MEMORY[0xB0F680] && v7 < --MEMORY[0xB0F680] )
+  v10 = this; /*0x726ebc*/
+  v7 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v10); /*0x726ec0*/
+  if ( v7 != -1 && v7 < MEMORY[0xB0F680] && v7 < --MEMORY[0xB0F680] ) /*0x726edc*/
   {
-    do
+    do /*0x726ef4*/
     {
-      ++v7;
-      *((_DWORD *)MEMORY[0xB0F674] + v7 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v7);
+      ++v7; /*0x726ee4*/
+      *((_DWORD *)MEMORY[0xB0F674] + v7 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v7); /*0x726ee8*/
     }
-    while ( v7 < MEMORY[0xB0F680] );
+    while ( v7 < MEMORY[0xB0F680] ); /*0x726ef4*/
   }
-  v10 = this;
-  v8 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB0F658] + 16))(&MEMORY[0xB0F658], &v10);
-  if ( v8 != -1 && v8 < MEMORY[0xB0F668] && v8 < --MEMORY[0xB0F668] )
+  v10 = this; /*0x726f06*/
+  v8 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB0F658] + 16))(&MEMORY[0xB0F658], &v10); /*0x726f0a*/
+  if ( v8 != -1 && v8 < MEMORY[0xB0F668] && v8 < --MEMORY[0xB0F668] ) /*0x726f25*/
   {
-    do
+    do /*0x726f3d*/
     {
-      ++v8;
-      *((_DWORD *)MEMORY[0xB0F65C] + v8 - 1) = *((_DWORD *)MEMORY[0xB0F65C] + v8);
+      ++v8; /*0x726f2d*/
+      *((_DWORD *)MEMORY[0xB0F65C] + v8 - 1) = *((_DWORD *)MEMORY[0xB0F65C] + v8); /*0x726f31*/
     }
-    while ( v8 < MEMORY[0xB0F668] );
+    while ( v8 < MEMORY[0xB0F668] ); /*0x726f3d*/
   }
-  return AbstractTypeClass::Dtor((_DWORD *)this);
+  return AbstractTypeClass::Dtor((_DWORD *)this); /*0x726f46*/
 }
-
-/* ASM:
-push    ecx
-push    edi
-mov     edi, ecx
-mov     dl, 1
-mov     dword ptr [edi], offset ??_7TriggerTypeClass@@6B@ ; const TriggerTypeClass::`vftable'
-mov     dword ptr [edi+4], offset ??_7TriggerTypeClass@@6B@_0 ; const TriggerTypeClass::`vftable'
-mov     dword ptr [edi+8], offset ??_7TriggerTypeClass@@6B@_1 ; const TriggerTypeClass::`vftable'
-mov     dword ptr [edi+0Ch], offset ??_7TriggerTypeClass@@6B@_2 ; const TriggerTypeClass::`vftable'
-call    AbstractClass__AnnounceExpiredPointer
-mov     edx, ds:8B4178h
-lea     eax, [esp+8+var_4]
-push    eax
-mov     ecx, 8B4178h
-mov     [esp+0Ch+var_4], edi
-call    dword ptr [edx+10h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_726E6F
-mov     ecx, ds:8B4188h
-cmp     eax, ecx
-jge     short loc_726E6F
-dec     ecx
-cmp     eax, ecx
-mov     ds:8B4188h, ecx
-jge     short loc_726E6F
-
-loc_726E57:                             ; CODE XREF: TriggerClass__ProcessEvents+6D↓j
-mov     ecx, ds:8B417Ch
-inc     eax
-mov     edx, [ecx+eax*4]
-mov     [ecx+eax*4-4], edx
-mov     ecx, ds:8B4188h
-cmp     eax, ecx
-jl      short loc_726E57
-
-loc_726E6F:                             ; CODE XREF: TriggerClass__ProcessEvents+40↑j
-; TriggerClass__ProcessEvents+4A↑j ...
-mov     ecx, [edi+0B0h]
-push    esi
-test    ecx, ecx
-jz      short loc_726E8E
-
-loc_726E7A:                             ; CODE XREF: TriggerClass__ProcessEvents+8C↓j
-mov     esi, [ecx+28h]
-test    ecx, ecx
-jz      short loc_726E88
-mov     eax, [ecx]
-push    1
-call    dword ptr [eax+20h]
-
-loc_726E88:                             ; CODE XREF: TriggerClass__ProcessEvents+7F↑j
-test    esi, esi
-mov     ecx, esi
-jnz     short loc_726E7A
-
-loc_726E8E:                             ; CODE XREF: TriggerClass__ProcessEvents+78↑j
-mov     ecx, [edi+0ACh]
-test    ecx, ecx
-jz      short loc_726EAC
-
-loc_726E98:                             ; CODE XREF: TriggerClass__ProcessEvents+AA↓j
-mov     esi, [ecx+28h]
-test    ecx, ecx
-jz      short loc_726EA6
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx+20h]
-
-loc_726EA6:                             ; CODE XREF: TriggerClass__ProcessEvents+9D↑j
-test    esi, esi
-mov     ecx, esi
-jnz     short loc_726E98
-
-loc_726EAC:                             ; CODE XREF: TriggerClass__ProcessEvents+96↑j
-mov     edx, dword_A8ED54+8091Ch
-lea     eax, [esp+0Ch+var_4]
-push    eax
-mov     ecx, (offset dword_A8ED54+8091Ch)
-mov     [esp+10h+var_4], edi
-call    dword ptr [edx+10h]
-cmp     eax, 0FFFFFFFFh
-pop     esi
-jz      short loc_726EF6
-mov     ecx, dword_A8ED54+8092Ch
-cmp     eax, ecx
-jge     short loc_726EF6
-dec     ecx
-cmp     eax, ecx
-mov     dword_A8ED54+8092Ch, ecx
-jge     short loc_726EF6
-
-loc_726EDE:                             ; CODE XREF: TriggerClass__ProcessEvents+F4↓j
-mov     ecx, dword_A8ED54+80920h
-inc     eax
-mov     edx, [ecx+eax*4]
-mov     [ecx+eax*4-4], edx
-mov     ecx, dword_A8ED54+8092Ch
-cmp     eax, ecx
-jl      short loc_726EDE
-
-loc_726EF6:                             ; CODE XREF: TriggerClass__ProcessEvents+C7↑j
-; TriggerClass__ProcessEvents+D1↑j ...
-mov     edx, dword_A8ED54+80904h
-lea     eax, [esp+8+var_4]
-push    eax
-mov     ecx, (offset dword_A8ED54+80904h)
-mov     [esp+0Ch+var_4], edi
-call    dword ptr [edx+10h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_726F3F
-mov     ecx, dword_A8ED54+80914h
-cmp     eax, ecx
-jge     short loc_726F3F
-dec     ecx
-cmp     eax, ecx
-mov     dword_A8ED54+80914h, ecx
-jge     short loc_726F3F
-
-loc_726F27:                             ; CODE XREF: TriggerClass__ProcessEvents+13D↓j
-mov     ecx, dword_A8ED54+80908h
-inc     eax
-mov     edx, [ecx+eax*4]
-mov     [ecx+eax*4-4], edx
-mov     ecx, dword_A8ED54+80914h
-cmp     eax, ecx
-jl      short loc_726F27
-
-loc_726F3F:                             ; CODE XREF: TriggerClass__ProcessEvents+110↑j
-; TriggerClass__ProcessEvents+11A↑j ...
-mov     ecx, edi
-call    AbstractTypeClass__Dtor
-pop     edi
-pop     ecx
-retn
-*/
 } }
 // 0x727090
 namespace gamemd { int TriggerTypeClass::GetAction(int a1, int a2) {
@@ -9851,96 +3580,29 @@ int __thiscall TriggerTypeClass::_vt10(_DWORD *this, int a2, int a3)
   _DWORD *j; // esi
   int result; // eax
 
-  v4 = *(this + 42);
-  if ( v4 && v4 == a2 )
-    *(this + 42) = *(_DWORD *)(v4 + 168);
-  for ( i = (_DWORD *)*(this + 44); i; i = (_DWORD *)i[10] )
-    (*(void (__thiscall **)(_DWORD *, int, int))(*i + 40))(i, a2, 1);
-  v6 = *(this + 44);
-  if ( v6 == a2 )
-    *(this + 44) = *(_DWORD *)(v6 + 40);
-  for ( j = (_DWORD *)*(this + 43); j; j = (_DWORD *)j[10] )
-    (*(void (__thiscall **)(_DWORD *, int, int))(*j + 40))(j, a2, 1);
-  result = *(this + 43);
-  if ( result == a2 )
+  v4 = *(this + 42); /*0x727098*/
+  if ( v4 && v4 == a2 ) /*0x7270a4*/
+    *(this + 42) = *(_DWORD *)(v4 + 168); /*0x7270ac*/
+  for ( i = (_DWORD *)*(this + 44); i; i = (_DWORD *)i[10] ) /*0x7270bb*/
+    (*(void (__thiscall **)(_DWORD *, int, int))(*i + 40))(i, a2, 1); /*0x7270c4*/
+  v6 = *(this + 44); /*0x7270ce*/
+  if ( v6 == a2 ) /*0x7270d6*/
+    *(this + 44) = *(_DWORD *)(v6 + 40); /*0x7270db*/
+  for ( j = (_DWORD *)*(this + 43); j; j = (_DWORD *)j[10] ) /*0x7270e9*/
+    (*(void (__thiscall **)(_DWORD *, int, int))(*j + 40))(j, a2, 1); /*0x7270f2*/
+  result = *(this + 43); /*0x7270fc*/
+  if ( result == a2 ) /*0x727105*/
   {
-    result = *(_DWORD *)(result + 40);
-    *(this + 43) = result;
+    result = *(_DWORD *)(result + 40); /*0x727107*/
+    *(this + 43) = result; /*0x72710a*/
   }
-  return result;
+  return result; /*0x727110*/
 }
-
-/* ASM:
-push    ebx
-mov     ebx, ecx
-push    edi
-mov     edi, [esp+8+arg_0]
-mov     eax, [ebx+0A8h]
-test    eax, eax
-jz      short loc_7270B2
-cmp     eax, edi
-jnz     short loc_7270B2
-mov     eax, [eax+0A8h]
-mov     [ebx+0A8h], eax
-
-loc_7270B2:                             ; CODE XREF: TriggerTypeClass__GetAction+10↑j
-; TriggerTypeClass__GetAction+14↑j
-push    esi
-mov     esi, [ebx+0B0h]
-test    esi, esi
-jz      short loc_7270CE
-
-loc_7270BD:                             ; CODE XREF: TriggerTypeClass__GetAction+3C↓j
-mov     edx, [esi]
-push    1
-push    edi
-mov     ecx, esi
-call    dword ptr [edx+28h]
-mov     esi, [esi+28h]
-test    esi, esi
-jnz     short loc_7270BD
-
-loc_7270CE:                             ; CODE XREF: TriggerTypeClass__GetAction+2B↑j
-mov     eax, [ebx+0B0h]
-cmp     eax, edi
-jnz     short loc_7270E1
-mov     eax, [eax+28h]
-mov     [ebx+0B0h], eax
-
-loc_7270E1:                             ; CODE XREF: TriggerTypeClass__GetAction+46↑j
-mov     esi, [ebx+0ACh]
-test    esi, esi
-jz      short loc_7270FC
-
-loc_7270EB:                             ; CODE XREF: TriggerTypeClass__GetAction+6A↓j
-mov     edx, [esi]
-push    1
-push    edi
-mov     ecx, esi
-call    dword ptr [edx+28h]
-mov     esi, [esi+28h]
-test    esi, esi
-jnz     short loc_7270EB
-
-loc_7270FC:                             ; CODE XREF: TriggerTypeClass__GetAction+59↑j
-mov     eax, [ebx+0ACh]
-pop     esi
-cmp     eax, edi
-jnz     short loc_727110
-mov     eax, [eax+28h]
-mov     [ebx+0ACh], eax
-
-loc_727110:                             ; CODE XREF: TriggerTypeClass__GetAction+75↑j
-pop     edi
-pop     ebx
-retn    8
-*/
 } }
 // 0x727240
 namespace gamemd { int TriggerTypeClass::LoadFromINI(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x727240
-char __thiscall TriggerTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
+char __thiscall TriggerTypeClass::_vt25(int this, unsigned __int8 ***a2)
 {
   char *v3; // esi
   int v4; // edx
@@ -9957,663 +3619,198 @@ char __thiscall TriggerTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   char *v15; // eax
   int v16; // eax
   int v17; // edi
-  int v18; // eax
+  void *v18; // eax
   int v19; // esi
   char *v20; // eax
   int v21; // eax
   int v22; // edi
   int v23; // ebx
-  int v24; // eax
+  void *v24; // eax
   int v25; // esi
   char Destination[48]; // [esp+8h] [ebp-234h] BYREF
   char v28; // [esp+38h] [ebp-204h]
   char String[512]; // [esp+3Ch] [ebp-200h] BYREF
 
-  INIClass::ResetSection(a2);
-  if ( !INIClass::GetString(
+  INIClass::ResetSection(a2); /*0x727253*/
+  if ( !INIClass::GetString( /*0x72727b*/
           a2,
-          (unsigned __int8 **)aTriggers,
+          (unsigned __int8 *)MEMORY[0x844A3C],
           (unsigned __int8 *)(this + 36),
-          (char *)&MEMORY[0x87F7E8][10719],
+          &MEMORY[0x889F64],
           String,
           512) )
-    return 0;
-  v3 = strtok(String, Delimiter);
-  if ( _strcmpi(v3, g_Str__none_) )
-    v4 = *(_DWORD *)(MEMORY[0x87F7E8][528685] + 4 * SuperWeaponTypeClass::FindByName(v3));
+    return 0; /*0x7275b5*/
+  v3 = strtok(String, MEMORY[0x817F70]); /*0x727290*/
+  if ( _strcmpi(v3, MEMORY[0x817474]) ) /*0x727298*/
+    v4 = *((_DWORD *)g_SuperWeaponTypeCount + SuperWeaponTypeClass::FindByName(v3)); /*0x7272bb*/
   else
-    v4 = *(_DWORD *)MEMORY[0x87F7E8][528685];
-  *(_DWORD *)(this + 164) = v4;
-  v5 = strtok(0, Delimiter);
-  *(_DWORD *)(this + 168) = 0;
-  if ( _strcmpi(v5, g_Str__none_) )
+    v4 = *(_DWORD *)g_SuperWeaponTypeCount; /*0x7272aa*/
+  *(_DWORD *)(this + 164) = v4; /*0x7272cb*/
+  v5 = strtok(0, MEMORY[0x817F70]); /*0x7272d6*/
+  *(_DWORD *)(this + 168) = 0; /*0x7272de*/
+  if ( _strcmpi(v5, MEMORY[0x817474]) ) /*0x7272e4*/
   {
-    if ( !_strcmpi(g_Str__none_, v5) || !_strcmpi(g_Str_none, v5) )
-      goto LABEL_14;
-    v6 = 0;
-    if ( MEMORY[0x87F7E8][53864] > 0 )
+    if ( !_strcmpi(MEMORY[0x817474], v5) || !_strcmpi(g_Str_none, v5) ) /*0x72730c*/
+      goto LABEL_14; /*0x72730c*/
+    v6 = 0; /*0x72731d*/
+    if ( dword_8B4188 > 0 ) /*0x727321*/
     {
-      while ( _strcmpi((const void *)(*(_DWORD *)(MEMORY[0x87F7E8][53861] + 4 * v6) + 36), v5) )
+      while ( _strcmpi((const void *)(*((_DWORD *)unk_8B417C + v6) + 36), v5) ) /*0x72733a*/
       {
-        if ( ++v6 >= MEMORY[0x87F7E8][53864] )
-          goto LABEL_11;
+        if ( ++v6 >= dword_8B4188 ) /*0x727344*/
+          goto LABEL_11; /*0x727344*/
       }
-      v8 = *(_DWORD **)(MEMORY[0x87F7E8][53861] + 4 * v6);
-      goto LABEL_15;
+      v8 = (_DWORD *)*((_DWORD *)unk_8B417C + v6); /*0x727367*/
+      goto LABEL_15; /*0x72736a*/
     }
 LABEL_11:
-    v7 = (_DWORD *)__2_YAPAXI_Z(180);
-    if ( v7 )
-      v8 = TriggerTypeClass::Construct(v7, v5);
+    v7 = __2_YAPAXI_Z(0xB4u); /*0x72734b*/
+    if ( v7 ) /*0x727355*/
+      v8 = TriggerTypeClass::Construct(v7, v5); /*0x72735a*/
     else
 LABEL_14:
-      v8 = 0;
+      v8 = 0; /*0x72736c*/
 LABEL_15:
-    *(_DWORD *)(this + 168) = v8;
+    *(_DWORD *)(this + 168) = v8; /*0x72736e*/
   }
-  v9 = strtok(0, Delimiter);
-  if ( v9 )
+  v9 = strtok(0, MEMORY[0x817F70]); /*0x727374*/
+  if ( v9 ) /*0x727384*/
   {
-    strncpy(Destination, v9, 48);
-    v28 = 0;
+    strncpy(Destination, v9, 0x30u); /*0x727395*/
+    v28 = 0; /*0x72739d*/
   }
   else
   {
-    Destination[0] = 0;
+    Destination[0] = 0; /*0x727386*/
   }
-  if ( Destination != (char *)(this + 100) )
+  if ( Destination != (char *)(this + 100) ) /*0x7273ab*/
   {
-    qmemcpy((void *)(this + 100), Destination, 0x30u);
-    *(_BYTE *)(this + 148) = v28;
+    qmemcpy((void *)(this + 100), Destination, 0x30u); /*0x7273b6*/
+    *(_BYTE *)(this + 148) = v28; /*0x7273b8*/
   }
-  v10 = strtok(0, Delimiter);
-  *(_BYTE *)(this + 159) = v10 && !atoi(v10);
-  v11 = strtok(0, Delimiter);
-  *(_BYTE *)(this + 156) = v11 && atoi(v11);
-  v12 = strtok(0, Delimiter);
-  *(_BYTE *)(this + 157) = v12 && atoi(v12);
-  v13 = strtok(0, Delimiter);
-  *(_BYTE *)(this + 158) = v13 && atoi(v13);
-  v14 = strtok(0, Delimiter);
-  if ( v14 && atoi(v14) )
-    *(_BYTE *)(this + 160) = 1;
-  if ( INIClass::GetString(
+  v10 = strtok(0, MEMORY[0x817F70]); /*0x7273bf*/
+  *(_BYTE *)(this + 159) = v10 && !atoi(v10); /*0x7273e1*/
+  v11 = strtok(0, MEMORY[0x817F70]); /*0x7273ee*/
+  *(_BYTE *)(this + 156) = v11 && atoi(v11); /*0x727407*/
+  v12 = strtok(0, MEMORY[0x817F70]); /*0x72741d*/
+  *(_BYTE *)(this + 157) = v12 && atoi(v12); /*0x727436*/
+  v13 = strtok(0, MEMORY[0x817F70]); /*0x72744c*/
+  *(_BYTE *)(this + 158) = v13 && atoi(v13); /*0x727465*/
+  v14 = strtok(0, MEMORY[0x817F70]); /*0x72747b*/
+  if ( v14 && atoi(v14) ) /*0x727488*/
+    *(_BYTE *)(this + 160) = 1; /*0x727494*/
+  if ( INIClass::GetString( /*0x7274bb*/
          a2,
-         (unsigned __int8 **)aEvents,
+         (unsigned __int8 *)MEMORY[0x844A2C],
          (unsigned __int8 *)(this + 36),
-         (char *)&MEMORY[0x87F7E8][10719],
+         &MEMORY[0x889F64],
          String,
          512) )
   {
-    v15 = strtok(String, Delimiter);
-    v16 = atoi(v15);
-    if ( v16 )
+    v15 = strtok(String, MEMORY[0x817F70]); /*0x7274ce*/
+    v16 = atoi(v15); /*0x7274d4*/
+    if ( v16 ) /*0x7274de*/
     {
-      v17 = v16;
-      do
+      v17 = v16; /*0x7274e0*/
+      do /*0x727514*/
       {
-        v18 = __2_YAPAXI_Z(88);
-        if ( v18 )
-          v19 = TActionClass::TActionClass(v18);
+        v18 = __2_YAPAXI_Z(0x58u); /*0x7274e4*/
+        if ( v18 ) /*0x7274ee*/
+          v19 = TActionClass::TActionClass(v18); /*0x7274f7*/
         else
-          v19 = 0;
-        TriggerTypeClass::ParseActionData(v19);
-        --v17;
-        *(_DWORD *)(v19 + 40) = *(_DWORD *)(this + 172);
-        *(_DWORD *)(this + 172) = v19;
+          v19 = 0; /*0x7274fb*/
+        TriggerTypeClass::ParseActionData(v19); /*0x7274ff*/
+        --v17; /*0x72750a*/
+        *(_DWORD *)(v19 + 40) = *(_DWORD *)(this + 172); /*0x72750b*/
+        *(_DWORD *)(this + 172) = v19; /*0x72750e*/
       }
-      while ( v17 );
+      while ( v17 ); /*0x727514*/
     }
   }
-  if ( INIClass::GetString(
+  if ( INIClass::GetString( /*0x727537*/
          a2,
-         (unsigned __int8 **)aActions,
+         (unsigned __int8 *)MEMORY[0x844A34],
          (unsigned __int8 *)(this + 36),
-         (char *)&MEMORY[0x87F7E8][10719],
+         &MEMORY[0x889F64],
          String,
          512) )
   {
-    v20 = strtok(String, Delimiter);
-    v21 = atoi(v20);
-    v22 = 0;
-    *(_DWORD *)(this + 176) = 0;
-    if ( v21 )
+    v20 = strtok(String, MEMORY[0x817F70]); /*0x72754a*/
+    v21 = atoi(v20); /*0x727550*/
+    v22 = 0; /*0x727558*/
+    *(_DWORD *)(this + 176) = 0; /*0x72755c*/
+    if ( v21 ) /*0x727562*/
     {
-      v23 = v21;
-      do
+      v23 = v21; /*0x727564*/
+      do /*0x7275a3*/
       {
-        v24 = __2_YAPAXI_Z(148);
-        if ( v24 )
-          v25 = TActionClass::ctor(v24);
+        v24 = __2_YAPAXI_Z(0x94u); /*0x72756b*/
+        if ( v24 ) /*0x727575*/
+          v25 = TActionClass::ctor(v24); /*0x72757e*/
         else
-          v25 = 0;
-        ScriptAction::ParseScriptActionParams(v25);
-        if ( *(_DWORD *)(this + 176) )
-          *(_DWORD *)(v22 + 40) = v25;
+          v25 = 0; /*0x727582*/
+        ScriptAction::ParseScriptActionParams(v25); /*0x727586*/
+        if ( *(_DWORD *)(this + 176) ) /*0x72758b*/
+          *(_DWORD *)(v22 + 40) = v25; /*0x72759d*/
         else
-          *(_DWORD *)(this + 176) = v25;
-        --v23;
-        v22 = v25;
+          *(_DWORD *)(this + 176) = v25; /*0x727595*/
+        --v23; /*0x7275a0*/
+        v22 = v25; /*0x7275a1*/
       }
-      while ( v23 );
+      while ( v23 ); /*0x7275a3*/
     }
   }
-  return 1;
+  return 1; /*0x7275a7*/
 }
-
-/* ASM:
-Destination     = byte ptr -234h
-var_204         = byte ptr -204h
-String          = byte ptr -200h
-arg_0           = dword ptr  4
-
-sub     esp, 234h
-push    ebp
-push    esi
-mov     esi, [esp+23Ch+arg_0]
-mov     ebp, ecx
-mov     ecx, esi
-call    INIClass__ResetSection
-mov     edx, ds:off_7F58C8 ; "Triggers"
-lea     ecx, [esp+23Ch+String]
-push    200h            ; Count
-lea     eax, [ebp+24h]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    eax             ; int
-push    edx             ; int
-mov     ecx, esi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_7275B4
-lea     eax, [esp+23Ch+String]
-push    offset Delimiter ; ","
-push    eax             ; String
-call    _strtok
-mov     esi, eax
-push    offset g_Str__none_ ; "<none>"
-push    esi             ; void *
-call    __strcmpi
-add     esp, 10h
-test    eax, eax
-jnz     short loc_7272AE
-mov     ecx, ds:0A83C9Ch
-mov     edx, [ecx]
-jmp     short loc_7272C1
-; ---------------------------------------------------------------------------
-
-loc_7272AE:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+62↑j
-mov     ecx, esi        ; void *
-call    SuperWeaponTypeClass__FindByName
-mov     ecx, ds:0A83C9Ch
-mov     edx, [ecx+eax*4]
-lea     eax, [ecx+eax*4]
-
-loc_7272C1:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+6C↑j
-push    ebx
-push    edi
-xor     ebx, ebx
-push    offset Delimiter ; ","
-push    ebx             ; String
-mov     [ebp+0A4h], edx
-call    _strtok
-mov     esi, eax
-push    offset g_Str__none_ ; "<none>"
-push    esi             ; void *
-mov     [ebp+0A8h], ebx
-call    __strcmpi
-add     esp, 10h
-test    eax, eax
-jz      loc_727374
-push    esi             ; void *
-push    offset g_Str__none_ ; "<none>"
-call    __strcmpi
-add     esp, 8
-test    eax, eax
-jz      short loc_72736C
-push    esi             ; void *
-push    offset g_Str_none ; "none"
-call    __strcmpi
-add     esp, 8
-test    eax, eax
-jz      short loc_72736C
-mov     eax, ds:8B4188h
-xor     edi, edi
-cmp     eax, ebx
-jle     short loc_727346
-
-loc_727323:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+104↓j
-mov     eax, ds:8B417Ch
-push    esi             ; void *
-mov     ecx, [eax+edi*4]
-add     ecx, 24h ; '$'
-push    ecx             ; void *
-call    __strcmpi
-add     esp, 8
-test    eax, eax
-jz      short loc_727361
-mov     eax, ds:8B4188h
-inc     edi
-cmp     edi, eax
-jl      short loc_727323
-
-loc_727346:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+E1↑j
-push    0B4h            ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-cmp     eax, ebx
-jz      short loc_72736C
-push    esi             ; Source
-mov     ecx, eax
-call    TriggerTypeClass__Construct
-jmp     short loc_72736E
-; ---------------------------------------------------------------------------
-
-loc_727361:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+FA↑j
-mov     edx, ds:8B417Ch
-mov     eax, [edx+edi*4]
-jmp     short loc_72736E
-; ---------------------------------------------------------------------------
-
-loc_72736C:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+C4↑j
-; TriggerTypeClass__LoadFromINI+D6↑j ...
-xor     eax, eax
-
-loc_72736E:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+11F↑j
-; TriggerTypeClass__LoadFromINI+12A↑j
-mov     [ebp+0A8h], eax
-
-loc_727374:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+AE↑j
-push    offset Delimiter ; ","
-push    ebx             ; String
-call    _strtok
-add     esp, 8
-cmp     eax, ebx
-jnz     short loc_72738D
-mov     [esp+244h+Destination], 0
-jmp     short loc_7273A2
-; ---------------------------------------------------------------------------
-
-loc_72738D:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+144↑j
-push    30h ; '0'       ; Count
-push    eax             ; Source
-lea     eax, [esp+24Ch+Destination]
-push    eax             ; Destination
-call    _strncpy
-add     esp, 0Ch
-mov     [esp+244h+var_204], 0
-
-loc_7273A2:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+14B↑j
-lea     edi, [ebp+64h]
-lea     ecx, [esp+244h+Destination]
-cmp     ecx, edi
-jz      short loc_7273B9
-mov     ecx, 0Ch
-lea     esi, [esp+244h+Destination]
-rep movsd
-movsb
-
-loc_7273B9:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+16B↑j
-push    offset Delimiter ; ","
-push    ebx             ; String
-call    _strtok
-add     esp, 8
-cmp     eax, ebx
-jz      short loc_7273E1
-push    eax             ; String
-call    _atoi
-add     esp, 4
-test    eax, eax
-jnz     short loc_7273E1
-mov     byte ptr [ebp+9Fh], 1
-jmp     short loc_7273E8
-; ---------------------------------------------------------------------------
-
-loc_7273E1:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+189↑j
-; TriggerTypeClass__LoadFromINI+196↑j
-mov     byte ptr [ebp+9Fh], 0
-
-loc_7273E8:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+19F↑j
-push    offset Delimiter ; ","
-push    ebx             ; String
-call    _strtok
-add     esp, 8
-cmp     eax, ebx
-jz      short loc_727410
-push    eax             ; String
-call    _atoi
-add     esp, 4
-test    eax, eax
-jz      short loc_727410
-mov     byte ptr [ebp+9Ch], 1
-jmp     short loc_727417
-; ---------------------------------------------------------------------------
-
-loc_727410:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+1B8↑j
-; TriggerTypeClass__LoadFromINI+1C5↑j
-mov     byte ptr [ebp+9Ch], 0
-
-loc_727417:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+1CE↑j
-push    offset Delimiter ; ","
-push    ebx             ; String
-call    _strtok
-add     esp, 8
-cmp     eax, ebx
-jz      short loc_72743F
-push    eax             ; String
-call    _atoi
-add     esp, 4
-test    eax, eax
-jz      short loc_72743F
-mov     byte ptr [ebp+9Dh], 1
-jmp     short loc_727446
-; ---------------------------------------------------------------------------
-
-loc_72743F:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+1E7↑j
-; TriggerTypeClass__LoadFromINI+1F4↑j
-mov     byte ptr [ebp+9Dh], 0
-
-loc_727446:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+1FD↑j
-push    offset Delimiter ; ","
-push    ebx             ; String
-call    _strtok
-add     esp, 8
-cmp     eax, ebx
-jz      short loc_72746E
-push    eax             ; String
-call    _atoi
-add     esp, 4
-test    eax, eax
-jz      short loc_72746E
-mov     byte ptr [ebp+9Eh], 1
-jmp     short loc_727475
-; ---------------------------------------------------------------------------
-
-loc_72746E:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+216↑j
-; TriggerTypeClass__LoadFromINI+223↑j
-mov     byte ptr [ebp+9Eh], 0
-
-loc_727475:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+22C↑j
-push    offset Delimiter ; ","
-push    ebx             ; String
-call    _strtok
-add     esp, 8
-cmp     eax, ebx
-jz      short loc_72749B
-push    eax             ; String
-call    _atoi
-add     esp, 4
-test    eax, eax
-jz      short loc_72749B
-mov     byte ptr [ebp+0A0h], 1
-
-loc_72749B:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+245↑j
-; TriggerTypeClass__LoadFromINI+252↑j
-mov     ecx, [esp+244h+arg_0]
-lea     edx, [esp+244h+String]
-push    200h            ; Count
-push    edx             ; Destination
-lea     eax, [ebp+24h]
-push    889F64h         ; Source
-push    eax             ; int
-mov     eax, ds:off_7F58D0 ; "Events"
-push    eax             ; int
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_727516
-lea     ecx, [esp+244h+String]
-push    offset Delimiter ; ","
-push    ecx             ; String
-call    _strtok
-push    eax             ; String
-call    _atoi
-add     esp, 0Ch
-cmp     eax, ebx
-jz      short loc_727516
-mov     edi, eax
-
-loc_7274E2:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+2D4↓j
-push    58h ; 'X'       ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-cmp     eax, ebx
-jz      short loc_7274FB
-mov     ecx, eax
-call    TActionClass__TActionClass
-mov     esi, eax
-jmp     short loc_7274FD
-; ---------------------------------------------------------------------------
-
-loc_7274FB:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+2AE↑j
-xor     esi, esi
-
-loc_7274FD:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+2B9↑j
-mov     ecx, esi
-call    TriggerTypeClass__ParseActionData
-mov     edx, [ebp+0ACh]
-dec     edi
-mov     [esi+28h], edx
-mov     [ebp+0ACh], esi
-jnz     short loc_7274E2
-
-loc_727516:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+282↑j
-; TriggerTypeClass__LoadFromINI+29E↑j
-mov     ecx, ds:off_7F58CC ; "Actions"
-lea     eax, [esp+244h+String]
-push    200h            ; Count
-push    eax             ; Destination
-lea     eax, [ebp+24h]
-push    889F64h         ; Source
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, [esp+258h+arg_0]
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_7275A5
-lea     edx, [esp+244h+String]
-push    offset Delimiter ; ","
-push    edx             ; String
-call    _strtok
-push    eax             ; String
-call    _atoi
-add     esp, 0Ch
-xor     edi, edi
-cmp     eax, ebx
-mov     [ebp+0B0h], ebx
-jz      short loc_7275A5
-mov     ebx, eax
-
-loc_727566:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+363↓j
-push    94h             ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-test    eax, eax
-jz      short loc_727582
-mov     ecx, eax
-call    TActionClass__ctor
-mov     esi, eax
-jmp     short loc_727584
-; ---------------------------------------------------------------------------
-
-loc_727582:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+335↑j
-xor     esi, esi
-
-loc_727584:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+340↑j
-mov     ecx, esi
-call    ScriptAction__ParseScriptActionParams
-mov     eax, [ebp+0B0h]
-test    eax, eax
-jnz     short loc_72759D
-mov     [ebp+0B0h], esi
-jmp     short loc_7275A0
-; ---------------------------------------------------------------------------
-
-loc_72759D:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+353↑j
-mov     [edi+28h], esi
-
-loc_7275A0:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+35B↑j
-dec     ebx
-mov     edi, esi
-jnz     short loc_727566
-
-loc_7275A5:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+2FE↑j
-; TriggerTypeClass__LoadFromINI+322↑j
-pop     edi
-pop     ebx
-pop     esi
-mov     al, 1
-pop     ebp
-add     esp, 234h
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_7275B4:                             ; CODE XREF: TriggerTypeClass__LoadFromINI+3B↑j
-pop     esi
-xor     al, al
-pop     ebp
-add     esp, 234h
-retn    4
-*/
 } }
 // 0x7275D0
 namespace gamemd { int TriggerClass::Process() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7275d0
 int __thiscall TriggerClass::Process(char *this)
 {
   int result; // eax
-  int v3; // ebx
-  void *StringByIndex; // esi
+  CCINIClass *v3; // ebx
+  CCINIClass *StringByIndex; // esi
   int v5; // edi
   _DWORD *v6; // eax
-  _DWORD *v7; // eax
+  TriggerTypeClass *v7; // eax
   int i; // [esp+8h] [ebp-4h]
 
-  result = INIClass::GetKeyCount(this, (unsigned __int8 *)aTriggers);
-  v3 = 0;
-  for ( i = result; v3 < i; ++v3 )
+  result = INIClass::GetKeyCount(this, (INIClass *)&stru_830620.__pad_579C[60544]); /*0x7275db*/
+  v3 = 0; /*0x7275e0*/
+  for ( i = result; (int)v3 < i; v3 = (CCINIClass *)((char *)v3 + 1) ) /*0x7275e8*/
   {
-    StringByIndex = (void *)INIClass::GetStringByIndex(this, (unsigned __int8 *)aTriggers, v3);
-    if ( !_strcmpi(g_Str__none_, StringByIndex) || !_strcmpi(g_Str_none, StringByIndex) )
-      goto LABEL_10;
-    v5 = 0;
-    if ( MEMORY[0x87F7E8][53864] > 0 )
+    StringByIndex = (CCINIClass *)INIClass::GetStringByIndex(this, (CCINIClass *)&stru_830620.__pad_579C[60544], v3); /*0x7275ff*/
+    if ( !_strcmpi((char *)&stru_817460.sectionHead[1], StringByIndex->__pad_0) /*0x727619*/
+      || !_strcmpi(g_Str_none, StringByIndex->__pad_0) )
     {
-      while ( _strcmpi((const void *)(*(_DWORD *)(MEMORY[0x87F7E8][53861] + 4 * v5) + 36), StringByIndex) )
+      goto LABEL_10; /*0x727619*/
+    }
+    v5 = 0; /*0x72762a*/
+    if ( *(int *)&MEMORY[0x89F690].__pad_579C[62300] > 0 ) /*0x72762e*/
+    {
+      while ( _strcmpi( /*0x727648*/
+                (char *)(*(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62288] + 4 * v5) + 36),
+                StringByIndex->__pad_0) )
       {
-        if ( ++v5 >= MEMORY[0x87F7E8][53864] )
-          goto LABEL_7;
+        if ( ++v5 >= *(int *)&MEMORY[0x89F690].__pad_579C[62300] ) /*0x727652*/
+          goto LABEL_7; /*0x727652*/
       }
-      v7 = *(_DWORD **)(MEMORY[0x87F7E8][53861] + 4 * v5);
-      goto LABEL_11;
+      v7 = *(TriggerTypeClass **)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62288] + 4 * v5); /*0x727675*/
+      goto LABEL_11; /*0x727678*/
     }
 LABEL_7:
-    v6 = (_DWORD *)__2_YAPAXI_Z(180);
-    if ( v6 )
-      v7 = TriggerTypeClass::Construct(v6, (char *)StringByIndex);
+    v6 = (_DWORD *)__2_YAPAXI_Z(0xB4u); /*0x727659*/
+    if ( v6 ) /*0x727663*/
+      v7 = (TriggerTypeClass *)TriggerTypeClass::Construct(v6, StringByIndex->__pad_0); /*0x727668*/
     else
 LABEL_10:
-      v7 = 0;
+      v7 = 0; /*0x72767a*/
 LABEL_11:
-    result = (*(int (__thiscall **)(_DWORD *, char *))(*v7 + 100))(v7, this);
+    result = (*(int (__thiscall **)(TriggerTypeClass *, char *))(*(_DWORD *)v7->__pad_0 + 100))(v7, this); /*0x72767c*/
   }
-  return result;
+  return result; /*0x727691*/
 }
-
-/* ASM:
-push    ecx
-mov     eax, ds:off_7F58C8 ; "Triggers"
-push    ebx
-push    ebp
-mov     ebp, ecx
-push    eax
-call    INIClass__GetKeyCount
-xor     ebx, ebx
-test    eax, eax
-mov     [esp+0Ch+var_4], eax
-jle     loc_727691
-push    esi
-push    edi
-
-loc_7275F0:                             ; CODE XREF: TriggerClass__Process+B9↓j
-mov     ecx, ds:off_7F58C8 ; "Triggers"
-push    ebx
-push    ecx
-mov     ecx, ebp
-call    INIClass__GetStringByIndex
-mov     esi, eax
-push    esi             ; void *
-push    offset g_Str__none_ ; "<none>"
-call    __strcmpi
-add     esp, 8
-test    eax, eax
-jz      short loc_72767A
-push    esi             ; void *
-push    offset g_Str_none ; "none"
-call    __strcmpi
-add     esp, 8
-test    eax, eax
-jz      short loc_72767A
-mov     eax, ds:8B4188h
-xor     edi, edi
-test    eax, eax
-jle     short loc_727654
-
-loc_727630:                             ; CODE XREF: TriggerClass__Process+82↓j
-mov     edx, ds:8B417Ch
-push    esi             ; void *
-mov     eax, [edx+edi*4]
-add     eax, 24h ; '$'
-push    eax             ; void *
-call    __strcmpi
-add     esp, 8
-test    eax, eax
-jz      short loc_72766F
-mov     eax, ds:8B4188h
-inc     edi
-cmp     edi, eax
-jl      short loc_727630
-
-loc_727654:                             ; CODE XREF: TriggerClass__Process+5E↑j
-push    0B4h            ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-test    eax, eax
-jz      short loc_72767A
-push    esi             ; Source
-mov     ecx, eax
-call    TriggerTypeClass__Construct
-jmp     short loc_72767C
-; ---------------------------------------------------------------------------
-
-loc_72766F:                             ; CODE XREF: TriggerClass__Process+78↑j
-mov     ecx, ds:8B417Ch
-mov     eax, [ecx+edi*4]
-jmp     short loc_72767C
-; ---------------------------------------------------------------------------
-
-loc_72767A:                             ; CODE XREF: TriggerClass__Process+41↑j
-; TriggerClass__Process+53↑j ...
-xor     eax, eax
-
-loc_72767C:                             ; CODE XREF: TriggerClass__Process+9D↑j
-; TriggerClass__Process+A8↑j
-mov     edx, [eax]
-push    ebp
-mov     ecx, eax
-call    dword ptr [edx+64h]
-inc     ebx
-cmp     ebx, [esp+14h+var_4]
-jl      loc_7275F0
-pop     edi
-pop     esi
-
-loc_727691:                             ; CODE XREF: TriggerClass__Process+18↑j
-pop     ebp
-pop     ebx
-pop     ecx
-retn
-*/
 } }
 // 0x7276A0
 namespace gamemd { int TriggerTypeClass::GetParameter(void* a1) {
@@ -10634,18 +3831,18 @@ char __thiscall TriggerTypeClass::_vt26(int this, char *a2)
   char *v15; // [esp+10h] [ebp-204h]
   char Buffer[512]; // [esp+14h] [ebp-200h] BYREF
 
-  v3 = *(_DWORD *)(this + 168);
-  v4 = (const char *)(v3 + 36);
-  if ( !v3 )
-    v4 = g_Str__none_;
-  v5 = *(_DWORD *)(this + 164);
-  if ( v5 )
-    v6 = (const char *)(v5 + 36);
+  v3 = *(_DWORD *)(this + 168); /*0x7276ab*/
+  v4 = (const char *)(v3 + 36); /*0x7276b4*/
+  if ( !v3 ) /*0x7276b7*/
+    v4 = MEMORY[0x817474]; /*0x7276b9*/
+  v5 = *(_DWORD *)(this + 164); /*0x7276be*/
+  if ( v5 ) /*0x7276c6*/
+    v6 = (const char *)(v5 + 36); /*0x7276c8*/
   else
-    v6 = g_Str__none_;
-  sprintf(
+    v6 = MEMORY[0x817474]; /*0x7276cd*/
+  sprintf( /*0x727728*/
     Buffer,
-    "%s,%s,%s,%d,%d,%d,%d,%d",
+    MEMORY[0x844A48],
     v6,
     v4,
     (const char *)(this + 100),
@@ -10654,243 +3851,45 @@ char __thiscall TriggerTypeClass::_vt26(int this, char *a2)
     *(_BYTE *)(this + 157) != 0,
     *(_BYTE *)(this + 158) != 0,
     *(_BYTE *)(this + 160) != 0);
-  v7 = (char *)(this + 36);
-  v15 = (char *)(this + 36);
-  INIClass::SetString(a2, (unsigned __int8 *)aTriggers, (char *)(this + 36), Buffer);
-  v8 = *(_DWORD *)(this + 172);
-  for ( i = 0; v8; ++i )
-    v8 = *(_DWORD *)(v8 + 40);
-  sprintf(Buffer, "%d", i);
-  v10 = *(int **)(this + 172);
-  if ( v10 )
+  v7 = (char *)(this + 36); /*0x72773a*/
+  v15 = (char *)(this + 36); /*0x727747*/
+  INIClass::SetString(a2, (unsigned __int8 *)MEMORY[0x844A3C], (char *)(this + 36), Buffer); /*0x72774b*/
+  v8 = *(_DWORD *)(this + 172); /*0x727750*/
+  for ( i = 0; v8; ++i ) /*0x72775a*/
+    v8 = *(_DWORD *)(v8 + 40); /*0x72775c*/
+  sprintf(Buffer, MEMORY[0x817F6C], i); /*0x72776f*/
+  v10 = *(int **)(this + 172); /*0x727774*/
+  if ( v10 ) /*0x72777f*/
   {
-    do
+    do /*0x7277c0*/
     {
-      strcat(Buffer, Delimiter);
-      TEventClass::PrepareSaveToINI(v10, Buffer);
-      v10 = (int *)v10[10];
+      strcat(Buffer, MEMORY[0x817F70]); /*0x7277a6*/
+      TEventClass::PrepareSaveToINI(v10, Buffer); /*0x7277b6*/
+      v10 = (int *)v10[10]; /*0x7277bb*/
     }
-    while ( v10 );
-    v7 = (char *)(this + 36);
+    while ( v10 ); /*0x7277c0*/
+    v7 = (char *)(this + 36); /*0x7277c2*/
   }
-  INIClass::SetString(a2, (unsigned __int8 *)aEvents, v7, Buffer);
-  v11 = *(_DWORD *)(this + 176);
-  for ( j = 0; v11; ++j )
-    v11 = *(_DWORD *)(v11 + 40);
-  sprintf(Buffer, "%d", j);
-  v13 = *(_DWORD *)(this + 176);
-  if ( v13 )
+  INIClass::SetString(a2, (unsigned __int8 *)MEMORY[0x844A2C], v7, Buffer); /*0x7277da*/
+  v11 = *(_DWORD *)(this + 176); /*0x7277df*/
+  for ( j = 0; v11; ++j ) /*0x7277e9*/
+    v11 = *(_DWORD *)(v11 + 40); /*0x7277eb*/
+  sprintf(Buffer, MEMORY[0x817F6C], j); /*0x7277fe*/
+  v13 = *(_DWORD *)(this + 176); /*0x727803*/
+  if ( v13 ) /*0x72780e*/
   {
-    do
+    do /*0x72784f*/
     {
-      strcat(Buffer, Delimiter);
-      ScriptAction::Serialize(v13, Buffer);
-      v13 = *(_DWORD *)(v13 + 40);
+      strcat(Buffer, MEMORY[0x817F70]); /*0x727835*/
+      ScriptAction::Serialize(v13, Buffer); /*0x727845*/
+      v13 = *(_DWORD *)(v13 + 40); /*0x72784a*/
     }
-    while ( v13 );
-    v7 = v15;
+    while ( v13 ); /*0x72784f*/
+    v7 = v15; /*0x727851*/
   }
-  INIClass::SetString(a2, (unsigned __int8 *)aActions, v7, Buffer);
-  return 1;
+  INIClass::SetString(a2, (unsigned __int8 *)MEMORY[0x844A34], v7, Buffer); /*0x727869*/
+  return 1; /*0x72786e*/
 }
-
-/* ASM:
-Buffer          = byte ptr -200h
-arg_0           = dword ptr  4
-
-sub     esp, 204h
-push    ebx
-mov     ebx, ecx
-push    ebp
-push    esi
-mov     eax, [ebx+0A8h]
-push    edi
-test    eax, eax
-lea     esi, [eax+24h]
-jnz     short loc_7276BE
-mov     esi, offset g_Str__none_ ; "<none>"
-
-loc_7276BE:                             ; CODE XREF: TriggerTypeClass__GetParameter+17↑j
-mov     eax, [ebx+0A4h]
-test    eax, eax
-jz      short loc_7276CD
-add     eax, 24h ; '$'
-jmp     short loc_7276D2
-; ---------------------------------------------------------------------------
-
-loc_7276CD:                             ; CODE XREF: TriggerTypeClass__GetParameter+26↑j
-mov     eax, offset g_Str__none_ ; "<none>"
-
-loc_7276D2:                             ; CODE XREF: TriggerTypeClass__GetParameter+2B↑j
-mov     dl, [ebx+0A0h]
-xor     ecx, ecx
-test    dl, dl
-setnz   cl
-push    ecx
-mov     cl, [ebx+9Eh]
-xor     edx, edx
-test    cl, cl
-setnz   dl
-push    edx
-mov     dl, [ebx+9Dh]
-xor     ecx, ecx
-test    dl, dl
-setnz   cl
-push    ecx
-mov     cl, [ebx+9Ch]
-xor     edx, edx
-test    cl, cl
-setnz   dl
-push    edx
-mov     dl, [ebx+9Fh]
-xor     ecx, ecx
-test    dl, dl
-setz    cl
-lea     edx, [ebx+64h]
-push    ecx
-push    edx
-push    esi
-push    eax
-lea     eax, [esp+234h+Buffer]
-push    offset aSSSDDDDD ; "%s,%s,%s,%d,%d,%d,%d,%d"
-push    eax             ; Buffer
-call    _sprintf
-mov     edx, ds:off_7F58C8 ; "Triggers"
-add     esp, 28h
-lea     ecx, [esp+214h+Buffer]
-lea     esi, [ebx+24h]
-push    ecx             ; Source
-mov     ecx, [esp+218h+arg_0]
-push    esi             ; char *
-push    edx             ; Block
-mov     [esp+220h+var_204], esi
-call    INIClass__SetString
-mov     eax, [ebx+0ACh]
-xor     ecx, ecx
-test    eax, eax
-jz      short loc_727764
-
-loc_72775C:                             ; CODE XREF: TriggerTypeClass__GetParameter+C2↓j
-mov     eax, [eax+28h]
-inc     ecx
-test    eax, eax
-jnz     short loc_72775C
-
-loc_727764:                             ; CODE XREF: TriggerTypeClass__GetParameter+BA↑j
-push    ecx
-lea     eax, [esp+218h+Buffer]
-push    offset g_Str_Trace__d ; "%d"
-push    eax             ; Buffer
-call    _sprintf
-mov     ebp, [ebx+0ACh]
-add     esp, 0Ch
-test    ebp, ebp
-jz      short loc_7277C6
-
-loc_727781:                             ; CODE XREF: TriggerTypeClass__GetParameter+120↓j
-mov     edi, offset Delimiter ; ","
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-lea     edx, [esp+214h+Buffer]
-repne scasb
-not     ecx
-sub     edi, ecx
-mov     esi, edi
-mov     edi, edx
-mov     edx, ecx
-or      ecx, 0FFFFFFFFh
-repne scasb
-mov     ecx, edx
-dec     edi
-shr     ecx, 2
-rep movsd
-mov     ecx, edx
-lea     eax, [esp+214h+Buffer]
-and     ecx, 3
-push    eax
-rep movsb
-mov     ecx, ebp
-call    TEventClass__PrepareSaveToINI
-mov     ebp, [ebp+28h]
-test    ebp, ebp
-jnz     short loc_727781
-mov     esi, [esp+214h+var_204]
-
-loc_7277C6:                             ; CODE XREF: TriggerTypeClass__GetParameter+DF↑j
-mov     edx, ds:off_7F58D0 ; "Events"
-lea     ecx, [esp+214h+Buffer]
-push    ecx             ; Source
-mov     ecx, [esp+218h+arg_0]
-push    esi             ; char *
-push    edx             ; Block
-call    INIClass__SetString
-mov     eax, [ebx+0B0h]
-xor     ecx, ecx
-test    eax, eax
-jz      short loc_7277F3
-
-loc_7277EB:                             ; CODE XREF: TriggerTypeClass__GetParameter+151↓j
-mov     eax, [eax+28h]
-inc     ecx
-test    eax, eax
-jnz     short loc_7277EB
-
-loc_7277F3:                             ; CODE XREF: TriggerTypeClass__GetParameter+149↑j
-push    ecx
-lea     eax, [esp+218h+Buffer]
-push    offset g_Str_Trace__d ; "%d"
-push    eax             ; Buffer
-call    _sprintf
-mov     ebx, [ebx+0B0h]
-add     esp, 0Ch
-test    ebx, ebx
-jz      short loc_727855
-
-loc_727810:                             ; CODE XREF: TriggerTypeClass__GetParameter+1AF↓j
-mov     edi, offset Delimiter ; ","
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-lea     edx, [esp+214h+Buffer]
-repne scasb
-not     ecx
-sub     edi, ecx
-mov     esi, edi
-mov     ebp, ecx
-mov     edi, edx
-or      ecx, 0FFFFFFFFh
-repne scasb
-mov     ecx, ebp
-dec     edi
-shr     ecx, 2
-rep movsd
-mov     ecx, ebp
-lea     eax, [esp+214h+Buffer]
-and     ecx, 3
-push    eax             ; Buffer
-rep movsb
-mov     ecx, ebx
-call    ScriptAction__Serialize
-mov     ebx, [ebx+28h]
-test    ebx, ebx
-jnz     short loc_727810
-mov     esi, [esp+214h+var_204]
-
-loc_727855:                             ; CODE XREF: TriggerTypeClass__GetParameter+16E↑j
-mov     edx, ds:off_7F58CC ; "Actions"
-lea     ecx, [esp+214h+Buffer]
-push    ecx             ; Source
-mov     ecx, [esp+218h+arg_0]
-push    esi             ; char *
-push    edx             ; Block
-call    INIClass__SetString
-pop     edi
-pop     esi
-pop     ebp
-mov     al, 1
-pop     ebx
-add     esp, 204h
-retn    4
-*/
 } }
 // 0x727B30
 namespace gamemd { int TriggerTypeClass::PowerDrainUpdate(void* a1) {
@@ -10905,96 +3904,35 @@ int __thiscall TriggerTypeClass::_vt13(int this, int *a2)
   int v8; // esi
   int v9; // eax
 
-  AbstractTypeClass::ProcessPower((char *)this, a2);
-  v3 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(_DWORD *)(this + 164) + 4) + 16))(*(_DWORD *)(this + 164) + 4);
-  Power::TimerProcess(v3);
-  v4 = *(_DWORD *)(this + 168);
-  if ( v4 )
+  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x727b39*/
+  v3 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(_DWORD *)(this + 164) + 4) + 16))(*(_DWORD *)(this + 164) + 4); /*0x727b4a*/
+  Power::TimerProcess(v3); /*0x727b50*/
+  v4 = *(_DWORD *)(this + 168); /*0x727b55*/
+  if ( v4 ) /*0x727b5d*/
   {
-    v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4);
-    Power::TimerProcess(v5);
+    v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x727b66*/
+    Power::TimerProcess(v5); /*0x727b6c*/
   }
-  result = *(_DWORD *)(this + 172);
-  if ( result )
+  result = *(_DWORD *)(this + 172); /*0x727b71*/
+  if ( result ) /*0x727b79*/
   {
-    v7 = (*(int (__stdcall **)(int))(*(_DWORD *)(result + 4) + 16))(result + 4);
-    result = Power::TimerProcess(v7);
+    v7 = (*(int (__stdcall **)(int))(*(_DWORD *)(result + 4) + 16))(result + 4); /*0x727b82*/
+    result = Power::TimerProcess(v7); /*0x727b88*/
   }
-  v8 = *(_DWORD *)(this + 176);
-  if ( v8 )
+  v8 = *(_DWORD *)(this + 176); /*0x727b8d*/
+  if ( v8 ) /*0x727b95*/
   {
-    v9 = (*(int (__stdcall **)(int))(*(_DWORD *)(v8 + 4) + 16))(v8 + 4);
-    return Power::TimerProcess(v9);
+    v9 = (*(int (__stdcall **)(int))(*(_DWORD *)(v8 + 4) + 16))(v8 + 4); /*0x727b9e*/
+    return Power::TimerProcess(v9); /*0x727ba4*/
   }
-  return result;
+  return result; /*0x727ba9*/
 }
-
-/* ASM:
-push    esi
-push    edi
-mov     edi, [esp+8+arg_0]
-mov     esi, ecx
-push    edi
-call    AbstractTypeClass__ProcessPower
-mov     eax, [esi+0A4h]
-add     eax, 4
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+10h]
-push    eax
-mov     ecx, edi
-call    Power__TimerProcess
-mov     eax, [esi+0A8h]
-test    eax, eax
-jz      short loc_727B71
-mov     edx, [eax+4]
-add     eax, 4
-push    eax
-call    dword ptr [edx+10h]
-push    eax
-mov     ecx, edi
-call    Power__TimerProcess
-
-loc_727B71:                             ; CODE XREF: TriggerTypeClass__PowerDrainUpdate+2D↑j
-mov     eax, [esi+0ACh]
-test    eax, eax
-jz      short loc_727B8D
-mov     ecx, [eax+4]
-add     eax, 4
-push    eax
-call    dword ptr [ecx+10h]
-push    eax
-mov     ecx, edi
-call    Power__TimerProcess
-
-loc_727B8D:                             ; CODE XREF: TriggerTypeClass__PowerDrainUpdate+49↑j
-mov     esi, [esi+0B0h]
-test    esi, esi
-jz      short loc_727BA9
-mov     edx, [esi+4]
-lea     eax, [esi+4]
-push    eax
-call    dword ptr [edx+10h]
-push    eax
-mov     ecx, edi
-call    Power__TimerProcess
-
-loc_727BA9:                             ; CODE XREF: TriggerTypeClass__PowerDrainUpdate+65↑j
-pop     edi
-pop     esi
-retn    4
-*/
 } }
 // 0x727CC0
 namespace gamemd { int TriggerTypeClass::GetAuxField() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TriggerTypeClass::_vt16(_DWORD *this)
 {
-  return *(this + 38);
+  return *(this + 38); /*0x727cc6*/
 }
-
-/* ASM:
-mov     eax, [ecx+98h]
-retn
-*/
 } }

@@ -144,13 +144,13 @@ int __stdcall TunnelLocomotionClass::_vt05(int *a1, int *a2)
     if ( a1 ) /*0x72a168*/
     {
       *a1 = (int)&LocomotionClass::`vftable'; /*0x72a16a*/
-      a1[1] = (int)&LocomotionClass::`vftable'; /*0x72a170*/
+      a1[1] = (int)&vt_LocomotionClass; /*0x72a170*/
       v3 = MEMORY[0xA8ED84]; /*0x72a177*/
       a1[12] = 0; /*0x72a17d*/
       a1[10] = (int)v3; /*0x72a180*/
       a1[13] = 0; /*0x72a183*/
       *a1 = (int)&TunnelLocomotionClass::`vftable'; /*0x72a186*/
-      a1[1] = (int)&TunnelLocomotionClass::`vftable'; /*0x72a18c*/
+      a1[1] = (int)&vt_TunnelLocomotionClass; /*0x72a18c*/
     }
   }
   return result; /*0x72a193*/

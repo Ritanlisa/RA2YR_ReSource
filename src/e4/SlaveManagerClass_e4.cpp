@@ -87,7 +87,7 @@ int __thiscall SlaveManagerClass::ctor(int this, TechnoClass *aP1, int a3, int a
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6af1a8*/
   SlaveControlVector::Constructor((_DWORD *)(this + 56), 0, 0); /*0x6af1b6*/
-  this->slaves = &DynamicVectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6af1c3*/
+  this->slaves = &vt_DynamicVectorClass_SlaveManagerClass_SlaveControl; /*0x6af1c3*/
   *(_DWORD *)(this + 76) = 10; /*0x6af1c9*/
   *(_DWORD *)(this + 72) = 0; /*0x6af1d0*/
   *(_DWORD *)(this + 80) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6af1d8*/
@@ -97,7 +97,7 @@ int __thiscall SlaveManagerClass::ctor(int this, TechnoClass *aP1, int a3, int a
   *(_DWORD *)this = &SlaveManagerClass::`vftable'; /*0x6af1f2*/
   this->vtable1 = &SlaveManagerClass::`vftable'; /*0x6af1f8*/
   this->vtable2 = &SlaveManagerClass::`vftable'; /*0x6af1ff*/
-  this->vtable3 = &SlaveManagerClass::`vftable'; /*0x6af206*/
+  this->vtable3 = &vt_SlaveManagerClass; /*0x6af206*/
   this->slaveOwner = a4; /*0x6af20d*/
   this->slaveType = a5; /*0x6af210*/
   this->slaveCount = a6; /*0x6af213*/
@@ -183,7 +183,7 @@ int __thiscall sub_6AF360(int this)
   this->slaveVectorCapacity = 0; /*0x6af374*/
   *(_BYTE *)(this + 68) = 1; /*0x6af377*/
   *(_BYTE *)(this + 69) = 0; /*0x6af37b*/
-  this->slaves = &DynamicVectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6af37e*/
+  this->slaves = &vt_DynamicVectorClass_SlaveManagerClass_SlaveControl; /*0x6af37e*/
   *(_DWORD *)(this + 76) = 10; /*0x6af385*/
   *(_DWORD *)(this + 72) = 0; /*0x6af38c*/
   *(_DWORD *)(this + 80) = MEMORY[0xA8ED84]; /*0x6af395*/
@@ -191,7 +191,7 @@ int __thiscall sub_6AF360(int this)
   *(_DWORD *)this = &SlaveManagerClass::`vftable'; /*0x6af39b*/
   this->vtable1 = &SlaveManagerClass::`vftable'; /*0x6af3a1*/
   this->vtable2 = &SlaveManagerClass::`vftable'; /*0x6af3a8*/
-  this->vtable3 = &SlaveManagerClass::`vftable'; /*0x6af3af*/
+  this->vtable3 = &vt_SlaveManagerClass; /*0x6af3af*/
   this->master = 0; /*0x6af3b6*/
   this->house = 0; /*0x6af3b9*/
   this->slaveOwner = 0; /*0x6af3bc*/
@@ -236,7 +236,7 @@ void __thiscall sub_6AF4A0(int this)
   *(_DWORD *)this = &SlaveManagerClass::`vftable'; /*0x6af4a5*/
   this->vtable1 = &SlaveManagerClass::`vftable'; /*0x6af4ab*/
   this->vtable2 = &SlaveManagerClass::`vftable'; /*0x6af4b2*/
-  this->vtable3 = &SlaveManagerClass::`vftable'; /*0x6af4b9*/
+  this->vtable3 = &vt_SlaveManagerClass; /*0x6af4b9*/
   for ( i = *(_DWORD *)(this + 72) - 1; i >= 0; --i ) /*0x6af4c4*/
   {
     if ( *(_DWORD *)(this->slaveVectorCount + 4 * i) ) /*0x6af4c9*/
@@ -257,7 +257,7 @@ void __thiscall sub_6AF4A0(int this)
     while ( v4 < MEMORY[0xB0B600] ); /*0x6af53d*/
   }
   v5 = *(void **)(this + 60); /*0x6af53f*/
-  this->slaves = &VectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6af542*/
+  this->slaves = &vt_VectorClass_SlaveManagerClass_SlaveControl; /*0x6af542*/
   if ( v5 && *(_BYTE *)(this + 69) ) /*0x6af54c*/
   {
     __3_YAXPAX_Z(v5); /*0x6af554*/
@@ -899,7 +899,7 @@ int __stdcall SlaveManagerClass::_vt05(_DWORD *a1, int a2)
     {
       AbstractClass::InitVtables(v3, (int)&a1); /*0x6b119b*/
       SlaveControlVector::Constructor(v3 + 14, 0, 0); /*0x6b11a7*/
-      v3[14] = &DynamicVectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6b11b0*/
+      v3[14] = &vt_DynamicVectorClass_SlaveManagerClass_SlaveControl; /*0x6b11b0*/
       v3[19] = 10; /*0x6b11b6*/
       v3[18] = 0; /*0x6b11bd*/
       Timer::Start(v3 + 20, 0); /*0x6b11c0*/
@@ -907,7 +907,7 @@ int __stdcall SlaveManagerClass::_vt05(_DWORD *a1, int a2)
       v3[1] = &SlaveManagerClass::`vftable'; /*0x6b11cb*/
       v2 = a2; /*0x6b11d2*/
       v3[2] = &SlaveManagerClass::`vftable'; /*0x6b11d6*/
-      v3[3] = &SlaveManagerClass::`vftable'; /*0x6b11dd*/
+      v3[3] = &vt_SlaveManagerClass; /*0x6b11dd*/
     }
     Prefix_0 = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &v16, 4, 0); /*0x6b11f2*/
     if ( Prefix_0 >= 0 ) /*0x6b11f6*/
@@ -916,7 +916,7 @@ int __stdcall SlaveManagerClass::_vt05(_DWORD *a1, int a2)
       if ( v3 != (_DWORD *)-56 ) /*0x6b1201*/
       {
         SlaveControlVector::Constructor(v3 + 14, 0, 0); /*0x6b1207*/
-        *v6 = &DynamicVectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6b120c*/
+        *v6 = &vt_DynamicVectorClass_SlaveManagerClass_SlaveControl; /*0x6b120c*/
         v3[19] = 10; /*0x6b1212*/
         v3[18] = 0; /*0x6b1219*/
       }
@@ -1216,7 +1216,7 @@ DynamicVector *__thiscall SlaveManagerClass_25_::QueryInterface(_DWORD *this, ch
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x6b1983*/
-  *this = &VectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6b1986*/
+  *this = &vt_VectorClass_SlaveManagerClass_SlaveControl; /*0x6b1986*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x6b1990*/
   {
     __3_YAXPAX_Z(v3); /*0x6b1998*/

@@ -27,7 +27,7 @@ char __fastcall SkirmishSetup_Setup(HWND hWnd, int a2)
     {
       MEMORY[0xABFD70] |= 1u; /*0x5d6171*/
       MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&MEMORY[0xABFDA0], 0, 0); /*0x5d617c*/
-      MEMORY[0xABFDA0] = (int)&DynamicVectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d6181*/
+      MEMORY[0xABFDA0] = (int)&vt_DynamicVectorClass_MultiplayerGameMode; /*0x5d6181*/
       MEMORY[0xABFDB4] = 10; /*0x5d618b*/
       MEMORY[0xABFDB0] = 0; /*0x5d619a*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d61a0*/
@@ -38,7 +38,7 @@ char __fastcall SkirmishSetup_Setup(HWND hWnd, int a2)
     {
       MEMORY[0xABFD70] |= 1u; /*0x5d61c4*/
       MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&MEMORY[0xABFDA0], 0, 0); /*0x5d61cf*/
-      MEMORY[0xABFDA0] = (int)&DynamicVectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d61d4*/
+      MEMORY[0xABFDA0] = (int)&vt_DynamicVectorClass_MultiplayerGameMode; /*0x5d61d4*/
       MEMORY[0xABFDB4] = 10; /*0x5d61de*/
       MEMORY[0xABFDB0] = 0; /*0x5d61ed*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d61f3*/
@@ -168,7 +168,7 @@ LABEL_5:
               MultiMissionVector::Constructor(var18, 0, 0); /*0x5e6a67*/
               ebp0 = *(_DWORD *)&HouseClass_Player.__pad_5568[9764]; /*0x5e6a6c*/
               v14 = 0; /*0x5e6a72*/
-              var18[0] = &DynamicVectorClass<MultiMission const *>::`vftable'; /*0x5e6a76*/
+              var18[0] = &vt_DynamicVectorClass_MultiMission_const; /*0x5e6a76*/
               v46 = (CCINIClass *)10; /*0x5e6a7e*/
               for ( i = 0; v14 < ebp0; ++v14 ) /*0x5e6a8e*/
               {
@@ -178,7 +178,7 @@ LABEL_5:
               }
               DlgItem = GetDlgItem((HWND)v8, 1363); /*0x5e6ac2*/
               (*(void (__thiscall **)(char *, HWND, _DWORD *, _DWORD))(*(_DWORD *)v13 + 76))(v13, DlgItem, var18, 0); /*0x5e6ad4*/
-              var18[0] = &VectorClass<MultiMission const *>::`vftable'; /*0x5e6adb*/
+              var18[0] = &vt_VectorClass_MultiMission_const; /*0x5e6adb*/
               VectorClass::Cleanup3((int)var18); /*0x5e6ae3*/
               v11 = a4; /*0x5e6ae8*/
             }
@@ -225,7 +225,7 @@ LABEL_28:
             {
               (*(void (__thiscall **)(char *))(*(_DWORD *)v20 + 16))(v20); /*0x5e6c23*/
               MultiMissionVector::Constructor(var18, 0, 0); /*0x5e6c2c*/
-              var18[0] = &DynamicVectorClass<MultiMission const *>::`vftable'; /*0x5e6c36*/
+              var18[0] = &vt_DynamicVectorClass_MultiMission_const; /*0x5e6c36*/
               v46 = (CCINIClass *)10; /*0x5e6c40*/
               i = 0; /*0x5e6c48*/
               a2 = *(_DWORD *)&HouseClass_Player.__pad_5568[9764]; /*0x5e6c4c*/
@@ -242,7 +242,7 @@ LABEL_28:
               }
               v21 = GetDlgItem((HWND)v16, 1363); /*0x5e6c8d*/
               (*(void (__thiscall **)(char *, HWND, _DWORD *, _DWORD))(*(_DWORD *)v20 + 76))(v20, v21, var18, 0); /*0x5e6c9b*/
-              var18[0] = &VectorClass<MultiMission const *>::`vftable'; /*0x5e6ca2*/
+              var18[0] = &vt_VectorClass_MultiMission_const; /*0x5e6ca2*/
               VectorClass::Cleanup3((int)var18); /*0x5e6caa*/
               LOBYTE(a4) = (*(int (__thiscall **)(char *))(*(_DWORD *)v20 + 60))(v20); /*0x5e6cbc*/
               v22 = GetDlgItem((HWND)v16, 1411); /*0x5e6cc0*/
@@ -314,7 +314,7 @@ LABEL_28:
     if ( First ) /*0x5e6ee5*/
     {
       MultiMissionVector::Constructor(var18, 0, 0); /*0x5e6ef1*/
-      var18[0] = &DynamicVectorClass<MultiMission const *>::`vftable'; /*0x5e6efb*/
+      var18[0] = &vt_DynamicVectorClass_MultiMission_const; /*0x5e6efb*/
       v46 = (CCINIClass *)10; /*0x5e6f05*/
       i = 0; /*0x5e6f0d*/
       a4 = *(_DWORD *)&HouseClass_Player.__pad_5568[9764]; /*0x5e6f11*/
@@ -331,7 +331,7 @@ LABEL_28:
       }
       eax71 = GetDlgItem((HWND)v38, 1363); /*0x5e6f4d*/
       (*(void (__thiscall **)(int, HWND, _DWORD *, _DWORD))(*(_DWORD *)First + 76))(First, eax71, var18, 0); /*0x5e6f5b*/
-      var18[0] = &VectorClass<MultiMission const *>::`vftable'; /*0x5e6f62*/
+      var18[0] = &vt_VectorClass_MultiMission_const; /*0x5e6f62*/
       VectorClass::Cleanup3((int)var18); /*0x5e6f6a*/
     }
     LOBYTE(aP0) = (*(int (__thiscall **)(int))(*(_DWORD *)First + 60))(First); /*0x5e6f7c*/

@@ -84,7 +84,7 @@ MSFrameAnim * MSFrameAnim::QueryInterface(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 MSFrameAnim *__thiscall MSFrameAnim::QueryInterface(_DWORD *this, char a2)
 {
-  *this = &MSFrameAnim::`vftable'; /*0x769bd3*/
+  *this = &vt_MSFrameAnim; /*0x769bd3*/
   VtableStub::5CB6C0(this); /*0x769bd9*/
   if ( (a2 & 1) != 0 ) /*0x769be3*/
     __3_YAXPAX_Z(this); /*0x769be6*/
@@ -176,7 +176,7 @@ rc_ptr * MSFrameAnim::resumeAnimation(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 rc_ptr *__thiscall MSFrameAnim::resumeAnimation(_DWORD *this, char a2)
 {
-  *this = &rc_ptr<WorldDominationTour::Map>::`vftable'; /*0x769d93*/
+  *this = &vt_rc_ptr_WorldDominationTour_Map; /*0x769d93*/
   ComPtr::Release(this); /*0x769d99*/
   if ( (a2 & 1) != 0 ) /*0x769da3*/
     __3_YAXPAX_Z(this); /*0x769da6*/
@@ -217,7 +217,7 @@ char __thiscall MSFrameAnim::sub_769FE0(_BYTE *this, int a2, _DWORD *a3)
         do /*0x76a065*/
         {
           ComPtr::Constructor(v8); /*0x76a056*/
-          *v8 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76a05b*/
+          *v8 = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76a05b*/
           v8 += 2; /*0x76a061*/
           --v9; /*0x76a064*/
         }
@@ -396,7 +396,7 @@ DynamicVector *__thiscall MSFrameAnim::setPosition(_DWORD *this, char a2)
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v3 = (void (__thiscall ***)(_DWORD, int))*(this + 1); /*0x76a683*/
-  *this = &VectorClass<rc_ptr<WorldDominationTour::Territory>>::`vftable'; /*0x76a686*/
+  *this = &vt_VectorClass_rc_ptr_WorldDominationTour_Territory; /*0x76a686*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x76a690*/
   {
     (**v3)(v3, 3); /*0x76a69f*/
@@ -421,7 +421,7 @@ DynamicVector *__thiscall MSFrameAnim::setScale(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x76a723*/
-  *this = &VectorClass<WorldDominationTour::Map::AnimationPalette *>::`vftable'; /*0x76a726*/
+  *this = &vt_VectorClass_WorldDominationTour_Map_AnimationPalette; /*0x76a726*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x76a730*/
   {
     __3_YAXPAX_Z(v3); /*0x76a738*/
@@ -444,7 +444,7 @@ unsigned int * MSFrameAnim::drawFrame()
 _DWORD *__thiscall sub_76A7C0(_DWORD *this)
 {
   ComPtr::Constructor(this); /*0x76a7c3*/
-  *this = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76a7c8*/
+  *this = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76a7c8*/
   return this; /*0x76a7d0*/
 }
 }

@@ -524,7 +524,7 @@ std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter(char a2
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall BlitTransXlatAlphaZRead_ushort::Constructor_Blitter(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &Blitter::`vftable'; /*0x49a3a9*/
+  *(_DWORD *)this = &vt_Blitter; /*0x49a3a9*/
   if ( (a2 & 1) != 0 ) /*0x49a3af*/
     __3_YAXPAX_Z(this); /*0x49a3b2*/
   return this; /*0x49a3bc*/
@@ -537,7 +537,7 @@ std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0(char 
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &Blitter::`vftable'; /*0x49a3c9*/
+  *(_DWORD *)this = &vt_Blitter; /*0x49a3c9*/
   if ( (a2 & 1) != 0 ) /*0x49a3cf*/
     __3_YAXPAX_Z(this); /*0x49a3d2*/
   return this; /*0x49a3dc*/
@@ -550,7 +550,7 @@ std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1(char 
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &Blitter::`vftable'; /*0x49a3e9*/
+  *(_DWORD *)this = &vt_Blitter; /*0x49a3e9*/
   if ( (a2 & 1) != 0 ) /*0x49a3ef*/
     __3_YAXPAX_Z(this); /*0x49a3f2*/
   return this; /*0x49a3fc*/
@@ -563,7 +563,7 @@ std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2(char 
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &Blitter::`vftable'; /*0x49a409*/
+  *(_DWORD *)this = &vt_Blitter; /*0x49a409*/
   if ( (a2 & 1) != 0 ) /*0x49a40f*/
     __3_YAXPAX_Z(this); /*0x49a412*/
   return this; /*0x49a41c*/
@@ -579,10 +579,10 @@ BlitTransXlatAlphaZRead_ushort *__thiscall BlitTransXlatAlphaZRead_ushort::Blit(
   void *v3; // eax
 
   v3 = (void *)*(this + 2); /*0x49a428*/
-  *this = &BlitTransXlatAlphaZRead<unsigned short>::`vftable'; /*0x49a42b*/
+  *this = &vt_BlitTransXlatAlphaZRead_unsigned_short; /*0x49a42b*/
   FractalNoise::Release(v3); /*0x49a432*/
   *(this + 2) = 0; /*0x49a43b*/
-  *this = &Blitter::`vftable'; /*0x49a444*/
+  *this = &vt_Blitter; /*0x49a444*/
   if ( (a2 & 1) != 0 ) /*0x49a44a*/
     __3_YAXPAX_Z(this); /*0x49a44d*/
   return (BlitTransXlatAlphaZRead_ushort *)this; /*0x49a457*/

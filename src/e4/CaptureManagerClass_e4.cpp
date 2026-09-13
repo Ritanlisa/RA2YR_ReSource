@@ -17,14 +17,14 @@ int __thiscall CaptureManagerClass::CaptureManagerClass(int this, TechnoClass *a
   this->controlNodeCount = 0; /*0x4717e6*/
   this->controlNodeCapacity = 0; /*0x4717e9*/
   *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
-  this->controlNodes = &DynamicVectorClass<ControlNode *>::`vftable'; /*0x4717ef*/
+  this->controlNodes = &vt_DynamicVectorClass_ControlNode; /*0x4717ef*/
   *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
   this->originalOwner = 0; /*0x4717fd*/
   this->overloadCount = aP1; /*0x471800*/
   *(_DWORD *)this = &CaptureManagerClass::`vftable'; /*0x471807*/
   this->vtable1 = &CaptureManagerClass::`vftable'; /*0x47180d*/
   this->vtable2 = &CaptureManagerClass::`vftable'; /*0x471814*/
-  this->vtable3 = &CaptureManagerClass::`vftable'; /*0x47181b*/
+  this->vtable3 = &vt_CaptureManagerClass; /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   this->CaptureManagerClass_field_40 = a4; /*0x471825*/
   this->CaptureManagerClass_field_41 = 0; /*0x471828*/
@@ -898,13 +898,13 @@ int __stdcall CaptureManagerClass::LoadFromStream(int a1, int *a2)
     {
       AbstractClass::InitVtables((_DWORD *)v3, (int)&a2); /*0x47274b*/
       CaptureManagerClass::Constructor_473140(0, 0); /*0x472757*/
-      *(_DWORD *)(v3 + 36) = &DynamicVectorClass<ControlNode *>::`vftable'; /*0x47275c*/
+      *(_DWORD *)(v3 + 36) = &vt_DynamicVectorClass_ControlNode; /*0x47275c*/
       *(_DWORD *)(v3 + 56) = 10; /*0x472762*/
       *(_DWORD *)(v3 + 52) = 0; /*0x472769*/
       *(_DWORD *)v3 = &CaptureManagerClass::`vftable'; /*0x47276c*/
       *(_DWORD *)(v3 + 4) = &CaptureManagerClass::`vftable'; /*0x472773*/
       *(_DWORD *)(v3 + 8) = &CaptureManagerClass::`vftable'; /*0x47277a*/
-      *(_DWORD *)(v3 + 12) = &CaptureManagerClass::`vftable'; /*0x472781*/
+      *(_DWORD *)(v3 + 12) = &vt_CaptureManagerClass; /*0x472781*/
     }
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v3 + 72)); /*0x472791*/
     v6 = *v2; /*0x472796*/
@@ -1004,7 +1004,7 @@ int __stdcall CaptureManagerClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int 
   if ( Prefix < 0 ) /*0x472900*/
     return Prefix; /*0x472900*/
   v5 = *a1; /*0x472905*/
-  aP2 = *(_DWORD *)&aP0->__pad_24[16]; /*0x472911*/
+  aP2 = *(_DWORD *)&aP0->BarrelVoxel[16]; /*0x472911*/
   result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v5 + 16))(a1, &aP2, 4, 0); /*0x472915*/
   if ( result < 0 ) /*0x47291a*/
     return result; /*0x47291a*/
@@ -1013,7 +1013,7 @@ int __stdcall CaptureManagerClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int 
     return Prefix; /*0x472956*/
   while ( 1 ) /*0x47292f*/
   {
-    v8 = *(_DWORD *)(*(_DWORD *)&aP0->__pad_24[4] + 4 * v7); /*0x47292f*/
+    v8 = *(_DWORD *)(*(_DWORD *)&aP0->BarrelVoxel[4] + 4 * v7); /*0x47292f*/
     (*(void (__stdcall **)(int *, int, int, _DWORD))(*a1 + 16))(a1, v8 + 4, 4, 0); /*0x472937*/
     result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*a1 + 16))(a1, v8, 4, 0); /*0x472942*/
     if ( result < 0 ) /*0x472947*/
@@ -1042,7 +1042,7 @@ CaptureManagerClass *__thiscall CaptureManagerClass::ddtor(_DWORD *this, char a2
   *this = &CaptureManagerClass::`vftable'; /*0x4729cd*/
   *(this + 1) = &CaptureManagerClass::`vftable'; /*0x4729d3*/
   *(this + 2) = &CaptureManagerClass::`vftable'; /*0x4729da*/
-  *(this + 3) = &CaptureManagerClass::`vftable'; /*0x4729e1*/
+  *(this + 3) = &vt_CaptureManagerClass; /*0x4729e1*/
   v6 = this; /*0x4729ef*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_89E0F0 + 16))(&dword_89E0F0, &v6); /*0x4729f3*/
   if ( v3 != -1 && v3 < dword_89E100 && v3 < --dword_89E100 ) /*0x472a0e*/
@@ -1055,7 +1055,7 @@ CaptureManagerClass *__thiscall CaptureManagerClass::ddtor(_DWORD *this, char a2
     while ( v3 < dword_89E100 ); /*0x472a26*/
   }
   v4 = (void *)*(this + 10); /*0x472a28*/
-  *(this + 9) = &VectorClass<ControlNode *>::`vftable'; /*0x472a2b*/
+  *(this + 9) = &vt_VectorClass_ControlNode; /*0x472a2b*/
   if ( v4 && *((_BYTE *)this + 49) ) /*0x472a36*/
   {
     __3_YAXPAX_Z(v4); /*0x472a3e*/
@@ -1336,7 +1336,7 @@ VectorClass *__thiscall CaptureManagerClass::Constructor_VectorClass_ControlNode
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x473003*/
-  *this = &VectorClass<ControlNode *>::`vftable'; /*0x473006*/
+  *this = &vt_VectorClass_ControlNode; /*0x473006*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x473010*/
   {
     __3_YAXPAX_Z(v3); /*0x473018*/
@@ -1363,7 +1363,7 @@ DynamicVector *__thiscall CaptureManagerClass::QueryInterface(_DWORD *this, char
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x473053*/
-  *this = &VectorClass<ControlNode *>::`vftable'; /*0x473056*/
+  *this = &vt_VectorClass_ControlNode; /*0x473056*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x473060*/
   {
     __3_YAXPAX_Z(v3); /*0x473068*/
@@ -1391,7 +1391,7 @@ _DWORD *__thiscall sub_473140(_DWORD *this, int a2, int a3)
   *(this + 2) = a2; /*0x47314e*/
   *((_BYTE *)this + 12) = 1; /*0x473151*/
   *((_BYTE *)this + 13) = 0; /*0x473155*/
-  *this = &VectorClass<ControlNode *>::`vftable'; /*0x473158*/
+  *this = &vt_VectorClass_ControlNode; /*0x473158*/
   if ( a2 ) /*0x47315e*/
   {
     if ( a3 ) /*0x473166*/

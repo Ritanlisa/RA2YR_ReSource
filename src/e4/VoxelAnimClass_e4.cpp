@@ -165,7 +165,7 @@ int __thiscall VoxelAnimClass::CleanupMembers(#374 *this)
   *(_DWORD *)this = &VoxelAnimClass::`vftable'; /*0x7499f6*/
   this->VoxelAnimClass_field_0x4 = &VoxelAnimClass::`vftable'; /*0x7499fc*/
   this->VoxelAnimClass_field_0x8 = &VoxelAnimClass::`vftable'; /*0x749a03*/
-  *((_DWORD *)this + 3) = &VoxelAnimClass::`vftable'; /*0x749a0a*/
+  *((_DWORD *)this + 3) = &vt_VoxelAnimClass; /*0x749a0a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x749a11*/
   v6 = (VoxelAnimClass *)this; /*0x749a26*/
   v2 = (*(int (__thiscall **)(int *, VoxelAnimClass **))(MEMORY[0x887388] + 16))(&MEMORY[0x887388], &v6); /*0x749a2a*/
@@ -396,7 +396,7 @@ int __thiscall VoxelAnimClass::SaveLoad_Prefix(void *this, ObjectClass *aP1, int
       *(_DWORD *)aP1->__pad_0 = &VoxelAnimClass::`vftable'; /*0x74a997*/
       *(_DWORD *)&aP1->__pad_0[4] = &VoxelAnimClass::`vftable'; /*0x74a99d*/
       *(_DWORD *)&aP1->__pad_0[8] = &VoxelAnimClass::`vftable'; /*0x74a9a4*/
-      *(_DWORD *)&aP1->__pad_0[12] = &VoxelAnimClass::`vftable'; /*0x74a9ab*/
+      *(_DWORD *)&aP1->__pad_0[12] = &vt_VoxelAnimClass; /*0x74a9ab*/
     }
     AudioController::Init(&aP1[1].bombVisible); /*0x74a9b8*/
     AudioController::Init(&aP1[1].visibilityFlags); /*0x74a9c3*/
@@ -509,7 +509,7 @@ int __thiscall sub_75AA90(int this)
   *(_DWORD *)(this + 56) = 0; /*0x75aadc*/
   *(_DWORD *)this = &WalkLocomotionClass::`vftable'; /*0x75aadf*/
   this->VoxelAnimClass_field_0x4 = &WalkLocomotionClass::`vftable'; /*0x75aae5*/
-  *(_DWORD *)(this + 24) = &WalkLocomotionClass::`vftable'; /*0x75aaec*/
+  *(_DWORD *)(this + 24) = &vt_WalkLocomotionClass; /*0x75aaec*/
   return this; /*0x75aaf5*/
 }
 }
@@ -545,15 +545,15 @@ int __thiscall sub_75EBE0(int this)
   *(_DWORD *)(this + 504) = 5; /*0x75ec5d*/
   *(_BYTE *)(this + 508) = 1; /*0x75ec67*/
   *(_BYTE *)(this + 509) = 0; /*0x75ec6e*/
-  *(_DWORD *)(this + 496) = &VectorClass<CellClass *>::`vftable'; /*0x75ec74*/
+  *(_DWORD *)(this + 496) = &vt_VectorClass_CellClass; /*0x75ec74*/
   *(_DWORD *)(this + 500) = __2_YAPAXI_Z(0x14u); /*0x75ec83*/
   *(_BYTE *)(this + 509) = 1; /*0x75ec89*/
-  *(_DWORD *)(this + 496) = &DynamicVectorClass<CellClass *>::`vftable'; /*0x75ec90*/
+  *(_DWORD *)(this + 496) = &vt_DynamicVectorClass_CellClass; /*0x75ec90*/
   *(_DWORD *)(this + 516) = 10; /*0x75ec9a*/
   *(_DWORD *)(this + 512) = 0; /*0x75eca4*/
   *(_DWORD *)this = &WaveClass::`vftable'; /*0x75ecaa*/
   this->VoxelAnimClass_field_0x4 = &WaveClass::`vftable'; /*0x75ecb0*/
-  this->VoxelAnimClass_field_0x8 = &WaveClass::`vftable'; /*0x75ecb7*/
+  this->VoxelAnimClass_field_0x8 = &vt_WaveClass; /*0x75ecb7*/
   *(_DWORD *)(this + 12) = &off_7F6BC8; /*0x75ecbe*/
   if ( MEMORY[0xA8EC48] < MEMORY[0xA8EC40] /*0x75ecfb*/
     || (MEMORY[0xA8EC45] || !MEMORY[0xA8EC40])

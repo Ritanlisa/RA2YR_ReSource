@@ -33,7 +33,7 @@ _DWORD *__thiscall LightSourceClass::Construct(
   *(this + 1) = &LightSourceClass::`vftable'; /*0x5547b0*/
   *(this + 16) = aP3; /*0x5547b7*/
   *(this + 2) = &LightSourceClass::`vftable'; /*0x5547ba*/
-  *(this + 3) = &LightSourceClass::`vftable'; /*0x5547c1*/
+  *(this + 3) = &vt_LightSourceClass; /*0x5547c1*/
   if ( g_BridgeCellPool < dword_ABCA18 /*0x5547fd*/
     || (byte_ABCA1D || !dword_ABCA18)
     && dword_ABCA24 > 0
@@ -72,7 +72,7 @@ int __thiscall sub_554830(int this)
   *(_DWORD *)this = &LightSourceClass::`vftable'; /*0x554869*/
   this->vtable1 = &LightSourceClass::`vftable'; /*0x55486f*/
   this->vtable2 = &LightSourceClass::`vftable'; /*0x554876*/
-  this->vtable3 = &LightSourceClass::`vftable'; /*0x55487d*/
+  this->vtable3 = &vt_LightSourceClass; /*0x55487d*/
   if ( g_BridgeCellPool < dword_ABCA18 /*0x5548b6*/
     || (byte_ABCA1D || !dword_ABCA18)
     && dword_ABCA24 > 0
@@ -115,7 +115,7 @@ int __stdcall LightSourceClass::Write(AbstractClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &LightSourceClass::`vftable'; /*0x5550e4*/
       *(_DWORD *)&aP0->__pad_0[4] = &LightSourceClass::`vftable'; /*0x5550ea*/
       *(_DWORD *)&aP0->__pad_0[8] = &LightSourceClass::`vftable'; /*0x5550f1*/
-      *(_DWORD *)&aP0->__pad_0[12] = &LightSourceClass::`vftable'; /*0x5550f8*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_LightSourceClass; /*0x5550f8*/
     }
     return 0; /*0x5550ff*/
   }
@@ -150,7 +150,7 @@ LightSourceClass *__thiscall LightSourceClass::CopyTo(void **this, char a2)
   *this = &LightSourceClass::`vftable'; /*0x555156*/
   *(this + 1) = &LightSourceClass::`vftable'; /*0x55515c*/
   *(this + 2) = &LightSourceClass::`vftable'; /*0x555163*/
-  *(this + 3) = &LightSourceClass::`vftable'; /*0x55516a*/
+  *(this + 3) = &vt_LightSourceClass; /*0x55516a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x555171*/
   v5 = this; /*0x555186*/
   v3 = ((int (__thiscall *)(DynamicVector **, void ***))dword_ABCA10->field_10)(&dword_ABCA10, &v5); /*0x55518a*/

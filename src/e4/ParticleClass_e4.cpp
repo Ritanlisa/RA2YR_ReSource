@@ -261,7 +261,7 @@ int __thiscall ParticleClass::LoadParticleData(void *this, ObjectClass *aP1, int
       *(_DWORD *)aP1->__pad_0 = &ParticleClass::`vftable'; /*0x62d7c4*/
       *(_DWORD *)&aP1->__pad_0[4] = &ParticleClass::`vftable'; /*0x62d7ca*/
       *(_DWORD *)&aP1->__pad_0[8] = &ParticleClass::`vftable'; /*0x62d7d1*/
-      *(_DWORD *)&aP1->__pad_0[12] = &ParticleClass::`vftable'; /*0x62d7d8*/
+      *(_DWORD *)&aP1->__pad_0[12] = &vt_ParticleClass; /*0x62d7d8*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]); /*0x62d7eb*/
     ObjectPtr::RegisterForTracking( /*0x62d7fc*/

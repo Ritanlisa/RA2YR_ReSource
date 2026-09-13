@@ -12,7 +12,6 @@ struct Network {
     char Init();  // 0x52F3F0
     short GetAddress(unsigned int * a1, ObjectClass * aP2, unsigned short * a3);  // 0x53ED60
     char * CopyAddress(unsigned int * a2, int a3);  // 0x53EDA0
-    int CopyAddress_Small(IPXManagerClass * aP1);  // 0x53EDC0
     int IsBroadcastAddr();  // 0x53EE00
     bool processPacket(TechnoTypeClass * aP1);  // 0x53EF60
     char * FormatAddress(IUnknown * aP1);  // 0x53F0E0
@@ -46,9 +45,6 @@ struct Network {
     unsigned short ResolveNetworkAddress(unsigned short a2);  // 0x5DA0B0
     int processQueue();  // 0x5E2BA0
     int CountDisconnectedHouses();  // 0x5E2BE0
-    int SendOptionsGame();  // 0x5E3720
-    int InitPlayerSlots();  // 0x5E8B60
-    HWND handleTimeout();  // 0x5EFF70
     int CleanupOnDisconnect();  // 0x5F0040
     char AddFrameEvent();  // 0x6471A0
     void QueueProcessingLoop();  // 0x6475F0
@@ -60,15 +56,19 @@ struct Network {
     char SendMasterPlayerList();  // 0x6639D0
     wchar_t * ProcessAddressChange();  // 0x6640E0
     char * processAcknowledgment(IUnknown * aP1);  // 0x6642A0
-    short handleDisconnect(IUnknown * aP1);  // 0x664390
-    int checkTimeout(int a2);  // 0x6643E0
     char * reconnect(DynamicVector * aP1, short a3);  // 0x664400
     bool sendGameEvent(Modem * aP0, int _10, unsigned int * a2);  // 0x6956D0
     unsigned int * processGameEvent();  // 0x69B540
     int GetMaxPacketSize();  // 0x74FD20
-    bool IsMultiplayerActive();  // 0x77D940
-    char IsLobbyFeature();  // 0x77D970
     void SyncPlayerList();  // 0x792F10
     int finalizeSession();  // 0x7B2DB0
+    int CopyAddress_Small(IPXManagerClass * aP1);  // 0x53EDC0
+    int SendOptionsGame();  // 0x5E3720
+    int InitPlayerSlots();  // 0x5E8B60
+    HWND handleTimeout();  // 0x5EFF70
+    short handleDisconnect(IUnknown * aP1);  // 0x664390
+    int checkTimeout(int a2);  // 0x6643E0
+    bool IsMultiplayerActive();  // 0x77D940
+    char IsLobbyFeature();  // 0x77D970
 };
 } // namespace gamemd

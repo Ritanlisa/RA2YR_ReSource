@@ -174,7 +174,7 @@ GenericNode *__thiscall Delegate::Constructor_GenericNode(GenericNode **this, ch
   GenericNode *v3; // ecx
   GenericNode *v4; // eax
 
-  *this = (GenericNode *)&GenericNode::`vftable'; /*0x52ae27*/
+  *this = (GenericNode *)&vt_GenericNode; /*0x52ae27*/
   if ( this ) /*0x52ae2d*/
   {
     v3 = *(this + 1); /*0x52ae2f*/

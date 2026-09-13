@@ -21,7 +21,7 @@ HRESULT __stdcall ShipLocomotionClass::_vt05(int *a1, int *pStm)
   {
     a1[26] = 0; /*0x69eeac*/
     *a1 = (int)&ShipLocomotionClass::`vftable'; /*0x69eeb3*/
-    a1[1] = (int)&ShipLocomotionClass::`vftable'; /*0x69eeb9*/
+    a1[1] = (int)&vt_ShipLocomotionClass; /*0x69eeb9*/
     a1[6] = (int)&off_7F2D68; /*0x69eec0*/
   }
   v2->__pad_0->Read(v2, &pStm, 1, 0); /*0x69eed3*/
@@ -103,7 +103,7 @@ ShipLocomotionClass *__thiscall ShipLocomotionClass::ProcessMove(ILocomotion **t
   ILocomotion *v3; // eax
 
   *this = (ILocomotion *)&ShipLocomotionClass::`vftable'; /*0x6a42b3*/
-  *(this + 1) = (ILocomotion *)&ShipLocomotionClass::`vftable'; /*0x6a42b9*/
+  *(this + 1) = (ILocomotion *)&vt_ShipLocomotionClass; /*0x6a42b9*/
   *(this + 6) = (ILocomotion *)&off_7F2D68; /*0x6a42c0*/
   v3 = *(this + 26); /*0x6a42c7*/
   if ( v3 ) /*0x6a42cc*/

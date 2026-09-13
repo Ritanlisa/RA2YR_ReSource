@@ -18,7 +18,7 @@ rc_ptr *__fastcall ConstructWDTSelection_Create_767FB0(rc_ptr_base *a1, int a2, 
   else
     v7 = 0; /*0x767fdd*/
   ComPtr::Constructor(a1); /*0x767fe1*/
-  a1->vfptr = &rc_ptr<WorldDominationTour::Map>::`vftable'; /*0x767fe8*/
+  a1->vfptr = &vt_rc_ptr_WorldDominationTour_Map; /*0x767fe8*/
   ComPtr::Set(a1, (int)v7); /*0x767fef*/
   return (rc_ptr *)a1; /*0x767ff6*/
 }

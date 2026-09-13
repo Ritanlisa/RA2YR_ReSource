@@ -32,7 +32,7 @@ int __stdcall MechLocomotionClass::_vt05(int *a1, int *a2)
     if ( a1 ) /*0x5b19b6*/
     {
       *a1 = (int)&MechLocomotionClass::`vftable'; /*0x5b19b8*/
-      a1[1] = (int)&MechLocomotionClass::`vftable'; /*0x5b19be*/
+      a1[1] = (int)&vt_MechLocomotionClass; /*0x5b19be*/
     }
   }
   return result; /*0x5b19c5*/
@@ -46,7 +46,7 @@ MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
 MechLocomotionClass *__thiscall MechLocomotionClass::ProcessMove(_DWORD *this, char a2)
 {
   *this = &MechLocomotionClass::`vftable'; /*0x5b1b53*/
-  *(this + 1) = &MechLocomotionClass::`vftable'; /*0x5b1b59*/
+  *(this + 1) = &vt_MechLocomotionClass; /*0x5b1b59*/
   LocomotionClass::Construct(this); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
     __3_YAXPAX_Z(this); /*0x5b1b6d*/

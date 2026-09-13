@@ -496,7 +496,7 @@ UDPInterfaceClass *__thiscall UDPInterfaceClass::Destructor(void ***this, char a
   void *v9; // eax
   void *v10; // eax
 
-  *this = &UDPInterfaceClass::`vftable'; /*0x7b4176*/
+  *this = &vt_UDPInterfaceClass; /*0x7b4176*/
   while ( *(this + 64722) ) /*0x7b417c*/
   {
     __3_YAXPAX_Z(**(this + 64719)); /*0x7b418f*/
@@ -523,7 +523,7 @@ UDPInterfaceClass *__thiscall UDPInterfaceClass::Destructor(void ***this, char a
   }
   UDPInterfaceClass::connect(this); /*0x7b4224*/
   v9 = *(this + 64853); /*0x7b4229*/
-  *(this + 64852) = &VectorClass<unsigned char *>::`vftable'; /*0x7b422f*/
+  *(this + 64852) = &vt_VectorClass_unsigned_char; /*0x7b422f*/
   if ( v9 && *((_BYTE *)this + 259421) ) /*0x7b423d*/
   {
     __3_YAXPAX_Z(v9); /*0x7b4246*/
@@ -532,7 +532,7 @@ UDPInterfaceClass *__thiscall UDPInterfaceClass::Destructor(void ***this, char a
   *((_BYTE *)this + 259421) = 0; /*0x7b4254*/
   *(this + 64854) = 0; /*0x7b425a*/
   v10 = *(this + 64719); /*0x7b4260*/
-  *(this + 64718) = &VectorClass<unsigned char *>::`vftable'; /*0x7b4266*/
+  *(this + 64718) = &vt_VectorClass_unsigned_char; /*0x7b4266*/
   if ( v10 && *((_BYTE *)this + 258885) ) /*0x7b4274*/
   {
     __3_YAXPAX_Z(v10); /*0x7b427d*/
@@ -661,7 +661,7 @@ DynamicVector *__thiscall UDPInterfaceClass::receivePacket(_DWORD *this, char a2
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x7b45d3*/
-  *this = &VectorClass<unsigned char *>::`vftable'; /*0x7b45d6*/
+  *this = &vt_VectorClass_unsigned_char; /*0x7b45d6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x7b45e0*/
   {
     __3_YAXPAX_Z(v3); /*0x7b45e8*/

@@ -12,7 +12,7 @@ _DWORD *__thiscall ObjectVector::Construct(_DWORD *this, IUnknown *aP1, IUnknown
   *(this + 2) = aP1; /*0x4d044e*/
   *((_BYTE *)this + 12) = 1; /*0x4d0451*/
   *((_BYTE *)this + 13) = 0; /*0x4d0455*/
-  *this = &VectorClass<ObjectClass *>::`vftable'; /*0x4d0458*/
+  *this = &vt_VectorClass_ObjectClass; /*0x4d0458*/
   if ( aP1 ) /*0x4d045e*/
   {
     if ( aP2 ) /*0x4d0466*/

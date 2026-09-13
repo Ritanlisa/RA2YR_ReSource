@@ -66,13 +66,13 @@ int __stdcall IsometricTileTypeClass::_vt05(int *a1, int a2)
     {
       ObjectTypeClass::Construct(a1, (int)&a2); /*0x549cd8*/
       IsometricTileTypeClass::Constructor_0(a1 + 169, 0, 0); /*0x549ce9*/
-      a1[169] = (int)&DynamicVectorClass<unsigned short *>::`vftable'; /*0x549cee*/
+      a1[169] = (int)&vt_DynamicVectorClass_unsigned_short; /*0x549cee*/
       a1[174] = 10; /*0x549cf4*/
       a1[173] = 0; /*0x549cfb*/
       *a1 = (int)&IsometricTileTypeClass::`vftable'; /*0x549d02*/
       a1[1] = (int)&IsometricTileTypeClass::`vftable'; /*0x549d08*/
       a1[2] = (int)&IsometricTileTypeClass::`vftable'; /*0x549d0f*/
-      a1[3] = (int)&IsometricTileTypeClass::`vftable'; /*0x549d16*/
+      a1[3] = (int)&vt_IsometricTileTypeClass; /*0x549d16*/
     }
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], a1 + 175); /*0x549d2a*/
     for ( j = 0; j < MEMORY[0x87F6A8]; *((_DWORD *)MEMORY[0x87F69C] + j - 1) = 0 ) /*0x549d39*/
@@ -253,7 +253,7 @@ DynamicVector *__thiscall IsometricTileTypeClass::Constructor(_DWORD *this, char
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x54a763*/
-  *this = &VectorClass<unsigned short *>::`vftable'; /*0x54a766*/
+  *this = &vt_VectorClass_unsigned_short; /*0x54a766*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x54a770*/
   {
     __3_YAXPAX_Z(v3); /*0x54a778*/
@@ -277,7 +277,7 @@ _DWORD *__thiscall sub_54A850(_DWORD *this, int a2, int a3)
   *(this + 2) = a2; /*0x54a85e*/
   *((_BYTE *)this + 12) = 1; /*0x54a861*/
   *((_BYTE *)this + 13) = 0; /*0x54a865*/
-  *this = &VectorClass<unsigned short *>::`vftable'; /*0x54a868*/
+  *this = &vt_VectorClass_unsigned_short; /*0x54a868*/
   if ( a2 ) /*0x54a86e*/
   {
     if ( a3 ) /*0x54a876*/

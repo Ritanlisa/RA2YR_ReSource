@@ -52,7 +52,7 @@ int HotkeyOptions::DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 //   signed int m; // esi
 //   char *v45; // eax
 //   HWND v46; // edi
-//   LRESUL... [20020 chars total]
+//   LRESUL... [20000 chars total]
 // end truncated pseudocode
 }
 

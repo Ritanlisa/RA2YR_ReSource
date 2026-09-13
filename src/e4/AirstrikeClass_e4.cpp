@@ -27,7 +27,7 @@ int __thiscall AirstrikeClass::AirstrikeClass(int this, TechnoClass *aP1)
   *(_DWORD *)this = &AirstrikeClass::`vftable'; /*0x41d389*/
   this->vtable1 = &AirstrikeClass::`vftable'; /*0x41d38f*/
   this->vtable2 = &AirstrikeClass::`vftable'; /*0x41d396*/
-  this->vtable3 = &AirstrikeClass::`vftable'; /*0x41d39d*/
+  this->vtable3 = &vt_AirstrikeClass; /*0x41d39d*/
   if ( *(int *)&MEMORY[0x87F8E4].__pad_5568[20860] < *(int *)&MEMORY[0x87F8E4].__pad_5568[20852] /*0x41d3d9*/
     || (MEMORY[0x87F8E4].__pad_5568[20857] || !*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[20852])
     && *(int *)&MEMORY[0x87F8E4].__pad_5568[20864] > 0
@@ -100,7 +100,7 @@ int __stdcall AirstrikeClass::Write(AbstractClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &AirstrikeClass::`vftable'; /*0x41d717*/
       *(_DWORD *)&aP0->__pad_0[4] = &AirstrikeClass::`vftable'; /*0x41d71d*/
       *(_DWORD *)&aP0->__pad_0[8] = &AirstrikeClass::`vftable'; /*0x41d724*/
-      *(_DWORD *)&aP0->__pad_0[12] = &AirstrikeClass::`vftable'; /*0x41d72b*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_AirstrikeClass; /*0x41d72b*/
     }
     ObjectPtr::RegisterForTracking( /*0x41d73b*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
@@ -403,7 +403,7 @@ AirstrikeClass *__thiscall AirstrikeClass::CopyTo(_DWORD *this, char a2)
   *this = &AirstrikeClass::`vftable'; /*0x41dd5d*/
   *(this + 1) = &AirstrikeClass::`vftable'; /*0x41dd63*/
   *(this + 2) = &AirstrikeClass::`vftable'; /*0x41dd6a*/
-  *(this + 3) = &AirstrikeClass::`vftable'; /*0x41dd71*/
+  *(this + 3) = &vt_AirstrikeClass; /*0x41dd71*/
   v5 = this; /*0x41dd7f*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0x889FB8] + 16))(&MEMORY[0x889FB8], &v5); /*0x41dd83*/
   if ( v3 != -1 && v3 < MEMORY[0x889FC8] && v3 < --MEMORY[0x889FC8] ) /*0x41dd9e*/

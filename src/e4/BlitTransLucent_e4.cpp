@@ -95,10 +95,10 @@ BlitTransLucent25Alpha_ushort *__thiscall BlitTransLucent25Alpha_ushort::Blit(_D
   void *v3; // eax
 
   v3 = (void *)*(this + 2); /*0x49a348*/
-  *this = &BlitTransLucent25Alpha<unsigned short>::`vftable'; /*0x49a34b*/
+  *this = &vt_BlitTransLucent25Alpha_unsigned_short; /*0x49a34b*/
   FractalNoise::Release(v3); /*0x49a352*/
   *(this + 2) = 0; /*0x49a35b*/
-  *this = &Blitter::`vftable'; /*0x49a364*/
+  *this = &vt_Blitter; /*0x49a364*/
   if ( (a2 & 1) != 0 ) /*0x49a36a*/
     __3_YAXPAX_Z(this); /*0x49a36d*/
   return (BlitTransLucent25Alpha_ushort *)this; /*0x49a377*/
@@ -111,7 +111,7 @@ std::locale::facet * BlitTransLucent25Alpha_ushort::Constructor_Blitter(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall BlitTransLucent25Alpha_ushort::Constructor_Blitter(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &Blitter::`vftable'; /*0x49a389*/
+  *(_DWORD *)this = &vt_Blitter; /*0x49a389*/
   if ( (a2 & 1) != 0 ) /*0x49a38f*/
     __3_YAXPAX_Z(this); /*0x49a392*/
   return this; /*0x49a39c*/
@@ -358,10 +358,10 @@ BlitTransLucent25AlphaZReadWrite_ushort *__thiscall BlitTransLucent25AlphaZReadW
   void *v3; // eax
 
   v3 = (void *)*(this + 2); /*0x49a728*/
-  *this = &BlitTransLucent25AlphaZReadWrite<unsigned short>::`vftable'; /*0x49a72b*/
+  *this = &vt_BlitTransLucent25AlphaZReadWrite_unsigned_short; /*0x49a72b*/
   FractalNoise::Release(v3); /*0x49a732*/
   *(this + 2) = 0; /*0x49a73b*/
-  *this = &Blitter::`vftable'; /*0x49a744*/
+  *this = &vt_Blitter; /*0x49a744*/
   if ( (a2 & 1) != 0 ) /*0x49a74a*/
     __3_YAXPAX_Z(this); /*0x49a74d*/
   return (BlitTransLucent25AlphaZReadWrite_ushort *)this; /*0x49a757*/
@@ -376,7 +376,7 @@ RLEBlitTransXlat *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Constructo
         std::locale::facet *this,
         char a2)
 {
-  *(_DWORD *)this = &RLEBlitter::`vftable'; /*0x49a769*/
+  *(_DWORD *)this = &vt_RLEBlitter; /*0x49a769*/
   if ( (a2 & 1) != 0 ) /*0x49a76f*/
     __3_YAXPAX_Z(this); /*0x49a772*/
   return (RLEBlitTransXlat *)this; /*0x49a77c*/
@@ -391,7 +391,7 @@ std::locale::facet *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Construc
         std::locale::facet *this,
         char a2)
 {
-  *(_DWORD *)this = &RLEBlitter::`vftable'; /*0x49a789*/
+  *(_DWORD *)this = &vt_RLEBlitter; /*0x49a789*/
   if ( (a2 & 1) != 0 ) /*0x49a78f*/
     __3_YAXPAX_Z(this); /*0x49a792*/
   return this; /*0x49a79c*/
@@ -406,7 +406,7 @@ std::locale::facet *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Construc
         std::locale::facet *this,
         char a2)
 {
-  *(_DWORD *)this = &RLEBlitter::`vftable'; /*0x49a7a9*/
+  *(_DWORD *)this = &vt_RLEBlitter; /*0x49a7a9*/
   if ( (a2 & 1) != 0 ) /*0x49a7af*/
     __3_YAXPAX_Z(this); /*0x49a7b2*/
   return this; /*0x49a7bc*/

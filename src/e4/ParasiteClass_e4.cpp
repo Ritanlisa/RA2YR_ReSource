@@ -22,7 +22,7 @@ int __thiscall sub_629210(int this)
   *(_DWORD *)this = &ParasiteClass::`vftable'; /*0x629231*/
   this->vtable1 = &ParasiteClass::`vftable'; /*0x629237*/
   this->vtable2 = &ParasiteClass::`vftable'; /*0x62923e*/
-  this->vtable3 = &ParasiteClass::`vftable'; /*0x629245*/
+  this->vtable3 = &vt_ParasiteClass; /*0x629245*/
   if ( MEMORY[0xAC4920] < MEMORY[0xAC4918] /*0x62927e*/
     || (MEMORY[0xAC491D] || !MEMORY[0xAC4918])
     && MEMORY[0xAC4924] > 0
@@ -60,7 +60,7 @@ int __thiscall ParasiteClass::ParasiteClass(int this, TechnoClass *aP1)
   *(_DWORD *)this = &ParasiteClass::`vftable'; /*0x6292d8*/
   this->vtable1 = &ParasiteClass::`vftable'; /*0x6292de*/
   this->vtable2 = &ParasiteClass::`vftable'; /*0x6292e5*/
-  this->vtable3 = &ParasiteClass::`vftable'; /*0x6292ec*/
+  this->vtable3 = &vt_ParasiteClass; /*0x6292ec*/
   this->creationFrame = aP1; /*0x6292f3*/
   *(_DWORD *)(this + 40) = 0; /*0x6292f6*/
   this->ParasiteClass_field_38 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x629303*/
@@ -150,7 +150,7 @@ int __stdcall ParasiteClass::LoadParasite(int *a0, AbstractClass *aP1)
       *a0 = (int)&ParasiteClass::`vftable'; /*0x6295fa*/
       a0[1] = (int)&ParasiteClass::`vftable'; /*0x629600*/
       a0[2] = (int)&ParasiteClass::`vftable'; /*0x629607*/
-      a0[3] = (int)&ParasiteClass::`vftable'; /*0x62960e*/
+      a0[3] = (int)&vt_ParasiteClass; /*0x62960e*/
     }
     if ( a0[17] /*0x629657*/
       && (*(int *)&stru_B05488.__pad_579C[18852] < *(int *)&stru_B05488.__pad_579C[18844]
@@ -862,7 +862,7 @@ ParasiteClass *__thiscall ParasiteClass::UpdateParasite(ParasiteClass *this, cha
   *(_DWORD *)this->__pad_0 = &ParasiteClass::`vftable'; /*0x62af7a*/
   *(_DWORD *)&this->__pad_0[4] = &ParasiteClass::`vftable'; /*0x62af82*/
   *(_DWORD *)&this->__pad_0[8] = &ParasiteClass::`vftable'; /*0x62af89*/
-  *(_DWORD *)&this->__pad_0[12] = &ParasiteClass::`vftable'; /*0x62af90*/
+  *(_DWORD *)&this->__pad_0[12] = &vt_ParasiteClass; /*0x62af90*/
   *((_DWORD *)this + 19) = 0; /*0x62af97*/
   *((_DWORD *)this + 20) = 0; /*0x62af9a*/
   *((_DWORD *)this + 18) = 0; /*0x62af9d*/

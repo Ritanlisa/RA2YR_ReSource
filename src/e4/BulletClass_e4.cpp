@@ -38,7 +38,7 @@ int __thiscall sub_466380(int this)
   *(_DWORD *)this = &BulletClass::`vftable'; /*0x466425*/
   this->BulletClass_field_0x4 = &BulletClass::`vftable'; /*0x46642b*/
   this->BulletClass_field_0x8 = &BulletClass::`vftable'; /*0x466431*/
-  *(_DWORD *)(this + 12) = &BulletClass::`vftable'; /*0x466438*/
+  *(_DWORD *)(this + 12) = &vt_BulletClass; /*0x466438*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x46643f*/
   *(_DWORD *)(this + 308) = 0; /*0x466444*/
   *(_DWORD *)(this + 312) = 0; /*0x46644a*/
@@ -76,7 +76,7 @@ int __thiscall BulletClass::Dtor(#374 *this)
   *(_DWORD *)this = &BulletClass::`vftable'; /*0x466566*/
   this->BulletClass_field_0x4 = &BulletClass::`vftable'; /*0x46656c*/
   this->BulletClass_field_0x8 = &BulletClass::`vftable'; /*0x466573*/
-  *((_DWORD *)this + 3) = &BulletClass::`vftable'; /*0x46657a*/
+  *((_DWORD *)this + 3) = &vt_BulletClass; /*0x46657a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x466581*/
   if ( *((_BYTE *)this + 344) ) /*0x466586*/
   {

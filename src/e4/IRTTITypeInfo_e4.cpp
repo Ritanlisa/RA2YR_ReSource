@@ -41,7 +41,7 @@ _DWORD *__thiscall IRTTITypeInfo::loc_74F6A0(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x74f6a3*/
-  *this = &VectorClass<VeinholeMonsterClass *>::`vftable'; /*0x74f6a6*/
+  *this = &vt_VectorClass_VeinholeMonsterClass; /*0x74f6a6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x74f6b0*/
   {
     __3_YAXPAX_Z(v3); /*0x74f6b8*/

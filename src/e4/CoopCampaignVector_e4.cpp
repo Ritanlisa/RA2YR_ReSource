@@ -24,7 +24,7 @@ VectorClass *__thiscall CoopCampaignVector::QueryInterface(_DWORD *this, char a2
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5c5943*/
-  *this = &VectorClass<CoopCampaignClass *>::`vftable'; /*0x5c5946*/
+  *this = &vt_VectorClass_CoopCampaignClass; /*0x5c5946*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x5c5950*/
   {
     __3_YAXPAX_Z(v3); /*0x5c5958*/
@@ -48,7 +48,7 @@ _DWORD *__thiscall CoopCampaignVector::Construct(_DWORD *this, MultiplayerGameMo
   *(this + 2) = aP1; /*0x5c5a8e*/
   *((_BYTE *)this + 12) = 1; /*0x5c5a91*/
   *((_BYTE *)this + 13) = 0; /*0x5c5a95*/
-  *this = &VectorClass<CoopCampaignClass *>::`vftable'; /*0x5c5a98*/
+  *this = &vt_VectorClass_CoopCampaignClass; /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
     if ( aP2 ) /*0x5c5aa6*/

@@ -303,13 +303,13 @@ int __thiscall BuildingTypeClass_ConstructorFull(int this, char *Source)
   *(_DWORD *)(this + 6028) = 1; /*0x45e298*/
   *(_BYTE *)(this + 6032) = 1; /*0x45e29e*/
   *(_BYTE *)(this + 6033) = 0; /*0x45e2a5*/
-  *(_DWORD *)(this + 6020) = &VectorClass<TPoint3D<int>>::`vftable'; /*0x45e2ab*/
+  *(_DWORD *)(this + 6020) = &vt_VectorClass_TPoint3D_int; /*0x45e2ab*/
   *(_DWORD *)(this + 6024) = __2_YAPAXI_Z(0xCu); /*0x45e2ba*/
   *(_BYTE *)(this + 6033) = 1; /*0x45e2c6*/
   *(_DWORD *)this = &BuildingTypeClass::`vftable'; /*0x45e2cd*/
   this->vtable1 = &BuildingTypeClass::`vftable'; /*0x45e2d3*/
   this->vtable2 = &BuildingTypeClass::`vftable'; /*0x45e2d9*/
-  this->vtable3 = &BuildingTypeClass::`vftable'; /*0x45e2e1*/
+  this->vtable3 = &vt_BuildingTypeClass; /*0x45e2e1*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x45e2e8*/
   v4 = g_TriggerClassCount; /*0x45e2ed*/
   if ( g_TriggerClassCount < dword_A83C70 /*0x45e32b*/
@@ -460,11 +460,11 @@ _DWORD *__thiscall BuildingTypeClass::loadBuildingProperty_b_545E520(_DWORD *thi
   *(this + 1507) = 0; /*0x45e53b*/
   *((_BYTE *)this + 6032) = 1; /*0x45e541*/
   *((_BYTE *)this + 6033) = 0; /*0x45e548*/
-  *(this + 1505) = &VectorClass<TPoint3D<int>>::`vftable'; /*0x45e54e*/
+  *(this + 1505) = &vt_VectorClass_TPoint3D_int; /*0x45e54e*/
   *this = &BuildingTypeClass::`vftable'; /*0x45e558*/
   *(this + 1) = &BuildingTypeClass::`vftable'; /*0x45e55e*/
   *(this + 2) = &BuildingTypeClass::`vftable'; /*0x45e565*/
-  *(this + 3) = &BuildingTypeClass::`vftable'; /*0x45e56c*/
+  *(this + 3) = &vt_BuildingTypeClass; /*0x45e56c*/
   return this; /*0x45e575*/
 }
 }
@@ -484,7 +484,7 @@ int __fastcall BuildingTypeClass::CleanupMembers(AbstractClass *a1, AbstractClas
   *(_DWORD *)a1->__pad_0 = &BuildingTypeClass::`vftable'; /*0x45e58d*/
   *(_DWORD *)&a1->__pad_0[4] = &BuildingTypeClass::`vftable'; /*0x45e595*/
   *(_DWORD *)&a1->__pad_0[8] = &BuildingTypeClass::`vftable'; /*0x45e59c*/
-  *(_DWORD *)&a1->__pad_0[12] = &BuildingTypeClass::`vftable'; /*0x45e5a3*/
+  *(_DWORD *)&a1->__pad_0[12] = &vt_BuildingTypeClass; /*0x45e5a3*/
   if ( nextArrayIndex && a1[99].abstractFlags ) /*0x45e5ac*/
   {
     __3_YAXPAX_Z((void *)a1[99].abstractFlags); /*0x45e5b7*/
@@ -541,7 +541,7 @@ int __fastcall BuildingTypeClass::CleanupMembers(AbstractClass *a1, AbstractClas
     }
   }
   v4 = *(SHPStruct **)&a1[167].__pad_0[12]; /*0x45e707*/
-  *(_DWORD *)&a1[167].__pad_0[8] = &VectorClass<TPoint3D<int>>::`vftable'; /*0x45e70d*/
+  *(_DWORD *)&a1[167].__pad_0[8] = &vt_VectorClass_TPoint3D_int; /*0x45e70d*/
   if ( v4 && BYTE1(a1[167].abstractFlags) ) /*0x45e71b*/
   {
     __3_YAXPAX_Z(v4); /*0x45e724*/
@@ -673,14 +673,14 @@ void BuildingTypeClass::LoadRepairAnimations(#376 *this)
       v8 = (BuildingTypeClass *)__2_YAPAXI_Z(0x20u); /*0x45eb65*/
       if ( v8 ) /*0x45eb6c*/
       {
-        *(_DWORD *)&v8->__pad_0[12] = 0; /*0x45eb72*/
-        *(_DWORD *)v8->__pad_0 = &XSurface_Vtable; /*0x45eb78*/
-        *(_DWORD *)&v8->__pad_0[4] = v9 + 16; /*0x45eb80*/
-        *(_DWORD *)&v8->__pad_0[8] = v9 + 16; /*0x45eb8b*/
+        *(_DWORD *)&v8->vtable0[12] = 0; /*0x45eb72*/
+        *(_DWORD *)v8->vtable0 = &XSurface_Vtable; /*0x45eb78*/
+        *(_DWORD *)&v8->vtable0[4] = v9 + 16; /*0x45eb80*/
+        *(_DWORD *)&v8->vtable0[8] = v9 + 16; /*0x45eb8b*/
         v8->uniqueId = 1; /*0x45eb8e*/
         Buffer::Init(&v8->abstractFlags, 0, (AbstractClass *)((v9 + 16) * (v9 + 16))); /*0x45eb95*/
-        *(_DWORD *)v8->__pad_0 = &BSurface_Vtable; /*0x45eb9a*/
-        dword_89DDC0 = v8->__pad_0; /*0x45eba0*/
+        *(_DWORD *)v8->vtable0 = &BSurface_Vtable; /*0x45eb9a*/
+        dword_89DDC0 = v8->vtable0; /*0x45eba0*/
       }
       else
       {
@@ -1150,7 +1150,7 @@ void __thiscall BuildingTypeClass_LoadVoxel(int this)
           Info = VoxelSection::GetInfo(*(_DWORD **)(this + 184), 0, 0); /*0x45fc12*/
           Matrix::Scale(*(unsigned int **)(this + 188), *(float *)(Info + 12)); /*0x45fc21*/
         }
-        v22[0] = &CCFileClass::`vftable'; /*0x45fc2a*/
+        v22[0] = &vt_CCFileClass; /*0x45fc2a*/
         v24 = 0; /*0x45fc32*/
         Vector::Clear((int)v23); /*0x45fc36*/
         v22[0] = &off_7E1668; /*0x45fc3f*/
@@ -1168,7 +1168,7 @@ void __thiscall BuildingTypeClass_LoadVoxel(int this)
         *v12 = 76; /*0x45fc7f*/
         v12[1] = 0; /*0x45fc82*/
       }
-      v25[0] = &CCFileClass::`vftable'; /*0x45fc8c*/
+      v25[0] = &vt_CCFileClass; /*0x45fc8c*/
       v27 = 0; /*0x45fc94*/
       Vector::Clear((int)v26); /*0x45fc9b*/
       v25[0] = &off_7E1668; /*0x45fca4*/
@@ -1216,13 +1216,13 @@ void __thiscall BuildingTypeClass_LoadVoxel(int this)
           Matrix::Scale(*(unsigned int **)(this + 196), *(float *)(v19 + 12)); /*0x45fdea*/
         }
       }
-      v22[0] = &CCFileClass::`vftable'; /*0x45fdf3*/
+      v22[0] = &vt_CCFileClass; /*0x45fdf3*/
       v24 = 0; /*0x45fdfb*/
       Vector::Clear((int)v23); /*0x45fdff*/
       v22[0] = &off_7E1668; /*0x45fe08*/
       BufferIOFileClass::Dtor(v22); /*0x45fe0c*/
     }
-    v28[0] = &CCFileClass::`vftable'; /*0x45fe18*/
+    v28[0] = &vt_CCFileClass; /*0x45fe18*/
     v30 = 0; /*0x45fe23*/
     Vector::Clear((int)v29); /*0x45fe2a*/
     v28[0] = &off_7E1668; /*0x45fe36*/
@@ -1533,7 +1533,7 @@ int __thiscall BuildingTypeClass::SaveLoad_Prefix(#376 *this)
         *(_DWORD *)(v1 + 6028) = 0; /*0x465174*/
         *(_BYTE *)(v1 + 6032) = 1; /*0x465177*/
         *(_BYTE *)(v1 + 6033) = 0; /*0x46517b*/
-        *(_DWORD *)v4 = &VectorClass<TPoint3D<int>>::`vftable'; /*0x46517e*/
+        *(_DWORD *)v4 = &vt_VectorClass_TPoint3D_int; /*0x46517e*/
       }
       (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v4 + 8))(v4, v14, 0); /*0x46518c*/
       v5 = 0; /*0x46518f*/
@@ -1791,7 +1791,7 @@ _DWORD *__thiscall sub_478850(_DWORD *this, int a2, int a3)
   *(this + 2) = a2; /*0x478860*/
   *((_BYTE *)this + 12) = 1; /*0x478863*/
   *((_BYTE *)this + 13) = 0; /*0x478867*/
-  *this = &VectorClass<RGBClass>::`vftable'; /*0x47886a*/
+  *this = &vt_VectorClass_RGBClass; /*0x47886a*/
   if ( !a2 ) /*0x478870*/
     return this; /*0x4788d0*/
   if ( !a3 ) /*0x478878*/
@@ -2067,7 +2067,7 @@ _DWORD *__thiscall BuildingTypeClass::Construct(_DWORD *this, AbstractClass *aP1
   BuildingTypeClass::loadBuildingProperty_b_5478850(this + 174, 0, 0); /*0x644c37*/
   *(this + 179) = 10; /*0x644c3c*/
   *(this + 178) = 0; /*0x644c43*/
-  *(this + 174) = &TypeList<RGBClass>::`vftable'; /*0x644c46*/
+  *(this + 174) = &vt_TypeList_RGBClass; /*0x644c46*/
   *(this + 181) = 0; /*0x644c4c*/
   *((_BYTE *)this + 728) = 0; /*0x644c66*/
   *((_BYTE *)this + 729) = 0; /*0x644c6c*/
@@ -2095,7 +2095,7 @@ _DWORD *__thiscall BuildingTypeClass::Construct(_DWORD *this, AbstractClass *aP1
   *this = &ParticleTypeClass::`vftable'; /*0x644cf4*/
   *(this + 1) = &ParticleTypeClass::`vftable'; /*0x644cfa*/
   *(this + 2) = &ParticleTypeClass::`vftable'; /*0x644d01*/
-  *(this + 3) = &ParticleTypeClass::`vftable'; /*0x644d08*/
+  *(this + 3) = &vt_ParticleTypeClass; /*0x644d08*/
   if ( (int)MEMORY[0xA83DA8] < MEMORY[0xA83DA0] /*0x644d43*/
     || (MEMORY[0xA83DA5] || !MEMORY[0xA83DA0])
     && MEMORY[0xA83DAC] > 0

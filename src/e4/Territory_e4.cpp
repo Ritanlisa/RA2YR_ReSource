@@ -157,7 +157,7 @@ unsigned int * Territory_WorldDominationTour_8::QueryInterface(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Territory_WorldDominationTour_8_::QueryInterface(_DWORD *this, char a2)
 {
-  *this = &WorldDominationTour::Voices::Anim::`vftable'; /*0x771a33*/
+  *this = &vt_WorldDominationTour_Voices_Anim; /*0x771a33*/
   VtableStub::5CB6C0(this); /*0x771a39*/
   if ( (a2 & 1) != 0 ) /*0x771a43*/
     __3_YAXPAX_Z(this); /*0x771a46*/

@@ -645,7 +645,7 @@ AITriggerTypeClass *__thiscall AITriggerTypeClass::ddtor(_DWORD *this, char a2)
   *this = &AITriggerTypeClass::`vftable'; /*0x41fffd*/
   *(this + 1) = &AITriggerTypeClass::`vftable'; /*0x420003*/
   *(this + 2) = &AITriggerTypeClass::`vftable'; /*0x42000a*/
-  *(this + 3) = &AITriggerTypeClass::`vftable'; /*0x420011*/
+  *(this + 3) = &vt_AITriggerTypeClass; /*0x420011*/
   v5 = this; /*0x42001f*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xA8B200] + 16))(&MEMORY[0xA8B200], &v5); /*0x420023*/
   if ( v3 != -1 && v3 < MEMORY[0xA8B210] && v3 < --MEMORY[0xA8B210] ) /*0x42003e*/
@@ -945,7 +945,7 @@ VectorClass *__thiscall AITriggerTypeClass_40_::QueryInterface(_DWORD *this, cha
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x420633*/
-  *this = &VectorClass<AlphaLightingRemapClass *>::`vftable'; /*0x420636*/
+  *this = &vt_VectorClass_AlphaLightingRemapClass; /*0x420636*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x420640*/
   {
     __3_YAXPAX_Z(v3); /*0x420648*/
@@ -972,7 +972,7 @@ DynamicVector *__thiscall AITriggerTypeClass_40_::Constructor_VectorClass_AlphaL
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x420683*/
-  *this = &VectorClass<AlphaLightingRemapClass *>::`vftable'; /*0x420686*/
+  *this = &vt_VectorClass_AlphaLightingRemapClass; /*0x420686*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x420690*/
   {
     __3_YAXPAX_Z(v3); /*0x420698*/

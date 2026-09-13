@@ -303,7 +303,7 @@ int __stdcall ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int
     *(_DWORD *)aP0->__pad_0 = &ParticleSystemTypeClass::`vftable'; /*0x644804*/
     *(_DWORD *)&aP0->__pad_0[4] = &ParticleSystemTypeClass::`vftable'; /*0x64480a*/
     *(_DWORD *)&aP0->__pad_0[8] = &ParticleSystemTypeClass::`vftable'; /*0x644811*/
-    *(_DWORD *)&aP0->__pad_0[12] = &ParticleSystemTypeClass::`vftable'; /*0x644818*/
+    *(_DWORD *)&aP0->__pad_0[12] = &vt_ParticleSystemTypeClass; /*0x644818*/
   }
   return 0; /*0x644821*/
 }
@@ -336,7 +336,7 @@ ParticleSystemTypeClass *__thiscall ParticleSystemTypeClass::ddtor(void **this, 
   *this = &ParticleSystemTypeClass::`vftable'; /*0x644966*/
   *(this + 1) = &ParticleSystemTypeClass::`vftable'; /*0x64496c*/
   *(this + 2) = &ParticleSystemTypeClass::`vftable'; /*0x644973*/
-  *(this + 3) = &ParticleSystemTypeClass::`vftable'; /*0x64497a*/
+  *(this + 3) = &vt_ParticleSystemTypeClass; /*0x64497a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x644981*/
   v5 = this; /*0x644996*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA83D68] + 16))(&MEMORY[0xA83D68], &v5); /*0x64499a*/

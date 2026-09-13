@@ -2042,12 +2042,12 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt33(int a1, int a2, int a3)
           v17 = 0; /*0x7aba07*/
           ReadRegistryOptionsWOL(&v16); /*0x7aba0b*/
           ComPtr::Constructor(&v14); /*0x7aba14*/
-          v14 = &rc_ptr<PlayerProfile>::`vftable'; /*0x7aba22*/
+          v14 = &vt_rc_ptr_PlayerProfile; /*0x7aba22*/
           if ( Flag::IsNot2(&v16) ) /*0x7aba26*/
           {
             PlayerProfile = LoadPlayerProfile(v21, (const char **)&g_WebBrowser); /*0x7aba38*/
             ComPtr::Set(&v14, PlayerProfile[1]); /*0x7aba45*/
-            v21[0] = &rc_ptr<PlayerProfile>::`vftable'; /*0x7aba4e*/
+            v21[0] = &vt_rc_ptr_PlayerProfile; /*0x7aba4e*/
             ComPtr::Release(v21); /*0x7aba52*/
           }
           else
@@ -2059,7 +2059,7 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt33(int a1, int a2, int a3)
             SaveProfileWOL(v15, (const char **)&g_WebBrowser); /*0x7aba92*/
           Debug::Log(); /*0x7abaa0*/
           v12 = 1; /*0x7abaac*/
-          v14 = &rc_ptr<PlayerProfile>::`vftable'; /*0x7abab1*/
+          v14 = &vt_rc_ptr_PlayerProfile; /*0x7abab1*/
           ComPtr::Release(&v14); /*0x7abab5*/
         }
         v4 = *(_DWORD *)(v4 + 32); /*0x7ababa*/
@@ -2544,7 +2544,7 @@ LONG __thiscall CComObject_CChatEventSink___ATL::Release(CComObject_VCChatEventS
   v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ac6c4*/
   if ( !v1 && Block ) /*0x7ac6cc*/
   {
-    *(_DWORD *)Block = &ATL::CComObject<CChatEventSink>::`vftable'; /*0x7ac6d3*/
+    *(_DWORD *)Block = &vt_ATL_CComObject_CChatEventSink; /*0x7ac6d3*/
     *((_DWORD *)Block + 1) = 1; /*0x7ac6d9*/
     InterlockedDecrement(&Addend); /*0x7ac6df*/
     DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ac6e5*/

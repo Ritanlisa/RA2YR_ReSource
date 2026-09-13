@@ -661,7 +661,7 @@ void E4Recv_513D00::sub_513D00()
 void __thiscall sub_513D00(_DWORD *this)
 {
   *this = &HoverLocomotionClass::`vftable'; /*0x513d00*/
-  *(this + 1) = &HoverLocomotionClass::`vftable'; /*0x513d06*/
+  *(this + 1) = &vt_HoverLocomotionClass; /*0x513d06*/
   LocomotionClass::Construct(this); /*0x513d0d*/
 }
 }

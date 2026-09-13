@@ -17,7 +17,7 @@ int __thiscall CampaignClass::CampaignClass(int this, ObjectClass *aP1)
   *(_DWORD *)(this + 668) = -1; /*0x46cb7c*/
   this->vtable1 = &CampaignClass::`vftable'; /*0x46cb82*/
   this->vtable2 = &CampaignClass::`vftable'; /*0x46cb89*/
-  this->vtable3 = &CampaignClass::`vftable'; /*0x46cb90*/
+  this->vtable3 = &vt_CampaignClass; /*0x46cb90*/
   if ( g_UnitTypeInitState < dword_A83D00 /*0x46cbcc*/
     || (byte_A83D05 || !dword_A83D00)
     && dword_A83D0C > 0
@@ -84,7 +84,7 @@ LABEL_7:
         *(_DWORD *)v6->__pad_0 = &CampaignClass::`vftable'; /*0x46cec6*/
         v6->headNode[0] = (int)&CampaignClass::`vftable'; /*0x46cecc*/
         v6->headNode[1] = (int)&CampaignClass::`vftable'; /*0x46ced3*/
-        v6->headNode[2] = (int)&CampaignClass::`vftable'; /*0x46ceda*/
+        v6->headNode[2] = (int)&vt_CampaignClass; /*0x46ceda*/
         if ( g_UnitTypeInitState < dword_A83D00 /*0x46cf18*/
           || (byte_A83D05 || !dword_A83D00)
           && dword_A83D0C > 0
@@ -133,7 +133,7 @@ int __stdcall CampaignClass::Write(AbstractTypeClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &CampaignClass::`vftable'; /*0x46d024*/
       *(_DWORD *)&aP0->__pad_0[4] = &CampaignClass::`vftable'; /*0x46d02a*/
       *(_DWORD *)&aP0->__pad_0[8] = &CampaignClass::`vftable'; /*0x46d031*/
-      *(_DWORD *)&aP0->__pad_0[12] = &CampaignClass::`vftable'; /*0x46d038*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_CampaignClass; /*0x46d038*/
     }
     return 0; /*0x46d03f*/
   }
@@ -172,7 +172,7 @@ CampaignClass *__thiscall CampaignClass::DTOR(void **this, char a2)
   *this = &CampaignClass::`vftable'; /*0x46d096*/
   *(this + 1) = &CampaignClass::`vftable'; /*0x46d09c*/
   *(this + 2) = &CampaignClass::`vftable'; /*0x46d0a3*/
-  *(this + 3) = &CampaignClass::`vftable'; /*0x46d0aa*/
+  *(this + 3) = &vt_CampaignClass; /*0x46d0aa*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x46d0b1*/
   v5 = this; /*0x46d0c6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_A83CF8 + 16))(&dword_A83CF8, &v5); /*0x46d0ca*/
@@ -382,13 +382,13 @@ LABEL_47:
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F124], *((_DWORD *)this + 25), 0); /*0x49ca3e*/
   INIClass::WriteDigest(v28, (int)v33, 0); /*0x49ca51*/
   CCFileClass::Reset(v33); /*0x49ca5d*/
-  v33[0] = &CCFileClass::`vftable'; /*0x49ca67*/
+  v33[0] = &vt_CCFileClass; /*0x49ca67*/
   v35 = 0; /*0x49ca77*/
   Vector::Clear((int)v34); /*0x49ca7e*/
   v33[0] = &off_7E1668; /*0x49ca8f*/
   BufferIOFileClass::Dtor(v33); /*0x49ca96*/
   HashTable::DestroyHashTableINIClass(v28); /*0x49ca9f*/
-  v36[0] = &CCFileClass::`vftable'; /*0x49caab*/
+  v36[0] = &vt_CCFileClass; /*0x49caab*/
   v38 = 0; /*0x49cab2*/
   Vector::Clear((int)v37); /*0x49cab9*/
   v36[0] = &off_7E1668; /*0x49cac5*/

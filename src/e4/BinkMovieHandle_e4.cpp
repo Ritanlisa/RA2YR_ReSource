@@ -265,13 +265,13 @@ BinkMovieHandle *__thiscall BinkMovieHandle::QueryInterface(BinkMovie **this, ch
   BinkMovie *v3; // edi
 
   v3 = *(this + 4); /*0x5c0a34*/
-  *this = (BinkMovie *)&BinkMovieHandle::`vftable'; /*0x5c0a37*/
+  *this = (BinkMovie *)&vt_BinkMovieHandle; /*0x5c0a37*/
   if ( v3 ) /*0x5c0a3f*/
   {
     BinkMovie::Stop((int)v3); /*0x5c0a43*/
     __3_YAXPAX_Z(v3); /*0x5c0a49*/
   }
-  *this = (BinkMovie *)&MovieHandle::`vftable'; /*0x5c0a55*/
+  *this = (BinkMovie *)&vt_MovieHandle; /*0x5c0a55*/
   if ( (a2 & 1) != 0 ) /*0x5c0a5d*/
     __3_YAXPAX_Z(this); /*0x5c0a60*/
   return (BinkMovieHandle *)this; /*0x5c0a6a*/

@@ -37,7 +37,7 @@ int __thiscall LinkClass_Destructor(_DWORD *this)
   int v4; // edx
   int v5; // edx
 
-  *this = &LinkClass::`vftable'; /*0x5565a5*/
+  *this = &vt_LinkClass; /*0x5565a5*/
   Prev = LinkedList::FindPrev(this); /*0x5565b1*/
   result = (*(int (__thiscall **)(_DWORD *))(*this + 28))(this); /*0x5565b7*/
   v4 = *(this + 2); /*0x5565ba*/

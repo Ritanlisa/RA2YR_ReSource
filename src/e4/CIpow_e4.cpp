@@ -93,13 +93,13 @@ LABEL_15:
       _twoToTOS(); /*0x7c9021*/
       if ( v12 == 1 ) /*0x7c9029*/
         result = -result; /*0x7c902b*/
-      if ( !dword_B7819C ) /*0x7c9034*/
+      if ( !CRTGlobal_B7819C ) /*0x7c9034*/
         _check_range_exit(&off_87BED8, 29); /*0x7c9045*/
       return result; /*0x7c9045*/
     }
     result = *(double *)&MEMORY[0x87C550]; /*0x7c9195*/
 LABEL_11:
-    if ( !dword_B7819C ) /*0x7c9051*/
+    if ( !CRTGlobal_B7819C ) /*0x7c9051*/
       _startTwoArgErrorHandling(); /*0x7c9062*/
     return result; /*0x7c9051*/
   }

@@ -55,7 +55,7 @@ _DWORD *__thiscall Campaign_WorldDominationTour_16_::_vt06(_DWORD *this, _DWORD 
 
   v3 = *(this + 1) + 8 * a3; /*0x7656dd*/
   ComPtr::Constructor(a2); /*0x7656e2*/
-  *a2 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x7656e7*/
+  *a2 = &vt_rc_ptr_WorldDominationTour_Conflict; /*0x7656e7*/
   ComPtr::Set(a2, *(_DWORD *)(v3 + 4)); /*0x7656f3*/
   return a2; /*0x7656fa*/
 }
@@ -69,7 +69,7 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 rc_ptr *__thiscall Campaign_WorldDominationTour_16_::Constructor(_DWORD *this, char a2)
 {
-  *this = &rc_ptr<WorldDominationTour::CampaignProperties>::`vftable'; /*0x765713*/
+  *this = &vt_rc_ptr_WorldDominationTour_CampaignProperties; /*0x765713*/
   ComPtr::Release(this); /*0x765719*/
   if ( (a2 & 1) != 0 ) /*0x765723*/
     __3_YAXPAX_Z(this); /*0x765726*/
@@ -85,7 +85,7 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 rc_ptr *__thiscall Campaign_WorldDominationTour_16_::Constructor_0(_DWORD *this, char a2)
 {
-  *this = &rc_ptr<WorldDominationTour::History>::`vftable'; /*0x765743*/
+  *this = &vt_rc_ptr_WorldDominationTour_History; /*0x765743*/
   ComPtr::Release(this); /*0x765749*/
   if ( (a2 & 1) != 0 ) /*0x765753*/
     __3_YAXPAX_Z(this); /*0x765756*/
@@ -101,7 +101,7 @@ VectorCursor * Campaign_WorldDominationTour_16::Constructor_1(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 VectorCursor *__thiscall Campaign_WorldDominationTour_16_::Constructor_1(_DWORD *this, char a2)
 {
-  *this = &VectorCursor<rc_ptr<WorldDominationTour::Conflict>,DynamicVectorClass<rc_ptr<WorldDominationTour::Conflict>>>::`vftable'; /*0x765779*/
+  *this = &vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict; /*0x765779*/
   if ( (a2 & 1) != 0 ) /*0x76577f*/
     __3_YAXPAX_Z(this); /*0x765782*/
   return (VectorCursor *)this; /*0x76578c*/
@@ -175,7 +175,7 @@ char __thiscall Campaign_WorldDominationTour_16_::_vt02(_BYTE *this, int a2, _DW
       do /*0x7658c7*/
       {
         ComPtr::Constructor(v6); /*0x7658b8*/
-        *v6 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x7658bd*/
+        *v6 = &vt_rc_ptr_WorldDominationTour_Conflict; /*0x7658bd*/
         v6 += 2; /*0x7658c3*/
         --v9; /*0x7658c6*/
       }
@@ -200,7 +200,7 @@ char __thiscall Campaign_WorldDominationTour_16_::_vt02(_BYTE *this, int a2, _DW
       do /*0x765897*/
       {
         ComPtr::Constructor(v6); /*0x765888*/
-        *v6 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x76588d*/
+        *v6 = &vt_rc_ptr_WorldDominationTour_Conflict; /*0x76588d*/
         v6 += 2; /*0x765893*/
         --v7; /*0x765896*/
       }
@@ -311,7 +311,7 @@ VectorClass *__thiscall Campaign_WorldDominationTour_16_::QueryInterface(_DWORD 
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v3 = (void (__thiscall ***)(_DWORD, int))*(this + 1); /*0x765b63*/
-  *this = &VectorClass<rc_ptr<WorldDominationTour::Conflict>>::`vftable'; /*0x765b66*/
+  *this = &vt_VectorClass_rc_ptr_WorldDominationTour_Conflict; /*0x765b66*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x765b70*/
   {
     (**v3)(v3, 3); /*0x765b7f*/

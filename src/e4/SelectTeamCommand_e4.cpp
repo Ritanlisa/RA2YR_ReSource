@@ -9,7 +9,7 @@ unsigned int * SelectTeamCommand::Construct(int a2)
 _DWORD *__thiscall SelectTeamCommand_Constructor(_DWORD *this, int a2)
 {
   *(this + 1) = a2; /*0x535fc6*/
-  *this = &SelectTeamCommandClass::`vftable'; /*0x535fc9*/
+  *this = &vt_SelectTeamCommandClass; /*0x535fc9*/
   return this; /*0x535fcf*/
 }
 }

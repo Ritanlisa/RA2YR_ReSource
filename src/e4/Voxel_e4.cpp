@@ -1183,7 +1183,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
     a1 = v4->Armor[0]; /*0x75c287*/
     Strength = v4->Strength; /*0x75c28e*/
     v34 = (IUnknown *)v4->Image; /*0x75c295*/
-    (*(void (__stdcall **)(int *))(*(_DWORD *)v4->__pad_0 + 244))(&a1); /*0x75c2a0*/
+    (*(void (__stdcall **)(int *))(*(_DWORD *)v4->vtable0 + 244))(&a1); /*0x75c2a0*/
   }
   else
   {
@@ -1211,10 +1211,10 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
       || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 388))(*(this + 3)) == 25 )
     {
       v7 = (BuildingTypeClass *)*(this + 3); /*0x75c342*/
-      v8 = *(_DWORD *)&v7->__pad_314[656]; /*0x75c345*/
+      v8 = *(_DWORD *)&v7->DebrisTypes[656]; /*0x75c345*/
       if ( v8 ) /*0x75c34d*/
       {
-        if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v8 + 44))(*(_DWORD *)&v7->__pad_314[656]) == 1 ) /*0x75c359*/
+        if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v8 + 44))(*(_DWORD *)&v7->DebrisTypes[656]) == 1 ) /*0x75c359*/
         {
           var1C_2 = aP1->field_4 / 256; /*0x75c37e*/
           v9 = aP1->field_0 / 256; /*0x75c385*/
@@ -1237,10 +1237,10 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
         }
       }
       v15 = (BuildingTypeClass *)*(this + 3); /*0x75c400*/
-      v16 = *(_DWORD **)&v15->__pad_314[656]; /*0x75c403*/
+      v16 = *(_DWORD **)&v15->DebrisTypes[656]; /*0x75c403*/
       if ( v16 ) /*0x75c40b*/
       {
-        if ( (*(int (__thiscall **)(_DWORD))(*v16 + 44))(*(_DWORD *)&v15->__pad_314[656]) == 6 ) /*0x75c417*/
+        if ( (*(int (__thiscall **)(_DWORD))(*v16 + 44))(*(_DWORD *)&v15->DebrisTypes[656]) == 6 ) /*0x75c417*/
         {
           v17 = Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x75c41f*/
           if ( Cell::IsBridge(v17) == v16 ) /*0x75c42d*/
@@ -1305,7 +1305,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
     a1 = v27->Armor[0]; /*0x75c611*/
     Strength = v27->Strength; /*0x75c618*/
     v34 = (IUnknown *)v27->Image; /*0x75c61f*/
-    (*(void (__thiscall **)(BuildingTypeClass *, int *))(*(_DWORD *)v27->__pad_0 + 240))(v27, &a1); /*0x75c62a*/
+    (*(void (__thiscall **)(BuildingTypeClass *, int *))(*(_DWORD *)v27->vtable0 + 240))(v27, &a1); /*0x75c62a*/
     return 0; /*0x75c632*/
   }
   else

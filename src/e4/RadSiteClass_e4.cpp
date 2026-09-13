@@ -33,7 +33,7 @@ _DWORD *__thiscall sub_65B1E0(_DWORD *this)
   *this = &RadSiteClass::`vftable'; /*0x65b228*/
   *(this + 1) = &RadSiteClass::`vftable'; /*0x65b22e*/
   *(this + 2) = &RadSiteClass::`vftable'; /*0x65b235*/
-  *(this + 3) = &RadSiteClass::`vftable'; /*0x65b23c*/
+  *(this + 3) = &vt_RadSiteClass; /*0x65b23c*/
   if ( dword_B04BE0 < dword_B04BD8 /*0x65b277*/
     || (byte_B04BDD || !dword_B04BD8)
     && dword_B04BE4 > 0
@@ -74,7 +74,7 @@ int __stdcall RadSiteClass::SaveLoad_Prefix(AbstractClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &RadSiteClass::`vftable'; /*0x65b416*/
       *(_DWORD *)&aP0->__pad_0[4] = &RadSiteClass::`vftable'; /*0x65b41c*/
       *(_DWORD *)&aP0->__pad_0[8] = &RadSiteClass::`vftable'; /*0x65b423*/
-      *(_DWORD *)&aP0->__pad_0[12] = &RadSiteClass::`vftable'; /*0x65b42a*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_RadSiteClass; /*0x65b42a*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x65b43a*/
   }

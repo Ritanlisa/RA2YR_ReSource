@@ -9,7 +9,7 @@ unsigned int * CenterTeamCommand::Construct(int a2)
 _DWORD *__thiscall CenterTeamCommand_Constructor(_DWORD *this, int a2)
 {
   *(this + 1) = a2; /*0x5361a6*/
-  *this = &CenterTeamCommandClass::`vftable'; /*0x5361a9*/
+  *this = &vt_CenterTeamCommandClass; /*0x5361a9*/
   return this; /*0x5361af*/
 }
 }

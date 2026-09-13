@@ -230,7 +230,7 @@ CStreamClass *__userpurge CStreamClass::ddtor@<eax>(void *Block@<ecx>, ULONG a2@
 
   v4 = *((_DWORD *)Block + 2); /*0x4a3116*/
   *(_DWORD *)Block = &CStreamClass::`vftable'; /*0x4a3119*/
-  *((_DWORD *)Block + 1) = &CStreamClass::`vftable'; /*0x4a3121*/
+  *((_DWORD *)Block + 1) = &vt_CStreamClass; /*0x4a3121*/
   if ( v4 ) /*0x4a3128*/
   {
     if ( *((_BYTE *)Block + 17) /*0x4a314b*/
@@ -465,7 +465,7 @@ VectorClass *__thiscall CStreamClass_16_::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4a4d93*/
-  *this = &VectorClass<_DDSURFACEDESC *>::`vftable'; /*0x4a4d96*/
+  *this = &vt_VectorClass_DDSURFACEDESC; /*0x4a4d96*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4a4da0*/
   {
     __3_YAXPAX_Z(v3); /*0x4a4da8*/

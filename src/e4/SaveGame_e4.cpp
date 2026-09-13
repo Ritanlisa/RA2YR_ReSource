@@ -326,7 +326,7 @@ LABEL_8:
                 {
 LABEL_13:
                   v7 = *this; /*0x67f8ea*/
-                  v10 = (wchar_t *)unk_8B41B8; /*0x67f8fc*/
+                  v10 = (wchar_t *)dword_8B41B8; /*0x67f8fc*/
                   result = (*(int (__stdcall **)(int *, wchar_t **, int, _DWORD))(v7 + 16))(this, &v10, 4, 0); /*0x67f900*/
                   if ( result >= 0 )
                   {

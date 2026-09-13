@@ -30,10 +30,10 @@ int __stdcall HoverLocomotionClass::_vt05(int a1, int *a2)
   if ( v2 >= 0 && a1 ) /*0x5170c9*/
   {
     *(_DWORD *)a1 = &LocomotionClass::`vftable'; /*0x5170ce*/
-    *(_DWORD *)(a1 + 4) = &LocomotionClass::`vftable'; /*0x5170d4*/
+    *(_DWORD *)(a1 + 4) = &vt_LocomotionClass; /*0x5170d4*/
     FrameSnapshot::Init((_WORD *)(a1 + 48)); /*0x5170db*/
     *(_DWORD *)a1 = &HoverLocomotionClass::`vftable'; /*0x5170e0*/
-    *(_DWORD *)(a1 + 4) = &HoverLocomotionClass::`vftable'; /*0x5170e6*/
+    *(_DWORD *)(a1 + 4) = &vt_HoverLocomotionClass; /*0x5170e6*/
   }
   return v2; /*0x5170ef*/
 }
@@ -46,7 +46,7 @@ HoverLocomotionClass * HoverLocomotionClass::ProcessMove(char a2)
 HoverLocomotionClass *__thiscall HoverLocomotionClass::ProcessMove(_DWORD *this, char a2)
 {
   *this = &HoverLocomotionClass::`vftable'; /*0x5172c3*/
-  *(this + 1) = &HoverLocomotionClass::`vftable'; /*0x5172c9*/
+  *(this + 1) = &vt_HoverLocomotionClass; /*0x5172c9*/
   LocomotionClass::Construct(this); /*0x5172d0*/
   if ( (a2 & 1) != 0 ) /*0x5172da*/
     __3_YAXPAX_Z(this); /*0x5172dd*/

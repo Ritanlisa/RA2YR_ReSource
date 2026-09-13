@@ -8,7 +8,7 @@ CCToolTip * CCToolTip::QueryInterface(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 CCToolTip *__thiscall CCToolTip::QueryInterface(_DWORD *this, char a2)
 {
-  *this = &CCToolTip::`vftable'; /*0x7784a3*/
+  *this = &vt_CCToolTip; /*0x7784a3*/
   ToolTipClass::updateString(this); /*0x7784a9*/
   if ( (a2 & 1) != 0 ) /*0x7784b3*/
     __3_YAXPAX_Z(this); /*0x7784b6*/

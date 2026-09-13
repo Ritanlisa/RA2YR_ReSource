@@ -83,7 +83,7 @@ void PsyDom::Fire()
     v7 = 10; /*0x53b181*/
   v8 = (AnimClass *)dword_7ED3D0[v7]; /*0x53b186*/
   EventClass::resetEvent(&v35, 0, 0); /*0x53b193*/
-  v35 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x53b19a*/
+  v35 = &vt_DynamicVectorClass_TechnoClass; /*0x53b19a*/
   v40 = 10; /*0x53b1a2*/
   v39 = 0; /*0x53b1aa*/
   if ( (int)v8 > 0 )
@@ -163,7 +163,7 @@ void PsyDom::Fire()
     for ( j = (int)&v39[-1].field_16054 + 3; j >= 0; --j ) /*0x53b3af*/
       (*(void (__thiscall **)(_DWORD, int, _DWORD))(**((_DWORD **)Block + j) + 488))(*((_DWORD *)Block + j), 15, 0); /*0x53b3bd*/
   }
-  v35 = &VectorClass<TechnoClass *>::`vftable'; /*0x53b3ca*/
+  v35 = &vt_VectorClass_TechnoClass; /*0x53b3ca*/
   if ( Block ) /*0x53b3d4*/
   {
     if ( BYTE1(v38) ) /*0x53b3da*/

@@ -114,7 +114,7 @@ char __thiscall LoadVoxelTurretAndBarrel(void *this)
             *((_DWORD *)this + 47) = v8; /*0x5f8e52*/
             Info = VoxelSection::GetInfo(v9, 0, 0); /*0x5f8e58*/
             Matrix::Scale(*((unsigned int **)this + 47), *(float *)(Info + 12)); /*0x5f8e67*/
-            v20[0] = &CCFileClass::`vftable'; /*0x5f8e70*/
+            v20[0] = &vt_CCFileClass; /*0x5f8e70*/
             v22 = 0; /*0x5f8e78*/
             Vector::Clear((int)v21); /*0x5f8e7c*/
             v20[0] = &off_7E1668; /*0x5f8e85*/
@@ -158,19 +158,19 @@ char __thiscall LoadVoxelTurretAndBarrel(void *this)
             *((_DWORD *)this + 49) = v16; /*0x5f8fbc*/
             v18 = VoxelSection::GetInfo(v17, 0, 0); /*0x5f8fc2*/
             Matrix::Scale(*((unsigned int **)this + 49), *(float *)(v18 + 12)); /*0x5f8fd1*/
-            v20[0] = &CCFileClass::`vftable'; /*0x5f8fda*/
+            v20[0] = &vt_CCFileClass; /*0x5f8fda*/
             v22 = 0; /*0x5f8fe2*/
             Vector::Clear((int)v21); /*0x5f8fe6*/
             v20[0] = &off_7E1668; /*0x5f8fef*/
             BufferIOFileClass::Dtor(v20); /*0x5f8ff7*/
           }
         }
-        v23[0] = &CCFileClass::`vftable'; /*0x5f9008*/
+        v23[0] = &vt_CCFileClass; /*0x5f9008*/
         v25 = 0; /*0x5f900c*/
         Vector::Clear((int)v24); /*0x5f9013*/
         v23[0] = &off_7E1668; /*0x5f9021*/
         BufferIOFileClass::Dtor(v23); /*0x5f9025*/
-        v26[0] = &CCFileClass::`vftable'; /*0x5f9031*/
+        v26[0] = &vt_CCFileClass; /*0x5f9031*/
         v28 = 0; /*0x5f9038*/
         Vector::Clear((int)v27); /*0x5f903f*/
         v26[0] = &off_7E1668; /*0x5f904b*/

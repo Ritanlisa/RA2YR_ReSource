@@ -249,7 +249,7 @@ _DWORD *__thiscall Power_UpdateAll(_DWORD *this)
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0x8B40EC] + i6) + 52))( /*0x67c982*/
       *((_DWORD *)MEMORY[0x8B40EC] + i6),
       &v53);
-  for ( i7 = 0; i7 < unk_8B41D8; ++i7 ) /*0x67c998*/
+  for ( i7 = 0; i7 < dword_8B41D8; ++i7 ) /*0x67c998*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)unk_8B41CC + i7) + 52))(*((_DWORD *)unk_8B41CC + i7), &v53); /*0x67c9aa*/
   for ( i8 = 0; i8 < MEMORY[0x8872C0]; ++i8 ) /*0x67c9c0*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0x8872B4] + i8) + 52))( /*0x67c9d2*/
@@ -263,7 +263,7 @@ _DWORD *__thiscall Power_UpdateAll(_DWORD *this)
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xB0E724] + i10) + 52))( /*0x67ca22*/
       *((_DWORD *)MEMORY[0xB0E724] + i10),
       &v53);
-  for ( i11 = 0; i11 < unk_8B4188; ++i11 ) /*0x67ca38*/
+  for ( i11 = 0; i11 < dword_8B4188; ++i11 ) /*0x67ca38*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)unk_8B417C + i11) + 52))(*((_DWORD *)unk_8B417C + i11), &v53); /*0x67ca4a*/
   for ( i12 = 0; i12 < MEMORY[0xA8EAF8]; ++i12 ) /*0x67ca60*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)MEMORY[0xA8EAEC] + i12) + 52))( /*0x67ca72*/
@@ -330,8 +330,8 @@ _DWORD *__thiscall Power_UpdateAll(_DWORD *this)
       *((_DWORD *)MEMORY[0xA8EC1C] + i27),
       &v53);
   for ( i28 = 0; i28 < MEMORY[0xA83D90]; ++i28 ) /*0x67cce0*/
-    (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)&MEMORY[0xA83D84]->__pad_0[4 * i28] + 52))( /*0x67ccf2*/
-      *(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * i28],
+    (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)&MEMORY[0xA83D84]->vtable0[4 * i28] + 52))( /*0x67ccf2*/
+      *(_DWORD *)&MEMORY[0xA83D84]->vtable0[4 * i28],
       &v53);
   for ( i29 = 0; i29 < g_BridgeCellPool; ++i29 ) /*0x67cd08*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)dword_ABCA14 + i29) + 52))( /*0x67cd1a*/

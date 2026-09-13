@@ -31,7 +31,7 @@ int __thiscall RadarClass_Destructor(_DWORD *this)
   void *v5; // eax
   void *v6; // eax
 
-  *this = &RadarClass::`vftable'; /*0x652c0c*/
+  *this = &vt_RadarClass; /*0x652c0c*/
   AudioFileClass::Release(this + 1328); /*0x652c12*/
   TacticalClass::FreeResources(this); /*0x652c19*/
   v2 = (char *)(this + 1314); /*0x652c1e*/
@@ -40,7 +40,7 @@ int __thiscall RadarClass_Destructor(_DWORD *this)
   {
     v4 = (void *)*((_DWORD *)v2 - 5); /*0x652c2b*/
     v2 -= 24; /*0x652c2e*/
-    *(_DWORD *)v2 = &VectorClass<Point2D>::`vftable'; /*0x652c33*/
+    *(_DWORD *)v2 = &vt_VectorClass_Point2D; /*0x652c33*/
     if ( v4 && v2[13] ) /*0x652c3b*/
     {
       __3_YAXPAX_Z(v4); /*0x652c41*/
@@ -52,7 +52,7 @@ int __thiscall RadarClass_Destructor(_DWORD *this)
   }
   while ( v3 ); /*0x652c53*/
   v5 = (void *)*(this + 1176); /*0x652c55*/
-  *(this + 1175) = &VectorClass<Point2D>::`vftable'; /*0x652c5b*/
+  *(this + 1175) = &vt_VectorClass_Point2D; /*0x652c5b*/
   if ( v5 && *((_BYTE *)this + 4713) ) /*0x652c69*/
   {
     __3_YAXPAX_Z(v5); /*0x652c72*/
@@ -61,7 +61,7 @@ int __thiscall RadarClass_Destructor(_DWORD *this)
   *((_BYTE *)this + 4713) = 0; /*0x652c80*/
   *(this + 1177) = 0; /*0x652c86*/
   v6 = (void *)*(this + 1162); /*0x652c8c*/
-  *(this + 1161) = &VectorClass<Cell>::`vftable'; /*0x652c92*/
+  *(this + 1161) = &vt_VectorClass_Cell; /*0x652c92*/
   if ( v6 && *((_BYTE *)this + 4657) ) /*0x652ca0*/
   {
     __3_YAXPAX_Z(v6); /*0x652ca9*/

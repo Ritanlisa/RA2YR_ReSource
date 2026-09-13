@@ -22,7 +22,7 @@ AnimFile *__thiscall AnimFile::QueryInterface(void *this, char a2)
   void (__thiscall ***v4)(_DWORD, int); // ecx
 
   v3 = *((_BYTE *)this + 137); /*0x4272a6*/
-  *(_DWORD *)this = &AnimFile::`vftable'; /*0x4272ac*/
+  *(_DWORD *)this = &vt_AnimFile; /*0x4272ac*/
   if ( v3 ) /*0x4272b4*/
   {
     (*(void (__thiscall **)(_DWORD))(**((_DWORD **)this + 33) + 52))(*((_DWORD *)this + 33)); /*0x4272be*/
@@ -41,7 +41,7 @@ AnimFile *__thiscall AnimFile::QueryInterface(void *this, char a2)
     *((_DWORD *)this + 900) = 0; /*0x4272f6*/
   }
   *((_BYTE *)this + 136) = 0; /*0x427300*/
-  *(_DWORD *)this = &Animate::`vftable'; /*0x427308*/
+  *(_DWORD *)this = &vt_Animate; /*0x427308*/
   if ( (a2 & 1) != 0 ) /*0x42730e*/
     __3_YAXPAX_Z(this); /*0x427311*/
   return (AnimFile *)this; /*0x42731b*/

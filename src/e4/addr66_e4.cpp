@@ -243,7 +243,7 @@ _DWORD *__thiscall sub_6616B0(_DWORD *this)
   v2 = 32; /*0x6616b8*/
   *(this + 1) = 0; /*0x6616bd*/
   *(this + 2) = 0; /*0x6616c0*/
-  *this = &Straw::`vftable'; /*0x6616c3*/
+  *this = &vt_Straw; /*0x6616c3*/
   *(this + 3) = 0; /*0x6616c9*/
   *(this + 4) = 0; /*0x6616cc*/
   v3 = this + 5; /*0x6616cf*/
@@ -256,7 +256,7 @@ _DWORD *__thiscall sub_6616B0(_DWORD *this)
   while ( v2 ); /*0x6616df*/
   *(this + 3) = 0; /*0x6616e1*/
   *(this + 4) = 0; /*0x6616e4*/
-  *this = &RandomStraw::`vftable'; /*0x6616f1*/
+  *this = &vt_RandomStraw; /*0x6616f1*/
   memset(this + 5, 0, 0x100u); /*0x6616f7*/
   return this; /*0x6616fb*/
 }
@@ -614,7 +614,7 @@ void E4Recv_661F30::sub_661F30()
 void __thiscall sub_661F30(_DWORD *this)
 {
   *this = &RocketLocomotionClass::`vftable'; /*0x661f30*/
-  *(this + 1) = &RocketLocomotionClass::`vftable'; /*0x661f36*/
+  *(this + 1) = &vt_RocketLocomotionClass; /*0x661f36*/
   LocomotionClass::Construct(this); /*0x661f3d*/
 }
 }
@@ -906,7 +906,7 @@ int sub_663800()
   dword_B052D8 = 0; /*0x66380c*/
   byte_B052DC = 1; /*0x663811*/
   byte_B052DD = 0; /*0x663818*/
-  g_NetworkEventQueue = (int)&DynamicVectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x66381d*/
+  g_NetworkEventQueue = (int)&vt_DynamicVectorClass_OwnerTalkClass_ConnectionListStruct; /*0x66381d*/
   dword_B052E4 = 10; /*0x663827*/
   dword_B052E0 = 0; /*0x663831*/
   byte_B052E8 = 0; /*0x663836*/
@@ -950,7 +950,7 @@ void __cdecl sub_663850()
     }
     while ( !v0 ); /*0x66389d*/
   }
-  g_NetworkEventQueue = (int)&VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x6638a4*/
+  g_NetworkEventQueue = (int)&vt_VectorClass_OwnerTalkClass_ConnectionListStruct; /*0x6638a4*/
   if ( dword_B052D4 && byte_B052DD ) /*0x6638b8*/
   {
     __3_YAXPAX_Z(dword_B052D4); /*0x6638bb*/
@@ -973,7 +973,7 @@ _DWORD *__thiscall sub_6638E0(_DWORD *this)
   *(this + 2) = 0; /*0x6638e7*/
   *((_BYTE *)this + 12) = 1; /*0x6638ea*/
   *((_BYTE *)this + 13) = 0; /*0x6638ee*/
-  *this = &DynamicVectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x6638f1*/
+  *this = &vt_DynamicVectorClass_OwnerTalkClass_ConnectionListStruct; /*0x6638f1*/
   *(this + 5) = 10; /*0x6638f7*/
   *(this + 4) = 0; /*0x6638fe*/
   *((_BYTE *)this + 24) = 0; /*0x663901*/
@@ -1012,7 +1012,7 @@ void __thiscall sub_663960(void *this)
     }
   }
   v5 = (void *)this->M4; /*0x6639a3*/
-  *(_DWORD *)this = &VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x6639a6*/
+  *(_DWORD *)this = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct; /*0x6639a6*/
   if ( v5 && (unsigned char)this->M13 ) /*0x6639b0*/
   {
     __3_YAXPAX_Z(v5); /*0x6639b6*/

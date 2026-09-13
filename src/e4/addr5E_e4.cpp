@@ -528,12 +528,12 @@ LRESULT __fastcall InitSkirmishDialogControls(HWND hDlg, int a2)
   if ( a2 ) /*0x5e303c*/
   {
     ComPtr::Constructor(&wParam); /*0x5e3047*/
-    wParam = (WPARAM)&rc_ptr<WDTTerritory>::`vftable'; /*0x5e3059*/
+    wParam = (WPARAM)&vt_rc_ptr_WDTTerritory; /*0x5e3059*/
     if ( MEMORY[0xA8B238][0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x5e3066*/
     {
       WDTTerritoryClass = FindWDTTerritoryClass(v17, *(int *)MEMORY[0xA8B240]); /*0x5e3072*/
       ComPtr::Set(&wParam, WDTTerritoryClass[1]); /*0x5e307f*/
-      v17[0] = &rc_ptr<WDTTerritory>::`vftable'; /*0x5e3088*/
+      v17[0] = &vt_rc_ptr_WDTTerritory; /*0x5e3088*/
       ComPtr::Release(v17); /*0x5e308c*/
     }
     if ( v16 ) /*0x5e3097*/
@@ -584,7 +584,7 @@ LRESULT __fastcall InitSkirmishDialogControls(HWND hDlg, int a2)
       1u,
       *(unsigned __int16 *)&MEMORY[0x8871E0]->__pad_C3C[2132]
     | (*(unsigned __int16 *)&MEMORY[0x8871E0]->__pad_C3C[2140] << 16));
-    wParam = (WPARAM)&rc_ptr<WDTTerritory>::`vftable'; /*0x5e31ca*/
+    wParam = (WPARAM)&vt_rc_ptr_WDTTerritory; /*0x5e31ca*/
     ComPtr::Release(&wParam); /*0x5e31d2*/
   }
   SendDlgItemMessageA(hDlg, 1321, 0x405u, 1u, 6 - v12); /*0x5e31f1*/
@@ -933,7 +933,7 @@ bool SetupNetworkLobbyDialog(INIClass * Source, void * a2)
 //   int v44; // eax
 //   HWND v45; // eax
 //   CCINIClass *v47; // esi
-//   unsigned int v48; // kr... [66547 chars total]
+//   unsigned int v48; // kr... [66468 chars total]
 // end truncated pseudocode
 }
 } // namespace gamemd
@@ -1264,16 +1264,16 @@ int __fastcall Map_ReadPlayerCount(int a1)
   GenericNode::Constructor(v5); /*0x5e658b*/
   GenericNode::Constructor(v6); /*0x5e6594*/
   LinkedList::Prepend(v5, (int)v6); /*0x5e65aa*/
-  v4[3] = &List<INIClass::INISection *>::`vftable'; /*0x5e65b9*/
+  v4[3] = &vt_List_INIClass_INISection; /*0x5e65b9*/
   memset(&v6[3], 0, 12); /*0x5e65c1*/
   v7 = 0; /*0x5e65cd*/
   v8 = 0; /*0x5e65d1*/
   v9 = 0; /*0x5e65d5*/
-  v4[0] = &INIClass::`vftable'; /*0x5e65d9*/
+  v4[0] = &vt_INIClass; /*0x5e65d9*/
   if ( !FileStraw::Open(v4, (int)v10, 0) ) /*0x5e65e1*/
   {
     HashTable::DestroyHashTableINIClass(v4); /*0x5e65ee*/
-    v10[0] = &CCFileClass::`vftable'; /*0x5e65fa*/
+    v10[0] = &vt_CCFileClass; /*0x5e65fa*/
     v12 = 0; /*0x5e6602*/
     Vector::Clear((int)v11); /*0x5e6609*/
     v10[0] = &off_7E1668; /*0x5e6612*/
@@ -1294,7 +1294,7 @@ int __fastcall Map_ReadPlayerCount(int a1)
       Int_Overwrite = 8; /*0x5e6687*/
   }
   HashTable::DestroyHashTableINIClass(v4); /*0x5e6690*/
-  v10[0] = &CCFileClass::`vftable'; /*0x5e669c*/
+  v10[0] = &vt_CCFileClass; /*0x5e669c*/
   v12 = 0; /*0x5e66a4*/
   Vector::Clear((int)v11); /*0x5e66ab*/
   v10[0] = &off_7E1668; /*0x5e66b4*/
@@ -1635,7 +1635,7 @@ void ExchangeMultiplayerGameInfo()
     v11[2] = 0; /*0x5e7ac9*/
     Buffer::Init(v12, (int)(v4 + 4), FileSize); /*0x5e7ad9*/
     v12[3] = 0; /*0x5e7ae2*/
-    v11[0] = (int)&BufferStraw::`vftable'; /*0x5e7af1*/
+    v11[0] = (int)&vt_BufferStraw; /*0x5e7af1*/
     LZOStraw::Constructor(v14, 1, 0x2000); /*0x5e7af9*/
     Delegate::Set(v14, (int)v11); /*0x5e7b07*/
     v6 = (char *)__2_YAPAXI_Z(2 * v5); /*0x5e7b18*/
@@ -1712,7 +1712,7 @@ char __fastcall LoadScenarioClassByIndex(int a1)
   }
   v3 = CCFileClass::Construct(v17, (char *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[9752] + 4 * a1) + 88)); /*0x5e7c3b*/
   v4 = (*(int (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)v3->__pad_0 + 20))(v3, 0); /*0x5e7c46*/
-  v17[0] = &CCFileClass::`vftable'; /*0x5e7c4f*/
+  v17[0] = &vt_CCFileClass; /*0x5e7c4f*/
   v5 = v4 == 0; /*0x5e7c57*/
   v19 = 0; /*0x5e7c5a*/
   Vector::Clear((int)v18); /*0x5e7c62*/
@@ -1768,14 +1768,14 @@ LABEL_9:
     *(_DWORD *)&HouseClass_Player.__pad_5568[10328] = PlayerCountMap; /*0x5e7e2a*/
     v13 = CCFileClass::Construct(v17, &HouseClass_Player.__pad_5568[9772]); /*0x5e7e30*/
     *(_DWORD *)&HouseClass_Player.__pad_5568[10320] = (*(int (__thiscall **)(CCFileClass *))(*(_DWORD *)v13->__pad_0 + 44))(v13); /*0x5e7e45*/
-    v17[0] = &CCFileClass::`vftable'; /*0x5e7e4a*/
+    v17[0] = &vt_CCFileClass; /*0x5e7e4a*/
     v19 = 0; /*0x5e7e4e*/
     Vector::Clear((int)v18); /*0x5e7e52*/
     v17[0] = &off_7E1668; /*0x5e7e60*/
     BufferIOFileClass::Dtor(v17); /*0x5e7e64*/
     v14 = CCFileClass::Construct(v17, &HouseClass_Player.__pad_5568[9772]); /*0x5e7e72*/
     *(_DWORD *)&HouseClass_Player.__pad_5568[10320] = (*(int (__thiscall **)(CCFileClass *))(*(_DWORD *)v14->__pad_0 + 44))(v14); /*0x5e7e82*/
-    v17[0] = &CCFileClass::`vftable'; /*0x5e7e87*/
+    v17[0] = &vt_CCFileClass; /*0x5e7e87*/
     v19 = 0; /*0x5e7e8b*/
     Vector::Clear((int)v18); /*0x5e7e8f*/
     v17[0] = &off_7E1668; /*0x5e7e98*/

@@ -49,7 +49,7 @@ UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 UnholyAlliance *__thiscall UnholyAlliance::QueryInterface(_DWORD *this, char a2)
 {
-  *this = &UnholyAlliance::`vftable'; /*0x5cb543*/
+  *this = &vt_UnholyAlliance; /*0x5cb543*/
   MultiplayerGameMode::Dtor(this); /*0x5cb549*/
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
     __3_YAXPAX_Z(this); /*0x5cb556*/

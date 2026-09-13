@@ -27,7 +27,7 @@ int __thiscall TeleportLocomotionClass::TeleportLocomotionClass(int this)
   this->Piggybackee = 0; /*0x71805b*/
   *(_DWORD *)this = &TeleportLocomotionClass::`vftable'; /*0x71805e*/
   *(_DWORD *)(this + 4) = &TeleportLocomotionClass::`vftable'; /*0x718064*/
-  *(_DWORD *)(this + 24) = &TeleportLocomotionClass::`vftable'; /*0x71806b*/
+  *(_DWORD *)(this + 24) = &vt_TeleportLocomotionClass; /*0x71806b*/
   return this; /*0x718074*/
 }
 }

@@ -12,7 +12,7 @@ int __thiscall LCWStraw_Destructor(int *this)
   void *v3; // ecx
 
   v2 = (void *)*(this + 5); /*0x552453*/
-  *this = (int)&LCWStraw::`vftable'; /*0x552456*/
+  *this = (int)&vt_LCWStraw; /*0x552456*/
   __3_YAXPAX_Z(v2); /*0x55245d*/
   v3 = (void *)*(this + 6); /*0x552462*/
   *(this + 5) = 0; /*0x552465*/

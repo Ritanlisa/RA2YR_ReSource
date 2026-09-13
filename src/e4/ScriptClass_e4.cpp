@@ -20,7 +20,7 @@ int __stdcall ScriptClass::LoadState(AbstractClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &ScriptClass::`vftable'; /*0x691654*/
       *(_DWORD *)&aP0->__pad_0[4] = &ScriptClass::`vftable'; /*0x69165a*/
       *(_DWORD *)&aP0->__pad_0[8] = &ScriptClass::`vftable'; /*0x691661*/
-      *(_DWORD *)&aP0->__pad_0[12] = &ScriptClass::`vftable'; /*0x691668*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_ScriptClass; /*0x691668*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x691678*/
     return 0; /*0x69167d*/

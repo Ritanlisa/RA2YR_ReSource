@@ -159,7 +159,7 @@ char __fastcall sub_5C0640(const char *a1, char *a2, int a3)
   strcpy(v3, aBik_0); /*0x5c06c9*/
   v5 = CCFileClass::Construct(v11, Source); /*0x5c06d6*/
   v6 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v5 + 20))(v5, 0); /*0x5c06e8*/
-  v11[0] = &CCFileClass::`vftable'; /*0x5c06ea*/
+  v11[0] = &vt_CCFileClass; /*0x5c06ea*/
   v13 = 0; /*0x5c06f2*/
   Vector::Clear((int)v12); /*0x5c06fa*/
   v11[0] = &off_7E1668; /*0x5c0703*/
@@ -169,7 +169,7 @@ char __fastcall sub_5C0640(const char *a1, char *a2, int a3)
     strcpy(v3, aVqa); /*0x5c0735*/
     v7 = CCFileClass::Construct(v11, Source); /*0x5c0742*/
     v8 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v7 + 20))(v7, 0); /*0x5c0754*/
-    v11[0] = &CCFileClass::`vftable'; /*0x5c0756*/
+    v11[0] = &vt_CCFileClass; /*0x5c0756*/
     v13 = 0; /*0x5c075e*/
     Vector::Clear((int)v12); /*0x5c0766*/
     v11[0] = &off_7E1668; /*0x5c076f*/

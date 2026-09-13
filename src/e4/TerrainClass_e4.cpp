@@ -127,7 +127,7 @@ int __stdcall TerrainClass::LoadFromStream(_DWORD *a1, int a2)
       *v2 = &TerrainClass::`vftable'; /*0x71ce98*/
       *v3 = &off_7F5200; /*0x71ce9f*/
       v2[2] = &TerrainClass::`vftable'; /*0x71cea5*/
-      v2[3] = &TerrainClass::`vftable'; /*0x71ceac*/
+      v2[3] = &vt_TerrainClass; /*0x71ceac*/
     }
     v14 = (*(int (__stdcall **)(_DWORD *))(*v3 + 16))(v3); /*0x71cebf*/
     v15 = MEMORY[0xB0E848]; /*0x71cec1*/

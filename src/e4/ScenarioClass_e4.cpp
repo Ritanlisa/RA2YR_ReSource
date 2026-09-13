@@ -245,7 +245,7 @@ MSAnim * ScenarioClass::checkWinningConditions(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 MSAnim *__thiscall ScenarioClass::checkWinningConditions(_DWORD *this, char a2)
 {
-  *this = &MSAnim::`vftable'; /*0x5ceb69*/
+  *this = &vt_MSAnim; /*0x5ceb69*/
   if ( (a2 & 1) != 0 ) /*0x5ceb6f*/
     __3_YAXPAX_Z(this); /*0x5ceb72*/
   return (MSAnim *)this; /*0x5ceb7c*/
@@ -323,7 +323,7 @@ char __stdcall ScenarioClass_AssignStartPositions(char a1)
       }
     }
   }
-  v5 = &VectorClass<Cell>::`vftable'; /*0x5d6c45*/
+  v5 = &vt_VectorClass_Cell; /*0x5d6c45*/
   if ( Block && v7 ) /*0x5d6c58*/
     __3_YAXPAX_Z(Block); /*0x5d6c5b*/
   return 1; /*0x5d6c4f*/
@@ -398,15 +398,15 @@ int __thiscall ScenarioClass::Constructor(int this)
   TypeList::TechnoTypeConstructor((_DWORD *)(this + 13524), 0, 0); /*0x68338d*/
   this->dropshipUnitCounts = 0; /*0x683397*/
   this->dropshipCountsCount = 10; /*0x68339a*/
-  this->allowableUnits = &TypeList<TechnoTypeClass *>::`vftable'; /*0x68339d*/
+  this->allowableUnits = &vt_TypeList_TechnoTypeClass; /*0x68339d*/
   VectorClass::Construct((_DWORD *)(this + 13552), 0, 0); /*0x6833ad*/
   this->ground = 10; /*0x6833b2*/
   this->blue = 0; /*0x6833b5*/
-  this->ambientCurrent = &TypeList<int>::`vftable'; /*0x6833b8*/
+  this->ambientCurrent = &vt_TypeList_int; /*0x6833b8*/
   VectorClass::Construct((_DWORD *)(this + 13580), 0, 0); /*0x6833c8*/
   this->ionLevel = 10; /*0x6833cf*/
   this->ionGround = 0; /*0x6833d2*/
-  this->ionAmbient = &TypeList<int>::`vftable'; /*0x6833d5*/
+  this->ionAmbient = &vt_TypeList_int; /*0x6833d5*/
   ScenarioClass::InitTimer(this); /*0x6833db*/
   *(_BYTE *)(this + 13720) = 0; /*0x6833e2*/
   this->isRandom = 0; /*0x6833e8*/
@@ -544,7 +544,7 @@ LABEL_21:
   v16[1] = 0; /*0x683c18*/
   v16[2] = 0; /*0x683c1c*/
   GenericList::Constructor(v17); /*0x683c20*/
-  v17[0] = &List<INIClass::INISection *>::`vftable'; /*0x683c29*/
+  v17[0] = &vt_List_INIClass_INISection; /*0x683c29*/
   memset(&v17[7], 0, 12); /*0x683c32*/
   v18 = 0; /*0x683c3e*/
   v19 = 0; /*0x683c42*/
@@ -571,7 +571,7 @@ LABEL_21:
       Movie::PlayWrapper((int)Bool, (int)v3, v8, 1, 1, 1); /*0x683cbd*/
     }
   }
-  v22[0] = &CCFileClass::`vftable'; /*0x683cc9*/
+  v22[0] = &vt_CCFileClass; /*0x683cc9*/
   v24 = 0; /*0x683cd1*/
   Vector::Clear((int)v23); /*0x683cd8*/
   v22[0] = &off_7E1668; /*0x683ce1*/
@@ -733,7 +733,7 @@ char __usercall sub_686730@<al>(char *Source@<ecx>, double a2@<st0>)
     v5[1] = 0; /*0x68676b*/
     v5[2] = 0; /*0x68676f*/
     GenericList::Constructor(&v6); /*0x686773*/
-    v6 = &List<INIClass::INISection *>::`vftable'; /*0x68677c*/
+    v6 = &vt_List_INIClass_INISection; /*0x68677c*/
     Node::Init(v7); /*0x686784*/
     v7[5] = 0; /*0x68678d*/
     v8 = 0; /*0x686792*/
@@ -744,7 +744,7 @@ char __usercall sub_686730@<al>(char *Source@<ecx>, double a2@<st0>)
     {
       strcpy((char *)MEMORY[0xA8B230] + 4700, Source); /*0x686836*/
       v4 = ScenarioClass::LoadMap(0, (int)v5, a2); /*0x686851*/
-      v9[0] = &CCFileClass::`vftable'; /*0x686853*/
+      v9[0] = &vt_CCFileClass; /*0x686853*/
       v11 = 0; /*0x68685b*/
       Vector::Clear((int)v10); /*0x686862*/
       v9[0] = &off_7E1668; /*0x68686b*/
@@ -755,7 +755,7 @@ char __usercall sub_686730@<al>(char *Source@<ecx>, double a2@<st0>)
     else
     {
       Debug::Log(); /*0x6867cc*/
-      v9[0] = &CCFileClass::`vftable'; /*0x6867db*/
+      v9[0] = &vt_CCFileClass; /*0x6867db*/
       v11 = 0; /*0x6867e3*/
       Vector::Clear((int)v10); /*0x6867ea*/
       v9[0] = &off_7E1668; /*0x6867f3*/
@@ -819,7 +819,7 @@ int ScenarioClass_LoadMap()
 //   int v42; // ebx
 //   int v43; // eax
 //   int v44; // eax
-//   Object... [31896 chars total]
+//   Object... [31860 chars total]
 // end truncated pseudocode
 }
 } // namespace gamemd
@@ -875,7 +875,7 @@ char ScenarioClass::ReadMapINI(CCINIClass * aP1)
 //   int v44; // edx
 //   int v45; // ecx
 //   int v46; // eax
-//   int v47; //... [36664 chars total]
+//   int v47; //... [36604 chars total]
 // end truncated pseudocode
 }
 } // namespace gamemd

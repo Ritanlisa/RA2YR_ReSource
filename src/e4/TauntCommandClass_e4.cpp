@@ -9,7 +9,7 @@ unsigned int * TauntCommandClass::Construct(int a2)
 _DWORD *__thiscall TauntCommandClass_Constructor(_DWORD *this, int a2)
 {
   *(this + 1) = a2; /*0x536296*/
-  *this = &TauntCommandClass::`vftable'; /*0x536299*/
+  *this = &vt_TauntCommandClass; /*0x536299*/
   return this; /*0x53629f*/
 }
 }

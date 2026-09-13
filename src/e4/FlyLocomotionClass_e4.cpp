@@ -32,7 +32,7 @@ int __thiscall FlyLocomotionClass::LocomotionClass(int this)
   this->FlyLocomotionClass_field_58 = 0; /*0x4cca06*/
   this->IsElevating = 0; /*0x4cca09*/
   *(_DWORD *)this = &FlyLocomotionClass::`vftable'; /*0x4cca0c*/
-  *(_DWORD *)(this + 4) = &FlyLocomotionClass::`vftable'; /*0x4cca12*/
+  *(_DWORD *)(this + 4) = &vt_FlyLocomotionClass; /*0x4cca12*/
   *(_DWORD *)(this + 48) = v2; /*0x4cca1b*/
   return this; /*0x4cca1e*/
 }
@@ -52,7 +52,7 @@ int __stdcall FlyLocomotionClass::_vt05(int *a1, int *a2)
     if ( a1 ) /*0x4cfcd6*/
     {
       *a1 = (int)&FlyLocomotionClass::`vftable'; /*0x4cfcd8*/
-      a1[1] = (int)&FlyLocomotionClass::`vftable'; /*0x4cfcde*/
+      a1[1] = (int)&vt_FlyLocomotionClass; /*0x4cfcde*/
     }
   }
   return result; /*0x4cfce5*/
@@ -90,11 +90,11 @@ void __stdcall FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   if ( *(_DWORD *)(*(_DWORD *)(a1 + 8) + 692) ) /*0x4cfe8e*/
     return; /*0x4cfe94*/
   ObjectVector::Construct(&v16, 0, 0); /*0x4cfea2*/
-  v16 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x4cfeb7*/
+  v16 = &vt_DynamicVectorClass_ObjectClass; /*0x4cfeb7*/
   v21 = 10; /*0x4cfebb*/
   v20 = 0; /*0x4cfebf*/
   ObjectVector::Construct(&v10, 0, 0); /*0x4cfec3*/
-  v10 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x4cfecd*/
+  v10 = &vt_DynamicVectorClass_ObjectClass; /*0x4cfecd*/
   v15 = 10; /*0x4cfed3*/
   v14 = 0; /*0x4cfed7*/
   if ( !MEMORY[0xA8B238][0] /*0x4cfeef*/
@@ -176,13 +176,13 @@ void __stdcall FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   }
   (*(void (__stdcall **)(_DWORD))(v9 + 968))(v8[v7]); /*0x4d011b*/
 LABEL_45:
-  v10 = &VectorClass<ObjectClass *>::`vftable'; /*0x4d0121*/
+  v10 = &vt_VectorClass_ObjectClass; /*0x4d0121*/
   if ( Block && v13 ) /*0x4d0136*/
   {
     __3_YAXPAX_Z(Block); /*0x4d0139*/
     Block = 0; /*0x4d0141*/
   }
-  v16 = &VectorClass<ObjectClass *>::`vftable'; /*0x4d0149*/
+  v16 = &vt_VectorClass_ObjectClass; /*0x4d0149*/
   v13 = 0; /*0x4d0150*/
   v12 = 0; /*0x4d0154*/
   if ( v17 ) /*0x4d0159*/
@@ -200,7 +200,7 @@ FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
 FlyLocomotionClass *__thiscall FlyLocomotionClass::ProcessMove(_DWORD *this, char a2)
 {
   *this = &FlyLocomotionClass::`vftable'; /*0x4d03a3*/
-  *(this + 1) = &FlyLocomotionClass::`vftable'; /*0x4d03a9*/
+  *(this + 1) = &vt_FlyLocomotionClass; /*0x4d03a9*/
   LocomotionClass::Construct(this); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
     __3_YAXPAX_Z(this); /*0x4d03bd*/

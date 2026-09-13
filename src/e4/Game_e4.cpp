@@ -444,7 +444,7 @@ int __stdcall Game::MakeScreenshot(int a1)
           sprintf(Buffer, stru_827A48, ++v6); /*0x537d10*/
           v7 = CCFileClass::Construct(v19, Buffer); /*0x537d27*/
           v8 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v7 + 20))(v7, 0); /*0x537d3b*/
-          v19[0] = &CCFileClass::`vftable'; /*0x537d3d*/
+          v19[0] = &vt_CCFileClass; /*0x537d3d*/
           v21 = 0; /*0x537d48*/
           Vector::Clear((int)v20); /*0x537d4f*/
           v19[0] = &off_7E1668; /*0x537d5b*/
@@ -453,7 +453,7 @@ int __stdcall Game::MakeScreenshot(int a1)
         while ( v8 ); /*0x537d6d*/
         CCFileClass::Construct(v16, Buffer); /*0x537d7b*/
         CompressScreenshot(v16, (int *)MEMORY[0x88730C], &MEMORY[0x885780]); /*0x537d8f*/
-        v16[0] = (int)&CCFileClass::`vftable'; /*0x537d9b*/
+        v16[0] = (int)&vt_CCFileClass; /*0x537d9b*/
         v18 = 0; /*0x537da3*/
         Vector::Clear((int)v17); /*0x537daa*/
         v16[0] = (int)&off_7E1668; /*0x537db3*/
@@ -782,7 +782,7 @@ int __thiscall BuildGameSetupPacket(int this)
   *(_DWORD *)((char *)&v11[32] + 2) = *(_DWORD *)((char *)&v11[32] + 2) & 0xFFFFFFEF /*0x5ba90c*/
                                     | (16 * (*(_BYTE *)(*(_DWORD *)(MEMORY[0xA8B8CC] + 4 * MEMORY[0xA8B254]) + 380) & 1));
   Stream::WriteBlock((int)&MEMORY[0xA8EA70], (int)v11, 250, 1); /*0x5ba91d*/
-  v13[0] = (int)&CCFileClass::`vftable'; /*0x5ba929*/
+  v13[0] = (int)&vt_CCFileClass; /*0x5ba929*/
   v15 = 0; /*0x5ba934*/
   Vector::Clear((int)v14); /*0x5ba93f*/
   v13[0] = (int)&off_7E1668; /*0x5ba94b*/
@@ -1208,7 +1208,7 @@ _DWORD *__thiscall Game::LockMutex(_DWORD *this, IUnknown *aP1, IUnknown *aP2)
   *(this + 2) = aP1; /*0x67c3ae*/
   *((_BYTE *)this + 12) = 1; /*0x67c3b1*/
   *((_BYTE *)this + 13) = 0; /*0x67c3b5*/
-  *this = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x67c3b8*/
+  *this = &vt_VectorClass_SmudgeTypeClass_const; /*0x67c3b8*/
   if ( aP1 ) /*0x67c3be*/
   {
     if ( aP2 ) /*0x67c3c6*/
@@ -1404,7 +1404,7 @@ LABEL_27:
                     if ( v13 <= 0 )
                     {
 LABEL_39:
-                      for ( k = 0; k < unk_8B41B8; ++k ) /*0x67fc74*/
+                      for ( k = 0; k < dword_8B41B8; ++k ) /*0x67fc74*/
                         ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)unk_8B41AC + k); /*0x67fc84*/
                       result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fc9f*/
                                  this,
@@ -1464,7 +1464,7 @@ LABEL_39:
                                    0);
                         if ( result < 0 ) /*0x67fc03*/
                           break; /*0x67fc03*/
-                        if ( unk_8B41B8 < unk_8B41B0 /*0x67fc3f*/
+                        if ( dword_8B41B8 < unk_8B41B0 /*0x67fc3f*/
                           || (unk_8B41B5 || !unk_8B41B0)
                           && unk_8B41BC > 0
                           && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(unk_8B41A8 + 8))(
@@ -1472,7 +1472,7 @@ LABEL_39:
                                unk_8B41B0 + unk_8B41BC,
                                0) )
                         {
-                          v10 = unk_8B41B8++; /*0x67fc52*/
+                          v10 = dword_8B41B8++; /*0x67fc52*/
                           *((_DWORD *)unk_8B41AC + v10) = v14; /*0x67fc5f*/
                         }
                         if ( ++v9 >= v13 ) /*0x67fc69*/
@@ -1946,7 +1946,7 @@ LABEL_16:
     sprintf( /*0x77e72f*/
       &byte_B76C24[strlen(byte_B76C24)],
       (ObjectClass *)&stru_830620.__pad_BC0[336],
-      (INIClass *)v13[-1].SessionClass_field_2854[522]);
+      (INIClass *)v13[-1].unknown_2854[522]);
     v13 = (SessionClass *)((char *)v13 + 4); /*0x77e734*/
   }
   while ( (int)v13 < (int)&HouseClass_Player.__pad_5568[8264] ); /*0x77e740*/

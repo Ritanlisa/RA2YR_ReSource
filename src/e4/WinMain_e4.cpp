@@ -171,10 +171,10 @@ int __thiscall sub_69A1F0(_DWORD *this)
     v3 = *(_DWORD *)(*(this + 421) + 4 * i); /*0x69a208*/
     if ( v3 ) /*0x69a20d*/
     {
-      *(_DWORD *)(v3 + 420) = &VectorClass<Wstring>::`vftable'; /*0x69a215*/
+      *(_DWORD *)(v3 + 420) = &vt_VectorClass_Wstring; /*0x69a215*/
       VectorClass_Wstring::ddtor(v3 + 420); /*0x69a21b*/
       v4 = *(void **)(v3 + 396); /*0x69a220*/
-      *(_DWORD *)(v3 + 392) = &VectorClass<enum DiskID>::`vftable'; /*0x69a226*/
+      *(_DWORD *)(v3 + 392) = &vt_VectorClass_enum_DiskID; /*0x69a226*/
       if ( v4 && *(_BYTE *)(v3 + 405) ) /*0x69a234*/
       {
         __3_YAXPAX_Z(v4); /*0x69a23d*/
@@ -289,7 +289,7 @@ char sub_5D7E50()
       MEMORY[0xABFDA8] = 0; /*0x5d7e81*/
       MEMORY[0xABFDAC] = 1; /*0x5d7e87*/
       MEMORY[0xABFDAD] = 0; /*0x5d7e8e*/
-      MEMORY[0xABFDA0] = (int)&DynamicVectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d7e94*/
+      MEMORY[0xABFDA0] = (int)&vt_DynamicVectorClass_MultiplayerGameMode; /*0x5d7e94*/
       MEMORY[0xABFDB4] = 10; /*0x5d7e9a*/
       MEMORY[0xABFDB0] = 0; /*0x5d7ea0*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d7ea6*/
@@ -303,7 +303,7 @@ char sub_5D7E50()
       MEMORY[0xABFDA8] = 0; /*0x5d7ed5*/
       MEMORY[0xABFDAC] = 1; /*0x5d7edb*/
       MEMORY[0xABFDAD] = 0; /*0x5d7ee2*/
-      MEMORY[0xABFDA0] = (int)&DynamicVectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d7ee8*/
+      MEMORY[0xABFDA0] = (int)&vt_DynamicVectorClass_MultiplayerGameMode; /*0x5d7ee8*/
       MEMORY[0xABFDB4] = 10; /*0x5d7eee*/
       MEMORY[0xABFDB0] = 0; /*0x5d7ef4*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d7efa*/

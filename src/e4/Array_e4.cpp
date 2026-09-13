@@ -206,7 +206,7 @@ int __thiscall Array::FindValue(int *this, IUnknown *aP1)
   v4 = 0; /*0x634298*/
   if ( v2 > 0 ) /*0x63429d*/
   {
-    for ( i = (VectorClass *)*(this + 1); **(IUnknown ***)i->__pad_0 != aP1; i = (VectorClass *)((char *)i + 4) ) /*0x63429f*/
+    for ( i = (VectorClass *)*(this + 1); **(IUnknown ***)i->vtable0 != aP1; i = (VectorClass *)((char *)i + 4) ) /*0x63429f*/
     {
       if ( ++v4 >= v2 ) /*0x6342b2*/
         return result; /*0x6342b2*/

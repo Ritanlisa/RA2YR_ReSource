@@ -99,7 +99,7 @@ LABEL_17:
           }
           if ( (int)MEMORY[0x87F7F0] < 0 ) /*0x4f486d*/
           {
-            v9 = &MEMORY[0x87F7F0]->__pad_0[v6]; /*0x4f486f*/
+            v9 = &MEMORY[0x87F7F0]->vtable0[v6]; /*0x4f486f*/
             goto LABEL_17; /*0x4f486f*/
           }
 LABEL_18:

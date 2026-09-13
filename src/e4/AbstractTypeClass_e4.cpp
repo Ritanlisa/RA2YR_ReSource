@@ -22,7 +22,7 @@ int __thiscall AbstractTypeClass::Constructor(int this, AbstractClass *aP1)
   *(_DWORD *)this = &AbstractTypeClass::`vftable'; /*0x410822*/
   this->vtable1 = &AbstractTypeClass::`vftable'; /*0x410829*/
   this->vtable2 = &AbstractTypeClass::`vftable'; /*0x410830*/
-  this->vtable3 = &AbstractTypeClass::`vftable'; /*0x410837*/
+  this->vtable3 = &vt_AbstractTypeClass; /*0x410837*/
   if ( aP1 ) /*0x41083e*/
   {
     strncpy(Destination, aP1->__pad_0, (IUnknown *)0x18); /*0x410895*/
@@ -91,7 +91,7 @@ int __thiscall AbstractTypeClass::Init(int this, AbstractTypeClass *aP1)
   *(_DWORD *)this = &AbstractTypeClass::`vftable'; /*0x410975*/
   this->vtable1 = &AbstractTypeClass::`vftable'; /*0x41097b*/
   this->vtable2 = &AbstractTypeClass::`vftable'; /*0x410982*/
-  this->vtable3 = &AbstractTypeClass::`vftable'; /*0x410989*/
+  this->vtable3 = &vt_AbstractTypeClass; /*0x410989*/
   if ( v3 ) /*0x410990*/
     this->UIName = GetStringCSF((wchar_t *)(this + 61), 0, MEMORY[0x817830], 127); /*0x4109a0*/
   else
@@ -112,7 +112,7 @@ int __thiscall AbstractTypeClass_Dtor(_DWORD *this)
   *this = &AbstractTypeClass::`vftable'; /*0x4109cd*/
   *(this + 1) = &AbstractTypeClass::`vftable'; /*0x4109d3*/
   *(this + 2) = &AbstractTypeClass::`vftable'; /*0x4109da*/
-  *(this + 3) = &AbstractTypeClass::`vftable'; /*0x4109e1*/
+  *(this + 3) = &vt_AbstractTypeClass; /*0x4109e1*/
   v4 = this; /*0x4109ef*/
   v2 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xA8E968] + 16))(&MEMORY[0xA8E968], &v4); /*0x4109f3*/
   if ( v2 != -1 && v2 < MEMORY[0xA8E978] && v2 < --MEMORY[0xA8E978] ) /*0x410a0e*/
@@ -256,7 +256,7 @@ AbstractTypeClass *__thiscall AbstractTypeClass::ddtor(_DWORD *this, char a2)
   *this = &AbstractTypeClass::`vftable'; /*0x410c3d*/
   *(this + 1) = &AbstractTypeClass::`vftable'; /*0x410c43*/
   *(this + 2) = &AbstractTypeClass::`vftable'; /*0x410c4a*/
-  *(this + 3) = &AbstractTypeClass::`vftable'; /*0x410c51*/
+  *(this + 3) = &vt_AbstractTypeClass; /*0x410c51*/
   v5 = this; /*0x410c5f*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xA8E968] + 16))(&MEMORY[0xA8E968], &v5); /*0x410c63*/
   if ( v3 != -1 && v3 < MEMORY[0xA8E978] && v3 < --MEMORY[0xA8E978] ) /*0x410c7e*/

@@ -26,7 +26,7 @@ bool __stdcall ObjectClass::HasLinkedObject(VectorClass *aP0)
 {
   VectorClass *v1; // eax
 
-  v1 = *(VectorClass **)((*(int (__thiscall **)(VectorClass *))(*(_DWORD *)aP0->__pad_0 + 444))(aP0) + 224); /*0x4135af*/
+  v1 = *(VectorClass **)((*(int (__thiscall **)(VectorClass *))(*(_DWORD *)aP0->vtable0 + 444))(aP0) + 224); /*0x4135af*/
   return v1 && v1 != aP0; /*0x4135bf*/
 }
 }
@@ -455,7 +455,7 @@ int __stdcall ObjectClass::LoadFromStream_Common(FootClass *aP0, LPSTREAM pStm)
       if ( aP0 != (FootClass *)-1416 ) /*0x4db413*/
       {
         AbstractClassVector::Construct(aP0->unknownAbstractArray588, 0, 0); /*0x4db419*/
-        *(_DWORD *)v6->__pad_0 = &DynamicVectorClass<AbstractClass *>::`vftable'; /*0x4db41e*/
+        *(_DWORD *)v6->vtable0 = &vt_DynamicVectorClass_AbstractClass; /*0x4db41e*/
         *(_DWORD *)&aP0->__pad_58C[16] = 10; /*0x4db424*/
         *(_DWORD *)&aP0->__pad_58C[12] = 0; /*0x4db42b*/
       }
@@ -474,7 +474,7 @@ LABEL_16:
           if ( aP0 != (FootClass *)-1452 ) /*0x4db4c1*/
           {
             AbstractClassVector::Construct(aP0->FootClass_field_abstract_array_5AC, 0, 0); /*0x4db4c7*/
-            *(_DWORD *)v12->__pad_0 = &DynamicVectorClass<AbstractClass *>::`vftable'; /*0x4db4cc*/
+            *(_DWORD *)v12->vtable0 = &vt_DynamicVectorClass_AbstractClass; /*0x4db4cc*/
             *(_DWORD *)&aP0->__pad_5B0[16] = 10; /*0x4db4d2*/
             *(_DWORD *)&aP0->__pad_5B0[12] = 0; /*0x4db4d9*/
           }
@@ -540,7 +540,7 @@ LABEL_28:
               if ( *(_DWORD *)&aP0->__pad_5B0[12] < v14 /*0x4db525*/
                 || (aP0->__pad_5B0[9] || !v14)
                 && (v15 = *(_DWORD *)&aP0->__pad_5B0[16], v15 > 0)
-                && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*(_DWORD *)v12->__pad_0 + 8))(
+                && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*(_DWORD *)v12->vtable0 + 8))(
                      aP0->FootClass_field_abstract_array_5AC,
                      v14 + v15,
                      0) )
@@ -570,7 +570,7 @@ LABEL_28:
           if ( *(_DWORD *)&aP0->__pad_58C[12] < v8 /*0x4db477*/
             || (aP0->__pad_58C[9] || !v8)
             && (v9 = *(_DWORD *)&aP0->__pad_58C[16], v9 > 0)
-            && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*(_DWORD *)v6->__pad_0 + 8))(
+            && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*(_DWORD *)v6->vtable0 + 8))(
                  aP0->unknownAbstractArray588,
                  v8 + v9,
                  0) )
@@ -1192,7 +1192,7 @@ _DWORD *__stdcall ObjectClass::ComputeScreenYOffset(BuildingTypeClass *aP0, _DWO
   IUnknown *v2; // eax
   BuildingTypeClass *v3; // ecx
 
-  v2 = (IUnknown *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)&aP0->__pad_0[8] + 456))(*(_DWORD *)&aP0->__pad_0[8]); /*0x55a8cc*/
+  v2 = (IUnknown *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)&aP0->vtable0[8] + 456))(*(_DWORD *)&aP0->vtable0[8]); /*0x55a8cc*/
   v3 = (BuildingTypeClass *)ZCoordToScreenY(v2); /*0x55a8d9*/
   *a1 = 0; /*0x55a8df*/
   a1[1] = v3; /*0x55a8e1*/
@@ -1244,7 +1244,7 @@ void __thiscall ObjectClass::Dtor(_DWORD *this)
   *this = &ObjectClass::`vftable'; /*0x5f3b87*/
   *(this + 1) = &ObjectClass::`vftable'; /*0x5f3b8f*/
   *(this + 2) = &ObjectClass::`vftable'; /*0x5f3b96*/
-  *(this + 3) = &ObjectClass::`vftable'; /*0x5f3b9d*/
+  *(this + 3) = &vt_ObjectClass; /*0x5f3b9d*/
   if ( v2 ) /*0x5f3ba4*/
     ObjectClass::CleanupAudioAndRefs((int)v2); /*0x5f3ba6*/
   v9 = this; /*0x5f3bbb*/

@@ -20,12 +20,12 @@ rc_ptr_base *__fastcall ActivateScreenWDT_Create(rc_ptr_base *a1, int a2, unsign
   {
     v7 = v5 + 2; /*0x76f488*/
     v5[1].vfptr = 0; /*0x76f48d*/
-    v5->vfptr = &ReferenceCounted::`vftable'; /*0x76f494*/
+    v5->vfptr = &vt_ReferenceCounted; /*0x76f494*/
     ComPtr::Constructor(v5 + 2); /*0x76f49a*/
-    v7->vfptr = &rc_ptr<WDTState>::`vftable'; /*0x76f49f*/
+    v7->vfptr = &vt_rc_ptr_WDTState; /*0x76f49f*/
     ComPtr::Set(v6 + 2, *(_DWORD *)(a2 + 4)); /*0x76f4ab*/
     v6[4].vfptr = 0; /*0x76f4b0*/
-    v6->vfptr = &WorldDominationTour::State::`vftable'; /*0x76f4b7*/
+    v6->vfptr = &vt_WorldDominationTour_State; /*0x76f4b7*/
     vfptr = v6[3].vfptr; /*0x76f4bd*/
     if ( vfptr && a3 < vfptr[9] ) /*0x76f4ce*/
       v6[4].vfptr = *(void **)(vfptr[17] + 4 * a3); /*0x76f4d6*/
@@ -35,7 +35,7 @@ rc_ptr_base *__fastcall ActivateScreenWDT_Create(rc_ptr_base *a1, int a2, unsign
     v6 = 0; /*0x76f4db*/
   }
   ComPtr::Constructor(a1); /*0x76f4df*/
-  a1->vfptr = &rc_ptr<WorldDominationTour::State>::`vftable'; /*0x76f4e6*/
+  a1->vfptr = &vt_rc_ptr_WorldDominationTour_State; /*0x76f4e6*/
   ComPtr::Set(a1, (int)v6); /*0x76f4ee*/
   return a1; /*0x76f4f5*/
 }

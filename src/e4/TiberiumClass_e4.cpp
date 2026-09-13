@@ -44,7 +44,7 @@ char __stdcall TiberiumClass_Spread(int a1, int a2, int a3, int a4, int a5, int 
     if ( v8 ) /*0x5a0195*/
     {
       VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
-      *v9 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a01a0*/
+      *v9 = &vt_DynamicVectorClass_Cell; /*0x5a01a0*/
       v9[5] = 10; /*0x5a01a6*/
       v9[4] = 0; /*0x5a01ad*/
       v29 = v9; /*0x5a01b0*/
@@ -161,7 +161,7 @@ _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
   AnimTypeVector::Constructor(this + 49, 0, 0); /*0x721725*/
   *(this + 54) = 10; /*0x72172a*/
   *(this + 53) = 0; /*0x721731*/
-  *(this + 49) = &TypeList<AnimTypeClass const *>::`vftable'; /*0x721734*/
+  *(this + 49) = &vt_TypeList_AnimTypeClass_const; /*0x721734*/
   *(this + 56) = 0; /*0x72173a*/
   *(this + 57) = 0; /*0x721740*/
   *(this + 58) = 0; /*0x721746*/
@@ -182,7 +182,7 @@ _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
   *this = &TiberiumClass::`vftable'; /*0x7217a6*/
   *(this + 1) = &TiberiumClass::`vftable'; /*0x7217ac*/
   *(this + 2) = &TiberiumClass::`vftable'; /*0x7217b3*/
-  *(this + 3) = &TiberiumClass::`vftable'; /*0x7217ba*/
+  *(this + 3) = &vt_TiberiumClass; /*0x7217ba*/
   *(this + 38) = *(_DWORD *)&stru_B05488.__pad_579C[18644]; /*0x7217c6*/
   if ( *(int *)&stru_B05488.__pad_579C[18644] < *(int *)&stru_B05488.__pad_579C[18636] /*0x7217fe*/
     || (stru_B05488.__pad_579C[18641] || !*(_DWORD *)&stru_B05488.__pad_579C[18636])
@@ -300,7 +300,7 @@ char __thiscall TiberiumClass::LoadFromINI(int this, unsigned __int8 ***aP1)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor(v27, 0, 0); /*0x721b6c*/
-    v27[0] = &TypeList<AnimTypeClass const *>::`vftable'; /*0x721b7b*/
+    v27[0] = &vt_TypeList_AnimTypeClass_const; /*0x721b7b*/
     for ( i = (AbstractClass *)strtok(String[0].__pad_0, MEMORY[0x817F70].__pad_0); /*0x721b8d*/
           i;
           i = (AbstractClass *)strtok(0, MEMORY[0x817F70].__pad_0) )
@@ -312,7 +312,7 @@ char __thiscall TiberiumClass::LoadFromINI(int this, unsigned __int8 ***aP1)
         DynamicVector::Add_Alt4(v27, (VectorClass *)&v21); /*0x721bac*/
     }
     TypeList::AnimTypeCopy(v22, (VectorClass *)v27); /*0x721bcd*/
-    v27[0] = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x721bd6*/
+    v27[0] = &vt_VectorClass_AnimTypeClass_const; /*0x721bd6*/
     DynamicVectorClass::Destroy_Alt((int)v27); /*0x721bde*/
   }
   else
@@ -326,7 +326,7 @@ char __thiscall TiberiumClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   v14 = (VectorClass *)v22[1]; /*0x721c17*/
   this->Image = ecx10; /*0x721c1b*/
   this->NumFrames = v13; /*0x721c1e*/
-  v22[0] = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x721c21*/
+  v22[0] = &vt_VectorClass_AnimTypeClass_const; /*0x721c21*/
   if ( v14 && v23 ) /*0x721c34*/
     __3_YAXPAX_Z(v14); /*0x721c37*/
   switch ( INIClass::ReadInt_Overwrite( /*0x721c55*/
@@ -439,13 +439,13 @@ int __stdcall TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     {
       AbstractTypeClass::Init(v2, (int)&a1); /*0x721f9b*/
       DynamicVectorClass::AnimTypeConstructor((_DWORD *)(v2 + 196), 0, 0); /*0x721fa4*/
-      *(_DWORD *)(v2 + 196) = &TypeList<AnimTypeClass const *>::`vftable'; /*0x721fb0*/
+      *(_DWORD *)(v2 + 196) = &vt_TypeList_AnimTypeClass_const; /*0x721fb0*/
       Timer::Start((_DWORD *)(v2 + 256), 0); /*0x721fb6*/
       Timer::Start((_DWORD *)(v2 + 284), 0); /*0x721fc2*/
       *(_DWORD *)v2 = &TiberiumClass::`vftable'; /*0x721fc7*/
       *(_DWORD *)(v2 + 4) = &TiberiumClass::`vftable'; /*0x721fcd*/
       *(_DWORD *)(v2 + 8) = &TiberiumClass::`vftable'; /*0x721fd4*/
-      *(_DWORD *)(v2 + 12) = &TiberiumClass::`vftable'; /*0x721fdb*/
+      *(_DWORD *)(v2 + 12) = &vt_TiberiumClass; /*0x721fdb*/
     }
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 224)); /*0x721fee*/
     if ( v2 != -196 ) /*0x721ff5*/

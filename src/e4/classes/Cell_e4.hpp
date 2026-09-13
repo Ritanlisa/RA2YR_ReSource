@@ -25,6 +25,7 @@ struct Cell {
     int GetSlopeIndex();  // 0x487D50
     bool IsBridge2();  // 0x487DF0
     bool IsValidDestination(short * a2);  // 0x4DCE80
+    bool Exists(MouseClass * aP1);  // 0x5657E0
     int PosToLinearIndex(IUnknown * aP0);  // 0x56BC50
     int DecodeFlags();  // 0x56CB80
     int CoordToIndex(IUnknown * aP1);  // 0x56D430

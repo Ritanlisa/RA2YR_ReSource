@@ -18,50 +18,21 @@ namespace gamemd { short BuildingTypeClass::GetFoundationWidth() const {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingTypeClass_GetFoundationWidth(_DWORD *this)
 {
-  return dword_8192B8[*(this + 956)];
+  return dword_8192B8[*(this + 956)]; /*0x45ec9d*/
 }
-/* ASM:
-mov     eax, [ecx+0EF0h]
-mov     eax, dword_8192B8[eax*4]
-retn
-*/
-    return {}; // TODO stub - translate quarantined IDA block above
 } }
 // 0x0 (lnk)
 namespace gamemd { AbstractTypeClass::AbstractTypeClass(char const *) noexcept {} }
 // 0x45ECA0
 namespace gamemd { short BuildingTypeClass::GetFoundationHeight(bool) const {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingTypeClass_GetFoundationHeight(int this, char a2)
+int __thiscall BuildingTypeClass::GetFoundationHeight(int this, IUnknown *aP1)
 {
-  if ( a2 && *(_BYTE *)(this + 5488) )
-    return dword_819310[*(_DWORD *)(this + 3824)] + 1;
+  if ( (_BYTE)aP1 && *(_BYTE *)(this + 5488) ) /*0x45eca8*/
+    return dword_819310[*(_DWORD *)(this + 3824)] + 1; /*0x45ecc4*/
   else
-    return dword_819310[*(_DWORD *)(this + 3824)];
+    return dword_819310[*(_DWORD *)(this + 3824)]; /*0x45ecd1*/
 }
-
-/* ASM:
-mov     al, [esp+arg_0]
-test    al, al
-jz      short loc_45ECC9
-mov     al, [ecx+1570h]
-test    al, al
-jz      short loc_45ECC9
-mov     eax, [ecx+0EF0h]
-mov     edx, 1
-mov     eax, dword_819310[eax*4]
-add     eax, edx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_45ECC9:                             ; CODE XREF: BuildingTypeClass__GetFoundationHeight+6↑j
-; BuildingTypeClass__GetFoundationHeight+10↑j
-mov     eax, [ecx+0EF0h]
-xor     edx, edx
-mov     eax, dword_819310[eax*4]
-add     eax, edx
-retn    4
-*/
 } }
 // 0x0 (lnk)
 namespace gamemd { bool BuildingTypeClass::IsCellClearOfTerrainObstacles(gamemd::Vector2D<short> const &) const { return false; } }

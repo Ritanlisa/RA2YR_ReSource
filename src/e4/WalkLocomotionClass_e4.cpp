@@ -172,7 +172,7 @@ HRESULT __stdcall WalkLocomotionClass::_vt05(int *a1, int *pStm)
     a1[14] = 0; /*0x75c69c*/
     *a1 = (int)&WalkLocomotionClass::`vftable'; /*0x75c6a3*/
     a1[1] = (int)&WalkLocomotionClass::`vftable'; /*0x75c6a9*/
-    a1[6] = (int)&WalkLocomotionClass::`vftable'; /*0x75c6b0*/
+    a1[6] = (int)&vt_WalkLocomotionClass; /*0x75c6b0*/
   }
   v2->__pad_0->Read(v2, &pStm, 1, 0); /*0x75c6c3*/
   if ( !(_BYTE)pStm ) /*0x75c6cc*/
@@ -254,7 +254,7 @@ WalkLocomotionClass *__thiscall WalkLocomotionClass::ProcessMove(ILocomotion **t
 
   *this = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbe3*/
   *(this + 1) = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbe9*/
-  *(this + 6) = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbf0*/
+  *(this + 6) = (ILocomotion *)&vt_WalkLocomotionClass; /*0x75cbf0*/
   v3 = *(this + 14); /*0x75cbf7*/
   if ( v3 ) /*0x75cbfc*/
     (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x75cc01*/

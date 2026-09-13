@@ -358,7 +358,7 @@ VectorClass *__thiscall MSEngine::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5ad4d3*/
-  *this = &VectorClass<TRect<int>>::`vftable'; /*0x5ad4d6*/
+  *this = &vt_VectorClass_TRect_int; /*0x5ad4d6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x5ad4e0*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad4e8*/
@@ -383,7 +383,7 @@ DynamicVector *__thiscall MSEngine::Constructor(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5ad523*/
-  *this = &VectorClass<TRect<int>>::`vftable'; /*0x5ad526*/
+  *this = &vt_VectorClass_TRect_int; /*0x5ad526*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x5ad530*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad538*/
@@ -411,7 +411,7 @@ void __thiscall MSEngine::Destructor(int this)
 
   SessionClass::Destruct((_DWORD *)this); /*0x5cee64*/
   v2 = *(void **)(this + 72); /*0x5cee69*/
-  *(_DWORD *)(this + 68) = &VectorClass<MSSfxEntry *>::`vftable'; /*0x5cee70*/
+  *(_DWORD *)(this + 68) = &vt_VectorClass_MSSfxEntry; /*0x5cee70*/
   if ( v2 && *(_BYTE *)(this + 81) ) /*0x5cee79*/
   {
     __3_YAXPAX_Z(v2); /*0x5cee7f*/
@@ -420,7 +420,7 @@ void __thiscall MSEngine::Destructor(int this)
   *(_BYTE *)(this + 81) = 0; /*0x5cee8a*/
   *(_DWORD *)(this + 76) = 0; /*0x5cee8d*/
   v3 = *(void **)(this + 48); /*0x5cee90*/
-  *(_DWORD *)(this + 44) = &VectorClass<MSAnimEntry *>::`vftable'; /*0x5cee93*/
+  *(_DWORD *)(this + 44) = &vt_VectorClass_MSAnimEntry; /*0x5cee93*/
   if ( v3 && *(_BYTE *)(this + 57) ) /*0x5cee9e*/
   {
     __3_YAXPAX_Z(v3); /*0x5ceea4*/
@@ -430,7 +430,7 @@ void __thiscall MSEngine::Destructor(int this)
   *(_DWORD *)(this + 52) = 0; /*0x5ceeb5*/
   DeleteAndZero((void **)(this + 40)); /*0x5ceeb8*/
   v4 = *(void **)(this + 4); /*0x5ceebd*/
-  *(_DWORD *)this = &VectorClass<MapStage *>::`vftable'; /*0x5ceec0*/
+  *(_DWORD *)this = &vt_VectorClass_MapStage; /*0x5ceec0*/
   if ( v4 && *(_BYTE *)(this + 13) ) /*0x5ceeca*/
   {
     __3_YAXPAX_Z(v4); /*0x5ceed0*/
@@ -457,23 +457,23 @@ _DWORD *__thiscall sub_5D1AA0(_DWORD *this)
   *((_DWORD *)v2 + 2) = 0; /*0x5d1ab5*/
   v2[12] = 1; /*0x5d1ab8*/
   v2[13] = 0; /*0x5d1abb*/
-  *(_DWORD *)v2 = &VectorClass<TRect<int>>::`vftable'; /*0x5d1abe*/
+  *(_DWORD *)v2 = &vt_VectorClass_TRect_int; /*0x5d1abe*/
   *(this + 7) = 0; /*0x5d1ac4*/
   *(this + 8) = 0; /*0x5d1ac7*/
   *((_BYTE *)this + 36) = 1; /*0x5d1aca*/
   *((_BYTE *)this + 37) = 0; /*0x5d1acd*/
-  *(this + 6) = &DynamicVectorClass<MSAnim *>::`vftable'; /*0x5d1ad0*/
+  *(this + 6) = &vt_DynamicVectorClass_MSAnim; /*0x5d1ad0*/
   *(this + 11) = 10; /*0x5d1ad6*/
   *(this + 10) = 0; /*0x5d1add*/
   *(this + 13) = 0; /*0x5d1ae0*/
   *(this + 14) = 0; /*0x5d1ae3*/
   *((_BYTE *)this + 60) = 1; /*0x5d1ae6*/
   *((_BYTE *)this + 61) = 0; /*0x5d1ae9*/
-  *(this + 12) = &DynamicVectorClass<MSSfx *>::`vftable'; /*0x5d1aec*/
+  *(this + 12) = &vt_DynamicVectorClass_MSSfx; /*0x5d1aec*/
   *(this + 17) = 10; /*0x5d1af2*/
   *(this + 16) = 0; /*0x5d1af9*/
   v3 = *(_DWORD *)v2; /*0x5d1afc*/
-  *this = &MSEngine::`vftable'; /*0x5d1b01*/
+  *this = &vt_MSEngine; /*0x5d1b01*/
   *(this + 1) = 0; /*0x5d1b07*/
   (*(void (__thiscall **)(char *, int, _DWORD))(v3 + 8))(v2, 20, 0); /*0x5d1b0a*/
   (*(void (__thiscall **)(_DWORD *))(*(this + 6) + 12))(this + 6); /*0x5d1b11*/
@@ -504,7 +504,7 @@ void __thiscall MSEngine_Destructor(_DWORD *this)
   void *v13; // eax
 
   v2 = 0; /*0x5d1b37*/
-  for ( *this = &MSEngine::`vftable'; v2 < *(this + 16); ++v2 ) /*0x5d1b45*/
+  for ( *this = &vt_MSEngine; v2 < *(this + 16); ++v2 ) /*0x5d1b45*/
   {
     v3 = *(this + 13); /*0x5d1b47*/
     v4 = *(void **)(v3 + 4 * v2); /*0x5d1b4a*/
@@ -528,7 +528,7 @@ void __thiscall MSEngine_Destructor(_DWORD *this)
   v10 = this + 2; /*0x5d1ba3*/
   (*(void (__thiscall **)(_DWORD *))(v9 + 12))(v10); /*0x5d1ba8*/
   v11 = (void *)v5[1]; /*0x5d1bab*/
-  *v5 = &VectorClass<MSSfx *>::`vftable'; /*0x5d1bae*/
+  *v5 = &vt_VectorClass_MSSfx; /*0x5d1bae*/
   if ( v11 && *((_BYTE *)v5 + 13) ) /*0x5d1bb9*/
   {
     __3_YAXPAX_Z(v11); /*0x5d1bbf*/
@@ -537,7 +537,7 @@ void __thiscall MSEngine_Destructor(_DWORD *this)
   *((_BYTE *)v5 + 13) = 0; /*0x5d1bca*/
   v5[2] = 0; /*0x5d1bcd*/
   v12 = (void *)v8[1]; /*0x5d1bd0*/
-  *v8 = &VectorClass<MSAnim *>::`vftable'; /*0x5d1bd3*/
+  *v8 = &vt_VectorClass_MSAnim; /*0x5d1bd3*/
   if ( v12 && *((_BYTE *)v8 + 13) ) /*0x5d1bdd*/
   {
     __3_YAXPAX_Z(v12); /*0x5d1be3*/
@@ -546,7 +546,7 @@ void __thiscall MSEngine_Destructor(_DWORD *this)
   *((_BYTE *)v8 + 13) = 0; /*0x5d1bee*/
   v8[2] = 0; /*0x5d1bf1*/
   v13 = (void *)v10[1]; /*0x5d1bf4*/
-  *v10 = &VectorClass<TRect<int>>::`vftable'; /*0x5d1bf7*/
+  *v10 = &vt_VectorClass_TRect_int; /*0x5d1bf7*/
   if ( v13 && *((_BYTE *)v10 + 13) ) /*0x5d1c01*/
   {
     __3_YAXPAX_Z(v13); /*0x5d1c07*/

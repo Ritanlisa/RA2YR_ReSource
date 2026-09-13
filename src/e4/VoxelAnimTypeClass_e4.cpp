@@ -46,7 +46,7 @@ _DWORD *__thiscall VoxelAnimTypeClass::Constructor(_DWORD *this, ObjectClass *aP
   *this = &VoxelAnimTypeClass::`vftable'; /*0x74ae6b*/
   *(this + 1) = &VoxelAnimTypeClass::`vftable'; /*0x74ae71*/
   *(this + 2) = &VoxelAnimTypeClass::`vftable'; /*0x74ae77*/
-  *(this + 3) = &VoxelAnimTypeClass::`vftable'; /*0x74ae7e*/
+  *(this + 3) = &vt_VoxelAnimTypeClass; /*0x74ae7e*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x74ae85*/
   this->LegalTarget = 0; /*0x74ae8c*/
   this->IsLogic = 1; /*0x74ae92*/
@@ -411,7 +411,7 @@ char __thiscall VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1
     else
       FileVXL = 0; /*0x74b5d5*/
     this->MainVoxel = FileVXL; /*0x74b5db*/
-    *(_DWORD *)Destination[0].__pad_0 = &CCFileClass::`vftable'; /*0x74b5e1*/
+    *(_DWORD *)Destination[0].__pad_0 = &vt_CCFileClass; /*0x74b5e1*/
     Destination[0].customSound = 0; /*0x74b5e9*/
     Vector::Clear((int)&Destination[0].customSound_controller[2]); /*0x74b5f1*/
     *(_DWORD *)Destination[0].__pad_0 = &off_7E1668; /*0x74b5fa*/
@@ -481,7 +481,7 @@ int __stdcall VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &VoxelAnimTypeClass::`vftable'; /*0x74b838*/
       *(_DWORD *)&aP0->__pad_0[4] = &VoxelAnimTypeClass::`vftable'; /*0x74b83e*/
       *(_DWORD *)&aP0->__pad_0[8] = &VoxelAnimTypeClass::`vftable'; /*0x74b845*/
-      *(_DWORD *)&aP0->__pad_0[12] = &VoxelAnimTypeClass::`vftable'; /*0x74b84c*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_VoxelAnimTypeClass; /*0x74b84c*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)aP0[1].Name); /*0x74b85f*/
     ObjectPtr::RegisterForTracking( /*0x74b870*/
@@ -563,7 +563,7 @@ VoxelAnimTypeClass *__thiscall VoxelAnimTypeClass::ddtor(void **this, char a2)
   *this = &VoxelAnimTypeClass::`vftable'; /*0x74ba36*/
   *(this + 1) = &VoxelAnimTypeClass::`vftable'; /*0x74ba3c*/
   *(this + 2) = &VoxelAnimTypeClass::`vftable'; /*0x74ba43*/
-  *(this + 3) = &VoxelAnimTypeClass::`vftable'; /*0x74ba4a*/
+  *(this + 3) = &vt_VoxelAnimTypeClass; /*0x74ba4a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x74ba51*/
   v6 = this; /*0x74ba66*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x74ba6a*/

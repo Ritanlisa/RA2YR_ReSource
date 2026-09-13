@@ -262,7 +262,7 @@ int __thiscall TacticalMap_Constructor(int this)
   *(_DWORD *)this = &Tactical::`vftable'; /*0x6d1d54*/
   this->TacticalMap_field_04 = &Tactical::`vftable'; /*0x6d1d5a*/
   this->TacticalMap_field_08 = &Tactical::`vftable'; /*0x6d1d61*/
-  this->TacticalMap_field_0C = &Tactical::`vftable'; /*0x6d1d68*/
+  this->TacticalMap_field_0C = &vt_Tactical; /*0x6d1d68*/
   memset((void *)(this + 228), 0, 0xC80u); /*0x6d1d6f*/
   *(_WORD *)(this + 36) = 0; /*0x6d1d77*/
   *(_DWORD *)(this + 164) = -1; /*0x6d1d7d*/

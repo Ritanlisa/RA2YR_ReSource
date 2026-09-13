@@ -76,12 +76,12 @@ char __thiscall VoxelAnimType_LoadSection(_DWORD *this, const char *a2, int a3)
     {
       v10 = VoxelSection::GetInfo(0, 0); /*0x5f7c8c*/
       Matrix::Scale(*(float *)(v10 + 12)); /*0x5f7c9c*/
-      v18[0] = &CCFileClass::`vftable'; /*0x5f7cad*/
+      v18[0] = &vt_CCFileClass; /*0x5f7cad*/
       v20 = 0; /*0x5f7cb4*/
       Vector::Clear(v19); /*0x5f7cbb*/
       v18[0] = &off_7E1668; /*0x5f7ccc*/
       BufferIOFileClass::Dtor(v18); /*0x5f7cd3*/
-      v15[0] = &CCFileClass::`vftable'; /*0x5f7cdc*/
+      v15[0] = &vt_CCFileClass; /*0x5f7cdc*/
       v17 = 0; /*0x5f7ce0*/
       Vector::Clear(v16); /*0x5f7ce4*/
       v15[0] = &off_7E1668; /*0x5f7ced*/
@@ -102,19 +102,19 @@ char __thiscall VoxelAnimType_LoadSection(_DWORD *this, const char *a2, int a3)
       __3_YAXPAX_Z(v13); /*0x5f7d3a*/
       *(this + 2 * a3 + 51) = 0; /*0x5f7d42*/
     }
-    v18[0] = &CCFileClass::`vftable'; /*0x5f7d55*/
+    v18[0] = &vt_CCFileClass; /*0x5f7d55*/
     v20 = 0; /*0x5f7d5c*/
     Vector::Clear(v19); /*0x5f7d63*/
     v18[0] = &off_7E1668; /*0x5f7d74*/
     BufferIOFileClass::Dtor(v18); /*0x5f7d7b*/
-    v15[0] = &CCFileClass::`vftable'; /*0x5f7d84*/
+    v15[0] = &vt_CCFileClass; /*0x5f7d84*/
     v17 = 0; /*0x5f7d88*/
     Vector::Clear(v16); /*0x5f7d8c*/
     v15[0] = &off_7E1668; /*0x5f7d91*/
   }
   else
   {
-    v15[0] = &CCFileClass::`vftable'; /*0x5f7b28*/
+    v15[0] = &vt_CCFileClass; /*0x5f7b28*/
     v17 = 0; /*0x5f7b30*/
     Vector::Clear(v16); /*0x5f7b34*/
     v15[0] = &off_7E1668; /*0x5f7b39*/
@@ -182,12 +182,12 @@ char __thiscall VoxelAnimType_LoadBarrel(_DWORD *this, const char *a2, int a3)
     {
       v8 = VoxelSection::GetInfo(0, 0); /*0x5f7f6a*/
       Matrix::Scale(*(float *)(v8 + 12)); /*0x5f7f7a*/
-      v15[0] = &CCFileClass::`vftable'; /*0x5f7f8b*/
+      v15[0] = &vt_CCFileClass; /*0x5f7f8b*/
       v17 = 0; /*0x5f7f92*/
       Vector::Clear(v16); /*0x5f7f99*/
       v15[0] = &off_7E1668; /*0x5f7faa*/
       BufferIOFileClass::Dtor(v15); /*0x5f7fb1*/
-      v12[0] = &CCFileClass::`vftable'; /*0x5f7fba*/
+      v12[0] = &vt_CCFileClass; /*0x5f7fba*/
       v14 = 0; /*0x5f7fbe*/
       Vector::Clear(v13); /*0x5f7fc2*/
       v12[0] = &off_7E1668; /*0x5f7fcb*/
@@ -208,12 +208,12 @@ char __thiscall VoxelAnimType_LoadBarrel(_DWORD *this, const char *a2, int a3)
         String::Release(v10); /*0x5f800d*/
         __3_YAXPAX_Z(v10); /*0x5f8013*/
       }
-      v15[0] = &CCFileClass::`vftable'; /*0x5f8027*/
+      v15[0] = &vt_CCFileClass; /*0x5f8027*/
       v17 = 0; /*0x5f802e*/
       Vector::Clear(v16); /*0x5f8035*/
       v15[0] = &off_7E1668; /*0x5f8046*/
       BufferIOFileClass::Dtor(v15); /*0x5f804d*/
-      v12[0] = &CCFileClass::`vftable'; /*0x5f8056*/
+      v12[0] = &vt_CCFileClass; /*0x5f8056*/
       v14 = 0; /*0x5f805a*/
       Vector::Clear(v13); /*0x5f805e*/
       v12[0] = &off_7E1668; /*0x5f8067*/
@@ -223,7 +223,7 @@ char __thiscall VoxelAnimType_LoadBarrel(_DWORD *this, const char *a2, int a3)
   }
   else
   {
-    v12[0] = &CCFileClass::`vftable'; /*0x5f7e48*/
+    v12[0] = &vt_CCFileClass; /*0x5f7e48*/
     v14 = 0; /*0x5f7e50*/
     Vector::Clear(v13); /*0x5f7e54*/
     v12[0] = &off_7E1668; /*0x5f7e5d*/
@@ -344,7 +344,7 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
       Info = VoxelSection::GetInfo(*((_DWORD **)this + 44), 0, 0); /*0x5f822f*/
       Matrix::Scale(*((unsigned int **)this + 45), *(float *)(Info + 12)); /*0x5f823e*/
     }
-    v51[0] = &CCFileClass::`vftable'; /*0x5f824e*/
+    v51[0] = &vt_CCFileClass; /*0x5f824e*/
     v53 = 0; /*0x5f8256*/
     Vector::Clear((int)v52); /*0x5f825a*/
     v51[0] = &off_7E1668; /*0x5f8263*/
@@ -403,7 +403,7 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
           v32 = VoxelSection::GetInfo(*((_DWORD **)this + 46), 0, 0); /*0x5f87ce*/
           Matrix::Scale(*((unsigned int **)this + 47), *(float *)(v32 + 12)); /*0x5f87dd*/
         }
-        v54[0] = &CCFileClass::`vftable'; /*0x5f87f0*/
+        v54[0] = &vt_CCFileClass; /*0x5f87f0*/
         v56 = 0; /*0x5f87fb*/
         Vector::Clear((int)v55); /*0x5f8802*/
         v54[0] = &off_7E1668; /*0x5f880e*/
@@ -470,13 +470,13 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
           v16 = VoxelSection::GetInfo(*((_DWORD **)this + 46), 0, 0); /*0x5f840a*/
           Matrix::Scale(*((unsigned int **)this + 47), *(float *)(v16 + 12)); /*0x5f8419*/
         }
-        v54[0] = &CCFileClass::`vftable'; /*0x5f842c*/
+        v54[0] = &vt_CCFileClass; /*0x5f842c*/
         v56 = 0; /*0x5f8437*/
         Vector::Clear((int)v55); /*0x5f843e*/
         v54[0] = &off_7E1668; /*0x5f844a*/
         BufferIOFileClass::Dtor(v54); /*0x5f8455*/
       }
-      v51[0] = &CCFileClass::`vftable'; /*0x5f845e*/
+      v51[0] = &vt_CCFileClass; /*0x5f845e*/
       v53 = 0; /*0x5f8466*/
       Vector::Clear((int)v52); /*0x5f846a*/
       v51[0] = &off_7E1668; /*0x5f8473*/
@@ -527,14 +527,14 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
           v23 = VoxelSection::GetInfo(*((_DWORD **)this + 46), 0, 0); /*0x5f85ca*/
           Matrix::Scale(*((unsigned int **)this + 47), *(float *)(v23 + 12)); /*0x5f85d9*/
         }
-        v54[0] = &CCFileClass::`vftable'; /*0x5f85ec*/
+        v54[0] = &vt_CCFileClass; /*0x5f85ec*/
         v56 = 0; /*0x5f85f7*/
         Vector::Clear((int)v55); /*0x5f85fe*/
         v54[0] = &off_7E1668; /*0x5f860a*/
         BufferIOFileClass::Dtor(v54); /*0x5f8615*/
       }
 LABEL_92:
-      v51[0] = &CCFileClass::`vftable'; /*0x5f881e*/
+      v51[0] = &vt_CCFileClass; /*0x5f881e*/
       v53 = 0; /*0x5f882a*/
       Vector::Clear((int)v52); /*0x5f882e*/
       v51[0] = &off_7E1668; /*0x5f8833*/
@@ -605,13 +605,13 @@ LABEL_93:
           v41 = VoxelSection::GetInfo(*((_DWORD **)this + 48), 0, 0); /*0x5f89ea*/
           Matrix::Scale(*((unsigned int **)this + 49), *(float *)(v41 + 12)); /*0x5f89f9*/
         }
-        v54[0] = &CCFileClass::`vftable'; /*0x5f8a0c*/
+        v54[0] = &vt_CCFileClass; /*0x5f8a0c*/
         v56 = 0; /*0x5f8a17*/
         Vector::Clear((int)v55); /*0x5f8a1e*/
         v54[0] = &off_7E1668; /*0x5f8a2a*/
         BufferIOFileClass::Dtor(v54); /*0x5f8a35*/
       }
-      v51[0] = &CCFileClass::`vftable'; /*0x5f8a3e*/
+      v51[0] = &vt_CCFileClass; /*0x5f8a3e*/
       v53 = 0; /*0x5f8a46*/
       Vector::Clear((int)v52); /*0x5f8a4a*/
       v51[0] = &off_7E1668; /*0x5f8a53*/
@@ -707,7 +707,7 @@ LABEL_123:
   *(this + 652) = 0; /*0x5f8c8f*/
   *((_DWORD *)this + 164) = 0; /*0x5f8c95*/
 LABEL_146:
-  v58[0] = &CCFileClass::`vftable'; /*0x5f8c9b*/
+  v58[0] = &vt_CCFileClass; /*0x5f8c9b*/
   v60 = 0; /*0x5f8cad*/
   Vector::Clear((int)v59); /*0x5f8cb4*/
   v58[0] = &off_7E1668; /*0x5f8cc0*/

@@ -837,7 +837,7 @@ _DWORD *__thiscall DisplayClass::loc_4AEB50(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4aeb53*/
-  *this = &VectorClass<ObjectClass *>::`vftable'; /*0x4aeb56*/
+  *this = &vt_VectorClass_ObjectClass; /*0x4aeb56*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4aeb60*/
   {
     __3_YAXPAX_Z(v3); /*0x4aeb68*/

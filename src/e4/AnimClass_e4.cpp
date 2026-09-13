@@ -24,7 +24,7 @@ void __fastcall AnimClass::Destruct(#374 *this, AbstractClass *a2)
   LOBYTE(a2) = 1; /*0x4228e3*/
   *(_DWORD *)this = &AnimClass::`vftable'; /*0x4228eb*/
   this->AnimClass_field_0x4 = &AnimClass::`vftable'; /*0x4228f1*/
-  this->AnimClass_field_0x8 = &AnimClass::`vftable'; /*0x4228f8*/
+  this->AnimClass_field_0x8 = &vt_AnimClass; /*0x4228f8*/
   *((_DWORD *)this + 3) = &off_7E3328; /*0x4228ff*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, a2); /*0x422906*/
   if ( HouseClass_Player.__pad_5568[22252] ) /*0x422914*/

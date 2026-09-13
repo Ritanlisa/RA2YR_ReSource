@@ -8,7 +8,7 @@ unsigned int * PageUserCommandClass::PageUserCommandClass()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_537DD0(_DWORD *this)
 {
-  *this = &PageUserCommandClass::`vftable'; /*0x537dd2*/
+  *this = &vt_PageUserCommandClass; /*0x537dd2*/
   return this; /*0x537dd8*/
 }
 }

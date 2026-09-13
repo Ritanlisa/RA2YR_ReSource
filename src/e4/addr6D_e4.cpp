@@ -349,7 +349,7 @@ void __cdecl sub_6D1AA0()
 {
   if ( (MEMORY[0xB0CD58] & 1) == 0 ) /*0x6d1aaa*/
   {
-    MEMORY[0xB0CE78] = (int)&VectorClass<DirtyAreaStruct>::`vftable'; /*0x6d1aae*/
+    MEMORY[0xB0CE78] = (int)&vt_VectorClass_DirtyAreaStruct; /*0x6d1aae*/
     MEMORY[0xB0CD58] |= 1u; /*0x6d1ac1*/
     if ( MEMORY[0xB0CE7C] ) /*0x6d1ac7*/
     {
@@ -377,7 +377,7 @@ int sub_6D1B10()
   MEMORY[0xB0CDF0] = 0; /*0x6d1b1c*/
   MEMORY[0xB0CDF4] = 1; /*0x6d1b21*/
   MEMORY[0xB0CDF5] = 0; /*0x6d1b28*/
-  MEMORY[0xB0CDE8] = (int)&DynamicVectorClass<ShadowControlClass *>::`vftable'; /*0x6d1b2d*/
+  MEMORY[0xB0CDE8] = (int)&vt_DynamicVectorClass_ShadowControlClass; /*0x6d1b2d*/
   MEMORY[0xB0CDFC] = 10; /*0x6d1b37*/
   MEMORY[0xB0CDF8] = 0; /*0x6d1b41*/
   return atexit(sub_6D1B50); /*0x6d1b4c*/
@@ -394,7 +394,7 @@ void __cdecl sub_6D1B50()
 {
   if ( (MEMORY[0xB0CD59] & 1) == 0 ) /*0x6d1b5a*/
   {
-    MEMORY[0xB0CDE8] = (int)&VectorClass<ShadowControlClass *>::`vftable'; /*0x6d1b5e*/
+    MEMORY[0xB0CDE8] = (int)&vt_VectorClass_ShadowControlClass; /*0x6d1b5e*/
     MEMORY[0xB0CD59] |= 1u; /*0x6d1b71*/
     if ( MEMORY[0xB0CDEC] ) /*0x6d1b77*/
     {
@@ -446,7 +446,7 @@ void __thiscall sub_6D1E80(_DWORD *this)
   *this = &Tactical::`vftable'; /*0x6d1e80*/
   *(this + 1) = &Tactical::`vftable'; /*0x6d1e86*/
   *(this + 2) = &Tactical::`vftable'; /*0x6d1e8d*/
-  *(this + 3) = &Tactical::`vftable'; /*0x6d1e94*/
+  *(this + 3) = &vt_Tactical; /*0x6d1e94*/
   MEMORY[0x887324] = 0; /*0x6d1e9b*/
   AbstractClass::DTOR(this); /*0x6d1ea5*/
 }
@@ -973,7 +973,7 @@ void sub_6DCFC0()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __cdecl sub_6DCFC0()
 {
-  MEMORY[0xB0E658] = (int)&VectorClass<TActionClass *>::`vftable'; /*0x6dcfc8*/
+  MEMORY[0xB0E658] = (int)&vt_VectorClass_TActionClass; /*0x6dcfc8*/
   if ( MEMORY[0xB0E65C] && MEMORY[0xB0E665] ) /*0x6dcfdc*/
   {
     __3_YAXPAX_Z(MEMORY[0xB0E65C]); /*0x6dcfdf*/

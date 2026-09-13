@@ -93,13 +93,13 @@ int __thiscall Stream::WriteIntArray(_DWORD *this, TechnoTypeClass *aP1)
   int i; // esi
   int v6; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *(_DWORD *)aP1->__pad_0; /*0x67a4ac*/
+  v3 = *(_DWORD *)aP1->vtable0; /*0x67a4ac*/
   v6 = *(this + 4); /*0x67a4b9*/
   (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a4bd*/
   result = v6; /*0x67a4c0*/
   for ( i = 0; i < v6; ++i ) /*0x67a4c8*/
   {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->__pad_0 + 16))( /*0x67a4d8*/
+    (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->vtable0 + 16))( /*0x67a4d8*/
       aP1,
       *(this + 1) + 4 * i,
       4,

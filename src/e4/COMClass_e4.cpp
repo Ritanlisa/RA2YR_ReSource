@@ -8,7 +8,7 @@ VectorCursor * COMClass::disconnectPoint(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 VectorCursor *__thiscall COMClass::disconnectPoint(_DWORD *this, char a2)
 {
-  *this = &VectorCursor<rc_ptr<WorldDominationTour::GameOption>,DynamicVectorClass<rc_ptr<WorldDominationTour::GameOption>>>::`vftable'; /*0x7669f9*/
+  *this = &vt_VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption; /*0x7669f9*/
   if ( (a2 & 1) != 0 ) /*0x7669ff*/
     __3_YAXPAX_Z(this); /*0x766a02*/
   return (VectorCursor *)this; /*0x766a0c*/
@@ -39,7 +39,7 @@ rc_ptr_base *__thiscall COMClass::lockServer(rc_ptr_base *this, char a2)
       do /*0x76703f*/
       {
         v5 -= 2; /*0x76702e*/
-        v5->vfptr = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x767033*/
+        v5->vfptr = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x767033*/
         ComPtr::Release(v5); /*0x767039*/
         --v7; /*0x76703e*/
       }
@@ -51,7 +51,7 @@ rc_ptr_base *__thiscall COMClass::lockServer(rc_ptr_base *this, char a2)
   }
   else
   {
-    this->vfptr = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x76705a*/
+    this->vfptr = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x76705a*/
     ComPtr::Release(this); /*0x767060*/
     if ( (a2 & 1) != 0 ) /*0x767068*/
       __3_YAXPAX_Z(this); /*0x76706b*/

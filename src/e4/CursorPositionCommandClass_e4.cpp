@@ -8,7 +8,7 @@ unsigned int * CursorPositionCommandClass::Constructor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_537E70(_DWORD *this)
 {
-  *this = &CursorPositionCommandClass::`vftable'; /*0x537e72*/
+  *this = &vt_CursorPositionCommandClass; /*0x537e72*/
   return this; /*0x537e78*/
 }
 }

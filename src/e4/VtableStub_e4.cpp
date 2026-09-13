@@ -9,7 +9,7 @@ int VtableStub_5CB6C0()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall VtableStub::5CB6C0(_DWORD *this)
 {
-  *this = &MSAnim::`vftable'; /*0x5cb6c0*/
+  *this = &vt_MSAnim; /*0x5cb6c0*/
 }
 }
 } // namespace gamemd

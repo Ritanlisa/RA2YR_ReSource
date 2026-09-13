@@ -326,20 +326,20 @@ LABEL_9:
 LABEL_13:
         v5 = 0; /*0x6ac64f*/
         if ( (int)g_TriggerClassCount <= 0 ) /*0x6ac659*/
-          return result->__pad_0; /*0x6ac659*/
+          return result->vtable0; /*0x6ac659*/
         result = (InfantryTypeClass *)g_TriggerTypeCount; /*0x6ac65f*/
-        while ( a2 != *(_DWORD *)result->__pad_0 ) /*0x6ac666*/
+        while ( a2 != *(_DWORD *)result->vtable0 ) /*0x6ac666*/
         {
           ++v5; /*0x6ac668*/
           result = (InfantryTypeClass *)((char *)result + 4); /*0x6ac669*/
           if ( v5 >= (int)g_TriggerClassCount ) /*0x6ac66e*/
-            return result->__pad_0; /*0x6ac66e*/
+            return result->vtable0; /*0x6ac66e*/
         }
       }
       else
       {
         result = (InfantryTypeClass *)MEMORY[0xA8B21C]; /*0x6ac63e*/
-        while ( a2 != *(_DWORD *)result->__pad_0 ) /*0x6ac645*/
+        while ( a2 != *(_DWORD *)result->vtable0 ) /*0x6ac645*/
         {
           ++v5; /*0x6ac647*/
           result = (InfantryTypeClass *)((char *)result + 4); /*0x6ac648*/
@@ -351,7 +351,7 @@ LABEL_13:
     else
     {
       result = (InfantryTypeClass *)g_UnitTypeCount2; /*0x6ac621*/
-      while ( a2 != *(_DWORD *)result->__pad_0 ) /*0x6ac628*/
+      while ( a2 != *(_DWORD *)result->vtable0 ) /*0x6ac628*/
       {
         ++v5; /*0x6ac62a*/
         result = (InfantryTypeClass *)((char *)result + 4); /*0x6ac62b*/
@@ -390,7 +390,7 @@ LABEL_13:
   else
   {
     if ( result != (InfantryTypeClass *)57 && result != (InfantryTypeClass *)32 && result != (InfantryTypeClass *)31 ) /*0x6ac6af*/
-      return result->__pad_0; /*0x6ac6af*/
+      return result->vtable0; /*0x6ac6af*/
     v7 = 1; /*0x6ac6b1*/
   }
   v8 = 997 * v7; /*0x6ac6e3*/
@@ -408,7 +408,7 @@ LABEL_13:
 LABEL_38:
   result = (InfantryTypeClass *)((char *)&aP2->field_0 + *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] + 1); /*0x6ac71a*/
   *(this + 5352) = result; /*0x6ac728*/
-  return result->__pad_0; /*0x6ac670*/
+  return result->vtable0; /*0x6ac670*/
 }
 }
 } // namespace gamemd
@@ -1590,7 +1590,7 @@ int __stdcall TActionClass::SaveLoad_Prefix(AbstractClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &TActionClass::`vftable'; /*0x6e3dd4*/
       *(_DWORD *)&aP0->__pad_0[4] = &TActionClass::`vftable'; /*0x6e3dda*/
       *(_DWORD *)&aP0->__pad_0[8] = &TActionClass::`vftable'; /*0x6e3de1*/
-      *(_DWORD *)&aP0->__pad_0[12] = &TActionClass::`vftable'; /*0x6e3de8*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_TActionClass; /*0x6e3de8*/
     }
     ObjectPtr::RegisterForTracking( /*0x6e3df8*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
@@ -1999,7 +1999,7 @@ int __thiscall TActionClass::TActionClass(int this)
   *(_DWORD *)this = &TEventClass::`vftable'; /*0x71e6c1*/
   this->vtable1 = &TEventClass::`vftable'; /*0x71e6c7*/
   this->vtable2 = &TEventClass::`vftable'; /*0x71e6ce*/
-  this->vtable3 = &TEventClass::`vftable'; /*0x71e6d5*/
+  this->vtable3 = &vt_TEventClass; /*0x71e6d5*/
   v2 = MEMORY[0xB0F1B0]; /*0x71e6dc*/
   if ( MEMORY[0xB0F1B0] < MEMORY[0xB0F1A8] /*0x71e71a*/
     || (MEMORY[0xB0F1AD] || !MEMORY[0xB0F1A8])

@@ -45,7 +45,7 @@ char sub_52CB90()
         v2[1] = 0; /*0x52cc0e*/
         v2[2] = 0; /*0x52cc13*/
         GenericList::Constructor(v2 + 3); /*0x52cc16*/
-        *v4 = &List<INIClass::INISection *>::`vftable'; /*0x52cc1b*/
+        *v4 = &vt_List_INIClass_INISection; /*0x52cc1b*/
         v3[10] = 0; /*0x52cc21*/
         v3[11] = 0; /*0x52cc24*/
         v3[12] = 0; /*0x52cc27*/
@@ -65,7 +65,7 @@ char sub_52CB90()
       CampaignClass::LoadFromINIList(v3); /*0x52cc67*/
       if ( v3 ) /*0x52cc6e*/
         (*(void (__thiscall **)(_DWORD *, int))*v3)(v3, 1); /*0x52cc76*/
-      v11[0] = &CCFileClass::`vftable'; /*0x52cc7c*/
+      v11[0] = &vt_CCFileClass; /*0x52cc7c*/
       v13 = 0; /*0x52cc84*/
       Vector::Clear(v12); /*0x52cc88*/
       v11[0] = &off_7E1668; /*0x52cc91*/
@@ -88,7 +88,7 @@ LABEL_15:
       v6[1] = 0; /*0x52ccee*/
       v6[2] = 0; /*0x52ccf3*/
       GenericList::Constructor(v6 + 3); /*0x52ccf6*/
-      *v8 = &List<INIClass::INISection *>::`vftable'; /*0x52ccff*/
+      *v8 = &vt_List_INIClass_INISection; /*0x52ccff*/
       v7[10] = 0; /*0x52cd08*/
       v7[11] = 0; /*0x52cd0b*/
       v7[12] = 0; /*0x52cd0e*/
@@ -101,7 +101,7 @@ LABEL_15:
       CampaignClass::LoadFromINIList(v7); /*0x52cd2c*/
       (*(void (__thiscall **)(_DWORD *, int))*v7)(v7, 1); /*0x52cd37*/
     }
-    v11[0] = &CCFileClass::`vftable'; /*0x52cd3d*/
+    v11[0] = &vt_CCFileClass; /*0x52cd3d*/
     v13 = 0; /*0x52cd45*/
     Vector::Clear(v12); /*0x52cd49*/
     v11[0] = &off_7E1668; /*0x52cd52*/

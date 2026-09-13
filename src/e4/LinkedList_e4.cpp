@@ -261,7 +261,7 @@ LABEL_61:
     goto LABEL_61; /*0x4794f7*/
   v15 = CCFileClass::Construct(&v23, (char *)&stru_81C200.ambientSoundController[4]); /*0x479526*/
   v16 = (*(int (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)v15->__pad_0 + 20))(v15, 0); /*0x47953f*/
-  v24[0] = &CCFileClass::`vftable'; /*0x479541*/
+  v24[0] = &vt_CCFileClass; /*0x479541*/
   v28 = 0; /*0x479545*/
   Vector::Clear((int)v26); /*0x47954c*/
   v24[0] = &off_7E1668; /*0x47955a*/
@@ -298,7 +298,7 @@ LABEL_58:
   sprintf((char *const)&Buffer.Previous, (ObjectClass *)&stru_81C200.uniqueId, (INIClass *)aP2); /*0x4795e4*/
   v19 = CCFileClass::Construct(v24, (char *)&Buffer.Previous); /*0x4795f5*/
   v20 = (*(int (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)v19->__pad_0 + 20))(v19, 0); /*0x479609*/
-  v23 = &CCFileClass::`vftable'; /*0x47960b*/
+  v23 = &vt_CCFileClass; /*0x47960b*/
   v27 = 0; /*0x47960f*/
   Vector::Clear((int)v25); /*0x479616*/
   v23 = (void **)&off_7E1668; /*0x47961f*/

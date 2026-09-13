@@ -461,7 +461,7 @@ _DWORD *__thiscall BuildingPlacement_SelectCells(int *this, int a2)
   if ( v6 ) /*0x594fd8*/
   {
     VectorClass::CellConstructor(v6, 0, 0); /*0x594fde*/
-    *v7 = &DynamicVectorClass<Cell>::`vftable'; /*0x594fe3*/
+    *v7 = &vt_DynamicVectorClass_Cell; /*0x594fe3*/
     v7[5] = 10; /*0x594fe9*/
     v7[4] = 0; /*0x594ff0*/
     v35 = v7; /*0x594ff3*/

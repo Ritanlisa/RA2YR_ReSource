@@ -24,7 +24,7 @@ int __thiscall FootClass::Destruct(void *this)
   *(_DWORD *)this = &FootClass::`vftable'; /*0x4d359d*/
   this->vtable1 = &FootClass::`vftable'; /*0x4d35a5*/
   this->vtable2 = &FootClass::`vftable'; /*0x4d35ac*/
-  this->vtable3 = &FootClass::`vftable'; /*0x4d35b3*/
+  this->vtable3 = &vt_FootClass; /*0x4d35b3*/
   if ( v2 && MEMORY[0xA8D63C].__pad_1258[268] ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(v2, (IUnknown *)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
   v11 = this; /*0x4d35dd*/
@@ -58,7 +58,7 @@ int __thiscall FootClass::Destruct(void *this)
   if ( v7 ) /*0x4d368b*/
     (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v7 + 8))(this->locomotor); /*0x4d3690*/
   v8 = (CCINIClass *)*((_DWORD *)this + 364); /*0x4d3693*/
-  this->FootClass_field_abstract_array_5AC = &VectorClass<AbstractClass *>::`vftable'; /*0x4d36a0*/
+  this->FootClass_field_abstract_array_5AC = &vt_VectorClass_AbstractClass; /*0x4d36a0*/
   if ( v8 && *((_BYTE *)this + 1465) ) /*0x4d36a8*/
   {
     __3_YAXPAX_Z(v8); /*0x4d36b1*/
@@ -67,7 +67,7 @@ int __thiscall FootClass::Destruct(void *this)
   *((_BYTE *)this + 1465) = 0; /*0x4d36bf*/
   *((_DWORD *)this + 365) = 0; /*0x4d36c5*/
   v9 = (CCINIClass *)*((_DWORD *)this + 355); /*0x4d36cb*/
-  this->unknownAbstractArray588 = &VectorClass<AbstractClass *>::`vftable'; /*0x4d36d1*/
+  this->unknownAbstractArray588 = &vt_VectorClass_AbstractClass; /*0x4d36d1*/
   if ( v9 && *((_BYTE *)this + 1429) ) /*0x4d36dc*/
   {
     __3_YAXPAX_Z(v9); /*0x4d36e5*/

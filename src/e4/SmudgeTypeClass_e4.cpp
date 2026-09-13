@@ -22,7 +22,7 @@ char *__thiscall SmudgeTypeClass::SmudgeTypeClass(char *this, ObjectClass *aP1)
   *(_DWORD *)this = &SmudgeTypeClass::`vftable'; /*0x6b529b*/
   this->vtable1 = &SmudgeTypeClass::`vftable'; /*0x6b52a1*/
   this->vtable2 = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
-  this->vtable3 = &SmudgeTypeClass::`vftable'; /*0x6b52ae*/
+  this->vtable3 = &vt_SmudgeTypeClass; /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x6b52b5*/
   *(_WORD *)(this + 559) = 1; /*0x6b52ba*/
   *(this + 561) = 0; /*0x6b52c7*/
@@ -229,7 +229,7 @@ int __stdcall SmudgeTypeClass::LoadTypeData(ObjectTypeClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &SmudgeTypeClass::`vftable'; /*0x6b5874*/
       *(_DWORD *)&aP0->__pad_0[4] = &SmudgeTypeClass::`vftable'; /*0x6b587a*/
       *(_DWORD *)&aP0->__pad_0[8] = &SmudgeTypeClass::`vftable'; /*0x6b5881*/
-      *(_DWORD *)&aP0->__pad_0[12] = &SmudgeTypeClass::`vftable'; /*0x6b5888*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_SmudgeTypeClass; /*0x6b5888*/
     }
     VoxelAnimType::LoadAnim(aP0->__pad_0); /*0x6b5891*/
     ObjectTypeClass::Load2DArt(aP0->__pad_0); /*0x6b5898*/
@@ -278,7 +278,7 @@ SmudgeTypeClass *__fastcall SmudgeTypeClass::ddtor(void **this, AbstractClass *a
   *this = &SmudgeTypeClass::`vftable'; /*0x6b616a*/
   *(this + 1) = &SmudgeTypeClass::`vftable'; /*0x6b6172*/
   *(this + 2) = &SmudgeTypeClass::`vftable'; /*0x6b6179*/
-  *(this + 3) = &SmudgeTypeClass::`vftable'; /*0x6b6180*/
+  *(this + 3) = &vt_SmudgeTypeClass; /*0x6b6180*/
   if ( v3 ) /*0x6b6187*/
   {
     __3_YAXPAX_Z(v3); /*0x6b618a*/

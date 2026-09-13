@@ -41,7 +41,7 @@ int CCFileClass::Destruct()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CCFileClass_Destructor(_DWORD *this)
 {
-  *this = &CCFileClass::`vftable'; /*0x535a76*/
+  *this = &vt_CCFileClass; /*0x535a76*/
   *(this + 25) = 0; /*0x535a7c*/
   Vector::Clear((int)(this + 22)); /*0x535a83*/
   *this = &off_7E1668; /*0x535a8a*/

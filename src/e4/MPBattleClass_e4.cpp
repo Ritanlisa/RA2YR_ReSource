@@ -23,7 +23,7 @@ _DWORD *__thiscall MPBattleClass::initGame(
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  this->vfptr = &MultiplayerBattle::`vftable'; /*0x5c0df8*/
+  this->vfptr = &vt_MultiplayerBattle; /*0x5c0df8*/
   return &this->vfptr; /*0x5c0e00*/
 }
 }
@@ -49,7 +49,7 @@ _DWORD *__thiscall MPBattleClass::MPFreeForAllClass(
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  this->vfptr = &FreeForAll::`vftable'; /*0x5c5d08*/
+  this->vfptr = &vt_FreeForAll; /*0x5c5d08*/
   return &this->vfptr; /*0x5c5d10*/
 }
 }
@@ -75,7 +75,7 @@ _DWORD *__thiscall MPBattleClass::MPManBattleClass(
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  *this = &MultiplayerManBattle::`vftable'; /*0x5c6178*/
+  *this = &vt_MultiplayerManBattle; /*0x5c6178*/
   return this; /*0x5c6180*/
 }
 }
@@ -101,7 +101,7 @@ _DWORD *__thiscall MPBattleClass::MPMegawealthClass(
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  *this = &Megawealth::`vftable'; /*0x5c9408*/
+  *this = &vt_Megawealth; /*0x5c9408*/
   return this; /*0x5c9410*/
 }
 }
@@ -127,7 +127,7 @@ _DWORD *__thiscall MPBattleClass::MPSiegeClass(
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  *this = &MultiplayerSiege::`vftable'; /*0x5ca658*/
+  *this = &vt_MultiplayerSiege; /*0x5ca658*/
   return this; /*0x5ca660*/
 }
 }
@@ -347,7 +347,7 @@ _DWORD *__thiscall MPBattleClass::MPUnholyAllianceClass(
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  *this = &UnholyAlliance::`vftable'; /*0x5cb3c8*/
+  *this = &vt_UnholyAlliance; /*0x5cb3c8*/
   return this; /*0x5cb3d0*/
 }
 }
@@ -538,7 +538,7 @@ int sub_5D4C50()
   MEMORY[0xABFC98] = 0; /*0x5d4c5c*/
   MEMORY[0xABFC9C] = 1; /*0x5d4c61*/
   MEMORY[0xABFC9D] = 0; /*0x5d4c68*/
-  MEMORY[0xABFC90] = (int)&DynamicVectorClass<HWND__ *>::`vftable'; /*0x5d4c6d*/
+  MEMORY[0xABFC90] = (int)&vt_DynamicVectorClass_HWND; /*0x5d4c6d*/
   MEMORY[0xABFCA4] = 10; /*0x5d4c77*/
   MEMORY[0xABFCA0] = 0; /*0x5d4c81*/
   return atexit(sub_5D4C90); /*0x5d4c8c*/
@@ -555,7 +555,7 @@ int sub_5D4CD0()
   MEMORY[0xABFCC0] = 0; /*0x5d4cdc*/
   MEMORY[0xABFCC4] = 1; /*0x5d4ce1*/
   MEMORY[0xABFCC5] = 0; /*0x5d4ce8*/
-  MEMORY[0xABFCB8] = (int)&DynamicVectorClass<AcceleratorTracker>::`vftable'; /*0x5d4ced*/
+  MEMORY[0xABFCB8] = (int)&vt_DynamicVectorClass_AcceleratorTracker; /*0x5d4ced*/
   MEMORY[0xABFCCC] = 10; /*0x5d4cf7*/
   MEMORY[0xABFCC8] = 0; /*0x5d4d01*/
   return atexit(sub_5D4D10); /*0x5d4d0c*/

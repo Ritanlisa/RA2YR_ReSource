@@ -13,7 +13,7 @@ CreateGameDialogControl *__thiscall WonlineStringDialogControl_12_::Constructor_
         DialogControl_OwnerDraw *this,
         char a2)
 {
-  this->vfptr = &WonlineStringDialogControl::`vftable'; /*0x7ac636*/
+  this->vfptr = &vt_WonlineStringDialogControl; /*0x7ac636*/
   DeleteAndZero((void **)this + 3); /*0x7ac63c*/
   this->vfptr = &off_7F7624; /*0x7ac643*/
   OwnerDrawControl::InitVtable(this); /*0x7ac649*/
@@ -305,7 +305,7 @@ VectorClass *__thiscall WonlineStringDialogControl_12_::QueryInterface(_DWORD *t
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x7ad373*/
-  *this = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x7ad376*/
+  *this = &vt_VectorClass_tConnInfoStruct; /*0x7ad376*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x7ad380*/
   {
     __3_YAXPAX_Z(v3); /*0x7ad388*/
@@ -332,7 +332,7 @@ DynamicVector *__thiscall WonlineStringDialogControl_12_::Constructor_VectorClas
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x7ad3c3*/
-  *this = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x7ad3c6*/
+  *this = &vt_VectorClass_tConnInfoStruct; /*0x7ad3c6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x7ad3d0*/
   {
     __3_YAXPAX_Z(v3); /*0x7ad3d8*/
@@ -474,7 +474,7 @@ LONG __stdcall WonlineStringDialogControl_28_::_vt02(char *Block)
   v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ad654*/
   if ( !v1 && Block ) /*0x7ad65c*/
   {
-    *(_DWORD *)Block = &ATL::CComObject<CDownloadEventSink>::`vftable'; /*0x7ad663*/
+    *(_DWORD *)Block = &vt_ATL_CComObject_CDownloadEventSink; /*0x7ad663*/
     *((_DWORD *)Block + 1) = 1; /*0x7ad669*/
     InterlockedDecrement(&Addend); /*0x7ad66f*/
     DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ad675*/

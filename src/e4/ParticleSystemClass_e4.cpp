@@ -265,7 +265,7 @@ VectorClass *__thiscall ParticleSystemClass_16_::QueryInterface(_DWORD *this, ch
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4efd53*/
-  *this = &VectorClass<SmudgeClass *>::`vftable'; /*0x4efd56*/
+  *this = &vt_VectorClass_SmudgeClass; /*0x4efd56*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4efd60*/
   {
     __3_YAXPAX_Z(v3); /*0x4efd68*/
@@ -696,7 +696,7 @@ DynamicVector *__thiscall ParticleSystemClass_32_::Constructor_VectorClass_Build
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4ef5d3*/
-  *this = &VectorClass<BuildingClass *>::`vftable'; /*0x4ef5d6*/
+  *this = &vt_VectorClass_BuildingClass; /*0x4ef5d6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4ef5e0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef5e8*/
@@ -721,7 +721,7 @@ VectorClass *__thiscall ParticleSystemClass_32_::QueryInterface(_DWORD *this, ch
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4efdf3*/
-  *this = &VectorClass<TerrainClass *>::`vftable'; /*0x4efdf6*/
+  *this = &vt_VectorClass_TerrainClass; /*0x4efdf6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4efe00*/
   {
     __3_YAXPAX_Z(v3); /*0x4efe08*/
@@ -746,7 +746,7 @@ DynamicVector *__thiscall ParticleSystemClass_32_::Constructor_VectorClass_Terra
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4efe43*/
-  *this = &VectorClass<TerrainClass *>::`vftable'; /*0x4efe46*/
+  *this = &vt_VectorClass_TerrainClass; /*0x4efe46*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4efe50*/
   {
     __3_YAXPAX_Z(v3); /*0x4efe58*/
@@ -771,7 +771,7 @@ DynamicVector *__thiscall ParticleSystemClass_32_::Constructor_VectorClass_Aircr
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4efee3*/
-  *this = &VectorClass<AircraftClass *>::`vftable'; /*0x4efee6*/
+  *this = &vt_VectorClass_AircraftClass; /*0x4efee6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4efef0*/
   {
     __3_YAXPAX_Z(v3); /*0x4efef8*/

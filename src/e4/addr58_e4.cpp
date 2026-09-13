@@ -17,12 +17,12 @@ int * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
 int *__stdcall FindCliffSeedCell(int *a0, IUnknown *aP1, IUnknown *aP2)
 {
   unsigned int v3; // eax
-  _DWORD *v4; // eax
-  _DWORD *v5; // ecx
+  VectorClass *v4; // eax
+  VectorClass *v5; // ecx
   int v7; // eax
   TagClass *v8; // eax
   char *NeighbourContent; // edi
-  _DWORD *v10; // ebp
+  VectorClass *v10; // ebp
   char *v11; // ebx
   VectorClass *v12; // esi
   TagClass *v13; // ebx
@@ -38,34 +38,34 @@ int *__stdcall FindCliffSeedCell(int *a0, IUnknown *aP1, IUnknown *aP2)
   unsigned int v23; // [esp+20h] [ebp-4h]
 
   v3 = SLOWORD(aP1->field_0) + (SHIWORD(aP1->field_0) << 9); /*0x5835e1*/
-  if ( v3 < 0x40000 && (v4 = *(_DWORD **)(*(_DWORD *)&stru_87C374.__pad_14B0[8448] + 4 * v3)) != 0 ) /*0x5835f7*/
+  if ( v3 < 0x40000 && (v4 = *(VectorClass **)(*(_DWORD *)&stru_87C374.__pad_14B0[8448] + 4 * v3)) != 0 ) /*0x5835f7*/
   {
     v5 = v4; /*0x5835f9*/
   }
   else
   {
-    v5 = g_CellClassArray; /*0x5835ff*/
+    v5 = (VectorClass *)g_CellClassArray; /*0x5835ff*/
     g_Map_GlobalCellIndex = (IUnknown *)aP1->field_0; /*0x583604*/
   }
-  if ( (v5[80] & 0x100) != 0 ) /*0x583618*/
+  if ( ((int)v5[20].vtable0 & 0x100) != 0 ) /*0x583618*/
   {
-    v7 = -((v5[80] & 0x800) != 0); /*0x583631*/
+    v7 = -(((int)v5[20].vtable0 & 0x800) != 0); /*0x583631*/
     LOBYTE(v7) = v7 & 0xFE; /*0x583634*/
     v8 = (TagClass *)(v7 + 4); /*0x583637*/
     NeighbourContent = (char *)v5; /*0x58363b*/
     v22 = v8; /*0x58363d*/
-    v10 = v5 + 80; /*0x583644*/
-    v11 = (char *)(v5 + 80); /*0x583649*/
+    v10 = v5 + 20; /*0x583644*/
+    v11 = (char *)&v5[20]; /*0x583649*/
     v23 = ((_BYTE)v8 - 4) & 7; /*0x58364b*/
-    v12 = (VectorClass *)v5; /*0x58364f*/
+    v12 = v5; /*0x58364f*/
     aP1 = (IUnknown *)g_MapSeedState; /*0x583657*/
     v21 = g_MapSeedState; /*0x58365b*/
     while ( 1 ) /*0x583665*/
     {
-      if ( (*v10 & 0x100) != 0 ) /*0x58366b*/
+      if ( ((int)v10->vtable0 & 0x100) != 0 ) /*0x58366b*/
       {
         NeighbourContent = (char *)Cell::GetNeighbourContent(NeighbourContent, (unsigned int)v8); /*0x583675*/
-        v10 = NeighbourContent + 320; /*0x583680*/
+        v10 = (VectorClass *)(NeighbourContent + 320); /*0x583680*/
         if ( (*((_DWORD *)NeighbourContent + 80) & 0x100) == 0 /*0x5836a5*/
           && (Cell::IsInRange((int *)NeighbourContent) || Cell::IsInRange2((int *)NeighbourContent))
           && *((_DWORD *)NeighbourContent + 59) != 3 )
@@ -76,18 +76,15 @@ int *__stdcall FindCliffSeedCell(int *a0, IUnknown *aP1, IUnknown *aP2)
       if ( (*(_DWORD *)v11 & 0x100) == 0 ) /*0x5836b3*/
         goto LABEL_22; /*0x5836b3*/
       v12 = (VectorClass *)Cell::GetNeighbourContent(v12, v23); /*0x5836c1*/
-      v11 = &v12->__pad_4C[244]; /*0x5836cc*/
-      if ( (*(_DWORD *)&v12->__pad_4C[244] & 0x100) == 0 ) /*0x5836d2*/
+      v11 = (char *)&v12[20]; /*0x5836cc*/
+      if ( ((int)v12[20].vtable0 & 0x100) == 0 ) /*0x5836d2*/
       {
-        if ( (Cell::IsInRange((int *)v12->__pad_0) || Cell::IsInRange2((int *)v12->__pad_0)) /*0x5836f1*/
-          && *(_DWORD *)&v12->__pad_4C[160] != 3 )
-        {
-          v21 = *(TagClass **)&v12->__pad_18[12]; /*0x5836f6*/
-        }
+        if ( (Cell::IsInRange((int *)v12) || Cell::IsInRange2((int *)v12)) && *(_DWORD *)&v12[14].IsInitialized != 3 ) /*0x5836f1*/
+          v21 = (TagClass *)v12[2].Items; /*0x5836f6*/
         if ( (*(_DWORD *)v11 & 0x100) == 0 ) /*0x5836ff*/
         {
 LABEL_22:
-          if ( (*v10 & 0x100) == 0 ) /*0x58370b*/
+          if ( ((int)v10->vtable0 & 0x100) == 0 ) /*0x58370b*/
             break; /*0x58370b*/
         }
       }
@@ -123,7 +120,7 @@ LABEL_28:
   }
   else
   {
-    *a0 = v5[9]; /*0x583621*/
+    *a0 = (int)v5[2].Items; /*0x583621*/
     return a0; /*0x58361a*/
   }
 }
@@ -159,7 +156,7 @@ int __thiscall sub_583AD0(_DWORD *this, int *a2)
   int v23; // [esp+24h] [ebp-4h]
 
   VectorClass::Construct(&v18, 0, 0); /*0x583ae1*/
-  v18 = &DynamicVectorClass<int>::`vftable'; /*0x583af1*/
+  v18 = &vt_DynamicVectorClass_int; /*0x583af1*/
   v23 = 10; /*0x583af9*/
   v22 = 0; /*0x583b05*/
   *(_DWORD *)&MEMORY[0x87F8E4].__pad_18[8] = (char *)MEMORY[0x87F8E4].field_4 + MEMORY[0x87F8E4].field_0 + 1; /*0x583b0d*/
@@ -230,7 +227,7 @@ LABEL_16:
   *a2 = v12; /*0x583bfe*/
   if ( v12 < 0 ) /*0x583c00*/
   {
-    v18 = &VectorClass<int>::`vftable'; /*0x583c31*/
+    v18 = &vt_VectorClass_int; /*0x583c31*/
     if ( v11 && v21 ) /*0x583c41*/
       __3_YAXPAX_Z(v11); /*0x583c44*/
     return 0; /*0x583c4f*/
@@ -238,7 +235,7 @@ LABEL_16:
   else
   {
     v16 = *((_DWORD *)v11 + v12); /*0x583c02*/
-    v18 = &VectorClass<int>::`vftable'; /*0x583c06*/
+    v18 = &vt_VectorClass_int; /*0x583c06*/
     if ( v11 ) /*0x583c10*/
     {
       if ( v21 ) /*0x583c18*/
@@ -695,7 +692,7 @@ int __stdcall ScanBuildingPlacementCells(MouseClass *aP0, VectorClass *aP1, Mous
           g_Map_GlobalCellIndex = v17; /*0x588821*/
           v11 = g_CellClassArray; /*0x588827*/
         }
-        if ( aP1->field_30 == v11[20] ) /*0x588836*/
+        if ( aP1[3].vtable0 == (void *)v11[20] ) /*0x588836*/
           break; /*0x588836*/
       }
       v5 = v19; /*0x588838*/
@@ -1698,7 +1695,7 @@ void __cdecl sub_58BC70()
 {
   if ( (byte_ABDFB0 & 1) == 0 ) /*0x58bc7a*/
   {
-    g_RandomMap_BuildObject = (int)&VectorClass<MapRegionClass *>::`vftable'; /*0x58bc7e*/
+    g_RandomMap_BuildObject = (int)&vt_VectorClass_MapRegionClass; /*0x58bc7e*/
     byte_ABDFB0 |= 1u; /*0x58bc91*/
     if ( g_RandomMap_TerrainState ) /*0x58bc97*/
     {
@@ -1834,7 +1831,7 @@ void sub_58C100()
         while ( v2 < g_RandomMap_TileData ); /*0x58c182*/
       }
       v3 = (void *)v1[11]; /*0x58c184*/
-      v1[10] = &VectorClass<Cell>::`vftable'; /*0x58c187*/
+      v1[10] = &vt_VectorClass_Cell; /*0x58c187*/
       if ( v3 ) /*0x58c190*/
       {
         if ( *((_BYTE *)v1 + 53) ) /*0x58c192*/
@@ -2273,7 +2270,7 @@ LABEL_32:
             while ( v26 < g_RandomMap_TileData ); /*0x58ee5c*/
           }
           v27 = *(void **)(v25 + 44); /*0x58ee5e*/
-          *(_DWORD *)(v25 + 40) = &VectorClass<Cell>::`vftable'; /*0x58ee61*/
+          *(_DWORD *)(v25 + 40) = &vt_VectorClass_Cell; /*0x58ee61*/
           if ( v27 ) /*0x58ee66*/
           {
             if ( *(_BYTE *)(v25 + 53) ) /*0x58ee68*/

@@ -14,7 +14,7 @@ void __thiscall WinsockInterfaceClass_Destructor(int this)
   void *v5; // eax
 
   v2 = *(_BYTE *)(this + 258152); /*0x7b1ab6*/
-  *(_DWORD *)this = &WinsockInterfaceClass::`vftable'; /*0x7b1abc*/
+  *(_DWORD *)this = &vt_WinsockInterfaceClass; /*0x7b1abc*/
   if ( v2 ) /*0x7b1ac4*/
   {
     NetworkClass::UnregisterAsync((SOCKET *)this); /*0x7b1ac6*/
@@ -23,7 +23,7 @@ void __thiscall WinsockInterfaceClass_Destructor(int this)
     *(_BYTE *)(this + 258152) = 0; /*0x7b1ad8*/
   }
   v3 = *(void **)(this + 60); /*0x7b1ade*/
-  *(_DWORD *)(this + 56) = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1ae1*/
+  *(_DWORD *)(this + 56) = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1ae1*/
   if ( v3 && *(_BYTE *)(this + 69) ) /*0x7b1aec*/
   {
     __3_YAXPAX_Z(v3); /*0x7b1af2*/
@@ -32,7 +32,7 @@ void __thiscall WinsockInterfaceClass_Destructor(int this)
   *(_BYTE *)(this + 69) = 0; /*0x7b1afd*/
   *(_DWORD *)(this + 64) = 0; /*0x7b1b00*/
   v4 = *(void **)(this + 36); /*0x7b1b03*/
-  *(_DWORD *)(this + 32) = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1b06*/
+  *(_DWORD *)(this + 32) = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1b06*/
   if ( v4 && *(_BYTE *)(this + 45) ) /*0x7b1b11*/
   {
     __3_YAXPAX_Z(v4); /*0x7b1b17*/
@@ -41,7 +41,7 @@ void __thiscall WinsockInterfaceClass_Destructor(int this)
   *(_BYTE *)(this + 45) = 0; /*0x7b1b22*/
   *(_DWORD *)(this + 40) = 0; /*0x7b1b25*/
   v5 = *(void **)(this + 12); /*0x7b1b28*/
-  this->LocalAddress = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1b2b*/
+  this->LocalAddress = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1b2b*/
   if ( v5 && *(_BYTE *)(this + 21) ) /*0x7b1b36*/
   {
     __3_YAXPAX_Z(v5); /*0x7b1b3c*/
@@ -64,7 +64,7 @@ SOCKET *__thiscall WinsockInterfaceClass::Destru_vt00(SOCKET *this, char a2)
   void *v6; // eax
 
   v3 = *((_BYTE *)this + 258152); /*0x7b2786*/
-  *this = (SOCKET)&WinsockInterfaceClass::`vftable'; /*0x7b278c*/
+  *this = (SOCKET)&vt_WinsockInterfaceClass; /*0x7b278c*/
   if ( v3 ) /*0x7b2794*/
   {
     NetworkClass::UnregisterAsync(this); /*0x7b2796*/
@@ -73,7 +73,7 @@ SOCKET *__thiscall WinsockInterfaceClass::Destru_vt00(SOCKET *this, char a2)
     *((_BYTE *)this + 258152) = 0; /*0x7b27a8*/
   }
   v4 = (void *)*(this + 15); /*0x7b27ae*/
-  *(this + 14) = (SOCKET)&VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b27b1*/
+  *(this + 14) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b27b1*/
   if ( v4 && *((_BYTE *)this + 69) ) /*0x7b27bc*/
   {
     __3_YAXPAX_Z(v4); /*0x7b27c2*/
@@ -82,7 +82,7 @@ SOCKET *__thiscall WinsockInterfaceClass::Destru_vt00(SOCKET *this, char a2)
   *((_BYTE *)this + 69) = 0; /*0x7b27cd*/
   *(this + 16) = 0; /*0x7b27d0*/
   v5 = (void *)*(this + 9); /*0x7b27d3*/
-  *(this + 8) = (SOCKET)&VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b27d6*/
+  *(this + 8) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b27d6*/
   if ( v5 && *((_BYTE *)this + 45) ) /*0x7b27e1*/
   {
     __3_YAXPAX_Z(v5); /*0x7b27e7*/
@@ -91,7 +91,7 @@ SOCKET *__thiscall WinsockInterfaceClass::Destru_vt00(SOCKET *this, char a2)
   *((_BYTE *)this + 45) = 0; /*0x7b27f2*/
   *(this + 10) = 0; /*0x7b27f5*/
   v6 = (void *)*(this + 3); /*0x7b27f8*/
-  *(this + 2) = (SOCKET)&VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b27fb*/
+  *(this + 2) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b27fb*/
   if ( v6 && *((_BYTE *)this + 21) ) /*0x7b2806*/
   {
     __3_YAXPAX_Z(v6); /*0x7b280c*/

@@ -20,7 +20,7 @@ int __stdcall TubeClass::LoadState(AbstractClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &TubeClass::`vftable'; /*0x7281bf*/
       *(_DWORD *)&aP0->__pad_0[4] = &TubeClass::`vftable'; /*0x7281c5*/
       *(_DWORD *)&aP0->__pad_0[8] = &TubeClass::`vftable'; /*0x7281cc*/
-      *(_DWORD *)&aP0->__pad_0[12] = &TubeClass::`vftable'; /*0x7281d3*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_TubeClass; /*0x7281d3*/
     }
     return 0; /*0x7281da*/
   }

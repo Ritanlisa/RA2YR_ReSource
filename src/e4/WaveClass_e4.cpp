@@ -110,7 +110,7 @@ int __thiscall WaveClass::_vt05(#374 *this, int a2, int a3)
       WaveClass::Constructor_7632D0((_DWORD *)(v4 + 496), 0, 0); /*0x75f69f*/
       *(_DWORD *)v4 = &WaveClass::`vftable'; /*0x75f6a4*/
       *(_DWORD *)(v4 + 4) = &WaveClass::`vftable'; /*0x75f6aa*/
-      *(_DWORD *)(v4 + 8) = &WaveClass::`vftable'; /*0x75f6b1*/
+      *(_DWORD *)(v4 + 8) = &vt_WaveClass; /*0x75f6b1*/
       *(_DWORD *)(v4 + 12) = &off_7F6BC8; /*0x75f6b8*/
     }
     *(_DWORD *)(v4 + 332) = *(_DWORD *)(v4 + 176) == 3 ? v4 + 384 : v4 + 336;
@@ -204,7 +204,7 @@ WaveClass *__thiscall WaveClass::ddtor(void **this, char a2)
 
   *this = &WaveClass::`vftable'; /*0x763206*/
   *(this + 1) = &WaveClass::`vftable'; /*0x76320c*/
-  *(this + 2) = &WaveClass::`vftable'; /*0x763213*/
+  *(this + 2) = &vt_WaveClass; /*0x763213*/
   *(this + 3) = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x763221*/
   v6 = this; /*0x763236*/
@@ -220,7 +220,7 @@ WaveClass *__thiscall WaveClass::ddtor(void **this, char a2)
   }
   (*((void (__thiscall **)(void **))*(this + 124) + 3))(this + 124); /*0x76327e*/
   v4 = *(this + 125); /*0x763281*/
-  *(this + 124) = &VectorClass<CellClass *>::`vftable'; /*0x763284*/
+  *(this + 124) = &vt_VectorClass_CellClass; /*0x763284*/
   if ( v4 && *((_BYTE *)this + 509) ) /*0x76328e*/
   {
     __3_YAXPAX_Z(v4); /*0x763296*/

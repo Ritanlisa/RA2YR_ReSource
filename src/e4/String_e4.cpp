@@ -1418,10 +1418,10 @@ unsigned int __cdecl sub_7CCA34(unsigned __int8 *a1, unsigned int a2, unsigned _
   unsigned int v11; // [esp+10h] [ebp-4h] BYREF
 
   v11 = a2; /*0x7cca44*/
-  InterlockedIncrement(&dword_B78BA4); /*0x7cca48*/
-  if ( dword_B78BA0 ) /*0x7cca5c*/
+  InterlockedIncrement(&CRTGlobal_B78BA4); /*0x7cca48*/
+  if ( CRTGlobal_B78BA0 ) /*0x7cca5c*/
   {
-    InterlockedDecrement(&dword_B78BA4); /*0x7cca5f*/
+    InterlockedDecrement(&CRTGlobal_B78BA4); /*0x7cca5f*/
     _lock(19); /*0x7cca63*/
     v10 = 1; /*0x7cca69*/
   }
@@ -1443,11 +1443,11 @@ unsigned int __cdecl sub_7CCA34(unsigned __int8 *a1, unsigned int a2, unsigned _
         break; /*0x7cca90*/
       if ( v7 == 37 ) /*0x7cca94*/
       {
-        dword_B78BAC = 0; /*0x7ccac8*/
+        CRTGlobal_B78BAC = 0; /*0x7ccac8*/
         v8 = (char *)(v6 + 1); /*0x7ccacf*/
         if ( *v8 == 35 ) /*0x7ccad3*/
         {
-          dword_B78BAC = 1; /*0x7ccad5*/
+          CRTGlobal_B78BAC = 1; /*0x7ccad5*/
           ++v8; /*0x7ccadf*/
         }
         _expandtime(*v8, a4, &a1, &v11, a5); /*0x7ccaf1*/
@@ -1470,7 +1470,7 @@ unsigned int __cdecl sub_7CCA34(unsigned __int8 *a1, unsigned int a2, unsigned _
   if ( v10 ) /*0x7ccb04*/
     _unlock(19); /*0x7ccb08*/
   else
-    InterlockedDecrement(&dword_B78BA4); /*0x7ccb11*/
+    InterlockedDecrement(&CRTGlobal_B78BA4); /*0x7ccb11*/
   if ( !v11 ) /*0x7ccb1a*/
     return 0; /*0x7ccb2a*/
   *a1 = 0; /*0x7ccb1f*/

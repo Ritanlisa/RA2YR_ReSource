@@ -292,7 +292,7 @@ int __fastcall AISelectTeamHouseClass(IUnknown *aP0, int a2, int a3)
   v55 = &aP0->field_0; /*0x6f0ab9*/
   Team_Helper_6F2230(&v56, 0, 0); /*0x6f0ac9*/
   v5 = *(_DWORD *)(a2 + 22016); /*0x6f0ace*/
-  v56 = &TypeList<TeamTypeClass const *>::`vftable'; /*0x6f0ad4*/
+  v56 = &vt_TypeList_TeamTypeClass_const; /*0x6f0ad4*/
   v54 = 0; /*0x6f0adf*/
   if ( v5 != -1 ) /*0x6f0ae3*/
     v54 = *(CCINIClass **)&HouseClass_Array->__pad_0[4 * v5]; /*0x6f0aee*/
@@ -360,7 +360,7 @@ int __fastcall AISelectTeamHouseClass(IUnknown *aP0, int a2, int a3)
     {
       v17 = 0; /*0x6f0bfa*/
       Team_Helper_6F27F0(&v62, 0, 0); /*0x6f0c02*/
-      v62 = &DynamicVectorClass<DiscreteDistributionClass<AITriggerTypeClass>::DistributionObject<AITriggerTypeClass *>>::`vftable'; /*0x6f0c0b*/
+      v62 = &vt_DynamicVectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass; /*0x6f0c0b*/
       v66 = 10; /*0x6f0c13*/
       v65 = 0; /*0x6f0c1b*/
       aP2 = 0; /*0x6f0c1f*/
@@ -452,7 +452,7 @@ LABEL_51:
         *((_DWORD *)Block + v30) = v29; /*0x6f0dbf*/
       }
 LABEL_58:
-      v62 = &VectorClass<DiscreteDistributionClass<AITriggerTypeClass>::DistributionObject<AITriggerTypeClass *>>::`vftable'; /*0x6f0dc2*/
+      v62 = &vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass; /*0x6f0dc2*/
       if ( v63 && v64 ) /*0x6f0dd8*/
         Team_Helper_6F26E0((char *)v63, 3); /*0x6f0de0*/
     }
@@ -473,7 +473,7 @@ LABEL_71:
     v40[2] = 0; /*0x6f0e73*/
     *((_BYTE *)v40 + 12) = 1; /*0x6f0e76*/
     *((_BYTE *)v40 + 13) = 0; /*0x6f0e7a*/
-    *v40 = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x6f0e7e*/
+    *v40 = &vt_VectorClass_TeamTypeClass_const; /*0x6f0e7e*/
     if ( !v41 ) /*0x6f0e84*/
     {
       VectorClass::ClearAndFree3((int)v40); /*0x6f0e8c*/
@@ -510,8 +510,8 @@ LABEL_71:
     v50 = v61; /*0x6f0f7f*/
     v40[4] = v60; /*0x6f0f85*/
     v40[5] = v50; /*0x6f0f88*/
-    *v40 = &TypeList<TeamTypeClass const *>::`vftable'; /*0x6f0f8b*/
-    v56 = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x6f0f91*/
+    *v40 = &vt_TypeList_TeamTypeClass_const; /*0x6f0f8b*/
+    v56 = &vt_VectorClass_TeamTypeClass_const; /*0x6f0f91*/
     if ( v31 ) /*0x6f0f99*/
     {
       if ( v59 ) /*0x6f0fa1*/
@@ -559,10 +559,10 @@ LABEL_70:
     v46[2] = 0; /*0x6f0f19*/
     *((_BYTE *)v46 + 12) = 1; /*0x6f0f1c*/
     *((_BYTE *)v46 + 13) = 0; /*0x6f0f20*/
-    *v46 = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x6f0f24*/
+    *v46 = &vt_VectorClass_TeamTypeClass_const; /*0x6f0f24*/
     Team_Helper_6F2780(v46, (IUnknown *)&v56); /*0x6f0f2a*/
-    *v40 = &TypeList<TeamTypeClass const *>::`vftable'; /*0x6f0f2f*/
-    v56 = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x6f0f35*/
+    *v40 = &vt_TypeList_TeamTypeClass_const; /*0x6f0f2f*/
+    v56 = &vt_VectorClass_TeamTypeClass_const; /*0x6f0f35*/
     v47 = (CCINIClass *)Block; /*0x6f0f3d*/
     v48 = v61; /*0x6f0f45*/
     v41 = Block == 0; /*0x6f0f49*/

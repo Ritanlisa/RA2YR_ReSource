@@ -138,7 +138,7 @@ _DWORD *__thiscall ConvertClass::Construct(
   *(this + 93) = 0; /*0x48e929*/
   *(this + 94) = 0; /*0x48e92f*/
   *(this + 95) = 0; /*0x48e935*/
-  *this = &ConvertClass::`vftable'; /*0x48e93b*/
+  *this = &vt_ConvertClass; /*0x48e93b*/
   if ( v9 ) /*0x48e941*/
     *(this + 91) = 1; /*0x48e943*/
   if ( *(this + 1) == 1 ) /*0x48e94f*/

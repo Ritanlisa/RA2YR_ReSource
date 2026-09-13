@@ -839,7 +839,7 @@ void __thiscall Radar::Update(IUnknown *this, IUnknown *aP1)
       v6 = 0; /*0x5845bd*/
       WordVector::Constructor(&v110, 0, 0); /*0x5845c1*/
       v7 = *(_DWORD **)&v2->__pad_68[4 * aP2 + 24]; /*0x5845c6*/
-      v110 = &DynamicVectorClass<unsigned short>::`vftable'; /*0x5845cd*/
+      v110 = &vt_DynamicVectorClass_unsigned_short_7E3844; /*0x5845cd*/
       v115 = 10; /*0x5845d5*/
       v114 = 0; /*0x5845dd*/
       v8 = v7[2]; /*0x5845e1*/
@@ -1082,7 +1082,7 @@ LABEL_73:
         aP3b = (IUnknown *)v50; /*0x584c81*/
       }
       while ( v50 < 6144 ); /*0x584c85*/
-      v110 = &VectorClass<unsigned short>::`vftable'; /*0x584c93*/
+      v110 = &vt_VectorClass_unsigned_short_7E3824; /*0x584c93*/
       if ( v111 && v113 ) /*0x584ca3*/
       {
         __3_YAXPAX_Z(v111); /*0x584ca6*/
@@ -1212,7 +1212,7 @@ LABEL_72:
           v109 = (__int16)v28; /*0x584920*/
           Radar::ProcessSubzone(v2, v91, (IUnknown *)aP2, aP3a, (IUnknown *)&v104, (IUnknown *)&v108); /*0x584925*/
           VectorClass::ConstructSubzone(&v123, 0, 0); /*0x584932*/
-          v123 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58493b*/
+          v123 = &vt_DynamicVectorClass_SubzoneConnectionStruct; /*0x58493b*/
           v128 = 10; /*0x584943*/
           v127 = 0; /*0x58494e*/
           VectorClass::CleanupSubzone((int)&v123); /*0x584955*/
@@ -1235,7 +1235,7 @@ LABEL_72:
             *(_DWORD *)(v39 + 32) = v131; /*0x5849e0*/
             v35 = &v2->__pad_8C[24 * aP2]; /*0x5849e3*/
           }
-          v123 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x5849eb*/
+          v123 = &vt_VectorClass_SubzoneConnectionStruct; /*0x5849eb*/
           if ( Block && BYTE1(v126) ) /*0x5849fd*/
           {
             __3_YAXPAX_Z(Block); /*0x584a00*/
@@ -1275,7 +1275,7 @@ LABEL_72:
     }
     while ( v76 >= 0 ); /*0x584d84*/
     MapClass::AllocArrays(&stru_87C374.__pad_14B0[4244]); /*0x584d8b*/
-    v110 = &VectorClass<unsigned short>::`vftable'; /*0x584d94*/
+    v110 = &vt_VectorClass_unsigned_short_7E3824; /*0x584d94*/
     if ( v111 && v113 ) /*0x584daa*/
       __3_YAXPAX_Z(v111); /*0x584db1*/
   }

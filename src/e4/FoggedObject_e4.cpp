@@ -22,7 +22,7 @@ _DWORD *__thiscall FoggedObject::DrawVector_Constructor(_DWORD *this, IUnknown *
   *(this + 2) = aP1; /*0x4d2dc0*/
   *((_BYTE *)this + 12) = 1; /*0x4d2dc3*/
   *((_BYTE *)this + 13) = 0; /*0x4d2dc7*/
-  *this = &VectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d2dca*/
+  *this = &vt_VectorClass_FoggedObjectClass_DrawRecord; /*0x4d2dca*/
   if ( !aP1 ) /*0x4d2dd0*/
     return this; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
@@ -81,7 +81,7 @@ VectorClass *__thiscall FoggedObject_DrawVector::QueryInterface(_DWORD *this, ch
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4d2d13*/
-  *this = &VectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d2d16*/
+  *this = &vt_VectorClass_FoggedObjectClass_DrawRecord; /*0x4d2d16*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4d2d20*/
   {
     __3_YAXPAX_Z(v3); /*0x4d2d28*/

@@ -101,18 +101,18 @@ int GameConfig_ComputeHash()
   v6[1] = 0; /*0x679de9*/
   v6[2] = 0; /*0x679ded*/
   GenericList::Constructor(v7); /*0x679df1*/
-  v7[0] = &List<INIClass::INISection *>::`vftable'; /*0x679dfa*/
+  v7[0] = &vt_List_INIClass_INISection; /*0x679dfa*/
   memset(&v7[7], 0, 12); /*0x679e07*/
   v8 = 0; /*0x679e13*/
   v9 = 0; /*0x679e17*/
   v10 = 0; /*0x679e1b*/
   v11 = 0; /*0x679e1f*/
   v6[0] = &CCINIClass_Vtable; /*0x679e23*/
-  CCFileClass::Construct(v12, unk_81F3C0); /*0x679e2b*/
+  CCFileClass::Construct(v12, aCoopcampmdIni); /*0x679e2b*/
   if ( CCINIClass::Load(v6, (int)v12, 0, 0) ) /*0x679e3b*/
     dword_B053B4 = Hash::ComputeHashSHA1((int)v6); /*0x679e4d*/
   byte_B053B8 = 1; /*0x679e59*/
-  v12[0] = &CCFileClass::`vftable'; /*0x679e60*/
+  v12[0] = &vt_CCFileClass; /*0x679e60*/
   v14 = 0; /*0x679e68*/
   Vector::Clear((int)v13); /*0x679e6f*/
   v12[0] = &off_7E1668; /*0x679e78*/

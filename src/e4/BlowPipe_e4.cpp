@@ -511,7 +511,7 @@ VectorClass *__thiscall BlowPipe_23_::Destructor(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x63ed93*/
-  *this = &VectorClass<PlanningNodeClass *>::`vftable'; /*0x63ed96*/
+  *this = &vt_VectorClass_PlanningNodeClass; /*0x63ed96*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x63eda0*/
   {
     __3_YAXPAX_Z(v3); /*0x63eda8*/
@@ -536,7 +536,7 @@ VectorClass *__thiscall BlowPipe_23_::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x63ee33*/
-  *this = &VectorClass<EventClass *>::`vftable'; /*0x63ee36*/
+  *this = &vt_VectorClass_EventClass; /*0x63ee36*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x63ee40*/
   {
     __3_YAXPAX_Z(v3); /*0x63ee48*/
@@ -561,7 +561,7 @@ DynamicVector *__thiscall BlowPipe_23_::Destructor_0(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x63ee83*/
-  *this = &VectorClass<EventClass *>::`vftable'; /*0x63ee86*/
+  *this = &vt_VectorClass_EventClass; /*0x63ee86*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x63ee90*/
   {
     __3_YAXPAX_Z(v3); /*0x63ee98*/
@@ -586,7 +586,7 @@ DynamicVector *__thiscall BlowPipe_23_::Destructor_1(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x63ef23*/
-  *this = &VectorClass<PlanningTokenClass *>::`vftable'; /*0x63ef26*/
+  *this = &vt_VectorClass_PlanningTokenClass; /*0x63ef26*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x63ef30*/
   {
     __3_YAXPAX_Z(v3); /*0x63ef38*/
@@ -769,7 +769,7 @@ DynamicVector *__thiscall BlowPipe_31_::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x63ede3*/
-  *this = &VectorClass<PlanningNodeClass *>::`vftable'; /*0x63ede6*/
+  *this = &vt_VectorClass_PlanningNodeClass; /*0x63ede6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x63edf0*/
   {
     __3_YAXPAX_Z(v3); /*0x63edf8*/

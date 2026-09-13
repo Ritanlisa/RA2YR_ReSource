@@ -28,7 +28,7 @@ int __thiscall SpawnManagerClass::SpawnManagerClass(int this, TechnoClass *aP1, 
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6b6c99*/
   SpawnControlVector::Constructor((_DWORD *)(this + 56), 0, 0); /*0x6b6ca7*/
-  this->spawns = &DynamicVectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b6cb0*/
+  this->spawns = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b6cb0*/
   *(_DWORD *)(this + 76) = 10; /*0x6b6cb6*/
   *(_DWORD *)(this + 72) = 0; /*0x6b6cbd*/
   v7 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b6cc0*/
@@ -41,7 +41,7 @@ int __thiscall SpawnManagerClass::SpawnManagerClass(int this, TechnoClass *aP1, 
   *(_DWORD *)this = &SpawnManagerClass::`vftable'; /*0x6b6cef*/
   this->vtable1 = &SpawnManagerClass::`vftable'; /*0x6b6cf5*/
   this->vtable2 = &SpawnManagerClass::`vftable'; /*0x6b6cfc*/
-  this->vtable3 = &SpawnManagerClass::`vftable'; /*0x6b6d03*/
+  this->vtable3 = &vt_SpawnManagerClass; /*0x6b6d03*/
   this->spawnType = a4; /*0x6b6d0a*/
   this->spawnCount = a5; /*0x6b6d0d*/
   this->SpawnManagerClass_field_34 = a6; /*0x6b6d10*/
@@ -121,7 +121,7 @@ int __thiscall sub_6B6EA0(int this)
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
   SpawnControlVector::Constructor((_DWORD *)(this + 56), 0, 0); /*0x6b6eb6*/
-  this->spawns = &DynamicVectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b6ebb*/
+  this->spawns = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b6ebb*/
   *(_DWORD *)(this + 76) = 10; /*0x6b6ec1*/
   *(_DWORD *)(this + 72) = 0; /*0x6b6ec8*/
   *(_DWORD *)(this + 80) = MEMORY[0xA8ED84]; /*0x6b6ed4*/
@@ -131,7 +131,7 @@ int __thiscall sub_6B6EA0(int this)
   *(_DWORD *)this = &SpawnManagerClass::`vftable'; /*0x6b6ee6*/
   this->vtable1 = &SpawnManagerClass::`vftable'; /*0x6b6eec*/
   this->vtable2 = &SpawnManagerClass::`vftable'; /*0x6b6ef3*/
-  this->vtable3 = &SpawnManagerClass::`vftable'; /*0x6b6efa*/
+  this->vtable3 = &vt_SpawnManagerClass; /*0x6b6efa*/
   this->owner = 0; /*0x6b6f01*/
   this->spawnOwner = 0; /*0x6b6f04*/
   this->spawnType = 0; /*0x6b6f07*/
@@ -178,7 +178,7 @@ void __thiscall sub_6B7010(int this)
   *(_DWORD *)this = &SpawnManagerClass::`vftable'; /*0x6b7015*/
   this->vtable1 = &SpawnManagerClass::`vftable'; /*0x6b701b*/
   this->vtable2 = &SpawnManagerClass::`vftable'; /*0x6b7022*/
-  this->vtable3 = &SpawnManagerClass::`vftable'; /*0x6b7029*/
+  this->vtable3 = &vt_SpawnManagerClass; /*0x6b7029*/
   if ( MEMORY[0xA8E9A0] ) /*0x6b7037*/
     TaskManager::Update((_DWORD *)this); /*0x6b7039*/
   for ( i = *(_DWORD *)(this + 72) - 1; i >= 0; --i ) /*0x6b7042*/
@@ -201,7 +201,7 @@ void __thiscall sub_6B7010(int this)
     while ( v4 < MEMORY[0xB0B890] ); /*0x6b70bb*/
   }
   v5 = *(void **)(this + 60); /*0x6b70bd*/
-  this->spawns = &VectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b70c0*/
+  this->spawns = &vt_VectorClass_SpawnManagerClass_SpawnControl; /*0x6b70c0*/
   if ( v5 && *(_BYTE *)(this + 69) ) /*0x6b70ca*/
   {
     __3_YAXPAX_Z(v5); /*0x6b70d2*/
@@ -414,7 +414,7 @@ int __stdcall SpawnManagerClass::LoadFromStream(int aP1, AbstractClass *aP1_4)
       *(_DWORD *)v2->__pad_0 = &SpawnManagerClass::`vftable'; /*0x6b7f5f*/
       *(_DWORD *)&v2->__pad_0[4] = &SpawnManagerClass::`vftable'; /*0x6b7f65*/
       *(_DWORD *)&v2->__pad_0[8] = &SpawnManagerClass::`vftable'; /*0x6b7f6c*/
-      *(_DWORD *)&v2->__pad_0[12] = &SpawnManagerClass::`vftable'; /*0x6b7f73*/
+      *(_DWORD *)&v2->__pad_0[12] = &vt_SpawnManagerClass; /*0x6b7f73*/
     }
     Prefix_0 = (*(int (__stdcall **)(AbstractClass *, int *, int, _DWORD))(*(_DWORD *)v3->__pad_0 + 12))(v3, &v16, 4, 0); /*0x6b7f88*/
     if ( Prefix_0 >= 0 ) /*0x6b7f8c*/
@@ -423,7 +423,7 @@ int __stdcall SpawnManagerClass::LoadFromStream(int aP1, AbstractClass *aP1_4)
       if ( v2 != (AbstractClass *)-56 ) /*0x6b7f97*/
       {
         SpawnControlVector::Constructor(&v2[1].abstractFlags, 0, 0); /*0x6b7f9d*/
-        *(_DWORD *)v6->__pad_0 = &DynamicVectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b7fa2*/
+        *(_DWORD *)v6->vtable0 = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b7fa2*/
         *(_DWORD *)&v2[2].__pad_0[4] = 10; /*0x6b7fa8*/
         *(_DWORD *)v2[2].__pad_0 = 0; /*0x6b7faf*/
       }
@@ -473,7 +473,7 @@ LABEL_20:
           if ( *(_DWORD *)v2[2].__pad_0 < referenceCount /*0x6b8020*/
             || (BYTE1(v2[1].NeedsSaveOrLink) || !referenceCount)
             && (v11 = *(_DWORD *)&v2[2].__pad_0[4], v11 > 0)
-            && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*(_DWORD *)v6->__pad_0 + 8))(
+            && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*(_DWORD *)v6->vtable0 + 8))(
                  &v2[1].abstractFlags,
                  referenceCount + v11,
                  0) )
@@ -564,7 +564,7 @@ _DWORD *__thiscall SpawnManagerClass::Constructor_6B83A0(_DWORD *this, DynamicVe
   *(this + 2) = aP1; /*0x6b83b0*/
   *((_BYTE *)this + 12) = 1; /*0x6b83b3*/
   *((_BYTE *)this + 13) = 0; /*0x6b83b7*/
-  *this = &VectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b83bb*/
+  *this = &vt_VectorClass_SpawnManagerClass_SpawnControl; /*0x6b83bb*/
   if ( aP1 ) /*0x6b83c1*/
   {
     if ( aP2 ) /*0x6b83c9*/
@@ -577,7 +577,7 @@ _DWORD *__thiscall SpawnManagerClass::Constructor_6B83A0(_DWORD *this, DynamicVe
       *((_BYTE *)this + 13) = 1; /*0x6b83df*/
     }
   }
-  *this = &DynamicVectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b83e3*/
+  *this = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b83e3*/
   *(this + 5) = 10; /*0x6b83e9*/
   *(this + 4) = 0; /*0x6b83f0*/
   return this; /*0x6b83f9*/
@@ -754,7 +754,7 @@ DynamicVector *__thiscall SpawnManagerClass_25_::QueryInterface(_DWORD *this, ch
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x6b8793*/
-  *this = &VectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b8796*/
+  *this = &vt_VectorClass_SpawnManagerClass_SpawnControl; /*0x6b8796*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x6b87a0*/
   {
     __3_YAXPAX_Z(v3); /*0x6b87a8*/

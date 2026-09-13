@@ -50,7 +50,7 @@ _DWORD *__thiscall AbstractClassVector::Construct(_DWORD *this, IUnknown *aP1, I
   *(this + 2) = aP1; /*0x4e0e8e*/
   *((_BYTE *)this + 12) = 1; /*0x4e0e91*/
   *((_BYTE *)this + 13) = 0; /*0x4e0e95*/
-  *this = &VectorClass<AbstractClass *>::`vftable'; /*0x4e0e98*/
+  *this = &vt_VectorClass_AbstractClass; /*0x4e0e98*/
   if ( aP1 ) /*0x4e0e9e*/
   {
     if ( aP2 ) /*0x4e0ea6*/

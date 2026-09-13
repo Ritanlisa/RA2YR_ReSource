@@ -20,7 +20,7 @@ int __thiscall sub_71A450(int this)
   *(_DWORD *)this = &TemporalClass::`vftable'; /*0x71a467*/
   this->vtable1 = &TemporalClass::`vftable'; /*0x71a46d*/
   this->vtable2 = &TemporalClass::`vftable'; /*0x71a474*/
-  this->vtable3 = &TemporalClass::`vftable'; /*0x71a47b*/
+  this->vtable3 = &vt_TemporalClass; /*0x71a47b*/
   if ( MEMORY[0xB0EC70] < MEMORY[0xB0EC68] /*0x71a4b7*/
     || (MEMORY[0xB0EC6D] || !MEMORY[0xB0EC68])
     && MEMORY[0xB0EC74] > 0
@@ -55,7 +55,7 @@ _DWORD *__thiscall TemporalClass::TemporalClass(_DWORD *this, TechnoClass *aP1)
   *this = &TemporalClass::`vftable'; /*0x71a501*/
   *(this + 1) = &TemporalClass::`vftable'; /*0x71a507*/
   *(this + 2) = &TemporalClass::`vftable'; /*0x71a50e*/
-  *(this + 3) = &TemporalClass::`vftable'; /*0x71a515*/
+  *(this + 3) = &vt_TemporalClass; /*0x71a515*/
   *(this + 9) = aP1; /*0x71a51c*/
   *(this + 10) = 0; /*0x71a51f*/
   *(this + 11) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x71a529*/
@@ -117,7 +117,7 @@ int __stdcall TemporalClass::LoadTemporal(AbstractClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &TemporalClass::`vftable'; /*0x71a687*/
       *(_DWORD *)&aP0->__pad_0[4] = &TemporalClass::`vftable'; /*0x71a68d*/
       *(_DWORD *)&aP0->__pad_0[8] = &TemporalClass::`vftable'; /*0x71a694*/
-      *(_DWORD *)&aP0->__pad_0[12] = &TemporalClass::`vftable'; /*0x71a69b*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_TemporalClass; /*0x71a69b*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x71a6ab*/
     ObjectPtr::RegisterForTracking( /*0x71a6b9*/
@@ -459,7 +459,7 @@ TemporalClass *__thiscall TemporalClass::ProcessEvent(_DWORD *this, char a2)
   *this = &TemporalClass::`vftable'; /*0x71b1bd*/
   *(this + 1) = &TemporalClass::`vftable'; /*0x71b1c3*/
   *(this + 2) = &TemporalClass::`vftable'; /*0x71b1ca*/
-  *(this + 3) = &TemporalClass::`vftable'; /*0x71b1d1*/
+  *(this + 3) = &vt_TemporalClass; /*0x71b1d1*/
   v5 = this; /*0x71b1df*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0EC60] + 16))(&MEMORY[0xB0EC60], &v5); /*0x71b1e3*/
   if ( v3 != -1 && v3 < MEMORY[0xB0EC70] && v3 < --MEMORY[0xB0EC70] ) /*0x71b1fe*/

@@ -25,7 +25,7 @@ char __thiscall InfantryTypeVector::Add(_DWORD *this, InfantryTypeClass *aP1)
   v6 = *(this + 4); /*0x512f55*/
   v7 = *(this + 1); /*0x512f58*/
   *(this + 4) = v6 + 1; /*0x512f5e*/
-  *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->__pad_0; /*0x512f68*/
+  *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->vtable0; /*0x512f68*/
   return 1; /*0x512f51*/
 }
 }
@@ -40,7 +40,7 @@ _DWORD *__thiscall InfantryTypeVector_Constructor2(_DWORD *this, int a2, int a3)
   *(this + 2) = a2; /*0x5138fe*/
   *((_BYTE *)this + 12) = 1; /*0x513901*/
   *((_BYTE *)this + 13) = 0; /*0x513905*/
-  *this = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x513908*/
+  *this = &vt_VectorClass_InfantryTypeClass_const; /*0x513908*/
   if ( a2 ) /*0x51390e*/
   {
     if ( a3 ) /*0x513916*/
@@ -65,7 +65,7 @@ _DWORD *__thiscall sub_5D89A0(_DWORD *this, int a2, int a3)
   *(this + 2) = a2; /*0x5d89ae*/
   *((_BYTE *)this + 12) = 1; /*0x5d89b1*/
   *((_BYTE *)this + 13) = 0; /*0x5d89b5*/
-  *this = &VectorClass<InfantryTypeClass *>::`vftable'; /*0x5d89b8*/
+  *this = &vt_VectorClass_InfantryTypeClass; /*0x5d89b8*/
   if ( a2 ) /*0x5d89be*/
   {
     if ( a3 ) /*0x5d89c6*/

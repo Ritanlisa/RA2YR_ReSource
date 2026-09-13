@@ -635,7 +635,7 @@ int __stdcall TEventClass::SaveLoad_Prefix(AbstractClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &TEventClass::`vftable'; /*0x71f8e4*/
       *(_DWORD *)&aP0->__pad_0[4] = &TEventClass::`vftable'; /*0x71f8ea*/
       *(_DWORD *)&aP0->__pad_0[8] = &TEventClass::`vftable'; /*0x71f8f1*/
-      *(_DWORD *)&aP0->__pad_0[12] = &TEventClass::`vftable'; /*0x71f8f8*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_TEventClass; /*0x71f8f8*/
     }
     ObjectPtr::RegisterForTracking( /*0x71f908*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
@@ -697,7 +697,7 @@ TEventClass *__thiscall TEventClass::Fire(void **this, char a2)
   *this = &TEventClass::`vftable'; /*0x71fa86*/
   *(this + 1) = &TEventClass::`vftable'; /*0x71fa8c*/
   *(this + 2) = &TEventClass::`vftable'; /*0x71fa93*/
-  *(this + 3) = &TEventClass::`vftable'; /*0x71fa9a*/
+  *(this + 3) = &vt_TEventClass; /*0x71fa9a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x71faa1*/
   v7 = this; /*0x71fab6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F658] + 16))(&MEMORY[0xB0F658], &v7); /*0x71faba*/

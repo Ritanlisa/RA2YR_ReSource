@@ -14,7 +14,7 @@ MultiplayerGameMode *__thiscall MultiplayerGameMode::QueryInterface(char *this, 
   void *v6; // eax
 
   v3 = 0; /*0x5d7f24*/
-  for ( *(_DWORD *)this = &MultiplayerGameMode::`vftable'; v3 < this->MultiplayerGameMode_field_0x18; ++v3 ) /*0x5d7f31*/
+  for ( *(_DWORD *)this = &vt_MultiplayerGameMode; v3 < this->MultiplayerGameMode_field_0x18; ++v3 ) /*0x5d7f31*/
   {
     v4 = *(void (__thiscall ****)(_DWORD, int))(this->MultiplayerGameMode_field_0x0C + 4 * v3); /*0x5d7f36*/
     if ( v4 ) /*0x5d7f3b*/
@@ -29,7 +29,7 @@ MultiplayerGameMode *__thiscall MultiplayerGameMode::QueryInterface(char *this, 
   DeleteAndZero::Alt((void **)this + 9); /*0x5d7f76*/
   DeleteAndZero::Alt((void **)this + 8); /*0x5d7f7e*/
   v6 = (void *)this->MultiplayerGameMode_field_0x0C; /*0x5d7f83*/
-  this->MultiplayerGameMode_field_0x08 = &VectorClass<MultiplayerTeam *>::`vftable'; /*0x5d7f86*/
+  this->MultiplayerGameMode_field_0x08 = &vt_VectorClass_MultiplayerTeam; /*0x5d7f86*/
   if ( v6 && *(this + 21) ) /*0x5d7f90*/
   {
     __3_YAXPAX_Z(v6); /*0x5d7f98*/
@@ -53,7 +53,7 @@ _DWORD *__thiscall VectorClass_Constructor_MultiplayerGameMode(_DWORD *this, int
   *(this + 2) = a2; /*0x5d89fe*/
   *((_BYTE *)this + 12) = 1; /*0x5d8a01*/
   *((_BYTE *)this + 13) = 0; /*0x5d8a05*/
-  *this = &VectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d8a08*/
+  *this = &vt_VectorClass_MultiplayerGameMode; /*0x5d8a08*/
   if ( a2 ) /*0x5d8a0e*/
   {
     if ( a3 ) /*0x5d8a16*/

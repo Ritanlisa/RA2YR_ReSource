@@ -25,7 +25,7 @@ int sub_539760()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_539760()
 {
-  unk_A9FA48 = unk_A9F9F8; /*0x539766*/
+  word_A9FA48 = unk_A9F9F8; /*0x539766*/
   unk_A9F9CC = unk_A9F9F8; /*0x53976b*/
   unk_A9FAB4 = 0; /*0x53977d*/
   unk_A9FABC = 0; /*0x539783*/
@@ -38,22 +38,22 @@ int sub_539760()
   unk_A9FAC8 = 0; /*0x5397ad*/
   unk_A9FAB8 = 0; /*0x5397b3*/
   unk_A9FACC = 0; /*0x5397b9*/
-  unk_A9FA70 = 0; /*0x5397bf*/
+  dword_A9FA70 = 0; /*0x5397bf*/
   if ( unk_A9FA64 && unk_A9FA6D ) /*0x5397cd*/
   {
     __3_YAXPAX_Z(unk_A9FA64); /*0x5397d0*/
     unk_A9FA64 = 0; /*0x5397d8*/
   }
   unk_A9FA6D = 0; /*0x5397e3*/
-  unk_A9FA68 = 0; /*0x5397eb*/
-  unk_A9F9E0 = 0; /*0x5397f1*/
+  dword_A9FA68 = 0; /*0x5397eb*/
+  dword_A9F9E0 = 0; /*0x5397f1*/
   if ( unk_A9F9D4 && unk_A9F9DD ) /*0x5397ff*/
   {
     __3_YAXPAX_Z(unk_A9F9D4); /*0x539802*/
     unk_A9F9D4 = 0; /*0x53980a*/
   }
   unk_A9F9DD = 0; /*0x539815*/
-  unk_A9F9D8 = 0; /*0x53981d*/
+  dword_A9F9D8 = 0; /*0x53981d*/
   unk_A9FA28 = 0; /*0x539823*/
   if ( unk_A9FA1C && unk_A9FA25 ) /*0x539831*/
   {
@@ -307,7 +307,7 @@ int __thiscall Map_Delete(int this)
   unknown_libname_73(v10); /*0x5add33*/
   v10[1] = Timer::GetTicks(); /*0x5add48*/
   v10[3] = 0; /*0x5add50*/
-  v8[0] = &MapSelect::`vftable'; /*0x5add5b*/
+  v8[0] = &vt_MapSelect; /*0x5add5b*/
   v3 = ScenarioClass::Load(v8, (ObjectClass *)this) == 0; /*0x5add71*/
   DeleteAndZero((int)v10); /*0x5add74*/
   MSEngine::Destructor((int)v9); /*0x5add7d*/
@@ -478,7 +478,7 @@ void sub_68C050()
     {
       VectorClass::Construct(&v13, 0, 0); /*0x68c086*/
       v2 = 10; /*0x68c091*/
-      v13 = &DynamicVectorClass<int>::`vftable'; /*0x68c096*/
+      v13 = &vt_DynamicVectorClass_int; /*0x68c096*/
       v18 = 10; /*0x68c09e*/
       v17 = 0; /*0x68c0a2*/
       v3 = 0; /*0x68c0ac*/
@@ -553,7 +553,7 @@ LABEL_25:
         goto LABEL_25; /*0x68c19f*/
       }
 LABEL_29:
-      v13 = &VectorClass<int>::`vftable'; /*0x68c1ca*/
+      v13 = &vt_VectorClass_int; /*0x68c1ca*/
       if ( Block ) /*0x68c1d9*/
       {
         if ( v16 ) /*0x68c1e1*/
@@ -717,7 +717,7 @@ const char *__fastcall Map_Delete_5ADE20(ObjectClass *a1, const char *a2)
   unknown_libname_73(v13); /*0x5ade50*/
   v13[1] = Timer::GetTicks(); /*0x5ade61*/
   v13[3] = 0; /*0x5ade72*/
-  v11[0] = &MapSelect::`vftable'; /*0x5ade7d*/
+  v11[0] = &vt_MapSelect; /*0x5ade7d*/
   v5 = !SessionClass::LoadGameSession(v11, a1, (CellStruct *)&v10); /*0x5ade93*/
   DeleteAndZero((int)v13); /*0x5ade96*/
   MSEngine::Destructor((int)v12); /*0x5ade9f*/
@@ -1180,7 +1180,7 @@ void sub_58CE90()
         while ( v4 < g_RandomMap_TileData ); /*0x58cf41*/
       }
       v5 = (void *)v3[11]; /*0x58cf43*/
-      v3[10] = &VectorClass<Cell>::`vftable'; /*0x58cf46*/
+      v3[10] = &vt_VectorClass_Cell; /*0x58cf46*/
       if ( v5 && *((_BYTE *)v3 + 53) ) /*0x58cf51*/
       {
         __3_YAXPAX_Z(v5); /*0x58cf57*/
@@ -1869,7 +1869,7 @@ _DWORD *__fastcall sub_769D70(_DWORD *a1, int a2)
 {
   a1[1] = a2; /*0x769d72*/
   a1[2] = 0; /*0x769d75*/
-  *a1 = &VectorCursor<TRect<int>,VectorClass<TRect<int>>>::`vftable'; /*0x769d7c*/
+  *a1 = &vt_VectorCursor_TRect_int_VectorClass_TRect_int; /*0x769d7c*/
   return a1; /*0x769d82*/
 }
 }
@@ -2500,7 +2500,7 @@ _DWORD *__thiscall Map_WorldDominationTour_20_::_vt06(_DWORD *this, _DWORD *a2, 
 
   v3 = *(this + 1) + 8 * a3; /*0x769cad*/
   ComPtr::Constructor(a2); /*0x769cb2*/
-  *a2 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x769cb7*/
+  *a2 = &vt_rc_ptr_WorldDominationTour_Territory; /*0x769cb7*/
   ComPtr::Set(a2, *(_DWORD *)(v3 + 4)); /*0x769cc3*/
   return a2; /*0x769cca*/
 }
@@ -2514,7 +2514,7 @@ VectorCursor * Map_WorldDominationTour_20::Constructor(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 VectorCursor *__thiscall Map_WorldDominationTour_20_::Constructor(_DWORD *this, char a2)
 {
-  *this = &VectorCursor<TRect<int>,VectorClass<TRect<int>>>::`vftable'; /*0x769dc9*/
+  *this = &vt_VectorCursor_TRect_int_VectorClass_TRect_int; /*0x769dc9*/
   if ( (a2 & 1) != 0 ) /*0x769dcf*/
     __3_YAXPAX_Z(this); /*0x769dd2*/
   return (VectorCursor *)this; /*0x769ddc*/
@@ -2588,7 +2588,7 @@ char __thiscall Map_WorldDominationTour_20_::_vt02(_BYTE *this, int a2, _DWORD *
       do /*0x769eb7*/
       {
         ComPtr::Constructor(v6); /*0x769ea8*/
-        *v6 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x769ead*/
+        *v6 = &vt_rc_ptr_WorldDominationTour_Territory; /*0x769ead*/
         v6 += 2; /*0x769eb3*/
         --v9; /*0x769eb6*/
       }
@@ -2613,7 +2613,7 @@ char __thiscall Map_WorldDominationTour_20_::_vt02(_BYTE *this, int a2, _DWORD *
       do /*0x769e87*/
       {
         ComPtr::Constructor(v6); /*0x769e78*/
-        *v6 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x769e7d*/
+        *v6 = &vt_rc_ptr_WorldDominationTour_Territory; /*0x769e7d*/
         v6 += 2; /*0x769e83*/
         --v7; /*0x769e86*/
       }
@@ -2724,7 +2724,7 @@ VectorClass *__thiscall Map_WorldDominationTour_20_::QueryInterface(_DWORD *this
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v3 = (void (__thiscall ***)(_DWORD, int))*(this + 1); /*0x76a5c3*/
-  *this = &VectorClass<rc_ptr<WorldDominationTour::Territory>>::`vftable'; /*0x76a5c6*/
+  *this = &vt_VectorClass_rc_ptr_WorldDominationTour_Territory; /*0x76a5c6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x76a5d0*/
   {
     (**v3)(v3, 3); /*0x76a5df*/
@@ -2764,7 +2764,7 @@ rc_ptr_base *__thiscall Map_WorldDominationTour_20_::Constructor_0(rc_ptr_base *
       do /*0x76a63f*/
       {
         v5 -= 2; /*0x76a62e*/
-        v5->vfptr = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76a633*/
+        v5->vfptr = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76a633*/
         ComPtr::Release(v5); /*0x76a639*/
         --v7; /*0x76a63e*/
       }
@@ -2776,7 +2776,7 @@ rc_ptr_base *__thiscall Map_WorldDominationTour_20_::Constructor_0(rc_ptr_base *
   }
   else
   {
-    this->vfptr = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76a65a*/
+    this->vfptr = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76a65a*/
     ComPtr::Release(this); /*0x76a660*/
     if ( (a2 & 1) != 0 ) /*0x76a668*/
       __3_YAXPAX_Z(this); /*0x76a66b*/
@@ -2954,7 +2954,7 @@ VectorClass *__thiscall Map_WorldDominationTour_28_::QueryInterface(_DWORD *this
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x76a6d3*/
-  *this = &VectorClass<WorldDominationTour::Map::AnimationPalette *>::`vftable'; /*0x76a6d6*/
+  *this = &vt_VectorClass_WorldDominationTour_Map_AnimationPalette; /*0x76a6d6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x76a6e0*/
   {
     __3_YAXPAX_Z(v3); /*0x76a6e8*/
@@ -3249,7 +3249,7 @@ VectorClass *__thiscall Map_WorldDominationTour_43_::QueryInterface(_DWORD *this
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x76a773*/
-  *this = &VectorClass<WorldDominationTour::Centroid>::`vftable'; /*0x76a776*/
+  *this = &vt_VectorClass_WorldDominationTour_Centroid; /*0x76a776*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x76a780*/
   {
     __3_YAXPAX_Z(v3); /*0x76a788*/

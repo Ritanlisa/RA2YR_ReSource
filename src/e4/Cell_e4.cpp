@@ -79,9 +79,9 @@ _WORD *__thiscall Cell::GetHeight(_WORD *this, BuildingTypeClass *aP1, int *a2)
 {
   double v4; // st7
 
-  if ( *(_DWORD *)aP1->__pad_0 == *a2 && *(_DWORD *)&aP1->__pad_0[4] == a2[1] ) /*0x4265ca*/
+  if ( *(_DWORD *)aP1->vtable0 == *a2 && *(_DWORD *)&aP1->vtable0[4] == a2[1] ) /*0x4265ca*/
     *this = 0; /*0x4265cc*/
-  v4 = Math::CalcAngle((double)*(int *)&aP1->__pad_0[4] - (double)a2[1], (double)*a2 - (double)*(int *)aP1->__pad_0); /*0x4265e8*/
+  v4 = Math::CalcAngle((double)*(int *)&aP1->vtable0[4] - (double)a2[1], (double)*a2 - (double)*(int *)aP1->vtable0); /*0x4265e8*/
   LOWORD(aP1) = Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427); /*0x426601*/
   *(_DWORD *)this = aP1; /*0x42660a*/
   return this; /*0x42660e*/
@@ -218,7 +218,7 @@ LABEL_11:
   v17 = 0; /*0x4816ed*/
   v18 = 1; /*0x4816f1*/
   v19 = 0; /*0x4816f5*/
-  v15 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x4816f9*/
+  v15 = &vt_DynamicVectorClass_ObjectClass; /*0x4816f9*/
   v21 = 10; /*0x481701*/
   v20 = 0; /*0x481705*/
   if ( v8 ) /*0x481709*/
@@ -267,7 +267,7 @@ LABEL_25:
     }
     while ( v9 < v20 ); /*0x4817e0*/
   }
-  v15 = &VectorClass<ObjectClass *>::`vftable'; /*0x4817e9*/
+  v15 = &vt_VectorClass_ObjectClass; /*0x4817e9*/
   if ( Block ) /*0x4817f4*/
   {
     if ( v19 ) /*0x4817fc*/
@@ -397,7 +397,7 @@ BOOL __thiscall Cell_IsValidHeight(int *this)
   int v1; // eax
 
   v1 = *(this + 14); /*0x485060*/
-  return v1 >= unk_AA0738 && v1 < unk_AA0738 + 14; /*0x485079*/
+  return v1 >= dword_AA0738 && v1 < dword_AA0738 + 14; /*0x485079*/
 }
 }
 } // namespace gamemd
@@ -429,7 +429,7 @@ bool __thiscall sub_4865D0(int *this)
   v1 = *(this + 14); /*0x4865d0*/
   if ( v1 >= dword_ABAD28 && v1 < dword_ABAD28 + 42 ) /*0x4865e2*/
     return 1; /*0x4865e4*/
-  return v1 >= unk_AA0738 && v1 < unk_AA0738 + 14 /*0x48663a*/
+  return v1 >= dword_AA0738 && v1 < dword_AA0738 + 14 /*0x48663a*/
       || v1 >= unk_AA073C && v1 < unk_AA073C + 4
       || v1 >= dword_ABB110 && v1 < dword_ABB110 + 4
       || v1 >= unk_AA1050 && v1 < unk_AA1050 + 4
@@ -801,6 +801,18 @@ bool __thiscall Cell_IsValidDestination(_BYTE *this, __int16 *a2)
             -1,
             0,
             1);
+}
+}
+} // namespace gamemd
+
+// 0x5657E0
+namespace gamemd {
+bool Cell::Exists(MouseClass * aP1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+bool __thiscall Cell::Exists(_DWORD *this, MouseClass *aP1)
+{
+  return *(_DWORD *)(*(this + 79) + 4 * (SLOWORD(aP1->field_0) + (SHIWORD(aP1->field_0) << 9))) != 0; /*0x5657fd*/
 }
 }
 } // namespace gamemd

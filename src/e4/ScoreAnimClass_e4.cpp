@@ -8,7 +8,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ScoreAnimClass::Constructor_ScoreAnimClass_0(_DWORD *this, char a2)
 {
-  *this = &ScoreAnimClass::`vftable'; /*0x691009*/
+  *this = &vt_ScoreAnimClass; /*0x691009*/
   if ( (a2 & 1) != 0 ) /*0x69100f*/
     __3_YAXPAX_Z(this); /*0x691012*/
   return this; /*0x69101c*/
@@ -21,7 +21,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ScoreAnimClass::Constructor_ScoreAnimClass_1(_DWORD *this, char a2)
 {
-  *this = &ScoreAnimClass::`vftable'; /*0x691029*/
+  *this = &vt_ScoreAnimClass; /*0x691029*/
   if ( (a2 & 1) != 0 ) /*0x69102f*/
     __3_YAXPAX_Z(this); /*0x691032*/
   return this; /*0x69103c*/
@@ -38,7 +38,7 @@ _DWORD *__thiscall ScoreAnimClass::Constructor_ScoreFontClass(_DWORD *this, char
   char *v4; // eax
 
   v3 = (void *)*(this + 3); /*0x6910a6*/
-  *this = &ScoreFontClass::`vftable'; /*0x6910a9*/
+  *this = &vt_ScoreFontClass; /*0x6910a9*/
   if ( v3 && (unsigned char)this->ScoreAnimClass_field_0x10 == 1 ) /*0x6910b7*/
   {
     __3_YAXPAX_Z(v3); /*0x6910ba*/

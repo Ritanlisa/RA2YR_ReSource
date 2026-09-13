@@ -26,7 +26,7 @@ int __thiscall AircraftTypeClass::AircraftTypeClass(int this, ObjectClass *aP1)
   *(_DWORD *)this = &AircraftTypeClass::`vftable'; /*0x41c900*/
   this->vtable1 = &AircraftTypeClass::`vftable'; /*0x41c906*/
   this->vtable2 = &AircraftTypeClass::`vftable'; /*0x41c90c*/
-  this->vtable3 = &AircraftTypeClass::`vftable'; /*0x41c913*/
+  this->vtable3 = &vt_AircraftTypeClass; /*0x41c913*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x41c91a*/
   v3 = MEMORY[0xA8B228]; /*0x41c91f*/
   if ( (int)MEMORY[0xA8B228] < MEMORY[0xA8B220] /*0x41c95d*/
@@ -39,7 +39,7 @@ int __thiscall AircraftTypeClass::AircraftTypeClass(int this, ObjectClass *aP1)
         v3 = MEMORY[0xA8B228],
         !v4) )
   {
-    MEMORY[0xA8B228] = (AircraftTypeClass *)&v3->__pad_0[1]; /*0x41c962*/
+    MEMORY[0xA8B228] = (AircraftTypeClass *)&v3->vtable0[1]; /*0x41c962*/
     *(_DWORD *)&MEMORY[0xA8B21C]->__pad_0[4 * (_DWORD)v3] = this; /*0x41c96c*/
     v3 = MEMORY[0xA8B228]; /*0x41c96f*/
   }
@@ -219,7 +219,7 @@ int __stdcall AircraftTypeClass::LoadFromINI(ObjectTypeClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &AircraftTypeClass::`vftable'; /*0x41ce44*/
       *(_DWORD *)&aP0->__pad_0[4] = &AircraftTypeClass::`vftable'; /*0x41ce4a*/
       *(_DWORD *)&aP0->__pad_0[8] = &AircraftTypeClass::`vftable'; /*0x41ce51*/
-      *(_DWORD *)&aP0->__pad_0[12] = &AircraftTypeClass::`vftable'; /*0x41ce58*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_AircraftTypeClass; /*0x41ce58*/
     }
     ObjectPtr::RegisterForTracking( /*0x41ce6b*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
@@ -269,7 +269,7 @@ AircraftTypeClass *__thiscall AircraftTypeClass::ddtor(void **this, char a2)
   *this = &AircraftTypeClass::`vftable'; /*0x41cfe6*/
   *(this + 1) = &AircraftTypeClass::`vftable'; /*0x41cfec*/
   *(this + 2) = &AircraftTypeClass::`vftable'; /*0x41cff3*/
-  *(this + 3) = &AircraftTypeClass::`vftable'; /*0x41cffa*/
+  *(this + 3) = &vt_AircraftTypeClass; /*0x41cffa*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x41d001*/
   v5 = this; /*0x41d016*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8B218] + 16))(&MEMORY[0xA8B218], &v5); /*0x41d01a*/

@@ -50,7 +50,7 @@ DynamicVector *__thiscall ToolTipManager_7_::QueryInterface(_DWORD *this, char a
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x724f43*/
-  *this = &VectorClass<ToolTip const *>::`vftable'; /*0x724f46*/
+  *this = &vt_VectorClass_ToolTip_const; /*0x724f46*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x724f50*/
   {
     __3_YAXPAX_Z(v3); /*0x724f58*/

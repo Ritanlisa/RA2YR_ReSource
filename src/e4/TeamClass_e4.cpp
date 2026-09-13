@@ -477,10 +477,10 @@ LABEL_9:
         *(&g_MatrixTransformState + 6026) = 0; /*0x634234*/
       if ( *(&g_MatrixTransformState + 6008) == (CoordStruct *)aP1 ) /*0x634240*/
         *(&g_MatrixTransformState + 6008) = 0; /*0x634242*/
-      *(this + 8) = &VectorClass<PlanningBranchClass *>::`vftable'; /*0x63424b*/
+      *(this + 8) = &vt_VectorClass_PlanningBranchClass; /*0x63424b*/
       VectorClass::Cleanup2((int)(this + 8)); /*0x634251*/
       v16 = (ObjectClass *)*(this + 1); /*0x634256*/
-      *this = &VectorClass<PlanningMemberClass *>::`vftable'; /*0x634259*/
+      *this = &vt_VectorClass_PlanningMemberClass; /*0x634259*/
       if ( v16 ) /*0x634261*/
       {
         if ( *((_BYTE *)this + 13) ) /*0x634263*/
@@ -766,9 +766,9 @@ int __thiscall sub_636120(int this)
       {
         FactoryClass::ClearObjects(v4); /*0x6361f7*/
         Team_Remove((_UNKNOWN **)v4); /*0x6361fe*/
-        v4[8] = (int)&VectorClass<PlanningBranchClass *>::`vftable'; /*0x636206*/
+        v4[8] = (int)&vt_VectorClass_PlanningBranchClass; /*0x636206*/
         VectorClass::Cleanup2((int)(v4 + 8)); /*0x63620c*/
-        *v4 = (int)&VectorClass<PlanningMemberClass *>::`vftable'; /*0x636213*/
+        *v4 = (int)&vt_VectorClass_PlanningMemberClass; /*0x636213*/
         VectorClass_ptr_PlanningMemberClass::Remove((int)v4); /*0x636219*/
         __3_YAXPAX_Z(v4); /*0x63621f*/
       }
@@ -1134,9 +1134,9 @@ LABEL_4:
     }
   }
   v8 = *(VectorClass **)(*(this + 2) + 4 * v3); /*0x636bc6*/
-  Value = Array::FindValue((int *)v8->__pad_0, (IUnknown *)*this); /*0x636bce*/
+  Value = Array::FindValue((int *)v8, (IUnknown *)*this); /*0x636bce*/
   if ( Value != -1 ) /*0x636bd6*/
-    v5 = *(_DWORD *)(*(_DWORD *)&v8->field_1[3] + 4 * Value); /*0x636bdb*/
+    v5 = *((_DWORD *)v8->Items + Value); /*0x636bdb*/
   Block = (CCINIClass *)v5; /*0x636be0*/
   if ( v5 ) /*0x636be4*/
   {
@@ -1145,7 +1145,7 @@ LABEL_4:
     v10 = *(_DWORD *)(v5 + 8); /*0x636bf9*/
     if ( v10 != -1 ) /*0x636bff*/
     {
-      v11 = *(_DWORD *)(*(_DWORD *)&v8->__pad_18[12] + 4 * v10); /*0x636c08*/
+      v11 = *((_DWORD *)v8[2].Items + v10); /*0x636c08*/
       *(_DWORD *)(v11 + 116) = -1; /*0x636c0b*/
       TeamClass::Reset(v8, 0); /*0x636c12*/
       v12 = *(_DWORD *)(v11 + 112) - 1; /*0x636c1a*/
@@ -1156,17 +1156,17 @@ LABEL_4:
     }
     *(_DWORD *)(v5 + 8) = -1; /*0x636c2b*/
     __3_YAXPAX_Z((void *)Block->headNode[0]); /*0x636c3a*/
-    v13 = (CCINIClass *)(*(int (__thiscall **)(VectorClass *, CCINIClass **))(*(_DWORD *)v8->__pad_0 + 16))(v8, &Block); /*0x636c4b*/
+    v13 = (CCINIClass *)(*((int (__thiscall **)(VectorClass *, CCINIClass **))v8->vtable0 + 4))(v8, &Block); /*0x636c4b*/
     if ( v13 != (CCINIClass *)-1 ) /*0x636c51*/
       Vector4::EraseAt_Copy(v8, v13); /*0x636c56*/
     __3_YAXPAX_Z(Block); /*0x636c60*/
-    if ( !v8->field_10 && v8 ) /*0x636c71*/
+    if ( !v8[1].vtable0 && v8 ) /*0x636c71*/
     {
-      FactoryClass::ClearObjects((int *)v8->__pad_0); /*0x636c75*/
+      FactoryClass::ClearObjects((int *)v8); /*0x636c75*/
       Team_Remove(v8); /*0x636c7c*/
-      *(_DWORD *)&v8->__pad_18[8] = &VectorClass<PlanningBranchClass *>::`vftable'; /*0x636c84*/
-      VectorClass::Cleanup2((int)&v8->__pad_18[8]); /*0x636c8a*/
-      *(_DWORD *)v8->__pad_0 = &VectorClass<PlanningMemberClass *>::`vftable'; /*0x636c91*/
+      v8[2].vtable0 = &vt_VectorClass_PlanningBranchClass; /*0x636c84*/
+      VectorClass::Cleanup2((int)&v8[2]); /*0x636c8a*/
+      v8->vtable0 = &vt_VectorClass_PlanningMemberClass; /*0x636c91*/
       VectorClass_ptr_PlanningMemberClass::Remove((int)v8); /*0x636c97*/
       __3_YAXPAX_Z(v8); /*0x636c9d*/
     }
@@ -1384,7 +1384,7 @@ void __fastcall TeamClass::Destructor(void **this, AbstractClass *a2)
   *this = &TeamClass::`vftable'; /*0x6e8de7*/
   *(this + 1) = &TeamClass::`vftable'; /*0x6e8ded*/
   *(this + 2) = &TeamClass::`vftable'; /*0x6e8df4*/
-  for ( *(this + 3) = &TeamClass::`vftable'; edi1 < *(int *)&HouseClass_Player.__pad_5568[8028]; ++edi1 ) /*0x6e8e09*/
+  for ( *(this + 3) = &vt_TeamClass; edi1 < *(int *)&HouseClass_Player.__pad_5568[8028]; ++edi1 ) /*0x6e8e09*/
   {
     ecx2 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8016] + 4 * edi1); /*0x6e8e10*/
     a2 = *(AbstractClass **)(ecx2 + 220); /*0x6e8e16*/
@@ -2288,7 +2288,7 @@ char __thiscall TeamClass::FindClosestEnemy(int this, AbstractClass *aP1, Abstra
               }
             }
           }
-          v9 = &v31->__pad_0[1]; /*0x6eb00b*/
+          v9 = &v31->vtable0[1]; /*0x6eb00b*/
           v31 = (BuildingTypeClass *)((char *)v31 + 1); /*0x6eb00e*/
         }
         while ( (int)v31 < *(int *)&MEMORY[0x89F690].__pad_579C[62188] ); /*0x6eb012*/
@@ -2331,7 +2331,7 @@ char __thiscall TeamClass::FindClosestEnemy(int this, AbstractClass *aP1, Abstra
               }
             }
           }
-          v3 = (int)&v32->__pad_0[1]; /*0x6eb13a*/
+          v3 = (int)&v32->vtable0[1]; /*0x6eb13a*/
           v32 = (BuildingTypeClass *)((char *)v32 + 1); /*0x6eb13d*/
         }
         while ( (int)v32 < (int)MEMORY[0xA83DF8] ); /*0x6eb141*/
@@ -2912,7 +2912,7 @@ int __stdcall TeamClass::SaveLoad_Prefix(AbstractClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &TeamClass::`vftable'; /*0x6ec485*/
       *(_DWORD *)&aP0->__pad_0[4] = &TeamClass::`vftable'; /*0x6ec48b*/
       *(_DWORD *)&aP0->__pad_0[8] = &TeamClass::`vftable'; /*0x6ec492*/
-      *(_DWORD *)&aP0->__pad_0[12] = &TeamClass::`vftable'; /*0x6ec499*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_TeamClass; /*0x6ec499*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x6ec4a9*/
     ObjectPtr::RegisterForTracking( /*0x6ec4b7*/

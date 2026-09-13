@@ -14,8 +14,7 @@
 // 0x5D67B0
 namespace gamemd { void* GameConfig::Constructor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5d67b0
-char *__thiscall GameConfig::Constructor(char **this)
+char *__thiscall sub_5D67B0(char **this)
 {
   char **v1; // edi
   _DWORD *v2; // eax
@@ -24,211 +23,73 @@ char *__thiscall GameConfig::Constructor(char **this)
   char v7[12]; // [esp+64h] [ebp-14h] BYREF
   int v8; // [esp+70h] [ebp-8h]
 
-  v1 = this;
-  if ( !*(this + 14) )
+  v1 = this; /*0x5d67b5*/
+  if ( !*(this + 14) ) /*0x5d67bd*/
   {
-    v2 = (_DWORD *)__2_YAPAXI_Z(88);
-    v3 = v2;
-    if ( v2 )
+    v2 = __2_YAPAXI_Z(0x58u); /*0x5d67c9*/
+    v3 = v2; /*0x5d67ce*/
+    if ( v2 ) /*0x5d67d5*/
     {
-      v2[1] = 0;
-      v2[2] = 0;
-      v2[5] = 0;
-      v2[6] = 0;
-      v2[4] = &GenericNode::`vftable';
-      GenericNode::Constructor(v2 + 7);
-      v3[3] = &GenericList::`vftable';
-      LinkedList::Prepend(v3 + 4, (int)(v3 + 7));
-      v1 = this;
-      v3[3] = &List<INIClass::INISection *>::`vftable';
-      v3[10] = 0;
-      v3[11] = 0;
-      v3[12] = 0;
-      *((_BYTE *)v3 + 52) = 0;
-      v3[14] = 0;
-      v3[15] = 0;
-      *((_BYTE *)v3 + 64) = 0;
-      *v3 = &CCINIClass_Vtable;
+      v2[1] = 0; /*0x5d67de*/
+      v2[2] = 0; /*0x5d67e1*/
+      v2[5] = 0; /*0x5d67e6*/
+      v2[6] = 0; /*0x5d67e9*/
+      v2[4] = &vt_GenericNode; /*0x5d67ec*/
+      GenericNode::Constructor(v2 + 7); /*0x5d67f2*/
+      v3[3] = &vt_GenericList; /*0x5d67fa*/
+      LinkedList::Prepend(v3 + 4, (int)(v3 + 7)); /*0x5d6801*/
+      v1 = this; /*0x5d6806*/
+      v3[3] = &vt_List_INIClass_INISection; /*0x5d680a*/
+      v3[10] = 0; /*0x5d6811*/
+      v3[11] = 0; /*0x5d6814*/
+      v3[12] = 0; /*0x5d6817*/
+      *((_BYTE *)v3 + 52) = 0; /*0x5d681a*/
+      v3[14] = 0; /*0x5d681d*/
+      v3[15] = 0; /*0x5d6820*/
+      *((_BYTE *)v3 + 64) = 0; /*0x5d6823*/
+      *v3 = &CCINIClass_Vtable; /*0x5d6826*/
     }
     else
     {
-      v3 = 0;
+      v3 = 0; /*0x5d682f*/
     }
-    v1[14] = (char *)v3;
-    CCFileClass::Construct2(v6, v1 + 11);
-    if ( CCFileClass::Open(v6, 0) )
-      CCINIClass::Load(v1[14], (int)v6, 0, 0);
-    v6[0] = &CCFileClass::`vftable';
-    v8 = 0;
-    Vector::Clear((int)v7);
-    v6[0] = &off_7E1668;
-    BufferIOFileClass::Dtor(v6);
+    v1[14] = (char *)v3; /*0x5d6839*/
+    CCFileClass::Construct2(v6, v1 + 11); /*0x5d683c*/
+    if ( CCFileClass::Open(v6, 0) ) /*0x5d6846*/
+      CCINIClass::Load(v1[14], (int)v6, 0, 0); /*0x5d685a*/
+    v6[0] = &vt_CCFileClass; /*0x5d6863*/
+    v8 = 0; /*0x5d686b*/
+    Vector::Clear((int)v7); /*0x5d686f*/
+    v6[0] = &off_7E1668; /*0x5d6878*/
+    BufferIOFileClass::Dtor(v6); /*0x5d6880*/
   }
-  return v1[14];
+  return v1[14]; /*0x5d6888*/
 }
-
-/* ASM:
-sub     esp, 70h
-push    ebx
-push    edi
-mov     edi, ecx
-xor     ebx, ebx
-mov     [esp+78h+var_70], edi
-cmp     [edi+38h], ebx
-jnz     loc_5D6885
-push    esi
-push    58h ; 'X'       ; Size
-call    ??2_YAPAXI_Z
-mov     esi, eax
-add     esp, 4
-cmp     esi, ebx
-jz      short loc_5D682F
-push    ebp
-lea     edi, [esi+10h]
-lea     ebp, [esi+1Ch]
-mov     [esi+4], ebx
-mov     [esi+8], ebx
-mov     ecx, ebp
-mov     [edi+4], ebx
-mov     [edi+8], ebx
-mov     dword ptr [edi], offset ??_7GenericNode@@6B@ ; const GenericNode::`vftable'
-call    GenericNode__Constructor
-push    ebp
-mov     ecx, edi
-mov     dword ptr [esi+0Ch], offset ??_7GenericList@@6B@ ; const GenericList::`vftable'
-call    LinkedList__Prepend
-mov     edi, [esp+80h+var_70]
-mov     dword ptr [esi+0Ch], offset ??_7?$List@PAUINISection@INIClass@@@@6B@ ; const List<INIClass::INISection *>::`vftable'
-mov     [esi+28h], ebx
-mov     [esi+2Ch], ebx
-mov     [esi+30h], ebx
-mov     [esi+34h], bl
-mov     [esi+38h], ebx
-mov     [esi+3Ch], ebx
-mov     [esi+40h], bl
-mov     dword ptr [esi], offset CCINIClass_Vtable
-pop     ebp
-jmp     short loc_5D6831
-; ---------------------------------------------------------------------------
-
-loc_5D682F:                             ; CODE XREF: GameConfig__Constructor+25↑j
-xor     esi, esi
-
-loc_5D6831:                             ; CODE XREF: GameConfig__Constructor+7D↑j
-lea     eax, [edi+2Ch]
-lea     ecx, [esp+7Ch+var_6C]
-push    eax
-mov     [edi+38h], esi
-call    CCFileClass__Construct2
-push    ebx
-lea     ecx, [esp+80h+var_6C]
-call    CCFileClass__Open
-test    al, al
-pop     esi
-jz      short loc_5D685F
-push    ebx
-lea     ecx, [esp+7Ch+var_6C]
-push    ebx
-push    ecx
-mov     ecx, [edi+38h]
-call    CCINIClass__Load
-
-loc_5D685F:                             ; CODE XREF: GameConfig__Constructor+9E↑j
-lea     ecx, [esp+78h+var_14]
-mov     [esp+78h+var_6C], offset ??_7CCFileClass@@6B@ ; const CCFileClass::`vftable'
-mov     [esp+78h+var_8], ebx
-call    Vector__Clear
-lea     ecx, [esp+78h+var_6C]
-mov     [esp+78h+var_6C], offset off_7E1668
-call    BufferIOFileClass__Dtor
-
-loc_5D6885:                             ; CODE XREF: GameConfig__Constructor+10↑j
-mov     eax, [edi+38h]
-pop     edi
-pop     ebx
-add     esp, 70h
-retn
-*/
 } }
 // 0x77E7A0
 namespace gamemd { int GameConfig::BuildChecksum() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall GameConfig_BuildChecksum(char *Buffer)
+INIClass *__thiscall GameConfig::BuildChecksum(char *Buffer)
 {
   int v2; // ecx
-  int *v3; // eax
-  int v4; // esi
-  char v5; // al
-  unsigned __int8 v6; // al
-  int Entry; // eax
-  int v9; // [esp-10h] [ebp-1Ch]
-  int v10; // [esp-Ch] [ebp-18h]
-  int v11; // [esp-8h] [ebp-14h]
-  const char *v12; // [esp-4h] [ebp-10h]
+  void **p_attachedTag; // eax
+  INIClass *Entry; // eax
 
-  v2 = MEMORY[0xB76B1C];
-  if ( MEMORY[0xB76B1C] > 0 )
+  v2 = dword_B76B1C; /*0x77e7a5*/
+  if ( dword_B76B1C > 0 ) /*0x77e7ad*/
   {
-    v3 = MEMORY[0xB76E58];
-    do
+    p_attachedTag = &g_WOL_LoginObject.attachedTag; /*0x77e7af*/
+    do /*0x77e7c0*/
     {
-      v3 += 37;
-      --v2;
+      p_attachedTag += 37; /*0x77e7b6*/
+      --v2; /*0x77e7bb*/
     }
-    while ( v2 );
+    while ( v2 ); /*0x77e7c0*/
   }
-  v4 = MEMORY[0xB77E00] ^ MEMORY[0xB77E08] ^ MEMORY[0xB77E04];
-  v5 = GameOption::CheckDuplicate(&MEMORY[0xA8B8E0]);
-  v6 = Hash_Check_5E9580(v5 == 0);
-  v9 = Hash_Check_5E94D0(v6);
-  Entry = GameOptions::GetEntry();
-  return sprintf(Buffer, "%d,%d,%d,%d,%d,%s", Entry, v4, v9, v10, v11, v12);
+  GameOption::CheckDuplicate(); /*0x77e7dd*/
+  Hash_Check_5E9580(); /*0x77e7e8*/
+  Hash_Check_5E94D0(); /*0x77e7f3*/
+  Entry = GameOptions::GetEntry(); /*0x77e7fa*/
+  return (INIClass *)sprintf(Buffer, (ObjectClass *)&stru_84A52C.sectionHead[1], Entry); /*0x77e80e*/
 }
-
-/* ASM:
-push    ecx
-push    esi
-push    edi
-mov     edi, ecx
-mov     ecx, dword_A8ED54+0E7DC8h
-test    ecx, ecx
-jle     short loc_77E7C2
-mov     eax, (offset dword_A8ED54+0E8104h)
-
-loc_77E7B4:                             ; CODE XREF: GameConfig__BuildChecksum+20↓j
-mov     edx, [eax]
-add     eax, 94h
-dec     ecx
-mov     [esp+0Ch+var_4], edx
-jnz     short loc_77E7B4
-
-loc_77E7C2:                             ; CODE XREF: GameConfig__BuildChecksum+D↑j
-mov     esi, dword_A8ED54+0E90B0h
-mov     edx, dword_A8ED54+0E90B4h
-mov     ecx, dword_A8ED54+0E90ACh
-xor     esi, edx
-push    0A8B8E0h
-xor     esi, ecx
-call    GameOption__CheckDuplicate
-neg     al
-sbb     eax, eax
-inc     eax
-push    eax
-call    Hash_Check_5E9580
-and     eax, 0FFh
-push    eax
-call    Hash_Check_5E94D0
-push    eax
-push    esi
-call    GameOptions__GetEntry
-push    eax
-push    offset aDDDDDS  ; "%d,%d,%d,%d,%d,%s"
-push    edi             ; Buffer
-call    _sprintf
-add     esp, 20h
-pop     edi
-pop     esi
-pop     ecx
-retn
-*/
 } }

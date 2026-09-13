@@ -48,7 +48,7 @@ void DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog * hWnd, int nIDDlgIte
 //   LRESULT v41; // ebx
 //   LRESULT ComboBoxSelectedRaw; // eax
 //   int v43; // edx
-//   LRESULT v44; //... [28981 chars total]
+//   LRESULT v44; //... [29451 chars total]
 // end truncated pseudocode
 }
 } // namespace gamemd

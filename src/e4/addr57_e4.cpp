@@ -968,8 +968,8 @@ bool __fastcall GenerateMapClassCliffTransitions(_DWORD *a0, int a2, IUnknown *a
       v39[0] = 1; /*0x57ae1e*/
       NeighbourContent = (VectorClass *)Cell::GetNeighbourContent(aP2, 4u); /*0x57ae2b*/
       v15 = (VectorClass *)Cell::GetNeighbourContent(NeighbourContent, 2u); /*0x57ae38*/
-      v31 = !Cell::IsValidHeight((int *)NeighbourContent->__pad_0); /*0x57ae43*/
-      IsValidHeight = Cell::IsValidHeight((int *)v15->__pad_0); /*0x57ae48*/
+      v31 = !Cell::IsValidHeight((int *)NeighbourContent->vtable0); /*0x57ae43*/
+      IsValidHeight = Cell::IsValidHeight((int *)v15->vtable0); /*0x57ae48*/
       if ( v31 ) /*0x57ae53*/
       {
         do /*0x57ae93*/
@@ -979,8 +979,8 @@ bool __fastcall GenerateMapClassCliffTransitions(_DWORD *a0, int a2, IUnknown *a
           ++v39[0]; /*0x57ae62*/
           NeighbourContent = (VectorClass *)Cell::GetNeighbourContent(NeighbourContent, 4u); /*0x57ae6f*/
           v15 = (VectorClass *)Cell::GetNeighbourContent(v15, 4u); /*0x57ae78*/
-          v32 = !Cell::IsValidHeight((int *)NeighbourContent->__pad_0); /*0x57ae83*/
-          IsValidHeight = Cell::IsValidHeight((int *)v15->__pad_0); /*0x57ae88*/
+          v32 = !Cell::IsValidHeight((int *)NeighbourContent->vtable0); /*0x57ae83*/
+          IsValidHeight = Cell::IsValidHeight((int *)v15->vtable0); /*0x57ae88*/
         }
         while ( v32 ); /*0x57ae93*/
       }
@@ -996,8 +996,8 @@ bool __fastcall GenerateMapClassCliffTransitions(_DWORD *a0, int a2, IUnknown *a
       v39[0] = 1; /*0x57aedd*/
       v17 = (VectorClass *)Cell::GetNeighbourContent(aP2, 4u); /*0x57aeea*/
       v18 = (VectorClass *)Cell::GetNeighbourContent(v17, 6u); /*0x57aef7*/
-      v33 = !Cell::IsValidHeight((int *)v17->__pad_0); /*0x57af02*/
-      v19 = Cell::IsValidHeight((int *)v18->__pad_0); /*0x57af07*/
+      v33 = !Cell::IsValidHeight((int *)v17->vtable0); /*0x57af02*/
+      v19 = Cell::IsValidHeight((int *)v18->vtable0); /*0x57af07*/
       if ( v33 ) /*0x57af12*/
       {
         do /*0x57af52*/
@@ -1007,8 +1007,8 @@ bool __fastcall GenerateMapClassCliffTransitions(_DWORD *a0, int a2, IUnknown *a
           ++v39[0]; /*0x57af21*/
           v17 = (VectorClass *)Cell::GetNeighbourContent(v17, 4u); /*0x57af2e*/
           v18 = (VectorClass *)Cell::GetNeighbourContent(v18, 4u); /*0x57af37*/
-          v34 = !Cell::IsValidHeight((int *)v17->__pad_0); /*0x57af42*/
-          v19 = Cell::IsValidHeight((int *)v18->__pad_0); /*0x57af47*/
+          v34 = !Cell::IsValidHeight((int *)v17->vtable0); /*0x57af42*/
+          v19 = Cell::IsValidHeight((int *)v18->vtable0); /*0x57af47*/
         }
         while ( v34 ); /*0x57af52*/
       }
@@ -1024,8 +1024,8 @@ bool __fastcall GenerateMapClassCliffTransitions(_DWORD *a0, int a2, IUnknown *a
       v39[0] = 1; /*0x57af97*/
       v20 = (VectorClass *)Cell::GetNeighbourContent(aP2, 2u); /*0x57afa4*/
       v21 = (VectorClass *)Cell::GetNeighbourContent(v20, 4u); /*0x57afb1*/
-      v35 = !Cell::IsValidHeight((int *)v20->__pad_0); /*0x57afbc*/
-      v22 = Cell::IsValidHeight((int *)v21->__pad_0); /*0x57afc1*/
+      v35 = !Cell::IsValidHeight((int *)v20->vtable0); /*0x57afbc*/
+      v22 = Cell::IsValidHeight((int *)v21->vtable0); /*0x57afc1*/
       if ( v35 ) /*0x57afcc*/
       {
         do /*0x57b00c*/
@@ -1035,8 +1035,8 @@ bool __fastcall GenerateMapClassCliffTransitions(_DWORD *a0, int a2, IUnknown *a
           ++v39[0]; /*0x57afdb*/
           v20 = (VectorClass *)Cell::GetNeighbourContent(v20, 2u); /*0x57afe8*/
           v21 = (VectorClass *)Cell::GetNeighbourContent(v21, 2u); /*0x57aff1*/
-          v36 = !Cell::IsValidHeight((int *)v20->__pad_0); /*0x57affc*/
-          v22 = Cell::IsValidHeight((int *)v21->__pad_0); /*0x57b001*/
+          v36 = !Cell::IsValidHeight((int *)v20->vtable0); /*0x57affc*/
+          v22 = Cell::IsValidHeight((int *)v21->vtable0); /*0x57b001*/
         }
         while ( v36 ); /*0x57b00c*/
       }
@@ -1075,8 +1075,8 @@ LABEL_61:
       v39[0] = 1; /*0x57b04a*/
       v23 = (VectorClass *)Cell::GetNeighbourContent(aP2, 2u); /*0x57b057*/
       v24 = (VectorClass *)Cell::GetNeighbourContent(v23, 0); /*0x57b064*/
-      v37 = !Cell::IsValidHeight((int *)v23->__pad_0); /*0x57b06f*/
-      v25 = Cell::IsValidHeight((int *)v24->__pad_0); /*0x57b074*/
+      v37 = !Cell::IsValidHeight((int *)v23->vtable0); /*0x57b06f*/
+      v25 = Cell::IsValidHeight((int *)v24->vtable0); /*0x57b074*/
       if ( v37 ) /*0x57b07f*/
       {
         do /*0x57b0bf*/
@@ -1086,8 +1086,8 @@ LABEL_61:
           ++v39[0]; /*0x57b08e*/
           v23 = (VectorClass *)Cell::GetNeighbourContent(v23, 2u); /*0x57b09b*/
           v24 = (VectorClass *)Cell::GetNeighbourContent(v24, 2u); /*0x57b0a4*/
-          v38 = !Cell::IsValidHeight((int *)v23->__pad_0); /*0x57b0af*/
-          v25 = Cell::IsValidHeight((int *)v24->__pad_0); /*0x57b0b4*/
+          v38 = !Cell::IsValidHeight((int *)v23->vtable0); /*0x57b0af*/
+          v25 = Cell::IsValidHeight((int *)v24->vtable0); /*0x57b0b4*/
         }
         while ( v38 ); /*0x57b0bf*/
       }

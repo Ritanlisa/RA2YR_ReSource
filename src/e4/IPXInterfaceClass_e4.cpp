@@ -9,7 +9,7 @@ unsigned int * IPXInterfaceClass::Construct()
 _DWORD *__thiscall IPXInterfaceClass_Constructor(_DWORD *this)
 {
   IPXInterfaceClass::bindSocket(); /*0x7b0d93*/
-  *this = &IPXInterfaceClass::`vftable'; /*0x7b0da4*/
+  *this = &vt_IPXInterfaceClass; /*0x7b0da4*/
   *(this + 64703) = -1; /*0x7b0dad*/
   *(this + 64704) = -1; /*0x7b0db3*/
   *((_WORD *)this + 129410) = -1; /*0x7b0db8*/
@@ -304,14 +304,14 @@ char *__thiscall sub_7B19C0(char *this)
   *((_DWORD *)this + 4) = 0; /*0x7b19d5*/
   *(this + 20) = 1; /*0x7b19d8*/
   *(this + 21) = 0; /*0x7b19db*/
-  this->LocalNetwork = &DynamicVectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b19de*/
+  this->LocalNetwork = &vt_DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b19de*/
   *((_DWORD *)this + 7) = 10; /*0x7b19e1*/
   *((_DWORD *)this + 6) = 0; /*0x7b19e4*/
   *((_DWORD *)this + 9) = 0; /*0x7b19e7*/
   *((_DWORD *)this + 10) = 0; /*0x7b19ea*/
   *(this + 44) = 1; /*0x7b19ed*/
   *(this + 45) = 0; /*0x7b19f0*/
-  *((_DWORD *)this + 8) = &DynamicVectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b19f3*/
+  *((_DWORD *)this + 8) = &vt_DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b19f3*/
   *((_DWORD *)this + 13) = 10; /*0x7b19f6*/
   *((_DWORD *)this + 12) = 0; /*0x7b19f9*/
   *((_DWORD *)this + 19) = 10; /*0x7b19fc*/
@@ -319,11 +319,11 @@ char *__thiscall sub_7B19C0(char *this)
   *((_DWORD *)this + 16) = 0; /*0x7b1a05*/
   *(this + 68) = 1; /*0x7b1a08*/
   *(this + 69) = 0; /*0x7b1a0b*/
-  *((_DWORD *)this + 14) = &DynamicVectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1a0e*/
+  *((_DWORD *)this + 14) = &vt_DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1a0e*/
   *((_DWORD *)this + 18) = 0; /*0x7b1a11*/
   *((_DWORD *)this + 64539) = -1; /*0x7b1a14*/
   *((_DWORD *)this + 64540) = -1; /*0x7b1a1a*/
-  *(_DWORD *)this = &WinsockInterfaceClass::`vftable'; /*0x7b1a20*/
+  *(_DWORD *)this = &vt_WinsockInterfaceClass; /*0x7b1a20*/
   *(this + 258152) = 0; /*0x7b1a26*/
   v2 = this + 102; /*0x7b1a2c*/
   v3 = 128; /*0x7b1a2f*/
@@ -736,7 +736,7 @@ DynamicVector *__thiscall IPXInterfaceClass::closeSession(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x7b2b53*/
-  *this = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b2b56*/
+  *this = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b2b56*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x7b2b60*/
   {
     __3_YAXPAX_Z(v3); /*0x7b2b68*/

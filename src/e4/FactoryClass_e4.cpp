@@ -135,7 +135,7 @@ bool __thiscall FactoryClass::DemandProduction(int this, int a2, #375 *a3, char 
   int v17; // [esp+Ch] [ebp-8h]
 
   if ( (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 44))(a2) == 7 ) /*0x4c9c85*/
-    BuildingClass::AbandonProduction(this); /*0x4c9c89*/
+    FactoryClass::AbandonProduction(this); /*0x4c9c89*/
   if ( (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 44))(a2) == 7 /*0x4c9ccf*/
     || (!this->queuedCapacity || this->isSuspended)
     && *(int *)(this + 80) <= 0
@@ -209,7 +209,7 @@ char __thiscall FactoryClass::SetObject(int this, int a2)
   int v3; // eax
   int v5; // [esp+8h] [ebp-8h]
 
-  BuildingClass::AbandonProduction(this); /*0x4c9e16*/
+  FactoryClass::AbandonProduction(this); /*0x4c9e16*/
   *(_DWORD *)(this + 88) = a2; /*0x4c9e21*/
   v3 = *(_DWORD *)(a2 + 540); /*0x4c9e27*/
   this->balance = 0; /*0x4c9e2d*/
@@ -307,13 +307,13 @@ int __stdcall FactoryClass::vt_05_(int a1, int *a2)
       AbstractClass::InitVtables((_DWORD *)v3, (int)&a2); /*0x4ca299*/
       __4type_info_AAEAAV0_ABV0__Z(&a2); /*0x4ca2a6*/
       TechnoTypeVector::Constructor(0, 0); /*0x4ca2b2*/
-      *(_DWORD *)(v3 + 64) = &DynamicVectorClass<TechnoTypeClass const *>::`vftable'; /*0x4ca2b7*/
+      *(_DWORD *)(v3 + 64) = &vt_DynamicVectorClass_TechnoTypeClass_const; /*0x4ca2b7*/
       *(_DWORD *)(v3 + 84) = 10; /*0x4ca2bd*/
       *(_DWORD *)(v3 + 80) = 0; /*0x4ca2c4*/
       *(_DWORD *)v3 = &FactoryClass::`vftable'; /*0x4ca2c7*/
       *(_DWORD *)(v3 + 4) = &FactoryClass::`vftable'; /*0x4ca2cd*/
       *(_DWORD *)(v3 + 8) = &FactoryClass::`vftable'; /*0x4ca2d4*/
-      *(_DWORD *)(v3 + 12) = &FactoryClass::`vftable'; /*0x4ca2db*/
+      *(_DWORD *)(v3 + 12) = &vt_FactoryClass; /*0x4ca2db*/
     }
     v5 = *v2; /*0x4ca2e2*/
     a1 = 0; /*0x4ca2ee*/
@@ -619,7 +619,7 @@ FactoryClass *__thiscall FactoryClass::CopyTo(void **this, char a2)
   *this = &FactoryClass::`vftable'; /*0x4ca776*/
   *(this + 1) = &FactoryClass::`vftable'; /*0x4ca77c*/
   *(this + 2) = &FactoryClass::`vftable'; /*0x4ca783*/
-  *(this + 3) = &FactoryClass::`vftable'; /*0x4ca78a*/
+  *(this + 3) = &vt_FactoryClass; /*0x4ca78a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x4ca791*/
   v7 = this; /*0x4ca7a6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA83E30] + 16))(&MEMORY[0xA83E30], &v7); /*0x4ca7aa*/
@@ -633,7 +633,7 @@ FactoryClass *__thiscall FactoryClass::CopyTo(void **this, char a2)
     while ( v3 < MEMORY[0xA83E40] ); /*0x4ca7dd*/
   }
   if ( MEMORY[0xA8E9A0] ) /*0x4ca7e6*/
-    BuildingClass::AbandonProduction((int)this); /*0x4ca7ea*/
+    FactoryClass::AbandonProduction((int)this); /*0x4ca7ea*/
   v7 = this; /*0x4ca7ff*/
   v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F720] + 16))(&MEMORY[0xB0F720], &v7); /*0x4ca803*/
   if ( v4 != -1 && v4 < MEMORY[0xB0F730] && v4 < --MEMORY[0xB0F730] ) /*0x4ca81e*/
@@ -646,7 +646,7 @@ FactoryClass *__thiscall FactoryClass::CopyTo(void **this, char a2)
     while ( v4 < MEMORY[0xB0F730] ); /*0x4ca836*/
   }
   v5 = *(this + 17); /*0x4ca838*/
-  *(this + 16) = &VectorClass<TechnoTypeClass const *>::`vftable'; /*0x4ca83b*/
+  *(this + 16) = &vt_VectorClass_TechnoTypeClass_const; /*0x4ca83b*/
   if ( v5 && *((_BYTE *)this + 77) ) /*0x4ca846*/
   {
     __3_YAXPAX_Z(v5); /*0x4ca84e*/
@@ -912,7 +912,7 @@ VectorClass *__thiscall FactoryClass_33_::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4cab53*/
-  *this = &VectorClass<TechnoTypeClass const *>::`vftable'; /*0x4cab56*/
+  *this = &vt_VectorClass_TechnoTypeClass_const; /*0x4cab56*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4cab60*/
   {
     __3_YAXPAX_Z(v3); /*0x4cab68*/

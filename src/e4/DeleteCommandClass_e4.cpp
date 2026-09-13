@@ -9,7 +9,7 @@ unsigned int * DeleteCommandClass::Constructor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_537F10(_DWORD *this)
 {
-  *this = &DeleteCommandClass::`vftable'; /*0x537f12*/
+  *this = &vt_DeleteCommandClass; /*0x537f12*/
   return this; /*0x537f18*/
 }
 }
@@ -338,7 +338,7 @@ VectorClass *__thiscall DeleteCommandClass_28_::QueryInterface(_DWORD *this, cha
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x53c783*/
-  *this = &VectorClass<AnimClass const *>::`vftable'; /*0x53c786*/
+  *this = &vt_VectorClass_AnimClass_const; /*0x53c786*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x53c790*/
   {
     __3_YAXPAX_Z(v3); /*0x53c798*/
@@ -363,7 +363,7 @@ DynamicVector *__thiscall DeleteCommandClass_28_::Constructor(_DWORD *this, char
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x53c7d3*/
-  *this = &VectorClass<AnimClass const *>::`vftable'; /*0x53c7d6*/
+  *this = &vt_VectorClass_AnimClass_const; /*0x53c7d6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x53c7e0*/
   {
     __3_YAXPAX_Z(v3); /*0x53c7e8*/

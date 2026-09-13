@@ -163,7 +163,7 @@ _BYTE *__thiscall BulletTypeClass::Construct(_BYTE *this, ObjectClass *aP1)
   *(_DWORD *)this = &BulletTypeClass::`vftable'; /*0x46bce6*/
   this->vtable1 = &BulletTypeClass::`vftable'; /*0x46bcec*/
   this->vtable2 = &BulletTypeClass::`vftable'; /*0x46bcf2*/
-  this->vtable3 = &BulletTypeClass::`vftable'; /*0x46bcf9*/
+  this->vtable3 = &vt_BulletTypeClass; /*0x46bcf9*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x46bd00*/
   *(this + 564) = 1; /*0x46bd05*/
   *(this + 559) = 1; /*0x46bd0c*/
@@ -583,7 +583,7 @@ int __stdcall BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &BulletTypeClass::`vftable'; /*0x46c6c4*/
       *(_DWORD *)&aP0->__pad_0[4] = &BulletTypeClass::`vftable'; /*0x46c6ca*/
       *(_DWORD *)&aP0->__pad_0[8] = &BulletTypeClass::`vftable'; /*0x46c6d1*/
-      *(_DWORD *)&aP0->__pad_0[12] = &BulletTypeClass::`vftable'; /*0x46c6d8*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_BulletTypeClass; /*0x46c6d8*/
     }
     VoxelAnimType::LoadAnim(aP0->__pad_0); /*0x46c6e1*/
     ObjectTypeClass::Load2DArt(aP0->__pad_0); /*0x46c6e8*/
@@ -645,7 +645,7 @@ BulletTypeClass *__thiscall BulletTypeClass::ddtor(void **this, char a2)
   *this = &BulletTypeClass::`vftable'; /*0x46c896*/
   *(this + 1) = &BulletTypeClass::`vftable'; /*0x46c89c*/
   *(this + 2) = &BulletTypeClass::`vftable'; /*0x46c8a3*/
-  *(this + 3) = &BulletTypeClass::`vftable'; /*0x46c8aa*/
+  *(this + 3) = &vt_BulletTypeClass; /*0x46c8aa*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x46c8b1*/
   v6 = this; /*0x46c8c6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x46c8ca*/

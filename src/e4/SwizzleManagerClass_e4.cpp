@@ -418,7 +418,7 @@ VectorClass *__thiscall SwizzleManagerClass_19_::QueryInterface(_DWORD *this, ch
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x6cf853*/
-  *this = &VectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf856*/
+  *this = &vt_VectorClass_SwizzlePointerClass; /*0x6cf856*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x6cf860*/
   {
     __3_YAXPAX_Z(v3); /*0x6cf868*/
@@ -443,7 +443,7 @@ DynamicVector *__thiscall SwizzleManagerClass_19_::Constructor_VectorClass_Swizz
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x6cf8a3*/
-  *this = &VectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf8a6*/
+  *this = &vt_VectorClass_SwizzlePointerClass; /*0x6cf8a6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x6cf8b0*/
   {
     __3_YAXPAX_Z(v3); /*0x6cf8b8*/

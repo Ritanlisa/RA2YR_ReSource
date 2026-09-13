@@ -37,7 +37,7 @@ int __thiscall sub_4AF540(int this)
   *(_BYTE *)(this + 101) = 1; /*0x4af5bb*/
   *(_DWORD *)(this + 104) = 0; /*0x4af5bf*/
   *(_DWORD *)this = &DriveLocomotionClass::`vftable'; /*0x4af5c2*/
-  *(_DWORD *)(this + 4) = &DriveLocomotionClass::`vftable'; /*0x4af5c8*/
+  *(_DWORD *)(this + 4) = &vt_DriveLocomotionClass; /*0x4af5c8*/
   *(_DWORD *)(this + 24) = &off_7E7E8C; /*0x4af5cf*/
   return this; /*0x4af5d8*/
 }
@@ -146,7 +146,7 @@ int __thiscall sub_513C20(int this)
   *(_DWORD *)(this + 108) = 0; /*0x513c8b*/
   *(_BYTE *)(this + 112) = 0; /*0x513c8e*/
   *(_DWORD *)this = &HoverLocomotionClass::`vftable'; /*0x513c91*/
-  *(_DWORD *)(this + 4) = &HoverLocomotionClass::`vftable'; /*0x513c97*/
+  *(_DWORD *)(this + 4) = &vt_HoverLocomotionClass; /*0x513c97*/
   return this; /*0x513ca0*/
 }
 }
@@ -193,7 +193,7 @@ int __thiscall sub_54AC40(int this)
   *(_DWORD *)(this + 148) = 0; /*0x54acb5*/
   *(_DWORD *)this = &JumpjetLocomotionClass::`vftable'; /*0x54acc3*/
   *(_DWORD *)(this + 4) = &JumpjetLocomotionClass::`vftable'; /*0x54acc9*/
-  *(_DWORD *)(this + 24) = &JumpjetLocomotionClass::`vftable'; /*0x54acd0*/
+  *(_DWORD *)(this + 24) = &vt_JumpjetLocomotionClass; /*0x54acd0*/
   LOWORD(v4) = 0x4000; /*0x54acd7*/
   FacingClass::Update((char *)(this + 84), &v4); /*0x54acdc*/
   LOWORD(v4) = 0x4000; /*0x54ace8*/
@@ -214,7 +214,7 @@ _DWORD *__thiscall LocomotionClass_Init(_DWORD *this)
   this->Dirty = 1; /*0x55a6cf*/
   *(this + 5) = 0; /*0x55a6d2*/
   *this = &LocomotionClass::`vftable'; /*0x55a6d5*/
-  *(this + 1) = &LocomotionClass::`vftable'; /*0x55a6db*/
+  *(this + 1) = &vt_LocomotionClass; /*0x55a6db*/
   return this; /*0x55a6e2*/
 }
 }
@@ -226,7 +226,7 @@ void LocomotionClass::Construct()
 void __thiscall LocomotionClass_Constructor(_DWORD *this)
 {
   *this = &LocomotionClass::`vftable'; /*0x55a6f0*/
-  *(this + 1) = &LocomotionClass::`vftable'; /*0x55a6f6*/
+  *(this + 1) = &vt_LocomotionClass; /*0x55a6f6*/
   *(this + 3) = 0; /*0x55a6fd*/
 }
 }

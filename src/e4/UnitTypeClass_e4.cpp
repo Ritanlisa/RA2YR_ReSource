@@ -96,7 +96,7 @@ int __thiscall UnitTypeClass::UnitTypeClass(int this, INIClass *aP1)
   *(_DWORD *)this = &UnitTypeClass::`vftable'; /*0x7471bf*/
   this->vtable1 = &UnitTypeClass::`vftable'; /*0x7471c5*/
   this->vtable2 = &UnitTypeClass::`vftable'; /*0x7471cb*/
-  this->vtable3 = &UnitTypeClass::`vftable'; /*0x7471d2*/
+  this->vtable3 = &vt_UnitTypeClass; /*0x7471d2*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x7471d9*/
   this->RotCount = 32; /*0x7471de*/
   v3 = (HouseClass *)g_CrateCount; /*0x7471e8*/
@@ -575,7 +575,7 @@ int __stdcall UnitTypeClass::_vt05(int a1, int a2)
       *(_DWORD *)a1 = &UnitTypeClass::`vftable'; /*0x74803d*/
       *(_DWORD *)(a1 + 4) = &UnitTypeClass::`vftable'; /*0x748043*/
       *(_DWORD *)(a1 + 8) = &UnitTypeClass::`vftable'; /*0x74804a*/
-      *(_DWORD *)(a1 + 12) = &UnitTypeClass::`vftable'; /*0x748051*/
+      *(_DWORD *)(a1 + 12) = &vt_UnitTypeClass; /*0x748051*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x74805a*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x748061*/
@@ -627,7 +627,7 @@ UnitTypeClass *__thiscall UnitTypeClass::ddtor(void **this, char a2)
   *this = &UnitTypeClass::`vftable'; /*0x748196*/
   *(this + 1) = &UnitTypeClass::`vftable'; /*0x74819c*/
   *(this + 2) = &UnitTypeClass::`vftable'; /*0x7481a3*/
-  *(this + 3) = &UnitTypeClass::`vftable'; /*0x7481aa*/
+  *(this + 3) = &vt_UnitTypeClass; /*0x7481aa*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x7481b1*/
   v5 = this; /*0x7481c6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(UnitTypeClass_Array + 16))(&UnitTypeClass_Array, &v5); /*0x7481ca*/

@@ -14,7 +14,7 @@ EMPulseClass *__fastcall EMPulseClass::CopyTo(AbstractClass *this, AbstractClass
   *(_DWORD *)this->__pad_0 = &EMPulseClass::`vftable'; /*0x4c5ac4*/
   *(_DWORD *)&this->__pad_0[4] = &EMPulseClass::`vftable'; /*0x4c5aca*/
   *(_DWORD *)&this->__pad_0[8] = &EMPulseClass::`vftable'; /*0x4c5ad1*/
-  *(_DWORD *)&this->__pad_0[12] = &EMPulseClass::`vftable'; /*0x4c5ad8*/
+  *(_DWORD *)&this->__pad_0[12] = &vt_EMPulseClass; /*0x4c5ad8*/
   if ( HouseClass_Player.__pad_5568[22252] ) /*0x4c5ae6*/
     EMPulseClass::IterateCellsInRadius((int)this); /*0x4c5ae8*/
   LOBYTE(a2) = 1; /*0x4c5aed*/

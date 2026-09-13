@@ -112,7 +112,7 @@ void __thiscall ConnectionClass_Dtor(_DWORD *this)
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v2 = (void *)*(this + 8); /*0x48bee3*/
-  *this = &ConnectionClass::`vftable'; /*0x48bee6*/
+  *this = &vt_ConnectionClass; /*0x48bee6*/
   __3_YAXPAX_Z(v2); /*0x48beed*/
   v3 = (void (__thiscall ***)(_DWORD, int))*(this + 1); /*0x48bef2*/
   if ( v3 ) /*0x48befb*/

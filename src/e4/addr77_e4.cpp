@@ -306,100 +306,6 @@ void __userpurge sub_770E70(char **this@<ecx>, ObjectClass *aP1, ObjectClass *aP
 }
 } // namespace gamemd
 
-// 0x770F10
-namespace gamemd {
-char E4Recv_770F10::sub_770F10(int a2, int a3, void ** a4)
-{
-{
-    char **v4;
-    int v5;
-    int v6;
-    int v8;
-    int v9;
-    char **v10;
-    char **v11;
-    char **v12;
-    char **v13;
-    void *v14;
-    v4 = (char **)a4;
-    v5 = (int)this + 48 * a3 + 4;
-    DeleteAndZero::Alt2(a4);
-    v6 = *(int *)(v5 + 16);
-    if ( v6 <= 0 )
-    return 0;
-    if ( v6 == 1 )
-    v8 = 0;
-    else
-    v8 = Random::Range(Randomizer_Global, 0, v6 - 1);
-    v9 = *(int *)(*(int *)(v5 + 4) + 4 * v8);
-    if ( a2 == 3 )
-  {
-    v10 = FormatStringInt((char **)&a4, v9, 2);
-    v11 = ProcessStringAndCopy((char **)&a3, g_Str_WWD_Soviet, v10);
-    String::Reassign(v4, (const char **)v11);
-    DeleteAndZero((void **)&a3);
-    DeleteAndZero((void **)&a4);
-  }
-    else
-  {
-    v12 = FormatStringInt((char **)&v14, v9, 2);
-    v13 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Allied, v12);
-    String::Reassign(v4, (const char **)v13);
-    DeleteAndZero((void **)&a2);
-    DeleteAndZero(&v14);
-  }
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x770FE0
-namespace gamemd {
-char E4Recv_770FE0::sub_770FE0(int a2, int a3, void ** a4)
-{
-{
-    char **v4;
-    int v5;
-    int v6;
-    int v8;
-    int v9;
-    char **v10;
-    char **v11;
-    char **v12;
-    char **v13;
-    void *v14;
-    v4 = (char **)a4;
-    v5 = (int)this + 48 * a3 + 28;
-    DeleteAndZero::Alt2(a4);
-    v6 = *(int *)(v5 + 16);
-    if ( v6 <= 0 )
-    return 0;
-    if ( v6 == 1 )
-    v8 = 0;
-    else
-    v8 = Random::Range(Randomizer_Global, 0, v6 - 1);
-    v9 = *(int *)(*(int *)(v5 + 4) + 4 * v8);
-    if ( a2 == 3 )
-  {
-    v10 = FormatStringInt((char **)&a4, v9, 2);
-    v11 = ProcessStringAndCopy((char **)&a3, g_Str_WWD_Soviet, v10);
-    String::Reassign(v4, (const char **)v11);
-    DeleteAndZero((void **)&a3);
-    DeleteAndZero((void **)&a4);
-  }
-    else
-  {
-    v12 = FormatStringInt((char **)&v14, v9, 2);
-    v13 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Allied, v12);
-    String::Reassign(v4, (const char **)v13);
-    DeleteAndZero((void **)&a2);
-    DeleteAndZero(&v14);
-  }
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x771710
 namespace gamemd {
 int E4Recv_771710::sub_771710()
@@ -443,29 +349,6 @@ int __thiscall sub_771710(int this)
 }
 } // namespace gamemd
 
-// 0x7717A0
-namespace gamemd {
-DWORD E4Recv_7717A0::sub_7717A0()
-{
-{
-    DWORD result;
-    DWORD *v3;
-    DWORD v4;
-    if ( (int)this->M976 > 0 )
-  {
-    StopThemeClass(1);
-    (*(void (__thiscall **)(DWORD *))(this->M960 + 12))(this + 240);
-  }
-    result = Timer::GetTicks();
-    v3 = this + 235;
-    *v3 = result;
-    v3[1] = v4;
-    v3[2] = 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x771850
 namespace gamemd {
 unsigned int * E4Recv_771850::sub_771850(int a2)
@@ -479,7 +362,7 @@ _DWORD *__thiscall sub_771850(_DWORD *this, int a2)
   *(this + 4) = Timer::GetTicks(); /*0x771867*/
   *(this + 6) = 0; /*0x77186e*/
   *(this + 7) = a2; /*0x771871*/
-  *this = &WorldDominationTour::Voices::Anim::`vftable'; /*0x771874*/
+  *this = &vt_WorldDominationTour_Voices_Anim; /*0x771874*/
   return this; /*0x77187c*/
 }
 }
@@ -492,25 +375,8 @@ void E4Recv_771890::sub_771890()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_771890(_DWORD *this)
 {
-  *this = &WorldDominationTour::Voices::Anim::`vftable'; /*0x771890*/
+  *this = &vt_WorldDominationTour_Voices_Anim; /*0x771890*/
   VtableStub::5CB6C0(this); /*0x771896*/
-}
-}
-} // namespace gamemd
-
-// 0x7719E0
-namespace gamemd {
-int E4Recv_7719E0::sub_7719E0()
-{
-{
-    this->M12 = 1;
-    this->M4 = 0;
-    this->M8 = 0;
-    this->M13 = 0;
-    *(void**)this = vt_DynamicVectorClass_unsigned_int;
-    this->M20 = 10;
-    this->M16 = 0;
-    return 0;
 }
 }
 } // namespace gamemd
@@ -525,7 +391,7 @@ void __thiscall sub_771A00(void *this)
   CCINIClass *v2; // eax
 
   v2 = (CCINIClass *)this->M4; /*0x771a06*/
-  *(_DWORD *)this = &VectorClass<unsigned int>::`vftable'; /*0x771a09*/
+  *(_DWORD *)this = &vt_VectorClass_unsigned_int; /*0x771a09*/
   if ( v2 && (unsigned char)this->M13 ) /*0x771a13*/
   {
     __3_YAXPAX_Z(v2); /*0x771a19*/
@@ -557,7 +423,7 @@ _DWORD *__fastcall sub_773450(int a1, int a2)
     v4[2] = 0; /*0x773480*/
     *((_BYTE *)v4 + 1036) = 0; /*0x773482*/
     v4[260] = 0; /*0x773488*/
-    *v4 = &WebBrowser::`vftable'; /*0x77348e*/
+    *v4 = &vt_WebBrowser; /*0x77348e*/
     Debug::Log(); /*0x773494*/
     v4[260] = a1; /*0x77349c*/
     Debug::Log(); /*0x7734a7*/
@@ -1294,27 +1160,6 @@ void __thiscall sub_776570(void *this)
 }
 } // namespace gamemd
 
-// 0x7767F0
-namespace gamemd {
-unsigned int E4Recv_7767F0::sub_7767F0()
-{
-{
-    char *v2;
-    LPARAM lParam[10];
-    v2 = this->M28;
-    if ( !v2 )
-    return 0;
-    String::Trim(v2);
-    strcpy((char *)DataGlobal_B73080, v2);
-    lParam[1] = (LPARAM)this->M16;
-    lParam[0] = 1;
-    lParam[4] = DataGlobal_B73080;
-    SendMessageA(DataGlobal_B730A0, 0x110Du, 0, (LPARAM)lParam);
-    return strlen((const char *)DataGlobal_B73080);
-}
-}
-} // namespace gamemd
-
 // 0x776A70
 namespace gamemd {
 void SaveWOLLobbySettings(unsigned char * a1, HWND a2, LPARAM lParam)
@@ -1511,7 +1356,7 @@ int __fastcall WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int w
         {
           MainWindowProc_Helper_724000(v9); /*0x7777a3*/
           v11[153] = 7; /*0x7777a8*/
-          *v11 = &CCToolTip::`vftable'; /*0x7777b2*/
+          *v11 = &vt_CCToolTip; /*0x7777b2*/
           MEMORY[0x887368] = (int)v11; /*0x7777b8*/
         }
         else
@@ -1892,15 +1737,15 @@ _DWORD *__fastcall PlayerProfile_Load(_DWORD *a1, const char **a2)
     v22[2] = 0; /*0x778ac3*/
     v23[1] = 0; /*0x778ac7*/
     v23[2] = 0; /*0x778acb*/
-    v23[0] = &GenericNode::`vftable'; /*0x778acf*/
+    v23[0] = &vt_GenericNode; /*0x778acf*/
     GenericNode::Constructor(v24); /*0x778ad7*/
     LinkedList::Prepend(v23, (int)v24); /*0x778aed*/
-    v22[3] = &List<INIClass::INISection *>::`vftable'; /*0x778af9*/
+    v22[3] = &vt_List_INIClass_INISection; /*0x778af9*/
     memset(&v24[3], 0, 12); /*0x778b07*/
     v25 = 0; /*0x778b13*/
     v26 = 0; /*0x778b18*/
     v27 = 0; /*0x778b1c*/
-    v22[0] = &INIClass::`vftable'; /*0x778b20*/
+    v22[0] = &vt_INIClass; /*0x778b20*/
     FileStraw::Open(v22, (int)v36, 0); /*0x778b28*/
     CCFileClass::Close(v36); /*0x778b34*/
     String::AssignFromPtr((char **)&v17, a2); /*0x778b3e*/
@@ -1975,7 +1820,7 @@ _DWORD *__fastcall PlayerProfile_Load(_DWORD *a1, const char **a2)
         v14 = 0; /*0x778eb7*/
       v15 = v32; /*0x778eb9*/
       ComPtr::Constructor(v32); /*0x778ebf*/
-      *v15 = &rc_ptr<PlayerProfile>::`vftable'; /*0x778ec6*/
+      *v15 = &vt_rc_ptr_PlayerProfile; /*0x778ec6*/
       ComPtr::Set(v15, v14); /*0x778ecd*/
       DeleteAndZero::Alt(&v20); /*0x778ed6*/
       DeleteAndZero::Alt(&v21); /*0x778edf*/
@@ -2351,8 +2196,8 @@ char sub_779730()
   BufferIOFile::Constructor(v8, MEMORY[0x849F8C]); /*0x779740*/
   if ( File::IsReady(v8, 0) ) /*0x77974c*/
   {
-    v3[0] = &GenericNode::`vftable'; /*0x779779*/
-    v4[0] = &GenericNode::`vftable'; /*0x77977d*/
+    v3[0] = &vt_GenericNode; /*0x779779*/
+    v4[0] = &vt_GenericNode; /*0x77977d*/
     v2[1] = 0; /*0x779785*/
     v2[2] = 0; /*0x77978a*/
     v3[1] = 0; /*0x77978e*/
@@ -2360,12 +2205,12 @@ char sub_779730()
     v4[1] = 0; /*0x779796*/
     v4[2] = 0; /*0x77979a*/
     LinkedList::Prepend(v3, (int)v4); /*0x7797a6*/
-    v2[3] = &List<INIClass::INISection *>::`vftable'; /*0x7797af*/
+    v2[3] = &vt_List_INIClass_INISection; /*0x7797af*/
     memset(&v4[3], 0, 12); /*0x7797bd*/
     v5 = 0; /*0x7797c9*/
     v6 = 0; /*0x7797cd*/
     v7 = 0; /*0x7797d1*/
-    v2[0] = &INIClass::`vftable'; /*0x7797d5*/
+    v2[0] = &vt_INIClass; /*0x7797d5*/
     FileStraw::Open(v2, (int)v8, 0); /*0x7797dd*/
     CCFileClass::Close(v8); /*0x7797e6*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x779804*/
@@ -2413,8 +2258,8 @@ int __fastcall ReadWOLGameOption(INIClass *a1)
     CCFileClass::Close(v12); /*0x779865*/
     CCFileClass::Reopen(v12, MEMORY[0x849F8C], (CDFileClass *)1); /*0x779875*/
   }
-  v7[0] = &GenericNode::`vftable'; /*0x779883*/
-  v8[0] = &GenericNode::`vftable'; /*0x779887*/
+  v7[0] = &vt_GenericNode; /*0x779883*/
+  v8[0] = &vt_GenericNode; /*0x779887*/
   v4 = 0; /*0x77988f*/
   v5 = 0; /*0x779894*/
   v7[1] = 0; /*0x779898*/
@@ -2422,12 +2267,12 @@ int __fastcall ReadWOLGameOption(INIClass *a1)
   v8[1] = 0; /*0x7798a0*/
   v8[2] = 0; /*0x7798a4*/
   LinkedList::Prepend(v7, (int)v8); /*0x7798b0*/
-  v6 = &List<INIClass::INISection *>::`vftable'; /*0x7798b9*/
+  v6 = &vt_List_INIClass_INISection; /*0x7798b9*/
   memset(&v8[3], 0, 12); /*0x7798c2*/
   v9 = 0; /*0x7798ce*/
   v10 = 0; /*0x7798d2*/
   v11 = 0; /*0x7798d6*/
-  *(_DWORD *)v3 = &INIClass::`vftable'; /*0x7798da*/
+  *(_DWORD *)v3 = &vt_INIClass; /*0x7798da*/
   if ( File::IsReady(v12, 0) ) /*0x7798e2*/
   {
     FileStraw::Open(v3, (int)v12, 0); /*0x7798f5*/
@@ -2460,8 +2305,8 @@ char sub_779940()
   BufferIOFile::Constructor(v8, MEMORY[0x849F8C]); /*0x779950*/
   if ( File::IsReady(v8, 0) ) /*0x77995c*/
   {
-    v3[0] = &GenericNode::`vftable'; /*0x779989*/
-    v4[0] = &GenericNode::`vftable'; /*0x77998d*/
+    v3[0] = &vt_GenericNode; /*0x779989*/
+    v4[0] = &vt_GenericNode; /*0x77998d*/
     v2[1] = 0; /*0x779995*/
     v2[2] = 0; /*0x77999a*/
     v3[1] = 0; /*0x77999e*/
@@ -2469,12 +2314,12 @@ char sub_779940()
     v4[1] = 0; /*0x7799a6*/
     v4[2] = 0; /*0x7799aa*/
     LinkedList::Prepend(v3, (int)v4); /*0x7799b6*/
-    v2[3] = &List<INIClass::INISection *>::`vftable'; /*0x7799bf*/
+    v2[3] = &vt_List_INIClass_INISection; /*0x7799bf*/
     memset(&v4[3], 0, 12); /*0x7799cd*/
     v5 = 0; /*0x7799d9*/
     v6 = 0; /*0x7799dd*/
     v7 = 0; /*0x7799e1*/
-    v2[0] = &INIClass::`vftable'; /*0x7799e5*/
+    v2[0] = &vt_INIClass; /*0x7799e5*/
     FileStraw::Open(v2, (int)v8, 0); /*0x7799ed*/
     CCFileClass::Close(v8); /*0x7799f6*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x779a14*/
@@ -2522,8 +2367,8 @@ int __fastcall ReadWOLLobbyOption(INIClass *a1)
     CCFileClass::Close(v12); /*0x779a75*/
     CCFileClass::Reopen(v12, MEMORY[0x849F8C], (CDFileClass *)1); /*0x779a85*/
   }
-  v7[0] = &GenericNode::`vftable'; /*0x779a93*/
-  v8[0] = &GenericNode::`vftable'; /*0x779a97*/
+  v7[0] = &vt_GenericNode; /*0x779a93*/
+  v8[0] = &vt_GenericNode; /*0x779a97*/
   v4 = 0; /*0x779a9f*/
   v5 = 0; /*0x779aa4*/
   v7[1] = 0; /*0x779aa8*/
@@ -2531,12 +2376,12 @@ int __fastcall ReadWOLLobbyOption(INIClass *a1)
   v8[1] = 0; /*0x779ab0*/
   v8[2] = 0; /*0x779ab4*/
   LinkedList::Prepend(v7, (int)v8); /*0x779ac0*/
-  v6 = &List<INIClass::INISection *>::`vftable'; /*0x779ac9*/
+  v6 = &vt_List_INIClass_INISection; /*0x779ac9*/
   memset(&v8[3], 0, 12); /*0x779ad2*/
   v9 = 0; /*0x779ade*/
   v10 = 0; /*0x779ae2*/
   v11 = 0; /*0x779ae6*/
-  *(_DWORD *)v3 = &INIClass::`vftable'; /*0x779aea*/
+  *(_DWORD *)v3 = &vt_INIClass; /*0x779aea*/
   if ( File::IsReady(v12, 0) ) /*0x779af2*/
   {
     FileStraw::Open(v3, (int)v12, 0); /*0x779b05*/
@@ -3427,7 +3272,7 @@ int sub_77D120()
 int sub_77D120()
 {
   ComPtr::Constructor(&stru_B75E48); /*0x77d125*/
-  stru_B75E48 = (int)&rc_ptr<PlayerProfile>::`vftable'; /*0x77d12f*/
+  stru_B75E48 = (int)&vt_rc_ptr_PlayerProfile; /*0x77d12f*/
   return atexit(sub_77D140); /*0x77d13f*/
 }
 }
@@ -3440,7 +3285,7 @@ void sub_77D140()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __cdecl sub_77D140()
 {
-  stru_B75E48 = (int)&rc_ptr<PlayerProfile>::`vftable'; /*0x77d140*/
+  stru_B75E48 = (int)&vt_rc_ptr_PlayerProfile; /*0x77d140*/
   ComPtr::Release(&stru_B75E48); /*0x77d14f*/
 }
 }
@@ -4719,6 +4564,100 @@ int sub_770250()
 }
 } // namespace gamemd
 
+// 0x770F10
+namespace gamemd {
+char E4Recv_770F10::sub_770F10(int a2, int a3, void ** a4)
+{
+{
+    char **v4;
+    int v5;
+    int v6;
+    int v8;
+    int v9;
+    char **v10;
+    char **v11;
+    char **v12;
+    char **v13;
+    void *v14;
+    v4 = (char **)a4;
+    v5 = (int)this + 48 * a3 + 4;
+    DeleteAndZero::Alt2(a4);
+    v6 = *(int *)(v5 + 16);
+    if ( v6 <= 0 )
+    return 0;
+    if ( v6 == 1 )
+    v8 = 0;
+    else
+    v8 = Random::Range(Randomizer_Global, 0, v6 - 1);
+    v9 = *(int *)(*(int *)(v5 + 4) + 4 * v8);
+    if ( a2 == 3 )
+  {
+    v10 = FormatStringInt((char **)&a4, v9, 2);
+    v11 = ProcessStringAndCopy((char **)&a3, g_Str_WWD_Soviet, v10);
+    String::Reassign(v4, (const char **)v11);
+    DeleteAndZero((void **)&a3);
+    DeleteAndZero((void **)&a4);
+  }
+    else
+  {
+    v12 = FormatStringInt((char **)&v14, v9, 2);
+    v13 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Allied, v12);
+    String::Reassign(v4, (const char **)v13);
+    DeleteAndZero((void **)&a2);
+    DeleteAndZero(&v14);
+  }
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x770FE0
+namespace gamemd {
+char E4Recv_770FE0::sub_770FE0(int a2, int a3, void ** a4)
+{
+{
+    char **v4;
+    int v5;
+    int v6;
+    int v8;
+    int v9;
+    char **v10;
+    char **v11;
+    char **v12;
+    char **v13;
+    void *v14;
+    v4 = (char **)a4;
+    v5 = (int)this + 48 * a3 + 28;
+    DeleteAndZero::Alt2(a4);
+    v6 = *(int *)(v5 + 16);
+    if ( v6 <= 0 )
+    return 0;
+    if ( v6 == 1 )
+    v8 = 0;
+    else
+    v8 = Random::Range(Randomizer_Global, 0, v6 - 1);
+    v9 = *(int *)(*(int *)(v5 + 4) + 4 * v8);
+    if ( a2 == 3 )
+  {
+    v10 = FormatStringInt((char **)&a4, v9, 2);
+    v11 = ProcessStringAndCopy((char **)&a3, g_Str_WWD_Soviet, v10);
+    String::Reassign(v4, (const char **)v11);
+    DeleteAndZero((void **)&a3);
+    DeleteAndZero((void **)&a4);
+  }
+    else
+  {
+    v12 = FormatStringInt((char **)&v14, v9, 2);
+    v13 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Allied, v12);
+    String::Reassign(v4, (const char **)v13);
+    DeleteAndZero((void **)&a2);
+    DeleteAndZero(&v14);
+  }
+    return 1;
+}
+}
+} // namespace gamemd
+
 // 0x771780
 namespace gamemd {
 void nullsub_259()
@@ -4735,11 +4674,51 @@ void nullsub_260()
 }
 } // namespace gamemd
 
+// 0x7717A0
+namespace gamemd {
+DWORD E4Recv_7717A0::sub_7717A0()
+{
+{
+    DWORD result;
+    DWORD *v3;
+    DWORD v4;
+    if ( (int)this->M976 > 0 )
+  {
+    StopThemeClass(1);
+    (*(void (__thiscall **)(DWORD *))(this->M960 + 12))(this + 240);
+  }
+    result = Timer::GetTicks();
+    v3 = this + 235;
+    *v3 = result;
+    v3[1] = v4;
+    v3[2] = 0;
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x7717F0
 namespace gamemd {
 int j_Audio_IsPlaying()
 {
 return Audio::IsPlaying();
+}
+} // namespace gamemd
+
+// 0x7719E0
+namespace gamemd {
+int E4Recv_7719E0::sub_7719E0()
+{
+{
+    this->M12 = 1;
+    this->M4 = 0;
+    this->M8 = 0;
+    this->M13 = 0;
+    *(void**)this = vt_DynamicVectorClass_unsigned_int;
+    this->M20 = 10;
+    this->M16 = 0;
+    return 0;
+}
 }
 } // namespace gamemd
 
@@ -5337,6 +5316,27 @@ HWND sub_7767B0(HWND hWnd, int a2, WPARAM wParam)
     DataGlobal_B730A0 = hWnd;
   }
     return result;
+}
+}
+} // namespace gamemd
+
+// 0x7767F0
+namespace gamemd {
+unsigned int E4Recv_7767F0::sub_7767F0()
+{
+{
+    char *v2;
+    LPARAM lParam[10];
+    v2 = this->M28;
+    if ( !v2 )
+    return 0;
+    String::Trim(v2);
+    strcpy((char *)DataGlobal_B73080, v2);
+    lParam[1] = (LPARAM)this->M16;
+    lParam[0] = 1;
+    lParam[4] = DataGlobal_B73080;
+    SendMessageA(DataGlobal_B730A0, 0x110Du, 0, (LPARAM)lParam);
+    return strlen((const char *)DataGlobal_B73080);
 }
 }
 } // namespace gamemd

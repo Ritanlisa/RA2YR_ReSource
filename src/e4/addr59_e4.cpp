@@ -292,7 +292,7 @@ void __fastcall FloodFillRandomMapTerrain(int a1, IUnknown *a2, int a3)
   v29 = v6; /*0x59445a*/
   VectorClass::CellConstructor(&v32, 0, 0); /*0x59445e*/
   v7 = *(__int16 *)(a1 + 36) + unk_89C2DC * *(__int16 *)(a1 + 38); /*0x594478*/
-  v32 = &DynamicVectorClass<Cell>::`vftable'; /*0x59447a*/
+  v32 = &vt_DynamicVectorClass_Cell; /*0x59447a*/
   v36 = 0; /*0x594482*/
   v37 = 20000; /*0x59448d*/
   *((_DWORD *)g_MapTileArray + 20 * v7 + 15) = v6; /*0x594498*/
@@ -386,7 +386,7 @@ void __fastcall FloodFillRandomMapTerrain(int a1, IUnknown *a2, int a3)
       v6 = v29; /*0x5944f8*/
     }
   }
-  v32 = &VectorClass<Cell>::`vftable'; /*0x5946d2*/
+  v32 = &vt_VectorClass_Cell; /*0x5946d2*/
   if ( Block ) /*0x5946dd*/
   {
     if ( v35 ) /*0x5946e5*/
@@ -579,7 +579,7 @@ char RandomMap_DistributeTerrain()
   }
   ComputeMapCameraBounds(); /*0x594ee3*/
   __3_YAXPAX_Z(0); /*0x594eed*/
-  v36 = &VectorClass<MapRegionClass *>::`vftable'; /*0x594efb*/
+  v36 = &vt_VectorClass_MapRegionClass; /*0x594efb*/
   if ( Block && v39 ) /*0x594f25*/
     __3_YAXPAX_Z(Block); /*0x594f28*/
   return 1; /*0x594f03*/
@@ -616,7 +616,7 @@ void CleanupRandomMapCache()
   int v19; // [esp+2Ch] [ebp-4h]
 
   Map_Cleanup(0, 0); /*0x595cef*/
-  v14 = &DynamicVectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x595cf4*/
+  v14 = &vt_DynamicVectorClass_WIN32_FIND_DATAA; /*0x595cf4*/
   v19 = 10; /*0x595cfc*/
   j = 0; /*0x595d09*/
   i = (struct _WIN32_FIND_DATAA *)__2_YAPAXI_Z(0x140u); /*0x595d19*/
@@ -749,7 +749,7 @@ LABEL_37:
     }
     while ( !v11 ); /*0x595f85*/
   }
-  v14 = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x595f89*/
+  v14 = &vt_VectorClass_WIN32_FIND_DATAA; /*0x595f89*/
   if ( v7 ) /*0x595f91*/
   {
     if ( v17 ) /*0x595f99*/
@@ -786,12 +786,12 @@ _DWORD *__fastcall GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   struct _WIN32_FIND_DATAA FindFileData; // [esp+130h] [ebp-140h] BYREF
 
   ComPtr::Constructor(v15); /*0x595fc2*/
-  v15[0] = &rc_ptr<WDTTerritory>::`vftable'; /*0x595fd8*/
+  v15[0] = &vt_rc_ptr_WDTTerritory; /*0x595fd8*/
   if ( MEMORY[0xA8B238][0] == 4 && MEMORY[0xA8B244] == 3 ) /*0x595fe5*/
   {
     v4 = FindWDTTerritoryClass(v16, *(int *)MEMORY[0xA8B240]); /*0x595ff1*/
     ComPtr::Set(v15, v4[1]); /*0x595ffe*/
-    v16[0] = &rc_ptr<WDTTerritory>::`vftable'; /*0x596007*/
+    v16[0] = &vt_rc_ptr_WDTTerritory; /*0x596007*/
     ComPtr::Release(v16); /*0x59600b*/
   }
   if ( v15[1] ) /*0x596016*/
@@ -884,12 +884,12 @@ _DWORD *__fastcall GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     dword_ABE150 = 0; /*0x5962b2*/
   }
 LABEL_39:
-  v18[0] = &CCFileClass::`vftable'; /*0x5962b8*/
+  v18[0] = &vt_CCFileClass; /*0x5962b8*/
   v20 = 0; /*0x5962c7*/
   Vector::Clear((int)v19); /*0x5962ce*/
   v18[0] = &off_7E1668; /*0x5962d7*/
   BufferIOFileClass::Dtor(v18); /*0x5962df*/
-  v15[0] = &rc_ptr<WDTTerritory>::`vftable'; /*0x5962e8*/
+  v15[0] = &vt_rc_ptr_WDTTerritory; /*0x5962e8*/
   return ComPtr::Release(v15); /*0x5962f5*/
 }
 }
@@ -1036,12 +1036,12 @@ void __stdcall ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass *aP
   v34 = aP2[1]; /*0x59a9df*/
   v33 = *aP2; /*0x59a9e9*/
   VectorClass::Construct(&v43, 0, 0); /*0x59a9ed*/
-  v43 = &DynamicVectorClass<int>::`vftable'; /*0x59a9f8*/
+  v43 = (void **)&vt_DynamicVectorClass_int; /*0x59a9f8*/
   v48 = 10; /*0x59aa00*/
   v47 = 0; /*0x59aa0b*/
   VectorClass::Construct(&v37, 0, 0); /*0x59aa12*/
   v10 = 0; /*0x59aa1b*/
-  v37 = &DynamicVectorClass<int>::`vftable'; /*0x59aa1f*/
+  v37 = (void **)&vt_DynamicVectorClass_int; /*0x59aa1f*/
   v42 = (CCINIClass *)10; /*0x59aa27*/
   i = 0; /*0x59aa2f*/
   if ( v23 > 0 ) /*0x59aa33*/
@@ -1075,7 +1075,7 @@ void __stdcall ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass *aP
     v13 = v8; /*0x59aae1*/
     do /*0x59ab62*/
     {
-      v14 = (char *)&v10[-1].field_2590 + 3; /*0x59aae3*/
+      v14 = &v10[-1].__tail_E[1]; /*0x59aae3*/
       v36 = (double)(unsigned int)v10; /*0x59aaf9*/
       do /*0x59ab28*/
       {
@@ -1146,13 +1146,13 @@ void __stdcall ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass *aP
       v33 = *v7; /*0x59ac8f*/
     ++v16; /*0x59aca0*/
   }
-  v37 = &VectorClass<int>::`vftable'; /*0x59acb8*/
+  v37 = (void **)&vt_VectorClass_int; /*0x59acb8*/
   if ( Block && BYTE1(v40) ) /*0x59acc4*/
   {
     __3_YAXPAX_Z(Block); /*0x59acc7*/
     Block = 0; /*0x59accf*/
   }
-  v43 = &VectorClass<int>::`vftable'; /*0x59acdb*/
+  v43 = (void **)&vt_VectorClass_int; /*0x59acdb*/
   BYTE1(v40) = 0; /*0x59ace2*/
   v39 = 0; /*0x59ace9*/
   if ( v44 ) /*0x59acf2*/

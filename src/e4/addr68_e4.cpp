@@ -1204,7 +1204,7 @@ int __usercall ScenarioClass_PostLoadInit@<eax>(int a1@<edi>)
     if ( (Debug::AccumFlags(v6) & 4) != 0 ) /*0x684d68*/
     {
       v7 = TeamClass::FindOrCreate(v6); /*0x684d77*/
-      if ( unk_8B41B8 < unk_8B41B0 /*0x684da9*/
+      if ( dword_8B41B8 < unk_8B41B0 /*0x684da9*/
         || (unk_8B41B5 || !unk_8B41B0)
         && unk_8B41BC > 0
         && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(unk_8B41A8 + 8))(
@@ -1212,7 +1212,7 @@ int __usercall ScenarioClass_PostLoadInit@<eax>(int a1@<edi>)
              unk_8B41B0 + unk_8B41BC,
              0) )
       {
-        v8 = unk_8B41B8++; /*0x684db6*/
+        v8 = dword_8B41B8++; /*0x684db6*/
         *((_DWORD *)unk_8B41AC + v8) = v7; /*0x684dc5*/
       }
     }
@@ -1477,7 +1477,7 @@ LABEL_16:
     if ( *(_DWORD *)MEMORY[0xB0E784] ) /*0x685429*/
       (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)MEMORY[0xB0E784] + 32))(*(_DWORD *)MEMORY[0xB0E784], 1); /*0x685433*/
   }
-  unk_8B41B8 = 0; /*0x685443*/
+  dword_8B41B8 = 0; /*0x685443*/
   if ( unk_8B41AC && unk_8B41B5 ) /*0x685453*/
   {
     __3_YAXPAX_Z(unk_8B41AC); /*0x685456*/
@@ -1576,7 +1576,7 @@ char *__usercall SaveScenarioToINI@<eax>(RawFileClass *Source@<ecx>, ScenarioCla
   a1.headNode[0] = 0; /*0x687cf4*/
   a1.headNode[1] = 0; /*0x687cf8*/
   GenericList::Constructor(&a1.headNode[2]); /*0x687cfc*/
-  a1.headNode[2] = (int)&List<INIClass::INISection *>::`vftable'; /*0x687d05*/
+  a1.headNode[2] = (int)&vt_List_INIClass_INISection; /*0x687d05*/
   Node::Init(&a1.__pad_20[8]); /*0x687d0d*/
   a1.INIClass_field_3C = 0; /*0x687d17*/
   v11 = 0; /*0x687d1d*/
@@ -1585,7 +1585,7 @@ char *__usercall SaveScenarioToINI@<eax>(RawFileClass *Source@<ecx>, ScenarioCla
   {
     v4 = CCFileClass::Construct(aP1, Source->__pad_0); /*0x687d34*/
     v5 = (*(int (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)v4->__pad_0 + 20))(v4, 0); /*0x687d3e*/
-    *(_DWORD *)aP1[0].__pad_0 = &CCFileClass::`vftable'; /*0x687d48*/
+    *(_DWORD *)aP1[0].__pad_0 = &vt_CCFileClass; /*0x687d48*/
     v7 = v5; /*0x687d50*/
     v15 = 0; /*0x687d54*/
     Vector::Clear((int)v13); /*0x687d5b*/
@@ -1595,7 +1595,7 @@ char *__usercall SaveScenarioToINI@<eax>(RawFileClass *Source@<ecx>, ScenarioCla
     {
       CCFileClass::Construct(aP1, Source->__pad_0); /*0x687d7c*/
       CCINIClass::Load(&a1, aP1, 1, 0); /*0x687d8d*/
-      *(_DWORD *)aP1[0].__pad_0 = &CCFileClass::`vftable'; /*0x687d99*/
+      *(_DWORD *)aP1[0].__pad_0 = &vt_CCFileClass; /*0x687d99*/
       v15 = 0; /*0x687da1*/
       Vector::Clear((int)v13); /*0x687da8*/
       *(_DWORD *)aP1[0].__pad_0 = &off_7E1668; /*0x687db1*/
@@ -2284,7 +2284,7 @@ int sub_68C330()
   MEMORY[0xB054D8] = 0; /*0x68c33c*/
   MEMORY[0xB054DC] = 1; /*0x68c341*/
   MEMORY[0xB054DD] = 0; /*0x68c348*/
-  MEMORY[0xB054D0] = (int)&DynamicVectorClass<ColorScheme *>::`vftable'; /*0x68c34d*/
+  MEMORY[0xB054D0] = (int)&vt_DynamicVectorClass_ColorScheme; /*0x68c34d*/
   MEMORY[0xB054E4] = 10; /*0x68c357*/
   MEMORY[0xB054E0] = 0; /*0x68c361*/
   return atexit(sub_68C370); /*0x68c36c*/
@@ -2299,7 +2299,7 @@ void sub_68C370()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __cdecl sub_68C370()
 {
-  MEMORY[0xB054D0] = (int)&VectorClass<ColorScheme *>::`vftable'; /*0x68c378*/
+  MEMORY[0xB054D0] = (int)&vt_VectorClass_ColorScheme; /*0x68c378*/
   if ( MEMORY[0xB054D4] && MEMORY[0xB054DD] ) /*0x68c38c*/
   {
     __3_YAXPAX_Z(MEMORY[0xB054D4]); /*0x68c38f*/
@@ -2576,7 +2576,7 @@ int __thiscall sub_68F8A0(int this)
     v4[7] = 0; /*0x68f922*/
     v4[8] = 0; /*0x68f925*/
     *((_BYTE *)v4 + 36) = 0; /*0x68f928*/
-    *v4 = &ScorePrintClass::`vftable'; /*0x68f92b*/
+    *v4 = &vt_ScorePrintClass; /*0x68f92b*/
   }
   else
   {

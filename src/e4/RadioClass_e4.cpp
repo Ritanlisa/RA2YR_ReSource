@@ -15,13 +15,13 @@ _DWORD *__thiscall RadioClass::RadioClass(_DWORD *this)
   *(this + 58) = 1; /*0x65a764*/
   *((_BYTE *)this + 236) = 1; /*0x65a76e*/
   *((_BYTE *)this + 237) = 0; /*0x65a775*/
-  *(this + 56) = &VectorClass<TechnoClass *>::`vftable'; /*0x65a77c*/
+  *(this + 56) = &vt_VectorClass_TechnoClass; /*0x65a77c*/
   *(this + 57) = __2_YAPAXI_Z(4u); /*0x65a78b*/
   *((_BYTE *)this + 237) = 1; /*0x65a791*/
   *this = &RadioClass::`vftable'; /*0x65a798*/
   *(this + 1) = &RadioClass::`vftable'; /*0x65a79e*/
   *(this + 2) = &RadioClass::`vftable'; /*0x65a7a5*/
-  *(this + 3) = &RadioClass::`vftable'; /*0x65a7ac*/
+  *(this + 3) = &vt_RadioClass; /*0x65a7ac*/
   *(_DWORD *)*(this + 57) = 0; /*0x65a7be*/
   *(this + 53) = 0; /*0x65a7c4*/
   *(this + 54) = 0; /*0x65a7ca*/
@@ -145,7 +145,7 @@ int __thiscall RadioClass::LoadState(void *this, ObjectClass *aP1, ObjectClass *
       v3[1].ambientSoundController[0] = 0; /*0x65abab*/
       LOBYTE(v3[1].ambientSoundController[1]) = 1; /*0x65abb2*/
       BYTE1(v3[1].ambientSoundController[1]) = 0; /*0x65abb6*/
-      *p_attachedTag = &VectorClass<TechnoClass *>::`vftable'; /*0x65abba*/
+      *p_attachedTag = &vt_VectorClass_TechnoClass; /*0x65abba*/
     }
     result = (*(int (__stdcall **)(ObjectClass *, ObjectClass **, int, _DWORD))(*(_DWORD *)v4->__pad_0 + 12))( /*0x65abcc*/
                v4,

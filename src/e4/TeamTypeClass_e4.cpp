@@ -28,7 +28,7 @@ int __thiscall TeamTypeClass_Constructor(int this)
   this->taskForceCapacity = 0; /*0x4c98dd*/
   *(_BYTE *)(this + 76) = 1; /*0x4c98e0*/
   *(_BYTE *)(this + 77) = 0; /*0x4c98e3*/
-  this->taskForce = &DynamicVectorClass<TechnoTypeClass const *>::`vftable'; /*0x4c98e6*/
+  this->taskForce = &vt_DynamicVectorClass_TechnoTypeClass_const; /*0x4c98e6*/
   *(_DWORD *)(this + 84) = 10; /*0x4c98ed*/
   *(_DWORD *)(this + 80) = 0; /*0x4c98f4*/
   this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
@@ -43,7 +43,7 @@ int __thiscall TeamTypeClass_Constructor(int this)
   *(_DWORD *)this = &FactoryClass::`vftable'; /*0x4c991a*/
   this->vtable1 = &FactoryClass::`vftable'; /*0x4c9920*/
   this->vtable2 = &FactoryClass::`vftable'; /*0x4c9926*/
-  this->vtable3 = &FactoryClass::`vftable'; /*0x4c992d*/
+  this->vtable3 = &vt_FactoryClass; /*0x4c992d*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x4c9934*/
   if ( MEMORY[0xA83E40] < MEMORY[0xA83E38] /*0x4c996d*/
     || (MEMORY[0xA83E3D] || !MEMORY[0xA83E38])
@@ -109,7 +109,7 @@ LABEL_6:
       *(_DWORD *)v4->__pad_0 = &ScriptTypeClass::`vftable'; /*0x691c95*/
       v4->headNode[0] = (int)&ScriptTypeClass::`vftable'; /*0x691c9b*/
       v4->headNode[1] = (int)&ScriptTypeClass::`vftable'; /*0x691ca2*/
-      v4->headNode[2] = (int)&ScriptTypeClass::`vftable'; /*0x691ca9*/
+      v4->headNode[2] = (int)&vt_ScriptTypeClass; /*0x691ca9*/
       v5 = dword_8B41D8; /*0x691cb0*/
       if ( dword_8B41D8 < dword_8B41D0 /*0x691cf1*/
         || (unk_8B41D5 || !dword_8B41D0)
@@ -894,7 +894,7 @@ int __stdcall TeamTypeClass::LoadTypeData(AbstractTypeClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &TeamTypeClass::`vftable'; /*0x6f1bd4*/
       *(_DWORD *)&aP0->__pad_0[4] = &TeamTypeClass::`vftable'; /*0x6f1bda*/
       *(_DWORD *)&aP0->__pad_0[8] = &TeamTypeClass::`vftable'; /*0x6f1be1*/
-      *(_DWORD *)&aP0->__pad_0[12] = &TeamTypeClass::`vftable'; /*0x6f1be8*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_TeamTypeClass; /*0x6f1be8*/
     }
     ObjectPtr::RegisterForTracking( /*0x6f1bfb*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
@@ -1128,7 +1128,7 @@ TeamTypeClass *__thiscall TeamTypeClass::ddtor(void **this, char a2)
   *this = &TeamTypeClass::`vftable'; /*0x6f20d6*/
   *(this + 1) = &TeamTypeClass::`vftable'; /*0x6f20dc*/
   *(this + 2) = &TeamTypeClass::`vftable'; /*0x6f20e3*/
-  *(this + 3) = &TeamTypeClass::`vftable'; /*0x6f20ea*/
+  *(this + 3) = &vt_TeamTypeClass; /*0x6f20ea*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6f20f1*/
   v6 = this; /*0x6f2106*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8ECA0] + 16))(&MEMORY[0xA8ECA0], &v6); /*0x6f210a*/
@@ -1584,7 +1584,7 @@ VectorClass *__thiscall TeamTypeClass_28_::QueryInterface(_DWORD *this, char a2)
   int v3; // eax
 
   v3 = *(this + 1); /*0x6f2683*/
-  *this = &VectorClass<DiscreteDistributionClass<AITriggerTypeClass>::DistributionObject<AITriggerTypeClass *>>::`vftable'; /*0x6f2686*/
+  *this = &vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass; /*0x6f2686*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x6f2690*/
   {
     __3_YAXPAX_Z((void *)(v3 - 4)); /*0x6f26a3*/
@@ -1609,7 +1609,7 @@ DynamicVector *__thiscall TeamTypeClass_28_::Constructor(_DWORD *this, char a2)
   int v3; // eax
 
   v3 = *(this + 1); /*0x6f2723*/
-  *this = &VectorClass<DiscreteDistributionClass<AITriggerTypeClass>::DistributionObject<AITriggerTypeClass *>>::`vftable'; /*0x6f2726*/
+  *this = &vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass; /*0x6f2726*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x6f2730*/
   {
     __3_YAXPAX_Z((void *)(v3 - 4)); /*0x6f2743*/

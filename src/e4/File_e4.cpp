@@ -455,7 +455,7 @@ int __thiscall ParseCSFStringFile(char *this)
     if ( CCFileClass::Read(v23, &v18, 4) != 4 ) /*0x7349fe*/
     {
 LABEL_42:
-      v23[0] = (int)&CCFileClass::`vftable'; /*0x734cad*/
+      v23[0] = (int)&vt_CCFileClass; /*0x734cad*/
       v25 = 0; /*0x734cbc*/
       Vector::Clear((int)v24); /*0x734cc3*/
       v23[0] = (int)&off_7E1668; /*0x734ccc*/
@@ -585,7 +585,7 @@ LABEL_31:
     }
   }
 LABEL_43:
-  v23[0] = (int)&CCFileClass::`vftable'; /*0x734ce9*/
+  v23[0] = (int)&vt_CCFileClass; /*0x734ce9*/
   v25 = 0; /*0x734cf8*/
   Vector::Clear((int)v24); /*0x734cff*/
   v23[0] = (int)&off_7E1668; /*0x734d08*/
@@ -646,10 +646,10 @@ WDTState *__thiscall File::LoadWDT(char *this, ObjectClass *aP1)
   *((_DWORD *)this + 13) = 0; /*0x76aca1*/
   *(this + 56) = 1; /*0x76aca4*/
   *(this + 57) = 0; /*0x76aca8*/
-  *((_DWORD *)this + 11) = &DynamicVectorClass<rc_ptr<WDTTerritory>>::`vftable'; /*0x76acab*/
+  *((_DWORD *)this + 11) = &vt_DynamicVectorClass_rc_ptr_WDTTerritory; /*0x76acab*/
   *((_DWORD *)this + 16) = 10; /*0x76acb2*/
   *((_DWORD *)this + 15) = 0; /*0x76acb9*/
-  *(_DWORD *)this = &WDTState::`vftable'; /*0x76acbe*/
+  *(_DWORD *)this = &vt_WDTState; /*0x76acbe*/
   v3 = (u_short *)__2_YAPAXI_Z(0xCu); /*0x76acc4*/
   if ( v3 ) /*0x76acce*/
     PaletteData = File::LoadPaletteData(v3, aP1); /*0x76acdc*/

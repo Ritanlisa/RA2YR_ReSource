@@ -67,7 +67,7 @@ VectorClass *__thiscall CampaignProperties_WorldDominationTour_22_::QueryInterfa
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5d2ca3*/
-  *this = &VectorClass<MSAnim *>::`vftable'; /*0x5d2ca6*/
+  *this = &vt_VectorClass_MSAnim; /*0x5d2ca6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x5d2cb0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d2cb8*/

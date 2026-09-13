@@ -5,7 +5,6 @@ namespace gamemd {
 struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     void* vfptr;  // minimal E2 declaration
     unsigned int * Constructor(EnumConnectionPointsClass * aP1);  // 0x4A0C20
-    void * GetItemIndex_0(int a2);  // 0x4F6930
     int SetCapacity(int a1, int a2);  // 0x4F6A20
     int SetCapacity_0(int a1, int a2);  // 0x4F6A80
     int SetCapacity_1(int a1, int a2);  // 0x4F6AE0
@@ -16,6 +15,7 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     int StubReturnNullPointer_0(int a1, const void * a2, unsigned int * a3);  // 0x502550
     char Release(int a2, unsigned int * a3);  // 0x50F520
     char SetCapacity_6(int a2, unsigned int * a3);  // 0x50F660
+    void * GetItemIndex_0(int a2);  // 0x4F6930
     bool GetItemIndex(int a1);  // 0x4F6910
     BSTR FindItemIndex(int a1);  // 0x4F6950
     long long FindItemIndex_0(int a1);  // 0x4F6990

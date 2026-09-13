@@ -105,7 +105,7 @@ int __stdcall ConnectionPointClass::_vt07(_DWORD *a1, int a2)
   v3[3] = 0; /*0x4a079b*/
   *((_BYTE *)v3 + 16) = 1; /*0x4a079e*/
   *((_BYTE *)v3 + 17) = 0; /*0x4a07a2*/
-  v3[1] = &VectorClass<tagCONNECTDATA>::`vftable'; /*0x4a07a5*/
+  v3[1] = &vt_VectorClass_tagCONNECTDATA; /*0x4a07a5*/
   if ( v3 + 1 != a1 + 7 ) /*0x4a07ab*/
   {
     VectorClass::ClearAndFree2((int)(v3 + 1)); /*0x4a07af*/
@@ -141,10 +141,10 @@ int __stdcall ConnectionPointClass::_vt07(_DWORD *a1, int a2)
   }
   v3[5] = a1[11]; /*0x4a0815*/
   v3[6] = a1[12]; /*0x4a081b*/
-  v3[1] = &DynamicVectorClass<tagCONNECTDATA>::`vftable'; /*0x4a081e*/
+  v3[1] = &vt_DynamicVectorClass_tagCONNECTDATA; /*0x4a081e*/
   v3[7] = 0; /*0x4a0824*/
   v3[8] = 0; /*0x4a0827*/
-  *v3 = &EnumConnectionsClass::`vftable'; /*0x4a082a*/
+  *v3 = &vt_EnumConnectionsClass; /*0x4a082a*/
   for ( i = 0; i < v3[5]; ++i ) /*0x4a0837*/
   {
     v11 = *(_DWORD *)(v3[2] + 8 * i); /*0x4a083f*/
@@ -170,10 +170,10 @@ _DWORD *__thiscall ConnectionPointClass::Construct(_DWORD *this, _DWORD *a1, Con
   *(this + 9) = 0; /*0x4a089f*/
   *((_BYTE *)this + 40) = 1; /*0x4a08a2*/
   *((_BYTE *)this + 41) = 0; /*0x4a08a6*/
-  *(this + 7) = &DynamicVectorClass<tagCONNECTDATA>::`vftable'; /*0x4a08a9*/
+  *(this + 7) = &vt_DynamicVectorClass_tagCONNECTDATA; /*0x4a08a9*/
   *(this + 12) = 10; /*0x4a08b0*/
   *(this + 11) = 0; /*0x4a08b7*/
-  *this = &ConnectionPointClass::`vftable'; /*0x4a08ba*/
+  *this = &vt_ConnectionPointClass; /*0x4a08ba*/
   (*(void (__stdcall **)(ConnectionPointClass *))(*(_DWORD *)aP2->__pad_0 + 4))(aP2); /*0x4a08c3*/
   return this; /*0x4a08c8*/
 }
@@ -329,7 +329,7 @@ VectorClass *__thiscall ConnectionPointClass_9_::QueryInterface(_DWORD *this, ch
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4a14f3*/
-  *this = &VectorClass<IConnectionPoint *>::`vftable'; /*0x4a14f6*/
+  *this = &vt_VectorClass_IConnectionPoint; /*0x4a14f6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4a1500*/
   {
     __3_YAXPAX_Z(v3); /*0x4a1508*/

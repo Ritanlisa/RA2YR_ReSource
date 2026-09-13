@@ -58,7 +58,7 @@ char __thiscall Movie::SetupScreen(int this, CCINIClass *aP1)
   v4 = (TechnoTypeClass *)MEMORY[0x89F570]; /*0x49cb29*/
   *(_BYTE *)(this + 108) = 1; /*0x49cb2f*/
   this->Movie_field_0x38 = -1; /*0x49cb33*/
-  v5 = &v4->__pad_0[76 * (_DWORD)aP1]; /*0x49cb3a*/
+  v5 = &v4->vtable0[76 * (_DWORD)aP1]; /*0x49cb3a*/
   v6 = *(CCINIClass **)(this + 68); /*0x49cb3d*/
   *(_DWORD *)(this + 72) = 0; /*0x49cb42*/
   *(_DWORD *)(this + 76) = 0; /*0x49cb45*/

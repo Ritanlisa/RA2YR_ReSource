@@ -435,7 +435,7 @@ int __stdcall TriggerTypeClass::LoadTypeData(AbstractTypeClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &TriggerTypeClass::`vftable'; /*0x727c14*/
       *(_DWORD *)&aP0->__pad_0[4] = &TriggerTypeClass::`vftable'; /*0x727c1a*/
       *(_DWORD *)&aP0->__pad_0[8] = &TriggerTypeClass::`vftable'; /*0x727c21*/
-      *(_DWORD *)&aP0->__pad_0[12] = &TriggerTypeClass::`vftable'; /*0x727c28*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_TriggerTypeClass; /*0x727c28*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].uniqueId); /*0x727c3b*/
     ObjectPtr::RegisterForTracking( /*0x727c4c*/

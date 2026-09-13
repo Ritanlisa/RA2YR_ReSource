@@ -44,7 +44,7 @@ int *__thiscall Building::ComputePosition(int *this, AnimClass *aP1)
   __int16 v35[2]; // [esp+28h] [ebp-20h] BYREF
   int v36; // [esp+2Ch] [ebp-1Ch]
   IUnknown *v37; // [esp+30h] [ebp-18h] BYREF
-  int v38; // [esp+34h] [ebp-14h]
+  void *v38; // [esp+34h] [ebp-14h]
   char *v39; // [esp+3Ch] [ebp-Ch]
   int v40; // [esp+40h] [ebp-8h]
   int v41; // [esp+44h] [ebp-4h]
@@ -78,28 +78,26 @@ int *__thiscall Building::ComputePosition(int *this, AnimClass *aP1)
         {
           v34[0] = (_WORD)v8; /*0x425da0*/
           v34[1] = v12; /*0x425da5*/
-          if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (IUnknown *)v34, (TechnoClass *)1) ) /*0x425daa*/
+          if ( LayerClass::IsWithinUsableArea(&stru_87C374.__pad_14B0[8132], (IUnknown *)v34, (TechnoClass *)1) ) /*0x425daa*/
           {
             v35[0] = (__int16)v8; /*0x425dbb*/
             v35[1] = v12; /*0x425dc6*/
-            v13 = (VectorClass *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v35); /*0x425dcb*/
+            v13 = (VectorClass *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], v35); /*0x425dcb*/
             v14 = v13; /*0x425dd0*/
-            if ( *(_DWORD *)&v13->__pad_4C[160] == 2 /*0x425e18*/
-              && (*(_DWORD *)&v13->__pad_4C[244] & 0x100) == 0
+            if ( *(_DWORD *)&v13[14].IsInitialized == 2 /*0x425e18*/
+              && ((int)v13[20].vtable0 & 0x100) == 0
               && (*((_DWORD *)Cell::GetNeighbourContent(v13, 6u) + 80) & 0x100) == 0
               && (*((_DWORD *)Cell::GetNeighbourContent(v14, 0) + 80) & 0x100) == 0 )
             {
-              if ( *(_DWORD *)&v14->__pad_18[12] == v38 ) /*0x425e27*/
+              if ( v14[2].Items == v38 ) /*0x425e27*/
               {
                 v16 = 0; /*0x425e77*/
               }
               else
               {
                 v40 = v12 - v30; /*0x425e44*/
-                v39 = &v8->__pad_0[-v31]; /*0x425e48*/
-                v15 = Math::Sqrt( /*0x425e68*/
-                        (double)(int)&v8->__pad_0[-v31] * (double)(int)&v8->__pad_0[-v31]
-                      + (double)(v12 - v30) * (double)(v12 - v30));
+                v39 = (char *)v8 - v31; /*0x425e48*/
+                v15 = ((double (__cdecl *)(double))Math::Sqrt)((double)((int)v8 - v31) * (double)((int)v8 - v31) + (double)(v12 - v30) * (double)(v12 - v30)); /*0x425e68*/
                 v16 = Math::RoundToInt(v15); /*0x425e70*/
               }
               if ( (int)v8 > v31 || v12 > v30 ) /*0x425e83*/
@@ -141,7 +139,7 @@ int *__thiscall Building::ComputePosition(int *this, AnimClass *aP1)
       {
         v19 = -1; /*0x425f07*/
       }
-      v21 = v38 + v20; /*0x425f1b*/
+      v21 = (_WORD)v38 + v20; /*0x425f1b*/
       v22 = v19 + HIWORD(v38); /*0x425f21*/
       LOWORD(v37) = v21; /*0x425f28*/
       HIWORD(v37) = v19 + HIWORD(v38); /*0x425f2d*/
@@ -161,7 +159,7 @@ int *__thiscall Building::ComputePosition(int *this, AnimClass *aP1)
         return &aP1->field_0; /*0x425fb0*/
       }
       HIWORD(v37) = v22; /*0x425fb8*/
-      LOWORD(v37) = v38; /*0x425fbd*/
+      LOWORD(v37) = (_WORD)v38; /*0x425fbd*/
       if ( BuildingClass::IsCellPlaceable(this, (__int16 *)&v37) ) /*0x425fd3*/
       {
         aP1->field_0 = (v7 << 8) + 128; /*0x425ff0*/
@@ -178,13 +176,13 @@ LABEL_39:
     *(_QWORD *)&aP1->field_4 = qword_89A17C; /*0x4260a3*/
     return &aP1->field_0; /*0x4260b5*/
   }
-  v26 = (AnimClass *)Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)7); /*0x426032*/
+  v26 = (AnimClass *)Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)7); /*0x426032*/
   v27 = 0; /*0x426034*/
   while ( 1 ) /*0x426046*/
   {
     v28 = (((int)v26 + v27) % 8) & 7; /*0x426046*/
-    v29 = v38 + *((_WORD *)&MEMORY[0x89F688].field_0 + 2 * v28); /*0x426058*/
-    LOWORD(v28) = HIWORD(v38) + *((_WORD *)&MEMORY[0x89F68A] + 2 * v28); /*0x426061*/
+    v29 = (_WORD)v38 + *(_WORD *)&stru_89E138.__pad_14B0[4 * v28 + 160]; /*0x426058*/
+    LOWORD(v28) = HIWORD(v38) + *(_WORD *)&stru_89E138.__pad_14B0[4 * v28 + 162]; /*0x426061*/
     LOWORD(v37) = v29; /*0x426066*/
     HIWORD(v37) = v28; /*0x42606f*/
     v32 = v37; /*0x42607d*/

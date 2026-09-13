@@ -2,6 +2,25 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
+// 0x568300
+namespace gamemd {
+bool LayerClass::CoordinatesLegal(IUnknown * aP1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+bool __thiscall LayerClass::CoordinatesLegal(_DWORD *this, IUnknown *aP1)
+{
+  int v2; // edx
+  int v3; // esi
+  int v4; // eax
+
+  v2 = *(this + 61); /*0x568304*/
+  v3 = SLOWORD(aP1->field_0); /*0x56830c*/
+  v4 = SHIWORD(aP1->field_0); /*0x56830f*/
+  return v4 + v3 > v2 && v3 - v4 < v2 && v4 - v3 < v2 && v4 + v3 <= v2 + 2 * *(this + 62); /*0x568337*/
+}
+}
+} // namespace gamemd
+
 // 0x56DC20
 namespace gamemd {
 unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7, IUnknown * aP8, IUnknown * aP9, IUnknown * aP10, IUnknown * aP11, IUnknown * aP12, IUnknown * aP13, IUnknown * aP14, MouseClass * aP15, char a17)
@@ -635,6 +654,50 @@ int __thiscall LCW_InitBitReader(_DWORD *this)
   result = (v1 << 11) + *(this + 79) + 4; /*0x578378*/
   *(this + 70) = result; /*0x57837c*/
   return result; /*0x578382*/
+}
+}
+} // namespace gamemd
+
+// 0x578460
+namespace gamemd {
+bool LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+bool __thiscall LayerClass::IsWithinUsableArea(_DWORD *this, IUnknown *aP1, TechnoClass *aP2)
+{
+  int v3; // esi
+  int v4; // edx
+  int v5; // edi
+  unsigned int v6; // eax
+  _DWORD *v7; // eax
+  int v8; // eax
+  int v9; // esi
+  bool result; // al
+
+  v3 = 0; /*0x57846b*/
+  v4 = SHIWORD(aP1->field_0); /*0x57846d*/
+  v5 = SLOWORD(aP1->field_0); /*0x578472*/
+  if ( (_BYTE)aP2 ) /*0x578477*/
+  {
+    v6 = v5 + (v4 << 9); /*0x57847e*/
+    if ( v6 >= 0x40000 || (v7 = *(_DWORD **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_3C[4] + 4 * v6)) == 0 ) /*0x578494*/
+    {
+      g_Map_GlobalCellIndex = (IUnknown *)aP1->field_0; /*0x578498*/
+      v7 = g_CellClassArray; /*0x57849d*/
+    }
+    v3 = *((char *)v7 + 283); /*0x5784a8*/
+    if ( *((_BYTE *)v7 + 284) && v4 + v5 < v3 + *(this + 61) + 2 * *(this + 64) + 4 ) /*0x5784ca*/
+      ++v3; /*0x5784cc*/
+  }
+  v8 = *(this + 61); /*0x5784d3*/
+  result = 0; /*0x578531*/
+  if ( v4 + v5 > v3 + v8 + 2 * *(this + 64) && v4 + v5 <= v3 + v8 + 2 * (*(this + 64) + *(this + 66)) + 2 ) /*0x5784fe*/
+  {
+    v9 = *(this + 63); /*0x578500*/
+    if ( v5 - v4 < 2 * (v9 + *(this + 65)) - v8 && v4 - v5 < v8 - 2 * v9 ) /*0x578523*/
+      return 1; /*0x5784e3*/
+  }
+  return result; /*0x578525*/
 }
 }
 } // namespace gamemd

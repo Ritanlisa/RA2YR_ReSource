@@ -18,11 +18,11 @@ _DWORD *__thiscall ScoreScreen::LoadScoreFont(_DWORD *this, ScoreFontClass *aP1)
   *(this + 2) = 0; /*0x690a1c*/
   *(this + 3) = 0; /*0x690a1f*/
   *(this + 5) = 0; /*0x690a22*/
-  *this = &ScoreFontClass::`vftable'; /*0x690a25*/
+  *this = &vt_ScoreFontClass; /*0x690a25*/
   ScoreScreen::LoadAudio(); /*0x690a2b*/
   v3 = (IUnknown *)++*(_DWORD *)&stru_B05488.__pad_FC[8]; /*0x690a3b*/
   LOBYTE(v3) = 0; /*0x690a42*/
-  *this = &ScoreFullFontClass::`vftable'; /*0x690a44*/
+  *this = &vt_ScoreFullFontClass; /*0x690a44*/
   *((_BYTE *)this + 16) = 0; /*0x690a4a*/
   v4 = SearchMIXFile((char *)&stru_830620.field_44, v3); /*0x690a4d*/
   *(this + 3) = v4; /*0x690a54*/
@@ -33,7 +33,7 @@ _DWORD *__thiscall ScoreScreen::LoadScoreFont(_DWORD *this, ScoreFontClass *aP1)
     *((_BYTE *)this + 16) = 1; /*0x690a77*/
     CCFileClass::Reset(v6); /*0x690a7b*/
     Debug::Log(); /*0x690a85*/
-    v6[0] = &CCFileClass::`vftable'; /*0x690a91*/
+    v6[0] = &vt_CCFileClass; /*0x690a91*/
     v8 = 0; /*0x690a99*/
     Vector::Clear((int)v7); /*0x690a9d*/
     v6[0] = &off_7E1668; /*0x690aa6*/
@@ -61,10 +61,10 @@ _DWORD *__thiscall sub_690AE0(_DWORD *this, int a2)
   *(this + 2) = 0; /*0x690aec*/
   *(this + 3) = 0; /*0x690aef*/
   *(this + 5) = 0; /*0x690af2*/
-  *this = &ScoreFontClass::`vftable'; /*0x690af5*/
+  *this = &vt_ScoreFontClass; /*0x690af5*/
   ScoreScreen::LoadAudio(); /*0x690afb*/
   ++MEMORY[0xB0558C]; /*0x690b0c*/
-  *this = &ScoreBigFontClass::`vftable'; /*0x690b14*/
+  *this = &vt_ScoreBigFontClass; /*0x690b14*/
   *((_BYTE *)this + 16) = 0; /*0x690b1a*/
   v3 = SearchMIXFile(MEMORY[0x83E6DC], 0); /*0x690b1d*/
   *(this + 3) = v3; /*0x690b24*/
@@ -75,7 +75,7 @@ _DWORD *__thiscall sub_690AE0(_DWORD *this, int a2)
     *((_BYTE *)this + 16) = 1; /*0x690b47*/
     CCFileClass::Reset(v5); /*0x690b4b*/
     Debug::Log(); /*0x690b55*/
-    v5[0] = &CCFileClass::`vftable'; /*0x690b61*/
+    v5[0] = &vt_CCFileClass; /*0x690b61*/
     v7 = 0; /*0x690b69*/
     Vector::Clear((int)v6); /*0x690b6d*/
     v5[0] = &off_7E1668; /*0x690b76*/
@@ -99,7 +99,7 @@ _DWORD *__thiscall ScoreScreen::Constructor(_DWORD *this, ScoreAnimClass *aP1, i
   *(this + 3) = Timer::GetTicks(); /*0x690f4d*/
   *(this + 5) = 0; /*0x690f50*/
   *(this + 6) = a4; /*0x690f57*/
-  *this = &ScoreAnimClass::`vftable'; /*0x690f5a*/
+  *this = &vt_ScoreAnimClass; /*0x690f5a*/
   return this; /*0x690f62*/
 }
 }
@@ -331,7 +331,7 @@ int __userpurge ScoreScreen::DrawSHPBackground@<eax>(
     }
     (*(void (__thiscall **)(_DWORD *, int))*v8)(v8, 1); /*0x778456*/
   }
-  v37[0] = &CCFileClass::`vftable'; /*0x778461*/
+  v37[0] = &vt_CCFileClass; /*0x778461*/
   v39 = 0; /*0x778469*/
   Vector::Clear((int)v38); /*0x778474*/
   v37[0] = &off_7E1668; /*0x77847d*/

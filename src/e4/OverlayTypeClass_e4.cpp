@@ -84,7 +84,7 @@ _DWORD *__thiscall OverlayTypeClass::OverlayTypeClass(_DWORD *this, ObjectClass 
   *this = &OverlayTypeClass::`vftable'; /*0x5fe2f1*/
   *(this + 1) = &OverlayTypeClass::`vftable'; /*0x5fe2f7*/
   *(this + 2) = &OverlayTypeClass::`vftable'; /*0x5fe2fd*/
-  *(this + 3) = &OverlayTypeClass::`vftable'; /*0x5fe304*/
+  *(this + 3) = &vt_OverlayTypeClass; /*0x5fe304*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x5fe30b*/
   this->RadarInvisible = 1; /*0x5fe310*/
   this->Selectable = 0; /*0x5fe317*/
@@ -430,7 +430,7 @@ int __stdcall OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
       *(_DWORD *)a1 = &OverlayTypeClass::`vftable'; /*0x5feb21*/
       *(_DWORD *)(a1 + 4) = &OverlayTypeClass::`vftable'; /*0x5feb27*/
       *(_DWORD *)(a1 + 8) = &OverlayTypeClass::`vftable'; /*0x5feb2e*/
-      *(_DWORD *)(a1 + 12) = &OverlayTypeClass::`vftable'; /*0x5feb35*/
+      *(_DWORD *)(a1 + 12) = &vt_OverlayTypeClass; /*0x5feb35*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x5feb3e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x5feb45*/
@@ -557,7 +557,7 @@ void *__thiscall sub_5FEDE0(int this)
     this->Image = EntireFile; /*0x5feeb1*/
     if ( EntireFile ) /*0x5feeb7*/
       this->ImageAllocated = 1; /*0x5feeb9*/
-    v4[0] = &CCFileClass::`vftable'; /*0x5feec4*/
+    v4[0] = &vt_CCFileClass; /*0x5feec4*/
     v6 = 0; /*0x5feecc*/
     Vector::Clear((int)v5); /*0x5feed4*/
     v4[0] = &off_7E1668; /*0x5feedd*/
@@ -590,7 +590,7 @@ OverlayTypeClass *__thiscall OverlayTypeClass::ddtor(void **this, char a2)
   *this = &OverlayTypeClass::`vftable'; /*0x5fef36*/
   *(this + 1) = &OverlayTypeClass::`vftable'; /*0x5fef3c*/
   *(this + 2) = &OverlayTypeClass::`vftable'; /*0x5fef43*/
-  *(this + 3) = &OverlayTypeClass::`vftable'; /*0x5fef4a*/
+  *(this + 3) = &vt_OverlayTypeClass; /*0x5fef4a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x5fef51*/
   v5 = this; /*0x5fef66*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA83D80] + 16))(&MEMORY[0xA83D80], &v5); /*0x5fef6a*/
@@ -599,7 +599,7 @@ OverlayTypeClass *__thiscall OverlayTypeClass::ddtor(void **this, char a2)
     do /*0x5fef9d*/
     {
       ++v3; /*0x5fef8d*/
-      *(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * v3 - 4] = *(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * v3]; /*0x5fef91*/
+      *(_DWORD *)&MEMORY[0xA83D84]->vtable0[4 * v3 - 4] = *(_DWORD *)&MEMORY[0xA83D84]->vtable0[4 * v3]; /*0x5fef91*/
     }
     while ( v3 < MEMORY[0xA83D90] ); /*0x5fef9d*/
   }
@@ -653,7 +653,7 @@ _DWORD *__thiscall OverlayTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
   *this = &ParticleSystemTypeClass::`vftable'; /*0x64419c*/
   *(this + 1) = &ParticleSystemTypeClass::`vftable'; /*0x6441a2*/
   *(this + 2) = &ParticleSystemTypeClass::`vftable'; /*0x6441a8*/
-  *(this + 3) = &ParticleSystemTypeClass::`vftable'; /*0x6441af*/
+  *(this + 3) = &vt_ParticleSystemTypeClass; /*0x6441af*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x6441b6*/
   if ( (int)MEMORY[0xA83D78] < MEMORY[0xA83D70] /*0x6441ef*/
     || (MEMORY[0xA83D75] || !MEMORY[0xA83D70])

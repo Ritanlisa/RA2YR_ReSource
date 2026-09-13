@@ -27,7 +27,7 @@ char __thiscall DynamicVector::AddItem(_DWORD *this, VectorClass *aP1)
   v6 = *(this + 4); /*0x413aa5*/
   v7 = *(this + 1); /*0x413aa8*/
   *(this + 4) = v6 + 1; /*0x413aae*/
-  *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->__pad_0; /*0x413ab8*/
+  *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->vtable0; /*0x413ab8*/
   return 1; /*0x413aa1*/
 }
 }
@@ -46,7 +46,7 @@ _DWORD *__thiscall DynamicVector::Constructor_Cell(_DWORD *this, ObjectClass *aP
   *(this + 2) = aP1; /*0x42f681*/
   *((_BYTE *)this + 12) = 1; /*0x42f684*/
   *((_BYTE *)this + 13) = 0; /*0x42f688*/
-  *this = &VectorClass<Cell>::`vftable'; /*0x42f68c*/
+  *this = &vt_VectorClass_Cell; /*0x42f68c*/
   if ( aP1 ) /*0x42f692*/
   {
     if ( aP2 ) /*0x42f69a*/
@@ -62,7 +62,7 @@ _DWORD *__thiscall DynamicVector::Constructor_Cell(_DWORD *this, ObjectClass *aP
       *((_BYTE *)this + 13) = 1; /*0x42f6c6*/
     }
   }
-  *this = &DynamicVectorClass<Cell>::`vftable'; /*0x42f6ca*/
+  *this = &vt_DynamicVectorClass_Cell; /*0x42f6ca*/
   *(this + 5) = 10; /*0x42f6d0*/
   *(this + 4) = 0; /*0x42f6d7*/
   return this; /*0x42f6e0*/
@@ -125,7 +125,7 @@ char __thiscall DynamicVector::Add_Alt(_DWORD *this, VectorClass *aP1)
   v6 = *(this + 4); /*0x477ef5*/
   v7 = (VectorClass *)*(this + 1); /*0x477ef8*/
   *(this + 4) = v6 + 1; /*0x477efe*/
-  *(_DWORD *)&v7->__pad_0[4 * v6] = *(_DWORD *)aP1->__pad_0; /*0x477f08*/
+  *(_DWORD *)&v7->vtable0[4 * v6] = *(_DWORD *)aP1->vtable0; /*0x477f08*/
   return 1; /*0x477ef1*/
 }
 }
@@ -179,7 +179,7 @@ char __thiscall DynamicVector::Add_Alt4(_DWORD *this, VectorClass *aP1)
   v6 = *(this + 4); /*0x5253e5*/
   v7 = (VectorClass *)*(this + 1); /*0x5253e8*/
   *(this + 4) = v6 + 1; /*0x5253ee*/
-  *(_DWORD *)&v7->__pad_0[4 * v6] = *(_DWORD *)aP1->__pad_0; /*0x5253f8*/
+  *(_DWORD *)&v7->vtable0[4 * v6] = *(_DWORD *)aP1->vtable0; /*0x5253f8*/
   return 1; /*0x5253e1*/
 }
 }
@@ -222,7 +222,7 @@ unsigned int * DynamicVector::Copy(VectorClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall DynamicVector::Copy(_DWORD *this, VectorClass *aP1)
 {
-  void *v3; // eax
+  int v3; // eax
   int v4; // eax
   int v5; // ecx
   int v6; // eax
@@ -230,18 +230,18 @@ _DWORD *__thiscall DynamicVector::Copy(_DWORD *this, VectorClass *aP1)
   if ( this == (_DWORD *)aP1 ) /*0x5ac43a*/
     goto LABEL_8; /*0x5ac43a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x5ac43e*/
-  v3 = aP1->field_8; /*0x5ac441*/
+  v3 = aP1->Capacity; /*0x5ac441*/
   *(this + 2) = v3; /*0x5ac446*/
   if ( !v3 ) /*0x5ac449*/
   {
     *(this + 1) = 0; /*0x5ac496*/
     *((_BYTE *)this + 13) = 0; /*0x5ac49d*/
 LABEL_8:
-    *(this + 4) = aP1->field_10; /*0x5ac4a1*/
-    *(this + 5) = aP1->field_14; /*0x5ac4aa*/
+    *(this + 4) = aP1[1].vtable0; /*0x5ac4a1*/
+    *(this + 5) = aP1[1].Items; /*0x5ac4aa*/
     return this; /*0x5ac4ad*/
   }
-  v4 = __2_YAPAXI_Z(4 * (_DWORD)v3); /*0x5ac453*/
+  v4 = __2_YAPAXI_Z(4 * v3); /*0x5ac453*/
   *(this + 1) = v4; /*0x5ac45b*/
   if ( !v4 ) /*0x5ac460*/
     goto LABEL_8; /*0x5ac460*/
@@ -252,12 +252,12 @@ LABEL_8:
     goto LABEL_8; /*0x5ac46d*/
   do /*0x5ac481*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x5ac478*/
+    *(_DWORD *)(*(this + 1) + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x5ac478*/
     ++v6; /*0x5ac47e*/
   }
   while ( v6 < *(this + 2) ); /*0x5ac481*/
-  *(this + 4) = aP1->field_10; /*0x5ac486*/
-  *(this + 5) = aP1->field_14; /*0x5ac48c*/
+  *(this + 4) = aP1[1].vtable0; /*0x5ac486*/
+  *(this + 5) = aP1[1].Items; /*0x5ac48c*/
   return this; /*0x5ac491*/
 }
 }
@@ -287,7 +287,7 @@ char __thiscall DynamicVector::Add_Alt3(_DWORD *this, VectorClass *aP1)
   v6 = *(this + 4); /*0x5ad805*/
   v7 = *(this + 1); /*0x5ad808*/
   *(this + 4) = v6 + 1; /*0x5ad80e*/
-  *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->__pad_0; /*0x5ad818*/
+  *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->vtable0; /*0x5ad818*/
   return 1; /*0x5ad801*/
 }
 }
@@ -338,13 +338,13 @@ int __thiscall DynamicVector::Read(_DWORD *this, TechnoTypeClass *aP1)
   int i; // esi
   int v6; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *(_DWORD *)aP1->__pad_0; /*0x67a52c*/
+  v3 = *(_DWORD *)aP1->vtable0; /*0x67a52c*/
   v6 = *(this + 4); /*0x67a539*/
   (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a53d*/
   result = v6; /*0x67a540*/
   for ( i = 0; i < v6; ++i ) /*0x67a548*/
   {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->__pad_0 + 16))( /*0x67a558*/
+    (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->vtable0 + 16))( /*0x67a558*/
       aP1,
       *(this + 1) + 4 * i,
       4,
@@ -368,13 +368,13 @@ int __thiscall DynamicVector::Read_Alt(_DWORD *this, TechnoTypeClass *aP1)
   int i; // esi
   int v6; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *(_DWORD *)aP1->__pad_0; /*0x67a6ec*/
+  v3 = *(_DWORD *)aP1->vtable0; /*0x67a6ec*/
   v6 = *(this + 4); /*0x67a6f9*/
   (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a6fd*/
   result = v6; /*0x67a700*/
   for ( i = 0; i < v6; ++i ) /*0x67a708*/
   {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->__pad_0 + 16))( /*0x67a718*/
+    (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP1->vtable0 + 16))( /*0x67a718*/
       aP1,
       *(this + 1) + 4 * i,
       4,
@@ -397,7 +397,7 @@ _DWORD *__thiscall sub_67AC70(_DWORD *this, int a2, int a3)
   *(this + 2) = a2; /*0x67ac80*/
   *((_BYTE *)this + 12) = 1; /*0x67ac83*/
   *((_BYTE *)this + 13) = 0; /*0x67ac87*/
-  *this = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67ac8b*/
+  *this = &vt_VectorClass_VoxelAnimTypeClass_const; /*0x67ac8b*/
   if ( a2 ) /*0x67ac91*/
   {
     if ( a3 ) /*0x67ac99*/
@@ -410,7 +410,7 @@ _DWORD *__thiscall sub_67AC70(_DWORD *this, int a2, int a3)
       *((_BYTE *)this + 13) = 1; /*0x67acaf*/
     }
   }
-  *this = &DynamicVectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67acb3*/
+  *this = &vt_DynamicVectorClass_VoxelAnimTypeClass_const; /*0x67acb3*/
   *(this + 5) = 10; /*0x67acb9*/
   *(this + 4) = 0; /*0x67acc0*/
   return this; /*0x67acc9*/
@@ -442,7 +442,7 @@ char __thiscall DynamicVector::Add2(_DWORD *this, VectorClass *aP1)
   v6 = *(this + 4); /*0x67adb5*/
   v7 = *(this + 1); /*0x67adb8*/
   *(this + 4) = v6 + 1; /*0x67adbe*/
-  *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->__pad_0; /*0x67adc8*/
+  *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->vtable0; /*0x67adc8*/
   return 1; /*0x67adb1*/
 }
 }
@@ -551,7 +551,7 @@ _DWORD *__thiscall DynamicVector_Constructor_Techno(_DWORD *this, int a2, int a3
   *(this + 2) = a2; /*0x7342e0*/
   *((_BYTE *)this + 12) = 1; /*0x7342e3*/
   *((_BYTE *)this + 13) = 0; /*0x7342e7*/
-  *this = &VectorClass<TechnoClass *>::`vftable'; /*0x7342eb*/
+  *this = &vt_VectorClass_TechnoClass; /*0x7342eb*/
   if ( a2 ) /*0x7342f1*/
   {
     if ( a3 ) /*0x7342f9*/
@@ -564,7 +564,7 @@ _DWORD *__thiscall DynamicVector_Constructor_Techno(_DWORD *this, int a2, int a3
       *((_BYTE *)this + 13) = 1; /*0x73430f*/
     }
   }
-  *this = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x734313*/
+  *this = &vt_DynamicVectorClass_TechnoClass; /*0x734313*/
   *(this + 5) = 10; /*0x734319*/
   *(this + 4) = 0; /*0x734320*/
   return this; /*0x734329*/

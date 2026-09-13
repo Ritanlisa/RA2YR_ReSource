@@ -12,7 +12,7 @@ int __thiscall LCWPipe_Destructor(int *this)
   void *v3; // ecx
 
   v2 = (void *)*(this + 5); /*0x552063*/
-  *this = (int)&LCWPipe::`vftable'; /*0x552066*/
+  *this = (int)&vt_LCWPipe; /*0x552066*/
   __3_YAXPAX_Z(v2); /*0x55206d*/
   v3 = (void *)*(this + 6); /*0x552072*/
   *(this + 5) = 0; /*0x552075*/

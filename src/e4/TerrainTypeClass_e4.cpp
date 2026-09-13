@@ -69,7 +69,7 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
   *(this + 171) = 0; /*0x5447fe*/
   this->IsVeinhole = 1; /*0x544804*/
   *((_BYTE *)this + 689) = 0; /*0x54480b*/
-  *(this + 169) = &DynamicVectorClass<unsigned short *>::`vftable'; /*0x544811*/
+  *(this + 169) = &vt_DynamicVectorClass_unsigned_short; /*0x544811*/
   *(this + 174) = 10; /*0x54481b*/
   *(this + 173) = 0; /*0x544825*/
   *(this + 179) = 0; /*0x544830*/
@@ -96,7 +96,7 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
   *this = &IsometricTileTypeClass::`vftable'; /*0x5448c8*/
   *(this + 1) = &IsometricTileTypeClass::`vftable'; /*0x5448cf*/
   *(this + 2) = &IsometricTileTypeClass::`vftable'; /*0x5448d6*/
-  *(this + 3) = &IsometricTileTypeClass::`vftable'; /*0x5448dd*/
+  *(this + 3) = &vt_IsometricTileTypeClass; /*0x5448dd*/
   if ( *(int *)&MEMORY[0xB077F8].__pad_579C[9964] < *(int *)&MEMORY[0xB077F8].__pad_579C[9956] /*0x544917*/
     || (MEMORY[0xB077F8].__pad_579C[9961] || !*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9956])
     && *(int *)&MEMORY[0xB077F8].__pad_579C[9968] > 0
@@ -175,7 +175,7 @@ _DWORD *__thiscall TerrainTypeClass::TerrainTypeClass(_DWORD *this, ObjectClass 
   *this = &TerrainTypeClass::`vftable'; /*0x71daf7*/
   *(this + 1) = &TerrainTypeClass::`vftable'; /*0x71dafd*/
   *(this + 2) = &TerrainTypeClass::`vftable'; /*0x71db03*/
-  *(this + 3) = &TerrainTypeClass::`vftable'; /*0x71db0a*/
+  *(this + 3) = &vt_TerrainTypeClass; /*0x71db0a*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x71db11*/
   this->Selectable = 0; /*0x71db18*/
   this->IsLogic = 1; /*0x71db1e*/
@@ -445,7 +445,7 @@ int __stdcall TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &TerrainTypeClass::`vftable'; /*0x71e1f4*/
       *(_DWORD *)&aP0->__pad_0[4] = &TerrainTypeClass::`vftable'; /*0x71e1fa*/
       *(_DWORD *)&aP0->__pad_0[8] = &TerrainTypeClass::`vftable'; /*0x71e201*/
-      *(_DWORD *)&aP0->__pad_0[12] = &TerrainTypeClass::`vftable'; /*0x71e208*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_TerrainTypeClass; /*0x71e208*/
     }
     VoxelAnimType::LoadAnim(aP0->__pad_0); /*0x71e211*/
     ObjectTypeClass::Load2DArt(aP0->__pad_0); /*0x71e218*/
@@ -524,7 +524,7 @@ TerrainTypeClass *__fastcall TerrainTypeClass::ddtor(void **this, AbstractClass 
   *this = &TerrainTypeClass::`vftable'; /*0x71e36a*/
   *(this + 1) = &TerrainTypeClass::`vftable'; /*0x71e372*/
   *(this + 2) = &TerrainTypeClass::`vftable'; /*0x71e379*/
-  *(this + 3) = &TerrainTypeClass::`vftable'; /*0x71e380*/
+  *(this + 3) = &vt_TerrainTypeClass; /*0x71e380*/
   if ( v3 ) /*0x71e387*/
   {
     __3_YAXPAX_Z(v3); /*0x71e38a*/

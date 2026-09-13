@@ -53,7 +53,7 @@ MSVQAnim *__thiscall MSVQAnim::QueryInterface(ObjectClass **this, char a2)
   ObjectClass *v5; // edi
 
   v3 = (void (__thiscall ***)(_DWORD, int))*(this + 10); /*0x5cecb3*/
-  *this = (ObjectClass *)&MSVQAnim::`vftable'; /*0x5cecb6*/
+  *this = (ObjectClass *)&vt_MSVQAnim; /*0x5cecb6*/
   if ( v3 ) /*0x5cecbe*/
     (**v3)(v3, 1); /*0x5cecc4*/
   v4 = (_DWORD **)*(this + 7); /*0x5cecc6*/
@@ -67,7 +67,7 @@ MSVQAnim *__thiscall MSVQAnim::QueryInterface(ObjectClass **this, char a2)
       __3_YAXPAX_Z(v5); /*0x5cece2*/
     }
   }
-  *this = (ObjectClass *)&MSAnim::`vftable'; /*0x5cecee*/
+  *this = (ObjectClass *)&vt_MSAnim; /*0x5cecee*/
   if ( (a2 & 1) != 0 ) /*0x5cecf7*/
     __3_YAXPAX_Z(this); /*0x5cecfa*/
   return (MSVQAnim *)this; /*0x5ced04*/

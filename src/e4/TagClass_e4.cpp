@@ -35,7 +35,7 @@ void __fastcall TagClass::Destructor(void **a1, AbstractClass *a2)
   *a1 = &TagClass::`vftable'; /*0x6e4f69*/
   a1[1] = &TagClass::`vftable'; /*0x6e4f6f*/
   a1[2] = &TagClass::`vftable'; /*0x6e4f76*/
-  a1[3] = &TagClass::`vftable'; /*0x6e4f7d*/
+  a1[3] = &vt_TagClass; /*0x6e4f7d*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, a2); /*0x6e4f84*/
   if ( HouseClass_Player.__pad_5568[22252] ) /*0x6e4f90*/
   {
@@ -297,7 +297,7 @@ int __stdcall TagClass::LoadTag(AbstractClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &TagClass::`vftable'; /*0x6e5754*/
       *(_DWORD *)&aP0->__pad_0[4] = &TagClass::`vftable'; /*0x6e575a*/
       *(_DWORD *)&aP0->__pad_0[8] = &TagClass::`vftable'; /*0x6e5761*/
-      *(_DWORD *)&aP0->__pad_0[12] = &TagClass::`vftable'; /*0x6e5768*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_TagClass; /*0x6e5768*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x6e5778*/
     ObjectPtr::RegisterForTracking( /*0x6e5786*/

@@ -12,7 +12,7 @@ int __stdcall BaseClass::LoadBaseNodeClass(VectorClass *aP0, int a2)
   int v2; // edi
   int v3; // ecx
   int v4; // ebp
-  void *v5; // ecx
+  char *v5; // ecx
   int v6; // eax
   int v7; // eax
   int v8; // edx
@@ -21,7 +21,7 @@ int __stdcall BaseClass::LoadBaseNodeClass(VectorClass *aP0, int a2)
   int v11; // ecx
   int v12; // eax
   int v13; // eax
-  int v14; // edx
+  _DWORD *v14; // edx
   int v15; // ebp
   int v16; // ecx
   int v17; // eax
@@ -35,13 +35,13 @@ int __stdcall BaseClass::LoadBaseNodeClass(VectorClass *aP0, int a2)
   {
     if ( aP0 ) /*0x42ee53*/
     {
-      BaseNodeClass::Vector_Constructor(&aP0->field_1[3], 0, 0); /*0x42ee5e*/
-      *(_DWORD *)&aP0->field_1[3] = &DynamicVectorClass<BaseNodeClass>::`vftable'; /*0x42ee6a*/
-      *(_DWORD *)aP0->__pad_18 = 10; /*0x42ee70*/
-      aP0->field_14 = 0; /*0x42ee77*/
-      DynamicVector::Constructor_Cell(&aP0->__pad_18[8], 0, 0); /*0x42ee7e*/
-      DynamicVector::Constructor_Cell(&aP0->__pad_34[4], 0, 0); /*0x42ee8a*/
-      *(_DWORD *)aP0->__pad_0 = &BaseClass::`vftable'; /*0x42ee8f*/
+      BaseNodeClass::Vector_Constructor(&aP0->Items, 0, 0); /*0x42ee5e*/
+      aP0->Items = &vt_DynamicVectorClass_BaseNodeClass; /*0x42ee6a*/
+      aP0[1].Capacity = 10; /*0x42ee70*/
+      aP0[1].Items = 0; /*0x42ee77*/
+      DynamicVector::Constructor_Cell(&aP0[2].vtable0, 0, 0); /*0x42ee7e*/
+      DynamicVector::Constructor_Cell(&aP0[3].Capacity, 0, 0); /*0x42ee8a*/
+      aP0->vtable0 = &vt_BaseClass; /*0x42ee8f*/
     }
     v3 = *(_DWORD *)v2; /*0x42ee96*/
     a2 = 0; /*0x42eea2*/
@@ -65,24 +65,24 @@ LABEL_24:
 LABEL_34:
                 ObjectPtr::RegisterForTracking( /*0x42f044*/
                   (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-                  (MouseClass *)&aP0->__pad_4C[40]);
+                  (MouseClass *)&aP0[7].Items);
               }
               else
               {
                 while ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &v21, 4, 0) >= 0 ) /*0x42eff3*/
                 {
-                  v16 = *(_DWORD *)&aP0->__pad_34[12]; /*0x42eff9*/
-                  if ( aP0->field_48 < v16 /*0x42f021*/
-                    || (aP0->__pad_34[17] || !v16)
-                    && (v17 = *(_DWORD *)aP0->__pad_4C, v17 > 0)
-                    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&aP0->__pad_34[4] + 8))(
-                         &aP0->__pad_34[4],
+                  v16 = (int)aP0[4].vtable0; /*0x42eff9*/
+                  if ( aP0[4].Capacity < v16 /*0x42f021*/
+                    || (BYTE1(aP0[4].Items) || !v16)
+                    && (v17 = *(_DWORD *)&aP0[4].IsInitialized, v17 > 0)
+                    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(aP0[3].Capacity + 8))(
+                         &aP0[3].Capacity,
                          v16 + v17,
                          0) )
                   {
-                    v18 = aP0->field_48; /*0x42f028*/
-                    v19 = *(_DWORD *)&aP0->__pad_34[8]; /*0x42f02b*/
-                    aP0->field_48 = v18 + 1; /*0x42f031*/
+                    v18 = aP0[4].Capacity; /*0x42f028*/
+                    v19 = *(_DWORD *)&aP0[3].IsInitialized; /*0x42f02b*/
+                    aP0[4].Capacity = v18 + 1; /*0x42f031*/
                     *(_DWORD *)(v19 + 4 * v18) = v21; /*0x42f038*/
                   }
                   if ( ++v15 >= a2 ) /*0x42f042*/
@@ -95,19 +95,19 @@ LABEL_34:
           {
             while ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &v21, 4, 0) >= 0 ) /*0x42ef70*/
             {
-              v11 = aP0->field_28; /*0x42ef7a*/
-              if ( aP0->field_30 < v11 /*0x42efa2*/
-                || (aP0->__pad_2C[1] || !v11)
-                && (v12 = *(_DWORD *)aP0->__pad_34, v12 > 0)
-                && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&aP0->__pad_18[8] + 8))(
-                     &aP0->__pad_18[8],
+              v11 = aP0[2].Capacity; /*0x42ef7a*/
+              if ( (int)aP0[3].vtable0 < v11 /*0x42efa2*/
+                || (aP0[2].IsAllocated || !v11)
+                && (v12 = (int)aP0[3].Items, v12 > 0)
+                && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))aP0[2].vtable0 + 2))(
+                     aP0 + 2,
                      v11 + v12,
                      0) )
               {
-                v13 = aP0->field_30; /*0x42efa9*/
-                v14 = *(_DWORD *)&aP0->__pad_18[12]; /*0x42efac*/
-                aP0->field_30 = v13 + 1; /*0x42efb2*/
-                *(_DWORD *)(v14 + 4 * v13) = v21; /*0x42efb9*/
+                v13 = (int)aP0[3].vtable0; /*0x42efa9*/
+                v14 = aP0[2].Items; /*0x42efac*/
+                aP0[3].vtable0 = (void *)(v13 + 1); /*0x42efb2*/
+                v14[v13] = v21; /*0x42efb9*/
               }
               if ( ++v10 >= a2 ) /*0x42efc3*/
                 goto LABEL_24; /*0x42efc3*/
@@ -119,19 +119,16 @@ LABEL_34:
       {
         while ( (*(int (__stdcall **)(int, _DWORD *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, v22, 16, 0) >= 0 ) /*0x42eed0*/
         {
-          v5 = aP0->field_C; /*0x42eeda*/
-          if ( aP0->field_14 < (int)v5 /*0x42ef02*/
-            || (BYTE1(aP0->field_10) || !v5)
-            && (v6 = *(_DWORD *)aP0->__pad_18, v6 > 0)
-            && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&aP0->field_1[3] + 8))(
-                 &aP0->field_1[3],
-                 (int)v5 + v6,
-                 0) )
+          v5 = *(char **)&aP0->IsInitialized; /*0x42eeda*/
+          if ( (int)aP0[1].Items < (int)v5 /*0x42ef02*/
+            || (BYTE1(aP0[1].vtable0) || !v5)
+            && (v6 = aP0[1].Capacity, v6 > 0)
+            && (*((unsigned __int8 (__thiscall **)(void **, char *, _DWORD))aP0->Items + 2))(&aP0->Items, &v5[v6], 0) )
           {
-            v7 = aP0->field_14; /*0x42ef09*/
+            v7 = (int)aP0[1].Items; /*0x42ef09*/
             v8 = v22[0]; /*0x42ef0c*/
-            aP0->field_14 = v7 + 1; /*0x42ef13*/
-            v9 = (char *)aP0->field_8 + 16 * v7; /*0x42ef1c*/
+            aP0[1].Items = (void *)(v7 + 1); /*0x42ef13*/
+            v9 = (_DWORD *)(aP0->Capacity + 16 * v7); /*0x42ef1c*/
             *v9 = v8; /*0x42ef1e*/
             v9[1] = v22[1]; /*0x42ef24*/
             v9[2] = v22[2]; /*0x42ef2b*/

@@ -272,7 +272,7 @@ int __thiscall WebBrowser::_vt16(WebBrowser *this)
   }
   String::Assign_Alt((void **)&g_WebBrowser, Dest); /*0x773dee*/
   String::Assign_Alt((void **)&g_WebBrowserConfig, v7); /*0x773dfd*/
-  v3[0] = &rc_ptr<PlayerProfile>::`vftable'; /*0x773e06*/
+  v3[0] = &vt_rc_ptr_PlayerProfile; /*0x773e06*/
   ComPtr::Release(v3); /*0x773e0e*/
   DeleteAndZero(&v2); /*0x773e17*/
   return 0; /*0x773e1e*/
@@ -330,7 +330,7 @@ HWND __thiscall WebBrowser_ShowDialog(const char *this)
       v5[2] = 0; /*0x773f7d*/
       *((_BYTE *)v5 + 1036) = 0; /*0x773f84*/
       v5[260] = 0; /*0x773f8b*/
-      *v5 = &WebBrowser::`vftable'; /*0x773f95*/
+      *v5 = &vt_WebBrowser; /*0x773f95*/
       Debug::Log(g_Str_Instantiating_embedded_WebBrow); /*0x773f9b*/
       *(_DWORD *)(v6 + 1040) = v3; /*0x773fa3*/
       Debug::Log(g_Str_Creating_WOLBrowser_component_); /*0x773fae*/
@@ -375,7 +375,7 @@ int __thiscall WebBrowser::GoForward(WebBrowser *this)
   void *v2; // eax
   char v4; // [esp+10h] [ebp+4h]
 
-  *(_DWORD *)this->__pad_0 = &WebBrowser::`vftable'; /*0x7740a8*/
+  *(_DWORD *)this->__pad_0 = &vt_WebBrowser; /*0x7740a8*/
   Debug::Log(); /*0x7740ae*/
   if ( this->field_8 ) /*0x7740b3*/
   {

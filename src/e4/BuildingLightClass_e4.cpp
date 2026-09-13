@@ -137,7 +137,7 @@ BuildingLightClass *__thiscall BuildingLightClass::SDDTOR(#374 *this, char a2)
   *(_DWORD *)this = &BuildingLightClass::`vftable'; /*0x4370c4*/
   this->vtable1 = &BuildingLightClass::`vftable'; /*0x4370ca*/
   this->vtable2 = &BuildingLightClass::`vftable'; /*0x4370d1*/
-  this->vtable3 = &BuildingLightClass::`vftable'; /*0x4370d8*/
+  this->vtable3 = &vt_BuildingLightClass; /*0x4370d8*/
   if ( (unsigned __int8)ObjectClass::Undeploy(this) ) /*0x4370df*/
     VectorClass::RemoveItem((int *)&MEMORY[0x87F778], (ObjectClass *)this); /*0x4370ee*/
   v5 = this; /*0x437103*/

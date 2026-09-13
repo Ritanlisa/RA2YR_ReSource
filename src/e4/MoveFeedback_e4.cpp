@@ -65,7 +65,7 @@ DynamicVector *__thiscall MoveFeedback::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x40bcb3*/
-  *this = &VectorClass<TechnoClass *>::`vftable'; /*0x40bcb6*/
+  *this = &vt_VectorClass_TechnoClass; /*0x40bcb6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x40bcc0*/
   {
     __3_YAXPAX_Z(v3); /*0x40bcc8*/
@@ -193,7 +193,7 @@ DynamicVector *__thiscall MoveFeedback::Constructor(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x40c163*/
-  *this = &VectorClass<CommandClass const *>::`vftable'; /*0x40c166*/
+  *this = &vt_VectorClass_CommandClass_const; /*0x40c166*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x40c170*/
   {
     __3_YAXPAX_Z(v3); /*0x40c178*/
@@ -241,7 +241,7 @@ char __thiscall MoveFeedback_Process(void *this)
     if ( Height ) /*0x732809*/
     {
       LOBYTE(Height) = (unsigned __int8)EventClass::resetEvent((_DWORD *)Height, 0, 0); /*0x73280f*/
-      *v3 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x732814*/
+      *v3 = &vt_DynamicVectorClass_TechnoClass; /*0x732814*/
       v3[5] = 10; /*0x73281a*/
       v3[4] = 0; /*0x732821*/
     }
@@ -285,7 +285,7 @@ char __thiscall MoveFeedback_Process(void *this)
     if ( v9 ) /*0x73289d*/
     {
       EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
-      *v3 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x7328a8*/
+      *v3 = &vt_DynamicVectorClass_TechnoClass; /*0x7328a8*/
       v3[5] = 10; /*0x7328ae*/
       v3[4] = 0; /*0x7328b5*/
     }

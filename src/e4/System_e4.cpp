@@ -126,7 +126,7 @@ DynamicVector *System_Init()
     LOBYTE((&g_MatrixTransformState)[82]) |= 1u; /*0x5d5ad6*/
     *(_QWORD *)(&(&g_MatrixTransformState)[83] + 1) = 0; /*0x5d5adc*/
     *((_WORD *)&g_MatrixTransformState + 1998) = 1; /*0x5d5aec*/
-    *(&g_MatrixTransformState + 996) = (CoordStruct *)&DynamicVectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d5af1*/
+    *(&g_MatrixTransformState + 996) = (CoordStruct *)&vt_DynamicVectorClass_MultiplayerGameMode; /*0x5d5af1*/
     *((_QWORD *)&g_MatrixTransformState + 500) = 0xA00000000LL; /*0x5d5b05*/
     atexit(MultiplayerConfig::Cleanup); /*0x5d5b0a*/
   }
@@ -166,7 +166,7 @@ int sub_6269A0()
       if ( v3 ) /*0x6269d7*/
       {
         StringVector::Construct(v3, 0, 0); /*0x6269df*/
-        *v4 = &DynamicVectorClass<char *>::`vftable'; /*0x6269e4*/
+        *v4 = &vt_DynamicVectorClass_char; /*0x6269e4*/
         v4[5] = 10; /*0x6269ea*/
         v4[4] = 0; /*0x6269f1*/
       }
@@ -180,7 +180,7 @@ int sub_6269A0()
       if ( v5 ) /*0x626a0d*/
       {
         VectorClass::ConstructHSV(v5, 0, 0); /*0x626a15*/
-        *v6 = &DynamicVectorClass<HSVClass>::`vftable'; /*0x626a1a*/
+        *v6 = &vt_DynamicVectorClass_HSVClass; /*0x626a1a*/
         v6[5] = 10; /*0x626a20*/
         v6[4] = 0; /*0x626a27*/
       }
@@ -260,7 +260,7 @@ char __fastcall sub_626AB0(const char *a1, int a2)
       if ( v4 ) /*0x626af9*/
       {
         StringVector::Construct(v4, 0, 0); /*0x626b01*/
-        *v5 = &DynamicVectorClass<char *>::`vftable'; /*0x626b06*/
+        *v5 = &vt_DynamicVectorClass_char; /*0x626b06*/
         v5[5] = 10; /*0x626b0c*/
         v5[4] = 0; /*0x626b0f*/
       }
@@ -274,7 +274,7 @@ char __fastcall sub_626AB0(const char *a1, int a2)
       if ( v6 ) /*0x626b2b*/
       {
         VectorClass::ConstructHSV(v6, 0, 0); /*0x626b33*/
-        *v7 = &DynamicVectorClass<HSVClass>::`vftable'; /*0x626b38*/
+        *v7 = &vt_DynamicVectorClass_HSVClass; /*0x626b38*/
         v7[5] = 10; /*0x626b3e*/
         v7[4] = 0; /*0x626b41*/
       }
@@ -474,7 +474,7 @@ rc_ptr *__fastcall System_Init_766880(rc_ptr_base *a1, int a2, int a3, void *a4,
     inited = 0; /*0x7668ba*/
   }
   ComPtr::Constructor(a1); /*0x7668be*/
-  a1->vfptr = &rc_ptr<WorldDominationTour::ValueGameOption<unsigned char>>::`vftable'; /*0x7668c5*/
+  a1->vfptr = &vt_rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char; /*0x7668c5*/
   ComPtr::Set(a1, (int)inited); /*0x7668cc*/
   DeleteAndZero(&a4); /*0x7668d5*/
   return (rc_ptr *)a1; /*0x7668dc*/
@@ -497,7 +497,7 @@ rc_ptr *__fastcall System_Init_7676F0(rc_ptr_base *a1, int a2)
   {
     v4[2] = a2; /*0x767704*/
     v4[1] = 0; /*0x767707*/
-    *v4 = &WorldDominationTour::MapSizeGameOption::`vftable'; /*0x76770e*/
+    *v4 = &vt_WorldDominationTour_MapSizeGameOption; /*0x76770e*/
     v5 = (int)v4; /*0x767714*/
   }
   else
@@ -505,7 +505,7 @@ rc_ptr *__fastcall System_Init_7676F0(rc_ptr_base *a1, int a2)
     v5 = 0; /*0x767718*/
   }
   ComPtr::Constructor(a1); /*0x76771c*/
-  a1->vfptr = &rc_ptr<WorldDominationTour::MapSizeGameOption>::`vftable'; /*0x767723*/
+  a1->vfptr = &vt_rc_ptr_WorldDominationTour_MapSizeGameOption; /*0x767723*/
   ComPtr::Set(a1, v5); /*0x76772a*/
   return (rc_ptr *)a1; /*0x767731*/
 }

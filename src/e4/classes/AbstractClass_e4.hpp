@@ -4,22 +4,42 @@
 namespace gamemd {
 struct AbstractClass {
     void* vfptr;  // minimal E2 declaration
+    void DTOR();  // 0x4101F0
+    int SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1);  // 0x410380
+    Surface * getObjectValue(char a2);  // 0x4115D0
+    unsigned int updateLayer();  // 0x425520
+    int getMapCoords();  // 0x426A80
+    void Initialize(TechnoClass * aP1, TechnoClass * aP2);  // 0x438E70
+    bool addRef(unsigned short * a2, int a3);  // 0x464AC0
+    Blitter * getTileIndex(char a2);  // 0x499CC0
+    BlitPlainXlat * setTileIndex(char a2);  // 0x499CE0
+    BlitTransXlat * getOverlayType(char a2);  // 0x499D00
+    RLEBlitter * clearOverlayFlags(char a2);  // 0x499DA0
+    int GetType();  // 0x4CA160
+    GScreenClass * getHouseHandle(char a2);  // 0x4F4C00
+    int checkPassability();  // 0x50E370
+    MissionClass * getWeaponRange(char a2);  // 0x5B3A60
+    unsigned int * checkVisibility(char a2);  // 0x5D7FD0
+    unsigned int * updateVisibilityState(char a2);  // 0x5D8030
+    unsigned int * processFogReveal(char a2);  // 0x5D8050
+    unsigned int * checkShroudState(char a2);  // 0x5D8070
+    unsigned int * updateShroudMap(char a2);  // 0x5D8090
+    void resetTeamState();  // 0x65C540
+    FileClass * processAITrigger(char a2);  // 0x65C610
+    void ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
+    void AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1);  // 0x7258D0
     unsigned int * Copy8Bytes();  // 0x72A9C0
     int initVtableBase();  // 0x410100
-    void DTOR();  // 0x4101F0
     int GetVtable3(AbstractClass * aP0);  // 0x410220
     int GenerateUniqueID(int a1);  // 0x410230
     int SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP1, ObjectTypeClass * aP2);  // 0x410320
-    int SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1);  // 0x410380
     int computeDistance();  // 0x410440
     int StubReturnFalse();  // 0x410470
     int COMStub_Return0_10();  // 0x410480
     int COMStub_Return0_20();  // 0x410520
     int COMStub_Return0_21();  // 0x410530
     int COMStub_Return0_23();  // 0x410570
-    Surface * getObjectValue(char a2);  // 0x4115D0
     int GetField9();  // 0x417FD0
-    unsigned int updateLayer();  // 0x425520
     int COMStub_Return0_25();  // 0x426390
     int COMStub_Return0_32();  // 0x4263B0
     int COMStub_Ret8487648_36();  // 0x4263C0
@@ -38,33 +58,17 @@ struct AbstractClass {
     int COMStub_Return0_118();  // 0x4264F0
     int COMStub_Return0_119();  // 0x426500
     int getCoordCenter2();  // 0x426510
-    int getMapCoords();  // 0x426A80
     std::locale::facet * setMapCoords(char a2);  // 0x427270
-    void Initialize(TechnoClass * aP1, TechnoClass * aP2);  // 0x438E70
     int COMStub_Return0_190();  // 0x459DC0
     int COMStub_Return0_205();  // 0x459DE0
     int COMStub_Return0_270();  // 0x459E60
-    bool addRef(unsigned short * a2, int a3);  // 0x464AC0
-    Blitter * getTileIndex(char a2);  // 0x499CC0
-    BlitPlainXlat * setTileIndex(char a2);  // 0x499CE0
-    BlitTransXlat * getOverlayType(char a2);  // 0x499D00
     std::locale::facet * setOverlayFlags(char a2);  // 0x499D20
-    RLEBlitter * clearOverlayFlags(char a2);  // 0x499DA0
-    int GetType();  // 0x4CA160
     unsigned int queueMission(int a2);  // 0x4E01C0
-    GScreenClass * getHouseHandle(char a2);  // 0x4F4C00
-    int checkPassability();  // 0x50E370
     int saveToStream(int a1, const void * a2, unsigned int * a3);  // 0x510A20
     int loadFromStream(int a1);  // 0x510A30
     int computeSize(int a1);  // 0x510A40
     int COMStub_6(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x5439F0
-    MissionClass * getWeaponRange(char a2);  // 0x5B3A60
     char validatePathNode();  // 0x5C02E0
-    unsigned int * checkVisibility(char a2);  // 0x5D7FD0
-    unsigned int * updateVisibilityState(char a2);  // 0x5D8030
-    unsigned int * processFogReveal(char a2);  // 0x5D8050
-    unsigned int * checkShroudState(char a2);  // 0x5D8070
-    unsigned int * updateShroudMap(char a2);  // 0x5D8090
     unsigned int * processRevealArea(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D81F0
     unsigned int * computeRevealRadius(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D8230
     unsigned int * applyRevealToCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D8270
@@ -88,10 +92,6 @@ struct AbstractClass {
     int SaveLoad_PrefixWrapper(TechnoTypeClass * aP0, ObjectTypeClass * aP1, TechnoTypeClass * aP2);  // 0x5F9950
     char processTeamOrder();  // 0x65C330
     int checkTeamObjective();  // 0x65C4A0
-    void resetTeamState();  // 0x65C540
-    FileClass * processAITrigger(char a2);  // 0x65C610
-    void ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
-    void AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1);  // 0x7258D0
     int compareType(int a1);  // 0x487E50
     char Stub1INoticeSink(int a1, int a2);  // 0x410580
     void COM_Stub_Return0(int a1);  // 0x410590

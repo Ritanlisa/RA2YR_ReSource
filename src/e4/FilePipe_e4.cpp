@@ -51,7 +51,7 @@ TypeList *__thiscall FilePipe_30_::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x477a73*/
-  *this = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x477a76*/
+  *this = &vt_VectorClass_TechnoTypeClass; /*0x477a76*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x477a80*/
   {
     __3_YAXPAX_Z(v3); /*0x477a88*/
@@ -378,7 +378,7 @@ DynamicVector *__thiscall FilePipe_30_::Destructor(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4ba163*/
-  *this = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x4ba166*/
+  *this = &vt_VectorClass_TechnoTypeClass; /*0x4ba166*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4ba170*/
   {
     __3_YAXPAX_Z(v3); /*0x4ba178*/
@@ -428,7 +428,7 @@ DynamicVector *__thiscall FilePipe_30_::Destructor_1(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4ba2a3*/
-  *this = &VectorClass<CrossDissolveEffect *>::`vftable'; /*0x4ba2a6*/
+  *this = &vt_VectorClass_CrossDissolveEffect; /*0x4ba2a6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4ba2b0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ba2b8*/
@@ -683,7 +683,7 @@ VectorClass *__thiscall FilePipe_38_::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4786d3*/
-  *this = &VectorClass<RGBClass>::`vftable'; /*0x4786d6*/
+  *this = &vt_VectorClass_RGBClass; /*0x4786d6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4786e0*/
   {
     __3_YAXPAX_Z(v3); /*0x4786e8*/

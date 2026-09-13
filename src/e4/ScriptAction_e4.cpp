@@ -646,7 +646,7 @@ AbstractClass *__thiscall ScriptAction::Constructor(_DWORD *this, AbstractClass 
   *(this + 3) = 0; /*0x635f2a*/
   *((_BYTE *)this + 16) = 1; /*0x635f2d*/
   *((_BYTE *)this + 17) = 0; /*0x635f31*/
-  *(this + 1) = &DynamicVectorClass<PlanningNodeClass *>::`vftable'; /*0x635f34*/
+  *(this + 1) = &vt_DynamicVectorClass_PlanningNodeClass; /*0x635f34*/
   *(this + 6) = 10; /*0x635f3b*/
   *(this + 5) = 0; /*0x635f42*/
   *((_BYTE *)this + 28) = 0; /*0x635f45*/

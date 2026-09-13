@@ -578,7 +578,7 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall BlitTransXlatAlpha_ushort::Constructor_Blitter(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &Blitter::`vftable'; /*0x49a1a9*/
+  *(_DWORD *)this = &vt_Blitter; /*0x49a1a9*/
   if ( (a2 & 1) != 0 ) /*0x49a1af*/
     __3_YAXPAX_Z(this); /*0x49a1b2*/
   return this; /*0x49a1bc*/
@@ -593,7 +593,7 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_0(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall BlitTransXlatAlpha_ushort::Constructor_Blitter_0(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &Blitter::`vftable'; /*0x49a1c9*/
+  *(_DWORD *)this = &vt_Blitter; /*0x49a1c9*/
   if ( (a2 & 1) != 0 ) /*0x49a1cf*/
     __3_YAXPAX_Z(this); /*0x49a1d2*/
   return this; /*0x49a1dc*/
@@ -608,7 +608,7 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_1(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 std::locale::facet *__thiscall BlitTransXlatAlpha_ushort::Constructor_Blitter_1(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &Blitter::`vftable'; /*0x49a1e9*/
+  *(_DWORD *)this = &vt_Blitter; /*0x49a1e9*/
   if ( (a2 & 1) != 0 ) /*0x49a1ef*/
     __3_YAXPAX_Z(this); /*0x49a1f2*/
   return this; /*0x49a1fc*/
@@ -626,10 +626,10 @@ BlitTransXlatAlpha_ushort *__thiscall BlitTransXlatAlpha_ushort::Blit(_DWORD *th
   void *v3; // eax
 
   v3 = (void *)*(this + 2); /*0x49a248*/
-  *this = &BlitTransXlatAlpha<unsigned short>::`vftable'; /*0x49a24b*/
+  *this = &vt_BlitTransXlatAlpha_unsigned_short; /*0x49a24b*/
   FractalNoise::Release(v3); /*0x49a252*/
   *(this + 2) = 0; /*0x49a25b*/
-  *this = &Blitter::`vftable'; /*0x49a264*/
+  *this = &vt_Blitter; /*0x49a264*/
   if ( (a2 & 1) != 0 ) /*0x49a26a*/
     __3_YAXPAX_Z(this); /*0x49a26d*/
   return (BlitTransXlatAlpha_ushort *)this; /*0x49a277*/

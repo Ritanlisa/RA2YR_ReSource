@@ -192,7 +192,7 @@ LABEL_42:
 LABEL_44:
       v13 = CCFileClass::Construct(Str, &MEMORY[0xA8B8E0]); /*0x5e7845*/
       v14 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 20))(v13, 0); /*0x5e7858*/
-      *(_DWORD *)Str = &CCFileClass::`vftable'; /*0x5e7864*/
+      *(_DWORD *)Str = &vt_CCFileClass; /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/
       *(_DWORD *)&Str[100] = 0; /*0x5e786f*/
       Vector::Clear((int)&Str[88]); /*0x5e7876*/

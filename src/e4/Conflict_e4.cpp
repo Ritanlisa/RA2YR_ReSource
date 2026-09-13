@@ -31,7 +31,7 @@ _DWORD *__thiscall Conflict_WorldDominationTour_12_::_vt06(_DWORD *this, _DWORD 
 
   v3 = *(this + 1) + 8 * a3; /*0x76685d*/
   ComPtr::Constructor(a2); /*0x766862*/
-  *a2 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x766867*/
+  *a2 = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x766867*/
   ComPtr::Set(a2, *(_DWORD *)(v3 + 4)); /*0x766873*/
   return a2; /*0x76687a*/
 }
@@ -45,7 +45,7 @@ rc_ptr * Conflict_WorldDominationTour_12::Constructor(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 rc_ptr *__thiscall Conflict_WorldDominationTour_12_::Constructor(_DWORD *this, char a2)
 {
-  *this = &rc_ptr<WorldDominationTour::ValueGameOption<unsigned char>>::`vftable'; /*0x766963*/
+  *this = &vt_rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char; /*0x766963*/
   ComPtr::Release(this); /*0x766969*/
   if ( (a2 & 1) != 0 ) /*0x766973*/
     __3_YAXPAX_Z(this); /*0x766976*/
@@ -61,7 +61,7 @@ rc_ptr * Conflict_WorldDominationTour_12::Constructor_0(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 rc_ptr *__thiscall Conflict_WorldDominationTour_12_::Constructor_0(_DWORD *this, char a2)
 {
-  *this = &rc_ptr<WorldDominationTour::FlagGameOption>::`vftable'; /*0x766993*/
+  *this = &vt_rc_ptr_WorldDominationTour_FlagGameOption; /*0x766993*/
   ComPtr::Release(this); /*0x766999*/
   if ( (a2 & 1) != 0 ) /*0x7669a3*/
     __3_YAXPAX_Z(this); /*0x7669a6*/
@@ -136,7 +136,7 @@ char __thiscall Conflict_WorldDominationTour_12_::_vt02(_BYTE *this, int a2, _DW
       do /*0x766c97*/
       {
         ComPtr::Constructor(v6); /*0x766c88*/
-        *v6 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x766c8d*/
+        *v6 = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x766c8d*/
         v6 += 2; /*0x766c93*/
         --v9; /*0x766c96*/
       }
@@ -161,7 +161,7 @@ char __thiscall Conflict_WorldDominationTour_12_::_vt02(_BYTE *this, int a2, _DW
       do /*0x766c67*/
       {
         ComPtr::Constructor(v6); /*0x766c58*/
-        *v6 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x766c5d*/
+        *v6 = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x766c5d*/
         v6 += 2; /*0x766c63*/
         --v7; /*0x766c66*/
       }
@@ -294,7 +294,7 @@ char __thiscall Conflict_WorldDominationTour_12_::sub_766DC0(_BYTE *this, int a2
         do /*0x766e45*/
         {
           ComPtr::Constructor(v8); /*0x766e36*/
-          *v8 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x766e3b*/
+          *v8 = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x766e3b*/
           v8 += 2; /*0x766e41*/
           --v9; /*0x766e44*/
         }
@@ -397,7 +397,7 @@ VectorClass *__thiscall Conflict_WorldDominationTour_12_::QueryInterface(_DWORD 
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v3 = (void (__thiscall ***)(_DWORD, int))*(this + 1); /*0x766fc3*/
-  *this = &VectorClass<rc_ptr<WorldDominationTour::GameOption>>::`vftable'; /*0x766fc6*/
+  *this = &vt_VectorClass_rc_ptr_WorldDominationTour_GameOption; /*0x766fc6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x766fd0*/
   {
     (**v3)(v3, 3); /*0x766fdf*/
@@ -422,7 +422,7 @@ DynamicVector *__thiscall Conflict_WorldDominationTour_12_::Constructor_2(_DWORD
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v3 = (void (__thiscall ***)(_DWORD, int))*(this + 1); /*0x767083*/
-  *this = &VectorClass<rc_ptr<WorldDominationTour::GameOption>>::`vftable'; /*0x767086*/
+  *this = &vt_VectorClass_rc_ptr_WorldDominationTour_GameOption; /*0x767086*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x767090*/
   {
     (**v3)(v3, 3); /*0x76709f*/
@@ -445,7 +445,7 @@ unsigned int * Conflict_WorldDominationTour_12::Constructor_3()
 _DWORD *__thiscall sub_7670D0(_DWORD *this)
 {
   ComPtr::Constructor(this); /*0x7670d3*/
-  *this = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x7670d8*/
+  *this = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x7670d8*/
   return this; /*0x7670e0*/
 }
 }

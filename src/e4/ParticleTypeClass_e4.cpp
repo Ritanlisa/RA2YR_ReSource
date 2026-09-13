@@ -49,7 +49,7 @@ TypeList *__thiscall ParticleTypeClass::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x477ac3*/
-  *this = &VectorClass<RGBClass>::`vftable'; /*0x477ac6*/
+  *this = &vt_VectorClass_RGBClass; /*0x477ac6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x477ad0*/
   {
     __3_YAXPAX_Z(v3); /*0x477ad8*/
@@ -336,7 +336,7 @@ char __thiscall ParticleTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   if ( !ObjectTypeClass::LoadFromINI((char *)this, (CCINIClass *)aP1) ) /*0x644f6d*/
     return 0; /*0x645417*/
   ParticleTypeClass::Constructor(v44, 0, 0); /*0x644f85*/
-  v44[0] = &TypeList<RGBClass>::`vftable'; /*0x644f8a*/
+  v44[0] = &vt_TypeList_RGBClass; /*0x644f8a*/
   inited = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(this + 36)); /*0x644f9a*/
   RGBColorList = (_DWORD *)INIClass::ReadRGBColorList( /*0x644fac*/
                              aP1,
@@ -354,7 +354,7 @@ char __thiscall ParticleTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   this->ParticleTypeClass_field_0x2C8 = RGBColorList[4]; /*0x644fbd*/
   this->ParticleTypeClass_field_0x2CC = RGBColorList[5]; /*0x644fc6*/
   *(_DWORD *)(this + 720) = RGBColorList[6]; /*0x644fd3*/
-  *(_DWORD *)&v50.__pad_20[4] = &VectorClass<RGBClass>::`vftable'; /*0x644fd9*/
+  *(_DWORD *)&v50.__pad_20[4] = &vt_VectorClass_RGBClass; /*0x644fd9*/
   FilePipe_38::ddtor((int)&v50.__pad_20[4]); /*0x644fe1*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x644ff5*/
                     (int)aP1,
@@ -668,11 +668,11 @@ int __stdcall ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       ObjectTypeClass::Construct((_DWORD *)v3, (int)&a2); /*0x645689*/
       ParticleTypeClass::Constructor((_DWORD *)(v3 + 696), 0, 0); /*0x645698*/
-      *(_DWORD *)(v3 + 696) = &TypeList<RGBClass>::`vftable'; /*0x64569d*/
+      *(_DWORD *)(v3 + 696) = &vt_TypeList_RGBClass; /*0x64569d*/
       *(_DWORD *)v3 = &ParticleTypeClass::`vftable'; /*0x6456a3*/
       *(_DWORD *)(v3 + 4) = &ParticleTypeClass::`vftable'; /*0x6456a9*/
       *(_DWORD *)(v3 + 8) = &ParticleTypeClass::`vftable'; /*0x6456b0*/
-      *(_DWORD *)(v3 + 12) = &ParticleTypeClass::`vftable'; /*0x6456b7*/
+      *(_DWORD *)(v3 + 12) = &vt_ParticleTypeClass; /*0x6456b7*/
     }
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v3 + 740)); /*0x6456ca*/
     v5 = *v2; /*0x6456cf*/
@@ -739,7 +739,7 @@ int __stdcall ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int aP1
   if ( result >= 0 ) /*0x6457ba*/
   {
     v4 = *(_DWORD *)aP1; /*0x6457c2*/
-    aP2 = aP0->pipScale; /*0x6457ce*/
+    aP2 = aP0->MyEffectivenessCoefficient; /*0x6457ce*/
     result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v4 + 16))(aP1, &aP2, 4, 0); /*0x6457d2*/
     if ( result >= 0 ) /*0x6457d7*/
     {
@@ -749,7 +749,7 @@ int __stdcall ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int aP1
         v6 = 0; /*0x6457e3*/
         do /*0x645806*/
         {
-          if ( (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)aP1 + 16))(aP1, v6 + aP0->strength, 3, 0) < 0 ) /*0x6457fa*/
+          if ( (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)aP1 + 16))(aP1, v6 + aP0->?, 3, 0) < 0 ) /*0x6457fa*/
             break; /*0x6457fa*/
           ++v5; /*0x645800*/
           v6 += 3; /*0x645801*/
@@ -796,7 +796,7 @@ ParticleTypeClass *__thiscall ParticleTypeClass::ddtor(void **this, char a2)
   *this = &ParticleTypeClass::`vftable'; /*0x645956*/
   *(this + 1) = &ParticleTypeClass::`vftable'; /*0x64595c*/
   *(this + 2) = &ParticleTypeClass::`vftable'; /*0x645963*/
-  *(this + 3) = &ParticleTypeClass::`vftable'; /*0x64596a*/
+  *(this + 3) = &vt_ParticleTypeClass; /*0x64596a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x645971*/
   v7 = this; /*0x645986*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v7); /*0x64598a*/
@@ -821,7 +821,7 @@ ParticleTypeClass *__thiscall ParticleTypeClass::ddtor(void **this, char a2)
     while ( v4 < MEMORY[0xA83DA8] ); /*0x645a06*/
   }
   v5 = *(this + 175); /*0x645a08*/
-  *(this + 174) = &VectorClass<RGBClass>::`vftable'; /*0x645a0e*/
+  *(this + 174) = &vt_VectorClass_RGBClass; /*0x645a0e*/
   if ( v5 && *((_BYTE *)this + 709) ) /*0x645a1c*/
   {
     __3_YAXPAX_Z(v5); /*0x645a27*/
@@ -854,7 +854,7 @@ _DWORD *__thiscall sub_645A70(_DWORD *this, int a2, int a3)
   *(this + 2) = a2; /*0x645a80*/
   *((_BYTE *)this + 12) = 1; /*0x645a83*/
   *((_BYTE *)this + 13) = 0; /*0x645a87*/
-  *this = &VectorClass<RGBClass>::`vftable'; /*0x645a8a*/
+  *this = &vt_VectorClass_RGBClass; /*0x645a8a*/
   if ( a2 ) /*0x645a90*/
   {
     if ( a3 ) /*0x645a98*/
@@ -903,7 +903,7 @@ _DWORD *__thiscall sub_645A70(_DWORD *this, int a2, int a3)
       *((_BYTE *)this + 13) = 1; /*0x645ae8*/
     }
   }
-  *this = &DynamicVectorClass<RGBClass>::`vftable'; /*0x645aec*/
+  *this = &vt_DynamicVectorClass_RGBClass; /*0x645aec*/
   *(this + 5) = 10; /*0x645af2*/
   *(this + 4) = 0; /*0x645af9*/
   return this; /*0x645afe*/

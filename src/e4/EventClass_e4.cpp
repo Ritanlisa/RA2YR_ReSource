@@ -243,7 +243,7 @@ DynamicVector *__thiscall EventClass::executeAction(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x40bc13*/
-  *this = &VectorClass<BombClass *>::`vftable'; /*0x40bc16*/
+  *this = &vt_VectorClass_BombClass; /*0x40bc16*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x40bc20*/
   {
     __3_YAXPAX_Z(v3); /*0x40bc28*/
@@ -269,7 +269,7 @@ _DWORD *__thiscall EventClass::resetEvent(_DWORD *this, BuildingClass *aP1, Buil
   *(this + 2) = aP1; /*0x40bd0e*/
   *((_BYTE *)this + 12) = 1; /*0x40bd11*/
   *((_BYTE *)this + 13) = 0; /*0x40bd15*/
-  *this = &VectorClass<TechnoClass *>::`vftable'; /*0x40bd18*/
+  *this = &vt_VectorClass_TechnoClass; /*0x40bd18*/
   if ( aP1 ) /*0x40bd1e*/
   {
     if ( aP2 ) /*0x40bd26*/
@@ -292,7 +292,7 @@ void EventClass::finalizeEvent()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __cdecl sub_40BE10()
 {
-  MEMORY[0x87F658] = (int)&VectorClass<CommandClass const *>::`vftable'; /*0x40be18*/
+  MEMORY[0x87F658] = (int)&vt_VectorClass_CommandClass_const; /*0x40be18*/
   if ( MEMORY[0x87F65C] && MEMORY[0x87F665] ) /*0x40be2c*/
   {
     __3_YAXPAX_Z(MEMORY[0x87F65C]); /*0x40be2f*/
@@ -314,7 +314,7 @@ VectorClass *__thiscall EventClass::queueEvent(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x40c113*/
-  *this = &VectorClass<CommandClass const *>::`vftable'; /*0x40c116*/
+  *this = &vt_VectorClass_CommandClass_const; /*0x40c116*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x40c120*/
   {
     __3_YAXPAX_Z(v3); /*0x40c128*/

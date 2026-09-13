@@ -71,7 +71,7 @@ int Rules::ReadMiscINI()
 //   int v35; // eax
 //   int MindClearedSound; // ebx
 //   int v37; // eax
-//   in... [94760 chars total]
+//   in... [94235 chars total]
 // end truncated pseudocode
 }
 } // namespace gamemd
@@ -129,7 +129,7 @@ int Rules::ReadCombatINI()
 //   CCINIClass *v44; // ebx
 //   CCINIClass *v45; // eax
 //   int v46; // ebx
-//   int ... [51989 chars total]
+//   int ... [51727 chars total]
 // end truncated pseudocode
 }
 } // namespace gamemd
@@ -141,7 +141,7 @@ unsigned int * Rules::CopyDataArray(VectorClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Rules::CopyDataArray(_DWORD *this, VectorClass *aP1)
 {
-  void *v3; // eax
+  int v3; // eax
   int v4; // eax
   int v5; // ecx
   int v6; // eax
@@ -149,18 +149,18 @@ _DWORD *__thiscall Rules::CopyDataArray(_DWORD *this, VectorClass *aP1)
   if ( this == (_DWORD *)aP1 ) /*0x67a57a*/
     goto LABEL_8; /*0x67a57a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x67a57e*/
-  v3 = aP1->field_8; /*0x67a581*/
+  v3 = aP1->Capacity; /*0x67a581*/
   *(this + 2) = v3; /*0x67a586*/
   if ( !v3 ) /*0x67a589*/
   {
     *(this + 1) = 0; /*0x67a5d6*/
     *((_BYTE *)this + 13) = 0; /*0x67a5dd*/
 LABEL_8:
-    *(this + 4) = aP1->field_10; /*0x67a5e1*/
-    *(this + 5) = aP1->field_14; /*0x67a5ea*/
+    *(this + 4) = aP1[1].vtable0; /*0x67a5e1*/
+    *(this + 5) = aP1[1].Items; /*0x67a5ea*/
     return this; /*0x67a5ed*/
   }
-  v4 = __2_YAPAXI_Z(4 * (_DWORD)v3); /*0x67a593*/
+  v4 = __2_YAPAXI_Z(4 * v3); /*0x67a593*/
   *(this + 1) = v4; /*0x67a59b*/
   if ( !v4 ) /*0x67a5a0*/
     goto LABEL_8; /*0x67a5a0*/
@@ -171,12 +171,12 @@ LABEL_8:
     goto LABEL_8; /*0x67a5ad*/
   do /*0x67a5c1*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x67a5b8*/
+    *(_DWORD *)(*(this + 1) + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x67a5b8*/
     ++v6; /*0x67a5be*/
   }
   while ( v6 < *(this + 2) ); /*0x67a5c1*/
-  *(this + 4) = aP1->field_10; /*0x67a5c6*/
-  *(this + 5) = aP1->field_14; /*0x67a5cc*/
+  *(this + 4) = aP1[1].vtable0; /*0x67a5c6*/
+  *(this + 5) = aP1[1].Items; /*0x67a5cc*/
   return this; /*0x67a5d1*/
 }
 }

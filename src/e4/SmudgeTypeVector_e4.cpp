@@ -11,7 +11,7 @@ VectorClass *__thiscall SmudgeTypeVector::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x67c0b3*/
-  *this = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x67c0b6*/
+  *this = &vt_VectorClass_SmudgeTypeClass_const; /*0x67c0b6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x67c0c0*/
   {
     __3_YAXPAX_Z(v3); /*0x67c0c8*/

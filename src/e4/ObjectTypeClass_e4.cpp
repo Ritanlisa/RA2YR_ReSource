@@ -576,7 +576,7 @@ int __thiscall ObjectTypeClass::ConstructFull(int this, AbstractClass *aP1)
   *(_DWORD *)this = &ObjectTypeClass::`vftable'; /*0x5f7251*/
   this->vtable1 = &ObjectTypeClass::`vftable'; /*0x5f7258*/
   this->vtable2 = &ObjectTypeClass::`vftable'; /*0x5f725f*/
-  this->vtable3 = &ObjectTypeClass::`vftable'; /*0x5f7266*/
+  this->vtable3 = &vt_ObjectTypeClass; /*0x5f7266*/
   if ( this + 36 != this + 504 ) /*0x5f726d*/
     qmemcpy((void *)(this + 504), (const void *)(this + 36), 0x19u); /*0x5f7274*/
   if ( &MEMORY[0x87F8E4] == (MouseClass *)-42624 ) /*0x5f727e*/
@@ -665,7 +665,7 @@ _DWORD *__thiscall ObjectTypeClass::Construct(_DWORD *this, ObjectTypeClass *aP1
   *this = &ObjectTypeClass::`vftable'; /*0x5f73d9*/
   *(this + 1) = &ObjectTypeClass::`vftable'; /*0x5f73df*/
   *(this + 2) = &ObjectTypeClass::`vftable'; /*0x5f73e6*/
-  *(this + 3) = &ObjectTypeClass::`vftable'; /*0x5f73ed*/
+  *(this + 3) = &vt_ObjectTypeClass; /*0x5f73ed*/
   return this; /*0x5f73f6*/
 }
 }
@@ -686,7 +686,7 @@ int __thiscall ObjectTypeClass::Destruct(int this)
   *(_DWORD *)this = &ObjectTypeClass::`vftable'; /*0x5f740b*/
   this->vtable1 = &ObjectTypeClass::`vftable'; /*0x5f7411*/
   this->vtable2 = &ObjectTypeClass::`vftable'; /*0x5f7418*/
-  this->vtable3 = &ObjectTypeClass::`vftable'; /*0x5f741f*/
+  this->vtable3 = &vt_ObjectTypeClass; /*0x5f741f*/
   v8 = this; /*0x5f7431*/
   v2 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xAC1418] + 16))(&MEMORY[0xAC1418], &v8); /*0x5f7435*/
   if ( v2 != -1 && v2 < MEMORY[0xAC1428] && v2 < --MEMORY[0xAC1428] ) /*0x5f7450*/
@@ -1534,13 +1534,51 @@ int __thiscall ObjectTypeClass_SelectArtOrAlt(_DWORD *this)
 }
 
 // 0x712170
-namespace gamemd {
-int ObjectTypeClass_LoadExtras()
+char ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (no pseudocode — ASM-only function)
+// (v3 export truncated pseudocode — commented out; live version via get_context)
+// char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 ***a2)
+// {
+//   int v3; // ecx
+//   int v4; // ebp
+//   WeaponTypeClass *v5; // edi
+//   WeaponTypeClass *v6; // eax
+//   char Bool_Overwrite; // al
+//   double Double_Overwrite; // st7
+//   double v9; // st7
+//   INIClass *v10; // ecx
+//   _DWORD *GUID_Overwrite; // eax
+//   INIClass *v12; // edx
+//   INIClass *v13; // edx
+//   INIClass *v14; // ecx
+//   INIClass *v15; // eax
+//   INIClass *v16; // edx
+//   INIClass *v17; // ecx
+//   INIClass *v18; // eax
+//   int Int_Overwrite; // eax
+//   CCINIClass *v11; // eax
+//   ObjectClass *i; // eax
+//   int v22; // edx
+//   int v23; // eax
+//   INIClass *inited; // eax
+//   int v25; // eax
+//   AbstractClass *j; // eax
+//   int edx29; // edx
+//   int v28; // eax
+//   char al29; // al
+//   CCINIClass *v21; // edi
+//   WeaponTypeClass *eax33; // eax
+//   WeaponTypeClass *v32; // eax
+//   CCINIClass *v24; // ecx
+//   WeaponTypeClass *v34; // edi
+//   WeaponTypeClass *eax42; // eax
+//   CCINIClass *v27; // edi
+//   void *eax45; // eax
+//   CCINIClass *v29; // edi
+//   void *eax4... [190476 chars total]
+// end truncated pseudocode
 }
-} // namespace gamemd
 
 // 0x7170A0
 int ObjectTypeClass::DeserializeArrays()
@@ -1761,7 +1799,7 @@ unsigned int * ObjectTypeClass::CheckFlag(ObjectTypeClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ObjectTypeClass::CheckFlag(_DWORD *this, ObjectTypeClass *aP1)
 {
-  *this = &DynamicVectorClass<AnimTypeClass const *>::`vftable'; /*0x717bf2*/
+  *this = &vt_DynamicVectorClass_AnimTypeClass_const; /*0x717bf2*/
   return this; /*0x717bf8*/
 }
 }

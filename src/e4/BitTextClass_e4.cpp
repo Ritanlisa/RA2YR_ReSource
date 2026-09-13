@@ -12,7 +12,7 @@ int __thiscall sub_433880(int this, char *Source)
   _DWORD *Font; // eax
 
   v3 = (struct tagRECT *)(this + 48); /*0x43388a*/
-  *(_DWORD *)this = &BitFont::`vftable'; /*0x433895*/
+  *(_DWORD *)this = &vt_BitFont; /*0x433895*/
   this->m_CharWidth = 0; /*0x43389b*/
   *(_WORD *)(this + 36) = 0x7FFF; /*0x43389e*/
   *(_WORD *)(this + 38) = 13653; /*0x4338a4*/
@@ -60,7 +60,7 @@ unsigned int * BitTextClass::LoadFont()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_434AD0(_DWORD *this)
 {
-  *this = &BitText::`vftable'; /*0x434ad5*/
+  *this = &vt_BitText; /*0x434ad5*/
   if ( __2_YAPAXI_Z(0x44u) ) /*0x434adb*/
   {
     aP0 = BitTextClass::ParseFontData(aGameFnt); /*0x434af3*/

@@ -342,7 +342,7 @@ unsigned int * GameClass::saveGameState(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall GameClass::saveGameState(PixelFXClass *this, char a2)
 {
-  this->vfptr = &PixelFXClass::`vftable'; /*0x631f49*/
+  this->vfptr = &vt_PixelFXClass; /*0x631f49*/
   if ( (a2 & 1) != 0 ) /*0x631f4f*/
     __3_YAXPAX_Z(this); /*0x631f52*/
   return &this->vfptr; /*0x631f5c*/
@@ -437,7 +437,7 @@ PKPipe *__thiscall GameClass::validateGameFile(_DWORD *this, char a2)
 
   v3 = (int *)*(this + 8); /*0x632ff5*/
   v4 = (Pipe *)(this + 5); /*0x632ff8*/
-  *(this + 5) = &BlowPipe::`vftable'; /*0x632ffd*/
+  *(this + 5) = &vt_BlowPipe; /*0x632ffd*/
   if ( v3 ) /*0x633003*/
   {
     COMObject::Release(v3); /*0x633007*/
@@ -560,7 +560,7 @@ PKStrawClass *__thiscall GameClass::applyGameSettings(_DWORD *this, char a2)
 
   v3 = (int *)*(this + 8); /*0x633375*/
   v4 = (Straw *)(this + 5); /*0x633378*/
-  *(this + 5) = &BlowStraw::`vftable'; /*0x63337d*/
+  *(this + 5) = &vt_BlowStraw; /*0x63337d*/
   if ( v3 ) /*0x633383*/
   {
     COMObject::Release(v3); /*0x633387*/

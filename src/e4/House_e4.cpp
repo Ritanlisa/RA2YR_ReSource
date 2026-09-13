@@ -1124,7 +1124,7 @@ void __thiscall sub_69E090(char **this)
       *(this + 3) = EntireFile; /*0x69e0bd*/
       *((_BYTE *)this + 16) = 1; /*0x69e0c0*/
     }
-    v3[0] = &CCFileClass::`vftable'; /*0x69e0c8*/
+    v3[0] = &vt_CCFileClass; /*0x69e0c8*/
     v5 = 0; /*0x69e0d0*/
     Vector::Clear((int)v4); /*0x69e0d8*/
     v3[0] = &off_7E1668; /*0x69e0e1*/

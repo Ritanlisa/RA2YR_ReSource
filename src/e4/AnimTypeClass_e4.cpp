@@ -38,7 +38,7 @@ _DWORD *__thiscall AnimTypeClass::Construct2(_DWORD *this, ObjectClass *aP1)
   *this = &AITriggerTypeClass::`vftable'; /*0x41e401*/
   *(this + 1) = &AITriggerTypeClass::`vftable'; /*0x41e407*/
   *(this + 2) = &AITriggerTypeClass::`vftable'; /*0x41e40e*/
-  *(this + 3) = &AITriggerTypeClass::`vftable'; /*0x41e415*/
+  *(this + 3) = &vt_AITriggerTypeClass; /*0x41e415*/
   memset(this + 57, 0, 0x20u); /*0x41e41c*/
   if ( *(int *)&HouseClass_Player.__pad_5568[8028] < *(int *)&HouseClass_Player.__pad_5568[8020] /*0x41e452*/
     || (HouseClass_Player.__pad_5568[8025] || !*(_DWORD *)&HouseClass_Player.__pad_5568[8020])
@@ -149,7 +149,7 @@ _DWORD *__thiscall AnimTypeClass::Construct(_DWORD *this, AbstractClass *aP1)
   *this = &AnimTypeClass::`vftable'; /*0x427731*/
   *(this + 1) = &AnimTypeClass::`vftable'; /*0x427737*/
   *(this + 2) = &AnimTypeClass::`vftable'; /*0x42773d*/
-  *(this + 3) = &AnimTypeClass::`vftable'; /*0x427744*/
+  *(this + 3) = &vt_AnimTypeClass; /*0x427744*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x42774b*/
   this->IsLogic = 1; /*0x427750*/
   this->RadarInvisible = 1; /*0x427757*/
@@ -409,7 +409,7 @@ int __stdcall AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
       *(_DWORD *)a1 = &AnimTypeClass::`vftable'; /*0x428831*/
       *(_DWORD *)(a1 + 4) = &AnimTypeClass::`vftable'; /*0x428837*/
       *(_DWORD *)(a1 + 8) = &AnimTypeClass::`vftable'; /*0x42883e*/
-      *(_DWORD *)(a1 + 12) = &AnimTypeClass::`vftable'; /*0x428845*/
+      *(_DWORD *)(a1 + 12) = &vt_AnimTypeClass; /*0x428845*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x42884e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x428855*/
@@ -624,7 +624,7 @@ int __thiscall AnimTypeClass::_vt39(char *this)
       this->Image = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
         *(this + 168) = 1; /*0x428d55*/
-      v10[0] = &CCFileClass::`vftable'; /*0x428d63*/
+      v10[0] = &vt_CCFileClass; /*0x428d63*/
       v12 = 0; /*0x428d6b*/
       Vector::Clear((int)v11); /*0x428d76*/
       v10[0] = &off_7E1668; /*0x428d7f*/
@@ -632,7 +632,7 @@ int __thiscall AnimTypeClass::_vt39(char *this)
     }
     (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)this + 160))(this, *((_DWORD *)MEMORY[0xA8B230] + 1174)); /*0x428d9c*/
     v6 = this->Image; /*0x428da2*/
-    v7[0] = &CCFileClass::`vftable'; /*0x428dac*/
+    v7[0] = &vt_CCFileClass; /*0x428dac*/
     v9 = 0; /*0x428db4*/
     Vector::Clear((int)v8); /*0x428dbc*/
     v7[0] = &off_7E1668; /*0x428dc5*/
@@ -670,7 +670,7 @@ AnimTypeClass *__thiscall AnimTypeClass::ddtor(_DWORD *this, char a2)
   *this = &AnimTypeClass::`vftable'; /*0x428ead*/
   *(this + 1) = &AnimTypeClass::`vftable'; /*0x428eb3*/
   *(this + 2) = &AnimTypeClass::`vftable'; /*0x428eba*/
-  *(this + 3) = &AnimTypeClass::`vftable'; /*0x428ec1*/
+  *(this + 3) = &vt_AnimTypeClass; /*0x428ec1*/
   v6 = this; /*0x428ecf*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x428ed3*/
   if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x428eee*/

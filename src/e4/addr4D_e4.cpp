@@ -209,7 +209,7 @@ int sub_4D0750()
   MEMORY[0x8B3D18] = 0; /*0x4d075c*/
   MEMORY[0x8B3D1C] = 1; /*0x4d0761*/
   MEMORY[0x8B3D1D] = 0; /*0x4d0768*/
-  MEMORY[0x8B3D10] = (int)&DynamicVectorClass<FoggedObjectClass *>::`vftable'; /*0x4d076d*/
+  MEMORY[0x8B3D10] = (int)&vt_DynamicVectorClass_FoggedObjectClass; /*0x4d076d*/
   MEMORY[0x8B3D24] = 10; /*0x4d0777*/
   MEMORY[0x8B3D20] = 0; /*0x4d0781*/
   return atexit(sub_4D0790); /*0x4d078c*/
@@ -226,7 +226,7 @@ void __cdecl sub_4D0790()
 {
   if ( (MEMORY[0x8B3CD5] & 1) == 0 ) /*0x4d079a*/
   {
-    MEMORY[0x8B3D10] = (int)&VectorClass<FoggedObjectClass *>::`vftable'; /*0x4d079e*/
+    MEMORY[0x8B3D10] = (int)&vt_VectorClass_FoggedObjectClass; /*0x4d079e*/
     MEMORY[0x8B3CD5] |= 1u; /*0x4d07b1*/
     if ( MEMORY[0x8B3D14] ) /*0x4d07b7*/
     {
@@ -309,7 +309,7 @@ int __fastcall DestructFoggedObjectClass(FoggedObjectClass *aP0)
   *(_DWORD *)aP0->__pad_0 = &FoggedObjectClass::`vftable'; /*0x4d1663*/
   *(_DWORD *)&aP0->__pad_0[4] = &FoggedObjectClass::`vftable'; /*0x4d1669*/
   *(_DWORD *)&aP0->__pad_0[8] = &FoggedObjectClass::`vftable'; /*0x4d1670*/
-  *(_DWORD *)&aP0->__pad_0[12] = &FoggedObjectClass::`vftable'; /*0x4d1677*/
+  *(_DWORD *)&aP0->__pad_0[12] = &vt_FoggedObjectClass; /*0x4d1677*/
   *(_DWORD *)v17 = aP0; /*0x4d1684*/
   v2 = (*(int (__thiscall **)(char *, __int16 *))(*(_DWORD *)&stru_89E138.__pad_579C[66620] + 16))( /*0x4d1688*/
          &stru_89E138.__pad_579C[66620],
@@ -394,7 +394,7 @@ int __fastcall DestructFoggedObjectClass(FoggedObjectClass *aP0)
       aP0[1].referenceCount,
       0);
   v14 = *(CCINIClass **)aP0[2].__pad_0; /*0x4d1852*/
-  aP0[1].Cell[0] = (int)&VectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d1855*/
+  aP0[1].Cell[0] = (int)&vt_VectorClass_FoggedObjectClass_DrawRecord; /*0x4d1855*/
   if ( v14 && aP0[2].__pad_0[9] ) /*0x4d1860*/
   {
     __3_YAXPAX_Z(v14); /*0x4d1866*/
@@ -742,7 +742,7 @@ void sub_4D31A0()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __cdecl sub_4D31A0()
 {
-  MEMORY[0x8B3DC0] = (int)&VectorClass<FootClass *>::`vftable'; /*0x4d31a8*/
+  MEMORY[0x8B3DC0] = (int)&vt_VectorClass_FootClass; /*0x4d31a8*/
   if ( MEMORY[0x8B3DC4] && MEMORY[0x8B3DCD] ) /*0x4d31bc*/
   {
     __3_YAXPAX_Z(MEMORY[0x8B3DC4]); /*0x4d31bf*/

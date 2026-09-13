@@ -282,7 +282,7 @@ IUnknown * Math::Sub16(BuildingTypeClass * aP1, IUnknown * aP2)
 IUnknown *__thiscall Math::Sub16(_WORD *this, BuildingTypeClass *aP1, IUnknown *aP2)
 {
   LOWORD(aP2) = *this - LOWORD(aP2->field_0); /*0x5b295a*/
-  *(_DWORD *)aP1->__pad_0 = aP2; /*0x5b2967*/
+  *(_DWORD *)aP1->vtable0 = aP2; /*0x5b2967*/
   return (IUnknown *)aP1; /*0x5b2969*/
 }
 }

@@ -21,7 +21,7 @@ HRESULT __stdcall DriveLocomotionClass::_vt05(int *a1, int *pStm)
   {
     a1[26] = 0; /*0x4af79c*/
     *a1 = (int)&DriveLocomotionClass::`vftable'; /*0x4af7a3*/
-    a1[1] = (int)&DriveLocomotionClass::`vftable'; /*0x4af7a9*/
+    a1[1] = (int)&vt_DriveLocomotionClass; /*0x4af7a9*/
     a1[6] = (int)&off_7E7E8C; /*0x4af7b0*/
   }
   v2->__pad_0->Read(v2, &pStm, 1, 0); /*0x4af7c3*/
@@ -103,7 +103,7 @@ DriveLocomotionClass *__thiscall DriveLocomotionClass::ProcessMove(ILocomotion *
   ILocomotion *v3; // eax
 
   *this = (ILocomotion *)&DriveLocomotionClass::`vftable'; /*0x4b4d03*/
-  *(this + 1) = (ILocomotion *)&DriveLocomotionClass::`vftable'; /*0x4b4d09*/
+  *(this + 1) = (ILocomotion *)&vt_DriveLocomotionClass; /*0x4b4d09*/
   *(this + 6) = (ILocomotion *)&off_7E7E8C; /*0x4b4d10*/
   v3 = *(this + 26); /*0x4b4d17*/
   if ( v3 ) /*0x4b4d1c*/

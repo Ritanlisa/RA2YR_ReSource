@@ -51,7 +51,7 @@ TypeList *__thiscall TypeList::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x477993*/
-  *this = &VectorClass<int>::`vftable'; /*0x477996*/
+  *this = &vt_VectorClass_int; /*0x477996*/
   if ( v3 && this->IsAllocated ) /*0x4779a0*/
   {
     __3_YAXPAX_Z(v3); /*0x4779a8*/
@@ -139,7 +139,7 @@ _DWORD *__thiscall TypeList_TechnoType_Constructor(_DWORD *this, int a2, int a3)
   *(this + 2) = a2; /*0x47879e*/
   this->IsInitialized = 1; /*0x4787a1*/
   this->IsAllocated = 0; /*0x4787a5*/
-  *this = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x4787a8*/
+  *this = &vt_VectorClass_TechnoTypeClass; /*0x4787a8*/
   if ( a2 ) /*0x4787ae*/
   {
     if ( a3 ) /*0x4787b6*/
@@ -160,7 +160,7 @@ unsigned int * TypeList::CopyConstructor(VectorClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall TypeList::CopyConstructor(_DWORD *this, VectorClass *aP1)
 {
-  void *v3; // eax
+  int v3; // eax
   int v4; // eax
   int v5; // ecx
   int v6; // eax
@@ -169,15 +169,15 @@ _DWORD *__thiscall TypeList::CopyConstructor(_DWORD *this, VectorClass *aP1)
   *(this + 2) = 0; /*0x513750*/
   this->IsInitialized = 1; /*0x513753*/
   this->IsAllocated = 0; /*0x513757*/
-  *this = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x51375a*/
+  *this = &vt_VectorClass_UnitTypeClass_const; /*0x51375a*/
   if ( this != (_DWORD *)aP1 ) /*0x513760*/
   {
     Vector::Destructor((int)this); /*0x513762*/
-    v3 = aP1->field_8; /*0x513768*/
+    v3 = aP1->Capacity; /*0x513768*/
     *(this + 2) = v3; /*0x51376d*/
     if ( v3 ) /*0x513770*/
     {
-      v4 = __2_YAPAXI_Z(4 * (_DWORD)v3); /*0x513776*/
+      v4 = __2_YAPAXI_Z(4 * v3); /*0x513776*/
       *(this + 1) = v4; /*0x513780*/
       if ( v4 ) /*0x513783*/
       {
@@ -188,7 +188,7 @@ _DWORD *__thiscall TypeList::CopyConstructor(_DWORD *this, VectorClass *aP1)
         {
           do /*0x5137a4*/
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x51379b*/
+            *(_DWORD *)(*(this + 1) + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x51379b*/
             ++v6; /*0x5137a1*/
           }
           while ( v6 < *(this + 2) ); /*0x5137a4*/
@@ -201,9 +201,9 @@ _DWORD *__thiscall TypeList::CopyConstructor(_DWORD *this, VectorClass *aP1)
       this->IsAllocated = 0; /*0x5137ab*/
     }
   }
-  *(this + 4) = aP1->field_10; /*0x5137b1*/
-  *(this + 5) = aP1->field_14; /*0x5137b7*/
-  *this = &TypeList<UnitTypeClass const *>::`vftable'; /*0x5137ba*/
+  *(this + 4) = aP1[1].vtable0; /*0x5137b1*/
+  *(this + 5) = aP1[1].Items; /*0x5137b7*/
+  *this = &vt_TypeList_UnitTypeClass_const; /*0x5137ba*/
   return this; /*0x5137c2*/
 }
 }
@@ -214,7 +214,7 @@ unsigned int * TypeList::AnimTypeCopy(VectorClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall TypeList::AnimTypeCopy(_DWORD *this, VectorClass *aP1)
 {
-  void *v3; // eax
+  int v3; // eax
   int v4; // eax
   int v5; // ecx
   int v6; // eax
@@ -223,15 +223,15 @@ _DWORD *__thiscall TypeList::AnimTypeCopy(_DWORD *this, VectorClass *aP1)
   *(this + 2) = 0; /*0x525600*/
   this->IsInitialized = 1; /*0x525603*/
   this->IsAllocated = 0; /*0x525607*/
-  *this = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x52560a*/
+  *this = &vt_VectorClass_AnimTypeClass_const; /*0x52560a*/
   if ( this != (_DWORD *)aP1 ) /*0x525610*/
   {
     DynamicVectorClass::Destroy_Alt((int)this); /*0x525612*/
-    v3 = aP1->field_8; /*0x525618*/
+    v3 = aP1->Capacity; /*0x525618*/
     *(this + 2) = v3; /*0x52561d*/
     if ( v3 ) /*0x525620*/
     {
-      v4 = __2_YAPAXI_Z(4 * (_DWORD)v3); /*0x525626*/
+      v4 = __2_YAPAXI_Z(4 * v3); /*0x525626*/
       *(this + 1) = v4; /*0x525630*/
       if ( v4 ) /*0x525633*/
       {
@@ -242,7 +242,7 @@ _DWORD *__thiscall TypeList::AnimTypeCopy(_DWORD *this, VectorClass *aP1)
         {
           do /*0x525654*/
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x52564b*/
+            *(_DWORD *)(*(this + 1) + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x52564b*/
             ++v6; /*0x525651*/
           }
           while ( v6 < *(this + 2) ); /*0x525654*/
@@ -255,9 +255,9 @@ _DWORD *__thiscall TypeList::AnimTypeCopy(_DWORD *this, VectorClass *aP1)
       this->IsAllocated = 0; /*0x52565b*/
     }
   }
-  *(this + 4) = aP1->field_10; /*0x525661*/
-  *(this + 5) = aP1->field_14; /*0x525667*/
-  *this = &TypeList<AnimTypeClass const *>::`vftable'; /*0x52566a*/
+  *(this + 4) = aP1[1].vtable0; /*0x525661*/
+  *(this + 5) = aP1[1].Items; /*0x525667*/
+  *this = &vt_TypeList_AnimTypeClass_const; /*0x52566a*/
   return this; /*0x525672*/
 }
 }
@@ -274,7 +274,7 @@ CCINIClass *__thiscall TypeList::BuildingTypeConstructor(_DWORD *this)
   this->IsAllocated = 0; /*0x5ac40e*/
   *(this + 5) = 10; /*0x5ac411*/
   *(this + 4) = 0; /*0x5ac418*/
-  *this = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x5ac41b*/
+  *this = &vt_TypeList_BuildingTypeClass_const; /*0x5ac41b*/
   return (CCINIClass *)this; /*0x5ac421*/
 }
 }
@@ -285,7 +285,7 @@ unsigned int * TypeList::BuildingTypeCopy(VectorClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall TypeList::BuildingTypeCopy(_DWORD *this, VectorClass *aP1)
 {
-  void *v3; // eax
+  int v3; // eax
   int v4; // eax
   int v5; // ecx
   int v6; // eax
@@ -294,15 +294,15 @@ _DWORD *__thiscall TypeList::BuildingTypeCopy(_DWORD *this, VectorClass *aP1)
   *(this + 2) = 0; /*0x5ad670*/
   this->IsInitialized = 1; /*0x5ad673*/
   this->IsAllocated = 0; /*0x5ad677*/
-  *this = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x5ad67a*/
+  *this = &vt_VectorClass_BuildingTypeClass_const; /*0x5ad67a*/
   if ( this != (_DWORD *)aP1 ) /*0x5ad680*/
   {
     DynamicVectorClass::Destroy((int)this); /*0x5ad682*/
-    v3 = aP1->field_8; /*0x5ad688*/
+    v3 = aP1->Capacity; /*0x5ad688*/
     *(this + 2) = v3; /*0x5ad68d*/
     if ( v3 ) /*0x5ad690*/
     {
-      v4 = __2_YAPAXI_Z(4 * (_DWORD)v3); /*0x5ad696*/
+      v4 = __2_YAPAXI_Z(4 * v3); /*0x5ad696*/
       *(this + 1) = v4; /*0x5ad6a0*/
       if ( v4 ) /*0x5ad6a3*/
       {
@@ -313,7 +313,7 @@ _DWORD *__thiscall TypeList::BuildingTypeCopy(_DWORD *this, VectorClass *aP1)
         {
           do /*0x5ad6c4*/
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x5ad6bb*/
+            *(_DWORD *)(*(this + 1) + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x5ad6bb*/
             ++v6; /*0x5ad6c1*/
           }
           while ( v6 < *(this + 2) ); /*0x5ad6c4*/
@@ -326,9 +326,9 @@ _DWORD *__thiscall TypeList::BuildingTypeCopy(_DWORD *this, VectorClass *aP1)
       this->IsAllocated = 0; /*0x5ad6cb*/
     }
   }
-  *(this + 4) = aP1->field_10; /*0x5ad6d1*/
-  *(this + 5) = aP1->field_14; /*0x5ad6d7*/
-  *this = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x5ad6da*/
+  *(this + 4) = aP1[1].vtable0; /*0x5ad6d1*/
+  *(this + 5) = aP1[1].Items; /*0x5ad6d7*/
+  *this = &vt_TypeList_BuildingTypeClass_const; /*0x5ad6da*/
   return this; /*0x5ad6e2*/
 }
 }
@@ -342,7 +342,7 @@ void __thiscall sub_67A030(_DWORD *this)
   void *v2; // eax
 
   v2 = (void *)*(this + 1); /*0x67a036*/
-  *this = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x67a039*/
+  *this = &vt_VectorClass_InfantryTypeClass_const; /*0x67a039*/
   if ( v2 && this->IsAllocated ) /*0x67a043*/
   {
     __3_YAXPAX_Z(v2); /*0x67a049*/
@@ -367,7 +367,7 @@ int *__thiscall TypeList::CopyFull(int *this, VectorClass *aP1)
   if ( this != (int *)aP1 ) /*0x67a09a*/
   {
     (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a09e*/
-    v3 = (int)aP1->field_8; /*0x67a0a1*/
+    v3 = aP1->Capacity; /*0x67a0a1*/
     *(this + 2) = v3; /*0x67a0a6*/
     if ( v3 ) /*0x67a0a9*/
     {
@@ -382,7 +382,7 @@ int *__thiscall TypeList::CopyFull(int *this, VectorClass *aP1)
         {
           do /*0x67a0e1*/
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x67a0d8*/
+            *(_DWORD *)(*(this + 1) + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x67a0d8*/
             ++v6; /*0x67a0de*/
           }
           while ( v6 < *(this + 2) ); /*0x67a0e1*/
@@ -395,9 +395,9 @@ int *__thiscall TypeList::CopyFull(int *this, VectorClass *aP1)
       this->IsAllocated = 0; /*0x67a0ec*/
     }
   }
-  *(this + 4) = (int)aP1->field_10; /*0x67a0f3*/
-  *(this + 5) = aP1->field_14; /*0x67a0f9*/
-  *(this + 6) = *(_DWORD *)aP1->__pad_18; /*0x67a0ff*/
+  *(this + 4) = (int)aP1[1].vtable0; /*0x67a0f3*/
+  *(this + 5) = (int)aP1[1].Items; /*0x67a0f9*/
+  *(this + 6) = aP1[1].Capacity; /*0x67a0ff*/
   return this; /*0x67a104*/
 }
 }
@@ -416,7 +416,7 @@ int *__thiscall TypeList::CopyAircraft(int *this, VectorClass *aP1)
   if ( this != (int *)aP1 ) /*0x67a11a*/
   {
     (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a11e*/
-    v3 = (int)aP1->field_8; /*0x67a121*/
+    v3 = aP1->Capacity; /*0x67a121*/
     *(this + 2) = v3; /*0x67a126*/
     if ( v3 ) /*0x67a129*/
     {
@@ -431,7 +431,7 @@ int *__thiscall TypeList::CopyAircraft(int *this, VectorClass *aP1)
         {
           do /*0x67a161*/
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x67a158*/
+            *(_DWORD *)(*(this + 1) + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x67a158*/
             ++v6; /*0x67a15e*/
           }
           while ( v6 < *(this + 2) ); /*0x67a161*/
@@ -444,9 +444,9 @@ int *__thiscall TypeList::CopyAircraft(int *this, VectorClass *aP1)
       this->IsAllocated = 0; /*0x67a16c*/
     }
   }
-  *(this + 4) = (int)aP1->field_10; /*0x67a173*/
-  *(this + 5) = aP1->field_14; /*0x67a179*/
-  *(this + 6) = *(_DWORD *)aP1->__pad_18; /*0x67a17f*/
+  *(this + 4) = (int)aP1[1].vtable0; /*0x67a173*/
+  *(this + 5) = (int)aP1[1].Items; /*0x67a179*/
+  *(this + 6) = aP1[1].Capacity; /*0x67a17f*/
   return this; /*0x67a184*/
 }
 }
@@ -512,7 +512,7 @@ CCINIClass *__thiscall TypeList::VoxelAnimConstructor(_DWORD *this)
   this->IsAllocated = 0; /*0x67a39e*/
   *(this + 5) = 10; /*0x67a3a1*/
   *(this + 4) = 0; /*0x67a3a8*/
-  *this = &TypeList<VoxelAnimTypeClass const *>::`vftable'; /*0x67a3ab*/
+  *this = &vt_TypeList_VoxelAnimTypeClass_const; /*0x67a3ab*/
   return (CCINIClass *)this; /*0x67a3b1*/
 }
 }
@@ -529,7 +529,7 @@ DynamicVector *__thiscall TypeList::Construct(_DWORD *this)
   this->IsAllocated = 0; /*0x67a4fe*/
   *(this + 5) = 10; /*0x67a501*/
   *(this + 4) = 0; /*0x67a508*/
-  *this = &TypeList<int>::`vftable'; /*0x67a50b*/
+  *this = &vt_TypeList_int; /*0x67a50b*/
   return (DynamicVector *)this; /*0x67a511*/
 }
 }
@@ -546,7 +546,7 @@ CCINIClass *__thiscall TypeList::ConstructSmudge(_DWORD *this)
   this->IsAllocated = 0; /*0x67a60e*/
   *(this + 5) = 10; /*0x67a611*/
   *(this + 4) = 0; /*0x67a618*/
-  *this = &TypeList<SmudgeTypeClass const *>::`vftable'; /*0x67a61b*/
+  *this = &vt_TypeList_SmudgeTypeClass_const; /*0x67a61b*/
   return (CCINIClass *)this; /*0x67a621*/
 }
 }
@@ -573,7 +573,7 @@ _DWORD *__thiscall sub_67A820(_DWORD *this)
   this->IsAllocated = 0; /*0x67a82e*/
   *(this + 5) = 10; /*0x67a831*/
   *(this + 4) = 0; /*0x67a838*/
-  *this = &TypeList<InfantryTypeClass const *>::`vftable'; /*0x67a83b*/
+  *this = &vt_TypeList_InfantryTypeClass_const; /*0x67a83b*/
   return this; /*0x67a841*/
 }
 }
@@ -664,7 +664,7 @@ unsigned int * TypeList::CopyVoxelAnim(VectorClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall TypeList::CopyVoxelAnim(_DWORD *this, VectorClass *aP1)
 {
-  void *v3; // eax
+  int v3; // eax
   int v4; // eax
   int v5; // ecx
   int v6; // eax
@@ -673,15 +673,15 @@ _DWORD *__thiscall TypeList::CopyVoxelAnim(_DWORD *this, VectorClass *aP1)
   *(this + 2) = 0; /*0x67c200*/
   this->IsInitialized = 1; /*0x67c203*/
   this->IsAllocated = 0; /*0x67c207*/
-  *this = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67c20a*/
+  *this = &vt_VectorClass_VoxelAnimTypeClass_const; /*0x67c20a*/
   if ( this != (_DWORD *)aP1 ) /*0x67c210*/
   {
     Vector::Cleanup2((int)this); /*0x67c212*/
-    v3 = aP1->field_8; /*0x67c218*/
+    v3 = aP1->Capacity; /*0x67c218*/
     *(this + 2) = v3; /*0x67c21d*/
     if ( v3 ) /*0x67c220*/
     {
-      v4 = __2_YAPAXI_Z(4 * (_DWORD)v3); /*0x67c226*/
+      v4 = __2_YAPAXI_Z(4 * v3); /*0x67c226*/
       *(this + 1) = v4; /*0x67c230*/
       if ( v4 ) /*0x67c233*/
       {
@@ -692,7 +692,7 @@ _DWORD *__thiscall TypeList::CopyVoxelAnim(_DWORD *this, VectorClass *aP1)
         {
           do /*0x67c254*/
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x67c24b*/
+            *(_DWORD *)(*(this + 1) + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x67c24b*/
             ++v6; /*0x67c251*/
           }
           while ( v6 < *(this + 2) ); /*0x67c254*/
@@ -705,9 +705,9 @@ _DWORD *__thiscall TypeList::CopyVoxelAnim(_DWORD *this, VectorClass *aP1)
       this->IsAllocated = 0; /*0x67c25b*/
     }
   }
-  *(this + 4) = aP1->field_10; /*0x67c261*/
-  *(this + 5) = aP1->field_14; /*0x67c267*/
-  *this = &TypeList<VoxelAnimTypeClass const *>::`vftable'; /*0x67c26a*/
+  *(this + 4) = aP1[1].vtable0; /*0x67c261*/
+  *(this + 5) = aP1[1].Items; /*0x67c267*/
+  *this = &vt_TypeList_VoxelAnimTypeClass_const; /*0x67c26a*/
   return this; /*0x67c272*/
 }
 }
@@ -722,7 +722,7 @@ _DWORD *__thiscall TypeList_Particle_Constructor(_DWORD *this, int a2, int a3)
   *(this + 2) = a2; /*0x717c80*/
   this->IsInitialized = 1; /*0x717c83*/
   this->IsAllocated = 0; /*0x717c87*/
-  *this = &VectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x717c8b*/
+  *this = &vt_VectorClass_ParticleSystemTypeClass_const; /*0x717c8b*/
   if ( a2 ) /*0x717c91*/
   {
     if ( a3 ) /*0x717c99*/
@@ -735,7 +735,7 @@ _DWORD *__thiscall TypeList_Particle_Constructor(_DWORD *this, int a2, int a3)
       this->IsAllocated = 1; /*0x717caf*/
     }
   }
-  *this = &DynamicVectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x717cb3*/
+  *this = &vt_DynamicVectorClass_ParticleSystemTypeClass_const; /*0x717cb3*/
   *(this + 5) = 10; /*0x717cb9*/
   *(this + 4) = 0; /*0x717cc0*/
   return this; /*0x717cc9*/
@@ -765,7 +765,7 @@ char __thiscall TypeList::PushBack(_DWORD *this, VectorClass *aP1)
   v6 = *(this + 4); /*0x717d05*/
   v7 = *(this + 1); /*0x717d08*/
   *(this + 4) = v6 + 1; /*0x717d0e*/
-  *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->__pad_0; /*0x717d18*/
+  *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->vtable0; /*0x717d18*/
   return 1; /*0x717d01*/
 }
 }
@@ -780,7 +780,7 @@ TypeList *__thiscall TypeList_BuildingType::Add(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5ac653*/
-  *this = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x5ac656*/
+  *this = &vt_VectorClass_BuildingTypeClass_const; /*0x5ac656*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x5ac660*/
   {
     __3_YAXPAX_Z(v3); /*0x5ac668*/
@@ -918,7 +918,7 @@ TypeList *__thiscall TypeList_cptr_ParticleSystemTypeClass::QueryInterface(_DWOR
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x717b73*/
-  *this = &VectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x717b76*/
+  *this = &vt_VectorClass_ParticleSystemTypeClass_const; /*0x717b76*/
   if ( v3 && this->IsAllocated ) /*0x717b80*/
   {
     __3_YAXPAX_Z(v3); /*0x717b88*/
@@ -992,7 +992,7 @@ TypeList *__thiscall TypeList_cptr_TerrainTypeClass::Add(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x67aa33*/
-  *this = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67aa36*/
+  *this = &vt_VectorClass_TerrainTypeClass_const; /*0x67aa36*/
   if ( v3 && this->IsAllocated ) /*0x67aa40*/
   {
     __3_YAXPAX_Z(v3); /*0x67aa48*/
@@ -1239,7 +1239,7 @@ VectorClass *__thiscall TypeList_cptr_TerrainTypeClass::Constructor(_DWORD *this
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x67c153*/
-  *this = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67c156*/
+  *this = &vt_VectorClass_TerrainTypeClass_const; /*0x67c156*/
   if ( v3 && this->IsAllocated ) /*0x67c160*/
   {
     __3_YAXPAX_Z(v3); /*0x67c168*/
@@ -1313,7 +1313,7 @@ TypeList *__thiscall TypeList_Infantry::Add(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5129f3*/
-  *this = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x5129f6*/
+  *this = &vt_VectorClass_InfantryTypeClass_const; /*0x5129f6*/
   if ( v3 && this->IsAllocated ) /*0x512a00*/
   {
     __3_YAXPAX_Z(v3); /*0x512a08*/
@@ -1371,7 +1371,7 @@ DynamicVector *__thiscall TypeList_Infantry::Constructor(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x512e23*/
-  *this = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x512e26*/
+  *this = &vt_VectorClass_InfantryTypeClass_const; /*0x512e26*/
   if ( v3 && this->IsAllocated ) /*0x512e30*/
   {
     __3_YAXPAX_Z(v3); /*0x512e38*/
@@ -1472,7 +1472,7 @@ DynamicVector *__thiscall TypeList_Infantry::Constructor_0(_DWORD *this, char a2
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5131f3*/
-  *this = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x5131f6*/
+  *this = &vt_VectorClass_UnitTypeClass_const; /*0x5131f6*/
   if ( v3 && this->IsAllocated ) /*0x513200*/
   {
     __3_YAXPAX_Z(v3); /*0x513208*/
@@ -1497,7 +1497,7 @@ DynamicVector *__thiscall TypeList_Infantry::Constructor_1(_DWORD *this, char a2
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5135c3*/
-  *this = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x5135c6*/
+  *this = &vt_VectorClass_AircraftTypeClass_const; /*0x5135c6*/
   if ( v3 && this->IsAllocated ) /*0x5135d0*/
   {
     __3_YAXPAX_Z(v3); /*0x5135d8*/
@@ -1662,7 +1662,7 @@ VectorClass *__thiscall TypeList_Particle::Add(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x45a9c3*/
-  *this = &VectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x45a9c6*/
+  *this = &vt_VectorClass_ParticleSystemTypeClass_const; /*0x45a9c6*/
   if ( v3 && this->IsAllocated ) /*0x45a9d0*/
   {
     __3_YAXPAX_Z(v3); /*0x45a9d8*/
@@ -1845,7 +1845,7 @@ VectorClass *__thiscall TypeList_TechnoType::Add(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x478683*/
-  *this = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x478686*/
+  *this = &vt_VectorClass_TechnoTypeClass; /*0x478686*/
   if ( v3 && this->IsAllocated ) /*0x478690*/
   {
     __3_YAXPAX_Z(v3); /*0x478698*/
@@ -1956,7 +1956,7 @@ TypeList *__thiscall TypeList_VoxelAnim::Add(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x67a993*/
-  *this = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67a996*/
+  *this = &vt_VectorClass_VoxelAnimTypeClass_const; /*0x67a996*/
   if ( v3 && this->IsAllocated ) /*0x67a9a0*/
   {
     __3_YAXPAX_Z(v3); /*0x67a9a8*/
@@ -1981,7 +1981,7 @@ TypeList *__thiscall TypeList_VoxelAnim::TypeList_vt00(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x67a9e3*/
-  *this = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x67a9e6*/
+  *this = &vt_VectorClass_SmudgeTypeClass_const; /*0x67a9e6*/
   if ( v3 && this->IsAllocated ) /*0x67a9f0*/
   {
     __3_YAXPAX_Z(v3); /*0x67a9f8*/
@@ -2235,7 +2235,7 @@ VectorClass *__thiscall TypeList_VoxelAnim::Constructor(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x67c013*/
-  *this = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67c016*/
+  *this = &vt_VectorClass_VoxelAnimTypeClass_const; /*0x67c016*/
   if ( v3 && this->IsAllocated ) /*0x67c020*/
   {
     __3_YAXPAX_Z(v3); /*0x67c028*/
@@ -2260,7 +2260,7 @@ DynamicVector *__thiscall TypeList_VoxelAnim::Constructor_0(_DWORD *this, char a
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x67c103*/
-  *this = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x67c106*/
+  *this = &vt_VectorClass_SmudgeTypeClass_const; /*0x67c106*/
   if ( v3 && this->IsAllocated ) /*0x67c110*/
   {
     __3_YAXPAX_Z(v3); /*0x67c118*/
@@ -2285,7 +2285,7 @@ DynamicVector *__thiscall TypeList_VoxelAnim::Constructor_1(_DWORD *this, char a
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x67c1a3*/
-  *this = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67c1a6*/
+  *this = &vt_VectorClass_TerrainTypeClass_const; /*0x67c1a6*/
   if ( v3 && this->IsAllocated ) /*0x67c1b0*/
   {
     __3_YAXPAX_Z(v3); /*0x67c1b8*/

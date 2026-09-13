@@ -14,7 +14,7 @@ int BombClass_InitPool()
   dword_89C670 = 0; /*0x43855c*/
   unk_89C674 = 1; /*0x438561*/
   unk_89C675 = 0; /*0x438568*/
-  dword_89C668 = (int)&DynamicVectorClass<BombClass *>::`vftable'; /*0x43856d*/
+  dword_89C668 = (int)&vt_DynamicVectorClass_BombClass; /*0x43856d*/
   dword_89C67C = 10; /*0x438577*/
   dword_89C678 = 0; /*0x438581*/
   return atexit(globalHelper_038590); /*0x43858c*/
@@ -38,7 +38,7 @@ int __thiscall BombClass::AbstractClass(int this)
   *(_DWORD *)this = &BombClass::`vftable'; /*0x4385e1*/
   this->vtable1 = &BombClass::`vftable'; /*0x4385e7*/
   this->vtable2 = &BombClass::`vftable'; /*0x4385ee*/
-  this->vtable3 = &BombClass::`vftable'; /*0x4385f5*/
+  this->vtable3 = &vt_BombClass; /*0x4385f5*/
   this->BombClass_field_28 = 0; /*0x4385fc*/
   this->BombClass_field_2C = 0; /*0x4385ff*/
   this->BombClass_field_58 = 0; /*0x438602*/
@@ -174,7 +174,7 @@ int __stdcall BombClass::Write(AbstractClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &BombClass::`vftable'; /*0x438b67*/
       *(_DWORD *)&aP0->__pad_0[4] = &BombClass::`vftable'; /*0x438b6d*/
       *(_DWORD *)&aP0->__pad_0[8] = &BombClass::`vftable'; /*0x438b74*/
-      *(_DWORD *)&aP0->__pad_0[12] = &BombClass::`vftable'; /*0x438b7b*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_BombClass; /*0x438b7b*/
     }
     AudioController::Init(&aP0[1].nextArrayIndex); /*0x438b85*/
     *(_DWORD *)&aP0[2].__pad_0[12] = 0; /*0x438b8d*/
@@ -220,7 +220,7 @@ BombClass *__thiscall BombClass::CopyTo(_DWORD *this, char a2)
   *this = &BombClass::`vftable'; /*0x4393f7*/
   *(this + 1) = &BombClass::`vftable'; /*0x4393fd*/
   *(this + 2) = &BombClass::`vftable'; /*0x439404*/
-  *(this + 3) = &BombClass::`vftable'; /*0x43940b*/
+  *(this + 3) = &vt_BombClass; /*0x43940b*/
   AudioFileClass::Release(this + 15); /*0x439412*/
   v5 = this; /*0x439427*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/

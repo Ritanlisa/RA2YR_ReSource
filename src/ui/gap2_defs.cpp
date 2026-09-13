@@ -25,77 +25,34 @@ namespace gamemd { int MouseClass::ProcessInput() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall MouseClass::_vt40(_DWORD *this)
 {
-  return *(this + 5465);
+  return *(this + 5465); /*0x40d286*/
 }
-
-/* ASM:
-mov     eax, [ecx+5564h]
-retn
-*/
 } }
 // 0x40D290
 namespace gamemd { void* MouseClass::InitMouse(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall MouseClass::_vt04(char *Block, char a2)
+MouseClass *__thiscall MouseClass::InitMouse(char *Block, char a2)
 {
   char *v3; // esi
   int v4; // edi
 
-  *(_DWORD *)Block = &MouseClass::`vftable';
-  *((_DWORD *)Block + 5446) = &MouseClass::`vftable';
-  v3 = Block + 21404;
-  v4 = 4;
-  do
+  *(_DWORD *)Block = &MouseClass::`vftable'; /*0x40d295*/
+  *((_DWORD *)Block + 5446) = &vt_MouseClass; /*0x40d29b*/
+  v3 = Block + 21404; /*0x40d2a5*/
+  v4 = 4; /*0x40d2ab*/
+  do /*0x40d2d0*/
   {
-    v3 -= 3988;
-    Array::ForEachReverse((int)(v3 + 80), 52, 75, (int (__thiscall *)(int))nullsub_56);
-    nullsub_57(v3);
-    --v4;
+    v3 -= 3988; /*0x40d2b0*/
+    Array::ForEachReverse((int)(v3 + 80), 52, 75, (int (__thiscall *)(int))nullsub_56); /*0x40d2c3*/
+    nullsub_57(); /*0x40d2ca*/
+    --v4; /*0x40d2cf*/
   }
-  while ( v4 );
-  RadarClass::Destruct(Block);
-  if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(Block);
-  return Block;
+  while ( v4 ); /*0x40d2d0*/
+  RadarClass::Destruct(Block); /*0x40d2d4*/
+  if ( (a2 & 1) != 0 ) /*0x40d2de*/
+    __3_YAXPAX_Z(Block); /*0x40d2e1*/
+  return (MouseClass *)Block; /*0x40d2e9*/
 }
-
-/* ASM:
-push    ebx
-mov     ebx, ecx
-push    esi
-push    edi
-mov     dword ptr [ebx], offset ??_7MouseClass@@6B@ ; const MouseClass::`vftable'
-mov     dword ptr [ebx+5518h], offset ??_7MouseClass@@6B@_0 ; const MouseClass::`vftable'
-lea     esi, [ebx+539Ch]
-mov     edi, 4
-
-loc_40D2B0:                             ; CODE XREF: MouseClass__InitMouse+40↓j
-sub     esi, 0F94h
-push    offset nullsub_56
-push    4Bh ; 'K'
-push    34h ; '4'
-lea     eax, [esi+50h]
-push    eax
-call    Array__ForEachReverse
-mov     ecx, esi
-call    nullsub_57
-dec     edi
-jnz     short loc_40D2B0
-mov     ecx, ebx
-call    RadarClass__Destruct
-test    [esp+0Ch+arg_0], 1
-jz      short loc_40D2E9
-push    ebx             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_40D2E9:                             ; CODE XREF: MouseClass__InitMouse+4E↑j
-pop     edi
-mov     eax, ebx
-pop     esi
-pop     ebx
-retn    4
-*/
 } }
 // 0x40D540
 namespace gamemd { void MouseClass::initCursor() {
@@ -104,216 +61,74 @@ void __thiscall MouseClass::sub_40D540(int this)
 {
   void *v2; // eax
 
-  v2 = *(void **)(this + 4);
-  *(_DWORD *)(this + 16) = 0;
-  if ( v2 && *(_BYTE *)(this + 13) )
+  v2 = *(void **)(this + 4); /*0x40d546*/
+  *(_DWORD *)(this + 16) = 0; /*0x40d549*/
+  if ( v2 && *(_BYTE *)(this + 13) ) /*0x40d550*/
   {
-    __3_YAXPAX_Z(v2);
-    *(_DWORD *)(this + 4) = 0;
+    __3_YAXPAX_Z(v2); /*0x40d556*/
+    *(_DWORD *)(this + 4) = 0; /*0x40d55e*/
   }
-  *(_BYTE *)(this + 13) = 0;
-  *(_DWORD *)(this + 8) = 0;
+  *(_BYTE *)(this + 13) = 0; /*0x40d561*/
+  *(_DWORD *)(this + 8) = 0; /*0x40d564*/
 }
-
-/* ASM:
-push    ebx
-push    esi
-mov     esi, ecx
-xor     ebx, ebx
-mov     eax, [esi+4]
-mov     [esi+10h], ebx
-cmp     eax, ebx
-jz      short loc_40D561
-cmp     [esi+0Dh], bl
-jz      short loc_40D561
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [esi+4], ebx
-
-loc_40D561:                             ; CODE XREF: MouseClass__initCursor+E↑j
-; MouseClass__initCursor+13↑j
-mov     [esi+0Dh], bl
-mov     [esi+8], ebx
-pop     esi
-pop     ebx
-retn
-*/
 } }
 // 0x40D570
 namespace gamemd { int MouseClass::updateCursorState(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall MouseClass::sub_40D570(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) )
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2;
+  if ( *(_BYTE *)(this + 12) ) /*0x40d570*/
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x40d585*/
   else
-    return 0;
+    return 0; /*0x40d577*/
 }
-
-/* ASM:
-mov     al, [ecx+0Ch]
-test    al, al
-jnz     short loc_40D57C
-xor     eax, eax
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_40D57C:                             ; CODE XREF: MouseClass__updateCursorState+5↑j
-mov     eax, [esp+arg_0]
-mov     edx, [ecx+4]
-sub     eax, edx
-shr     eax, 2
-retn    4
-*/
 } }
 // 0x40D720
 namespace gamemd { int MouseClass::selectCursor(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x40d720
-char __thiscall MouseClass::selectCursor(void *this, int a2, _DWORD *a3)
+char __thiscall MouseClass::sub_40D720(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
   int v5; // ecx
   int i; // eax
   int v7; // eax
 
-  if ( a2 )
+  if ( a2 ) /*0x40d72c*/
   {
-    *((_BYTE *)this + 12) = 0;
-    if ( a3 )
-      v4 = a3;
+    *((_BYTE *)this + 12) = 0; /*0x40d732*/
+    if ( a3 ) /*0x40d738*/
+      v4 = a3; /*0x40d74e*/
     else
-      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
-    *((_BYTE *)this + 12) = 1;
-    if ( !v4 )
-      return 0;
-    if ( *((_DWORD *)this + 1) )
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40d74a*/
+    *((_BYTE *)this + 12) = 1; /*0x40d752*/
+    if ( !v4 ) /*0x40d756*/
+      return 0; /*0x40d7ca*/
+    if ( *((_DWORD *)this + 1) ) /*0x40d758*/
     {
-      v5 = *((_DWORD *)this + 2);
-      if ( a2 < v5 )
-        v5 = a2;
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
-        ++i;
-      if ( *((_BYTE *)this + 13) )
+      v5 = *((_DWORD *)this + 2); /*0x40d75f*/
+      if ( a2 < v5 ) /*0x40d764*/
+        v5 = a2; /*0x40d766*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x40d76c*/
+        ++i; /*0x40d771*/
+      if ( *((_BYTE *)this + 13) ) /*0x40d77e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1));
-        *((_DWORD *)this + 1) = 0;
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40d789*/
+        *((_DWORD *)this + 1) = 0; /*0x40d791*/
       }
     }
-    *((_DWORD *)this + 1) = v4;
-    *((_DWORD *)this + 2) = a2;
-    *((_BYTE *)this + 13) = a3 == 0;
+    *((_DWORD *)this + 1) = v4; /*0x40d79a*/
+    *((_DWORD *)this + 2) = a2; /*0x40d7a2*/
+    *((_BYTE *)this + 13) = a3 == 0; /*0x40d7a5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x40d7ae*/
   }
-  v7 = *((_DWORD *)this + 2);
-  if ( v7 < *((_DWORD *)this + 4) )
-    *((_DWORD *)this + 4) = v7;
-  return 1;
+  v7 = *((_DWORD *)this + 2); /*0x40d7b1*/
+  if ( v7 < *((_DWORD *)this + 4) ) /*0x40d7b9*/
+    *((_DWORD *)this + 4) = v7; /*0x40d7bb*/
+  return 1; /*0x40d7be*/
 }
-
-/* ASM:
-push    ebx
-push    ebp
-mov     ebp, [esp+8+arg_0]
-push    esi
-test    ebp, ebp
-push    edi
-mov     esi, ecx
-jz      short loc_40D7AA
-mov     ebx, [esp+10h+arg_4]
-mov     byte ptr [esi+0Ch], 0
-test    ebx, ebx
-jnz     short loc_40D74E
-lea     eax, ds:0[ebp*4]
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-mov     edi, eax
-jmp     short loc_40D750
-; ---------------------------------------------------------------------------
-
-loc_40D74E:                             ; CODE XREF: MouseClass__selectCursor+18↑j
-mov     edi, ebx
-
-loc_40D750:                             ; CODE XREF: MouseClass__selectCursor+2C↑j
-test    edi, edi
-mov     byte ptr [esi+0Ch], 1
-jz      short loc_40D7C7
-mov     eax, [esi+4]
-test    eax, eax
-jz      short loc_40D798
-mov     ecx, [esi+8]
-cmp     ebp, ecx
-jge     short loc_40D768
-mov     ecx, ebp
-
-loc_40D768:                             ; CODE XREF: MouseClass__selectCursor+44↑j
-xor     eax, eax
-test    ecx, ecx
-jle     short loc_40D77E
-
-loc_40D76E:                             ; CODE XREF: MouseClass__selectCursor+5C↓j
-mov     edx, [esi+4]
-inc     eax
-cmp     eax, ecx
-mov     edx, [edx+eax*4-4]
-mov     [edi+eax*4-4], edx
-jl      short loc_40D76E
-
-loc_40D77E:                             ; CODE XREF: MouseClass__selectCursor+4C↑j
-mov     al, [esi+0Dh]
-test    al, al
-jz      short loc_40D798
-mov     eax, [esi+4]
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     dword ptr [esi+4], 0
-
-loc_40D798:                             ; CODE XREF: MouseClass__selectCursor+3D↑j
-; MouseClass__selectCursor+63↑j
-xor     eax, eax
-mov     [esi+4], edi
-test    ebx, ebx
-setz    al
-mov     [esi+8], ebp
-mov     [esi+0Dh], al
-jmp     short loc_40D7B1
-; ---------------------------------------------------------------------------
-
-loc_40D7AA:                             ; CODE XREF: MouseClass__selectCursor+C↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+0Ch]
-
-loc_40D7B1:                             ; CODE XREF: MouseClass__selectCursor+88↑j
-mov     eax, [esi+8]
-mov     ecx, [esi+10h]
-cmp     eax, ecx
-jge     short loc_40D7BE
-mov     [esi+10h], eax
-
-loc_40D7BE:                             ; CODE XREF: MouseClass__selectCursor+99↑j
-pop     edi
-pop     esi
-pop     ebp
-mov     al, 1
-pop     ebx
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_40D7C7:                             ; CODE XREF: MouseClass__selectCursor+36↑j
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    8
-*/
 } }
 // 0x40D7D0
 namespace gamemd { int MouseClass::getCursorFrame(void* a1) {
@@ -324,96 +139,38 @@ int __thiscall MouseClass::sub_40D7D0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = *(this + 4);
-  result = 0;
-  if ( v2 <= 0 )
-    return -1;
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i )
+  v2 = *(this + 4); /*0x40d7d0*/
+  result = 0; /*0x40d7d3*/
+  if ( v2 <= 0 ) /*0x40d7d8*/
+    return -1; /*0x40d7ef*/
+  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x40d7de*/
   {
-    if ( ++result >= v2 )
-      return -1;
+    if ( ++result >= v2 ) /*0x40d7ed*/
+      return -1; /*0x40d7ed*/
   }
-  return result;
+  return result; /*0x40d7f2*/
 }
-
-/* ASM:
-mov     edx, [ecx+10h]
-xor     eax, eax
-push    esi
-test    edx, edx
-jle     short loc_40D7EF
-mov     esi, [esp+4+arg_0]
-mov     ecx, [ecx+4]
-mov     esi, [esi]
-
-loc_40D7E3:                             ; CODE XREF: MouseClass__getCursorFrame+1D↓j
-cmp     [ecx], esi
-jz      short loc_40D7F2
-inc     eax
-add     ecx, 4
-cmp     eax, edx
-jl      short loc_40D7E3
-
-loc_40D7EF:                             ; CODE XREF: MouseClass__getCursorFrame+8↑j
-or      eax, 0FFFFFFFFh
-
-loc_40D7F2:                             ; CODE XREF: MouseClass__getCursorFrame+15↑j
-pop     esi
-retn    4
-*/
 } }
 // 0x40D850
 namespace gamemd { void* MouseClass::applyCursorSettings(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MouseClass::sub_40D850(_DWORD *Block, char a2)
+DynamicVector *__thiscall MouseClass::applyCursorSettings(_DWORD *Block, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1);
-  *Block = &VectorClass<MixFileClass *>::`vftable';
-  if ( v3 && *((_BYTE *)Block + 13) )
+  v3 = (void *)*(Block + 1); /*0x40d853*/
+  *Block = &vt_VectorClass_MixFileClass; /*0x40d856*/
+  if ( v3 && *((_BYTE *)Block + 13) ) /*0x40d860*/
   {
-    __3_YAXPAX_Z(v3);
-    *(Block + 1) = 0;
+    __3_YAXPAX_Z(v3); /*0x40d868*/
+    *(Block + 1) = 0; /*0x40d870*/
   }
-  *((_BYTE *)Block + 13) = 0;
-  *(Block + 2) = 0;
-  if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(Block);
-  return Block;
+  *((_BYTE *)Block + 13) = 0; /*0x40d87b*/
+  *(Block + 2) = 0; /*0x40d881*/
+  if ( (a2 & 1) != 0 ) /*0x40d888*/
+    __3_YAXPAX_Z(Block); /*0x40d88b*/
+  return (DynamicVector *)Block; /*0x40d895*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     eax, [esi+4]
-mov     dword ptr [esi], offset ??_7?$VectorClass@PAVMixFileClass@@@@6B@ ; const VectorClass<MixFileClass *>::`vftable'
-test    eax, eax
-jz      short loc_40D877
-mov     cl, [esi+0Dh]
-test    cl, cl
-jz      short loc_40D877
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     dword ptr [esi+4], 0
-
-loc_40D877:                             ; CODE XREF: MouseClass__applyCursorSettings+E↑j
-; MouseClass__applyCursorSettings+15↑j
-mov     al, [esp+4+arg_0]
-mov     byte ptr [esi+0Dh], 0
-test    al, 1
-mov     dword ptr [esi+8], 0
-jz      short loc_40D893
-push    esi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_40D893:                             ; CODE XREF: MouseClass__applyCursorSettings+38↑j
-mov     eax, esi
-pop     esi
-retn    4
-*/
 } }
 // 0x433F50
 namespace gamemd { int MessageListClass::CountCharsInWidth(void* a1, int a2, int a3, int a4) {
@@ -433,244 +190,75 @@ int __thiscall sub_433F50(_DWORD *this, _WORD *a2, int a3, int a4, int a5)
   int v16; // eax
   int v17; // [esp+8h] [ebp-8h]
 
-  v5 = this;
-  v6 = 0;
-  v7 = (_DWORD *)*(this + 1);
-  v17 = 0;
-  if ( !v7 )
-    return 0;
-  v8 = a2;
-  if ( !a2 )
-    return 0;
-  v9 = *a2;
-  if ( *a2 )
+  v5 = this; /*0x433f53*/
+  v6 = 0; /*0x433f57*/
+  v7 = (_DWORD *)*(this + 1); /*0x433f59*/
+  v17 = 0; /*0x433f62*/
+  if ( !v7 ) /*0x433f66*/
+    return 0; /*0x433f66*/
+  v8 = a2; /*0x433f6c*/
+  if ( !a2 ) /*0x433f72*/
+    return 0; /*0x434092*/
+  v9 = *a2; /*0x433f7a*/
+  if ( *a2 ) /*0x433f7a*/
   {
-    while ( 1 )
+    while ( 1 ) /*0x433f99*/
     {
-      if ( v9 == 9 )
+      if ( v9 == 9 ) /*0x433f99*/
       {
-        v6 = v5[10] + v6 - (v5[10] + v6) % v5[10];
+        v6 = v5[10] + v6 - (v5[10] + v6) % v5[10]; /*0x433fee*/
       }
-      else if ( v9 != 10 && v9 != 13 )
+      else if ( v9 != 10 && v9 != 13 ) /*0x433fa1*/
       {
-        v10 = 0;
-        v11 = *(unsigned __int16 *)(v7[6] + 2 * v9);
-        if ( (_WORD)v11 )
-          v10 = (unsigned __int8 *)(v7[7] + (v11 - 1) * v7[5]);
-        v8 = a2;
-        if ( v10 || (v10 = (unsigned __int8 *)*(this + 2)) != 0 )
-          v6 += *v10 + *(this + 11);
+        v10 = 0; /*0x433fa3*/
+        v11 = *(unsigned __int16 *)(v7[6] + 2 * v9); /*0x433fae*/
+        if ( (_WORD)v11 ) /*0x433fb4*/
+          v10 = (unsigned __int8 *)(v7[7] + (v11 - 1) * v7[5]); /*0x433fbd*/
+        v8 = a2; /*0x433fc0*/
+        if ( v10 || (v10 = (unsigned __int8 *)*(this + 2)) != 0 ) /*0x433fd1*/
+          v6 += *v10 + *(this + 11); /*0x433fe0*/
       }
-      v12 = ++v17;
-      if ( v6 > a3 )
-        break;
-      if ( a4 && v12 == a4 || a5 && (v9 == 13 || v9 == 10) )
-        return v17;
-      v9 = v8[1];
-      a2 = ++v8;
-      if ( !v9 )
-        return v17;
-      v5 = this;
+      v12 = ++v17; /*0x433ff8*/
+      if ( v6 > a3 ) /*0x433fff*/
+        break; /*0x433fff*/
+      if ( a4 && v12 == a4 || a5 && (v9 == 13 || v9 == 10) ) /*0x43401f*/
+        return v17; /*0x43401f*/
+      v9 = v8[1]; /*0x434021*/
+      a2 = ++v8; /*0x43402b*/
+      if ( !v9 ) /*0x43402f*/
+        return v17; /*0x434040*/
+      v5 = this; /*0x433f88*/
     }
-    v14 = v12 - 1;
-    v17 = v14;
-    if ( a5 )
+    v14 = v12 - 1; /*0x434047*/
+    v17 = v14; /*0x43404a*/
+    if ( a5 ) /*0x43404e*/
     {
-      if ( v9 > 0x20u )
+      if ( v9 > 0x20u ) /*0x434054*/
       {
-        v15 = v8 - 1;
-        v16 = v14;
-        if ( v14 )
+        v15 = v8 - 1; /*0x434056*/
+        v16 = v14; /*0x434059*/
+        if ( v14 ) /*0x43405d*/
         {
-          while ( *v15 > 0x20u )
+          while ( *v15 > 0x20u ) /*0x434063*/
           {
-            --v16;
-            --v15;
-            if ( !v16 )
-              return v14;
+            --v16; /*0x434065*/
+            --v15; /*0x434066*/
+            if ( !v16 ) /*0x43406b*/
+              return v14; /*0x434078*/
           }
-          if ( v16 )
-            return v16;
+          if ( v16 ) /*0x43407d*/
+            return v16; /*0x43407f*/
         }
       }
     }
   }
-  return v17;
+  return v17; /*0x43403b*/
 }
-
-/* ASM:
-sub     esp, 8
-mov     edx, ecx
-push    ebx
-push    ebp
-xor     ebp, ebp
-mov     ebx, [edx+4]
-mov     [esp+10h+var_4], edx
-cmp     ebx, ebp
-mov     [esp+10h+var_8], ebp
-jz      loc_434091
-mov     ecx, [esp+10h+arg_0]
-cmp     ecx, ebp
-jz      loc_434091
-push    esi
-push    edi
-mov     di, [ecx]
-cmp     di, bp
-jz      loc_434083
-jmp     short loc_433F8C
-; ---------------------------------------------------------------------------
-
-loc_433F88:                             ; CODE XREF: MessageListClass__CountCharsInWidth+DF↓j
-mov     edx, [esp+18h+var_4]
-
-loc_433F8C:                             ; CODE XREF: MessageListClass__CountCharsInWidth+36↑j
-mov     esi, edi
-and     esi, 0FFFFh
-mov     eax, esi
-sub     eax, 9
-jz      short loc_433FE4
-dec     eax
-jz      short loc_433FF0
-sub     eax, 3
-jz      short loc_433FF0
-xor     eax, eax
-test    ebx, ebx
-jz      short loc_433FC4
-mov     ecx, [ebx+18h]
-xor     edx, edx
-mov     dx, [ecx+esi*2]
-test    edx, edx
-jz      short loc_433FC0
-mov     eax, [ebx+14h]
-dec     edx
-imul    eax, edx
-add     eax, [ebx+1Ch]
-
-loc_433FC0:                             ; CODE XREF: MessageListClass__CountCharsInWidth+64↑j
-mov     ecx, [esp+18h+arg_0]
-
-loc_433FC4:                             ; CODE XREF: MessageListClass__CountCharsInWidth+57↑j
-test    eax, eax
-jnz     short loc_433FD3
-mov     edx, [esp+18h+var_4]
-mov     eax, [edx+8]
-test    eax, eax
-jz      short loc_433FF0
-
-loc_433FD3:                             ; CODE XREF: MessageListClass__CountCharsInWidth+76↑j
-xor     edx, edx
-mov     dl, [eax]
-mov     eax, [esp+18h+var_4]
-mov     eax, [eax+2Ch]
-add     eax, edx
-add     ebp, eax
-jmp     short loc_433FF0
-; ---------------------------------------------------------------------------
-
-loc_433FE4:                             ; CODE XREF: MessageListClass__CountCharsInWidth+49↑j
-mov     esi, [edx+28h]
-add     ebp, esi
-mov     eax, ebp
-cdq
-idiv    esi
-sub     ebp, edx
-
-loc_433FF0:                             ; CODE XREF: MessageListClass__CountCharsInWidth+4C↑j
-; MessageListClass__CountCharsInWidth+51↑j ...
-mov     edx, [esp+18h+var_8]
-mov     eax, [esp+18h+arg_4]
-inc     edx
-cmp     ebp, eax
-mov     [esp+18h+var_8], edx
-jg      short loc_434043
-mov     eax, [esp+18h+arg_8]
-test    eax, eax
-jz      short loc_43400D
-cmp     edx, eax
-jz      short loc_434083
-
-loc_43400D:                             ; CODE XREF: MessageListClass__CountCharsInWidth+B7↑j
-mov     eax, [esp+18h+arg_C]
-test    eax, eax
-jz      short loc_434021
-cmp     di, 0Dh
-jz      short loc_434083
-cmp     di, 0Ah
-jz      short loc_434083
-
-loc_434021:                             ; CODE XREF: MessageListClass__CountCharsInWidth+C3↑j
-mov     di, [ecx+2]
-add     ecx, 2
-test    di, di
-mov     [esp+18h+arg_0], ecx
-jnz     loc_433F88
-mov     eax, [esp+18h+var_8]
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 8
-retn    10h
-; ---------------------------------------------------------------------------
-
-loc_434043:                             ; CODE XREF: MessageListClass__CountCharsInWidth+AF↑j
-mov     eax, [esp+18h+arg_C]
-dec     edx
-test    eax, eax
-mov     [esp+18h+var_8], edx
-jz      short loc_434083
-cmp     di, 20h ; ' '
-jbe     short loc_434083
-sub     ecx, 2
-mov     eax, edx
-test    edx, edx
-jz      short loc_434083
-
-loc_43405F:                             ; CODE XREF: MessageListClass__CountCharsInWidth+11B↓j
-cmp     word ptr [ecx], 20h ; ' '
-jbe     short loc_43407B
-dec     eax
-sub     ecx, 2
-test    eax, eax
-jnz     short loc_43405F
-mov     eax, [esp+18h+var_8]
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 8
-retn    10h
-; ---------------------------------------------------------------------------
-
-loc_43407B:                             ; CODE XREF: MessageListClass__CountCharsInWidth+113↑j
-test    eax, eax
-jz      short loc_434083
-mov     [esp+18h+var_8], eax
-
-loc_434083:                             ; CODE XREF: MessageListClass__CountCharsInWidth+30↑j
-; MessageListClass__CountCharsInWidth+BB↑j ...
-mov     eax, [esp+18h+var_8]
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 8
-retn    10h
-; ---------------------------------------------------------------------------
-
-loc_434091:                             ; CODE XREF: MessageListClass__CountCharsInWidth+16↑j
-; MessageListClass__CountCharsInWidth+22↑j
-pop     ebp
-xor     eax, eax
-pop     ebx
-add     esp, 8
-retn    10h
-*/
 } }
 // 0x4884A0
 namespace gamemd { int CheckListClass::GetItem(int a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CheckListClass::_vt31(int this, int a2, _DWORD *a3, int a4)
+int __thiscall CheckListClass::GetItem(int this, int a2, _DWORD *a3, int a4)
 {
   int v6; // edi
   int Clamped; // eax
@@ -678,218 +266,75 @@ int __thiscall CheckListClass::_vt31(int this, int a2, _DWORD *a3, int a4)
   char v9; // bl
   int v10; // eax
 
-  if ( *(_BYTE *)(this + 372) )
-    return 0;
-  v6 = CellClass::DrawWithFlags((_DWORD *)this, a2, a3, 0);
-  if ( (a2 & 1) != 0 )
+  if ( *(_BYTE *)(this + 372) ) /*0x4884a3*/
+    return 0; /*0x4884ad*/
+  v6 = CellClass::DrawWithFlags((_DWORD *)this, a2, a3, 0); /*0x4884cb*/
+  if ( (a2 & 1) != 0 ) /*0x4884cd*/
   {
-    Clamped = Array::GetClamped((_DWORD *)this, *(_DWORD *)(this + 364));
-    if ( Clamped )
-      v8 = *(_BYTE *)(Clamped + 4);
+    Clamped = Array::GetClamped((_DWORD *)this, *(CheckListClass **)(this + 364)); /*0x4884d8*/
+    if ( Clamped ) /*0x4884df*/
+      v8 = *(_BYTE *)(Clamped + 4); /*0x4884e1*/
     else
-      v8 = 0;
-    v9 = v8 == 0;
-    v10 = Array::GetClamped((_DWORD *)this, *(_DWORD *)(this + 364));
-    if ( v10 )
+      v8 = 0; /*0x4884e6*/
+    v9 = v8 == 0; /*0x4884f3*/
+    v10 = Array::GetClamped((_DWORD *)this, *(CheckListClass **)(this + 364)); /*0x4884f6*/
+    if ( v10 ) /*0x4884fd*/
     {
-      if ( *(_BYTE *)(v10 + 4) != v9 )
+      if ( *(_BYTE *)(v10 + 4) != v9 ) /*0x488502*/
       {
-        *(_BYTE *)(v10 + 4) = v9;
-        (*(void (__thiscall **)(int))(*(_DWORD *)this + 72))(this);
+        *(_BYTE *)(v10 + 4) = v9; /*0x488504*/
+        (*(void (__thiscall **)(int))(*(_DWORD *)this + 72))(this); /*0x48850b*/
       }
     }
   }
-  return v6;
+  return v6; /*0x4884af*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     al, [esi+174h]
-test    al, al
-jz      short loc_4884B3
-xor     eax, eax
-pop     esi
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_4884B3:                             ; CODE XREF: CheckListClass__GetItem+B↑j
-mov     eax, [esp+4+arg_4]
-push    ebx
-mov     ebx, [esp+8+arg_0]
-push    edi
-push    0
-push    eax
-push    ebx
-mov     ecx, esi
-call    CellClass__DrawWithFlags
-test    bl, 1
-mov     edi, eax
-jz      short loc_48850E
-mov     eax, [esi+16Ch]
-mov     ecx, esi
-push    eax
-call    Array__GetClamped
-test    eax, eax
-jz      short loc_4884E6
-mov     al, [eax+4]
-jmp     short loc_4884E8
-; ---------------------------------------------------------------------------
-
-loc_4884E6:                             ; CODE XREF: CheckListClass__GetItem+3F↑j
-xor     al, al
-
-loc_4884E8:                             ; CODE XREF: CheckListClass__GetItem+44↑j
-test    al, al
-mov     eax, [esi+16Ch]
-mov     ecx, esi
-push    eax
-setz    bl
-call    Array__GetClamped
-test    eax, eax
-jz      short loc_48850E
-cmp     [eax+4], bl
-jz      short loc_48850E
-mov     [eax+4], bl
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+48h]
-
-loc_48850E:                             ; CODE XREF: CheckListClass__GetItem+2D↑j
-; CheckListClass__GetItem+5D↑j ...
-mov     eax, edi
-pop     edi
-pop     ebx
-pop     esi
-retn    0Ch
-*/
 } }
 // 0x4886C0
 namespace gamemd { int CheckListClass::SelectItem(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall CheckListClass::_vt42(unsigned int *this, signed int a2)
 {
-  return ListClass::RemoveItem(this, a2);
+  return ListClass::RemoveItem(this, a2); /*0x4886ca*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-push    eax
-call    ListClass__RemoveItem
-retn    4
-*/
 } }
 // 0x4886D0
 namespace gamemd { int CheckListClass::SetFocus(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CheckListClass::_vt46(int *this, unsigned int a2)
 {
-  return ColorListClass::Clear(this, a2);
+  return ColorListClass::Clear(this, a2); /*0x4886da*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-push    eax
-call    ColorListClass__Clear
-retn    4
-*/
 } }
 // 0x4886E0
 namespace gamemd { void* CheckListClass::QueryInterface(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int *__thiscall CheckListClass::_vt00(unsigned int *Block, char a2)
+CheckListClass *__thiscall CheckListClass::QueryInterface(unsigned int *Block, char a2)
 {
-  void *Clamped; // edi
+  CCINIClass *Clamped; // edi
 
-  *Block = (unsigned int)&CheckListClass::`vftable';
-  while ( *(Block + 17) )
+  *Block = (unsigned int)&vt_CheckListClass; /*0x4886e3*/
+  while ( *(Block + 17) ) /*0x4886e9*/
   {
-    Clamped = (void *)Array::GetClamped(Block, 0);
-    ListClass::RemoveItem(Block, 0);
-    __3_YAXPAX_Z(Clamped);
+    Clamped = (CCINIClass *)Array::GetClamped(Block, 0); /*0x4886fe*/
+    ListClass::RemoveItem(Block, 0); /*0x488700*/
+    __3_YAXPAX_Z(Clamped); /*0x488706*/
   }
-  ListClass::Destruct(Block);
-  if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(Block);
-  return Block;
+  ListClass::Destruct(Block); /*0x488718*/
+  if ( (a2 & 1) != 0 ) /*0x488722*/
+    __3_YAXPAX_Z(Block); /*0x488725*/
+  return (CheckListClass *)Block; /*0x48872f*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     dword ptr [esi], offset ??_7CheckListClass@@6B@ ; const CheckListClass::`vftable'
-mov     eax, [esi+44h]
-test    eax, eax
-jz      short loc_488716
-push    edi
-
-loc_4886F1:                             ; CODE XREF: CheckListClass__QueryInterface+33↓j
-push    0
-mov     ecx, esi
-call    Array__GetClamped
-push    0
-mov     ecx, esi
-mov     edi, eax
-call    ListClass__RemoveItem
-push    edi             ; Block
-call    ??3_YAXPAX_Z
-mov     eax, [esi+44h]
-add     esp, 4
-test    eax, eax
-jnz     short loc_4886F1
-pop     edi
-
-loc_488716:                             ; CODE XREF: CheckListClass__QueryInterface+E↑j
-mov     ecx, esi
-call    ListClass__Destruct
-test    [esp+4+arg_0], 1
-jz      short loc_48872D
-push    esi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_48872D:                             ; CODE XREF: CheckListClass__QueryInterface+42↑j
-mov     eax, esi
-pop     esi
-retn    4
-*/
 } }
 // 0x4B4FB0
 namespace gamemd { int DropListClass::SetFocus(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x4b4fb0
-int __thiscall DropListClass::SetFocus(#72 **this, #72 *Source)
+int __thiscall DropListClass::_vt39(void *this, wchar_t *Source)
 {
-  wcsncpy(*(this + 13), Source, *(this + 14));
-  (*((void (__thiscall **)(#72 **))*this + 18))(this);
-  return (*((int (__thiscall **)(char *, #72 *))*(this + 44) + 34))((char *)this + 176, Source);
+  wcsncpy(*((wchar_t **)this + 13), Source, *((_DWORD *)this + 14)); /*0x4b4fc1*/
+  (*(void (__thiscall **)(void *))(*(_DWORD *)this + 72))(this); /*0x4b4fcd*/
+  return (*(int (__thiscall **)(int, wchar_t *))(*((_DWORD *)this + 44) + 136))((int)this + 176, Source); /*0x4b4fe3*/
 }
-
-/* ASM:
-Source          = dword ptr  4
-
-push    esi
-mov     esi, ecx
-push    edi
-mov     edi, [esp+8+Source]
-mov     eax, [esi+38h]
-mov     ecx, [esi+34h]
-push    eax             ; Count
-push    edi             ; Source
-push    ecx             ; Destination
-call    _wcsncpy
-mov     edx, [esi]
-add     esp, 0Ch
-mov     ecx, esi
-call    dword ptr [edx+48h]
-mov     eax, [esi+0B0h]
-lea     ecx, [esi+0B0h]
-push    edi
-call    dword ptr [eax+88h]
-pop     edi
-pop     esi
-retn    4
-*/
 } }
 // 0x4B4FF0
 namespace gamemd { int DropListClass::KillFocus() {
@@ -898,12 +343,6 @@ int __thiscall DropListClass::_vt40(_DWORD *this)
 {
   return (*(int (__thiscall **)(_DWORD *))(*(this + 44) + 156))(this + 44);
 }
-
-/* ASM:
-mov     eax, [ecx+0B0h]
-add     ecx, 0B0h
-jmp     dword ptr [eax+9Ch]
-*/
 } }
 // 0x4B5010
 namespace gamemd { int DropListClass::GetItemData() {
@@ -912,12 +351,6 @@ int __thiscall DropListClass::_vt41(_DWORD *this)
 {
   return (*(int (__thiscall **)(_DWORD *))(*(this + 44) + 152))(this + 44);
 }
-
-/* ASM:
-mov     eax, [ecx+0B0h]
-add     ecx, 0B0h
-jmp     dword ptr [eax+98h]
-*/
 } }
 // 0x4B50A0
 namespace gamemd { int DropListClass::AddItem() {
@@ -926,36 +359,19 @@ char __thiscall DropListClass::_vt21(int this)
 {
   char result; // al
 
-  result = *(_BYTE *)(this + 72);
-  if ( result )
+  result = *(_BYTE *)(this + 72); /*0x4b50a3*/
+  if ( result ) /*0x4b50a8*/
   {
-    result = (*(int (__thiscall **)(int))(*(_DWORD *)(this + 176) + 36))(this + 176);
-    *(_BYTE *)(this + 72) = 0;
+    result = (*(int (__thiscall **)(int))(*(_DWORD *)(this + 176) + 36))(this + 176); /*0x4b50b6*/
+    *(_BYTE *)(this + 72) = 0; /*0x4b50b9*/
   }
-  return result;
+  return result; /*0x4b50bd*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     al, [esi+48h]
-test    al, al
-jz      short loc_4B50BD
-mov     eax, [esi+0B0h]
-lea     ecx, [esi+0B0h]
-call    dword ptr [eax+24h]
-mov     byte ptr [esi+48h], 0
-
-loc_4B50BD:                             ; CODE XREF: DropListClass__AddItem+8↑j
-pop     esi
-retn
-*/
 } }
 // 0x4B50C0
 namespace gamemd { int DropListClass::Open(int a1, void* a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x4b50c0
-__int16 __thiscall DropListClass::Open(char *this, char a2, _DWORD *a3, char *a4)
+__int16 __thiscall DropListClass::_vt19(char *this, char a2, _DWORD *a3, char *a4)
 {
   int v5; // eax
   int v6; // edx
@@ -965,252 +381,88 @@ __int16 __thiscall DropListClass::Open(char *this, char a2, _DWORD *a3, char *a4
   int v10; // edx
   int v11; // eax
   int v12; // eax
-  const #72 *v13; // eax
-  int v15; // [esp-4h] [ebp-Ch]
+  const wchar_t *v13; // eax
+  size_t v15; // [esp-4h] [ebp-Ch]
 
-  if ( a4 == this + 80 && (a2 & 4) != 0 )
+  if ( a4 == this + 80 && (a2 & 4) != 0 ) /*0x4b50d8*/
   {
-    if ( *(this + 72) )
+    if ( *(this + 72) ) /*0x4b50da*/
     {
-      (*(void (__thiscall **)(char *))(*((_DWORD *)this + 44) + 36))(this + 176);
-      v5 = *((_DWORD *)this + 9);
-      *(this + 72) = 0;
-      BYTE1(v5) |= 0x80u;
-      *a3 = v5;
+      (*(void (__thiscall **)(char *))(*((_DWORD *)this + 44) + 36))(this + 176); /*0x4b50ed*/
+      v5 = *((_DWORD *)this + 9); /*0x4b50f0*/
+      *(this + 72) = 0; /*0x4b50f3*/
+      BYTE1(v5) |= 0x80u; /*0x4b50f7*/
+      *a3 = v5; /*0x4b50fa*/
     }
     else
     {
-      v6 = *((_DWORD *)this + 4);
-      v7 = *((_DWORD *)this + 5);
-      v8 = *((_DWORD *)this + 44);
-      *((_DWORD *)this + 47) = *((_DWORD *)this + 3);
-      v9 = *((_DWORD *)this + 19);
-      *((_DWORD *)this + 48) = v6 + 18;
-      v10 = *(_DWORD *)this;
-      *((_DWORD *)this + 50) = v9;
-      *((_DWORD *)this + 49) = v7;
-      v11 = (*(int (__thiscall **)(char *))(v10 + 24))(this);
-      (*(void (__thiscall **)(char *, int))(v8 + 12))(this + 176, v11);
-      (*(void (__thiscall **)(char *))(*((_DWORD *)this + 44) + 72))(this + 176);
-      *(this + 72) = 1;
+      v6 = *((_DWORD *)this + 4); /*0x4b5101*/
+      v7 = *((_DWORD *)this + 5); /*0x4b5104*/
+      v8 = *((_DWORD *)this + 44); /*0x4b5108*/
+      *((_DWORD *)this + 47) = *((_DWORD *)this + 3); /*0x4b510e*/
+      v9 = *((_DWORD *)this + 19); /*0x4b5114*/
+      *((_DWORD *)this + 48) = v6 + 18; /*0x4b511b*/
+      v10 = *(_DWORD *)this; /*0x4b5121*/
+      *((_DWORD *)this + 50) = v9; /*0x4b5129*/
+      *((_DWORD *)this + 49) = v7; /*0x4b5131*/
+      v11 = (*(int (__thiscall **)(char *))(v10 + 24))(this); /*0x4b5137*/
+      (*(void (__thiscall **)(char *, int))(v8 + 12))(this + 176, v11); /*0x4b513d*/
+      (*(void (__thiscall **)(char *))(*((_DWORD *)this + 44) + 72))(this + 176); /*0x4b5144*/
+      *(this + 72) = 1; /*0x4b5148*/
     }
   }
-  LOWORD(v12) = (_WORD)a4;
-  if ( a4 == this + 176 )
+  LOWORD(v12) = (_WORD)a4; /*0x4b514d*/
+  if ( a4 == this + 176 ) /*0x4b5159*/
   {
-    v15 = *((_DWORD *)this + 14);
-    v13 = (const #72 *)(*(int (__thiscall **)(char *))(*((_DWORD *)this + 44) + 156))(this + 176);
-    wcsncpy(*((#72 **)this + 13), v13, v15);
-    (*(void (__thiscall **)(char *))(*(_DWORD *)this + 72))(this);
-    v12 = *((_DWORD *)this + 9);
-    BYTE1(v12) |= 0x80u;
-    *a3 = v12;
+    v15 = *((_DWORD *)this + 14); /*0x4b5160*/
+    v13 = (const wchar_t *)(*(int (__thiscall **)(char *))(*((_DWORD *)this + 44) + 156))(this + 176); /*0x4b5161*/
+    wcsncpy(*((wchar_t **)this + 13), v13, v15); /*0x4b516c*/
+    (*(void (__thiscall **)(char *))(*(_DWORD *)this + 72))(this); /*0x4b5178*/
+    v12 = *((_DWORD *)this + 9); /*0x4b517b*/
+    BYTE1(v12) |= 0x80u; /*0x4b517e*/
+    *a3 = v12; /*0x4b5181*/
   }
-  return v12;
+  return v12; /*0x4b5183*/
 }
-
-/* ASM:
-push    ebx
-mov     ebx, [esp+4+arg_4]
-push    esi
-mov     esi, ecx
-mov     ecx, [esp+8+arg_8]
-lea     eax, [esi+50h]
-cmp     ecx, eax
-jnz     short loc_4B514D
-test    [esp+8+arg_0], 4
-jz      short loc_4B514D
-mov     al, [esi+48h]
-test    al, al
-jz      short loc_4B50FE
-mov     edx, [esi+0B0h]
-lea     ecx, [esi+0B0h]
-call    dword ptr [edx+24h]
-mov     eax, [esi+24h]
-mov     byte ptr [esi+48h], 0
-or      ah, 80h
-mov     [ebx], eax
-jmp     short loc_4B514D
-; ---------------------------------------------------------------------------
-
-loc_4B50FE:                             ; CODE XREF: DropListClass__Open+1F↑j
-mov     ecx, [esi+0Ch]
-mov     edx, [esi+10h]
-mov     eax, [esi+14h]
-push    ebp
-mov     ebp, [esi+0B0h]
-mov     [esi+0BCh], ecx
-mov     ecx, [esi+4Ch]
-add     edx, 12h
-push    edi
-mov     [esi+0C0h], edx
-mov     edx, [esi]
-lea     edi, [esi+0B0h]
-mov     [esi+0C8h], ecx
-mov     ecx, esi
-mov     [esi+0C4h], eax
-call    dword ptr [edx+18h]
-push    eax
-mov     ecx, edi
-call    dword ptr [ebp+0Ch]
-mov     eax, [edi]
-mov     ecx, edi
-call    dword ptr [eax+48h]
-pop     edi
-mov     byte ptr [esi+48h], 1
-pop     ebp
-
-loc_4B514D:                             ; CODE XREF: DropListClass__Open+11↑j
-; DropListClass__Open+18↑j ...
-mov     eax, [esp+8+arg_8]
-lea     ecx, [esi+0B0h]
-cmp     eax, ecx
-jnz     short loc_4B5183
-mov     edx, [esi+38h]
-mov     eax, [ecx]
-push    edx             ; Count
-call    dword ptr [eax+9Ch]
-mov     ecx, [esi+34h]
-push    eax             ; Source
-push    ecx             ; Destination
-call    _wcsncpy
-mov     edx, [esi]
-add     esp, 0Ch
-mov     ecx, esi
-call    dword ptr [edx+48h]
-mov     eax, [esi+24h]
-or      ah, 80h
-mov     [ebx], eax
-
-loc_4B5183:                             ; CODE XREF: DropListClass__Open+99↑j
-pop     esi
-pop     ebx
-retn    0Ch
-*/
 } }
 // 0x4B54E0
 namespace gamemd { int DropListClass::RemoveItem(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DropListClass::_vt25(_DWORD *this, int a2, int a3)
+int __thiscall DropListClass::RemoveItem(_DWORD *this, SBGadgetClass_SidebarClass *aP1, int aP2)
 {
-  Rect_Point::Set(this, a2, a3);
-  (*(void (__thiscall **)(_DWORD *, int, int))(*(this + 44) + 100))(this + 44, a2, a3 + *(__int16 *)(*(this + 42) + 4));
-  return (*(int (__thiscall **)(_DWORD *, int, int))(*(this + 20) + 100))(this + 20, a2 + *(this + 5), a3);
+  Rect_Point::Set(this, (GadgetClass *)aP1, (GadgetClass *)aP2); /*0x4b54ef*/
+  (*(void (__thiscall **)(_DWORD *, SBGadgetClass_SidebarClass *, int))(*(this + 44) + 100))( /*0x4b550e*/
+    this + 44,
+    aP1,
+    aP2 + *(__int16 *)(*(this + 42) + 4));
+  return (*(int (__thiscall **)(_DWORD *, char *, int))(*(this + 20) + 100))(this + 20, (char *)aP1 + *(this + 5), aP2); /*0x4b5521*/
 }
-
-/* ASM:
-push    ebx
-mov     ebx, [esp+4+arg_0]
-push    esi
-push    edi
-mov     edi, [esp+0Ch+arg_4]
-mov     esi, ecx
-push    edi
-push    ebx
-call    Rect_Point__Set
-mov     edx, [esi+0A8h]
-mov     eax, [esi+0B0h]
-lea     ecx, [esi+0B0h]
-movsx   edx, word ptr [edx+4]
-add     edx, edi
-push    edx
-push    ebx
-call    dword ptr [eax+64h]
-mov     edx, [esi+14h]
-mov     eax, [esi+50h]
-lea     ecx, [esi+50h]
-add     edx, ebx
-push    edi
-push    edx
-call    dword ptr [eax+64h]
-pop     edi
-pop     esi
-pop     ebx
-retn    8
-*/
 } }
 // 0x4B5530
 namespace gamemd { void DropListClass::OnKeyDown(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall DropListClass::_vt42(_DWORD *this, #72 *String1)
+void __thiscall DropListClass::_vt42(_DWORD *this, wchar_t *String1)
 {
   int v3; // edi
-  const #72 *v4; // eax
+  const wchar_t *v4; // eax
 
-  if ( String1 )
+  if ( String1 ) /*0x4b553c*/
   {
-    v3 = 0;
-    if ( (*(int (__thiscall **)(_DWORD *))(*this + 176))(this) > 0 )
+    v3 = 0; /*0x4b5540*/
+    if ( (*(int (__thiscall **)(_DWORD *))(*this + 176))(this) > 0 ) /*0x4b554a*/
     {
-      while ( 1 )
+      while ( 1 ) /*0x4b5557*/
       {
-        v4 = (const #72 *)(*(int (__thiscall **)(_DWORD *, int))(*(this + 44) + 160))(this + 44, v3);
-        if ( !_wcsicmp(String1, v4) )
-          break;
-        if ( ++v3 >= (*(int (__thiscall **)(_DWORD *))(*this + 176))(this) )
-          return;
+        v4 = (const wchar_t *)(*(int (__thiscall **)(_DWORD *, int))(*(this + 44) + 160))(this + 44, v3); /*0x4b5557*/
+        if ( !_wcsicmp(String1, v4) ) /*0x4b555f*/
+          break; /*0x4b555f*/
+        if ( ++v3 >= (*(int (__thiscall **)(_DWORD *))(*this + 176))(this) ) /*0x4b5578*/
+          return; /*0x4b5578*/
       }
-      (*(void (__thiscall **)(_DWORD *, int))(*this + 172))(this, v3);
+      (*(void (__thiscall **)(_DWORD *, int))(*this + 172))(this, v3); /*0x4b5586*/
     }
   }
 }
-
-/* ASM:
-String1         = dword ptr  4
-
-push    ebx
-push    ebp
-mov     ebp, [esp+8+String1]
-push    esi
-test    ebp, ebp
-push    edi
-mov     esi, ecx
-jz      short loc_4B558C
-mov     eax, [esi]
-xor     edi, edi
-call    dword ptr [eax+0B0h]
-test    eax, eax
-jle     short loc_4B558C
-lea     ebx, [esi+0B0h]
-
-loc_4B5552:                             ; CODE XREF: DropListClass__OnKeyDown+48↓j
-mov     edx, [ebx]
-push    edi
-mov     ecx, ebx
-call    dword ptr [edx+0A0h]
-push    eax             ; String2
-push    ebp             ; String1
-call    __wcsicmp
-add     esp, 8
-test    eax, eax
-jz      short loc_4B5581
-mov     eax, [esi]
-mov     ecx, esi
-inc     edi
-call    dword ptr [eax+0B0h]
-cmp     edi, eax
-jl      short loc_4B5552
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_4B5581:                             ; CODE XREF: DropListClass__OnKeyDown+39↑j
-mov     edx, [esi]
-push    edi
-mov     ecx, esi
-call    dword ptr [edx+0ACh]
-
-loc_4B558C:                             ; CODE XREF: DropListClass__OnKeyDown+C↑j
-; DropListClass__OnKeyDown+1A↑j
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn    4
-*/
 } }
 // 0x4B55B0
 namespace gamemd { int DropListClass::ScrollUp() {
@@ -1219,210 +471,79 @@ int __thiscall DropListClass::_vt44(_DWORD *this)
 {
   return (*(int (__thiscall **)(_DWORD *))(*(this + 44) + 148))(this + 44);
 }
-
-/* ASM:
-mov     eax, [ecx+0B0h]
-add     ecx, 0B0h
-jmp     dword ptr [eax+94h]
-*/
 } }
 // 0x4B55D0
 namespace gamemd { int DropListClass::ScrollDown(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DropListClass::_vt45(_DWORD *this, int a2)
 {
-  return (*(int (__thiscall **)(_DWORD *, int))(*(this + 44) + 160))(this + 44, a2);
+  return (*(int (__thiscall **)(_DWORD *, int))(*(this + 44) + 160))(this + 44, a2); /*0x4b55e7*/
 }
-
-/* ASM:
-mov     edx, [esp+arg_0]
-mov     eax, [ecx+0B0h]
-add     ecx, 0B0h
-push    edx
-call    dword ptr [eax+0A0h]
-retn    4
-*/
 } }
 // 0x4B55F0
 namespace gamemd { void* DropListClass::QueryInterface(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall DropListClass::_vt00(_DWORD *Block, char a2)
+DropListClass *__thiscall DropListClass::QueryInterface(_DWORD *Block, char a2)
 {
-  *Block = &DropListClass::`vftable';
-  ListClass::Destruct(Block + 44);
-  ShapeButtonClass::Destructor((int)(Block + 20));
-  DropListClass::Constructor(Block);
-  if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(Block);
-  return Block;
+  *Block = &vt_DropListClass; /*0x4b55f9*/
+  ListClass::Destruct(Block + 44); /*0x4b55ff*/
+  ShapeButtonClass::Destructor((int)(Block + 20)); /*0x4b5607*/
+  DropListClass::Constructor(Block); /*0x4b560e*/
+  if ( (a2 & 1) != 0 ) /*0x4b5618*/
+    __3_YAXPAX_Z(Block); /*0x4b561b*/
+  return (DropListClass *)Block; /*0x4b5625*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-lea     ecx, [esi+0B0h]
-mov     dword ptr [esi], offset ??_7DropListClass@@6B@ ; const DropListClass::`vftable'
-call    ListClass__Destruct
-lea     ecx, [esi+50h]
-call    ShapeButtonClass__Destructor
-mov     ecx, esi
-call    DropListClass__Constructor
-test    [esp+4+arg_0], 1
-jz      short loc_4B5623
-push    esi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_4B5623:                             ; CODE XREF: DropListClass__QueryInterface+28↑j
-mov     eax, esi
-pop     esi
-retn    4
-*/
 } }
 // 0x4C30B0
 namespace gamemd { int DropListClass::Constructor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x4c30b0
-int __thiscall DropListClass::Constructor(_DWORD *this)
+int __thiscall sub_4C30B0(_DWORD *this)
 {
-  *this = &EditClass::`vftable';
-  if ( (unsigned __int8)COMObject::IsPrimaryInstance() )
-    COMObject::DeactivateGlobal(this);
-  return GadgetClass::Dtor(this);
+  *this = &vt_EditClass; /*0x4c30b3*/
+  if ( COMObject::IsPrimaryInstance(this) ) /*0x4c30b9*/
+    COMObject::DeactivateGlobal(this); /*0x4c30c4*/
+  return GadgetClass::Dtor(this); /*0x4c30d0*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     dword ptr [esi], offset ??_7EditClass@@6B@ ; const EditClass::`vftable'
-call    COMObject__IsPrimaryInstance
-test    al, al
-jz      short loc_4C30C9
-mov     ecx, esi
-call    COMObject__DeactivateGlobal
-
-loc_4C30C9:                             ; CODE XREF: DropListClass__Constructor+10↑j
-mov     ecx, esi
-call    GadgetClass__Dtor
-pop     esi
-retn
-*/
 } }
 // 0x4C30E0
 namespace gamemd { int DropListClass::SelectItem(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x4c30e0
-int __thiscall DropListClass::SelectItem(int *this, #72 *String, int a3)
+int __thiscall DropListClass::_vt34(int *this, wchar_t *String, int a3)
 {
-  int v4; // eax
+  size_t v4; // eax
   int v5; // edx
 
-  *(this + 13) = (int)String;
-  *(this + 14) = a3 - 1;
-  v4 = wcslen(String);
-  v5 = *this;
-  *(this + 15) = v4;
-  return (*(int (__thiscall **)(int *))(v5 + 72))(this);
+  *(this + 13) = (int)String; /*0x4c30ed*/
+  *(this + 14) = a3 - 1; /*0x4c30f0*/
+  v4 = wcslen(String); /*0x4c30f3*/
+  v5 = *this; /*0x4c30f8*/
+  *(this + 15) = v4; /*0x4c30ff*/
+  return (*(int (__thiscall **)(int *))(v5 + 72))(this); /*0x4c3105*/
 }
-
-/* ASM:
-String          = dword ptr  4
-arg_4           = dword ptr  8
-
-mov     eax, [esp+String]
-push    esi
-mov     esi, ecx
-push    eax             ; String
-mov     ecx, [esp+8+arg_4]
-dec     ecx
-mov     [esi+34h], eax
-mov     [esi+38h], ecx
-call    _wcslen
-mov     edx, [esi]
-add     esp, 4
-mov     ecx, esi
-mov     [esi+3Ch], eax
-call    dword ptr [edx+48h]
-pop     esi
-retn    8
-*/
 } }
 // 0x4C3110
 namespace gamemd { int DropListClass::GetItem(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DropListClass::_vt27(_DWORD *this, int a2)
 {
-  if ( !Control::DispatchClick(this, a2) )
-    return 0;
-  (*(void (__thiscall **)(int, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)MEMORY[0x887640] + 32))(
+  if ( !Control::DispatchClick(this, a2) ) /*0x4c311b*/
+    return 0; /*0x4c3183*/
+  (*(void (__thiscall **)(int, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)MEMORY[0x887640] + 32))( /*0x4c314e*/
     MEMORY[0x887640],
     *(this + 3),
     *(this + 4),
     *(this + 5),
     *(this + 6));
-  (*(void (__thiscall **)(_DWORD *))(*this + 144))(this);
-  (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 148))(this, *(this + 13));
-  (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 36))(MEMORY[0x887640]);
-  return 1;
+  (*(void (__thiscall **)(_DWORD *))(*this + 144))(this); /*0x4c3155*/
+  (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 148))(this, *(this + 13)); /*0x4c3163*/
+  (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 36))(MEMORY[0x887640]); /*0x4c3171*/
+  return 1; /*0x4c3179*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-push    ebx
-push    ebp
-push    esi
-push    edi
-mov     esi, ecx
-push    eax
-call    Control__DispatchClick
-test    eax, eax
-jz      short loc_4C3180
-mov     ecx, ds:887640h
-mov     eax, [esi+0Ch]
-mov     edx, [esi+10h]
-sub     esp, 10h
-mov     ebp, [ecx]
-mov     edi, [esi+14h]
-mov     ecx, esp
-mov     ebx, [esi+18h]
-mov     [ecx], eax
-mov     [ecx+4], edx
-mov     [ecx+8], edi
-mov     [ecx+0Ch], ebx
-mov     ecx, ds:887640h
-call    dword ptr [ebp+20h]
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+90h]
-mov     ecx, [esi+34h]
-mov     eax, [esi]
-push    ecx
-mov     ecx, esi
-call    dword ptr [eax+94h]
-mov     ecx, ds:887640h
-mov     edx, [ecx]
-call    dword ptr [edx+24h]
-mov     eax, 1
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_4C3180:                             ; CODE XREF: DropListClass__GetItem+12↑j
-pop     edi
-pop     esi
-pop     ebp
-xor     eax, eax
-pop     ebx
-retn    4
-*/
 } }
 // 0x4C3190
 namespace gamemd { int DropListClass::GetCount(int a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DropListClass::_vt31(_DWORD *this, unsigned int a2, int *a3, int a4)
+int __thiscall DropListClass::GetCount(_DWORD *this, int a2, ControlClass *aP2, int a4)
 {
   unsigned int v6; // ebx
   int v7; // edx
@@ -1430,174 +551,44 @@ int __thiscall DropListClass::_vt31(_DWORD *this, unsigned int a2, int *a3, int 
   int v9; // ebp
   char v10; // al
 
-  if ( *(this + 17) )
-    return 0;
-  v6 = a2;
-  if ( (a2 & 1) != 0 )
+  if ( *(this + 17) ) /*0x4c3193*/
+    return 0; /*0x4c319d*/
+  v6 = a2; /*0x4c31a1*/
+  if ( (a2 & 1) != 0 ) /*0x4c31a9*/
   {
-    v6 = a2 & 0xFFFFFFFE;
-    (*(void (__thiscall **)(_DWORD *))(*this + 80))(this);
-    (*(void (__thiscall **)(_DWORD *))(*this + 72))(this);
+    v6 = a2 & 0xFFFFFFFE; /*0x4c31af*/
+    (*(void (__thiscall **)(_DWORD *))(*this + 80))(this); /*0x4c31b2*/
+    (*(void (__thiscall **)(_DWORD *))(*this + 72))(this); /*0x4c31b9*/
   }
-  if ( (v6 & 0x100) == 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 88))(this) )
-    return CellClass::Draw((int)this, v6, a3, 0);
-  if ( *a3 == 27 )
+  if ( (v6 & 0x100) == 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 88))(this) ) /*0x4c31cd*/
+    return CellClass::Draw((int)this, v6, aP2, 0); /*0x4c31d2*/
+  if ( *(_DWORD *)aP2->__pad_0 == 27 ) /*0x4c31dd*/
   {
-    (*(void (__thiscall **)(_DWORD *))(*this + 84))(this);
-    return CellClass::Draw((int)this, 0, a3, 0);
+    (*(void (__thiscall **)(_DWORD *))(*this + 84))(this); /*0x4c31e3*/
+    return CellClass::Draw((int)this, 0, aP2, 0); /*0x4c31f5*/
   }
-  v7 = (unsigned __int8)Keyboard::MapKey((int)MEMORY[0x87F770], *a3);
-  v8 = *a3;
-  if ( (*a3 & 0x1000) != 0 && v7 >= 48 && v7 <= 57 )
+  v7 = (unsigned __int8)Keyboard::MapKey((int)MEMORY[0x87F770], *(_DWORD *)aP2->__pad_0); /*0x4c3209*/
+  v8 = *(_DWORD *)aP2->__pad_0; /*0x4c320b*/
+  if ( (*(_DWORD *)aP2->__pad_0 & 0x1000) != 0 && v7 >= 48 && v7 <= 57 ) /*0x4c321f*/
   {
-    BYTE1(v8) &= ~0x10u;
-    *a3 = v8;
-    if ( (v6 & 0x44) != 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int))(*this + 152))(this, v7) )
-      return CellClass::Draw((int)this, v6, a3, 0);
+    BYTE1(v8) &= ~0x10u; /*0x4c3221*/
+    *(_DWORD *)aP2->__pad_0 = v8; /*0x4c3227*/
+    if ( (v6 & 0x44) != 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int))(*this + 152))(this, v7) ) /*0x4c3230*/
+      return CellClass::Draw((int)this, v6, aP2, 0); /*0x4c3238*/
   }
-  else if ( (*a3 & 0x1000) == 0 && v7 >= 32 || v8 == 13 || v8 == 8 )
+  else if ( (*(_DWORD *)aP2->__pad_0 & 0x1000) == 0 && v7 >= 32 || v8 == 13 || v8 == 8 ) /*0x4c3255*/
   {
-    if ( (v6 & 0x44) != 0 )
-      return CellClass::Draw((int)this, v6, a3, 0);
-    v9 = *this;
-    v10 = Keyboard::MapKey((int)MEMORY[0x87F770], v8);
-    if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(v9 + 152))(this, v10) )
-      return CellClass::Draw((int)this, v6, a3, 0);
+    if ( (v6 & 0x44) != 0 ) /*0x4c325a*/
+      return CellClass::Draw((int)this, v6, aP2, 0); /*0x4c325a*/
+    v9 = *this; /*0x4c3263*/
+    v10 = Keyboard::MapKey((int)MEMORY[0x87F770], v8); /*0x4c3266*/
+    if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(v9 + 152))(this, v10) ) /*0x4c3271*/
+      return CellClass::Draw((int)this, v6, aP2, 0); /*0x4c327a*/
   }
-  BYTE1(v6) &= ~1u;
-  *a3 = 0;
-  return CellClass::Draw((int)this, v6, a3, 0);
+  BYTE1(v6) &= ~1u; /*0x4c327c*/
+  *(_DWORD *)aP2->__pad_0 = 0; /*0x4c327f*/
+  return CellClass::Draw((int)this, v6, aP2, 0); /*0x4c319c*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     eax, [esi+44h]
-test    eax, eax
-jz      short loc_4C31A0
-xor     eax, eax
-pop     esi
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_4C31A0:                             ; CODE XREF: DropListClass__GetCount+8↑j
-push    ebx
-mov     ebx, [esp+8+arg_0]
-test    bl, 1
-push    edi
-jz      short loc_4C31BC
-mov     eax, [esi]
-mov     ecx, esi
-and     ebx, 0FFFFFFFEh
-call    dword ptr [eax+50h]
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+48h]
-
-loc_4C31BC:                             ; CODE XREF: DropListClass__GetCount+19↑j
-mov     edi, [esp+0Ch+arg_4]
-test    bh, 1
-jz      loc_4C3285
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+58h]
-test    al, al
-jz      loc_4C3285
-mov     eax, [edi]
-cmp     eax, 1Bh
-jnz     short loc_4C31F8
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+54h]
-xor     ebx, ebx
-mov     ecx, esi
-push    ebx
-push    edi
-push    ebx
-call    CellClass__Draw
-pop     edi
-pop     ebx
-pop     esi
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_4C31F8:                             ; CODE XREF: DropListClass__GetCount+4D↑j
-mov     ecx, ds:87F770h
-push    eax
-call    Keyboard__MapKey
-and     eax, 0FFh
-mov     edx, eax
-mov     eax, [edi]
-mov     ecx, eax
-and     ecx, 1000h
-jz      short loc_4C323C
-cmp     edx, 30h ; '0'
-jl      short loc_4C323C
-cmp     edx, 39h ; '9'
-jg      short loc_4C323C
-and     ah, 0EFh
-test    bl, 44h
-mov     [edi], eax
-jnz     short loc_4C3285
-mov     eax, [esi]
-push    edx
-mov     ecx, esi
-call    dword ptr [eax+98h]
-test    al, al
-jz      short loc_4C3285
-jmp     short loc_4C327C
-; ---------------------------------------------------------------------------
-
-loc_4C323C:                             ; CODE XREF: DropListClass__GetCount+85↑j
-; DropListClass__GetCount+8A↑j ...
-test    ecx, ecx
-jnz     short loc_4C324D
-cmp     edx, 20h ; ' '
-jl      short loc_4C324D
-cmp     edx, 0FFh
-jle     short loc_4C3257
-
-loc_4C324D:                             ; CODE XREF: DropListClass__GetCount+AE↑j
-; DropListClass__GetCount+B3↑j
-cmp     eax, 0Dh
-jz      short loc_4C3257
-cmp     eax, 8
-jnz     short loc_4C327C
-
-loc_4C3257:                             ; CODE XREF: DropListClass__GetCount+BB↑j
-; DropListClass__GetCount+C0↑j
-test    bl, 44h
-jnz     short loc_4C3285
-mov     ecx, ds:87F770h
-push    ebp
-mov     ebp, [esi]
-push    eax
-call    Keyboard__MapKey
-movsx   ecx, al
-push    ecx
-mov     ecx, esi
-call    dword ptr [ebp+98h]
-test    al, al
-pop     ebp
-jz      short loc_4C3285
-
-loc_4C327C:                             ; CODE XREF: DropListClass__GetCount+AA↑j
-; DropListClass__GetCount+C5↑j
-and     bh, 0FEh
-mov     dword ptr [edi], 0
-
-loc_4C3285:                             ; CODE XREF: DropListClass__GetCount+33↑j
-; DropListClass__GetCount+42↑j ...
-push    0
-push    edi
-push    ebx
-mov     ecx, esi
-call    CellClass__Draw
-pop     edi
-pop     ebx
-pop     esi
-retn    0Ch
-*/
 } }
 // 0x4C32A0
 namespace gamemd { int DropListClass::GetSelected() {
@@ -1609,39 +600,20 @@ int __thiscall DropListClass::_vt36(int *this)
   int v3; // ecx
   int v5[4]; // [esp+0h] [ebp-10h] BYREF
 
-  v1 = *(this + 4);
-  v5[0] = *(this + 3);
-  v2 = *(this + 5);
-  v3 = *(this + 6);
-  v5[1] = v1;
-  v5[3] = v3;
-  v5[2] = v2;
-  return DrawBuildingTilesSHP(v5, 4, 1);
+  v1 = *(this + 4); /*0x4c32a6*/
+  v5[0] = *(this + 3); /*0x4c32a9*/
+  v2 = *(this + 5); /*0x4c32ad*/
+  v3 = *(this + 6); /*0x4c32b0*/
+  v5[1] = v1; /*0x4c32b3*/
+  v5[3] = v3; /*0x4c32b7*/
+  v5[2] = v2; /*0x4c32c6*/
+  return DrawBuildingTilesSHP(v5, 4, 1); /*0x4c32cf*/
 }
-
-/* ASM:
-sub     esp, 10h
-mov     eax, [ecx+0Ch]
-mov     edx, [ecx+10h]
-mov     [esp+10h+var_10], eax
-mov     eax, [ecx+14h]
-mov     ecx, [ecx+18h]
-mov     [esp+10h+var_C], edx
-mov     [esp+10h+var_4], ecx
-push    1
-mov     edx, 4
-lea     ecx, [esp+14h+var_10]
-mov     [esp+14h+var_8], eax
-call    DrawBuildingTilesSHP
-add     esp, 10h
-retn
-*/
 } }
 // 0x4C32E0
 namespace gamemd { void* DropListClass::GetItemText(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x4c32e0
-_DWORD *__thiscall DropListClass::GetItemText(_DWORD *this, #72 *String)
+_DWORD *__thiscall DropListClass::_vt37(_DWORD *this, wchar_t *String)
 {
   char v3; // al
   int v4; // edx
@@ -1650,7 +622,7 @@ _DWORD *__thiscall DropListClass::GetItemText(_DWORD *this, #72 *String)
   int v7; // eax
   _DWORD *result; // eax
   int v9; // ebp
-  int v10; // ebp
+  _DWORD *v10; // ebp
   int v11; // edx
   int v12; // eax
   int v13; // ecx
@@ -1667,166 +639,44 @@ _DWORD *__thiscall DropListClass::GetItemText(_DWORD *this, #72 *String)
   _BYTE v24[4]; // [esp+20h] [ebp-10h] BYREF
   _BYTE v25[12]; // [esp+24h] [ebp-Ch] BYREF
 
-  v3 = (*(int (__thiscall **)(_DWORD *))(*this + 88))(this);
-  v4 = *(this + 4);
-  v22 = *(this + 3) + 1;
-  v5 = *(this + 5) - 2;
-  v23[0] = v4 + 1;
-  v6 = *(this + 11);
+  v3 = (*(int (__thiscall **)(_DWORD *))(*this + 88))(this); /*0x4c32ea*/
+  v4 = *(this + 4); /*0x4c32f0*/
+  v22 = *(this + 3) + 1; /*0x4c32ff*/
+  v5 = *(this + 5) - 2; /*0x4c3307*/
+  v23[0] = v4 + 1; /*0x4c330a*/
+  v6 = *(this + 11); /*0x4c330e*/
   v21 = v3 != 0 ? 0x2000 : 0;
-  v19 = v5;
-  v18 = v21 | v6;
-  v16 = *(_DWORD *)(dword_A8ED54[121312] + 4 * *(this + 16));
-  v7 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 120))(MEMORY[0x87F7E8][7883]);
-  FillRectangle(v23, (int)String, MEMORY[0x87F7E8][7883], v7, (int)v25, (int)&v22, v16, 0, v18, v19);
-  TextRenderer::GetInstance();
-  result = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*this + 88))(this);
-  if ( (_BYTE)result )
+  v19 = v5; /*0x4c3315*/
+  v18 = v21 | v6; /*0x4c3321*/
+  v16 = *((_DWORD *)MEMORY[0xB054D4] + *(this + 16)); /*0x4c3331*/
+  v7 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887314] + 120))(MEMORY[0x887314]); /*0x4c333a*/
+  FillRectangle(v23, (int)String, MEMORY[0x887314], v7, (int)v25, (int)&v22, v16, 0, v18, v19); /*0x4c334f*/
+  TextRenderer::GetInstance(); /*0x4c3357*/
+  result = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*this + 88))(this); /*0x4c3362*/
+  if ( (_BYTE)result ) /*0x4c3367*/
   {
-    result = (_DWORD *)wcslen(String);
-    if ( (unsigned int)result < *(this + 14) )
+    result = (_DWORD *)wcslen(String); /*0x4c336e*/
+    if ( (unsigned int)result < *(this + 14) ) /*0x4c337b*/
     {
-      v9 = Text::MeasureWidth((int)String, 0);
-      v10 = Text::MeasureWidth((int)asc_82076C, 0) + v9;
-      result = (_DWORD *)(*(this + 5) - 2);
-      if ( v10 < (int)result )
+      v9 = Text::MeasureWidth((int)String, 0); /*0x4c3395*/
+      v10 = (_DWORD *)(Text::MeasureWidth((int)MEMORY[0x82076C], 0) + v9); /*0x4c339c*/
+      result = (_DWORD *)(*(this + 5) - 2); /*0x4c33a1*/
+      if ( (int)v10 < (int)result ) /*0x4c33a7*/
       {
-        v11 = Text::MeasureWidth((int)String, 0) + *(this + 3) + 1;
-        v12 = *(this + 4);
-        v13 = *(this + 11);
-        v21 = v11;
-        v22 = v12 + 1;
-        v17 = v20 | v13;
-        v15 = *(_DWORD *)(dword_A8ED54[121312] + 4 * *(this + 16));
-        v14 = (*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)MEMORY[0x87F7E8][7883] + 120))(
-                MEMORY[0x87F7E8][7883],
-                v24);
-        return FillRectangle(v23, (int)asc_82076C, MEMORY[0x87F7E8][7883], v14, (int)&v21, v15, 0, v17, -1, 0);
+        v11 = Text::MeasureWidth((int)String, 0) + *(this + 3) + 1; /*0x4c33ba*/
+        v12 = *(this + 4); /*0x4c33be*/
+        v13 = *(this + 11); /*0x4c33c1*/
+        v21 = v11; /*0x4c33c4*/
+        v22 = v12 + 1; /*0x4c33cd*/
+        v17 = v20 | v13; /*0x4c33db*/
+        v15 = *((_DWORD *)MEMORY[0xB054D4] + *(this + 16)); /*0x4c33e5*/
+        v14 = (*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)MEMORY[0x887314] + 120))(MEMORY[0x887314], v24); /*0x4c33f4*/
+        return FillRectangle(v23, (int)MEMORY[0x82076C], MEMORY[0x887314], v14, (int)&v21, v15, 0, v17, -1, 0); /*0x4c3407*/
       }
     }
   }
-  return result;
+  return result; /*0x4c340c*/
 }
-
-/* ASM:
-String          = dword ptr  4
-
-sub     esp, 24h
-push    ebx
-push    esi
-mov     esi, ecx
-push    edi
-mov     eax, [esi]
-call    dword ptr [eax+58h]
-mov     ecx, [esi+0Ch]
-mov     edx, [esi+10h]
-neg     al
-sbb     eax, eax
-push    0
-and     eax, 2000h
-inc     ecx
-mov     [esp+30h+var_1C], ecx
-mov     ecx, [esi+14h]
-inc     edx
-sub     ecx, 2
-mov     [esp+30h+var_18], edx
-mov     edx, [esi+2Ch]
-mov     [esp+30h+var_20], eax
-push    ecx
-mov     ecx, dword_A8ED54+76780h
-or      edx, eax
-mov     eax, [esi+40h]
-push    edx
-push    0
-mov     edx, [ecx+eax*4]
-mov     ecx, ds:887314h
-lea     eax, [esp+3Ch+var_1C]
-push    edx
-mov     edx, [ecx]
-push    eax
-lea     eax, [esp+44h+var_C]
-push    eax
-call    dword ptr [edx+78h]
-mov     ecx, ds:887314h
-mov     ebx, [esp+48h+String]
-push    eax
-push    ecx
-mov     edx, ebx
-lea     ecx, [esp+50h+var_18]
-call    FillRectangle
-mov     ecx, [esi+2Ch]
-call    TextRenderer__GetInstance
-mov     edx, [esi]
-mov     ecx, esi
-mov     edi, eax
-call    dword ptr [edx+58h]
-test    al, al
-jz      loc_4C340C
-push    ebx             ; String
-call    _wcslen
-mov     ecx, [esi+38h]
-add     esp, 4
-cmp     eax, ecx
-jnb     loc_4C340C
-push    ebp
-push    0
-push    ebx
-mov     ecx, edi
-call    Text__MeasureWidth
-push    0
-push    offset asc_82076C ; "_"
-mov     ecx, edi
-mov     ebp, eax
-call    Text__MeasureWidth
-add     ebp, eax
-mov     eax, [esi+14h]
-sub     eax, 2
-cmp     ebp, eax
-pop     ebp
-jge     short loc_4C340C
-push    0
-push    ebx
-mov     ecx, edi
-call    Text__MeasureWidth
-mov     ecx, [esi+0Ch]
-push    0
-push    0FFFFFFFFh
-lea     edx, [eax+ecx+1]
-mov     eax, [esi+10h]
-mov     ecx, [esi+2Ch]
-mov     [esp+38h+var_20], edx
-mov     edx, [esp+38h+var_24]
-inc     eax
-mov     [esp+38h+var_1C], eax
-mov     eax, dword_A8ED54+76780h
-or      ecx, edx
-mov     edx, [esi+40h]
-push    ecx
-push    0
-mov     ecx, [eax+edx*4]
-lea     edx, [esp+40h+var_20]
-push    ecx
-mov     ecx, ds:887314h
-push    edx
-lea     edx, [esp+48h+var_10]
-mov     eax, [ecx]
-push    edx
-call    dword ptr [eax+78h]
-push    eax
-mov     eax, ds:887314h
-push    eax
-mov     edx, offset asc_82076C ; "_"
-lea     ecx, [esp+50h+var_18]
-call    FillRectangle
-
-loc_4C340C:                             ; CODE XREF: DropListClass__GetItemText+87↑j
-; DropListClass__GetItemText+9B↑j ...
-pop     edi
-pop     esi
-pop     ebx
-add     esp, 24h
-retn    4
-*/
 } }
 // 0x4C3420
 namespace gamemd { int DropListClass::SetItemText(int a1) {
@@ -1842,251 +692,78 @@ char __thiscall DropListClass::_vt38(_DWORD *this, int C)
   int v10; // ecx
   int v11; // eax
 
-  v3 = C;
-  Instance = (_DWORD *)TextRenderer::GetInstance();
-  if ( C )
+  v3 = C; /*0x4c342d*/
+  Instance = (_DWORD *)TextRenderer::GetInstance(); /*0x4c3431*/
+  if ( C ) /*0x4c3435*/
   {
-    if ( C == 8 )
+    if ( C == 8 ) /*0x4c343e*/
     {
-      v9 = *(this + 15);
-      if ( v9 )
+      v9 = *(this + 15); /*0x4c3540*/
+      if ( v9 ) /*0x4c3545*/
       {
-        v10 = *(this + 13);
-        v11 = v9 - 1;
-        *(this + 15) = v11;
-        *(_WORD *)(v10 + 2 * v11) = 0;
-        (*(void (__thiscall **)(_DWORD *))(*this + 72))(this);
+        v10 = *(this + 13); /*0x4c3547*/
+        v11 = v9 - 1; /*0x4c354a*/
+        *(this + 15) = v11; /*0x4c354b*/
+        *(_WORD *)(v10 + 2 * v11) = 0; /*0x4c354e*/
+        (*(void (__thiscall **)(_DWORD *))(*this + 72))(this); /*0x4c3558*/
       }
-      return 1;
+      return 1; /*0x4c3558*/
     }
-    if ( C == 13 )
+    if ( C == 13 ) /*0x4c3447*/
     {
-      (*(void (__thiscall **)(_DWORD *))(*this + 84))(this);
-      return 0;
+      (*(void (__thiscall **)(_DWORD *))(*this + 84))(this); /*0x4c3535*/
+      return 0; /*0x4c353d*/
     }
-    v5 = Text::MeasureWidth(*(this + 13), 0);
-    if ( FontClass::GetPixelData(Instance, C) + v5 < *(this + 5) - 2 && *(this + 15) < *(this + 14) )
+    v5 = Text::MeasureWidth(*(this + 13), 0); /*0x4c345e*/
+    if ( FontClass::GetPixelData(Instance, C) + v5 < *(this + 5) - 2 && *(this + 15) < *(this + 14) ) /*0x4c347e*/
     {
-      if ( isgraph(C) )
+      if ( isgraph(C) ) /*0x4c3485*/
       {
-        if ( C != 32 )
+        if ( C != 32 ) /*0x4c349f*/
         {
 LABEL_11:
-          if ( (*(_BYTE *)(this + 12) & 8) != 0 && isalpha(C) )
-            v3 = toupper(C);
-          if ( (*(_BYTE *)(this + 12) & 2) != 0 && isdigit(v3)
+          if ( (*(_BYTE *)(this + 12) & 8) != 0 && isalpha(C) ) /*0x4c34b3*/
+            v3 = toupper(C); /*0x4c34c8*/
+          if ( (*(_BYTE *)(this + 12) & 2) != 0 && isdigit(v3) /*0x4c3506*/
             || (*(_BYTE *)(this + 12) & 1) != 0 && isalpha(v3)
             || (*(_BYTE *)(this + 12) & 4) != 0 && !isalnum(v3)
             || v3 == 32 )
           {
-            *(_WORD *)(*(this + 13) + 2 * *(this + 15)) = v3;
-            v6 = *(this + 13);
-            v7 = *(this + 15) + 1;
-            *(this + 15) = v7;
-            *(_WORD *)(v6 + 2 * v7) = 0;
-            (*(void (__thiscall **)(_DWORD *))(*this + 72))(this);
-            return 1;
+            *(_WORD *)(*(this + 13) + 2 * *(this + 15)) = v3; /*0x4c350e*/
+            v6 = *(this + 13); /*0x4c3515*/
+            v7 = *(this + 15) + 1; /*0x4c3518*/
+            *(this + 15) = v7; /*0x4c3519*/
+            *(_WORD *)(v6 + 2 * v7) = 0; /*0x4c351e*/
+            (*(void (__thiscall **)(_DWORD *))(*this + 72))(this); /*0x4c3526*/
+            return 1; /*0x4c352e*/
           }
-          return 1;
+          return 1; /*0x4c3506*/
         }
       }
-      else if ( C != 32 )
+      else if ( C != 32 ) /*0x4c3494*/
       {
-        return 1;
+        return 1; /*0x4c3494*/
       }
-      if ( *(this + 15) )
-        goto LABEL_11;
+      if ( *(this + 15) ) /*0x4c34a1*/
+        goto LABEL_11; /*0x4c34a6*/
     }
   }
-  return 1;
+  return 1; /*0x4c3529*/
 }
-
-/* ASM:
-C               = dword ptr  4
-
-push    ebx
-push    esi
-mov     esi, ecx
-push    edi
-mov     ecx, [esi+2Ch]
-call    TextRenderer__GetInstance
-mov     edi, [esp+0Ch+C]
-mov     ebx, eax
-test    edi, edi
-jz      loc_4C355B
-cmp     edi, 8
-jz      loc_4C3540
-cmp     edi, 0Dh
-jz      loc_4C3531
-mov     eax, [esi+34h]
-push    ebp
-push    0
-push    eax
-mov     ecx, ebx
-call    Text__MeasureWidth
-push    edi
-mov     ecx, ebx
-mov     ebp, eax
-call    FontClass__GetPixelData
-mov     ecx, [esi+14h]
-add     ebp, eax
-sub     ecx, 2
-cmp     ebp, ecx
-pop     ebp
-jge     loc_4C355B
-mov     edx, [esi+3Ch]
-mov     eax, [esi+38h]
-cmp     edx, eax
-jnb     loc_4C355B
-push    edi             ; C
-call    _isgraph
-add     esp, 4
-test    eax, eax
-jnz     short loc_4C349C
-cmp     edi, 20h ; ' '
-jnz     loc_4C355B
-jmp     short loc_4C34A1
-; ---------------------------------------------------------------------------
-
-loc_4C349C:                             ; CODE XREF: DropListClass__SetItemText+6F↑j
-cmp     edi, 20h ; ' '
-jnz     short loc_4C34AC
-
-loc_4C34A1:                             ; CODE XREF: DropListClass__SetItemText+7A↑j
-mov     eax, [esi+3Ch]
-test    eax, eax
-jz      loc_4C355B
-
-loc_4C34AC:                             ; CODE XREF: DropListClass__SetItemText+7F↑j
-test    byte ptr [esi+30h], 8
-jz      short loc_4C34CA
-push    edi             ; C
-call    _isalpha
-add     esp, 4
-test    eax, eax
-jz      short loc_4C34CA
-push    edi             ; C
-call    _toupper
-add     esp, 4
-mov     edi, eax
-
-loc_4C34CA:                             ; CODE XREF: DropListClass__SetItemText+90↑j
-; DropListClass__SetItemText+9D↑j
-test    byte ptr [esi+30h], 2
-jz      short loc_4C34DD
-push    edi             ; C
-call    _isdigit
-add     esp, 4
-test    eax, eax
-jnz     short loc_4C3508
-
-loc_4C34DD:                             ; CODE XREF: DropListClass__SetItemText+AE↑j
-test    byte ptr [esi+30h], 1
-jz      short loc_4C34F0
-push    edi             ; C
-call    _isalpha
-add     esp, 4
-test    eax, eax
-jnz     short loc_4C3508
-
-loc_4C34F0:                             ; CODE XREF: DropListClass__SetItemText+C1↑j
-test    byte ptr [esi+30h], 4
-jz      short loc_4C3503
-push    edi             ; C
-call    _isalnum
-add     esp, 4
-test    eax, eax
-jz      short loc_4C3508
-
-loc_4C3503:                             ; CODE XREF: DropListClass__SetItemText+D4↑j
-cmp     edi, 20h ; ' '
-jnz     short loc_4C355B
-
-loc_4C3508:                             ; CODE XREF: DropListClass__SetItemText+BB↑j
-; DropListClass__SetItemText+CE↑j ...
-mov     eax, [esi+3Ch]
-mov     ecx, [esi+34h]
-mov     [ecx+eax*2], di
-mov     eax, [esi+3Ch]
-mov     edx, [esi+34h]
-inc     eax
-mov     [esi+3Ch], eax
-mov     ecx, esi
-mov     word ptr [edx+eax*2], 0
-mov     eax, [esi]
-call    dword ptr [eax+48h]
-pop     edi
-pop     esi
-mov     al, 1
-pop     ebx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_4C3531:                             ; CODE XREF: DropListClass__SetItemText+27↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+54h]
-pop     edi
-pop     esi
-xor     al, al
-pop     ebx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_4C3540:                             ; CODE XREF: DropListClass__SetItemText+1E↑j
-mov     eax, [esi+3Ch]
-test    eax, eax
-jz      short loc_4C355B
-mov     ecx, [esi+34h]
-dec     eax
-mov     [esi+3Ch], eax
-mov     word ptr [ecx+eax*2], 0
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+48h]
-
-loc_4C355B:                             ; CODE XREF: DropListClass__SetItemText+15↑j
-; DropListClass__SetItemText+50↑j ...
-pop     edi
-pop     esi
-mov     al, 1
-pop     ebx
-retn    4
-*/
 } }
 // 0x4C3570
 namespace gamemd { int DropListClass::Close() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x4c3570
-__int16 __thiscall DropListClass::Close(const #72 **this)
+__int16 __thiscall DropListClass::_vt20(const wchar_t **this)
 {
-  const #72 *v2; // eax
+  const wchar_t *v2; // eax
 
-  v2 = *(this + 13);
-  *(this + 15) = 0;
-  if ( v2 )
-    *(this + 15) = (const #72 *)wcslen(v2);
-  return COMObject::ActivateGlobal(this);
+  v2 = *(this + 13); /*0x4c3573*/
+  *(this + 15) = 0; /*0x4c3576*/
+  if ( v2 ) /*0x4c357f*/
+    *(this + 15) = (const wchar_t *)wcslen(v2); /*0x4c358a*/
+  return COMObject::ActivateGlobal(this); /*0x4c3594*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     eax, [esi+34h]
-mov     dword ptr [esi+3Ch], 0
-test    eax, eax
-jz      short loc_4C358D
-push    eax             ; String
-call    _wcslen
-add     esp, 4
-mov     [esi+3Ch], eax
-
-loc_4C358D:                             ; CODE XREF: DropListClass__Close+F↑j
-mov     ecx, esi
-call    COMObject__ActivateGlobal
-pop     esi
-retn
-*/
 } }
 // 0x4C6B60
 namespace gamemd { void* SidebarClass::SetFlashEntry(int a1, int a2, int a3, void* a4) { return nullptr; } }
@@ -2097,129 +774,72 @@ namespace gamemd { void* SidebarClass::SetFlashEntry(int a1, int a2, int a3, voi
 // 0x4E1A60
 namespace gamemd { void* GadgetClass::QueryInterface(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall GadgetClass_ClearState(_BYTE *this, int a2)
+GadgetClass *__thiscall GadgetClass::QueryInterface(GadgetClass *Block, char a2)
 {
-  if ( !a2 && !*(this + 28) )
-    return 0;
-  *(this + 28) = 0;
-  return 1;
-}
-/* ASM:
-mov     eax, [esp+arg_0]
-test    eax, eax
-jnz     short loc_4E1564
-mov     al, [ecx+1Ch]
-test    al, al
-jnz     short loc_4E1564
-xor     eax, eax
-retn    4
-; ---------------------------------------------------------------------------
+  GadgetClass *v3; // eax
+  int v4; // eax
 
-loc_4E1564:                             ; CODE XREF: GadgetClass__ClearState+6↑j
-; GadgetClass__ClearState+D↑j
-mov     byte ptr [ecx+1Ch], 0
-mov     eax, 1
-retn    4
-*/
-    return nullptr; // TODO stub - translate quarantined IDA block above
+  *(_DWORD *)Block->__pad_0 = &vt_GadgetClass; /*0x4e1a65*/
+  v3 = (GadgetClass *)MEMORY[0x8B3E90]; /*0x4e1a6b*/
+  if ( Block == (GadgetClass *)MEMORY[0x8B3E90] ) /*0x4e1a72*/
+  {
+    v4 = *((_DWORD *)Block + 8); /*0x4e1a74*/
+    BYTE1(v4) &= ~1u; /*0x4e1a77*/
+    *((_DWORD *)Block + 8) = v4; /*0x4e1a7a*/
+    v3 = 0; /*0x4e1a7d*/
+    MEMORY[0x8B3E90] = 0; /*0x4e1a7f*/
+  }
+  if ( Block == (GadgetClass *)MEMORY[0x8B3E88] ) /*0x4e1a8a*/
+    MEMORY[0x8B3E88] = 0; /*0x4e1a8c*/
+  if ( Block == (GadgetClass *)MEMORY[0x8B3E8C] ) /*0x4e1a98*/
+    MEMORY[0x8B3E8C] = 0; /*0x4e1a9a*/
+  if ( Block == v3 ) /*0x4e1aa2*/
+    MEMORY[0x8B3E90] = 0; /*0x4e1aa4*/
+  LinkClass::Destruct(Block); /*0x4e1aac*/
+  if ( (a2 & 1) != 0 ) /*0x4e1ab6*/
+    __3_YAXPAX_Z(Block); /*0x4e1ab9*/
+  return Block; /*0x4e1ac3*/
+}
 } }
 // 0x5005B0
 namespace gamemd { int SidebarClass::MarkTabForRebuild(int a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_5005B0(_BYTE *this, int a2, char a3, int a4)
+char __thiscall SidebarClass::MarkTabForRebuild(_BYTE *this, int a2, IUnknown *aP2, ControlClass *aP3)
 {
   char result; // al
 
-  result = a2 - 1;
-  switch ( a2 )
+  result = a2 - 1; /*0x5005b5*/
+  switch ( a2 ) /*0x5005c5*/
   {
-    case 1:
-    case 40:
+    case 1: /*0x5005c5*/
+    case 40: /*0x5005c5*/
       goto LABEL_3;
-    case 2:
-    case 3:
-      *(this + 21456) = 1;
-      break;
-    case 6:
-    case 7:
-      if ( a4 == 5 )
-        *(this + 21464) = 1;
+    case 2: /*0x5005c5*/
+    case 3: /*0x5005c5*/
+      *(this + 21456) = 1; /*0x50060b*/
+      break; /*0x50060b*/
+    case 6: /*0x5005c5*/
+    case 7: /*0x5005c5*/
+      if ( aP3 == (ControlClass *)5 ) /*0x5005f3*/
+        *(this + 21464) = 1; /*0x5005f5*/
       else
-        *(this + 21460) = 1;
-      break;
-    case 15:
-    case 16:
-      *(this + 21457) = 1;
+        *(this + 21460) = 1; /*0x500600*/
+      break; /*0x5005fd*/
+    case 15: /*0x5005c5*/
+    case 16: /*0x5005c5*/
+      *(this + 21457) = 1; /*0x5005cc*/
 LABEL_3:
-      result = a3;
-      if ( a3 )
-        *(this + 21459) = 1;
+      result = (char)aP2; /*0x5005d2*/
+      if ( (_BYTE)aP2 ) /*0x5005d8*/
+        *(this + 21459) = 1; /*0x5005da*/
       else
-        *(this + 21458) = 1;
-      break;
+        *(this + 21458) = 1; /*0x5005e4*/
+      break; /*0x5005e1*/
     default:
       return result;
   }
-  return result;
+  return result; /*0x5005e0*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-push    ebx
-dec     eax             ; switch 40 cases
-cmp     eax, 27h
-ja      short def_5005C5 ; jumptable 005005C5 default case, cases 4,5,8-14,17-39
-mov     dl, 1
-xor     ebx, ebx
-mov     bl, ds:byte_50062C[eax]
-jmp     ds:jpt_5005C5[ebx*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_5005CC:                             ; CODE XREF: SidebarClass__MarkTabForRebuild+15↑j
-; DATA XREF: .text:jpt_5005C5↓o
-mov     [ecx+53D1h], dl ; jumptable 005005C5 cases 15,16
-
-loc_5005D2:                             ; CODE XREF: SidebarClass__MarkTabForRebuild+15↑j
-; DATA XREF: .text:jpt_5005C5↓o
-mov     al, [esp+4+arg_4] ; jumptable 005005C5 cases 1,40
-test    al, al
-jz      short loc_5005E4
-mov     [ecx+53D3h], dl
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_5005E4:                             ; CODE XREF: SidebarClass__MarkTabForRebuild+28↑j
-mov     [ecx+53D2h], dl
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_5005EE:                             ; CODE XREF: SidebarClass__MarkTabForRebuild+15↑j
-; DATA XREF: .text:jpt_5005C5↓o
-cmp     [esp+4+arg_8], 5 ; jumptable 005005C5 cases 6,7
-jnz     short loc_500600
-mov     byte ptr [ecx+53D8h], 1
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_500600:                             ; CODE XREF: SidebarClass__MarkTabForRebuild+43↑j
-mov     byte ptr [ecx+53D4h], 1
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_50060B:                             ; CODE XREF: SidebarClass__MarkTabForRebuild+15↑j
-; DATA XREF: .text:jpt_5005C5↓o
-mov     byte ptr [ecx+53D0h], 1 ; jumptable 005005C5 cases 2,3
-
-def_5005C5:                             ; CODE XREF: SidebarClass__MarkTabForRebuild+9↑j
-; SidebarClass__MarkTabForRebuild+15↑j
-; DATA XREF: ...
-pop     ebx             ; jumptable 005005C5 default case, cases 4,5,8-14,17-39
-retn    0Ch
-*/
 } }
 // 0x500700
 namespace gamemd { int SidebarClass::getTypeProductionCount(int a1, int a2, int a3) {
@@ -2228,254 +848,123 @@ char __thiscall sub_500700(_BYTE *this, int a2, char a3, int a4)
 {
   char result; // al
 
-  switch ( a2 )
+  switch ( a2 ) /*0x500712*/
   {
-    case 1:
-    case 40:
-      if ( a3 )
-        result = *(this + 21459);
+    case 1: /*0x500712*/
+    case 40: /*0x500712*/
+      if ( a3 ) /*0x500728*/
+        result = *(this + 21459); /*0x50072a*/
       else
-        result = *(this + 21458);
-      break;
-    case 2:
-    case 3:
-      result = *(this + 21456);
-      break;
-    case 6:
-    case 7:
-      if ( a4 == 5 )
-        result = *(this + 21464);
+        result = *(this + 21458); /*0x500733*/
+      break; /*0x500730*/
+    case 2: /*0x500712*/
+    case 3: /*0x500712*/
+      result = *(this + 21456); /*0x500755*/
+      break; /*0x50075b*/
+    case 6: /*0x500712*/
+    case 7: /*0x500712*/
+      if ( a4 == 5 ) /*0x500741*/
+        result = *(this + 21464); /*0x500743*/
       else
-        result = *(this + 21460);
-      break;
-    case 15:
-    case 16:
-      result = *(this + 21457);
-      break;
+        result = *(this + 21460); /*0x50074c*/
+      break; /*0x500749*/
+    case 15: /*0x500712*/
+    case 16: /*0x500712*/
+      result = *(this + 21457); /*0x500719*/
+      break; /*0x50071f*/
     default:
-      result = 0;
-      break;
+      result = 0; /*0x50075e*/
+      break; /*0x50075e*/
   }
-  return result;
+  return result; /*0x50071f*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-dec     eax             ; switch 40 cases
-cmp     eax, 27h
-ja      short def_500712 ; jumptable 00500712 default case, cases 4,5,8-14,17-39
-xor     edx, edx
-mov     dl, ds:byte_500778[eax]
-jmp     ds:jpt_500712[edx*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_500719:                             ; CODE XREF: SidebarClass__getTypeProductionCount+12↑j
-; DATA XREF: .text:jpt_500712↓o
-mov     al, [ecx+53D1h] ; jumptable 00500712 cases 15,16
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_500722:                             ; CODE XREF: SidebarClass__getTypeProductionCount+12↑j
-; DATA XREF: .text:jpt_500712↓o
-mov     al, [esp+arg_4] ; jumptable 00500712 cases 1,40
-test    al, al
-jz      short loc_500733
-mov     al, [ecx+53D3h]
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_500733:                             ; CODE XREF: SidebarClass__getTypeProductionCount+28↑j
-mov     al, [ecx+53D2h]
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_50073C:                             ; CODE XREF: SidebarClass__getTypeProductionCount+12↑j
-; DATA XREF: .text:jpt_500712↓o
-cmp     [esp+arg_8], 5  ; jumptable 00500712 cases 6,7
-jnz     short loc_50074C
-mov     al, [ecx+53D8h]
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_50074C:                             ; CODE XREF: SidebarClass__getTypeProductionCount+41↑j
-mov     al, [ecx+53D4h]
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_500755:                             ; CODE XREF: SidebarClass__getTypeProductionCount+12↑j
-; DATA XREF: .text:jpt_500712↓o
-mov     al, [ecx+53D0h] ; jumptable 00500712 cases 2,3
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-def_500712:                             ; CODE XREF: SidebarClass__getTypeProductionCount+8↑j
-; SidebarClass__getTypeProductionCount+12↑j
-; DATA XREF: ...
-xor     al, al          ; jumptable 00500712 default case, cases 4,5,8-14,17-39
-retn    0Ch
-*/
 } }
 // 0x536050
 namespace gamemd { void* SelectTeamCommand::Read() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-#72 *__thiscall SelectTeamCommand::Read(const #72 **this)
+wchar_t *__thiscall SelectTeamCommand::_vt04(const wchar_t **this)
 {
-  #72 *StringCSF; // eax
+  wchar_t *StringCSF; // eax
+  const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  StringCSF = GetStringCSF((#72 *)aTxtSelectTeamD, 0, g_Str_File_Init_CPP, 6296);
-  swprintf((#72 *const)&dword_A8ED54[576], StringCSF);
-  return (#72 *)&dword_A8ED54[576];
+  v3 = *(this + 1); /*0x536055*/
+  StringCSF = GetStringCSF(MEMORY[0x8270F8], 0, g_Str_File_Init_CPP, 6296); /*0x536065*/
+  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x536070*/
+  return &MEMORY[0xA8F654]; /*0x53607d*/
 }
-
-/* ASM:
-mov     eax, [ecx+4]
-xor     edx, edx
-push    eax             ; Format
-push    1898h           ; int
-push    offset g_Str_File_Init_CPP ; "D:\\ra2mdpost\\Init.CPP"
-mov     ecx, offset aTxtSelectTeamD ; "TXT_SELECT_TEAM_DESC"
-call    GetStringCSF
-push    eax             ; BufferCount
-push    (offset dword_A8ED54+900h) ; Buffer
-call    _swprintf
-add     esp, 0Ch
-mov     eax, (offset dword_A8ED54+900h)
-retn
-*/
 } }
 // 0x536080
 namespace gamemd { int SelectTeamCommand::Do(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SelectTeamCommand::_vt08(char **this, int a2)
 {
-  return TacticalClass::SetObserverView(*(this + 1));
+  return TacticalClass::SetObserverView(*(this + 1)); /*0x536088*/
 }
-
-/* ASM:
-mov     ecx, [ecx+4]
-call    TacticalClass__SetObserverView
-retn    4
-*/
 } }
 // 0x536140
 namespace gamemd { void* AddTeamCommand::Read() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-#72 *__thiscall AddTeamCommand::Read(const #72 **this)
+wchar_t *__thiscall AddTeamCommand::_vt04(const wchar_t **this)
 {
-  #72 *StringCSF; // eax
+  wchar_t *StringCSF; // eax
+  const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  StringCSF = GetStringCSF((#72 *)aTxtAddSelectTe_0, 0, g_Str_File_Init_CPP, 6330);
-  swprintf((#72 *const)&dword_A8ED54[576], StringCSF);
-  return (#72 *)&dword_A8ED54[576];
+  v3 = *(this + 1); /*0x536145*/
+  StringCSF = GetStringCSF(MEMORY[0x82715C], 0, g_Str_File_Init_CPP, 6330); /*0x536155*/
+  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x536160*/
+  return &MEMORY[0xA8F654]; /*0x53616d*/
 }
-
-/* ASM:
-mov     eax, [ecx+4]
-xor     edx, edx
-push    eax             ; Format
-push    18BAh           ; int
-push    offset g_Str_File_Init_CPP ; "D:\\ra2mdpost\\Init.CPP"
-mov     ecx, offset aTxtAddSelectTe_0 ; "TXT_ADD_SELECT_TEAM_DESC"
-call    GetStringCSF
-push    eax             ; BufferCount
-push    (offset dword_A8ED54+900h) ; Buffer
-call    _swprintf
-add     esp, 0Ch
-mov     eax, (offset dword_A8ED54+900h)
-retn
-*/
 } }
 // 0x536170
 namespace gamemd { int AddTeamCommand::Do(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall AddTeamCommand::_vt08(char **this, int a2)
 {
-  return SquadClass::SelectAllMembers(*(this + 1));
+  return SquadClass::SelectAllMembers(*(this + 1)); /*0x536178*/
 }
-
-/* ASM:
-mov     ecx, [ecx+4]
-call    SquadClass__SelectAllMembers
-retn    4
-*/
 } }
 // 0x536230
 namespace gamemd { void* CenterTeamCommand::Read() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-#72 *__thiscall CenterTeamCommand::Read(const #72 **this)
+wchar_t *__thiscall CenterTeamCommand::_vt04(const wchar_t **this)
 {
-  #72 *StringCSF; // eax
+  wchar_t *StringCSF; // eax
+  const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  StringCSF = GetStringCSF((#72 *)aTxtCenterTeamD, 0, g_Str_File_Init_CPP, 6365);
-  swprintf((#72 *const)&dword_A8ED54[576], StringCSF);
-  return (#72 *)&dword_A8ED54[576];
+  v3 = *(this + 1); /*0x536235*/
+  StringCSF = GetStringCSF(MEMORY[0x8271C0], 0, g_Str_File_Init_CPP, 6365); /*0x536245*/
+  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x536250*/
+  return &MEMORY[0xA8F654]; /*0x53625d*/
 }
-
-/* ASM:
-mov     eax, [ecx+4]
-xor     edx, edx
-push    eax             ; Format
-push    18DDh           ; int
-push    offset g_Str_File_Init_CPP ; "D:\\ra2mdpost\\Init.CPP"
-mov     ecx, offset aTxtCenterTeamD ; "TXT_CENTER_TEAM_DESC"
-call    GetStringCSF
-push    eax             ; BufferCount
-push    (offset dword_A8ED54+900h) ; Buffer
-call    _swprintf
-add     esp, 0Ch
-mov     eax, (offset dword_A8ED54+900h)
-retn
-*/
 } }
 // 0x536260
 namespace gamemd { int CenterTeamCommand::Do(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CenterTeamCommand::_vt08(char **this, int a2)
 {
-  return TacticalClass::ResetView(*(this + 1));
+  return TacticalClass::ResetView(*(this + 1)); /*0x536268*/
 }
-
-/* ASM:
-mov     ecx, [ecx+4]
-call    TacticalClass__ResetView
-retn    4
-*/
 } }
 // 0x536320
 namespace gamemd { void* TauntCommandClass::Read() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-#72 *__thiscall TauntCommandClass::Read(const #72 **this)
+wchar_t *__thiscall TauntCommandClass::_vt04(const wchar_t **this)
 {
-  #72 *StringCSF; // eax
+  wchar_t *StringCSF; // eax
+  const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  StringCSF = GetStringCSF((#72 *)aTxtTauntDesc, 0, g_Str_File_Init_CPP, 6409);
-  swprintf((#72 *const)&dword_A8ED54[576], StringCSF);
-  return (#72 *)&dword_A8ED54[576];
+  v3 = *(this + 1); /*0x536325*/
+  StringCSF = GetStringCSF(MEMORY[0x827224], 0, g_Str_File_Init_CPP, 6409); /*0x536335*/
+  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x536340*/
+  return &MEMORY[0xA8F654]; /*0x53634d*/
 }
-
-/* ASM:
-mov     eax, [ecx+4]
-xor     edx, edx
-push    eax             ; Format
-push    1909h           ; int
-push    offset g_Str_File_Init_CPP ; "D:\\ra2mdpost\\Init.CPP"
-mov     ecx, offset aTxtTauntDesc ; "TXT_TAUNT_DESC"
-call    GetStringCSF
-push    eax             ; BufferCount
-push    (offset dword_A8ED54+900h) ; Buffer
-call    _swprintf
-add     esp, 0Ch
-mov     eax, (offset dword_A8ED54+900h)
-retn
-*/
 } }
 // 0x536350
 namespace gamemd { int TauntCommandClass::Do(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x536350
-char __thiscall TauntCommandClass::Do(_BYTE *this, int a2)
+char __thiscall TauntCommandClass::_vt08(_BYTE *this, int a2)
 {
-  int v2; // eax
+  DWORD Time; // eax
   int v4; // eax
   char v5; // cl
   int v6; // ecx
@@ -2483,9 +972,9 @@ char __thiscall TauntCommandClass::Do(_BYTE *this, int a2)
   int v8; // esi
   int SendCount; // ebp
   int v10; // edi
-  const #72 *v11; // ebx
+  const wchar_t *v11; // ebx
   int ConnectionSpeed; // esi
-  const #72 *Class; // eax
+  const wchar_t *Class; // eax
   int PlayerByID; // eax
   char LinkedIndex; // al
   int i; // [esp+4h] [ebp-1D0h]
@@ -2497,289 +986,89 @@ char __thiscall TauntCommandClass::Do(_BYTE *this, int a2)
   int v23; // [esp+3Dh] [ebp-197h]
   int v24; // [esp+41h] [ebp-193h]
 
-  LOBYTE(v2) = MEMORY[0x87F7E8][536212];
-  if ( MEMORY[0x87F7E8][536212] == 3 || MEMORY[0x87F7E8][536212] == 4 )
+  LOBYTE(Time) = MEMORY[0xA8B238][0]; /*0x536350*/
+  if ( MEMORY[0xA8B238][0] == 3 || MEMORY[0xA8B238][0] == 4 ) /*0x536366*/
   {
-    LOBYTE(v2) = MEMORY[0x87F7E8][536404];
-    if ( !MEMORY[0x87F7E8][536404] )
+    LOBYTE(Time) = MEMORY[0xA8B538]; /*0x53636c*/
+    if ( !MEMORY[0xA8B538] ) /*0x536373*/
     {
-      v2 = ((int (*)(void))timeGetTime)();
-      if ( (dword_825C88 == -1 || v2 - dword_825C88 > 5000)
-        && (LOBYTE(MEMORY[0x87F7E8][538186]) && MEMORY[0x87F7E8][536212] == 3
-         || BYTE1(MEMORY[0x87F7E8][538186]) && MEMORY[0x87F7E8][536212] == 4) )
+      Time = timeGetTime(); /*0x536379*/
+      if ( (dword_825C88 == -1 || (int)(Time - dword_825C88) > 5000) /*0x5363c0*/
+        && ((_BYTE)MEMORY[0xA8D110] && MEMORY[0xA8B238][0] == 3 || BYTE1(MEMORY[0xA8D110]) && MEMORY[0xA8B238][0] == 4) )
       {
-        dword_825C88 = v2;
-        v19 = 29;
-        strcpy(v20, ToWideStringChar(*(char **)MEMORY[0x87F7E8][538788]));
-        v23 = MEMORY[0x87F7E8][536299];
-        v4 = WideString::Hash((#72 *)&MEMORY[0x87F7E8][538506]);
-        v5 = *(this + 4);
-        v24 = v4;
-        LOBYTE(v6) = (16 * *(_BYTE *)(*(_DWORD *)MEMORY[0x87F7E8][538788] + 75))
-                   ^ ((16 * *(_BYTE *)(*(_DWORD *)MEMORY[0x87F7E8][538788] + 75))
+        dword_825C88 = Time; /*0x5363c6*/
+        v19 = 29; /*0x5363d1*/
+        strcpy(v20, ToWideStringChar(*(char **)MEMORY[0xA8DA78])); /*0x5363fb*/
+        v23 = MEMORY[0xA8B394]; /*0x53640a*/
+        v4 = WideString::Hash(MEMORY[0xA8D610]); /*0x536413*/
+        v5 = *(this + 4); /*0x53641e*/
+        v24 = v4; /*0x536421*/
+        LOBYTE(v6) = (16 * *(_BYTE *)(*(_DWORD *)MEMORY[0xA8DA78] + 75)) /*0x536432*/
+                   ^ ((16 * *(_BYTE *)(*(_DWORD *)MEMORY[0xA8DA78] + 75))
                     ^ v5)
                    & 0xF;
-        v22 = v6;
-        PlayTauntClass(v6);
-        v7 = 0;
-        v21 = 0;
-        v18 = MEMORY[0x87F7E8][524948];
-        for ( i = 0; v7 < v18; i = v7 )
+        v22 = v6; /*0x536434*/
+        PlayTauntClass(v6); /*0x536438*/
+        v7 = 0; /*0x536442*/
+        v21 = 0; /*0x536446*/
+        v18 = HouseClass_Count; /*0x53644b*/
+        for ( i = 0; v7 < v18; i = v7 ) /*0x536453*/
         {
-          v8 = *(_DWORD *)(MEMORY[0x87F7E8][524945] + 4 * v7);
-          if ( v8 )
+          v8 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v7]; /*0x536460*/
+          if ( v8 ) /*0x536465*/
           {
-            if ( *(_BYTE *)(*(_DWORD *)(v8 + 52) + 421) )
+            if ( *(_BYTE *)(*(_DWORD *)(v8 + 52) + 421) ) /*0x53646e*/
             {
-              if ( *((_BYTE *)&MEMORY[0x87F7E8][538184] + v7) )
+              if ( *((_BYTE *)&MEMORY[0xA8D108] + v7) ) /*0x53647c*/
               {
-                SendCount = Network::GetSendCount(&MEMORY[0x87F7E8][539766]);
-                v10 = 0;
-                if ( SendCount > 0 )
+                SendCount = Network::GetSendCount(MEMORY[0xA8E9C0]); /*0x536494*/
+                v10 = 0; /*0x536496*/
+                if ( SendCount > 0 ) /*0x53649a*/
                 {
-                  v11 = (const #72 *)(v8 + 90154);
-                  do
+                  v11 = (const wchar_t *)(v8 + 90154); /*0x5364a0*/
+                  do /*0x53651a*/
                   {
-                    ConnectionSpeed = Network::GetConnectionSpeed(&MEMORY[0x87F7E8][539766], v10);
-                    Class = (const #72 *)Network::GetClass(&MEMORY[0x87F7E8][539766], ConnectionSpeed);
-                    if ( !wcscmp(v11, Class) )
+                    ConnectionSpeed = Network::GetConnectionSpeed(MEMORY[0xA8E9C0], v10); /*0x5364b1*/
+                    Class = (const wchar_t *)Network::GetClass(MEMORY[0xA8E9C0], ConnectionSpeed); /*0x5364b9*/
+                    if ( !wcscmp(v11, Class) ) /*0x5364c0*/
                     {
-                      PlayerByID = Network::FindPlayerByID(&MEMORY[0x87F7E8][539766], ConnectionSpeed);
-                      if ( LOBYTE(MEMORY[0x87F7E8][538862]) )
+                      PlayerByID = Network::FindPlayerByID(MEMORY[0xA8E9C0], ConnectionSpeed); /*0x5364d2*/
+                      if ( MEMORY[0xA8DBA0] ) /*0x5364df*/
                       {
-                        LinkedIndex = Factory::GetLinkedIndex(&dword_A8ED54[121183], ConnectionSpeed);
-                        v21 |= LinkedIndex;
+                        LinkedIndex = Factory::GetLinkedIndex(&g_NetworkEventQueue, ConnectionSpeed); /*0x5364e7*/
+                        v21 |= LinkedIndex; /*0x5364ec*/
                       }
                       else
                       {
-                        Network::SendMessage((int)&MEMORY[0x87F7E8][539766], (int)&v19, 455, 1, PlayerByID, 0, 0);
-                        Network::ReceiveLoop(&MEMORY[0x87F7E8][539766]);
+                        Network::SendMessage((int)MEMORY[0xA8E9C0], (int)&v19, 455, 1, PlayerByID, 0, 0); /*0x536508*/
+                        Network::ReceiveLoop(MEMORY[0xA8E9C0]); /*0x536512*/
                       }
                     }
-                    ++v10;
+                    ++v10; /*0x536517*/
                   }
-                  while ( v10 < SendCount );
-                  v7 = i;
+                  while ( v10 < SendCount ); /*0x53651a*/
+                  v7 = i; /*0x53651c*/
                 }
               }
             }
           }
-          ++v7;
+          ++v7; /*0x536524*/
         }
-        LOBYTE(v2) = MEMORY[0x87F7E8][538862];
-        if ( LOBYTE(MEMORY[0x87F7E8][538862]) )
+        LOBYTE(Time) = MEMORY[0xA8DBA0]; /*0x536532*/
+        if ( MEMORY[0xA8DBA0] ) /*0x53653b*/
         {
-          LOBYTE(v2) = v21;
-          if ( v21 )
+          LOBYTE(Time) = v21; /*0x53653d*/
+          if ( v21 ) /*0x536543*/
           {
-            Network::SendMessage(
-              (int)&MEMORY[0x87F7E8][539766],
-              (int)&v19,
-              455,
-              1,
-              *(_DWORD *)MEMORY[0x87F7E8][538788] + 40,
-              0,
-              0);
-            LOBYTE(v2) = Network::ReceiveLoop(&MEMORY[0x87F7E8][539766]);
+            Network::SendMessage((int)MEMORY[0xA8E9C0], (int)&v19, 455, 1, *(_DWORD *)MEMORY[0xA8DA78] + 40, 0, 0); /*0x536566*/
+            LOBYTE(Time) = Network::ReceiveLoop(MEMORY[0xA8E9C0]); /*0x536570*/
           }
         }
       }
     }
   }
-  return v2;
+  return Time; /*0x536575*/
 }
-
-/* ASM:
-mov     eax, ds:0A8B238h
-sub     esp, 1D0h
-cmp     eax, 3
-push    ebx
-mov     ebx, ecx
-jz      short loc_53636C
-cmp     eax, 4
-jnz     loc_536575
-
-loc_53636C:                             ; CODE XREF: TauntCommandClass__Do+11↑j
-mov     eax, ds:0A8B538h
-test    eax, eax
-jnz     loc_536575
-call    ds:__imp_timeGetTime
-mov     ecx, dword_825C88
-cmp     ecx, 0FFFFFFFFh
-jz      short loc_53639A
-mov     edx, eax
-sub     edx, ecx
-cmp     edx, 1388h
-jle     loc_536575
-
-loc_53639A:                             ; CODE XREF: TauntCommandClass__Do+38↑j
-mov     cl, ds:0A8D110h
-test    cl, cl
-mov     ecx, ds:0A8B238h
-jz      short loc_5363AF
-cmp     ecx, 3
-jz      short loc_5363C6
-
-loc_5363AF:                             ; CODE XREF: TauntCommandClass__Do+58↑j
-mov     dl, ds:0A8D111h
-test    dl, dl
-jz      loc_536575
-cmp     ecx, 4
-jnz     loc_536575
-
-loc_5363C6:                             ; CODE XREF: TauntCommandClass__Do+5D↑j
-mov     dword_825C88, eax
-mov     eax, ds:0A8DA78h
-push    esi
-mov     [esp+1D8h+var_1C8], 1Dh
-mov     ecx, [eax]
-push    edi
-call    ToWideStringChar
-mov     edi, eax
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-lea     edx, [esp+1DCh+var_1C4]
-repne scasb
-not     ecx
-sub     edi, ecx
-mov     eax, ecx
-mov     esi, edi
-mov     edi, edx
-shr     ecx, 2
-rep movsd
-mov     ecx, eax
-and     ecx, 3
-rep movsb
-mov     ecx, ds:0A8B394h
-mov     [esp+1DCh+var_197], ecx
-mov     ecx, 0A8D610h   ; Source
-call    WideString__Hash
-mov     edx, ds:0A8DA78h
-mov     cl, [ebx+4]
-mov     [esp+1DCh+var_193], eax
-mov     eax, [edx]
-mov     al, [eax+4Bh]
-shl     al, 4
-xor     cl, al
-and     cl, 0Fh
-xor     cl, al
-mov     [esp+1DCh+var_198], cl
-call    PlayTauntClass
-mov     eax, ds:0A80238h
-xor     ebx, ebx
-test    eax, eax
-mov     [esp+1DCh+var_199], 0
-mov     [esp+1DCh+var_1CC], eax
-mov     [esp+1DCh+var_1D0], ebx
-jle     loc_536532
-push    ebp
-
-loc_53645A:                             ; CODE XREF: TauntCommandClass__Do+1DB↓j
-mov     ecx, ds:0A8022Ch
-mov     esi, [ecx+ebx*4]
-test    esi, esi
-jz      loc_536520
-mov     edx, [esi+34h]
-mov     al, [edx+1A5h]
-test    al, al
-jz      loc_536520
-mov     al, [ebx+0A8D108h]
-test    al, al
-jz      loc_536520
-mov     ecx, 0A8E9C0h
-call    Network__GetSendCount
-mov     ebp, eax
-xor     edi, edi
-test    ebp, ebp
-jle     loc_536520
-lea     ebx, [esi+1602Ah]
-
-loc_5364A6:                             ; CODE XREF: TauntCommandClass__Do+1CA↓j
-push    edi
-mov     ecx, 0A8E9C0h
-call    Network__GetConnectionSpeed
-mov     esi, eax
-mov     ecx, 0A8E9C0h
-push    esi
-call    Network__GetClass
-push    eax             ; String2
-push    ebx             ; String1
-call    _wcscmp
-add     esp, 8
-test    eax, eax
-jnz     short loc_536517
-push    esi
-mov     ecx, 0A8E9C0h
-call    Network__FindPlayerByID
-mov     cl, ds:0A8DBA0h
-test    cl, cl
-jz      short loc_5364F2
-push    esi
-mov     ecx, (offset dword_A8ED54+7657Ch)
-call    Factory__GetLinkedIndex
-or      [esp+1E0h+var_199], al
-jmp     short loc_536517
-; ---------------------------------------------------------------------------
-
-loc_5364F2:                             ; CODE XREF: TauntCommandClass__Do+18F↑j
-push    0
-push    0
-push    eax
-push    1
-lea     eax, [esp+1F0h+var_1C8]
-push    1C7h
-push    eax
-mov     ecx, 0A8E9C0h
-call    Network__SendMessage
-mov     ecx, 0A8E9C0h
-call    Network__ReceiveLoop
-
-loc_536517:                             ; CODE XREF: TauntCommandClass__Do+17A↑j
-; TauntCommandClass__Do+1A0↑j
-inc     edi
-cmp     edi, ebp
-jl      short loc_5364A6
-mov     ebx, [esp+1E0h+var_1D0]
-
-loc_536520:                             ; CODE XREF: TauntCommandClass__Do+115↑j
-; TauntCommandClass__Do+126↑j ...
-mov     eax, [esp+1E0h+var_1CC]
-inc     ebx
-cmp     ebx, eax
-mov     [esp+1E0h+var_1D0], ebx
-jl      loc_53645A
-pop     ebp
-
-loc_536532:                             ; CODE XREF: TauntCommandClass__Do+103↑j
-mov     al, ds:0A8DBA0h
-pop     edi
-test    al, al
-pop     esi
-jz      short loc_536575
-mov     al, [esp+1D4h+var_199]
-test    al, al
-jz      short loc_536575
-mov     ecx, ds:0A8DA78h
-push    0
-push    0
-lea     eax, [esp+1DCh+var_1C8]
-mov     edx, [ecx]
-mov     ecx, 0A8E9C0h
-add     edx, 28h ; '('
-push    edx
-push    1
-push    1C7h
-push    eax
-call    Network__SendMessage
-mov     ecx, 0A8E9C0h
-call    Network__ReceiveLoop
-
-loc_536575:                             ; CODE XREF: TauntCommandClass__Do+16↑j
-; TauntCommandClass__Do+23↑j ...
-pop     ebx
-add     esp, 1D0h
-retn    4
-*/
 } }
 // 0x556EB0
 namespace gamemd { void CheckListClass::initList() {
@@ -2788,216 +1077,74 @@ void __thiscall CheckListClass::sub_556EB0(int this)
 {
   void *v2; // eax
 
-  v2 = *(void **)(this + 4);
-  *(_DWORD *)(this + 16) = 0;
-  if ( v2 && *(_BYTE *)(this + 13) )
+  v2 = *(void **)(this + 4); /*0x556eb6*/
+  *(_DWORD *)(this + 16) = 0; /*0x556eb9*/
+  if ( v2 && *(_BYTE *)(this + 13) ) /*0x556ec0*/
   {
-    __3_YAXPAX_Z(v2);
-    *(_DWORD *)(this + 4) = 0;
+    __3_YAXPAX_Z(v2); /*0x556ec6*/
+    *(_DWORD *)(this + 4) = 0; /*0x556ece*/
   }
-  *(_BYTE *)(this + 13) = 0;
-  *(_DWORD *)(this + 8) = 0;
+  *(_BYTE *)(this + 13) = 0; /*0x556ed1*/
+  *(_DWORD *)(this + 8) = 0; /*0x556ed4*/
 }
-
-/* ASM:
-push    ebx
-push    esi
-mov     esi, ecx
-xor     ebx, ebx
-mov     eax, [esi+4]
-mov     [esi+10h], ebx
-cmp     eax, ebx
-jz      short loc_556ED1
-cmp     [esi+0Dh], bl
-jz      short loc_556ED1
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [esi+4], ebx
-
-loc_556ED1:                             ; CODE XREF: CheckListClass__initList+E↑j
-; CheckListClass__initList+13↑j
-mov     [esi+0Dh], bl
-mov     [esi+8], ebx
-pop     esi
-pop     ebx
-retn
-*/
 } }
 // 0x556EE0
 namespace gamemd { int CheckListClass::addItem(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall CheckListClass::sub_556EE0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) )
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2;
+  if ( *(_BYTE *)(this + 12) ) /*0x556ee0*/
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x556ef5*/
   else
-    return 0;
+    return 0; /*0x556ee7*/
 }
-
-/* ASM:
-mov     al, [ecx+0Ch]
-test    al, al
-jnz     short loc_556EEC
-xor     eax, eax
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_556EEC:                             ; CODE XREF: CheckListClass__addItem+5↑j
-mov     eax, [esp+arg_0]
-mov     edx, [ecx+4]
-sub     eax, edx
-shr     eax, 2
-retn    4
-*/
 } }
 // 0x557090
 namespace gamemd { int CheckListClass::removeItem(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x557090
-char __thiscall CheckListClass::removeItem(void *this, int a2, _DWORD *a3)
+char __thiscall CheckListClass::sub_557090(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
   int v5; // ecx
   int i; // eax
   int v7; // eax
 
-  if ( a2 )
+  if ( a2 ) /*0x55709c*/
   {
-    *((_BYTE *)this + 12) = 0;
-    if ( a3 )
-      v4 = a3;
+    *((_BYTE *)this + 12) = 0; /*0x5570a2*/
+    if ( a3 ) /*0x5570a8*/
+      v4 = a3; /*0x5570be*/
     else
-      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
-    *((_BYTE *)this + 12) = 1;
-    if ( !v4 )
-      return 0;
-    if ( *((_DWORD *)this + 1) )
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5570ba*/
+    *((_BYTE *)this + 12) = 1; /*0x5570c2*/
+    if ( !v4 ) /*0x5570c6*/
+      return 0; /*0x55713a*/
+    if ( *((_DWORD *)this + 1) ) /*0x5570c8*/
     {
-      v5 = *((_DWORD *)this + 2);
-      if ( a2 < v5 )
-        v5 = a2;
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
-        ++i;
-      if ( *((_BYTE *)this + 13) )
+      v5 = *((_DWORD *)this + 2); /*0x5570cf*/
+      if ( a2 < v5 ) /*0x5570d4*/
+        v5 = a2; /*0x5570d6*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5570dc*/
+        ++i; /*0x5570e1*/
+      if ( *((_BYTE *)this + 13) ) /*0x5570ee*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1));
-        *((_DWORD *)this + 1) = 0;
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5570f9*/
+        *((_DWORD *)this + 1) = 0; /*0x557101*/
       }
     }
-    *((_DWORD *)this + 1) = v4;
-    *((_DWORD *)this + 2) = a2;
-    *((_BYTE *)this + 13) = a3 == 0;
+    *((_DWORD *)this + 1) = v4; /*0x55710a*/
+    *((_DWORD *)this + 2) = a2; /*0x557112*/
+    *((_BYTE *)this + 13) = a3 == 0; /*0x557115*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x55711e*/
   }
-  v7 = *((_DWORD *)this + 2);
-  if ( v7 < *((_DWORD *)this + 4) )
-    *((_DWORD *)this + 4) = v7;
-  return 1;
+  v7 = *((_DWORD *)this + 2); /*0x557121*/
+  if ( v7 < *((_DWORD *)this + 4) ) /*0x557129*/
+    *((_DWORD *)this + 4) = v7; /*0x55712b*/
+  return 1; /*0x55712e*/
 }
-
-/* ASM:
-push    ebx
-push    ebp
-mov     ebp, [esp+8+arg_0]
-push    esi
-test    ebp, ebp
-push    edi
-mov     esi, ecx
-jz      short loc_55711A
-mov     ebx, [esp+10h+arg_4]
-mov     byte ptr [esi+0Ch], 0
-test    ebx, ebx
-jnz     short loc_5570BE
-lea     eax, ds:0[ebp*4]
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-mov     edi, eax
-jmp     short loc_5570C0
-; ---------------------------------------------------------------------------
-
-loc_5570BE:                             ; CODE XREF: CheckListClass__removeItem+18↑j
-mov     edi, ebx
-
-loc_5570C0:                             ; CODE XREF: CheckListClass__removeItem+2C↑j
-test    edi, edi
-mov     byte ptr [esi+0Ch], 1
-jz      short loc_557137
-mov     eax, [esi+4]
-test    eax, eax
-jz      short loc_557108
-mov     ecx, [esi+8]
-cmp     ebp, ecx
-jge     short loc_5570D8
-mov     ecx, ebp
-
-loc_5570D8:                             ; CODE XREF: CheckListClass__removeItem+44↑j
-xor     eax, eax
-test    ecx, ecx
-jle     short loc_5570EE
-
-loc_5570DE:                             ; CODE XREF: CheckListClass__removeItem+5C↓j
-mov     edx, [esi+4]
-inc     eax
-cmp     eax, ecx
-mov     edx, [edx+eax*4-4]
-mov     [edi+eax*4-4], edx
-jl      short loc_5570DE
-
-loc_5570EE:                             ; CODE XREF: CheckListClass__removeItem+4C↑j
-mov     al, [esi+0Dh]
-test    al, al
-jz      short loc_557108
-mov     eax, [esi+4]
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     dword ptr [esi+4], 0
-
-loc_557108:                             ; CODE XREF: CheckListClass__removeItem+3D↑j
-; CheckListClass__removeItem+63↑j
-xor     eax, eax
-mov     [esi+4], edi
-test    ebx, ebx
-setz    al
-mov     [esi+8], ebp
-mov     [esi+0Dh], al
-jmp     short loc_557121
-; ---------------------------------------------------------------------------
-
-loc_55711A:                             ; CODE XREF: CheckListClass__removeItem+C↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+0Ch]
-
-loc_557121:                             ; CODE XREF: CheckListClass__removeItem+88↑j
-mov     eax, [esi+8]
-mov     ecx, [esi+10h]
-cmp     eax, ecx
-jge     short loc_55712E
-mov     [esi+10h], eax
-
-loc_55712E:                             ; CODE XREF: CheckListClass__removeItem+99↑j
-pop     edi
-pop     esi
-pop     ebp
-mov     al, 1
-pop     ebx
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_557137:                             ; CODE XREF: CheckListClass__removeItem+36↑j
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    8
-*/
 } }
 // 0x557140
 namespace gamemd { int CheckListClass::checkItem(void* a1) {
@@ -3008,96 +1155,38 @@ int __thiscall CheckListClass::sub_557140(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = *(this + 4);
-  result = 0;
-  if ( v2 <= 0 )
-    return -1;
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i )
+  v2 = *(this + 4); /*0x557140*/
+  result = 0; /*0x557143*/
+  if ( v2 <= 0 ) /*0x557148*/
+    return -1; /*0x55715f*/
+  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x55714e*/
   {
-    if ( ++result >= v2 )
-      return -1;
+    if ( ++result >= v2 ) /*0x55715d*/
+      return -1; /*0x55715d*/
   }
-  return result;
+  return result; /*0x557162*/
 }
-
-/* ASM:
-mov     edx, [ecx+10h]
-xor     eax, eax
-push    esi
-test    edx, edx
-jle     short loc_55715F
-mov     esi, [esp+4+arg_0]
-mov     ecx, [ecx+4]
-mov     esi, [esi]
-
-loc_557153:                             ; CODE XREF: CheckListClass__checkItem+1D↓j
-cmp     [ecx], esi
-jz      short loc_557162
-inc     eax
-add     ecx, 4
-cmp     eax, edx
-jl      short loc_557153
-
-loc_55715F:                             ; CODE XREF: CheckListClass__checkItem+8↑j
-or      eax, 0FFFFFFFFh
-
-loc_557162:                             ; CODE XREF: CheckListClass__checkItem+15↑j
-pop     esi
-retn    4
-*/
 } }
 // 0x5571C0
 namespace gamemd { void* CheckListClass::toggleItem(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall CheckListClass::sub_5571C0(_DWORD *Block, char a2)
+DynamicVector *__thiscall CheckListClass::toggleItem(_DWORD *Block, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1);
-  *Block = &VectorClass<LineTrail *>::`vftable';
-  if ( v3 && *((_BYTE *)Block + 13) )
+  v3 = (void *)*(Block + 1); /*0x5571c3*/
+  *Block = &vt_VectorClass_LineTrail; /*0x5571c6*/
+  if ( v3 && *((_BYTE *)Block + 13) ) /*0x5571d0*/
   {
-    __3_YAXPAX_Z(v3);
-    *(Block + 1) = 0;
+    __3_YAXPAX_Z(v3); /*0x5571d8*/
+    *(Block + 1) = 0; /*0x5571e0*/
   }
-  *((_BYTE *)Block + 13) = 0;
-  *(Block + 2) = 0;
-  if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(Block);
-  return Block;
+  *((_BYTE *)Block + 13) = 0; /*0x5571eb*/
+  *(Block + 2) = 0; /*0x5571f1*/
+  if ( (a2 & 1) != 0 ) /*0x5571f8*/
+    __3_YAXPAX_Z(Block); /*0x5571fb*/
+  return (DynamicVector *)Block; /*0x557205*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     eax, [esi+4]
-mov     dword ptr [esi], offset ??_7?$VectorClass@PAVLineTrail@@@@6B@ ; const VectorClass<LineTrail *>::`vftable'
-test    eax, eax
-jz      short loc_5571E7
-mov     cl, [esi+0Dh]
-test    cl, cl
-jz      short loc_5571E7
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     dword ptr [esi+4], 0
-
-loc_5571E7:                             ; CODE XREF: CheckListClass__toggleItem+E↑j
-; CheckListClass__toggleItem+15↑j
-mov     al, [esp+4+arg_0]
-mov     byte ptr [esi+0Dh], 0
-test    al, 1
-mov     dword ptr [esi+8], 0
-jz      short loc_557203
-push    esi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_557203:                             ; CODE XREF: CheckListClass__toggleItem+38↑j
-mov     eax, esi
-pop     esi
-retn    4
-*/
 } }
 // 0x557570
 namespace gamemd { int CheckListClass::RemoveItem(int a1, int a2) {
@@ -3111,127 +1200,46 @@ int __thiscall CheckListClass::_vt25(_DWORD *this, int a2, int a3)
   int v7; // ebp
   int result; // eax
 
-  v3 = *(this + 5);
-  v4 = *(this + 27);
-  v5 = *(this + 51);
-  *(this + 25) = a2 + v3 - v4;
-  *(this + 26) = a3;
-  *(this + 49) = a2 + v3 - v5;
-  v6 = *(this + 6) - *(this + 52);
-  *(this + 50) = v6 + a3;
-  v7 = v4;
-  if ( v4 <= v5 )
-    v7 = v5;
-  *(this + 73) = a2 + v3 - v7;
-  result = *(this + 28);
-  *(this + 74) = result + a3;
-  *(this + 76) = v6 - result;
-  if ( v4 <= v5 )
-    *(this + 75) = v5;
+  v3 = *(this + 5); /*0x557570*/
+  v4 = *(this + 27); /*0x55757a*/
+  v5 = *(this + 51); /*0x557580*/
+  *(this + 25) = a2 + v3 - v4; /*0x55758e*/
+  *(this + 26) = a3; /*0x557595*/
+  *(this + 49) = a2 + v3 - v5; /*0x55759a*/
+  v6 = *(this + 6) - *(this + 52); /*0x5575a3*/
+  *(this + 50) = v6 + a3; /*0x5575ad*/
+  v7 = v4; /*0x5575b3*/
+  if ( v4 <= v5 ) /*0x5575b5*/
+    v7 = v5; /*0x5575b7*/
+  *(this + 73) = a2 + v3 - v7; /*0x5575c1*/
+  result = *(this + 28); /*0x5575c7*/
+  *(this + 74) = result + a3; /*0x5575d0*/
+  *(this + 76) = v6 - result; /*0x5575d6*/
+  if ( v4 <= v5 ) /*0x5575dc*/
+    *(this + 75) = v5; /*0x5575eb*/
   else
-    *(this + 75) = v4;
-  return result;
+    *(this + 75) = v4; /*0x5575de*/
+  return result; /*0x5575e4*/
 }
-
-/* ASM:
-mov     eax, [ecx+14h]
-push    ebx
-mov     ebx, [esp+4+arg_0]
-push    ebp
-push    esi
-mov     esi, [ecx+6Ch]
-mov     edx, eax
-push    edi
-mov     edi, [ecx+0CCh]
-sub     edx, esi
-add     edx, ebx
-mov     ebp, [esp+10h+arg_4]
-mov     [ecx+64h], edx
-mov     edx, eax
-sub     edx, edi
-mov     [ecx+68h], ebp
-add     edx, ebx
-mov     [ecx+0C4h], edx
-mov     edx, [ecx+18h]
-sub     edx, [ecx+0D0h]
-add     ebp, edx
-cmp     esi, edi
-mov     [ecx+0C8h], ebp
-mov     ebp, esi
-jg      short loc_5575B9
-mov     ebp, edi
-
-loc_5575B9:                             ; CODE XREF: CheckListClass__RemoveItem+45↑j
-sub     eax, ebp
-add     eax, ebx
-mov     ebx, [esp+10h+arg_4]
-mov     [ecx+124h], eax
-mov     eax, [ecx+70h]
-add     ebx, eax
-sub     edx, eax
-cmp     esi, edi
-mov     [ecx+128h], ebx
-mov     [ecx+130h], edx
-jle     short loc_5575EB
-mov     [ecx+12Ch], esi
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_5575EB:                             ; CODE XREF: CheckListClass__RemoveItem+6C↑j
-mov     [ecx+12Ch], edi
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn    8
-*/
 } }
 // 0x557800
 namespace gamemd { int ListClass::Destru_vt43(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x557800
 int __thiscall ListClass::Destru_vt43(int *this, int a2)
 {
   int result; // eax
   int v4; // edi
   int v5; // eax
 
-  result = a2;
-  if ( a2 )
+  result = a2; /*0x557800*/
+  if ( a2 ) /*0x557809*/
   {
-    v4 = *this;
-    v5 = (*(int (__thiscall **)(int *, int *))(*(this + 13) + 16))(this + 13, &a2);
-    return (*(int (__thiscall **)(int *, int))(v4 + 168))(this, v5);
+    v4 = *this; /*0x557816*/
+    v5 = (*(int (__thiscall **)(int *, int *))(*(this + 13) + 16))(this + 13, &a2); /*0x557819*/
+    return (*(int (__thiscall **)(int *, int))(v4 + 168))(this, v5); /*0x55781f*/
   }
-  return result;
+  return result; /*0x557826*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-push    esi
-test    eax, eax
-mov     esi, ecx
-jz      short loc_557826
-mov     eax, [esi+34h]
-lea     ecx, [esi+34h]
-lea     edx, [esp+4+arg_0]
-push    edi
-mov     edi, [esi]
-push    edx
-call    dword ptr [eax+10h]
-push    eax
-mov     ecx, esi
-call    dword ptr [edi+0A8h]
-pop     edi
-
-loc_557826:                             ; CODE XREF: ListClass__Destru_vt43+9↑j
-pop     esi
-retn    4
-*/
 } }
 // 0x557A20
 namespace gamemd { int CheckListClass::SetItemState(int a1) {
@@ -3241,49 +1249,19 @@ char __thiscall CheckListClass::_vt36(_BYTE *this, int a2)
   int v3; // eax
   char *v4; // esi
 
-  LOBYTE(v3) = *(this + 84);
-  if ( (_BYTE)v3 )
+  LOBYTE(v3) = *(this + 84); /*0x557a24*/
+  if ( (_BYTE)v3 ) /*0x557a29*/
   {
-    v4 = this + 280;
-    v3 = (*(int (__thiscall **)(_BYTE *, int))(*((_DWORD *)this + 70) + 176))(this + 280, a2);
-    if ( v3 )
+    v4 = this + 280; /*0x557a35*/
+    v3 = (*(int (__thiscall **)(_BYTE *, int))(*((_DWORD *)this + 70) + 176))(this + 280, a2); /*0x557a3e*/
+    if ( v3 ) /*0x557a46*/
     {
-      *((_DWORD *)this + 92) = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v4 + 144))(this + 280);
-      LOBYTE(v3) = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 72))(this);
+      *((_DWORD *)this + 92) = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v4 + 144))(this + 280); /*0x557a52*/
+      LOBYTE(v3) = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 72))(this); /*0x557a5c*/
     }
   }
-  return v3;
+  return v3; /*0x557a5f*/
 }
-
-/* ASM:
-push    esi
-push    edi
-mov     edi, ecx
-mov     al, [edi+54h]
-test    al, al
-jz      short loc_557A5F
-mov     ecx, [esp+8+arg_0]
-mov     eax, [edi+118h]
-lea     esi, [edi+118h]
-push    ecx
-mov     ecx, esi
-call    dword ptr [eax+0B0h]
-test    eax, eax
-jz      short loc_557A5F
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+90h]
-mov     [edi+170h], eax
-mov     eax, [edi]
-mov     ecx, edi
-call    dword ptr [eax+48h]
-
-loc_557A5F:                             ; CODE XREF: CheckListClass__SetItemState+9↑j
-; CheckListClass__SetItemState+26↑j
-pop     edi
-pop     esi
-retn    4
-*/
 } }
 // 0x557A70
 namespace gamemd { int CheckListClass::OnKeyUp(int a1) {
@@ -3293,62 +1271,27 @@ char __thiscall CheckListClass::_vt49(_BYTE *this, int a2)
   int v3; // eax
   char *v4; // esi
 
-  LOBYTE(v3) = *(this + 84);
-  if ( (_BYTE)v3 )
+  LOBYTE(v3) = *(this + 84); /*0x557a74*/
+  if ( (_BYTE)v3 ) /*0x557a79*/
   {
-    v4 = this + 280;
-    v3 = (*(int (__thiscall **)(_BYTE *, int))(*((_DWORD *)this + 70) + 176))(this + 280, a2);
-    if ( v3 )
+    v4 = this + 280; /*0x557a85*/
+    v3 = (*(int (__thiscall **)(_BYTE *, int))(*((_DWORD *)this + 70) + 176))(this + 280, a2); /*0x557a8e*/
+    if ( v3 ) /*0x557a96*/
     {
-      *((_DWORD *)this + 92) = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v4 + 144))(this + 280);
-      LOBYTE(v3) = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 72))(this);
+      *((_DWORD *)this + 92) = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v4 + 144))(this + 280); /*0x557aa2*/
+      LOBYTE(v3) = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 72))(this); /*0x557aac*/
     }
   }
-  return v3;
+  return v3; /*0x557aaf*/
 }
-
-/* ASM:
-push    esi
-push    edi
-mov     edi, ecx
-mov     al, [edi+54h]
-test    al, al
-jz      short loc_557AAF
-mov     ecx, [esp+8+arg_0]
-mov     eax, [edi+118h]
-lea     esi, [edi+118h]
-push    ecx
-mov     ecx, esi
-call    dword ptr [eax+0B0h]
-test    eax, eax
-jz      short loc_557AAF
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+90h]
-mov     [edi+170h], eax
-mov     eax, [edi]
-mov     ecx, edi
-call    dword ptr [eax+48h]
-
-loc_557AAF:                             ; CODE XREF: CheckListClass__OnKeyUp+9↑j
-; CheckListClass__OnKeyUp+26↑j
-pop     edi
-pop     esi
-retn    4
-*/
 } }
 // 0x557B00
 namespace gamemd { int CheckListClass::GetItemCount() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CheckListClass::_vt38(_DWORD *this)
 {
-  return *(this + 91);
+  return *(this + 91); /*0x557b06*/
 }
-
-/* ASM:
-mov     eax, [ecx+16Ch]
-retn
-*/
 } }
 // 0x557B70
 namespace gamemd { int CheckListClass::OnKeyDown(int a1) {
@@ -3358,76 +1301,25 @@ int __thiscall CheckListClass::_vt48(_DWORD *this, int a2)
   int v3; // ecx
   int v4; // eax
 
-  v3 = (*(this + 17) - *(this + 20)) & ((*(this + 17) - *(this + 20) < 0) - 1);
-  v4 = a2;
-  if ( a2 >= 0 )
+  v3 = (*(this + 17) - *(this + 20)) & ((*(this + 17) - *(this + 20) < 0) - 1); /*0x557b84*/
+  v4 = a2; /*0x557b86*/
+  if ( a2 >= 0 ) /*0x557b8c*/
   {
-    if ( a2 > v3 )
-      v4 = v3;
+    if ( a2 > v3 ) /*0x557b94*/
+      v4 = v3; /*0x557b96*/
   }
   else
   {
-    v4 = 0;
+    v4 = 0; /*0x557b8e*/
   }
-  if ( v4 == *(this + 92) )
-    return 0;
-  *(this + 92) = v4;
-  (*(void (__thiscall **)(_DWORD *))(*this + 72))(this);
-  if ( *((_BYTE *)this + 84) )
-    (*(void (__thiscall **)(_DWORD *, _DWORD))(*(this + 70) + 140))(this + 70, *(this + 92));
-  return 1;
+  if ( v4 == *(this + 92) ) /*0x557b9e*/
+    return 0; /*0x557bd6*/
+  *(this + 92) = v4; /*0x557ba0*/
+  (*(void (__thiscall **)(_DWORD *))(*this + 72))(this); /*0x557baa*/
+  if ( *((_BYTE *)this + 84) ) /*0x557bad*/
+    (*(void (__thiscall **)(_DWORD *, _DWORD))(*(this + 70) + 140))(this + 70, *(this + 92)); /*0x557bc7*/
+  return 1; /*0x557bd2*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     eax, [esi+44h]
-mov     ecx, [esi+50h]
-sub     eax, ecx
-mov     ecx, 0
-sets    cl
-dec     ecx
-and     ecx, eax
-mov     eax, [esp+4+arg_0]
-test    eax, eax
-jge     short loc_557B92
-xor     eax, eax
-jmp     short loc_557B98
-; ---------------------------------------------------------------------------
-
-loc_557B92:                             ; CODE XREF: CheckListClass__OnKeyDown+1C↑j
-cmp     eax, ecx
-jle     short loc_557B98
-mov     eax, ecx
-
-loc_557B98:                             ; CODE XREF: CheckListClass__OnKeyDown+20↑j
-; CheckListClass__OnKeyDown+24↑j
-cmp     eax, [esi+170h]
-jz      short loc_557BD6
-mov     [esi+170h], eax
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+48h]
-mov     al, [esi+54h]
-test    al, al
-jz      short loc_557BCD
-mov     eax, [esi+170h]
-mov     edx, [esi+118h]
-lea     ecx, [esi+118h]
-push    eax
-call    dword ptr [edx+8Ch]
-
-loc_557BCD:                             ; CODE XREF: CheckListClass__OnKeyDown+42↑j
-mov     eax, 1
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_557BD6:                             ; CODE XREF: CheckListClass__OnKeyDown+2E↑j
-xor     eax, eax
-pop     esi
-retn    4
-*/
 } }
 // 0x557BE0
 namespace gamemd { int GadgetClass::InitControls() {
@@ -3437,108 +1329,27 @@ int __thiscall GadgetClass_InitControls(_BYTE *this)
   int v2; // eax
   int v3; // edx
 
-  if ( *(this + 84) )
-    return 0;
-  v2 = *(_DWORD *)this;
-  *(this + 84) = 1;
-  (*(void (**)(void))(v2 + 72))();
-  v3 = *((_DWORD *)this + 22);
-  *((_DWORD *)this + 5) -= *((_DWORD *)this + 75);
-  (*(void (__thiscall **)(_BYTE *, _BYTE *))(v3 + 132))(this + 88, this);
-  (*(void (__thiscall **)(_BYTE *, _BYTE *))(*((_DWORD *)this + 46) + 132))(this + 184, this);
-  (*(void (__thiscall **)(_BYTE *, _BYTE *))(*((_DWORD *)this + 70) + 132))(this + 280, this);
-  (*(void (__thiscall **)(_BYTE *, _BYTE *))(*((_DWORD *)this + 22) + 12))(this + 88, this);
-  (*(void (__thiscall **)(_BYTE *, _BYTE *))(*((_DWORD *)this + 46) + 12))(this + 184, this);
-  (*(void (__thiscall **)(_BYTE *, _BYTE *))(*((_DWORD *)this + 70) + 12))(this + 280, this);
-  (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)this + 22) + 72))(this + 88);
-  (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)this + 46) + 72))(this + 184);
-  (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)this + 70) + 72))(this + 280);
-  (*(void (__thiscall **)(_BYTE *, _DWORD))(*((_DWORD *)this + 70) + 136))(this + 280, *((_DWORD *)this + 17));
-  (*(void (__thiscall **)(_BYTE *, _DWORD))(*((_DWORD *)this + 70) + 168))(this + 280, *((_DWORD *)this + 20));
-  (*(void (__thiscall **)(_BYTE *, _DWORD))(*((_DWORD *)this + 70) + 140))(this + 280, *((_DWORD *)this + 92));
-  return 1;
+  if ( *(this + 84) ) /*0x557be3*/
+    return 0; /*0x557ca7*/
+  v2 = *(_DWORD *)this; /*0x557bee*/
+  *(this + 84) = 1; /*0x557bf3*/
+  (*(void (**)(void))(v2 + 72))(); /*0x557bf7*/
+  v3 = *((_DWORD *)this + 22); /*0x557c03*/
+  *((_DWORD *)this + 5) -= *((_DWORD *)this + 75); /*0x557c08*/
+  (*(void (__thiscall **)(_BYTE *, _BYTE *))(v3 + 132))(this + 88, this); /*0x557c11*/
+  (*(void (__thiscall **)(_BYTE *, _BYTE *))(*((_DWORD *)this + 46) + 132))(this + 184, this); /*0x557c26*/
+  (*(void (__thiscall **)(_BYTE *, _BYTE *))(*((_DWORD *)this + 70) + 132))(this + 280, this); /*0x557c3b*/
+  (*(void (__thiscall **)(_BYTE *, _BYTE *))(*((_DWORD *)this + 22) + 12))(this + 88, this); /*0x557c46*/
+  (*(void (__thiscall **)(_BYTE *, _BYTE *))(*((_DWORD *)this + 46) + 12))(this + 184, this); /*0x557c4f*/
+  (*(void (__thiscall **)(_BYTE *, _BYTE *))(*((_DWORD *)this + 70) + 12))(this + 280, this); /*0x557c57*/
+  (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)this + 22) + 72))(this + 88); /*0x557c5e*/
+  (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)this + 46) + 72))(this + 184); /*0x557c66*/
+  (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)this + 70) + 72))(this + 280); /*0x557c6d*/
+  (*(void (__thiscall **)(_BYTE *, _DWORD))(*((_DWORD *)this + 70) + 136))(this + 280, *((_DWORD *)this + 17)); /*0x557c78*/
+  (*(void (__thiscall **)(_BYTE *, _DWORD))(*((_DWORD *)this + 70) + 168))(this + 280, *((_DWORD *)this + 20)); /*0x557c86*/
+  (*(void (__thiscall **)(_BYTE *, _DWORD))(*((_DWORD *)this + 70) + 140))(this + 280, *((_DWORD *)this + 92)); /*0x557c97*/
+  return 1; /*0x557ca5*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     al, [esi+54h]
-test    al, al
-jnz     loc_557CA7
-mov     eax, [esi]
-push    ebx
-push    ebp
-push    edi
-mov     byte ptr [esi+54h], 1
-call    dword ptr [eax+48h]
-mov     ecx, [esi+12Ch]
-mov     ebx, [esi+14h]
-mov     edx, [esi+58h]
-sub     ebx, ecx
-mov     [esi+14h], ebx
-lea     ebx, [esi+58h]
-push    esi
-mov     ecx, ebx
-call    dword ptr [edx+84h]
-mov     eax, [esi+0B8h]
-lea     ebp, [esi+0B8h]
-push    esi
-mov     ecx, ebp
-call    dword ptr [eax+84h]
-mov     edx, [esi+118h]
-lea     edi, [esi+118h]
-push    esi
-mov     ecx, edi
-call    dword ptr [edx+84h]
-mov     eax, [ebx]
-push    esi
-mov     ecx, ebx
-call    dword ptr [eax+0Ch]
-mov     edx, [ebp+0]
-push    esi
-mov     ecx, ebp
-call    dword ptr [edx+0Ch]
-mov     eax, [edi]
-push    esi
-mov     ecx, edi
-call    dword ptr [eax+0Ch]
-mov     edx, [ebx]
-mov     ecx, ebx
-call    dword ptr [edx+48h]
-mov     eax, [ebp+0]
-mov     ecx, ebp
-call    dword ptr [eax+48h]
-mov     edx, [edi]
-mov     ecx, edi
-call    dword ptr [edx+48h]
-mov     ecx, [esi+44h]
-mov     eax, [edi]
-push    ecx
-mov     ecx, edi
-call    dword ptr [eax+88h]
-mov     eax, [esi+50h]
-mov     edx, [edi]
-push    eax
-mov     ecx, edi
-call    dword ptr [edx+0A8h]
-mov     eax, [esi+170h]
-mov     edx, [edi]
-push    eax
-mov     ecx, edi
-call    dword ptr [edx+8Ch]
-pop     edi
-pop     ebp
-pop     ebx
-mov     eax, 1
-pop     esi
-retn
-; ---------------------------------------------------------------------------
-
-loc_557CA7:                             ; CODE XREF: GadgetClass__InitControls+8↑j
-xor     eax, eax
-pop     esi
-retn
-*/
 } }
 // 0x557CB0
 namespace gamemd { int CheckListClass::GetItemData() {
@@ -3547,71 +1358,30 @@ int __thiscall CheckListClass::_vt44(_BYTE *this)
 {
   int v2; // edx
 
-  if ( !*(this + 84) )
-    return 0;
-  v2 = *((_DWORD *)this + 70);
-  *((_DWORD *)this + 5) += *((_DWORD *)this + 75);
-  *(this + 84) = 0;
-  (*(void (__thiscall **)(_BYTE *))(v2 + 36))(this + 280);
-  (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)this + 22) + 36))(this + 88);
-  (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)this + 46) + 36))(this + 184);
-  (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 72))(this);
-  return 1;
+  if ( !*(this + 84) ) /*0x557cb3*/
+    return 0; /*0x557d01*/
+  v2 = *((_DWORD *)this + 70); /*0x557cc3*/
+  *((_DWORD *)this + 5) += *((_DWORD *)this + 75); /*0x557ccb*/
+  *(this + 84) = 0; /*0x557cd4*/
+  (*(void (__thiscall **)(_BYTE *))(v2 + 36))(this + 280); /*0x557cd8*/
+  (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)this + 22) + 36))(this + 88); /*0x557ce1*/
+  (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)this + 46) + 36))(this + 184); /*0x557cf0*/
+  (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 72))(this); /*0x557cf7*/
+  return 1; /*0x557cff*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     al, [esi+54h]
-test    al, al
-jz      short loc_557D01
-mov     eax, [esi+12Ch]
-mov     ecx, [esi+14h]
-mov     edx, [esi+118h]
-add     ecx, eax
-mov     [esi+14h], ecx
-lea     ecx, [esi+118h]
-mov     byte ptr [esi+54h], 0
-call    dword ptr [edx+24h]
-mov     eax, [esi+58h]
-lea     ecx, [esi+58h]
-call    dword ptr [eax+24h]
-mov     edx, [esi+0B8h]
-lea     ecx, [esi+0B8h]
-call    dword ptr [edx+24h]
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+48h]
-mov     eax, 1
-pop     esi
-retn
-; ---------------------------------------------------------------------------
-
-loc_557D01:                             ; CODE XREF: CheckListClass__GetItemData+8↑j
-xor     eax, eax
-pop     esi
-retn
-*/
 } }
 // 0x557D10
 namespace gamemd { int CheckListClass::KillFocus(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CheckListClass::_vt47(_DWORD *this, int a2)
 {
-  *(this + 12) = a2;
-  return a2;
+  *(this + 12) = a2; /*0x557d14*/
+  return a2; /*0x557d17*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-mov     [ecx+30h], eax
-retn    4
-*/
 } }
 // 0x557D20
 namespace gamemd { void* ListClass::Destru_vt50(int a1, int a2, int a3, int a4, int a5) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x557d20
 _DWORD *__thiscall ListClass::Destru_vt50(int *this, int a2, int a3, int a4, int a5, int a6)
 {
   int v7; // ebx
@@ -3629,257 +1399,80 @@ _DWORD *__thiscall ListClass::Destru_vt50(int *this, int a2, int a3, int a4, int
   _DWORD v20[4]; // [esp+18h] [ebp-20h] BYREF
   _BYTE v21[16]; // [esp+28h] [ebp-10h] BYREF
 
-  v7 = *(this + 11);
-  Type = BuildingAnim::GetType();
-  if ( a6 )
+  v7 = *(this + 11); /*0x557d29*/
+  Type = BuildingAnim::GetType(); /*0x557d35*/
+  if ( a6 ) /*0x557d3d*/
   {
-    BYTE1(v7) |= 0x20u;
-    v9 = *(_DWORD *)(*((_DWORD *)MEMORY[0xB054D4] + Type) + 796);
-    v10 = *(_DWORD *)(MEMORY[0x87F6C4] + 372);
-    if ( *(_DWORD *)(MEMORY[0x87F6C4] + 4) == 1 )
-      v11 = *(unsigned __int8 *)(v10 + v9);
+    BYTE1(v7) |= 0x20u; /*0x557d44*/
+    v9 = *(_DWORD *)(*((_DWORD *)MEMORY[0xB054D4] + Type) + 796); /*0x557d52*/
+    v10 = *(_DWORD *)(MEMORY[0x87F6C4] + 372); /*0x557d5b*/
+    if ( *(_DWORD *)(MEMORY[0x87F6C4] + 4) == 1 ) /*0x557d61*/
+      v11 = *(unsigned __int8 *)(v10 + v9); /*0x557d65*/
     else
-      v11 = *(unsigned __int16 *)(v10 + 2 * v9);
-    v20[0] = a3;
-    v20[3] = *(this + 19);
-    v20[1] = a4;
-    v20[2] = a5;
-    (*(void (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)MEMORY[0x887314] + 20))(MEMORY[0x887314], v20, v11);
+      v11 = *(unsigned __int16 *)(v10 + 2 * v9); /*0x557d6c*/
+    v20[0] = a3; /*0x557d78*/
+    v20[3] = *(this + 19); /*0x557d7f*/
+    v20[1] = a4; /*0x557d8a*/
+    v20[2] = a5; /*0x557d8e*/
+    (*(void (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)MEMORY[0x887314] + 20))(MEMORY[0x887314], v20, v11); /*0x557d99*/
   }
-  else if ( (v7 & 0x4000) == 0 )
+  else if ( (v7 & 0x4000) == 0 ) /*0x557da1*/
   {
-    BYTE1(v7) |= 0x10u;
+    BYTE1(v7) |= 0x10u; /*0x557da3*/
   }
-  v12 = *(this + 14);
-  v19[0] = a3;
-  v13 = *(this + 12);
-  v19[1] = a4;
-  v14 = (int *)(v12 + 4 * a2);
-  v18 = v13;
-  v17 = *((_DWORD *)MEMORY[0xB054D4] + Type);
-  v15 = (*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)MEMORY[0x887314] + 120))(MEMORY[0x887314], v21);
-  return FillRectangle(v20, *v14, MEMORY[0x887314], v15, (int)v19, v17, 0, v7, a5, v18);
+  v12 = *(this + 14); /*0x557daa*/
+  v19[0] = a3; /*0x557db1*/
+  v13 = *(this + 12); /*0x557db5*/
+  v19[1] = a4; /*0x557db8*/
+  v14 = (int *)(v12 + 4 * a2); /*0x557dbc*/
+  v18 = v13; /*0x557dc8*/
+  v17 = *((_DWORD *)MEMORY[0xB054D4] + Type); /*0x557dd0*/
+  v15 = (*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)MEMORY[0x887314] + 120))(MEMORY[0x887314], v21); /*0x557de3*/
+  return FillRectangle(v20, *v14, MEMORY[0x887314], v15, (int)v19, v17, 0, v7, a5, v18); /*0x557df8*/
 }
-
-/* ASM:
-sub     esp, 28h
-push    ebx
-push    ebp
-push    esi
-mov     esi, ecx
-push    edi
-mov     ebx, [esi+2Ch]
-call    BuildingAnim__GetType
-mov     edi, [esp+38h+arg_8]
-mov     ebp, eax
-mov     eax, [esp+38h+arg_10]
-test    eax, eax
-jz      short loc_557D9E
-mov     eax, dword_A8ED54+76780h
-or      bh, 20h
-mov     ecx, [eax+ebp*4]
-mov     eax, ds:87F6C4h
-mov     edx, [eax+4]
-mov     ecx, [ecx+31Ch]
-cmp     edx, 1
-mov     edx, [eax+174h]
-jnz     short loc_557D6A
-xor     eax, eax
-mov     al, [edx+ecx]
-jmp     short loc_557D70
-; ---------------------------------------------------------------------------
-
-loc_557D6A:                             ; CODE XREF: ListClass__Destru_vt50+41↑j
-xor     eax, eax
-mov     ax, [edx+ecx*2]
-
-loc_557D70:                             ; CODE XREF: ListClass__Destru_vt50+48↑j
-mov     ecx, [esp+38h+arg_4]
-mov     edx, [esp+38h+arg_C]
-mov     [esp+38h+var_20], ecx
-mov     ecx, [esi+4Ch]
-mov     [esp+38h+var_14], ecx
-mov     ecx, ds:887314h
-push    eax
-mov     [esp+3Ch+var_1C], edi
-mov     [esp+3Ch+var_18], edx
-mov     edx, [ecx]
-lea     eax, [esp+3Ch+var_20]
-push    eax
-call    dword ptr [edx+14h]
-jmp     short loc_557DA6
-; ---------------------------------------------------------------------------
-
-loc_557D9E:                             ; CODE XREF: ListClass__Destru_vt50+1D↑j
-test    bh, 40h
-jnz     short loc_557DA6
-or      bh, 10h
-
-loc_557DA6:                             ; CODE XREF: ListClass__Destru_vt50+7C↑j
-; ListClass__Destru_vt50+81↑j
-mov     ecx, [esp+38h+arg_4]
-mov     edx, [esi+38h]
-mov     eax, [esp+38h+arg_0]
-mov     [esp+38h+var_28], ecx
-mov     ecx, [esi+30h]
-mov     [esp+38h+var_24], edi
-lea     edi, [edx+eax*4]
-mov     edx, [esp+38h+arg_C]
-mov     eax, dword_A8ED54+76780h
-push    ecx
-push    edx
-push    ebx
-mov     ecx, [eax+ebp*4]
-push    0
-push    ecx
-mov     ecx, ds:887314h
-lea     edx, [esp+4Ch+var_28]
-mov     eax, [ecx]
-push    edx
-lea     edx, [esp+50h+var_10]
-push    edx
-call    dword ptr [eax+78h]
-mov     edx, [edi]
-push    eax
-mov     eax, ds:887314h
-lea     ecx, [esp+54h+var_20]
-push    eax
-call    FillRectangle
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 28h
-retn    14h
-*/
 } }
 // 0x557E60
 namespace gamemd { void* CheckListClass::HitTest(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall CheckListClass::_vt05(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 84) )
+  if ( *(_BYTE *)(this + 84) ) /*0x557e68*/
   {
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 280) + 20))(this + 280, a2);
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 184) + 20))(this + 184, a2);
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 88) + 20))(this + 88, a2);
+    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 280) + 20))(this + 280, a2); /*0x557e7c*/
+    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 184) + 20))(this + 184, a2); /*0x557e8c*/
+    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 88) + 20))(this + 88, a2); /*0x557e96*/
   }
-  return LinkedList::Attach((_DWORD *)this, a2);
+  return LinkedList::Attach((_DWORD *)this, a2); /*0x557ea1*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-push    edi
-mov     edi, [esp+8+arg_0]
-mov     al, [esi+54h]
-test    al, al
-jz      short loc_557E99
-mov     eax, [esi+118h]
-lea     ecx, [esi+118h]
-push    edi
-call    dword ptr [eax+14h]
-mov     edx, [esi+0B8h]
-lea     ecx, [esi+0B8h]
-push    edi
-call    dword ptr [edx+14h]
-mov     eax, [esi+58h]
-lea     ecx, [esi+58h]
-push    edi
-call    dword ptr [eax+14h]
-
-loc_557E99:                             ; CODE XREF: CheckListClass__HitTest+D↑j
-push    edi
-mov     ecx, esi
-call    LinkedList__Attach
-pop     edi
-pop     esi
-retn    4
-*/
 } }
 // 0x557EB0
 namespace gamemd { int CheckListClass::Draw(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CheckListClass::_vt04(int this, int a2)
 {
-  LinkedList::Append((_DWORD *)this, a2);
-  if ( *(_BYTE *)(this + 84) )
+  LinkedList::Append((_DWORD *)this, a2); /*0x557eb9*/
+  if ( *(_BYTE *)(this + 84) ) /*0x557ebe*/
   {
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 88) + 16))(this + 88, a2);
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 184) + 16))(this + 184, a2);
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 280) + 16))(this + 280, a2);
+    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 88) + 16))(this + 88, a2); /*0x557ecc*/
+    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 184) + 16))(this + 184, a2); /*0x557edc*/
+    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 280) + 16))(this + 280, a2); /*0x557eec*/
   }
-  return (*(int (__thiscall **)(int))(*(_DWORD *)this + 24))(this);
+  return (*(int (__thiscall **)(int))(*(_DWORD *)this + 24))(this); /*0x557ef6*/
 }
-
-/* ASM:
-push    esi
-push    edi
-mov     edi, [esp+8+arg_0]
-mov     esi, ecx
-push    edi
-call    LinkedList__Append
-mov     al, [esi+54h]
-test    al, al
-jz      short loc_557EEF
-mov     eax, [esi+58h]
-lea     ecx, [esi+58h]
-push    edi
-call    dword ptr [eax+10h]
-mov     edx, [esi+0B8h]
-lea     ecx, [esi+0B8h]
-push    edi
-call    dword ptr [edx+10h]
-mov     eax, [esi+118h]
-lea     ecx, [esi+118h]
-push    edi
-call    dword ptr [eax+10h]
-
-loc_557EEF:                             ; CODE XREF: CheckListClass__Draw+13↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+18h]
-pop     edi
-pop     esi
-retn    4
-*/
 } }
 // 0x557F00
 namespace gamemd { int CheckListClass::OnDblClick() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CheckListClass::_vt09(int this)
 {
-  if ( *(_BYTE *)(this + 84) )
+  if ( *(_BYTE *)(this + 84) ) /*0x557f03*/
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 280) + 36))(this + 280);
-    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 184) + 36))(this + 184);
-    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 88) + 36))(this + 88);
+    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 280) + 36))(this + 280); /*0x557f16*/
+    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 184) + 36))(this + 184); /*0x557f25*/
+    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 88) + 36))(this + 88); /*0x557f2e*/
   }
-  return LinkClass::Destroy((_DWORD *)this);
+  return LinkClass::Destroy((_DWORD *)this); /*0x557f38*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     al, [esi+54h]
-test    al, al
-jz      short loc_557F31
-mov     eax, [esi+118h]
-lea     ecx, [esi+118h]
-call    dword ptr [eax+24h]
-mov     edx, [esi+0B8h]
-lea     ecx, [esi+0B8h]
-call    dword ptr [edx+24h]
-mov     eax, [esi+58h]
-lea     ecx, [esi+58h]
-call    dword ptr [eax+24h]
-
-loc_557F31:                             ; CODE XREF: CheckListClass__OnDblClick+8↑j
-mov     ecx, esi
-call    LinkClass__Destroy
-pop     esi
-retn
-*/
 } }
 // 0x557FB0
 namespace gamemd { int CheckListClass::ScrollDown(int a1) {
@@ -3888,217 +1481,84 @@ int __thiscall CheckListClass::_vt41(_DWORD *this, int a2)
 {
   int v2; // esi
 
-  v2 = *(this + 91);
-  (*(void (__thiscall **)(_DWORD *, int))(*this + 184))(this, v2 + a2);
-  return v2;
+  v2 = *(this + 91); /*0x557fb7*/
+  (*(void (__thiscall **)(_DWORD *, int))(*this + 184))(this, v2 + a2); /*0x557fc0*/
+  return v2; /*0x557fc8*/
 }
-
-/* ASM:
-mov     edx, [esp+arg_0]
-mov     eax, [ecx]
-push    esi
-mov     esi, [ecx+16Ch]
-add     edx, esi
-push    edx
-call    dword ptr [eax+0B8h]
-mov     eax, esi
-pop     esi
-retn    4
-*/
 } }
 // 0x557FD0
 namespace gamemd { void CheckListClass::AddItem() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall CheckListClass::_vt18(int this)
 {
-  if ( *(_BYTE *)(this + 84) )
+  if ( *(_BYTE *)(this + 84) ) /*0x557fd3*/
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 88) + 72))(this + 88);
-    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 184) + 72))(this + 184);
-    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 280) + 72))(this + 280);
+    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 88) + 72))(this + 88); /*0x557fe0*/
+    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 184) + 72))(this + 184); /*0x557fef*/
+    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 280) + 72))(this + 280); /*0x557ffe*/
   }
-  VectorClass_ptr_ConvertClass::MarkDirty((_BYTE *)this);
+  VectorClass_ptr_ConvertClass::MarkDirty((_BYTE *)this); /*0x558003*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     al, [esi+54h]
-test    al, al
-jz      short loc_558001
-mov     eax, [esi+58h]
-lea     ecx, [esi+58h]
-call    dword ptr [eax+48h]
-mov     edx, [esi+0B8h]
-lea     ecx, [esi+0B8h]
-call    dword ptr [edx+48h]
-mov     eax, [esi+118h]
-lea     ecx, [esi+118h]
-call    dword ptr [eax+48h]
-
-loc_558001:                             ; CODE XREF: CheckListClass__AddItem+8↑j
-mov     ecx, esi
-call    VectorClass_ptr_ConvertClass__MarkDirty
-pop     esi
-retn
-*/
 } }
 // 0x558060
 namespace gamemd { void* ListClass::Destru_vt00(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x558060
-_BYTE *__thiscall ListClass::Destru_vt00(_BYTE *Block, char a2)
+ListClass *__thiscall ListClass::Destru_vt00(_BYTE *Block, char a2)
 {
   char v3; // al
-  int v4; // edx
+  GaugeClass *v4; // edx
   void *v5; // eax
 
-  v3 = *(Block + 84);
-  *(_DWORD *)Block = &ListClass::`vftable';
-  if ( v3 )
+  v3 = *(Block + 84); /*0x558066*/
+  *(_DWORD *)Block = &vt_ListClass; /*0x558069*/
+  if ( v3 ) /*0x558071*/
   {
-    v4 = *((_DWORD *)Block + 70);
-    *((_DWORD *)Block + 5) += *((_DWORD *)Block + 75);
-    *(Block + 84) = 0;
-    (*(void (__thiscall **)(_BYTE *))(v4 + 36))(Block + 280);
-    (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)Block + 22) + 36))(Block + 88);
-    (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)Block + 46) + 36))(Block + 184);
-    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)Block + 72))(Block);
+    v4 = (GaugeClass *)*((_DWORD *)Block + 70); /*0x55807c*/
+    *((_DWORD *)Block + 5) += *((_DWORD *)Block + 75); /*0x558084*/
+    *(Block + 84) = 0; /*0x55808d*/
+    ((void (__thiscall *)(_BYTE *))v4[1].GaugeClass_field_0x04)(Block + 280); /*0x558090*/
+    (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)Block + 22) + 36))(Block + 88); /*0x558099*/
+    (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)Block + 46) + 36))(Block + 184); /*0x5580a8*/
+    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)Block + 72))(Block); /*0x5580af*/
   }
-  SliderClass::Destructor((_DWORD *)Block + 70);
-  ShapeButtonClass::Destructor((int)(Block + 184));
-  ShapeButtonClass::Destructor((int)(Block + 88));
-  v5 = (void *)*((_DWORD *)Block + 14);
-  *((_DWORD *)Block + 13) = &VectorClass<unsigned short const *>::`vftable';
-  if ( v5 && *(Block + 65) )
+  SliderClass::Destructor((_DWORD *)Block + 70); /*0x5580b8*/
+  ShapeButtonClass::Destructor((int)(Block + 184)); /*0x5580c3*/
+  ShapeButtonClass::Destructor((int)(Block + 88)); /*0x5580cb*/
+  v5 = (void *)*((_DWORD *)Block + 14); /*0x5580d0*/
+  *((_DWORD *)Block + 13) = &vt_VectorClass_unsigned_short_const; /*0x5580d3*/
+  if ( v5 && *(Block + 65) ) /*0x5580de*/
   {
-    __3_YAXPAX_Z(v5);
-    *((_DWORD *)Block + 14) = 0;
+    __3_YAXPAX_Z(v5); /*0x5580e4*/
+    *((_DWORD *)Block + 14) = 0; /*0x5580ec*/
   }
-  *(Block + 65) = 0;
-  *((_DWORD *)Block + 15) = 0;
-  GadgetClass::Dtor(Block);
-  if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(Block);
-  return Block;
+  *(Block + 65) = 0; /*0x5580f1*/
+  *((_DWORD *)Block + 15) = 0; /*0x5580f4*/
+  GadgetClass::Dtor(Block); /*0x5580f7*/
+  if ( (a2 & 1) != 0 ) /*0x558101*/
+    __3_YAXPAX_Z(Block); /*0x558104*/
+  return (ListClass *)Block; /*0x55810e*/
 }
-
-/* ASM:
-push    ebx
-push    esi
-mov     esi, ecx
-xor     ebx, ebx
-mov     al, [esi+54h]
-mov     dword ptr [esi], offset ??_7ListClass@@6B@ ; const ListClass::`vftable'
-cmp     al, bl
-jz      short loc_5580B2
-mov     eax, [esi+12Ch]
-mov     ecx, [esi+14h]
-mov     edx, [esi+118h]
-add     ecx, eax
-mov     [esi+14h], ecx
-lea     ecx, [esi+118h]
-mov     [esi+54h], bl
-call    dword ptr [edx+24h]
-mov     eax, [esi+58h]
-lea     ecx, [esi+58h]
-call    dword ptr [eax+24h]
-mov     edx, [esi+0B8h]
-lea     ecx, [esi+0B8h]
-call    dword ptr [edx+24h]
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+48h]
-
-loc_5580B2:                             ; CODE XREF: ListClass__Destru_vt00+11↑j
-lea     ecx, [esi+118h]
-call    SliderClass__Destructor
-lea     ecx, [esi+0B8h]
-call    ShapeButtonClass__Destructor
-lea     ecx, [esi+58h]
-call    ShapeButtonClass__Destructor
-mov     eax, [esi+38h]
-mov     dword ptr [esi+34h], offset ??_7?$VectorClass@PBG@@6B@ ; const VectorClass<ushort const *>::`vftable'
-cmp     eax, ebx
-jz      short loc_5580EF
-cmp     [esi+41h], bl
-jz      short loc_5580EF
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [esi+38h], ebx
-
-loc_5580EF:                             ; CODE XREF: ListClass__Destru_vt00+7C↑j
-; ListClass__Destru_vt00+81↑j
-mov     ecx, esi
-mov     [esi+41h], bl
-mov     [esi+3Ch], ebx
-call    GadgetClass__Dtor
-test    [esp+8+arg_0], 1
-jz      short loc_55810C
-push    esi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_55810C:                             ; CODE XREF: ListClass__Destru_vt00+A1↑j
-mov     eax, esi
-pop     esi
-pop     ebx
-retn    4
-*/
 } }
 // 0x558130
 namespace gamemd { void* CheckListClass::drawList(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall CheckListClass::sub_558130(_DWORD *Block, char a2)
+DynamicVector *__thiscall CheckListClass::drawList(_DWORD *Block, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1);
-  *Block = &VectorClass<unsigned short const *>::`vftable';
-  if ( v3 && *((_BYTE *)Block + 13) )
+  v3 = (void *)*(Block + 1); /*0x558133*/
+  *Block = &vt_VectorClass_unsigned_short_const; /*0x558136*/
+  if ( v3 && *((_BYTE *)Block + 13) ) /*0x558140*/
   {
-    __3_YAXPAX_Z(v3);
-    *(Block + 1) = 0;
+    __3_YAXPAX_Z(v3); /*0x558148*/
+    *(Block + 1) = 0; /*0x558150*/
   }
-  *((_BYTE *)Block + 13) = 0;
-  *(Block + 2) = 0;
-  if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(Block);
-  return Block;
+  *((_BYTE *)Block + 13) = 0; /*0x55815b*/
+  *(Block + 2) = 0; /*0x558161*/
+  if ( (a2 & 1) != 0 ) /*0x558168*/
+    __3_YAXPAX_Z(Block); /*0x55816b*/
+  return (DynamicVector *)Block; /*0x558175*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     eax, [esi+4]
-mov     dword ptr [esi], offset ??_7?$VectorClass@PBG@@6B@ ; const VectorClass<ushort const *>::`vftable'
-test    eax, eax
-jz      short loc_558157
-mov     cl, [esi+0Dh]
-test    cl, cl
-jz      short loc_558157
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     dword ptr [esi+4], 0
-
-loc_558157:                             ; CODE XREF: CheckListClass__drawList+E↑j
-; CheckListClass__drawList+15↑j
-mov     al, [esp+4+arg_0]
-mov     byte ptr [esi+0Dh], 0
-test    al, 1
-mov     dword ptr [esi+8], 0
-jz      short loc_558173
-push    esi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_558173:                             ; CODE XREF: CheckListClass__drawList+38↑j
-mov     eax, esi
-pop     esi
-retn    4
-*/
 } }
 // 0x5581E0
 namespace gamemd { void CheckListClass::scrollList() {
@@ -4107,216 +1567,74 @@ void __thiscall CheckListClass::sub_5581E0(int this)
 {
   void *v2; // eax
 
-  v2 = *(void **)(this + 4);
-  *(_DWORD *)(this + 16) = 0;
-  if ( v2 && *(_BYTE *)(this + 13) )
+  v2 = *(void **)(this + 4); /*0x5581e6*/
+  *(_DWORD *)(this + 16) = 0; /*0x5581e9*/
+  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5581f0*/
   {
-    __3_YAXPAX_Z(v2);
-    *(_DWORD *)(this + 4) = 0;
+    __3_YAXPAX_Z(v2); /*0x5581f6*/
+    *(_DWORD *)(this + 4) = 0; /*0x5581fe*/
   }
-  *(_BYTE *)(this + 13) = 0;
-  *(_DWORD *)(this + 8) = 0;
+  *(_BYTE *)(this + 13) = 0; /*0x558201*/
+  *(_DWORD *)(this + 8) = 0; /*0x558204*/
 }
-
-/* ASM:
-push    ebx
-push    esi
-mov     esi, ecx
-xor     ebx, ebx
-mov     eax, [esi+4]
-mov     [esi+10h], ebx
-cmp     eax, ebx
-jz      short loc_558201
-cmp     [esi+0Dh], bl
-jz      short loc_558201
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [esi+4], ebx
-
-loc_558201:                             ; CODE XREF: CheckListClass__scrollList+E↑j
-; CheckListClass__scrollList+13↑j
-mov     [esi+0Dh], bl
-mov     [esi+8], ebx
-pop     esi
-pop     ebx
-retn
-*/
 } }
 // 0x558210
 namespace gamemd { int CheckListClass::selectItem(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall CheckListClass::sub_558210(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) )
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2;
+  if ( *(_BYTE *)(this + 12) ) /*0x558210*/
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x558225*/
   else
-    return 0;
+    return 0; /*0x558217*/
 }
-
-/* ASM:
-mov     al, [ecx+0Ch]
-test    al, al
-jnz     short loc_55821C
-xor     eax, eax
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_55821C:                             ; CODE XREF: CheckListClass__selectItem+5↑j
-mov     eax, [esp+arg_0]
-mov     edx, [ecx+4]
-sub     eax, edx
-shr     eax, 2
-retn    4
-*/
 } }
 // 0x5583C0
 namespace gamemd { int CheckListClass::clearList(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5583c0
-char __thiscall CheckListClass::clearList(void *this, int a2, _DWORD *a3)
+char __thiscall CheckListClass::sub_5583C0(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
   int v5; // ecx
   int i; // eax
   int v7; // eax
 
-  if ( a2 )
+  if ( a2 ) /*0x5583cc*/
   {
-    *((_BYTE *)this + 12) = 0;
-    if ( a3 )
-      v4 = a3;
+    *((_BYTE *)this + 12) = 0; /*0x5583d2*/
+    if ( a3 ) /*0x5583d8*/
+      v4 = a3; /*0x5583ee*/
     else
-      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
-    *((_BYTE *)this + 12) = 1;
-    if ( !v4 )
-      return 0;
-    if ( *((_DWORD *)this + 1) )
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5583ea*/
+    *((_BYTE *)this + 12) = 1; /*0x5583f2*/
+    if ( !v4 ) /*0x5583f6*/
+      return 0; /*0x55846a*/
+    if ( *((_DWORD *)this + 1) ) /*0x5583f8*/
     {
-      v5 = *((_DWORD *)this + 2);
-      if ( a2 < v5 )
-        v5 = a2;
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
-        ++i;
-      if ( *((_BYTE *)this + 13) )
+      v5 = *((_DWORD *)this + 2); /*0x5583ff*/
+      if ( a2 < v5 ) /*0x558404*/
+        v5 = a2; /*0x558406*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x55840c*/
+        ++i; /*0x558411*/
+      if ( *((_BYTE *)this + 13) ) /*0x55841e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1));
-        *((_DWORD *)this + 1) = 0;
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x558429*/
+        *((_DWORD *)this + 1) = 0; /*0x558431*/
       }
     }
-    *((_DWORD *)this + 1) = v4;
-    *((_DWORD *)this + 2) = a2;
-    *((_BYTE *)this + 13) = a3 == 0;
+    *((_DWORD *)this + 1) = v4; /*0x55843a*/
+    *((_DWORD *)this + 2) = a2; /*0x558442*/
+    *((_BYTE *)this + 13) = a3 == 0; /*0x558445*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x55844e*/
   }
-  v7 = *((_DWORD *)this + 2);
-  if ( v7 < *((_DWORD *)this + 4) )
-    *((_DWORD *)this + 4) = v7;
-  return 1;
+  v7 = *((_DWORD *)this + 2); /*0x558451*/
+  if ( v7 < *((_DWORD *)this + 4) ) /*0x558459*/
+    *((_DWORD *)this + 4) = v7; /*0x55845b*/
+  return 1; /*0x55845e*/
 }
-
-/* ASM:
-push    ebx
-push    ebp
-mov     ebp, [esp+8+arg_0]
-push    esi
-test    ebp, ebp
-push    edi
-mov     esi, ecx
-jz      short loc_55844A
-mov     ebx, [esp+10h+arg_4]
-mov     byte ptr [esi+0Ch], 0
-test    ebx, ebx
-jnz     short loc_5583EE
-lea     eax, ds:0[ebp*4]
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-mov     edi, eax
-jmp     short loc_5583F0
-; ---------------------------------------------------------------------------
-
-loc_5583EE:                             ; CODE XREF: CheckListClass__clearList+18↑j
-mov     edi, ebx
-
-loc_5583F0:                             ; CODE XREF: CheckListClass__clearList+2C↑j
-test    edi, edi
-mov     byte ptr [esi+0Ch], 1
-jz      short loc_558467
-mov     eax, [esi+4]
-test    eax, eax
-jz      short loc_558438
-mov     ecx, [esi+8]
-cmp     ebp, ecx
-jge     short loc_558408
-mov     ecx, ebp
-
-loc_558408:                             ; CODE XREF: CheckListClass__clearList+44↑j
-xor     eax, eax
-test    ecx, ecx
-jle     short loc_55841E
-
-loc_55840E:                             ; CODE XREF: CheckListClass__clearList+5C↓j
-mov     edx, [esi+4]
-inc     eax
-cmp     eax, ecx
-mov     edx, [edx+eax*4-4]
-mov     [edi+eax*4-4], edx
-jl      short loc_55840E
-
-loc_55841E:                             ; CODE XREF: CheckListClass__clearList+4C↑j
-mov     al, [esi+0Dh]
-test    al, al
-jz      short loc_558438
-mov     eax, [esi+4]
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     dword ptr [esi+4], 0
-
-loc_558438:                             ; CODE XREF: CheckListClass__clearList+3D↑j
-; CheckListClass__clearList+63↑j
-xor     eax, eax
-mov     [esi+4], edi
-test    ebx, ebx
-setz    al
-mov     [esi+8], ebp
-mov     [esi+0Dh], al
-jmp     short loc_558451
-; ---------------------------------------------------------------------------
-
-loc_55844A:                             ; CODE XREF: CheckListClass__clearList+C↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+0Ch]
-
-loc_558451:                             ; CODE XREF: CheckListClass__clearList+88↑j
-mov     eax, [esi+8]
-mov     ecx, [esi+10h]
-cmp     eax, ecx
-jge     short loc_55845E
-mov     [esi+10h], eax
-
-loc_55845E:                             ; CODE XREF: CheckListClass__clearList+99↑j
-pop     edi
-pop     esi
-pop     ebp
-mov     al, 1
-pop     ebx
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_558467:                             ; CODE XREF: CheckListClass__clearList+36↑j
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    8
-*/
 } }
 // 0x558470
 namespace gamemd { int CheckListClass::getItemCount(void* a1) {
@@ -4327,60 +1645,25 @@ int __thiscall CheckListClass::sub_558470(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = *(this + 4);
-  result = 0;
-  if ( v2 <= 0 )
-    return -1;
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i )
+  v2 = *(this + 4); /*0x558470*/
+  result = 0; /*0x558473*/
+  if ( v2 <= 0 ) /*0x558478*/
+    return -1; /*0x55848f*/
+  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x55847e*/
   {
-    if ( ++result >= v2 )
-      return -1;
+    if ( ++result >= v2 ) /*0x55848d*/
+      return -1; /*0x55848d*/
   }
-  return result;
+  return result; /*0x558492*/
 }
-
-/* ASM:
-mov     edx, [ecx+10h]
-xor     eax, eax
-push    esi
-test    edx, edx
-jle     short loc_55848F
-mov     esi, [esp+4+arg_0]
-mov     ecx, [ecx+4]
-mov     esi, [esi]
-
-loc_558483:                             ; CODE XREF: CheckListClass__getItemCount+1D↓j
-cmp     [ecx], esi
-jz      short loc_558492
-inc     eax
-add     ecx, 4
-cmp     eax, edx
-jl      short loc_558483
-
-loc_55848F:                             ; CODE XREF: CheckListClass__getItemCount+8↑j
-or      eax, 0FFFFFFFFh
-
-loc_558492:                             ; CODE XREF: CheckListClass__getItemCount+15↑j
-pop     esi
-retn    4
-*/
 } }
 // 0x5BDAA0
 namespace gamemd { int MouseClass::GetPosition() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall MouseClass::_vt20(_DWORD *this)
 {
-  return (*(int (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*this + 76))(this, *(this + 5465), 0);
+  return (*(int (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*this + 76))(this, *(this + 5465), 0); /*0x5bdaae*/
 }
-
-/* ASM:
-mov     edx, [ecx+5564h]
-mov     eax, [ecx]
-push    0
-push    edx
-call    dword ptr [eax+4Ch]
-retn
-*/
 } }
 // 0x5BDAB0
 namespace gamemd { int MouseClass::SetPosition(int a1) {
@@ -4396,125 +1679,37 @@ char __thiscall MouseClass::_vt21(int this, char a2)
   _DWORD v8[2]; // [esp+4h] [ebp-8h] BYREF
   int v9; // [esp+10h] [ebp+4h]
 
-  result = *(_BYTE *)(this + 21852);
-  if ( result != a2 )
+  result = *(_BYTE *)(this + 21852); /*0x5bdab7*/
+  if ( result != a2 ) /*0x5bdac3*/
   {
-    v3 = *(_DWORD *)(this + 21856);
-    *(_BYTE *)(this + 21852) = a2;
-    if ( !a2 || dword_82D034[7 * v3] == -1 )
-      v9 = MouseClass_Cursors[7 * v3];
+    v3 = *(_DWORD *)(this + 21856); /*0x5bdac9*/
+    *(_BYTE *)(this + 21852) = a2; /*0x5bdacf*/
+    if ( !a2 || MEMORY[0x82D034][7 * v3] == -1 ) /*0x5bdaf2*/
+      v9 = MEMORY[0x82D028][7 * v3]; /*0x5bdafd*/
     else
-      v9 = dword_82D034[7 * v3];
-    v4 = dword_82D03C[7 * v3];
-    v5 = 0;
-    v6 = 0;
-    if ( v4 == 12345 )
-      v5 = *((__int16 *)MEMORY[0xABF294] + 1) / 2;
-    if ( v4 == 54321 )
-      v5 = *((__int16 *)MEMORY[0xABF294] + 1);
-    v7 = dword_82D040[7 * v3];
-    if ( v7 == 12345 )
-      v6 = *((__int16 *)MEMORY[0xABF294] + 2) / 2;
-    if ( v7 == 54321 )
-      v6 = *((__int16 *)MEMORY[0xABF294] + 2);
-    v8[1] = v6;
-    v8[0] = v5;
-    return (*(int (__thiscall **)(int, _DWORD *, void *, int))(*(_DWORD *)MEMORY[0x887640] + 4))(
+      v9 = MEMORY[0x82D034][7 * v3]; /*0x5bdaf4*/
+    v4 = MEMORY[0x82D03C][7 * v3]; /*0x5bdb08*/
+    v5 = 0; /*0x5bdb0b*/
+    v6 = 0; /*0x5bdb0d*/
+    if ( v4 == 12345 ) /*0x5bdb15*/
+      v5 = *((__int16 *)MEMORY[0xABF294] + 1) / 2; /*0x5bdb20*/
+    if ( v4 == 54321 ) /*0x5bdb29*/
+      v5 = *((__int16 *)MEMORY[0xABF294] + 1); /*0x5bdb2b*/
+    v7 = MEMORY[0x82D040][7 * v3]; /*0x5bdb2f*/
+    if ( v7 == 12345 ) /*0x5bdb38*/
+      v6 = *((__int16 *)MEMORY[0xABF294] + 2) / 2; /*0x5bdb43*/
+    if ( v7 == 54321 ) /*0x5bdb4b*/
+      v6 = *((__int16 *)MEMORY[0xABF294] + 2); /*0x5bdb4d*/
+    v8[1] = v6; /*0x5bdb55*/
+    v8[0] = v5; /*0x5bdb62*/
+    return (*(int (__thiscall **)(int, _DWORD *, void *, int))(*(_DWORD *)MEMORY[0x887640] + 4))( /*0x5bdb79*/
              MEMORY[0x887640],
              v8,
              MEMORY[0xABF294],
              v9 + *(_DWORD *)(this + 21864));
   }
-  return result;
+  return result; /*0x5bdb7f*/
 }
-
-/* ASM:
-sub     esp, 0Ch
-mov     dl, byte ptr [esp+0Ch+arg_0]
-mov     al, [ecx+555Ch]
-cmp     al, dl
-mov     [esp+0Ch+var_C], ecx
-jz      loc_5BDB7F
-mov     eax, [ecx+5560h]
-mov     [ecx+555Ch], dl
-push    ebp
-push    esi
-lea     ecx, ds:0[eax*8]
-push    edi
-sub     ecx, eax
-test    dl, dl
-lea     ebp, ds:82D028h[ecx*4]
-jz      short loc_5BDAFA
-mov     eax, [ebp+0Ch]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_5BDAFA
-mov     [esp+18h+arg_0], eax
-jmp     short loc_5BDB01
-; ---------------------------------------------------------------------------
-
-loc_5BDAFA:                             ; CODE XREF: MouseClass__SetPosition+3A↑j
-; MouseClass__SetPosition+42↑j
-mov     edx, [ebp+0]
-mov     [esp+18h+arg_0], edx
-
-loc_5BDB01:                             ; CODE XREF: MouseClass__SetPosition+48↑j
-mov     ecx, dword_A8ED54+30540h
-push    ebx
-mov     ebx, [ebp+14h]
-xor     edi, edi
-xor     esi, esi
-cmp     ebx, 3039h
-jnz     short loc_5BDB22
-movsx   eax, word ptr [ecx+2]
-cdq
-sub     eax, edx
-mov     edi, eax
-sar     edi, 1
-
-loc_5BDB22:                             ; CODE XREF: MouseClass__SetPosition+65↑j
-cmp     ebx, 0D431h
-pop     ebx
-jnz     short loc_5BDB2F
-movsx   edi, word ptr [ecx+2]
-
-loc_5BDB2F:                             ; CODE XREF: MouseClass__SetPosition+79↑j
-mov     ebp, [ebp+18h]
-cmp     ebp, 3039h
-jnz     short loc_5BDB45
-movsx   eax, word ptr [ecx+4]
-cdq
-sub     eax, edx
-mov     esi, eax
-sar     esi, 1
-
-loc_5BDB45:                             ; CODE XREF: MouseClass__SetPosition+88↑j
-cmp     ebp, 0D431h
-jnz     short loc_5BDB51
-movsx   esi, word ptr [ecx+4]
-
-loc_5BDB51:                             ; CODE XREF: MouseClass__SetPosition+9B↑j
-mov     ebp, [esp+18h+arg_0]
-mov     [esp+18h+var_4], esi
-mov     esi, [esp+18h+var_C]
-mov     eax, ds:887640h
-mov     [esp+18h+var_8], edi
-mov     esi, [esi+5568h]
-mov     edx, [eax]
-add     esi, ebp
-push    esi
-push    ecx
-lea     ecx, [esp+20h+var_8]
-push    ecx
-mov     ecx, eax
-call    dword ptr [edx+4]
-pop     edi
-pop     esi
-pop     ebp
-
-loc_5BDB7F:                             ; CODE XREF: MouseClass__SetPosition+13↑j
-add     esp, 0Ch
-retn    4
-*/
 } }
 // 0x5BDF30
 namespace gamemd { void* MouseClass::LoadTypeData() {
@@ -4523,50 +1718,29 @@ void *__thiscall MouseClass::_vt05(int *this)
 {
   void *result; // eax
 
-  BlowStraw_29_::Stub(this);
-  result = LoadFileSHP(g_Str_File_MOUSE_SHA, (bool *)&MEMORY[0xABF2DC]);
-  MEMORY[0xABF294] = result;
-  return result;
+  BlowStraw_29::Stub(this); /*0x5bdf30*/
+  result = LoadFileSHP(g_Str_File_MOUSE_SHA, (bool *)&MEMORY[0xABF2DC]); /*0x5bdf3f*/
+  MEMORY[0xABF294] = result; /*0x5bdf44*/
+  return result; /*0x5bdf49*/
 }
-
-/* ASM:
-call    BlowStraw_29___Stub
-mov     edx, (offset dword_A8ED54+30588h)
-mov     ecx, offset g_Str_File_MOUSE_SHA ; "MOUSE.SHA"
-call    LoadFileSHP
-mov     dword_A8ED54+30540h, eax
-retn
-*/
 } }
 // 0x5BDF50
 namespace gamemd { int MouseClass::HandleClick() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall MouseClass::_vt07(int this)
 {
-  HouseClass::InitSubsystems((_BYTE *)this);
-  *(_BYTE *)(this + 21852) = 0;
-  *(_DWORD *)(this + 21860) = 0;
-  return 0;
+  HouseClass::InitSubsystems((_BYTE *)this); /*0x5bdf53*/
+  *(_BYTE *)(this + 21852) = 0; /*0x5bdf5a*/
+  *(_DWORD *)(this + 21860) = 0; /*0x5bdf60*/
+  return 0; /*0x5bdf66*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-call    HouseClass__InitSubsystems
-xor     eax, eax
-mov     [esi+555Ch], al
-mov     [esi+5564h], eax
-pop     esi
-retn
-*/
 } }
 // 0x5BDF70
 namespace gamemd { int MouseClass::LoadGameAssets() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5bdf70
-int __thiscall MouseClass::LoadGameAssets(int *this, int pStm)
+int __thiscall MouseClass::LoadGameAssets(int *this, LPSTREAM pStm)
 {
-  int v3; // esi
+  LPSTREAM v3; // esi
   int result; // eax
   void *v5; // ecx
   _DWORD *v6; // esi
@@ -4574,25 +1748,25 @@ int __thiscall MouseClass::LoadGameAssets(int *this, int pStm)
   int v8; // edi
   void **v9; // esi
   int v10; // edi
-  _DWORD **v11; // edi
+  int *v11; // edi
   int v12; // ebx
   _DWORD *v13; // esi
   int *v14; // ebx
   int *v15; // esi
   int v16; // edi
   int v17; // eax
-  int v18; // eax
+  void *v18; // eax
   int v19; // esi
   _BYTE *v20; // eax
   int v21; // esi
   _BYTE *v22; // ecx
   int v23; // edx
-  _DWORD *v24; // eax
-  _DWORD *v25; // esi
+  int **v24; // eax
+  int **v25; // esi
   int v26; // ebx
   _DWORD *v27; // eax
-  _DWORD *v28; // edi
-  _DWORD *v29; // eax
+  VectorClass *v28; // edi
+  int *v29; // eax
   int v30; // ecx
   int v31; // eax
   int v32; // ecx
@@ -4602,19 +1776,19 @@ int __thiscall MouseClass::LoadGameAssets(int *this, int pStm)
   int v36; // esi
   _DWORD *v37; // eax
   _DWORD *v38; // edi
-  _DWORD *v39; // eax
-  _DWORD *v40; // esi
+  char *v39; // eax
+  VectorClass *v40; // esi
   int v41; // ebx
-  _DWORD *v42; // eax
+  char *v42; // eax
   int v43; // ecx
   int v44; // eax
   int v45; // ecx
-  _DWORD *v46; // ecx
+  int *v46; // ecx
   int v47; // edx
-  int v48; // edi
+  IStream *v48; // edi
   int v49; // ebx
-  _DWORD *v50; // esi
-  int v51; // eax
+  int *v50; // esi
+  void *v51; // eax
   int v52; // eax
   int v53; // eax
   int v54; // ecx
@@ -4639,8 +1813,8 @@ int __thiscall MouseClass::LoadGameAssets(int *this, int pStm)
   int v73; // [esp+E4h] [ebp-2Ch] BYREF
   int v74; // [esp+E8h] [ebp-28h]
   int v75; // [esp+ECh] [ebp-24h] BYREF
-  _DWORD *v76; // [esp+F0h] [ebp-20h]
-  _DWORD *v77; // [esp+F4h] [ebp-1Ch]
+  int *v76; // [esp+F0h] [ebp-20h]
+  char *v77; // [esp+F4h] [ebp-1Ch]
   int v78; // [esp+F8h] [ebp-18h] BYREF
   int v79; // [esp+FCh] [ebp-14h] BYREF
   int v80; // [esp+100h] [ebp-10h] BYREF
@@ -4648,338 +1822,366 @@ int __thiscall MouseClass::LoadGameAssets(int *this, int pStm)
   int v82; // [esp+108h] [ebp-8h]
   int v83; // [esp+10Ch] [ebp-4h]
 
-  (*(void (__thiscall **)(int *))(*(this + 1111) + 12))(this + 1111);
-  (*(void (__thiscall **)(int *))(*(this + 53) + 12))(this + 53);
-  v3 = pStm;
-  result = SidebarClass::saveLoadPrefix(this, pStm);
-  if ( result >= 0 )
+  (*(void (__thiscall **)(int *))(*(this + 1111) + 12))(this + 1111); /*0x5bdf85*/
+  (*(void (__thiscall **)(int *))(*(this + 53) + 12))(this + 53); /*0x5bdf94*/
+  v3 = pStm; /*0x5bdf97*/
+  result = SidebarClass::saveLoadPrefix(this, (int)pStm); /*0x5bdf9e*/
+  if ( result >= 0 ) /*0x5bdfa7*/
   {
-    result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v3 + 12))(v3, &v79, 4, 0);
-    if ( result >= 0 )
+    result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)v3->__pad_0 + 12))(v3, &v79, 4, 0); /*0x5bdfb8*/
+    if ( result >= 0 ) /*0x5bdfbd*/
     {
-      dword_822CF8 = -1;
-      (*(void (__thiscall **)(int *))(*this + 92))(this);
-      __3_YAXPAX_Z((void *)*(this + 28));
-      v5 = (void *)*(this + 26);
-      *(this + 28) = 0;
-      __3_YAXPAX_Z(v5);
-      v6 = (_DWORD *)*(this + 5);
-      *(this + 26) = 0;
-      if ( v6 )
+      dword_822CF8 = -1; /*0x5bdfc3*/
+      (*(void (__thiscall **)(int *))(*this + 92))(this); /*0x5bdfd2*/
+      __3_YAXPAX_Z((void *)*(this + 28)); /*0x5bdfd9*/
+      v5 = (void *)*(this + 26); /*0x5bdfde*/
+      *(this + 28) = 0; /*0x5bdfe1*/
+      __3_YAXPAX_Z(v5); /*0x5bdfe5*/
+      v6 = (_DWORD *)*(this + 5); /*0x5bdfea*/
+      *(this + 26) = 0; /*0x5bdff2*/
+      if ( v6 ) /*0x5bdff5*/
       {
-        if ( *v6 )
-          (**(void (__thiscall ***)(_DWORD, int))*v6)(*v6, 3);
-        __3_YAXPAX_Z(v6);
+        if ( *v6 ) /*0x5bdff7*/
+          (**(void (__thiscall ***)(_DWORD, int))*v6)(*v6, 3); /*0x5be001*/
+        __3_YAXPAX_Z(v6); /*0x5be004*/
       }
-      *(this + 5) = 0;
-      v7 = this + 35;
-      v8 = 3;
-      do
+      *(this + 5) = 0; /*0x5be00c*/
+      v7 = this + 35; /*0x5be00f*/
+      v8 = 3; /*0x5be015*/
+      do /*0x5be025*/
       {
-        (*(void (__thiscall **)(int *))(*v7 + 12))(v7);
-        v7 += 6;
-        --v8;
+        (*(void (__thiscall **)(int *))(*v7 + 12))(v7); /*0x5be01e*/
+        v7 += 6; /*0x5be021*/
+        --v8; /*0x5be024*/
       }
-      while ( v8 );
-      v9 = (void **)(this + 6);
-      v10 = 13;
-      do
+      while ( v8 ); /*0x5be025*/
+      v9 = (void **)(this + 6); /*0x5be027*/
+      v10 = 13; /*0x5be02a*/
+      do /*0x5be040*/
       {
-        __3_YAXPAX_Z(*v9);
-        *v9++ = 0;
-        --v10;
+        __3_YAXPAX_Z(*v9); /*0x5be032*/
+        *v9++ = 0; /*0x5be037*/
+        --v10; /*0x5be03f*/
       }
-      while ( v10 );
-      v11 = (_DWORD **)(this + 32);
-      v12 = 3;
-      do
+      while ( v10 ); /*0x5be040*/
+      v11 = this + 32; /*0x5be042*/
+      v12 = 3; /*0x5be048*/
+      do /*0x5be072*/
       {
-        v13 = *v11;
-        if ( *v11 )
+        v13 = (_DWORD *)*v11; /*0x5be04d*/
+        if ( *v11 ) /*0x5be04d*/
         {
-          if ( *v13 )
-            (**(void (__thiscall ***)(_DWORD, int))*v13)(*v13, 3);
-          __3_YAXPAX_Z(v13);
-          *v11 = 0;
+          if ( *v13 ) /*0x5be053*/
+            (**(void (__thiscall ***)(_DWORD, int))*v13)(*v13, 3); /*0x5be05d*/
+          __3_YAXPAX_Z(v13); /*0x5be060*/
+          *v11 = 0; /*0x5be068*/
         }
-        ++v11;
-        --v12;
+        ++v11; /*0x5be06e*/
+        --v12; /*0x5be071*/
       }
-      while ( v12 );
-      (*(void (__thiscall **)(int *))(*(this + 78) + 12))(this + 78);
-      result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)pStm + 12))(pStm, this, 21868, 0);
-      if ( result >= 0 )
+      while ( v12 ); /*0x5be072*/
+      (*(void (__thiscall **)(int *))(*(this + 78) + 12))(this + 78); /*0x5be080*/
+      result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)pStm->__pad_0 + 12))( /*0x5be092*/
+                 pStm,
+                 this,
+                 21868,
+                 0);
+      if ( result >= 0 ) /*0x5be097*/
       {
-        if ( this )
+        if ( this ) /*0x5be09f*/
         {
-          MouseClass::drawCursor(this, (int)&v72);
-          *this = (int)&MouseClass::`vftable';
-          *(this + 5446) = (int)&MouseClass::`vftable';
+          MouseClass::drawCursor(this, (int)&v72); /*0x5be0a8*/
+          *this = (int)&MouseClass::`vftable'; /*0x5be0ad*/
+          *(this + 5446) = (int)&vt_MouseClass; /*0x5be0b4*/
         }
-        v14 = this + 1386;
-        v74 = 4;
-        do
+        v14 = this + 1386; /*0x5be0be*/
+        v74 = 4; /*0x5be0c4*/
+        do /*0x5be0f3*/
         {
-          v15 = v14;
-          v16 = 75;
-          do
+          v15 = v14; /*0x5be0cc*/
+          v16 = 75; /*0x5be0ce*/
+          do /*0x5be0e2*/
           {
-            ObjectPtr::RegisterForTracking((int)&dword_A8ED54[128239], v15);
-            v15 += 13;
-            --v16;
+            ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)v15); /*0x5be0d9*/
+            v15 += 13; /*0x5be0de*/
+            --v16; /*0x5be0e1*/
           }
-          while ( v16 );
-          v14 += 997;
-          --v74;
+          while ( v16 ); /*0x5be0e2*/
+          v14 += 997; /*0x5be0e8*/
+          --v74; /*0x5be0ef*/
         }
-        while ( v74 );
-        ObjectPtr::RegisterForTracking((int)&dword_A8ED54[128239], this + 1129);
-        ObjectPtr::RegisterForTracking((int)&dword_A8ED54[128239], this + 1130);
-        ObjectPtr::RegisterForTracking((int)&dword_A8ED54[128239], this + 1128);
-        (*(void (__thiscall **)(int *))(*this + 88))(this);
-        (*(void (__thiscall **)(int *))(*this + 96))(this);
-        v17 = *this;
-        *(this + 28) = 0;
-        *(this + 26) = 0;
-        (*(void (__thiscall **)(int *, int *, int, _DWORD, _DWORD))(v17 + 112))(this, this + 59, 1, 0, 0);
-        if ( *(this + 28) )
+        while ( v74 ); /*0x5be0f3*/
+        ObjectPtr::RegisterForTracking( /*0x5be101*/
+          (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+          (MouseClass *)(this + 1129));
+        ObjectPtr::RegisterForTracking( /*0x5be112*/
+          (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+          (MouseClass *)(this + 1130));
+        ObjectPtr::RegisterForTracking( /*0x5be123*/
+          (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
+          (MouseClass *)(this + 1128));
+        (*(void (__thiscall **)(int *))(*this + 88))(this); /*0x5be12d*/
+        (*(void (__thiscall **)(int *))(*this + 96))(this); /*0x5be135*/
+        v17 = *this; /*0x5be138*/
+        *(this + 28) = 0; /*0x5be14a*/
+        *(this + 26) = 0; /*0x5be14d*/
+        (*(void (__thiscall **)(int *, int *, int, _DWORD, _DWORD))(v17 + 112))(this, this + 59, 1, 0, 0); /*0x5be150*/
+        if ( *(this + 28) ) /*0x5be153*/
         {
-          __3_YAXPAX_Z((void *)*(this + 28));
-          *(this + 28) = 0;
+          __3_YAXPAX_Z((void *)*(this + 28)); /*0x5be15b*/
+          *(this + 28) = 0; /*0x5be163*/
         }
-        if ( *(this + 26) )
+        if ( *(this + 26) ) /*0x5be166*/
         {
-          __3_YAXPAX_Z((void *)*(this + 26));
-          *(this + 26) = 0;
+          __3_YAXPAX_Z((void *)*(this + 26)); /*0x5be16e*/
+          *(this + 26) = 0; /*0x5be176*/
         }
-        v18 = __2_YAPAXI_Z(10 * *(this + 27));
-        v19 = *(this + 27);
-        *(this + 28) = v18;
-        v20 = (_BYTE *)__2_YAPAXI_Z(4 * v19);
-        if ( v20 )
+        v18 = (void *)__2_YAPAXI_Z(10 * *(this + 27)); /*0x5be182*/
+        v19 = *(this + 27); /*0x5be187*/
+        *(this + 28) = (int)v18; /*0x5be18a*/
+        v20 = (_BYTE *)__2_YAPAXI_Z(4 * v19); /*0x5be195*/
+        if ( v20 ) /*0x5be19f*/
         {
-          v21 = v19 - 1;
-          v22 = v20;
-          if ( v21 >= 0 )
+          v21 = v19 - 1; /*0x5be1a1*/
+          v22 = v20; /*0x5be1a2*/
+          if ( v21 >= 0 ) /*0x5be1a6*/
           {
-            v23 = v21 + 1;
-            do
+            v23 = v21 + 1; /*0x5be1a8*/
+            do /*0x5be1b6*/
             {
-              *v22 = 7;
-              v22[1] = 0;
-              v22 += 4;
-              --v23;
+              *v22 = 7; /*0x5be1ab*/
+              v22[1] = 0; /*0x5be1ae*/
+              v22 += 4; /*0x5be1b2*/
+              --v23; /*0x5be1b5*/
             }
-            while ( v23 );
+            while ( v23 ); /*0x5be1b6*/
           }
         }
         else
         {
-          v20 = 0;
+          v20 = 0; /*0x5be1ba*/
         }
-        *(this + 26) = (int)v20;
-        v24 = (_DWORD *)__2_YAPAXI_Z(16);
-        v25 = v24;
-        v26 = 256;
-        if ( v24 )
+        *(this + 26) = (int)v20; /*0x5be1be*/
+        v24 = (int **)__2_YAPAXI_Z(0x10u); /*0x5be1c1*/
+        v25 = v24; /*0x5be1c6*/
+        v26 = 256; /*0x5be1cd*/
+        if ( v24 ) /*0x5be1d2*/
         {
-          v24[1] = Cell::DecodeFlags;
-          v24[2] = 256;
-          v24[3] = 20;
-          v27 = (_DWORD *)__2_YAPAXI_Z(6148);
-          if ( v27 )
+          v24[1] = (int *)Cell::DecodeFlags; /*0x5be1d9*/
+          v24[2] = (int *)256; /*0x5be1e0*/
+          v24[3] = (int *)20; /*0x5be1e3*/
+          v27 = (_DWORD *)__2_YAPAXI_Z(0x1804u); /*0x5be1ea*/
+          if ( v27 ) /*0x5be1f4*/
           {
-            *v27 = 256;
-            v76 = v27 + 1;
-            v28 = v27 + 1;
-            do
+            *v27 = 256; /*0x5be1f6*/
+            v76 = v27 + 1; /*0x5be1fb*/
+            v28 = (VectorClass *)(v27 + 1); /*0x5be1ff*/
+            do /*0x5be210*/
             {
-              MouseClass::loadCursor(v28, 0, 0);
-              v28 += 6;
-              --v26;
+              MouseClass::loadCursor(v28, 0, 0); /*0x5be207*/
+              v28 = (VectorClass *)((char *)v28 + 24); /*0x5be20c*/
+              --v26; /*0x5be20f*/
             }
-            while ( v26 );
-            v29 = v76;
+            while ( v26 ); /*0x5be210*/
+            v29 = v76; /*0x5be212*/
           }
           else
           {
-            v29 = 0;
+            v29 = 0; /*0x5be218*/
           }
-          v30 = v25[2];
-          *v25 = v29;
-          v31 = 0;
-          if ( v30 > 0 )
+          v30 = (int)v25[2]; /*0x5be21a*/
+          *v25 = v29; /*0x5be21d*/
+          v31 = 0; /*0x5be21f*/
+          if ( v30 > 0 ) /*0x5be223*/
           {
-            v32 = 0;
-            do
+            v32 = 0; /*0x5be225*/
+            do /*0x5be23b*/
             {
-              ++v31;
-              *(_DWORD *)(*v25 + v32 + 20) = 20;
-              v32 += 24;
+              ++v31; /*0x5be22e*/
+              (*v25)[v32 + 5] = 20; /*0x5be22f*/
+              v32 += 6; /*0x5be236*/
             }
-            while ( v31 < v25[2] );
+            while ( v31 < (int)v25[2] ); /*0x5be23b*/
           }
         }
         else
         {
-          v25 = 0;
+          v25 = 0; /*0x5be23f*/
         }
-        *(this + 5) = (int)v25;
-        v76 = this + 32;
-        v33 = 0;
-        v74 = (int)(this + 35);
-        do
+        *(this + 5) = (int)v25; /*0x5be247*/
+        v76 = this + 32; /*0x5be24a*/
+        v33 = 0; /*0x5be254*/
+        v74 = (int)(this + 35); /*0x5be256*/
+        do /*0x5be34f*/
         {
-          v34 = v74;
-          v35 = *(_DWORD *)v74;
-          v78 = v33 + 1;
-          v36 = 1 << (v33 + 1);
-          (*(void (__thiscall **)(int))(v35 + 12))(v74);
-          *(_DWORD *)(v34 + 20) = 4 * *(this + 61) * *(this + 62) / (v36 * v36);
-          v37 = (_DWORD *)__2_YAPAXI_Z(16);
-          v38 = v37;
-          if ( v37 )
+          v34 = v74; /*0x5be25a*/
+          v35 = *(_DWORD *)v74; /*0x5be266*/
+          v78 = v33 + 1; /*0x5be268*/
+          v36 = 1 << (v33 + 1); /*0x5be26c*/
+          (*(void (__thiscall **)(int))(v35 + 12))(v74); /*0x5be270*/
+          *(_DWORD *)(v34 + 20) = 4 * *(this + 61) * *(this + 62) / (v36 * v36); /*0x5be28d*/
+          v37 = (_DWORD *)__2_YAPAXI_Z(0x10u); /*0x5be290*/
+          v38 = v37; /*0x5be295*/
+          if ( v37 ) /*0x5be29c*/
           {
-            v37[1] = Cell::DecodeFlags;
-            v37[2] = 256;
-            v37[3] = 20;
-            v39 = (_DWORD *)__2_YAPAXI_Z(6148);
-            if ( v39 )
+            v37[1] = Cell::DecodeFlags; /*0x5be2a7*/
+            v37[2] = 256; /*0x5be2ae*/
+            v37[3] = 20; /*0x5be2b5*/
+            v39 = (char *)__2_YAPAXI_Z(0x1804u); /*0x5be2bc*/
+            if ( v39 ) /*0x5be2c6*/
             {
-              *v39 = 256;
-              v77 = v39 + 1;
-              v40 = v39 + 1;
-              v41 = 256;
-              do
+              *(_DWORD *)v39 = 256; /*0x5be2c8*/
+              v77 = v39 + 4; /*0x5be2d1*/
+              v40 = (VectorClass *)(v39 + 4); /*0x5be2d5*/
+              v41 = 256; /*0x5be2d7*/
+              do /*0x5be2ff*/
               {
-                SubzoneHashVector::Construct(v40, 0, 0);
-                *v40 = &DynamicVectorClass<HashObject<unsigned int,SubzoneConnectionStruct>>::`vftable';
-                v40[5] = 10;
-                v40[4] = 0;
-                v40 += 6;
-                --v41;
+                SubzoneHashVector::Construct(v40, 0, 0); /*0x5be2e2*/
+                v40->vtable0 = &vt_DynamicVectorClass_HashObject_unsigned_int_SubzoneConnectionStruct; /*0x5be2e7*/
+                v40[1].Items = (void *)10; /*0x5be2ed*/
+                v40[1].vtable0 = 0; /*0x5be2f4*/
+                v40 = (VectorClass *)((char *)v40 + 24); /*0x5be2fb*/
+                --v41; /*0x5be2fe*/
               }
-              while ( v41 );
-              v42 = v77;
+              while ( v41 ); /*0x5be2ff*/
+              v42 = v77; /*0x5be301*/
             }
             else
             {
-              v42 = 0;
+              v42 = 0; /*0x5be307*/
             }
-            v43 = v38[2];
-            *v38 = v42;
-            v44 = 0;
-            if ( v43 > 0 )
+            v43 = v38[2]; /*0x5be309*/
+            *v38 = v42; /*0x5be30c*/
+            v44 = 0; /*0x5be30e*/
+            if ( v43 > 0 ) /*0x5be312*/
             {
-              v45 = 0;
-              do
+              v45 = 0; /*0x5be314*/
+              do /*0x5be32a*/
               {
-                ++v44;
-                *(_DWORD *)(v45 + *v38 + 20) = 20;
-                v45 += 24;
+                ++v44; /*0x5be31d*/
+                *(_DWORD *)(v45 + *v38 + 20) = 20; /*0x5be31e*/
+                v45 += 24; /*0x5be325*/
               }
-              while ( v44 < v38[2] );
+              while ( v44 < v38[2] ); /*0x5be32a*/
             }
           }
           else
           {
-            v38 = 0;
+            v38 = 0; /*0x5be32e*/
           }
-          v46 = v76;
-          v33 = v78;
-          v47 = v74 + 24;
-          *v76 = v38;
-          v76 = v46 + 1;
-          v74 = v47;
+          v46 = v76; /*0x5be330*/
+          v33 = v78; /*0x5be338*/
+          v47 = v74 + 24; /*0x5be33c*/
+          *v76 = (int)v38; /*0x5be33f*/
+          v76 = v46 + 1; /*0x5be347*/
+          v74 = v47; /*0x5be34b*/
         }
-        while ( v33 < 3 );
-        v48 = pStm;
-        result = (*(int (__stdcall **)(int, _DWORD, int, _DWORD))(*(_DWORD *)pStm + 12))(
+        while ( v33 < 3 ); /*0x5be34f*/
+        v48 = pStm; /*0x5be358*/
+        result = (*(int (__stdcall **)(LPSTREAM, _DWORD, int, _DWORD))(*(_DWORD *)pStm->__pad_0 + 12))( /*0x5be369*/
                    pStm,
                    *(this + 26),
                    4 * *(this + 27),
                    0);
-        if ( result >= 0 )
+        if ( result >= 0 ) /*0x5be36e*/
         {
-          v49 = 0;
-          v50 = this + 6;
-          while ( 1 )
+          v49 = 0; /*0x5be374*/
+          v50 = this + 6; /*0x5be376*/
+          while ( 1 ) /*0x5be37f*/
           {
-            v51 = __2_YAPAXI_Z(2 * *(this + 19));
-            *v50 = v51;
-            result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v48 + 12))(v48, v51, 2 * *(this + 19), 0);
-            if ( result < 0 )
-              break;
-            ++v49;
-            ++v50;
-            if ( v49 >= 13 )
+            v51 = (void *)__2_YAPAXI_Z(2 * *(this + 19)); /*0x5be37f*/
+            *v50 = (int)v51; /*0x5be384*/
+            result = (*(int (__stdcall **)(IStream *, void *, int, _DWORD))(*(_DWORD *)v48->__pad_0 + 12))( /*0x5be395*/
+                       v48,
+                       v51,
+                       2 * *(this + 19),
+                       0);
+            if ( result < 0 ) /*0x5be39a*/
+              break; /*0x5be39a*/
+            ++v49; /*0x5be3a0*/
+            ++v50; /*0x5be3a1*/
+            if ( v49 >= 13 ) /*0x5be3a7*/
             {
-              v52 = *(_DWORD *)v48;
-              v75 = 0;
-              result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v52 + 12))(v48, &v75, 4, 0);
-              if ( result >= 0 )
+              v52 = *(_DWORD *)v48->__pad_0; /*0x5be3a9*/
+              v75 = 0; /*0x5be3b5*/
+              result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(v52 + 12))(v48, &v75, 4, 0); /*0x5be3bd*/
+              if ( result >= 0 ) /*0x5be3c4*/
               {
-                (*(void (__thiscall **)(int *))(*(this + 20) + 12))(this + 20);
-                pStm = 0;
-                if ( v75 <= 0 )
+                (*(void (__thiscall **)(int *))(*(this + 20) + 12))(this + 20); /*0x5be3d2*/
+                pStm = 0; /*0x5be3d9*/
+                if ( v75 <= 0 ) /*0x5be3df*/
                 {
 LABEL_72:
-                  for ( i = 0; i < *(this + 80); ++i )
+                  for ( i = 0; i < *(this + 80); ++i ) /*0x5be492*/
                   {
-                    v60 = *(_DWORD *)(*(this + 79) + 4 * i);
-                    if ( v60 )
+                    v60 = *(_DWORD *)(*(this + 79) + 4 * i); /*0x5be49a*/
+                    if ( v60 ) /*0x5be49f*/
                     {
-                      (*(void (__thiscall **)(int, int))(*(_DWORD *)v60 + 32))(v60, 1);
-                      *(_DWORD *)(*(this + 79) + 4 * i) = 0;
+                      (*(void (__thiscall **)(int, int))(*(_DWORD *)v60 + 32))(v60, 1); /*0x5be4a5*/
+                      *(_DWORD *)(*(this + 79) + 4 * i) = 0; /*0x5be4ae*/
                     }
                   }
-                  result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v48 + 12))(v48, &v73, 4, 0);
-                  if ( result >= 0 )
+                  result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(*(_DWORD *)v48->__pad_0 + 12))( /*0x5be4c7*/
+                             v48,
+                             &v73,
+                             4,
+                             0);
+                  if ( result >= 0 ) /*0x5be4cc*/
                   {
-                    for ( j = 0; j < v73; ++j )
-                      ((void (__stdcall *)(int, void *, int *))OleLoadFromStream)(v48, &IID_IUnknown, &pStm);
-                    result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v48 + 12))(v48, &v73, 4, 0);
-                    if ( result >= 0 )
+                    for ( j = 0; j < v73; ++j ) /*0x5be4da*/
+                      OleLoadFromStream(v48, &IID_IUnknown, (LPVOID *)&pStm); /*0x5be4ed*/
+                    result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(*(_DWORD *)v48->__pad_0 + 12))( /*0x5be505*/
+                               v48,
+                               &v73,
+                               4,
+                               0);
+                    if ( result >= 0 ) /*0x5be50a*/
                     {
-                      pStm = 0;
-                      if ( v73 <= 0 )
+                      pStm = 0; /*0x5be514*/
+                      if ( v73 <= 0 ) /*0x5be51a*/
                       {
 LABEL_89:
-                        result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v48 + 12))(v48, &v73, 4, 0);
-                        if ( result >= 0 )
+                        result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(*(_DWORD *)v48->__pad_0 + 12))( /*0x5be58d*/
+                                   v48,
+                                   &v73,
+                                   4,
+                                   0);
+                        if ( result >= 0 ) /*0x5be59d*/
                         {
-                          pStm = 0;
-                          if ( v73 <= 0 )
+                          pStm = 0; /*0x5be5a7*/
+                          if ( v73 <= 0 ) /*0x5be5ad*/
                           {
 LABEL_99:
-                            LoadObjectTypeClassTheaterSHP(*(_DWORD *)(MEMORY[0x87F7E8][536210] + 4696));
-                            v70 = *(_DWORD *)(MEMORY[0x87F7E8][536210] + 4696);
-                            if ( v70 == dword_822CF8 )
-                              ResetAllTechnoField776();
+                            LoadObjectTypeClassTheaterSHP(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] /*0x5be620*/
+                                                                    + 4696));
+                            v70 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 4696); /*0x5be636*/
+                            if ( v70 == dword_822CF8 ) /*0x5be643*/
+                              ResetAllTechnoField776(); /*0x5be64e*/
                             else
-                              LoadTerrainTypeClassTheatre(v70, 1);
-                            LoadMapClassIsometricTiles(0, 0);
-                            LoadBuildingTypeClassSHPs(*(_DWORD *)(MEMORY[0x87F7E8][536210] + 4696));
-                            BuildingTypeClass::LoadRepairAnimations(v71);
-                            LoadBuildingTypeClassTheatreSHP(*(_DWORD *)(MEMORY[0x87F7E8][536210] + 4696));
-                            LoadFactoryClassTheaterSHP(*(_DWORD *)(MEMORY[0x87F7E8][536210] + 4696));
-                            *(this + 1135) = 0;
-                            dword_822CF8 = *(_DWORD *)(MEMORY[0x87F7E8][536210] + 4696);
-                            return 0;
+                              LoadTerrainTypeClassTheatre((AbstractClass *)v70, 1); /*0x5be647*/
+                            LoadMapClassIsometricTiles(0, 0); /*0x5be657*/
+                            LoadBuildingTypeClassSHPs(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 4696)); /*0x5be668*/
+                            BuildingTypeClass::LoadRepairAnimations(v71); /*0x5be679*/
+                            LoadBuildingTypeClassTheatreSHP(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] /*0x5be689*/
+                                                                      + 4696));
+                            LoadFactoryClassTheaterSHP(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 4696)); /*0x5be69a*/
+                            *(this + 1135) = 0; /*0x5be69f*/
+                            dword_822CF8 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 4696); /*0x5be6b1*/
+                            return 0; /*0x5be6b6*/
                           }
                           else
                           {
-                            while ( 1 )
+                            while ( 1 ) /*0x5be5ba*/
                             {
-                              result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v48 + 12))(
+                              result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(*(_DWORD *)v48->__pad_0 + 12))( /*0x5be5ba*/
                                          v48,
                                          &v78,
                                          4,
                                          0);
-                              if ( result < 0 )
-                                break;
-                              v66 = *(this + 55);
-                              if ( *(this + 57) < v66
+                              if ( result < 0 ) /*0x5be5bf*/
+                                break; /*0x5be5bf*/
+                              v66 = *(this + 55); /*0x5be5c5*/
+                              if ( *(this + 57) < v66 /*0x5be5f5*/
                                 || (*((_BYTE *)this + 225) || !v66)
                                 && (v67 = *(this + 58), v67 > 0)
                                 && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*(this + 53) + 8))(
@@ -4987,30 +2189,31 @@ LABEL_99:
                                      v67 + v66,
                                      0) )
                               {
-                                v68 = *(this + 57);
-                                v69 = *(this + 54);
-                                *(this + 57) = v68 + 1;
-                                *(_DWORD *)(v69 + 4 * v68) = v78;
+                                v68 = *(this + 57); /*0x5be5fc*/
+                                v69 = *(this + 54); /*0x5be5ff*/
+                                *(this + 57) = v68 + 1; /*0x5be605*/
+                                *(_DWORD *)(v69 + 4 * v68) = v78; /*0x5be60c*/
                               }
-                              if ( ++pStm >= v73 )
-                                goto LABEL_99;
+                              pStm = (LPSTREAM)((char *)pStm + 1); /*0x5be61a*/
+                              if ( (int)pStm >= v73 ) /*0x5be61e*/
+                                goto LABEL_99; /*0x5be61e*/
                             }
                           }
                         }
                       }
                       else
                       {
-                        while ( 1 )
+                        while ( 1 ) /*0x5be527*/
                         {
-                          result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v48 + 12))(
+                          result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(*(_DWORD *)v48->__pad_0 + 12))( /*0x5be527*/
                                      v48,
                                      &v78,
                                      4,
                                      0);
-                          if ( result < 0 )
-                            break;
-                          v62 = *(this + 1113);
-                          if ( *(this + 1115) < v62
+                          if ( result < 0 ) /*0x5be52c*/
+                            break; /*0x5be52c*/
+                          v62 = *(this + 1113); /*0x5be532*/
+                          if ( *(this + 1115) < v62 /*0x5be562*/
                             || (*((_BYTE *)this + 4457) || !v62)
                             && (v63 = *(this + 1116), v63 > 0)
                             && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*(this + 1111) + 8))(
@@ -5018,13 +2221,14 @@ LABEL_99:
                                  v63 + v62,
                                  0) )
                           {
-                            v64 = *(this + 1115);
-                            v65 = *(this + 1112);
-                            *(this + 1115) = v64 + 1;
-                            *(_DWORD *)(v65 + 4 * v64) = v78;
+                            v64 = *(this + 1115); /*0x5be569*/
+                            v65 = *(this + 1112); /*0x5be56c*/
+                            *(this + 1115) = v64 + 1; /*0x5be572*/
+                            *(_DWORD *)(v65 + 4 * v64) = v78; /*0x5be579*/
                           }
-                          if ( ++pStm >= v73 )
-                            goto LABEL_89;
+                          pStm = (LPSTREAM)((char *)pStm + 1); /*0x5be587*/
+                          if ( (int)pStm >= v73 ) /*0x5be58b*/
+                            goto LABEL_89; /*0x5be58b*/
                         }
                       }
                     }
@@ -5032,18 +2236,18 @@ LABEL_99:
                 }
                 else
                 {
-                  while ( 1 )
+                  while ( 1 ) /*0x5be3e5*/
                   {
-                    v53 = *(_DWORD *)v48;
-                    v80 = 0;
-                    v81 = 0;
-                    LOBYTE(v82) = 0;
-                    v83 = -1;
-                    result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v53 + 12))(v48, &v80, 16, 0);
-                    if ( result < 0 )
-                      break;
-                    v54 = *(this + 22);
-                    if ( *(this + 24) < v54
+                    v53 = *(_DWORD *)v48->__pad_0; /*0x5be3e5*/
+                    v80 = 0; /*0x5be3f0*/
+                    v81 = 0; /*0x5be3fa*/
+                    LOBYTE(v82) = 0; /*0x5be404*/
+                    v83 = -1; /*0x5be409*/
+                    result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(v53 + 12))(v48, &v80, 16, 0); /*0x5be411*/
+                    if ( result < 0 ) /*0x5be416*/
+                      break; /*0x5be416*/
+                    v54 = *(this + 22); /*0x5be41c*/
+                    if ( *(this + 24) < v54 /*0x5be440*/
                       || (*((_BYTE *)this + 93) || !v54)
                       && (v55 = *(this + 25), v55 > 0)
                       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*(this + 20) + 8))(
@@ -5051,924 +2255,197 @@ LABEL_99:
                            v55 + v54,
                            0) )
                     {
-                      v56 = *(this + 24);
-                      v57 = v80;
-                      *(this + 24) = v56 + 1;
-                      v58 = (_DWORD *)(*(this + 21) + 16 * v56);
-                      *v58 = v57;
-                      v58[1] = v81;
-                      v58[2] = v82;
-                      v58[3] = v83;
+                      v56 = *(this + 24); /*0x5be447*/
+                      v57 = v80; /*0x5be44a*/
+                      *(this + 24) = v56 + 1; /*0x5be451*/
+                      v58 = (_DWORD *)(*(this + 21) + 16 * v56); /*0x5be45a*/
+                      *v58 = v57; /*0x5be45c*/
+                      v58[1] = v81; /*0x5be462*/
+                      v58[2] = v82; /*0x5be469*/
+                      v58[3] = v83; /*0x5be470*/
                     }
-                    if ( ++pStm >= v75 )
-                      goto LABEL_72;
+                    pStm = (LPSTREAM)((char *)pStm + 1); /*0x5be47e*/
+                    if ( (int)pStm >= v75 ) /*0x5be482*/
+                      goto LABEL_72; /*0x5be482*/
                   }
                 }
               }
-              return result;
+              return result; /*0x5be416*/
             }
           }
         }
       }
     }
   }
-  return result;
+  return result; /*0x5be6b8*/
 }
-
-/* ASM:
-pStm            = dword ptr  4
-
-sub     esp, 30h
-push    ebx
-push    ebp
-mov     ebp, ecx
-push    esi
-push    edi             ; this
-mov     eax, [ebp+115Ch]
-lea     ecx, [ebp+115Ch]
-call    dword ptr [eax+0Ch]
-mov     edx, [ebp+0D4h]
-lea     ecx, [ebp+0D4h]
-call    dword ptr [edx+0Ch]
-mov     esi, [esp+40h+pStm]
-mov     ecx, ebp
-push    esi
-call    SidebarClass__saveLoadPrefix
-xor     ebx, ebx
-cmp     eax, ebx
-jl      loc_5BE6B8
-mov     eax, [esi]
-push    ebx
-lea     ecx, [esp+44h+var_14]
-push    4
-push    ecx
-push    esi
-call    dword ptr [eax+0Ch]
-cmp     eax, ebx
-jl      loc_5BE6B8
-mov     dword_822CF8, 0FFFFFFFFh
-mov     edx, [ebp+0]
-mov     ecx, ebp
-call    dword ptr [edx+5Ch]
-mov     eax, [ebp+70h]
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-mov     ecx, [ebp+68h]
-mov     [ebp+70h], ebx
-push    ecx             ; Block
-call    ??3_YAXPAX_Z
-mov     esi, [ebp+14h]
-add     esp, 8
-cmp     esi, ebx
-mov     [ebp+68h], ebx
-jz      short loc_5BE00C
-mov     ecx, [esi]
-cmp     ecx, ebx
-jz      short loc_5BE003
-mov     edx, [ecx]
-push    3
-call    dword ptr [edx]
-
-loc_5BE003:                             ; CODE XREF: MouseClass__LoadGameAssets+8B↑j
-push    esi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_5BE00C:                             ; CODE XREF: MouseClass__LoadGameAssets+85↑j
-mov     [ebp+14h], ebx
-lea     esi, [ebp+8Ch]
-mov     edi, 3
-
-loc_5BE01A:                             ; CODE XREF: MouseClass__LoadGameAssets+B5↓j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+0Ch]
-add     esi, 18h
-dec     edi
-jnz     short loc_5BE01A
-lea     esi, [ebp+18h]
-mov     edi, 0Dh
-
-loc_5BE02F:                             ; CODE XREF: MouseClass__LoadGameAssets+D0↓j
-mov     ecx, [esi]
-push    ecx             ; Block
-call    ??3_YAXPAX_Z
-mov     [esi], ebx
-add     esp, 4
-add     esi, 4
-dec     edi
-jnz     short loc_5BE02F
-lea     edi, [ebp+80h]
-mov     ebx, 3
-
-loc_5BE04D:                             ; CODE XREF: MouseClass__LoadGameAssets+102↓j
-mov     esi, [edi]
-test    esi, esi
-jz      short loc_5BE06E
-mov     ecx, [esi]
-test    ecx, ecx
-jz      short loc_5BE05F
-mov     edx, [ecx]
-push    3
-call    dword ptr [edx]
-
-loc_5BE05F:                             ; CODE XREF: MouseClass__LoadGameAssets+E7↑j
-push    esi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     dword ptr [edi], 0
-
-loc_5BE06E:                             ; CODE XREF: MouseClass__LoadGameAssets+E1↑j
-add     edi, 4
-dec     ebx
-jnz     short loc_5BE04D
-mov     eax, [ebp+138h]
-lea     ecx, [ebp+138h]
-call    dword ptr [eax+0Ch]
-mov     eax, [esp+40h+pStm]
-push    0
-push    556Ch
-push    ebp
-mov     ecx, [eax]
-push    eax
-call    dword ptr [ecx+0Ch]
-test    eax, eax
-jl      loc_5BE6B8
-test    ebp, ebp
-jz      short loc_5BE0BE
-lea     edx, [esp+40h+var_2D]
-mov     ecx, ebp
-push    edx
-call    MouseClass__drawCursor
-mov     dword ptr [ebp+0], offset ??_7MouseClass@@6B@ ; const MouseClass::`vftable'
-mov     dword ptr [ebp+5518h], offset ??_7MouseClass@@6B@_0 ; const MouseClass::`vftable'
-
-loc_5BE0BE:                             ; CODE XREF: MouseClass__LoadGameAssets+12F↑j
-lea     ebx, [ebp+15A8h]
-mov     [esp+40h+var_28], 4
-
-loc_5BE0CC:                             ; CODE XREF: MouseClass__LoadGameAssets+183↓j
-mov     esi, ebx
-mov     edi, 4Bh ; 'K'
-
-loc_5BE0D3:                             ; CODE XREF: MouseClass__LoadGameAssets+172↓j
-push    esi
-push    (offset dword_A8ED54+7D3BCh)
-call    ObjectPtr__RegisterForTracking
-add     esi, 34h ; '4'
-dec     edi
-jnz     short loc_5BE0D3
-mov     eax, [esp+40h+var_28]
-add     ebx, 0F94h
-dec     eax
-mov     [esp+40h+var_28], eax
-jnz     short loc_5BE0CC
-lea     eax, [ebp+11A4h]
-push    eax
-push    (offset dword_A8ED54+7D3BCh)
-call    ObjectPtr__RegisterForTracking
-lea     ecx, [ebp+11A8h]
-push    ecx
-push    (offset dword_A8ED54+7D3BCh)
-call    ObjectPtr__RegisterForTracking
-lea     edx, [ebp+11A0h]
-push    edx
-push    (offset dword_A8ED54+7D3BCh)
-call    ObjectPtr__RegisterForTracking
-mov     eax, [ebp+0]
-mov     ecx, ebp
-call    dword ptr [eax+58h]
-mov     edx, [ebp+0]
-mov     ecx, ebp
-call    dword ptr [edx+60h]
-mov     eax, [ebp+0]
-xor     edi, edi
-push    edi
-push    edi
-lea     ecx, [ebp+0ECh]
-push    1
-push    ecx
-mov     ecx, ebp
-mov     [ebp+70h], edi
-mov     [ebp+68h], edi
-call    dword ptr [eax+70h]
-mov     eax, [ebp+70h]
-cmp     eax, edi
-jz      short loc_5BE166
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [ebp+70h], edi
-
-loc_5BE166:                             ; CODE XREF: MouseClass__LoadGameAssets+1E8↑j
-mov     eax, [ebp+68h]
-cmp     eax, edi
-jz      short loc_5BE179
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [ebp+68h], edi
-
-loc_5BE179:                             ; CODE XREF: MouseClass__LoadGameAssets+1FB↑j
-mov     eax, [ebp+6Ch]
-lea     edx, [eax+eax*4]
-shl     edx, 1
-push    edx             ; Size
-call    ??2_YAPAXI_Z
-mov     esi, [ebp+6Ch]
-mov     [ebp+70h], eax
-lea     eax, ds:0[esi*4]
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-add     esp, 8
-cmp     eax, edi
-jz      short loc_5BE1BA
-dec     esi
-mov     ecx, eax
-cmp     esi, edi
-jl      short loc_5BE1BC
-lea     edx, [esi+1]
-
-loc_5BE1AB:                             ; CODE XREF: MouseClass__LoadGameAssets+246↓j
-mov     byte ptr [ecx], 7
-mov     byte ptr [ecx+1], 0
-add     ecx, 4
-dec     edx
-jnz     short loc_5BE1AB
-jmp     short loc_5BE1BC
-; ---------------------------------------------------------------------------
-
-loc_5BE1BA:                             ; CODE XREF: MouseClass__LoadGameAssets+22F↑j
-xor     eax, eax
-
-loc_5BE1BC:                             ; CODE XREF: MouseClass__LoadGameAssets+236↑j
-; MouseClass__LoadGameAssets+248↑j
-push    10h             ; Size
-mov     [ebp+68h], eax
-call    ??2_YAPAXI_Z
-mov     esi, eax
-add     esp, 4
-cmp     esi, edi
-mov     ebx, 100h
-jz      short loc_5BE23F
-push    1804h           ; Size
-mov     dword ptr [esi+4], offset Cell__DecodeFlags
-mov     [esi+8], ebx
-mov     dword ptr [esi+0Ch], 14h
-call    ??2_YAPAXI_Z
-add     esp, 4
-cmp     eax, edi
-jz      short loc_5BE218
-mov     [eax], ebx
-add     eax, 4
-mov     [esp+40h+var_20], eax
-mov     edi, eax
-
-loc_5BE201:                             ; CODE XREF: MouseClass__LoadGameAssets+2A0↓j
-push    0
-push    0
-mov     ecx, edi
-call    MouseClass__loadCursor
-add     edi, 18h
-dec     ebx
-jnz     short loc_5BE201
-mov     eax, [esp+40h+var_20]
-jmp     short loc_5BE21A
-; ---------------------------------------------------------------------------
-
-loc_5BE218:                             ; CODE XREF: MouseClass__LoadGameAssets+284↑j
-xor     eax, eax
-
-loc_5BE21A:                             ; CODE XREF: MouseClass__LoadGameAssets+2A6↑j
-mov     ecx, [esi+8]
-mov     [esi], eax
-xor     eax, eax
-test    ecx, ecx
-jle     short loc_5BE241
-xor     ecx, ecx
-mov     edx, 14h
-
-loc_5BE22C:                             ; CODE XREF: MouseClass__LoadGameAssets+2CB↓j
-mov     edi, [esi]
-inc     eax
-mov     [edi+ecx+14h], edx
-mov     edi, [esi+8]
-add     ecx, 18h
-cmp     eax, edi
-jl      short loc_5BE22C
-jmp     short loc_5BE241
-; ---------------------------------------------------------------------------
-
-loc_5BE23F:                             ; CODE XREF: MouseClass__LoadGameAssets+262↑j
-xor     esi, esi
-
-loc_5BE241:                             ; CODE XREF: MouseClass__LoadGameAssets+2B3↑j
-; MouseClass__LoadGameAssets+2CD↑j
-lea     ecx, [ebp+80h]
-mov     [ebp+14h], esi
-mov     [esp+40h+var_20], ecx
-lea     ecx, [ebp+8Ch]
-xor     eax, eax
-mov     [esp+40h+var_28], ecx
-
-loc_5BE25A:                             ; CODE XREF: MouseClass__LoadGameAssets+3DF↓j
-mov     edi, [esp+40h+var_28]
-inc     eax
-mov     esi, 1
-mov     ecx, eax
-mov     edx, [edi]
-mov     [esp+40h+var_18], eax
-shl     esi, cl
-mov     ecx, edi
-call    dword ptr [edx+0Ch]
-mov     eax, [ebp+0F8h]
-mov     ecx, esi
-imul    eax, [ebp+0F4h]
-imul    ecx, esi
-shl     eax, 2
-cdq
-idiv    ecx
-push    10h             ; Size
-mov     [edi+14h], eax
-call    ??2_YAPAXI_Z
-mov     edi, eax
-add     esp, 4
-test    edi, edi
-jz      loc_5BE32E
-push    1804h           ; Size
-mov     dword ptr [edi+4], offset Cell__DecodeFlags
-mov     dword ptr [edi+8], 100h
-mov     dword ptr [edi+0Ch], 14h
-call    ??2_YAPAXI_Z
-add     esp, 4
-test    eax, eax
-jz      short loc_5BE307
-mov     dword ptr [eax], 100h
-add     eax, 4
-mov     [esp+40h+var_1C], eax
-mov     esi, eax
-mov     ebx, 100h
-
-loc_5BE2DC:                             ; CODE XREF: MouseClass__LoadGameAssets+38F↓j
-push    0
-push    0
-mov     ecx, esi
-call    SubzoneHashVector__Construct
-mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@U?$HashObject@IUSubzoneConnectionStruct@@@@@@6B@ ; const DynamicVectorClass<HashObject<uint,SubzoneConnectionStruct>>::`vftable'
-mov     dword ptr [esi+14h], 0Ah
-mov     dword ptr [esi+10h], 0
-add     esi, 18h
-dec     ebx
-jnz     short loc_5BE2DC
-mov     eax, [esp+40h+var_1C]
-jmp     short loc_5BE309
-; ---------------------------------------------------------------------------
-
-loc_5BE307:                             ; CODE XREF: MouseClass__LoadGameAssets+356↑j
-xor     eax, eax
-
-loc_5BE309:                             ; CODE XREF: MouseClass__LoadGameAssets+395↑j
-mov     ecx, [edi+8]
-mov     [edi], eax
-xor     eax, eax
-test    ecx, ecx
-jle     short loc_5BE330
-xor     ecx, ecx
-mov     edx, 14h
-
-loc_5BE31B:                             ; CODE XREF: MouseClass__LoadGameAssets+3BA↓j
-mov     esi, [edi]
-inc     eax
-mov     [ecx+esi+14h], edx
-mov     esi, [edi+8]
-add     ecx, 18h
-cmp     eax, esi
-jl      short loc_5BE31B
-jmp     short loc_5BE330
-; ---------------------------------------------------------------------------
-
-loc_5BE32E:                             ; CODE XREF: MouseClass__LoadGameAssets+32C↑j
-xor     edi, edi
-
-loc_5BE330:                             ; CODE XREF: MouseClass__LoadGameAssets+3A2↑j
-; MouseClass__LoadGameAssets+3BC↑j
-mov     ecx, [esp+40h+var_20]
-mov     edx, [esp+40h+var_28]
-mov     eax, [esp+40h+var_18]
-add     edx, 18h
-mov     [ecx], edi
-add     ecx, 4
-cmp     eax, 3
-mov     [esp+40h+var_20], ecx
-mov     [esp+40h+var_28], edx
-jl      loc_5BE25A
-mov     eax, [ebp+6Ch]
-mov     edi, [esp+40h+pStm]
-mov     ecx, [ebp+68h]
-push    0
-mov     edx, [edi]
-shl     eax, 2
-push    eax
-push    ecx
-push    edi
-call    dword ptr [edx+0Ch]
-test    eax, eax
-jl      loc_5BE6B8
-xor     ebx, ebx
-lea     esi, [ebp+18h]
-
-loc_5BE379:                             ; CODE XREF: MouseClass__LoadGameAssets+437↓j
-mov     edx, [ebp+4Ch]
-shl     edx, 1
-push    edx             ; Size
-call    ??2_YAPAXI_Z
-mov     [esi], eax
-mov     edx, [ebp+4Ch]
-mov     ecx, [edi]
-add     esp, 4
-shl     edx, 1
-push    0
-push    edx
-push    eax
-push    edi
-call    dword ptr [ecx+0Ch]
-test    eax, eax
-jl      loc_5BE6B8
-inc     ebx
-add     esi, 4
-cmp     ebx, 0Dh
-jl      short loc_5BE379
-mov     eax, [edi]
-push    0
-lea     ecx, [esp+44h+var_24]
-push    4
-push    ecx
-push    edi
-mov     [esp+50h+var_24], 0
-call    dword ptr [eax+0Ch]
-xor     ebx, ebx
-cmp     eax, ebx
-jl      loc_5BE6B8
-mov     edx, [ebp+50h]
-lea     esi, [ebp+50h]
-mov     ecx, esi
-call    dword ptr [edx+0Ch]
-mov     eax, [esp+40h+var_24]
-mov     [esp+40h+pStm], ebx
-cmp     eax, ebx
-jle     loc_5BE488
-
-loc_5BE3E5:                             ; CODE XREF: MouseClass__LoadGameAssets+512↓j
-mov     eax, [edi]
-push    ebx
-lea     ecx, [esp+44h+var_10]
-push    10h
-push    ecx
-push    edi
-mov     word ptr [esp+50h+var_10], bx
-mov     word ptr [esp+50h+var_10+2], bx
-mov     word ptr [esp+50h+var_C], bx
-mov     word ptr [esp+50h+var_C+2], bx
-mov     byte ptr [esp+50h+var_8], 0
-mov     [esp+50h+var_4], 0FFFFFFFFh
-call    dword ptr [eax+0Ch]
-cmp     eax, ebx
-jl      loc_5BE6B8
-mov     ecx, [esi+8]
-mov     eax, [esi+10h]
-cmp     eax, ecx
-jl      short loc_5BE447
-mov     al, [esi+0Dh]
-test    al, al
-jnz     short loc_5BE431
-cmp     ecx, ebx
-jnz     short loc_5BE473
-
-loc_5BE431:                             ; CODE XREF: MouseClass__LoadGameAssets+4BB↑j
-mov     eax, [esi+14h]
-cmp     eax, ebx
-jle     short loc_5BE473
-mov     edx, [esi]
-add     ecx, eax
-push    ebx
-push    ecx
-mov     ecx, esi
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_5BE473
-
-loc_5BE447:                             ; CODE XREF: MouseClass__LoadGameAssets+4B4↑j
-mov     eax, [esi+10h]
-mov     edx, [esp+40h+var_10]
-lea     ecx, [eax+1]
-mov     [esi+10h], ecx
-mov     ecx, [esi+4]
-shl     eax, 4
-add     eax, ecx
-mov     [eax], edx
-mov     ecx, [esp+40h+var_C]
-mov     [eax+4], ecx
-mov     edx, [esp+40h+var_8]
-mov     [eax+8], edx
-mov     ecx, [esp+40h+var_4]
-mov     [eax+0Ch], ecx
-
-loc_5BE473:                             ; CODE XREF: MouseClass__LoadGameAssets+4BF↑j
-; MouseClass__LoadGameAssets+4C6↑j ...
-mov     eax, [esp+40h+pStm]
-mov     ecx, [esp+40h+var_24]
-inc     eax
-cmp     eax, ecx
-mov     [esp+40h+pStm], eax
-jl      loc_5BE3E5
-
-loc_5BE488:                             ; CODE XREF: MouseClass__LoadGameAssets+46F↑j
-mov     eax, [ebp+140h]
-xor     esi, esi
-cmp     eax, ebx
-jle     short loc_5BE4BC
-
-loc_5BE494:                             ; CODE XREF: MouseClass__LoadGameAssets+54A↓j
-mov     edx, [ebp+13Ch]
-mov     ecx, [edx+esi*4]
-cmp     ecx, ebx
-jz      short loc_5BE4B1
-mov     eax, [ecx]
-push    1
-call    dword ptr [eax+20h]
-mov     ecx, [ebp+13Ch]
-mov     [ecx+esi*4], ebx
-
-loc_5BE4B1:                             ; CODE XREF: MouseClass__LoadGameAssets+52F↑j
-mov     eax, [ebp+140h]
-inc     esi
-cmp     esi, eax
-jl      short loc_5BE494
-
-loc_5BE4BC:                             ; CODE XREF: MouseClass__LoadGameAssets+522↑j
-mov     edx, [edi]
-push    ebx
-lea     eax, [esp+44h+var_2C]
-push    4
-push    eax
-push    edi
-call    dword ptr [edx+0Ch]
-cmp     eax, ebx
-jl      loc_5BE6B8
-mov     eax, [esp+40h+var_2C]
-xor     esi, esi
-cmp     eax, ebx
-jle     short loc_5BE4FA
-mov     ebx, ds:__imp_OleLoadFromStream
-
-loc_5BE4E2:                             ; CODE XREF: MouseClass__LoadGameAssets+586↓j
-lea     ecx, [esp+40h+pStm]
-push    ecx             ; ppvObj
-push    offset IID_IUnknown ; iidInterface
-push    edi             ; pStm
-call    ebx ; __imp_OleLoadFromStream
-mov     eax, [esp+40h+var_2C]
-inc     esi
-cmp     esi, eax
-jl      short loc_5BE4E2
-xor     ebx, ebx
-
-loc_5BE4FA:                             ; CODE XREF: MouseClass__LoadGameAssets+56A↑j
-mov     edx, [edi]
-push    ebx
-lea     eax, [esp+44h+var_2C]
-push    4
-push    eax
-push    edi
-call    dword ptr [edx+0Ch]
-cmp     eax, ebx
-jl      loc_5BE6B8
-mov     eax, [esp+40h+var_2C]
-mov     [esp+40h+pStm], ebx
-cmp     eax, ebx
-jle     short loc_5BE58D
-
-loc_5BE51C:                             ; CODE XREF: MouseClass__LoadGameAssets+61B↓j
-mov     ecx, [edi]
-push    ebx
-lea     edx, [esp+44h+var_18]
-push    4
-push    edx
-push    edi
-call    dword ptr [ecx+0Ch]
-cmp     eax, ebx
-jl      loc_5BE6B8
-mov     ecx, [ebp+1164h]
-mov     eax, [ebp+116Ch]
-lea     esi, [ebp+115Ch]
-cmp     eax, ecx
-jl      short loc_5BE569
-mov     al, [esi+0Dh]
-test    al, al
-jnz     short loc_5BE553
-cmp     ecx, ebx
-jnz     short loc_5BE57C
-
-loc_5BE553:                             ; CODE XREF: MouseClass__LoadGameAssets+5DD↑j
-mov     eax, [esi+14h]
-cmp     eax, ebx
-jle     short loc_5BE57C
-mov     edx, [esi]
-add     ecx, eax
-push    ebx
-push    ecx
-mov     ecx, esi
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_5BE57C
-
-loc_5BE569:                             ; CODE XREF: MouseClass__LoadGameAssets+5D6↑j
-mov     eax, [esi+10h]
-mov     edx, [esi+4]
-lea     ecx, [eax+1]
-mov     [esi+10h], ecx
-mov     ecx, [esp+40h+var_18]
-mov     [edx+eax*4], ecx
-
-loc_5BE57C:                             ; CODE XREF: MouseClass__LoadGameAssets+5E1↑j
-; MouseClass__LoadGameAssets+5E8↑j ...
-mov     eax, [esp+40h+pStm]
-mov     ecx, [esp+40h+var_2C]
-inc     eax
-cmp     eax, ecx
-mov     [esp+40h+pStm], eax
-jl      short loc_5BE51C
-
-loc_5BE58D:                             ; CODE XREF: MouseClass__LoadGameAssets+5AA↑j
-mov     edx, [edi]
-push    ebx
-lea     eax, [esp+44h+var_2C]
-push    4
-push    eax
-push    edi
-call    dword ptr [edx+0Ch]
-cmp     eax, ebx
-jl      loc_5BE6B8
-mov     eax, [esp+40h+var_2C]
-mov     [esp+40h+pStm], ebx
-cmp     eax, ebx
-jle     short loc_5BE620
-
-loc_5BE5AF:                             ; CODE XREF: MouseClass__LoadGameAssets+6AE↓j
-mov     ecx, [edi]
-push    ebx
-lea     edx, [esp+44h+var_18]
-push    4
-push    edx
-push    edi
-call    dword ptr [ecx+0Ch]
-cmp     eax, ebx
-jl      loc_5BE6B8
-mov     ecx, [ebp+0DCh]
-mov     eax, [ebp+0E4h]
-lea     esi, [ebp+0D4h]
-cmp     eax, ecx
-jl      short loc_5BE5FC
-mov     al, [esi+0Dh]
-test    al, al
-jnz     short loc_5BE5E6
-cmp     ecx, ebx
-jnz     short loc_5BE60F
-
-loc_5BE5E6:                             ; CODE XREF: MouseClass__LoadGameAssets+670↑j
-mov     eax, [esi+14h]
-cmp     eax, ebx
-jle     short loc_5BE60F
-mov     edx, [esi]
-add     ecx, eax
-push    ebx
-push    ecx
-mov     ecx, esi
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_5BE60F
-
-loc_5BE5FC:                             ; CODE XREF: MouseClass__LoadGameAssets+669↑j
-mov     eax, [esi+10h]
-mov     edx, [esi+4]
-lea     ecx, [eax+1]
-mov     [esi+10h], ecx
-mov     ecx, [esp+40h+var_18]
-mov     [edx+eax*4], ecx
-
-loc_5BE60F:                             ; CODE XREF: MouseClass__LoadGameAssets+674↑j
-; MouseClass__LoadGameAssets+67B↑j ...
-mov     eax, [esp+40h+pStm]
-mov     ecx, [esp+40h+var_2C]
-inc     eax
-cmp     eax, ecx
-mov     [esp+40h+pStm], eax
-jl      short loc_5BE5AF
-
-loc_5BE620:                             ; CODE XREF: MouseClass__LoadGameAssets+63D↑j
-mov     edx, ds:0A8B230h
-mov     ecx, [edx+1258h]
-call    LoadObjectTypeClassTheaterSHP
-mov     eax, ds:0A8B230h
-mov     ecx, [eax+1258h]
-mov     eax, dword_822CF8
-cmp     ecx, eax
-jz      short loc_5BE64E
-mov     dl, 1
-call    LoadTerrainTypeClassTheatre
-jmp     short loc_5BE653
-; ---------------------------------------------------------------------------
-
-loc_5BE64E:                             ; CODE XREF: MouseClass__LoadGameAssets+6D3↑j
-call    ResetAllTechnoField776
-
-loc_5BE653:                             ; CODE XREF: MouseClass__LoadGameAssets+6DC↑j
-xor     dl, dl
-xor     cl, cl
-call    LoadMapClassIsometricTiles
-mov     ecx, ds:0A8B230h
-mov     ecx, [ecx+1258h]
-call    LoadBuildingTypeClassSHPs
-mov     edx, ds:0A8B230h
-mov     ecx, [edx+1258h]
-call    BuildingTypeClass__LoadRepairAnimations
-mov     eax, ds:0A8B230h
-mov     ecx, [eax+1258h]
-call    LoadBuildingTypeClassTheatreSHP
-mov     ecx, ds:0A8B230h
-mov     ecx, [ecx+1258h]
-call    LoadFactoryClassTheaterSHP
-mov     [ebp+11BCh], ebx
-mov     edx, ds:0A8B230h
-mov     eax, [edx+1258h]
-mov     dword_822CF8, eax
-xor     eax, eax
-
-loc_5BE6B8:                             ; CODE XREF: MouseClass__LoadGameAssets+37↑j
-; MouseClass__LoadGameAssets+4D↑j ...
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 30h
-retn    4
-*/
 } }
 // 0x5BE6D0
 namespace gamemd { int MouseClass::DrawCursor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5be6d0
-int __thiscall MouseClass::DrawCursor(int *this, int pStm)
+HRESULT __thiscall MouseClass::DrawCursor(int *this, LPSTREAM pStm)
 {
-  int v2; // esi
-  int result; // eax
+  IStream *v2; // esi
+  HRESULT result; // eax
   int v5; // edx
   int v6; // ebp
-  _DWORD *v7; // ebx
+  int *v7; // ebx
   int v8; // eax
   int v9; // ebp
   int v10; // ebx
   int v11; // eax
   int v12; // ecx
   int i; // eax
-  int v14; // ebp
-  int v15; // ebx
+  HRESULT v14; // ebp
+  IPersistStream *v15; // ebx
   int v16; // ecx
   int v17; // ebx
   int v18; // ecx
   int v19; // ebx
   int v20; // [esp+8Ch] [ebp-20h] BYREF
-  int v21; // [esp+90h] [ebp-1Ch] BYREF
-  int v22; // [esp+94h] [ebp-18h] BYREF
-  int v23; // [esp+98h] [ebp-14h]
+  int theater; // [esp+90h] [ebp-1Ch] BYREF
+  IPersistStream v22; // [esp+94h] [ebp-18h] BYREF
+  HRESULT v23; // [esp+98h] [ebp-14h]
   _DWORD v24[2]; // [esp+9Ch] [ebp-10h] BYREF
   char v25; // [esp+A4h] [ebp-8h]
   int v26; // [esp+A8h] [ebp-4h]
 
-  v2 = pStm;
-  result = SidebarClass::saveLoadPrefix2(this, pStm);
-  if ( result >= 0 )
+  v2 = pStm; /*0x5be6d6*/
+  result = SidebarClass::saveLoadPrefix2(this, (int)pStm); /*0x5be6de*/
+  if ( result >= 0 ) /*0x5be6e5*/
   {
-    v5 = *(_DWORD *)v2;
-    v21 = *(_DWORD *)(MEMORY[0x87F7E8][536210] + 4696);
-    result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v5 + 16))(v2, &v21, 4, 0);
-    if ( result >= 0 )
+    v5 = *(_DWORD *)v2->__pad_0; /*0x5be6f0*/
+    theater = MEMORY[0xA8B230]->theater; /*0x5be702*/
+    result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(v5 + 16))(v2, &theater, 4, 0); /*0x5be706*/
+    if ( result >= 0 ) /*0x5be70b*/
     {
-      result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, this, 21868, 0);
-      if ( result >= 0 )
+      result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(*(_DWORD *)v2->__pad_0 + 16))(v2, this, 21868, 0); /*0x5be71c*/
+      if ( result >= 0 ) /*0x5be721*/
       {
-        result = (*(int (__stdcall **)(int, _DWORD, int, _DWORD))(*(_DWORD *)v2 + 16))(
+        result = (*(int (__stdcall **)(IStream *, _DWORD, int, _DWORD))(*(_DWORD *)v2->__pad_0 + 16))( /*0x5be737*/
                    v2,
                    *(this + 26),
                    4 * *(this + 27),
                    0);
-        if ( result >= 0 )
+        if ( result >= 0 ) /*0x5be73c*/
         {
-          v6 = 0;
-          v7 = this + 6;
-          while ( 1 )
+          v6 = 0; /*0x5be742*/
+          v7 = this + 6; /*0x5be744*/
+          while ( 1 ) /*0x5be755*/
           {
-            result = (*(int (__stdcall **)(int, _DWORD, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, *v7, 2 * *(this + 19), 0);
-            if ( result < 0 )
-              break;
-            ++v6;
-            ++v7;
-            if ( v6 >= 13 )
+            result = (*(int (__stdcall **)(IStream *, int, int, _DWORD))(*(_DWORD *)v2->__pad_0 + 16))( /*0x5be755*/
+                       v2,
+                       *v7,
+                       2 * *(this + 19),
+                       0);
+            if ( result < 0 ) /*0x5be75a*/
+              break; /*0x5be75a*/
+            ++v6; /*0x5be760*/
+            ++v7; /*0x5be761*/
+            if ( v6 >= 13 ) /*0x5be767*/
             {
-              v8 = *(_DWORD *)v2;
-              v20 = *(this + 24);
-              result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v8 + 16))(v2, &v20, 4, 0);
-              if ( result >= 0 )
+              v8 = *(_DWORD *)v2->__pad_0; /*0x5be76c*/
+              v20 = *(this + 24); /*0x5be778*/
+              result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(v8 + 16))(v2, &v20, 4, 0); /*0x5be77c*/
+              if ( result >= 0 ) /*0x5be781*/
               {
-                v9 = 0;
-                if ( v20 <= 0 )
+                v9 = 0; /*0x5be78b*/
+                if ( v20 <= 0 ) /*0x5be78f*/
                 {
 LABEL_13:
-                  pStm = 0;
-                  LayerClass::CellIteratorReset(this);
-                  for ( i = LayerClass::CellIteratorNext(this); i; i = LayerClass::CellIteratorNext(this) )
+                  pStm = 0; /*0x5be7d8*/
+                  LayerClass::CellIteratorReset(this); /*0x5be7e2*/
+                  for ( i = LayerClass::CellIteratorNext(this); i; i = LayerClass::CellIteratorNext(this) ) /*0x5be7f0*/
                   {
-                    v22 = *(_DWORD *)(i + 36);
-                    if ( Cell::Exists(this, (__int16 *)&v22) )
-                      ++pStm;
+                    v22 = *(IPersistStream *)(i + 36); /*0x5be7fc*/
+                    if ( Cell::Exists(this, (MouseClass *)&v22) ) /*0x5be800*/
+                      pStm = (LPSTREAM)((char *)pStm + 1); /*0x5be809*/
                   }
-                  result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, &pStm, 4, 0);
-                  v14 = result;
-                  v23 = result;
-                  if ( result >= 0 )
+                  result = (*(int (__stdcall **)(IStream *, LPSTREAM *, int, _DWORD))(*(_DWORD *)v2->__pad_0 + 16))( /*0x5be824*/
+                             v2,
+                             &pStm,
+                             4,
+                             0);
+                  v14 = result; /*0x5be827*/
+                  v23 = result; /*0x5be82b*/
+                  if ( result >= 0 ) /*0x5be82f*/
                   {
-                    LayerClass::CellIteratorReset(this);
-                    v15 = LayerClass::CellIteratorNext(this);
-                    if ( v15 )
+                    LayerClass::CellIteratorReset(this); /*0x5be83d*/
+                    v15 = (IPersistStream *)LayerClass::CellIteratorNext(this); /*0x5be849*/
+                    if ( v15 ) /*0x5be84d*/
                     {
-                      do
+                      do /*0x5be87f*/
                       {
-                        v22 = *(_DWORD *)(v15 + 36);
-                        if ( Cell::Exists(this, (__int16 *)&v22) )
+                        v22 = v15[9]; /*0x5be85c*/
+                        if ( Cell::Exists(this, (MouseClass *)&v22) ) /*0x5be863*/
                         {
-                          ((void (__stdcall *)(int, int))OleSaveToStream)(v15, v2);
-                          --pStm;
+                          OleSaveToStream(v15, v2); /*0x5be86e*/
+                          pStm = (LPSTREAM)((char *)pStm - 1); /*0x5be870*/
                         }
-                        v15 = LayerClass::CellIteratorNext(this);
+                        v15 = (IPersistStream *)LayerClass::CellIteratorNext(this); /*0x5be87b*/
                       }
-                      while ( v15 );
-                      v14 = v23;
+                      while ( v15 ); /*0x5be87f*/
+                      v14 = v23; /*0x5be881*/
                     }
-                    if ( pStm )
+                    if ( pStm ) /*0x5be88b*/
                     {
-                      return v14;
+                      return v14; /*0x5be88e*/
                     }
                     else
                     {
-                      v16 = *(_DWORD *)v2;
-                      pStm = *(this + 1115);
-                      result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v16 + 16))(v2, &pStm, 4, 0);
-                      if ( result >= 0 )
+                      v16 = *(_DWORD *)v2->__pad_0; /*0x5be89f*/
+                      pStm = (LPSTREAM)*(this + 1115); /*0x5be8ab*/
+                      result = (*(int (__stdcall **)(IStream *, LPSTREAM *, int, _DWORD))(v16 + 16))(v2, &pStm, 4, 0); /*0x5be8af*/
+                      if ( result >= 0 ) /*0x5be8b4*/
                       {
-                        v17 = 0;
-                        if ( pStm <= 0 )
+                        v17 = 0; /*0x5be8ba*/
+                        if ( (int)pStm <= 0 ) /*0x5be8be*/
                         {
 LABEL_29:
-                          v18 = *(_DWORD *)v2;
-                          pStm = *(this + 57);
-                          result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v18 + 16))(v2, &pStm, 4, 0);
-                          if ( result >= 0 )
+                          v18 = *(_DWORD *)v2->__pad_0; /*0x5be8e1*/
+                          pStm = (LPSTREAM)*(this + 57); /*0x5be8f3*/
+                          result = (*(int (__stdcall **)(IStream *, LPSTREAM *, int, _DWORD))(v18 + 16))( /*0x5be8f7*/
+                                     v2,
+                                     &pStm,
+                                     4,
+                                     0);
+                          if ( result >= 0 ) /*0x5be8fc*/
                           {
-                            v19 = 0;
-                            if ( pStm <= 0 )
+                            v19 = 0; /*0x5be902*/
+                            if ( (int)pStm <= 0 ) /*0x5be906*/
                             {
-                              return 0;
+                              return 0; /*0x5be929*/
                             }
                             else
                             {
-                              while ( 1 )
+                              while ( 1 ) /*0x5be919*/
                               {
-                                result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))(
+                                result = (*(int (__stdcall **)(IStream *, int, int, _DWORD))(*(_DWORD *)v2->__pad_0 + 16))( /*0x5be919*/
                                            v2,
                                            *(this + 54) + 4 * v19,
                                            4,
                                            0);
-                                if ( result < 0 )
-                                  break;
-                                if ( ++v19 >= pStm )
-                                  return 0;
+                                if ( result < 0 ) /*0x5be91e*/
+                                  break; /*0x5be91e*/
+                                if ( ++v19 >= (int)pStm ) /*0x5be927*/
+                                  return 0; /*0x5be927*/
                               }
                             }
                           }
                         }
                         else
                         {
-                          while ( 1 )
+                          while ( 1 ) /*0x5be8d1*/
                           {
-                            result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))(
+                            result = (*(int (__stdcall **)(IStream *, int, int, _DWORD))(*(_DWORD *)v2->__pad_0 + 16))( /*0x5be8d1*/
                                        v2,
                                        *(this + 1112) + 4 * v17,
                                        4,
                                        0);
-                            if ( result < 0 )
-                              break;
-                            if ( ++v17 >= pStm )
-                              goto LABEL_29;
+                            if ( result < 0 ) /*0x5be8d6*/
+                              break; /*0x5be8d6*/
+                            if ( ++v17 >= (int)pStm ) /*0x5be8df*/
+                              goto LABEL_29; /*0x5be8df*/
                           }
                         }
                       }
@@ -5977,626 +2454,177 @@ LABEL_29:
                 }
                 else
                 {
-                  v10 = 0;
-                  while ( 1 )
+                  v10 = 0; /*0x5be791*/
+                  while ( 1 ) /*0x5be798*/
                   {
-                    v11 = *(this + 21) + v10;
-                    v24[0] = *(_DWORD *)v11;
-                    v24[1] = *(_DWORD *)(v11 + 4);
-                    v12 = *(_DWORD *)v2;
-                    v25 = *(_BYTE *)(v11 + 8);
-                    v26 = *(_DWORD *)(v11 + 12);
-                    result = (*(int (__stdcall **)(int, _DWORD *, int, _DWORD))(v12 + 16))(v2, v24, 16, 0);
-                    if ( result < 0 )
-                      break;
-                    ++v9;
-                    v10 += 16;
-                    if ( v9 >= v20 )
-                      goto LABEL_13;
+                    v11 = *(this + 21) + v10; /*0x5be798*/
+                    v24[0] = *(_DWORD *)v11; /*0x5be7a0*/
+                    v24[1] = *(_DWORD *)(v11 + 4); /*0x5be7a7*/
+                    v12 = *(_DWORD *)v2->__pad_0; /*0x5be7ae*/
+                    v25 = *(_BYTE *)(v11 + 8); /*0x5be7b0*/
+                    v26 = *(_DWORD *)(v11 + 12); /*0x5be7bd*/
+                    result = (*(int (__stdcall **)(IStream *, _DWORD *, int, _DWORD))(v12 + 16))(v2, v24, 16, 0); /*0x5be7c1*/
+                    if ( result < 0 ) /*0x5be7c6*/
+                      break; /*0x5be7c6*/
+                    ++v9; /*0x5be7d0*/
+                    v10 += 16; /*0x5be7d1*/
+                    if ( v9 >= v20 ) /*0x5be7d6*/
+                      goto LABEL_13; /*0x5be7d6*/
                   }
                 }
               }
-              return result;
+              return result; /*0x5be7c6*/
             }
           }
         }
       }
     }
   }
-  return result;
+  return result; /*0x5be831*/
 }
-
-/* ASM:
-pStm            = dword ptr  4
-
-sub     esp, 20h
-push    ebx
-push    ebp
-push    esi
-mov     esi, [esp+2Ch+pStm]
-push    edi
-mov     edi, ecx
-push    esi
-call    SidebarClass__saveLoadPrefix2
-test    eax, eax
-jl      loc_5BE92B
-mov     eax, ds:0A8B230h
-mov     edx, [esi]
-push    0
-push    4
-mov     ecx, [eax+1258h]
-lea     eax, [esp+38h+var_1C]
-push    eax
-push    esi
-mov     [esp+40h+var_1C], ecx
-call    dword ptr [edx+10h]
-test    eax, eax
-jl      loc_5BE92B
-mov     ecx, [esi]
-push    0
-push    556Ch
-push    edi
-push    esi
-call    dword ptr [ecx+10h]
-test    eax, eax
-jl      loc_5BE92B
-mov     eax, [edi+6Ch]
-mov     ecx, [edi+68h]
-mov     edx, [esi]
-push    0
-shl     eax, 2
-push    eax
-push    ecx
-push    esi
-call    dword ptr [edx+10h]
-test    eax, eax
-jl      loc_5BE92B
-xor     ebp, ebp
-lea     ebx, [edi+18h]
-
-loc_5BE747:                             ; CODE XREF: MouseClass__DrawCursor+97↓j
-mov     eax, [edi+4Ch]
-mov     ecx, [ebx]
-mov     edx, [esi]
-push    0
-shl     eax, 1
-push    eax
-push    ecx
-push    esi
-call    dword ptr [edx+10h]
-test    eax, eax
-jl      loc_5BE92B
-inc     ebp
-add     ebx, 4
-cmp     ebp, 0Dh
-jl      short loc_5BE747
-mov     edx, [edi+60h]
-mov     eax, [esi]
-push    0
-lea     ecx, [esp+34h+var_20]
-push    4
-push    ecx
-push    esi
-mov     [esp+40h+var_20], edx
-call    dword ptr [eax+10h]
-test    eax, eax
-jl      loc_5BE92B
-mov     eax, [esp+30h+var_20]
-xor     ebp, ebp
-test    eax, eax
-jle     short loc_5BE7D8
-xor     ebx, ebx
-
-loc_5BE793:                             ; CODE XREF: MouseClass__DrawCursor+106↓j
-mov     ecx, [edi+54h]
-mov     eax, ebx
-add     eax, ecx
-push    0
-push    10h
-mov     edx, [eax]
-mov     [esp+38h+var_10], edx
-mov     ecx, [eax+4]
-mov     [esp+38h+var_C], ecx
-mov     dl, [eax+8]
-mov     ecx, [esi]
-mov     [esp+38h+var_8], dl
-mov     eax, [eax+0Ch]
-lea     edx, [esp+38h+var_10]
-push    edx
-push    esi
-mov     [esp+40h+var_4], eax
-call    dword ptr [ecx+10h]
-test    eax, eax
-jl      loc_5BE92B
-mov     eax, [esp+30h+var_20]
-inc     ebp
-add     ebx, 10h
-cmp     ebp, eax
-jl      short loc_5BE793
-
-loc_5BE7D8:                             ; CODE XREF: MouseClass__DrawCursor+BF↑j
-mov     ecx, edi
-mov     [esp+30h+pStm], 0
-call    LayerClass__CellIteratorReset
-mov     ecx, edi
-call    LayerClass__CellIteratorNext
-test    eax, eax
-jz      short loc_5BE818
-
-loc_5BE7F2:                             ; CODE XREF: MouseClass__DrawCursor+146↓j
-mov     eax, [eax+24h]
-lea     ecx, [esp+30h+var_18]
-push    ecx
-mov     ecx, edi
-mov     [esp+34h+var_18], eax
-call    Cell__Exists
-test    al, al
-jz      short loc_5BE80D
-inc     [esp+30h+pStm]
-
-loc_5BE80D:                             ; CODE XREF: MouseClass__DrawCursor+137↑j
-mov     ecx, edi
-call    LayerClass__CellIteratorNext
-test    eax, eax
-jnz     short loc_5BE7F2
-
-loc_5BE818:                             ; CODE XREF: MouseClass__DrawCursor+120↑j
-mov     edx, [esi]
-push    0
-lea     eax, [esp+34h+pStm]
-push    4
-push    eax
-push    esi
-call    dword ptr [edx+10h]
-mov     ebp, eax
-test    ebp, ebp
-mov     [esp+30h+var_14], ebp
-jge     short loc_5BE83B
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 20h
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_5BE83B:                             ; CODE XREF: MouseClass__DrawCursor+15F↑j
-mov     ecx, edi
-call    LayerClass__CellIteratorReset
-mov     ecx, edi
-call    LayerClass__CellIteratorNext
-mov     ebx, eax
-test    ebx, ebx
-jz      short loc_5BE885
-mov     ebp, ds:__imp_OleSaveToStream
-
-loc_5BE855:                             ; CODE XREF: MouseClass__DrawCursor+1AF↓j
-mov     ecx, [ebx+24h]
-lea     edx, [esp+30h+var_18]
-mov     [esp+30h+var_18], ecx
-push    edx
-mov     ecx, edi
-call    Cell__Exists
-test    al, al
-jz      short loc_5BE874
-push    esi             ; pStm
-push    ebx             ; pPStm
-call    ebp ; __imp_OleSaveToStream
-dec     [esp+30h+pStm]
-
-loc_5BE874:                             ; CODE XREF: MouseClass__DrawCursor+19A↑j
-mov     ecx, edi
-call    LayerClass__CellIteratorNext
-mov     ebx, eax
-test    ebx, ebx
-jnz     short loc_5BE855
-mov     ebp, [esp+30h+var_14]
-
-loc_5BE885:                             ; CODE XREF: MouseClass__DrawCursor+17D↑j
-mov     eax, [esp+30h+pStm]
-test    eax, eax
-jz      short loc_5BE899
-pop     edi
-mov     eax, ebp
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 20h
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_5BE899:                             ; CODE XREF: MouseClass__DrawCursor+1BB↑j
-mov     eax, [edi+116Ch]
-mov     ecx, [esi]
-push    0
-lea     edx, [esp+34h+pStm]
-push    4
-push    edx
-push    esi
-mov     [esp+40h+pStm], eax
-call    dword ptr [ecx+10h]
-test    eax, eax
-jl      short loc_5BE92B
-mov     eax, [esp+30h+pStm]
-xor     ebx, ebx
-test    eax, eax
-jle     short loc_5BE8E1
-
-loc_5BE8C0:                             ; CODE XREF: MouseClass__DrawCursor+20F↓j
-mov     ecx, [edi+1160h]
-mov     eax, [esi]
-push    0
-push    4
-lea     edx, [ecx+ebx*4]
-push    edx
-push    esi
-call    dword ptr [eax+10h]
-test    eax, eax
-jl      short loc_5BE92B
-mov     eax, [esp+30h+pStm]
-inc     ebx
-cmp     ebx, eax
-jl      short loc_5BE8C0
-
-loc_5BE8E1:                             ; CODE XREF: MouseClass__DrawCursor+1EE↑j
-mov     eax, [edi+0E4h]
-mov     ecx, [esi]
-push    0
-lea     edx, [esp+34h+pStm]
-push    4
-push    edx
-push    esi
-mov     [esp+40h+pStm], eax
-call    dword ptr [ecx+10h]
-test    eax, eax
-jl      short loc_5BE92B
-mov     eax, [esp+30h+pStm]
-xor     ebx, ebx
-test    eax, eax
-jle     short loc_5BE929
-
-loc_5BE908:                             ; CODE XREF: MouseClass__DrawCursor+257↓j
-mov     ecx, [edi+0D8h]
-mov     eax, [esi]
-push    0
-push    4
-lea     edx, [ecx+ebx*4]
-push    edx
-push    esi
-call    dword ptr [eax+10h]
-test    eax, eax
-jl      short loc_5BE92B
-mov     eax, [esp+30h+pStm]
-inc     ebx
-cmp     ebx, eax
-jl      short loc_5BE908
-
-loc_5BE929:                             ; CODE XREF: MouseClass__DrawCursor+236↑j
-xor     eax, eax
-
-loc_5BE92B:                             ; CODE XREF: MouseClass__DrawCursor+15↑j
-; MouseClass__DrawCursor+3B↑j ...
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 20h
-retn    4
-*/
 } }
 // 0x5BE9B0
 namespace gamemd { void* MouseClass::drawCursor(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_5BE9B0(_DWORD *this, int a2)
 {
-  UI_Init((int)this, a2);
-  *(this + 5446) = &INoticeSink::`vftable';
-  *this = &TabClass::`vftable';
-  *(this + 5446) = &TabClass::`vftable';
-  return this;
+  UI_Init((int)this, a2); /*0x5be9b8*/
+  *(this + 5446) = &vt_INoticeSink; /*0x5be9bd*/
+  *this = &TabClass::`vftable'; /*0x5be9c7*/
+  *(this + 5446) = &TabClass::`vftable'; /*0x5be9cd*/
+  return this; /*0x5be9d9*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-push    esi
-mov     esi, ecx
-push    eax
-call    UI_Init
-mov     dword ptr [esi+5518h], offset ??_7INoticeSink@@6B@ ; const INoticeSink::`vftable'
-mov     dword ptr [esi], offset ??_7TabClass@@6B@_0 ; const TabClass::`vftable'
-mov     dword ptr [esi+5518h], offset ??_7TabClass@@6B@ ; const TabClass::`vftable'
-mov     eax, esi
-pop     esi
-retn    4
-*/
 } }
 // 0x5BEA30
 namespace gamemd { void* MouseClass::loadCursor(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5bea30
-_DWORD *__thiscall MouseClass::loadCursor(_DWORD *this, int a2, int a3)
+_DWORD *__thiscall sub_5BEA30(_DWORD *this, int a2, int a3)
 {
-  int v4; // eax
+  void *v4; // eax
 
-  *(this + 1) = 0;
-  *(this + 2) = a2;
-  *((_BYTE *)this + 12) = 1;
-  *((_BYTE *)this + 13) = 0;
-  *this = &VectorClass<HashObject<unsigned int,unsigned int>>::`vftable';
-  if ( a2 )
+  *(this + 1) = 0; /*0x5bea3a*/
+  *(this + 2) = a2; /*0x5bea41*/
+  *((_BYTE *)this + 12) = 1; /*0x5bea44*/
+  *((_BYTE *)this + 13) = 0; /*0x5bea48*/
+  *this = &vt_VectorClass_HashObject_unsigned_int_unsigned_int; /*0x5bea4c*/
+  if ( a2 ) /*0x5bea52*/
   {
-    if ( a3 )
+    if ( a3 ) /*0x5bea5a*/
     {
-      *(this + 1) = a3;
+      *(this + 1) = a3; /*0x5bea5d*/
     }
     else
     {
-      v4 = __2_YAPAXI_Z(8 * a2);
-      if ( !v4 )
-        v4 = 0;
-      *(this + 1) = v4;
-      *((_BYTE *)this + 13) = 1;
+      v4 = __2_YAPAXI_Z(8 * a2); /*0x5bea6e*/
+      if ( !v4 ) /*0x5bea78*/
+        v4 = 0; /*0x5bea81*/
+      *(this + 1) = v4; /*0x5bea83*/
+      *((_BYTE *)this + 13) = 1; /*0x5bea86*/
     }
   }
-  *this = &DynamicVectorClass<HashObject<unsigned int,unsigned int>>::`vftable';
-  *(this + 5) = 10;
-  *(this + 4) = 0;
-  return this;
+  *this = &vt_DynamicVectorClass_HashObject_unsigned_int_unsigned_int; /*0x5bea8a*/
+  *(this + 5) = 10; /*0x5bea90*/
+  *(this + 4) = 0; /*0x5bea97*/
+  return this; /*0x5beaa0*/
 }
-
-/* ASM:
-push    esi
-push    edi
-mov     edi, [esp+8+arg_0]
-mov     esi, ecx
-test    edi, edi
-mov     dword ptr [esi+4], 0
-mov     [esi+8], edi
-mov     byte ptr [esi+0Ch], 1
-mov     byte ptr [esi+0Dh], 0
-mov     dword ptr [esi], offset ??_7?$VectorClass@U?$HashObject@II@@@@6B@ ; const VectorClass<HashObject<uint,uint>>::`vftable'
-jz      short loc_5BEA8A
-mov     eax, [esp+8+arg_4]
-test    eax, eax
-jz      short loc_5BEA66
-dec     edi
-mov     [esi+4], eax
-mov     [esp+8+arg_0], edi
-jmp     short loc_5BEA8A
-; ---------------------------------------------------------------------------
-
-loc_5BEA66:                             ; CODE XREF: MouseClass__loadCursor+2A↑j
-lea     eax, ds:0[edi*8]
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-test    eax, eax
-jz      short loc_5BEA81
-dec     edi
-mov     [esp+8+arg_0], edi
-jmp     short loc_5BEA83
-; ---------------------------------------------------------------------------
-
-loc_5BEA81:                             ; CODE XREF: MouseClass__loadCursor+48↑j
-xor     eax, eax
-
-loc_5BEA83:                             ; CODE XREF: MouseClass__loadCursor+4F↑j
-mov     [esi+4], eax
-mov     byte ptr [esi+0Dh], 1
-
-loc_5BEA8A:                             ; CODE XREF: MouseClass__loadCursor+22↑j
-; MouseClass__loadCursor+34↑j
-mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@U?$HashObject@II@@@@6B@ ; const DynamicVectorClass<HashObject<uint,uint>>::`vftable'
-mov     dword ptr [esi+14h], 0Ah
-mov     dword ptr [esi+10h], 0
-mov     eax, esi
-pop     edi
-pop     esi
-retn    8
-*/
 } }
 // 0x5D3A60
 namespace gamemd { void MessageListClass::Init(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5d3a60
-void __thiscall MessageListClass::Init(
+int __thiscall MessageListClass::Init(
+        _DWORD *this,
+        int a2,
+        int a3,
+        int a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        char a9,
+        int a10,
+        int a11,
+        CellStruct *aP11)
 {
-  int i; // edi
+  IUnknown *i; // edi
   void (__thiscall ***v14)(_DWORD, int); // ecx
   int v15; // eax
-  int v16; // eax
+  int result; // eax
 
-  *((_DWORD *)this + 177) = a12 - 8;
-  Debug::Log();
-  for ( i = *(_DWORD *)this; *(_DWORD *)this; i = *(_DWORD *)this )
+  *(this + 177) = (char *)aP11 - 8; /*0x5d3a72*/
+  Debug::Log(); /*0x5d3a78*/
+  for ( i = (IUnknown *)*this; *this; i = (IUnknown *)*this ) /*0x5d3a7d*/
   {
-    *(_DWORD *)this = (*(int (__thiscall **)(int))(*(_DWORD *)i + 36))(i);
-    if ( i )
-      (**(void (__thiscall ***)(int, int))i)(i, 1);
+    *this = (*(int (__thiscall **)(IUnknown *))(i->field_0 + 36))(i); /*0x5d3a91*/
+    if ( i ) /*0x5d3a93*/
+      (*(void (__thiscall **)(IUnknown *, int))i->field_0)(i, 1); /*0x5d3a9b*/
   }
-  memset32((char *)this + 5248, 65537, 7u);
-  if ( *((_BYTE *)this + 25) )
+  memset32(this + 1312, 65537, 7u); /*0x5d3ab3*/
+  if ( *((_BYTE *)this + 25) ) /*0x5d3ab5*/
   {
-    v14 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)this + 9);
-    if ( v14 )
-      (**v14)(v14, 1);
-    *((_DWORD *)this + 9) = 0;
+    v14 = (void (__thiscall ***)(_DWORD, int))*(this + 9); /*0x5d3aba*/
+    if ( v14 ) /*0x5d3abf*/
+      (**v14)(v14, 1); /*0x5d3ac5*/
+    *(this + 9) = 0; /*0x5d3ac7*/
   }
-  *(_DWORD *)this = 0;
-  *((_DWORD *)this + 1) = a2;
-  *((_DWORD *)this + 2) = a3;
-  *((_DWORD *)this + 3) = a4;
-  if ( a4 > 14 )
-    *((_DWORD *)this + 3) = 14;
-  *((_DWORD *)this + 4) = a5;
-  if ( a5 > 112 )
-    *((_DWORD *)this + 4) = 112;
-  *((_DWORD *)this + 5) = 19;
-  *((_BYTE *)this + 24) = a9;
-  *((_BYTE *)this + 25) = 0;
-  if ( a7 == -1 || a8 == -1 )
+  *this = 0; /*0x5d3ad9*/
+  *(this + 1) = a2; /*0x5d3adb*/
+  *(this + 2) = a3; /*0x5d3ade*/
+  *(this + 3) = a4; /*0x5d3ae1*/
+  if ( a4 > 14 ) /*0x5d3ae4*/
+    *(this + 3) = 14; /*0x5d3ae6*/
+  *(this + 4) = a5; /*0x5d3af4*/
+  if ( a5 > 112 ) /*0x5d3af7*/
+    *(this + 4) = 112; /*0x5d3af9*/
+  *(this + 5) = 19; /*0x5d3b04*/
+  *((_BYTE *)this + 24) = a9; /*0x5d3b0b*/
+  *((_BYTE *)this + 25) = 0; /*0x5d3b15*/
+  if ( a7 == -1 || a8 == -1 ) /*0x5d3b21*/
   {
-    *((_BYTE *)this + 26) = 1;
-    *((_DWORD *)this + 7) = a2;
-    *((_DWORD *)this + 8) = a3;
+    *((_BYTE *)this + 26) = 1; /*0x5d3b2e*/
+    *(this + 7) = a2; /*0x5d3b32*/
+    *(this + 8) = a3; /*0x5d3b35*/
   }
   else
   {
-    *((_BYTE *)this + 26) = 0;
-    *((_DWORD *)this + 7) = a7;
-    *((_DWORD *)this + 8) = a8;
+    *((_BYTE *)this + 26) = 0; /*0x5d3b23*/
+    *(this + 7) = a7; /*0x5d3b26*/
+    *(this + 8) = a8; /*0x5d3b29*/
   }
-  v15 = *((_DWORD *)this + 4);
-  *((_DWORD *)this + 9) = 0;
-  *((_WORD *)this + 20) = 0;
-  *((_WORD *)this + 182) = 0;
-  *((_DWORD *)this + 172) = 0;
-  *((_DWORD *)this + 173) = 0;
-  *((_WORD *)this + 348) = 0;
-  *((_DWORD *)this + 175) = a10;
-  *((_DWORD *)this + 176) = a11;
-  if ( a11 >= v15 )
-    *((_DWORD *)this + 176) = v15 - 1;
-  v16 = *((_DWORD *)this + 176);
-  if ( a10 >= v16 )
-    *((_DWORD *)this + 175) = v16 - 1;
+  v15 = *(this + 4); /*0x5d3b3c*/
+  *(this + 9) = 0; /*0x5d3b45*/
+  *((_WORD *)this + 20) = 0; /*0x5d3b48*/
+  *((_WORD *)this + 182) = 0; /*0x5d3b4c*/
+  *(this + 172) = 0; /*0x5d3b53*/
+  *(this + 173) = 0; /*0x5d3b59*/
+  *((_WORD *)this + 348) = 0; /*0x5d3b5f*/
+  *(this + 175) = a10; /*0x5d3b66*/
+  *(this + 176) = a11; /*0x5d3b6c*/
+  if ( a11 >= v15 ) /*0x5d3b72*/
+    *(this + 176) = v15 - 1; /*0x5d3b75*/
+  result = *(this + 176); /*0x5d3b7b*/
+  if ( a10 >= result ) /*0x5d3b83*/
+    *(this + 175) = --result; /*0x5d3b86*/
+  return result; /*0x5d3b8c*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_28]
-push    ebx
-push    esi
-add     eax, 0FFFFFFF8h
-push    edi
-mov     esi, ecx
-push    eax
-push    offset aMessagelistcla ; "MessageListClass::Init(Width: %d)\n"
-mov     [esi+2C4h], eax
-call    Debug__Log
-mov     edi, [esi]
-xor     ebx, ebx
-add     esp, 8
-cmp     edi, ebx
-jz      short loc_5D3AA3
-
-loc_5D3A88:                             ; CODE XREF: MessageListClass__Init+41↓j
-mov     edx, [edi]
-mov     ecx, edi
-call    dword ptr [edx+24h]
-cmp     edi, ebx
-mov     [esi], eax
-jz      short loc_5D3A9D
-mov     eax, [edi]
-push    1
-mov     ecx, edi
-call    dword ptr [eax]
-
-loc_5D3A9D:                             ; CODE XREF: MessageListClass__Init+33↑j
-mov     edi, [esi]
-cmp     edi, ebx
-jnz     short loc_5D3A88
-
-loc_5D3AA3:                             ; CODE XREF: MessageListClass__Init+26↑j
-lea     edi, [esi+1480h]
-mov     ecx, 7
-mov     eax, 10001h
-rep stosd
-cmp     [esi+19h], bl
-jz      short loc_5D3ACA
-mov     ecx, [esi+24h]
-cmp     ecx, ebx
-jz      short loc_5D3AC7
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx]
-
-loc_5D3AC7:                             ; CODE XREF: MessageListClass__Init+5F↑j
-mov     [esi+24h], ebx
-
-loc_5D3ACA:                             ; CODE XREF: MessageListClass__Init+58↑j
-mov     eax, [esp+0Ch+arg_8]
-mov     edx, [esp+0Ch+arg_0]
-mov     edi, [esp+0Ch+arg_4]
-cmp     eax, 0Eh
-mov     [esi], ebx
-mov     [esi+4], edx
-mov     [esi+8], edi
-mov     [esi+0Ch], eax
-jle     short loc_5D3AED
-mov     dword ptr [esi+0Ch], 0Eh
-
-loc_5D3AED:                             ; CODE XREF: MessageListClass__Init+84↑j
-mov     eax, [esp+0Ch+arg_C]
-cmp     eax, 70h ; 'p'
-mov     [esi+10h], eax
-jle     short loc_5D3B00
-mov     dword ptr [esi+10h], 70h ; 'p'
-
-loc_5D3B00:                             ; CODE XREF: MessageListClass__Init+97↑j
-mov     al, [esp+0Ch+arg_1C]
-mov     dword ptr [esi+14h], 13h
-mov     [esi+18h], al
-mov     eax, [esp+0Ch+arg_14]
-cmp     eax, 0FFFFFFFFh
-mov     [esi+19h], bl
-jz      short loc_5D3B2E
-mov     ecx, [esp+0Ch+arg_18]
-cmp     ecx, 0FFFFFFFFh
-jz      short loc_5D3B2E
-mov     [esi+1Ah], bl
-mov     [esi+1Ch], eax
-mov     [esi+20h], ecx
-jmp     short loc_5D3B38
-; ---------------------------------------------------------------------------
-
-loc_5D3B2E:                             ; CODE XREF: MessageListClass__Init+B8↑j
-; MessageListClass__Init+C1↑j
-mov     byte ptr [esi+1Ah], 1
-mov     [esi+1Ch], edx
-mov     [esi+20h], edi
-
-loc_5D3B38:                             ; CODE XREF: MessageListClass__Init+CC↑j
-mov     ecx, [esp+0Ch+arg_24]
-mov     eax, [esi+10h]
-mov     edx, [esp+0Ch+arg_20]
-cmp     ecx, eax
-mov     [esi+24h], ebx
-mov     [esi+28h], bx
-mov     [esi+16Ch], bx
-mov     [esi+2B0h], ebx
-mov     [esi+2B4h], ebx
-mov     [esi+2B8h], bx
-mov     [esi+2BCh], edx
-mov     [esi+2C0h], ecx
-jl      short loc_5D3B7B
-dec     eax
-mov     [esi+2C0h], eax
-
-loc_5D3B7B:                             ; CODE XREF: MessageListClass__Init+112↑j
-mov     eax, [esi+2C0h]
-cmp     edx, eax
-jl      short loc_5D3B8C
-dec     eax
-mov     [esi+2BCh], eax
-
-loc_5D3B8C:                             ; CODE XREF: MessageListClass__Init+123↑j
-pop     edi
-pop     esi
-pop     ebx
-retn    2Ch ; ','
-*/
 } }
 // 0x5D3BA0
 namespace gamemd { int MessageListClass::AddMessage(void* a1, int a2, void* a3, int a4, int a5, int a6, int a7) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5d3ba0
-int __thiscall MessageListClass::AddMessage(int *this, #72 *Source, int a3, #72 *a4, int a5, int a6, int a7, char a8)
+int __thiscall MessageListClass::AddMessage(
+        _DWORD *this,
+        IUnknown *aP1,
+        IUnknown *aP2,
+        CellStruct *aP3,
+        int a5,
+        IUnknown *aP5,
+        int a7,
+        char a8)
 {
-  _DWORD *Instance; // edi
-  int v11; // ebx
+  AbstractClass *Instance; // edi
+  ObjectClass *v11; // ebx
   int v12; // ebp
-  int v13; // eax
-  int v14; // edi
+  signed int v13; // eax
+  signed int v14; // edi
   int v15; // eax
   int v16; // eax
   int i; // edi
@@ -6604,603 +2632,174 @@ int __thiscall MessageListClass::AddMessage(int *this, #72 *Source, int a3, #72 
   _WORD *v19; // eax
   _DWORD *v20; // ecx
   int v21; // edx
-  int v22; // eax
-  int v23; // ecx
-  int v24; // ebx
+  TextLabelClass *v22; // eax
+  IUnknown *ecx26; // ecx
+  TextLabelClass *v23; // ebx
   int v25; // edi
   int v26; // eax
   _WORD *j; // ecx
-  int *v28; // ebp
+  _DWORD *v28; // ebp
   int v29; // edi
   int *v30; // eax
   int v31; // edx
   char *v32; // eax
   unsigned __int16 k; // cx
-  int v34; // [esp+10h] [ebp-14Ch]
-  int v35; // [esp+14h] [ebp-148h]
-  _WORD String[162]; // [esp+18h] [ebp-144h] BYREF
+  signed int v34; // [esp+10h] [ebp-14Ch]
+  signed int v35; // [esp+14h] [ebp-148h]
+  wchar_t String[162]; // [esp+18h] [ebp-144h] BYREF
 
-  Instance = (_DWORD *)TextRenderer::GetInstance();
-  if ( !a4 )
-    return 0;
-  if ( !Instance )
-    return 0;
-  String[0] = 0;
-  if ( Source )
+  Instance = TextRenderer::GetInstance(); /*0x5d3bb8*/
+  if ( !aP3 ) /*0x5d3bc3*/
+    return 0; /*0x5d3bd1*/
+  if ( !Instance ) /*0x5d3bd6*/
+    return 0; /*0x5d3be4*/
+  String[0] = 0; /*0x5d3bee*/
+  if ( aP1 ) /*0x5d3bf7*/
   {
-    wcscpy((#72 *)String, Source);
-    wcscat((#72 *)String, (const #72 *)asc_8306A4);
+    wcscpy(String, (const wchar_t *)aP1); /*0x5d3bff*/
+    wcscat(String, (const wchar_t *)&stru_830620.__pad_68[28]); /*0x5d3c0e*/
   }
-  v11 = wcslen((const #72 *)String);
-  v12 = Text::MeasureWidth((int)String, 0);
-  v34 = wcslen(a4);
-  if ( *(this + 177) - v12 - 8 <= 0 )
-    return 0;
-  v13 = MessageListClass::CountCharsInWidth(Instance, a4, *(this + 177) - v12 - 8, 111, 1);
-  v14 = v13;
-  v35 = v13;
-  if ( v13 < 0 )
-    return 0;
-  wcsncat((#72 *)String, a4, v13);
-  v15 = *(this + 3);
-  String[v11 + v14] = 0;
-  if ( v15 > 0 )
+  v11 = (ObjectClass *)wcslen(String); /*0x5d3c23*/
+  v12 = Text::MeasureWidth((int)String, 0); /*0x5d3c3a*/
+  v34 = wcslen((const wchar_t *)aP3); /*0x5d3c42*/
+  if ( *(this + 177) - v12 - 8 <= 0 ) /*0x5d3c56*/
+    return 0; /*0x5d3c64*/
+  v13 = MessageListClass::CountCharsInWidth(Instance, aP3, *(this + 177) - v12 - 8, 111, 1); /*0x5d3c76*/
+  v14 = v13; /*0x5d3c7b*/
+  v35 = v13; /*0x5d3c7f*/
+  if ( v13 < 0 ) /*0x5d3c83*/
+    return 0; /*0x5d3c91*/
+  wcsncat(String, (const wchar_t *)aP3, v13); /*0x5d3c9b*/
+  v15 = *(this + 3); /*0x5d3ca0*/
+  String[(_DWORD)v11 + v14] = 0; /*0x5d3caa*/
+  if ( v15 > 0 ) /*0x5d3cb1*/
   {
-    v16 = *this;
-    for ( i = 0; v16; v16 = (*(int (__thiscall **)(int))(*(_DWORD *)v16 + 4))(v16) )
-      ++i;
-    if ( *((_BYTE *)this + 25) && *((_BYTE *)this + 26) )
-      ++i;
-    if ( i + 1 > *(this + 3) )
+    v16 = *this; /*0x5d3cb3*/
+    for ( i = 0; v16; v16 = (*(int (__thiscall **)(int))(*(_DWORD *)v16 + 4))(v16) ) /*0x5d3cb3*/
+      ++i; /*0x5d3cbf*/
+    if ( *((_BYTE *)this + 25) && *((_BYTE *)this + 26) ) /*0x5d3cce*/
+      ++i; /*0x5d3cd5*/
+    if ( i + 1 > *(this + 3) ) /*0x5d3cdc*/
     {
-      v18 = (_DWORD *)*this;
-      if ( !*this )
-        return 0;
-      *this = (*(int (__thiscall **)(int))(*v18 + 36))(*this);
-      v19 = this + 1312;
-      v20 = this + 178;
-      v21 = 14;
-      do
+      v18 = (_DWORD *)*this; /*0x5d3cde*/
+      if ( !*this ) /*0x5d3cde*/
+        return 0; /*0x5d3cf0*/
+      *this = (*(int (__thiscall **)(_DWORD))(*v18 + 36))(*this); /*0x5d3cfa*/
+      v19 = this + 1312; /*0x5d3cfc*/
+      v20 = this + 178; /*0x5d3d02*/
+      v21 = 14; /*0x5d3d08*/
+      do /*0x5d3d21*/
       {
-        if ( (_DWORD *)v18[12] == v20 )
-          *v19 = 1;
-        ++v19;
-        v20 += 81;
-        --v21;
+        if ( (_DWORD *)v18[12] == v20 ) /*0x5d3d10*/
+          *v19 = 1; /*0x5d3d12*/
+        ++v19; /*0x5d3d17*/
+        v20 += 81; /*0x5d3d1a*/
+        --v21; /*0x5d3d20*/
       }
-      while ( v21 );
-      (*(void (__thiscall **)(_DWORD *, int))*v18)(v18, 1);
+      while ( v21 ); /*0x5d3d21*/
+      (*(void (__thiscall **)(_DWORD *, int))*v18)(v18, 1); /*0x5d3d29*/
     }
   }
-  v22 = __2_YAPAXI_Z(76);
-  if ( v22 )
+  v22 = (TextLabelClass *)__2_YAPAXI_Z(0x4Cu); /*0x5d3d2d*/
+  if ( v22 ) /*0x5d3d37*/
   {
-    v23 = a6;
-    BYTE1(v23) = BYTE1(a6) | 0x80;
-    v24 = MessageListClass::clearMessages(v22, (int)String, *(this + 1), *(this + 2), a5, v23);
+    ecx26 = aP5; /*0x5d3d39*/
+    BYTE1(ecx26) = BYTE1(aP5) | 0x80; /*0x5d3d47*/
+    v23 = (TextLabelClass *)MessageListClass::clearMessages(v22, (int)String, *(this + 1), *(this + 2), a5, (int)ecx26); /*0x5d3d60*/
   }
   else
   {
-    v24 = 0;
+    v23 = 0; /*0x5d3d64*/
   }
-  if ( MEMORY[0x87F7E8][536212] == 4 )
+  if ( MEMORY[0xA8B238] == (CellStruct *)4 ) /*0x5d3d6e*/
   {
-    if ( !a8 && BYTE1(MEMORY[0x87F7E8][538244]) )
+    if ( !a8 && MEMORY[0xA8D1F9] ) /*0x5d3d82*/
     {
-      *(_BYTE *)(v24 + 65) = 1;
-      goto LABEL_38;
+      v23->__pad_40[1] = 1; /*0x5d3d89*/
+      goto LABEL_38; /*0x5d3d8c*/
     }
-    goto LABEL_32;
+    goto LABEL_32; /*0x5d3d82*/
   }
-  if ( MEMORY[0x87F7E8][536212] == 3 )
+  if ( MEMORY[0xA8B238] == (CellStruct *)3 ) /*0x5d3d9f*/
   {
-    if ( a8 || !LOBYTE(MEMORY[0x87F7E8][538244]) )
+    if ( a8 || !MEMORY[0xA8D1F8] ) /*0x5d3dac*/
     {
 LABEL_32:
-      *(_BYTE *)(v24 + 65) = 0;
-      goto LABEL_38;
+      v23->__pad_40[1] = 0; /*0x5d3d8e*/
+      goto LABEL_38; /*0x5d3d93*/
     }
-    *(_BYTE *)(v24 + 65) = 1;
+    v23->__pad_40[1] = 1; /*0x5d3db3*/
   }
   else
   {
-    *(_BYTE *)(v24 + 65) = a8 == 0;
+    v23->__pad_40[1] = a8 == 0; /*0x5d3dbd*/
   }
 LABEL_38:
-  if ( a7 == -1 )
+  if ( a7 == -1 ) /*0x5d3dca*/
   {
-    *(_DWORD *)(v24 + 36) = 0;
+    v23->field_24 = 0; /*0x5d3dcc*/
   }
   else
   {
-    v25 = MEMORY[0x87F7E8][7894];
-    if ( MEMORY[0x87F7E8][7892] != -1 )
-      v25 += Timer::GetTicks(&MEMORY[0x87F7E8][7893]) - MEMORY[0x87F7E8][7892];
-    *(_DWORD *)(v24 + 36) = a7 + v25;
+    v25 = *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9460]; /*0x5d3dda*/
+    if ( *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9452] != -1 ) /*0x5d3de3*/
+      v25 += Timer::GetTicks() - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9452]; /*0x5d3df5*/
+    v23->field_24 = a7 + v25; /*0x5d3df9*/
   }
-  *(_DWORD *)(v24 + 40) = a3;
-  *(_DWORD *)(v24 + 56) = *(this + 177);
-  v26 = 0;
-  for ( j = this + 1312; !*j; ++j )
+  v23->field_28 = (int)aP2; /*0x5d3e03*/
+  *(_DWORD *)&v23->__pad_2C[12] = *(this + 177); /*0x5d3e0c*/
+  v26 = 0; /*0x5d3e0f*/
+  for ( j = this + 1312; !*j; ++j ) /*0x5d3e11*/
   {
-    if ( ++v26 >= 14 )
+    if ( ++v26 >= 14 ) /*0x5d3e24*/
     {
-      if ( v24 )
-        (**(void (__thiscall ***)(int, int))v24)(v24, 1);
-      return 0;
+      if ( v23 ) /*0x5d3e28*/
+        (**(void (__thiscall ***)(TextLabelClass *, int))v23->__pad_0)(v23, 1); /*0x5d3e30*/
+      return 0; /*0x5d3e3e*/
     }
   }
-  *((_WORD *)this + v26 + 2624) = 0;
-  v28 = this + 81 * v26 + 178;
-  memset(v28, 0, 0xA0u);
-  *((_WORD *)this + 162 * v26 + 436) = 0;
-  wcscpy((#72 *)v28, (const #72 *)String);
-  *(_DWORD *)(v24 + 48) = v28;
-  if ( !a8 )
-    PlayVocClass(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 1708), 0x2000, 1.0, 0);
-  if ( *this )
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)v24 + 16))(v24, *this);
+  *((_WORD *)this + v26 + 2624) = 0; /*0x5d3e41*/
+  v28 = this + 81 * v26 + 178; /*0x5d3e58*/
+  memset(v28, 0, 0xA0u); /*0x5d3e61*/
+  *((_WORD *)this + 162 * v26 + 436) = 0; /*0x5d3e63*/
+  wcscpy((wchar_t *)v28, String); /*0x5d3e6b*/
+  *(_DWORD *)&v23->__pad_2C[4] = v28; /*0x5d3e7c*/
+  if ( !a8 ) /*0x5d3e7f*/
+    PlayVocClass(*(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 1708), 0x2000, 1.0, 0); /*0x5d3e98*/
+  if ( *this ) /*0x5d3e9d*/
+    (*(void (__thiscall **)(TextLabelClass *, _DWORD))(*(_DWORD *)v23->__pad_0 + 16))(v23, *this); /*0x5d3ea8*/
   else
-    *this = v24;
-  if ( *((_BYTE *)this + 25) && *((_BYTE *)this + 26) )
-    v29 = *(this + 2) + *(this + 5);
+    *this = v23; /*0x5d3ead*/
+  if ( *((_BYTE *)this + 25) && *((_BYTE *)this + 26) ) /*0x5d3eb6*/
+    v29 = *(this + 2) + *(this + 5); /*0x5d3ec3*/
   else
-    v29 = *(this + 2);
-  v30 = (int *)*this;
-  if ( *this )
+    v29 = *(this + 2); /*0x5d3ec7*/
+  v30 = (int *)*this; /*0x5d3eca*/
+  if ( *this ) /*0x5d3eca*/
   {
-    do
+    do /*0x5d3edf*/
     {
-      v31 = *v30;
-      v30[4] = v29;
-      v30 = (int *)(*(int (__thiscall **)(int *))(v31 + 4))(v30);
-      v29 += *(this + 5);
+      v31 = *v30; /*0x5d3ed0*/
+      v30[4] = v29; /*0x5d3ed4*/
+      v30 = (int *)(*(int (__thiscall **)(int *))(v31 + 4))(v30); /*0x5d3ed7*/
+      v29 += *(this + 5); /*0x5d3eda*/
     }
-    while ( v30 );
+    while ( v30 ); /*0x5d3edf*/
   }
-  if ( v35 < v34 )
+  if ( v35 < v34 ) /*0x5d3eeb*/
   {
-    v32 = (char *)a4 + 2 * v35;
-    for ( k = *(_WORD *)v32; k; v32 += 2 )
+    v32 = (char *)aP3 + 2 * v35; /*0x5d3ef4*/
+    for ( k = *(_WORD *)v32; k; v32 += 2 ) /*0x5d3ef7*/
     {
-      if ( k >= 0x20u )
-        break;
-      k = *((_WORD *)v32 + 1);
+      if ( k >= 0x20u ) /*0x5d3f03*/
+        break; /*0x5d3f03*/
+      k = *((_WORD *)v32 + 1); /*0x5d3f05*/
     }
-    if ( *(_WORD *)v32 )
-      MessageListClass::AddMessage(this, Source, a3, (#72 *)v32, a5, a6, a7, 1);
+    if ( *(_WORD *)v32 ) /*0x5d3f11*/
+      MessageListClass::AddMessage(this, aP1, aP2, (CellStruct *)v32, a5, aP5, a7, 1); /*0x5d3f44*/
   }
-  return v24;
+  return (int)v23->__pad_0; /*0x5d3bc5*/
 }
-
-/* ASM:
-String          = byte ptr -144h
-Source          = dword ptr  4
-arg_4           = dword ptr  8
-arg_8           = dword ptr  0Ch
-arg_C           = dword ptr  10h
-arg_10          = dword ptr  14h
-arg_14          = dword ptr  18h
-arg_18          = byte ptr  1Ch
-
-sub     esp, 14Ch
-push    ebx
-push    ebp
-push    esi
-mov     esi, ecx
-mov     ecx, [esp+158h+arg_10]
-push    edi
-call    TextRenderer__GetInstance
-mov     edi, eax
-mov     eax, [esp+15Ch+arg_8]
-test    eax, eax
-jnz     short loc_5D3BD4
-pop     edi
-pop     esi
-pop     ebp
-xor     eax, eax
-pop     ebx
-add     esp, 14Ch
-retn    1Ch
-; ---------------------------------------------------------------------------
-
-loc_5D3BD4:                             ; CODE XREF: MessageListClass__AddMessage+23↑j
-test    edi, edi
-jnz     short loc_5D3BE7
-pop     edi
-pop     esi
-pop     ebp
-xor     eax, eax
-pop     ebx
-add     esp, 14Ch
-retn    1Ch
-; ---------------------------------------------------------------------------
-
-loc_5D3BE7:                             ; CODE XREF: MessageListClass__AddMessage+36↑j
-mov     eax, [esp+15Ch+Source]
-mov     word ptr [esp+15Ch+String], 0
-test    eax, eax
-jz      short loc_5D3C16
-push    eax             ; Source
-lea     eax, [esp+160h+String]
-push    eax             ; Destination
-call    _wcscpy
-lea     ecx, [esp+164h+String]
-push    offset asc_8306A4 ; ":"
-push    ecx             ; Destination
-call    _wcscat
-add     esp, 10h
-
-loc_5D3C16:                             ; CODE XREF: MessageListClass__AddMessage+57↑j
-lea     edx, [esp+15Ch+String]
-push    edx             ; String
-call    _wcslen
-add     esp, 4
-mov     ebx, eax
-lea     eax, [esp+15Ch+String]
-mov     ecx, edi
-push    0
-push    eax
-call    Text__MeasureWidth
-mov     ecx, [esp+15Ch+arg_8]
-mov     ebp, eax
-push    ecx             ; String
-call    _wcslen
-mov     [esp+160h+var_14C], eax
-mov     eax, [esi+2C4h]
-sub     eax, ebp
-add     esp, 4
-sub     eax, 8
-test    eax, eax
-jg      short loc_5D3C67
-pop     edi
-pop     esi
-pop     ebp
-xor     eax, eax
-pop     ebx
-add     esp, 14Ch
-retn    1Ch
-; ---------------------------------------------------------------------------
-
-loc_5D3C67:                             ; CODE XREF: MessageListClass__AddMessage+B6↑j
-mov     ebp, [esp+15Ch+arg_8]
-push    1
-push    6Fh ; 'o'
-push    eax
-push    ebp
-mov     ecx, edi
-call    MessageListClass__CountCharsInWidth
-mov     edi, eax
-test    edi, edi
-mov     [esp+15Ch+var_148], edi
-jge     short loc_5D3C94
-pop     edi
-pop     esi
-pop     ebp
-xor     eax, eax
-pop     ebx
-add     esp, 14Ch
-retn    1Ch
-; ---------------------------------------------------------------------------
-
-loc_5D3C94:                             ; CODE XREF: MessageListClass__AddMessage+E3↑j
-push    edi             ; Count
-lea     edx, [esp+160h+String]
-push    ebp             ; Source
-push    edx             ; Destination
-call    _wcsncat
-mov     eax, [esi+0Ch]
-add     edi, ebx
-add     esp, 0Ch
-test    eax, eax
-mov     word ptr [esp+edi*2+15Ch+String], 0
-jle     short loc_5D3D2B
-mov     eax, [esi]
-xor     edi, edi
-test    eax, eax
-jz      short loc_5D3CC7
-
-loc_5D3CBB:                             ; CODE XREF: MessageListClass__AddMessage+125↓j
-mov     edx, [eax]
-mov     ecx, eax
-inc     edi
-call    dword ptr [edx+4]
-test    eax, eax
-jnz     short loc_5D3CBB
-
-loc_5D3CC7:                             ; CODE XREF: MessageListClass__AddMessage+119↑j
-mov     al, [esi+19h]
-test    al, al
-jz      short loc_5D3CD6
-mov     al, [esi+1Ah]
-test    al, al
-jz      short loc_5D3CD6
-inc     edi
-
-loc_5D3CD6:                             ; CODE XREF: MessageListClass__AddMessage+12C↑j
-; MessageListClass__AddMessage+133↑j
-mov     eax, [esi+0Ch]
-inc     edi
-cmp     edi, eax
-jle     short loc_5D3D2B
-mov     edi, [esi]
-test    edi, edi
-jnz     short loc_5D3CF3
-pop     edi
-pop     esi
-pop     ebp
-xor     eax, eax
-pop     ebx
-add     esp, 14Ch
-retn    1Ch
-; ---------------------------------------------------------------------------
-
-loc_5D3CF3:                             ; CODE XREF: MessageListClass__AddMessage+142↑j
-mov     eax, [edi]
-mov     ecx, edi
-call    dword ptr [eax+24h]
-mov     [esi], eax
-lea     eax, [esi+1480h]
-lea     ecx, [esi+2C8h]
-mov     edx, 0Eh
-
-loc_5D3D0D:                             ; CODE XREF: MessageListClass__AddMessage+181↓j
-cmp     [edi+30h], ecx
-jnz     short loc_5D3D17
-mov     word ptr [eax], 1
-
-loc_5D3D17:                             ; CODE XREF: MessageListClass__AddMessage+170↑j
-add     eax, 2
-add     ecx, 144h
-dec     edx
-jnz     short loc_5D3D0D
-mov     edx, [edi]
-push    1
-mov     ecx, edi
-call    dword ptr [edx]
-
-loc_5D3D2B:                             ; CODE XREF: MessageListClass__AddMessage+111↑j
-; MessageListClass__AddMessage+13C↑j
-push    4Ch ; 'L'       ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-test    eax, eax
-jz      short loc_5D3D64
-mov     ecx, [esp+15Ch+arg_10]
-mov     edx, [esp+15Ch+arg_C]
-or      ch, 80h
-push    ecx
-mov     ecx, [esi+8]
-push    edx
-mov     edx, [esi+4]
-push    ecx
-lea     ecx, [esp+168h+String]
-push    edx
-push    ecx
-mov     ecx, eax
-call    MessageListClass__clearMessages
-mov     ebx, eax
-jmp     short loc_5D3D66
-; ---------------------------------------------------------------------------
-
-loc_5D3D64:                             ; CODE XREF: MessageListClass__AddMessage+197↑j
-xor     ebx, ebx
-
-loc_5D3D66:                             ; CODE XREF: MessageListClass__AddMessage+1C2↑j
-mov     eax, ds:0A8B238h
-cmp     eax, 4
-jnz     short loc_5D3D95
-mov     al, [esp+15Ch+arg_18]
-test    al, al
-jnz     short loc_5D3D8E
-mov     al, ds:0A8D1F9h
-test    al, al
-jz      short loc_5D3D8E
-mov     eax, 1
-mov     [ebx+41h], al
-jmp     short loc_5D3DC0
-; ---------------------------------------------------------------------------
-
-loc_5D3D8E:                             ; CODE XREF: MessageListClass__AddMessage+1D9↑j
-; MessageListClass__AddMessage+1E2↑j ...
-xor     eax, eax
-mov     [ebx+41h], al
-jmp     short loc_5D3DC0
-; ---------------------------------------------------------------------------
-
-loc_5D3D95:                             ; CODE XREF: MessageListClass__AddMessage+1CE↑j
-cmp     eax, 3
-mov     al, [esp+15Ch+arg_18]
-jnz     short loc_5D3DB8
-test    al, al
-jnz     short loc_5D3D8E
-mov     al, ds:0A8D1F8h
-test    al, al
-jz      short loc_5D3D8E
-mov     eax, 1
-mov     [ebx+41h], al
-jmp     short loc_5D3DC0
-; ---------------------------------------------------------------------------
-
-loc_5D3DB8:                             ; CODE XREF: MessageListClass__AddMessage+1FF↑j
-test    al, al
-setz    dl
-mov     [ebx+41h], dl
-
-loc_5D3DC0:                             ; CODE XREF: MessageListClass__AddMessage+1EC↑j
-; MessageListClass__AddMessage+1F3↑j ...
-mov     ebp, [esp+15Ch+arg_14]
-cmp     ebp, 0FFFFFFFFh
-jnz     short loc_5D3DD5
-mov     dword ptr [ebx+24h], 0
-jmp     short loc_5D3DFC
-; ---------------------------------------------------------------------------
-
-loc_5D3DD5:                             ; CODE XREF: MessageListClass__AddMessage+22A↑j
-mov     eax, ds:887338h
-mov     edi, ds:887340h
-cmp     eax, 0FFFFFFFFh
-jz      short loc_5D3DF7
-mov     ecx, 88733Ch
-call    Timer__GetTicks
-sub     eax, ds:887338h
-add     edi, eax
-
-loc_5D3DF7:                             ; CODE XREF: MessageListClass__AddMessage+243↑j
-add     edi, ebp
-mov     [ebx+24h], edi
-
-loc_5D3DFC:                             ; CODE XREF: MessageListClass__AddMessage+233↑j
-mov     eax, [esp+15Ch+arg_4]
-mov     [ebx+28h], eax
-mov     ecx, [esi+2C4h]
-mov     [ebx+38h], ecx
-xor     eax, eax
-lea     ecx, [esi+1480h]
-
-loc_5D3E17:                             ; CODE XREF: MessageListClass__AddMessage+284↓j
-cmp     word ptr [ecx], 0
-jnz     short loc_5D3E41
-inc     eax
-add     ecx, 2
-cmp     eax, 0Eh
-jl      short loc_5D3E17
-test    ebx, ebx
-jz      short loc_5D3E32
-mov     edx, [ebx]
-push    1
-mov     ecx, ebx
-call    dword ptr [edx]
-
-loc_5D3E32:                             ; CODE XREF: MessageListClass__AddMessage+288↑j
-pop     edi
-pop     esi
-pop     ebp
-xor     eax, eax
-pop     ebx
-add     esp, 14Ch
-retn    1Ch
-; ---------------------------------------------------------------------------
-
-loc_5D3E41:                             ; CODE XREF: MessageListClass__AddMessage+27B↑j
-mov     word ptr [esi+eax*2+1480h], 0
-lea     eax, [eax+eax*8]
-mov     ecx, 28h ; '('
-lea     edx, [eax+eax*8]
-xor     eax, eax
-lea     ebp, [esi+edx*4+2C8h]
-mov     edi, ebp
-rep stosd
-stosw
-lea     eax, [esp+15Ch+String]
-push    eax             ; Source
-push    ebp             ; Destination
-call    _wcscpy
-mov     al, [esp+164h+arg_18]
-add     esp, 8
-test    al, al
-mov     [ebx+30h], ebp
-jnz     short loc_5D3E9D
-mov     eax, ds:8871E0h
-push    0               ; int
-mov     edx, 2000h
-push    3F800000h       ; float
-mov     ecx, [eax+6ACh]
-call    PlayVocClass
-
-loc_5D3E9D:                             ; CODE XREF: MessageListClass__AddMessage+2DF↑j
-mov     eax, [esi]
-test    eax, eax
-jz      short loc_5D3EAD
-mov     edx, [ebx]
-push    eax
-mov     ecx, ebx
-call    dword ptr [edx+10h]
-jmp     short loc_5D3EAF
-; ---------------------------------------------------------------------------
-
-loc_5D3EAD:                             ; CODE XREF: MessageListClass__AddMessage+301↑j
-mov     [esi], ebx
-
-loc_5D3EAF:                             ; CODE XREF: MessageListClass__AddMessage+30B↑j
-mov     al, [esi+19h]
-test    al, al
-jz      short loc_5D3EC7
-mov     al, [esi+1Ah]
-test    al, al
-jz      short loc_5D3EC7
-mov     edi, [esi+14h]
-mov     eax, [esi+8]
-add     edi, eax
-jmp     short loc_5D3ECA
-; ---------------------------------------------------------------------------
-
-loc_5D3EC7:                             ; CODE XREF: MessageListClass__AddMessage+314↑j
-; MessageListClass__AddMessage+31B↑j
-mov     edi, [esi+8]
-
-loc_5D3ECA:                             ; CODE XREF: MessageListClass__AddMessage+325↑j
-mov     eax, [esi]
-test    eax, eax
-jz      short loc_5D3EE1
-
-loc_5D3ED0:                             ; CODE XREF: MessageListClass__AddMessage+33F↓j
-mov     edx, [eax]
-mov     ecx, eax
-mov     [eax+10h], edi
-call    dword ptr [edx+4]
-add     edi, [esi+14h]
-test    eax, eax
-jnz     short loc_5D3ED0
-
-loc_5D3EE1:                             ; CODE XREF: MessageListClass__AddMessage+32E↑j
-mov     eax, [esp+15Ch+var_148]
-mov     ecx, [esp+15Ch+var_14C]
-cmp     eax, ecx
-jge     short loc_5D3F49
-mov     ecx, [esp+15Ch+arg_8]
-lea     eax, [ecx+eax*2]
-mov     cx, [eax]
-test    cx, cx
-jz      short loc_5D3F11
-
-loc_5D3EFF:                             ; CODE XREF: MessageListClass__AddMessage+36F↓j
-cmp     cx, 20h ; ' '
-jnb     short loc_5D3F11
-mov     cx, [eax+2]
-add     eax, 2
-test    cx, cx
-jnz     short loc_5D3EFF
-
-loc_5D3F11:                             ; CODE XREF: MessageListClass__AddMessage+35D↑j
-; MessageListClass__AddMessage+363↑j
-cmp     word ptr [eax], 0
-jz      short loc_5D3F49
-mov     edx, [esp+15Ch+arg_14]
-mov     ecx, [esp+15Ch+arg_10]
-push    1               ; char
-push    edx             ; char
-mov     edx, [esp+164h+arg_C]
-push    ecx             ; int
-mov     ecx, [esp+168h+Source]
-push    edx             ; int
-push    eax             ; wchar_t *
-mov     eax, [esp+170h+arg_4]
-push    eax             ; int
-push    ecx             ; Source
-mov     ecx, esi
-call    MessageListClass__AddMessage
-
-loc_5D3F49:                             ; CODE XREF: MessageListClass__AddMessage+34B↑j
-; MessageListClass__AddMessage+375↑j
-pop     edi
-pop     esi
-mov     eax, ebx
-pop     ebp
-pop     ebx
-add     esp, 14Ch
-retn    1Ch
-*/
 } }
 // 0x60CBA0
 namespace gamemd { int CampaignScore::LookupDialogHash() {
@@ -7210,69 +2809,26 @@ int __thiscall sub_60CBA0(void *this)
   int result; // eax
   void *v2; // [esp+0h] [ebp-4h] BYREF
 
-  result = MEMORY[0xAC1B04];
-  v2 = this;
-  if ( MEMORY[0xAC1B04] )
+  result = MEMORY[0xAC1B04]; /*0x60cba1*/
+  v2 = this; /*0x60cba6*/
+  if ( MEMORY[0xAC1B04] ) /*0x60cbac*/
   {
-    result = *((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v2) & ((1 << MEMORY[0xAC1B0C]) - 1)));
-    if ( result )
+    result = *((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v2) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60cbcd*/
+    if ( result ) /*0x60cbd2*/
     {
-      while ( *(void **)result != v2 )
+      while ( *(void **)result != v2 ) /*0x60cbda*/
       {
-        result = *(_DWORD *)(result + 516);
-        if ( !result )
-          return result;
+        result = *(_DWORD *)(result + 516); /*0x60cbdc*/
+        if ( !result ) /*0x60cbe4*/
+          return result; /*0x60cbe4*/
       }
-      result += 4;
-      if ( result )
-        *(_BYTE *)(result + 213) = 1;
+      result += 4; /*0x60cbec*/
+      if ( result ) /*0x60cbf1*/
+        *(_BYTE *)(result + 213) = 1; /*0x60cbf3*/
     }
   }
-  return result;
+  return result; /*0x60cbe7*/
 }
-
-/* ASM:
-push    ecx             ; TODO: classify (grp=blit, sz=0x5c)
-mov     eax, dword_A8ED54+32DB0h
-mov     [esp+4+var_4], ecx
-test    eax, eax
-jz      short loc_60CBFA
-lea     ecx, [esp+4+var_4]
-call    dword_A8ED54+32DC4h
-mov     ecx, dword_A8ED54+32DB8h
-mov     edx, 1
-shl     edx, cl
-dec     edx
-and     edx, eax
-mov     eax, dword_A8ED54+32DACh
-mov     eax, [eax+edx*4]
-test    eax, eax
-jz      short loc_60CBFA
-mov     ecx, [esp+4+var_4]
-
-loc_60CBD8:                             ; CODE XREF: CampaignScore__LookupDialogHash+44↓j
-cmp     [eax], ecx
-jz      short loc_60CBE8
-mov     eax, [eax+204h]
-test    eax, eax
-jnz     short loc_60CBD8
-pop     ecx
-retn
-; ---------------------------------------------------------------------------
-
-loc_60CBE8:                             ; CODE XREF: CampaignScore__LookupDialogHash+3A↑j
-test    eax, eax
-jz      short loc_60CBFA
-add     eax, 4
-test    eax, eax
-jz      short loc_60CBFA
-mov     byte ptr [eax+0D5h], 1
-
-loc_60CBFA:                             ; CODE XREF: CampaignScore__LookupDialogHash+C↑j
-; CampaignScore__LookupDialogHash+32↑j ...
-pop     ecx
-retn
-*/
 } }
 // 0x60CC00
 namespace gamemd { int CampaignScore::FindDialogTemplate() {
@@ -7282,69 +2838,26 @@ int __thiscall sub_60CC00(void *this)
   int result; // eax
   void *v2; // [esp+0h] [ebp-4h] BYREF
 
-  result = MEMORY[0xAC1B04];
-  v2 = this;
-  if ( MEMORY[0xAC1B04] )
+  result = MEMORY[0xAC1B04]; /*0x60cc01*/
+  v2 = this; /*0x60cc06*/
+  if ( MEMORY[0xAC1B04] ) /*0x60cc0c*/
   {
-    result = *((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v2) & ((1 << MEMORY[0xAC1B0C]) - 1)));
-    if ( result )
+    result = *((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v2) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60cc2d*/
+    if ( result ) /*0x60cc32*/
     {
-      while ( *(void **)result != v2 )
+      while ( *(void **)result != v2 ) /*0x60cc3a*/
       {
-        result = *(_DWORD *)(result + 516);
-        if ( !result )
-          return result;
+        result = *(_DWORD *)(result + 516); /*0x60cc3c*/
+        if ( !result ) /*0x60cc44*/
+          return result; /*0x60cc44*/
       }
-      result += 4;
-      if ( result )
-        *(_BYTE *)(result + 213) = 0;
+      result += 4; /*0x60cc4c*/
+      if ( result ) /*0x60cc51*/
+        *(_BYTE *)(result + 213) = 0; /*0x60cc53*/
     }
   }
-  return result;
+  return result; /*0x60cc47*/
 }
-
-/* ASM:
-push    ecx             ; TODO: classify (grp=blit, sz=0x5c)
-mov     eax, dword_A8ED54+32DB0h
-mov     [esp+4+var_4], ecx
-test    eax, eax
-jz      short loc_60CC5A
-lea     ecx, [esp+4+var_4]
-call    dword_A8ED54+32DC4h
-mov     ecx, dword_A8ED54+32DB8h
-mov     edx, 1
-shl     edx, cl
-dec     edx
-and     edx, eax
-mov     eax, dword_A8ED54+32DACh
-mov     eax, [eax+edx*4]
-test    eax, eax
-jz      short loc_60CC5A
-mov     ecx, [esp+4+var_4]
-
-loc_60CC38:                             ; CODE XREF: CampaignScore__FindDialogTemplate+44↓j
-cmp     [eax], ecx
-jz      short loc_60CC48
-mov     eax, [eax+204h]
-test    eax, eax
-jnz     short loc_60CC38
-pop     ecx
-retn
-; ---------------------------------------------------------------------------
-
-loc_60CC48:                             ; CODE XREF: CampaignScore__FindDialogTemplate+3A↑j
-test    eax, eax
-jz      short loc_60CC5A
-add     eax, 4
-test    eax, eax
-jz      short loc_60CC5A
-mov     byte ptr [eax+0D5h], 0
-
-loc_60CC5A:                             ; CODE XREF: CampaignScore__FindDialogTemplate+C↑j
-; CampaignScore__FindDialogTemplate+32↑j ...
-pop     ecx
-retn
-*/
 } }
 // 0x60CF00
 namespace gamemd { void* Control::CreateControlDialog() { return nullptr; } }
@@ -7355,72 +2868,26 @@ namespace gamemd { void* Control::CreateControlDialog() { return nullptr; } }
 // 0x623840
 namespace gamemd { int ListBox::Clear() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x623560
-void __thiscall GadgetClass::SetTooltip(void **this, #72 *String)
+int __thiscall ListBox::Clear(HWND hWnd)
 {
-  int v3; // eax
-  void *v4; // eax
+  LRESULT v2; // eax
+  WPARAM v3; // esi
 
-  if ( *(this + 10) )
+  v2 = SendMessageA(hWnd, 0x146u, 0, 0); /*0x623855*/
+  v3 = v2 - 1; /*0x623859*/
+  if ( v2 ) /*0x62385c*/
   {
-    __3_YAXPAX_Z(*(this + 10));
-    *(this + 10) = 0;
+    do /*0x62386e*/
+      SendMessageA(hWnd, 0x144u, v3, 0); /*0x623867*/
+    while ( v3-- ); /*0x62386e*/
   }
-  if ( String )
-  {
-    if ( *(_WORD *)String )
-    {
-      v3 = wcslen(String);
-      v4 = (void *)__2_YAPAXI_Z(2 * v3 + 2);
-      *(this + 10) = v4;
-      wcscpy((#72 *)v4, String);
-    }
-  }
+  return 0; /*0x623870*/
 }
-
-/* ASM:
-String          = dword ptr  4
-
-push    esi
-push    edi
-mov     edi, ecx
-mov     eax, [edi+28h]
-test    eax, eax
-jz      short loc_62357B
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     dword ptr [edi+28h], 0
-
-loc_62357B:                             ; CODE XREF: GadgetClass__SetTooltip+9↑j
-mov     esi, [esp+8+String]
-test    esi, esi
-jz      short loc_6235A6
-cmp     word ptr [esi], 0
-jz      short loc_6235A6
-push    esi             ; String
-call    _wcslen
-lea     eax, [eax+eax+2]
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-push    esi             ; Source
-push    eax             ; Destination
-mov     [edi+28h], eax
-call    _wcscpy
-add     esp, 10h
-
-loc_6235A6:                             ; CODE XREF: GadgetClass__SetTooltip+21↑j
-; GadgetClass__SetTooltip+27↑j
-pop     edi
-pop     esi
-retn    4
-*/
 } }
 // 0x6258E0
 namespace gamemd { void ComboBoxOwnerDraw::SetCapacity() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x6258e0
-void __thiscall ComboBoxOwnerDraw::SetCapacity(_DWORD *this)
+void __thiscall sub_6258E0(_DWORD *this)
 {
   unsigned int v2; // esi
   int *v3; // ebp
@@ -7435,255 +2902,92 @@ void __thiscall ComboBoxOwnerDraw::SetCapacity(_DWORD *this)
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  v2 = *(this + 2);
-  if ( v2 > *(this + 12) && *((_BYTE *)this + 20) != 1 )
+  v2 = *(this + 2); /*0x6258e5*/
+  if ( v2 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x6258f7*/
   {
-    v3 = (int *)*this;
-    v4 = *(this + 3);
-    v13 = (int *)*this;
-    *(this + 2) = v2 >> 1;
-    *(this + 3) = v4 - 1;
-    v5 = (void *)__2_YAPAXI_Z(4 * (v2 >> 1));
-    v6 = 4 * *(this + 2);
-    *this = v5;
-    memset(v5, 0, v6);
-    if ( (int)v2 > 0 )
+    v3 = (int *)*this; /*0x625900*/
+    v4 = *(this + 3); /*0x625903*/
+    v13 = (int *)*this; /*0x625906*/
+    *(this + 2) = v2 >> 1; /*0x62590c*/
+    *(this + 3) = v4 - 1; /*0x625914*/
+    v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x62591f*/
+    v6 = 4 * *(this + 2); /*0x625924*/
+    *this = v5; /*0x62592b*/
+    memset(v5, 0, v6); /*0x625930*/
+    if ( (int)v2 > 0 ) /*0x62593b*/
     {
-      v7 = v3;
-      v8 = v2;
-      do
+      v7 = v3; /*0x62593d*/
+      v8 = v2; /*0x62593f*/
+      do /*0x625973*/
       {
-        v9 = *v7;
-        if ( *v7 )
+        v9 = *v7; /*0x625941*/
+        if ( *v7 ) /*0x625941*/
         {
-          do
+          do /*0x62596d*/
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1);
-            v11 = *(_DWORD *)(*this + 4 * v10);
-            *(_DWORD *)(*this + 4 * v10) = v9;
-            v12 = *(_DWORD *)(v9 + 12);
-            *(_DWORD *)(v9 + 12) = v11;
-            v9 = v12;
+            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1); /*0x625957*/
+            v11 = *(_DWORD *)(*this + 4 * v10); /*0x62595b*/
+            *(_DWORD *)(*this + 4 * v10) = v9; /*0x625961*/
+            v12 = *(_DWORD *)(v9 + 12); /*0x625963*/
+            *(_DWORD *)(v9 + 12) = v11; /*0x625966*/
+            v9 = v12; /*0x625969*/
           }
-          while ( v12 );
+          while ( v12 ); /*0x62596d*/
         }
-        ++v7;
-        --v8;
+        ++v7; /*0x62596f*/
+        --v8; /*0x625972*/
       }
-      while ( v8 );
-      v3 = v13;
+      while ( v8 ); /*0x625973*/
+      v3 = v13; /*0x625975*/
     }
-    __3_YAXPAX_Z(v3);
+    __3_YAXPAX_Z(v3); /*0x62597a*/
   }
 }
-
-/* ASM:
-push    ecx             ; TODO: classify (grp=blit, sz=0xa8)
-push    ebx
-mov     ebx, ecx
-push    esi
-mov     esi, [ebx+8]
-mov     eax, [ebx+30h]
-cmp     esi, eax
-jbe     loc_625984
-cmp     byte ptr [ebx+14h], 1
-jz      loc_625984
-mov     eax, esi
-push    ebp
-mov     ebp, [ebx]
-push    edi
-mov     edi, [ebx+0Ch]
-mov     [esp+14h+var_4], ebp
-shr     eax, 1
-mov     [ebx+8], eax
-dec     edi
-shl     eax, 2
-push    eax             ; Size
-mov     [ebx+0Ch], edi
-call    ??2_YAPAXI_Z
-mov     ecx, [ebx+8]
-mov     edi, eax
-shl     ecx, 2
-mov     edx, ecx
-xor     eax, eax
-shr     ecx, 2
-mov     [ebx], edi
-add     esp, 4
-rep stosd
-mov     ecx, edx
-and     ecx, 3
-test    esi, esi
-rep stosb
-jle     short loc_625979
-mov     edi, ebp
-mov     ebp, esi
-
-loc_625941:                             ; CODE XREF: ComboBoxOwnerDraw__SetCapacity+93↓j
-mov     esi, [edi]
-test    esi, esi
-jz      short loc_62596F
-
-loc_625947:                             ; CODE XREF: ComboBoxOwnerDraw__SetCapacity+8D↓j
-mov     ecx, esi
-call    dword ptr [ebx+18h]
-mov     ecx, [ebx+0Ch]
-mov     edx, 1
-shl     edx, cl
-dec     edx
-and     edx, eax
-mov     eax, [ebx]
-mov     ecx, [eax+edx*4]
-lea     eax, [eax+edx*4]
-mov     [eax], esi
-mov     eax, [esi+0Ch]
-mov     [esi+0Ch], ecx
-mov     esi, eax
-test    eax, eax
-jnz     short loc_625947
-
-loc_62596F:                             ; CODE XREF: ComboBoxOwnerDraw__SetCapacity+65↑j
-add     edi, 4
-dec     ebp
-jnz     short loc_625941
-mov     ebp, [esp+14h+var_4]
-
-loc_625979:                             ; CODE XREF: ComboBoxOwnerDraw__SetCapacity+5B↑j
-push    ebp             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-pop     edi
-pop     ebp
-
-loc_625984:                             ; CODE XREF: ComboBoxOwnerDraw__SetCapacity+D↑j
-; ComboBoxOwnerDraw__SetCapacity+17↑j
-pop     esi
-pop     ebx
-pop     ecx
-retn
-*/
 } }
 // 0x625990
 namespace gamemd { int ComboBoxOwnerDraw::GrowBuffer() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x625990
-char __thiscall ComboBoxOwnerDraw::GrowBuffer(int *this)
+char __thiscall sub_625990(int *this)
 {
   int v2; // eax
   int v4; // esi
   void *v5; // ebp
   int v6; // [esp+4h] [ebp-4h]
 
-  v2 = *this;
-  if ( *this < *(this + 1) )
-    return 0;
-  v4 = 2 * v2;
-  v6 = 2 * v2;
-  if ( 2 * v2 < 10 )
+  v2 = *this; /*0x625994*/
+  if ( *this < *(this + 1) ) /*0x62599b*/
+    return 0; /*0x62599d*/
+  v4 = 2 * v2; /*0x6259a4*/
+  v6 = 2 * v2; /*0x6259ab*/
+  if ( 2 * v2 < 10 ) /*0x6259af*/
   {
-    v6 = 10;
-    v4 = 10;
+    v6 = 10; /*0x6259b1*/
+    v4 = 10; /*0x6259b9*/
   }
-  v5 = (void *)__2_YAPAXI_Z(4 * v4);
-  memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2));
-  if ( *(this + 2) )
+  v5 = __2_YAPAXI_Z(4 * v4); /*0x6259cc*/
+  memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x6259da*/
+  if ( *(this + 2) ) /*0x6259e3*/
   {
-    qmemcpy(v5, (const void *)*(this + 2), 4 * *this);
-    v4 = v6;
+    qmemcpy(v5, (const void *)*(this + 2), 4 * *this); /*0x6259f8*/
+    v4 = v6; /*0x625a01*/
   }
-  __3_YAXPAX_Z((void *)*(this + 2));
-  *(this + 1) = v4;
-  *(this + 2) = (int)v5;
-  return 1;
+  __3_YAXPAX_Z((void *)*(this + 2)); /*0x625a09*/
+  *(this + 1) = v4; /*0x625a11*/
+  *(this + 2) = (int)v5; /*0x625a14*/
+  return 1; /*0x62599f*/
 }
-
-/* ASM:
-push    ecx             ; TODO: classify (grp=blit, sz=0x8f)
-push    ebx
-mov     ebx, ecx
-mov     eax, [ebx]
-mov     ecx, [ebx+4]
-cmp     eax, ecx
-jge     short loc_6259A2
-xor     al, al
-pop     ebx
-pop     ecx
-retn
-; ---------------------------------------------------------------------------
-
-loc_6259A2:                             ; CODE XREF: ComboBoxOwnerDraw__GrowBuffer+B↑j
-push    ebp
-push    esi
-lea     esi, [eax+eax]
-push    edi
-cmp     esi, 0Ah
-mov     [esp+14h+var_4], esi
-jge     short loc_6259BD
-mov     [esp+14h+var_4], 0Ah
-mov     esi, [esp+14h+var_4]
-
-loc_6259BD:                             ; CODE XREF: ComboBoxOwnerDraw__GrowBuffer+1F↑j
-lea     edi, ds:0[esi*4]
-push    edi             ; Size
-call    ??2_YAPAXI_Z
-mov     ecx, edi
-mov     ebp, eax
-mov     edx, ecx
-xor     eax, eax
-mov     edi, ebp
-add     esp, 4
-shr     ecx, 2
-rep stosd
-mov     ecx, edx
-and     ecx, 3
-rep stosb
-mov     eax, [ebx+8]
-test    eax, eax
-jz      short loc_625A05
-mov     ecx, [ebx]
-mov     esi, eax
-shl     ecx, 2
-mov     eax, ecx
-mov     edi, ebp
-shr     ecx, 2
-rep movsd
-mov     ecx, eax
-and     ecx, 3
-rep movsb
-mov     esi, [esp+14h+var_4]
-
-loc_625A05:                             ; CODE XREF: ComboBoxOwnerDraw__GrowBuffer+58↑j
-mov     ecx, [ebx+8]
-push    ecx             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [ebx+4], esi
-mov     [ebx+8], ebp
-mov     al, 1
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-pop     ecx
-retn
-*/
 } }
 // 0x637060
 namespace gamemd { void TabClass::processTabInput() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_637060(void *this)
 {
-  MEMORY[0xAC4B80] = (int)this;
+  MEMORY[0xAC4B80] = (int)this; /*0x637060*/
 }
-
-/* ASM:
-mov     dword_A8ED54+35E2Ch, ecx
-retn
-*/
 } }
 // 0x637AB0
 namespace gamemd { int SidebarClass::ResetProductionState() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x637ab0
 int __thiscall SidebarClass::ResetProductionState(void *this)
 {
   int result; // eax
@@ -7718,1240 +3022,454 @@ int __thiscall SidebarClass::ResetProductionState(void *this)
   _WORD v30[56]; // [esp+28h] [ebp-E0h] BYREF
   char v31[112]; // [esp+98h] [ebp-70h] BYREF
 
-  v27 = this;
-  result = 0;
-  v25 = 0;
-  v26 = MEMORY[0x87F7E8][539944];
+  v27 = this; /*0x637ab6*/
+  result = 0; /*0x637aba*/
+  v25 = 0; /*0x637ac2*/
+  v26 = MEMORY[0xA8EC88]; /*0x637ac8*/
   while ( v25 < v26 )
   {
-    v2 = *(_DWORD *)(MEMORY[0x87F7E8][539941] + 4 * result);
-    v3 = *(_DWORD *)(v2 + 540);
-    v4 = *(void **)(v3 + 48);
-    if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v3) && MEMORY[0x87F7E8][528729] )
-      v4 = *(void **)(MEMORY[0x87F7E8][528729] + 48);
-    if ( v27 != v4 )
-      goto LABEL_46;
-    Type = BuildingClass::GetPlanningToken((_DWORD *)v2);
-    v6 = Type;
-    if ( !Type )
-      goto LABEL_46;
-    v23 = 0;
-    if ( *(int *)(Type + 20) > 0 )
+    v2 = *((_DWORD *)MEMORY[0xA8EC7C] + result); /*0x637adc*/
+    v3 = *(_DWORD *)(v2 + 540); /*0x637adf*/
+    v4 = *(void **)(v3 + 48); /*0x637ae5*/
+    if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v3) && HouseClass_Player ) /*0x637af8*/
+      v4 = (void *)*((_DWORD *)HouseClass_Player + 12); /*0x637afa*/
+    if ( v27 != v4 ) /*0x637b01*/
+      goto LABEL_46; /*0x637b01*/
+    Type = BuildingClass::GetPlanningToken((_DWORD *)v2); /*0x637b09*/
+    v6 = Type; /*0x637b0e*/
+    if ( !Type ) /*0x637b12*/
+      goto LABEL_46; /*0x637b12*/
+    v23 = 0; /*0x637b2e*/
+    if ( *(int *)(Type + 20) > 0 ) /*0x637b1d*/
     {
-      v7 = *(_DWORD *)(Type + 140);
-      if ( v7 == -1 || v7 > 0 )
-        v23 = 1;
+      v7 = *(_DWORD *)(Type + 140); /*0x637b1f*/
+      if ( v7 == -1 || v7 > 0 ) /*0x637b2c*/
+        v23 = 1; /*0x637b1d*/
     }
-    if ( *(_BYTE *)(v6 + 152) )
+    if ( *(_BYTE *)(v6 + 152) ) /*0x637b3a*/
     {
-      v8 = *(_DWORD *)(v6 + 148);
-      if ( v8 != -1 )
+      v8 = *(_DWORD *)(v6 + 148); /*0x637b44*/
+      if ( v8 != -1 ) /*0x637b4d*/
       {
-        v9 = *(_DWORD **)(*(_DWORD *)(v6 + 8) + 4 * v8);
-        if ( v9 )
+        v9 = *(_DWORD **)(*(_DWORD *)(v6 + 8) + 4 * v8); /*0x637b52*/
+        if ( v9 ) /*0x637b57*/
         {
-          v9[45] = -1;
-          v10 = v9[12];
-          for ( i = 0; i < v10; *(_DWORD *)(*(_DWORD *)(v9[9] + 4 * i - 4) + 116) = -1 )
-            ++i;
-          v9[43] = -1;
+          v9[45] = -1; /*0x637b59*/
+          v10 = v9[12]; /*0x637b63*/
+          for ( i = 0; i < v10; *(_DWORD *)(*(_DWORD *)(v9[9] + 4 * i - 4) + 116) = -1 ) /*0x637b6a*/
+            ++i; /*0x637b6f*/
+          v9[43] = -1; /*0x637b7f*/
         }
       }
-      *(_BYTE *)(v6 + 152) = 0;
+      *(_BYTE *)(v6 + 152) = 0; /*0x637b89*/
     }
-    v12 = *(_DWORD *)(v6 + 20);
+    v12 = *(_DWORD *)(v6 + 20); /*0x637b96*/
     for ( j = *(_DWORD *)(v6 + 140) != -1 ? *(_DWORD *)(v6 + 140) : 0; j < v12; ++j )
     {
-      v14 = *(_DWORD **)(*(_DWORD *)(v6 + 8) + 4 * j);
-      if ( v14 )
-        TeamClass::Reset(v14, 1);
+      v14 = *(_DWORD **)(*(_DWORD *)(v6 + 8) + 4 * j); /*0x637bab*/
+      if ( v14 ) /*0x637bb0*/
+        TeamClass::Reset(v14, 1); /*0x637bb4*/
     }
-    *(_DWORD *)(v6 + 140) = -1;
-    if ( !v2 )
-      goto LABEL_32;
-    v15 = (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 388))(v2);
-    if ( v15 == 5 )
+    *(_DWORD *)(v6 + 140) = -1; /*0x637bc0*/
+    if ( !v2 ) /*0x637bca*/
+      goto LABEL_32; /*0x637bca*/
+    v15 = (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 388))(v2); /*0x637bd6*/
+    if ( v15 == 5 ) /*0x637bdb*/
     {
-      v16 = 1;
-      goto LABEL_33;
+      v16 = 1; /*0x637bdd*/
+      goto LABEL_33; /*0x637bdf*/
     }
-    if ( ((WaypointCoords = ScriptAction::GetWaypointCoords(v29, *(_DWORD **)(v2 + 692)),
+    if ( ((WaypointCoords = ScriptAction::GetWaypointCoords(v29, *(_DWORD **)(v2 + 692)), /*0x637c0f*/
            v28 = *(_DWORD *)WaypointCoords,
            v18 = WaypointCoords[4],
            v15 == 1)
        || v15 == 11)
       && (v18 == 11 || v15 == 11 && !v18) )
     {
-      v16 = 1;
+      v16 = 1; /*0x637c11*/
     }
     else
     {
 LABEL_32:
-      v16 = 0;
+      v16 = 0; /*0x637c15*/
     }
 LABEL_33:
-    if ( !v23 )
+    if ( !v23 ) /*0x637c1d*/
     {
-      if ( v16 )
+      if ( v16 ) /*0x637c25*/
       {
-        v19 = BuildingClass::GetPlanningToken((_DWORD *)v2);
-        v20 = v19;
-        if ( v19 )
+        v19 = BuildingClass::GetPlanningToken((_DWORD *)v2); /*0x637c2d*/
+        v20 = v19; /*0x637c32*/
+        if ( v19 ) /*0x637c36*/
         {
-          if ( *(int *)(v19 + 20) > 0 )
+          if ( *(int *)(v19 + 20) > 0 ) /*0x637c41*/
           {
-            v21 = *(_DWORD *)(v19 + 140);
-            if ( (v21 == -1 || v21 > 0) && !*(_BYTE *)(v20 + 28) )
+            v21 = *(_DWORD *)(v19 + 140); /*0x637c47*/
+            if ( (v21 == -1 || v21 > 0) && !*(_BYTE *)(v20 + 28) ) /*0x637c56*/
             {
-              (*(void (__thiscall **)(int, int, int))(*(_DWORD *)v2 + 488))(v2, 28, 1);
-              qmemcpy(v30, (const void *)FactoryClass::CompleteCurrentItem(v20, (int)v31), 0x6Fu);
-              v22 = (_BYTE *)__2_YAPAXI_Z(111);
-              if ( v22 )
-                *v22 = 0;
+              (*(void (__thiscall **)(int, int, int))(*(_DWORD *)v2 + 488))(v2, 28, 1); /*0x637c65*/
+              qmemcpy(v30, (const void *)FactoryClass::CompleteCurrentItem(v20, (int)v31), 0x6Fu); /*0x637c87*/
+              v22 = __2_YAPAXI_Z(0x6Fu); /*0x637c8c*/
+              if ( v22 ) /*0x637c96*/
+                *v22 = 0; /*0x637c98*/
               else
-                v22 = 0;
-              v24 = v22;
-              qmemcpy(v22, v30, 0x6Cu);
-              *((_WORD *)v22 + 54) = v30[54];
-              v22[110] = v30[55];
-              if ( *v24 == 4 )
-                v24[29] = 2;
-              SidebarClass::addToList(&dword_A8ED54[55165], &v24);
-              *(_BYTE *)(v20 + 28) = 1;
+                v22 = 0; /*0x637c9d*/
+              v24 = v22; /*0x637caa*/
+              qmemcpy(v22, v30, 0x6Cu); /*0x637cae*/
+              *((_WORD *)v22 + 54) = v30[54]; /*0x637cb0*/
+              v22[110] = v30[55]; /*0x637cb2*/
+              if ( *v24 == 4 ) /*0x637cba*/
+                v24[29] = 2; /*0x637cbc*/
+              SidebarClass::addToList(&v24); /*0x637cca*/
+              *(_BYTE *)(v20 + 28) = 1; /*0x637ccf*/
             }
           }
         }
       }
     }
 LABEL_46:
-    result = ++v25;
+    result = ++v25; /*0x637cd3*/
   }
-  return result;
+  return result; /*0x637cec*/
 }
-
-/* ASM:
-sub     esp, 104h
-mov     [esp+104h+var_F4], ecx
-xor     eax, eax
-mov     ecx, ds:0A8EC88h
-mov     [esp+104h+var_FC], eax
-test    ecx, ecx
-mov     [esp+104h+var_F8], ecx
-jle     loc_637CEC
-push    ebx
-push    ebp
-push    esi
-push    edi
-
-loc_637AD6:                             ; CODE XREF: SidebarClass__ResetProductionState+232↓j
-mov     ecx, ds:0A8EC7Ch
-mov     ebx, [ecx+eax*4]
-mov     ecx, [ebx+21Ch] ; this
-mov     esi, [ecx+30h]
-call    House__IsHumanPlayer
-test    al, al
-jz      short loc_637AFD
-mov     eax, ds:0A83D4Ch
-test    eax, eax
-jz      short loc_637AFD
-mov     esi, [eax+30h]
-
-loc_637AFD:                             ; CODE XREF: SidebarClass__ResetProductionState+3F↑j
-; SidebarClass__ResetProductionState+48↑j
-cmp     [esp+114h+var_F4], esi
-jnz     loc_637CD3
-mov     ecx, ebx
-call    BuildingClass__GetType
-mov     esi, eax
-test    esi, esi
-jz      loc_637CD3
-mov     eax, [esi+14h]
-test    eax, eax
-jle     short loc_637B35
-mov     eax, [esi+8Ch]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_637B2E
-test    eax, eax
-jle     short loc_637B35
-
-loc_637B2E:                             ; CODE XREF: SidebarClass__ResetProductionState+78↑j
-mov     [esp+114h+var_101], 1
-jmp     short loc_637B3A
-; ---------------------------------------------------------------------------
-
-loc_637B35:                             ; CODE XREF: SidebarClass__ResetProductionState+6D↑j
-; SidebarClass__ResetProductionState+7C↑j
-mov     [esp+114h+var_101], 0
-
-loc_637B3A:                             ; CODE XREF: SidebarClass__ResetProductionState+83↑j
-mov     al, [esi+98h]
-test    al, al
-jz      short loc_637B90
-mov     eax, [esi+94h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_637B89
-mov     edx, [esi+8]
-mov     ecx, [edx+eax*4]
-test    ecx, ecx
-jz      short loc_637B89
-mov     dword ptr [ecx+0B4h], 0FFFFFFFFh
-mov     edx, [ecx+30h]
-xor     eax, eax
-test    edx, edx
-jle     short loc_637B7F
-
-loc_637B6C:                             ; CODE XREF: SidebarClass__ResetProductionState+CD↓j
-mov     edi, [ecx+24h]
-inc     eax
-cmp     eax, edx
-mov     edi, [edi+eax*4-4]
-mov     dword ptr [edi+74h], 0FFFFFFFFh
-jl      short loc_637B6C
-
-loc_637B7F:                             ; CODE XREF: SidebarClass__ResetProductionState+BA↑j
-mov     dword ptr [ecx+0ACh], 0FFFFFFFFh
-
-loc_637B89:                             ; CODE XREF: SidebarClass__ResetProductionState+9D↑j
-; SidebarClass__ResetProductionState+A7↑j
-mov     byte ptr [esi+98h], 0
-
-loc_637B90:                             ; CODE XREF: SidebarClass__ResetProductionState+92↑j
-mov     ecx, [esi+8Ch]
-mov     ebp, [esi+14h]
-mov     eax, ecx
-inc     eax
-neg     eax
-sbb     eax, eax
-and     eax, ecx
-cmp     eax, ebp
-mov     edi, eax
-jge     short loc_637BBE
-
-loc_637BA8:                             ; CODE XREF: SidebarClass__ResetProductionState+10C↓j
-mov     eax, [esi+8]
-mov     ecx, [eax+edi*4]
-test    ecx, ecx
-jz      short loc_637BB9
-push    1
-call    TeamClass__Reset
-
-loc_637BB9:                             ; CODE XREF: SidebarClass__ResetProductionState+100↑j
-inc     edi
-cmp     edi, ebp
-jl      short loc_637BA8
-
-loc_637BBE:                             ; CODE XREF: SidebarClass__ResetProductionState+F6↑j
-test    ebx, ebx
-mov     dword ptr [esi+8Ch], 0FFFFFFFFh
-jz      short loc_637C15
-mov     edx, [ebx]
-mov     ecx, ebx
-call    dword ptr [edx+184h]
-mov     esi, eax
-cmp     esi, 5
-jnz     short loc_637BE1
-mov     al, 1
-jmp     short loc_637C17
-; ---------------------------------------------------------------------------
-
-loc_637BE1:                             ; CODE XREF: SidebarClass__ResetProductionState+12B↑j
-mov     eax, [ebx+2B4h]
-lea     ecx, [esp+114h+var_E8]
-push    eax
-call    ScriptAction__GetWaypointCoords
-mov     ecx, [eax]
-cmp     esi, 1
-mov     [esp+114h+var_F0], ecx
-mov     al, [eax+4]
-jz      short loc_637C04
-cmp     esi, 0Bh
-jnz     short loc_637C15
-
-loc_637C04:                             ; CODE XREF: SidebarClass__ResetProductionState+14D↑j
-cmp     al, 0Bh
-jz      short loc_637C11
-cmp     esi, 0Bh
-jnz     short loc_637C15
-test    al, al
-jnz     short loc_637C15
-
-loc_637C11:                             ; CODE XREF: SidebarClass__ResetProductionState+156↑j
-mov     al, 1
-jmp     short loc_637C17
-; ---------------------------------------------------------------------------
-
-loc_637C15:                             ; CODE XREF: SidebarClass__ResetProductionState+11A↑j
-; SidebarClass__ResetProductionState+152↑j ...
-xor     al, al
-
-loc_637C17:                             ; CODE XREF: SidebarClass__ResetProductionState+12F↑j
-; SidebarClass__ResetProductionState+163↑j
-mov     cl, [esp+114h+var_101]
-test    cl, cl
-jnz     loc_637CD3
-test    al, al
-jz      loc_637CD3
-mov     ecx, ebx
-call    BuildingClass__GetType
-mov     ebp, eax
-test    ebp, ebp
-jz      loc_637CD3
-mov     eax, [ebp+14h]
-test    eax, eax
-jle     loc_637CD3
-mov     eax, [ebp+8Ch]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_637C56
-test    eax, eax
-jle     short loc_637CD3
-
-loc_637C56:                             ; CODE XREF: SidebarClass__ResetProductionState+1A0↑j
-mov     al, [ebp+1Ch]
-test    al, al
-jnz     short loc_637CD3
-mov     edx, [ebx]
-push    1
-push    1Ch
-mov     ecx, ebx
-call    dword ptr [edx+1E8h]
-lea     eax, [esp+114h+var_70]
-mov     ecx, ebp
-push    eax
-call    FactoryClass__CompleteCurrentItem
-mov     ecx, 1Bh
-mov     esi, eax
-lea     edi, [esp+114h+var_E0]
-push    6Fh ; 'o'       ; Size
-rep movsd
-movsw
-movsb
-call    ??2_YAPAXI_Z
-add     esp, 4
-test    eax, eax
-jz      short loc_637C9D
-mov     byte ptr [eax], 0
-jmp     short loc_637C9F
-; ---------------------------------------------------------------------------
-
-loc_637C9D:                             ; CODE XREF: SidebarClass__ResetProductionState+1E6↑j
-xor     eax, eax
-
-loc_637C9F:                             ; CODE XREF: SidebarClass__ResetProductionState+1EB↑j
-mov     ecx, 1Bh
-lea     esi, [esp+114h+var_E0]
-mov     edi, eax
-mov     [esp+114h+var_100], eax
-rep movsd
-movsw
-movsb
-mov     eax, [esp+114h+var_100]
-cmp     byte ptr [eax], 4
-jnz     short loc_637CC0
-mov     byte ptr [eax+1Dh], 2
-
-loc_637CC0:                             ; CODE XREF: SidebarClass__ResetProductionState+20A↑j
-lea     ecx, [esp+114h+var_100]
-push    ecx
-mov     ecx, (offset dword_A8ED54+35DF4h)
-call    SidebarClass__addToList
-mov     byte ptr [ebp+1Ch], 1
-
-loc_637CD3:                             ; CODE XREF: SidebarClass__ResetProductionState+51↑j
-; SidebarClass__ResetProductionState+62↑j ...
-mov     eax, [esp+114h+var_FC]
-mov     ecx, [esp+114h+var_F8]
-inc     eax
-cmp     eax, ecx
-mov     [esp+114h+var_FC], eax
-jl      loc_637AD6
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-
-loc_637CEC:                             ; CODE XREF: SidebarClass__ResetProductionState+1C↑j
-add     esp, 104h
-retn
-*/
 } }
 // 0x63E880
 namespace gamemd { int SidebarClass::addToList(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_63E880(_DWORD *this, _DWORD *a2)
+char __thiscall SidebarClass::addToList(_DWORD *this, DynamicVector *aP1)
 {
   int v3; // ecx
   int v4; // eax
   int v6; // eax
   int v7; // edx
 
-  v3 = *(this + 2);
-  if ( *(this + 4) >= v3 )
+  v3 = *(this + 2); /*0x63e883*/
+  if ( *(this + 4) >= v3 ) /*0x63e88b*/
   {
-    if ( !*((_BYTE *)this + 13) && v3 )
-      return 0;
-    v4 = *(this + 5);
-    if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) )
-      return 0;
+    if ( !*((_BYTE *)this + 13) && v3 ) /*0x63e896*/
+      return 0; /*0x63e896*/
+    v4 = *(this + 5); /*0x63e898*/
+    if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x63e8a8*/
+      return 0; /*0x63e8af*/
   }
-  v6 = *(this + 4);
-  v7 = *(this + 1);
-  *(this + 4) = v6 + 1;
-  *(_DWORD *)(v7 + 4 * v6) = *a2;
-  return 1;
+  v6 = *(this + 4); /*0x63e8b5*/
+  v7 = *(this + 1); /*0x63e8b8*/
+  *(this + 4) = v6 + 1; /*0x63e8be*/
+  *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->__pad_0; /*0x63e8c8*/
+  return 1; /*0x63e8b1*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     ecx, [esi+8]
-mov     eax, [esi+10h]
-cmp     eax, ecx
-jl      short loc_63E8B5
-mov     al, [esi+0Dh]
-test    al, al
-jnz     short loc_63E898
-test    ecx, ecx
-jnz     short loc_63E8AF
-
-loc_63E898:                             ; CODE XREF: SidebarClass__addToList+12↑j
-mov     eax, [esi+14h]
-test    eax, eax
-jle     short loc_63E8AF
-mov     edx, [esi]
-add     eax, ecx
-push    0
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+8]
-test    al, al
-jnz     short loc_63E8B5
-
-loc_63E8AF:                             ; CODE XREF: SidebarClass__addToList+16↑j
-; SidebarClass__addToList+1D↑j
-xor     al, al
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_63E8B5:                             ; CODE XREF: SidebarClass__addToList+B↑j
-; SidebarClass__addToList+2D↑j
-mov     eax, [esi+10h]
-mov     edx, [esi+4]
-lea     ecx, [eax+1]
-mov     [esi+10h], ecx
-mov     ecx, [esp+4+arg_0]
-pop     esi
-mov     ecx, [ecx]
-mov     [edx+eax*4], ecx
-mov     al, 1
-retn    4
-*/
 } }
 // 0x63F730
 namespace gamemd { void* PowerClass::updateDrain() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-#441 *__thiscall PowerClass::updateDrain(#441 *this)
+int __thiscall PowerClass::_vt07(int this)
 {
-  int v2; // eax
-  int Ticks; // eax
-  #441 *result; // eax
-  _DWORD v5[2]; // [esp+Ch] [ebp-8h] BYREF
+  DWORD Ticks; // eax
+  int v4; // [esp+Ch] [ebp-8h]
 
-  RadarClass::Destru_vt07((int)this);
-  *((_DWORD *)this + 1359) = -1;
-  *((_DWORD *)this + 1360) = -1;
-  *((_DWORD *)this + 1348) = Timer::GetTicks(v5);
-  v2 = v5[0];
-  *((_DWORD *)this + 1351) = 0;
-  *((_DWORD *)this + 1349) = v2;
-  *((_DWORD *)this + 1350) = 0;
-  Ticks = Timer::GetTicks(v5);
-  *((_DWORD *)this + 1355) = 0;
-  *((_DWORD *)this + 1356) = 0;
-  *((_DWORD *)this + 1352) = Ticks;
-  result = (#441 *)v5[0];
-  *((_DWORD *)this + 1357) = 0;
-  *((_BYTE *)this + 5432) = 0;
-  *((_DWORD *)this + 1353) = result;
-  *((_DWORD *)this + 1354) = 0;
-  return result;
+  RadarClass::Destru_vt07(this); /*0x63f737*/
+  *(_DWORD *)(this + 5436) = -1; /*0x63f743*/
+  *(_DWORD *)(this + 5440) = -1; /*0x63f749*/
+  *(_DWORD *)(this + 5392) = Timer::GetTicks(); /*0x63f75e*/
+  *(_DWORD *)(this + 5404) = 0; /*0x63f764*/
+  *(_DWORD *)(this + 5396) = v4; /*0x63f76a*/
+  *(_DWORD *)(this + 5400) = 0; /*0x63f76d*/
+  Ticks = Timer::GetTicks(); /*0x63f774*/
+  *(_DWORD *)(this + 5420) = 0; /*0x63f781*/
+  *(_DWORD *)(this + 5424) = 0; /*0x63f787*/
+  *(_DWORD *)(this + 5408) = Ticks; /*0x63f78d*/
+  *(_DWORD *)(this + 5428) = 0; /*0x63f793*/
+  *(_BYTE *)(this + 5432) = 0; /*0x63f799*/
+  *(_DWORD *)(this + 5412) = v4; /*0x63f79f*/
+  *(_DWORD *)(this + 5416) = 0; /*0x63f7a4*/
+  return v4; /*0x63f7a2*/
 }
-
-/* ASM:
-sub     esp, 0Ch
-push    ebx
-push    esi
-mov     esi, ecx
-call    RadarClass__Destru_vt07
-or      eax, 0FFFFFFFFh
-lea     ecx, [esp+14h+var_8]
-mov     [esi+153Ch], eax
-mov     [esi+1540h], eax
-call    Timer__GetTicks
-lea     edx, [esi+1510h]
-xor     ecx, ecx
-xor     ebx, ebx
-mov     [edx], eax
-mov     eax, [esp+14h+var_8]
-mov     [esi+151Ch], ebx
-mov     [edx+4], eax
-mov     [edx+8], ecx
-lea     ecx, [esp+14h+var_8]
-call    Timer__GetTicks
-lea     edx, [esi+1520h]
-xor     ecx, ecx
-mov     [esi+152Ch], ebx
-mov     [esi+1530h], ebx
-mov     [edx], eax
-mov     eax, [esp+14h+var_8]
-mov     [esi+1534h], ebx
-mov     [esi+1538h], bl
-mov     [edx+4], eax
-pop     esi
-pop     ebx
-mov     [edx+8], ecx
-add     esp, 0Ch
-retn
-*/
 } }
 // 0x63F7C0
 namespace gamemd { void PowerClass::checkBlackout() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x63f7c0
-void __thiscall PowerClass::checkBlackout(#441 *this)
+void *__thiscall PowerClass::_vt53(_DWORD *this)
 {
-  RadarClass::Destru_vt53(this);
-  MEMORY[0xAC4E74] = LoadFileSHP(aPowerpShp, (bool *)&MEMORY[0xAC4E78]);
-}
+  void *result; // eax
 
-/* ASM:
-call    RadarClass__Destru_vt53
-mov     edx, (offset dword_A8ED54+36124h)
-mov     ecx, offset aPowerpShp ; "POWERP.SHP"
-call    LoadFileSHP
-mov     dword_A8ED54+36120h, eax
-retn
-*/
+  RadarClass::Destru_vt53(this); /*0x63f7c0*/
+  result = LoadFileSHP(MEMORY[0x836D9C], (bool *)&MEMORY[0xAC4E78]); /*0x63f7cf*/
+  MEMORY[0xAC4E74] = result; /*0x63f7d4*/
+  return result; /*0x63f7d9*/
+}
 } }
 // 0x63FEA0
 namespace gamemd { void PowerClass::updatePowerBarAnimation() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x63fea0
-void __thiscall PowerClass::updatePowerBarAnimation(#441 *this)
+int __thiscall PowerClass::updatePowerBarAnimation(int this, SidebarClass *aP1, _DWORD *a2)
 {
-  int v2; // edi
-  int v3; // eax
-  int v4; // ecx
-  int v5; // edi
-  int v6; // eax
-  int v7; // eax
-  bool v8; // zf
-  bool v9; // cc
-  int v10; // eax
-  int v11; // eax
+  signed int v4; // edi
+  signed int v5; // eax
+  int v6; // ecx
+  ObjectClass *v7; // edi
+  signed int v8; // eax
+  int v9; // eax
+  bool v10; // zf
+  bool v11; // cc
   int v12; // eax
   int v13; // eax
-  int v14; // eax
-  int v15; // eax
+  ObjectClass *v14; // eax
+  char *v15; // eax
   int v16; // eax
   int v17; // eax
-  bool v18; // cc
+  ObjectClass *v18; // eax
   int v19; // eax
-  int v20; // eax
+  bool v20; // cc
   int v21; // eax
   int v22; // eax
-  int v23; // eax
+  ObjectClass *v23; // eax
   int v24; // eax
-  bool v25; // cc
-  int v26; // eax
-  int v27; // eax
+  int v25; // eax
+  ObjectClass *v26; // eax
+  bool v27; // cc
   int v28; // eax
   int v29; // eax
-  int v30; // eax
+  ObjectClass *v30; // eax
   int v31; // eax
-  int v32; // ecx
-  int Ticks; // edi
-  int v34; // eax
-  int v35; // edx
-  int v36; // [esp+18h] [ebp-24h] BYREF
-  int v37; // [esp+1Ch] [ebp-20h] BYREF
-  int v38; // [esp+20h] [ebp-1Ch] BYREF
-  int v39; // [esp+24h] [ebp-18h] BYREF
-  int v40; // [esp+28h] [ebp-14h] BYREF
-  int v41; // [esp+2Ch] [ebp-10h] BYREF
-  _DWORD v42[2]; // [esp+34h] [ebp-8h] BYREF
-  _DWORD *v43; // [esp+40h] [ebp+4h]
-  _DWORD *v44; // [esp+44h] [ebp+8h]
+  int v32; // eax
+  ObjectClass *v33; // eax
+  ObjectClass *v34; // ecx
+  ObjectClass *Ticks; // edi
+  int v36; // eax
+  int v37; // edx
+  ObjectClass *v39; // [esp+18h] [ebp-24h] BYREF
+  int v40; // [esp+1Ch] [ebp-20h] BYREF
+  ObjectClass *v41; // [esp+20h] [ebp-1Ch] BYREF
+  int v42; // [esp+24h] [ebp-18h] BYREF
+  int v43; // [esp+28h] [ebp-14h] BYREF
+  ObjectClass *v44; // [esp+2Ch] [ebp-10h] BYREF
+  int v45; // [esp+34h] [ebp-8h]
 
-  if ( !BYTE1(MEMORY[0x87F7E8][5353]) )
-    goto LABEL_66;
-  if ( !*((_BYTE *)this + 5432) && *((int *)this + 1351) > 0 )
+  if ( !MEMORY[0x87F8E4].__pad_125C[16461] ) /*0x63feaf*/
+    return TacticalClass::MouseInput((_DWORD *)this, (PowerClass *)aP1, a2); /*0x63feaf*/
+  if ( !*(_BYTE *)(this + 5432) && *(int *)(this + 5404) > 0 ) /*0x63fec9*/
   {
-    v2 = *((_DWORD *)this + 1350);
-    if ( *((_DWORD *)this + 1348) != -1 )
+    v4 = *(_DWORD *)(this + 5400); /*0x63fed1*/
+    if ( *(_DWORD *)(this + 5392) != -1 ) /*0x63feda*/
     {
-      v3 = Timer::GetTicks((char *)this + 5396) - *((_DWORD *)this + 1348);
-      if ( v3 >= v2 )
+      v5 = Timer::GetTicks() - *(_DWORD *)(this + 5392); /*0x63fee7*/
+      if ( v5 >= v4 ) /*0x63feef*/
       {
 LABEL_8:
-        v4 = *((_DWORD *)this + 1351);
-        *((_BYTE *)this + 5388) = 1;
-        *((_DWORD *)this + 1351) = v4 - 1;
-        BYTE2(MEMORY[0x87F7E8][5353]) = 1;
-        MapClass::MarkForRedraw(MEMORY[0x87F7E8], 0);
-        *((_DWORD *)this + 1348) = Timer::GetTicks(v42);
-        *((_DWORD *)this + 1349) = v42[0];
-        *((_DWORD *)this + 1350) = 3;
-        goto LABEL_9;
+        v6 = *(_DWORD *)(this + 5404); /*0x63fef7*/
+        *(_BYTE *)(this + 5388) = 1; /*0x63fefd*/
+        *(_DWORD *)(this + 5404) = v6 - 1; /*0x63ff06*/
+        MEMORY[0x87F8E4].__pad_125C[16462] = 1; /*0x63ff11*/
+        MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x63ff17*/
+        *(_DWORD *)(this + 5392) = Timer::GetTicks(); /*0x63ff25*/
+        *(_DWORD *)(this + 5396) = v45; /*0x63ff34*/
+        *(_DWORD *)(this + 5400) = 3; /*0x63ff3a*/
+        goto LABEL_9; /*0x63ff3a*/
       }
-      v2 -= v3;
+      v4 -= v5; /*0x63fef1*/
     }
-    if ( !v2 )
-      goto LABEL_8;
+    if ( !v4 ) /*0x63fef5*/
+      goto LABEL_8; /*0x63fef5*/
   }
 LABEL_9:
-  if ( (*(int (__stdcall **)(int))(*(_DWORD *)(MEMORY[0x87F7E8][528729] + 36) + 36))(MEMORY[0x87F7E8][528729] + 36) == *((_DWORD *)this + 1359)
-    && (*(int (__stdcall **)(int))(*(_DWORD *)(MEMORY[0x87F7E8][528729] + 36) + 32))(MEMORY[0x87F7E8][528729] + 36) == *((_DWORD *)this + 1360)
-    && !*((_BYTE *)this + 5432) )
+  if ( (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 36))(&HouseClass_Player->field_24) == *(_DWORD *)(this + 5436) /*0x63ff76*/
+    && (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 32))(&HouseClass_Player->field_24) == *(_DWORD *)(this + 5440)
+    && !*(_BYTE *)(this + 5432) )
   {
-    goto LABEL_66;
+    return TacticalClass::MouseInput((_DWORD *)this, (PowerClass *)aP1, a2); /*0x63ff76*/
   }
-  *((_BYTE *)this + 5388) = 1;
-  BYTE2(MEMORY[0x87F7E8][5353]) = 1;
-  MapClass::MarkForRedraw(MEMORY[0x87F7E8], 0);
-  if ( (*(int (__stdcall **)(int))(*(_DWORD *)(MEMORY[0x87F7E8][528729] + 36) + 36))(MEMORY[0x87F7E8][528729] + 36) != *((_DWORD *)this + 1359)
-    || (*(int (__stdcall **)(int))(*(_DWORD *)(MEMORY[0x87F7E8][528729] + 36) + 32))(MEMORY[0x87F7E8][528729] + 36) != *((_DWORD *)this + 1360) )
+  *(_BYTE *)(this + 5388) = 1; /*0x63ff7c*/
+  MEMORY[0x87F8E4].__pad_125C[16462] = 1; /*0x63ff89*/
+  MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x63ff8f*/
+  if ( (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 36))(&HouseClass_Player->field_24) != *(_DWORD *)(this + 5436) /*0x63ffc2*/
+    || (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 32))(&HouseClass_Player->field_24) != *(_DWORD *)(this + 5440) )
   {
-    *((_BYTE *)this + 5432) = 1;
-    *((_DWORD *)this + 1351) = 10;
-    *((_DWORD *)this + 1348) = Timer::GetTicks(v42);
-    *((_DWORD *)this + 1349) = v42[0];
-    *((_DWORD *)this + 1350) = 3;
+    *(_BYTE *)(this + 5432) = 1; /*0x63ffc8*/
+    *(_DWORD *)(this + 5404) = 10; /*0x63ffce*/
+    *(_DWORD *)(this + 5392) = Timer::GetTicks(); /*0x63ffe8*/
+    *(_DWORD *)(this + 5396) = v45; /*0x63ffee*/
+    *(_DWORD *)(this + 5400) = 3; /*0x63fff1*/
   }
-  *((_DWORD *)this + 1359) = (*(int (__stdcall **)(int))(*(_DWORD *)(MEMORY[0x87F7E8][528729] + 36) + 36))(MEMORY[0x87F7E8][528729] + 36);
-  *((_DWORD *)this + 1360) = (*(int (__stdcall **)(int))(*(_DWORD *)(MEMORY[0x87F7E8][528729] + 36) + 32))(MEMORY[0x87F7E8][528729] + 36);
-  PowerBar::ComputeFill(&v40, &v41, &v37);
-  v5 = *((_DWORD *)this + 1354);
-  if ( *((_DWORD *)this + 1352) != -1 )
+  *(_DWORD *)(this + 5436) = (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 36))(&HouseClass_Player->field_24); /*0x640004*/
+  *(_DWORD *)(this + 5440) = (*(int (__stdcall **)(int *))(HouseClass_Player->field_24 + 32))(&HouseClass_Player->field_24); /*0x640018*/
+  PowerBar::ComputeFill(&v43, &v44, &v40); /*0x64002f*/
+  v7 = *(ObjectClass **)(this + 5416); /*0x64003a*/
+  if ( *(_DWORD *)(this + 5408) != -1 ) /*0x640043*/
   {
-    v6 = Timer::GetTicks((char *)this + 5412) - *((_DWORD *)this + 1352);
-    if ( v6 >= v5 )
-      goto LABEL_19;
-    v5 -= v6;
+    v8 = Timer::GetTicks() - *(_DWORD *)(this + 5408); /*0x640050*/
+    if ( v8 >= (int)v7 ) /*0x640058*/
+      goto LABEL_19; /*0x640058*/
+    v7 = (ObjectClass *)((char *)v7 - v8); /*0x64005a*/
   }
-  if ( v5 )
-    goto LABEL_66;
+  if ( v7 ) /*0x64005e*/
+    return TacticalClass::MouseInput((_DWORD *)this, (PowerClass *)aP1, a2); /*0x64005e*/
 LABEL_19:
-  v7 = *((_DWORD *)this + 1357);
-  v8 = v7 == v37;
-  v9 = v7 <= v37;
-  *((_BYTE *)this + 5432) = 0;
-  if ( !v8 )
+  v9 = *(_DWORD *)(this + 5428); /*0x640064*/
+  v10 = v9 == v40; /*0x64006e*/
+  v11 = v9 <= v40; /*0x64006e*/
+  *(_BYTE *)(this + 5432) = 0; /*0x640070*/
+  if ( !v10 ) /*0x640077*/
   {
-    *((_BYTE *)this + 5432) = 1;
-    if ( !v9 )
+    *(_BYTE *)(this + 5432) = 1; /*0x64007d*/
+    if ( !v11 ) /*0x640083*/
     {
-      *((_DWORD *)this + 1357) = v7 - 1;
-      PowerBar::ComputeFill(&v38, &v39, &v36);
-      v10 = *((_DWORD *)this + 1357);
-      if ( v10 < v36 )
+      *(_DWORD *)(this + 5428) = v9 - 1; /*0x64008a*/
+      PowerBar::ComputeFill(&v41, &v42, &v39); /*0x64009d*/
+      v12 = *(_DWORD *)(this + 5428); /*0x6400a2*/
+      if ( v12 < (int)v39 ) /*0x6400ae*/
       {
-        *((_DWORD *)this + 1357) = v10 + 1;
-        goto LABEL_62;
+        *(_DWORD *)(this + 5428) = v12 + 1; /*0x6400b1*/
+        goto LABEL_62; /*0x6400b7*/
       }
-      v11 = *((_DWORD *)this + 1355);
-      if ( v11 < v38 )
+      v13 = *(_DWORD *)(this + 5420); /*0x6400bc*/
+      if ( v13 < (int)v41 ) /*0x6400c8*/
       {
-        *((_DWORD *)this + 1355) = v11 + 1;
-        goto LABEL_62;
+        *(_DWORD *)(this + 5420) = v13 + 1; /*0x6400cb*/
+        goto LABEL_62; /*0x6400d1*/
       }
-      v12 = *((_DWORD *)this + 1356);
-      if ( v12 < v39 )
+      v14 = *(ObjectClass **)(this + 5424); /*0x6400d6*/
+      if ( (int)v14 < v42 ) /*0x6400e2*/
       {
-        v13 = v12 + 1;
+        v15 = &v14->__pad_0[1]; /*0x6400e8*/
 LABEL_61:
-        *((_DWORD *)this + 1356) = v13;
-        goto LABEL_62;
+        *(_DWORD *)(this + 5424) = v15; /*0x640314*/
+        goto LABEL_62; /*0x640314*/
       }
-      goto LABEL_62;
+      goto LABEL_62; /*0x6400e2*/
     }
-    *((_DWORD *)this + 1357) = v7 + 1;
-    PowerBar::ComputeFill(&v39, &v36, &v38);
-    v14 = *((_DWORD *)this + 1355);
-    if ( v14 > v39 )
+    *(_DWORD *)(this + 5428) = v9 + 1; /*0x6400f3*/
+    PowerBar::ComputeFill(&v42, &v39, &v41); /*0x640106*/
+    v16 = *(_DWORD *)(this + 5420); /*0x64010b*/
+    if ( v16 > v42 ) /*0x640117*/
     {
-      *((_DWORD *)this + 1355) = v14 - 1;
-      goto LABEL_62;
+      *(_DWORD *)(this + 5420) = v16 - 1; /*0x64011a*/
+      goto LABEL_62; /*0x640120*/
     }
-    v15 = *((_DWORD *)this + 1357);
-    if ( v15 > v38 )
+    v17 = *(_DWORD *)(this + 5428); /*0x640125*/
+    if ( v17 > (int)v41 ) /*0x640131*/
     {
-      *((_DWORD *)this + 1357) = v15 - 1;
-      goto LABEL_62;
+      *(_DWORD *)(this + 5428) = v17 - 1; /*0x640134*/
+      goto LABEL_62; /*0x64013a*/
     }
-    v16 = *((_DWORD *)this + 1356);
-    if ( v16 <= v36 )
-      goto LABEL_62;
+    v18 = *(ObjectClass **)(this + 5424); /*0x64013f*/
+    if ( (int)v18 <= (int)v39 ) /*0x64014b*/
+      goto LABEL_62; /*0x64014b*/
 LABEL_60:
-    v13 = v16 - 1;
-    goto LABEL_61;
+    v15 = (char *)&v18[-1].lineTrailer + 3; /*0x640313*/
+    goto LABEL_61; /*0x640313*/
   }
-  v17 = *((_DWORD *)this + 1355);
-  v18 = v17 <= v40;
-  if ( v17 == v40 )
+  v19 = *(_DWORD *)(this + 5420); /*0x640156*/
+  v20 = v19 <= v43; /*0x640160*/
+  if ( v19 == v43 ) /*0x640162*/
   {
-    v24 = *((_DWORD *)this + 1356);
-    v25 = v24 <= v41;
-    if ( v24 == v41 )
-      goto LABEL_62;
-    *((_BYTE *)this + 5432) = 1;
-    if ( !v25 )
+    v26 = *(ObjectClass **)(this + 5424); /*0x640241*/
+    v27 = (int)v26 <= (int)v44; /*0x64024b*/
+    if ( v26 == v44 ) /*0x64024d*/
+      goto LABEL_62; /*0x64024d*/
+    *(_BYTE *)(this + 5432) = 1; /*0x640253*/
+    if ( !v27 ) /*0x640259*/
     {
-      *((_DWORD *)this + 1356) = v24 - 1;
-      PowerBar::ComputeFill(&v38, &v36, &v39);
-      v26 = *((_DWORD *)this + 1357);
-      if ( v26 < v39 )
+      *(_DWORD *)(this + 5424) = (char *)v26 - 1; /*0x640260*/
+      PowerBar::ComputeFill(&v41, &v39, &v42); /*0x640273*/
+      v28 = *(_DWORD *)(this + 5428); /*0x640278*/
+      if ( v28 < v42 ) /*0x640284*/
       {
-        *((_DWORD *)this + 1357) = v26 + 1;
-        goto LABEL_62;
+        *(_DWORD *)(this + 5428) = v28 + 1; /*0x640287*/
+        goto LABEL_62; /*0x64028d*/
       }
-      v27 = *((_DWORD *)this + 1355);
-      if ( v27 < v38 )
+      v29 = *(_DWORD *)(this + 5420); /*0x640292*/
+      if ( v29 < (int)v41 ) /*0x64029e*/
       {
-        *((_DWORD *)this + 1355) = v27 + 1;
-        goto LABEL_62;
+        *(_DWORD *)(this + 5420) = v29 + 1; /*0x6402a1*/
+        goto LABEL_62; /*0x6402a7*/
       }
-      v28 = *((_DWORD *)this + 1356);
-      if ( v28 < v36 )
+      v30 = *(ObjectClass **)(this + 5424); /*0x6402a9*/
+      if ( (int)v30 < (int)v39 ) /*0x6402b5*/
       {
-        v13 = v28 + 1;
-        goto LABEL_61;
+        v15 = &v30->__pad_0[1]; /*0x6402b7*/
+        goto LABEL_61; /*0x6402b8*/
       }
-      goto LABEL_62;
+      goto LABEL_62; /*0x6402b5*/
     }
-    *((_DWORD *)this + 1356) = v24 + 1;
-    PowerBar::ComputeFill(&v39, &v36, &v38);
-    v29 = *((_DWORD *)this + 1355);
-    if ( v29 > v39 )
+    *(_DWORD *)(this + 5424) = &v26->__pad_0[1]; /*0x6402bf*/
+    PowerBar::ComputeFill(&v42, &v39, &v41); /*0x6402d2*/
+    v31 = *(_DWORD *)(this + 5420); /*0x6402d7*/
+    if ( v31 > v42 ) /*0x6402e3*/
     {
-      *((_DWORD *)this + 1355) = v29 - 1;
-      goto LABEL_62;
+      *(_DWORD *)(this + 5420) = v31 - 1; /*0x6402e6*/
+      goto LABEL_62; /*0x6402ec*/
     }
-    v30 = *((_DWORD *)this + 1357);
-    if ( v30 > v38 )
+    v32 = *(_DWORD *)(this + 5428); /*0x6402ee*/
+    if ( v32 > (int)v41 ) /*0x6402fa*/
     {
-      *((_DWORD *)this + 1357) = v30 - 1;
-      goto LABEL_62;
+      *(_DWORD *)(this + 5428) = v32 - 1; /*0x6402fd*/
+      goto LABEL_62; /*0x640303*/
     }
-    v16 = *((_DWORD *)this + 1356);
-    if ( v16 <= v36 )
-      goto LABEL_62;
-    goto LABEL_60;
+    v18 = *(ObjectClass **)(this + 5424); /*0x640305*/
+    if ( (int)v18 <= (int)v39 ) /*0x640311*/
+      goto LABEL_62; /*0x640311*/
+    goto LABEL_60; /*0x640311*/
   }
-  *((_BYTE *)this + 5432) = 1;
-  if ( v18 )
+  *(_BYTE *)(this + 5432) = 1; /*0x640168*/
+  if ( v20 ) /*0x64016e*/
   {
-    *((_DWORD *)this + 1355) = v17 + 1;
-    PowerBar::ComputeFill(&v39, &v36, &v38);
-    v22 = *((_DWORD *)this + 1355);
-    if ( v22 > v39 )
+    *(_DWORD *)(this + 5420) = v19 + 1; /*0x6401de*/
+    PowerBar::ComputeFill(&v42, &v39, &v41); /*0x6401f1*/
+    v24 = *(_DWORD *)(this + 5420); /*0x6401f6*/
+    if ( v24 > v42 ) /*0x640202*/
     {
-      *((_DWORD *)this + 1355) = v22 - 1;
-      goto LABEL_62;
+      *(_DWORD *)(this + 5420) = v24 - 1; /*0x640205*/
+      goto LABEL_62; /*0x64020b*/
     }
-    v23 = *((_DWORD *)this + 1357);
-    if ( v23 > v38 )
+    v25 = *(_DWORD *)(this + 5428); /*0x640210*/
+    if ( v25 > (int)v41 ) /*0x64021c*/
     {
-      *((_DWORD *)this + 1357) = v23 - 1;
-      goto LABEL_62;
+      *(_DWORD *)(this + 5428) = v25 - 1; /*0x64021f*/
+      goto LABEL_62; /*0x640225*/
     }
-    v16 = *((_DWORD *)this + 1356);
-    if ( v16 <= v36 )
-      goto LABEL_62;
-    goto LABEL_60;
+    v18 = *(ObjectClass **)(this + 5424); /*0x64022a*/
+    if ( (int)v18 <= (int)v39 ) /*0x640236*/
+      goto LABEL_62; /*0x640236*/
+    goto LABEL_60; /*0x640236*/
   }
-  *((_DWORD *)this + 1355) = v17 - 1;
-  PowerBar::ComputeFill(&v38, &v36, &v39);
-  v19 = *((_DWORD *)this + 1357);
-  if ( v19 < v39 )
+  *(_DWORD *)(this + 5420) = v19 - 1; /*0x640175*/
+  PowerBar::ComputeFill(&v41, &v39, &v42); /*0x640188*/
+  v21 = *(_DWORD *)(this + 5428); /*0x64018d*/
+  if ( v21 < v42 ) /*0x640199*/
   {
-    *((_DWORD *)this + 1357) = v19 + 1;
-    goto LABEL_62;
+    *(_DWORD *)(this + 5428) = v21 + 1; /*0x64019c*/
+    goto LABEL_62; /*0x6401a2*/
   }
-  v20 = *((_DWORD *)this + 1355);
-  if ( v20 < v38 )
+  v22 = *(_DWORD *)(this + 5420); /*0x6401a7*/
+  if ( v22 < (int)v41 ) /*0x6401b3*/
   {
-    *((_DWORD *)this + 1355) = v20 + 1;
-    goto LABEL_62;
+    *(_DWORD *)(this + 5420) = v22 + 1; /*0x6401b6*/
+    goto LABEL_62; /*0x6401bc*/
   }
-  v21 = *((_DWORD *)this + 1356);
-  if ( v21 < v36 )
+  v23 = *(ObjectClass **)(this + 5424); /*0x6401c1*/
+  if ( (int)v23 < (int)v39 ) /*0x6401cd*/
   {
-    v13 = v21 + 1;
-    goto LABEL_61;
+    v15 = &v23->__pad_0[1]; /*0x6401d3*/
+    goto LABEL_61; /*0x6401d4*/
   }
 LABEL_62:
-  if ( *((_BYTE *)this + 5432) )
+  if ( *(_BYTE *)(this + 5432) ) /*0x64031a*/
   {
-    v31 = PowerBar::CalcFill();
-    v32 = *((_DWORD *)this + 1357) + *((_DWORD *)this + 1355) + *((_DWORD *)this + 1356);
-    v39 = v31;
-    v36 = v32;
-    if ( v32 > v31 )
-      v36 = v31;
-    Ticks = Timer::GetTicks(v42);
-    v34 = Math::RoundToInt((double)v36 / (double)v39 * 5.0);
-    v35 = v42[0];
-    *((_DWORD *)this + 1352) = Ticks;
-    *((_DWORD *)this + 1353) = v35;
-    *((_DWORD *)this + 1354) = v34;
+    v33 = (ObjectClass *)PowerBar::CalcFill(); /*0x640326*/
+    v34 = (ObjectClass *)(*(_DWORD *)(this + 5428) + *(_DWORD *)(this + 5420) + *(_DWORD *)(this + 5424)); /*0x64033f*/
+    v42 = (int)v33; /*0x640341*/
+    v39 = v34; /*0x640347*/
+    if ( (int)v34 > (int)v33 ) /*0x64034b*/
+      v39 = v33; /*0x64034d*/
+    Ticks = (ObjectClass *)Timer::GetTicks(); /*0x64035e*/
+    v36 = Math::RoundToInt((double)(int)v39 / (double)v42 * 5.0); /*0x64036a*/
+    v37 = v45; /*0x64036f*/
+    *(_DWORD *)(this + 5408) = Ticks; /*0x640373*/
+    *(_DWORD *)(this + 5412) = v37; /*0x640379*/
+    *(_DWORD *)(this + 5416) = v36; /*0x64037f*/
   }
-LABEL_66:
-  TacticalClass::MouseInput(this, v43, v44);
+  return TacticalClass::MouseInput((_DWORD *)this, (PowerClass *)aP1, a2); /*0x640396*/
 }
-
-/* ASM:
-mov     al, ds:884B8Dh
-sub     esp, 24h
-test    al, al
-push    ebx
-push    esi
-push    edi
-mov     esi, ecx
-jz      loc_640385
-mov     al, [esi+1538h]
-mov     bl, 1
-test    al, al
-jnz     short loc_63FF40
-mov     eax, [esi+151Ch]
-test    eax, eax
-jle     short loc_63FF40
-mov     eax, [esi+1510h]
-mov     edi, [esi+1518h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_63FEF3
-lea     ecx, [esi+1514h]
-call    Timer__GetTicks
-sub     eax, [esi+1510h]
-cmp     eax, edi
-jge     short loc_63FEF7
-sub     edi, eax
-
-loc_63FEF3:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+3A↑j
-test    edi, edi
-jnz     short loc_63FF40
-
-loc_63FEF7:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+4F↑j
-mov     ecx, [esi+151Ch]
-mov     [esi+150Ch], bl
-dec     ecx
-push    0
-mov     [esi+151Ch], ecx
-mov     ecx, 87F7E8h
-mov     ds:884B8Eh, bl
-call    MapClass__MarkForRedraw
-lea     ecx, [esp+30h+var_8]
-call    Timer__GetTicks
-mov     [esi+1510h], eax
-mov     eax, [esp+30h+var_8]
-mov     ecx, 3
-mov     [esi+1514h], eax
-mov     [esi+1518h], ecx
-
-loc_63FF40:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+1F↑j
-; PowerClass__updatePowerBarAnimation+29↑j ...
-mov     ecx, ds:0A83D4Ch
-mov     edx, [ecx+24h]
-lea     eax, [ecx+24h]
-push    eax
-call    dword ptr [edx+24h]
-cmp     eax, [esi+153Ch]
-jnz     short loc_63FF7C
-mov     eax, ds:0A83D4Ch
-add     eax, 24h ; '$'
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+20h]
-cmp     eax, [esi+1540h]
-jnz     short loc_63FF7C
-mov     al, [esi+1538h]
-test    al, al
-jz      loc_640385
-
-loc_63FF7C:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+B6↑j
-; PowerClass__updatePowerBarAnimation+CC↑j
-mov     [esi+150Ch], bl
-push    0
-mov     ecx, 87F7E8h
-mov     ds:884B8Eh, bl
-call    MapClass__MarkForRedraw
-mov     edx, ds:0A83D4Ch
-mov     ecx, [edx+24h]
-lea     eax, [edx+24h]
-push    eax
-call    dword ptr [ecx+24h]
-cmp     eax, [esi+153Ch]
-jnz     short loc_63FFC4
-mov     edx, ds:0A83D4Ch
-mov     ecx, [edx+24h]
-lea     eax, [edx+24h]
-push    eax
-call    dword ptr [ecx+20h]
-cmp     eax, [esi+1540h]
-jz      short loc_63FFF4
-
-loc_63FFC4:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+10A↑j
-lea     ecx, [esp+30h+var_8]
-mov     [esi+1538h], bl
-mov     dword ptr [esi+151Ch], 0Ah
-call    Timer__GetTicks
-lea     edx, [esi+1510h]
-mov     ecx, 3
-mov     [edx], eax
-mov     eax, [esp+30h+var_8]
-mov     [edx+4], eax
-mov     [edx+8], ecx
-
-loc_63FFF4:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+122↑j
-mov     ecx, ds:0A83D4Ch
-mov     edx, [ecx+24h]
-lea     eax, [ecx+24h]
-push    eax
-call    dword ptr [edx+24h]
-mov     [esi+153Ch], eax
-mov     eax, ds:0A83D4Ch
-add     eax, 24h ; '$'
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+20h]
-mov     [esi+1540h], eax
-lea     edx, [esp+30h+var_20]
-
-loc_640022:                             ; DATA XREF: .data:off_833328↓o
-; .data:off_842AB0↓o
-lea     eax, [esp+30h+var_10]
-push    edx
-lea     ecx, [esp+34h+var_14]
-push    eax
-push    ecx
-mov     ecx, esi
-call    PowerBar__ComputeFill
-mov     eax, [esi+1520h]
-mov     edi, [esi+1528h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_64005C
-lea     ecx, [esi+1524h]
-call    Timer__GetTicks
-sub     eax, [esi+1520h]
-cmp     eax, edi
-jge     short loc_640064
-sub     edi, eax
-
-loc_64005C:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+1A3↑j
-test    edi, edi
-jnz     loc_640385
-
-loc_640064:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+1B8↑j
-mov     eax, [esi+1534h]
-mov     ecx, [esp+30h+var_20]
-cmp     eax, ecx
-mov     byte ptr [esi+1538h], 0
-jz      loc_640156
-mov     [esi+1538h], bl
-jle     short loc_6400EE
-dec     eax
-lea     edx, [esp+30h+var_24]
-mov     [esi+1534h], eax
-lea     eax, [esp+30h+var_18]
-push    edx
-lea     ecx, [esp+34h+var_1C]
-push    eax
-push    ecx
-mov     ecx, esi
-call    PowerBar__ComputeFill
-mov     eax, [esi+1534h]
-mov     ecx, [esp+30h+var_24]
-cmp     eax, ecx
-jge     short loc_6400BC
-inc     eax
-mov     [esi+1534h], eax
-jmp     loc_64031A
-; ---------------------------------------------------------------------------
-
-loc_6400BC:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+20E↑j
-mov     eax, [esi+152Ch]
-mov     ecx, [esp+30h+var_1C]
-cmp     eax, ecx
-jge     short loc_6400D6
-inc     eax
-mov     [esi+152Ch], eax
-jmp     loc_64031A
-; ---------------------------------------------------------------------------
-
-loc_6400D6:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+228↑j
-mov     eax, [esi+1530h]
-mov     ecx, [esp+30h+var_18]
-cmp     eax, ecx
-jge     loc_64031A
-inc     eax
-jmp     loc_640314
-; ---------------------------------------------------------------------------
-
-loc_6400EE:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+1E3↑j
-inc     eax
-lea     edx, [esp+30h+var_1C]
-mov     [esi+1534h], eax
-lea     eax, [esp+30h+var_24]
-push    edx
-lea     ecx, [esp+34h+var_18]
-push    eax
-push    ecx
-mov     ecx, esi
-call    PowerBar__ComputeFill
-mov     eax, [esi+152Ch]
-mov     ecx, [esp+30h+var_18]
-cmp     eax, ecx
-jle     short loc_640125
-dec     eax
-mov     [esi+152Ch], eax
-jmp     loc_64031A
-; ---------------------------------------------------------------------------
-
-loc_640125:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+277↑j
-mov     eax, [esi+1534h]
-mov     ecx, [esp+30h+var_1C]
-cmp     eax, ecx
-jle     short loc_64013F
-dec     eax
-mov     [esi+1534h], eax
-jmp     loc_64031A
-; ---------------------------------------------------------------------------
-
-loc_64013F:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+291↑j
-mov     eax, [esi+1530h]
-mov     ecx, [esp+30h+var_24]
-cmp     eax, ecx
-jle     loc_64031A
-jmp     loc_640313
-; ---------------------------------------------------------------------------
-
-loc_640156:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+1D7↑j
-mov     eax, [esi+152Ch]
-mov     ecx, [esp+30h+var_14]
-cmp     eax, ecx
-jz      loc_640241
-mov     [esi+1538h], bl
-jle     short loc_6401D9
-dec     eax
-lea     edx, [esp+30h+var_18]
-mov     [esi+152Ch], eax
-lea     eax, [esp+30h+var_24]
-push    edx
-lea     ecx, [esp+34h+var_1C]
-push    eax
-push    ecx
-mov     ecx, esi
-call    PowerBar__ComputeFill
-mov     eax, [esi+1534h]
-mov     ecx, [esp+30h+var_18]
-cmp     eax, ecx
-jge     short loc_6401A7
-inc     eax
-mov     [esi+1534h], eax
-jmp     loc_64031A
-; ---------------------------------------------------------------------------
-
-loc_6401A7:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+2F9↑j
-mov     eax, [esi+152Ch]
-mov     ecx, [esp+30h+var_1C]
-cmp     eax, ecx
-jge     short loc_6401C1
-inc     eax
-mov     [esi+152Ch], eax
-jmp     loc_64031A
-; ---------------------------------------------------------------------------
-
-loc_6401C1:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+313↑j
-mov     eax, [esi+1530h]
-mov     ecx, [esp+30h+var_24]
-cmp     eax, ecx
-jge     loc_64031A
-inc     eax
-jmp     loc_640314
-; ---------------------------------------------------------------------------
-
-loc_6401D9:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+2CE↑j
-inc     eax
-lea     edx, [esp+30h+var_1C]
-mov     [esi+152Ch], eax
-lea     eax, [esp+30h+var_24]
-push    edx
-lea     ecx, [esp+34h+var_18]
-push    eax
-push    ecx
-mov     ecx, esi
-call    PowerBar__ComputeFill
-mov     eax, [esi+152Ch]
-mov     ecx, [esp+30h+var_18]
-cmp     eax, ecx
-jle     short loc_640210
-dec     eax
-mov     [esi+152Ch], eax
-jmp     loc_64031A
-; ---------------------------------------------------------------------------
-
-loc_640210:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+362↑j
-mov     eax, [esi+1534h]
-mov     ecx, [esp+30h+var_1C]
-cmp     eax, ecx
-jle     short loc_64022A
-dec     eax
-mov     [esi+1534h], eax
-jmp     loc_64031A
-; ---------------------------------------------------------------------------
-
-loc_64022A:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+37C↑j
-mov     eax, [esi+1530h]
-mov     ecx, [esp+30h+var_24]
-cmp     eax, ecx
-jle     loc_64031A
-jmp     loc_640313
-; ---------------------------------------------------------------------------
-
-loc_640241:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+2C2↑j
-mov     eax, [esi+1530h]
-mov     ecx, [esp+30h+var_10]
-cmp     eax, ecx
-jz      loc_64031A
-mov     [esi+1538h], bl
-jle     short loc_6402BA
-dec     eax
-lea     edx, [esp+30h+var_18]
-mov     [esi+1530h], eax
-lea     eax, [esp+30h+var_24]
-push    edx
-lea     ecx, [esp+34h+var_1C]
-push    eax
-push    ecx
-mov     ecx, esi
-call    PowerBar__ComputeFill
-mov     eax, [esi+1534h]
-mov     ecx, [esp+30h+var_18]
-cmp     eax, ecx
-jge     short loc_640292
-inc     eax
-mov     [esi+1534h], eax
-jmp     loc_64031A
-; ---------------------------------------------------------------------------
-
-loc_640292:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+3E4↑j
-mov     eax, [esi+152Ch]
-mov     ecx, [esp+30h+var_1C]
-cmp     eax, ecx
-jge     short loc_6402A9
-inc     eax
-mov     [esi+152Ch], eax
-jmp     short loc_64031A
-; ---------------------------------------------------------------------------
-
-loc_6402A9:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+3FE↑j
-mov     eax, [esi+1530h]
-mov     ecx, [esp+30h+var_24]
-cmp     eax, ecx
-jge     short loc_64031A
-inc     eax
-jmp     short loc_640314
-; ---------------------------------------------------------------------------
-
-loc_6402BA:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+3B9↑j
-inc     eax
-lea     edx, [esp+30h+var_1C]
-mov     [esi+1530h], eax
-lea     eax, [esp+30h+var_24]
-push    edx
-lea     ecx, [esp+34h+var_18]
-push    eax
-push    ecx
-mov     ecx, esi
-call    PowerBar__ComputeFill
-mov     eax, [esi+152Ch]
-mov     ecx, [esp+30h+var_18]
-cmp     eax, ecx
-jle     short loc_6402EE
-dec     eax
-mov     [esi+152Ch], eax
-jmp     short loc_64031A
-; ---------------------------------------------------------------------------
-
-loc_6402EE:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+443↑j
-mov     eax, [esi+1534h]
-mov     ecx, [esp+30h+var_1C]
-cmp     eax, ecx
-jle     short loc_640305
-dec     eax
-mov     [esi+1534h], eax
-jmp     short loc_64031A
-; ---------------------------------------------------------------------------
-
-loc_640305:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+45A↑j
-mov     eax, [esi+1530h]
-mov     ecx, [esp+30h+var_24]
-cmp     eax, ecx
-jle     short loc_64031A
-
-loc_640313:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+2B1↑j
-; PowerClass__updatePowerBarAnimation+39C↑j
-dec     eax
-
-loc_640314:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+249↑j
-; PowerClass__updatePowerBarAnimation+334↑j ...
-mov     [esi+1530h], eax
-
-loc_64031A:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+217↑j
-; PowerClass__updatePowerBarAnimation+231↑j ...
-mov     al, [esi+1538h]
-test    al, al
-jz      short loc_640385
-mov     ecx, esi
-call    PowerBar__CalcFill
-mov     ecx, [esi+1530h]
-mov     ebx, [esi+152Ch]
-mov     edi, [esi+1534h]
-add     ecx, ebx
-add     ecx, edi
-mov     [esp+30h+var_18], eax
-cmp     ecx, eax
-mov     [esp+30h+var_24], ecx
-jle     short loc_640351
-mov     [esp+30h+var_24], eax
-
-loc_640351:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+4AB↑j
-lea     ecx, [esp+30h+var_8]
-call    Timer__GetTicks
-fild    [esp+30h+var_24]
-mov     edi, eax
-fidiv   [esp+30h+var_18]
-fmul    ds:dbl_7E3568
-call    Math__RoundToInt
-mov     edx, [esp+30h+var_8]
-mov     [esi+1520h], edi
-mov     [esi+1524h], edx
-mov     [esi+1528h], eax
-
-loc_640385:                             ; CODE XREF: PowerClass__updatePowerBarAnimation+F↑j
-; PowerClass__updatePowerBarAnimation+D6↑j ...
-mov     eax, [esp+30h+arg_4]
-mov     ecx, [esp+30h+arg_0]
-push    eax
-push    ecx
-mov     ecx, esi
-call    TacticalClass__MouseInput
-pop     edi
-pop     esi
-pop     ebx
-add     esp, 24h
-retn    8
-*/
 } }
 // 0x6403A0
 namespace gamemd { int PowerClass::getDrain() {
@@ -8967,143 +3485,57 @@ char __thiscall PowerClass::_vt34(void *this)
   int v8; // [esp+18h] [ebp-8h]
   char v9; // [esp+1Ch] [ebp-4h]
 
-  RadarClass::Destru_vt34((int)this);
-  v1 = 0;
-  if ( MEMORY[0x887368] )
+  RadarClass::Destru_vt34((int)this); /*0x6403a3*/
+  v1 = 0; /*0x6403ae*/
+  if ( MEMORY[0x887368] ) /*0x6403b2*/
   {
-    v4 = 0;
-    v5 = 0;
-    v6 = 0;
-    v7 = 0;
-    v9 = 0;
-    v3 = 999;
-    v8 = 0;
-    if ( !*((_DWORD *)MEMORY[0xA8B230] + 3374) )
-      v1 = 5;
-    v4 = v1 + MEMORY[0x886F90];
-    v5 = MEMORY[0x886F94] + 69;
-    v6 = 8;
-    v7 = MEMORY[0xB0B504];
-    HashTable::Remove((int *)MEMORY[0x887368], 999);
-    LOBYTE(v1) = CommandClass::AddAction(MEMORY[0x887368], (int)&v3);
+    v4 = 0; /*0x6403bf*/
+    v5 = 0; /*0x6403c3*/
+    v6 = 0; /*0x6403c7*/
+    v7 = 0; /*0x6403cb*/
+    v9 = 0; /*0x6403cf*/
+    v3 = 999; /*0x6403d3*/
+    v8 = 0; /*0x6403db*/
+    if ( !*((_DWORD *)MEMORY[0xA8B230] + 3374) ) /*0x6403df*/
+      v1 = 5; /*0x6403e9*/
+    v4 = v1 + MEMORY[0x886F90]; /*0x6403fb*/
+    v5 = MEMORY[0x886F94] + 69; /*0x640417*/
+    v6 = 8; /*0x64041b*/
+    v7 = MEMORY[0xB0B504]; /*0x640423*/
+    HashTable::Remove((int *)MEMORY[0x887368], 999); /*0x640427*/
+    LOBYTE(v1) = CommandClass::AddAction(MEMORY[0x887368], (int)&v3); /*0x640437*/
   }
-  return v1;
+  return v1; /*0x64043d*/
 }
-
-/* ASM:
-sub     esp, 20h
-call    RadarClass__Destru_vt34
-mov     ecx, ds:887368h
-xor     eax, eax
-cmp     ecx, eax
-jz      loc_64043D
-mov     edx, ds:0A8B230h
-push    esi
-mov     [esp+24h+var_18], eax
-mov     [esp+24h+var_14], eax
-mov     [esp+24h+var_10], eax
-mov     [esp+24h+var_C], eax
-mov     [esp+24h+var_4], al
-mov     [esp+24h+var_1C], 3E7h
-mov     [esp+24h+var_8], eax
-mov     esi, [edx+34B8h]
-cmp     esi, eax
-jnz     short loc_6403EE
-mov     eax, 5
-
-loc_6403EE:                             ; CODE XREF: PowerClass__getDrain+47↑j
-mov     esi, ds:886F90h
-push    3E7h
-add     esi, eax
-mov     [esp+28h+var_18], esi
-mov     eax, [edx+34B8h]
-mov     edx, ds:886F94h
-mov     [esp+28h+var_20], eax
-mov     eax, dword_A8ED54+7C7B0h
-add     edx, 45h ; 'E'
-mov     [esp+28h+var_14], edx
-mov     [esp+28h+var_10], 8
-mov     [esp+28h+var_C], eax
-call    HashTable__Remove
-lea     ecx, [esp+24h+var_1C]
-push    ecx
-mov     ecx, ds:887368h
-call    CommandClass__AddAction
-pop     esi
-
-loc_64043D:                             ; CODE XREF: PowerClass__getDrain+12↑j
-add     esp, 20h
-retn
-*/
 } }
 // 0x640450
 namespace gamemd { void* PowerClass::getAvailable(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-#72 *__thiscall PowerClass::getAvailable(_DWORD *this, int a2)
+wchar_t *__thiscall PowerClass::_vt33(_DWORD *this, int a2)
 {
-  #72 *StringCSF; // eax
+  wchar_t *StringCSF; // eax
+  const wchar_t *v4; // [esp-8h] [ebp-8h]
+  int v5; // [esp-4h] [ebp-4h]
 
-  if ( a2 != 999 )
-    return RadarClass::Destru_vt33(this, a2);
-  StringCSF = GetStringCSF((#72 *)aTxtPowerDrain, 0, aDRa2mdpostPowe, 670);
-  swprintf((#72 *const)&dword_A8ED54[55287], StringCSF);
-  return (#72 *)&dword_A8ED54[55287];
+  if ( a2 != 999 ) /*0x640459*/
+    return RadarClass::Destru_vt33(this, a2); /*0x64049b*/
+  v5 = *((_DWORD *)HouseClass_Player + 5354); /*0x64046c*/
+  v4 = (const wchar_t *)*((_DWORD *)HouseClass_Player + 5353); /*0x64046d*/
+  StringCSF = GetStringCSF(MEMORY[0x836DA8], 0, MEMORY[0x836DB8], 670); /*0x64047f*/
+  swprintf(&MEMORY[0xAC4D30], (const size_t)StringCSF, v4, v5); /*0x64048a*/
+  return &MEMORY[0xAC4D30]; /*0x640497*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-cmp     eax, 3E7h
-jnz     short loc_64049A
-mov     eax, ds:0A83D4Ch
-mov     ecx, [eax+53A8h]
-mov     edx, [eax+53A4h]
-push    ecx
-push    edx             ; Format
-push    29Eh            ; int
-push    offset aDRa2mdpostPowe ; "D:\\ra2mdpost\\Power.CPP"
-xor     edx, edx
-mov     ecx, offset aTxtPowerDrain ; "TXT_POWER_DRAIN"
-call    GetStringCSF
-push    eax             ; BufferCount
-push    (offset dword_A8ED54+35FDCh) ; Buffer
-call    _swprintf
-add     esp, 10h
-mov     eax, (offset dword_A8ED54+35FDCh)
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_64049A:                             ; CODE XREF: PowerClass__getAvailable+9↑j
-push    eax
-call    RadarClass__Destru_vt33
-retn    4
-*/
 } }
 // 0x6404B0
 namespace gamemd { void* PowerClass::Initialize(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall PowerClass::_vt04(_DWORD *Block, char a2)
+PowerClass *__thiscall PowerClass::Initialize(_DWORD *Block, char a2)
 {
-  RadarClass::Destruct(Block);
-  if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(Block);
-  return Block;
+  RadarClass::Destruct(Block); /*0x6404b3*/
+  if ( (a2 & 1) != 0 ) /*0x6404bd*/
+    __3_YAXPAX_Z(Block); /*0x6404c0*/
+  return (PowerClass *)Block; /*0x6404ca*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-call    RadarClass__Destruct
-test    [esp+4+arg_0], 1
-jz      short loc_6404C8
-push    esi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_6404C8:                             ; CODE XREF: PowerClass__Initialize+D↑j
-mov     eax, esi
-pop     esi
-retn    4
-*/
 } }
 // 0x6568A0
 namespace gamemd { int SidebarClass::Load(int a1) {
@@ -9131,76 +3563,76 @@ int __thiscall SidebarClass_Load(int this, int a2)
   _DWORD *v21; // [esp+90h] [ebp-Ch]
   _DWORD v22[2]; // [esp+94h] [ebp-8h] BYREF
 
-  v2 = a2;
-  v20 = this;
-  result = DisplayClass::SetSurface(a2);
-  if ( result >= 0 )
+  v2 = a2; /*0x6568a7*/
+  v20 = this; /*0x6568ae*/
+  result = DisplayClass::SetSurface(a2); /*0x6568b2*/
+  if ( result >= 0 ) /*0x6568bb*/
   {
-    result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &a2, 4, 0);
-    if ( result >= 0 )
+    result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &a2, 4, 0); /*0x6568cc*/
+    if ( result >= 0 ) /*0x6568d1*/
     {
-      v21 = (_DWORD *)(this + 5312);
-      AudioController::Init((_DWORD *)(this + 5312));
-      v5 = this + 4700;
-      if ( this != -4700 )
+      v21 = (_DWORD *)(this + 5312); /*0x6568dd*/
+      AudioController::Init((_DWORD *)(this + 5312)); /*0x6568e1*/
+      v5 = this + 4700; /*0x6568e6*/
+      if ( this != -4700 ) /*0x6568ee*/
       {
-        VectorClass::PointConstructor(0, 0);
-        *(_DWORD *)v5 = &DynamicVectorClass<Point2D>::`vftable';
-        *(_DWORD *)(this + 4720) = 10;
-        *(_DWORD *)(this + 4716) = 0;
+        VectorClass::PointConstructor(0, 0); /*0x6568f4*/
+        *(_DWORD *)v5 = &DynamicVectorClass<Point2D>::`vftable'; /*0x6568f9*/
+        *(_DWORD *)(this + 4720) = 10; /*0x6568ff*/
+        *(_DWORD *)(this + 4716) = 0; /*0x656906*/
       }
-      v19 = 0;
-      if ( a2 <= 0 )
+      v19 = 0; /*0x65690d*/
+      if ( a2 <= 0 ) /*0x656913*/
       {
 LABEL_14:
-        result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &a2, 4, 0);
-        if ( result >= 0 )
+        result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &a2, 4, 0); /*0x656980*/
+        if ( result >= 0 ) /*0x656990*/
         {
-          v10 = this + 4644;
-          if ( this != -4644 )
+          v10 = this + 4644; /*0x656996*/
+          if ( this != -4644 ) /*0x65699e*/
           {
-            VectorClass::CellConstructor((_DWORD *)(this + 4644), 0, 0);
-            *(_DWORD *)v10 = &DynamicVectorClass<Cell>::`vftable';
-            *(_DWORD *)(this + 4664) = 10;
-            *(_DWORD *)(this + 4660) = 0;
+            VectorClass::CellConstructor((_DWORD *)(this + 4644), 0, 0); /*0x6569a4*/
+            *(_DWORD *)v10 = &vt_DynamicVectorClass_Cell; /*0x6569a9*/
+            *(_DWORD *)(this + 4664) = 10; /*0x6569af*/
+            *(_DWORD *)(this + 4660) = 0; /*0x6569b6*/
           }
-          v11 = 0;
-          if ( a2 <= 0 )
+          v11 = 0; /*0x6569bd*/
+          if ( a2 <= 0 ) /*0x6569c1*/
           {
 LABEL_26:
-            v16 = v20;
-            v17 = 22;
-            v18 = v20 + 4736;
-            do
+            v16 = v20; /*0x656a1e*/
+            v17 = 22; /*0x656a22*/
+            v18 = v20 + 4736; /*0x656a29*/
+            do /*0x656a56*/
             {
-              if ( v18 != 8 )
+              if ( v18 != 8 ) /*0x656a34*/
               {
-                *(_DWORD *)(v18 - 4) = 0;
-                *(_DWORD *)v18 = 0;
-                *(_BYTE *)(v18 + 4) = 1;
-                *(_BYTE *)(v18 + 5) = 0;
-                *(_DWORD *)(v18 - 8) = &DynamicVectorClass<Point2D>::`vftable';
-                *(_DWORD *)(v18 + 12) = 10;
-                *(_DWORD *)(v18 + 8) = 0;
+                *(_DWORD *)(v18 - 4) = 0; /*0x656a36*/
+                *(_DWORD *)v18 = 0; /*0x656a39*/
+                *(_BYTE *)(v18 + 4) = 1; /*0x656a3b*/
+                *(_BYTE *)(v18 + 5) = 0; /*0x656a3e*/
+                *(_DWORD *)(v18 - 8) = &DynamicVectorClass<Point2D>::`vftable'; /*0x656a41*/
+                *(_DWORD *)(v18 + 12) = 10; /*0x656a48*/
+                *(_DWORD *)(v18 + 8) = 0; /*0x656a4f*/
               }
-              v18 += 24;
-              --v17;
+              v18 += 24; /*0x656a52*/
+              --v17; /*0x656a55*/
             }
-            while ( v17 );
-            result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, v16 + 5296, 4, 0);
-            if ( result >= 0 )
+            while ( v17 ); /*0x656a56*/
+            result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, v16 + 5296, 4, 0); /*0x656a65*/
+            if ( result >= 0 ) /*0x656a6a*/
             {
-              result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, v16 + 5292, 4, 0);
-              if ( result >= 0 )
+              result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, v16 + 5292, 4, 0); /*0x656a79*/
+              if ( result >= 0 ) /*0x656a7e*/
               {
-                result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, v16 + 5300, 4, 0);
-                if ( result >= 0 )
+                result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, v16 + 5300, 4, 0); /*0x656a8d*/
+                if ( result >= 0 ) /*0x656a92*/
                 {
-                  result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, v16 + 5304, 4, 0);
-                  if ( result >= 0 )
+                  result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, v16 + 5304, 4, 0); /*0x656aa1*/
+                  if ( result >= 0 ) /*0x656aa6*/
                   {
-                    AudioController::Init(v21);
-                    return 0;
+                    AudioController::Init(v21); /*0x656aac*/
+                    return 0; /*0x656ab1*/
                   }
                 }
               }
@@ -9208,295 +3640,55 @@ LABEL_26:
           }
           else
           {
-            while ( 1 )
+            while ( 1 ) /*0x6569ce*/
             {
-              result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &v19, 4, 0);
-              if ( result < 0 )
-                break;
-              v12 = *(_DWORD *)(v10 + 8);
-              if ( *(_DWORD *)(v10 + 16) < v12
+              result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &v19, 4, 0); /*0x6569ce*/
+              if ( result < 0 ) /*0x6569d3*/
+                break; /*0x6569d3*/
+              v12 = *(_DWORD *)(v10 + 8); /*0x6569d9*/
+              if ( *(_DWORD *)(v10 + 16) < v12 /*0x6569fb*/
                 || (*(_BYTE *)(v10 + 13) || !v12)
                 && (v13 = *(_DWORD *)(v10 + 20), v13 > 0)
                 && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v10 + 8))(v10, v12 + v13, 0) )
               {
-                v14 = *(_DWORD *)(v10 + 16);
-                v15 = *(_DWORD *)(v10 + 4);
-                *(_DWORD *)(v10 + 16) = v14 + 1;
-                *(_DWORD *)(v15 + 4 * v14) = v19;
+                v14 = *(_DWORD *)(v10 + 16); /*0x656a02*/
+                v15 = *(_DWORD *)(v10 + 4); /*0x656a05*/
+                *(_DWORD *)(v10 + 16) = v14 + 1; /*0x656a0b*/
+                *(_DWORD *)(v15 + 4 * v14) = v19; /*0x656a12*/
               }
-              if ( ++v11 >= a2 )
-                goto LABEL_26;
+              if ( ++v11 >= a2 ) /*0x656a1c*/
+                goto LABEL_26; /*0x656a1c*/
             }
           }
         }
       }
       else
       {
-        while ( 1 )
+        while ( 1 ) /*0x656920*/
         {
-          result = (*(int (__stdcall **)(int, _DWORD *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, v22, 8, 0);
-          if ( result < 0 )
-            break;
-          v6 = *(_DWORD *)(this + 4708);
-          if ( *(_DWORD *)(this + 4716) < v6
+          result = (*(int (__stdcall **)(int, _DWORD *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, v22, 8, 0); /*0x656920*/
+          if ( result < 0 ) /*0x656925*/
+            break; /*0x656925*/
+          v6 = *(_DWORD *)(this + 4708); /*0x65692b*/
+          if ( *(_DWORD *)(this + 4716) < v6 /*0x65694d*/
             || (*(_BYTE *)(this + 4713) || !v6)
             && (v7 = *(_DWORD *)(this + 4720), v7 > 0)
             && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v5 + 8))(this + 4700, v6 + v7, 0) )
           {
-            v8 = *(_DWORD *)(this + 4716);
-            v9 = *(_DWORD *)(this + 4704);
-            *(_DWORD *)(this + 4716) = v8 + 1;
-            *(_DWORD *)(v9 + 8 * v8) = v22[0];
-            *(_DWORD *)(v9 + 8 * v8 + 4) = v22[1];
+            v8 = *(_DWORD *)(this + 4716); /*0x656954*/
+            v9 = *(_DWORD *)(this + 4704); /*0x656957*/
+            *(_DWORD *)(this + 4716) = v8 + 1; /*0x65695d*/
+            *(_DWORD *)(v9 + 8 * v8) = v22[0]; /*0x656964*/
+            *(_DWORD *)(v9 + 8 * v8 + 4) = v22[1]; /*0x65696b*/
           }
-          if ( ++v19 >= a2 )
-            goto LABEL_14;
+          if ( ++v19 >= a2 ) /*0x65697e*/
+            goto LABEL_14; /*0x65697e*/
         }
       }
     }
   }
-  return result;
+  return result; /*0x656ab3*/
 }
-
-/* ASM:
-sub     esp, 14h
-push    ebx
-push    ebp
-push    esi
-push    edi
-mov     edi, [esp+24h+arg_0]
-mov     ebp, ecx
-push    edi
-mov     [esp+28h+var_10], ebp
-call    DisplayClass__SetSurface
-xor     ebx, ebx
-cmp     eax, ebx
-jl      loc_656AB3
-mov     eax, [edi]
-push    ebx
-lea     ecx, [esp+28h+arg_0]
-push    4
-push    ecx
-push    edi
-call    dword ptr [eax+0Ch]
-cmp     eax, ebx
-jl      loc_656AB3
-lea     ecx, [ebp+14C0h]
-mov     [esp+24h+var_C], ecx
-call    AudioController__Init
-lea     esi, [ebp+125Ch]
-cmp     esi, ebx
-jz      short loc_656909
-push    ebx
-push    ebx
-mov     ecx, esi
-call    VectorClass__PointConstructor
-mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@VPoint2D@@@@6B@ ; const DynamicVectorClass<Point2D>::`vftable'
-mov     dword ptr [esi+14h], 0Ah
-mov     [esi+10h], ebx
-
-loc_656909:                             ; CODE XREF: SidebarClass__Load+4E↑j
-mov     eax, [esp+24h+arg_0]
-mov     [esp+24h+var_14], ebx
-cmp     eax, ebx
-jle     short loc_656980
-
-loc_656915:                             ; CODE XREF: SidebarClass__Load+DE↓j
-mov     edx, [edi]
-push    ebx
-lea     eax, [esp+28h+var_8]
-push    8
-push    eax
-push    edi
-call    dword ptr [edx+0Ch]
-cmp     eax, ebx
-jl      loc_656AB3
-mov     ecx, [esi+8]
-mov     eax, [esi+10h]
-cmp     eax, ecx
-jl      short loc_656954
-cmp     [esi+0Dh], bl
-jnz     short loc_65693E
-cmp     ecx, ebx
-jnz     short loc_65696F
-
-loc_65693E:                             ; CODE XREF: SidebarClass__Load+98↑j
-mov     eax, [esi+14h]
-cmp     eax, ebx
-jle     short loc_65696F
-mov     edx, [esi]
-add     eax, ecx
-push    ebx
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_65696F
-
-loc_656954:                             ; CODE XREF: SidebarClass__Load+93↑j
-mov     eax, [esi+10h]
-mov     edx, [esi+4]
-lea     ecx, [eax+1]
-mov     [esi+10h], ecx
-mov     ecx, [esp+24h+var_8]
-mov     [edx+eax*8], ecx
-mov     ecx, [esp+24h+var_4]
-mov     [edx+eax*8+4], ecx
-
-loc_65696F:                             ; CODE XREF: SidebarClass__Load+9C↑j
-; SidebarClass__Load+A3↑j ...
-mov     eax, [esp+24h+var_14]
-mov     ecx, [esp+24h+arg_0]
-inc     eax
-cmp     eax, ecx
-mov     [esp+24h+var_14], eax
-jl      short loc_656915
-
-loc_656980:                             ; CODE XREF: SidebarClass__Load+73↑j
-mov     edx, [edi]
-push    ebx
-lea     eax, [esp+28h+arg_0]
-push    4
-push    eax
-push    edi
-call    dword ptr [edx+0Ch]
-cmp     eax, ebx
-jl      loc_656AB3
-lea     esi, [ebp+1224h]
-cmp     esi, ebx
-jz      short loc_6569B9
-push    ebx
-push    ebx
-mov     ecx, esi
-call    VectorClass__CellConstructor
-mov     dword ptr [esi], offset ??_7?$DynamicVectorClass@VCell@@@@6B@ ; const DynamicVectorClass<Cell>::`vftable'
-mov     dword ptr [esi+14h], 0Ah
-mov     [esi+10h], ebx
-
-loc_6569B9:                             ; CODE XREF: SidebarClass__Load+FE↑j
-mov     eax, [esp+24h+arg_0]
-xor     ebp, ebp
-cmp     eax, ebx
-jle     short loc_656A1E
-
-loc_6569C3:                             ; CODE XREF: SidebarClass__Load+17C↓j
-mov     ecx, [edi]
-push    ebx
-lea     edx, [esp+28h+var_14]
-push    4
-push    edx
-push    edi
-call    dword ptr [ecx+0Ch]
-cmp     eax, ebx
-jl      loc_656AB3
-mov     ecx, [esi+8]
-mov     eax, [esi+10h]
-cmp     eax, ecx
-jl      short loc_656A02
-cmp     [esi+0Dh], bl
-jnz     short loc_6569EC
-cmp     ecx, ebx
-jnz     short loc_656A15
-
-loc_6569EC:                             ; CODE XREF: SidebarClass__Load+146↑j
-mov     eax, [esi+14h]
-cmp     eax, ebx
-jle     short loc_656A15
-mov     edx, [esi]
-add     eax, ecx
-push    ebx
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_656A15
-
-loc_656A02:                             ; CODE XREF: SidebarClass__Load+141↑j
-mov     eax, [esi+10h]
-mov     edx, [esi+4]
-lea     ecx, [eax+1]
-mov     [esi+10h], ecx
-mov     ecx, [esp+24h+var_14]
-mov     [edx+eax*4], ecx
-
-loc_656A15:                             ; CODE XREF: SidebarClass__Load+14A↑j
-; SidebarClass__Load+151↑j ...
-mov     eax, [esp+24h+arg_0]
-inc     ebp
-cmp     ebp, eax
-jl      short loc_6569C3
-
-loc_656A1E:                             ; CODE XREF: SidebarClass__Load+121↑j
-mov     esi, [esp+24h+var_10]
-mov     ecx, 16h
-mov     dl, 1
-lea     eax, [esi+1280h]
-
-loc_656A2F:                             ; CODE XREF: SidebarClass__Load+1B6↓j
-lea     ebp, [eax-8]
-test    ebp, ebp
-jz      short loc_656A52
-mov     [eax-4], ebx
-mov     [eax], ebx
-mov     [eax+4], dl
-mov     [eax+5], bl
-mov     dword ptr [eax-8], offset ??_7?$DynamicVectorClass@VPoint2D@@@@6B@ ; const DynamicVectorClass<Point2D>::`vftable'
-mov     dword ptr [eax+0Ch], 0Ah
-mov     [eax+8], ebx
-
-loc_656A52:                             ; CODE XREF: SidebarClass__Load+194↑j
-add     eax, 18h
-dec     ecx
-jnz     short loc_656A2F
-mov     edx, [edi]
-push    ebx
-lea     eax, [esi+14B0h]
-push    4
-push    eax
-push    edi
-call    dword ptr [edx+0Ch]
-cmp     eax, ebx
-jl      short loc_656AB3
-mov     ecx, [edi]
-push    ebx
-lea     edx, [esi+14ACh]
-push    4
-push    edx
-push    edi
-call    dword ptr [ecx+0Ch]
-cmp     eax, ebx
-jl      short loc_656AB3
-mov     eax, [edi]
-push    ebx
-lea     ecx, [esi+14B4h]
-push    4
-push    ecx
-push    edi
-call    dword ptr [eax+0Ch]
-cmp     eax, ebx
-jl      short loc_656AB3
-mov     edx, [edi]
-push    ebx
-add     esi, 14B8h
-push    4
-push    esi
-push    edi
-call    dword ptr [edx+0Ch]
-cmp     eax, ebx
-jl      short loc_656AB3
-mov     ecx, [esp+24h+var_C]
-call    AudioController__Init
-xor     eax, eax
-
-loc_656AB3:                             ; CODE XREF: SidebarClass__Load+1B↑j
-; SidebarClass__Load+31↑j ...
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 14h
-retn    4
-*/
 } }
 // 0x656AC0
 namespace gamemd { int SidebarClass::Save(int a1) {
@@ -9511,38 +3703,38 @@ int __thiscall SidebarClass_Save(int *this, int a2)
   int v8; // ebx
   int v9; // eax
 
-  v2 = a2;
-  result = DisplayClass::GetSurface(a2);
+  v2 = a2; /*0x656ac2*/
+  result = DisplayClass::GetSurface(a2); /*0x656aca*/
   if ( result >= 0 )
   {
-    v5 = *(_DWORD *)v2;
-    a2 = *(this + 1179);
-    result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v5 + 16))(v2, &a2, 4, 0);
+    v5 = *(_DWORD *)v2; /*0x656add*/
+    a2 = *(this + 1179); /*0x656ae9*/
+    result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v5 + 16))(v2, &a2, 4, 0); /*0x656aed*/
     if ( result >= 0 )
     {
-      v6 = 0;
+      v6 = 0; /*0x656afc*/
       if ( a2 <= 0 )
       {
 LABEL_6:
-        v7 = *(_DWORD *)v2;
-        a2 = *(this + 1165);
-        result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v7 + 16))(v2, &a2, 4, 0);
+        v7 = *(_DWORD *)v2; /*0x656b27*/
+        a2 = *(this + 1165); /*0x656b39*/
+        result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v7 + 16))(v2, &a2, 4, 0); /*0x656b3d*/
         if ( result >= 0 )
         {
-          v8 = 0;
+          v8 = 0; /*0x656b4c*/
           if ( a2 <= 0 )
           {
 LABEL_10:
-            result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, this + 1324, 4, 0);
+            result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, this + 1324, 4, 0); /*0x656b73*/
             if ( result >= 0 )
             {
-              result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, this + 1323, 4, 0);
+              result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, this + 1323, 4, 0); /*0x656b96*/
               if ( result >= 0 )
               {
-                result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, this + 1325, 4, 0);
+                result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, this + 1325, 4, 0); /*0x656bab*/
                 if ( result >= 0 )
                 {
-                  v9 = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, this + 1326, 4, 0);
+                  v9 = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, this + 1326, 4, 0); /*0x656bc0*/
                   return v9 >= 0 ? 0 : v9;
                 }
               }
@@ -9550,166 +3742,41 @@ LABEL_10:
           }
           else
           {
-            while ( 1 )
+            while ( 1 ) /*0x656b63*/
             {
-              result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))(
+              result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))( /*0x656b63*/
                          v2,
                          *(this + 1162) + 4 * v8,
                          4,
                          0);
-              if ( result < 0 )
-                break;
-              if ( ++v8 >= a2 )
-                goto LABEL_10;
+              if ( result < 0 ) /*0x656b68*/
+                break; /*0x656b68*/
+              if ( ++v8 >= a2 ) /*0x656b71*/
+                goto LABEL_10; /*0x656b71*/
             }
           }
         }
       }
       else
       {
-        while ( 1 )
+        while ( 1 ) /*0x656b13*/
         {
-          result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, *(this + 1176) + 8 * v6, 8, 0);
-          if ( result < 0 )
-            break;
-          if ( ++v6 >= a2 )
-            goto LABEL_6;
+          result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, *(this + 1176) + 8 * v6, 8, 0); /*0x656b13*/
+          if ( result < 0 ) /*0x656b18*/
+            break; /*0x656b18*/
+          if ( ++v6 >= a2 ) /*0x656b25*/
+            goto LABEL_6; /*0x656b25*/
         }
       }
     }
   }
-  return result;
+  return result; /*0x656bcd*/
 }
-
-/* ASM:
-push    ebx
-push    esi
-mov     esi, [esp+8+arg_0]
-push    edi
-mov     edi, ecx
-push    esi
-call    DisplayClass__GetSurface
-test    eax, eax
-jl      loc_656BCD
-mov     eax, [edi+126Ch]
-mov     ecx, [esi]
-push    0
-lea     edx, [esp+10h+arg_0]
-push    4
-push    edx
-push    esi
-mov     [esp+1Ch+arg_0], eax
-call    dword ptr [ecx+10h]
-test    eax, eax
-jl      loc_656BCD
-mov     eax, [esp+0Ch+arg_0]
-xor     ebx, ebx
-test    eax, eax
-jle     short loc_656B27
-
-loc_656B02:                             ; CODE XREF: SidebarClass__Save+65↓j
-mov     ecx, [edi+1260h]
-mov     eax, [esi]
-push    0
-push    8
-lea     edx, [ecx+ebx*8]
-push    edx
-push    esi
-call    dword ptr [eax+10h]
-test    eax, eax
-jl      loc_656BCD
-mov     eax, [esp+0Ch+arg_0]
-inc     ebx
-cmp     ebx, eax
-jl      short loc_656B02
-
-loc_656B27:                             ; CODE XREF: SidebarClass__Save+40↑j
-mov     eax, [edi+1234h]
-mov     ecx, [esi]
-push    0
-lea     edx, [esp+10h+arg_0]
-push    4
-push    edx
-push    esi
-mov     [esp+1Ch+arg_0], eax
-call    dword ptr [ecx+10h]
-test    eax, eax
-jl      loc_656BCD
-mov     eax, [esp+0Ch+arg_0]
-xor     ebx, ebx
-test    eax, eax
-jle     short loc_656B73
-
-loc_656B52:                             ; CODE XREF: SidebarClass__Save+B1↓j
-mov     ecx, [edi+1228h]
-mov     eax, [esi]
-push    0
-push    4
-lea     edx, [ecx+ebx*4]
-push    edx
-push    esi
-call    dword ptr [eax+10h]
-test    eax, eax
-jl      short loc_656BCD
-mov     eax, [esp+0Ch+arg_0]
-inc     ebx
-cmp     ebx, eax
-jl      short loc_656B52
-
-loc_656B73:                             ; CODE XREF: SidebarClass__Save+90↑j
-mov     eax, [esi]
-push    0
-lea     ecx, [edi+14B0h]
-push    4
-push    ecx
-push    esi
-call    dword ptr [eax+10h]
-test    eax, eax
-jl      short loc_656BCD
-mov     edx, [esi]
-push    0
-lea     eax, [edi+14ACh]
-push    4
-push    eax
-push    esi
-call    dword ptr [edx+10h]
-test    eax, eax
-jl      short loc_656BCD
-mov     ecx, [esi]
-push    0
-lea     edx, [edi+14B4h]
-push    4
-push    edx
-push    esi
-call    dword ptr [ecx+10h]
-test    eax, eax
-jl      short loc_656BCD
-mov     eax, [esi]
-push    0
-add     edi, 14B8h
-push    4
-push    edi
-push    esi
-call    dword ptr [eax+10h]
-xor     ecx, ecx
-test    eax, eax
-setnl   cl
-dec     ecx
-and     eax, ecx
-
-loc_656BCD:                             ; CODE XREF: SidebarClass__Save+11↑j
-; SidebarClass__Save+32↑j ...
-pop     edi
-pop     esi
-pop     ebx
-retn    4
-*/
 } }
 // 0x674650
 namespace gamemd { int SidebarClass::ReadButtonList() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x674650
-int __thiscall SidebarClass::ReadButtonList(#381 *this)
+int __thiscall SidebarClass::ReadButtonList(RulesClass *this)
 {
   char *v1; // edi
   int result; // eax
@@ -9722,391 +3789,139 @@ int __thiscall SidebarClass::ReadButtonList(#381 *this)
   unsigned __int8 ***v9; // [esp+20Ch] [ebp+4h]
   char v10; // [esp+210h] [ebp+8h]
 
-  v1 = aMultiplayeradv;
-  if ( !v10 )
-    v1 = aAdvancedcomman;
-  result = INIClass::BinarySearchSection((int)v9, (unsigned __int8 *)v1);
-  if ( result )
+  v1 = MEMORY[0x839D1C]; /*0x67465e*/
+  if ( !v10 ) /*0x674664*/
+    v1 = MEMORY[0x839D3C]; /*0x674666*/
+  result = INIClass::BinarySearchSection((int)v9, (unsigned __int8 *)v1); /*0x674676*/
+  if ( result ) /*0x674682*/
   {
-    for ( i = 0; i < 25; ++i )
-      globalHelper_0CFD20(i, dword_8427CC);
-    result = INIClass::GetString(
+    for ( i = 0; i < 25; ++i ) /*0x674689*/
+      globalHelper_0CFD20(i, MEMORY[0x8427CC]); /*0x674693*/
+    result = INIClass::GetString( /*0x6746b9*/
                v9,
                (unsigned __int8 *)v1,
-               (unsigned __int8 *)aButtonlist,
+               (unsigned __int8 *)MEMORY[0x839D10],
                &MEMORY[0x889F64],
                String,
                512);
-    if ( result )
+    if ( result ) /*0x6746c0*/
     {
-      v4 = 0;
-      v5 = 0;
-      for ( j = strtok(String, Delimiter); j; j = strtok(0, Delimiter) )
+      v4 = 0; /*0x6746cc*/
+      v5 = 0; /*0x6746ce*/
+      for ( j = strtok(String, MEMORY[0x817F70]); j; j = strtok(0, MEMORY[0x817F70]) ) /*0x6746da*/
       {
-        v7 = SidebarClass::findEntryIndexByName(j);
-        if ( v7 != dword_8427CC )
-          globalHelper_0CFD20(v7, v5);
-        ++v4;
-        ++v5;
+        v7 = SidebarClass::findEntryIndexByName(j); /*0x6746de*/
+        if ( v7 != MEMORY[0x8427CC] ) /*0x6746e9*/
+          globalHelper_0CFD20(v7, v5); /*0x6746ef*/
+        ++v4; /*0x6746f9*/
+        ++v5; /*0x6746fc*/
       }
-      result = globalHelper_0CFDB0(v4);
+      result = globalHelper_0CFDB0(v4); /*0x67470b*/
     }
-    LOBYTE(result) = 1;
+    LOBYTE(result) = 1; /*0x674712*/
   }
   else
   {
-    LOBYTE(result) = 0;
+    LOBYTE(result) = 0; /*0x67471f*/
   }
-  return result;
+  return result; /*0x674711*/
 }
-
-/* ASM:
-String          = byte ptr -200h
-arg_0           = dword ptr  4
-arg_4           = byte ptr  8
-
-mov     al, [esp+arg_4]
-sub     esp, 200h
-test    al, al
-push    ebx
-push    edi
-mov     edi, ds:off_7F0CEC ; "MultiplayerAdvancedCommandBar"
-jnz     short loc_67466C
-mov     edi, ds:off_7F0CE8 ; "AdvancedCommandBar"
-
-loc_67466C:                             ; CODE XREF: SidebarClass__ReadButtonList+14↑j
-mov     ebx, [esp+208h+arg_0]
-push    edi
-mov     ecx, ebx
-call    INIClass__BinarySearchSection
-test    eax, eax
-setnz   al
-test    al, al
-jz      loc_67471E
-push    esi
-xor     esi, esi
-
-loc_67468B:                             ; CODE XREF: SidebarClass__ReadButtonList+4C↓j
-mov     edx, dword_8427CC
-mov     ecx, esi
-call    globalHelper_0CFD20
-inc     esi
-cmp     esi, 19h
-jl      short loc_67468B
-mov     ecx, ds:off_7F0CF4
-mov     edx, ds:off_7F0CF0 ; "ButtonList"
-lea     eax, [esp+20Ch+String]
-push    200h            ; Count
-push    eax             ; Destination
-push    ecx             ; Source
-push    edx             ; int
-push    edi             ; int
-mov     ecx, ebx
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_674710
-lea     eax, [esp+20Ch+String]
-push    offset Delimiter ; ","
-push    eax             ; String
-xor     edi, edi
-xor     esi, esi
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_674709
-
-loc_6746DC:                             ; CODE XREF: SidebarClass__ReadButtonList+B7↓j
-mov     ecx, eax
-call    SidebarClass__findEntryIndexByName
-cmp     eax, dword_8427CC
-jz      short loc_6746F4
-mov     edx, esi
-mov     ecx, eax
-call    globalHelper_0CFD20
-
-loc_6746F4:                             ; CODE XREF: SidebarClass__ReadButtonList+99↑j
-push    offset Delimiter ; ","
-inc     edi
-push    0               ; String
-inc     esi
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_6746DC
-
-loc_674709:                             ; CODE XREF: SidebarClass__ReadButtonList+8A↑j
-mov     ecx, edi
-call    globalHelper_0CFDB0
-
-loc_674710:                             ; CODE XREF: SidebarClass__ReadButtonList+70↑j
-pop     esi
-pop     edi
-mov     al, 1
-pop     ebx
-add     esp, 200h
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_67471E:                             ; CODE XREF: SidebarClass__ReadButtonList+32↑j
-pop     edi
-xor     al, al
-pop     ebx
-add     esp, 200h
-retn    8
-*/
 } }
 // 0x68C710
 namespace gamemd { void* FontClass::InitMetrics(void* a1, int a2, int a3, int a4, int a5, int a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall FontClass_InitMetrics(char *this, char *Source, int a3, int a4, int a5, int a6, char a7)
+char *__thiscall FontClass::InitMetrics(
+        char *this,
+        char *Source,
+        ObjectClass *aP2,
+        ObjectClass *aP3,
+        int a5,
+        int a6,
+        char a7)
 {
   int v8; // ecx
-  _BYTE *v9; // eax
+  char *v9; // eax
   int v10; // eax
 
-  v8 = 256;
-  v9 = this + 4;
-  do
+  v8 = 256; /*0x68c715*/
+  v9 = this + 4; /*0x68c71f*/
+  do /*0x68c72d*/
   {
-    *v9 = 0;
-    v9[1] = 0;
-    v9[2] = 0;
-    v9 += 3;
-    --v8;
+    *v9 = 0; /*0x68c721*/
+    v9[1] = 0; /*0x68c723*/
+    v9[2] = 0; /*0x68c726*/
+    v9 += 3; /*0x68c729*/
+    --v8; /*0x68c72c*/
   }
-  while ( v8 );
-  *((_DWORD *)this + 193) = _strdup(Source);
-  *((_WORD *)this + 388) = *(_WORD *)a3;
-  *(this + 778) = *(_BYTE *)(a3 + 2);
-  *((_DWORD *)this + 195) = 0;
-  *((_DWORD *)this + 196) = a6;
-  *((_DWORD *)this + 197) = 16;
-  *((_DWORD *)this + 198) = 15;
-  *((_DWORD *)this + 199) = 25;
-  *((_DWORD *)this + 200) = 24;
-  *((_DWORD *)this + 201) = 22;
-  *((_DWORD *)this + 202) = 16;
-  *((_DWORD *)this + 203) = 19;
-  *((_DWORD *)this + 204) = 16;
-  *((_DWORD *)this + 205) = 16;
-  *((_DWORD *)this + 206) = 21;
-  *((_DWORD *)this + 195) = FontClass::CreateGlyphColor(
+  while ( v8 ); /*0x68c72d*/
+  *((_DWORD *)this + 193) = _strdup(Source); /*0x68c744*/
+  *((_WORD *)this + 388) = *(_WORD *)aP2->__pad_0; /*0x68c752*/
+  *(this + 778) = aP2->__pad_0[2]; /*0x68c75d*/
+  *((_DWORD *)this + 195) = 0; /*0x68c778*/
+  *((_DWORD *)this + 196) = a6; /*0x68c77e*/
+  *((_DWORD *)this + 197) = 16; /*0x68c784*/
+  *((_DWORD *)this + 198) = 15; /*0x68c78a*/
+  *((_DWORD *)this + 199) = 25; /*0x68c794*/
+  *((_DWORD *)this + 200) = 24; /*0x68c79e*/
+  *((_DWORD *)this + 201) = 22; /*0x68c7a8*/
+  *((_DWORD *)this + 202) = 16; /*0x68c7b2*/
+  *((_DWORD *)this + 203) = 19; /*0x68c7b8*/
+  *((_DWORD *)this + 204) = 16; /*0x68c7c2*/
+  *((_DWORD *)this + 205) = 16; /*0x68c7c8*/
+  *((_DWORD *)this + 206) = 21; /*0x68c7d2*/
+  *((_DWORD *)this + 195) = FontClass::CreateGlyphColor( /*0x68c7ee*/
+                              this + 776,
+                              aP3,
                               a5,
                               this + 4,
-                              MEMORY[0x887308],
+                              *(int *)&MEMORY[0x87F8E4].__pad_5568[9404],
                               a6,
                               1000,
                               1000,
                               1000,
-                              &unk_83E1AC);
-  if ( a7 )
+                              (int)&stru_830620.__pad_579C[33776]);
+  if ( a7 ) /*0x68c7fb*/
   {
-    if ( MEMORY[0xB054E0] < MEMORY[0xB054D8]
+    if ( MEMORY[0xB054E0] < MEMORY[0xB054D8] /*0x68c830*/
       || (MEMORY[0xB054DD] || !MEMORY[0xB054D8])
       && MEMORY[0xB054E4] > 0
-      && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xB054D0] + 8))(
+      && ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))MEMORY[0xB054D0]->field_8)(
            &MEMORY[0xB054D0],
            MEMORY[0xB054D8] + MEMORY[0xB054E4],
            0) )
     {
-      v10 = MEMORY[0xB054E0]++;
-      *((_DWORD *)MEMORY[0xB054D4] + v10) = this;
+      v10 = MEMORY[0xB054E0]++; /*0x68c83d*/
+      *((_DWORD *)MEMORY[0xB054D4] + v10) = this; /*0x68c84c*/
     }
-    *(_DWORD *)this = MEMORY[0xB054E0];
+    *(_DWORD *)this = MEMORY[0xB054E0]; /*0x68c855*/
   }
-  return this;
+  return this; /*0x68c859*/
 }
-
-/* ASM:
-Source          = dword ptr  4
-arg_4           = dword ptr  8
-arg_8           = dword ptr  0Ch
-arg_C           = dword ptr  10h
-arg_10          = dword ptr  14h
-arg_14          = byte ptr  18h
-
-push    ebx
-push    esi
-mov     esi, ecx
-push    edi
-mov     ecx, 100h
-xor     ebx, ebx
-lea     edi, [esi+4]
-mov     eax, edi
-
-loc_68C721:                             ; CODE XREF: FontClass__InitMetrics+1D↓j
-mov     [eax], bl
-mov     [eax+1], bl
-mov     [eax+2], bl
-add     eax, 3
-dec     ecx
-jnz     short loc_68C721
-mov     eax, [esp+0Ch+Source]
-push    ebp
-push    eax             ; Source
-call    __strdup
-mov     edx, [esp+14h+arg_4]
-lea     ecx, [esi+308h]
-mov     [esi+304h], eax
-mov     eax, ecx
-mov     bp, [edx]
-add     esp, 4
-mov     [eax], bp
-mov     dl, [edx+2]
-push    offset unk_83E1AC
-mov     [eax+2], dl
-mov     eax, [esp+14h+arg_10]
-push    3E8h
-mov     edx, 10h
-push    3E8h
-push    3E8h
-mov     [esi+30Ch], ebx
-mov     [esi+310h], eax
-mov     [esi+314h], edx
-mov     dword ptr [esi+318h], 0Fh
-mov     dword ptr [esi+31Ch], 19h
-mov     dword ptr [esi+320h], 18h
-mov     dword ptr [esi+324h], 16h
-mov     [esi+328h], edx
-mov     dword ptr [esi+32Ch], 13h
-mov     [esi+330h], edx
-mov     [esi+334h], edx
-mov     edx, [esp+20h+arg_C]
-mov     dword ptr [esi+338h], 15h
-push    eax
-mov     eax, ds:887308h
-push    eax
-push    edi
-push    edx
-mov     edx, [esp+30h+arg_8]
-call    FontClass__CreateGlyphColor
-mov     [esi+30Ch], eax
-mov     al, [esp+10h+arg_14]
-cmp     al, bl
-pop     ebp
-jz      short loc_68C857
-mov     eax, dword_A8ED54+76784h
-mov     ecx, dword_A8ED54+7678Ch
-cmp     ecx, eax
-jl      short loc_68C837
-cmp     byte ptr dword_A8ED54+76789h, bl
-jnz     short loc_68C818
-cmp     eax, ebx
-jnz     short loc_68C84F
-
-loc_68C818:                             ; CODE XREF: FontClass__InitMetrics+102↑j
-mov     ecx, dword_A8ED54+76790h
-cmp     ecx, ebx
-jle     short loc_68C84F
-add     ecx, eax
-mov     eax, dword_A8ED54+7677Ch
-push    ebx
-push    ecx
-mov     ecx, (offset dword_A8ED54+7677Ch)
-call    dword ptr [eax+8]
-test    al, al
-jz      short loc_68C84F
-
-loc_68C837:                             ; CODE XREF: FontClass__InitMetrics+FA↑j
-mov     ecx, dword_A8ED54+7678Ch
-mov     eax, ecx
-inc     ecx
-mov     dword_A8ED54+7678Ch, ecx
-mov     ecx, dword_A8ED54+76780h
-mov     [ecx+eax*4], esi
-
-loc_68C84F:                             ; CODE XREF: FontClass__InitMetrics+106↑j
-; FontClass__InitMetrics+110↑j ...
-mov     edx, dword_A8ED54+7678Ch
-mov     [esi], edx
-
-loc_68C857:                             ; CODE XREF: FontClass__InitMetrics+EB↑j
-mov     eax, esi
-pop     edi
-pop     esi
-pop     ebx
-retn    18h
-*/
 } }
 // 0x693060
 namespace gamemd { bool MouseClass::GetHotspot() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall MouseClass::_vt26(_BYTE *this)
 {
-  return *(this + 21850)
-      || LOBYTE(dword_A8ED54[18])
-      || MEMORY[0x87F7E8][7887] && *(float *)(MEMORY[0x87F7E8][7887] + 216) != 0.0;
+  return *(this + 21850) || MEMORY[0xA8ED9C] || MEMORY[0x887324] && *(float *)&MEMORY[0x887324][54].__tail_0 != 0.0; /*0x693091*/
 }
-
-/* ASM:
-mov     al, [ecx+555Ah]
-test    al, al
-jnz     short loc_693092
-mov     al, byte ptr dword_A8ED54+48h
-test    al, al
-jnz     short loc_693092
-mov     eax, ds:887324h
-test    eax, eax
-jz      short loc_69308F
-fld     dword ptr [eax+0D8h]
-fcomp   ds:flt_7E1748
-fnstsw  ax
-test    ah, 40h
-jz      short loc_693092
-
-loc_69308F:                             ; CODE XREF: MouseClass__GetHotspot+1A↑j
-xor     al, al
-retn
-; ---------------------------------------------------------------------------
-
-loc_693092:                             ; CODE XREF: MouseClass__GetHotspot+8↑j
-; MouseClass__GetHotspot+11↑j ...
-mov     al, 1
-retn
-*/
 } }
 // 0x693840
 namespace gamemd { int MouseClass::GetButtonState(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MouseClass::_vt49(_BYTE *this, int a2)
+int __thiscall MouseClass::GetButtonState(_BYTE *this, MouseClass *aP1)
 {
-  _BYTE *v2; // esi
+  ScrollClass *v2; // esi
   int result; // eax
 
-  v2 = this;
-  if ( !*(this + 21848) )
-    return TacticalClass::DispatchMode((int *)this, a2);
-  LOBYTE(this) = MEMORY[0x884D44];
-  result = (*(int (__thiscall **)(_BYTE *, _DWORD, _BYTE *))(*(_DWORD *)v2 + 72))(v2, 0, this);
-  v2[21848] = 0;
-  return result;
+  v2 = (ScrollClass *)this; /*0x693841*/
+  if ( !*(this + 21848) ) /*0x693843*/
+    return TacticalClass::DispatchMode((int *)this, aP1); /*0x69386f*/
+  LOBYTE(this) = MEMORY[0x87F8E4].__pad_125C[16900]; /*0x69384d*/
+  result = (*(int (__thiscall **)(ScrollClass *, _DWORD, _BYTE *))(v2->m_ScrollX + 72))(v2, 0, this); /*0x69385a*/
+  LOBYTE(v2[1365].m_MaxX) = 0; /*0x69385d*/
+  return result; /*0x693864*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     al, [esi+5558h]
-test    al, al
-jz      short loc_693868
-mov     cl, ds:884D44h
-mov     eax, [esi]
-push    ecx
-push    0
-mov     ecx, esi
-call    dword ptr [eax+48h]
-mov     byte ptr [esi+5558h], 0
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_693868:                             ; CODE XREF: MouseClass__GetButtonState+B↑j
-mov     edx, [esp+4+arg_0]
-mov     ecx, esi
-push    edx
-call    TacticalClass__DispatchMode
-pop     esi
-retn    4
-*/
 } }
 // 0x693880
 namespace gamemd { int MouseClass::CheckCapture(void* a1) {
@@ -10115,225 +3930,67 @@ char __thiscall MouseClass::_vt44(int this, _DWORD *a2)
 {
   char result; // al
 
-  result = MEMORY[0xA8ED9C];
-  if ( !MEMORY[0xA8ED9C] )
+  result = MEMORY[0xA8ED9C]; /*0x693880*/
+  if ( !MEMORY[0xA8ED9C] ) /*0x69388a*/
   {
-    DisplayClass::vt_entry_B0(a2);
-    *(_DWORD *)(this + 21840) = *a2;
-    *(_DWORD *)(this + 21844) = a2[1];
-    *(_BYTE *)(this + 21848) = 0;
-    return (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]);
+    DisplayClass::vt_entry_B0(a2); /*0x693892*/
+    *(_DWORD *)(this + 21840) = *a2; /*0x693899*/
+    *(_DWORD *)(this + 21844) = a2[1]; /*0x6938a2*/
+    *(_BYTE *)(this + 21848) = 0; /*0x6938a8*/
+    return (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x6938b7*/
   }
-  return result;
+  return result; /*0x6938bb*/
 }
-
-/* ASM:
-mov     al, byte ptr dword_A8ED54+48h
-push    esi
-test    al, al
-mov     esi, ecx
-jnz     short loc_6938BB
-push    edi
-mov     edi, [esp+8+arg_0]
-push    edi
-call    DisplayClass__vt_entry_B0
-mov     eax, [edi]
-mov     [esi+5550h], eax
-mov     ecx, [edi+4]
-mov     [esi+5554h], ecx
-mov     byte ptr [esi+5558h], 0
-mov     ecx, ds:887640h
-mov     edx, [ecx]
-call    dword ptr [edx+10h]
-pop     edi
-
-loc_6938BB:                             ; CODE XREF: MouseClass__CheckCapture+A↑j
-pop     esi
-retn    4
-*/
 } }
 // 0x6969C0
 namespace gamemd { int ListBox::SetCustomEntry() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x6969c0
-char *__thiscall ListBox::SetCustomEntry(_DWORD *this, int nIDDlgItem, int a3, void *a4)
+HWND __thiscall ListBox_SetCustomEntry(HWND *this, int nIDDlgItem, LPARAM a3, void *a4)
 {
-  char *result; // eax
-  char *v5; // ebx
-  #72 *StringCSF; // eax
-  int v7; // esi
+  HWND result; // eax
+  HWND v5; // ebx
+  wchar_t *String; // eax
+  LRESULT v7; // esi
   int wParam; // [esp+Ch] [ebp-84h]
   char lParam[128]; // [esp+10h] [ebp-80h] BYREF
 
-  result = (char *)((int (__stdcall *)(_DWORD, int))GetDlgItem)(*this, nIDDlgItem);
-  v5 = result;
-  if ( result )
+  result = GetDlgItem(*this, nIDDlgItem); /*0x6969d1*/
+  v5 = result; /*0x6969d7*/
+  if ( result ) /*0x6969db*/
   {
-    wParam = FindListBoxItem(result, -1, a3);
-    ((void (__stdcall *)(char *, int, int, char *))SendMessageA)(v5, 1213, wParam, lParam);
-    result = strchr(lParam, 45);
-    if ( result )
+    wParam = FindListBoxItem(result, -1, a3); /*0x696a05*/
+    SendMessageA(v5, 0x4BDu, wParam, (LPARAM)lParam); /*0x696a09*/
+    result = (HWND)strchr(lParam, 45); /*0x696a12*/
+    if ( result ) /*0x696a1c*/
     {
-      result = (char *)_strcmpi(a4, result + 1);
-      if ( result )
+      result = (HWND)_strcmpi(a4, (char *)result + 1); /*0x696a2c*/
+      if ( result ) /*0x696a36*/
       {
-        StringCSF = GetStringCSF((#72 *)g_Str_TXT_CUSTOM, 0, g_Str_File_SerialEd_cpp, 1187);
-        sprintf(lParam, "%ls ", StringCSF);
-        strcat(lParam, (const char *)a4);
-        ((void (__stdcall *)(char *, int, int, _DWORD))SendMessageA)(v5, 324, wParam, 0);
-        v7 = ((int (__stdcall *)(char *, int, _DWORD, char *))SendMessageA)(v5, 1212, 0, lParam);
-        ((void (__stdcall *)(char *, int, int, int))SendMessageA)(v5, 337, v7, a3);
-        return (char *)((int (__stdcall *)(char *, int, int, _DWORD))SendMessageA)(v5, 334, v7, 0);
+        String = GetStringCSF(MEMORY[0x83EBBC], 0, MEMORY[0x83EC28], 1187); /*0x696a4e*/
+        sprintf(lParam, MEMORY[0x83ECF4], String); /*0x696a5e*/
+        strcat(lParam, (const char *)a4); /*0x696a87*/
+        SendMessageA(v5, 0x144u, wParam, 0); /*0x696a9b*/
+        v7 = SendMessageA(v5, 0x4BCu, 0, (LPARAM)lParam); /*0x696ab3*/
+        SendMessageA(v5, 0x151u, v7, a3); /*0x696abd*/
+        return (HWND)SendMessageA(v5, 0x14Eu, v7, 0); /*0x696ac8*/
       }
     }
   }
-  return result;
+  return result; /*0x696acb*/
 }
-
-/* ASM:
-wParam          = dword ptr -84h
-lParam          = byte ptr -80h
-nIDDlgItem      = dword ptr  4
-arg_4           = dword ptr  8
-arg_8           = dword ptr  0Ch
-
-mov     eax, [esp+nIDDlgItem]
-mov     ecx, [ecx]
-sub     esp, 84h
-push    ebx
-push    ebp
-push    edi
-push    eax             ; nIDDlgItem
-push    ecx             ; hDlg
-call    ds:__imp_GetDlgItem
-mov     ebx, eax
-test    ebx, ebx
-jz      loc_696ACB
-mov     edx, [esp+90h+arg_4]
-mov     ecx, ebx        ; hWnd
-push    edx             ; int
-or      edx, 0FFFFFFFFh ; wParam
-call    FindListBoxItem
-mov     ebp, ds:__imp_SendMessageA
-lea     ecx, [esp+90h+lParam]
-push    ecx             ; lParam
-push    eax             ; wParam
-push    4BDh            ; Msg
-push    ebx             ; hWnd
-mov     [esp+0A0h+wParam], eax
-call    ebp ; __imp_SendMessageA
-lea     edx, [esp+90h+lParam]
-push    2Dh ; '-'       ; Val
-push    edx             ; Str
-call    _strchr
-add     esp, 8
-test    eax, eax
-jz      loc_696ACB
-mov     edi, [esp+90h+arg_8]
-inc     eax
-push    eax             ; void *
-push    edi             ; void *
-call    __strcmpi
-add     esp, 8
-test    eax, eax
-jz      loc_696ACB
-push    esi
-push    4A3h            ; int
-push    offset g_Str_File_SerialEd_cpp ; "D:\\ra2mdpost\\SerialEd.cpp"
-xor     edx, edx
-mov     ecx, offset g_Str_TXT_CUSTOM ; "TXT_CUSTOM"
-call    GetStringCSF
-push    eax
-lea     eax, [esp+98h+lParam]
-push    offset aLs      ; "%ls "
-push    eax             ; Buffer
-call    _sprintf
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-add     esp, 0Ch
-lea     edx, [esp+94h+lParam]
-repne scasb
-not     ecx
-sub     edi, ecx
-push    eax             ; lParam
-mov     esi, edi
-mov     edi, edx
-mov     edx, ecx
-or      ecx, 0FFFFFFFFh
-repne scasb
-mov     ecx, edx
-dec     edi
-shr     ecx, 2
-rep movsd
-mov     eax, [esp+98h+wParam]
-mov     ecx, edx
-and     ecx, 3
-push    eax             ; wParam
-push    144h            ; Msg
-push    ebx             ; hWnd
-rep movsb
-call    ebp ; __imp_SendMessageA
-lea     ecx, [esp+94h+lParam]
-push    ecx             ; lParam
-push    0               ; wParam
-push    4BCh            ; Msg
-push    ebx             ; hWnd
-call    ebp ; __imp_SendMessageA
-mov     edx, [esp+94h+arg_4]
-mov     esi, eax
-push    edx             ; lParam
-push    esi             ; wParam
-push    151h            ; Msg
-push    ebx             ; hWnd
-call    ebp ; __imp_SendMessageA
-push    0               ; lParam
-push    esi             ; wParam
-push    14Eh            ; Msg
-push    ebx             ; hWnd
-call    ebp ; __imp_SendMessageA
-pop     esi
-
-loc_696ACB:                             ; CODE XREF: ListBox__SetCustomEntry+1B↑j
-; ListBox__SetCustomEntry+5C↑j ...
-pop     edi
-pop     ebp
-pop     ebx
-add     esp, 84h
-retn    0Ch
-*/
 } }
 // 0x69DFC0
 namespace gamemd { int SidebarClass::startButtonFlash(int a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_69DFC0(int this, int a2, int a3, char a4)
 {
-  if ( *(_DWORD *)(this + 56) )
-    return 0;
-  *(_DWORD *)(this + 56) = a2;
-  *(_DWORD *)(this + 60) = a3 + a2;
-  *(_BYTE *)(this + 52) = a4;
-  return 1;
+  if ( *(_DWORD *)(this + 56) ) /*0x69dfc0*/
+    return 0; /*0x69dfe3*/
+  *(_DWORD *)(this + 56) = a2; /*0x69dfcf*/
+  *(_DWORD *)(this + 60) = a3 + a2; /*0x69dfd4*/
+  *(_BYTE *)(this + 52) = a4; /*0x69dfdb*/
+  return 1; /*0x69dfe0*/
 }
-
-/* ASM:
-mov     eax, [ecx+38h]
-test    eax, eax
-jnz     short loc_69DFE3
-mov     eax, [esp+arg_0]
-mov     edx, [esp+arg_4]
-mov     [ecx+38h], eax
-add     eax, edx
-mov     [ecx+3Ch], eax
-mov     al, [esp+arg_8]
-mov     [ecx+34h], al
-mov     al, 1
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_69DFE3:                             ; CODE XREF: SidebarClass__startButtonFlash+5↑j
-xor     al, al
-retn    0Ch
-*/
 } }
 // 0x69E010
 namespace gamemd { int SidebarClass::updateFlashTimer() {
@@ -10344,72 +4001,34 @@ char __thiscall sub_69E010(int this)
   int v3; // eax
   int v4; // edx
 
-  if ( *(_BYTE *)(this + 30) )
+  if ( *(_BYTE *)(this + 30) ) /*0x69e010*/
   {
-    if ( *(_DWORD *)(this + 56) )
+    if ( *(_DWORD *)(this + 56) ) /*0x69e019*/
     {
-      *(_BYTE *)(this + 52) = 0;
-      *(_DWORD *)(this + 60) = 0;
-      *(_DWORD *)(this + 56) = 0;
-      return 1;
+      *(_BYTE *)(this + 52) = 0; /*0x69e01e*/
+      *(_DWORD *)(this + 60) = 0; /*0x69e021*/
+      *(_DWORD *)(this + 56) = 0; /*0x69e024*/
+      return 1; /*0x69e029*/
     }
   }
   else
   {
-    v2 = *(_DWORD *)(this + 60);
-    if ( v2 )
+    v2 = *(_DWORD *)(this + 60); /*0x69e02a*/
+    if ( v2 ) /*0x69e02f*/
     {
-      v3 = v2 - 1;
-      *(_DWORD *)(this + 60) = v3;
-      if ( !v3 )
+      v3 = v2 - 1; /*0x69e031*/
+      *(_DWORD *)(this + 60) = v3; /*0x69e034*/
+      if ( !v3 ) /*0x69e037*/
       {
-        v4 = *(_DWORD *)(this + 56);
-        *(_BYTE *)(this + 52) = *(_BYTE *)(this + 52) == 0;
-        *(_DWORD *)(this + 60) = v4;
-        return 1;
+        v4 = *(_DWORD *)(this + 56); /*0x69e03e*/
+        *(_BYTE *)(this + 52) = *(_BYTE *)(this + 52) == 0; /*0x69e044*/
+        *(_DWORD *)(this + 60) = v4; /*0x69e047*/
+        return 1; /*0x69e04c*/
       }
     }
   }
-  return 0;
+  return 0; /*0x69e029*/
 }
-
-/* ASM:
-mov     al, [ecx+1Eh]
-xor     edx, edx
-cmp     al, dl
-jz      short loc_69E02A
-cmp     [ecx+38h], edx
-jz      short loc_69E04D
-mov     [ecx+34h], dl
-mov     [ecx+3Ch], edx
-mov     [ecx+38h], edx
-mov     al, 1
-retn
-; ---------------------------------------------------------------------------
-
-loc_69E02A:                             ; CODE XREF: SidebarClass__updateFlashTimer+7↑j
-mov     eax, [ecx+3Ch]
-cmp     eax, edx
-jz      short loc_69E04D
-dec     eax
-cmp     eax, edx
-mov     [ecx+3Ch], eax
-jnz     short loc_69E04D
-mov     al, [ecx+34h]
-cmp     al, dl
-mov     edx, [ecx+38h]
-setz    al
-mov     [ecx+34h], al
-mov     [ecx+3Ch], edx
-mov     al, 1
-retn
-; ---------------------------------------------------------------------------
-
-loc_69E04D:                             ; CODE XREF: SidebarClass__updateFlashTimer+C↑j
-; SidebarClass__updateFlashTimer+1F↑j ...
-xor     al, al
-retn
-*/
 } }
 // 0x6A4E60
 namespace gamemd { void* TabClass::initTabData() {
@@ -10422,115 +4041,52 @@ char *__thiscall sub_6A4E60(char *this)
   int v5; // ebp
   char v7; // [esp+13h] [ebp-1h] BYREF
 
-  RadarClass::Create((int)this);
-  v2 = this + 5444;
-  v3 = 4;
-  do
+  RadarClass::Create((int)this); /*0x6a4e67*/
+  v2 = this + 5444; /*0x6a4e6c*/
+  v3 = 4; /*0x6a4e72*/
+  do /*0x6a4eac*/
   {
-    *(_DWORD *)v2 = 0;
-    v2[4] = 0;
-    *((_DWORD *)v2 + 2) = MEMORY[0xA8ED84];
-    *((_DWORD *)v2 + 4) = 0;
-    *((_DWORD *)v2 + 5) = 0;
-    *((_DWORD *)v2 + 6) = 1;
-    Array::ForEach((int)(v2 + 88), 52, 75, TabClass::drawTabBackground);
-    v2 += 3988;
-    --v3;
+    *(_DWORD *)v2 = 0; /*0x6a4e79*/
+    v2[4] = 0; /*0x6a4e7b*/
+    *((_DWORD *)v2 + 2) = MEMORY[0xA8ED84]; /*0x6a4e8f*/
+    *((_DWORD *)v2 + 4) = 0; /*0x6a4e92*/
+    *((_DWORD *)v2 + 5) = 0; /*0x6a4e96*/
+    *((_DWORD *)v2 + 6) = 1; /*0x6a4e99*/
+    Array::ForEach((int)(v2 + 88), 52, 75, TabClass::drawTabBackground); /*0x6a4ea0*/
+    v2 += 3988; /*0x6a4ea5*/
+    --v3; /*0x6a4eab*/
   }
-  while ( v3 );
-  *((_DWORD *)this + 5351) = 0;
-  *((_DWORD *)this + 5352) = 0;
-  *(this + 21412) = 0;
-  *(this + 21413) = 0;
-  *(this + 21414) = 1;
-  *(this + 21416) = 0;
-  *(this + 21780) = 0;
-  *(this + 21781) = 0;
-  *(_DWORD *)this = &SidebarClass::`vftable';
-  v4 = this + 5444;
-  v5 = 4;
-  do
+  while ( v3 ); /*0x6a4eac*/
+  *((_DWORD *)this + 5351) = 0; /*0x6a4eae*/
+  *((_DWORD *)this + 5352) = 0; /*0x6a4eb4*/
+  *(this + 21412) = 0; /*0x6a4eba*/
+  *(this + 21413) = 0; /*0x6a4ec0*/
+  *(this + 21414) = 1; /*0x6a4ec6*/
+  *(this + 21416) = 0; /*0x6a4ecd*/
+  *(this + 21780) = 0; /*0x6a4ed3*/
+  *(this + 21781) = 0; /*0x6a4ed9*/
+  *(_DWORD *)this = &SidebarClass::`vftable'; /*0x6a4edf*/
+  v4 = this + 5444; /*0x6a4ee5*/
+  v5 = 4; /*0x6a4eeb*/
+  do /*0x6a4f07*/
   {
-    if ( v4 )
-      TabClass::updateTabProduction(v4, (int)&v7);
-    v4 += 3988;
-    --v5;
+    if ( v4 ) /*0x6a4ef2*/
+      TabClass::updateTabProduction(v4, (int)&v7); /*0x6a4efb*/
+    v4 += 3988; /*0x6a4f00*/
+    --v5; /*0x6a4f06*/
   }
-  while ( v5 );
-  return this;
+  while ( v5 ); /*0x6a4f07*/
+  return this; /*0x6a4f0b*/
 }
-
-/* ASM:
-push    ecx
-push    ebx
-push    ebp
-push    esi
-push    edi
-mov     edi, ecx
-call    RadarClass__Create
-lea     esi, [edi+1544h]
-mov     ebp, 4
-xor     ebx, ebx
-
-loc_6A4E79:                             ; CODE XREF: TabClass__initTabData+4C↓j
-mov     [esi], ebx
-mov     [esi+4], bl
-mov     eax, dword_A8ED54+30h
-push    offset TabClass__drawTabBackground
-push    4Bh ; 'K'
-lea     ecx, [esi+58h]
-push    34h ; '4'
-mov     [esi+8], eax
-mov     [esi+10h], ebx
-push    ecx
-mov     [esi+14h], ebx
-mov     dword ptr [esi+18h], 1
-call    Array__ForEach
-add     esi, 0F94h
-dec     ebp
-jnz     short loc_6A4E79
-mov     [edi+539Ch], ebx
-mov     [edi+53A0h], ebx
-mov     [edi+53A4h], bl
-mov     [edi+53A5h], bl
-mov     byte ptr [edi+53A6h], 1
-mov     [edi+53A8h], bl
-mov     [edi+5514h], bl
-mov     [edi+5515h], bl
-mov     dword ptr [edi], offset ??_7SidebarClass@@6B@ ; const SidebarClass::`vftable'
-lea     esi, [edi+1544h]
-mov     ebp, 4
-
-loc_6A4EF0:                             ; CODE XREF: TabClass__initTabData+A7↓j
-cmp     esi, ebx
-jz      short loc_6A4F00
-lea     edx, [esp+14h+var_1]
-mov     ecx, esi
-push    edx
-call    TabClass__updateTabProduction
-
-loc_6A4F00:                             ; CODE XREF: TabClass__initTabData+92↑j
-add     esi, 0F94h
-dec     ebp
-jnz     short loc_6A4EF0
-mov     eax, edi
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-pop     ecx
-retn
-*/
 } }
 // 0x6A5310
 namespace gamemd { int SidebarClass::Init() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x6a5310
 char __thiscall SidebarClass::Init(_DWORD *this)
 {
   int v2; // eax
   int v3; // ebp
-  int *v4; // esi
+  _DWORD *v4; // esi
   int v5; // eax
   int v6; // edx
   int v7; // edx
@@ -10540,7 +4096,7 @@ char __thiscall SidebarClass::Init(_DWORD *this)
   _DWORD *v11; // esi
   int v12; // eax
   int v13; // ecx
-  #402 *v14; // edx
+  HouseClass *v14; // edx
   int i; // ebx
   int v16; // esi
   int v17; // eax
@@ -10554,638 +4110,225 @@ char __thiscall SidebarClass::Init(_DWORD *this)
   int v25; // ecx
   int v26; // ebx
   int v27; // ecx
-  #402 *v28; // esi
+  HouseClass *v28; // esi
   int v30; // [esp+Ch] [ebp-4h]
 
-  SidebarClass::CreateScrollButtons();
-  ((void (__thiscall *)(_DWORD *))SidebarClass::InitPositions)(this);
-  SidebarClass::CalcBounds(0);
-  LOBYTE(v2) = HIBYTE(dword_A8ED54[5]);
-  if ( !HIBYTE(dword_A8ED54[5]) )
+  SidebarClass::CreateScrollButtons(); /*0x6a5315*/
+  SidebarClass::InitPositions(this); /*0x6a531c*/
+  SidebarClass::CalcBounds(0); /*0x6a5326*/
+  LOBYTE(v2) = MEMORY[0xA8ED6B]; /*0x6a532b*/
+  if ( !MEMORY[0xA8ED6B] ) /*0x6a5332*/
   {
-    dword_A8ED54[127383] = dword_A8ED54[127459];
-    BYTE1(dword_A8ED54[127386]) = 1;
-    dword_A8ED54[127388] = 101;
-    dword_A8ED54[127382] = dword_A8ED54[127458];
-    dword_A8ED54[127396] = -480;
-    dword_A8ED54[127397] = 0;
-    LOBYTE(dword_A8ED54[127398]) = 1;
-    dword_A8ED54[127399] = MEMORY[0x87F6C0][3];
-    BYTE1(dword_A8ED54[127390]) = 0;
-    dword_A8ED54[127391] = 1;
-    LOBYTE(dword_A8ED54[127395]) = 1;
-    SHA1::Reset((int)&dword_A8ED54[127379]);
-    dword_A8ED54[123948] = dword_A8ED54[127382] + dword_A8ED54[127460];
-    BYTE1(dword_A8ED54[123952]) = 1;
-    dword_A8ED54[123954] = 102;
-    dword_A8ED54[123949] = dword_A8ED54[127383];
-    dword_A8ED54[123962] = -480;
-    dword_A8ED54[123963] = 0;
-    LOBYTE(dword_A8ED54[123964]) = 1;
-    dword_A8ED54[123965] = MEMORY[0x87F6C0][3];
-    BYTE1(dword_A8ED54[123956]) = 0;
-    dword_A8ED54[123957] = 1;
-    LOBYTE(dword_A8ED54[123961]) = 1;
-    SHA1::Reset((int)&dword_A8ED54[123945]);
-    v3 = 0;
-    v4 = &dword_A8ED54[123846];
-    do
+    MEMORY[0xB0B3B0] = MEMORY[0xB0B4E0]; /*0x6a534b*/
+    MEMORY[0xB0B3BD] = 1; /*0x6a5360*/
+    MEMORY[0xB0B3C4] = 101; /*0x6a5367*/
+    MEMORY[0xB0B3AC] = MEMORY[0xB0B4DC]; /*0x6a5371*/
+    MEMORY[0xB0B3E4] = -480; /*0x6a5376*/
+    MEMORY[0xB0B3E8] = 0; /*0x6a537c*/
+    MEMORY[0xB0B3EC] = 1; /*0x6a5382*/
+    MEMORY[0xB0B3F0] = MEMORY[0x87F6CC]; /*0x6a5389*/
+    MEMORY[0xB0B3CD] = 0; /*0x6a538f*/
+    MEMORY[0xB0B3D0] = 1; /*0x6a5395*/
+    MEMORY[0xB0B3E0] = 1; /*0x6a539b*/
+    SHA1::Reset((int)MEMORY[0xB0B3A0]); /*0x6a53a2*/
+    MEMORY[0xB07E04] = MEMORY[0xB0B3AC] + MEMORY[0xB0B4E4]; /*0x6a53bf*/
+    MEMORY[0xB07E15] = 1; /*0x6a53ca*/
+    MEMORY[0xB07E1C] = 102; /*0x6a53d1*/
+    MEMORY[0xB07E08] = MEMORY[0xB0B3B0]; /*0x6a53db*/
+    MEMORY[0xB07E3C] = -480; /*0x6a53e1*/
+    MEMORY[0xB07E40] = 0; /*0x6a53e7*/
+    MEMORY[0xB07E44] = 1; /*0x6a53ed*/
+    MEMORY[0xB07E48] = MEMORY[0x87F6CC]; /*0x6a53f4*/
+    MEMORY[0xB07E25] = 0; /*0x6a53f9*/
+    MEMORY[0xB07E28] = 1; /*0x6a53ff*/
+    MEMORY[0xB07E38] = 1; /*0x6a5405*/
+    SHA1::Reset((int)MEMORY[0xB07DF8]); /*0x6a540c*/
+    v3 = 0; /*0x6a5411*/
+    v4 = &MEMORY[0xB07C6C]; /*0x6a5413*/
+    do /*0x6a5484*/
     {
-      v5 = dword_A8ED54[127461];
-      v6 = v3 * dword_A8ED54[127463];
-      *((_BYTE *)v4 - 7) = 1;
-      v7 = v5 + v6;
-      v8 = dword_A8ED54[127462];
-      *v4 = v3 + 203;
-      v9 = MEMORY[0x87F6C0][3];
-      *(v4 - 6) = v7;
-      *(v4 - 5) = v8;
-      v4[8] = -480;
-      v4[9] = 0;
-      *((_BYTE *)v4 + 40) = 1;
-      v4[11] = v9;
-      *((_BYTE *)v4 + 9) = 0;
-      v4[3] = 2;
-      *((_BYTE *)v4 + 28) = 1;
-      DialogControl::Show((_BYTE *)v4 - 36);
-      SHA1::Reset((int)(v4 - 9));
-      v4 += 24;
-      ++v3;
+      v5 = MEMORY[0xB0B4E8]; /*0x6a5422*/
+      v6 = v3 * MEMORY[0xB0B4F0]; /*0x6a5427*/
+      *((_BYTE *)v4 - 7) = 1; /*0x6a5430*/
+      v7 = v5 + v6; /*0x6a5434*/
+      v8 = MEMORY[0xB0B4EC]; /*0x6a5436*/
+      *v4 = v3 + 203; /*0x6a543b*/
+      v9 = MEMORY[0x87F6CC]; /*0x6a543d*/
+      *(v4 - 6) = v7; /*0x6a5443*/
+      *(v4 - 5) = v8; /*0x6a5446*/
+      v4[8] = -480; /*0x6a5449*/
+      v4[9] = 0; /*0x6a5450*/
+      *((_BYTE *)v4 + 40) = 1; /*0x6a5453*/
+      v4[11] = v9; /*0x6a5457*/
+      *((_BYTE *)v4 + 9) = 0; /*0x6a545d*/
+      v4[3] = 2; /*0x6a5461*/
+      *((_BYTE *)v4 + 28) = 1; /*0x6a546a*/
+      DialogControl::Show((_BYTE *)v4 - 36); /*0x6a546e*/
+      SHA1::Reset((int)(v4 - 9)); /*0x6a5475*/
+      v4 += 24; /*0x6a547a*/
+      ++v3; /*0x6a547d*/
     }
-    while ( (int)v4 < (int)&dword_A8ED54[123942] );
-    BYTE1(dword_A8ED54[127356]) = 1;
-    dword_A8ED54[127358] = 201;
-    LOBYTE(dword_A8ED54[127368]) = 1;
-    dword_A8ED54[127369] = MEMORY[0x87F6C0][3];
-    dword_A8ED54[127357] = 85;
-    SHA1::Reset((int)&dword_A8ED54[127349]);
-    BYTE1(dword_A8ED54[127412]) = 1;
-    dword_A8ED54[127414] = 200;
-    LOBYTE(dword_A8ED54[127424]) = 1;
-    dword_A8ED54[127425] = MEMORY[0x87F6C0][3];
-    dword_A8ED54[127413] = 85;
-    SHA1::Reset((int)&dword_A8ED54[127405]);
-    v10 = 0;
-    v11 = this + 1370;
-    do
+    while ( (int)v4 < (int)((_DWORD *)&MEMORY[0xB07DE8] + 1) ); /*0x6a5484*/
+    MEMORY[0xB0B345] = 1; /*0x6a5496*/
+    MEMORY[0xB0B34C] = 201; /*0x6a549d*/
+    MEMORY[0xB0B374] = 1; /*0x6a54a7*/
+    MEMORY[0xB0B378] = MEMORY[0x87F6CC]; /*0x6a54ae*/
+    MEMORY[0xB0B348] = 85; /*0x6a54b4*/
+    SHA1::Reset((int)MEMORY[0xB0B328]); /*0x6a54ba*/
+    MEMORY[0xB0B425] = 1; /*0x6a54c9*/
+    MEMORY[0xB0B42C] = 200; /*0x6a54d0*/
+    MEMORY[0xB0B454] = 1; /*0x6a54da*/
+    MEMORY[0xB0B458] = MEMORY[0x87F6CC]; /*0x6a54e1*/
+    MEMORY[0xB0B428] = 85; /*0x6a54e6*/
+    SHA1::Reset((int)MEMORY[0xB0B408]); /*0x6a54ec*/
+    v10 = 0; /*0x6a54f1*/
+    v11 = this + 1370; /*0x6a54f5*/
+    do /*0x6a553b*/
     {
-      *(v11 - 1) = dword_A8ED54[127464];
-      *v11 = dword_A8ED54[127465];
-      v12 = dword_A8ED54[127468];
-      v11[1] = 0;
-      v11[2] = 0;
-      v11[3] = 60;
-      v11[4] = v12;
-      ((void (__stdcall *)(int))SidebarClass::InitCameoGrid)(v10++);
-      v11 += 997;
+      *(v11 - 1) = MEMORY[0xB0B4F4]; /*0x6a5502*/
+      *v11 = MEMORY[0xB0B4F8]; /*0x6a550e*/
+      v12 = MEMORY[0xB0B504]; /*0x6a5510*/
+      v11[1] = 0; /*0x6a5519*/
+      v11[2] = 0; /*0x6a551b*/
+      v11[3] = 60; /*0x6a5523*/
+      v11[4] = v12; /*0x6a5529*/
+      SidebarClass::InitCameoGrid(v10++); /*0x6a552c*/
+      v11 += 997; /*0x6a5532*/
     }
-    while ( v10 < 4 );
-    (*(void (__thiscall **)(_DWORD *))(*this + 136))(this);
-    SidebarClass::CalcBounds(1);
-    if ( *((_BYTE *)this + 21413) )
+    while ( v10 < 4 ); /*0x6a553b*/
+    (*(void (__thiscall **)(_DWORD *))(*this + 136))(this); /*0x6a5541*/
+    SidebarClass::CalcBounds(1); /*0x6a554b*/
+    if ( *((_BYTE *)this + 21413) ) /*0x6a5550*/
     {
-      (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 216))(this, 0);
-      (*(void (__thiscall **)(_DWORD *, int))(*this + 216))(this, 1);
+      (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 216))(this, 0); /*0x6a5560*/
+      (*(void (__thiscall **)(_DWORD *, int))(*this + 216))(this, 1); /*0x6a556c*/
     }
-    *(this + 5444) = 0;
-    LOBYTE(v2) = MEMORY[0x87F7E8][536212];
-    if ( MEMORY[0x87F7E8][536212] == 3 || MEMORY[0x87F7E8][536212] == 4 )
+    *(this + 5444) = 0; /*0x6a5574*/
+    LOBYTE(v2) = MEMORY[0xA8B238][0]; /*0x6a557a*/
+    if ( MEMORY[0xA8B238][0] == 3 || MEMORY[0xA8B238][0] == 4 ) /*0x6a5587*/
     {
-      v13 = 0;
-      if ( MEMORY[0x87F7E8][524948] <= 0 )
+      v13 = 0; /*0x6a5595*/
+      if ( HouseClass_Count <= 0 ) /*0x6a5599*/
       {
 LABEL_17:
-        v2 = 0;
+        v2 = 0; /*0x6a55d9*/
       }
       else
       {
-        v14 = (#402 *)MEMORY[0x87F7E8][524945];
-        while ( 1 )
+        v14 = HouseClass_Array; /*0x6a559b*/
+        while ( 1 ) /*0x6a55a5*/
         {
-          v2 = *(_DWORD *)v14;
-          if ( *(_DWORD *)v14 )
+          v2 = *(_DWORD *)v14->__pad_0; /*0x6a55a5*/
+          if ( *(_DWORD *)v14->__pad_0 ) /*0x6a55a5*/
           {
-            if ( *(_BYTE *)(*(_DWORD *)(v2 + 52) + 422) != 1 && v2 != dword_A8ED54[51473] && *(_BYTE *)(v2 + 492) )
-              break;
+            if ( *(_BYTE *)(*(_DWORD *)(v2 + 52) + 422) != 1 && v2 != MEMORY[0xAC1198] && *(_BYTE *)(v2 + 492) ) /*0x6a55bf*/
+              break; /*0x6a55bf*/
           }
-          ++v13;
-          v14 = (#402 *)((char *)v14 + 4);
-          if ( v13 >= MEMORY[0x87F7E8][524948] )
-            goto LABEL_17;
+          ++v13; /*0x6a55cf*/
+          v14 = (HouseClass *)((char *)v14 + 4); /*0x6a55d0*/
+          if ( v13 >= HouseClass_Count ) /*0x6a55d5*/
+            goto LABEL_17; /*0x6a55d5*/
         }
       }
-      *(this + 5355) = v2;
-      for ( i = 0; i < 8; i = *(this + 5444) )
+      *(this + 5355) = v2; /*0x6a55db*/
+      for ( i = 0; i < 8; i = *(this + 5444) ) /*0x6a55e1*/
       {
-        v16 = *(this + i + 5355);
-        if ( !v16 )
-          break;
-        v17 = 0;
-        v18 = (_DWORD *)(v16 + 21476);
-        v19 = 20;
-        do
+        v16 = *(this + i + 5355); /*0x6a55e7*/
+        if ( !v16 ) /*0x6a55f0*/
+          break; /*0x6a55f0*/
+        v17 = 0; /*0x6a55fc*/
+        v18 = (_DWORD *)(v16 + 21476); /*0x6a55fe*/
+        v19 = 20; /*0x6a5604*/
+        do /*0x6a560f*/
         {
-          v17 += *v18++;
-          --v19;
+          v17 += *v18++; /*0x6a5609*/
+          --v19; /*0x6a560e*/
         }
-        while ( v19 );
-        v20 = (_DWORD *)(v16 + 21560);
-        v21 = 20;
-        do
+        while ( v19 ); /*0x6a560f*/
+        v20 = (_DWORD *)(v16 + 21560); /*0x6a5611*/
+        v21 = 20; /*0x6a5617*/
+        do /*0x6a5622*/
         {
-          v17 += *v20++;
-          --v21;
+          v17 += *v20++; /*0x6a561c*/
+          --v21; /*0x6a5621*/
         }
-        while ( v21 );
-        *(this + i + 5363) = v17;
-        *(this + *(this + 5444) + 5371) = *(_DWORD *)(v16 + 744)
+        while ( v21 ); /*0x6a5622*/
+        *(this + i + 5363) = v17; /*0x6a5626*/
+        *(this + *(this + 5444) + 5371) = *(_DWORD *)(v16 + 744) /*0x6a5659*/
                                         + *(_DWORD *)(v16 + 752)
                                         + *(_DWORD *)(v16 + 756)
                                         + *(_DWORD *)(v16 + 760);
-        v22 = (*(int (__stdcall **)(int))(*(_DWORD *)(v16 + 36) + 24))(v16 + 36);
-        if ( v22 < 0 )
-          v22 = 0;
-        *(this + *(this + 5444) + 5379) = v22;
-        if ( v16 == dword_A8ED54[51473] )
+        v22 = (*(int (__stdcall **)(int))(*(_DWORD *)(v16 + 36) + 24))(v16 + 36); /*0x6a5669*/
+        if ( v22 < 0 ) /*0x6a566e*/
+          v22 = 0; /*0x6a5670*/
+        *(this + *(this + 5444) + 5379) = v22; /*0x6a567a*/
+        if ( v16 == MEMORY[0xAC1198] ) /*0x6a569a*/
         {
-          v23 = FindBuildingAnimByName(g_INI_Key_LightGrey, 1);
+          v23 = FindBuildingAnimByName(MEMORY[0x836ECC], 1); /*0x6a56a6*/
         }
-        else if ( *(_BYTE *)(v16 + 501) )
+        else if ( *(_BYTE *)(v16 + 501) ) /*0x6a56ad*/
         {
-          v23 = FindBuildingAnimByName(g_INI_Key_Grey, 1);
+          v23 = FindBuildingAnimByName(g_INI_Key_Grey, 1); /*0x6a56c1*/
         }
         else
         {
-          v23 = *(_DWORD *)(dword_A8ED54[121312] + 4 * *(_DWORD *)(v16 + 90196));
+          v23 = *((_DWORD *)MEMORY[0xB054D4] + *(_DWORD *)(v16 + 90196)); /*0x6a56d3*/
         }
-        *(this + *(this + 5444) + 5387) = v23;
-        *(this + *(this + 5444) + 5395) = 0;
-        *(this + *(this + 5444) + 5403) = 0;
-        *(this + *(this + 5444) + 5411) = 0;
-        *(this + *(this + 5444) + 5419) = 0;
-        *(this + *(this + 5444) + 5427) = 0;
-        *(this + *(this + 5444) + 5435) = 0;
-        if ( MEMORY[0x87F7E8][536212] == 4 )
+        *(this + *(this + 5444) + 5387) = v23; /*0x6a56dc*/
+        *(this + *(this + 5444) + 5395) = 0; /*0x6a56e9*/
+        *(this + *(this + 5444) + 5403) = 0; /*0x6a56f6*/
+        *(this + *(this + 5444) + 5411) = 0; /*0x6a5703*/
+        *(this + *(this + 5444) + 5419) = 0; /*0x6a5710*/
+        *(this + *(this + 5444) + 5427) = 0; /*0x6a571d*/
+        *(this + *(this + 5444) + 5435) = 0; /*0x6a572a*/
+        if ( MEMORY[0xA8B238][0] == 4 ) /*0x6a5739*/
         {
-          v24 = (_DWORD *)SidebarClass::FindProductionData((void *)(v16 + 90154));
-          if ( v24 )
+          v24 = (_DWORD *)SidebarClass::FindProductionData(v16 + 90154); /*0x6a5741*/
+          if ( v24 ) /*0x6a5748*/
           {
-            *(this + *(this + 5444) + 5395) = v24[7];
-            *(this + *(this + 5444) + 5403) = v24[4];
-            *(this + *(this + 5444) + 5411) = v24[2];
-            *(this + *(this + 5444) + 5419) = v24[3];
-            *(this + *(this + 5444) + 5427) = v24[8];
-            *(this + *(this + 5444) + 5435) = v24[12];
-            __3_YAXPAX_Z(v24);
+            *(this + *(this + 5444) + 5395) = v24[7]; /*0x6a5754*/
+            *(this + *(this + 5444) + 5403) = v24[4]; /*0x6a5764*/
+            *(this + *(this + 5444) + 5411) = v24[2]; /*0x6a5774*/
+            *(this + *(this + 5444) + 5419) = v24[3]; /*0x6a5784*/
+            *(this + *(this + 5444) + 5427) = v24[8]; /*0x6a5794*/
+            *(this + *(this + 5444) + 5435) = v24[12]; /*0x6a57a4*/
+            __3_YAXPAX_Z(v24); /*0x6a57ab*/
           }
         }
-        v30 = 0;
-        v25 = *(this + 5444) + 1;
-        *(this + 5444) = v25;
-        v26 = v25;
-        v27 = 0;
-        if ( MEMORY[0x87F7E8][524948] > 0 )
+        v30 = 0; /*0x6a57b9*/
+        v25 = *(this + 5444) + 1; /*0x6a57bd*/
+        *(this + 5444) = v25; /*0x6a57be*/
+        v26 = v25; /*0x6a57ca*/
+        v27 = 0; /*0x6a57cc*/
+        if ( HouseClass_Count > 0 ) /*0x6a57d0*/
         {
-          v28 = (#402 *)MEMORY[0x87F7E8][524945];
-          do
+          v28 = HouseClass_Array; /*0x6a57d2*/
+          do /*0x6a5814*/
           {
-            v2 = *(_DWORD *)v28;
-            if ( *(_DWORD *)v28
+            v2 = *(_DWORD *)v28->__pad_0; /*0x6a57dc*/
+            if ( *(_DWORD *)v28->__pad_0 /*0x6a57f6*/
               && *(_BYTE *)(*(_DWORD *)(v2 + 52) + 422) != 1
-              && v2 != dword_A8ED54[51473]
+              && v2 != MEMORY[0xAC1198]
               && *(_BYTE *)(v2 + 492) )
             {
-              if ( v30 == v26 )
-                goto LABEL_44;
-              ++v30;
+              if ( v30 == v26 ) /*0x6a5805*/
+                goto LABEL_44; /*0x6a5805*/
+              ++v30; /*0x6a580a*/
             }
-            ++v27;
-            v28 = (#402 *)((char *)v28 + 4);
+            ++v27; /*0x6a580e*/
+            v28 = (HouseClass *)((char *)v28 + 4); /*0x6a580f*/
           }
-          while ( v27 < MEMORY[0x87F7E8][524948] );
+          while ( v27 < HouseClass_Count ); /*0x6a5814*/
         }
-        v2 = 0;
+        v2 = 0; /*0x6a5818*/
 LABEL_44:
-        *(this + v26 + 5355) = v2;
+        *(this + v26 + 5355) = v2; /*0x6a581a*/
       }
     }
-    *((_BYTE *)this + 21772) = 0;
+    *((_BYTE *)this + 21772) = 0; /*0x6a5831*/
   }
-  return v2;
+  return v2; /*0x6a5839*/
 }
-
-/* ASM:
-push    ecx
-push    ebx
-push    edi
-mov     edi, ecx
-call    SidebarClass__CreateScrollButtons
-mov     ecx, edi
-call    SidebarClass__InitPositions
-xor     ebx, ebx
-mov     ecx, edi
-push    ebx
-call    SidebarClass__CalcBounds
-mov     al, byte ptr dword_A8ED54+17h
-test    al, al
-jnz     loc_6A5839
-mov     ecx, dword_A8ED54+7C78Ch
-mov     eax, dword_A8ED54+7C788h
-mov     edx, ds:87F6CCh
-push    ebp
-push    esi
-mov     dword_A8ED54+7C65Ch, ecx
-mov     esi, 0FFFFFE20h
-mov     ebp, 1
-mov     ecx, (offset dword_A8ED54+7C64Ch)
-mov     byte ptr dword_A8ED54+7C669h, 1
-mov     dword_A8ED54+7C670h, 65h ; 'e'
-mov     dword_A8ED54+7C658h, eax
-mov     dword_A8ED54+7C690h, esi
-mov     dword_A8ED54+7C694h, ebx
-mov     byte ptr dword_A8ED54+7C698h, 1
-mov     dword_A8ED54+7C69Ch, edx
-mov     byte ptr dword_A8ED54+7C679h, bl
-mov     dword_A8ED54+7C67Ch, ebp
-mov     byte ptr dword_A8ED54+7C68Ch, 1
-call    SHA1__Reset
-mov     eax, dword_A8ED54+7C658h
-mov     ecx, dword_A8ED54+7C790h
-mov     edx, dword_A8ED54+7C65Ch
-add     ecx, eax
-mov     eax, ds:87F6CCh
-mov     dword_A8ED54+790B0h, ecx
-mov     ecx, (offset dword_A8ED54+790A4h)
-mov     byte ptr dword_A8ED54+790C1h, 1
-mov     dword_A8ED54+790C8h, 66h ; 'f'
-mov     dword_A8ED54+790B4h, edx
-mov     dword_A8ED54+790E8h, esi
-mov     dword_A8ED54+790ECh, ebx
-mov     byte ptr dword_A8ED54+790F0h, 1
-mov     dword_A8ED54+790F4h, eax
-mov     byte ptr dword_A8ED54+790D1h, bl
-mov     dword_A8ED54+790D4h, ebp
-mov     byte ptr dword_A8ED54+790E4h, 1
-call    SHA1__Reset
-xor     ebp, ebp
-mov     esi, (offset dword_A8ED54+78F18h)
-jmp     short loc_6A541C
-; ---------------------------------------------------------------------------
-
-loc_6A541A:                             ; CODE XREF: SidebarClass__Init+174↓j
-xor     ebx, ebx
-
-loc_6A541C:                             ; CODE XREF: SidebarClass__Init+108↑j
-mov     edx, dword_A8ED54+7C79Ch
-mov     eax, dword_A8ED54+7C794h
-imul    edx, ebp
-lea     ecx, [ebp+0CBh]
-mov     byte ptr [esi-7], 1
-add     edx, eax
-mov     eax, dword_A8ED54+7C798h
-mov     [esi], ecx
-mov     ecx, ds:87F6CCh
-mov     [esi-18h], edx
-mov     [esi-14h], eax
-mov     dword ptr [esi+20h], 0FFFFFE20h
-mov     [esi+24h], ebx
-mov     byte ptr [esi+28h], 1
-mov     [esi+2Ch], ecx
-lea     ebx, [esi-24h]
-mov     byte ptr [esi+9], 0
-mov     dword ptr [esi+0Ch], 2
-mov     ecx, ebx
-mov     byte ptr [esi+1Ch], 1
-call    DialogControl__Show
-mov     ecx, ebx
-call    SHA1__Reset
-add     esi, 60h ; '`'
-inc     ebp
-cmp     esi, (offset dword_A8ED54+79098h)
-jl      short loc_6A541A
-mov     edx, ds:87F6CCh
-mov     esi, 55h ; 'U'
-mov     ecx, (offset dword_A8ED54+7C5D4h)
-mov     byte ptr dword_A8ED54+7C5F1h, 1
-mov     dword_A8ED54+7C5F8h, 0C9h
-mov     byte ptr dword_A8ED54+7C620h, 1
-mov     dword_A8ED54+7C624h, edx
-mov     dword_A8ED54+7C5F4h, esi
-call    SHA1__Reset
-mov     eax, ds:87F6CCh
-mov     ecx, (offset dword_A8ED54+7C6B4h)
-mov     byte ptr dword_A8ED54+7C6D1h, 1
-mov     dword_A8ED54+7C6D8h, 0C8h
-mov     byte ptr dword_A8ED54+7C700h, 1
-mov     dword_A8ED54+7C704h, eax
-mov     dword_A8ED54+7C6D4h, esi
-call    SHA1__Reset
-xor     ebp, ebp
-xor     ebx, ebx
-lea     esi, [edi+1568h]
-
-loc_6A54FB:                             ; CODE XREF: SidebarClass__Init+22B↓j
-mov     ecx, dword_A8ED54+7C7A0h
-push    ebp
-mov     [esi-4], ecx
-mov     edx, dword_A8ED54+7C7A4h
-lea     ecx, [esi+4]
-mov     [esi], edx
-mov     eax, dword_A8ED54+7C7B0h
-mov     edx, ecx
-xor     ecx, ecx
-mov     [edx], ebx
-mov     [edx+4], ecx
-mov     ecx, 3Ch ; '<'
-mov     [edx+8], ecx
-lea     ecx, [esi-24h]
-mov     [edx+0Ch], eax
-call    SidebarClass__InitCameoGrid
-inc     ebp
-add     esi, 0F94h
-cmp     ebp, 4
-jl      short loc_6A54FB
-mov     eax, [edi]
-mov     ecx, edi
-call    dword ptr [eax+88h]
-push    1
-mov     ecx, edi
-call    SidebarClass__CalcBounds
-mov     al, [edi+53A5h]
-test    al, al
-jz      short loc_6A5572
-mov     edx, [edi]
-push    0
-mov     ecx, edi
-call    dword ptr [edx+0D8h]
-mov     eax, [edi]
-push    1
-mov     ecx, edi
-call    dword ptr [eax+0D8h]
-
-loc_6A5572:                             ; CODE XREF: SidebarClass__Init+248↑j
-xor     ebp, ebp
-mov     [edi+5510h], ebp
-mov     eax, ds:0A8B238h
-cmp     eax, 3
-jz      short loc_6A558D
-cmp     eax, 4
-jnz     loc_6A5830
-
-loc_6A558D:                             ; CODE XREF: SidebarClass__Init+272↑j
-mov     esi, ds:0A80238h
-xor     ebx, ebx
-xor     ecx, ecx
-cmp     esi, ebp
-jle     short loc_6A55D9
-mov     edx, ds:0A8022Ch
-jmp     short loc_6A55A5
-; ---------------------------------------------------------------------------
-
-loc_6A55A3:                             ; CODE XREF: SidebarClass__Init+2C5↓j
-xor     ebp, ebp
-
-loc_6A55A5:                             ; CODE XREF: SidebarClass__Init+291↑j
-mov     eax, [edx]
-cmp     eax, ebp
-jz      short loc_6A55CF
-mov     ebp, [eax+34h]
-cmp     byte ptr [ebp+1A6h], 1
-jz      short loc_6A55CF
-cmp     eax, dword_A8ED54+32444h
-jz      short loc_6A55CF
-cmp     byte ptr [eax+1ECh], 0
-jz      short loc_6A55CF
-xor     ebp, ebp
-cmp     ebx, ebp
-jz      short loc_6A55DB
-inc     ebx
-
-loc_6A55CF:                             ; CODE XREF: SidebarClass__Init+299↑j
-; SidebarClass__Init+2A5↑j ...
-inc     ecx
-add     edx, 4
-cmp     ecx, esi
-jl      short loc_6A55A3
-xor     ebp, ebp
-
-loc_6A55D9:                             ; CODE XREF: SidebarClass__Init+289↑j
-xor     eax, eax
-
-loc_6A55DB:                             ; CODE XREF: SidebarClass__Init+2BC↑j
-mov     [edi+53ACh], eax
-xor     ebx, ebx
-jmp     short loc_6A55E7
-; ---------------------------------------------------------------------------
-
-loc_6A55E5:                             ; CODE XREF: SidebarClass__Init+51A↓j
-xor     ebp, ebp
-
-loc_6A55E7:                             ; CODE XREF: SidebarClass__Init+2D3↑j
-mov     esi, [edi+ebx*4+53ACh]
-cmp     esi, ebp
-jz      loc_6A5830
-jnz     short loc_6A55FC
-xor     eax, eax
-jmp     short loc_6A5624
-; ---------------------------------------------------------------------------
-
-loc_6A55FC:                             ; CODE XREF: SidebarClass__Init+2E6↑j
-xor     eax, eax
-lea     ecx, [esi+53E4h]
-mov     edx, 14h
-
-loc_6A5609:                             ; CODE XREF: SidebarClass__Init+2FF↓j
-add     eax, [ecx]
-add     ecx, 4
-dec     edx
-jnz     short loc_6A5609
-lea     ecx, [esi+5438h]
-mov     edx, 14h
-
-loc_6A561C:                             ; CODE XREF: SidebarClass__Init+312↓j
-add     eax, [ecx]
-add     ecx, 4
-dec     edx
-jnz     short loc_6A561C
-
-loc_6A5624:                             ; CODE XREF: SidebarClass__Init+2EA↑j
-cmp     esi, ebp
-mov     [edi+ebx*4+53CCh], eax
-jnz     short loc_6A5633
-xor     eax, eax
-jmp     short loc_6A5651
-; ---------------------------------------------------------------------------
-
-loc_6A5633:                             ; CODE XREF: SidebarClass__Init+31D↑j
-mov     eax, [esi+2F8h]
-mov     ebx, [esi+2F4h]
-mov     edx, [esi+2F0h]
-mov     ecx, [esi+2E8h]
-add     eax, ebx
-add     eax, edx
-add     eax, ecx
-
-loc_6A5651:                             ; CODE XREF: SidebarClass__Init+321↑j
-mov     ecx, [edi+5510h]
-cmp     esi, ebp
-mov     [edi+ecx*4+53ECh], eax
-jz      short loc_6A5670
-mov     edx, [esi+24h]
-lea     eax, [esi+24h]
-push    eax
-call    dword ptr [edx+18h]
-cmp     eax, ebp
-jge     short loc_6A5672
-
-loc_6A5670:                             ; CODE XREF: SidebarClass__Init+350↑j
-xor     eax, eax
-
-loc_6A5672:                             ; CODE XREF: SidebarClass__Init+35E↑j
-mov     ecx, [edi+5510h]
-cmp     esi, ebp
-mov     [edi+ecx*4+540Ch], eax
-jnz     short loc_6A5694
-mov     edx, 1
-mov     ecx, offset g_INI_Key_Grey ; "Grey"
-call    FindBuildingAnimByName
-jmp     short loc_6A56D6
-; ---------------------------------------------------------------------------
-
-loc_6A5694:                             ; CODE XREF: SidebarClass__Init+371↑j
-cmp     esi, dword_A8ED54+32444h
-jnz     short loc_6A56AD
-mov     edx, 1
-mov     ecx, offset g_INI_Key_LightGrey ; "LightGrey"
-call    FindBuildingAnimByName
-jmp     short loc_6A56D6
-; ---------------------------------------------------------------------------
-
-loc_6A56AD:                             ; CODE XREF: SidebarClass__Init+38A↑j
-mov     al, [esi+1F5h]
-test    al, al
-jz      short loc_6A56C8
-mov     edx, 1
-mov     ecx, offset g_INI_Key_Grey ; "Grey"
-call    FindBuildingAnimByName
-jmp     short loc_6A56D6
-; ---------------------------------------------------------------------------
-
-loc_6A56C8:                             ; CODE XREF: SidebarClass__Init+3A5↑j
-mov     edx, [esi+16054h]
-mov     eax, dword_A8ED54+76780h
-mov     eax, [eax+edx*4]
-
-loc_6A56D6:                             ; CODE XREF: SidebarClass__Init+382↑j
-; SidebarClass__Init+39B↑j ...
-mov     ecx, [edi+5510h]
-mov     [edi+ecx*4+542Ch], eax
-mov     edx, [edi+5510h]
-mov     [edi+edx*4+544Ch], ebp
-mov     eax, [edi+5510h]
-mov     [edi+eax*4+546Ch], ebp
-mov     ecx, [edi+5510h]
-mov     [edi+ecx*4+548Ch], ebp
-mov     edx, [edi+5510h]
-mov     [edi+edx*4+54ACh], ebp
-mov     eax, [edi+5510h]
-mov     [edi+eax*4+54CCh], ebp
-mov     ecx, [edi+5510h]
-mov     [edi+ecx*4+54ECh], ebp
-mov     eax, ds:0A8B238h
-cmp     eax, 4
-jnz     short loc_6A57B3
-lea     ecx, [esi+1602Ah]
-call    SidebarClass__FindProductionData
-cmp     eax, ebp
-jz      short loc_6A57B3
-mov     edx, [edi+5510h]
-mov     ecx, [eax+1Ch]
-push    eax             ; Block
-mov     [edi+edx*4+544Ch], ecx
-mov     edx, [edi+5510h]
-mov     ecx, [eax+10h]
-mov     [edi+edx*4+546Ch], ecx
-mov     edx, [edi+5510h]
-mov     ecx, [eax+8]
-mov     [edi+edx*4+548Ch], ecx
-mov     edx, [edi+5510h]
-mov     ecx, [eax+0Ch]
-mov     [edi+edx*4+54ACh], ecx
-mov     edx, [edi+5510h]
-mov     ecx, [eax+20h]
-mov     [edi+edx*4+54CCh], ecx
-mov     edx, [edi+5510h]
-mov     ecx, [eax+30h]
-mov     [edi+edx*4+54ECh], ecx
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_6A57B3:                             ; CODE XREF: SidebarClass__Init+429↑j
-; SidebarClass__Init+438↑j
-mov     ecx, [edi+5510h]
-mov     [esp+14h+var_4], ebp
-inc     ecx
-mov     [edi+5510h], ecx
-mov     edx, ds:0A80238h
-mov     ebx, ecx
-xor     ecx, ecx
-cmp     edx, ebp
-jle     short loc_6A5818
-mov     esi, ds:0A8022Ch
-jmp     short loc_6A57DC
-; ---------------------------------------------------------------------------
-
-loc_6A57DA:                             ; CODE XREF: SidebarClass__Init+504↓j
-xor     ebp, ebp
-
-loc_6A57DC:                             ; CODE XREF: SidebarClass__Init+4C8↑j
-mov     eax, [esi]
-cmp     eax, ebp
-jz      short loc_6A580E
-mov     ebp, [eax+34h]
-cmp     byte ptr [ebp+1A6h], 1
-jz      short loc_6A580E
-cmp     eax, dword_A8ED54+32444h
-jz      short loc_6A580E
-cmp     byte ptr [eax+1ECh], 0
-jz      short loc_6A580E
-mov     ebp, [esp+14h+var_4]
-cmp     ebp, ebx
-jz      short loc_6A581A
-mov     eax, ebp
-inc     eax
-mov     [esp+14h+var_4], eax
-
-loc_6A580E:                             ; CODE XREF: SidebarClass__Init+4D0↑j
-; SidebarClass__Init+4DC↑j ...
-inc     ecx
-add     esi, 4
-cmp     ecx, edx
-jl      short loc_6A57DA
-xor     ebp, ebp
-
-loc_6A5818:                             ; CODE XREF: SidebarClass__Init+4C0↑j
-xor     eax, eax
-
-loc_6A581A:                             ; CODE XREF: SidebarClass__Init+4F5↑j
-mov     [edi+ebx*4+53ACh], eax
-mov     ebx, [edi+5510h]
-cmp     ebx, 8
-jl      loc_6A55E5
-
-loc_6A5830:                             ; CODE XREF: SidebarClass__Init+277↑j
-; SidebarClass__Init+2E0↑j
-pop     esi
-mov     byte ptr [edi+550Ch], 0
-pop     ebp
-
-loc_6A5839:                             ; CODE XREF: SidebarClass__Init+22↑j
-pop     edi
-pop     ebx
-pop     ecx
-retn
-*/
 } }
 // 0x6A5F20
 namespace gamemd { int SidebarClass::UpdateCameoProductionState(void* a1) {
@@ -11199,75 +4342,75 @@ char __thiscall sub_6A5F20(int this, _DWORD *a2)
   int v8; // eax
   int v10; // [esp+14h] [ebp+4h]
 
-  LOBYTE(v3) = *(_BYTE *)(this + 21413);
-  if ( (_BYTE)v3 )
+  LOBYTE(v3) = *(_BYTE *)(this + 21413); /*0x6a5f26*/
+  if ( (_BYTE)v3 ) /*0x6a5f2e*/
   {
-    if ( a2 )
+    if ( a2 ) /*0x6a5f3a*/
     {
-      v10 = (*(int (__thiscall **)(_DWORD *))(*a2 + 132))(a2);
-      LOBYTE(v3) = (_BYTE)MEMORY[0xA83D4C];
-      if ( MEMORY[0xA83D4C] )
+      v10 = (*(int (__thiscall **)(_DWORD *))(*a2 + 132))(a2); /*0x6a5f4b*/
+      LOBYTE(v3) = (_BYTE)HouseClass_Player; /*0x6a5f4f*/
+      if ( HouseClass_Player ) /*0x6a5f56*/
       {
-        v5 = (*(int (__thiscall **)(_DWORD *))(*a2 + 44))(a2);
-        v6 = (*(int (__thiscall **)(_DWORD *))(*a2 + 64))(a2);
-        switch ( v5 )
+        v5 = (*(int (__thiscall **)(_DWORD *))(*a2 + 44))(a2); /*0x6a5f64*/
+        v6 = (*(int (__thiscall **)(_DWORD *))(*a2 + 64))(a2); /*0x6a5f6b*/
+        switch ( v5 ) /*0x6a5f7b*/
         {
-          case 15:
-          case 16:
-            v3 = 2;
+          case 15: /*0x6a5f7b*/
+          case 16: /*0x6a5f7b*/
+            v3 = 2; /*0x6a5fce*/
             break;
-          case 1:
-          case 40:
-          case 2:
-          case 3:
-            v3 = 3;
+          case 1: /*0x6a5f7b*/
+          case 40: /*0x6a5f7b*/
+          case 2: /*0x6a5f7b*/
+          case 3: /*0x6a5f7b*/
+            v3 = 3; /*0x6a5fc7*/
             break;
-          case 6:
-          case 7:
-            v3 = GetHouseTechLevel(v5, v6) == 5;
+          case 6: /*0x6a5f7b*/
+          case 7: /*0x6a5f7b*/
+            v3 = GetHouseTechLevel(v5, v6) == 5; /*0x6a5fc3*/
             break;
-          case 57:
-          case 32:
-          case 31:
-            v3 = 1;
+          case 57: /*0x6a5f7b*/
+          case 32: /*0x6a5f7b*/
+          case 31: /*0x6a5f7b*/
+            v3 = 1; /*0x6a5fae*/
             break;
           default:
-            v3 = -1;
+            v3 = -1; /*0x6a5fa9*/
             break;
         }
-        v7 = *(_DWORD *)(this + 21404);
-        if ( v3 == v7 )
+        v7 = *(_DWORD *)(this + 21404); /*0x6a5fd3*/
+        if ( v3 == v7 ) /*0x6a5fdb*/
         {
-          LOBYTE(v3) = HouseClass::ShouldDisableCameo(MEMORY[0xA83D4C], v10);
-          if ( (_BYTE)v3 )
+          LOBYTE(v3) = HouseClass::ShouldDisableCameo(HouseClass_Player, v10); /*0x6a5fe8*/
+          if ( (_BYTE)v3 ) /*0x6a5fef*/
           {
-            v8 = *(_DWORD *)(this + 21404);
-            *(_BYTE *)(this + 21414) = 1;
-            *(_BYTE *)(this + 3988 * v8 + 5504) = 1;
-            MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0);
-            LOBYTE(v3) = (_BYTE)MEMORY[0xA8ED84];
-            if ( *(_DWORD *)(this + 21408) <= (int)MEMORY[0xA8ED84] )
+            v8 = *(_DWORD *)(this + 21404); /*0x6a5ff5*/
+            *(_BYTE *)(this + 21414) = 1; /*0x6a5ffb*/
+            *(_BYTE *)(this + 3988 * v8 + 5504) = 1; /*0x6a6015*/
+            MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6a601c*/
+            LOBYTE(v3) = (_BYTE)MEMORY[0xA8ED84]; /*0x6a6021*/
+            if ( *(_DWORD *)(this + 21408) <= (int)MEMORY[0xA8ED84] ) /*0x6a602e*/
             {
-              LOBYTE(v3) = (_BYTE)MEMORY[0xA8ED84] + 2;
-              *(_DWORD *)(this + 21408) = MEMORY[0xA8ED84] + 1;
+              LOBYTE(v3) = (_BYTE)MEMORY[0xA8ED84] + 2; /*0x6a6030*/
+              *(_DWORD *)(this + 21408) = MEMORY[0xA8ED84] + 1; /*0x6a6033*/
             }
           }
         }
-        else if ( v5 == 6 )
+        else if ( v5 == 6 ) /*0x6a6043*/
         {
-          LOBYTE(v3) = *(_BYTE *)(a2[328] + 5835);
-          if ( (_BYTE)v3 )
+          LOBYTE(v3) = *(_BYTE *)(a2[328] + 5835); /*0x6a604b*/
+          if ( (_BYTE)v3 ) /*0x6a6053*/
           {
-            if ( v7 == 3 )
+            if ( v7 == 3 ) /*0x6a6058*/
             {
-              *(_BYTE *)(this + 21414) = 1;
-              *(_BYTE *)(this + 17468) = 1;
-              MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0);
-              LOBYTE(v3) = (_BYTE)MEMORY[0xA8ED84];
-              if ( *(_DWORD *)(this + 21408) <= (int)MEMORY[0xA8ED84] )
+              *(_BYTE *)(this + 21414) = 1; /*0x6a605a*/
+              *(_BYTE *)(this + 17468) = 1; /*0x6a6067*/
+              MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6a606d*/
+              LOBYTE(v3) = (_BYTE)MEMORY[0xA8ED84]; /*0x6a6072*/
+              if ( *(_DWORD *)(this + 21408) <= (int)MEMORY[0xA8ED84] ) /*0x6a607f*/
               {
-                LOBYTE(v3) = (_BYTE)MEMORY[0xA8ED84] + 2;
-                *(_DWORD *)(this + 21408) = MEMORY[0xA8ED84] + 1;
+                LOBYTE(v3) = (_BYTE)MEMORY[0xA8ED84] + 2; /*0x6a6081*/
+                *(_DWORD *)(this + 21408) = MEMORY[0xA8ED84] + 1; /*0x6a6084*/
               }
             }
           }
@@ -11275,160 +4418,13 @@ char __thiscall sub_6A5F20(int this, _DWORD *a2)
       }
     }
   }
-  return v3;
+  return v3; /*0x6a6039*/
 }
-
-/* ASM:
-push    ebx
-push    ebp
-push    esi
-push    edi
-mov     edi, ecx
-mov     al, [edi+53A5h]
-test    al, al
-jz      loc_6A608A
-mov     ebp, [esp+10h+arg_0]
-test    ebp, ebp
-jz      loc_6A608A
-mov     eax, [ebp+0]
-mov     ecx, ebp
-call    dword ptr [eax+84h]
-mov     [esp+10h+arg_0], eax
-mov     eax, ds:0A83D4Ch
-test    eax, eax
-jz      loc_6A608A
-mov     edx, [ebp+0]
-mov     ecx, ebp
-call    dword ptr [edx+2Ch]
-mov     esi, eax
-mov     eax, [ebp+0]
-mov     ecx, ebp
-call    dword ptr [eax+40h]
-cmp     esi, 0Fh
-mov     ebx, 1
-jz      short loc_6A5FCE
-cmp     esi, 10h
-jz      short loc_6A5FCE
-cmp     esi, ebx
-jz      short loc_6A5FC7
-cmp     esi, 28h ; '('
-jz      short loc_6A5FC7
-cmp     esi, 2
-jz      short loc_6A5FC7
-cmp     esi, 3
-jz      short loc_6A5FC7
-cmp     esi, 6
-jz      short loc_6A5FB2
-cmp     esi, 7
-jz      short loc_6A5FB2
-cmp     esi, 39h ; '9'
-jz      short loc_6A5FAE
-cmp     esi, 20h ; ' '
-jz      short loc_6A5FAE
-cmp     esi, 1Fh
-jz      short loc_6A5FAE
-or      eax, 0FFFFFFFFh
-jmp     short loc_6A5FD3
-; ---------------------------------------------------------------------------
-
-loc_6A5FAE:                             ; CODE XREF: SidebarClass__UpdateCameoProductionState+7D↑j
-; SidebarClass__UpdateCameoProductionState+82↑j ...
-mov     eax, ebx
-jmp     short loc_6A5FD3
-; ---------------------------------------------------------------------------
-
-loc_6A5FB2:                             ; CODE XREF: SidebarClass__UpdateCameoProductionState+73↑j
-; SidebarClass__UpdateCameoProductionState+78↑j
-mov     edx, eax
-mov     ecx, esi
-call    GetHouseTechLevel
-xor     ecx, ecx
-cmp     eax, 5
-setz    cl
-mov     eax, ecx
-jmp     short loc_6A5FD3
-; ---------------------------------------------------------------------------
-
-loc_6A5FC7:                             ; CODE XREF: SidebarClass__UpdateCameoProductionState+5F↑j
-; SidebarClass__UpdateCameoProductionState+64↑j ...
-mov     eax, 3
-jmp     short loc_6A5FD3
-; ---------------------------------------------------------------------------
-
-loc_6A5FCE:                             ; CODE XREF: SidebarClass__UpdateCameoProductionState+56↑j
-; SidebarClass__UpdateCameoProductionState+5B↑j
-mov     eax, 2
-
-loc_6A5FD3:                             ; CODE XREF: SidebarClass__UpdateCameoProductionState+8C↑j
-; SidebarClass__UpdateCameoProductionState+90↑j ...
-mov     ecx, [edi+539Ch]
-cmp     eax, ecx
-jnz     short loc_6A6040
-mov     edx, [esp+10h+arg_0]
-mov     ecx, ds:0A83D4Ch
-push    edx
-call    HouseClass__ShouldDisableCameo
-test    al, al
-jz      loc_6A608A
-mov     eax, [edi+539Ch]
-mov     [edi+53A6h], bl
-mov     ecx, eax
-push    0
-shl     ecx, 5
-sub     ecx, eax
-lea     edx, [eax+ecx*8]
-mov     ecx, 87F7E8h
-lea     eax, [eax+edx*4]
-mov     [edi+eax*4+1580h], bl
-call    MapClass__MarkForRedraw
-mov     eax, dword_A8ED54+30h
-mov     ecx, [edi+53A0h]
-cmp     ecx, eax
-jg      short loc_6A608A
-add     eax, 2
-mov     [edi+53A0h], eax
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_6A6040:                             ; CODE XREF: SidebarClass__UpdateCameoProductionState+BB↑j
-cmp     esi, 6
-jnz     short loc_6A608A
-mov     edx, [ebp+520h]
-mov     al, [edx+16CBh]
-test    al, al
-jz      short loc_6A608A
-cmp     ecx, 3
-jnz     short loc_6A608A
-mov     [edi+53A6h], bl
-push    0
-mov     ecx, 87F7E8h
-mov     [edi+443Ch], bl
-call    MapClass__MarkForRedraw
-mov     eax, dword_A8ED54+30h
-mov     ecx, [edi+53A0h]
-cmp     ecx, eax
-jg      short loc_6A608A
-add     eax, 2
-mov     [edi+53A0h], eax
-
-loc_6A608A:                             ; CODE XREF: SidebarClass__UpdateCameoProductionState+E↑j
-; SidebarClass__UpdateCameoProductionState+1A↑j ...
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn    4
-*/
 } }
 // 0x6A7780
 namespace gamemd { void SidebarClass::UpdateStrips(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x6a7780
-void __thiscall SidebarClass::UpdateStrips(char *this, int *a2, _DWORD *a3)
+int __thiscall SidebarClass::UpdateStrips(char *this, TabClass *aP1, _DWORD *a2)
 {
   int v4; // ecx
   char *v5; // edi
@@ -11448,688 +4444,225 @@ void __thiscall SidebarClass::UpdateStrips(char *this, int *a2, _DWORD *a3)
   int v19; // edi
   int v20; // ebx
   char v21; // bl
-  int *v22; // edi
-  int v23; // ecx
-  int v24; // eax
+  SidebarClass *v22; // edi
+  int v24; // ecx
   int v25; // eax
-  int v26; // edx
-  char *v27; // eax
-  int v28; // edx
-  char *v29; // edi
-  int v30; // eax
-  int v31; // edx
-  int v32; // [esp+14h] [ebp-10h]
-  int v33; // [esp+18h] [ebp-Ch]
-  _DWORD v34[2]; // [esp+1Ch] [ebp-8h] BYREF
+  int v26; // eax
+  int v27; // edx
+  char *v28; // eax
+  int v29; // edx
+  char *v30; // edi
+  int v31; // eax
+  int v32; // edx
+  int v33; // [esp+14h] [ebp-10h]
+  int playerSideIndex; // [esp+18h] [ebp-Ch]
+  _DWORD v35[2]; // [esp+1Ch] [ebp-8h] BYREF
 
-  v4 = a3[1];
-  v34[0] = *a3 - MEMORY[0x87F7E8][7658];
-  v34[1] = v4;
-  if ( !HIBYTE(dword_A8ED54[5]) )
+  v4 = a2[1]; /*0x6a7795*/
+  v35[0] = *a2 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8516]; /*0x6a7798*/
+  v35[1] = v4; /*0x6a77a4*/
+  if ( !MEMORY[0xA8D63C].__pad_14B0[639] ) /*0x6a77a8*/
   {
-    (*(void (__thiscall **)(char *, int))(*(_DWORD *)this + 216))(this, 1);
-    v5 = this + 5444;
-    v6 = 4;
-    do
+    (*(void (__thiscall **)(char *, int))(*(_DWORD *)this + 216))(this, 1); /*0x6a77b0*/
+    v5 = this + 5444; /*0x6a77b6*/
+    v6 = 4; /*0x6a77bc*/
+    do /*0x6a77d9*/
     {
-      SidebarClass::UpdateCameos(v5, (int)a2, (int)v34);
-      v5 += 3988;
-      --v6;
+      SidebarClass::UpdateCameos(v5, (int)aP1, (int)v35); /*0x6a77cd*/
+      v5 += 3988; /*0x6a77d2*/
+      --v6; /*0x6a77d8*/
     }
-    while ( v6 );
+    while ( v6 ); /*0x6a77d9*/
   }
-  if ( *(this + 21413) )
+  if ( *(this + 21413) ) /*0x6a77db*/
   {
-    v7 = *((_DWORD *)this + 5350);
-    if ( v7 == 1 )
+    v7 = *((_DWORD *)this + 5350); /*0x6a77e9*/
+    if ( v7 == 1 ) /*0x6a77f2*/
     {
-      v8 = *((_DWORD *)this + 5349) + 1;
-      *((_DWORD *)this + 5349) = v8;
-      if ( v8 <= *(__int16 *)(dword_A8ED54[127433] + 6) )
-        goto LABEL_11;
+      v8 = *((_DWORD *)this + 5349) + 1; /*0x6a77fa*/
+      *((_DWORD *)this + 5349) = v8; /*0x6a77fb*/
+      if ( v8 <= *(__int16 *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[10192] + 6) ) /*0x6a780f*/
+        goto LABEL_11; /*0x6a780f*/
     }
     else
     {
-      if ( v7 != -1 )
-        goto LABEL_11;
-      v9 = *((_DWORD *)this + 5349) - 1;
-      *((_DWORD *)this + 5349) = v9;
-      if ( v9 >= 0 )
-        goto LABEL_11;
+      if ( v7 != -1 ) /*0x6a7816*/
+        goto LABEL_11; /*0x6a7816*/
+      v9 = *((_DWORD *)this + 5349) - 1; /*0x6a781e*/
+      *((_DWORD *)this + 5349) = v9; /*0x6a781f*/
+      if ( v9 >= 0 ) /*0x6a7825*/
+        goto LABEL_11; /*0x6a7825*/
     }
-    *((_DWORD *)this + 5350) = 0;
-    *((_DWORD *)this + 5349) = 0;
+    *((_DWORD *)this + 5350) = 0; /*0x6a7829*/
+    *((_DWORD *)this + 5349) = 0; /*0x6a782f*/
 LABEL_11:
-    v10 = *(this + 21780);
-    *(this + 21780) = *(_DWORD *)(MEMORY[0x87F7E8][528729] + 752) > 0;
-    if ( v10 != *(this + 21780) )
+    v10 = *(this + 21780); /*0x6a7835*/
+    *(this + 21780) = *(_DWORD *)&HouseClass_Player->__pad_2B8[56] > 0; /*0x6a7866*/
+    if ( v10 != *(this + 21780) ) /*0x6a7873*/
     {
-      (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)this + 56))(this, 0);
-      v11 = *(this + 21780);
-      *(this + 21414) = 1;
-      if ( !v11 )
-        (*(void (__thiscall **)(char *, _DWORD, _DWORD))(*(_DWORD *)this + 72))(this, 0, 0);
+      (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)this + 56))(this, 0); /*0x6a787b*/
+      v11 = *(this + 21780); /*0x6a787e*/
+      *(this + 21414) = 1; /*0x6a7884*/
+      if ( !v11 ) /*0x6a788d*/
+        (*(void (__thiscall **)(char *, _DWORD, _DWORD))(*(_DWORD *)this + 72))(this, 0, 0); /*0x6a7897*/
     }
-    v12 = *a2;
-    if ( *a2 == 32870 )
+    v12 = aP1->field_0; /*0x6a789f*/
+    if ( aP1->field_0 == 32870 ) /*0x6a78a6*/
     {
-      PlayVocClass(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 392), 0x2000, 1.0, 0);
-      BuildingClass::TogglePower(this, -1);
-      goto LABEL_32;
+      PlayVocClass(*(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 392), 0x2000, 1.0, 0); /*0x6a78bf*/
+      BuildingClass::TogglePower(this, (IUnknown *)0xFFFFFFFF); /*0x6a78c8*/
+      goto LABEL_32; /*0x6a78cd*/
     }
-    if ( v12 == 32869 )
+    if ( v12 == 32869 ) /*0x6a78d7*/
     {
-      PlayVocClass(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 392), 0x2000, 1.0, 0);
-      BuildingClass::TogglePower2(this, -1);
-      goto LABEL_32;
+      PlayVocClass(*(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 392), 0x2000, 1.0, 0); /*0x6a78f1*/
+      BuildingClass::TogglePower2(this, (IUnknown *)0xFFFFFFFF); /*0x6a78fa*/
+      goto LABEL_32; /*0x6a78ff*/
     }
-    if ( v12 >= 32971 && v12 < 32975 )
+    if ( v12 >= 32971 && v12 < 32975 ) /*0x6a7914*/
     {
-      v13 = v12 - 32971;
-      v14 = *((_DWORD *)this + 5351);
-      if ( v13 != v14 )
+      v13 = v12 - 32971; /*0x6a791a*/
+      v14 = *((_DWORD *)this + 5351); /*0x6a7920*/
+      if ( v13 != v14 ) /*0x6a7928*/
       {
-        GadgetClass::Hide(&dword_A8ED54[24 * v14 + 123837]);
-        v15 = 0;
-        v16 = this + 3988 * *((_DWORD *)this + 5351) + 5444;
-        *(this + 3988 * *((_DWORD *)this + 5351) + 5472) = 0;
-        do
+        GadgetClass::Hide(&MEMORY[0xB077F8].__pad_430[96 * v14 + 32]); /*0x6a793a*/
+        v15 = 0; /*0x6a794c*/
+        v16 = this + 3988 * *((_DWORD *)this + 5351) + 5444; /*0x6a7954*/
+        *(this + 3988 * *((_DWORD *)this + 5351) + 5472) = 0; /*0x6a795b*/
+        do /*0x6a7986*/
         {
-          Tactical::SelectObject(MEMORY[0x87F7E8], 56 * (v15 + 60 * *((_DWORD *)v16 + 14)) + 11566720);
-          ++v15;
+          Tactical::SelectObject(&MEMORY[0x87F7E8], 56 * (v15 + 60 * *((_DWORD *)v16 + 14)) + 11566720); /*0x6a797d*/
+          ++v15; /*0x6a7982*/
         }
-        while ( v15 < 60 );
-        *((_DWORD *)this + 5351) = v13;
-        GadgetClass::Show(&dword_A8ED54[24 * v13 + 123837]);
-        v17 = this + 3988 * *((_DWORD *)this + 5351) + 5444;
-        *(this + 3988 * *((_DWORD *)this + 5351) + 5472) = 1;
-        v18 = 26;
-        if ( *(_DWORD *)(MEMORY[0x87F7E8][536210] + 13496) )
-          v18 = 18;
-        v19 = 0;
-        v20 = 2 * ((MEMORY[0x87F7E8][7661] - v18 - dword_A8ED54[127465] + MEMORY[0x87F7E8][7659] - 7) / 50);
-        if ( v20 > 0 )
+        while ( v15 < 60 ); /*0x6a7986*/
+        *((_DWORD *)this + 5351) = v13; /*0x6a798c*/
+        GadgetClass::Show(&MEMORY[0xB077F8].__pad_430[96 * v13 + 32]); /*0x6a799b*/
+        v17 = this + 3988 * *((_DWORD *)this + 5351) + 5444; /*0x6a79b3*/
+        *(this + 3988 * *((_DWORD *)this + 5351) + 5472) = 1; /*0x6a79ba*/
+        v18 = 26; /*0x6a79cc*/
+        if ( MEMORY[0xA8B230]->playerSideIndex ) /*0x6a79c4*/
+          v18 = 18; /*0x6a79d3*/
+        v19 = 0; /*0x6a79ed*/
+        v20 = 2 /*0x6a7a06*/
+            * ((*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8528]
+              - v18
+              - *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[10320]
+              + *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8520]
+              - 7)
+             / 50);
+        if ( v20 > 0 ) /*0x6a7a0a*/
         {
-          do
+          do /*0x6a7a4f*/
           {
-            Hash::Reset((_DWORD *)(56 * (v19 + 60 * *((_DWORD *)v17 + 14)) + 11566720));
-            Hash::InsertOrdered(MEMORY[0x87F7E8], 56 * (v19 + 60 * *((_DWORD *)v17 + 14)) + 11566720);
-            ++v19;
+            Hash::Reset((_DWORD *)(56 * (v19 + 60 * *((_DWORD *)v17 + 14)) + 11566720)); /*0x6a7a24*/
+            Hash::InsertOrdered(&MEMORY[0x87F7E8], 56 * (v19 + 60 * *((_DWORD *)v17 + 14)) + 11566720); /*0x6a7a47*/
+            ++v19; /*0x6a7a4c*/
           }
-          while ( v19 < v20 );
+          while ( v19 < v20 ); /*0x6a7a4f*/
         }
-        HIBYTE(MEMORY[0x87F7E8][5353]) = 1;
-        Tactical::UpdateUIVisibility(this);
-        *(this + 21415) = 1;
+        MEMORY[0x87F8E4].__pad_125C[16463] = 1; /*0x6a7a53*/
+        Tactical::UpdateUIVisibility(this); /*0x6a7a5a*/
+        *(this + 21415) = 1; /*0x6a7a5f*/
       }
-      goto LABEL_31;
+      goto LABEL_31; /*0x6a7a5f*/
     }
-    v23 = dword_A8ED54[127358];
-    BYTE1(v12) &= ~0x40u;
-    BYTE1(v23) = BYTE1(dword_A8ED54[127358]) | 0x80;
-    if ( v12 == v23 )
+    v24 = *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[9892]; /*0x6a7b18*/
+    BYTE1(v12) &= ~0x40u; /*0x6a7b1e*/
+    BYTE1(v24) = MEMORY[0xB077F8].__pad_14B0[9893] | 0x80; /*0x6a7b21*/
+    if ( v12 == v24 ) /*0x6a7b26*/
     {
-      LOBYTE(dword_A8ED54[127360]) = 0;
-      v33 = *(_DWORD *)(MEMORY[0x87F7E8][536210] + 13496);
-      v24 = 26;
-      if ( v33 )
-        v24 = 18;
-      v32 = (MEMORY[0x87F7E8][7661] - v24 - dword_A8ED54[127465] + MEMORY[0x87F7E8][7659] - 7) / 50;
-      if ( MEMORY[0x87F7E8][528729] == dword_A8ED54[51473] )
-        v32 = 1;
-      v25 = 26;
-      if ( v33 )
-        v25 = 18;
-      v26 = (MEMORY[0x87F7E8][7661] - v25 - dword_A8ED54[127465] + MEMORY[0x87F7E8][7659] - 7) / 50;
-      if ( MEMORY[0x87F7E8][528729] == dword_A8ED54[51473] )
+      MEMORY[0xB077F8].__pad_14B0[9900] = 0; /*0x6a7b2c*/
+      playerSideIndex = MEMORY[0xA8B230]->playerSideIndex; /*0x6a7b5d*/
+      v25 = 26; /*0x6a7b63*/
+      if ( playerSideIndex ) /*0x6a7b68*/
+        v25 = 18; /*0x6a7b6a*/
+      v33 = (*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8528] /*0x6a7ba9*/
+           - v25
+           - *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[10320]
+           + *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8520]
+           - 7)
+          / 50;
+      if ( HouseClass_Player == (IUnknown *)*(&g_MatrixTransformState + 2274) ) /*0x6a7bad*/
+        v33 = 1; /*0x6a7baf*/
+      v26 = 26; /*0x6a7bbd*/
+      if ( playerSideIndex ) /*0x6a7bc2*/
+        v26 = 18; /*0x6a7bc4*/
+      v27 = (*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8528] /*0x6a7be5*/
+           - v26
+           - *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[10320]
+           + *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8520]
+           - 7)
+          / 50;
+      if ( HouseClass_Player == (IUnknown *)*(&g_MatrixTransformState + 2274) ) /*0x6a7be9*/
       {
-        v27 = this + 3988 * *((_DWORD *)this + 5351) + 5444;
-        if ( *((_DWORD *)this + 997 * *((_DWORD *)this + 5351) + 1378) + v26 / 2 < MEMORY[0x87F7E8][5444] )
-          goto LABEL_56;
+        v28 = this + 3988 * *((_DWORD *)this + 5351) + 5444; /*0x6a7bf8*/
+        if ( *((_DWORD *)this + 997 * *((_DWORD *)this + 5351) + 1378) + v27 / 2 < *(int *)&MEMORY[0x87F8E4].__pad_125C[16824] ) /*0x6a7c03*/
+          goto LABEL_56; /*0x6a7c03*/
       }
       else
       {
-        v27 = this + 3988 * *((_DWORD *)this + 5351) + 5444;
-        if ( 2 * (v26 + *((_DWORD *)v27 + 17)) < *((_DWORD *)v27 + 21) )
+        v28 = this + 3988 * *((_DWORD *)this + 5351) + 5444; /*0x6a7c07*/
+        if ( 2 * (v27 + *((_DWORD *)v28 + 17)) < *((_DWORD *)v28 + 21) ) /*0x6a7c17*/
         {
 LABEL_56:
-          *((_DWORD *)v27 + 18) += v32;
-          PlayVocClass(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 400), 0x2000, 1.0, 0);
-          goto LABEL_32;
+          *((_DWORD *)v28 + 18) += v33; /*0x6a7c19*/
+          PlayVocClass(*(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 400), 0x2000, 1.0, 0); /*0x6a7c3d*/
+          goto LABEL_32; /*0x6a7c3d*/
         }
       }
     }
     else
     {
-      v28 = dword_A8ED54[127414];
-      BYTE1(v28) = BYTE1(dword_A8ED54[127414]) | 0x80;
-      if ( v12 != v28 )
-        goto LABEL_32;
-      LOBYTE(dword_A8ED54[127416]) = 0;
-      v30 = 26;
-      if ( *(_DWORD *)(MEMORY[0x87F7E8][536210] + 13496) )
-        v30 = 18;
-      v31 = (MEMORY[0x87F7E8][7661] - v30 - dword_A8ED54[127465] + MEMORY[0x87F7E8][7659] - 7) / 50;
-      if ( MEMORY[0x87F7E8][528729] == dword_A8ED54[51473] )
-        v31 = 1;
-      if ( *((_DWORD *)this + 997 * *((_DWORD *)this + 5351) + 1378) )
+      v29 = *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[10116]; /*0x6a7c5e*/
+      BYTE1(v29) = MEMORY[0xB077F8].__pad_14B0[10117] | 0x80; /*0x6a7c64*/
+      if ( v12 != v29 ) /*0x6a7c69*/
+        goto LABEL_32; /*0x6a7c69*/
+      MEMORY[0xB077F8].__pad_14B0[10124] = 0; /*0x6a7c6f*/
+      v31 = 26; /*0x6a7c9e*/
+      if ( MEMORY[0xA8B230]->playerSideIndex ) /*0x6a7c96*/
+        v31 = 18; /*0x6a7ca5*/
+      v32 = (*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8528] /*0x6a7cd7*/
+           - v31
+           - *(_DWORD *)&MEMORY[0xB077F8].__pad_14B0[10320]
+           + *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8520]
+           - 7)
+          / 50;
+      if ( HouseClass_Player == (IUnknown *)*(&g_MatrixTransformState + 2274) ) /*0x6a7ce1*/
+        v32 = 1; /*0x6a7ce3*/
+      if ( *((_DWORD *)this + 997 * *((_DWORD *)this + 5351) + 1378) ) /*0x6a7ce8*/
       {
-        v29 = this + 3988 * *((_DWORD *)this + 5351) + 5444;
-        *((_DWORD *)v29 + 18) -= v31;
+        v30 = this + 3988 * *((_DWORD *)this + 5351) + 5444; /*0x6a7c8f*/
+        *((_DWORD *)v30 + 18) -= v32; /*0x6a7cef*/
 LABEL_31:
-        PlayVocClass(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 400), 0x2000, 1.0, 0);
-        goto LABEL_32;
+        PlayVocClass(*(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 400), 0x2000, 1.0, 0); /*0x6a7a66*/
+        goto LABEL_32; /*0x6a7a7d*/
       }
     }
-    PlayVocClass(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 1792), 0x2000, 1.0, 0);
+    PlayVocClass(*(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 1792), 0x2000, 1.0, 0); /*0x6a7d0f*/
 LABEL_32:
-    v21 = 0;
-    v22 = &dword_A8ED54[123837];
-    do
+    v21 = 0; /*0x6a7a82*/
+    v22 = (SidebarClass *)&MEMORY[0xB077F8].__pad_430[32]; /*0x6a7a84*/
+    do /*0x6a7aa0*/
     {
-      if ( SidebarClass::updateFlashTimer((int)v22) )
-        v21 = 1;
-      v22 += 24;
+      if ( SidebarClass::updateFlashTimer((int)v22) ) /*0x6a7a8c*/
+        v21 = 1; /*0x6a7a95*/
+      v22 = (SidebarClass *)((char *)v22 + 96); /*0x6a7a97*/
     }
-    while ( (int)v22 < (int)&dword_A8ED54[123933] );
-    if ( v21 )
+    while ( (int)v22 < (int)&MEMORY[0xB077F8].__pad_524[172] ); /*0x6a7aa0*/
+    if ( v21 ) /*0x6a7aa4*/
     {
-      *(this + 21414) = 1;
-      LOBYTE(dword_A8ED54[127473]) = 1;
-      HIBYTE(MEMORY[0x87F7E8][5353]) = 1;
-      (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)this + 56))(this, 0);
+      *(this + 21414) = 1; /*0x6a7aa6*/
+      MEMORY[0xB077F8].__pad_14B0[10352] = 1; /*0x6a7aad*/
+      MEMORY[0x87F8E4].__pad_125C[16463] = 1; /*0x6a7ab4*/
+      (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)this + 56))(this, 0); /*0x6a7ac1*/
     }
   }
-  if ( !*(this + 4529) && BYTE1(dword_A8ED54[123956]) )
-    GadgetClass::Hide(&dword_A8ED54[123945]);
-  if ( !*(this + 4528) && BYTE1(dword_A8ED54[127390]) )
-    GadgetClass::Hide(&dword_A8ED54[127379]);
-  PowerClass::updatePowerBarAnimation((#441 *)this);
+  if ( !*(this + 4529) && MEMORY[0xB077F8].__pad_524[265] ) /*0x6a7ad5*/
+    GadgetClass::Hide(&MEMORY[0xB077F8].__pad_524[220]); /*0x6a7adc*/
+  if ( !*(this + 4528) && MEMORY[0xB077F8].__pad_14B0[10021] ) /*0x6a7af2*/
+    GadgetClass::Hide(&MEMORY[0xB077F8].__pad_14B0[9976]); /*0x6a7af9*/
+  return PowerClass::updatePowerBarAnimation((int)this, (SidebarClass *)aP1, a2); /*0x6a7b0f*/
 }
-
-/* ASM:
-sub     esp, 14h
-mov     edx, [esp+14h+arg_4]
-push    ebx
-push    esi
-mov     esi, ecx
-mov     ecx, ds:886F90h
-mov     eax, [edx]
-sub     eax, ecx
-mov     ecx, [edx+4]
-mov     [esp+1Ch+var_8], eax
-mov     al, byte ptr dword_A8ED54+17h
-test    al, al
-push    edi
-mov     [esp+20h+var_4], ecx
-jnz     short loc_6A77DB
-mov     eax, [esi]
-push    1
-mov     ecx, esi
-call    dword ptr [eax+0D8h]
-lea     edi, [esi+1544h]
-mov     ebx, 4
-
-loc_6A77C1:                             ; CODE XREF: SidebarClass__UpdateStrips+59↓j
-mov     edx, [esp+20h+arg_0]
-lea     ecx, [esp+20h+var_8]
-push    ecx
-push    edx
-mov     ecx, edi
-call    SidebarClass__UpdateCameos
-add     edi, 0F94h
-dec     ebx
-jnz     short loc_6A77C1
-
-loc_6A77DB:                             ; CODE XREF: SidebarClass__UpdateStrips+28↑j
-mov     al, [esi+53A5h]
-test    al, al
-jz      loc_6A7AC4
-mov     eax, [esi+5398h]
-cmp     eax, 1
-jnz     short loc_6A7813
-mov     edx, [esi+5394h]
-inc     edx
-mov     [esi+5394h], edx
-mov     ecx, dword_A8ED54+7C724h
-mov     eax, edx
-movsx   edx, word ptr [ecx+6]
-cmp     eax, edx
-jle     short loc_6A7835
-jmp     short loc_6A7827
-; ---------------------------------------------------------------------------
-
-loc_6A7813:                             ; CODE XREF: SidebarClass__UpdateStrips+72↑j
-cmp     eax, 0FFFFFFFFh
-jnz     short loc_6A7835
-mov     eax, [esi+5394h]
-dec     eax
-mov     [esi+5394h], eax
-jns     short loc_6A7835
-
-loc_6A7827:                             ; CODE XREF: SidebarClass__UpdateStrips+91↑j
-xor     eax, eax
-mov     [esi+5398h], eax
-mov     [esi+5394h], eax
-
-loc_6A7835:                             ; CODE XREF: SidebarClass__UpdateStrips+8F↑j
-; SidebarClass__UpdateStrips+96↑j ...
-mov     ecx, ds:0A83D4Ch
-xor     eax, eax
-mov     edi, [ecx+2F0h]
-mov     cl, [esi+5514h]
-test    edi, edi
-setnle  al
-cmp     eax, 0FFFFFFFFh
-jnz     short loc_6A785A
-xor     eax, eax
-test    cl, cl
-setz    al
-
-loc_6A785A:                             ; CODE XREF: SidebarClass__UpdateStrips+D1↑j
-dec     eax
-jz      short loc_6A7866
-mov     byte ptr [esi+5514h], 0
-jmp     short loc_6A786D
-; ---------------------------------------------------------------------------
-
-loc_6A7866:                             ; CODE XREF: SidebarClass__UpdateStrips+DB↑j
-mov     byte ptr [esi+5514h], 1
-
-loc_6A786D:                             ; CODE XREF: SidebarClass__UpdateStrips+E4↑j
-cmp     cl, [esi+5514h]
-jz      short loc_6A789A
-mov     edx, [esi]
-push    0
-mov     ecx, esi
-call    dword ptr [edx+38h]
-mov     al, [esi+5514h]
-mov     byte ptr [esi+53A6h], 1
-test    al, al
-jnz     short loc_6A789A
-mov     eax, [esi]
-push    0
-push    0
-mov     ecx, esi
-call    dword ptr [eax+48h]
-
-loc_6A789A:                             ; CODE XREF: SidebarClass__UpdateStrips+F3↑j
-; SidebarClass__UpdateStrips+10D↑j
-mov     ecx, [esp+20h+arg_0]
-push    ebp
-mov     eax, [ecx]
-cmp     eax, 8066h
-jnz     short loc_6A78D2
-mov     eax, ds:8871E0h
-push    0               ; int
-mov     edx, 2000h
-push    3F800000h       ; float
-mov     ecx, [eax+188h]
-call    PlayVocClass
-push    0FFFFFFFFh
-mov     ecx, esi
-call    BuildingClass__TogglePower
-jmp     loc_6A7A82
-; ---------------------------------------------------------------------------
-
-loc_6A78D2:                             ; CODE XREF: SidebarClass__UpdateStrips+126↑j
-cmp     eax, 8065h
-jnz     short loc_6A7904
-mov     ecx, ds:8871E0h
-push    0               ; int
-mov     edx, 2000h
-push    3F800000h       ; float
-mov     ecx, [ecx+188h]
-call    PlayVocClass
-push    0FFFFFFFFh
-mov     ecx, esi
-call    BuildingClass__TogglePower2
-jmp     loc_6A7A82
-; ---------------------------------------------------------------------------
-
-loc_6A7904:                             ; CODE XREF: SidebarClass__UpdateStrips+157↑j
-cmp     eax, 80CBh
-jl      loc_6A7B18
-cmp     eax, 80CFh
-jge     loc_6A7B18
-lea     ebp, [eax-80CBh]
-mov     eax, [esi+539Ch]
-cmp     ebp, eax
-jz      loc_6A7A66
-lea     ecx, [eax+eax*2]
-shl     ecx, 5
-add     ecx, (offset dword_A8ED54+78EF4h)
-call    GadgetClass__Hide
-mov     eax, [esi+539Ch]
-mov     edx, eax
-shl     edx, 5
-sub     edx, eax
-xor     edi, edi
-lea     ecx, [eax+edx*8]
-lea     edx, [eax+ecx*4]
-lea     ebx, [esi+edx*4+1544h]
-mov     byte ptr [ebx+1Ch], 0
-
-loc_6A795F:                             ; CODE XREF: SidebarClass__UpdateStrips+206↓j
-mov     eax, [ebx+38h]
-imul    eax, 3Ch ; '<'
-add     eax, edi
-lea     ecx, ds:0[eax*8]
-sub     ecx, eax
-lea     edx, ds:0B07E80h[ecx*8]
-mov     ecx, 87F7E8h
-push    edx
-call    Tactical__SelectObject
-inc     edi
-cmp     edi, 3Ch ; '<'
-jl      short loc_6A795F
-lea     ecx, [ebp+ebp*2+0]
-mov     [esi+539Ch], ebp
-shl     ecx, 5
-add     ecx, (offset dword_A8ED54+78EF4h)
-call    GadgetClass__Show
-mov     eax, [esi+539Ch]
-mov     ecx, eax
-shl     ecx, 5
-sub     ecx, eax
-lea     edx, [eax+ecx*8]
-lea     eax, [eax+edx*4]
-lea     ebp, [esi+eax*4+1544h]
-mov     byte ptr [ebp+1Ch], 1
-mov     ecx, ds:0A8B230h
-mov     eax, [ecx+34B8h]
-test    eax, eax
-mov     eax, 1Ah
-jz      short loc_6A79D8
-mov     eax, 12h
-
-loc_6A79D8:                             ; CODE XREF: SidebarClass__UpdateStrips+251↑j
-mov     edx, ds:886F9Ch
-mov     ecx, dword_A8ED54+7C7A4h
-sub     edx, eax
-mov     eax, ds:886F94h
-sub     edx, ecx
-xor     edi, edi
-lea     ecx, [edx+eax-7]
-mov     eax, 51EB851Fh
-imul    ecx
-sar     edx, 4
-mov     ecx, edx
-shr     ecx, 1Fh
-add     edx, ecx
-shl     edx, 1
-mov     ebx, edx
-test    ebx, ebx
-jle     short loc_6A7A51
-
-loc_6A7A0C:                             ; CODE XREF: SidebarClass__UpdateStrips+2CF↓j
-mov     eax, [ebp+38h]
-imul    eax, 3Ch ; '<'
-add     eax, edi
-lea     edx, ds:0[eax*8]
-sub     edx, eax
-lea     ecx, ds:0B07E80h[edx*8]
-call    Hash__Reset
-mov     eax, [ebp+38h]
-imul    eax, 3Ch ; '<'
-add     eax, edi
-lea     ecx, ds:0[eax*8]
-sub     ecx, eax
-lea     edx, ds:0B07E80h[ecx*8]
-mov     ecx, 87F7E8h
-push    edx
-call    Hash__InsertOrdered
-inc     edi
-cmp     edi, ebx
-jl      short loc_6A7A0C
-
-loc_6A7A51:                             ; CODE XREF: SidebarClass__UpdateStrips+28A↑j
-mov     ecx, esi
-mov     byte ptr ds:884B8Fh, 1
-call    Tactical__UpdateUIVisibility
-mov     byte ptr [esi+53A7h], 1
-
-loc_6A7A66:                             ; CODE XREF: SidebarClass__UpdateStrips+1A8↑j
-; SidebarClass__UpdateStrips+572↓j
-mov     eax, ds:8871E0h
-push    0               ; int
-mov     edx, 2000h
-push    3F800000h       ; float
-mov     ecx, [eax+190h]
-
-loc_6A7A7D:                             ; CODE XREF: SidebarClass__UpdateStrips+4BD↓j
-; SidebarClass__UpdateStrips+4D9↓j ...
-call    PlayVocClass
-
-loc_6A7A82:                             ; CODE XREF: SidebarClass__UpdateStrips+14D↑j
-; SidebarClass__UpdateStrips+17F↑j ...
-xor     bl, bl
-mov     edi, (offset dword_A8ED54+78EF4h)
-pop     ebp
-
-loc_6A7A8A:                             ; CODE XREF: SidebarClass__UpdateStrips+320↓j
-mov     ecx, edi
-call    SidebarClass__updateFlashTimer
-test    al, al
-jz      short loc_6A7A97
-mov     bl, 1
-
-loc_6A7A97:                             ; CODE XREF: SidebarClass__UpdateStrips+313↑j
-add     edi, 60h ; '`'
-cmp     edi, (offset dword_A8ED54+79074h)
-jl      short loc_6A7A8A
-test    bl, bl
-jz      short loc_6A7AC4
-mov     byte ptr [esi+53A6h], 1
-mov     byte ptr dword_A8ED54+7C7C4h, 1
-mov     byte ptr ds:884B8Fh, 1
-mov     edx, [esi]
-push    0
-mov     ecx, esi
-call    dword ptr [edx+38h]
-
-loc_6A7AC4:                             ; CODE XREF: SidebarClass__UpdateStrips+63↑j
-; SidebarClass__UpdateStrips+324↑j
-mov     al, [esi+11B1h]
-test    al, al
-jnz     short loc_6A7AE1
-mov     al, byte ptr dword_A8ED54+790D1h
-test    al, al
-jz      short loc_6A7AE1
-mov     ecx, (offset dword_A8ED54+790A4h)
-call    GadgetClass__Hide
-
-loc_6A7AE1:                             ; CODE XREF: SidebarClass__UpdateStrips+34C↑j
-; SidebarClass__UpdateStrips+355↑j
-mov     al, [esi+11B0h]
-test    al, al
-jnz     short loc_6A7AFE
-mov     al, byte ptr dword_A8ED54+7C679h
-test    al, al
-jz      short loc_6A7AFE
-mov     ecx, (offset dword_A8ED54+7C64Ch)
-call    GadgetClass__Hide
-
-loc_6A7AFE:                             ; CODE XREF: SidebarClass__UpdateStrips+369↑j
-; SidebarClass__UpdateStrips+372↑j
-mov     eax, [esp+20h+arg_4]
-mov     ecx, [esp+20h+arg_0]
-push    eax
-push    ecx
-mov     ecx, esi        ; this
-call    PowerClass__updatePowerBarAnimation
-pop     edi
-pop     esi
-pop     ebx
-add     esp, 14h
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_6A7B18:                             ; CODE XREF: SidebarClass__UpdateStrips+189↑j
-; SidebarClass__UpdateStrips+194↑j
-mov     ecx, dword_A8ED54+7C5F8h
-and     ah, 0BFh
-or      ch, 80h
-cmp     eax, ecx
-jnz     loc_6A7C5E
-mov     byte ptr dword_A8ED54+7C600h, 0
-mov     eax, [esi+539Ch]
-mov     edx, eax
-shl     edx, 5
-sub     edx, eax
-lea     ecx, [eax+edx*8]
-lea     edx, [eax+ecx*4]
-mov     ecx, ds:0A8B230h
-lea     eax, [esi+edx*4+1544h]
-mov     [esp+24h+var_14], eax
-mov     eax, [ecx+34B8h]
-mov     [esp+24h+var_C], eax
-test    eax, eax
-mov     eax, 1Ah
-jz      short loc_6A7B6F
-mov     eax, 12h
-
-loc_6A7B6F:                             ; CODE XREF: SidebarClass__UpdateStrips+3E8↑j
-mov     ecx, ds:886F9Ch
-mov     edi, dword_A8ED54+7C7A4h
-mov     ebp, ds:886F94h
-mov     edx, ecx
-sub     edx, eax
-mov     eax, 51EB851Fh
-sub     edx, edi
-mov     ebx, ds:0A83D4Ch
-lea     edx, [edx+ebp-7]
-imul    edx
-sar     edx, 4
-mov     eax, edx
-shr     eax, 1Fh
-add     edx, eax
-mov     eax, dword_A8ED54+32444h
-cmp     ebx, eax
-mov     [esp+24h+var_10], edx
-jnz     short loc_6A7BB7
-mov     [esp+24h+var_10], 1
-
-loc_6A7BB7:                             ; CODE XREF: SidebarClass__UpdateStrips+42D↑j
-mov     eax, [esp+24h+var_C]
-test    eax, eax
-mov     eax, 1Ah
-jz      short loc_6A7BC9
-mov     eax, 12h
-
-loc_6A7BC9:                             ; CODE XREF: SidebarClass__UpdateStrips+442↑j
-sub     ecx, eax
-mov     eax, 51EB851Fh
-sub     ecx, edi
-lea     ecx, [ecx+ebp-7]
-imul    ecx
-mov     eax, dword_A8ED54+32444h
-sar     edx, 4
-mov     ecx, edx
-shr     ecx, 1Fh
-add     edx, ecx
-cmp     ebx, eax
-jnz     short loc_6A7C07
-mov     eax, edx
-mov     ecx, ds:884CF8h
-cdq
-sub     eax, edx
-mov     edx, eax
-mov     eax, [esp+24h+var_14]
-sar     edx, 1
-add     edx, [eax+44h]
-cmp     edx, ecx
-jge     short loc_6A7C42
-jmp     short loc_6A7C19
-; ---------------------------------------------------------------------------
-
-loc_6A7C07:                             ; CODE XREF: SidebarClass__UpdateStrips+469↑j
-mov     eax, [esp+24h+var_14]
-mov     ecx, [eax+44h]
-add     ecx, edx
-mov     edx, [eax+54h]
-shl     ecx, 1
-cmp     ecx, edx
-jge     short loc_6A7C42
-
-loc_6A7C19:                             ; CODE XREF: SidebarClass__UpdateStrips+485↑j
-mov     edx, [esp+24h+var_10]
-mov     ecx, [eax+48h]
-add     ecx, edx
-push    0
-mov     [eax+48h], ecx
-mov     ecx, ds:8871E0h
-mov     edx, 2000h
-push    3F800000h
-mov     ecx, [ecx+190h]
-jmp     loc_6A7A7D
-; ---------------------------------------------------------------------------
-
-loc_6A7C42:                             ; CODE XREF: SidebarClass__UpdateStrips+483↑j
-; SidebarClass__UpdateStrips+497↑j
-mov     eax, ds:8871E0h
-push    0
-mov     edx, 2000h
-push    3F800000h
-mov     ecx, [eax+700h]
-jmp     loc_6A7A7D
-; ---------------------------------------------------------------------------
-
-loc_6A7C5E:                             ; CODE XREF: SidebarClass__UpdateStrips+3A6↑j
-mov     edx, dword_A8ED54+7C6D8h
-or      dh, 80h
-cmp     eax, edx
-jnz     loc_6A7A82
-mov     byte ptr dword_A8ED54+7C6E0h, 0
-mov     eax, [esi+539Ch]
-mov     ecx, eax
-shl     ecx, 5
-sub     ecx, eax
-lea     edx, [eax+ecx*8]
-mov     ecx, ds:0A8B230h
-lea     eax, [eax+edx*4]
-lea     edi, [esi+eax*4+1544h]
-mov     eax, [ecx+34B8h]
-test    eax, eax
-mov     eax, 1Ah
-jz      short loc_6A7CAA
-mov     eax, 12h
-
-loc_6A7CAA:                             ; CODE XREF: SidebarClass__UpdateStrips+523↑j
-mov     edx, ds:886F9Ch
-mov     ecx, dword_A8ED54+7C7A4h
-sub     edx, eax
-mov     eax, ds:886F94h
-sub     edx, ecx
-lea     ecx, [edx+eax-7]
-mov     eax, 51EB851Fh
-imul    ecx
-mov     eax, ds:0A83D4Ch
-sar     edx, 4
-mov     ecx, edx
-shr     ecx, 1Fh
-add     edx, ecx
-mov     ecx, dword_A8ED54+32444h
-cmp     eax, ecx
-jnz     short loc_6A7CE8
-mov     edx, 1
-
-loc_6A7CE8:                             ; CODE XREF: SidebarClass__UpdateStrips+561↑j
-mov     eax, [edi+44h]
-test    eax, eax
-jz      short loc_6A7CF7
-sub     [edi+48h], edx
-jmp     loc_6A7A66
-; ---------------------------------------------------------------------------
-
-loc_6A7CF7:                             ; CODE XREF: SidebarClass__UpdateStrips+56D↑j
-mov     ecx, ds:8871E0h
-push    0
-mov     edx, 2000h
-push    3F800000h
-mov     ecx, [ecx+700h]
-jmp     loc_6A7A7D
-*/
 } }
 // 0x6A80A0
 namespace gamemd { void* TabClass::updateTabProduction(int a1) {
@@ -12137,136 +4670,69 @@ namespace gamemd { void* TabClass::updateTabProduction(int a1) {
 _BYTE *__thiscall sub_6A80A0(_BYTE *this, int a2)
 {
   _BYTE *result; // eax
-  #72 *v3; // ecx
+  wchar_t *v3; // ecx
   int v4; // esi
   _BYTE *v5; // ecx
   int v6; // esi
-  #72 *v7; // edi
+  wchar_t *v7; // edi
   _DWORD *v8; // ecx
   int v9; // esi
 
-  result = this;
-  *(_DWORD *)this = 0;
-  *(this + 4) = 0;
-  v3 = MEMORY[0xA8ED84];
-  *((_DWORD *)result + 4) = 0;
-  *((_DWORD *)result + 2) = v3;
-  *((_DWORD *)result + 5) = 0;
-  *((_DWORD *)result + 6) = 1;
-  *((_DWORD *)result + 8) = 0;
-  *((_DWORD *)result + 9) = 0;
-  *((_DWORD *)result + 10) = MEMORY[0xB07DC8];
-  *((_DWORD *)result + 11) = MEMORY[0xB07DCC];
-  *((_DWORD *)result + 12) = MEMORY[0xB07DD0];
-  v4 = MEMORY[0xB07DD4];
-  *((_DWORD *)result + 14) = 0;
-  result[60] = 1;
-  *((_DWORD *)result + 13) = v4;
-  result[61] = 0;
-  result[62] = 0;
-  result[63] = 0;
-  *((_DWORD *)result + 16) = -1;
-  *((_DWORD *)result + 17) = 0;
-  *((_DWORD *)result + 18) = 0;
-  *((_DWORD *)result + 19) = 0;
-  *((_DWORD *)result + 20) = 0;
-  *((_DWORD *)result + 21) = 0;
-  v5 = result + 112;
-  v6 = 75;
-  do
+  result = this; /*0x6a80a0*/
+  *(_DWORD *)this = 0; /*0x6a80aa*/
+  *(this + 4) = 0; /*0x6a80ac*/
+  v3 = MEMORY[0xA8ED84]; /*0x6a80af*/
+  *((_DWORD *)result + 4) = 0; /*0x6a80b5*/
+  *((_DWORD *)result + 2) = v3; /*0x6a80b8*/
+  *((_DWORD *)result + 5) = 0; /*0x6a80bc*/
+  *((_DWORD *)result + 6) = 1; /*0x6a80bf*/
+  *((_DWORD *)result + 8) = 0; /*0x6a80c2*/
+  *((_DWORD *)result + 9) = 0; /*0x6a80c5*/
+  *((_DWORD *)result + 10) = MEMORY[0xB07DC8]; /*0x6a80d2*/
+  *((_DWORD *)result + 11) = MEMORY[0xB07DCC]; /*0x6a80da*/
+  *((_DWORD *)result + 12) = MEMORY[0xB07DD0]; /*0x6a80e3*/
+  v4 = MEMORY[0xB07DD4]; /*0x6a80e6*/
+  *((_DWORD *)result + 14) = 0; /*0x6a80ec*/
+  result[60] = 1; /*0x6a80ef*/
+  *((_DWORD *)result + 13) = v4; /*0x6a80f2*/
+  result[61] = 0; /*0x6a80f5*/
+  result[62] = 0; /*0x6a80f8*/
+  result[63] = 0; /*0x6a80fb*/
+  *((_DWORD *)result + 16) = -1; /*0x6a80fe*/
+  *((_DWORD *)result + 17) = 0; /*0x6a8105*/
+  *((_DWORD *)result + 18) = 0; /*0x6a8108*/
+  *((_DWORD *)result + 19) = 0; /*0x6a810b*/
+  *((_DWORD *)result + 20) = 0; /*0x6a810e*/
+  *((_DWORD *)result + 21) = 0; /*0x6a8111*/
+  v5 = result + 112; /*0x6a8114*/
+  v6 = 75; /*0x6a8117*/
+  do /*0x6a8137*/
   {
-    *((_DWORD *)v5 - 1) = 0;
-    *v5 = 0;
-    v7 = MEMORY[0xA8ED84];
-    *((_DWORD *)v5 + 3) = 0;
-    *((_DWORD *)v5 + 1) = v7;
-    *((_DWORD *)v5 + 4) = 0;
-    *((_DWORD *)v5 + 5) = 1;
-    v5 += 52;
-    --v6;
+    *((_DWORD *)v5 - 1) = 0; /*0x6a811c*/
+    *v5 = 0; /*0x6a811f*/
+    v7 = MEMORY[0xA8ED84]; /*0x6a8121*/
+    *((_DWORD *)v5 + 3) = 0; /*0x6a8127*/
+    *((_DWORD *)v5 + 1) = v7; /*0x6a812a*/
+    *((_DWORD *)v5 + 4) = 0; /*0x6a812d*/
+    *((_DWORD *)v5 + 5) = 1; /*0x6a8130*/
+    v5 += 52; /*0x6a8133*/
+    --v6; /*0x6a8136*/
   }
-  while ( v6 );
-  v8 = result + 92;
-  v9 = 75;
-  do
+  while ( v6 ); /*0x6a8137*/
+  v8 = result + 92; /*0x6a8139*/
+  v9 = 75; /*0x6a813c*/
+  do /*0x6a8150*/
   {
-    *(v8 - 1) = 0;
-    *v8 = 0;
-    v8[1] = 0;
-    v8[2] = 0;
-    v8 += 13;
-    --v9;
+    *(v8 - 1) = 0; /*0x6a8141*/
+    *v8 = 0; /*0x6a8144*/
+    v8[1] = 0; /*0x6a8146*/
+    v8[2] = 0; /*0x6a8149*/
+    v8 += 13; /*0x6a814c*/
+    --v9; /*0x6a814f*/
   }
-  while ( v9 );
-  return result;
+  while ( v9 ); /*0x6a8150*/
+  return result; /*0x6a8152*/
 }
-
-/* ASM:
-mov     eax, ecx
-xor     edx, edx
-push    ebx
-mov     ebx, 1
-mov     [eax], edx
-mov     [eax+4], dl
-mov     ecx, dword_A8ED54+30h
-mov     [eax+10h], edx
-mov     [eax+8], ecx
-push    esi
-mov     [eax+14h], edx
-mov     [eax+18h], ebx
-mov     [eax+20h], edx
-mov     [eax+24h], edx
-mov     esi, dword_A8ED54+79074h
-lea     ecx, [eax+28h]
-push    edi
-mov     [ecx], esi
-mov     esi, dword_A8ED54+79078h
-mov     [ecx+4], esi
-mov     esi, dword_A8ED54+7907Ch
-mov     [ecx+8], esi
-mov     esi, dword_A8ED54+79080h
-mov     [eax+38h], edx
-mov     [eax+3Ch], bl
-mov     [ecx+0Ch], esi
-mov     [eax+3Dh], dl
-mov     [eax+3Eh], dl
-mov     [eax+3Fh], dl
-mov     dword ptr [eax+40h], 0FFFFFFFFh
-mov     [eax+44h], edx
-mov     [eax+48h], edx
-mov     [eax+4Ch], edx
-mov     [eax+50h], edx
-mov     [eax+54h], edx
-lea     ecx, [eax+70h]
-mov     esi, 4Bh ; 'K'
-
-loc_6A811C:                             ; CODE XREF: TabClass__updateTabProduction+97↓j
-mov     [ecx-4], edx
-mov     [ecx], dl
-mov     edi, dword_A8ED54+30h
-mov     [ecx+0Ch], edx
-mov     [ecx+4], edi
-mov     [ecx+10h], edx
-mov     [ecx+14h], ebx
-add     ecx, 34h ; '4'
-dec     esi
-jnz     short loc_6A811C
-lea     ecx, [eax+5Ch]
-mov     esi, 4Bh ; 'K'
-
-loc_6A8141:                             ; CODE XREF: TabClass__updateTabProduction+B0↓j
-mov     [ecx-4], edx
-mov     [ecx], edx
-mov     [ecx+4], edx
-mov     [ecx+8], edx
-add     ecx, 34h ; '4'
-dec     esi
-jnz     short loc_6A8141
-pop     edi
-pop     esi
-pop     ebx
-retn    4
-*/
 } }
 // 0x6A8220
 namespace gamemd { int SidebarClass::InitCameoGrid(int a1) {
@@ -12284,127 +4750,37 @@ int __thiscall sub_6A8220(_DWORD *this, int a2)
   int v10; // edx
   int i; // [esp+4h] [ebp+4h]
 
-  *(this + 14) = a2;
-  v2 = 26;
-  if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) )
-    v2 = 18;
-  v3 = (MEMORY[0x886F9C] - MEMORY[0xB0B4F8] - v2 + MEMORY[0x886F94] - 7) / 50;
-  result = 0;
-  v5 = v3;
-  for ( i = 0; i < v5; ++i )
+  *(this + 14) = a2; /*0x6a8224*/
+  v2 = 26; /*0x6a8235*/
+  if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) ) /*0x6a822d*/
+    v2 = 18; /*0x6a823c*/
+  v3 = (MEMORY[0x886F9C] - MEMORY[0xB0B4F8] - v2 + MEMORY[0x886F94] - 7) / 50; /*0x6a826b*/
+  result = 0; /*0x6a826d*/
+  v5 = v3; /*0x6a826f*/
+  for ( i = 0; i < v5; ++i ) /*0x6a8277*/
   {
-    v6 = 0;
-    v7 = 2 * result;
-    do
+    v6 = 0; /*0x6a827f*/
+    v7 = 2 * result; /*0x6a8281*/
+    do /*0x6a830e*/
     {
-      v8 = (_DWORD *)(56 * (v7 + 60 * *(this + 14)) + 11566720);
-      v8[9] = 202;
-      v8[3] = v6 * MEMORY[0xB0B4FC] + MEMORY[0x880D4C][997 * *(this + 14)];
-      v9 = i * MEMORY[0xB0B500];
-      v10 = MEMORY[0x880D50][997 * *(this + 14)];
-      v8[12] = v7;
-      ++v6;
-      ++v7;
-      v8[4] = v10 + v9 + 1;
-      v8[5] = 60;
-      v8[6] = 48;
-      v8[11] = this;
+      v8 = (_DWORD *)(56 * (v7 + 60 * *(this + 14)) + 11566720); /*0x6a8299*/
+      v8[9] = 202; /*0x6a82a0*/
+      v8[3] = v6 * MEMORY[0xB0B4FC] + MEMORY[0x880D4C][997 * *(this + 14)]; /*0x6a82c9*/
+      v9 = i * MEMORY[0xB0B500]; /*0x6a82e2*/
+      v10 = MEMORY[0x880D50][997 * *(this + 14)]; /*0x6a82e7*/
+      v8[12] = v7; /*0x6a82ee*/
+      ++v6; /*0x6a82f1*/
+      ++v7; /*0x6a82f2*/
+      v8[4] = v10 + v9 + 1; /*0x6a82fa*/
+      v8[5] = 60; /*0x6a82fd*/
+      v8[6] = 48; /*0x6a8304*/
+      v8[11] = this; /*0x6a830b*/
     }
-    while ( v6 < 2 );
-    result = i + 1;
+    while ( v6 < 2 ); /*0x6a830e*/
+    result = i + 1; /*0x6a8318*/
   }
-  return result;
+  return result; /*0x6a8329*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-mov     [ecx+38h], eax
-mov     edx, ds:0A8B230h
-mov     eax, [edx+34B8h]
-test    eax, eax
-mov     eax, 1Ah
-jz      short loc_6A8241
-mov     eax, 12h
-
-loc_6A8241:                             ; CODE XREF: SidebarClass__InitCameoGrid+1A↑j
-mov     edx, ds:886F9Ch
-push    ebx
-push    esi
-mov     esi, dword_A8ED54+7C7A4h
-sub     edx, esi
-sub     edx, eax
-mov     eax, ds:886F94h
-lea     edx, [edx+eax-7]
-mov     eax, 51EB851Fh
-imul    edx
-sar     edx, 4
-mov     eax, edx
-shr     eax, 1Fh
-add     edx, eax
-xor     eax, eax
-mov     ebx, edx
-mov     [esp+8+arg_0], eax
-test    ebx, ebx
-jle     loc_6A8327
-push    ebp
-push    edi
-
-loc_6A827F:                             ; CODE XREF: SidebarClass__InitCameoGrid+FF↓j
-xor     esi, esi
-lea     edi, [eax+eax]
-
-loc_6A8284:                             ; CODE XREF: SidebarClass__InitCameoGrid+EE↓j
-mov     eax, [ecx+38h]
-lea     eax, [eax+eax*2]
-lea     edx, [eax+eax*4]
-lea     eax, [edi+edx*4]
-lea     edx, ds:0[eax*8]
-sub     edx, eax
-lea     eax, ds:0B07E80h[edx*8]
-mov     dword ptr [eax+24h], 0CAh
-mov     edx, [ecx+38h]
-mov     ebp, edx
-shl     ebp, 5
-sub     ebp, edx
-lea     ebp, [edx+ebp*8]
-lea     edx, [edx+ebp*4]
-mov     ebp, dword_A8ED54+7C7A8h
-imul    ebp, esi
-mov     edx, ds:880D4Ch[edx*4]
-add     edx, ebp
-mov     [eax+0Ch], edx
-mov     edx, [ecx+38h]
-mov     ebp, edx
-shl     ebp, 5
-sub     ebp, edx
-lea     ebp, [edx+ebp*8]
-lea     edx, [edx+ebp*4]
-mov     ebp, dword_A8ED54+7C7ACh
-imul    ebp, [esp+10h+arg_0]
-mov     edx, ds:880D50h[edx*4]
-mov     [eax+30h], edi
-inc     esi
-inc     edi
-lea     edx, [edx+ebp+1]
-cmp     esi, 2
-mov     [eax+10h], edx
-mov     dword ptr [eax+14h], 3Ch ; '<'
-mov     dword ptr [eax+18h], 30h ; '0'
-mov     [eax+2Ch], ecx
-jl      loc_6A8284
-mov     eax, [esp+10h+arg_0]
-inc     eax
-cmp     eax, ebx
-mov     [esp+10h+arg_0], eax
-jl      loc_6A827F
-pop     edi
-pop     ebp
-
-loc_6A8327:                             ; CODE XREF: SidebarClass__InitCameoGrid+57↑j
-pop     esi
-pop     ebx
-retn    4
-*/
 } }
 // 0x6A8330
 namespace gamemd { int SidebarClass::RefreshCameoGrid() {
@@ -12417,88 +4793,26 @@ char __thiscall sub_6A8330(_DWORD *this)
   unsigned int v5; // eax
   int v6; // ebx
 
-  v2 = 26;
-  if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) )
-    v2 = 18;
-  v3 = 0;
-  v4 = MEMORY[0x886F9C] - MEMORY[0xB0B4F8] - v2 + MEMORY[0x886F94] - 7;
-  v5 = (unsigned int)((unsigned __int64)(1374389535LL * v4) >> 32) >> 31;
-  v6 = 2 * (v4 / 50);
-  if ( v6 > 0 )
+  v2 = 26; /*0x6a8342*/
+  if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) ) /*0x6a8338*/
+    v2 = 18; /*0x6a8349*/
+  v3 = 0; /*0x6a8369*/
+  v4 = MEMORY[0x886F9C] - MEMORY[0xB0B4F8] - v2 + MEMORY[0x886F94] - 7; /*0x6a836b*/
+  v5 = (unsigned int)((unsigned __int64)(1374389535LL * v4) >> 32) >> 31; /*0x6a8376*/
+  v6 = 2 * (v4 / 50); /*0x6a837d*/
+  if ( v6 > 0 ) /*0x6a8381*/
   {
-    do
+    do /*0x6a83ce*/
     {
-      Hash::Reset((_DWORD *)(56 * (v3 + 60 * *(this + 14)) + 11566720));
-      LOBYTE(v5) = Hash::InsertOrdered(&MEMORY[0x87F7E8], 56 * (v3 + 60 * *(this + 14)) + 11566720);
-      ++v3;
+      Hash::Reset((_DWORD *)(56 * (v3 + 60 * *(this + 14)) + 11566720)); /*0x6a839f*/
+      LOBYTE(v5) = Hash::InsertOrdered(&MEMORY[0x87F7E8], 56 * (v3 + 60 * *(this + 14)) + 11566720); /*0x6a83c6*/
+      ++v3; /*0x6a83cb*/
     }
-    while ( v3 < v6 );
+    while ( v3 < v6 ); /*0x6a83ce*/
   }
-  MEMORY[0x884B8F] = 1;
-  return v5;
+  MEMORY[0x884B8F] = 1; /*0x6a83d2*/
+  return v5; /*0x6a83d0*/
 }
-
-/* ASM:
-mov     eax, ds:0A8B230h
-push    ebx
-push    esi
-push    edi
-mov     eax, [eax+34B8h]
-mov     edi, ecx
-test    eax, eax
-mov     eax, 1Ah
-jz      short loc_6A834E
-mov     eax, 12h
-
-loc_6A834E:                             ; CODE XREF: SidebarClass__RefreshCameoGrid+17↑j
-mov     ecx, ds:886F9Ch
-mov     esi, dword_A8ED54+7C7A4h
-mov     edx, ds:886F94h
-sub     ecx, esi
-sub     ecx, eax
-mov     eax, 51EB851Fh
-xor     esi, esi
-lea     ecx, [ecx+edx-7]
-imul    ecx
-sar     edx, 4
-mov     eax, edx
-shr     eax, 1Fh
-add     edx, eax
-shl     edx, 1
-mov     ebx, edx
-test    ebx, ebx
-jle     short loc_6A83D0
-
-loc_6A8383:                             ; CODE XREF: SidebarClass__RefreshCameoGrid+9E↓j
-mov     eax, [edi+38h]
-lea     eax, [eax+eax*2]
-lea     ecx, [eax+eax*4]
-lea     eax, [esi+ecx*4]
-lea     edx, ds:0[eax*8]
-sub     edx, eax
-lea     ecx, ds:0B07E80h[edx*8]
-call    Hash__Reset
-mov     eax, [edi+38h]
-lea     eax, [eax+eax*2]
-lea     eax, [eax+eax*4]
-lea     eax, [esi+eax*4]
-lea     ecx, ds:0[eax*8]
-sub     ecx, eax
-lea     edx, ds:0B07E80h[ecx*8]
-mov     ecx, 87F7E8h
-push    edx
-call    Hash__InsertOrdered
-inc     esi
-cmp     esi, ebx
-jl      short loc_6A8383
-
-loc_6A83D0:                             ; CODE XREF: SidebarClass__RefreshCameoGrid+51↑j
-pop     edi
-pop     esi
-mov     byte ptr ds:884B8Fh, 1
-pop     ebx
-retn
-*/
 } }
 // 0x6A83E0
 namespace gamemd { int SidebarClass::sortCameoList() {
@@ -12508,40 +4822,14 @@ char __thiscall sub_6A83E0(_DWORD *this)
   int i; // esi
   char result; // al
 
-  for ( i = 0; i < 60; ++i )
-    result = Tactical::SelectObject(&MEMORY[0x87F7E8], 56 * (i + 60 * *(this + 14)) + 11566720);
-  return result;
+  for ( i = 0; i < 60; ++i ) /*0x6a83e4*/
+    result = Tactical::SelectObject(&MEMORY[0x87F7E8], 56 * (i + 60 * *(this + 14)) + 11566720); /*0x6a8408*/
+  return result; /*0x6a8413*/
 }
-
-/* ASM:
-push    esi
-push    edi
-mov     edi, ecx
-xor     esi, esi
-
-loc_6A83E6:                             ; CODE XREF: SidebarClass__sortCameoList+31↓j
-mov     eax, [edi+38h]
-lea     eax, [eax+eax*2]
-lea     eax, [eax+eax*4]
-lea     eax, [esi+eax*4]
-lea     ecx, ds:0[eax*8]
-sub     ecx, eax
-lea     edx, ds:0B07E80h[ecx*8]
-mov     ecx, 87F7E8h
-push    edx
-call    Tactical__SelectObject
-inc     esi
-cmp     esi, 3Ch ; '<'
-jl      short loc_6A83E6
-pop     edi
-pop     esi
-retn
-*/
 } }
 // 0x6A8B30
 namespace gamemd { int SidebarClass::UpdateCameos(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x6a8b30
 char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
 {
   int v4; // edi
@@ -12554,260 +4842,259 @@ char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
   int v11; // eax
   int v12; // eax
   int v13; // edx
-  char *v14; // esi
+  _DWORD *v14; // esi
   int v15; // ecx
   int v16; // eax
   int v17; // ebp
-  char *v18; // edi
-  int v19; // ecx
-  _DWORD *v20; // esi
+  _DWORD *v18; // edi
+  _DWORD *v19; // esi
   int Type; // eax
-  char *v22; // ebp
-  _DWORD *v23; // esi
-  _DWORD *v24; // esi
+  _DWORD *v21; // ebp
+  _DWORD *v22; // esi
+  int v23; // esi
+  int v24; // eax
   int v25; // eax
-  int v26; // eax
-  char *v27; // eax
-  char *v28; // esi
-  int v29; // edi
-  int *v30; // esi
-  int v31; // ecx
-  int v32; // ecx
-  int v33; // eax
-  int v34; // ecx
-  _DWORD *v35; // edi
-  int v36; // esi
-  _DWORD *ProductionData; // eax
-  int v38; // eax
-  int *v39; // ecx
-  int v40; // edx
-  int v41; // ebx
-  int v42; // edx
-  _DWORD *v43; // ecx
+  const void *v26; // eax
+  char *v27; // esi
+  int v28; // edi
+  int *v29; // esi
+  int v30; // ecx
+  wchar_t *v31; // ecx
+  int v32; // eax
+  int v33; // ecx
+  int *v34; // edi
+  int v35; // esi
+  _DWORD *v36; // eax
+  int v37; // eax
+  int *v38; // ecx
+  int v39; // edx
+  int v40; // ebx
+  int v41; // edx
+  _DWORD *v42; // ecx
+  int v43; // eax
   int v44; // eax
   int v45; // eax
-  int v46; // eax
-  int *v47; // ecx
-  int v48; // edx
-  int v49; // ebp
-  int *v50; // ecx
-  int v51; // edx
-  int v52; // ebx
+  int *v46; // ecx
+  int v47; // edx
+  int v48; // ebp
+  int *v49; // ecx
+  int v50; // edx
+  int v51; // ebx
+  int v52; // eax
   int v53; // eax
-  int BuildingAnimByName; // eax
   char result; // al
-  int v56; // [esp-10h] [ebp-A8h]
-  int v57; // [esp-8h] [ebp-A0h]
-  char v58; // [esp+13h] [ebp-85h]
+  int v55; // [esp-10h] [ebp-A8h]
+  int v56; // [esp-8h] [ebp-A0h]
+  char v57; // [esp+13h] [ebp-85h]
+  int v58; // [esp+14h] [ebp-84h]
   int v59; // [esp+14h] [ebp-84h]
-  int v60; // [esp+14h] [ebp-84h]
-  int v62; // [esp+20h] [ebp-78h]
-  char v63[112]; // [esp+28h] [ebp-70h] BYREF
+  int v61; // [esp+20h] [ebp-78h]
 
-  v58 = 0;
-  if ( *(this + 63) )
-    goto LABEL_115;
-  v4 = *((_DWORD *)this + 18);
-  if ( v4 )
+  v57 = 0; /*0x6a8b45*/
+  if ( *(this + 63) ) /*0x6a8b3b*/
+    goto LABEL_115; /*0x6a8b3b*/
+  v4 = *((_DWORD *)this + 18); /*0x6a8b50*/
+  if ( v4 ) /*0x6a8b55*/
   {
-    v5 = 26;
-    if ( *(_DWORD *)(MEMORY[0x87F7E8][536210] + 13496) )
-      v5 = 18;
-    v6 = *((_DWORD *)this + 21);
-    v7 = (MEMORY[0x87F7E8][7661] - v5 - dword_A8ED54[127465] + MEMORY[0x87F7E8][7659] - 7) / 50;
-    v8 = 2;
-    v9 = 2 * v7;
-    if ( MEMORY[0x87F7E8][528729] == dword_A8ED54[51473] )
+    v5 = 26; /*0x6a8b66*/
+    if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) ) /*0x6a8b60*/
+      v5 = 18; /*0x6a8b6f*/
+    v6 = *((_DWORD *)this + 21); /*0x6a8b9f*/
+    v7 = (MEMORY[0x886F9C] - v5 - MEMORY[0xB0B4F8] + MEMORY[0x886F94] - 7) / 50; /*0x6a8bad*/
+    v8 = 2; /*0x6a8baf*/
+    v9 = 2 * v7; /*0x6a8bb4*/
+    if ( HouseClass_Player == (#375 *)MEMORY[0xAC1198] ) /*0x6a8bb7*/
     {
-      v6 = MEMORY[0x87F7E8][5444];
-      v8 = 1;
-      v7 /= 2;
-      v9 = v7;
+      v6 = MEMORY[0x884CF8]; /*0x6a8bb9*/
+      v8 = 1; /*0x6a8bc2*/
+      v7 /= 2; /*0x6a8bc7*/
+      v9 = v7; /*0x6a8bc9*/
     }
-    if ( v6 > v9 )
+    if ( v6 > v9 ) /*0x6a8bcd*/
     {
-      if ( v4 >= 0 )
+      if ( v4 >= 0 ) /*0x6a8bdc*/
       {
-        if ( v8 * (v7 + *((_DWORD *)this + 17)) < v6 )
+        if ( v8 * (v7 + *((_DWORD *)this + 17)) < v6 ) /*0x6a8c09*/
         {
-          *((_DWORD *)this + 18) = v4 - 1;
-          *((_DWORD *)this + 19) = dword_A8ED54[127467];
-          *(this + 62) = 1;
-          *(this + 63) = 1;
+          *((_DWORD *)this + 18) = v4 - 1; /*0x6a8c11*/
+          *((_DWORD *)this + 19) = MEMORY[0xB0B500]; /*0x6a8c1a*/
+          *(this + 62) = 1; /*0x6a8c1d*/
+          *(this + 63) = 1; /*0x6a8c21*/
         }
         else
         {
-          *((_DWORD *)this + 18) = 0;
+          *((_DWORD *)this + 18) = 0; /*0x6a8c0b*/
         }
       }
       else
       {
-        v10 = *((_DWORD *)this + 17);
-        if ( v10 )
+        v10 = *((_DWORD *)this + 17); /*0x6a8bde*/
+        if ( v10 ) /*0x6a8be3*/
         {
-          *((_DWORD *)this + 18) = v4 + 1;
-          *(this + 62) = 0;
-          *(this + 63) = 1;
-          *((_DWORD *)this + 17) = v10 - 1;
-          *((_DWORD *)this + 19) = 0;
+          *((_DWORD *)this + 18) = v4 + 1; /*0x6a8bec*/
+          *(this + 62) = 0; /*0x6a8bef*/
+          *(this + 63) = 1; /*0x6a8bf3*/
+          *((_DWORD *)this + 17) = v10 - 1; /*0x6a8bf7*/
+          *((_DWORD *)this + 19) = 0; /*0x6a8bfa*/
         }
         else
         {
-          *((_DWORD *)this + 18) = 0;
+          *((_DWORD *)this + 18) = 0; /*0x6a8be5*/
         }
       }
     }
     else
     {
-      *((_DWORD *)this + 18) = 0;
+      *((_DWORD *)this + 18) = 0; /*0x6a8bcf*/
     }
   }
-  if ( *(this + 63) )
+  if ( *(this + 63) ) /*0x6a8c25*/
   {
 LABEL_115:
-    if ( *(this + 62) )
+    if ( *(this + 62) ) /*0x6a8c2c*/
     {
-      v11 = *((_DWORD *)this + 19) - dword_A8ED54[127472];
-      *((_DWORD *)this + 19) = v11;
-      if ( v11 <= 0 )
+      v11 = *((_DWORD *)this + 19) - MEMORY[0xB0B514]; /*0x6a8c3e*/
+      *((_DWORD *)this + 19) = v11; /*0x6a8c40*/
+      if ( v11 <= 0 ) /*0x6a8c45*/
       {
-        v12 = *((_DWORD *)this + 17);
-        *(this + 63) = 0;
-        *((_DWORD *)this + 19) = 0;
-        *((_DWORD *)this + 17) = v12 + 1;
+        v12 = *((_DWORD *)this + 17); /*0x6a8c47*/
+        *(this + 63) = 0; /*0x6a8c4a*/
+        *((_DWORD *)this + 19) = 0; /*0x6a8c4f*/
+        *((_DWORD *)this + 17) = v12 + 1; /*0x6a8c56*/
       }
     }
     else
     {
-      v13 = dword_A8ED54[127472] + *((_DWORD *)this + 19);
-      *((_DWORD *)this + 19) = v13;
-      if ( v13 >= dword_A8ED54[127467] )
+      v13 = MEMORY[0xB0B514] + *((_DWORD *)this + 19); /*0x6a8c63*/
+      *((_DWORD *)this + 19) = v13; /*0x6a8c65*/
+      if ( v13 >= MEMORY[0xB0B500] ) /*0x6a8c72*/
       {
-        *(this + 63) = 0;
-        *((_DWORD *)this + 19) = 0;
+        *(this + 63) = 0; /*0x6a8c74*/
+        *((_DWORD *)this + 19) = 0; /*0x6a8c78*/
       }
     }
-    v58 = 1;
+    v57 = 1; /*0x6a8c7f*/
   }
-  if ( *((_DWORD *)this + 16) != -1 )
+  if ( *((_DWORD *)this + 16) != -1 ) /*0x6a8c8c*/
   {
-    v14 = this + 8;
-    if ( CDTimerClass::TimeRemaining((int *)this + 2) || (v15 = *((_DWORD *)this + 5)) == 0 )
+    v14 = this + 8; /*0x6a8c8e*/
+    if ( CDTimerClass::TimeRemaining((int *)this + 2) || (v15 = *((_DWORD *)this + 5)) == 0 ) /*0x6a8ca5*/
     {
-      *(this + 4) = 0;
+      *(this + 4) = 0; /*0x6a8d4d*/
     }
     else
     {
-      v16 = *((_DWORD *)this + 6) + *(_DWORD *)this;
-      *(this + 4) = 1;
-      *(_DWORD *)this = v16;
-      v58 = 1;
-      *(_DWORD *)v14 = dword_A8ED54[12];
-      *((_DWORD *)this + 3) = v62;
-      *((_DWORD *)this + 4) = v15;
-      if ( v16 >= 7 )
+      v16 = *((_DWORD *)this + 6) + *(_DWORD *)this; /*0x6a8cb0*/
+      *(this + 4) = 1; /*0x6a8cb2*/
+      *(_DWORD *)this = v16; /*0x6a8cb6*/
+      v57 = 1; /*0x6a8cc4*/
+      *v14 = MEMORY[0xA8ED84]; /*0x6a8cc9*/
+      *((_DWORD *)this + 3) = v61; /*0x6a8cd0*/
+      *((_DWORD *)this + 4) = v15; /*0x6a8cd3*/
+      if ( v16 >= 7 ) /*0x6a8cd6*/
       {
-        *(_DWORD *)v14 = dword_A8ED54[12];
-        *((_DWORD *)this + 3) = v62;
-        *((_DWORD *)this + 4) = 0;
-        *((_DWORD *)this + 5) = 0;
-        *(_DWORD *)this = 0;
-        *((_DWORD *)this + 16) = -1;
+        *v14 = MEMORY[0xA8ED84]; /*0x6a8ce3*/
+        *((_DWORD *)this + 3) = v61; /*0x6a8ce5*/
+        *((_DWORD *)this + 4) = 0; /*0x6a8ce8*/
+        *((_DWORD *)this + 5) = 0; /*0x6a8ceb*/
+        *(_DWORD *)this = 0; /*0x6a8cee*/
+        *((_DWORD *)this + 16) = -1; /*0x6a8cf0*/
       }
     }
   }
-  if ( MEMORY[0x87F7E8][5352] > dword_A8ED54[12] )
-    v58 = 1;
-  if ( *((_DWORD *)this + 14) <= 1u )
+  if ( MEMORY[0x884B88] > (int)MEMORY[0xA8ED84] ) /*0x6a8d00*/
+    v57 = 1; /*0x6a8d02*/
+  if ( *((_DWORD *)this + 14) <= 1u ) /*0x6a8d0c*/
   {
-    v17 = 0;
-    if ( *((int *)this + 21) > 0 )
+    v17 = 0; /*0x6a8d1a*/
+    if ( *((int *)this + 21) > 0 ) /*0x6a8d1e*/
     {
-      v18 = this + 88;
-      do
+      v18 = this + 88; /*0x6a8d20*/
+      do /*0x6a8d23*/
       {
-        if ( *((_DWORD *)v18 + 1) == 31 )
+        if ( v18[1] == 31 ) /*0x6a8d27*/
         {
-          v19 = *(_DWORD *)(*(_DWORD *)(MEMORY[0x87F7E8][528729] + 600) + 4 * *(_DWORD *)v18);
-          if ( v19 && SuperClass::ShouldFlashTab(v19) )
-            goto LABEL_53;
+          if ( *(_DWORD *)(*((_DWORD *)HouseClass_Player + 150) + 4 * *v18) /*0x6a8d3e*/
+            && (unsigned __int8)SuperClass::ShouldFlashTab() )
+          {
+            goto LABEL_53; /*0x6a8d45*/
+          }
         }
         else
         {
-          v20 = (_DWORD *)*((_DWORD *)v18 + 3);
-          if ( v20 )
+          v19 = (_DWORD *)v18[3]; /*0x6a8d53*/
+          if ( v19 ) /*0x6a8d58*/
           {
-            if ( ObjectClass::IsCliffWall(*((_DWORD **)v18 + 3)) )
+            if ( ObjectClass::IsCliffWall((_DWORD *)v18[3]) ) /*0x6a8d5c*/
             {
-              Type = AbstractClass::GetType(v20);
-              if ( Type )
+              Type = AbstractClass::GetType(v19); /*0x6a8d67*/
+              if ( Type ) /*0x6a8d6e*/
               {
-                if ( (*(int (__thiscall **)(int))(*(_DWORD *)Type + 44))(Type) == 6 )
+                if ( (*(int (__thiscall **)(int))(*(_DWORD *)Type + 44))(Type) == 6 ) /*0x6a8d7a*/
                 {
 LABEL_53:
-                  SidebarClass::startButtonFlash(
-                    (int)&dword_A8ED54[24 * *((_DWORD *)this + 14) + 123837],
+                  SidebarClass::startButtonFlash( /*0x6a8e85*/
                     10,
-                    10 - dword_A8ED54[12] % 10,
-                    (10 - dword_A8ED54[12] % 10 + dword_A8ED54[12]) / 10 % 2 == 0);
-                  HIBYTE(MEMORY[0x87F7E8][5353]) = 1;
-                  MapClass::MarkForRedraw(MEMORY[0x87F7E8], 0);
-                  goto LABEL_44;
+                    10 - (int)MEMORY[0xA8ED84] % 10,
+                    ((int)MEMORY[0xA8ED84] + 10 - (int)MEMORY[0xA8ED84] % 10) / 10 % 2 == 0);
+                  MEMORY[0x884B8F] = 1; /*0x6a8ea7*/
+                  MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6a8eae*/
+                  goto LABEL_44; /*0x6a8eb3*/
                 }
               }
             }
           }
         }
-        ++v17;
-        v18 += 52;
+        ++v17; /*0x6a8d83*/
+        v18 += 13; /*0x6a8d84*/
       }
-      while ( v17 < *((_DWORD *)this + 21) );
+      while ( v17 < *((_DWORD *)this + 21) ); /*0x6a8d23*/
     }
-    SHA1::Reset((int)&dword_A8ED54[24 * *((_DWORD *)this + 14) + 123837]);
+    SHA1::Reset((int)&MEMORY[0xB07C48] + 96 * *((_DWORD *)this + 14)); /*0x6a8d8b*/
   }
 LABEL_44:
   if ( *(this + 61) )
   {
-    v59 = 0;
+    v58 = 0; /*0x6a8dad*/
     if ( *((int *)this + 21) > 0 )
     {
-      v22 = this + 104;
+      v21 = this + 104; /*0x6a8dbd*/
       do
       {
-        v23 = (_DWORD *)*((_DWORD *)v22 - 1);
-        if ( v23 )
+        v22 = (_DWORD *)*(v21 - 1); /*0x6a8dc6*/
+        if ( v22 )
         {
-          if ( FactoryClass::HasProgressChanged(*((_BYTE **)v22 - 1)) )
+          if ( (unsigned __int8)FactoryClass::HasProgressChanged(*(v21 - 1)) )
           {
-            v58 = 1;
-            if ( ObjectClass::IsCliffWall(v23) )
+            v57 = 1; /*0x6a8de2*/
+            if ( ObjectClass::IsCliffWall(v22) )
             {
-              v24 = (_DWORD *)AbstractClass::GetType(v23);
-              if ( v24 )
+              v23 = AbstractClass::GetType(v22); /*0x6a8dfb*/
+              if ( v23 )
               {
-                switch ( (*(int (__thiscall **)(_DWORD *))(*v24 + 44))(v24) )
+                switch ( (*(int (__thiscall **)(int))(*(_DWORD *)v23 + 44))(v23) )
                 {
                   case 1:
                   case 2:
                   case 15:
-                    v57 = *(unsigned __int8 *)((*(int (__thiscall **)(_DWORD *))(*v24 + 132))(v24) + 3278);
-                    v56 = (*(int (__thiscall **)(_DWORD *))(*v24 + 44))(v24);
-                    v26 = (*(int (__thiscall **)(_DWORD *))(*v24 + 56))(v24);
-                    v27 = EventClass::Init(v63, v26, 11, v56, -1, v57, &dword_A8ED54[123937]);
-                    if ( MEMORY[0x87F7E8][524984] < 128 )
+                    v56 = *(unsigned __int8 *)((*(int (__thiscall **)(int))(*(_DWORD *)v23 + 132))(v23) + 3278); /*0x6a8ed1*/
+                    v55 = (*(int (__thiscall **)(int))(*(_DWORD *)v23 + 44))(v23); /*0x6a8ed9*/
+                    v25 = (*(int (__thiscall **)(int))(*(_DWORD *)v23 + 56))(v23); /*0x6a8ee0*/
+                    v26 = (const void *)EventClass::Init(v25, 11, v55, -1, v56, &MEMORY[0xB07DD8]); /*0x6a8ee8*/
+                    if ( Networking_LastEventIndex < 128 ) /*0x6a8ef7*/
                     {
-                      qmemcpy((char *)&MEMORY[0x87F7E8][524987] + 111 * MEMORY[0x87F7E8][524986], v27, 0x6Fu);
-                      MEMORY[0x87F7E8][MEMORY[0x87F7E8][524986] + 528539] = ((int (*)(void))timeGetTime)();
-                      MEMORY[0x87F7E8][524986] = (LOBYTE(MEMORY[0x87F7E8][524986]) + 1) & 0x7F;
-                      ++MEMORY[0x87F7E8][524984];
+                      qmemcpy(&g_NetworkPacketIndex[111 * Networking_NextPacketIndex], v26, 0x6Fu); /*0x6a8f13*/
+                      g_CrateSystemState[Networking_NextPacketIndex] = timeGetTime(); /*0x6a8f20*/
+                      Networking_NextPacketIndex = ((_BYTE)Networking_NextPacketIndex + 1) & 0x7F; /*0x6a8f37*/
+                      ++Networking_LastEventIndex; /*0x6a8f3d*/
                     }
-                    *(_DWORD *)v22 = 0;
-                    break;
+                    *v21 = 0; /*0x6a8f42*/
+                    break; /*0x6a8f42*/
                   case 6:
-                    VoxClass::FindAndPlay(aEvaConstructio, -1);
-                    v25 = (*(int (__thiscall **)(_DWORD *))(*v24 + 44))(v24);
-                    SidebarClass::registerBuildingType(v25 == 6 ? v24 : 0);
-                    break;
+                    VoxClass::FindAndPlay(MEMORY[0x83FA80], -1); /*0x6a8e2f*/
+                    v24 = (*(int (__thiscall **)(int))(*(_DWORD *)v23 + 44))(v23); /*0x6a8e38*/
+                    SidebarClass::registerBuildingType(v24 == 6 ? v23 : 0);
+                    break; /*0x6a8e4d*/
                   default:
                     break;
                 }
@@ -12815,1909 +5102,525 @@ LABEL_44:
             }
           }
         }
-        v22 += 52;
-        ++v59;
+        v21 += 13; /*0x6a8f49*/
+        ++v58; /*0x6a8f58*/
       }
-      while ( v59 < *((_DWORD *)this + 21) );
+      while ( v58 < *((_DWORD *)this + 21) );
     }
   }
-  v28 = this;
-  v29 = 0;
-  if ( *((int *)this + 21) > 0 )
+  v27 = this; /*0x6a8f64*/
+  v28 = 0; /*0x6a8f6a*/
+  if ( *((int *)this + 21) > 0 ) /*0x6a8f6f*/
   {
-    v30 = (int *)(this + 116);
-    do
+    v29 = (int *)(this + 116); /*0x6a8f79*/
+    do /*0x6a9025*/
     {
-      if ( *(v30 - 3) == 1 )
+      if ( *(v29 - 3) == 1 ) /*0x6a8f80*/
       {
-        v31 = *(v30 - 4);
-        if ( v31 && (!*(_DWORD *)(v31 + 56) || *(_BYTE *)(v31 + 112) || SidebarClass::draw((_BYTE *)v31)) )
+        v30 = *(v29 - 4); /*0x6a8f86*/
+        if ( v30 && (!*(_DWORD *)(v30 + 56) || *(_BYTE *)(v30 + 112) || (unsigned __int8)SidebarClass::draw()) ) /*0x6a8f99*/
         {
-          v32 = dword_A8ED54[12];
-          v30[3] = 0;
-          *v30 = v32;
-          v30[1] = v62;
-          v30[2] = 0;
-          *(v30 - 2) = 0;
+          v31 = MEMORY[0xA8ED84]; /*0x6a8fa2*/
+          v29[3] = 0; /*0x6a8fac*/
+          *v29 = (int)v31; /*0x6a8faf*/
+          v29[1] = v61; /*0x6a8fb5*/
+          v29[2] = 0; /*0x6a8fb8*/
+          *(v29 - 2) = 0; /*0x6a8fbb*/
         }
-        if ( CDTimerClass::TimeRemaining(v30) || (v33 = v30[3]) == 0 )
+        if ( CDTimerClass::TimeRemaining(v29) || (v32 = v29[3]) == 0 ) /*0x6a8fd2*/
         {
-          *((_BYTE *)v30 - 4) = 0;
+          *((_BYTE *)v29 - 4) = 0; /*0x6a9063*/
         }
         else
         {
-          v34 = v30[4] + *(v30 - 2);
-          *((_BYTE *)v30 - 4) = 1;
-          *(v30 - 2) = v34;
-          v58 = 1;
-          *v30 = dword_A8ED54[12];
-          v30[1] = v62;
-          v30[2] = v33;
-          if ( *(v30 - 2) >= 53 )
+          v33 = v29[4] + *(v29 - 2); /*0x6a8fde*/
+          *((_BYTE *)v29 - 4) = 1; /*0x6a8fe0*/
+          *(v29 - 2) = v33; /*0x6a8fe4*/
+          v57 = 1; /*0x6a8fef*/
+          *v29 = (int)MEMORY[0xA8ED84]; /*0x6a8ff4*/
+          v29[1] = v61; /*0x6a8ffa*/
+          v29[2] = v32; /*0x6a8ffd*/
+          if ( *(v29 - 2) >= 53 ) /*0x6a9006*/
           {
-            *v30 = dword_A8ED54[12];
-            v30[3] = 0;
-            v30[1] = v62;
-            v30[2] = 0;
+            *v29 = (int)MEMORY[0xA8ED84]; /*0x6a900f*/
+            v29[3] = 0; /*0x6a9011*/
+            v29[1] = v61; /*0x6a9014*/
+            v29[2] = 0; /*0x6a9017*/
           }
         }
       }
-      ++v29;
-      v30 += 13;
+      ++v28; /*0x6a901e*/
+      v29 += 13; /*0x6a901f*/
     }
-    while ( v29 < *((_DWORD *)this + 21) );
-    v28 = this;
+    while ( v28 < *((_DWORD *)this + 21) ); /*0x6a9025*/
+    v27 = this; /*0x6a902b*/
   }
-  if ( v28[28] && MEMORY[0x87F7E8][528729] == dword_A8ED54[51473] )
+  if ( v27[28] && HouseClass_Player == (#375 *)MEMORY[0xAC1198] )
   {
-    v60 = 0;
-    if ( MEMORY[0x87F7E8][5444] > 0 )
+    v59 = 0; /*0x6a9050*/
+    if ( MEMORY[0x884CF8] > 0 )
     {
-      v35 = &MEMORY[0x87F7E8][5395];
+      v34 = MEMORY[0x884C34]; /*0x6a905c*/
       do
       {
-        v36 = *(v35 - 40);
-        if ( v36 )
+        v35 = *(v34 - 40); /*0x6a906b*/
+        if ( v35 )
         {
-          if ( LOBYTE(MEMORY[0x87F7E8][5443]) )
+          if ( MEMORY[0x884CF4] ) /*0x6a9080*/
           {
-            if ( MEMORY[0x87F7E8][536212] == 4 )
+            if ( MEMORY[0xA8B238][0] == 4 ) /*0x6a9089*/
             {
-              ProductionData = SidebarClass::FindProductionData((void *)(v36 + 90154));
-              if ( ProductionData )
+              v36 = (_DWORD *)SidebarClass::FindProductionData(v35 + 90154); /*0x6a9091*/
+              if ( v36 ) /*0x6a9098*/
               {
-                *v35 = ProductionData[7];
-                v35[8] = ProductionData[4];
-                v35[16] = ProductionData[2];
-                v35[24] = ProductionData[3];
-                v35[32] = ProductionData[8];
-                v35[40] = ProductionData[12];
-                __3_YAXPAX_Z(ProductionData);
-                v58 = 1;
+                *v34 = v36[7]; /*0x6a909e*/
+                v34[8] = v36[4]; /*0x6a90a3*/
+                v34[16] = v36[2]; /*0x6a90a9*/
+                v34[24] = v36[3]; /*0x6a90af*/
+                v34[32] = v36[8]; /*0x6a90b5*/
+                v34[40] = v36[12]; /*0x6a90be*/
+                __3_YAXPAX_Z(v36); /*0x6a90c4*/
+                v57 = 1; /*0x6a90cc*/
               }
             }
           }
-          v38 = 0;
-          v39 = (int *)(v36 + 21476);
-          v40 = 20;
-          do
+          v37 = 0; /*0x6a90d7*/
+          v38 = (int *)(v35 + 21476); /*0x6a90d9*/
+          v39 = 20; /*0x6a90db*/
+          do /*0x6a90e8*/
           {
-            v41 = *v39++;
-            v38 += v41;
-            --v40;
+            v40 = *v38++; /*0x6a90e0*/
+            v37 += v40; /*0x6a90e5*/
+            --v39; /*0x6a90e7*/
           }
-          while ( v40 );
-          v42 = 20;
-          v43 = (_DWORD *)(v36 + 21560);
-          do
+          while ( v39 ); /*0x6a90e8*/
+          v41 = 20; /*0x6a90f0*/
+          v42 = (_DWORD *)(v35 + 21560); /*0x6a90f5*/
+          do /*0x6a90fd*/
           {
-            v38 += *v43++;
-            --v42;
+            v37 += *v42++; /*0x6a90f7*/
+            --v41; /*0x6a90fc*/
           }
-          while ( v42 );
-          if ( *(v35 - 32) != v38
-            || *(v35 - 24) != *(_DWORD *)(v36 + 744)
-                            + *(_DWORD *)(v36 + 752)
-                            + *(_DWORD *)(v36 + 756)
-                            + *(_DWORD *)(v36 + 760) )
+          while ( v41 ); /*0x6a90fd*/
+          if ( *(v34 - 32) != v37 /*0x6a912b*/
+            || *(v34 - 24) != *(_DWORD *)(v35 + 744)
+                            + *(_DWORD *)(v35 + 752)
+                            + *(_DWORD *)(v35 + 756)
+                            + *(_DWORD *)(v35 + 760) )
           {
-            goto LABEL_97;
+            goto LABEL_97; /*0x6a912b*/
           }
-          v44 = (*(int (__stdcall **)(int))(*(_DWORD *)(v36 + 36) + 24))(v36 + 36);
-          if ( v44 < 0 )
-            v44 = 0;
-          if ( *(v35 - 16) != v44
-            || (v36 != dword_A8ED54[51473]
-              ? (!*(_BYTE *)(v36 + 501)
-               ? (v45 = *(_DWORD *)(dword_A8ED54[121312] + 4 * *(_DWORD *)(v36 + 90196)))
-               : (v45 = FindBuildingAnimByName(g_INI_Key_Grey, 1)))
-              : (v45 = FindBuildingAnimByName(g_INI_Key_LightGrey, 1)),
-                *(v35 - 8) != v45) )
+          v43 = (*(int (__stdcall **)(int))(*(_DWORD *)(v35 + 36) + 24))(v35 + 36); /*0x6a9134*/
+          if ( v43 < 0 ) /*0x6a9139*/
+            v43 = 0; /*0x6a913b*/
+          if ( *(v34 - 16) != v43
+            || (v35 != MEMORY[0xAC1198]
+              ? (!*(_BYTE *)(v35 + 501)
+               ? (v44 = *((_DWORD *)MEMORY[0xB054D4] + *(_DWORD *)(v35 + 90196)))
+               : (v44 = FindBuildingAnimByName(g_INI_Key_Grey, 1)))
+              : (v44 = FindBuildingAnimByName(MEMORY[0x836ECC], 1)),
+                *(v34 - 8) != v44) )
           {
 LABEL_97:
-            v58 = 1;
-            v46 = 0;
-            v47 = (int *)(v36 + 21476);
-            v48 = 20;
-            do
+            v57 = 1; /*0x6a918e*/
+            v45 = 0; /*0x6a9193*/
+            v46 = (int *)(v35 + 21476); /*0x6a9195*/
+            v47 = 20; /*0x6a9197*/
+            do /*0x6a91a4*/
             {
-              v49 = *v47++;
-              v46 += v49;
-              --v48;
+              v48 = *v46++; /*0x6a919c*/
+              v45 += v48; /*0x6a91a1*/
+              --v47; /*0x6a91a3*/
             }
-            while ( v48 );
-            v50 = (int *)(v36 + 21560);
-            v51 = 20;
-            do
+            while ( v47 ); /*0x6a91a4*/
+            v49 = (int *)(v35 + 21560); /*0x6a91a6*/
+            v50 = 20; /*0x6a91a8*/
+            do /*0x6a91b5*/
             {
-              v52 = *v50++;
-              v46 += v52;
-              --v51;
+              v51 = *v49++; /*0x6a91ad*/
+              v45 += v51; /*0x6a91b2*/
+              --v50; /*0x6a91b4*/
             }
-            while ( v51 );
-            *(v35 - 32) = v46;
-            *(v35 - 24) = *(_DWORD *)(v36 + 744)
-                        + *(_DWORD *)(v36 + 752)
-                        + *(_DWORD *)(v36 + 756)
-                        + *(_DWORD *)(v36 + 760);
-            v53 = (*(int (__stdcall **)(int))(*(_DWORD *)(v36 + 36) + 24))(v36 + 36);
-            if ( v53 < 0 )
-              v53 = 0;
-            *(v35 - 16) = v53;
-            if ( v36 == dword_A8ED54[51473] )
+            while ( v50 ); /*0x6a91b5*/
+            *(v34 - 32) = v45; /*0x6a91b7*/
+            *(v34 - 24) = *(_DWORD *)(v35 + 744) /*0x6a91d8*/
+                        + *(_DWORD *)(v35 + 752)
+                        + *(_DWORD *)(v35 + 756)
+                        + *(_DWORD *)(v35 + 760);
+            v52 = (*(int (__stdcall **)(int))(*(_DWORD *)(v35 + 36) + 24))(v35 + 36); /*0x6a91e2*/
+            if ( v52 < 0 ) /*0x6a91e7*/
+              v52 = 0; /*0x6a91e9*/
+            *(v34 - 16) = v52; /*0x6a91eb*/
+            if ( v35 == MEMORY[0xAC1198] ) /*0x6a91f5*/
             {
-              BuildingAnimByName = FindBuildingAnimByName(g_INI_Key_LightGrey, 1);
+              v53 = FindBuildingAnimByName(MEMORY[0x836ECC], 1); /*0x6a9201*/
             }
-            else if ( *(_BYTE *)(v36 + 501) )
+            else if ( *(_BYTE *)(v35 + 501) ) /*0x6a9208*/
             {
-              BuildingAnimByName = FindBuildingAnimByName(g_INI_Key_Grey, 1);
+              v53 = FindBuildingAnimByName(g_INI_Key_Grey, 1); /*0x6a921c*/
             }
             else
             {
-              BuildingAnimByName = *(_DWORD *)(dword_A8ED54[121312] + 4 * *(_DWORD *)(v36 + 90196));
+              v53 = *((_DWORD *)MEMORY[0xB054D4] + *(_DWORD *)(v35 + 90196)); /*0x6a922f*/
             }
-            *(v35 - 8) = BuildingAnimByName;
+            *(v34 - 8) = v53; /*0x6a9232*/
           }
         }
-        ++v35;
-        ++v60;
+        ++v34; /*0x6a9240*/
+        ++v59; /*0x6a9245*/
       }
-      while ( v60 < MEMORY[0x87F7E8][5444] );
+      while ( v59 < MEMORY[0x884CF8] );
     }
-    LOBYTE(MEMORY[0x87F7E8][5443]) = 0;
+    MEMORY[0x884CF4] = 0; /*0x6a9251*/
   }
-  result = v58;
-  if ( v58 )
+  result = v57; /*0x6a9258*/
+  if ( v57 ) /*0x6a925e*/
   {
-    BYTE2(MEMORY[0x87F7E8][5353]) = 1;
-    LOBYTE(MEMORY[0x87F7E8][997 * MEMORY[0x87F7E8][5351] + 1376]) = 1;
-    MapClass::MarkForRedraw(MEMORY[0x87F7E8], 0);
-    *(this + 60) = 1;
-    MapClass::MarkForRedraw(MEMORY[0x87F7E8], 0);
-    HIBYTE(MEMORY[0x87F7E8][5353]) = 1;
-    LOBYTE(dword_A8ED54[127473]) = 1;
-    return v58;
+    MEMORY[0x884B8E] = 1; /*0x6a926b*/
+    MEMORY[0x880D68][3988 * MEMORY[0x884B84]] = 1; /*0x6a9283*/
+    MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6a928b*/
+    *(this + 60) = 1; /*0x6a929a*/
+    MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6a929e*/
+    MEMORY[0x884B8F] = 1; /*0x6a92a7*/
+    MEMORY[0xB0B518] = 1; /*0x6a92ae*/
+    return v57; /*0x6a92a3*/
   }
-  return result;
+  return result; /*0x6a92b5*/
 }
-
-/* ASM:
-sub     esp, 88h
-push    ebx
-mov     ebx, ecx
-push    ebp
-push    esi
-mov     al, [ebx+3Fh]
-push    edi
-test    al, al
-mov     [esp+98h+var_80], ebx
-mov     [esp+98h+var_85], 0
-jnz     loc_6A8C2C
-mov     edi, [ebx+48h]
-test    edi, edi
-jz      loc_6A8C25
-mov     eax, ds:0A8B230h
-mov     ecx, [eax+34B8h]
-mov     eax, 1Ah
-test    ecx, ecx
-jz      short loc_6A8B74
-mov     eax, 12h
-
-loc_6A8B74:                             ; CODE XREF: SidebarClass__UpdateCameos+3D↑j
-mov     ecx, ds:886F9Ch
-mov     edx, ds:886F94h
-sub     ecx, eax
-mov     eax, dword_A8ED54+7C7A4h
-sub     ecx, eax
-mov     eax, 51EB851Fh
-mov     ebp, ds:0A83D4Ch
-lea     ecx, [ecx+edx-7]
-imul    ecx
-sar     edx, 4
-mov     eax, edx
-mov     ecx, [ebx+54h]
-shr     eax, 1Fh
-add     edx, eax
-cmp     ebp, dword_A8ED54+32444h
-mov     eax, edx
-mov     edx, 2
-lea     esi, [eax+eax]
-jnz     short loc_6A8BCB
-mov     ecx, ds:884CF8h
-cdq
-sub     eax, edx
-mov     edx, 1
-sar     eax, 1
-mov     esi, eax
-
-loc_6A8BCB:                             ; CODE XREF: SidebarClass__UpdateCameos+87↑j
-cmp     ecx, esi
-jg      short loc_6A8BD8
-mov     dword ptr [ebx+48h], 0
-jmp     short loc_6A8C25
-; ---------------------------------------------------------------------------
-
-loc_6A8BD8:                             ; CODE XREF: SidebarClass__UpdateCameos+9D↑j
-xor     esi, esi
-cmp     edi, esi
-jge     short loc_6A8BFF
-mov     eax, [ebx+44h]
-cmp     eax, esi
-jnz     short loc_6A8BEA
-mov     [ebx+48h], esi
-jmp     short loc_6A8C25
-; ---------------------------------------------------------------------------
-
-loc_6A8BEA:                             ; CODE XREF: SidebarClass__UpdateCameos+B3↑j
-inc     edi
-dec     eax
-mov     [ebx+48h], edi
-mov     byte ptr [ebx+3Eh], 0
-mov     byte ptr [ebx+3Fh], 1
-mov     [ebx+44h], eax
-mov     [ebx+4Ch], esi
-jmp     short loc_6A8C25
-; ---------------------------------------------------------------------------
-
-loc_6A8BFF:                             ; CODE XREF: SidebarClass__UpdateCameos+AC↑j
-mov     ebp, [ebx+44h]
-add     ebp, eax
-imul    ebp, edx
-cmp     ebp, ecx
-jl      short loc_6A8C10
-mov     [ebx+48h], esi
-jmp     short loc_6A8C25
-; ---------------------------------------------------------------------------
-
-loc_6A8C10:                             ; CODE XREF: SidebarClass__UpdateCameos+D9↑j
-dec     edi
-mov     [ebx+48h], edi
-mov     ecx, dword_A8ED54+7C7ACh
-mov     [ebx+4Ch], ecx
-mov     byte ptr [ebx+3Eh], 1
-mov     byte ptr [ebx+3Fh], 1
-
-loc_6A8C25:                             ; CODE XREF: SidebarClass__UpdateCameos+25↑j
-; SidebarClass__UpdateCameos+A6↑j ...
-mov     al, [ebx+3Fh]
-test    al, al
-jz      short loc_6A8C84
-
-loc_6A8C2C:                             ; CODE XREF: SidebarClass__UpdateCameos+1A↑j
-mov     al, [ebx+3Eh]
-test    al, al
-jz      short loc_6A8C5B
-mov     edx, dword_A8ED54+7C7C0h
-mov     ecx, [ebx+4Ch]
-sub     ecx, edx
-mov     eax, ecx
-mov     [ebx+4Ch], ecx
-test    eax, eax
-jg      short loc_6A8C7F
-mov     eax, [ebx+44h]
-mov     byte ptr [ebx+3Fh], 0
-inc     eax
-mov     dword ptr [ebx+4Ch], 0
-mov     [ebx+44h], eax
-jmp     short loc_6A8C7F
-; ---------------------------------------------------------------------------
-
-loc_6A8C5B:                             ; CODE XREF: SidebarClass__UpdateCameos+101↑j
-mov     eax, dword_A8ED54+7C7C0h
-mov     edx, [ebx+4Ch]
-add     edx, eax
-mov     [ebx+4Ch], edx
-mov     ecx, dword_A8ED54+7C7ACh
-mov     eax, edx
-cmp     eax, ecx
-jl      short loc_6A8C7F
-mov     byte ptr [ebx+3Fh], 0
-mov     dword ptr [ebx+4Ch], 0
-
-loc_6A8C7F:                             ; CODE XREF: SidebarClass__UpdateCameos+115↑j
-; SidebarClass__UpdateCameos+129↑j ...
-mov     [esp+98h+var_85], 1
-
-loc_6A8C84:                             ; CODE XREF: SidebarClass__UpdateCameos+FA↑j
-mov     eax, [ebx+40h]
-or      edi, 0FFFFFFFFh
-cmp     eax, edi
-jz      short loc_6A8CF3
-lea     esi, [ebx+8]
-mov     ecx, esi
-call    Locomotor__GetSpeed
-test    eax, eax
-jnz     loc_6A8D4D
-mov     ecx, [ebx+14h]
-test    ecx, ecx
-jz      loc_6A8D4D
-mov     edx, [ebx+18h]
-mov     eax, [ebx]
-add     eax, edx
-mov     byte ptr [ebx+4], 1
-mov     [ebx], eax
-mov     edx, eax
-mov     eax, dword_A8ED54+30h
-mov     ebp, esi
-cmp     edx, 7
-mov     [esp+98h+var_85], 1
-mov     [ebp+0], eax
-mov     eax, [esp+98h+var_78]
-mov     [ebp+4], eax
-mov     [ebp+8], ecx
-jl      short loc_6A8CF3
-mov     eax, dword_A8ED54+30h
-mov     edx, [esp+98h+var_78]
-xor     ecx, ecx
-mov     [esi], eax
-mov     [esi+4], edx
-mov     [esi+8], ecx
-mov     [ebx+14h], ecx
-mov     [ebx], ecx
-mov     [ebx+40h], edi
-
-loc_6A8CF3:                             ; CODE XREF: SidebarClass__UpdateCameos+15C↑j
-; SidebarClass__UpdateCameos+1A6↑j ...
-mov     eax, ds:884B88h
-mov     ecx, dword_A8ED54+30h
-cmp     eax, ecx
-jle     short loc_6A8D07
-mov     [esp+98h+var_85], 1
-
-loc_6A8D07:                             ; CODE XREF: SidebarClass__UpdateCameos+1D0↑j
-mov     eax, [ebx+38h]
-test    eax, eax
-jz      short loc_6A8D17
-cmp     eax, 1
-jnz     loc_6A8D9F
-
-loc_6A8D17:                             ; CODE XREF: SidebarClass__UpdateCameos+1DC↑j
-mov     eax, [ebx+54h]
-xor     ebp, ebp
-test    eax, eax
-jle     short loc_6A8D8B
-lea     edi, [ebx+58h]
-
-loc_6A8D23:                             ; CODE XREF: SidebarClass__UpdateCameos+259↓j
-cmp     dword ptr [edi+4], 1Fh
-jnz     short loc_6A8D53
-mov     edx, ds:0A83D4Ch
-mov     ecx, [edi]
-mov     eax, [edx+258h]
-mov     ecx, [eax+ecx*4]
-test    ecx, ecx
-jz      short loc_6A8D80
-call    SuperClass__ShouldFlashTab
-test    al, al
-jnz     loc_6A8E52
-jmp     short loc_6A8D80
-; ---------------------------------------------------------------------------
-
-loc_6A8D4D:                             ; CODE XREF: SidebarClass__UpdateCameos+16A↑j
-; SidebarClass__UpdateCameos+175↑j
-mov     byte ptr [ebx+4], 0
-jmp     short loc_6A8CF3
-; ---------------------------------------------------------------------------
-
-loc_6A8D53:                             ; CODE XREF: SidebarClass__UpdateCameos+1F7↑j
-mov     esi, [edi+0Ch]
-test    esi, esi
-jz      short loc_6A8D80
-mov     ecx, esi
-call    ObjectClass__IsCliffWall
-test    al, al
-jz      short loc_6A8D80
-mov     ecx, esi
-call    AbstractClass__GetType
-test    eax, eax
-jz      short loc_6A8D80
-mov     edx, [eax]
-mov     ecx, eax
-call    dword ptr [edx+2Ch]
-cmp     eax, 6
-jz      loc_6A8E52
-
-loc_6A8D80:                             ; CODE XREF: SidebarClass__UpdateCameos+20C↑j
-; SidebarClass__UpdateCameos+21B↑j ...
-mov     eax, [ebx+54h]
-inc     ebp
-add     edi, 34h ; '4'
-cmp     ebp, eax
-jl      short loc_6A8D23
-
-loc_6A8D8B:                             ; CODE XREF: SidebarClass__UpdateCameos+1EE↑j
-mov     eax, [ebx+38h]
-lea     ecx, [eax+eax*2]
-shl     ecx, 5
-add     ecx, (offset dword_A8ED54+78EF4h)
-call    SHA1__Reset
-
-loc_6A8D9F:                             ; CODE XREF: SidebarClass__UpdateCameos+1E1↑j
-; SidebarClass__UpdateCameos+383↓j
-mov     al, [ebx+3Dh]
-test    al, al
-jz      loc_6A8F64
-mov     eax, [ebx+54h]
-mov     [esp+98h+var_84], 0
-test    eax, eax
-jle     loc_6A8F64
-lea     ebp, [ebx+68h]
-mov     ebx, ds:__imp_timeGetTime
-
-loc_6A8DC6:                             ; CODE XREF: SidebarClass__UpdateCameos+42E↓j
-mov     esi, [ebp-4]
-test    esi, esi
-jz      def_6A8E1E      ; jumptable 006A8E1E default case, cases 3-5,7-14
-mov     ecx, esi
-call    FactoryClass__HasProgressChanged
-test    al, al
-jz      def_6A8E1E      ; jumptable 006A8E1E default case, cases 3-5,7-14
-mov     ecx, esi
-mov     [esp+98h+var_85], 1
-call    ObjectClass__IsCliffWall
-test    al, al
-jz      def_6A8E1E      ; jumptable 006A8E1E default case, cases 3-5,7-14
-mov     ecx, esi
-call    AbstractClass__GetType
-mov     esi, eax
-test    esi, esi
-jz      def_6A8E1E      ; jumptable 006A8E1E default case, cases 3-5,7-14
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+2Ch]
-dec     eax             ; switch 15 cases
-cmp     eax, 0Eh
-ja      def_6A8E1E      ; jumptable 006A8E1E default case, cases 3-5,7-14
-xor     ecx, ecx
-mov     cl, ds:byte_6A92D0[eax]
-jmp     ds:jpt_6A8E1E[ecx*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_6A8E25:                             ; CODE XREF: SidebarClass__UpdateCameos+2EE↑j
-; DATA XREF: .text:jpt_6A8E1E↓o
-push    0FFFFFFFFh      ; jumptable 006A8E1E case 6
-or      edx, 0FFFFFFFFh
-mov     ecx, offset aEvaConstructio ; "EVA_ConstructionComplete"
-call    VoxClass__FindAndPlay
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+2Ch]
-sub     eax, 6
-neg     eax
-sbb     eax, eax
-not     eax
-and     eax, esi
-mov     ecx, eax
-call    SidebarClass__registerBuildingType
-jmp     def_6A8E1E      ; jumptable 006A8E1E default case, cases 3-5,7-14
-; ---------------------------------------------------------------------------
-
-loc_6A8E52:                             ; CODE XREF: SidebarClass__UpdateCameos+215↑j
-; SidebarClass__UpdateCameos+24A↑j
-mov     esi, dword_A8ED54+30h
-mov     ecx, 0Ah
-mov     eax, esi
-cdq
-idiv    ecx
-mov     eax, 66666667h
-sub     ecx, edx
-lea     edx, [ecx+esi]
-imul    edx
-sar     edx, 2
-mov     eax, edx
-shr     eax, 1Fh
-add     edx, eax
-and     edx, 80000001h
-jns     short loc_6A8E85
-dec     edx
-or      edx, 0FFFFFFFEh
-inc     edx
-
-loc_6A8E85:                             ; CODE XREF: SidebarClass__UpdateCameos+34E↑j
-mov     eax, [ebx+38h]
-setz    dl
-push    edx
-push    ecx
-lea     ecx, [eax+eax*2]
-push    0Ah
-shl     ecx, 5
-add     ecx, (offset dword_A8ED54+78EF4h)
-call    SidebarClass__startButtonFlash
-push    0
-mov     ecx, 87F7E8h
-mov     byte ptr ds:884B8Fh, 1
-call    MapClass__MarkForRedraw
-jmp     loc_6A8D9F
-; ---------------------------------------------------------------------------
-
-loc_6A8EB8:                             ; CODE XREF: SidebarClass__UpdateCameos+2EE↑j
-; DATA XREF: .text:jpt_6A8E1E↓o
-mov     eax, [esi]      ; jumptable 006A8E1E cases 1,2,15
-push    (offset dword_A8ED54+79084h)
-mov     ecx, esi
-call    dword ptr [eax+84h]
-mov     edx, [esi]
-xor     ecx, ecx
-mov     cl, [eax+0CCEh]
-push    ecx
-push    0FFFFFFFFh
-mov     ecx, esi
-call    dword ptr [edx+2Ch]
-push    eax
-mov     eax, [esi]
-push    0Bh
-mov     ecx, esi
-call    dword ptr [eax+38h]
-push    eax
-lea     ecx, [esp+0B0h+var_70]
-call    EventClass__Init
-cmp     dword ptr ds:0A802C8h, 80h
-jge     short loc_6A8F42
-mov     ecx, ds:0A802D0h
-mov     esi, eax
-lea     edx, [ecx+ecx*8]
-lea     ecx, [ecx+edx*4]
-lea     edi, [ecx+ecx*2+0A802D4h]
-mov     ecx, 1Bh
-rep movsd
-movsw
-movsb
-call    ebx ; __imp_timeGetTime
-mov     ecx, ds:0A802D0h
-mov     ds:0A83A54h[ecx*4], eax
-mov     edx, ds:0A802D0h
-mov     eax, ds:0A802C8h
-inc     edx
-and     edx, 7Fh
-inc     eax
-mov     ds:0A802D0h, edx
-mov     ds:0A802C8h, eax
-
-loc_6A8F42:                             ; CODE XREF: SidebarClass__UpdateCameos+3C7↑j
-mov     dword ptr [ebp+0], 0
-
-def_6A8E1E:                             ; CODE XREF: SidebarClass__UpdateCameos+29B↑j
-; SidebarClass__UpdateCameos+2AA↑j ...
-mov     ecx, [esp+98h+var_80] ; jumptable 006A8E1E default case, cases 3-5,7-14
-mov     eax, [esp+98h+var_84]
-inc     eax
-add     ebp, 34h ; '4'
-mov     edx, [ecx+54h]
-mov     [esp+98h+var_84], eax
-cmp     eax, edx
-jl      loc_6A8DC6
-
-loc_6A8F64:                             ; CODE XREF: SidebarClass__UpdateCameos+274↑j
-; SidebarClass__UpdateCameos+287↑j
-mov     esi, [esp+98h+var_80]
-xor     ebx, ebx
-xor     edi, edi
-cmp     [esi+54h], ebx
-jle     loc_6A902D
-mov     ebp, [esp+98h+var_78]
-add     esi, 74h ; 't'
-
-loc_6A8F7C:                             ; CODE XREF: SidebarClass__UpdateCameos+4F5↓j
-cmp     dword ptr [esi-0Ch], 1
-jnz     loc_6A901A
-mov     ecx, [esi-10h]
-cmp     ecx, ebx
-jz      short loc_6A8FBE
-cmp     [ecx+38h], ebx
-jz      short loc_6A8FA2
-mov     al, [ecx+70h]
-test    al, al
-jnz     short loc_6A8FA2
-call    SidebarClass__draw
-test    al, al
-jz      short loc_6A8FBE
-
-loc_6A8FA2:                             ; CODE XREF: SidebarClass__UpdateCameos+460↑j
-; SidebarClass__UpdateCameos+467↑j
-mov     ecx, dword_A8ED54+30h
-mov     edx, esi
-xor     eax, eax
-mov     [esi+0Ch], ebx
-mov     [edx], ecx
-mov     ecx, [esp+98h+var_78]
-mov     [edx+4], ecx
-mov     [edx+8], eax
-mov     [esi-8], ebx
-
-loc_6A8FBE:                             ; CODE XREF: SidebarClass__UpdateCameos+45B↑j
-; SidebarClass__UpdateCameos+470↑j
-mov     ecx, esi
-call    Locomotor__GetSpeed
-test    eax, eax
-jnz     loc_6A9063
-mov     eax, [esi+0Ch]
-cmp     eax, ebx
-jz      loc_6A9063
-mov     edx, [esi+10h]
-mov     ecx, [esi-8]
-add     ecx, edx
-mov     byte ptr [esi-4], 1
-mov     [esi-8], ecx
-mov     ecx, dword_A8ED54+30h
-mov     edx, esi
-mov     [esp+98h+var_85], 1
-mov     [edx], ecx
-mov     ecx, [esp+98h+var_78]
-mov     [edx+4], ecx
-mov     [edx+8], eax
-mov     eax, [esi-8]
-cmp     eax, 35h ; '5'
-jl      short loc_6A901A
-mov     eax, dword_A8ED54+30h
-xor     ecx, ecx
-mov     [edx], eax
-mov     [esi+0Ch], ebx
-mov     [edx+4], ebp
-mov     [edx+8], ecx
-
-loc_6A901A:                             ; CODE XREF: SidebarClass__UpdateCameos+450↑j
-; SidebarClass__UpdateCameos+4D6↑j ...
-mov     eax, [esp+98h+var_80]
-inc     edi
-add     esi, 34h ; '4'
-cmp     edi, [eax+54h]
-jl      loc_6A8F7C
-mov     esi, eax
-
-loc_6A902D:                             ; CODE XREF: SidebarClass__UpdateCameos+43F↑j
-mov     al, [esi+1Ch]
-test    al, al
-jz      loc_6A9258
-mov     ecx, ds:0A83D4Ch
-mov     eax, dword_A8ED54+32444h
-cmp     ecx, eax
-jnz     loc_6A9258
-mov     eax, ds:884CF8h
-mov     [esp+98h+var_84], ebx
-cmp     eax, ebx
-jle     loc_6A9251
-mov     edi, 884C34h
-jmp     short loc_6A906B
-; ---------------------------------------------------------------------------
-
-loc_6A9063:                             ; CODE XREF: SidebarClass__UpdateCameos+497↑j
-; SidebarClass__UpdateCameos+4A2↑j
-mov     byte ptr [esi-4], 0
-jmp     short loc_6A901A
-; ---------------------------------------------------------------------------
-
-loc_6A9069:                             ; CODE XREF: SidebarClass__UpdateCameos+719↓j
-xor     ebx, ebx
-
-loc_6A906B:                             ; CODE XREF: SidebarClass__UpdateCameos+531↑j
-mov     esi, [edi-0A0h]
-cmp     esi, ebx
-jz      loc_6A9235
-mov     al, ds:884CF4h
-test    al, al
-jz      short loc_6A90D1
-cmp     dword ptr ds:0A8B238h, 4
-jnz     short loc_6A90D1
-lea     ecx, [esi+1602Ah]
-call    SidebarClass__FindProductionData
-test    eax, eax
-jz      short loc_6A90D1
-mov     edx, [eax+1Ch]
-push    eax             ; Block
-mov     [edi], edx
-mov     ecx, [eax+10h]
-mov     [edi+20h], ecx
-mov     edx, [eax+8]
-mov     [edi+40h], edx
-mov     ecx, [eax+0Ch]
-mov     [edi+60h], ecx
-mov     edx, [eax+20h]
-mov     [edi+80h], edx
-mov     ecx, [eax+30h]
-mov     [edi+0A0h], ecx
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [esp+98h+var_85], 1
-
-loc_6A90D1:                             ; CODE XREF: SidebarClass__UpdateCameos+550↑j
-; SidebarClass__UpdateCameos+559↑j ...
-lea     ebp, [esi+53E4h]
-xor     eax, eax
-mov     ecx, ebp
-mov     edx, 14h
-
-loc_6A90E0:                             ; CODE XREF: SidebarClass__UpdateCameos+5B8↓j
-mov     ebx, [ecx]
-add     ecx, 4
-add     eax, ebx
-dec     edx
-jnz     short loc_6A90E0
-lea     ebx, [esi+5438h]
-mov     edx, 14h
-mov     ecx, ebx
-
-loc_6A90F7:                             ; CODE XREF: SidebarClass__UpdateCameos+5CD↓j
-add     eax, [ecx]
-add     ecx, 4
-dec     edx
-jnz     short loc_6A90F7
-cmp     [edi-80h], eax
-jnz     loc_6A918E
-mov     eax, [esi+2F8h]
-mov     edx, [esi+2F4h]
-mov     ecx, [esi+2F0h]
-add     eax, edx
-mov     edx, [esi+2E8h]
-add     eax, ecx
-mov     ecx, [edi-60h]
-add     eax, edx
-cmp     ecx, eax
-jnz     short loc_6A918E
-mov     edx, [esi+24h]
-lea     eax, [esi+24h]
-push    eax
-call    dword ptr [edx+18h]
-test    eax, eax
-jge     short loc_6A913D
-xor     eax, eax
-
-loc_6A913D:                             ; CODE XREF: SidebarClass__UpdateCameos+609↑j
-cmp     [edi-40h], eax
-jnz     short loc_6A918E
-cmp     esi, dword_A8ED54+32444h
-jnz     short loc_6A915B
-mov     edx, 1
-mov     ecx, offset g_INI_Key_LightGrey ; "LightGrey"
-call    FindBuildingAnimByName
-jmp     short loc_6A9185
-; ---------------------------------------------------------------------------
-
-loc_6A915B:                             ; CODE XREF: SidebarClass__UpdateCameos+618↑j
-mov     al, [esi+1F5h]
-test    al, al
-jz      short loc_6A9176
-mov     edx, 1
-mov     ecx, offset g_INI_Key_Grey ; "Grey"
-call    FindBuildingAnimByName
-jmp     short loc_6A9185
-; ---------------------------------------------------------------------------
-
-loc_6A9176:                             ; CODE XREF: SidebarClass__UpdateCameos+633↑j
-mov     eax, [esi+16054h]
-mov     ecx, dword_A8ED54+76780h
-mov     eax, [ecx+eax*4]
-
-loc_6A9185:                             ; CODE XREF: SidebarClass__UpdateCameos+629↑j
-; SidebarClass__UpdateCameos+644↑j
-cmp     [edi-20h], eax
-jz      loc_6A9235
-
-loc_6A918E:                             ; CODE XREF: SidebarClass__UpdateCameos+5D2↑j
-; SidebarClass__UpdateCameos+5FB↑j ...
-mov     [esp+98h+var_85], 1
-xor     eax, eax
-mov     ecx, ebp
-mov     edx, 14h
-
-loc_6A919C:                             ; CODE XREF: SidebarClass__UpdateCameos+674↓j
-mov     ebp, [ecx]
-add     ecx, 4
-add     eax, ebp
-dec     edx
-jnz     short loc_6A919C
-mov     ecx, ebx
-mov     edx, 14h
-
-loc_6A91AD:                             ; CODE XREF: SidebarClass__UpdateCameos+685↓j
-mov     ebx, [ecx]
-add     ecx, 4
-add     eax, ebx
-dec     edx
-jnz     short loc_6A91AD
-mov     [edi-80h], eax
-mov     eax, [esi+2F8h]
-mov     edx, [esi+2F4h]
-mov     ecx, [esi+2F0h]
-mov     ebp, [esi+2E8h]
-add     eax, edx
-add     eax, ecx
-add     eax, ebp
-mov     [edi-60h], eax
-mov     edx, [esi+24h]
-lea     eax, [esi+24h]
-push    eax
-call    dword ptr [edx+18h]
-test    eax, eax
-jge     short loc_6A91EB
-xor     eax, eax
-
-loc_6A91EB:                             ; CODE XREF: SidebarClass__UpdateCameos+6B7↑j
-mov     [edi-40h], eax
-mov     eax, dword_A8ED54+32444h
-cmp     esi, eax
-jnz     short loc_6A9208
-mov     edx, 1
-mov     ecx, offset g_INI_Key_LightGrey ; "LightGrey"
-call    FindBuildingAnimByName
-jmp     short loc_6A9232
-; ---------------------------------------------------------------------------
-
-loc_6A9208:                             ; CODE XREF: SidebarClass__UpdateCameos+6C5↑j
-mov     al, [esi+1F5h]
-test    al, al
-jz      short loc_6A9223
-mov     edx, 1
-mov     ecx, offset g_INI_Key_Grey ; "Grey"
-call    FindBuildingAnimByName
-jmp     short loc_6A9232
-; ---------------------------------------------------------------------------
-
-loc_6A9223:                             ; CODE XREF: SidebarClass__UpdateCameos+6E0↑j
-mov     eax, [esi+16054h]
-mov     ecx, dword_A8ED54+76780h
-mov     eax, [ecx+eax*4]
-
-loc_6A9232:                             ; CODE XREF: SidebarClass__UpdateCameos+6D6↑j
-; SidebarClass__UpdateCameos+6F1↑j
-mov     [edi-20h], eax
-
-loc_6A9235:                             ; CODE XREF: SidebarClass__UpdateCameos+543↑j
-; SidebarClass__UpdateCameos+658↑j
-mov     eax, [esp+98h+var_84]
-mov     ecx, ds:884CF8h
-inc     eax
-add     edi, 4
-cmp     eax, ecx
-mov     [esp+98h+var_84], eax
-jl      loc_6A9069
-xor     ebx, ebx
-
-loc_6A9251:                             ; CODE XREF: SidebarClass__UpdateCameos+526↑j
-mov     byte ptr ds:884CF4h, 0
-
-loc_6A9258:                             ; CODE XREF: SidebarClass__UpdateCameos+502↑j
-; SidebarClass__UpdateCameos+515↑j
-mov     al, [esp+98h+var_85]
-test    al, al
-jz      short loc_6A92B5
-mov     eax, ds:884B84h
-cmp     eax, eax
-jnz     short loc_6A9290
-mov     edx, eax
-mov     byte ptr ds:884B8Eh, 1
-shl     edx, 5
-sub     edx, eax
-push    ebx
-lea     ecx, [eax+edx*8]
-lea     edx, [eax+ecx*4]
-mov     ecx, 87F7E8h
-mov     byte ptr ds:880D68h[edx*4], 1
-call    MapClass__MarkForRedraw
-
-loc_6A9290:                             ; CODE XREF: SidebarClass__UpdateCameos+737↑j
-mov     eax, [esp+98h+var_80]
-push    ebx
-mov     ecx, 87F7E8h
-mov     byte ptr [eax+3Ch], 1
-call    MapClass__MarkForRedraw
-mov     al, [esp+98h+var_85]
-mov     byte ptr ds:884B8Fh, 1
-mov     byte ptr dword_A8ED54+7C7C4h, 1
-
-loc_6A92B5:                             ; CODE XREF: SidebarClass__UpdateCameos+72E↑j
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 88h
-retn    8
-*/
 } }
 // 0x6AA600
 namespace gamemd { int SidebarClass::UpdateProduction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x6aa600
-char __thiscall SidebarClass::UpdateProduction(int this)
+char __thiscall sub_6AA600(int this)
 {
   int v2; // eax
   int v3; // ebx
   int *v4; // eax
   _DWORD *v5; // eax
-  _BYTE *v6; // esi
+  _DWORD *v6; // esi
   int v7; // edx
   int v8; // eax
   int *v9; // esi
   unsigned __int8 *v10; // ebx
-  int v11; // eax
-  char *v12; // eax
-  int v13; // eax
+  char *v11; // eax
+  int v12; // eax
+  char *v13; // eax
   char *v14; // eax
-  char *v15; // eax
-  int v16; // edx
+  int v15; // edx
+  int v16; // eax
   int v17; // eax
-  int v18; // eax
-  _DWORD *v19; // ecx
-  int v20; // eax
-  bool v21; // cc
-  int v22; // esi
-  int *v23; // ecx
+  _DWORD *v18; // ecx
+  int v19; // eax
+  bool v20; // cc
+  int v21; // esi
+  int *v22; // ecx
+  int v23; // eax
   int v24; // eax
-  int v25; // ecx
+  char *v25; // ecx
   int v26; // ecx
-  int v27; // eax
-  char *v28; // ecx
-  int v29; // ecx
-  int v30; // edx
-  char *v31; // esi
-  _DWORD *v32; // ecx
-  int v33; // esi
-  int v34; // kr04_4
-  int v35; // eax
-  int v36; // edx
-  char v38; // [esp-8h] [ebp-15Ch]
-  int v39; // [esp+10h] [ebp-144h]
-  char *v40; // [esp+10h] [ebp-144h]
-  int *v41; // [esp+10h] [ebp-144h]
-  char v42; // [esp+16h] [ebp-13Eh]
-  char v43; // [esp+17h] [ebp-13Dh]
-  int *v44; // [esp+18h] [ebp-13Ch]
-  _DWORD *v45; // [esp+1Ch] [ebp-138h]
-  char *v46; // [esp+1Ch] [ebp-138h]
+  int v27; // edx
+  char *v28; // esi
+  _DWORD *v29; // ecx
+  int v30; // esi
+  int v31; // kr04_4
+  int v32; // eax
+  int v33; // edx
+  char v35; // [esp-8h] [ebp-15Ch]
+  int v36; // [esp+10h] [ebp-144h]
+  char *v37; // [esp+10h] [ebp-144h]
+  int *v38; // [esp+10h] [ebp-144h]
+  char v39; // [esp+16h] [ebp-13Eh]
+  char v40; // [esp+17h] [ebp-13Dh]
+  int *v41; // [esp+18h] [ebp-13Ch]
+  _DWORD *v42; // [esp+1Ch] [ebp-138h]
+  char *v43; // [esp+1Ch] [ebp-138h]
   char *Src; // [esp+20h] [ebp-134h]
-  int v48; // [esp+24h] [ebp-130h]
-  int v49; // [esp+28h] [ebp-12Ch]
-  _DWORD *v50; // [esp+2Ch] [ebp-128h]
-  int v51; // [esp+30h] [ebp-124h]
-  _DWORD v52[16]; // [esp+34h] [ebp-120h] BYREF
-  char v53[112]; // [esp+74h] [ebp-E0h] BYREF
-  char v54[112]; // [esp+E4h] [ebp-70h] BYREF
+  int v45; // [esp+24h] [ebp-130h]
+  int v46; // [esp+28h] [ebp-12Ch]
+  _DWORD *v47; // [esp+2Ch] [ebp-128h]
+  int v48; // [esp+30h] [ebp-124h]
+  _DWORD v49[16]; // [esp+34h] [ebp-120h] BYREF
+  char v50[112]; // [esp+74h] [ebp-E0h] BYREF
+  char v51[112]; // [esp+E4h] [ebp-70h] BYREF
 
-  if ( HIBYTE(dword_A8ED54[5]) || !*(_DWORD *)(this + 84) )
-    return 0;
-  v43 = 0;
-  v2 = 26;
-  if ( *(_DWORD *)(MEMORY[0x87F7E8][536210] + 13496) )
-    v2 = 18;
-  v3 = 2 * ((MEMORY[0x87F7E8][7661] - v2 - dword_A8ED54[127465] + MEMORY[0x87F7E8][7659] - 7) / 50);
-  v51 = v3;
-  v4 = (int *)__2_YAPAXI_Z(104
-                         * ((MEMORY[0x87F7E8][7661] - v2 - dword_A8ED54[127465] + MEMORY[0x87F7E8][7659] - 7)
-                          / 50) + 4);
-  if ( v4 )
+  if ( MEMORY[0xA8ED6B] || !*(_DWORD *)(this + 84) ) /*0x6aa617*/
+    return 0; /*0x6aaca5*/
+  v40 = 0; /*0x6aa629*/
+  v2 = 26; /*0x6aa634*/
+  if ( *((_DWORD *)MEMORY[0xA8B230] + 3374) ) /*0x6aa62e*/
+    v2 = 18; /*0x6aa63d*/
+  v3 = 2 * ((MEMORY[0x886F9C] - v2 - MEMORY[0xB0B4F8] + MEMORY[0x886F94] - 7) / 50); /*0x6aa670*/
+  v48 = v3; /*0x6aa672*/
+  v4 = (int *)__2_YAPAXI_Z(104 * ((MEMORY[0x886F9C] - v2 - MEMORY[0xB0B4F8] + MEMORY[0x886F94] - 7) / 50) + 4); /*0x6aa684*/
+  if ( v4 ) /*0x6aa68e*/
   {
-    *v4 = v3;
-    v5 = v4 + 1;
-    v45 = v5;
-    if ( v3 - 1 >= 0 )
+    *v4 = v3; /*0x6aa690*/
+    v5 = v4 + 1; /*0x6aa695*/
+    v42 = v5; /*0x6aa69a*/
+    if ( v3 - 1 >= 0 ) /*0x6aa69e*/
     {
-      v6 = v5 + 5;
-      v39 = v3;
-      do
+      v6 = v5 + 5; /*0x6aa6a1*/
+      v36 = v3; /*0x6aa6a4*/
+      do /*0x6aa6bb*/
       {
-        SidebarClass::initButtons(v6);
-        v6 += 52;
-        --v39;
+        SidebarClass::initButtons(v6); /*0x6aa6aa*/
+        v6 += 13; /*0x6aa6b3*/
+        --v36; /*0x6aa6b7*/
       }
-      while ( v39 );
-      v5 = v45;
+      while ( v36 ); /*0x6aa6bb*/
+      v5 = v42; /*0x6aa6bd*/
     }
-    v46 = (char *)v5;
+    v43 = (char *)v5; /*0x6aa6c1*/
   }
   else
   {
-    v46 = 0;
+    v43 = 0; /*0x6aa6c7*/
   }
-  v7 = 0;
-  if ( v3 > 0 )
+  v7 = 0; /*0x6aa6cb*/
+  if ( v3 > 0 ) /*0x6aa6cf*/
   {
-    v40 = v46;
-    do
+    v37 = v43; /*0x6aa6d5*/
+    do /*0x6aa70f*/
     {
-      v8 = v7 + 2 * *(_DWORD *)(this + 68);
-      if ( v8 < *(_DWORD *)(this + 84) )
+      v8 = v7 + 2 * *(_DWORD *)(this + 68); /*0x6aa6df*/
+      if ( v8 < *(_DWORD *)(this + 84) ) /*0x6aa6e4*/
       {
-        v3 = v51;
-        qmemcpy(v40, (const void *)(this + 52 * v8 + 88), 0x34u);
+        v3 = v48; /*0x6aa6ed*/
+        qmemcpy(v37, (const void *)(this + 52 * v8 + 88), 0x34u); /*0x6aa6fd*/
       }
-      ++v7;
-      v40 += 52;
+      ++v7; /*0x6aa705*/
+      v37 += 52; /*0x6aa70b*/
     }
-    while ( v7 < v3 );
+    while ( v7 < v3 ); /*0x6aa70f*/
   }
-  v42 = 0;
-  v49 = 0;
-  if ( *(int *)(this + 84) > 0 )
+  v39 = 0; /*0x6aa714*/
+  v46 = 0; /*0x6aa71b*/
+  if ( *(int *)(this + 84) > 0 ) /*0x6aa71f*/
   {
-    v9 = (int *)(this + 88);
-    v48 = 52;
-    v41 = (int *)(this + 88);
-    Src = (char *)(this + 140);
-    v44 = (int *)(this + 92);
-    v50 = (_DWORD *)(this + 100);
-    while ( 1 )
+    v9 = (int *)(this + 88); /*0x6aa725*/
+    v45 = 52; /*0x6aa734*/
+    v38 = (int *)(this + 88); /*0x6aa73c*/
+    Src = (char *)(this + 140); /*0x6aa740*/
+    v41 = (int *)(this + 92); /*0x6aa744*/
+    v47 = (_DWORD *)(this + 100); /*0x6aa748*/
+    while ( 1 ) /*0x6aa759*/
     {
-      v10 = (unsigned __int8 *)TechnoTypeClass::GetByTypeAndIndex(*v44, *v9);
-      if ( v10 )
+      v10 = (unsigned __int8 *)TechnoTypeClass::GetByTypeAndIndex(*v41, *v9); /*0x6aa759*/
+      if ( v10 ) /*0x6aa75d*/
       {
-        v11 = (*(int (__thiscall **)(unsigned __int8 *, int, _DWORD, _DWORD, _DWORD))(*(_DWORD *)v10 + 148))(
+        if ( !(*(int (__thiscall **)(unsigned __int8 *, int, _DWORD, _DWORD, #375 *))(*(_DWORD *)v10 + 148))( /*0x6aa781*/
                 v10,
                 1,
                 0,
                 0,
-                MEMORY[0x87F7E8][528729]);
-        if ( !v11 || !HouseClass::CanBuild(*(_DWORD **)(v11 + 540), (int)v10, 0, 1) )
-          goto LABEL_25;
+                HouseClass_Player)
+          || !((_DWORD (__stdcall *)(unsigned __int8 *, _DWORD, char))HouseClass::CanBuild)(v10, 0, 1) )
+        {
+          goto LABEL_25; /*0x6aa788*/
+        }
       }
-      else if ( (unsigned int)*v9 >= *(_DWORD *)(MEMORY[0x87F7E8][528729] + 612)
-             || !*(_BYTE *)(*(_DWORD *)(*(_DWORD *)(MEMORY[0x87F7E8][528729] + 600) + 4 * *v9) + 109) )
+      else if ( (unsigned int)*v9 >= *((_DWORD *)HouseClass_Player + 153) /*0x6aa7ab*/
+             || !*(_BYTE *)(*(_DWORD *)(*((_DWORD *)HouseClass_Player + 150) + 4 * *v9) + 109) )
       {
 LABEL_25:
-        if ( *v50 )
+        if ( *v47 ) /*0x6aa7ba*/
         {
-          v12 = EventClass::AddEventEx(v53, *(_DWORD *)(MEMORY[0x87F7E8][528729] + 48), 0x10u, *v44, *v9, v10[3278]);
-          if ( MEMORY[0x87F7E8][524984] < 128 )
+          v11 = EventClass::AddEventEx(v50, *((_DWORD *)HouseClass_Player + 12), 0x10u, *v41, *v9, v10[3278]); /*0x6aa7e7*/
+          if ( Networking_LastEventIndex < 128 ) /*0x6aa7f6*/
           {
-            qmemcpy((char *)&MEMORY[0x87F7E8][524987] + 111 * MEMORY[0x87F7E8][524986], v12, 0x6Fu);
-            v9 = v41;
-            MEMORY[0x87F7E8][MEMORY[0x87F7E8][524986] + 528539] = ((int (*)(void))timeGetTime)();
-            MEMORY[0x87F7E8][524986] = (LOBYTE(MEMORY[0x87F7E8][524986]) + 1) & 0x7F;
-            ++MEMORY[0x87F7E8][524984];
+            qmemcpy(&g_NetworkPacketIndex[111 * Networking_NextPacketIndex], v11, 0x6Fu); /*0x6aa812*/
+            v9 = v38; /*0x6aa823*/
+            g_CrateSystemState[Networking_NextPacketIndex] = timeGetTime(); /*0x6aa827*/
+            Networking_NextPacketIndex = ((_BYTE)Networking_NextPacketIndex + 1) & 0x7F; /*0x6aa83e*/
+            ++Networking_LastEventIndex; /*0x6aa844*/
           }
-          if ( *v44 == 7 || *v44 == 6 )
+          if ( *v41 == 7 || *v41 == 6 ) /*0x6aa859*/
           {
-            MEMORY[0x87F7E8][1129] = 0;
-            MEMORY[0x87F7E8][1130] = 0;
-            MEMORY[0x87F7E8][1131] = -1;
-            Mouse::SetBounds((int)MEMORY[0x87F7E8], 0);
+            MEMORY[0x88098C] = 0; /*0x6aa861*/
+            MEMORY[0x880990] = 0; /*0x6aa867*/
+            MEMORY[0x880994] = -1; /*0x6aa86d*/
+            Mouse::SetBounds((int)&MEMORY[0x87F7E8], 0); /*0x6aa877*/
           }
         }
-        if ( v10 )
+        if ( v10 ) /*0x6aa87e*/
         {
-          v38 = v10[3278];
-          v13 = (*(int (__thiscall **)(unsigned __int8 *))(*(_DWORD *)v10 + 44))(v10);
-          if ( HouseClass::GetBuildLimit((_DWORD *)MEMORY[0x87F7E8][528729], v13, v38, 0) )
+          v35 = v10[3278]; /*0x6aa88d*/
+          v12 = (*(int (__thiscall **)(unsigned __int8 *))(*(_DWORD *)v10 + 44))(v10); /*0x6aa890*/
+          if ( ((_DWORD (__stdcall *)(int, char, _DWORD))HouseClass::GetBuildLimit)(v12, v35, 0) ) /*0x6aa89a*/
           {
-            v14 = EventClass::AddEventEx(v54, *(_DWORD *)(MEMORY[0x87F7E8][528729] + 48), 0x2Eu, *v44, *v9, v10[3278]);
-            if ( MEMORY[0x87F7E8][524984] < 128 )
+            v13 = EventClass::AddEventEx(v51, *((_DWORD *)HouseClass_Player + 12), 0x2Eu, *v41, *v9, v10[3278]); /*0x6aa8cd*/
+            if ( Networking_LastEventIndex < 128 ) /*0x6aa8dc*/
             {
-              qmemcpy((char *)&MEMORY[0x87F7E8][524987] + 111 * MEMORY[0x87F7E8][524986], v14, 0x6Fu);
-              v9 = v41;
-              MEMORY[0x87F7E8][MEMORY[0x87F7E8][524986] + 528539] = ((int (*)(void))timeGetTime)();
-              MEMORY[0x87F7E8][524986] = (LOBYTE(MEMORY[0x87F7E8][524986]) + 1) & 0x7F;
-              ++MEMORY[0x87F7E8][524984];
+              qmemcpy(&g_NetworkPacketIndex[111 * Networking_NextPacketIndex], v13, 0x6Fu); /*0x6aa8f8*/
+              v9 = v38; /*0x6aa909*/
+              g_CrateSystemState[Networking_NextPacketIndex] = timeGetTime(); /*0x6aa90d*/
+              Networking_NextPacketIndex = ((_BYTE)Networking_NextPacketIndex + 1) & 0x7F; /*0x6aa924*/
+              ++Networking_LastEventIndex; /*0x6aa92a*/
             }
           }
         }
-        if ( v51 > 0 )
+        if ( v48 > 0 ) /*0x6aa937*/
         {
-          v15 = v46;
-          v16 = v51;
-          do
+          v14 = v43; /*0x6aa939*/
+          v15 = v48; /*0x6aa93d*/
+          do /*0x6aa99b*/
           {
-            if ( *(_DWORD *)v15 == *v9 && *((_DWORD *)v15 + 1) == v9[1] )
+            if ( *(_DWORD *)v14 == *v9 && *((_DWORD *)v14 + 1) == v9[1] ) /*0x6aa94f*/
             {
-              memset(v52, 0, 16);
-              v52[5] = 0;
-              v52[7] = dword_A8ED54[12];
-              v52[9] = 0;
-              v52[10] = 0;
-              LOBYTE(v52[6]) = 0;
-              v52[11] = 1;
-              qmemcpy(v15, v52, 0x34u);
-              v9 = v41;
+              memset(v49, 0, 16); /*0x6aa957*/
+              v49[5] = 0; /*0x6aa967*/
+              v49[7] = MEMORY[0xA8ED84]; /*0x6aa96b*/
+              v49[9] = 0; /*0x6aa96f*/
+              v49[10] = 0; /*0x6aa973*/
+              LOBYTE(v49[6]) = 0; /*0x6aa982*/
+              v49[11] = 1; /*0x6aa987*/
+              qmemcpy(v14, v49, 0x34u); /*0x6aa98f*/
+              v9 = v38; /*0x6aa991*/
             }
-            v15 += 52;
-            --v16;
+            v14 += 52; /*0x6aa997*/
+            --v15; /*0x6aa99a*/
           }
-          while ( v16 );
+          while ( v15 ); /*0x6aa99b*/
         }
-        v17 = *(_DWORD *)(this + 84);
-        if ( v17 > 1 && v49 < v17 - 1 )
-          memcpy(v9, Src, 52 * v17 - v48);
-        v42 = 1;
-        v18 = *(_DWORD *)(this + 84) - 1;
-        v43 = 1;
-        v19 = (_DWORD *)(this + 52 * v18);
-        v19[25] = 0;
-        v19[22] = 0;
-        v19[23] = 0;
-        v19[24] = 0;
-        *(_DWORD *)(this + 4 * (v18 + 4 * (3 * v18 + 6) + 2)) = 0;
-        v19[27] = 0;
-        v19[29] = dword_A8ED54[12];
-        v20 = v52[14];
-        v19[32] = 0;
-        v19[30] = v20;
-        v19[31] = 0;
-        v19[34] = 0;
-        --*(_DWORD *)(this + 84);
-        --v49;
-        v48 -= 52;
-        *(_BYTE *)(this + 60) = 1;
-        v50 -= 13;
-        v44 -= 13;
-        Src -= 52;
-        v9 -= 13;
+        v16 = *(_DWORD *)(this + 84); /*0x6aa99d*/
+        if ( v16 > 1 && v46 < v16 - 1 ) /*0x6aa9ae*/
+          memcpy(v9, Src, 52 * v16 - v45); /*0x6aa9c6*/
+        v39 = 1; /*0x6aa9d1*/
+        v17 = *(_DWORD *)(this + 84) - 1; /*0x6aa9d6*/
+        v40 = 1; /*0x6aa9d7*/
+        v18 = (_DWORD *)(this + 52 * v17); /*0x6aa9e2*/
+        v18[25] = 0; /*0x6aa9ea*/
+        v18[22] = 0; /*0x6aa9ed*/
+        v18[23] = 0; /*0x6aa9f4*/
+        v18[24] = 0; /*0x6aa9f7*/
+        *(_DWORD *)(this + 4 * (v17 + 4 * (3 * v17 + 6) + 2)) = 0; /*0x6aa9fd*/
+        v18[27] = 0; /*0x6aaa01*/
+        v18[29] = MEMORY[0xA8ED84]; /*0x6aaa0b*/
+        v19 = v49[14]; /*0x6aaa0d*/
+        v18[32] = 0; /*0x6aaa11*/
+        v18[30] = v19; /*0x6aaa17*/
+        v18[31] = 0; /*0x6aaa1a*/
+        v18[34] = 0; /*0x6aaa25*/
+        --*(_DWORD *)(this + 84); /*0x6aaa37*/
+        --v46; /*0x6aaa3e*/
+        v45 -= 52; /*0x6aaa46*/
+        *(_BYTE *)(this + 60) = 1; /*0x6aaa54*/
+        v47 -= 13; /*0x6aaa58*/
+        v41 -= 13; /*0x6aaa5c*/
+        Src -= 52; /*0x6aaa60*/
+        v9 -= 13; /*0x6aaa64*/
       }
-      v48 += 52;
-      v50 += 13;
-      v9 += 13;
-      v21 = ++v49 < *(_DWORD *)(this + 84);
-      v44 += 13;
-      Src += 52;
-      v41 = v9;
-      if ( !v21 )
+      v45 += 52; /*0x6aaa6d*/
+      v47 += 13; /*0x6aaa85*/
+      v9 += 13; /*0x6aaa91*/
+      v20 = ++v46 < *(_DWORD *)(this + 84); /*0x6aaa97*/
+      v41 += 13; /*0x6aaa9d*/
+      Src += 52; /*0x6aaaa1*/
+      v38 = v9; /*0x6aaaa5*/
+      if ( !v20 ) /*0x6aaaa9*/
       {
-        v3 = v51;
-        break;
+        v3 = v48; /*0x6aaaaf*/
+        break; /*0x6aaaaf*/
       }
     }
   }
-  if ( (int)MEMORY[0x87F7E8][997 * *(_DWORD *)(this + 56) + 1382] <= 0 )
+  if ( MEMORY[0x880D80][997 * *(_DWORD *)(this + 56)] <= 0 ) /*0x6aaaca*/
   {
-    DialogControl::Show(&dword_A8ED54[24 * *(_DWORD *)(this + 56) + 123837]);
-    v22 = 0;
-    v23 = &MEMORY[0x87F7E8][1382];
-    v24 = 0;
-    while ( *v23 <= 0 )
+    DialogControl::Show((_BYTE *)&MEMORY[0xB07C48] + 96 * *(_DWORD *)(this + 56)); /*0x6aaae7*/
+    v21 = 0; /*0x6aaaec*/
+    v22 = MEMORY[0x880D80]; /*0x6aaaee*/
+    v23 = 0; /*0x6aaaf3*/
+    while ( *v22 <= 0 ) /*0x6aaaf7*/
     {
-      v24 += 3988;
-      ++v22;
-      v23 += 997;
-      if ( v24 >= 15952 )
-        goto LABEL_54;
+      v23 += 3988; /*0x6aaaf9*/
+      ++v21; /*0x6aaafe*/
+      v22 += 997; /*0x6aaaff*/
+      if ( v23 >= 15952 ) /*0x6aab0a*/
+        goto LABEL_54; /*0x6aab0a*/
     }
-    if ( v22 == -1 )
+    if ( v21 == -1 ) /*0x6aab11*/
     {
 LABEL_54:
-      Tactical::UpdateUIVisibility(MEMORY[0x87F7E8]);
-      if ( dword_A8ED54[127433] )
+      Tactical::UpdateUIVisibility(&MEMORY[0x87F7E8]); /*0x6aab13*/
+      if ( MEMORY[0xB0B478] ) /*0x6aab24*/
       {
-        MEMORY[0x87F7E8][5350] = -1;
-        MEMORY[0x87F7E8][5349] = *(__int16 *)(dword_A8ED54[127433] + 6);
+        MEMORY[0x884B80] = -1; /*0x6aab2a*/
+        MEMORY[0x884B7C] = *((__int16 *)MEMORY[0xB0B478] + 3); /*0x6aab38*/
       }
-      goto LABEL_58;
+      goto LABEL_58; /*0x6aab3e*/
     }
-    if ( v22 != MEMORY[0x87F7E8][5351] )
+    if ( v21 != MEMORY[0x884B84] ) /*0x6aab4a*/
     {
-      GadgetClass::Hide(&dword_A8ED54[24 * MEMORY[0x87F7E8][5351] + 123837]);
-      v25 = 3988 * MEMORY[0x87F7E8][5351] + 8916268;
-      *(_BYTE *)(v25 + 28) = 0;
-      SidebarClass::sortCameoList((_DWORD *)v25);
-      MEMORY[0x87F7E8][5351] = v22;
-      GadgetClass::Show(&dword_A8ED54[24 * v22 + 123837]);
-      v26 = 3988 * MEMORY[0x87F7E8][5351] + 8916268;
-      *(_BYTE *)(v26 + 28) = 1;
-      SidebarClass::RefreshCameoGrid((_DWORD *)v26);
-      Tactical::UpdateUIVisibility(MEMORY[0x87F7E8]);
-      HIBYTE(MEMORY[0x87F7E8][5353]) = 1;
+      GadgetClass::Hide((_BYTE *)&MEMORY[0xB07C48] + 96 * MEMORY[0x884B84]); /*0x6aab58*/
+      *((_BYTE *)&MEMORY[0x880D48] + 3988 * MEMORY[0x884B84]) = 0; /*0x6aab76*/
+      ((void (*)(void))SidebarClass::sortCameoList)(); /*0x6aab7a*/
+      MEMORY[0x884B84] = v21; /*0x6aab82*/
+      GadgetClass::Show((_BYTE *)&MEMORY[0xB07C48] + 96 * v21); /*0x6aab91*/
+      *((_BYTE *)&MEMORY[0x880D48] + 3988 * MEMORY[0x884B84]) = 1; /*0x6aabaf*/
+      ((void (*)(void))SidebarClass::RefreshCameoGrid)(); /*0x6aabb3*/
+      Tactical::UpdateUIVisibility(&MEMORY[0x87F7E8]); /*0x6aabbd*/
+      MEMORY[0x884B8F] = 1; /*0x6aabc2*/
     }
   }
   else
   {
-    Tactical::UpdateUIVisibility(MEMORY[0x87F7E8]);
+    Tactical::UpdateUIVisibility(&MEMORY[0x87F7E8]); /*0x6aaad1*/
   }
 LABEL_58:
-  if ( v43 )
+  if ( v40 ) /*0x6aabcf*/
   {
-    v27 = 0;
-    if ( v3 <= 0 )
-      goto LABEL_79;
-    v28 = v46;
-    while ( !*(_DWORD *)v28 && !*((_DWORD *)v28 + 1) )
+    v24 = 0; /*0x6aabd5*/
+    if ( v3 <= 0 ) /*0x6aabd9*/
+      goto LABEL_79; /*0x6aabd9*/
+    v25 = v43; /*0x6aabe3*/
+    while ( !*(_DWORD *)v25 && !*((_DWORD *)v25 + 1) ) /*0x6aabec*/
     {
-      ++v27;
-      v28 += 52;
-      if ( v27 >= v3 )
-        goto LABEL_79;
+      ++v24; /*0x6aabee*/
+      v25 += 52; /*0x6aabef*/
+      if ( v24 >= v3 ) /*0x6aabf4*/
+        goto LABEL_79; /*0x6aabf4*/
     }
-    v29 = *(_DWORD *)(this + 84);
-    if ( v29 && (v30 = 0, v29 > 0) )
+    v26 = *(_DWORD *)(this + 84); /*0x6aabf8*/
+    if ( v26 && (v27 = 0, v26 > 0) ) /*0x6aac03*/
     {
-      v31 = &v46[52 * v27];
-      v32 = (_DWORD *)(this + 88);
-      while ( *v32 != *(_DWORD *)v31 || v32[1] != *((_DWORD *)v31 + 1) )
+      v28 = &v43[52 * v24]; /*0x6aac0b*/
+      v29 = (_DWORD *)(this + 88); /*0x6aac14*/
+      while ( *v29 != *(_DWORD *)v28 || v29[1] != *((_DWORD *)v28 + 1) ) /*0x6aac25*/
       {
-        ++v30;
-        v32 += 13;
-        if ( v30 >= *(_DWORD *)(this + 84) )
-          goto LABEL_79;
+        ++v27; /*0x6aac2a*/
+        v29 += 13; /*0x6aac2b*/
+        if ( v27 >= *(_DWORD *)(this + 84) ) /*0x6aac30*/
+          goto LABEL_79; /*0x6aac30*/
       }
-      v33 = (v27 - v30) / -2 + *(_DWORD *)(this + 68);
-      v34 = *(_DWORD *)(this + 84) - v51;
-      *(_DWORD *)(this + 68) = v33;
-      v35 = v34 / 2;
-      v36 = v33;
-      if ( v33 >= v34 / 2 )
-        v36 = v34 / 2;
-      if ( v36 >= 0 )
+      v30 = (v24 - v27) / -2 + *(_DWORD *)(this + 68); /*0x6aac44*/
+      v31 = *(_DWORD *)(this + 84) - v48; /*0x6aac4e*/
+      *(_DWORD *)(this + 68) = v30; /*0x6aac50*/
+      v32 = v31 / 2; /*0x6aac53*/
+      v33 = v30; /*0x6aac57*/
+      if ( v30 >= v31 / 2 ) /*0x6aac59*/
+        v33 = v31 / 2; /*0x6aac5b*/
+      if ( v33 >= 0 ) /*0x6aac5f*/
       {
-        if ( v33 < v35 )
-          v35 = v33;
-        *(_DWORD *)(this + 68) = v35;
+        if ( v30 < v32 ) /*0x6aac6a*/
+          v32 = v30; /*0x6aac6c*/
+        *(_DWORD *)(this + 68) = v32; /*0x6aac6e*/
       }
       else
       {
-        *(_DWORD *)(this + 68) = 0;
+        *(_DWORD *)(this + 68) = 0; /*0x6aac63*/
       }
     }
     else
     {
 LABEL_79:
-      *(_DWORD *)(this + 68) = 0;
+      *(_DWORD *)(this + 68) = 0; /*0x6aac73*/
     }
-    HIBYTE(MEMORY[0x87F7E8][5353]) = 1;
+    MEMORY[0x884B8F] = 1; /*0x6aac76*/
   }
-  if ( v46 )
-    __3_YAXPAX_Z(v46 - 4);
-  return v42;
+  if ( v43 ) /*0x6aac85*/
+    __3_YAXPAX_Z(v43 - 4); /*0x6aac8f*/
+  return v39; /*0x6aac9b*/
 }
-
-/* ASM:
-Src             = dword ptr -134h
-var_130         = dword ptr -130h
-var_12C         = dword ptr -12Ch
-var_128         = dword ptr -128h
-var_124         = dword ptr -124h
-var_120         = dword ptr -120h
-var_11C         = dword ptr -11Ch
-var_118         = dword ptr -118h
-var_114         = dword ptr -114h
-var_10C         = dword ptr -10Ch
-var_108         = byte ptr -108h
-var_104         = dword ptr -104h
-var_FC          = dword ptr -0FCh
-var_F8          = dword ptr -0F8h
-var_F4          = dword ptr -0F4h
-var_E8          = dword ptr -0E8h
-var_E0          = byte ptr -0E0h
-var_70          = byte ptr -70h
-
-mov     al, byte ptr dword_A8ED54+17h
-sub     esp, 144h
-test    al, al
-push    ebp
-push    edi
-mov     ebp, ecx
-jnz     loc_6AACA4
-mov     eax, [ebp+54h]
-xor     edi, edi
-cmp     eax, edi
-jz      loc_6AACA4
-mov     eax, ds:0A8B230h
-mov     [esp+14Ch+var_13D], 0
-mov     ecx, [eax+34B8h]
-mov     eax, 1Ah
-cmp     ecx, edi
-jz      short loc_6AA642
-mov     eax, 12h
-
-loc_6AA642:                             ; CODE XREF: SidebarClass__UpdateProduction+3B↑j
-mov     ecx, ds:886F9Ch
-mov     edx, ds:886F94h
-sub     ecx, eax
-mov     eax, dword_A8ED54+7C7A4h
-sub     ecx, eax
-mov     eax, 51EB851Fh
-push    ebx
-push    esi
-lea     ecx, [ecx+edx-7]
-imul    ecx
-sar     edx, 4
-mov     eax, edx
-shr     eax, 1Fh
-add     edx, eax
-shl     edx, 1
-mov     ebx, edx
-mov     [esp+154h+var_124], ebx
-lea     ecx, [ebx+ebx*2]
-lea     edx, [ebx+ecx*4]
-lea     eax, ds:4[edx*4]
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-cmp     eax, edi
-jz      short loc_6AA6C7
-mov     [eax], ebx
-lea     ecx, [ebx-1]
-add     eax, 4
-cmp     ecx, edi
-mov     [esp+154h+var_138], eax
-jl      short loc_6AA6C1
-inc     ecx
-lea     esi, [eax+14h]
-mov     [esp+154h+var_144], ecx
-
-loc_6AA6A8:                             ; CODE XREF: SidebarClass__UpdateProduction+BB↓j
-mov     ecx, esi
-call    SidebarClass__initButtons
-mov     eax, [esp+154h+var_144]
-add     esi, 34h ; '4'
-dec     eax
-mov     [esp+154h+var_144], eax
-jnz     short loc_6AA6A8
-mov     eax, [esp+154h+var_138]
-
-loc_6AA6C1:                             ; CODE XREF: SidebarClass__UpdateProduction+9E↑j
-mov     [esp+154h+var_138], eax
-jmp     short loc_6AA6CB
-; ---------------------------------------------------------------------------
-
-loc_6AA6C7:                             ; CODE XREF: SidebarClass__UpdateProduction+8E↑j
-mov     [esp+154h+var_138], edi
-
-loc_6AA6CB:                             ; CODE XREF: SidebarClass__UpdateProduction+C5↑j
-xor     edx, edx
-cmp     ebx, edi
-jle     short loc_6AA711
-mov     ecx, [esp+154h+var_138]
-mov     [esp+154h+var_144], ecx
-
-loc_6AA6D9:                             ; CODE XREF: SidebarClass__UpdateProduction+10F↓j
-mov     eax, [ebp+44h]
-mov     ecx, [ebp+54h]
-lea     eax, [edx+eax*2]
-cmp     eax, ecx
-jge     short loc_6AA701
-mov     edi, [esp+154h+var_144]
-lea     ecx, [eax+eax*2]
-mov     ebx, [esp+154h+var_124]
-lea     eax, [eax+ecx*4]
-mov     ecx, 0Dh
-lea     esi, [ebp+eax*4+58h]
-rep movsd
-xor     edi, edi
-
-loc_6AA701:                             ; CODE XREF: SidebarClass__UpdateProduction+E4↑j
-mov     ecx, [esp+154h+var_144]
-inc     edx
-add     ecx, 34h ; '4'
-cmp     edx, ebx
-mov     [esp+154h+var_144], ecx
-jl      short loc_6AA6D9
-
-loc_6AA711:                             ; CODE XREF: SidebarClass__UpdateProduction+CF↑j
-mov     eax, [ebp+54h]
-mov     [esp+154h+var_13E], 0
-cmp     eax, edi
-mov     [esp+154h+var_12C], edi
-jle     loc_6AAAB3
-lea     esi, [ebp+58h]
-lea     ecx, [ebp+8Ch]
-lea     edx, [ebp+5Ch]
-lea     eax, [ebp+64h]
-mov     [esp+154h+var_130], 34h ; '4'
-mov     [esp+154h+var_144], esi
-mov     [esp+154h+Src], ecx
-mov     [esp+154h+var_13C], edx
-mov     [esp+154h+var_128], eax
-
-loc_6AA74C:                             ; CODE XREF: SidebarClass__UpdateProduction+4A9↓j
-mov     ecx, [esp+154h+var_13C]
-mov     edx, [esi]
-mov     ecx, [ecx]
-call    TechnoTypeClass__GetByTypeAndIndex
-mov     ebx, eax
-cmp     ebx, edi
-jz      short loc_6AA790
-mov     eax, ds:0A83D4Ch
-mov     edx, [ebx]
-push    eax
-push    edi
-push    edi
-push    1
-mov     ecx, ebx
-call    dword ptr [edx+94h]
-cmp     eax, edi
-jz      short loc_6AA7B6
-mov     ecx, [eax+21Ch]
-push    1
-push    edi
-push    ebx
-call    HouseClass__CanBuild
-test    eax, eax
-jnz     loc_6AAA68
-jmp     short loc_6AA7B6
-; ---------------------------------------------------------------------------
-
-loc_6AA790:                             ; CODE XREF: SidebarClass__UpdateProduction+15D↑j
-mov     ecx, ds:0A83D4Ch
-mov     eax, [esi]
-cmp     eax, [ecx+264h]
-jnb     short loc_6AA7B6
-mov     ecx, [ecx+258h]
-mov     edx, [ecx+eax*4]
-xor     eax, eax
-mov     al, [edx+6Dh]
-cmp     eax, edi
-jnz     loc_6AAA68
-
-loc_6AA7B6:                             ; CODE XREF: SidebarClass__UpdateProduction+175↑j
-; SidebarClass__UpdateProduction+18E↑j ...
-mov     eax, [esp+154h+var_128]
-cmp     [eax], edi
-jz      loc_6AA87C
-mov     ecx, [esp+154h+var_13C]
-xor     edx, edx
-mov     dl, [ebx+0CCEh]
-mov     eax, [ecx]
-mov     ecx, [esi]
-push    edx
-push    ecx
-push    eax
-mov     eax, ds:0A83D4Ch
-push    10h
-mov     ecx, [eax+30h]
-push    ecx
-lea     ecx, [esp+168h+var_E0]
-call    EventClass__AddEventEx
-cmp     dword ptr ds:0A802C8h, 80h
-jge     short loc_6AA84B
-mov     ecx, ds:0A802D0h
-mov     esi, eax
-lea     edx, [ecx+ecx*8]
-lea     ecx, [ecx+edx*4]
-lea     edi, [ecx+ecx*2+0A802D4h]
-mov     ecx, 1Bh
-rep movsd
-movsw
-movsb
-call    ds:__imp_timeGetTime
-mov     ecx, ds:0A802D0h
-mov     esi, [esp+154h+var_144]
-mov     ds:0A83A54h[ecx*4], eax
-mov     edx, ds:0A802D0h
-mov     eax, ds:0A802C8h
-inc     edx
-and     edx, 7Fh
-inc     eax
-mov     ds:0A802D0h, edx
-mov     ds:0A802C8h, eax
-xor     edi, edi
-
-loc_6AA84B:                             ; CODE XREF: SidebarClass__UpdateProduction+1F6↑j
-mov     eax, [esp+154h+var_13C]
-mov     eax, [eax]
-cmp     eax, 7
-jz      short loc_6AA85B
-cmp     eax, 6
-jnz     short loc_6AA87C
-
-loc_6AA85B:                             ; CODE XREF: SidebarClass__UpdateProduction+254↑j
-push    edi
-mov     ecx, 87F7E8h
-mov     ds:88098Ch, edi
-mov     ds:880990h, edi
-mov     dword ptr ds:880994h, 0FFFFFFFFh
-call    Mouse__SetBounds
-
-loc_6AA87C:                             ; CODE XREF: SidebarClass__UpdateProduction+1BC↑j
-; SidebarClass__UpdateProduction+259↑j
-cmp     ebx, edi
-jz      loc_6AA931
-mov     cl, [ebx+0CCEh]
-mov     edx, [ebx]
-push    edi
-push    ecx
-mov     ecx, ebx
-call    dword ptr [edx+2Ch]
-mov     ecx, ds:0A83D4Ch
-push    eax
-call    HouseClass__GetBuildLimit
-test    eax, eax
-jz      loc_6AA931
-mov     ecx, [esi]
-mov     edx, [esp+154h+var_13C]
-xor     eax, eax
-mov     al, [ebx+0CCEh]
-push    eax
-mov     eax, [edx]
-push    ecx
-mov     ecx, ds:0A83D4Ch
-push    eax
-push    2Eh ; '.'
-mov     edx, [ecx+30h]
-lea     ecx, [esp+164h+var_70]
-push    edx
-call    EventClass__AddEventEx
-cmp     dword ptr ds:0A802C8h, 80h
-jge     short loc_6AA931
-mov     ecx, ds:0A802D0h
-mov     esi, eax
-lea     edx, [ecx+ecx*8]
-lea     ecx, [ecx+edx*4]
-lea     edi, [ecx+ecx*2+0A802D4h]
-mov     ecx, 1Bh
-rep movsd
-movsw
-movsb
-call    ds:__imp_timeGetTime
-mov     ecx, ds:0A802D0h
-mov     esi, [esp+154h+var_144]
-mov     ds:0A83A54h[ecx*4], eax
-mov     edx, ds:0A802D0h
-mov     eax, ds:0A802C8h
-inc     edx
-and     edx, 7Fh
-inc     eax
-mov     ds:0A802D0h, edx
-mov     ds:0A802C8h, eax
-xor     edi, edi
-
-loc_6AA931:                             ; CODE XREF: SidebarClass__UpdateProduction+27E↑j
-; SidebarClass__UpdateProduction+2A1↑j ...
-mov     ecx, [esp+154h+var_124]
-cmp     ecx, edi
-jle     short loc_6AA99D
-mov     eax, [esp+154h+var_138]
-mov     edx, ecx
-
-loc_6AA93F:                             ; CODE XREF: SidebarClass__UpdateProduction+39B↓j
-mov     ecx, [eax]
-mov     ebx, [esi]
-cmp     ecx, ebx
-jnz     short loc_6AA997
-mov     ecx, [eax+4]
-mov     ebx, [esi+4]
-cmp     ecx, ebx
-jnz     short loc_6AA997
-mov     ecx, dword_A8ED54+30h
-mov     [esp+154h+var_120], edi
-mov     [esp+154h+var_11C], edi
-mov     [esp+154h+var_118], edi
-mov     [esp+154h+var_114], edi
-mov     [esp+154h+var_10C], edi
-mov     [esp+154h+var_104], ecx
-mov     [esp+154h+var_FC], edi
-mov     [esp+154h+var_F8], edi
-mov     ecx, 0Dh
-lea     esi, [esp+154h+var_120]
-mov     edi, eax
-mov     [esp+154h+var_108], 0
-mov     [esp+154h+var_F4], 1
-rep movsd
-mov     esi, [esp+154h+var_144]
-xor     edi, edi
-
-loc_6AA997:                             ; CODE XREF: SidebarClass__UpdateProduction+345↑j
-; SidebarClass__UpdateProduction+34F↑j
-add     eax, 34h ; '4'
-dec     edx
-jnz     short loc_6AA93F
-
-loc_6AA99D:                             ; CODE XREF: SidebarClass__UpdateProduction+337↑j
-mov     eax, [ebp+54h]
-cmp     eax, 1
-jle     short loc_6AA9CE
-mov     ecx, [esp+154h+var_12C]
-lea     edx, [eax-1]
-cmp     ecx, edx
-jge     short loc_6AA9CE
-lea     ecx, [eax+eax*2]
-lea     edx, [eax+ecx*4]
-mov     eax, [esp+154h+var_130]
-shl     edx, 2
-sub     edx, eax
-mov     eax, [esp+154h+Src]
-push    edx             ; Size
-push    eax             ; Src
-push    esi             ; void *
-call    _memcpy
-add     esp, 0Ch
-
-loc_6AA9CE:                             ; CODE XREF: SidebarClass__UpdateProduction+3A3↑j
-; SidebarClass__UpdateProduction+3AE↑j
-mov     eax, [ebp+54h]
-mov     [esp+154h+var_13E], 1
-dec     eax
-mov     [esp+154h+var_13D], 1
-lea     ecx, [eax+eax*2]
-lea     edx, [eax+ecx*4]
-lea     ecx, [ebp+edx*4+0]
-lea     edx, [eax+eax*2+6]
-mov     [ecx+64h], edi
-mov     [ecx+58h], edi
-lea     eax, [eax+edx*4+2]
-mov     [ecx+5Ch], edi
-mov     [ecx+60h], edi
-lea     ebx, [ecx+74h]
-mov     [ebp+eax*4+0], edi
-mov     [ecx+6Ch], edi
-mov     eax, dword_A8ED54+30h
-xor     edx, edx
-mov     [ebx], eax
-mov     eax, [esp+154h+var_E8]
-mov     [ecx+80h], edi
-mov     [ebx+4], eax
-mov     [ebx+8], edx
-mov     ebx, [esp+154h+var_12C]
-mov     edx, [esp+154h+var_130]
-mov     [ecx+88h], edi
-mov     eax, [ebp+54h]
-mov     ecx, 34h ; '4'
-dec     eax
-dec     ebx
-sub     edx, ecx
-mov     [ebp+54h], eax
-mov     eax, [esp+154h+var_128]
-mov     [esp+154h+var_12C], ebx
-mov     ebx, [esp+154h+var_13C]
-mov     [esp+154h+var_130], edx
-mov     edx, [esp+154h+Src]
-sub     eax, ecx
-sub     ebx, ecx
-sub     edx, ecx
-mov     byte ptr [ebp+3Ch], 1
-mov     [esp+154h+var_128], eax
-mov     [esp+154h+var_13C], ebx
-mov     [esp+154h+Src], edx
-sub     esi, ecx
-jmp     short loc_6AAA6D
-; ---------------------------------------------------------------------------
-
-loc_6AAA68:                             ; CODE XREF: SidebarClass__UpdateProduction+188↑j
-; SidebarClass__UpdateProduction+1B0↑j
-mov     ecx, 34h ; '4'
-
-loc_6AAA6D:                             ; CODE XREF: SidebarClass__UpdateProduction+466↑j
-mov     edx, [esp+154h+var_130]
-mov     ebx, [esp+154h+var_128]
-mov     eax, [esp+154h+var_12C]
-add     edx, ecx
-add     ebx, ecx
-mov     [esp+154h+var_130], edx
-mov     edx, [esp+154h+var_13C]
-mov     [esp+154h+var_128], ebx
-mov     ebx, [esp+154h+Src]
-add     edx, ecx
-add     ebx, ecx
-add     esi, ecx
-mov     ecx, [ebp+54h]
-inc     eax
-cmp     eax, ecx
-mov     [esp+154h+var_12C], eax
-mov     [esp+154h+var_13C], edx
-mov     [esp+154h+Src], ebx
-mov     [esp+154h+var_144], esi
-jl      loc_6AA74C
-mov     ebx, [esp+154h+var_124]
-
-loc_6AAAB3:                             ; CODE XREF: SidebarClass__UpdateProduction+11F↑j
-mov     eax, [ebp+38h]
-mov     ecx, eax
-shl     ecx, 5
-sub     ecx, eax
-lea     edx, [eax+ecx*8]
-lea     ecx, [eax+edx*4]
-cmp     ds:880D80h[ecx*4], edi
-jle     short loc_6AAADB
-mov     ecx, 87F7E8h
-call    Tactical__UpdateUIVisibility
-jmp     loc_6AABC9
-; ---------------------------------------------------------------------------
-
-loc_6AAADB:                             ; CODE XREF: SidebarClass__UpdateProduction+4CA↑j
-lea     ecx, [eax+eax*2]
-shl     ecx, 5
-add     ecx, (offset dword_A8ED54+78EF4h)
-call    DialogControl__Show
-xor     esi, esi
-mov     ecx, 880D80h
-xor     eax, eax
-
-loc_6AAAF5:                             ; CODE XREF: SidebarClass__UpdateProduction+50A↓j
-cmp     [ecx], edi
-jg      short loc_6AAB0E
-add     eax, 0F94h
-inc     esi
-add     ecx, 0F94h
-cmp     eax, 3E50h
-jl      short loc_6AAAF5
-jmp     short loc_6AAB13
-; ---------------------------------------------------------------------------
-
-loc_6AAB0E:                             ; CODE XREF: SidebarClass__UpdateProduction+4F7↑j
-cmp     esi, 0FFFFFFFFh
-jnz     short loc_6AAB43
-
-loc_6AAB13:                             ; CODE XREF: SidebarClass__UpdateProduction+50C↑j
-mov     ecx, 87F7E8h
-call    Tactical__UpdateUIVisibility
-mov     eax, dword_A8ED54+7C724h
-cmp     eax, edi
-jz      loc_6AABC9
-mov     dword ptr ds:884B80h, 0FFFFFFFFh
-movsx   edx, word ptr [eax+6]
-mov     ds:884B7Ch, edx
-jmp     loc_6AABC9
-; ---------------------------------------------------------------------------
-
-loc_6AAB43:                             ; CODE XREF: SidebarClass__UpdateProduction+511↑j
-mov     eax, ds:884B84h
-cmp     esi, eax
-jz      short loc_6AABC9
-lea     ecx, [eax+eax*2]
-shl     ecx, 5
-add     ecx, (offset dword_A8ED54+78EF4h)
-call    GadgetClass__Hide
-mov     eax, ds:884B84h
-mov     ecx, eax
-shl     ecx, 5
-sub     ecx, eax
-lea     edx, [eax+ecx*8]
-lea     eax, [eax+edx*4]
-lea     ecx, ds:880D2Ch[eax*4]
-mov     byte ptr [ecx+1Ch], 0
-call    SidebarClass__sortCameoList
-lea     ecx, [esi+esi*2]
-mov     ds:884B84h, esi
-shl     ecx, 5
-add     ecx, (offset dword_A8ED54+78EF4h)
-call    GadgetClass__Show
-mov     eax, ds:884B84h
-mov     ecx, eax
-shl     ecx, 5
-sub     ecx, eax
-lea     edx, [eax+ecx*8]
-lea     eax, [eax+edx*4]
-lea     ecx, ds:880D2Ch[eax*4]
-mov     byte ptr [ecx+1Ch], 1
-call    SidebarClass__RefreshCameoGrid
-mov     ecx, 87F7E8h
-call    Tactical__UpdateUIVisibility
-mov     byte ptr ds:884B8Fh, 1
-
-loc_6AABC9:                             ; CODE XREF: SidebarClass__UpdateProduction+4D6↑j
-; SidebarClass__UpdateProduction+524↑j ...
-mov     al, [esp+154h+var_13D]
-test    al, al
-jz      loc_6AAC7D
-xor     eax, eax
-cmp     ebx, edi
-jle     loc_6AAC73
-mov     esi, [esp+154h+var_138]
-mov     ecx, esi
-
-loc_6AABE5:                             ; CODE XREF: SidebarClass__UpdateProduction+5F6↓j
-cmp     [ecx], edi
-jnz     short loc_6AABF8
-cmp     [ecx+4], edi
-jnz     short loc_6AABF8
-inc     eax
-add     ecx, 34h ; '4'
-cmp     eax, ebx
-jge     short loc_6AAC73
-jmp     short loc_6AABE5
-; ---------------------------------------------------------------------------
-
-loc_6AABF8:                             ; CODE XREF: SidebarClass__UpdateProduction+5E7↑j
-; SidebarClass__UpdateProduction+5EC↑j
-mov     ecx, [ebp+54h]
-cmp     ecx, edi
-jz      short loc_6AAC73
-xor     edx, edx
-cmp     ecx, edi
-jle     short loc_6AAC73
-lea     ecx, [eax+eax*2]
-lea     ecx, [eax+ecx*4]
-lea     esi, [esi+ecx*4]
-mov     ecx, [esi]
-mov     [esp+154h+var_144], ecx
-lea     ecx, [ebp+58h]
-
-loc_6AAC17:                             ; CODE XREF: SidebarClass__UpdateProduction+632↓j
-mov     ebx, [esp+154h+var_144]
-cmp     [ecx], ebx
-jnz     short loc_6AAC27
-mov     ebx, [ecx+4]
-cmp     ebx, [esi+4]
-jz      short loc_6AAC34
-
-loc_6AAC27:                             ; CODE XREF: SidebarClass__UpdateProduction+61D↑j
-mov     ebx, [ebp+54h]
-inc     edx
-add     ecx, 34h ; '4'
-cmp     edx, ebx
-jge     short loc_6AAC73
-jmp     short loc_6AAC17
-; ---------------------------------------------------------------------------
-
-loc_6AAC34:                             ; CODE XREF: SidebarClass__UpdateProduction+625↑j
-sub     eax, edx
-mov     esi, [ebp+44h]
-cdq
-sub     eax, edx
-mov     edx, [esp+154h+var_124]
-sar     eax, 1
-neg     eax
-add     esi, eax
-mov     eax, [ebp+54h]
-sub     eax, edx
-mov     ecx, esi
-cdq
-sub     eax, edx
-mov     [ebp+44h], esi
-sar     eax, 1
-cmp     ecx, eax
-mov     edx, ecx
-jl      short loc_6AAC5D
-mov     edx, eax
-
-loc_6AAC5D:                             ; CODE XREF: SidebarClass__UpdateProduction+659↑j
-cmp     edx, edi
-jge     short loc_6AAC68
-xor     eax, eax
-mov     [ebp+44h], eax
-jmp     short loc_6AAC76
-; ---------------------------------------------------------------------------
-
-loc_6AAC68:                             ; CODE XREF: SidebarClass__UpdateProduction+65F↑j
-cmp     ecx, eax
-jge     short loc_6AAC6E
-mov     eax, ecx
-
-loc_6AAC6E:                             ; CODE XREF: SidebarClass__UpdateProduction+66A↑j
-mov     [ebp+44h], eax
-jmp     short loc_6AAC76
-; ---------------------------------------------------------------------------
-
-loc_6AAC73:                             ; CODE XREF: SidebarClass__UpdateProduction+5D9↑j
-; SidebarClass__UpdateProduction+5F4↑j ...
-mov     [ebp+44h], edi
-
-loc_6AAC76:                             ; CODE XREF: SidebarClass__UpdateProduction+666↑j
-; SidebarClass__UpdateProduction+671↑j
-mov     byte ptr ds:884B8Fh, 1
-
-loc_6AAC7D:                             ; CODE XREF: SidebarClass__UpdateProduction+5CF↑j
-mov     eax, [esp+154h+var_138]
-pop     esi
-cmp     eax, edi
-pop     ebx
-jz      short loc_6AAC97
-mov     ecx, [eax-4]
-add     eax, 0FFFFFFFCh
-dec     ecx
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_6AAC97:                             ; CODE XREF: SidebarClass__UpdateProduction+685↑j
-mov     al, [esp+14Ch+var_13E]
-pop     edi
-pop     ebp
-add     esp, 144h
-retn
-; ---------------------------------------------------------------------------
-
-loc_6AACA4:                             ; CODE XREF: SidebarClass__UpdateProduction+11↑j
-; SidebarClass__UpdateProduction+1E↑j
-pop     edi
-xor     al, al
-pop     ebp
-add     esp, 144h
-retn
-*/
 } }
 // 0x6AAD00
 namespace gamemd { int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
@@ -16236,117 +7139,61 @@ namespace gamemd { int SidebarClass::saveLoadPrefix(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SidebarClass_SaveLoad_Prefix(void *this, int a2)
 {
-  return SidebarClass::Load((int)this, a2);
+  return SidebarClass::Load((int)this, a2); /*0x6ac5da*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-push    eax
-call    SidebarClass__Load
-retn    4
-*/
 } }
 // 0x6AC5E0
 namespace gamemd { int SidebarClass::saveLoadPrefix2(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall SidebarClass_SaveLoad_Prefix_0(int *this, int a2)
 {
-  return SidebarClass::Save(this, a2);
+  return SidebarClass::Save(this, a2); /*0x6ac5ea*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-push    eax
-call    SidebarClass__Save
-retn    4
-*/
 } }
 // 0x6AC780
 namespace gamemd { void* SidebarClass::queryInterface(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall SelectClass_StripClass_SidebarClass::_vt00(_DWORD *Block, char a2)
+_DWORD *__thiscall SidebarClass::queryInterface(_DWORD *Block, char a2)
 {
-  GadgetClass::Dtor(Block);
-  if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(Block);
-  return Block;
+  GadgetClass::Dtor(Block); /*0x6ac783*/
+  if ( (a2 & 1) != 0 ) /*0x6ac78d*/
+    __3_YAXPAX_Z(Block); /*0x6ac790*/
+  return Block; /*0x6ac79a*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-call    GadgetClass__Dtor
-test    [esp+4+arg_0], 1
-jz      short loc_6AC798
-push    esi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_6AC798:                             ; CODE XREF: SidebarClass__queryInterface+D↑j
-mov     eax, esi
-pop     esi
-retn    4
-*/
 } }
 // 0x6AC7C0
 namespace gamemd { int TabClass::drawTabBackground() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6AC7C0(int this)
+TabClass *__thiscall TabClass::drawTabBackground(int this)
 {
-  #72 *v2; // edx
+  IUnknown *v2; // edx
 
-  *(_DWORD *)(this + 20) = 0;
-  *(_BYTE *)(this + 24) = 0;
-  v2 = MEMORY[0xA8ED84];
-  *(_DWORD *)(this + 36) = 0;
-  *(_DWORD *)(this + 28) = v2;
-  *(_DWORD *)(this + 40) = 0;
-  *(_DWORD *)(this + 44) = 1;
-  return this;
+  *(_DWORD *)(this + 20) = 0; /*0x6ac7c4*/
+  *(_BYTE *)(this + 24) = 0; /*0x6ac7c7*/
+  v2 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x6ac7ca*/
+  *(_DWORD *)(this + 36) = 0; /*0x6ac7d0*/
+  *(_DWORD *)(this + 28) = v2; /*0x6ac7d3*/
+  *(_DWORD *)(this + 40) = 0; /*0x6ac7d6*/
+  *(_DWORD *)(this + 44) = 1; /*0x6ac7d9*/
+  return (TabClass *)this; /*0x6ac7e0*/
 }
-
-/* ASM:
-mov     eax, ecx
-xor     ecx, ecx
-mov     [eax+14h], ecx
-mov     [eax+18h], cl
-mov     edx, dword_A8ED54+30h
-mov     [eax+24h], ecx
-mov     [eax+1Ch], edx
-mov     [eax+28h], ecx
-mov     dword ptr [eax+2Ch], 1
-retn
-*/
 } }
 // 0x6AC870
 namespace gamemd { void* SidebarClass::initButtons() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__thiscall sub_6AC870(_BYTE *this)
 {
-  #72 *v2; // edx
+  wchar_t *v2; // edx
 
-  *(_DWORD *)this = 0;
-  *(this + 4) = 0;
-  v2 = MEMORY[0xA8ED84];
-  *((_DWORD *)this + 4) = 0;
-  *((_DWORD *)this + 2) = v2;
-  *((_DWORD *)this + 5) = 0;
-  *((_DWORD *)this + 6) = 1;
-  return this;
+  *(_DWORD *)this = 0; /*0x6ac874*/
+  *(this + 4) = 0; /*0x6ac876*/
+  v2 = MEMORY[0xA8ED84]; /*0x6ac879*/
+  *((_DWORD *)this + 4) = 0; /*0x6ac87f*/
+  *((_DWORD *)this + 2) = v2; /*0x6ac882*/
+  *((_DWORD *)this + 5) = 0; /*0x6ac885*/
+  *((_DWORD *)this + 6) = 1; /*0x6ac888*/
+  return this; /*0x6ac88f*/
 }
-
-/* ASM:
-mov     eax, ecx
-xor     ecx, ecx
-mov     [eax], ecx
-mov     [eax+4], cl
-mov     edx, dword_A8ED54+30h
-mov     [eax+10h], ecx
-mov     [eax+8], edx
-mov     [eax+14h], ecx
-mov     dword ptr [eax+18h], 1
-retn
-*/
 } }
 // 0x6B1DC0
 namespace gamemd { int SliderClass::OnClick(int a1) {
@@ -16359,206 +7206,64 @@ __int64 __thiscall SliderClass::_vt42(int *this, int a2)
   int v6; // edi
   __int64 result; // rax
 
-  v3 = *(this + 12);
-  if ( a2 < v3 )
-    v3 = a2;
-  *(this + 18) = v3;
-  if ( v3 <= 1 )
-    v3 = 1;
-  *(this + 18) = v3;
-  (*(void (__thiscall **)(int *))(*this + 72))(this);
-  if ( *((_BYTE *)this + 46) )
-    v4 = *(this + 5);
+  v3 = *(this + 12); /*0x6b1dc7*/
+  if ( a2 < v3 ) /*0x6b1dcc*/
+    v3 = a2; /*0x6b1dce*/
+  *(this + 18) = v3; /*0x6b1dd3*/
+  if ( v3 <= 1 ) /*0x6b1dd6*/
+    v3 = 1; /*0x6b1dd8*/
+  *(this + 18) = v3; /*0x6b1ddd*/
+  (*(void (__thiscall **)(int *))(*this + 72))(this); /*0x6b1de6*/
+  if ( *((_BYTE *)this + 46) ) /*0x6b1de9*/
+    v4 = *(this + 5); /*0x6b1df0*/
   else
-    v4 = *(this + 6);
-  v5 = (double)*(this + 12);
-  v6 = Math::RoundToInt(v5);
-  if ( v6 <= 4 )
-    v6 = 4;
-  *(this + 19) = v6;
-  result = Math::RoundToInt(v5);
-  if ( (int)result >= v4 - v6 )
-    *(this + 20) = v4 - v6;
+    v4 = *(this + 6); /*0x6b1df5*/
+  v5 = (double)*(this + 12); /*0x6b1df8*/
+  v6 = Math::RoundToInt(v5); /*0x6b1e12*/
+  if ( v6 <= 4 ) /*0x6b1e14*/
+    v6 = 4; /*0x6b1e16*/
+  *(this + 19) = v6; /*0x6b1e1e*/
+  result = Math::RoundToInt(v5); /*0x6b1e25*/
+  if ( (int)result >= v4 - v6 ) /*0x6b1e36*/
+    *(this + 20) = v4 - v6; /*0x6b1e3f*/
   else
-    *(this + 20) = result;
-  return result;
+    *(this + 20) = result; /*0x6b1e38*/
+  return result; /*0x6b1e3b*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     ecx, [esp+4+arg_0]
-mov     eax, [esi+30h]
-cmp     ecx, eax
-jge     short loc_6B1DD0
-mov     eax, ecx
-
-loc_6B1DD0:                             ; CODE XREF: SliderClass__OnClick+C↑j
-cmp     eax, 1
-mov     [esi+48h], eax
-jg      short loc_6B1DDD
-mov     eax, 1
-
-loc_6B1DDD:                             ; CODE XREF: SliderClass__OnClick+16↑j
-mov     [esi+48h], eax
-mov     eax, [esi]
-push    ebx
-push    edi
-mov     ecx, esi
-call    dword ptr [eax+48h]
-mov     al, [esi+2Eh]
-test    al, al
-jz      short loc_6B1DF5
-mov     ebx, [esi+14h]
-jmp     short loc_6B1DF8
-; ---------------------------------------------------------------------------
-
-loc_6B1DF5:                             ; CODE XREF: SliderClass__OnClick+2E↑j
-mov     ebx, [esi+18h]
-
-loc_6B1DF8:                             ; CODE XREF: SliderClass__OnClick+33↑j
-fild    dword ptr [esi+30h]
-mov     [esp+0Ch+arg_0], ebx
-fild    [esp+0Ch+arg_0]
-fild    dword ptr [esi+48h]
-fdiv    st, st(2)
-fmul    st, st(1)
-call    Math__RoundToInt
-cmp     eax, 4
-mov     edi, eax
-jg      short loc_6B1E1B
-mov     edi, 4
-
-loc_6B1E1B:                             ; CODE XREF: SliderClass__OnClick+54↑j
-fild    dword ptr [esi+34h]
-mov     [esi+4Ch], edi
-fdiv    st, st(2)
-fmul    st, st(1)
-call    Math__RoundToInt
-mov     ecx, ebx
-sub     ecx, edi
-pop     edi
-fstp    st
-cmp     eax, ecx
-pop     ebx
-fstp    st
-jge     short loc_6B1E3F
-mov     [esi+50h], eax
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_6B1E3F:                             ; CODE XREF: SliderClass__OnClick+76↑j
-mov     [esi+50h], ecx
-pop     esi
-retn    4
-*/
 } }
 // 0x6B1E50
 namespace gamemd { int SliderClass::Draw(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SliderClass::_vt35(int this, int a2)
+int __thiscall SliderClass::Draw(int this, SliderClass *aP1)
 {
-  int v3; // ecx
+  SliderClass *v3; // ecx
   int v4; // edi
   int v5; // ebx
   double v6; // st7
   int v7; // edi
   int v8; // eax
 
-  v3 = a2;
-  v4 = *(_DWORD *)(this + 72);
-  if ( a2 >= *(_DWORD *)(this + 48) - v4 )
-    v3 = *(_DWORD *)(this + 48) - v4;
-  if ( !GaugeClass::GetValue((int *)this, v3) )
-    return 0;
-  if ( *(_BYTE *)(this + 46) )
-    v5 = *(_DWORD *)(this + 20);
+  v3 = aP1; /*0x6b1e53*/
+  v4 = *(_DWORD *)(this + 72); /*0x6b1e5b*/
+  if ( (int)aP1 >= *(_DWORD *)(this + 48) - v4 ) /*0x6b1e62*/
+    v3 = (SliderClass *)(*(_DWORD *)(this + 48) - v4); /*0x6b1e64*/
+  if ( !GaugeClass::GetValue((int *)this, v3) ) /*0x6b1e69*/
+    return 0; /*0x6b1ed1*/
+  if ( *(_BYTE *)(this + 46) ) /*0x6b1e72*/
+    v5 = *(_DWORD *)(this + 20); /*0x6b1e7a*/
   else
-    v5 = *(_DWORD *)(this + 24);
-  v6 = (double)*(int *)(this + 48);
-  v7 = Math::RoundToInt(v6);
-  if ( v7 <= 4 )
-    v7 = 4;
-  *(_DWORD *)(this + 76) = v7;
-  v8 = Math::RoundToInt(v6);
-  if ( v8 >= v5 - v7 )
-    v8 = v5 - v7;
-  *(_DWORD *)(this + 80) = v8;
-  return 1;
+    v5 = *(_DWORD *)(this + 24); /*0x6b1e7f*/
+  v6 = (double)*(int *)(this + 48); /*0x6b1e82*/
+  v7 = Math::RoundToInt(v6); /*0x6b1e9c*/
+  if ( v7 <= 4 ) /*0x6b1e9e*/
+    v7 = 4; /*0x6b1ea0*/
+  *(_DWORD *)(this + 76) = v7; /*0x6b1ea8*/
+  v8 = Math::RoundToInt(v6); /*0x6b1eaf*/
+  if ( v8 >= v5 - v7 ) /*0x6b1ebf*/
+    v8 = v5 - v7; /*0x6b1ec1*/
+  *(_DWORD *)(this + 80) = v8; /*0x6b1ec3*/
+  return 1; /*0x6b1ec6*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     ecx, [esp+4+arg_0]
-push    edi
-mov     eax, [esi+30h]
-mov     edi, [esi+48h]
-sub     eax, edi
-cmp     ecx, eax
-jl      short loc_6B1E66
-mov     ecx, eax
-
-loc_6B1E66:                             ; CODE XREF: SliderClass__Draw+12↑j
-push    ecx
-mov     ecx, esi
-call    GaugeClass__GetValue
-test    eax, eax
-jz      short loc_6B1ED0
-mov     al, [esi+2Eh]
-push    ebx
-test    al, al
-jz      short loc_6B1E7F
-mov     ebx, [esi+14h]
-jmp     short loc_6B1E82
-; ---------------------------------------------------------------------------
-
-loc_6B1E7F:                             ; CODE XREF: SliderClass__Draw+28↑j
-mov     ebx, [esi+18h]
-
-loc_6B1E82:                             ; CODE XREF: SliderClass__Draw+2D↑j
-fild    dword ptr [esi+30h]
-mov     [esp+0Ch+arg_0], ebx
-fild    [esp+0Ch+arg_0]
-fild    dword ptr [esi+48h]
-fdiv    st, st(2)
-fmul    st, st(1)
-call    Math__RoundToInt
-cmp     eax, 4
-mov     edi, eax
-jg      short loc_6B1EA5
-mov     edi, 4
-
-loc_6B1EA5:                             ; CODE XREF: SliderClass__Draw+4E↑j
-fild    dword ptr [esi+34h]
-mov     [esi+4Ch], edi
-fdiv    st, st(2)
-fmul    st, st(1)
-call    Math__RoundToInt
-mov     ecx, ebx
-pop     ebx
-sub     ecx, edi
-fstp    st
-cmp     eax, ecx
-fstp    st
-jl      short loc_6B1EC3
-mov     eax, ecx
-
-loc_6B1EC3:                             ; CODE XREF: SliderClass__Draw+6F↑j
-mov     [esi+50h], eax
-pop     edi
-mov     eax, 1
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_6B1ED0:                             ; CODE XREF: SliderClass__Draw+20↑j
-pop     edi
-xor     eax, eax
-pop     esi
-retn    4
-*/
 } }
 // 0x6B1F50
 namespace gamemd { int SliderClass::SetValue(int a1, void* a2, int a3) {
@@ -16571,131 +7276,43 @@ int __thiscall SliderClass::_vt31(int this, unsigned int a2, _DWORD *a3, int a4)
   int v8; // ecx
   _DWORD *v9; // edi
 
-  if ( (a2 & 1) == 0 )
-    return CellClass::DrawDispatch((int *)this, a2, a3, 0);
-  if ( *(_BYTE *)(this + 46) )
+  if ( (a2 & 1) == 0 ) /*0x6b1f5c*/
+    return CellClass::DrawDispatch((int *)this, a2, a3, 0); /*0x6b1fef*/
+  if ( *(_BYTE *)(this + 46) ) /*0x6b1f62*/
   {
-    v5 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 44))(MEMORY[0x887640]);
-    v6 = *(_DWORD *)(this + 12);
+    v5 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 44))(MEMORY[0x887640]); /*0x6b1f71*/
+    v6 = *(_DWORD *)(this + 12); /*0x6b1f74*/
   }
   else
   {
-    v5 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 48))(MEMORY[0x887640]);
-    v6 = *(_DWORD *)(this + 16);
+    v5 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 48))(MEMORY[0x887640]); /*0x6b1f7b*/
+    v6 = *(_DWORD *)(this + 16); /*0x6b1f7e*/
   }
-  v7 = *(_DWORD *)(this + 80);
-  v8 = v6 + 1;
-  if ( v5 >= v7 + v8 )
+  v7 = *(_DWORD *)(this + 80); /*0x6b1f81*/
+  v8 = v6 + 1; /*0x6b1f84*/
+  if ( v5 >= v7 + v8 ) /*0x6b1f8a*/
   {
-    if ( v5 <= v8 + v7 + *(_DWORD *)(this + 76) )
+    if ( v5 <= v8 + v7 + *(_DWORD *)(this + 76) ) /*0x6b1fac*/
     {
-      v9 = a3;
-      CellClass::DrawDispatch((int *)this, a2, a3, 0);
+      v9 = a3; /*0x6b1fc5*/
+      CellClass::DrawDispatch((int *)this, a2, a3, 0); /*0x6b1fcf*/
     }
     else
     {
-      (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 172))(this, 0);
-      v9 = a3;
-      CellClass::DrawDispatch((int *)this, 0, a3, 0);
+      (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 172))(this, 0); /*0x6b1fb4*/
+      v9 = a3; /*0x6b1fba*/
+      CellClass::DrawDispatch((int *)this, 0, a3, 0); /*0x6b1fc3*/
     }
   }
   else
   {
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)this + 172))(this, 1);
-    v9 = a3;
-    CellClass::DrawDispatch((int *)this, 0, a3, 0);
+    (*(void (__thiscall **)(int, int))(*(_DWORD *)this + 172))(this, 1); /*0x6b1f92*/
+    v9 = a3; /*0x6b1f98*/
+    CellClass::DrawDispatch((int *)this, 0, a3, 0); /*0x6b1fa1*/
   }
-  *v9 = 0;
-  return 1;
+  *v9 = 0; /*0x6b1fd4*/
+  return 1; /*0x6b1fda*/
 }
-
-/* ASM:
-push    ebx
-mov     ebx, [esp+4+arg_0]
-push    esi
-push    edi
-test    bl, 1
-mov     esi, ecx
-jz      loc_6B1FE5
-mov     al, [esi+2Eh]
-mov     ecx, ds:887640h
-test    al, al
-jz      short loc_6B1F79
-mov     eax, [ecx]
-call    dword ptr [eax+2Ch]
-mov     ecx, [esi+0Ch]
-jmp     short loc_6B1F81
-; ---------------------------------------------------------------------------
-
-loc_6B1F79:                             ; CODE XREF: SliderClass__SetValue+1D↑j
-mov     edx, [ecx]
-call    dword ptr [edx+30h]
-mov     ecx, [esi+10h]
-
-loc_6B1F81:                             ; CODE XREF: SliderClass__SetValue+27↑j
-mov     edx, [esi+50h]
-inc     ecx
-lea     edi, [edx+ecx]
-cmp     eax, edi
-jge     short loc_6B1FA3
-mov     eax, [esi]
-push    1
-mov     ecx, esi
-call    dword ptr [eax+0ACh]
-mov     edi, [esp+0Ch+arg_4]
-push    0
-push    edi
-push    0
-jmp     short loc_6B1FCD
-; ---------------------------------------------------------------------------
-
-loc_6B1FA3:                             ; CODE XREF: SliderClass__SetValue+3A↑j
-mov     edi, [esi+4Ch]
-add     edi, edx
-add     edi, ecx
-cmp     eax, edi
-jle     short loc_6B1FC5
-mov     edx, [esi]
-push    0
-mov     ecx, esi
-call    dword ptr [edx+0ACh]
-mov     edi, [esp+0Ch+arg_4]
-push    0
-push    edi
-push    0
-jmp     short loc_6B1FCD
-; ---------------------------------------------------------------------------
-
-loc_6B1FC5:                             ; CODE XREF: SliderClass__SetValue+5C↑j
-mov     edi, [esp+0Ch+arg_4]
-push    0
-push    edi
-push    ebx
-
-loc_6B1FCD:                             ; CODE XREF: SliderClass__SetValue+51↑j
-; SliderClass__SetValue+73↑j
-mov     ecx, esi
-call    CellClass__DrawDispatch
-mov     dword ptr [edi], 0
-pop     edi
-pop     esi
-mov     eax, 1
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_6B1FE5:                             ; CODE XREF: SliderClass__SetValue+C↑j
-mov     eax, [esp+0Ch+arg_4]
-push    0
-push    eax
-push    ebx
-mov     ecx, esi
-call    CellClass__DrawDispatch
-pop     edi
-pop     esi
-pop     ebx
-retn    0Ch
-*/
 } }
 // 0x6B2000
 namespace gamemd { int SliderClass::OnTrack(int a1) {
@@ -16704,37 +7321,12 @@ int __thiscall SliderClass::_vt43(int *this, int a2)
 {
   int v2; // eax
 
-  v2 = *this;
-  if ( a2 )
-    return (*(int (__stdcall **)(int))(v2 + 140))(*(this + 13) - *(this + 18));
+  v2 = *this; /*0x6b2007*/
+  if ( a2 ) /*0x6b2009*/
+    return (*(int (__stdcall **)(int))(v2 + 140))(*(this + 13) - *(this + 18)); /*0x6b2014*/
   else
-    return (*(int (__stdcall **)(int))(v2 + 140))(*(this + 13) + *(this + 18));
+    return (*(int (__stdcall **)(int))(v2 + 140))(*(this + 13) + *(this + 18)); /*0x6b2027*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-push    esi
-test    eax, eax
-mov     eax, [ecx]
-jz      short loc_6B201E
-mov     edx, [ecx+34h]
-mov     esi, [ecx+48h]
-sub     edx, esi
-push    edx
-call    dword ptr [eax+8Ch]
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_6B201E:                             ; CODE XREF: SliderClass__OnTrack+9↑j
-mov     edx, [ecx+48h]
-mov     esi, [ecx+34h]
-add     edx, esi
-push    edx
-call    dword ptr [eax+8Ch]
-pop     esi
-retn    4
-*/
 } }
 // 0x6B2040
 namespace gamemd { int SliderClass::OnRelease(int a1) {
@@ -16744,32 +7336,13 @@ int __thiscall SliderClass::_vt44(int *this, int a2)
   int v2; // edx
   int v3; // eax
 
-  v2 = *(this + 13);
-  v3 = *this;
-  if ( a2 )
-    return (*(int (__stdcall **)(int))(v3 + 140))(v2 - 1);
+  v2 = *(this + 13); /*0x6b2044*/
+  v3 = *this; /*0x6b2049*/
+  if ( a2 ) /*0x6b204b*/
+    return (*(int (__stdcall **)(int))(v3 + 140))(v2 - 1); /*0x6b204f*/
   else
-    return (*(int (__stdcall **)(int))(v3 + 140))(v2 + 1);
+    return (*(int (__stdcall **)(int))(v3 + 140))(v2 + 1); /*0x6b205a*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-mov     edx, [ecx+34h]
-test    eax, eax
-mov     eax, [ecx]
-jz      short loc_6B2058
-dec     edx
-push    edx
-call    dword ptr [eax+8Ch]
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_6B2058:                             ; CODE XREF: SliderClass__OnRelease+B↑j
-inc     edx
-push    edx
-call    dword ptr [eax+8Ch]
-retn    4
-*/
 } }
 // 0x6B2070
 namespace gamemd { int SliderClass::HitTest() {
@@ -16787,70 +7360,28 @@ int __thiscall SliderClass::_vt39(int this)
   int v10; // [esp+8h] [ebp-8h]
   int v11; // [esp+Ch] [ebp-4h]
 
-  if ( *(_BYTE *)(this + 46) )
+  if ( *(_BYTE *)(this + 46) ) /*0x6b2070*/
   {
-    v1 = *(_DWORD *)(this + 16);
-    v8 = *(_DWORD *)(this + 12) + *(_DWORD *)(this + 80);
-    v2 = *(_DWORD *)(this + 76);
-    v3 = *(_DWORD *)(this + 24);
-    v9 = v1;
-    v11 = v3;
-    v10 = v2;
+    v1 = *(_DWORD *)(this + 16); /*0x6b2082*/
+    v8 = *(_DWORD *)(this + 12) + *(_DWORD *)(this + 80); /*0x6b2085*/
+    v2 = *(_DWORD *)(this + 76); /*0x6b2089*/
+    v3 = *(_DWORD *)(this + 24); /*0x6b208c*/
+    v9 = v1; /*0x6b208f*/
+    v11 = v3; /*0x6b2093*/
+    v10 = v2; /*0x6b20a2*/
   }
   else
   {
-    v5 = *(_DWORD *)(this + 80);
-    v8 = *(_DWORD *)(this + 12);
-    v6 = *(_DWORD *)(this + 20);
-    v9 = *(_DWORD *)(this + 16) + v5;
-    v7 = *(_DWORD *)(this + 76);
-    v10 = v6;
-    v11 = v7;
+    v5 = *(_DWORD *)(this + 80); /*0x6b20b2*/
+    v8 = *(_DWORD *)(this + 12); /*0x6b20b5*/
+    v6 = *(_DWORD *)(this + 20); /*0x6b20be*/
+    v9 = *(_DWORD *)(this + 16) + v5; /*0x6b20c1*/
+    v7 = *(_DWORD *)(this + 76); /*0x6b20c5*/
+    v10 = v6; /*0x6b20c8*/
+    v11 = v7; /*0x6b20d7*/
   }
-  return DrawBuildingTilesSHP(&v8, 1, 1);
+  return DrawBuildingTilesSHP(&v8, 1, 1); /*0x6b20ab*/
 }
-
-/* ASM:
-mov     al, [ecx+2Eh]
-sub     esp, 10h
-test    al, al
-jz      short loc_6B20AF
-mov     eax, [ecx+50h]
-mov     edx, [ecx+0Ch]
-add     eax, edx
-mov     edx, [ecx+10h]
-mov     [esp+10h+var_10], eax
-mov     eax, [ecx+4Ch]
-mov     ecx, [ecx+18h]
-mov     [esp+10h+var_C], edx
-mov     [esp+10h+var_4], ecx
-push    1
-mov     edx, 1
-lea     ecx, [esp+14h+var_10]
-mov     [esp+14h+var_8], eax
-call    DrawBuildingTilesSHP
-add     esp, 10h
-retn
-; ---------------------------------------------------------------------------
-
-loc_6B20AF:                             ; CODE XREF: SliderClass__HitTest+8↑j
-mov     edx, [ecx+0Ch]
-mov     eax, [ecx+50h]
-mov     [esp+10h+var_10], edx
-mov     edx, [ecx+10h]
-add     eax, edx
-mov     edx, [ecx+14h]
-mov     [esp+10h+var_C], eax
-mov     eax, [ecx+4Ch]
-mov     [esp+10h+var_8], edx
-push    1
-mov     edx, 1
-lea     ecx, [esp+14h+var_10]
-mov     [esp+14h+var_4], eax
-call    DrawBuildingTilesSHP
-add     esp, 10h
-retn
-*/
 } }
 // 0x6B20F0
 namespace gamemd { int SliderClass::GetRange(int a1) {
@@ -16862,65 +7393,19 @@ int __thiscall SliderClass::_vt27(int this, int a2)
   int v5; // eax
   int v7[4]; // [esp+8h] [ebp-10h] BYREF
 
-  if ( !*(_BYTE *)(this + 68) || !Control::DispatchClick((_DWORD *)this, a2) )
-    return BuildingPlacement::HandleClick(this, a2);
-  v3 = *(_DWORD *)(this + 16);
-  v4 = *(_DWORD *)(this + 20);
-  v7[0] = *(_DWORD *)(this + 12);
-  v5 = *(_DWORD *)(this + 24);
-  v7[1] = v3;
-  v7[2] = v4;
-  v7[3] = v5;
-  DrawBuildingTilesSHP(v7, 0, 1);
-  (*(void (__thiscall **)(int))(*(_DWORD *)this + 156))(this);
-  return 1;
+  if ( !*(_BYTE *)(this + 68) || !Control::DispatchClick((_DWORD *)this, a2) ) /*0x6b2103*/
+    return BuildingPlacement::HandleClick(this, a2); /*0x6b214f*/
+  v3 = *(_DWORD *)(this + 16); /*0x6b210f*/
+  v4 = *(_DWORD *)(this + 20); /*0x6b2112*/
+  v7[0] = *(_DWORD *)(this + 12); /*0x6b2115*/
+  v5 = *(_DWORD *)(this + 24); /*0x6b2119*/
+  v7[1] = v3; /*0x6b211c*/
+  v7[2] = v4; /*0x6b2120*/
+  v7[3] = v5; /*0x6b212c*/
+  DrawBuildingTilesSHP(v7, 0, 1); /*0x6b2130*/
+  (*(void (__thiscall **)(int))(*(_DWORD *)this + 156))(this); /*0x6b2139*/
+  return 1; /*0x6b213f*/
 }
-
-/* ASM:
-sub     esp, 10h
-push    esi
-mov     esi, ecx
-push    edi
-mov     edi, [esp+18h+arg_0]
-mov     al, [esi+44h]
-test    al, al
-jz      short loc_6B214C
-push    edi
-call    Control__DispatchClick
-test    eax, eax
-jz      short loc_6B214C
-mov     eax, [esi+0Ch]
-mov     ecx, [esi+10h]
-mov     edx, [esi+14h]
-mov     [esp+18h+var_10], eax
-mov     eax, [esi+18h]
-mov     [esp+18h+var_C], ecx
-mov     [esp+18h+var_8], edx
-push    1
-xor     edx, edx
-lea     ecx, [esp+1Ch+var_10]
-mov     [esp+1Ch+var_4], eax
-call    DrawBuildingTilesSHP
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+9Ch]
-pop     edi
-mov     eax, 1
-pop     esi
-add     esp, 10h
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_6B214C:                             ; CODE XREF: SliderClass__GetRange+10↑j
-; SliderClass__GetRange+1A↑j
-push    edi
-mov     ecx, esi
-call    BuildingPlacement__HandleClick
-pop     edi
-pop     esi
-add     esp, 10h
-retn    4
-*/
 } }
 // 0x6B2160
 namespace gamemd { int SliderClass::SetRange(int a1, int a2, int a3) {
@@ -16929,48 +7414,17 @@ char __thiscall SliderClass::_vt19(_DWORD *this, char a2, int a3, int a4)
 {
   int v4; // eax
 
-  LOBYTE(v4) = a2;
-  if ( (a2 & 4) != 0 )
+  LOBYTE(v4) = a2; /*0x6b2160*/
+  if ( (a2 & 4) != 0 ) /*0x6b2169*/
   {
-    if ( a4 == *(this + 15) )
-      (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 176))(this, 0);
-    v4 = *(this + 16);
-    if ( a4 == v4 )
-      LOBYTE(v4) = (*(int (__thiscall **)(_DWORD *, int))(*this + 176))(this, 1);
+    if ( a4 == *(this + 15) ) /*0x6b2175*/
+      (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 176))(this, 0); /*0x6b217b*/
+    v4 = *(this + 16); /*0x6b2181*/
+    if ( a4 == v4 ) /*0x6b2187*/
+      LOBYTE(v4) = (*(int (__thiscall **)(_DWORD *, int))(*this + 176))(this, 1); /*0x6b218f*/
   }
-  return v4;
+  return v4; /*0x6b2195*/
 }
-
-/* ASM:
-mov     al, [esp+arg_0]
-push    esi
-test    al, 4
-mov     esi, ecx
-jz      short loc_6B2195
-mov     eax, [esi+3Ch]
-push    edi
-mov     edi, [esp+8+arg_8]
-cmp     edi, eax
-jnz     short loc_6B2181
-mov     eax, [esi]
-push    0
-call    dword ptr [eax+0B0h]
-
-loc_6B2181:                             ; CODE XREF: SliderClass__SetRange+15↑j
-mov     eax, [esi+40h]
-cmp     edi, eax
-pop     edi
-jnz     short loc_6B2195
-mov     edx, [esi]
-push    1
-mov     ecx, esi
-call    dword ptr [edx+0B0h]
-
-loc_6B2195:                             ; CODE XREF: SliderClass__SetRange+9↑j
-; SliderClass__SetRange+27↑j
-pop     esi
-retn    0Ch
-*/
 } }
 // 0x6CBEE0
 namespace gamemd { int SidebarClass::GetProductionState() {
@@ -16996,276 +7450,86 @@ int __thiscall SidebarClass_GetProductionState(int this)
   int v17; // [esp+14h] [ebp-4h]
   int v18; // [esp+14h] [ebp-4h]
 
-  if ( !*(_BYTE *)(this + 109) )
-    return 0;
-  v1 = *(_DWORD *)(this + 40);
-  if ( !*(_BYTE *)(v1 + 229) )
+  if ( !*(_BYTE *)(this + 109) ) /*0x6cbeeb*/
+    return 0; /*0x6cc064*/
+  v1 = *(_DWORD *)(this + 40); /*0x6cbef1*/
+  if ( !*(_BYTE *)(v1 + 229) ) /*0x6cbefc*/
   {
-    if ( *(_BYTE *)(this + 111) )
-      return 54;
-    v11 = *(_DWORD *)(this + 36);
-    v12 = v11;
-    if ( v11 == -1 )
-      v12 = *(_DWORD *)(v1 + 176);
-    v13 = *(_DWORD *)(this + 56);
-    v14 = *(_DWORD *)(this + 48);
-    if ( v14 != -1 )
+    if ( *(_BYTE *)(this + 111) ) /*0x6cbfe5*/
+      return 54; /*0x6cbff7*/
+    v11 = *(_DWORD *)(this + 36); /*0x6cbff8*/
+    v12 = v11; /*0x6cbffe*/
+    if ( v11 == -1 ) /*0x6cc000*/
+      v12 = *(_DWORD *)(v1 + 176); /*0x6cc002*/
+    v13 = *(_DWORD *)(this + 56); /*0x6cc008*/
+    v14 = *(_DWORD *)(this + 48); /*0x6cc00b*/
+    if ( v14 != -1 ) /*0x6cc011*/
     {
-      if ( (int)MEMORY[0xA8ED84] - v14 >= v13 )
-        v13 = 0;
+      if ( (int)MEMORY[0xA8ED84] - v14 >= v13 ) /*0x6cc01d*/
+        v13 = 0; /*0x6cc023*/
       else
-        v13 -= (int)MEMORY[0xA8ED84] - v14;
+        v13 -= (int)MEMORY[0xA8ED84] - v14; /*0x6cc01f*/
     }
-    if ( v11 == -1 )
-      v18 = *(_DWORD *)(v1 + 176);
+    if ( v11 == -1 ) /*0x6cc028*/
+      v18 = *(_DWORD *)(v1 + 176); /*0x6cc036*/
     else
-      v18 = v11;
-    v5 = (double)(v12 - v13) / (double)v18;
-    goto LABEL_37;
+      v18 = v11; /*0x6cc02a*/
+    v5 = (double)(v12 - v13) / (double)v18; /*0x6cc044*/
+    goto LABEL_37; /*0x6cc044*/
   }
-  if ( *(_DWORD *)(this + 124) != 2 )
+  if ( *(_DWORD *)(this + 124) != 2 ) /*0x6cbf06*/
   {
-    v6 = *(_DWORD *)(this + 36);
-    v7 = v6;
-    if ( v6 == -1 )
-      v7 = *(_DWORD *)(v1 + 176);
-    v8 = *(_DWORD *)(this + 56);
-    v9 = *(_DWORD *)(this + 48);
-    if ( v9 != -1 )
+    v6 = *(_DWORD *)(this + 36); /*0x6cbf85*/
+    v7 = v6; /*0x6cbf8b*/
+    if ( v6 == -1 ) /*0x6cbf8d*/
+      v7 = *(_DWORD *)(v1 + 176); /*0x6cbf8f*/
+    v8 = *(_DWORD *)(this + 56); /*0x6cbf95*/
+    v9 = *(_DWORD *)(this + 48); /*0x6cbf98*/
+    if ( v9 != -1 ) /*0x6cbf9e*/
     {
-      if ( (int)MEMORY[0xA8ED84] - v9 >= v8 )
-        v8 = 0;
+      if ( (int)MEMORY[0xA8ED84] - v9 >= v8 ) /*0x6cbfaa*/
+        v8 = 0; /*0x6cbfb0*/
       else
-        v8 -= (int)MEMORY[0xA8ED84] - v9;
+        v8 -= (int)MEMORY[0xA8ED84] - v9; /*0x6cbfac*/
     }
-    if ( v6 == -1 )
-      v5 = (double)(v7 - v8) / (double)*(int *)(v1 + 176);
+    if ( v6 == -1 ) /*0x6cbfb5*/
+      v5 = (double)(v7 - v8) / (double)*(int *)(v1 + 176); /*0x6cbfdf*/
     else
-      v5 = (double)(v7 - v8) / (double)v6;
-    goto LABEL_37;
+      v5 = (double)(v7 - v8) / (double)v6; /*0x6cbfc5*/
+    goto LABEL_37; /*0x6cbfc9*/
   }
-  v2 = *(_DWORD *)(this + 36);
-  if ( v2 == -1 )
-    v16 = *(_DWORD *)(v1 + 176);
+  v2 = *(_DWORD *)(this + 36); /*0x6cbf08*/
+  if ( v2 == -1 ) /*0x6cbf0e*/
+    v16 = *(_DWORD *)(v1 + 176); /*0x6cbf1c*/
   else
-    v16 = *(_DWORD *)(this + 36);
-  v3 = *(_DWORD *)(this + 56);
-  v4 = *(_DWORD *)(this + 48);
-  if ( v4 != -1 )
+    v16 = *(_DWORD *)(this + 36); /*0x6cbf10*/
+  v3 = *(_DWORD *)(this + 56); /*0x6cbf20*/
+  v4 = *(_DWORD *)(this + 48); /*0x6cbf23*/
+  if ( v4 != -1 ) /*0x6cbf29*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v4 >= v3 )
+    if ( (int)MEMORY[0xA8ED84] - v4 >= v3 ) /*0x6cbf34*/
     {
-      v15 = 0;
-      goto LABEL_11;
+      v15 = 0; /*0x6cbf47*/
+      goto LABEL_11; /*0x6cbf4f*/
     }
-    v3 -= (int)MEMORY[0xA8ED84] - v4;
+    v3 -= (int)MEMORY[0xA8ED84] - v4; /*0x6cbf36*/
   }
-  v15 = v3;
+  v15 = v3; /*0x6cbf38*/
 LABEL_11:
-  if ( v2 == -1 )
-    v17 = *(_DWORD *)(v1 + 176);
+  if ( v2 == -1 ) /*0x6cbf3f*/
+    v17 = *(_DWORD *)(v1 + 176); /*0x6cbf57*/
   else
-    v17 = v2;
-  v5 = 1.0
+    v17 = v2; /*0x6cbf41*/
+  v5 = 1.0 /*0x6cbf7a*/
      - ((double)v16 * *((double *)MEMORY[0x8871E0] + 236) - (double)v15)
      / ((double)v17
       * *((double *)MEMORY[0x8871E0] + 236));
 LABEL_37:
-  result = Math::RoundToInt(v5 * 54.0);
-  if ( result >= 53 )
-    return 53;
-  return result;
+  result = Math::RoundToInt(v5 * 54.0); /*0x6cc048*/
+  if ( result >= 53 ) /*0x6cc056*/
+    return 53; /*0x6cc05a*/
+  return result; /*0x6cbfec*/
 }
-
-/* ASM:
-mov     al, [ecx+6Dh]
-sub     esp, 0Ch
-test    al, al
-push    ebx
-push    esi
-push    edi
-jz      loc_6CC064
-mov     ebx, [ecx+28h]
-mov     al, [ebx+0E5h]
-test    al, al
-jz      loc_6CBFE5
-cmp     dword ptr [ecx+7Ch], 2
-jnz     short loc_6CBF85
-mov     esi, [ecx+24h]
-cmp     esi, 0FFFFFFFFh
-jz      short loc_6CBF16
-mov     [esp+18h+var_8], esi
-jmp     short loc_6CBF20
-; ---------------------------------------------------------------------------
-
-loc_6CBF16:                             ; CODE XREF: SidebarClass__GetProductionState+2E↑j
-mov     eax, [ebx+0B0h]
-mov     [esp+18h+var_8], eax
-
-loc_6CBF20:                             ; CODE XREF: SidebarClass__GetProductionState+34↑j
-mov     edx, [ecx+38h]
-mov     ecx, [ecx+30h]
-cmp     ecx, 0FFFFFFFFh
-jz      short loc_6CBF38
-mov     eax, dword_A8ED54+30h
-sub     eax, ecx
-cmp     eax, edx
-jge     short loc_6CBF47
-sub     edx, eax
-
-loc_6CBF38:                             ; CODE XREF: SidebarClass__GetProductionState+49↑j
-mov     [esp+18h+var_C], edx
-
-loc_6CBF3C:                             ; CODE XREF: SidebarClass__GetProductionState+6F↓j
-cmp     esi, 0FFFFFFFFh
-jz      short loc_6CBF51
-mov     [esp+18h+var_4], esi
-jmp     short loc_6CBF5B
-; ---------------------------------------------------------------------------
-
-loc_6CBF47:                             ; CODE XREF: SidebarClass__GetProductionState+54↑j
-mov     [esp+18h+var_C], 0
-jmp     short loc_6CBF3C
-; ---------------------------------------------------------------------------
-
-loc_6CBF51:                             ; CODE XREF: SidebarClass__GetProductionState+5F↑j
-mov     ecx, [ebx+0B0h]
-mov     [esp+18h+var_4], ecx
-
-loc_6CBF5B:                             ; CODE XREF: SidebarClass__GetProductionState+65↑j
-fild    [esp+18h+var_8]
-mov     eax, ds:8871E0h
-fmul    qword ptr [eax+760h]
-fisub   [esp+18h+var_C]
-fild    [esp+18h+var_4]
-fmul    qword ptr [eax+760h]
-fdivp   st(1), st
-fsubr   ds:dbl_7E1718
-jmp     loc_6CC048
-; ---------------------------------------------------------------------------
-
-loc_6CBF85:                             ; CODE XREF: SidebarClass__GetProductionState+26↑j
-mov     edi, [ecx+24h]
-cmp     edi, 0FFFFFFFFh
-mov     esi, edi
-jnz     short loc_6CBF95
-mov     esi, [ebx+0B0h]
-
-loc_6CBF95:                             ; CODE XREF: SidebarClass__GetProductionState+AD↑j
-mov     eax, [ecx+38h]
-mov     ecx, [ecx+30h]
-cmp     ecx, 0FFFFFFFFh
-jz      short loc_6CBFB2
-mov     edx, dword_A8ED54+30h
-sub     edx, ecx
-cmp     edx, eax
-jge     short loc_6CBFB0
-sub     eax, edx
-jmp     short loc_6CBFB2
-; ---------------------------------------------------------------------------
-
-loc_6CBFB0:                             ; CODE XREF: SidebarClass__GetProductionState+CA↑j
-xor     eax, eax
-
-loc_6CBFB2:                             ; CODE XREF: SidebarClass__GetProductionState+BE↑j
-; SidebarClass__GetProductionState+CE↑j
-cmp     edi, 0FFFFFFFFh
-jz      short loc_6CBFCB
-sub     esi, eax
-mov     [esp+18h+var_4], edi
-mov     [esp+18h+var_8], esi
-fild    [esp+18h+var_8]
-fidiv   [esp+18h+var_4]
-jmp     short loc_6CC048
-; ---------------------------------------------------------------------------
-
-loc_6CBFCB:                             ; CODE XREF: SidebarClass__GetProductionState+D5↑j
-mov     edx, [ebx+0B0h]
-sub     esi, eax
-mov     [esp+18h+var_8], esi
-mov     [esp+18h+var_4], edx
-fild    [esp+18h+var_8]
-fidiv   [esp+18h+var_4]
-jmp     short loc_6CC048
-; ---------------------------------------------------------------------------
-
-loc_6CBFE5:                             ; CODE XREF: SidebarClass__GetProductionState+1C↑j
-mov     al, [ecx+6Fh]
-test    al, al
-jz      short loc_6CBFF8
-pop     edi
-pop     esi
-mov     eax, 36h ; '6'
-pop     ebx
-add     esp, 0Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_6CBFF8:                             ; CODE XREF: SidebarClass__GetProductionState+10A↑j
-mov     edi, [ecx+24h]
-cmp     edi, 0FFFFFFFFh
-mov     esi, edi
-jnz     short loc_6CC008
-mov     esi, [ebx+0B0h]
-
-loc_6CC008:                             ; CODE XREF: SidebarClass__GetProductionState+120↑j
-mov     eax, [ecx+38h]
-mov     ecx, [ecx+30h]
-cmp     ecx, 0FFFFFFFFh
-jz      short loc_6CC025
-mov     edx, dword_A8ED54+30h
-sub     edx, ecx
-cmp     edx, eax
-jge     short loc_6CC023
-sub     eax, edx
-jmp     short loc_6CC025
-; ---------------------------------------------------------------------------
-
-loc_6CC023:                             ; CODE XREF: SidebarClass__GetProductionState+13D↑j
-xor     eax, eax
-
-loc_6CC025:                             ; CODE XREF: SidebarClass__GetProductionState+131↑j
-; SidebarClass__GetProductionState+141↑j
-cmp     edi, 0FFFFFFFFh
-jz      short loc_6CC030
-mov     [esp+18h+var_4], edi
-jmp     short loc_6CC03A
-; ---------------------------------------------------------------------------
-
-loc_6CC030:                             ; CODE XREF: SidebarClass__GetProductionState+148↑j
-mov     ecx, [ebx+0B0h]
-mov     [esp+18h+var_4], ecx
-
-loc_6CC03A:                             ; CODE XREF: SidebarClass__GetProductionState+14E↑j
-sub     esi, eax
-mov     [esp+18h+var_8], esi
-fild    [esp+18h+var_8]
-fidiv   [esp+18h+var_4]
-
-loc_6CC048:                             ; CODE XREF: SidebarClass__GetProductionState+A0↑j
-; SidebarClass__GetProductionState+E9↑j ...
-fmul    ds:dbl_7F4048
-call    Math__RoundToInt
-cmp     eax, 35h ; '5'
-jl      short loc_6CC066
-pop     edi
-pop     esi
-mov     eax, 35h ; '5'
-pop     ebx
-add     esp, 0Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_6CC064:                             ; CODE XREF: SidebarClass__GetProductionState+B↑j
-xor     eax, eax
-
-loc_6CC066:                             ; CODE XREF: SidebarClass__GetProductionState+176↑j
-pop     edi
-pop     esi
-pop     ebx
-add     esp, 0Ch
-retn
-*/
 } }
 // 0x6CFCC0
 namespace gamemd { int SidebarClass::findEntryIndexByName() {
@@ -17275,86 +7539,24 @@ int __thiscall sub_6CFCC0(const char *this)
   int v1; // ebp
   const char **v2; // edi
 
-  v1 = 0;
-  v2 = (const char **)off_8427D0;
-  while ( strcmp(*v2, this) )
+  v1 = 0; /*0x6cfcc4*/
+  v2 = (const char **)MEMORY[0x8427D0]; /*0x6cfcc6*/
+  while ( strcmp(*v2, this) ) /*0x6cfcfa*/
   {
-    ++v2;
-    ++v1;
-    if ( (int)v2 >= (int)g_INI_Key_Beacon )
-      return dword_8427CC;
+    ++v2; /*0x6cfcfc*/
+    ++v1; /*0x6cfcff*/
+    if ( (int)v2 >= (int)MEMORY[0x8427FC] ) /*0x6cfd06*/
+      return MEMORY[0x8427CC]; /*0x6cfd11*/
   }
-  return v1;
+  return v1; /*0x6cfd0d*/
 }
-
-/* ASM:
-push    ebx
-push    ebp
-push    esi
-push    edi
-xor     ebp, ebp
-mov     edi, offset off_8427D0 ; "Team01"
-
-loc_6CFCCB:                             ; CODE XREF: SidebarClass__findEntryIndexByName+46↓j
-mov     edx, [edi]
-mov     esi, ecx
-
-loc_6CFCCF:                             ; CODE XREF: SidebarClass__findEntryIndexByName+2D↓j
-mov     al, [edx]
-mov     bl, al
-cmp     al, [esi]
-jnz     short loc_6CFCF3
-test    bl, bl
-jz      short loc_6CFCEF
-mov     al, [edx+1]
-mov     bl, al
-cmp     al, [esi+1]
-jnz     short loc_6CFCF3
-add     edx, 2
-add     esi, 2
-test    bl, bl
-jnz     short loc_6CFCCF
-
-loc_6CFCEF:                             ; CODE XREF: SidebarClass__findEntryIndexByName+19↑j
-xor     edx, edx
-jmp     short loc_6CFCF8
-; ---------------------------------------------------------------------------
-
-loc_6CFCF3:                             ; CODE XREF: SidebarClass__findEntryIndexByName+15↑j
-; SidebarClass__findEntryIndexByName+23↑j
-sbb     edx, edx
-sbb     edx, 0FFFFFFFFh
-
-loc_6CFCF8:                             ; CODE XREF: SidebarClass__findEntryIndexByName+31↑j
-test    edx, edx
-jz      short loc_6CFD12
-add     edi, 4
-inc     ebp
-cmp     edi, offset g_INI_Key_Beacon ; "Beacon"
-jl      short loc_6CFCCB
-mov     eax, dword_8427CC
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn
-; ---------------------------------------------------------------------------
-
-loc_6CFD12:                             ; CODE XREF: SidebarClass__findEntryIndexByName+3A↑j
-pop     edi
-mov     eax, ebp
-pop     esi
-pop     ebp
-pop     ebx
-retn
-*/
 } }
 // 0x6CFE20
 namespace gamemd { void* TabClass::Constructor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-#471 *__thiscall TabClass::Constructor(#471 *this)
+_DWORD *__thiscall TabClass::Constructor(_DWORD *this)
 {
-  #72 *v2; // ecx
+  wchar_t *v2; // ecx
   int v3; // ebp
   const char **v4; // edi
   int v5; // eax
@@ -17389,773 +7591,187 @@ namespace gamemd { void* TabClass::Constructor() {
   const char **v34; // edi
   int v35; // eax
 
-  TabClass::initTabData((char *)this);
-  *((_DWORD *)this + 5446) = &INoticeSink::`vftable';
-  TabClass::initStripClass((_DWORD *)this + 5447);
-  *((_DWORD *)this + 5451) = dword_A8ED54[12];
-  *((_DWORD *)this + 5453) = 0;
-  v2 = (#72 *)dword_A8ED54[12];
-  *((_DWORD *)this + 5456) = 0;
-  *((_DWORD *)this + 5454) = v2;
-  *((_DWORD *)this + 5446) = &TabClass::`vftable';
-  *((_BYTE *)this + 21828) = 1;
-  *((_BYTE *)this + 21829) = 1;
-  *((_BYTE *)this + 21830) = 1;
-  *(_DWORD *)this = &TabClass::`vftable';
-  v3 = 0;
-  v4 = (const char **)off_8427D0;
-  while ( strcmp(*v4, aAttackmove) )
+  TabClass::initTabData(); /*0x6cfe2b*/
+  *(this + 5446) = &vt_INoticeSink; /*0x6cfe3c*/
+  TabClass::initStripClass(this + 5447); /*0x6cfe42*/
+  *(this + 5451) = MEMORY[0xA8ED84]; /*0x6cfe4e*/
+  *(this + 5453) = 0; /*0x6cfe54*/
+  v2 = MEMORY[0xA8ED84]; /*0x6cfe5a*/
+  *(this + 5456) = 0; /*0x6cfe60*/
+  *(this + 5454) = v2; /*0x6cfe66*/
+  *(this + 5446) = &TabClass::`vftable'; /*0x6cfe6e*/
+  *((_BYTE *)this + 21828) = 1; /*0x6cfe74*/
+  *((_BYTE *)this + 21829) = 1; /*0x6cfe7a*/
+  *((_BYTE *)this + 21830) = 1; /*0x6cfe80*/
+  *this = &TabClass::`vftable'; /*0x6cfe86*/
+  v3 = 0; /*0x6cfe8c*/
+  v4 = (const char **)MEMORY[0x8427D0]; /*0x6cfe8e*/
+  while ( strcmp(*v4, MEMORY[0x842804]) ) /*0x6cfec5*/
   {
-    ++v4;
-    ++v3;
-    if ( (int)v4 >= (int)g_INI_Key_Beacon )
+    ++v4; /*0x6cfec7*/
+    ++v3; /*0x6cfeca*/
+    if ( (int)v4 >= (int)MEMORY[0x8427FC] ) /*0x6cfed1*/
     {
-      v5 = dword_8427CC;
-      goto LABEL_5;
+      v5 = MEMORY[0x8427CC]; /*0x6cfed3*/
+      goto LABEL_5; /*0x6cfed3*/
     }
   }
-  v5 = v3;
+  v5 = v3; /*0x6cff0f*/
 LABEL_5:
-  dword_A8ED54[129012] = v5;
-  v6 = 0;
-  v7 = (const char **)off_8427D0;
-  while ( strcmp(*v7, g_INI_Key_Beacon) )
+  MEMORY[0xB0CD24] = v5; /*0x6cfed8*/
+  v6 = 0; /*0x6cfedd*/
+  v7 = (const char **)MEMORY[0x8427D0]; /*0x6cfedf*/
+  while ( strcmp(*v7, MEMORY[0x8427FC]) ) /*0x6cff1a*/
   {
-    ++v7;
-    ++v6;
-    if ( (int)v7 >= (int)g_INI_Key_Beacon )
+    ++v7; /*0x6cff1c*/
+    ++v6; /*0x6cff1f*/
+    if ( (int)v7 >= (int)MEMORY[0x8427FC] ) /*0x6cff26*/
     {
-      v8 = dword_8427CC;
-      goto LABEL_11;
+      v8 = MEMORY[0x8427CC]; /*0x6cff28*/
+      goto LABEL_11; /*0x6cff28*/
     }
   }
-  v8 = v6;
+  v8 = v6; /*0x6cff64*/
 LABEL_11:
-  dword_A8ED54[128890] = v8;
-  v9 = 0;
-  v10 = (const char **)off_8427D0;
-  while ( strcmp(*v10, g_INI_Key_Cheer) )
+  MEMORY[0xB0CB3C] = v8; /*0x6cff2d*/
+  v9 = 0; /*0x6cff32*/
+  v10 = (const char **)MEMORY[0x8427D0]; /*0x6cff34*/
+  while ( strcmp(*v10, g_INI_Key_Cheer) ) /*0x6cff6f*/
   {
-    ++v10;
-    ++v9;
-    if ( (int)v10 >= (int)g_INI_Key_Beacon )
+    ++v10; /*0x6cff71*/
+    ++v9; /*0x6cff74*/
+    if ( (int)v10 >= (int)MEMORY[0x8427FC] ) /*0x6cff7b*/
     {
-      v11 = dword_8427CC;
-      goto LABEL_17;
+      v11 = MEMORY[0x8427CC]; /*0x6cff7d*/
+      goto LABEL_17; /*0x6cff7d*/
     }
   }
-  v11 = v9;
+  v11 = v9; /*0x6cffb9*/
 LABEL_17:
-  dword_A8ED54[128281] = v11;
-  v12 = 0;
-  v13 = (const char **)off_8427D0;
-  while ( strcmp(*v13, g_INI_Key_Deploy) )
+  MEMORY[0xB0C1B8] = v11; /*0x6cff82*/
+  v12 = 0; /*0x6cff87*/
+  v13 = (const char **)MEMORY[0x8427D0]; /*0x6cff89*/
+  while ( strcmp(*v13, g_INI_Key_Deploy) ) /*0x6cffc4*/
   {
-    ++v13;
-    ++v12;
-    if ( (int)v13 >= (int)g_INI_Key_Beacon )
+    ++v13; /*0x6cffc6*/
+    ++v12; /*0x6cffc9*/
+    if ( (int)v13 >= (int)MEMORY[0x8427FC] ) /*0x6cffd0*/
     {
-      v14 = dword_8427CC;
-      goto LABEL_23;
+      v14 = MEMORY[0x8427CC]; /*0x6cffd2*/
+      goto LABEL_23; /*0x6cffd2*/
     }
   }
-  v14 = v12;
+  v14 = v12; /*0x6d000e*/
 LABEL_23:
-  dword_A8ED54[128883] = v14;
-  v15 = 0;
-  v16 = (const char **)off_8427D0;
-  while ( strcmp(*v16, g_INI_Key_Guard) )
+  MEMORY[0xB0CB20] = v14; /*0x6cffd7*/
+  v15 = 0; /*0x6cffdc*/
+  v16 = (const char **)MEMORY[0x8427D0]; /*0x6cffde*/
+  while ( strcmp(*v16, MEMORY[0x816E44]) ) /*0x6d0019*/
   {
-    ++v16;
-    ++v15;
-    if ( (int)v16 >= (int)g_INI_Key_Beacon )
+    ++v16; /*0x6d001b*/
+    ++v15; /*0x6d001e*/
+    if ( (int)v16 >= (int)MEMORY[0x8427FC] ) /*0x6d0025*/
     {
-      v17 = dword_8427CC;
-      goto LABEL_29;
+      v17 = MEMORY[0x8427CC]; /*0x6d0027*/
+      goto LABEL_29; /*0x6d0027*/
     }
   }
-  v17 = v15;
+  v17 = v15; /*0x6d0063*/
 LABEL_29:
-  dword_A8ED54[128901] = v17;
-  v18 = 0;
-  v19 = (const char **)off_8427D0;
-  while ( strcmp(*v19, g_INI_Key_PlanningMode) )
+  MEMORY[0xB0CB68] = v17; /*0x6d002c*/
+  v18 = 0; /*0x6d0031*/
+  v19 = (const char **)MEMORY[0x8427D0]; /*0x6d0033*/
+  while ( strcmp(*v19, g_INI_Key_PlanningMode) ) /*0x6d006e*/
   {
-    ++v19;
-    ++v18;
-    if ( (int)v19 >= (int)g_INI_Key_Beacon )
+    ++v19; /*0x6d0070*/
+    ++v18; /*0x6d0073*/
+    if ( (int)v19 >= (int)MEMORY[0x8427FC] ) /*0x6d007a*/
     {
-      v20 = dword_8427CC;
-      goto LABEL_35;
+      v20 = MEMORY[0x8427CC]; /*0x6d007c*/
+      goto LABEL_35; /*0x6d007c*/
     }
   }
-  v20 = v18;
+  v20 = v18; /*0x6d00b8*/
 LABEL_35:
-  dword_A8ED54[128946] = v20;
-  v21 = 0;
-  v22 = (const char **)off_8427D0;
-  while ( strcmp(*v22, g_INI_Key_Stop) )
+  MEMORY[0xB0CC1C] = v20; /*0x6d0081*/
+  v21 = 0; /*0x6d0086*/
+  v22 = (const char **)MEMORY[0x8427D0]; /*0x6d0088*/
+  while ( strcmp(*v22, g_INI_Key_Stop) ) /*0x6d00c3*/
   {
-    ++v22;
-    ++v21;
-    if ( (int)v22 >= (int)g_INI_Key_Beacon )
+    ++v22; /*0x6d00c5*/
+    ++v21; /*0x6d00c8*/
+    if ( (int)v22 >= (int)MEMORY[0x8427FC] ) /*0x6d00cf*/
     {
-      v23 = dword_8427CC;
-      goto LABEL_41;
+      v23 = MEMORY[0x8427CC]; /*0x6d00d1*/
+      goto LABEL_41; /*0x6d00d1*/
     }
   }
-  v23 = v21;
+  v23 = v21; /*0x6d010d*/
 LABEL_41:
-  dword_A8ED54[128902] = v23;
-  v24 = 0;
-  v25 = (const char **)off_8427D0;
-  while ( strcmp(*v25, aTeam01) )
+  MEMORY[0xB0CB6C] = v23; /*0x6d00d6*/
+  v24 = 0; /*0x6d00db*/
+  v25 = (const char **)MEMORY[0x8427D0]; /*0x6d00dd*/
+  while ( strcmp(*v25, MEMORY[0x842820]) ) /*0x6d0118*/
   {
-    ++v25;
-    ++v24;
-    if ( (int)v25 >= (int)g_INI_Key_Beacon )
+    ++v25; /*0x6d011a*/
+    ++v24; /*0x6d011d*/
+    if ( (int)v25 >= (int)MEMORY[0x8427FC] ) /*0x6d0124*/
     {
-      v26 = dword_8427CC;
-      goto LABEL_47;
+      v26 = MEMORY[0x8427CC]; /*0x6d0126*/
+      goto LABEL_47; /*0x6d0126*/
     }
   }
-  v26 = v24;
+  v26 = v24; /*0x6d0162*/
 LABEL_47:
-  dword_A8ED54[128947] = v26;
-  v27 = 0;
-  v28 = (const char **)off_8427D0;
-  while ( strcmp(*v28, aTeam02) )
+  MEMORY[0xB0CC20] = v26; /*0x6d012b*/
+  v27 = 0; /*0x6d0130*/
+  v28 = (const char **)MEMORY[0x8427D0]; /*0x6d0132*/
+  while ( strcmp(*v28, MEMORY[0x842818]) ) /*0x6d016d*/
   {
-    ++v28;
-    ++v27;
-    if ( (int)v28 >= (int)g_INI_Key_Beacon )
+    ++v28; /*0x6d016f*/
+    ++v27; /*0x6d0172*/
+    if ( (int)v28 >= (int)MEMORY[0x8427FC] ) /*0x6d0179*/
     {
-      v29 = dword_8427CC;
-      goto LABEL_53;
+      v29 = MEMORY[0x8427CC]; /*0x6d017b*/
+      goto LABEL_53; /*0x6d017b*/
     }
   }
-  v29 = v27;
+  v29 = v27; /*0x6d01b7*/
 LABEL_53:
-  dword_A8ED54[128949] = v29;
-  v30 = 0;
-  v31 = (const char **)off_8427D0;
-  while ( strcmp(*v31, aTeam03) )
+  MEMORY[0xB0CC28] = v29; /*0x6d0180*/
+  v30 = 0; /*0x6d0185*/
+  v31 = (const char **)MEMORY[0x8427D0]; /*0x6d0187*/
+  while ( strcmp(*v31, MEMORY[0x842810]) ) /*0x6d01c2*/
   {
-    ++v31;
-    ++v30;
-    if ( (int)v31 >= (int)g_INI_Key_Beacon )
+    ++v31; /*0x6d01c4*/
+    ++v30; /*0x6d01c7*/
+    if ( (int)v31 >= (int)MEMORY[0x8427FC] ) /*0x6d01ce*/
     {
-      v32 = dword_8427CC;
-      goto LABEL_59;
+      v32 = MEMORY[0x8427CC]; /*0x6d01d0*/
+      goto LABEL_59; /*0x6d01d0*/
     }
   }
-  v32 = v30;
+  v32 = v30; /*0x6d020c*/
 LABEL_59:
-  dword_A8ED54[129013] = v32;
-  v33 = 0;
-  v34 = (const char **)off_8427D0;
-  while ( strcmp(*v34, g_INI_Key_TypeSelect) )
+  MEMORY[0xB0CD28] = v32; /*0x6d01d5*/
+  v33 = 0; /*0x6d01da*/
+  v34 = (const char **)MEMORY[0x8427D0]; /*0x6d01dc*/
+  while ( strcmp(*v34, g_INI_Key_TypeSelect) ) /*0x6d0217*/
   {
-    ++v34;
-    ++v33;
-    if ( (int)v34 >= (int)g_INI_Key_Beacon )
+    ++v34; /*0x6d0219*/
+    ++v33; /*0x6d021c*/
+    if ( (int)v34 >= (int)MEMORY[0x8427FC] ) /*0x6d0223*/
     {
-      v35 = dword_8427CC;
-      goto LABEL_65;
+      v35 = MEMORY[0x8427CC]; /*0x6d0225*/
+      goto LABEL_65; /*0x6d0225*/
     }
   }
-  v35 = v33;
+  v35 = v33; /*0x6d024e*/
 LABEL_65:
-  dword_A8ED54[128889] = v35;
-  TabClass::processTabInput(this != 0 ? (char *)this + 21784 : 0);
-  return this;
+  MEMORY[0xB0CB38] = v35; /*0x6d022a*/
+  TabClass::processTabInput(this != 0 ? this + 5446 : 0);
+  return this; /*0x6d0248*/
 }
-
-/* ASM:
-push    ecx
-push    ebx
-push    ebp
-push    esi
-mov     esi, ecx
-push    edi
-mov     [esp+14h+var_4], esi
-call    TabClass__initTabData
-lea     edi, [esi+5518h]
-lea     ecx, [esi+551Ch]
-mov     dword ptr [edi], offset ??_7INoticeSink@@6B@ ; const INoticeSink::`vftable'
-call    TabClass__initStripClass
-mov     eax, dword_A8ED54+30h
-xor     edx, edx
-mov     [esi+552Ch], eax
-mov     [esi+5534h], edx
-mov     ecx, dword_A8ED54+30h
-mov     [esi+5540h], edx
-mov     [esi+5538h], ecx
-mov     al, 1
-mov     dword ptr [edi], offset ??_7TabClass@@6B@ ; const TabClass::`vftable'
-mov     [esi+5544h], al
-mov     [esi+5545h], al
-mov     [esi+5546h], al
-mov     dword ptr [esi], offset ??_7TabClass@@6B@_0 ; const TabClass::`vftable'
-xor     ebp, ebp
-mov     edi, offset off_8427D0 ; "Team01"
-
-loc_6CFE93:                             ; CODE XREF: TabClass__Constructor+B1↓j
-mov     eax, [edi]
-mov     esi, offset aAttackmove ; "AttackMove"
-
-loc_6CFE9A:                             ; CODE XREF: TabClass__Constructor+98↓j
-mov     bl, [eax]
-mov     cl, bl
-cmp     bl, [esi]
-jnz     short loc_6CFEBE
-cmp     cl, dl
-jz      short loc_6CFEBA
-mov     bl, [eax+1]
-mov     cl, bl
-cmp     bl, [esi+1]
-jnz     short loc_6CFEBE
-add     eax, 2
-add     esi, 2
-cmp     cl, dl
-jnz     short loc_6CFE9A
-
-loc_6CFEBA:                             ; CODE XREF: TabClass__Constructor+84↑j
-xor     eax, eax
-jmp     short loc_6CFEC3
-; ---------------------------------------------------------------------------
-
-loc_6CFEBE:                             ; CODE XREF: TabClass__Constructor+80↑j
-; TabClass__Constructor+8E↑j
-sbb     eax, eax
-sbb     eax, 0FFFFFFFFh
-
-loc_6CFEC3:                             ; CODE XREF: TabClass__Constructor+9C↑j
-cmp     eax, edx
-jz      short loc_6CFF0F
-add     edi, 4
-inc     ebp
-cmp     edi, offset g_INI_Key_Beacon ; "Beacon"
-jl      short loc_6CFE93
-mov     eax, dword_8427CC
-
-loc_6CFED8:                             ; CODE XREF: TabClass__Constructor+F1↓j
-mov     dword_A8ED54+7DFD0h, eax
-xor     ebp, ebp
-mov     edi, offset off_8427D0 ; "Team01"
-
-loc_6CFEE4:                             ; CODE XREF: TabClass__Constructor+106↓j
-mov     eax, [edi]
-mov     esi, offset g_INI_Key_Beacon ; "Beacon"
-
-loc_6CFEEB:                             ; CODE XREF: TabClass__Constructor+E9↓j
-mov     bl, [eax]
-mov     cl, bl
-cmp     bl, [esi]
-jnz     short loc_6CFF13
-cmp     cl, dl
-jz      short loc_6CFF0B
-mov     bl, [eax+1]
-mov     cl, bl
-cmp     bl, [esi+1]
-jnz     short loc_6CFF13
-add     eax, 2
-add     esi, 2
-cmp     cl, dl
-jnz     short loc_6CFEEB
-
-loc_6CFF0B:                             ; CODE XREF: TabClass__Constructor+D5↑j
-xor     eax, eax
-jmp     short loc_6CFF18
-; ---------------------------------------------------------------------------
-
-loc_6CFF0F:                             ; CODE XREF: TabClass__Constructor+A5↑j
-mov     eax, ebp
-jmp     short loc_6CFED8
-; ---------------------------------------------------------------------------
-
-loc_6CFF13:                             ; CODE XREF: TabClass__Constructor+D1↑j
-; TabClass__Constructor+DF↑j
-sbb     eax, eax
-sbb     eax, 0FFFFFFFFh
-
-loc_6CFF18:                             ; CODE XREF: TabClass__Constructor+ED↑j
-cmp     eax, edx
-jz      short loc_6CFF64
-add     edi, 4
-inc     ebp
-cmp     edi, offset g_INI_Key_Beacon ; "Beacon"
-jl      short loc_6CFEE4
-mov     eax, dword_8427CC
-
-loc_6CFF2D:                             ; CODE XREF: TabClass__Constructor+146↓j
-mov     dword_A8ED54+7DDE8h, eax
-xor     ebp, ebp
-mov     edi, offset off_8427D0 ; "Team01"
-
-loc_6CFF39:                             ; CODE XREF: TabClass__Constructor+15B↓j
-mov     eax, [edi]
-mov     esi, offset g_INI_Key_Cheer ; "Cheer"
-
-loc_6CFF40:                             ; CODE XREF: TabClass__Constructor+13E↓j
-mov     bl, [eax]
-mov     cl, bl
-cmp     bl, [esi]
-jnz     short loc_6CFF68
-cmp     cl, dl
-jz      short loc_6CFF60
-mov     bl, [eax+1]
-mov     cl, bl
-cmp     bl, [esi+1]
-jnz     short loc_6CFF68
-add     eax, 2
-add     esi, 2
-cmp     cl, dl
-jnz     short loc_6CFF40
-
-loc_6CFF60:                             ; CODE XREF: TabClass__Constructor+12A↑j
-xor     eax, eax
-jmp     short loc_6CFF6D
-; ---------------------------------------------------------------------------
-
-loc_6CFF64:                             ; CODE XREF: TabClass__Constructor+FA↑j
-mov     eax, ebp
-jmp     short loc_6CFF2D
-; ---------------------------------------------------------------------------
-
-loc_6CFF68:                             ; CODE XREF: TabClass__Constructor+126↑j
-; TabClass__Constructor+134↑j
-sbb     eax, eax
-sbb     eax, 0FFFFFFFFh
-
-loc_6CFF6D:                             ; CODE XREF: TabClass__Constructor+142↑j
-cmp     eax, edx
-jz      short loc_6CFFB9
-add     edi, 4
-inc     ebp
-cmp     edi, offset g_INI_Key_Beacon ; "Beacon"
-jl      short loc_6CFF39
-mov     eax, dword_8427CC
-
-loc_6CFF82:                             ; CODE XREF: TabClass__Constructor+19B↓j
-mov     dword_A8ED54+7D464h, eax
-xor     ebp, ebp
-mov     edi, offset off_8427D0 ; "Team01"
-
-loc_6CFF8E:                             ; CODE XREF: TabClass__Constructor+1B0↓j
-mov     eax, [edi]
-mov     esi, offset g_INI_Key_Deploy ; "Deploy"
-
-loc_6CFF95:                             ; CODE XREF: TabClass__Constructor+193↓j
-mov     bl, [eax]
-mov     cl, bl
-cmp     bl, [esi]
-jnz     short loc_6CFFBD
-cmp     cl, dl
-jz      short loc_6CFFB5
-mov     bl, [eax+1]
-mov     cl, bl
-cmp     bl, [esi+1]
-jnz     short loc_6CFFBD
-add     eax, 2
-add     esi, 2
-cmp     cl, dl
-jnz     short loc_6CFF95
-
-loc_6CFFB5:                             ; CODE XREF: TabClass__Constructor+17F↑j
-xor     eax, eax
-jmp     short loc_6CFFC2
-; ---------------------------------------------------------------------------
-
-loc_6CFFB9:                             ; CODE XREF: TabClass__Constructor+14F↑j
-mov     eax, ebp
-jmp     short loc_6CFF82
-; ---------------------------------------------------------------------------
-
-loc_6CFFBD:                             ; CODE XREF: TabClass__Constructor+17B↑j
-; TabClass__Constructor+189↑j
-sbb     eax, eax
-sbb     eax, 0FFFFFFFFh
-
-loc_6CFFC2:                             ; CODE XREF: TabClass__Constructor+197↑j
-cmp     eax, edx
-jz      short loc_6D000E
-add     edi, 4
-inc     ebp
-cmp     edi, offset g_INI_Key_Beacon ; "Beacon"
-jl      short loc_6CFF8E
-mov     eax, dword_8427CC
-
-loc_6CFFD7:                             ; CODE XREF: TabClass__Constructor+1F0↓j
-mov     dword_A8ED54+7DDCCh, eax
-xor     ebp, ebp
-mov     edi, offset off_8427D0 ; "Team01"
-
-loc_6CFFE3:                             ; CODE XREF: TabClass__Constructor+205↓j
-mov     eax, [edi]
-mov     esi, offset g_INI_Key_Guard ; "Guard"
-
-loc_6CFFEA:                             ; CODE XREF: TabClass__Constructor+1E8↓j
-mov     bl, [eax]
-mov     cl, bl
-cmp     bl, [esi]
-jnz     short loc_6D0012
-cmp     cl, dl
-jz      short loc_6D000A
-mov     bl, [eax+1]
-mov     cl, bl
-cmp     bl, [esi+1]
-jnz     short loc_6D0012
-add     eax, 2
-add     esi, 2
-cmp     cl, dl
-jnz     short loc_6CFFEA
-
-loc_6D000A:                             ; CODE XREF: TabClass__Constructor+1D4↑j
-xor     eax, eax
-jmp     short loc_6D0017
-; ---------------------------------------------------------------------------
-
-loc_6D000E:                             ; CODE XREF: TabClass__Constructor+1A4↑j
-mov     eax, ebp
-jmp     short loc_6CFFD7
-; ---------------------------------------------------------------------------
-
-loc_6D0012:                             ; CODE XREF: TabClass__Constructor+1D0↑j
-; TabClass__Constructor+1DE↑j
-sbb     eax, eax
-sbb     eax, 0FFFFFFFFh
-
-loc_6D0017:                             ; CODE XREF: TabClass__Constructor+1EC↑j
-cmp     eax, edx
-jz      short loc_6D0063
-add     edi, 4
-inc     ebp
-cmp     edi, offset g_INI_Key_Beacon ; "Beacon"
-jl      short loc_6CFFE3
-mov     eax, dword_8427CC
-
-loc_6D002C:                             ; CODE XREF: TabClass__Constructor+245↓j
-mov     dword_A8ED54+7DE14h, eax
-xor     ebp, ebp
-mov     edi, offset off_8427D0 ; "Team01"
-
-loc_6D0038:                             ; CODE XREF: TabClass__Constructor+25A↓j
-mov     eax, [edi]
-mov     esi, offset g_INI_Key_PlanningMode ; "PlanningMode"
-
-loc_6D003F:                             ; CODE XREF: TabClass__Constructor+23D↓j
-mov     bl, [eax]
-mov     cl, bl
-cmp     bl, [esi]
-jnz     short loc_6D0067
-cmp     cl, dl
-jz      short loc_6D005F
-mov     bl, [eax+1]
-mov     cl, bl
-cmp     bl, [esi+1]
-jnz     short loc_6D0067
-add     eax, 2
-add     esi, 2
-cmp     cl, dl
-jnz     short loc_6D003F
-
-loc_6D005F:                             ; CODE XREF: TabClass__Constructor+229↑j
-xor     eax, eax
-
-loc_6D0061:                             ; DATA XREF: .data:00828770↓o
-; .data:0082A228↓o ...
-jmp     short loc_6D006C
-; ---------------------------------------------------------------------------
-
-loc_6D0063:                             ; CODE XREF: TabClass__Constructor+1F9↑j
-mov     eax, ebp
-jmp     short loc_6D002C
-; ---------------------------------------------------------------------------
-
-loc_6D0067:                             ; CODE XREF: TabClass__Constructor+225↑j
-; TabClass__Constructor+233↑j
-sbb     eax, eax
-
-loc_6D0069:                             ; DATA XREF: .data:00828888↓o
-sbb     eax, 0FFFFFFFFh
-
-loc_6D006C:                             ; CODE XREF: TabClass__Constructor:loc_6D0061↑j
-cmp     eax, edx
-jz      short loc_6D00B8
-add     edi, 4
-inc     ebp
-cmp     edi, offset g_INI_Key_Beacon ; "Beacon"
-jl      short loc_6D0038
-mov     eax, dword_8427CC
-
-loc_6D0081:                             ; CODE XREF: TabClass__Constructor+29A↓j
-mov     dword_A8ED54+7DEC8h, eax
-xor     ebp, ebp
-mov     edi, offset off_8427D0 ; "Team01"
-
-loc_6D008D:                             ; CODE XREF: TabClass__Constructor+2AF↓j
-mov     eax, [edi]
-mov     esi, offset g_INI_Key_Stop ; "Stop"
-
-loc_6D0094:                             ; CODE XREF: TabClass__Constructor+292↓j
-mov     bl, [eax]
-mov     cl, bl
-cmp     bl, [esi]
-jnz     short loc_6D00BC
-cmp     cl, dl
-jz      short loc_6D00B4
-mov     bl, [eax+1]
-mov     cl, bl
-cmp     bl, [esi+1]
-jnz     short loc_6D00BC
-add     eax, 2
-add     esi, 2
-cmp     cl, dl
-jnz     short loc_6D0094
-
-loc_6D00B4:                             ; CODE XREF: TabClass__Constructor+27E↑j
-xor     eax, eax
-jmp     short loc_6D00C1
-; ---------------------------------------------------------------------------
-
-loc_6D00B8:                             ; CODE XREF: TabClass__Constructor+24E↑j
-mov     eax, ebp
-jmp     short loc_6D0081
-; ---------------------------------------------------------------------------
-
-loc_6D00BC:                             ; CODE XREF: TabClass__Constructor+27A↑j
-; TabClass__Constructor+288↑j
-sbb     eax, eax
-sbb     eax, 0FFFFFFFFh
-
-loc_6D00C1:                             ; CODE XREF: TabClass__Constructor+296↑j
-cmp     eax, edx
-jz      short loc_6D010D
-add     edi, 4
-inc     ebp
-cmp     edi, offset g_INI_Key_Beacon ; "Beacon"
-jl      short loc_6D008D
-mov     eax, dword_8427CC
-
-loc_6D00D6:                             ; CODE XREF: TabClass__Constructor+2EF↓j
-mov     dword_A8ED54+7DE18h, eax
-xor     ebp, ebp
-mov     edi, offset off_8427D0 ; "Team01"
-
-loc_6D00E2:                             ; CODE XREF: TabClass__Constructor+304↓j
-mov     eax, [edi]
-mov     esi, offset aTeam01 ; "Team01"
-
-loc_6D00E9:                             ; CODE XREF: TabClass__Constructor+2E7↓j
-mov     bl, [eax]
-mov     cl, bl
-cmp     bl, [esi]
-jnz     short loc_6D0111
-cmp     cl, dl
-jz      short loc_6D0109
-mov     bl, [eax+1]
-mov     cl, bl
-cmp     bl, [esi+1]
-jnz     short loc_6D0111
-add     eax, 2
-add     esi, 2
-cmp     cl, dl
-jnz     short loc_6D00E9
-
-loc_6D0109:                             ; CODE XREF: TabClass__Constructor+2D3↑j
-xor     eax, eax
-jmp     short loc_6D0116
-; ---------------------------------------------------------------------------
-
-loc_6D010D:                             ; CODE XREF: TabClass__Constructor+2A3↑j
-mov     eax, ebp
-jmp     short loc_6D00D6
-; ---------------------------------------------------------------------------
-
-loc_6D0111:                             ; CODE XREF: TabClass__Constructor+2CF↑j
-; TabClass__Constructor+2DD↑j
-sbb     eax, eax
-sbb     eax, 0FFFFFFFFh
-
-loc_6D0116:                             ; CODE XREF: TabClass__Constructor+2EB↑j
-cmp     eax, edx
-jz      short loc_6D0162
-add     edi, 4
-inc     ebp
-cmp     edi, offset g_INI_Key_Beacon ; "Beacon"
-jl      short loc_6D00E2
-mov     eax, dword_8427CC
-
-loc_6D012B:                             ; CODE XREF: TabClass__Constructor+344↓j
-mov     dword_A8ED54+7DECCh, eax
-xor     ebp, ebp
-mov     edi, offset off_8427D0 ; "Team01"
-
-loc_6D0137:                             ; CODE XREF: TabClass__Constructor+359↓j
-mov     eax, [edi]
-mov     esi, offset aTeam02 ; "Team02"
-
-loc_6D013E:                             ; CODE XREF: TabClass__Constructor+33C↓j
-mov     bl, [eax]
-mov     cl, bl
-cmp     bl, [esi]
-jnz     short loc_6D0166
-cmp     cl, dl
-jz      short loc_6D015E
-mov     bl, [eax+1]
-mov     cl, bl
-cmp     bl, [esi+1]
-jnz     short loc_6D0166
-add     eax, 2
-add     esi, 2
-cmp     cl, dl
-jnz     short loc_6D013E
-
-loc_6D015E:                             ; CODE XREF: TabClass__Constructor+328↑j
-xor     eax, eax
-jmp     short loc_6D016B
-; ---------------------------------------------------------------------------
-
-loc_6D0162:                             ; CODE XREF: TabClass__Constructor+2F8↑j
-mov     eax, ebp
-jmp     short loc_6D012B
-; ---------------------------------------------------------------------------
-
-loc_6D0166:                             ; CODE XREF: TabClass__Constructor+324↑j
-; TabClass__Constructor+332↑j
-sbb     eax, eax
-sbb     eax, 0FFFFFFFFh
-
-loc_6D016B:                             ; CODE XREF: TabClass__Constructor+340↑j
-cmp     eax, edx
-jz      short loc_6D01B7
-add     edi, 4
-inc     ebp
-cmp     edi, offset g_INI_Key_Beacon ; "Beacon"
-jl      short loc_6D0137
-mov     eax, dword_8427CC
-
-loc_6D0180:                             ; CODE XREF: TabClass__Constructor+399↓j
-mov     dword_A8ED54+7DED4h, eax
-xor     ebp, ebp
-mov     edi, offset off_8427D0 ; "Team01"
-
-loc_6D018C:                             ; CODE XREF: TabClass__Constructor+3AE↓j
-mov     eax, [edi]
-mov     esi, offset aTeam03 ; "Team03"
-
-loc_6D0193:                             ; CODE XREF: TabClass__Constructor+391↓j
-mov     bl, [eax]
-mov     cl, bl
-cmp     bl, [esi]
-jnz     short loc_6D01BB
-cmp     cl, dl
-jz      short loc_6D01B3
-mov     bl, [eax+1]
-mov     cl, bl
-cmp     bl, [esi+1]
-jnz     short loc_6D01BB
-add     eax, 2
-add     esi, 2
-cmp     cl, dl
-jnz     short loc_6D0193
-
-loc_6D01B3:                             ; CODE XREF: TabClass__Constructor+37D↑j
-xor     eax, eax
-jmp     short loc_6D01C0
-; ---------------------------------------------------------------------------
-
-loc_6D01B7:                             ; CODE XREF: TabClass__Constructor+34D↑j
-mov     eax, ebp
-jmp     short loc_6D0180
-; ---------------------------------------------------------------------------
-
-loc_6D01BB:                             ; CODE XREF: TabClass__Constructor+379↑j
-; TabClass__Constructor+387↑j
-sbb     eax, eax
-sbb     eax, 0FFFFFFFFh
-
-loc_6D01C0:                             ; CODE XREF: TabClass__Constructor+395↑j
-cmp     eax, edx
-jz      short loc_6D020C
-add     edi, 4
-inc     ebp
-cmp     edi, offset g_INI_Key_Beacon ; "Beacon"
-jl      short loc_6D018C
-mov     eax, dword_8427CC
-
-loc_6D01D5:                             ; CODE XREF: TabClass__Constructor+3EE↓j
-mov     dword_A8ED54+7DFD4h, eax
-xor     ebp, ebp
-mov     edi, offset off_8427D0 ; "Team01"
-
-loc_6D01E1:                             ; CODE XREF: TabClass__Constructor+403↓j
-mov     eax, [edi]
-mov     esi, offset g_INI_Key_TypeSelect ; "TypeSelect"
-
-loc_6D01E8:                             ; CODE XREF: TabClass__Constructor+3E6↓j
-mov     bl, [eax]
-mov     cl, bl
-cmp     bl, [esi]
-jnz     short loc_6D0210
-cmp     cl, dl
-jz      short loc_6D0208
-mov     bl, [eax+1]
-mov     cl, bl
-cmp     bl, [esi+1]
-jnz     short loc_6D0210
-add     eax, 2
-add     esi, 2
-cmp     cl, dl
-jnz     short loc_6D01E8
-
-loc_6D0208:                             ; CODE XREF: TabClass__Constructor+3D2↑j
-xor     eax, eax
-jmp     short loc_6D0215
-; ---------------------------------------------------------------------------
-
-loc_6D020C:                             ; CODE XREF: TabClass__Constructor+3A2↑j
-mov     eax, ebp
-jmp     short loc_6D01D5
-; ---------------------------------------------------------------------------
-
-loc_6D0210:                             ; CODE XREF: TabClass__Constructor+3CE↑j
-; TabClass__Constructor+3DC↑j
-sbb     eax, eax
-sbb     eax, 0FFFFFFFFh
-
-loc_6D0215:                             ; CODE XREF: TabClass__Constructor+3EA↑j
-cmp     eax, edx
-jz      short loc_6D024E
-add     edi, 4
-inc     ebp
-cmp     edi, offset g_INI_Key_Beacon ; "Beacon"
-jl      short loc_6D01E1
-mov     eax, dword_8427CC
-
-loc_6D022A:                             ; CODE XREF: TabClass__Constructor+430↓j
-mov     esi, [esp+14h+var_4]
-mov     dword_A8ED54+7DDE4h, eax
-mov     ecx, esi
-neg     ecx
-sbb     ecx, ecx
-lea     eax, [esi+5518h]
-and     ecx, eax
-call    TabClass__processTabInput
-mov     eax, esi
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-pop     ecx
-retn
-; ---------------------------------------------------------------------------
-
-loc_6D024E:                             ; CODE XREF: TabClass__Constructor+3F7↑j
-mov     eax, ebp
-jmp     short loc_6D022A
-*/
 } }
 // 0x6D02B0
 namespace gamemd { int SidebarClass::LoadButtonSHPs() {
@@ -18176,104 +7792,37 @@ int __thiscall SidebarClass_LoadButtonSHPs(_DWORD *this)
   int v13; // [esp+20h] [ebp-104h]
   char Buffer[256]; // [esp+24h] [ebp-100h] BYREF
 
-  SidebarClass::LoadAssets();
-  v9 = 0;
-  v2 = 0;
-  v3 = &MEMORY[0xB0C148];
-  do
+  SidebarClass::LoadAssets(); /*0x6d02bb*/
+  v9 = 0; /*0x6d02c0*/
+  v2 = 0; /*0x6d02c5*/
+  v3 = &MEMORY[0xB0C148]; /*0x6d02c7*/
+  do /*0x6d0302*/
   {
-    sprintf(Buffer, "Button%02d.SHP", v2);
-    v4 = LoadFileSHP(Buffer, &v9);
-    v5 = v9;
-    *v3 = (int)v4;
-    MEMORY[0xB0CBDC][v2] = v5;
-    ++v3;
-    ++v2;
+    sprintf(Buffer, MEMORY[0x842828], v2); /*0x6d02d7*/
+    v4 = LoadFileSHP(Buffer, &v9); /*0x6d02e7*/
+    v5 = v9; /*0x6d02ec*/
+    *v3 = (int)v4; /*0x6d02f0*/
+    MEMORY[0xB0CBDC][v2] = v5; /*0x6d02f2*/
+    ++v3; /*0x6d02f8*/
+    ++v2; /*0x6d02fb*/
   }
-  while ( (int)v3 < (int)&MEMORY[0xB0C1AC] );
-  MEMORY[0xB0CD38] = *(__int16 *)(MEMORY[0xB0C148] + 2);
-  MEMORY[0xB0CB50] = *(__int16 *)(MEMORY[0xB0C148] + 4);
-  v6 = *(_DWORD *)MEMORY[0xB0FC6C];
-  v11 = *(_DWORD *)MEMORY[0xB0FC68];
-  v12 = *((_DWORD *)MEMORY[0xB0FC68] + 1);
-  result = *((_DWORD *)MEMORY[0xB0FC68] + 2);
-  v13 = *((_DWORD *)MEMORY[0xB0FC68] + 3);
-  MEMORY[0xB0CC2C] = v6 - result * MEMORY[0xB0CB54];
-  v10 = *((_DWORD *)MEMORY[0xA8B230] + 3374);
-  v8 = *((_DWORD *)MEMORY[0xB0FC58] + 1);
-  MEMORY[0xB0CD10] = result - MEMORY[0xB0CD38];
-  MEMORY[0xB0CC24] = v8;
-  MEMORY[0xB0CC38] = result;
-  *(this + 5448) = 0;
-  return result;
+  while ( (int)v3 < (int)&MEMORY[0xB0C1AC] ); /*0x6d0302*/
+  MEMORY[0xB0CD38] = *(__int16 *)(MEMORY[0xB0C148] + 2); /*0x6d0314*/
+  MEMORY[0xB0CB50] = *(__int16 *)(MEMORY[0xB0C148] + 4); /*0x6d031e*/
+  v6 = *(_DWORD *)MEMORY[0xB0FC6C]; /*0x6d032a*/
+  v11 = *(_DWORD *)MEMORY[0xB0FC68]; /*0x6d032e*/
+  v12 = *((_DWORD *)MEMORY[0xB0FC68] + 1); /*0x6d0335*/
+  result = *((_DWORD *)MEMORY[0xB0FC68] + 2); /*0x6d0339*/
+  v13 = *((_DWORD *)MEMORY[0xB0FC68] + 3); /*0x6d033f*/
+  MEMORY[0xB0CC2C] = v6 - result * MEMORY[0xB0CB54]; /*0x6d0354*/
+  v10 = *((_DWORD *)MEMORY[0xA8B230] + 3374); /*0x6d0363*/
+  v8 = *((_DWORD *)MEMORY[0xB0FC58] + 1); /*0x6d036d*/
+  MEMORY[0xB0CD10] = result - MEMORY[0xB0CD38]; /*0x6d0370*/
+  MEMORY[0xB0CC24] = v8; /*0x6d0377*/
+  MEMORY[0xB0CC38] = result; /*0x6d037d*/
+  *(this + 5448) = 0; /*0x6d0382*/
+  return result; /*0x6d030f*/
 }
-
-/* ASM:
-Buffer          = byte ptr -100h
-
-sub     esp, 118h
-push    ebp
-push    esi
-push    edi
-mov     ebp, ecx
-call    SidebarClass__LoadAssets
-mov     [esp+124h+var_115], 0
-xor     esi, esi
-mov     edi, (offset dword_A8ED54+7D3F4h)
-
-loc_6D02CC:                             ; CODE XREF: SidebarClass__LoadButtonSHPs+52↓j
-push    esi
-lea     eax, [esp+128h+Buffer]
-push    offset aButton02dShp ; "Button%02d.SHP"
-push    eax             ; Buffer
-call    _sprintf
-add     esp, 0Ch
-lea     edx, [esp+124h+var_115]
-lea     ecx, [esp+124h+Buffer] ; Source
-call    LoadFileSHP
-mov     cl, [esp+124h+var_115]
-mov     [edi], eax
-mov     byte ptr (dword_A8ED54+7DE88h)[esi], cl
-add     edi, 4
-inc     esi
-cmp     edi, (offset dword_A8ED54+7D458h)
-jl      short loc_6D02CC
-mov     eax, dword_A8ED54+7D3F4h
-mov     esi, dword_A8ED54+80F18h
-pop     edi
-movsx   ecx, word ptr [eax+2]
-mov     dword_A8ED54+7DFE4h, ecx
-movsx   edx, word ptr [eax+4]
-mov     dword_A8ED54+7DDFCh, edx
-mov     edx, dword_A8ED54+80F14h
-mov     esi, [esi]
-mov     eax, [edx]
-mov     [esp+120h+var_110], eax
-mov     eax, [edx+4]
-mov     [esp+120h+var_10C], eax
-mov     eax, [edx+8]
-mov     edx, [edx+0Ch]
-mov     [esp+120h+var_104], edx
-mov     edx, dword_A8ED54+7DE00h
-imul    edx, eax
-sub     esi, edx
-mov     edx, ds:0A8B230h
-mov     dword_A8ED54+7DED8h, esi
-sub     eax, ecx
-mov     edx, [edx+34B8h]
-pop     esi
-mov     [esp+11Ch+var_114], edx
-mov     edx, dword_A8ED54+80F04h
-mov     edx, [edx+4]
-mov     dword_A8ED54+7DFBCh, eax
-add     eax, ecx
-mov     dword_A8ED54+7DED0h, edx
-mov     dword_A8ED54+7DEE4h, eax
-mov     dword ptr [ebp+5520h], 0
-pop     ebp
-add     esp, 118h
-retn
-*/
 } }
 // 0x6D03A0
 namespace gamemd { int SidebarClass::InitButtons() {
@@ -18283,107 +7832,33 @@ char __thiscall SidebarClass_InitButtons(void *this)
   char result; // al
   void *v3; // esi
 
-  SidebarClass::Init();
-  result = MEMORY[0xA8ED6B];
-  if ( !MEMORY[0xA8ED6B] )
+  SidebarClass::Init(); /*0x6d03a7*/
+  result = MEMORY[0xA8ED6B]; /*0x6d03ac*/
+  if ( !MEMORY[0xA8ED6B] ) /*0x6d03b5*/
   {
-    result = UI_Init_72F430();
-    if ( result )
+    result = UI_Init_72F430(); /*0x6d03bb*/
+    if ( result ) /*0x6d03c2*/
     {
-      UI_Init_6D0FD0(this);
-      MEMORY[0xB0CCD4] = 240;
-      MEMORY[0xB0CD00] = MEMORY[0x87F6CC];
-      MEMORY[0xB0CCDD] = 0;
-      MEMORY[0xB0CCE0] = 0;
-      MEMORY[0xB0CCD0] = 5;
-      v3 = MEMORY[0xB0FA90];
-      Rect_Point::Set(MEMORY[0xB0CCB0], *(_DWORD *)MEMORY[0xB0FC60], *((_DWORD *)MEMORY[0xB0FC60] + 1));
-      ShapeButton::SetShape((int)MEMORY[0xB0CCB0], (int)v3, 0, 0);
-      MEMORY[0xB0CC64] = 241;
-      MEMORY[0xB0CC90] = MEMORY[0x87F6CC];
-      MEMORY[0xB0CC6D] = 0;
-      MEMORY[0xB0CC70] = 0;
-      MEMORY[0xB0CC60] = 5;
-      Rect_Point::Set(MEMORY[0xB0CC40], *(_DWORD *)MEMORY[0xB0FC64], *((_DWORD *)MEMORY[0xB0FC64] + 1));
-      return ShapeButton::SetShape((int)MEMORY[0xB0CC40], (int)v3, 0, 0);
+      UI_Init_6D0FD0(this); /*0x6d03cc*/
+      MEMORY[0xB0CCD4] = 240; /*0x6d03e1*/
+      MEMORY[0xB0CD00] = MEMORY[0x87F6CC]; /*0x6d03eb*/
+      MEMORY[0xB0CCDD] = 0; /*0x6d03f0*/
+      MEMORY[0xB0CCE0] = 0; /*0x6d03f6*/
+      MEMORY[0xB0CCD0] = 5; /*0x6d03fc*/
+      v3 = MEMORY[0xB0FA90]; /*0x6d0404*/
+      Rect_Point::Set(MEMORY[0xB0CCB0], *(_DWORD *)MEMORY[0xB0FC60], *((_DWORD *)MEMORY[0xB0FC60] + 1)); /*0x6d0422*/
+      ShapeButton::SetShape((int)MEMORY[0xB0CCB0], (int)v3, 0, 0); /*0x6d042f*/
+      MEMORY[0xB0CC64] = 241; /*0x6d043f*/
+      MEMORY[0xB0CC90] = MEMORY[0x87F6CC]; /*0x6d0449*/
+      MEMORY[0xB0CC6D] = 0; /*0x6d044e*/
+      MEMORY[0xB0CC70] = 0; /*0x6d0454*/
+      MEMORY[0xB0CC60] = 5; /*0x6d045a*/
+      Rect_Point::Set(MEMORY[0xB0CC40], *(_DWORD *)MEMORY[0xB0FC64], *((_DWORD *)MEMORY[0xB0FC64] + 1)); /*0x6d047a*/
+      return ShapeButton::SetShape((int)MEMORY[0xB0CC40], (int)v3, 0, 0); /*0x6d0487*/
     }
   }
-  return result;
+  return result; /*0x6d048e*/
 }
-
-/* ASM:
-sub     esp, 10h
-push    ebx
-push    esi
-mov     esi, ecx
-call    SidebarClass__Init
-mov     al, byte ptr dword_A8ED54+17h
-xor     ebx, ebx
-cmp     al, bl
-jnz     loc_6D048E
-call    UI_Init_72F430
-test    al, al
-jz      loc_6D048E
-push    ebp
-push    edi
-mov     ecx, esi
-call    UI_Init_6D0FD0
-mov     eax, ds:87F6CCh
-mov     edx, dword_A8ED54+80F0Ch
-mov     edi, 5
-mov     dword_A8ED54+7DF80h, 0F0h
-mov     dword_A8ED54+7DFACh, eax
-mov     byte ptr dword_A8ED54+7DF89h, bl
-mov     dword_A8ED54+7DF8Ch, ebx
-mov     dword_A8ED54+7DF7Ch, edi
-mov     eax, [edx]
-mov     esi, dword_A8ED54+80D3Ch
-mov     ecx, [edx+4]
-push    ecx
-push    eax
-mov     ebp, [edx+8]
-mov     ecx, (offset dword_A8ED54+7DF5Ch)
-mov     [esp+28h+var_8], ebp
-mov     edx, [edx+0Ch]
-mov     [esp+28h+var_4], edx
-call    Rect_Point__Set
-push    ebx
-push    ebx
-push    esi
-mov     ecx, (offset dword_A8ED54+7DF5Ch)
-call    ShapeButton__SetShape
-mov     eax, ds:87F6CCh
-mov     edx, dword_A8ED54+80F10h
-mov     dword_A8ED54+7DF10h, 0F1h
-mov     dword_A8ED54+7DF3Ch, eax
-mov     byte ptr dword_A8ED54+7DF19h, bl
-mov     dword_A8ED54+7DF1Ch, ebx
-mov     dword_A8ED54+7DF0Ch, edi
-mov     eax, [edx]
-mov     ecx, [edx+4]
-push    ecx
-push    eax
-mov     edi, [edx+8]
-mov     ecx, (offset dword_A8ED54+7DEECh)
-mov     [esp+28h+var_8], edi
-mov     edx, [edx+0Ch]
-mov     [esp+28h+var_4], edx
-call    Rect_Point__Set
-push    ebx
-push    ebx
-push    esi
-mov     ecx, (offset dword_A8ED54+7DEECh)
-call    ShapeButton__SetShape
-pop     edi
-pop     ebp
-
-loc_6D048E:                             ; CODE XREF: SidebarClass__InitButtons+15↑j
-; SidebarClass__InitButtons+22↑j
-pop     esi
-pop     ebx
-add     esp, 10h
-retn
-*/
 } }
 // 0x6D0A20
 namespace gamemd { int SidebarClass::DrawTabs(int a1) {
@@ -18425,109 +7900,109 @@ int __thiscall SidebarClass_DrawTabs(_BYTE *this, char a2)
   int v37; // [esp+38h] [ebp-14h]
   char v38[16]; // [esp+3Ch] [ebp-10h] BYREF
 
-  if ( (MEMORY[0xB0CB58] & 1) == 0 )
+  if ( (MEMORY[0xB0CB58] & 1) == 0 ) /*0x6d0a34*/
   {
-    MEMORY[0xB0CB58] |= 1u;
-    MEMORY[0xB0CBF8] = 0;
-    MEMORY[0xB0CBFC] = 0;
-    atexit(nullsub_236);
+    MEMORY[0xB0CB58] |= 1u; /*0x6d0a42*/
+    MEMORY[0xB0CBF8] = 0; /*0x6d0a48*/
+    MEMORY[0xB0CBFC] = 0; /*0x6d0a4e*/
+    atexit(nullsub_236); /*0x6d0a54*/
   }
-  if ( !a2 && !*(this + 21829) )
+  if ( !a2 && !*(this + 21829) ) /*0x6d0a6c*/
   {
-    v3 = 0;
-    v4 = MEMORY[0xB0CB78];
-    while ( 1 )
+    v3 = 0; /*0x6d0a7a*/
+    v4 = MEMORY[0xB0CB78]; /*0x6d0a7c*/
+    while ( 1 ) /*0x6d0a81*/
     {
-      v5 = *v4;
-      if ( *v4 >= 0 && v5 < 25 )
+      v5 = *v4; /*0x6d0a81*/
+      if ( *v4 >= 0 && v5 < 25 ) /*0x6d0a8a*/
       {
-        v6 = (char *)&MEMORY[0xB0C1C0] + 96 * v5;
-        if ( v6 )
+        v6 = (char *)&MEMORY[0xB0C1C0] + 96 * v5; /*0x6d0a92*/
+        if ( v6 ) /*0x6d0a99*/
         {
-          if ( v6[84] )
-            break;
+          if ( v6[84] ) /*0x6d0a9b*/
+            break; /*0x6d0a9b*/
         }
       }
-      if ( (int)++v4 >= (int)MEMORY[0xB0CBDC] )
+      if ( (int)++v4 >= (int)MEMORY[0xB0CBDC] ) /*0x6d0aab*/
       {
-        v7 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)MEMORY[0x887640] + 52))(MEMORY[0x887640], &v29);
-        v8 = *v7;
-        v9 = v7[1];
-        if ( *v7 < *(_DWORD *)MEMORY[0xB0FC58]
+        v7 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)MEMORY[0x887640] + 52))(MEMORY[0x887640], &v29); /*0x6d0aba*/
+        v8 = *v7; /*0x6d0abd*/
+        v9 = v7[1]; /*0x6d0abf*/
+        if ( *v7 < *(_DWORD *)MEMORY[0xB0FC58] /*0x6d0ae4*/
           || v8 >= *(_DWORD *)MEMORY[0xB0FC58] + *((_DWORD *)MEMORY[0xB0FC58] + 2)
           || (v10 = *((_DWORD *)MEMORY[0xB0FC58] + 1), v9 < v10)
           || v9 >= v10 + *((_DWORD *)MEMORY[0xB0FC58] + 3) )
         {
-          if ( MEMORY[0xB0CD40] )
-            v3 = 1;
-          MEMORY[0xB0CD40] = 0;
+          if ( MEMORY[0xB0CD40] ) /*0x6d0b13*/
+            v3 = 1; /*0x6d0b15*/
+          MEMORY[0xB0CD40] = 0; /*0x6d0b17*/
         }
         else
         {
-          MEMORY[0xB0CD40] = 1;
-          if ( v8 != MEMORY[0xB0CBF8] || v9 != MEMORY[0xB0CBFC] )
-            v3 = 1;
+          MEMORY[0xB0CD40] = 1; /*0x6d0aeb*/
+          if ( v8 != MEMORY[0xB0CBF8] || v9 != MEMORY[0xB0CBFC] ) /*0x6d0afc*/
+            v3 = 1; /*0x6d0afe*/
         }
-        MEMORY[0xB0CBF8] = v8;
-        MEMORY[0xB0CBFC] = v9;
-        if ( v3 )
+        MEMORY[0xB0CBF8] = v8; /*0x6d0b20*/
+        MEMORY[0xB0CBFC] = v9; /*0x6d0b26*/
+        if ( v3 ) /*0x6d0b2c*/
         {
-          MEMORY[0xB0CD44] = 0;
+          MEMORY[0xB0CD44] = 0; /*0x6d0b2e*/
         }
         else
         {
-          v11 = 0;
-          if ( MEMORY[0xB0CD44] <= 0 )
+          v11 = 0; /*0x6d0b3c*/
+          if ( MEMORY[0xB0CD44] <= 0 ) /*0x6d0b40*/
           {
 LABEL_28:
-            v3 = 1;
+            v3 = 1; /*0x6d0b59*/
           }
           else
           {
-            v12 = &MEMORY[0xB0CC00];
-            while ( *v12 != MEMORY[0x887314] )
+            v12 = &MEMORY[0xB0CC00]; /*0x6d0b48*/
+            while ( *v12 != MEMORY[0x887314] ) /*0x6d0b4f*/
             {
-              ++v11;
-              ++v12;
-              if ( v11 >= MEMORY[0xB0CD44] )
-                goto LABEL_28;
+              ++v11; /*0x6d0b51*/
+              ++v12; /*0x6d0b52*/
+              if ( v11 >= MEMORY[0xB0CD44] ) /*0x6d0b57*/
+                goto LABEL_28; /*0x6d0b57*/
             }
           }
         }
-        goto LABEL_29;
+        goto LABEL_29; /*0x6d0b34*/
       }
     }
   }
-  v3 = 1;
-  MEMORY[0xB0CD44] = 0;
+  v3 = 1; /*0x6d0b02*/
+  MEMORY[0xB0CD44] = 0; /*0x6d0b04*/
 LABEL_29:
-  if ( !MEMORY[0xA8ED6B] )
+  if ( !MEMORY[0xA8ED6B] ) /*0x6d0b62*/
   {
-    v13 = MEMORY[0xB0FB08];
-    v29 = 0;
-    i = 0;
-    v14 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)MEMORY[0x887300] + 120))(MEMORY[0x887300], v35);
-    DrawToSurfaceSHP(MEMORY[0x887300], MEMORY[0x87F6CC], (int)v13, 0, &v29, v14, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
-    MEMORY[0xB0B518] = 1;
-    DrawSidebarCreditsTimer(1);
-    if ( v3 )
+    v13 = MEMORY[0xB0FB08]; /*0x6d0b75*/
+    v29 = 0; /*0x6d0b84*/
+    i = 0; /*0x6d0b88*/
+    v14 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)MEMORY[0x887300] + 120))(MEMORY[0x887300], v35); /*0x6d0b95*/
+    DrawToSurfaceSHP(MEMORY[0x887300], MEMORY[0x87F6CC], (int)v13, 0, &v29, v14, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x6d0bac*/
+    MEMORY[0xB0B518] = 1; /*0x6d0bb7*/
+    DrawSidebarCreditsTimer(1); /*0x6d0bc4*/
+    if ( v3 ) /*0x6d0bcb*/
     {
-      v15 = (int *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)MEMORY[0x887314] + 120))(MEMORY[0x887314], v38);
-      v31 = *v15;
-      v32 = v15[1];
-      v33 = v15[2];
-      v34 = v15[3];
-      v29 = 0;
-      i = 0;
-      v29 = *(_DWORD *)MEMORY[0xB0FC58];
-      i = *((_DWORD *)MEMORY[0xB0FC58] + 1);
-      v35[0] = v31;
-      v35[1] = v32;
-      v36 = v33;
-      v37 = v34;
-      v36 = *((_DWORD *)MEMORY[0xB0FC58] + 2);
-      v16 = MEMORY[0x887314];
-      DrawToSurfaceSHP(
+      v15 = (int *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)MEMORY[0x887314] + 120))(MEMORY[0x887314], v38); /*0x6d0bde*/
+      v31 = *v15; /*0x6d0be3*/
+      v32 = v15[1]; /*0x6d0bea*/
+      v33 = v15[2]; /*0x6d0bf1*/
+      v34 = v15[3]; /*0x6d0bfd*/
+      v29 = 0; /*0x6d0c01*/
+      i = 0; /*0x6d0c05*/
+      v29 = *(_DWORD *)MEMORY[0xB0FC58]; /*0x6d0c0b*/
+      i = *((_DWORD *)MEMORY[0xB0FC58] + 1); /*0x6d0c12*/
+      v35[0] = v31; /*0x6d0c16*/
+      v35[1] = v32; /*0x6d0c1a*/
+      v36 = v33; /*0x6d0c1e*/
+      v37 = v34; /*0x6d0c22*/
+      v36 = *((_DWORD *)MEMORY[0xB0FC58] + 2); /*0x6d0c29*/
+      v16 = MEMORY[0x887314]; /*0x6d0c3b*/
+      DrawToSurfaceSHP( /*0x6d0c5f*/
         MEMORY[0x887314],
         MEMORY[0x87F6CC],
         (int)MEMORY[0xB0FA3C],
@@ -18544,503 +8019,81 @@ LABEL_29:
         0,
         0,
         0);
-      v17 = this;
-      if ( *(this + 21828) )
+      v17 = this; /*0x6d0c64*/
+      if ( *(this + 21828) ) /*0x6d0c68*/
       {
-        v29 = *(_DWORD *)MEMORY[0xB0FC60];
-        i = *((_DWORD *)MEMORY[0xB0FC60] + 1);
+        v29 = *(_DWORD *)MEMORY[0xB0FC60]; /*0x6d0c79*/
+        i = *((_DWORD *)MEMORY[0xB0FC60] + 1); /*0x6d0c80*/
       }
       else
       {
-        v29 = *(_DWORD *)MEMORY[0xB0FC64];
-        i = *((_DWORD *)MEMORY[0xB0FC64] + 1);
+        v29 = *(_DWORD *)MEMORY[0xB0FC64]; /*0x6d0c8d*/
+        i = *((_DWORD *)MEMORY[0xB0FC64] + 1); /*0x6d0c94*/
       }
-      DrawToSurfaceSHP(v16, MEMORY[0x87F6CC], (int)MEMORY[0xB0FA90], 0, &v29, &v31, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
-      if ( *(this + 21828) )
+      DrawToSurfaceSHP(v16, MEMORY[0x87F6CC], (int)MEMORY[0xB0FA90], 0, &v29, &v31, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x6d0cc4*/
+      if ( *(this + 21828) ) /*0x6d0cc9*/
       {
-        v18 = 0;
-        v29 = *(_DWORD *)MEMORY[0xB0FC68];
-        for ( i = *((_DWORD *)MEMORY[0xB0FC58] + 1); v18 < MEMORY[0xB0F9E4]; v29 += *((_DWORD *)MEMORY[0xB0FC68] + 2) )
+        v18 = 0; /*0x6d0ce2*/
+        v29 = *(_DWORD *)MEMORY[0xB0FC68]; /*0x6d0ce6*/
+        for ( i = *((_DWORD *)MEMORY[0xB0FC58] + 1); v18 < MEMORY[0xB0F9E4]; v29 += *((_DWORD *)MEMORY[0xB0FC68] + 2) ) /*0x6d0cf8*/
         {
-          DrawToSurfaceSHP(v16, MEMORY[0x87F6CC], (int)MEMORY[0xB0FAA8], 0, &v29, &v31, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
-          ++v18;
+          DrawToSurfaceSHP(v16, MEMORY[0x87F6CC], (int)MEMORY[0xB0FAA8], 0, &v29, &v31, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x6d0d2b*/
+          ++v18; /*0x6d0d3f*/
         }
-        v19 = MEMORY[0xB0CB78];
-        do
+        v19 = MEMORY[0xB0CB78]; /*0x6d0d4f*/
+        do /*0x6d0d8a*/
         {
-          v20 = *v19;
-          if ( *v19 >= 0 && v20 < 25 )
+          v20 = *v19; /*0x6d0d54*/
+          if ( *v19 >= 0 && v20 < 25 ) /*0x6d0d5d*/
           {
-            v21 = (char *)&MEMORY[0xB0C1C0] + 96 * v20;
-            if ( v21 )
+            v21 = (char *)&MEMORY[0xB0C1C0] + 96 * v20; /*0x6d0d65*/
+            if ( v21 ) /*0x6d0d6d*/
             {
-              if ( *((_DWORD *)v21 + 22) )
+              if ( *((_DWORD *)v21 + 22) ) /*0x6d0d6f*/
               {
-                (*(void (__thiscall **)(char *, int))(*(_DWORD *)v21 + 108))(v21, 1);
-                v21[84] = 0;
+                (*(void (__thiscall **)(char *, int))(*(_DWORD *)v21 + 108))(v21, 1); /*0x6d0d7a*/
+                v21[84] = 0; /*0x6d0d7d*/
               }
             }
           }
-          ++v19;
+          ++v19; /*0x6d0d81*/
         }
-        while ( (int)v19 < (int)MEMORY[0xB0CBDC] );
-        v17 = this;
+        while ( (int)v19 < (int)MEMORY[0xB0CBDC] ); /*0x6d0d8a*/
+        v17 = this; /*0x6d0d8c*/
       }
-      v29 = *(_DWORD *)MEMORY[0xB0FC6C];
-      DrawToSurfaceSHP(v16, MEMORY[0x87F6CC], (int)MEMORY[0xB0FABC], 0, &v29, &v31, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
-      v22 = MEMORY[0xB0CCB0];
-      if ( !v17[21828] )
-        v22 = MEMORY[0xB0CC40];
-      ShapeButton::Draw((int)v22, 1);
-      v17[21830] = 1;
-      v17[21829] = 0;
-      v23 = MEMORY[0xB0CD44];
-      if ( (unsigned int)MEMORY[0xB0CD44] < 4 )
-        v23 = ++MEMORY[0xB0CD44];
-      v24 = v23 - 2;
-      if ( v23 - 2 >= 0 )
+      v29 = *(_DWORD *)MEMORY[0xB0FC6C]; /*0x6d0db2*/
+      DrawToSurfaceSHP(v16, MEMORY[0x87F6CC], (int)MEMORY[0xB0FABC], 0, &v29, &v31, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x6d0dc8*/
+      v22 = MEMORY[0xB0CCB0]; /*0x6d0dd7*/
+      if ( !v17[21828] ) /*0x6d0dcd*/
+        v22 = MEMORY[0xB0CC40]; /*0x6d0dde*/
+      ShapeButton::Draw((int)v22, 1); /*0x6d0de3*/
+      v17[21830] = 1; /*0x6d0de8*/
+      v17[21829] = 0; /*0x6d0def*/
+      v23 = MEMORY[0xB0CD44]; /*0x6d0df6*/
+      if ( (unsigned int)MEMORY[0xB0CD44] < 4 ) /*0x6d0dfe*/
+        v23 = ++MEMORY[0xB0CD44]; /*0x6d0e00*/
+      v24 = v23 - 2; /*0x6d0e06*/
+      if ( v23 - 2 >= 0 ) /*0x6d0e0b*/
       {
-        v25 = (_DWORD *)(4 * v24 + 11586564);
-        v26 = v24 + 1;
-        do
+        v25 = (_DWORD *)(4 * v24 + 11586564); /*0x6d0e0d*/
+        v26 = v24 + 1; /*0x6d0e14*/
+        do /*0x6d0e1e*/
         {
-          *v25 = *(v25 - 1);
-          --v25;
-          --v26;
+          *v25 = *(v25 - 1); /*0x6d0e18*/
+          --v25; /*0x6d0e1a*/
+          --v26; /*0x6d0e1d*/
         }
-        while ( v26 );
+        while ( v26 ); /*0x6d0e1e*/
       }
-      MEMORY[0xB0CC00] = v16;
+      MEMORY[0xB0CC00] = v16; /*0x6d0e20*/
     }
     else
     {
-      *(this + 21830) = 0;
+      *(this + 21830) = 0; /*0x6d0e28*/
     }
   }
-  return SidebarClass::Redraw(a2);
+  return SidebarClass::Redraw(a2); /*0x6d0e3d*/
 }
-
-/* ASM:
-sub     esp, 3Ch
-mov     al, byte ptr dword_A8ED54+7DE04h
-push    ebx
-push    ebp
-push    esi
-mov     esi, ecx
-push    edi
-test    al, 1
-mov     [esp+4Ch+var_3C], esi
-jnz     short loc_6D0A5E
-mov     dl, al
-xor     ebp, ebp
-or      dl, 1
-push    offset nullsub_236 ; void (__cdecl *)()
-mov     byte ptr dword_A8ED54+7DE04h, dl
-mov     dword_A8ED54+7DEA4h, ebp
-mov     dword_A8ED54+7DEA8h, ebp
-call    _atexit
-add     esp, 4
-jmp     short loc_6D0A60
-; ---------------------------------------------------------------------------
-
-loc_6D0A5E:                             ; CODE XREF: SidebarClass__DrawTabs+14↑j
-xor     ebp, ebp
-
-loc_6D0A60:                             ; CODE XREF: SidebarClass__DrawTabs+3C↑j
-mov     al, [esp+4Ch+arg_0]
-test    al, al
-jnz     loc_6D0B02
-mov     al, [esi+5545h]
-test    al, al
-jnz     loc_6D0B02
-xor     bl, bl
-mov     ecx, (offset dword_A8ED54+7DE24h)
-
-loc_6D0A81:                             ; CODE XREF: SidebarClass__DrawTabs+8B↓j
-mov     eax, [ecx]
-cmp     eax, ebp
-jl      short loc_6D0AA2
-cmp     eax, 19h
-jge     short loc_6D0AA2
-lea     eax, [eax+eax*2]
-shl     eax, 5
-add     eax, (offset dword_A8ED54+7D46Ch)
-cmp     eax, ebp
-jz      short loc_6D0AA2
-mov     dl, [eax+54h]
-test    dl, dl
-jnz     short loc_6D0B02
-
-loc_6D0AA2:                             ; CODE XREF: SidebarClass__DrawTabs+65↑j
-; SidebarClass__DrawTabs+6A↑j ...
-add     ecx, 4
-cmp     ecx, (offset dword_A8ED54+7DE88h)
-jl      short loc_6D0A81
-mov     ecx, ds:887640h
-lea     edx, [esp+4Ch+var_38]
-push    edx
-mov     eax, [ecx]
-call    dword ptr [eax+34h]
-mov     edx, [eax]
-mov     esi, [eax+4]
-mov     eax, dword_A8ED54+80F04h
-mov     ecx, [eax]
-cmp     edx, ecx
-jl      short loc_6D0B0C
-mov     edi, [eax+8]
-add     edi, ecx
-cmp     edx, edi
-jge     short loc_6D0B0C
-mov     ecx, [eax+4]
-cmp     esi, ecx
-jl      short loc_6D0B0C
-mov     eax, [eax+0Ch]
-add     eax, ecx
-cmp     esi, eax
-jge     short loc_6D0B0C
-mov     eax, dword_A8ED54+7DEA4h
-mov     byte ptr dword_A8ED54+7DFECh, 1
-cmp     edx, eax
-jnz     short loc_6D0AFE
-cmp     esi, dword_A8ED54+7DEA8h
-jz      short loc_6D0B1E
-
-loc_6D0AFE:                             ; CODE XREF: SidebarClass__DrawTabs+D4↑j
-mov     bl, 1
-jmp     short loc_6D0B1E
-; ---------------------------------------------------------------------------
-
-loc_6D0B02:                             ; CODE XREF: SidebarClass__DrawTabs+46↑j
-; SidebarClass__DrawTabs+54↑j ...
-mov     bl, 1
-mov     dword_A8ED54+7DFF0h, ebp
-jmp     short loc_6D0B5B
-; ---------------------------------------------------------------------------
-
-loc_6D0B0C:                             ; CODE XREF: SidebarClass__DrawTabs+AB↑j
-; SidebarClass__DrawTabs+B4↑j ...
-mov     al, byte ptr dword_A8ED54+7DFECh
-test    al, al
-jz      short loc_6D0B17
-mov     bl, 1
-
-loc_6D0B17:                             ; CODE XREF: SidebarClass__DrawTabs+F3↑j
-mov     byte ptr dword_A8ED54+7DFECh, 0
-
-loc_6D0B1E:                             ; CODE XREF: SidebarClass__DrawTabs+DC↑j
-; SidebarClass__DrawTabs+E0↑j
-test    bl, bl
-mov     dword_A8ED54+7DEA4h, edx
-mov     dword_A8ED54+7DEA8h, esi
-jz      short loc_6D0B36
-mov     dword_A8ED54+7DFF0h, ebp
-jmp     short loc_6D0B5B
-; ---------------------------------------------------------------------------
-
-loc_6D0B36:                             ; CODE XREF: SidebarClass__DrawTabs+10C↑j
-mov     edx, dword_A8ED54+7DFF0h
-xor     eax, eax
-cmp     edx, ebp
-jle     short loc_6D0B59
-mov     esi, ds:887314h
-mov     ecx, (offset dword_A8ED54+7DEACh)
-
-loc_6D0B4D:                             ; CODE XREF: SidebarClass__DrawTabs+137↓j
-cmp     [ecx], esi
-jz      short loc_6D0B5B
-inc     eax
-add     ecx, 4
-cmp     eax, edx
-jl      short loc_6D0B4D
-
-loc_6D0B59:                             ; CODE XREF: SidebarClass__DrawTabs+120↑j
-mov     bl, 1
-
-loc_6D0B5B:                             ; CODE XREF: SidebarClass__DrawTabs+EA↑j
-; SidebarClass__DrawTabs+114↑j ...
-mov     al, byte ptr dword_A8ED54+17h
-test    al, al
-jnz     loc_6D0E2F
-xor     ecx, ecx
-xor     eax, eax
-push    ecx
-mov     ecx, ds:887300h
-push    eax
-push    ebp
-mov     esi, dword_A8ED54+80DB4h
-push    ebp
-push    ebp
-push    3E8h
-push    ebp
-push    ebp
-mov     [esp+6Ch+var_38], ebp
-mov     [esp+6Ch+var_34], ebp
-mov     edx, [ecx]
-push    ebp
-lea     eax, [esp+70h+var_20]
-push    ebp
-push    eax
-call    dword ptr [edx+78h]
-mov     edx, ds:87F6CCh
-lea     ecx, [esp+74h+var_38]
-push    eax
-push    ecx
-mov     ecx, ds:887300h
-push    ebp
-push    esi
-call    DrawToSurfaceSHP
-mov     esi, [esp+4Ch+var_3C]
-push    1
-mov     byte ptr dword_A8ED54+7C7C4h, 1
-lea     ecx, [esi+551Ch]
-call    DrawSidebarCreditsTimer
-test    bl, bl
-jz      loc_6D0E28
-mov     ecx, ds:887314h
-lea     eax, [esp+4Ch+var_10]
-push    eax
-mov     edx, [ecx]
-call    dword ptr [edx+78h]
-mov     ecx, [eax]
-mov     [esp+4Ch+var_30], ecx
-mov     edx, [eax+4]
-mov     [esp+4Ch+var_2C], edx
-mov     esi, [eax+8]
-mov     [esp+4Ch+var_28], esi
-mov     edi, [eax+0Ch]
-mov     eax, dword_A8ED54+80F04h
-mov     [esp+4Ch+var_24], edi
-mov     [esp+4Ch+var_38], ebp
-mov     [esp+4Ch+var_34], ebp
-mov     ebx, [eax]
-mov     [esp+4Ch+var_38], ebx
-mov     ebx, [eax+4]
-mov     [esp+4Ch+var_34], ebx
-mov     [esp+4Ch+var_20], ecx
-mov     [esp+4Ch+var_1C], edx
-mov     [esp+4Ch+var_18], esi
-mov     [esp+4Ch+var_14], edi
-mov     ecx, [eax+8]
-mov     [esp+4Ch+var_18], ecx
-xor     ecx, ecx
-xor     eax, eax
-push    ecx
-push    eax
-push    ebp
-push    ebp
-mov     ecx, dword_A8ED54+80CE8h
-mov     edi, ds:887314h
-push    ebp
-push    3E8h
-push    ebp
-push    ebp
-push    ebp
-lea     edx, [esp+70h+var_20]
-push    ebp
-lea     eax, [esp+74h+var_38]
-push    edx
-mov     edx, ds:87F6CCh
-push    eax
-push    ebp
-push    ecx
-mov     ecx, edi
-call    DrawToSurfaceSHP
-mov     esi, [esp+4Ch+var_3C]
-mov     al, [esi+5544h]
-test    al, al
-jz      short loc_6D0C86
-mov     eax, dword_A8ED54+80F0Ch
-mov     edx, [eax]
-mov     [esp+4Ch+var_38], edx
-mov     eax, [eax+4]
-mov     [esp+4Ch+var_34], eax
-jmp     short loc_6D0C98
-; ---------------------------------------------------------------------------
-
-loc_6D0C86:                             ; CODE XREF: SidebarClass__DrawTabs+250↑j
-mov     eax, dword_A8ED54+80F10h
-mov     ecx, [eax]
-mov     [esp+4Ch+var_38], ecx
-mov     edx, [eax+4]
-mov     [esp+4Ch+var_34], edx
-
-loc_6D0C98:                             ; CODE XREF: SidebarClass__DrawTabs+264↑j
-xor     ecx, ecx
-xor     eax, eax
-push    ecx
-push    eax
-push    ebp
-push    ebp
-mov     edx, dword_A8ED54+80D3Ch
-push    ebp
-push    3E8h
-push    ebp
-push    ebp
-push    ebp
-lea     eax, [esp+70h+var_30]
-push    ebp
-lea     ecx, [esp+74h+var_38]
-push    eax
-push    ecx
-push    ebp
-push    edx
-mov     edx, ds:87F6CCh
-mov     ecx, edi
-call    DrawToSurfaceSHP
-mov     al, [esi+5544h]
-test    al, al
-jz      loc_6D0D90
-mov     eax, dword_A8ED54+80F14h
-mov     edx, dword_A8ED54+80F04h
-xor     esi, esi
-mov     ecx, [eax]
-mov     [esp+4Ch+var_38], ecx
-mov     eax, [edx+4]
-mov     [esp+4Ch+var_34], eax
-mov     eax, dword_A8ED54+80C90h
-cmp     eax, ebp
-jle     short loc_6D0D4F
-xor     ebx, ebx
-
-loc_6D0CFC:                             ; CODE XREF: SidebarClass__DrawTabs+32B↓j
-push    ebx
-push    ebp
-push    0
-push    0
-mov     eax, dword_A8ED54+80D54h
-push    0
-push    3E8h
-push    0
-push    0
-push    0
-lea     ecx, [esp+70h+var_30]
-push    0
-lea     edx, [esp+74h+var_38]
-push    ecx
-push    edx
-mov     edx, ds:87F6CCh
-push    0
-push    eax
-mov     ecx, edi
-call    DrawToSurfaceSHP
-mov     ecx, dword_A8ED54+80F14h
-mov     eax, [esp+4Ch+var_38]
-mov     edx, [ecx+8]
-add     eax, edx
-inc     esi
-mov     [esp+4Ch+var_38], eax
-mov     eax, dword_A8ED54+80C90h
-cmp     esi, eax
-jl      short loc_6D0CFC
-xor     ebp, ebp
-
-loc_6D0D4F:                             ; CODE XREF: SidebarClass__DrawTabs+2D8↑j
-mov     ebx, (offset dword_A8ED54+7DE24h)
-
-loc_6D0D54:                             ; CODE XREF: SidebarClass__DrawTabs+36A↓j
-mov     eax, [ebx]
-cmp     eax, ebp
-jl      short loc_6D0D81
-cmp     eax, 19h
-jge     short loc_6D0D81
-lea     esi, [eax+eax*2]
-shl     esi, 5
-add     esi, (offset dword_A8ED54+7D46Ch)
-cmp     esi, ebp
-jz      short loc_6D0D81
-cmp     [esi+58h], ebp
-jz      short loc_6D0D81
-mov     eax, [esi]
-push    1
-mov     ecx, esi
-call    dword ptr [eax+6Ch]
-mov     byte ptr [esi+54h], 0
-
-loc_6D0D81:                             ; CODE XREF: SidebarClass__DrawTabs+338↑j
-; SidebarClass__DrawTabs+33D↑j ...
-add     ebx, 4
-cmp     ebx, (offset dword_A8ED54+7DE88h)
-jl      short loc_6D0D54
-mov     esi, [esp+4Ch+var_3C]
-
-loc_6D0D90:                             ; CODE XREF: SidebarClass__DrawTabs+2B1↑j
-mov     ecx, dword_A8ED54+80F18h
-xor     eax, eax
-mov     edx, [ecx]
-xor     ecx, ecx
-push    ecx
-push    eax
-push    ebp
-push    ebp
-push    ebp
-push    3E8h
-push    ebp
-push    ebp
-push    ebp
-lea     eax, [esp+70h+var_30]
-push    ebp
-lea     ecx, [esp+74h+var_38]
-mov     [esp+74h+var_38], edx
-mov     edx, dword_A8ED54+80D68h
-push    eax
-push    ecx
-push    ebp
-push    edx
-mov     edx, ds:87F6CCh
-mov     ecx, edi
-call    DrawToSurfaceSHP
-mov     al, [esi+5544h]
-push    1
-test    al, al
-mov     ecx, (offset dword_A8ED54+7DF5Ch)
-jnz     short loc_6D0DE3
-mov     ecx, (offset dword_A8ED54+7DEECh)
-
-loc_6D0DE3:                             ; CODE XREF: SidebarClass__DrawTabs+3BC↑j
-call    ShapeButton__Draw
-mov     byte ptr [esi+5546h], 1
-mov     byte ptr [esi+5545h], 0
-mov     eax, dword_A8ED54+7DFF0h
-cmp     eax, 4
-jnb     short loc_6D0E06
-inc     eax
-mov     dword_A8ED54+7DFF0h, eax
-
-loc_6D0E06:                             ; CODE XREF: SidebarClass__DrawTabs+3DE↑j
-lea     ecx, [eax-2]
-cmp     ecx, ebp
-jl      short loc_6D0E20
-lea     eax, ds:0B0CC04h[ecx*4]
-inc     ecx
-
-loc_6D0E15:                             ; CODE XREF: SidebarClass__DrawTabs+3FE↓j
-mov     edx, [eax-4]
-mov     [eax], edx
-add     eax, 0FFFFFFFCh
-dec     ecx
-jnz     short loc_6D0E15
-
-loc_6D0E20:                             ; CODE XREF: SidebarClass__DrawTabs+3EB↑j
-mov     dword_A8ED54+7DEACh, edi
-jmp     short loc_6D0E2F
-; ---------------------------------------------------------------------------
-
-loc_6D0E28:                             ; CODE XREF: SidebarClass__DrawTabs+1AB↑j
-mov     byte ptr [esi+5546h], 0
-
-loc_6D0E2F:                             ; CODE XREF: SidebarClass__DrawTabs+142↑j
-; SidebarClass__DrawTabs+406↑j
-mov     eax, dword ptr [esp+4Ch+arg_0]
-mov     ecx, [esp+4Ch+var_3C]
-push    eax
-call    SidebarClass__Redraw
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 3Ch
-retn    4
-*/
 } }
 // 0x723EA0
 // moved to ui/gadget.cpp: GadgetClass::Show
@@ -19049,35 +8102,92 @@ retn    4
 // 0x723EC0
 namespace gamemd { int GadgetClass::ProcessMouseOver(int a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall GadgetClass_Show(_BYTE *this)
+int __thiscall GadgetClass::ProcessMouseOver(_DWORD *this, int a2, ControlClass *aP2, int a4)
 {
-  int v1; // eax
+  unsigned int v5; // ebx
+  char v6; // al
+  int v7; // eax
+  int v8; // edx
+  int v9; // edx
+  int v11; // eax
+  int v12; // edx
+  int v13; // edx
+  char v14; // [esp+Bh] [ebp-1h]
 
-  v1 = *(_DWORD *)this;
-  *(this + 45) = 1;
-  return (*(int (**)(void))(v1 + 72))();
+  if ( (unsigned int)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[10228] + 44))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228]) /*0x723ef6*/
+                    - *(this + 3)) >= *(this + 5)
+    || (v14 = 1,
+        (unsigned int)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[10228] + 48))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228])
+                     - *(this + 4)) >= *(this + 6)) )
+  {
+    v14 = 0; /*0x723ef8*/
+  }
+  v5 = a2; /*0x723efd*/
+  if ( !a2 ) /*0x723f03*/
+  {
+    v6 = *((_BYTE *)this + 44); /*0x723f0b*/
+    if ( v14 ) /*0x723f0e*/
+    {
+      if ( !v6 ) /*0x723f12*/
+      {
+        v7 = *this; /*0x723f14*/
+        *((_BYTE *)this + 44) = 1; /*0x723f18*/
+        (*(void (__thiscall **)(_DWORD *))(v7 + 72))(this); /*0x723f1c*/
+      }
+    }
+    else if ( v6 ) /*0x723f23*/
+    {
+      v8 = *this; /*0x723f25*/
+      *((_BYTE *)this + 44) = 0; /*0x723f29*/
+      (*(void (__thiscall **)(_DWORD *))(v8 + 72))(this); /*0x723f2d*/
+    }
+  }
+  (*(void (__thiscall **)(_DWORD *, int))(*this + 120))(this, a2); /*0x723f35*/
+  if ( (a2 & 0x11) != 0 ) /*0x723f3b*/
+  {
+    v9 = *this; /*0x723f3d*/
+    *((_BYTE *)this + 44) = 1; /*0x723f42*/
+    (*(void (__thiscall **)(_DWORD *))(v9 + 72))(this); /*0x723f46*/
+    CellClass::Draw((int)this, a2 & 0xFFFFFFEE, aP2, 0); /*0x723f56*/
+    *(_DWORD *)aP2->__pad_0 = 0; /*0x723f5b*/
+    return 1; /*0x723f6a*/
+  }
+  if ( (a2 & 0x44) != 0 ) /*0x723f70*/
+  {
+    if ( !*((_BYTE *)this + 44) ) /*0x723f77*/
+    {
+      v5 = a2 & 0xFFFFFFBB; /*0x723fbe*/
+      return CellClass::Draw((int)this, v5, aP2, 0); /*0x723fbe*/
+    }
+    if ( v14 ) /*0x723f7f*/
+    {
+      v11 = *(this + 12); /*0x723f81*/
+      if ( v11 == 1 ) /*0x723f87*/
+      {
+        v12 = *this; /*0x723f8c*/
+        *((_BYTE *)this + 45) = *((_BYTE *)this + 45) == 0; /*0x723f95*/
+        *((_BYTE *)this + 44) = 0; /*0x723f98*/
+        (*(void (__thiscall **)(_DWORD *))(v12 + 72))(this); /*0x723f9c*/
+        return CellClass::Draw((int)this, v5, aP2, 0); /*0x723f9f*/
+      }
+      if ( v11 == 2 && !*((_BYTE *)this + 45) ) /*0x723fa6*/
+        *((_BYTE *)this + 45) = 1; /*0x723fad*/
+    }
+    v13 = *this; /*0x723fb1*/
+    *((_BYTE *)this + 44) = 0; /*0x723fb5*/
+    (*(void (__thiscall **)(_DWORD *))(v13 + 72))(this); /*0x723fb9*/
+  }
+  return CellClass::Draw((int)this, v5, aP2, 0); /*0x723f62*/
 }
-
-/* ASM:
-mov     eax, [ecx]
-mov     byte ptr [ecx+2Dh], 1
-jmp     dword ptr [eax+48h]
-*/
 } }
 // 0x724520
 namespace gamemd { int SidebarClass::initializeStrip(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_724520(_DWORD *this, int a2)
 {
-  *(this + 138) = a2;
-  return a2;
+  *(this + 138) = a2; /*0x724524*/
+  return a2; /*0x72452a*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-mov     [ecx+228h], eax
-retn    4
-*/
 } }
 // 0x724530
 namespace gamemd { int SidebarClass::updateStripVisibility() {
@@ -19086,16 +8196,10 @@ int __thiscall sub_724530(_DWORD *this)
 {
   int result; // eax
 
-  result = *(this + 138);
-  *(this + 139) = result;
-  return result;
+  result = *(this + 138); /*0x724530*/
+  *(this + 139) = result; /*0x724536*/
+  return result; /*0x72453c*/
 }
-
-/* ASM:
-mov     eax, [ecx+228h]
-mov     [ecx+22Ch], eax
-retn
-*/
 } }
 // 0x724540
 namespace gamemd { int SidebarClass::updateStripPosition() {
@@ -19104,54 +8208,31 @@ int __thiscall sub_724540(_DWORD *this)
 {
   int result; // eax
 
-  result = *(this + 139);
-  *(this + 138) = result;
-  return result;
+  result = *(this + 139); /*0x724540*/
+  *(this + 138) = result; /*0x724546*/
+  return result; /*0x72454c*/
 }
-
-/* ASM:
-mov     eax, [ecx+22Ch]
-mov     [ecx+228h], eax
-retn
-*/
 } }
 // 0x724AB0
 namespace gamemd { int ToolTipManager::release(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ToolTipManager::_vt02(_DWORD *this, int a2)
 {
-  *(this + 6) = 0;
-  *(this + 7) = 0;
-  *(this + 8) = 0;
-  *(this + 9) = 0;
-  *(this + 1) = 0;
-  return 0;
+  *(this + 6) = 0; /*0x724ab2*/
+  *(this + 7) = 0; /*0x724ab5*/
+  *(this + 8) = 0; /*0x724ab8*/
+  *(this + 9) = 0; /*0x724abb*/
+  *(this + 1) = 0; /*0x724abe*/
+  return 0; /*0x724ac1*/
 }
-
-/* ASM:
-xor     eax, eax
-mov     [ecx+18h], eax
-mov     [ecx+1Ch], eax
-mov     [ecx+20h], eax
-mov     [ecx+24h], eax
-mov     [ecx+4], eax
-retn    4
-*/
 } }
 // 0x724C80
 namespace gamemd { int ToolTipClass::seek(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ToolTipManager_7_::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2);
+  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x724c8a*/
 }
-
-/* ASM:
-mov     eax, [ecx+4]
-mov     ecx, [esp+arg_0]
-mov     eax, [eax+ecx*4]
-retn    4
-*/
 } }
 // 0x724C90
 namespace gamemd { int ToolTipClass::addRef(int a1) {
@@ -19163,250 +8244,87 @@ char __thiscall ToolTipManager_7_::_vt01(int *this, int a2)
   _DWORD *v4; // eax
   int v5; // ecx
 
-  v2 = *(this + 2);
-  if ( v2 == *(_DWORD *)(a2 + 8) )
+  v2 = *(this + 2); /*0x724c92*/
+  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x724c9d*/
   {
-    v3 = 0;
-    if ( v2 <= 0 )
-      return 1;
-    v4 = (_DWORD *)*(this + 1);
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4;
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) )
+    v3 = 0; /*0x724c9f*/
+    if ( v2 <= 0 ) /*0x724ca3*/
+      return 1; /*0x724cc3*/
+    v4 = (_DWORD *)*(this + 1); /*0x724ca5*/
+    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x724cab*/
+    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x724cb4*/
     {
-      ++v3;
-      ++v4;
-      if ( v3 >= v2 )
-        return 1;
+      ++v3; /*0x724cb6*/
+      ++v4; /*0x724cb7*/
+      if ( v3 >= v2 ) /*0x724cbc*/
+        return 1; /*0x724cbc*/
     }
   }
-  return 0;
+  return 0; /*0x724cbe*/
 }
-
-/* ASM:
-push    ebx
-push    esi
-mov     esi, [ecx+8]
-push    edi
-mov     edi, [esp+0Ch+arg_0]
-cmp     esi, [edi+8]
-jnz     short loc_724CC6
-xor     edx, edx
-test    esi, esi
-jle     short loc_724CBE
-mov     eax, [ecx+4]
-mov     ecx, [edi+4]
-sub     ecx, eax
-
-loc_724CAD:                             ; CODE XREF: ToolTipClass__addRef+2C↓j
-mov     edi, [eax]
-mov     ebx, [ecx+eax]
-cmp     edi, ebx
-jnz     short loc_724CC6
-inc     edx
-add     eax, 4
-cmp     edx, esi
-jl      short loc_724CAD
-
-loc_724CBE:                             ; CODE XREF: ToolTipClass__addRef+13↑j
-pop     edi
-pop     esi
-mov     al, 1
-pop     ebx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_724CC6:                             ; CODE XREF: ToolTipClass__addRef+D↑j
-; ToolTipClass__addRef+24↑j
-pop     edi
-pop     esi
-xor     al, al
-pop     ebx
-retn    4
-*/
 } }
 // 0x724CD0
 namespace gamemd { int ToolTipClass::readString(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x724cd0
-char __thiscall ToolTipClass::readString(void *this, int a2, _DWORD *a3)
+char __thiscall ToolTipManager_7_::sub_724CD0(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
   int v6; // ecx
   int i; // eax
 
-  if ( a2 )
+  if ( a2 ) /*0x724cdc*/
   {
-    *((_BYTE *)this + 12) = 0;
-    if ( a3 )
-      v4 = a3;
+    *((_BYTE *)this + 12) = 0; /*0x724ce6*/
+    if ( a3 ) /*0x724cec*/
+      v4 = a3; /*0x724d02*/
     else
-      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
-    *((_BYTE *)this + 12) = 1;
-    if ( v4 )
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x724cfe*/
+    *((_BYTE *)this + 12) = 1; /*0x724d06*/
+    if ( v4 ) /*0x724d0a*/
     {
-      if ( *((_DWORD *)this + 1) )
+      if ( *((_DWORD *)this + 1) ) /*0x724d15*/
       {
-        v6 = *((_DWORD *)this + 2);
-        if ( a2 < v6 )
-          v6 = a2;
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
-          ++i;
-        if ( *((_BYTE *)this + 13) )
+        v6 = *((_DWORD *)this + 2); /*0x724d1c*/
+        if ( a2 < v6 ) /*0x724d21*/
+          v6 = a2; /*0x724d23*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x724d29*/
+          ++i; /*0x724d2e*/
+        if ( *((_BYTE *)this + 13) ) /*0x724d3b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1));
-          *((_DWORD *)this + 1) = 0;
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x724d46*/
+          *((_DWORD *)this + 1) = 0; /*0x724d4e*/
         }
       }
-      *((_DWORD *)this + 1) = v4;
-      *((_DWORD *)this + 2) = a2;
-      *((_BYTE *)this + 13) = a3 == 0;
-      return 1;
+      *((_DWORD *)this + 1) = v4; /*0x724d57*/
+      *((_DWORD *)this + 2) = a2; /*0x724d5f*/
+      *((_BYTE *)this + 13) = a3 == 0; /*0x724d62*/
+      return 1; /*0x724d68*/
     }
     else
     {
-      return 0;
+      return 0; /*0x724d0f*/
     }
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
-    return 1;
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x724d72*/
+    return 1; /*0x724d78*/
   }
 }
-
-/* ASM:
-push    ebx
-push    ebp
-mov     ebp, [esp+8+arg_0]
-push    esi
-test    ebp, ebp
-push    edi
-mov     esi, ecx
-jz      loc_724D6E
-mov     ebx, [esp+10h+arg_4]
-mov     byte ptr [esi+0Ch], 0
-test    ebx, ebx
-jnz     short loc_724D02
-lea     eax, ds:0[ebp*4]
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-mov     edi, eax
-jmp     short loc_724D04
-; ---------------------------------------------------------------------------
-
-loc_724D02:                             ; CODE XREF: ToolTipClass__readString+1C↑j
-mov     edi, ebx
-
-loc_724D04:                             ; CODE XREF: ToolTipClass__readString+30↑j
-test    edi, edi
-mov     byte ptr [esi+0Ch], 1
-jnz     short loc_724D15
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_724D15:                             ; CODE XREF: ToolTipClass__readString+3A↑j
-mov     eax, [esi+4]
-test    eax, eax
-jz      short loc_724D55
-mov     ecx, [esi+8]
-cmp     ebp, ecx
-jge     short loc_724D25
-mov     ecx, ebp
-
-loc_724D25:                             ; CODE XREF: ToolTipClass__readString+51↑j
-xor     eax, eax
-test    ecx, ecx
-jle     short loc_724D3B
-
-loc_724D2B:                             ; CODE XREF: ToolTipClass__readString+69↓j
-mov     edx, [esi+4]
-inc     eax
-cmp     eax, ecx
-mov     edx, [edx+eax*4-4]
-mov     [edi+eax*4-4], edx
-jl      short loc_724D2B
-
-loc_724D3B:                             ; CODE XREF: ToolTipClass__readString+59↑j
-mov     al, [esi+0Dh]
-test    al, al
-jz      short loc_724D55
-mov     eax, [esi+4]
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     dword ptr [esi+4], 0
-
-loc_724D55:                             ; CODE XREF: ToolTipClass__readString+4A↑j
-; ToolTipClass__readString+70↑j
-xor     eax, eax
-mov     [esi+4], edi
-test    ebx, ebx
-setz    al
-mov     [esi+8], ebp
-mov     [esi+0Dh], al
-pop     edi
-pop     esi
-pop     ebp
-mov     al, 1
-pop     ebx
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_724D6E:                             ; CODE XREF: ToolTipClass__readString+C↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+0Ch]
-pop     edi
-pop     esi
-pop     ebp
-mov     al, 1
-pop     ebx
-retn    8
-*/
 } }
 // 0x724D80
 namespace gamemd { void ToolTipClass::writeString() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ToolTipManager_7_::sub_724D80(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) )
+  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x724d8d*/
   {
-    __3_YAXPAX_Z(*(void **)(this + 4));
-    *(_DWORD *)(this + 4) = 0;
+    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x724d93*/
+    *(_DWORD *)(this + 4) = 0; /*0x724d9b*/
   }
-  *(_BYTE *)(this + 13) = 0;
-  *(_DWORD *)(this + 8) = 0;
+  *(_BYTE *)(this + 13) = 0; /*0x724d9e*/
+  *(_DWORD *)(this + 8) = 0; /*0x724da1*/
 }
-
-/* ASM:
-push    ebx
-push    esi
-mov     esi, ecx
-xor     ebx, ebx
-mov     eax, [esi+4]
-cmp     eax, ebx
-jz      short loc_724D9E
-cmp     [esi+0Dh], bl
-jz      short loc_724D9E
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [esi+4], ebx
-
-loc_724D9E:                             ; CODE XREF: ToolTipClass__writeString+B↑j
-; ToolTipClass__writeString+10↑j
-mov     [esi+0Dh], bl
-mov     [esi+8], ebx
-pop     esi
-pop     ebx
-retn
-*/
 } }
 // 0x724DB0
 namespace gamemd { int ToolTipClass::seekString(void* a1) {
@@ -19417,229 +8335,77 @@ int __thiscall ToolTipManager_7_::sub_724DB0(int this, _DWORD *a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) )
-    return 0;
-  v3 = *(_DWORD *)(this + 8);
-  result = 0;
-  if ( v3 <= 0 )
-    return -1;
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i )
+  if ( !*(_BYTE *)(this + 12) ) /*0x724db0*/
+    return 0; /*0x724db8*/
+  v3 = *(_DWORD *)(this + 8); /*0x724dbe*/
+  result = 0; /*0x724dc1*/
+  if ( v3 <= 0 ) /*0x724dc5*/
+    return -1; /*0x724ddc*/
+  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x724dcb*/
   {
-    if ( ++result >= v3 )
-      return -1;
+    if ( ++result >= v3 ) /*0x724dda*/
+      return -1; /*0x724dda*/
   }
-  return result;
+  return result; /*0x724dba*/
 }
-
-/* ASM:
-mov     al, [ecx+0Ch]
-push    esi
-test    al, al
-jnz     short loc_724DBE
-xor     eax, eax
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_724DBE:                             ; CODE XREF: ToolTipClass__seekString+6↑j
-mov     edx, [ecx+8]
-xor     eax, eax
-test    edx, edx
-jle     short loc_724DDC
-mov     esi, [esp+4+arg_0]
-mov     ecx, [ecx+4]
-mov     esi, [esi]
-
-loc_724DD0:                             ; CODE XREF: ToolTipClass__seekString+2A↓j
-cmp     [ecx], esi
-jz      short loc_724DDF
-inc     eax
-add     ecx, 4
-cmp     eax, edx
-jl      short loc_724DD0
-
-loc_724DDC:                             ; CODE XREF: ToolTipClass__seekString+15↑j
-or      eax, 0FFFFFFFFh
-
-loc_724DDF:                             ; CODE XREF: ToolTipClass__seekString+22↑j
-pop     esi
-retn    4
-*/
 } }
 // 0x724DF0
 namespace gamemd { int ToolTipClass::setString(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 unsigned int __thiscall ToolTipManager_7_::sub_724DF0(int this, int a2)
 {
-  if ( *(_BYTE *)(this + 12) )
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2;
+  if ( *(_BYTE *)(this + 12) ) /*0x724df0*/
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x724e05*/
   else
-    return 0;
+    return 0; /*0x724df7*/
 }
-
-/* ASM:
-mov     al, [ecx+0Ch]
-test    al, al
-jnz     short loc_724DFC
-xor     eax, eax
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_724DFC:                             ; CODE XREF: ToolTipClass__setString+5↑j
-mov     eax, [esp+arg_0]
-mov     edx, [ecx+4]
-sub     eax, edx
-shr     eax, 2
-retn    4
-*/
 } }
 // 0x724E10
 namespace gamemd { int ToolTipClass::release(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x724e10
-char __thiscall ToolTipClass::release(void *this, int a2, _DWORD *a3)
+char __thiscall ToolTipManager_7_::_vt02(void *this, int a2, _DWORD *a3)
 {
   _DWORD *v4; // edi
   int v5; // ecx
   int i; // eax
   int v7; // eax
 
-  if ( a2 )
+  if ( a2 ) /*0x724e1c*/
   {
-    *((_BYTE *)this + 12) = 0;
-    if ( a3 )
-      v4 = a3;
+    *((_BYTE *)this + 12) = 0; /*0x724e22*/
+    if ( a3 ) /*0x724e28*/
+      v4 = a3; /*0x724e3e*/
     else
-      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
-    *((_BYTE *)this + 12) = 1;
-    if ( !v4 )
-      return 0;
-    if ( *((_DWORD *)this + 1) )
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x724e3a*/
+    *((_BYTE *)this + 12) = 1; /*0x724e42*/
+    if ( !v4 ) /*0x724e46*/
+      return 0; /*0x724eba*/
+    if ( *((_DWORD *)this + 1) ) /*0x724e48*/
     {
-      v5 = *((_DWORD *)this + 2);
-      if ( a2 < v5 )
-        v5 = a2;
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
-        ++i;
-      if ( *((_BYTE *)this + 13) )
+      v5 = *((_DWORD *)this + 2); /*0x724e4f*/
+      if ( a2 < v5 ) /*0x724e54*/
+        v5 = a2; /*0x724e56*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x724e5c*/
+        ++i; /*0x724e61*/
+      if ( *((_BYTE *)this + 13) ) /*0x724e6e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1));
-        *((_DWORD *)this + 1) = 0;
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x724e79*/
+        *((_DWORD *)this + 1) = 0; /*0x724e81*/
       }
     }
-    *((_DWORD *)this + 1) = v4;
-    *((_DWORD *)this + 2) = a2;
-    *((_BYTE *)this + 13) = a3 == 0;
+    *((_DWORD *)this + 1) = v4; /*0x724e8a*/
+    *((_DWORD *)this + 2) = a2; /*0x724e92*/
+    *((_BYTE *)this + 13) = a3 == 0; /*0x724e95*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x724e9e*/
   }
-  v7 = *((_DWORD *)this + 2);
-  if ( v7 < *((_DWORD *)this + 4) )
-    *((_DWORD *)this + 4) = v7;
-  return 1;
+  v7 = *((_DWORD *)this + 2); /*0x724ea1*/
+  if ( v7 < *((_DWORD *)this + 4) ) /*0x724ea9*/
+    *((_DWORD *)this + 4) = v7; /*0x724eab*/
+  return 1; /*0x724eae*/
 }
-
-/* ASM:
-push    ebx
-push    ebp
-mov     ebp, [esp+8+arg_0]
-push    esi
-test    ebp, ebp
-push    edi
-mov     esi, ecx
-jz      short loc_724E9A
-mov     ebx, [esp+10h+arg_4]
-mov     byte ptr [esi+0Ch], 0
-test    ebx, ebx
-jnz     short loc_724E3E
-lea     eax, ds:0[ebp*4]
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-mov     edi, eax
-jmp     short loc_724E40
-; ---------------------------------------------------------------------------
-
-loc_724E3E:                             ; CODE XREF: ToolTipClass__release+18↑j
-mov     edi, ebx
-
-loc_724E40:                             ; CODE XREF: ToolTipClass__release+2C↑j
-test    edi, edi
-mov     byte ptr [esi+0Ch], 1
-jz      short loc_724EB7
-mov     eax, [esi+4]
-test    eax, eax
-jz      short loc_724E88
-mov     ecx, [esi+8]
-cmp     ebp, ecx
-jge     short loc_724E58
-mov     ecx, ebp
-
-loc_724E58:                             ; CODE XREF: ToolTipClass__release+44↑j
-xor     eax, eax
-test    ecx, ecx
-jle     short loc_724E6E
-
-loc_724E5E:                             ; CODE XREF: ToolTipClass__release+5C↓j
-mov     edx, [esi+4]
-inc     eax
-cmp     eax, ecx
-mov     edx, [edx+eax*4-4]
-mov     [edi+eax*4-4], edx
-jl      short loc_724E5E
-
-loc_724E6E:                             ; CODE XREF: ToolTipClass__release+4C↑j
-mov     al, [esi+0Dh]
-test    al, al
-jz      short loc_724E88
-mov     eax, [esi+4]
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     dword ptr [esi+4], 0
-
-loc_724E88:                             ; CODE XREF: ToolTipClass__release+3D↑j
-; ToolTipClass__release+63↑j
-xor     eax, eax
-mov     [esi+4], edi
-test    ebx, ebx
-setz    al
-mov     [esi+8], ebp
-mov     [esi+0Dh], al
-jmp     short loc_724EA1
-; ---------------------------------------------------------------------------
-
-loc_724E9A:                             ; CODE XREF: ToolTipClass__release+C↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+0Ch]
-
-loc_724EA1:                             ; CODE XREF: ToolTipClass__release+88↑j
-mov     eax, [esi+8]
-mov     ecx, [esi+10h]
-cmp     eax, ecx
-jge     short loc_724EAE
-mov     [esi+10h], eax
-
-loc_724EAE:                             ; CODE XREF: ToolTipClass__release+99↑j
-pop     edi
-pop     esi
-pop     ebp
-mov     al, 1
-pop     ebx
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_724EB7:                             ; CODE XREF: ToolTipClass__release+36↑j
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    8
-*/
 } }
 // 0x724EC0
 namespace gamemd { int ToolTipClass::read(void* a1) {
@@ -19650,303 +8416,122 @@ int __thiscall ToolTipManager_7_::_vt04(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = *(this + 4);
-  result = 0;
-  if ( v2 <= 0 )
-    return -1;
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i )
+  v2 = *(this + 4); /*0x724ec0*/
+  result = 0; /*0x724ec3*/
+  if ( v2 <= 0 ) /*0x724ec8*/
+    return -1; /*0x724edf*/
+  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x724ece*/
   {
-    if ( ++result >= v2 )
-      return -1;
+    if ( ++result >= v2 ) /*0x724edd*/
+      return -1; /*0x724edd*/
   }
-  return result;
+  return result; /*0x724ee2*/
 }
-
-/* ASM:
-mov     edx, [ecx+10h]
-xor     eax, eax
-push    esi
-test    edx, edx
-jle     short loc_724EDF
-mov     esi, [esp+4+arg_0]
-mov     ecx, [ecx+4]
-mov     esi, [esi]
-
-loc_724ED3:                             ; CODE XREF: ToolTipClass__read+1D↓j
-cmp     [ecx], esi
-jz      short loc_724EE2
-inc     eax
-add     ecx, 4
-cmp     eax, edx
-jl      short loc_724ED3
-
-loc_724EDF:                             ; CODE XREF: ToolTipClass__read+8↑j
-or      eax, 0FFFFFFFFh
-
-loc_724EE2:                             ; CODE XREF: ToolTipClass__read+15↑j
-pop     esi
-retn    4
-*/
 } }
 // 0x724EF0
 namespace gamemd { void* ToolTipClass::compareString(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ToolTipManager_7_::sub_724EF0(_DWORD *Block, char a2)
+VectorClass *__thiscall ToolTipClass::compareString(_DWORD *Block, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1);
-  *Block = &VectorClass<ToolTip const *>::`vftable';
-  if ( v3 && *((_BYTE *)Block + 13) )
+  v3 = (void *)*(Block + 1); /*0x724ef3*/
+  *Block = &vt_VectorClass_ToolTip_const; /*0x724ef6*/
+  if ( v3 && *((_BYTE *)Block + 13) ) /*0x724f00*/
   {
-    __3_YAXPAX_Z(v3);
-    *(Block + 1) = 0;
+    __3_YAXPAX_Z(v3); /*0x724f08*/
+    *(Block + 1) = 0; /*0x724f10*/
   }
-  *((_BYTE *)Block + 13) = 0;
-  *(Block + 2) = 0;
-  if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(Block);
-  return Block;
+  *((_BYTE *)Block + 13) = 0; /*0x724f1b*/
+  *(Block + 2) = 0; /*0x724f21*/
+  if ( (a2 & 1) != 0 ) /*0x724f28*/
+    __3_YAXPAX_Z(Block); /*0x724f2b*/
+  return (VectorClass *)Block; /*0x724f35*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     eax, [esi+4]
-mov     dword ptr [esi], offset ??_7?$VectorClass@PBVToolTip@@@@6B@ ; const VectorClass<ToolTip const *>::`vftable'
-test    eax, eax
-jz      short loc_724F17
-mov     cl, [esi+0Dh]
-test    cl, cl
-jz      short loc_724F17
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     dword ptr [esi+4], 0
-
-loc_724F17:                             ; CODE XREF: ToolTipClass__compareString+E↑j
-; ToolTipClass__compareString+15↑j
-mov     al, [esp+4+arg_0]
-mov     byte ptr [esi+0Dh], 0
-test    al, 1
-mov     dword ptr [esi+8], 0
-jz      short loc_724F33
-push    esi             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_724F33:                             ; CODE XREF: ToolTipClass__compareString+38↑j
-mov     eax, esi
-pop     esi
-retn    4
-*/
 } }
 // 0x724FA0
 namespace gamemd { bool CommandClass::executeAction(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_724FA0(_DWORD *this, _DWORD *a2)
+bool __thiscall CommandClass::executeAction(_DWORD *this, ObjectClass *aP1)
 {
   _DWORD *v2; // eax
 
-  v2 = (_DWORD *)*(this + 4);
-  return v2 && *v2 == *a2;
+  v2 = (_DWORD *)*(this + 4); /*0x724fa0*/
+  return v2 && *v2 == *(_DWORD *)aP1->__pad_0; /*0x724fb3*/
 }
-
-/* ASM:
-mov     eax, [ecx+10h]
-test    eax, eax
-jz      short loc_724FB6
-mov     ecx, [esp+arg_0]
-mov     eax, [eax]
-cmp     eax, [ecx]
-jnz     short loc_724FB6
-mov     al, 1
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_724FB6:                             ; CODE XREF: CommandClass__executeAction+5↑j
-; CommandClass__executeAction+F↑j
-xor     al, al
-retn    4
-*/
 } }
 // 0x724FC0
 namespace gamemd { int CommandClass::BinarySearchAction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x724fc0
-char *__thiscall CommandClass::BinarySearchAction(char **this, unsigned int *a2)
+size_t __thiscall CommandClass::BinarySearchAction(char **this, ObjectClass *aP1)
 {
-  char *result; // eax
-  char *v4; // edi
-  unsigned int v5; // ebx
+  size_t result; // eax
+  ObjectClass *v4; // edi
+  ObjectClass *v5; // ebx
   int v6; // ecx
-  unsigned int v7; // esi
+  ObjectClass *v7; // esi
 
-  result = *(this + 1);
-  if ( result )
+  result = (size_t)*(this + 1); /*0x724fc3*/
+  if ( result ) /*0x724fc8*/
   {
-    if ( !*((_BYTE *)this + 12) )
+    if ( !*((_BYTE *)this + 12) ) /*0x724fce*/
     {
-      qsort(*this, result, 8, CompareFunc2Int);
-      *(this + 4) = 0;
-      *((_BYTE *)this + 12) = 1;
+      qsort(*this, result, 8u, CompareFunc2Int); /*0x724fe0*/
+      *(this + 4) = 0; /*0x724fe8*/
+      *((_BYTE *)this + 12) = 1; /*0x724fef*/
     }
-    v4 = *this;
-    v5 = *a2;
-    v6 = (int)*(this + 1);
-    if ( v6 <= 0 )
-      return 0;
-    while ( 1 )
+    v4 = (ObjectClass *)*this; /*0x724ff9*/
+    v5 = *(ObjectClass **)aP1->__pad_0; /*0x724ffb*/
+    v6 = (int)*(this + 1); /*0x724ffd*/
+    if ( v6 <= 0 ) /*0x725002*/
+      return 0; /*0x72502e*/
+    while ( 1 ) /*0x72500b*/
     {
-      v7 = *(_DWORD *)&v4[8 * (v6 / 2)];
-      if ( v7 <= v5 )
+      v7 = *(ObjectClass **)&v4->__pad_0[8 * (v6 / 2)]; /*0x72500b*/
+      if ( v7 <= v5 ) /*0x725013*/
       {
-        if ( v7 == v5 )
-          return &v4[8 * (v6 / 2)];
-        v4 += 8 * (v6 / 2) + 8;
-        v6 += -1 - v6 / 2;
+        if ( v7 == v5 ) /*0x725019*/
+          return (size_t)v4 + 8 * (v6 / 2); /*0x725033*/
+        v4 = (ObjectClass *)((char *)v4 + 8 * (v6 / 2) + 8); /*0x72501b*/
+        v6 += -1 - v6 / 2; /*0x725023*/
       }
       else
       {
-        v6 /= 2;
+        v6 /= 2; /*0x725015*/
       }
-      if ( v6 <= 0 )
-        return 0;
+      if ( v6 <= 0 ) /*0x725027*/
+        return 0; /*0x725027*/
     }
   }
-  return result;
+  return result; /*0x724fca*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     eax, [esi+4]
-test    eax, eax
-jnz     short loc_724FCE
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_724FCE:                             ; CODE XREF: CommandClass__BinarySearchAction+8↑j
-mov     cl, [esi+0Ch]
-test    cl, cl
-jnz     short loc_724FF3
-push    offset CompareFunc2Int ; CompareFunction
-push    8               ; SizeOfElements
-push    eax             ; NumOfElements
-mov     eax, [esi]
-push    eax             ; Base
-call    _qsort
-add     esp, 10h
-mov     dword ptr [esi+10h], 0
-mov     byte ptr [esi+0Ch], 1
-
-loc_724FF3:                             ; CODE XREF: CommandClass__BinarySearchAction+13↑j
-mov     ecx, [esp+4+arg_0]
-push    ebx
-push    edi
-mov     edi, [esi]
-mov     ebx, [ecx]
-mov     ecx, [esi+4]
-test    ecx, ecx
-jle     short loc_725029
-
-loc_725004:                             ; CODE XREF: CommandClass__BinarySearchAction+67↓j
-mov     eax, ecx
-cdq
-sub     eax, edx
-sar     eax, 1
-mov     esi, [edi+eax*8]
-lea     edx, [edi+eax*8]
-cmp     esi, ebx
-jbe     short loc_725019
-mov     ecx, eax
-jmp     short loc_725025
-; ---------------------------------------------------------------------------
-
-loc_725019:                             ; CODE XREF: CommandClass__BinarySearchAction+53↑j
-jz      short loc_725031
-lea     edi, [edx+8]
-or      edx, 0FFFFFFFFh
-sub     edx, eax
-add     ecx, edx
-
-loc_725025:                             ; CODE XREF: CommandClass__BinarySearchAction+57↑j
-test    ecx, ecx
-jg      short loc_725004
-
-loc_725029:                             ; CODE XREF: CommandClass__BinarySearchAction+42↑j
-pop     edi
-pop     ebx
-xor     eax, eax
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_725031:                             ; CODE XREF: CommandClass__BinarySearchAction:loc_725019↑j
-pop     edi
-pop     ebx
-mov     eax, edx
-pop     esi
-retn    4
-*/
 } }
 // 0x72A440
 namespace gamemd { int MessageListClass::clearMessages(int a1, int a2, int a3, int a4, int a5) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_72A440(int this, int a2, int a3, int a4, int a5, int a6)
+int __thiscall MessageListClass::clearMessages(
+        TextLabelClass *this,
+        int a2,
+        int aP1,
+        TextLabelClass *aP3,
+        int a5,
+        TextLabelClass *aP5)
 {
-  GadgetClass::Construct((_DWORD *)this, a3, a4, 1, 1, 0, 0);
-  *(_DWORD *)(this + 48) = a2;
-  *(_DWORD *)(this + 36) = 0;
-  *(_DWORD *)(this + 40) = 0;
-  *(_DWORD *)(this + 44) = a6;
-  *(_DWORD *)(this + 52) = a5;
-  *(_DWORD *)(this + 56) = -1;
-  *(_DWORD *)(this + 60) = 0;
-  *(_BYTE *)(this + 64) = 0;
-  *(_BYTE *)(this + 65) = 0;
-  *(_DWORD *)(this + 68) = 0;
-  *(_DWORD *)(this + 72) = 0;
-  *(_DWORD *)this = &TextLabelClass::`vftable';
-  return this;
+  GadgetClass::Construct(this, (GadgetClass *)aP1, (GadgetClass *)aP3, (GadgetClass *)1, (ControlClass *)1, 0, 0); /*0x72a458*/
+  *(_DWORD *)&this->__pad_2C[4] = a2; /*0x72a469*/
+  this->field_24 = 0; /*0x72a46c*/
+  this->field_28 = 0; /*0x72a46f*/
+  *(_DWORD *)this->__pad_2C = aP5; /*0x72a472*/
+  *(_DWORD *)&this->__pad_2C[8] = a5; /*0x72a475*/
+  *(_DWORD *)&this->__pad_2C[12] = -1; /*0x72a478*/
+  this->field_3C = 0; /*0x72a47f*/
+  this->__pad_40[0] = 0; /*0x72a482*/
+  this->__pad_40[1] = 0; /*0x72a485*/
+  this->field_44 = 0; /*0x72a488*/
+  this->field_48 = 0; /*0x72a48b*/
+  *(_DWORD *)this->__pad_0 = &TextLabelClass::`vftable'; /*0x72a48e*/
+  return (int)this->__pad_0; /*0x72a496*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_8]
-push    ebx
-xor     ebx, ebx
-push    esi
-push    ebx
-mov     esi, ecx
-mov     ecx, [esp+0Ch+arg_4]
-push    ebx
-push    1
-push    1
-push    eax
-push    ecx
-mov     ecx, esi
-call    GadgetClass__Construct
-mov     eax, [esp+8+arg_0]
-mov     edx, [esp+8+arg_10]
-mov     ecx, [esp+8+arg_C]
-mov     [esi+30h], eax
-mov     [esi+24h], ebx
-mov     [esi+28h], ebx
-mov     [esi+2Ch], edx
-mov     [esi+34h], ecx
-mov     dword ptr [esi+38h], 0FFFFFFFFh
-mov     [esi+3Ch], ebx
-mov     [esi+40h], bl
-mov     [esi+41h], bl
-mov     [esi+44h], ebx
-mov     [esi+48h], ebx
-mov     dword ptr [esi], offset ??_7TextLabelClass@@6B@ ; const TextLabelClass::`vftable'
-mov     eax, esi
-pop     esi
-pop     ebx
-retn    14h
-*/
 } }
 // 0x72AD90
 namespace gamemd { void* SidebarClass::calcSidebarRect() {
@@ -19958,110 +8543,46 @@ int *__thiscall sub_72AD90(int *this)
   int v3; // edx
   int v4; // esi
 
-  result = this;
-  v2 = 0;
-  if ( !MEMORY[0xA8EB7C] && !MEMORY[0xA8ED6B] )
-    v2 = 168;
-  v3 = MEMORY[0xA8EB84] - 168;
-  v4 = MEMORY[0xA8EB88] - 32;
-  *result = v2;
-  result[1] = 0;
-  result[2] = v3;
-  result[3] = v4;
-  return result;
+  result = this; /*0x72ada4*/
+  v2 = 0; /*0x72ada7*/
+  if ( !MEMORY[0xA8EB7C] && !MEMORY[0xA8ED6B] ) /*0x72adb7*/
+    v2 = 168; /*0x72adb9*/
+  v3 = MEMORY[0xA8EB84] - 168; /*0x72adc0*/
+  v4 = MEMORY[0xA8EB88] - 32; /*0x72adc6*/
+  *result = v2; /*0x72adc9*/
+  result[1] = 0; /*0x72adcb*/
+  result[2] = v3; /*0x72adcf*/
+  result[3] = v4; /*0x72add2*/
+  return result; /*0x72adce*/
 }
-
-/* ASM:
-mov     edx, ds:0A8EB84h
-push    ebx
-mov     bl, ds:0A8EB7Ch
-push    esi
-mov     esi, ds:0A8EB88h
-mov     eax, ecx
-push    edi
-xor     ecx, ecx
-xor     edi, edi
-test    bl, bl
-jnz     short loc_72ADBE
-mov     bl, byte ptr dword_A8ED54+17h
-test    bl, bl
-jnz     short loc_72ADBE
-mov     ecx, 0A8h
-
-loc_72ADBE:                             ; CODE XREF: SidebarClass__calcSidebarRect+1D↑j
-; SidebarClass__calcSidebarRect+27↑j
-mov     ebx, eax
-sub     edx, 0A8h
-sub     esi, 20h ; ' '
-mov     [ebx], ecx
-mov     [ebx+4], edi
-pop     edi
-mov     [ebx+8], edx
-mov     [ebx+0Ch], esi
-pop     esi
-pop     ebx
-retn
-*/
 } }
 // 0x72D300
 namespace gamemd { int CampaignScore::LoadCampaignScoreAssetsGame() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x72d300
 char __thiscall CampaignScore::LoadCampaignScoreAssetsGame(void *this)
 {
   char result; // al
   char *v3; // ecx
 
-  result = MEMORY[0xB0FBAC];
-  if ( !MEMORY[0xB0FBAC] )
+  result = MEMORY[0xB0FBAC]; /*0x72d300*/
+  if ( !MEMORY[0xB0FBAC] ) /*0x72d30a*/
   {
-    CampaignScore::LoadScreenAssets(this);
-    if ( this )
+    CampaignScore::LoadScreenAssets(this); /*0x72d30c*/
+    if ( this ) /*0x72d313*/
     {
-      v3 = off_844BCC[0];
-      if ( this != (void *)1 )
-        v3 = off_844BD0;
+      v3 = MEMORY[0x844BCC][0]; /*0x72d31d*/
+      if ( this != (void *)1 ) /*0x72d326*/
+        v3 = MEMORY[0x844BD0]; /*0x72d328*/
     }
     else
     {
-      v3 = off_844BC8[0];
+      v3 = MEMORY[0x844BC8][0]; /*0x72d315*/
     }
-    result = LoadPaletteSimple(v3, &MEMORY[0xB0FBA4], &MEMORY[0xB0FBA8]);
-    MEMORY[0xB0FBAC] = 1;
+    result = LoadPaletteSimple(v3, &MEMORY[0xB0FBA4], &MEMORY[0xB0FBA8]); /*0x72d338*/
+    MEMORY[0xB0FBAC] = 1; /*0x72d33d*/
   }
-  return result;
+  return result; /*0x72d344*/
 }
-
-/* ASM:
-mov     al, byte ptr dword_A8ED54+80E58h
-push    esi
-test    al, al
-mov     esi, ecx
-jnz     short loc_72D344
-call    CampaignScore__LoadScreenAssets
-test    esi, esi
-jnz     short loc_72D31D
-mov     ecx, off_844BC8 ; "ASCORE.PAL"
-jmp     short loc_72D32E
-; ---------------------------------------------------------------------------
-
-loc_72D31D:                             ; CODE XREF: CampaignScore__LoadCampaignScoreAssetsGame+13↑j
-mov     ecx, off_844BCC ; "SSCORE.PAL"
-cmp     esi, 1
-jz      short loc_72D32E
-mov     ecx, off_844BD0 ; Source
-
-loc_72D32E:                             ; CODE XREF: CampaignScore__LoadCampaignScoreAssetsGame+1B↑j
-; CampaignScore__LoadCampaignScoreAssetsGame+26↑j
-push    (offset dword_A8ED54+80E54h) ; int
-mov     edx, (offset dword_A8ED54+80E50h)
-call    LoadPaletteSimple
-mov     byte ptr dword_A8ED54+80E58h, 1
-
-loc_72D344:                             ; CODE XREF: CampaignScore__LoadCampaignScoreAssetsGame+A↑j
-pop     esi
-retn
-*/
 } }
 // 0x72D460
 namespace gamemd { void* CampaignScore::LoadScreenAssets() {
@@ -20070,164 +8591,59 @@ void *__thiscall sub_72D460(void *this)
 {
   void *result; // eax
 
-  if ( this )
+  if ( this ) /*0x72d462*/
   {
-    if ( this == (void *)1 )
+    if ( this == (void *)1 ) /*0x72d4f7*/
     {
-      if ( MEMORY[0x8A00A4] == 640 )
+      if ( MEMORY[0x8A00A4] == 640 ) /*0x72d507*/
       {
-        MEMORY[0xB0FB34] = LoadFileSHP(off_844C70, (bool *)&MEMORY[0xB0FC70]);
-        MEMORY[0xB0FB00] = LoadFileSHP(off_844C78, (bool *)&MEMORY[0xB0FC71]);
-        result = LoadFileSHP(off_844C80, (bool *)&MEMORY[0xB0FC72]);
+        MEMORY[0xB0FB34] = LoadFileSHP(MEMORY[0x844C70], (bool *)&MEMORY[0xB0FC70]); /*0x72d51f*/
+        MEMORY[0xB0FB00] = LoadFileSHP(MEMORY[0x844C78], (bool *)&MEMORY[0xB0FC71]); /*0x72d534*/
+        result = LoadFileSHP(MEMORY[0x844C80], (bool *)&MEMORY[0xB0FC72]); /*0x72d539*/
       }
       else
       {
-        MEMORY[0xB0FB34] = LoadFileSHP(off_844C74, (bool *)&MEMORY[0xB0FC70]);
-        MEMORY[0xB0FB00] = LoadFileSHP(off_844C7C, (bool *)&MEMORY[0xB0FC71]);
-        result = LoadFileSHP(off_844C84, (bool *)&MEMORY[0xB0FC72]);
+        MEMORY[0xB0FB34] = LoadFileSHP(MEMORY[0x844C74], (bool *)&MEMORY[0xB0FC70]); /*0x72d55a*/
+        MEMORY[0xB0FB00] = LoadFileSHP(MEMORY[0x844C7C], (bool *)&MEMORY[0xB0FC71]); /*0x72d56f*/
+        result = LoadFileSHP(MEMORY[0x844C84], (bool *)&MEMORY[0xB0FC72]); /*0x72d574*/
       }
-      MEMORY[0xB0FB30] = result;
+      MEMORY[0xB0FB30] = result; /*0x72d53e*/
     }
     else
     {
-      if ( MEMORY[0x8A00A4] == 640 )
+      if ( MEMORY[0x8A00A4] == 640 ) /*0x72d589*/
       {
-        MEMORY[0xB0FB34] = LoadFileSHP(off_844C88, (bool *)&MEMORY[0xB0FC70]);
-        MEMORY[0xB0FB00] = LoadFileSHP(off_844C90, (bool *)&MEMORY[0xB0FC71]);
-        result = LoadFileSHP(off_844C98, (bool *)&MEMORY[0xB0FC72]);
+        MEMORY[0xB0FB34] = LoadFileSHP(MEMORY[0x844C88], (bool *)&MEMORY[0xB0FC70]); /*0x72d5a1*/
+        MEMORY[0xB0FB00] = LoadFileSHP(MEMORY[0x844C90], (bool *)&MEMORY[0xB0FC71]); /*0x72d5b6*/
+        result = LoadFileSHP(MEMORY[0x844C98], (bool *)&MEMORY[0xB0FC72]); /*0x72d5bb*/
       }
       else
       {
-        MEMORY[0xB0FB34] = LoadFileSHP(off_844C8C, (bool *)&MEMORY[0xB0FC70]);
-        MEMORY[0xB0FB00] = LoadFileSHP(off_844C94, (bool *)&MEMORY[0xB0FC71]);
-        result = LoadFileSHP(off_844C9C, (bool *)&MEMORY[0xB0FC72]);
+        MEMORY[0xB0FB34] = LoadFileSHP(MEMORY[0x844C8C], (bool *)&MEMORY[0xB0FC70]); /*0x72d5dc*/
+        MEMORY[0xB0FB00] = LoadFileSHP(MEMORY[0x844C94], (bool *)&MEMORY[0xB0FC71]); /*0x72d5f1*/
+        result = LoadFileSHP(MEMORY[0x844C9C], (bool *)&MEMORY[0xB0FC72]); /*0x72d5f6*/
       }
-      MEMORY[0xB0FB30] = result;
+      MEMORY[0xB0FB30] = result; /*0x72d5c0*/
     }
   }
   else
   {
-    if ( MEMORY[0x8A00A4] == 640 )
+    if ( MEMORY[0x8A00A4] == 640 ) /*0x72d477*/
     {
-      MEMORY[0xB0FB34] = LoadFileSHP(off_844C58, (bool *)&MEMORY[0xB0FC70]);
-      MEMORY[0xB0FB00] = LoadFileSHP(off_844C60, (bool *)&MEMORY[0xB0FC71]);
-      result = LoadFileSHP(off_844C68, (bool *)&MEMORY[0xB0FC72]);
+      MEMORY[0xB0FB34] = LoadFileSHP(MEMORY[0x844C58], (bool *)&MEMORY[0xB0FC70]); /*0x72d48f*/
+      MEMORY[0xB0FB00] = LoadFileSHP(MEMORY[0x844C60], (bool *)&MEMORY[0xB0FC71]); /*0x72d4a4*/
+      result = LoadFileSHP(MEMORY[0x844C68], (bool *)&MEMORY[0xB0FC72]); /*0x72d4a9*/
     }
     else
     {
-      MEMORY[0xB0FB34] = LoadFileSHP(off_844C5C, (bool *)&MEMORY[0xB0FC70]);
-      MEMORY[0xB0FB00] = LoadFileSHP(off_844C64, (bool *)&MEMORY[0xB0FC71]);
-      result = LoadFileSHP(off_844C6C, (bool *)&MEMORY[0xB0FC72]);
+      MEMORY[0xB0FB34] = LoadFileSHP(MEMORY[0x844C5C], (bool *)&MEMORY[0xB0FC70]); /*0x72d4ca*/
+      MEMORY[0xB0FB00] = LoadFileSHP(MEMORY[0x844C64], (bool *)&MEMORY[0xB0FC71]); /*0x72d4df*/
+      result = LoadFileSHP(MEMORY[0x844C6C], (bool *)&MEMORY[0xB0FC72]); /*0x72d4e4*/
     }
-    MEMORY[0xB0FB30] = result;
+    MEMORY[0xB0FB30] = result; /*0x72d4ae*/
   }
-  return result;
+  return result; /*0x72d4b3*/
 }
-
-/* ASM:
-test    ecx, ecx
-jnz     loc_72D4EF
-mov     eax, ds:8A00A4h
-mov     edx, (offset dword_A8ED54+80F1Ch)
-cmp     eax, 280h
-jnz     short loc_72D4B4
-mov     ecx, off_844C58 ; Source
-call    LoadFileSHP
-mov     ecx, off_844C60 ; Source
-mov     edx, (offset dword_A8ED54+80F1Dh)
-mov     dword_A8ED54+80DE0h, eax
-call    LoadFileSHP
-mov     ecx, off_844C68 ; Source
-mov     edx, (offset dword_A8ED54+80F1Eh)
-mov     dword_A8ED54+80DACh, eax
-call    LoadFileSHP
-mov     dword_A8ED54+80DDCh, eax
-retn
-; ---------------------------------------------------------------------------
-
-loc_72D4B4:                             ; CODE XREF: CampaignScore__LoadScreenAssets+17↑j
-mov     ecx, off_844C5C ; Source
-call    LoadFileSHP
-mov     ecx, off_844C64 ; Source
-mov     edx, (offset dword_A8ED54+80F1Dh)
-mov     dword_A8ED54+80DE0h, eax
-call    LoadFileSHP
-mov     ecx, off_844C6C ; Source
-mov     edx, (offset dword_A8ED54+80F1Eh)
-mov     dword_A8ED54+80DACh, eax
-call    LoadFileSHP
-mov     dword_A8ED54+80DDCh, eax
-retn
-; ---------------------------------------------------------------------------
-
-loc_72D4EF:                             ; CODE XREF: CampaignScore__LoadScreenAssets+2↑j
-mov     eax, ds:8A00A4h
-cmp     ecx, 1
-jnz     loc_72D57F
-cmp     eax, 280h
-mov     edx, (offset dword_A8ED54+80F1Ch)
-jnz     short loc_72D544
-mov     ecx, off_844C70 ; Source
-call    LoadFileSHP
-mov     ecx, off_844C78 ; Source
-mov     edx, (offset dword_A8ED54+80F1Dh)
-mov     dword_A8ED54+80DE0h, eax
-call    LoadFileSHP
-mov     ecx, off_844C80 ; Source
-mov     edx, (offset dword_A8ED54+80F1Eh)
-mov     dword_A8ED54+80DACh, eax
-call    LoadFileSHP
-mov     dword_A8ED54+80DDCh, eax
-retn
-; ---------------------------------------------------------------------------
-
-loc_72D544:                             ; CODE XREF: CampaignScore__LoadScreenAssets+A7↑j
-mov     ecx, off_844C74 ; Source
-call    LoadFileSHP
-mov     ecx, off_844C7C ; Source
-mov     edx, (offset dword_A8ED54+80F1Dh)
-mov     dword_A8ED54+80DE0h, eax
-call    LoadFileSHP
-mov     ecx, off_844C84 ; Source
-mov     edx, (offset dword_A8ED54+80F1Eh)
-mov     dword_A8ED54+80DACh, eax
-call    LoadFileSHP
-mov     dword_A8ED54+80DDCh, eax
-retn
-; ---------------------------------------------------------------------------
-
-loc_72D57F:                             ; CODE XREF: CampaignScore__LoadScreenAssets+97↑j
-cmp     eax, 280h
-mov     edx, (offset dword_A8ED54+80F1Ch)
-jnz     short loc_72D5C6
-mov     ecx, off_844C88 ; Source
-call    LoadFileSHP
-mov     ecx, off_844C90 ; Source
-mov     edx, (offset dword_A8ED54+80F1Dh)
-mov     dword_A8ED54+80DE0h, eax
-call    LoadFileSHP
-mov     ecx, off_844C98 ; Source
-mov     edx, (offset dword_A8ED54+80F1Eh)
-mov     dword_A8ED54+80DACh, eax
-call    LoadFileSHP
-mov     dword_A8ED54+80DDCh, eax
-retn
-; ---------------------------------------------------------------------------
-
-loc_72D5C6:                             ; CODE XREF: CampaignScore__LoadScreenAssets+129↑j
-mov     ecx, off_844C8C ; Source
-call    LoadFileSHP
-mov     ecx, off_844C94 ; Source
-mov     edx, (offset dword_A8ED54+80F1Dh)
-mov     dword_A8ED54+80DE0h, eax
-call    LoadFileSHP
-mov     ecx, off_844C9C ; Source
-mov     edx, (offset dword_A8ED54+80F1Eh)
-mov     dword_A8ED54+80DACh, eax
-call    LoadFileSHP
-mov     dword_A8ED54+80DDCh, eax
-retn
-*/
 } }
 // 0x734250
 namespace gamemd { int SidebarClass::registerBuildingType() {
@@ -20236,34 +8652,20 @@ int __thiscall sub_734250(_DWORD *this)
 {
   int result; // eax
 
-  result = *(this + 328);
-  if ( *(_DWORD *)(result + 3592) == 5 )
-    MEMORY[0xB0FE60] = (int)this;
+  result = *(this + 328); /*0x734250*/
+  if ( *(_DWORD *)(result + 3592) == 5 ) /*0x73425d*/
+    MEMORY[0xB0FE60] = (int)this; /*0x73425f*/
   else
-    MEMORY[0xB0FE5C] = (int)this;
-  return result;
+    MEMORY[0xB0FE5C] = (int)this; /*0x734266*/
+  return result; /*0x734265*/
 }
-
-/* ASM:
-mov     eax, [ecx+520h]
-cmp     dword ptr [eax+0E08h], 5
-jnz     short loc_734266
-mov     dword_A8ED54+8110Ch, ecx
-retn
-; ---------------------------------------------------------------------------
-
-loc_734266:                             ; CODE XREF: SidebarClass__registerBuildingType+D↑j
-mov     dword_A8ED54+81108h, ecx
-retn
-*/
 } }
 // 0x77A700
 // moved to ui/gadget.cpp: GadgetClass::TrackState
 // 0x77DA50
 namespace gamemd { void* SidebarClass::FindProductionData() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x77da50
-void *__thiscall SidebarClass::FindProductionData(void *this)
+void *__thiscall sub_77DA50(void *this)
 {
   char *v1; // eax
   void *v2; // ebx
@@ -20272,204 +8674,61 @@ void *__thiscall SidebarClass::FindProductionData(void *this)
   int v6; // esi
   void *v7; // [esp+0h] [ebp-4h] BYREF
 
-  v7 = this;
-  v1 = ToWideStringChar((char *)this);
-  String::Assign((char **)&v7, v1);
-  String::ToLower((const char **)&v7);
-  v2 = (void *)__2_YAPAXI_Z(108);
-  if ( !v2 )
+  v7 = this; /*0x77da50*/
+  v1 = ToWideStringChar((char *)this); /*0x77da52*/
+  String::Assign((char **)&v7, v1); /*0x77da5c*/
+  String::ToLower((const char **)&v7); /*0x77da65*/
+  v2 = __2_YAPAXI_Z(0x6Cu); /*0x77da71*/
+  if ( !v2 ) /*0x77da78*/
   {
-    DeleteAndZero(&v7);
-    return 0;
+    DeleteAndZero(&v7); /*0x77da7e*/
+    return 0; /*0x77da87*/
   }
-  memset(v2, 0, 0x6Cu);
-  if ( dword_A8ED54[238364] == 2 )
+  memset(v2, 0, 0x6Cu); /*0x77da93*/
+  if ( *(_DWORD *)dword_B779C4 == 2 ) /*0x77da9c*/
   {
-    if ( !dword_A8ED54[237276] )
-      goto LABEL_18;
-    v6 = *(_DWORD *)(dword_A8ED54[237275]
-                   + 4
-                   * (((int (__thiscall *)(void **))dword_A8ED54[237281])(&v7)
-                    & ((1 << SLOBYTE(dword_A8ED54[237278])) - 1)));
-    if ( !v6 )
-      goto LABEL_18;
-    while ( !String::Compare((const char **)v6, (const char **)&v7) )
+    if ( !dword_B768C4 ) /*0x77db10*/
+      goto LABEL_18; /*0x77db10*/
+    v6 = *((_DWORD *)g_WOL_ListParser + (dword_B768D8(&v7) & ((1 << dword_B768CC) - 1))); /*0x77db31*/
+    if ( !v6 ) /*0x77db36*/
+      goto LABEL_18; /*0x77db36*/
+    while ( !String::Compare((const char **)v6, (const char **)&v7) ) /*0x77db46*/
     {
-      v6 = *(_DWORD *)(v6 + 112);
-      if ( !v6 )
-        goto LABEL_18;
+      v6 = *(_DWORD *)(v6 + 112); /*0x77db48*/
+      if ( !v6 ) /*0x77db4d*/
+        goto LABEL_18; /*0x77db4d*/
     }
-    v5 = (const void *)(v6 + 4);
-    if ( !v5 )
-      goto LABEL_18;
+    v5 = (const void *)(v6 + 4); /*0x77db63*/
+    if ( !v5 ) /*0x77db68*/
+      goto LABEL_18; /*0x77db68*/
   }
   else
   {
-    if ( !dword_A8ED54[238604] )
-      goto LABEL_18;
-    v4 = *(_DWORD *)(dword_A8ED54[238603]
-                   + 4
-                   * (((int (__thiscall *)(void **))dword_A8ED54[238609])(&v7)
-                    & ((1 << SLOBYTE(dword_A8ED54[238606])) - 1)));
-    if ( !v4 )
-      goto LABEL_18;
-    while ( !String::Compare((const char **)v4, (const char **)&v7) )
+    if ( !dword_B77D84 ) /*0x77daa5*/
+      goto LABEL_18; /*0x77daa5*/
+    v4 = *((_DWORD *)dword_B77D80 + (dword_B77D98(&v7) & ((1 << dword_B77D8C) - 1))); /*0x77daca*/
+    if ( !v4 ) /*0x77dacf*/
+      goto LABEL_18; /*0x77dacf*/
+    while ( !String::Compare((const char **)v4, (const char **)&v7) ) /*0x77dae3*/
     {
-      v4 = *(_DWORD *)(v4 + 112);
-      if ( !v4 )
-        goto LABEL_18;
+      v4 = *(_DWORD *)(v4 + 112); /*0x77dae5*/
+      if ( !v4 ) /*0x77daea*/
+        goto LABEL_18; /*0x77daea*/
     }
-    v5 = (const void *)(v4 + 4);
-    if ( !v5 )
-      goto LABEL_18;
+    v5 = (const void *)(v4 + 4); /*0x77db00*/
+    if ( !v5 ) /*0x77db05*/
+      goto LABEL_18; /*0x77db05*/
   }
-  qmemcpy(v2, v5, 0x6Cu);
+  qmemcpy(v2, v5, 0x6Cu); /*0x77db71*/
 LABEL_18:
-  DeleteAndZero(&v7);
-  return v2;
+  DeleteAndZero(&v7); /*0x77db73*/
+  return v2; /*0x77da87*/
 }
-
-/* ASM:
-push    ecx
-push    ebx
-call    ToWideStringChar
-lea     ecx, [esp+8+var_4]
-push    eax
-call    String__Assign
-lea     ecx, [esp+8+var_4]
-call    String__ToLower
-push    6Ch ; 'l'       ; Size
-call    ??2_YAPAXI_Z
-mov     ebx, eax
-add     esp, 4
-test    ebx, ebx
-jnz     short loc_77DA88
-lea     ecx, [esp+8+var_4]
-call    DeleteAndZero
-xor     eax, eax
-pop     ebx
-pop     ecx
-retn
-; ---------------------------------------------------------------------------
-
-loc_77DA88:                             ; CODE XREF: SidebarClass__FindProductionData+28↑j
-push    esi
-push    edi
-mov     ecx, 1Bh
-xor     eax, eax
-mov     edi, ebx
-rep stosd
-cmp     dword_A8ED54+0E8C70h, 2
-jz      short loc_77DB09
-mov     eax, dword_A8ED54+0E9030h
-test    eax, eax
-jz      loc_77DB73
-lea     ecx, [esp+10h+var_4]
-call    dword_A8ED54+0E9044h
-mov     ecx, dword_A8ED54+0E9038h
-mov     edx, 1
-shl     edx, cl
-dec     edx
-and     edx, eax
-mov     eax, dword_A8ED54+0E902Ch
-mov     esi, [eax+edx*4]
-test    esi, esi
-jz      loc_77DB73
-
-loc_77DAD5:                             ; CODE XREF: SidebarClass__FindProductionData+9A↓j
-lea     ecx, [esp+10h+var_4]
-push    ecx
-mov     ecx, esi
-call    String__Compare
-test    al, al
-jnz     short loc_77DAFC
-mov     esi, [esi+70h]
-test    esi, esi
-jnz     short loc_77DAD5
-lea     ecx, [esp+10h+var_4]
-call    DeleteAndZero
-mov     eax, ebx
-pop     edi
-pop     esi
-pop     ebx
-pop     ecx
-retn
-; ---------------------------------------------------------------------------
-
-loc_77DAFC:                             ; CODE XREF: SidebarClass__FindProductionData+93↑j
-test    esi, esi
-jz      short loc_77DB73
-add     esi, 4
-test    esi, esi
-jz      short loc_77DB73
-jmp     short loc_77DB6A
-; ---------------------------------------------------------------------------
-
-loc_77DB09:                             ; CODE XREF: SidebarClass__FindProductionData+4C↑j
-mov     eax, dword_A8ED54+0E7B70h
-test    eax, eax
-jz      short loc_77DB73
-lea     ecx, [esp+10h+var_4]
-call    dword_A8ED54+0E7B84h
-mov     ecx, dword_A8ED54+0E7B78h
-mov     edx, 1
-shl     edx, cl
-dec     edx
-and     edx, eax
-mov     eax, dword_A8ED54+0E7B6Ch
-mov     esi, [eax+edx*4]
-test    esi, esi
-jz      short loc_77DB73
-
-loc_77DB38:                             ; CODE XREF: SidebarClass__FindProductionData+FD↓j
-lea     ecx, [esp+10h+var_4]
-push    ecx
-mov     ecx, esi
-call    String__Compare
-test    al, al
-jnz     short loc_77DB5F
-mov     esi, [esi+70h]
-test    esi, esi
-jnz     short loc_77DB38
-lea     ecx, [esp+10h+var_4]
-call    DeleteAndZero
-mov     eax, ebx
-pop     edi
-pop     esi
-pop     ebx
-pop     ecx
-retn
-; ---------------------------------------------------------------------------
-
-loc_77DB5F:                             ; CODE XREF: SidebarClass__FindProductionData+F6↑j
-test    esi, esi
-jz      short loc_77DB73
-add     esi, 4
-test    esi, esi
-jz      short loc_77DB73
-
-loc_77DB6A:                             ; CODE XREF: SidebarClass__FindProductionData+B7↑j
-mov     ecx, 1Bh
-mov     edi, ebx
-rep movsd
-
-loc_77DB73:                             ; CODE XREF: SidebarClass__FindProductionData+55↑j
-; SidebarClass__FindProductionData+7F↑j ...
-lea     ecx, [esp+10h+var_4]
-call    DeleteAndZero
-mov     eax, ebx
-pop     edi
-pop     esi
-pop     ebx
-pop     ecx
-retn
-*/
 } }
 // 0x7B8730
 namespace gamemd { void* MouseClass::Construct(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7b8730
-_DWORD *__thiscall MouseClass::Construct(_DWORD *this, int a2, int a3)
+_DWORD *__thiscall MouseClass::Construct(_DWORD *this, ObjectClass *aP1, IUnknown *aP2)
 {
   int *v4; // edi
   _DWORD *v5; // ecx
@@ -20480,386 +8739,155 @@ _DWORD *__thiscall MouseClass::Construct(_DWORD *this, int a2, int a3)
   int v10; // ecx
   int v11; // edi
 
-  v4 = this + 11;
-  *(this + 9) = a2;
-  *this = &Mouse::`vftable';
-  *(this + 1) = 0;
-  *(this + 2) = 0;
-  *(this + 3) = -1;
-  *((_BYTE *)this + 16) = 0;
-  *(this + 5) = 0;
-  *(this + 6) = 0;
-  *(this + 7) = 0;
-  *(this + 8) = 0;
-  *(this + 10) = a3;
-  v5 = this + 11;
-  *v5 = dword_A8ED54[238837];
-  v5[1] = dword_A8ED54[238838];
-  v5[2] = dword_A8ED54[238839];
-  v6 = dword_A8ED54[238840];
-  *(this + 15) = 0;
-  *(this + 16) = 0;
-  v5[3] = v6;
-  *(this + 17) = 0;
-  *(this + 18) = dword_A8ED54[238837];
-  *(this + 19) = dword_A8ED54[238838];
-  *(this + 20) = dword_A8ED54[238839];
-  v7 = dword_A8ED54[238840];
-  *(this + 22) = 0;
-  *(this + 21) = v7;
-  *(this + 23) = dword_A8ED54[238837];
-  *(this + 24) = dword_A8ED54[238838];
-  *(this + 25) = dword_A8ED54[238839];
-  v8 = dword_A8ED54[238840];
-  *(this + 27) = 0;
-  *(this + 26) = v8;
-  *(this + 28) = dword_A8ED54[238837];
-  *(this + 29) = dword_A8ED54[238838];
-  *(this + 30) = dword_A8ED54[238839];
-  *(this + 31) = dword_A8ED54[238840];
-  *(this + 32) = dword_A8ED54[238837];
-  *(this + 33) = dword_A8ED54[238838];
-  *(this + 34) = dword_A8ED54[238839];
-  v9 = dword_A8ED54[238840];
-  *(this + 36) = -1;
-  *(this + 37) = 0;
-  *(this + 35) = v9;
-  *this = &WWMouseClass::`vftable';
-  if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-    Debug::Log();
-  MouseClass::CalcConfiningRect((#44 *)this);
-  v10 = *v4;
-  v11 = *(this + 12);
-  *(this + 15) = v10 + *(this + 13) / 2;
-  *(this + 16) = v11 + *(this + 14) / 2;
-  dword_A8ED54[238852] = (int)this;
-  ((void (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
-  ShowCursor(0);
-  return this;
+  v4 = this + 11; /*0x7b8742*/
+  *(this + 9) = aP1; /*0x7b8745*/
+  *this = &vt_Mouse; /*0x7b8748*/
+  *(this + 1) = 0; /*0x7b874e*/
+  *(this + 2) = 0; /*0x7b8751*/
+  *(this + 3) = -1; /*0x7b8754*/
+  *((_BYTE *)this + 16) = 0; /*0x7b8757*/
+  *(this + 5) = 0; /*0x7b875a*/
+  *(this + 6) = 0; /*0x7b875d*/
+  *(this + 7) = 0; /*0x7b8760*/
+  *(this + 8) = 0; /*0x7b8763*/
+  *(this + 10) = aP2; /*0x7b8766*/
+  v5 = this + 11; /*0x7b876f*/
+  *v5 = dword_B78128; /*0x7b8776*/
+  v5[1] = dword_B7812C; /*0x7b877e*/
+  v5[2] = dword_B78130; /*0x7b8787*/
+  v6 = dword_B78134; /*0x7b878a*/
+  *(this + 15) = 0; /*0x7b8790*/
+  *(this + 16) = 0; /*0x7b8793*/
+  v5[3] = v6; /*0x7b8796*/
+  *(this + 17) = 0; /*0x7b8799*/
+  *(this + 18) = dword_B78128; /*0x7b87a5*/
+  *(this + 19) = dword_B7812C; /*0x7b87ae*/
+  *(this + 20) = dword_B78130; /*0x7b87b7*/
+  v7 = dword_B78134; /*0x7b87ba*/
+  *(this + 22) = 0; /*0x7b87c0*/
+  *(this + 21) = v7; /*0x7b87c3*/
+  *(this + 23) = dword_B78128; /*0x7b87cf*/
+  *(this + 24) = dword_B7812C; /*0x7b87d8*/
+  *(this + 25) = dword_B78130; /*0x7b87e1*/
+  v8 = dword_B78134; /*0x7b87e4*/
+  *(this + 27) = 0; /*0x7b87ea*/
+  *(this + 26) = v8; /*0x7b87ed*/
+  *(this + 28) = dword_B78128; /*0x7b87f9*/
+  *(this + 29) = dword_B7812C; /*0x7b8802*/
+  *(this + 30) = dword_B78130; /*0x7b880b*/
+  *(this + 31) = dword_B78134; /*0x7b8814*/
+  *(this + 32) = dword_B78128; /*0x7b8823*/
+  *(this + 33) = dword_B7812C; /*0x7b882f*/
+  *(this + 34) = dword_B78130; /*0x7b8838*/
+  v9 = dword_B78134; /*0x7b883b*/
+  *(this + 36) = -1; /*0x7b8841*/
+  *(this + 37) = 0; /*0x7b8847*/
+  *(this + 35) = v9; /*0x7b884d*/
+  *this = &WWMouseClass::`vftable'; /*0x7b8850*/
+  if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b8867*/
+    Debug::Log(); /*0x7b8878*/
+  MouseClass::CalcConfiningRect((HWND *)this); /*0x7b8882*/
+  v10 = *v4; /*0x7b888a*/
+  v11 = *(this + 12); /*0x7b888f*/
+  *(this + 15) = v10 + *(this + 13) / 2; /*0x7b8896*/
+  *(this + 16) = v11 + *(this + 14) / 2; /*0x7b88a3*/
+  dword_B78164 = (MouseClass *)this; /*0x7b88ad*/
+  ReleaseMutex(hMutex); /*0x7b88b3*/
+  ShowCursor(0); /*0x7b88ba*/
+  return this; /*0x7b88c2*/
 }
-
-/* ASM:
-mov     edx, [esp+arg_4]
-push    ebx
-push    esi
-mov     esi, ecx
-mov     ecx, [esp+8+arg_0]
-push    edi
-xor     ebx, ebx
-or      eax, 0FFFFFFFFh
-lea     edi, [esi+2Ch]
-mov     [esi+24h], ecx
-mov     dword ptr [esi], offset ??_7Mouse@@6B@ ; const Mouse::`vftable'
-mov     [esi+4], ebx
-mov     [esi+8], ebx
-mov     [esi+0Ch], eax
-mov     [esi+10h], bl
-mov     [esi+14h], ebx
-mov     [esi+18h], ebx
-mov     [esi+1Ch], ebx
-mov     [esi+20h], ebx
-mov     [esi+28h], edx
-mov     edx, dword_A8ED54+0E93D4h
-mov     ecx, edi
-push    2710h           ; dwMilliseconds
-mov     [ecx], edx
-mov     edx, dword_A8ED54+0E93D8h
-mov     [ecx+4], edx
-mov     edx, dword_A8ED54+0E93DCh
-mov     [ecx+8], edx
-mov     edx, dword_A8ED54+0E93E0h
-mov     [esi+3Ch], ebx
-mov     [esi+40h], ebx
-mov     [ecx+0Ch], edx
-mov     [esi+44h], ebx
-mov     edx, dword_A8ED54+0E93D4h
-lea     ecx, [esi+48h]
-mov     [esi+48h], edx
-mov     edx, dword_A8ED54+0E93D8h
-mov     [ecx+4], edx
-mov     edx, dword_A8ED54+0E93DCh
-mov     [ecx+8], edx
-mov     edx, dword_A8ED54+0E93E0h
-mov     [esi+58h], ebx
-mov     [ecx+0Ch], edx
-mov     edx, dword_A8ED54+0E93D4h
-lea     ecx, [esi+5Ch]
-mov     [esi+5Ch], edx
-mov     edx, dword_A8ED54+0E93D8h
-mov     [ecx+4], edx
-mov     edx, dword_A8ED54+0E93DCh
-mov     [ecx+8], edx
-mov     edx, dword_A8ED54+0E93E0h
-mov     [esi+6Ch], ebx
-mov     [ecx+0Ch], edx
-mov     edx, dword_A8ED54+0E93D4h
-lea     ecx, [esi+70h]
-mov     [esi+70h], edx
-mov     edx, dword_A8ED54+0E93D8h
-mov     [ecx+4], edx
-mov     edx, dword_A8ED54+0E93DCh
-mov     [ecx+8], edx
-mov     edx, dword_A8ED54+0E93E0h
-mov     [ecx+0Ch], edx
-mov     edx, dword_A8ED54+0E93D4h
-lea     ecx, [esi+80h]
-mov     [esi+80h], edx
-mov     edx, dword_A8ED54+0E93D8h
-mov     [ecx+4], edx
-mov     edx, dword_A8ED54+0E93DCh
-mov     [ecx+8], edx
-mov     edx, dword_A8ED54+0E93E0h
-mov     [esi+90h], eax
-mov     [esi+94h], ebx
-mov     [ecx+0Ch], edx
-mov     dword ptr [esi], offset ??_7WWMouseClass@@6B@ ; const WWMouseClass::`vftable'
-mov     eax, dword_A8ED54+0E9414h
-push    eax             ; hHandle
-call    ds:__imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7B8880
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7B8880:                             ; CODE XREF: MouseClass__Construct+137↑j
-mov     ecx, esi
-call    MouseClass__CalcConfiningRect
-mov     eax, [esi+34h]
-mov     ecx, [edi]
-cdq
-sub     eax, edx
-mov     edi, [esi+30h]
-sar     eax, 1
-add     eax, ecx
-mov     [esi+3Ch], eax
-mov     eax, [esi+38h]
-cdq
-sub     eax, edx
-sar     eax, 1
-add     eax, edi
-mov     [esi+40h], eax
-mov     ecx, dword_A8ED54+0E9414h
-push    ecx             ; hMutex
-mov     dword_A8ED54+0E9410h, esi
-call    ds:__imp_ReleaseMutex
-push    ebx             ; bShow
-call    ds:__imp_ShowCursor
-mov     eax, esi
-pop     edi
-pop     esi
-pop     ebx
-retn    8
-*/
 } }
 // 0x7B88D0
 namespace gamemd { int WWMouseClass::loadCursorImages() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7b88d0
-int __thiscall WWMouseClass::loadCursorImages(_DWORD *this)
+int __thiscall sub_7B88D0(_DWORD *this)
 {
   int result; // eax
   int (__thiscall ***v3)(_DWORD, int); // ecx
   int (__thiscall ***v4)(_DWORD, int); // ecx
   int (__thiscall ***v5)(_DWORD, int); // ecx
 
-  *this = &WWMouseClass::`vftable';
-  if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-    Debug::Log();
-  if ( (_DWORD *)dword_A8ED54[238852] == this )
-    dword_A8ED54[238852] = 0;
-  result = ((int (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
-  v3 = (int (__thiscall ***)(_DWORD, int))*(this + 17);
-  if ( v3 )
+  *this = &WWMouseClass::`vftable'; /*0x7b88d9*/
+  if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b88f0*/
+    Debug::Log(); /*0x7b8901*/
+  if ( (_DWORD *)dword_B78164 == this ) /*0x7b8912*/
+    dword_B78164 = 0; /*0x7b8914*/
+  result = ReleaseMutex(hMutex); /*0x7b8921*/
+  v3 = (int (__thiscall ***)(_DWORD, int))*(this + 17); /*0x7b8927*/
+  if ( v3 ) /*0x7b892c*/
   {
-    result = (**v3)(v3, 1);
-    *(this + 17) = 0;
+    result = (**v3)(v3, 1); /*0x7b8932*/
+    *(this + 17) = 0; /*0x7b8934*/
   }
-  v4 = (int (__thiscall ***)(_DWORD, int))*(this + 22);
-  if ( v4 )
+  v4 = (int (__thiscall ***)(_DWORD, int))*(this + 22); /*0x7b8937*/
+  if ( v4 ) /*0x7b893c*/
   {
-    result = (**v4)(v4, 1);
-    *(this + 22) = 0;
+    result = (**v4)(v4, 1); /*0x7b8942*/
+    *(this + 22) = 0; /*0x7b8944*/
   }
-  v5 = (int (__thiscall ***)(_DWORD, int))*(this + 27);
-  if ( v5 )
+  v5 = (int (__thiscall ***)(_DWORD, int))*(this + 27); /*0x7b8947*/
+  if ( v5 ) /*0x7b894c*/
   {
-    result = (**v5)(v5, 1);
-    *(this + 27) = 0;
+    result = (**v5)(v5, 1); /*0x7b8952*/
+    *(this + 27) = 0; /*0x7b8954*/
   }
-  *this = &Mouse::`vftable';
-  return result;
+  *this = &vt_Mouse; /*0x7b8957*/
+  return result; /*0x7b895d*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-push    edi
-push    2710h           ; dwMilliseconds
-mov     dword ptr [esi], offset ??_7WWMouseClass@@6B@ ; const WWMouseClass::`vftable'
-mov     eax, dword_A8ED54+0E9414h
-push    eax             ; hHandle
-call    ds:__imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7B8909
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7B8909:                             ; CODE XREF: WWMouseClass__loadCursorImages+20↑j
-mov     eax, dword_A8ED54+0E9410h
-xor     edi, edi
-cmp     eax, esi
-jnz     short loc_7B891A
-mov     dword_A8ED54+0E9410h, edi
-
-loc_7B891A:                             ; CODE XREF: WWMouseClass__loadCursorImages+42↑j
-mov     ecx, dword_A8ED54+0E9414h
-push    ecx             ; hMutex
-call    ds:__imp_ReleaseMutex
-mov     ecx, [esi+44h]
-cmp     ecx, edi
-jz      short loc_7B8937
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx]
-mov     [esi+44h], edi
-
-loc_7B8937:                             ; CODE XREF: WWMouseClass__loadCursorImages+5C↑j
-mov     ecx, [esi+58h]
-cmp     ecx, edi
-jz      short loc_7B8947
-mov     eax, [ecx]
-push    1
-call    dword ptr [eax]
-mov     [esi+58h], edi
-
-loc_7B8947:                             ; CODE XREF: WWMouseClass__loadCursorImages+6C↑j
-mov     ecx, [esi+6Ch]
-cmp     ecx, edi
-jz      short loc_7B8957
-mov     edx, [ecx]
-push    1
-call    dword ptr [edx]
-mov     [esi+6Ch], edi
-
-loc_7B8957:                             ; CODE XREF: WWMouseClass__loadCursorImages+7C↑j
-mov     dword ptr [esi], offset ??_7Mouse@@6B@ ; const Mouse::`vftable'
-pop     edi
-pop     esi
-retn
-*/
 } }
 // 0x7B8960
 namespace gamemd { void MouseClass::CalcConfiningRect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7b8960
-void __thiscall MouseClass::CalcConfiningRect(#44 *this)
+void __thiscall MouseClass_CalcConfiningRect(HWND *this)
 {
-  #44 *v1; // esi
-  int v2; // edi
-  int v3; // ecx
-  int v4; // eax
-  __int64 Point; // [esp+8h] [ebp-20h] BYREF
-  __int64 v6; // [esp+10h] [ebp-18h] BYREF
-  _QWORD Rect[2]; // [esp+18h] [ebp-10h] BYREF
+  _DWORD *v1; // esi
+  HWND v2; // eax
+  LONG y; // edi
+  int v4; // ecx
+  int v5; // eax
+  HWND v6; // [esp-8h] [ebp-30h]
+  struct tagPOINT Point; // [esp+8h] [ebp-20h] BYREF
+  struct tagPOINT v8; // [esp+10h] [ebp-18h] BYREF
+  struct tagRECT Rect; // [esp+18h] [ebp-10h] BYREF
 
-  v1 = this;
-  ((void (__stdcall *)(_DWORD, _QWORD *))GetClientRect)(*((_DWORD *)this + 10), Rect);
-  Point = Rect[0];
-  ((void (__stdcall *)(_DWORD, __int64 *))ClientToScreen)(*((_DWORD *)v1 + 10), &Point);
-  v6 = Rect[1];
-  ((void (__stdcall *)(_DWORD, __int64 *))ClientToScreen)(*((_DWORD *)v1 + 10), &v6);
-  v2 = HIDWORD(Point);
-  v1 = (#44 *)((char *)v1 + 44);
-  v3 = HIDWORD(v6) - HIDWORD(Point);
-  v4 = v6 - Point;
-  *(_DWORD *)v1 = Point;
-  *((_DWORD *)v1 + 1) = v2;
-  *((_DWORD *)v1 + 2) = v4;
-  *((_DWORD *)v1 + 3) = v3;
-  Debug::Log();
+  v1 = this; /*0x7b8964*/
+  GetClientRect(*(this + 10), &Rect); /*0x7b8970*/
+  Point.x = Rect.left; /*0x7b8984*/
+  v6 = (HWND)v1[10]; /*0x7b8990*/
+  Point.y = Rect.top; /*0x7b8991*/
+  ClientToScreen(v6, &Point); /*0x7b8995*/
+  v8.x = Rect.right; /*0x7b899f*/
+  v2 = (HWND)v1[10]; /*0x7b89a3*/
+  v8.y = Rect.bottom; /*0x7b89aa*/
+  ClientToScreen(v2, &v8); /*0x7b89b0*/
+  y = Point.y; /*0x7b89b6*/
+  v1 += 11; /*0x7b89c2*/
+  v4 = v8.y - Point.y; /*0x7b89c5*/
+  v5 = v8.x - Point.x; /*0x7b89c7*/
+  *v1 = Point.x; /*0x7b89ca*/
+  v1[1] = y; /*0x7b89cf*/
+  v1[2] = v5; /*0x7b89d7*/
+  v1[3] = v4; /*0x7b89da*/
+  Debug::Log(); /*0x7b89dd*/
 }
-
-/* ASM:
-Point           = qword ptr -20h
-var_18          = qword ptr -18h
-Rect            = xmmword ptr -10h
-
-sub     esp, 20h
-push    esi
-mov     esi, ecx
-lea     eax, [esp+24h+Rect]
-push    edi
-mov     ecx, [esi+28h]
-push    eax             ; lpRect
-push    ecx             ; hWnd
-call    ds:__imp_GetClientRect
-mov     edx, dword ptr [esp+28h+Rect]
-mov     eax, dword ptr [esp+28h+Rect+4]
-mov     edi, ds:__imp_ClientToScreen
-mov     dword ptr [esp+28h+Point], edx
-mov     edx, [esi+28h]
-lea     ecx, [esp+28h+Point]
-push    ecx             ; lpPoint
-push    edx             ; hWnd
-mov     dword ptr [esp+30h+Point+4], eax
-call    edi ; __imp_ClientToScreen
-mov     eax, dword ptr [esp+28h+Rect+8]
-mov     ecx, dword ptr [esp+28h+Rect+0Ch]
-mov     dword ptr [esp+28h+var_18], eax
-mov     eax, [esi+28h]
-lea     edx, [esp+28h+var_18]
-mov     dword ptr [esp+28h+var_18+4], ecx
-push    edx             ; lpPoint
-push    eax             ; hWnd
-call    edi ; __imp_ClientToScreen
-mov     edx, dword ptr [esp+28h+Point]
-mov     edi, dword ptr [esp+28h+Point+4]
-mov     ecx, dword ptr [esp+28h+var_18+4]
-mov     eax, dword ptr [esp+28h+var_18]
-add     esi, 2Ch ; ','
-sub     ecx, edi
-sub     eax, edx
-push    ecx
-mov     [esi], edx
-push    eax
-push    edi
-push    edx
-mov     [esi+4], edi
-push    offset aCalcConfiningR ; "Calc_Confining_Rect(%d,%d,%d,%d)\n"
-mov     [esi+8], eax
-mov     [esi+0Ch], ecx
-call    Debug__Log
-add     esp, 14h
-pop     edi
-pop     esi
-add     esp, 20h
-retn
-*/
 } }
 // 0x7B8A00
 namespace gamemd { void WWMouseClass::AddRef(void* a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7b8a00
-void __thiscall WWMouseClass::AddRef(unsigned int *this, unsigned int *a2, unsigned int a3, unsigned int a4)
+void __thiscall WWMouseClass::AddRef(IUnknown **this, IUnknown **a2, IUnknown *a3, IUnknown *a4)
 {
   unsigned int v4; // ebx
   DWORD (__stdcall *v6)(HANDLE, DWORD); // edi
-  int v7; // ecx
+  IUnknown *v7; // ecx
   int v8; // ebp
   int v9; // edx
   unsigned int v10; // edi
   unsigned int v11; // ebx
-  int v12; // edx
-  BOOL (__stdcall *v13)(HANDLE); // ebp
-  int v14; // eax
+  char *v12; // edx
+  void (__stdcall *v13)(HANDLE); // ebp
+  IUnknown *v14; // eax
   unsigned int *inited; // eax
-  unsigned int v16; // ecx
+  char *v16; // ecx
   unsigned int v17; // eax
   int v18; // ecx
   int v19; // [esp-18h] [ebp-40h]
@@ -20868,94 +8896,94 @@ void __thiscall WWMouseClass::AddRef(unsigned int *this, unsigned int *a2, unsig
   unsigned int v22; // [esp+10h] [ebp-18h]
   unsigned int v23; // [esp+14h] [ebp-14h]
   unsigned int v24; // [esp+18h] [ebp-10h] BYREF
-  int v25; // [esp+1Ch] [ebp-Ch]
+  char *v25; // [esp+1Ch] [ebp-Ch]
   unsigned int v26; // [esp+20h] [ebp-8h]
   unsigned int v27; // [esp+24h] [ebp-4h]
 
-  v4 = a3;
-  if ( a3 )
+  v4 = (unsigned int)a3; /*0x7b8a04*/
+  if ( a3 ) /*0x7b8a0d*/
   {
-    if ( (*(unsigned __int8 (__thiscall **)(unsigned int *))(*this + 28))(this) )
+    if ( ((unsigned __int8 (__thiscall *)(IUnknown **))(*this)->field_1C)(this) ) /*0x7b8a15*/
     {
-      v6 = WaitForSingleObject;
-      if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-        Debug::Log();
-      if ( (*(unsigned __int8 (__thiscall **)(unsigned int *))(*this + 8))(this) )
+      v6 = WaitForSingleObject; /*0x7b8a28*/
+      if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b8a3b*/
+        Debug::Log(); /*0x7b8a4c*/
+      if ( ((unsigned __int8 (__thiscall *)(IUnknown **))(*this)->field_8)(this) ) /*0x7b8a58*/
       {
-        v13 = ReleaseMutex;
+        v13 = (void (__stdcall *)(HANDLE))ReleaseMutex; /*0x7b8b0e*/
       }
       else
       {
-        if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-          Debug::Log();
-        if ( (int)*(this + 20) > 0 && (int)*(this + 21) > 0 )
+        if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b8a75*/
+          Debug::Log(); /*0x7b8a86*/
+        if ( (int)*(this + 20) > 0 && (int)*(this + 21) > 0 ) /*0x7b8a9a*/
         {
-          v7 = *(this + 9);
-          if ( v7 )
+          v7 = *(this + 9); /*0x7b8a9c*/
+          if ( v7 ) /*0x7b8aa1*/
           {
-            v8 = *(this + 17);
-            if ( v8 )
+            v8 = (int)*(this + 17); /*0x7b8aa3*/
+            if ( v8 ) /*0x7b8aa8*/
             {
-              v9 = *(this + 19);
-              v10 = *(this + 20);
-              v11 = *(this + 21);
-              v24 = *(this + 11) + *(this + 18);
-              v12 = *(this + 12) + v9;
-              v20 = 0;
-              v21 = 0;
-              v26 = v10;
-              v27 = v11;
-              v25 = v12;
-              v22 = v10;
-              v23 = v11;
-              (*(void (__thiscall **)(int, unsigned int *, int, unsigned int *, _DWORD, int))(*(_DWORD *)v7 + 8))(
+              v9 = (int)*(this + 19); /*0x7b8aad*/
+              v10 = (unsigned int)*(this + 20); /*0x7b8ab3*/
+              v11 = (unsigned int)*(this + 21); /*0x7b8ab6*/
+              v24 = (unsigned int)*(this + 18) + (_DWORD)*(this + 11); /*0x7b8abb*/
+              v12 = (char *)*(this + 12) + v9; /*0x7b8ac2*/
+              v20 = 0; /*0x7b8ac6*/
+              v21 = 0; /*0x7b8aca*/
+              v26 = v10; /*0x7b8ad4*/
+              v27 = v11; /*0x7b8ad8*/
+              v25 = v12; /*0x7b8adc*/
+              v22 = v10; /*0x7b8ae0*/
+              v23 = v11; /*0x7b8ae4*/
+              (*(void (__thiscall **)(IUnknown *, unsigned int *, int, unsigned int *, _DWORD, int))(v7->field_0 + 8))( /*0x7b8af0*/
                 v7,
                 &v24,
                 v8,
                 &v20,
                 0,
                 1);
-              v4 = a3;
-              v6 = WaitForSingleObject;
+              v4 = (unsigned int)a3; /*0x7b8af3*/
+              v6 = WaitForSingleObject; /*0x7b8af7*/
             }
           }
         }
-        v13 = ReleaseMutex;
-        ((void (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+        v13 = (void (__stdcall *)(HANDLE))ReleaseMutex; /*0x7b8b03*/
+        ReleaseMutex(hMutex); /*0x7b8b0a*/
       }
-      *(this + 1) = v4;
-      *(this + 2) = a4;
-      *(this + 15) = *a2;
-      v14 = *this;
-      *(this + 16) = a2[1];
-      if ( !(*(unsigned __int8 (__thiscall **)(unsigned int *))(v14 + 8))(this) )
+      *(this + 1) = (IUnknown *)v4; /*0x7b8b1c*/
+      *(this + 2) = a4; /*0x7b8b1f*/
+      *(this + 15) = *a2; /*0x7b8b24*/
+      v14 = *this; /*0x7b8b2a*/
+      *(this + 16) = a2[1]; /*0x7b8b2e*/
+      if ( !((unsigned __int8 (__thiscall *)(IUnknown **))v14->field_8)(this) ) /*0x7b8b31*/
       {
-        if ( ((int (__stdcall *)(int, int))v6)(dword_A8ED54[238853], 10000) == 258 )
-          Debug::Log();
-        if ( BSurface::CreateTripleBuffer((int)this) )
+        if ( v6(hMutex, 0x2710u) == 258 ) /*0x7b8b4f*/
+          Debug::Log(); /*0x7b8b60*/
+        if ( BSurface::CreateTripleBuffer((int)this) ) /*0x7b8b6a*/
         {
-          if ( *(this + 9) )
+          if ( *(this + 9) ) /*0x7b8b77*/
           {
-            inited = WWMouseClass::initCursorState(this, &v24);
-            *(this + 18) = *inited;
-            *(this + 19) = inited[1];
-            *(this + 20) = inited[2];
-            *(this + 21) = inited[3];
-            v20 = *inited;
-            v16 = *(this + 11) + v20;
-            v21 = inited[1];
-            v22 = inited[2];
-            v17 = inited[3];
-            v20 = v16;
-            v18 = *(this + 17);
-            v21 += *(this + 12);
-            v19 = *(this + 9);
-            v23 = v17;
-            v24 = 0;
-            v25 = 0;
-            v26 = v22;
-            v27 = v17;
-            (*(void (__thiscall **)(int, unsigned int *, int, unsigned int *, _DWORD, int))(*(_DWORD *)v18 + 8))(
+            inited = WWMouseClass::initCursorState((unsigned int *)this, &v24); /*0x7b8b87*/
+            *(this + 18) = (IUnknown *)*inited; /*0x7b8b96*/
+            *(this + 19) = (IUnknown *)inited[1]; /*0x7b8b9b*/
+            *(this + 20) = (IUnknown *)inited[2]; /*0x7b8ba1*/
+            *(this + 21) = (IUnknown *)inited[3]; /*0x7b8ba7*/
+            v20 = *inited; /*0x7b8bac*/
+            v16 = (char *)*(this + 11) + v20; /*0x7b8bb3*/
+            v21 = inited[1]; /*0x7b8bb6*/
+            v22 = inited[2]; /*0x7b8bbd*/
+            v17 = inited[3]; /*0x7b8bc1*/
+            v20 = (unsigned int)v16; /*0x7b8bc4*/
+            v18 = (int)*(this + 17); /*0x7b8bcd*/
+            v21 += (unsigned int)*(this + 12); /*0x7b8bd0*/
+            v19 = (int)*(this + 9); /*0x7b8bdc*/
+            v23 = v17; /*0x7b8bdd*/
+            v24 = 0; /*0x7b8be1*/
+            v25 = 0; /*0x7b8be5*/
+            v26 = v22; /*0x7b8be9*/
+            v27 = v17; /*0x7b8bed*/
+            (*(void (__thiscall **)(int, unsigned int *, int, unsigned int *, _DWORD, int))(*(_DWORD *)v18 + 8))( /*0x7b8bf8*/
               v18,
               &v24,
               v19,
@@ -20964,243 +8992,24 @@ void __thiscall WWMouseClass::AddRef(unsigned int *this, unsigned int *a2, unsig
               1);
           }
         }
-        Mouse::DrawCursor(this, (int *)*(this + 9), 0, 0);
-        ((void (__stdcall *)(int))v13)(dword_A8ED54[238853]);
+        Mouse::DrawCursor(this, *(this + 9), 0, 0); /*0x7b8c05*/
+        v13(hMutex); /*0x7b8c11*/
       }
-      ((void (__stdcall *)(int))v13)(dword_A8ED54[238853]);
+      v13(hMutex); /*0x7b8c1a*/
     }
     else
     {
-      *(this + 1) = a3;
-      *(this + 2) = a4;
-      *(this + 15) = *a2;
-      *(this + 16) = a2[1];
+      *(this + 1) = a3; /*0x7b8c2a*/
+      *(this + 2) = a4; /*0x7b8c2d*/
+      *(_QWORD *)(this + 15) = *(_QWORD *)a2; /*0x7b8c36*/
     }
   }
 }
-
-/* ASM:
-sub     esp, 20h
-push    ebx
-mov     ebx, [esp+24h+arg_4]
-push    esi
-mov     esi, ecx
-test    ebx, ebx
-jz      loc_7B8C3F
-mov     eax, [esi]
-call    dword ptr [eax+1Ch]
-test    al, al
-jz      loc_7B8C26
-mov     ecx, dword_A8ED54+0E9414h
-push    ebp
-push    edi
-mov     edi, ds:__imp_WaitForSingleObject
-push    2710h           ; dwMilliseconds
-push    ecx             ; hHandle
-call    edi ; __imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7B8A54
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7B8A54:                             ; CODE XREF: WWMouseClass__AddRef+3B↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+8]
-test    al, al
-jnz     loc_7B8B0E
-mov     eax, dword_A8ED54+0E9414h
-push    2710h           ; dwMilliseconds
-push    eax             ; hHandle
-call    edi ; __imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7B8A8E
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7B8A8E:                             ; CODE XREF: WWMouseClass__AddRef+75↑j
-mov     eax, [esi+50h]
-test    eax, eax
-jle     short loc_7B8AFD
-mov     eax, [esi+54h]
-test    eax, eax
-jle     short loc_7B8AFD
-mov     ecx, [esi+24h]
-test    ecx, ecx
-jz      short loc_7B8AFD
-mov     ebp, [esi+44h]
-test    ebp, ebp
-jz      short loc_7B8AFD
-mov     eax, [esi+48h]
-mov     edx, [esi+4Ch]
-add     eax, [esi+2Ch]
-mov     edi, [esi+50h]
-mov     ebx, [esi+54h]
-push    1
-mov     [esp+34h+var_10], eax
-mov     eax, [esi+30h]
-add     edx, eax
-xor     eax, eax
-mov     [esp+34h+var_20], eax
-mov     [esp+34h+var_1C], eax
-push    eax
-lea     eax, [esp+38h+var_20]
-push    eax
-mov     [esp+3Ch+var_8], edi
-mov     [esp+3Ch+var_4], ebx
-mov     [esp+3Ch+var_C], edx
-mov     [esp+3Ch+var_18], edi
-mov     [esp+3Ch+var_14], ebx
-mov     edx, [ecx]
-lea     eax, [esp+3Ch+var_10]
-push    ebp
-push    eax
-call    dword ptr [edx+8]
-mov     ebx, [esp+30h+arg_4]
-mov     edi, ds:__imp_WaitForSingleObject
-
-loc_7B8AFD:                             ; CODE XREF: WWMouseClass__AddRef+93↑j
-; WWMouseClass__AddRef+9A↑j ...
-mov     ecx, dword_A8ED54+0E9414h
-mov     ebp, ds:__imp_ReleaseMutex
-push    ecx             ; hMutex
-call    ebp ; __imp_ReleaseMutex
-jmp     short loc_7B8B14
-; ---------------------------------------------------------------------------
-
-loc_7B8B0E:                             ; CODE XREF: WWMouseClass__AddRef+5D↑j
-mov     ebp, ds:__imp_ReleaseMutex
-
-loc_7B8B14:                             ; CODE XREF: WWMouseClass__AddRef+10C↑j
-mov     edx, [esp+30h+arg_8]
-mov     eax, [esp+30h+arg_0]
-mov     [esi+4], ebx
-mov     [esi+8], edx
-mov     ecx, [eax]
-mov     [esi+3Ch], ecx
-mov     edx, [eax+4]
-mov     eax, [esi]
-mov     ecx, esi
-mov     [esi+40h], edx
-call    dword ptr [eax+8]
-test    al, al
-jnz     loc_7B8C13
-mov     ecx, dword_A8ED54+0E9414h
-push    2710h           ; dwMilliseconds
-push    ecx             ; hHandle
-call    edi ; __imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7B8B68
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7B8B68:                             ; CODE XREF: WWMouseClass__AddRef+14F↑j
-mov     ecx, esi
-call    BSurface__CreateTripleBuffer
-test    al, al
-jz      loc_7B8BFB
-mov     eax, [esi+24h]
-xor     ebx, ebx
-cmp     eax, ebx
-jz      short loc_7B8BFB
-lea     edx, [esp+30h+var_10]
-mov     ecx, esi
-push    edx
-call    WWMouseClass__initCursorState
-mov     edx, eax
-lea     ecx, [esi+48h]
-push    1
-push    ebx
-mov     edi, [edx]
-mov     [ecx], edi
-mov     edi, [edx+4]
-mov     [ecx+4], edi
-mov     edi, [edx+8]
-mov     [ecx+8], edi
-mov     edx, [edx+0Ch]
-mov     [ecx+0Ch], edx
-mov     ecx, [eax]
-mov     [esp+38h+var_20], ecx
-mov     edx, [eax+4]
-add     ecx, [esi+2Ch]
-mov     [esp+38h+var_1C], edx
-mov     edi, [eax+8]
-mov     [esp+38h+var_18], edi
-mov     eax, [eax+0Ch]
-mov     [esp+38h+var_20], ecx
-mov     ecx, [esi+30h]
-add     edx, ecx
-mov     ecx, [esi+44h]
-mov     [esp+38h+var_1C], edx
-lea     edx, [esp+38h+var_20]
-push    edx
-mov     edx, [esi+24h]
-push    edx
-mov     [esp+40h+var_14], eax
-mov     [esp+40h+var_10], ebx
-mov     [esp+40h+var_C], ebx
-mov     [esp+40h+var_8], edi
-mov     [esp+40h+var_4], eax
-mov     eax, [ecx]
-lea     edx, [esp+40h+var_10]
-push    edx
-call    dword ptr [eax+8]
-
-loc_7B8BFB:                             ; CODE XREF: WWMouseClass__AddRef+171↑j
-; WWMouseClass__AddRef+17E↑j
-mov     eax, [esi+24h]
-push    0
-push    0
-push    eax
-mov     ecx, esi
-call    Mouse__DrawCursor
-mov     ecx, dword_A8ED54+0E9414h
-push    ecx             ; hMutex
-call    ebp ; __imp_ReleaseMutex
-
-loc_7B8C13:                             ; CODE XREF: WWMouseClass__AddRef+136↑j
-mov     edx, dword_A8ED54+0E9414h
-push    edx             ; hMutex
-call    ebp ; __imp_ReleaseMutex
-pop     edi
-pop     ebp
-pop     esi
-pop     ebx
-add     esp, 20h
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_7B8C26:                             ; CODE XREF: WWMouseClass__AddRef+1A↑j
-mov     eax, [esp+28h+arg_8]
-mov     [esi+4], ebx
-mov     [esi+8], eax
-mov     eax, [esp+28h+arg_0]
-mov     ecx, [eax]
-mov     [esi+3Ch], ecx
-mov     edx, [eax+4]
-mov     [esi+40h], edx
-
-loc_7B8C3F:                             ; CODE XREF: WWMouseClass__AddRef+D↑j
-pop     esi
-pop     ebx
-add     esp, 20h
-retn    0Ch
-*/
 } }
 // 0x7B8E80
 namespace gamemd { void* WWMouseClass::initCursorState(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7b8e80
-_DWORD *__thiscall WWMouseClass::initCursorState(unsigned int *this, _DWORD *a2)
+_DWORD *__thiscall sub_7B8E80(unsigned int *this, _DWORD *a2)
 {
   int v3; // edi
   int v4; // eax
@@ -21215,105 +9024,38 @@ _DWORD *__thiscall WWMouseClass::initCursorState(unsigned int *this, _DWORD *a2)
   _DWORD v14[3]; // [esp+10h] [ebp-10h] BYREF
   int v15; // [esp+1Ch] [ebp-4h]
 
-  v3 = 0;
-  v4 = *(this + 1);
-  v5 = 0;
-  v6 = 0;
-  v7 = 0;
-  if ( v4 )
+  v3 = 0; /*0x7b8e89*/
+  v4 = *(this + 1); /*0x7b8e8b*/
+  v5 = 0; /*0x7b8e8e*/
+  v6 = 0; /*0x7b8e90*/
+  v7 = 0; /*0x7b8e92*/
+  if ( v4 ) /*0x7b8e96*/
   {
-    if ( ((int (__thiscall *)(_DWORD, int, int))WaitForSingleObject)(0, dword_A8ED54[238853], 10000) == 258 )
-      Debug::Log();
-    FoundationSize = Building::GetFoundationSize(v14, *(this + 2));
-    v9 = *FoundationSize;
-    v10 = *(this + 5);
-    v11 = *(this + 6);
-    v12 = FoundationSize[1];
-    v6 = FoundationSize[2];
-    v15 = FoundationSize[3];
-    v3 = v10 - *(this + 15) + v9;
-    v5 = v11 - *(this + 16) + v12;
-    ((void (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
-    v7 = v15;
+    if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b8eae*/
+      Debug::Log(); /*0x7b8ebf*/
+    FoundationSize = Building::GetFoundationSize(v14, *(this + 2)); /*0x7b8ed3*/
+    v9 = *FoundationSize; /*0x7b8ed8*/
+    v10 = *(this + 5); /*0x7b8eda*/
+    v11 = *(this + 6); /*0x7b8edd*/
+    v12 = FoundationSize[1]; /*0x7b8ee0*/
+    v6 = FoundationSize[2]; /*0x7b8ee3*/
+    v15 = FoundationSize[3]; /*0x7b8ee9*/
+    v3 = v10 - *(this + 15) + v9; /*0x7b8efd*/
+    v5 = v11 - *(this + 16) + v12; /*0x7b8eff*/
+    ReleaseMutex(hMutex); /*0x7b8f01*/
+    v7 = v15; /*0x7b8f07*/
   }
-  *a2 = v3;
-  a2[1] = v5;
-  a2[2] = v6;
-  a2[3] = v7;
-  return a2;
+  *a2 = v3; /*0x7b8f11*/
+  a2[1] = v5; /*0x7b8f15*/
+  a2[2] = v6; /*0x7b8f18*/
+  a2[3] = v7; /*0x7b8f1d*/
+  return a2; /*0x7b8f13*/
 }
-
-/* ASM:
-sub     esp, 10h
-push    ebx
-push    ebp
-push    esi
-mov     esi, ecx
-push    edi
-xor     edi, edi
-mov     eax, [esi+4]
-xor     ebx, ebx
-xor     ebp, ebp
-xor     ecx, ecx
-test    eax, eax
-jz      short loc_7B8F0B
-mov     eax, dword_A8ED54+0E9414h
-push    2710h           ; dwMilliseconds
-push    eax             ; hHandle
-call    ds:__imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7B8EC7
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7B8EC7:                             ; CODE XREF: WWMouseClass__initCursorState+2E↑j
-mov     ecx, [esi+8]
-lea     edx, [esp+20h+var_10]
-push    ecx
-mov     ecx, [esi+4]
-push    edx
-call    Building__GetFoundationSize
-mov     edi, [eax]
-mov     ecx, [esi+14h]
-mov     edx, [esi+18h]
-mov     ebx, [eax+4]
-mov     ebp, [eax+8]
-mov     eax, [eax+0Ch]
-mov     [esp+20h+var_4], eax
-mov     eax, [esi+3Ch]
-sub     ecx, eax
-mov     eax, [esi+40h]
-sub     edx, eax
-mov     eax, dword_A8ED54+0E9414h
-push    eax             ; hMutex
-add     edi, ecx
-add     ebx, edx
-call    ds:__imp_ReleaseMutex
-mov     ecx, [esp+20h+var_4]
-
-loc_7B8F0B:                             ; CODE XREF: WWMouseClass__initCursorState+16↑j
-mov     eax, [esp+20h+arg_0]
-mov     edx, eax
-mov     [edx], edi
-pop     edi
-pop     esi
-mov     [edx+4], ebx
-mov     [edx+8], ebp
-pop     ebp
-pop     ebx
-mov     [edx+0Ch], ecx
-add     esp, 10h
-retn    4
-*/
 } }
 // 0x7B8F30
 namespace gamemd { int WWMouseClass::updateCursorRect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7b8f30
-char __thiscall WWMouseClass::updateCursorRect(unsigned int *this)
+char __thiscall sub_7B8F30(unsigned int *this)
 {
   int v2; // eax
   unsigned int v3; // edi
@@ -21334,49 +9076,49 @@ char __thiscall WWMouseClass::updateCursorRect(unsigned int *this)
   unsigned int v19; // [esp+20h] [ebp-14h]
   int v20[4]; // [esp+24h] [ebp-10h] BYREF
 
-  LOBYTE(v2) = BSurface::CreateTripleBuffer((int)this);
-  if ( (_BYTE)v2 )
+  LOBYTE(v2) = BSurface::CreateTripleBuffer((int)this); /*0x7b8f36*/
+  if ( (_BYTE)v2 ) /*0x7b8f3d*/
   {
-    v2 = *(this + 9);
-    if ( v2 )
+    v2 = *(this + 9); /*0x7b8f43*/
+    if ( v2 ) /*0x7b8f48*/
     {
-      v3 = 0;
-      v4 = 0;
-      v5 = 0;
-      v6 = 0;
-      if ( *(this + 1) )
+      v3 = 0; /*0x7b8f54*/
+      v4 = 0; /*0x7b8f56*/
+      v5 = 0; /*0x7b8f58*/
+      v6 = 0; /*0x7b8f5a*/
+      if ( *(this + 1) ) /*0x7b8f4e*/
       {
-        if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-          Debug::Log();
-        FoundationSize = Building::GetFoundationSize(v20, *(this + 2));
-        v8 = *FoundationSize;
-        v9 = *(this + 5);
-        v10 = *(this + 6);
-        v11 = FoundationSize[1];
-        v5 = FoundationSize[2];
-        v19 = FoundationSize[3];
-        v3 = v9 - *(this + 15) + v8;
-        v4 = v10 - *(this + 16) + v11;
-        ((void (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
-        v6 = v19;
+        if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b8f76*/
+          Debug::Log(); /*0x7b8f87*/
+        FoundationSize = Building::GetFoundationSize(v20, *(this + 2)); /*0x7b8f9b*/
+        v8 = *FoundationSize; /*0x7b8fa0*/
+        v9 = *(this + 5); /*0x7b8fa2*/
+        v10 = *(this + 6); /*0x7b8fa5*/
+        v11 = FoundationSize[1]; /*0x7b8fa8*/
+        v5 = FoundationSize[2]; /*0x7b8fab*/
+        v19 = FoundationSize[3]; /*0x7b8fb1*/
+        v3 = v9 - *(this + 15) + v8; /*0x7b8fbf*/
+        v4 = v10 - *(this + 16) + v11; /*0x7b8fc7*/
+        ReleaseMutex(hMutex); /*0x7b8fc9*/
+        v6 = v19; /*0x7b8fcf*/
       }
-      v12 = v3 + *(this + 11);
-      *(this + 18) = v3;
-      v17[0] = v12;
-      *(this + 19) = v4;
-      v18[0] = 0;
-      v18[1] = 0;
-      *(this + 20) = v5;
-      v13 = *(this + 9);
-      *(this + 21) = v6;
-      v14 = *(this + 12) + v4;
-      v15 = *(this + 17);
-      v17[2] = v5;
-      v17[3] = v6;
-      v17[1] = v14;
-      v18[2] = v5;
-      v19 = v6;
-      LOBYTE(v2) = (*(int (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)v15 + 8))(
+      v12 = v3 + *(this + 11); /*0x7b8fd9*/
+      *(this + 18) = v3; /*0x7b8fdf*/
+      v17[0] = v12; /*0x7b8fe1*/
+      *(this + 19) = v4; /*0x7b8fe9*/
+      v18[0] = 0; /*0x7b8fec*/
+      v18[1] = 0; /*0x7b8ff0*/
+      *(this + 20) = v5; /*0x7b8ff5*/
+      v13 = *(this + 9); /*0x7b8ffd*/
+      *(this + 21) = v6; /*0x7b9000*/
+      v14 = *(this + 12) + v4; /*0x7b9006*/
+      v15 = *(this + 17); /*0x7b9008*/
+      v17[2] = v5; /*0x7b900c*/
+      v17[3] = v6; /*0x7b9010*/
+      v17[1] = v14; /*0x7b9014*/
+      v18[2] = v5; /*0x7b9018*/
+      v19 = v6; /*0x7b901c*/
+      LOBYTE(v2) = (*(int (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)v15 + 8))( /*0x7b9027*/
                      v15,
                      v18,
                      v13,
@@ -21385,113 +9127,13 @@ char __thiscall WWMouseClass::updateCursorRect(unsigned int *this)
                      1);
     }
   }
-  return v2;
+  return v2; /*0x7b902d*/
 }
-
-/* ASM:
-sub     esp, 30h
-push    esi
-mov     esi, ecx
-call    BSurface__CreateTripleBuffer
-test    al, al
-jz      loc_7B902D
-mov     eax, [esi+24h]
-test    eax, eax
-jz      loc_7B902D
-mov     ecx, [esi+4]
-push    ebx
-push    ebp
-push    edi
-xor     edi, edi
-xor     ebx, ebx
-xor     ebp, ebp
-xor     eax, eax
-test    ecx, ecx
-jz      short loc_7B8FD3
-mov     eax, dword_A8ED54+0E9414h
-push    2710h           ; dwMilliseconds
-push    eax             ; hHandle
-call    ds:__imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7B8F8F
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7B8F8F:                             ; CODE XREF: WWMouseClass__updateCursorRect+46↑j
-mov     ecx, [esi+8]
-lea     edx, [esp+40h+var_10]
-push    ecx
-mov     ecx, [esi+4]
-push    edx
-call    Building__GetFoundationSize
-mov     edi, [eax]
-mov     ecx, [esi+14h]
-mov     edx, [esi+18h]
-mov     ebx, [eax+4]
-mov     ebp, [eax+8]
-mov     eax, [eax+0Ch]
-mov     [esp+40h+var_14], eax
-mov     eax, [esi+3Ch]
-sub     ecx, eax
-mov     eax, dword_A8ED54+0E9414h
-add     edi, ecx
-mov     ecx, [esi+40h]
-sub     edx, ecx
-push    eax             ; hMutex
-add     ebx, edx
-call    ds:__imp_ReleaseMutex
-mov     eax, [esp+40h+var_14]
-
-loc_7B8FD3:                             ; CODE XREF: WWMouseClass__updateCursorRect+2E↑j
-mov     edx, [esi+2Ch]
-lea     ecx, [esi+48h]
-add     edx, edi
-mov     [esp+40h+var_30], edi
-mov     [ecx], edi
-mov     [esp+40h+var_30], edx
-xor     edx, edx
-push    1
-mov     [ecx+4], ebx
-mov     [esp+44h+var_20], edx
-mov     [esp+44h+var_1C], edx
-push    edx
-mov     [ecx+8], ebp
-lea     edx, [esp+48h+var_30]
-push    edx
-mov     edx, [esi+24h]
-mov     [ecx+0Ch], eax
-mov     ecx, [esi+30h]
-add     ebx, ecx
-mov     ecx, [esi+44h]
-push    edx
-mov     [esp+50h+var_28], ebp
-mov     [esp+50h+var_24], eax
-mov     [esp+50h+var_2C], ebx
-mov     [esp+50h+var_18], ebp
-mov     [esp+50h+var_14], eax
-mov     eax, [ecx]
-lea     edx, [esp+50h+var_20]
-push    edx
-call    dword ptr [eax+8]
-pop     edi
-pop     ebp
-pop     ebx
-
-loc_7B902D:                             ; CODE XREF: WWMouseClass__updateCursorRect+D↑j
-; WWMouseClass__updateCursorRect+18↑j
-pop     esi
-add     esp, 30h
-retn
-*/
 } }
 // 0x7B90C0
 namespace gamemd { int WWMouseClass::DrawCursorBuffered(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7b90c0
-int __thiscall WWMouseClass::DrawCursorBuffered(int *this, int *a2, char a3)
+int __thiscall WWMouseClass::DrawCursorBuffered(int *this, IUnknown *aP1, char a3)
 {
   int result; // eax
   int *v6; // ebx
@@ -21516,486 +9158,179 @@ int __thiscall WWMouseClass::DrawCursorBuffered(int *this, int *a2, char a3)
   int v25; // [esp+28h] [ebp-Ch]
   int v26; // [esp+2Ch] [ebp-8h]
   int v27; // [esp+30h] [ebp-4h]
-  int v28; // [esp+38h] [ebp+4h]
+  IUnknown *aP1a; // [esp+38h] [ebp+4h]
 
-  result = (*(int (__thiscall **)(int *))(*this + 8))(this);
-  if ( !(_BYTE)result )
+  result = (*(int (__thiscall **)(int *))(*this + 8))(this); /*0x7b90cb*/
+  if ( !(_BYTE)result ) /*0x7b90d0*/
   {
-    result = (*(int (__thiscall **)(int *))(*this + 28))(this);
-    if ( (_BYTE)result )
+    result = (*(int (__thiscall **)(int *))(*this + 28))(this); /*0x7b90da*/
+    if ( (_BYTE)result ) /*0x7b90df*/
     {
-      result = 0;
-      if ( a2 )
+      result = 0; /*0x7b90e9*/
+      if ( aP1 ) /*0x7b90ed*/
       {
-        if ( a2 != (int *)*(this + 9) )
+        if ( aP1 != (IUnknown *)*(this + 9) ) /*0x7b90f6*/
         {
-          if ( a3 )
+          if ( a3 ) /*0x7b9108*/
           {
-            if ( LOBYTE(MEMORY[0x87F7E8][539877]) )
-              result = -MEMORY[0x87F7E8][7664];
-            v6 = (int *)*(this + 27);
-            v28 = result;
-            v7 = this + 28;
+            if ( MEMORY[0xA8D63C].__pad_14B0[144] ) /*0x7b910c*/
+              result = -*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8540]; /*0x7b9113*/
+            v6 = (int *)*(this + 27); /*0x7b9115*/
+            aP1a = (IUnknown *)result; /*0x7b9118*/
+            v7 = this + 28; /*0x7b911c*/
           }
           else
           {
-            if ( !LOBYTE(MEMORY[0x87F7E8][539877]) )
+            if ( !MEMORY[0xA8D63C].__pad_14B0[144] ) /*0x7b9123*/
             {
-              v8 = (*(int (__thiscall **)(int *))(*a2 + 124))(a2) - MEMORY[0x87F7E8][7668];
-              if ( -(*(int (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7878] + 124))(MEMORY[0x87F7E8][7878]) <= v8 )
-                result = (*(int (__thiscall **)(int *))(*a2 + 124))(a2) - MEMORY[0x87F7E8][7668];
+              v8 = (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 124))(aP1) /*0x7b913d*/
+                 - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8556];
+              if ( -(*(int (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9396] + 124))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9396]) <= v8 ) /*0x7b9146*/
+                result = (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 124))(aP1) /*0x7b915f*/
+                       - *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8556];
               else
-                result = -(*(int (__thiscall **)(_DWORD))(*(_DWORD *)MEMORY[0x87F7E8][7878] + 124))(MEMORY[0x87F7E8][7878]);
+                result = -(*(int (__thiscall **)(_DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9396] + 124))(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9396]); /*0x7b9153*/
             }
-            v6 = (int *)*(this + 22);
-            v28 = result;
-            v7 = this + 23;
+            v6 = (int *)*(this + 22); /*0x7b9165*/
+            aP1a = (IUnknown *)result; /*0x7b9168*/
+            v7 = this + 23; /*0x7b916c*/
           }
-          if ( v6 && (result = *(this + 17)) != 0 )
+          if ( v6 && (result = *(this + 17)) != 0 ) /*0x7b917c*/
           {
-            if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-              Debug::Log();
-            *v7 = *(this + 18);
-            v7[1] = *(this + 19);
-            v7[2] = *(this + 20);
-            v7[3] = *(this + 21);
-            v9 = v7[2];
-            v10 = v7[3];
-            *v7 += v28;
-            v20 = 0;
-            v21 = 0;
-            v23 = v10;
-            v11 = *v6;
-            v22 = v9;
-            (*(void (__thiscall **)(int *, int *, int *, int *, _DWORD, int))(v11 + 8))(v6, &v20, a2, v7, 0, 1);
-            if ( a3
+            if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9198*/
+              Debug::Log(); /*0x7b91a9*/
+            *v7 = *(this + 18); /*0x7b91ba*/
+            v7[1] = *(this + 19); /*0x7b91bf*/
+            v7[2] = *(this + 20); /*0x7b91c5*/
+            v7[3] = *(this + 21); /*0x7b91cb*/
+            v9 = v7[2]; /*0x7b91d4*/
+            v10 = v7[3]; /*0x7b91d9*/
+            *v7 += (int)aP1a; /*0x7b91dc*/
+            v20 = 0; /*0x7b91e0*/
+            v21 = 0; /*0x7b91e4*/
+            v23 = v10; /*0x7b91e9*/
+            v11 = *v6; /*0x7b91ed*/
+            v22 = v9; /*0x7b91f4*/
+            (*(void (__thiscall **)(int *, int *, IUnknown *, int *, _DWORD, int))(v11 + 8))(v6, &v20, aP1, v7, 0, 1); /*0x7b91fc*/
+            if ( a3 /*0x7b921b*/
               && (v12 = *v7, *v7 < 0)
               && (v13 = -v12, -v12 < (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 17) + 124))(*(this + 17))) )
             {
-              v14 = v7[1];
-              v15 = *(this + 17);
-              v20 = 0;
-              v21 = v14;
-              v16 = v7[2];
-              v17 = v7[3];
-              v25 = 0;
-              v22 = v16;
-              v23 = v17;
-              v24 = v13;
-              v26 = v16;
-              v27 = v17;
-              (*(void (__thiscall **)(int, int *, int *, int *, _DWORD, int))(*(_DWORD *)v15 + 8))(
+              v14 = v7[1]; /*0x7b921d*/
+              v15 = *(this + 17); /*0x7b9220*/
+              v20 = 0; /*0x7b9227*/
+              v21 = v14; /*0x7b922b*/
+              v16 = v7[2]; /*0x7b922f*/
+              v17 = v7[3]; /*0x7b9232*/
+              v25 = 0; /*0x7b9235*/
+              v22 = v16; /*0x7b923e*/
+              v23 = v17; /*0x7b9243*/
+              v24 = v13; /*0x7b9247*/
+              v26 = v16; /*0x7b924b*/
+              v27 = v17; /*0x7b924f*/
+              (*(void (__thiscall **)(int, int *, IUnknown *, int *, _DWORD, int))(*(_DWORD *)v15 + 8))( /*0x7b925b*/
                 v15,
                 &v24,
-                a2,
+                aP1,
                 &v20,
                 0,
                 1);
             }
             else
             {
-              v18 = v7[3];
-              v26 = v7[2];
-              v19 = *(this + 17);
-              v24 = 0;
-              v25 = 0;
-              v27 = v18;
-              (*(void (__thiscall **)(int, int *, int *, int *, _DWORD, int))(*(_DWORD *)v19 + 8))(
+              v18 = v7[3]; /*0x7b9263*/
+              v26 = v7[2]; /*0x7b9268*/
+              v19 = *(this + 17); /*0x7b926c*/
+              v24 = 0; /*0x7b9271*/
+              v25 = 0; /*0x7b9275*/
+              v27 = v18; /*0x7b927a*/
+              (*(void (__thiscall **)(int, int *, IUnknown *, int *, _DWORD, int))(*(_DWORD *)v19 + 8))( /*0x7b9287*/
                 v19,
                 &v24,
-                a2,
+                aP1,
                 v7,
                 0,
                 1);
             }
-            Mouse::DrawCursor(this, a2, v28, 0);
-            return ((int (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+            Mouse::DrawCursor(this, aP1, (WWMouseClass *)aP1a, 0); /*0x7b9294*/
+            return ReleaseMutex(hMutex); /*0x7b92a0*/
           }
           else
           {
-            v7[2] = 0;
+            v7[2] = 0; /*0x7b92b0*/
           }
         }
       }
     }
   }
-  return result;
+  return result; /*0x7b92a6*/
 }
-
-/* ASM:
-sub     esp, 20h
-push    ebx
-push    ebp
-push    esi
-push    edi
-mov     edi, ecx
-mov     eax, [edi]
-call    dword ptr [eax+8]
-test    al, al
-jnz     loc_7B92B7
-mov     edx, [edi]
-mov     ecx, edi
-call    dword ptr [edx+1Ch]
-test    al, al
-jz      loc_7B92B7
-mov     ebp, [esp+30h+arg_0]
-xor     eax, eax
-cmp     ebp, eax
-jz      loc_7B92B7
-cmp     ebp, [edi+24h]
-jz      loc_7B92B7
-mov     cl, [esp+30h+arg_4]
-test    cl, cl
-mov     cl, ds:0A8EB7Ch
-jz      short loc_7B9121
-test    cl, cl
-jz      short loc_7B9115
-mov     eax, ds:886FA8h
-neg     eax
-
-loc_7B9115:                             ; CODE XREF: WWMouseClass__DrawCursorBuffered+4C↑j
-mov     ebx, [edi+6Ch]
-mov     [esp+30h+arg_0], eax
-lea     esi, [edi+70h]
-jmp     short loc_7B916F
-; ---------------------------------------------------------------------------
-
-loc_7B9121:                             ; CODE XREF: WWMouseClass__DrawCursorBuffered+48↑j
-test    cl, cl
-jnz     short loc_7B9165
-mov     eax, [ebp+0]
-mov     ecx, ebp
-call    dword ptr [eax+7Ch]
-mov     ecx, ds:887300h
-mov     ebx, ds:886FB8h
-mov     esi, eax
-mov     edx, [ecx]
-sub     esi, ebx
-call    dword ptr [edx+7Ch]
-neg     eax
-cmp     eax, esi
-jle     short loc_7B9157
-mov     ecx, ds:887300h
-mov     eax, [ecx]
-call    dword ptr [eax+7Ch]
-neg     eax
-jmp     short loc_7B9165
-; ---------------------------------------------------------------------------
-
-loc_7B9157:                             ; CODE XREF: WWMouseClass__DrawCursorBuffered+86↑j
-mov     edx, [ebp+0]
-mov     ecx, ebp
-call    dword ptr [edx+7Ch]
-sub     eax, ds:886FB8h
-
-loc_7B9165:                             ; CODE XREF: WWMouseClass__DrawCursorBuffered+63↑j
-; WWMouseClass__DrawCursorBuffered+95↑j
-mov     ebx, [edi+58h]
-mov     [esp+30h+arg_0], eax
-lea     esi, [edi+5Ch]
-
-loc_7B916F:                             ; CODE XREF: WWMouseClass__DrawCursorBuffered+5F↑j
-test    ebx, ebx
-jz      loc_7B92B0
-mov     eax, [edi+44h]
-test    eax, eax
-jz      loc_7B92B0
-mov     eax, dword_A8ED54+0E9414h
-push    2710h           ; dwMilliseconds
-push    eax             ; hHandle
-call    ds:__imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7B91B1
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7B91B1:                             ; CODE XREF: WWMouseClass__DrawCursorBuffered+D8↑j
-lea     ecx, [edi+48h]
-mov     edx, esi
-push    1
-mov     eax, [ecx]
-mov     [edx], eax
-mov     eax, [ecx+4]
-mov     [edx+4], eax
-mov     eax, [ecx+8]
-mov     [edx+8], eax
-mov     ecx, [ecx+0Ch]
-mov     [edx+0Ch], ecx
-mov     edx, [esp+34h+arg_0]
-mov     eax, [esi]
-mov     ecx, [esi+8]
-add     eax, edx
-mov     edx, [esi+0Ch]
-mov     [esi], eax
-xor     eax, eax
-mov     [esp+34h+var_20], eax
-mov     [esp+34h+var_1C], eax
-push    eax
-mov     [esp+38h+var_14], edx
-mov     edx, [ebx]
-push    esi
-lea     eax, [esp+3Ch+var_20]
-mov     [esp+3Ch+var_18], ecx
-push    ebp
-push    eax
-mov     ecx, ebx
-call    dword ptr [edx+8]
-mov     al, [esp+30h+arg_4]
-test    al, al
-jz      short loc_7B9260
-mov     eax, [esi]
-test    eax, eax
-jge     short loc_7B9260
-mov     ecx, [edi+44h]
-mov     ebx, eax
-neg     ebx
-mov     edx, [ecx]
-call    dword ptr [edx+7Ch]
-cmp     ebx, eax
-jge     short loc_7B9260
-mov     eax, [esi+4]
-mov     ecx, [edi+44h]
-xor     edx, edx
-push    1
-mov     [esp+34h+var_20], edx
-mov     [esp+34h+var_1C], eax
-mov     eax, [esi+8]
-mov     esi, [esi+0Ch]
-mov     [esp+34h+var_C], edx
-push    edx
-lea     edx, [esp+38h+var_20]
-mov     [esp+38h+var_18], eax
-push    edx
-mov     [esp+3Ch+var_14], esi
-mov     [esp+3Ch+var_10], ebx
-mov     [esp+3Ch+var_8], eax
-mov     [esp+3Ch+var_4], esi
-mov     eax, [ecx]
-lea     edx, [esp+3Ch+var_10]
-push    ebp
-push    edx
-call    dword ptr [eax+8]
-jmp     short loc_7B928A
-; ---------------------------------------------------------------------------
-
-loc_7B9260:                             ; CODE XREF: WWMouseClass__DrawCursorBuffered+145↑j
-; WWMouseClass__DrawCursorBuffered+14B↑j ...
-mov     ecx, [esi+8]
-mov     edx, [esi+0Ch]
-xor     eax, eax
-mov     [esp+30h+var_8], ecx
-mov     ecx, [edi+44h]
-push    1
-mov     [esp+34h+var_10], eax
-mov     [esp+34h+var_C], eax
-push    eax
-mov     [esp+38h+var_4], edx
-mov     edx, [ecx]
-push    esi
-lea     eax, [esp+3Ch+var_10]
-push    ebp
-push    eax
-call    dword ptr [edx+8]
-
-loc_7B928A:                             ; CODE XREF: WWMouseClass__DrawCursorBuffered+19E↑j
-mov     ecx, [esp+30h+arg_0]
-push    0
-push    ecx
-push    ebp
-mov     ecx, edi
-call    Mouse__DrawCursor
-mov     edx, dword_A8ED54+0E9414h
-push    edx             ; hMutex
-call    ds:__imp_ReleaseMutex
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 20h
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_7B92B0:                             ; CODE XREF: WWMouseClass__DrawCursorBuffered+B1↑j
-; WWMouseClass__DrawCursorBuffered+BC↑j
-mov     dword ptr [esi+8], 0
-
-loc_7B92B7:                             ; CODE XREF: WWMouseClass__DrawCursorBuffered+10↑j
-; WWMouseClass__DrawCursorBuffered+1F↑j ...
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 20h
-retn    8
-*/
 } }
 // 0x7B92D0
 namespace gamemd { void WWMouseClass::updateCursor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7b92d0
-void __thiscall WWMouseClass::updateCursor(#479 *this)
+int __thiscall WWMouseClass::_vt16(int *this, int *a2, char a3)
 {
-  int v2; // edi
-  int v3; // eax
-  _DWORD *v4; // esi
-  int v5; // edx
-  _DWORD v6[2]; // [esp+Ch] [ebp-20h] BYREF
-  int v7; // [esp+14h] [ebp-18h]
-  int v8; // [esp+18h] [ebp-14h]
-  _DWORD v9[4]; // [esp+1Ch] [ebp-10h] BYREF
-  int *v10; // [esp+30h] [ebp+4h]
-  char v11; // [esp+34h] [ebp+8h]
+  int result; // eax
+  int v5; // edi
+  _DWORD *v6; // esi
+  int v7; // edx
+  _DWORD v8[2]; // [esp+Ch] [ebp-20h] BYREF
+  int v9; // [esp+14h] [ebp-18h]
+  int v10; // [esp+18h] [ebp-14h]
+  _DWORD v11[4]; // [esp+1Ch] [ebp-10h] BYREF
 
-  if ( !(*(unsigned __int8 (__thiscall **)(#479 *))(*(_DWORD *)this + 8))(this) )
+  result = (*(int (__thiscall **)(int *))(*this + 8))(this); /*0x7b92da*/
+  if ( !(_BYTE)result ) /*0x7b92df*/
   {
-    if ( (*(unsigned __int8 (__thiscall **)(#479 *))(*(_DWORD *)this + 28))(this) )
+    result = (*(int (__thiscall **)(int *))(*this + 28))(this); /*0x7b92e9*/
+    if ( (_BYTE)result ) /*0x7b92ee*/
     {
-      if ( v10 )
+      if ( a2 ) /*0x7b92fa*/
       {
-        if ( v10 != *((int **)this + 9) )
+        if ( a2 != (int *)*(this + 9) ) /*0x7b9303*/
         {
-          v2 = *((_DWORD *)this + 22);
-          if ( v2 )
+          v5 = *(this + 22); /*0x7b9309*/
+          if ( v5 ) /*0x7b930e*/
           {
-            v3 = *((_DWORD *)this + 27);
-            if ( v3 )
+            result = *(this + 27); /*0x7b9314*/
+            if ( result ) /*0x7b9319*/
             {
-              if ( v11 )
+              if ( a3 ) /*0x7b9325*/
               {
-                v4 = (_DWORD *)((char *)this + 112);
-                v2 = v3;
+                v6 = this + 28; /*0x7b9327*/
+                v5 = result; /*0x7b932a*/
               }
               else
               {
-                v4 = (_DWORD *)((char *)this + 92);
+                v6 = this + 23; /*0x7b9349*/
               }
-              v6[0] = *v4;
-              v6[1] = v4[1];
-              v7 = v4[2];
-              v8 = v4[3];
-              if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-                Debug::Log();
-              v5 = *v10;
-              v9[2] = v7;
-              v9[3] = v8;
-              v9[0] = 0;
-              v9[1] = 0;
-              (*(void (__thiscall **)(int *, _DWORD *, int, _DWORD *, _DWORD, int))(v5 + 8))(v10, v6, v2, v9, 0, 1);
-              ((void (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+              v8[0] = *v6; /*0x7b932e*/
+              v8[1] = v6[1]; /*0x7b9335*/
+              v9 = v6[2]; /*0x7b933c*/
+              v10 = v6[3]; /*0x7b9343*/
+              if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9382*/
+                Debug::Log(); /*0x7b9393*/
+              v7 = *a2; /*0x7b93a3*/
+              v11[2] = v9; /*0x7b93a6*/
+              v11[3] = v10; /*0x7b93b0*/
+              v11[0] = 0; /*0x7b93bf*/
+              v11[1] = 0; /*0x7b93c7*/
+              (*(void (__thiscall **)(int *, _DWORD *, int, _DWORD *, _DWORD, int))(v7 + 8))(a2, v8, v5, v11, 0, 1); /*0x7b93cf*/
+              return ReleaseMutex(hMutex); /*0x7b93d9*/
             }
           }
         }
       }
     }
   }
+  return result; /*0x7b93df*/
 }
-
-/* ASM:
-sub     esp, 20h
-push    ebp
-push    esi
-mov     esi, ecx
-push    edi
-mov     eax, [esi]
-call    dword ptr [eax+8]
-test    al, al
-jnz     loc_7B93DF
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+1Ch]
-test    al, al
-jz      loc_7B93DF
-mov     ebp, [esp+2Ch+arg_0]
-test    ebp, ebp
-jz      loc_7B93DF
-cmp     ebp, [esi+24h]
-jz      loc_7B93DF
-mov     edi, [esi+58h]
-test    edi, edi
-jz      loc_7B93DF
-mov     eax, [esi+6Ch]
-test    eax, eax
-jz      loc_7B93DF
-mov     cl, [esp+2Ch+arg_4]
-test    cl, cl
-jz      short loc_7B9349
-add     esi, 70h ; 'p'
-mov     edi, eax
-mov     eax, [esi]
-mov     [esp+2Ch+var_20], eax
-mov     ecx, [esi+4]
-mov     [esp+2Ch+var_1C], ecx
-mov     edx, [esi+8]
-mov     [esp+2Ch+var_18], edx
-mov     eax, [esi+0Ch]
-mov     [esp+2Ch+var_14], eax
-jmp     short loc_7B9367
-; ---------------------------------------------------------------------------
-
-loc_7B9349:                             ; CODE XREF: WWMouseClass__updateCursor+55↑j
-add     esi, 5Ch ; '\'
-mov     ecx, [esi]
-mov     [esp+2Ch+var_20], ecx
-mov     edx, [esi+4]
-mov     [esp+2Ch+var_1C], edx
-mov     eax, [esi+8]
-mov     [esp+2Ch+var_18], eax
-mov     ecx, [esi+0Ch]
-mov     [esp+2Ch+var_14], ecx
-
-loc_7B9367:                             ; CODE XREF: WWMouseClass__updateCursor+77↑j
-test    edi, edi
-jz      short loc_7B93DF
-mov     edx, dword_A8ED54+0E9414h
-push    2710h           ; dwMilliseconds
-push    edx             ; hHandle
-call    ds:__imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7B939B
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7B939B:                             ; CODE XREF: WWMouseClass__updateCursor+B2↑j
-mov     eax, [esp+2Ch+var_18]
-mov     ecx, [esp+2Ch+var_14]
-mov     edx, [ebp+0]
-mov     [esp+2Ch+var_8], eax
-push    1
-lea     eax, [esp+30h+var_10]
-mov     [esp+30h+var_4], ecx
-push    0
-push    eax
-lea     ecx, [esp+38h+var_20]
-push    edi
-push    ecx
-mov     ecx, ebp
-mov     [esp+40h+var_10], 0
-mov     [esp+40h+var_C], 0
-call    dword ptr [edx+8]
-mov     edx, dword_A8ED54+0E9414h
-push    edx             ; hMutex
-call    ds:__imp_ReleaseMutex
-
-loc_7B93DF:                             ; CODE XREF: WWMouseClass__updateCursor+F↑j
-; WWMouseClass__updateCursor+1E↑j ...
-pop     edi
-pop     esi
-pop     ebp
-add     esp, 20h
-retn    8
-*/
 } }
 // 0x7B9690
 namespace gamemd { bool WWMouseClass::renderDragSelectionRect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7b9690
-int __thiscall WWMouseClass::renderDragSelectionRect(_DWORD *this)
+BOOL __thiscall WWMouseClass::RenderDragSelectionRect(_DWORD *this)
 {
   int v2; // ecx
   int v3; // ebp
@@ -22006,110 +9341,38 @@ int __thiscall WWMouseClass::renderDragSelectionRect(_DWORD *this)
   _DWORD v9[4]; // [esp+8h] [ebp-20h] BYREF
   _DWORD v10[4]; // [esp+18h] [ebp-10h] BYREF
 
-  if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-    Debug::Log();
-  if ( (int)*(this + 20) > 0 && (int)*(this + 21) > 0 )
+  if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b96ad*/
+    Debug::Log(); /*0x7b96be*/
+  if ( (int)*(this + 20) > 0 && (int)*(this + 21) > 0 ) /*0x7b96d2*/
   {
-    v2 = *(this + 9);
-    if ( v2 )
+    v2 = *(this + 9); /*0x7b96d4*/
+    if ( v2 ) /*0x7b96d9*/
     {
-      v3 = *(this + 17);
-      if ( v3 )
+      v3 = *(this + 17); /*0x7b96db*/
+      if ( v3 ) /*0x7b96e0*/
       {
-        v4 = *(this + 19);
-        v5 = *(this + 21);
-        v6 = *(this + 20);
-        v10[0] = *(this + 11) + *(this + 18);
-        v7 = *(this + 12);
-        v9[0] = 0;
-        v9[1] = 0;
-        v10[2] = v6;
-        v10[3] = v5;
-        v10[1] = v7 + v4;
-        v9[2] = v6;
-        v9[3] = v5;
-        (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)v2 + 8))(v2, v10, v3, v9, 0, 1);
+        v4 = *(this + 19); /*0x7b96e5*/
+        v5 = *(this + 21); /*0x7b96ec*/
+        v6 = *(this + 20); /*0x7b96f0*/
+        v10[0] = *(this + 11) + *(this + 18); /*0x7b96f3*/
+        v7 = *(this + 12); /*0x7b96f7*/
+        v9[0] = 0; /*0x7b9700*/
+        v9[1] = 0; /*0x7b9704*/
+        v10[2] = v6; /*0x7b970e*/
+        v10[3] = v5; /*0x7b9712*/
+        v10[1] = v7 + v4; /*0x7b9716*/
+        v9[2] = v6; /*0x7b971a*/
+        v9[3] = v5; /*0x7b971e*/
+        (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)v2 + 8))(v2, v10, v3, v9, 0, 1); /*0x7b972a*/
       }
     }
   }
-  return ((int (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+  return ReleaseMutex(hMutex); /*0x7b973c*/
 }
-
-/* ASM:
-mov     eax, dword_A8ED54+0E9414h
-sub     esp, 20h
-push    ebp
-push    esi
-push    2710h           ; dwMilliseconds
-mov     esi, ecx
-push    eax             ; hHandle
-call    ds:__imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7B96C6
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7B96C6:                             ; CODE XREF: WWMouseClass__renderDragSelectionRect+1D↑j
-mov     eax, [esi+50h]
-test    eax, eax
-jle     short loc_7B972F
-mov     eax, [esi+54h]
-test    eax, eax
-jle     short loc_7B972F
-mov     ecx, [esi+24h]
-test    ecx, ecx
-jz      short loc_7B972F
-mov     ebp, [esi+44h]
-test    ebp, ebp
-jz      short loc_7B972F
-mov     eax, [esi+48h]
-mov     edx, [esi+4Ch]
-add     eax, [esi+2Ch]
-push    ebx
-mov     ebx, [esi+54h]
-push    edi
-mov     edi, [esi+50h]
-mov     [esp+30h+var_10], eax
-mov     eax, [esi+30h]
-push    1
-add     edx, eax
-xor     eax, eax
-mov     [esp+34h+var_20], eax
-mov     [esp+34h+var_1C], eax
-push    eax
-lea     eax, [esp+38h+var_20]
-push    eax
-mov     [esp+3Ch+var_8], edi
-mov     [esp+3Ch+var_4], ebx
-mov     [esp+3Ch+var_C], edx
-mov     [esp+3Ch+var_18], edi
-mov     [esp+3Ch+var_14], ebx
-mov     edx, [ecx]
-lea     eax, [esp+3Ch+var_10]
-push    ebp
-push    eax
-call    dword ptr [edx+8]
-pop     edi
-pop     ebx
-
-loc_7B972F:                             ; CODE XREF: WWMouseClass__renderDragSelectionRect+3B↑j
-; WWMouseClass__renderDragSelectionRect+42↑j ...
-mov     ecx, dword_A8ED54+0E9414h
-push    ecx             ; hMutex
-call    ds:__imp_ReleaseMutex
-pop     esi
-pop     ebp
-add     esp, 20h
-retn
-*/
 } }
 // 0x7B9750
 namespace gamemd { int WWMouseClass::showCursor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7b9750
 int __thiscall WWMouseClass::showCursor(int this)
 {
   int result; // eax
@@ -22125,7 +9388,7 @@ int __thiscall WWMouseClass::showCursor(int this)
   int v12; // ebp
   int *v13; // eax
   int v14; // ebp
-  _DWORD *v15; // eax
+  IUnknown *v15; // eax
   int v16; // [esp-1Ch] [ebp-50h]
   int v17; // [esp+4h] [ebp-30h] BYREF
   int v18; // [esp+8h] [ebp-2Ch]
@@ -22134,56 +9397,56 @@ int __thiscall WWMouseClass::showCursor(int this)
   _DWORD v21[4]; // [esp+14h] [ebp-20h] BYREF
   _DWORD v22[4]; // [esp+24h] [ebp-10h] BYREF
 
-  result = *(_DWORD *)(this + 12);
-  if ( result )
+  result = *(_DWORD *)(this + 12); /*0x7b9756*/
+  if ( result ) /*0x7b975b*/
   {
-    if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-      Debug::Log();
-    v3 = *(_DWORD *)(this + 12) + 1;
-    *(_DWORD *)(this + 12) = v3;
-    if ( !v3 )
+    if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b977b*/
+      Debug::Log(); /*0x7b978c*/
+    v3 = *(_DWORD *)(this + 12) + 1; /*0x7b979d*/
+    *(_DWORD *)(this + 12) = v3; /*0x7b979e*/
+    if ( !v3 ) /*0x7b97a1*/
     {
-      if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 28))(this) )
+      if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 28))(this) ) /*0x7b97ab*/
       {
-        if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-          Debug::Log();
-        if ( BSurface::CreateTripleBuffer(this) && *(_DWORD *)(this + 36) )
+        if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b97c8*/
+          Debug::Log(); /*0x7b97d9*/
+        if ( BSurface::CreateTripleBuffer(this) && *(_DWORD *)(this + 36) ) /*0x7b97f0*/
         {
-          Rect::Set(&v17, 0, 0, 0, 0);
-          if ( *(_DWORD *)(this + 4) )
+          Rect::Set(&v17, 0, 0, 0, 0); /*0x7b9807*/
+          if ( *(_DWORD *)(this + 4) ) /*0x7b980c*/
           {
-            UI_Helper_7BA2C0();
-            FoundationSize = Building::GetFoundationSize(v22, *(_DWORD *)(this + 8));
-            v17 = *FoundationSize;
-            v18 = FoundationSize[1];
-            v19 = FoundationSize[2];
-            v5 = *(_DWORD *)(this + 60);
-            v20 = FoundationSize[3];
-            v6 = *(_DWORD *)(this + 20) - v5;
-            v7 = *(_DWORD *)(this + 64);
-            v17 += v6;
-            v18 += *(_DWORD *)(this + 24) - v7;
-            ((void (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+            UI_Helper_7BA2C0(); /*0x7b9813*/
+            FoundationSize = Building::GetFoundationSize(v22, *(_DWORD *)(this + 8)); /*0x7b9824*/
+            v17 = *FoundationSize; /*0x7b982d*/
+            v18 = FoundationSize[1]; /*0x7b9834*/
+            v19 = FoundationSize[2]; /*0x7b983b*/
+            v5 = *(_DWORD *)(this + 60); /*0x7b983f*/
+            v20 = FoundationSize[3]; /*0x7b9845*/
+            v6 = *(_DWORD *)(this + 20) - v5; /*0x7b984c*/
+            v7 = *(_DWORD *)(this + 64); /*0x7b984e*/
+            v17 += v6; /*0x7b9853*/
+            v18 += *(_DWORD *)(this + 24) - v7; /*0x7b985e*/
+            ReleaseMutex(hMutex); /*0x7b9869*/
           }
-          v8 = v17;
-          v9 = v18;
-          v10 = v19;
-          v11 = v20;
-          v21[0] = v17;
-          *(_DWORD *)(this + 72) = v17;
-          v21[2] = v10;
-          v21[3] = v11;
-          *(_DWORD *)(this + 76) = v9;
-          *(_DWORD *)(this + 80) = v10;
-          *(_DWORD *)(this + 84) = v11;
-          v12 = v8 + *(_DWORD *)(this + 44);
-          v13 = *(int **)(this + 68);
-          v21[0] = v12;
-          v21[1] = *(_DWORD *)(this + 48) + v9;
-          v14 = *v13;
-          v16 = *(_DWORD *)(this + 36);
-          v15 = Rect::Set(v22, 0, 0, v10, v11);
-          (*(void (__thiscall **)(_DWORD, _DWORD *, int, _DWORD *, _DWORD, int))(v14 + 8))(
+          v8 = v17; /*0x7b986b*/
+          v9 = v18; /*0x7b986f*/
+          v10 = v19; /*0x7b9879*/
+          v11 = v20; /*0x7b987d*/
+          v21[0] = v17; /*0x7b9881*/
+          *(_DWORD *)(this + 72) = v17; /*0x7b9885*/
+          v21[2] = v10; /*0x7b9888*/
+          v21[3] = v11; /*0x7b988c*/
+          *(_DWORD *)(this + 76) = v9; /*0x7b9892*/
+          *(_DWORD *)(this + 80) = v10; /*0x7b9897*/
+          *(_DWORD *)(this + 84) = v11; /*0x7b989a*/
+          v12 = v8 + *(_DWORD *)(this + 44); /*0x7b98a0*/
+          v13 = *(int **)(this + 68); /*0x7b98a2*/
+          v21[0] = v12; /*0x7b98a5*/
+          v21[1] = *(_DWORD *)(this + 48) + v9; /*0x7b98ae*/
+          v14 = *v13; /*0x7b98b2*/
+          v16 = *(_DWORD *)(this + 36); /*0x7b98bc*/
+          v15 = (IUnknown *)Rect::Set(v22, 0, 0, v10, v11); /*0x7b98c7*/
+          (*(void (__thiscall **)(_DWORD, IUnknown *, int, _DWORD *, _DWORD, int))(v14 + 8))( /*0x7b98d0*/
             *(_DWORD *)(this + 68),
             v15,
             v16,
@@ -22191,398 +9454,161 @@ int __thiscall WWMouseClass::showCursor(int this)
             0,
             1);
         }
-        Mouse::DrawCursor((_DWORD *)this, *(int **)(this + 36), 0, 0);
-        ((void (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+        Mouse::DrawCursor((_DWORD *)this, *(IUnknown **)(this + 36), 0, 0); /*0x7b98de*/
+        ReleaseMutex(hMutex); /*0x7b98ea*/
       }
       else
       {
-        while ( ShowCursor(1) < 0 )
-          ;
+        while ( ShowCursor(1) < 0 ) /*0x7b98fa*/
+          ; /*0x7b98fc*/
       }
     }
-    if ( *(int *)(this + 12) > 0 )
-      *(_DWORD *)(this + 12) = 0;
-    return ((int (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+    if ( *(int *)(this + 12) > 0 ) /*0x7b9909*/
+      *(_DWORD *)(this + 12) = 0; /*0x7b990b*/
+    return ReleaseMutex(hMutex); /*0x7b9918*/
   }
-  return result;
+  return result; /*0x7b991c*/
 }
-
-/* ASM:
-sub     esp, 30h
-push    esi
-mov     esi, ecx
-mov     eax, [esi+0Ch]
-test    eax, eax
-jz      loc_7B991C
-mov     eax, dword_A8ED54+0E9414h
-push    ebx
-push    edi
-mov     edi, ds:__imp_WaitForSingleObject
-push    2710h           ; dwMilliseconds
-push    eax             ; hHandle
-call    edi ; __imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7B9794
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7B9794:                             ; CODE XREF: WWMouseClass__showCursor+2B↑j
-mov     eax, [esi+0Ch]
-mov     ebx, ds:__imp_ReleaseMutex
-inc     eax
-mov     [esi+0Ch], eax
-jnz     loc_7B9904
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+1Ch]
-test    al, al
-jz      loc_7B98EE
-mov     eax, dword_A8ED54+0E9414h
-push    2710h           ; dwMilliseconds
-push    eax             ; hHandle
-call    edi ; __imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7B97E1
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7B97E1:                             ; CODE XREF: WWMouseClass__showCursor+78↑j
-mov     ecx, esi
-call    BSurface__CreateTripleBuffer
-test    al, al
-jz      loc_7B98D4
-mov     eax, [esi+24h]
-test    eax, eax
-jz      loc_7B98D4
-push    0
-push    0
-push    0
-push    0
-lea     ecx, [esp+4Ch+var_30]
-call    Rect__Set
-mov     eax, [esi+4]
-test    eax, eax
-jz      short loc_7B986B
-call    UI_Helper_7BA2C0
-mov     ecx, [esi+8]
-lea     edx, [esp+3Ch+var_10]
-push    ecx
-mov     ecx, [esi+4]
-push    edx
-call    Building__GetFoundationSize
-mov     edx, eax
-mov     eax, [edx]
-mov     [esp+3Ch+var_30], eax
-mov     ecx, [edx+4]
-mov     [esp+3Ch+var_2C], ecx
-mov     edi, [edx+8]
-mov     [esp+3Ch+var_28], edi
-mov     edi, [esi+3Ch]
-mov     edx, [edx+0Ch]
-mov     [esp+3Ch+var_24], edx
-mov     edx, [esi+14h]
-sub     edx, edi
-mov     edi, [esi+40h]
-add     eax, edx
-mov     [esp+3Ch+var_30], eax
-mov     eax, [esi+18h]
-sub     eax, edi
-add     ecx, eax
-mov     [esp+3Ch+var_2C], ecx
-mov     ecx, dword_A8ED54+0E9414h
-push    ecx             ; hMutex
-call    ebx ; __imp_ReleaseMutex
-
-loc_7B986B:                             ; CODE XREF: WWMouseClass__showCursor+C1↑j
-mov     eax, [esp+3Ch+var_30]
-mov     ecx, [esp+3Ch+var_2C]
-lea     edx, [esi+48h]
-push    ebp
-mov     ebp, edx
-mov     edx, [esp+40h+var_28]
-mov     edi, [esp+40h+var_24]
-mov     [esp+40h+var_20], eax
-mov     [ebp+0], eax
-mov     [esp+40h+var_18], edx
-mov     [esp+40h+var_14], edi
-push    1
-mov     [ebp+4], ecx
-push    0
-mov     [ebp+8], edx
-mov     [ebp+0Ch], edi
-mov     ebp, [esi+2Ch]
-add     ebp, eax
-mov     eax, [esi+44h]
-mov     [esp+48h+var_20], ebp
-mov     ebp, [esi+30h]
-add     ecx, ebp
-mov     [esp+48h+var_1C], ecx
-mov     ebp, [eax]
-mov     eax, [esi+24h]
-lea     ecx, [esp+48h+var_20]
-push    ecx
-push    eax
-push    edi
-push    edx
-push    0
-push    0
-lea     ecx, [esp+60h+var_10]
-call    Rect__Set
-mov     ecx, [esi+44h]
-push    eax
-call    dword ptr [ebp+8]
-pop     ebp
-
-loc_7B98D4:                             ; CODE XREF: WWMouseClass__showCursor+9A↑j
-; WWMouseClass__showCursor+A5↑j
-mov     ecx, [esi+24h]
-push    0
-push    0
-push    ecx
-mov     ecx, esi
-call    Mouse__DrawCursor
-mov     edx, dword_A8ED54+0E9414h
-push    edx             ; hMutex
-call    ebx ; __imp_ReleaseMutex
-jmp     short loc_7B9904
-; ---------------------------------------------------------------------------
-
-loc_7B98EE:                             ; CODE XREF: WWMouseClass__showCursor+60↑j
-mov     edi, ds:__imp_ShowCursor
-push    1               ; bShow
-call    edi ; __imp_ShowCursor
-test    eax, eax
-jge     short loc_7B9904
-
-loc_7B98FC:                             ; CODE XREF: WWMouseClass__showCursor+1B2↓j
-push    1               ; bShow
-call    edi ; __imp_ShowCursor
-test    eax, eax
-jl      short loc_7B98FC
-
-loc_7B9904:                             ; CODE XREF: WWMouseClass__showCursor+51↑j
-; WWMouseClass__showCursor+19C↑j ...
-mov     eax, [esi+0Ch]
-test    eax, eax
-jle     short loc_7B9912
-mov     dword ptr [esi+0Ch], 0
-
-loc_7B9912:                             ; CODE XREF: WWMouseClass__showCursor+1B9↑j
-mov     eax, dword_A8ED54+0E9414h
-push    eax             ; hMutex
-call    ebx ; __imp_ReleaseMutex
-pop     edi
-pop     ebx
-
-loc_7B991C:                             ; CODE XREF: WWMouseClass__showCursor+B↑j
-pop     esi
-add     esp, 30h
-retn
-*/
 } }
 // 0x7B9D70
 namespace gamemd { int WWMouseClass::checkStatus(int a1, int a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall WWMouseClass::_vt08(void *this, int a2, int a3, int a4, int a5)
 {
-  return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+  return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x7b9d75*/
 }
-
-/* ASM:
-mov     eax, [ecx]
-call    dword ptr [eax+0Ch]
-retn    10h
-*/
 } }
 // 0x7B9D90
 namespace gamemd { void WWMouseClass::processFrame() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7b9d90
-void __thiscall WWMouseClass::processFrame(#479 *this)
+int __thiscall WWMouseClass::_vt17(int *this, int *a2, int *a3)
 {
-  int v1; // esi
-  int v2; // ecx
-  int *v3; // [esp+Ch] [ebp+4h]
-  int *v4; // [esp+10h] [ebp+8h]
+  int v3; // esi
+  int v4; // ecx
+  int result; // eax
 
-  *v3 -= *((_DWORD *)this + 11);
-  *v4 -= *((_DWORD *)this + 12);
-  if ( *v3 < 0 )
-    *v3 = 0;
-  if ( *v4 < 0 && !LOBYTE(dword_A8ED54[238851]) )
-    *v4 = 0;
-  v1 = *((_DWORD *)this + 13);
-  if ( *v3 >= v1 )
-    *v3 = v1 - 1;
-  v2 = *((_DWORD *)this + 14);
-  if ( *v4 >= v2 )
-    *v4 = v2 - 1;
+  *a2 -= *(this + 11); /*0x7b9da1*/
+  *a3 -= *(this + 12); /*0x7b9daa*/
+  if ( *a2 < 0 ) /*0x7b9db0*/
+    *a2 = 0; /*0x7b9db2*/
+  if ( *a3 < 0 && !byte_B78160 ) /*0x7b9dc7*/
+    *a3 = 0; /*0x7b9dc9*/
+  v3 = *(this + 13); /*0x7b9dcf*/
+  if ( *a2 >= v3 ) /*0x7b9dd6*/
+    *a2 = v3 - 1; /*0x7b9dd9*/
+  v4 = *(this + 14); /*0x7b9ddb*/
+  result = *a3; /*0x7b9dde*/
+  if ( *a3 >= v4 ) /*0x7b9de4*/
+    *a3 = v4 - 1; /*0x7b9de7*/
+  return result; /*0x7b9de0*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-mov     edx, [ecx+2Ch]
-push    esi
-push    edi
-mov     esi, [eax]
-sub     esi, edx
-mov     edx, [esp+8+arg_4]
-mov     [eax], esi
-mov     esi, [ecx+30h]
-mov     edi, [edx]
-sub     edi, esi
-mov     [edx], edi
-mov     esi, [eax]
-test    esi, esi
-jge     short loc_7B9DB8
-mov     dword ptr [eax], 0
-
-loc_7B9DB8:                             ; CODE XREF: WWMouseClass__processFrame+20↑j
-cmp     dword ptr [edx], 0
-jge     short loc_7B9DCF
-push    ebx
-mov     bl, byte ptr dword_A8ED54+0E940Ch
-test    bl, bl
-pop     ebx
-jnz     short loc_7B9DCF
-mov     dword ptr [edx], 0
-
-loc_7B9DCF:                             ; CODE XREF: WWMouseClass__processFrame+2B↑j
-; WWMouseClass__processFrame+37↑j
-mov     esi, [ecx+34h]
-mov     edi, [eax]
-cmp     edi, esi
-jl      short loc_7B9DDB
-dec     esi
-mov     [eax], esi
-
-loc_7B9DDB:                             ; CODE XREF: WWMouseClass__processFrame+46↑j
-mov     ecx, [ecx+38h]
-mov     eax, [edx]
-pop     edi
-cmp     eax, ecx
-pop     esi
-jl      short locret_7B9DE9
-dec     ecx
-mov     [edx], ecx
-
-locret_7B9DE9:                          ; CODE XREF: WWMouseClass__processFrame+54↑j
-retn    8
-*/
 } }
 // 0x7B9E30
 namespace gamemd { bool WWMouseClass::FlipCursorBuffer() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7b9e30
-int __thiscall WWMouseClass::FlipCursorBuffer(unsigned int *this, unsigned int a2, unsigned int a3, char a4)
+BOOL __thiscall WWMouseClass::FlipCursorBuffer(IUnknown **this, IUnknown *a2, IUnknown *a3, char a4)
 {
   DWORD (__stdcall *v4)(HANDLE, DWORD); // edi
-  int v6; // ecx
+  IUnknown *v6; // ecx
   int v7; // ebx
   int v8; // edx
-  unsigned int v9; // edi
-  unsigned int v10; // ebp
-  int v11; // edx
-  unsigned int v12; // edx
-  unsigned int *inited; // eax
+  IUnknown *v9; // edi
+  IUnknown *v10; // ebp
+  char *v11; // edx
+  IUnknown *v12; // edx
+  IUnknown **inited; // eax
   int v14; // ebp
-  unsigned int v15; // ecx
+  IUnknown *v15; // ecx
   int v16; // ebp
-  unsigned int v17; // eax
+  IUnknown *v17; // eax
   int v18; // ecx
   int v20; // [esp-Ch] [ebp-40h]
-  unsigned int v21; // [esp+14h] [ebp-20h] BYREF
-  unsigned int v22; // [esp+18h] [ebp-1Ch]
-  unsigned int v23; // [esp+1Ch] [ebp-18h]
-  unsigned int v24; // [esp+20h] [ebp-14h]
+  IUnknown *v21; // [esp+14h] [ebp-20h] BYREF
+  IUnknown *v22; // [esp+18h] [ebp-1Ch]
+  IUnknown *v23; // [esp+1Ch] [ebp-18h]
+  IUnknown *v24; // [esp+20h] [ebp-14h]
   int v25; // [esp+24h] [ebp-10h] BYREF
-  int v26; // [esp+28h] [ebp-Ch]
-  unsigned int v27; // [esp+2Ch] [ebp-8h]
-  unsigned int v28; // [esp+30h] [ebp-4h]
+  char *v26; // [esp+28h] [ebp-Ch]
+  IUnknown *v27; // [esp+2Ch] [ebp-8h]
+  IUnknown *v28; // [esp+30h] [ebp-4h]
 
-  v4 = WaitForSingleObject;
-  if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-    Debug::Log();
-  if ( a2 != *(this + 5) || a3 != *(this + 6) || a4 )
+  v4 = WaitForSingleObject; /*0x7b9e3c*/
+  if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9e51*/
+    Debug::Log(); /*0x7b9e62*/
+  if ( a2 != *(this + 5) || a3 != *(this + 6) || a4 ) /*0x7b9e86*/
   {
-    if ( (*(unsigned __int8 (__thiscall **)(unsigned int *))(*this + 28))(this)
-      && !(*(unsigned __int8 (__thiscall **)(unsigned int *))(*this + 8))(this)
-      && LOBYTE(dword_A8ED54[11]) )
+    if ( ((unsigned __int8 (__thiscall *)(IUnknown **))(*this)->field_1C)(this) /*0x7b9eb1*/
+      && !((unsigned __int8 (__thiscall *)(IUnknown **))(*this)->field_8)(this)
+      && MEMORY[0xA8D63C].__pad_14B0[660] )
     {
-      if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-        Debug::Log();
-      if ( (int)*(this + 20) > 0 && (int)*(this + 21) > 0 )
+      if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9ec9*/
+        Debug::Log(); /*0x7b9eda*/
+      if ( (int)*(this + 20) > 0 && (int)*(this + 21) > 0 ) /*0x7b9eee*/
       {
-        v6 = *(this + 9);
-        if ( v6 )
+        v6 = *(this + 9); /*0x7b9ef0*/
+        if ( v6 ) /*0x7b9ef5*/
         {
-          v7 = *(this + 17);
-          if ( v7 )
+          v7 = (int)*(this + 17); /*0x7b9ef7*/
+          if ( v7 ) /*0x7b9efc*/
           {
-            v8 = *(this + 19);
-            v9 = *(this + 20);
-            v10 = *(this + 21);
-            v25 = *(this + 11) + *(this + 18);
-            v11 = *(this + 12) + v8;
-            v21 = 0;
-            v22 = 0;
-            v27 = v9;
-            v28 = v10;
-            v26 = v11;
-            v23 = v9;
-            v24 = v10;
-            (*(void (__thiscall **)(int, int *, int, unsigned int *, _DWORD, int))(*(_DWORD *)v6 + 8))(
+            v8 = (int)*(this + 19); /*0x7b9f01*/
+            v9 = *(this + 20); /*0x7b9f07*/
+            v10 = *(this + 21); /*0x7b9f0a*/
+            v25 = (int)*(this + 18) + (_DWORD)*(this + 11); /*0x7b9f0f*/
+            v11 = (char *)*(this + 12) + v8; /*0x7b9f16*/
+            v21 = 0; /*0x7b9f1a*/
+            v22 = 0; /*0x7b9f1e*/
+            v27 = v9; /*0x7b9f28*/
+            v28 = v10; /*0x7b9f2c*/
+            v26 = v11; /*0x7b9f30*/
+            v23 = v9; /*0x7b9f34*/
+            v24 = v10; /*0x7b9f38*/
+            (*(void (__thiscall **)(IUnknown *, int *, int, IUnknown **, _DWORD, int))(v6->field_0 + 8))( /*0x7b9f44*/
               v6,
               &v25,
               v7,
               &v21,
               0,
               1);
-            v4 = WaitForSingleObject;
+            v4 = WaitForSingleObject; /*0x7b9f47*/
           }
         }
       }
-      ((void (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+      ReleaseMutex(hMutex); /*0x7b9f54*/
     }
-    *(this + 5) = a2;
-    v12 = *this;
-    *(this + 6) = a3;
-    if ( (*(unsigned __int8 (__thiscall **)(unsigned int *))(v12 + 28))(this)
-      && !(*(unsigned __int8 (__thiscall **)(unsigned int *))(*this + 8))(this)
-      && LOBYTE(dword_A8ED54[11]) )
+    *(this + 5) = a2; /*0x7b9f62*/
+    v12 = *this; /*0x7b9f65*/
+    *(this + 6) = a3; /*0x7b9f69*/
+    if ( ((unsigned __int8 (__thiscall *)(IUnknown **))v12->field_1C)(this) /*0x7b9f8d*/
+      && !((unsigned __int8 (__thiscall *)(IUnknown **))(*this)->field_8)(this)
+      && MEMORY[0xA8D63C].__pad_14B0[660] )
     {
-      if ( ((int (__stdcall *)(int, int))v4)(dword_A8ED54[238853], 10000) == 258 )
-        Debug::Log();
-      if ( BSurface::CreateTripleBuffer((int)this) && *(this + 9) )
+      if ( v4(hMutex, 0x2710u) == 258 ) /*0x7b9fa6*/
+        Debug::Log(); /*0x7b9fb7*/
+      if ( BSurface::CreateTripleBuffer((int)this) && *(this + 9) ) /*0x7b9fce*/
       {
-        inited = WWMouseClass::initCursorState(this, &v25);
-        v14 = *(this + 11);
-        *(this + 18) = *inited;
-        *(this + 19) = inited[1];
-        *(this + 20) = inited[2];
-        *(this + 21) = inited[3];
-        v21 = *inited;
-        v22 = inited[1];
-        v15 = v14 + v21;
-        v16 = *(this + 12);
-        v23 = inited[2];
-        v17 = inited[3];
-        v21 = v15;
-        v18 = *(this + 17);
-        v22 += v16;
-        v24 = v17;
-        v20 = *(this + 9);
-        v25 = 0;
-        v26 = 0;
-        v27 = v23;
-        v28 = v17;
-        (*(void (__thiscall **)(int, int *, int, unsigned int *, _DWORD, int))(*(_DWORD *)v18 + 8))(
+        inited = (IUnknown **)WWMouseClass::initCursorState((unsigned int *)this, &v25); /*0x7b9fde*/
+        v14 = (int)*(this + 11); /*0x7b9fe8*/
+        *(this + 18) = *inited; /*0x7b9ff0*/
+        *(this + 19) = inited[1]; /*0x7b9ff5*/
+        *(this + 20) = inited[2]; /*0x7b9ffb*/
+        *(this + 21) = inited[3]; /*0x7ba001*/
+        v21 = *inited; /*0x7ba006*/
+        v22 = inited[1]; /*0x7ba00d*/
+        v15 = (IUnknown *)((char *)v21 + v14); /*0x7ba014*/
+        v16 = (int)*(this + 12); /*0x7ba016*/
+        v23 = inited[2]; /*0x7ba019*/
+        v17 = inited[3]; /*0x7ba01d*/
+        v21 = v15; /*0x7ba022*/
+        v18 = (int)*(this + 17); /*0x7ba026*/
+        v22 = (IUnknown *)((char *)v22 + v16); /*0x7ba029*/
+        v24 = v17; /*0x7ba031*/
+        v20 = (int)*(this + 9); /*0x7ba039*/
+        v25 = 0; /*0x7ba03a*/
+        v26 = 0; /*0x7ba03e*/
+        v27 = v23; /*0x7ba042*/
+        v28 = v17; /*0x7ba046*/
+        (*(void (__thiscall **)(int, int *, int, IUnknown **, _DWORD, int))(*(_DWORD *)v18 + 8))( /*0x7ba051*/
           v18,
           &v25,
           v20,
@@ -22590,557 +9616,119 @@ int __thiscall WWMouseClass::FlipCursorBuffer(unsigned int *this, unsigned int a
           0,
           1);
       }
-      Mouse::DrawCursor(this, (int *)*(this + 9), 0, 0);
-      ((void (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+      Mouse::DrawCursor(this, *(this + 9), 0, 0); /*0x7ba05e*/
+      ReleaseMutex(hMutex); /*0x7ba06a*/
     }
   }
-  return ((int (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+  return ReleaseMutex(hMutex); /*0x7ba07d*/
 }
-
-/* ASM:
-mov     eax, dword_A8ED54+0E9414h
-sub     esp, 20h
-push    ebx
-push    ebp
-push    esi
-push    edi
-mov     edi, ds:__imp_WaitForSingleObject
-push    2710h           ; dwMilliseconds
-mov     esi, ecx
-push    eax             ; hHandle
-call    edi ; __imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7B9E6A
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7B9E6A:                             ; CODE XREF: WWMouseClass__FlipCursorBuffer+21↑j
-mov     ecx, [esp+30h+arg_0]
-mov     eax, [esi+14h]
-cmp     ecx, eax
-jnz     short loc_7B9E8C
-mov     edx, [esp+30h+arg_4]
-mov     eax, [esi+18h]
-cmp     edx, eax
-jnz     short loc_7B9E8C
-mov     al, [esp+30h+arg_8]
-test    al, al
-jz      loc_7BA070
-
-loc_7B9E8C:                             ; CODE XREF: WWMouseClass__FlipCursorBuffer+43↑j
-; WWMouseClass__FlipCursorBuffer+4E↑j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+1Ch]
-test    al, al
-jz      loc_7B9F5A
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+8]
-test    al, al
-jnz     loc_7B9F5A
-mov     al, byte ptr dword_A8ED54+2Ch
-test    al, al
-jz      loc_7B9F5A
-mov     eax, dword_A8ED54+0E9414h
-push    2710h           ; dwMilliseconds
-push    eax             ; hHandle
-call    edi ; __imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7B9EE2
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7B9EE2:                             ; CODE XREF: WWMouseClass__FlipCursorBuffer+99↑j
-mov     eax, [esi+50h]
-test    eax, eax
-jle     short loc_7B9F4D
-mov     eax, [esi+54h]
-test    eax, eax
-jle     short loc_7B9F4D
-mov     ecx, [esi+24h]
-test    ecx, ecx
-jz      short loc_7B9F4D
-mov     ebx, [esi+44h]
-test    ebx, ebx
-jz      short loc_7B9F4D
-mov     eax, [esi+48h]
-mov     edx, [esi+4Ch]
-add     eax, [esi+2Ch]
-mov     edi, [esi+50h]
-mov     ebp, [esi+54h]
-push    1
-mov     [esp+34h+var_10], eax
-mov     eax, [esi+30h]
-add     edx, eax
-xor     eax, eax
-mov     [esp+34h+var_20], eax
-mov     [esp+34h+var_1C], eax
-push    eax
-lea     eax, [esp+38h+var_20]
-push    eax
-mov     [esp+3Ch+var_8], edi
-mov     [esp+3Ch+var_4], ebp
-mov     [esp+3Ch+var_C], edx
-mov     [esp+3Ch+var_18], edi
-mov     [esp+3Ch+var_14], ebp
-mov     edx, [ecx]
-lea     eax, [esp+3Ch+var_10]
-push    ebx
-push    eax
-call    dword ptr [edx+8]
-mov     edi, ds:__imp_WaitForSingleObject
-
-loc_7B9F4D:                             ; CODE XREF: WWMouseClass__FlipCursorBuffer+B7↑j
-; WWMouseClass__FlipCursorBuffer+BE↑j ...
-mov     ecx, dword_A8ED54+0E9414h
-push    ecx             ; hMutex
-call    ds:__imp_ReleaseMutex
-
-loc_7B9F5A:                             ; CODE XREF: WWMouseClass__FlipCursorBuffer+65↑j
-; WWMouseClass__FlipCursorBuffer+74↑j ...
-mov     edx, [esp+30h+arg_0]
-mov     eax, [esp+30h+arg_4]
-mov     [esi+14h], edx
-mov     edx, [esi]
-mov     ecx, esi
-mov     [esi+18h], eax
-call    dword ptr [edx+1Ch]
-test    al, al
-jz      loc_7BA070
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+8]
-test    al, al
-jnz     loc_7BA070
-mov     al, byte ptr dword_A8ED54+2Ch
-test    al, al
-jz      loc_7BA070
-mov     ecx, dword_A8ED54+0E9414h
-push    2710h           ; dwMilliseconds
-push    ecx             ; hHandle
-call    edi ; __imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7B9FBF
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7B9FBF:                             ; CODE XREF: WWMouseClass__FlipCursorBuffer+176↑j
-mov     ecx, esi
-call    BSurface__CreateTripleBuffer
-test    al, al
-jz      loc_7BA054
-mov     eax, [esi+24h]
-xor     ebx, ebx
-cmp     eax, ebx
-jz      short loc_7BA054
-lea     edx, [esp+30h+var_10]
-mov     ecx, esi
-push    edx
-call    WWMouseClass__initCursorState
-mov     edx, eax
-lea     ecx, [esi+48h]
-mov     ebp, [esi+2Ch]
-push    1
-mov     edi, [edx]
-push    ebx
-mov     [ecx], edi
-mov     edi, [edx+4]
-mov     [ecx+4], edi
-mov     edi, [edx+8]
-mov     [ecx+8], edi
-mov     edx, [edx+0Ch]
-mov     [ecx+0Ch], edx
-mov     ecx, [eax]
-mov     [esp+38h+var_20], ecx
-mov     edx, [eax+4]
-mov     [esp+38h+var_1C], edx
-mov     edi, [eax+8]
-add     ecx, ebp
-mov     ebp, [esi+30h]
-mov     [esp+38h+var_18], edi
-mov     eax, [eax+0Ch]
-add     edx, ebp
-mov     [esp+38h+var_20], ecx
-mov     ecx, [esi+44h]
-mov     [esp+38h+var_1C], edx
-lea     edx, [esp+38h+var_20]
-mov     [esp+38h+var_14], eax
-push    edx
-mov     edx, [esi+24h]
-push    edx
-mov     [esp+40h+var_10], ebx
-mov     [esp+40h+var_C], ebx
-mov     [esp+40h+var_8], edi
-mov     [esp+40h+var_4], eax
-mov     eax, [ecx]
-lea     edx, [esp+40h+var_10]
-push    edx
-call    dword ptr [eax+8]
-
-loc_7BA054:                             ; CODE XREF: WWMouseClass__FlipCursorBuffer+198↑j
-; WWMouseClass__FlipCursorBuffer+1A5↑j
-mov     eax, [esi+24h]
-push    0
-push    0
-push    eax
-mov     ecx, esi
-call    Mouse__DrawCursor
-mov     ecx, dword_A8ED54+0E9414h
-push    ecx             ; hMutex
-call    ds:__imp_ReleaseMutex
-
-loc_7BA070:                             ; CODE XREF: WWMouseClass__FlipCursorBuffer+56↑j
-; WWMouseClass__FlipCursorBuffer+141↑j ...
-mov     edx, dword_A8ED54+0E9414h
-push    edx             ; hMutex
-call    ds:__imp_ReleaseMutex
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 20h
-retn    0Ch
-*/
 } }
 // 0x7BA090
 namespace gamemd { int WWMouseClass::UpdateCursorMovement() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7ba090
-int __thiscall WWMouseClass::UpdateCursorMovement(TechnoClass *this)
+int __thiscall WWMouseClass::UpdateCursorMovement(LONG *this)
 {
   int result; // eax
-  int v3; // edx
+  LONG v3; // edx
   int v4; // eax
-  int v5; // ecx
-  int v6; // eax
-  int v7; // edi
-  int v8; // ebp
+  LONG v5; // ecx
+  LONG v6; // eax
+  LONG v7; // edi
+  LONG v8; // ebp
   char v9; // bl
   int v10; // eax
-  int v11; // [esp+10h] [ebp-10h] BYREF
-  int v12; // [esp+14h] [ebp-Ch] BYREF
-  _DWORD Point[2]; // [esp+18h] [ebp-8h] BYREF
+  LONG y; // [esp+10h] [ebp-10h] BYREF
+  LONG x; // [esp+14h] [ebp-Ch] BYREF
+  struct tagPOINT Point; // [esp+18h] [ebp-8h] BYREF
 
-  result = *((_DWORD *)this + 9);
-  if ( result )
+  result = *(this + 9); /*0x7ba096*/
+  if ( result ) /*0x7ba09b*/
   {
-    if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-      Debug::Log();
-    if ( UI_Update() )
+    if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7ba0b7*/
+      Debug::Log(); /*0x7ba0c8*/
+    if ( UI_Update() ) /*0x7ba0d0*/
     {
-      v3 = *((_DWORD *)this + 8);
-      v12 = *((_DWORD *)this + 7);
-      v11 = v3;
+      v3 = *(this + 8); /*0x7ba0dc*/
+      x = *(this + 7); /*0x7ba0df*/
+      y = v3; /*0x7ba0e3*/
     }
     else
     {
-      ((void (__stdcall *)(_DWORD *))GetCursorPos)(Point);
-      v4 = *(_DWORD *)this;
-      v11 = Point[1];
-      v12 = Point[0];
-      (*(void (__thiscall **)(TechnoClass *, int *, int *))(v4 + 68))(this, &v12, &v11);
-      v5 = v11;
-      *((_DWORD *)this + 7) = v12;
-      *((_DWORD *)this + 8) = v5;
+      GetCursorPos(&Point); /*0x7ba0ee*/
+      v4 = *this; /*0x7ba0fc*/
+      x = Point.x; /*0x7ba0fe*/
+      y = Point.y; /*0x7ba102*/
+      (*(void (__thiscall **)(LONG *, LONG *, LONG *))(v4 + 68))(this, &x, &y); /*0x7ba112*/
+      v5 = y; /*0x7ba119*/
+      *(this + 7) = x; /*0x7ba11d*/
+      *(this + 8) = v5; /*0x7ba120*/
     }
-    if ( (*(unsigned __int8 (__thiscall **)(_DWORD, _DWORD, _DWORD))(**((_DWORD **)this + 9) + 104))(
-           *((_DWORD *)this + 9),
-           0,
-           0)
-      || LOBYTE(dword_A8ED54[238855]) )
+    if ( (*(unsigned __int8 (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)*(this + 9) + 104))(*(this + 9), 0, 0) /*0x7ba13d*/
+      || byte_B78170 )
     {
-      v7 = v11;
-      v8 = v12;
-      v9 = dword_A8ED54[238855];
-      if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-        Debug::Log();
-      if ( v8 != *((_DWORD *)this + 5) || v7 != *((_DWORD *)this + 6) || v9 )
+      v7 = y; /*0x7ba16d*/
+      v8 = x; /*0x7ba173*/
+      v9 = byte_B78170; /*0x7ba17d*/
+      if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7ba18a*/
+        Debug::Log(); /*0x7ba19b*/
+      if ( v8 != *(this + 5) || v7 != *(this + 6) || v9 ) /*0x7ba1af*/
       {
-        if ( (*(unsigned __int8 (__thiscall **)(TechnoClass *))(*(_DWORD *)this + 28))(this)
-          && !(*(unsigned __int8 (__thiscall **)(TechnoClass *))(*(_DWORD *)this + 8))(this)
-          && LOBYTE(dword_A8ED54[11]) )
+        if ( (*(unsigned __int8 (__thiscall **)(LONG *))(*this + 28))(this) /*0x7ba1d2*/
+          && !(*(unsigned __int8 (__thiscall **)(LONG *))(*this + 8))(this)
+          && MEMORY[0xA8D63C].__pad_14B0[660] )
         {
-          if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-            Debug::Log();
-          WWMouseClass::initSurface(this);
-          ((void (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+          if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7ba1eb*/
+            Debug::Log(); /*0x7ba1fc*/
+          WWMouseClass::initSurface(this); /*0x7ba206*/
+          ReleaseMutex(hMutex); /*0x7ba212*/
         }
-        v10 = *(_DWORD *)this;
-        *((_DWORD *)this + 5) = v8;
-        *((_DWORD *)this + 6) = v7;
-        if ( (*(unsigned __int8 (__thiscall **)(TechnoClass *))(v10 + 28))(this)
-          && !(*(unsigned __int8 (__thiscall **)(TechnoClass *))(*(_DWORD *)this + 8))(this)
-          && LOBYTE(dword_A8ED54[11]) )
+        v10 = *this; /*0x7ba218*/
+        *(this + 5) = v8; /*0x7ba21c*/
+        *(this + 6) = v7; /*0x7ba21f*/
+        if ( (*(unsigned __int8 (__thiscall **)(LONG *))(v10 + 28))(this) /*0x7ba23b*/
+          && !(*(unsigned __int8 (__thiscall **)(LONG *))(*this + 8))(this)
+          && MEMORY[0xA8D63C].__pad_14B0[660] )
         {
-          if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
-            Debug::Log();
-          WWMouseClass::updateCursorRect((unsigned int *)this);
-          Mouse::DrawCursor(this, *((int **)this + 9), 0, 0);
-          ((void (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+          if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7ba253*/
+            Debug::Log(); /*0x7ba264*/
+          WWMouseClass::updateCursorRect((unsigned int *)this); /*0x7ba26e*/
+          Mouse::DrawCursor(this, (IUnknown *)*(this + 9), 0, 0); /*0x7ba27d*/
+          ReleaseMutex(hMutex); /*0x7ba289*/
         }
       }
-      ((void (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
-      LOBYTE(dword_A8ED54[238855]) = 0;
-      return ((int (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+      ReleaseMutex(hMutex); /*0x7ba295*/
+      byte_B78170 = 0; /*0x7ba2a3*/
+      return ReleaseMutex(hMutex); /*0x7ba2ab*/
     }
     else
     {
-      v6 = v11;
-      *((_DWORD *)this + 5) = v12;
-      *((_DWORD *)this + 6) = v6;
-      LOBYTE(dword_A8ED54[238855]) = 1;
-      return ((int (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+      v6 = y; /*0x7ba143*/
+      *(this + 5) = x; /*0x7ba147*/
+      *(this + 6) = v6; /*0x7ba14a*/
+      byte_B78170 = 1; /*0x7ba153*/
+      return ReleaseMutex(hMutex); /*0x7ba15b*/
     }
   }
-  return result;
+  return result; /*0x7ba162*/
 }
-
-/* ASM:
-Point           = qword ptr -8
-
-sub     esp, 10h
-push    esi
-mov     esi, ecx
-mov     eax, [esi+24h]
-test    eax, eax
-jz      loc_7BA2B2
-mov     eax, dword_A8ED54+0E9414h
-push    2710h           ; dwMilliseconds
-push    eax             ; hHandle
-call    ds:__imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7BA0D0
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7BA0D0:                             ; CODE XREF: WWMouseClass__UpdateCursorMovement+27↑j
-call    UI_Update
-test    eax, eax
-jz      short loc_7BA0E9
-mov     ecx, [esi+1Ch]
-mov     edx, [esi+20h]
-mov     [esp+14h+var_C], ecx
-mov     [esp+14h+var_10], edx
-jmp     short loc_7BA123
-; ---------------------------------------------------------------------------
-
-loc_7BA0E9:                             ; CODE XREF: WWMouseClass__UpdateCursorMovement+47↑j
-lea     eax, [esp+14h+Point]
-push    eax             ; lpPoint
-call    ds:__imp_GetCursorPos
-mov     ecx, dword ptr [esp+14h+Point]
-mov     edx, dword ptr [esp+14h+Point+4]
-mov     eax, [esi]
-mov     [esp+14h+var_C], ecx
-mov     [esp+14h+var_10], edx
-lea     ecx, [esp+14h+var_10]
-lea     edx, [esp+14h+var_C]
-push    ecx
-push    edx
-mov     ecx, esi
-call    dword ptr [eax+44h]
-mov     eax, [esp+14h+var_C]
-mov     ecx, [esp+14h+var_10]
-mov     [esi+1Ch], eax
-mov     [esi+20h], ecx
-
-loc_7BA123:                             ; CODE XREF: WWMouseClass__UpdateCursorMovement+57↑j
-mov     ecx, [esi+24h]
-xor     edx, edx
-push    edi
-xor     eax, eax
-mov     edi, [ecx]
-push    edx
-push    eax
-call    dword ptr [edi+68h]
-test    al, al
-mov     al, byte ptr dword_A8ED54+0E941Ch
-jnz     short loc_7BA167
-test    al, al
-jnz     short loc_7BA167
-mov     edx, [esp+18h+var_C]
-mov     eax, [esp+18h+var_10]
-mov     [esi+14h], edx
-mov     [esi+18h], eax
-mov     ecx, dword_A8ED54+0E9414h
-mov     byte ptr dword_A8ED54+0E941Ch, 1
-push    ecx             ; hMutex
-call    ds:__imp_ReleaseMutex
-pop     edi
-pop     esi
-add     esp, 10h
-retn
-; ---------------------------------------------------------------------------
-
-loc_7BA167:                             ; CODE XREF: WWMouseClass__UpdateCursorMovement+A9↑j
-; WWMouseClass__UpdateCursorMovement+AD↑j
-mov     ecx, dword_A8ED54+0E9414h
-mov     edi, [esp+18h+var_10]
-push    ebx
-push    ebp
-mov     ebp, [esp+20h+var_C]
-push    2710h           ; dwMilliseconds
-push    ecx             ; hHandle
-mov     bl, al
-call    ds:__imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7BA1A3
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7BA1A3:                             ; CODE XREF: WWMouseClass__UpdateCursorMovement+FA↑j
-cmp     ebp, [esi+14h]
-jnz     short loc_7BA1B5
-cmp     edi, [esi+18h]
-jnz     short loc_7BA1B5
-test    bl, bl
-jz      loc_7BA28F
-
-loc_7BA1B5:                             ; CODE XREF: WWMouseClass__UpdateCursorMovement+116↑j
-; WWMouseClass__UpdateCursorMovement+11B↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+1Ch]
-test    al, al
-jz      short loc_7BA218
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+8]
-test    al, al
-jnz     short loc_7BA218
-mov     al, byte ptr dword_A8ED54+2Ch
-test    al, al
-jz      short loc_7BA218
-mov     ecx, dword_A8ED54+0E9414h
-push    2710h           ; dwMilliseconds
-push    ecx             ; hHandle
-call    ds:__imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7BA204
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7BA204:                             ; CODE XREF: WWMouseClass__UpdateCursorMovement+15B↑j
-mov     ecx, esi
-call    WWMouseClass__initSurface
-mov     edx, dword_A8ED54+0E9414h
-push    edx             ; hMutex
-call    ds:__imp_ReleaseMutex
-
-loc_7BA218:                             ; CODE XREF: WWMouseClass__UpdateCursorMovement+12E↑j
-; WWMouseClass__UpdateCursorMovement+139↑j ...
-mov     eax, [esi]
-mov     ecx, esi
-mov     [esi+14h], ebp
-mov     [esi+18h], edi
-call    dword ptr [eax+1Ch]
-test    al, al
-jz      short loc_7BA28F
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+8]
-test    al, al
-jnz     short loc_7BA28F
-mov     al, byte ptr dword_A8ED54+2Ch
-test    al, al
-jz      short loc_7BA28F
-mov     eax, dword_A8ED54+0E9414h
-push    2710h           ; dwMilliseconds
-push    eax             ; hHandle
-call    ds:__imp_WaitForSingleObject
-cmp     eax, 102h
-jnz     short loc_7BA26C
-push    4FDh
-push    offset g_Str_File_wwmous_cpp ; "D:\\ra2mdpost\\wwmous.cpp"
-push    offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M ; "Warning: Probable deadlock occurred on "...
-call    Debug__Log
-add     esp, 0Ch
-
-loc_7BA26C:                             ; CODE XREF: WWMouseClass__UpdateCursorMovement+1C3↑j
-mov     ecx, esi
-call    WWMouseClass__updateCursorRect
-mov     ecx, [esi+24h]
-push    0
-push    0
-push    ecx
-mov     ecx, esi
-call    Mouse__DrawCursor
-mov     edx, dword_A8ED54+0E9414h
-push    edx             ; hMutex
-call    ds:__imp_ReleaseMutex
-
-loc_7BA28F:                             ; CODE XREF: WWMouseClass__UpdateCursorMovement+11F↑j
-; WWMouseClass__UpdateCursorMovement+197↑j ...
-mov     eax, dword_A8ED54+0E9414h
-push    eax             ; hMutex
-call    ds:__imp_ReleaseMutex
-mov     ecx, dword_A8ED54+0E9414h
-pop     ebp
-pop     ebx
-mov     byte ptr dword_A8ED54+0E941Ch, 0
-push    ecx             ; hMutex
-call    ds:__imp_ReleaseMutex
-pop     edi
-
-loc_7BA2B2:                             ; CODE XREF: WWMouseClass__UpdateCursorMovement+B↑j
-pop     esi
-add     esp, 10h
-retn
-*/
 } }
 // 0x7BA320
 namespace gamemd { void WWMouseClass::drawCursor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x7ba320
-void __thiscall WWMouseClass::drawCursor(#479 *this)
+BOOL __thiscall WWMouseClass::_vt02(int *this)
 {
-  ;
+  return *(this + 3) < 0; /*0x7ba32a*/
 }
-
-/* ASM:
-mov     edx, [ecx+0Ch]
-xor     eax, eax
-test    edx, edx
-setl    al
-retn
-*/
 } }
 // 0x7BA380
 namespace gamemd { int WWMouseClass::checkHotspot(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall WWMouseClass::_vt14(_DWORD *this, int a2, int a3)
 {
-  *(this + 7) = a2;
-  *(this + 8) = a3;
-  return a2;
+  *(this + 7) = a2; /*0x7ba388*/
+  *(this + 8) = a3; /*0x7ba38b*/
+  return a2; /*0x7ba38e*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-mov     edx, [esp+arg_4]
-mov     [ecx+1Ch], eax
-mov     [ecx+20h], edx
-retn    8
-*/
 } }
 // 0x7BA3A0
 namespace gamemd { void* WWMouseClass::QueryInterface(int a1) { return nullptr; } }

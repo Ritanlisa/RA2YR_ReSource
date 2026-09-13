@@ -310,16 +310,15 @@ LABEL_18:
                   NeighbourContent = (VectorClass *)CellCoord::To_CellObj( /*0x5a638f*/
                                                       &stru_87C374.__pad_14B0[8132],
                                                       (__int16 *)v23.__pad_0);
-                  if ( Value::InRange((int *)NeighbourContent->__pad_0) /*0x5a639e*/
-                    && Value::InRange((int *)NeighbourContent->__pad_0) )
+                  if ( Value::InRange((int *)NeighbourContent) && Value::InRange((int *)NeighbourContent) ) /*0x5a639e*/
                   {
                     do /*0x5a63c4*/
                     {
-                      *(_DWORD *)&NeighbourContent->__pad_34[4] = &g_CellTileTypeCache->__pad_0[1]; /*0x5a63b1*/
-                      NeighbourContent->__pad_4C[206] = 1; /*0x5a63b4*/
+                      NeighbourContent[3].Capacity = (int)&g_CellTileTypeCache->__pad_0[1]; /*0x5a63b1*/
+                      BYTE2(NeighbourContent[17].Capacity) = 1; /*0x5a63b4*/
                       NeighbourContent = (VectorClass *)Cell::GetNeighbourContent(NeighbourContent, 0); /*0x5a63c0*/
                     }
-                    while ( Value::InRange((int *)NeighbourContent->__pad_0) ); /*0x5a63c4*/
+                    while ( Value::InRange((int *)NeighbourContent) ); /*0x5a63c4*/
                   }
                   v22 = 0; /*0x5a63cd*/
                 }
@@ -818,7 +817,7 @@ VectorClass *__thiscall MapSeedClass_18_::QueryInterface(_DWORD *this, char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5ad433*/
-  *this = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x5ad436*/
+  *this = &vt_VectorClass_WIN32_FIND_DATAA; /*0x5ad436*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x5ad440*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad448*/
@@ -843,7 +842,7 @@ DynamicVector *__thiscall MapSeedClass_18_::Constructor_VectorClass__WIN32_FIND_
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5ad483*/
-  *this = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x5ad486*/
+  *this = &vt_VectorClass_WIN32_FIND_DATAA; /*0x5ad486*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x5ad490*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad498*/

@@ -18,7 +18,7 @@ IsometricTileClass *__thiscall IsometricTileClass::IsometricTileClass(
   *this = (IsometricTileClass)&IsometricTileClass::`vftable'; /*0x5437a2*/
   *((_DWORD *)this + 1) = &IsometricTileClass::`vftable'; /*0x5437a8*/
   *((_DWORD *)this + 2) = &IsometricTileClass::`vftable'; /*0x5437af*/
-  *((_DWORD *)this + 3) = &IsometricTileClass::`vftable'; /*0x5437b6*/
+  *((_DWORD *)this + 3) = &vt_IsometricTileClass; /*0x5437b6*/
   if ( *(_WORD *)aP2->__tail_0 != unk_AA06D0 || *(_WORD *)&aP2->__tail_0[2] != unk_AA06D2 ) /*0x5437d4*/
   {
     *((_BYTE *)this + 129) = 0; /*0x543805*/

@@ -1533,7 +1533,7 @@ char __thiscall HashTable::Lookup(_DWORD *this, ObjectClass *aP1, TechnoTypeClas
     return 0; /*0x7ae250*/
   if ( String::Compare((const char **)v8, (const char **)aP1) ) /*0x7ae25c*/
   {
-    *(_DWORD *)aP2->__pad_0 = *(_DWORD *)&v8->__pad_0[4]; /*0x7ae270*/
+    *(_DWORD *)aP2->vtable0 = *(_DWORD *)&v8->__pad_0[4]; /*0x7ae270*/
     v9 = *(TechnoTypeClass ***)(*this + 4 * v7); /*0x7ae274*/
     v10 = v9[2]; /*0x7ae279*/
     if ( v9 ) /*0x7ae27c*/
@@ -1601,7 +1601,7 @@ char __thiscall HashTable::Lookup(_DWORD *this, ObjectClass *aP1, TechnoTypeClas
         if ( !v22 ) /*0x7ae36a*/
           goto LABEL_23; /*0x7ae36a*/
       }
-      *(_DWORD *)aP2->__pad_0 = *(_DWORD *)&v22->__pad_0[4]; /*0x7ae375*/
+      *(_DWORD *)aP2->vtable0 = *(_DWORD *)&v22->__pad_0[4]; /*0x7ae375*/
       *(_DWORD *)&v8->__pad_0[8] = *(_DWORD *)&v22->__pad_0[8]; /*0x7ae37a*/
       --*(this + 1); /*0x7ae383*/
       DeleteAndZero((void **)v22); /*0x7ae38a*/

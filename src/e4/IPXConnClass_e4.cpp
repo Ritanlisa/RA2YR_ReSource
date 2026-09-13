@@ -33,7 +33,7 @@ void *__thiscall IPXConnClass::constructor(
     (TechnoTypeClass *)0x3C,
     (CampaignScore *)aP8);
   Waypoint::InitInvalid((_BYTE *)this + 76); /*0x53f462*/
-  *(_DWORD *)this = &IPXConnClass::`vftable'; /*0x53f46b*/
+  *(_DWORD *)this = &vt_IPXConnClass; /*0x53f46b*/
   if ( a5 ) /*0x53f473*/
   {
     *((_DWORD *)this + 19) = *a5; /*0x53f479*/

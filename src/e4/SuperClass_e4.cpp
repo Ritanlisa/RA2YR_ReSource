@@ -22,9 +22,9 @@ RulesClass *__thiscall sub_53AE50(#375 *this, int a2)
   if ( MEMORY[0x8871E0]->?[0] && MEMORY[0x8871E0]->?[1] ) /*0x53ae66*/
   {
     unk_A9FAC8 = this; /*0x53ae79*/
-    unk_A9FA48 = a2; /*0x53ae7f*/
+    word_A9FA48 = a2; /*0x53ae7f*/
     v3 = (void *)MEMORY[0x8871E0]->?[0]; /*0x53ae85*/
-    v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&unk_A9FA48); /*0x53ae95*/
+    v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&word_A9FA48); /*0x53ae95*/
     v5 = (int *)(*(int (__thiscall **)(void *, _DWORD *))(*(_DWORD *)v4 + 72))(v4, v9); /*0x53aea3*/
     v8[0] = *v5; /*0x53aea8*/
     v8[1] = v5[1]; /*0x53aeb4*/
@@ -77,7 +77,7 @@ int __thiscall sub_6CAEC0(int this)
   *(_DWORD *)this = &SuperClass::`vftable'; /*0x6caf10*/
   this->SuperClass_field_0x4 = &SuperClass::`vftable'; /*0x6caf16*/
   this->SuperClass_field_0x8 = &SuperClass::`vftable'; /*0x6caf1d*/
-  *(_DWORD *)(this + 12) = &SuperClass::`vftable'; /*0x6caf24*/
+  *(_DWORD *)(this + 12) = &vt_SuperClass; /*0x6caf24*/
   *(_DWORD *)(this + 60) = &MEMORY[0x887734]; /*0x6caf2b*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6caf64*/
     || (byte_A83CC5 || !dword_A83CC0)
@@ -132,7 +132,7 @@ int __thiscall SuperClass::Construct(int this, int a2, CCINIClass *aP2)
   *(_DWORD *)this = &SuperClass::`vftable'; /*0x6caff7*/
   this->SuperClass_field_0x4 = &SuperClass::`vftable'; /*0x6caffd*/
   this->SuperClass_field_0x8 = &SuperClass::`vftable'; /*0x6cb003*/
-  *(_DWORD *)(this + 12) = &SuperClass::`vftable'; /*0x6cb00a*/
+  *(_DWORD *)(this + 12) = &vt_SuperClass; /*0x6cb00a*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x6cb011*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6cb049*/
     || (byte_A83CC5 || !dword_A83CC0)
@@ -192,7 +192,7 @@ void __thiscall sub_6CB120(int this)
   *(_DWORD *)this = &SuperClass::`vftable'; /*0x6cb127*/
   this->SuperClass_field_0x4 = &SuperClass::`vftable'; /*0x6cb12f*/
   this->SuperClass_field_0x8 = &SuperClass::`vftable'; /*0x6cb136*/
-  *(_DWORD *)(this + 12) = &SuperClass::`vftable'; /*0x6cb13d*/
+  *(_DWORD *)(this + 12) = &vt_SuperClass; /*0x6cb13d*/
   if ( v2 ) /*0x6cb144*/
   {
     *(_BYTE *)(v2 + 405) = 0; /*0x6cb146*/
@@ -1130,7 +1130,7 @@ int __stdcall SuperClass::LoadFromStream(AbstractClass *aP0, int aP1)
       *(_DWORD *)aP0->__pad_0 = &SuperClass::`vftable'; /*0x6cdf13*/
       *(_DWORD *)&aP0->__pad_0[4] = &SuperClass::`vftable'; /*0x6cdf19*/
       *(_DWORD *)&aP0->__pad_0[8] = &SuperClass::`vftable'; /*0x6cdf20*/
-      *(_DWORD *)&aP0->__pad_0[12] = &SuperClass::`vftable'; /*0x6cdf27*/
+      *(_DWORD *)&aP0->__pad_0[12] = &vt_SuperClass; /*0x6cdf27*/
     }
     if ( aP0[2].NeedsSaveOrLink /*0x6cdf70*/
       && (*(int *)&stru_B05488.__pad_579C[18852] < *(int *)&stru_B05488.__pad_579C[18844]
