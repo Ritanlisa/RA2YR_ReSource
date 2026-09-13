@@ -133,10 +133,9 @@ python tools/mcp_translate_server.py --http 13399
   `C++ source: NOT FOUND`。
 - `efv_cpp_events.py` 已排除函数定义签名被误识别为 PascalCase 自调用的情况；
   `Func(...) {` / `Func(...) const {` 不再生成伪造的 `CALL(Func)` 事件。
-- 修改共享 verifier/event extractor 后，必须用退出码回归全部已 completed 函数。
-  当前 28 个 completed 中，IsNonNullPtr 已 PASS；FacingClass::Set_SyncLog
-  的 `RotationTimer.TimeRemaining()` 属于对象表达式调用提取债，记录为 issue #12，
-  不是翻译体回归。
+- 修改共享 verifier/event extractor 后，必须用退出码回归已 completed 函数
+  （抽样回归先例：G5 119/120 PASS）。completed 池现约 10,350 个（G8 后），
+  全量回归改抽样 + 按桶回归。
 - MCP HTTP 常驻服务不会热加载 Python 源码。修改服务器后需重启服务；否则本地
   直跑结果与 HTTP 工具返回可能暂时不一致。
 - `signals.json` 写回统一使用 `indent=2`，避免服务器写回产生整文件缩进漂移。
@@ -145,19 +144,20 @@ python tools/mcp_translate_server.py --http 13399
 - 常驻 HTTP 服务按 `member_lookup.json` mtime 失效缓存；修改服务器源码后仍需重启服务，源码不会热加载。
 - 隔离回归：`python tools/test_rename_symbol.py`；MCP heavy smoke 会验证真实含 `::` 的 dry-run。
 
-## 地址对应现状（2026-09-08 清偿后）
+## 地址对应现状（2026-09-14 G8 会话后）
 
-- 函数注解审计：matched **3,352** / missing with known address **0** /
-  addr mismatch **0** / unknown in signals **2,051**（helper/别名形态，翻译时甄别）。
-- 全局变量注解审计：annotated **1,406** / missing **0**。
-  审计器已跳过 `[IDA decompile]` 伪码块和 inline ASM 操作数，避免把
-  `Destination`、`Source`、`Buffer`、`Delimiter` 等文本误认作真实全局定义。
-- `signals.json` 当前 MCP completed **28**；`_by_name` 与主表函数名集合一致，
-  0 missing / 0 extra / 0 name conflicts。
-- `member_lookup.json` 的 BuildingTypeClass 3800 区段已按 IDA til 重排，
-  get_context 不再对该区段发出已知坏区警告。
+- 函数注解审计：matched **10,071** / missing with known address **0** /
+  addr mismatch **0** / unknown in signals **1,702**（helper/别名形态，翻译时甄别）。
+- 全局变量注解审计：annotated **13,582** / missing **0**。
+  审计器已跳过 `[IDA decompile]` 伪码块、inline ASM 操作数，以及**已在别处
+  有注解声明的同名命中**（G8 后两遍扫描——舰队译文体保留的 IDA 局部声明
+  `CHAR Buffer[1024];` 影射已注解全局，无注解义务）。
+- `signals.json` 当前 MCP completed **10,350** / pending **6,541**；
+  `_by_name` 与主表函数名集合一致，0 missing / 0 extra / 0 name conflicts。
+- `member_lookup.json` 1,304 类（G8 后）；BuildingTypeClass 3800 区段已按
+  IDA til 重排，get_context 不再对该区段发出已知坏区警告。
 - rename 引入的新定义缺注解可由 `annotations_fix`（默认 dry-run）一键补齐——
-  09-08 的 33 个 bodies 定义注解即由此恢复。
+  09-08 的 33 个 + G8 波 1 的 18 个 bodies 定义注解即由此恢复。
 
 ## 数据源
 

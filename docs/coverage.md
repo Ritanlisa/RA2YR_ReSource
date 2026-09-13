@@ -1,25 +1,38 @@
 # 子系统覆盖度详情
 
+> ⚠ 本文档的子系统细节（vtable 解码、类覆盖清单）为早期考证快照，仍然有效；
+> **当前总体进度以 `AGENTS.md` 状态表和 `docs/roadmap_post_csp.md` 执行日志为权威**
+> （2026-09-14 G8 口径：MCP completed 10,350 / pending 6,541，全 CFG 验证）。
+
+## 翻译总进度（G8 会话后，2026-09-14）
+
+| 指标 | 数值 |
+|--------|-------|
+| MCP completed | **10,350**（全 CFG 双射验证；G3-G8 舰队波 + E5 校准 + G1 收割 + 历史真翻译） |
+| MCP pending | **6,541**（too-long 1,988 / raw-this-residue 1,451 / residual-this-cast 610 / 其余长尾） |
+| src 函数体覆盖 | ~17,870 / 19,133（93.5%；未翻译函数以 IDA 原始反编译活代码块占位，裁决 v2） |
+| 偏移→OO 重写 | rewritten 6,289 / unmapped 5,468（refresh 口径） |
+| vtable_offsets | 337 类（槽位→方法名真值，验证器权威） |
+| member_lookup | 1,304 类 |
+| signals.globals | 12,845 地址（DataGlobal / vt_ / CRT 批产含） |
+
 ## 编译状态
 
 | 指标 | 数值 |
 |--------|-------|
-| 可编译源文件 | ~215 (~130 .hpp + 85 .cpp) |
-| 总头文件 | ~130 (.hpp) |
-| 总代码行数 | ~53,600 (headers ~39,200 + source ~14,400) |
-| 编译错误 | **0** |
-| 编译警告 | **0** |
-| 已实现函数 | **~140** (~200+ stubs/empty) |
-| TODO/FIXME 标记 | **~260** (source 210 + headers 50) |
-| IDA 命名 | **10,366 / 10,366 (100%)** — 含 7,936 `::` + 2,430 全局 |
+| 可编译源文件 | ~265（~175 .hpp + ~135 .cpp，另 src/e4 桶 565 + src/_gap2 等） |
+| 编译错误 | **0**（基线裁决 v2：未翻译伪码块以 IDA 原码活代码占位） |
+| gamemd.exe | 产出 `build_win/Debug/gamemd.exe`（/FORCE:UNRESOLVED 容忍 682 历史未解析 stub 债） |
+| IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_, 0 sub_* |
-| JSON 数据库 | **functions.json (15MB)** — 19,067 函数元数据 (调用约定/参数/返回类型/分类) |
+| JSON 数据库 | **functions.json (15MB)** — 19,067 函数元数据；**signals.json** = 权威函数元数据（completed/globals/_by_name） |
 | MIX 格式支持 | RA2 加密 + 扩展无加密 + TD 传统 (全部验证) |
 | EXE 骨架 | **WinMain + Win32窗口 + DirectDraw7初始化 + MIX文件加载 + SHP渲染 + 主菜单系统** |
 | **Hook 框架** | **hook_dll.dll** — 页面级内存事务 + 栈劫持影子对拍 |
 | **REVERSE 管道** | **gen_reverse_hooks.py** — 自动扫描→完成检查→依赖验证→生成钩子 |
-| **已标记函数** | **~32** 个 REVERSE 标记 (39 个已完成) |
+| **已标记函数** | **~32** 个 REVERSE 标记 (2 Inject 活跃, 39 None) |
 | **Headless 服务器** | **TCP :25400** — STATS/MEM/ELEMENTS/CLICKAT/QUIT 等 22 命令 |
+| **ra2-translate MCP** | 22 工具全流程（见 docs/mcp_tools.md）；HTTP 127.0.0.1:13399 + stdio |
 
 ## 函数实现覆盖
 

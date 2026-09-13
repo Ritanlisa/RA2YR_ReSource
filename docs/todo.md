@@ -27,7 +27,7 @@
 | 构建状态 | **Release** 0 errors, .syhks00 section 已生成 |
 | 导出函数 | 3 (SyringeHandshake, PostProcStub, mismatch_counter) |
 | JSON函数数据库 | 19,067条目, 12,613已命名, 分类完成 |
-| **已完成函数** | **39** (faithful IDA translations, completed:true) |
+| **已完成函数** | **10,350** (faithful IDA translations, completed:true, 全 CFG 验证；G8 会话后) — pending 6,541 |
 | **REVERSE标记** | **~32** (跨14个源文件) — 2 Inject 活跃, 13 个 Capture 模式, 39 个 None 模式 |
 | **依赖验证** | 39函数→10K唯一被调用者 (callee_map.json) |
 | **Capture 模式** | **稳定** (13 hooks, Release 构建, 多局测试无崩溃) |

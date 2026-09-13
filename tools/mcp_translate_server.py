@@ -582,6 +582,22 @@ def fix_annotations(file_filter=None, dry_run=True, limit=2000):
 def audit_global_annotations(file_filter=None, limit=60):
     gidx = _glob_addr_index()
     missing, matched = [], 0
+    annotated_names = set()
+    # Pass 1: collect names that ALREADY have an annotated declaration
+    # anywhere. A name hit in pass 2 that is already annotated elsewhere is a
+    # local declaration or re-use shadowing the global (G8 fleet bodies keep
+    # IDA pseudocode locals like `CHAR Buffer[1024];`) — it carries no
+    # annotation duty, and a duplicate real definition would be a link error.
+    for p in sorted(SRC.rglob("*.cpp")) + sorted(SRC.rglob("*.hpp")):
+        rel = str(p.relative_to(PROJECT_ROOT)).replace("\\", "/")
+        if (file_filter and file_filter not in rel) or "_generated" in rel:
+            continue
+        for ln in _read_latin1(p).split("\n"):
+            code = ln.partition("//")[0]
+            m = re.match(r'^\s*(?:extern\s+|static\s+)?[\w:<>\*&\s]+\b'
+                         r'([A-Z]\w{3,}|g_\w+)\s*(?:=|;|\[)', code)
+            if m and ADDR_IN_COMMENT.search(ln.partition("//")[2]):
+                annotated_names.add(m.group(1))
     for p in sorted(SRC.rglob("*.cpp")) + sorted(SRC.rglob("*.hpp")):
         rel = str(p.relative_to(PROJECT_ROOT)).replace("\\", "/")
         if (file_filter and file_filter not in rel) or "_generated" in rel:
@@ -630,9 +646,11 @@ def audit_global_annotations(file_filter=None, limit=60):
                 continue
             if ADDR_IN_COMMENT.search(comment):
                 matched += 1
-            else:
-                missing.append({"file": rel, "line": i + 1, "global": name,
-                                "expected": expected})
+                continue
+            if name in annotated_names:
+                continue  # annotated elsewhere: this hit is a local/shadow
+            missing.append({"file": rel, "line": i + 1, "global": name,
+                            "expected": expected})
     return {"annotated": matched, "missing": len(missing),
             "missing_sample": missing[:limit]}
 

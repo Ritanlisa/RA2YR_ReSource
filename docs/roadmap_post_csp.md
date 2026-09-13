@@ -1910,7 +1910,20 @@ memory-chain（14）/goto-switch CRT 状态机主导，规则生成器天花板�
 | 偏移重写 | 6,300（G7 refresh） | 6,289（本会话 refresh 口径；分母缩小系已译退出） |
 | 一致性 | 69/3 | 69/3（基线维持） |
 | 注解 | 10,059/0/0 | **10,071/0/0** |
+| 全局注解 | 1,456 annotated | **13,582 annotated / 0 missing**（审计器两遍扫描修复后口径，见下） |
 | auto-fill-baseline | f50f37d5 | **f933b53f**（三次重锚：b18839c2 → 65d17fe4 → f933b53f；重锚不清账） |
+
+**会话收尾增补（文档刷新轮）**：
+- **globals 审计器两遍扫描修复**（mcp_translate_server.py，非保护文件）：
+  G8 舰队译文体保留的 IDA 局部声明（`CHAR Buffer[1024];` 影射已注解全局
+  `Buffer`@0x8A3A08）被误报 missing——192 条全为假阳性。修复 = 先收集全部
+  已注解声明名，第二遍对"已在别处有注解声明的同名命中"豁免（重复真实定义
+  本会是链接错误，无漏报面）。进程内验证 13,582 annotated / **0 missing**；
+  会话内 stdio 服务进程为旧代码，重启后 MCP 工具生效。
+- **文档刷新**：`docs/coverage.md` 头表从 6 月口径刷新到 G8 口径（新增
+  翻译总进度表 + 权威指针）；`docs/mcp_tools.md` 地址对应现状节更新
+  （completed 28→10,350、matched 3,352→10,071、全局注解、member_lookup
+  1,304 类）；`docs/todo.md` completed 39→10,350。
 
 ### 遗留与下一步（G8 后续队列）
 
