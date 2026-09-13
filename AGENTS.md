@@ -185,7 +185,7 @@ cmake --build build_linux
 | 编译错误 / 警告 | **0 / 0** (gamemd 来自 _generated/ 和主要模块) |
 | symbol-locked | **symbols-locked-v2** — 全部 19,067 函数 1:1:1 映射 (IDA↔signals↔hpp)，0 naming mismatches |
 | completed (符号定义) | **19,133 / 19,133 (100%)** — 所有函数在 IDA/signals.json/hpp 中有名称和地址 |
-| translated (完整IDA对照) | **919** — MCP completed 口径（E5 校准 + E6/G1 机械收割，全 CFG 验证）；pending 17,263 |
+| translated (完整IDA对照) | **8,324** — MCP completed 口径（G3-G7 舰队波 + E5 校准 + G1 收割 + 历史真翻译，全 CFG 验证）；pending **8,600**；2026-09-13 G7 会话（v4 快照重锚 + 证据大轮 + 波 1 +776，详见 docs/roadmap_post_csp.md G7 执行日志） |
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
 | sub_* 残留 | **5,468** — 函数级别 (非类成员)，0 已翻译 |
