@@ -5,21 +5,10 @@
 // 0x753AE0
 void ScreenEffect::Stub2()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void ScreenEffect::Stub2()
 {
-    ;
-}
-}
-
-// 0x7772A0
-long long ScreenEffect::UpdateBob()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_B730B0 - DataGlobal_B730D8);
-    result = Math::RoundToInt(v0 * DataGlobal_B730D0 * 0.5);
-    DataGlobal_B73540 = result;
-    return result;
+  ; /*0x753ae0*/
 }
 }
 
@@ -58,4 +47,17 @@ void ScreenEffect::Stub8()
 // 0x754bb0
 {
   ;
+}
+
+// 0x7772A0
+long long ScreenEffect::UpdateBob()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_B730B0 - DataGlobal_B730D8);
+    result = Math::RoundToInt(v0 * DataGlobal_B730D0 * 0.5);
+    DataGlobal_B73540 = result;
+    return result;
+}
 }

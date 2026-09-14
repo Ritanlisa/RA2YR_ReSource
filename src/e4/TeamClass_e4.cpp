@@ -57,35 +57,6 @@ BOOL __thiscall sub_4E0080(_BYTE *this)
 }
 } // namespace gamemd
 
-// 0x5095D0
-namespace gamemd {
-int TeamClass::CountActiveTeamsForType(ObjectClass * aP1)
-{
-{
-    int result;
-    int v3;
-    int *v4;
-    int v5;
-    result = 0;
-    if ( *(int *)&g_CellDirectionOffsets.__pad_579C[62156] - 1 >= 0 )
-  {
-    v3 = *(int *)&g_CellDirectionOffsets.__pad_579C[62156];
-    v4 = (int *)(*(int *)&g_CellDirectionOffsets.__pad_579C[62144] + 4 * (*(int *)&g_CellDirectionOffsets.__pad_579C[62156] - 1));
-    do
-    {
-    v5 = *v4;
-    if ( *v4 && *(void **)(v5 + 44) == this && aP1 == *(ObjectClass **)(v5 + 36) )
-    ++result;
-    --v4;
-    --v3;
-    }
-    while ( v3 );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x577BB0
 namespace gamemd {
 int TeamClass::DisbandTeam(int a2)
@@ -269,88 +240,6 @@ int __thiscall TeamClass_GetLeaderIndex(_DWORD *this)
     return *((_DWORD *)HouseClass_Player + 12); /*0x6339cc*/
   else
     return v2; /*0x6339d1*/
-}
-}
-} // namespace gamemd
-
-// 0x633EA0
-namespace gamemd {
-unsigned int * TeamClass::FindScriptAction(unsigned int * a2)
-{
-{
-    int *Type;
-    int v4;
-    int v5;
-    int v6;
-    int v8;
-    int v9;
-    int v10;
-    Type = (int *)BuildingClass::GetPlanningToken(a2);
-    v4 = Type[1];
-    a2 = this;
-    v5 = (*(int (__thiscall **)(int *, int **))(v4 + 16))(Type + 1, &a2);
-    if ( v5 == -1 )
-    return 0;
-    v6 = Type[5];
-    if ( v6 == 1 )
-    return this;
-    v8 = v5 - 1;
-    if ( v8 < 0 )
-    v8 = v6 - 1;
-    v9 = v8;
-    if ( !v6 )
-    return 0;
-    if ( v8 >= v6 )
-  {
-    v10 = Type[37];
-    if ( v10 < 0 )
-    return 0;
-    v9 = v10 + (v8 - v10) % Type[36];
-  }
-    if ( v9 >= 0 && v9 < v6 )
-    return *(int **)(Type[2] + 4 * v9);
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x633F20
-namespace gamemd {
-unsigned int * TeamClass::GetNextScriptAction(unsigned int * a2)
-{
-{
-    int *Type;
-    int v4;
-    int v5;
-    int v6;
-    int v8;
-    int v9;
-    int v10;
-    Type = (int *)BuildingClass::GetPlanningToken(a2);
-    v4 = Type[1];
-    a2 = this;
-    v5 = (*(int (__thiscall **)(int *, int **))(v4 + 16))(Type + 1, &a2);
-    if ( v5 == -1 )
-    return 0;
-    v6 = Type[5];
-    if ( v6 == 1 )
-    return this;
-    v8 = v5 + 1;
-    if ( v8 >= v6 )
-    v8 = 0;
-    v9 = v8;
-    if ( !v6 )
-    return 0;
-    if ( v8 >= v6 )
-  {
-    v10 = Type[37];
-    if ( v10 < 0 )
-    return 0;
-    v9 = v10 + (v8 - v10) % Type[36];
-  }
-    if ( v9 >= 0 && v9 < v6 )
-    return *(int **)(Type[2] + 4 * v9);
-    return 0;
 }
 }
 } // namespace gamemd
@@ -1174,17 +1063,6 @@ LABEL_4:
     }
   }
   return result; /*0x636ccc*/
-}
-}
-} // namespace gamemd
-
-// 0x6915A0
-namespace gamemd {
-char TeamClass::SetField11(ScriptClass * aP1)
-{
-{
-    this->owner = aP1;
-    return 1;
 }
 }
 } // namespace gamemd
@@ -2142,42 +2020,6 @@ int __thiscall TeamClass::RecruitMember(_DWORD *this, int a2)
 }
 } // namespace gamemd
 
-// 0x6EAE60
-namespace gamemd {
-int TeamClass::ExecuteAction(int a2, char a3)
-{
-{
-    int result;
-    int v4;
-    result = a2;
-    if ( a2 == this->tag )
-    this->tag = 0;
-    v4 = this->firstUnit;
-    if ( a2 == v4 && a3 )
-    this->firstUnit = *(int *)(v4 + 1496);
-    if ( a2 == this->owner )
-    this->owner = 0;
-    if ( a2 == this->currentScript )
-    this->currentScript = 0;
-    if ( this->focus == a2 )
-    this->focus = 0;
-    if ( this->queuedFocus == a2 )
-    this->queuedFocus = 0;
-    if ( this->spawnCell == a2 )
-    this->spawnCell = 0;
-    if ( this->buildingType == a2 )
-    this->buildingType = 0;
-    if ( this->unknown38 == a2 )
-    this->unknown38 = 0;
-    if ( this->unknown44 == a2 )
-    this->unknown44 = 0;
-    if ( this->target == a2 )
-    this->target = 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6EAEE0
 namespace gamemd {
 char TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2)
@@ -2857,25 +2699,6 @@ char __thiscall sub_6EBF50(int this)
 }
 } // namespace gamemd
 
-// 0x6EC3A0
-namespace gamemd {
-char TeamClass::WakeUpAllMembers()
-{
-{
-    char result;
-    int i;
-    result = TeamClass::SelectMember((int)this, 0);
-    i = this->firstUnit;
-    for ( ; i; i = *(int *)(i + 1496) )
-  {
-    result = (*(int (__thiscall **)(int, int))(*(int *)(i) + 968))(i, 0);
-    *(char *)(i + 1672) = 1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6EC450
 namespace gamemd {
 int TeamClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
@@ -2929,20 +2752,6 @@ int __stdcall TeamClass::SaveLoad_Prefix(AbstractClass *aP0, int aP1)
     return 0; /*0x6ec53a*/
   }
   return result; /*0x6ec53c*/
-}
-}
-} // namespace gamemd
-
-// 0x6EC540
-namespace gamemd {
-int TeamClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
 }
 }
 } // namespace gamemd
@@ -3153,6 +2962,197 @@ void __thiscall TeamClass::MoveTeamToWaypoint(int **this, ScriptClass *aP1, Team
     }
   }
   TeamClass::UpdateMembers((int)v3); /*0x6ec98b*/
+}
+}
+} // namespace gamemd
+
+// 0x5095D0
+namespace gamemd {
+int TeamClass::CountActiveTeamsForType(ObjectClass * aP1)
+{
+{
+    int result;
+    int v3;
+    int *v4;
+    int v5;
+    result = 0;
+    if ( *(int *)&g_CellDirectionOffsets.__pad_579C[62156] - 1 >= 0 )
+  {
+    v3 = *(int *)&g_CellDirectionOffsets.__pad_579C[62156];
+    v4 = (int *)(*(int *)&g_CellDirectionOffsets.__pad_579C[62144] + 4 * (*(int *)&g_CellDirectionOffsets.__pad_579C[62156] - 1));
+    do
+    {
+    v5 = *v4;
+    if ( *v4 && *(void **)(v5 + 44) == this && aP1 == *(ObjectClass **)(v5 + 36) )
+    ++result;
+    --v4;
+    --v3;
+    }
+    while ( v3 );
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x633EA0
+namespace gamemd {
+unsigned int * TeamClass::FindScriptAction(unsigned int * a2)
+{
+{
+    int *Type;
+    int v4;
+    int v5;
+    int v6;
+    int v8;
+    int v9;
+    int v10;
+    Type = (int *)BuildingClass::GetPlanningToken(a2);
+    v4 = Type[1];
+    a2 = this;
+    v5 = (*(int (__thiscall **)(int *, int **))(v4 + 16))(Type + 1, &a2);
+    if ( v5 == -1 )
+    return 0;
+    v6 = Type[5];
+    if ( v6 == 1 )
+    return this;
+    v8 = v5 - 1;
+    if ( v8 < 0 )
+    v8 = v6 - 1;
+    v9 = v8;
+    if ( !v6 )
+    return 0;
+    if ( v8 >= v6 )
+  {
+    v10 = Type[37];
+    if ( v10 < 0 )
+    return 0;
+    v9 = v10 + (v8 - v10) % Type[36];
+  }
+    if ( v9 >= 0 && v9 < v6 )
+    return *(int **)(Type[2] + 4 * v9);
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x633F20
+namespace gamemd {
+unsigned int * TeamClass::GetNextScriptAction(unsigned int * a2)
+{
+{
+    int *Type;
+    int v4;
+    int v5;
+    int v6;
+    int v8;
+    int v9;
+    int v10;
+    Type = (int *)BuildingClass::GetPlanningToken(a2);
+    v4 = Type[1];
+    a2 = this;
+    v5 = (*(int (__thiscall **)(int *, int **))(v4 + 16))(Type + 1, &a2);
+    if ( v5 == -1 )
+    return 0;
+    v6 = Type[5];
+    if ( v6 == 1 )
+    return this;
+    v8 = v5 + 1;
+    if ( v8 >= v6 )
+    v8 = 0;
+    v9 = v8;
+    if ( !v6 )
+    return 0;
+    if ( v8 >= v6 )
+  {
+    v10 = Type[37];
+    if ( v10 < 0 )
+    return 0;
+    v9 = v10 + (v8 - v10) % Type[36];
+  }
+    if ( v9 >= 0 && v9 < v6 )
+    return *(int **)(Type[2] + 4 * v9);
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6915A0
+namespace gamemd {
+char TeamClass::SetField11(ScriptClass * aP1)
+{
+{
+    this->owner = aP1;
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x6EAE60
+namespace gamemd {
+int TeamClass::ExecuteAction(int a2, char a3)
+{
+{
+    int result;
+    int v4;
+    result = a2;
+    if ( a2 == this->tag )
+    this->tag = 0;
+    v4 = this->firstUnit;
+    if ( a2 == v4 && a3 )
+    this->firstUnit = *(int *)(v4 + 1496);
+    if ( a2 == this->owner )
+    this->owner = 0;
+    if ( a2 == this->currentScript )
+    this->currentScript = 0;
+    if ( this->focus == a2 )
+    this->focus = 0;
+    if ( this->queuedFocus == a2 )
+    this->queuedFocus = 0;
+    if ( this->spawnCell == a2 )
+    this->spawnCell = 0;
+    if ( this->buildingType == a2 )
+    this->buildingType = 0;
+    if ( this->unknown38 == a2 )
+    this->unknown38 = 0;
+    if ( this->unknown44 == a2 )
+    this->unknown44 = 0;
+    if ( this->target == a2 )
+    this->target = 0;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x6EC3A0
+namespace gamemd {
+char TeamClass::WakeUpAllMembers()
+{
+{
+    char result;
+    int i;
+    result = TeamClass::SelectMember((int)this, 0);
+    i = this->firstUnit;
+    for ( ; i; i = *(int *)(i + 1496) )
+  {
+    result = (*(int (__thiscall **)(int, int))(*(int *)(i) + 968))(i, 0);
+    *(char *)(i + 1672) = 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x6EC540
+namespace gamemd {
+int TeamClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd

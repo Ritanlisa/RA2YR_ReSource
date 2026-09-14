@@ -232,27 +232,6 @@ int __thiscall TeamTypeClass::DestroyAllInstances(void *this)
 }
 } // namespace gamemd
 
-// 0x6F0FC0
-namespace gamemd {
-int TeamTypeClass::FindByName()
-{
-{
-    int v2;
-    if ( !this )
-    return 0;
-    v2 = 0;
-    if ( *(int *)&HouseClass_Player.__pad_5568[23036] <= 0 )
-    return 0;
-    while ( _strcmpi(this, (const void *)(*(int *)(*(int *)&HouseClass_Player.__pad_5568[23024] + 4 * v2) + 36)) && _strcmpi(this, (const void *)(*(int *)(*(int *)&HouseClass_Player.__pad_5568[23024] + 4 * v2) + 100)) )
-  {
-    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[23036] )
-    return 0;
-  }
-    return *(int *)(*(int *)&HouseClass_Player.__pad_5568[23024] + 4 * v2);
-}
-}
-} // namespace gamemd
-
 // 0x6F1030
 namespace gamemd {
 int TeamTypeClass::GetTeam(int a2, int a3)
@@ -800,60 +779,6 @@ _DWORD *__thiscall TeamTypeClass::GetTransportWaypoint(int *this, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x6F1AB0
-namespace gamemd {
-TeamTypeClass * TeamTypeClass::ReadScriptData(char * a1, int a2)
-{
-{
-    CCINIClass *KeyCount;
-    CCINIClass *i;
-    unsigned char *StringByIndex;
-    TeamTypeClass *result;
-    INIClass *v8;
-    int j;
-    ObjectClass *v10;
-    char Buffer[32];
-    KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080]);
-    for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)(i) + 1) )
-  {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(a1, (CCINIClass *)&DataGlobal_830620.__pad_579C[54080], i);
-    INIClass::GetString( (unsigned char ***)a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080], StringByIndex, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], (INIClass *)Buffer, 32);
-    INIClass::ClearSection((int)a1, (INIClass *)Buffer, 0);
-  }
-    INIClass::ClearSection((int)a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080], 0);
-    result = *(TeamTypeClass **)&g_NetworkPlayerBuffer.__pad_14B0[452];
-    v8 = 0;
-    for ( j = 0; j < *(int *)&g_NetworkPlayerBuffer.__pad_14B0[452]; ++j )
-  {
-    if ( *(int *)(*(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j) + 232) == a2 )
-    {
-    v10 = (ObjectClass *)v8;
-    v8 = (INIClass *)((char *)(v8) + 1);
-    sprintf(Buffer, g_Str_Trace__d, v10);
-    INIClass::SetString( a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080], (INIClass *)Buffer, (INIClass *)(*(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j) + 36));
-    (*(void (__thiscall **)(int, char *))(**(int **)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j) + 104))( *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j), a1);
-    }
-    result = *(TeamTypeClass **)&g_NetworkPlayerBuffer.__pad_14B0[452];
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x6F1B90
-namespace gamemd {
-int TeamTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6F1BB0
 namespace gamemd {
 int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
@@ -985,51 +910,6 @@ int __thiscall TeamTypeClass::_vt13(int this, int *a2)
 }
 } // namespace gamemd
 
-// 0x6F1F30
-namespace gamemd {
-int TeamTypeClass::FlashAllInstances(AnimClass * aP1)
-{
-{
-    int result;
-    int i;
-    int v5;
-    result = *(int *)&g_CellDirectionOffsets.__pad_579C[62156];
-    for ( i = 0; i < *(int *)&g_CellDirectionOffsets.__pad_579C[62156]; ++i )
-  {
-    v5 = *(int *)(*(int *)&g_CellDirectionOffsets.__pad_579C[62144] + 4 * i);
-    if ( *(void **)(v5 + 36) == this )
-    TeamTypeClass::Check((int *)v5, (int)aP1);
-    result = *(int *)&g_CellDirectionOffsets.__pad_579C[62156];
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x6F1F70
-namespace gamemd {
-int TeamTypeClass::FindFirstInstance()
-{
-{
-    int v1;
-    char *i;
-    int result;
-    v1 = 0;
-    if ( g_HouseClass_AIProductionState <= 0 )
-    return 0;
-    for ( i = (char *)g_TeamClassPool; ; i += 4 )
-  {
-    result = *(int *)i;
-    if ( *(void **)(*(int *)(i) + 36) == this )
-    break;
-    if ( ++v1 >= g_HouseClass_AIProductionState )
-    return 0;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6F1FA0
 namespace gamemd {
 int TeamTypeClass::ProcessTaskForce()
@@ -1150,19 +1030,6 @@ void __thiscall TeamTypeClass_28_::sub_6F21B0(int this)
   }
   *(_BYTE *)(this + 13) = 0; /*0x6f21dc*/
   this->TeamTypeClass_28_field_0x8 = 0; /*0x6f21df*/
-}
-}
-} // namespace gamemd
-
-// 0x6F21F0
-namespace gamemd {
-unsigned int TeamTypeClass_28::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->TeamTypeClass_28_field_0xC )
-    return (unsigned int)(a2 - this->TeamTypeClass_28_field_0x4) >> 3;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -1387,19 +1254,6 @@ int __thiscall TeamTypeClass_28_::_vt04(int this, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x6F2490
-namespace gamemd {
-unsigned int TeamTypeClass_28::Write(int a2)
-{
-{
-    if ( (unsigned char)this->TeamTypeClass_28_field_0xC )
-    return (unsigned int)(a2 - this->TeamTypeClass_28_field_0x4) >> 3;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x6F24B0
 namespace gamemd {
 char TeamTypeClass_28::SetCapacity(int a2, int * a3)
@@ -1592,6 +1446,81 @@ DynamicVector *__thiscall TeamTypeClass_28_::Constructor(_DWORD *this, char a2)
 }
 } // namespace gamemd
 
+// 0x6F0FC0
+namespace gamemd {
+int TeamTypeClass::FindByName()
+{
+{
+    int v2;
+    if ( !this )
+    return 0;
+    v2 = 0;
+    if ( *(int *)&HouseClass_Player.__pad_5568[23036] <= 0 )
+    return 0;
+    while ( _strcmpi(this, (const void *)(*(int *)(*(int *)&HouseClass_Player.__pad_5568[23024] + 4 * v2) + 36)) && _strcmpi(this, (const void *)(*(int *)(*(int *)&HouseClass_Player.__pad_5568[23024] + 4 * v2) + 100)) )
+  {
+    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[23036] )
+    return 0;
+  }
+    return *(int *)(*(int *)&HouseClass_Player.__pad_5568[23024] + 4 * v2);
+}
+}
+} // namespace gamemd
+
+// 0x6F1AB0
+namespace gamemd {
+TeamTypeClass * TeamTypeClass::ReadScriptData(char * a1, int a2)
+{
+{
+    CCINIClass *KeyCount;
+    CCINIClass *i;
+    unsigned char *StringByIndex;
+    TeamTypeClass *result;
+    INIClass *v8;
+    int j;
+    ObjectClass *v10;
+    char Buffer[32];
+    KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080]);
+    for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)(i) + 1) )
+  {
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(a1, (CCINIClass *)&DataGlobal_830620.__pad_579C[54080], i);
+    INIClass::GetString( (unsigned char ***)a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080], StringByIndex, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], (INIClass *)Buffer, 32);
+    INIClass::ClearSection((int)a1, (INIClass *)Buffer, 0);
+  }
+    INIClass::ClearSection((int)a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080], 0);
+    result = *(TeamTypeClass **)&g_NetworkPlayerBuffer.__pad_14B0[452];
+    v8 = 0;
+    for ( j = 0; j < *(int *)&g_NetworkPlayerBuffer.__pad_14B0[452]; ++j )
+  {
+    if ( *(int *)(*(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j) + 232) == a2 )
+    {
+    v10 = (ObjectClass *)v8;
+    v8 = (INIClass *)((char *)(v8) + 1);
+    sprintf(Buffer, g_Str_Trace__d, v10);
+    INIClass::SetString( a1, (INIClass *)&DataGlobal_830620.__pad_579C[54080], (INIClass *)Buffer, (INIClass *)(*(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j) + 36));
+    (*(void (__thiscall **)(int, char *))(**(int **)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j) + 104))( *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[440] + 4 * j), a1);
+    }
+    result = *(TeamTypeClass **)&g_NetworkPlayerBuffer.__pad_14B0[452];
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x6F1B90
+namespace gamemd {
+int TeamTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x6F1C40
 namespace gamemd {
 int TeamTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
@@ -1603,6 +1532,51 @@ int TeamTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   a2[2] = 1610655148;
   a2[3] = -1252326136;
   return 0;
+}
+} // namespace gamemd
+
+// 0x6F1F30
+namespace gamemd {
+int TeamTypeClass::FlashAllInstances(AnimClass * aP1)
+{
+{
+    int result;
+    int i;
+    int v5;
+    result = *(int *)&g_CellDirectionOffsets.__pad_579C[62156];
+    for ( i = 0; i < *(int *)&g_CellDirectionOffsets.__pad_579C[62156]; ++i )
+  {
+    v5 = *(int *)(*(int *)&g_CellDirectionOffsets.__pad_579C[62144] + 4 * i);
+    if ( *(void **)(v5 + 36) == this )
+    TeamTypeClass::Check((int *)v5, (int)aP1);
+    result = *(int *)&g_CellDirectionOffsets.__pad_579C[62156];
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x6F1F70
+namespace gamemd {
+int TeamTypeClass::FindFirstInstance()
+{
+{
+    int v1;
+    char *i;
+    int result;
+    v1 = 0;
+    if ( g_HouseClass_AIProductionState <= 0 )
+    return 0;
+    for ( i = (char *)g_TeamClassPool; ; i += 4 )
+  {
+    result = *(int *)i;
+    if ( *(void **)(*(int *)(i) + 36) == this )
+    break;
+    if ( ++v1 >= g_HouseClass_AIProductionState )
+    return 0;
+  }
+    return result;
+}
 }
 } // namespace gamemd
 
@@ -1619,5 +1593,31 @@ namespace gamemd {
 int TeamTypeClass::GetObjectSize()
 {
 return 248;
+}
+} // namespace gamemd
+
+// 0x6F21F0
+namespace gamemd {
+unsigned int TeamTypeClass_28::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->TeamTypeClass_28_field_0xC )
+    return (unsigned int)(a2 - this->TeamTypeClass_28_field_0x4) >> 3;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6F2490
+namespace gamemd {
+unsigned int TeamTypeClass_28::Write(int a2)
+{
+{
+    if ( (unsigned char)this->TeamTypeClass_28_field_0xC )
+    return (unsigned int)(a2 - this->TeamTypeClass_28_field_0x4) >> 3;
+    else
+    return 0;
+}
 }
 } // namespace gamemd

@@ -64,42 +64,6 @@ char __thiscall sub_6A04C0(int this, IUnknown *aP1)
 }
 } // namespace gamemd
 
-// 0x6A4C10
-namespace gamemd {
-int sub_6A4C10()
-{
-{
-    GadgetClass::Construct(&DataGlobal_B07E58, 0, 0, 1, 1, 8, 0);
-    DataGlobal_B07E58 = (int)&vt_SidebarClass_SBGadgetClass;
-    return atexit(sub_6A4C40);
-}
-}
-} // namespace gamemd
-
-// 0x6A4DC0
-namespace gamemd {
-int sub_6A4DC0()
-{
-{
-    int *v0;
-    int v1;
-    v0 = &DataGlobal_B07E80;
-    v1 = 240;
-    do
-  {
-    ControlClass::Construct(v0, 0, 0, 0, 60, 48, 25, 0);
-    v0[11] = 0;
-    v0[12] = 0;
-    *v0 = &vt_SidebarClass_StripClass_SelectClass;
-    v0 += 14;
-    --v1;
-  }
-    while ( v1 );
-    return atexit(sub_6A4E10);
-}
-}
-} // namespace gamemd
-
 // 0x6A6AF0
 namespace gamemd {
 char E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
@@ -677,40 +641,6 @@ bool __usercall Skirmish_Setup_Screen@<al>(int a1@<ebx>, int a2@<ebp>)
   if ( dwNewLong == 1472 ) /*0x6ae3c9*/
     Screen::Capture(1, 0, a1, a2); /*0x6ae3cf*/
   return dwNewLong == 1559; /*0x6ae3e0*/
-}
-}
-} // namespace gamemd
-
-// 0x6AF120
-namespace gamemd {
-int sub_6AF120()
-{
-{
-    DataGlobal_B0B5F4 = 0;
-    DataGlobal_B0B5F8 = 0;
-    DataGlobal_B0B5FC = 1;
-    DataGlobal_B0B5FD = 0;
-    SlaveManagerClass_Array = (int)&vt_DynamicVectorClass_SlaveManagerClass;
-    DataGlobal_B0B604 = 10;
-    DataGlobal_B0B600 = 0;
-    return atexit(sub_6AF160);
-}
-}
-} // namespace gamemd
-
-// 0x6AF160
-namespace gamemd {
-void sub_6AF160()
-{
-{
-    SlaveManagerClass_Array = (int)&vt_VectorClass_SlaveManagerClass;
-    if ( DataGlobal_B0B5F4 && DataGlobal_B0B5FD )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0B5F4);
-    DataGlobal_B0B5F4 = 0;
-  }
-    DataGlobal_B0B5FD = 0;
-    DataGlobal_B0B5F8 = 0;
 }
 }
 } // namespace gamemd
@@ -1300,6 +1230,18 @@ int sub_6A4BF0()
 }
 } // namespace gamemd
 
+// 0x6A4C10
+namespace gamemd {
+int sub_6A4C10()
+{
+{
+    GadgetClass::Construct(&DataGlobal_B07E58, 0, 0, 1, 1, 8, 0);
+    DataGlobal_B07E58 = (int)&vt_SidebarClass_SBGadgetClass;
+    return atexit(sub_6A4C40);
+}
+}
+} // namespace gamemd
+
 // 0x6A4C40
 namespace gamemd {
 void sub_6A4C40()
@@ -1455,6 +1397,30 @@ void sub_6A4DA0()
     DataGlobal_B07BB1 |= 0x10u;
     ShapeButtonClass::Destructor((int)g_SidebarFlag);
   }
+}
+}
+} // namespace gamemd
+
+// 0x6A4DC0
+namespace gamemd {
+int sub_6A4DC0()
+{
+{
+    int *v0;
+    int v1;
+    v0 = &DataGlobal_B07E80;
+    v1 = 240;
+    do
+  {
+    ControlClass::Construct(v0, 0, 0, 0, 60, 48, 25, 0);
+    v0[11] = 0;
+    v0[12] = 0;
+    *v0 = &vt_SidebarClass_StripClass_SelectClass;
+    v0 += 14;
+    --v1;
+  }
+    while ( v1 );
+    return atexit(sub_6A4E10);
 }
 }
 } // namespace gamemd
@@ -1873,6 +1839,40 @@ int sub_6AF100()
     DataGlobal_B0B5B0 = 0;
     DataGlobal_B0B5B4 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6AF120
+namespace gamemd {
+int sub_6AF120()
+{
+{
+    DataGlobal_B0B5F4 = 0;
+    DataGlobal_B0B5F8 = 0;
+    DataGlobal_B0B5FC = 1;
+    DataGlobal_B0B5FD = 0;
+    SlaveManagerClass_Array = (int)&vt_DynamicVectorClass_SlaveManagerClass;
+    DataGlobal_B0B604 = 10;
+    DataGlobal_B0B600 = 0;
+    return atexit(sub_6AF160);
+}
+}
+} // namespace gamemd
+
+// 0x6AF160
+namespace gamemd {
+void sub_6AF160()
+{
+{
+    SlaveManagerClass_Array = (int)&vt_VectorClass_SlaveManagerClass;
+    if ( DataGlobal_B0B5F4 && DataGlobal_B0B5FD )
+  {
+    __3_YAXPAX_Z(DataGlobal_B0B5F4);
+    DataGlobal_B0B5F4 = 0;
+  }
+    DataGlobal_B0B5FD = 0;
+    DataGlobal_B0B5F8 = 0;
 }
 }
 } // namespace gamemd

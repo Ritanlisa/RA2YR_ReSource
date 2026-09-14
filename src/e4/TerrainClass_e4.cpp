@@ -150,16 +150,6 @@ LABEL_16:
 }
 } // namespace gamemd
 
-// 0x71CF30
-namespace gamemd {
-int TerrainClass::CheckFrameUpdate(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-}
-}
-} // namespace gamemd
-
 // 0x71D000
 namespace gamemd {
 char TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClass * aP2)
@@ -208,6 +198,16 @@ char __thiscall TerrainClass::ProcessSpawnAnim(int this, _DWORD *a1, AbstractCla
     }
   }
   return 1; /*0x71d137*/
+}
+}
+} // namespace gamemd
+
+// 0x71CF30
+namespace gamemd {
+int TerrainClass::CheckFrameUpdate(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
 }
 }
 } // namespace gamemd

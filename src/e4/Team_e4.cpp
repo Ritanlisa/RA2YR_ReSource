@@ -475,70 +475,6 @@ char __thiscall Team_AllMembersValid(int *this)
 }
 } // namespace gamemd
 
-// 0x765F60
-namespace gamemd {
-rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
-{
-{
-    rc_ptr_base *v4;
-    rc_ptr_base *v5;
-    rc_ptr_base *v6;
-    v4 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
-    v5 = v4;
-    if ( v4 )
-  {
-    v6 = v4 + 2;
-    v4[1].vfptr = 0;
-    v4->vfptr = &vt_ReferenceCounted;
-    ComPtr::Constructor(v4 + 2);
-    v6->vfptr = &vt_rc_ptr_WDTTerritory;
-    ComPtr::Set(v5 + 2, *(int *)(a2 + 4));
-    v5->vfptr = &vt_WorldDominationTour_Conflict;
-  }
-    else
-  {
-    v5 = 0;
-  }
-    ComPtr::Constructor(a1);
-    a1->vfptr = &vt_rc_ptr_WorldDominationTour_Conflict;
-    ComPtr::Set(a1, (int)v5);
-    return a1;
-}
-}
-} // namespace gamemd
-
-// 0x767B00
-namespace gamemd {
-rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
-{
-{
-    rc_ptr_base *v4;
-    rc_ptr_base *v5;
-    rc_ptr_base *v6;
-    v4 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
-    v5 = v4;
-    if ( v4 )
-  {
-    v6 = v4 + 2;
-    v4[1].vfptr = 0;
-    v4->vfptr = &vt_ReferenceCounted;
-    ComPtr::Constructor(v4 + 2);
-    v6->vfptr = &vt_rc_ptr_WDTState;
-    ComPtr::Set(v5 + 2, *(int *)(a2 + 4));
-    v5->vfptr = &vt_WorldDominationTour_History;
-  }
-    else
-  {
-    v5 = 0;
-  }
-    ComPtr::Constructor(a1);
-    a1->vfptr = &vt_rc_ptr_WorldDominationTour_History;
-    ComPtr::Set(a1, (int)v5);
-    return a1;
-}
-}
-} // namespace gamemd
-
 // 0x63A1B0
 namespace gamemd {
 void sub_63A1B0(int a1)
@@ -567,33 +503,6 @@ LABEL_7:
     AddMessageListPlayerMessage(StringCSF, 480); /*0x63a1f7*/
     goto LABEL_7; /*0x63a1f7*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x752460
-namespace gamemd {
-ObjectClass * Team_Helper_752460(int a1)
-{
-{
-    if ( a1 < 0 || a1 >= *(int *)&DataGlobal_B1D188.__pad_2B8[112] )
-    return (ObjectClass *)g_Str_none;
-    else
-    return *(ObjectClass **)(*(int *)&DataGlobal_B1D188.__pad_2B8[100] + 4 * a1);
-}
-}
-} // namespace gamemd
-
-// 0x76ECD0
-namespace gamemd {
-void Team_Start_76ECD0(int a1, ScoreScreen * a2)
-{
-{
-    Selection_WorldDominationTour v4;
-    Timer::PumpMessages((HWND *)g_BinkMoviePlayer);
-    ConstructWDTSelection(&v4, a1, (int)a2);
-    Team_Start_76E750((int)&v4, a2);
-    SelectionInitializeWOL(&v4);
 }
 }
 } // namespace gamemd
@@ -702,6 +611,97 @@ int __usercall sub_7AFAD0@<eax>(void *a1@<ecx>, int a2@<edi>)
       return 3; /*0x7afb64*/
   }
   return 0; /*0x7afb34*/
+}
+}
+} // namespace gamemd
+
+// 0x752460
+namespace gamemd {
+ObjectClass * Team_Helper_752460(int a1)
+{
+{
+    if ( a1 < 0 || a1 >= *(int *)&DataGlobal_B1D188.__pad_2B8[112] )
+    return (ObjectClass *)g_Str_none;
+    else
+    return *(ObjectClass **)(*(int *)&DataGlobal_B1D188.__pad_2B8[100] + 4 * a1);
+}
+}
+} // namespace gamemd
+
+// 0x765F60
+namespace gamemd {
+rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
+{
+{
+    rc_ptr_base *v4;
+    rc_ptr_base *v5;
+    rc_ptr_base *v6;
+    v4 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+    v5 = v4;
+    if ( v4 )
+  {
+    v6 = v4 + 2;
+    v4[1].vfptr = 0;
+    v4->vfptr = &vt_ReferenceCounted;
+    ComPtr::Constructor(v4 + 2);
+    v6->vfptr = &vt_rc_ptr_WDTTerritory;
+    ComPtr::Set(v5 + 2, *(int *)(a2 + 4));
+    v5->vfptr = &vt_WorldDominationTour_Conflict;
+  }
+    else
+  {
+    v5 = 0;
+  }
+    ComPtr::Constructor(a1);
+    a1->vfptr = &vt_rc_ptr_WorldDominationTour_Conflict;
+    ComPtr::Set(a1, (int)v5);
+    return a1;
+}
+}
+} // namespace gamemd
+
+// 0x767B00
+namespace gamemd {
+rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
+{
+{
+    rc_ptr_base *v4;
+    rc_ptr_base *v5;
+    rc_ptr_base *v6;
+    v4 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+    v5 = v4;
+    if ( v4 )
+  {
+    v6 = v4 + 2;
+    v4[1].vfptr = 0;
+    v4->vfptr = &vt_ReferenceCounted;
+    ComPtr::Constructor(v4 + 2);
+    v6->vfptr = &vt_rc_ptr_WDTState;
+    ComPtr::Set(v5 + 2, *(int *)(a2 + 4));
+    v5->vfptr = &vt_WorldDominationTour_History;
+  }
+    else
+  {
+    v5 = 0;
+  }
+    ComPtr::Constructor(a1);
+    a1->vfptr = &vt_rc_ptr_WorldDominationTour_History;
+    ComPtr::Set(a1, (int)v5);
+    return a1;
+}
+}
+} // namespace gamemd
+
+// 0x76ECD0
+namespace gamemd {
+void Team_Start_76ECD0(int a1, ScoreScreen * a2)
+{
+{
+    Selection_WorldDominationTour v4;
+    Timer::PumpMessages((HWND *)g_BinkMoviePlayer);
+    ConstructWDTSelection(&v4, a1, (int)a2);
+    Team_Start_76E750((int)&v4, a2);
+    SelectionInitializeWOL(&v4);
 }
 }
 } // namespace gamemd

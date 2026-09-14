@@ -444,41 +444,6 @@ void __thiscall IPXInterfaceClass::_vt05(int this)
 }
 }
 
-// 0x7B1FD0
-int IPXInterfaceClass::SetAddress(unsigned int * a1)
-{
-{
-    int v1;
-    int *v2;
-    int v3;
-    int *v4;
-    int result;
-    int v6;
-    int v7;
-    v1 = 0;
-    v2 = a1 + 7;
-    v3 = *((int*)(a1) + 4);
-    *((int*)(a1) + 7) = 0;
-    v4 = a1 + 8;
-    result = v3 / 4;
-    if ( result > 0 )
-  {
-    do
-    {
-    v6 = *v4++;
-    ComputeHash(v2, v6);
-    ++v1;
-    result = *((int*)(a1) + 4) / 4;
-    }
-    while ( v1 < result );
-  }
-    v7 = *((int*)(a1) + 4) & 3;
-    if ( v7 )
-    return ComputeHash(v2, *v4 & (0xFFFFFFFF >> (32 - 8 * v7)));
-    return result;
-}
-}
-
 // 0x7B2240
 unsigned char * IPXInterfaceClass::processPacket()
 {
@@ -579,38 +544,6 @@ __int16 __thiscall IPXInterfaceClass::Connect(int this, const void *a1, unsigned
   v15 = (*(int (__thiscall **)(int, int))(*(_DWORD *)this + 56))(this, v10); /*0x7b25b9*/
   SendMessageA((HWND)g_hWnd, v15, 0, 2); /*0x7b25c3*/
   return EventQueue::Process(MEMORY[0x87F770]); /*0x7b25d4*/
-}
-}
-
-// 0x7B25E0
-int IPXInterfaceClass::GetAddress(SOCKET s)
-{
-{
-    SOCKET v1;
-    int optlen;
-    v1 = s;
-    optlen = 4;
-    getsockopt(s, 0xFFFF, 4103, (char *)&s, &optlen);
-    s = 0;
-    return setsockopt(v1, 0xFFFF, 4103, (const char *)&s, optlen);
-}
-}
-
-// 0x7B26D0
-char IPXInterfaceClass::ReceivePacket(char * name, AnimClass * aP1)
-{
-{
-    if ( gethostname((IUnknown *)name, aP1) == -1 )
-  {
-    WSAGetLastError();
-    Debug::Log();
-    return 0;
-  }
-    else
-  {
-    Debug::Log();
-    return 1;
-  }
 }
 }
 
@@ -776,4 +709,71 @@ return 1;
 int IPXInterfaceClass::COMStub_Ret1139(int a1)
 {
 return 1139;
+}
+
+// 0x7B1FD0
+int IPXInterfaceClass::SetAddress(unsigned int * a1)
+{
+{
+    int v1;
+    int *v2;
+    int v3;
+    int *v4;
+    int result;
+    int v6;
+    int v7;
+    v1 = 0;
+    v2 = a1 + 7;
+    v3 = *((int*)(a1) + 4);
+    *((int*)(a1) + 7) = 0;
+    v4 = a1 + 8;
+    result = v3 / 4;
+    if ( result > 0 )
+  {
+    do
+    {
+    v6 = *v4++;
+    ComputeHash(v2, v6);
+    ++v1;
+    result = *((int*)(a1) + 4) / 4;
+    }
+    while ( v1 < result );
+  }
+    v7 = *((int*)(a1) + 4) & 3;
+    if ( v7 )
+    return ComputeHash(v2, *v4 & (0xFFFFFFFF >> (32 - 8 * v7)));
+    return result;
+}
+}
+
+// 0x7B25E0
+int IPXInterfaceClass::GetAddress(SOCKET s)
+{
+{
+    SOCKET v1;
+    int optlen;
+    v1 = s;
+    optlen = 4;
+    getsockopt(s, 0xFFFF, 4103, (char *)&s, &optlen);
+    s = 0;
+    return setsockopt(v1, 0xFFFF, 4103, (const char *)&s, optlen);
+}
+}
+
+// 0x7B26D0
+char IPXInterfaceClass::ReceivePacket(char * name, AnimClass * aP1)
+{
+{
+    if ( gethostname((IUnknown *)name, aP1) == -1 )
+  {
+    WSAGetLastError();
+    Debug::Log();
+    return 0;
+  }
+    else
+  {
+    Debug::Log();
+    return 1;
+  }
+}
 }

@@ -27,17 +27,6 @@ int __thiscall AbstractClassVector::_vt04(int this, _DWORD *a2)
 }
 }
 
-// 0x4E0480
-unsigned int AbstractClassVector::Write(int a2)
-{
-{
-    if ( (unsigned char)this->AbstractClassVector_field_0x0C )
-    return (unsigned int)(a2 - this->AbstractClassVector_field_0x04) >> 2;
-    else
-    return 0;
-}
-}
-
 // 0x4E0E80
 unsigned int * AbstractClassVector::Construct(IUnknown * aP1, IUnknown * aP2)
 {
@@ -60,5 +49,16 @@ _DWORD *__thiscall AbstractClassVector::Construct(_DWORD *this, IUnknown *aP1, I
     *((_BYTE *)this + 13) = 1; /*0x4e0ec0*/
   }
   return this; /*0x4e0ead*/
+}
+}
+
+// 0x4E0480
+unsigned int AbstractClassVector::Write(int a2)
+{
+{
+    if ( (unsigned char)this->AbstractClassVector_field_0x0C )
+    return (unsigned int)(a2 - this->AbstractClassVector_field_0x04) >> 2;
+    else
+    return 0;
 }
 }

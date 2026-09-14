@@ -746,22 +746,6 @@ LABEL_99:
 }
 } // namespace gamemd
 
-// 0x4238D0
-namespace gamemd {
-int * AnimClass::CheckMirrorFlags(int a1)
-{
-{
-    if ( (DataGlobal_89A190 & 1) == 0 )
-  {
-    DataGlobal_89A190 |= 1u;
-    DataGlobal_89A160 = 2147450879;
-    atexit(nullsub_89);
-  }
-    return &DataGlobal_89A160;
-}
-}
-} // namespace gamemd
-
 // 0x424CB0
 namespace gamemd {
 int AnimClass::InWhichLayer_AttachedObjectLayer()
@@ -812,35 +796,6 @@ LABEL_6:
     aP0->ChargerTurrets[7] = -1; /*0x4253e5*/
   }
   return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x4253ff*/
-}
-}
-} // namespace gamemd
-
-// 0x426300
-namespace gamemd {
-char AnimClass::ProcessAreaEffect(unsigned int * a1)
-{
-{
-    char v1;
-    char *v2;
-    char result;
-    v1 = Input::OffsetToDirection(a1);
-    v2 = Coord::To_Cell(&DataGlobal_87F7E8, a1);
-    if ( Cell::GetGroundHeight(a1) + Map_MaxHeight > *((int*)(a1) + 2) )
-  {
-    result = ~(1 << v1) & v2[292];
-    v2[292] = result;
-    if ( (result & 0x1C) == 0 )
-    *((int *)(v2) + 21) = -1;
-  }
-    else
-  {
-    result = ~(1 << v1) & v2[296];
-    v2[296] = result;
-    if ( (result & 0x1C) == 0 )
-    *((int *)(v2) + 22) = -1;
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -970,6 +925,51 @@ int __thiscall AnimClass::ProcessFrame(#374 *this)
     return ObjectClass::DetectCloaked(this); /*0x76108f*/
   else
     return (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 248))(this); /*0x761081*/
+}
+}
+} // namespace gamemd
+
+// 0x4238D0
+namespace gamemd {
+int * AnimClass::CheckMirrorFlags(int a1)
+{
+{
+    if ( (DataGlobal_89A190 & 1) == 0 )
+  {
+    DataGlobal_89A190 |= 1u;
+    DataGlobal_89A160 = 2147450879;
+    atexit(nullsub_89);
+  }
+    return &DataGlobal_89A160;
+}
+}
+} // namespace gamemd
+
+// 0x426300
+namespace gamemd {
+char AnimClass::ProcessAreaEffect(unsigned int * a1)
+{
+{
+    char v1;
+    char *v2;
+    char result;
+    v1 = Input::OffsetToDirection(a1);
+    v2 = Coord::To_Cell(&DataGlobal_87F7E8, a1);
+    if ( Cell::GetGroundHeight(a1) + Map_MaxHeight > *((int*)(a1) + 2) )
+  {
+    result = ~(1 << v1) & v2[292];
+    v2[292] = result;
+    if ( (result & 0x1C) == 0 )
+    *((int *)(v2) + 21) = -1;
+  }
+    else
+  {
+    result = ~(1 << v1) & v2[296];
+    v2[296] = result;
+    if ( (result & 0x1C) == 0 )
+    *((int *)(v2) + 22) = -1;
+  }
+    return result;
 }
 }
 } // namespace gamemd

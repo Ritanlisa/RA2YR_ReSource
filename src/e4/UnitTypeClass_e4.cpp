@@ -167,39 +167,6 @@ int UnitTypeClass_ConstructUnit()
 }
 } // namespace gamemd
 
-// 0x747590
-int * UnitTypeClass::GetDimensions(int * a2)
-{
-{
-    int v2;
-    int v3;
-    v2 = this->MaxDimension - this->MaxDimension / 4;
-    v3 = v2;
-    if ( v2 >= 60 )
-  {
-    v3 = 60;
-    v2 = 60;
-  }
-    *a2 = v3;
-    *((int*)(a2) + 1) = v3;
-    *((int*)(a2) + 2) = v2;
-    return a2;
-}
-}
-
-// 0x7475D0
-unsigned int * UnitTypeClass::GetDefaultDimensions(unsigned int * a1)
-{
-{
-    int v1;
-    v1 = 2 * DataGlobal_B1D138;
-    *a1 = 256;
-    *((int*)(a1) + 1) = 256;
-    *((int*)(a1) + 2) = v1;
-    return a1;
-}
-}
-
 // 0x747620
 namespace gamemd {
 int UnitTypeClass_LoadFromINI()
@@ -475,29 +442,6 @@ char __userpurge UnitTypeClass::LoadFromINI@<al>(int a1@<ecx>, double a2@<st0>, 
 }
 } // namespace gamemd
 
-// 0x747EB0
-unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
-{
-{
-    int GroundHeight;
-    int v3;
-    int v5;
-    int v6;
-    int v7;
-    v5 = *a2;
-    v6 = *((int*)(a2) + 1);
-    v7 = *((int*)(a2) + 2);
-    GroundHeight = Cell::GetGroundHeight(&v5);
-    v3 = v7;
-    if ( v7 < GroundHeight )
-    v3 = Cell::GetGroundHeight(&v5);
-    *a1 = v5;
-    *((int*)(a1) + 1) = v6;
-    *((int*)(a1) + 2) = v3;
-    return a1;
-}
-}
-
 // 0x747F20
 int UnitTypeClass::GetGameplayValue()
 {
@@ -505,42 +449,6 @@ int UnitTypeClass::GetGameplayValue()
 int UnitTypeClass::_vt45()
 {
   return MEMORY[0x8871E0][1].?; /*0x747f2b*/
-}
-}
-
-// 0x747F70
-int UnitTypeClass::PowerDrainUpdate(int * a2)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    int v11;
-    BuildingTypeClass::ProcessPower(this, a2);
-    Power::TimerProcess(this->MovementRestrictedTo);
-    LOBYTE(v3) = this->Passive;
-    Power::FlagProcess(a2, v3);
-    LOBYTE(v4) = this->CrateGoodie;
-    v5 = Power::FlagProcess(a2, v4);
-    LOBYTE(v5) = this->Harvester;
-    Power::FlagProcess(a2, v5);
-    LOBYTE(v6) = this->Weeder;
-    Power::FlagProcess(a2, v6);
-    LOBYTE(v7) = this->unknown_E10;
-    v8 = Power::FlagProcess(a2, v7);
-    LOBYTE(v8) = this->HasTurret;
-    Power::FlagProcess(a2, v8);
-    LOBYTE(v9) = this->IsTilter;
-    Power::FlagProcess(a2, v9);
-    LOBYTE(v10) = this->IsSimpleDeployer;
-    v11 = Power::FlagProcess(a2, v10);
-    LOBYTE(v11) = this->UseTurretShadow;
-    return Power::FlagProcess(a2, v11);
 }
 }
 
@@ -575,26 +483,6 @@ int __stdcall UnitTypeClass::_vt05(int a1, int a2)
     return 0; /*0x74809e*/
   }
   return result; /*0x7480a0*/
-}
-}
-
-// 0x7480B0
-int UnitTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
-{
-{
-    int result;
-    result = TechnoTypeClass::SaveLoad_Prefix_0(aP1, a0, aP1, (TechnoTypeClass *)a3);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-
-// 0x748180
-int UnitTypeClass::GetAuxField()
-{
-{
-    return this->ArrayIndex;
 }
 }
 
@@ -659,6 +547,62 @@ LABEL_6:
 }
 }
 
+// 0x747590
+int * UnitTypeClass::GetDimensions(int * a2)
+{
+{
+    int v2;
+    int v3;
+    v2 = this->MaxDimension - this->MaxDimension / 4;
+    v3 = v2;
+    if ( v2 >= 60 )
+  {
+    v3 = 60;
+    v2 = 60;
+  }
+    *a2 = v3;
+    *((int*)(a2) + 1) = v3;
+    *((int*)(a2) + 2) = v2;
+    return a2;
+}
+}
+
+// 0x7475D0
+unsigned int * UnitTypeClass::GetDefaultDimensions(unsigned int * a1)
+{
+{
+    int v1;
+    v1 = 2 * DataGlobal_B1D138;
+    *a1 = 256;
+    *((int*)(a1) + 1) = 256;
+    *((int*)(a1) + 2) = v1;
+    return a1;
+}
+}
+
+// 0x747EB0
+unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
+{
+{
+    int GroundHeight;
+    int v3;
+    int v5;
+    int v6;
+    int v7;
+    v5 = *a2;
+    v6 = *((int*)(a2) + 1);
+    v7 = *((int*)(a2) + 2);
+    GroundHeight = Cell::GetGroundHeight(&v5);
+    v3 = v7;
+    if ( v7 < GroundHeight )
+    v3 = Cell::GetGroundHeight(&v5);
+    *a1 = v5;
+    *((int*)(a1) + 1) = v6;
+    *((int*)(a1) + 2) = v3;
+    return a1;
+}
+}
+
 // 0x747F30
 int UnitTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
@@ -671,6 +615,54 @@ int UnitTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0;
 }
 
+// 0x747F70
+int UnitTypeClass::PowerDrainUpdate(int * a2)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    int v11;
+    BuildingTypeClass::ProcessPower(this, a2);
+    Power::TimerProcess(this->MovementRestrictedTo);
+    LOBYTE(v3) = this->Passive;
+    Power::FlagProcess(a2, v3);
+    LOBYTE(v4) = this->CrateGoodie;
+    v5 = Power::FlagProcess(a2, v4);
+    LOBYTE(v5) = this->Harvester;
+    Power::FlagProcess(a2, v5);
+    LOBYTE(v6) = this->Weeder;
+    Power::FlagProcess(a2, v6);
+    LOBYTE(v7) = this->unknown_E10;
+    v8 = Power::FlagProcess(a2, v7);
+    LOBYTE(v8) = this->HasTurret;
+    Power::FlagProcess(a2, v8);
+    LOBYTE(v9) = this->IsTilter;
+    Power::FlagProcess(a2, v9);
+    LOBYTE(v10) = this->IsSimpleDeployer;
+    v11 = Power::FlagProcess(a2, v10);
+    LOBYTE(v11) = this->UseTurretShadow;
+    return Power::FlagProcess(a2, v11);
+}
+}
+
+// 0x7480B0
+int UnitTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
+{
+{
+    int result;
+    result = TechnoTypeClass::SaveLoad_Prefix_0(aP1, a0, aP1, (TechnoTypeClass *)a3);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
+}
+
 // 0x748160
 int UnitTypeClass::GetObjectSize()
 {
@@ -681,4 +673,12 @@ return 3704;
 int UnitTypeClass::GetTypeIdentifier()
 {
 return 40;
+}
+
+// 0x748180
+int UnitTypeClass::GetAuxField()
+{
+{
+    return this->ArrayIndex;
+}
 }

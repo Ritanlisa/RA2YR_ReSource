@@ -19,98 +19,6 @@ int __thiscall LoadingScreen::GetColorScheme(ProgressScreenClass *this)
 }
 }
 
-// 0x72B2F0
-char * LoadingScreen::GetBackgroundImage(ScenarioClass * aP1)
-{
-{
-    char *result;
-    result = *(char **)&DataGlobal_830620.__pad_579C[61048];
-    if ( this != (void *)640 )
-    return *(char **)&DataGlobal_830620.__pad_579C[61052];
-    return result;
-}
-}
-
-// 0x72B310
-char * LoadingScreen::GetOverlayImage(ScenarioClass * aP1)
-{
-{
-    char *result;
-    result = *(char **)&DataGlobal_830620.__pad_579C[61056];
-    if ( this != (void *)640 )
-    return *(char **)&DataGlobal_830620.__pad_579C[61060];
-    return result;
-}
-}
-
-// 0x72B390
-int LoadingScreen::ReleaseAnimObjects()
-{
-{
-    if ( DataGlobal_B0FB88 )
-  {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FB88)(DataGlobal_B0FB88, 1);
-    DataGlobal_B0FB88 = 0;
-  }
-    if ( DataGlobal_B0FB84 )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0FB84);
-    DataGlobal_B0FB84 = 0;
-  }
-    return LoadPaletteSimple(this, &DataGlobal_B0FB84, &DataGlobal_B0FB88);
-}
-}
-
-// 0x72CF40
-char LoadingScreen::Init()
-{
-{
-    char result;
-    result = DataGlobal_B0FCD9;
-    if ( !DataGlobal_B0FCD9 )
-  {
-    if ( g_DisplayWidth == 800 )
-    DataGlobal_B0FA18 = LoadFileSHP(DataGlobal_844D6C, (bool *)&DataGlobal_B0FCD8);
-    result = LoadPaletteSimple(DataGlobal_844D70, &DataGlobal_B0FCDC, &DataGlobal_B0FCE0);
-    DataGlobal_B0FCD9 = 1;
-  }
-    return result;
-}
-}
-
-// 0x72DEF0
-char LoadingScreen::FreeResources3()
-{
-{
-    char result;
-    result = DataGlobal_B0FBE0;
-    if ( DataGlobal_B0FBE0 )
-  {
-    DataGlobal_B0FBE0 = 0;
-    LoadingScreen::DestroyFileTrees();
-    LoadingScreen::CleanupObjects();
-    __3_YAXPAX_Z(DataGlobal_B0FC10);
-    DataGlobal_B0FC10 = 0;
-    __3_YAXPAX_Z(DataGlobal_B0FC14);
-    DataGlobal_B0FC14 = 0;
-    __3_YAXPAX_Z(DataGlobal_B0FC18);
-    DataGlobal_B0FC18 = 0;
-    __3_YAXPAX_Z(g_GadgetAnimState);
-    g_GadgetAnimState = 0;
-    __3_YAXPAX_Z(DataGlobal_B0FC20);
-    DataGlobal_B0FC20 = 0;
-    __3_YAXPAX_Z(DataGlobal_B0FC24);
-    DataGlobal_B0FC24 = 0;
-    __3_YAXPAX_Z(DataGlobal_B0FC28);
-    DataGlobal_B0FC28 = 0;
-    __3_YAXPAX_Z(DataGlobal_B0FC2C);
-    DataGlobal_B0FC2C = 0;
-    return ReleaseLoadingResources();
-  }
-    return result;
-}
-}
-
 // 0x72EF60
 void LoadingScreen::DestroyFileTrees()
 {
@@ -241,43 +149,6 @@ void LoadingScreen_DestroyFileTrees()
 }
 }
 
-// 0x72F140
-void LoadingScreen::CleanupObjects()
-{
-{
-    if ( DataGlobal_B0FBC8 )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0FBC8);
-    DataGlobal_B0FBC8 = 0;
-  }
-    if ( DataGlobal_B0FBCC )
-  {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBCC)(DataGlobal_B0FBCC, 1);
-    DataGlobal_B0FBCC = 0;
-  }
-    if ( DataGlobal_B0FBD0 )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0FBD0);
-    DataGlobal_B0FBD0 = 0;
-  }
-    if ( DataGlobal_B0FBD4 )
-  {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBD4)(DataGlobal_B0FBD4, 1);
-    DataGlobal_B0FBD4 = 0;
-  }
-    if ( DataGlobal_B0FBD8 )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0FBD8);
-    DataGlobal_B0FBD8 = 0;
-  }
-    if ( DataGlobal_B0FBDC )
-  {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBDC)(DataGlobal_B0FBDC, 1);
-    DataGlobal_B0FBDC = 0;
-  }
-}
-}
-
 // 0x72FA10
 void * LoadingScreen::LoadSHPs()
 {
@@ -318,6 +189,135 @@ void *LoadingScreen_LoadSHPs()
   result = LoadFileSHP(MEMORY[0x844D38], (bool *)&MEMORY[0xB0FCAE]); /*0x72fbab*/
   MEMORY[0xB0FABC] = result; /*0x72fbb0*/
   return result; /*0x72fbb5*/
+}
+}
+
+// 0x72B2F0
+char * LoadingScreen::GetBackgroundImage(ScenarioClass * aP1)
+{
+{
+    char *result;
+    result = *(char **)&DataGlobal_830620.__pad_579C[61048];
+    if ( this != (void *)640 )
+    return *(char **)&DataGlobal_830620.__pad_579C[61052];
+    return result;
+}
+}
+
+// 0x72B310
+char * LoadingScreen::GetOverlayImage(ScenarioClass * aP1)
+{
+{
+    char *result;
+    result = *(char **)&DataGlobal_830620.__pad_579C[61056];
+    if ( this != (void *)640 )
+    return *(char **)&DataGlobal_830620.__pad_579C[61060];
+    return result;
+}
+}
+
+// 0x72B390
+int LoadingScreen::ReleaseAnimObjects()
+{
+{
+    if ( DataGlobal_B0FB88 )
+  {
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FB88)(DataGlobal_B0FB88, 1);
+    DataGlobal_B0FB88 = 0;
+  }
+    if ( DataGlobal_B0FB84 )
+  {
+    __3_YAXPAX_Z(DataGlobal_B0FB84);
+    DataGlobal_B0FB84 = 0;
+  }
+    return LoadPaletteSimple(this, &DataGlobal_B0FB84, &DataGlobal_B0FB88);
+}
+}
+
+// 0x72CF40
+char LoadingScreen::Init()
+{
+{
+    char result;
+    result = DataGlobal_B0FCD9;
+    if ( !DataGlobal_B0FCD9 )
+  {
+    if ( g_DisplayWidth == 800 )
+    DataGlobal_B0FA18 = LoadFileSHP(DataGlobal_844D6C, (bool *)&DataGlobal_B0FCD8);
+    result = LoadPaletteSimple(DataGlobal_844D70, &DataGlobal_B0FCDC, &DataGlobal_B0FCE0);
+    DataGlobal_B0FCD9 = 1;
+  }
+    return result;
+}
+}
+
+// 0x72DEF0
+char LoadingScreen::FreeResources3()
+{
+{
+    char result;
+    result = DataGlobal_B0FBE0;
+    if ( DataGlobal_B0FBE0 )
+  {
+    DataGlobal_B0FBE0 = 0;
+    LoadingScreen::DestroyFileTrees();
+    LoadingScreen::CleanupObjects();
+    __3_YAXPAX_Z(DataGlobal_B0FC10);
+    DataGlobal_B0FC10 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC14);
+    DataGlobal_B0FC14 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC18);
+    DataGlobal_B0FC18 = 0;
+    __3_YAXPAX_Z(g_GadgetAnimState);
+    g_GadgetAnimState = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC20);
+    DataGlobal_B0FC20 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC24);
+    DataGlobal_B0FC24 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC28);
+    DataGlobal_B0FC28 = 0;
+    __3_YAXPAX_Z(DataGlobal_B0FC2C);
+    DataGlobal_B0FC2C = 0;
+    return ReleaseLoadingResources();
+  }
+    return result;
+}
+}
+
+// 0x72F140
+void LoadingScreen::CleanupObjects()
+{
+{
+    if ( DataGlobal_B0FBC8 )
+  {
+    __3_YAXPAX_Z(DataGlobal_B0FBC8);
+    DataGlobal_B0FBC8 = 0;
+  }
+    if ( DataGlobal_B0FBCC )
+  {
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBCC)(DataGlobal_B0FBCC, 1);
+    DataGlobal_B0FBCC = 0;
+  }
+    if ( DataGlobal_B0FBD0 )
+  {
+    __3_YAXPAX_Z(DataGlobal_B0FBD0);
+    DataGlobal_B0FBD0 = 0;
+  }
+    if ( DataGlobal_B0FBD4 )
+  {
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBD4)(DataGlobal_B0FBD4, 1);
+    DataGlobal_B0FBD4 = 0;
+  }
+    if ( DataGlobal_B0FBD8 )
+  {
+    __3_YAXPAX_Z(DataGlobal_B0FBD8);
+    DataGlobal_B0FBD8 = 0;
+  }
+    if ( DataGlobal_B0FBDC )
+  {
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBDC)(DataGlobal_B0FBDC, 1);
+    DataGlobal_B0FBDC = 0;
+  }
 }
 }
 

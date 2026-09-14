@@ -22,53 +22,6 @@ void __thiscall sub_470C30(CampaignEndScoreClass *this)
 }
 } // namespace gamemd
 
-// 0x4716F0
-namespace gamemd {
-int sub_4716F0()
-{
-{
-    DataGlobal_89E138 = 0;
-    DataGlobal_89E13C = 0;
-    DataGlobal_89E140 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x471750
-namespace gamemd {
-int sub_471750()
-{
-{
-    DataGlobal_89E0F4 = 0;
-    DataGlobal_89E0F8 = 0;
-    DataGlobal_89E0FC = 1;
-    DataGlobal_89E0FD = 0;
-    DataGlobal_89E0F0 = (int)&vt_DynamicVectorClass_CaptureManagerClass;
-    DataGlobal_89E104 = 10;
-    DataGlobal_89E100 = 0;
-    return atexit(sub_471790);
-}
-}
-} // namespace gamemd
-
-// 0x471790
-namespace gamemd {
-void sub_471790()
-{
-{
-    DataGlobal_89E0F0 = (int)&vt_VectorClass_CaptureManagerClass;
-    if ( DataGlobal_89E0F4 && DataGlobal_89E0FD )
-  {
-    __3_YAXPAX_Z(DataGlobal_89E0F4);
-    DataGlobal_89E0F4 = 0;
-  }
-    DataGlobal_89E0FD = 0;
-    DataGlobal_89E0F8 = 0;
-}
-}
-} // namespace gamemd
-
 // 0x472A80
 namespace gamemd {
 void CaptureManagerClass__vt_03_()
@@ -99,44 +52,6 @@ int CaptureManagerClass__vt_06_(int a2)
 int __thiscall CaptureManagerClass::vt_06_(_DWORD *this, int a2)
 {
   return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x472ada*/
-}
-}
-} // namespace gamemd
-
-// 0x473750
-namespace gamemd {
-unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
-{
-{
-    int *v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    v3 = a2;
-    this->M4 = 0;
-    this->M8 = 0;
-    this->M12 = 0;
-    this->M20 = 0;
-    this->M22 = 0;
-    this->M24 = 0;
-    this->M28 = -1;
-    *(void**)this = &vt_CarryoverClass;
-    if ( v3 )
-  {
-    v4 = (*(int (__thiscall **)(int *))(*v3 + 44))(v3);
-    this->M12 = v4;
-    v5 = v4 - 1;
-    if ( !v5 || (v6 = v5 - 5) == 0 || v6 == 9 )
-    {
-    v7 = (*(int (__thiscall **)(int *))(*v3 + 132))(v3);
-    this->M16 = (*(int (__thiscall **)(int))(*(int *)(v7) + 64))(v7);
-    }
-    this->M28 = *(int *)(*(int *)(v3[135] + 52) + 184);
-    this->M24 = v3[27];
-    this->M20 = *(int *)(*(int (__thiscall **)(int *, int **))(*v3 + 440))(v3, &a2);
-  }
-    return this;
 }
 }
 } // namespace gamemd
@@ -652,6 +567,8 @@ LABEL_13:
 // 0x47A080
 namespace ra2 {
 namespace game {
+void ObjectClass::sub_47A080(DWORD a2)
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_47A080(ObjectClass *this, DWORD a2)
 {
@@ -691,6 +608,7 @@ LABEL_8:
 LABEL_9:
   DriveControlCD(this, FileA, a2); /*0x47a18e*/
   CloseHandle(FileA); /*0x47a19b*/
+}
 }
 } // namespace game
 } // namespace ra2
@@ -1709,6 +1627,19 @@ int sub_4716E0()
 }
 } // namespace gamemd
 
+// 0x4716F0
+namespace gamemd {
+int sub_4716F0()
+{
+{
+    DataGlobal_89E138 = 0;
+    DataGlobal_89E13C = 0;
+    DataGlobal_89E140 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x471710
 namespace gamemd {
 int sub_471710()
@@ -1732,6 +1663,40 @@ int sub_471730()
     DataGlobal_89E110 = 0;
     DataGlobal_89E114 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x471750
+namespace gamemd {
+int sub_471750()
+{
+{
+    DataGlobal_89E0F4 = 0;
+    DataGlobal_89E0F8 = 0;
+    DataGlobal_89E0FC = 1;
+    DataGlobal_89E0FD = 0;
+    DataGlobal_89E0F0 = (int)&vt_DynamicVectorClass_CaptureManagerClass;
+    DataGlobal_89E104 = 10;
+    DataGlobal_89E100 = 0;
+    return atexit(sub_471790);
+}
+}
+} // namespace gamemd
+
+// 0x471790
+namespace gamemd {
+void sub_471790()
+{
+{
+    DataGlobal_89E0F0 = (int)&vt_VectorClass_CaptureManagerClass;
+    if ( DataGlobal_89E0F4 && DataGlobal_89E0FD )
+  {
+    __3_YAXPAX_Z(DataGlobal_89E0F4);
+    DataGlobal_89E0F4 = 0;
+  }
+    DataGlobal_89E0FD = 0;
+    DataGlobal_89E0F8 = 0;
 }
 }
 } // namespace gamemd
@@ -2046,6 +2011,44 @@ int sub_473730()
     DataGlobal_89E210 = 0;
     DataGlobal_89E214 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x473750
+namespace gamemd {
+unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
+{
+{
+    int *v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    v3 = a2;
+    this->M4 = 0;
+    this->M8 = 0;
+    this->M12 = 0;
+    this->M20 = 0;
+    this->M22 = 0;
+    this->M24 = 0;
+    this->M28 = -1;
+    *(void**)this = &vt_CarryoverClass;
+    if ( v3 )
+  {
+    v4 = (*(int (__thiscall **)(int *))(*v3 + 44))(v3);
+    this->M12 = v4;
+    v5 = v4 - 1;
+    if ( !v5 || (v6 = v5 - 5) == 0 || v6 == 9 )
+    {
+    v7 = (*(int (__thiscall **)(int *))(*v3 + 132))(v3);
+    this->M16 = (*(int (__thiscall **)(int))(*(int *)(v7) + 64))(v7);
+    }
+    this->M28 = *(int *)(*(int *)(v3[135] + 52) + 184);
+    this->M24 = v3[27];
+    this->M20 = *(int *)(*(int (__thiscall **)(int *, int **))(*v3 + 440))(v3, &a2);
+  }
+    return this;
 }
 }
 } // namespace gamemd

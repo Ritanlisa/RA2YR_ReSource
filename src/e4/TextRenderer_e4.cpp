@@ -14,41 +14,6 @@ AbstractClass *TextRenderer::GetInstance()
 }
 } // namespace gamemd
 
-// 0x4A60E0
-namespace gamemd {
-unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, ObjectClass * aP2, ConvertClass * aP3, int a2, int a6, int a7, int a8, CampaignScore * aP8)
-{
-{
-    wchar_t *v9;
-    AbstractClass *v11;
-    AbstractClass v12[29];
-    if ( BufferCount )
-  {
-    vswprintf( (wchar_t *const)&v12[0].nextArrayIndex, (CampaignScore *)BufferCount, (ObjectClass *)&aP8, (SessionClass *)v12[0].uniqueId);
-    *(int *)&v12[0].__pad_0[12] = 1;
-    *(int *)&v12[0].__pad_0[8] = a8;
-    *(int *)&v12[0].__pad_0[4] = a7;
-    *(int *)v12[0].__pad_0 = a6;
-    v9 = (wchar_t *)RenderTextLabel((int *)aP2->__pad_0, (AbstractClass *)aP3, (int *)a2, v12[0]);
-    *(int *)aP0->__pad_0 = *(int *)v9;
-    *(int *)&aP0->field_2[2] = *((int *)(v9) + 1);
-    return aP0->__pad_0;
-  }
-    else
-  {
-    *(int *)&v12[0].__pad_0[12] = 1;
-    *(int *)&v12[0].__pad_0[8] = a8;
-    *(int *)&v12[0].__pad_0[4] = a7;
-    *(int *)v12[0].__pad_0 = a6;
-    v11 = (AbstractClass *)RenderTextLabel((int *)aP2->__pad_0, (AbstractClass *)aP3, (int *)a2, v12[0]);
-    *(int *)aP0->__pad_0 = *(int *)v11->__pad_0;
-    *(int *)&aP0->field_2[2] = *(int *)&v11->__pad_0[4];
-    return aP0->__pad_0;
-  }
-}
-}
-} // namespace gamemd
-
 // 0x4B96A0
 namespace gamemd {
 int * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8)
@@ -341,6 +306,41 @@ TriggerTypeClass *__thiscall TextRenderer::Destructor(void *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x727cdd*/
     __3_YAXPAX_Z(this); /*0x727ce0*/
   return (TriggerTypeClass *)this; /*0x727cea*/
+}
+}
+} // namespace gamemd
+
+// 0x4A60E0
+namespace gamemd {
+unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, ObjectClass * aP2, ConvertClass * aP3, int a2, int a6, int a7, int a8, CampaignScore * aP8)
+{
+{
+    wchar_t *v9;
+    AbstractClass *v11;
+    AbstractClass v12[29];
+    if ( BufferCount )
+  {
+    vswprintf( (wchar_t *const)&v12[0].nextArrayIndex, (CampaignScore *)BufferCount, (ObjectClass *)&aP8, (SessionClass *)v12[0].uniqueId);
+    *(int *)&v12[0].__pad_0[12] = 1;
+    *(int *)&v12[0].__pad_0[8] = a8;
+    *(int *)&v12[0].__pad_0[4] = a7;
+    *(int *)v12[0].__pad_0 = a6;
+    v9 = (wchar_t *)RenderTextLabel((int *)aP2->__pad_0, (AbstractClass *)aP3, (int *)a2, v12[0]);
+    *(int *)aP0->__pad_0 = *(int *)v9;
+    *(int *)&aP0->field_2[2] = *((int *)(v9) + 1);
+    return aP0->__pad_0;
+  }
+    else
+  {
+    *(int *)&v12[0].__pad_0[12] = 1;
+    *(int *)&v12[0].__pad_0[8] = a8;
+    *(int *)&v12[0].__pad_0[4] = a7;
+    *(int *)v12[0].__pad_0 = a6;
+    v11 = (AbstractClass *)RenderTextLabel((int *)aP2->__pad_0, (AbstractClass *)aP3, (int *)a2, v12[0]);
+    *(int *)aP0->__pad_0 = *(int *)v11->__pad_0;
+    *(int *)&aP0->field_2[2] = *(int *)&v11->__pad_0[4];
+    return aP0->__pad_0;
+  }
 }
 }
 } // namespace gamemd

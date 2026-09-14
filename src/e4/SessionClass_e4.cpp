@@ -1824,20 +1824,6 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
 }
 }
 
-// 0x69A310
-unsigned int SessionClass::GetPlayerColorScheme(ObjectClass * aP0)
-{
-{
-    ObjectClass *result;
-    result = aP0;
-    if ( aP0 == (ObjectClass *)-2 )
-    return DataGlobal_830620.__pad_579C[36704];
-    if ( (unsigned int)aP0 < 9 )
-    return DataGlobal_830620.__pad_579C[(int)aP0 + 36696];
-    return (unsigned int)result;
-}
-}
-
 // 0x69A980
 wchar_t * SessionClass::ParseGameInfo(char * Source, CampaignScore * aP2, CCINIClass * aP3, CampaignScore * aP4, const char * a5, CampaignScore * aP6, int a8)
 {
@@ -1984,40 +1970,6 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
 }
 }
 
-// 0x69B760
-int SessionClass::AssignSide(int a2, MPCooperative * aP2)
-{
-{
-    int result;
-    int v5;
-    result = a2;
-    if ( a2 == -2 )
-  {
-    LOBYTE(result) = (char)aP2;
-    if ( (char)aP2 )
-    {
-    result = Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)9);
-    this->Side = result;
-    this->Side2 = -2;
-    }
-    else
-    {
-    this->Side = 0;
-    this->Side2 = -2;
-    }
-  }
-    else
-  {
-    this->Side = a2;
-    this->Side2 = -1;
-  }
-    v5 = this->Side2;
-    this->idxSide = this->Side;
-    this->idxSide2 = v5;
-    return result;
-}
-}
-
 // 0x69B7E0
 int SessionClass::AssignColor(int a2, MPCooperative * aP2)
 {
@@ -2098,14 +2050,6 @@ LABEL_15:
   *(this + 87) = *(this + 95); /*0x69b89c*/
   *(this + 88) = v12; /*0x69b8a2*/
   return result; /*0x69b8a8*/
-}
-}
-
-// 0x69BBE0
-char SessionClass::GetGameSpeed()
-{
-{
-    return this->CurrentlyInGame;
 }
 }
 
@@ -2494,17 +2438,6 @@ void __thiscall SessionClass::_vt03(int this)
 }
 }
 
-// 0x69C4D0
-unsigned int SessionClass::Write(int a2)
-{
-{
-    if ( (unsigned char)this->unknown_0C )
-    return (unsigned int)(a2 - this->MPGameMode) >> 2;
-    else
-    return 0;
-}
-}
-
 // 0x69C4F0
 int SessionClass::Seek(int a2)
 {
@@ -2658,17 +2591,6 @@ int __thiscall SessionClass::sub_69C830(int this, _DWORD *a2)
       return -1; /*0x69c85a*/
   }
   return result; /*0x69c83a*/
-}
-}
-
-// 0x69C870
-unsigned int SessionClass::updatePlayer(int a2)
-{
-{
-    if ( (unsigned char)this->unknown_0C )
-    return (unsigned int)(a2 - this->MPGameMode) >> 2;
-    else
-    return 0;
 }
 }
 
@@ -2883,6 +2805,84 @@ LABEL_15:
     (*(void (__stdcall **)(LPVOID, int, char *))(*(_DWORD *)MEMORY[0xAC116C] + 252))(MEMORY[0xAC116C], 1, &v7[v19]); /*0x78f1e5*/
     DeleteAndZero((void **)&v20); /*0x78f1ef*/
   }
+}
+}
+
+// 0x69A310
+unsigned int SessionClass::GetPlayerColorScheme(ObjectClass * aP0)
+{
+{
+    ObjectClass *result;
+    result = aP0;
+    if ( aP0 == (ObjectClass *)-2 )
+    return DataGlobal_830620.__pad_579C[36704];
+    if ( (unsigned int)aP0 < 9 )
+    return DataGlobal_830620.__pad_579C[(int)aP0 + 36696];
+    return (unsigned int)result;
+}
+}
+
+// 0x69B760
+int SessionClass::AssignSide(int a2, MPCooperative * aP2)
+{
+{
+    int result;
+    int v5;
+    result = a2;
+    if ( a2 == -2 )
+  {
+    LOBYTE(result) = (char)aP2;
+    if ( (char)aP2 )
+    {
+    result = Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)9);
+    this->Side = result;
+    this->Side2 = -2;
+    }
+    else
+    {
+    this->Side = 0;
+    this->Side2 = -2;
+    }
+  }
+    else
+  {
+    this->Side = a2;
+    this->Side2 = -1;
+  }
+    v5 = this->Side2;
+    this->idxSide = this->Side;
+    this->idxSide2 = v5;
+    return result;
+}
+}
+
+// 0x69BBE0
+char SessionClass::GetGameSpeed()
+{
+{
+    return this->CurrentlyInGame;
+}
+}
+
+// 0x69C4D0
+unsigned int SessionClass::Write(int a2)
+{
+{
+    if ( (unsigned char)this->unknown_0C )
+    return (unsigned int)(a2 - this->MPGameMode) >> 2;
+    else
+    return 0;
+}
+}
+
+// 0x69C870
+unsigned int SessionClass::updatePlayer(int a2)
+{
+{
+    if ( (unsigned char)this->unknown_0C )
+    return (unsigned int)(a2 - this->MPGameMode) >> 2;
+    else
+    return 0;
 }
 }
 

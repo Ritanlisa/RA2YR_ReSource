@@ -67,18 +67,6 @@ int __thiscall AirstrikeClass::AirstrikeClass(int this, TechnoClass *aP1)
 } // namespace game
 } // namespace ra2
 
-// 0x41D6E0
-namespace ra2 {
-namespace game {
-int AirstrikeClass::Stat(AbstractClass * aP1)
-{
-{
-    return AbstractClass::ProcessPower((#378 *)this);
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x41D6F0
 namespace ra2 {
 namespace game {
@@ -115,18 +103,6 @@ int __stdcall AirstrikeClass::Write(AbstractClass *aP0, int aP1)
       (MouseClass *)&aP0[2].abstractFlags);
   }
   return (int)Prefix_0->__pad_0; /*0x41d77a*/
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x41D780
-namespace ra2 {
-namespace game {
-int AirstrikeClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
 }
 }
 } // namespace game
@@ -482,6 +458,30 @@ LABEL_9:
     while ( v4 >= 0 ); /*0x420f36*/
   }
   return (char)v0; /*0x420f38*/
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x41D6E0
+namespace ra2 {
+namespace game {
+int AirstrikeClass::Stat(AbstractClass * aP1)
+{
+{
+    return AbstractClass::ProcessPower((#378 *)this);
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x41D780
+namespace ra2 {
+namespace game {
+int AirstrikeClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
 }
 }
 } // namespace game

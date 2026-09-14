@@ -137,16 +137,6 @@ int Game_SendCampaignOptions()
 }
 } // namespace gamemd
 
-// 0x4790A0
-namespace gamemd {
-int Game::CheckForGameCD()
-{
-{
-    return AlwaysFindYRCD(DataGlobal_89E414, this);
-}
-}
-} // namespace gamemd
-
 // 0x534450
 namespace gamemd {
 int Game::DestroyAllObjects()
@@ -464,122 +454,6 @@ int __stdcall Game::MakeScreenshot(int a1)
 }
 } // namespace gamemd
 
-// 0x550000
-namespace gamemd {
-int Game::loadCampaignData()
-{
-{
-    int result;
-    void *v2;
-    int v3;
-    void *v4;
-    v4 = this;
-    for ( result = g_TimerPool; g_TimerPool; result = g_TimerPool )
-  {
-    v2 = *(void **)DataGlobal_ABC87C;
-    if ( *(int *)DataGlobal_ABC87C )
-    {
-    v4 = *(void **)DataGlobal_ABC87C;
-    v3 = (*(int (__thiscall **)(int *, void **))(DataGlobal_ABC878 + 16))(&DataGlobal_ABC878, &v4);
-    if ( v3 != -1 && v3 < g_TimerPool && v3 < --g_TimerPool )
-      {
-    do
-        {
-    ++v3;
-    *((int *)(DataGlobal_ABC87C) + v3 - 1) = *((int *)(DataGlobal_ABC87C) + v3);
-        }
-    while ( v3 < g_TimerPool );
-      }
-    __3_YAXPAX_Z(v2);
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x556DF0
-namespace gamemd {
-void sub_556DF0()
-{
-{
-    int i;
-    int *v1;
-    int v2;
-    int v3;
-    int *v4;
-    for ( i = 0; i < DataGlobal_ABCB88; ++i )
-  {
-    v1 = (int *)*((int *)(DataGlobal_ABCB7C) + i);
-    if ( v1 )
-    {
-    v2 = v1[1];
-    if ( v2 )
-      {
-    *(int *)(v2 + 168) = 0;
-    v1[1] = 0;
-      }
-    v4 = v1;
-    v3 = (*(int (__thiscall **)(int *, int **))(DataGlobal_ABCB78 + 16))(&DataGlobal_ABCB78, &v4);
-    if ( v3 != -1 && v3 < DataGlobal_ABCB88 && v3 < --DataGlobal_ABCB88 )
-      {
-    do
-        {
-    ++v3;
-    *((int *)(DataGlobal_ABCB7C) + v3 - 1) = *((int *)(DataGlobal_ABCB7C) + v3);
-        }
-    while ( v3 < DataGlobal_ABCB88 );
-      }
-    __3_YAXPAX_Z(v1);
-    }
-  }
-    DataGlobal_ABCB88 = 0;
-    if ( DataGlobal_ABCB7C && DataGlobal_ABCB85 )
-  {
-    __3_YAXPAX_Z(DataGlobal_ABCB7C);
-    DataGlobal_ABCB7C = 0;
-  }
-    DataGlobal_ABCB85 = 0;
-    DataGlobal_ABCB80 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x5B56F0
-namespace gamemd {
-void Game::processStartup()
-{
-{
-    HWND DlgItem;
-    HWND v3;
-    HWND v4;
-    HWND v5;
-    LRESULT v6;
-    char lParam[40];
-    Debug::Log();
-    DlgItem = GetDlgItem(*(void**)this, 1473);
-    if ( DlgItem )
-  {
-    SendMessageA(DlgItem, 0x4B3u, 0x14u, (LPARAM)lParam);
-    CopyWideToChar(g_GameSetupBuffer, lParam, -1);
-  }
-    Debug::Log();
-    v3 = GetDlgItem(*(void**)this, 1029);
-    if ( v3 )
-    g_TauntCommandState = SendMessageA(v3, 0x147u, 0, 0);
-    Debug::Log();
-    v4 = GetDlgItem(*(void**)this, 1639);
-    v5 = v4;
-    if ( v4 )
-  {
-    v6 = SendMessageA(v4, 0x147u, 0, 0);
-    g_CommandExecState = SendMessageA(v5, 0x150u, v6, 0);
-  }
-    Debug::Log();
-}
-}
-} // namespace gamemd
-
 // 0x5B7090
 namespace gamemd {
 char Game::StartModemMultiplayer(char a2)
@@ -780,28 +654,6 @@ int __thiscall BuildGameSetupPacket(int this)
 }
 } // namespace gamemd
 
-// 0x5BF530
-namespace gamemd {
-char sub_5BF530()
-{
-{
-    char result;
-    result = DataGlobal_ABF35C;
-    if ( DataGlobal_ABF35C )
-  {
-    AudioTimer::DecrementAll();
-    ProcessAudioTimer();
-    Mixer::RequestAllBuffers();
-    RequestBufferMixer((unsigned int *)g_MixerState, 0x4000);
-    RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x4000);
-    result = AudioMixer::Pump();
-    DataGlobal_ABF35C = 0;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x5CA110
 namespace gamemd {
 int Game::GetMultiplayerScoreScreenBar()
@@ -978,63 +830,6 @@ void __thiscall Game::BuildGameSettingsPacket(char *this)
   Debug::Log(); /*0x5dbdce*/
   strcat(v1, (const char *)&g_MatrixTransformState + 4484); /*0x5dbdf7*/
   DeleteAndZero((int)&v9); /*0x5dbe04*/
-}
-}
-} // namespace gamemd
-
-// 0x5E8B40
-namespace gamemd {
-char Game::ResetFlags()
-{
-{
-    DataGlobal_AC0AC8 = 0;
-    DataGlobal_AC0AEC = 0;
-    DataGlobal_AC0EA4 = 0;
-    DataGlobal_AC0B10 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x5E9850
-namespace gamemd {
-int Game::ResetReadyStates()
-{
-{
-    int result;
-    HWND v1;
-    HWND DlgItem;
-    int v3;
-    int i;
-    result = Dialog::GetCurrentType();
-    if ( result != 188 )
-  {
-    v1 = (HWND)Dialog::FindByHandle((void *)0xC2);
-    if ( !v1 )
-    {
-    v1 = (HWND)Dialog::FindByHandle((void *)0xC9);
-    if ( !v1 )
-      {
-    v1 = (HWND)Dialog::FindByHandle((void *)0xBC);
-    if ( !v1 )
-    v1 = (HWND)Dialog::FindByHandle((void *)0xBD);
-      }
-    }
-    DlgItem = GetDlgItem(v1, 1439);
-    result = EnableWindow(DlgItem, 1);
-  }
-    v3 = Game_PlayerCount;
-    for ( i = 0; i < v3; ++i )
-  {
-    result = wcscmp(*(const wchar_t **)(Game_PlayerInfoArray + 4 * i), &g_CurrentPlayerName);
-    if ( result )
-    {
-    result = *(int *)(Game_PlayerInfoArray + 4 * i);
-    if ( *(int *)(result + 119) )
-    *(int *)(result + 119) = 0;
-    }
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -1519,20 +1314,6 @@ LABEL_39:
 }
 } // namespace gamemd
 
-// 0x67FDE0
-namespace gamemd {
-int Game::readIniSettings()
-{
-{
-    int result;
-    result = *(void**)this;
-    if ( *(void**)this )
-    return (*(int (__stdcall **)(int))(*(int *)(result) + 8))(result);
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x680F70
 namespace gamemd {
 int Game::validateScenario(unsigned int * a2)
@@ -1774,37 +1555,6 @@ void *__thiscall sub_72D830(void *this)
     MEMORY[0xB0FB1C] = result; /*0x72d850*/
   }
   return result; /*0x72d855*/
-}
-}
-} // namespace gamemd
-
-// 0x72F440
-namespace gamemd {
-char Game::InitializeToolTipColor()
-{
-{
-    char result;
-    if ( this )
-  {
-    if ( this == (void *)1 )
-    {
-    LOWORD(DataGlobal_B0FA1C) = DataGlobal_B0FB04;
-    BYTE2(DataGlobal_B0FA1C) = DataGlobal_B0FB06;
-    return DataGlobal_B0FB06;
-    }
-    else
-    {
-    LOWORD(DataGlobal_B0FA1C) = DataGlobal_B0FAA0;
-    BYTE2(DataGlobal_B0FA1C) = DataGlobal_B0FAA2;
-    }
-  }
-    else
-  {
-    LOWORD(DataGlobal_B0FA1C) = DataGlobal_B0F9D8;
-    BYTE2(DataGlobal_B0FA1C) = DataGlobal_B0F9DA;
-    return DataGlobal_B0F9D8;
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -2515,6 +2265,293 @@ LABEL_6:
 }
 } // namespace gamemd
 
+// 0x4790A0
+namespace gamemd {
+int Game::CheckForGameCD()
+{
+{
+    return AlwaysFindYRCD(DataGlobal_89E414, this);
+}
+}
+} // namespace gamemd
+
+// 0x53AB50
+namespace gamemd {
+void * sub_53AB50()
+{
+{
+    #375 *result;
+    ScenarioClass::UpdateLighting();
+    result = HouseClass_Player;
+    *((char *)(HouseClass_Player) + 22393) = 1;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x550000
+namespace gamemd {
+int Game::loadCampaignData()
+{
+{
+    int result;
+    void *v2;
+    int v3;
+    void *v4;
+    v4 = this;
+    for ( result = g_TimerPool; g_TimerPool; result = g_TimerPool )
+  {
+    v2 = *(void **)DataGlobal_ABC87C;
+    if ( *(int *)DataGlobal_ABC87C )
+    {
+    v4 = *(void **)DataGlobal_ABC87C;
+    v3 = (*(int (__thiscall **)(int *, void **))(DataGlobal_ABC878 + 16))(&DataGlobal_ABC878, &v4);
+    if ( v3 != -1 && v3 < g_TimerPool && v3 < --g_TimerPool )
+      {
+    do
+        {
+    ++v3;
+    *((int *)(DataGlobal_ABC87C) + v3 - 1) = *((int *)(DataGlobal_ABC87C) + v3);
+        }
+    while ( v3 < g_TimerPool );
+      }
+    __3_YAXPAX_Z(v2);
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x556DF0
+namespace gamemd {
+void sub_556DF0()
+{
+{
+    int i;
+    int *v1;
+    int v2;
+    int v3;
+    int *v4;
+    for ( i = 0; i < DataGlobal_ABCB88; ++i )
+  {
+    v1 = (int *)*((int *)(DataGlobal_ABCB7C) + i);
+    if ( v1 )
+    {
+    v2 = v1[1];
+    if ( v2 )
+      {
+    *(int *)(v2 + 168) = 0;
+    v1[1] = 0;
+      }
+    v4 = v1;
+    v3 = (*(int (__thiscall **)(int *, int **))(DataGlobal_ABCB78 + 16))(&DataGlobal_ABCB78, &v4);
+    if ( v3 != -1 && v3 < DataGlobal_ABCB88 && v3 < --DataGlobal_ABCB88 )
+      {
+    do
+        {
+    ++v3;
+    *((int *)(DataGlobal_ABCB7C) + v3 - 1) = *((int *)(DataGlobal_ABCB7C) + v3);
+        }
+    while ( v3 < DataGlobal_ABCB88 );
+      }
+    __3_YAXPAX_Z(v1);
+    }
+  }
+    DataGlobal_ABCB88 = 0;
+    if ( DataGlobal_ABCB7C && DataGlobal_ABCB85 )
+  {
+    __3_YAXPAX_Z(DataGlobal_ABCB7C);
+    DataGlobal_ABCB7C = 0;
+  }
+    DataGlobal_ABCB85 = 0;
+    DataGlobal_ABCB80 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x5865E0
+namespace gamemd {
+char Game::Stub3(IUnknown * aP0)
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x5B56F0
+namespace gamemd {
+void Game::processStartup()
+{
+{
+    HWND DlgItem;
+    HWND v3;
+    HWND v4;
+    HWND v5;
+    LRESULT v6;
+    char lParam[40];
+    Debug::Log();
+    DlgItem = GetDlgItem(*(void**)this, 1473);
+    if ( DlgItem )
+  {
+    SendMessageA(DlgItem, 0x4B3u, 0x14u, (LPARAM)lParam);
+    CopyWideToChar(g_GameSetupBuffer, lParam, -1);
+  }
+    Debug::Log();
+    v3 = GetDlgItem(*(void**)this, 1029);
+    if ( v3 )
+    g_TauntCommandState = SendMessageA(v3, 0x147u, 0, 0);
+    Debug::Log();
+    v4 = GetDlgItem(*(void**)this, 1639);
+    v5 = v4;
+    if ( v4 )
+  {
+    v6 = SendMessageA(v4, 0x147u, 0, 0);
+    g_CommandExecState = SendMessageA(v5, 0x150u, v6, 0);
+  }
+    Debug::Log();
+}
+}
+} // namespace gamemd
+
+// 0x5BF530
+namespace gamemd {
+char sub_5BF530()
+{
+{
+    char result;
+    result = DataGlobal_ABF35C;
+    if ( DataGlobal_ABF35C )
+  {
+    AudioTimer::DecrementAll();
+    ProcessAudioTimer();
+    Mixer::RequestAllBuffers();
+    RequestBufferMixer((unsigned int *)g_MixerState, 0x4000);
+    RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x4000);
+    result = AudioMixer::Pump();
+    DataGlobal_ABF35C = 0;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x5E8B40
+namespace gamemd {
+char Game::ResetFlags()
+{
+{
+    DataGlobal_AC0AC8 = 0;
+    DataGlobal_AC0AEC = 0;
+    DataGlobal_AC0EA4 = 0;
+    DataGlobal_AC0B10 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5E9850
+namespace gamemd {
+int Game::ResetReadyStates()
+{
+{
+    int result;
+    HWND v1;
+    HWND DlgItem;
+    int v3;
+    int i;
+    result = Dialog::GetCurrentType();
+    if ( result != 188 )
+  {
+    v1 = (HWND)Dialog::FindByHandle((void *)0xC2);
+    if ( !v1 )
+    {
+    v1 = (HWND)Dialog::FindByHandle((void *)0xC9);
+    if ( !v1 )
+      {
+    v1 = (HWND)Dialog::FindByHandle((void *)0xBC);
+    if ( !v1 )
+    v1 = (HWND)Dialog::FindByHandle((void *)0xBD);
+      }
+    }
+    DlgItem = GetDlgItem(v1, 1439);
+    result = EnableWindow(DlgItem, 1);
+  }
+    v3 = Game_PlayerCount;
+    for ( i = 0; i < v3; ++i )
+  {
+    result = wcscmp(*(const wchar_t **)(Game_PlayerInfoArray + 4 * i), &g_CurrentPlayerName);
+    if ( result )
+    {
+    result = *(int *)(Game_PlayerInfoArray + 4 * i);
+    if ( *(int *)(result + 119) )
+    *(int *)(result + 119) = 0;
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x67FDE0
+namespace gamemd {
+int Game::readIniSettings()
+{
+{
+    int result;
+    result = *(void**)this;
+    if ( *(void**)this )
+    return (*(int (__stdcall **)(int))(*(int *)(result) + 8))(result);
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x72F440
+namespace gamemd {
+char Game::InitializeToolTipColor()
+{
+{
+    char result;
+    if ( this )
+  {
+    if ( this == (void *)1 )
+    {
+    LOWORD(DataGlobal_B0FA1C) = DataGlobal_B0FB04;
+    BYTE2(DataGlobal_B0FA1C) = DataGlobal_B0FB06;
+    return DataGlobal_B0FB06;
+    }
+    else
+    {
+    LOWORD(DataGlobal_B0FA1C) = DataGlobal_B0FAA0;
+    BYTE2(DataGlobal_B0FA1C) = DataGlobal_B0FAA2;
+    }
+  }
+    else
+  {
+    LOWORD(DataGlobal_B0FA1C) = DataGlobal_B0F9D8;
+    BYTE2(DataGlobal_B0FA1C) = DataGlobal_B0F9DA;
+    return DataGlobal_B0F9D8;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x74D450
+namespace gamemd {
+int sub_74D450(int a1)
+{
+{
+    int result;
+    char Buffer[32];
+    sprintf(Buffer, DataGlobal_846118, (const char *)&DataGlobal_7E1BC6 + 112 * a1);
+    result = SearchMIXFile(Buffer, 0);
+    DataGlobal_B1D2EC = result;
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x7B82E0
 namespace gamemd {
 char ** sub_7B82E0(char ** a1, const wchar_t ** a2)
@@ -2555,42 +2592,5 @@ char ** sub_7B82E0(char ** a1, const wchar_t ** a2)
   }
     return a1;
 }
-}
-} // namespace gamemd
-
-// 0x74D450
-namespace gamemd {
-int sub_74D450(int a1)
-{
-{
-    int result;
-    char Buffer[32];
-    sprintf(Buffer, DataGlobal_846118, (const char *)&DataGlobal_7E1BC6 + 112 * a1);
-    result = SearchMIXFile(Buffer, 0);
-    DataGlobal_B1D2EC = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x53AB50
-namespace gamemd {
-void * sub_53AB50()
-{
-{
-    #375 *result;
-    ScenarioClass::UpdateLighting();
-    result = HouseClass_Player;
-    *((char *)(HouseClass_Player) + 22393) = 1;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x5865E0
-namespace gamemd {
-char Game::Stub3(IUnknown * aP0)
-{
-return 0;
 }
 } // namespace gamemd

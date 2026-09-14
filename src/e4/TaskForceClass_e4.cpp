@@ -51,17 +51,6 @@ _DWORD *__thiscall sub_4C4EF0(_DWORD *this, char *Buffer)
 }
 } // namespace gamemd
 
-// 0x4C4F90
-namespace gamemd {
-ObjectClass * TaskForceClass::Check()
-{
-{
-    sprintf((char *const)&DataGlobal_89E138.field_5668, (ObjectClass *)&DataGlobal_82083C.CampaignScore_field_0x20, (INIClass *)*(void**)this);
-    return (ObjectClass *)&DataGlobal_89E138.field_5668;
-}
-}
-} // namespace gamemd
-
 // 0x6E7E80
 namespace gamemd {
 unsigned int * TaskForceClass::Construct(ObjectClass * aP1)
@@ -274,20 +263,6 @@ char __thiscall TaskForceClass::_vt26(int this, char *a2)
 }
 } // namespace gamemd
 
-// 0x6E8680
-namespace gamemd {
-int TaskForceClass::SaveTaskForce(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6E86A0
 namespace gamemd {
 int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
@@ -370,6 +345,31 @@ TaskForceClass *__thiscall TaskForceClass::ExecuteAction(void **this, char a2)
   if ( (a2 & 1) != 0 ) /*0x6e886b*/
     __3_YAXPAX_Z(this); /*0x6e886e*/
   return (TaskForceClass *)this; /*0x6e8878*/
+}
+}
+} // namespace gamemd
+
+// 0x4C4F90
+namespace gamemd {
+ObjectClass * TaskForceClass::Check()
+{
+{
+    sprintf((char *const)&DataGlobal_89E138.field_5668, (ObjectClass *)&DataGlobal_82083C.CampaignScore_field_0x20, (INIClass *)*(void**)this);
+    return (ObjectClass *)&DataGlobal_89E138.field_5668;
+}
+}
+} // namespace gamemd
+
+// 0x6E8680
+namespace gamemd {
+int TaskForceClass::SaveTaskForce(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd

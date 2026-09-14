@@ -6,11 +6,13 @@
 // 0x6CF490
 int SwizzleManagerClass::Add(SwizzleManagerClass * aP0, SwizzleManagerClass * aP1, unsigned int * a2)
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __stdcall SwizzleManagerClass::Add(SwizzleManagerClass *aP0, SwizzleManagerClass *aP1, _DWORD *a2)
 {
-    if ( !aP1 || !a2 )
-    return -2147467261;
-    *a2 = aP1;
-    return 0;
+  if ( !aP1 || !a2 ) /*0x6cf49e*/
+    return -2147467261; /*0x6cf4a7*/
+  *a2 = aP1; /*0x6cf4a0*/
+  return 0; /*0x6cf4a4*/
 }
 }
 
@@ -32,19 +34,6 @@ void __thiscall SwizzleManagerClass_19_::sub_6CF4F0(int this)
   }
   *(_BYTE *)(this + 13) = 0; /*0x6cf511*/
   this->SwizzleManagerClass_19_field_0x8 = 0; /*0x6cf514*/
-}
-}
-} // namespace gamemd
-
-// 0x6CF520
-namespace gamemd {
-unsigned int SwizzleManagerClass_19::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->SwizzleManagerClass_19_field_0xC )
-    return (unsigned int)(a2 - this->SwizzleManagerClass_19_field_0x4) >> 3;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -251,19 +240,6 @@ int __thiscall SwizzleManagerClass_19_::_vt04(int this, _DWORD *a2)
       return -1; /*0x6cf6ea*/
   }
   return result; /*0x6cf6ca*/
-}
-}
-} // namespace gamemd
-
-// 0x6CF700
-namespace gamemd {
-unsigned int SwizzleManagerClass_19::Add(int a2)
-{
-{
-    if ( (unsigned char)this->SwizzleManagerClass_19_field_0xC )
-    return (unsigned int)(a2 - this->SwizzleManagerClass_19_field_0x4) >> 3;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -475,3 +451,29 @@ int SwizzleManagerClass::Lookup(int a1, int a2, int a3, int a4)
 {
 return -2147467263;
 }
+
+// 0x6CF520
+namespace gamemd {
+unsigned int SwizzleManagerClass_19::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->SwizzleManagerClass_19_field_0xC )
+    return (unsigned int)(a2 - this->SwizzleManagerClass_19_field_0x4) >> 3;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6CF700
+namespace gamemd {
+unsigned int SwizzleManagerClass_19::Add(int a2)
+{
+{
+    if ( (unsigned char)this->SwizzleManagerClass_19_field_0xC )
+    return (unsigned int)(a2 - this->SwizzleManagerClass_19_field_0x4) >> 3;
+    else
+    return 0;
+}
+}
+} // namespace gamemd

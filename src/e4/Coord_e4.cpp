@@ -268,36 +268,6 @@ int *__thiscall Coord::WorldToScreen(int this, MouseClass *aP1, MouseClass *aP2,
 }
 } // namespace gamemd
 
-// 0x6D1F10
-namespace gamemd {
-int * Coord::To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1)
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    int v6;
-    v6 = aP1->field_4;
-    v2 = (-60 * v6 / 2 + 60 * aP1->field_0 / 2) / 256;
-    v3 = (30 * v6 / 2 + 30 * aP1->field_0 / 2) / 256;
-    v4 = v3 - Math::RoundToInt((double)aP1->field_8 * *(double *)&DataGlobal_B05488.__pad_579C[8484] + (double)(aP1->field_8 >= 728) + 0.5);
-    *(int *)aP0->__pad_0 = v2;
-    *(int *)&aP0->__pad_0[4] = v4;
-    return (int *)aP0->__pad_0;
-}
-}
-} // namespace gamemd
-
-// 0x6D2120
-namespace gamemd {
-long long Coord::ScaleToScreenY()
-{
-{
-    return Math::RoundToInt(((double)(int)this - 0.5) * LightningStorm_CloudHeightFactor);
-}
-}
-} // namespace gamemd
-
 // 0x6D2140
 namespace gamemd {
 bool Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
@@ -358,6 +328,36 @@ int *__thiscall Coord_Divide(_DWORD *this, int *a2, int a3)
     a2[2] = 0; /*0x710719*/
   }
   return a2; /*0x71071c*/
+}
+}
+} // namespace gamemd
+
+// 0x6D1F10
+namespace gamemd {
+int * Coord::To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1)
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    int v6;
+    v6 = aP1->field_4;
+    v2 = (-60 * v6 / 2 + 60 * aP1->field_0 / 2) / 256;
+    v3 = (30 * v6 / 2 + 30 * aP1->field_0 / 2) / 256;
+    v4 = v3 - Math::RoundToInt((double)aP1->field_8 * *(double *)&DataGlobal_B05488.__pad_579C[8484] + (double)(aP1->field_8 >= 728) + 0.5);
+    *(int *)aP0->__pad_0 = v2;
+    *(int *)&aP0->__pad_0[4] = v4;
+    return (int *)aP0->__pad_0;
+}
+}
+} // namespace gamemd
+
+// 0x6D2120
+namespace gamemd {
+long long Coord::ScaleToScreenY()
+{
+{
+    return Math::RoundToInt(((double)(int)this - 0.5) * LightningStorm_CloudHeightFactor);
 }
 }
 } // namespace gamemd

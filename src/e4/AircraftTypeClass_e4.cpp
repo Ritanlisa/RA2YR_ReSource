@@ -76,34 +76,6 @@ LABEL_11:
 }
 }
 
-// 0x41CB20
-AircraftClass * AircraftTypeClass::ConstructAircraft(AbstractClass * ppv)
-{
-{
-    int v3;
-    v3 = __2_YAPAXI_Z(0x6D8u);
-    if ( v3 )
-    return (AircraftClass *)AircraftClass::Construct(v3, this, ppv);
-    else
-    return 0;
-}
-}
-
-// 0x41CB70
-int * AircraftTypeClass::CreateAircraft(int a1)
-{
-{
-    if ( (DataGlobal_889F38 & 1) == 0 )
-  {
-    DataGlobal_889F38 |= 1u;
-    DataGlobal_889F20 = 0;
-    DataGlobal_889F24 = 2147450879;
-    atexit(nullsub_85);
-  }
-    return &DataGlobal_889F20;
-}
-}
-
 // 0x41CC20
 namespace gamemd {
 int AircraftTypeClass_LoadTypeData()
@@ -170,30 +142,6 @@ char __userpurge AircraftTypeClass::vt_25_@<al>(int a1@<ecx>, double a2@<st0>, u
 }
 } // namespace gamemd
 
-// 0x41CDB0
-int AircraftTypeClass::PowerDrainUpdate(int * a2)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    v3 = BuildingTypeClass::ProcessPower(this, a2);
-    LOBYTE(v3) = this->Rotors;
-    Power::FlagProcess(a2, v3);
-    LOBYTE(v4) = this->CustomRotor;
-    Power::FlagProcess(a2, v4);
-    LOBYTE(v5) = this->Landable;
-    v6 = Power::FlagProcess(a2, v5);
-    LOBYTE(v6) = this->AirportBound;
-    Power::FlagProcess(a2, v6);
-    LOBYTE(v7) = this->Fighter;
-    Power::FlagProcess(a2, v7);
-    return Power::TimerProcess(this->ArrayIndex);
-}
-}
-
 // 0x41CE20
 int AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
 {
@@ -221,26 +169,6 @@ int __stdcall AircraftTypeClass::LoadFromINI(ObjectTypeClass *aP0, int aP1)
     return 0; /*0x41ce7e*/
   }
   return result; /*0x41ce80*/
-}
-}
-
-// 0x41CE90
-int AircraftTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
-{
-{
-    int result;
-    result = TechnoTypeClass::SaveLoad_Prefix_0(aP1, a0, aP1, (TechnoTypeClass *)a3);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-
-// 0x41CFD0
-int AircraftTypeClass::GetAuxField()
-{
-{
-    return this->ArrayIndex;
 }
 }
 
@@ -286,16 +214,80 @@ int AircraftTypeClass::_vt45()
 }
 }
 
+// 0x41CB20
+AircraftClass * AircraftTypeClass::ConstructAircraft(AbstractClass * ppv)
+{
+{
+    int v3;
+    v3 = __2_YAPAXI_Z(0x6D8u);
+    if ( v3 )
+    return (AircraftClass *)AircraftClass::Construct(v3, this, ppv);
+    else
+    return 0;
+}
+}
+
 // 0x41CB60
 char AircraftTypeClass::StubReturnFalse()
 {
 return 0;
 }
 
+// 0x41CB70
+int * AircraftTypeClass::CreateAircraft(int a1)
+{
+{
+    if ( (DataGlobal_889F38 & 1) == 0 )
+  {
+    DataGlobal_889F38 |= 1u;
+    DataGlobal_889F20 = 0;
+    DataGlobal_889F24 = 2147450879;
+    atexit(nullsub_85);
+  }
+    return &DataGlobal_889F20;
+}
+}
+
 // 0x41CBE0
 char AircraftTypeClass::GetDimensions(int a1, int a2)
 {
 return 0;
+}
+
+// 0x41CDB0
+int AircraftTypeClass::PowerDrainUpdate(int * a2)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    v3 = BuildingTypeClass::ProcessPower(this, a2);
+    LOBYTE(v3) = this->Rotors;
+    Power::FlagProcess(a2, v3);
+    LOBYTE(v4) = this->CustomRotor;
+    Power::FlagProcess(a2, v4);
+    LOBYTE(v5) = this->Landable;
+    v6 = Power::FlagProcess(a2, v5);
+    LOBYTE(v6) = this->AirportBound;
+    Power::FlagProcess(a2, v6);
+    LOBYTE(v7) = this->Fighter;
+    Power::FlagProcess(a2, v7);
+    return Power::TimerProcess(this->ArrayIndex);
+}
+}
+
+// 0x41CE90
+int AircraftTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
+{
+{
+    int result;
+    result = TechnoTypeClass::SaveLoad_Prefix_0(aP1, a0, aP1, (TechnoTypeClass *)a3);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
 }
 
 // 0x41CEB0
@@ -320,4 +312,12 @@ return 3;
 int AircraftTypeClass::GetObjectSize()
 {
 return 3600;
+}
+
+// 0x41CFD0
+int AircraftTypeClass::GetAuxField()
+{
+{
+    return this->ArrayIndex;
+}
 }

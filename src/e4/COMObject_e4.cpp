@@ -5,17 +5,25 @@
 // 0x4E1A00
 int COMObject::FindNextActive(unsigned char * a1)
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __fastcall COMObject_FindNextActive(_BYTE *a1)
 {
-    if ( !a1 )
-    return 0;
-    while ( !*((int*)(a1) + 28) )
+  if ( !a1 ) /*0x4e1a02*/
+    return 0; /*0x4e1a16*/
+  while ( !a1[28] ) /*0x4e1a09*/
   {
-    a1 = (char *)(*(int (__thiscall **)(char *))(*(int *)(a1) + 4))(a1);
-    if ( !a1 )
-    return 0;
+    a1 = (_BYTE *)(*(int (__thiscall **)(_BYTE *))(*(_DWORD *)a1 + 4))(a1); /*0x4e1a10*/
+    if ( !a1 ) /*0x4e1a14*/
+      return 0; /*0x4e1a14*/
   }
-    return 1;
+  return 1; /*0x4e1a18*/
 }
+}
+
+// 0x4E30C0
+int COMObject::Thunk_COMObject_sub_4E30C0()
+{
+return 4;
 }
 
 // 0x4F4240
@@ -116,10 +124,4 @@ int COMObject::QueryInterface2()
     (*(void (__stdcall **)(int))(*(int *)(v2) + 4))(v2);
     return 0;
 }
-}
-
-// 0x4E30C0
-int COMObject::Thunk_COMObject_sub_4E30C0()
-{
-return 4;
 }

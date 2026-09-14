@@ -2,44 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x476340
-namespace gamemd {
-float * ParticleSystemTypeClass::ReadXYZFromINI(float * a1, CCINIClass * aP2, unsigned char * a3, float * a4)
-{
-{
-    char *v5;
-    char *v6;
-    char *v7;
-    double v8;
-    float v10;
-    float v11;
-    float v12;
-    INIClass String[8];
-    if ( INIClass::GetString(this, (INIClass *)aP2, a3, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], String, 512) )
-  {
-    v5 = strtok(String[0].__pad_0, Delimiter.__pad_0);
-    v10 = atof(v5);
-    v6 = strtok(0, Delimiter.__pad_0);
-    v11 = atof(v6);
-    v7 = strtok(0, Delimiter.__pad_0);
-    v8 = atof(v7);
-    v12 = v8;
-    *a1 = v10;
-    *((int*)(a1) + 1) = v11;
-    *((int*)(a1) + 2) = v12;
-    return a1;
-  }
-    else
-  {
-    *a1 = *a4;
-    *((int*)(a1) + 1) = *((int*)(a4) + 1);
-    *((int*)(a1) + 2) = *((int*)(a4) + 2);
-    return a1;
-  }
-}
-}
-} // namespace gamemd
-
 // 0x6442D0
 namespace gamemd {
 char ParticleSystemTypeClass::GetType(unsigned char *** aP1)
@@ -302,17 +264,6 @@ int __stdcall ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int
 }
 } // namespace gamemd
 
-// 0x644830
-namespace gamemd {
-int ParticleSystemTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
-{
-{
-    AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x644960
 namespace gamemd {
 ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
@@ -347,6 +298,44 @@ ParticleSystemTypeClass *__thiscall ParticleSystemTypeClass::ddtor(void **this, 
 }
 } // namespace gamemd
 
+// 0x476340
+namespace gamemd {
+float * ParticleSystemTypeClass::ReadXYZFromINI(float * a1, CCINIClass * aP2, unsigned char * a3, float * a4)
+{
+{
+    char *v5;
+    char *v6;
+    char *v7;
+    double v8;
+    float v10;
+    float v11;
+    float v12;
+    INIClass String[8];
+    if ( INIClass::GetString(this, (INIClass *)aP2, a3, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], String, 512) )
+  {
+    v5 = strtok(String[0].__pad_0, Delimiter.__pad_0);
+    v10 = atof(v5);
+    v6 = strtok(0, Delimiter.__pad_0);
+    v11 = atof(v6);
+    v7 = strtok(0, Delimiter.__pad_0);
+    v8 = atof(v7);
+    v12 = v8;
+    *a1 = v10;
+    *((int*)(a1) + 1) = v11;
+    *((int*)(a1) + 2) = v12;
+    return a1;
+  }
+    else
+  {
+    *a1 = *a4;
+    *((int*)(a1) + 1) = *((int*)(a4) + 1);
+    *((int*)(a1) + 2) = *((int*)(a4) + 2);
+    return a1;
+  }
+}
+}
+} // namespace gamemd
+
 // 0x6447A0
 namespace gamemd {
 int ParticleSystemTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
@@ -358,6 +347,17 @@ int ParticleSystemTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   a2[2] = 1610642049;
   a2[3] = -1252326136;
   return 0;
+}
+} // namespace gamemd
+
+// 0x644830
+namespace gamemd {
+int ParticleSystemTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
+{
+{
+    AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
+    return 0;
+}
 }
 } // namespace gamemd
 

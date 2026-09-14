@@ -36,6 +36,27 @@ HRESULT __stdcall ShipLocomotionClass::_vt05(int *a1, int *pStm)
 }
 }
 
+// 0x6A42B0
+ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+ShipLocomotionClass *__thiscall ShipLocomotionClass::ProcessMove(ILocomotion **this, char a2)
+{
+  ILocomotion *v3; // eax
+
+  *this = (ILocomotion *)&ShipLocomotionClass::`vftable'; /*0x6a42b3*/
+  *(this + 1) = (ILocomotion *)&vt_ShipLocomotionClass; /*0x6a42b9*/
+  *(this + 6) = (ILocomotion *)&off_7F2D68; /*0x6a42c0*/
+  v3 = *(this + 26); /*0x6a42c7*/
+  if ( v3 ) /*0x6a42cc*/
+    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x6a42d1*/
+  LocomotionClass::Construct(this); /*0x6a42d6*/
+  if ( (a2 & 1) != 0 ) /*0x6a42e0*/
+    __3_YAXPAX_Z(this); /*0x6a42e3*/
+  return (ShipLocomotionClass *)this; /*0x6a42ed*/
+}
+}
+
 // 0x69EF10
 HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
 {
@@ -88,27 +109,6 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     if ( pPStm )
     (*(void (__stdcall **)(int *))(*pPStm + 8))(pPStm);
     return v10;
-}
-}
-
-// 0x6A42B0
-ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ShipLocomotionClass *__thiscall ShipLocomotionClass::ProcessMove(ILocomotion **this, char a2)
-{
-  ILocomotion *v3; // eax
-
-  *this = (ILocomotion *)&ShipLocomotionClass::`vftable'; /*0x6a42b3*/
-  *(this + 1) = (ILocomotion *)&vt_ShipLocomotionClass; /*0x6a42b9*/
-  *(this + 6) = (ILocomotion *)&off_7F2D68; /*0x6a42c0*/
-  v3 = *(this + 26); /*0x6a42c7*/
-  if ( v3 ) /*0x6a42cc*/
-    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x6a42d1*/
-  LocomotionClass::Construct(this); /*0x6a42d6*/
-  if ( (a2 & 1) != 0 ) /*0x6a42e0*/
-    __3_YAXPAX_Z(this); /*0x6a42e3*/
-  return (ShipLocomotionClass *)this; /*0x6a42ed*/
 }
 }
 

@@ -468,94 +468,6 @@ void sub_6D0E60()
 }
 } // namespace gamemd
 
-// 0x72E730
-namespace gamemd {
-void UI_Draw_72E730(ConvertClass * aP0, int * a1, int a3, int aP2, int a5)
-{
-{
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10[2];
-    ConvertClass *v11;
-    int v12;
-    v5 = *((int*)(a1) + 3);
-    v10[0] = *a1;
-    v6 = *((int*)(a1) + 1);
-    v8 = 0;
-    v10[1] = v6;
-    v7 = *((int*)(a1) + 2);
-    v9 = 0;
-    v11 = (ConvertClass *)v7;
-    v12 = v5;
-    if ( v7 > 800 )
-    v11 = (ConvertClass *)((v7 - 800) / 2 + 800);
-    if ( v5 > 600 )
-    v12 = (v5 - 600) / 2 + 600;
-    v8 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
-    v9 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20472] + 4);
-    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2748] == 640 )
-    DrawToSurfaceSHP( (int)aP0, a3, (ConvertClass *)aP2, 0, (ConvertClass *)&v8, (ConvertClass *)v10, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
-    else
-    DrawToSurfaceSHP( (int)aP0, a3, (ConvertClass *)a5, 0, (ConvertClass *)&v8, (ConvertClass *)v10, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
-}
-}
-} // namespace gamemd
-
-// 0x72E860
-namespace gamemd {
-void UI_Draw_72E860(int a1, ConvertClass * a2)
-{
-{
-    int v2;
-    int v3;
-    v2 = 0;
-    v3 = 0;
-    v2 = **(int **)&DataGlobal_B05488.__pad_579C[20464];
-    v3 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20464] + 4);
-    DrawToSurfaceSHP( a1, *(int *)&DataGlobal_B05488.__pad_579C[20392], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[19896], 0, (ConvertClass *)&v2, a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
-}
-}
-} // namespace gamemd
-
-// 0x72E8C0
-namespace gamemd {
-void UI_Draw_72E8C0(int a1, ConvertClass * a2)
-{
-{
-    int v2;
-    int v3;
-    v2 = 0;
-    v3 = 0;
-    v2 = **(int **)&DataGlobal_B05488.__pad_579C[20476];
-    v3 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20476] + 4);
-    DrawToSurfaceSHP( a1, *(int *)&DataGlobal_B05488.__pad_579C[20392], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[20180], 1u, (ConvertClass *)&v2, a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
-}
-}
-} // namespace gamemd
-
-// 0x72E920
-namespace gamemd {
-void UI_Draw_72E920(int a1, ConvertClass * a2)
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    v3 = 0;
-    v4 = 0;
-    v2 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
-    v3 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
-    v4 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20472] + 4);
-    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2748] >= 800 )
-    v3 = v2 + 80;
-    DrawToSurfaceSHP( a1, *(int *)&DataGlobal_B05488.__pad_579C[20356], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[20188], 0, (ConvertClass *)&v3, a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
-}
-}
-} // namespace gamemd
-
 // 0x60B1D0
 namespace gamemd {
 BOOL UI_Get_60B1D0(HWND hWnd, HWND a2)
@@ -999,26 +911,6 @@ int sub_6D0FD0()
 }
 } // namespace gamemd
 
-// 0x72F4A0
-namespace gamemd {
-CCINIClass * UI_Load_72F4A0()
-{
-{
-    return *(CCINIClass **)&DataGlobal_B05488.__pad_579C[20416];
-}
-}
-} // namespace gamemd
-
-// 0x72F4E0
-namespace gamemd {
-CCINIClass * UI_Load_72F4E0()
-{
-{
-    return *(CCINIClass **)&DataGlobal_B05488.__pad_579C[20440];
-}
-}
-} // namespace gamemd
-
 // 0x639DA0
 namespace gamemd {
 int sub_639DA0()
@@ -1113,34 +1005,6 @@ void __fastcall UI_Setup_5EBDD0(SkirmishDialog *aP0, int a2, int a3, int a4)
 }
 } // namespace gamemd
 
-// 0x7930A0
-namespace gamemd {
-bool sub_7930A0()
-{
-{
-    int v0;
-    char *i;
-    char *v3;
-    v0 = 0;
-    if ( (int)g_WOL_State <= 0 )
-    return 0;
-    for ( i = (char *)g_WOL_ConnectionFlags; ; i += 108 )
-  {
-    if ( v0 >= 0 && v0 < (int)g_WOL_State )
-    qmemcpy(&g_IsMultiplayerSession, i, 0x6Cu);
-    if ( (g_IsMultiplayerSession & 1) != 0 )
-    break;
-    if ( ++v0 >= (int)g_WOL_State )
-    return 0;
-  }
-    if ( !&g_IsMultiplayerSession )
-    return 0;
-    v3 = String::GetOrEmpty_Alt((char **)&g_WebBrowser);
-    return _strcmpi(DataGlobal_B777D4, v3) == 0;
-}
-}
-} // namespace gamemd
-
 // 0x793930
 namespace gamemd {
 ObjectClass * UI_Setup_793930(void * a1, void * a2, int a3)
@@ -1199,35 +1063,6 @@ ObjectClass *__fastcall UI_Setup_793930(void *a1, void *a2, int a3)
     return (ObjectClass *)a3; /*0x7939f6*/
   }
   return result; /*0x7939d7*/
-}
-}
-} // namespace gamemd
-
-// 0x793A10
-namespace gamemd {
-ObjectClass * UI_Setup_793A10(void * a1, short a2)
-{
-{
-    int v4;
-    SessionClass *v5;
-    char *v6;
-    ObjectClass *result;
-    Debug::Log();
-    v4 = 0;
-    v5 = (SessionClass *)&HouseClass_Player.__pad_5568[18396];
-    while ( 1 )
-  {
-    v6 = ToWideStringChar((IUnknown *)v5->GameMode[0]);
-    result = (ObjectClass *)_strcmpi(v6, a1);
-    if ( !result )
-    break;
-    v5 = (SessionClass *)((char *)(v5) + 4);
-    ++v4;
-    if ( (int)v5 >= (int)&HouseClass_Player.__pad_5568[18428] )
-    return result;
-  }
-    *(short *)&HouseClass_Player.__pad_5568[2 * v4 + 19868] = a2;
-    return result;
 }
 }
 } // namespace gamemd
@@ -1914,12 +1749,110 @@ int sub_72E2C0()
 }
 } // namespace gamemd
 
+// 0x72E730
+namespace gamemd {
+void UI_Draw_72E730(ConvertClass * aP0, int * a1, int a3, int aP2, int a5)
+{
+{
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10[2];
+    ConvertClass *v11;
+    int v12;
+    v5 = *((int*)(a1) + 3);
+    v10[0] = *a1;
+    v6 = *((int*)(a1) + 1);
+    v8 = 0;
+    v10[1] = v6;
+    v7 = *((int*)(a1) + 2);
+    v9 = 0;
+    v11 = (ConvertClass *)v7;
+    v12 = v5;
+    if ( v7 > 800 )
+    v11 = (ConvertClass *)((v7 - 800) / 2 + 800);
+    if ( v5 > 600 )
+    v12 = (v5 - 600) / 2 + 600;
+    v8 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
+    v9 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20472] + 4);
+    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2748] == 640 )
+    DrawToSurfaceSHP( (int)aP0, a3, (ConvertClass *)aP2, 0, (ConvertClass *)&v8, (ConvertClass *)v10, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
+    else
+    DrawToSurfaceSHP( (int)aP0, a3, (ConvertClass *)a5, 0, (ConvertClass *)&v8, (ConvertClass *)v10, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
+}
+}
+} // namespace gamemd
+
+// 0x72E860
+namespace gamemd {
+void UI_Draw_72E860(int a1, ConvertClass * a2)
+{
+{
+    int v2;
+    int v3;
+    v2 = 0;
+    v3 = 0;
+    v2 = **(int **)&DataGlobal_B05488.__pad_579C[20464];
+    v3 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20464] + 4);
+    DrawToSurfaceSHP( a1, *(int *)&DataGlobal_B05488.__pad_579C[20392], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[19896], 0, (ConvertClass *)&v2, a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
+}
+}
+} // namespace gamemd
+
+// 0x72E8C0
+namespace gamemd {
+void UI_Draw_72E8C0(int a1, ConvertClass * a2)
+{
+{
+    int v2;
+    int v3;
+    v2 = 0;
+    v3 = 0;
+    v2 = **(int **)&DataGlobal_B05488.__pad_579C[20476];
+    v3 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20476] + 4);
+    DrawToSurfaceSHP( a1, *(int *)&DataGlobal_B05488.__pad_579C[20392], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[20180], 1u, (ConvertClass *)&v2, a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
+}
+}
+} // namespace gamemd
+
+// 0x72E920
+namespace gamemd {
+void UI_Draw_72E920(int a1, ConvertClass * a2)
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    v3 = 0;
+    v4 = 0;
+    v2 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
+    v3 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
+    v4 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20472] + 4);
+    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2748] >= 800 )
+    v3 = v2 + 80;
+    DrawToSurfaceSHP( a1, *(int *)&DataGlobal_B05488.__pad_579C[20356], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[20188], 0, (ConvertClass *)&v3, a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
+}
+}
+} // namespace gamemd
+
 // 0x72F430
 namespace gamemd {
 char sub_72F430()
 {
 {
     return DataGlobal_B0FC0C;
+}
+}
+} // namespace gamemd
+
+// 0x72F4A0
+namespace gamemd {
+CCINIClass * UI_Load_72F4A0()
+{
+{
+    return *(CCINIClass **)&DataGlobal_B05488.__pad_579C[20416];
 }
 }
 } // namespace gamemd
@@ -1940,6 +1873,16 @@ int sub_72F4D0()
 {
 {
     return DataGlobal_B0FC08;
+}
+}
+} // namespace gamemd
+
+// 0x72F4E0
+namespace gamemd {
+CCINIClass * UI_Load_72F4E0()
+{
+{
+    return *(CCINIClass **)&DataGlobal_B05488.__pad_579C[20440];
 }
 }
 } // namespace gamemd
@@ -2110,6 +2053,63 @@ BOOL sub_77CF40()
 {
 {
     return g_GameOptionsFlags == 3 || g_GameOptionsFlags == 1 || g_GameOptionsFlags == 2;
+}
+}
+} // namespace gamemd
+
+// 0x7930A0
+namespace gamemd {
+bool sub_7930A0()
+{
+{
+    int v0;
+    char *i;
+    char *v3;
+    v0 = 0;
+    if ( (int)g_WOL_State <= 0 )
+    return 0;
+    for ( i = (char *)g_WOL_ConnectionFlags; ; i += 108 )
+  {
+    if ( v0 >= 0 && v0 < (int)g_WOL_State )
+    qmemcpy(&g_IsMultiplayerSession, i, 0x6Cu);
+    if ( (g_IsMultiplayerSession & 1) != 0 )
+    break;
+    if ( ++v0 >= (int)g_WOL_State )
+    return 0;
+  }
+    if ( !&g_IsMultiplayerSession )
+    return 0;
+    v3 = String::GetOrEmpty_Alt((char **)&g_WebBrowser);
+    return _strcmpi(DataGlobal_B777D4, v3) == 0;
+}
+}
+} // namespace gamemd
+
+// 0x793A10
+namespace gamemd {
+ObjectClass * UI_Setup_793A10(void * a1, short a2)
+{
+{
+    int v4;
+    SessionClass *v5;
+    char *v6;
+    ObjectClass *result;
+    Debug::Log();
+    v4 = 0;
+    v5 = (SessionClass *)&HouseClass_Player.__pad_5568[18396];
+    while ( 1 )
+  {
+    v6 = ToWideStringChar((IUnknown *)v5->GameMode[0]);
+    result = (ObjectClass *)_strcmpi(v6, a1);
+    if ( !result )
+    break;
+    v5 = (SessionClass *)((char *)(v5) + 4);
+    ++v4;
+    if ( (int)v5 >= (int)&HouseClass_Player.__pad_5568[18428] )
+    return result;
+  }
+    *(short *)&HouseClass_Player.__pad_5568[2 * v4 + 19868] = a2;
+    return result;
 }
 }
 } // namespace gamemd

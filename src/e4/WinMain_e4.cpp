@@ -5,23 +5,26 @@
 // 0x49F8B0
 LSTATUS WinMain::CleanupResource()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+LSTATUS __thiscall WinMain::CleanupResource(AnimClass *this)
 {
-    LSTATUS result;
-    HKEY phkResult;
-    phkResult = (HKEY)this;
-    Debug::Log();
-    if ( lpBaseAddress )
+  LSTATUS result; // eax
+  HKEY phkResult; // [esp+0h] [ebp-4h] BYREF
+
+  phkResult = (HKEY)this; /*0x49f8b0*/
+  Debug::Log(); /*0x49f8b6*/
+  if ( MEMORY[0x89F75C] ) /*0x49f8c5*/
   {
-    UnmapViewOfFile(lpBaseAddress);
-    lpBaseAddress = 0;
+    UnmapViewOfFile(MEMORY[0x89F75C]); /*0x49f8c8*/
+    MEMORY[0x89F75C] = 0; /*0x49f8ce*/
   }
-    result = RegOpenKeyExA(HKEY_CLASSES_ROOT, SubKey, 0, 0xF003Fu, &phkResult);
-    if ( !result )
+  result = RegOpenKeyExA(HKEY_CLASSES_ROOT, SubKey, 0, 0xF003Fu, &phkResult); /*0x49f8ee*/
+  if ( !result ) /*0x49f8f6*/
   {
-    RegDeleteValueA(phkResult, ValueName);
-    return RegCloseKey(phkResult);
+    RegDeleteValueA(phkResult, ValueName); /*0x49f902*/
+    return RegCloseKey(phkResult); /*0x49f90d*/
   }
-    return result;
+  return result; /*0x49f914*/
 }
 }
 
@@ -314,24 +317,6 @@ char sub_5D7E50()
 }
 } // namespace gamemd
 
-// 0x637070
-namespace gamemd {
-int sub_637070()
-{
-{
-    DataGlobal_AC4CF4 = 0;
-    DataGlobal_AC4CF5 = 0;
-    g_ScriptPool = 0;
-    g_ScriptState = 0;
-    g_ScriptActionPool = 0;
-    DataGlobal_AC4C68 = 0;
-    DataGlobal_AC4C6C = 0;
-    DataGlobal_AC4CB0 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x7B84F0
 namespace gamemd {
 HANDLE sub_7B84F0()
@@ -404,6 +389,24 @@ void sub_53E6B0()
     }
     LeaveCriticalSection(&DataGlobal_AA0418);
   }
+}
+}
+} // namespace gamemd
+
+// 0x637070
+namespace gamemd {
+int sub_637070()
+{
+{
+    DataGlobal_AC4CF4 = 0;
+    DataGlobal_AC4CF5 = 0;
+    g_ScriptPool = 0;
+    g_ScriptState = 0;
+    g_ScriptActionPool = 0;
+    DataGlobal_AC4C68 = 0;
+    DataGlobal_AC4C6C = 0;
+    DataGlobal_AC4CB0 = 0;
+    return 0;
 }
 }
 } // namespace gamemd

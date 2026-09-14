@@ -1041,38 +1041,6 @@ bool __thiscall sub_544C20(_DWORD *this, int a2, char a3)
 }
 } // namespace gamemd
 
-// 0x637A10
-namespace gamemd {
-char sub_637A10()
-{
-{
-    char result;
-    char v1[108];
-    int v2;
-    char v3[108];
-    short v4;
-    char v5;
-    result = DataGlobal_AC4CF4;
-    if ( DataGlobal_AC4CF4 )
-  {
-    EventClass::AddEvent(v3, *((int *)(HouseClass_Player) + 12), 0x2Bu);
-    qmemcpy(v1, v3, sizeof(v1));
-    LOWORD(v2) = v4;
-    BYTE2(v2) = v5;
-    Network::RecordEvent( *(__int64 *)v1, *(int *)&v1[8], *(int *)&v1[12], *(int *)&v1[16], *(int *)&v1[20], *(int *)&v1[24], *(int *)&v1[28], *(int *)&v1[32], *(int *)&v1[36], *(int *)&v1[40], *(int *)&v1[44], *(int *)&v1[48], *(int *)&v1[52], *(int *)&v1[56], *(int *)&v1[60], *(int *)&v1[64], *(int *)&v1[68], *(int *)&v1[72], *(int *)&v1[76], *(int *)&v1[80], *(int *)&v1[84], *(int *)&v1[88], *(int *)&v1[92], *(int *)&v1[96], *(int *)&v1[100], *(int *)&v1[104], v2);
-    g_ScriptPool = 0;
-    g_ScriptState = 0;
-    g_ScriptActionPool = 0;
-    DataGlobal_AC4CF4 = 0;
-    result = PlayVocClass(g_RulesClass_Instance->EnterBioReactorSound, 0x2000, 1.0, 0);
-    if ( DataGlobal_AC4B80 )
-    return (**(int (__thiscall ***)(int, int, int))DataGlobal_AC4B80)(DataGlobal_AC4B80, 4552, 0);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x69E090
 namespace gamemd {
 void House::Constructor()
@@ -1310,6 +1278,38 @@ char __usercall sub_6D1660@<al>(_BYTE *a1@<ecx>, int a2@<esi>)
     return (*(int (__thiscall **)(_BYTE *, _DWORD))(v9 + 56))(a1, 0); /*0x6d1766*/
   }
   return result; /*0x6d1769*/
+}
+}
+} // namespace gamemd
+
+// 0x637A10
+namespace gamemd {
+char sub_637A10()
+{
+{
+    char result;
+    char v1[108];
+    int v2;
+    char v3[108];
+    short v4;
+    char v5;
+    result = DataGlobal_AC4CF4;
+    if ( DataGlobal_AC4CF4 )
+  {
+    EventClass::AddEvent(v3, *((int *)(HouseClass_Player) + 12), 0x2Bu);
+    qmemcpy(v1, v3, sizeof(v1));
+    LOWORD(v2) = v4;
+    BYTE2(v2) = v5;
+    Network::RecordEvent( *(__int64 *)v1, *(int *)&v1[8], *(int *)&v1[12], *(int *)&v1[16], *(int *)&v1[20], *(int *)&v1[24], *(int *)&v1[28], *(int *)&v1[32], *(int *)&v1[36], *(int *)&v1[40], *(int *)&v1[44], *(int *)&v1[48], *(int *)&v1[52], *(int *)&v1[56], *(int *)&v1[60], *(int *)&v1[64], *(int *)&v1[68], *(int *)&v1[72], *(int *)&v1[76], *(int *)&v1[80], *(int *)&v1[84], *(int *)&v1[88], *(int *)&v1[92], *(int *)&v1[96], *(int *)&v1[100], *(int *)&v1[104], v2);
+    g_ScriptPool = 0;
+    g_ScriptState = 0;
+    g_ScriptActionPool = 0;
+    DataGlobal_AC4CF4 = 0;
+    result = PlayVocClass(g_RulesClass_Instance->EnterBioReactorSound, 0x2000, 1.0, 0);
+    if ( DataGlobal_AC4B80 )
+    return (**(int (__thiscall ***)(int, int, int))DataGlobal_AC4B80)(DataGlobal_AC4B80, 4552, 0);
+  }
+    return result;
 }
 }
 } // namespace gamemd

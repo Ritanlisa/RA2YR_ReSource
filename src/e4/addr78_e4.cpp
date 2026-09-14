@@ -365,31 +365,6 @@ void PopulateWOLLobbyListBox()
 }
 } // namespace gamemd
 
-// 0x780A00
-namespace gamemd {
-wchar_t ** WOL_FormatLocaleString(wchar_t ** a1, int a2)
-{
-{
-    char **v3;
-    char *v4;
-    wchar_t *String;
-    void *v7;
-    void *v8;
-    void *v9;
-    v3 = FormatStringInt((char **)&v9, a2, 2);
-    ProcessStringAndCopy((char **)&v8, DataGlobal_84A684, v3);
-    DeleteAndZero(&v9);
-    v4 = String::GetOrEmpty((char **)&v8);
-    String = GetStringCSF((wchar_t *)v4, 0, g_Str_File_wonline_cpp, 2909);
-    WideString::Assign((wchar_t **)&v7, String);
-    WideString::AssignFromPtr(a1, (const wchar_t **)&v7);
-    DeleteAndZero::Alt(&v7);
-    DeleteAndZero(&v8);
-    return a1;
-}
-}
-} // namespace gamemd
-
 // 0x780A90
 namespace gamemd {
 wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
@@ -846,67 +821,6 @@ int __cdecl sub_781380(_DWORD *a1, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x7813B0
-namespace gamemd {
-int sub_7813B0(unsigned int * a1, unsigned int * a2)
-{
-{
-    int v2;
-    int v3;
-    v2 = *((int*)(a1) + 1);
-    v3 = *((int*)(a2) + 1);
-    if ( v2 >= v3 )
-    return (v2 <= v3) - 1;
-    else
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x7813E0
-namespace gamemd {
-void sub_7813E0(AbstractClass * Base, char a2)
-{
-{
-    ObjectClass *v2;
-    AbstractClass *v3;
-    int v4;
-    int v5;
-    int *v6;
-    int v7;
-    int v10[67];
-    v2 = g_WOL_ChatState;
-    v3 = Base;
-    v4 = 0;
-    memset(v10, 0, sizeof(v10));
-    if ( (int)g_WOL_ChatState > 0 )
-  {
-    v5 = 0;
-    v6 = (int *)Base;
-    do
-    {
-    if ( v5 >= 0 && v4 < (int)g_WOL_ChatState )
-      {
-    qmemcpy(v10, (char *)(g_WOL_ConnectionHandler) + v5, sizeof(v10));
-    v3 = Base;
-      }
-    v7 = v10[10];
-    *v6 = v4;
-    v6[1] = v7;
-    ++v4;
-    v5 += 268;
-    v6 += 2;
-    }
-    while ( v4 < (int)v2 );
-  }
-    if ( a2 )
-    qsort(v3, (IUnknown *)v2, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)sub_781380);
-    else
-    qsort(v3, (IUnknown *)v2, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)sub_7813B0);
-}
-}
-} // namespace gamemd
-
 // 0x781480
 namespace gamemd {
 void __usercall GameListRenderWOL(CampaignScore *a1@<edi> a1)
@@ -1288,40 +1202,6 @@ LABEL_100:
   }
   DeleteAndZero((int)&v54); /*0x781ca6*/
   DeleteAndZero((int)&a2); /*0x781caf*/
-}
-}
-} // namespace gamemd
-
-// 0x781CC0
-namespace gamemd {
-int sub_781CC0(int a1, int a2)
-{
-{
-    int v2;
-    int v3;
-    v2 = *(int *)(a1 + 8);
-    if ( v2 == *(int *)(a2 + 8) )
-    return _strcmpi(*(const void **)(a1 + 4), *(const void **)(a2 + 4));
-    v3 = -(v2 != 0);
-    LOBYTE(v3) = v3 & 0xFE;
-    return v3 + 1;
-}
-}
-} // namespace gamemd
-
-// 0x781CF0
-namespace gamemd {
-int sub_781CF0(const void * a1, const void ** a2)
-{
-{
-    const void *v2;
-    int v3;
-    v2 = (const void *)*((int *)(a1) + 2);
-    if ( v2 == *((int*)(a2) + 2) )
-    return _strcmpi(*((int*)(a2) + 1), *((const void **)(a1) + 1));
-    v3 = -(v2 != 0);
-    LOBYTE(v3) = v3 & 0xFE;
-    return v3 + 1;
 }
 }
 } // namespace gamemd
@@ -2482,48 +2362,6 @@ void __fastcall SortWOLPlayerList(char a1)
 }
 } // namespace gamemd
 
-// 0x783520
-namespace gamemd {
-int sub_783520(const char * a1, const char * a2)
-{
-{
-    unsigned int v2;
-    unsigned int v3;
-    v2 = strlen(a1) + 1;
-    v3 = strlen(a2) + 1;
-    if ( v2 == 1 )
-    return (int)(v3 - 1) > 0;
-    if ( v3 != 1 )
-    return _strcmpi(a1, a2);
-    if ( (int)(v2 - 1) <= 0 )
-    return (int)(v3 - 1) > 0;
-    else
-    return -1;
-}
-}
-} // namespace gamemd
-
-// 0x783570
-namespace gamemd {
-int sub_783570(const char * a1, const char * a2)
-{
-{
-    unsigned int v2;
-    unsigned int v3;
-    v2 = strlen(a1) + 1;
-    v3 = strlen(a2) + 1;
-    if ( v2 == 1 )
-    return (int)(v3 - 1) > 0;
-    if ( v3 != 1 )
-    return _strcmpi(a2, a1);
-    if ( (int)(v2 - 1) <= 0 )
-    return (int)(v3 - 1) > 0;
-    else
-    return -1;
-}
-}
-} // namespace gamemd
-
 // 0x7835C0
 namespace gamemd {
 int sub_7835C0(int a1, signed int * a2)
@@ -2632,16 +2470,6 @@ LABEL_6:
   if ( *a2 >= 0 && v9 < (int)g_WOL_State ) /*0x78379c*/
     qmemcpy(v10, &g_WOL_ConnectionFlags[3 * v9], sizeof(v10)); /*0x7837b0*/
   return _strcmpi(&v11[36], &v10[36]); /*0x783700*/
-}
-}
-} // namespace gamemd
-
-// 0x785360
-namespace gamemd {
-void WOL_DisplayRankingsThunk()
-{
-{
-    DisplayRankingsWOL(0);
 }
 }
 } // namespace gamemd
@@ -2788,42 +2616,6 @@ char __thiscall sub_786DC0(char **this)
   String::Assign_Alt((void **)&g_WebBrowserConfig, v7); /*0x786e4f*/
   LOBYTE(dword_84A238) = 0; /*0x786e54*/
   return 1; /*0x786e2f*/
-}
-}
-} // namespace gamemd
-
-// 0x786E70
-namespace gamemd {
-int E4Recv_786E70::sub_786E70()
-{
-{
-    int v2;
-    int v3;
-    int i;
-    char *v5;
-    char *v6;
-    if ( !String::Length(this) )
-    return -1;
-    v2 = g_WOL_UserList;
-    v3 = 1;
-    if ( g_WOL_UserList <= 1 )
-    return -1;
-    for ( i = 248; ; i += 248 )
-  {
-    v5 = 0;
-    if ( i >= 0 && v3 < v2 )
-    v5 = (char *)(DataGlobal_B778E0) + i;
-    v6 = strchr(v5 + 24, 58);
-    if ( v6 )
-    {
-    if ( *v6 && String::Equals_Alt(this, v6 + 1) )
-    break;
-    }
-    v2 = g_WOL_UserList;
-    if ( ++v3 >= g_WOL_UserList )
-    return -1;
-  }
-    return v3;
 }
 }
 } // namespace gamemd
@@ -4496,27 +4288,6 @@ LABEL_15:
 }
 } // namespace gamemd
 
-// 0x789630
-namespace gamemd {
-char ** sub_789630(char ** a1, int a2)
-{
-{
-    int v3;
-    void *v5;
-    int v6;
-    String::Assign((char **)&v5, (const char *)(a2 + 24));
-    unknown_libname_73(&v6);
-    v3 = String::Tokenize((const char **)&v5, 0, DataGlobal_8318B8, (void **)&v6);
-    if ( v3 >= 0 )
-    String::Erase((const char **)&v5, 0, v3 + 1);
-    String::AssignFromPtr(a1, (const char **)&v5);
-    DeleteAndZero((void **)&v6);
-    DeleteAndZero(&v5);
-    return a1;
-}
-}
-} // namespace gamemd
-
 // 0x7896A0
 namespace gamemd {
 char PopulateWOLUserList(HWND hWnd, char a2)
@@ -5131,17 +4902,6 @@ LABEL_71:
   OwnerDrawControl::InitVtable(&aP0_4); /*0x78a44d*/
   DeleteAndZero((int)&v42); /*0x78a456*/
   return 1; /*0x789c37*/
-}
-}
-} // namespace gamemd
-
-// 0x78ABF0
-namespace gamemd {
-short WOL_ChatMessage(char a1, wchar_t * a2)
-{
-{
-    DataGlobal_B77E40 = a1;
-    return WideString::Reassign(&DataGlobal_B76230, a2);
 }
 }
 } // namespace gamemd
@@ -6110,6 +5870,246 @@ LABEL_37:
     return 0; /*0x78eded*/
   }
   return result; /*0x78ec13*/
+}
+}
+} // namespace gamemd
+
+// 0x780A00
+namespace gamemd {
+wchar_t ** WOL_FormatLocaleString(wchar_t ** a1, int a2)
+{
+{
+    char **v3;
+    char *v4;
+    wchar_t *String;
+    void *v7;
+    void *v8;
+    void *v9;
+    v3 = FormatStringInt((char **)&v9, a2, 2);
+    ProcessStringAndCopy((char **)&v8, DataGlobal_84A684, v3);
+    DeleteAndZero(&v9);
+    v4 = String::GetOrEmpty((char **)&v8);
+    String = GetStringCSF((wchar_t *)v4, 0, g_Str_File_wonline_cpp, 2909);
+    WideString::Assign((wchar_t **)&v7, String);
+    WideString::AssignFromPtr(a1, (const wchar_t **)&v7);
+    DeleteAndZero::Alt(&v7);
+    DeleteAndZero(&v8);
+    return a1;
+}
+}
+} // namespace gamemd
+
+// 0x7813B0
+namespace gamemd {
+int sub_7813B0(unsigned int * a1, unsigned int * a2)
+{
+{
+    int v2;
+    int v3;
+    v2 = *((int*)(a1) + 1);
+    v3 = *((int*)(a2) + 1);
+    if ( v2 >= v3 )
+    return (v2 <= v3) - 1;
+    else
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x7813E0
+namespace gamemd {
+void sub_7813E0(AbstractClass * Base, char a2)
+{
+{
+    ObjectClass *v2;
+    AbstractClass *v3;
+    int v4;
+    int v5;
+    int *v6;
+    int v7;
+    int v10[67];
+    v2 = g_WOL_ChatState;
+    v3 = Base;
+    v4 = 0;
+    memset(v10, 0, sizeof(v10));
+    if ( (int)g_WOL_ChatState > 0 )
+  {
+    v5 = 0;
+    v6 = (int *)Base;
+    do
+    {
+    if ( v5 >= 0 && v4 < (int)g_WOL_ChatState )
+      {
+    qmemcpy(v10, (char *)(g_WOL_ConnectionHandler) + v5, sizeof(v10));
+    v3 = Base;
+      }
+    v7 = v10[10];
+    *v6 = v4;
+    v6[1] = v7;
+    ++v4;
+    v5 += 268;
+    v6 += 2;
+    }
+    while ( v4 < (int)v2 );
+  }
+    if ( a2 )
+    qsort(v3, (IUnknown *)v2, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)sub_781380);
+    else
+    qsort(v3, (IUnknown *)v2, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)sub_7813B0);
+}
+}
+} // namespace gamemd
+
+// 0x781CC0
+namespace gamemd {
+int sub_781CC0(int a1, int a2)
+{
+{
+    int v2;
+    int v3;
+    v2 = *(int *)(a1 + 8);
+    if ( v2 == *(int *)(a2 + 8) )
+    return _strcmpi(*(const void **)(a1 + 4), *(const void **)(a2 + 4));
+    v3 = -(v2 != 0);
+    LOBYTE(v3) = v3 & 0xFE;
+    return v3 + 1;
+}
+}
+} // namespace gamemd
+
+// 0x781CF0
+namespace gamemd {
+int sub_781CF0(const void * a1, const void ** a2)
+{
+{
+    const void *v2;
+    int v3;
+    v2 = (const void *)*((int *)(a1) + 2);
+    if ( v2 == *((int*)(a2) + 2) )
+    return _strcmpi(*((int*)(a2) + 1), *((const void **)(a1) + 1));
+    v3 = -(v2 != 0);
+    LOBYTE(v3) = v3 & 0xFE;
+    return v3 + 1;
+}
+}
+} // namespace gamemd
+
+// 0x783520
+namespace gamemd {
+int sub_783520(const char * a1, const char * a2)
+{
+{
+    unsigned int v2;
+    unsigned int v3;
+    v2 = strlen(a1) + 1;
+    v3 = strlen(a2) + 1;
+    if ( v2 == 1 )
+    return (int)(v3 - 1) > 0;
+    if ( v3 != 1 )
+    return _strcmpi(a1, a2);
+    if ( (int)(v2 - 1) <= 0 )
+    return (int)(v3 - 1) > 0;
+    else
+    return -1;
+}
+}
+} // namespace gamemd
+
+// 0x783570
+namespace gamemd {
+int sub_783570(const char * a1, const char * a2)
+{
+{
+    unsigned int v2;
+    unsigned int v3;
+    v2 = strlen(a1) + 1;
+    v3 = strlen(a2) + 1;
+    if ( v2 == 1 )
+    return (int)(v3 - 1) > 0;
+    if ( v3 != 1 )
+    return _strcmpi(a2, a1);
+    if ( (int)(v2 - 1) <= 0 )
+    return (int)(v3 - 1) > 0;
+    else
+    return -1;
+}
+}
+} // namespace gamemd
+
+// 0x785360
+namespace gamemd {
+void WOL_DisplayRankingsThunk()
+{
+{
+    DisplayRankingsWOL(0);
+}
+}
+} // namespace gamemd
+
+// 0x786E70
+namespace gamemd {
+int E4Recv_786E70::sub_786E70()
+{
+{
+    int v2;
+    int v3;
+    int i;
+    char *v5;
+    char *v6;
+    if ( !String::Length(this) )
+    return -1;
+    v2 = g_WOL_UserList;
+    v3 = 1;
+    if ( g_WOL_UserList <= 1 )
+    return -1;
+    for ( i = 248; ; i += 248 )
+  {
+    v5 = 0;
+    if ( i >= 0 && v3 < v2 )
+    v5 = (char *)(DataGlobal_B778E0) + i;
+    v6 = strchr(v5 + 24, 58);
+    if ( v6 )
+    {
+    if ( *v6 && String::Equals_Alt(this, v6 + 1) )
+    break;
+    }
+    v2 = g_WOL_UserList;
+    if ( ++v3 >= g_WOL_UserList )
+    return -1;
+  }
+    return v3;
+}
+}
+} // namespace gamemd
+
+// 0x789630
+namespace gamemd {
+char ** sub_789630(char ** a1, int a2)
+{
+{
+    int v3;
+    void *v5;
+    int v6;
+    String::Assign((char **)&v5, (const char *)(a2 + 24));
+    unknown_libname_73(&v6);
+    v3 = String::Tokenize((const char **)&v5, 0, DataGlobal_8318B8, (void **)&v6);
+    if ( v3 >= 0 )
+    String::Erase((const char **)&v5, 0, v3 + 1);
+    String::AssignFromPtr(a1, (const char **)&v5);
+    DeleteAndZero((void **)&v6);
+    DeleteAndZero(&v5);
+    return a1;
+}
+}
+} // namespace gamemd
+
+// 0x78ABF0
+namespace gamemd {
+short WOL_ChatMessage(char a1, wchar_t * a2)
+{
+{
+    DataGlobal_B77E40 = a1;
+    return WideString::Reassign(&DataGlobal_B76230, a2);
 }
 }
 } // namespace gamemd

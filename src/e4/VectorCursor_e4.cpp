@@ -25,16 +25,6 @@ _DWORD *__thiscall VectorCursor::_vt03(_DWORD *this)
 }
 }
 
-// 0x4F42A0
-namespace gamemd {
-void VectorCursor_uint_DynamicVectorClass_uint____13::Add()
-{
-{
-    DataGlobal_A8EF54 = 0;
-}
-}
-} // namespace gamemd
-
 // 0x4F42D0
 namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Remove()
@@ -43,16 +33,6 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Remove()
 void __thiscall VectorCursor_uint_DynamicVectorClass_uint____13_::_vt07(_DWORD *this)
 {
   *(this + 3) = 2; /*0x4f42d0*/
-}
-}
-} // namespace gamemd
-
-// 0x4F42E0
-namespace gamemd {
-void VectorCursor_uint_DynamicVectorClass_uint____13::Get()
-{
-{
-    DataGlobal_A8EF54 = 0;
 }
 }
 } // namespace gamemd
@@ -94,6 +74,26 @@ LABEL_7:
       *(this + 2) = -1 - v5; /*0x4f4bdd*/
     }
   }
+}
+}
+} // namespace gamemd
+
+// 0x4F42A0
+namespace gamemd {
+void VectorCursor_uint_DynamicVectorClass_uint____13::Add()
+{
+{
+    DataGlobal_A8EF54 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4F42E0
+namespace gamemd {
+void VectorCursor_uint_DynamicVectorClass_uint____13::Get()
+{
+{
+    DataGlobal_A8EF54 = 0;
 }
 }
 } // namespace gamemd

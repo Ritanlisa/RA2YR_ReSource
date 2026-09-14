@@ -28,26 +28,6 @@ char __thiscall sub_4FCDC0(int this)
 }
 } // namespace gamemd
 
-// 0x50D290
-namespace gamemd {
-int TActionClass::executeAttackAction(int a2)
-{
-{
-    int i;
-    int *v4;
-    int result;
-    for ( i = *(int *)(a2 + 120) - 1; i >= 0; v4[179] = this )
-  {
-    v4 = *(int **)(*(int *)(a2 + 108) + 4 * i);
-    result = (*(int (__thiscall **)(int *, void *, int))(*v4 + 980))(v4, this, 0);
-    --i;
-    v4[184] = a2;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x50D2D0
 namespace gamemd {
 int TActionClass::executeMoveAction(int a2)
@@ -1608,20 +1588,6 @@ int __stdcall TActionClass::SaveLoad_Prefix(AbstractClass *aP0, int aP1)
 }
 } // namespace gamemd
 
-// 0x6E3E30
-namespace gamemd {
-int TActionClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6E3E50
 namespace gamemd {
 int TActionClass::Validate(int a2)
@@ -1957,16 +1923,6 @@ char __thiscall TActionClass::executeEMPulseAction(int this, int a2, int a3, int
 }
 } // namespace gamemd
 
-// 0x6E4650
-namespace gamemd {
-int TActionClass::Stub()
-{
-{
-    return this->idxArray;
-}
-}
-} // namespace gamemd
-
 // 0x71E6A0
 namespace gamemd {
 int TActionClass::TActionClass()
@@ -2078,6 +2034,26 @@ void __thiscall sub_726900(_BYTE *this)
 }
 } // namespace gamemd
 
+// 0x50D290
+namespace gamemd {
+int TActionClass::executeAttackAction(int a2)
+{
+{
+    int i;
+    int *v4;
+    int result;
+    for ( i = *(int *)(a2 + 120) - 1; i >= 0; v4[179] = this )
+  {
+    v4 = *(int **)(*(int *)(a2 + 108) + 4 * i);
+    result = (*(int (__thiscall **)(int *, void *, int))(*v4 + 980))(v4, this, 0);
+    --i;
+    v4[184] = a2;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x6E3D70
 namespace gamemd {
 int TActionClass::ddtor(int a1, unsigned int * a2)
@@ -2089,6 +2065,20 @@ int TActionClass::ddtor(int a1, unsigned int * a2)
   a2[2] = 1610655660;
   a2[3] = -1252326136;
   return 0;
+}
+} // namespace gamemd
+
+// 0x6E3E30
+namespace gamemd {
+int TActionClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
 }
 } // namespace gamemd
 
@@ -2105,5 +2095,15 @@ namespace gamemd {
 int TActionClass::StubReturn47()
 {
 return 47;
+}
+} // namespace gamemd
+
+// 0x6E4650
+namespace gamemd {
+int TActionClass::Stub()
+{
+{
+    return this->idxArray;
+}
 }
 } // namespace gamemd

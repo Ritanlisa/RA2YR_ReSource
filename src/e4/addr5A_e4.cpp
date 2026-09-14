@@ -2835,36 +2835,6 @@ ObjectClass *__thiscall sub_5A9960(_DWORD *this, _DWORD *a1)
 }
 } // namespace gamemd
 
-// 0x5A9980
-namespace gamemd {
-unsigned int * E4Recv_5A9980::sub_5A9980(int a2, unsigned int * a3, int a4, unsigned int * a5, int a6)
-{
-{
-    *(void**)this = a2;
-    this->M4 = *a3;
-    this->M8 = a4;
-    this->M12 = *a5;
-    this->M16 = a6;
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x5A99F0
-namespace gamemd {
-unsigned int * E4Recv_5A99F0::sub_5A99F0(unsigned int * a2)
-{
-{
-    *(void**)this = *a2;
-    this->M4 = *((int*)(a2) + 1);
-    this->M8 = *((int*)(a2) + 2);
-    this->M12 = *((int*)(a2) + 3);
-    this->M16 = *((int*)(a2) + 4);
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x5A9BF0
 namespace gamemd {
 Concurrency::details::_ReaderWriterLock * E4Recv_5A9BF0::__0_ReaderWriterLock_details_Concurrency__QAE_XZ()
@@ -3010,117 +2980,6 @@ int __thiscall sub_5AEC40(int this, float a2)
   *(float *)(this + 40) = *(float *)&result * v4 + v11 * v14; /*0x5aed27*/
   *(float *)(this + 44) = v12 * v4 + v13 * v14; /*0x5aed3b*/
   return result; /*0x5aed42*/
-}
-}
-} // namespace gamemd
-
-// 0x5AED50
-namespace gamemd {
-int E4Recv_5AED50::sub_5AED50(float a2)
-{
-{
-    double v2;
-    double v4;
-    double v5;
-    double v6;
-    double v7;
-    int result;
-    float v9;
-    float v10;
-    float v11;
-    float v12;
-    float v13;
-    float v14;
-    v2 = a2;
-    v14 = Math::SinCos(a2);
-    v4 = Math::ArcTan2(v2);
-    v5 = -v14;
-    v6 = *(void**)this;
-    v7 = this->M32;
-    v9 = this->M4;
-    result = this->M36;
-    v10 = this->M8;
-    v11 = this->M40;
-    v12 = this->M12;
-    *(void**)this = v7 * v14 + v6 * v4;
-    v13 = this->M44;
-    this->M4 = *(float *)&result * v14 + v9 * v4;
-    this->M8 = v11 * v14 + v10 * v4;
-    this->M12 = v13 * v14 + v12 * v4;
-    this->M32 = v6 * v5 + v7 * v4;
-    this->M36 = v9 * v5 + *(float *)&result * v4;
-    this->M40 = v10 * v5 + v11 * v4;
-    this->M44 = v12 * v5 + v13 * v4;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x5AEE50
-namespace gamemd {
-int E4Recv_5AEE50::sub_5AEE50(float a2)
-{
-{
-    double v2;
-    double v4;
-    double v5;
-    double v6;
-    int result;
-    float v8;
-    float v9;
-    float v10;
-    float v11;
-    float v12;
-    float v13;
-    float v14;
-    v2 = a2;
-    v14 = Math::SinCos(a2);
-    v4 = Math::ArcTan2(v2);
-    v10 = this->M4;
-    v5 = -v14;
-    v8 = this->M16;
-    v11 = this->M8;
-    v6 = *(void**)this;
-    v9 = this->M20;
-    v13 = this->M12;
-    result = this->M24;
-    v12 = this->M28;
-    *(void**)this = v8 * v5 + v6 * v4;
-    this->M4 = v9 * v5 + v10 * v4;
-    this->M8 = *(float *)&result * v5 + v11 * v4;
-    this->M12 = v12 * v5 + v13 * v4;
-    this->M16 = v8 * v4 + v6 * v14;
-    this->M20 = v9 * v4 + v10 * v14;
-    this->M24 = *(float *)&result * v4 + v11 * v14;
-    this->M28 = v12 * v4 + v13 * v14;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x5AF120
-namespace gamemd {
-void E4Recv_5AF120::sub_5AF120(float a2, float a3)
-{
-{
-    double v3;
-    double v4;
-    double v5;
-    double v6;
-    double v7;
-    double v8;
-    v3 = *(void**)this;
-    v4 = this->M8;
-    *(void**)this = v3 * a3 - v4 * a2;
-    this->M8 = v3 * a2 + v4 * a3;
-    v5 = this->M16;
-    v6 = this->M24;
-    this->M16 = v5 * a3 - v6 * a2;
-    this->M24 = v5 * a2 + v6 * a3;
-    v7 = this->M32;
-    v8 = this->M40;
-    this->M32 = v7 * a3 - v8 * a2;
-    this->M40 = v7 * a2 + v8 * a3;
 }
 }
 } // namespace gamemd
@@ -3286,18 +3145,6 @@ float *__fastcall MultiplyMatrix3x4(ObjectClass *aP0, float *a1, float *a2)
 }
 } // namespace gamemd
 
-// 0x5AFF50
-namespace gamemd {
-void E4Recv_5AFF50::sub_5AFF50()
-{
-{
-    *(void**)this = vt_MechLocomotionClass;
-    this->M4 = &vt_MechLocomotionClass;
-    LocomotionClass::Construct(this);
-}
-}
-} // namespace gamemd
-
 // 0x5A1190
 namespace gamemd {
 double sub_5A1190(short * a1, short * a2, double a3)
@@ -3446,6 +3293,36 @@ unsigned int * globalHelper_0A7640(unsigned int * a0, MapSeedClass * aP1)
     *((int*)(a0) + 2) = v2 - v3 + 1;
     *((int*)(a0) + 3) = v4 - v6 + 1;
     return a0;
+}
+}
+} // namespace gamemd
+
+// 0x5A9980
+namespace gamemd {
+unsigned int * E4Recv_5A9980::sub_5A9980(int a2, unsigned int * a3, int a4, unsigned int * a5, int a6)
+{
+{
+    *(void**)this = a2;
+    this->M4 = *a3;
+    this->M8 = a4;
+    this->M12 = *a5;
+    this->M16 = a6;
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x5A99F0
+namespace gamemd {
+unsigned int * E4Recv_5A99F0::sub_5A99F0(unsigned int * a2)
+{
+{
+    *(void**)this = *a2;
+    this->M4 = *((int*)(a2) + 1);
+    this->M8 = *((int*)(a2) + 2);
+    this->M12 = *((int*)(a2) + 3);
+    this->M16 = *((int*)(a2) + 4);
+    return this;
 }
 }
 } // namespace gamemd
@@ -3688,6 +3565,90 @@ void nullsub_171(int a1)
 }
 } // namespace gamemd
 
+// 0x5AED50
+namespace gamemd {
+int E4Recv_5AED50::sub_5AED50(float a2)
+{
+{
+    double v2;
+    double v4;
+    double v5;
+    double v6;
+    double v7;
+    int result;
+    float v9;
+    float v10;
+    float v11;
+    float v12;
+    float v13;
+    float v14;
+    v2 = a2;
+    v14 = Math::SinCos(a2);
+    v4 = Math::ArcTan2(v2);
+    v5 = -v14;
+    v6 = *(void**)this;
+    v7 = this->M32;
+    v9 = this->M4;
+    result = this->M36;
+    v10 = this->M8;
+    v11 = this->M40;
+    v12 = this->M12;
+    *(void**)this = v7 * v14 + v6 * v4;
+    v13 = this->M44;
+    this->M4 = *(float *)&result * v14 + v9 * v4;
+    this->M8 = v11 * v14 + v10 * v4;
+    this->M12 = v13 * v14 + v12 * v4;
+    this->M32 = v6 * v5 + v7 * v4;
+    this->M36 = v9 * v5 + *(float *)&result * v4;
+    this->M40 = v10 * v5 + v11 * v4;
+    this->M44 = v12 * v5 + v13 * v4;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x5AEE50
+namespace gamemd {
+int E4Recv_5AEE50::sub_5AEE50(float a2)
+{
+{
+    double v2;
+    double v4;
+    double v5;
+    double v6;
+    int result;
+    float v8;
+    float v9;
+    float v10;
+    float v11;
+    float v12;
+    float v13;
+    float v14;
+    v2 = a2;
+    v14 = Math::SinCos(a2);
+    v4 = Math::ArcTan2(v2);
+    v10 = this->M4;
+    v5 = -v14;
+    v8 = this->M16;
+    v11 = this->M8;
+    v6 = *(void**)this;
+    v9 = this->M20;
+    v13 = this->M12;
+    result = this->M24;
+    v12 = this->M28;
+    *(void**)this = v8 * v5 + v6 * v4;
+    this->M4 = v9 * v5 + v10 * v4;
+    this->M8 = *(float *)&result * v5 + v11 * v4;
+    this->M12 = v12 * v5 + v13 * v4;
+    this->M16 = v8 * v4 + v6 * v14;
+    this->M20 = v9 * v4 + v10 * v14;
+    this->M24 = *(float *)&result * v4 + v11 * v14;
+    this->M28 = v12 * v4 + v13 * v14;
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x5AF000
 namespace gamemd {
 void E4Recv_5AF000::sub_5AF000(ObjectClass * aP1, ObjectClass * aP2)
@@ -3711,6 +3672,33 @@ void E4Recv_5AF000::sub_5AF000(ObjectClass * aP1, ObjectClass * aP2)
     v8 = this->M40;
     this->M36 = v8 * *(float *)&aP1 + v7 * *(float *)&aP2;
     this->M40 = v8 * *(float *)&aP2 - v7 * *(float *)&aP1;
+}
+}
+} // namespace gamemd
+
+// 0x5AF120
+namespace gamemd {
+void E4Recv_5AF120::sub_5AF120(float a2, float a3)
+{
+{
+    double v3;
+    double v4;
+    double v5;
+    double v6;
+    double v7;
+    double v8;
+    v3 = *(void**)this;
+    v4 = this->M8;
+    *(void**)this = v3 * a3 - v4 * a2;
+    this->M8 = v3 * a2 + v4 * a3;
+    v5 = this->M16;
+    v6 = this->M24;
+    this->M16 = v5 * a3 - v6 * a2;
+    this->M24 = v5 * a2 + v6 * a3;
+    v7 = this->M32;
+    v8 = this->M40;
+    this->M32 = v7 * a3 - v8 * a2;
+    this->M40 = v7 * a2 + v8 * a3;
 }
 }
 } // namespace gamemd
@@ -4012,6 +4000,18 @@ int sub_5AFED0()
     DataGlobal_ABEDE8 = 0;
     DataGlobal_ABEDEC = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5AFF50
+namespace gamemd {
+void E4Recv_5AFF50::sub_5AFF50()
+{
+{
+    *(void**)this = vt_MechLocomotionClass;
+    this->M4 = &vt_MechLocomotionClass;
+    LocomotionClass::Construct(this);
 }
 }
 } // namespace gamemd

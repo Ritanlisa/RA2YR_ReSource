@@ -1076,25 +1076,6 @@ unsigned int sub_4A4130()
 }
 } // namespace gamemd
 
-// 0x4A45C0
-namespace gamemd {
-int sub_4A45C0()
-{
-{
-    int v1[16];
-    int v2;
-    char Buffer[256];
-    if ( !g_lpDirectDraw7 )
-    return 0;
-    v1[0] = 316;
-    if ( g_lpDirectDraw7->lpVtbl->GetCaps(g_lpDirectDraw7, (LPDDCAPS)v1, 0) )
-    return 0;
-    sprintf(Buffer, DataGlobal_81FE6C, v2);
-    return v2;
-}
-}
-} // namespace gamemd
-
 // 0x4A4900
 namespace gamemd {
 unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, unsigned int a4, int a5)
@@ -1173,31 +1154,6 @@ LABEL_13:
   if ( Block && BYTE1(v18) ) /*0x4a4a79*/
     __3_YAXPAX_Z(Block); /*0x4a4a7c*/
   return v5; /*0x4a4a45*/
-}
-}
-} // namespace gamemd
-
-// 0x4A4E30
-namespace gamemd {
-unsigned int * E4Recv_4A4E30::sub_4A4E30(int a2, int a3)
-{
-{
-    this->M4 = 0;
-    this->M8 = a2;
-    this->M12 = 1;
-    this->M13 = 0;
-    *(void**)this = &vt_VectorClass_DDSURFACEDESC;
-    if ( a2 )
-  {
-    if ( a3 )
-    {
-    this->M4 = a3;
-    return this;
-    }
-    this->M4 = __2_YAPAXI_Z(4 * a2);
-    this->M13 = 1;
-  }
-    return this;
 }
 }
 } // namespace gamemd
@@ -1730,27 +1686,6 @@ int *__fastcall RenderTextLabelWordWrap(
 }
 } // namespace gamemd
 
-// 0x4A6500
-namespace gamemd {
-unsigned int * FillRectangle(IUnknown * aP0, IUnknown * aP1, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-{
-{
-    int v12;
-    int *v13;
-    int v14;
-    int v16;
-    v12 = Color::ConvertToRGB((unsigned char *)(a6 + 776), (int)&a6);
-    LOWORD(v16) = *(short *)v12;
-    BYTE2(v16) = *(char *)(v12 + 2);
-    v13 = RenderTextLabelWordWrap( &v16, (const wchar_t *)aP1, a3, (int *)a4, (int *)a5, ((unsigned char)v16 >> DataGlobal_89E138.__pad_14B0[6124] << DataGlobal_89E138.__pad_14B0[6120]) | (BYTE1(v16) >> DataGlobal_89E138.__pad_14B0[6140] << DataGlobal_89E138.__pad_14B0[6136]) | (BYTE2(v16) >> DataGlobal_89E138.__pad_14B0[6132] << DataGlobal_89E138.__pad_14B0[6128]), a7, a8, a9, (unsigned int *)a10);
-    aP0->field_0 = *v13;
-    v14 = v13[1];
-    aP0->field_4 = v14;
-    return &aP0->field_0;
-}
-}
-} // namespace gamemd
-
 // 0x4A65C0
 namespace gamemd {
 int * sub_4A65C0(int * a1, int a2, int a3, unsigned int * a4, int a5, short a6, int a7, int a8, int a9, int a10)
@@ -1921,40 +1856,6 @@ char *__thiscall sub_4A6840(char *this, HWND hWnd, int a3, int a4, int a5)
 LABEL_12:
     *this = 1; /*0x4a69e2*/
   return this; /*0x4a69e7*/
-}
-}
-} // namespace gamemd
-
-// 0x4A6C70
-namespace gamemd {
-int sub_4A6C70()
-{
-{
-    DataGlobal_8A020C = 0;
-    DataGlobal_8A0210 = 0;
-    DataGlobal_8A0214 = 1;
-    DataGlobal_8A0215 = 0;
-    DataGlobal_8A0208 = (int)&vt_DynamicVectorClass_DiskLaserClass;
-    DataGlobal_8A021C = 10;
-    DataGlobal_8A0218 = 0;
-    return atexit(sub_4A6CB0);
-}
-}
-} // namespace gamemd
-
-// 0x4A6CB0
-namespace gamemd {
-void sub_4A6CB0()
-{
-{
-    DataGlobal_8A0208 = (int)&vt_VectorClass_DiskLaserClass;
-    if ( DataGlobal_8A020C && DataGlobal_8A0215 )
-  {
-    __3_YAXPAX_Z(DataGlobal_8A020C);
-    DataGlobal_8A020C = 0;
-  }
-    DataGlobal_8A0215 = 0;
-    DataGlobal_8A0210 = 0;
 }
 }
 } // namespace gamemd
@@ -2170,83 +2071,6 @@ LABEL_12:
     }
   }
   return -1; /*0x4a8257*/
-}
-}
-} // namespace gamemd
-
-// 0x4A83D0
-namespace gamemd {
-bool sub_4A83D0(INIClass * aP0)
-{
-{
-    char Buffer[256];
-    sprintf(Buffer, &DataGlobal_81FFCC, aP0);
-    return MessageBoxA(0, Buffer, aHey, 1u) == 1;
-}
-}
-} // namespace gamemd
-
-// 0x4A8630
-namespace gamemd {
-int sub_4A8630()
-{
-{
-    int *v0;
-    int v1;
-    v0 = &DataGlobal_8A0368;
-    v1 = 5;
-    do
-  {
-    *(v0 - 1) = 0;
-    *v0 = 0;
-    *((char *)(v0) + 4) = 1;
-    *((char *)(v0) + 5) = 0;
-    *(v0 - 2) = &vt_VectorClass_ObjectClass;
-    *(v0 - 2) = &vt_DynamicVectorClass_ObjectClass;
-    v0[3] = 10;
-    v0[2] = 0;
-    *(v0 - 2) = &DataGlobal_7E6060;
-    v0 += 6;
-    --v1;
-  }
-    while ( v1 );
-    return atexit(sub_4A8680);
-}
-}
-} // namespace gamemd
-
-// 0x4A8680
-namespace gamemd {
-void sub_4A8680()
-{
-{
-    int v0;
-    int v1;
-    void *v2;
-    if ( (DataGlobal_8A03E1 & 1) == 0 )
-  {
-    DataGlobal_8A03E1 |= 1u;
-    v0 = 9044956;
-    v1 = 5;
-    do
-    {
-    v2 = *(void **)(v0 - 24);
-    v0 -= 24;
-    *(int *)(v0 - 4) = &vt_VectorClass_ObjectClass;
-    if ( v2 )
-      {
-    if ( *(char *)(v0 + 9) )
-        {
-    __3_YAXPAX_Z(v2);
-    *(int *)v0 = 0;
-        }
-      }
-    --v1;
-    *(char *)(v0 + 9) = 0;
-    *(int *)(v0 + 4) = 0;
-    }
-    while ( v1 );
-  }
 }
 }
 } // namespace gamemd
@@ -3869,6 +3693,25 @@ int sub_4A44F0()
 }
 } // namespace gamemd
 
+// 0x4A45C0
+namespace gamemd {
+int sub_4A45C0()
+{
+{
+    int v1[16];
+    int v2;
+    char Buffer[256];
+    if ( !g_lpDirectDraw7 )
+    return 0;
+    v1[0] = 316;
+    if ( g_lpDirectDraw7->lpVtbl->GetCaps(g_lpDirectDraw7, (LPDDCAPS)v1, 0) )
+    return 0;
+    sprintf(Buffer, DataGlobal_81FE6C, v2);
+    return v2;
+}
+}
+} // namespace gamemd
+
 // 0x4A4700
 namespace gamemd {
 char sub_4A4700()
@@ -3943,6 +3786,31 @@ int sub_4A48C0(unsigned int * a1, unsigned int * a2)
     if ( v2 >= v3 )
     return v3 < v2;
     return -1;
+}
+}
+} // namespace gamemd
+
+// 0x4A4E30
+namespace gamemd {
+unsigned int * E4Recv_4A4E30::sub_4A4E30(int a2, int a3)
+{
+{
+    this->M4 = 0;
+    this->M8 = a2;
+    this->M12 = 1;
+    this->M13 = 0;
+    *(void**)this = &vt_VectorClass_DDSURFACEDESC;
+    if ( a2 )
+  {
+    if ( a3 )
+    {
+    this->M4 = a3;
+    return this;
+    }
+    this->M4 = __2_YAPAXI_Z(4 * a2);
+    this->M13 = 1;
+  }
+    return this;
 }
 }
 } // namespace gamemd
@@ -4233,6 +4101,27 @@ int E4Recv_4A5E50::sub_4A5E50(int a2, AbstractClass * aP2, AbstractClass * aP3)
 }
 } // namespace gamemd
 
+// 0x4A6500
+namespace gamemd {
+unsigned int * FillRectangle(IUnknown * aP0, IUnknown * aP1, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+{
+{
+    int v12;
+    int *v13;
+    int v14;
+    int v16;
+    v12 = Color::ConvertToRGB((unsigned char *)(a6 + 776), (int)&a6);
+    LOWORD(v16) = *(short *)v12;
+    BYTE2(v16) = *(char *)(v12 + 2);
+    v13 = RenderTextLabelWordWrap( &v16, (const wchar_t *)aP1, a3, (int *)a4, (int *)a5, ((unsigned char)v16 >> DataGlobal_89E138.__pad_14B0[6124] << DataGlobal_89E138.__pad_14B0[6120]) | (BYTE1(v16) >> DataGlobal_89E138.__pad_14B0[6140] << DataGlobal_89E138.__pad_14B0[6136]) | (BYTE2(v16) >> DataGlobal_89E138.__pad_14B0[6132] << DataGlobal_89E138.__pad_14B0[6128]), a7, a8, a9, (unsigned int *)a10);
+    aP0->field_0 = *v13;
+    v14 = v13[1];
+    aP0->field_4 = v14;
+    return &aP0->field_0;
+}
+}
+} // namespace gamemd
+
 // 0x4A6820
 namespace gamemd {
 int sub_4A6820()
@@ -4409,11 +4298,57 @@ int sub_4A6C50()
 }
 } // namespace gamemd
 
+// 0x4A6C70
+namespace gamemd {
+int sub_4A6C70()
+{
+{
+    DataGlobal_8A020C = 0;
+    DataGlobal_8A0210 = 0;
+    DataGlobal_8A0214 = 1;
+    DataGlobal_8A0215 = 0;
+    DataGlobal_8A0208 = (int)&vt_DynamicVectorClass_DiskLaserClass;
+    DataGlobal_8A021C = 10;
+    DataGlobal_8A0218 = 0;
+    return atexit(sub_4A6CB0);
+}
+}
+} // namespace gamemd
+
+// 0x4A6CB0
+namespace gamemd {
+void sub_4A6CB0()
+{
+{
+    DataGlobal_8A0208 = (int)&vt_VectorClass_DiskLaserClass;
+    if ( DataGlobal_8A020C && DataGlobal_8A0215 )
+  {
+    __3_YAXPAX_Z(DataGlobal_8A020C);
+    DataGlobal_8A020C = 0;
+  }
+    DataGlobal_8A0215 = 0;
+    DataGlobal_8A0210 = 0;
+}
+}
+} // namespace gamemd
+
 // 0x4A80D0
 namespace gamemd {
 int AlwaysFindYRCD()
 {
 return 2;
+}
+} // namespace gamemd
+
+// 0x4A83D0
+namespace gamemd {
+bool sub_4A83D0(INIClass * aP0)
+{
+{
+    char Buffer[256];
+    sprintf(Buffer, &DataGlobal_81FFCC, aP0);
+    return MessageBoxA(0, Buffer, aHey, 1u) == 1;
+}
 }
 } // namespace gamemd
 
@@ -4582,6 +4517,71 @@ int sub_4A8610()
     DataGlobal_8A0720 = 128;
     DataGlobal_8A0724 = 128;
     return 128;
+}
+}
+} // namespace gamemd
+
+// 0x4A8630
+namespace gamemd {
+int sub_4A8630()
+{
+{
+    int *v0;
+    int v1;
+    v0 = &DataGlobal_8A0368;
+    v1 = 5;
+    do
+  {
+    *(v0 - 1) = 0;
+    *v0 = 0;
+    *((char *)(v0) + 4) = 1;
+    *((char *)(v0) + 5) = 0;
+    *(v0 - 2) = &vt_VectorClass_ObjectClass;
+    *(v0 - 2) = &vt_DynamicVectorClass_ObjectClass;
+    v0[3] = 10;
+    v0[2] = 0;
+    *(v0 - 2) = &DataGlobal_7E6060;
+    v0 += 6;
+    --v1;
+  }
+    while ( v1 );
+    return atexit(sub_4A8680);
+}
+}
+} // namespace gamemd
+
+// 0x4A8680
+namespace gamemd {
+void sub_4A8680()
+{
+{
+    int v0;
+    int v1;
+    void *v2;
+    if ( (DataGlobal_8A03E1 & 1) == 0 )
+  {
+    DataGlobal_8A03E1 |= 1u;
+    v0 = 9044956;
+    v1 = 5;
+    do
+    {
+    v2 = *(void **)(v0 - 24);
+    v0 -= 24;
+    *(int *)(v0 - 4) = &vt_VectorClass_ObjectClass;
+    if ( v2 )
+      {
+    if ( *(char *)(v0 + 9) )
+        {
+    __3_YAXPAX_Z(v2);
+    *(int *)v0 = 0;
+        }
+      }
+    --v1;
+    *(char *)(v0 + 9) = 0;
+    *(int *)(v0 + 4) = 0;
+    }
+    while ( v1 );
+  }
 }
 }
 } // namespace gamemd

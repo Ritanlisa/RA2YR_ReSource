@@ -497,37 +497,6 @@ LABEL_20:
 } // namespace game
 } // namespace ra2
 
-// 0x6B80B0
-namespace ra2 {
-namespace game {
-int SpawnManagerClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    int v4;
-    int i;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-  {
-    v4 = *a1;
-    aP2 = *(int *)&aP0->UINameLabel[11];
-    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
-    if ( result >= 0 )
-    {
-    for ( i = 0; i < aP2; ++i )
-      {
-    result = (*(int (__stdcall **)(int *, int, int, int))(*a1 + 16))( a1, *(int *)(*(int *)&aP0->zero_3C + 4 * i), 24, 0);
-    if ( result < 0 )
-    break;
-      }
-    }
-  }
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x6B8140
 namespace ra2 {
 namespace game {
@@ -597,19 +566,6 @@ void __thiscall SpawnManagerClass_25_::_vt03(int this)
   }
   *(_BYTE *)(this + 13) = 0; /*0x6b8181*/
   this->SpawnManagerClass_25_field_0x8 = 0; /*0x6b8184*/
-}
-}
-} // namespace gamemd
-
-// 0x6B8190
-namespace gamemd {
-unsigned int SpawnManagerClass_25::LoadState(int a2)
-{
-{
-    if ( (unsigned char)this->SpawnManagerClass_25_field_0xC )
-    return (unsigned int)(a2 - this->SpawnManagerClass_25_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -776,6 +732,37 @@ int SpawnManagerClass::ddtor(int a1, unsigned int * a2)
 } // namespace game
 } // namespace ra2
 
+// 0x6B80B0
+namespace ra2 {
+namespace game {
+int SpawnManagerClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    int v4;
+    int i;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+  {
+    v4 = *a1;
+    aP2 = *(int *)&aP0->UINameLabel[11];
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
+    if ( result >= 0 )
+    {
+    for ( i = 0; i < aP2; ++i )
+      {
+    result = (*(int (__stdcall **)(int *, int, int, int))(*a1 + 16))( a1, *(int *)(*(int *)&aP0->zero_3C + 4 * i), 24, 0);
+    if ( result < 0 )
+    break;
+      }
+    }
+  }
+    return result;
+}
+}
+} // namespace game
+} // namespace ra2
+
 // 0x6B8120
 namespace ra2 {
 namespace game {
@@ -795,3 +782,16 @@ return 65;
 }
 } // namespace game
 } // namespace ra2
+
+// 0x6B8190
+namespace gamemd {
+unsigned int SpawnManagerClass_25::LoadState(int a2)
+{
+{
+    if ( (unsigned char)this->SpawnManagerClass_25_field_0xC )
+    return (unsigned int)(a2 - this->SpawnManagerClass_25_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd

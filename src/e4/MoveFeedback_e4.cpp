@@ -99,17 +99,6 @@ void __thiscall MoveFeedback::sub_40BE50(int this)
 }
 }
 
-// 0x40BE80
-unsigned int MoveFeedback::GetIndex2(int a2)
-{
-{
-    if ( (unsigned char)this->MoveFeedback_field_0x0C )
-    return (unsigned int)(a2 - this->MoveFeedback_field_0x04) >> 2;
-    else
-    return 0;
-}
-}
-
 // 0x40C030
 char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
 {
@@ -323,5 +312,16 @@ char __thiscall MoveFeedback_Process(void *this)
     LOBYTE(Height) = (*(int (__thiscall **)(_DWORD *, int))*v3)(v3, 1); /*0x732933*/
   g_MoveFeedback = v1; /*0x732937*/
   return Height; /*0x732935*/
+}
+}
+
+// 0x40BE80
+unsigned int MoveFeedback::GetIndex2(int a2)
+{
+{
+    if ( (unsigned char)this->MoveFeedback_field_0x0C )
+    return (unsigned int)(a2 - this->MoveFeedback_field_0x04) >> 2;
+    else
+    return 0;
 }
 }

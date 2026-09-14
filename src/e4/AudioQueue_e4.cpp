@@ -39,53 +39,6 @@ _DWORD *__thiscall sub_402AF0(int this)
 }
 } // namespace gamemd
 
-// 0x403530
-namespace gamemd {
-int AudioQueue::PreallocateChannels(unsigned int * a1, int a2)
-{
-{
-    int v4;
-    int *v5;
-    int v6;
-    v4 = 0;
-    do
-  {
-    if ( *((int*)(a1) + 60) >= *((int*)(a1) + 61) )
-    break;
-    v5 = AudioController::Constructor(a1);
-    if ( !v5 )
-    break;
-    v5[43] = (int)a1;
-    ++*((int*)(a1) + 60);
-    ++*((int*)(a1) + 65);
-    InsertAfterDListNode((int)(a1 + 62), v5);
-    v6 = *((int*)(a1) + 65) - 1;
-    *((int*)(a1) + 65) = v6;
-    if ( v6 < 0 )
-    *((int*)(a1) + 65) = 0;
-    ++v4;
-    --a2;
-  }
-    while ( a2 );
-    return v4;
-}
-}
-} // namespace gamemd
-
-// 0x4035D0
-namespace gamemd {
-int * AudioQueue::IteratorNext()
-{
-{
-    int *v2;
-    v2 = *(void**)this;
-    if ( v2 )
-    *(void**)this = (int *)AudioQueue::GetNextAlt(v2);
-    return *this;
-}
-}
-} // namespace gamemd
-
 // 0x4035F0
 namespace gamemd {
 int AudioQueue::FindBestChannel(int a1, int a2)
@@ -195,201 +148,6 @@ int (__thiscall *__fastcall AudioQueue::StopAllVoices(int a1, int a2))(int)
     while ( v4 ); /*0x403766*/
   }
   return result; /*0x403768*/
-}
-}
-} // namespace gamemd
-
-// 0x403770
-namespace gamemd {
-int AudioQueue::DeactivateAllMatching(int a1, int a2)
-{
-{
-    int result;
-    int i;
-    result = AudioQueue::GetNext((int *)(a1 + 248));
-    for ( i = result; result; i = result )
-  {
-    if ( (*(char *)(i + 164) & 1) != 0 && (a2 == -1 || *(int *)(i + 12) == a2) )
-    result = AudioChannel::DeactivatePlay((int *)i);
-    if ( !i )
-    break;
-    result = AudioQueue::GetNextAlt((int *)i);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4073C0
-namespace gamemd {
-int AudioQueue::GetNext()
-{
-{
-    int result;
-    if ( !this )
-    return 0;
-    result = *(void**)this;
-    if ( *(void**)this )
-  {
-    if ( result == *(int *)(result + 8) )
-    return 0;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4073E0
-namespace gamemd {
-int AudioQueue::GetNextAlt()
-{
-{
-    int result;
-    if ( !this )
-    return 0;
-    result = *(void**)this;
-    if ( *(void**)this )
-  {
-    if ( result == *(int *)(result + 8) )
-    return 0;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x407B40
-namespace gamemd {
-int AudioQueue::IsEmpty(int a1, int a2)
-{
-{
-    int result;
-    result = *(int *)(a1 + 20);
-    *(int *)(result + 148) = a2;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x407B50
-namespace gamemd {
-int AudioQueue::IsNotEmpty(int a1, int a2)
-{
-{
-    int result;
-    result = *(int *)(a1 + 20);
-    *(int *)(result + 156) = a2;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4081A0
-namespace gamemd {
-int AudioQueue::HaltVoices()
-{
-{
-    int result;
-    int *i;
-    result = DataGlobal_87E81C;
-    if ( DataGlobal_87E81C )
-  {
-    result = AudioQueue::GetNext(DataGlobal_87E810);
-    for ( i = (int *)result; result; i = (int *)result )
-    {
-    if ( !i[34] )
-      {
-    if ( i[5] )
-        {
-    EnterCriticalSection(&CriticalSection);
-    Voice::Stop(i[5]);
-    LeaveCriticalSection(&CriticalSection);
-        }
-      }
-    result = AudioQueue::GetNextAlt(i);
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x408200
-namespace gamemd {
-int * AudioQueue::IncrementPriority()
-{
-{
-    int *result;
-    result = (int *)DataGlobal_87E81C;
-    if ( DataGlobal_87E81C )
-  {
-    for ( result = (int *)AudioQueue::GetNext(DataGlobal_87E810); result; result = (int *)AudioQueue::GetNextAlt(result) )
-    ++result[34];
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x408270
-namespace gamemd {
-int AudioQueue::ReleaseBuffers()
-{
-{
-    int result;
-    int *i;
-    int v2;
-    result = DataGlobal_87E81C;
-    if ( DataGlobal_87E81C )
-  {
-    result = AudioQueue::GetNext(DataGlobal_87E810);
-    for ( i = (int *)result; result; i = (int *)result )
-    {
-    if ( !i[32] && i[5] )
-      {
-    EnterCriticalSection(&CriticalSection);
-    AudioChannel::DeactivatePlay(i[5]);
-    v2 = i[3];
-    if ( (v2 & 1) != 0 )
-        {
-    LOBYTE(v2) = v2 & 0xFC | 2;
-    i[3] = v2;
-        }
-    LeaveCriticalSection(&CriticalSection);
-      }
-    ++i[32];
-    result = AudioQueue::GetNextAlt(i);
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x750FA0
-namespace gamemd {
-int AudioQueue::DrainAll()
-{
-{
-    int result;
-    int *v1;
-    int Next_Alt;
-    result = AudioQueue::GetNext(DataGlobal_B1D320);
-    v1 = (int *)result;
-    if ( result )
-  {
-    do
-    {
-    Next_Alt = AudioQueue::GetNextAlt(v1);
-    AudioController::Stop(v1 + 3);
-    LinkedList::Init((int **)v1);
-    result = PushFrontLinkedListAlt(DataGlobal_B1D3A4, (int)v1);
-    v1 = (int *)Next_Alt;
-    --DataGlobal_B1D3A8;
-    }
-    while ( Next_Alt );
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -797,6 +555,248 @@ __int16 __thiscall AudioQueue::WriteBuffer(
   v19 = (*(int (__thiscall **)(int, int))(*(_DWORD *)this + 56))(this, v14); /*0x7b24af*/
   SendMessageA((HWND)g_hWnd, v19, 0, 2); /*0x7b24b9*/
   return EventQueue::Process(MEMORY[0x87F770]); /*0x7b24ca*/
+}
+}
+} // namespace gamemd
+
+// 0x403530
+namespace gamemd {
+int AudioQueue::PreallocateChannels(unsigned int * a1, int a2)
+{
+{
+    int v4;
+    int *v5;
+    int v6;
+    v4 = 0;
+    do
+  {
+    if ( *((int*)(a1) + 60) >= *((int*)(a1) + 61) )
+    break;
+    v5 = AudioController::Constructor(a1);
+    if ( !v5 )
+    break;
+    v5[43] = (int)a1;
+    ++*((int*)(a1) + 60);
+    ++*((int*)(a1) + 65);
+    InsertAfterDListNode((int)(a1 + 62), v5);
+    v6 = *((int*)(a1) + 65) - 1;
+    *((int*)(a1) + 65) = v6;
+    if ( v6 < 0 )
+    *((int*)(a1) + 65) = 0;
+    ++v4;
+    --a2;
+  }
+    while ( a2 );
+    return v4;
+}
+}
+} // namespace gamemd
+
+// 0x4035D0
+namespace gamemd {
+int * AudioQueue::IteratorNext()
+{
+{
+    int *v2;
+    v2 = *(void**)this;
+    if ( v2 )
+    *(void**)this = (int *)AudioQueue::GetNextAlt(v2);
+    return *this;
+}
+}
+} // namespace gamemd
+
+// 0x403770
+namespace gamemd {
+int AudioQueue::DeactivateAllMatching(int a1, int a2)
+{
+{
+    int result;
+    int i;
+    result = AudioQueue::GetNext((int *)(a1 + 248));
+    for ( i = result; result; i = result )
+  {
+    if ( (*(char *)(i + 164) & 1) != 0 && (a2 == -1 || *(int *)(i + 12) == a2) )
+    result = AudioChannel::DeactivatePlay((int *)i);
+    if ( !i )
+    break;
+    result = AudioQueue::GetNextAlt((int *)i);
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4073C0
+namespace gamemd {
+int AudioQueue::GetNext()
+{
+{
+    int result;
+    if ( !this )
+    return 0;
+    result = *(void**)this;
+    if ( *(void**)this )
+  {
+    if ( result == *(int *)(result + 8) )
+    return 0;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4073E0
+namespace gamemd {
+int AudioQueue::GetNextAlt()
+{
+{
+    int result;
+    if ( !this )
+    return 0;
+    result = *(void**)this;
+    if ( *(void**)this )
+  {
+    if ( result == *(int *)(result + 8) )
+    return 0;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x407B40
+namespace gamemd {
+int AudioQueue::IsEmpty(int a1, int a2)
+{
+{
+    int result;
+    result = *(int *)(a1 + 20);
+    *(int *)(result + 148) = a2;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x407B50
+namespace gamemd {
+int AudioQueue::IsNotEmpty(int a1, int a2)
+{
+{
+    int result;
+    result = *(int *)(a1 + 20);
+    *(int *)(result + 156) = a2;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4081A0
+namespace gamemd {
+int AudioQueue::HaltVoices()
+{
+{
+    int result;
+    int *i;
+    result = DataGlobal_87E81C;
+    if ( DataGlobal_87E81C )
+  {
+    result = AudioQueue::GetNext(DataGlobal_87E810);
+    for ( i = (int *)result; result; i = (int *)result )
+    {
+    if ( !i[34] )
+      {
+    if ( i[5] )
+        {
+    EnterCriticalSection(&CriticalSection);
+    Voice::Stop(i[5]);
+    LeaveCriticalSection(&CriticalSection);
+        }
+      }
+    result = AudioQueue::GetNextAlt(i);
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x408200
+namespace gamemd {
+int * AudioQueue::IncrementPriority()
+{
+{
+    int *result;
+    result = (int *)DataGlobal_87E81C;
+    if ( DataGlobal_87E81C )
+  {
+    for ( result = (int *)AudioQueue::GetNext(DataGlobal_87E810); result; result = (int *)AudioQueue::GetNextAlt(result) )
+    ++result[34];
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x408270
+namespace gamemd {
+int AudioQueue::ReleaseBuffers()
+{
+{
+    int result;
+    int *i;
+    int v2;
+    result = DataGlobal_87E81C;
+    if ( DataGlobal_87E81C )
+  {
+    result = AudioQueue::GetNext(DataGlobal_87E810);
+    for ( i = (int *)result; result; i = (int *)result )
+    {
+    if ( !i[32] && i[5] )
+      {
+    EnterCriticalSection(&CriticalSection);
+    AudioChannel::DeactivatePlay(i[5]);
+    v2 = i[3];
+    if ( (v2 & 1) != 0 )
+        {
+    LOBYTE(v2) = v2 & 0xFC | 2;
+    i[3] = v2;
+        }
+    LeaveCriticalSection(&CriticalSection);
+      }
+    ++i[32];
+    result = AudioQueue::GetNextAlt(i);
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x750FA0
+namespace gamemd {
+int AudioQueue::DrainAll()
+{
+{
+    int result;
+    int *v1;
+    int Next_Alt;
+    result = AudioQueue::GetNext(DataGlobal_B1D320);
+    v1 = (int *)result;
+    if ( result )
+  {
+    do
+    {
+    Next_Alt = AudioQueue::GetNextAlt(v1);
+    AudioController::Stop(v1 + 3);
+    LinkedList::Init((int **)v1);
+    result = PushFrontLinkedListAlt(DataGlobal_B1D3A4, (int)v1);
+    v1 = (int *)Next_Alt;
+    --DataGlobal_B1D3A8;
+    }
+    while ( Next_Alt );
+  }
+    return result;
 }
 }
 } // namespace gamemd

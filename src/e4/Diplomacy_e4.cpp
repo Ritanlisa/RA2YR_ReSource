@@ -2,16 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x603DB0
-namespace gamemd {
-LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
-{
-{
-    return SendMessageA(hWnd, 0x4E5u, 0, a2);
-}
-}
-} // namespace gamemd
-
 // 0x656580
 char * Diplomacy::GetField(BuildingTypeClass * aP1)
 {
@@ -290,3 +280,13 @@ LABEL_60:
   return 0; /*0x658178*/
 }
 }
+
+// 0x603DB0
+namespace gamemd {
+LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
+{
+{
+    return SendMessageA(hWnd, 0x4E5u, 0, a2);
+}
+}
+} // namespace gamemd

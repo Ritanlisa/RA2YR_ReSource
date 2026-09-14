@@ -2,31 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x5E8D40
-namespace gamemd {
-int sub_5E8D40()
-{
-{
-    const wchar_t *v1;
-    int v2;
-    const wchar_t **v3;
-    if ( !Game_PlayerCount )
-    return -1;
-    v1 = *(const wchar_t **)Game_PlayerInfoArray;
-    v2 = 0;
-    v3 = (const wchar_t **)&g_NetworkPlayerName;
-    while ( !*v3 || _wcsicmp(v1, *v3) )
-  {
-    ++v3;
-    ++v2;
-    if ( (int)v3 >= (int)&g_PlayerNameListEnd )
-    return -1;
-  }
-    return v2;
-}
-}
-} // namespace gamemd
-
 // 0x5EA9B0
 namespace gamemd {
 int sub_5EA9B0(int a1)
@@ -127,6 +102,31 @@ int __fastcall sub_5EAA70(int a1)
     return -2; /*0x5eaac2*/
   }
   return SessionClass::GetOption2(*(&MEMORY[0xA8DA90] + a1)); /*0x5eaa9a*/
+}
+}
+} // namespace gamemd
+
+// 0x5E8D40
+namespace gamemd {
+int sub_5E8D40()
+{
+{
+    const wchar_t *v1;
+    int v2;
+    const wchar_t **v3;
+    if ( !Game_PlayerCount )
+    return -1;
+    v1 = *(const wchar_t **)Game_PlayerInfoArray;
+    v2 = 0;
+    v3 = (const wchar_t **)&g_NetworkPlayerName;
+    while ( !*v3 || _wcsicmp(v1, *v3) )
+  {
+    ++v3;
+    ++v2;
+    if ( (int)v3 >= (int)&g_PlayerNameListEnd )
+    return -1;
+  }
+    return v2;
 }
 }
 } // namespace gamemd

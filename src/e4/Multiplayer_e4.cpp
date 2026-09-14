@@ -5,8 +5,10 @@
 // 0x53F1F0
 void Multiplayer::Screen()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void __thiscall Multiplayer_Screen(void *this)
 {
-    DataGlobal_828140 = (int)this;
+  dword_828140 = (int)this; /*0x53f1f0*/
 }
 }
 

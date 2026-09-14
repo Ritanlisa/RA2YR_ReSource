@@ -237,34 +237,6 @@ float *__thiscall Voxel_RenderFrame(float *this)
 }
 } // namespace gamemd
 
-// 0x754C00
-namespace gamemd {
-int Voxel::SetProjectionAngle(float a1)
-{
-{
-    int *v1;
-    float v3[3];
-    float v4[3];
-    float v5[12];
-    Matrix3x4::Identity(v5);
-    DataGlobal_88746C = a1;
-    Matrix3D::RotateZ(v5, a1);
-    v3[0] = -0.70710599;
-    v3[1] = -0.70710599;
-    v3[2] = 0.0;
-    v1 = (int *)TransformMatrix3x4Point(v4, v5, v3);
-    DataGlobal_887470 = *v1;
-    DataGlobal_887474 = v1[1];
-    DataGlobal_887478 = v1[2];
-    DataGlobal_887424 = 0;
-    v3[0] = *(float *)&DataGlobal_887470 * -6.0;
-    DataGlobal_887428 = 0;
-    DataGlobal_887420 = LODWORD(v3[0]);
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x754CB0
 namespace gamemd {
 int Voxel::Projection_Setup()
@@ -1356,62 +1328,6 @@ int __thiscall Voxel::BlendShadowColor(_DWORD *this, int a2, WaveClass *aP2, int
       | result
       | (v10 >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672]);
   return result; /*0x75ef1c*/
-}
-}
-} // namespace gamemd
-
-// 0x75F020
-namespace gamemd {
-int Voxel::InitDistanceTable()
-{
-{
-    int v0;
-    short *v1;
-    int i;
-    double v3;
-    short *v4;
-    double v5;
-    short *v6;
-    double v7;
-    int *v8;
-    int result;
-    int v10;
-    int v11;
-    DataGlobal_B725CC = 1;
-    v0 = 0;
-    v1 = DataGlobal_B4669C;
-    do
-  {
-    for ( i = 0; i < 300; ++i )
-    {
-    v3 = Math::Sqrt((double)(v0 * v0 + i * i));
-    *v1++ = Math::RoundToInt(v3);
-    }
-    ++v0;
-  }
-    while ( (int)v1 < (int)&DataGlobal_B725BC );
-    v4 = DataGlobal_B46254;
-    v10 = 0;
-    do
-  {
-    v5 = Math::SinCos((double)v10 * 0.125);
-    *v4++ = Math::RoundToInt(v5 * 12.0 + 0.49);
-    ++v10;
-  }
-    while ( (int)v4 < (int)DataGlobal_B4663C );
-    v11 = 0;
-    v6 = DataGlobal_B45E68;
-    do
-  {
-    v7 = Math::SinCos((double)v11 * 0.1);
-    *v6++ = Math::RoundToInt(v7 * 12.0 + 0.49);
-    ++v11;
-  }
-    while ( (int)v6 < (int)&DataGlobal_B46248 );
-    v8 = DataGlobal_B46648;
-    for ( result = 110; result < 214; result += 8 )
-    *v8++ = result;
-    return result;
 }
 }
 } // namespace gamemd
@@ -3581,6 +3497,90 @@ int __cdecl Voxel_FacePixelBuffer3(int *a1)
   }
   while ( BYTE1(v3) ); /*0x7dfc94*/
   return result; /*0x7dfc98*/
+}
+}
+} // namespace gamemd
+
+// 0x754C00
+namespace gamemd {
+int Voxel::SetProjectionAngle(float a1)
+{
+{
+    int *v1;
+    float v3[3];
+    float v4[3];
+    float v5[12];
+    Matrix3x4::Identity(v5);
+    DataGlobal_88746C = a1;
+    Matrix3D::RotateZ(v5, a1);
+    v3[0] = -0.70710599;
+    v3[1] = -0.70710599;
+    v3[2] = 0.0;
+    v1 = (int *)TransformMatrix3x4Point(v4, v5, v3);
+    DataGlobal_887470 = *v1;
+    DataGlobal_887474 = v1[1];
+    DataGlobal_887478 = v1[2];
+    DataGlobal_887424 = 0;
+    v3[0] = *(float *)&DataGlobal_887470 * -6.0;
+    DataGlobal_887428 = 0;
+    DataGlobal_887420 = LODWORD(v3[0]);
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x75F020
+namespace gamemd {
+int Voxel::InitDistanceTable()
+{
+{
+    int v0;
+    short *v1;
+    int i;
+    double v3;
+    short *v4;
+    double v5;
+    short *v6;
+    double v7;
+    int *v8;
+    int result;
+    int v10;
+    int v11;
+    DataGlobal_B725CC = 1;
+    v0 = 0;
+    v1 = DataGlobal_B4669C;
+    do
+  {
+    for ( i = 0; i < 300; ++i )
+    {
+    v3 = Math::Sqrt((double)(v0 * v0 + i * i));
+    *v1++ = Math::RoundToInt(v3);
+    }
+    ++v0;
+  }
+    while ( (int)v1 < (int)&DataGlobal_B725BC );
+    v4 = DataGlobal_B46254;
+    v10 = 0;
+    do
+  {
+    v5 = Math::SinCos((double)v10 * 0.125);
+    *v4++ = Math::RoundToInt(v5 * 12.0 + 0.49);
+    ++v10;
+  }
+    while ( (int)v4 < (int)DataGlobal_B4663C );
+    v11 = 0;
+    v6 = DataGlobal_B45E68;
+    do
+  {
+    v7 = Math::SinCos((double)v11 * 0.1);
+    *v6++ = Math::RoundToInt(v7 * 12.0 + 0.49);
+    ++v11;
+  }
+    while ( (int)v6 < (int)&DataGlobal_B46248 );
+    v8 = DataGlobal_B46648;
+    for ( result = 110; result < 214; result += 8 )
+    *v8++ = result;
+    return result;
 }
 }
 } // namespace gamemd

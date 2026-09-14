@@ -43,17 +43,6 @@ int __thiscall RadarHashVector::_vt04(int this, _DWORD *a2)
 }
 }
 
-// 0x658AF0
-unsigned int RadarHashVector::Write(int a2)
-{
-{
-    if ( (unsigned char)this->RadarHashVector_field_0x0C )
-    return (unsigned int)(a2 - this->RadarHashVector_field_0x04) >> 4;
-    else
-    return 0;
-}
-}
-
 // 0x658B10
 char RadarHashVector::ComputeHashIndex(int a2, char * a3)
 {
@@ -345,5 +334,16 @@ _DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapCl
   *(this + 5) = 10; /*0x658e64*/
   *(this + 4) = 0; /*0x658e6b*/
   return this; /*0x658e70*/
+}
+}
+
+// 0x658AF0
+unsigned int RadarHashVector::Write(int a2)
+{
+{
+    if ( (unsigned char)this->RadarHashVector_field_0x0C )
+    return (unsigned int)(a2 - this->RadarHashVector_field_0x04) >> 4;
+    else
+    return 0;
 }
 }

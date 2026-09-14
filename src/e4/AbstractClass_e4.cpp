@@ -18,34 +18,6 @@ void __thiscall AbstractClass::DTOR(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x410380
-namespace gamemd {
-int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
-{
-{
-    AbstractClass *v2;
-    int result;
-    int referenceCount;
-    int v5;
-    int v6;
-    v2 = aP1;
-    if ( !aP1 )
-    return -2147467261;
-    result = (*(int (__stdcall **)(AbstractClass *, AbstractClass **, int, int))(*(int *)aP1->__pad_0 + 12))( aP1, &aP1, 4, 0);
-    if ( result >= 0 )
-  {
-    SwizzleManagerClass::Here_I_Am((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], aP1, aP0);
-    referenceCount = aP0->referenceCount;
-    v5 = *(int *)v2->__pad_0;
-    v6 = (*(int (__thiscall **)(AbstractClass *, int))(*(int *)aP0->__pad_0 + 48))(aP0, 0);
-    result = (*(int (__stdcall **)(AbstractClass *, AbstractClass *, int))(v5 + 12))(v2, aP0, v6);
-    aP0->referenceCount = referenceCount;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x4115D0
 namespace gamemd {
 Surface * AbstractClass::getObjectValue(char a2)
@@ -57,16 +29,6 @@ Surface *__thiscall AbstractClass::getObjectValue(std::locale::facet *this, char
   if ( (a2 & 1) != 0 ) /*0x4115df*/
     __3_YAXPAX_Z(this); /*0x4115e2*/
   return (Surface *)this; /*0x4115ec*/
-}
-}
-} // namespace gamemd
-
-// 0x425520
-namespace gamemd {
-unsigned int AbstractClass::updateLayer()
-{
-{
-    return this->infantrySelfHeal;
 }
 }
 } // namespace gamemd
@@ -265,16 +227,6 @@ RLEBlitter *__thiscall AbstractClass::clearOverlayFlags(std::locale::facet *this
   if ( (a2 & 1) != 0 ) /*0x499daf*/
     __3_YAXPAX_Z(this); /*0x499db2*/
   return (RLEBlitter *)this; /*0x499dbc*/
-}
-}
-} // namespace gamemd
-
-// 0x4CA160
-namespace gamemd {
-int AbstractClass::GetType()
-{
-{
-    return this->repairStationsCapacity;
 }
 }
 } // namespace gamemd
@@ -490,16 +442,6 @@ void ***__userpurge RemoveObjectFromHouse@<eax>(_DWORD *a1@<ecx>, int a2@<edi>, 
 }
 } // namespace gamemd
 
-// 0x50E370
-namespace gamemd {
-int AbstractClass::checkPassability()
-{
-{
-    return this->nextObject;
-}
-}
-} // namespace gamemd
-
 // 0x5B3A60
 namespace gamemd {
 MissionClass * AbstractClass::getWeaponRange(char a2)
@@ -638,16 +580,6 @@ _DWORD *__thiscall AbstractClass::updateShroudMap(InitializerBase_MultiplayerGam
   if ( (a2 & 1) != 0 ) /*0x5d809f*/
     __3_YAXPAX_Z(this); /*0x5d80a2*/
   return &this->vfptr; /*0x5d80ac*/
-}
-}
-} // namespace gamemd
-
-// 0x65C540
-namespace gamemd {
-void AbstractClass::resetTeamState()
-{
-{
-    this->referenceCount = 0;
 }
 }
 } // namespace gamemd
@@ -982,6 +914,34 @@ int AbstractClass::SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP1,
 }
 } // namespace gamemd
 
+// 0x410380
+namespace gamemd {
+int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
+{
+{
+    AbstractClass *v2;
+    int result;
+    int referenceCount;
+    int v5;
+    int v6;
+    v2 = aP1;
+    if ( !aP1 )
+    return -2147467261;
+    result = (*(int (__stdcall **)(AbstractClass *, AbstractClass **, int, int))(*(int *)aP1->__pad_0 + 12))( aP1, &aP1, 4, 0);
+    if ( result >= 0 )
+  {
+    SwizzleManagerClass::Here_I_Am((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], aP1, aP0);
+    referenceCount = aP0->referenceCount;
+    v5 = *(int *)v2->__pad_0;
+    v6 = (*(int (__thiscall **)(AbstractClass *, int))(*(int *)aP0->__pad_0 + 48))(aP0, 0);
+    result = (*(int (__stdcall **)(AbstractClass *, AbstractClass *, int))(v5 + 12))(v2, aP0, v6);
+    aP0->referenceCount = referenceCount;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x410440
 namespace gamemd {
 int AbstractClass::computeDistance()
@@ -1097,6 +1057,16 @@ int AbstractClass::GetField9()
 {
 {
     return g_RulesClass_Instance->PoseDir;
+}
+}
+} // namespace gamemd
+
+// 0x425520
+namespace gamemd {
+unsigned int AbstractClass::updateLayer()
+{
+{
+    return this->infantrySelfHeal;
 }
 }
 } // namespace gamemd
@@ -1444,6 +1414,16 @@ std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 }
 } // namespace gamemd
 
+// 0x4CA160
+namespace gamemd {
+int AbstractClass::GetType()
+{
+{
+    return this->repairStationsCapacity;
+}
+}
+} // namespace gamemd
+
 // 0x4DA2B0
 namespace gamemd {
 int AbstractClass_COMStub_143()
@@ -1498,6 +1478,16 @@ namespace gamemd {
 int AbstractClass::computeMovementCost()
 {
 return 13;
+}
+} // namespace gamemd
+
+// 0x50E370
+namespace gamemd {
+int AbstractClass::checkPassability()
+{
+{
+    return this->nextObject;
+}
 }
 } // namespace gamemd
 
@@ -1988,6 +1978,16 @@ int AbstractClass::checkTeamObjective()
 {
 {
     return this->field_10;
+}
+}
+} // namespace gamemd
+
+// 0x65C540
+namespace gamemd {
+void AbstractClass::resetTeamState()
+{
+{
+    this->referenceCount = 0;
 }
 }
 } // namespace gamemd

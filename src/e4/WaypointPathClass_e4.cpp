@@ -79,18 +79,6 @@ int __thiscall WaypointPathClass::Construct(int this, WaypointClass *aP1)
 }
 } // namespace gamemd
 
-// 0x763C00
-namespace gamemd {
-int WaypointPathClass::PowerDrainUpdate(int a2)
-{
-{
-    AbstractClass::ProcessPower((#378 *)this);
-    Power::TimerProcess(this->idxArray);
-    return Power::TimerProcess(this->waypoints.Count);
-}
-}
-} // namespace gamemd
-
 // 0x763C70
 namespace gamemd {
 int WaypointPathClass::LoadState(unsigned int * a1, int a2)
@@ -179,46 +167,6 @@ int __stdcall WaypointPathClass::_vt05(_DWORD *a1, int a2)
     }
   }
   return result; /*0x763d7a*/
-}
-}
-} // namespace gamemd
-
-// 0x763D90
-namespace gamemd {
-int WaypointPathClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    int v4;
-    int v5;
-    int i;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-  {
-    v4 = *a1;
-    aP2 = *(int *)&aP0->BarrelVoxel[20];
-    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
-    if ( result >= 0 )
-    {
-    v5 = 0;
-    if ( aP2 <= 0 )
-      {
-    return 0;
-      }
-    else
-      {
-    for ( i = 0; ; i += 12 )
-        {
-    result = (*(int (__stdcall **)(int *, int, int, int))(*a1 + 16))( a1, *(int *)&aP0->BarrelVoxel[8] + i, 12, 0);
-    if ( result < 0 )
-    break;
-    if ( ++v5 >= aP2 )
-    return 0;
-        }
-      }
-    }
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -342,6 +290,18 @@ _DWORD *__thiscall sub_764760(_DWORD *this, int a2, _DWORD *a3)
 }
 } // namespace gamemd
 
+// 0x763C00
+namespace gamemd {
+int WaypointPathClass::PowerDrainUpdate(int a2)
+{
+{
+    AbstractClass::ProcessPower((#378 *)this);
+    Power::TimerProcess(this->idxArray);
+    return Power::TimerProcess(this->waypoints.Count);
+}
+}
+} // namespace gamemd
+
 // 0x763C30
 namespace gamemd {
 int WaypointPathClass::ddtor(int a1, unsigned int * a2)
@@ -353,6 +313,46 @@ int WaypointPathClass::ddtor(int a1, unsigned int * a2)
   a2[2] = 1610642049;
   a2[3] = -1252326136;
   return 0;
+}
+} // namespace gamemd
+
+// 0x763D90
+namespace gamemd {
+int WaypointPathClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    int v4;
+    int v5;
+    int i;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+  {
+    v4 = *a1;
+    aP2 = *(int *)&aP0->BarrelVoxel[20];
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
+    if ( result >= 0 )
+    {
+    v5 = 0;
+    if ( aP2 <= 0 )
+      {
+    return 0;
+      }
+    else
+      {
+    for ( i = 0; ; i += 12 )
+        {
+    result = (*(int (__stdcall **)(int *, int, int, int))(*a1 + 16))( a1, *(int *)&aP0->BarrelVoxel[8] + i, 12, 0);
+    if ( result < 0 )
+    break;
+    if ( ++v5 >= aP2 )
+    return 0;
+        }
+      }
+    }
+  }
+    return result;
+}
 }
 } // namespace gamemd
 

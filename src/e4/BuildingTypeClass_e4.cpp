@@ -34,51 +34,6 @@ char __thiscall BuildingTypeClass_Enqueue(int this, int a2)
 }
 }
 
-// 0x41C590
-size_t BuildingTypeClass::Dequeue(BuildingClass * aP1)
-{
-{
-    size_t result;
-    ObjectClass *v4;
-    ObjectClass *v5;
-    int v6;
-    ObjectClass *v7;
-    result = (size_t)this->vtable1;
-    if ( result )
-  {
-    if ( !(unsigned char)this->vtable3 )
-    {
-    qsort(*(void**)this, result, 8u, CompareFunction);
-    this->uniqueId = 0;
-    this->vtable3 = 1;
-    }
-    v4 = (ObjectClass *)*(void**)this;
-    v5 = *(ObjectClass **)aP1->__pad_0;
-    v6 = (int)this->vtable1;
-    if ( v6 <= 0 )
-    return 0;
-    while ( 1 )
-    {
-    v7 = *(ObjectClass **)&v4->__pad_0[8 * (v6 / 2)];
-    if ( (int)v7 <= (int)v5 )
-      {
-    if ( v7 == v5 )
-    return (size_t)v4 + 8 * (v6 / 2);
-    v4 = (ObjectClass *)((char *)(v4) + 8 * (v6 / 2) + 8);
-    v6 += -1 - v6 / 2;
-      }
-    else
-      {
-    v6 /= 2;
-      }
-    if ( v6 <= 0 )
-    return 0;
-    }
-  }
-    return result;
-}
-}
-
 // 0x45DD90
 int BuildingTypeClass::ConstructFull(char * Source)
 {
@@ -547,25 +502,6 @@ int __fastcall BuildingTypeClass::CleanupMembers(AbstractClass *a1, AbstractClas
   BYTE1(a1[167].abstractFlags) = 0; /*0x45e734*/
   a1[167].uniqueId = 0; /*0x45e73a*/
   return TechnoTypeClass::DTOR((int)a1); /*0x45e745*/
-}
-}
-
-// 0x45E7B0
-int BuildingTypeClass::FindIndexByName()
-{
-{
-    int v2;
-    if ( !this )
-    return -1;
-    v2 = 0;
-    if ( (int)g_TriggerClassCount <= 0 )
-    return -1;
-    while ( _strcmpi((const void *)(*((int *)(g_TriggerTypeCount) + v2) + 36), this) )
-  {
-    if ( ++v2 >= (int)g_TriggerClassCount )
-    return -1;
-  }
-    return v2;
 }
 }
 
@@ -1225,26 +1161,6 @@ void __thiscall BuildingTypeClass_LoadVoxel(int this)
 }
 }
 
-// 0x464AF0
-unsigned int * BuildingTypeClass::GetSizeInLeptons(unsigned int * a2)
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    int v5;
-    v2 = this->Foundation;
-    v3 = DataGlobal_89DDB8 *(void**)this->Height;
-    v2 *= 4;
-    v4 = *(int *)((char *)(DataGlobal_8192B8) + v2);
-    v5 = *(int *)((char *)(DataGlobal_819310) + v2);
-    *a2 = v4 << 8;
-    *((int*)(a2) + 1) = v5 << 8;
-    *((int*)(a2) + 2) = v3;
-    return a2;
-}
-}
-
 // 0x464B30
 int BuildingTypeClass::UpdatePower()
 {
@@ -1590,63 +1506,6 @@ LABEL_32:
 }
 }
 
-// 0x465300
-int BuildingTypeClass::SaveLoad_Prefix_0()
-{
-{
-    int result;
-    int v2;
-    int v3;
-    int i;
-    int v5;
-    int *v6;
-    int *v7;
-    int v8;
-    result = TechnoTypeClass::SaveLoad_Prefix_0((int)v6, v6, v7, v8, v5);
-    if ( result >= 0 )
-  {
-    v2 = *v7;
-    v8 = v6[1507];
-    result = (*(int (__stdcall **)(int *, int *, int, int))(v2 + 16))(v7, &v8, 4, 0);
-    if ( result >= 0 )
-    {
-    v3 = 0;
-    if ( v8 <= 0 )
-      {
-    return 0;
-      }
-    else
-      {
-    for ( i = 0; ; i += 12 )
-        {
-    result = (*(int (__stdcall **)(int *, int, int, int))(*v7 + 16))(v7, i + v6[1506], 12, 0);
-    if ( result < 0 )
-    break;
-    if ( ++v3 >= v8 )
-    return 0;
-        }
-      }
-    }
-  }
-    return result;
-}
-}
-
-// 0x465380
-int BuildingTypeClass::GetClassIdentifier()
-{
-{
-    int *v2;
-    if ( !v2 )
-    return -2147467261;
-    *v2 = -1366608933;
-    v2[1] = 298976796;
-    v2[2] = 1610654892;
-    v2[3] = -1252326136;
-    return 0;
-}
-}
-
 // 0x4653C0
 BuildingTypeClass * BuildingTypeClass::FindOrCreate()
 {
@@ -1691,52 +1550,6 @@ void __thiscall BuildingTypeClass_IsPowered(int this)
       this->BuildupLoaded = 0; /*0x465b1a*/
     }
   }
-}
-}
-
-// 0x465DB0
-int BuildingTypeClass::GetAuxField()
-{
-{
-    return this->ArrayIndex;
-}
-}
-
-// 0x465DC0
-int BuildingTypeClass::ddtor()
-{
-{
-    char v3;
-    BuildingTypeClass::CleanupMembers((void **)this);
-    if ( (v3 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (int)this;
-}
-}
-
-// 0x474A90
-int BuildingTypeClass::FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTypeClass * aP3)
-{
-{
-    int v4;
-    IUnknown *v5;
-    bool v6;
-    char Destination[32];
-    INIClass::GetString( this, aP1, a2, *(INIClass **)(*(int *)(DataGlobal_B05488.field_4C + 4 * (int)aP3) + 772), (INIClass *)Destination, 32);
-    v4 = 0;
-    if ( *(int *)DataGlobal_B05488.__pad_58 <= 0 )
-    return (int)aP3->__pad_0;
-    v5 = (IUnknown *)DataGlobal_B05488.field_4C;
-    while ( 1 )
-  {
-    v6 = _strcmpi(*(const void **)(*(&v5->field_0 + v4) + 772), Destination) == 0;
-    v5 = (IUnknown *)DataGlobal_B05488.field_4C;
-    if ( v6 && *(int *)(*(int *)(DataGlobal_B05488.field_4C + 4 * v4) + 784) != 1 )
-    break;
-    if ( ++v4 >= *(int *)DataGlobal_B05488.__pad_58 )
-    return (int)aP3->__pad_0;
-  }
-    return v4;
 }
 }
 
@@ -1802,22 +1615,6 @@ _DWORD *__thiscall sub_478850(_DWORD *this, int a2, int a3)
   }
   *(this + 1) = a3; /*0x478893*/
   return this; /*0x478898*/
-}
-}
-
-// 0x4C9680
-int BuildingTypeClass::GetPowerOutput(ObjectClass * aP1)
-{
-{
-    ObjectClass *result;
-    short v3;
-    result = aP1;
-    if ( (int)aP1 >= 127 )
-    result = (ObjectClass *)127;
-    LOBYTE(v3) = 0;
-    HIBYTE(v3) = (char)result;
-    this->abstractFlags = v3;
-    return (int)result->__pad_0;
 }
 }
 
@@ -2413,25 +2210,6 @@ bool __thiscall BuildingTypeClass::IsPlacementValid(void *this, IUnknown *aP1, I
 }
 }
 
-// 0x747370
-int BuildingTypeClass::FindIndex()
-{
-{
-    int v2;
-    if ( !this )
-    return -1;
-    v2 = 0;
-    if ( (int)g_CrateCount <= 0 )
-    return -1;
-    while ( _strcmpi((const void *)(*(int *)&g_UnitTypeCount2->__pad_0[4 * v2] + 36), this) )
-  {
-    if ( ++v2 >= (int)g_CrateCount )
-    return -1;
-  }
-    return v2;
-}
-}
-
 // 0x7480D0
 UnitTypeClass * BuildingTypeClass::FindOrCreateAlt()
 {
@@ -2461,6 +2239,147 @@ LABEL_6:
 }
 }
 
+// 0x41C590
+size_t BuildingTypeClass::Dequeue(BuildingClass * aP1)
+{
+{
+    size_t result;
+    ObjectClass *v4;
+    ObjectClass *v5;
+    int v6;
+    ObjectClass *v7;
+    result = (size_t)this->vtable1;
+    if ( result )
+  {
+    if ( !(unsigned char)this->vtable3 )
+    {
+    qsort(*(void**)this, result, 8u, CompareFunction);
+    this->uniqueId = 0;
+    this->vtable3 = 1;
+    }
+    v4 = (ObjectClass *)*(void**)this;
+    v5 = *(ObjectClass **)aP1->__pad_0;
+    v6 = (int)this->vtable1;
+    if ( v6 <= 0 )
+    return 0;
+    while ( 1 )
+    {
+    v7 = *(ObjectClass **)&v4->__pad_0[8 * (v6 / 2)];
+    if ( (int)v7 <= (int)v5 )
+      {
+    if ( v7 == v5 )
+    return (size_t)v4 + 8 * (v6 / 2);
+    v4 = (ObjectClass *)((char *)(v4) + 8 * (v6 / 2) + 8);
+    v6 += -1 - v6 / 2;
+      }
+    else
+      {
+    v6 /= 2;
+      }
+    if ( v6 <= 0 )
+    return 0;
+    }
+  }
+    return result;
+}
+}
+
+// 0x45E7B0
+int BuildingTypeClass::FindIndexByName()
+{
+{
+    int v2;
+    if ( !this )
+    return -1;
+    v2 = 0;
+    if ( (int)g_TriggerClassCount <= 0 )
+    return -1;
+    while ( _strcmpi((const void *)(*((int *)(g_TriggerTypeCount) + v2) + 36), this) )
+  {
+    if ( ++v2 >= (int)g_TriggerClassCount )
+    return -1;
+  }
+    return v2;
+}
+}
+
+// 0x464AF0
+unsigned int * BuildingTypeClass::GetSizeInLeptons(unsigned int * a2)
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    int v5;
+    v2 = this->Foundation;
+    v3 = DataGlobal_89DDB8 *(void**)this->Height;
+    v2 *= 4;
+    v4 = *(int *)((char *)(DataGlobal_8192B8) + v2);
+    v5 = *(int *)((char *)(DataGlobal_819310) + v2);
+    *a2 = v4 << 8;
+    *((int*)(a2) + 1) = v5 << 8;
+    *((int*)(a2) + 2) = v3;
+    return a2;
+}
+}
+
+// 0x465300
+int BuildingTypeClass::SaveLoad_Prefix_0()
+{
+{
+    int result;
+    int v2;
+    int v3;
+    int i;
+    int v5;
+    int *v6;
+    int *v7;
+    int v8;
+    result = TechnoTypeClass::SaveLoad_Prefix_0((int)v6, v6, v7, v8, v5);
+    if ( result >= 0 )
+  {
+    v2 = *v7;
+    v8 = v6[1507];
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v2 + 16))(v7, &v8, 4, 0);
+    if ( result >= 0 )
+    {
+    v3 = 0;
+    if ( v8 <= 0 )
+      {
+    return 0;
+      }
+    else
+      {
+    for ( i = 0; ; i += 12 )
+        {
+    result = (*(int (__stdcall **)(int *, int, int, int))(*v7 + 16))(v7, i + v6[1506], 12, 0);
+    if ( result < 0 )
+    break;
+    if ( ++v3 >= v8 )
+    return 0;
+        }
+      }
+    }
+  }
+    return result;
+}
+}
+
+// 0x465380
+int BuildingTypeClass::GetClassIdentifier()
+{
+{
+    int *v2;
+    if ( !v2 )
+    return -2147467261;
+    *v2 = -1366608933;
+    v2[1] = 298976796;
+    v2[2] = 1610654892;
+    v2[3] = -1252326136;
+    return 0;
+}
+}
+
 // 0x465D90
 int BuildingTypeClass::GetTypeIdentifier()
 {
@@ -2471,4 +2390,85 @@ return 7;
 int BuildingTypeClass::GetObjectSize()
 {
 return 6040;
+}
+
+// 0x465DB0
+int BuildingTypeClass::GetAuxField()
+{
+{
+    return this->ArrayIndex;
+}
+}
+
+// 0x465DC0
+int BuildingTypeClass::ddtor()
+{
+{
+    char v3;
+    BuildingTypeClass::CleanupMembers((void **)this);
+    if ( (v3 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (int)this;
+}
+}
+
+// 0x474A90
+int BuildingTypeClass::FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTypeClass * aP3)
+{
+{
+    int v4;
+    IUnknown *v5;
+    bool v6;
+    char Destination[32];
+    INIClass::GetString( this, aP1, a2, *(INIClass **)(*(int *)(DataGlobal_B05488.field_4C + 4 * (int)aP3) + 772), (INIClass *)Destination, 32);
+    v4 = 0;
+    if ( *(int *)DataGlobal_B05488.__pad_58 <= 0 )
+    return (int)aP3->__pad_0;
+    v5 = (IUnknown *)DataGlobal_B05488.field_4C;
+    while ( 1 )
+  {
+    v6 = _strcmpi(*(const void **)(*(&v5->field_0 + v4) + 772), Destination) == 0;
+    v5 = (IUnknown *)DataGlobal_B05488.field_4C;
+    if ( v6 && *(int *)(*(int *)(DataGlobal_B05488.field_4C + 4 * v4) + 784) != 1 )
+    break;
+    if ( ++v4 >= *(int *)DataGlobal_B05488.__pad_58 )
+    return (int)aP3->__pad_0;
+  }
+    return v4;
+}
+}
+
+// 0x4C9680
+int BuildingTypeClass::GetPowerOutput(ObjectClass * aP1)
+{
+{
+    ObjectClass *result;
+    short v3;
+    result = aP1;
+    if ( (int)aP1 >= 127 )
+    result = (ObjectClass *)127;
+    LOBYTE(v3) = 0;
+    HIBYTE(v3) = (char)result;
+    this->abstractFlags = v3;
+    return (int)result->__pad_0;
+}
+}
+
+// 0x747370
+int BuildingTypeClass::FindIndex()
+{
+{
+    int v2;
+    if ( !this )
+    return -1;
+    v2 = 0;
+    if ( (int)g_CrateCount <= 0 )
+    return -1;
+    while ( _strcmpi((const void *)(*(int *)&g_UnitTypeCount2->__pad_0[4 * v2] + 36), this) )
+  {
+    if ( ++v2 >= (int)g_CrateCount )
+    return -1;
+  }
+    return v2;
+}
 }

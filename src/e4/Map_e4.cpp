@@ -11,8 +11,10 @@
 // 0x535BE0
 unsigned int Map::IsCellFlag(int a1)
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+unsigned int __stdcall Map_IsCellFlag(int a1)
 {
-    return ((unsigned int)~a1 >> 11) & 1;
+  return ((unsigned int)~a1 >> 11) & 1; /*0x535bec*/
 }
 }
 
@@ -175,42 +177,6 @@ LABEL_22:
 }
 } // namespace gamemd
 
-// 0x578D80
-namespace gamemd {
-bool sub_578D80(int a1, unsigned int a2)
-{
-{
-    if ( a1 >= g_TerrainBuildConfig && a1 < g_TerrainBuildConfig + 40 )
-    return 1;
-    if ( a1 >= DataGlobal_AA073C && a1 < DataGlobal_AA073C + 4 )
-  {
-    if ( a1 == DataGlobal_AA073C || a1 == DataGlobal_AA073C + 3 )
-    return a2 && a2 != 4;
-    return 1;
-  }
-    if ( a1 >= DataGlobal_ABB110 && a1 < DataGlobal_ABB110 + 4 )
-  {
-    if ( a1 == DataGlobal_ABB110 || a1 == DataGlobal_ABB110 + 3 )
-    return a2 != 1 && a2 != 3;
-    return 1;
-  }
-    if ( a1 >= DataGlobal_AA1050 && a1 < DataGlobal_AA1050 + 4 )
-  {
-    if ( a1 == DataGlobal_AA1050 || a1 == DataGlobal_AA1050 + 3 )
-    return a2 >= 2;
-    return 1;
-  }
-    if ( a1 >= DataGlobal_AA10A0 && a1 < DataGlobal_AA10A0 + 4 )
-  {
-    if ( a1 == DataGlobal_AA10A0 || a1 == DataGlobal_AA10A0 + 3 )
-    return a2 != 2 && a2 != 3;
-    return 1;
-  }
-    return a1 >= DataGlobal_ABBEBC && a1 < DataGlobal_ABBEBC + 20;
-}
-}
-} // namespace gamemd
-
 // 0x5A1E50
 namespace gamemd {
 char sub_5A1E50(short * a1, int a2, int a3, int a4)
@@ -320,54 +286,6 @@ int __thiscall Map_Delete(int this)
     Debug::Log(); /*0x5addf6*/
     return strlen((const char *)(this + 4700)) != 0 ? this + 4700 : 0;
   }
-}
-}
-} // namespace gamemd
-
-// 0x5BF580
-namespace gamemd {
-char sub_5BF580()
-{
-{
-    char result;
-    result = DataGlobal_ABF35C;
-    if ( !DataGlobal_ABF35C )
-  {
-    AudioFrame::CounterInc();
-    AudioQueue::IncrementPriority();
-    AudioQueue::ReleaseBuffers();
-    RequestBufferMixer((unsigned int *)g_MixerState, 0x2000);
-    result = RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x2000);
-    DataGlobal_ABF35C = 1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x5DB650
-namespace gamemd {
-char sub_5DB650(int a1, char a2, char a3)
-{
-{
-    HWND v5;
-    v5 = (HWND)Dialog::FindByHandle((void *)0xBC);
-    return Map_Handle_5EC880(v5, a1, a2, a3);
-}
-}
-} // namespace gamemd
-
-// 0x661590
-namespace gamemd {
-int sub_661590(unsigned char * a1, int a2, int a3)
-{
-{
-    int result;
-    if ( !a2 )
-    return Map_Append_661530(a1, 0, a3) + 2;
-    result = Map_Append_661530(a1, (char *)(a2 + 2), a3) + 2;
-    *(short *)a2 = result;
-    return result;
 }
 }
 } // namespace gamemd
@@ -548,162 +466,6 @@ LABEL_29:
       }
     }
   }
-}
-}
-} // namespace gamemd
-
-// 0x74E880
-namespace gamemd {
-void sub_74E880()
-{
-{
-    if ( g_VeinholeMonsterPool )
-  {
-    __3_YAXPAX_Z(g_VeinholeMonsterPool);
-    g_VeinholeMonsterPool = 0;
-  }
-}
-}
-} // namespace gamemd
-
-// 0x770C10
-namespace gamemd {
-char sub_770C10(int a1, int a2, void ** a3)
-{
-{
-    char **v3;
-    int v6;
-    int v8;
-    int v9;
-    char **v10;
-    char **v11;
-    char **v12;
-    char **v13;
-    void *v14;
-    void *v15;
-    void *v16;
-    v3 = (char **)a3;
-    DeleteAndZero::Alt2(a3);
-    v6 = *(int *)(a2 + 16);
-    if ( v6 <= 0 )
-    return 0;
-    if ( v6 == 1 )
-    v8 = 0;
-    else
-    v8 = Random::Range(Randomizer_Global, 0, v6 - 1);
-    v9 = *(int *)(*(int *)(a2 + 4) + 4 * v8);
-    if ( a1 == 3 )
-  {
-    v10 = FormatStringInt((char **)&v14, v9, 2);
-    v11 = ProcessStringAndCopy((char **)&a3, g_Str_WWD_Soviet, v10);
-    String::Reassign(v3, (const char **)v11);
-    DeleteAndZero((void **)&a3);
-    DeleteAndZero(&v14);
-  }
-    else
-  {
-    v12 = FormatStringInt((char **)&v16, v9, 2);
-    v13 = ProcessStringAndCopy((char **)&v15, g_Str_WWD_Allied, v12);
-    String::Reassign(v3, (const char **)v13);
-    DeleteAndZero(&v15);
-    DeleteAndZero(&v16);
-  }
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x661530
-namespace gamemd {
-int sub_661530(unsigned char * a1, unsigned char * a2, int a3)
-{
-{
-    int v5;
-    int result;
-    int v7;
-    char *v9;
-    v5 = a3;
-    result = 0;
-    while ( v5 > 0 )
-  {
-    if ( *a1 )
-    {
-    if ( a2 )
-    *a2++ = *a1;
-    ++a1;
-    ++result;
-    --v5;
-    }
-    else
-    {
-    v7 = 0;
-    do
-      {
-    if ( v7 > v5 )
-    break;
-      }
-    while ( !a1[++v7] );
-    if ( v7 >= 255 )
-    v7 = 255;
-    if ( a2 )
-      {
-    *a2 = 0;
-    v9 = a2 + 1;
-    *v9 = v7;
-    a2 = v9 + 1;
-      }
-    result += 2;
-    a1 += v7;
-    v5 -= v7;
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x734FD0
-namespace gamemd {
-TechnoTypeClass * Map_Create_734FD0()
-{
-{
-    return (TechnoTypeClass *)DataGlobal_B1CF80;
-}
-}
-} // namespace gamemd
-
-// 0x5ADE20
-namespace gamemd {
-const char * Map_Delete_5ADE20(ObjectClass * a1, const char * a2)
-{
-{
-    bool v5;
-    wchar_t *v6;
-    wchar_t *StringCSF;
-    int v9;
-    int v10;
-    int v11[20];
-    char v12[120];
-    int v13[5];
-    String::Assign((char **)&v10, a2);
-    MSEngine::Construct(v11);
-    Map_Delete_5CEDD0(v12);
-    unknown_libname_73(v13);
-    v13[1] = Timer::GetTicks();
-    v13[3] = 0;
-    v11[0] = &vt_MapSelect;
-    v5 = !SessionClass::LoadGameSession(v11, a1, (CellStruct *)&v10);
-    DeleteAndZero((int)v13);
-    MSEngine::Destructor((int)v12);
-    MSEngine::Destruct(v11);
-    DeleteAndZero((int)&v10);
-    if ( !v5 )
-    return a2;
-    v10 = (int)&DataGlobal_82083C;
-    StringCSF = GetStringCSF(g_Str_TXT_OK, 0, &DataGlobal_82C090.onBridge, 152);
-    v6 = GetStringCSF((wchar_t *)&DataGlobal_82C090.spawnStatus, 0, &DataGlobal_82C090.onBridge, 152);
-    Dialog::ShowMessageBox((int)v6, StringCSF, 0, 0, 0, v9);
-    return 0;
 }
 }
 } // namespace gamemd
@@ -1006,18 +768,6 @@ char __fastcall sub_6ACCA0(int a1)
 }
 } // namespace gamemd
 
-// 0x7A2800
-namespace gamemd {
-char sub_7A2800(int a1, char a2, char a3)
-{
-{
-    HWND v5;
-    v5 = (HWND)Dialog::FindByHandle((void *)0xC2);
-    return Map_Handle_5EC880(v5, a1, a2, a3);
-}
-}
-} // namespace gamemd
-
 // 0x584030
 namespace gamemd {
 char Map_Helper_584030(IUnknown * aP0)
@@ -1094,166 +844,6 @@ _DWORD *__fastcall sub_58BB00(_DWORD *a1, int a2)
     a1[1] = dword_ABE32C[2 * a2]; /*0x58bb1e*/
   }
   return result; /*0x58bb21*/
-}
-}
-} // namespace gamemd
-
-// 0x58CE90
-namespace gamemd {
-void sub_58CE90()
-{
-{
-    int v0;
-    int v1;
-    int i;
-    int *v3;
-    int v4;
-    void *v5;
-    int *v6;
-    if ( g_MapTileArray )
-  {
-    v0 = g_MapCellWidth * g_MapCellWidth;
-    if ( g_MapCellWidth * g_MapCellWidth > 0 )
-    {
-    v1 = 0;
-    do
-      {
-    *(int *)((char *)(g_MapTileArray) + v1 + 56) = -1;
-    *(int *)((char *)(g_MapTileArray) + v1 + 60) = -1;
-    v1 += 80;
-    --v0;
-      }
-    while ( v0 );
-    }
-  }
-    for ( i = g_RandomMap_TileData - 1; i >= 0; --i )
-  {
-    v3 = (int *)*((int *)(g_RandomMap_TerrainState) + i);
-    if ( v3 )
-    {
-    if ( *v3 )
-      {
-    (**(void (__thiscall ***)(int, int))*v3)(*v3, 1);
-    *v3 = 0;
-      }
-    v6 = v3;
-    v4 = (*(int (__thiscall **)(int *, int **))(g_RandomMap_BuildObject + 16))(&g_RandomMap_BuildObject, &v6);
-    if ( v4 != -1 && v4 < g_RandomMap_TileData && v4 < --g_RandomMap_TileData )
-      {
-    do
-        {
-    ++v4;
-    *((int *)(g_RandomMap_TerrainState) + v4 - 1) = *((int *)(g_RandomMap_TerrainState) + v4);
-        }
-    while ( v4 < g_RandomMap_TileData );
-      }
-    v5 = (void *)v3[11];
-    v3[10] = &vt_VectorClass_Cell;
-    if ( v5 && *((char *)(v3) + 53) )
-      {
-    __3_YAXPAX_Z(v5);
-    v3[11] = 0;
-      }
-    *((char *)(v3) + 53) = 0;
-    v3[12] = 0;
-    __3_YAXPAX_Z(v3);
-    }
-  }
-    g_MapTileArrayEnd = 0;
-}
-}
-} // namespace gamemd
-
-// 0x58D010
-namespace gamemd {
-int sub_58D010(char a1)
-{
-{
-    int result;
-    int v3;
-    int v4;
-    void *v5;
-    result = g_MapCellWidth * g_MapCellWidth;
-    if ( g_MapCellWidth * g_MapCellWidth > 0 )
-  {
-    v3 = 0;
-    v4 = g_MapCellWidth * g_MapCellWidth;
-    do
-    {
-    result = (int)g_MapTileArray + v3;
-    if ( *(int *)((char *)(g_MapTileArray) + v3 + 56) == -1 && (*(short *)result || *(short *)(result + 2)) )
-      {
-    v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)((char *)(g_MapTileArray) + v3));
-    result = RandomMap::GenerateTerrain((int)v5);
-    if ( result )
-    *(char *)(result + 26) = a1;
-      }
-    v3 += 80;
-    --v4;
-    }
-    while ( v4 );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x59B940
-namespace gamemd {
-double Map_Helper_59B940(MapResourceClass * aP0, short * a1, MapResourceClass * aP2, MapResourceClass * aP3, float a5, MapResourceClass * aP5)
-{
-{
-    int v7;
-    int v8;
-    int v9;
-    unsigned int v10;
-    __int64 v11;
-    MapResourceClass *v12;
-    double v14;
-    signed int v15;
-    __int64 v16;
-    double v17;
-    BuildingTypeClass *v18;
-    int v19;
-    double v20;
-    MapResourceClass *aP0a;
-    short *a1a;
-    MapResourceClass *aP2a;
-    MapResourceClass *aP3a;
-    if ( *aP2 == DataGlobal_ABE2F0 && *(int *)&aP2[1] == DataGlobal_ABE2F4 && *(int *)&aP2[2] == DataGlobal_ABE2F8 && *(int *)&aP2[3] == DataGlobal_ABE2FC )
-  {
-    v18 = (BuildingTypeClass *)(*(short *)aP0->__tail_0 - *a1);
-    v19 = *(short *)&aP0->__tail_0[2] - *((int*)(a1) + 1);
-    return Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)((int)v18 * (int)v18 + v19 * v19)));
-  }
-    else
-  {
-    v7 = *(short *)&aP3->__tail_0[2];
-    v8 = *a1;
-    v9 = *((int*)(a1) + 1);
-    a1a = (short *)*(short *)aP3->__tail_0;
-    v10 = abs32(((v8 - v9) >> 1) - (((int)a1a - v7) >> 1));
-    aP2a = (MapResourceClass *)v10;
-    v11 = ((v8 + v9) >> 1) - (((int)a1a + v7) >> 1);
-    v12 = (MapResourceClass *)((HIDWORD(v11) ^ v11) - HIDWORD(v11));
-    aP3a = v12;
-    if ( v10 || v12 )
-    {
-    v14 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)(int)(v10 * v10 + (int)v12 * (int)v12)));
-    v15 = abs32(*(short *)&aP0->__tail_0[2] - *((int*)(a1) + 1));
-    v16 = *(short *)aP0->__tail_0 - *a1;
-    aP0a = (MapResourceClass *)((HIDWORD(v16) ^ v16) - HIDWORD(v16));
-    v20 = (double)(int)aP2a / v14;
-    v17 = (double)(int)aP3a / v14;
-    if ( (int)aP0a <= v15 )
-    aP0a = (MapResourceClass *)v15;
-    return (v17 * *(float *)&aP5 + a5 * v20) * (double)(int)aP0a;
-    }
-    else
-    {
-    return 0.0;
-    }
-  }
 }
 }
 } // namespace gamemd
@@ -1384,34 +974,6 @@ LABEL_17:
     }
   }
   return 1; /*0x5a7e5b*/
-}
-}
-} // namespace gamemd
-
-// 0x5FBF70
-namespace gamemd {
-int E4Recv_5FBF70::sub_5FBF70()
-{
-{
-    return this->M12;
-}
-}
-} // namespace gamemd
-
-// 0x65FDD0
-namespace gamemd {
-int sub_65FDD0()
-{
-{
-    int result;
-    int i;
-    result = g_TriggerEventState;
-    for ( i = 0; i < g_TriggerEventState; ++i )
-  {
-    Map_Helper_65FE00(*((char **)(g_TriggerPool) + i));
-    result = g_TriggerEventState;
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -1552,163 +1114,6 @@ int __fastcall sub_6B4240(int a1, int a2)
 }
 } // namespace gamemd
 
-// 0x72D780
-namespace gamemd {
-void sub_72D780()
-{
-{
-    void *v0;
-    if ( DataGlobal_B0FBB8 )
-  {
-    DataGlobal_B0FBB8 = 0;
-    if ( DataGlobal_B0FC7D )
-    {
-    v0 = DataGlobal_B0FB1C;
-    if ( DataGlobal_B0FB1C )
-      {
-    FileTreeNode::Destroy(DataGlobal_B0FB1C);
-    __3_YAXPAX_Z(v0);
-      }
-    DataGlobal_B0FC7D = 0;
-    }
-    DataGlobal_B0FB1C = 0;
-    if ( DataGlobal_B0FBB0 )
-    {
-    __3_YAXPAX_Z(DataGlobal_B0FBB0);
-    DataGlobal_B0FBB0 = 0;
-    }
-    if ( DataGlobal_B0FBB4 )
-    {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBB4)(DataGlobal_B0FBB4, 1);
-    DataGlobal_B0FBB4 = 0;
-    }
-  }
-}
-}
-} // namespace gamemd
-
-// 0x5C9720
-namespace gamemd {
-void __usercall sub_5C9720(int a1@<ebx> a1, int a2@<ebp> a2, int a3@<edi> a3)
-{
-{
-    int v3;
-    int v4;
-    __int64 v5;
-    Game::LoadMultiplayerScoreAssets(*((void **)g_ScenarioClass_Instance + 3374));
-    v5 = *(__int64 *)&g_DisplayWidth;
-    v3 = 0;
-    v4 = 0;
-    Map_Load_72EAD0((int *)g_DSurface_Hidden, &v3);
-    Frame::Present(g_DSurface_Hidden, a1, a2, a3, 0, v3, v4, (int *)v5);
-    Campaign::Screen(0);
-    Map_Load_72EAD0((int *)g_DSurface_Hidden, &v3);
-    Frame::Present(g_DSurface_Hidden, a1, a2, a3, 0, v3, v4, (int *)v5);
-    Map_Init_72D780();
-}
-}
-} // namespace gamemd
-
-// 0x660B00
-namespace gamemd {
-void sub_660B00()
-{
-{
-    int i;
-    void *v1;
-    int v2;
-    int v3;
-    for ( i = g_TriggerEventState - 1; i >= 0; --i )
-  {
-    v1 = (void *)*((int *)(g_TriggerPool) + i);
-    if ( v1 )
-    {
-    v3 = *((int *)(g_TriggerPool) + i);
-    v2 = (*(int (__thiscall **)(int *, int *))(DataGlobal_B04DA8 + 16))(&DataGlobal_B04DA8, &v3);
-    if ( v2 != -1 && v2 < g_TriggerEventState && v2 < --g_TriggerEventState )
-      {
-    do
-        {
-    ++v2;
-    *((int *)(g_TriggerPool) + v2 - 1) = *((int *)(g_TriggerPool) + v2);
-        }
-    while ( v2 < g_TriggerEventState );
-      }
-    __3_YAXPAX_Z(v1);
-    }
-  }
-}
-}
-} // namespace gamemd
-
-// 0x6C8E80
-namespace gamemd {
-void __usercall sub_6C8E80(int a1@<ebx> a1, int a2@<ebp> a2, int a3@<edi> a3)
-{
-{
-    int v3;
-    int v4;
-    __int64 v5;
-    CampaignScore::LoadCampaignScoreAssetsGame(*((void **)g_ScenarioClass_Instance + 3374));
-    v5 = *(__int64 *)&g_DisplayWidth;
-    v3 = 0;
-    v4 = 0;
-    Map_Load_72E9F0((int *)g_DSurface_Hidden, &v3);
-    Frame::Present(g_DSurface_Hidden, a1, a2, a3, 0, v3, v4, (int *)v5);
-    Campaign::Screen(0);
-    Map_Load_72E9F0((int *)g_DSurface_Hidden, &v3);
-    Frame::Present(g_DSurface_Hidden, a1, a2, a3, 0, v3, v4, (int *)v5);
-    FileSystem::CleanupTrees();
-}
-}
-} // namespace gamemd
-
-// 0x72B380
-namespace gamemd {
-int sub_72B380()
-{
-{
-    return DataGlobal_B0FB90;
-}
-}
-} // namespace gamemd
-
-// 0x72E9F0
-namespace gamemd {
-void Map_Load_72E9F0(ConvertClass * a1, int * a2)
-{
-{
-    int v4;
-    int v5;
-    DrawScoreScreenStats(a1, (int)a2);
-    RenderScoreScreen(a1, a2, 0);
-    v4 = 0;
-    v5 = 0;
-    v4 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
-    v5 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20472] + 4);
-    DrawToSurfaceSHP( (int)a1, *(int *)&DataGlobal_B05488.__pad_579C[20356], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[20240], 0, (ConvertClass *)&v4, (ConvertClass *)a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
-}
-}
-} // namespace gamemd
-
-// 0x72EAD0
-namespace gamemd {
-void Map_Load_72EAD0(ConvertClass * a1, int * a2)
-{
-{
-    int v4;
-    int v5;
-    DrawScoreScreenStats(a1, (int)a2);
-    RenderScoreScreen(a1, a2, 0);
-    v4 = 0;
-    v5 = 0;
-    v4 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
-    v5 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20472] + 4);
-    DrawToSurfaceSHP( (int)a1, *(int *)&DataGlobal_B05488.__pad_579C[20368], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[20216], 0, (ConvertClass *)&v4, (ConvertClass *)a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
-}
-}
-} // namespace gamemd
-
 // 0x751C30
 namespace gamemd {
 char sub_751C30()
@@ -1752,19 +1157,6 @@ char sub_751C30()
     CD::`vftable'(dword_81C1D0); /*0x751da4*/
   }
   return 1; /*0x751c51*/
-}
-}
-} // namespace gamemd
-
-// 0x769D70
-namespace gamemd {
-unsigned int * sub_769D70(unsigned int * a1, int a2)
-{
-{
-    *((int*)(a1) + 1) = a2;
-    *((int*)(a1) + 2) = 0;
-    *a1 = &vt_VectorCursor_TRect_int_VectorClass_TRect_int;
-    return a1;
 }
 }
 } // namespace gamemd
@@ -1822,16 +1214,6 @@ LABEL_17:
   }
   Mission::SetAndCall((int *)&MEMORY[0x87F7E8], 0, 0); /*0x63ac43*/
   return 1; /*0x63ab6f*/
-}
-}
-} // namespace gamemd
-
-// 0x753570
-namespace gamemd {
-int sub_753570()
-{
-{
-    return ++DataGlobal_B1D3D8;
 }
 }
 } // namespace gamemd
@@ -2015,94 +1397,6 @@ LABEL_5:
 }
 } // namespace gamemd
 
-// 0x6822F0
-namespace gamemd {
-int sub_6822F0(int a1, int a2, LPSTR lpMultiByteStr)
-{
-{
-    LPSTR v3;
-    int v4;
-    int v6[2];
-    short v7[4];
-    LPCWCH lpWideCharStr;
-    v3 = lpMultiByteStr;
-    lpMultiByteStr = 0;
-    *v3 = 0;
-    v4 = (*(int (__stdcall **)(int, void *, int, LPSTR *))(*(int *)(a1) + 16))(a1, &DataGlobal_7F7D10, 18, &lpMultiByteStr);
-    if ( v4 >= 0 )
-  {
-    v6[0] = 1;
-    v6[1] = a2;
-    if ( !lpMultiByteStr )
-    WinAPI::Wrapper(-2147467261);
-    v4 = (*(int (__stdcall **)(LPSTR, int, int *, short *))(*(int *)(lpMultiByteStr) + 12))( lpMultiByteStr, 1, v6, v7);
-    if ( v4 >= 0 )
-    {
-    if ( v7[0] == 31 )
-    WideCharToMultiByte(0, 0, lpWideCharStr, -1, v3, 128, 0, 0);
-    if ( lpMultiByteStr )
-    (*(void (__stdcall **)(LPSTR))(*(int *)(lpMultiByteStr) + 8))(lpMultiByteStr);
-    }
-    else if ( lpMultiByteStr )
-    {
-    (*(void (__stdcall **)(LPSTR))(*(int *)(lpMultiByteStr) + 8))(lpMultiByteStr);
-    return v4;
-    }
-  }
-    else if ( lpMultiByteStr )
-  {
-    (*(void (__stdcall **)(LPSTR))(*(int *)(lpMultiByteStr) + 8))(lpMultiByteStr);
-    return v4;
-  }
-    return v4;
-}
-}
-} // namespace gamemd
-
-// 0x6823D0
-namespace gamemd {
-int sub_6823D0(int a1, int a2, wchar_t * Destination)
-{
-{
-    wchar_t *v3;
-    int v4;
-    int v6[2];
-    short v7[4];
-    wchar_t *Source;
-    v3 = Destination;
-    Destination = 0;
-    *v3 = 0;
-    v4 = (*(int (__stdcall **)(int, void *, int, wchar_t **))(*(int *)(a1) + 16))(a1, &DataGlobal_7F7D10, 18, &Destination);
-    if ( v4 >= 0 )
-  {
-    v6[0] = 1;
-    v6[1] = a2;
-    if ( !Destination )
-    WinAPI::Wrapper(-2147467261);
-    v4 = (*(int (__stdcall **)(wchar_t *, int, int *, short *))(*(int *)(Destination) + 12))(Destination, 1, v6, v7);
-    if ( v4 >= 0 )
-    {
-    if ( v7[0] == 31 )
-    wcsncpy(v3, Source, 0x80u);
-    if ( Destination )
-    (*(void (__stdcall **)(wchar_t *))(*(int *)(Destination) + 8))(Destination);
-    }
-    else if ( Destination )
-    {
-    (*(void (__stdcall **)(wchar_t *))(*(int *)(Destination) + 8))(Destination);
-    return v4;
-    }
-  }
-    else if ( Destination )
-  {
-    (*(void (__stdcall **)(wchar_t *))(*(int *)(Destination) + 8))(Destination);
-    return v4;
-  }
-    return v4;
-}
-}
-} // namespace gamemd
-
 // 0x6824B0
 namespace gamemd {
 int sub_6824B0(int a1, int a2, unsigned int * a3)
@@ -2162,38 +1456,6 @@ LABEL_7:
     return v7; /*0x68250e*/
   }
   return v7; /*0x68250c*/
-}
-}
-} // namespace gamemd
-
-// 0x770CE0
-namespace gamemd {
-char sub_770CE0(int a1, int a2, char ** a3)
-{
-{
-    char **v3;
-    char **v4;
-    char **v6;
-    char **v7;
-    void *v8;
-    void *v9;
-    if ( a1 == 3 )
-  {
-    v3 = FormatStringInt((char **)&v9, a2, 2);
-    v4 = ProcessStringAndCopy((char **)&v8, g_Str_WWD_Soviet, v3);
-    String::Reassign(a3, (const char **)v4);
-    DeleteAndZero(&v8);
-    DeleteAndZero(&v9);
-  }
-    else
-  {
-    v6 = FormatStringInt((char **)&v8, a2, 2);
-    v7 = ProcessStringAndCopy((char **)&v9, g_Str_WWD_Allied, v6);
-    String::Reassign(a3, (const char **)v7);
-    DeleteAndZero(&v9);
-    DeleteAndZero(&v8);
-  }
-    return 1;
 }
 }
 } // namespace gamemd
@@ -2292,40 +1554,6 @@ int sub_660C50()
 }
 } // namespace gamemd
 
-// 0x6E5570
-namespace gamemd {
-int sub_6E5570()
-{
-{
-    int result;
-    for ( result = g_GameObjectCleanup; g_GameObjectCleanup > 0; result = g_GameObjectCleanup )
-  {
-    if ( *(int *)g_TagClassCount )
-    (*(void (__thiscall **)(int, int))(**(int **)g_TagClassCount + 32))(*(int *)g_TagClassCount, 1);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x734210
-namespace gamemd {
-DWORD sub_734210()
-{
-{
-    DWORD Time;
-    DWORD result;
-    Time = timeGetTime();
-    DataGlobal_845554 = -1;
-    DataGlobal_845550 = Time - 1601;
-    result = timeGetTime() - 1601;
-    DataGlobal_84555C = -100;
-    DataGlobal_845558 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6DA980
 namespace gamemd {
 void sub_6DA980()
@@ -2358,21 +1586,6 @@ void sub_6DA980()
     }
     while ( v1 < MEMORY[0xB0CE88] ); /*0x6da9bd*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x769CA0
-namespace gamemd {
-unsigned int * Map_WorldDominationTour_20::Seek(unsigned int * a2, int a3)
-{
-{
-    int v3;
-    v3 = *(this + 1) + 8 * a3;
-    ComPtr::Constructor(a2);
-    *a2 = &vt_rc_ptr_WorldDominationTour_Territory;
-    ComPtr::Set(a2, *(int *)(v3 + 4));
-    return a2;
 }
 }
 } // namespace gamemd
@@ -2569,19 +1782,6 @@ int __thiscall Map_WorldDominationTour_20_::_vt04(int this, int a2)
 }
 } // namespace gamemd
 
-// 0x769FC0
-namespace gamemd {
-unsigned int Map_WorldDominationTour_20::Write(int a2)
-{
-{
-    if ( (unsigned char)this->Map_WorldDominationTour_20_field_0xC )
-    return (unsigned int)(a2 - this->Map_WorldDominationTour_20_field_0x4) >> 3;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x76A5C0
 namespace gamemd {
 VectorClass * Map_WorldDominationTour_20::QueryInterface(char a2)
@@ -2650,16 +1850,6 @@ rc_ptr_base *__thiscall Map_WorldDominationTour_20_::Constructor_0(rc_ptr_base *
       __3_YAXPAX_Z(this); /*0x76a66b*/
     return this; /*0x76a673*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x769D20
-namespace gamemd {
-int Map_WorldDominationTour_28::Seek(int a2)
-{
-{
-    return *(int *)(*(this + 1) + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -2768,43 +1958,6 @@ void __thiscall Map_WorldDominationTour_28_::_vt03(int this)
 }
 } // namespace gamemd
 
-// 0x76A250
-namespace gamemd {
-int Map_WorldDominationTour_28::Read(unsigned int * a2)
-{
-{
-    int result;
-    int v3;
-    int *i;
-    if ( !(unsigned char)this->Map_WorldDominationTour_28_field_0xC )
-    return 0;
-    v3 = this->Map_WorldDominationTour_28_field_0x8;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = *(int **)(this + 4); *i != *a2; ++i )
-  {
-    if ( ++result >= v3 )
-    return -1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x76A290
-namespace gamemd {
-unsigned int Map_WorldDominationTour_28::Write(int a2)
-{
-{
-    if ( (unsigned char)this->Map_WorldDominationTour_28_field_0xC )
-    return (unsigned int)(a2 - this->Map_WorldDominationTour_28_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x76A6D0
 namespace gamemd {
 VectorClass * Map_WorldDominationTour_28::QueryInterface(char a2)
@@ -2826,53 +1979,6 @@ VectorClass *__thiscall Map_WorldDominationTour_28_::QueryInterface(_DWORD *this
   if ( (a2 & 1) != 0 ) /*0x76a708*/
     __3_YAXPAX_Z(this); /*0x76a70b*/
   return (VectorClass *)this; /*0x76a715*/
-}
-}
-} // namespace gamemd
-
-// 0x769D60
-namespace gamemd {
-BOOL Map_WorldDominationTour_38::AddRef()
-{
-{
-    return *(this + 2) < *(int *)(*(this + 1) + 8);
-}
-}
-} // namespace gamemd
-
-// 0x76A5A0
-namespace gamemd {
-unsigned int * Map_WorldDominationTour_38::Release()
-{
-{
-    ++*(this + 2);
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x76A5B0
-namespace gamemd {
-unsigned int * Map_WorldDominationTour_38::ddtor()
-{
-{
-    --*(this + 2);
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x769D30
-namespace gamemd {
-unsigned int * Map_WorldDominationTour_43::Seek(unsigned int * a2, int a3)
-{
-{
-    int *v3;
-    v3 = (int *)(*(this + 1) + 12 * a3);
-    *a2 = *v3;
-    *((int*)(a2) + 1) = v3[1];
-    *((int*)(a2) + 2) = v3[2];
-    return a2;
 }
 }
 } // namespace gamemd
@@ -3049,6 +2155,830 @@ void __thiscall Map_WorldDominationTour_43_::_vt03(int this)
 }
 } // namespace gamemd
 
+// 0x76A770
+namespace gamemd {
+VectorClass * Map_WorldDominationTour_43::QueryInterface(char a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+VectorClass *__thiscall Map_WorldDominationTour_43_::QueryInterface(_DWORD *this, char a2)
+{
+  void *v3; // eax
+
+  v3 = (void *)*(this + 1); /*0x76a773*/
+  *this = &vt_VectorClass_WorldDominationTour_Centroid; /*0x76a776*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x76a780*/
+  {
+    __3_YAXPAX_Z(v3); /*0x76a788*/
+    *(this + 1) = 0; /*0x76a790*/
+  }
+  *((_BYTE *)this + 13) = 0; /*0x76a79b*/
+  *(this + 2) = 0; /*0x76a7a1*/
+  if ( (a2 & 1) != 0 ) /*0x76a7a8*/
+    __3_YAXPAX_Z(this); /*0x76a7ab*/
+  return (VectorClass *)this; /*0x76a7b5*/
+}
+}
+} // namespace gamemd
+
+// 0x578D80
+namespace gamemd {
+bool sub_578D80(int a1, unsigned int a2)
+{
+{
+    if ( a1 >= g_TerrainBuildConfig && a1 < g_TerrainBuildConfig + 40 )
+    return 1;
+    if ( a1 >= DataGlobal_AA073C && a1 < DataGlobal_AA073C + 4 )
+  {
+    if ( a1 == DataGlobal_AA073C || a1 == DataGlobal_AA073C + 3 )
+    return a2 && a2 != 4;
+    return 1;
+  }
+    if ( a1 >= DataGlobal_ABB110 && a1 < DataGlobal_ABB110 + 4 )
+  {
+    if ( a1 == DataGlobal_ABB110 || a1 == DataGlobal_ABB110 + 3 )
+    return a2 != 1 && a2 != 3;
+    return 1;
+  }
+    if ( a1 >= DataGlobal_AA1050 && a1 < DataGlobal_AA1050 + 4 )
+  {
+    if ( a1 == DataGlobal_AA1050 || a1 == DataGlobal_AA1050 + 3 )
+    return a2 >= 2;
+    return 1;
+  }
+    if ( a1 >= DataGlobal_AA10A0 && a1 < DataGlobal_AA10A0 + 4 )
+  {
+    if ( a1 == DataGlobal_AA10A0 || a1 == DataGlobal_AA10A0 + 3 )
+    return a2 != 2 && a2 != 3;
+    return 1;
+  }
+    return a1 >= DataGlobal_ABBEBC && a1 < DataGlobal_ABBEBC + 20;
+}
+}
+} // namespace gamemd
+
+// 0x58CE90
+namespace gamemd {
+void sub_58CE90()
+{
+{
+    int v0;
+    int v1;
+    int i;
+    int *v3;
+    int v4;
+    void *v5;
+    int *v6;
+    if ( g_MapTileArray )
+  {
+    v0 = g_MapCellWidth * g_MapCellWidth;
+    if ( g_MapCellWidth * g_MapCellWidth > 0 )
+    {
+    v1 = 0;
+    do
+      {
+    *(int *)((char *)(g_MapTileArray) + v1 + 56) = -1;
+    *(int *)((char *)(g_MapTileArray) + v1 + 60) = -1;
+    v1 += 80;
+    --v0;
+      }
+    while ( v0 );
+    }
+  }
+    for ( i = g_RandomMap_TileData - 1; i >= 0; --i )
+  {
+    v3 = (int *)*((int *)(g_RandomMap_TerrainState) + i);
+    if ( v3 )
+    {
+    if ( *v3 )
+      {
+    (**(void (__thiscall ***)(int, int))*v3)(*v3, 1);
+    *v3 = 0;
+      }
+    v6 = v3;
+    v4 = (*(int (__thiscall **)(int *, int **))(g_RandomMap_BuildObject + 16))(&g_RandomMap_BuildObject, &v6);
+    if ( v4 != -1 && v4 < g_RandomMap_TileData && v4 < --g_RandomMap_TileData )
+      {
+    do
+        {
+    ++v4;
+    *((int *)(g_RandomMap_TerrainState) + v4 - 1) = *((int *)(g_RandomMap_TerrainState) + v4);
+        }
+    while ( v4 < g_RandomMap_TileData );
+      }
+    v5 = (void *)v3[11];
+    v3[10] = &vt_VectorClass_Cell;
+    if ( v5 && *((char *)(v3) + 53) )
+      {
+    __3_YAXPAX_Z(v5);
+    v3[11] = 0;
+      }
+    *((char *)(v3) + 53) = 0;
+    v3[12] = 0;
+    __3_YAXPAX_Z(v3);
+    }
+  }
+    g_MapTileArrayEnd = 0;
+}
+}
+} // namespace gamemd
+
+// 0x58D010
+namespace gamemd {
+int sub_58D010(char a1)
+{
+{
+    int result;
+    int v3;
+    int v4;
+    void *v5;
+    result = g_MapCellWidth * g_MapCellWidth;
+    if ( g_MapCellWidth * g_MapCellWidth > 0 )
+  {
+    v3 = 0;
+    v4 = g_MapCellWidth * g_MapCellWidth;
+    do
+    {
+    result = (int)g_MapTileArray + v3;
+    if ( *(int *)((char *)(g_MapTileArray) + v3 + 56) == -1 && (*(short *)result || *(short *)(result + 2)) )
+      {
+    v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)((char *)(g_MapTileArray) + v3));
+    result = RandomMap::GenerateTerrain((int)v5);
+    if ( result )
+    *(char *)(result + 26) = a1;
+      }
+    v3 += 80;
+    --v4;
+    }
+    while ( v4 );
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x59B940
+namespace gamemd {
+double Map_Helper_59B940(MapResourceClass * aP0, short * a1, MapResourceClass * aP2, MapResourceClass * aP3, float a5, MapResourceClass * aP5)
+{
+{
+    int v7;
+    int v8;
+    int v9;
+    unsigned int v10;
+    __int64 v11;
+    MapResourceClass *v12;
+    double v14;
+    signed int v15;
+    __int64 v16;
+    double v17;
+    BuildingTypeClass *v18;
+    int v19;
+    double v20;
+    MapResourceClass *aP0a;
+    short *a1a;
+    MapResourceClass *aP2a;
+    MapResourceClass *aP3a;
+    if ( *aP2 == DataGlobal_ABE2F0 && *(int *)&aP2[1] == DataGlobal_ABE2F4 && *(int *)&aP2[2] == DataGlobal_ABE2F8 && *(int *)&aP2[3] == DataGlobal_ABE2FC )
+  {
+    v18 = (BuildingTypeClass *)(*(short *)aP0->__tail_0 - *a1);
+    v19 = *(short *)&aP0->__tail_0[2] - *((int*)(a1) + 1);
+    return Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)((int)v18 * (int)v18 + v19 * v19)));
+  }
+    else
+  {
+    v7 = *(short *)&aP3->__tail_0[2];
+    v8 = *a1;
+    v9 = *((int*)(a1) + 1);
+    a1a = (short *)*(short *)aP3->__tail_0;
+    v10 = abs32(((v8 - v9) >> 1) - (((int)a1a - v7) >> 1));
+    aP2a = (MapResourceClass *)v10;
+    v11 = ((v8 + v9) >> 1) - (((int)a1a + v7) >> 1);
+    v12 = (MapResourceClass *)((HIDWORD(v11) ^ v11) - HIDWORD(v11));
+    aP3a = v12;
+    if ( v10 || v12 )
+    {
+    v14 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)(int)(v10 * v10 + (int)v12 * (int)v12)));
+    v15 = abs32(*(short *)&aP0->__tail_0[2] - *((int*)(a1) + 1));
+    v16 = *(short *)aP0->__tail_0 - *a1;
+    aP0a = (MapResourceClass *)((HIDWORD(v16) ^ v16) - HIDWORD(v16));
+    v20 = (double)(int)aP2a / v14;
+    v17 = (double)(int)aP3a / v14;
+    if ( (int)aP0a <= v15 )
+    aP0a = (MapResourceClass *)v15;
+    return (v17 * *(float *)&aP5 + a5 * v20) * (double)(int)aP0a;
+    }
+    else
+    {
+    return 0.0;
+    }
+  }
+}
+}
+} // namespace gamemd
+
+// 0x5ADE20
+namespace gamemd {
+const char * Map_Delete_5ADE20(ObjectClass * a1, const char * a2)
+{
+{
+    bool v5;
+    wchar_t *v6;
+    wchar_t *StringCSF;
+    int v9;
+    int v10;
+    int v11[20];
+    char v12[120];
+    int v13[5];
+    String::Assign((char **)&v10, a2);
+    MSEngine::Construct(v11);
+    Map_Delete_5CEDD0(v12);
+    unknown_libname_73(v13);
+    v13[1] = Timer::GetTicks();
+    v13[3] = 0;
+    v11[0] = &vt_MapSelect;
+    v5 = !SessionClass::LoadGameSession(v11, a1, (CellStruct *)&v10);
+    DeleteAndZero((int)v13);
+    MSEngine::Destructor((int)v12);
+    MSEngine::Destruct(v11);
+    DeleteAndZero((int)&v10);
+    if ( !v5 )
+    return a2;
+    v10 = (int)&DataGlobal_82083C;
+    StringCSF = GetStringCSF(g_Str_TXT_OK, 0, &DataGlobal_82C090.onBridge, 152);
+    v6 = GetStringCSF((wchar_t *)&DataGlobal_82C090.spawnStatus, 0, &DataGlobal_82C090.onBridge, 152);
+    Dialog::ShowMessageBox((int)v6, StringCSF, 0, 0, 0, v9);
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5BF580
+namespace gamemd {
+char sub_5BF580()
+{
+{
+    char result;
+    result = DataGlobal_ABF35C;
+    if ( !DataGlobal_ABF35C )
+  {
+    AudioFrame::CounterInc();
+    AudioQueue::IncrementPriority();
+    AudioQueue::ReleaseBuffers();
+    RequestBufferMixer((unsigned int *)g_MixerState, 0x2000);
+    result = RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x2000);
+    DataGlobal_ABF35C = 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x5C9720
+namespace gamemd {
+void __usercall sub_5C9720(int a1@<ebx> a1, int a2@<ebp> a2, int a3@<edi> a3)
+{
+{
+    int v3;
+    int v4;
+    __int64 v5;
+    Game::LoadMultiplayerScoreAssets(*((void **)g_ScenarioClass_Instance + 3374));
+    v5 = *(__int64 *)&g_DisplayWidth;
+    v3 = 0;
+    v4 = 0;
+    Map_Load_72EAD0((int *)g_DSurface_Hidden, &v3);
+    Frame::Present(g_DSurface_Hidden, a1, a2, a3, 0, v3, v4, (int *)v5);
+    Campaign::Screen(0);
+    Map_Load_72EAD0((int *)g_DSurface_Hidden, &v3);
+    Frame::Present(g_DSurface_Hidden, a1, a2, a3, 0, v3, v4, (int *)v5);
+    Map_Init_72D780();
+}
+}
+} // namespace gamemd
+
+// 0x5DB650
+namespace gamemd {
+char sub_5DB650(int a1, char a2, char a3)
+{
+{
+    HWND v5;
+    v5 = (HWND)Dialog::FindByHandle((void *)0xBC);
+    return Map_Handle_5EC880(v5, a1, a2, a3);
+}
+}
+} // namespace gamemd
+
+// 0x5FBF70
+namespace gamemd {
+int E4Recv_5FBF70::sub_5FBF70()
+{
+{
+    return this->M12;
+}
+}
+} // namespace gamemd
+
+// 0x65FDD0
+namespace gamemd {
+int sub_65FDD0()
+{
+{
+    int result;
+    int i;
+    result = g_TriggerEventState;
+    for ( i = 0; i < g_TriggerEventState; ++i )
+  {
+    Map_Helper_65FE00(*((char **)(g_TriggerPool) + i));
+    result = g_TriggerEventState;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x660B00
+namespace gamemd {
+void sub_660B00()
+{
+{
+    int i;
+    void *v1;
+    int v2;
+    int v3;
+    for ( i = g_TriggerEventState - 1; i >= 0; --i )
+  {
+    v1 = (void *)*((int *)(g_TriggerPool) + i);
+    if ( v1 )
+    {
+    v3 = *((int *)(g_TriggerPool) + i);
+    v2 = (*(int (__thiscall **)(int *, int *))(DataGlobal_B04DA8 + 16))(&DataGlobal_B04DA8, &v3);
+    if ( v2 != -1 && v2 < g_TriggerEventState && v2 < --g_TriggerEventState )
+      {
+    do
+        {
+    ++v2;
+    *((int *)(g_TriggerPool) + v2 - 1) = *((int *)(g_TriggerPool) + v2);
+        }
+    while ( v2 < g_TriggerEventState );
+      }
+    __3_YAXPAX_Z(v1);
+    }
+  }
+}
+}
+} // namespace gamemd
+
+// 0x661530
+namespace gamemd {
+int sub_661530(unsigned char * a1, unsigned char * a2, int a3)
+{
+{
+    int v5;
+    int result;
+    int v7;
+    char *v9;
+    v5 = a3;
+    result = 0;
+    while ( v5 > 0 )
+  {
+    if ( *a1 )
+    {
+    if ( a2 )
+    *a2++ = *a1;
+    ++a1;
+    ++result;
+    --v5;
+    }
+    else
+    {
+    v7 = 0;
+    do
+      {
+    if ( v7 > v5 )
+    break;
+      }
+    while ( !a1[++v7] );
+    if ( v7 >= 255 )
+    v7 = 255;
+    if ( a2 )
+      {
+    *a2 = 0;
+    v9 = a2 + 1;
+    *v9 = v7;
+    a2 = v9 + 1;
+      }
+    result += 2;
+    a1 += v7;
+    v5 -= v7;
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x661590
+namespace gamemd {
+int sub_661590(unsigned char * a1, int a2, int a3)
+{
+{
+    int result;
+    if ( !a2 )
+    return Map_Append_661530(a1, 0, a3) + 2;
+    result = Map_Append_661530(a1, (char *)(a2 + 2), a3) + 2;
+    *(short *)a2 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x6822F0
+namespace gamemd {
+int sub_6822F0(int a1, int a2, LPSTR lpMultiByteStr)
+{
+{
+    LPSTR v3;
+    int v4;
+    int v6[2];
+    short v7[4];
+    LPCWCH lpWideCharStr;
+    v3 = lpMultiByteStr;
+    lpMultiByteStr = 0;
+    *v3 = 0;
+    v4 = (*(int (__stdcall **)(int, void *, int, LPSTR *))(*(int *)(a1) + 16))(a1, &DataGlobal_7F7D10, 18, &lpMultiByteStr);
+    if ( v4 >= 0 )
+  {
+    v6[0] = 1;
+    v6[1] = a2;
+    if ( !lpMultiByteStr )
+    WinAPI::Wrapper(-2147467261);
+    v4 = (*(int (__stdcall **)(LPSTR, int, int *, short *))(*(int *)(lpMultiByteStr) + 12))( lpMultiByteStr, 1, v6, v7);
+    if ( v4 >= 0 )
+    {
+    if ( v7[0] == 31 )
+    WideCharToMultiByte(0, 0, lpWideCharStr, -1, v3, 128, 0, 0);
+    if ( lpMultiByteStr )
+    (*(void (__stdcall **)(LPSTR))(*(int *)(lpMultiByteStr) + 8))(lpMultiByteStr);
+    }
+    else if ( lpMultiByteStr )
+    {
+    (*(void (__stdcall **)(LPSTR))(*(int *)(lpMultiByteStr) + 8))(lpMultiByteStr);
+    return v4;
+    }
+  }
+    else if ( lpMultiByteStr )
+  {
+    (*(void (__stdcall **)(LPSTR))(*(int *)(lpMultiByteStr) + 8))(lpMultiByteStr);
+    return v4;
+  }
+    return v4;
+}
+}
+} // namespace gamemd
+
+// 0x6823D0
+namespace gamemd {
+int sub_6823D0(int a1, int a2, wchar_t * Destination)
+{
+{
+    wchar_t *v3;
+    int v4;
+    int v6[2];
+    short v7[4];
+    wchar_t *Source;
+    v3 = Destination;
+    Destination = 0;
+    *v3 = 0;
+    v4 = (*(int (__stdcall **)(int, void *, int, wchar_t **))(*(int *)(a1) + 16))(a1, &DataGlobal_7F7D10, 18, &Destination);
+    if ( v4 >= 0 )
+  {
+    v6[0] = 1;
+    v6[1] = a2;
+    if ( !Destination )
+    WinAPI::Wrapper(-2147467261);
+    v4 = (*(int (__stdcall **)(wchar_t *, int, int *, short *))(*(int *)(Destination) + 12))(Destination, 1, v6, v7);
+    if ( v4 >= 0 )
+    {
+    if ( v7[0] == 31 )
+    wcsncpy(v3, Source, 0x80u);
+    if ( Destination )
+    (*(void (__stdcall **)(wchar_t *))(*(int *)(Destination) + 8))(Destination);
+    }
+    else if ( Destination )
+    {
+    (*(void (__stdcall **)(wchar_t *))(*(int *)(Destination) + 8))(Destination);
+    return v4;
+    }
+  }
+    else if ( Destination )
+  {
+    (*(void (__stdcall **)(wchar_t *))(*(int *)(Destination) + 8))(Destination);
+    return v4;
+  }
+    return v4;
+}
+}
+} // namespace gamemd
+
+// 0x6C8E80
+namespace gamemd {
+void __usercall sub_6C8E80(int a1@<ebx> a1, int a2@<ebp> a2, int a3@<edi> a3)
+{
+{
+    int v3;
+    int v4;
+    __int64 v5;
+    CampaignScore::LoadCampaignScoreAssetsGame(*((void **)g_ScenarioClass_Instance + 3374));
+    v5 = *(__int64 *)&g_DisplayWidth;
+    v3 = 0;
+    v4 = 0;
+    Map_Load_72E9F0((int *)g_DSurface_Hidden, &v3);
+    Frame::Present(g_DSurface_Hidden, a1, a2, a3, 0, v3, v4, (int *)v5);
+    Campaign::Screen(0);
+    Map_Load_72E9F0((int *)g_DSurface_Hidden, &v3);
+    Frame::Present(g_DSurface_Hidden, a1, a2, a3, 0, v3, v4, (int *)v5);
+    FileSystem::CleanupTrees();
+}
+}
+} // namespace gamemd
+
+// 0x6E5570
+namespace gamemd {
+int sub_6E5570()
+{
+{
+    int result;
+    for ( result = g_GameObjectCleanup; g_GameObjectCleanup > 0; result = g_GameObjectCleanup )
+  {
+    if ( *(int *)g_TagClassCount )
+    (*(void (__thiscall **)(int, int))(**(int **)g_TagClassCount + 32))(*(int *)g_TagClassCount, 1);
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x72B380
+namespace gamemd {
+int sub_72B380()
+{
+{
+    return DataGlobal_B0FB90;
+}
+}
+} // namespace gamemd
+
+// 0x72D780
+namespace gamemd {
+void sub_72D780()
+{
+{
+    void *v0;
+    if ( DataGlobal_B0FBB8 )
+  {
+    DataGlobal_B0FBB8 = 0;
+    if ( DataGlobal_B0FC7D )
+    {
+    v0 = DataGlobal_B0FB1C;
+    if ( DataGlobal_B0FB1C )
+      {
+    FileTreeNode::Destroy(DataGlobal_B0FB1C);
+    __3_YAXPAX_Z(v0);
+      }
+    DataGlobal_B0FC7D = 0;
+    }
+    DataGlobal_B0FB1C = 0;
+    if ( DataGlobal_B0FBB0 )
+    {
+    __3_YAXPAX_Z(DataGlobal_B0FBB0);
+    DataGlobal_B0FBB0 = 0;
+    }
+    if ( DataGlobal_B0FBB4 )
+    {
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBB4)(DataGlobal_B0FBB4, 1);
+    DataGlobal_B0FBB4 = 0;
+    }
+  }
+}
+}
+} // namespace gamemd
+
+// 0x72E9F0
+namespace gamemd {
+void Map_Load_72E9F0(ConvertClass * a1, int * a2)
+{
+{
+    int v4;
+    int v5;
+    DrawScoreScreenStats(a1, (int)a2);
+    RenderScoreScreen(a1, a2, 0);
+    v4 = 0;
+    v5 = 0;
+    v4 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
+    v5 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20472] + 4);
+    DrawToSurfaceSHP( (int)a1, *(int *)&DataGlobal_B05488.__pad_579C[20356], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[20240], 0, (ConvertClass *)&v4, (ConvertClass *)a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
+}
+}
+} // namespace gamemd
+
+// 0x72EAD0
+namespace gamemd {
+void Map_Load_72EAD0(ConvertClass * a1, int * a2)
+{
+{
+    int v4;
+    int v5;
+    DrawScoreScreenStats(a1, (int)a2);
+    RenderScoreScreen(a1, a2, 0);
+    v4 = 0;
+    v5 = 0;
+    v4 = **(int **)&DataGlobal_B05488.__pad_579C[20472];
+    v5 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[20472] + 4);
+    DrawToSurfaceSHP( (int)a1, *(int *)&DataGlobal_B05488.__pad_579C[20368], *(ConvertClass **)&DataGlobal_B05488.__pad_579C[20216], 0, (ConvertClass *)&v4, (ConvertClass *)a2, (ConvertClass *)0x400, 0, 0, 0, (ConvertClass *)0x3E8, 0, 0, 0, 0, 0);
+}
+}
+} // namespace gamemd
+
+// 0x731CB0
+namespace gamemd {
+int sub_731CB0()
+{
+return 71;
+}
+} // namespace gamemd
+
+// 0x731CC0
+namespace gamemd {
+int sub_731CC0()
+{
+return 22;
+}
+} // namespace gamemd
+
+// 0x734210
+namespace gamemd {
+DWORD sub_734210()
+{
+{
+    DWORD Time;
+    DWORD result;
+    Time = timeGetTime();
+    DataGlobal_845554 = -1;
+    DataGlobal_845550 = Time - 1601;
+    result = timeGetTime() - 1601;
+    DataGlobal_84555C = -100;
+    DataGlobal_845558 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x734FD0
+namespace gamemd {
+TechnoTypeClass * Map_Create_734FD0()
+{
+{
+    return (TechnoTypeClass *)DataGlobal_B1CF80;
+}
+}
+} // namespace gamemd
+
+// 0x74E880
+namespace gamemd {
+void sub_74E880()
+{
+{
+    if ( g_VeinholeMonsterPool )
+  {
+    __3_YAXPAX_Z(g_VeinholeMonsterPool);
+    g_VeinholeMonsterPool = 0;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x753570
+namespace gamemd {
+int sub_753570()
+{
+{
+    return ++DataGlobal_B1D3D8;
+}
+}
+} // namespace gamemd
+
+// 0x769CA0
+namespace gamemd {
+unsigned int * Map_WorldDominationTour_20::Seek(unsigned int * a2, int a3)
+{
+{
+    int v3;
+    v3 = *(this + 1) + 8 * a3;
+    ComPtr::Constructor(a2);
+    *a2 = &vt_rc_ptr_WorldDominationTour_Territory;
+    ComPtr::Set(a2, *(int *)(v3 + 4));
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x769D20
+namespace gamemd {
+int Map_WorldDominationTour_28::Seek(int a2)
+{
+{
+    return *(int *)(*(this + 1) + 4 * a2);
+}
+}
+} // namespace gamemd
+
+// 0x769D30
+namespace gamemd {
+unsigned int * Map_WorldDominationTour_43::Seek(unsigned int * a2, int a3)
+{
+{
+    int *v3;
+    v3 = (int *)(*(this + 1) + 12 * a3);
+    *a2 = *v3;
+    *((int*)(a2) + 1) = v3[1];
+    *((int*)(a2) + 2) = v3[2];
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x769D60
+namespace gamemd {
+BOOL Map_WorldDominationTour_38::AddRef()
+{
+{
+    return *(this + 2) < *(int *)(*(this + 1) + 8);
+}
+}
+} // namespace gamemd
+
+// 0x769D70
+namespace gamemd {
+unsigned int * sub_769D70(unsigned int * a1, int a2)
+{
+{
+    *((int*)(a1) + 1) = a2;
+    *((int*)(a1) + 2) = 0;
+    *a1 = &vt_VectorCursor_TRect_int_VectorClass_TRect_int;
+    return a1;
+}
+}
+} // namespace gamemd
+
+// 0x769FC0
+namespace gamemd {
+unsigned int Map_WorldDominationTour_20::Write(int a2)
+{
+{
+    if ( (unsigned char)this->Map_WorldDominationTour_20_field_0xC )
+    return (unsigned int)(a2 - this->Map_WorldDominationTour_20_field_0x4) >> 3;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x76A250
+namespace gamemd {
+int Map_WorldDominationTour_28::Read(unsigned int * a2)
+{
+{
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->Map_WorldDominationTour_28_field_0xC )
+    return 0;
+    v3 = this->Map_WorldDominationTour_28_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x76A290
+namespace gamemd {
+unsigned int Map_WorldDominationTour_28::Write(int a2)
+{
+{
+    if ( (unsigned char)this->Map_WorldDominationTour_28_field_0xC )
+    return (unsigned int)(a2 - this->Map_WorldDominationTour_28_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x76A520
 namespace gamemd {
 int Map_WorldDominationTour_43::Read(unsigned int * a2)
@@ -3086,43 +3016,115 @@ unsigned int Map_WorldDominationTour_43::Write(int a2)
 }
 } // namespace gamemd
 
-// 0x76A770
+// 0x76A5A0
 namespace gamemd {
-VectorClass * Map_WorldDominationTour_43::QueryInterface(char a2)
+unsigned int * Map_WorldDominationTour_38::Release()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall Map_WorldDominationTour_43_::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
+    ++*(this + 2);
+    return this;
+}
+}
+} // namespace gamemd
 
-  v3 = (void *)*(this + 1); /*0x76a773*/
-  *this = &vt_VectorClass_WorldDominationTour_Centroid; /*0x76a776*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x76a780*/
+// 0x76A5B0
+namespace gamemd {
+unsigned int * Map_WorldDominationTour_38::ddtor()
+{
+{
+    --*(this + 2);
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x770C10
+namespace gamemd {
+char sub_770C10(int a1, int a2, void ** a3)
+{
+{
+    char **v3;
+    int v6;
+    int v8;
+    int v9;
+    char **v10;
+    char **v11;
+    char **v12;
+    char **v13;
+    void *v14;
+    void *v15;
+    void *v16;
+    v3 = (char **)a3;
+    DeleteAndZero::Alt2(a3);
+    v6 = *(int *)(a2 + 16);
+    if ( v6 <= 0 )
+    return 0;
+    if ( v6 == 1 )
+    v8 = 0;
+    else
+    v8 = Random::Range(Randomizer_Global, 0, v6 - 1);
+    v9 = *(int *)(*(int *)(a2 + 4) + 4 * v8);
+    if ( a1 == 3 )
   {
-    __3_YAXPAX_Z(v3); /*0x76a788*/
-    *(this + 1) = 0; /*0x76a790*/
+    v10 = FormatStringInt((char **)&v14, v9, 2);
+    v11 = ProcessStringAndCopy((char **)&a3, g_Str_WWD_Soviet, v10);
+    String::Reassign(v3, (const char **)v11);
+    DeleteAndZero((void **)&a3);
+    DeleteAndZero(&v14);
   }
-  *((_BYTE *)this + 13) = 0; /*0x76a79b*/
-  *(this + 2) = 0; /*0x76a7a1*/
-  if ( (a2 & 1) != 0 ) /*0x76a7a8*/
-    __3_YAXPAX_Z(this); /*0x76a7ab*/
-  return (VectorClass *)this; /*0x76a7b5*/
+    else
+  {
+    v12 = FormatStringInt((char **)&v16, v9, 2);
+    v13 = ProcessStringAndCopy((char **)&v15, g_Str_WWD_Allied, v12);
+    String::Reassign(v3, (const char **)v13);
+    DeleteAndZero(&v15);
+    DeleteAndZero(&v16);
+  }
+    return 1;
 }
 }
 } // namespace gamemd
 
-// 0x731CB0
+// 0x770CE0
 namespace gamemd {
-int sub_731CB0()
+char sub_770CE0(int a1, int a2, char ** a3)
 {
-return 71;
+{
+    char **v3;
+    char **v4;
+    char **v6;
+    char **v7;
+    void *v8;
+    void *v9;
+    if ( a1 == 3 )
+  {
+    v3 = FormatStringInt((char **)&v9, a2, 2);
+    v4 = ProcessStringAndCopy((char **)&v8, g_Str_WWD_Soviet, v3);
+    String::Reassign(a3, (const char **)v4);
+    DeleteAndZero(&v8);
+    DeleteAndZero(&v9);
+  }
+    else
+  {
+    v6 = FormatStringInt((char **)&v8, a2, 2);
+    v7 = ProcessStringAndCopy((char **)&v9, g_Str_WWD_Allied, v6);
+    String::Reassign(a3, (const char **)v7);
+    DeleteAndZero(&v9);
+    DeleteAndZero(&v8);
+  }
+    return 1;
+}
 }
 } // namespace gamemd
 
-// 0x731CC0
+// 0x7A2800
 namespace gamemd {
-int sub_731CC0()
+char sub_7A2800(int a1, char a2, char a3)
 {
-return 22;
+{
+    HWND v5;
+    v5 = (HWND)Dialog::FindByHandle((void *)0xC2);
+    return Map_Handle_5EC880(v5, a1, a2, a3);
+}
 }
 } // namespace gamemd

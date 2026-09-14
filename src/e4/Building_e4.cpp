@@ -220,6 +220,27 @@ int __thiscall Building_GetNthOfType(int this)
 }
 } // namespace gamemd
 
+// 0x772A90
+namespace gamemd {
+char Building::GetRenderType()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall Building_GetRenderType(_DWORD *this)
+{
+  int v1; // ecx
+  char result; // al
+
+  v1 = *(this + 40); /*0x772a90*/
+  result = 0; /*0x772a96*/
+  if ( *(_BYTE *)(v1 + 676) ) /*0x772a98*/
+    result = 4; /*0x772aa2*/
+  if ( *(_BYTE *)(v1 + 677) ) /*0x772aa7*/
+    return result | 0xB8; /*0x772ab1*/
+  return result; /*0x772ab3*/
+}
+}
+} // namespace gamemd
+
 // 0x69E7E0
 namespace gamemd {
 unsigned int * Building::GetFoundationSize(unsigned int * a1, unsigned int a2)
@@ -252,27 +273,6 @@ unsigned int * Building::GetFoundationSize(unsigned int * a1, unsigned int a2)
     *((int*)(a1) + 3) = DataGlobal_B077AC;
     return a1;
   }
-}
-}
-} // namespace gamemd
-
-// 0x772A90
-namespace gamemd {
-char Building::GetRenderType()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Building_GetRenderType(_DWORD *this)
-{
-  int v1; // ecx
-  char result; // al
-
-  v1 = *(this + 40); /*0x772a90*/
-  result = 0; /*0x772a96*/
-  if ( *(_BYTE *)(v1 + 676) ) /*0x772a98*/
-    result = 4; /*0x772aa2*/
-  if ( *(_BYTE *)(v1 + 677) ) /*0x772aa7*/
-    return result | 0xB8; /*0x772ab1*/
-  return result; /*0x772ab3*/
 }
 }
 } // namespace gamemd

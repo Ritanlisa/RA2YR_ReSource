@@ -70,6 +70,44 @@ char __thiscall Debug::ScrollText(int this, CellStruct *aP1)
 }
 } // namespace gamemd
 
+// 0x6E61F0
+namespace gamemd {
+int Debug::AccumFlags()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall Debug_AccumFlags(_DWORD *this)
+{
+  int v1; // esi
+  int i; // edi
+  int v3; // eax
+
+  v1 = *(this + 40); /*0x6e61f1*/
+  for ( i = 0; v1; i |= v3 ) /*0x6e61fc*/
+  {
+    v3 = TriggerTypeClass::GetFlags(v1); /*0x6e6200*/
+    v1 = *(_DWORD *)(v1 + 168); /*0x6e6205*/
+  }
+  return i; /*0x6e6213*/
+}
+}
+} // namespace gamemd
+
+// 0x4068E0
+namespace gamemd {
+void Debug::Log()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x4A4AC0
+namespace gamemd {
+void Debug::Log_0()
+{
+  ;
+}
+} // namespace gamemd
+
 // 0x5BD1F0
 namespace gamemd {
 char Debug::Printf()
@@ -109,43 +147,5 @@ char Debug_Helper(ObjectClass * aP0)
   }
     return result;
 }
-}
-} // namespace gamemd
-
-// 0x6E61F0
-namespace gamemd {
-int Debug::AccumFlags()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Debug_AccumFlags(_DWORD *this)
-{
-  int v1; // esi
-  int i; // edi
-  int v3; // eax
-
-  v1 = *(this + 40); /*0x6e61f1*/
-  for ( i = 0; v1; i |= v3 ) /*0x6e61fc*/
-  {
-    v3 = TriggerTypeClass::GetFlags(v1); /*0x6e6200*/
-    v1 = *(_DWORD *)(v1 + 168); /*0x6e6205*/
-  }
-  return i; /*0x6e6213*/
-}
-}
-} // namespace gamemd
-
-// 0x4068E0
-namespace gamemd {
-void Debug::Log()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x4A4AC0
-namespace gamemd {
-void Debug::Log_0()
-{
-  ;
 }
 } // namespace gamemd

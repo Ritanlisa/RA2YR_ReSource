@@ -1162,20 +1162,6 @@ int __stdcall SuperClass::LoadFromStream(AbstractClass *aP0, int aP1)
 }
 } // namespace gamemd
 
-// 0x6CDFD0
-namespace gamemd {
-int SuperClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6CDFF0
 namespace gamemd {
 long long SuperClass::ExecuteAction(unsigned int a2, int a3)
@@ -1353,6 +1339,20 @@ int SuperClass::ddtor(int a1, unsigned int * a2)
   a2[2] = 268461211;
   a2[3] = -399534261;
   return 0;
+}
+} // namespace gamemd
+
+// 0x6CDFD0
+namespace gamemd {
+int SuperClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
 }
 } // namespace gamemd
 

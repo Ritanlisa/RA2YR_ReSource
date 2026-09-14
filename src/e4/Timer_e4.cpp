@@ -132,6 +132,23 @@ double __thiscall Timer_GetHighPrecision(double *this)
 }
 } // namespace gamemd
 
+// 0x5F1390
+namespace gamemd {
+int Timer::GetElapsed()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall Timer_GetElapsed(_DWORD *this)
+{
+  int v1; // edi
+
+  v1 = *(this + 2); /*0x5f1396*/
+  if ( *this != -1 ) /*0x5f139c*/
+    v1 += Timer::GetTicks() - *this; /*0x5f13a8*/
+  return v1; /*0x5f13ac*/
+}
+}
+} // namespace gamemd
+
 // 0x5D5870
 namespace gamemd {
 void * Timer::EnableHighPrecision()
@@ -149,23 +166,6 @@ MMRESULT Timer::DisableHighPrecision()
 {
 {
     return timeEndPeriod(1u);
-}
-}
-} // namespace gamemd
-
-// 0x5F1390
-namespace gamemd {
-int Timer::GetElapsed()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Timer_GetElapsed(_DWORD *this)
-{
-  int v1; // edi
-
-  v1 = *(this + 2); /*0x5f1396*/
-  if ( *this != -1 ) /*0x5f139c*/
-    v1 += Timer::GetTicks() - *this; /*0x5f13a8*/
-  return v1; /*0x5f13ac*/
 }
 }
 } // namespace gamemd

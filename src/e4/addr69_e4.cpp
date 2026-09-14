@@ -60,27 +60,6 @@ int __thiscall sub_690400(int *this)
 }
 } // namespace gamemd
 
-// 0x690530
-namespace gamemd {
-void E4Recv_690530::sub_690530(void * a2, int a3)
-{
-{
-    int i;
-    if ( a2 )
-  {
-    if ( Audio::IsSoundEnabled() )
-    {
-    for ( i = 0; i < this->M68; ++i )
-      {
-    if ( !_strcmpi(a2, **(const void ***)(this->M56 + 4 * i)) )
-    break;
-      }
-    }
-  }
-}
-}
-} // namespace gamemd
-
 // 0x6905F0
 namespace gamemd {
 char * E4Recv_6905F0::sub_6905F0()
@@ -1729,33 +1708,6 @@ int __stdcall sub_69BCC0(ObjectClass *aP0)
 }
 } // namespace gamemd
 
-// 0x69BD00
-namespace gamemd {
-int sub_69BD00(int a1)
-{
-{
-    int v1;
-    char *v2;
-    char *v3;
-    char *v4;
-    v1 = 0;
-    if ( Game_PlayerCount <= 0 )
-    return 0;
-    while ( 1 )
-  {
-    v2 = (char *)*(&g_NetworkPlayerName + a1);
-    v3 = ToWideStringChar(*(char **)(Game_PlayerInfoArray + 4 * v1));
-    v4 = ToWideStringChar(v2);
-    if ( !_strcmpi(v3, v4) )
-    break;
-    if ( ++v1 >= Game_PlayerCount )
-    return 0;
-  }
-    return v1;
-}
-}
-} // namespace gamemd
-
 // 0x69E9F0
 namespace gamemd {
 int E4Recv_69E9F0::sub_69E9F0(int a1, Straw * aP2)
@@ -1849,6 +1801,27 @@ namespace gamemd {
 void nullsub_227()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x690530
+namespace gamemd {
+void E4Recv_690530::sub_690530(void * a2, int a3)
+{
+{
+    int i;
+    if ( a2 )
+  {
+    if ( Audio::IsSoundEnabled() )
+    {
+    for ( i = 0; i < this->M68; ++i )
+      {
+    if ( !_strcmpi(a2, **(const void ***)(this->M56 + 4 * i)) )
+    break;
+      }
+    }
+  }
+}
 }
 } // namespace gamemd
 
@@ -2762,6 +2735,33 @@ namespace gamemd {
 void nullsub_229(int a1, int a2)
 {
   ;
+}
+} // namespace gamemd
+
+// 0x69BD00
+namespace gamemd {
+int sub_69BD00(int a1)
+{
+{
+    int v1;
+    char *v2;
+    char *v3;
+    char *v4;
+    v1 = 0;
+    if ( Game_PlayerCount <= 0 )
+    return 0;
+    while ( 1 )
+  {
+    v2 = (char *)*(&g_NetworkPlayerName + a1);
+    v3 = ToWideStringChar(*(char **)(Game_PlayerInfoArray + 4 * v1));
+    v4 = ToWideStringChar(v2);
+    if ( !_strcmpi(v3, v4) )
+    break;
+    if ( ++v1 >= Game_PlayerCount )
+    return 0;
+  }
+    return v1;
+}
 }
 } // namespace gamemd
 

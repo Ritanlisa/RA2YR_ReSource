@@ -38,19 +38,6 @@ void __thiscall MSFont_18_::sub_5D5080(int this)
 }
 } // namespace gamemd
 
-// 0x5D50B0
-namespace gamemd {
-unsigned int MSFont_18::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->MSFont_18_field_0xC )
-    return (unsigned int)(a2 - this->MSFont_18_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x5D50D0
 namespace gamemd {
 int MSFont_18::GetSize(int a2)
@@ -81,19 +68,6 @@ void __thiscall MSFont_18_::sub_5D50E0(int this)
   }
   *(_BYTE *)(this + 13) = 0; /*0x5d5101*/
   this->MSFont_18_field_0x8 = 0; /*0x5d5104*/
-}
-}
-} // namespace gamemd
-
-// 0x5D5110
-namespace gamemd {
-unsigned int MSFont_18::PointerToIndex8(int a2)
-{
-{
-    if ( (unsigned char)this->MSFont_18_field_0xC )
-    return (unsigned int)(a2 - this->MSFont_18_field_0x4) >> 3;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -225,19 +199,6 @@ int __thiscall MSFont_18_::_vt04(int this, _DWORD *a2)
       return -1; /*0x5d529a*/
   }
   return result; /*0x5d527a*/
-}
-}
-} // namespace gamemd
-
-// 0x5D52B0
-namespace gamemd {
-unsigned int MSFont_18::Draw(int a2)
-{
-{
-    if ( (unsigned char)this->MSFont_18_field_0xC )
-    return (unsigned int)(a2 - this->MSFont_18_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -523,6 +484,45 @@ DynamicVector *__thiscall MSFont_18_::Constructor_VectorClass_AcceleratorTracker
   if ( (a2 & 1) != 0 ) /*0x5d5808*/
     __3_YAXPAX_Z(this); /*0x5d580b*/
   return (DynamicVector *)this; /*0x5d5815*/
+}
+}
+} // namespace gamemd
+
+// 0x5D50B0
+namespace gamemd {
+unsigned int MSFont_18::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->MSFont_18_field_0xC )
+    return (unsigned int)(a2 - this->MSFont_18_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D5110
+namespace gamemd {
+unsigned int MSFont_18::PointerToIndex8(int a2)
+{
+{
+    if ( (unsigned char)this->MSFont_18_field_0xC )
+    return (unsigned int)(a2 - this->MSFont_18_field_0x4) >> 3;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D52B0
+namespace gamemd {
+unsigned int MSFont_18::Draw(int a2)
+{
+{
+    if ( (unsigned char)this->MSFont_18_field_0xC )
+    return (unsigned int)(a2 - this->MSFont_18_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

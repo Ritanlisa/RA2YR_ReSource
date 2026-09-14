@@ -9,9 +9,9 @@ struct Territory_WorldDominationTour_8 {
     void ddtor();  // 0x771950
     char Read(int a2, int a3);  // 0x771970
     void Write(int a2, int a3);  // 0x771980
-    unsigned int * Seek(unsigned int * a1);  // 0x771990
-    BOOL Open();  // 0x7719C0
     void Close(int a2);  // 0x7719D0
     unsigned int * QueryInterface(char a2);  // 0x771A30
+    unsigned int * Seek(unsigned int * a1);  // 0x771990
+    BOOL Open();  // 0x7719C0
 };
 } // namespace gamemd

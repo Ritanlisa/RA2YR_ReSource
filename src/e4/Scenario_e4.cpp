@@ -323,20 +323,6 @@ int __thiscall Scenario::ReadTeams(CCINIClass *this)
 }
 } // namespace gamemd
 
-// 0x4758F0
-namespace gamemd {
-int Scenario::FindBuildingTypeByName(unsigned char * a1, unsigned char * a2, CCINIClass * aP3)
-{
-{
-    INIClass Destination[2];
-    if ( INIClass::GetString(this, (INIClass *)a1, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
-    return StringList::Find(&g_BuildingTypeClass_Count, Destination[0].__pad_0);
-    else
-    return (int)aP3->__pad_0;
-}
-}
-} // namespace gamemd
-
 // 0x4C6180
 namespace gamemd {
 int Scenario::CopyLocalScenarioData()
@@ -939,19 +925,6 @@ char __thiscall Scenario::LoadOrReloadOptions(_DWORD *this, IUnknown *aP1)
 }
 } // namespace gamemd
 
-// 0x5C9700
-namespace gamemd {
-void * Scenario::ResetDisplayArrays()
-{
-{
-    DataGlobal_ABF9F4 = 0;
-    memset(DataGlobal_ABF958, 0, sizeof(DataGlobal_ABF958));
-    DataGlobal_ABF9F8 = 0;
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x5E7460
 namespace gamemd {
 int Scenario::PreGameInit()
@@ -988,28 +961,6 @@ void Scenario::SetByte96()
 void __thiscall Scenario::SetByte96(ProgressScreenClass *this)
 {
   *((_BYTE *)this + 96) = 0; /*0x642ad0*/
-}
-}
-} // namespace gamemd
-
-// 0x642B10
-namespace gamemd {
-int Scenario::SetDword32(int a2)
-{
-{
-    this->Scenario_field_0x80 = a2;
-    return a2;
-}
-}
-} // namespace gamemd
-
-// 0x642DF0
-namespace gamemd {
-int Scenario::SetDword30(int a2)
-{
-{
-    this->Scenario_field_0x78 = a2;
-    return a2;
 }
 }
 } // namespace gamemd
@@ -1843,6 +1794,55 @@ LABEL_60:
   if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 ) /*0x68621d*/
     LOBYTE(v13) = ChatMessageWOL(0, (wchar_t *)&stru_87C374.__pad_579C[23588]); /*0x68622a*/
   return v13; /*0x686045*/
+}
+}
+} // namespace gamemd
+
+// 0x4758F0
+namespace gamemd {
+int Scenario::FindBuildingTypeByName(unsigned char * a1, unsigned char * a2, CCINIClass * aP3)
+{
+{
+    INIClass Destination[2];
+    if ( INIClass::GetString(this, (INIClass *)a1, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
+    return StringList::Find(&g_BuildingTypeClass_Count, Destination[0].__pad_0);
+    else
+    return (int)aP3->__pad_0;
+}
+}
+} // namespace gamemd
+
+// 0x5C9700
+namespace gamemd {
+void * Scenario::ResetDisplayArrays()
+{
+{
+    DataGlobal_ABF9F4 = 0;
+    memset(DataGlobal_ABF958, 0, sizeof(DataGlobal_ABF958));
+    DataGlobal_ABF9F8 = 0;
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x642B10
+namespace gamemd {
+int Scenario::SetDword32(int a2)
+{
+{
+    this->Scenario_field_0x80 = a2;
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x642DF0
+namespace gamemd {
+int Scenario::SetDword30(int a2)
+{
+{
+    this->Scenario_field_0x78 = a2;
+    return a2;
 }
 }
 } // namespace gamemd

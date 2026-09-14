@@ -174,68 +174,6 @@ LABEL_19:
 }
 } // namespace gamemd
 
-// 0x5942F0
-namespace gamemd {
-int E4Recv_5942F0::sub_5942F0(int * a2)
-{
-{
-    int *v2;
-    int v3;
-    int result;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    char *v9;
-    int v10;
-    short v11[2];
-    int *v12;
-    v2 = a2;
-    v12 = this;
-    v3 = *((int*)(a2) + 1);
-    result = v3 + *((int*)(a2) + 3);
-    v10 = v3;
-    if ( v3 < result )
-  {
-    v5 = g_MapCellHeight_Value;
-    do
-    {
-    v6 = *v2;
-    if ( *v2 < *v2 + v2[2] )
-      {
-    v7 = (short)v3;
-    do
-        {
-    v11[0] = v6;
-    v11[1] = v3;
-    v8 = v7 + (short)v6;
-    if ( v8 > v5 )
-          {
-    if ( (short)v6 - v7 < v5 && v7 - (short)v6 < v5 && v8 <= g_MapCellCount )
-            {
-    if ( g_MapTileArray )
-    *((int *)(g_MapTileArray) + 20 * (short)v6 + 20 * g_MapCellWidth * v7 + 14) = v12[2];
-    v9 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v11);
-    v9[283] = *((char *)(v12) + 16);
-    v5 = g_MapCellHeight_Value;
-            }
-    v3 = v10;
-    v2 = a2;
-          }
-    ++v6;
-    result = *v2 + v2[2];
-        }
-    while ( v6 < result );
-      }
-    v10 = ++v3;
-    }
-    while ( v3 < v2[1] + v2[3] );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x594420
 namespace gamemd {
 void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
@@ -892,28 +830,6 @@ LABEL_39:
 }
 } // namespace gamemd
 
-// 0x597D40
-namespace gamemd {
-int j_Options_GetValue()
-{
-// 0x597d40
-    bool __thiscall j_Options::GetValue(const char **dwNewLong)
-{
-    return Options::PrepareSaveLoadDlg(dwNewLong);
-}
-}
-} // namespace gamemd
-
-// 0x598000
-namespace gamemd {
-double sub_598000()
-{
-{
-    return (double)(unsigned int)Random::State(&g_Randomizer) * 2.328306437080797e-10;
-}
-}
-} // namespace gamemd
-
 // 0x5980A0
 namespace gamemd {
 unsigned int * E4Recv_5980A0::sub_5980A0(int a2)
@@ -1236,6 +1152,90 @@ LABEL_25:
     result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x59c7e2*/
   }
   return result; /*0x59c7f3*/
+}
+}
+} // namespace gamemd
+
+// 0x5942F0
+namespace gamemd {
+int E4Recv_5942F0::sub_5942F0(int * a2)
+{
+{
+    int *v2;
+    int v3;
+    int result;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    char *v9;
+    int v10;
+    short v11[2];
+    int *v12;
+    v2 = a2;
+    v12 = this;
+    v3 = *((int*)(a2) + 1);
+    result = v3 + *((int*)(a2) + 3);
+    v10 = v3;
+    if ( v3 < result )
+  {
+    v5 = g_MapCellHeight_Value;
+    do
+    {
+    v6 = *v2;
+    if ( *v2 < *v2 + v2[2] )
+      {
+    v7 = (short)v3;
+    do
+        {
+    v11[0] = v6;
+    v11[1] = v3;
+    v8 = v7 + (short)v6;
+    if ( v8 > v5 )
+          {
+    if ( (short)v6 - v7 < v5 && v7 - (short)v6 < v5 && v8 <= g_MapCellCount )
+            {
+    if ( g_MapTileArray )
+    *((int *)(g_MapTileArray) + 20 * (short)v6 + 20 * g_MapCellWidth * v7 + 14) = v12[2];
+    v9 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v11);
+    v9[283] = *((char *)(v12) + 16);
+    v5 = g_MapCellHeight_Value;
+            }
+    v3 = v10;
+    v2 = a2;
+          }
+    ++v6;
+    result = *v2 + v2[2];
+        }
+    while ( v6 < result );
+      }
+    v10 = ++v3;
+    }
+    while ( v3 < v2[1] + v2[3] );
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x597D40
+namespace gamemd {
+int j_Options_GetValue()
+{
+// 0x597d40
+    bool __thiscall j_Options::GetValue(const char **dwNewLong)
+{
+    return Options::PrepareSaveLoadDlg(dwNewLong);
+}
+}
+} // namespace gamemd
+
+// 0x598000
+namespace gamemd {
+double sub_598000()
+{
+{
+    return (double)(unsigned int)Random::State(&g_Randomizer) * 2.328306437080797e-10;
 }
 }
 } // namespace gamemd

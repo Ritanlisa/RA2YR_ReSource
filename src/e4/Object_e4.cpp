@@ -3,16 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Object_e4.hpp"
 
-// 0x42B1F0
-namespace gamemd {
-int Object::ComputeAllocationSize()
-{
-{
-    return 2 * g_Cell_PositionLUT * (g_CellPositionOffset + 4);
-}
-}
-} // namespace gamemd
-
 // 0x47C3D0
 namespace gamemd {
 int Object::FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
@@ -166,39 +156,6 @@ bool __thiscall House_IsAlliedWithObjectSimple(_DWORD *this, _BYTE *a2)
   if ( v5 == *(this + 12) ) /*0x4f9b1c*/
     return 1; /*0x4f9b21*/
   return v5 != -1 && (*(this + 5602) & (1 << v5)) != 0; /*0x4f9b3b*/
-}
-}
-} // namespace gamemd
-
-// 0x53E420
-namespace gamemd {
-void ** Object::RemoveObjectArray()
-{
-{
-    void **result;
-    int v2;
-    result = (void **)g_StreamPool;
-    if ( g_StreamPool )
-  {
-    if ( this )
-    {
-    result = (void **)DataGlobal_AA044C;
-    v2 = 1;
-    if ( DataGlobal_AA0374 > 1 )
-      {
-    while ( *result != this )
-        {
-    ++v2;
-    ++result;
-    if ( v2 >= DataGlobal_AA0374 )
-    return result;
-        }
-    *result = 0;
-    return (void **)--DataGlobal_AA0450;
-      }
-    }
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -420,40 +377,6 @@ LABEL_24:
 }
 } // namespace gamemd
 
-// 0x5F5230
-namespace gamemd {
-int Object::Unlink()
-{
-{
-    int result;
-    int v2;
-    char v3;
-    result = this->Object_field_0x34;
-    if ( result == v2 && result )
-  {
-    --*(int *)(result + 44);
-    this->Object_field_0x34 = 0;
-  }
-    LOBYTE(result) = v3;
-    if ( v3 )
-  {
-    result = this->Object_field_0x30;
-    if ( v2 == result )
-    {
-    if ( v2 )
-      {
-    result = *(int *)(result + 48);
-    this->Object_field_0x30 = result;
-      }
-    }
-  }
-    if ( v2 == this->Object_field_0x88 )
-    this->Object_field_0x88 = 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x5FC380
 namespace gamemd {
 OverlayClass * Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
@@ -501,25 +424,6 @@ OverlayClass *__thiscall Object::SpawnAtCell(void *this, IUnknown *aP1, IUnknown
 }
 } // namespace gamemd
 
-// 0x5FD270
-namespace gamemd {
-char Object::CheckState(IUnknown * aP1, int a3)
-{
-{
-    IUnknown *v3;
-    int *v5;
-    v3 = aP1;
-    LOWORD(aP1) = aP1->field_0 / 256;
-    HIWORD(aP1) = v3->field_4 / 256;
-    v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1);
-    if ( CellClass::FindInfantry(v5, 0) )
-    return 0;
-    else
-    return ObjectClass::Deploy((#374 *)this);
-}
-}
-} // namespace gamemd
-
 // 0x5FD8F0
 namespace gamemd {
 int Object::LoadObject(ObjectClass * aP1, int aP1a)
@@ -543,16 +447,6 @@ int __thiscall Object::LoadObject(void *this, ObjectClass *aP1, int aP1a)
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]); /*0x5fd93e*/
   }
   return (int)Register->__pad_0; /*0x5fd945*/
-}
-}
-} // namespace gamemd
-
-// 0x5FD950
-namespace gamemd {
-int Object::SaveObject(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
 }
 }
 } // namespace gamemd
@@ -1790,28 +1684,6 @@ int __fastcall sub_5A7E90(int a1, _WORD *a2)
 }
 } // namespace gamemd
 
-// 0x637DD0
-namespace gamemd {
-char sub_637DD0(char a1, int a2, int a3, int a4, int a5, int a6, int a7, short a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27, int a28)
-{
-{
-    char result;
-    char v29[108];
-    int v30;
-    result = a1;
-    if ( a1 == 4 )
-  {
-    HIBYTE(a8) = 1;
-    qmemcpy(v29, &a1, sizeof(v29));
-    LOWORD(v30) = a28;
-    BYTE2(v30) = BYTE2(a28);
-    return Network::RecordEvent( *(__int64 *)v29, *(int *)&v29[8], *(int *)&v29[12], *(int *)&v29[16], *(int *)&v29[20], *(int *)&v29[24], *(int *)&v29[28], *(int *)&v29[32], *(int *)&v29[36], *(int *)&v29[40], *(int *)&v29[44], *(int *)&v29[48], *(int *)&v29[52], *(int *)&v29[56], *(int *)&v29[60], *(int *)&v29[64], *(int *)&v29[68], *(int *)&v29[72], *(int *)&v29[76], *(int *)&v29[80], *(int *)&v29[84], *(int *)&v29[88], *(int *)&v29[92], *(int *)&v29[96], *(int *)&v29[100], *(int *)&v29[104], v30);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x710890
 namespace gamemd {
 int sub_710890(int a1, int a2, int * a3)
@@ -1848,28 +1720,108 @@ LABEL_7:
 }
 } // namespace gamemd
 
-// 0x733C60
+// 0x42B1F0
 namespace gamemd {
-BOOL sub_733C60(int a1, const char * a2)
+int Object::ComputeAllocationSize()
 {
 {
-    const char *v4;
-    v4 = (const char *)((*(int (__thiscall **)(int))(*(int *)(a1) + 136))(a1) + 36);
-    return a2 && !strcmp(v4, a2) && (*(unsigned char (__thiscall **)(int))(*(int *)(a1) + 316))(a1);
+    return 2 * g_Cell_PositionLUT * (g_CellPositionOffset + 4);
 }
 }
 } // namespace gamemd
 
-// 0x7CBC11
+// 0x53E420
 namespace gamemd {
-char * sub_7CBC11(char * VarName)
+void ** Object::RemoveObjectArray()
 {
 {
-    char *v1;
-    _lock(12);
-    v1 = getenv(VarName);
-    _unlock(12);
-    return v1;
+    void **result;
+    int v2;
+    result = (void **)g_StreamPool;
+    if ( g_StreamPool )
+  {
+    if ( this )
+    {
+    result = (void **)DataGlobal_AA044C;
+    v2 = 1;
+    if ( DataGlobal_AA0374 > 1 )
+      {
+    while ( *result != this )
+        {
+    ++v2;
+    ++result;
+    if ( v2 >= DataGlobal_AA0374 )
+    return result;
+        }
+    *result = 0;
+    return (void **)--DataGlobal_AA0450;
+      }
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x5F5230
+namespace gamemd {
+int Object::Unlink()
+{
+{
+    int result;
+    int v2;
+    char v3;
+    result = this->Object_field_0x34;
+    if ( result == v2 && result )
+  {
+    --*(int *)(result + 44);
+    this->Object_field_0x34 = 0;
+  }
+    LOBYTE(result) = v3;
+    if ( v3 )
+  {
+    result = this->Object_field_0x30;
+    if ( v2 == result )
+    {
+    if ( v2 )
+      {
+    result = *(int *)(result + 48);
+    this->Object_field_0x30 = result;
+      }
+    }
+  }
+    if ( v2 == this->Object_field_0x88 )
+    this->Object_field_0x88 = 0;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x5FD270
+namespace gamemd {
+char Object::CheckState(IUnknown * aP1, int a3)
+{
+{
+    IUnknown *v3;
+    int *v5;
+    v3 = aP1;
+    LOWORD(aP1) = aP1->field_0 / 256;
+    HIWORD(aP1) = v3->field_4 / 256;
+    v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1);
+    if ( CellClass::FindInfantry(v5, 0) )
+    return 0;
+    else
+    return ObjectClass::Deploy((#374 *)this);
+}
+}
+} // namespace gamemd
+
+// 0x5FD950
+namespace gamemd {
+int Object::SaveObject(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
 }
 }
 } // namespace gamemd
@@ -1901,5 +1853,53 @@ namespace gamemd {
 int Object::StubReturn20()
 {
 return 20;
+}
+} // namespace gamemd
+
+// 0x637DD0
+namespace gamemd {
+char sub_637DD0(char a1, int a2, int a3, int a4, int a5, int a6, int a7, short a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27, int a28)
+{
+{
+    char result;
+    char v29[108];
+    int v30;
+    result = a1;
+    if ( a1 == 4 )
+  {
+    HIBYTE(a8) = 1;
+    qmemcpy(v29, &a1, sizeof(v29));
+    LOWORD(v30) = a28;
+    BYTE2(v30) = BYTE2(a28);
+    return Network::RecordEvent( *(__int64 *)v29, *(int *)&v29[8], *(int *)&v29[12], *(int *)&v29[16], *(int *)&v29[20], *(int *)&v29[24], *(int *)&v29[28], *(int *)&v29[32], *(int *)&v29[36], *(int *)&v29[40], *(int *)&v29[44], *(int *)&v29[48], *(int *)&v29[52], *(int *)&v29[56], *(int *)&v29[60], *(int *)&v29[64], *(int *)&v29[68], *(int *)&v29[72], *(int *)&v29[76], *(int *)&v29[80], *(int *)&v29[84], *(int *)&v29[88], *(int *)&v29[92], *(int *)&v29[96], *(int *)&v29[100], *(int *)&v29[104], v30);
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x733C60
+namespace gamemd {
+BOOL sub_733C60(int a1, const char * a2)
+{
+{
+    const char *v4;
+    v4 = (const char *)((*(int (__thiscall **)(int))(*(int *)(a1) + 136))(a1) + 36);
+    return a2 && !strcmp(v4, a2) && (*(unsigned char (__thiscall **)(int))(*(int *)(a1) + 316))(a1);
+}
+}
+} // namespace gamemd
+
+// 0x7CBC11
+namespace gamemd {
+char * sub_7CBC11(char * VarName)
+{
+{
+    char *v1;
+    _lock(12);
+    v1 = getenv(VarName);
+    _unlock(12);
+    return v1;
+}
 }
 } // namespace gamemd

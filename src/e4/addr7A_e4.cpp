@@ -380,57 +380,6 @@ LABEL_50:
 }
 } // namespace gamemd
 
-// 0x7A0D10
-namespace gamemd {
-int sub_7A0D10()
-{
-{
-    int result;
-    int v1;
-    signed int v2;
-    signed int v3;
-    ULONG S_addr;
-    char *v5;
-    size_t v6;
-    int v7;
-    int v8;
-    struct in_addr v9[27];
-    result = g_NetworkLobbyState;
-    v1 = 0;
-    if ( !g_NetworkLobbyState )
-  {
-    result = 0;
-    v2 = 0;
-    memset(v9, 0, sizeof(v9));
-    v3 = g_WOL_State;
-    v7 = 0;
-    v6 = g_WOL_State;
-    if ( (int)g_WOL_State > 0 )
-    {
-    do
-      {
-    if ( v1 >= 0 && v2 < (int)g_WOL_State )
-        {
-    qmemcpy(v9, (char *)(g_WOL_ConnectionFlags) + v1, sizeof(v9));
-    v3 = v6;
-        }
-    S_addr = v9[6].S_un.S_addr;
-    ntoainet(v9[6]);
-    Debug::Log();
-    v8 = *(int *)g_UIPointerTable;
-    v5 = ntoainet((struct in_addr)S_addr);
-    result = (*(int (__stdcall **)(LPVOID, char *, int, int *))(v8 + 24))(g_UIPointerTable, v5, 1000, &v7);
-    ++v2;
-    v1 += 108;
-      }
-    while ( v2 < v3 );
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x7A0DD0
 namespace gamemd {
 void E4Recv_7A0DD0::sub_7A0DD0()
@@ -1030,114 +979,6 @@ LABEL_25:
 }
 } // namespace gamemd
 
-// 0x7A2110
-namespace gamemd {
-INT_PTR sub_7A2110(HWND hWnd, UINT a2, WPARAM a3, char * a4)
-{
-{
-    if ( a2 > 0x2B )
-  {
-    switch ( a2 )
-    {
-    case 0x111u: switch ( (unsigned short)a3 )
-        {
-    case 0x5C0u: if ( g_WOL_IdleHandler == 11 )
-            {
-    CloseDialog(hWnd, 0);
-    return 0;
-            }
-    SetEvent(Handles);
-    break;
-    case 0x708u: (*(void (__stdcall **)(int, char *))((*(&g_MatrixTransformState + 2263))->X + 44))( *(&g_MatrixTransformState + 2263), aStart443900100_0);
-    return 0;
-    case 0x709u: (*(void (__stdcall **)(int, char *))((*(&g_MatrixTransformState + 2263))->X + 44))( *(&g_MatrixTransformState + 2263), aStart443900100);
-    return 0;
-        }
-    break;
-    case 0x113u: if ( !a3 )
-        {
-    sub_5E2AC0();
-    return 0;
-        }
-    break;
-    case 0x497u: SetTimer(hWnd, 0, 0x7D0u, 0);
-    return 0;
-    }
-  }
-    else
-  {
-    switch ( a2 )
-    {
-    case 0x2Bu: Dialog::Resize(a4);
-    return 1;
-    case 2u: KillTimer(hWnd, 0);
-    return 0;
-    case 0xFu: Dialog::DrawBackground(hWnd);
-    Dialog::StopBink(hWnd);
-    ValidateRect(hWnd, 0);
-    return 1;
-    case 0x14u: return 1;
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x7A2600
-namespace gamemd {
-int sub_7A2600(HWND hWnd, unsigned int a2, int a3, char * a4)
-{
-{
-    int result;
-    int *v5;
-    void *v6;
-    result = BaseDialogProc(hWnd, a2, a3, (unsigned int)a4);
-    if ( !result )
-  {
-    if ( a2 > 0x2B )
-    {
-    if ( a2 == 273 && (short)a3 == 1472 )
-      {
-    SetEvent(Handles);
-    CloseDialog(hWnd, 1472);
-      }
-    return 0;
-    }
-    if ( a2 == 43 )
-    {
-    Dialog::Resize(a4);
-    return 1;
-    }
-    if ( a2 == 2 )
-    {
-    v6 = g_UIControlState;
-    if ( g_UIControlState )
-      {
-    ComPtr::Dtor(g_UIControlState);
-    __3_YAXPAX_Z(v6);
-    g_UIControlState = 0;
-    return 0;
-      }
-    return 0;
-    }
-    if ( a2 != 15 )
-    return a2 == 20;
-    Dialog::DrawBackground(hWnd);
-    Dialog::StopBink(hWnd);
-    v5 = g_UIControlState;
-    if ( g_UIControlState || g_GameRulesOptions == -1 && (v5 = g_Map_TiberiumConfig) != 0 )
-    Skirmish::RenderPreview(v5, hWnd);
-    if ( LoadScreen::IsActive(g_UIManager) )
-    LoadScreen::Render((int)g_UIManager, a3, (int)a4, NAN);
-    ValidateRect(hWnd, 0);
-    return 1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x7A2830
 namespace gamemd {
 int E4Recv_7A2830::sub_7A2830()
@@ -1509,256 +1350,6 @@ void __thiscall __Release__NonReentrantLock_details_Concurrency__QAEXXZ_1(
         Concurrency::details::_NonReentrantLock *this)
 {
   *(_DWORD *)this = 0; /*0x7acbd0*/
-}
-}
-} // namespace gamemd
-
-// 0x7AF090
-namespace gamemd {
-int sub_7AF090()
-{
-{
-    DataGlobal_B77ED0 = 0;
-    DataGlobal_B77ED4 = 0;
-    DataGlobal_B77ED8 = 0;
-    DataGlobal_B77EDC = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x7AF0B0
-namespace gamemd {
-void sub_7AF0B0()
-{
-{
-    long double v0;
-    v0 = pow(256.0, 2.0);
-    DataGlobal_B77EE8 = Math::Sqrt(v0 + v0);
-}
-}
-} // namespace gamemd
-
-// 0x7AF0E0
-namespace gamemd {
-void sub_7AF0E0()
-{
-{
-    DataGlobal_B77F88 = DataGlobal_B77EE8 / 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x7AF100
-namespace gamemd {
-void sub_7AF100()
-{
-{
-    DataGlobal_B77F40 = 1.0 / DataGlobal_B77F88;
-}
-}
-} // namespace gamemd
-
-// 0x7AF120
-namespace gamemd {
-void sub_7AF120()
-{
-{
-    DataGlobal_B77F38 = 0.0174532925199433 * 45.0;
-}
-}
-} // namespace gamemd
-
-// 0x7AF140
-namespace gamemd {
-void sub_7AF140()
-{
-{
-    DataGlobal_B77EF8 = 0.0174532925199433 * 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x7AF160
-namespace gamemd {
-void sub_7AF160()
-{
-{
-    DataGlobal_B77EB8 = 0.0174532925199433 * 90.0;
-}
-}
-} // namespace gamemd
-
-// 0x7AF180
-namespace gamemd {
-long long sub_7AF180()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_B77EB8 - DataGlobal_B77EF8);
-    result = Math::RoundToInt(v0 * DataGlobal_B77EE8 * 0.5);
-    DataGlobal_B77F90 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x7AF1C0
-namespace gamemd {
-void sub_7AF1C0()
-{
-{
-    DataGlobal_B77F00 = Math::ArcTan((double)DataGlobal_B77F90 * 0.00390625);
-}
-}
-} // namespace gamemd
-
-// 0x7AF1F0
-namespace gamemd {
-void sub_7AF1F0()
-{
-{
-    DataGlobal_B77F28 = Math::ArcTan((double)(2 * DataGlobal_B77F90) / DataGlobal_B77EE8);
-}
-}
-} // namespace gamemd
-
-// 0x7AF220
-namespace gamemd {
-long long sub_7AF220()
-{
-{
-    __int64 result;
-    result = Math::RoundToInt((double)(4 * DataGlobal_B77F90) + 0.5);
-    DataGlobal_B77F80 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x7AF250
-namespace gamemd {
-int sub_7AF250()
-{
-{
-    DataGlobal_B77EE0 = 0;
-    DataGlobal_B77EE2 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x7AF260
-namespace gamemd {
-int sub_7AF260()
-{
-{
-    DataGlobal_B77F10 = 0;
-    DataGlobal_B77F14 = 0;
-    DataGlobal_B77F18 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x7AF280
-namespace gamemd {
-int sub_7AF280()
-{
-{
-    DataGlobal_B77F50 = 0;
-    DataGlobal_B77F48 = 128;
-    DataGlobal_B77F4C = 128;
-    return 128;
-}
-}
-} // namespace gamemd
-
-// 0x7AF390
-namespace gamemd {
-int unknown_libname_61()
-{
-    void __cdecl unknown_libname_61()
-{
-    DeleteAndZero((void **)&DataGlobal_B77EF0);
-}
-}
-} // namespace gamemd
-
-// 0x7AF3A0
-namespace gamemd {
-int unknown_libname_62()
-{
-    void __cdecl unknown_libname_62()
-{
-    DeleteAndZero((void **)&DataGlobal_B77F30);
-}
-}
-} // namespace gamemd
-
-// 0x7AF3B0
-namespace gamemd {
-int unknown_libname_63()
-{
-    void __cdecl unknown_libname_63()
-{
-    DeleteAndZero((void **)&DataGlobal_B77F08);
-}
-}
-} // namespace gamemd
-
-// 0x7AF3C0
-namespace gamemd {
-int unknown_libname_64()
-{
-    void __cdecl unknown_libname_64()
-{
-    DeleteAndZero((void **)&DataGlobal_B77F20);
-}
-}
-} // namespace gamemd
-
-// 0x7AF4C0
-namespace gamemd {
-int unknown_libname_65()
-{
-    void __cdecl unknown_libname_65()
-{
-    DeleteAndZero((void **)&DataGlobal_B77EB0);
-}
-}
-} // namespace gamemd
-
-// 0x7AF4D0
-namespace gamemd {
-int unknown_libname_66()
-{
-    void __cdecl unknown_libname_66()
-{
-    DeleteAndZero((void **)&DataGlobal_B77F1C);
-}
-}
-} // namespace gamemd
-
-// 0x7AF4E0
-namespace gamemd {
-int unknown_libname_67()
-{
-    void __cdecl unknown_libname_67()
-{
-    DeleteAndZero((void **)&DataGlobal_B77EC8);
-}
-}
-} // namespace gamemd
-
-// 0x7AF4F0
-namespace gamemd {
-int unknown_libname_68()
-{
-    void __cdecl unknown_libname_68()
-{
-    DeleteAndZero((void **)&DataGlobal_B77EC0);
 }
 }
 } // namespace gamemd
@@ -2191,10 +1782,419 @@ LABEL_41:
 }
 } // namespace gamemd
 
+// 0x7A0D10
+namespace gamemd {
+int sub_7A0D10()
+{
+{
+    int result;
+    int v1;
+    signed int v2;
+    signed int v3;
+    ULONG S_addr;
+    char *v5;
+    size_t v6;
+    int v7;
+    int v8;
+    struct in_addr v9[27];
+    result = g_NetworkLobbyState;
+    v1 = 0;
+    if ( !g_NetworkLobbyState )
+  {
+    result = 0;
+    v2 = 0;
+    memset(v9, 0, sizeof(v9));
+    v3 = g_WOL_State;
+    v7 = 0;
+    v6 = g_WOL_State;
+    if ( (int)g_WOL_State > 0 )
+    {
+    do
+      {
+    if ( v1 >= 0 && v2 < (int)g_WOL_State )
+        {
+    qmemcpy(v9, (char *)(g_WOL_ConnectionFlags) + v1, sizeof(v9));
+    v3 = v6;
+        }
+    S_addr = v9[6].S_un.S_addr;
+    ntoainet(v9[6]);
+    Debug::Log();
+    v8 = *(int *)g_UIPointerTable;
+    v5 = ntoainet((struct in_addr)S_addr);
+    result = (*(int (__stdcall **)(LPVOID, char *, int, int *))(v8 + 24))(g_UIPointerTable, v5, 1000, &v7);
+    ++v2;
+    v1 += 108;
+      }
+    while ( v2 < v3 );
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x7A2110
+namespace gamemd {
+INT_PTR sub_7A2110(HWND hWnd, UINT a2, WPARAM a3, char * a4)
+{
+{
+    if ( a2 > 0x2B )
+  {
+    switch ( a2 )
+    {
+    case 0x111u: switch ( (unsigned short)a3 )
+        {
+    case 0x5C0u: if ( g_WOL_IdleHandler == 11 )
+            {
+    CloseDialog(hWnd, 0);
+    return 0;
+            }
+    SetEvent(Handles);
+    break;
+    case 0x708u: (*(void (__stdcall **)(int, char *))((*(&g_MatrixTransformState + 2263))->X + 44))( *(&g_MatrixTransformState + 2263), aStart443900100_0);
+    return 0;
+    case 0x709u: (*(void (__stdcall **)(int, char *))((*(&g_MatrixTransformState + 2263))->X + 44))( *(&g_MatrixTransformState + 2263), aStart443900100);
+    return 0;
+        }
+    break;
+    case 0x113u: if ( !a3 )
+        {
+    sub_5E2AC0();
+    return 0;
+        }
+    break;
+    case 0x497u: SetTimer(hWnd, 0, 0x7D0u, 0);
+    return 0;
+    }
+  }
+    else
+  {
+    switch ( a2 )
+    {
+    case 0x2Bu: Dialog::Resize(a4);
+    return 1;
+    case 2u: KillTimer(hWnd, 0);
+    return 0;
+    case 0xFu: Dialog::DrawBackground(hWnd);
+    Dialog::StopBink(hWnd);
+    ValidateRect(hWnd, 0);
+    return 1;
+    case 0x14u: return 1;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7A2600
+namespace gamemd {
+int sub_7A2600(HWND hWnd, unsigned int a2, int a3, char * a4)
+{
+{
+    int result;
+    int *v5;
+    void *v6;
+    result = BaseDialogProc(hWnd, a2, a3, (unsigned int)a4);
+    if ( !result )
+  {
+    if ( a2 > 0x2B )
+    {
+    if ( a2 == 273 && (short)a3 == 1472 )
+      {
+    SetEvent(Handles);
+    CloseDialog(hWnd, 1472);
+      }
+    return 0;
+    }
+    if ( a2 == 43 )
+    {
+    Dialog::Resize(a4);
+    return 1;
+    }
+    if ( a2 == 2 )
+    {
+    v6 = g_UIControlState;
+    if ( g_UIControlState )
+      {
+    ComPtr::Dtor(g_UIControlState);
+    __3_YAXPAX_Z(v6);
+    g_UIControlState = 0;
+    return 0;
+      }
+    return 0;
+    }
+    if ( a2 != 15 )
+    return a2 == 20;
+    Dialog::DrawBackground(hWnd);
+    Dialog::StopBink(hWnd);
+    v5 = g_UIControlState;
+    if ( g_UIControlState || g_GameRulesOptions == -1 && (v5 = g_Map_TiberiumConfig) != 0 )
+    Skirmish::RenderPreview(v5, hWnd);
+    if ( LoadScreen::IsActive(g_UIManager) )
+    LoadScreen::Render((int)g_UIManager, a3, (int)a4, NAN);
+    ValidateRect(hWnd, 0);
+    return 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x7AC4F0
 namespace gamemd {
 void nullsub_265()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x7AF090
+namespace gamemd {
+int sub_7AF090()
+{
+{
+    DataGlobal_B77ED0 = 0;
+    DataGlobal_B77ED4 = 0;
+    DataGlobal_B77ED8 = 0;
+    DataGlobal_B77EDC = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7AF0B0
+namespace gamemd {
+void sub_7AF0B0()
+{
+{
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_B77EE8 = Math::Sqrt(v0 + v0);
+}
+}
+} // namespace gamemd
+
+// 0x7AF0E0
+namespace gamemd {
+void sub_7AF0E0()
+{
+{
+    DataGlobal_B77F88 = DataGlobal_B77EE8 / 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x7AF100
+namespace gamemd {
+void sub_7AF100()
+{
+{
+    DataGlobal_B77F40 = 1.0 / DataGlobal_B77F88;
+}
+}
+} // namespace gamemd
+
+// 0x7AF120
+namespace gamemd {
+void sub_7AF120()
+{
+{
+    DataGlobal_B77F38 = 0.0174532925199433 * 45.0;
+}
+}
+} // namespace gamemd
+
+// 0x7AF140
+namespace gamemd {
+void sub_7AF140()
+{
+{
+    DataGlobal_B77EF8 = 0.0174532925199433 * 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x7AF160
+namespace gamemd {
+void sub_7AF160()
+{
+{
+    DataGlobal_B77EB8 = 0.0174532925199433 * 90.0;
+}
+}
+} // namespace gamemd
+
+// 0x7AF180
+namespace gamemd {
+long long sub_7AF180()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_B77EB8 - DataGlobal_B77EF8);
+    result = Math::RoundToInt(v0 * DataGlobal_B77EE8 * 0.5);
+    DataGlobal_B77F90 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x7AF1C0
+namespace gamemd {
+void sub_7AF1C0()
+{
+{
+    DataGlobal_B77F00 = Math::ArcTan((double)DataGlobal_B77F90 * 0.00390625);
+}
+}
+} // namespace gamemd
+
+// 0x7AF1F0
+namespace gamemd {
+void sub_7AF1F0()
+{
+{
+    DataGlobal_B77F28 = Math::ArcTan((double)(2 * DataGlobal_B77F90) / DataGlobal_B77EE8);
+}
+}
+} // namespace gamemd
+
+// 0x7AF220
+namespace gamemd {
+long long sub_7AF220()
+{
+{
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_B77F90) + 0.5);
+    DataGlobal_B77F80 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x7AF250
+namespace gamemd {
+int sub_7AF250()
+{
+{
+    DataGlobal_B77EE0 = 0;
+    DataGlobal_B77EE2 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7AF260
+namespace gamemd {
+int sub_7AF260()
+{
+{
+    DataGlobal_B77F10 = 0;
+    DataGlobal_B77F14 = 0;
+    DataGlobal_B77F18 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7AF280
+namespace gamemd {
+int sub_7AF280()
+{
+{
+    DataGlobal_B77F50 = 0;
+    DataGlobal_B77F48 = 128;
+    DataGlobal_B77F4C = 128;
+    return 128;
+}
+}
+} // namespace gamemd
+
+// 0x7AF390
+namespace gamemd {
+int unknown_libname_61()
+{
+    void __cdecl unknown_libname_61()
+{
+    DeleteAndZero((void **)&DataGlobal_B77EF0);
+}
+}
+} // namespace gamemd
+
+// 0x7AF3A0
+namespace gamemd {
+int unknown_libname_62()
+{
+    void __cdecl unknown_libname_62()
+{
+    DeleteAndZero((void **)&DataGlobal_B77F30);
+}
+}
+} // namespace gamemd
+
+// 0x7AF3B0
+namespace gamemd {
+int unknown_libname_63()
+{
+    void __cdecl unknown_libname_63()
+{
+    DeleteAndZero((void **)&DataGlobal_B77F08);
+}
+}
+} // namespace gamemd
+
+// 0x7AF3C0
+namespace gamemd {
+int unknown_libname_64()
+{
+    void __cdecl unknown_libname_64()
+{
+    DeleteAndZero((void **)&DataGlobal_B77F20);
+}
+}
+} // namespace gamemd
+
+// 0x7AF4C0
+namespace gamemd {
+int unknown_libname_65()
+{
+    void __cdecl unknown_libname_65()
+{
+    DeleteAndZero((void **)&DataGlobal_B77EB0);
+}
+}
+} // namespace gamemd
+
+// 0x7AF4D0
+namespace gamemd {
+int unknown_libname_66()
+{
+    void __cdecl unknown_libname_66()
+{
+    DeleteAndZero((void **)&DataGlobal_B77F1C);
+}
+}
+} // namespace gamemd
+
+// 0x7AF4E0
+namespace gamemd {
+int unknown_libname_67()
+{
+    void __cdecl unknown_libname_67()
+{
+    DeleteAndZero((void **)&DataGlobal_B77EC8);
+}
+}
+} // namespace gamemd
+
+// 0x7AF4F0
+namespace gamemd {
+int unknown_libname_68()
+{
+    void __cdecl unknown_libname_68()
+{
+    DeleteAndZero((void **)&DataGlobal_B77EC0);
+}
 }
 } // namespace gamemd

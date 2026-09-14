@@ -5,7 +5,9 @@
 // 0x4105F0
 int INoticeSource::Dispatch(int a1)
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __stdcall INoticeSource_Dispatch(int a1)
 {
-    return AbstractClass::COMStub_AddRef(a1 - 4);
+  return AbstractClass::COMStub_AddRef(a1 - 4);
 }
 }

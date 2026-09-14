@@ -3,16 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/BuildingLight_e4.hpp"
 
-// 0x4CAD80
-namespace gamemd {
-double BuildingLight::CalcIntensity(double a1)
-{
-{
-    return *((float *)&DataGlobal_859094 - Math::RoundToInt((a1 + 1.0) * -2048.0));
-}
-}
-} // namespace gamemd
-
 // 0x5FF850
 namespace gamemd {
 char BuildingLight::CalculateShading()
@@ -333,6 +323,16 @@ LABEL_23:
     }
   }
   return (char)v3; /*0x5fff77*/
+}
+}
+} // namespace gamemd
+
+// 0x4CAD80
+namespace gamemd {
+double BuildingLight::CalcIntensity(double a1)
+{
+{
+    return *((float *)&DataGlobal_859094 - Math::RoundToInt((a1 + 1.0) * -2048.0));
 }
 }
 } // namespace gamemd

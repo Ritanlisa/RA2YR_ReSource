@@ -748,27 +748,6 @@ LABEL_8:
 }
 } // namespace gamemd
 
-// 0x70D180
-namespace gamemd {
-void GlobalFlag_Set(char a1)
-{
-{
-    DataGlobal_843108 = a1;
-}
-}
-} // namespace gamemd
-
-// 0x70DE20
-namespace gamemd {
-int E4Recv_70DE20::sub_70DE20(int a2)
-{
-{
-    this->M324 += a2;
-    return a2;
-}
-}
-} // namespace gamemd
-
 // 0x70E920
 namespace gamemd {
 void UpdateTimedStateMachine(int * a1)
@@ -1042,17 +1021,6 @@ int __thiscall sub_70F740(_DWORD *this, int a2)
 }
 } // namespace gamemd
 
-// 0x70FE40
-namespace gamemd {
-int E4Recv_70FE40::sub_70FE40(int a2)
-{
-{
-    this->M464 = a2;
-    return a2;
-}
-}
-} // namespace gamemd
-
 // 0x70FE50
 namespace gamemd {
 int E4Recv_70FE50::sub_70FE50()
@@ -1079,6 +1047,38 @@ int __thiscall sub_70FE50(_DWORD *this)
     *(this + 115) = 0; /*0x70fe9a*/
   }
   return result; /*0x70fea4*/
+}
+}
+} // namespace gamemd
+
+// 0x70D180
+namespace gamemd {
+void GlobalFlag_Set(char a1)
+{
+{
+    DataGlobal_843108 = a1;
+}
+}
+} // namespace gamemd
+
+// 0x70DE20
+namespace gamemd {
+int E4Recv_70DE20::sub_70DE20(int a2)
+{
+{
+    this->M324 += a2;
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x70FE40
+namespace gamemd {
+int E4Recv_70FE40::sub_70FE40(int a2)
+{
+{
+    this->M464 = a2;
+    return a2;
 }
 }
 } // namespace gamemd

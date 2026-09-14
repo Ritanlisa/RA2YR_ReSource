@@ -150,16 +150,6 @@ LABEL_13:
 }
 } // namespace gamemd
 
-// 0x601360
-namespace gamemd {
-bool Event::IsValidActionType()
-{
-{
-    return this == (void *)268 || this == (void *)148 || this == (void *)182 || this == (void *)163 || this == (void *)115 || this == (void *)216 || this == (void *)3003 || this == (void *)245 || this == (void *)261 || this == (void *)226 || this == (void *)213 || this == (void *)693 || this == (void *)183 || this == (void *)692 || this == (void *)257 || this == (void *)297 || this == (void *)3015 || this == (void *)3014 || this == (void *)215 || this == (void *)264 || this == (void *)188 || this == (void *)189 || this == (void *)187 || this == (void *)181 || this == (void *)3002 || this == (void *)255 || this == (void *)234 || this == (void *)107 || this == (void *)256 || this == (void *)258 || this == (void *)184 || this == (void *)214 || this == (void *)259 || this == (void *)287 || this == (void *)293 || this == (void *)277 || this == (void *)290 || this == (void *)274 || this == (void *)231 || this == (void *)278 || this == (void *)194 || this == (void *)201 || this == (void *)285 || this == (void *)284 || this == (void *)275 || this == (void *)254 || this == (void *)265 || this == (void *)271 || this == (void *)279 || this == (void *)276 || this == (void *)195 || this == (void *)292 || this == (void *)230 || this == (void *)243 || this == (void *)244 || this == (void *)700 || this == (void *)283 || this == (void *)270;
-}
-}
-} // namespace gamemd
-
 // 0x796960
 namespace gamemd {
 char sub_796960()
@@ -247,15 +237,6 @@ LABEL_24:
 }
 }
 } // namespace gamemd
-
-// 0x48D1D0
-char Event_Dispatch::Return0()
-{
-{
-    Event::Dispatch();
-    return 0;
-}
-}
 
 // 0x7A0F40
 namespace gamemd {
@@ -446,6 +427,25 @@ LABEL_4:
     MEMORY[0x84E861] = 0; /*0x7c6055*/
     return 0; /*0x7c605c*/
   }
+}
+}
+} // namespace gamemd
+
+// 0x48D1D0
+char Event_Dispatch::Return0()
+{
+{
+    Event::Dispatch();
+    return 0;
+}
+}
+
+// 0x601360
+namespace gamemd {
+bool Event::IsValidActionType()
+{
+{
+    return this == (void *)268 || this == (void *)148 || this == (void *)182 || this == (void *)163 || this == (void *)115 || this == (void *)216 || this == (void *)3003 || this == (void *)245 || this == (void *)261 || this == (void *)226 || this == (void *)213 || this == (void *)693 || this == (void *)183 || this == (void *)692 || this == (void *)257 || this == (void *)297 || this == (void *)3015 || this == (void *)3014 || this == (void *)215 || this == (void *)264 || this == (void *)188 || this == (void *)189 || this == (void *)187 || this == (void *)181 || this == (void *)3002 || this == (void *)255 || this == (void *)234 || this == (void *)107 || this == (void *)256 || this == (void *)258 || this == (void *)184 || this == (void *)214 || this == (void *)259 || this == (void *)287 || this == (void *)293 || this == (void *)277 || this == (void *)290 || this == (void *)274 || this == (void *)231 || this == (void *)278 || this == (void *)194 || this == (void *)201 || this == (void *)285 || this == (void *)284 || this == (void *)275 || this == (void *)254 || this == (void *)265 || this == (void *)271 || this == (void *)279 || this == (void *)276 || this == (void *)195 || this == (void *)292 || this == (void *)230 || this == (void *)243 || this == (void *)244 || this == (void *)700 || this == (void *)283 || this == (void *)270;
 }
 }
 } // namespace gamemd

@@ -255,36 +255,6 @@ LABEL_12:
 }
 } // namespace gamemd
 
-// 0x5ED370
-namespace gamemd {
-int Session::StartGame()
-{
-{
-    ObjectClass *v2;
-    int *v3;
-    ObjectClass *v4;
-    if ( !IsRandMap::Sed(*(int *)(g_MultiplayerGameState + 4 * g_GameRulesOptions)) )
-    return Session::PrepareGame(this);
-    v2 = (ObjectClass *)g_UIControlState;
-    if ( g_UIControlState )
-  {
-    ComPtr::Dtor(g_UIControlState);
-    __3_YAXPAX_Z(v2);
-  }
-    v3 = __2_YAPAXI_Z(4u);
-    if ( v3 )
-    v4 = (ObjectClass *)unknown_libname_27(v3);
-    else
-    v4 = 0;
-    g_UIControlState = v4;
-    Surface::LoadToSurfaceSHP((char **)v4, ExistingFileName);
-    if ( !*(int *)g_UIControlState )
-    Session::PrepareGame(this);
-    return InvalidateRect(this, 0, 0);
-}
-}
-} // namespace gamemd
-
 // 0x69B700
 namespace gamemd {
 int Session::GetPlayerOption()
@@ -315,6 +285,36 @@ int __thiscall Session_GetPlayerColor(_DWORD *this)
   if ( *(this + 88) != -2 ) /*0x69b72d*/
     return *(this + 87); /*0x69b72f*/
   return result; /*0x69b735*/
+}
+}
+} // namespace gamemd
+
+// 0x5ED370
+namespace gamemd {
+int Session::StartGame()
+{
+{
+    ObjectClass *v2;
+    int *v3;
+    ObjectClass *v4;
+    if ( !IsRandMap::Sed(*(int *)(g_MultiplayerGameState + 4 * g_GameRulesOptions)) )
+    return Session::PrepareGame(this);
+    v2 = (ObjectClass *)g_UIControlState;
+    if ( g_UIControlState )
+  {
+    ComPtr::Dtor(g_UIControlState);
+    __3_YAXPAX_Z(v2);
+  }
+    v3 = __2_YAPAXI_Z(4u);
+    if ( v3 )
+    v4 = (ObjectClass *)unknown_libname_27(v3);
+    else
+    v4 = 0;
+    g_UIControlState = v4;
+    Surface::LoadToSurfaceSHP((char **)v4, ExistingFileName);
+    if ( !*(int *)g_UIControlState )
+    Session::PrepareGame(this);
+    return InvalidateRect(this, 0, 0);
 }
 }
 } // namespace gamemd

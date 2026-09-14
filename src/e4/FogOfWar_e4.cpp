@@ -2,54 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x5864A0
-namespace gamemd {
-bool FogOfWar_Get(IUnknown * aP0)
-{
-{
-    int v1;
-    int v2;
-    unsigned int v3;
-    int *v4;
-    int *NeighbourContent;
-    unsigned int v6;
-    short v8;
-    short v9;
-    IUnknown *aP0a;
-    v1 = aP0->field_8 / g_MapRenderState;
-    if ( (v1 & 1) != 0 )
-  {
-    v8 = aP0->field_0 / 256;
-    v2 = v1 / 2 + 1;
-    HIWORD(aP0) = aP0->field_4 / 256 - v2;
-    v3 = (short)(v8 - v2) + (SHIWORD(aP0) << 9);
-    if ( v3 >= 0x40000 || (v4 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v3)) == 0 )
-    {
-    LOWORD(aP0) = v8 - v2;
-    g_Map_GlobalCellIndex = aP0;
-    v4 = g_CellClassArray;
-    }
-    if ( (int)v4[79] <= 0 )
-    return 0;
-    NeighbourContent = Cell::GetNeighbourContent(v4, 3u);
-  }
-    else
-  {
-    v9 = aP0->field_0 / 256;
-    HIWORD(aP0a) = aP0->field_4 / 256 - v1 / 2;
-    LOWORD(aP0a) = v9 - v1 / 2;
-    v6 = (short)aP0a + (SHIWORD(aP0a) << 9);
-    if ( v6 >= 0x40000 || (NeighbourContent = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v6)) == 0 )
-    {
-    g_Map_GlobalCellIndex = aP0a;
-    NeighbourContent = g_CellClassArray;
-    }
-  }
-    return (int)NeighbourContent[79] > 0;
-}
-}
-} // namespace gamemd
-
 // 0x655C50
 int FogOfWar::RevealArea(RadarClass * aP1)
 {
@@ -466,3 +418,51 @@ int __thiscall FogOfWar::Render(int **this)
   return result; /*0x657d35*/
 }
 }
+
+// 0x5864A0
+namespace gamemd {
+bool FogOfWar_Get(IUnknown * aP0)
+{
+{
+    int v1;
+    int v2;
+    unsigned int v3;
+    int *v4;
+    int *NeighbourContent;
+    unsigned int v6;
+    short v8;
+    short v9;
+    IUnknown *aP0a;
+    v1 = aP0->field_8 / g_MapRenderState;
+    if ( (v1 & 1) != 0 )
+  {
+    v8 = aP0->field_0 / 256;
+    v2 = v1 / 2 + 1;
+    HIWORD(aP0) = aP0->field_4 / 256 - v2;
+    v3 = (short)(v8 - v2) + (SHIWORD(aP0) << 9);
+    if ( v3 >= 0x40000 || (v4 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v3)) == 0 )
+    {
+    LOWORD(aP0) = v8 - v2;
+    g_Map_GlobalCellIndex = aP0;
+    v4 = g_CellClassArray;
+    }
+    if ( (int)v4[79] <= 0 )
+    return 0;
+    NeighbourContent = Cell::GetNeighbourContent(v4, 3u);
+  }
+    else
+  {
+    v9 = aP0->field_0 / 256;
+    HIWORD(aP0a) = aP0->field_4 / 256 - v1 / 2;
+    LOWORD(aP0a) = v9 - v1 / 2;
+    v6 = (short)aP0a + (SHIWORD(aP0a) << 9);
+    if ( v6 >= 0x40000 || (NeighbourContent = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v6)) == 0 )
+    {
+    g_Map_GlobalCellIndex = aP0a;
+    NeighbourContent = g_CellClassArray;
+    }
+  }
+    return (int)NeighbourContent[79] > 0;
+}
+}
+} // namespace gamemd

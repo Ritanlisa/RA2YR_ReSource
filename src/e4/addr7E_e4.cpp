@@ -179,6 +179,14 @@ void __cdecl __spoils<ecx> sub_7E01D2(_BYTE *a1, _BYTE *a2, _BYTE *a3, int a4)
 }
 } // namespace gamemd
 
+// 0x7E0000
+namespace gamemd {
+void nullsub_272()
+{
+  ;
+}
+} // namespace gamemd
+
 // 0x7E01FB
 namespace gamemd {
 void sub_7E01FB(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
@@ -217,13 +225,5 @@ void sub_7E01FB(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
     ObfuscateDataBlock(v11, v7, a4);
     qmemcpy(a2, v7, 4 * v8);
 }
-}
-} // namespace gamemd
-
-// 0x7E0000
-namespace gamemd {
-void nullsub_272()
-{
-  ;
 }
 } // namespace gamemd

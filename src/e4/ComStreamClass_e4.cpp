@@ -133,78 +133,6 @@ LABEL_16:
 }
 }
 
-// 0x7A4070
-int ComStreamClass::Seek()
-{
-{
-    HWND v1;
-    HWND Current;
-    HWND DlgItem;
-    int v5;
-    CampaignScore *v6;
-    int v7;
-    Debug::Log();
-    DataGlobal_B77DF4 = v5;
-    if ( !v5 )
-  {
-    DataGlobal_B77E60 = v6;
-    DataGlobal_B77E64 = v7;
-  }
-    v1 = (HWND)Dialog::FindByHandle((void *)0xC4);
-    if ( v1 )
-  {
-    g_WOL_ChannelList = (MPCooperative *)((unsigned int)g_WOL_ChannelList & 0xFFFFFEFF);
-    if ( !g_WOL_ChannelList )
-    CloseDialog(v1, 0);
-  }
-    Current = Dialog::GetCurrent();
-    DlgItem = GetDlgItem(Current, 1344);
-    if ( DlgItem )
-    SetFocus(DlgItem);
-    return 0;
-}
-}
-
-// 0x7A40F0
-int ComStreamClass::ddtor()
-{
-{
-    int v2;
-    unsigned int v3;
-    if ( g_NetworkLobby_Init && DataGlobal_B77780 )
-  {
-    if ( !v2 && v3 < 0x3E8 )
-    {
-    DataGlobal_B77CE0 = (ObjectClass *)((char *)(DataGlobal_B77CE0) + 1);
-    return 0;
-    }
-    return 0;
-  }
-    if ( g_GameOptionsFlags != 3 && g_GameOptionsFlags != 1 && g_GameOptionsFlags != 2 )
-  {
-    if ( g_WOL_ProcessIdle )
-    DisplayRankingsWOL(0, 0);
-    return 0;
-  }
-    Debug::Log();
-    if ( ++DataGlobal_B736F4 < (int)g_WOL_LoginPool )
-    return 0;
-    if ( g_WOL_IdleHandler == 4 || g_WOL_IdleHandler == 5 )
-    UpdateWOLLobbyPings();
-    ProcessPingRequestsWOL();
-    return 0;
-}
-}
-
-// 0x7AC800
-LONG ComStreamClass::AddRef()
-{
-{
-    int v2;
-    return InterlockedIncrement((volatile LONG *)(v2 + 4));
-}
-}
-
 // 0x7AC820
 LONG ComStreamClass::Release()
 {
@@ -343,17 +271,6 @@ void __thiscall sub_7AE0E0(_DWORD *this)
 }
 }
 
-// 0x7AED20
-void ** ComStreamClass::writeData(char a2)
-{
-{
-    DeleteAndZero(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-
 // 0x7AEF50
 void ComStreamClass::flushStream()
 {
@@ -457,5 +374,88 @@ _DWORD *__thiscall sub_7B02A0(int *this)
   ComPtr::Release(v5); /*0x7b02e8*/
   v6[0] = &vt_rc_ptr_WorldDominationTour_CampaignProperties; /*0x7b02f1*/
   return ComPtr::Release(v6); /*0x7b02fe*/
+}
+}
+
+// 0x7A4070
+int ComStreamClass::Seek()
+{
+{
+    HWND v1;
+    HWND Current;
+    HWND DlgItem;
+    int v5;
+    CampaignScore *v6;
+    int v7;
+    Debug::Log();
+    DataGlobal_B77DF4 = v5;
+    if ( !v5 )
+  {
+    DataGlobal_B77E60 = v6;
+    DataGlobal_B77E64 = v7;
+  }
+    v1 = (HWND)Dialog::FindByHandle((void *)0xC4);
+    if ( v1 )
+  {
+    g_WOL_ChannelList = (MPCooperative *)((unsigned int)g_WOL_ChannelList & 0xFFFFFEFF);
+    if ( !g_WOL_ChannelList )
+    CloseDialog(v1, 0);
+  }
+    Current = Dialog::GetCurrent();
+    DlgItem = GetDlgItem(Current, 1344);
+    if ( DlgItem )
+    SetFocus(DlgItem);
+    return 0;
+}
+}
+
+// 0x7A40F0
+int ComStreamClass::ddtor()
+{
+{
+    int v2;
+    unsigned int v3;
+    if ( g_NetworkLobby_Init && DataGlobal_B77780 )
+  {
+    if ( !v2 && v3 < 0x3E8 )
+    {
+    DataGlobal_B77CE0 = (ObjectClass *)((char *)(DataGlobal_B77CE0) + 1);
+    return 0;
+    }
+    return 0;
+  }
+    if ( g_GameOptionsFlags != 3 && g_GameOptionsFlags != 1 && g_GameOptionsFlags != 2 )
+  {
+    if ( g_WOL_ProcessIdle )
+    DisplayRankingsWOL(0, 0);
+    return 0;
+  }
+    Debug::Log();
+    if ( ++DataGlobal_B736F4 < (int)g_WOL_LoginPool )
+    return 0;
+    if ( g_WOL_IdleHandler == 4 || g_WOL_IdleHandler == 5 )
+    UpdateWOLLobbyPings();
+    ProcessPingRequestsWOL();
+    return 0;
+}
+}
+
+// 0x7AC800
+LONG ComStreamClass::AddRef()
+{
+{
+    int v2;
+    return InterlockedIncrement((volatile LONG *)(v2 + 4));
+}
+}
+
+// 0x7AED20
+void ** ComStreamClass::writeData(char a2)
+{
+{
+    DeleteAndZero(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }

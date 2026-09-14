@@ -84,18 +84,6 @@ _DWORD *__thiscall TemporalClass::TemporalClass(_DWORD *this, TechnoClass *aP1)
 } // namespace game
 } // namespace ra2
 
-// 0x71A650
-namespace ra2 {
-namespace game {
-int TemporalClass::SetTarget(AbstractClass * aP1)
-{
-{
-    return AbstractClass::ProcessPower((#378 *)this);
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x71A660
 namespace ra2 {
 namespace game {
@@ -135,18 +123,6 @@ int __stdcall TemporalClass::LoadTemporal(AbstractClass *aP0, int aP1)
       (MouseClass *)&aP0[1].nextArrayIndex);
   }
   return (int)Prefix_0->__pad_0; /*0x71a6f8*/
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x71A700
-namespace ra2 {
-namespace game {
-int TemporalClass::SaveTemporal(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
 }
 }
 } // namespace game
@@ -396,6 +372,81 @@ int __thiscall TemporalClass::GetWarpPerStep(int **this, int a2)
 } // namespace game
 } // namespace ra2
 
+// 0x71B1B0
+namespace ra2 {
+namespace game {
+TemporalClass * TemporalClass::ProcessEvent(char a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+TemporalClass *__thiscall TemporalClass::ProcessEvent(_DWORD *this, char a2)
+{
+  int v3; // eax
+  _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
+
+  *this = &TemporalClass::`vftable'; /*0x71b1bd*/
+  *(this + 1) = &TemporalClass::`vftable'; /*0x71b1c3*/
+  *(this + 2) = &TemporalClass::`vftable'; /*0x71b1ca*/
+  *(this + 3) = &vt_TemporalClass; /*0x71b1d1*/
+  v5 = this; /*0x71b1df*/
+  v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0EC60] + 16))(&MEMORY[0xB0EC60], &v5); /*0x71b1e3*/
+  if ( v3 != -1 && v3 < MEMORY[0xB0EC70] && v3 < --MEMORY[0xB0EC70] ) /*0x71b1fe*/
+  {
+    do /*0x71b216*/
+    {
+      ++v3; /*0x71b206*/
+      *((_DWORD *)MEMORY[0xB0EC64] + v3 - 1) = *((_DWORD *)MEMORY[0xB0EC64] + v3); /*0x71b20a*/
+    }
+    while ( v3 < MEMORY[0xB0EC70] ); /*0x71b216*/
+  }
+  AbstractClass::DTOR(this); /*0x71b21a*/
+  if ( (a2 & 1) != 0 ) /*0x71b224*/
+    __3_YAXPAX_Z(this); /*0x71b227*/
+  return (TemporalClass *)this; /*0x71b231*/
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x71A650
+namespace ra2 {
+namespace game {
+int TemporalClass::SetTarget(AbstractClass * aP1)
+{
+{
+    return AbstractClass::ProcessPower((#378 *)this);
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x71A700
+namespace ra2 {
+namespace game {
+int TemporalClass::SaveTemporal(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x71A720
+namespace ra2 {
+namespace game {
+int TemporalClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1810815964;
+  a2[1] = 299099139;
+  a2[2] = 1342205582;
+  a2[3] = -72177148;
+  return 0;
+}
+} // namespace game
+} // namespace ra2
+
 // 0x71AE50
 namespace ra2 {
 namespace game {
@@ -434,57 +485,6 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
   }
     return 1;
 }
-}
-} // namespace game
-} // namespace ra2
-
-// 0x71B1B0
-namespace ra2 {
-namespace game {
-TemporalClass * TemporalClass::ProcessEvent(char a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TemporalClass *__thiscall TemporalClass::ProcessEvent(_DWORD *this, char a2)
-{
-  int v3; // eax
-  _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &TemporalClass::`vftable'; /*0x71b1bd*/
-  *(this + 1) = &TemporalClass::`vftable'; /*0x71b1c3*/
-  *(this + 2) = &TemporalClass::`vftable'; /*0x71b1ca*/
-  *(this + 3) = &vt_TemporalClass; /*0x71b1d1*/
-  v5 = this; /*0x71b1df*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0EC60] + 16))(&MEMORY[0xB0EC60], &v5); /*0x71b1e3*/
-  if ( v3 != -1 && v3 < MEMORY[0xB0EC70] && v3 < --MEMORY[0xB0EC70] ) /*0x71b1fe*/
-  {
-    do /*0x71b216*/
-    {
-      ++v3; /*0x71b206*/
-      *((_DWORD *)MEMORY[0xB0EC64] + v3 - 1) = *((_DWORD *)MEMORY[0xB0EC64] + v3); /*0x71b20a*/
-    }
-    while ( v3 < MEMORY[0xB0EC70] ); /*0x71b216*/
-  }
-  AbstractClass::DTOR(this); /*0x71b21a*/
-  if ( (a2 & 1) != 0 ) /*0x71b224*/
-    __3_YAXPAX_Z(this); /*0x71b227*/
-  return (TemporalClass *)this; /*0x71b231*/
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x71A720
-namespace ra2 {
-namespace game {
-int TemporalClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -1810815964;
-  a2[1] = 299099139;
-  a2[2] = 1342205582;
-  a2[3] = -72177148;
-  return 0;
 }
 } // namespace game
 } // namespace ra2

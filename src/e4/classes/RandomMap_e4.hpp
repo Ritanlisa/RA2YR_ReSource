@@ -13,7 +13,6 @@ struct RandomMap {
     bool Check();  // 0x486790
     unsigned int * TerrainTileDataConstructor(int a2);  // 0x58BF70
     int GenerateTerrain();  // 0x58C800
-    int GenerateTerrainForAllCells();  // 0x58CF90
     int ExpandTerrainCells(int a2, int a3);  // 0x58D1C0
     unsigned int * TerrainAlloc();  // 0x58D410
     char CollectTerrainCells(int a2);  // 0x58E740
@@ -50,5 +49,6 @@ struct RandomMap {
     void RegenerateRandomMapPreview();  // 0x5B9C90
     unsigned int * PlaceTileSet();  // 0x6558D0
     char RemoveMatching(IUnknown * aP1);  // 0x74EF10
+    int GenerateTerrainForAllCells();  // 0x58CF90
 };
 } // namespace gamemd

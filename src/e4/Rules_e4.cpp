@@ -3,27 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Rules_e4.hpp"
 
-// 0x5FB2E0
-namespace gamemd {
-char * Rules::GetProductionTimeMult(CellStruct * aP1)
-{
-{
-    CellStruct *result;
-    int v3;
-    result = aP1;
-    if ( aP1 )
-  {
-    v3 = *(void**)this;
-    if ( (int)aP1 >= 5 )
-    return (char *)(8 * (int)aP1 / (v3 + 1));
-    else
-    return *(char **)&DataGlobal_830620.__pad_14B0[32 * (int)aP1 + 4636 + 4 * v3];
-  }
-    return (char *)result;
-}
-}
-} // namespace gamemd
-
 // 0x6691E0
 namespace gamemd {
 int Rules::ReadMiscINI()
@@ -175,6 +154,27 @@ LABEL_8:
   *(this + 4) = aP1[1].vtable0; /*0x67a5c6*/
   *(this + 5) = aP1[1].Items; /*0x67a5cc*/
   return this; /*0x67a5d1*/
+}
+}
+} // namespace gamemd
+
+// 0x5FB2E0
+namespace gamemd {
+char * Rules::GetProductionTimeMult(CellStruct * aP1)
+{
+{
+    CellStruct *result;
+    int v3;
+    result = aP1;
+    if ( aP1 )
+  {
+    v3 = *(void**)this;
+    if ( (int)aP1 >= 5 )
+    return (char *)(8 * (int)aP1 / (v3 + 1));
+    else
+    return *(char **)&DataGlobal_830620.__pad_14B0[32 * (int)aP1 + 4636 + 4 * v3];
+  }
+    return (char *)result;
 }
 }
 } // namespace gamemd

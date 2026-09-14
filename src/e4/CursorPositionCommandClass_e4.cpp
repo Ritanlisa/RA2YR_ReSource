@@ -5,8 +5,10 @@
 // 0x537E70
 unsigned int * CursorPositionCommandClass::Constructor()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall sub_537E70(_DWORD *this)
 {
-    *(void**)this = &vt_CursorPositionCommandClass;
-    return this;
+  *this = &vt_CursorPositionCommandClass; /*0x537e72*/
+  return this; /*0x537e78*/
 }
 }

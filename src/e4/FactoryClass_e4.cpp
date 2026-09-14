@@ -368,35 +368,6 @@ LABEL_14:
 }
 } // namespace gamemd
 
-// 0x4CA3C0
-namespace gamemd {
-int FactoryClass::Seek(int * a1, int * a2, int a3)
-{
-{
-    int result;
-    int v4;
-    int i;
-    result = AbstractClass::SaveLoad_Prefix(a1, a2, a3);
-    if ( result >= 0 )
-  {
-    v4 = *a2;
-    a3 = *((int*)(a1) + 20);
-    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a2, &a3, 4, 0);
-    if ( result >= 0 )
-    {
-    for ( i = 0; i < a3; ++i )
-      {
-    if ( (*(int (__stdcall **)(int *, int, int, int))(*a2 + 16))(a2, *((int*)(a1) + 17) + 4 * i, 4, 0) < 0 )
-    break;
-      }
-    return 0;
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x4CA430
 namespace gamemd {
 int FactoryClass::Stat(int * a2)
@@ -717,26 +688,6 @@ char __thiscall sub_635060(int this, int a2)
 }
 } // namespace gamemd
 
-// 0x636DC0
-namespace gamemd {
-int FactoryClass::GetState()
-{
-{
-    return this->abstractFlags;
-}
-}
-} // namespace gamemd
-
-// 0x637AA0
-namespace gamemd {
-char FactoryClass::GetFlag()
-{
-{
-    return DataGlobal_AC4CF4;
-}
-}
-} // namespace gamemd
-
 // 0x4CA8E0
 namespace gamemd {
 int FactoryClass_33::Seek(int a2)
@@ -880,19 +831,6 @@ int __thiscall FactoryClass_33_::_vt04(int this, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x4CAA50
-namespace gamemd {
-unsigned int FactoryClass_33::Write(int a2)
-{
-{
-    if ( (unsigned char)this->FactoryClass_33_field_0xC )
-    return (unsigned int)(a2 - this->FactoryClass_33_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4CAB50
 namespace gamemd {
 VectorClass * FactoryClass_33::QueryInterface(char a2)
@@ -932,6 +870,35 @@ int FactoryClass::ddtor(int a1, unsigned int * a2)
 }
 } // namespace gamemd
 
+// 0x4CA3C0
+namespace gamemd {
+int FactoryClass::Seek(int * a1, int * a2, int a3)
+{
+{
+    int result;
+    int v4;
+    int i;
+    result = AbstractClass::SaveLoad_Prefix(a1, a2, a3);
+    if ( result >= 0 )
+  {
+    v4 = *a2;
+    a3 = *((int*)(a1) + 20);
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a2, &a3, 4, 0);
+    if ( result >= 0 )
+    {
+    for ( i = 0; i < a3; ++i )
+      {
+    if ( (*(int (__stdcall **)(int *, int, int, int))(*a2 + 16))(a2, *((int*)(a1) + 17) + 4 * i, 4, 0) < 0 )
+    break;
+      }
+    return 0;
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x4CA750
 namespace gamemd {
 int FactoryClass::StubReturn12()
@@ -945,5 +912,38 @@ namespace gamemd {
 int FactoryClass::StubReturn116()
 {
 return 116;
+}
+} // namespace gamemd
+
+// 0x4CAA50
+namespace gamemd {
+unsigned int FactoryClass_33::Write(int a2)
+{
+{
+    if ( (unsigned char)this->FactoryClass_33_field_0xC )
+    return (unsigned int)(a2 - this->FactoryClass_33_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x636DC0
+namespace gamemd {
+int FactoryClass::GetState()
+{
+{
+    return this->abstractFlags;
+}
+}
+} // namespace gamemd
+
+// 0x637AA0
+namespace gamemd {
+char FactoryClass::GetFlag()
+{
+{
+    return DataGlobal_AC4CF4;
+}
 }
 } // namespace gamemd

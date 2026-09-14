@@ -2,16 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x4369C0
-namespace gamemd {
-int BuildingLightClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-}
-}
-} // namespace gamemd
-
 // 0x436BE0
 namespace gamemd {
 unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
@@ -291,6 +281,16 @@ int BuildingLightClass::SD_vt03(int a1, unsigned int * a2)
   a2[2] = 1610638004;
   a2[3] = 2041169559;
   return 0;
+}
+} // namespace gamemd
+
+// 0x4369C0
+namespace gamemd {
+int BuildingLightClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+}
 }
 } // namespace gamemd
 

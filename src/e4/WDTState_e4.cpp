@@ -27,19 +27,6 @@ int __thiscall WDTState_4_::_vt03(int this)
 }
 } // namespace gamemd
 
-// 0x76B740
-namespace gamemd {
-unsigned int WDTState_4::Write(int a2)
-{
-{
-    if ( (unsigned char)this->WDTState_4_field_0xC )
-    return (unsigned int)(a2 - this->WDTState_4_field_0x4) >> 3;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x76BA70
 namespace gamemd {
 char WDTState_4::Release(int a2, unsigned int * a3)
@@ -186,6 +173,19 @@ DynamicVector *__thiscall WDTState_4_::QueryInterface(_DWORD *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x76bc49*/
     __3_YAXPAX_Z(this); /*0x76bc4c*/
   return (DynamicVector *)this; /*0x76bc56*/
+}
+}
+} // namespace gamemd
+
+// 0x76B740
+namespace gamemd {
+unsigned int WDTState_4::Write(int a2)
+{
+{
+    if ( (unsigned char)this->WDTState_4_field_0xC )
+    return (unsigned int)(a2 - this->WDTState_4_field_0x4) >> 3;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

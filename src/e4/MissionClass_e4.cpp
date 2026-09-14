@@ -2,20 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x41BF30
-namespace ra2 {
-namespace game {
-int MissionClass::vt_entry_1FC()
-{
-{
-    int result;
-    LOBYTE(result) = 0;
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x5B3760
 namespace ra2 {
 namespace game {
@@ -128,13 +114,15 @@ char __thiscall MissionClass::LoadFromINI(int *this, _DWORD *a2)
 } // namespace game
 } // namespace ra2
 
-// 0x5B3A10
+// 0x41BF30
 namespace ra2 {
 namespace game {
-int MissionClass::HasValidTarget()
+int MissionClass::vt_entry_1FC()
 {
 {
-    return this->suspendedMission != -1;
+    int result;
+    LOBYTE(result) = 0;
+    return result;
 }
 }
 } // namespace game
@@ -277,6 +265,18 @@ namespace game {
 int MissionClass::Return450N()
 {
 return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B3A10
+namespace ra2 {
+namespace game {
+int MissionClass::HasValidTarget()
+{
+{
+    return this->suspendedMission != -1;
+}
 }
 } // namespace game
 } // namespace ra2

@@ -18,6 +18,22 @@ LONG __thiscall TClassFactory_CampaignClass::GetClassName(TClassFactory_VCampaig
 }
 }
 
+// 0x6C4D60
+LONG TClassFactory_MechLocomotionClass::GetClassName()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+LONG __thiscall TClassFactory_MechLocomotionClass::GetClassName(TClassFactory_VMechLocomotionClass__ *this)
+{
+  LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
+
+  v1 = InterlockedDecrement(Block + 1); /*0x6c4d70*/
+  if ( !v1 ) /*0x6c4d74*/
+    __3_YAXPAX_Z((void *)Block); /*0x6c4d77*/
+  return v1; /*0x6c4d81*/
+}
+}
+
 // 0x6C0290
 int TClassFactory_CampaignClass::ddtor()
 {
@@ -72,22 +88,6 @@ LONG TClassFactory_MechLocomotionClass::AddRef()
 {
     int v2;
     return InterlockedIncrement((volatile LONG *)(v2 + 4));
-}
-}
-
-// 0x6C4D60
-LONG TClassFactory_MechLocomotionClass::GetClassName()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __thiscall TClassFactory_MechLocomotionClass::GetClassName(TClassFactory_VMechLocomotionClass__ *this)
-{
-  LONG v1; // esi
-  volatile LONG *Block; // [esp+Ch] [ebp+4h]
-
-  v1 = InterlockedDecrement(Block + 1); /*0x6c4d70*/
-  if ( !v1 ) /*0x6c4d74*/
-    __3_YAXPAX_Z((void *)Block); /*0x6c4d77*/
-  return v1; /*0x6c4d81*/
 }
 }
 

@@ -216,6 +216,60 @@ BOOL __usercall sub_798DE0@<eax>(int a1@<ebx>, int a2@<ebp>)
 }
 } // namespace gamemd
 
+// 0x72C7E0
+namespace gamemd {
+char sub_72C7E0()
+{
+{
+    char result;
+    result = DataGlobal_B0FCFD;
+    if ( !DataGlobal_B0FCFD )
+  {
+    if ( g_DisplayWidth == 800 )
+    DataGlobal_B0F9E8 = LoadFileSHP(DataGlobal_844D84, (bool *)&DataGlobal_B0FCFC);
+    result = LoadPaletteSimple(DataGlobal_844D88, &DataGlobal_B0FD00, &DataGlobal_B0FD04);
+    DataGlobal_B0FCFD = 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x72C830
+namespace gamemd {
+void sub_72C830()
+{
+{
+    void *v0;
+    if ( DataGlobal_B0FCFD )
+  {
+    if ( DataGlobal_B0FCFC )
+    {
+    v0 = DataGlobal_B0F9E8;
+    if ( DataGlobal_B0F9E8 )
+      {
+    FileTreeNode::Destroy(DataGlobal_B0F9E8);
+    __3_YAXPAX_Z(v0);
+      }
+    DataGlobal_B0FCFC = 0;
+    }
+    DataGlobal_B0F9E8 = 0;
+    if ( DataGlobal_B0FD00 )
+    {
+    __3_YAXPAX_Z(DataGlobal_B0FD00);
+    DataGlobal_B0FD00 = 0;
+    }
+    if ( DataGlobal_B0FD04 )
+    {
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FD04)(DataGlobal_B0FD04, 1);
+    DataGlobal_B0FD04 = 0;
+    }
+  }
+    DataGlobal_B0FCFD = 0;
+}
+}
+} // namespace gamemd
+
 // 0x799CD0
 namespace gamemd {
 long long sub_799CD0()
@@ -298,25 +352,6 @@ int sub_799D30()
 }
 } // namespace gamemd
 
-// 0x72C7E0
-namespace gamemd {
-char sub_72C7E0()
-{
-{
-    char result;
-    result = DataGlobal_B0FCFD;
-    if ( !DataGlobal_B0FCFD )
-  {
-    if ( g_DisplayWidth == 800 )
-    DataGlobal_B0F9E8 = LoadFileSHP(DataGlobal_844D84, (bool *)&DataGlobal_B0FCFC);
-    result = LoadPaletteSimple(DataGlobal_844D88, &DataGlobal_B0FD00, &DataGlobal_B0FD04);
-    DataGlobal_B0FCFD = 1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x7A2970
 namespace gamemd {
 void sub_7A2970()
@@ -335,41 +370,6 @@ void sub_7A2970()
     OwnerDrawControl::InitVtable(v0);
     }
   }
-}
-}
-} // namespace gamemd
-
-// 0x72C830
-namespace gamemd {
-void sub_72C830()
-{
-{
-    void *v0;
-    if ( DataGlobal_B0FCFD )
-  {
-    if ( DataGlobal_B0FCFC )
-    {
-    v0 = DataGlobal_B0F9E8;
-    if ( DataGlobal_B0F9E8 )
-      {
-    FileTreeNode::Destroy(DataGlobal_B0F9E8);
-    __3_YAXPAX_Z(v0);
-      }
-    DataGlobal_B0FCFC = 0;
-    }
-    DataGlobal_B0F9E8 = 0;
-    if ( DataGlobal_B0FD00 )
-    {
-    __3_YAXPAX_Z(DataGlobal_B0FD00);
-    DataGlobal_B0FD00 = 0;
-    }
-    if ( DataGlobal_B0FD04 )
-    {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FD04)(DataGlobal_B0FD04, 1);
-    DataGlobal_B0FD04 = 0;
-    }
-  }
-    DataGlobal_B0FCFD = 0;
 }
 }
 } // namespace gamemd

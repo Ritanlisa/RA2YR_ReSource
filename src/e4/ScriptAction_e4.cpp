@@ -750,16 +750,6 @@ int __thiscall sub_636CE0(int this)
 }
 } // namespace gamemd
 
-// 0x637DB0
-namespace gamemd {
-bool ScriptAction::SetField10()
-{
-{
-    return !DataGlobal_AC4CF4 || this != (void *)4;
-}
-}
-} // namespace gamemd
-
 // 0x637E00
 namespace gamemd {
 char ScriptAction::DispatchBuilding()
@@ -998,53 +988,6 @@ char __thiscall sub_638C70(_DWORD **this)
   {
     return 0; /*0x638ccb*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x638CE0
-namespace gamemd {
-int ScriptAction::ClassifyAction(int * a1, char * a2)
-{
-{
-    char v3;
-    int *Type;
-    int v6;
-    int *v7;
-    int Value;
-    int v9;
-    char *v10;
-    char v11[108];
-    short v12;
-    char v13;
-    v3 = *a2;
-    if ( *a2 == 9 || v3 == 6 || v3 == 7 )
-    return 0;
-    if ( Team_Load(a1, *((int*)(a2) + 12), *(int *)(a2 + 14), *((int*)(a2) + 18)) )
-    return 0;
-    Type = (int *)BuildingClass::GetPlanningToken(a1);
-    if ( !Type )
-    return -1;
-    v6 = Type[5];
-    if ( v6 <= 0 )
-    return -1;
-    v7 = *(int **)(Type[2] + 4 * v6 - 4);
-    Value = Array::FindValue(v7, *Type);
-    if ( Value == -1 )
-    v9 = 0;
-    else
-    v9 = *(int *)(v7[1] + 4 * Value);
-    v10 = *(char **)(v9 + 4);
-    qmemcpy(v11, v10, sizeof(v11));
-    v10 += 108;
-    v12 = *(short *)v10;
-    v13 = v10[2];
-    if ( v11[12] == 7 || v11[12] == 8 || v11[12] == 9 )
-    return 1;
-    if ( (v11[12] == 1 || v11[12] == 11) && (v11[18] == 11 || v11[12] == 11 && !v11[18]) )
-    return 2;
-    else
-    return -1;
 }
 }
 } // namespace gamemd
@@ -2335,19 +2278,6 @@ IUnknown *__thiscall ScriptAction::CopyStringField(char *this, char *Source)
 }
 } // namespace gamemd
 
-// 0x6E47C0
-namespace gamemd {
-void * ScriptAction::CopyStructField(void * a2, const void * a3)
-{
-{
-    if ( a3 != this )
-    qmemcpy(this, a3, 0x20u);
-    qmemcpy(a2, this, 0x20u);
-    return a2;
-}
-}
-} // namespace gamemd
-
 // 0x6E6AB0
 namespace gamemd {
 unsigned char * ScriptAction::GetWaypointCoords(IUnknown * aP1)
@@ -2522,6 +2452,76 @@ ObjectClass *__thiscall ScriptAction::GetArgumentString(_DWORD *this, int a2)
     return (ObjectClass *)g_Str_none; /*0x721286*/
   else
     return *(ObjectClass **)(*(this + 6) + 4 * a2); /*0x721280*/
+}
+}
+} // namespace gamemd
+
+// 0x637DB0
+namespace gamemd {
+bool ScriptAction::SetField10()
+{
+{
+    return !DataGlobal_AC4CF4 || this != (void *)4;
+}
+}
+} // namespace gamemd
+
+// 0x638CE0
+namespace gamemd {
+int ScriptAction::ClassifyAction(int * a1, char * a2)
+{
+{
+    char v3;
+    int *Type;
+    int v6;
+    int *v7;
+    int Value;
+    int v9;
+    char *v10;
+    char v11[108];
+    short v12;
+    char v13;
+    v3 = *a2;
+    if ( *a2 == 9 || v3 == 6 || v3 == 7 )
+    return 0;
+    if ( Team_Load(a1, *((int*)(a2) + 12), *(int *)(a2 + 14), *((int*)(a2) + 18)) )
+    return 0;
+    Type = (int *)BuildingClass::GetPlanningToken(a1);
+    if ( !Type )
+    return -1;
+    v6 = Type[5];
+    if ( v6 <= 0 )
+    return -1;
+    v7 = *(int **)(Type[2] + 4 * v6 - 4);
+    Value = Array::FindValue(v7, *Type);
+    if ( Value == -1 )
+    v9 = 0;
+    else
+    v9 = *(int *)(v7[1] + 4 * Value);
+    v10 = *(char **)(v9 + 4);
+    qmemcpy(v11, v10, sizeof(v11));
+    v10 += 108;
+    v12 = *(short *)v10;
+    v13 = v10[2];
+    if ( v11[12] == 7 || v11[12] == 8 || v11[12] == 9 )
+    return 1;
+    if ( (v11[12] == 1 || v11[12] == 11) && (v11[18] == 11 || v11[12] == 11 && !v11[18]) )
+    return 2;
+    else
+    return -1;
+}
+}
+} // namespace gamemd
+
+// 0x6E47C0
+namespace gamemd {
+void * ScriptAction::CopyStructField(void * a2, const void * a3)
+{
+{
+    if ( a3 != this )
+    qmemcpy(this, a3, 0x20u);
+    qmemcpy(a2, this, 0x20u);
+    return a2;
 }
 }
 } // namespace gamemd

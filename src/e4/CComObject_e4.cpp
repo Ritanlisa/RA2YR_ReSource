@@ -288,36 +288,6 @@ LABEL_42:
 }
 } // namespace gamemd
 
-// 0x7A5220
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_20(int a1, int a2, const char * a3)
-{
-{
-    if ( a2 >= 0 )
-    LeaveChannelWOL(a3);
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x7A5240
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::GetTypeInfoCount(int a1, int a2, int a3)
-{
-{
-    wchar_t *StringCSF;
-    wchar_t Buffer[512];
-    if ( !g_NetworkLobby_Init )
-  {
-    StringCSF = GetStringCSF(DataGlobal_84AC00, 0, g_Str_File_wonline_cpp, 5655);
-    swprintf(Buffer, (const size_t)&DataGlobal_8240B4, StringCSF);
-    Dialog::ShowMessage(-1, (size_t)Buffer);
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x7A5290
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const char * a3)
@@ -429,29 +399,6 @@ LABEL_20:
 }
 } // namespace gamemd
 
-// 0x7A55F0
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::GetIDsOfNames(int a1, int a2, char * Source)
-{
-{
-    char *v4;
-    unsigned char *i;
-    short v6[1024];
-    if ( a2 < 0 )
-    return 0;
-    v4 = _strdup(Source);
-    for ( i = (unsigned char *)strtok(v4, DataGlobal_83F328); i; i = (unsigned char *)strtok(0, DataGlobal_83F328) )
-  {
-    BulkCharToWide(v6, i, -1);
-    Dialog::ShowMessage(-1, (size_t)v6);
-  }
-    free(v4);
-    Dialog::ShowMessage(-1, (size_t)asc_830174);
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x7A5690
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, unsigned char * a3)
@@ -536,20 +483,6 @@ int __stdcall CComObject_CChatEventSink___ATL::vt_09_(int a1, int a2, _BYTE *a3)
     }
   }
   return 0; /*0x7a571f*/
-}
-}
-} // namespace gamemd
-
-// 0x7A70E0
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::Disconnect(int a1, int a2, int a3, const char * a4)
-{
-{
-    if ( a2 >= 0 )
-    LeaveChannelWOL(a4);
-    else
-    Debug::Log();
-    return 0;
 }
 }
 } // namespace gamemd
@@ -1365,18 +1298,6 @@ LABEL_19:
 }
 } // namespace gamemd
 
-// 0x7AA6A0
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_18(int a1, int a2, int a3)
-{
-{
-    if ( !g_NetworkLobby_Init && a2 >= 0 )
-    Dialog::ShowMessage(-1, (size_t)DataGlobal_84B128, a3);
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x7AA6D0
 namespace gamemd {
 int CComObject_CChatEventSink___ATL_DispatchStub_19()
@@ -1454,273 +1375,6 @@ int __userpurge CComObject_CChatEventSink___ATL::DispatchStub_19@<eax>(
     }
   }
   return 0; /*0x7aa6fa*/
-}
-}
-} // namespace gamemd
-
-// 0x7AAFB0
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::Unadvise(int a1, int a2, const char * a3, const char * a4)
-{
-{
-    const char *v4;
-    const char *v5;
-    bool v6;
-    const void *v7;
-    wchar_t *v8;
-    if ( !g_NetworkLobby_Init && a2 >= 0 )
-  {
-    v4 = a4;
-    String::Assign((char **)&a2, a4);
-    v5 = a3;
-    if ( a3 )
-    {
-    if ( (*a3 & 1) != 0 )
-      {
-    v6 = 1;
-      }
-    else if ( Dialog::FindByHandle((void *)0xC2) )
-      {
-    v6 = 1;
-      }
-    else
-      {
-    v6 = Dialog::FindByHandle((void *)0xC9) || DataGlobal_B779C0 != 0;
-      }
-    }
-    else
-    {
-    v6 = 0;
-    }
-    DeleteAndZero((void **)&a2);
-    if ( v6 && IsBuddyOrIgnoreWOL(v5) )
-    {
-    String::Assign((char **)&a2, v4);
-    CharStringToWide((wchar_t **)&a4, (const char **)&a2);
-    DeleteAndZero((void **)&a2);
-    v7 = v5 + 36;
-    if ( _strcmpi(g_GameSetupBuffer, v7) )
-      {
-    v8 = WideString::GetOrEmpty((wchar_t **)&a4);
-    Dialog::ShowMessage(16711935, (size_t)g_Str_Trace__hs, v7, v8);
-      }
-    DeleteAndZero::Alt((void **)&a4);
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x7AB0A0
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_42(int a1, int a2, const char * a3, wchar_t * String)
-{
-{
-    wchar_t *v4;
-    const char *v5;
-    bool v6;
-    bool v7;
-    int v8;
-    const void *v9;
-    if ( !g_NetworkLobby_Init && a2 >= 0 )
-  {
-    v4 = String;
-    WideString::Assign((wchar_t **)&a2, String);
-    v5 = a3;
-    if ( a3 )
-    {
-    if ( (*a3 & 1) != 0 )
-      {
-    v6 = 1;
-      }
-    else if ( Dialog::FindByHandle((void *)0xC2) )
-      {
-    v6 = 1;
-      }
-    else if ( Dialog::FindByHandle((void *)0xC9) )
-      {
-    v6 = 1;
-      }
-    else
-      {
-    v7 = WideString::IsASCII((const wchar_t **)&a2) == 0;
-    v8 = DataGlobal_B779C0;
-    if ( v7 )
-    v8 = DataGlobal_B779DC;
-    v6 = v8 != 0;
-      }
-    }
-    else
-    {
-    v6 = 0;
-    }
-    DeleteAndZero::Alt((void **)&a2);
-    if ( v6 && IsBuddyOrIgnoreWOL(v5) )
-    {
-    v9 = v5 + 36;
-    if ( _strcmpi(g_GameSetupBuffer, v9) )
-    Dialog::ShowMessage(16711935, (size_t)g_Str_Trace__hs, v9, v4);
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x7AB170
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::EnumDependents(int a1, int a2, int a3, const char * a4, const char * a5)
-{
-{
-    const char *v5;
-    const char *v6;
-    bool v7;
-    const void *v8;
-    wchar_t *v9;
-    if ( !g_NetworkLobby_Init && a2 >= 0 )
-  {
-    v5 = a5;
-    String::Assign((char **)&a2, a5);
-    v6 = a4;
-    if ( a4 )
-    {
-    if ( (*a4 & 1) != 0 )
-      {
-    v7 = 1;
-      }
-    else if ( Dialog::FindByHandle((void *)0xC2) )
-      {
-    v7 = 1;
-      }
-    else
-      {
-    v7 = Dialog::FindByHandle((void *)0xC9) || DataGlobal_B779C0 != 0;
-      }
-    }
-    else
-    {
-    v7 = 0;
-    }
-    DeleteAndZero((void **)&a2);
-    if ( v7 && IsBuddyOrIgnoreWOL(v6) )
-    {
-    String::Assign((char **)&a2, v5);
-    CharStringToWide((wchar_t **)&a5, (const char **)&a2);
-    DeleteAndZero((void **)&a2);
-    v8 = v6 + 36;
-    if ( _strcmpi(g_GameSetupBuffer, v8) )
-      {
-    v9 = WideString::GetOrEmpty((wchar_t **)&a5);
-    Dialog::ShowMessage(3166463, (size_t)g_Str_Trace__hs, v8, v9);
-      }
-    DeleteAndZero::Alt((void **)&a5);
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x7AB260
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_43(int a1, int a2, int a3, const char * a4, wchar_t * String)
-{
-{
-    wchar_t *v5;
-    const char *v6;
-    bool v7;
-    bool v8;
-    int v9;
-    const void *v10;
-    if ( !g_NetworkLobby_Init && a2 >= 0 )
-  {
-    v5 = String;
-    WideString::Assign((wchar_t **)&a2, String);
-    v6 = a4;
-    if ( a4 )
-    {
-    if ( (*a4 & 1) != 0 )
-      {
-    v7 = 1;
-      }
-    else if ( Dialog::FindByHandle((void *)0xC2) )
-      {
-    v7 = 1;
-      }
-    else if ( Dialog::FindByHandle((void *)0xC9) )
-      {
-    v7 = 1;
-      }
-    else
-      {
-    v8 = WideString::IsASCII((const wchar_t **)&a2) == 0;
-    v9 = DataGlobal_B779C0;
-    if ( v8 )
-    v9 = DataGlobal_B779DC;
-    v7 = v9 != 0;
-      }
-    }
-    else
-    {
-    v7 = 0;
-    }
-    DeleteAndZero::Alt((void **)&a2);
-    if ( v7 && IsBuddyOrIgnoreWOL(v6) )
-    {
-    v10 = v6 + 36;
-    if ( _strcmpi(g_GameSetupBuffer, v10) )
-    Dialog::ShowMessage(3166463, (size_t)g_Str_Trace__hs, v10, v5);
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x7AB350
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_29(int a1, int a2, __time32_t Time)
-{
-{
-    wchar_t *StringCSF;
-    const wchar_t *v5;
-    wchar_t Buffer[200];
-    if ( !g_NetworkLobby_Init && !a2 )
-  {
-    v5 = (const wchar_t *)unknown_libname_75(&Time);
-    StringCSF = GetStringCSF(aTxtBannedtill, 0, g_Str_File_wonline_cpp, 8809);
-    swprintf(Buffer, (const size_t)StringCSF, v5);
-    ShowDialogConfirm(Buffer, 0, (int)GameLoop::Thunk, 0);
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x7AB3C0
-namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_31(int a1, int a2, unsigned char * a3, int a4)
-{
-{
-    wchar_t *StringCSF;
-    wchar_t *v6;
-    char *v7;
-    char *v8;
-    if ( !g_NetworkLobby_Init )
-  {
-    if ( a4 )
-    {
-    v7 = CharToWideString(a3);
-    StringCSF = GetStringCSF(aTxtChanBan, 0, g_Str_File_wonline_cpp, 8822);
-    Dialog::ShowMessage(-1, (size_t)StringCSF, v7);
-    return 0;
-    }
-    v8 = CharToWideString(a3);
-    v6 = GetStringCSF(aTxtChanUnban, 0, g_Str_File_wonline_cpp, 8825);
-    Dialog::ShowMessage(-1, (size_t)v6, v8);
-  }
-    return 0;
 }
 }
 } // namespace gamemd
@@ -2487,17 +2141,6 @@ LABEL_21:
 }
 } // namespace gamemd
 
-// 0x7AC690
-namespace gamemd {
-LONG CComObject_CChatEventSink___ATL::AddRef()
-{
-{
-    int v2;
-    return InterlockedIncrement((volatile LONG *)(v2 + 4));
-}
-}
-} // namespace gamemd
-
 // 0x7AC6B0
 namespace gamemd {
 LONG CComObject_CChatEventSink___ATL::Release()
@@ -2590,6 +2233,305 @@ int __thiscall CComObject_CChatEventSink___ATL::Check(int this, TechnoTypeClass 
 }
 } // namespace gamemd
 
+// 0x7A5220
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::DispatchStub_20(int a1, int a2, const char * a3)
+{
+{
+    if ( a2 >= 0 )
+    LeaveChannelWOL(a3);
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7A5240
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::GetTypeInfoCount(int a1, int a2, int a3)
+{
+{
+    wchar_t *StringCSF;
+    wchar_t Buffer[512];
+    if ( !g_NetworkLobby_Init )
+  {
+    StringCSF = GetStringCSF(DataGlobal_84AC00, 0, g_Str_File_wonline_cpp, 5655);
+    swprintf(Buffer, (const size_t)&DataGlobal_8240B4, StringCSF);
+    Dialog::ShowMessage(-1, (size_t)Buffer);
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7A55F0
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::GetIDsOfNames(int a1, int a2, char * Source)
+{
+{
+    char *v4;
+    unsigned char *i;
+    short v6[1024];
+    if ( a2 < 0 )
+    return 0;
+    v4 = _strdup(Source);
+    for ( i = (unsigned char *)strtok(v4, DataGlobal_83F328); i; i = (unsigned char *)strtok(0, DataGlobal_83F328) )
+  {
+    BulkCharToWide(v6, i, -1);
+    Dialog::ShowMessage(-1, (size_t)v6);
+  }
+    free(v4);
+    Dialog::ShowMessage(-1, (size_t)asc_830174);
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7A70E0
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::Disconnect(int a1, int a2, int a3, const char * a4)
+{
+{
+    if ( a2 >= 0 )
+    LeaveChannelWOL(a4);
+    else
+    Debug::Log();
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7AA6A0
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::DispatchStub_18(int a1, int a2, int a3)
+{
+{
+    if ( !g_NetworkLobby_Init && a2 >= 0 )
+    Dialog::ShowMessage(-1, (size_t)DataGlobal_84B128, a3);
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7AAFB0
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::Unadvise(int a1, int a2, const char * a3, const char * a4)
+{
+{
+    const char *v4;
+    const char *v5;
+    bool v6;
+    const void *v7;
+    wchar_t *v8;
+    if ( !g_NetworkLobby_Init && a2 >= 0 )
+  {
+    v4 = a4;
+    String::Assign((char **)&a2, a4);
+    v5 = a3;
+    if ( a3 )
+    {
+    if ( (*a3 & 1) != 0 )
+      {
+    v6 = 1;
+      }
+    else if ( Dialog::FindByHandle((void *)0xC2) )
+      {
+    v6 = 1;
+      }
+    else
+      {
+    v6 = Dialog::FindByHandle((void *)0xC9) || DataGlobal_B779C0 != 0;
+      }
+    }
+    else
+    {
+    v6 = 0;
+    }
+    DeleteAndZero((void **)&a2);
+    if ( v6 && IsBuddyOrIgnoreWOL(v5) )
+    {
+    String::Assign((char **)&a2, v4);
+    CharStringToWide((wchar_t **)&a4, (const char **)&a2);
+    DeleteAndZero((void **)&a2);
+    v7 = v5 + 36;
+    if ( _strcmpi(g_GameSetupBuffer, v7) )
+      {
+    v8 = WideString::GetOrEmpty((wchar_t **)&a4);
+    Dialog::ShowMessage(16711935, (size_t)g_Str_Trace__hs, v7, v8);
+      }
+    DeleteAndZero::Alt((void **)&a4);
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7AB0A0
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::DispatchStub_42(int a1, int a2, const char * a3, wchar_t * String)
+{
+{
+    wchar_t *v4;
+    const char *v5;
+    bool v6;
+    bool v7;
+    int v8;
+    const void *v9;
+    if ( !g_NetworkLobby_Init && a2 >= 0 )
+  {
+    v4 = String;
+    WideString::Assign((wchar_t **)&a2, String);
+    v5 = a3;
+    if ( a3 )
+    {
+    if ( (*a3 & 1) != 0 )
+      {
+    v6 = 1;
+      }
+    else if ( Dialog::FindByHandle((void *)0xC2) )
+      {
+    v6 = 1;
+      }
+    else if ( Dialog::FindByHandle((void *)0xC9) )
+      {
+    v6 = 1;
+      }
+    else
+      {
+    v7 = WideString::IsASCII((const wchar_t **)&a2) == 0;
+    v8 = DataGlobal_B779C0;
+    if ( v7 )
+    v8 = DataGlobal_B779DC;
+    v6 = v8 != 0;
+      }
+    }
+    else
+    {
+    v6 = 0;
+    }
+    DeleteAndZero::Alt((void **)&a2);
+    if ( v6 && IsBuddyOrIgnoreWOL(v5) )
+    {
+    v9 = v5 + 36;
+    if ( _strcmpi(g_GameSetupBuffer, v9) )
+    Dialog::ShowMessage(16711935, (size_t)g_Str_Trace__hs, v9, v4);
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7AB170
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::EnumDependents(int a1, int a2, int a3, const char * a4, const char * a5)
+{
+{
+    const char *v5;
+    const char *v6;
+    bool v7;
+    const void *v8;
+    wchar_t *v9;
+    if ( !g_NetworkLobby_Init && a2 >= 0 )
+  {
+    v5 = a5;
+    String::Assign((char **)&a2, a5);
+    v6 = a4;
+    if ( a4 )
+    {
+    if ( (*a4 & 1) != 0 )
+      {
+    v7 = 1;
+      }
+    else if ( Dialog::FindByHandle((void *)0xC2) )
+      {
+    v7 = 1;
+      }
+    else
+      {
+    v7 = Dialog::FindByHandle((void *)0xC9) || DataGlobal_B779C0 != 0;
+      }
+    }
+    else
+    {
+    v7 = 0;
+    }
+    DeleteAndZero((void **)&a2);
+    if ( v7 && IsBuddyOrIgnoreWOL(v6) )
+    {
+    String::Assign((char **)&a2, v5);
+    CharStringToWide((wchar_t **)&a5, (const char **)&a2);
+    DeleteAndZero((void **)&a2);
+    v8 = v6 + 36;
+    if ( _strcmpi(g_GameSetupBuffer, v8) )
+      {
+    v9 = WideString::GetOrEmpty((wchar_t **)&a5);
+    Dialog::ShowMessage(3166463, (size_t)g_Str_Trace__hs, v8, v9);
+      }
+    DeleteAndZero::Alt((void **)&a5);
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7AB260
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::DispatchStub_43(int a1, int a2, int a3, const char * a4, wchar_t * String)
+{
+{
+    wchar_t *v5;
+    const char *v6;
+    bool v7;
+    bool v8;
+    int v9;
+    const void *v10;
+    if ( !g_NetworkLobby_Init && a2 >= 0 )
+  {
+    v5 = String;
+    WideString::Assign((wchar_t **)&a2, String);
+    v6 = a4;
+    if ( a4 )
+    {
+    if ( (*a4 & 1) != 0 )
+      {
+    v7 = 1;
+      }
+    else if ( Dialog::FindByHandle((void *)0xC2) )
+      {
+    v7 = 1;
+      }
+    else if ( Dialog::FindByHandle((void *)0xC9) )
+      {
+    v7 = 1;
+      }
+    else
+      {
+    v8 = WideString::IsASCII((const wchar_t **)&a2) == 0;
+    v9 = DataGlobal_B779C0;
+    if ( v8 )
+    v9 = DataGlobal_B779DC;
+    v7 = v9 != 0;
+      }
+    }
+    else
+    {
+    v7 = 0;
+    }
+    DeleteAndZero::Alt((void **)&a2);
+    if ( v7 && IsBuddyOrIgnoreWOL(v6) )
+    {
+    v10 = v6 + 36;
+    if ( _strcmpi(g_GameSetupBuffer, v10) )
+    Dialog::ShowMessage(3166463, (size_t)g_Str_Trace__hs, v10, v5);
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x7AB330
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::COMStub_Return0(int a1, int a2, int a3, int a4)
@@ -2603,6 +2545,53 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::StubReturnFalse(int a1, int a2, int a3)
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x7AB350
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::DispatchStub_29(int a1, int a2, __time32_t Time)
+{
+{
+    wchar_t *StringCSF;
+    const wchar_t *v5;
+    wchar_t Buffer[200];
+    if ( !g_NetworkLobby_Init && !a2 )
+  {
+    v5 = (const wchar_t *)unknown_libname_75(&Time);
+    StringCSF = GetStringCSF(aTxtBannedtill, 0, g_Str_File_wonline_cpp, 8809);
+    swprintf(Buffer, (const size_t)StringCSF, v5);
+    ShowDialogConfirm(Buffer, 0, (int)GameLoop::Thunk, 0);
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7AB3C0
+namespace gamemd {
+int CComObject_CChatEventSink___ATL::DispatchStub_31(int a1, int a2, unsigned char * a3, int a4)
+{
+{
+    wchar_t *StringCSF;
+    wchar_t *v6;
+    char *v7;
+    char *v8;
+    if ( !g_NetworkLobby_Init )
+  {
+    if ( a4 )
+    {
+    v7 = CharToWideString(a3);
+    StringCSF = GetStringCSF(aTxtChanBan, 0, g_Str_File_wonline_cpp, 8822);
+    Dialog::ShowMessage(-1, (size_t)StringCSF, v7);
+    return 0;
+    }
+    v8 = CharToWideString(a3);
+    v6 = GetStringCSF(aTxtChanUnban, 0, g_Str_File_wonline_cpp, 8825);
+    Dialog::ShowMessage(-1, (size_t)v6, v8);
+  }
+    return 0;
+}
 }
 } // namespace gamemd
 
@@ -2644,5 +2633,16 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_47(int a1, int a2, int a3)
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x7AC690
+namespace gamemd {
+LONG CComObject_CChatEventSink___ATL::AddRef()
+{
+{
+    int v2;
+    return InterlockedIncrement((volatile LONG *)(v2 + 4));
+}
 }
 } // namespace gamemd

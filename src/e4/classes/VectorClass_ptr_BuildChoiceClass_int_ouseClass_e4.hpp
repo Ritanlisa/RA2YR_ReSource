@@ -12,9 +12,9 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     unsigned int * SetCapacity_3(int a1, unsigned int * a2);  // 0x4F6BC0
     unsigned int * SetCapacity_4(int a1, unsigned int * a2);  // 0x4F6D10
     int SetCapacity_5(int a1);  // 0x501400
-    int StubReturnNullPointer_0(int a1, const void * a2, unsigned int * a3);  // 0x502550
     char Release(int a2, unsigned int * a3);  // 0x50F520
     char SetCapacity_6(int a2, unsigned int * a3);  // 0x50F660
+    int StubReturnNullPointer_0(int a1, const void * a2, unsigned int * a3);  // 0x502550
     void * GetItemIndex_0(int a2);  // 0x4F6930
     bool GetItemIndex(int a1);  // 0x4F6910
     BSTR FindItemIndex(int a1);  // 0x4F6950

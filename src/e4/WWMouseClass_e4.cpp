@@ -286,14 +286,6 @@ void __thiscall WWMouseClass::_vt05(_BYTE *this)
 }
 }
 
-// 0x7B9D80
-int WWMouseClass::checkVisible()
-{
-{
-    return this->showCursor();
-}
-}
-
 // 0x7BA300
 MouseClass * WWMouseClass::updateHotspot(char a2)
 {
@@ -351,5 +343,13 @@ _DWORD *__thiscall WWMouseClass::_vt13(_DWORD *this, _DWORD *a2)
   *a2 = v3; /*0x7ba36a*/
   a2[1] = v4; /*0x7ba36c*/
   return a2; /*0x7ba36f*/
+}
+}
+
+// 0x7B9D80
+int WWMouseClass::checkVisible()
+{
+{
+    return this->showCursor();
 }
 }

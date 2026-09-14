@@ -27,19 +27,6 @@ void __thiscall ParticleSystemClass::_vt03(int this)
 }
 } // namespace gamemd
 
-// 0x4E84A0
-namespace gamemd {
-unsigned int ParticleSystemClass::LoadTypeData(int a2)
-{
-{
-    if ( (unsigned char)this->vtable3 )
-    return (unsigned int)(a2 - this->vtable1) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4E84C0
 namespace gamemd {
 int ParticleSystemClass::SaveToINI(int a2)
@@ -238,19 +225,6 @@ int __thiscall ParticleSystemClass_16_::_vt04(int this, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x4EB3C0
-namespace gamemd {
-unsigned int ParticleSystemClass_16::Read(int a2)
-{
-{
-    if ( (unsigned char)this->ParticleSystemClass_16_field_0xC )
-    return (unsigned int)(a2 - this->ParticleSystemClass_16_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4EFD50
 namespace gamemd {
 VectorClass * ParticleSystemClass_16::QueryInterface(char a2)
@@ -298,19 +272,6 @@ void __thiscall ParticleSystemClass_32_::sub_4E82F0(int this)
 }
 } // namespace gamemd
 
-// 0x4E8320
-namespace gamemd {
-unsigned int ParticleSystemClass_32::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->ParticleSystemClass_32_field_0xC )
-    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4E87E0
 namespace gamemd {
 void ParticleSystemClass_32::Destroy()
@@ -329,19 +290,6 @@ void __thiscall ParticleSystemClass_32_::sub_4E87E0(int this)
   }
   *(_BYTE *)(this + 13) = 0; /*0x4e8801*/
   this->ParticleSystemClass_32_field_0x8 = 0; /*0x4e8804*/
-}
-}
-} // namespace gamemd
-
-// 0x4E8810
-namespace gamemd {
-unsigned int ParticleSystemClass_32::GetIndex2(int a2)
-{
-{
-    if ( (unsigned char)this->ParticleSystemClass_32_field_0xC )
-    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -587,19 +535,6 @@ int __thiscall ParticleSystemClass_32_::_vt04(int this, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x4EB620
-namespace gamemd {
-unsigned int ParticleSystemClass_32::Read(int a2)
-{
-{
-    if ( (unsigned char)this->ParticleSystemClass_32_field_0xC )
-    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4EB640
 namespace gamemd {
 char ParticleSystemClass_32::CopyParticles2(int a2, unsigned int * a3)
@@ -776,19 +711,6 @@ DynamicVector *__thiscall ParticleSystemClass_32_::Constructor_VectorClass_Aircr
 }
 } // namespace gamemd
 
-// 0x4E8870
-namespace gamemd {
-unsigned int ParticleSystemClass_32_::GetElementIndex(int a2)
-{
-{
-    if ( (unsigned char)this->ParticleSystemClass_32__field_0xC )
-    return (unsigned int)(a2 - this->ParticleSystemClass_32__field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4EB8A0
 namespace gamemd {
 char ParticleSystemClass_32_::ResizeDataArray(int a2, unsigned int * a3)
@@ -861,6 +783,84 @@ int __thiscall ParticleSystemClass_32_::sub_4EB950(int *this, _DWORD *a2)
       return -1; /*0x4eb96d*/
   }
   return result; /*0x4eb972*/
+}
+}
+} // namespace gamemd
+
+// 0x4E8320
+namespace gamemd {
+unsigned int ParticleSystemClass_32::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->ParticleSystemClass_32_field_0xC )
+    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E84A0
+namespace gamemd {
+unsigned int ParticleSystemClass::LoadTypeData(int a2)
+{
+{
+    if ( (unsigned char)this->vtable3 )
+    return (unsigned int)(a2 - this->vtable1) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E8810
+namespace gamemd {
+unsigned int ParticleSystemClass_32::GetIndex2(int a2)
+{
+{
+    if ( (unsigned char)this->ParticleSystemClass_32_field_0xC )
+    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E8870
+namespace gamemd {
+unsigned int ParticleSystemClass_32_::GetElementIndex(int a2)
+{
+{
+    if ( (unsigned char)this->ParticleSystemClass_32__field_0xC )
+    return (unsigned int)(a2 - this->ParticleSystemClass_32__field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4EB3C0
+namespace gamemd {
+unsigned int ParticleSystemClass_16::Read(int a2)
+{
+{
+    if ( (unsigned char)this->ParticleSystemClass_16_field_0xC )
+    return (unsigned int)(a2 - this->ParticleSystemClass_16_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4EB620
+namespace gamemd {
+unsigned int ParticleSystemClass_32::Read(int a2)
+{
+{
+    if ( (unsigned char)this->ParticleSystemClass_32_field_0xC )
+    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

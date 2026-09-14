@@ -16,40 +16,6 @@
 #include "e4/classes/E4Recv_759BC0_e4.hpp"
 #include "e4/classes/E4Recv_75A120_e4.hpp"
 
-// 0x750300
-namespace gamemd {
-int sub_750300()
-{
-{
-    g_VocAudioConfig = 0;
-    DataGlobal_B1D380 = 0;
-    DataGlobal_B1D384 = 1;
-    DataGlobal_B1D385 = 0;
-    DataGlobal_B1D378 = (int)&vt_DynamicVectorClass_VocClass;
-    DataGlobal_B1D38C = 10;
-    g_VocPlayState = 0;
-    return atexit(sub_750340);
-}
-}
-} // namespace gamemd
-
-// 0x750340
-namespace gamemd {
-void sub_750340()
-{
-{
-    DataGlobal_B1D378 = (int)&vt_VectorClass_VocClass;
-    if ( g_VocAudioConfig && DataGlobal_B1D385 )
-  {
-    __3_YAXPAX_Z(g_VocAudioConfig);
-    g_VocAudioConfig = 0;
-  }
-    DataGlobal_B1D385 = 0;
-    DataGlobal_B1D380 = 0;
-}
-}
-} // namespace gamemd
-
 // 0x750920
 namespace gamemd {
 int VocClass_Play(int a1, int a2, float a3, int a4)
@@ -95,67 +61,6 @@ int __fastcall VocClass_Play(int a1, int a2, float a3, int a4)
   if ( a4 ) /*0x7509c5*/
     SetAudioSource(v5); /*0x7509cc*/
   return v6; /*0x750931*/
-}
-}
-} // namespace gamemd
-
-// 0x7509E0
-namespace gamemd {
-int StartAudioControllerAt(AudioController * aP0, int a2, int a1)
-{
-{
-    int *v5;
-    int *v6;
-    AudioMixer *v7;
-    int *eax7;
-    double v9;
-    CCINIClass *v8;
-    if ( !DataGlobal_830620.__pad_579C[67312] )
-    return 0;
-    v5 = 0;
-    v6 = 0;
-    if ( (int)aP0 >= 0 && (int)aP0 < *(int *)&DataGlobal_B1D188.__pad_1D8[40] )
-    v6 = **(int ***)(*(int *)&DataGlobal_B1D188.__pad_1D8[28] + 4 * (int)aP0);
-    v7 = (AudioMixer *)a1;
-    if ( a1 )
-  {
-    eax7 = AudioSource::Get((int **)a1);
-    v5 = eax7;
-    if ( eax7 )
-    {
-    if ( (int *)sub_406310(eax7) != v6 )
-      {
-    VocClass::Release((int)v5);
-    v5 = 0;
-      }
-    }
-  }
-    if ( v6 )
-  {
-    v9 = ComputeAudioPosition((AudioMixer *)a2, &a1, (int)v6);
-    if ( v9 <= 0.0 )
-    {
-    if ( v5 )
-      {
-    VocClass::Release((int)v5);
-    v5 = 0;
-      }
-    }
-    else
-    {
-    v8 = (CCINIClass *)Math::RoundToInt(v9 * 16384.0);
-    if ( (unsigned int)v8 >= 0x4000 )
-    v8 = (CCINIClass *)0x4000;
-    if ( v5 || (v5 = AudioPool::ProcessQueue(v6)) != 0 )
-      {
-    AudioMixer::PlayBuffer(v5, (unsigned int)v8);
-    AudioMixer::RequestOrEndBuffer((int)v5, a1);
-      }
-    }
-  }
-    if ( v7 )
-    SetAudioSource(v7, v5, (int)v6);
-    return (int)v5;
 }
 }
 } // namespace gamemd
@@ -315,40 +220,6 @@ LABEL_10:
 }
 } // namespace gamemd
 
-// 0x750E20
-namespace gamemd {
-int PlayAudioAt2(IUnknown * aP0, unsigned int * a1, int a3)
-{
-{
-    int result;
-    int *v6;
-    int started;
-    int v8;
-    if ( (int)aP0 < 0 )
-    return 0;
-    result = (int)LinkedList::Next((int **)DataGlobal_B1D188.field_21C);
-    v6 = (int *)result;
-    if ( result )
-  {
-    AudioController::Init((int *)(result + 12));
-    DListNode::InitEmpty(v6);
-    v6[12] = 0;
-    v6[8] = *a1;
-    v6[9] = *((int*)(a1) + 1);
-    v6[10] = *((int*)(a1) + 2);
-    v6[11] = a3;
-    started = StartAudioControllerAt((AudioController *)aP0, (int)(v6 + 8), (int)(v6 + 3));
-    InsertAfterDListNode((int)&DataGlobal_B1D188.__pad_188[16], v6);
-    v8 = ++*(int *)DataGlobal_B1D188.__pad_220;
-    if ( *(int *)DataGlobal_B1D188.__pad_220 > *(int *)&DataGlobal_B1D188.__pad_220[4] )
-    *(int *)&DataGlobal_B1D188.__pad_220[4] = v8;
-    return started;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x751DD0
 namespace gamemd {
 char sub_751DD0(LPCSTR lpRootPathName, UINT * a2)
@@ -395,90 +266,6 @@ LABEL_2:
     return 0; /*0x751e23*/
   }
   return 1; /*0x751e1d*/
-}
-}
-} // namespace gamemd
-
-// 0x751EA0
-namespace gamemd {
-HANDLE sub_751EA0(const CHAR * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4)
-{
-{
-    const char *v4;
-    HANDLE result;
-    void *v7;
-    HANDLE v9;
-    CHAR FileName[260];
-    struct _WIN32_FIND_DATAA FindFileData;
-    v4 = a1;
-    result = FindFirstFileA(a1, &FindFileData);
-    v7 = result;
-    v9 = result;
-    if ( result != (HANDLE)-1 )
-  {
-    do
-    {
-    if ( (FindFileData.dwFileAttributes & 0x10) != 0 )
-      {
-    if ( _strcmpi(FindFileData.cFileName, DataGlobal_826598) )
-        {
-    if ( _strcmpi(FindFileData.cFileName, DataGlobal_846610) )
-          {
-    ++*a2;
-    strcpy(FileName, v4);
-    FileName[strlen(FileName) - 1] = 0;
-    strcat(FileName, FindFileData.cFileName);
-    strcat(FileName, DataGlobal_84660C);
-    sub_751EA0(a3, a4);
-    v7 = v9;
-    v4 = a1;
-          }
-        }
-      }
-    else
-      {
-    ++*a3;
-    *a4 += FindFileData.nFileSizeLow;
-      }
-    }
-    while ( FindNextFileA(v7, &FindFileData) );
-    return (HANDLE)FindClose(v7);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x752210
-namespace gamemd {
-int sub_752210()
-{
-{
-    g_InfantryRenderPool = 0;
-    DataGlobal_B1D4A8 = 0;
-    DataGlobal_B1D4AC = 1;
-    DataGlobal_B1D4AD = 0;
-    DataGlobal_B1D4A0 = (int)&vt_DynamicVectorClass_VoxClass;
-    DataGlobal_B1D4B4 = 10;
-    g_InfantrySelectState = 0;
-    return atexit(sub_752250);
-}
-}
-} // namespace gamemd
-
-// 0x752250
-namespace gamemd {
-void sub_752250()
-{
-{
-    DataGlobal_B1D4A0 = (int)&vt_VectorClass_VoxClass;
-    if ( g_InfantryRenderPool && DataGlobal_B1D4AD )
-  {
-    __3_YAXPAX_Z(g_InfantryRenderPool);
-    g_InfantryRenderPool = 0;
-  }
-    DataGlobal_B1D4AD = 0;
-    DataGlobal_B1D4A8 = 0;
 }
 }
 } // namespace gamemd
@@ -950,94 +737,6 @@ bool __fastcall sub_7532A0(std::codecvt_base *a1)
 }
 } // namespace gamemd
 
-// 0x753B40
-namespace gamemd {
-int sub_753B40()
-{
-{
-    char *v0;
-    int v1;
-    int result;
-    v0 = (char *)&DataGlobal_B3FF84;
-    v1 = 64;
-    do
-  {
-    result = Array::ForEach((int)v0, 12, 4, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_8);
-    v0 += 72;
-    --v1;
-  }
-    while ( v1 );
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x753F90
-namespace gamemd {
-char * globalHelper_053F90(unsigned int * a0, ObjectClass * aP1, SomeVoxelCache * aP2, float * a3, float * a4, float * a5, int a7, int a8, int a9)
-{
-{
-    int Info;
-    int v12;
-    int v13;
-    Tactical *v14;
-    Tactical *v15;
-    float *v16;
-    float *v17;
-    double v18;
-    float v20;
-    float v21;
-    float v22;
-    float v23[3];
-    float v24[3];
-    Info = VoxelSection::GetInfo(a0, (SomeVoxelCache *)aP1, aP2);
-    v12 = 4;
-    v13 = 72 * *(int *)&DataGlobal_B1D188.__pad_579C[53836] + 11796344;
-    *(int *)(v13 + 60) = a7;
-    *(int *)(v13 + 64) = a8;
-    *(int *)v13 = a0;
-    *(int *)(v13 + 4) = aP1;
-    *(int *)(v13 + 8) = aP2;
-    *(int *)(v13 + 68) = a9;
-    v14 = (Tactical *)(v13 + 12);
-    v15 = (Tactical *)(Info + 64);
-    do
-  {
-    v16 = TransformMatrix3x4Point((AbstractClass *)v23, (IUnknown *)a4, (IUnknown *)v15);
-    *(float *)v14->__pad_0 = *v16;
-    *(float *)&v14->field_2[2] = v16[1];
-    v14->field_8 = (void *)v16[2];
-    v14->field_8 = 0;
-    v17 = TransformMatrix3x4Point((AbstractClass *)v24, (IUnknown *)a3, (IUnknown *)v14);
-    *(float *)v14->__pad_0 = *v17;
-    *(float *)&v14->field_2[2] = v17[1];
-    v14->field_8 = (void *)v17[2];
-    v20 = *a5 + *(float *)v14->__pad_0;
-    v21 = *(float *)&v14->field_2[2] + *((int*)(a5) + 1);
-    v18 = *((int*)(a5) + 2) + *(float *)&v14->field_8;
-    *(float *)v14->__pad_0 = v20;
-    v22 = v18;
-    *(float *)&v14->field_2[2] = v21;
-    *(float *)&v14->field_8 = v22;
-    *(float *)&v14->field_2[2] = -*(float *)&v14->field_2[2];
-    if ( *(float *)v14->__pad_0 < (double)*(float *)&DataGlobal_B1D188.__pad_579C[44220] )
-    *(int *)&DataGlobal_B1D188.__pad_579C[44220] = *(int *)v14->__pad_0;
-    if ( *(float *)&v14->field_2[2] < (double)*(float *)&DataGlobal_B1D188.__pad_579C[44224] )
-    *(int *)&DataGlobal_B1D188.__pad_579C[44224] = *(int *)&v14->field_2[2];
-    if ( *(float *)v14->__pad_0 > (double)*(float *)&DataGlobal_B1D188.__pad_579C[45092] )
-    *(int *)&DataGlobal_B1D188.__pad_579C[45092] = *(int *)v14->__pad_0;
-    if ( *(float *)&v14->field_2[2] > (double)*(float *)&DataGlobal_B1D188.__pad_579C[45096] )
-    *(int *)&DataGlobal_B1D188.__pad_579C[45096] = *(int *)&v14->field_2[2];
-    v15 = (Tactical *)((char *)(v15) + 12);
-    v14 = (Tactical *)((char *)(v14) + 12);
-    --v12;
-  }
-    while ( v12 );
-    return (char *)++*(int *)&DataGlobal_B1D188.__pad_579C[53836];
-}
-}
-} // namespace gamemd
-
 // 0x7540F0
 namespace gamemd {
 int TransformVoxelVertex(unsigned int * a1, SomeVoxelCache * a2, SomeVoxelCache * aP2, float * a4)
@@ -1355,16 +1054,6 @@ _DWORD *__thiscall sub_755CB0(_DWORD *this)
   *(this + 5) = 0; /*0x755cc2*/
   *(this + 6) = 0; /*0x755cc5*/
   return this; /*0x755cc8*/
-}
-}
-} // namespace gamemd
-
-// 0x756570
-namespace gamemd {
-int E4Recv_756570::sub_756570()
-{
-{
-    return 12 *(void**)this->M4 + 164 *(void**)this->M8 + this->M12 + 28;
 }
 }
 } // namespace gamemd
@@ -2856,6 +2545,135 @@ int sub_7502E0()
 }
 } // namespace gamemd
 
+// 0x750300
+namespace gamemd {
+int sub_750300()
+{
+{
+    g_VocAudioConfig = 0;
+    DataGlobal_B1D380 = 0;
+    DataGlobal_B1D384 = 1;
+    DataGlobal_B1D385 = 0;
+    DataGlobal_B1D378 = (int)&vt_DynamicVectorClass_VocClass;
+    DataGlobal_B1D38C = 10;
+    g_VocPlayState = 0;
+    return atexit(sub_750340);
+}
+}
+} // namespace gamemd
+
+// 0x750340
+namespace gamemd {
+void sub_750340()
+{
+{
+    DataGlobal_B1D378 = (int)&vt_VectorClass_VocClass;
+    if ( g_VocAudioConfig && DataGlobal_B1D385 )
+  {
+    __3_YAXPAX_Z(g_VocAudioConfig);
+    g_VocAudioConfig = 0;
+  }
+    DataGlobal_B1D385 = 0;
+    DataGlobal_B1D380 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x7509E0
+namespace gamemd {
+int StartAudioControllerAt(AudioController * aP0, int a2, int a1)
+{
+{
+    int *v5;
+    int *v6;
+    AudioMixer *v7;
+    int *eax7;
+    double v9;
+    CCINIClass *v8;
+    if ( !DataGlobal_830620.__pad_579C[67312] )
+    return 0;
+    v5 = 0;
+    v6 = 0;
+    if ( (int)aP0 >= 0 && (int)aP0 < *(int *)&DataGlobal_B1D188.__pad_1D8[40] )
+    v6 = **(int ***)(*(int *)&DataGlobal_B1D188.__pad_1D8[28] + 4 * (int)aP0);
+    v7 = (AudioMixer *)a1;
+    if ( a1 )
+  {
+    eax7 = AudioSource::Get((int **)a1);
+    v5 = eax7;
+    if ( eax7 )
+    {
+    if ( (int *)sub_406310(eax7) != v6 )
+      {
+    VocClass::Release((int)v5);
+    v5 = 0;
+      }
+    }
+  }
+    if ( v6 )
+  {
+    v9 = ComputeAudioPosition((AudioMixer *)a2, &a1, (int)v6);
+    if ( v9 <= 0.0 )
+    {
+    if ( v5 )
+      {
+    VocClass::Release((int)v5);
+    v5 = 0;
+      }
+    }
+    else
+    {
+    v8 = (CCINIClass *)Math::RoundToInt(v9 * 16384.0);
+    if ( (unsigned int)v8 >= 0x4000 )
+    v8 = (CCINIClass *)0x4000;
+    if ( v5 || (v5 = AudioPool::ProcessQueue(v6)) != 0 )
+      {
+    AudioMixer::PlayBuffer(v5, (unsigned int)v8);
+    AudioMixer::RequestOrEndBuffer((int)v5, a1);
+      }
+    }
+  }
+    if ( v7 )
+    SetAudioSource(v7, v5, (int)v6);
+    return (int)v5;
+}
+}
+} // namespace gamemd
+
+// 0x750E20
+namespace gamemd {
+int PlayAudioAt2(IUnknown * aP0, unsigned int * a1, int a3)
+{
+{
+    int result;
+    int *v6;
+    int started;
+    int v8;
+    if ( (int)aP0 < 0 )
+    return 0;
+    result = (int)LinkedList::Next((int **)DataGlobal_B1D188.field_21C);
+    v6 = (int *)result;
+    if ( result )
+  {
+    AudioController::Init((int *)(result + 12));
+    DListNode::InitEmpty(v6);
+    v6[12] = 0;
+    v6[8] = *a1;
+    v6[9] = *((int*)(a1) + 1);
+    v6[10] = *((int*)(a1) + 2);
+    v6[11] = a3;
+    started = StartAudioControllerAt((AudioController *)aP0, (int)(v6 + 8), (int)(v6 + 3));
+    InsertAfterDListNode((int)&DataGlobal_B1D188.__pad_188[16], v6);
+    v8 = ++*(int *)DataGlobal_B1D188.__pad_220;
+    if ( *(int *)DataGlobal_B1D188.__pad_220 > *(int *)&DataGlobal_B1D188.__pad_220[4] )
+    *(int *)&DataGlobal_B1D188.__pad_220[4] = v8;
+    return started;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x750EC0
 namespace gamemd {
 int VocClass_Update()
@@ -2970,6 +2788,56 @@ void VocClass_SetEnabled(char a1)
 {
 {
     VocClass_VoicesEnabled = a1;
+}
+}
+} // namespace gamemd
+
+// 0x751EA0
+namespace gamemd {
+HANDLE sub_751EA0(const CHAR * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4)
+{
+{
+    const char *v4;
+    HANDLE result;
+    void *v7;
+    HANDLE v9;
+    CHAR FileName[260];
+    struct _WIN32_FIND_DATAA FindFileData;
+    v4 = a1;
+    result = FindFirstFileA(a1, &FindFileData);
+    v7 = result;
+    v9 = result;
+    if ( result != (HANDLE)-1 )
+  {
+    do
+    {
+    if ( (FindFileData.dwFileAttributes & 0x10) != 0 )
+      {
+    if ( _strcmpi(FindFileData.cFileName, DataGlobal_826598) )
+        {
+    if ( _strcmpi(FindFileData.cFileName, DataGlobal_846610) )
+          {
+    ++*a2;
+    strcpy(FileName, v4);
+    FileName[strlen(FileName) - 1] = 0;
+    strcat(FileName, FindFileData.cFileName);
+    strcat(FileName, DataGlobal_84660C);
+    sub_751EA0(a3, a4);
+    v7 = v9;
+    v4 = a1;
+          }
+        }
+      }
+    else
+      {
+    ++*a3;
+    *a4 += FindFileData.nFileSizeLow;
+      }
+    }
+    while ( FindNextFileA(v7, &FindFileData) );
+    return (HANDLE)FindClose(v7);
+  }
+    return result;
 }
 }
 } // namespace gamemd
@@ -3118,6 +2986,40 @@ int sub_7521F0()
     DataGlobal_B1D440 = 128;
     DataGlobal_B1D444 = 128;
     return 128;
+}
+}
+} // namespace gamemd
+
+// 0x752210
+namespace gamemd {
+int sub_752210()
+{
+{
+    g_InfantryRenderPool = 0;
+    DataGlobal_B1D4A8 = 0;
+    DataGlobal_B1D4AC = 1;
+    DataGlobal_B1D4AD = 0;
+    DataGlobal_B1D4A0 = (int)&vt_DynamicVectorClass_VoxClass;
+    DataGlobal_B1D4B4 = 10;
+    g_InfantrySelectState = 0;
+    return atexit(sub_752250);
+}
+}
+} // namespace gamemd
+
+// 0x752250
+namespace gamemd {
+void sub_752250()
+{
+{
+    DataGlobal_B1D4A0 = (int)&vt_VectorClass_VoxClass;
+    if ( g_InfantryRenderPool && DataGlobal_B1D4AD )
+  {
+    __3_YAXPAX_Z(g_InfantryRenderPool);
+    g_InfantryRenderPool = 0;
+  }
+    DataGlobal_B1D4AD = 0;
+    DataGlobal_B1D4A8 = 0;
 }
 }
 } // namespace gamemd
@@ -3284,6 +3186,28 @@ int sub_753B10()
 }
 } // namespace gamemd
 
+// 0x753B40
+namespace gamemd {
+int sub_753B40()
+{
+{
+    char *v0;
+    int v1;
+    int result;
+    v0 = (char *)&DataGlobal_B3FF84;
+    v1 = 64;
+    do
+  {
+    result = Array::ForEach((int)v0, 12, 4, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_8);
+    v0 += 72;
+    --v1;
+  }
+    while ( v1 );
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x753BF0
 namespace gamemd {
 int sub_753BF0()
@@ -3343,6 +3267,72 @@ char globalHelper_053C80(unsigned int * a1, SomeVoxelCache * edx0, SomeVoxelCach
     v10[2] = v7[2];
     Info = VoxelSection::GetInfo(a1, edx0, aP2);
     return GlobalHelper_053C80_Helper(v10, *(unsigned char *)(Info + 163));
+}
+}
+} // namespace gamemd
+
+// 0x753F90
+namespace gamemd {
+char * globalHelper_053F90(unsigned int * a0, ObjectClass * aP1, SomeVoxelCache * aP2, float * a3, float * a4, float * a5, int a7, int a8, int a9)
+{
+{
+    int Info;
+    int v12;
+    int v13;
+    Tactical *v14;
+    Tactical *v15;
+    float *v16;
+    float *v17;
+    double v18;
+    float v20;
+    float v21;
+    float v22;
+    float v23[3];
+    float v24[3];
+    Info = VoxelSection::GetInfo(a0, (SomeVoxelCache *)aP1, aP2);
+    v12 = 4;
+    v13 = 72 * *(int *)&DataGlobal_B1D188.__pad_579C[53836] + 11796344;
+    *(int *)(v13 + 60) = a7;
+    *(int *)(v13 + 64) = a8;
+    *(int *)v13 = a0;
+    *(int *)(v13 + 4) = aP1;
+    *(int *)(v13 + 8) = aP2;
+    *(int *)(v13 + 68) = a9;
+    v14 = (Tactical *)(v13 + 12);
+    v15 = (Tactical *)(Info + 64);
+    do
+  {
+    v16 = TransformMatrix3x4Point((AbstractClass *)v23, (IUnknown *)a4, (IUnknown *)v15);
+    *(float *)v14->__pad_0 = *v16;
+    *(float *)&v14->field_2[2] = v16[1];
+    v14->field_8 = (void *)v16[2];
+    v14->field_8 = 0;
+    v17 = TransformMatrix3x4Point((AbstractClass *)v24, (IUnknown *)a3, (IUnknown *)v14);
+    *(float *)v14->__pad_0 = *v17;
+    *(float *)&v14->field_2[2] = v17[1];
+    v14->field_8 = (void *)v17[2];
+    v20 = *a5 + *(float *)v14->__pad_0;
+    v21 = *(float *)&v14->field_2[2] + *((int*)(a5) + 1);
+    v18 = *((int*)(a5) + 2) + *(float *)&v14->field_8;
+    *(float *)v14->__pad_0 = v20;
+    v22 = v18;
+    *(float *)&v14->field_2[2] = v21;
+    *(float *)&v14->field_8 = v22;
+    *(float *)&v14->field_2[2] = -*(float *)&v14->field_2[2];
+    if ( *(float *)v14->__pad_0 < (double)*(float *)&DataGlobal_B1D188.__pad_579C[44220] )
+    *(int *)&DataGlobal_B1D188.__pad_579C[44220] = *(int *)v14->__pad_0;
+    if ( *(float *)&v14->field_2[2] < (double)*(float *)&DataGlobal_B1D188.__pad_579C[44224] )
+    *(int *)&DataGlobal_B1D188.__pad_579C[44224] = *(int *)&v14->field_2[2];
+    if ( *(float *)v14->__pad_0 > (double)*(float *)&DataGlobal_B1D188.__pad_579C[45092] )
+    *(int *)&DataGlobal_B1D188.__pad_579C[45092] = *(int *)v14->__pad_0;
+    if ( *(float *)&v14->field_2[2] > (double)*(float *)&DataGlobal_B1D188.__pad_579C[45096] )
+    *(int *)&DataGlobal_B1D188.__pad_579C[45096] = *(int *)&v14->field_2[2];
+    v15 = (Tactical *)((char *)(v15) + 12);
+    v14 = (Tactical *)((char *)(v14) + 12);
+    --v12;
+  }
+    while ( v12 );
+    return (char *)++*(int *)&DataGlobal_B1D188.__pad_579C[53836];
 }
 }
 } // namespace gamemd
@@ -3733,6 +3723,16 @@ float * E4Recv_7564E0::sub_7564E0(float * a2, int a3, int a4)
     v13 = v15 * 0.5;
     *((int*)(a2) + 2) = v13;
     return a2;
+}
+}
+} // namespace gamemd
+
+// 0x756570
+namespace gamemd {
+int E4Recv_756570::sub_756570()
+{
+{
+    return 12 *(void**)this->M4 + 164 *(void**)this->M8 + this->M12 + 28;
 }
 }
 } // namespace gamemd

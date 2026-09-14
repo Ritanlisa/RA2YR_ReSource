@@ -105,34 +105,6 @@ void __thiscall Territory_WorldDominationTour_8_::_vt05(int *this, int a2, int a
 }
 } // namespace gamemd
 
-// 0x771990
-namespace gamemd {
-unsigned int * Territory_WorldDominationTour_8::Seek(unsigned int * a1)
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    int v5;
-    *a1 = v2;
-    *((int*)(a1) + 1) = v3;
-    *((int*)(a1) + 2) = v4;
-    *((int*)(a1) + 3) = v5;
-    return a1;
-}
-}
-} // namespace gamemd
-
-// 0x7719C0
-namespace gamemd {
-BOOL Territory_WorldDominationTour_8::Open()
-{
-{
-    return (unsigned char)Audio::IsPlaying() == 0;
-}
-}
-} // namespace gamemd
-
 // 0x7719D0
 namespace gamemd {
 void Territory_WorldDominationTour_8::Close(int a2)
@@ -157,6 +129,34 @@ _DWORD *__thiscall Territory_WorldDominationTour_8_::QueryInterface(_DWORD *this
   if ( (a2 & 1) != 0 ) /*0x771a43*/
     __3_YAXPAX_Z(this); /*0x771a46*/
   return this; /*0x771a50*/
+}
+}
+} // namespace gamemd
+
+// 0x771990
+namespace gamemd {
+unsigned int * Territory_WorldDominationTour_8::Seek(unsigned int * a1)
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    int v5;
+    *a1 = v2;
+    *((int*)(a1) + 1) = v3;
+    *((int*)(a1) + 2) = v4;
+    *((int*)(a1) + 3) = v5;
+    return a1;
+}
+}
+} // namespace gamemd
+
+// 0x7719C0
+namespace gamemd {
+BOOL Territory_WorldDominationTour_8::Open()
+{
+{
+    return (unsigned char)Audio::IsPlaying() == 0;
 }
 }
 } // namespace gamemd

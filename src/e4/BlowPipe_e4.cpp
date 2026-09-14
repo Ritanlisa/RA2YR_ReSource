@@ -26,19 +26,6 @@ void __thiscall BlowPipe_23_::sub_63DC80(int this)
 }
 } // namespace gamemd
 
-// 0x63DCB0
-namespace gamemd {
-unsigned int BlowPipe_23::GetCount(int a2)
-{
-{
-    if ( (unsigned char)this->BlowPipe_23_field_0xC )
-    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x63DCD0
 namespace gamemd {
 int BlowPipe_23::Seek(int a2)
@@ -69,19 +56,6 @@ void __thiscall BlowPipe_23_::sub_63DCE0(int this)
   }
   *(_BYTE *)(this + 13) = 0; /*0x63dd01*/
   this->BlowPipe_23_field_0x8 = 0; /*0x63dd04*/
-}
-}
-} // namespace gamemd
-
-// 0x63DD10
-namespace gamemd {
-unsigned int BlowPipe_23::GetCount_0(int a2)
-{
-{
-    if ( (unsigned char)this->BlowPipe_23_field_0xC )
-    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -180,19 +154,6 @@ int __thiscall BlowPipe_23_::sub_63E430(int this, _DWORD *a2)
       return -1; /*0x63e45a*/
   }
   return result; /*0x63e43a*/
-}
-}
-} // namespace gamemd
-
-// 0x63E470
-namespace gamemd {
-unsigned int BlowPipe_23::GetCount_1(int a2)
-{
-{
-    if ( (unsigned char)this->BlowPipe_23_field_0xC )
-    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -324,19 +285,6 @@ int __thiscall BlowPipe_23_::_vt04(int this, _DWORD *a2)
       return -1; /*0x63e79a*/
   }
   return result; /*0x63e77a*/
-}
-}
-} // namespace gamemd
-
-// 0x63E7B0
-namespace gamemd {
-unsigned int BlowPipe_23::Write(int a2)
-{
-{
-    if ( (unsigned char)this->BlowPipe_23_field_0xC )
-    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -615,19 +563,6 @@ void __thiscall BlowPipe_31_::_vt03(int this)
 }
 } // namespace gamemd
 
-// 0x63DC50
-namespace gamemd {
-unsigned int BlowPipe_31::Write(int a2)
-{
-{
-    if ( (unsigned char)this->BlowPipe_31_field_0xC )
-    return (unsigned int)(a2 - this->BlowPipe_31_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x63DC70
 namespace gamemd {
 int BlowPipe_31::Seek(int a2)
@@ -770,6 +705,71 @@ DynamicVector *__thiscall BlowPipe_31_::QueryInterface(_DWORD *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x63ee18*/
     __3_YAXPAX_Z(this); /*0x63ee1b*/
   return (DynamicVector *)this; /*0x63ee25*/
+}
+}
+} // namespace gamemd
+
+// 0x63DC50
+namespace gamemd {
+unsigned int BlowPipe_31::Write(int a2)
+{
+{
+    if ( (unsigned char)this->BlowPipe_31_field_0xC )
+    return (unsigned int)(a2 - this->BlowPipe_31_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x63DCB0
+namespace gamemd {
+unsigned int BlowPipe_23::GetCount(int a2)
+{
+{
+    if ( (unsigned char)this->BlowPipe_23_field_0xC )
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x63DD10
+namespace gamemd {
+unsigned int BlowPipe_23::GetCount_0(int a2)
+{
+{
+    if ( (unsigned char)this->BlowPipe_23_field_0xC )
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x63E470
+namespace gamemd {
+unsigned int BlowPipe_23::GetCount_1(int a2)
+{
+{
+    if ( (unsigned char)this->BlowPipe_23_field_0xC )
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x63E7B0
+namespace gamemd {
+unsigned int BlowPipe_23::Write(int a2)
+{
+{
+    if ( (unsigned char)this->BlowPipe_23_field_0xC )
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

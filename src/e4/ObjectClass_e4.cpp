@@ -2,32 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x401940
-namespace ra2 {
-namespace game {
-int ObjectClass::GetMember06()
-{
-{
-    return this->nextArrayIndex;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x4135A0
-namespace ra2 {
-namespace game {
-bool ObjectClass::HasLinkedObject(VectorClass * aP0)
-{
-{
-    VectorClass *v1;
-    v1 = *(VectorClass **)((*(int (__thiscall **)(VectorClass *))(*(int *)aP0->vtable0 + 444))(aP0) + 224);
-    return v1 && v1 != aP0;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x41BE00
 namespace ra2 {
 namespace game {
@@ -59,30 +33,6 @@ int ObjectClass::processPointerInvalid()
 int __thiscall sub_483610(_DWORD *this)
 {
   return (*(this + 80) >> 8) & 1; /*0x48361c*/
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x4886A0
-namespace ra2 {
-namespace game {
-char ObjectClass::GetStateFlag()
-{
-{
-    return this->referenceCount;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x4CA120
-namespace ra2 {
-namespace game {
-int ObjectClass::GetMember09()
-{
-{
-    return this->objectTypeFlags;
 }
 }
 } // namespace game
@@ -896,22 +846,6 @@ int __thiscall ObjectClass::IsHeightAboveThreshold_0(#374 *this)
 }
 } // namespace gamemd
 
-// 0x4E02C0
-namespace ra2 {
-namespace game {
-int ObjectClass::updateStateFlags()
-{
-{
-    int result;
-    result = *(void**)this;
-    if ( *(void**)this )
-    return (*(int (__stdcall **)(int))(*(int *)(result) + 8))(result);
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x4E14A0
 namespace gamemd {
 int ObjectClass_InputThunkA()
@@ -1086,18 +1020,6 @@ int __thiscall ObjectClass::GetTypeVt41_0(#377 *this)
 }
 } // namespace gamemd
 
-// 0x556620
-namespace ra2 {
-namespace game {
-int ObjectClass::GetWidth()
-{
-{
-    return this->vtable1;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x556A20
 namespace ra2 {
 namespace game {
@@ -1142,59 +1064,6 @@ char *__thiscall sub_556A20(char *this)
     *((_DWORD *)dword_ABCB7C + v5) = this; /*0x556abb*/
   }
   return this; /*0x556ac0*/
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x556B50
-namespace ra2 {
-namespace game {
-int ObjectClass::updateMissionState(int a2)
-{
-{
-    int result;
-    result = a2;
-    if ( !g_lParam )
-    result = 2 * a2;
-    this->vtable2 = result;
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x55A8C0
-namespace ra2 {
-namespace game {
-unsigned int * ObjectClass::ComputeScreenYOffset(BuildingTypeClass * aP0, unsigned int * a1)
-{
-{
-    IUnknown *v2;
-    BuildingTypeClass *v3;
-    v2 = (IUnknown *)(*(int (__thiscall **)(int))(**(int **)&aP0->vtable0[8] + 456))(*(int *)&aP0->vtable0[8]);
-    v3 = (BuildingTypeClass *)ZCoordToScreenY(v2);
-    *a1 = 0;
-    *((int*)(a1) + 1) = v3;
-    return a1;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x55BAA0
-namespace ra2 {
-namespace game {
-char ObjectClass::SetDeployState(ObjectClass * aP0, char a2)
-{
-{
-    int v2;
-    if ( aP0->isInLogic )
-    return 1;
-    if ( !DisplayClass::RenderStatusText(v2, (IUnknown *)aP0, a2) )
-    return 0;
-    aP0->isInLogic = 1;
-    return 1;
 }
 }
 } // namespace game
@@ -1879,26 +1748,6 @@ int __thiscall ObjectClass::UpdateProductionDisplay(#374 *this)
 } // namespace game
 } // namespace ra2
 
-// 0x5F5F40
-namespace ra2 {
-namespace game {
-int ObjectClass::GetZAboveGround()
-{
-{
-    int v2;
-    int v4[3];
-    v4[0] = this->location;
-    v4[1] = this->WaveClass_field_14C;
-    v4[2] = this->WaveClass_field_150;
-    v2 = this->WaveClass_field_150 - Cell::GetGroundHeight(v4);
-    if ( this->onBridge )
-    v2 -= DataGlobal_AC13BC;
-    return v2;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x5F6A10
 namespace ra2 {
 namespace game {
@@ -1941,61 +1790,6 @@ int __thiscall ObjectClass::GetBoundingSize(#374 *this)
 } // namespace game
 } // namespace ra2
 
-// 0x5F6C10
-namespace ra2 {
-namespace game {
-int ObjectClass::IsAboveScreenMargin()
-{
-{
-    int result;
-    result = this->DropAsBomb();
-    LOBYTE(result) = result > -20;
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x5F6DC0
-namespace ra2 {
-namespace game {
-int ObjectClass::CreateInstance()
-{
-{
-    char v3;
-    ObjectClass::Dtor(this);
-    if ( (v3 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (int)this;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x6241C0
-namespace ra2 {
-namespace game {
-char ObjectClass::Release()
-{
-{
-    return (unsigned char)this->vtable2;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x6241D0
-namespace ra2 {
-namespace game {
-int ObjectClass::GetMember01()
-{
-{
-    return this->vtable1;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x652E50
 namespace ra2 {
 namespace game {
@@ -2017,29 +1811,6 @@ int __thiscall ObjectClass::resetObjectState(int *this, SidebarClass *aP1)
     (*(void (__stdcall **)(_DWORD *))(v3 + 52))(MEMORY[0xB04978]); /*0x652e75*/
     return (*(int (__thiscall **)(int *, _DWORD *))(*this + 52))(this, MEMORY[0xB04910]); /*0x652e81*/
   }
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x6A5000
-namespace ra2 {
-namespace game {
-int ObjectClass::processDamage()
-{
-{
-    int v1;
-    int result;
-    PowerClass::Stub(this);
-    v1 = 4;
-    do
-  {
-    result = SearchMIXFile(DataGlobal_83F92C, 0);
-    --v1;
-    DataGlobal_B07BC0 = result;
-  }
-    while ( v1 );
-    return result;
 }
 }
 } // namespace game
@@ -2329,54 +2100,6 @@ unsigned __int8 ObjectClass::ToggleSidebarDisplay(
 } // namespace game
 } // namespace ra2
 
-// 0x6ABA40
-namespace ra2 {
-namespace game {
-int ObjectClass::checkHealth()
-{
-{
-    Mouse::SetCursor((int)&DataGlobal_87F7E8, 0, 0);
-    return 1;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x6AC7A0
-namespace ra2 {
-namespace game {
-unsigned int * ObjectClass::updateAnimation(char a2)
-{
-{
-    GadgetClass::Dtor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return &this->vfptr;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x6E45E0
-namespace ra2 {
-namespace game {
-int ObjectClass::FindOwner(unsigned int * a0, AnimClass * aP1)
-{
-{
-    if ( !a0 )
-    return 0;
-    if ( aP1 == (AnimClass *)8997 )
-    return Property::GetField11(a0);
-    if ( aP1 == (AnimClass *)-1 )
-    return 0;
-    if ( BuildingType::IsSpecialType(aP1) )
-    return BuildingType::FindOwnerHouse(aP1);
-    return HouseClass::FindOwner(aP1);
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x718260
 namespace ra2 {
 namespace game {
@@ -2620,25 +2343,13 @@ char __thiscall ObjectClass_FindPlacementPosition(_DWORD *this, int a2, int a3, 
 // 0x72A660
 namespace ra2 {
 namespace game {
+int ObjectClass::setTarget(int a2)
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ObjectClass::setTarget(TextLabelClass *this, int a2)
 {
   *(_DWORD *)&this->__pad_2C[4] = a2; /*0x72a664*/
   return a2; /*0x72a667*/
-}
-} // namespace game
-} // namespace ra2
-
-// 0x72A670
-namespace ra2 {
-namespace game {
-unsigned int * ObjectClass::clearTarget(char a2)
-{
-{
-    GadgetClass::Dtor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this->__pad_0;
 }
 }
 } // namespace game
@@ -2728,12 +2439,304 @@ _DWORD *__thiscall ObjectClass::loc_7A2E70(SimpleWonlineDialogControl *this, cha
 } // namespace game
 } // namespace ra2
 
+// 0x401940
+namespace ra2 {
+namespace game {
+int ObjectClass::GetMember06()
+{
+{
+    return this->nextArrayIndex;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x4135A0
+namespace ra2 {
+namespace game {
+bool ObjectClass::HasLinkedObject(VectorClass * aP0)
+{
+{
+    VectorClass *v1;
+    v1 = *(VectorClass **)((*(int (__thiscall **)(VectorClass *))(*(int *)aP0->vtable0 + 444))(aP0) + 224);
+    return v1 && v1 != aP0;
+}
+}
+} // namespace game
+} // namespace ra2
+
 // 0x4264D0
 namespace ra2 {
 namespace game {
 int ObjectClass::COMStub_108()
 {
 return 0;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x4886A0
+namespace ra2 {
+namespace game {
+char ObjectClass::GetStateFlag()
+{
+{
+    return this->referenceCount;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x4CA120
+namespace ra2 {
+namespace game {
+int ObjectClass::GetMember09()
+{
+{
+    return this->objectTypeFlags;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x4E02C0
+namespace ra2 {
+namespace game {
+int ObjectClass::updateStateFlags()
+{
+{
+    int result;
+    result = *(void**)this;
+    if ( *(void**)this )
+    return (*(int (__stdcall **)(int))(*(int *)(result) + 8))(result);
+    return result;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x556620
+namespace ra2 {
+namespace game {
+int ObjectClass::GetWidth()
+{
+{
+    return this->vtable1;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x556B50
+namespace ra2 {
+namespace game {
+int ObjectClass::updateMissionState(int a2)
+{
+{
+    int result;
+    result = a2;
+    if ( !g_lParam )
+    result = 2 * a2;
+    this->vtable2 = result;
+    return result;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x55A8C0
+namespace ra2 {
+namespace game {
+unsigned int * ObjectClass::ComputeScreenYOffset(BuildingTypeClass * aP0, unsigned int * a1)
+{
+{
+    IUnknown *v2;
+    BuildingTypeClass *v3;
+    v2 = (IUnknown *)(*(int (__thiscall **)(int))(**(int **)&aP0->vtable0[8] + 456))(*(int *)&aP0->vtable0[8]);
+    v3 = (BuildingTypeClass *)ZCoordToScreenY(v2);
+    *a1 = 0;
+    *((int*)(a1) + 1) = v3;
+    return a1;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x55BAA0
+namespace ra2 {
+namespace game {
+char ObjectClass::SetDeployState(ObjectClass * aP0, char a2)
+{
+{
+    int v2;
+    if ( aP0->isInLogic )
+    return 1;
+    if ( !DisplayClass::RenderStatusText(v2, (IUnknown *)aP0, a2) )
+    return 0;
+    aP0->isInLogic = 1;
+    return 1;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5F5F40
+namespace ra2 {
+namespace game {
+int ObjectClass::GetZAboveGround()
+{
+{
+    int v2;
+    int v4[3];
+    v4[0] = this->location;
+    v4[1] = this->WaveClass_field_14C;
+    v4[2] = this->WaveClass_field_150;
+    v2 = this->WaveClass_field_150 - Cell::GetGroundHeight(v4);
+    if ( this->onBridge )
+    v2 -= DataGlobal_AC13BC;
+    return v2;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5F6C10
+namespace ra2 {
+namespace game {
+int ObjectClass::IsAboveScreenMargin()
+{
+{
+    int result;
+    result = this->DropAsBomb();
+    LOBYTE(result) = result > -20;
+    return result;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5F6DC0
+namespace ra2 {
+namespace game {
+int ObjectClass::CreateInstance()
+{
+{
+    char v3;
+    ObjectClass::Dtor(this);
+    if ( (v3 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (int)this;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x6241C0
+namespace ra2 {
+namespace game {
+char ObjectClass::Release()
+{
+{
+    return (unsigned char)this->vtable2;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x6241D0
+namespace ra2 {
+namespace game {
+int ObjectClass::GetMember01()
+{
+{
+    return this->vtable1;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x6A5000
+namespace ra2 {
+namespace game {
+int ObjectClass::processDamage()
+{
+{
+    int v1;
+    int result;
+    PowerClass::Stub(this);
+    v1 = 4;
+    do
+  {
+    result = SearchMIXFile(DataGlobal_83F92C, 0);
+    --v1;
+    DataGlobal_B07BC0 = result;
+  }
+    while ( v1 );
+    return result;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x6ABA40
+namespace ra2 {
+namespace game {
+int ObjectClass::checkHealth()
+{
+{
+    Mouse::SetCursor((int)&DataGlobal_87F7E8, 0, 0);
+    return 1;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x6AC7A0
+namespace ra2 {
+namespace game {
+unsigned int * ObjectClass::updateAnimation(char a2)
+{
+{
+    GadgetClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x6E45E0
+namespace ra2 {
+namespace game {
+int ObjectClass::FindOwner(unsigned int * a0, AnimClass * aP1)
+{
+{
+    if ( !a0 )
+    return 0;
+    if ( aP1 == (AnimClass *)8997 )
+    return Property::GetField11(a0);
+    if ( aP1 == (AnimClass *)-1 )
+    return 0;
+    if ( BuildingType::IsSpecialType(aP1) )
+    return BuildingType::FindOwnerHouse(aP1);
+    return HouseClass::FindOwner(aP1);
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x72A670
+namespace ra2 {
+namespace game {
+unsigned int * ObjectClass::clearTarget(char a2)
+{
+{
+    GadgetClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this->__pad_0;
+}
 }
 } // namespace game
 } // namespace ra2

@@ -6,24 +6,10 @@
 // 0x597FA0
 wchar_t * MapSeedClass::GetCell()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+wchar_t *MapSeedClass::_vt06()
 {
-    return GetStringCSF(aGuiSavemapmenu, 0, g_Str_File_MapGen_cpp, 5578);
-}
-}
-
-// 0x597FC0
-wchar_t * MapSeedClass::SetCell()
-{
-{
-    return GetStringCSF(aGuiDeletemapme, 0, g_Str_File_MapGen_cpp, 5584);
-}
-}
-
-// 0x597FE0
-wchar_t * MapSeedClass::Validate()
-{
-{
-    return GetStringCSF(aGuiMapsaved, 0, g_Str_File_MapGen_cpp, 5590);
+  return GetStringCSF(aGuiSavemapmenu, 0, g_Str_File_MapGen_cpp, 5578); /*0x597fb6*/
 }
 }
 
@@ -579,19 +565,6 @@ void __thiscall MapSeedClass_18_::sub_5AC4C0(int this)
 }
 } // namespace gamemd
 
-// 0x5AC4F0
-namespace gamemd {
-unsigned int MapSeedClass_18::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->MapSeedClass_18_field_0xC )
-    return (unsigned int)(a2 - this->MapSeedClass_18_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x5AC510
 namespace gamemd {
 int MapSeedClass_18::GetCell(int a2)
@@ -704,19 +677,6 @@ void __thiscall MapSeedClass_18_::_vt03(int this)
   }
   *(_BYTE *)(this + 13) = 0; /*0x5acb6e*/
   this->MapSeedClass_18_field_0x8 = 0; /*0x5acb71*/
-}
-}
-} // namespace gamemd
-
-// 0x5ACBC0
-namespace gamemd {
-unsigned int MapSeedClass_18::Generate(int a2)
-{
-{
-    if ( (unsigned char)this->MapSeedClass_18_field_0xC )
-    return (unsigned int)(a2 - this->MapSeedClass_18_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -843,6 +803,48 @@ DynamicVector *__thiscall MapSeedClass_18_::Constructor_VectorClass__WIN32_FIND_
   if ( (a2 & 1) != 0 ) /*0x5ad4b8*/
     __3_YAXPAX_Z(this); /*0x5ad4bb*/
   return (DynamicVector *)this; /*0x5ad4c5*/
+}
+}
+} // namespace gamemd
+
+// 0x597FC0
+wchar_t * MapSeedClass::SetCell()
+{
+{
+    return GetStringCSF(aGuiDeletemapme, 0, g_Str_File_MapGen_cpp, 5584);
+}
+}
+
+// 0x597FE0
+wchar_t * MapSeedClass::Validate()
+{
+{
+    return GetStringCSF(aGuiMapsaved, 0, g_Str_File_MapGen_cpp, 5590);
+}
+}
+
+// 0x5AC4F0
+namespace gamemd {
+unsigned int MapSeedClass_18::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->MapSeedClass_18_field_0xC )
+    return (unsigned int)(a2 - this->MapSeedClass_18_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5ACBC0
+namespace gamemd {
+unsigned int MapSeedClass_18::Generate(int a2)
+{
+{
+    if ( (unsigned char)this->MapSeedClass_18_field_0xC )
+    return (unsigned int)(a2 - this->MapSeedClass_18_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

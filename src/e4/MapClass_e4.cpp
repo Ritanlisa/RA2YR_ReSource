@@ -125,14 +125,6 @@ char __thiscall sub_430F30(char *this, int a2)
 }
 }
 
-// 0x4758C0
-char MapClass::loadTheaterINI(INIClass * aP1, char * a2, int a4)
-{
-{
-    return INIClass::SetString(this, aP1, (INIClass *)a2, (INIClass *)&Theater_Array[112 * a4]);
-}
-}
-
 // 0x485130
 int MapClass::RemoveCellReference(int a2)
 {
@@ -191,42 +183,6 @@ int __thiscall sub_485130(int *this, int a2)
     }
   }
   return result; /*0x4851f5*/
-}
-}
-
-// 0x48DC90
-int MapClass::UnselectAll_ClearLimboLaunchers()
-{
-{
-    int result;
-    int v1;
-    int v2;
-    int *v3;
-    while ( g_SelectionManager )
-    (*(void (__thiscall **)(int))(**(int **)g_ObjectClass_CurrentCount + 336))(*(int *)g_ObjectClass_CurrentCount);
-    Selection::SetCurrent(0);
-    v3 = g_VisibilitySystem;
-    result = DataGlobal_89C410;
-    if ( DataGlobal_89C410 )
-  {
-    v1 = 8;
-    do
-    {
-    v2 = 3;
-    do
-      {
-    result = *v3;
-    if ( *v3 )
-    *(char *)(result + 12) &= ~2u;
-    ++v3;
-    --v2;
-      }
-    while ( v2 );
-    --v1;
-    }
-    while ( v1 );
-  }
-    return result;
 }
 }
 
@@ -336,125 +292,6 @@ int __thiscall MapClass_ToggleZoom(int *this, int a2)
 }
 }
 
-// 0x4ACAC0
-int MapClass::ProcessVisibilityFlags()
-{
-{
-    int i;
-    MouseClass *j;
-    int *v4;
-    int v5;
-    int k;
-    int m;
-    int *v8;
-    short v10;
-    short v11;
-    short v12[2];
-    for ( i = 0; i < 512; ++i )
-  {
-    for ( j = 0; (int)j < 512; j = (MouseClass *)((char *)(j) + 1) )
-    {
-    v10 = (short)j;
-    v11 = i;
-    if ( LayerClass::CoordinatesLegal(this, (IUnknown *)&v10) )
-      {
-    v12[0] = (short)j;
-    v12[1] = i;
-    v4 = CellCoord::To_CellObj(this, v12);
-    v5 = v4[75];
-    if ( (v5 & 0x10) == 0 && (v5 & 8) != 0 )
-    v4[80] |= 0x20u;
-      }
-    }
-  }
-    for ( k = 0; k < 512; ++k )
-  {
-    for ( m = 0; m < 512; ++m )
-    {
-    v10 = m;
-    v11 = k;
-    if ( LayerClass::CoordinatesLegal(this, (IUnknown *)&v10) && (*((char *)CellCoord::To_CellObj(this, &v10) + 320) & 0x20) != 0 )
-      {
-    v8 = CellCoord::To_CellObj(this, &v10);
-    v8[80] &= ~0x20u;
-    MapClass::RevealCell(this, (MouseClass *)&v10);
-      }
-    }
-  }
-    HouseClass::RevealShroudForAllies(0, 0);
-    return this->MarkForRedraw(1);
-}
-}
-
-// 0x4ACBC0
-int MapClass::ProcessFogTransition()
-{
-{
-    int i;
-    int v3;
-    int result;
-    int v5;
-    LayerClass::CellIteratorReset(this);
-    for ( i = LayerClass::CellIteratorNext(this); i; i = LayerClass::CellIteratorNext(this) )
-  {
-    v3 = *(int *)(i + 320);
-    if ( (v3 & 1) == 0 && (v3 & 2) != 0 )
-    *(int *)(i + 320) = v3 | 0x40;
-  }
-    HouseClass::RevealShroudForAllies(0, 1);
-    LayerClass::CellIteratorReset(this);
-    for ( result = LayerClass::CellIteratorNext(this); result; result = LayerClass::CellIteratorNext(this) )
-  {
-    if ( (*(char *)(result + 320) & 0x40) != 0 )
-    {
-    *(int *)(result + 320) &= ~0x40u;
-    v5 = *(int *)(result + 36);
-    CellClass::ProcessVisibility(this, (MouseClass *)&v5);
-    }
-  }
-    return result;
-}
-}
-
-// 0x4ACDA0
-char MapClass::RevealCell(MouseClass * aP1)
-{
-{
-    MouseClass *v2;
-    IUnknown *v4;
-    int v5;
-    int i;
-    int v7;
-    MouseClass *v9;
-    v2 = aP1;
-    LOBYTE(v4) = LayerClass::CoordinatesLegal(this, (IUnknown *)aP1);
-    if ( (char)v4 )
-  {
-    v4 = (IUnknown *)CellCoord::To_CellObj(this, (short *)v2);
-    v5 = *(int *)&v4->__pad_11C[16];
-    if ( (v5 & 8) != 0 )
-    {
-    *(int *)&v4->__pad_11C[16] = v5 & 0xFFFFFFE7;
-    Tactical::AddCellToDrawList(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], v4);
-    for ( i = 0; i < 8; ++i )
-      {
-    v7 = i & 7;
-    LOWORD(v9) = LOWORD(v2->field_0) + *((short *)&Direction_X_Offsets.field_0 + 2 * v7);
-    HIWORD(v9) = HIWORD(v2->field_0) + *((short *)&DataGlobal_89F68A + 2 * v7);
-    aP1 = v9;
-    v4 = (IUnknown *)CellCoord::To_CellObj(this, (short *)&aP1);
-    if ( aP1 != (MouseClass *)v2->field_0 )
-        {
-    *(int *)&v4->__pad_11C[16] &= ~0x10u;
-    LOBYTE(v4) = Tactical::AddCellToDrawList(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], v4);
-        }
-      }
-    }
-  }
-    return (char)v4;
-}
-}
-
 // 0x4AD7E0
 int MapClass::SaveCellTagsToINI(char * a2)
 {
@@ -534,35 +371,6 @@ int __thiscall MapClass::SaveCellTagsToINI(_DWORD *this, char *a2)
   (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887310] + 96))(MEMORY[0x887310]); /*0x4ada06*/
   Vector::Clear((int)v19); /*0x4ada0d*/
   return Pipe::Dtor(v18); /*0x4ada1b*/
-}
-}
-
-// 0x4AE4C0
-int MapClass::UpdateLightingPostProcess()
-{
-{
-    int result;
-    LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
-    for ( result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8);
-    re sult;
-    result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) ) {
-    TacticalMap::ComputeScreenTint(result);
-  }
-    return result;
-}
-}
-
-// 0x4AEB10
-int MapClass::GetScrollMode()
-{
-{
-    int result;
-    if ( !(unsigned char)this->MapClass_field_0x119C )
-    return 0;
-    result = this->MapClass_field_0x11A0;
-    if ( !result )
-    return 0;
-    return result;
 }
 }
 
@@ -875,22 +683,6 @@ void __thiscall MapClass_Destructor(char *this)
   *(this + 93) = 0; /*0x56545d*/
   this->MapClass_field_0x58 = 0; /*0x565460*/
   *(_DWORD *)this = &off_7EA6FC; /*0x565463*/
-}
-}
-
-// 0x5656D0
-int MapClass::IsCellPassable(int a1, int a2)
-{
-{
-    unsigned int v2;
-    int *v3;
-    v2 = (short)a2 + (SHIWORD(a2) << 9);
-    if ( v2 >= 0x40000 || (v3 = *(int **)(*(int *)(a1 + 316) + 4 * v2)) == 0 )
-  {
-    v3 = &g_CellClassArray;
-    g_Map_GlobalCellIndex = a2;
-  }
-    return (v3[75] >> 3) & 1;
 }
 }
 
@@ -3411,107 +3203,6 @@ char __stdcall MapClass::InitTileData(MouseClass *aP0, int aP3)
 }
 }
 
-// 0x57A320
-int MapClass::BuildTileConnectivityGraph(MapClass * aP1, IUnknown * aP2, IUnknown * aP3)
-{
-{
-    MapClass *v4;
-    int result;
-    signed int v6;
-    bool v7;
-    MapClass *NeighbourContent;
-    IUnknown *v9;
-    int v10;
-    char *CellData;
-    v4 = aP1;
-    result = *(int *)&aP1->__pad_30[8];
-    if ( result >= g_CellPassabilityLUT && result < g_CellPassabilityLUT + 12 )
-  {
-    result = Cell::GetTerrainMask(this, (IUnknown *)aP1, 2);
-    if ( result == 199 || result == 124 || result == 241 || result == 31 || result == 198 || result == 108 || result == 177 || result == 27 )
-    {
-    v6 = 0;
-    v7 = (char)aP3 == 0;
-    *(int *)&aP1->__pad_30[8] = 0xFFFF;
-    aP1->__pad_10C[14] = 0;
-    if ( !v7 )
-    *((int *)Tactical::GetCellData((short *)&aP1->__pad_18[12]) + 14) = aP2;
-    do
-      {
-    NeighbourContent = (MapClass *)Cell::GetNeighbourContent(v4, v6);
-    v9 = *(IUnknown **)&NeighbourContent->__pad_18[12];
-    aP3 = v9;
-    result = SHIWORD(v9);
-    v10 = SHIWORD(v9) + (short)v9;
-    if ( v10 > g_MapCellHeight_Value )
-        {
-    if ( (short)aP3 - SHIWORD(aP3) < g_MapCellHeight_Value )
-          {
-    result = SHIWORD(aP3) - (short)aP3;
-    if ( result < g_MapCellHeight_Value && v10 <= g_MapCellCount )
-            {
-    aP3 = v9;
-    CellData = Tactical::GetCellData((short *)&aP3);
-    *((int *)(CellData) + 16) = -1;
-    result = Cell::GetTerrainMask(this, (IUnknown *)NeighbourContent, 2);
-    *((int *)(CellData) + 16) = result;
-            }
-          }
-    v4 = aP1;
-        }
-    ++v6;
-      }
-    while ( v6 < 8 );
-    }
-  }
-    return result;
-}
-}
-
-// 0x57B790
-int MapClass::TriggerEVA(IUnknown * aP0)
-{
-{
-    int v1;
-    BuildingTypeClass *v2;
-    double v3;
-    int result;
-    unsigned int v5;
-    int *v6;
-    v1 = -5;
-    do
-  {
-    v2 = (BuildingTypeClass *)-5;
-    do
-    {
-    v3 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64( (double)(short)-(short)v1 * (double)(short)-(short)v1 + (double)(short)-(short)v2 * (double)(short)-(short)v2));
-    result = Math::RoundToInt(v3);
-    if ( (short)result <= 5 )
-      {
-    v5 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9);
-    if ( v5 < 0x40000 && (result = *(int *)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v5)) != 0 )
-        {
-    v6 = (int *)result;
-        }
-    else
-        {
-    result = aP0->field_0;
-    v6 = g_CellClassArray;
-    g_Map_GlobalCellIndex = (IUnknown *)aP0->field_0;
-        }
-    if ( v6 )
-    result = CellClass::ReduceTiberium((int)v6, (InfantryTypeClass *)1);
-      }
-    v2 = (BuildingTypeClass *)((char *)(v2) + 1);
-    }
-    while ( (int)v2 <= 5 );
-    ++v1;
-  }
-    while ( v1 <= 5 );
-    return result;
-}
-}
-
 // 0x581F50
 unsigned int * MapClass::BuildSubzones()
 {
@@ -3862,17 +3553,6 @@ MapClass *__thiscall MapClass::Destru_vt04(char *this, char a2)
 }
 }
 
-// 0x588DE0
-unsigned int MapClass::initCellVectors(int a2)
-{
-{
-    if ( (unsigned char)this->MapClass_field_0xC )
-    return (a2 - this->MapClass_field_0x4) / 0x24u;
-    else
-    return 0;
-}
-}
-
 // 0x588EF0
 int MapClass::InitCellVe_vt06(int a2)
 {
@@ -4059,17 +3739,6 @@ int __thiscall MapClass::sub_5894D0(int this, _WORD *a2)
       return -1; /*0x58951e*/
   }
   return result; /*0x5894da*/
-}
-}
-
-// 0x589530
-unsigned int MapClass::initSubzoneData(int a2)
-{
-{
-    if ( (unsigned char)this->MapClass_field_0xC )
-    return (unsigned int)(a2 - this->MapClass_field_0x4) >> 4;
-    else
-    return 0;
 }
 }
 
@@ -4337,17 +4006,6 @@ int __thiscall MapClass::InitCellVe_vt04(int this, _DWORD *a2)
 }
 }
 
-// 0x589E00
-unsigned int MapClass::InitCellVe_vt05(int a2)
-{
-{
-    if ( (unsigned char)this->MapClass_field_0xC )
-    return (unsigned int)(a2 - this->MapClass_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-
 // 0x594700
 int MapClass::Cleanup(int a1, int a2)
 {
@@ -4488,31 +4146,6 @@ int __thiscall sub_599530(_DWORD *this)
   Debug::Log(); /*0x59961f*/
   Shroud::ProcessCellVisibility(&MEMORY[0x87F7E8], (int)&MEMORY[0x87F8E4]); /*0x599631*/
   return RadarClass::RecreateSurface((int)&MEMORY[0x87F7E8], 0); /*0x599640*/
-}
-}
-
-// 0x5A0090
-MapClass * MapClass::SetObstruction(short * a0, MapClass * aP1)
-{
-{
-    MapClass *result;
-    if ( g_MapTileArray )
-  {
-    result = (MapClass *)(80 * (*a0 + g_MapCellWidth * *((int*)(a0) + 1)));
-    *(int *)((char *)(g_MapTileArray) + (int)result + 56) = aP1;
-  }
-    return result;
-}
-}
-
-// 0x5A00C0
-int MapClass::GetTileDataField14(MapResourceClass * aP0)
-{
-{
-    if ( g_MapTileArray )
-    return *((int *)(g_MapTileArray) + 20 * *(short *)aP0->__tail_0 + 20 * g_MapCellWidth * *(short *)&aP0->__tail_0[2] + 14);
-    else
-    return -1;
 }
 }
 
@@ -4781,17 +4414,6 @@ void __thiscall MapClass::sub_5AC5A0(int this)
 }
 }
 
-// 0x5AC5D0
-unsigned int MapClass::validateCellCoord(int a2)
-{
-{
-    if ( (unsigned char)this->MapClass_field_0xC )
-    return (unsigned int)(a2 - this->MapClass_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-
 // 0x5AD0C0
 int MapClass::updatePathfindingGrid(unsigned int * a2)
 {
@@ -4812,62 +4434,6 @@ int __thiscall MapClass::sub_5AD0C0(int *this, _DWORD *a2)
       return -1; /*0x5ad0dd*/
   }
   return result; /*0x5ad0e2*/
-}
-}
-
-// 0x5F60A0
-int MapClass::SetCellOverlayFlag()
-{
-{
-    int *v1;
-    int v2;
-    int result;
-    int *v4;
-    int v5;
-    int *v6;
-    if ( DataGlobal_AC13BC + Cell::GetGroundHeight(v6) <= v6[2] && (*((int *)Coord::To_Cell(&DataGlobal_87F7E8, v6) + 80) & 0x100) != 0 )
-  {
-    v1 = Coord::To_Cell(&DataGlobal_87F7E8, v6);
-    v2 = v1[74];
-    result = (int)(v1 + 74);
-    *(int *)result = v2 | 0x40;
-  }
-    else
-  {
-    v4 = Coord::To_Cell(&DataGlobal_87F7E8, v6);
-    v5 = v4[73];
-    result = (int)(v4 + 73);
-    *(int *)result = v5 | 0x40;
-  }
-    return result;
-}
-}
-
-// 0x5F6120
-int MapClass::ClearCellOverlayFlag()
-{
-{
-    int *v1;
-    int v2;
-    int result;
-    int *v4;
-    int v5;
-    int *v6;
-    if ( DataGlobal_AC13BC + Cell::GetGroundHeight(v6) <= v6[2] && (*((int *)Coord::To_Cell(&DataGlobal_87F7E8, v6) + 80) & 0x100) != 0 )
-  {
-    v1 = Coord::To_Cell(&DataGlobal_87F7E8, v6);
-    v2 = v1[74];
-    result = (int)(v1 + 74);
-    *(int *)result = v2 & 0xFFFFFFBF;
-  }
-    else
-  {
-    v4 = Coord::To_Cell(&DataGlobal_87F7E8, v6);
-    v5 = v4[73];
-    result = (int)(v4 + 73);
-    *(int *)result = v5 & 0xFFFFFFBF;
-  }
-    return result;
 }
 }
 
@@ -5075,5 +4641,439 @@ int __thiscall sub_7BCF50(_DWORD *this, unsigned __int16 a2)
   v3 = *(this + 5); /*0x7bcf6b*/
   v5[2] = v2; /*0x7bcf74*/
   return (*(int (__thiscall **)(int, _DWORD *, _DWORD))(*(_DWORD *)v3 + 20))(v3, v5, a2); /*0x7bcf83*/
+}
+}
+
+// 0x4758C0
+char MapClass::loadTheaterINI(INIClass * aP1, char * a2, int a4)
+{
+{
+    return INIClass::SetString(this, aP1, (INIClass *)a2, (INIClass *)&Theater_Array[112 * a4]);
+}
+}
+
+// 0x48DC90
+int MapClass::UnselectAll_ClearLimboLaunchers()
+{
+{
+    int result;
+    int v1;
+    int v2;
+    int *v3;
+    while ( g_SelectionManager )
+    (*(void (__thiscall **)(int))(**(int **)g_ObjectClass_CurrentCount + 336))(*(int *)g_ObjectClass_CurrentCount);
+    Selection::SetCurrent(0);
+    v3 = g_VisibilitySystem;
+    result = DataGlobal_89C410;
+    if ( DataGlobal_89C410 )
+  {
+    v1 = 8;
+    do
+    {
+    v2 = 3;
+    do
+      {
+    result = *v3;
+    if ( *v3 )
+    *(char *)(result + 12) &= ~2u;
+    ++v3;
+    --v2;
+      }
+    while ( v2 );
+    --v1;
+    }
+    while ( v1 );
+  }
+    return result;
+}
+}
+
+// 0x4ACAC0
+int MapClass::ProcessVisibilityFlags()
+{
+{
+    int i;
+    MouseClass *j;
+    int *v4;
+    int v5;
+    int k;
+    int m;
+    int *v8;
+    short v10;
+    short v11;
+    short v12[2];
+    for ( i = 0; i < 512; ++i )
+  {
+    for ( j = 0; (int)j < 512; j = (MouseClass *)((char *)(j) + 1) )
+    {
+    v10 = (short)j;
+    v11 = i;
+    if ( LayerClass::CoordinatesLegal(this, (IUnknown *)&v10) )
+      {
+    v12[0] = (short)j;
+    v12[1] = i;
+    v4 = CellCoord::To_CellObj(this, v12);
+    v5 = v4[75];
+    if ( (v5 & 0x10) == 0 && (v5 & 8) != 0 )
+    v4[80] |= 0x20u;
+      }
+    }
+  }
+    for ( k = 0; k < 512; ++k )
+  {
+    for ( m = 0; m < 512; ++m )
+    {
+    v10 = m;
+    v11 = k;
+    if ( LayerClass::CoordinatesLegal(this, (IUnknown *)&v10) && (*((char *)CellCoord::To_CellObj(this, &v10) + 320) & 0x20) != 0 )
+      {
+    v8 = CellCoord::To_CellObj(this, &v10);
+    v8[80] &= ~0x20u;
+    MapClass::RevealCell(this, (MouseClass *)&v10);
+      }
+    }
+  }
+    HouseClass::RevealShroudForAllies(0, 0);
+    return this->MarkForRedraw(1);
+}
+}
+
+// 0x4ACBC0
+int MapClass::ProcessFogTransition()
+{
+{
+    int i;
+    int v3;
+    int result;
+    int v5;
+    LayerClass::CellIteratorReset(this);
+    for ( i = LayerClass::CellIteratorNext(this); i; i = LayerClass::CellIteratorNext(this) )
+  {
+    v3 = *(int *)(i + 320);
+    if ( (v3 & 1) == 0 && (v3 & 2) != 0 )
+    *(int *)(i + 320) = v3 | 0x40;
+  }
+    HouseClass::RevealShroudForAllies(0, 1);
+    LayerClass::CellIteratorReset(this);
+    for ( result = LayerClass::CellIteratorNext(this); result; result = LayerClass::CellIteratorNext(this) )
+  {
+    if ( (*(char *)(result + 320) & 0x40) != 0 )
+    {
+    *(int *)(result + 320) &= ~0x40u;
+    v5 = *(int *)(result + 36);
+    CellClass::ProcessVisibility(this, (MouseClass *)&v5);
+    }
+  }
+    return result;
+}
+}
+
+// 0x4ACDA0
+char MapClass::RevealCell(MouseClass * aP1)
+{
+{
+    MouseClass *v2;
+    IUnknown *v4;
+    int v5;
+    int i;
+    int v7;
+    MouseClass *v9;
+    v2 = aP1;
+    LOBYTE(v4) = LayerClass::CoordinatesLegal(this, (IUnknown *)aP1);
+    if ( (char)v4 )
+  {
+    v4 = (IUnknown *)CellCoord::To_CellObj(this, (short *)v2);
+    v5 = *(int *)&v4->__pad_11C[16];
+    if ( (v5 & 8) != 0 )
+    {
+    *(int *)&v4->__pad_11C[16] = v5 & 0xFFFFFFE7;
+    Tactical::AddCellToDrawList(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], v4);
+    for ( i = 0; i < 8; ++i )
+      {
+    v7 = i & 7;
+    LOWORD(v9) = LOWORD(v2->field_0) + *((short *)&Direction_X_Offsets.field_0 + 2 * v7);
+    HIWORD(v9) = HIWORD(v2->field_0) + *((short *)&DataGlobal_89F68A + 2 * v7);
+    aP1 = v9;
+    v4 = (IUnknown *)CellCoord::To_CellObj(this, (short *)&aP1);
+    if ( aP1 != (MouseClass *)v2->field_0 )
+        {
+    *(int *)&v4->__pad_11C[16] &= ~0x10u;
+    LOBYTE(v4) = Tactical::AddCellToDrawList(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], v4);
+        }
+      }
+    }
+  }
+    return (char)v4;
+}
+}
+
+// 0x4AE4C0
+int MapClass::UpdateLightingPostProcess()
+{
+{
+    int result;
+    LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
+    for ( result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8);
+    re sult;
+    result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) ) {
+    TacticalMap::ComputeScreenTint(result);
+  }
+    return result;
+}
+}
+
+// 0x4AEB10
+int MapClass::GetScrollMode()
+{
+{
+    int result;
+    if ( !(unsigned char)this->MapClass_field_0x119C )
+    return 0;
+    result = this->MapClass_field_0x11A0;
+    if ( !result )
+    return 0;
+    return result;
+}
+}
+
+// 0x5656D0
+int MapClass::IsCellPassable(int a1, int a2)
+{
+{
+    unsigned int v2;
+    int *v3;
+    v2 = (short)a2 + (SHIWORD(a2) << 9);
+    if ( v2 >= 0x40000 || (v3 = *(int **)(*(int *)(a1 + 316) + 4 * v2)) == 0 )
+  {
+    v3 = &g_CellClassArray;
+    g_Map_GlobalCellIndex = a2;
+  }
+    return (v3[75] >> 3) & 1;
+}
+}
+
+// 0x57A320
+int MapClass::BuildTileConnectivityGraph(MapClass * aP1, IUnknown * aP2, IUnknown * aP3)
+{
+{
+    MapClass *v4;
+    int result;
+    signed int v6;
+    bool v7;
+    MapClass *NeighbourContent;
+    IUnknown *v9;
+    int v10;
+    char *CellData;
+    v4 = aP1;
+    result = *(int *)&aP1->__pad_30[8];
+    if ( result >= g_CellPassabilityLUT && result < g_CellPassabilityLUT + 12 )
+  {
+    result = Cell::GetTerrainMask(this, (IUnknown *)aP1, 2);
+    if ( result == 199 || result == 124 || result == 241 || result == 31 || result == 198 || result == 108 || result == 177 || result == 27 )
+    {
+    v6 = 0;
+    v7 = (char)aP3 == 0;
+    *(int *)&aP1->__pad_30[8] = 0xFFFF;
+    aP1->__pad_10C[14] = 0;
+    if ( !v7 )
+    *((int *)Tactical::GetCellData((short *)&aP1->__pad_18[12]) + 14) = aP2;
+    do
+      {
+    NeighbourContent = (MapClass *)Cell::GetNeighbourContent(v4, v6);
+    v9 = *(IUnknown **)&NeighbourContent->__pad_18[12];
+    aP3 = v9;
+    result = SHIWORD(v9);
+    v10 = SHIWORD(v9) + (short)v9;
+    if ( v10 > g_MapCellHeight_Value )
+        {
+    if ( (short)aP3 - SHIWORD(aP3) < g_MapCellHeight_Value )
+          {
+    result = SHIWORD(aP3) - (short)aP3;
+    if ( result < g_MapCellHeight_Value && v10 <= g_MapCellCount )
+            {
+    aP3 = v9;
+    CellData = Tactical::GetCellData((short *)&aP3);
+    *((int *)(CellData) + 16) = -1;
+    result = Cell::GetTerrainMask(this, (IUnknown *)NeighbourContent, 2);
+    *((int *)(CellData) + 16) = result;
+            }
+          }
+    v4 = aP1;
+        }
+    ++v6;
+      }
+    while ( v6 < 8 );
+    }
+  }
+    return result;
+}
+}
+
+// 0x57B790
+int MapClass::TriggerEVA(IUnknown * aP0)
+{
+{
+    int v1;
+    BuildingTypeClass *v2;
+    double v3;
+    int result;
+    unsigned int v5;
+    int *v6;
+    v1 = -5;
+    do
+  {
+    v2 = (BuildingTypeClass *)-5;
+    do
+    {
+    v3 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64( (double)(short)-(short)v1 * (double)(short)-(short)v1 + (double)(short)-(short)v2 * (double)(short)-(short)v2));
+    result = Math::RoundToInt(v3);
+    if ( (short)result <= 5 )
+      {
+    v5 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9);
+    if ( v5 < 0x40000 && (result = *(int *)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v5)) != 0 )
+        {
+    v6 = (int *)result;
+        }
+    else
+        {
+    result = aP0->field_0;
+    v6 = g_CellClassArray;
+    g_Map_GlobalCellIndex = (IUnknown *)aP0->field_0;
+        }
+    if ( v6 )
+    result = CellClass::ReduceTiberium((int)v6, (InfantryTypeClass *)1);
+      }
+    v2 = (BuildingTypeClass *)((char *)(v2) + 1);
+    }
+    while ( (int)v2 <= 5 );
+    ++v1;
+  }
+    while ( v1 <= 5 );
+    return result;
+}
+}
+
+// 0x588DE0
+unsigned int MapClass::initCellVectors(int a2)
+{
+{
+    if ( (unsigned char)this->MapClass_field_0xC )
+    return (a2 - this->MapClass_field_0x4) / 0x24u;
+    else
+    return 0;
+}
+}
+
+// 0x589530
+unsigned int MapClass::initSubzoneData(int a2)
+{
+{
+    if ( (unsigned char)this->MapClass_field_0xC )
+    return (unsigned int)(a2 - this->MapClass_field_0x4) >> 4;
+    else
+    return 0;
+}
+}
+
+// 0x589E00
+unsigned int MapClass::InitCellVe_vt05(int a2)
+{
+{
+    if ( (unsigned char)this->MapClass_field_0xC )
+    return (unsigned int)(a2 - this->MapClass_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+
+// 0x5A0090
+MapClass * MapClass::SetObstruction(short * a0, MapClass * aP1)
+{
+{
+    MapClass *result;
+    if ( g_MapTileArray )
+  {
+    result = (MapClass *)(80 * (*a0 + g_MapCellWidth * *((int*)(a0) + 1)));
+    *(int *)((char *)(g_MapTileArray) + (int)result + 56) = aP1;
+  }
+    return result;
+}
+}
+
+// 0x5A00C0
+int MapClass::GetTileDataField14(MapResourceClass * aP0)
+{
+{
+    if ( g_MapTileArray )
+    return *((int *)(g_MapTileArray) + 20 * *(short *)aP0->__tail_0 + 20 * g_MapCellWidth * *(short *)&aP0->__tail_0[2] + 14);
+    else
+    return -1;
+}
+}
+
+// 0x5AC5D0
+unsigned int MapClass::validateCellCoord(int a2)
+{
+{
+    if ( (unsigned char)this->MapClass_field_0xC )
+    return (unsigned int)(a2 - this->MapClass_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+
+// 0x5F60A0
+int MapClass::SetCellOverlayFlag()
+{
+{
+    int *v1;
+    int v2;
+    int result;
+    int *v4;
+    int v5;
+    int *v6;
+    if ( DataGlobal_AC13BC + Cell::GetGroundHeight(v6) <= v6[2] && (*((int *)Coord::To_Cell(&DataGlobal_87F7E8, v6) + 80) & 0x100) != 0 )
+  {
+    v1 = Coord::To_Cell(&DataGlobal_87F7E8, v6);
+    v2 = v1[74];
+    result = (int)(v1 + 74);
+    *(int *)result = v2 | 0x40;
+  }
+    else
+  {
+    v4 = Coord::To_Cell(&DataGlobal_87F7E8, v6);
+    v5 = v4[73];
+    result = (int)(v4 + 73);
+    *(int *)result = v5 | 0x40;
+  }
+    return result;
+}
+}
+
+// 0x5F6120
+int MapClass::ClearCellOverlayFlag()
+{
+{
+    int *v1;
+    int v2;
+    int result;
+    int *v4;
+    int v5;
+    int *v6;
+    if ( DataGlobal_AC13BC + Cell::GetGroundHeight(v6) <= v6[2] && (*((int *)Coord::To_Cell(&DataGlobal_87F7E8, v6) + 80) & 0x100) != 0 )
+  {
+    v1 = Coord::To_Cell(&DataGlobal_87F7E8, v6);
+    v2 = v1[74];
+    result = (int)(v1 + 74);
+    *(int *)result = v2 & 0xFFFFFFBF;
+  }
+    else
+  {
+    v4 = Coord::To_Cell(&DataGlobal_87F7E8, v6);
+    v5 = v4[73];
+    result = (int)(v4 + 73);
+    *(int *)result = v5 & 0xFFFFFFBF;
+  }
+    return result;
 }
 }

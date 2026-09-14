@@ -5,9 +5,11 @@
 // 0x535A60
 int BufferIOFileClass::Destruct()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall BufferIOFileClass_Destructor(_DWORD *this)
 {
-    *(void**)this = &DataGlobal_7E1668;
-    return BufferIOFileClass::Dtor(this);
+  *this = &off_7E1668; /*0x535a60*/
+  return BufferIOFileClass::Dtor(this);
 }
 }
 

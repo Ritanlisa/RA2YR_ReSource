@@ -124,26 +124,6 @@ int __thiscall NetworkLobby::MessageList_Append(_DWORD *this, int a2, int a3, Ce
 }
 } // namespace gamemd
 
-// 0x5DA080
-namespace gamemd {
-int NetworkLobby::GetPlayerCount(char a1)
-{
-{
-    int result;
-    result = 2;
-    if ( (a1 & 1) != 0 )
-    result = 3;
-    if ( (a1 & 2) != 0 )
-    ++result;
-    if ( (a1 & 4) != 0 )
-    ++result;
-    if ( (a1 & 0x20) != 0 )
-    result += 5;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x5DB9B0
 namespace gamemd {
 int NetworkLobby_UpdatePlayerList()
@@ -199,56 +179,6 @@ int __usercall NetworkLobby::UpdatePlayerList@<eax>(CampaignScore *a1@<edi>)
     return UpdateWindow(v6); /*0x5dbb48*/
   }
   return result; /*0x5dbb52*/
-}
-}
-} // namespace gamemd
-
-// 0x5DC170
-namespace gamemd {
-char NetworkLobby::ValidateSerialNumber()
-{
-{
-    int v2;
-    FILE *v3;
-    FILE *v4;
-    int i;
-    HKEY phkResult;
-    DWORD cbData;
-    DWORD Type;
-    BYTE Data[128];
-    CHAR SubKey[256];
-    strcpy((char *)Data, "0000000000000000000000");
-    strcpy(this, (const char *)Data);
-    memset(Data, 0, sizeof(Data));
-    if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven )
-  {
-    if ( strlen(g_Str_SOFTWARE_Westwood_Yuri_s_Reven) )
-    {
-    strcpy(SubKey, g_Str_SOFTWARE_Westwood_Yuri_s_Reven);
-    if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) )
-      {
-    cbData = 128;
-    RegQueryValueExA(phkResult, DataGlobal_8313A8, 0, &Type, Data, &cbData);
-    RegCloseKey(phkResult);
-      }
-    }
-  }
-    Data[22] = 0;
-    strcpy(this, (const char *)Data);
-    v2 = 0;
-    v3 = fopen(DataGlobal_831398, DataGlobal_8313A4);
-    v4 = v3;
-    if ( !v3 )
-    return 0;
-    for ( i = fgetc(v3); i != -1; i = fgetc(v4) )
-  {
-    Data[v2] = (((char)Data[v2] - 48) % 10 - i + 1000) % 10 + 48;
-    if ( ++v2 == strlen((const char *)Data) )
-    v2 = 0;
-  }
-    fclose(v4);
-    strcpy(this, (const char *)Data);
-    return 1;
 }
 }
 } // namespace gamemd
@@ -707,116 +637,6 @@ char __thiscall sub_5E9290(void *this)
 }
 } // namespace gamemd
 
-// 0x5E9470
-namespace gamemd {
-BOOL NetworkLobby::IsValidPlayerName()
-{
-{
-    return this && this != (wchar_t *)g_HouseClass_ObserverFlags && this != (wchar_t *)g_Lobby_PlayerCount && this != (wchar_t *)g_Lobby_MaxPlayers && this != g_Lobby_PlayerReady;
-}
-}
-} // namespace gamemd
-
-// 0x5E9510
-namespace gamemd {
-bool NetworkLobby::CheckMinPlayers()
-{
-{
-    int v0;
-    int v1;
-    LPARAM *i;
-    v0 = DataGlobal_A8BB0C;
-    if ( DataGlobal_A8B548 < DataGlobal_A8BB0C )
-    v0 = DataGlobal_A8B548;
-    v1 = 0;
-    if ( v0 > 0 )
-  {
-    for ( i = &g_NetworkPlayerName; *i != g_HouseClass_ObserverFlags; ++i )
-    {
-    if ( ++v1 >= v0 )
-    return g_MPCooperativeState || v0 >= 8 || *(&g_NetworkPlayerName + v0) != g_HouseClass_ObserverFlags;
-    }
-    return 0;
-  }
-    return g_MPCooperativeState || v0 >= 8 || *(&g_NetworkPlayerName + v0) != g_HouseClass_ObserverFlags;
-}
-}
-} // namespace gamemd
-
-// 0x5E96A0
-namespace gamemd {
-char NetworkLobby::CheckPlayerNameValid()
-{
-{
-    wchar_t **v2;
-    wchar_t *v3;
-    int *v4;
-    if ( this == (void *)-2 )
-    return 0;
-    v2 = (wchar_t **)&g_NetworkPlayerName;
-    while ( 1 )
-  {
-    v3 = *v2;
-    if ( *v2 )
-    {
-    if ( v3 != (wchar_t *)g_HouseClass_ObserverFlags && v3 != (wchar_t *)g_Lobby_PlayerCount && v3 != g_Lobby_PlayerReady && v3 != (wchar_t *)g_Lobby_MaxPlayers && v3 != (wchar_t *)g_Lobby_PlayerTeam && v3 != (wchar_t *)g_Lobby_PlayerSide && v3 != (wchar_t *)g_Lobby_PlayerColor && (void *)SessionClass::GetPlayerColor((int)v3) == this )
-      {
-    break;
-      }
-    }
-    if ( (int)++v2 >= (int)&g_PlayerNameListEnd )
-    {
-    v4 = g_CampaignConfig;
-    while ( (void *)*v4 != this )
-      {
-    if ( (int)++v4 >= (int)g_CampaignSideIndex )
-    return 0;
-      }
-    return 1;
-    }
-  }
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x5E9720
-namespace gamemd {
-char NetworkLobby::CheckPlayerNames()
-{
-{
-    wchar_t **v2;
-    wchar_t *v3;
-    int *v4;
-    if ( this == (void *)-2 )
-    return 0;
-    v2 = (wchar_t **)&g_NetworkPlayerName;
-    while ( 1 )
-  {
-    v3 = *v2;
-    if ( *v2 )
-    {
-    if ( v3 != (wchar_t *)g_HouseClass_ObserverFlags && v3 != (wchar_t *)g_Lobby_PlayerCount && v3 != g_Lobby_PlayerReady && v3 != (wchar_t *)g_Lobby_MaxPlayers && v3 != (wchar_t *)g_Lobby_PlayerTeam && v3 != (wchar_t *)g_Lobby_PlayerSide && v3 != (wchar_t *)g_Lobby_PlayerColor && (void *)SessionClass::GetOption((int)v3) == this )
-      {
-    break;
-      }
-    }
-    if ( (int)++v2 >= (int)&g_PlayerNameListEnd )
-    {
-    v4 = g_CampaignSideIndex;
-    while ( (void *)*v4 != this )
-      {
-    if ( (int)++v4 >= (int)g_CampaignFactionSlot )
-    return 0;
-      }
-    return 1;
-    }
-  }
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x5E9E00
 namespace gamemd {
 int NetworkLobby::InitLobbyDropdowns()
@@ -1162,6 +982,186 @@ LABEL_19:
     while ( (int)v2 < (int)&MEMORY[0xA8B31C] ); /*0x5ee419*/
   }
   return (char)ResourceID4; /*0x5ee4a5*/
+}
+}
+} // namespace gamemd
+
+// 0x5DA080
+namespace gamemd {
+int NetworkLobby::GetPlayerCount(char a1)
+{
+{
+    int result;
+    result = 2;
+    if ( (a1 & 1) != 0 )
+    result = 3;
+    if ( (a1 & 2) != 0 )
+    ++result;
+    if ( (a1 & 4) != 0 )
+    ++result;
+    if ( (a1 & 0x20) != 0 )
+    result += 5;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x5DC170
+namespace gamemd {
+char NetworkLobby::ValidateSerialNumber()
+{
+{
+    int v2;
+    FILE *v3;
+    FILE *v4;
+    int i;
+    HKEY phkResult;
+    DWORD cbData;
+    DWORD Type;
+    BYTE Data[128];
+    CHAR SubKey[256];
+    strcpy((char *)Data, "0000000000000000000000");
+    strcpy(this, (const char *)Data);
+    memset(Data, 0, sizeof(Data));
+    if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven )
+  {
+    if ( strlen(g_Str_SOFTWARE_Westwood_Yuri_s_Reven) )
+    {
+    strcpy(SubKey, g_Str_SOFTWARE_Westwood_Yuri_s_Reven);
+    if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) )
+      {
+    cbData = 128;
+    RegQueryValueExA(phkResult, DataGlobal_8313A8, 0, &Type, Data, &cbData);
+    RegCloseKey(phkResult);
+      }
+    }
+  }
+    Data[22] = 0;
+    strcpy(this, (const char *)Data);
+    v2 = 0;
+    v3 = fopen(DataGlobal_831398, DataGlobal_8313A4);
+    v4 = v3;
+    if ( !v3 )
+    return 0;
+    for ( i = fgetc(v3); i != -1; i = fgetc(v4) )
+  {
+    Data[v2] = (((char)Data[v2] - 48) % 10 - i + 1000) % 10 + 48;
+    if ( ++v2 == strlen((const char *)Data) )
+    v2 = 0;
+  }
+    fclose(v4);
+    strcpy(this, (const char *)Data);
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x5E9470
+namespace gamemd {
+BOOL NetworkLobby::IsValidPlayerName()
+{
+{
+    return this && this != (wchar_t *)g_HouseClass_ObserverFlags && this != (wchar_t *)g_Lobby_PlayerCount && this != (wchar_t *)g_Lobby_MaxPlayers && this != g_Lobby_PlayerReady;
+}
+}
+} // namespace gamemd
+
+// 0x5E9510
+namespace gamemd {
+bool NetworkLobby::CheckMinPlayers()
+{
+{
+    int v0;
+    int v1;
+    LPARAM *i;
+    v0 = DataGlobal_A8BB0C;
+    if ( DataGlobal_A8B548 < DataGlobal_A8BB0C )
+    v0 = DataGlobal_A8B548;
+    v1 = 0;
+    if ( v0 > 0 )
+  {
+    for ( i = &g_NetworkPlayerName; *i != g_HouseClass_ObserverFlags; ++i )
+    {
+    if ( ++v1 >= v0 )
+    return g_MPCooperativeState || v0 >= 8 || *(&g_NetworkPlayerName + v0) != g_HouseClass_ObserverFlags;
+    }
+    return 0;
+  }
+    return g_MPCooperativeState || v0 >= 8 || *(&g_NetworkPlayerName + v0) != g_HouseClass_ObserverFlags;
+}
+}
+} // namespace gamemd
+
+// 0x5E96A0
+namespace gamemd {
+char NetworkLobby::CheckPlayerNameValid()
+{
+{
+    wchar_t **v2;
+    wchar_t *v3;
+    int *v4;
+    if ( this == (void *)-2 )
+    return 0;
+    v2 = (wchar_t **)&g_NetworkPlayerName;
+    while ( 1 )
+  {
+    v3 = *v2;
+    if ( *v2 )
+    {
+    if ( v3 != (wchar_t *)g_HouseClass_ObserverFlags && v3 != (wchar_t *)g_Lobby_PlayerCount && v3 != g_Lobby_PlayerReady && v3 != (wchar_t *)g_Lobby_MaxPlayers && v3 != (wchar_t *)g_Lobby_PlayerTeam && v3 != (wchar_t *)g_Lobby_PlayerSide && v3 != (wchar_t *)g_Lobby_PlayerColor && (void *)SessionClass::GetPlayerColor((int)v3) == this )
+      {
+    break;
+      }
+    }
+    if ( (int)++v2 >= (int)&g_PlayerNameListEnd )
+    {
+    v4 = g_CampaignConfig;
+    while ( (void *)*v4 != this )
+      {
+    if ( (int)++v4 >= (int)g_CampaignSideIndex )
+    return 0;
+      }
+    return 1;
+    }
+  }
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x5E9720
+namespace gamemd {
+char NetworkLobby::CheckPlayerNames()
+{
+{
+    wchar_t **v2;
+    wchar_t *v3;
+    int *v4;
+    if ( this == (void *)-2 )
+    return 0;
+    v2 = (wchar_t **)&g_NetworkPlayerName;
+    while ( 1 )
+  {
+    v3 = *v2;
+    if ( *v2 )
+    {
+    if ( v3 != (wchar_t *)g_HouseClass_ObserverFlags && v3 != (wchar_t *)g_Lobby_PlayerCount && v3 != g_Lobby_PlayerReady && v3 != (wchar_t *)g_Lobby_MaxPlayers && v3 != (wchar_t *)g_Lobby_PlayerTeam && v3 != (wchar_t *)g_Lobby_PlayerSide && v3 != (wchar_t *)g_Lobby_PlayerColor && (void *)SessionClass::GetOption((int)v3) == this )
+      {
+    break;
+      }
+    }
+    if ( (int)++v2 >= (int)&g_PlayerNameListEnd )
+    {
+    v4 = g_CampaignSideIndex;
+    while ( (void *)*v4 != this )
+      {
+    if ( (int)++v4 >= (int)g_CampaignFactionSlot )
+    return 0;
+      }
+    return 1;
+    }
+  }
+    return 1;
 }
 }
 } // namespace gamemd

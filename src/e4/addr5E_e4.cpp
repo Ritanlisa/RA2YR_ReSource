@@ -4,167 +4,6 @@
 #include "e4/classes/E4Recv_5E7160_e4.hpp"
 #include "e4/classes/E4Recv_5EE200_e4.hpp"
 
-// 0x5E2410
-namespace gamemd {
-int sub_5E2410()
-{
-{
-    DataGlobal_AC0B38 = 0;
-    DataGlobal_AC0B3C = 0;
-    DataGlobal_AC0B40 = 0;
-    DataGlobal_AC0B44 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x5E2430
-namespace gamemd {
-void sub_5E2430()
-{
-{
-    long double v0;
-    v0 = pow(256.0, 2.0);
-    DataGlobal_AC0CE8 = Math::Sqrt(v0 + v0);
-}
-}
-} // namespace gamemd
-
-// 0x5E2460
-namespace gamemd {
-void sub_5E2460()
-{
-{
-    DataGlobal_AC1160 = DataGlobal_AC0CE8 / 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x5E2480
-namespace gamemd {
-void sub_5E2480()
-{
-{
-    DataGlobal_AC10E8 = 1.0 / DataGlobal_AC1160;
-}
-}
-} // namespace gamemd
-
-// 0x5E24A0
-namespace gamemd {
-void sub_5E24A0()
-{
-{
-    DataGlobal_AC10D8 = 0.0174532925199433 * 45.0;
-}
-}
-} // namespace gamemd
-
-// 0x5E24C0
-namespace gamemd {
-void sub_5E24C0()
-{
-{
-    DataGlobal_AC0D28 = 0.0174532925199433 * 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x5E24E0
-namespace gamemd {
-void sub_5E24E0()
-{
-{
-    DataGlobal_AC0AC0 = 0.0174532925199433 * 90.0;
-}
-}
-} // namespace gamemd
-
-// 0x5E2500
-namespace gamemd {
-long long sub_5E2500()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_AC0AC0 - DataGlobal_AC0D28);
-    result = Math::RoundToInt(v0 * DataGlobal_AC0CE8 * 0.5);
-    DataGlobal_AC1168 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x5E2540
-namespace gamemd {
-void sub_5E2540()
-{
-{
-    DataGlobal_AC0D38 = Math::ArcTan((double)DataGlobal_AC1168 * 0.00390625);
-}
-}
-} // namespace gamemd
-
-// 0x5E2570
-namespace gamemd {
-void sub_5E2570()
-{
-{
-    DataGlobal_AC10D0 = Math::ArcTan((double)(2 * DataGlobal_AC1168) / DataGlobal_AC0CE8);
-}
-}
-} // namespace gamemd
-
-// 0x5E25A0
-namespace gamemd {
-long long sub_5E25A0()
-{
-{
-    __int64 result;
-    result = Math::RoundToInt((double)(4 * DataGlobal_AC1168) + 0.5);
-    DataGlobal_AC1158 = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x5E25D0
-namespace gamemd {
-int sub_5E25D0()
-{
-{
-    DataGlobal_AC0B90 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x5E25E0
-namespace gamemd {
-int sub_5E25E0()
-{
-{
-    DataGlobal_AC0E98 = 0;
-    DataGlobal_AC0E9C = 0;
-    DataGlobal_AC0EA0 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x5E2600
-namespace gamemd {
-int sub_5E2600()
-{
-{
-    DataGlobal_AC1150 = 0;
-    DataGlobal_AC1148 = 128;
-    DataGlobal_AC114C = 128;
-    return 128;
-}
-}
-} // namespace gamemd
-
 // 0x5E2820
 namespace gamemd {
 int DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
@@ -404,40 +243,6 @@ LABEL_18:
 }
 } // namespace gamemd
 
-// 0x5E2E40
-namespace gamemd {
-INT_PTR sub_5E2E40(HWND hWnd, UINT a2, WPARAM a3, char * a4)
-{
-{
-    INT_PTR result;
-    if ( a2 <= 0x2B )
-  {
-    switch ( a2 )
-    {
-    case 0x2Bu: Dialog::Resize(a4);
-    return 1;
-    case 0xFu: Dialog::DrawBackground(hWnd);
-    Dialog::StopBink(hWnd);
-    ValidateRect(hWnd, 0);
-    return 1;
-    case 0x14u: return 1;
-    }
-    return 0;
-  }
-    if ( a2 != 273 )
-    return 0;
-    switch ( (short)a3 )
-  {
-    case 1: case 2: case 6: case 7: CloseDialog(hWnd, (unsigned short)a3);
-    result = 1;
-    break;
-    default: return 0;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x5E2EF0
 namespace gamemd {
 void SetDialogPlayerName(HWND hDlg, int a2)
@@ -647,34 +452,6 @@ LABEL_11:
     }
   }
   return result; /*0x5e357d*/
-}
-}
-} // namespace gamemd
-
-// 0x5E35A0
-namespace gamemd {
-char sub_5E35A0()
-{
-{
-    unsigned int v0;
-    int v1;
-    int i;
-    int v4[113];
-    short v5;
-    char v6;
-    memset(v4, 0, sizeof(v4));
-    v5 = 0;
-    v6 = 0;
-    v4[0] = 40;
-    v0 = strlen(g_GameSetupBuffer) + 1;
-    qmemcpy(&v4[1], g_GameSetupBuffer, v0);
-    v1 = Game_PlayerCount;
-    for ( i = 1; i < v1; ++i )
-  {
-    Network::SendMessage((int)g_NetworkManager, (int)v4, 455, 1, *(int *)(Game_PlayerInfoArray + 4 * i) + 40, 0, 0);
-    LOBYTE(v0) = Event::Dispatch();
-  }
-    return v0;
 }
 }
 } // namespace gamemd
@@ -1854,32 +1631,6 @@ wchar_t *LoadNetworkShareStrings()
     return wcscpy(v14, MEMORY[0xAC1194]); /*0x5e8a12*/
   }
   return result; /*0x5e8a1b*/
-}
-}
-} // namespace gamemd
-
-// 0x5E9AA0
-namespace gamemd {
-BOOL sub_5E9AA0(HWND hDlg, int nIDDlgItem, int a3)
-{
-{
-    WPARAM v5;
-    LRESULT v7;
-    HWND hWnd;
-    hWnd = GetDlgItem(hDlg, nIDDlgItem);
-    ShowWindow(hWnd, 0);
-    v5 = 0;
-    v7 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x146u, 0, 0);
-    if ( v7 > 0 )
-  {
-    while ( SendDlgItemMessageA(hDlg, nIDDlgItem, 0x150u, v5, 0) != a3 )
-    {
-    if ( (int)++v5 >= v7 )
-    return ShowWindow(hWnd, 5);
-    }
-    SendDlgItemMessageA(hDlg, nIDDlgItem, 0x14Eu, v5, 0);
-  }
-    return ShowWindow(hWnd, 5);
 }
 }
 } // namespace gamemd
@@ -3682,52 +3433,6 @@ LABEL_121:
 }
 } // namespace gamemd
 
-// 0x5EDD00
-namespace gamemd {
-wchar_t ** ReadChatMessage(wchar_t ** a1, HWND a2)
-{
-{
-    size_t v4;
-    size_t v5;
-    wchar_t *v6;
-    void *v8;
-    void *v9;
-    unknown_libname_74(&v8);
-    GetEditControlText(a2, &v8);
-    v4 = 120;
-    if ( !WideString::IsASCII((const wchar_t **)&v8) )
-  {
-    v5 = 0;
-    if ( WideString::Length((const wchar_t **)&v8) )
-    {
-    do
-      {
-    if ( WideString::GetChar((const wchar_t **)&v8, v5) > 0x100u )
-    break;
-    ++v5;
-      }
-    while ( v5 < (unsigned int)WideString::Length((const wchar_t **)&v8) );
-    }
-    v4 = v5 - 1;
-    if ( v4 <= 0x28 )
-    v4 = 40;
-  }
-    if ( (unsigned int)WideString::Length((const wchar_t **)&v8) > v4 )
-  {
-    String::TruncateTo(&v8, v4);
-    v6 = WideString::GetOrEmpty_Alt((wchar_t **)&v8);
-    SendMessageA(a2, 0x4B2u, 0, (LPARAM)v6);
-  }
-    WideString::Assign((wchar_t **)&v9, DataGlobal_831D9C);
-    WString::TrimRight((const wchar_t **)&v8, (const wchar_t **)&v9);
-    DeleteAndZero::Alt(&v9);
-    WideString::AssignFromPtr(a1, (const wchar_t **)&v8);
-    DeleteAndZero::Alt(&v8);
-    return a1;
-}
-}
-} // namespace gamemd
-
 // 0x5EDDE0
 namespace gamemd {
 void EnablePlayerSlotControls(HWND hDlg, bool a2)
@@ -3844,64 +3549,6 @@ char **__fastcall Player_GetTypeString(char **a1, wchar_t *a2)
     else
       String::Assign(a1, MEMORY[0x83170C][0]); /*0x5edfae*/
     return a1; /*0x5edfa1*/
-  }
-}
-}
-} // namespace gamemd
-
-// 0x5EE200
-namespace gamemd {
-void E4Recv_5EE200::UpdateObserveButtonWOL()
-{
-{
-    HWND DlgItem;
-    IUnknown *v3;
-    IUnknown *v4;
-    HWND v5;
-    IUnknown *v6;
-    wchar_t *StringCSF;
-    IUnknown *v8;
-    wchar_t *v9;
-    if ( this )
-  {
-    DlgItem = GetDlgItem(this, 1888);
-    if ( DlgItem )
-    SendMessageA(DlgItem, 0xF1u, g_MenuStateFlags != 0, 0);
-    if ( g_MenuStateFlags )
-    v3 = (IUnknown *)HashTable::Find(g_DialogHashTable, g_Str_File_wolob_pcx, 0);
-    else
-    v3 = (IUnknown *)HashTable::Find(g_DialogHashTable, DataGlobal_831DD0, 0);
-    v4 = v3;
-    v5 = GetDlgItem(this, 1887);
-    CacheDialogInvalidate(v5, (HWND)v4);
-    v6 = (IUnknown *)GetDlgItem(this, 1741);
-    if ( v6 )
-    {
-    if ( g_MenuStateFlags )
-    StringCSF = GetStringCSF(g_Str_GUI_Observe, 0, g_Str_File_netshare_cpp, 6751);
-    else
-    StringCSF = GetStringCSF(DataGlobal_831DC4, 0, g_Str_File_netshare_cpp, 6753);
-    SendMessageA((HWND)v6, 0x4B2u, 0, (LPARAM)StringCSF);
-    InvalidateRect((HWND)v6, 0, 0);
-    }
-    v8 = (IUnknown *)GetDlgItem(this, 1581);
-    if ( v8 )
-    {
-    if ( g_MenuStateFlags )
-      {
-    v9 = GetStringCSF(g_Str_GUI_Observe, 0, g_Str_File_netshare_cpp, 6762);
-      }
-    else if ( (HWND)Dialog::FindByHandle((void *)0x113) == this )
-      {
-    v9 = GetStringCSF((wchar_t *)DataGlobal_831DB4, 0, g_Str_File_netshare_cpp, 6766);
-      }
-    else
-      {
-    v9 = GetStringCSF(DataGlobal_831DC4, 0, g_Str_File_netshare_cpp, 6768);
-      }
-    SendMessageA((HWND)v8, 0x4B2u, 0, (LPARAM)v9);
-    InvalidateRect((HWND)v8, 0, 0);
-    }
   }
 }
 }
@@ -4187,6 +3834,367 @@ LABEL_16:
 }
 } // namespace gamemd
 
+// 0x5E2410
+namespace gamemd {
+int sub_5E2410()
+{
+{
+    DataGlobal_AC0B38 = 0;
+    DataGlobal_AC0B3C = 0;
+    DataGlobal_AC0B40 = 0;
+    DataGlobal_AC0B44 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5E2430
+namespace gamemd {
+void sub_5E2430()
+{
+{
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_AC0CE8 = Math::Sqrt(v0 + v0);
+}
+}
+} // namespace gamemd
+
+// 0x5E2460
+namespace gamemd {
+void sub_5E2460()
+{
+{
+    DataGlobal_AC1160 = DataGlobal_AC0CE8 / 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x5E2480
+namespace gamemd {
+void sub_5E2480()
+{
+{
+    DataGlobal_AC10E8 = 1.0 / DataGlobal_AC1160;
+}
+}
+} // namespace gamemd
+
+// 0x5E24A0
+namespace gamemd {
+void sub_5E24A0()
+{
+{
+    DataGlobal_AC10D8 = 0.0174532925199433 * 45.0;
+}
+}
+} // namespace gamemd
+
+// 0x5E24C0
+namespace gamemd {
+void sub_5E24C0()
+{
+{
+    DataGlobal_AC0D28 = 0.0174532925199433 * 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x5E24E0
+namespace gamemd {
+void sub_5E24E0()
+{
+{
+    DataGlobal_AC0AC0 = 0.0174532925199433 * 90.0;
+}
+}
+} // namespace gamemd
+
+// 0x5E2500
+namespace gamemd {
+long long sub_5E2500()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_AC0AC0 - DataGlobal_AC0D28);
+    result = Math::RoundToInt(v0 * DataGlobal_AC0CE8 * 0.5);
+    DataGlobal_AC1168 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x5E2540
+namespace gamemd {
+void sub_5E2540()
+{
+{
+    DataGlobal_AC0D38 = Math::ArcTan((double)DataGlobal_AC1168 * 0.00390625);
+}
+}
+} // namespace gamemd
+
+// 0x5E2570
+namespace gamemd {
+void sub_5E2570()
+{
+{
+    DataGlobal_AC10D0 = Math::ArcTan((double)(2 * DataGlobal_AC1168) / DataGlobal_AC0CE8);
+}
+}
+} // namespace gamemd
+
+// 0x5E25A0
+namespace gamemd {
+long long sub_5E25A0()
+{
+{
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_AC1168) + 0.5);
+    DataGlobal_AC1158 = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x5E25D0
+namespace gamemd {
+int sub_5E25D0()
+{
+{
+    DataGlobal_AC0B90 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5E25E0
+namespace gamemd {
+int sub_5E25E0()
+{
+{
+    DataGlobal_AC0E98 = 0;
+    DataGlobal_AC0E9C = 0;
+    DataGlobal_AC0EA0 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5E2600
+namespace gamemd {
+int sub_5E2600()
+{
+{
+    DataGlobal_AC1150 = 0;
+    DataGlobal_AC1148 = 128;
+    DataGlobal_AC114C = 128;
+    return 128;
+}
+}
+} // namespace gamemd
+
+// 0x5E2E40
+namespace gamemd {
+INT_PTR sub_5E2E40(HWND hWnd, UINT a2, WPARAM a3, char * a4)
+{
+{
+    INT_PTR result;
+    if ( a2 <= 0x2B )
+  {
+    switch ( a2 )
+    {
+    case 0x2Bu: Dialog::Resize(a4);
+    return 1;
+    case 0xFu: Dialog::DrawBackground(hWnd);
+    Dialog::StopBink(hWnd);
+    ValidateRect(hWnd, 0);
+    return 1;
+    case 0x14u: return 1;
+    }
+    return 0;
+  }
+    if ( a2 != 273 )
+    return 0;
+    switch ( (short)a3 )
+  {
+    case 1: case 2: case 6: case 7: CloseDialog(hWnd, (unsigned short)a3);
+    result = 1;
+    break;
+    default: return 0;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x5E35A0
+namespace gamemd {
+char sub_5E35A0()
+{
+{
+    unsigned int v0;
+    int v1;
+    int i;
+    int v4[113];
+    short v5;
+    char v6;
+    memset(v4, 0, sizeof(v4));
+    v5 = 0;
+    v6 = 0;
+    v4[0] = 40;
+    v0 = strlen(g_GameSetupBuffer) + 1;
+    qmemcpy(&v4[1], g_GameSetupBuffer, v0);
+    v1 = Game_PlayerCount;
+    for ( i = 1; i < v1; ++i )
+  {
+    Network::SendMessage((int)g_NetworkManager, (int)v4, 455, 1, *(int *)(Game_PlayerInfoArray + 4 * i) + 40, 0, 0);
+    LOBYTE(v0) = Event::Dispatch();
+  }
+    return v0;
+}
+}
+} // namespace gamemd
+
+// 0x5E9AA0
+namespace gamemd {
+BOOL sub_5E9AA0(HWND hDlg, int nIDDlgItem, int a3)
+{
+{
+    WPARAM v5;
+    LRESULT v7;
+    HWND hWnd;
+    hWnd = GetDlgItem(hDlg, nIDDlgItem);
+    ShowWindow(hWnd, 0);
+    v5 = 0;
+    v7 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x146u, 0, 0);
+    if ( v7 > 0 )
+  {
+    while ( SendDlgItemMessageA(hDlg, nIDDlgItem, 0x150u, v5, 0) != a3 )
+    {
+    if ( (int)++v5 >= v7 )
+    return ShowWindow(hWnd, 5);
+    }
+    SendDlgItemMessageA(hDlg, nIDDlgItem, 0x14Eu, v5, 0);
+  }
+    return ShowWindow(hWnd, 5);
+}
+}
+} // namespace gamemd
+
+// 0x5EDD00
+namespace gamemd {
+wchar_t ** ReadChatMessage(wchar_t ** a1, HWND a2)
+{
+{
+    size_t v4;
+    size_t v5;
+    wchar_t *v6;
+    void *v8;
+    void *v9;
+    unknown_libname_74(&v8);
+    GetEditControlText(a2, &v8);
+    v4 = 120;
+    if ( !WideString::IsASCII((const wchar_t **)&v8) )
+  {
+    v5 = 0;
+    if ( WideString::Length((const wchar_t **)&v8) )
+    {
+    do
+      {
+    if ( WideString::GetChar((const wchar_t **)&v8, v5) > 0x100u )
+    break;
+    ++v5;
+      }
+    while ( v5 < (unsigned int)WideString::Length((const wchar_t **)&v8) );
+    }
+    v4 = v5 - 1;
+    if ( v4 <= 0x28 )
+    v4 = 40;
+  }
+    if ( (unsigned int)WideString::Length((const wchar_t **)&v8) > v4 )
+  {
+    String::TruncateTo(&v8, v4);
+    v6 = WideString::GetOrEmpty_Alt((wchar_t **)&v8);
+    SendMessageA(a2, 0x4B2u, 0, (LPARAM)v6);
+  }
+    WideString::Assign((wchar_t **)&v9, DataGlobal_831D9C);
+    WString::TrimRight((const wchar_t **)&v8, (const wchar_t **)&v9);
+    DeleteAndZero::Alt(&v9);
+    WideString::AssignFromPtr(a1, (const wchar_t **)&v8);
+    DeleteAndZero::Alt(&v8);
+    return a1;
+}
+}
+} // namespace gamemd
+
+// 0x5EE200
+namespace gamemd {
+void E4Recv_5EE200::UpdateObserveButtonWOL()
+{
+{
+    HWND DlgItem;
+    IUnknown *v3;
+    IUnknown *v4;
+    HWND v5;
+    IUnknown *v6;
+    wchar_t *StringCSF;
+    IUnknown *v8;
+    wchar_t *v9;
+    if ( this )
+  {
+    DlgItem = GetDlgItem(this, 1888);
+    if ( DlgItem )
+    SendMessageA(DlgItem, 0xF1u, g_MenuStateFlags != 0, 0);
+    if ( g_MenuStateFlags )
+    v3 = (IUnknown *)HashTable::Find(g_DialogHashTable, g_Str_File_wolob_pcx, 0);
+    else
+    v3 = (IUnknown *)HashTable::Find(g_DialogHashTable, DataGlobal_831DD0, 0);
+    v4 = v3;
+    v5 = GetDlgItem(this, 1887);
+    CacheDialogInvalidate(v5, (HWND)v4);
+    v6 = (IUnknown *)GetDlgItem(this, 1741);
+    if ( v6 )
+    {
+    if ( g_MenuStateFlags )
+    StringCSF = GetStringCSF(g_Str_GUI_Observe, 0, g_Str_File_netshare_cpp, 6751);
+    else
+    StringCSF = GetStringCSF(DataGlobal_831DC4, 0, g_Str_File_netshare_cpp, 6753);
+    SendMessageA((HWND)v6, 0x4B2u, 0, (LPARAM)StringCSF);
+    InvalidateRect((HWND)v6, 0, 0);
+    }
+    v8 = (IUnknown *)GetDlgItem(this, 1581);
+    if ( v8 )
+    {
+    if ( g_MenuStateFlags )
+      {
+    v9 = GetStringCSF(g_Str_GUI_Observe, 0, g_Str_File_netshare_cpp, 6762);
+      }
+    else if ( (HWND)Dialog::FindByHandle((void *)0x113) == this )
+      {
+    v9 = GetStringCSF((wchar_t *)DataGlobal_831DB4, 0, g_Str_File_netshare_cpp, 6766);
+      }
+    else
+      {
+    v9 = GetStringCSF(DataGlobal_831DC4, 0, g_Str_File_netshare_cpp, 6768);
+      }
+    SendMessageA((HWND)v8, 0x4B2u, 0, (LPARAM)v9);
+    InvalidateRect((HWND)v8, 0, 0);
+    }
+  }
+}
+}
+} // namespace gamemd
+
+// 0x5EF270
+namespace gamemd {
+int sub_5EF270()
+{
+return 24;
+}
+} // namespace gamemd
+
 // 0x5EF2D0
 namespace gamemd {
 int sub_5EF2D0()
@@ -4374,13 +4382,5 @@ int sub_5EFF00(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
   }
     return result;
 }
-}
-} // namespace gamemd
-
-// 0x5EF270
-namespace gamemd {
-int sub_5EF270()
-{
-return 24;
 }
 } // namespace gamemd

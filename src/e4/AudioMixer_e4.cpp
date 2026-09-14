@@ -18,49 +18,6 @@ int __thiscall AudioMixer::Init(int *this)
 }
 }
 
-// 0x4061D0
-int AudioMixer::PlayBuffer(unsigned int * a1, unsigned int a2)
-{
-{
-    int v2;
-    int *v4;
-    v2 = a2;
-    if ( *((int*)(a1) + 7) == 3 )
-  {
-    if ( a2 > 0x4000 )
-    v2 = 0x4000;
-    return RequestBufferMixer(a1 + 46, (unsigned int)(v2 * HIWORD(*(int *)(*((int*)(a1) + 9) + 28))) >> 14);
-  }
-    else
-  {
-    if ( a2 > 0x4000 )
-    v2 = 0x4000;
-    v4 = a1 + 46;
-    EndBufferMixer(a1 + 46, (unsigned int)(v2 * HIWORD(*(int *)(*((int*)(a1) + 9) + 28))) >> 14);
-    return AudioMixer::PlaySample(v4);
-  }
-}
-}
-
-// 0x406270
-int AudioMixer::RequestOrEndBuffer(int a1, unsigned int a2)
-{
-{
-    if ( *(int *)(a1 + 28) == 3 )
-  {
-    if ( a2 > 0x4000 )
-    a2 = 0x4000;
-    return RequestBufferMixer((unsigned int *)(a1 + 264), a2);
-  }
-    else
-  {
-    if ( a2 > 0x4000 )
-    a2 = 0x4000;
-    return EndBufferMixer((int *)(a1 + 264), a2);
-  }
-}
-}
-
 // 0x406650
 int AudioMixer::SetVolume()
 {
@@ -73,16 +30,6 @@ int __thiscall AudioMixer::SetVolume(int this)
   if ( ((unsigned char)this->AudioMixer_field_10 & 1) == 0 || *(_DWORD *)(this + 76) ) /*0x40665c*/
     return 0; /*0x406663*/
   return result; /*0x406665*/
-}
-}
-
-// 0x406E80
-int AudioMixer::Shutdown()
-{
-{
-    if ( DataGlobal_87E728 )
-    AudioQueue::StopAllVoices(DataGlobal_87E728, 1);
-    return AudioStream::CleanupChannels();
 }
 }
 
@@ -176,6 +123,59 @@ int __thiscall AudioMixer_PlaySample(_DWORD *this)
       return 1; /*0x407244*/
     }
   }
+}
+}
+
+// 0x4061D0
+int AudioMixer::PlayBuffer(unsigned int * a1, unsigned int a2)
+{
+{
+    int v2;
+    int *v4;
+    v2 = a2;
+    if ( *((int*)(a1) + 7) == 3 )
+  {
+    if ( a2 > 0x4000 )
+    v2 = 0x4000;
+    return RequestBufferMixer(a1 + 46, (unsigned int)(v2 * HIWORD(*(int *)(*((int*)(a1) + 9) + 28))) >> 14);
+  }
+    else
+  {
+    if ( a2 > 0x4000 )
+    v2 = 0x4000;
+    v4 = a1 + 46;
+    EndBufferMixer(a1 + 46, (unsigned int)(v2 * HIWORD(*(int *)(*((int*)(a1) + 9) + 28))) >> 14);
+    return AudioMixer::PlaySample(v4);
+  }
+}
+}
+
+// 0x406270
+int AudioMixer::RequestOrEndBuffer(int a1, unsigned int a2)
+{
+{
+    if ( *(int *)(a1 + 28) == 3 )
+  {
+    if ( a2 > 0x4000 )
+    a2 = 0x4000;
+    return RequestBufferMixer((unsigned int *)(a1 + 264), a2);
+  }
+    else
+  {
+    if ( a2 > 0x4000 )
+    a2 = 0x4000;
+    return EndBufferMixer((int *)(a1 + 264), a2);
+  }
+}
+}
+
+// 0x406E80
+int AudioMixer::Shutdown()
+{
+{
+    if ( DataGlobal_87E728 )
+    AudioQueue::StopAllVoices(DataGlobal_87E728, 1);
+    return AudioStream::CleanupChannels();
 }
 }
 

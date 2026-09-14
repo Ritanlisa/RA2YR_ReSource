@@ -135,57 +135,6 @@ int __thiscall Array::GetClamped(_DWORD *this, CheckListClass *aP1)
 }
 } // namespace gamemd
 
-// 0x55B880
-namespace gamemd {
-void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
-{
-{
-    ParticleSystemClass *v2;
-    int v3;
-    ParticleSystemClass *v4;
-    int v5;
-    if ( aP0 )
-  {
-    if ( (*(int (__thiscall **)(AbstractClass *))(*(int *)aP0->__pad_0 + 44))(aP0) == 44 )
-    {
-    v2 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67588];
-    v3 = 0;
-    if ( *(int *)&DataGlobal_89E138.__pad_579C[67588] > 0 )
-      {
-    v4 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67576];
-    do
-        {
-    if ( aP0 == *(AbstractClass **)&v4->__pad_0[4 * v3] )
-          {
-    if ( v3 < (int)v2 )
-            {
-    v2 = (ParticleSystemClass *)((char *)v2 - 1);
-    v5 = v3;
-    *(int *)&DataGlobal_89E138.__pad_579C[67588] = v2;
-    if ( v3 < (int)v2 )
-              {
-    do
-                {
-    *(int *)&v4->__pad_0[4 * v5] = *(int *)&v4->__pad_0[4 * v5 + 4];
-    v2 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67588];
-    v4 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67576];
-    ++v5;
-                }
-    while ( v5 < *(int *)&DataGlobal_89E138.__pad_579C[67588] );
-              }
-            }
-    --v3;
-          }
-    ++v3;
-        }
-    while ( v3 < (int)v2 );
-      }
-    }
-  }
-}
-}
-} // namespace gamemd
-
 // 0x634290
 namespace gamemd {
 int Array::FindValue(IUnknown * aP1)
@@ -445,6 +394,57 @@ char __thiscall Array::InsertElement(int *this, const void *a1, ObjectClass *aP2
     qmemcpy(v14, a1, 0x10Cu); /*0x7ad917*/
   ++*this; /*0x7ad91e*/
   return 1; /*0x7ad91b*/
+}
+}
+} // namespace gamemd
+
+// 0x55B880
+namespace gamemd {
+void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
+{
+{
+    ParticleSystemClass *v2;
+    int v3;
+    ParticleSystemClass *v4;
+    int v5;
+    if ( aP0 )
+  {
+    if ( (*(int (__thiscall **)(AbstractClass *))(*(int *)aP0->__pad_0 + 44))(aP0) == 44 )
+    {
+    v2 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67588];
+    v3 = 0;
+    if ( *(int *)&DataGlobal_89E138.__pad_579C[67588] > 0 )
+      {
+    v4 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67576];
+    do
+        {
+    if ( aP0 == *(AbstractClass **)&v4->__pad_0[4 * v3] )
+          {
+    if ( v3 < (int)v2 )
+            {
+    v2 = (ParticleSystemClass *)((char *)v2 - 1);
+    v5 = v3;
+    *(int *)&DataGlobal_89E138.__pad_579C[67588] = v2;
+    if ( v3 < (int)v2 )
+              {
+    do
+                {
+    *(int *)&v4->__pad_0[4 * v5] = *(int *)&v4->__pad_0[4 * v5 + 4];
+    v2 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67588];
+    v4 = *(ParticleSystemClass **)&DataGlobal_89E138.__pad_579C[67576];
+    ++v5;
+                }
+    while ( v5 < *(int *)&DataGlobal_89E138.__pad_579C[67588] );
+              }
+            }
+    --v3;
+          }
+    ++v3;
+        }
+    while ( v3 < (int)v2 );
+      }
+    }
+  }
 }
 }
 } // namespace gamemd

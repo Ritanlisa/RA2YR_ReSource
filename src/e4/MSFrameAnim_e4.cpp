@@ -3,73 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/MSFrameAnim_e4.hpp"
 
-// 0x767ED0
-namespace gamemd {
-char MSFrameAnim::Load(int a1, int * a2)
-{
-{
-    if ( DataGlobal_8487BC )
-    RenderScoreScreen(a1, a2, 1);
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x767EF0
-namespace gamemd {
-void MSFrameAnim::Draw(int a1, int * a2)
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    if ( DataGlobal_8487BD )
-  {
-    v2 = (*(int (__thiscall **)(int))(*(int *)(a1) + 124))(a1);
-    v3 = (*(int (__thiscall **)(int))(*(int *)(a1) + 128))(a1);
-    if ( a2 )
-    {
-    v4 = *((int*)(a2) + 1);
-    v7 = *a2;
-    v5 = *((int*)(a2) + 2);
-    v6 = *((int*)(a2) + 3);
-    v8 = v4;
-    v10 = v6;
-    v9 = v5;
-    }
-    else
-    {
-    v7 = 0;
-    v8 = 0;
-    v9 = v2;
-    v10 = v3;
-    }
-    RenderScoreScreen(a1, &v7, 1);
-  }
-}
-}
-} // namespace gamemd
-
-// 0x767F80
-namespace gamemd {
-unsigned int * MSFrameAnim::UpdateFrame(unsigned int * a1)
-{
-{
-    *a1 = 0;
-    *((int*)(a1) + 1) = 0;
-    *((int*)(a1) + 2) = 640;
-    *((int*)(a1) + 3) = 480;
-    return a1;
-}
-}
-} // namespace gamemd
-
 // 0x769BD0
 namespace gamemd {
 MSFrameAnim * MSFrameAnim::QueryInterface(char a2)
@@ -110,19 +43,6 @@ int __thiscall MSFrameAnim::sub_769C50(int this)
 }
 } // namespace gamemd
 
-// 0x769C80
-namespace gamemd {
-unsigned int MSFrameAnim::startAnimation(int a2)
-{
-{
-    if ( (unsigned char)this->MSFrameAnim_field_0xC )
-    return (unsigned int)(a2 - this->MSFrameAnim_field_0x4) >> 3;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x769CD0
 namespace gamemd {
 void MSFrameAnim::stopAnimation()
@@ -141,19 +61,6 @@ void __thiscall MSFrameAnim::sub_769CD0(int this)
   }
   *(_BYTE *)(this + 13) = 0; /*0x769cf1*/
   this->MSFrameAnim_field_0x8 = 0; /*0x769cf4*/
-}
-}
-} // namespace gamemd
-
-// 0x769D00
-namespace gamemd {
-unsigned int MSFrameAnim::pauseAnimation(int a2)
-{
-{
-    if ( (unsigned char)this->MSFrameAnim_field_0xC )
-    return (unsigned int)(a2 - this->MSFrameAnim_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -421,6 +328,99 @@ DynamicVector *__thiscall MSFrameAnim::setScale(_DWORD *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x76a758*/
     __3_YAXPAX_Z(this); /*0x76a75b*/
   return (DynamicVector *)this; /*0x76a765*/
+}
+}
+} // namespace gamemd
+
+// 0x767ED0
+namespace gamemd {
+char MSFrameAnim::Load(int a1, int * a2)
+{
+{
+    if ( DataGlobal_8487BC )
+    RenderScoreScreen(a1, a2, 1);
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x767EF0
+namespace gamemd {
+void MSFrameAnim::Draw(int a1, int * a2)
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    if ( DataGlobal_8487BD )
+  {
+    v2 = (*(int (__thiscall **)(int))(*(int *)(a1) + 124))(a1);
+    v3 = (*(int (__thiscall **)(int))(*(int *)(a1) + 128))(a1);
+    if ( a2 )
+    {
+    v4 = *((int*)(a2) + 1);
+    v7 = *a2;
+    v5 = *((int*)(a2) + 2);
+    v6 = *((int*)(a2) + 3);
+    v8 = v4;
+    v10 = v6;
+    v9 = v5;
+    }
+    else
+    {
+    v7 = 0;
+    v8 = 0;
+    v9 = v2;
+    v10 = v3;
+    }
+    RenderScoreScreen(a1, &v7, 1);
+  }
+}
+}
+} // namespace gamemd
+
+// 0x767F80
+namespace gamemd {
+unsigned int * MSFrameAnim::UpdateFrame(unsigned int * a1)
+{
+{
+    *a1 = 0;
+    *((int*)(a1) + 1) = 0;
+    *((int*)(a1) + 2) = 640;
+    *((int*)(a1) + 3) = 480;
+    return a1;
+}
+}
+} // namespace gamemd
+
+// 0x769C80
+namespace gamemd {
+unsigned int MSFrameAnim::startAnimation(int a2)
+{
+{
+    if ( (unsigned char)this->MSFrameAnim_field_0xC )
+    return (unsigned int)(a2 - this->MSFrameAnim_field_0x4) >> 3;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x769D00
+namespace gamemd {
+unsigned int MSFrameAnim::pauseAnimation(int a2)
+{
+{
+    if ( (unsigned char)this->MSFrameAnim_field_0xC )
+    return (unsigned int)(a2 - this->MSFrameAnim_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

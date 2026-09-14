@@ -317,57 +317,6 @@ char __fastcall Surface_DrawLineAlpha(int a1, int *a2, int *a3, __int16 a4, unsi
 }
 } // namespace gamemd
 
-// 0x620720
-namespace gamemd {
-void DrawScrollArrowUI(int * a0, unsigned int * a1, ObjectClass * aP2, int a4, char a5)
-{
-{
-    char v7;
-    ObjectClass *v8;
-    int v9;
-    int v10;
-    ObjectClass *v11;
-    int v12;
-    int v13;
-    int v14[2];
-    int v15;
-    ObjectClass *v16;
-    int v17[4];
-    char Buffer[32];
-    if ( a0 )
-  {
-    v7 = 114;
-    if ( a4 )
-    v7 = 112;
-    if ( aP2 )
-    sprintf(Buffer, (ObjectClass *)&DataGlobal_830620.__pad_579C[1572], (INIClass *)v7);
-    else
-    sprintf(Buffer, (ObjectClass *)&DataGlobal_830620.__pad_579C[1556], (INIClass *)v7);
-    v8 = (ObjectClass *)HashTable::Find(&g_MatrixTransformState + 5774, &Buffer[a5 == 0], 0);
-    if ( v8 )
-    {
-    v9 = *((int*)(a1) + 1);
-    v10 = *((int*)(a1) + 2);
-    v14[0] = *a1;
-    v11 = (ObjectClass *)*((int*)(a1) + 3);
-    v14[1] = v9;
-    v15 = v10;
-    v16 = v11;
-    v15 = (*(int (__thiscall **)(ObjectClass *))(*(int *)v8->__pad_0 + 124))(v8);
-    v16 = (ObjectClass *)(*(int (__thiscall **)(ObjectClass *))(*(int *)v8->__pad_0 + 128))(v8);
-    v17[1] = 0;
-    v17[0] = 0;
-    v17[2] = (*(int (__thiscall **)(ObjectClass *))(*(int *)v8->__pad_0 + 124))(v8);
-    v12 = (*(int (__thiscall **)(ObjectClass *))(*(int *)v8->__pad_0 + 128))(v8);
-    v13 = *a0;
-    v17[3] = v12;
-    (*(void (__thiscall **)(int *, int *, ObjectClass *, int *, int, int))(v13 + 8))(a0, v14, v8, v17, 0, 1);
-    }
-  }
-}
-}
-} // namespace gamemd
-
 // 0x6208F0
 namespace gamemd {
 int Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
@@ -2319,39 +2268,6 @@ _DWORD *sub_627020()
 }
 } // namespace gamemd
 
-// 0x6274F0
-namespace gamemd {
-int E4Recv_6274F0::sub_6274F0(ObjectClass * aP1)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int i;
-    int v7;
-    ObjectClass String;
-    String::CopyUpper(String.__pad_0, aP1);
-    v3 = this->M12;
-    v4 = *(int *)(v3) + 24 * ((*(int (__thiscall **)(ObjectClass *))(v3 + 4))(&String) % *(int *)(v3 + 8));
-    v5 = *(int *)(v4 + 16) - 1;
-    if ( v5 < 0 )
-    return 0;
-    for ( i = 260 * v5; ; i -= 260 )
-  {
-    v7 = *(int *)(v4 + 4) + i;
-    if ( String::Equals((const char *)v7, &String) )
-    break;
-    if ( --v5 < 0 )
-    return 0;
-  }
-    if ( v7 == -256 )
-    return 0;
-    else
-    return *(int *)(*(int *)(v7 + 256) + 256);
-}
-}
-} // namespace gamemd
-
 // 0x6278C0
 namespace gamemd {
 char E4Recv_6278C0::sub_6278C0(const char * a2)
@@ -2512,105 +2428,6 @@ LABEL_5:
     *(_DWORD *)(v9 + 256) = v10; /*0x627b0d*/
   }
   return result->__pad_0; /*0x627af5*/
-}
-}
-} // namespace gamemd
-
-// 0x628B00
-namespace gamemd {
-unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
-{
-{
-    int v3;
-    char *v5;
-    char *v6;
-    char *v7;
-    v3 = a2;
-    this->M4 = 0;
-    this->M8 = a2;
-    this->M12 = 1;
-    this->M13 = 0;
-    *(void**)this = &vt_VectorClass_HashObject_HashString_SchemeNode;
-    if ( a2 )
-  {
-    if ( a3 )
-    {
-    v5 = a3;
-    if ( a2 - 1 >= 0 )
-      {
-    do
-        {
-    Byte::Zero(v5);
-    v5 += 260;
-    --v3;
-        }
-    while ( v3 );
-      }
-    this->M4 = a3;
-    }
-    else
-    {
-    v6 = __2_YAPAXI_Z(260 * a2);
-    if ( v6 )
-      {
-    v7 = v6;
-    if ( a2 - 1 >= 0 )
-        {
-    do
-          {
-    Byte::Zero(v7);
-    v7 += 260;
-    --v3;
-          }
-    while ( v3 );
-        }
-      }
-    else
-      {
-    v6 = 0;
-      }
-    this->M4 = v6;
-    this->M13 = 1;
-    }
-  }
-    *(void**)this = &vt_DynamicVectorClass_HashObject_HashString_SchemeNode;
-    this->M20 = 10;
-    this->M16 = 0;
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x629190
-namespace gamemd {
-int sub_629190()
-{
-{
-    DataGlobal_AC4914 = 0;
-    DataGlobal_AC4918 = 0;
-    DataGlobal_AC491C = 1;
-    DataGlobal_AC491D = 0;
-    DataGlobal_AC4910 = (int)&vt_DynamicVectorClass_ParasiteClass;
-    DataGlobal_AC4924 = 10;
-    DataGlobal_AC4920 = 0;
-    return atexit(sub_6291D0);
-}
-}
-} // namespace gamemd
-
-// 0x6291D0
-namespace gamemd {
-void sub_6291D0()
-{
-{
-    DataGlobal_AC4910 = (int)&vt_VectorClass_ParasiteClass;
-    if ( DataGlobal_AC4914 && DataGlobal_AC491D )
-  {
-    __3_YAXPAX_Z(DataGlobal_AC4914);
-    DataGlobal_AC4914 = 0;
-  }
-    DataGlobal_AC491D = 0;
-    DataGlobal_AC4918 = 0;
 }
 }
 } // namespace gamemd
@@ -2838,6 +2655,57 @@ int DestructParticleSystemClass(ParticleSystemClass *aP0, int a2)
   v5->TargetCoords[1] = 0; /*0x62e271*/
   ObjectClass::Dtor(v5); /*0x62e277*/
   return result; /*0x62e27c*/
+}
+}
+} // namespace gamemd
+
+// 0x620720
+namespace gamemd {
+void DrawScrollArrowUI(int * a0, unsigned int * a1, ObjectClass * aP2, int a4, char a5)
+{
+{
+    char v7;
+    ObjectClass *v8;
+    int v9;
+    int v10;
+    ObjectClass *v11;
+    int v12;
+    int v13;
+    int v14[2];
+    int v15;
+    ObjectClass *v16;
+    int v17[4];
+    char Buffer[32];
+    if ( a0 )
+  {
+    v7 = 114;
+    if ( a4 )
+    v7 = 112;
+    if ( aP2 )
+    sprintf(Buffer, (ObjectClass *)&DataGlobal_830620.__pad_579C[1572], (INIClass *)v7);
+    else
+    sprintf(Buffer, (ObjectClass *)&DataGlobal_830620.__pad_579C[1556], (INIClass *)v7);
+    v8 = (ObjectClass *)HashTable::Find(&g_MatrixTransformState + 5774, &Buffer[a5 == 0], 0);
+    if ( v8 )
+    {
+    v9 = *((int*)(a1) + 1);
+    v10 = *((int*)(a1) + 2);
+    v14[0] = *a1;
+    v11 = (ObjectClass *)*((int*)(a1) + 3);
+    v14[1] = v9;
+    v15 = v10;
+    v16 = v11;
+    v15 = (*(int (__thiscall **)(ObjectClass *))(*(int *)v8->__pad_0 + 124))(v8);
+    v16 = (ObjectClass *)(*(int (__thiscall **)(ObjectClass *))(*(int *)v8->__pad_0 + 128))(v8);
+    v17[1] = 0;
+    v17[0] = 0;
+    v17[2] = (*(int (__thiscall **)(ObjectClass *))(*(int *)v8->__pad_0 + 124))(v8);
+    v12 = (*(int (__thiscall **)(ObjectClass *))(*(int *)v8->__pad_0 + 128))(v8);
+    v13 = *a0;
+    v17[3] = v12;
+    (*(void (__thiscall **)(int *, int *, ObjectClass *, int *, int, int))(v13 + 8))(a0, v14, v8, v17, 0, 1);
+    }
+  }
 }
 }
 } // namespace gamemd
@@ -3183,6 +3051,104 @@ int String_HashMod31(char * a1)
 }
 } // namespace gamemd
 
+// 0x6274F0
+namespace gamemd {
+int E4Recv_6274F0::sub_6274F0(ObjectClass * aP1)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    int i;
+    int v7;
+    ObjectClass String;
+    String::CopyUpper(String.__pad_0, aP1);
+    v3 = this->M12;
+    v4 = *(int *)(v3) + 24 * ((*(int (__thiscall **)(ObjectClass *))(v3 + 4))(&String) % *(int *)(v3 + 8));
+    v5 = *(int *)(v4 + 16) - 1;
+    if ( v5 < 0 )
+    return 0;
+    for ( i = 260 * v5; ; i -= 260 )
+  {
+    v7 = *(int *)(v4 + 4) + i;
+    if ( String::Equals((const char *)v7, &String) )
+    break;
+    if ( --v5 < 0 )
+    return 0;
+  }
+    if ( v7 == -256 )
+    return 0;
+    else
+    return *(int *)(*(int *)(v7 + 256) + 256);
+}
+}
+} // namespace gamemd
+
+// 0x628B00
+namespace gamemd {
+unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
+{
+{
+    int v3;
+    char *v5;
+    char *v6;
+    char *v7;
+    v3 = a2;
+    this->M4 = 0;
+    this->M8 = a2;
+    this->M12 = 1;
+    this->M13 = 0;
+    *(void**)this = &vt_VectorClass_HashObject_HashString_SchemeNode;
+    if ( a2 )
+  {
+    if ( a3 )
+    {
+    v5 = a3;
+    if ( a2 - 1 >= 0 )
+      {
+    do
+        {
+    Byte::Zero(v5);
+    v5 += 260;
+    --v3;
+        }
+    while ( v3 );
+      }
+    this->M4 = a3;
+    }
+    else
+    {
+    v6 = __2_YAPAXI_Z(260 * a2);
+    if ( v6 )
+      {
+    v7 = v6;
+    if ( a2 - 1 >= 0 )
+        {
+    do
+          {
+    Byte::Zero(v7);
+    v7 += 260;
+    --v3;
+          }
+    while ( v3 );
+        }
+      }
+    else
+      {
+    v6 = 0;
+      }
+    this->M4 = v6;
+    this->M13 = 1;
+    }
+  }
+    *(void**)this = &vt_DynamicVectorClass_HashObject_HashString_SchemeNode;
+    this->M20 = 10;
+    this->M16 = 0;
+    return this;
+}
+}
+} // namespace gamemd
+
 // 0x628F80
 namespace gamemd {
 void sub_628F80()
@@ -3340,6 +3306,40 @@ int sub_629170()
     DataGlobal_AC4908 = 0;
     DataGlobal_AC490C = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x629190
+namespace gamemd {
+int sub_629190()
+{
+{
+    DataGlobal_AC4914 = 0;
+    DataGlobal_AC4918 = 0;
+    DataGlobal_AC491C = 1;
+    DataGlobal_AC491D = 0;
+    DataGlobal_AC4910 = (int)&vt_DynamicVectorClass_ParasiteClass;
+    DataGlobal_AC4924 = 10;
+    DataGlobal_AC4920 = 0;
+    return atexit(sub_6291D0);
+}
+}
+} // namespace gamemd
+
+// 0x6291D0
+namespace gamemd {
+void sub_6291D0()
+{
+{
+    DataGlobal_AC4910 = (int)&vt_VectorClass_ParasiteClass;
+    if ( DataGlobal_AC4914 && DataGlobal_AC491D )
+  {
+    __3_YAXPAX_Z(DataGlobal_AC4914);
+    DataGlobal_AC4914 = 0;
+  }
+    DataGlobal_AC491D = 0;
+    DataGlobal_AC4918 = 0;
 }
 }
 } // namespace gamemd

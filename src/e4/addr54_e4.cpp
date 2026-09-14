@@ -219,80 +219,6 @@ int sub_543E00()
 }
 } // namespace gamemd
 
-// 0x543E70
-namespace gamemd {
-int sub_543E70()
-{
-{
-    DataGlobal_AA107C = 0;
-    DataGlobal_AA1080 = 0;
-    DataGlobal_AA1084 = 1;
-    DataGlobal_AA1085 = 0;
-    DataGlobal_AA1078 = (int)&vt_DynamicVectorClass_IsometricTileTypeClass_TileInsertType;
-    DataGlobal_AA108C = 10;
-    DataGlobal_AA1088 = 0;
-    return atexit(sub_543EB0);
-}
-}
-} // namespace gamemd
-
-// 0x543EB0
-namespace gamemd {
-void sub_543EB0()
-{
-{
-    if ( (DataGlobal_AA0E2C & 1) == 0 )
-  {
-    DataGlobal_AA1078 = (int)&vt_VectorClass_IsometricTileTypeClass_TileInsertType;
-    DataGlobal_AA0E2C |= 1u;
-    if ( DataGlobal_AA107C )
-    {
-    if ( DataGlobal_AA1085 )
-      {
-    __3_YAXPAX_Z(DataGlobal_AA107C);
-    DataGlobal_AA107C = 0;
-      }
-    }
-    DataGlobal_AA1085 = 0;
-    DataGlobal_AA1080 = 0;
-  }
-}
-}
-} // namespace gamemd
-
-// 0x544E30
-namespace gamemd {
-int MIXFile_AccumulateIndex(int a1)
-{
-{
-    int result;
-    int v2;
-    int *v3;
-    int *v4;
-    result = a1;
-    if ( a1 != 0xFFFF )
-  {
-    v2 = 0;
-    if ( DataGlobal_AA1088 > 0 )
-    {
-    v3 = DataGlobal_AA107C;
-    do
-      {
-    v4 = (int *)*v3;
-    if ( *(int *)*v3 > a1 )
-    break;
-    ++v3;
-    result += v4[1];
-    ++v2;
-      }
-    while ( v2 < DataGlobal_AA1088 );
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x544E70
 namespace gamemd {
 int SurfaceClass_CreatePrimary(int a1, int a2, int a3)
@@ -1002,68 +928,6 @@ int sub_549B30()
 }
 } // namespace gamemd
 
-// 0x54A990
-namespace gamemd {
-int E4Recv_54A990::sub_54A990()
-{
-{
-    char *v1;
-    int v2;
-    char v3;
-    int i;
-    v1 = this;
-    v2 = 0;
-    if ( !*(void**)this )
-  {
-    do
-    {
-    v3 = v1[1];
-    ++v2;
-    ++v1;
-    }
-    while ( !v3 );
-  }
-    for ( i = 0; i < 8; ++i )
-  {
-    if ( ((unsigned char)(1 << (i % 8)) & v1[i / 8]) != 0 )
-    break;
-  }
-    return i + 8 * v2;
-}
-}
-} // namespace gamemd
-
-// 0x54A9E0
-namespace gamemd {
-int E4Recv_54A9E0::sub_54A9E0()
-{
-{
-    char *v1;
-    int v2;
-    char v3;
-    int i;
-    v1 = this;
-    v2 = 0;
-    if ( *(void**)this == 0xFF )
-  {
-    do
-    {
-    v3 = v1[1];
-    ++v2;
-    ++v1;
-    }
-    while ( v3 == -1 );
-  }
-    for ( i = 0; i < 8; ++i )
-  {
-    if ( ((unsigned char)(1 << (i % 8)) & v1[i / 8]) == 0 )
-    break;
-  }
-    return i + 8 * v2;
-}
-}
-} // namespace gamemd
-
 // 0x54BA30
 namespace gamemd {
 int E4Recv_54BA30::UpdateFootMovement()
@@ -1205,49 +1069,6 @@ int __thiscall UpdateFootMovement(int this)
 }
 } // namespace gamemd
 
-// 0x54E260
-namespace gamemd {
-int sub_54E260()
-{
-{
-    int v1;
-    g_MissionQueueFrame = (int)g_CurrentFrame;
-    g_MissionQueueType = 0;
-    sub_54EBF0(&DataGlobal_ABC604, 0, 0);
-    DataGlobal_ABC604 = (int)&vt_DynamicVectorClass_KamikazeControl;
-    DataGlobal_ABC618 = 10;
-    DataGlobal_ABC614 = 0;
-    g_MissionQueueFrame = (int)g_CurrentFrame;
-    g_MissionQueueParam = v1;
-    g_MissionQueueType = 100;
-    return atexit(loc_54E2D0);
-}
-}
-} // namespace gamemd
-
-// 0x54E360
-namespace gamemd {
-unsigned int * E4Recv_54E360::sub_54E360()
-{
-{
-    int v2;
-    *(void**)this = g_CurrentFrame;
-    this->M8 = 0;
-    this->M16 = 0;
-    this->M20 = 0;
-    this->M24 = 1;
-    this->M25 = 0;
-    this->M12 = &vt_DynamicVectorClass_KamikazeControl;
-    this->M32 = 10;
-    this->M28 = 0;
-    *(void**)this = g_CurrentFrame;
-    this->M4 = v2;
-    this->M8 = 100;
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x54E690
 namespace gamemd {
 void E4Recv_54E690::sub_54E690()
@@ -1279,72 +1100,6 @@ void __thiscall sub_54E690(_DWORD *this)
   }
   *((_BYTE *)v4 + 13) = 0; /*0x54e6e4*/
   v4[2] = 0; /*0x54e6e7*/
-}
-}
-} // namespace gamemd
-
-// 0x54EBF0
-namespace gamemd {
-unsigned int * E4Recv_54EBF0::sub_54EBF0(int a2, int a3)
-{
-{
-    this->M4 = 0;
-    this->M8 = a2;
-    this->M12 = 1;
-    this->M13 = 0;
-    *(void**)this = &vt_VectorClass_KamikazeControl;
-    if ( a2 )
-  {
-    if ( a3 )
-    {
-    this->M4 = a3;
-    return this;
-    }
-    this->M4 = __2_YAPAXI_Z(4 * a2);
-    this->M13 = 1;
-  }
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x54FDC0
-namespace gamemd {
-int sub_54FDC0()
-{
-{
-    DataGlobal_ABC87C = 0;
-    DataGlobal_ABC880 = 0;
-    DataGlobal_ABC884 = 1;
-    DataGlobal_ABC885 = 0;
-    DataGlobal_ABC878 = (int)&vt_DynamicVectorClass_LaserDrawClass;
-    DataGlobal_ABC88C = 10;
-    g_TimerPool = 0;
-    return atexit(sub_54FE00);
-}
-}
-} // namespace gamemd
-
-// 0x54FE00
-namespace gamemd {
-void sub_54FE00()
-{
-{
-    if ( (DataGlobal_ABC718 & 1) == 0 )
-  {
-    DataGlobal_ABC878 = (int)&vt_VectorClass_LaserDrawClass;
-    DataGlobal_ABC718 |= 1u;
-    if ( DataGlobal_ABC87C )
-    {
-    if ( DataGlobal_ABC885 )
-      {
-    __3_YAXPAX_Z(DataGlobal_ABC87C);
-    DataGlobal_ABC87C = 0;
-      }
-    }
-    DataGlobal_ABC885 = 0;
-    DataGlobal_ABC880 = 0;
-  }
 }
 }
 } // namespace gamemd
@@ -1888,6 +1643,47 @@ unsigned char * sub_543E50()
 }
 } // namespace gamemd
 
+// 0x543E70
+namespace gamemd {
+int sub_543E70()
+{
+{
+    DataGlobal_AA107C = 0;
+    DataGlobal_AA1080 = 0;
+    DataGlobal_AA1084 = 1;
+    DataGlobal_AA1085 = 0;
+    DataGlobal_AA1078 = (int)&vt_DynamicVectorClass_IsometricTileTypeClass_TileInsertType;
+    DataGlobal_AA108C = 10;
+    DataGlobal_AA1088 = 0;
+    return atexit(sub_543EB0);
+}
+}
+} // namespace gamemd
+
+// 0x543EB0
+namespace gamemd {
+void sub_543EB0()
+{
+{
+    if ( (DataGlobal_AA0E2C & 1) == 0 )
+  {
+    DataGlobal_AA1078 = (int)&vt_VectorClass_IsometricTileTypeClass_TileInsertType;
+    DataGlobal_AA0E2C |= 1u;
+    if ( DataGlobal_AA107C )
+    {
+    if ( DataGlobal_AA1085 )
+      {
+    __3_YAXPAX_Z(DataGlobal_AA107C);
+    DataGlobal_AA107C = 0;
+      }
+    }
+    DataGlobal_AA1085 = 0;
+    DataGlobal_AA1080 = 0;
+  }
+}
+}
+} // namespace gamemd
+
 // 0x544690
 namespace gamemd {
 int sub_544690()
@@ -1943,6 +1739,39 @@ namespace gamemd {
 void nullsub_155()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x544E30
+namespace gamemd {
+int MIXFile_AccumulateIndex(int a1)
+{
+{
+    int result;
+    int v2;
+    int *v3;
+    int *v4;
+    result = a1;
+    if ( a1 != 0xFFFF )
+  {
+    v2 = 0;
+    if ( DataGlobal_AA1088 > 0 )
+    {
+    v3 = DataGlobal_AA107C;
+    do
+      {
+    v4 = (int *)*v3;
+    if ( *(int *)*v3 > a1 )
+    break;
+    ++v3;
+    result += v4[1];
+    ++v2;
+      }
+    while ( v2 < DataGlobal_AA1088 );
+    }
+  }
+    return result;
+}
 }
 } // namespace gamemd
 
@@ -2008,6 +1837,68 @@ unsigned char * Bitfield_SetBit(int a1, int a2, int a3)
     v5 = ~v3 & *result;
     *result = v5;
     return result;
+}
+}
+} // namespace gamemd
+
+// 0x54A990
+namespace gamemd {
+int E4Recv_54A990::sub_54A990()
+{
+{
+    char *v1;
+    int v2;
+    char v3;
+    int i;
+    v1 = this;
+    v2 = 0;
+    if ( !*(void**)this )
+  {
+    do
+    {
+    v3 = v1[1];
+    ++v2;
+    ++v1;
+    }
+    while ( !v3 );
+  }
+    for ( i = 0; i < 8; ++i )
+  {
+    if ( ((unsigned char)(1 << (i % 8)) & v1[i / 8]) != 0 )
+    break;
+  }
+    return i + 8 * v2;
+}
+}
+} // namespace gamemd
+
+// 0x54A9E0
+namespace gamemd {
+int E4Recv_54A9E0::sub_54A9E0()
+{
+{
+    char *v1;
+    int v2;
+    char v3;
+    int i;
+    v1 = this;
+    v2 = 0;
+    if ( *(void**)this == 0xFF )
+  {
+    do
+    {
+    v3 = v1[1];
+    ++v2;
+    ++v1;
+    }
+    while ( v3 == -1 );
+  }
+    for ( i = 0; i < 8; ++i )
+  {
+    if ( ((unsigned char)(1 << (i % 8)) & v1[i / 8]) == 0 )
+    break;
+  }
+    return i + 8 * v2;
 }
 }
 } // namespace gamemd
@@ -2340,6 +2231,74 @@ int sub_54E240()
     DataGlobal_ABC628 = 0;
     DataGlobal_ABC62C = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x54E260
+namespace gamemd {
+int sub_54E260()
+{
+{
+    int v1;
+    g_MissionQueueFrame = (int)g_CurrentFrame;
+    g_MissionQueueType = 0;
+    sub_54EBF0(&DataGlobal_ABC604, 0, 0);
+    DataGlobal_ABC604 = (int)&vt_DynamicVectorClass_KamikazeControl;
+    DataGlobal_ABC618 = 10;
+    DataGlobal_ABC614 = 0;
+    g_MissionQueueFrame = (int)g_CurrentFrame;
+    g_MissionQueueParam = v1;
+    g_MissionQueueType = 100;
+    return atexit(loc_54E2D0);
+}
+}
+} // namespace gamemd
+
+// 0x54E360
+namespace gamemd {
+unsigned int * E4Recv_54E360::sub_54E360()
+{
+{
+    int v2;
+    *(void**)this = g_CurrentFrame;
+    this->M8 = 0;
+    this->M16 = 0;
+    this->M20 = 0;
+    this->M24 = 1;
+    this->M25 = 0;
+    this->M12 = &vt_DynamicVectorClass_KamikazeControl;
+    this->M32 = 10;
+    this->M28 = 0;
+    *(void**)this = g_CurrentFrame;
+    this->M4 = v2;
+    this->M8 = 100;
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x54EBF0
+namespace gamemd {
+unsigned int * E4Recv_54EBF0::sub_54EBF0(int a2, int a3)
+{
+{
+    this->M4 = 0;
+    this->M8 = a2;
+    this->M12 = 1;
+    this->M13 = 0;
+    *(void**)this = &vt_VectorClass_KamikazeControl;
+    if ( a2 )
+  {
+    if ( a3 )
+    {
+    this->M4 = a3;
+    return this;
+    }
+    this->M4 = __2_YAPAXI_Z(4 * a2);
+    this->M13 = 1;
+  }
+    return this;
 }
 }
 } // namespace gamemd
@@ -2682,6 +2641,47 @@ int sub_54FDA0()
     DataGlobal_ABC730 = 0;
     DataGlobal_ABC734 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x54FDC0
+namespace gamemd {
+int sub_54FDC0()
+{
+{
+    DataGlobal_ABC87C = 0;
+    DataGlobal_ABC880 = 0;
+    DataGlobal_ABC884 = 1;
+    DataGlobal_ABC885 = 0;
+    DataGlobal_ABC878 = (int)&vt_DynamicVectorClass_LaserDrawClass;
+    DataGlobal_ABC88C = 10;
+    g_TimerPool = 0;
+    return atexit(sub_54FE00);
+}
+}
+} // namespace gamemd
+
+// 0x54FE00
+namespace gamemd {
+void sub_54FE00()
+{
+{
+    if ( (DataGlobal_ABC718 & 1) == 0 )
+  {
+    DataGlobal_ABC878 = (int)&vt_VectorClass_LaserDrawClass;
+    DataGlobal_ABC718 |= 1u;
+    if ( DataGlobal_ABC87C )
+    {
+    if ( DataGlobal_ABC885 )
+      {
+    __3_YAXPAX_Z(DataGlobal_ABC87C);
+    DataGlobal_ABC87C = 0;
+      }
+    }
+    DataGlobal_ABC885 = 0;
+    DataGlobal_ABC880 = 0;
+  }
 }
 }
 } // namespace gamemd

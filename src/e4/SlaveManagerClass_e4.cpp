@@ -352,36 +352,6 @@ LABEL_5:
 } // namespace game
 } // namespace ra2
 
-// 0x6AF650
-namespace ra2 {
-namespace game {
-wchar_t * SlaveManagerClass::CreateSlave(wchar_t ** a2)
-{
-{
-    int v3;
-    int v4;
-    wchar_t *result;
-    wchar_t *v6;
-    v3 = *(void**)this->house;
-    v4 = (*(int (__thiscall **)(int))(*(void**)this->master + 60))(this->master);
-    result = (wchar_t *)(*(int (__thiscall **)(int, int))(v3 + 140))(this->house, v4);
-    *a2 = result;
-    if ( result )
-  {
-    (*(void (__thiscall **)(wchar_t *))(*(int *)(result) + 212))(result);
-    *((int *)*a2 + 183) = this->master;
-    *((int*)(a2) + 1) = 0;
-    result = g_CurrentFrame;
-    *((int*)(a2) + 2) = g_CurrentFrame;
-    *((int*)(a2) + 3) = v6;
-    *((int*)(a2) + 4) = 0;
-  }
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x6AF6C0
 namespace gamemd {
 int SlaveManagerClass_ProcessSlaves()
@@ -973,37 +943,6 @@ LABEL_20:
 } // namespace game
 } // namespace ra2
 
-// 0x6B1300
-namespace ra2 {
-namespace game {
-int SlaveManagerClass::SaveManager(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    int v4;
-    int i;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-  {
-    v4 = *a1;
-    aP2 = *(int *)&aP0->UINameLabel[11];
-    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
-    if ( result >= 0 )
-    {
-    for ( i = 0; i < aP2; ++i )
-      {
-    result = (*(int (__stdcall **)(int *, int, int, int))(*a1 + 16))( a1, *(int *)(*(int *)&aP0->zero_3C + 4 * i), 20, 0);
-    if ( result < 0 )
-    break;
-      }
-    }
-  }
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x6B1390
 namespace ra2 {
 namespace game {
@@ -1056,19 +995,6 @@ void __thiscall SlaveManagerClass_25_::_vt03(int this)
   }
   *(_BYTE *)(this + 13) = 0; /*0x6b13d1*/
   this->SlaveManagerClass_25_field_0x8 = 0; /*0x6b13d4*/
-}
-}
-} // namespace gamemd
-
-// 0x6B13E0
-namespace gamemd {
-unsigned int SlaveManagerClass_25::Write(int a2)
-{
-{
-    if ( (unsigned char)this->SlaveManagerClass_25_field_0xC )
-    return (unsigned int)(a2 - this->SlaveManagerClass_25_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -1219,6 +1145,36 @@ DynamicVector *__thiscall SlaveManagerClass_25_::QueryInterface(_DWORD *this, ch
 }
 } // namespace gamemd
 
+// 0x6AF650
+namespace ra2 {
+namespace game {
+wchar_t * SlaveManagerClass::CreateSlave(wchar_t ** a2)
+{
+{
+    int v3;
+    int v4;
+    wchar_t *result;
+    wchar_t *v6;
+    v3 = *(void**)this->house;
+    v4 = (*(int (__thiscall **)(int))(*(void**)this->master + 60))(this->master);
+    result = (wchar_t *)(*(int (__thiscall **)(int, int))(v3 + 140))(this->house, v4);
+    *a2 = result;
+    if ( result )
+  {
+    (*(void (__thiscall **)(wchar_t *))(*(int *)(result) + 212))(result);
+    *((int *)*a2 + 183) = this->master;
+    *((int*)(a2) + 1) = 0;
+    result = g_CurrentFrame;
+    *((int*)(a2) + 2) = g_CurrentFrame;
+    *((int*)(a2) + 3) = v6;
+    *((int*)(a2) + 4) = 0;
+  }
+    return result;
+}
+}
+} // namespace game
+} // namespace ra2
+
 // 0x6B1130
 namespace ra2 {
 namespace game {
@@ -1231,6 +1187,37 @@ int SlaveManagerClass::ddtor(int a1, unsigned int * a2)
   a2[2] = 268444350;
   a2[3] = 1822515787;
   return 0;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x6B1300
+namespace ra2 {
+namespace game {
+int SlaveManagerClass::SaveManager(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    int v4;
+    int i;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+  {
+    v4 = *a1;
+    aP2 = *(int *)&aP0->UINameLabel[11];
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
+    if ( result >= 0 )
+    {
+    for ( i = 0; i < aP2; ++i )
+      {
+    result = (*(int (__stdcall **)(int *, int, int, int))(*a1 + 16))( a1, *(int *)(*(int *)&aP0->zero_3C + 4 * i), 20, 0);
+    if ( result < 0 )
+    break;
+      }
+    }
+  }
+    return result;
+}
 }
 } // namespace game
 } // namespace ra2
@@ -1254,3 +1241,16 @@ return 72;
 }
 } // namespace game
 } // namespace ra2
+
+// 0x6B13E0
+namespace gamemd {
+unsigned int SlaveManagerClass_25::Write(int a2)
+{
+{
+    if ( (unsigned char)this->SlaveManagerClass_25_field_0xC )
+    return (unsigned int)(a2 - this->SlaveManagerClass_25_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd

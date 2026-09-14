@@ -2,25 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x438550
-namespace ra2 {
-namespace game {
-int BombClass::InitPool()
-{
-{
-    DataGlobal_89C66C = 0;
-    DataGlobal_89C670 = 0;
-    DataGlobal_89C674 = 1;
-    DataGlobal_89C675 = 0;
-    DataGlobal_89C668 = (int)&vt_DynamicVectorClass_BombClass;
-    DataGlobal_89C67C = 10;
-    DataGlobal_89C678 = 0;
-    return atexit(globalHelper_038590);
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x4385D0
 namespace ra2 {
 namespace game {
@@ -54,18 +35,6 @@ int __thiscall BombClass::AbstractClass(int this)
     *((_DWORD *)unk_89C66C + v2) = this; /*0x438666*/
   }
   return this; /*0x43866b*/
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x4389F0
-namespace ra2 {
-namespace game {
-int BombClass::IsDeathBomb()
-{
-{
-    return this->audioController;
 }
 }
 } // namespace game
@@ -188,18 +157,6 @@ int __stdcall BombClass::Write(AbstractClass *aP0, int aP1)
 } // namespace game
 } // namespace ra2
 
-// 0x438BD0
-namespace ra2 {
-namespace game {
-int BombClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x4393F0
 namespace ra2 {
 namespace game {
@@ -236,6 +193,37 @@ BombClass *__thiscall BombClass::CopyTo(_DWORD *this, char a2)
 } // namespace game
 } // namespace ra2
 
+// 0x438550
+namespace ra2 {
+namespace game {
+int BombClass::InitPool()
+{
+{
+    DataGlobal_89C66C = 0;
+    DataGlobal_89C670 = 0;
+    DataGlobal_89C674 = 1;
+    DataGlobal_89C675 = 0;
+    DataGlobal_89C668 = (int)&vt_DynamicVectorClass_BombClass;
+    DataGlobal_89C67C = 10;
+    DataGlobal_89C678 = 0;
+    return atexit(globalHelper_038590);
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x4389F0
+namespace ra2 {
+namespace game {
+int BombClass::IsDeathBomb()
+{
+{
+    return this->audioController;
+}
+}
+} // namespace game
+} // namespace ra2
+
 // 0x438B00
 namespace ra2 {
 namespace game {
@@ -248,6 +236,18 @@ int BombClass::ddtor(int a1, unsigned int * a2)
   a2[2] = 268441278;
   a2[3] = 1822515787;
   return 0;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x438BD0
+namespace ra2 {
+namespace game {
+int BombClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+}
 }
 } // namespace game
 } // namespace ra2

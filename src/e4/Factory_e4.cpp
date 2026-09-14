@@ -3,29 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Factory_e4.hpp"
 
-// 0x523C90
-namespace gamemd {
-int Factory::FindExitCellByName()
-{
-{
-    int v2;
-    if ( !_strcmpi(this, &DataGlobal_817460.sectionHead[1]) )
-    return -1;
-    if ( !_strcmpi(this, g_Str_none) )
-    return -1;
-    v2 = 0;
-    if ( *(int *)&HouseClass_Player.__pad_5568[20644] <= 0 )
-    return -1;
-    while ( _strcmpi((const void *)(*(int *)(*(int *)&HouseClass_Player.__pad_5568[20632] + 4 * v2) + 36), this) )
-  {
-    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[20644] )
-    return -1;
-  }
-    return v2;
-}
-}
-} // namespace gamemd
-
 // 0x663D60
 namespace gamemd {
 char Factory::GetLinkedIndex(DynamicVector * aP1)
@@ -380,6 +357,29 @@ char __userpurge Factory_CalculateExitCell@<al>(_DWORD *a1@<ecx>, int a2@<ebx>, 
     (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)a1[3] + 240))(a1[3], a1 + 10); /*0x719276*/
     return 1; /*0x71927d*/
   }
+}
+}
+} // namespace gamemd
+
+// 0x523C90
+namespace gamemd {
+int Factory::FindExitCellByName()
+{
+{
+    int v2;
+    if ( !_strcmpi(this, &DataGlobal_817460.sectionHead[1]) )
+    return -1;
+    if ( !_strcmpi(this, g_Str_none) )
+    return -1;
+    v2 = 0;
+    if ( *(int *)&HouseClass_Player.__pad_5568[20644] <= 0 )
+    return -1;
+    while ( _strcmpi((const void *)(*(int *)(*(int *)&HouseClass_Player.__pad_5568[20632] + 4 * v2) + 36), this) )
+  {
+    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[20644] )
+    return -1;
+  }
+    return v2;
 }
 }
 } // namespace gamemd

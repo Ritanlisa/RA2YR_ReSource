@@ -2,6 +2,25 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
+// 0x798340
+namespace gamemd {
+BOOL sub_798340()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL sub_798340()
+{
+  HANDLE *v0; // esi
+  BOOL result; // eax
+
+  v0 = &Handles; /*0x798348*/
+  do /*0x79835b*/
+    result = ResetEvent(*v0++); /*0x798350*/
+  while ( (int)v0 < (int)g_WOL_RequestObject ); /*0x79835b*/
+  return result; /*0x79835d*/
+}
+}
+} // namespace gamemd
+
 // 0x72C060
 namespace gamemd {
 char sub_72C060()
@@ -52,25 +71,6 @@ void sub_72C0B0()
     }
   }
     DataGlobal_B0FD2D = 0;
-}
-}
-} // namespace gamemd
-
-// 0x798340
-namespace gamemd {
-BOOL sub_798340()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL sub_798340()
-{
-  HANDLE *v0; // esi
-  BOOL result; // eax
-
-  v0 = &Handles; /*0x798348*/
-  do /*0x79835b*/
-    result = ResetEvent(*v0++); /*0x798350*/
-  while ( (int)v0 < (int)g_WOL_RequestObject ); /*0x79835b*/
-  return result; /*0x79835d*/
 }
 }
 } // namespace gamemd

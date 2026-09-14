@@ -30,19 +30,6 @@ void __thiscall DSurface::Process(int this, IUnknown *aP1, int *a2)
 }
 }
 
-// 0x4BA480
-long long DSurface::ConstructFromHandle()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_8A0928 - DataGlobal_8A0970);
-    result = Math::RoundToInt(v0 * DataGlobal_8A0968 * 0.5);
-    DataGlobal_8A0DC8 = result;
-    return result;
-}
-}
-
 // 0x4BA5A0
 char * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5)
 {
@@ -3750,15 +3737,6 @@ void *__thiscall DSurface::loc_4C1AC0(void *this, char a2)
 }
 }
 
-// 0x5D1E50
-int DSurface::Flip2()
-{
-{
-    g_LoadScreenFlag = 1;
-    return DSurface::RenderToSurface(g_DSurface_Hidden);
-}
-}
-
 // 0x5D1E70
 int DSurface::RenderToSurface(ObjectClass * aP1)
 {
@@ -3949,40 +3927,6 @@ int __fastcall DSurface::FillRectWithColor(int *a0, ObjectClass *aP1, __int16 a3
     return (*(int (__thiscall **)(ObjectClass *))(*(_DWORD *)v5->__pad_0 + 96))(v5); /*0x621d1c*/
   }
   return result; /*0x621d21*/
-}
-}
-
-// 0x63D400
-int DSurface::DrawMarker(AbstractClass * aP1, ObjectClass * aP2)
-{
-{
-    int *Viewport;
-    int v6[4];
-    int v7[4];
-    int v8[4];
-    Viewport = Display::GetViewport(v6);
-    v8[0] = *Viewport;
-    v8[1] = Viewport[1];
-    v8[2] = Viewport[2];
-    v8[3] = Viewport[3];
-    v6[0] = (int)aP1;
-    v7[2] = 6;
-    v7[0] = (char *)aP1 - 3;
-    v7[1] = (char *)aP2 - 3;
-    v7[3] = 6;
-    return (*(int (__thiscall **)(int, int *, int *, void *))(**(int **)&DataGlobal_87F8E4.__pad_5568[9424] + 84))( *(int *)&DataGlobal_87F8E4.__pad_5568[9424], v8, v7, this);
-}
-}
-
-// 0x759E60
-char DSurface::FlipIfNeeded()
-{
-{
-    char result;
-    result = (unsigned char)this->DSurface_field_0x514;
-    if ( result )
-    return DSurface::Flip(this->DSurface_field_0x200);
-    return result;
 }
 }
 
@@ -4321,8 +4265,64 @@ int __thiscall DSurface_Flip(int this)
 }
 }
 
+// 0x4BA480
+long long DSurface::ConstructFromHandle()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_8A0928 - DataGlobal_8A0970);
+    result = Math::RoundToInt(v0 * DataGlobal_8A0968 * 0.5);
+    DataGlobal_8A0DC8 = result;
+    return result;
+}
+}
+
 // 0x4C1AB0
 char DSurface::IsDSurface()
 {
 return 1;
+}
+
+// 0x5D1E50
+int DSurface::Flip2()
+{
+{
+    g_LoadScreenFlag = 1;
+    return DSurface::RenderToSurface(g_DSurface_Hidden);
+}
+}
+
+// 0x63D400
+int DSurface::DrawMarker(AbstractClass * aP1, ObjectClass * aP2)
+{
+{
+    int *Viewport;
+    int v6[4];
+    int v7[4];
+    int v8[4];
+    Viewport = Display::GetViewport(v6);
+    v8[0] = *Viewport;
+    v8[1] = Viewport[1];
+    v8[2] = Viewport[2];
+    v8[3] = Viewport[3];
+    v6[0] = (int)aP1;
+    v7[2] = 6;
+    v7[0] = (char *)aP1 - 3;
+    v7[1] = (char *)aP2 - 3;
+    v7[3] = 6;
+    return (*(int (__thiscall **)(int, int *, int *, void *))(**(int **)&DataGlobal_87F8E4.__pad_5568[9424] + 84))( *(int *)&DataGlobal_87F8E4.__pad_5568[9424], v8, v7, this);
+}
+}
+
+// 0x759E60
+char DSurface::FlipIfNeeded()
+{
+{
+    char result;
+    result = (unsigned char)this->DSurface_field_0x514;
+    if ( result )
+    return DSurface::Flip(this->DSurface_field_0x200);
+    return result;
+}
 }

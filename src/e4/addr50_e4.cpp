@@ -6,23 +6,6 @@
 #include "e4/classes/E4Recv_50C160_e4.hpp"
 #include "e4/classes/E4Recv_50DA40_e4.hpp"
 
-// 0x5004E0
-namespace gamemd {
-int House_GetTechLevel(int a1, int a2)
-{
-{
-    int v4;
-    if ( a2 < 0 )
-    return 0;
-    v4 = TechnoTypeClass::GetByTypeAndIndex(a1, a2);
-    if ( a1 == 6 || a1 == 7 )
-    return *(int *)(v4 + 3592);
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x501750
 namespace gamemd {
 char E4Recv_501750::sub_501750(int a2)
@@ -82,17 +65,6 @@ LABEL_14:
     }
   }
   return result; /*0x5018ae*/
-}
-}
-} // namespace gamemd
-
-// 0x501AA0
-namespace gamemd {
-unsigned int * sub_501AA0(unsigned int * a1, int a2, int a3)
-{
-{
-    *a1 = 0;
-    return a1;
 }
 }
 } // namespace gamemd
@@ -165,6 +137,73 @@ LABEL_18:
 }
 } // namespace gamemd
 
+// 0x5093C0
+namespace gamemd {
+int E4Recv_5093C0::sub_5093C0(int a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall sub_5093C0(int *this, int a2)
+{
+  int v2; // esi
+  int result; // eax
+  _DWORD *i; // edx
+
+  v2 = *(this + 5509); /*0x5093c2*/
+  result = 0; /*0x5093c8*/
+  if ( v2 > 0 ) /*0x5093cd*/
+  {
+    for ( i = (_DWORD *)*(this + 5506); *i != a2; i += 2 ) /*0x5093d9*/
+    {
+      if ( ++result >= v2 ) /*0x5093e5*/
+        return result; /*0x5093e5*/
+    }
+    return UpdateHouseClassAnger((unsigned int)this, (int)i, -*(_DWORD *)(*(this + 5506) + 8 * result + 4), a2); /*0x5093f5*/
+  }
+  return result; /*0x5093e7*/
+}
+}
+} // namespace gamemd
+
+// 0x50C160
+namespace gamemd {
+double E4Recv_50C160::sub_50C160()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+double __thiscall sub_50C160(_DWORD *this)
+{
+  return *(float *)(*(this + 13) + 328); /*0x50c169*/
+}
+}
+} // namespace gamemd
+
+// 0x5004E0
+namespace gamemd {
+int House_GetTechLevel(int a1, int a2)
+{
+{
+    int v4;
+    if ( a2 < 0 )
+    return 0;
+    v4 = TechnoTypeClass::GetByTypeAndIndex(a1, a2);
+    if ( a1 == 6 || a1 == 7 )
+    return *(int *)(v4 + 3592);
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x501AA0
+namespace gamemd {
+unsigned int * sub_501AA0(unsigned int * a1, int a2, int a3)
+{
+{
+    *a1 = 0;
+    return a1;
+}
+}
+} // namespace gamemd
+
 // 0x505F80
 namespace gamemd {
 int globalHelper_005F80(int a1, int * a2, int a3, int a4)
@@ -216,6 +255,22 @@ int globalHelper_005FD0(int a1, int * a2, int a3, int a4)
 }
 } // namespace gamemd
 
+// 0x506B70
+namespace gamemd {
+void nullsub_16()
+{
+  ;
+}
+} // namespace gamemd
+
+// 0x506B80
+namespace gamemd {
+void nullsub_17()
+{
+  ;
+}
+} // namespace gamemd
+
 // 0x5092F0
 namespace gamemd {
 int HouseClass::sub_5092F0(int a2)
@@ -251,30 +306,11 @@ int HouseClass::sub_5092F0(int a2)
 }
 } // namespace gamemd
 
-// 0x5093C0
+// 0x509CC0
 namespace gamemd {
-int E4Recv_5093C0::sub_5093C0(int a2)
+void nullsub_144(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5093C0(int *this, int a2)
-{
-  int v2; // esi
-  int result; // eax
-  _DWORD *i; // edx
-
-  v2 = *(this + 5509); /*0x5093c2*/
-  result = 0; /*0x5093c8*/
-  if ( v2 > 0 ) /*0x5093cd*/
-  {
-    for ( i = (_DWORD *)*(this + 5506); *i != a2; i += 2 ) /*0x5093d9*/
-    {
-      if ( ++result >= v2 ) /*0x5093e5*/
-        return result; /*0x5093e5*/
-    }
-    return UpdateHouseClassAnger((unsigned int)this, (int)i, -*(_DWORD *)(*(this + 5506) + 8 * result + 4), a2); /*0x5093f5*/
-  }
-  return result; /*0x5093e7*/
-}
+  ;
 }
 } // namespace gamemd
 
@@ -325,18 +361,6 @@ void sub_50B920(int a1, int a2, int a3)
 }
 } // namespace gamemd
 
-// 0x50C160
-namespace gamemd {
-double E4Recv_50C160::sub_50C160()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall sub_50C160(_DWORD *this)
-{
-  return *(float *)(*(this + 13) + 328); /*0x50c169*/
-}
-}
-} // namespace gamemd
-
 // 0x50DA40
 namespace gamemd {
 int E4Recv_50DA40::sub_50DA40(int a2)
@@ -372,30 +396,6 @@ unsigned int * sub_50E3A0(unsigned int * a1, int * a2, short * a3, int a4)
     *((int*)(a1) + 2) = v6;
     return a1;
 }
-}
-} // namespace gamemd
-
-// 0x506B70
-namespace gamemd {
-void nullsub_16()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x506B80
-namespace gamemd {
-void nullsub_17()
-{
-  ;
-}
-} // namespace gamemd
-
-// 0x509CC0
-namespace gamemd {
-void nullsub_144(int a1)
-{
-  ;
 }
 } // namespace gamemd
 

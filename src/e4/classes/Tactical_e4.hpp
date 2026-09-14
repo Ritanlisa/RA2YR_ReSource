@@ -9,7 +9,6 @@ struct Tactical {
     int CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8);  // 0x484180
     char * SetCellTransform(int a2, CoordStruct * aP2, int a4, CoordStruct * aP4, int a6, int a7);  // 0x4A35F0
     unsigned int * MouseMove(MouseClass * aP1, MouseClass * aP2);  // 0x4A91B0
-    char SelectObject(int a2);  // 0x4F4450
     bool IsCellVisible(IUnknown * aP1);  // 0x568350
     char * GetCellData();  // 0x58C2A0
     char MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5);  // 0x692300
@@ -18,14 +17,15 @@ struct Tactical {
     void DisplayTacticalOverlayText(wchar_t * String);  // 0x6D4E20
     unsigned int SetTacticalPosition(IUnknown * aP1);  // 0x6D6070
     unsigned int * PixelToCell(AbstractClass * aP1, IUnknown * aP2);  // 0x6D6590
-    int * ScrollMap(Tactical * aP0, int a2);  // 0x6DA560
     int AddCellToDrawList(IUnknown * aP1);  // 0x6DA7D0
     int DrawTacticalConnectorLines();  // 0x6DB210
     char DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5);  // 0x6DBB60
-    int InitMap(int a1, int a2);  // 0x6DBD20
-    int UpdateMapView(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x6DBE00
     Tactical * UpdateView(char a2);  // 0x6DC470
     int Init(unsigned int * a2);  // 0x6E4970
+    char SelectObject(int a2);  // 0x4F4450
+    int * ScrollMap(Tactical * aP0, int a2);  // 0x6DA560
+    int InitMap(int a1, int a2);  // 0x6DBD20
+    int UpdateMapView(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x6DBE00
     int ddtor(int a1, unsigned int * a2);  // 0x6DBCE0
     int StubReturn56();  // 0x6DC450
     int StubReturn3608();  // 0x6DC460

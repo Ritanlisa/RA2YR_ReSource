@@ -710,11 +710,14 @@ extern int DataGlobal_839D1C;  // data: 0x839D1C
 extern int DataGlobal_839D3C;  // data: 0x839D3C
 extern int DataGlobal_83F13C;  // data: 0x83F13C
 extern int DataGlobal_89A304[4];  // data: 0x89A304
+extern int DataGlobal_89A308;  // data: 0x89A308
 extern int DataGlobal_89A310;  // data: 0x89A310
 extern int DataGlobal_89C428;  // data: 0x89C428
 extern int DataGlobal_A8DB3C;  // data: 0xA8DB3C
 extern int DataGlobal_A8DB44;  // data: 0xA8DB44
+extern int DataGlobal_A8DB48;  // data: 0xA8DB48
 extern int DataGlobal_A8DB5C;  // data: 0xA8DB5C
+extern int DataGlobal_A8DB60;  // data: 0xA8DB60
 extern int DataGlobal_B048D0;  // data: 0xB048D0
 extern int DataGlobal_B048D4;  // data: 0xB048D4
 extern int DataGlobal_B730E8;  // data: 0xB730E8
@@ -3475,6 +3478,7 @@ extern unsigned char DataGlobal_839710[53056];  // data: 0x839710
 extern unsigned char DataGlobal_839714[53052];  // data: 0x839714
 extern unsigned char DataGlobal_839BBC[51860];  // data: 0x839BBC
 extern unsigned char DataGlobal_839BE8[51816];  // data: 0x839BE8
+extern unsigned char DataGlobal_839D10[];  // data: 0x839D10
 extern unsigned char DataGlobal_839D50[51456];  // data: 0x839D50
 extern unsigned char DataGlobal_839D58[51448];  // data: 0x839D58
 extern unsigned char DataGlobal_839D68[51432];  // data: 0x839D68
@@ -13968,6 +13972,8 @@ extern void* vt_ATL_CComObject_CChatEventSink;  // data: 0x7F76B4
 extern void* vt_ATL_CComObject_CDownloadEventSink;  // data: 0x7F78E4
 extern void* vt_bad_cast;  // data: 0x7F9660
 extern void* vt_bad_typeid;  // data: 0x7F95DC
+extern void* vt_Base64Pipe;  // data: 0x7EB774
+extern void* vt_Base64Straw;  // data: 0x7EB764
 extern void* vt_BaseClass;  // data: 0x7E3880
 extern void* vt_BinkMovieHandle;  // data: 0x7EE154
 extern void* vt_BitFont;  // data: 0x7E3A78
@@ -13985,21 +13991,27 @@ extern void* vt_BlowPipe;  // data: 0x7EFDC8
 extern void* vt_BlowStraw;  // data: 0x7EDF40
 extern void* vt_BombClass;  // data: 0x7E3CE4
 extern void* vt_BrainClass;  // data: 0x7E3E74
+extern void* vt_BufferIOFileClass;  // data: 0x7E3A2C
 extern void* vt_BufferPipe;  // data: 0x7E6200
 extern void* vt_BufferStraw;  // data: 0x7E61E0
 extern void* vt_BuildingLightClass;  // data: 0x7E3AA4
 extern void* vt_BuildingTypeClass;  // data: 0x7E4544
 extern void* vt_BulletClass;  // data: 0x7E46B8
 extern void* vt_BulletTypeClass;  // data: 0x7E491C
+extern void* vt_CacheStraw;  // data: 0x7EB754
 extern void* vt_CampaignClass;  // data: 0x7E49FC
 extern void* vt_CampaignEndScoreClass;  // data: 0x7E4AB8
 extern void* vt_CampaignScoreClass;  // data: 0x7E4AAC
 extern void* vt_CaptureManagerClass;  // data: 0x7E4B14
 extern void* vt_CarryoverClass;  // data: 0x7E4C04
 extern void* vt_CCFileClass;  // data: 0x7E16B0
+extern void* vt_CChatEventSink;  // data: 0x7F77A4
 extern void* vt_CCToolTip;  // data: 0x7F74C4
+extern void* vt_CD;  // data: 0x7E4C30
+extern void* vt_CellClass;  // data: 0x7E4EEC
 extern void* vt_CenterTeamCommandClass;  // data: 0x7EBEB4
 extern void* vt_CheckListClass;  // data: 0x7E4F84
+extern void* vt_CNetUtilEventSink;  // data: 0x7F7778
 extern void* vt_ColorListClass;  // data: 0x7E5054
 extern void* vt_CommandClass;  // data: 0x7EBE3C
 extern void* vt_CommBufferClass;  // data: 0x7E519C
@@ -14007,12 +14019,14 @@ extern void* vt_ConnectionClass;  // data: 0x7E51B4
 extern void* vt_ConnectionPointClass;  // data: 0x7E5CE4
 extern void* vt_ConnManClass;  // data: 0x7EC1D4
 extern void* vt_ConvertClass;  // data: 0x7E5358
+extern void* vt_CounterClass;  // data: 0x7E5C54
 extern void* vt_CreateGameDialogControl;  // data: 0x7F788C
 extern void* vt_CreateTeamCommandClass;  // data: 0x7EB84C
 extern void* vt_CStreamClass;  // data: 0x7E5D94
 extern void* vt_CursorPositionCommandClass;  // data: 0x7EBF54
 extern void* vt_DeleteCommandClass;  // data: 0x7EBF7C
 extern void* vt_DiskLaserClass;  // data: 0x7E5F8C
+extern void* vt_DisplayClass;  // data: 0x7E6114
 extern void* vt_DisplayClass_TacticalClass;  // data: 0x7E608C
 extern void* vt_DriveLocomotionClass;  // data: 0x7E7EB0
 extern void* vt_DropListClass;  // data: 0x7E7FCC
@@ -14181,6 +14195,7 @@ extern void* vt_EnumConnectionsClass;  // data: 0x7E5CA4
 extern void* vt_exception;  // data: 0x7F990C
 extern void* vt_FactoryClass;  // data: 0x7E88A4
 extern void* vt_FileClass;  // data: 0x7F08BC
+extern void* vt_FilePipe;  // data: 0x7E4DA0
 extern void* vt_FileStraw;  // data: 0x7E4D90
 extern void* vt_FlyLocomotionClass;  // data: 0x7E89F4
 extern void* vt_FoggedObjectClass;  // data: 0x7E8B0C
@@ -14195,6 +14210,7 @@ extern void* vt_GraphicMenuAnimItem;  // data: 0x7EA658
 extern void* vt_GraphicMenuImageItem;  // data: 0x7EA674
 extern void* vt_GraphicMenuItem;  // data: 0x7EA690
 extern void* vt_GraphicMenuShortcutItem;  // data: 0x7EA6AC
+extern void* vt_HouseClass;  // data: 0x7EA8A0
 extern void* vt_HouseTypeClass;  // data: 0x7EAB2C
 extern void* vt_HoverLocomotionClass;  // data: 0x7EACFC
 extern void* vt_InfantryClass;  // data: 0x7EB034
@@ -14236,6 +14252,7 @@ extern void* vt_MSAnim;  // data: 0x7EE8E8
 extern void* vt_MSBitPrintAnim;  // data: 0x7EE9D8
 extern void* vt_MSEngine;  // data: 0x7EEBD4
 extern void* vt_MSFadeAnim;  // data: 0x7EE938
+extern void* vt_MSFont;  // data: 0x7EEC64
 extern void* vt_MSFrameAnim;  // data: 0x7F7104
 extern void* vt_MSPCXAnim;  // data: 0x7EEA2C
 extern void* vt_MSPrintAnim;  // data: 0x7EEA00
@@ -14271,6 +14288,8 @@ extern void* vt_ParticleSystemTypeClass;  // data: 0x7F007C
 extern void* vt_ParticleTypeClass;  // data: 0x7F015C
 extern void* vt_Pipe;  // data: 0x7E6218
 extern void* vt_PixelFXClass;  // data: 0x7EFDA4
+extern void* vt_PlayerProfile;  // data: 0x7F74F4
+extern void* vt_PowerClass;  // data: 0x7EFF54
 extern void* vt_ProgressScreenClass;  // data: 0x7F0064
 extern void* vt_RadarClass;  // data: 0x7F0344
 extern void* vt_RadarClass_RTacticalClass;  // data: 0x7F02BC
@@ -14279,6 +14298,7 @@ extern void* vt_RadSiteClass;  // data: 0x7F07E4
 extern void* vt_RAMFileClass;  // data: 0x7F0874
 extern void* vt_RandomStraw;  // data: 0x7F0AFC
 extern void* vt_RawFileClass;  // data: 0x7F0904
+extern void* vt_rc_ptr_base;  // data: 0x7F094C
 extern void* vt_rc_ptr_PlayerProfile;  // data: 0x7F3F44
 extern void* vt_rc_ptr_WDTState;  // data: 0x7F70EC
 extern void* vt_rc_ptr_WDTTerritory;  // data: 0x7EBFA4
@@ -14305,15 +14325,18 @@ extern void* vt_ScorePrintClass;  // data: 0x7F0EB4
 extern void* vt_ScreenCaptureCommandClass;  // data: 0x7EBF04
 extern void* vt_ScriptClass;  // data: 0x7F0F4C
 extern void* vt_ScriptTypeClass;  // data: 0x7F0FDC
+extern void* vt_ScrollClass;  // data: 0x7F1094
 extern void* vt_SelectTeamCommandClass;  // data: 0x7EBE64
 extern void* vt_ShapeButtonClass;  // data: 0x7E8088
 extern void* vt_SHAPipe;  // data: 0x7E4D78
 extern void* vt_ShipLocomotionClass;  // data: 0x7F2D8C
+extern void* vt_SidebarClass;  // data: 0x7F3058
 extern void* vt_SidebarClass_SBGadgetClass;  // data: 0x7F2F44
 extern void* vt_SidebarClass_StripClass_SelectClass;  // data: 0x7F2FCC
 extern void* vt_SideClass;  // data: 0x7F2E94
 extern void* vt_SlaveManagerClass;  // data: 0x7F319C
 extern void* vt_SliderClass;  // data: 0x7ED21C
+extern void* vt_SmudgeClass;  // data: 0x7F32FC
 extern void* vt_SmudgeTypeClass;  // data: 0x7F34FC
 extern void* vt_SpawnManagerClass;  // data: 0x7F3624
 extern void* vt_StaticButtonClass;  // data: 0x7F3EA0
@@ -14321,6 +14344,7 @@ extern void* vt_Straw;  // data: 0x7E61F0
 extern void* vt_SuperClass;  // data: 0x7F3FBC
 extern void* vt_SuperWeaponTypeClass;  // data: 0x7F4064
 extern void* vt_SwizzleManagerClass;  // data: 0x7F4108
+extern void* vt_TabClass;  // data: 0x7EDFB4
 extern void* vt_Tactical;  // data: 0x7F431C
 extern void* vt_TActionClass;  // data: 0x7F4410
 extern void* vt_TagClass;  // data: 0x7F44B4
@@ -14337,6 +14361,7 @@ extern void* vt_TerrainClass;  // data: 0x7F521C
 extern void* vt_TerrainTypeClass;  // data: 0x7F542C
 extern void* vt_TEventClass;  // data: 0x7F554C
 extern void* vt_TextButtonClass;  // data: 0x7F55DC
+extern void* vt_TextLabelClass;  // data: 0x7F5B44
 extern void* vt_TiberianSunClassFactory;  // data: 0x7EA564
 extern void* vt_TiberiumClass;  // data: 0x7F56FC
 extern void* vt_ToggleClass;  // data: 0x7E8118
@@ -14362,6 +14387,7 @@ extern void* vt_TypeList_UnitTypeClass_const;  // data: 0x7EABE8
 extern void* vt_TypeList_VoxelAnimTypeClass_const;  // data: 0x7F0D3C
 extern void* vt_UDPInterfaceClass;  // data: 0x7F7A6C
 extern void* vt_UnholyAlliance;  // data: 0x7EE814
+extern void* vt_UnitClass;  // data: 0x7F5C70
 extern void* vt_UnitTypeClass;  // data: 0x7F61EC
 extern void* vt_VectorClass_AbstractClass;  // data: 0x7E920C
 extern void* vt_VectorClass_AbstractTypeClass;  // data: 0x7EA544
@@ -14591,3 +14617,4 @@ extern void* vt_WorldDominationTour_MapSizeGameOption;  // data: 0x7F70B4
 extern void* vt_WorldDominationTour_State;  // data: 0x7F7314
 extern void* vt_WorldDominationTour_Territory;  // data: 0x7F7334
 extern void* vt_WorldDominationTour_Voices_Anim;  // data: 0x7F7354
+extern void* vt_WWMouseClass;  // data: 0x7F7B2C

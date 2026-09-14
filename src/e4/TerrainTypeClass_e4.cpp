@@ -221,29 +221,6 @@ LABEL_11:
 }
 }
 
-// 0x71DDD0
-bool TerrainTypeClass::GetHeight(TerrainClass * aP2, int a3)
-{
-{
-    void **v4;
-    v4 = (void **)__2_YAPAXI_Z(0xE0u);
-    return v4 && TerrainClass::Construct(v4, this, aP2);
-}
-}
-
-// 0x71DE10
-TerrainClass * TerrainTypeClass::GetTileIndex(int a2)
-{
-{
-    void **v3;
-    v3 = (void **)__2_YAPAXI_Z(0xE0u);
-    if ( v3 )
-    return TerrainClass::Construct(v3, this, (TerrainClass *)&DataGlobal_B05488.__pad_579C[16728]);
-    else
-    return 0;
-}
-}
-
 // 0x71DEA0
 char TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
 {
@@ -369,29 +346,6 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 }
 }
 
-// 0x71E0D0
-unsigned int * TerrainTypeClass::GetWidth(unsigned int * a1, int * a2)
-{
-{
-    int GroundHeight;
-    int v3;
-    int v5;
-    int v6;
-    int v7;
-    v5 = *a2;
-    v6 = *((int*)(a2) + 1);
-    v7 = *((int*)(a2) + 2);
-    GroundHeight = Cell::GetGroundHeight(&v5);
-    v3 = v7;
-    if ( v7 < GroundHeight )
-    v3 = Cell::GetGroundHeight(&v5);
-    *a1 = v5;
-    *((int*)(a1) + 1) = v6;
-    *((int*)(a1) + 2) = v3;
-    return a1;
-}
-}
-
 // 0x71E140
 int TerrainTypeClass::PowerDrainUpdate(int * a2)
 {
@@ -447,18 +401,6 @@ int __stdcall TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 }
 }
 
-// 0x71E240
-int TerrainTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-
 // 0x71E2A0
 TerrainTypeClass * TerrainTypeClass::FindOrCreate()
 {
@@ -485,14 +427,6 @@ LABEL_6:
       goto LABEL_6; /*0x71e2f4*/
   }
   return *(TerrainTypeClass **)(*(_DWORD *)&HouseClass_Player.__pad_5568[20584] + 4 * v2); /*0x71e30f*/
-}
-}
-
-// 0x71E350
-int TerrainTypeClass::GetAuxField()
-{
-{
-    return this->Foundation;
 }
 }
 
@@ -540,6 +474,64 @@ TerrainTypeClass *__fastcall TerrainTypeClass::ddtor(void **this, AbstractClass 
 }
 }
 
+// 0x71DDD0
+bool TerrainTypeClass::GetHeight(TerrainClass * aP2, int a3)
+{
+{
+    void **v4;
+    v4 = (void **)__2_YAPAXI_Z(0xE0u);
+    return v4 && TerrainClass::Construct(v4, this, aP2);
+}
+}
+
+// 0x71DE10
+TerrainClass * TerrainTypeClass::GetTileIndex(int a2)
+{
+{
+    void **v3;
+    v3 = (void **)__2_YAPAXI_Z(0xE0u);
+    if ( v3 )
+    return TerrainClass::Construct(v3, this, (TerrainClass *)&DataGlobal_B05488.__pad_579C[16728]);
+    else
+    return 0;
+}
+}
+
+// 0x71E0D0
+unsigned int * TerrainTypeClass::GetWidth(unsigned int * a1, int * a2)
+{
+{
+    int GroundHeight;
+    int v3;
+    int v5;
+    int v6;
+    int v7;
+    v5 = *a2;
+    v6 = *((int*)(a2) + 1);
+    v7 = *((int*)(a2) + 2);
+    GroundHeight = Cell::GetGroundHeight(&v5);
+    v3 = v7;
+    if ( v7 < GroundHeight )
+    v3 = Cell::GetGroundHeight(&v5);
+    *a1 = v5;
+    *((int*)(a1) + 1) = v6;
+    *((int*)(a1) + 2) = v3;
+    return a1;
+}
+}
+
+// 0x71E240
+int TerrainTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
+}
+
 // 0x71E260
 int TerrainTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
@@ -562,4 +554,12 @@ return 37;
 int TerrainTypeClass::GetObjectSize()
 {
 return 700;
+}
+
+// 0x71E350
+int TerrainTypeClass::GetAuxField()
+{
+{
+    return this->Foundation;
+}
 }

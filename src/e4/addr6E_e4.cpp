@@ -108,18 +108,6 @@ char __thiscall sub_6E2790(int *this, int a2, int a3, int a4, int a5)
 }
 } // namespace gamemd
 
-// 0x6E2C20
-namespace gamemd {
-char globalHelper_0E2C20(int a1, int a2, int a3, IUnknown * aP3)
-{
-{
-    LayerClass::ClearFactoryCellAssignments(&DataGlobal_87C374.__pad_14B0[8132]);
-    MapClass::MarkForRedraw(&DataGlobal_87C374.__pad_14B0[8132], 1);
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x6E30C0
 namespace gamemd {
 int CreateHouseClass()
@@ -281,74 +269,6 @@ _DWORD *__thiscall Tactical_42_::loc_6E4B00(_DWORD *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x6e4b38*/
     __3_YAXPAX_Z(this); /*0x6e4b3b*/
   return this; /*0x6e4b45*/
-}
-}
-} // namespace gamemd
-
-// 0x6E4D60
-namespace gamemd {
-int sub_6E4D60()
-{
-{
-    g_TagClassCount = 0;
-    DataGlobal_B0E728 = 0;
-    DataGlobal_B0E72C = 1;
-    DataGlobal_B0E72D = 0;
-    TagClass_Array = (int)&vt_DynamicVectorClass_TagClass;
-    DataGlobal_B0E734 = 10;
-    g_GameObjectCleanup = 0;
-    return atexit(sub_6E4DA0);
-}
-}
-} // namespace gamemd
-
-// 0x6E4DA0
-namespace gamemd {
-void sub_6E4DA0()
-{
-{
-    TagClass_Array = (int)&vt_VectorClass_TagClass;
-    if ( g_TagClassCount && DataGlobal_B0E72D )
-  {
-    __3_YAXPAX_Z(g_TagClassCount);
-    g_TagClassCount = 0;
-  }
-    DataGlobal_B0E72D = 0;
-    DataGlobal_B0E728 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x6E5AE0
-namespace gamemd {
-int sub_6E5AE0()
-{
-{
-    DataGlobal_B0E784 = 0;
-    DataGlobal_B0E788 = 0;
-    DataGlobal_B0E78C = 1;
-    DataGlobal_B0E78D = 0;
-    DataGlobal_B0E780 = (int)&vt_DynamicVectorClass_TagTypeClass;
-    DataGlobal_B0E794 = 10;
-    g_MultiplayerCleanup = 0;
-    return atexit(sub_6E5B20);
-}
-}
-} // namespace gamemd
-
-// 0x6E5B20
-namespace gamemd {
-void sub_6E5B20()
-{
-{
-    DataGlobal_B0E780 = (int)&vt_VectorClass_TagTypeClass;
-    if ( DataGlobal_B0E784 && DataGlobal_B0E78D )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0E784);
-    DataGlobal_B0E784 = 0;
-  }
-    DataGlobal_B0E78D = 0;
-    DataGlobal_B0E788 = 0;
 }
 }
 } // namespace gamemd
@@ -1119,6 +1039,18 @@ char E4Recv_6E2A50::sub_6E2A50(int a2, int a3, int a4, int a5)
 }
 } // namespace gamemd
 
+// 0x6E2C20
+namespace gamemd {
+char globalHelper_0E2C20(int a1, int a2, int a3, IUnknown * aP3)
+{
+{
+    LayerClass::ClearFactoryCellAssignments(&DataGlobal_87C374.__pad_14B0[8132]);
+    MapClass::MarkForRedraw(&DataGlobal_87C374.__pad_14B0[8132], 1);
+    return 1;
+}
+}
+} // namespace gamemd
+
 // 0x6E3F70
 namespace gamemd {
 unsigned int * E4Recv_6E3F70::sub_6E3F70(unsigned int * a2)
@@ -1335,6 +1267,40 @@ int sub_6E4D40()
 }
 } // namespace gamemd
 
+// 0x6E4D60
+namespace gamemd {
+int sub_6E4D60()
+{
+{
+    g_TagClassCount = 0;
+    DataGlobal_B0E728 = 0;
+    DataGlobal_B0E72C = 1;
+    DataGlobal_B0E72D = 0;
+    TagClass_Array = (int)&vt_DynamicVectorClass_TagClass;
+    DataGlobal_B0E734 = 10;
+    g_GameObjectCleanup = 0;
+    return atexit(sub_6E4DA0);
+}
+}
+} // namespace gamemd
+
+// 0x6E4DA0
+namespace gamemd {
+void sub_6E4DA0()
+{
+{
+    TagClass_Array = (int)&vt_VectorClass_TagClass;
+    if ( g_TagClassCount && DataGlobal_B0E72D )
+  {
+    __3_YAXPAX_Z(g_TagClassCount);
+    g_TagClassCount = 0;
+  }
+    DataGlobal_B0E72D = 0;
+    DataGlobal_B0E728 = 0;
+}
+}
+} // namespace gamemd
+
 // 0x6E5290
 namespace gamemd {
 char E4Recv_6E5290::sub_6E5290()
@@ -1511,6 +1477,40 @@ int sub_6E5AC0()
     DataGlobal_B0E7A8 = 0;
     DataGlobal_B0E7AC = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6E5AE0
+namespace gamemd {
+int sub_6E5AE0()
+{
+{
+    DataGlobal_B0E784 = 0;
+    DataGlobal_B0E788 = 0;
+    DataGlobal_B0E78C = 1;
+    DataGlobal_B0E78D = 0;
+    DataGlobal_B0E780 = (int)&vt_DynamicVectorClass_TagTypeClass;
+    DataGlobal_B0E794 = 10;
+    g_MultiplayerCleanup = 0;
+    return atexit(sub_6E5B20);
+}
+}
+} // namespace gamemd
+
+// 0x6E5B20
+namespace gamemd {
+void sub_6E5B20()
+{
+{
+    DataGlobal_B0E780 = (int)&vt_VectorClass_TagTypeClass;
+    if ( DataGlobal_B0E784 && DataGlobal_B0E78D )
+  {
+    __3_YAXPAX_Z(DataGlobal_B0E784);
+    DataGlobal_B0E784 = 0;
+  }
+    DataGlobal_B0E78D = 0;
+    DataGlobal_B0E788 = 0;
 }
 }
 } // namespace gamemd

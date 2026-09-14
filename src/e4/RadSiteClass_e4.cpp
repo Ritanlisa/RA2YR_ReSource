@@ -83,16 +83,6 @@ int __stdcall RadSiteClass::SaveLoad_Prefix(AbstractClass *aP0, int aP1)
 }
 } // namespace gamemd
 
-// 0x65B450
-namespace gamemd {
-int RadSiteClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-}
-}
-} // namespace gamemd
-
 // 0x65B3A0
 namespace gamemd {
 int RadSiteClass::StubReturn116()
@@ -106,6 +96,16 @@ namespace gamemd {
 int RadSiteClass::StubReturn69()
 {
 return 69;
+}
+} // namespace gamemd
+
+// 0x65B450
+namespace gamemd {
+int RadSiteClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+}
 }
 } // namespace gamemd
 

@@ -5,24 +5,16 @@
 // 0x41CBF0
 unsigned int * ObjectTypeClass::vt_entry_7C(unsigned int * a1)
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__stdcall ObjectTypeClass::vt_entry_7C(_DWORD *a1)
 {
-    int v1;
-    v1 = 2 * DataGlobal_889F58;
-    *a1 = 256;
-    *((int*)(a1) + 1) = 256;
-    *((int*)(a1) + 2) = v1;
-    return a1;
-}
-}
+  int v1; // esi
 
-// 0x41CF80
-unsigned int * ObjectTypeClass::Copy(unsigned int * a0, ObjectTypeClass * aP1)
-{
-{
-    *a0 = *(int *)aP1->__pad_0;
-    *((int*)(a0) + 1) = *(int *)&aP1->__pad_0[4];
-    *((int*)(a0) + 2) = *(int *)&aP1->__pad_0[8];
-    return a0;
+  v1 = 2 * MEMORY[0x889F58]; /*0x41cbfc*/
+  *a1 = 256; /*0x41cc07*/
+  a1[1] = 256; /*0x41cc09*/
+  a1[2] = v1; /*0x41cc0c*/
+  return a1; /*0x41cc0f*/
 }
 }
 
@@ -79,58 +71,6 @@ int __thiscall ObjectTypeClass::loadTypeMember_473980(void *this)
 }
 }
 
-// 0x474690
-char ObjectTypeClass::ReadBool(INIClass * Block, INIClass * aP2, int a4)
-{
-{
-    char Buffer[32];
-    sprintf(Buffer, g_Str_Trace__d, 360 * a4 / 256);
-    return INIClass::SetString(this, Block, aP2, (INIClass *)Buffer);
-}
-}
-
-// 0x4746E0
-int ObjectTypeClass::ReadPrerequisite(unsigned char * a2, unsigned char * a3, int a4)
-{
-{
-    char String[32];
-    if ( INIClass::GetString(this, a2, a3, &g_INI_DefaultBuffer, String, 32) )
-    return (atoi(String) << 8) / 360;
-    else
-    return a4;
-}
-}
-
-// 0x474740
-unsigned char ** ObjectTypeClass::ReadSoundList(unsigned char ** a2, unsigned char * a3, unsigned char * a4, unsigned char ** a5)
-{
-{
-    char Buffer[64];
-    if ( INIClass::GetString(this, a3, a4, &g_INI_DefaultBuffer, Buffer, 64) )
-  {
-    sscanf(Buffer, g_Str_Trace__d__d, &a4, &a3);
-    HIWORD(a4) = (short)a3;
-    *a2 = a4;
-    return a2;
-  }
-    else
-  {
-    *a2 = *a5;
-    return a2;
-  }
-}
-}
-
-// 0x4747C0
-char ObjectTypeClass::ReadBool2(INIClass * Block, INIClass * aP2, short * a4)
-{
-{
-    INIClass Buffer;
-    sprintf(Buffer.__pad_0, g_INI_Key_Digest.__pad_20, *a4, *((int*)(a4) + 1));
-    return INIClass::SetString(this, Block, aP2, &Buffer);
-}
-}
-
 // 0x474940
 int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2, int a4)
 {
@@ -166,49 +106,6 @@ int __thiscall ObjectTypeClass::loadTypeMember_5474940(
 }
 }
 
-// 0x4749E0
-int ObjectTypeClass::loadTypeMember_54749E0(CCINIClass * aP1, unsigned char * a2, unsigned int a4)
-{
-{
-    INIClass *v5;
-    char Destination[32];
-    v5 = (INIClass *)sub_473960(a4);
-    INIClass::GetString(this, (INIClass *)aP1, a2, v5, (INIClass *)Destination, 32);
-    return ObjectTypeClass::loadTypeMember_473980(Destination);
-}
-}
-
-// 0x474D50
-char ObjectTypeClass::ReadString(INIClass * Block, INIClass * aP2, unsigned char * a4)
-{
-{
-    INIClass Buffer;
-    sprintf(Buffer.__pad_0, (const char *const)&DataGlobal_818994.sectionCount, *a4, *((int*)(a4) + 1), *((int*)(a4) + 2));
-    return INIClass::SetString(this, Block, aP2, &Buffer);
-}
-}
-
-// 0x474E40
-int ObjectTypeClass::loadTypeMember_5474E40(INIClass * aP1, unsigned char * a2, int a4)
-{
-{
-    int v4;
-    ObjectClass *v5;
-    char Destination[32];
-    INIClass::GetString(this, aP1, a2, *(&DataGlobal_81BA88 + a4), (INIClass *)Destination, 32);
-    v4 = 0;
-    v5 = (ObjectClass *)&DataGlobal_81BA88;
-    while ( _strcmpi(Destination, *(char **)v5->__pad_0) )
-  {
-    v5 = (ObjectClass *)((char *)(v5) + 4);
-    ++v4;
-    if ( (int)v5 >= (int)&DataGlobal_81BABC )
-    return -1;
-  }
-    return v4;
-}
-}
-
 // 0x474F50
 int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
 {
@@ -230,140 +127,6 @@ int __thiscall sub_474F50(unsigned __int8 ***this, unsigned __int8 *a2, unsigned
   }
   INIClass::GetString(this, a2, a3, v4, Destination, 32); /*0x474f85*/
   return ObjectTypeClass_Read(Destination); /*0x474f93*/
-}
-}
-
-// 0x474FA0
-int ObjectTypeClass::ReadDouble(unsigned char * a2, unsigned char * a3, int a4)
-{
-{
-    char Destination[100];
-    INIClass::GetString(this, a2, a3, &g_INI_DefaultBuffer, Destination, 100);
-    if ( strlen(Destination) )
-    return VocClass::FindByName(Destination);
-    else
-    return a4;
-}
-}
-
-// 0x474FF0
-int ObjectTypeClass::ReadDouble2(INIClass * aP1, unsigned char * a2, void * a4)
-{
-{
-    INIClass *Name;
-    char Destination[32];
-    Name = (INIClass *)AbstractType::FindName(a4);
-    INIClass::GetString(this, aP1, a2, Name, (INIClass *)Destination, 32);
-    return StringTable::Lookup(Destination);
-}
-}
-
-// 0x475060
-int ObjectTypeClass::ReadBool3(INIClass * aP1, unsigned char * a2, void * a4)
-{
-{
-    INIClass *v5;
-    char Destination[32];
-    v5 = (INIClass *)sub_45DD20(a4);
-    INIClass::GetString(this, aP1, a2, v5, (INIClass *)Destination, 32);
-    return sub_45DD50(Destination);
-}
-}
-
-// 0x476240
-char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTypeClass * aP3)
-{
-{
-    int i;
-    int v5;
-    int v6;
-    CCINIClass *v8;
-    char v9;
-    char *v10;
-    char Source[509];
-    short v12;
-    char v13;
-    v10 = this;
-    Source[0] = DataGlobal_87C374.__pad_579C[33876];
-    memset(&Source[1], 0, 0x1FCu);
-    v12 = 0;
-    v13 = 0;
-    for ( i = 0; i < aP3->uniqueId; ++i )
-  {
-    if ( Source[0] )
-    strcat(Source, (const char *)&DataGlobal_817F40.nextObject);
-    v5 = *(int *)&aP3->__pad_0[4];
-    v9 = 0;
-    v6 = *(int *)(v5 + 4 * i);
-    v9 = HIBYTE(v6);
-    v8 = (CCINIClass *)(v6 & 0xFFFFFF);
-    strcat(Source, (const char *)(System_Read_6E7330(&v8) + 36));
-  }
-    return INIClass::SetString(v10, (INIClass *)Block, (INIClass *)a2, (INIClass *)Source);
-}
-}
-
-// 0x476FC0
-int ObjectTypeClass::loadTypeMember_476FC0(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3)
-{
-{
-    INIClass *v5;
-    INIClass Destination[2];
-    v5 = (INIClass *)sub_48E030((unsigned int)aP3);
-    if ( INIClass::GetString(this, (INIClass *)aP1, a2, v5, Destination, 128) )
-    return ObjectTypeClass::loadTypeMember_48DFF0(Destination);
-    else
-    return (int)aP3->__pad_0;
-}
-}
-
-// 0x477590
-int ObjectTypeClass::loadTypeMember_5477590(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3)
-{
-{
-    char *v4;
-    ObjectClass *result;
-    bool v6;
-    INIClass String[2];
-    INIClass::GetString(this, (INIClass *)aP1, a2, *(&DataGlobal_81BABC + (int)aP3), String, 128);
-    v4 = strtok(String[0].__pad_0, Delimiter.__pad_0);
-    result = (ObjectClass *)_strcmpi(v4, g_INI_Key_None);
-    if ( result )
-  {
-    if ( _strcmpi(v4, (char *)&DataGlobal_81BB58.headNode[1]) )
-    {
-    v6 = _strcmpi(v4, aStrong) == 0;
-    result = (ObjectClass *)2;
-    if ( !v6 )
-    return (int)aP3->__pad_0;
-    }
-    else
-    {
-    return 1;
-    }
-  }
-    return (int)result->__pad_0;
-}
-}
-
-// 0x48DFF0
-int ObjectTypeClass::loadTypeMember_48DFF0()
-{
-{
-    int v2;
-    const void **v3;
-    if ( !this )
-    return -1;
-    v2 = 0;
-    v3 = (const void **)&DataGlobal_81DA58;
-    while ( _strcmpi(*v3, this) )
-  {
-    ++v3;
-    ++v2;
-    if ( (int)v3 >= (int)DataGlobal_81DA78 )
-    return -1;
-  }
-    return v2;
 }
 }
 
@@ -683,17 +446,6 @@ int __thiscall ObjectTypeClass::Destruct(int this)
   ObjectTypeClass::ReleaseWaveAndString((int *)(this + 184)); /*0x5f7588*/
   ObjectTypeClass::ReleaseWaveAndString((int *)(this + 176)); /*0x5f7593*/
   return AbstractTypeClass::Dtor((_DWORD *)this); /*0x5f759f*/
-}
-}
-
-// 0x5F75C0
-unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
-{
-{
-    *a1 = 10;
-    *((int*)(a1) + 1) = 10;
-    *((int*)(a1) + 2) = 10;
-    return a1;
 }
 }
 
@@ -1398,29 +1150,6 @@ int __thiscall ObjectTypeClass::FreeLoaderBuffer(int this)
 }
 }
 
-// 0x6E5E70
-int ObjectTypeClass::FindByName()
-{
-{
-    int v2;
-    int v3;
-    if ( !this )
-    return 0;
-    v2 = 0;
-    if ( *(int *)&DataGlobal_B05488.__pad_579C[15212] <= 0 )
-    return 0;
-    while ( 1 )
-  {
-    v3 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[15200] + 4 * v2);
-    if ( !_strcmpi((const void *)(v3 + 36), this) || !_strcmpi((const void *)(v3 + 100), this) )
-    break;
-    if ( ++v2 >= *(int *)&DataGlobal_B05488.__pad_579C[15212] )
-    return 0;
-  }
-    return v3;
-}
-}
-
 // 0x712040
 int ObjectTypeClass::SelectArtOrAlt()
 {
@@ -1621,15 +1350,6 @@ int __thiscall ObjectTypeClass::loadTypeMember_57179D0(_DWORD *this, WeaponTypeC
 }
 }
 
-// 0x717A30
-int ObjectTypeClass::loadTypeMember_5717A30(int a2)
-{
-{
-    *(void**)this = a2;
-    return a2;
-}
-}
-
 // 0x717A50
 int ObjectTypeClass::loadTypeMember_5717A50(int a2)
 {
@@ -1643,14 +1363,6 @@ int __thiscall sub_717A50(_DWORD *this, int a2)
     result = 1; /*0x717a58*/
   *(this + 1) = result; /*0x717a5d*/
   return result; /*0x717a60*/
-}
-}
-
-// 0x717A70
-int ObjectTypeClass::loadTypeMember_5717A70()
-{
-{
-    return this->unused_9B;
 }
 }
 
@@ -1670,14 +1382,6 @@ int __thiscall sub_717A80(_DWORD *this, int a2)
 }
 }
 
-// 0x717AA0
-int ObjectTypeClass::loadTypeMember_5717AA0()
-{
-{
-    return this->Armor;
-}
-}
-
 // 0x717AB0
 int ObjectTypeClass::loadTypeMember_5717AB0(int a2)
 {
@@ -1691,31 +1395,6 @@ int __thiscall sub_717AB0(_DWORD *this, int a2)
     result = 1; /*0x717ab8*/
   *(this + 3) = result; /*0x717abd*/
   return result; /*0x717ac0*/
-}
-}
-
-// 0x717AD0
-int ObjectTypeClass::loadTypeMember_5717AD0()
-{
-{
-    return this->Strength;
-}
-}
-
-// 0x717AE0
-BOOL ObjectTypeClass::loadTypeMember_5717AE0()
-{
-{
-    return *(void**)this == 0;
-}
-}
-
-// 0x717BF0
-unsigned int * ObjectTypeClass::CheckFlag(ObjectTypeClass * aP1)
-{
-{
-    *(void**)this = &vt_DynamicVectorClass_AnimTypeClass_const;
-    return this;
 }
 }
 
@@ -1757,6 +1436,330 @@ _DWORD *__thiscall sub_717C00(_DWORD *this, _DWORD *a2)
   }
   while ( v6 < *(this + 2) ); /*0x717c51*/
   return this; /*0x717c55*/
+}
+}
+
+// 0x41CF80
+unsigned int * ObjectTypeClass::Copy(unsigned int * a0, ObjectTypeClass * aP1)
+{
+{
+    *a0 = *(int *)aP1->__pad_0;
+    *((int*)(a0) + 1) = *(int *)&aP1->__pad_0[4];
+    *((int*)(a0) + 2) = *(int *)&aP1->__pad_0[8];
+    return a0;
+}
+}
+
+// 0x474690
+char ObjectTypeClass::ReadBool(INIClass * Block, INIClass * aP2, int a4)
+{
+{
+    char Buffer[32];
+    sprintf(Buffer, g_Str_Trace__d, 360 * a4 / 256);
+    return INIClass::SetString(this, Block, aP2, (INIClass *)Buffer);
+}
+}
+
+// 0x4746E0
+int ObjectTypeClass::ReadPrerequisite(unsigned char * a2, unsigned char * a3, int a4)
+{
+{
+    char String[32];
+    if ( INIClass::GetString(this, a2, a3, &g_INI_DefaultBuffer, String, 32) )
+    return (atoi(String) << 8) / 360;
+    else
+    return a4;
+}
+}
+
+// 0x474740
+unsigned char ** ObjectTypeClass::ReadSoundList(unsigned char ** a2, unsigned char * a3, unsigned char * a4, unsigned char ** a5)
+{
+{
+    char Buffer[64];
+    if ( INIClass::GetString(this, a3, a4, &g_INI_DefaultBuffer, Buffer, 64) )
+  {
+    sscanf(Buffer, g_Str_Trace__d__d, &a4, &a3);
+    HIWORD(a4) = (short)a3;
+    *a2 = a4;
+    return a2;
+  }
+    else
+  {
+    *a2 = *a5;
+    return a2;
+  }
+}
+}
+
+// 0x4747C0
+char ObjectTypeClass::ReadBool2(INIClass * Block, INIClass * aP2, short * a4)
+{
+{
+    INIClass Buffer;
+    sprintf(Buffer.__pad_0, g_INI_Key_Digest.__pad_20, *a4, *((int*)(a4) + 1));
+    return INIClass::SetString(this, Block, aP2, &Buffer);
+}
+}
+
+// 0x4749E0
+int ObjectTypeClass::loadTypeMember_54749E0(CCINIClass * aP1, unsigned char * a2, unsigned int a4)
+{
+{
+    INIClass *v5;
+    char Destination[32];
+    v5 = (INIClass *)sub_473960(a4);
+    INIClass::GetString(this, (INIClass *)aP1, a2, v5, (INIClass *)Destination, 32);
+    return ObjectTypeClass::loadTypeMember_473980(Destination);
+}
+}
+
+// 0x474D50
+char ObjectTypeClass::ReadString(INIClass * Block, INIClass * aP2, unsigned char * a4)
+{
+{
+    INIClass Buffer;
+    sprintf(Buffer.__pad_0, (const char *const)&DataGlobal_818994.sectionCount, *a4, *((int*)(a4) + 1), *((int*)(a4) + 2));
+    return INIClass::SetString(this, Block, aP2, &Buffer);
+}
+}
+
+// 0x474E40
+int ObjectTypeClass::loadTypeMember_5474E40(INIClass * aP1, unsigned char * a2, int a4)
+{
+{
+    int v4;
+    ObjectClass *v5;
+    char Destination[32];
+    INIClass::GetString(this, aP1, a2, *(&DataGlobal_81BA88 + a4), (INIClass *)Destination, 32);
+    v4 = 0;
+    v5 = (ObjectClass *)&DataGlobal_81BA88;
+    while ( _strcmpi(Destination, *(char **)v5->__pad_0) )
+  {
+    v5 = (ObjectClass *)((char *)(v5) + 4);
+    ++v4;
+    if ( (int)v5 >= (int)&DataGlobal_81BABC )
+    return -1;
+  }
+    return v4;
+}
+}
+
+// 0x474FA0
+int ObjectTypeClass::ReadDouble(unsigned char * a2, unsigned char * a3, int a4)
+{
+{
+    char Destination[100];
+    INIClass::GetString(this, a2, a3, &g_INI_DefaultBuffer, Destination, 100);
+    if ( strlen(Destination) )
+    return VocClass::FindByName(Destination);
+    else
+    return a4;
+}
+}
+
+// 0x474FF0
+int ObjectTypeClass::ReadDouble2(INIClass * aP1, unsigned char * a2, void * a4)
+{
+{
+    INIClass *Name;
+    char Destination[32];
+    Name = (INIClass *)AbstractType::FindName(a4);
+    INIClass::GetString(this, aP1, a2, Name, (INIClass *)Destination, 32);
+    return StringTable::Lookup(Destination);
+}
+}
+
+// 0x475060
+int ObjectTypeClass::ReadBool3(INIClass * aP1, unsigned char * a2, void * a4)
+{
+{
+    INIClass *v5;
+    char Destination[32];
+    v5 = (INIClass *)sub_45DD20(a4);
+    INIClass::GetString(this, aP1, a2, v5, (INIClass *)Destination, 32);
+    return sub_45DD50(Destination);
+}
+}
+
+// 0x476240
+char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTypeClass * aP3)
+{
+{
+    int i;
+    int v5;
+    int v6;
+    CCINIClass *v8;
+    char v9;
+    char *v10;
+    char Source[509];
+    short v12;
+    char v13;
+    v10 = this;
+    Source[0] = DataGlobal_87C374.__pad_579C[33876];
+    memset(&Source[1], 0, 0x1FCu);
+    v12 = 0;
+    v13 = 0;
+    for ( i = 0; i < aP3->uniqueId; ++i )
+  {
+    if ( Source[0] )
+    strcat(Source, (const char *)&DataGlobal_817F40.nextObject);
+    v5 = *(int *)&aP3->__pad_0[4];
+    v9 = 0;
+    v6 = *(int *)(v5 + 4 * i);
+    v9 = HIBYTE(v6);
+    v8 = (CCINIClass *)(v6 & 0xFFFFFF);
+    strcat(Source, (const char *)(System_Read_6E7330(&v8) + 36));
+  }
+    return INIClass::SetString(v10, (INIClass *)Block, (INIClass *)a2, (INIClass *)Source);
+}
+}
+
+// 0x476FC0
+int ObjectTypeClass::loadTypeMember_476FC0(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3)
+{
+{
+    INIClass *v5;
+    INIClass Destination[2];
+    v5 = (INIClass *)sub_48E030((unsigned int)aP3);
+    if ( INIClass::GetString(this, (INIClass *)aP1, a2, v5, Destination, 128) )
+    return ObjectTypeClass::loadTypeMember_48DFF0(Destination);
+    else
+    return (int)aP3->__pad_0;
+}
+}
+
+// 0x477590
+int ObjectTypeClass::loadTypeMember_5477590(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3)
+{
+{
+    char *v4;
+    ObjectClass *result;
+    bool v6;
+    INIClass String[2];
+    INIClass::GetString(this, (INIClass *)aP1, a2, *(&DataGlobal_81BABC + (int)aP3), String, 128);
+    v4 = strtok(String[0].__pad_0, Delimiter.__pad_0);
+    result = (ObjectClass *)_strcmpi(v4, g_INI_Key_None);
+    if ( result )
+  {
+    if ( _strcmpi(v4, (char *)&DataGlobal_81BB58.headNode[1]) )
+    {
+    v6 = _strcmpi(v4, aStrong) == 0;
+    result = (ObjectClass *)2;
+    if ( !v6 )
+    return (int)aP3->__pad_0;
+    }
+    else
+    {
+    return 1;
+    }
+  }
+    return (int)result->__pad_0;
+}
+}
+
+// 0x48DFF0
+int ObjectTypeClass::loadTypeMember_48DFF0()
+{
+{
+    int v2;
+    const void **v3;
+    if ( !this )
+    return -1;
+    v2 = 0;
+    v3 = (const void **)&DataGlobal_81DA58;
+    while ( _strcmpi(*v3, this) )
+  {
+    ++v3;
+    ++v2;
+    if ( (int)v3 >= (int)DataGlobal_81DA78 )
+    return -1;
+  }
+    return v2;
+}
+}
+
+// 0x5F75C0
+unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
+{
+{
+    *a1 = 10;
+    *((int*)(a1) + 1) = 10;
+    *((int*)(a1) + 2) = 10;
+    return a1;
+}
+}
+
+// 0x6E5E70
+int ObjectTypeClass::FindByName()
+{
+{
+    int v2;
+    int v3;
+    if ( !this )
+    return 0;
+    v2 = 0;
+    if ( *(int *)&DataGlobal_B05488.__pad_579C[15212] <= 0 )
+    return 0;
+    while ( 1 )
+  {
+    v3 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[15200] + 4 * v2);
+    if ( !_strcmpi((const void *)(v3 + 36), this) || !_strcmpi((const void *)(v3 + 100), this) )
+    break;
+    if ( ++v2 >= *(int *)&DataGlobal_B05488.__pad_579C[15212] )
+    return 0;
+  }
+    return v3;
+}
+}
+
+// 0x717A30
+int ObjectTypeClass::loadTypeMember_5717A30(int a2)
+{
+{
+    *(void**)this = a2;
+    return a2;
+}
+}
+
+// 0x717A70
+int ObjectTypeClass::loadTypeMember_5717A70()
+{
+{
+    return this->unused_9B;
+}
+}
+
+// 0x717AA0
+int ObjectTypeClass::loadTypeMember_5717AA0()
+{
+{
+    return this->Armor;
+}
+}
+
+// 0x717AD0
+int ObjectTypeClass::loadTypeMember_5717AD0()
+{
+{
+    return this->Strength;
+}
+}
+
+// 0x717AE0
+BOOL ObjectTypeClass::loadTypeMember_5717AE0()
+{
+{
+    return *(void**)this == 0;
+}
+}
+
+// 0x717BF0
+unsigned int * ObjectTypeClass::CheckFlag(ObjectTypeClass * aP1)
+{
+{
+    *(void**)this = &vt_DynamicVectorClass_AnimTypeClass_const;
+    return this;
 }
 }
 

@@ -14,731 +14,6 @@ char __thiscall MSPCXAnim::_vt07(_BYTE *this)
 }
 }
 
-// 0x5CED70
-MSPCXAnim * MSPCXAnim::QueryInterface(char a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-MSPCXAnim *__thiscall MSPCXAnim::QueryInterface(_DWORD *this, char a2)
-{
-  void (__thiscall ***v3)(_DWORD, int); // ecx
-
-  v3 = (void (__thiscall ***)(_DWORD, int))*(this + 9); /*0x5ced73*/
-  *this = &vt_MSPCXAnim; /*0x5ced76*/
-  if ( v3 ) /*0x5ced7e*/
-    (**v3)(v3, 1); /*0x5ced84*/
-  *this = &vt_MSAnim; /*0x5ced8a*/
-  if ( (a2 & 1) != 0 ) /*0x5ced92*/
-    __3_YAXPAX_Z(this); /*0x5ced95*/
-  return (MSPCXAnim *)this; /*0x5ced9f*/
-}
-}
-
-// 0x5D06D0
-namespace gamemd {
-void MSPCXAnim_26::ddtor()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MSPCXAnim_26_::_vt03(int this)
-{
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x5d06d6*/
-  this->MSPCXAnim_26_field_0x10 = 0; /*0x5d06d9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d06e0*/
-  {
-    __3_YAXPAX_Z(v2); /*0x5d06e6*/
-    this->MSPCXAnim_26_field_0x4 = 0; /*0x5d06ee*/
-  }
-  *(_BYTE *)(this + 13) = 0; /*0x5d06f1*/
-  this->MSPCXAnim_26_field_0x8 = 0; /*0x5d06f4*/
-}
-}
-} // namespace gamemd
-
-// 0x5D0700
-namespace gamemd {
-unsigned int MSPCXAnim_26::Draw(int a2)
-{
-{
-    if ( (unsigned char)this->MSPCXAnim_26_field_0xC )
-    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x5D0720
-namespace gamemd {
-int MSPCXAnim_26::GetFrame(int a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSPCXAnim_26_::_vt06(_DWORD *this, int a2)
-{
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x5d072a*/
-}
-}
-} // namespace gamemd
-
-// 0x5D0730
-namespace gamemd {
-void MSPCXAnim_26::FreeData()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MSPCXAnim_26_::sub_5D0730(int this)
-{
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x5d0736*/
-  this->MSPCXAnim_26_field_0x10 = 0; /*0x5d0739*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d0740*/
-  {
-    __3_YAXPAX_Z(v2); /*0x5d0746*/
-    this->MSPCXAnim_26_field_0x4 = 0; /*0x5d074e*/
-  }
-  *(_BYTE *)(this + 13) = 0; /*0x5d0751*/
-  this->MSPCXAnim_26_field_0x8 = 0; /*0x5d0754*/
-}
-}
-} // namespace gamemd
-
-// 0x5D0760
-namespace gamemd {
-unsigned int MSPCXAnim_26::GetCount(int a2)
-{
-{
-    if ( (unsigned char)this->MSPCXAnim_26_field_0xC )
-    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x5D0790
-namespace gamemd {
-void MSPCXAnim_26::FreeData_0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MSPCXAnim_26_::sub_5D0790(int this)
-{
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x5d0796*/
-  this->MSPCXAnim_26_field_0x10 = 0; /*0x5d0799*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d07a0*/
-  {
-    __3_YAXPAX_Z(v2); /*0x5d07a6*/
-    this->MSPCXAnim_26_field_0x4 = 0; /*0x5d07ae*/
-  }
-  *(_BYTE *)(this + 13) = 0; /*0x5d07b1*/
-  this->MSPCXAnim_26_field_0x8 = 0; /*0x5d07b4*/
-}
-}
-} // namespace gamemd
-
-// 0x5D07C0
-namespace gamemd {
-unsigned int MSPCXAnim_26::GetCount_0(int a2)
-{
-{
-    if ( (unsigned char)this->MSPCXAnim_26_field_0xC )
-    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x5D0FA0
-namespace gamemd {
-char MSPCXAnim_26::AddRef(int a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSPCXAnim_26_::_vt01(int *this, int a2)
-{
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x5d0fa2*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x5d0fad*/
-  {
-    v3 = 0; /*0x5d0faf*/
-    if ( v2 <= 0 ) /*0x5d0fb3*/
-      return 1; /*0x5d0fd3*/
-    v4 = (_DWORD *)*(this + 1); /*0x5d0fb5*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x5d0fbb*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x5d0fc4*/
-    {
-      ++v3; /*0x5d0fc6*/
-      ++v4; /*0x5d0fc7*/
-      if ( v3 >= v2 ) /*0x5d0fcc*/
-        return 1; /*0x5d0fcc*/
-    }
-  }
-  return 0; /*0x5d0fce*/
-}
-}
-} // namespace gamemd
-
-// 0x5D0FE0
-namespace gamemd {
-char MSPCXAnim_26::AllocCopyData_4B(int a2, unsigned int * a3)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSPCXAnim_26_::sub_5D0FE0(void *this, int a2, _DWORD *a3)
-{
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x5d0fec*/
-  {
-    *((_BYTE *)this + 12) = 0; /*0x5d0ff6*/
-    if ( a3 ) /*0x5d0ffc*/
-      v4 = a3; /*0x5d1012*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d100e*/
-    *((_BYTE *)this + 12) = 1; /*0x5d1016*/
-    if ( v4 ) /*0x5d101a*/
-    {
-      if ( this->MSPCXAnim_26_field_0x4 ) /*0x5d1025*/
-      {
-        v6 = this->MSPCXAnim_26_field_0x8; /*0x5d102c*/
-        if ( a2 < v6 ) /*0x5d1031*/
-          v6 = a2; /*0x5d1033*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->MSPCXAnim_26_field_0x4 + 4 * i - 4) ) /*0x5d1039*/
-          ++i; /*0x5d103e*/
-        if ( *((_BYTE *)this + 13) ) /*0x5d104b*/
-        {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d1056*/
-          this->MSPCXAnim_26_field_0x4 = 0; /*0x5d105e*/
-        }
-      }
-      this->MSPCXAnim_26_field_0x4 = v4; /*0x5d1067*/
-      this->MSPCXAnim_26_field_0x8 = a2; /*0x5d106f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x5d1072*/
-      return 1; /*0x5d1078*/
-    }
-    else
-    {
-      return 0; /*0x5d101f*/
-    }
-  }
-  else
-  {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d1082*/
-    return 1; /*0x5d1088*/
-  }
-}
-}
-} // namespace gamemd
-
-// 0x5D1090
-namespace gamemd {
-void MSPCXAnim_26::FreeData_1()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MSPCXAnim_26_::sub_5D1090(int this)
-{
-  if ( this->MSPCXAnim_26_field_0x4 && *(_BYTE *)(this + 13) ) /*0x5d109d*/
-  {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x5d10a3*/
-    this->MSPCXAnim_26_field_0x4 = 0; /*0x5d10ab*/
-  }
-  *(_BYTE *)(this + 13) = 0; /*0x5d10ae*/
-  this->MSPCXAnim_26_field_0x8 = 0; /*0x5d10b1*/
-}
-}
-} // namespace gamemd
-
-// 0x5D10C0
-namespace gamemd {
-int MSPCXAnim_26::FindIndex(unsigned int * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSPCXAnim_26_::sub_5D10C0(int this, _DWORD *a2)
-{
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->MSPCXAnim_26_field_0xC ) /*0x5d10c0*/
-    return 0; /*0x5d10c8*/
-  v3 = this->MSPCXAnim_26_field_0x8; /*0x5d10ce*/
-  result = 0; /*0x5d10d1*/
-  if ( v3 <= 0 ) /*0x5d10d5*/
-    return -1; /*0x5d10ec*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x5d10db*/
-  {
-    if ( ++result >= v3 ) /*0x5d10ea*/
-      return -1; /*0x5d10ea*/
-  }
-  return result; /*0x5d10ca*/
-}
-}
-} // namespace gamemd
-
-// 0x5D1100
-namespace gamemd {
-unsigned int MSPCXAnim_26::GetCount_1(int a2)
-{
-{
-    if ( (unsigned char)this->MSPCXAnim_26_field_0xC )
-    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x5D1120
-namespace gamemd {
-char MSPCXAnim_26::Release(int a2, unsigned int * a3)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSPCXAnim_26_::_vt02(void *this, int a2, _DWORD *a3)
-{
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x5d112c*/
-  {
-    *((_BYTE *)this + 12) = 0; /*0x5d1132*/
-    if ( a3 ) /*0x5d1138*/
-      v4 = a3; /*0x5d114e*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d114a*/
-    *((_BYTE *)this + 12) = 1; /*0x5d1152*/
-    if ( !v4 ) /*0x5d1156*/
-      return 0; /*0x5d11ca*/
-    if ( this->MSPCXAnim_26_field_0x4 ) /*0x5d1158*/
-    {
-      v5 = this->MSPCXAnim_26_field_0x8; /*0x5d115f*/
-      if ( a2 < v5 ) /*0x5d1164*/
-        v5 = a2; /*0x5d1166*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MSPCXAnim_26_field_0x4 + 4 * i - 4) ) /*0x5d116c*/
-        ++i; /*0x5d1171*/
-      if ( *((_BYTE *)this + 13) ) /*0x5d117e*/
-      {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d1189*/
-        this->MSPCXAnim_26_field_0x4 = 0; /*0x5d1191*/
-      }
-    }
-    this->MSPCXAnim_26_field_0x4 = v4; /*0x5d119a*/
-    this->MSPCXAnim_26_field_0x8 = a2; /*0x5d11a2*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x5d11a5*/
-  }
-  else
-  {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d11ae*/
-  }
-  v7 = this->MSPCXAnim_26_field_0x8; /*0x5d11b1*/
-  if ( v7 < this->MSPCXAnim_26_field_0x10 ) /*0x5d11b9*/
-    this->MSPCXAnim_26_field_0x10 = v7; /*0x5d11bb*/
-  return 1; /*0x5d11be*/
-}
-}
-} // namespace gamemd
-
-// 0x5D11D0
-namespace gamemd {
-int MSPCXAnim_26::Load(unsigned int * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSPCXAnim_26_::_vt04(int *this, _DWORD *a2)
-{
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x5d11d0*/
-  result = 0; /*0x5d11d3*/
-  if ( v2 <= 0 ) /*0x5d11d8*/
-    return -1; /*0x5d11ef*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x5d11de*/
-  {
-    if ( ++result >= v2 ) /*0x5d11ed*/
-      return -1; /*0x5d11ed*/
-  }
-  return result; /*0x5d11f2*/
-}
-}
-} // namespace gamemd
-
-// 0x5D1380
-namespace gamemd {
-char MSPCXAnim_26::AllocCopyData_4B_0(int a2, unsigned int * a3)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSPCXAnim_26_::sub_5D1380(void *this, int a2, _DWORD *a3)
-{
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x5d138c*/
-  {
-    *((_BYTE *)this + 12) = 0; /*0x5d1392*/
-    if ( a3 ) /*0x5d1398*/
-      v4 = a3; /*0x5d13ae*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d13aa*/
-    *((_BYTE *)this + 12) = 1; /*0x5d13b2*/
-    if ( !v4 ) /*0x5d13b6*/
-      return 0; /*0x5d142a*/
-    if ( this->MSPCXAnim_26_field_0x4 ) /*0x5d13b8*/
-    {
-      v5 = this->MSPCXAnim_26_field_0x8; /*0x5d13bf*/
-      if ( a2 < v5 ) /*0x5d13c4*/
-        v5 = a2; /*0x5d13c6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MSPCXAnim_26_field_0x4 + 4 * i - 4) ) /*0x5d13cc*/
-        ++i; /*0x5d13d1*/
-      if ( *((_BYTE *)this + 13) ) /*0x5d13de*/
-      {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d13e9*/
-        this->MSPCXAnim_26_field_0x4 = 0; /*0x5d13f1*/
-      }
-    }
-    this->MSPCXAnim_26_field_0x4 = v4; /*0x5d13fa*/
-    this->MSPCXAnim_26_field_0x8 = a2; /*0x5d1402*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x5d1405*/
-  }
-  else
-  {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d140e*/
-  }
-  v7 = this->MSPCXAnim_26_field_0x8; /*0x5d1411*/
-  if ( v7 < this->MSPCXAnim_26_field_0x10 ) /*0x5d1419*/
-    this->MSPCXAnim_26_field_0x10 = v7; /*0x5d141b*/
-  return 1; /*0x5d141e*/
-}
-}
-} // namespace gamemd
-
-// 0x5D1430
-namespace gamemd {
-int MSPCXAnim_26::FindIndex_0(unsigned int * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSPCXAnim_26_::sub_5D1430(int *this, _DWORD *a2)
-{
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x5d1430*/
-  result = 0; /*0x5d1433*/
-  if ( v2 <= 0 ) /*0x5d1438*/
-    return -1; /*0x5d144f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x5d143e*/
-  {
-    if ( ++result >= v2 ) /*0x5d144d*/
-      return -1; /*0x5d144d*/
-  }
-  return result; /*0x5d1452*/
-}
-}
-} // namespace gamemd
-
-// 0x5D15E0
-namespace gamemd {
-char MSPCXAnim_26::AllocCopyData_4B_1(int a2, unsigned int * a3)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSPCXAnim_26_::sub_5D15E0(void *this, int a2, _DWORD *a3)
-{
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x5d15ec*/
-  {
-    *((_BYTE *)this + 12) = 0; /*0x5d15f2*/
-    if ( a3 ) /*0x5d15f8*/
-      v4 = a3; /*0x5d160e*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d160a*/
-    *((_BYTE *)this + 12) = 1; /*0x5d1612*/
-    if ( !v4 ) /*0x5d1616*/
-      return 0; /*0x5d168a*/
-    if ( this->MSPCXAnim_26_field_0x4 ) /*0x5d1618*/
-    {
-      v5 = this->MSPCXAnim_26_field_0x8; /*0x5d161f*/
-      if ( a2 < v5 ) /*0x5d1624*/
-        v5 = a2; /*0x5d1626*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MSPCXAnim_26_field_0x4 + 4 * i - 4) ) /*0x5d162c*/
-        ++i; /*0x5d1631*/
-      if ( *((_BYTE *)this + 13) ) /*0x5d163e*/
-      {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d1649*/
-        this->MSPCXAnim_26_field_0x4 = 0; /*0x5d1651*/
-      }
-    }
-    this->MSPCXAnim_26_field_0x4 = v4; /*0x5d165a*/
-    this->MSPCXAnim_26_field_0x8 = a2; /*0x5d1662*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x5d1665*/
-  }
-  else
-  {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d166e*/
-  }
-  v7 = this->MSPCXAnim_26_field_0x8; /*0x5d1671*/
-  if ( v7 < this->MSPCXAnim_26_field_0x10 ) /*0x5d1679*/
-    this->MSPCXAnim_26_field_0x10 = v7; /*0x5d167b*/
-  return 1; /*0x5d167e*/
-}
-}
-} // namespace gamemd
-
-// 0x5D1690
-namespace gamemd {
-int MSPCXAnim_26::FindIndex_1(unsigned int * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSPCXAnim_26_::sub_5D1690(int *this, _DWORD *a2)
-{
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x5d1690*/
-  result = 0; /*0x5d1693*/
-  if ( v2 <= 0 ) /*0x5d1698*/
-    return -1; /*0x5d16af*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x5d169e*/
-  {
-    if ( ++result >= v2 ) /*0x5d16ad*/
-      return -1; /*0x5d16ad*/
-  }
-  return result; /*0x5d16b2*/
-}
-}
-} // namespace gamemd
-
-// 0x5D18A0
-namespace gamemd {
-VectorClass * MSPCXAnim_26::Constructor_VectorClass_MapStage___(char a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall MSPCXAnim_26_::Constructor_VectorClass_MapStage___(_DWORD *this, char a2)
-{
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5d18a3*/
-  *this = &vt_VectorClass_MapStage; /*0x5d18a6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d18b0*/
-  {
-    __3_YAXPAX_Z(v3); /*0x5d18b8*/
-    *(this + 1) = 0; /*0x5d18c0*/
-  }
-  *((_BYTE *)this + 13) = 0; /*0x5d18cb*/
-  *(this + 2) = 0; /*0x5d18d1*/
-  if ( (a2 & 1) != 0 ) /*0x5d18d8*/
-    __3_YAXPAX_Z(this); /*0x5d18db*/
-  return (VectorClass *)this; /*0x5d18e5*/
-}
-}
-} // namespace gamemd
-
-// 0x5D18F0
-namespace gamemd {
-DynamicVector * MSPCXAnim_26::QueryInterface(char a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MSPCXAnim_26_::QueryInterface(_DWORD *this, char a2)
-{
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5d18f3*/
-  *this = &vt_VectorClass_MapStage; /*0x5d18f6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d1900*/
-  {
-    __3_YAXPAX_Z(v3); /*0x5d1908*/
-    *(this + 1) = 0; /*0x5d1910*/
-  }
-  *((_BYTE *)this + 13) = 0; /*0x5d191b*/
-  *(this + 2) = 0; /*0x5d1921*/
-  if ( (a2 & 1) != 0 ) /*0x5d1928*/
-    __3_YAXPAX_Z(this); /*0x5d192b*/
-  return (DynamicVector *)this; /*0x5d1935*/
-}
-}
-} // namespace gamemd
-
-// 0x5D1990
-namespace gamemd {
-DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSAnimEntry___(char a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MSPCXAnim_26_::Constructor_VectorClass_MSAnimEntry___(_DWORD *this, char a2)
-{
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5d1993*/
-  *this = &vt_VectorClass_MSAnimEntry; /*0x5d1996*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d19a0*/
-  {
-    __3_YAXPAX_Z(v3); /*0x5d19a8*/
-    *(this + 1) = 0; /*0x5d19b0*/
-  }
-  *((_BYTE *)this + 13) = 0; /*0x5d19bb*/
-  *(this + 2) = 0; /*0x5d19c1*/
-  if ( (a2 & 1) != 0 ) /*0x5d19c8*/
-    __3_YAXPAX_Z(this); /*0x5d19cb*/
-  return (DynamicVector *)this; /*0x5d19d5*/
-}
-}
-} // namespace gamemd
-
-// 0x5D1A30
-namespace gamemd {
-DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSSfxEntry___(char a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MSPCXAnim_26_::Constructor_VectorClass_MSSfxEntry___(_DWORD *this, char a2)
-{
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5d1a33*/
-  *this = &vt_VectorClass_MSSfxEntry; /*0x5d1a36*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d1a40*/
-  {
-    __3_YAXPAX_Z(v3); /*0x5d1a48*/
-    *(this + 1) = 0; /*0x5d1a50*/
-  }
-  *((_BYTE *)this + 13) = 0; /*0x5d1a5b*/
-  *(this + 2) = 0; /*0x5d1a61*/
-  if ( (a2 & 1) != 0 ) /*0x5d1a68*/
-    __3_YAXPAX_Z(this); /*0x5d1a6b*/
-  return (DynamicVector *)this; /*0x5d1a75*/
-}
-}
-} // namespace gamemd
-
-// 0x5D05A0
-namespace gamemd {
-void MSPCXAnim_42::FreeData()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MSPCXAnim_42_::sub_5D05A0(int this)
-{
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x5d05a6*/
-  this->MSPCXAnim_42_field_0x10 = 0; /*0x5d05a9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d05b0*/
-  {
-    __3_YAXPAX_Z(v2); /*0x5d05b6*/
-    this->MSPCXAnim_42_field_0x4 = 0; /*0x5d05be*/
-  }
-  *(_BYTE *)(this + 13) = 0; /*0x5d05c1*/
-  this->MSPCXAnim_42_field_0x8 = 0; /*0x5d05c4*/
-}
-}
-} // namespace gamemd
-
-// 0x5D05D0
-namespace gamemd {
-unsigned int MSPCXAnim_42::GetCount_8B(int a2)
-{
-{
-    if ( (unsigned char)this->MSPCXAnim_42_field_0xC )
-    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 3;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x5D0610
-namespace gamemd {
-void MSPCXAnim_42::FreeData_0()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MSPCXAnim_42_::sub_5D0610(int this)
-{
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x5d0616*/
-  this->MSPCXAnim_42_field_0x10 = 0; /*0x5d0619*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d0620*/
-  {
-    __3_YAXPAX_Z(v2); /*0x5d0626*/
-    this->MSPCXAnim_42_field_0x4 = 0; /*0x5d062e*/
-  }
-  *(_BYTE *)(this + 13) = 0; /*0x5d0631*/
-  this->MSPCXAnim_42_field_0x8 = 0; /*0x5d0634*/
-}
-}
-} // namespace gamemd
-
-// 0x5D0640
-namespace gamemd {
-unsigned int MSPCXAnim_42::GetCount(int a2)
-{
-{
-    if ( (unsigned char)this->MSPCXAnim_42_field_0xC )
-    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x5D0670
-namespace gamemd {
-void MSPCXAnim_42::FreeData_1()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MSPCXAnim_42_::sub_5D0670(int this)
-{
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x5d0676*/
-  this->MSPCXAnim_42_field_0x10 = 0; /*0x5d0679*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d0680*/
-  {
-    __3_YAXPAX_Z(v2); /*0x5d0686*/
-    this->MSPCXAnim_42_field_0x4 = 0; /*0x5d068e*/
-  }
-  *(_BYTE *)(this + 13) = 0; /*0x5d0691*/
-  this->MSPCXAnim_42_field_0x8 = 0; /*0x5d0694*/
-}
-}
-} // namespace gamemd
-
-// 0x5D06A0
-namespace gamemd {
-unsigned int MSPCXAnim_42::GetCount_0(int a2)
-{
-{
-    if ( (unsigned char)this->MSPCXAnim_42_field_0xC )
-    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x5D0780
-namespace gamemd {
-int MSPCXAnim_42::GetFrame(int a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSPCXAnim_42_::_vt06(_DWORD *this, int a2)
-{
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x5d078a*/
-}
-}
-} // namespace gamemd
-
 // 0x5D09C0
 namespace gamemd {
 char MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
@@ -813,28 +88,252 @@ char __thiscall MSPCXAnim_42_::sub_5D09C0(void *this, int a2, _DWORD *a3)
 }
 } // namespace gamemd
 
+// 0x5CED70
+MSPCXAnim * MSPCXAnim::QueryInterface(char a2)
+{
+{
+    void (__thiscall ***v3)(int, int);
+    v3 = (void (__thiscall ***)(int, int))*(this + 9);
+    *(void**)this = &vt_MSPCXAnim;
+    if ( v3 )
+    (**v3)(v3, 1);
+    *(void**)this = &vt_MSAnim;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (MSPCXAnim *)this;
+}
+}
+
+// 0x5D05A0
+namespace gamemd {
+void MSPCXAnim_42::FreeData()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->MSPCXAnim_42_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->MSPCXAnim_42_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->MSPCXAnim_42_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D05D0
+namespace gamemd {
+unsigned int MSPCXAnim_42::GetCount_8B(int a2)
+{
+{
+    if ( (unsigned char)this->MSPCXAnim_42_field_0xC )
+    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 3;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D0610
+namespace gamemd {
+void MSPCXAnim_42::FreeData_0()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->MSPCXAnim_42_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->MSPCXAnim_42_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->MSPCXAnim_42_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D0640
+namespace gamemd {
+unsigned int MSPCXAnim_42::GetCount(int a2)
+{
+{
+    if ( (unsigned char)this->MSPCXAnim_42_field_0xC )
+    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D0670
+namespace gamemd {
+void MSPCXAnim_42::FreeData_1()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->MSPCXAnim_42_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->MSPCXAnim_42_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->MSPCXAnim_42_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D06A0
+namespace gamemd {
+unsigned int MSPCXAnim_42::GetCount_0(int a2)
+{
+{
+    if ( (unsigned char)this->MSPCXAnim_42_field_0xC )
+    return (unsigned int)(a2 - this->MSPCXAnim_42_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D06D0
+namespace gamemd {
+void MSPCXAnim_26::ddtor()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->MSPCXAnim_26_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->MSPCXAnim_26_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->MSPCXAnim_26_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D0700
+namespace gamemd {
+unsigned int MSPCXAnim_26::Draw(int a2)
+{
+{
+    if ( (unsigned char)this->MSPCXAnim_26_field_0xC )
+    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D0720
+namespace gamemd {
+int MSPCXAnim_26::GetFrame(int a2)
+{
+{
+    return *(int *)(this->Items + 4 * a2);
+}
+}
+} // namespace gamemd
+
+// 0x5D0730
+namespace gamemd {
+void MSPCXAnim_26::FreeData()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->MSPCXAnim_26_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->MSPCXAnim_26_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->MSPCXAnim_26_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D0760
+namespace gamemd {
+unsigned int MSPCXAnim_26::GetCount(int a2)
+{
+{
+    if ( (unsigned char)this->MSPCXAnim_26_field_0xC )
+    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D0780
+namespace gamemd {
+int MSPCXAnim_42::GetFrame(int a2)
+{
+{
+    return *(int *)(this->Items + 4 * a2);
+}
+}
+} // namespace gamemd
+
+// 0x5D0790
+namespace gamemd {
+void MSPCXAnim_26::FreeData_0()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->MSPCXAnim_26_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->MSPCXAnim_26_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->MSPCXAnim_26_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D07C0
+namespace gamemd {
+unsigned int MSPCXAnim_26::GetCount_0(int a2)
+{
+{
+    if ( (unsigned char)this->MSPCXAnim_26_field_0xC )
+    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x5D0AA0
 namespace gamemd {
 int MSPCXAnim_42::FindIndex_Pair(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSPCXAnim_42_::sub_5D0AA0(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x5d0aa0*/
-  result = 0; /*0x5d0aa5*/
-  if ( v2 <= 0 ) /*0x5d0aab*/
-    return -1; /*0x5d0acc*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x5d0ab1*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2 || i[1] != *((int*)(a2) + 1); i += 2 )
   {
-    if ( ++result >= v2 ) /*0x5d0aca*/
-      return -1; /*0x5d0aca*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x5d0acf*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -842,49 +341,46 @@ int __thiscall MSPCXAnim_42_::sub_5D0AA0(int *this, _DWORD *a2)
 namespace gamemd {
 char MSPCXAnim_42::AllocCopyData_4B(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSPCXAnim_42_::sub_5D0C60(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x5d0c6c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x5d0c72*/
-    if ( a3 ) /*0x5d0c78*/
-      v4 = a3; /*0x5d0c8e*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d0c8a*/
-    *((_BYTE *)this + 12) = 1; /*0x5d0c92*/
-    if ( !v4 ) /*0x5d0c96*/
-      return 0; /*0x5d0d0a*/
-    if ( this->MSPCXAnim_42_field_0x4 ) /*0x5d0c98*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->MSPCXAnim_42_field_0x4 )
     {
-      v5 = this->MSPCXAnim_42_field_0x8; /*0x5d0c9f*/
-      if ( a2 < v5 ) /*0x5d0ca4*/
-        v5 = a2; /*0x5d0ca6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MSPCXAnim_42_field_0x4 + 4 * i - 4) ) /*0x5d0cac*/
-        ++i; /*0x5d0cb1*/
-      if ( *((_BYTE *)this + 13) ) /*0x5d0cbe*/
+    v5 = this->MSPCXAnim_42_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->MSPCXAnim_42_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d0cc9*/
-        this->MSPCXAnim_42_field_0x4 = 0; /*0x5d0cd1*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->MSPCXAnim_42_field_0x4 = 0;
       }
     }
-    this->MSPCXAnim_42_field_0x4 = v4; /*0x5d0cda*/
-    this->MSPCXAnim_42_field_0x8 = a2; /*0x5d0ce2*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x5d0ce5*/
+    this->MSPCXAnim_42_field_0x4 = v4;
+    this->MSPCXAnim_42_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d0cee*/
+    this->ddtor();
   }
-  v7 = this->MSPCXAnim_42_field_0x8; /*0x5d0cf1*/
-  if ( v7 < this->MSPCXAnim_42_field_0x10 ) /*0x5d0cf9*/
-    this->MSPCXAnim_42_field_0x10 = v7; /*0x5d0cfb*/
-  return 1; /*0x5d0cfe*/
+    v7 = this->MSPCXAnim_42_field_0x8;
+    if ( v7 < this->MSPCXAnim_42_field_0x10 )
+    this->MSPCXAnim_42_field_0x10 = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -893,24 +389,20 @@ char __thiscall MSPCXAnim_42_::sub_5D0C60(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int MSPCXAnim_42::FindIndex(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSPCXAnim_42_::sub_5D0D10(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x5d0d10*/
-  result = 0; /*0x5d0d13*/
-  if ( v2 <= 0 ) /*0x5d0d18*/
-    return -1; /*0x5d0d2f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x5d0d1e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x5d0d2d*/
-      return -1; /*0x5d0d2d*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x5d0d32*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -918,49 +410,46 @@ int __thiscall MSPCXAnim_42_::sub_5D0D10(int *this, _DWORD *a2)
 namespace gamemd {
 char MSPCXAnim_42::AllocCopyData_4B_0(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSPCXAnim_42_::sub_5D0EC0(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x5d0ecc*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x5d0ed2*/
-    if ( a3 ) /*0x5d0ed8*/
-      v4 = a3; /*0x5d0eee*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d0eea*/
-    *((_BYTE *)this + 12) = 1; /*0x5d0ef2*/
-    if ( !v4 ) /*0x5d0ef6*/
-      return 0; /*0x5d0f6a*/
-    if ( this->MSPCXAnim_42_field_0x4 ) /*0x5d0ef8*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->MSPCXAnim_42_field_0x4 )
     {
-      v5 = this->MSPCXAnim_42_field_0x8; /*0x5d0eff*/
-      if ( a2 < v5 ) /*0x5d0f04*/
-        v5 = a2; /*0x5d0f06*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MSPCXAnim_42_field_0x4 + 4 * i - 4) ) /*0x5d0f0c*/
-        ++i; /*0x5d0f11*/
-      if ( *((_BYTE *)this + 13) ) /*0x5d0f1e*/
+    v5 = this->MSPCXAnim_42_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->MSPCXAnim_42_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d0f29*/
-        this->MSPCXAnim_42_field_0x4 = 0; /*0x5d0f31*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->MSPCXAnim_42_field_0x4 = 0;
       }
     }
-    this->MSPCXAnim_42_field_0x4 = v4; /*0x5d0f3a*/
-    this->MSPCXAnim_42_field_0x8 = a2; /*0x5d0f42*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x5d0f45*/
+    this->MSPCXAnim_42_field_0x4 = v4;
+    this->MSPCXAnim_42_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d0f4e*/
+    this->ddtor();
   }
-  v7 = this->MSPCXAnim_42_field_0x8; /*0x5d0f51*/
-  if ( v7 < this->MSPCXAnim_42_field_0x10 ) /*0x5d0f59*/
-    this->MSPCXAnim_42_field_0x10 = v7; /*0x5d0f5b*/
-  return 1; /*0x5d0f5e*/
+    v7 = this->MSPCXAnim_42_field_0x8;
+    if ( v7 < this->MSPCXAnim_42_field_0x10 )
+    this->MSPCXAnim_42_field_0x10 = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -969,24 +458,222 @@ char __thiscall MSPCXAnim_42_::sub_5D0EC0(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int MSPCXAnim_42::FindIndex_0(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSPCXAnim_42_::sub_5D0F70(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x5d0f70*/
-  result = 0; /*0x5d0f73*/
-  if ( v2 <= 0 ) /*0x5d0f78*/
-    return -1; /*0x5d0f8f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x5d0f7e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x5d0f8d*/
-      return -1; /*0x5d0f8d*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x5d0f92*/
+    return result;
 }
+} // namespace gamemd
+
+// 0x5D0FA0
+namespace gamemd {
+char MSPCXAnim_26::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
+    {
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D0FE0
+namespace gamemd {
+char MSPCXAnim_26::AllocCopyData_4B(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
+    {
+    if ( this->MSPCXAnim_26_field_0x4 )
+      {
+    v6 = this->MSPCXAnim_26_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->MSPCXAnim_26_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+        {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->MSPCXAnim_26_field_0x4 = 0;
+        }
+      }
+    this->MSPCXAnim_26_field_0x4 = v4;
+    this->MSPCXAnim_26_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
+    }
+    else
+    {
+    return 0;
+    }
+  }
+    else
+  {
+    this->ddtor();
+    return 1;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x5D1090
+namespace gamemd {
+void MSPCXAnim_26::FreeData_1()
+{
+{
+    if ( this->MSPCXAnim_26_field_0x4 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->MSPCXAnim_26_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->MSPCXAnim_26_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D10C0
+namespace gamemd {
+int MSPCXAnim_26::FindIndex(unsigned int * a2)
+{
+{
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->MSPCXAnim_26_field_0xC )
+    return 0;
+    v3 = this->MSPCXAnim_26_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x5D1100
+namespace gamemd {
+unsigned int MSPCXAnim_26::GetCount_1(int a2)
+{
+{
+    if ( (unsigned char)this->MSPCXAnim_26_field_0xC )
+    return (unsigned int)(a2 - this->MSPCXAnim_26_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5D1120
+namespace gamemd {
+char MSPCXAnim_26::Release(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->MSPCXAnim_26_field_0x4 )
+    {
+    v5 = this->MSPCXAnim_26_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->MSPCXAnim_26_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+      {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->MSPCXAnim_26_field_0x4 = 0;
+      }
+    }
+    this->MSPCXAnim_26_field_0x4 = v4;
+    this->MSPCXAnim_26_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+  }
+    else
+  {
+    this->ddtor();
+  }
+    v7 = this->MSPCXAnim_26_field_0x8;
+    if ( v7 < this->MSPCXAnim_26_field_0x10 )
+    this->MSPCXAnim_26_field_0x10 = v7;
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x5D11D0
+namespace gamemd {
+int MSPCXAnim_26::Load(unsigned int * a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
 }
 } // namespace gamemd
 
@@ -994,31 +681,28 @@ int __thiscall MSPCXAnim_42_::sub_5D0F70(int *this, _DWORD *a2)
 namespace gamemd {
 char MSPCXAnim_42::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSPCXAnim_42_::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x5d1202*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x5d120d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x5d120f*/
-    if ( v2 <= 0 ) /*0x5d1213*/
-      return 1; /*0x5d1233*/
-    v4 = (_DWORD *)*(this + 1); /*0x5d1215*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x5d121b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x5d1224*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x5d1226*/
-      ++v4; /*0x5d1227*/
-      if ( v3 >= v2 ) /*0x5d122c*/
-        return 1; /*0x5d122c*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x5d122e*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1027,50 +711,47 @@ char __thiscall MSPCXAnim_42_::_vt01(int *this, int a2)
 namespace gamemd {
 char MSPCXAnim_42::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSPCXAnim_42_::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x5d124c*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x5d1256*/
-    if ( a3 ) /*0x5d125c*/
-      v4 = a3; /*0x5d1272*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d126e*/
-    *((_BYTE *)this + 12) = 1; /*0x5d1276*/
-    if ( v4 ) /*0x5d127a*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( this->MSPCXAnim_42_field_0x4 ) /*0x5d1285*/
+    if ( this->MSPCXAnim_42_field_0x4 )
       {
-        v6 = this->MSPCXAnim_42_field_0x8; /*0x5d128c*/
-        if ( a2 < v6 ) /*0x5d1291*/
-          v6 = a2; /*0x5d1293*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->MSPCXAnim_42_field_0x4 + 4 * i - 4) ) /*0x5d1299*/
-          ++i; /*0x5d129e*/
-        if ( *((_BYTE *)this + 13) ) /*0x5d12ab*/
+    v6 = this->MSPCXAnim_42_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->MSPCXAnim_42_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d12b6*/
-          this->MSPCXAnim_42_field_0x4 = 0; /*0x5d12be*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->MSPCXAnim_42_field_0x4 = 0;
         }
       }
-      this->MSPCXAnim_42_field_0x4 = v4; /*0x5d12c7*/
-      this->MSPCXAnim_42_field_0x8 = a2; /*0x5d12cf*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x5d12d2*/
-      return 1; /*0x5d12d8*/
+    this->MSPCXAnim_42_field_0x4 = v4;
+    this->MSPCXAnim_42_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x5d127f*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d12e2*/
-    return 1; /*0x5d12e8*/
+    this->ddtor();
+    return 1;
   }
 }
 }
@@ -1080,16 +761,14 @@ char __thiscall MSPCXAnim_42_::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 void MSPCXAnim_42::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MSPCXAnim_42_::_vt03(int this)
 {
-  if ( this->MSPCXAnim_42_field_0x4 && *(_BYTE *)(this + 13) ) /*0x5d12fd*/
+    if ( this->MSPCXAnim_42_field_0x4 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x5d1303*/
-    this->MSPCXAnim_42_field_0x4 = 0; /*0x5d130b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->MSPCXAnim_42_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x5d130e*/
-  this->MSPCXAnim_42_field_0x8 = 0; /*0x5d1311*/
+    this->IsAllocated = 0;
+    this->MSPCXAnim_42_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -1098,25 +777,22 @@ void __thiscall MSPCXAnim_42_::_vt03(int this)
 namespace gamemd {
 int MSPCXAnim_42::Load(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSPCXAnim_42_::_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->MSPCXAnim_42_field_0xC ) /*0x5d1320*/
-    return 0; /*0x5d1328*/
-  v3 = this->MSPCXAnim_42_field_0x8; /*0x5d132e*/
-  result = 0; /*0x5d1331*/
-  if ( v3 <= 0 ) /*0x5d1335*/
-    return -1; /*0x5d134c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x5d133b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->MSPCXAnim_42_field_0xC )
+    return 0;
+    v3 = this->MSPCXAnim_42_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x5d134a*/
-      return -1; /*0x5d134a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x5d132a*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1134,27 +810,162 @@ unsigned int MSPCXAnim_42::Draw(int a2)
 }
 } // namespace gamemd
 
+// 0x5D1380
+namespace gamemd {
+char MSPCXAnim_26::AllocCopyData_4B_0(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->MSPCXAnim_26_field_0x4 )
+    {
+    v5 = this->MSPCXAnim_26_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->MSPCXAnim_26_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+      {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->MSPCXAnim_26_field_0x4 = 0;
+      }
+    }
+    this->MSPCXAnim_26_field_0x4 = v4;
+    this->MSPCXAnim_26_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+  }
+    else
+  {
+    this->ddtor();
+  }
+    v7 = this->MSPCXAnim_26_field_0x8;
+    if ( v7 < this->MSPCXAnim_26_field_0x10 )
+    this->MSPCXAnim_26_field_0x10 = v7;
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x5D1430
+namespace gamemd {
+int MSPCXAnim_26::FindIndex_0(unsigned int * a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
+}
+} // namespace gamemd
+
+// 0x5D15E0
+namespace gamemd {
+char MSPCXAnim_26::AllocCopyData_4B_1(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->MSPCXAnim_26_field_0x4 )
+    {
+    v5 = this->MSPCXAnim_26_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->MSPCXAnim_26_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+      {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->MSPCXAnim_26_field_0x4 = 0;
+      }
+    }
+    this->MSPCXAnim_26_field_0x4 = v4;
+    this->MSPCXAnim_26_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+  }
+    else
+  {
+    this->ddtor();
+  }
+    v7 = this->MSPCXAnim_26_field_0x8;
+    if ( v7 < this->MSPCXAnim_26_field_0x10 )
+    this->MSPCXAnim_26_field_0x10 = v7;
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x5D1690
+namespace gamemd {
+int MSPCXAnim_26::FindIndex_1(unsigned int * a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
+}
+} // namespace gamemd
+
 // 0x5D1710
 namespace gamemd {
 DynamicVector * MSPCXAnim_42::Constructor_VectorClass_Point2D_(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MSPCXAnim_42_::Constructor_VectorClass_Point2D_(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5d1713*/
-  *this = &vt_VectorClass_Point2D; /*0x5d1716*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d1720*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_Point2D;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x5d1728*/
-    *(this + 1) = 0; /*0x5d1730*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x5d173b*/
-  *(this + 2) = 0; /*0x5d1741*/
-  if ( (a2 & 1) != 0 ) /*0x5d1748*/
-    __3_YAXPAX_Z(this); /*0x5d174b*/
-  return (DynamicVector *)this; /*0x5d1755*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -1163,23 +974,20 @@ DynamicVector *__thiscall MSPCXAnim_42_::Constructor_VectorClass_Point2D_(_DWORD
 namespace gamemd {
 DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MSTextEntry___(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MSPCXAnim_42_::Constructor_VectorClass_MSTextEntry___(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5d17b3*/
-  *this = &vt_VectorClass_MSTextEntry; /*0x5d17b6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d17c0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_MSTextEntry;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x5d17c8*/
-    *(this + 1) = 0; /*0x5d17d0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x5d17db*/
-  *(this + 2) = 0; /*0x5d17e1*/
-  if ( (a2 & 1) != 0 ) /*0x5d17e8*/
-    __3_YAXPAX_Z(this); /*0x5d17eb*/
-  return (DynamicVector *)this; /*0x5d17f5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -1188,23 +996,64 @@ DynamicVector *__thiscall MSPCXAnim_42_::Constructor_VectorClass_MSTextEntry___(
 namespace gamemd {
 DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MapSelection___(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MSPCXAnim_42_::Constructor_VectorClass_MapSelection___(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5d1853*/
-  *this = &vt_VectorClass_MapSelection; /*0x5d1856*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d1860*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_MapSelection;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x5d1868*/
-    *(this + 1) = 0; /*0x5d1870*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x5d187b*/
-  *(this + 2) = 0; /*0x5d1881*/
-  if ( (a2 & 1) != 0 ) /*0x5d1888*/
-    __3_YAXPAX_Z(this); /*0x5d188b*/
-  return (DynamicVector *)this; /*0x5d1895*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
+}
+}
+} // namespace gamemd
+
+// 0x5D18A0
+namespace gamemd {
+VectorClass * MSPCXAnim_26::Constructor_VectorClass_MapStage___(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_MapStage;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
+}
+}
+} // namespace gamemd
+
+// 0x5D18F0
+namespace gamemd {
+DynamicVector * MSPCXAnim_26::QueryInterface(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_MapStage;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -1213,23 +1062,64 @@ DynamicVector *__thiscall MSPCXAnim_42_::Constructor_VectorClass_MapSelection___
 namespace gamemd {
 VectorClass * MSPCXAnim_42::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall MSPCXAnim_42_::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5d1943*/
-  *this = &vt_VectorClass_MSAnimEntry; /*0x5d1946*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d1950*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_MSAnimEntry;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x5d1958*/
-    *(this + 1) = 0; /*0x5d1960*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x5d196b*/
-  *(this + 2) = 0; /*0x5d1971*/
-  if ( (a2 & 1) != 0 ) /*0x5d1978*/
-    __3_YAXPAX_Z(this); /*0x5d197b*/
-  return (VectorClass *)this; /*0x5d1985*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
+}
+}
+} // namespace gamemd
+
+// 0x5D1990
+namespace gamemd {
+DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSAnimEntry___(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_MSAnimEntry;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
+}
+}
+} // namespace gamemd
+
+// 0x5D1A30
+namespace gamemd {
+DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSSfxEntry___(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_MSSfxEntry;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd

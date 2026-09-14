@@ -43,70 +43,6 @@ int __userpurge TechnoClass::CanFireAtTarget@<eax>(
 }
 } // namespace gamemd
 
-// 0x41B7D0
-namespace ra2 {
-namespace game {
-BOOL TechnoClass::processDamageAnimation(int a1)
-{
-{
-    return *(int *)(a1 - 1448) != 0;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x41B840
-namespace ra2 {
-namespace game {
-BOOL TechnoClass::updateWeaponCooldown(int a1)
-{
-{
-    return *(char *)(*(int *)(a1 + 4) + 3598) != 0;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x41B860
-namespace ra2 {
-namespace game {
-int TechnoClass::checkAmmo(AircraftClass * aP0)
-{
-{
-    return BYTE2(aP0->uniqueId);
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x4722D0
-namespace ra2 {
-namespace game {
-int TechnoClass::processPowerDrain()
-{
-{
-    return this->attachedTag;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x4C2BD0
-namespace ra2 {
-namespace game {
-void TechnoClass::updateSightRange(IUnknown * aP1, int a3)
-{
-{
-    if ( aP1 && (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 44))(aP1) == 1 && aP1->__pad_8C[4] && !aP1->__pad_68[25] )
-  {
-    this->needsSave = aP1;
-    this->objectTypeFlags = a3;
-  }
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x6F2B40
 namespace ra2 {
 namespace game {
@@ -1163,19 +1099,6 @@ int __stdcall TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3,
 } // namespace game
 } // namespace ra2
 
-// 0x709A20
-namespace ra2 {
-namespace game {
-int TechnoClass::COMStub_Return0_287()
-{
-{
-    int result;
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x70D0D0
 namespace ra2 {
 namespace game {
@@ -1195,88 +1118,6 @@ bool __thiscall TechnoTypeClass::HasVoiceResponse(TechnoClass *this, int weaponI
     return 1; /*0x70d11c*/
   return VeterancyStruct::IsElite((float *)v3->__pad_0) /*0x70d142*/
       && (*(_BYTE *)(v4 + weaponIndex + 668) || *(_BYTE *)(v4 + weaponIndex + 686));
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x70F020
-namespace ra2 {
-namespace game {
-int TechnoClass::StubReturnFalse5()
-{
-{
-    int result;
-    LOBYTE(result) = 0;
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x70F030
-namespace ra2 {
-namespace game {
-int TechnoClass::StubReturnFalse6()
-{
-{
-    int result;
-    LOBYTE(result) = 0;
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x70F0E0
-namespace ra2 {
-namespace game {
-int TechnoClass::StubReturnFalse7()
-{
-{
-    int result;
-    LOBYTE(result) = 0;
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x70F0F0
-namespace ra2 {
-namespace game {
-int TechnoClass::StubReturnFalse8()
-{
-{
-    int result;
-    LOBYTE(result) = 0;
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x70F110
-namespace ra2 {
-namespace game {
-int TechnoClass::StubReturnFalse9()
-{
-{
-    int result;
-    LOBYTE(result) = 0;
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x731CF0
-namespace ra2 {
-namespace game {
-void TechnoClass::GetField()
-{
-{
-    DataGlobal_B0FE58 = 0;
 }
 }
 } // namespace game
@@ -1520,12 +1361,171 @@ int TechnoClass_DrawVoxel()
 }
 } // namespace gamemd
 
+// 0x41B7D0
+namespace ra2 {
+namespace game {
+BOOL TechnoClass::processDamageAnimation(int a1)
+{
+{
+    return *(int *)(a1 - 1448) != 0;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x41B840
+namespace ra2 {
+namespace game {
+BOOL TechnoClass::updateWeaponCooldown(int a1)
+{
+{
+    return *(char *)(*(int *)(a1 + 4) + 3598) != 0;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x41B860
+namespace ra2 {
+namespace game {
+int TechnoClass::checkAmmo(AircraftClass * aP0)
+{
+{
+    return BYTE2(aP0->uniqueId);
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x4722D0
+namespace ra2 {
+namespace game {
+int TechnoClass::processPowerDrain()
+{
+{
+    return this->attachedTag;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x4C2BD0
+namespace ra2 {
+namespace game {
+void TechnoClass::updateSightRange(IUnknown * aP1, int a3)
+{
+{
+    if ( aP1 && (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 44))(aP1) == 1 && aP1->__pad_8C[4] && !aP1->__pad_68[25] )
+  {
+    this->needsSave = aP1;
+    this->objectTypeFlags = a3;
+  }
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x709A20
+namespace ra2 {
+namespace game {
+int TechnoClass::COMStub_Return0_287()
+{
+{
+    int result;
+    return result;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x70F020
+namespace ra2 {
+namespace game {
+int TechnoClass::StubReturnFalse5()
+{
+{
+    int result;
+    LOBYTE(result) = 0;
+    return result;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x70F030
+namespace ra2 {
+namespace game {
+int TechnoClass::StubReturnFalse6()
+{
+{
+    int result;
+    LOBYTE(result) = 0;
+    return result;
+}
+}
+} // namespace game
+} // namespace ra2
+
 // 0x70F040
 namespace ra2 {
 namespace game {
 int TechnoClass::checkMovementRestrictions()
 {
 return -1;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x70F0E0
+namespace ra2 {
+namespace game {
+int TechnoClass::StubReturnFalse7()
+{
+{
+    int result;
+    LOBYTE(result) = 0;
+    return result;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x70F0F0
+namespace ra2 {
+namespace game {
+int TechnoClass::StubReturnFalse8()
+{
+{
+    int result;
+    LOBYTE(result) = 0;
+    return result;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x70F110
+namespace ra2 {
+namespace game {
+int TechnoClass::StubReturnFalse9()
+{
+{
+    int result;
+    LOBYTE(result) = 0;
+    return result;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x731CF0
+namespace ra2 {
+namespace game {
+void TechnoClass::GetField()
+{
+{
+    DataGlobal_B0FE58 = 0;
+}
 }
 } // namespace game
 } // namespace ra2

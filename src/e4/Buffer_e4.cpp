@@ -43,18 +43,6 @@ DynamicVector *__thiscall Buffer::Constructor_VectorClass_ObjectClass___(_DWORD 
 }
 }
 
-// 0x632B70
-int * Buffer::RotateBufferCrypto(int * a2, int a3)
-{
-{
-    int v4[64];
-    qmemcpy(v4, this, sizeof(v4));
-    RotateBitBufferLeft(v4, a3, 64);
-    qmemcpy(a2, v4, 0x100u);
-    return a2;
-}
-}
-
 // 0x6C89E0
 int Buffer::AppendCellData(AbstractClass * aP1, int a3)
 {
@@ -520,5 +508,17 @@ LABEL_16:
     }
   }
   return -8; /*0x7c174d*/
+}
+}
+
+// 0x632B70
+int * Buffer::RotateBufferCrypto(int * a2, int a3)
+{
+{
+    int v4[64];
+    qmemcpy(v4, this, sizeof(v4));
+    RotateBitBufferLeft(v4, a3, 64);
+    qmemcpy(a2, v4, 0x100u);
+    return a2;
 }
 }

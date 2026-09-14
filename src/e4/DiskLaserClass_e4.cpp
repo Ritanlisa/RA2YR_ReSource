@@ -68,14 +68,6 @@ int __stdcall DiskLaserClass::Write(AbstractClass *aP0, int aP1)
 }
 }
 
-// 0x4A7C10
-int DiskLaserClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-}
-}
-
 // 0x4A7C90
 DiskLaserClass * DiskLaserClass::CopyTo(char a2)
 {
@@ -104,6 +96,14 @@ DiskLaserClass *__thiscall DiskLaserClass::CopyTo(_DWORD *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x4a7d04*/
     __3_YAXPAX_Z(this); /*0x4a7d07*/
   return (DiskLaserClass *)this; /*0x4a7d11*/
+}
+}
+
+// 0x4A7C10
+int DiskLaserClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
 }
 }
 

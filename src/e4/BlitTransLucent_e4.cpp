@@ -5,24 +5,27 @@
 // 0x494500
 int BlitTransLucent25Alpha_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall BlitTransLucent25Alpha_ushort::CallBlit0(
+        BlitTransXlatWriteAlpha_G *this,
+        int a2,
+        int a3,
+        int a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8)
 {
-    return (*((int (__thiscall **)(BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
-}
-}
-
-// 0x494530
-int BlitTransLucent25Alpha_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-{
-{
-    return (*((int (__thiscall **)(BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
-}
-}
-
-// 0x494560
-int BlitTransLucent25Alpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-{
-{
-    return (*((int (__thiscall **)(BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
+  return (*((int (__thiscall **)(BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr + 1))( /*0x49452a*/
+           this,
+           a2,
+           a3,
+           a4,
+           a5,
+           a6,
+           a7,
+           a8,
+           0);
 }
 }
 
@@ -157,14 +160,6 @@ int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(
 }
 }
 
-// 0x496210
-int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
-{
-{
-    return (*((int (__thiscall **)(RLEBlitTransZRemapXlat_G *, int, int, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
-}
-}
-
 // 0x496250
 unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
@@ -224,14 +219,6 @@ _WORD *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(
     }
   }
   return result; /*0x4962c3*/
-}
-}
-
-// 0x4962D0
-int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
-{
-{
-    return (*((int (__thiscall **)(RLEBlitTransDarken_G *, int, int, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
 }
 }
 
@@ -298,5 +285,37 @@ std::locale::facet *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Construc
   if ( (a2 & 1) != 0 ) /*0x49a7af*/
     __3_YAXPAX_Z(this); /*0x49a7b2*/
   return this; /*0x49a7bc*/
+}
+}
+
+// 0x494530
+int BlitTransLucent25Alpha_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+{
+{
+    return (*((int (__thiscall **)(BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
+}
+}
+
+// 0x494560
+int BlitTransLucent25Alpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+{
+{
+    return (*((int (__thiscall **)(BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
+}
+}
+
+// 0x496210
+int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
+{
+{
+    return (*((int (__thiscall **)(RLEBlitTransZRemapXlat_G *, int, int, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+}
+}
+
+// 0x4962D0
+int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
+{
+{
+    return (*((int (__thiscall **)(RLEBlitTransDarken_G *, int, int, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
 }
 }

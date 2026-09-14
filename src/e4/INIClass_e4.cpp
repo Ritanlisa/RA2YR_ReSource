@@ -2,22 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x474620
-namespace gamemd {
-INIClass * INIClass::ReadCoord(double aP1, int a2, INIClass * aP2, int a4)
-{
-{
-    int v4;
-    double Double_Overwrite;
-    Double_Overwrite = INIClass::ReadDouble_Overwrite(v4, (INIClass *)LODWORD(aP1), (unsigned char *)HIDWORD(aP1), 0);
-    if ( Double_Overwrite == -1.0 )
-    return (INIClass *)a2;
-    else
-    return (INIClass *)Math::RoundToInt(Double_Overwrite * 256.0);
-}
-}
-} // namespace gamemd
-
 // 0x526810
 namespace gamemd {
 int INIClass::BinarySearchSection(INIClass * aP1)
@@ -221,6 +205,22 @@ int __thiscall INIClass::GetStringByIndex(char *this, CCINIClass *aP1, CCINIClas
     }
   }
   return 0; /*0x526d7b*/
+}
+}
+} // namespace gamemd
+
+// 0x474620
+namespace gamemd {
+INIClass * INIClass::ReadCoord(double aP1, int a2, INIClass * aP2, int a4)
+{
+{
+    int v4;
+    double Double_Overwrite;
+    Double_Overwrite = INIClass::ReadDouble_Overwrite(v4, (INIClass *)LODWORD(aP1), (unsigned char *)HIDWORD(aP1), 0);
+    if ( Double_Overwrite == -1.0 )
+    return (INIClass *)a2;
+    else
+    return (INIClass *)Math::RoundToInt(Double_Overwrite * 256.0);
 }
 }
 } // namespace gamemd

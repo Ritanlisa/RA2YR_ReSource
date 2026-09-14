@@ -155,19 +155,6 @@ _DWORD *__thiscall InfantryTypeClass::Constructor_523980(_DWORD *this, ObjectTyp
 }
 }
 
-// 0x523B10
-InfantryClass * InfantryTypeClass::ConstructInfantry(AbstractClass * ppv)
-{
-{
-    int v3;
-    v3 = __2_YAPAXI_Z(0x6F0u);
-    if ( v3 )
-    return (InfantryClass *)InfantryClass::Construct(v3, this, ppv);
-    else
-    return 0;
-}
-}
-
 // 0x523B40
 char InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 {
@@ -212,21 +199,6 @@ char __thiscall InfantryTypeClass::CreateInfantry(AbstractClass *this, __int16 *
     }
   }
   return 0; /*0x523c07*/
-}
-}
-
-// 0x523C20
-int * InfantryTypeClass::GetDimensions(int a1)
-{
-{
-    if ( (DataGlobal_A8F2C8 & 1) == 0 )
-  {
-    DataGlobal_A8F2C8 |= 1u;
-    DataGlobal_A8F28C = 0;
-    DataGlobal_A8F290 = 2147450879;
-    atexit(nullsub_147);
-  }
-    return &DataGlobal_A8F28C;
 }
 }
 
@@ -578,19 +550,6 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
 }
 }
 
-// 0x524760
-unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
-{
-{
-    int v1;
-    v1 = 2 * DataGlobal_A8F2CC;
-    *a1 = 85;
-    *((int*)(a1) + 1) = 85;
-    *((int*)(a1) + 2) = v1;
-    return a1;
-}
-}
-
 // 0x524790
 int InfantryTypeClass::GetGameplayValue()
 {
@@ -598,29 +557,6 @@ int InfantryTypeClass::GetGameplayValue()
 int InfantryTypeClass::_vt45()
 {
   return MEMORY[0x8871E0][1].?; /*0x52479b*/
-}
-}
-
-// 0x5247D0
-unsigned int * InfantryTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
-{
-{
-    int GroundHeight;
-    int v3;
-    int v5;
-    int v6;
-    int v7;
-    v5 = *a2;
-    v6 = *((int*)(a2) + 1);
-    v7 = *((int*)(a2) + 2);
-    GroundHeight = Cell::GetGroundHeight(&v5);
-    v3 = v7;
-    if ( v7 < GroundHeight )
-    v3 = Cell::GetGroundHeight(&v5);
-    *a1 = v5;
-    *((int*)(a1) + 1) = v6;
-    *((int*)(a1) + 2) = v3;
-    return a1;
 }
 }
 
@@ -806,14 +742,6 @@ int __userpurge InfantryTypeClass::SaveLoad_Prefix@<eax>(int a1@<ebx>, _DWORD *a
 }
 } // namespace gamemd
 
-// 0x524D60
-int InfantryTypeClass::GetAuxField()
-{
-{
-    return this->ArrayIndex;
-}
-}
-
 // 0x524D70
 InfantryTypeClass * InfantryTypeClass::ddtor(char a2)
 {
@@ -953,10 +881,74 @@ LABEL_6:
 }
 }
 
+// 0x523B10
+InfantryClass * InfantryTypeClass::ConstructInfantry(AbstractClass * ppv)
+{
+{
+    int v3;
+    v3 = __2_YAPAXI_Z(0x6F0u);
+    if ( v3 )
+    return (InfantryClass *)InfantryClass::Construct(v3, this, ppv);
+    else
+    return 0;
+}
+}
+
+// 0x523C20
+int * InfantryTypeClass::GetDimensions(int a1)
+{
+{
+    if ( (DataGlobal_A8F2C8 & 1) == 0 )
+  {
+    DataGlobal_A8F2C8 |= 1u;
+    DataGlobal_A8F28C = 0;
+    DataGlobal_A8F290 = 2147450879;
+    atexit(nullsub_147);
+  }
+    return &DataGlobal_A8F28C;
+}
+}
+
+// 0x524760
+unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
+{
+{
+    int v1;
+    v1 = 2 * DataGlobal_A8F2CC;
+    *a1 = 85;
+    *((int*)(a1) + 1) = 85;
+    *((int*)(a1) + 2) = v1;
+    return a1;
+}
+}
+
 // 0x5247A0
 int InfantryTypeClass::StubReturnFalse()
 {
 return 0;
+}
+
+// 0x5247D0
+unsigned int * InfantryTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
+{
+{
+    int GroundHeight;
+    int v3;
+    int v5;
+    int v6;
+    int v7;
+    v5 = *a2;
+    v6 = *((int*)(a2) + 1);
+    v7 = *((int*)(a2) + 2);
+    GroundHeight = Cell::GetGroundHeight(&v5);
+    v3 = v7;
+    if ( v7 < GroundHeight )
+    v3 = Cell::GetGroundHeight(&v5);
+    *a1 = v5;
+    *((int*)(a1) + 1) = v6;
+    *((int*)(a1) + 2) = v3;
+    return a1;
+}
 }
 
 // 0x524C70
@@ -981,4 +973,12 @@ return 16;
 int InfantryTypeClass::GetObjectSize()
 {
 return 3792;
+}
+
+// 0x524D60
+int InfantryTypeClass::GetAuxField()
+{
+{
+    return this->ArrayIndex;
+}
 }

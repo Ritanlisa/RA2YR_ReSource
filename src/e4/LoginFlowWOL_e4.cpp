@@ -2,105 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x72BCA0
-namespace gamemd {
-char sub_72BCA0()
-{
-{
-    char result;
-    result = DataGlobal_B0FD45;
-    if ( !DataGlobal_B0FD45 )
-  {
-    if ( g_DisplayWidth == 800 )
-    DataGlobal_B0FA98 = LoadFileSHP(DataGlobal_844DB4, (bool *)&DataGlobal_B0FD44);
-    result = LoadPaletteSimple(DataGlobal_844DB8, &DataGlobal_B0FD48, &DataGlobal_B0FD4C);
-    DataGlobal_B0FD45 = 1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x72BCF0
-namespace gamemd {
-void sub_72BCF0()
-{
-{
-    void *v0;
-    if ( DataGlobal_B0FD45 )
-  {
-    if ( DataGlobal_B0FD44 )
-    {
-    v0 = DataGlobal_B0FA98;
-    if ( DataGlobal_B0FA98 )
-      {
-    FileTreeNode::Destroy(DataGlobal_B0FA98);
-    __3_YAXPAX_Z(v0);
-      }
-    DataGlobal_B0FD44 = 0;
-    }
-    DataGlobal_B0FA98 = 0;
-    if ( DataGlobal_B0FD48 )
-    {
-    __3_YAXPAX_Z(DataGlobal_B0FD48);
-    DataGlobal_B0FD48 = 0;
-    }
-    if ( DataGlobal_B0FD4C )
-    {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FD4C)(DataGlobal_B0FD4C, 1);
-    DataGlobal_B0FD4C = 0;
-    }
-  }
-    DataGlobal_B0FD45 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x786390
-namespace gamemd {
-int sub_786390()
-{
-{
-    HANDLE *v1;
-    BYTE Data[4];
-    HKEY phkResult;
-    DWORD cbData;
-    DWORD Type;
-    CHAR SubKey[256];
-    if ( DataGlobal_B77E75 )
-    return 1;
-    DataGlobal_B77E75 = 1;
-    LoadNetworkShareStrings();
-    Game::ResetFlags();
-    Network::InitPlayerSlots();
-    *(int *)Data = 0;
-    if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven )
-  {
-    if ( strlen(g_Str_SOFTWARE_Westwood_Yuri_s_Reven) )
-    {
-    strcpy(SubKey, g_Str_SOFTWARE_Westwood_Yuri_s_Reven);
-    if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) )
-      {
-    cbData = 4;
-    RegQueryValueExA(phkResult, DataGlobal_84A940, 0, &Type, Data, &cbData);
-    RegCloseKey(phkResult);
-      }
-    }
-  }
-    *(int *)Data = Data[0];
-    DataGlobal_B77E50 = Data[0];
-    g_NetworkRematchState = Data[0] + 10496;
-    ResetSystemWOL();
-    DataGlobal_B77DC0 = 1;
-    v1 = &Handles;
-    do
-    *v1++ = CreateEventA(0, 0, 0, 0);
-    while ( (int)v1 < (int)g_WOL_RequestObject );
-    return InitializeWestwoodOnline(g_hInstance);
-}
-}
-} // namespace gamemd
-
 // 0x786EF0
 namespace gamemd {
 char sub_786EF0()
@@ -161,6 +62,79 @@ LABEL_16:
 }
 } // namespace gamemd
 
+// 0x72BCA0
+namespace gamemd {
+char sub_72BCA0()
+{
+{
+    char result;
+    result = DataGlobal_B0FD45;
+    if ( !DataGlobal_B0FD45 )
+  {
+    if ( g_DisplayWidth == 800 )
+    DataGlobal_B0FA98 = LoadFileSHP(DataGlobal_844DB4, (bool *)&DataGlobal_B0FD44);
+    result = LoadPaletteSimple(DataGlobal_844DB8, &DataGlobal_B0FD48, &DataGlobal_B0FD4C);
+    DataGlobal_B0FD45 = 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x72BCF0
+namespace gamemd {
+void sub_72BCF0()
+{
+{
+    void *v0;
+    if ( DataGlobal_B0FD45 )
+  {
+    if ( DataGlobal_B0FD44 )
+    {
+    v0 = DataGlobal_B0FA98;
+    if ( DataGlobal_B0FA98 )
+      {
+    FileTreeNode::Destroy(DataGlobal_B0FA98);
+    __3_YAXPAX_Z(v0);
+      }
+    DataGlobal_B0FD44 = 0;
+    }
+    DataGlobal_B0FA98 = 0;
+    if ( DataGlobal_B0FD48 )
+    {
+    __3_YAXPAX_Z(DataGlobal_B0FD48);
+    DataGlobal_B0FD48 = 0;
+    }
+    if ( DataGlobal_B0FD4C )
+    {
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FD4C)(DataGlobal_B0FD4C, 1);
+    DataGlobal_B0FD4C = 0;
+    }
+  }
+    DataGlobal_B0FD45 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x72C600
+namespace gamemd {
+char sub_72C600()
+{
+{
+    char result;
+    result = DataGlobal_B0FD09;
+    if ( !DataGlobal_B0FD09 )
+  {
+    if ( g_DisplayWidth == 800 )
+    DataGlobal_B0FB0C = LoadFileSHP(DataGlobal_844D8C, (bool *)&DataGlobal_B0FD08);
+    result = LoadPaletteSimple(DataGlobal_844D90, &DataGlobal_B0FD0C, &DataGlobal_B0FD10);
+    DataGlobal_B0FD09 = 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x72C650
 namespace gamemd {
 void sub_72C650()
@@ -196,21 +170,47 @@ void sub_72C650()
 }
 } // namespace gamemd
 
-// 0x72C600
+// 0x786390
 namespace gamemd {
-char sub_72C600()
+int sub_786390()
 {
 {
-    char result;
-    result = DataGlobal_B0FD09;
-    if ( !DataGlobal_B0FD09 )
+    HANDLE *v1;
+    BYTE Data[4];
+    HKEY phkResult;
+    DWORD cbData;
+    DWORD Type;
+    CHAR SubKey[256];
+    if ( DataGlobal_B77E75 )
+    return 1;
+    DataGlobal_B77E75 = 1;
+    LoadNetworkShareStrings();
+    Game::ResetFlags();
+    Network::InitPlayerSlots();
+    *(int *)Data = 0;
+    if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven )
   {
-    if ( g_DisplayWidth == 800 )
-    DataGlobal_B0FB0C = LoadFileSHP(DataGlobal_844D8C, (bool *)&DataGlobal_B0FD08);
-    result = LoadPaletteSimple(DataGlobal_844D90, &DataGlobal_B0FD0C, &DataGlobal_B0FD10);
-    DataGlobal_B0FD09 = 1;
+    if ( strlen(g_Str_SOFTWARE_Westwood_Yuri_s_Reven) )
+    {
+    strcpy(SubKey, g_Str_SOFTWARE_Westwood_Yuri_s_Reven);
+    if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) )
+      {
+    cbData = 4;
+    RegQueryValueExA(phkResult, DataGlobal_84A940, 0, &Type, Data, &cbData);
+    RegCloseKey(phkResult);
+      }
+    }
   }
-    return result;
+    *(int *)Data = Data[0];
+    DataGlobal_B77E50 = Data[0];
+    g_NetworkRematchState = Data[0] + 10496;
+    ResetSystemWOL();
+    DataGlobal_B77DC0 = 1;
+    v1 = &Handles;
+    do
+    *v1++ = CreateEventA(0, 0, 0, 0);
+    while ( (int)v1 < (int)g_WOL_RequestObject );
+    return InitializeWestwoodOnline(g_hInstance);
 }
 }
 } // namespace gamemd

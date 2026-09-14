@@ -411,46 +411,6 @@ int PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obje
 }
 } // namespace gamemd
 
-// 0x48A4F0
-namespace gamemd {
-int GetWarheadVersusMultiplier(CoordStruct * aP0, BuildingTypeClass * aP1, CoordStruct * aP2, BulletClass * aP3)
-{
-{
-    CoordStruct *v4;
-    int v6;
-    int v7;
-    int v9;
-    int v10;
-    v4 = aP0;
-    if ( !aP0 || !aP1 )
-    return 0;
-    if ( aP2 == (CoordStruct *)2 && aP1->__pad_14D[0] && (*((int *)Coord::To_Cell(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)aP3) + 80) & 0x100) == 0 && (int)aP3->field_8 < Cell::GetGroundHeight((IUnknown *)aP3) + 2 * *(int *)&DataGlobal_89E138.__pad_71C[28] )
-  {
-    v6 = *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 3024);
-    if ( v6 )
-    {
-    v7 = 35 * v6 - 1;
-    if ( (int)v4 < v7 )
-    v7 = (int)v4;
-    return *(int *)(*(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 3012) + 4 * (v7 / 35));
-    }
-    return 0;
-  }
-    if ( aP1 == *(BuildingTypeClass **)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 6068) )
-    return *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 756);
-    v9 = aP1->ChargerBarrels[4];
-    if ( !v9 )
-    return 0;
-    if ( aP1->__pad_14D[7] )
-    return *(int *)(aP1->ChargerBarrels[1] + 4 * Random::Range( (int *)(*(int *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)(v9 - 1)));
-    v10 = 25 * v9 - 1;
-    if ( (int)v4 >= v10 )
-    v4 = (CoordStruct *)v10;
-    return *(int *)(aP1->ChargerBarrels[1] + 4 * ((int)v4 / 25));
-}
-}
-} // namespace gamemd
-
 // 0x48A620
 namespace gamemd {
 char CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, char a6, int a7)
@@ -555,31 +515,6 @@ char __fastcall Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5,
     *(_DWORD *)(a6 + 4) = 1072243161; /*0x48a9ed*/
     return 1; /*0x48a9f4*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x48B070
-namespace gamemd {
-unsigned int * E4Recv_48B070::sub_48B070(int a2, int a3)
-{
-{
-    this->M4 = 0;
-    this->M8 = a2;
-    this->M12 = 1;
-    this->M13 = 0;
-    *(void**)this = &vt_VectorClass_DamageGroup;
-    if ( a2 )
-  {
-    if ( a3 )
-    {
-    this->M4 = a3;
-    return this;
-    }
-    this->M4 = __2_YAPAXI_Z(4 * a2);
-    this->M13 = 1;
-  }
-    return this;
 }
 }
 } // namespace gamemd
@@ -1246,47 +1181,6 @@ int sub_48E480()
 }
 } // namespace gamemd
 
-// 0x48E6A0
-namespace gamemd {
-int sub_48E6A0()
-{
-{
-    DataGlobal_89ECFC = 0;
-    DataGlobal_89ED00 = 0;
-    DataGlobal_89ED04 = 1;
-    DataGlobal_89ED05 = 0;
-    DataGlobal_89ECF8 = (int)&vt_DynamicVectorClass_ConvertClass;
-    DataGlobal_89ED0C = 10;
-    DataGlobal_89ED08 = 0;
-    return atexit(sub_48E6E0);
-}
-}
-} // namespace gamemd
-
-// 0x48E6E0
-namespace gamemd {
-void sub_48E6E0()
-{
-{
-    if ( (DataGlobal_89ED10 & 1) == 0 )
-  {
-    DataGlobal_89ECF8 = (int)&vt_VectorClass_ConvertClass;
-    DataGlobal_89ED10 |= 1u;
-    if ( DataGlobal_89ECFC )
-    {
-    if ( DataGlobal_89ED05 )
-      {
-    __3_YAXPAX_Z(DataGlobal_89ECFC);
-    DataGlobal_89ECFC = 0;
-      }
-    }
-    DataGlobal_89ED05 = 0;
-    DataGlobal_89ED00 = 0;
-  }
-}
-}
-} // namespace gamemd
-
 // 0x484A80
 namespace gamemd {
 int sub_484A80(int a1)
@@ -1606,6 +1500,46 @@ void CellChainReact()
 }
 } // namespace gamemd
 
+// 0x48A4F0
+namespace gamemd {
+int GetWarheadVersusMultiplier(CoordStruct * aP0, BuildingTypeClass * aP1, CoordStruct * aP2, BulletClass * aP3)
+{
+{
+    CoordStruct *v4;
+    int v6;
+    int v7;
+    int v9;
+    int v10;
+    v4 = aP0;
+    if ( !aP0 || !aP1 )
+    return 0;
+    if ( aP2 == (CoordStruct *)2 && aP1->__pad_14D[0] && (*((int *)Coord::To_Cell(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)aP3) + 80) & 0x100) == 0 && (int)aP3->field_8 < Cell::GetGroundHeight((IUnknown *)aP3) + 2 * *(int *)&DataGlobal_89E138.__pad_71C[28] )
+  {
+    v6 = *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 3024);
+    if ( v6 )
+    {
+    v7 = 35 * v6 - 1;
+    if ( (int)v4 < v7 )
+    v7 = (int)v4;
+    return *(int *)(*(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 3012) + 4 * (v7 / 35));
+    }
+    return 0;
+  }
+    if ( aP1 == *(BuildingTypeClass **)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 6068) )
+    return *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 756);
+    v9 = aP1->ChargerBarrels[4];
+    if ( !v9 )
+    return 0;
+    if ( aP1->__pad_14D[7] )
+    return *(int *)(aP1->ChargerBarrels[1] + 4 * Random::Range( (int *)(*(int *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)(v9 - 1)));
+    v10 = 25 * v9 - 1;
+    if ( (int)v4 >= v10 )
+    v4 = (CoordStruct *)v10;
+    return *(int *)(aP1->ChargerBarrels[1] + 4 * ((int)v4 / 25));
+}
+}
+} // namespace gamemd
+
 // 0x48A8D0
 namespace gamemd {
 char Math_ComputeFacingAngle(char a1, int a2, int a3, int a4, double a5, unsigned int * a6)
@@ -1665,6 +1599,31 @@ bool globalHelper_08ABC0(IUnknown * aP0, int a2, int a3, double a4)
     return 0;
     v10 = v7 - v8 * a4;
     return (Math::Sqrt((AbstractClass *)LODWORD(aP0a)) + v10) / v12 >= 0.0 || (v10 - Math::Sqrt((AbstractClass *)LODWORD(aP0a))) / v12 >= 0.0;
+}
+}
+} // namespace gamemd
+
+// 0x48B070
+namespace gamemd {
+unsigned int * E4Recv_48B070::sub_48B070(int a2, int a3)
+{
+{
+    this->M4 = 0;
+    this->M8 = a2;
+    this->M12 = 1;
+    this->M13 = 0;
+    *(void**)this = &vt_VectorClass_DamageGroup;
+    if ( a2 )
+  {
+    if ( a3 )
+    {
+    this->M4 = a3;
+    return this;
+    }
+    this->M4 = __2_YAPAXI_Z(4 * a2);
+    this->M13 = 1;
+  }
+    return this;
 }
 }
 } // namespace gamemd
@@ -2285,6 +2244,47 @@ int sub_48E680()
     DataGlobal_89ECF0 = 0;
     DataGlobal_89ECF4 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x48E6A0
+namespace gamemd {
+int sub_48E6A0()
+{
+{
+    DataGlobal_89ECFC = 0;
+    DataGlobal_89ED00 = 0;
+    DataGlobal_89ED04 = 1;
+    DataGlobal_89ED05 = 0;
+    DataGlobal_89ECF8 = (int)&vt_DynamicVectorClass_ConvertClass;
+    DataGlobal_89ED0C = 10;
+    DataGlobal_89ED08 = 0;
+    return atexit(sub_48E6E0);
+}
+}
+} // namespace gamemd
+
+// 0x48E6E0
+namespace gamemd {
+void sub_48E6E0()
+{
+{
+    if ( (DataGlobal_89ED10 & 1) == 0 )
+  {
+    DataGlobal_89ECF8 = (int)&vt_VectorClass_ConvertClass;
+    DataGlobal_89ED10 |= 1u;
+    if ( DataGlobal_89ECFC )
+    {
+    if ( DataGlobal_89ED05 )
+      {
+    __3_YAXPAX_Z(DataGlobal_89ECFC);
+    DataGlobal_89ECFC = 0;
+      }
+    }
+    DataGlobal_89ED05 = 0;
+    DataGlobal_89ED00 = 0;
+  }
 }
 }
 } // namespace gamemd

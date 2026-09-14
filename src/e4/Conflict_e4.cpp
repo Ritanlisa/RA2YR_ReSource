@@ -5,19 +5,6 @@
 #include "e4/classes/Conflict_WorldDominationTour_12_e4.hpp"
 #include "e4/classes/Conflict_WorldDominationTour_26_e4.hpp"
 
-// 0x766830
-namespace gamemd {
-unsigned int Conflict_WorldDominationTour_12::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->Conflict_WorldDominationTour_12_field_0xC )
-    return (unsigned int)(a2 - this->Conflict_WorldDominationTour_12_field_0x4) >> 3;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x766850
 namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3)
@@ -245,19 +232,6 @@ int __thiscall Conflict_WorldDominationTour_12_::_vt04(int this, int a2)
 }
 } // namespace gamemd
 
-// 0x766DA0
-namespace gamemd {
-unsigned int Conflict_WorldDominationTour_12::Write(int a2)
-{
-{
-    if ( (unsigned char)this->Conflict_WorldDominationTour_12_field_0xC )
-    return (unsigned int)(a2 - this->Conflict_WorldDominationTour_12_field_0x4) >> 3;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x766DC0
 namespace gamemd {
 char Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned int * a3)
@@ -433,18 +407,6 @@ DynamicVector *__thiscall Conflict_WorldDominationTour_12_::Constructor_2(_DWORD
 }
 } // namespace gamemd
 
-// 0x7670D0
-namespace gamemd {
-unsigned int * Conflict_WorldDominationTour_12::Constructor_3()
-{
-{
-    ComPtr::Constructor(this);
-    *(void**)this = &vt_rc_ptr_WorldDominationTour_GameOption;
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x766800
 namespace gamemd {
 int Conflict_WorldDominationTour_12_::ReleaseBuffer()
@@ -503,6 +465,44 @@ _DWORD *__thiscall Conflict_WorldDominationTour_26_::_vt03(_DWORD *this)
 {
   --*(this + 2); /*0x766fb2*/
   return this; /*0x766fb5*/
+}
+}
+} // namespace gamemd
+
+// 0x766830
+namespace gamemd {
+unsigned int Conflict_WorldDominationTour_12::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->Conflict_WorldDominationTour_12_field_0xC )
+    return (unsigned int)(a2 - this->Conflict_WorldDominationTour_12_field_0x4) >> 3;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x766DA0
+namespace gamemd {
+unsigned int Conflict_WorldDominationTour_12::Write(int a2)
+{
+{
+    if ( (unsigned char)this->Conflict_WorldDominationTour_12_field_0xC )
+    return (unsigned int)(a2 - this->Conflict_WorldDominationTour_12_field_0x4) >> 3;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7670D0
+namespace gamemd {
+unsigned int * Conflict_WorldDominationTour_12::Constructor_3()
+{
+{
+    ComPtr::Constructor(this);
+    *(void**)this = &vt_rc_ptr_WorldDominationTour_GameOption;
+    return this;
 }
 }
 } // namespace gamemd

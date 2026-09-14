@@ -5,43 +5,46 @@
 // 0x5F76B0
 void FileSystem::InitPipShapes()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void FileSystem_InitPipShapes()
 {
-    int v0[9];
-    if ( !FileSystem_PIPBRD_SHP )
+  int v0[9]; // [esp+0h] [ebp-24h] BYREF
+
+  if ( !MEMORY[0xAC1478] ) /*0x5f76ba*/
   {
-    RawFileClass::Construct(v0, (int)DataGlobal_832AA8);
-    FileSystem_PIPBRD_SHP = (int)CCFileClass::ReadEntireFile(v0);
-    DataGlobal_AC1488 = FileSystem_PIPBRD_SHP != 0;
-    if ( !FileSystem_PIPBRD_SHP )
-    FileSystem_PIPBRD_SHP = SearchMIXFile(DataGlobal_832AA8, 0);
-    RawFileClass::Dtor(v0);
+    RawFileClass::Construct(v0, (int)MEMORY[0x832AA8]); /*0x5f76c5*/
+    MEMORY[0xAC1478] = (int)CCFileClass::ReadEntireFile(v0); /*0x5f76da*/
+    MEMORY[0xAC1488] = MEMORY[0xAC1478] != 0; /*0x5f76df*/
+    if ( !MEMORY[0xAC1478] ) /*0x5f76e5*/
+      MEMORY[0xAC1478] = SearchMIXFile(MEMORY[0x832AA8], 0); /*0x5f76f3*/
+    RawFileClass::Dtor(v0); /*0x5f76fc*/
   }
-    if ( !FileSystem_PIPS_SHP )
+  if ( !MEMORY[0xAC147C] ) /*0x5f7708*/
   {
-    RawFileClass::Construct(v0, (int)DataGlobal_832A9C);
-    FileSystem_PIPS_SHP = (int)CCFileClass::ReadEntireFile(v0);
-    DataGlobal_AC1489 = FileSystem_PIPS_SHP != 0;
-    if ( !FileSystem_PIPS_SHP )
-    FileSystem_PIPS_SHP = SearchMIXFile(DataGlobal_832A9C, 0);
-    RawFileClass::Dtor(v0);
+    RawFileClass::Construct(v0, (int)MEMORY[0x832A9C]); /*0x5f7713*/
+    MEMORY[0xAC147C] = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7728*/
+    MEMORY[0xAC1489] = MEMORY[0xAC147C] != 0; /*0x5f772d*/
+    if ( !MEMORY[0xAC147C] ) /*0x5f7733*/
+      MEMORY[0xAC147C] = SearchMIXFile(MEMORY[0x832A9C], 0); /*0x5f7741*/
+    RawFileClass::Dtor(v0); /*0x5f774a*/
   }
-    if ( !FileSystem_PIPS2_SHP )
+  if ( !MEMORY[0xAC1480] ) /*0x5f7756*/
   {
-    RawFileClass::Construct(v0, (int)DataGlobal_832A90);
-    FileSystem_PIPS2_SHP = (int)CCFileClass::ReadEntireFile(v0);
-    DataGlobal_AC148A = FileSystem_PIPS2_SHP != 0;
-    if ( !FileSystem_PIPS2_SHP )
-    FileSystem_PIPS2_SHP = SearchMIXFile(DataGlobal_832A90, 0);
-    RawFileClass::Dtor(v0);
+    RawFileClass::Construct(v0, (int)MEMORY[0x832A90]); /*0x5f7761*/
+    MEMORY[0xAC1480] = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7776*/
+    MEMORY[0xAC148A] = MEMORY[0xAC1480] != 0; /*0x5f777b*/
+    if ( !MEMORY[0xAC1480] ) /*0x5f7781*/
+      MEMORY[0xAC1480] = SearchMIXFile(MEMORY[0x832A90], 0); /*0x5f778f*/
+    RawFileClass::Dtor(v0); /*0x5f7798*/
   }
-    if ( !FileSystem_TALKBUBL_SHP )
+  if ( !MEMORY[0xAC1484] ) /*0x5f77a4*/
   {
-    RawFileClass::Construct(v0, (int)DataGlobal_832A80);
-    FileSystem_TALKBUBL_SHP = (int)CCFileClass::ReadEntireFile(v0);
-    DataGlobal_AC148B = FileSystem_TALKBUBL_SHP != 0;
-    if ( !FileSystem_TALKBUBL_SHP )
-    FileSystem_TALKBUBL_SHP = SearchMIXFile(DataGlobal_832A80, 0);
-    RawFileClass::Dtor(v0);
+    RawFileClass::Construct(v0, (int)MEMORY[0x832A80]); /*0x5f77af*/
+    MEMORY[0xAC1484] = (int)CCFileClass::ReadEntireFile(v0); /*0x5f77c4*/
+    MEMORY[0xAC148B] = MEMORY[0xAC1484] != 0; /*0x5f77c9*/
+    if ( !MEMORY[0xAC1484] ) /*0x5f77cf*/
+      MEMORY[0xAC1484] = SearchMIXFile(MEMORY[0x832A80], 0); /*0x5f77dd*/
+    RawFileClass::Dtor(v0); /*0x5f77e6*/
   }
 }
 }

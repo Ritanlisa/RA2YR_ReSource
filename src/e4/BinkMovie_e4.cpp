@@ -824,52 +824,6 @@ void __thiscall sub_6C9930(void **this)
 }
 } // namespace gamemd
 
-// 0x6C99D0
-namespace gamemd {
-int * BinkMovie::CreateSurfaceTracker()
-{
-{
-    int *v2;
-    int *v3;
-    int *v4;
-    ObjectClass Filename;
-    if ( !this || !strlen(this) )
-    return 0;
-    v2 = (int *)__2_YAPAXI_Z(0x34u);
-    if ( !v2 )
-    return 0;
-    *v2 = 0;
-    v2[1] = 0;
-    v2[2] = 0;
-    v2[3] = 0;
-    v2[4] = 0;
-    v2[5] = 0;
-    v2[6] = 0;
-    v2[7] = 0;
-    v2[8] = 0;
-    _splitpath(this, 0, 0, &Filename, 0);
-    if ( BinkMovie::InitKeyframeTracking(v2, Filename.__pad_0) == 1 )
-  {
-    v3 = (int *)__2_YAPAXI_Z(0x20u);
-    v4 = v3;
-    if ( v3 )
-    {
-    v3[1] = 640;
-    v3[2] = 255;
-    v3[3] = 0;
-    *v3 = &XSurface_Vtable;
-    v3[4] = 2;
-    Buffer::Init(v3 + 5, 0, (AbstractClass *)0x4FB00);
-    *v4 = &BSurface_Vtable;
-    (*(void (__thiscall **)(int *, int))(*v4 + 24))(v4, 0);
-    v2[4] = (int)v4;
-    }
-  }
-    return v2;
-}
-}
-} // namespace gamemd
-
 // 0x6C9AE0
 namespace gamemd {
 int BinkMovie::FreeSurfaceTracker()
@@ -1154,6 +1108,52 @@ _DWORD *__thiscall sub_6C9EC0(_DWORD *this, int a2)
   if ( (_WORD)a2 != 0xFEFF ) /*0x6c9ee8*/
     Debug::Log(); /*0x6c9eef*/
   return this; /*0x6c9ef9*/
+}
+}
+} // namespace gamemd
+
+// 0x6C99D0
+namespace gamemd {
+int * BinkMovie::CreateSurfaceTracker()
+{
+{
+    int *v2;
+    int *v3;
+    int *v4;
+    ObjectClass Filename;
+    if ( !this || !strlen(this) )
+    return 0;
+    v2 = (int *)__2_YAPAXI_Z(0x34u);
+    if ( !v2 )
+    return 0;
+    *v2 = 0;
+    v2[1] = 0;
+    v2[2] = 0;
+    v2[3] = 0;
+    v2[4] = 0;
+    v2[5] = 0;
+    v2[6] = 0;
+    v2[7] = 0;
+    v2[8] = 0;
+    _splitpath(this, 0, 0, &Filename, 0);
+    if ( BinkMovie::InitKeyframeTracking(v2, Filename.__pad_0) == 1 )
+  {
+    v3 = (int *)__2_YAPAXI_Z(0x20u);
+    v4 = v3;
+    if ( v3 )
+    {
+    v3[1] = 640;
+    v3[2] = 255;
+    v3[3] = 0;
+    *v3 = &XSurface_Vtable;
+    v3[4] = 2;
+    Buffer::Init(v3 + 5, 0, (AbstractClass *)0x4FB00);
+    *v4 = &BSurface_Vtable;
+    (*(void (__thiscall **)(int *, int))(*v4 + 24))(v4, 0);
+    v2[4] = (int)v4;
+    }
+  }
+    return v2;
 }
 }
 } // namespace gamemd

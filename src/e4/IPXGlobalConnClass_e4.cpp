@@ -300,30 +300,6 @@ LABEL_13:
 }
 }
 
-// 0x540610
-int IPXGlobalConnClass::Release(const void * a1, AnimClass * aP2, int aP3, char aP4)
-{
-{
-    return ConnectionClass::sendAck((int)this, (AnimClass *)a1, aP2, (AnimClass *)aP3, (AnimClass *)aP4);
-}
-}
-
-// 0x540630
-int IPXGlobalConnClass::ddtor(int a2, int a3)
-{
-{
-    return ConnectionClass::receivePacket(this, a2, a3);
-}
-}
-
-// 0x540650
-int IPXGlobalConnClass::Connect(void * a2, signed int * a3)
-{
-{
-    return ConnectionClass::processTileUpdate(this, a2, a3);
-}
-}
-
 // 0x540670
 IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
 {
@@ -349,5 +325,29 @@ IPXGlobalConnClass *__thiscall IPXGlobalConnClass::QueryInterface(_DWORD *this, 
   if ( (a2 & 1) != 0 ) /*0x5406c5*/
     __3_YAXPAX_Z(this); /*0x5406c8*/
   return (IPXGlobalConnClass *)this; /*0x5406d2*/
+}
+}
+
+// 0x540610
+int IPXGlobalConnClass::Release(const void * a1, AnimClass * aP2, int aP3, char aP4)
+{
+{
+    return ConnectionClass::sendAck((int)this, (AnimClass *)a1, aP2, (AnimClass *)aP3, (AnimClass *)aP4);
+}
+}
+
+// 0x540630
+int IPXGlobalConnClass::ddtor(int a2, int a3)
+{
+{
+    return ConnectionClass::receivePacket(this, a2, a3);
+}
+}
+
+// 0x540650
+int IPXGlobalConnClass::Connect(void * a2, signed int * a3)
+{
+{
+    return ConnectionClass::processTileUpdate(this, a2, a3);
 }
 }

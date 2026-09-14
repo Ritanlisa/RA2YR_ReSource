@@ -17,35 +17,6 @@ _BYTE *__thiscall Palette_6BitTo16Bit(_BYTE *this, char a2, char a3, char a4)
 }
 } // namespace gamemd
 
-// 0x626200
-int Palette::FindClosestColor(int a2)
-{
-{
-    int v2;
-    int v3;
-    int v5;
-    char *v7;
-    int v8;
-    v2 = 0;
-    v8 = 0;
-    v3 = -1;
-    do
-  {
-    v7 = this;
-    this += 3;
-    v5 = Palette::CalcColorDistance(v7);
-    if ( v3 == -1 || v5 < v3 )
-    {
-    v3 = v5;
-    v8 = v2;
-    }
-    ++v2;
-  }
-    while ( v2 < 256 );
-    return v8;
-}
-}
-
 // 0x632BE0
 unsigned char * Palette::ConvertIndices(int a2)
 {
@@ -354,6 +325,35 @@ int __thiscall sub_661350(unsigned __int8 *this, unsigned __int8 *a2)
   if ( v4 < 0 ) /*0x661384*/
     v4 = a2[2] - *(this + 2); /*0x661386*/
   return 3 * v4 + 2 * (v2 + 2 * v3); /*0x66138e*/
+}
+}
+
+// 0x626200
+int Palette::FindClosestColor(int a2)
+{
+{
+    int v2;
+    int v3;
+    int v5;
+    char *v7;
+    int v8;
+    v2 = 0;
+    v8 = 0;
+    v3 = -1;
+    do
+  {
+    v7 = this;
+    this += 3;
+    v5 = Palette::CalcColorDistance(v7);
+    if ( v3 == -1 || v5 < v3 )
+    {
+    v3 = v5;
+    v8 = v2;
+    }
+    ++v2;
+  }
+    while ( v2 < 256 );
+    return v8;
 }
 }
 

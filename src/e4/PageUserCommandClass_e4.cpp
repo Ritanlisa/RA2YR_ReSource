@@ -5,9 +5,25 @@
 // 0x537DD0
 unsigned int * PageUserCommandClass::PageUserCommandClass()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall sub_537DD0(_DWORD *this)
 {
-    *(void**)this = &vt_PageUserCommandClass;
-    return this;
+  *this = &vt_PageUserCommandClass; /*0x537dd2*/
+  return this; /*0x537dd8*/
+}
+}
+
+// 0x537E50
+char PageUserCommandClass::Do(int a1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __stdcall PageUserCommandClass::_vt08(int a1)
+{
+  char result; // al
+
+  if ( MEMORY[0xA8B238][0] == 4 ) /*0x537e57*/
+    return UI_Add(); /*0x537e59*/
+  return result; /*0x537e5e*/
 }
 }
 
@@ -40,19 +56,5 @@ wchar_t * PageUserCommandClass::Read()
 {
 {
     return GetStringCSF(DataGlobal_827A98, 0, g_Str_File_Init_CPP, 7567);
-}
-}
-
-// 0x537E50
-char PageUserCommandClass::Do(int a1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall PageUserCommandClass::_vt08(int a1)
-{
-  char result; // al
-
-  if ( MEMORY[0xA8B238][0] == 4 ) /*0x537e57*/
-    return UI_Add(); /*0x537e59*/
-  return result; /*0x537e5e*/
 }
 }

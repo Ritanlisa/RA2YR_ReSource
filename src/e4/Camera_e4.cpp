@@ -5,13 +5,16 @@
 // 0x58B600
 long long Camera::UpdateTilt()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+__int64 Camera_UpdateTilt()
 {
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_ABDFA8 - DataGlobal_ABEC88);
-    result = Math::RoundToInt(v0 * DataGlobal_ABE368 * 0.5);
-    DataGlobal_ABED00 = result;
-    return result;
+  double v0; // st7
+  __int64 result; // rax
+
+  v0 = Math::Sin(dbl_ABDFA8 - dbl_ABEC88); /*0x58b612*/
+  result = Math::RoundToInt(v0 * dbl_ABE368 * 0.5); /*0x58b626*/
+  dword_ABED00 = result; /*0x58b62b*/
+  return result; /*0x58b630*/
 }
 }
 

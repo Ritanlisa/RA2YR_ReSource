@@ -32,16 +32,6 @@ void __thiscall Math_Hypotenuse2D(double *this)
 }
 } // namespace gamemd
 
-// 0x473650
-namespace gamemd {
-void Math::InitArcTan()
-{
-{
-    DataGlobal_89E230 = Math::ArcTan((double)DataGlobal_89E278 * 0.00390625);
-}
-}
-} // namespace gamemd
-
 // 0x4CAC40
 namespace gamemd {
 int Math_Sqrt()
@@ -134,16 +124,6 @@ double __cdecl Math_Sin(double a1)
   if ( v1 < 0 )
     v1 = (((_WORD)v1 - 1) | 0xFFFFF000) + 1 + ((int)((((_WORD)v1 - 1) | 0xFFFFF000) + 1) < 0 ? 0x1000 : 0);
   return MEMORY[0x85D0A4][v1]; /*0x4cad7b*/
-}
-}
-} // namespace gamemd
-
-// 0x4CADB0
-namespace gamemd {
-double Math::ArcTan2_Table(double a1)
-{
-{
-    return 1.570796326794897 - *((float *)&DataGlobal_859094 - Math::RoundToInt((a1 + 1.0) * -2048.0));
 }
 }
 } // namespace gamemd
@@ -270,62 +250,6 @@ float *__thiscall Math_BuildRotationMatrix(float *this, float *a2, float a3)
 }
 } // namespace gamemd
 
-// 0x5B2950
-namespace gamemd {
-IUnknown * Math::Sub16(BuildingTypeClass * aP1, IUnknown * aP2)
-{
-{
-    LOWORD(aP2) = *(void**)this - LOWORD(aP2->field_0);
-    *(int *)aP1->vtable0 = aP2;
-    return (IUnknown *)aP1;
-}
-}
-} // namespace gamemd
-
-// 0x5B2990
-namespace gamemd {
-bool Math::Abs16Cmp(IUnknown * aP1, IUnknown * aP2)
-{
-{
-    return abs16(aP2->field_0) >= (int)abs16(*(void**)this - LOWORD(aP1->field_0));
-}
-}
-} // namespace gamemd
-
-// 0x5C7DB0
-namespace gamemd {
-void sub_5C7DB0(unsigned short * a1, unsigned short * a2, unsigned short a3, int a4)
-{
-{
-    int v4;
-    unsigned int v5;
-    unsigned short v6;
-    unsigned int v7;
-    unsigned int v8;
-    v4 = a4;
-    v5 = 0;
-    if ( a4 <= 0 )
-  {
-    *a1 = *a1;
-  }
-    else
-  {
-    do
-    {
-    v6 = *a2++;
-    v7 = v5 + (unsigned short)*a1 + a3 * v6;
-    *a1++ = v7;
-    v8 = HIWORD(v7);
-    --v4;
-    v5 = v8;
-    }
-    while ( v4 );
-    *a1 += v8;
-  }
-}
-}
-} // namespace gamemd
-
 // 0x5F6560
 namespace gamemd {
 int Math::DistSq2D(TechnoClass * aP1)
@@ -448,6 +372,82 @@ int Math_RoundToInt()
 __int64 __usercall Math::RoundToInt@<edx:eax>(double a1@<st0>)
 {
   return (__int64)a1; /*0x7c5f22*/
+}
+}
+} // namespace gamemd
+
+// 0x473650
+namespace gamemd {
+void Math::InitArcTan()
+{
+{
+    DataGlobal_89E230 = Math::ArcTan((double)DataGlobal_89E278 * 0.00390625);
+}
+}
+} // namespace gamemd
+
+// 0x4CADB0
+namespace gamemd {
+double Math::ArcTan2_Table(double a1)
+{
+{
+    return 1.570796326794897 - *((float *)&DataGlobal_859094 - Math::RoundToInt((a1 + 1.0) * -2048.0));
+}
+}
+} // namespace gamemd
+
+// 0x5B2950
+namespace gamemd {
+IUnknown * Math::Sub16(BuildingTypeClass * aP1, IUnknown * aP2)
+{
+{
+    LOWORD(aP2) = *(void**)this - LOWORD(aP2->field_0);
+    *(int *)aP1->vtable0 = aP2;
+    return (IUnknown *)aP1;
+}
+}
+} // namespace gamemd
+
+// 0x5B2990
+namespace gamemd {
+bool Math::Abs16Cmp(IUnknown * aP1, IUnknown * aP2)
+{
+{
+    return abs16(aP2->field_0) >= (int)abs16(*(void**)this - LOWORD(aP1->field_0));
+}
+}
+} // namespace gamemd
+
+// 0x5C7DB0
+namespace gamemd {
+void sub_5C7DB0(unsigned short * a1, unsigned short * a2, unsigned short a3, int a4)
+{
+{
+    int v4;
+    unsigned int v5;
+    unsigned short v6;
+    unsigned int v7;
+    unsigned int v8;
+    v4 = a4;
+    v5 = 0;
+    if ( a4 <= 0 )
+  {
+    *a1 = *a1;
+  }
+    else
+  {
+    do
+    {
+    v6 = *a2++;
+    v7 = v5 + (unsigned short)*a1 + a3 * v6;
+    *a1++ = v7;
+    v8 = HIWORD(v7);
+    --v4;
+    v5 = v8;
+    }
+    while ( v4 );
+    *a1 += v8;
+  }
 }
 }
 } // namespace gamemd

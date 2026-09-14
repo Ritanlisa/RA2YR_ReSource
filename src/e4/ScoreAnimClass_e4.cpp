@@ -5,22 +5,13 @@
 // 0x691000
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall ScoreAnimClass::Constructor_ScoreAnimClass_0(_DWORD *this, char a2)
 {
-    *(void**)this = &vt_ScoreAnimClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-
-// 0x691020
-unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2)
-{
-{
-    *(void**)this = &vt_ScoreAnimClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
+  *this = &vt_ScoreAnimClass; /*0x691009*/
+  if ( (a2 & 1) != 0 ) /*0x69100f*/
+    __3_YAXPAX_Z(this); /*0x691012*/
+  return this; /*0x69101c*/
 }
 }
 
@@ -55,5 +46,16 @@ _DWORD *__thiscall ScoreAnimClass::Constructor_ScoreFontClass(_DWORD *this, char
   if ( (a2 & 1) != 0 ) /*0x6910ee*/
     __3_YAXPAX_Z(this); /*0x6910f1*/
   return this; /*0x6910fb*/
+}
+}
+
+// 0x691020
+unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2)
+{
+{
+    *(void**)this = &vt_ScoreAnimClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }

@@ -19,75 +19,6 @@ int __fastcall sub_53EC40(unsigned __int8 a1, char a2)
 }
 } // namespace gamemd
 
-// 0x5C0E90
-char Memory::FreeConditional(int a1, int a2, void * Block, int a4, short a5, int a6, int a7, int a8, int a9)
-{
-{
-    if ( Block && HIBYTE(a5) )
-    __3_YAXPAX_Z(Block);
-    return 0;
-}
-}
-
-// 0x5C0FA0
-char Memory::FreeConditional2(int a1, void * Block, int a3, short a4, int a5, int a6, int a7)
-{
-{
-    if ( Block && HIBYTE(a4) )
-    __3_YAXPAX_Z(Block);
-    return 0;
-}
-}
-
-// 0x731CE0
-int Memory::Alloc76()
-{
-{
-    return System_Handle(76, 0);
-}
-}
-
-// 0x58C6F0
-namespace gamemd {
-double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
-{
-{
-    double v3;
-    double v4;
-    char v6;
-    int v8;
-    double v9;
-    int a1a;
-    double v11;
-    v8 = *a1 - SLOWORD(aP0->field_0);
-    a1a = *((int*)(a1) + 1) - SHIWORD(aP0->field_0);
-    v9 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)(v8 * v8 + a1a * a1a)));
-    if ( v8 )
-  {
-    v3 = Math::ArcTan(-((double)a1a / (double)v8));
-    if ( v8 < 0 )
-    v3 = v3 + 3.141592653589793;
-  }
-    else
-  {
-    v3 = 1.570796326794897;
-  }
-    v4 = fabs(v3 - a3);
-    v11 = v4;
-    if ( !v6 )
-  {
-    do
-    v4 = v4 - 6.283185307179586;
-    while ( v4 >= 6.283185307179586 );
-    v11 = v4;
-  }
-    if ( v4 > 3.141592653589793 )
-    v11 = 6.283185307179586 - v4;
-    return (double)(unsigned int)Random::State(&g_Randomizer) * 2.328306437080797e-10 * 2.5 + 1.5 * v11 + 0.15 * v9;
-}
-}
-} // namespace gamemd
-
 // 0x6149B0
 namespace gamemd {
 size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
@@ -183,3 +114,72 @@ LABEL_8:
 }
 }
 } // namespace gamemd
+
+// 0x58C6F0
+namespace gamemd {
+double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
+{
+{
+    double v3;
+    double v4;
+    char v6;
+    int v8;
+    double v9;
+    int a1a;
+    double v11;
+    v8 = *a1 - SLOWORD(aP0->field_0);
+    a1a = *((int*)(a1) + 1) - SHIWORD(aP0->field_0);
+    v9 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)(v8 * v8 + a1a * a1a)));
+    if ( v8 )
+  {
+    v3 = Math::ArcTan(-((double)a1a / (double)v8));
+    if ( v8 < 0 )
+    v3 = v3 + 3.141592653589793;
+  }
+    else
+  {
+    v3 = 1.570796326794897;
+  }
+    v4 = fabs(v3 - a3);
+    v11 = v4;
+    if ( !v6 )
+  {
+    do
+    v4 = v4 - 6.283185307179586;
+    while ( v4 >= 6.283185307179586 );
+    v11 = v4;
+  }
+    if ( v4 > 3.141592653589793 )
+    v11 = 6.283185307179586 - v4;
+    return (double)(unsigned int)Random::State(&g_Randomizer) * 2.328306437080797e-10 * 2.5 + 1.5 * v11 + 0.15 * v9;
+}
+}
+} // namespace gamemd
+
+// 0x5C0E90
+char Memory::FreeConditional(int a1, int a2, void * Block, int a4, short a5, int a6, int a7, int a8, int a9)
+{
+{
+    if ( Block && HIBYTE(a5) )
+    __3_YAXPAX_Z(Block);
+    return 0;
+}
+}
+
+// 0x5C0FA0
+char Memory::FreeConditional2(int a1, void * Block, int a3, short a4, int a5, int a6, int a7)
+{
+{
+    if ( Block && HIBYTE(a4) )
+    __3_YAXPAX_Z(Block);
+    return 0;
+}
+}
+
+// 0x731CE0
+int Memory::Alloc76()
+{
+{
+    return System_Handle(76, 0);
+}
+}

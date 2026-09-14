@@ -203,40 +203,6 @@ LABEL_17:
 }
 } // namespace gamemd
 
-// 0x427A80
-namespace gamemd {
-char AnimTypeClass::GetLoopCount(int a2)
-{
-{
-    int v2;
-    char Buffer[512];
-    LOBYTE(v2) = g_ArmageddonMode;
-    if ( g_ArmageddonMode || a2 != DataGlobal_822CF8 )
-  {
-    if ( !this->Theater || this->DemandLoad )
-    {
-    LOBYTE(v2) = this->NewTheater;
-    if ( (char)v2 )
-    LOBYTE(v2) = this->GetWarhead(a2);
-    }
-    else
-    {
-    if ( this->Image && this->ImageAllocated )
-      {
-    __3_YAXPAX_Z(*((void **)(this) + 41));
-    this->ImageAllocated = 0;
-      }
-    this->Image = 0;
-    _makepath(Buffer, 0, 0, (const char *)(this) + 36, (const char *)&DataGlobal_7E1BC6 + 112 * a2);
-    v2 = SearchMIXFile(Buffer, 1);
-    this->Image = v2;
-    }
-  }
-    return v2;
-}
-}
-} // namespace gamemd
-
 // 0x427B50
 namespace gamemd {
 char AnimTypeClass::GetWarhead(int a2)
@@ -305,27 +271,6 @@ char __thiscall AnimTypeClass::_vt40(int this, int a2)
     LOBYTE(v3) = -1; /*0x427c71*/
   }
   return v3; /*0x427c80*/
-}
-}
-} // namespace gamemd
-
-// 0x427CB0
-namespace gamemd {
-int AnimTypeClass::FindIndex()
-{
-{
-    int v2;
-    if ( !this )
-    return -1;
-    v2 = 0;
-    if ( *(int *)&DataGlobal_89E138.__pad_1600D[27] <= 0 )
-    return -1;
-    while ( _strcmpi((const void *)(*(int *)(*(int *)&DataGlobal_89E138.__pad_1600D[15] + 4 * v2) + 36), this) )
-  {
-    if ( ++v2 >= *(int *)&DataGlobal_89E138.__pad_1600D[27] )
-    return -1;
-  }
-    return v2;
 }
 }
 } // namespace gamemd
@@ -433,20 +378,6 @@ int __stdcall AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     return 0; /*0x428955*/
   }
   return result; /*0x42892b*/
-}
-}
-} // namespace gamemd
-
-// 0x428970
-namespace gamemd {
-int AnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
 }
 }
 } // namespace gamemd
@@ -692,22 +623,6 @@ AnimTypeClass *__thiscall AnimTypeClass::ddtor(_DWORD *this, char a2)
 }
 } // namespace gamemd
 
-// 0x477050
-namespace gamemd {
-int AnimTypeClass::ReadINIString(INIClass * aP1, unsigned char * a2, Layer a3)
-{
-{
-    INIClass *v5;
-    INIClass Destination[2];
-    v5 = (INIClass *)globalHelper_08E090(a3);
-    if ( INIClass::GetString(this, aP1, a2, v5, Destination, 128) )
-    return AnimTypeClass::LookupByName(Destination);
-    else
-    return a3;
-}
-}
-} // namespace gamemd
-
 // 0x48E050
 namespace gamemd {
 int AnimTypeClass::LookupByName()
@@ -730,6 +645,75 @@ int __thiscall AnimTypeClass::LookupByName(void *this)
       return -1; /*0x48e07a*/
   }
   return v2; /*0x48e07c*/
+}
+}
+} // namespace gamemd
+
+// 0x427A80
+namespace gamemd {
+char AnimTypeClass::GetLoopCount(int a2)
+{
+{
+    int v2;
+    char Buffer[512];
+    LOBYTE(v2) = g_ArmageddonMode;
+    if ( g_ArmageddonMode || a2 != DataGlobal_822CF8 )
+  {
+    if ( !this->Theater || this->DemandLoad )
+    {
+    LOBYTE(v2) = this->NewTheater;
+    if ( (char)v2 )
+    LOBYTE(v2) = this->GetWarhead(a2);
+    }
+    else
+    {
+    if ( this->Image && this->ImageAllocated )
+      {
+    __3_YAXPAX_Z(*((void **)(this) + 41));
+    this->ImageAllocated = 0;
+      }
+    this->Image = 0;
+    _makepath(Buffer, 0, 0, (const char *)(this) + 36, (const char *)&DataGlobal_7E1BC6 + 112 * a2);
+    v2 = SearchMIXFile(Buffer, 1);
+    this->Image = v2;
+    }
+  }
+    return v2;
+}
+}
+} // namespace gamemd
+
+// 0x427CB0
+namespace gamemd {
+int AnimTypeClass::FindIndex()
+{
+{
+    int v2;
+    if ( !this )
+    return -1;
+    v2 = 0;
+    if ( *(int *)&DataGlobal_89E138.__pad_1600D[27] <= 0 )
+    return -1;
+    while ( _strcmpi((const void *)(*(int *)(*(int *)&DataGlobal_89E138.__pad_1600D[15] + 4 * v2) + 36), this) )
+  {
+    if ( ++v2 >= *(int *)&DataGlobal_89E138.__pad_1600D[27] )
+    return -1;
+  }
+    return v2;
+}
+}
+} // namespace gamemd
+
+// 0x428970
+namespace gamemd {
+int AnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
 }
 }
 } // namespace gamemd
@@ -785,5 +769,21 @@ namespace gamemd {
 int AnimTypeClass::StubReturnFalse(int a1)
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x477050
+namespace gamemd {
+int AnimTypeClass::ReadINIString(INIClass * aP1, unsigned char * a2, Layer a3)
+{
+{
+    INIClass *v5;
+    INIClass Destination[2];
+    v5 = (INIClass *)globalHelper_08E090(a3);
+    if ( INIClass::GetString(this, aP1, a2, v5, Destination, 128) )
+    return AnimTypeClass::LookupByName(Destination);
+    else
+    return a3;
+}
 }
 } // namespace gamemd

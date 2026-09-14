@@ -13,9 +13,9 @@ struct Coord {
     void * To_Cell(IUnknown * aP1);  // 0x565730
     BOOL Compare2D(unsigned short * a2);  // 0x5AC370
     int * WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4);  // 0x6557F0
-    int * To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1);  // 0x6D1F10
-    long long ScaleToScreenY();  // 0x6D2120
     bool To_Screen(unsigned int * a1, IUnknown * aP2);  // 0x6D2140
     int * Divide(int * a2, int a3);  // 0x710700
+    int * To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1);  // 0x6D1F10
+    long long ScaleToScreenY();  // 0x6D2120
 };
 } // namespace gamemd

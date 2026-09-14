@@ -67,42 +67,6 @@ LABEL_11:
 }
 }
 
-// 0x6B5550
-bool SmudgeTypeClass::GetType(short * a2, int a3)
-{
-{
-    void **v4;
-    int v5;
-    bool result;
-    int v7[3];
-    v4 = (void **)__2_YAPAXI_Z(0xB0u);
-    result = 0;
-    if ( v4 )
-  {
-    v7[2] = 0;
-    v5 = *((int*)(a2) + 1);
-    v7[0] = (*a2 << 8) + 128;
-    v7[1] = (v5 << 8) + 128;
-    if ( UnitClass::Create(v4, this, (AbstractClass *)v7, -1) )
-    return 1;
-  }
-    return result;
-}
-}
-
-// 0x6B55C0
-SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
-{
-{
-    void **v3;
-    v3 = (void **)__2_YAPAXI_Z(0xB0u);
-    if ( v3 )
-    return UnitClass::Create(v3, this, (AbstractClass *)&DataGlobal_B05488.__pad_579C[2948], -1);
-    else
-    return 0;
-}
-}
-
 // 0x6B55F0
 void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6)
 {
@@ -233,26 +197,6 @@ int __stdcall SmudgeTypeClass::LoadTypeData(ObjectTypeClass *aP0, int aP1)
 }
 }
 
-// 0x6B58B0
-int SmudgeTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-
-// 0x6B6150
-int SmudgeTypeClass::GetAuxField()
-{
-{
-    return this->Width;
-}
-}
-
 // 0x6B6160
 SmudgeTypeClass * SmudgeTypeClass::ddtor(void ** this, AbstractClass * a2, char a3)
 {
@@ -297,6 +241,54 @@ SmudgeTypeClass *__fastcall SmudgeTypeClass::ddtor(void **this, AbstractClass *a
 }
 }
 
+// 0x6B5550
+bool SmudgeTypeClass::GetType(short * a2, int a3)
+{
+{
+    void **v4;
+    int v5;
+    bool result;
+    int v7[3];
+    v4 = (void **)__2_YAPAXI_Z(0xB0u);
+    result = 0;
+    if ( v4 )
+  {
+    v7[2] = 0;
+    v5 = *((int*)(a2) + 1);
+    v7[0] = (*a2 << 8) + 128;
+    v7[1] = (v5 << 8) + 128;
+    if ( UnitClass::Create(v4, this, (AbstractClass *)v7, -1) )
+    return 1;
+  }
+    return result;
+}
+}
+
+// 0x6B55C0
+SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
+{
+{
+    void **v3;
+    v3 = (void **)__2_YAPAXI_Z(0xB0u);
+    if ( v3 )
+    return UnitClass::Create(v3, this, (AbstractClass *)&DataGlobal_B05488.__pad_579C[2948], -1);
+    else
+    return 0;
+}
+}
+
+// 0x6B58B0
+int SmudgeTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
+}
+
 // 0x6B58D0
 int SmudgeTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
@@ -319,4 +311,12 @@ return 30;
 int SmudgeTypeClass::GetObjectSize()
 {
 return 676;
+}
+
+// 0x6B6150
+int SmudgeTypeClass::GetAuxField()
+{
+{
+    return this->Width;
+}
 }

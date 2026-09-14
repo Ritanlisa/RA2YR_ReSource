@@ -5,8 +5,10 @@
 // 0x41CB50
 char TechnoTypeClass::vt_entry_A0()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char TechnoTypeClass::vt_entry_A0()
 {
-    return 0;
+  return 0; /*0x41cb52*/
 }
 }
 
@@ -1032,25 +1034,6 @@ int __thiscall TechnoTypeClass::DTOR(int this)
 }
 }
 
-// 0x711E90
-bool TechnoTypeClass::CanAttackMove_IgnoreWeapon()
-{
-{
-    return this->Weapon && !this->PreventAttackMove;
-}
-}
-
-// 0x711EE0
-double TechnoTypeClass::ComputeBuildTime()
-{
-{
-    double result;
-    result = (double)this->Cost * *((double *)g_RulesClass_Instance + 745) * 0.9;
-    Math::RoundToInt(result);
-    return result;
-}
-}
-
 // 0x711F00
 int TechnoTypeClass::ComputeValueSimple(float * a2)
 {
@@ -1639,36 +1622,6 @@ _DWORD *__thiscall sub_717AF0(_DWORD *this)
 }
 }
 
-// 0x717B20
-int TechnoTypeClass::SaveLoadDataArray(TechnoTypeClass * aP1)
-{
-{
-    int v3;
-    int result;
-    int i;
-    int v6;
-    v3 = *(int *)aP1->vtable0;
-    v6 = this->uniqueId;
-    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
-    result = v6;
-    for ( i = 0; i < v6; ++i )
-  {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->vtable1 + 4 * i, 4, 0);
-    result = v6;
-  }
-    return result;
-}
-}
-
-// 0x717BC0
-unsigned int * TechnoTypeClass::Constructor_0(ObjectTypeClass * aP1)
-{
-{
-    *(void**)this = &vt_DynamicVectorClass_VoxelAnimTypeClass_const;
-    return this;
-}
-}
-
 // 0x717BE0
 VectorClass * TechnoTypeClass::Constructor_1(ObjectTypeClass * aP1)
 {
@@ -1721,3 +1674,52 @@ bool __thiscall TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0(int this)
 }
 }
 } // namespace gamemd
+
+// 0x711E90
+bool TechnoTypeClass::CanAttackMove_IgnoreWeapon()
+{
+{
+    return this->Weapon && !this->PreventAttackMove;
+}
+}
+
+// 0x711EE0
+double TechnoTypeClass::ComputeBuildTime()
+{
+{
+    double result;
+    result = (double)this->Cost * *((double *)g_RulesClass_Instance + 745) * 0.9;
+    Math::RoundToInt(result);
+    return result;
+}
+}
+
+// 0x717B20
+int TechnoTypeClass::SaveLoadDataArray(TechnoTypeClass * aP1)
+{
+{
+    int v3;
+    int result;
+    int i;
+    int v6;
+    v3 = *(int *)aP1->vtable0;
+    v6 = this->uniqueId;
+    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
+    result = v6;
+    for ( i = 0; i < v6; ++i )
+  {
+    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->vtable1 + 4 * i, 4, 0);
+    result = v6;
+  }
+    return result;
+}
+}
+
+// 0x717BC0
+unsigned int * TechnoTypeClass::Constructor_0(ObjectTypeClass * aP1)
+{
+{
+    *(void**)this = &vt_DynamicVectorClass_VoxelAnimTypeClass_const;
+    return this;
+}
+}

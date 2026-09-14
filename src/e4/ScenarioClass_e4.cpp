@@ -64,18 +64,6 @@ void *ScenarioClass_CopyStartPositions()
 }
 } // namespace gamemd
 
-// 0x5CA7F0
-namespace gamemd {
-int ScenarioClass_ClearFlag_0()
-{
-// 0x5ca7f0
-    char ScenarioClass::ClearFlag_0()
-{
-    return ScenarioClass::ClearFlag();
-}
-}
-} // namespace gamemd
-
 // 0x5CC330
 namespace gamemd {
 int ScenarioClass_AnimateConstructionStage()
@@ -273,20 +261,6 @@ int ScenarioClass::MissionStubReturnZero3()
 int __thiscall ScenarioClass::_vt28(void *this)
 {
   return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 108))(this);
-}
-}
-} // namespace gamemd
-
-// 0x5D6790
-namespace gamemd {
-char ScenarioClass::ClearFlag()
-{
-{
-    int v0;
-    v0 = *(int *)g_ScenarioClass_Instance;
-    BYTE1(v0) = BYTE1(*(int *)g_ScenarioClass_Instance) & 0xFB;
-    *(int *)g_ScenarioClass_Instance = v0;
-    return 1;
 }
 }
 } // namespace gamemd
@@ -876,19 +850,6 @@ char ScenarioClass::ReadMapINI(CCINIClass * aP1)
 }
 } // namespace gamemd
 
-// 0x6B8AE0
-namespace gamemd {
-unsigned int ScenarioClass::ResetIntroFlags()
-{
-{
-    unsigned int result;
-    result = *(void**)this & 0xFFF80000 | 0x8088;
-    *(void**)this = result;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x5C0E20
 namespace gamemd {
 char ScenarioClass::initUnits()
@@ -1074,6 +1035,18 @@ return 1;
 }
 } // namespace gamemd
 
+// 0x5CA7F0
+namespace gamemd {
+int ScenarioClass_ClearFlag_0()
+{
+// 0x5ca7f0
+    char ScenarioClass::ClearFlag_0()
+{
+    return ScenarioClass::ClearFlag();
+}
+}
+} // namespace gamemd
+
 // 0x5D5DB0
 namespace gamemd {
 int ScenarioClass::MissionStubReturnZero()
@@ -1114,6 +1087,20 @@ return 1;
 }
 } // namespace gamemd
 
+// 0x5D6790
+namespace gamemd {
+char ScenarioClass::ClearFlag()
+{
+{
+    int v0;
+    v0 = *(int *)g_ScenarioClass_Instance;
+    BYTE1(v0) = BYTE1(*(int *)g_ScenarioClass_Instance) & 0xFB;
+    *(int *)g_ScenarioClass_Instance = v0;
+    return 1;
+}
+}
+} // namespace gamemd
+
 // 0x5D67A0
 namespace gamemd {
 char ScenarioClass::MissionStubReturnZero4(int a1)
@@ -1127,5 +1114,18 @@ namespace gamemd {
 char ScenarioClass::processAI()
 {
 return 1;
+}
+} // namespace gamemd
+
+// 0x6B8AE0
+namespace gamemd {
+unsigned int ScenarioClass::ResetIntroFlags()
+{
+{
+    unsigned int result;
+    result = *(void**)this & 0xFFF80000 | 0x8088;
+    *(void**)this = result;
+    return result;
+}
 }
 } // namespace gamemd

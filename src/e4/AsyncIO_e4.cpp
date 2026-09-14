@@ -46,18 +46,6 @@ char AsyncIO_Shutdown()
 }
 }
 
-// 0x5BF500
-int AsyncIO::Read()
-{
-{
-    int result;
-    result = g_AsyncIOState;
-    if ( g_AsyncIOState > 0 )
-    return (*(int (__thiscall **)(int, void *))(**(int **)(AsyncIO_Instance) + 12))( *(int *)AsyncIO_Instance, this);
-    return result;
-}
-}
-
 // 0x774BC0
 BOOL AsyncIO::WaitCompletion()
 {
@@ -101,5 +89,17 @@ BOOL __thiscall AsyncIO_WaitCompletion(int this)
     *(_BYTE *)(this + 81) = 0; /*0x774c4f*/
   }
   return ResetEvent(*(HANDLE *)(this + 76)); /*0x774c60*/
+}
+}
+
+// 0x5BF500
+int AsyncIO::Read()
+{
+{
+    int result;
+    result = g_AsyncIOState;
+    if ( g_AsyncIOState > 0 )
+    return (*(int (__thiscall **)(int, void *))(**(int **)(AsyncIO_Instance) + 12))( *(int *)AsyncIO_Instance, this);
+    return result;
 }
 }

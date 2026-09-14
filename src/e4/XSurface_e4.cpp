@@ -5,8 +5,10 @@
 // 0x410600
 int XSurface::vt_entry_40(int a1)
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __stdcall INoticeSource_Stub1(int a1)
 {
-    return AbstractClass::COMStub_Release(a1 - 4);
+  return AbstractClass::COMStub_Release(a1 - 4);
 }
 }
 
@@ -414,37 +416,6 @@ char __thiscall XSurface_WalkLine(_DWORD *this, int a2, _DWORD *a3, _DWORD *a4, 
     return 1; /*0x7bad86*/
   }
   return result; /*0x7bac0f*/
-}
-}
-
-// 0x7BADC0
-char XSurface::DrawRectEx(int a2, unsigned int * a3, int a4)
-{
-{
-    int v5;
-    int v6;
-    int v7;
-    int v9[2];
-    int v10[2];
-    int v11[2];
-    int v12;
-    int v13;
-    v5 = *((int*)(a3) + 1);
-    v6 = *((int*)(a3) + 3);
-    v7 = *((int*)(a3) + 2) + *a3 - 1;
-    v9[0] = *a3;
-    v10[0] = v7;
-    v11[0] = v7;
-    v13 = v6 + v5 - 1;
-    v11[1] = v13;
-    v12 = v9[0];
-    v9[1] = v5;
-    v10[1] = v5;
-    this->DrawLineEx(a2, v9, v10, a4);
-    this->DrawLineEx(a2, v9, &v12, a4);
-    this->DrawLineEx(a2, v10, v11, a4);
-    this->DrawLineEx(a2, &v12, v11, a4);
-    return 1;
 }
 }
 
@@ -1079,6 +1050,37 @@ int XSurface_entry_3C_()
 char XSurface::entry_40_(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
 return 0;
+}
+
+// 0x7BADC0
+char XSurface::DrawRectEx(int a2, unsigned int * a3, int a4)
+{
+{
+    int v5;
+    int v6;
+    int v7;
+    int v9[2];
+    int v10[2];
+    int v11[2];
+    int v12;
+    int v13;
+    v5 = *((int*)(a3) + 1);
+    v6 = *((int*)(a3) + 3);
+    v7 = *((int*)(a3) + 2) + *a3 - 1;
+    v9[0] = *a3;
+    v10[0] = v7;
+    v11[0] = v7;
+    v13 = v6 + v5 - 1;
+    v11[1] = v13;
+    v12 = v9[0];
+    v9[1] = v5;
+    v10[1] = v5;
+    this->DrawLineEx(a2, v9, v10, a4);
+    this->DrawLineEx(a2, v9, &v12, a4);
+    this->DrawLineEx(a2, v10, v11, a4);
+    this->DrawLineEx(a2, &v12, v11, a4);
+    return 1;
+}
 }
 
 // 0x7BB340

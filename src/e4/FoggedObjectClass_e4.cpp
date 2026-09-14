@@ -642,42 +642,6 @@ LABEL_21:
 }
 }
 
-// 0x4D24A0
-int FoggedObjectClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    int v4;
-    int v5;
-    int v6;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-  {
-    v4 = *a1;
-    aP2 = *(int *)&aP0->Name[8];
-    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
-    if ( result >= 0 )
-    {
-    v5 = 0;
-    if ( aP2 > 0 )
-      {
-    v6 = 0;
-    do
-        {
-    if ( (*(int (__stdcall **)(int *, char *, int, int))(*a1 + 16))(a1, (char *)aP0->UIName + v6, 16, 0) < 0 )
-    break;
-    ++v5;
-    v6 += 16;
-        }
-    while ( v5 < aP2 );
-      }
-    return 0;
-    }
-  }
-    return result;
-}
-}
-
 // 0x4D2510
 int FoggedObjectClass::LoadTypeData(int * a1, int a2)
 {
@@ -1076,19 +1040,6 @@ void __thiscall FoggedObjectClass_42_::sub_4E01F0(int this)
 }
 } // namespace gamemd
 
-// 0x4E0220
-namespace gamemd {
-unsigned int FoggedObjectClass_42::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->FoggedObjectClass_42_field_0xC )
-    return (unsigned int)(a2 - this->FoggedObjectClass_42_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4E0240
 namespace gamemd {
 int FoggedObjectClass_42::Seek(int a2)
@@ -1232,19 +1183,6 @@ int __thiscall FoggedObjectClass_42_::_vt04(int this, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x4E06E0
-namespace gamemd {
-unsigned int FoggedObjectClass_42::Write(int a2)
-{
-{
-    if ( (unsigned char)this->FoggedObjectClass_42_field_0xC )
-    return (unsigned int)(a2 - this->FoggedObjectClass_42_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4E0700
 namespace gamemd {
 char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
@@ -1346,6 +1284,42 @@ VectorClass *__thiscall FoggedObjectClass_42_::QueryInterface(_DWORD *this, char
 }
 } // namespace gamemd
 
+// 0x4D24A0
+int FoggedObjectClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    int v4;
+    int v5;
+    int v6;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+  {
+    v4 = *a1;
+    aP2 = *(int *)&aP0->Name[8];
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
+    if ( result >= 0 )
+    {
+    v5 = 0;
+    if ( aP2 > 0 )
+      {
+    v6 = 0;
+    do
+        {
+    if ( (*(int (__stdcall **)(int *, char *, int, int))(*a1 + 16))(a1, (char *)aP0->UIName + v6, 16, 0) < 0 )
+    break;
+    ++v5;
+    v6 += 16;
+        }
+    while ( v5 < aP2 );
+      }
+    return 0;
+    }
+  }
+    return result;
+}
+}
+
 // 0x4D27B0
 int FoggedObjectClass::GetTypeIdentifier()
 {
@@ -1369,3 +1343,29 @@ int FoggedObjectClass::GetClassIdentifier(int a1, unsigned int * a2)
   a2[3] = -318126072;
   return 0;
 }
+
+// 0x4E0220
+namespace gamemd {
+unsigned int FoggedObjectClass_42::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->FoggedObjectClass_42_field_0xC )
+    return (unsigned int)(a2 - this->FoggedObjectClass_42_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E06E0
+namespace gamemd {
+unsigned int FoggedObjectClass_42::Write(int a2)
+{
+{
+    if ( (unsigned char)this->FoggedObjectClass_42_field_0xC )
+    return (unsigned int)(a2 - this->FoggedObjectClass_42_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd

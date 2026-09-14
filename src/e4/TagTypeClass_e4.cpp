@@ -307,20 +307,6 @@ int __stdcall TagTypeClass::LoadTypeData(AbstractTypeClass *aP0, int aP1)
 }
 } // namespace gamemd
 
-// 0x6E6470
-namespace gamemd {
-int TagTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6E64B0
 namespace gamemd {
 int TagTypeClass::GetAuxField()
@@ -390,6 +376,20 @@ int TagTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   a2[2] = 1610655148;
   a2[3] = -1252326136;
   return 0;
+}
+} // namespace gamemd
+
+// 0x6E6470
+namespace gamemd {
+int TagTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
 }
 } // namespace gamemd
 

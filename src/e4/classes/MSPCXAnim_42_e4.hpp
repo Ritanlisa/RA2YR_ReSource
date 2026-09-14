@@ -4,6 +4,7 @@
 namespace gamemd {
 struct MSPCXAnim_42 {
     void* vfptr;  // minimal E2 declaration
+    char AllocCopyData_8B(int a2, unsigned int * a3);  // 0x5D09C0
     void FreeData();  // 0x5D05A0
     unsigned int GetCount_8B(int a2);  // 0x5D05D0
     void FreeData_0();  // 0x5D0610
@@ -11,7 +12,6 @@ struct MSPCXAnim_42 {
     void FreeData_1();  // 0x5D0670
     unsigned int GetCount_0(int a2);  // 0x5D06A0
     int GetFrame(int a2);  // 0x5D0780
-    char AllocCopyData_8B(int a2, unsigned int * a3);  // 0x5D09C0
     int FindIndex_Pair(unsigned int * a2);  // 0x5D0AA0
     char AllocCopyData_4B(int a2, unsigned int * a3);  // 0x5D0C60
     int FindIndex(unsigned int * a2);  // 0x5D0D10

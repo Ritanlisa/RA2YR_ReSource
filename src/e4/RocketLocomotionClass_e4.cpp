@@ -98,19 +98,6 @@ void __thiscall RocketLocomotionClass_17_::_vt03(int this)
 }
 } // namespace gamemd
 
-// 0x6647E0
-namespace gamemd {
-unsigned int RocketLocomotionClass_17::BeginMove(int a2)
-{
-{
-    if ( (unsigned char)this->RocketLocomotionClass_17_field_0xC )
-    return (unsigned int)(a2 - this->RocketLocomotionClass_17_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x664800
 namespace gamemd {
 int RocketLocomotionClass_17::UpdateMovement(int a2)
@@ -250,19 +237,6 @@ int __thiscall RocketLocomotionClass_17_::sub_664930(int this, _DWORD *a2)
       return -1; /*0x66495a*/
   }
   return result; /*0x66493a*/
-}
-}
-} // namespace gamemd
-
-// 0x664970
-namespace gamemd {
-unsigned int RocketLocomotionClass_17::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->RocketLocomotionClass_17_field_0xC )
-    return (unsigned int)(a2 - this->RocketLocomotionClass_17_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -410,3 +384,29 @@ int RocketLocomotionClass::StubReturn96()
 {
 return 96;
 }
+
+// 0x6647E0
+namespace gamemd {
+unsigned int RocketLocomotionClass_17::BeginMove(int a2)
+{
+{
+    if ( (unsigned char)this->RocketLocomotionClass_17_field_0xC )
+    return (unsigned int)(a2 - this->RocketLocomotionClass_17_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x664970
+namespace gamemd {
+unsigned int RocketLocomotionClass_17::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->RocketLocomotionClass_17_field_0xC )
+    return (unsigned int)(a2 - this->RocketLocomotionClass_17_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd

@@ -9,7 +9,6 @@ struct Array {
     void Cleanup();  // 0x49B720
     char GetElementAt(unsigned int * a2, int a3);  // 0x49D070
     int GetClamped(CheckListClass * aP1);  // 0x557AC0
-    void RemoveItemByValue(AbstractClass * aP0, int a2);  // 0x55B880
     int FindValue(IUnknown * aP1);  // 0x634290
     char RemoveAt(int a2);  // 0x63E590
     int Get(int a2);  // 0x65AD40
@@ -19,5 +18,6 @@ struct Array {
     int GetElement(CampaignScore * aP1);  // 0x763980
     int CleanupArrayWOL();  // 0x7ACD30
     char InsertElement(const void * a1, ObjectClass * aP2);  // 0x7AD790
+    void RemoveItemByValue(AbstractClass * aP0, int a2);  // 0x55B880
 };
 } // namespace gamemd

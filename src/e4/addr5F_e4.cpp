@@ -163,72 +163,6 @@ LABEL_20:
 }
 } // namespace gamemd
 
-// 0x5F15C0
-namespace gamemd {
-unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
-{
-{
-    this->M68 = a2;
-    this->M72 = a3;
-    this->M8 = a4;
-    this->M76 = a5;
-    this->M44 = 60;
-    this->M92 = 60;
-    *(void**)this = &vt_NullModemClass;
-    this->M64 = -1;
-    this->M56 = 0;
-    this->M80 = 0;
-    this->M4 = 0;
-    this->M16 = 500;
-    this->M12 = 0;
-    this->M24 = -1;
-    this->M28 = 0;
-    this->M32 = 0;
-    this->M36 = 3000;
-    this->M40 = 1200;
-    this->M48 = 43;
-    this->M104 = 0;
-    this->M108 = 0;
-    this->M112 = 0;
-    this->M60 = 0;
-    this->M96 = -1;
-    this->M100 = 1200;
-    this->M52 = 0;
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x5F1F20
-namespace gamemd {
-int E4Recv_5F1F20::sub_5F1F20()
-{
-{
-    int v2;
-    int *v3;
-    int TileIndex;
-    v2 = 0;
-    v3 = *(int **)(this->M56 + 4);
-    if ( (int)v3[10] <= 0 )
-    return 0;
-    while ( 1 )
-  {
-    TileIndex = Terrain::GetTileIndex(v3, v2);
-    if ( TileIndex )
-    {
-    if ( !*(char *)(*(int *)(TileIndex + 20) + 2) && (*(char *)TileIndex & 2) == 0 )
-    break;
-    }
-    ++v2;
-    v3 = *(int **)(this->M56 + 4);
-    if ( v2 >= v3[10] )
-    return 0;
-  }
-    return *(int *)(TileIndex + 20);
-}
-}
-} // namespace gamemd
-
 // 0x5F2CE0
 namespace gamemd {
 int WaitModemConnection()
@@ -521,47 +455,6 @@ _DWORD *__fastcall sub_5F66A0(_DWORD *a1, int a2)
 }
 } // namespace gamemd
 
-// 0x5F6FF0
-namespace gamemd {
-int sub_5F6FF0()
-{
-{
-    DataGlobal_AC141C = 0;
-    DataGlobal_AC1420 = 0;
-    DataGlobal_AC1424 = 1;
-    DataGlobal_AC1425 = 0;
-    DataGlobal_AC1418 = (int)&vt_DynamicVectorClass_ObjectTypeClass;
-    DataGlobal_AC142C = 10;
-    DataGlobal_AC1428 = 0;
-    return atexit(sub_5F7030);
-}
-}
-} // namespace gamemd
-
-// 0x5F7030
-namespace gamemd {
-void sub_5F7030()
-{
-{
-    if ( (DataGlobal_AC1470 & 1) == 0 )
-  {
-    DataGlobal_AC1418 = (int)&vt_VectorClass_ObjectTypeClass;
-    DataGlobal_AC1470 |= 1u;
-    if ( DataGlobal_AC141C )
-    {
-    if ( DataGlobal_AC1425 )
-      {
-    __3_YAXPAX_Z(DataGlobal_AC141C);
-    DataGlobal_AC141C = 0;
-      }
-    }
-    DataGlobal_AC1425 = 0;
-    DataGlobal_AC1420 = 0;
-  }
-}
-}
-} // namespace gamemd
-
 // 0x5F96B0
 namespace gamemd {
 void TheaterObjectTypeClassSpecificID(char * a1, int a2)
@@ -807,40 +700,6 @@ LABEL_5:
     goto LABEL_14; /*0x5fe6b9*/
   }
   return result; /*0x5fe763*/
-}
-}
-} // namespace gamemd
-
-// 0x5FF1D0
-namespace gamemd {
-int sub_5FF1D0()
-{
-{
-    DataGlobal_AC167C = 0;
-    DataGlobal_AC1680 = 0;
-    DataGlobal_AC1684 = 1;
-    DataGlobal_AC1685 = 0;
-    DataGlobal_AC1678 = (int)&vt_DynamicVectorClass_SpotLightClass;
-    DataGlobal_AC168C = 10;
-    DataGlobal_AC1688 = 0;
-    return atexit(sub_5FF210);
-}
-}
-} // namespace gamemd
-
-// 0x5FF210
-namespace gamemd {
-void sub_5FF210()
-{
-{
-    DataGlobal_AC1678 = (int)&vt_VectorClass_SpotLightClass;
-    if ( DataGlobal_AC167C && DataGlobal_AC1685 )
-  {
-    __3_YAXPAX_Z(DataGlobal_AC167C);
-    DataGlobal_AC167C = 0;
-  }
-    DataGlobal_AC1685 = 0;
-    DataGlobal_AC1680 = 0;
 }
 }
 } // namespace gamemd
@@ -1250,6 +1109,72 @@ int sub_5F15A0()
 }
 } // namespace gamemd
 
+// 0x5F15C0
+namespace gamemd {
+unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
+{
+{
+    this->M68 = a2;
+    this->M72 = a3;
+    this->M8 = a4;
+    this->M76 = a5;
+    this->M44 = 60;
+    this->M92 = 60;
+    *(void**)this = &vt_NullModemClass;
+    this->M64 = -1;
+    this->M56 = 0;
+    this->M80 = 0;
+    this->M4 = 0;
+    this->M16 = 500;
+    this->M12 = 0;
+    this->M24 = -1;
+    this->M28 = 0;
+    this->M32 = 0;
+    this->M36 = 3000;
+    this->M40 = 1200;
+    this->M48 = 43;
+    this->M104 = 0;
+    this->M108 = 0;
+    this->M112 = 0;
+    this->M60 = 0;
+    this->M96 = -1;
+    this->M100 = 1200;
+    this->M52 = 0;
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x5F1F20
+namespace gamemd {
+int E4Recv_5F1F20::sub_5F1F20()
+{
+{
+    int v2;
+    int *v3;
+    int TileIndex;
+    v2 = 0;
+    v3 = *(int **)(this->M56 + 4);
+    if ( (int)v3[10] <= 0 )
+    return 0;
+    while ( 1 )
+  {
+    TileIndex = Terrain::GetTileIndex(v3, v2);
+    if ( TileIndex )
+    {
+    if ( !*(char *)(*(int *)(TileIndex + 20) + 2) && (*(char *)TileIndex & 2) == 0 )
+    break;
+    }
+    ++v2;
+    v3 = *(int **)(this->M56 + 4);
+    if ( v2 >= v3[10] )
+    return 0;
+  }
+    return *(int *)(TileIndex + 20);
+}
+}
+} // namespace gamemd
+
 // 0x5F3340
 namespace gamemd {
 void nullsub_28()
@@ -1606,6 +1531,47 @@ int sub_5F6FD0()
     DataGlobal_AC13E0 = 0;
     DataGlobal_AC13E4 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5F6FF0
+namespace gamemd {
+int sub_5F6FF0()
+{
+{
+    DataGlobal_AC141C = 0;
+    DataGlobal_AC1420 = 0;
+    DataGlobal_AC1424 = 1;
+    DataGlobal_AC1425 = 0;
+    DataGlobal_AC1418 = (int)&vt_DynamicVectorClass_ObjectTypeClass;
+    DataGlobal_AC142C = 10;
+    DataGlobal_AC1428 = 0;
+    return atexit(sub_5F7030);
+}
+}
+} // namespace gamemd
+
+// 0x5F7030
+namespace gamemd {
+void sub_5F7030()
+{
+{
+    if ( (DataGlobal_AC1470 & 1) == 0 )
+  {
+    DataGlobal_AC1418 = (int)&vt_VectorClass_ObjectTypeClass;
+    DataGlobal_AC1470 |= 1u;
+    if ( DataGlobal_AC141C )
+    {
+    if ( DataGlobal_AC1425 )
+      {
+    __3_YAXPAX_Z(DataGlobal_AC141C);
+    DataGlobal_AC141C = 0;
+      }
+    }
+    DataGlobal_AC1425 = 0;
+    DataGlobal_AC1420 = 0;
+  }
 }
 }
 } // namespace gamemd
@@ -2342,6 +2308,40 @@ int sub_5FF1B0()
     DataGlobal_AC17C8 = 0;
     DataGlobal_AC17CC = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5FF1D0
+namespace gamemd {
+int sub_5FF1D0()
+{
+{
+    DataGlobal_AC167C = 0;
+    DataGlobal_AC1680 = 0;
+    DataGlobal_AC1684 = 1;
+    DataGlobal_AC1685 = 0;
+    DataGlobal_AC1678 = (int)&vt_DynamicVectorClass_SpotLightClass;
+    DataGlobal_AC168C = 10;
+    DataGlobal_AC1688 = 0;
+    return atexit(sub_5FF210);
+}
+}
+} // namespace gamemd
+
+// 0x5FF210
+namespace gamemd {
+void sub_5FF210()
+{
+{
+    DataGlobal_AC1678 = (int)&vt_VectorClass_SpotLightClass;
+    if ( DataGlobal_AC167C && DataGlobal_AC1685 )
+  {
+    __3_YAXPAX_Z(DataGlobal_AC167C);
+    DataGlobal_AC167C = 0;
+  }
+    DataGlobal_AC1685 = 0;
+    DataGlobal_AC1680 = 0;
 }
 }
 } // namespace gamemd

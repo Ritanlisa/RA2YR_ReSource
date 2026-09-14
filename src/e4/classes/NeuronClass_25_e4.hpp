@@ -9,7 +9,7 @@ struct NeuronClass_25 {
     char Release(int a2, unsigned int * a3);  // 0x43AB70
     void ddtor();  // 0x43AC20
     int Activate(unsigned int * a2);  // 0x43AC50
-    unsigned int Fire(int a2);  // 0x43AC90
     VectorClass * QueryInterface(char a2);  // 0x43ACB0
+    unsigned int Fire(int a2);  // 0x43AC90
 };
 } // namespace gamemd

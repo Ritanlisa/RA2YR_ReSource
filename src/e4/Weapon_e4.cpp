@@ -2,16 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x53A0E0
-namespace gamemd {
-BOOL sub_53A0E0()
-{
-{
-    return LightningStorm_Active || LightningStorm_Deferment > 0;
-}
-}
-} // namespace gamemd
-
 // 0x53AE00
 namespace gamemd {
 int sub_53AE00()
@@ -437,6 +427,16 @@ int sub_53B410()
   if ( HouseClass_Player ) /*0x53b433*/
     v1 = *((_DWORD *)HouseClass_Player + 22549); /*0x53b435*/
   return MessageListClass::AddMessage(MEMORY[0xA8BC60], 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53b457*/
+}
+}
+} // namespace gamemd
+
+// 0x53A0E0
+namespace gamemd {
+BOOL sub_53A0E0()
+{
+{
+    return LightningStorm_Active || LightningStorm_Deferment > 0;
 }
 }
 } // namespace gamemd

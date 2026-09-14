@@ -343,36 +343,6 @@ LABEL_16:
 }
 }
 
-// 0x620F60
-namespace gamemd {
-int Surface_Render(ObjectClass * aP0, unsigned short * a1, int * yTop, unsigned char * a3, int aP1, int a6)
-{
-{
-    AbstractClass *v6;
-    int v8;
-    AbstractClass *v9;
-    AbstractClass *v10;
-    int v12;
-    int *yTopa;
-    AbstractClass *aP1a;
-    v6 = (AbstractClass *)a3;
-    v8 = yTop[2];
-    v9 = (AbstractClass *)(yTop[3] - yTop[1]);
-    yTopa = (int *)yTop[1];
-    v10 = (AbstractClass *)(v8 - *yTop);
-    aP1a = (AbstractClass *)(((unsigned char)aP1 >> DataGlobal_89E138.__pad_14B0[6124] << DataGlobal_89E138.__pad_14B0[6120]) | (BYTE2(aP1) >> DataGlobal_89E138.__pad_14B0[6132] << DataGlobal_89E138.__pad_14B0[6128]) | (BYTE1(aP1) >> DataGlobal_89E138.__pad_14B0[6140] << DataGlobal_89E138.__pad_14B0[6136]));
-    v12 = *yTop;
-    if ( !a3 )
-    v6 = ::aP0;
-    Char::Swap(v6, (ObjectClass *)1);
-    TextGroup::SetRect(v6, (AbstractClass *)yTop);
-    Property::Set(v6, aP1a);
-    Font::Print(v6, (AbstractClass *)aP0, (AbstractClass *)a1, v12, (AbstractClass *)yTopa, v10, v9, 0, 0, 0);
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x626C60
 namespace gamemd {
 int sub_626C60()
@@ -2225,3 +2195,33 @@ char Surface::StubReturnFalse()
 {
 return 0;
 }
+
+// 0x620F60
+namespace gamemd {
+int Surface_Render(ObjectClass * aP0, unsigned short * a1, int * yTop, unsigned char * a3, int aP1, int a6)
+{
+{
+    AbstractClass *v6;
+    int v8;
+    AbstractClass *v9;
+    AbstractClass *v10;
+    int v12;
+    int *yTopa;
+    AbstractClass *aP1a;
+    v6 = (AbstractClass *)a3;
+    v8 = yTop[2];
+    v9 = (AbstractClass *)(yTop[3] - yTop[1]);
+    yTopa = (int *)yTop[1];
+    v10 = (AbstractClass *)(v8 - *yTop);
+    aP1a = (AbstractClass *)(((unsigned char)aP1 >> DataGlobal_89E138.__pad_14B0[6124] << DataGlobal_89E138.__pad_14B0[6120]) | (BYTE2(aP1) >> DataGlobal_89E138.__pad_14B0[6132] << DataGlobal_89E138.__pad_14B0[6128]) | (BYTE1(aP1) >> DataGlobal_89E138.__pad_14B0[6140] << DataGlobal_89E138.__pad_14B0[6136]));
+    v12 = *yTop;
+    if ( !a3 )
+    v6 = ::aP0;
+    Char::Swap(v6, (ObjectClass *)1);
+    TextGroup::SetRect(v6, (AbstractClass *)yTop);
+    Property::Set(v6, aP1a);
+    Font::Print(v6, (AbstractClass *)aP0, (AbstractClass *)a1, v12, (AbstractClass *)yTopa, v10, v9, 0, 0, 0);
+    return 0;
+}
+}
+} // namespace gamemd

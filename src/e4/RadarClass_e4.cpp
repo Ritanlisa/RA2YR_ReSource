@@ -74,27 +74,6 @@ int __thiscall RadarClass_Destructor(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x652D90
-namespace gamemd {
-void RadarClass::Destru_vt50()
-{
-{
-    if ( DataGlobal_B048F9 )
-  {
-    __3_YAXPAX_Z(DataGlobal_B048E0);
-    DataGlobal_B048F9 = 0;
-  }
-    DataGlobal_B048E0 = 0;
-    if ( DataGlobal_B048F8 )
-  {
-    __3_YAXPAX_Z(DataGlobal_B048AC);
-    DataGlobal_B048F8 = 0;
-  }
-    DataGlobal_B048AC = 0;
-}
-}
-} // namespace gamemd
-
 // 0x654650
 namespace gamemd {
 int RadarClass_RecreateSurface()
@@ -379,6 +358,27 @@ LABEL_74:
   v14 = *(const wchar_t **)(v16 + 96); /*0x6a86ed*/
   v15 = (const wchar_t *)v25[24]; /*0x6a86f0*/
   return wcscmp(v14, v15) <= 0; /*0x6a8457*/
+}
+}
+} // namespace gamemd
+
+// 0x652D90
+namespace gamemd {
+void RadarClass::Destru_vt50()
+{
+{
+    if ( DataGlobal_B048F9 )
+  {
+    __3_YAXPAX_Z(DataGlobal_B048E0);
+    DataGlobal_B048F9 = 0;
+  }
+    DataGlobal_B048E0 = 0;
+    if ( DataGlobal_B048F8 )
+  {
+    __3_YAXPAX_Z(DataGlobal_B048AC);
+    DataGlobal_B048F8 = 0;
+  }
+    DataGlobal_B048AC = 0;
 }
 }
 } // namespace gamemd

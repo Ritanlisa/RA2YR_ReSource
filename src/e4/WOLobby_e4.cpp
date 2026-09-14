@@ -61,6 +61,106 @@ int __thiscall WOLobby_Play(INIClass *this)
 }
 } // namespace gamemd
 
+// 0x78F7F0
+int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// (v3 export truncated pseudocode — commented out; live version via get_context)
+// int __stdcall sub_78F7F0(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
+// {
+//   int result; // eax
+//   int v5; // ecx
+//   HWND DlgItem; // eax
+//   HWND v7; // eax
+//   HWND v8; // eax
+//   HWND v9; // ebx
+//   HWND v10; // ebx
+//   _DWORD *v11; // eax
+//   _DWORD *v12; // eax
+//   HWND v13; // esi
+//   int v14; // esi
+//   wchar_t *v15; // eax
+//   HWND v16; // ebx
+//   int v17; // esi
+//   unsigned int v18; // edi
+//   HWND v19; // eax
+//   HWND v20; // esi
+//   const wchar_t **v21; // eax
+//   wchar_t *v22; // eax
+//   wchar_t **OwnerName; // eax
+//   wchar_t *v24; // eax
+//   void *v25; // esi
+//   _DWORD *v26; // ecx
+//   wchar_t *v27; // eax
+//   void *v28; // esi
+//   LRESULT v29; // eax
+//   wchar_t *v30; // eax
+//   wchar_t *v31; // eax
+//   int v32; // ebx
+//   size_t v33; // esi
+//   wchar_t *v34; // edi
+//   wchar_t *v35; // eax
+//   wchar_t *v36; // eax
+//   wchar_t *v37; // ebp
+//   const wchar_t *v38; // esi
+//   struct tagRECT *p_Rect; // edi
+//   wchar_t v40; // ax
+//   wchar_t *v41; // eax
+//   wchar_t *v42; // eax
+//   size_t v43; // esi
+//   wchar_t *v44; // edi
+//   wcha... [56159 chars total]
+// end truncated pseudocode
+}
+
+// 0x791B10
+int WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// (v3 export truncated pseudocode — commented out; live version via get_context)
+// int __stdcall WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
+// {
+//   int result; // eax
+//   HWND v5; // ebx
+//   int v6; // ebp
+//   unsigned int v7; // edi
+//   HWND v8; // eax
+//   HWND v9; // edi
+//   wchar_t **v10; // eax
+//   CampaignScore *v11; // eax
+//   wchar_t **SkirmishMenuOwnerName; // eax
+//   CampaignScore *v13; // eax
+//   ObjectClass *v14; // esi
+//   HWND v15; // esi
+//   int v16; // esi
+//   wchar_t *v17; // eax
+//   CampaignScore *v19; // eax
+//   wchar_t *eax40; // eax
+//   int v20; // ebx
+//   DropListClass *v21; // esi
+//   AbstractClass *v23; // edi
+//   wchar_t *StringCSF; // eax
+//   CampaignScore *v25; // eax
+//   wchar_t *ebp44; // ebp
+//   const wchar_t *v26; // esi
+//   wchar_t *v27; // edi
+//   wchar_t v28; // ax
+//   wchar_t *v29; // eax
+//   CampaignScore *v31; // eax
+//   DropListClass *esi66; // esi
+//   wchar_t *v32; // edi
+//   wchar_t *v33; // eax
+//   wchar_t *v34; // eax
+//   CampaignScore *v36; // eax
+//   wchar_t *edi67; // edi
+//   size_t v37; // eax
+//   size_t v38; // eax
+//   const wchar_t *i; // esi
+//   char *v40; // eax
+//   wchar_t *... [28672 chars total]
+// end truncated pseudocode
+}
+
 // 0x603F60
 namespace gamemd {
 wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM a3)
@@ -161,103 +261,3 @@ CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
 }
 }
 } // namespace gamemd
-
-// 0x78F7F0
-int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// int __stdcall sub_78F7F0(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
-// {
-//   int result; // eax
-//   int v5; // ecx
-//   HWND DlgItem; // eax
-//   HWND v7; // eax
-//   HWND v8; // eax
-//   HWND v9; // ebx
-//   HWND v10; // ebx
-//   _DWORD *v11; // eax
-//   _DWORD *v12; // eax
-//   HWND v13; // esi
-//   int v14; // esi
-//   wchar_t *v15; // eax
-//   HWND v16; // ebx
-//   int v17; // esi
-//   unsigned int v18; // edi
-//   HWND v19; // eax
-//   HWND v20; // esi
-//   const wchar_t **v21; // eax
-//   wchar_t *v22; // eax
-//   wchar_t **OwnerName; // eax
-//   wchar_t *v24; // eax
-//   void *v25; // esi
-//   _DWORD *v26; // ecx
-//   wchar_t *v27; // eax
-//   void *v28; // esi
-//   LRESULT v29; // eax
-//   wchar_t *v30; // eax
-//   wchar_t *v31; // eax
-//   int v32; // ebx
-//   size_t v33; // esi
-//   wchar_t *v34; // edi
-//   wchar_t *v35; // eax
-//   wchar_t *v36; // eax
-//   wchar_t *v37; // ebp
-//   const wchar_t *v38; // esi
-//   struct tagRECT *p_Rect; // edi
-//   wchar_t v40; // ax
-//   wchar_t *v41; // eax
-//   wchar_t *v42; // eax
-//   size_t v43; // esi
-//   wchar_t *v44; // edi
-//   wcha... [56159 chars total]
-// end truncated pseudocode
-}
-
-// 0x791B10
-int WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// int __stdcall WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
-// {
-//   int result; // eax
-//   HWND v5; // ebx
-//   int v6; // ebp
-//   unsigned int v7; // edi
-//   HWND v8; // eax
-//   HWND v9; // edi
-//   wchar_t **v10; // eax
-//   CampaignScore *v11; // eax
-//   wchar_t **SkirmishMenuOwnerName; // eax
-//   CampaignScore *v13; // eax
-//   ObjectClass *v14; // esi
-//   HWND v15; // esi
-//   int v16; // esi
-//   wchar_t *v17; // eax
-//   CampaignScore *v19; // eax
-//   wchar_t *eax40; // eax
-//   int v20; // ebx
-//   DropListClass *v21; // esi
-//   AbstractClass *v23; // edi
-//   wchar_t *StringCSF; // eax
-//   CampaignScore *v25; // eax
-//   wchar_t *ebp44; // ebp
-//   const wchar_t *v26; // esi
-//   wchar_t *v27; // edi
-//   wchar_t v28; // ax
-//   wchar_t *v29; // eax
-//   CampaignScore *v31; // eax
-//   DropListClass *esi66; // esi
-//   wchar_t *v32; // edi
-//   wchar_t *v33; // eax
-//   wchar_t *v34; // eax
-//   CampaignScore *v36; // eax
-//   wchar_t *edi67; // edi
-//   size_t v37; // eax
-//   size_t v38; // eax
-//   const wchar_t *i; // esi
-//   char *v40; // eax
-//   wchar_t *... [28672 chars total]
-// end truncated pseudocode
-}

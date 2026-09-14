@@ -125,41 +125,6 @@ LABEL_31:
 }
 } // namespace gamemd
 
-// 0x6107A0
-namespace gamemd {
-int sub_6107A0()
-{
-{
-    DataGlobal_AC1CB8 = 0u;
-    DataGlobal_AC1CC8 = 0;
-    DataGlobal_AC1CCC = 0;
-    DataGlobal_AC1DCC = 0;
-    DataGlobal_AC1DD0 = 0;
-    DataGlobal_AC1DD4 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x6107E0
-namespace gamemd {
-unsigned int * E4Recv_6107E0::sub_6107E0()
-{
-{
-    *(void**)this = 0;
-    this->M4 = 0;
-    this->M8 = 0;
-    this->M12 = 0;
-    this->M16 = 0;
-    this->M20 = 0;
-    this->M276 = 0;
-    this->M280 = 0;
-    this->M284 = 0;
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x610810
 namespace gamemd {
 char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
@@ -293,17 +258,6 @@ LABEL_6:
   MEMORY[0xAC1DCC] = 0; /*0x610c8a*/
   MEMORY[0xAC1DD0] = 0; /*0x610c90*/
   return 1; /*0x610c01*/
-}
-}
-} // namespace gamemd
-
-// 0x612910
-namespace gamemd {
-void sub_612910()
-{
-{
-    g_ComboBoxState = 0;
-    __3_YAXPAX_Z(DataGlobal_AC1DE8);
 }
 }
 } // namespace gamemd
@@ -836,5 +790,51 @@ char Dialog_InitCountryIcons(int a1, int a2)
 //   int v53; // edx
 //   int v54; // ... [20523 chars total]
 // end truncated pseudocode
+}
+} // namespace gamemd
+
+// 0x6107A0
+namespace gamemd {
+int sub_6107A0()
+{
+{
+    DataGlobal_AC1CB8 = 0u;
+    DataGlobal_AC1CC8 = 0;
+    DataGlobal_AC1CCC = 0;
+    DataGlobal_AC1DCC = 0;
+    DataGlobal_AC1DD0 = 0;
+    DataGlobal_AC1DD4 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6107E0
+namespace gamemd {
+unsigned int * E4Recv_6107E0::sub_6107E0()
+{
+{
+    *(void**)this = 0;
+    this->M4 = 0;
+    this->M8 = 0;
+    this->M12 = 0;
+    this->M16 = 0;
+    this->M20 = 0;
+    this->M276 = 0;
+    this->M280 = 0;
+    this->M284 = 0;
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x612910
+namespace gamemd {
+void sub_612910()
+{
+{
+    g_ComboBoxState = 0;
+    __3_YAXPAX_Z(DataGlobal_AC1DE8);
+}
 }
 } // namespace gamemd

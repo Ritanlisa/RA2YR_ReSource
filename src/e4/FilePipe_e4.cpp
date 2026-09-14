@@ -26,19 +26,6 @@ void __thiscall FilePipe_30_::_vt03(int this)
 }
 } // namespace gamemd
 
-// 0x4778D0
-namespace gamemd {
-unsigned int FilePipe_30::Write(int a2)
-{
-{
-    if ( (unsigned char)this->FilePipe_30_field_0xC )
-    return (unsigned int)(a2 - this->FilePipe_30_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x477A70
 namespace gamemd {
 TypeList * FilePipe_30::QueryInterface(char a2)
@@ -162,19 +149,6 @@ void __thiscall FilePipe_30_::sub_4B9BE0(int this)
 }
 } // namespace gamemd
 
-// 0x4B9C10
-namespace gamemd {
-unsigned int FilePipe_30::GetCount(int a2)
-{
-{
-    if ( (unsigned char)this->FilePipe_30_field_0xC )
-    return (unsigned int)(a2 - this->FilePipe_30_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4B9C40
 namespace gamemd {
 void FilePipe_30::Clear_0()
@@ -193,19 +167,6 @@ void __thiscall FilePipe_30_::sub_4B9C40(int this)
   }
   *(_BYTE *)(this + 13) = 0; /*0x4b9c61*/
   *(_DWORD *)(this + 8) = 0; /*0x4b9c64*/
-}
-}
-} // namespace gamemd
-
-// 0x4B9C70
-namespace gamemd {
-unsigned int FilePipe_30::GetCount_0(int a2)
-{
-{
-    if ( (unsigned char)this->FilePipe_30_field_0xC )
-    return (unsigned int)(a2 - this->FilePipe_30_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -688,6 +649,45 @@ VectorClass *__thiscall FilePipe_38_::QueryInterface(_DWORD *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x478708*/
     __3_YAXPAX_Z(this); /*0x47870b*/
   return (VectorClass *)this; /*0x478715*/
+}
+}
+} // namespace gamemd
+
+// 0x4778D0
+namespace gamemd {
+unsigned int FilePipe_30::Write(int a2)
+{
+{
+    if ( (unsigned char)this->FilePipe_30_field_0xC )
+    return (unsigned int)(a2 - this->FilePipe_30_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4B9C10
+namespace gamemd {
+unsigned int FilePipe_30::GetCount(int a2)
+{
+{
+    if ( (unsigned char)this->FilePipe_30_field_0xC )
+    return (unsigned int)(a2 - this->FilePipe_30_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4B9C70
+namespace gamemd {
+unsigned int FilePipe_30::GetCount_0(int a2)
+{
+{
+    if ( (unsigned char)this->FilePipe_30_field_0xC )
+    return (unsigned int)(a2 - this->FilePipe_30_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

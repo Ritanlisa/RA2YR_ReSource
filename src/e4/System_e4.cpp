@@ -114,25 +114,6 @@ int __stdcall sub_5BDB90(int a1, char a2)
 }
 } // namespace gamemd
 
-// 0x5D5AC0
-namespace gamemd {
-DynamicVector * System_Init()
-{
-{
-    if ( ((int)(&g_MatrixTransformState)[82] & 1) == 0 )
-  {
-    LOBYTE((&g_MatrixTransformState)[82]) |= 1u;
-    *(__int64 *)(&(&g_MatrixTransformState)[83] + 1) = 0;
-    *((short *)&g_MatrixTransformState + 1998) = 1;
-    *(&g_MatrixTransformState + 996) = (CoordStruct *)&vt_DynamicVectorClass_MultiplayerGameMode;
-    *((__int64 *)&g_MatrixTransformState + 500) = 0xA00000000LL;
-    atexit(MultiplayerConfig::Cleanup);
-  }
-    return (DynamicVector *)&(&g_MatrixTransformState)[83];
-}
-}
-} // namespace gamemd
-
 // 0x6269A0
 namespace gamemd {
 int sub_6269A0()
@@ -329,40 +310,6 @@ char __fastcall sub_626AB0(const char *a1, int a2)
 }
 } // namespace gamemd
 
-// 0x63A0D0
-namespace gamemd {
-char sub_63A0D0()
-{
-{
-    char result;
-    wchar_t *StringCSF;
-    result = g_PlanningModeActive;
-    if ( !g_PlanningModeActive )
-  {
-    g_PlanningModeActive = 1;
-    StringCSF = GetStringCSF(DataGlobal_836C80, 0, g_Str_File_PlanMgr_cpp, 3233);
-    AddMessageListPlayerMessage(StringCSF, 480);
-    return PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x748360
-namespace gamemd {
-void sub_748360()
-{
-{
-    if ( DataGlobal_B1D14C )
-  {
-    __3_YAXPAX_Z(DataGlobal_B1D14C);
-    DataGlobal_B1D14C = 0;
-  }
-}
-}
-} // namespace gamemd
-
 // 0x7C8F46
 namespace gamemd {
 int sub_7C8F46()
@@ -377,91 +324,6 @@ int sub_7C8F46()
   result = _setdefaultprecision(); /*0x7c8f55*/
   __asm { fnclex } /*0x7c8f5a*/
   return result; /*0x7c8f5c*/
-}
-}
-} // namespace gamemd
-
-// 0x72C9C0
-namespace gamemd {
-char sub_72C9C0()
-{
-{
-    char result;
-    result = DataGlobal_B0FCF1;
-    if ( !DataGlobal_B0FCF1 )
-  {
-    if ( g_DisplayWidth == 800 )
-    DataGlobal_B0FA60 = LoadFileSHP(DataGlobal_844D7C, (bool *)&DataGlobal_B0FCF0);
-    result = LoadPaletteSimple(DataGlobal_844D80, &DataGlobal_B0FCF4, &DataGlobal_B0FCF8);
-    DataGlobal_B0FCF1 = 1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x72CA10
-namespace gamemd {
-void sub_72CA10()
-{
-{
-    void *v0;
-    if ( DataGlobal_B0FCF1 )
-  {
-    if ( DataGlobal_B0FCF0 )
-    {
-    v0 = DataGlobal_B0FA60;
-    if ( DataGlobal_B0FA60 )
-      {
-    FileTreeNode::Destroy(DataGlobal_B0FA60);
-    __3_YAXPAX_Z(v0);
-      }
-    DataGlobal_B0FCF0 = 0;
-    }
-    DataGlobal_B0FA60 = 0;
-    if ( DataGlobal_B0FCF4 )
-    {
-    __3_YAXPAX_Z(DataGlobal_B0FCF4);
-    DataGlobal_B0FCF4 = 0;
-    }
-    if ( DataGlobal_B0FCF8 )
-    {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FCF8)(DataGlobal_B0FCF8, 1);
-    DataGlobal_B0FCF8 = 0;
-    }
-  }
-    DataGlobal_B0FCF1 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x766880
-namespace gamemd {
-rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectClass * aP4)
-{
-{
-    char *v7;
-    GameOption_WorldDominationTour *v8;
-    void *inited;
-    char *v11;
-    ObjectClass *v12;
-    v8 = (GameOption_WorldDominationTour *)__2_YAPAXI_Z(0x18u);
-    if ( v8 )
-  {
-    v12 = aP4;
-    v11 = v7;
-    String::AssignFromPtr(&v11, (const char **)&a4);
-    inited = System_Init_766A10(v8, a2, a3, v11, v12);
-  }
-    else
-  {
-    inited = 0;
-  }
-    ComPtr::Constructor(a1);
-    a1->vfptr = &vt_rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char;
-    ComPtr::Set(a1, (int)inited);
-    DeleteAndZero(&a4);
-    return (rc_ptr *)a1;
 }
 }
 } // namespace gamemd
@@ -527,6 +389,180 @@ int __stdcall sub_7A2EA0(int (__stdcall ***a1)(_DWORD, void *, int *), int a2, i
 }
 } // namespace gamemd
 
+// 0x68C9C0
+namespace gamemd {
+int System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectClass * aP3, int a4, int a5)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __fastcall System_Read_68C9C0(BlowStraw *aP0, ObjectClass *a1, ObjectClass *aP3, int a4, int a5)
+{
+  int v6; // esi
+  IUnknown *v7; // eax
+  bool v8; // zf
+  char *v9; // eax
+
+  while ( 1 ) /*0x68c9d8*/
+  {
+    v6 = 0; /*0x68c9d8*/
+    if ( *(int *)stru_B05488.__pad_58 > 0 ) /*0x68c9dc*/
+      break; /*0x68c9dc*/
+LABEL_6:
+    v9 = (char *)__2_YAPAXI_Z(0x33Cu); /*0x68ca15*/
+    if ( v9 ) /*0x68ca24*/
+      FontClass::InitMetrics(v9, aP0->__pad_0, a1, aP3, a4, a5, 1); /*0x68ca37*/
+  }
+  v7 = (IUnknown *)stru_B05488.field_4C; /*0x68c9de*/
+  while ( 1 ) /*0x68c9f6*/
+  {
+    v8 = _strcmpi(aP0, *(const void **)(*(&v7->field_0 + v6) + 772)) == 0; /*0x68c9f6*/
+    v7 = (IUnknown *)stru_B05488.field_4C; /*0x68c9f8*/
+    if ( v8 && *(_DWORD *)(*(_DWORD *)(stru_B05488.field_4C + 4 * v6) + 784) == a5 ) /*0x68ca08*/
+      return v6; /*0x68ca40*/
+    if ( ++v6 >= *(int *)stru_B05488.__pad_58 ) /*0x68ca13*/
+      goto LABEL_6; /*0x68ca13*/
+  }
+}
+}
+} // namespace gamemd
+
+// 0x5D5AC0
+namespace gamemd {
+DynamicVector * System_Init()
+{
+{
+    if ( ((int)(&g_MatrixTransformState)[82] & 1) == 0 )
+  {
+    LOBYTE((&g_MatrixTransformState)[82]) |= 1u;
+    *(__int64 *)(&(&g_MatrixTransformState)[83] + 1) = 0;
+    *((short *)&g_MatrixTransformState + 1998) = 1;
+    *(&g_MatrixTransformState + 996) = (CoordStruct *)&vt_DynamicVectorClass_MultiplayerGameMode;
+    *((__int64 *)&g_MatrixTransformState + 500) = 0xA00000000LL;
+    atexit(MultiplayerConfig::Cleanup);
+  }
+    return (DynamicVector *)&(&g_MatrixTransformState)[83];
+}
+}
+} // namespace gamemd
+
+// 0x63A0D0
+namespace gamemd {
+char sub_63A0D0()
+{
+{
+    char result;
+    wchar_t *StringCSF;
+    result = g_PlanningModeActive;
+    if ( !g_PlanningModeActive )
+  {
+    g_PlanningModeActive = 1;
+    StringCSF = GetStringCSF(DataGlobal_836C80, 0, g_Str_File_PlanMgr_cpp, 3233);
+    AddMessageListPlayerMessage(StringCSF, 480);
+    return PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0);
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x72C9C0
+namespace gamemd {
+char sub_72C9C0()
+{
+{
+    char result;
+    result = DataGlobal_B0FCF1;
+    if ( !DataGlobal_B0FCF1 )
+  {
+    if ( g_DisplayWidth == 800 )
+    DataGlobal_B0FA60 = LoadFileSHP(DataGlobal_844D7C, (bool *)&DataGlobal_B0FCF0);
+    result = LoadPaletteSimple(DataGlobal_844D80, &DataGlobal_B0FCF4, &DataGlobal_B0FCF8);
+    DataGlobal_B0FCF1 = 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x72CA10
+namespace gamemd {
+void sub_72CA10()
+{
+{
+    void *v0;
+    if ( DataGlobal_B0FCF1 )
+  {
+    if ( DataGlobal_B0FCF0 )
+    {
+    v0 = DataGlobal_B0FA60;
+    if ( DataGlobal_B0FA60 )
+      {
+    FileTreeNode::Destroy(DataGlobal_B0FA60);
+    __3_YAXPAX_Z(v0);
+      }
+    DataGlobal_B0FCF0 = 0;
+    }
+    DataGlobal_B0FA60 = 0;
+    if ( DataGlobal_B0FCF4 )
+    {
+    __3_YAXPAX_Z(DataGlobal_B0FCF4);
+    DataGlobal_B0FCF4 = 0;
+    }
+    if ( DataGlobal_B0FCF8 )
+    {
+    (**(void (__thiscall ***)(int, int))DataGlobal_B0FCF8)(DataGlobal_B0FCF8, 1);
+    DataGlobal_B0FCF8 = 0;
+    }
+  }
+    DataGlobal_B0FCF1 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x748360
+namespace gamemd {
+void sub_748360()
+{
+{
+    if ( DataGlobal_B1D14C )
+  {
+    __3_YAXPAX_Z(DataGlobal_B1D14C);
+    DataGlobal_B1D14C = 0;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x766880
+namespace gamemd {
+rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectClass * aP4)
+{
+{
+    char *v7;
+    GameOption_WorldDominationTour *v8;
+    void *inited;
+    char *v11;
+    ObjectClass *v12;
+    v8 = (GameOption_WorldDominationTour *)__2_YAPAXI_Z(0x18u);
+    if ( v8 )
+  {
+    v12 = aP4;
+    v11 = v7;
+    String::AssignFromPtr(&v11, (const char **)&a4);
+    inited = System_Init_766A10(v8, a2, a3, v11, v12);
+  }
+    else
+  {
+    inited = 0;
+  }
+    ComPtr::Constructor(a1);
+    a1->vfptr = &vt_rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char;
+    ComPtr::Set(a1, (int)inited);
+    DeleteAndZero(&a4);
+    return (rc_ptr *)a1;
+}
+}
+} // namespace gamemd
+
 // 0x7A2F30
 namespace gamemd {
 int System_Init_7A2F30(int a1, int a2, ObjectClass * aP2)
@@ -564,42 +600,6 @@ int System_Init_7A2F30(int a1, int a2, ObjectClass * aP2)
     while ( *(int *)v4 );
   }
     return 0;
-}
-}
-} // namespace gamemd
-
-// 0x68C9C0
-namespace gamemd {
-int System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectClass * aP3, int a4, int a5)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall System_Read_68C9C0(BlowStraw *aP0, ObjectClass *a1, ObjectClass *aP3, int a4, int a5)
-{
-  int v6; // esi
-  IUnknown *v7; // eax
-  bool v8; // zf
-  char *v9; // eax
-
-  while ( 1 ) /*0x68c9d8*/
-  {
-    v6 = 0; /*0x68c9d8*/
-    if ( *(int *)stru_B05488.__pad_58 > 0 ) /*0x68c9dc*/
-      break; /*0x68c9dc*/
-LABEL_6:
-    v9 = (char *)__2_YAPAXI_Z(0x33Cu); /*0x68ca15*/
-    if ( v9 ) /*0x68ca24*/
-      FontClass::InitMetrics(v9, aP0->__pad_0, a1, aP3, a4, a5, 1); /*0x68ca37*/
-  }
-  v7 = (IUnknown *)stru_B05488.field_4C; /*0x68c9de*/
-  while ( 1 ) /*0x68c9f6*/
-  {
-    v8 = _strcmpi(aP0, *(const void **)(*(&v7->field_0 + v6) + 772)) == 0; /*0x68c9f6*/
-    v7 = (IUnknown *)stru_B05488.field_4C; /*0x68c9f8*/
-    if ( v8 && *(_DWORD *)(*(_DWORD *)(stru_B05488.field_4C + 4 * v6) + 784) == a5 ) /*0x68ca08*/
-      return v6; /*0x68ca40*/
-    if ( ++v6 >= *(int *)stru_B05488.__pad_58 ) /*0x68ca13*/
-      goto LABEL_6; /*0x68ca13*/
-  }
 }
 }
 } // namespace gamemd

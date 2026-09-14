@@ -4,7 +4,7 @@
 namespace gamemd {
 struct BuildingLight {
     void* vfptr;  // minimal E2 declaration
-    double CalcIntensity(double a1);  // 0x4CAD80
     char CalculateShading();  // 0x5FF850
+    double CalcIntensity(double a1);  // 0x4CAD80
 };
 } // namespace gamemd

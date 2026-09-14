@@ -293,28 +293,6 @@ void GameClass_InitDifficultyButtons()
 }
 } // namespace gamemd
 
-// 0x5E99C0
-namespace gamemd {
-wchar_t * GameClass::GetDifficultyString()
-{
-{
-    if ( this == (void *)g_HouseClass_ObserverFlags )
-    return GetStringCSF(DataGlobal_831D34, 0, g_Str_File_netshare_cpp, 4948);
-    if ( this == (void *)g_Lobby_PlayerCount )
-    return GetStringCSF(DataGlobal_831D20, 0, g_Str_File_netshare_cpp, 4950);
-    if ( this == (void *)g_Lobby_PlayerTeam )
-    return GetStringCSF(g_Str_STT_PlayerDumbAI, 0, g_Str_File_netshare_cpp, 4952);
-    if ( this == (void *)g_Lobby_PlayerSide )
-    return GetStringCSF(g_Str_STT_PlayerSmartAI, 0, g_Str_File_netshare_cpp, 4954);
-    if ( this == (void *)g_Lobby_PlayerColor )
-    return GetStringCSF(g_Str_STT_PlayerGeniusAI, 0, g_Str_File_netshare_cpp, 4956);
-    if ( this == (void *)g_Lobby_MaxPlayers )
-    return GetStringCSF(DataGlobal_831CCC, 0, g_Str_File_netshare_cpp, 4958);
-    return GetStringCSF(DataGlobal_831CBC, 0, g_Str_File_netshare_cpp, 4960);
-}
-}
-} // namespace gamemd
-
 // 0x631D30
 namespace gamemd {
 int GameClass::GetRelatedObject()
@@ -407,16 +385,6 @@ Pipe *__thiscall GameClass::WriteEncryptedStream(int this, BombClass *Src, signe
     return (Pipe *)((char *)Delegate::Dispatch((_DWORD *)this, (Pipe *)v3, (Pipe *)aP2) + (_DWORD)v5); /*0x632f0a*/
   }
   return Delegate::Dispatch((_DWORD *)this, (Pipe *)Src, (Pipe *)aP2); /*0x632f02*/
-}
-}
-} // namespace gamemd
-
-// 0x632FE0
-namespace gamemd {
-int GameClass::loadGameState(int a2)
-{
-{
-    return this->SetDelegate(a2);
 }
 }
 } // namespace gamemd
@@ -532,16 +500,6 @@ int __thiscall GameClass::ReadEncryptedStream(int this, char *a2, signed int Siz
 }
 } // namespace gamemd
 
-// 0x633360
-namespace gamemd {
-int GameClass::parseGameOptions(int a2)
-{
-{
-    return this->GetRelatedObject(a2);
-}
-}
-} // namespace gamemd
-
 // 0x633370
 namespace gamemd {
 PKStrawClass * GameClass::applyGameSettings(char a2)
@@ -592,35 +550,6 @@ bool __thiscall sub_69AE10(int *this, const char **a2)
       return 0; /*0x69ae5b*/
   }
   return 1; /*0x69ae2d*/
-}
-}
-} // namespace gamemd
-
-// 0x69BC60
-namespace gamemd {
-int GameClass::FindPlayerName(int a1)
-{
-{
-    int v1;
-    char **v2;
-    char *v3;
-    char *v4;
-    char *v5;
-    v1 = 0;
-    v2 = (char **)&g_NetworkPlayerName;
-    while ( 1 )
-  {
-    v3 = *v2;
-    v4 = ToWideStringChar(*(char **)(Game_PlayerInfoArray + 4 * a1));
-    v5 = ToWideStringChar(v3);
-    if ( !_strcmpi(v4, v5) )
-    break;
-    ++v2;
-    ++v1;
-    if ( (int)v2 >= (int)&g_PlayerNameListEnd )
-    return 0;
-  }
-    return v1;
 }
 }
 } // namespace gamemd
@@ -837,6 +766,77 @@ int __thiscall GameClass::processNetworkPacket(BufferPipe *this, void *Src, sign
     return v7; /*0x7ba410*/
   }
   return result; /*0x7ba413*/
+}
+}
+} // namespace gamemd
+
+// 0x5E99C0
+namespace gamemd {
+wchar_t * GameClass::GetDifficultyString()
+{
+{
+    if ( this == (void *)g_HouseClass_ObserverFlags )
+    return GetStringCSF(DataGlobal_831D34, 0, g_Str_File_netshare_cpp, 4948);
+    if ( this == (void *)g_Lobby_PlayerCount )
+    return GetStringCSF(DataGlobal_831D20, 0, g_Str_File_netshare_cpp, 4950);
+    if ( this == (void *)g_Lobby_PlayerTeam )
+    return GetStringCSF(g_Str_STT_PlayerDumbAI, 0, g_Str_File_netshare_cpp, 4952);
+    if ( this == (void *)g_Lobby_PlayerSide )
+    return GetStringCSF(g_Str_STT_PlayerSmartAI, 0, g_Str_File_netshare_cpp, 4954);
+    if ( this == (void *)g_Lobby_PlayerColor )
+    return GetStringCSF(g_Str_STT_PlayerGeniusAI, 0, g_Str_File_netshare_cpp, 4956);
+    if ( this == (void *)g_Lobby_MaxPlayers )
+    return GetStringCSF(DataGlobal_831CCC, 0, g_Str_File_netshare_cpp, 4958);
+    return GetStringCSF(DataGlobal_831CBC, 0, g_Str_File_netshare_cpp, 4960);
+}
+}
+} // namespace gamemd
+
+// 0x632FE0
+namespace gamemd {
+int GameClass::loadGameState(int a2)
+{
+{
+    return this->SetDelegate(a2);
+}
+}
+} // namespace gamemd
+
+// 0x633360
+namespace gamemd {
+int GameClass::parseGameOptions(int a2)
+{
+{
+    return this->GetRelatedObject(a2);
+}
+}
+} // namespace gamemd
+
+// 0x69BC60
+namespace gamemd {
+int GameClass::FindPlayerName(int a1)
+{
+{
+    int v1;
+    char **v2;
+    char *v3;
+    char *v4;
+    char *v5;
+    v1 = 0;
+    v2 = (char **)&g_NetworkPlayerName;
+    while ( 1 )
+  {
+    v3 = *v2;
+    v4 = ToWideStringChar(*(char **)(Game_PlayerInfoArray + 4 * a1));
+    v5 = ToWideStringChar(v3);
+    if ( !_strcmpi(v4, v5) )
+    break;
+    ++v2;
+    ++v1;
+    if ( (int)v2 >= (int)&g_PlayerNameListEnd )
+    return 0;
+  }
+    return v1;
 }
 }
 } // namespace gamemd

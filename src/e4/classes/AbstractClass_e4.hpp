@@ -5,9 +5,7 @@ namespace gamemd {
 struct AbstractClass {
     void* vfptr;  // minimal E2 declaration
     void DTOR();  // 0x4101F0
-    int SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1);  // 0x410380
     Surface * getObjectValue(char a2);  // 0x4115D0
-    unsigned int updateLayer();  // 0x425520
     int getMapCoords();  // 0x426A80
     void Initialize(TechnoClass * aP1, TechnoClass * aP2);  // 0x438E70
     bool addRef(unsigned short * a2, int a3);  // 0x464AC0
@@ -15,19 +13,21 @@ struct AbstractClass {
     BlitPlainXlat * setTileIndex(char a2);  // 0x499CE0
     BlitTransXlat * getOverlayType(char a2);  // 0x499D00
     RLEBlitter * clearOverlayFlags(char a2);  // 0x499DA0
-    int GetType();  // 0x4CA160
     GScreenClass * getHouseHandle(char a2);  // 0x4F4C00
-    int checkPassability();  // 0x50E370
     MissionClass * getWeaponRange(char a2);  // 0x5B3A60
     unsigned int * checkVisibility(char a2);  // 0x5D7FD0
     unsigned int * updateVisibilityState(char a2);  // 0x5D8030
     unsigned int * processFogReveal(char a2);  // 0x5D8050
     unsigned int * checkShroudState(char a2);  // 0x5D8070
     unsigned int * updateShroudMap(char a2);  // 0x5D8090
-    void resetTeamState();  // 0x65C540
     FileClass * processAITrigger(char a2);  // 0x65C610
     void ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
     void AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1);  // 0x7258D0
+    int SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1);  // 0x410380
+    unsigned int updateLayer();  // 0x425520
+    int GetType();  // 0x4CA160
+    int checkPassability();  // 0x50E370
+    void resetTeamState();  // 0x65C540
     unsigned int * Copy8Bytes();  // 0x72A9C0
     int initVtableBase();  // 0x410100
     int GetVtable3(AbstractClass * aP0);  // 0x410220

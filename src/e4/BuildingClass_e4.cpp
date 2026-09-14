@@ -286,18 +286,6 @@ int __thiscall BuildingClass::AssignDestination_SyncLog(#377 *this)
 }
 } // namespace gamemd
 
-// 0x459DB0
-namespace gamemd {
-TechnoClass * BuildingClass::ClearLimpetCheck()
-{
-{
-    TechnoClass *v2;
-    *(int *)v2->__pad_0 = g_TerrainTypeTable;
-    return v2;
-}
-}
-} // namespace gamemd
-
 // 0x45A610
 namespace gamemd {
 int BuildingClass::FindInPointerArray(unsigned int * a2)
@@ -462,32 +450,6 @@ LABEL_10:
     *(_BYTE *)(a1 + 1681) = 0; /*0x4dfeef*/
     return 0; /*0x4dfef6*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x5F5E80
-namespace gamemd {
-int BuildingClass::SaveLoad_Register()
-{
-{
-    int result;
-    int *v2;
-    int v3;
-    result = AbstractClass::SaveLoad_Prefix_0(v2, v3);
-    if ( result >= 0 )
-  {
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 12);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 13);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 14);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 6);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 34);
-    AudioController::Init(v2 + 15);
-    AudioController::Init(v2 + 20);
-    v2[42] = 0;
-    return 0;
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -720,10 +682,48 @@ int BuildingClass_ProcessSell()
 }
 } // namespace gamemd
 
+// 0x459DB0
+namespace gamemd {
+TechnoClass * BuildingClass::ClearLimpetCheck()
+{
+{
+    TechnoClass *v2;
+    *(int *)v2->__pad_0 = g_TerrainTypeTable;
+    return v2;
+}
+}
+} // namespace gamemd
+
 // 0x459E70
 namespace gamemd {
 int BuildingClass::Mission_Guard()
 {
 return 1824;
+}
+} // namespace gamemd
+
+// 0x5F5E80
+namespace gamemd {
+int BuildingClass::SaveLoad_Register()
+{
+{
+    int result;
+    int *v2;
+    int v3;
+    result = AbstractClass::SaveLoad_Prefix_0(v2, v3);
+    if ( result >= 0 )
+  {
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 12);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 13);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 14);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 6);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 34);
+    AudioController::Init(v2 + 15);
+    AudioController::Init(v2 + 20);
+    v2[42] = 0;
+    return 0;
+  }
+    return result;
+}
 }
 } // namespace gamemd

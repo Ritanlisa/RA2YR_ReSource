@@ -18,25 +18,10 @@ struct CreateTeamCommand {
     unsigned int * performAction_158();  // 0x537530
     ToggleSellCommandClass * performAction_214(char a2);  // 0x5381A0
     ToggleRepairCommandClass * performAction_215(char a2);  // 0x5381C0
-    unsigned int * performAction_216(char a2);  // 0x5381E0
-    unsigned int * performAction_217(char a2);  // 0x538200
-    unsigned int * performAction_218(char a2);  // 0x538220
     ScatterCommandClass * performAction_219(char a2);  // 0x538240
     GuardCommandClass * performAction_220(char a2);  // 0x538260
     StopCommandClass * performAction_221(char a2);  // 0x538280
-    unsigned int * performAction_222(char a2);  // 0x5382A0
     DeployCommandClass * performAction_223(char a2);  // 0x5382C0
-    unsigned int * performAction_224(char a2);  // 0x5382E0
-    unsigned int * performAction_225(char a2);  // 0x538300
-    unsigned int * performAction_226(char a2);  // 0x538320
-    unsigned int * performAction_227(char a2);  // 0x538340
-    unsigned int * performAction_228(char a2);  // 0x538360
-    unsigned int * performAction_229(char a2);  // 0x538380
-    unsigned int * performAction_230(char a2);  // 0x5383A0
-    unsigned int * performAction_231(char a2);  // 0x5383C0
-    unsigned int * performAction_232(char a2);  // 0x5383E0
-    unsigned int * performAction_233(char a2);  // 0x538400
-    unsigned int * performAction_234(char a2);  // 0x538420
     ScreenCaptureCommandClass * performAction_235(char a2);  // 0x538440
     PageUserCommandClass * performAction_236(char a2);  // 0x538460
     CursorPositionCommandClass * performAction_237(char a2);  // 0x538480
@@ -48,6 +33,21 @@ struct CreateTeamCommand {
     DynamicVector * performAction_244(char a2);  // 0x538AE0
     char performAction_245(char a2, int a3);  // 0x6A6A00
     void performAction_246();  // 0x731060
+    unsigned int * performAction_216(char a2);  // 0x5381E0
+    unsigned int * performAction_217(char a2);  // 0x538200
+    unsigned int * performAction_218(char a2);  // 0x538220
+    unsigned int * performAction_222(char a2);  // 0x5382A0
+    unsigned int * performAction_224(char a2);  // 0x5382E0
+    unsigned int * performAction_225(char a2);  // 0x538300
+    unsigned int * performAction_226(char a2);  // 0x538320
+    unsigned int * performAction_227(char a2);  // 0x538340
+    unsigned int * performAction_228(char a2);  // 0x538360
+    unsigned int * performAction_229(char a2);  // 0x538380
+    unsigned int * performAction_230(char a2);  // 0x5383A0
+    unsigned int * performAction_231(char a2);  // 0x5383C0
+    unsigned int * performAction_232(char a2);  // 0x5383E0
+    unsigned int * performAction_233(char a2);  // 0x538400
+    unsigned int * performAction_234(char a2);  // 0x538420
     wchar_t * Release();  // 0x535C40
     wchar_t * ddtor();  // 0x535C70
     wchar_t * Read();  // 0x535C90

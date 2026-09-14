@@ -4,47 +4,6 @@
 #include "e4/classes/HouseTypeClass_28_e4.hpp"
 #include "e4/classes/HouseTypeClass_36_e4.hpp"
 
-// 0x4756F0
-namespace gamemd {
-int HouseTypeClass::loadCountryData(unsigned char * a2, unsigned char * a3, int a4)
-{
-{
-    int result;
-    int *v5;
-    int *v6;
-    int v7;
-    int *i;
-    char Destination[128];
-    if ( !INIClass::GetString(this, a2, a3, &g_INI_DefaultBuffer, Destination, 128) )
-    return a4;
-    result = HouseTypeClass::Find(Destination);
-    if ( result == -1 )
-  {
-    v5 = __2_YAPAXI_Z(0xB4u);
-    if ( v5 )
-    v6 = SideClass::Construct(v5, Destination);
-    else
-    v6 = 0;
-    v7 = 0;
-    if ( g_ObjectTypeList <= 0 )
-    {
-    return -1;
-    }
-    else
-    {
-    for ( i = DataGlobal_8B4124; (int *)*i != v6; ++i )
-      {
-    if ( ++v7 >= g_ObjectTypeList )
-    return -1;
-      }
-    return v7;
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x511650
 namespace gamemd {
 unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
@@ -721,47 +680,6 @@ int __userpurge HouseTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, i
 }
 } // namespace gamemd
 
-// 0x5125A0
-namespace gamemd {
-int HouseTypeClass::QueryInterface(int a1, const void * a2, unsigned int * a3)
-{
-{
-    int v4;
-    if ( !a3 )
-    return -2147467261;
-    *a3 = 0;
-    if ( !memcmp(a2, &IID_IUnknown, 0x10u) )
-    *a3 = a1;
-    if ( !memcmp(a2, &IID_IPersist, 0x10u) )
-    *a3 = a1;
-    if ( !memcmp(a2, &IID_IPersistStream, 0x10u) )
-    *a3 = a1;
-    if ( !memcmp(a2, &IID_IRTTITypeInfo, 0x10u) )
-  {
-    if ( a1 )
-    v4 = a1 + 4;
-    else
-    v4 = 0;
-    *a3 = v4;
-  }
-    if ( !*a3 )
-    return -2147467262;
-    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x512730
-namespace gamemd {
-unsigned int HouseTypeClass::loadBuildLimits()
-{
-{
-    return this->arrayIndex;
-}
-}
-} // namespace gamemd
-
 // 0x512760
 namespace gamemd {
 HouseTypeClass * HouseTypeClass::Destructor(char a2)
@@ -1105,36 +1023,6 @@ _DWORD *__thiscall HouseTypeClass::readAllowedUnits(_DWORD *this, InfantryTypeCl
 }
 } // namespace gamemd
 
-// 0x5139E0
-namespace gamemd {
-int HouseTypeClass::readBaseDefenses(int a1, const void * a2, unsigned int * a3)
-{
-{
-    return HouseTypeClass::QueryInterface(a1 - 4, a2, a3);
-}
-}
-} // namespace gamemd
-
-// 0x5139F0
-namespace gamemd {
-int HouseTypeClass::readAiBuildLists(int a1)
-{
-{
-    return HouseTypeClass::AddRef(a1 - 4);
-}
-}
-} // namespace gamemd
-
-// 0x513A00
-namespace gamemd {
-int HouseTypeClass::readLoadoutData(int a1)
-{
-{
-    return HouseTypeClass::Release(a1 - 4);
-}
-}
-} // namespace gamemd
-
 // 0x67B8F0
 namespace gamemd {
 VectorClass * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5)
@@ -1254,25 +1142,6 @@ VectorClass *__fastcall HouseTypeClass::ReadCountryName(
 }
 } // namespace gamemd
 
-// 0x6A46D0
-namespace gamemd {
-int HouseTypeClass::Find()
-{
-{
-    int v1;
-    v1 = 0;
-    if ( *(int *)DataGlobal_89E138.__pad_15FF8 <= 0 )
-    return -1;
-    while ( _strcmpi((const void *)(*(int *)(*(int *)&DataGlobal_89E138.__pad_579C[67664] + 4 * v1) + 36), this) )
-  {
-    if ( ++v1 >= *(int *)DataGlobal_89E138.__pad_15FF8 )
-    return -1;
-  }
-    return v1;
-}
-}
-} // namespace gamemd
-
 // 0x512990
 namespace gamemd {
 void HouseTypeClass_28::ddtor()
@@ -1291,19 +1160,6 @@ void __thiscall HouseTypeClass_28_::_vt03(int this)
   }
   *(_BYTE *)(this + 13) = 0; /*0x5129b1*/
   this->HouseTypeClass_28_field_0x8 = 0; /*0x5129b4*/
-}
-}
-} // namespace gamemd
-
-// 0x5129C0
-namespace gamemd {
-unsigned int HouseTypeClass_28::Write(int a2)
-{
-{
-    if ( (unsigned char)this->HouseTypeClass_28_field_0xC )
-    return (unsigned int)(a2 - this->HouseTypeClass_28_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -1472,19 +1328,6 @@ void __thiscall HouseTypeClass_36_::_vt03(int this)
   }
   *(_BYTE *)(this + 13) = 0; /*0x512921*/
   this->HouseTypeClass_36_field_0x8 = 0; /*0x512924*/
-}
-}
-} // namespace gamemd
-
-// 0x512930
-namespace gamemd {
-unsigned int HouseTypeClass_36::Write(int a2)
-{
-{
-    if ( (unsigned char)this->HouseTypeClass_36_field_0xC )
-    return (unsigned int)(a2 - this->HouseTypeClass_36_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -1740,15 +1583,43 @@ int __thiscall HouseTypeClass_36_::sub_513500(int this, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x513540
+// 0x4756F0
 namespace gamemd {
-unsigned int HouseTypeClass_36::PointerToIndex(int a2)
+int HouseTypeClass::loadCountryData(unsigned char * a2, unsigned char * a3, int a4)
 {
 {
-    if ( (unsigned char)this->HouseTypeClass_36_field_0xC )
-    return (unsigned int)(a2 - this->HouseTypeClass_36_field_0x4) >> 2;
+    int result;
+    int *v5;
+    int *v6;
+    int v7;
+    int *i;
+    char Destination[128];
+    if ( !INIClass::GetString(this, a2, a3, &g_INI_DefaultBuffer, Destination, 128) )
+    return a4;
+    result = HouseTypeClass::Find(Destination);
+    if ( result == -1 )
+  {
+    v5 = __2_YAPAXI_Z(0xB4u);
+    if ( v5 )
+    v6 = SideClass::Construct(v5, Destination);
     else
-    return 0;
+    v6 = 0;
+    v7 = 0;
+    if ( g_ObjectTypeList <= 0 )
+    {
+    return -1;
+    }
+    else
+    {
+    for ( i = DataGlobal_8B4124; (int *)*i != v6; ++i )
+      {
+    if ( ++v7 >= g_ObjectTypeList )
+    return -1;
+      }
+    return v7;
+    }
+  }
+    return result;
 }
 }
 } // namespace gamemd
@@ -1770,6 +1641,37 @@ int HouseTypeClass::LoadHouse(int a1, unsigned int * a2)
   a2[1] = 0;
   *a2 = 436;
   return 0;
+}
+} // namespace gamemd
+
+// 0x5125A0
+namespace gamemd {
+int HouseTypeClass::QueryInterface(int a1, const void * a2, unsigned int * a3)
+{
+{
+    int v4;
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    if ( !memcmp(a2, &IID_IUnknown, 0x10u) )
+    *a3 = a1;
+    if ( !memcmp(a2, &IID_IPersist, 0x10u) )
+    *a3 = a1;
+    if ( !memcmp(a2, &IID_IPersistStream, 0x10u) )
+    *a3 = a1;
+    if ( !memcmp(a2, &IID_IRTTITypeInfo, 0x10u) )
+  {
+    if ( a1 )
+    v4 = a1 + 4;
+    else
+    v4 = 0;
+    *a3 = v4;
+  }
+    if ( !*a3 )
+    return -2147467262;
+    (*(void (__stdcall **)(int))(*(int *)(a1) + 4))(a1);
+    return 0;
+}
 }
 } // namespace gamemd
 
@@ -1803,6 +1705,16 @@ return 432;
 }
 } // namespace gamemd
 
+// 0x512730
+namespace gamemd {
+unsigned int HouseTypeClass::loadBuildLimits()
+{
+{
+    return this->arrayIndex;
+}
+}
+} // namespace gamemd
+
 // 0x512740
 namespace gamemd {
 int HouseTypeClass::AddRef(int a1)
@@ -1816,5 +1728,93 @@ namespace gamemd {
 int HouseTypeClass::Release(int a1)
 {
 return 1;
+}
+} // namespace gamemd
+
+// 0x512930
+namespace gamemd {
+unsigned int HouseTypeClass_36::Write(int a2)
+{
+{
+    if ( (unsigned char)this->HouseTypeClass_36_field_0xC )
+    return (unsigned int)(a2 - this->HouseTypeClass_36_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5129C0
+namespace gamemd {
+unsigned int HouseTypeClass_28::Write(int a2)
+{
+{
+    if ( (unsigned char)this->HouseTypeClass_28_field_0xC )
+    return (unsigned int)(a2 - this->HouseTypeClass_28_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x513540
+namespace gamemd {
+unsigned int HouseTypeClass_36::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->HouseTypeClass_36_field_0xC )
+    return (unsigned int)(a2 - this->HouseTypeClass_36_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5139E0
+namespace gamemd {
+int HouseTypeClass::readBaseDefenses(int a1, const void * a2, unsigned int * a3)
+{
+{
+    return HouseTypeClass::QueryInterface(a1 - 4, a2, a3);
+}
+}
+} // namespace gamemd
+
+// 0x5139F0
+namespace gamemd {
+int HouseTypeClass::readAiBuildLists(int a1)
+{
+{
+    return HouseTypeClass::AddRef(a1 - 4);
+}
+}
+} // namespace gamemd
+
+// 0x513A00
+namespace gamemd {
+int HouseTypeClass::readLoadoutData(int a1)
+{
+{
+    return HouseTypeClass::Release(a1 - 4);
+}
+}
+} // namespace gamemd
+
+// 0x6A46D0
+namespace gamemd {
+int HouseTypeClass::Find()
+{
+{
+    int v1;
+    v1 = 0;
+    if ( *(int *)DataGlobal_89E138.__pad_15FF8 <= 0 )
+    return -1;
+    while ( _strcmpi((const void *)(*(int *)(*(int *)&DataGlobal_89E138.__pad_579C[67664] + 4 * v1) + 36), this) )
+  {
+    if ( ++v1 >= *(int *)DataGlobal_89E138.__pad_15FF8 )
+    return -1;
+  }
+    return v1;
+}
 }
 } // namespace gamemd

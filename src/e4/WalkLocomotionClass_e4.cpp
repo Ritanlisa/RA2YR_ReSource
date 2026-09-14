@@ -186,6 +186,39 @@ HRESULT __stdcall WalkLocomotionClass::_vt05(int *a1, int *pStm)
 }
 }
 
+// 0x75CBE0
+WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+WalkLocomotionClass *__thiscall WalkLocomotionClass::ProcessMove(ILocomotion **this, char a2)
+{
+  ILocomotion *v3; // eax
+
+  *this = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbe3*/
+  *(this + 1) = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbe9*/
+  *(this + 6) = (ILocomotion *)&vt_WalkLocomotionClass; /*0x75cbf0*/
+  v3 = *(this + 14); /*0x75cbf7*/
+  if ( v3 ) /*0x75cbfc*/
+    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x75cc01*/
+  LocomotionClass::Construct(this); /*0x75cc06*/
+  if ( (a2 & 1) != 0 ) /*0x75cc10*/
+    __3_YAXPAX_Z(this); /*0x75cc13*/
+  return (WalkLocomotionClass *)this; /*0x75cc1d*/
+}
+}
+
+// 0x75C640
+int WalkLocomotionClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1247291204;
+  a2[1] = 298948665;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
+}
+
 // 0x75C700
 HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
 {
@@ -239,39 +272,6 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     (*(void (__stdcall **)(int *))(*pPStm + 8))(pPStm);
     return v10;
 }
-}
-
-// 0x75CBE0
-WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-WalkLocomotionClass *__thiscall WalkLocomotionClass::ProcessMove(ILocomotion **this, char a2)
-{
-  ILocomotion *v3; // eax
-
-  *this = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbe3*/
-  *(this + 1) = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbe9*/
-  *(this + 6) = (ILocomotion *)&vt_WalkLocomotionClass; /*0x75cbf0*/
-  v3 = *(this + 14); /*0x75cbf7*/
-  if ( v3 ) /*0x75cbfc*/
-    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x75cc01*/
-  LocomotionClass::Construct(this); /*0x75cc06*/
-  if ( (a2 & 1) != 0 ) /*0x75cc10*/
-    __3_YAXPAX_Z(this); /*0x75cc13*/
-  return (WalkLocomotionClass *)this; /*0x75cc1d*/
-}
-}
-
-// 0x75C640
-int WalkLocomotionClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1247291204;
-  a2[1] = 298948665;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
 }
 
 // 0x75CBD0

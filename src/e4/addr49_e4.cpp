@@ -238,67 +238,6 @@ int __thiscall sub_490400(int this)
 }
 } // namespace gamemd
 
-// 0x491100
-namespace gamemd {
-int sub_491100(ObjectClass * aP0, char a2, int a3, ObjectClass * aP3, short a5, char a6, short a7)
-{
-{
-    char v7;
-    char v8;
-    int v9;
-    ObjectClass *result;
-    char v11;
-    int *v12;
-    short *v13;
-    int v14;
-    int v15;
-    int v16;
-    short v17;
-    unsigned char v18;
-    ObjectClass *i;
-    char v20;
-    int v21;
-    v20 = v8;
-    result = 0;
-    v11 = v7;
-    for ( i = 0; (int)result < *(int *)&DataGlobal_89E138.__pad_BC0[16]; i = result )
-  {
-    v12 = *(int **)(*(int *)&DataGlobal_89E138.__pad_BC0[4] + 4 * (int)result);
-    v21 = (int)v12;
-    if ( v12[1] == 2 )
-    {
-    v13 = (short *)v12[92];
-    v14 = 256;
-    do
-      {
-    LOWORD(v9) = *v13;
-    HIWORD(v15) = HIWORD(v9);
-    HIWORD(v16) = HIWORD(v9);
-    v17 = *v13++ >> v11;
-    v18 = (unsigned char)((unsigned short)v9 >> a2) << (char)aP0;
-    LOWORD(v9) = (unsigned char)((unsigned char)((unsigned char)((unsigned short)v9 >> (char)aP3) << a3) >> DataGlobal_89E138.__pad_14B0[6132]);
-    LOWORD(v15) = (unsigned char)((unsigned char)((char)v17 << v20) >> DataGlobal_89E138.__pad_14B0[6124]);
-    LOWORD(v16) = (unsigned char)(v18 >> DataGlobal_89E138.__pad_14B0[6140]);
-    v9 = (v16 << DataGlobal_89E138.__pad_14B0[6136])
-    | (v15 << DataGlobal_89E138.__pad_14B0[6120])
-    | (v9 << DataGlobal_89E138.__pad_14B0[6128]);
-    --v14;
-    *(v13 - 1) = v9;
-      }
-    while ( v14 );
-    v12[96] = *(unsigned short *)&DataGlobal_89E138.__pad_14B0[6144];
-    v12[97] = *(unsigned short *)&DataGlobal_89E138.__pad_14B0[6146];
-    COMClass::RegisterAll(v12);
-    ConvertClass::InitTables(v21);
-    result = i;
-    }
-    result = (ObjectClass *)((char *)(result) + 1);
-  }
-    return (int)result->__pad_0;
-}
-}
-} // namespace gamemd
-
 // 0x491670
 namespace gamemd {
 char E4Recv_491670::sub_491670(unsigned char * a1, char * a2, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -2106,71 +2045,6 @@ int __thiscall sub_4966D0(
 }
 } // namespace gamemd
 
-// 0x496820
-namespace gamemd {
-int E4Recv_496820::sub_496820(unsigned short * a1, unsigned char * a2, RLEBlitTransDarkenZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
-{
-{
-    int result;
-    unsigned int v12;
-    short *v14;
-    int v17;
-    RLEBlitTransDarkenZRead_G *v18;
-    unsigned char v20;
-    int v21;
-    result = a5;
-    v12 = a7;
-    v14 = a1;
-    if ( a5 <= 0 )
-  {
-    v18 = aP3;
-  }
-    else
-  {
-    do
-    {
-    if ( *a2++ )
-    --result;
-    else
-    result -= *a2++;
-    }
-    while ( result > 0 );
-    v17 = -result;
-    v18 = (RLEBlitTransDarkenZRead_G *)((char *)aP3 - v17);
-    v14 = &a1[v17];
-    result = a7 + 2 * v17;
-    if ( (unsigned int)result >= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 28) )
-    result -= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 32);
-    v12 = result;
-  }
-    while ( (int)v18 > 0 )
-  {
-    if ( *a2++ )
-    {
-    v12 += 2;
-    v21 = a6 - *a10++;
-    if ( v21 < *(unsigned short *)(v12 - 2) )
-    *v14 = (unsigned short)this->M1 & (*v14 >> 1);
-    v18 = (RLEBlitTransDarkenZRead_G *)((char *)v18 - 1);
-    ++v14;
-    }
-    else
-    {
-    v20 = *a2++;
-    v18 = (RLEBlitTransDarkenZRead_G *)((char *)v18 - v20);
-    a10 += v20;
-    v14 += v20;
-    v12 += 2 * v20;
-    }
-    result = *(int *)&DataGlobal_87C374.__pad_579C[23348];
-    if ( v12 >= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 28) )
-    v12 -= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 32);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x496930
 namespace gamemd {
 int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75ZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
@@ -3090,32 +2964,6 @@ RLEBlitTransXlatZRead *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_58(std::locale
   if ( (a2 & 1) != 0 ) /*0x49a82f*/
     __3_YAXPAX_Z(this); /*0x49a832*/
   return (RLEBlitTransXlatZRead *)this; /*0x49a83c*/
-}
-}
-} // namespace gamemd
-
-// 0x49B390
-namespace gamemd {
-int sub_49B390()
-{
-{
-    DataGlobal_89F51C = 0;
-    DataGlobal_89F520 = 0;
-    GenericNode::Constructor(DataGlobal_89F528);
-    GenericNode::Constructor(DataGlobal_89F534);
-    DataGlobal_89F524 = (int)&vt_GenericList;
-    LinkedList::Prepend(DataGlobal_89F528, (int)DataGlobal_89F534);
-    DataGlobal_89F524 = (int)&vt_List_INIClass_INISection;
-    DataGlobal_89F540 = 0;
-    DataGlobal_89F544 = 0;
-    DataGlobal_89F548 = 0;
-    DataGlobal_89F54C = 0;
-    DataGlobal_89F550 = 0;
-    DataGlobal_89F554 = 0;
-    DataGlobal_89F558 = 0;
-    g_DDrawSurfaceManager = (int)&CCINIClass_Vtable;
-    DataGlobal_89F578 = 0;
-    return atexit(unknown_libname_12);
 }
 }
 } // namespace gamemd
@@ -4181,29 +4029,63 @@ int sub_49F3A0()
 }
 } // namespace gamemd
 
-// 0x49F550
+// 0x491100
 namespace gamemd {
-IUnknown * globalHelper_09F550(int * a1, IUnknown * a2, int a3)
+int sub_491100(ObjectClass * aP0, char a2, int a3, ObjectClass * aP3, short a5, char a6, short a7)
 {
 {
-    int v4;
-    IUnknown *v5;
-    char *v6;
-    int GroundHeight;
+    char v7;
+    char v8;
     int v9;
-    int v10;
-    IUnknown *v11;
-    v4 = *(int *)&DataGlobal_89E138.__pad_14B0[8 * a3 + 240] + a2->field_0;
-    v5 = (IUnknown *)a2->field_8;
-    v10 = a2->field_4 + *(int *)&DataGlobal_89E138.__pad_14B0[8 * a3 + 244];
-    v9 = v4;
-    v11 = v5;
-    v6 = (char *)v5 - Cell::GetGroundHeight(a2);
-    GroundHeight = Cell::GetGroundHeight((IUnknown *)&v9);
-    *a1 = v9;
-    *((int*)(a1) + 1) = v10;
-    *((int*)(a1) + 2) = (int)&v6[GroundHeight];
-    return (IUnknown *)a1;
+    ObjectClass *result;
+    char v11;
+    int *v12;
+    short *v13;
+    int v14;
+    int v15;
+    int v16;
+    short v17;
+    unsigned char v18;
+    ObjectClass *i;
+    char v20;
+    int v21;
+    v20 = v8;
+    result = 0;
+    v11 = v7;
+    for ( i = 0; (int)result < *(int *)&DataGlobal_89E138.__pad_BC0[16]; i = result )
+  {
+    v12 = *(int **)(*(int *)&DataGlobal_89E138.__pad_BC0[4] + 4 * (int)result);
+    v21 = (int)v12;
+    if ( v12[1] == 2 )
+    {
+    v13 = (short *)v12[92];
+    v14 = 256;
+    do
+      {
+    LOWORD(v9) = *v13;
+    HIWORD(v15) = HIWORD(v9);
+    HIWORD(v16) = HIWORD(v9);
+    v17 = *v13++ >> v11;
+    v18 = (unsigned char)((unsigned short)v9 >> a2) << (char)aP0;
+    LOWORD(v9) = (unsigned char)((unsigned char)((unsigned char)((unsigned short)v9 >> (char)aP3) << a3) >> DataGlobal_89E138.__pad_14B0[6132]);
+    LOWORD(v15) = (unsigned char)((unsigned char)((char)v17 << v20) >> DataGlobal_89E138.__pad_14B0[6124]);
+    LOWORD(v16) = (unsigned char)(v18 >> DataGlobal_89E138.__pad_14B0[6140]);
+    v9 = (v16 << DataGlobal_89E138.__pad_14B0[6136])
+    | (v15 << DataGlobal_89E138.__pad_14B0[6120])
+    | (v9 << DataGlobal_89E138.__pad_14B0[6128]);
+    --v14;
+    *(v13 - 1) = v9;
+      }
+    while ( v14 );
+    v12[96] = *(unsigned short *)&DataGlobal_89E138.__pad_14B0[6144];
+    v12[97] = *(unsigned short *)&DataGlobal_89E138.__pad_14B0[6146];
+    COMClass::RegisterAll(v12);
+    ConvertClass::InitTables(v21);
+    result = i;
+    }
+    result = (ObjectClass *)((char *)(result) + 1);
+  }
+    return (int)result->__pad_0;
 }
 }
 } // namespace gamemd
@@ -5494,6 +5376,71 @@ int E4Recv_4967E0::sub_4967E0(int a2, int a3, int a4, int a5, int a6, int a7, in
 }
 } // namespace gamemd
 
+// 0x496820
+namespace gamemd {
+int E4Recv_496820::sub_496820(unsigned short * a1, unsigned char * a2, RLEBlitTransDarkenZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
+{
+{
+    int result;
+    unsigned int v12;
+    short *v14;
+    int v17;
+    RLEBlitTransDarkenZRead_G *v18;
+    unsigned char v20;
+    int v21;
+    result = a5;
+    v12 = a7;
+    v14 = a1;
+    if ( a5 <= 0 )
+  {
+    v18 = aP3;
+  }
+    else
+  {
+    do
+    {
+    if ( *a2++ )
+    --result;
+    else
+    result -= *a2++;
+    }
+    while ( result > 0 );
+    v17 = -result;
+    v18 = (RLEBlitTransDarkenZRead_G *)((char *)aP3 - v17);
+    v14 = &a1[v17];
+    result = a7 + 2 * v17;
+    if ( (unsigned int)result >= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 28) )
+    result -= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 32);
+    v12 = result;
+  }
+    while ( (int)v18 > 0 )
+  {
+    if ( *a2++ )
+    {
+    v12 += 2;
+    v21 = a6 - *a10++;
+    if ( v21 < *(unsigned short *)(v12 - 2) )
+    *v14 = (unsigned short)this->M1 & (*v14 >> 1);
+    v18 = (RLEBlitTransDarkenZRead_G *)((char *)v18 - 1);
+    ++v14;
+    }
+    else
+    {
+    v20 = *a2++;
+    v18 = (RLEBlitTransDarkenZRead_G *)((char *)v18 - v20);
+    a10 += v20;
+    v14 += v20;
+    v12 += 2 * v20;
+    }
+    result = *(int *)&DataGlobal_87C374.__pad_579C[23348];
+    if ( v12 >= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 28) )
+    v12 -= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23348] + 32);
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x4968F0
 namespace gamemd {
 int E4Recv_4968F0::sub_4968F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
@@ -6262,6 +6209,32 @@ int sub_49B370()
 }
 } // namespace gamemd
 
+// 0x49B390
+namespace gamemd {
+int sub_49B390()
+{
+{
+    DataGlobal_89F51C = 0;
+    DataGlobal_89F520 = 0;
+    GenericNode::Constructor(DataGlobal_89F528);
+    GenericNode::Constructor(DataGlobal_89F534);
+    DataGlobal_89F524 = (int)&vt_GenericList;
+    LinkedList::Prepend(DataGlobal_89F528, (int)DataGlobal_89F534);
+    DataGlobal_89F524 = (int)&vt_List_INIClass_INISection;
+    DataGlobal_89F540 = 0;
+    DataGlobal_89F544 = 0;
+    DataGlobal_89F548 = 0;
+    DataGlobal_89F54C = 0;
+    DataGlobal_89F550 = 0;
+    DataGlobal_89F554 = 0;
+    DataGlobal_89F558 = 0;
+    g_DDrawSurfaceManager = (int)&CCINIClass_Vtable;
+    DataGlobal_89F578 = 0;
+    return atexit(unknown_libname_12);
+}
+}
+} // namespace gamemd
+
 // 0x49B420
 namespace gamemd {
 int unknown_libname_12()
@@ -6503,6 +6476,33 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
     v15[1] = (int)v11;
     v15[2] = v12;
     return result;
+}
+}
+} // namespace gamemd
+
+// 0x49F550
+namespace gamemd {
+IUnknown * globalHelper_09F550(int * a1, IUnknown * a2, int a3)
+{
+{
+    int v4;
+    IUnknown *v5;
+    char *v6;
+    int GroundHeight;
+    int v9;
+    int v10;
+    IUnknown *v11;
+    v4 = *(int *)&DataGlobal_89E138.__pad_14B0[8 * a3 + 240] + a2->field_0;
+    v5 = (IUnknown *)a2->field_8;
+    v10 = a2->field_4 + *(int *)&DataGlobal_89E138.__pad_14B0[8 * a3 + 244];
+    v9 = v4;
+    v11 = v5;
+    v6 = (char *)v5 - Cell::GetGroundHeight(a2);
+    GroundHeight = Cell::GetGroundHeight((IUnknown *)&v9);
+    *a1 = v9;
+    *((int*)(a1) + 1) = v10;
+    *((int*)(a1) + 2) = (int)&v6[GroundHeight];
+    return (IUnknown *)a1;
 }
 }
 } // namespace gamemd

@@ -10,9 +10,9 @@ struct Timer {
     int GetRemainingMs();  // 0x4F1B20
     HWND PumpMessages();  // 0x54F720
     double GetHighPrecision();  // 0x5B1E40
+    int GetElapsed();  // 0x5F1390
     void * EnableHighPrecision();  // 0x5D5870
     MMRESULT DisableHighPrecision();  // 0x5D5880
-    int GetElapsed();  // 0x5F1390
     int UpdateDelta();  // 0x6C8820
     DWORD GetTicks();  // 0x6C8C40
     char SetFlag(char a2);  // 0x7500B0

@@ -20,60 +20,6 @@ void __thiscall sub_49F740(int this)
 }
 } // namespace gamemd
 
-// 0x4E4EC0
-namespace gamemd {
-int Dialog::SideIDToIndex()
-{
-{
-    int v2;
-    if ( this == (void *)1699 )
-    return 0;
-    if ( this == (void *)1700 )
-    return 1;
-    if ( this == (void *)1701 )
-    return 2;
-    if ( this == (void *)1702 )
-    return 3;
-    if ( this == (void *)1703 )
-    return 4;
-    if ( this == (void *)1704 )
-    return 5;
-    if ( this == (void *)1706 )
-    return 6;
-    v2 = -(this != (void *)1707);
-    LOBYTE(v2) = v2 & 0xF8;
-    return v2 + 7;
-}
-}
-} // namespace gamemd
-
-// 0x4E59A0
-namespace gamemd {
-int Dialog::OptionIDToIndex()
-{
-{
-    int v2;
-    if ( this == (void *)1901 )
-    return 0;
-    if ( this == (void *)1902 )
-    return 1;
-    if ( this == (void *)1903 )
-    return 2;
-    if ( this == (void *)1904 )
-    return 3;
-    if ( this == (void *)1905 )
-    return 4;
-    if ( this == (void *)1906 )
-    return 5;
-    if ( this == (void *)1907 )
-    return 6;
-    v2 = -(this != (void *)1908);
-    LOBYTE(v2) = v2 & 0xF8;
-    return v2 + 7;
-}
-}
-} // namespace gamemd
-
 // 0x5B5BC0
 namespace gamemd {
 int Dialog::InitializeGameSettings()
@@ -287,149 +233,6 @@ int __thiscall Dialog_GetMode3(_BYTE *this)
 }
 } // namespace gamemd
 
-// 0x5E26C0
-namespace gamemd {
-int Dialog::FindGameUI()
-{
-{
-    int result;
-    result = Dialog::FindByHandle((void *)0xC2);
-    if ( !result )
-  {
-    result = Dialog::FindByHandle((void *)0xC9);
-    if ( !result )
-    {
-    result = Dialog::FindByHandle((void *)0xBC);
-    if ( !result )
-    return Dialog::FindByHandle((void *)0xBD);
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x5E2700
-namespace gamemd {
-HWND Dialog::ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ... a4)
-{
-{
-    HWND result;
-    ObjectClass *Current;
-    HWND DlgItem;
-    ObjectClass *v5;
-    wchar_t Buffer[1024];
-    va_list va;
-    va_start(va, Format);
-    memset(Buffer, 0, sizeof(Buffer));
-    vswprintf(Buffer, BufferCount, &Format, (SessionClass *)v5);
-    result = Dialog::GetCurrent();
-    if ( result )
-  {
-    Current = (ObjectClass *)Dialog::GetCurrent();
-    DlgItem = GetDlgItem((HWND)Current, 1343);
-    if ( DlgItem )
-    {
-    return (HWND)DrawDialogText(aP0, Buffer, DlgItem);
-    }
-    else
-    {
-    while ( 1 )
-      {
-    result = (HWND)Dialog::FindByPtr(Current);
-    Current = (ObjectClass *)result;
-    if ( !result )
-    break;
-    DlgItem = GetDlgItem(result, 1343);
-    if ( DlgItem )
-    return (HWND)DrawDialogText(aP0, Buffer, DlgItem);
-      }
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x5E2790
-namespace gamemd {
-HWND Dialog::ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignScore * aP2)
-{
-{
-    HWND result;
-    ObjectClass *Current;
-    HWND DlgItem;
-    CampaignScore *v5;
-    wchar_t Buffer[1024];
-    memset(Buffer, 0, sizeof(Buffer));
-    vswprintf(Buffer, aP1, (ObjectClass *)&aP2, (SessionClass *)v5);
-    result = Dialog::GetCurrent();
-    if ( result )
-  {
-    Current = (ObjectClass *)Dialog::GetCurrent();
-    DlgItem = GetDlgItem((HWND)Current, 1461);
-    if ( DlgItem )
-    {
-    return (HWND)DrawDialogText((ObjectClass *)aP0, Buffer, DlgItem);
-    }
-    else
-    {
-    while ( 1 )
-      {
-    result = (HWND)Dialog::FindByPtr(Current);
-    Current = (ObjectClass *)result;
-    if ( !result )
-    break;
-    DlgItem = GetDlgItem(result, 1461);
-    if ( DlgItem )
-    return (HWND)DrawDialogText((ObjectClass *)aP0, Buffer, DlgItem);
-      }
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x5E2F60
-namespace gamemd {
-LRESULT Dialog::ShowPlayerName()
-{
-{
-    HWND DlgItem;
-    DlgItem = GetDlgItem(this, 1448);
-    return SendMessageA(DlgItem, 0x4B2u, 0, 11055906);
-}
-}
-} // namespace gamemd
-
-// 0x5E9950
-namespace gamemd {
-int Dialog::MapPlayerIDToIndex()
-{
-{
-    int v2;
-    if ( this == (void *)1041 )
-    return 0;
-    if ( this == (void *)1042 )
-    return 1;
-    if ( this == (void *)1043 )
-    return 2;
-    if ( this == (void *)1044 )
-    return 3;
-    if ( this == (void *)1045 )
-    return 4;
-    if ( this == (void *)1046 )
-    return 5;
-    if ( this == (void *)1047 )
-    return 6;
-    v2 = -(this != (void *)1048);
-    LOBYTE(v2) = v2 & 0xF8;
-    return v2 + 7;
-}
-}
-} // namespace gamemd
-
 // 0x5EE350
 namespace gamemd {
 HWND Dialog::RefreshDialogsGame()
@@ -598,31 +401,6 @@ LABEL_36:
   *((_BYTE *)&g_MatrixTransformState + 9524) = 0; /*0x5f2cbc*/
   Dialog::Destroy((SkirmishDialog *)hWnd); /*0x5f2cc3*/
   return v6; /*0x5f2cca*/
-}
-}
-} // namespace gamemd
-
-// 0x5F3450
-namespace gamemd {
-unsigned int Dialog::CheckButtonState()
-{
-{
-    int v0;
-    char v2[84];
-    v0 = (*(int (__thiscall **)(HWND))(*(int *)(g_ClipboardBuffer) + 12))(g_ClipboardBuffer);
-    if ( (*(int (__thiscall **)(HWND, char *, int, char *, int, int, int, int))(*(int *)(g_ClipboardBuffer) + 28))( g_ClipboardBuffer, DataGlobal_832678, 13, v2, 81, 90, 1, -1) == 2 )
-    return v0 & 0xFFFFFF7F;
-    return v0;
-}
-}
-} // namespace gamemd
-
-// 0x602AE0
-namespace gamemd {
-BOOL Dialog::IsSpecialTemplate()
-{
-{
-    return this == (void *)293 || this == (void *)231 || this == (void *)278 || this == (void *)194 || this == (void *)201 || this == (void *)285 || this == (void *)284 || this == (void *)276 || this == (void *)700 || this == (void *)275 || this == (void *)265 || this == (void *)271 || this == (void *)279 || this == (void *)230 || this == (void *)243 || this == (void *)244 || this == (void *)270 || this == (void *)274;
 }
 }
 } // namespace gamemd
@@ -1391,64 +1169,6 @@ LABEL_74:
     v4[36] = -1; /*0x60a6d2*/
     return 1; /*0x60a6d9*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x60AAA0
-namespace gamemd {
-BOOL Dialog::EnumAndCleanup()
-{
-{
-    return EnumChildWindows(this, sub_60AA60, 0);
-}
-}
-} // namespace gamemd
-
-// 0x60F320
-namespace gamemd {
-BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM a2)
-{
-{
-    LONG WindowLongA;
-    HWND Parent;
-    DWORD v4;
-    HWND Window;
-    int *v6;
-    LONG v7;
-    LONG dwNewLong;
-    struct tagRECT Rect;
-    struct tagRECT v11;
-    CHAR ClassName[128];
-    WindowLongA = GetWindowLongA(hWnd, -16);
-    SetWindowLongA(hWnd, -21, 0);
-    if ( (WindowLongA & 0x10000000) != 0 && (WindowLongA & 0x8000000) == 0 )
-  {
-    GetClassNameA(hWnd, ClassName, 128);
-    if ( !strcmp(ClassName, g_INI_Key_Edit) )
-    {
-    Parent = GetParent(hWnd);
-    ScreenDialogToClient(hWnd, &Rect);
-    ScreenDialogToClient(Parent, &v11);
-    v4 = 1073742096;
-    if ( (WindowLongA & 0x10000) != 0 )
-    v4 = 1073807632;
-    Window = CreateWindowExA( 0, g_INI_Key_ListBox, 0, v4, Rect.left - v11.left, Rect.top - v11.top, Rect.right - Rect.left, Rect.bottom - Rect.top, Parent, 0, g_hInstance, 0);
-    v6 = __2_YAPAXI_Z(8u);
-    *v6 = g_INI_Key_NewEdit;
-    v6[1] = GetWindowLongA(hWnd, -16);
-    SetWindowLongA(Window, -21, (LONG)v6);
-    EnableWindow(hWnd, 0);
-    ShowWindow(hWnd, 0);
-    EnableWindow(Window, 1);
-    ShowWindow(Window, 1);
-    dwNewLong = GetWindowLongA(hWnd, -12);
-    v7 = GetWindowLongA(Window, -12);
-    SetWindowLongA(hWnd, -12, v7);
-    SetWindowLongA(Window, -12, dwNewLong);
-    }
-  }
-    return 1;
 }
 }
 } // namespace gamemd
@@ -2804,37 +2524,6 @@ HWND __thiscall Dialog::Destroy(SkirmishDialog *this)
 }
 } // namespace gamemd
 
-// 0x622800
-namespace gamemd {
-HWND Dialog::Show()
-{
-{
-    ShowWindow(this, 1);
-    SetForegroundWindow(this);
-    return Timer::PumpMessages((HWND *)g_BinkMoviePlayer);
-}
-}
-} // namespace gamemd
-
-// 0x623120
-namespace gamemd {
-char Dialog::PumpMessages()
-{
-{
-    MessageLoop();
-    if ( !g_GameMode_Current || g_GameMode_Current == 5 || g_NetworkQuitFlag || g_GameFlags_Campaign )
-  {
-    Event::Dispatch();
-  }
-    else if ( !(unsigned char)VtableStub::Method_55CBF0() && GameFrameLoop() )
-  {
-    return 1;
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x6233A0
 namespace gamemd {
 void Dialog::CleanupTree()
@@ -3316,26 +3005,6 @@ int __thiscall Dialog_FindByHandle(void *this)
 }
 } // namespace gamemd
 
-// 0x7759B0
-namespace gamemd {
-int Dialog::FindByPtr()
-{
-{
-    int v1;
-    void **i;
-    v1 = g_DialogTrackingList - 1;
-    if ( g_DialogTrackingList - 1 < 0 )
-    return 0;
-    for ( i = (void **)(8 * v1 + 12004648); this != *i || v1 <= 0; i -= 2 )
-  {
-    if ( --v1 < 0 )
-    return 0;
-  }
-    return (int)*(&g_ClipboardBuffer + 2 * v1);
-}
-}
-} // namespace gamemd
-
 // 0x775B10
 namespace gamemd {
 HWND Dialog::GetCurrent()
@@ -3369,6 +3038,337 @@ BOOL __thiscall Dialog::GetField(HWND this)
 {
   EnumChildWindows(this, (WNDENUMPROC)DialogClass::Reposition, 1); /*0x775bab*/
   return DialogClass::Reposition((SkirmishDialog *)this, 0); /*0x775bb9*/
+}
+}
+} // namespace gamemd
+
+// 0x4E4EC0
+namespace gamemd {
+int Dialog::SideIDToIndex()
+{
+{
+    int v2;
+    if ( this == (void *)1699 )
+    return 0;
+    if ( this == (void *)1700 )
+    return 1;
+    if ( this == (void *)1701 )
+    return 2;
+    if ( this == (void *)1702 )
+    return 3;
+    if ( this == (void *)1703 )
+    return 4;
+    if ( this == (void *)1704 )
+    return 5;
+    if ( this == (void *)1706 )
+    return 6;
+    v2 = -(this != (void *)1707);
+    LOBYTE(v2) = v2 & 0xF8;
+    return v2 + 7;
+}
+}
+} // namespace gamemd
+
+// 0x4E59A0
+namespace gamemd {
+int Dialog::OptionIDToIndex()
+{
+{
+    int v2;
+    if ( this == (void *)1901 )
+    return 0;
+    if ( this == (void *)1902 )
+    return 1;
+    if ( this == (void *)1903 )
+    return 2;
+    if ( this == (void *)1904 )
+    return 3;
+    if ( this == (void *)1905 )
+    return 4;
+    if ( this == (void *)1906 )
+    return 5;
+    if ( this == (void *)1907 )
+    return 6;
+    v2 = -(this != (void *)1908);
+    LOBYTE(v2) = v2 & 0xF8;
+    return v2 + 7;
+}
+}
+} // namespace gamemd
+
+// 0x5E26C0
+namespace gamemd {
+int Dialog::FindGameUI()
+{
+{
+    int result;
+    result = Dialog::FindByHandle((void *)0xC2);
+    if ( !result )
+  {
+    result = Dialog::FindByHandle((void *)0xC9);
+    if ( !result )
+    {
+    result = Dialog::FindByHandle((void *)0xBC);
+    if ( !result )
+    return Dialog::FindByHandle((void *)0xBD);
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x5E2700
+namespace gamemd {
+HWND Dialog::ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ... a4)
+{
+{
+    HWND result;
+    ObjectClass *Current;
+    HWND DlgItem;
+    ObjectClass *v5;
+    wchar_t Buffer[1024];
+    va_list va;
+    va_start(va, Format);
+    memset(Buffer, 0, sizeof(Buffer));
+    vswprintf(Buffer, BufferCount, &Format, (SessionClass *)v5);
+    result = Dialog::GetCurrent();
+    if ( result )
+  {
+    Current = (ObjectClass *)Dialog::GetCurrent();
+    DlgItem = GetDlgItem((HWND)Current, 1343);
+    if ( DlgItem )
+    {
+    return (HWND)DrawDialogText(aP0, Buffer, DlgItem);
+    }
+    else
+    {
+    while ( 1 )
+      {
+    result = (HWND)Dialog::FindByPtr(Current);
+    Current = (ObjectClass *)result;
+    if ( !result )
+    break;
+    DlgItem = GetDlgItem(result, 1343);
+    if ( DlgItem )
+    return (HWND)DrawDialogText(aP0, Buffer, DlgItem);
+      }
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x5E2790
+namespace gamemd {
+HWND Dialog::ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignScore * aP2)
+{
+{
+    HWND result;
+    ObjectClass *Current;
+    HWND DlgItem;
+    CampaignScore *v5;
+    wchar_t Buffer[1024];
+    memset(Buffer, 0, sizeof(Buffer));
+    vswprintf(Buffer, aP1, (ObjectClass *)&aP2, (SessionClass *)v5);
+    result = Dialog::GetCurrent();
+    if ( result )
+  {
+    Current = (ObjectClass *)Dialog::GetCurrent();
+    DlgItem = GetDlgItem((HWND)Current, 1461);
+    if ( DlgItem )
+    {
+    return (HWND)DrawDialogText((ObjectClass *)aP0, Buffer, DlgItem);
+    }
+    else
+    {
+    while ( 1 )
+      {
+    result = (HWND)Dialog::FindByPtr(Current);
+    Current = (ObjectClass *)result;
+    if ( !result )
+    break;
+    DlgItem = GetDlgItem(result, 1461);
+    if ( DlgItem )
+    return (HWND)DrawDialogText((ObjectClass *)aP0, Buffer, DlgItem);
+      }
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x5E2F60
+namespace gamemd {
+LRESULT Dialog::ShowPlayerName()
+{
+{
+    HWND DlgItem;
+    DlgItem = GetDlgItem(this, 1448);
+    return SendMessageA(DlgItem, 0x4B2u, 0, 11055906);
+}
+}
+} // namespace gamemd
+
+// 0x5E9950
+namespace gamemd {
+int Dialog::MapPlayerIDToIndex()
+{
+{
+    int v2;
+    if ( this == (void *)1041 )
+    return 0;
+    if ( this == (void *)1042 )
+    return 1;
+    if ( this == (void *)1043 )
+    return 2;
+    if ( this == (void *)1044 )
+    return 3;
+    if ( this == (void *)1045 )
+    return 4;
+    if ( this == (void *)1046 )
+    return 5;
+    if ( this == (void *)1047 )
+    return 6;
+    v2 = -(this != (void *)1048);
+    LOBYTE(v2) = v2 & 0xF8;
+    return v2 + 7;
+}
+}
+} // namespace gamemd
+
+// 0x5F3450
+namespace gamemd {
+unsigned int Dialog::CheckButtonState()
+{
+{
+    int v0;
+    char v2[84];
+    v0 = (*(int (__thiscall **)(HWND))(*(int *)(g_ClipboardBuffer) + 12))(g_ClipboardBuffer);
+    if ( (*(int (__thiscall **)(HWND, char *, int, char *, int, int, int, int))(*(int *)(g_ClipboardBuffer) + 28))( g_ClipboardBuffer, DataGlobal_832678, 13, v2, 81, 90, 1, -1) == 2 )
+    return v0 & 0xFFFFFF7F;
+    return v0;
+}
+}
+} // namespace gamemd
+
+// 0x602AE0
+namespace gamemd {
+BOOL Dialog::IsSpecialTemplate()
+{
+{
+    return this == (void *)293 || this == (void *)231 || this == (void *)278 || this == (void *)194 || this == (void *)201 || this == (void *)285 || this == (void *)284 || this == (void *)276 || this == (void *)700 || this == (void *)275 || this == (void *)265 || this == (void *)271 || this == (void *)279 || this == (void *)230 || this == (void *)243 || this == (void *)244 || this == (void *)270 || this == (void *)274;
+}
+}
+} // namespace gamemd
+
+// 0x60AAA0
+namespace gamemd {
+BOOL Dialog::EnumAndCleanup()
+{
+{
+    return EnumChildWindows(this, sub_60AA60, 0);
+}
+}
+} // namespace gamemd
+
+// 0x60F320
+namespace gamemd {
+BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM a2)
+{
+{
+    LONG WindowLongA;
+    HWND Parent;
+    DWORD v4;
+    HWND Window;
+    int *v6;
+    LONG v7;
+    LONG dwNewLong;
+    struct tagRECT Rect;
+    struct tagRECT v11;
+    CHAR ClassName[128];
+    WindowLongA = GetWindowLongA(hWnd, -16);
+    SetWindowLongA(hWnd, -21, 0);
+    if ( (WindowLongA & 0x10000000) != 0 && (WindowLongA & 0x8000000) == 0 )
+  {
+    GetClassNameA(hWnd, ClassName, 128);
+    if ( !strcmp(ClassName, g_INI_Key_Edit) )
+    {
+    Parent = GetParent(hWnd);
+    ScreenDialogToClient(hWnd, &Rect);
+    ScreenDialogToClient(Parent, &v11);
+    v4 = 1073742096;
+    if ( (WindowLongA & 0x10000) != 0 )
+    v4 = 1073807632;
+    Window = CreateWindowExA( 0, g_INI_Key_ListBox, 0, v4, Rect.left - v11.left, Rect.top - v11.top, Rect.right - Rect.left, Rect.bottom - Rect.top, Parent, 0, g_hInstance, 0);
+    v6 = __2_YAPAXI_Z(8u);
+    *v6 = g_INI_Key_NewEdit;
+    v6[1] = GetWindowLongA(hWnd, -16);
+    SetWindowLongA(Window, -21, (LONG)v6);
+    EnableWindow(hWnd, 0);
+    ShowWindow(hWnd, 0);
+    EnableWindow(Window, 1);
+    ShowWindow(Window, 1);
+    dwNewLong = GetWindowLongA(hWnd, -12);
+    v7 = GetWindowLongA(Window, -12);
+    SetWindowLongA(hWnd, -12, v7);
+    SetWindowLongA(Window, -12, dwNewLong);
+    }
+  }
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x622800
+namespace gamemd {
+HWND Dialog::Show()
+{
+{
+    ShowWindow(this, 1);
+    SetForegroundWindow(this);
+    return Timer::PumpMessages((HWND *)g_BinkMoviePlayer);
+}
+}
+} // namespace gamemd
+
+// 0x623120
+namespace gamemd {
+char Dialog::PumpMessages()
+{
+{
+    MessageLoop();
+    if ( !g_GameMode_Current || g_GameMode_Current == 5 || g_NetworkQuitFlag || g_GameFlags_Campaign )
+  {
+    Event::Dispatch();
+  }
+    else if ( !(unsigned char)VtableStub::Method_55CBF0() && GameFrameLoop() )
+  {
+    return 1;
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7759B0
+namespace gamemd {
+int Dialog::FindByPtr()
+{
+{
+    int v1;
+    void **i;
+    v1 = g_DialogTrackingList - 1;
+    if ( g_DialogTrackingList - 1 < 0 )
+    return 0;
+    for ( i = (void **)(8 * v1 + 12004648); this != *i || v1 <= 0; i -= 2 )
+  {
+    if ( --v1 < 0 )
+    return 0;
+  }
+    return (int)*(&g_ClipboardBuffer + 2 * v1);
 }
 }
 } // namespace gamemd

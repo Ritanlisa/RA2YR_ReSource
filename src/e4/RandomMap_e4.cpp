@@ -513,44 +513,6 @@ LABEL_84:
 }
 } // namespace gamemd
 
-// 0x58CF90
-namespace gamemd {
-int RandomMap::GenerateTerrainForAllCells()
-{
-{
-    int result;
-    int v2;
-    int v3;
-    int *v4;
-    void *v5;
-    v5 = this;
-    result = g_MapCellWidth * g_MapCellWidth;
-    if ( g_MapCellWidth * g_MapCellWidth > 0 )
-  {
-    v2 = g_MapCellWidth * g_MapCellWidth;
-    result = (int)g_MapTileArray;
-    v3 = 0;
-    do
-    {
-    v5 = *(void **)(v3 + result);
-    v4 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v5);
-    result = (int)g_MapTileArray;
-    if ( *(int *)((char *)(g_MapTileArray) + v3 + 56) == -1 && (*(short *)((char *)(g_MapTileArray) + v3) || *(short *)((char *)(g_MapTileArray) + v3 + 2)) )
-      {
-    if ( Cell::IsGroundTypeRange(v4) || Cell::IsShore(v4) )
-    RandomMap::GenerateTerrain((int)v4);
-    result = (int)g_MapTileArray;
-      }
-    v3 += 80;
-    --v2;
-    }
-    while ( v2 );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x58D1C0
 namespace gamemd {
 int RandomMap::ExpandTerrainCells(int a2, int a3)
@@ -6875,6 +6837,44 @@ LABEL_39:
     }
   }
   return VeinholeMonsterClass_field_0x28; /*0x74f19e*/
+}
+}
+} // namespace gamemd
+
+// 0x58CF90
+namespace gamemd {
+int RandomMap::GenerateTerrainForAllCells()
+{
+{
+    int result;
+    int v2;
+    int v3;
+    int *v4;
+    void *v5;
+    v5 = this;
+    result = g_MapCellWidth * g_MapCellWidth;
+    if ( g_MapCellWidth * g_MapCellWidth > 0 )
+  {
+    v2 = g_MapCellWidth * g_MapCellWidth;
+    result = (int)g_MapTileArray;
+    v3 = 0;
+    do
+    {
+    v5 = *(void **)(v3 + result);
+    v4 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v5);
+    result = (int)g_MapTileArray;
+    if ( *(int *)((char *)(g_MapTileArray) + v3 + 56) == -1 && (*(short *)((char *)(g_MapTileArray) + v3) || *(short *)((char *)(g_MapTileArray) + v3 + 2)) )
+      {
+    if ( Cell::IsGroundTypeRange(v4) || Cell::IsShore(v4) )
+    RandomMap::GenerateTerrain((int)v4);
+    result = (int)g_MapTileArray;
+      }
+    v3 += 80;
+    --v2;
+    }
+    while ( v2 );
+  }
+    return result;
 }
 }
 } // namespace gamemd

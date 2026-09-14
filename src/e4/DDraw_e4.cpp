@@ -144,57 +144,6 @@ LABEL_7:
 }
 }
 
-// 0x4A4620
-char DDraw::CheckCapabilities()
-{
-{
-    int v0;
-    HRESULT v1;
-    CHAR Text[80];
-    int v4[79];
-    if ( g_lpDirectDraw7 )
-  {
-    memset(v4, 0, sizeof(v4));
-    v4[0] = 316;
-    v1 = g_lpDirectDraw7->lpVtbl->GetCaps(g_lpDirectDraw7, (LPDDCAPS)v4, 0);
-    if ( v1 )
-    {
-    if ( g_DDraw_ErrorCallback )
-      {
-    g_DDraw_ErrorCallback(v1);
-      }
-    else
-      {
-    sprintf(Text, g_Str_Trace_DDRAW_DLL_Error_code____08X, v1);
-    MessageBoxA(g_hWnd, Text, g_Str_Direct_X, 0x30u);
-      }
-    LOBYTE(v0) = 0;
-    }
-    else
-    {
-    v0 = (v4[1] & 0x40) != 0;
-    if ( SLOBYTE(v4[1]) < 0 )
-    LOBYTE(v0) = v0 | 2;
-    if ( (v4[1] & 0x10000) != 0 )
-    LOBYTE(v0) = v0 | 4;
-    if ( (v4[1] & 0x8000000) != 0 )
-    LOBYTE(v0) = v0 | 8;
-    if ( (v4[1] & 0x4000000) != 0 )
-    LOBYTE(v0) = v0 | 0x10;
-    if ( (v4[1] & 0x2000000) != 0 )
-    LOBYTE(v0) = v0 | 0x20;
-    if ( (v4[1] & 0x200) != 0 )
-    LOBYTE(v0) = v0 | 0x40;
-    }
-  }
-    else
-  {
-    LOBYTE(v0) = 0;
-  }
-    return v0;
-}
-}
-
 // 0x4A4830
 int DDraw::WaitForIdle()
 {
@@ -312,6 +261,57 @@ char __thiscall DDraw_HandleSuspend(_DWORD *this)
     }
   }
   return v1; /*0x5d25c4*/
+}
+}
+
+// 0x4A4620
+char DDraw::CheckCapabilities()
+{
+{
+    int v0;
+    HRESULT v1;
+    CHAR Text[80];
+    int v4[79];
+    if ( g_lpDirectDraw7 )
+  {
+    memset(v4, 0, sizeof(v4));
+    v4[0] = 316;
+    v1 = g_lpDirectDraw7->lpVtbl->GetCaps(g_lpDirectDraw7, (LPDDCAPS)v4, 0);
+    if ( v1 )
+    {
+    if ( g_DDraw_ErrorCallback )
+      {
+    g_DDraw_ErrorCallback(v1);
+      }
+    else
+      {
+    sprintf(Text, g_Str_Trace_DDRAW_DLL_Error_code____08X, v1);
+    MessageBoxA(g_hWnd, Text, g_Str_Direct_X, 0x30u);
+      }
+    LOBYTE(v0) = 0;
+    }
+    else
+    {
+    v0 = (v4[1] & 0x40) != 0;
+    if ( SLOBYTE(v4[1]) < 0 )
+    LOBYTE(v0) = v0 | 2;
+    if ( (v4[1] & 0x10000) != 0 )
+    LOBYTE(v0) = v0 | 4;
+    if ( (v4[1] & 0x8000000) != 0 )
+    LOBYTE(v0) = v0 | 8;
+    if ( (v4[1] & 0x4000000) != 0 )
+    LOBYTE(v0) = v0 | 0x10;
+    if ( (v4[1] & 0x2000000) != 0 )
+    LOBYTE(v0) = v0 | 0x20;
+    if ( (v4[1] & 0x200) != 0 )
+    LOBYTE(v0) = v0 | 0x40;
+    }
+  }
+    else
+  {
+    LOBYTE(v0) = 0;
+  }
+    return v0;
 }
 }
 

@@ -84,18 +84,6 @@ int __stdcall IsometricTileTypeClass::_vt05(int *a1, int a2)
 }
 }
 
-// 0x549D70
-int IsometricTileTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-
 // 0x549DD0
 int IsometricTileTypeClass::GetTileIndex(int a2, int a3)
 {
@@ -153,17 +141,6 @@ void __thiscall IsometricTileTypeClass::sub_54A190(int this)
   }
   *(_BYTE *)(this + 13) = 0; /*0x54a1b1*/
   this->IsometricTileTypeClass_field_0x08 = 0; /*0x54a1b4*/
-}
-}
-
-// 0x54A1C0
-unsigned int IsometricTileTypeClass::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->IsometricTileTypeClass_field_0x0C )
-    return (unsigned int)(a2 - this->IsometricTileTypeClass_field_0x04) >> 2;
-    else
-    return 0;
 }
 }
 
@@ -287,6 +264,18 @@ _DWORD *__thiscall sub_54A850(_DWORD *this, int a2, int a3)
 }
 }
 
+// 0x549D70
+int IsometricTileTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
+}
+
 // 0x549D90
 int IsometricTileTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
@@ -309,4 +298,15 @@ return 18;
 int IsometricTileTypeClass::GetObjectSize()
 {
 return 780;
+}
+
+// 0x54A1C0
+unsigned int IsometricTileTypeClass::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->IsometricTileTypeClass_field_0x0C )
+    return (unsigned int)(a2 - this->IsometricTileTypeClass_field_0x04) >> 2;
+    else
+    return 0;
+}
 }

@@ -24,19 +24,6 @@ void __thiscall ParticleTypeClass::_vt03(int this)
 }
 } // namespace gamemd
 
-// 0x477930
-namespace gamemd {
-unsigned int ParticleTypeClass::LoadTypeData(int a2)
-{
-{
-    if ( (unsigned char)this->ParticleTypeClass_field_0xC )
-    return (a2 - this->ParticleTypeClass_field_28C) / 3u;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x477AC0
 namespace gamemd {
 TypeList * ParticleTypeClass::QueryInterface(char a2)
@@ -721,44 +708,6 @@ LABEL_14:
 }
 } // namespace gamemd
 
-// 0x6457A0
-namespace gamemd {
-int ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2)
-{
-{
-    int result;
-    int v4;
-    int v5;
-    int v6;
-    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, (ObjectTypeClass *)aP1, (TechnoTypeClass *)aP2);
-    if ( result >= 0 )
-  {
-    v4 = *(int *)aP1;
-    aP2 = aP0->MyEffectivenessCoefficient;
-    result = (*(int (__stdcall **)(int, int *, int, int))(v4 + 16))(aP1, &aP2, 4, 0);
-    if ( result >= 0 )
-    {
-    v5 = 0;
-    if ( aP2 > 0 )
-      {
-    v6 = 0;
-    do
-        {
-    if ( (*(int (__stdcall **)(int, int, int, int))(*(int *)(aP1) + 16))(aP1, v6 + aP0->?, 3, 0) < 0 )
-    break;
-    ++v5;
-    v6 += 3;
-        }
-    while ( v5 < aP2 );
-      }
-    return 0;
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6458B0
 namespace gamemd {
 int ParticleTypeClass::GetType(int a2, int a3)
@@ -902,6 +851,57 @@ _DWORD *__thiscall sub_645A70(_DWORD *this, int a2, int a3)
   *(this + 5) = 10; /*0x645af2*/
   *(this + 4) = 0; /*0x645af9*/
   return this; /*0x645afe*/
+}
+}
+} // namespace gamemd
+
+// 0x477930
+namespace gamemd {
+unsigned int ParticleTypeClass::LoadTypeData(int a2)
+{
+{
+    if ( (unsigned char)this->ParticleTypeClass_field_0xC )
+    return (a2 - this->ParticleTypeClass_field_28C) / 3u;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6457A0
+namespace gamemd {
+int ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2)
+{
+{
+    int result;
+    int v4;
+    int v5;
+    int v6;
+    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, (ObjectTypeClass *)aP1, (TechnoTypeClass *)aP2);
+    if ( result >= 0 )
+  {
+    v4 = *(int *)aP1;
+    aP2 = aP0->MyEffectivenessCoefficient;
+    result = (*(int (__stdcall **)(int, int *, int, int))(v4 + 16))(aP1, &aP2, 4, 0);
+    if ( result >= 0 )
+    {
+    v5 = 0;
+    if ( aP2 > 0 )
+      {
+    v6 = 0;
+    do
+        {
+    if ( (*(int (__stdcall **)(int, int, int, int))(*(int *)(aP1) + 16))(aP1, v6 + aP0->?, 3, 0) < 0 )
+    break;
+    ++v5;
+    v6 += 3;
+        }
+    while ( v5 < aP2 );
+      }
+    return 0;
+    }
+  }
+    return result;
 }
 }
 } // namespace gamemd

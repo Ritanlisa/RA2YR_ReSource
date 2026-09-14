@@ -3,44 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/WebBrowser_e4.hpp"
 
-// 0x551630
-namespace gamemd {
-bool WebBrowser::OpenURL()
-{
-{
-    HANDLE FileA;
-    HINSTANCE ExecutableA;
-    DWORD NumberOfBytesWritten;
-    struct _PROCESS_INFORMATION ProcessInformation;
-    struct _STARTUPINFOA StartupInfo;
-    CHAR TempFileName[260];
-    CHAR CommandLine[260];
-    CHAR Buffer[260];
-    CHAR Result[260];
-    if ( !this )
-    return 0;
-    if ( !strlen(this->__pad_0) )
-    return 0;
-    GetWindowsDirectoryA(Buffer, 0x104u);
-    GetTempFileNameA(Buffer, (LPCSTR)&DataGlobal_829748.fallRate, 0, TempFileName);
-    strcpy(strrchr(TempFileName, 46), (const char *)&DataGlobal_829748.objectTypeFlags);
-    FileA = CreateFileA(TempFileName, 0x40000000u, 0, 0, 2u, 0x80u, 0);
-    if ( FileA == (HANDLE)-1 )
-    return 0;
-    WriteFile(FileA, &DataGlobal_829748.__pad_0[12], strlen(&DataGlobal_829748.__pad_0[12]), &NumberOfBytesWritten, 0);
-    CloseHandle(FileA);
-    ExecutableA = FindExecutableA(TempFileName, 0, Result);
-    DeleteFileA(TempFileName);
-    if ( (int)ExecutableA <= 32 )
-    return 0;
-    sprintf(CommandLine, &DataGlobal_829748, this);
-    memset(&StartupInfo, 0, sizeof(StartupInfo));
-    StartupInfo.cb = 68;
-    return CreateProcessA(Result, CommandLine, 0, 0, 0, 0, 0, 0, &StartupInfo, &ProcessInformation);
-}
-}
-} // namespace gamemd
-
 // 0x773600
 namespace gamemd {
 char WebBrowser::LoadURLFromRegistry(const char * a2)
@@ -99,152 +61,6 @@ char __thiscall WebBrowser::LoadURLFromRegistry(int this, const char *a2)
     *(_BYTE *)(this + 1036) = 1; /*0x773817*/
   }
   return 1; /*0x77381e*/
-}
-}
-} // namespace gamemd
-
-// 0x773A40
-namespace gamemd {
-int WebBrowser::QueryInterface()
-{
-{
-    int v2;
-    const void *v3;
-    int *v4;
-    *v4 = 0;
-    if ( memcmp(v3, &IID_IUnknown, 0x10u) && memcmp(v3, &DataGlobal_7F7C20, 0x10u) )
-    return -2147467262;
-    *v4 = v2;
-    (*(void (__stdcall **)(int))(*(int *)(v2) + 4))(v2);
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x773AA0
-namespace gamemd {
-int WebBrowser::AddRef()
-{
-{
-    int v1;
-    int v3;
-    v1 = *(int *)(v3 + 4) + 1;
-    *(int *)(v3 + 4) = v1;
-    return v1;
-}
-}
-} // namespace gamemd
-
-// 0x773AB0
-namespace gamemd {
-int WebBrowser::Release()
-{
-{
-    int result;
-    int *v2;
-    result = v2[1] - 1;
-    v2[1] = result;
-    if ( !result )
-  {
-    if ( v2 )
-    (*(void (__thiscall **)(int *, int))(*v2 + 68))(v2, 1);
-    return 0;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x773B10
-namespace gamemd {
-int WebBrowser::Write()
-{
-{
-    int v2;
-    int v3;
-    if ( v3 )
-    (*(void (__stdcall **)(int, int, int, wchar_t *))(**(int **)(v2 + 8) + 64))( *(int *)(v2 + 8), v2 + 12, 0, DataGlobal_8496B8);
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x773BC0
-namespace gamemd {
-int WebBrowser::Clone()
-{
-{
-    LSTATUS v1;
-    char *v2;
-    HKEY phkResult;
-    DWORD cbData;
-    DWORD Type;
-    BYTE Data[260];
-    wchar_t Dest[260];
-    int v9;
-    Debug::Log();
-    if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_Str_Software_Westwood_Yuri_s_Reven, 0, 0x20019u, &phkResult) )
-    return 0;
-    cbData = 260;
-    v1 = RegQueryValueExA(phkResult, g_INI_Key_HTMLPath, 0, &Type, Data, &cbData);
-    RegCloseKey(phkResult);
-    if ( v1 )
-    return 0;
-    v2 = strrchr((const char *)Data, 92);
-    if ( !v2 || strlen((const char *)Data) > v2 - (char *)(Data) + 1 )
-    strcat((char *)Data, asc_815E74);
-    mbstowcs((wchar_t *)(v9 + 12), (const char *)Data, 0x104u);
-    wcscat((wchar_t *)(v9 + 12), DataGlobal_8496C4);
-    mbstowcs(Dest, (const char *)Data, 0x104u);
-    wcscat(Dest, DataGlobal_84962C);
-    return (*(int (__stdcall **)(int, wchar_t *, int, int))(**(int **)(v9 + 8) + 64))( *(int *)(v9 + 8), Dest, 0, 0);
-}
-}
-} // namespace gamemd
-
-// 0x773D20
-namespace gamemd {
-int WebBrowser::Navigate()
-{
-{
-    Debug::Log();
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x773D40
-namespace gamemd {
-int WebBrowser::GoBack()
-{
-{
-    void *v2;
-    int v3[2];
-    int v4;
-    char v5;
-    char Dest[64];
-    char v7[64];
-    wchar_t *Source;
-    wchar_t *v9;
-    wcstombs(Dest, Source, 0x40u);
-    wcstombs(v7, v9, 0x40u);
-    String::Assign((char **)&v2, Dest);
-    Debug::Log();
-    LoadPlayerProfile(v3, (const char **)&v2);
-    v4 = 0;
-    v5 = 0;
-    ReadRegistryOptionsWOL(&v4);
-    if ( Flag::IsNot2(&v4) )
-  {
-    FindChannelWOL(Dest, (int)v7, 1u, *(int *)(v3[1] + 16));
-    SaveConfigWOL((int)g_GameMode_Current);
-  }
-    String::Assign_Alt((void **)&g_WebBrowser, Dest);
-    String::Assign_Alt((void **)&g_WebBrowserConfig, v7);
-    v3[0] = &vt_rc_ptr_PlayerProfile;
-    ComPtr::Release(v3);
-    DeleteAndZero(&v2);
-    return 0;
 }
 }
 } // namespace gamemd
@@ -362,11 +178,115 @@ int __thiscall WebBrowser::GoForward(WebBrowser *this)
 }
 } // namespace gamemd
 
+// 0x551630
+namespace gamemd {
+bool WebBrowser::OpenURL()
+{
+{
+    HANDLE FileA;
+    HINSTANCE ExecutableA;
+    DWORD NumberOfBytesWritten;
+    struct _PROCESS_INFORMATION ProcessInformation;
+    struct _STARTUPINFOA StartupInfo;
+    CHAR TempFileName[260];
+    CHAR CommandLine[260];
+    CHAR Buffer[260];
+    CHAR Result[260];
+    if ( !this )
+    return 0;
+    if ( !strlen(this->__pad_0) )
+    return 0;
+    GetWindowsDirectoryA(Buffer, 0x104u);
+    GetTempFileNameA(Buffer, (LPCSTR)&DataGlobal_829748.fallRate, 0, TempFileName);
+    strcpy(strrchr(TempFileName, 46), (const char *)&DataGlobal_829748.objectTypeFlags);
+    FileA = CreateFileA(TempFileName, 0x40000000u, 0, 0, 2u, 0x80u, 0);
+    if ( FileA == (HANDLE)-1 )
+    return 0;
+    WriteFile(FileA, &DataGlobal_829748.__pad_0[12], strlen(&DataGlobal_829748.__pad_0[12]), &NumberOfBytesWritten, 0);
+    CloseHandle(FileA);
+    ExecutableA = FindExecutableA(TempFileName, 0, Result);
+    DeleteFileA(TempFileName);
+    if ( (int)ExecutableA <= 32 )
+    return 0;
+    sprintf(CommandLine, &DataGlobal_829748, this);
+    memset(&StartupInfo, 0, sizeof(StartupInfo));
+    StartupInfo.cb = 68;
+    return CreateProcessA(Result, CommandLine, 0, 0, 0, 0, 0, 0, &StartupInfo, &ProcessInformation);
+}
+}
+} // namespace gamemd
+
+// 0x773A40
+namespace gamemd {
+int WebBrowser::QueryInterface()
+{
+{
+    int v2;
+    const void *v3;
+    int *v4;
+    *v4 = 0;
+    if ( memcmp(v3, &IID_IUnknown, 0x10u) && memcmp(v3, &DataGlobal_7F7C20, 0x10u) )
+    return -2147467262;
+    *v4 = v2;
+    (*(void (__stdcall **)(int))(*(int *)(v2) + 4))(v2);
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x773AA0
+namespace gamemd {
+int WebBrowser::AddRef()
+{
+{
+    int v1;
+    int v3;
+    v1 = *(int *)(v3 + 4) + 1;
+    *(int *)(v3 + 4) = v1;
+    return v1;
+}
+}
+} // namespace gamemd
+
+// 0x773AB0
+namespace gamemd {
+int WebBrowser::Release()
+{
+{
+    int result;
+    int *v2;
+    result = v2[1] - 1;
+    v2[1] = result;
+    if ( !result )
+  {
+    if ( v2 )
+    (*(void (__thiscall **)(int *, int))(*v2 + 68))(v2, 1);
+    return 0;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x773B00
 namespace gamemd {
 int WebBrowser::COMStub_Return0()
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x773B10
+namespace gamemd {
+int WebBrowser::Write()
+{
+{
+    int v2;
+    int v3;
+    if ( v3 )
+    (*(void (__stdcall **)(int, int, int, wchar_t *))(**(int **)(v2 + 8) + 64))( *(int *)(v2 + 8), v2 + 12, 0, DataGlobal_8496B8);
+    return 0;
+}
 }
 } // namespace gamemd
 
@@ -432,5 +352,85 @@ namespace gamemd {
 int WebBrowser::Stat()
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x773BC0
+namespace gamemd {
+int WebBrowser::Clone()
+{
+{
+    LSTATUS v1;
+    char *v2;
+    HKEY phkResult;
+    DWORD cbData;
+    DWORD Type;
+    BYTE Data[260];
+    wchar_t Dest[260];
+    int v9;
+    Debug::Log();
+    if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_Str_Software_Westwood_Yuri_s_Reven, 0, 0x20019u, &phkResult) )
+    return 0;
+    cbData = 260;
+    v1 = RegQueryValueExA(phkResult, g_INI_Key_HTMLPath, 0, &Type, Data, &cbData);
+    RegCloseKey(phkResult);
+    if ( v1 )
+    return 0;
+    v2 = strrchr((const char *)Data, 92);
+    if ( !v2 || strlen((const char *)Data) > v2 - (char *)(Data) + 1 )
+    strcat((char *)Data, asc_815E74);
+    mbstowcs((wchar_t *)(v9 + 12), (const char *)Data, 0x104u);
+    wcscat((wchar_t *)(v9 + 12), DataGlobal_8496C4);
+    mbstowcs(Dest, (const char *)Data, 0x104u);
+    wcscat(Dest, DataGlobal_84962C);
+    return (*(int (__stdcall **)(int, wchar_t *, int, int))(**(int **)(v9 + 8) + 64))( *(int *)(v9 + 8), Dest, 0, 0);
+}
+}
+} // namespace gamemd
+
+// 0x773D20
+namespace gamemd {
+int WebBrowser::Navigate()
+{
+{
+    Debug::Log();
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x773D40
+namespace gamemd {
+int WebBrowser::GoBack()
+{
+{
+    void *v2;
+    int v3[2];
+    int v4;
+    char v5;
+    char Dest[64];
+    char v7[64];
+    wchar_t *Source;
+    wchar_t *v9;
+    wcstombs(Dest, Source, 0x40u);
+    wcstombs(v7, v9, 0x40u);
+    String::Assign((char **)&v2, Dest);
+    Debug::Log();
+    LoadPlayerProfile(v3, (const char **)&v2);
+    v4 = 0;
+    v5 = 0;
+    ReadRegistryOptionsWOL(&v4);
+    if ( Flag::IsNot2(&v4) )
+  {
+    FindChannelWOL(Dest, (int)v7, 1u, *(int *)(v3[1] + 16));
+    SaveConfigWOL((int)g_GameMode_Current);
+  }
+    String::Assign_Alt((void **)&g_WebBrowser, Dest);
+    String::Assign_Alt((void **)&g_WebBrowserConfig, v7);
+    v3[0] = &vt_rc_ptr_PlayerProfile;
+    ComPtr::Release(v3);
+    DeleteAndZero(&v2);
+    return 0;
+}
 }
 } // namespace gamemd

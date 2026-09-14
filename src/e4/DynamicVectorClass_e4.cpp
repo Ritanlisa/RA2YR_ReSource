@@ -65,34 +65,6 @@ _DWORD *__thiscall DynamicVectorClass::Copy(_DWORD *this, DynamicVector *aP1)
 }
 }
 
-// 0x477DB0
-unsigned int * DynamicVectorClass::Construct(int a2, int a3)
-{
-{
-    this->Items = 0;
-    this->Capacity = a2;
-    this->IsInitialized = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_int;
-    if ( a2 )
-  {
-    if ( a3 )
-    {
-    this->Items = a3;
-    }
-    else
-    {
-    this->Items = __2_YAPAXI_Z(4 * a2);
-    this->IsAllocated = 1;
-    }
-  }
-    *(void**)this = &vt_DynamicVectorClass_int;
-    this->CapacityIncrement = 10;
-    this->Count = 0;
-    return this;
-}
-}
-
 // 0x50EA00
 void DynamicVectorClass::Destroy()
 {
@@ -122,62 +94,6 @@ void __thiscall DynamicVectorClass_Destroy_Alt(int this)
   }
   this->IsAllocated = 0; /*0x5251de*/
   this->Capacity = 0; /*0x5251e1*/
-}
-}
-
-// 0x525250
-unsigned int * DynamicVectorClass::AnimTypeConstructor(DynamicVector * aP1, DynamicVector * aP2)
-{
-{
-    this->Items = 0;
-    this->Capacity = aP1;
-    this->IsInitialized = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_AnimTypeClass_const;
-    if ( aP1 )
-  {
-    if ( aP2 )
-    {
-    this->Items = aP2;
-    }
-    else
-    {
-    this->Items = __2_YAPAXI_Z(4 * (int)aP1);
-    this->IsAllocated = 1;
-    }
-  }
-    *(void**)this = &vt_DynamicVectorClass_AnimTypeClass_const;
-    this->CapacityIncrement = 10;
-    this->Count = 0;
-    return this;
-}
-}
-
-// 0x5AC900
-unsigned int * DynamicVectorClass::BuildingTypeConstructor(int a2, int a3)
-{
-{
-    this->Items = 0;
-    this->Capacity = a2;
-    this->IsInitialized = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_BuildingTypeClass_const;
-    if ( a2 )
-  {
-    if ( a3 )
-    {
-    this->Items = a3;
-    }
-    else
-    {
-    this->Items = __2_YAPAXI_Z(4 * a2);
-    this->IsAllocated = 1;
-    }
-  }
-    *(void**)this = &vt_DynamicVectorClass_BuildingTypeClass_const;
-    this->CapacityIncrement = 10;
-    this->Count = 0;
-    return this;
 }
 }
 
@@ -286,19 +202,6 @@ int __thiscall DynamicVectorClass_AnimType::_vt04(int this, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x525230
-namespace gamemd {
-unsigned int DynamicVectorClass_AnimType::Remove(int a2)
-{
-{
-    if ( this->IsInitialized )
-    return (unsigned int)(a2 - this->Items) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x5252B0
 namespace gamemd {
 DynamicVector * DynamicVectorClass_cptr_AnimTypeClass::Add(char a2)
@@ -371,19 +274,6 @@ void __thiscall DynamicVectorClass_PAD::_vt03(int this)
 }
 } // namespace gamemd
 
-// 0x49E980
-namespace gamemd {
-unsigned int DynamicVectorClass_PAD::Get(int a2)
-{
-{
-    if ( this->IsInitialized )
-    return (unsigned int)(a2 - this->Items) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x49E9A0
 namespace gamemd {
 int DynamicVectorClass_PAD::Clear(int a2)
@@ -414,19 +304,6 @@ void __thiscall DynamicVectorClass_PAD::sub_49E9B0(int this)
   }
   this->IsAllocated = 0; /*0x49e9d1*/
   this->Capacity = 0; /*0x49e9d4*/
-}
-}
-} // namespace gamemd
-
-// 0x49E9E0
-namespace gamemd {
-unsigned int DynamicVectorClass_PAD::GetCount(int a2)
-{
-{
-    if ( this->IsInitialized )
-    return (unsigned int)(a2 - this->Items) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -809,19 +686,6 @@ int __thiscall DynamicVectorClass_PAD_16_::_vt04(int this, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x49ECB0
-namespace gamemd {
-unsigned int DynamicVectorClass_PAD_16::GetCapacity(int a2)
-{
-{
-    if ( this->IsInitialized )
-    return (unsigned int)(a2 - this->Items) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x49EFF0
 namespace gamemd {
 VectorClass * DynamicVectorClass_PAD_16::QueryInterface(char a2)
@@ -865,19 +729,6 @@ void __thiscall DynamicVectorClass_ptr_NodeNameType::_vt03(int this)
   }
   this->IsAllocated = 0; /*0x5c5091*/
   this->Capacity = 0; /*0x5c5094*/
-}
-}
-} // namespace gamemd
-
-// 0x5C50A0
-namespace gamemd {
-unsigned int DynamicVectorClass_ptr_NodeNameType::Get(int a2)
-{
-{
-    if ( this->IsInitialized )
-    return (unsigned int)(a2 - this->Items) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -1024,19 +875,6 @@ DynamicVector *__thiscall DynamicVectorClass_ptr_NodeNameType::Add(_DWORD *this,
   if ( (a2 & 1) != 0 ) /*0x5c5928*/
     __3_YAXPAX_Z(this); /*0x5c592b*/
   return (DynamicVector *)this; /*0x5c5935*/
-}
-}
-} // namespace gamemd
-
-// 0x588CC0
-namespace gamemd {
-unsigned int DynamicVectorClass_SubzoneConn::Remove(int a2)
-{
-{
-    if ( this->IsInitialized )
-    return (unsigned int)(a2 - this->Items) >> 3;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -1268,19 +1106,6 @@ void __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::sub_6
 }
 } // namespace gamemd
 
-// 0x627D50
-namespace gamemd {
-unsigned int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetCount(int a2)
-{
-{
-    if ( this->IsInitialized )
-    return (unsigned int)(a2 - this->Items) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x627D80
 namespace gamemd {
 void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear_627D80()
@@ -1299,33 +1124,6 @@ void __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::sub_6
   }
   this->IsAllocated = 0; /*0x627da1*/
   this->Capacity = 0; /*0x627da4*/
-}
-}
-} // namespace gamemd
-
-// 0x627DB0
-namespace gamemd {
-unsigned int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetItemIndex(int a2)
-{
-{
-    if ( this->IsInitialized )
-    return (a2 - this->Items) / 3u;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x627DE0
-namespace gamemd {
-int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetItem(int a2, int a3)
-{
-{
-    int v3;
-    v3 = this->Items + 3 * a3;
-    *(short *)a2 = *(short *)v3;
-    *(char *)(a2 + 2) = *(char *)(v3 + 2);
-    return a2;
 }
 }
 } // namespace gamemd
@@ -1402,32 +1200,6 @@ int __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::sub_62
       return -1; /*0x62805d*/
   }
   return result; /*0x628062*/
-}
-}
-} // namespace gamemd
-
-// 0x6281F0
-namespace gamemd {
-char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::IsEqualTo(int a2)
-{
-{
-    int v3;
-    int v4;
-    int i;
-    v3 = this->Capacity;
-    if ( v3 == *(int *)(a2 + 8) )
-  {
-    v4 = 0;
-    if ( v3 <= 0 )
-    return 1;
-    for ( i = 0;
-    !DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare( (char *)(i + this->Items), (char *)(i + *(int *)(a2 + 4)));
-    i += 3 ) {
-    if ( ++v4 >= this->Capacity )
-    return 1;
-    }
-  }
-    return 0;
 }
 }
 } // namespace gamemd
@@ -1541,18 +1313,6 @@ char __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::sub_6
   if ( v15 < this->Count ) /*0x628581*/
     this->Count = v15; /*0x628583*/
   return 1; /*0x628586*/
-}
-}
-} // namespace gamemd
-
-// 0x6285A0
-namespace gamemd {
-int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::ProcessAll(int a2)
-{
-{
-    if ( (int)this->Count > 0 )
-    VtableStub::Method_5175D0(this->Items, a2);
-    return -1;
 }
 }
 } // namespace gamemd
@@ -1698,49 +1458,6 @@ void __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::_vt03
 }
 } // namespace gamemd
 
-// 0x628830
-namespace gamemd {
-unsigned int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Get(int a2)
-{
-{
-    if ( this->IsInitialized )
-    return (a2 - this->Items) / 0x104u;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x628860
-namespace gamemd {
-int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear(int a2, int a3)
-{
-{
-    int v3;
-    v3 = this->Items + 260 * a3;
-    String::Copy((char *)a2, (const char *)v3);
-    *(int *)(a2 + 256) = *(int *)(v3 + 256);
-    return a2;
-}
-}
-} // namespace gamemd
-
-// 0x6288A0
-namespace gamemd {
-char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::AddRef(int a2)
-{
-{
-    int v2;
-    v2 = this->Capacity;
-    if ( v2 != *(int *)(a2 + 8) )
-    return 0;
-    if ( v2 > 0 )
-    j_Stub_InfiniteLoop();
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x628BB0
 namespace gamemd {
 char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Remove(CCINIClass * aP1, unsigned char * a2)
@@ -1852,18 +1569,6 @@ char __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Remov
   if ( v13 < this->Count ) /*0x628ce6*/
     this->Count = v13; /*0x628ce8*/
   return 1; /*0x628ceb*/
-}
-}
-} // namespace gamemd
-
-// 0x628D80
-namespace gamemd {
-int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetSize(int a2)
-{
-{
-    if ( (int)this->Count > 0 )
-    Stub::InfiniteLoop(this->Items, a2);
-    return -1;
 }
 }
 } // namespace gamemd
@@ -2033,19 +1738,6 @@ int __thiscall DynamicVectorClass_uint::sub_42D720(int this, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x42D760
-namespace gamemd {
-unsigned int DynamicVectorClass_uint::GetCapacity(int a2)
-{
-{
-    if ( this->IsInitialized )
-    return (unsigned int)(a2 - this->Items) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x42D780
 namespace gamemd {
 char DynamicVectorClass_uint::Remove(int a2, unsigned int * a3)
@@ -2168,6 +1860,314 @@ DynamicVectorClass_uint *__thiscall DynamicVectorClass_uint::Add(_DWORD *this, c
   if ( (a2 & 1) != 0 ) /*0x42db98*/
     __3_YAXPAX_Z(this); /*0x42db9b*/
   return (DynamicVectorClass_uint *)this; /*0x42dba5*/
+}
+}
+} // namespace gamemd
+
+// 0x42D760
+namespace gamemd {
+unsigned int DynamicVectorClass_uint::GetCapacity(int a2)
+{
+{
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x477DB0
+unsigned int * DynamicVectorClass::Construct(int a2, int a3)
+{
+{
+    this->Items = 0;
+    this->Capacity = a2;
+    this->IsInitialized = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_int;
+    if ( a2 )
+  {
+    if ( a3 )
+    {
+    this->Items = a3;
+    }
+    else
+    {
+    this->Items = __2_YAPAXI_Z(4 * a2);
+    this->IsAllocated = 1;
+    }
+  }
+    *(void**)this = &vt_DynamicVectorClass_int;
+    this->CapacityIncrement = 10;
+    this->Count = 0;
+    return this;
+}
+}
+
+// 0x49E980
+namespace gamemd {
+unsigned int DynamicVectorClass_PAD::Get(int a2)
+{
+{
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x49E9E0
+namespace gamemd {
+unsigned int DynamicVectorClass_PAD::GetCount(int a2)
+{
+{
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x49ECB0
+namespace gamemd {
+unsigned int DynamicVectorClass_PAD_16::GetCapacity(int a2)
+{
+{
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x525230
+namespace gamemd {
+unsigned int DynamicVectorClass_AnimType::Remove(int a2)
+{
+{
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x525250
+unsigned int * DynamicVectorClass::AnimTypeConstructor(DynamicVector * aP1, DynamicVector * aP2)
+{
+{
+    this->Items = 0;
+    this->Capacity = aP1;
+    this->IsInitialized = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_AnimTypeClass_const;
+    if ( aP1 )
+  {
+    if ( aP2 )
+    {
+    this->Items = aP2;
+    }
+    else
+    {
+    this->Items = __2_YAPAXI_Z(4 * (int)aP1);
+    this->IsAllocated = 1;
+    }
+  }
+    *(void**)this = &vt_DynamicVectorClass_AnimTypeClass_const;
+    this->CapacityIncrement = 10;
+    this->Count = 0;
+    return this;
+}
+}
+
+// 0x588CC0
+namespace gamemd {
+unsigned int DynamicVectorClass_SubzoneConn::Remove(int a2)
+{
+{
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 3;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5AC900
+unsigned int * DynamicVectorClass::BuildingTypeConstructor(int a2, int a3)
+{
+{
+    this->Items = 0;
+    this->Capacity = a2;
+    this->IsInitialized = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_BuildingTypeClass_const;
+    if ( a2 )
+  {
+    if ( a3 )
+    {
+    this->Items = a3;
+    }
+    else
+    {
+    this->Items = __2_YAPAXI_Z(4 * a2);
+    this->IsAllocated = 1;
+    }
+  }
+    *(void**)this = &vt_DynamicVectorClass_BuildingTypeClass_const;
+    this->CapacityIncrement = 10;
+    this->Count = 0;
+    return this;
+}
+}
+
+// 0x5C50A0
+namespace gamemd {
+unsigned int DynamicVectorClass_ptr_NodeNameType::Get(int a2)
+{
+{
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x627D50
+namespace gamemd {
+unsigned int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetCount(int a2)
+{
+{
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x627DB0
+namespace gamemd {
+unsigned int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetItemIndex(int a2)
+{
+{
+    if ( this->IsInitialized )
+    return (a2 - this->Items) / 3u;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x627DE0
+namespace gamemd {
+int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetItem(int a2, int a3)
+{
+{
+    int v3;
+    v3 = this->Items + 3 * a3;
+    *(short *)a2 = *(short *)v3;
+    *(char *)(a2 + 2) = *(char *)(v3 + 2);
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x6281F0
+namespace gamemd {
+char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::IsEqualTo(int a2)
+{
+{
+    int v3;
+    int v4;
+    int i;
+    v3 = this->Capacity;
+    if ( v3 == *(int *)(a2 + 8) )
+  {
+    v4 = 0;
+    if ( v3 <= 0 )
+    return 1;
+    for ( i = 0;
+    !DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare( (char *)(i + this->Items), (char *)(i + *(int *)(a2 + 4)));
+    i += 3 ) {
+    if ( ++v4 >= this->Capacity )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6285A0
+namespace gamemd {
+int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::ProcessAll(int a2)
+{
+{
+    if ( (int)this->Count > 0 )
+    VtableStub::Method_5175D0(this->Items, a2);
+    return -1;
+}
+}
+} // namespace gamemd
+
+// 0x628830
+namespace gamemd {
+unsigned int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Get(int a2)
+{
+{
+    if ( this->IsInitialized )
+    return (a2 - this->Items) / 0x104u;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x628860
+namespace gamemd {
+int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear(int a2, int a3)
+{
+{
+    int v3;
+    v3 = this->Items + 260 * a3;
+    String::Copy((char *)a2, (const char *)v3);
+    *(int *)(a2 + 256) = *(int *)(v3 + 256);
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x6288A0
+namespace gamemd {
+char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::AddRef(int a2)
+{
+{
+    int v2;
+    v2 = this->Capacity;
+    if ( v2 != *(int *)(a2 + 8) )
+    return 0;
+    if ( v2 > 0 )
+    j_Stub_InfiniteLoop();
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x628D80
+namespace gamemd {
+int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetSize(int a2)
+{
+{
+    if ( (int)this->Count > 0 )
+    Stub::InfiniteLoop(this->Items, a2);
+    return -1;
 }
 }
 } // namespace gamemd

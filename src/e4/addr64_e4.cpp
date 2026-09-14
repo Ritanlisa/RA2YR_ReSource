@@ -72,48 +72,6 @@ _DWORD *__thiscall sub_6429E0(ProgressScreenClass *this)
 }
 } // namespace gamemd
 
-// 0x644850
-namespace gamemd {
-ObjectClass * E4Recv_644850::sub_644850()
-{
-{
-    ObjectClass *v2;
-    const void **v3;
-    v2 = 0;
-    v3 = (const void **)&DataGlobal_830620.__pad_579C[4388];
-    while ( _strcmpi(this, *v3) )
-  {
-    ++v3;
-    v2 = (ObjectClass *)((char *)(v2) + 1);
-    if ( (int)v3 >= (int)&DataGlobal_830620.__pad_579C[4408] )
-    return (ObjectClass *)-1;
-  }
-    return v2;
-}
-}
-} // namespace gamemd
-
-// 0x6458D0
-namespace gamemd {
-ObjectClass * E4Recv_6458D0::sub_6458D0()
-{
-{
-    ObjectClass *v2;
-    const void **v3;
-    v2 = 0;
-    v3 = (const void **)&DataGlobal_830620.__pad_579C[4864];
-    while ( _strcmpi(this, *v3) )
-  {
-    ++v3;
-    v2 = (ObjectClass *)((char *)(v2) + 1);
-    if ( (int)v3 >= (int)&DataGlobal_830620.__pad_579C[4884] )
-    return (ObjectClass *)-1;
-  }
-    return v2;
-}
-}
-} // namespace gamemd
-
 // 0x645B60
 namespace gamemd {
 ObjectClass * E4Recv_645B60::sub_645B60()
@@ -134,19 +92,6 @@ ObjectClass *__thiscall sub_645B60(void *this)
       return 0; /*0x645b8d*/
   }
   return v2; /*0x645b88*/
-}
-}
-} // namespace gamemd
-
-// 0x645CD0
-namespace gamemd {
-void E4Recv_645CD0::sub_645CD0(float a2)
-{
-{
-    *(void**)this = a2 * *(void**)this;
-    this->M4 = a2 *(void**)this->M4;
-    this->M8 = a2 *(void**)this->M8;
-    this->M12 = a2 *(void**)this->M12;
 }
 }
 } // namespace gamemd
@@ -352,22 +297,6 @@ float *__fastcall ConvertMatrixToQuaternion(float *a1, float *a2)
     return v4; /*0x64696c*/
   }
   return result; /*0x646801*/
-}
-}
-} // namespace gamemd
-
-// 0x646D00
-namespace gamemd {
-unsigned int * E4Recv_646D00::sub_646D00()
-{
-{
-    *(void**)this = -1;
-    this->M4 = 0;
-    this->M8 = 0;
-    this->M12 = 0;
-    this->M16 = 0;
-    this->M20 = 0;
-    return this;
 }
 }
 } // namespace gamemd
@@ -3529,6 +3458,27 @@ int sub_644080()
 }
 } // namespace gamemd
 
+// 0x644850
+namespace gamemd {
+ObjectClass * E4Recv_644850::sub_644850()
+{
+{
+    ObjectClass *v2;
+    const void **v3;
+    v2 = 0;
+    v3 = (const void **)&DataGlobal_830620.__pad_579C[4388];
+    while ( _strcmpi(this, *v3) )
+  {
+    ++v3;
+    v2 = (ObjectClass *)((char *)(v2) + 1);
+    if ( (int)v3 >= (int)&DataGlobal_830620.__pad_579C[4408] )
+    return (ObjectClass *)-1;
+  }
+    return v2;
+}
+}
+} // namespace gamemd
+
 // 0x6449F0
 namespace gamemd {
 void sub_6449F0()
@@ -3677,12 +3627,46 @@ int sub_644BC0()
 }
 } // namespace gamemd
 
+// 0x6458D0
+namespace gamemd {
+ObjectClass * E4Recv_6458D0::sub_6458D0()
+{
+{
+    ObjectClass *v2;
+    const void **v3;
+    v2 = 0;
+    v3 = (const void **)&DataGlobal_830620.__pad_579C[4864];
+    while ( _strcmpi(this, *v3) )
+  {
+    ++v3;
+    v2 = (ObjectClass *)((char *)(v2) + 1);
+    if ( (int)v3 >= (int)&DataGlobal_830620.__pad_579C[4884] )
+    return (ObjectClass *)-1;
+  }
+    return v2;
+}
+}
+} // namespace gamemd
+
 // 0x645BA0
 namespace gamemd {
 char * sub_645BA0(int a1)
 {
 {
     return DataGlobal_7F0248[a1];
+}
+}
+} // namespace gamemd
+
+// 0x645CD0
+namespace gamemd {
+void E4Recv_645CD0::sub_645CD0(float a2)
+{
+{
+    *(void**)this = a2 * *(void**)this;
+    this->M4 = a2 *(void**)this->M4;
+    this->M8 = a2 *(void**)this->M8;
+    this->M12 = a2 *(void**)this->M12;
 }
 }
 } // namespace gamemd
@@ -4087,6 +4071,22 @@ int sub_646C70()
     DataGlobal_AC6638 = 0;
     DataGlobal_AC663C = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x646D00
+namespace gamemd {
+unsigned int * E4Recv_646D00::sub_646D00()
+{
+{
+    *(void**)this = -1;
+    this->M4 = 0;
+    this->M8 = 0;
+    this->M12 = 0;
+    this->M16 = 0;
+    this->M20 = 0;
+    return this;
 }
 }
 } // namespace gamemd

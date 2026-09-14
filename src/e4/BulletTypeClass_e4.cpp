@@ -477,29 +477,6 @@ char __thiscall BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
 }
 }
 
-// 0x46C4F0
-unsigned int * BulletTypeClass::GetROF(unsigned int * a1, int * a2)
-{
-{
-    int GroundHeight;
-    int v3;
-    int v5;
-    int v6;
-    int v7;
-    v5 = *a2;
-    v6 = *((int*)(a2) + 1);
-    v7 = *((int*)(a2) + 2);
-    GroundHeight = Cell::GetGroundHeight(&v5);
-    v3 = v7;
-    if ( v7 <= GroundHeight )
-    v3 = Cell::GetGroundHeight(&v5) + 1;
-    *a1 = v5;
-    *((int*)(a1) + 1) = v6;
-    *((int*)(a1) + 2) = v3;
-    return a1;
-}
-}
-
 // 0x46C560
 int BulletTypeClass::ProcessPower(int * a2)
 {
@@ -599,18 +576,6 @@ int __stdcall BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 }
 }
 
-// 0x46C730
-int BulletTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-
 // 0x46C820
 int BulletTypeClass::GetWarhead(int a2, int a3)
 {
@@ -667,42 +632,6 @@ BulletTypeClass *__thiscall BulletTypeClass::ddtor(void **this, char a2)
   if ( (a2 & 1) != 0 ) /*0x46c954*/
     __3_YAXPAX_Z(this); /*0x46c957*/
   return (BulletTypeClass *)this; /*0x46c961*/
-}
-}
-
-// 0x475150
-char BulletTypeClass::ReadTrajectoryFlags(unsigned char * Block, char * a3, int a4)
-{
-{
-    char v4;
-    char *v5;
-    int v6;
-    int v8;
-    char Source[128];
-    v4 = 0;
-    Source[0] = 0;
-    if ( !a4 || g_SuperWeaponTypeArray <= 0 )
-    return 1;
-    v5 = (char *)g_SuperWeaponTypeCount;
-    v8 = g_SuperWeaponTypeArray;
-    do
-  {
-    v6 = *(int *)v5;
-    if ( ((1 << *(int *)(*(int *)(v5) + 184)) & a4) != 0 )
-    {
-    if ( v4 )
-    strcat(Source, Delimiter);
-    strcat(Source, (const char *)(v6 + 36));
-    v4 = Source[0];
-    }
-    v5 += 4;
-    --v8;
-  }
-    while ( v8 );
-    if ( v4 )
-    return INIClass::SetString(this, Block, a3, Source);
-    else
-    return 1;
 }
 }
 
@@ -935,6 +864,41 @@ LABEL_32:
 }
 }
 
+// 0x46C4F0
+unsigned int * BulletTypeClass::GetROF(unsigned int * a1, int * a2)
+{
+{
+    int GroundHeight;
+    int v3;
+    int v5;
+    int v6;
+    int v7;
+    v5 = *a2;
+    v6 = *((int*)(a2) + 1);
+    v7 = *((int*)(a2) + 2);
+    GroundHeight = Cell::GetGroundHeight(&v5);
+    v3 = v7;
+    if ( v7 <= GroundHeight )
+    v3 = Cell::GetGroundHeight(&v5) + 1;
+    *a1 = v5;
+    *((int*)(a1) + 1) = v6;
+    *((int*)(a1) + 2) = v3;
+    return a1;
+}
+}
+
+// 0x46C730
+int BulletTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
+}
+
 // 0x46C750
 int BulletTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
@@ -969,4 +933,40 @@ return 0;
 int BulletTypeClass::StubReturnFalse(int a1)
 {
 return 0;
+}
+
+// 0x475150
+char BulletTypeClass::ReadTrajectoryFlags(unsigned char * Block, char * a3, int a4)
+{
+{
+    char v4;
+    char *v5;
+    int v6;
+    int v8;
+    char Source[128];
+    v4 = 0;
+    Source[0] = 0;
+    if ( !a4 || g_SuperWeaponTypeArray <= 0 )
+    return 1;
+    v5 = (char *)g_SuperWeaponTypeCount;
+    v8 = g_SuperWeaponTypeArray;
+    do
+  {
+    v6 = *(int *)v5;
+    if ( ((1 << *(int *)(*(int *)(v5) + 184)) & a4) != 0 )
+    {
+    if ( v4 )
+    strcat(Source, Delimiter);
+    strcat(Source, (const char *)(v6 + 36));
+    v4 = Source[0];
+    }
+    v5 += 4;
+    --v8;
+  }
+    while ( v8 );
+    if ( v4 )
+    return INIClass::SetString(this, Block, a3, Source);
+    else
+    return 1;
+}
 }

@@ -217,6 +217,39 @@ HRESULT __stdcall DropPodLocomotionClass::_vt05(int *a1, int *pStm)
 }
 }
 
+// 0x4B66F0
+DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(char a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+DropPodLocomotionClass *__thiscall DropPodLocomotionClass::ProcessMove(ILocomotion **this, char a2)
+{
+  ILocomotion *v3; // eax
+
+  *this = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b66f3*/
+  *(this + 1) = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b66f9*/
+  *(this + 6) = (ILocomotion *)&vt_DropPodLocomotionClass; /*0x4b6700*/
+  v3 = *(this + 11); /*0x4b6707*/
+  if ( v3 ) /*0x4b670c*/
+    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x4b6711*/
+  LocomotionClass::Construct(this); /*0x4b6716*/
+  if ( (a2 & 1) != 0 ) /*0x4b6720*/
+    __3_YAXPAX_Z(this); /*0x4b6723*/
+  return (DropPodLocomotionClass *)this; /*0x4b672d*/
+}
+}
+
+// 0x4B6200
+int DropPodLocomotionClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1247291205;
+  a2[1] = 298948665;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
+}
+
 // 0x4B62C0
 HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
 {
@@ -274,39 +307,6 @@ HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
   }
     return result;
 }
-}
-
-// 0x4B66F0
-DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(char a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DropPodLocomotionClass *__thiscall DropPodLocomotionClass::ProcessMove(ILocomotion **this, char a2)
-{
-  ILocomotion *v3; // eax
-
-  *this = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b66f3*/
-  *(this + 1) = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b66f9*/
-  *(this + 6) = (ILocomotion *)&vt_DropPodLocomotionClass; /*0x4b6700*/
-  v3 = *(this + 11); /*0x4b6707*/
-  if ( v3 ) /*0x4b670c*/
-    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x4b6711*/
-  LocomotionClass::Construct(this); /*0x4b6716*/
-  if ( (a2 & 1) != 0 ) /*0x4b6720*/
-    __3_YAXPAX_Z(this); /*0x4b6723*/
-  return (DropPodLocomotionClass *)this; /*0x4b672d*/
-}
-}
-
-// 0x4B6200
-int DropPodLocomotionClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1247291205;
-  a2[1] = 298948665;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
 }
 
 // 0x4B66E0

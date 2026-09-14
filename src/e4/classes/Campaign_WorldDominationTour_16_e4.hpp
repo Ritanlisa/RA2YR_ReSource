@@ -12,7 +12,7 @@ struct Campaign_WorldDominationTour_16 {
     char Release(int a2, unsigned int * a3);  // 0x765840
     int ddtor();  // 0x765960
     int Read(int a2);  // 0x765990
-    unsigned int Write(int a2);  // 0x7659D0
     VectorClass * QueryInterface(char a2);  // 0x765B60
+    unsigned int Write(int a2);  // 0x7659D0
 };
 } // namespace gamemd

@@ -4,231 +4,6 @@
 #include "e4/classes/E4Recv_600660_e4.hpp"
 #include "e4/classes/E4Recv_60B740_e4.hpp"
 
-// 0x600320
-namespace gamemd {
-int sub_600320()
-{
-{
-    DataGlobal_AC18B0 = 0;
-    DataGlobal_AC18B4 = 0;
-    DataGlobal_AC18B8 = 0;
-    DataGlobal_AC18BC = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x600340
-namespace gamemd {
-void sub_600340()
-{
-{
-    long double v0;
-    v0 = pow(256.0, 2.0);
-    DataGlobal_AC1B40 = Math::Sqrt(v0 + v0);
-}
-}
-} // namespace gamemd
-
-// 0x600370
-namespace gamemd {
-void sub_600370()
-{
-{
-    DataGlobal_AC48A0 = DataGlobal_AC1B40 / 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x600390
-namespace gamemd {
-void sub_600390()
-{
-{
-    DataGlobal_AC4838 = 1.0 / DataGlobal_AC48A0;
-}
-}
-} // namespace gamemd
-
-// 0x6003B0
-namespace gamemd {
-void sub_6003B0()
-{
-{
-    DataGlobal_AC4830 = 0.0174532925199433 * 45.0;
-}
-}
-} // namespace gamemd
-
-// 0x6003D0
-namespace gamemd {
-void sub_6003D0()
-{
-{
-    DataGlobal_AC1B88 = 0.0174532925199433 * 60.0;
-}
-}
-} // namespace gamemd
-
-// 0x6003F0
-namespace gamemd {
-void sub_6003F0()
-{
-{
-    DataGlobal_AC1898 = 0.0174532925199433 * 90.0;
-}
-}
-} // namespace gamemd
-
-// 0x600410
-namespace gamemd {
-long long sub_600410()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_AC1898 - DataGlobal_AC1B88);
-    result = Math::RoundToInt(v0 * DataGlobal_AC1B40 * 0.5);
-    DataGlobal_AC48AC = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x600450
-namespace gamemd {
-void sub_600450()
-{
-{
-    DataGlobal_AC1CA0 = Math::ArcTan((double)DataGlobal_AC48AC * 0.00390625);
-}
-}
-} // namespace gamemd
-
-// 0x600480
-namespace gamemd {
-void sub_600480()
-{
-{
-    DataGlobal_AC4610 = Math::ArcTan((double)(2 * DataGlobal_AC48AC) / DataGlobal_AC1B40);
-}
-}
-} // namespace gamemd
-
-// 0x6004B0
-namespace gamemd {
-long long sub_6004B0()
-{
-{
-    __int64 result;
-    result = Math::RoundToInt((double)(4 * DataGlobal_AC48AC) + 0.5);
-    DataGlobal_AC489C = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x6004E0
-namespace gamemd {
-int sub_6004E0()
-{
-{
-    DataGlobal_AC1B38 = 0;
-    DataGlobal_AC1B3A = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x6004F0
-namespace gamemd {
-int sub_6004F0()
-{
-{
-    DataGlobal_AC1DF8 = 0;
-    DataGlobal_AC1DFC = 0;
-    DataGlobal_AC1E00 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x600510
-namespace gamemd {
-int sub_600510()
-{
-{
-    DataGlobal_AC4890 = 0;
-    DataGlobal_AC4888 = 128;
-    DataGlobal_AC488C = 128;
-    return 128;
-}
-}
-} // namespace gamemd
-
-// 0x600530
-namespace gamemd {
-int sub_600530()
-{
-{
-    sub_6B9450(g_DialogHashTable);
-    return atexit(unknown_libname_26);
-}
-}
-} // namespace gamemd
-
-// 0x600550
-namespace gamemd {
-int unknown_libname_26()
-{
-    void __cdecl unknown_libname_26()
-{
-    HashTable::Clear((int)g_DialogHashTable);
-}
-}
-} // namespace gamemd
-
-// 0x600660
-namespace gamemd {
-ObjectClass * E4Recv_600660::ReadPointerFromECX()
-{
-{
-    return *(ObjectClass **)this;
-}
-}
-} // namespace gamemd
-
-// 0x6006B0
-namespace gamemd {
-int sub_6006B0()
-{
-{
-    unsigned int v0;
-    int v1;
-    v0 = 128;
-    DataGlobal_AC1B68 = 0.2;
-    DataGlobal_AC1B70 = 0.8;
-    DataGlobal_AC1B78 = 128;
-    v1 = 0;
-    do
-  {
-    ++v1;
-    v0 >>= 1;
-  }
-    while ( v0 );
-    DataGlobal_AC1B58 = 0;
-    g_DialogHashMap_Insert = v1 - 1;
-    g_DialogHashMap_Grow = 0;
-    DataGlobal_AC1B5C = 0;
-    DataGlobal_AC1B50 = 1 << (v1 - 1);
-    g_DialogHashMap_Entries = __2_YAPAXI_Z(4 * (1 << (v1 - 1)));
-    memset(g_DialogHashMap_Entries, 0, 4 * DataGlobal_AC1B50);
-    g_DialogHashMap_Callback = (int (__thiscall *)(int))ReadPointerFromECX;
-    return atexit(sub_600750);
-}
-}
-} // namespace gamemd
-
 // 0x600750
 namespace gamemd {
 void sub_600750()
@@ -312,37 +87,6 @@ void __cdecl sub_600750()
 }
 } // namespace gamemd
 
-// 0x600880
-namespace gamemd {
-int sub_600880()
-{
-{
-    unsigned int v0;
-    int v1;
-    v0 = 128;
-    DataGlobal_AC18E0 = 0.2;
-    DataGlobal_AC18E8 = 0.8;
-    DataGlobal_AC18F0 = 128;
-    v1 = 0;
-    do
-  {
-    ++v1;
-    v0 >>= 1;
-  }
-    while ( v0 );
-    DataGlobal_AC18D0 = 0;
-    DataGlobal_AC18CC = v1 - 1;
-    g_DialogPoolCount = 0;
-    DataGlobal_AC18D4 = 0;
-    g_DialogBuffer = 1 << (v1 - 1);
-    g_DialogPool = __2_YAPAXI_Z(4 * (1 << (v1 - 1)));
-    memset(g_DialogPool, 0, 4 * g_DialogBuffer);
-    DataGlobal_AC18D8 = (int (__thiscall *)(int))ReadPointerFromECX;
-    return atexit(sub_600920);
-}
-}
-} // namespace gamemd
-
 // 0x600920
 namespace gamemd {
 void sub_600920()
@@ -422,37 +166,6 @@ void __cdecl sub_600920()
     while ( MEMORY[0xAC18C8] > (unsigned int)MEMORY[0xAC18F0] ); /*0x600a2a*/
   }
   __3_YAXPAX_Z(MEMORY[0xAC18C0]); /*0x600a36*/
-}
-}
-} // namespace gamemd
-
-// 0x600A50
-namespace gamemd {
-int sub_600A50()
-{
-{
-    unsigned int v0;
-    int v1;
-    v0 = 128;
-    DataGlobal_AC1B20 = 0.2;
-    DataGlobal_AC1B28 = 0.8;
-    DataGlobal_AC1B30 = 128;
-    v1 = 0;
-    do
-  {
-    ++v1;
-    v0 >>= 1;
-  }
-    while ( v0 );
-    DataGlobal_AC1B10 = 0;
-    g_DialogHashMap_Buckets = v1 - 1;
-    g_DialogHashMap_Count = 0;
-    DataGlobal_AC1B14 = 0;
-    DataGlobal_AC1B08 = 1 << (v1 - 1);
-    g_DialogHashMap_Base = __2_YAPAXI_Z(4 * (1 << (v1 - 1)));
-    memset(g_DialogHashMap_Base, 0, 4 * DataGlobal_AC1B08);
-    g_DialogHashMap_Hasher = (int (__thiscall *)(int))ReadPointerFromECX;
-    return atexit(sub_600AF0);
 }
 }
 } // namespace gamemd
@@ -1898,16 +1611,6 @@ HWND *__fastcall CacheDialogInvalidate(HWND hWnd, HWND a2)
 }
 } // namespace gamemd
 
-// 0x603DD0
-namespace gamemd {
-LRESULT globalHelper_003DD0(HWND hWnd, unsigned char a2)
-{
-{
-    return SendMessageA(hWnd, 0x4E6u, 0, a2);
-}
-}
-} // namespace gamemd
-
 // 0x603E40
 namespace gamemd {
 unsigned int * sub_603E40(int a1, int a2)
@@ -1936,28 +1639,6 @@ _DWORD *__fastcall sub_603E40(int a1, int a2)
     }
   }
   return result; /*0x603e89*/
-}
-}
-} // namespace gamemd
-
-// 0x603FC0
-namespace gamemd {
-wchar_t ** sub_603FC0(wchar_t ** a1, HWND a2, HWND hWnd, unsigned short a4, void * a5)
-{
-{
-    LPARAM lParam[2];
-    void *v9;
-    LRESULT v10;
-    v10 = SendMessageA(hWnd, 0x4E8u, 0, a4 | ((unsigned short)a5 << 16));
-    unknown_libname_74(&v9);
-    lParam[0] = (LPARAM)hWnd;
-    lParam[1] = v10;
-    SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam);
-    WideString::AssignFromPtr((wchar_t **)&a5, (const wchar_t **)&v9);
-    DeleteAndZero::Alt(&v9);
-    WideString::AssignFromPtr(a1, (const wchar_t **)&a5);
-    DeleteAndZero::Alt(&a5);
-    return a1;
 }
 }
 } // namespace gamemd
@@ -3438,20 +3119,6 @@ BOOL __stdcall sub_60A250(HWND hWnd, LPARAM a2)
 }
 } // namespace gamemd
 
-// 0x60AA60
-namespace gamemd {
-BOOL sub_60AA60(HWND hWnd, LPARAM a2)
-{
-{
-    HWND Parent;
-    Parent = GetParent(hWnd);
-    if ( IsValidActionDialog((int)Parent, hWnd) )
-    SendMessageA(hWnd, 0x4EEu, 0, 0);
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x60B000
 namespace gamemd {
 BOOL RepositionGameSpeedIndicator(HWND hWnd, int a2)
@@ -3520,22 +3187,6 @@ BOOL __fastcall RepositionGameSpeedIndicator(HWND hWnd, int a2)
              *((__int16 *)MEMORY[0xB0FAC4] + 2),
              0);
   }
-}
-}
-} // namespace gamemd
-
-// 0x60B740
-namespace gamemd {
-BOOL E4Recv_60B740::sub_60B740()
-{
-{
-    HWND Parent;
-    struct tagRECT v4;
-    struct tagRECT Rect;
-    Parent = GetParent(this);
-    GetWindowRect(Parent, &Rect);
-    GetWindowRect(this, &v4);
-    return MoveWindow(this, v4.left - Rect.left, v4.top - Rect.top, v4.right - v4.left, v4.bottom - v4.top, 0);
 }
 }
 } // namespace gamemd
@@ -3784,16 +3435,6 @@ BOOL __thiscall ResizeDialogAndEnum(SkirmishDialog *this)
 }
 }
 
-// 0x60D520
-namespace gamemd {
-LRESULT sub_60D520(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
-{
-{
-    return DefWindowProcA(hWnd, Msg, wParam, lParam);
-}
-}
-} // namespace gamemd
-
 // 0x60F4B0
 namespace gamemd {
 char InitializeDialogControls(HWND a1, LPARAM a2)
@@ -3917,10 +3558,369 @@ LABEL_20:
 }
 } // namespace gamemd
 
+// 0x600320
+namespace gamemd {
+int sub_600320()
+{
+{
+    DataGlobal_AC18B0 = 0;
+    DataGlobal_AC18B4 = 0;
+    DataGlobal_AC18B8 = 0;
+    DataGlobal_AC18BC = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x600340
+namespace gamemd {
+void sub_600340()
+{
+{
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_AC1B40 = Math::Sqrt(v0 + v0);
+}
+}
+} // namespace gamemd
+
+// 0x600370
+namespace gamemd {
+void sub_600370()
+{
+{
+    DataGlobal_AC48A0 = DataGlobal_AC1B40 / 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x600390
+namespace gamemd {
+void sub_600390()
+{
+{
+    DataGlobal_AC4838 = 1.0 / DataGlobal_AC48A0;
+}
+}
+} // namespace gamemd
+
+// 0x6003B0
+namespace gamemd {
+void sub_6003B0()
+{
+{
+    DataGlobal_AC4830 = 0.0174532925199433 * 45.0;
+}
+}
+} // namespace gamemd
+
+// 0x6003D0
+namespace gamemd {
+void sub_6003D0()
+{
+{
+    DataGlobal_AC1B88 = 0.0174532925199433 * 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x6003F0
+namespace gamemd {
+void sub_6003F0()
+{
+{
+    DataGlobal_AC1898 = 0.0174532925199433 * 90.0;
+}
+}
+} // namespace gamemd
+
+// 0x600410
+namespace gamemd {
+long long sub_600410()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_AC1898 - DataGlobal_AC1B88);
+    result = Math::RoundToInt(v0 * DataGlobal_AC1B40 * 0.5);
+    DataGlobal_AC48AC = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x600450
+namespace gamemd {
+void sub_600450()
+{
+{
+    DataGlobal_AC1CA0 = Math::ArcTan((double)DataGlobal_AC48AC * 0.00390625);
+}
+}
+} // namespace gamemd
+
+// 0x600480
+namespace gamemd {
+void sub_600480()
+{
+{
+    DataGlobal_AC4610 = Math::ArcTan((double)(2 * DataGlobal_AC48AC) / DataGlobal_AC1B40);
+}
+}
+} // namespace gamemd
+
+// 0x6004B0
+namespace gamemd {
+long long sub_6004B0()
+{
+{
+    __int64 result;
+    result = Math::RoundToInt((double)(4 * DataGlobal_AC48AC) + 0.5);
+    DataGlobal_AC489C = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x6004E0
+namespace gamemd {
+int sub_6004E0()
+{
+{
+    DataGlobal_AC1B38 = 0;
+    DataGlobal_AC1B3A = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6004F0
+namespace gamemd {
+int sub_6004F0()
+{
+{
+    DataGlobal_AC1DF8 = 0;
+    DataGlobal_AC1DFC = 0;
+    DataGlobal_AC1E00 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x600510
+namespace gamemd {
+int sub_600510()
+{
+{
+    DataGlobal_AC4890 = 0;
+    DataGlobal_AC4888 = 128;
+    DataGlobal_AC488C = 128;
+    return 128;
+}
+}
+} // namespace gamemd
+
+// 0x600530
+namespace gamemd {
+int sub_600530()
+{
+{
+    sub_6B9450(g_DialogHashTable);
+    return atexit(unknown_libname_26);
+}
+}
+} // namespace gamemd
+
+// 0x600550
+namespace gamemd {
+int unknown_libname_26()
+{
+    void __cdecl unknown_libname_26()
+{
+    HashTable::Clear((int)g_DialogHashTable);
+}
+}
+} // namespace gamemd
+
+// 0x600660
+namespace gamemd {
+ObjectClass * E4Recv_600660::ReadPointerFromECX()
+{
+{
+    return *(ObjectClass **)this;
+}
+}
+} // namespace gamemd
+
+// 0x6006B0
+namespace gamemd {
+int sub_6006B0()
+{
+{
+    unsigned int v0;
+    int v1;
+    v0 = 128;
+    DataGlobal_AC1B68 = 0.2;
+    DataGlobal_AC1B70 = 0.8;
+    DataGlobal_AC1B78 = 128;
+    v1 = 0;
+    do
+  {
+    ++v1;
+    v0 >>= 1;
+  }
+    while ( v0 );
+    DataGlobal_AC1B58 = 0;
+    g_DialogHashMap_Insert = v1 - 1;
+    g_DialogHashMap_Grow = 0;
+    DataGlobal_AC1B5C = 0;
+    DataGlobal_AC1B50 = 1 << (v1 - 1);
+    g_DialogHashMap_Entries = __2_YAPAXI_Z(4 * (1 << (v1 - 1)));
+    memset(g_DialogHashMap_Entries, 0, 4 * DataGlobal_AC1B50);
+    g_DialogHashMap_Callback = (int (__thiscall *)(int))ReadPointerFromECX;
+    return atexit(sub_600750);
+}
+}
+} // namespace gamemd
+
+// 0x600880
+namespace gamemd {
+int sub_600880()
+{
+{
+    unsigned int v0;
+    int v1;
+    v0 = 128;
+    DataGlobal_AC18E0 = 0.2;
+    DataGlobal_AC18E8 = 0.8;
+    DataGlobal_AC18F0 = 128;
+    v1 = 0;
+    do
+  {
+    ++v1;
+    v0 >>= 1;
+  }
+    while ( v0 );
+    DataGlobal_AC18D0 = 0;
+    DataGlobal_AC18CC = v1 - 1;
+    g_DialogPoolCount = 0;
+    DataGlobal_AC18D4 = 0;
+    g_DialogBuffer = 1 << (v1 - 1);
+    g_DialogPool = __2_YAPAXI_Z(4 * (1 << (v1 - 1)));
+    memset(g_DialogPool, 0, 4 * g_DialogBuffer);
+    DataGlobal_AC18D8 = (int (__thiscall *)(int))ReadPointerFromECX;
+    return atexit(sub_600920);
+}
+}
+} // namespace gamemd
+
+// 0x600A50
+namespace gamemd {
+int sub_600A50()
+{
+{
+    unsigned int v0;
+    int v1;
+    v0 = 128;
+    DataGlobal_AC1B20 = 0.2;
+    DataGlobal_AC1B28 = 0.8;
+    DataGlobal_AC1B30 = 128;
+    v1 = 0;
+    do
+  {
+    ++v1;
+    v0 >>= 1;
+  }
+    while ( v0 );
+    DataGlobal_AC1B10 = 0;
+    g_DialogHashMap_Buckets = v1 - 1;
+    g_DialogHashMap_Count = 0;
+    DataGlobal_AC1B14 = 0;
+    DataGlobal_AC1B08 = 1 << (v1 - 1);
+    g_DialogHashMap_Base = __2_YAPAXI_Z(4 * (1 << (v1 - 1)));
+    memset(g_DialogHashMap_Base, 0, 4 * DataGlobal_AC1B08);
+    g_DialogHashMap_Hasher = (int (__thiscall *)(int))ReadPointerFromECX;
+    return atexit(sub_600AF0);
+}
+}
+} // namespace gamemd
+
+// 0x603DD0
+namespace gamemd {
+LRESULT globalHelper_003DD0(HWND hWnd, unsigned char a2)
+{
+{
+    return SendMessageA(hWnd, 0x4E6u, 0, a2);
+}
+}
+} // namespace gamemd
+
+// 0x603FC0
+namespace gamemd {
+wchar_t ** sub_603FC0(wchar_t ** a1, HWND a2, HWND hWnd, unsigned short a4, void * a5)
+{
+{
+    LPARAM lParam[2];
+    void *v9;
+    LRESULT v10;
+    v10 = SendMessageA(hWnd, 0x4E8u, 0, a4 | ((unsigned short)a5 << 16));
+    unknown_libname_74(&v9);
+    lParam[0] = (LPARAM)hWnd;
+    lParam[1] = v10;
+    SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam);
+    WideString::AssignFromPtr((wchar_t **)&a5, (const wchar_t **)&v9);
+    DeleteAndZero::Alt(&v9);
+    WideString::AssignFromPtr(a1, (const wchar_t **)&a5);
+    DeleteAndZero::Alt(&a5);
+    return a1;
+}
+}
+} // namespace gamemd
+
+// 0x60AA60
+namespace gamemd {
+BOOL sub_60AA60(HWND hWnd, LPARAM a2)
+{
+{
+    HWND Parent;
+    Parent = GetParent(hWnd);
+    if ( IsValidActionDialog((int)Parent, hWnd) )
+    SendMessageA(hWnd, 0x4EEu, 0, 0);
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x60B740
+namespace gamemd {
+BOOL E4Recv_60B740::sub_60B740()
+{
+{
+    HWND Parent;
+    struct tagRECT v4;
+    struct tagRECT Rect;
+    Parent = GetParent(this);
+    GetWindowRect(Parent, &Rect);
+    GetWindowRect(this, &v4);
+    return MoveWindow(this, v4.left - Rect.left, v4.top - Rect.top, v4.right - v4.left, v4.bottom - v4.top, 0);
+}
+}
+} // namespace gamemd
+
 // 0x60D440
 namespace gamemd {
 void nullsub_31()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x60D520
+namespace gamemd {
+LRESULT sub_60D520(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
+{
+{
+    return DefWindowProcA(hWnd, Msg, wParam, lParam);
+}
 }
 } // namespace gamemd

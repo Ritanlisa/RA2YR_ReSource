@@ -101,6 +101,18 @@ LABEL_28:
 }
 } // namespace gamemd
 
+// 0x473450
+namespace gamemd {
+int CCINIClass::GetDB()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall CCINIClass_GetDB(_DWORD *this)
+{
+  return *(this + 1); /*0x473453*/
+}
+}
+} // namespace gamemd
+
 // 0x41F490
 namespace gamemd {
 AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
@@ -145,18 +157,6 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
     }
   }
     return result;
-}
-}
-} // namespace gamemd
-
-// 0x473450
-namespace gamemd {
-int CCINIClass::GetDB()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CCINIClass_GetDB(_DWORD *this)
-{
-  return *(this + 1); /*0x473453*/
 }
 }
 } // namespace gamemd

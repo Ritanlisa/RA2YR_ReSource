@@ -179,20 +179,6 @@ int __stdcall TriggerClass::LoadTrigger(AbstractClass *aP0, int aP1)
 }
 } // namespace gamemd
 
-// 0x7268D0
-namespace gamemd {
-int TriggerClass::SaveTrigger(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x726820
 namespace gamemd {
 int TriggerClass::ddtor(int a1, unsigned int * a2)
@@ -204,6 +190,20 @@ int TriggerClass::ddtor(int a1, unsigned int * a2)
   a2[2] = 1610655660;
   a2[3] = -1252326136;
   return 0;
+}
+} // namespace gamemd
+
+// 0x7268D0
+namespace gamemd {
+int TriggerClass::SaveTrigger(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
 }
 } // namespace gamemd
 

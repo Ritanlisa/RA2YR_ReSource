@@ -225,22 +225,6 @@ void __thiscall ParticleClass::AdjustHeight(ParticleClass *this)
 }
 } // namespace gamemd
 
-// 0x62D710
-namespace gamemd {
-int * ParticleClass::CheckDrawFlags(int a1)
-{
-{
-    if ( (DataGlobal_AC4998 & 1) == 0 )
-  {
-    DataGlobal_AC4998 |= 1u;
-    DataGlobal_AC49D0 = 2147450879;
-    atexit(nullsub_214);
-  }
-    return &DataGlobal_AC49D0;
-}
-}
-} // namespace gamemd
-
 // 0x62D7A0
 namespace gamemd {
 int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
@@ -272,6 +256,30 @@ int __thiscall ParticleClass::LoadParticleData(void *this, ObjectClass *aP1, int
 }
 } // namespace gamemd
 
+// 0x62D710
+namespace gamemd {
+int * ParticleClass::CheckDrawFlags(int a1)
+{
+{
+    if ( (DataGlobal_AC4998 & 1) == 0 )
+  {
+    DataGlobal_AC4998 |= 1u;
+    DataGlobal_AC49D0 = 2147450879;
+    atexit(nullsub_214);
+  }
+    return &DataGlobal_AC49D0;
+}
+}
+} // namespace gamemd
+
+// 0x62D770
+namespace gamemd {
+int ParticleClass::CheckStateFlag()
+{
+return 3;
+}
+} // namespace gamemd
+
 // 0x62D810
 namespace gamemd {
 int ParticleClass::CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2)
@@ -282,14 +290,6 @@ int ParticleClass::CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2)
     LOBYTE(aP0->ChargerBarrels[11]) = 1;
     return result;
 }
-}
-} // namespace gamemd
-
-// 0x62D770
-namespace gamemd {
-int ParticleClass::CheckStateFlag()
-{
-return 3;
 }
 } // namespace gamemd
 

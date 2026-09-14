@@ -5,83 +5,17 @@
 // 0x407450
 int LinkedList::Init()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall LinkedList_Init(_DWORD **this)
 {
-    int result;
-    *(void**)this->Tail = *(void**)this;
-    result = (int)*(void**)this;
-    (*(void**)this)[1] = this->Tail;
-    *(void**)this = this;
-    this->Tail = this;
-    return result;
-}
-}
+  int result; // eax
 
-// 0x407520
-int * LinkedList::Next()
-{
-{
-    int *result;
-    int *v2;
-    result = *(void**)this;
-    if ( *(void**)this )
-  {
-    v2 = (int *)*result;
-    *(void**)this = v2;
-    result += 2;
-  }
-    return result;
-}
-}
-
-// 0x40E340
-int LinkedList::Prepend(int a2)
-{
-{
-    int result;
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    result = a2;
-    if ( a2 )
-  {
-    v3 = *(int *)(a2 + 4);
-    if ( v3 )
-    {
-    v4 = *(int *)(a2 + 8);
-    if ( v4 )
-      {
-    *(int *)(v4 + 4) = v3;
-    *(int *)(*(int *)(a2 + 4) + 8) = *(int *)(a2 + 8);
-    *(int *)(a2 + 8) = 0;
-    *(int *)(a2 + 4) = 0;
-      }
-    }
-  }
-    v5 = this->Tail;
-    *(int *)(a2 + 8) = this;
-    *(int *)(a2 + 4) = v5;
-    v6 = this->Tail;
-    if ( v6 )
-    *(int *)(v6 + 8) = a2;
-    this->Tail = a2;
-    return result;
-}
-}
-
-// 0x473430
-int LinkedList::Pop()
-{
-{
-    int result;
-    result = this->Tail;
-    if ( result )
-  {
-    this->Tail = *(int *)(result + 48);
-    *(int *)(result + 48) = 0;
-    --*(void**)this;
-  }
-    return result;
+  **(this + 1) = *this; /*0x407455*/
+  result = (int)*this; /*0x407457*/
+  (*this)[1] = *(this + 1); /*0x40745c*/
+  *this = this; /*0x40745f*/
+  *(this + 1) = this; /*0x407461*/
+  return result; /*0x407464*/
 }
 }
 
@@ -490,16 +424,6 @@ void __thiscall LinkedList_Remove(_DWORD *this, _DWORD *a2)
 }
 }
 
-// 0x625AE0
-int LinkedList::PushFront(IUnknown * aP1)
-{
-{
-    aP1->field_C = this->Tail;
-    this->Tail = aP1;
-    return (int)aP1;
-}
-}
-
 // 0x632D10
 void LinkedList::RelinkNode(int a2)
 {
@@ -550,5 +474,84 @@ char __thiscall LinkedList::Contains(_DWORD *this, IUnknown *aP1)
       return 0; /*0x6e5394*/
   }
   return 1; /*0x6e5398*/
+}
+}
+
+// 0x407520
+int * LinkedList::Next()
+{
+{
+    int *result;
+    int *v2;
+    result = *(void**)this;
+    if ( *(void**)this )
+  {
+    v2 = (int *)*result;
+    *(void**)this = v2;
+    result += 2;
+  }
+    return result;
+}
+}
+
+// 0x40E340
+int LinkedList::Prepend(int a2)
+{
+{
+    int result;
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    result = a2;
+    if ( a2 )
+  {
+    v3 = *(int *)(a2 + 4);
+    if ( v3 )
+    {
+    v4 = *(int *)(a2 + 8);
+    if ( v4 )
+      {
+    *(int *)(v4 + 4) = v3;
+    *(int *)(*(int *)(a2 + 4) + 8) = *(int *)(a2 + 8);
+    *(int *)(a2 + 8) = 0;
+    *(int *)(a2 + 4) = 0;
+      }
+    }
+  }
+    v5 = this->Tail;
+    *(int *)(a2 + 8) = this;
+    *(int *)(a2 + 4) = v5;
+    v6 = this->Tail;
+    if ( v6 )
+    *(int *)(v6 + 8) = a2;
+    this->Tail = a2;
+    return result;
+}
+}
+
+// 0x473430
+int LinkedList::Pop()
+{
+{
+    int result;
+    result = this->Tail;
+    if ( result )
+  {
+    this->Tail = *(int *)(result + 48);
+    *(int *)(result + 48) = 0;
+    --*(void**)this;
+  }
+    return result;
+}
+}
+
+// 0x625AE0
+int LinkedList::PushFront(IUnknown * aP1)
+{
+{
+    aP1->field_C = this->Tail;
+    this->Tail = aP1;
+    return (int)aP1;
 }
 }

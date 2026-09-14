@@ -51,17 +51,6 @@ void __thiscall WarheadTypeClass::_vt03(int this)
 }
 }
 
-// 0x524F00
-unsigned int WarheadTypeClass::LoadTypeData(int a2)
-{
-{
-    if ( (unsigned char)this->WarheadTypeClass_field_0xC )
-    return (unsigned int)(a2 - this->WarheadTypeClass_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-
 // 0x524FB0
 int WarheadTypeClass::SaveToINI(int a2)
 {
@@ -507,28 +496,6 @@ LABEL_6:
       goto LABEL_6; /*0x644681*/
   }
   return v2; /*0x6446a0*/
-}
-}
-
-// 0x672990
-int WarheadTypeClass::LoadType()
-{
-{
-    int KeyCount;
-    int i;
-    unsigned char *StringByIndex;
-    char Destination[32];
-    char *v6;
-    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)g_INI_Key_Warheads);
-    for ( i = 0; i < KeyCount; ++i )
-  {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)g_INI_Key_Warheads, i);
-    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)g_INI_Key_Warheads, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
-    {
-    WarheadTypeClass::FindOrCreate(Destination);
-    }
-  }
-    return KeyCount > 0;
 }
 }
 
@@ -1052,6 +1019,39 @@ int WarheadTypeClass_ReadINI()
 // end truncated pseudocode
 }
 } // namespace gamemd
+
+// 0x524F00
+unsigned int WarheadTypeClass::LoadTypeData(int a2)
+{
+{
+    if ( (unsigned char)this->WarheadTypeClass_field_0xC )
+    return (unsigned int)(a2 - this->WarheadTypeClass_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+
+// 0x672990
+int WarheadTypeClass::LoadType()
+{
+{
+    int KeyCount;
+    int i;
+    unsigned char *StringByIndex;
+    char Destination[32];
+    char *v6;
+    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)g_INI_Key_Warheads);
+    for ( i = 0; i < KeyCount; ++i )
+  {
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)g_INI_Key_Warheads, i);
+    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)g_INI_Key_Warheads, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
+    {
+    WarheadTypeClass::FindOrCreate(Destination);
+    }
+  }
+    return KeyCount > 0;
+}
+}
 
 // 0x75E4F0
 int WarheadTypeClass::GetObjectSize()

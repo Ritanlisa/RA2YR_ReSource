@@ -3,16 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_724000_e4.hpp"
 
-// 0x5C0980
-namespace gamemd {
-BOOL sub_5C0980()
-{
-{
-    return g_BigIntPool || DataGlobal_ABF3F8;
-}
-}
-} // namespace gamemd
-
 // 0x777420
 namespace gamemd {
 HWND sub_777420()
@@ -139,6 +129,16 @@ char *__thiscall sub_724000(char *this, int a2)
   *(this + 600) = 0; /*0x724094*/
   this->M604 = 0; /*0x72409a*/
   return this; /*0x7240a2*/
+}
+}
+} // namespace gamemd
+
+// 0x5C0980
+namespace gamemd {
+BOOL sub_5C0980()
+{
+{
+    return g_BigIntPool || DataGlobal_ABF3F8;
 }
 }
 } // namespace gamemd

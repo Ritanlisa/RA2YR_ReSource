@@ -3,60 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/SaveGame_e4.hpp"
 
-// 0x4073B0
-namespace gamemd {
-int SaveGame::CountLinkedList()
-{
-{
-    int *v1;
-    int result;
-    v1 = (int *)*(void**)this;
-    for ( result = 0; v1 != this; ++result )
-    v1 = (int *)*v1;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x413850
-namespace gamemd {
-int SaveGame::SaveIteratedData(int a2)
-{
-{
-    int v2;
-    int v3;
-    int *i;
-    int v5;
-    int result;
-    int v7;
-    v2 = a2;
-    v3 = 0;
-    for ( i = this + 1; ; i += 6 )
-  {
-    v5 = *(int *)v2;
-    a2 = i[3];
-    result = (*(int (__stdcall **)(int, int *, int, int))(v5 + 16))(v2, &a2, 4, 0);
-    if ( result < 0 )
-    break;
-    v7 = 0;
-    if ( a2 > 0 )
-    {
-    do
-      {
-    result = (*(int (__stdcall **)(int, int, int, int))(*(int *)(v2) + 16))(v2, *i + 4 * v7, 4, 0);
-    if ( result < 0 )
-    return result;
-      }
-    while ( ++v7 < a2 );
-    }
-    if ( ++v3 >= 400 )
-    return 0;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x4391C0
 namespace gamemd {
 int SaveGame::LoadArrayData(int * a2)
@@ -106,33 +52,6 @@ LABEL_5:
     }
   }
   return result; /*0x43924e*/
-}
-}
-} // namespace gamemd
-
-// 0x4C6340
-namespace gamemd {
-int SaveGame::SaveBlock68(int a2)
-{
-{
-    return (*(int (__stdcall **)(int, void *, int, int))(*(int *)(a2) + 16))(a2, this, 68, 0);
-}
-}
-} // namespace gamemd
-
-// 0x513CB0
-namespace gamemd {
-int SaveGame::WriteObject(int a1, int a2)
-{
-{
-    int v2;
-    int v3;
-    char v5[24];
-    v2 = StreamClass::ResetPosition(a1, a2);
-    v3 = (*(int (__thiscall **)(int))(**(int **)(a1 + 8) + 132))(*(int *)(a1 + 8));
-    FrameSnapshot::InitMax(2 * *(int *)(v3 + 1820));
-    qmemcpy((void *)(a1 + 44), v5, 0x18u);
-    return v2;
 }
 }
 } // namespace gamemd
@@ -429,92 +348,6 @@ LABEL_17:
 }
 } // namespace gamemd
 
-// 0x67FDF0
-namespace gamemd {
-HRESULT SaveGame_Start(LPSTREAM pStm, int a2)
-{
-{
-    int v4;
-    HRESULT result;
-    int v6;
-    int v7;
-    LPPERSISTSTREAM pPStm;
-    int v9;
-    v4 = *(int *)pStm->__pad_0;
-    v9 = *(int *)(a2 + 16);
-    result = (*(int (__stdcall **)(LPSTREAM, int *, int, int))(v4 + 16))(pStm, &v9, 4, 0);
-    if ( result >= 0 )
-  {
-    v6 = 0;
-    if ( v9 <= 0 )
-    {
-    return 0;
-    }
-    else
-    {
-    while ( 1 )
-      {
-    v7 = *(int *)(a2 + 4);
-    pPStm = 0;
-    result = (***(int (__stdcall ****)(int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( *(int *)(v7 + 4 * v6), &IID_IPersistStream, &pPStm);
-    if ( result < 0 )
-    break;
-    result = OleSaveToStream(pPStm, pStm);
-    if ( result < 0 )
-    break;
-    result = (*(int (__stdcall **)(LPPERSISTSTREAM))(*(int *)(pPStm) + 8))(pPStm);
-    if ( result < 0 )
-    break;
-    if ( ++v6 >= v9 )
-    return 0;
-      }
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x69B560
-namespace gamemd {
-bool SaveGame::SaveAudioData(int a2)
-{
-{
-    int v2;
-    int v4;
-    bool result;
-    int v6;
-    v2 = a2;
-    result = 0;
-    if ( a2 )
-  {
-    v4 = *(int *)a2;
-    v6 = a2;
-    a2 = 300;
-    if ( (*(int (__stdcall **)(int, int *, int, int))(v4 + 16))(v6, &a2, 4, 0) >= 0 && (*(int (__stdcall **)(int, void *, int, int))(*(int *)(v2) + 16))(v2, this, a2, 0) >= 0 )
-    {
-    return 1;
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x721010
-namespace gamemd {
-int SaveGame::VtableDispatch(int a2)
-{
-{
-    int result;
-    result = (*(int (__stdcall **)(int, int, int, int))(*(int *)(a2) + 16))(a2, (int)this + 4, 4, 0);
-    if ( result >= 0 )
-    return (*(int (__stdcall **)(int, int, int, int))(*(int *)(a2) + 16))(a2, (int)this + 8, 4, 0);
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x74ED60
 namespace gamemd {
 char SaveGame::LoadVeinholeData()
@@ -668,23 +501,127 @@ LABEL_11:
 }
 } // namespace gamemd
 
-// 0x7533B0
+// 0x4073B0
 namespace gamemd {
-int SaveGame::WriteMagicHeader()
+int SaveGame::CountLinkedList()
+{
+{
+    int *v1;
+    int result;
+    v1 = (int *)*(void**)this;
+    for ( result = 0; v1 != this; ++result )
+    v1 = (int *)*v1;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x413850
+namespace gamemd {
+int SaveGame::SaveIteratedData(int a2)
 {
 {
     int v2;
-    int result;
-    int v4;
+    int v3;
+    int *i;
     int v5;
-    v2 = *(void**)this;
-    v5 = 1450145875;
-    result = (*(int (__stdcall **)(int *, int *, int, int))(v2 + 16))(this, &v5, 4, 0);
+    int result;
+    int v7;
+    v2 = a2;
+    v3 = 0;
+    for ( i = this + 1; ; i += 6 )
+  {
+    v5 = *(int *)v2;
+    a2 = i[3];
+    result = (*(int (__stdcall **)(int, int *, int, int))(v5 + 16))(v2, &a2, 4, 0);
+    if ( result < 0 )
+    break;
+    v7 = 0;
+    if ( a2 > 0 )
+    {
+    do
+      {
+    result = (*(int (__stdcall **)(int, int, int, int))(*(int *)(v2) + 16))(v2, *i + 4 * v7, 4, 0);
+    if ( result < 0 )
+    return result;
+      }
+    while ( ++v7 < a2 );
+    }
+    if ( ++v3 >= 400 )
+    return 0;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4C6340
+namespace gamemd {
+int SaveGame::SaveBlock68(int a2)
+{
+{
+    return (*(int (__stdcall **)(int, void *, int, int))(*(int *)(a2) + 16))(a2, this, 68, 0);
+}
+}
+} // namespace gamemd
+
+// 0x513CB0
+namespace gamemd {
+int SaveGame::WriteObject(int a1, int a2)
+{
+{
+    int v2;
+    int v3;
+    char v5[24];
+    v2 = StreamClass::ResetPosition(a1, a2);
+    v3 = (*(int (__thiscall **)(int))(**(int **)(a1 + 8) + 132))(*(int *)(a1 + 8));
+    FrameSnapshot::InitMax(2 * *(int *)(v3 + 1820));
+    qmemcpy((void *)(a1 + 44), v5, 0x18u);
+    return v2;
+}
+}
+} // namespace gamemd
+
+// 0x67FDF0
+namespace gamemd {
+HRESULT SaveGame_Start(LPSTREAM pStm, int a2)
+{
+{
+    int v4;
+    HRESULT result;
+    int v6;
+    int v7;
+    LPPERSISTSTREAM pPStm;
+    int v9;
+    v4 = *(int *)pStm->__pad_0;
+    v9 = *(int *)(a2 + 16);
+    result = (*(int (__stdcall **)(LPSTREAM, int *, int, int))(v4 + 16))(pStm, &v9, 4, 0);
     if ( result >= 0 )
   {
-    v4 = *(void**)this;
-    v5 = 1450145861;
-    return (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(this, &v5, 4, 0);
+    v6 = 0;
+    if ( v9 <= 0 )
+    {
+    return 0;
+    }
+    else
+    {
+    while ( 1 )
+      {
+    v7 = *(int *)(a2 + 4);
+    pPStm = 0;
+    result = (***(int (__stdcall ****)(int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( *(int *)(v7 + 4 * v6), &IID_IPersistStream, &pPStm);
+    if ( result < 0 )
+    break;
+    result = OleSaveToStream(pPStm, pStm);
+    if ( result < 0 )
+    break;
+    result = (*(int (__stdcall **)(LPPERSISTSTREAM))(*(int *)(pPStm) + 8))(pPStm);
+    if ( result < 0 )
+    break;
+    if ( ++v6 >= v9 )
+    return 0;
+      }
+    }
   }
     return result;
 }
@@ -2249,6 +2186,69 @@ HRESULT SaveGame_Start_680EF0(LPSTREAM pStm, int a2)
     return 0;
       }
     }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x69B560
+namespace gamemd {
+bool SaveGame::SaveAudioData(int a2)
+{
+{
+    int v2;
+    int v4;
+    bool result;
+    int v6;
+    v2 = a2;
+    result = 0;
+    if ( a2 )
+  {
+    v4 = *(int *)a2;
+    v6 = a2;
+    a2 = 300;
+    if ( (*(int (__stdcall **)(int, int *, int, int))(v4 + 16))(v6, &a2, 4, 0) >= 0 && (*(int (__stdcall **)(int, void *, int, int))(*(int *)(v2) + 16))(v2, this, a2, 0) >= 0 )
+    {
+    return 1;
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x721010
+namespace gamemd {
+int SaveGame::VtableDispatch(int a2)
+{
+{
+    int result;
+    result = (*(int (__stdcall **)(int, int, int, int))(*(int *)(a2) + 16))(a2, (int)this + 4, 4, 0);
+    if ( result >= 0 )
+    return (*(int (__stdcall **)(int, int, int, int))(*(int *)(a2) + 16))(a2, (int)this + 8, 4, 0);
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x7533B0
+namespace gamemd {
+int SaveGame::WriteMagicHeader()
+{
+{
+    int v2;
+    int result;
+    int v4;
+    int v5;
+    v2 = *(void**)this;
+    v5 = 1450145875;
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v2 + 16))(this, &v5, 4, 0);
+    if ( result >= 0 )
+  {
+    v4 = *(void**)this;
+    v5 = 1450145861;
+    return (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(this, &v5, 4, 0);
   }
     return result;
 }

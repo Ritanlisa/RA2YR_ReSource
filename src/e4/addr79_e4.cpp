@@ -5,56 +5,6 @@
 #include "e4/classes/E4Recv_793CD0_e4.hpp"
 #include "e4/classes/E4Recv_79BF50_e4.hpp"
 
-// 0x792BE0
-namespace gamemd {
-char ShowUIMessage(MPCooperative * a1, wchar_t ** a2, char a3)
-{
-{
-    DLGTEMPLATE *DialogIndirect;
-    HWND DlgItem;
-    CampaignScore *v7;
-    HWND Current;
-    HWND v9;
-    HWND v10;
-    CampaignScore *v11;
-    char result;
-    DialogIndirect = (DLGTEMPLATE *)Dialog::FindByHandle((void *)0xC4);
-    if ( DialogIndirect )
-  {
-    g_WOL_ChannelList = (MPCooperative *)((unsigned int)a1 | (unsigned int)g_WOL_ChannelList);
-    if ( WideString::Length((const wchar_t **)a2) )
-    {
-    DlgItem = GetDlgItem((HWND)DialogIndirect, 1458);
-    v7 = WideString::GetOrEmpty_Alt(a2);
-    SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)v7);
-    }
-  }
-    else if ( a1 )
-  {
-    Current = Dialog::GetCurrent();
-    v9 = GetDlgItem(Current, 1344);
-    ShowUIMessage_Show();
-    DialogIndirect = (DLGTEMPLATE *)CreateDialogIndirect(g_hInstance, (HWND)0xC4, g_hWnd, sub_792CF0, 0);
-    SetupDialog((CoordStruct *)DialogIndirect, 196);
-    v10 = GetDlgItem((HWND)DialogIndirect, 1458);
-    v11 = WideString::GetOrEmpty_Alt(a2);
-    SendMessageA(v10, 0x4B2u, 0, (LPARAM)v11);
-    g_WOL_ChannelList = a1;
-    if ( v9 )
-    SetFocus(v9);
-  }
-    result = a3;
-    if ( a3 )
-  {
-    result = (char)g_WOL_ChannelList;
-    if ( g_WOL_ChannelList )
-    return MessageDialogLoopAlt((HWND)DialogIndirect, (unsigned char (*)(void))GameLoop::Thunk, 0, 1, 0);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x792CF0
 namespace gamemd {
 INT_PTR sub_792CF0(HWND hWnd, UINT a2, WPARAM a3, char * a4)
@@ -123,34 +73,6 @@ LABEL_6:
       return 0;
   }
   return result; /*0x792d2c*/
-}
-}
-} // namespace gamemd
-
-// 0x793120
-namespace gamemd {
-bool E4Recv_793120::sub_793120()
-{
-{
-    int v1;
-    char *i;
-    char *v4;
-    v1 = 0;
-    if ( (int)g_WOL_State <= 0 )
-    return 0;
-    for ( i = (char *)g_WOL_ConnectionFlags; ; i += 108 )
-  {
-    if ( v1 >= 0 && v1 < (int)g_WOL_State )
-    qmemcpy(&g_IsMultiplayerSession, i, 0x6Cu);
-    if ( (g_IsMultiplayerSession & 1) != 0 )
-    break;
-    if ( ++v1 >= (int)g_WOL_State )
-    return 0;
-  }
-    if ( !&g_IsMultiplayerSession )
-    return 0;
-    v4 = String::GetOrEmpty_Alt(this);
-    return _strcmpi(DataGlobal_B777D4, v4) == 0;
 }
 }
 } // namespace gamemd
@@ -380,84 +302,6 @@ LABEL_26:
     }
   }
   return result; /*0x7934d6*/
-}
-}
-} // namespace gamemd
-
-// 0x793710
-namespace gamemd {
-short sub_793710(int a1, int a2, int a3, int a4)
-{
-{
-    int v4;
-    LOWORD(v4) = a1 + a2;
-    if ( a4 != 1 )
-  {
-    if ( a4 == 2 )
-    {
-    LOWORD(v4) = a2 + 2 * a1;
-    }
-    else if ( a4 <= 1 )
-    {
-    if ( a4 < 0 )
-      {
-    if ( a4 == -100 )
-    LOWORD(v4) = a2 + 100 * a1;
-    else
-    v4 = a2 + a1 % 2 - a4 * (a1 / 2);
-      }
-    }
-    else
-    {
-    v4 = a4 * (a1 / 2) + a2 + a1 % 2;
-    }
-  }
-    Debug::Log();
-    if ( (unsigned short)v4 >= 0x400u )
-    return v4;
-    else
-    return 1024;
-}
-}
-} // namespace gamemd
-
-// 0x793A70
-namespace gamemd {
-int sub_793A70(void * a1, unsigned short a2)
-{
-{
-    int result;
-    char *v3;
-    signed int v4;
-    int v7;
-    int i;
-    char v9[2];
-    char Buffer[254];
-    result = g_WOL_State;
-    v3 = 0;
-    v4 = 0;
-    if ( (int)g_WOL_State > 0 )
-  {
-    v7 = 0;
-    for ( i = 0; ; v7 = i )
-    {
-    if ( v7 >= 0 && v4 < result )
-    v3 = &g_WOL_ConnectionFlags->__pad_0[v7];
-    if ( !_strcmpi(a1, v3 + 36) )
-      {
-    qmemcpy(v9, "Z4", sizeof(v9));
-    sprintf(Buffer, (ObjectClass *)&DataGlobal_817F40.fallRate, (INIClass *)a2);
-    Debug::Log();
-    (*(void (__stdcall **)(int, char *, char *))((*(&g_MatrixTransformState + 2263))->X + 56))( *(&g_MatrixTransformState + 2263), v3, v9);
-      }
-    result = g_WOL_State;
-    ++v4;
-    i += 108;
-    if ( v4 >= (int)g_WOL_State )
-    break;
-    }
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -2222,26 +2066,6 @@ LABEL_13:
 }
 } // namespace gamemd
 
-// 0x796B30
-namespace gamemd {
-int sub_796B30()
-{
-{
-    int v0;
-    int v2[3];
-    SimpleDialogControl::Constructor(v2);
-    v2[0] = &DataGlobal_7F7624;
-    v0 = RunDialog(0xFEu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))LobbyDlgProcWOL, (LPARAM)v2);
-    v2[0] = &DataGlobal_7F7624;
-    OwnerDrawControl::InitVtable(v2);
-    if ( v0 >= 0 )
-    return v0;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x796B90
 namespace gamemd {
 int WOL_LobbyDlgProc(HWND hWnd, LONG a2, int a3, HWND a4)
@@ -3016,25 +2840,6 @@ char WOL_InitVersionStrings()
 }
 } // namespace gamemd
 
-// 0x798120
-namespace gamemd {
-void sub_798120()
-{
-{
-    void **v0;
-    int v1;
-    v0 = (void **)&DataGlobal_B76954;
-    v1 = 16;
-    do
-  {
-    DeleteAndZero(--v0);
-    --v1;
-  }
-    while ( v1 );
-}
-}
-} // namespace gamemd
-
 // 0x7982D0
 namespace gamemd {
 DWORD sub_7982D0(int a1, DWORD a2)
@@ -3067,31 +2872,6 @@ LABEL_4:
     ResetEvent(*(&Handles + v5)); /*0x798320*/
     return v5; /*0x79832e*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x798360
-namespace gamemd {
-char sub_798360()
-{
-{
-    LSTATUS v0;
-    LSTATUS v1;
-    HKEY phkResult;
-    DWORD cbData;
-    DWORD Type;
-    BYTE Data[512];
-    v0 = RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_Str_WOL_URL_RegKey, 0, 0x20019u, &phkResult);
-    if ( !v0 )
-  {
-    cbData = 512;
-    v1 = RegQueryValueExA(phkResult, g_INI_Key_Community, 0, &Type, Data, &cbData);
-    LOBYTE(v0) = RegCloseKey(phkResult);
-    if ( !v1 )
-    LOBYTE(v0) = OpenURLWOL((const char *)Data, 0);
-  }
-    return v0;
 }
 }
 } // namespace gamemd
@@ -3586,61 +3366,6 @@ int WOL_OptionsDlgProc(HWND hWnd, const char * lParam, int a3, int hCtl)
 //   char *v47; // eax
 //   char **v4... [24061 chars total]
 // end truncated pseudocode
-}
-} // namespace gamemd
-
-// 0x79AE00
-namespace gamemd {
-int sub_79AE00(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
-{
-{
-    int result;
-    LONG WindowLongA;
-    UINT v6;
-    if ( a2 == 272 )
-  {
-    if ( a4 )
-    SetWindowLongA(hWnd, 8, *(int *)(a4 + 4));
-  }
-    result = BaseDialogProc(hWnd, a2, a3, a4);
-    if ( !result )
-  {
-    WindowLongA = GetWindowLongA(hWnd, 8);
-    if ( a2 > 0x2B )
-    {
-    if ( a2 == 273 )
-      {
-    if ( (unsigned short)a3 == 1 )
-        {
-    ReadSettingsWOL(&g_WebBrowser);
-    (*(void (__thiscall **)(LONG, HWND, int))(*(int *)(WindowLongA) + 4))(WindowLongA, hWnd, 1);
-        }
-    else if ( (unsigned short)a3 == 2 )
-        {
-    v6 = IsDlgButtonChecked(hWnd, 1785);
-    ReadWOLGameOption(v6 != 1);
-    (*(void (__thiscall **)(LONG, HWND, int))(*(int *)(WindowLongA) + 4))(WindowLongA, hWnd, 2);
-    return 0;
-        }
-      }
-    }
-    else
-    {
-    switch ( a2 )
-      {
-    case 0x2Bu: Dialog::Resize((char *)a4);
-    return 1;
-    case 0xFu: Dialog::DrawBackground(hWnd);
-    Dialog::StopBink(hWnd);
-    ValidateRect(hWnd, 0);
-    return 1;
-    case 0x14u: return 1;
-      }
-    }
-    return 0;
-  }
-    return result;
-}
 }
 } // namespace gamemd
 
@@ -6030,10 +5755,285 @@ LABEL_73:
 }
 } // namespace gamemd
 
+// 0x792BE0
+namespace gamemd {
+char ShowUIMessage(MPCooperative * a1, wchar_t ** a2, char a3)
+{
+{
+    DLGTEMPLATE *DialogIndirect;
+    HWND DlgItem;
+    CampaignScore *v7;
+    HWND Current;
+    HWND v9;
+    HWND v10;
+    CampaignScore *v11;
+    char result;
+    DialogIndirect = (DLGTEMPLATE *)Dialog::FindByHandle((void *)0xC4);
+    if ( DialogIndirect )
+  {
+    g_WOL_ChannelList = (MPCooperative *)((unsigned int)a1 | (unsigned int)g_WOL_ChannelList);
+    if ( WideString::Length((const wchar_t **)a2) )
+    {
+    DlgItem = GetDlgItem((HWND)DialogIndirect, 1458);
+    v7 = WideString::GetOrEmpty_Alt(a2);
+    SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)v7);
+    }
+  }
+    else if ( a1 )
+  {
+    Current = Dialog::GetCurrent();
+    v9 = GetDlgItem(Current, 1344);
+    ShowUIMessage_Show();
+    DialogIndirect = (DLGTEMPLATE *)CreateDialogIndirect(g_hInstance, (HWND)0xC4, g_hWnd, sub_792CF0, 0);
+    SetupDialog((CoordStruct *)DialogIndirect, 196);
+    v10 = GetDlgItem((HWND)DialogIndirect, 1458);
+    v11 = WideString::GetOrEmpty_Alt(a2);
+    SendMessageA(v10, 0x4B2u, 0, (LPARAM)v11);
+    g_WOL_ChannelList = a1;
+    if ( v9 )
+    SetFocus(v9);
+  }
+    result = a3;
+    if ( a3 )
+  {
+    result = (char)g_WOL_ChannelList;
+    if ( g_WOL_ChannelList )
+    return MessageDialogLoopAlt((HWND)DialogIndirect, (unsigned char (*)(void))GameLoop::Thunk, 0, 1, 0);
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x793120
+namespace gamemd {
+bool E4Recv_793120::sub_793120()
+{
+{
+    int v1;
+    char *i;
+    char *v4;
+    v1 = 0;
+    if ( (int)g_WOL_State <= 0 )
+    return 0;
+    for ( i = (char *)g_WOL_ConnectionFlags; ; i += 108 )
+  {
+    if ( v1 >= 0 && v1 < (int)g_WOL_State )
+    qmemcpy(&g_IsMultiplayerSession, i, 0x6Cu);
+    if ( (g_IsMultiplayerSession & 1) != 0 )
+    break;
+    if ( ++v1 >= (int)g_WOL_State )
+    return 0;
+  }
+    if ( !&g_IsMultiplayerSession )
+    return 0;
+    v4 = String::GetOrEmpty_Alt(this);
+    return _strcmpi(DataGlobal_B777D4, v4) == 0;
+}
+}
+} // namespace gamemd
+
+// 0x793710
+namespace gamemd {
+short sub_793710(int a1, int a2, int a3, int a4)
+{
+{
+    int v4;
+    LOWORD(v4) = a1 + a2;
+    if ( a4 != 1 )
+  {
+    if ( a4 == 2 )
+    {
+    LOWORD(v4) = a2 + 2 * a1;
+    }
+    else if ( a4 <= 1 )
+    {
+    if ( a4 < 0 )
+      {
+    if ( a4 == -100 )
+    LOWORD(v4) = a2 + 100 * a1;
+    else
+    v4 = a2 + a1 % 2 - a4 * (a1 / 2);
+      }
+    }
+    else
+    {
+    v4 = a4 * (a1 / 2) + a2 + a1 % 2;
+    }
+  }
+    Debug::Log();
+    if ( (unsigned short)v4 >= 0x400u )
+    return v4;
+    else
+    return 1024;
+}
+}
+} // namespace gamemd
+
+// 0x793A70
+namespace gamemd {
+int sub_793A70(void * a1, unsigned short a2)
+{
+{
+    int result;
+    char *v3;
+    signed int v4;
+    int v7;
+    int i;
+    char v9[2];
+    char Buffer[254];
+    result = g_WOL_State;
+    v3 = 0;
+    v4 = 0;
+    if ( (int)g_WOL_State > 0 )
+  {
+    v7 = 0;
+    for ( i = 0; ; v7 = i )
+    {
+    if ( v7 >= 0 && v4 < result )
+    v3 = &g_WOL_ConnectionFlags->__pad_0[v7];
+    if ( !_strcmpi(a1, v3 + 36) )
+      {
+    qmemcpy(v9, "Z4", sizeof(v9));
+    sprintf(Buffer, (ObjectClass *)&DataGlobal_817F40.fallRate, (INIClass *)a2);
+    Debug::Log();
+    (*(void (__stdcall **)(int, char *, char *))((*(&g_MatrixTransformState + 2263))->X + 56))( *(&g_MatrixTransformState + 2263), v3, v9);
+      }
+    result = g_WOL_State;
+    ++v4;
+    i += 108;
+    if ( v4 >= (int)g_WOL_State )
+    break;
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x796B20
 namespace gamemd {
 void nullsub_264()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x796B30
+namespace gamemd {
+int sub_796B30()
+{
+{
+    int v0;
+    int v2[3];
+    SimpleDialogControl::Constructor(v2);
+    v2[0] = &DataGlobal_7F7624;
+    v0 = RunDialog(0xFEu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))LobbyDlgProcWOL, (LPARAM)v2);
+    v2[0] = &DataGlobal_7F7624;
+    OwnerDrawControl::InitVtable(v2);
+    if ( v0 >= 0 )
+    return v0;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x798120
+namespace gamemd {
+void sub_798120()
+{
+{
+    void **v0;
+    int v1;
+    v0 = (void **)&DataGlobal_B76954;
+    v1 = 16;
+    do
+  {
+    DeleteAndZero(--v0);
+    --v1;
+  }
+    while ( v1 );
+}
+}
+} // namespace gamemd
+
+// 0x798360
+namespace gamemd {
+char sub_798360()
+{
+{
+    LSTATUS v0;
+    LSTATUS v1;
+    HKEY phkResult;
+    DWORD cbData;
+    DWORD Type;
+    BYTE Data[512];
+    v0 = RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_Str_WOL_URL_RegKey, 0, 0x20019u, &phkResult);
+    if ( !v0 )
+  {
+    cbData = 512;
+    v1 = RegQueryValueExA(phkResult, g_INI_Key_Community, 0, &Type, Data, &cbData);
+    LOBYTE(v0) = RegCloseKey(phkResult);
+    if ( !v1 )
+    LOBYTE(v0) = OpenURLWOL((const char *)Data, 0);
+  }
+    return v0;
+}
+}
+} // namespace gamemd
+
+// 0x79AE00
+namespace gamemd {
+int sub_79AE00(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
+{
+{
+    int result;
+    LONG WindowLongA;
+    UINT v6;
+    if ( a2 == 272 )
+  {
+    if ( a4 )
+    SetWindowLongA(hWnd, 8, *(int *)(a4 + 4));
+  }
+    result = BaseDialogProc(hWnd, a2, a3, a4);
+    if ( !result )
+  {
+    WindowLongA = GetWindowLongA(hWnd, 8);
+    if ( a2 > 0x2B )
+    {
+    if ( a2 == 273 )
+      {
+    if ( (unsigned short)a3 == 1 )
+        {
+    ReadSettingsWOL(&g_WebBrowser);
+    (*(void (__thiscall **)(LONG, HWND, int))(*(int *)(WindowLongA) + 4))(WindowLongA, hWnd, 1);
+        }
+    else if ( (unsigned short)a3 == 2 )
+        {
+    v6 = IsDlgButtonChecked(hWnd, 1785);
+    ReadWOLGameOption(v6 != 1);
+    (*(void (__thiscall **)(LONG, HWND, int))(*(int *)(WindowLongA) + 4))(WindowLongA, hWnd, 2);
+    return 0;
+        }
+      }
+    }
+    else
+    {
+    switch ( a2 )
+      {
+    case 0x2Bu: Dialog::Resize((char *)a4);
+    return 1;
+    case 0xFu: Dialog::DrawBackground(hWnd);
+    Dialog::StopBink(hWnd);
+    ValidateRect(hWnd, 0);
+    return 1;
+    case 0x14u: return 1;
+      }
+    }
+    return 0;
+  }
+    return result;
+}
 }
 } // namespace gamemd

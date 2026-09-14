@@ -505,20 +505,6 @@ int __stdcall VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 }
 } // namespace gamemd
 
-// 0x74B8D0
-namespace gamemd {
-int VoxelAnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x74B8F0
 namespace gamemd {
 long long VoxelAnimTypeClass::GetData(ObjectTypeClass * aP1, int a3)
@@ -608,6 +594,20 @@ int VoxelAnimTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   a2[2] = 1610642049;
   a2[3] = -1252326136;
   return 0;
+}
+} // namespace gamemd
+
+// 0x74B8D0
+namespace gamemd {
+int VoxelAnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
 }
 } // namespace gamemd
 

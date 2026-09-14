@@ -232,15 +232,6 @@ int __thiscall AbstractTypeClass::ProcessPower(char *this, AbstractClass *aP1)
 }
 }
 
-// 0x410C20
-int AbstractTypeClass::StubReturnFalse()
-{
-{
-    int result;
-    return result;
-}
-}
-
 // 0x410C30
 AbstractTypeClass * AbstractTypeClass::ddtor(char a2)
 {
@@ -269,6 +260,15 @@ AbstractTypeClass *__thiscall AbstractTypeClass::ddtor(_DWORD *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x410ca4*/
     __3_YAXPAX_Z(this); /*0x410ca7*/
   return (AbstractTypeClass *)this; /*0x410cb1*/
+}
+}
+
+// 0x410C20
+int AbstractTypeClass::StubReturnFalse()
+{
+{
+    int result;
+    return result;
 }
 }
 

@@ -75,20 +75,6 @@ int __fastcall LightningStorm::Start(int a1, int a2, int a3, #375 *a4)
 }
 } // namespace gamemd
 
-// 0x53A090
-namespace gamemd {
-char LightningStorm::End()
-{
-{
-    char result;
-    result = LightningStorm_Active;
-    if ( LightningStorm_Active )
-    LightningStorm_TimeToEnd = 1;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x53A100
 namespace gamemd {
 char LightningStorm::IsActive()
@@ -322,6 +308,20 @@ char __stdcall LightningStorm::Strike2(int a1, int a2, int a3)
     }
   }
   return (char)v11; /*0x53a693*/
+}
+}
+} // namespace gamemd
+
+// 0x53A090
+namespace gamemd {
+char LightningStorm::End()
+{
+{
+    char result;
+    result = LightningStorm_Active;
+    if ( LightningStorm_Active )
+    LightningStorm_TimeToEnd = 1;
+    return result;
 }
 }
 } // namespace gamemd

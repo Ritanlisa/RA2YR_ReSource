@@ -149,32 +149,6 @@ char __thiscall DisplayClass::_vt08(void *this)
 }
 }
 
-// 0x4A9700
-void DisplayClass::Update(PowerClass * aP1, int a3)
-{
-{
-    VectorCursor_uint_DynamicVectorClass_uint____13::Count(this, (int)aP1, a3);
-}
-}
-
-// 0x4A9840
-bool DisplayClass::SetCoordVisible(IUnknown * aP0, MouseClass * aP1, char a3)
-{
-{
-    if ( aP1->field_0 )
-  {
-    if ( !a3 )
-    return DisplayClass::GetCoordDelta(*(int **)&DataGlobal_87C374.__pad_579C[22548], (AbstractClass *)aP0) != -1;
-  }
-    else if ( !a3 )
-  {
-    return 0;
-  }
-    DisplayClass::ScrollTacticalView(*(int **)&DataGlobal_87C374.__pad_579C[22548], aP0, (IUnknown *)aP1->field_0);
-    return 1;
-}
-}
-
 // 0x4A9890
 char DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
 {
@@ -593,46 +567,6 @@ LABEL_12:
 }
 }
 
-// 0x4AAC10
-int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
-{
-{
-    int v5;
-    int *v6;
-    short v8;
-    int v9;
-    int v10;
-    int v11[3];
-    int v12;
-    int v13;
-    int v14[3];
-    v10 = 0;
-    v12 = 0;
-    v13 = 0;
-    if ( (a2 & 0x55) != 0 )
-  {
-    v5 = g_BinkMoviePlayer->headNode[0];
-    v12 = *(int *)g_BinkMoviePlayer->__pad_0;
-    v13 = v5;
-  }
-    else
-  {
-    (*(void (__thiscall **)(int))(**(int **)&DataGlobal_87F8E4.__pad_5568[10228] + 44))(*(int *)&DataGlobal_87F8E4.__pad_5568[10228]);
-    (*(void (__thiscall **)(int))(**(int **)&DataGlobal_87F8E4.__pad_5568[10228] + 48))(*(int *)&DataGlobal_87F8E4.__pad_5568[10228]);
-    v6 = (int *)(*(int (__thiscall **)(int, int *))(**(int **)&DataGlobal_87F8E4.__pad_5568[10228] + 52))( *(int *)&DataGlobal_87F8E4.__pad_5568[10228], v11);
-    v12 = *v6;
-    v13 = v6[1];
-  }
-    TacticalClass::TransformPixel(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], (IUnknown *)v11, (MouseClass *)&v12);
-    v12 -= *(int *)&DataGlobal_87F8E4.__pad_5568[8532];
-    v13 -= *(int *)&DataGlobal_87F8E4.__pad_5568[8536];
-    Tactical::MouseOver(&v12, (short *)&v9, v14, &v10, (bool *)&v8 + 1, (bool *)&a2);
-    if ( v9 != *(int *)&DataGlobal_87F8E4.__pad_1D4[3748] )
-    Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)v11, (MouseClass *)&v9);
-    return COMObject::ActivateThunk(this, 0, a3, 0);
-}
-}
-
 // 0x4AC310
 char DisplayClass::InitViewBounds(unsigned int * a2)
 {
@@ -744,57 +678,6 @@ wchar_t *__thiscall DisplayClass::_vt33(_DWORD *this, int a2)
 }
 }
 
-// 0x4AE6B0
-HWND DisplayClass::Render()
-{
-{
-    HWND result;
-    result = hWnd;
-    if ( hWnd )
-  {
-    result = (HWND)CloseWindow(hWnd);
-    hWnd = 0;
-  }
-    return result;
-}
-}
-
-// 0x4AE6F0
-int DisplayClass::SetSurface(unsigned int * a1)
-{
-{
-    int *v1;
-    int result;
-    v1 = DataGlobal_8A0360;
-    do
-  {
-    result = LayerClass::Load(v1, a1);
-    v1 += 6;
-  }
-    while ( (int)v1 < (int)&DataGlobal_8A03D8 );
-    return result;
-}
-}
-
-// 0x4AE720
-int DisplayClass::GetSurface(unsigned int * a1)
-{
-{
-    int *v1;
-    int result;
-    v1 = DataGlobal_8A0360;
-    do
-  {
-    result = LayerClass::Save(v1, a1);
-    if ( result < 0 )
-    break;
-    v1 += 6;
-  }
-    while ( (int)v1 < (int)&DataGlobal_8A03D8 );
-    return result;
-}
-}
-
 // 0x4AEAD0
 int DisplayClass::ExitMode()
 {
@@ -830,17 +713,6 @@ _DWORD *__thiscall DisplayClass::loc_4AEB50(_DWORD *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x4aeb88*/
     __3_YAXPAX_Z(this); /*0x4aeb8b*/
   return this; /*0x4aeb95*/
-}
-}
-
-// 0x4AEBB0
-unsigned int * DisplayClass::updateRenderState(char a2)
-{
-{
-    GadgetClass::Dtor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return &this->vfptr;
 }
 }
 
@@ -1086,5 +958,133 @@ int __thiscall DisplayClass::ReadFromBuffer(BufferStraw *this, void *a1, signed 
     return v7; /*0x7ba520*/
   }
   return result; /*0x7ba523*/
+}
+}
+
+// 0x4A9700
+void DisplayClass::Update(PowerClass * aP1, int a3)
+{
+{
+    VectorCursor_uint_DynamicVectorClass_uint____13::Count(this, (int)aP1, a3);
+}
+}
+
+// 0x4A9840
+bool DisplayClass::SetCoordVisible(IUnknown * aP0, MouseClass * aP1, char a3)
+{
+{
+    if ( aP1->field_0 )
+  {
+    if ( !a3 )
+    return DisplayClass::GetCoordDelta(*(int **)&DataGlobal_87C374.__pad_579C[22548], (AbstractClass *)aP0) != -1;
+  }
+    else if ( !a3 )
+  {
+    return 0;
+  }
+    DisplayClass::ScrollTacticalView(*(int **)&DataGlobal_87C374.__pad_579C[22548], aP0, (IUnknown *)aP1->field_0);
+    return 1;
+}
+}
+
+// 0x4AAC10
+int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
+{
+{
+    int v5;
+    int *v6;
+    short v8;
+    int v9;
+    int v10;
+    int v11[3];
+    int v12;
+    int v13;
+    int v14[3];
+    v10 = 0;
+    v12 = 0;
+    v13 = 0;
+    if ( (a2 & 0x55) != 0 )
+  {
+    v5 = g_BinkMoviePlayer->headNode[0];
+    v12 = *(int *)g_BinkMoviePlayer->__pad_0;
+    v13 = v5;
+  }
+    else
+  {
+    (*(void (__thiscall **)(int))(**(int **)&DataGlobal_87F8E4.__pad_5568[10228] + 44))(*(int *)&DataGlobal_87F8E4.__pad_5568[10228]);
+    (*(void (__thiscall **)(int))(**(int **)&DataGlobal_87F8E4.__pad_5568[10228] + 48))(*(int *)&DataGlobal_87F8E4.__pad_5568[10228]);
+    v6 = (int *)(*(int (__thiscall **)(int, int *))(**(int **)&DataGlobal_87F8E4.__pad_5568[10228] + 52))( *(int *)&DataGlobal_87F8E4.__pad_5568[10228], v11);
+    v12 = *v6;
+    v13 = v6[1];
+  }
+    TacticalClass::TransformPixel(*(int *)&DataGlobal_87F8E4.__pad_5568[9432], (IUnknown *)v11, (MouseClass *)&v12);
+    v12 -= *(int *)&DataGlobal_87F8E4.__pad_5568[8532];
+    v13 -= *(int *)&DataGlobal_87F8E4.__pad_5568[8536];
+    Tactical::MouseOver(&v12, (short *)&v9, v14, &v10, (bool *)&v8 + 1, (bool *)&a2);
+    if ( v9 != *(int *)&DataGlobal_87F8E4.__pad_1D4[3748] )
+    Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)v11, (MouseClass *)&v9);
+    return COMObject::ActivateThunk(this, 0, a3, 0);
+}
+}
+
+// 0x4AE6B0
+HWND DisplayClass::Render()
+{
+{
+    HWND result;
+    result = hWnd;
+    if ( hWnd )
+  {
+    result = (HWND)CloseWindow(hWnd);
+    hWnd = 0;
+  }
+    return result;
+}
+}
+
+// 0x4AE6F0
+int DisplayClass::SetSurface(unsigned int * a1)
+{
+{
+    int *v1;
+    int result;
+    v1 = DataGlobal_8A0360;
+    do
+  {
+    result = LayerClass::Load(v1, a1);
+    v1 += 6;
+  }
+    while ( (int)v1 < (int)&DataGlobal_8A03D8 );
+    return result;
+}
+}
+
+// 0x4AE720
+int DisplayClass::GetSurface(unsigned int * a1)
+{
+{
+    int *v1;
+    int result;
+    v1 = DataGlobal_8A0360;
+    do
+  {
+    result = LayerClass::Save(v1, a1);
+    if ( result < 0 )
+    break;
+    v1 += 6;
+  }
+    while ( (int)v1 < (int)&DataGlobal_8A03D8 );
+    return result;
+}
+}
+
+// 0x4AEBB0
+unsigned int * DisplayClass::updateRenderState(char a2)
+{
+{
+    GadgetClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
 }
 }

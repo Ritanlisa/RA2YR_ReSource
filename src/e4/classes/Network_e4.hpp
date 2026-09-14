@@ -15,7 +15,6 @@ struct Network {
     int IsBroadcastAddr();  // 0x53EE00
     bool processPacket(TechnoTypeClass * aP1);  // 0x53EF60
     char * FormatAddress(IUnknown * aP1);  // 0x53F0E0
-    short SetPort(IPXManagerClass * aP1);  // 0x53F200
     int SetConnectionParams(IUnknown * aP1, int a3, int a4, CellStruct * aP4);  // 0x540C60
     int sendData(AnimClass * aP1);  // 0x540F00
     int GetSendCount();  // 0x540F90
@@ -35,11 +34,8 @@ struct Network {
     int updateLatency();  // 0x542500
     unsigned int * SetPlayerCoords(IPXManagerClass * aP1);  // 0x543050
     int Disconnect();  // 0x543080
-    int SendSettingsRequest();  // 0x5B5E90
     int validateConnection(int a2, int a3);  // 0x5BCC40
     int SetupRematch();  // 0x5C46E0
-    char QueryAddress(IPXManagerClass * aP0, int a2, int a3, char a4);  // 0x5D90E0
-    short WaitForPacket(int a1, int a2);  // 0x5D9220
     int dispatchEvent();  // 0x5D93D0
     int ResolveAndConnect(unsigned char * a2);  // 0x5D9410
     unsigned short ResolveNetworkAddress(unsigned short a2);  // 0x5DA0B0
@@ -57,11 +53,15 @@ struct Network {
     wchar_t * ProcessAddressChange();  // 0x6640E0
     char * processAcknowledgment(IUnknown * aP1);  // 0x6642A0
     char * reconnect(DynamicVector * aP1, short a3);  // 0x664400
-    bool sendGameEvent(Modem * aP0, int _10, unsigned int * a2);  // 0x6956D0
     unsigned int * processGameEvent();  // 0x69B540
     int GetMaxPacketSize();  // 0x74FD20
     void SyncPlayerList();  // 0x792F10
     int finalizeSession();  // 0x7B2DB0
+    short SetPort(IPXManagerClass * aP1);  // 0x53F200
+    int SendSettingsRequest();  // 0x5B5E90
+    char QueryAddress(IPXManagerClass * aP0, int a2, int a3, char a4);  // 0x5D90E0
+    short WaitForPacket(int a1, int a2);  // 0x5D9220
+    bool sendGameEvent(Modem * aP0, int _10, unsigned int * a2);  // 0x6956D0
     int CopyAddress_Small(IPXManagerClass * aP1);  // 0x53EDC0
     int SendOptionsGame();  // 0x5E3720
     int InitPlayerSlots();  // 0x5E8B60

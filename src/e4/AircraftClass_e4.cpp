@@ -824,16 +824,6 @@ LABEL_18:
 }
 } // namespace gamemd
 
-// 0x41B5C0
-namespace gamemd {
-HRESULT AircraftClass::CheckPassengerCount(IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2)
-{
-{
-    return ObjectClass::SaveToStream_Common(a0, aP1, a2);
-}
-}
-} // namespace gamemd
-
 // 0x41B980
 namespace gamemd {
 int AircraftClass::IsBelowScreen()
@@ -936,6 +926,51 @@ LABEL_4:
 }
 } // namespace gamemd
 
+// 0x41C1D0
+namespace gamemd {
+int AircraftClass::CheckMissionAbort()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall AircraftClass::_vt36(_DWORD *this)
+{
+  return *(_DWORD *)(*(this + 433) + 96); /*0x41c1d9*/
+}
+}
+} // namespace gamemd
+
+// 0x41C210
+namespace gamemd {
+AircraftClass * AircraftClass::CheckActionStatus(char a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+AircraftClass *__thiscall AircraftClass::CheckActionStatus(void **this, char a2)
+{
+  AircraftClass::Destruct(this); /*0x41c213*/
+  if ( (a2 & 1) != 0 ) /*0x41c21d*/
+    __3_YAXPAX_Z(this); /*0x41c220*/
+  return (AircraftClass *)this; /*0x41c22a*/
+}
+}
+} // namespace gamemd
+
+// 0x41B5C0
+namespace gamemd {
+HRESULT AircraftClass::CheckPassengerCount(IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2)
+{
+{
+    return ObjectClass::SaveToStream_Common(a0, aP1, a2);
+}
+}
+} // namespace gamemd
+
+// 0x41BE60
+namespace gamemd {
+int AircraftClass::LandingCheckStub()
+{
+return 0;
+}
+} // namespace gamemd
+
 // 0x41BE80
 namespace gamemd {
 int AircraftClass::CheckStateFlag()
@@ -992,51 +1027,6 @@ char AircraftClass::CheckDockState()
 }
 } // namespace gamemd
 
-// 0x41C1D0
-namespace gamemd {
-int AircraftClass::CheckMissionAbort()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AircraftClass::_vt36(_DWORD *this)
-{
-  return *(_DWORD *)(*(this + 433) + 96); /*0x41c1d9*/
-}
-}
-} // namespace gamemd
-
-// 0x41C200
-namespace gamemd {
-int AircraftClass::CheckMissionFail()
-{
-{
-    return this->Type;
-}
-}
-} // namespace gamemd
-
-// 0x41C210
-namespace gamemd {
-AircraftClass * AircraftClass::CheckActionStatus(char a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-AircraftClass *__thiscall AircraftClass::CheckActionStatus(void **this, char a2)
-{
-  AircraftClass::Destruct(this); /*0x41c213*/
-  if ( (a2 & 1) != 0 ) /*0x41c21d*/
-    __3_YAXPAX_Z(this); /*0x41c220*/
-  return (AircraftClass *)this; /*0x41c22a*/
-}
-}
-} // namespace gamemd
-
-// 0x41BE60
-namespace gamemd {
-int AircraftClass::LandingCheckStub()
-{
-return 0;
-}
-} // namespace gamemd
-
 // 0x41C190
 namespace gamemd {
 int AircraftClass::PowerDrainProcess(int a1, unsigned int * a2)
@@ -1048,6 +1038,16 @@ int AircraftClass::PowerDrainProcess(int a1, unsigned int * a2)
   a2[2] = -1610610249;
   a2[3] = -777003740;
   return 0;
+}
+} // namespace gamemd
+
+// 0x41C200
+namespace gamemd {
+int AircraftClass::CheckMissionFail()
+{
+{
+    return this->Type;
+}
 }
 } // namespace gamemd
 

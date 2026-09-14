@@ -117,6 +117,16 @@ int __thiscall StreamClass::Set(_DWORD *this, IUnknown *aP1)
 }
 }
 
+// 0x55A930
+char StreamClass::GetDirty(int a1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __stdcall StreamClass_GetDirty(int a1)
+{
+  return *(_BYTE *)(a1 + 12); /*0x55a937*/
+}
+}
+
 // 0x4B4C30
 BOOL StreamClass::IsInactive(IUnknown * aP0)
 {
@@ -158,15 +168,5 @@ int StreamClass::ClearDirty(unsigned char * a1)
 {
     *((int*)(a1) + 12) = 0;
     return (*(int (__stdcall **)(char *))(*(int *)(a1) + 96))(a1);
-}
-}
-
-// 0x55A930
-char StreamClass::GetDirty(int a1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall StreamClass_GetDirty(int a1)
-{
-  return *(_BYTE *)(a1 + 12); /*0x55a937*/
 }
 }

@@ -120,6 +120,8 @@ int __thiscall RadioClass::PowerDrainUpdate(int *this, AbstractClass *aP1)
 // 0x65AB80
 namespace ra2 {
 namespace game {
+int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall RadioClass::LoadState(void *this, ObjectClass *aP1, ObjectClass *aP2)
 {
@@ -187,46 +189,6 @@ LABEL_8:
     }
   }
   return result; /*0x65ac37*/
-}
-} // namespace game
-} // namespace ra2
-
-// 0x65AC40
-namespace ra2 {
-namespace game {
-int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
-{
-{
-    int result;
-    int v4;
-    int v5;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)a0, (ObjectTypeClass *)aP1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-  {
-    v4 = *(int *)aP1->__pad_0;
-    aP2 = *((int*)(a0) + 58);
-    result = (*(int (__stdcall **)(RadioClass *, int *, int, int))(v4 + 16))(aP1, &aP2, 4, 0);
-    if ( result >= 0 )
-    {
-    v5 = 0;
-    if ( aP2 <= 0 )
-      {
-    return 0;
-      }
-    else
-      {
-    while ( 1 )
-        {
-    result = (*(int (__stdcall **)(RadioClass *, int, int, int))(*(int *)aP1->__pad_0 + 16))( aP1, *((int*)(a0) + 57) + 4 * v5, 4, 0);
-    if ( result < 0 )
-    break;
-    if ( ++v5 >= aP2 )
-    return 0;
-        }
-      }
-    }
-  }
-    return result;
 }
 }
 } // namespace game
@@ -311,6 +273,47 @@ void __thiscall RadioClass::SetLinkCount(_DWORD *this, int a2)
     }
     while ( v4 < a2 ); /*0x65ae9c*/
   }
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x65AC40
+namespace ra2 {
+namespace game {
+int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
+{
+{
+    int result;
+    int v4;
+    int v5;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)a0, (ObjectTypeClass *)aP1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+  {
+    v4 = *(int *)aP1->__pad_0;
+    aP2 = *((int*)(a0) + 58);
+    result = (*(int (__stdcall **)(RadioClass *, int *, int, int))(v4 + 16))(aP1, &aP2, 4, 0);
+    if ( result >= 0 )
+    {
+    v5 = 0;
+    if ( aP2 <= 0 )
+      {
+    return 0;
+      }
+    else
+      {
+    while ( 1 )
+        {
+    result = (*(int (__stdcall **)(RadioClass *, int, int, int))(*(int *)aP1->__pad_0 + 16))( aP1, *((int*)(a0) + 57) + 4 * v5, 4, 0);
+    if ( result < 0 )
+    break;
+    if ( ++v5 >= aP2 )
+    return 0;
+        }
+      }
+    }
+  }
+    return result;
 }
 }
 } // namespace game

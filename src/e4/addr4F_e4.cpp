@@ -709,31 +709,6 @@ int __thiscall sub_4F2770(char *this, int a2)
 }
 } // namespace gamemd
 
-// 0x4F2C00
-namespace gamemd {
-unsigned int * E4Recv_4F2C00::sub_4F2C00(int a2, int a3)
-{
-{
-    this->M4 = 0;
-    this->M8 = a2;
-    this->M12 = 1;
-    this->M13 = 0;
-    *(void**)this = &vt_VectorClass_GraphicMenuItem;
-    if ( a2 )
-  {
-    if ( a3 )
-    {
-    this->M4 = a3;
-    return this;
-    }
-    this->M4 = __2_YAPAXI_Z(4 * a2);
-    this->M13 = 1;
-  }
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x4F2C70
 namespace gamemd {
 int ParseINIAnimGadgetDefinition()
@@ -1259,61 +1234,6 @@ _DWORD *__fastcall sub_4F3B80(ObjectClass *a1, ObjectClass *edx0)
 }
 } // namespace gamemd
 
-// 0x4F3C40
-namespace gamemd {
-unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
-{
-{
-    int *v3;
-    int *v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    v3 = this;
-    GraphicMenuItem::Constructor(this, a2);
-    v4 = v3 + 4;
-    v3[5] = 0;
-    v3[6] = 0;
-    *((char *)(v3) + 28) = 1;
-    *((char *)(v3) + 29) = 0;
-    v3[4] = &vt_DynamicVectorClass_unsigned_int;
-    v3[9] = 10;
-    v3[8] = 0;
-    *v3 = &vt_GraphicMenuShortcutItem;
-    unknown_libname_73(&a2);
-    v5 = String::Tokenize(a3, 0, Delimiter, (void **)&a2);
-    if ( String::Length((const char **)&a2) )
-  {
-    do
-    {
-    v6 = sub_4F3D40((const char **)&a2);
-    if ( v6 )
-      {
-    v7 = v4[2];
-    if ( v4[4] < v7 || (*((char *)(v4) + 13) || !v7) && (v8 = v4[5], v8 > 0) && (*(unsigned char (__thiscall **)(int *, int, int))(*v4 + 8))(v4, v7 + v8, 0) )
-        {
-    v9 = v4[4];
-    v10 = v4[1];
-    v4[4] = v9 + 1;
-    *(int *)(v10 + 4 * v9) = v6;
-        }
-      }
-    v5 = String::Tokenize(a3, v5, DataGlobal_824370, (void **)&a2);
-    if ( v5 == -1 )
-    DeleteAndZero::Alt2((void **)&a2);
-    }
-    while ( String::Length((const char **)&a2) );
-    v3 = this;
-  }
-    DeleteAndZero((void **)&a2);
-    return v3;
-}
-}
-} // namespace gamemd
-
 // 0x4F3D40
 namespace gamemd {
 int E4Recv_4F3D40::sub_4F3D40()
@@ -1430,45 +1350,6 @@ _BYTE *__userpurge sub_4F4E53@<eax>(
   }
   while ( v7 ); /*0x4f4ea3*/
   return result; /*0x4f4ea9*/
-}
-}
-} // namespace gamemd
-
-// 0x4F5130
-namespace gamemd {
-void sub_4F5130()
-{
-{
-    if ( (DataGlobal_A8EF60 & 1) == 0 )
-  {
-    DataGlobal_A8EFC8 = (int)&vt_VectorClass_HouseClass_BuildChoiceClass;
-    DataGlobal_A8EF60 |= 1u;
-    if ( DataGlobal_A8EFCC )
-    {
-    if ( DataGlobal_A8EFD5 )
-      {
-    __3_YAXPAX_Z(DataGlobal_A8EFCC);
-    DataGlobal_A8EFCC = 0;
-      }
-    }
-    DataGlobal_A8EFD5 = 0;
-    DataGlobal_A8EFD0 = 0;
-  }
-}
-}
-} // namespace gamemd
-
-// 0x4F7850
-namespace gamemd {
-unsigned int * E4Recv_4F7850::sub_4F7850()
-{
-{
-    *(void**)this = 0;
-    this->M4 = 1;
-    this->M8 = 0;
-    this->M12 = 0;
-    this->M16 = -1;
-    return this;
 }
 }
 } // namespace gamemd
@@ -1590,39 +1471,6 @@ int __thiscall sub_4FA210(void *this, int a2, int a3)
   if ( !v4 && v14 ) /*0x4fa2c2*/
     __3_YAXPAX_Z(v9); /*0x4fa2c5*/
   return a2; /*0x4fa2cf*/
-}
-}
-} // namespace gamemd
-
-// 0x4FBD00
-namespace gamemd {
-char E4Recv_4FBD00::sub_4FBD00(int a2)
-{
-{
-    int v2;
-    int *v4;
-    int v5;
-    v2 = 0;
-    if ( HouseClass_Count <= 0 )
-    return 0;
-    while ( 1 )
-  {
-    v4 = *(int **)&HouseClass_Array->__pad_0[4 * v2];
-    if ( v4 )
-    {
-    if ( v4 != this )
-      {
-    v5 = v4[12];
-    if ( v5 != this->M48 && (v5 == -1 || ((1 << v5) & this->M22408) == 0) && DynamicVector::GetOrGrow(v4 + 5460, a2) > 0 )
-        {
-    break;
-        }
-      }
-    }
-    if ( ++v2 >= HouseClass_Count )
-    return 0;
-  }
-    return 1;
 }
 }
 } // namespace gamemd
@@ -1951,6 +1799,31 @@ int E4Recv_4F2280::sub_4F2280(int a2, int a3)
 }
 } // namespace gamemd
 
+// 0x4F2C00
+namespace gamemd {
+unsigned int * E4Recv_4F2C00::sub_4F2C00(int a2, int a3)
+{
+{
+    this->M4 = 0;
+    this->M8 = a2;
+    this->M12 = 1;
+    this->M13 = 0;
+    *(void**)this = &vt_VectorClass_GraphicMenuItem;
+    if ( a2 )
+  {
+    if ( a3 )
+    {
+    this->M4 = a3;
+    return this;
+    }
+    this->M4 = __2_YAPAXI_Z(4 * a2);
+    this->M13 = 1;
+  }
+    return this;
+}
+}
+} // namespace gamemd
+
 // 0x4F2C50
 namespace gamemd {
 int sub_4F2C50()
@@ -2003,6 +1876,61 @@ int sub_4F3B60()
     DataGlobal_A8EED0 = 0;
     DataGlobal_A8EED4 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4F3C40
+namespace gamemd {
+unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
+{
+{
+    int *v3;
+    int *v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    v3 = this;
+    GraphicMenuItem::Constructor(this, a2);
+    v4 = v3 + 4;
+    v3[5] = 0;
+    v3[6] = 0;
+    *((char *)(v3) + 28) = 1;
+    *((char *)(v3) + 29) = 0;
+    v3[4] = &vt_DynamicVectorClass_unsigned_int;
+    v3[9] = 10;
+    v3[8] = 0;
+    *v3 = &vt_GraphicMenuShortcutItem;
+    unknown_libname_73(&a2);
+    v5 = String::Tokenize(a3, 0, Delimiter, (void **)&a2);
+    if ( String::Length((const char **)&a2) )
+  {
+    do
+    {
+    v6 = sub_4F3D40((const char **)&a2);
+    if ( v6 )
+      {
+    v7 = v4[2];
+    if ( v4[4] < v7 || (*((char *)(v4) + 13) || !v7) && (v8 = v4[5], v8 > 0) && (*(unsigned char (__thiscall **)(int *, int, int))(*v4 + 8))(v4, v7 + v8, 0) )
+        {
+    v9 = v4[4];
+    v10 = v4[1];
+    v4[4] = v9 + 1;
+    *(int *)(v10 + 4 * v9) = v6;
+        }
+      }
+    v5 = String::Tokenize(a3, v5, DataGlobal_824370, (void **)&a2);
+    if ( v5 == -1 )
+    DeleteAndZero::Alt2((void **)&a2);
+    }
+    while ( String::Length((const char **)&a2) );
+    v3 = this;
+  }
+    DeleteAndZero((void **)&a2);
+    return v3;
 }
 }
 } // namespace gamemd
@@ -2368,11 +2296,83 @@ int sub_4F50F0()
 }
 } // namespace gamemd
 
+// 0x4F5130
+namespace gamemd {
+void sub_4F5130()
+{
+{
+    if ( (DataGlobal_A8EF60 & 1) == 0 )
+  {
+    DataGlobal_A8EFC8 = (int)&vt_VectorClass_HouseClass_BuildChoiceClass;
+    DataGlobal_A8EF60 |= 1u;
+    if ( DataGlobal_A8EFCC )
+    {
+    if ( DataGlobal_A8EFD5 )
+      {
+    __3_YAXPAX_Z(DataGlobal_A8EFCC);
+    DataGlobal_A8EFCC = 0;
+      }
+    }
+    DataGlobal_A8EFD5 = 0;
+    DataGlobal_A8EFD0 = 0;
+  }
+}
+}
+} // namespace gamemd
+
 // 0x4F6EB0
 namespace gamemd {
 void nullsub_15()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x4F7850
+namespace gamemd {
+unsigned int * E4Recv_4F7850::sub_4F7850()
+{
+{
+    *(void**)this = 0;
+    this->M4 = 1;
+    this->M8 = 0;
+    this->M12 = 0;
+    this->M16 = -1;
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x4FBD00
+namespace gamemd {
+char E4Recv_4FBD00::sub_4FBD00(int a2)
+{
+{
+    int v2;
+    int *v4;
+    int v5;
+    v2 = 0;
+    if ( HouseClass_Count <= 0 )
+    return 0;
+    while ( 1 )
+  {
+    v4 = *(int **)&HouseClass_Array->__pad_0[4 * v2];
+    if ( v4 )
+    {
+    if ( v4 != this )
+      {
+    v5 = v4[12];
+    if ( v5 != this->M48 && (v5 == -1 || ((1 << v5) & this->M22408) == 0) && DynamicVector::GetOrGrow(v4 + 5460, a2) > 0 )
+        {
+    break;
+        }
+      }
+    }
+    if ( ++v2 >= HouseClass_Count )
+    return 0;
+  }
+    return 1;
+}
 }
 } // namespace gamemd
 

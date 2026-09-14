@@ -6,8 +6,10 @@
 // 0x724AA0
 char ToolTipManager::addRef(int a1)
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __stdcall ToolTipManager::_vt01(int a1)
 {
-    return 1;
+  return 1; /*0x724aa2*/
 }
 }
 
@@ -25,14 +27,6 @@ int __thiscall ToolTipManager::_vt03(int this, char a2)
   if ( result ) /*0x724b95*/
     return (*(int (__thiscall **)(int, int))(*(_DWORD *)this + 16))(this, this + 24); /*0x724b9f*/
   return result; /*0x724ba2*/
-}
-}
-
-// 0x724BB0
-void ToolTipManager::read(int a1)
-{
-{
-    Debug::Log();
 }
 }
 
@@ -60,6 +54,14 @@ DynamicVector *__thiscall ToolTipManager_7_::QueryInterface(_DWORD *this, char a
 }
 }
 } // namespace gamemd
+
+// 0x724BB0
+void ToolTipManager::read(int a1)
+{
+{
+    Debug::Log();
+}
+}
 
 // 0x724BD0
 int ToolTipManager::stubReturnFalse(int a1)

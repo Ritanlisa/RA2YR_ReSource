@@ -20,11 +20,11 @@ struct BinkMovie {
     int HandleKeyboard(int a1, HWND a2);  // 0x6033F0
     int WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam);  // 0x6153E0
     void Destroy();  // 0x6C9930
-    int * CreateSurfaceTracker();  // 0x6C99D0
     int FreeSurfaceTracker();  // 0x6C9AE0
     char InitKeyframeTracking(char * Source);  // 0x6C9B40
     char CheckKeyframeTransition(CellStruct * aP1);  // 0x6C9C60
     void ProcessKeyframe(ObjectClass * aP1);  // 0x6C9D40
     unsigned int * VtableDispatch(int a2);  // 0x6C9EC0
+    int * CreateSurfaceTracker();  // 0x6C99D0
 };
 } // namespace gamemd

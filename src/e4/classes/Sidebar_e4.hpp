@@ -11,7 +11,7 @@ struct Sidebar {
     char RemoveItem(int a2);  // 0x63F040
     int Render(char a2);  // 0x63FB20
     int ActivateTab(IUnknown * aP1);  // 0x6A60A0
-    char FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4);  // 0x6A6140
     void FlushSidebarTooltip(char a2);  // 0x6A70E0
+    char FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4);  // 0x6A6140
 };
 } // namespace gamemd

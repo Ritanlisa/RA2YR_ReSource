@@ -150,16 +150,19 @@
 // 0x40B120
 int VectorClass::Clear(int a2, int a3)
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall VectorClass::_vt06(_DWORD *this, int a2, int a3)
 {
-    int v3;
-    int v4;
-    int v5;
-    v3 = this->Items;
-    v4 = *(int *)(v3 + 8 * a3);
-    v5 = v3 + 8 * a3;
-    *(int *)a2 = v4;
-    *(char *)(a2 + 4) = *(char *)(v5 + 4);
-    return a2;
+  int v3; // eax
+  int v4; // edx
+  int v5; // ecx
+
+  v3 = *(this + 1); /*0x40b120*/
+  v4 = *(_DWORD *)(v3 + 8 * a3); /*0x40b127*/
+  v5 = v3 + 8 * a3; /*0x40b12a*/
+  *(_DWORD *)a2 = v4; /*0x40b131*/
+  *(_BYTE *)(a2 + 4) = *(_BYTE *)(v5 + 4); /*0x40b136*/
+  return a2; /*0x40b139*/
 }
 }
 
@@ -252,31 +255,6 @@ _DWORD *__thiscall VectorClass::Copy(_DWORD *this, VectorClass *aP1)
   *(this + 5) = aP1[1].Items; /*0x477827*/
   *this = &vt_TypeList_int; /*0x47782a*/
   return this; /*0x477832*/
-}
-}
-
-// 0x4A7FE0
-char VectorClass::AppendCopy(DynamicVector * aP1)
-{
-{
-    int v3;
-    int v4;
-    int v6;
-    int v7;
-    v3 = this->Capacity;
-    if ( this->Count >= v3 )
-  {
-    if ( !this->IsAllocated && v3 )
-    return 0;
-    v4 = this->CapacityIncrement;
-    if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
-    return 0;
-  }
-    v6 = this->Count;
-    v7 = this->Items;
-    this->Count = v6 + 1;
-    *(int *)(v7 + 4 * v6) = *(int *)aP1->__pad_0;
-    return 1;
 }
 }
 
@@ -376,56 +354,6 @@ int __thiscall VectorClass::RemoveItem(int *this, ObjectClass *aP1)
 }
 }
 
-// 0x630250
-char VectorClass::PushBackCopy(AbstractClass * aP1)
-{
-{
-    int v3;
-    int v4;
-    int v6;
-    int v7;
-    v3 = this->Capacity;
-    if ( this->Count >= v3 )
-  {
-    if ( !this->IsAllocated && v3 )
-    return 0;
-    v4 = this->CapacityIncrement;
-    if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
-    return 0;
-  }
-    v6 = this->Count;
-    v7 = this->Items;
-    this->Count = v6 + 1;
-    *(int *)(v7 + 4 * v6) = *(int *)aP1->__pad_0;
-    return 1;
-}
-}
-
-// 0x63E540
-char VectorClass::Append(VectorClass * aP1)
-{
-{
-    int v3;
-    int v4;
-    int v6;
-    int v7;
-    v3 = this->Capacity;
-    if ( this->Count >= v3 )
-  {
-    if ( !this->IsAllocated && v3 )
-    return 0;
-    v4 = this->CapacityIncrement;
-    if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
-    return 0;
-  }
-    v6 = this->Count;
-    v7 = this->Items;
-    this->Count = v6 + 1;
-    *(int *)(v7 + 4 * v6) = *(int *)aP1->vtable0;
-    return 1;
-}
-}
-
 // 0x65A970
 int VectorClass::RemoveElement()
 {
@@ -516,48 +444,6 @@ LABEL_20:
     return 1; /*0x65aa66*/
   }
   return 10; /*0x65a98a*/
-}
-}
-
-// 0x67A630
-int VectorClass::LoadStream(TechnoTypeClass * aP1)
-{
-{
-    int v3;
-    int result;
-    int i;
-    int v6;
-    v3 = *(int *)aP1->vtable0;
-    v6 = this->Count;
-    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
-    result = v6;
-    for ( i = 0; i < v6; ++i )
-  {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->Items + 4 * i, 4, 0);
-    result = v6;
-  }
-    return result;
-}
-}
-
-// 0x67A850
-int VectorClass::SaveLoad(TechnoTypeClass * aP1)
-{
-{
-    int v3;
-    int result;
-    int i;
-    int v6;
-    v3 = *(int *)aP1->vtable0;
-    v6 = this->Count;
-    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
-    result = v6;
-    for ( i = 0; i < v6; ++i )
-  {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->Items + 4 * i, 4, 0);
-    result = v6;
-  }
-    return result;
 }
 }
 
@@ -1831,36 +1717,6 @@ int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_501400(int a1)
     *(_BYTE *)(a1 + 549) = 1; /*0x50151c*/
     return 0; /*0x501523*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x502550
-namespace gamemd {
-int VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer_0(int a1, const void * a2, unsigned int * a3)
-{
-{
-    int v4;
-    int v5;
-    char v6[16];
-    if ( !a3 )
-    return -2147467261;
-    *a3 = 0;
-    v4 = 0;
-    if ( *(int *)(a1 + 90184) <= 0 )
-    return -2147220990;
-    while ( 1 )
-  {
-    v5 = *(int *)(*(int *)(a1 + 90172) + 4 * v4);
-    (*(void (__stdcall **)(int, char *))(*(int *)(v5) + 12))(v5, v6);
-    if ( !memcmp(v6, a2, 0x10u) )
-    break;
-    if ( ++v4 >= *(int *)(a1 + 90184) )
-    return -2147220990;
-  }
-    *a3 = v5;
-    (*(void (__stdcall **)(int))(*(int *)(v5) + 4))(v5);
-    return 0;
 }
 }
 } // namespace gamemd
@@ -9899,6 +9755,31 @@ VectorClass * VectorClass_UtagCONNECTDATA::QueryInterface(unsigned int * Block, 
 }
 }
 } // namespace gamemd
+
+// 0x4A7FE0
+char VectorClass::AppendCopy(DynamicVector * aP1)
+{
+{
+    int v3;
+    int v4;
+    int v6;
+    int v7;
+    v3 = this->Capacity;
+    if ( this->Count >= v3 )
+  {
+    if ( !this->IsAllocated && v3 )
+    return 0;
+    v4 = this->CapacityIncrement;
+    if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
+    return 0;
+  }
+    v6 = this->Count;
+    v7 = this->Items;
+    this->Count = v6 + 1;
+    *(int *)(v7 + 4 * v6) = *(int *)aP1->__pad_0;
+    return 1;
+}
+}
 
 // 0x4B9C30
 namespace gamemd {
@@ -21316,6 +21197,36 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer(int a1
 }
 } // namespace gamemd
 
+// 0x502550
+namespace gamemd {
+int VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer_0(int a1, const void * a2, unsigned int * a3)
+{
+{
+    int v4;
+    int v5;
+    char v6[16];
+    if ( !a3 )
+    return -2147467261;
+    *a3 = 0;
+    v4 = 0;
+    if ( *(int *)(a1 + 90184) <= 0 )
+    return -2147220990;
+    while ( 1 )
+  {
+    v5 = *(int *)(*(int *)(a1 + 90172) + 4 * v4);
+    (*(void (__stdcall **)(int, char *))(*(int *)(v5) + 12))(v5, v6);
+    if ( !memcmp(v6, a2, 0x10u) )
+    break;
+    if ( ++v4 >= *(int *)(a1 + 90184) )
+    return -2147220990;
+  }
+    *a3 = v5;
+    (*(void (__stdcall **)(int))(*(int *)(v5) + 4))(v5);
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x50E4A0
 namespace gamemd {
 void VectorClass_UScoutStruct___33::ddtor()
@@ -31333,6 +31244,31 @@ VectorClass * VectorClass_ptr_ParasiteClass::QueryInterface(unsigned int * Block
 }
 } // namespace gamemd
 
+// 0x630250
+char VectorClass::PushBackCopy(AbstractClass * aP1)
+{
+{
+    int v3;
+    int v4;
+    int v6;
+    int v7;
+    v3 = this->Capacity;
+    if ( this->Count >= v3 )
+  {
+    if ( !this->IsAllocated && v3 )
+    return 0;
+    v4 = this->CapacityIncrement;
+    if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
+    return 0;
+  }
+    v6 = this->Count;
+    v7 = this->Items;
+    this->Count = v6 + 1;
+    *(int *)(v7 + 4 * v6) = *(int *)aP1->__pad_0;
+    return 1;
+}
+}
+
 // 0x63DB60
 namespace gamemd {
 void VectorClass_ptr_PlanningMemberClass::Destroy()
@@ -31780,6 +31716,31 @@ int VectorClass_ptr_PlanningMemberClass::FindItemIndex_0(unsigned int * a2)
 }
 }
 } // namespace gamemd
+
+// 0x63E540
+char VectorClass::Append(VectorClass * aP1)
+{
+{
+    int v3;
+    int v4;
+    int v6;
+    int v7;
+    v3 = this->Capacity;
+    if ( this->Count >= v3 )
+  {
+    if ( !this->IsAllocated && v3 )
+    return 0;
+    v4 = this->CapacityIncrement;
+    if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
+    return 0;
+  }
+    v6 = this->Count;
+    v7 = this->Items;
+    this->Count = v6 + 1;
+    *(int *)(v7 + 4 * v6) = *(int *)aP1->vtable0;
+    return 1;
+}
+}
 
 // 0x63E900
 char VectorClass::EraseAt(IUnknown * aP1)
@@ -32916,6 +32877,48 @@ void VectorClass::Dtor()
   }
     this->IsAllocated = 0;
     this->Capacity = 0;
+}
+}
+
+// 0x67A630
+int VectorClass::LoadStream(TechnoTypeClass * aP1)
+{
+{
+    int v3;
+    int result;
+    int i;
+    int v6;
+    v3 = *(int *)aP1->vtable0;
+    v6 = this->Count;
+    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
+    result = v6;
+    for ( i = 0; i < v6; ++i )
+  {
+    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->Items + 4 * i, 4, 0);
+    result = v6;
+  }
+    return result;
+}
+}
+
+// 0x67A850
+int VectorClass::SaveLoad(TechnoTypeClass * aP1)
+{
+{
+    int v3;
+    int result;
+    int i;
+    int v6;
+    v3 = *(int *)aP1->vtable0;
+    v6 = this->Count;
+    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
+    result = v6;
+    for ( i = 0; i < v6; ++i )
+  {
+    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->Items + 4 * i, 4, 0);
+    result = v6;
+  }
+    return result;
 }
 }
 

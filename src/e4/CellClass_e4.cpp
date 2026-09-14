@@ -2,16 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x48BA80
-namespace gamemd {
-int CellClass::GetBridgeIndex()
-{
-{
-    return this->rubble;
-}
-}
-} // namespace gamemd
-
 // 0x544C80
 namespace gamemd {
 BOOL CellClass::EnsureFileLoaded()
@@ -22,24 +12,6 @@ BOOL __thiscall sub_544C80(int this)
   if ( !*(_DWORD *)(this + 164) && *(_BYTE *)(this + 756) ) /*0x544c8d*/
     MapClass::LoadFileData(this); /*0x544c97*/
   return *(_DWORD *)(this + 164) != 0; /*0x544ca9*/
-}
-}
-} // namespace gamemd
-
-// 0x56BCD0
-namespace gamemd {
-int CellClass::GetTileData(IUnknown * aP0, IUnknown * aP1)
-{
-{
-    unsigned int v2;
-    int *v3;
-    v2 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9);
-    if ( v2 >= 0x40000 || (v3 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v2)) == 0 )
-  {
-    g_Map_GlobalCellIndex = (IUnknown *)aP0->field_0;
-    v3 = g_CellClassArray;
-  }
-    return *(int *)&aP1->__pad_579C[520 * ((short)HIWORD(v3[9]) / 4) + 596 + 4 * ((short)v3[9] / 4)];
 }
 }
 } // namespace gamemd
@@ -1142,116 +1114,6 @@ char __stdcall CellClass::UpdateVariant8(IUnknown *aP0, IUnknown *aP1)
 }
 } // namespace gamemd
 
-// 0x572B80
-namespace gamemd {
-char CellClass::SetTileType13(IUnknown * aP0, int a2)
-{
-{
-    int v2;
-    short v3;
-    unsigned int v4;
-    int *v5;
-    unsigned char v6;
-    int v7;
-    v2 = a2 & 7;
-    v3 = *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 160];
-    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 162];
-    LOWORD(a2) = LOWORD(aP0->field_0) + v3;
-    HIWORD(a2) = v2;
-    v4 = (short)a2 + ((short)v2 << 9);
-    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v4)) == 0 )
-  {
-    g_Map_GlobalCellIndex = (IUnknown *)a2;
-    v5 = g_CellClassArray;
-  }
-    if ( *((char *)(v5) + 320) < 0 )
-  {
-    v6 = *((char *)(v5) + 286);
-    if ( v6 >= 9u )
-    {
-    if ( v6 <= 0xCu )
-      {
-    *((char *)(v5) + 286) = 14;
-      }
-    else if ( v6 == 13 )
-      {
-    *((char *)(v5) + 286) = 15;
-      }
-    }
-  }
-    v7 = v5[14] - g_Cell_BuildabilityLUT + 1;
-    if ( v7 == DataGlobal_ABC1D0 || v7 == DataGlobal_AA1540 )
-  {
-    LOBYTE(v7) = Cell::UpdateTileType((IUnknown *)&a2, (IUnknown *)1, 0);
-  }
-    else if ( v7 == g_TerrainSoundConfig )
-  {
-    LOBYTE(v7) = Cell::SetTileType( (IUnknown *)&a2, (IUnknown *)(g_Cell_BuildabilityLUT + g_TerrainSoundConfig), (IUnknown *)0xFFFFFFFF, (IUnknown *)0xFFFFFFFF, 0);
-  }
-    else if ( v7 == g_TerrainSoundConfig + 2 )
-  {
-    LOBYTE(v7) = Cell::SetTileType( (IUnknown *)&a2, (IUnknown *)(g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 2), (IUnknown *)0xFFFFFFFF, (IUnknown *)0xFFFFFFFF, 0);
-  }
-    return v7;
-}
-}
-} // namespace gamemd
-
-// 0x572C90
-namespace gamemd {
-char CellClass::SetTileType14(IUnknown * aP0, int a2)
-{
-{
-    int v2;
-    short v3;
-    unsigned int v4;
-    int *v5;
-    unsigned char v6;
-    int v7;
-    v2 = a2 & 7;
-    v3 = *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 160];
-    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 162];
-    LOWORD(a2) = LOWORD(aP0->field_0) + v3;
-    HIWORD(a2) = v2;
-    v4 = (short)a2 + ((short)v2 << 9);
-    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v4)) == 0 )
-  {
-    g_Map_GlobalCellIndex = (IUnknown *)a2;
-    v5 = g_CellClassArray;
-  }
-    if ( *((char *)(v5) + 320) < 0 )
-  {
-    v6 = *((char *)(v5) + 286);
-    if ( v6 >= 9u )
-    {
-    if ( v6 <= 0xCu )
-      {
-    *((char *)(v5) + 286) = 13;
-      }
-    else if ( v6 == 14 )
-      {
-    *((char *)(v5) + 286) = 15;
-      }
-    }
-  }
-    v7 = v5[14] - g_Cell_BuildabilityLUT + 1;
-    if ( v7 == DataGlobal_AA1548 || v7 == DataGlobal_AA0740 )
-  {
-    LOBYTE(v7) = Cell::UpdateTileType((IUnknown *)&a2, (IUnknown *)1, 0);
-  }
-    else if ( v7 == g_TerrainSoundConfig )
-  {
-    LOBYTE(v7) = Cell::SetTileType( (IUnknown *)&a2, (IUnknown *)(g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 1), (IUnknown *)0xFFFFFFFF, (IUnknown *)0xFFFFFFFF, 0);
-  }
-    else if ( v7 == g_TerrainSoundConfig + 1 )
-  {
-    LOBYTE(v7) = Cell::SetTileType( (IUnknown *)&a2, (IUnknown *)(g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 2), (IUnknown *)0xFFFFFFFF, (IUnknown *)0xFFFFFFFF, 0);
-  }
-    return v7;
-}
-}
-} // namespace gamemd
-
 // 0x572DA0
 namespace gamemd {
 char CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
@@ -1840,6 +1702,178 @@ char __stdcall CellClass::CheckTilePassable(IUnknown *aP0)
 }
 } // namespace gamemd
 
+// 0x65B510
+namespace gamemd {
+int CellClass::GetOccupiedRatio()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall sub_65B510(int *this)
+{
+  int v1; // esi
+
+  v1 = *(this + 27); /*0x65b511*/
+  if ( v1 > 0 ) /*0x65b516*/
+    return *(this + 19) * *(this + 28) / v1; /*0x65b524*/
+  else
+    return 0; /*0x65b518*/
+}
+}
+} // namespace gamemd
+
+// 0x487E60
+namespace gamemd {
+int CellClass::StubReturn11()
+{
+return 11;
+}
+} // namespace gamemd
+
+// 0x487E70
+namespace gamemd {
+int CellClass::StubReturn328()
+{
+return 328;
+}
+} // namespace gamemd
+
+// 0x48BA80
+namespace gamemd {
+int CellClass::GetBridgeIndex()
+{
+{
+    return this->rubble;
+}
+}
+} // namespace gamemd
+
+// 0x56BCD0
+namespace gamemd {
+int CellClass::GetTileData(IUnknown * aP0, IUnknown * aP1)
+{
+{
+    unsigned int v2;
+    int *v3;
+    v2 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9);
+    if ( v2 >= 0x40000 || (v3 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v2)) == 0 )
+  {
+    g_Map_GlobalCellIndex = (IUnknown *)aP0->field_0;
+    v3 = g_CellClassArray;
+  }
+    return *(int *)&aP1->__pad_579C[520 * ((short)HIWORD(v3[9]) / 4) + 596 + 4 * ((short)v3[9] / 4)];
+}
+}
+} // namespace gamemd
+
+// 0x572B80
+namespace gamemd {
+char CellClass::SetTileType13(IUnknown * aP0, int a2)
+{
+{
+    int v2;
+    short v3;
+    unsigned int v4;
+    int *v5;
+    unsigned char v6;
+    int v7;
+    v2 = a2 & 7;
+    v3 = *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 160];
+    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 162];
+    LOWORD(a2) = LOWORD(aP0->field_0) + v3;
+    HIWORD(a2) = v2;
+    v4 = (short)a2 + ((short)v2 << 9);
+    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v4)) == 0 )
+  {
+    g_Map_GlobalCellIndex = (IUnknown *)a2;
+    v5 = g_CellClassArray;
+  }
+    if ( *((char *)(v5) + 320) < 0 )
+  {
+    v6 = *((char *)(v5) + 286);
+    if ( v6 >= 9u )
+    {
+    if ( v6 <= 0xCu )
+      {
+    *((char *)(v5) + 286) = 14;
+      }
+    else if ( v6 == 13 )
+      {
+    *((char *)(v5) + 286) = 15;
+      }
+    }
+  }
+    v7 = v5[14] - g_Cell_BuildabilityLUT + 1;
+    if ( v7 == DataGlobal_ABC1D0 || v7 == DataGlobal_AA1540 )
+  {
+    LOBYTE(v7) = Cell::UpdateTileType((IUnknown *)&a2, (IUnknown *)1, 0);
+  }
+    else if ( v7 == g_TerrainSoundConfig )
+  {
+    LOBYTE(v7) = Cell::SetTileType( (IUnknown *)&a2, (IUnknown *)(g_Cell_BuildabilityLUT + g_TerrainSoundConfig), (IUnknown *)0xFFFFFFFF, (IUnknown *)0xFFFFFFFF, 0);
+  }
+    else if ( v7 == g_TerrainSoundConfig + 2 )
+  {
+    LOBYTE(v7) = Cell::SetTileType( (IUnknown *)&a2, (IUnknown *)(g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 2), (IUnknown *)0xFFFFFFFF, (IUnknown *)0xFFFFFFFF, 0);
+  }
+    return v7;
+}
+}
+} // namespace gamemd
+
+// 0x572C90
+namespace gamemd {
+char CellClass::SetTileType14(IUnknown * aP0, int a2)
+{
+{
+    int v2;
+    short v3;
+    unsigned int v4;
+    int *v5;
+    unsigned char v6;
+    int v7;
+    v2 = a2 & 7;
+    v3 = *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 160];
+    LOWORD(v2) = HIWORD(aP0->field_0) + *(short *)&DataGlobal_89E138.__pad_14B0[4 * v2 + 162];
+    LOWORD(a2) = LOWORD(aP0->field_0) + v3;
+    HIWORD(a2) = v2;
+    v4 = (short)a2 + ((short)v2 << 9);
+    if ( v4 >= 0x40000 || (v5 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v4)) == 0 )
+  {
+    g_Map_GlobalCellIndex = (IUnknown *)a2;
+    v5 = g_CellClassArray;
+  }
+    if ( *((char *)(v5) + 320) < 0 )
+  {
+    v6 = *((char *)(v5) + 286);
+    if ( v6 >= 9u )
+    {
+    if ( v6 <= 0xCu )
+      {
+    *((char *)(v5) + 286) = 13;
+      }
+    else if ( v6 == 14 )
+      {
+    *((char *)(v5) + 286) = 15;
+      }
+    }
+  }
+    v7 = v5[14] - g_Cell_BuildabilityLUT + 1;
+    if ( v7 == DataGlobal_AA1548 || v7 == DataGlobal_AA0740 )
+  {
+    LOBYTE(v7) = Cell::UpdateTileType((IUnknown *)&a2, (IUnknown *)1, 0);
+  }
+    else if ( v7 == g_TerrainSoundConfig )
+  {
+    LOBYTE(v7) = Cell::SetTileType( (IUnknown *)&a2, (IUnknown *)(g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 1), (IUnknown *)0xFFFFFFFF, (IUnknown *)0xFFFFFFFF, 0);
+  }
+    else if ( v7 == g_TerrainSoundConfig + 1 )
+  {
+    LOBYTE(v7) = Cell::SetTileType( (IUnknown *)&a2, (IUnknown *)(g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 2), (IUnknown *)0xFFFFFFFF, (IUnknown *)0xFFFFFFFF, 0);
+  }
+    return v7;
+}
+}
+} // namespace gamemd
+
 // 0x5865F0
 namespace gamemd {
 int CellClass::SpiralFindClosest(IUnknown * aP0, MouseClass * aP1, IUnknown * aP2)
@@ -1893,24 +1927,6 @@ int CellClass::SpiralFindClosest(IUnknown * aP0, MouseClass * aP1, IUnknown * aP
 }
 } // namespace gamemd
 
-// 0x65B510
-namespace gamemd {
-int CellClass::GetOccupiedRatio()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_65B510(int *this)
-{
-  int v1; // esi
-
-  v1 = *(this + 27); /*0x65b511*/
-  if ( v1 > 0 ) /*0x65b516*/
-    return *(this + 19) * *(this + 28) / v1; /*0x65b524*/
-  else
-    return 0; /*0x65b518*/
-}
-}
-} // namespace gamemd
-
 // 0x6D6AD0
 namespace gamemd {
 int CellClass::GetByte284(IUnknown * aP0)
@@ -1918,21 +1934,5 @@ int CellClass::GetByte284(IUnknown * aP0)
 {
     return *((unsigned char *)Coord::To_Cell(&DataGlobal_87C374.__pad_14B0[8132], aP0) + 284);
 }
-}
-} // namespace gamemd
-
-// 0x487E60
-namespace gamemd {
-int CellClass::StubReturn11()
-{
-return 11;
-}
-} // namespace gamemd
-
-// 0x487E70
-namespace gamemd {
-int CellClass::StubReturn328()
-{
-return 328;
 }
 } // namespace gamemd

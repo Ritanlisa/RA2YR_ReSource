@@ -5,8 +5,10 @@
 // 0x5CEB50
 void MSOverlayAnim::StubReturnFalse(int a1)
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void __stdcall MSOverlayAnim::StubReturnFalse(int a1)
 {
-    ;
+  ; /*0x5ceb50*/
 }
 }
 

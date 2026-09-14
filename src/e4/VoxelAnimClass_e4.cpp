@@ -415,16 +415,6 @@ int __thiscall VoxelAnimClass::SaveLoad_Prefix(void *this, ObjectClass *aP1, int
 }
 } // namespace gamemd
 
-// 0x74AA10
-namespace gamemd {
-int VoxelAnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-}
-}
-} // namespace gamemd
-
 // 0x74AA30
 namespace gamemd {
 int VoxelAnimClass::GetFrameCount(int * a2)
@@ -576,6 +566,16 @@ namespace gamemd {
 int VoxelAnimClass::StubReturn3()
 {
 return 3;
+}
+} // namespace gamemd
+
+// 0x74AA10
+namespace gamemd {
+int VoxelAnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+}
 }
 } // namespace gamemd
 

@@ -75,38 +75,6 @@ SHORT __thiscall Mouse::GetKeyState(unsigned __int8 this)
 }
 } // namespace gamemd
 
-// 0x54F5C0
-namespace gamemd {
-BOOL Mouse::IsButtonDown(unsigned char a1)
-{
-{
-    unsigned short v1;
-    v1 = a1;
-    if ( (a1 == 1 || a1 == 2) && GetSystemMetrics(23) == 1 )
-    v1 = 2 - (a1 != 1);
-    return (unsigned short)Mouse::GetKeyState(v1) != 0;
-}
-}
-} // namespace gamemd
-
-// 0x5BC400
-namespace gamemd {
-HWND Mouse::HideWindow()
-{
-{
-    HWND result;
-    result = DataGlobal_ABF240;
-    DataGlobal_ABF239 = 0;
-    if ( DataGlobal_ABF240 )
-  {
-    g_MiscFlag = 0;
-    return (HWND)ShowWindow(DataGlobal_ABF240, 0);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x5BDC80
 namespace gamemd {
 char Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
@@ -234,6 +202,38 @@ void __thiscall Mouse::DrawCursor(_DWORD *this, IUnknown *aP1, WWMouseClass *aP2
     BlitterDrawSHP(v9); /*0x7b9516*/
     Vector::Clear((int)v17); /*0x7b951f*/
   }
+}
+}
+} // namespace gamemd
+
+// 0x54F5C0
+namespace gamemd {
+BOOL Mouse::IsButtonDown(unsigned char a1)
+{
+{
+    unsigned short v1;
+    v1 = a1;
+    if ( (a1 == 1 || a1 == 2) && GetSystemMetrics(23) == 1 )
+    v1 = 2 - (a1 != 1);
+    return (unsigned short)Mouse::GetKeyState(v1) != 0;
+}
+}
+} // namespace gamemd
+
+// 0x5BC400
+namespace gamemd {
+HWND Mouse::HideWindow()
+{
+{
+    HWND result;
+    result = DataGlobal_ABF240;
+    DataGlobal_ABF239 = 0;
+    if ( DataGlobal_ABF240 )
+  {
+    g_MiscFlag = 0;
+    return (HWND)ShowWindow(DataGlobal_ABF240, 0);
+  }
+    return result;
 }
 }
 } // namespace gamemd

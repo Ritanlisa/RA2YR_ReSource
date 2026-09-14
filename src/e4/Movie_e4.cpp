@@ -3,32 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Movie_e4.hpp"
 
-// 0x49BC80
-namespace gamemd {
-char Movie::GetSectionID(unsigned int * a2)
-{
-{
-    if ( !(unsigned char)this->Movie_field_0x6C )
-    return 0;
-    *a2 = this->Movie_field_0x44;
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x49BCC0
-namespace gamemd {
-char Movie::GetState(CCINIClass * aP1)
-{
-{
-    if ( !(unsigned char)this->Movie_field_0x6C )
-    return 0;
-    *(int *)aP1->__pad_0 = this->Movie_field_0x38;
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x49CAF0
 namespace gamemd {
 char Movie::SetupScreen(CCINIClass * aP1)
@@ -421,6 +395,32 @@ unsigned int __thiscall Movie::SelectNextBuildableType(int this, AnimClass *aP1)
     }
     return 0; /*0x720b12*/
   }
+}
+}
+} // namespace gamemd
+
+// 0x49BC80
+namespace gamemd {
+char Movie::GetSectionID(unsigned int * a2)
+{
+{
+    if ( !(unsigned char)this->Movie_field_0x6C )
+    return 0;
+    *a2 = this->Movie_field_0x44;
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x49BCC0
+namespace gamemd {
+char Movie::GetState(CCINIClass * aP1)
+{
+{
+    if ( !(unsigned char)this->Movie_field_0x6C )
+    return 0;
+    *(int *)aP1->__pad_0 = this->Movie_field_0x38;
+    return 1;
 }
 }
 } // namespace gamemd

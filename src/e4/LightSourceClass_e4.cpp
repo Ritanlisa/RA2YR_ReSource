@@ -88,14 +88,6 @@ int __thiscall sub_554830(int this)
 }
 }
 
-// 0x555070
-int LightSourceClass::Stat(AbstractClass * aP1)
-{
-{
-    return AbstractClass::ProcessPower((#378 *)this);
-}
-}
-
 // 0x5550C0
 int LightSourceClass::Write(AbstractClass * aP0, int aP1)
 {
@@ -118,18 +110,6 @@ int __stdcall LightSourceClass::Write(AbstractClass *aP0, int aP1)
     return 0; /*0x5550ff*/
   }
   return result; /*0x555101*/
-}
-}
-
-// 0x555110
-int LightSourceClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
 }
 }
 
@@ -170,6 +150,14 @@ LightSourceClass *__thiscall LightSourceClass::CopyTo(void **this, char a2)
 }
 }
 
+// 0x555070
+int LightSourceClass::Stat(AbstractClass * aP1)
+{
+{
+    return AbstractClass::ProcessPower((#378 *)this);
+}
+}
+
 // 0x555080
 int LightSourceClass::ddtor(int a1, unsigned int * a2)
 {
@@ -180,6 +168,18 @@ int LightSourceClass::ddtor(int a1, unsigned int * a2)
   a2[2] = 1610642561;
   a2[3] = -1252326136;
   return 0;
+}
+
+// 0x555110
+int LightSourceClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
 }
 
 // 0x555130

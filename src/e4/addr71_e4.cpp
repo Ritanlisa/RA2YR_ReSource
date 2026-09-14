@@ -177,40 +177,6 @@ char __thiscall ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
 }
 } // namespace gamemd
 
-// 0x71A3D0
-namespace gamemd {
-int sub_71A3D0()
-{
-{
-    DataGlobal_B0EC64 = 0;
-    DataGlobal_B0EC68 = 0;
-    DataGlobal_B0EC6C = 1;
-    DataGlobal_B0EC6D = 0;
-    DataGlobal_B0EC60 = (int)&vt_DynamicVectorClass_TemporalClass;
-    DataGlobal_B0EC74 = 10;
-    DataGlobal_B0EC70 = 0;
-    return atexit(sub_71A410);
-}
-}
-} // namespace gamemd
-
-// 0x71A410
-namespace gamemd {
-void sub_71A410()
-{
-{
-    DataGlobal_B0EC60 = (int)&vt_VectorClass_TemporalClass;
-    if ( DataGlobal_B0EC64 && DataGlobal_B0EC6D )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0EC64);
-    DataGlobal_B0EC64 = 0;
-  }
-    DataGlobal_B0EC6D = 0;
-    DataGlobal_B0EC68 = 0;
-}
-}
-} // namespace gamemd
-
 // 0x71C8E0
 namespace gamemd {
 char E4Recv_71C8E0::sub_71C8E0()
@@ -366,40 +332,6 @@ int __fastcall ObjectTypeClass_LoadTheaterSHP(int a1)
     result = MEMORY[0xA8E328]; /*0x71dd63*/
   }
   return result; /*0x71dd72*/
-}
-}
-} // namespace gamemd
-
-// 0x71E620
-namespace gamemd {
-int sub_71E620()
-{
-{
-    DataGlobal_B0F1A4 = 0;
-    DataGlobal_B0F1A8 = 0;
-    DataGlobal_B0F1AC = 1;
-    DataGlobal_B0F1AD = 0;
-    DataGlobal_B0F1A0 = (int)&vt_DynamicVectorClass_TEventClass;
-    DataGlobal_B0F1B4 = 10;
-    DataGlobal_B0F1B0 = 0;
-    return atexit(sub_71E660);
-}
-}
-} // namespace gamemd
-
-// 0x71E660
-namespace gamemd {
-void sub_71E660()
-{
-{
-    DataGlobal_B0F1A0 = (int)&vt_VectorClass_TEventClass;
-    if ( DataGlobal_B0F1A4 && DataGlobal_B0F1AD )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0F1A4);
-    DataGlobal_B0F1A4 = 0;
-  }
-    DataGlobal_B0F1AD = 0;
-    DataGlobal_B0F1A8 = 0;
 }
 }
 } // namespace gamemd
@@ -941,6 +873,40 @@ int sub_71A3B0()
 }
 } // namespace gamemd
 
+// 0x71A3D0
+namespace gamemd {
+int sub_71A3D0()
+{
+{
+    DataGlobal_B0EC64 = 0;
+    DataGlobal_B0EC68 = 0;
+    DataGlobal_B0EC6C = 1;
+    DataGlobal_B0EC6D = 0;
+    DataGlobal_B0EC60 = (int)&vt_DynamicVectorClass_TemporalClass;
+    DataGlobal_B0EC74 = 10;
+    DataGlobal_B0EC70 = 0;
+    return atexit(sub_71A410);
+}
+}
+} // namespace gamemd
+
+// 0x71A410
+namespace gamemd {
+void sub_71A410()
+{
+{
+    DataGlobal_B0EC60 = (int)&vt_VectorClass_TemporalClass;
+    if ( DataGlobal_B0EC64 && DataGlobal_B0EC6D )
+  {
+    __3_YAXPAX_Z(DataGlobal_B0EC64);
+    DataGlobal_B0EC64 = 0;
+  }
+    DataGlobal_B0EC6D = 0;
+    DataGlobal_B0EC68 = 0;
+}
+}
+} // namespace gamemd
+
 // 0x71AD30
 namespace gamemd {
 void nullsub_246()
@@ -1439,6 +1405,40 @@ int sub_71E600()
     DataGlobal_B0F160 = 0;
     DataGlobal_B0F164 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x71E620
+namespace gamemd {
+int sub_71E620()
+{
+{
+    DataGlobal_B0F1A4 = 0;
+    DataGlobal_B0F1A8 = 0;
+    DataGlobal_B0F1AC = 1;
+    DataGlobal_B0F1AD = 0;
+    DataGlobal_B0F1A0 = (int)&vt_DynamicVectorClass_TEventClass;
+    DataGlobal_B0F1B4 = 10;
+    DataGlobal_B0F1B0 = 0;
+    return atexit(sub_71E660);
+}
+}
+} // namespace gamemd
+
+// 0x71E660
+namespace gamemd {
+void sub_71E660()
+{
+{
+    DataGlobal_B0F1A0 = (int)&vt_VectorClass_TEventClass;
+    if ( DataGlobal_B0F1A4 && DataGlobal_B0F1AD )
+  {
+    __3_YAXPAX_Z(DataGlobal_B0F1A4);
+    DataGlobal_B0F1A4 = 0;
+  }
+    DataGlobal_B0F1AD = 0;
+    DataGlobal_B0F1A8 = 0;
 }
 }
 } // namespace gamemd

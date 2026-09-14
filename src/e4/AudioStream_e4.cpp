@@ -75,51 +75,6 @@ int __thiscall AudioStream_ReleaseChannel(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x402800
-namespace gamemd {
-int AudioStream::CheckFormatChanged(int a1, const void * a2)
-{
-{
-    void *v3;
-    int result;
-    v3 = (void *)(a1 + 380);
-    if ( !memcmp(a2, (const void *)(a1 + 380), 0x20u) )
-  {
-    *(int *)(a1 + 412) = 0;
-    return 0;
-  }
-    else
-  {
-    *(int *)(a1 + 412) = 1;
-    result = *(int *)(a1 + 412);
-    qmemcpy(v3, a2, 0x20u);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4028B0
-namespace gamemd {
-int AudioStream::InitListAndCounters()
-{
-{
-    int v2;
-    int result;
-    v2 = this->AudioStream_field_0xAC;
-    LinkedList::Init((int **)this);
-    --*(int *)(v2 + 240);
-    ++*(int *)(v2 + 260);
-    LinkedList::Init((int **)this);
-    result = *(int *)(v2 + 260) - 1;
-    *(int *)(v2 + 260) = result;
-    if ( result < 0 )
-    *(int *)(v2 + 260) = 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x4033C0
 namespace gamemd {
 void AudioStream::DestroyAll()
@@ -418,140 +373,6 @@ void AudioStream_CleanupChannels()
       }
       while ( v1 != &MEMORY[0x87E180] ); /*0x404fb6*/
     }
-  }
-}
-}
-} // namespace gamemd
-
-// 0x404FD0
-namespace gamemd {
-int AudioStream::UpdateTimers()
-{
-{
-    __int64 v0;
-    void **v1;
-    LODWORD(v0) = g_AudioConfigState;
-    if ( g_AudioConfigState )
-  {
-    v1 = (void **)g_AudioStreamObject;
-    if ( g_AudioStreamObject != &g_AudioStreamObject )
-    {
-    do
-      {
-    LODWORD(v0) = v1[86];
-    if ( !(int)v0 )
-        {
-    LODWORD(v0) = v1[7];
-    if ( (int)v0 == 2 )
-          {
-    LODWORD(v0) = Audio::Callback();
-    *((__int64 *)(v1) + 40) -= v0;
-          }
-        }
-    v1[86] = (char *)v1[86] + 1;
-    v1 = (void **)*v1;
-      }
-    while ( v1 != &g_AudioStreamObject );
-    }
-  }
-    return v0;
-}
-}
-} // namespace gamemd
-
-// 0x405040
-namespace gamemd {
-int AudioStream::UpdateCountdowners()
-{
-{
-    __int64 v0;
-    void **v1;
-    int v2;
-    __int64 v3;
-    LODWORD(v0) = g_AudioConfigState;
-    if ( g_AudioConfigState )
-  {
-    v1 = (void **)g_AudioStreamObject;
-    if ( g_AudioStreamObject != &g_AudioStreamObject )
-    {
-    do
-      {
-    LODWORD(v0) = v1[86];
-    if ( (int)v0 )
-        {
-    v2 = (int)v1[86] - 1;
-    v1[86] = (void *)v2;
-    if ( v2 < 0 )
-    v1[86] = 0;
-    LODWORD(v0) = v1[86];
-    if ( !(int)v0 )
-          {
-    LODWORD(v0) = v1[7];
-    if ( (int)v0 == 2 )
-            {
-    LODWORD(v3) = Audio::Callback();
-    v0 = *((__int64 *)(v1) + 40) + v3;
-    *((__int64 *)(v1) + 40) = v0;
-            }
-          }
-        }
-    v1 = (void **)*v1;
-      }
-    while ( v1 != &g_AudioStreamObject );
-    }
-  }
-    return v0;
-}
-}
-} // namespace gamemd
-
-// 0x407860
-namespace gamemd {
-char * AudioStream::Constructor(unsigned long long a2)
-{
-{
-    int v3;
-    char *v4;
-    int v5;
-    int v6;
-    int v7;
-    if ( !this )
-    return 0;
-    v3 = HIDWORD(a2);
-    if ( a2 < 0x1B58 )
-  {
-    LODWORD(a2) = 7000;
-    v3 = 0;
-  }
-    v4 = (char *)__2_YAPAXI_Z(0xF8u);
-    memset(v4, 0, 0xF8u);
-    DListNode::InitEmpty(v4);
-    *((int *)(v4) + 4) = this;
-    v5 = sub_4036C0();
-    *((int *)(v4) + 5) = v5;
-    *(int *)(v5 + 148) = 0;
-    *(int *)(*((int *)(v4) + 5) + 144) = 0;
-    *(int *)(*((int *)(v4) + 5) + 152) = 0;
-    *(int *)(*((int *)(v4) + 5) + 156) = 0;
-    *((int *)(v4) + 6) = a2;
-    *((int *)(v4) + 7) = v3;
-    AudioStream::InitNodeFields(v4 + 60);
-    Struct::ZeroInit32(v4 + 92);
-    *((int *)(v4) + 32) = 0;
-    *((int *)(v4) + 34) = 0;
-    strcpy(v4 + 164, DataGlobal_8162C8);
-    v6 = *((int *)(v4) + 5);
-    if ( v6 && (*(int *)(v6 + 192) = v4, *(int *)(*((int *)(v4) + 5) + 176) = AudioStream::ReadStreamAndSyncPosition, *(int *)(*((int *)(v4) + 5) + 184) = AudioStream::SetPlaybackCallback, *(int *)(*((int *)(v4) + 5) + 188) = AudioStream::ProcessCallback, v7 = sub_4087F0(), (*((int *)(v4) + 12) = v7) != 0) )
-  {
-    EnterCriticalSection(&CriticalSection);
-    InsertBeforeLinkedList(DataGlobal_87E810, v4);
-    LeaveCriticalSection(&CriticalSection);
-    return v4;
-  }
-    else
-  {
-    AudioSample::Destructor(v4);
-    return 0;
   }
 }
 }
@@ -1621,6 +1442,185 @@ unsigned int __thiscall AudioStream_GetPosition(int this)
 {
   return (unsigned int)(60 * (*(int (__cdecl **)(int))(this + 80))(this)) / *(_DWORD *)(this + 120) /*0x7c3982*/
        + *(_DWORD *)(this + 328);
+}
+}
+} // namespace gamemd
+
+// 0x402800
+namespace gamemd {
+int AudioStream::CheckFormatChanged(int a1, const void * a2)
+{
+{
+    void *v3;
+    int result;
+    v3 = (void *)(a1 + 380);
+    if ( !memcmp(a2, (const void *)(a1 + 380), 0x20u) )
+  {
+    *(int *)(a1 + 412) = 0;
+    return 0;
+  }
+    else
+  {
+    *(int *)(a1 + 412) = 1;
+    result = *(int *)(a1 + 412);
+    qmemcpy(v3, a2, 0x20u);
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4028B0
+namespace gamemd {
+int AudioStream::InitListAndCounters()
+{
+{
+    int v2;
+    int result;
+    v2 = this->AudioStream_field_0xAC;
+    LinkedList::Init((int **)this);
+    --*(int *)(v2 + 240);
+    ++*(int *)(v2 + 260);
+    LinkedList::Init((int **)this);
+    result = *(int *)(v2 + 260) - 1;
+    *(int *)(v2 + 260) = result;
+    if ( result < 0 )
+    *(int *)(v2 + 260) = 0;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x404FD0
+namespace gamemd {
+int AudioStream::UpdateTimers()
+{
+{
+    __int64 v0;
+    void **v1;
+    LODWORD(v0) = g_AudioConfigState;
+    if ( g_AudioConfigState )
+  {
+    v1 = (void **)g_AudioStreamObject;
+    if ( g_AudioStreamObject != &g_AudioStreamObject )
+    {
+    do
+      {
+    LODWORD(v0) = v1[86];
+    if ( !(int)v0 )
+        {
+    LODWORD(v0) = v1[7];
+    if ( (int)v0 == 2 )
+          {
+    LODWORD(v0) = Audio::Callback();
+    *((__int64 *)(v1) + 40) -= v0;
+          }
+        }
+    v1[86] = (char *)v1[86] + 1;
+    v1 = (void **)*v1;
+      }
+    while ( v1 != &g_AudioStreamObject );
+    }
+  }
+    return v0;
+}
+}
+} // namespace gamemd
+
+// 0x405040
+namespace gamemd {
+int AudioStream::UpdateCountdowners()
+{
+{
+    __int64 v0;
+    void **v1;
+    int v2;
+    __int64 v3;
+    LODWORD(v0) = g_AudioConfigState;
+    if ( g_AudioConfigState )
+  {
+    v1 = (void **)g_AudioStreamObject;
+    if ( g_AudioStreamObject != &g_AudioStreamObject )
+    {
+    do
+      {
+    LODWORD(v0) = v1[86];
+    if ( (int)v0 )
+        {
+    v2 = (int)v1[86] - 1;
+    v1[86] = (void *)v2;
+    if ( v2 < 0 )
+    v1[86] = 0;
+    LODWORD(v0) = v1[86];
+    if ( !(int)v0 )
+          {
+    LODWORD(v0) = v1[7];
+    if ( (int)v0 == 2 )
+            {
+    LODWORD(v3) = Audio::Callback();
+    v0 = *((__int64 *)(v1) + 40) + v3;
+    *((__int64 *)(v1) + 40) = v0;
+            }
+          }
+        }
+    v1 = (void **)*v1;
+      }
+    while ( v1 != &g_AudioStreamObject );
+    }
+  }
+    return v0;
+}
+}
+} // namespace gamemd
+
+// 0x407860
+namespace gamemd {
+char * AudioStream::Constructor(unsigned long long a2)
+{
+{
+    int v3;
+    char *v4;
+    int v5;
+    int v6;
+    int v7;
+    if ( !this )
+    return 0;
+    v3 = HIDWORD(a2);
+    if ( a2 < 0x1B58 )
+  {
+    LODWORD(a2) = 7000;
+    v3 = 0;
+  }
+    v4 = (char *)__2_YAPAXI_Z(0xF8u);
+    memset(v4, 0, 0xF8u);
+    DListNode::InitEmpty(v4);
+    *((int *)(v4) + 4) = this;
+    v5 = sub_4036C0();
+    *((int *)(v4) + 5) = v5;
+    *(int *)(v5 + 148) = 0;
+    *(int *)(*((int *)(v4) + 5) + 144) = 0;
+    *(int *)(*((int *)(v4) + 5) + 152) = 0;
+    *(int *)(*((int *)(v4) + 5) + 156) = 0;
+    *((int *)(v4) + 6) = a2;
+    *((int *)(v4) + 7) = v3;
+    AudioStream::InitNodeFields(v4 + 60);
+    Struct::ZeroInit32(v4 + 92);
+    *((int *)(v4) + 32) = 0;
+    *((int *)(v4) + 34) = 0;
+    strcpy(v4 + 164, DataGlobal_8162C8);
+    v6 = *((int *)(v4) + 5);
+    if ( v6 && (*(int *)(v6 + 192) = v4, *(int *)(*((int *)(v4) + 5) + 176) = AudioStream::ReadStreamAndSyncPosition, *(int *)(*((int *)(v4) + 5) + 184) = AudioStream::SetPlaybackCallback, *(int *)(*((int *)(v4) + 5) + 188) = AudioStream::ProcessCallback, v7 = sub_4087F0(), (*((int *)(v4) + 12) = v7) != 0) )
+  {
+    EnterCriticalSection(&CriticalSection);
+    InsertBeforeLinkedList(DataGlobal_87E810, v4);
+    LeaveCriticalSection(&CriticalSection);
+    return v4;
+  }
+    else
+  {
+    AudioSample::Destructor(v4);
+    return 0;
+  }
 }
 }
 } // namespace gamemd

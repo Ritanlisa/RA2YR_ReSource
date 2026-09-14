@@ -39,40 +39,6 @@ __int64 __thiscall sub_6B1EE0(int this)
 }
 } // namespace gamemd
 
-// 0x6B23B0
-namespace gamemd {
-int sub_6B23B0()
-{
-{
-    DataGlobal_B0B654 = 0;
-    DataGlobal_B0B658 = 0;
-    DataGlobal_B0B65C = 1;
-    DataGlobal_B0B65D = 0;
-    DataGlobal_B0B650 = (int)&vt_DynamicVectorClass_UndoInfoStruct;
-    DataGlobal_B0B664 = 10;
-    g_SlaveMgrPool = 0;
-    return atexit(sub_6B23F0);
-}
-}
-} // namespace gamemd
-
-// 0x6B23F0
-namespace gamemd {
-void sub_6B23F0()
-{
-{
-    DataGlobal_B0B650 = (int)&vt_VectorClass_UndoInfoStruct;
-    if ( DataGlobal_B0B654 && DataGlobal_B0B65D )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0B654);
-    DataGlobal_B0B654 = 0;
-  }
-    DataGlobal_B0B65D = 0;
-    DataGlobal_B0B658 = 0;
-}
-}
-} // namespace gamemd
-
 // 0x6B2430
 namespace gamemd {
 unsigned int * sub_6B2430(int * a1, int a2)
@@ -1950,40 +1916,6 @@ void sub_6B6230()
 }
 } // namespace gamemd
 
-// 0x6B6C10
-namespace gamemd {
-int sub_6B6C10()
-{
-{
-    DataGlobal_B0B884 = 0;
-    DataGlobal_B0B888 = 0;
-    DataGlobal_B0B88C = 1;
-    DataGlobal_B0B88D = 0;
-    SpawnManagerClass_Array = (int)&vt_DynamicVectorClass_SpawnManagerClass;
-    DataGlobal_B0B894 = 10;
-    DataGlobal_B0B890 = 0;
-    return atexit(sub_6B6C50);
-}
-}
-} // namespace gamemd
-
-// 0x6B6C50
-namespace gamemd {
-void sub_6B6C50()
-{
-{
-    SpawnManagerClass_Array = (int)&vt_VectorClass_SpawnManagerClass;
-    if ( DataGlobal_B0B884 && DataGlobal_B0B88D )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0B884);
-    DataGlobal_B0B884 = 0;
-  }
-    DataGlobal_B0B88D = 0;
-    DataGlobal_B0B888 = 0;
-}
-}
-} // namespace gamemd
-
 // 0x6B8F00
 namespace gamemd {
 int Texture_DrawAffine(int a1, unsigned int * a2, int * a3, int a4, unsigned char a5)
@@ -2277,49 +2209,6 @@ int __fastcall Texture_DrawAffine(int a1, _DWORD *a2, int *a3, int a4, unsigned 
 }
 } // namespace gamemd
 
-// 0x6B9450
-namespace gamemd {
-unsigned int * E4Recv_6B9450::sub_6B9450()
-{
-{
-    int v2;
-    unsigned int v3;
-    int v4;
-    void *v5;
-    unsigned int v6;
-    this->M32 = -1717986918;
-    this->M40 = -1717986918;
-    this->M36 = 1070176665;
-    this->M44 = 1072273817;
-    this->M48 = 128;
-    this->M16 = 128;
-    this->M8 = 128;
-    this->M12 = 0;
-    v2 = 0;
-    v3 = 128;
-    do
-  {
-    ++v2;
-    v3 >>= 1;
-  }
-    while ( v3 );
-    this->M12 = v2;
-    this->M16 = 0;
-    v4 = 1 << (v2 - 1);
-    this->M12 = v2 - 1;
-    this->M4 = 0;
-    this->M20 = 0;
-    this->M8 = v4;
-    v5 = __2_YAPAXI_Z(4 * v4);
-    v6 = 4 *(void**)this->M8;
-    *(void**)this = v5;
-    memset(v5, 0, v6);
-    this->M24 = sub_6B94E0;
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x6B9D00
 namespace gamemd {
 char Palette_LoadFromFile(int a1, int a2, char * Source, int a4, int a5)
@@ -2562,40 +2451,6 @@ LABEL_31:
     BufferIOFileClass::Dtor(v55); /*0x6b9d88*/
     return 0; /*0x6b9d90*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x6BB260
-namespace gamemd {
-int sub_6BB260()
-{
-{
-    DataGlobal_B0BC8C = 0;
-    g_AnimClass_Capacity = 0;
-    DataGlobal_B0BC94 = 1;
-    DataGlobal_B0BC95 = 0;
-    g_AnimationManager = (int)&vt_DynamicVectorClass_unsigned_long;
-    DataGlobal_B0BC9C = 10;
-    DataGlobal_B0BC98 = 0;
-    return atexit(sub_6BB2A0);
-}
-}
-} // namespace gamemd
-
-// 0x6BB2A0
-namespace gamemd {
-void sub_6BB2A0()
-{
-{
-    g_AnimationManager = (int)&vt_VectorClass_unsigned_long;
-    if ( DataGlobal_B0BC8C && DataGlobal_B0BC95 )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0BC8C);
-    DataGlobal_B0BC8C = 0;
-  }
-    DataGlobal_B0BC95 = 0;
-    g_AnimClass_Capacity = 0;
 }
 }
 } // namespace gamemd
@@ -3569,6 +3424,40 @@ int sub_6B2390()
 }
 } // namespace gamemd
 
+// 0x6B23B0
+namespace gamemd {
+int sub_6B23B0()
+{
+{
+    DataGlobal_B0B654 = 0;
+    DataGlobal_B0B658 = 0;
+    DataGlobal_B0B65C = 1;
+    DataGlobal_B0B65D = 0;
+    DataGlobal_B0B650 = (int)&vt_DynamicVectorClass_UndoInfoStruct;
+    DataGlobal_B0B664 = 10;
+    g_SlaveMgrPool = 0;
+    return atexit(sub_6B23F0);
+}
+}
+} // namespace gamemd
+
+// 0x6B23F0
+namespace gamemd {
+void sub_6B23F0()
+{
+{
+    DataGlobal_B0B650 = (int)&vt_VectorClass_UndoInfoStruct;
+    if ( DataGlobal_B0B654 && DataGlobal_B0B65D )
+  {
+    __3_YAXPAX_Z(DataGlobal_B0B654);
+    DataGlobal_B0B654 = 0;
+  }
+    DataGlobal_B0B65D = 0;
+    DataGlobal_B0B658 = 0;
+}
+}
+} // namespace gamemd
+
 // 0x6B4840
 namespace gamemd {
 void sub_6B4840()
@@ -4071,6 +3960,40 @@ int sub_6B6BF0()
 }
 } // namespace gamemd
 
+// 0x6B6C10
+namespace gamemd {
+int sub_6B6C10()
+{
+{
+    DataGlobal_B0B884 = 0;
+    DataGlobal_B0B888 = 0;
+    DataGlobal_B0B88C = 1;
+    DataGlobal_B0B88D = 0;
+    SpawnManagerClass_Array = (int)&vt_DynamicVectorClass_SpawnManagerClass;
+    DataGlobal_B0B894 = 10;
+    DataGlobal_B0B890 = 0;
+    return atexit(sub_6B6C50);
+}
+}
+} // namespace gamemd
+
+// 0x6B6C50
+namespace gamemd {
+void sub_6B6C50()
+{
+{
+    SpawnManagerClass_Array = (int)&vt_VectorClass_SpawnManagerClass;
+    if ( DataGlobal_B0B884 && DataGlobal_B0B88D )
+  {
+    __3_YAXPAX_Z(DataGlobal_B0B884);
+    DataGlobal_B0B884 = 0;
+  }
+    DataGlobal_B0B88D = 0;
+    DataGlobal_B0B888 = 0;
+}
+}
+} // namespace gamemd
+
 // 0x6B88D0
 namespace gamemd {
 int sub_6B88D0()
@@ -4311,6 +4234,49 @@ int E4Recv_6B93E0::sub_6B93E0()
 }
 } // namespace gamemd
 
+// 0x6B9450
+namespace gamemd {
+unsigned int * E4Recv_6B9450::sub_6B9450()
+{
+{
+    int v2;
+    unsigned int v3;
+    int v4;
+    void *v5;
+    unsigned int v6;
+    this->M32 = -1717986918;
+    this->M40 = -1717986918;
+    this->M36 = 1070176665;
+    this->M44 = 1072273817;
+    this->M48 = 128;
+    this->M16 = 128;
+    this->M8 = 128;
+    this->M12 = 0;
+    v2 = 0;
+    v3 = 128;
+    do
+  {
+    ++v2;
+    v3 >>= 1;
+  }
+    while ( v3 );
+    this->M12 = v2;
+    this->M16 = 0;
+    v4 = 1 << (v2 - 1);
+    this->M12 = v2 - 1;
+    this->M4 = 0;
+    this->M20 = 0;
+    this->M8 = v4;
+    v5 = __2_YAPAXI_Z(4 * v4);
+    v6 = 4 *(void**)this->M8;
+    *(void**)this = v5;
+    memset(v5, 0, v6);
+    this->M24 = sub_6B94E0;
+    return this;
+}
+}
+} // namespace gamemd
+
 // 0x6B94E0
 namespace gamemd {
 unsigned int E4Recv_6B94E0::sub_6B94E0()
@@ -4504,6 +4470,40 @@ int sub_6BB240()
     DataGlobal_B0BCC8 = 128;
     DataGlobal_B0BCCC = 128;
     return 128;
+}
+}
+} // namespace gamemd
+
+// 0x6BB260
+namespace gamemd {
+int sub_6BB260()
+{
+{
+    DataGlobal_B0BC8C = 0;
+    g_AnimClass_Capacity = 0;
+    DataGlobal_B0BC94 = 1;
+    DataGlobal_B0BC95 = 0;
+    g_AnimationManager = (int)&vt_DynamicVectorClass_unsigned_long;
+    DataGlobal_B0BC9C = 10;
+    DataGlobal_B0BC98 = 0;
+    return atexit(sub_6BB2A0);
+}
+}
+} // namespace gamemd
+
+// 0x6BB2A0
+namespace gamemd {
+void sub_6BB2A0()
+{
+{
+    g_AnimationManager = (int)&vt_VectorClass_unsigned_long;
+    if ( DataGlobal_B0BC8C && DataGlobal_B0BC95 )
+  {
+    __3_YAXPAX_Z(DataGlobal_B0BC8C);
+    DataGlobal_B0BC8C = 0;
+  }
+    DataGlobal_B0BC95 = 0;
+    g_AnimClass_Capacity = 0;
 }
 }
 } // namespace gamemd

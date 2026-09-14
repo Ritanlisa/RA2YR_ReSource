@@ -1215,129 +1215,6 @@ int sub_539570()
 }
 } // namespace gamemd
 
-// 0x539580
-namespace gamemd {
-int sub_539580()
-{
-{
-    DataGlobal_A9FA64 = 0;
-    DataGlobal_A9FA68 = 0;
-    DataGlobal_A9FA6C = 1;
-    DataGlobal_A9FA6D = 0;
-    LightningStorm_CloudsManifesting = (int)&vt_DynamicVectorClass_AnimClass_const;
-    DataGlobal_A9FA74 = 10;
-    DataGlobal_A9FA70 = 0;
-    return atexit(sub_5395C0);
-}
-}
-} // namespace gamemd
-
-// 0x5395C0
-namespace gamemd {
-void sub_5395C0()
-{
-{
-    if ( (DataGlobal_A9F9A9 & 1) == 0 )
-  {
-    LightningStorm_CloudsManifesting = (int)&vt_VectorClass_AnimClass_const;
-    DataGlobal_A9F9A9 |= 1u;
-    if ( DataGlobal_A9FA64 )
-    {
-    if ( DataGlobal_A9FA6D )
-      {
-    __3_YAXPAX_Z(DataGlobal_A9FA64);
-    DataGlobal_A9FA64 = 0;
-      }
-    }
-    DataGlobal_A9FA6D = 0;
-    DataGlobal_A9FA68 = 0;
-  }
-}
-}
-} // namespace gamemd
-
-// 0x539620
-namespace gamemd {
-int sub_539620()
-{
-{
-    DataGlobal_A9F9D4 = 0;
-    DataGlobal_A9F9D8 = 0;
-    DataGlobal_A9F9DC = 1;
-    DataGlobal_A9F9DD = 0;
-    LightningStorm_CloudsPresent = (int)&vt_DynamicVectorClass_AnimClass_const;
-    DataGlobal_A9F9E4 = 10;
-    DataGlobal_A9F9E0 = 0;
-    return atexit(sub_539660);
-}
-}
-} // namespace gamemd
-
-// 0x539660
-namespace gamemd {
-void sub_539660()
-{
-{
-    if ( (DataGlobal_A9F9A8 & 1) == 0 )
-  {
-    LightningStorm_CloudsPresent = (int)&vt_VectorClass_AnimClass_const;
-    DataGlobal_A9F9A8 |= 1u;
-    if ( DataGlobal_A9F9D4 )
-    {
-    if ( DataGlobal_A9F9DD )
-      {
-    __3_YAXPAX_Z(DataGlobal_A9F9D4);
-    DataGlobal_A9F9D4 = 0;
-      }
-    }
-    DataGlobal_A9F9DD = 0;
-    DataGlobal_A9F9D8 = 0;
-  }
-}
-}
-} // namespace gamemd
-
-// 0x5396C0
-namespace gamemd {
-int sub_5396C0()
-{
-{
-    DataGlobal_A9FA1C = 0;
-    DataGlobal_A9FA20 = 0;
-    DataGlobal_A9FA24 = 1;
-    DataGlobal_A9FA25 = 0;
-    LightningStorm_BoltsPresent = (int)&vt_DynamicVectorClass_AnimClass_const;
-    DataGlobal_A9FA2C = 10;
-    DataGlobal_A9FA28 = 0;
-    return atexit(sub_539700);
-}
-}
-} // namespace gamemd
-
-// 0x539700
-namespace gamemd {
-void sub_539700()
-{
-{
-    if ( (DataGlobal_A9F9A8 & 2) == 0 )
-  {
-    LightningStorm_BoltsPresent = (int)&vt_VectorClass_AnimClass_const;
-    DataGlobal_A9F9A8 |= 2u;
-    if ( DataGlobal_A9FA1C )
-    {
-    if ( DataGlobal_A9FA25 )
-      {
-    __3_YAXPAX_Z(DataGlobal_A9FA1C);
-    DataGlobal_A9FA1C = 0;
-      }
-    }
-    DataGlobal_A9FA25 = 0;
-    DataGlobal_A9FA20 = 0;
-  }
-}
-}
-} // namespace gamemd
-
 // 0x53A6C0
 namespace gamemd {
 char SuperWeapon_Update()
@@ -1579,52 +1456,6 @@ LABEL_52:
     }
   }
   return v16; /*0x53a93c*/
-}
-}
-} // namespace gamemd
-
-// 0x53AD00
-namespace gamemd {
-int UpdateSurfaceAnimations(int a1, AnimClass * aP1, int a3, int a4)
-{
-{
-    int i;
-    int j;
-    int v9;
-    int v10;
-    int v11;
-    int v13;
-    int v14[2];
-    char v15;
-    int k;
-    for ( i = 0; i < *(int *)&DataGlobal_87C374.__pad_14B0[7812]; ++i )
-    (*(void (__thiscall **)(int, int, AnimClass *, int, int))(**(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[7800] + 4 * i) + 4))( *(int *)(*(int *)&DataGlobal_87C374.__pad_14B0[7800] + 4 * i), a1, aP1, a3, a4);
-    for ( j = 0; j < *(int *)DataGlobal_B05488.__pad_58; ++j )
-  {
-    v9 = *(int *)(DataGlobal_B05488.field_4C + 4 * j);
-    if ( *(int *)(v9 + 784) > 1 )
-    (*(void (__thiscall **)(int, int, AnimClass *, int, int))(**(int **)(v9 + 780) + 4))( *(int *)(v9 + 780), a1, aP1, a3, a4);
-  }
-    v14[0] = 0;
-    v14[1] = 0;
-    v15 = 0;
-    for ( k = FlagSystem::GetNextActive(v14); k; k = FlagSystem::GetNextActive(v14) )
-  {
-    v10 = 0;
-    v13 = Surface_Update();
-    if ( v13 > 0 )
-    {
-    do
-      {
-    v11 = *(int *)(*(int *)(*(int *)(k + 4) + 4 * v10) + 780);
-    (*(void (__thiscall **)(int, int, AnimClass *, int, int))(*(int *)(v11) + 4))(v11, a1, aP1, a3, a4);
-    ++v10;
-      }
-    while ( v10 < v13 );
-    }
-  }
-    MapClass::UpdateLightingPostProcess();
-    return MapClass::MarkForRedraw(&DataGlobal_87C374.__pad_14B0[8132], 1);
 }
 }
 } // namespace gamemd
@@ -2075,47 +1906,6 @@ int __fastcall RenderChronosphereScreenEffect(char a1)
   }
   (*(void (__thiscall **)(int))(*(_DWORD *)unk_A9FA9C + 96))(unk_A9FA9C); /*0x53c07e*/
   return (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x88731C] + 96))(MEMORY[0x88731C]); /*0x53c08c*/
-}
-}
-} // namespace gamemd
-
-// 0x53CA70
-namespace gamemd {
-int sub_53CA70()
-{
-{
-    DataGlobal_AA011C = 0;
-    DataGlobal_AA0120 = 0;
-    DataGlobal_AA0124 = 1;
-    DataGlobal_AA0125 = 0;
-    DataGlobal_AA0118 = (int)&vt_DynamicVectorClass_IonBlastClass;
-    DataGlobal_AA012C = 10;
-    DataGlobal_AA0128 = 0;
-    return atexit(sub_53CAB0);
-}
-}
-} // namespace gamemd
-
-// 0x53CAB0
-namespace gamemd {
-void sub_53CAB0()
-{
-{
-    if ( (DataGlobal_A9FAD8 & 1) == 0 )
-  {
-    DataGlobal_AA0118 = (int)&vt_VectorClass_IonBlastClass;
-    DataGlobal_A9FAD8 |= 1u;
-    if ( DataGlobal_AA011C )
-    {
-    if ( DataGlobal_AA0125 )
-      {
-    __3_YAXPAX_Z(DataGlobal_AA011C);
-    DataGlobal_AA011C = 0;
-      }
-    }
-    DataGlobal_AA0125 = 0;
-    DataGlobal_AA0120 = 0;
-  }
 }
 }
 } // namespace gamemd
@@ -3030,6 +2820,129 @@ int sub_539540()
 }
 } // namespace gamemd
 
+// 0x539580
+namespace gamemd {
+int sub_539580()
+{
+{
+    DataGlobal_A9FA64 = 0;
+    DataGlobal_A9FA68 = 0;
+    DataGlobal_A9FA6C = 1;
+    DataGlobal_A9FA6D = 0;
+    LightningStorm_CloudsManifesting = (int)&vt_DynamicVectorClass_AnimClass_const;
+    DataGlobal_A9FA74 = 10;
+    DataGlobal_A9FA70 = 0;
+    return atexit(sub_5395C0);
+}
+}
+} // namespace gamemd
+
+// 0x5395C0
+namespace gamemd {
+void sub_5395C0()
+{
+{
+    if ( (DataGlobal_A9F9A9 & 1) == 0 )
+  {
+    LightningStorm_CloudsManifesting = (int)&vt_VectorClass_AnimClass_const;
+    DataGlobal_A9F9A9 |= 1u;
+    if ( DataGlobal_A9FA64 )
+    {
+    if ( DataGlobal_A9FA6D )
+      {
+    __3_YAXPAX_Z(DataGlobal_A9FA64);
+    DataGlobal_A9FA64 = 0;
+      }
+    }
+    DataGlobal_A9FA6D = 0;
+    DataGlobal_A9FA68 = 0;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x539620
+namespace gamemd {
+int sub_539620()
+{
+{
+    DataGlobal_A9F9D4 = 0;
+    DataGlobal_A9F9D8 = 0;
+    DataGlobal_A9F9DC = 1;
+    DataGlobal_A9F9DD = 0;
+    LightningStorm_CloudsPresent = (int)&vt_DynamicVectorClass_AnimClass_const;
+    DataGlobal_A9F9E4 = 10;
+    DataGlobal_A9F9E0 = 0;
+    return atexit(sub_539660);
+}
+}
+} // namespace gamemd
+
+// 0x539660
+namespace gamemd {
+void sub_539660()
+{
+{
+    if ( (DataGlobal_A9F9A8 & 1) == 0 )
+  {
+    LightningStorm_CloudsPresent = (int)&vt_VectorClass_AnimClass_const;
+    DataGlobal_A9F9A8 |= 1u;
+    if ( DataGlobal_A9F9D4 )
+    {
+    if ( DataGlobal_A9F9DD )
+      {
+    __3_YAXPAX_Z(DataGlobal_A9F9D4);
+    DataGlobal_A9F9D4 = 0;
+      }
+    }
+    DataGlobal_A9F9DD = 0;
+    DataGlobal_A9F9D8 = 0;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x5396C0
+namespace gamemd {
+int sub_5396C0()
+{
+{
+    DataGlobal_A9FA1C = 0;
+    DataGlobal_A9FA20 = 0;
+    DataGlobal_A9FA24 = 1;
+    DataGlobal_A9FA25 = 0;
+    LightningStorm_BoltsPresent = (int)&vt_DynamicVectorClass_AnimClass_const;
+    DataGlobal_A9FA2C = 10;
+    DataGlobal_A9FA28 = 0;
+    return atexit(sub_539700);
+}
+}
+} // namespace gamemd
+
+// 0x539700
+namespace gamemd {
+void sub_539700()
+{
+{
+    if ( (DataGlobal_A9F9A8 & 2) == 0 )
+  {
+    LightningStorm_BoltsPresent = (int)&vt_VectorClass_AnimClass_const;
+    DataGlobal_A9F9A8 |= 2u;
+    if ( DataGlobal_A9FA1C )
+    {
+    if ( DataGlobal_A9FA25 )
+      {
+    __3_YAXPAX_Z(DataGlobal_A9FA1C);
+    DataGlobal_A9FA1C = 0;
+      }
+    }
+    DataGlobal_A9FA25 = 0;
+    DataGlobal_A9FA20 = 0;
+  }
+}
+}
+} // namespace gamemd
+
 // 0x539EA0
 namespace gamemd {
 void sub_539EA0(char a1)
@@ -3067,6 +2980,52 @@ int sub_53AC80(int a1, int a2, int a3, int a4)
     result = FlagSystem::GetNextActive(v11);
   }
     return result;
+}
+}
+} // namespace gamemd
+
+// 0x53AD00
+namespace gamemd {
+int UpdateSurfaceAnimations(int a1, AnimClass * aP1, int a3, int a4)
+{
+{
+    int i;
+    int j;
+    int v9;
+    int v10;
+    int v11;
+    int v13;
+    int v14[2];
+    char v15;
+    int k;
+    for ( i = 0; i < *(int *)&DataGlobal_87C374.__pad_14B0[7812]; ++i )
+    (*(void (__thiscall **)(int, int, AnimClass *, int, int))(**(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[7800] + 4 * i) + 4))( *(int *)(*(int *)&DataGlobal_87C374.__pad_14B0[7800] + 4 * i), a1, aP1, a3, a4);
+    for ( j = 0; j < *(int *)DataGlobal_B05488.__pad_58; ++j )
+  {
+    v9 = *(int *)(DataGlobal_B05488.field_4C + 4 * j);
+    if ( *(int *)(v9 + 784) > 1 )
+    (*(void (__thiscall **)(int, int, AnimClass *, int, int))(**(int **)(v9 + 780) + 4))( *(int *)(v9 + 780), a1, aP1, a3, a4);
+  }
+    v14[0] = 0;
+    v14[1] = 0;
+    v15 = 0;
+    for ( k = FlagSystem::GetNextActive(v14); k; k = FlagSystem::GetNextActive(v14) )
+  {
+    v10 = 0;
+    v13 = Surface_Update();
+    if ( v13 > 0 )
+    {
+    do
+      {
+    v11 = *(int *)(*(int *)(*(int *)(k + 4) + 4 * v10) + 780);
+    (*(void (__thiscall **)(int, int, AnimClass *, int, int))(*(int *)(v11) + 4))(v11, a1, aP1, a3, a4);
+    ++v10;
+      }
+    while ( v10 < v13 );
+    }
+  }
+    MapClass::UpdateLightingPostProcess();
+    return MapClass::MarkForRedraw(&DataGlobal_87C374.__pad_14B0[8132], 1);
 }
 }
 } // namespace gamemd
@@ -3258,6 +3217,47 @@ int sub_53CA50()
 {
     DataGlobal_A9FFA8 = DataGlobal_A9FF80;
     return LODWORD(DataGlobal_A9FF80);
+}
+}
+} // namespace gamemd
+
+// 0x53CA70
+namespace gamemd {
+int sub_53CA70()
+{
+{
+    DataGlobal_AA011C = 0;
+    DataGlobal_AA0120 = 0;
+    DataGlobal_AA0124 = 1;
+    DataGlobal_AA0125 = 0;
+    DataGlobal_AA0118 = (int)&vt_DynamicVectorClass_IonBlastClass;
+    DataGlobal_AA012C = 10;
+    DataGlobal_AA0128 = 0;
+    return atexit(sub_53CAB0);
+}
+}
+} // namespace gamemd
+
+// 0x53CAB0
+namespace gamemd {
+void sub_53CAB0()
+{
+{
+    if ( (DataGlobal_A9FAD8 & 1) == 0 )
+  {
+    DataGlobal_AA0118 = (int)&vt_VectorClass_IonBlastClass;
+    DataGlobal_A9FAD8 |= 1u;
+    if ( DataGlobal_AA011C )
+    {
+    if ( DataGlobal_AA0125 )
+      {
+    __3_YAXPAX_Z(DataGlobal_AA011C);
+    DataGlobal_AA011C = 0;
+      }
+    }
+    DataGlobal_AA0125 = 0;
+    DataGlobal_AA0120 = 0;
+  }
 }
 }
 } // namespace gamemd

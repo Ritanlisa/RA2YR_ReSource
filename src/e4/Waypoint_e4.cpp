@@ -83,28 +83,6 @@ IPXManagerClass *__thiscall Waypoint::InitInvalid(_BYTE *this)
 }
 } // namespace gamemd
 
-// 0x763610
-namespace gamemd {
-CHAR * Waypoint::To_String(CCINIClass * aP0)
-{
-{
-    if ( aP0 == (CCINIClass *)-1 )
-  {
-    DataGlobal_B72654 = 0;
-    return &DataGlobal_B72654;
-  }
-    else
-  {
-    if ( (int)aP0 >= 26 )
-    wsprintfA(&DataGlobal_B72654, "%c%c", (int)aP0 / 26 + 64, (int)aP0 % 26 + 65);
-    else
-    wsprintfA(&DataGlobal_B72654, "%c", aP0->__pad_41);
-    return &DataGlobal_B72654;
-  }
-}
-}
-} // namespace gamemd
-
 // 0x763A50
 namespace gamemd {
 char Waypoint::FindCell(unsigned int * a2)
@@ -132,6 +110,28 @@ char __thiscall Waypoint_FindCell(int *this, _DWORD *a2)
   }
   v7[9] = v3; /*0x763ad0*/
   return 1; /*0x763acd*/
+}
+}
+} // namespace gamemd
+
+// 0x763610
+namespace gamemd {
+CHAR * Waypoint::To_String(CCINIClass * aP0)
+{
+{
+    if ( aP0 == (CCINIClass *)-1 )
+  {
+    DataGlobal_B72654 = 0;
+    return &DataGlobal_B72654;
+  }
+    else
+  {
+    if ( (int)aP0 >= 26 )
+    wsprintfA(&DataGlobal_B72654, "%c%c", (int)aP0 / 26 + 64, (int)aP0 % 26 + 65);
+    else
+    wsprintfA(&DataGlobal_B72654, "%c", aP0->__pad_41);
+    return &DataGlobal_B72654;
+  }
 }
 }
 } // namespace gamemd

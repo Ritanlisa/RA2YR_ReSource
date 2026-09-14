@@ -2,26 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x76F910
-namespace gamemd {
-rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, ReferenceCounted * Source, char ** a4, ReferenceCounted * aP5)
-{
-{
-    char *v8;
-    ReferenceCounted *v9;
-    v8 = (char *)__2_YAPAXI_Z(0x30u);
-    if ( v8 )
-    v9 = (ReferenceCounted *)WorldDominationTour::Territory::Constructor(v8, edx0, a2, Source, (const char **)a4, aP5);
-    else
-    v9 = 0;
-    ComPtr::Constructor(a1);
-    a1->vfptr = &vt_rc_ptr_WorldDominationTour_Territory;
-    ComPtr::Set(a1, (int)v9);
-    return (rc_ptr *)a1;
-}
-}
-} // namespace gamemd
-
 // 0x76FC50
 int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selection_WorldDominationTour * aP3)
 {
@@ -63,3 +43,23 @@ int __thiscall ArtConfig::validateConfig(
   return BufferIOFileClass::Dtor(v11); /*0x76fd05*/
 }
 }
+
+// 0x76F910
+namespace gamemd {
+rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, ReferenceCounted * Source, char ** a4, ReferenceCounted * aP5)
+{
+{
+    char *v8;
+    ReferenceCounted *v9;
+    v8 = (char *)__2_YAPAXI_Z(0x30u);
+    if ( v8 )
+    v9 = (ReferenceCounted *)WorldDominationTour::Territory::Constructor(v8, edx0, a2, Source, (const char **)a4, aP5);
+    else
+    v9 = 0;
+    ComPtr::Constructor(a1);
+    a1->vfptr = &vt_rc_ptr_WorldDominationTour_Territory;
+    ComPtr::Set(a1, (int)v9);
+    return (rc_ptr *)a1;
+}
+}
+} // namespace gamemd

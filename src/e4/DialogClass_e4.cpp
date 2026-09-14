@@ -14,40 +14,6 @@ char __thiscall DialogClass_GetFlag(_BYTE *this)
 }
 } // namespace gamemd
 
-// 0x60D450
-namespace gamemd {
-ATOM DialogClass::RegisterWinClasses()
-{
-{
-    ATOM result;
-    WNDCLASSA WndClass;
-    result = 1;
-    if ( DataGlobal_AC48CC != 1 )
-  {
-    DataGlobal_AC48CC = 1;
-    WndClass.hInstance = g_hInstance;
-    WndClass.style = 3;
-    WndClass.lpfnWndProc = GameScreen::DlgProc;
-    WndClass.cbClsExtra = 0;
-    WndClass.cbWndExtra = 0;
-    memset(&WndClass.hIcon, 0, 12);
-    WndClass.lpszMenuName = DataGlobal_8357A0;
-    WndClass.lpszClassName = DataGlobal_8357A0;
-    RegisterClassA(&WndClass);
-    WndClass.style = 131;
-    WndClass.lpfnWndProc = sub_60D520;
-    WndClass.cbClsExtra = 0;
-    WndClass.cbWndExtra = 0;
-    WndClass.hInstance = g_hInstance;
-    memset(&WndClass.hIcon, 0, 16);
-    WndClass.lpszClassName = g_INI_Key_NewEdit;
-    return RegisterClassA(&WndClass);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x775BC0
 namespace gamemd {
 BOOL DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
@@ -101,6 +67,40 @@ BOOL __stdcall DialogClass::Reposition(SkirmishDialog *aP0, LPARAM a2)
   Rect.bottom = v8 + Rect.top - 1; /*0x775d48*/
   MoveWindow((HWND)aP0, Rect.left, Rect.top, v7, v8, 1); /*0x775d4c*/
   return 1; /*0x775d52*/
+}
+}
+} // namespace gamemd
+
+// 0x60D450
+namespace gamemd {
+ATOM DialogClass::RegisterWinClasses()
+{
+{
+    ATOM result;
+    WNDCLASSA WndClass;
+    result = 1;
+    if ( DataGlobal_AC48CC != 1 )
+  {
+    DataGlobal_AC48CC = 1;
+    WndClass.hInstance = g_hInstance;
+    WndClass.style = 3;
+    WndClass.lpfnWndProc = GameScreen::DlgProc;
+    WndClass.cbClsExtra = 0;
+    WndClass.cbWndExtra = 0;
+    memset(&WndClass.hIcon, 0, 12);
+    WndClass.lpszMenuName = DataGlobal_8357A0;
+    WndClass.lpszClassName = DataGlobal_8357A0;
+    RegisterClassA(&WndClass);
+    WndClass.style = 131;
+    WndClass.lpfnWndProc = sub_60D520;
+    WndClass.cbClsExtra = 0;
+    WndClass.cbWndExtra = 0;
+    WndClass.hInstance = g_hInstance;
+    memset(&WndClass.hIcon, 0, 16);
+    WndClass.lpszClassName = g_INI_Key_NewEdit;
+    return RegisterClassA(&WndClass);
+  }
+    return result;
 }
 }
 } // namespace gamemd

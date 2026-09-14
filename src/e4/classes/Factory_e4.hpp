@@ -4,8 +4,8 @@
 namespace gamemd {
 struct Factory {
     void* vfptr;  // minimal E2 declaration
-    int FindExitCellByName();  // 0x523C90
     char GetLinkedIndex(DynamicVector * aP1);  // 0x663D60
+    int FindExitCellByName();  // 0x523C90
     int IdleHandler();  // 0x731CD0
 };
 } // namespace gamemd

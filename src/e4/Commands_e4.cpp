@@ -5,9 +5,17 @@
 // 0x537A50
 char * Commands::AddRef()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char *__thiscall Commands::AddRef(MultiplayerDebugCommandClass *this)
 {
-    return aMultiplayerdeb;
+  return aMultiplayerdeb; /*0x537a55*/
 }
+}
+
+// 0x537A60
+const wchar_t * Commands::ddtor()
+{
+return g_INI_Key_De;
 }
 
 // 0x537A70
@@ -39,10 +47,4 @@ char Commands::Execute()
   }
     return result;
 }
-}
-
-// 0x537A60
-const wchar_t * Commands::ddtor()
-{
-return g_INI_Key_De;
 }

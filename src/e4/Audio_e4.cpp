@@ -248,74 +248,6 @@ LABEL_10:
 }
 } // namespace gamemd
 
-// 0x406D40
-namespace gamemd {
-void Audio::Shutdown()
-{
-{
-    if ( DataGlobal_87E728 )
-    AudioQueue::StopAllVoices((int)DataGlobal_87E728, 1);
-    AudioStream::CleanupChannels();
-    AudioQueue::HaltVoices();
-    Audio_Cleanup();
-    Audio_Cleanup_752B40();
-    sub_403FA0();
-    sub_407780();
-    if ( g_AudioFileData )
-  {
-    sub_401580((void **)g_AudioFileData);
-    g_AudioFileData = 0;
-  }
-    if ( g_MixFile_AUDIO )
-  {
-    (**(void (__thiscall ***)(int, int))g_MixFile_AUDIO)(g_MixFile_AUDIO, 1);
-    g_MixFile_AUDIO = 0;
-  }
-    if ( g_MixFile_THEME )
-  {
-    (**(void (__thiscall ***)(int, int))g_MixFile_THEME)(g_MixFile_THEME, 1);
-    g_MixFile_THEME = 0;
-  }
-    if ( DataGlobal_87E728 )
-  {
-    AudioStream::DestroyAll(DataGlobal_87E728);
-    DataGlobal_87E728 = 0;
-  }
-    sub_402990();
-}
-}
-} // namespace gamemd
-
-// 0x407000
-namespace gamemd {
-BOOL Audio::IsSoundEnabled()
-{
-{
-    return DataGlobal_87E728 != 0;
-}
-}
-} // namespace gamemd
-
-// 0x407010
-namespace gamemd {
-void * Audio::GetEnabled()
-{
-{
-    return DataGlobal_87E728;
-}
-}
-} // namespace gamemd
-
-// 0x407070
-namespace gamemd {
-int Audio::GetFlag()
-{
-{
-    return RequestBufferMixer(this, 0);
-}
-}
-} // namespace gamemd
-
 // 0x4070B0
 namespace gamemd {
 int Audio::WaitForCallback()
@@ -399,29 +331,6 @@ int Audio::GetSampleSize()
 int __thiscall Audio_GetSampleSize(_DWORD *this)
 {
   return *(this + 13) - *(this + 14); /*0x409328*/
-}
-}
-} // namespace gamemd
-
-// 0x4093B0
-namespace gamemd {
-int Audio::Callback()
-{
-{
-    if ( DataGlobal_87E848 )
-    return DataGlobal_87E848();
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x40A7A0
-namespace gamemd {
-LPDIRECTSOUND Audio::GetDirectSound()
-{
-{
-    return DataGlobal_87E89C;
 }
 }
 } // namespace gamemd
@@ -570,25 +479,6 @@ char **__thiscall sub_5D5820(char **this, char *Source, int a3)
   if ( Audio::IsSoundEnabled() ) /*0x5d582d*/
     *this = _strdup(Source); /*0x5d5843*/
   return this; /*0x5d5847*/
-}
-}
-} // namespace gamemd
-
-// 0x5EF240
-namespace gamemd {
-unsigned int sub_5EF240(int a1, int a2)
-{
-{
-    unsigned int result;
-    int i;
-    int v4;
-    result = 0;
-    for ( i = 0; i < a2; result = v4 + 2 * result )
-  {
-    v4 = *(unsigned char *)(i + a1) + (result >> 31);
-    ++i;
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -1044,22 +934,6 @@ void *Audio_LoadSoundINI()
 }
 } // namespace gamemd
 
-// 0x752340
-namespace gamemd {
-void sub_752340()
-{
-{
-    ThemeClass::ClearQueues();
-    if ( g_InfantryDrawState )
-  {
-    Audio::Release(g_InfantryDrawState);
-    AudioSample::Destructor(g_InfantryDrawState);
-    g_InfantryDrawState = 0;
-  }
-}
-}
-} // namespace gamemd
-
 // 0x752590
 namespace gamemd {
 void sub_752590(int a1, int a2, int a3)
@@ -1104,130 +978,6 @@ void __fastcall sub_752590(int a1, int a2, int a3)
 }
 } // namespace gamemd
 
-// 0x7529E0
-namespace gamemd {
-int Audio::IsPlaying()
-{
-{
-    char *v0;
-    UpdateThemes();
-    if ( !g_InfantryDrawState )
-    return 0;
-    if ( !Audio::IsSoundPlaying(g_InfantryDrawState) && (_UNKNOWN *)DataGlobal_B1D3CC == &DataGlobal_B1D3C8 && (_UNKNOWN *)DataGlobal_B1D3F4 == &DataGlobal_B1D3F0 && !DataGlobal_B1D4B8 )
-  {
-    v0 = DataGlobal_B1D450;
-    while ( *((char **)(v0) + 1) == v0 )
-    {
-    v0 += 12;
-    if ( (int)v0 >= (int)&DataGlobal_B1D480 )
-    return 0;
-    }
-  }
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x753D00
-namespace gamemd {
-char Audio_Render(unsigned int * a0, SomeVoxelCache * edx0, ObjectClass * aP2, float * a3, float * a4, float * a5, float a7)
-{
-{
-    float *v9;
-    float *v10;
-    int Info;
-    float v13[3];
-    float v14[3];
-    float v15[3];
-    float v16[3];
-    float v17[12];
-    float v18[12];
-    float v19[12];
-    qmemcpy(v18, InvertMatrix3x3Signs(v19, a3), sizeof(v18));
-    qmemcpy(v17, InvertMatrix3x3Signs(v19, a4), sizeof(v17));
-    v9 = Matrix3x3::TransformPoint(v18, (IUnknown *)v13, a5);
-    v15[0] = *v9;
-    v15[1] = v9[1];
-    v15[2] = v9[2];
-    v13[0] = 0.0;
-    v13[1] = 0.0;
-    v13[2] = 1.0;
-    v10 = Matrix3x3::TransformPoint(v17, (IUnknown *)v16, v13);
-    v14[0] = *v10;
-    v14[1] = v10[1];
-    v14[2] = v10[2];
-    Info = VoxelSection::GetInfo(a0, edx0, (SomeVoxelCache *)aP2);
-    return VoxelAnim::ComputeTransform(v15, v14, a7, *(unsigned char *)(Info + 163));
-}
-}
-} // namespace gamemd
-
-// 0x764B30
-namespace gamemd {
-rc_ptr * Audio_Create(rc_ptr_base * a1, const char ** a2, int a3)
-{
-{
-    char *v6;
-    ReferenceCounted *v7;
-    if ( *(int *)(a3 + 4) )
-  {
-    v6 = (char *)__2_YAPAXI_Z(0x4Cu);
-    if ( v6 )
-    v7 = (ReferenceCounted *)CampaignConstructorWDT(v6, a2, a3);
-    else
-    v7 = 0;
-    ComPtr::Constructor(a1);
-    a1->vfptr = &vt_rc_ptr_WorldDominationTour_Campaign;
-    ComPtr::Set(a1, (int)v7);
-    return (rc_ptr *)a1;
-  }
-    else
-  {
-    ComPtr::Constructor(a1);
-    a1->vfptr = &vt_rc_ptr_WorldDominationTour_Campaign;
-    return (rc_ptr *)a1;
-  }
-}
-}
-} // namespace gamemd
-
-// 0x76ABA0
-namespace gamemd {
-rc_ptr * Audio_Set(rc_ptr_base * a1, void * a2)
-{
-{
-    char *v4;
-    WDTState *WDT;
-    v4 = (char *)__2_YAPAXI_Z(0x4Cu);
-    if ( v4 )
-    WDT = (WDTState *)File::LoadWDT(v4, a2);
-    else
-    WDT = 0;
-    ComPtr::Constructor(a1);
-    a1->vfptr = &vt_rc_ptr_WDTState;
-    ComPtr::Set(a1, (int)WDT);
-    return (rc_ptr *)a1;
-}
-}
-} // namespace gamemd
-
-// 0x7B84D0
-namespace gamemd {
-int sub_7B84D0()
-{
-{
-    int result;
-    result = DataGlobal_B7816C;
-    if ( !DataGlobal_B7816C )
-  {
-    if ( DataGlobal_B78164 )
-    return WWMouseClass::UpdateCursorMovement((LONG *)DataGlobal_B78164);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x7BD130
 namespace gamemd {
 unsigned int Audio::GetSamplePosition(MouseClass * aP1, MouseClass * aP2)
@@ -1247,83 +997,6 @@ unsigned int __thiscall Audio::GetSamplePosition(int this, MouseClass *aP1, Mous
   if ( result >= *(_DWORD *)(this + 28) ) /*0x7bd15a*/
     result -= *(_DWORD *)(this + 32); /*0x7bd15c*/
   return result; /*0x7bd15f*/
-}
-}
-} // namespace gamemd
-
-// 0x7C94BC
-namespace gamemd {
-size_t sub_7C94BC(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
-{
-{
-    size_t v4;
-    _lock_file(Stream);
-    v4 = fread(Buffer, ElementSize, ElementCount, Stream);
-    _unlock_file(Stream);
-    return v4;
-}
-}
-} // namespace gamemd
-
-// 0x752B40
-namespace gamemd {
-void sub_752B40()
-{
-{
-    if ( DataGlobal_B1D4D8 )
-  {
-    Audio::Release(DataGlobal_B1D4D8);
-    AudioSample::Destructor(DataGlobal_B1D4D8);
-    DataGlobal_B1D4D8 = 0;
-  }
-}
-}
-} // namespace gamemd
-
-// 0x76BE90
-namespace gamemd {
-rc_ptr * Audio_Create_76BE90(rc_ptr_base * a1, int a2)
-{
-{
-    char *v4;
-    ReferenceCounted *v5;
-    v4 = (char *)__2_YAPAXI_Z(0x18u);
-    if ( v4 )
-    v5 = (ReferenceCounted *)Audio_Create_76BF00(v4, a2);
-    else
-    v5 = 0;
-    ComPtr::Constructor(a1);
-    a1->vfptr = &vt_rc_ptr_WorldDominationTour_CampaignProperties;
-    ComPtr::Set(a1, (int)v5);
-    return (rc_ptr *)a1;
-}
-}
-} // namespace gamemd
-
-// 0x7C1D90
-namespace gamemd {
-int sub_7C1D90(int a1, int a2)
-{
-{
-    int v3;
-    int *v4;
-    int v5;
-    int v6;
-    v3 = a2 + 1;
-    v4 = *(int **)(a1 + 356);
-    LOBYTE(v3) = (a2 + 1) & 0xFE;
-    v5 = *(int *)(a1 + 1896) - v3;
-    v6 = v5 + *v4;
-    if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v6, v3) )
-    return -4;
-    *(int *)(a1 + 372) = 0;
-    v4[3] = 10;
-    v4[4] = v5;
-    *(int *)(a1 + 360) = v4;
-    *(int *)(a1 + 356) = v4[1];
-    if ( *(short *)(a1 + 232) < 3u )
-    *(char *)(v6 + a2 + 1) = 0x80;
-    return -1;
 }
 }
 } // namespace gamemd
@@ -1492,101 +1165,6 @@ LABEL_17:
   if ( v12 <= v14 ) /*0x7c20a1*/
     return -1; /*0x7c2096*/
   return -4; /*0x7c2016*/
-}
-}
-} // namespace gamemd
-
-// 0x7C20B0
-namespace gamemd {
-int sub_7C20B0(int a1, int a2)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v8;
-    char *v9;
-    const void *v10;
-    int v11;
-    v3 = a2 + 1;
-    v4 = *(int *)(a1 + 368);
-    LOBYTE(v3) = (a2 + 1) & 0xFE;
-    v5 = *(int *)(a1 + 1904) - v3;
-    v6 = v5 + *(int *)(v4 + 8);
-    if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v6, v3) )
-    return -4;
-    v8 = *(int *)(v4 + 20) | 8;
-    *(int *)(v4 + 36) = v5;
-    *(int *)(v4 + 20) = v8;
-    *(int *)(v4 + 40) = a2;
-    if ( *(short *)(a1 + 232) < 3u )
-    *(char *)(v6 + a2 + 1) = 0x80;
-    if ( *(short *)(a1 + 1880) == 1 )
-  {
-    v9 = AudioCodec::Decode( (unsigned char *)(*(int *)(v4 + 8) + *(int *)(v4 + 36)), *(char **)(v4 + 8), *(int *)(a1 + 1904));
-    *(int *)(v4 + 20) &= ~8u;
-    v10 = *(const void **)(v4 + 8);
-    *(int *)(v4 + 40) = v9;
-    qmemcpy((void *)(a1 + 452), v10, (unsigned int)v9);
-    v11 = *(int *)(a1 + 420);
-    LOBYTE(v11) = v11 | 1;
-    *(int *)(a1 + 448) = *(int *)(v4 + 40);
-    *(int *)(a1 + 420) = v11;
-  }
-    return -1;
-}
-}
-} // namespace gamemd
-
-// 0x7C2180
-namespace gamemd {
-int sub_7C2180(int a1, unsigned int a2)
-{
-{
-    unsigned int v4;
-    int v5;
-    unsigned int v7;
-    int v8;
-    v4 = a2 + 1;
-    LOBYTE(v4) = (a2 + 1) & 0xFE;
-    if ( (*(char *)(a1 + 132) & 1) != 0 && (v5 = *(int *)(a1 + 1932)) != 0 )
-  {
-    if ( v4 <= *(int *)(a1 + 1972) || *(int *)(a1 + 1936) )
-    {
-    if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, *(int *)(a1 + 1960), v4) )
-      {
-    return -4;
-      }
-    else
-      {
-    *(int *)(a1 + 1968) = a2;
-    return -1;
-      }
-    }
-    else if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, v5, v4) )
-    {
-    return -4;
-    }
-    else
-    {
-    v7 = 0;
-    *(int *)(a1 + 1936) += a2;
-    if ( a2 / *(int *)(a1 + 156) )
-      {
-    do
-    *(char *)(*(int *)(a1 + 1940) + v7++) = 1;
-    while ( v7 < a2 / *(int *)(a1 + 156) );
-      }
-    return -1;
-    }
-  }
-    else
-  {
-    v8 = -((*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, v4) != 0);
-    LOBYTE(v8) = v8 & 0xFB;
-    return v8 - 1;
-  }
 }
 }
 } // namespace gamemd
@@ -1905,61 +1483,6 @@ int __usercall sub_7C7F20@<eax>(int a1@<edx>, _WORD *a2, _BYTE *a3, int a4)
 }
 } // namespace gamemd
 
-// 0x752290
-namespace gamemd {
-int sub_752290()
-{
-{
-    char *v0;
-    int result;
-    void *Enabled;
-    DataGlobal_B1D3D8 = 0;
-    DataGlobal_B1D428 = 0;
-    v0 = DataGlobal_B1D450;
-    do
-  {
-    DListNode::Init(v0);
-    v0 += 12;
-  }
-    while ( (int)v0 < (int)&DataGlobal_B1D480 );
-    DListNode::Init(&DataGlobal_B1D3F0);
-    DListNode::Init(&DataGlobal_B1D3C8);
-    result = (int)g_InfantryDrawState;
-    DataGlobal_B1D4B8 = 0;
-    DataGlobal_B1D4BC = 1;
-    if ( g_InfantryDrawState || (Enabled = Audio::GetEnabled(), result = (int)AudioStream::Constructor(Enabled, 0xBB8u), (g_InfantryDrawState = (void *)result) != 0) )
-  {
-    SetAudioFileName(result, DataGlobal_84667C);
-    AudioQueue::IsEmpty((int)g_InfantryDrawState, g_MixerChannel_Voice);
-    AudioQueue::IsNotEmpty((int)g_InfantryDrawState, g_MixerChannel_Ambient);
-    return 1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x752AD0
-namespace gamemd {
-int sub_752AD0()
-{
-{
-    int result;
-    void *Enabled;
-    result = (int)DataGlobal_B1D4D8;
-    if ( DataGlobal_B1D4D8 || (Enabled = Audio::GetEnabled(), result = (int)AudioStream::Constructor(Enabled, 0xBB8u), (DataGlobal_B1D4D8 = (void *)result) != 0) )
-  {
-    SetAudioFileName(result, DataGlobal_846688);
-    AudioQueue::IsEmpty((int)g_InfantryDrawState, g_MixerChannel_Voice);
-    AudioQueue::IsNotEmpty((int)g_InfantryDrawState, g_MixerChannel_Ambient);
-    DataGlobal_B1D480 = 0;
-    return 1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x7BE830
 namespace gamemd {
 int sub_7BE830(int a1, int a2)
@@ -2153,35 +1676,6 @@ signed int __fastcall sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
     *(_DWORD *)(a1 + 336) = v19 & 0xFFFFFE7F; /*0x7befc4*/
   }
   return result; /*0x7befca*/
-}
-}
-} // namespace gamemd
-
-// 0x7C04E0
-namespace gamemd {
-char sub_7C04E0(int a1, int a2)
-{
-{
-    int v3;
-    unsigned short *v4;
-    int v5;
-    if ( !a2 )
-    return 1;
-    v3 = *(unsigned short *)(a1 + 1812);
-    if ( (short)v3 && (*(char *)(a1 + 1814) & 3) != 0 )
-  {
-    v4 = *(unsigned short **)(a1 + 1820);
-    v5 = 0;
-    while ( a2 != *v4 )
-    {
-    ++v5;
-    v4 += 2;
-    if ( v5 >= v3 )
-    return 0;
-    }
-    return 1;
-  }
-    return 0;
 }
 }
 } // namespace gamemd
@@ -2514,16 +2008,6 @@ LABEL_22:
   LOBYTE(v16) = v16 | 0x10; /*0x7c3409*/
   *(_DWORD *)(a1 + 336) = v16; /*0x7c340c*/
   return -1; /*0x7c3408*/
-}
-}
-} // namespace gamemd
-
-// 0x7C3950
-namespace gamemd {
-void sub_7C3950(int a1, int a2)
-{
-{
-    *(int *)(a1 + 328) += a2;
 }
 }
 } // namespace gamemd
@@ -2994,40 +2478,6 @@ LABEL_4:
 }
 } // namespace gamemd
 
-// 0x7C1130
-namespace gamemd {
-int sub_7C1130(int a1, int a2)
-{
-{
-    int v2;
-    v2 = -((*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, a1 + 274, (a2 + 1) & 0xFFFFFFFE) != 0);
-    LOBYTE(v2) = v2 & 0xFD;
-    return v2 - 1;
-}
-}
-} // namespace gamemd
-
-// 0x7C1D40
-namespace gamemd {
-int sub_7C1D40(int a1, int a2)
-{
-{
-    int v2;
-    v2 = *(int *)(a1 + 1892);
-    if ( v2 )
-  {
-    if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, v2, (a2 + 1) & 0xFFFFFFFE) )
-    return -4;
-  }
-    else if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, (a2 + 1) & 0xFFFFFFFE) )
-  {
-    return -6;
-  }
-    return -1;
-}
-}
-} // namespace gamemd
-
 // 0x7C2410
 namespace gamemd {
 int sub_7C2410(int a1, int a2)
@@ -3111,30 +2561,6 @@ int __fastcall sub_7C2410(int a1, int a2)
 }
 } // namespace gamemd
 
-// 0x7C3430
-namespace gamemd {
-int Audio_Render_7C3430(DSurface * aP0, int a2, int a3, unsigned int a4)
-{
-{
-    int v6;
-    unsigned short v7;
-    int result;
-    if ( a2 >= *(unsigned short *)&aP0->__pad_518[508] || a2 < 0 || (aP0->__pad_2C[88] & 1) != 0 && !*(short *)&aP0->__pad_518[508] )
-  {
-    return -23;
-  }
-    v6 = *(int *)&aP0->__pad_518[516];
-    v7 = *(short *)(v6 + 4 * a2 + 2);
-    LOWORD(v6) = *(short *)(v6 + 4 * a2);
-    *(int *)&aP0->__pad_11F[1] = a2;
-    result = SeekAudioStream((int)aP0, (DSurface *)(unsigned short)v6, (DSurface *)v7, a3, a4);
-    if ( result == -1 )
-    *(int *)&aP0->__pad_11F[1] = a2;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x7C3860
 namespace gamemd {
 int sub_7C3860(int a1, int a2)
@@ -3194,6 +2620,566 @@ LABEL_8:
 }
 } // namespace gamemd
 
+// 0x406D40
+namespace gamemd {
+void Audio::Shutdown()
+{
+{
+    if ( DataGlobal_87E728 )
+    AudioQueue::StopAllVoices((int)DataGlobal_87E728, 1);
+    AudioStream::CleanupChannels();
+    AudioQueue::HaltVoices();
+    Audio_Cleanup();
+    Audio_Cleanup_752B40();
+    sub_403FA0();
+    sub_407780();
+    if ( g_AudioFileData )
+  {
+    sub_401580((void **)g_AudioFileData);
+    g_AudioFileData = 0;
+  }
+    if ( g_MixFile_AUDIO )
+  {
+    (**(void (__thiscall ***)(int, int))g_MixFile_AUDIO)(g_MixFile_AUDIO, 1);
+    g_MixFile_AUDIO = 0;
+  }
+    if ( g_MixFile_THEME )
+  {
+    (**(void (__thiscall ***)(int, int))g_MixFile_THEME)(g_MixFile_THEME, 1);
+    g_MixFile_THEME = 0;
+  }
+    if ( DataGlobal_87E728 )
+  {
+    AudioStream::DestroyAll(DataGlobal_87E728);
+    DataGlobal_87E728 = 0;
+  }
+    sub_402990();
+}
+}
+} // namespace gamemd
+
+// 0x407000
+namespace gamemd {
+BOOL Audio::IsSoundEnabled()
+{
+{
+    return DataGlobal_87E728 != 0;
+}
+}
+} // namespace gamemd
+
+// 0x407010
+namespace gamemd {
+void * Audio::GetEnabled()
+{
+{
+    return DataGlobal_87E728;
+}
+}
+} // namespace gamemd
+
+// 0x407070
+namespace gamemd {
+int Audio::GetFlag()
+{
+{
+    return RequestBufferMixer(this, 0);
+}
+}
+} // namespace gamemd
+
+// 0x4093B0
+namespace gamemd {
+int Audio::Callback()
+{
+{
+    if ( DataGlobal_87E848 )
+    return DataGlobal_87E848();
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x40A7A0
+namespace gamemd {
+LPDIRECTSOUND Audio::GetDirectSound()
+{
+{
+    return DataGlobal_87E89C;
+}
+}
+} // namespace gamemd
+
+// 0x5EF240
+namespace gamemd {
+unsigned int sub_5EF240(int a1, int a2)
+{
+{
+    unsigned int result;
+    int i;
+    int v4;
+    result = 0;
+    for ( i = 0; i < a2; result = v4 + 2 * result )
+  {
+    v4 = *(unsigned char *)(i + a1) + (result >> 31);
+    ++i;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x752290
+namespace gamemd {
+int sub_752290()
+{
+{
+    char *v0;
+    int result;
+    void *Enabled;
+    DataGlobal_B1D3D8 = 0;
+    DataGlobal_B1D428 = 0;
+    v0 = DataGlobal_B1D450;
+    do
+  {
+    DListNode::Init(v0);
+    v0 += 12;
+  }
+    while ( (int)v0 < (int)&DataGlobal_B1D480 );
+    DListNode::Init(&DataGlobal_B1D3F0);
+    DListNode::Init(&DataGlobal_B1D3C8);
+    result = (int)g_InfantryDrawState;
+    DataGlobal_B1D4B8 = 0;
+    DataGlobal_B1D4BC = 1;
+    if ( g_InfantryDrawState || (Enabled = Audio::GetEnabled(), result = (int)AudioStream::Constructor(Enabled, 0xBB8u), (g_InfantryDrawState = (void *)result) != 0) )
+  {
+    SetAudioFileName(result, DataGlobal_84667C);
+    AudioQueue::IsEmpty((int)g_InfantryDrawState, g_MixerChannel_Voice);
+    AudioQueue::IsNotEmpty((int)g_InfantryDrawState, g_MixerChannel_Ambient);
+    return 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x752340
+namespace gamemd {
+void sub_752340()
+{
+{
+    ThemeClass::ClearQueues();
+    if ( g_InfantryDrawState )
+  {
+    Audio::Release(g_InfantryDrawState);
+    AudioSample::Destructor(g_InfantryDrawState);
+    g_InfantryDrawState = 0;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x7529E0
+namespace gamemd {
+int Audio::IsPlaying()
+{
+{
+    char *v0;
+    UpdateThemes();
+    if ( !g_InfantryDrawState )
+    return 0;
+    if ( !Audio::IsSoundPlaying(g_InfantryDrawState) && (_UNKNOWN *)DataGlobal_B1D3CC == &DataGlobal_B1D3C8 && (_UNKNOWN *)DataGlobal_B1D3F4 == &DataGlobal_B1D3F0 && !DataGlobal_B1D4B8 )
+  {
+    v0 = DataGlobal_B1D450;
+    while ( *((char **)(v0) + 1) == v0 )
+    {
+    v0 += 12;
+    if ( (int)v0 >= (int)&DataGlobal_B1D480 )
+    return 0;
+    }
+  }
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x752AD0
+namespace gamemd {
+int sub_752AD0()
+{
+{
+    int result;
+    void *Enabled;
+    result = (int)DataGlobal_B1D4D8;
+    if ( DataGlobal_B1D4D8 || (Enabled = Audio::GetEnabled(), result = (int)AudioStream::Constructor(Enabled, 0xBB8u), (DataGlobal_B1D4D8 = (void *)result) != 0) )
+  {
+    SetAudioFileName(result, DataGlobal_846688);
+    AudioQueue::IsEmpty((int)g_InfantryDrawState, g_MixerChannel_Voice);
+    AudioQueue::IsNotEmpty((int)g_InfantryDrawState, g_MixerChannel_Ambient);
+    DataGlobal_B1D480 = 0;
+    return 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x752B40
+namespace gamemd {
+void sub_752B40()
+{
+{
+    if ( DataGlobal_B1D4D8 )
+  {
+    Audio::Release(DataGlobal_B1D4D8);
+    AudioSample::Destructor(DataGlobal_B1D4D8);
+    DataGlobal_B1D4D8 = 0;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x753D00
+namespace gamemd {
+char Audio_Render(unsigned int * a0, SomeVoxelCache * edx0, ObjectClass * aP2, float * a3, float * a4, float * a5, float a7)
+{
+{
+    float *v9;
+    float *v10;
+    int Info;
+    float v13[3];
+    float v14[3];
+    float v15[3];
+    float v16[3];
+    float v17[12];
+    float v18[12];
+    float v19[12];
+    qmemcpy(v18, InvertMatrix3x3Signs(v19, a3), sizeof(v18));
+    qmemcpy(v17, InvertMatrix3x3Signs(v19, a4), sizeof(v17));
+    v9 = Matrix3x3::TransformPoint(v18, (IUnknown *)v13, a5);
+    v15[0] = *v9;
+    v15[1] = v9[1];
+    v15[2] = v9[2];
+    v13[0] = 0.0;
+    v13[1] = 0.0;
+    v13[2] = 1.0;
+    v10 = Matrix3x3::TransformPoint(v17, (IUnknown *)v16, v13);
+    v14[0] = *v10;
+    v14[1] = v10[1];
+    v14[2] = v10[2];
+    Info = VoxelSection::GetInfo(a0, edx0, (SomeVoxelCache *)aP2);
+    return VoxelAnim::ComputeTransform(v15, v14, a7, *(unsigned char *)(Info + 163));
+}
+}
+} // namespace gamemd
+
+// 0x764B30
+namespace gamemd {
+rc_ptr * Audio_Create(rc_ptr_base * a1, const char ** a2, int a3)
+{
+{
+    char *v6;
+    ReferenceCounted *v7;
+    if ( *(int *)(a3 + 4) )
+  {
+    v6 = (char *)__2_YAPAXI_Z(0x4Cu);
+    if ( v6 )
+    v7 = (ReferenceCounted *)CampaignConstructorWDT(v6, a2, a3);
+    else
+    v7 = 0;
+    ComPtr::Constructor(a1);
+    a1->vfptr = &vt_rc_ptr_WorldDominationTour_Campaign;
+    ComPtr::Set(a1, (int)v7);
+    return (rc_ptr *)a1;
+  }
+    else
+  {
+    ComPtr::Constructor(a1);
+    a1->vfptr = &vt_rc_ptr_WorldDominationTour_Campaign;
+    return (rc_ptr *)a1;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x76ABA0
+namespace gamemd {
+rc_ptr * Audio_Set(rc_ptr_base * a1, void * a2)
+{
+{
+    char *v4;
+    WDTState *WDT;
+    v4 = (char *)__2_YAPAXI_Z(0x4Cu);
+    if ( v4 )
+    WDT = (WDTState *)File::LoadWDT(v4, a2);
+    else
+    WDT = 0;
+    ComPtr::Constructor(a1);
+    a1->vfptr = &vt_rc_ptr_WDTState;
+    ComPtr::Set(a1, (int)WDT);
+    return (rc_ptr *)a1;
+}
+}
+} // namespace gamemd
+
+// 0x76BE90
+namespace gamemd {
+rc_ptr * Audio_Create_76BE90(rc_ptr_base * a1, int a2)
+{
+{
+    char *v4;
+    ReferenceCounted *v5;
+    v4 = (char *)__2_YAPAXI_Z(0x18u);
+    if ( v4 )
+    v5 = (ReferenceCounted *)Audio_Create_76BF00(v4, a2);
+    else
+    v5 = 0;
+    ComPtr::Constructor(a1);
+    a1->vfptr = &vt_rc_ptr_WorldDominationTour_CampaignProperties;
+    ComPtr::Set(a1, (int)v5);
+    return (rc_ptr *)a1;
+}
+}
+} // namespace gamemd
+
+// 0x7B84D0
+namespace gamemd {
+int sub_7B84D0()
+{
+{
+    int result;
+    result = DataGlobal_B7816C;
+    if ( !DataGlobal_B7816C )
+  {
+    if ( DataGlobal_B78164 )
+    return WWMouseClass::UpdateCursorMovement((LONG *)DataGlobal_B78164);
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x7C04E0
+namespace gamemd {
+char sub_7C04E0(int a1, int a2)
+{
+{
+    int v3;
+    unsigned short *v4;
+    int v5;
+    if ( !a2 )
+    return 1;
+    v3 = *(unsigned short *)(a1 + 1812);
+    if ( (short)v3 && (*(char *)(a1 + 1814) & 3) != 0 )
+  {
+    v4 = *(unsigned short **)(a1 + 1820);
+    v5 = 0;
+    while ( a2 != *v4 )
+    {
+    ++v5;
+    v4 += 2;
+    if ( v5 >= v3 )
+    return 0;
+    }
+    return 1;
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7C1130
+namespace gamemd {
+int sub_7C1130(int a1, int a2)
+{
+{
+    int v2;
+    v2 = -((*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, a1 + 274, (a2 + 1) & 0xFFFFFFFE) != 0);
+    LOBYTE(v2) = v2 & 0xFD;
+    return v2 - 1;
+}
+}
+} // namespace gamemd
+
+// 0x7C1D40
+namespace gamemd {
+int sub_7C1D40(int a1, int a2)
+{
+{
+    int v2;
+    v2 = *(int *)(a1 + 1892);
+    if ( v2 )
+  {
+    if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, v2, (a2 + 1) & 0xFFFFFFFE) )
+    return -4;
+  }
+    else if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, (a2 + 1) & 0xFFFFFFFE) )
+  {
+    return -6;
+  }
+    return -1;
+}
+}
+} // namespace gamemd
+
+// 0x7C1D90
+namespace gamemd {
+int sub_7C1D90(int a1, int a2)
+{
+{
+    int v3;
+    int *v4;
+    int v5;
+    int v6;
+    v3 = a2 + 1;
+    v4 = *(int **)(a1 + 356);
+    LOBYTE(v3) = (a2 + 1) & 0xFE;
+    v5 = *(int *)(a1 + 1896) - v3;
+    v6 = v5 + *v4;
+    if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v6, v3) )
+    return -4;
+    *(int *)(a1 + 372) = 0;
+    v4[3] = 10;
+    v4[4] = v5;
+    *(int *)(a1 + 360) = v4;
+    *(int *)(a1 + 356) = v4[1];
+    if ( *(short *)(a1 + 232) < 3u )
+    *(char *)(v6 + a2 + 1) = 0x80;
+    return -1;
+}
+}
+} // namespace gamemd
+
+// 0x7C20B0
+namespace gamemd {
+int sub_7C20B0(int a1, int a2)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v8;
+    char *v9;
+    const void *v10;
+    int v11;
+    v3 = a2 + 1;
+    v4 = *(int *)(a1 + 368);
+    LOBYTE(v3) = (a2 + 1) & 0xFE;
+    v5 = *(int *)(a1 + 1904) - v3;
+    v6 = v5 + *(int *)(v4 + 8);
+    if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v6, v3) )
+    return -4;
+    v8 = *(int *)(v4 + 20) | 8;
+    *(int *)(v4 + 36) = v5;
+    *(int *)(v4 + 20) = v8;
+    *(int *)(v4 + 40) = a2;
+    if ( *(short *)(a1 + 232) < 3u )
+    *(char *)(v6 + a2 + 1) = 0x80;
+    if ( *(short *)(a1 + 1880) == 1 )
+  {
+    v9 = AudioCodec::Decode( (unsigned char *)(*(int *)(v4 + 8) + *(int *)(v4 + 36)), *(char **)(v4 + 8), *(int *)(a1 + 1904));
+    *(int *)(v4 + 20) &= ~8u;
+    v10 = *(const void **)(v4 + 8);
+    *(int *)(v4 + 40) = v9;
+    qmemcpy((void *)(a1 + 452), v10, (unsigned int)v9);
+    v11 = *(int *)(a1 + 420);
+    LOBYTE(v11) = v11 | 1;
+    *(int *)(a1 + 448) = *(int *)(v4 + 40);
+    *(int *)(a1 + 420) = v11;
+  }
+    return -1;
+}
+}
+} // namespace gamemd
+
+// 0x7C2180
+namespace gamemd {
+int sub_7C2180(int a1, unsigned int a2)
+{
+{
+    unsigned int v4;
+    int v5;
+    unsigned int v7;
+    int v8;
+    v4 = a2 + 1;
+    LOBYTE(v4) = (a2 + 1) & 0xFE;
+    if ( (*(char *)(a1 + 132) & 1) != 0 && (v5 = *(int *)(a1 + 1932)) != 0 )
+  {
+    if ( v4 <= *(int *)(a1 + 1972) || *(int *)(a1 + 1936) )
+    {
+    if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, *(int *)(a1 + 1960), v4) )
+      {
+    return -4;
+      }
+    else
+      {
+    *(int *)(a1 + 1968) = a2;
+    return -1;
+      }
+    }
+    else if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, v5, v4) )
+    {
+    return -4;
+    }
+    else
+    {
+    v7 = 0;
+    *(int *)(a1 + 1936) += a2;
+    if ( a2 / *(int *)(a1 + 156) )
+      {
+    do
+    *(char *)(*(int *)(a1 + 1940) + v7++) = 1;
+    while ( v7 < a2 / *(int *)(a1 + 156) );
+      }
+    return -1;
+    }
+  }
+    else
+  {
+    v8 = -((*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, v4) != 0);
+    LOBYTE(v8) = v8 & 0xFB;
+    return v8 - 1;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x7C3430
+namespace gamemd {
+int Audio_Render_7C3430(DSurface * aP0, int a2, int a3, unsigned int a4)
+{
+{
+    int v6;
+    unsigned short v7;
+    int result;
+    if ( a2 >= *(unsigned short *)&aP0->__pad_518[508] || a2 < 0 || (aP0->__pad_2C[88] & 1) != 0 && !*(short *)&aP0->__pad_518[508] )
+  {
+    return -23;
+  }
+    v6 = *(int *)&aP0->__pad_518[516];
+    v7 = *(short *)(v6 + 4 * a2 + 2);
+    LOWORD(v6) = *(short *)(v6 + 4 * a2);
+    *(int *)&aP0->__pad_11F[1] = a2;
+    result = SeekAudioStream((int)aP0, (DSurface *)(unsigned short)v6, (DSurface *)v7, a3, a4);
+    if ( result == -1 )
+    *(int *)&aP0->__pad_11F[1] = a2;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x7C3950
+namespace gamemd {
+void sub_7C3950(int a1, int a2)
+{
+{
+    *(int *)(a1 + 328) += a2;
+}
+}
+} // namespace gamemd
+
 // 0x7C7350
 namespace gamemd {
 int sub_7C7350(int a1)
@@ -3204,6 +3190,20 @@ int sub_7C7350(int a1)
     *(short *)(a1 + 10) = 0;
     *(int *)(a1 + 6) = 0;
     return a1;
+}
+}
+} // namespace gamemd
+
+// 0x7C94BC
+namespace gamemd {
+size_t sub_7C94BC(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
+{
+{
+    size_t v4;
+    _lock_file(Stream);
+    v4 = fread(Buffer, ElementSize, ElementCount, Stream);
+    _unlock_file(Stream);
+    return v4;
 }
 }
 } // namespace gamemd

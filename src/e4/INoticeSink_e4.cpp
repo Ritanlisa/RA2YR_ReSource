@@ -5,7 +5,9 @@
 // 0x410210
 int INoticeSink::Dispatch(int a1)
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __stdcall INoticeSink_Dispatch(int a1)
 {
-    return (*(int (__thiscall **)(int))(*(int *)(a1 - 4) + 44))(a1 - 4);
+  return (*(int (__thiscall **)(int))(*(_DWORD *)(a1 - 4) + 44))(a1 - 4); /*0x41021d*/
 }
 }

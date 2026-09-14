@@ -559,16 +559,6 @@ BOOL __thiscall Cell::HasOccupierBit(_DWORD *this, IUnknown *aP1)
 }
 } // namespace gamemd
 
-// 0x4870D0
-namespace gamemd {
-BOOL Cell::IsPassableOffset(IUnknown * aP1)
-{
-{
-    return *(this + (int)aP1 + 62) > 0;
-}
-}
-} // namespace gamemd
-
 // 0x487A10
 namespace gamemd {
 int Cell::SearchEnemies(IUnknown * aP1)
@@ -811,26 +801,6 @@ bool Cell::Exists(MouseClass * aP1)
 bool __thiscall Cell::Exists(_DWORD *this, MouseClass *aP1)
 {
   return *(_DWORD *)(*(this + 79) + 4 * (SLOWORD(aP1->field_0) + (SHIWORD(aP1->field_0) << 9))) != 0; /*0x5657fd*/
-}
-}
-} // namespace gamemd
-
-// 0x56BC50
-namespace gamemd {
-int Cell::PosToLinearIndex(IUnknown * aP0)
-{
-{
-    return SLOWORD(aP0->field_0) / 4 + 130 * (SHIWORD(aP0->field_0) / 4) + 131;
-}
-}
-} // namespace gamemd
-
-// 0x56CB80
-namespace gamemd {
-int Cell::DecodeFlags()
-{
-{
-    return *(void**)this & 0xF | ((unsigned short)*(void**)this >> 12);
 }
 }
 } // namespace gamemd
@@ -1126,34 +1096,6 @@ char __stdcall Cell::SetTileType(IUnknown *aP0, IUnknown *aP1, IUnknown *aP2, IU
     while ( aP1 ); /*0x56ed23*/
   }
   return result; /*0x56ed29*/
-}
-}
-} // namespace gamemd
-
-// 0x578080
-namespace gamemd {
-int Cell::GetGroundHeight(IUnknown * aP0)
-{
-{
-    int v1;
-    int v2;
-    int v3;
-    int *v4;
-    int v6[2];
-    IUnknown *aP0a;
-    v1 = aP0->field_4;
-    v6[0] = aP0->field_0;
-    v6[1] = v1;
-    v2 = aP0->field_4 / 256;
-    v3 = v6[0] / 256 + (v2 << 9);
-    if ( v3 < 0 || v3 >= *(int *)&DataGlobal_87C374.__pad_14B0[8452] || (v4 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v3)) == 0 )
-  {
-    LOWORD(aP0a) = v6[0] / 256;
-    HIWORD(aP0a) = v2;
-    v4 = g_CellClassArray;
-    g_Map_GlobalCellIndex = aP0a;
-  }
-    return Isometric::InitTables((int)v4, (IUnknown *)v6);
 }
 }
 } // namespace gamemd
@@ -1569,60 +1511,6 @@ int __thiscall Cell::GetTerrainMask(_DWORD *this, IUnknown *aP1, int a3)
     return v15; /*0x57b429*/
   }
   return result; /*0x57b273*/
-}
-}
-} // namespace gamemd
-
-// 0x586360
-namespace gamemd {
-bool Cell::IsPassable(IUnknown * aP0)
-{
-{
-    int v1;
-    int v2;
-    unsigned int v3;
-    int *v4;
-    int *v5;
-    int *NeighbourContent;
-    unsigned int v7;
-    short v9;
-    short v10;
-    IUnknown *aP0a;
-    IUnknown *aP0b;
-    v1 = aP0->field_8 / g_MapRenderState;
-    if ( (v1 & 1) != 0 )
-  {
-    v9 = aP0->field_0 / 256;
-    v2 = v1 / 2 + 1;
-    HIWORD(aP0a) = aP0->field_4 / 256 - v2;
-    LOWORD(aP0a) = v9 - v2;
-    v3 = (short)(v9 - v2) + (SHIWORD(aP0a) << 9);
-    if ( v3 < 0x40000 && (v4 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v3)) != 0 )
-    {
-    v5 = v4;
-    }
-    else
-    {
-    v5 = g_CellClassArray;
-    g_Map_GlobalCellIndex = aP0a;
-    }
-    if ( (v5[75] & 8) != 0 )
-    return 0;
-    NeighbourContent = Cell::GetNeighbourContent(v5, 3u);
-  }
-    else
-  {
-    v10 = aP0->field_0 / 256;
-    HIWORD(aP0b) = aP0->field_4 / 256 - v1 / 2;
-    LOWORD(aP0b) = v10 - v1 / 2;
-    v7 = (short)aP0b + (SHIWORD(aP0b) << 9);
-    if ( v7 >= 0x40000 || (NeighbourContent = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v7)) == 0 )
-    {
-    g_Map_GlobalCellIndex = aP0b;
-    NeighbourContent = g_CellClassArray;
-    }
-  }
-    return (NeighbourContent[75] & 8) == 0;
 }
 }
 } // namespace gamemd
@@ -2058,6 +1946,118 @@ LABEL_38:
   if ( (v15 & (unsigned __int8)v6) == 0 ) /*0x6d8ac1*/
     v2 |= 4u; /*0x6d8ac3*/
   return byte_7F4194[v2]; /*0x6d8acd*/
+}
+}
+} // namespace gamemd
+
+// 0x4870D0
+namespace gamemd {
+BOOL Cell::IsPassableOffset(IUnknown * aP1)
+{
+{
+    return *(this + (int)aP1 + 62) > 0;
+}
+}
+} // namespace gamemd
+
+// 0x56BC50
+namespace gamemd {
+int Cell::PosToLinearIndex(IUnknown * aP0)
+{
+{
+    return SLOWORD(aP0->field_0) / 4 + 130 * (SHIWORD(aP0->field_0) / 4) + 131;
+}
+}
+} // namespace gamemd
+
+// 0x56CB80
+namespace gamemd {
+int Cell::DecodeFlags()
+{
+{
+    return *(void**)this & 0xF | ((unsigned short)*(void**)this >> 12);
+}
+}
+} // namespace gamemd
+
+// 0x578080
+namespace gamemd {
+int Cell::GetGroundHeight(IUnknown * aP0)
+{
+{
+    int v1;
+    int v2;
+    int v3;
+    int *v4;
+    int v6[2];
+    IUnknown *aP0a;
+    v1 = aP0->field_4;
+    v6[0] = aP0->field_0;
+    v6[1] = v1;
+    v2 = aP0->field_4 / 256;
+    v3 = v6[0] / 256 + (v2 << 9);
+    if ( v3 < 0 || v3 >= *(int *)&DataGlobal_87C374.__pad_14B0[8452] || (v4 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v3)) == 0 )
+  {
+    LOWORD(aP0a) = v6[0] / 256;
+    HIWORD(aP0a) = v2;
+    v4 = g_CellClassArray;
+    g_Map_GlobalCellIndex = aP0a;
+  }
+    return Isometric::InitTables((int)v4, (IUnknown *)v6);
+}
+}
+} // namespace gamemd
+
+// 0x586360
+namespace gamemd {
+bool Cell::IsPassable(IUnknown * aP0)
+{
+{
+    int v1;
+    int v2;
+    unsigned int v3;
+    int *v4;
+    int *v5;
+    int *NeighbourContent;
+    unsigned int v7;
+    short v9;
+    short v10;
+    IUnknown *aP0a;
+    IUnknown *aP0b;
+    v1 = aP0->field_8 / g_MapRenderState;
+    if ( (v1 & 1) != 0 )
+  {
+    v9 = aP0->field_0 / 256;
+    v2 = v1 / 2 + 1;
+    HIWORD(aP0a) = aP0->field_4 / 256 - v2;
+    LOWORD(aP0a) = v9 - v2;
+    v3 = (short)(v9 - v2) + (SHIWORD(aP0a) << 9);
+    if ( v3 < 0x40000 && (v4 = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v3)) != 0 )
+    {
+    v5 = v4;
+    }
+    else
+    {
+    v5 = g_CellClassArray;
+    g_Map_GlobalCellIndex = aP0a;
+    }
+    if ( (v5[75] & 8) != 0 )
+    return 0;
+    NeighbourContent = Cell::GetNeighbourContent(v5, 3u);
+  }
+    else
+  {
+    v10 = aP0->field_0 / 256;
+    HIWORD(aP0b) = aP0->field_4 / 256 - v1 / 2;
+    LOWORD(aP0b) = v10 - v1 / 2;
+    v7 = (short)aP0b + (SHIWORD(aP0b) << 9);
+    if ( v7 >= 0x40000 || (NeighbourContent = *(int **)(*(int *)&DataGlobal_87C374.__pad_14B0[8448] + 4 * v7)) == 0 )
+    {
+    g_Map_GlobalCellIndex = aP0b;
+    NeighbourContent = g_CellClassArray;
+    }
+  }
+    return (NeighbourContent[75] & 8) == 0;
 }
 }
 } // namespace gamemd

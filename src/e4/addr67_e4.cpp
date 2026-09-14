@@ -5,14 +5,17 @@
 // 0x674500
 int RulesClass::sub_674500()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall sub_674500(RulesClass *this)
 {
-    int result;
-    RulesClass *v2;
-    INIClass::ReadDifficultyModifiers(v2);
-    INIClass::ReadDifficultyModifiers(v2);
-    result = INIClass::ReadDifficultyModifiers(v2);
-    LOBYTE(result) = 1;
-    return result;
+  int result; // eax
+  RulesClass *v2; // [esp+Ch] [ebp+4h]
+
+  INIClass::ReadDifficultyModifiers(v2); /*0x674515*/
+  INIClass::ReadDifficultyModifiers(v2); /*0x674527*/
+  result = INIClass::ReadDifficultyModifiers(v2); /*0x674539*/
+  LOBYTE(result) = 1; /*0x67453f*/
+  return result; /*0x67453e*/
 }
 }
 
@@ -57,48 +60,6 @@ int sub_679CC0()
     HashTable::DestroyHashTableINIClass(v1); /*0x679d7a*/
   }
   return dword_B053B4; /*0x679d84*/
-}
-}
-} // namespace gamemd
-
-// 0x679EC0
-namespace gamemd {
-int unknown_libname_29()
-{
-    int unknown_libname_29()
-{
-    return Hash::ComputeHashSHA1((int)&DataGlobal_887180);
-}
-}
-} // namespace gamemd
-
-// 0x679ED0
-namespace gamemd {
-int unknown_libname_30()
-{
-    int unknown_libname_30()
-{
-    return Hash::ComputeHashSHA1((int)&CCINIClass_INI_AI);
-}
-}
-} // namespace gamemd
-
-// 0x679EE0
-namespace gamemd {
-int ArtINI_Load()
-{
-{
-    int v1[22];
-    char v2[12];
-    int v3;
-    INIClass::ClearSection((int)&DataGlobal_887180, 0, 0);
-    CCFileClass::Construct(v1, aArtmdIni);
-    CCINIClass::Load(&DataGlobal_887180, (int)v1, 0, 0);
-    v1[0] = &vt_CCFileClass;
-    v3 = 0;
-    Vector::Clear((int)v2);
-    v1[0] = &DataGlobal_7E1668;
-    return BufferIOFileClass::Dtor(v1);
 }
 }
 } // namespace gamemd
@@ -222,20 +183,6 @@ int __fastcall ReadINIClassBuildingTypeList(
 }
 } // namespace gamemd
 
-// 0x67BAC0
-namespace gamemd {
-InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int a4)
-{
-{
-    INIClass Destination[2];
-    if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&DataGlobal_87C374.__pad_579C[33876], Destination, 128) )
-    return KeywordType::FindOrCreate2((ObjectClass *)Destination);
-    else
-    return (InfantryTypeClass *)a4;
-}
-}
-} // namespace gamemd
-
 // 0x67BB10
 namespace gamemd {
 InfantryTypeClass * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIClass * aP1, unsigned char * a3, unsigned int * a4)
@@ -351,6 +298,62 @@ InfantryTypeClass *__fastcall ReadINIClassInfantryTypeList(
     *(_DWORD *)aP0->__pad_0 = &vt_TypeList_InfantryTypeClass_const; /*0x67bccc*/
   }
   return (InfantryTypeClass *)aP0; /*0x67bc42*/
+}
+}
+} // namespace gamemd
+
+// 0x679EC0
+namespace gamemd {
+int unknown_libname_29()
+{
+    int unknown_libname_29()
+{
+    return Hash::ComputeHashSHA1((int)&DataGlobal_887180);
+}
+}
+} // namespace gamemd
+
+// 0x679ED0
+namespace gamemd {
+int unknown_libname_30()
+{
+    int unknown_libname_30()
+{
+    return Hash::ComputeHashSHA1((int)&CCINIClass_INI_AI);
+}
+}
+} // namespace gamemd
+
+// 0x679EE0
+namespace gamemd {
+int ArtINI_Load()
+{
+{
+    int v1[22];
+    char v2[12];
+    int v3;
+    INIClass::ClearSection((int)&DataGlobal_887180, 0, 0);
+    CCFileClass::Construct(v1, aArtmdIni);
+    CCINIClass::Load(&DataGlobal_887180, (int)v1, 0, 0);
+    v1[0] = &vt_CCFileClass;
+    v3 = 0;
+    Vector::Clear((int)v2);
+    v1[0] = &DataGlobal_7E1668;
+    return BufferIOFileClass::Dtor(v1);
+}
+}
+} // namespace gamemd
+
+// 0x67BAC0
+namespace gamemd {
+InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int a4)
+{
+{
+    INIClass Destination[2];
+    if ( INIClass::GetString(a0, aP1, a2, (INIClass *)&DataGlobal_87C374.__pad_579C[33876], Destination, 128) )
+    return KeywordType::FindOrCreate2((ObjectClass *)Destination);
+    else
+    return (InfantryTypeClass *)a4;
 }
 }
 } // namespace gamemd

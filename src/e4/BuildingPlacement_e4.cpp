@@ -44,51 +44,6 @@ char __thiscall BuildingPlacement_Activate(int this, int a2, _DWORD *a3)
 }
 }
 
-// 0x500200
-unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknown a3)
-{
-{
-    int *v3;
-    IUnknown *v4;
-    int *v5;
-    int v6;
-    int v7;
-    int v8;
-    int *AttackCoords;
-    int *v10;
-    int v11;
-    int v12;
-    IUnknown *TileIndex;
-    int v14;
-    short v16[2];
-    int v17;
-    char v18[12];
-    int v19;
-    v4 = aP1;
-    v5 = v3;
-    v6 = (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 732))(aP1);
-    v7 = (*(int (__thiscall **)(IUnknown *))(v4->field_0 + 728))(v4) + v6;
-    if ( (*(int (__thiscall **)(IUnknown *))(v4->field_0 + 724))(v4) + v7 )
-    v8 = Random::Range((int *)(*(int *)&HouseClass_Player.__pad_5568[8060] + 536), (IUnknown *)1, (IUnknown *)4);
-    else
-    v8 = 0;
-    AttackCoords = HouseClass::GenerateAttackCoords(v5, (MouseClass *)&aP1, v8);
-    v10 = &v4->field_9C;
-    v17 = *AttackCoords;
-    v11 = v4->field_9C;
-    v16[0] = 0;
-    v12 = *(int *)v4->__pad_A0;
-    v16[1] = 0;
-    v19 = v10[2];
-    LOWORD(aP1) = v11 / 256;
-    HIWORD(aP1) = v12 / 256;
-    TileIndex = (IUnknown *)MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&aP1, 0, 0);
-    v14 = *LayerClass::Pathfinding_Find( (IUnknown *)&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)v18, (IUnknown *)v18, (IUnknown *)&v17, (IUnknown *)1, TileIndex, 0, 0, (IUnknown *)1, (IUnknown *)1, 0, 0, 0, (IUnknown *)1, (IUnknown *)v16, 0, 0);
-    *a0 = v14;
-    return a0;
-}
-}
-
 // 0x54C550
 char BuildingPlacement::ProcessBuildingPlacementAction()
 {
@@ -618,5 +573,50 @@ LABEL_72:
     return v7; /*0x595235*/
   }
   return v7; /*0x594fbd*/
+}
+}
+
+// 0x500200
+unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknown a3)
+{
+{
+    int *v3;
+    IUnknown *v4;
+    int *v5;
+    int v6;
+    int v7;
+    int v8;
+    int *AttackCoords;
+    int *v10;
+    int v11;
+    int v12;
+    IUnknown *TileIndex;
+    int v14;
+    short v16[2];
+    int v17;
+    char v18[12];
+    int v19;
+    v4 = aP1;
+    v5 = v3;
+    v6 = (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 732))(aP1);
+    v7 = (*(int (__thiscall **)(IUnknown *))(v4->field_0 + 728))(v4) + v6;
+    if ( (*(int (__thiscall **)(IUnknown *))(v4->field_0 + 724))(v4) + v7 )
+    v8 = Random::Range((int *)(*(int *)&HouseClass_Player.__pad_5568[8060] + 536), (IUnknown *)1, (IUnknown *)4);
+    else
+    v8 = 0;
+    AttackCoords = HouseClass::GenerateAttackCoords(v5, (MouseClass *)&aP1, v8);
+    v10 = &v4->field_9C;
+    v17 = *AttackCoords;
+    v11 = v4->field_9C;
+    v16[0] = 0;
+    v12 = *(int *)v4->__pad_A0;
+    v16[1] = 0;
+    v19 = v10[2];
+    LOWORD(aP1) = v11 / 256;
+    HIWORD(aP1) = v12 / 256;
+    TileIndex = (IUnknown *)MapClass::GetTileIndex(&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)&aP1, 0, 0);
+    v14 = *LayerClass::Pathfinding_Find( (IUnknown *)&DataGlobal_87C374.__pad_14B0[8132], (IUnknown *)v18, (IUnknown *)v18, (IUnknown *)&v17, (IUnknown *)1, TileIndex, 0, 0, (IUnknown *)1, (IUnknown *)1, 0, 0, 0, (IUnknown *)1, (IUnknown *)v16, 0, 0);
+    *a0 = v14;
+    return a0;
 }
 }

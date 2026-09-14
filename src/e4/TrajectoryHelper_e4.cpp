@@ -100,27 +100,6 @@ _DWORD *__fastcall TrajectoryHelper::FindFirstObstacle(IUnknown *aP0, int *a1, i
 }
 } // namespace gamemd
 
-// 0x4CC310
-namespace gamemd {
-unsigned int * TrajectoryHelper::FindFirstImpenetrableObstacle(IUnknown * aP0, int * a1, int arg0, void * a3)
-{
-{
-    IUnknown *FirstObstacle;
-    IUnknown *v5;
-    FirstObstacle = (IUnknown *)TrajectoryHelper::FindFirstObstacle(aP0, a1, *(int *)(arg0 + 160), a3);
-    v5 = FirstObstacle;
-    if ( FirstObstacle && BuildingPlacement::ValidateType(FirstObstacle, (AbstractClass *)0xFFFFFFFF, (IUnknown *)0xFFFFFFFF) && *(char *)(*(int *)(arg0 + 172) + 324) )
-  {
-    return 0;
-  }
-    else
-  {
-    return &v5->field_0;
-  }
-}
-}
-} // namespace gamemd
-
 // 0x4CC360
 namespace gamemd {
 unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char * a2, int a3, int a4, int a5, int a6, int a7, void * other)
@@ -272,6 +251,27 @@ LABEL_22:
     }
   }
   return 0; /*0x4cc5c8*/
+}
+}
+} // namespace gamemd
+
+// 0x4CC310
+namespace gamemd {
+unsigned int * TrajectoryHelper::FindFirstImpenetrableObstacle(IUnknown * aP0, int * a1, int arg0, void * a3)
+{
+{
+    IUnknown *FirstObstacle;
+    IUnknown *v5;
+    FirstObstacle = (IUnknown *)TrajectoryHelper::FindFirstObstacle(aP0, a1, *(int *)(arg0 + 160), a3);
+    v5 = FirstObstacle;
+    if ( FirstObstacle && BuildingPlacement::ValidateType(FirstObstacle, (AbstractClass *)0xFFFFFFFF, (IUnknown *)0xFFFFFFFF) && *(char *)(*(int *)(arg0 + 172) + 324) )
+  {
+    return 0;
+  }
+    else
+  {
+    return &v5->field_0;
+  }
 }
 }
 } // namespace gamemd

@@ -210,19 +210,6 @@ double __thiscall Animation::GetProgress(int this)
 }
 }
 
-// 0x661D80
-long long Animation::UpdateBobOffset()
-{
-{
-    double v0;
-    __int64 result;
-    v0 = Math::Sin(DataGlobal_B04E00 - DataGlobal_B04E28);
-    result = Math::RoundToInt(v0 * DataGlobal_B04E20 * 0.5);
-    DataGlobal_B04E78 = result;
-    return result;
-}
-}
-
 // 0x770550
 void Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2)
 {
@@ -354,5 +341,18 @@ void __thiscall Animation::LoadSidebarAnimations(ObjectClass *this, _DWORD *a1, 
   DeleteAndZero((void **)&a1); /*0x770824*/
   DeleteAndZero((void **)&v24); /*0x77082d*/
   DeleteAndZero(&v23); /*0x770836*/
+}
+}
+
+// 0x661D80
+long long Animation::UpdateBobOffset()
+{
+{
+    double v0;
+    __int64 result;
+    v0 = Math::Sin(DataGlobal_B04E00 - DataGlobal_B04E28);
+    result = Math::RoundToInt(v0 * DataGlobal_B04E20 * 0.5);
+    DataGlobal_B04E78 = result;
+    return result;
 }
 }

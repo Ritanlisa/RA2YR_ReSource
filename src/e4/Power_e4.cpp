@@ -106,17 +106,6 @@ int __thiscall Power::FlagProcess(AbstractClass *this, int a2)
 }
 } // namespace gamemd
 
-// 0x4A1D50
-namespace gamemd {
-int Power::TimerProcess()
-{
-{
-    int v2;
-    return Checksummer::Add_Buffer((unsigned int *)this, (unsigned char *)&v2, 4);
-}
-}
-} // namespace gamemd
-
 // 0x67C6E0
 namespace gamemd {
 unsigned int * Power::UpdateAll()
@@ -516,6 +505,17 @@ int __thiscall ComputeHousePowerChecksum(int this, unsigned int *a2)
   Power::TimerProcess(*(_DWORD *)(this + 13608)); /*0x68bc81*/
   Power::TimerProcess(*(_DWORD *)(this + 13612)); /*0x68bc8f*/
   return Power::TimerProcess(*(_DWORD *)(this + 13616)); /*0x68bca2*/
+}
+}
+} // namespace gamemd
+
+// 0x4A1D50
+namespace gamemd {
+int Power::TimerProcess()
+{
+{
+    int v2;
+    return Checksummer::Add_Buffer((unsigned int *)this, (unsigned char *)&v2, 4);
 }
 }
 } // namespace gamemd

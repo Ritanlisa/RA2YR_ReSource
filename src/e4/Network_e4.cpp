@@ -1017,22 +1017,6 @@ char *__thiscall Network::FormatAddress(unsigned __int16 *this, IUnknown *aP1)
 }
 } // namespace gamemd
 
-// 0x53F200
-namespace gamemd {
-short Network::SetPort(IPXManagerClass * aP1)
-{
-{
-    short result;
-    if ( DataGlobal_828140 == 2 )
-  {
-    *(void**)this = (short)aP1;
-    return (short)aP1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x53F5B0
 namespace gamemd {
 int sub_53F5B0()
@@ -1438,60 +1422,6 @@ int __thiscall Network::SendPacketThunk2(int this, int a2, int a3, int a4, int a
              a5);
   else
     return 0; /*0x5414ad*/
-}
-}
-} // namespace gamemd
-
-// 0x541680
-namespace gamemd {
-char Network_Recv(IPXManagerClass * aP0, IPXManagerClass * aP1, int a3, int a4, IPXManagerClass * aP4)
-{
-{
-    IPXManagerClass *v5;
-    int v6;
-    IPXManagerClass *v8;
-    IPXManagerClass aP1a;
-    IPXManagerClass v10;
-    char v11[12];
-    if ( (DataGlobal_AA0674 & 1) == 0 )
-  {
-    DataGlobal_AA0674 |= 1u;
-    DataGlobal_AA06B0 = htonl((IUnknown *)0x7F000001);
-  }
-    if ( *(int *)&HouseClass_Player.__pad_5568[8068] != 4 || !HouseClass_Player.__pad_5568[18668] || !DataGlobal_B052EC )
-    return 0;
-    if ( *(unsigned short *)&aP0[1].Initialized == *(int *)&DataGlobal_830620.__pad_579C[49536] )
-  {
-    *(short *)&aP0[1].Initialized = (short)aP4;
-    aP0[1].Socket = *(int *)(a4 + 4);
-    Network::FormatAddress((unsigned short *)a4, 0);
-    Debug::Log();
-    LOWORD(v6) = *(short *)&DataGlobal_830620.__pad_579C[49536];
-    (*(void (__thiscall **)(int, IPXManagerClass *, int, void *, int, int, int, int))(**(int **)&DataGlobal_87C374.__pad_579C[23320] + 12))( *(int *)&DataGlobal_87C374.__pad_579C[23320], aP1, a3, &DataGlobal_AA06AC, 12, 0, 1, v6);
-    return 1;
-  }
-    if ( !*(short *)&aP0[1].Initialized )
-    return 0;
-    Network::CopyAddress_Small((char *)(**(int **)&HouseClass_Player.__pad_5568[18372] + 40), &aP1a);
-    v8 = aP0 + 1;
-    if ( aP1a.Socket == aP0[1].Socket && *(short *)&HouseClass_Player.__pad_5568[20478] == *(short *)&aP0[1].Initialized )
-  {
-    Debug::Log();
-    return 0;
-  }
-    if ( !v8->Socket )
-    return 0;
-    LOWORD(v5) = *(short *)&aP0[1].Initialized;
-    Waypoint::InitInvalid(v11);
-    v10.Socket = v8->Socket;
-    Struct::Copy6Bytes(v11, &v10);
-    Network::SetPort(v11, v5);
-    *(short *)&aP0[1].Initialized = 0;
-    v8->Socket = 0;
-    Network::FormatAddress((unsigned short *)v11, 0);
-    Debug::Log();
-    (*(void (__thiscall **)(int, IPXManagerClass *, int, char *, int, int, int, short))(**(int **)&DataGlobal_87C374.__pad_579C[23320] + 12))( *(int *)&DataGlobal_87C374.__pad_579C[23320], aP1, a3, v11, 12, 0, 1, (short)v5);
-    return 1;
 }
 }
 } // namespace gamemd
@@ -2069,85 +1999,6 @@ int __thiscall Network_Disconnect(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x5B5E90
-namespace gamemd {
-int Network::SendSettingsRequest()
-{
-{
-    HWND DlgItem;
-    int v3[62];
-    short v4;
-    DlgItem = GetDlgItem(*(void**)this, 1);
-    if ( DlgItem )
-    EnableWindow(DlgItem, 0);
-    memset(v3, 0, sizeof(v3));
-    v4 = 0;
-    v3[0] = 116;
-    return Stream::WriteBlock((int)&g_EventManager, (int)v3, 250, 1);
-}
-}
-} // namespace gamemd
-
-// 0x5BB580
-namespace gamemd {
-HKEY sub_5BB580(HKEY a1, const CHAR * a2, const char * a3)
-{
-{
-    HKEY v3;
-    DWORD v4;
-    CHAR *v5;
-    HKEY RegistrySubKey;
-    int v7;
-    DWORD v9;
-    LPBYTE lpData;
-    DWORD cchName;
-    DWORD cbData;
-    LPCSTR lpValueName;
-    DWORD Type;
-    HKEY v15;
-    struct _FILETIME ftLastWriteTime;
-    v3 = a1;
-    lpValueName = a2;
-    v15 = a1;
-    v4 = 0;
-    v5 = (CHAR *)__2_YAPAXI_Z(0x100u);
-    lpData = (LPBYTE)__2_YAPAXI_Z(0x100u);
-    cbData = 256;
-    while ( 1 )
-  {
-    v9 = v4;
-    cchName = 256;
-    ++v4;
-    if ( RegEnumKeyExA(v3, v9, v5, &cchName, 0, 0, 0, &ftLastWriteTime) )
-    break;
-    RegistrySubKey = FindRegistrySubKey(v3, v5, 0);
-    if ( RegistrySubKey )
-    {
-    cbData = 256;
-    if ( !RegQueryValueExA(RegistrySubKey, lpValueName, 0, &Type, lpData, &cbData) && Type == 1 && !strcmp((const char *)lpData, a3) )
-      {
-    __3_YAXPAX_Z(v5);
-    __3_YAXPAX_Z(lpData);
-    return RegistrySubKey;
-      }
-    v7 = Network_Find(a3);
-    RegCloseKey(RegistrySubKey);
-    if ( v7 )
-      {
-    __3_YAXPAX_Z(v5);
-    __3_YAXPAX_Z(lpData);
-    return (HKEY)v7;
-      }
-    v3 = v15;
-    }
-  }
-    __3_YAXPAX_Z(v5);
-    __3_YAXPAX_Z(lpData);
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x5BCC40
 namespace gamemd {
 int Network::validateConnection(int a2, int a3)
@@ -2371,114 +2222,6 @@ LABEL_35:
       }
       return Debug::Log("@@@@ After destroying connections players.count() = %d\n", MEMORY[0xA8DA84]);
   }
-}
-}
-} // namespace gamemd
-
-// 0x5D90E0
-namespace gamemd {
-char Network::QueryAddress(IPXManagerClass * aP0, int a2, int a3, char a4)
-{
-{
-    int QueueCount;
-    int v5;
-    int v6;
-    int v7;
-    DWORD Ticks;
-    int v10;
-    char v11[3];
-    short v12;
-    bool v13;
-    v10 = 43;
-    strcpy(v11, &DataGlobal_830620.__pad_690[64]);
-    (*(void (__thiscall **)(int, int))(**(int **)&DataGlobal_87C374.__pad_579C[23320] + 116))( *(int *)&DataGlobal_87C374.__pad_579C[23320], a2);
-    v12 = a2;
-    v13 = a4 == 1;
-    QueueCount = Network::GetQueueCount((int)&HouseClass_Player.__pad_5568[22284]);
-    Network::FormatAddress((unsigned short *)aP0, 0);
-    Debug::Log();
-    LOWORD(v5) = aP0->Socket;
-    Network::SendMessage((int)&HouseClass_Player.__pad_5568[22284], (int)&v10, 56, 0, (int)aP0, v5, a3);
-    Ticks = Timer::GetTicks();
-    while ( Network::GetQueueCount((int)&HouseClass_Player.__pad_5568[22284]) > QueueCount || *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23320] + 48) )
-  {
-    v6 = 180;
-    if ( Ticks != -1 )
-    {
-    v7 = Timer::GetTicks() - Ticks;
-    if ( v7 >= 180 )
-    break;
-    v6 = 180 - v7;
-    }
-    if ( !v6 )
-    break;
-    Network::ReceiveLoop(&HouseClass_Player.__pad_5568[22284]);
-    Event::Dispatch();
-  }
-    (*(void (__thiscall **)(int, int))(**(int **)&DataGlobal_87C374.__pad_579C[23320] + 116))( *(int *)&DataGlobal_87C374.__pad_579C[23320], 0);
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x5D9220
-namespace gamemd {
-short Network::WaitForPacket(int a1, int a2)
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    short v5;
-    short v7;
-    DWORD Ticks;
-    int v9;
-    int v10;
-    int v11;
-    char v12[8];
-    int v13;
-    char v14[12];
-    int v15[11];
-    int v16;
-    int v17;
-    v2 = 0;
-    Waypoint::InitInvalid(v14);
-    v3 = 60;
-    Ticks = Timer::GetTicks();
-    v10 = 60;
-    if ( a2 )
-  {
-    Ticks = Timer::GetTicks();
-    v3 = a2;
-    v9 = v13;
-    v10 = a2;
-  }
-    while ( 1 )
-  {
-    if ( Ticks != -1 )
-    {
-    v4 = Timer::GetTicks() - Ticks;
-    if ( v4 >= v3 )
-    return 0;
-    v3 -= v4;
-    }
-    if ( !v3 )
-    break;
-    Network::ReceiveLoop(g_NetworkManager);
-    Event::Dispatch();
-    if ( v2 >= Connection::GetSpeed(g_NetworkManager) )
-    v2 = 0;
-    if ( Network::SendPacketThunk(v2, v15, v12, v14, &v7, &v11) && v7 == -22012 && v15[0] == 44 && a1 == v11 )
-    {
-    v5 = v16;
-    Debug::Log(DataGlobal_830CF4, (unsigned short)v17, (unsigned short)v16);
-    Network::receiveData(v2);
-    return v5;
-    }
-    v3 = v10;
-    ++v2;
-  }
-    return 0;
 }
 }
 } // namespace gamemd
@@ -4903,69 +4646,6 @@ char *__thiscall Network::reconnect(int *this, DynamicVector *aP1, __int16 a3)
 }
 } // namespace gamemd
 
-// 0x68CAB0
-namespace gamemd {
-int Network_Assign(void * a1, int a2)
-{
-{
-    int v2;
-    IUnknown *v5;
-    bool v6;
-    v2 = 0;
-    if ( *(int *)DataGlobal_B05488.__pad_58 <= 0 )
-    return -1;
-    v5 = (IUnknown *)DataGlobal_B05488.field_4C;
-    while ( 1 )
-  {
-    v6 = _strcmpi(a1, *(const void **)(*(&v5->field_0 + v2) + 772)) == 0;
-    v5 = (IUnknown *)DataGlobal_B05488.field_4C;
-    if ( v6 && *(int *)(*(int *)(DataGlobal_B05488.field_4C + 4 * v2) + 784) == a2 )
-    break;
-    if ( ++v2 >= *(int *)DataGlobal_B05488.__pad_58 )
-    return -1;
-  }
-    return v2;
-}
-}
-} // namespace gamemd
-
-// 0x6956D0
-namespace gamemd {
-bool Network::sendGameEvent(Modem * aP0, int _10, unsigned int * a2)
-{
-{
-    LONG v3;
-    int v4;
-    LONG v5;
-    HWND Dialog;
-    bool v7;
-    v5 = v3;
-    *(int *)(v3 + 4) = -1;
-    Dialog = (HWND)CreateDialog(0xEDu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))DlgProcLoadGame, 0);
-    *(int *)v5 = Dialog;
-    if ( !Dialog )
-    return *(int *)(v5 + 4) == 1;
-    SetWindowLongA(Dialog, 8, v5);
-    NetworkDialog::InitModemSettings((HWND *)v5, aP0);
-    Dialog::Show(*(HWND *)v5);
-    while ( *(int *)(v5 + 4) < 0 )
-  {
-    if ( Dialog::PumpMessages() == 1 )
-    break;
-    ScreenSaver::Process(0, v4, v5);
-  }
-    Dialog::Destroy(*(SkirmishDialog **)v5);
-    v7 = *(int *)(v5 + 4) == 1;
-    if ( *(int *)(v5 + 4) == 1 )
-  {
-    qmemcpy(aP0, (const void *)(v5 + 136), 0x70u);
-    return *(int *)(v5 + 4) == 1;
-  }
-    return v7;
-}
-}
-} // namespace gamemd
-
 // 0x69B540
 namespace gamemd {
 unsigned int * Network::processGameEvent()
@@ -5627,34 +5307,6 @@ int __fastcall sub_64B410(int a1, int *a2)
 }
 } // namespace gamemd
 
-// 0x64D990
-namespace gamemd {
-void sub_64D990()
-{
-{
-    int v0;
-    int v1;
-    v0 = g_GameInitState;
-    if ( g_GameInitState )
-  {
-    v1 = g_MenuInitFlags;
-    do
-    {
-    if ( (DataGlobal_8B4205[111 * v1] & 1) == 0 && (int)g_CurrentFrame <= *(int *)((char *)&DataGlobal_8B4207 + 111 * v1) )
-    break;
-    if ( !v0 )
-    break;
-    v1 = ((short)v1 + 1) & 0x3FFF;
-    --v0;
-    g_MenuInitFlags = v1;
-    g_GameInitState = v0;
-    }
-    while ( v0 );
-  }
-}
-}
-} // namespace gamemd
-
 // 0x64D9E0
 namespace gamemd {
 int sub_64D9E0()
@@ -5784,6 +5436,22 @@ int Network::CopyAddress_Small(IPXManagerClass * aP1)
 }
 } // namespace gamemd
 
+// 0x53F200
+namespace gamemd {
+short Network::SetPort(IPXManagerClass * aP1)
+{
+{
+    short result;
+    if ( DataGlobal_828140 == 2 )
+  {
+    *(void**)this = (short)aP1;
+    return (short)aP1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x53F4F0
 namespace gamemd {
 int sub_53F4F0(short a1, int a2, int a3, int a4, int a5, int a6, int a7)
@@ -5798,6 +5466,139 @@ int sub_53F4F0(short a1, int a2, int a3, int a4, int a5, int a6, int a7)
     DataGlobal_AA056C = a7;
     DataGlobal_AA05A4 = 1;
     return a6;
+}
+}
+} // namespace gamemd
+
+// 0x541680
+namespace gamemd {
+char Network_Recv(IPXManagerClass * aP0, IPXManagerClass * aP1, int a3, int a4, IPXManagerClass * aP4)
+{
+{
+    IPXManagerClass *v5;
+    int v6;
+    IPXManagerClass *v8;
+    IPXManagerClass aP1a;
+    IPXManagerClass v10;
+    char v11[12];
+    if ( (DataGlobal_AA0674 & 1) == 0 )
+  {
+    DataGlobal_AA0674 |= 1u;
+    DataGlobal_AA06B0 = htonl((IUnknown *)0x7F000001);
+  }
+    if ( *(int *)&HouseClass_Player.__pad_5568[8068] != 4 || !HouseClass_Player.__pad_5568[18668] || !DataGlobal_B052EC )
+    return 0;
+    if ( *(unsigned short *)&aP0[1].Initialized == *(int *)&DataGlobal_830620.__pad_579C[49536] )
+  {
+    *(short *)&aP0[1].Initialized = (short)aP4;
+    aP0[1].Socket = *(int *)(a4 + 4);
+    Network::FormatAddress((unsigned short *)a4, 0);
+    Debug::Log();
+    LOWORD(v6) = *(short *)&DataGlobal_830620.__pad_579C[49536];
+    (*(void (__thiscall **)(int, IPXManagerClass *, int, void *, int, int, int, int))(**(int **)&DataGlobal_87C374.__pad_579C[23320] + 12))( *(int *)&DataGlobal_87C374.__pad_579C[23320], aP1, a3, &DataGlobal_AA06AC, 12, 0, 1, v6);
+    return 1;
+  }
+    if ( !*(short *)&aP0[1].Initialized )
+    return 0;
+    Network::CopyAddress_Small((char *)(**(int **)&HouseClass_Player.__pad_5568[18372] + 40), &aP1a);
+    v8 = aP0 + 1;
+    if ( aP1a.Socket == aP0[1].Socket && *(short *)&HouseClass_Player.__pad_5568[20478] == *(short *)&aP0[1].Initialized )
+  {
+    Debug::Log();
+    return 0;
+  }
+    if ( !v8->Socket )
+    return 0;
+    LOWORD(v5) = *(short *)&aP0[1].Initialized;
+    Waypoint::InitInvalid(v11);
+    v10.Socket = v8->Socket;
+    Struct::Copy6Bytes(v11, &v10);
+    Network::SetPort(v11, v5);
+    *(short *)&aP0[1].Initialized = 0;
+    v8->Socket = 0;
+    Network::FormatAddress((unsigned short *)v11, 0);
+    Debug::Log();
+    (*(void (__thiscall **)(int, IPXManagerClass *, int, char *, int, int, int, short))(**(int **)&DataGlobal_87C374.__pad_579C[23320] + 12))( *(int *)&DataGlobal_87C374.__pad_579C[23320], aP1, a3, v11, 12, 0, 1, (short)v5);
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x5B5E90
+namespace gamemd {
+int Network::SendSettingsRequest()
+{
+{
+    HWND DlgItem;
+    int v3[62];
+    short v4;
+    DlgItem = GetDlgItem(*(void**)this, 1);
+    if ( DlgItem )
+    EnableWindow(DlgItem, 0);
+    memset(v3, 0, sizeof(v3));
+    v4 = 0;
+    v3[0] = 116;
+    return Stream::WriteBlock((int)&g_EventManager, (int)v3, 250, 1);
+}
+}
+} // namespace gamemd
+
+// 0x5BB580
+namespace gamemd {
+HKEY sub_5BB580(HKEY a1, const CHAR * a2, const char * a3)
+{
+{
+    HKEY v3;
+    DWORD v4;
+    CHAR *v5;
+    HKEY RegistrySubKey;
+    int v7;
+    DWORD v9;
+    LPBYTE lpData;
+    DWORD cchName;
+    DWORD cbData;
+    LPCSTR lpValueName;
+    DWORD Type;
+    HKEY v15;
+    struct _FILETIME ftLastWriteTime;
+    v3 = a1;
+    lpValueName = a2;
+    v15 = a1;
+    v4 = 0;
+    v5 = (CHAR *)__2_YAPAXI_Z(0x100u);
+    lpData = (LPBYTE)__2_YAPAXI_Z(0x100u);
+    cbData = 256;
+    while ( 1 )
+  {
+    v9 = v4;
+    cchName = 256;
+    ++v4;
+    if ( RegEnumKeyExA(v3, v9, v5, &cchName, 0, 0, 0, &ftLastWriteTime) )
+    break;
+    RegistrySubKey = FindRegistrySubKey(v3, v5, 0);
+    if ( RegistrySubKey )
+    {
+    cbData = 256;
+    if ( !RegQueryValueExA(RegistrySubKey, lpValueName, 0, &Type, lpData, &cbData) && Type == 1 && !strcmp((const char *)lpData, a3) )
+      {
+    __3_YAXPAX_Z(v5);
+    __3_YAXPAX_Z(lpData);
+    return RegistrySubKey;
+      }
+    v7 = Network_Find(a3);
+    RegCloseKey(RegistrySubKey);
+    if ( v7 )
+      {
+    __3_YAXPAX_Z(v5);
+    __3_YAXPAX_Z(lpData);
+    return (HKEY)v7;
+      }
+    v3 = v15;
+    }
+  }
+    __3_YAXPAX_Z(v5);
+    __3_YAXPAX_Z(lpData);
+    return 0;
 }
 }
 } // namespace gamemd
@@ -5818,6 +5619,114 @@ unsigned char sub_5BC3C0()
     return (unsigned char)SetFocus(hWndParent);
   }
     return result;
+}
+}
+} // namespace gamemd
+
+// 0x5D90E0
+namespace gamemd {
+char Network::QueryAddress(IPXManagerClass * aP0, int a2, int a3, char a4)
+{
+{
+    int QueueCount;
+    int v5;
+    int v6;
+    int v7;
+    DWORD Ticks;
+    int v10;
+    char v11[3];
+    short v12;
+    bool v13;
+    v10 = 43;
+    strcpy(v11, &DataGlobal_830620.__pad_690[64]);
+    (*(void (__thiscall **)(int, int))(**(int **)&DataGlobal_87C374.__pad_579C[23320] + 116))( *(int *)&DataGlobal_87C374.__pad_579C[23320], a2);
+    v12 = a2;
+    v13 = a4 == 1;
+    QueueCount = Network::GetQueueCount((int)&HouseClass_Player.__pad_5568[22284]);
+    Network::FormatAddress((unsigned short *)aP0, 0);
+    Debug::Log();
+    LOWORD(v5) = aP0->Socket;
+    Network::SendMessage((int)&HouseClass_Player.__pad_5568[22284], (int)&v10, 56, 0, (int)aP0, v5, a3);
+    Ticks = Timer::GetTicks();
+    while ( Network::GetQueueCount((int)&HouseClass_Player.__pad_5568[22284]) > QueueCount || *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[23320] + 48) )
+  {
+    v6 = 180;
+    if ( Ticks != -1 )
+    {
+    v7 = Timer::GetTicks() - Ticks;
+    if ( v7 >= 180 )
+    break;
+    v6 = 180 - v7;
+    }
+    if ( !v6 )
+    break;
+    Network::ReceiveLoop(&HouseClass_Player.__pad_5568[22284]);
+    Event::Dispatch();
+  }
+    (*(void (__thiscall **)(int, int))(**(int **)&DataGlobal_87C374.__pad_579C[23320] + 116))( *(int *)&DataGlobal_87C374.__pad_579C[23320], 0);
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x5D9220
+namespace gamemd {
+short Network::WaitForPacket(int a1, int a2)
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    short v5;
+    short v7;
+    DWORD Ticks;
+    int v9;
+    int v10;
+    int v11;
+    char v12[8];
+    int v13;
+    char v14[12];
+    int v15[11];
+    int v16;
+    int v17;
+    v2 = 0;
+    Waypoint::InitInvalid(v14);
+    v3 = 60;
+    Ticks = Timer::GetTicks();
+    v10 = 60;
+    if ( a2 )
+  {
+    Ticks = Timer::GetTicks();
+    v3 = a2;
+    v9 = v13;
+    v10 = a2;
+  }
+    while ( 1 )
+  {
+    if ( Ticks != -1 )
+    {
+    v4 = Timer::GetTicks() - Ticks;
+    if ( v4 >= v3 )
+    return 0;
+    v3 -= v4;
+    }
+    if ( !v3 )
+    break;
+    Network::ReceiveLoop(g_NetworkManager);
+    Event::Dispatch();
+    if ( v2 >= Connection::GetSpeed(g_NetworkManager) )
+    v2 = 0;
+    if ( Network::SendPacketThunk(v2, v15, v12, v14, &v7, &v11) && v7 == -22012 && v15[0] == 44 && a1 == v11 )
+    {
+    v5 = v16;
+    Debug::Log(DataGlobal_830CF4, (unsigned short)v17, (unsigned short)v16);
+    Network::receiveData(v2);
+    return v5;
+    }
+    v3 = v10;
+    ++v2;
+  }
+    return 0;
 }
 }
 } // namespace gamemd
@@ -6021,6 +5930,34 @@ BOOL Network_Start(HWND hWnd, LPARAM lParam)
 }
 } // namespace gamemd
 
+// 0x64D990
+namespace gamemd {
+void sub_64D990()
+{
+{
+    int v0;
+    int v1;
+    v0 = g_GameInitState;
+    if ( g_GameInitState )
+  {
+    v1 = g_MenuInitFlags;
+    do
+    {
+    if ( (DataGlobal_8B4205[111 * v1] & 1) == 0 && (int)g_CurrentFrame <= *(int *)((char *)&DataGlobal_8B4207 + 111 * v1) )
+    break;
+    if ( !v0 )
+    break;
+    v1 = ((short)v1 + 1) & 0x3FFF;
+    --v0;
+    g_MenuInitFlags = v1;
+    g_GameInitState = v0;
+    }
+    while ( v0 );
+  }
+}
+}
+} // namespace gamemd
+
 // 0x664390
 namespace gamemd {
 short Network::handleDisconnect(IUnknown * aP1)
@@ -6049,6 +5986,69 @@ int Network::checkTimeout(int a2)
     return 0;
     else
     return *(int *)(*(this + 1) + 4 * a2) + 1;
+}
+}
+} // namespace gamemd
+
+// 0x68CAB0
+namespace gamemd {
+int Network_Assign(void * a1, int a2)
+{
+{
+    int v2;
+    IUnknown *v5;
+    bool v6;
+    v2 = 0;
+    if ( *(int *)DataGlobal_B05488.__pad_58 <= 0 )
+    return -1;
+    v5 = (IUnknown *)DataGlobal_B05488.field_4C;
+    while ( 1 )
+  {
+    v6 = _strcmpi(a1, *(const void **)(*(&v5->field_0 + v2) + 772)) == 0;
+    v5 = (IUnknown *)DataGlobal_B05488.field_4C;
+    if ( v6 && *(int *)(*(int *)(DataGlobal_B05488.field_4C + 4 * v2) + 784) == a2 )
+    break;
+    if ( ++v2 >= *(int *)DataGlobal_B05488.__pad_58 )
+    return -1;
+  }
+    return v2;
+}
+}
+} // namespace gamemd
+
+// 0x6956D0
+namespace gamemd {
+bool Network::sendGameEvent(Modem * aP0, int _10, unsigned int * a2)
+{
+{
+    LONG v3;
+    int v4;
+    LONG v5;
+    HWND Dialog;
+    bool v7;
+    v5 = v3;
+    *(int *)(v3 + 4) = -1;
+    Dialog = (HWND)CreateDialog(0xEDu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))DlgProcLoadGame, 0);
+    *(int *)v5 = Dialog;
+    if ( !Dialog )
+    return *(int *)(v5 + 4) == 1;
+    SetWindowLongA(Dialog, 8, v5);
+    NetworkDialog::InitModemSettings((HWND *)v5, aP0);
+    Dialog::Show(*(HWND *)v5);
+    while ( *(int *)(v5 + 4) < 0 )
+  {
+    if ( Dialog::PumpMessages() == 1 )
+    break;
+    ScreenSaver::Process(0, v4, v5);
+  }
+    Dialog::Destroy(*(SkirmishDialog **)v5);
+    v7 = *(int *)(v5 + 4) == 1;
+    if ( *(int *)(v5 + 4) == 1 )
+  {
+    qmemcpy(aP0, (const void *)(v5 + 136), 0x70u);
+    return *(int *)(v5 + 4) == 1;
+  }
+    return v7;
 }
 }
 } // namespace gamemd

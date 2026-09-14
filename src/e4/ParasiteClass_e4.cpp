@@ -175,18 +175,6 @@ int __stdcall ParasiteClass::LoadParasite(int *a0, AbstractClass *aP1)
 } // namespace game
 } // namespace ra2
 
-// 0x6296B0
-namespace ra2 {
-namespace game {
-int ParasiteClass::SaveParasite(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x6297F0
 namespace ra2 {
 namespace game {
@@ -644,53 +632,6 @@ LABEL_8:
       1,
       0);
   }
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x62A8E0
-namespace ra2 {
-namespace game {
-bool ParasiteClass::CanInfect(unsigned int * a2)
-{
-{
-    int v3;
-    int *v4;
-    bool result;
-    result = 0;
-    if ( a2 )
-  {
-    if ( !*((char *)(a2) + 129) )
-    {
-    if ( *((char *)(a2) + 144) )
-      {
-    if ( *((int*)(a2) + 27) )
-        {
-    if ( !*((int*)(a2) + 421) )
-          {
-    if ( *(char *)((*(int (__thiscall **)(int *))(*a2 + 132))(a2) + 3384) )
-            {
-    if ( !*((int*)(a2) + 185) )
-              {
-    v3 = this->creationFrame;
-    if ( !v3 )
-    return 1;
-    if ( !*(char *)((*(int (__thiscall **)(int))(*(int *)(v3) + 132))(v3) + 3278) )
-    return 1;
-    if ( !(*(int (__thiscall **)(int *))(*a2 + 444))(a2) )
-    return 1;
-    v4 = (int *)(*(int (__thiscall **)(int *))(*a2 + 444))(a2);
-    if ( Cell::IsValidHeight(v4) )
-    return 1;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-    return result;
 }
 }
 } // namespace game
@@ -1217,6 +1158,18 @@ LABEL_50:
 } // namespace game
 } // namespace ra2
 
+// 0x6296B0
+namespace ra2 {
+namespace game {
+int ParasiteClass::SaveParasite(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+}
+}
+} // namespace game
+} // namespace ra2
+
 // 0x6296D0
 namespace ra2 {
 namespace game {
@@ -1229,6 +1182,53 @@ int ParasiteClass::ddtor(int a1, unsigned int * a2)
   a2[2] = 268441278;
   a2[3] = 1822515787;
   return 0;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x62A8E0
+namespace ra2 {
+namespace game {
+bool ParasiteClass::CanInfect(unsigned int * a2)
+{
+{
+    int v3;
+    int *v4;
+    bool result;
+    result = 0;
+    if ( a2 )
+  {
+    if ( !*((char *)(a2) + 129) )
+    {
+    if ( *((char *)(a2) + 144) )
+      {
+    if ( *((int*)(a2) + 27) )
+        {
+    if ( !*((int*)(a2) + 421) )
+          {
+    if ( *(char *)((*(int (__thiscall **)(int *))(*a2 + 132))(a2) + 3384) )
+            {
+    if ( !*((int*)(a2) + 185) )
+              {
+    v3 = this->creationFrame;
+    if ( !v3 )
+    return 1;
+    if ( !*(char *)((*(int (__thiscall **)(int))(*(int *)(v3) + 132))(v3) + 3278) )
+    return 1;
+    if ( !(*(int (__thiscall **)(int *))(*a2 + 444))(a2) )
+    return 1;
+    v4 = (int *)(*(int (__thiscall **)(int *))(*a2 + 444))(a2);
+    if ( Cell::IsValidHeight(v4) )
+    return 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+    return result;
+}
 }
 } // namespace game
 } // namespace ra2

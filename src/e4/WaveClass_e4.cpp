@@ -162,32 +162,6 @@ LABEL_17:
 }
 } // namespace gamemd
 
-// 0x75F7D0
-namespace gamemd {
-int WaveClass::ProcessWaveTick(int * a1, int * a2, int a3)
-{
-{
-    int v3;
-    int result;
-    int i;
-    AbstractClass::SaveLoad_Prefix(a1, a2, a3);
-    v3 = *a2;
-    a3 = *((int*)(a1) + 128);
-    result = (*(int (__stdcall **)(int *, int *, int, int))(v3 + 16))(a2, &a3, 4, 0);
-    if ( result >= 0 )
-  {
-    for ( i = 0; i < a3; ++i )
-    {
-    result = (*(int (__stdcall **)(int *, int, int, int))(*a2 + 16))(a2, *((int*)(a1) + 125) + 4 * i, 4, 0);
-    if ( result < 0 )
-    break;
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x763200
 namespace gamemd {
 WaveClass * WaveClass::ddtor(char a2)
@@ -229,6 +203,32 @@ WaveClass *__thiscall WaveClass::ddtor(void **this, char a2)
   if ( (a2 & 1) != 0 ) /*0x7632be*/
     __3_YAXPAX_Z(this); /*0x7632c1*/
   return (WaveClass *)this; /*0x7632cb*/
+}
+}
+} // namespace gamemd
+
+// 0x75F7D0
+namespace gamemd {
+int WaveClass::ProcessWaveTick(int * a1, int * a2, int a3)
+{
+{
+    int v3;
+    int result;
+    int i;
+    AbstractClass::SaveLoad_Prefix(a1, a2, a3);
+    v3 = *a2;
+    a3 = *((int*)(a1) + 128);
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v3 + 16))(a2, &a3, 4, 0);
+    if ( result >= 0 )
+  {
+    for ( i = 0; i < a3; ++i )
+    {
+    result = (*(int (__stdcall **)(int *, int, int, int))(*a2 + 16))(a2, *((int*)(a1) + 125) + 4 * i, 4, 0);
+    if ( result < 0 )
+    break;
+    }
+  }
+    return result;
 }
 }
 } // namespace gamemd

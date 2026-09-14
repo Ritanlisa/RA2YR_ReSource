@@ -483,6 +483,20 @@ int __stdcall TiberiumClass::SaveLoad_Prefix(int a1, int a2)
 }
 } // namespace gamemd
 
+// 0x721E40
+namespace gamemd {
+int TiberiumClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -985803917;
+  a2[1] = 298980638;
+  a2[2] = 1610642817;
+  a2[3] = -1252326136;
+  return 0;
+}
+} // namespace gamemd
+
 // 0x7220D0
 namespace gamemd {
 int TiberiumClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
@@ -503,20 +517,6 @@ int TiberiumClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
   }
     return result;
 }
-}
-} // namespace gamemd
-
-// 0x721E40
-namespace gamemd {
-int TiberiumClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -985803917;
-  a2[1] = 298980638;
-  a2[2] = 1610642817;
-  a2[3] = -1252326136;
-  return 0;
 }
 } // namespace gamemd
 

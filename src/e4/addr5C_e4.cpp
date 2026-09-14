@@ -80,16 +80,6 @@ int __thiscall BinkMovieHandle::_vt03(_DWORD **this, unsigned __int8 a2)
 }
 } // namespace gamemd
 
-// 0x5C0630
-namespace gamemd {
-void E4Recv_5C0630::sub_5C0630()
-{
-{
-    *(void**)this = &vt_MovieHandle;
-}
-}
-} // namespace gamemd
-
 // 0x5C07D0
 namespace gamemd {
 unsigned int * Movie_Create(int a1, int a2, int * a3)
@@ -294,119 +284,6 @@ BOOL __thiscall ShowConfirmDialog(_WORD *this)
   StringCSF = GetStringCSF(g_Str_TXT_CANCEL, 0, aDRa2mdpostMpla, 108); /*0x5c60fa*/
   v3 = GetStringCSF(g_Str_TXT_OK, 0, aDRa2mdpostMpla, 108); /*0x5c6102*/
   return Dialog::ShowMessageBox((int)this, v3, (Movie *)StringCSF, 0, 0, v6) == 0; /*0x5c6116*/
-}
-}
-} // namespace gamemd
-
-// 0x5C6230
-namespace gamemd {
-int sub_5C6230(unsigned int a1, unsigned char * a2)
-{
-{
-    int result;
-    char v5;
-    int i;
-    int v7;
-    int j;
-    int v9;
-    unsigned int v10;
-    if ( a1 > 0x7F )
-  {
-    v5 = 4;
-    for ( i = 24; i != -8; i -= 8 )
-    {
-    if ( a1 >> i )
-    break;
-    --v5;
-    }
-    v7 = 4;
-    *a2 = v5 | 0x80;
-    result = 1;
-    for ( j = 24; j != -8; j -= 8 )
-    {
-    if ( a1 >> j )
-    break;
-    --v7;
-    }
-    if ( v7 )
-    {
-    v9 = 8 * v7 - 8;
-    do
-      {
-    v10 = a1 >> v9;
-    ++result;
-    v9 -= 8;
-    --v7;
-    a2[result - 1] = v10;
-      }
-    while ( v7 );
-    }
-  }
-    else
-  {
-    *a2 = a1;
-    return 1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x5C62B0
-namespace gamemd {
-int VarInt_Encode(int a1, unsigned char * a2, int a3)
-{
-{
-    unsigned int v4;
-    int v5;
-    char v6;
-    int i;
-    int v8;
-    int j;
-    int v10;
-    unsigned int v11;
-    char v13[260];
-    v4 = EncodeVarInt_Helper(a3);
-    *a2 = 2;
-    if ( v4 > 0x7F )
-  {
-    v6 = 4;
-    for ( i = 24; i != -8; i -= 8 )
-    {
-    if ( v4 >> i )
-    break;
-    --v6;
-    }
-    v8 = 4;
-    *((int*)(a2) + 1) = v6 | 0x80;
-    v5 = 1;
-    for ( j = 24; j != -8; j -= 8 )
-    {
-    if ( v4 >> j )
-    break;
-    --v8;
-    }
-    if ( v8 )
-    {
-    v10 = 8 * v8 - 8;
-    do
-      {
-    v11 = v4 >> v10;
-    ++v5;
-    v10 -= 8;
-    --v8;
-    a2[v5] = v11;
-      }
-    while ( v8 );
-    }
-  }
-    else
-  {
-    *((int*)(a2) + 1) = v4;
-    v5 = 1;
-  }
-    qmemcpy(&a2[v5 + 1], v13, v4);
-    return v4 + v5 + 1;
 }
 }
 } // namespace gamemd
@@ -798,42 +675,6 @@ LABEL_4:
     while ( (v6 & v7) == 0 ); /*0x5c6998*/
   }
   return result; /*0x5c697f*/
-}
-}
-} // namespace gamemd
-
-// 0x5C69E0
-namespace gamemd {
-int CompareBigIntLE(int a1, int a2, int a3)
-{
-{
-    int v3;
-    unsigned int v4;
-    int *v5;
-    unsigned int v6;
-    int *v7;
-    bool v8;
-    v3 = a3;
-    v4 = *(int *)(a1 + 4 * a3 - 4);
-    v5 = (int *)(a1 + 4 * a3 - 4);
-    v6 = *(int *)(a2 + 4 * a3 - 4);
-    v7 = (int *)(a2 + 4 * a3 - 4);
-    v8 = v4 <= v6;
-    if ( v4 < v6 )
-    return -1;
-    while ( 1 )
-  {
-    if ( !v8 )
-    return 1;
-    --v5;
-    --v7;
-    if ( !--v3 )
-    break;
-    v8 = *v5 <= *v7;
-    if ( *v5 < *v7 )
-    return -1;
-  }
-    return 0;
 }
 }
 } // namespace gamemd
@@ -2119,20 +1960,6 @@ char __fastcall sub_5C7BA0(const char *a1, unsigned __int16 *a2, int a3)
 }
 } // namespace gamemd
 
-// 0x5C8470
-namespace gamemd {
-unsigned int E4Recv_5C8470::sub_5C8470()
-{
-{
-    unsigned int result;
-    result = ((((((unsigned short)DataGlobal_ABF5A0 * (unsigned int)(unsigned short)~*(void**)this) >> 1) + (((((unsigned short)DataGlobal_ABF6B4 * ((unsigned int)(unsigned short)~*(this - 2) + 1)) >> 1) + (((unsigned short)~*(this - 1) * (unsigned int)(unsigned short)DataGlobal_ABF5A0 + 0x10000) >> 1) + 1) >> 16) + (((unsigned short)~*(this - 1) * (unsigned int)(unsigned short)DataGlobal_ABF6B4) >> 1) + 1) >> 14) + 2 * (unsigned short)DataGlobal_ABF6B4 * (unsigned short)~*(void**)this) >> DataGlobal_ABF8C4;
-    if ( result >= 0xFFFF )
-    return 0xFFFF;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x5C8500
 namespace gamemd {
 int ModBigIntExp(unsigned int * a0, AbstractClass * aP1, char * a2, char * a3, int a5)
@@ -2979,50 +2806,6 @@ int __cdecl sub_5C9AE0(const void *a1, const void *a2)
 }
 } // namespace gamemd
 
-// 0x5CAE60
-namespace gamemd {
-void E4Recv_5CAE60::sub_5CAE60()
-{
-{
-    *(void**)this = &vt_MultiplayerSiegeDefenderTeam;
-    MultiplayerTeam::Destructor(this);
-}
-}
-} // namespace gamemd
-
-// 0x5CAF00
-namespace gamemd {
-void E4Recv_5CAF00::sub_5CAF00()
-{
-{
-    *(void**)this = &vt_MultiplayerSiegeAttackerTeam;
-    MultiplayerTeam::Destructor(this);
-}
-}
-} // namespace gamemd
-
-// 0x5CAF70
-namespace gamemd {
-DWORD E4Recv_5CAF70::sub_5CAF70()
-{
-{
-    DWORD result;
-    LARGE_INTEGER Frequency;
-    if ( QueryPerformanceFrequency(&Frequency) )
-  {
-    result = Frequency.LowPart;
-    *(void**)this = Frequency.HighPart;
-  }
-    else
-  {
-    *(void**)this = 0;
-    return 0;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x5CD570
 namespace gamemd {
 int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int * a6, int a7, int a8, char a9, char a10)
@@ -3386,43 +3169,6 @@ LABEL_25:
 }
 } // namespace gamemd
 
-// 0x5CDB90
-namespace gamemd {
-int sub_5CDB90(const wchar_t ** a1, int a2, int a3)
-{
-{
-    int v5;
-    ObjectClass *v6;
-    int v7;
-    if ( String_Helper(a1, 0) || !a2 || a3 < *(int *)(a2 + 8) )
-    return 0;
-    v5 = 0;
-    v6 = 0;
-    v7 = 0;
-    while ( WideString::GetChar(a1, v6) )
-  {
-    for ( ; WideString::GetChar(a1, v6); v6 = (ObjectClass *)((char *)(v6) + 1) )
-    {
-    if ( WideString::GetChar(a1, v6) == 10 )
-    break;
-    }
-    if ( WideString::GetChar(a1, v6) != 10 )
-    {
-    v5 += *(int *)(a2 + 8);
-    if ( v5 >= a3 )
-      {
-    v5 = 0;
-    ++v7;
-    String_Helper_7B7660(a1, 0xCu, (size_t)v6);
-      }
-    v6 = (ObjectClass *)((char *)(v6) + 1);
-    }
-  }
-    return v7;
-}
-}
-} // namespace gamemd
-
 // 0x5CE0C0
 namespace gamemd {
 char E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
@@ -3557,32 +3303,6 @@ LABEL_5:
 }
 } // namespace gamemd
 
-// 0x5CE330
-namespace gamemd {
-int E4Recv_5CE330::sub_5CE330(const wchar_t ** a2)
-{
-{
-    int v3;
-    size_t v4;
-    int v5;
-    int v6;
-    int i;
-    v3 = 0;
-    v4 = 0;
-    for ( i = 0; WideString::GetChar(a2, v4); i = v3 )
-  {
-    if ( WideString::GetChar(a2, v4) == 10 )
-    break;
-    v5 = *(void**)this->M52;
-    LOWORD(v6) = WideString::GetChar(a2, v4);
-    v3 = (*(int (__thiscall **)(int, int))(v5 + 4))(this->M52, v6) + i;
-    ++v4;
-  }
-    return v3;
-}
-}
-} // namespace gamemd
-
 // 0x5CE3A0
 namespace gamemd {
 int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
@@ -3652,47 +3372,21 @@ int __thiscall sub_5CE3A0(int this, int a2, int *a3)
 }
 } // namespace gamemd
 
-// 0x5CF840
-namespace gamemd {
-const char ** E4Recv_5CF840::sub_5CF840(MapSelect * aP1)
-{
-{
-    int v3;
-    const char **v4;
-    ObjectClass *v5;
-    void *v7;
-    if ( !Audio::IsSoundEnabled() )
-    return 0;
-    v3 = 0;
-    if ( (int)this->M84 <= 0 )
-    return 0;
-    v4 = (const char **)aP1;
-    while ( 1 )
-  {
-    v5 = *(ObjectClass **)(this->M72 + 4 * v3);
-    String::AssignFromPtr((char **)&v7, (const char **)v5);
-    String::ToLower((const char **)&v7);
-    String::AssignFromPtr((char **)&aP1, v4);
-    String::ToLower((const char **)&aP1);
-    if ( String::Compare((const char **)&v7, (const char **)&aP1) )
-    break;
-    DeleteAndZero((void **)&aP1);
-    DeleteAndZero(&v7);
-    if ( ++v3 >= this->M84 )
-    return 0;
-  }
-    DeleteAndZero((void **)&aP1);
-    DeleteAndZero(&v7);
-    return (const char **)v5;
-}
-}
-} // namespace gamemd
-
 // 0x5C0330
 namespace gamemd {
 void nullsub_176()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x5C0630
+namespace gamemd {
+void E4Recv_5C0630::sub_5C0630()
+{
+{
+    *(void**)this = &vt_MovieHandle;
+}
 }
 } // namespace gamemd
 
@@ -4211,6 +3905,119 @@ void E4Recv_5C6190::sub_5C6190()
 }
 } // namespace gamemd
 
+// 0x5C6230
+namespace gamemd {
+int sub_5C6230(unsigned int a1, unsigned char * a2)
+{
+{
+    int result;
+    char v5;
+    int i;
+    int v7;
+    int j;
+    int v9;
+    unsigned int v10;
+    if ( a1 > 0x7F )
+  {
+    v5 = 4;
+    for ( i = 24; i != -8; i -= 8 )
+    {
+    if ( a1 >> i )
+    break;
+    --v5;
+    }
+    v7 = 4;
+    *a2 = v5 | 0x80;
+    result = 1;
+    for ( j = 24; j != -8; j -= 8 )
+    {
+    if ( a1 >> j )
+    break;
+    --v7;
+    }
+    if ( v7 )
+    {
+    v9 = 8 * v7 - 8;
+    do
+      {
+    v10 = a1 >> v9;
+    ++result;
+    v9 -= 8;
+    --v7;
+    a2[result - 1] = v10;
+      }
+    while ( v7 );
+    }
+  }
+    else
+  {
+    *a2 = a1;
+    return 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x5C62B0
+namespace gamemd {
+int VarInt_Encode(int a1, unsigned char * a2, int a3)
+{
+{
+    unsigned int v4;
+    int v5;
+    char v6;
+    int i;
+    int v8;
+    int j;
+    int v10;
+    unsigned int v11;
+    char v13[260];
+    v4 = EncodeVarInt_Helper(a3);
+    *a2 = 2;
+    if ( v4 > 0x7F )
+  {
+    v6 = 4;
+    for ( i = 24; i != -8; i -= 8 )
+    {
+    if ( v4 >> i )
+    break;
+    --v6;
+    }
+    v8 = 4;
+    *((int*)(a2) + 1) = v6 | 0x80;
+    v5 = 1;
+    for ( j = 24; j != -8; j -= 8 )
+    {
+    if ( v4 >> j )
+    break;
+    --v8;
+    }
+    if ( v8 )
+    {
+    v10 = 8 * v8 - 8;
+    do
+      {
+    v11 = v4 >> v10;
+    ++v5;
+    v10 -= 8;
+    --v8;
+    a2[v5] = v11;
+      }
+    while ( v8 );
+    }
+  }
+    else
+  {
+    *((int*)(a2) + 1) = v4;
+    v5 = 1;
+  }
+    qmemcpy(&a2[v5 + 1], v13, v4);
+    return v4 + v5 + 1;
+}
+}
+} // namespace gamemd
+
 // 0x5C6500
 namespace gamemd {
 char sub_5C6500(int a1, char * a2, int a3, int a4)
@@ -4296,6 +4103,42 @@ int InitArrayWithValue(unsigned int * a0, int a2, AbstractClass * aP2)
 {
     memset(a0, 0, 4 * (int)aP2);
     *a0 = a2;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5C69E0
+namespace gamemd {
+int CompareBigIntLE(int a1, int a2, int a3)
+{
+{
+    int v3;
+    unsigned int v4;
+    int *v5;
+    unsigned int v6;
+    int *v7;
+    bool v8;
+    v3 = a3;
+    v4 = *(int *)(a1 + 4 * a3 - 4);
+    v5 = (int *)(a1 + 4 * a3 - 4);
+    v6 = *(int *)(a2 + 4 * a3 - 4);
+    v7 = (int *)(a2 + 4 * a3 - 4);
+    v8 = v4 <= v6;
+    if ( v4 < v6 )
+    return -1;
+    while ( 1 )
+  {
+    if ( !v8 )
+    return 1;
+    --v5;
+    --v7;
+    if ( !--v3 )
+    break;
+    v8 = *v5 <= *v7;
+    if ( *v5 < *v7 )
+    return -1;
+  }
     return 0;
 }
 }
@@ -4444,6 +4287,20 @@ int sub_5C7E00(unsigned int * a1, unsigned short * a2, unsigned short * a3, int 
     }
     while ( v16 );
   }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x5C8470
+namespace gamemd {
+unsigned int E4Recv_5C8470::sub_5C8470()
+{
+{
+    unsigned int result;
+    result = ((((((unsigned short)DataGlobal_ABF5A0 * (unsigned int)(unsigned short)~*(void**)this) >> 1) + (((((unsigned short)DataGlobal_ABF6B4 * ((unsigned int)(unsigned short)~*(this - 2) + 1)) >> 1) + (((unsigned short)~*(this - 1) * (unsigned int)(unsigned short)DataGlobal_ABF5A0 + 0x10000) >> 1) + 1) >> 16) + (((unsigned short)~*(this - 1) * (unsigned int)(unsigned short)DataGlobal_ABF6B4) >> 1) + 1) >> 14) + 2 * (unsigned short)DataGlobal_ABF6B4 * (unsigned short)~*(void**)this) >> DataGlobal_ABF8C4;
+    if ( result >= 0xFFFF )
+    return 0xFFFF;
     return result;
 }
 }
@@ -5066,6 +4923,50 @@ void sub_5CACD0()
 }
 } // namespace gamemd
 
+// 0x5CAE60
+namespace gamemd {
+void E4Recv_5CAE60::sub_5CAE60()
+{
+{
+    *(void**)this = &vt_MultiplayerSiegeDefenderTeam;
+    MultiplayerTeam::Destructor(this);
+}
+}
+} // namespace gamemd
+
+// 0x5CAF00
+namespace gamemd {
+void E4Recv_5CAF00::sub_5CAF00()
+{
+{
+    *(void**)this = &vt_MultiplayerSiegeAttackerTeam;
+    MultiplayerTeam::Destructor(this);
+}
+}
+} // namespace gamemd
+
+// 0x5CAF70
+namespace gamemd {
+DWORD E4Recv_5CAF70::sub_5CAF70()
+{
+{
+    DWORD result;
+    LARGE_INTEGER Frequency;
+    if ( QueryPerformanceFrequency(&Frequency) )
+  {
+    result = Frequency.LowPart;
+    *(void**)this = Frequency.HighPart;
+  }
+    else
+  {
+    *(void**)this = 0;
+    return 0;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x5CB240
 namespace gamemd {
 void sub_5CB240()
@@ -5161,5 +5062,104 @@ namespace gamemd {
 void nullsub_190()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x5CDB90
+namespace gamemd {
+int sub_5CDB90(const wchar_t ** a1, int a2, int a3)
+{
+{
+    int v5;
+    ObjectClass *v6;
+    int v7;
+    if ( String_Helper(a1, 0) || !a2 || a3 < *(int *)(a2 + 8) )
+    return 0;
+    v5 = 0;
+    v6 = 0;
+    v7 = 0;
+    while ( WideString::GetChar(a1, v6) )
+  {
+    for ( ; WideString::GetChar(a1, v6); v6 = (ObjectClass *)((char *)(v6) + 1) )
+    {
+    if ( WideString::GetChar(a1, v6) == 10 )
+    break;
+    }
+    if ( WideString::GetChar(a1, v6) != 10 )
+    {
+    v5 += *(int *)(a2 + 8);
+    if ( v5 >= a3 )
+      {
+    v5 = 0;
+    ++v7;
+    String_Helper_7B7660(a1, 0xCu, (size_t)v6);
+      }
+    v6 = (ObjectClass *)((char *)(v6) + 1);
+    }
+  }
+    return v7;
+}
+}
+} // namespace gamemd
+
+// 0x5CE330
+namespace gamemd {
+int E4Recv_5CE330::sub_5CE330(const wchar_t ** a2)
+{
+{
+    int v3;
+    size_t v4;
+    int v5;
+    int v6;
+    int i;
+    v3 = 0;
+    v4 = 0;
+    for ( i = 0; WideString::GetChar(a2, v4); i = v3 )
+  {
+    if ( WideString::GetChar(a2, v4) == 10 )
+    break;
+    v5 = *(void**)this->M52;
+    LOWORD(v6) = WideString::GetChar(a2, v4);
+    v3 = (*(int (__thiscall **)(int, int))(v5 + 4))(this->M52, v6) + i;
+    ++v4;
+  }
+    return v3;
+}
+}
+} // namespace gamemd
+
+// 0x5CF840
+namespace gamemd {
+const char ** E4Recv_5CF840::sub_5CF840(MapSelect * aP1)
+{
+{
+    int v3;
+    const char **v4;
+    ObjectClass *v5;
+    void *v7;
+    if ( !Audio::IsSoundEnabled() )
+    return 0;
+    v3 = 0;
+    if ( (int)this->M84 <= 0 )
+    return 0;
+    v4 = (const char **)aP1;
+    while ( 1 )
+  {
+    v5 = *(ObjectClass **)(this->M72 + 4 * v3);
+    String::AssignFromPtr((char **)&v7, (const char **)v5);
+    String::ToLower((const char **)&v7);
+    String::AssignFromPtr((char **)&aP1, v4);
+    String::ToLower((const char **)&aP1);
+    if ( String::Compare((const char **)&v7, (const char **)&aP1) )
+    break;
+    DeleteAndZero((void **)&aP1);
+    DeleteAndZero(&v7);
+    if ( ++v3 >= this->M84 )
+    return 0;
+  }
+    DeleteAndZero((void **)&aP1);
+    DeleteAndZero(&v7);
+    return (const char **)v5;
+}
 }
 } // namespace gamemd

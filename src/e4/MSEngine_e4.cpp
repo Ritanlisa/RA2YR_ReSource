@@ -25,19 +25,6 @@ void __thiscall MSEngine::sub_5AC520(int this)
 }
 } // namespace gamemd
 
-// 0x5AC550
-namespace gamemd {
-unsigned int MSEngine::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->MSEngine_field_0xC )
-    return (unsigned int)(a2 - this->MSEngine_field_0x4) >> 4;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x5AC570
 namespace gamemd {
 unsigned int * MSEngine::Shutdown(unsigned int * a2, int a3)
@@ -220,19 +207,6 @@ int __thiscall MSEngine::_vt04(int this, _DWORD *a2)
       return -1; /*0x5ace9e*/
   }
   return result; /*0x5ace5b*/
-}
-}
-} // namespace gamemd
-
-// 0x5ACEB0
-namespace gamemd {
-unsigned int MSEngine::Run(int a2)
-{
-{
-    if ( (unsigned char)this->MSEngine_field_0xC )
-    return (unsigned int)(a2 - this->MSEngine_field_0x4) >> 4;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -579,6 +553,32 @@ int __thiscall MSEngine::ProcessEvents(_DWORD *this, MSVQAnim *aP1, int a3)
     GameClass::FrameLoop(this, 1); /*0x5d1e38*/
   }
   return result; /*0x5d1e3f*/
+}
+}
+} // namespace gamemd
+
+// 0x5AC550
+namespace gamemd {
+unsigned int MSEngine::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->MSEngine_field_0xC )
+    return (unsigned int)(a2 - this->MSEngine_field_0x4) >> 4;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5ACEB0
+namespace gamemd {
+unsigned int MSEngine::Run(int a2)
+{
+{
+    if ( (unsigned char)this->MSEngine_field_0xC )
+    return (unsigned int)(a2 - this->MSEngine_field_0x4) >> 4;
+    else
+    return 0;
 }
 }
 } // namespace gamemd

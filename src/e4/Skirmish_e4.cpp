@@ -299,20 +299,6 @@ int __thiscall Skirmish::RandomizeSettings(_DWORD *this, ObjectClass *aP1)
 }
 }
 
-// 0x5E2F80
-namespace gamemd {
-int sub_5E2F80()
-{
-{
-    int result;
-    result = MultiplayerGameMode::Find(*(void **)g_ScenarioFlags);
-    if ( !result )
-    return MultiplayerGameMode::GetFirst();
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x640710
 int Skirmish::RenderPreview(SkirmishDialog * aP1)
 {
@@ -1047,59 +1033,6 @@ LABEL_92:
 }
 }
 
-// 0x6ADDF0
-namespace gamemd {
-void sub_6ADDF0(HWND a1, int a2, int a3)
-{
-{
-    int v5;
-    int v6;
-    bool v7;
-    HWND v8;
-    int i;
-    int ResourceID4CSF;
-    int PlayerCountMap;
-    bool v13;
-    if ( a2 == -1 )
-    PlayerCountMap = 8;
-    else
-    PlayerCountMap = ReadPlayerCountMap(a2);
-    v5 = ReadPlayerCountMap(a3);
-    v6 = v5 - PlayerCountMap;
-    if ( a2 >= 0 && a3 >= 0 && a2 < g_MultiplayerOptions && a3 < g_MultiplayerOptions && (v13 = IsRandMap::Sed(*(int *)(g_MultiplayerGameState + 4 * a2)), v7 = IsRandMap::Sed(*(int *)(g_MultiplayerGameState + 4 * a3)), v13) && v7 )
-  {
-    v8 = a1;
-    HideSkirmishSpawnLocations(a1, 1);
-    Skirmish_Setup_6ADDF0_Setup(a1, 1, v5 - 1);
-  }
-    else
-  {
-    v8 = a1;
-  }
-    if ( v6 <= 0 )
-  {
-    if ( v6 < 0 )
-    HideSkirmishSpawnLocations(v8, v5);
-  }
-    else
-  {
-    Skirmish_Setup_6ADDF0_Setup(v8, PlayerCountMap, v6);
-  }
-    if ( v8 && g_GameStateFlags )
-  {
-    for ( i = 1; i < 8; ++i )
-    {
-    ResourceID4CSF = GetResourceID4CSF((void *)i);
-    if ( g_GameStateFlags && *(char *)(g_GameStateFlags + 60) )
-    SetupLobbyPlayerSlots(v8, ResourceID4CSF, 3);
-    else
-    SetupLobbyPlayerSlots(v8, ResourceID4CSF, -2);
-    }
-  }
-}
-}
-} // namespace gamemd
-
 // 0x6ADF00
 namespace gamemd {
 int Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
@@ -1184,6 +1117,73 @@ int __fastcall Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
     while ( (int)(v5 + 1) < v17 );
   }
   return result; /*0x6ae06d*/
+}
+}
+} // namespace gamemd
+
+// 0x5E2F80
+namespace gamemd {
+int sub_5E2F80()
+{
+{
+    int result;
+    result = MultiplayerGameMode::Find(*(void **)g_ScenarioFlags);
+    if ( !result )
+    return MultiplayerGameMode::GetFirst();
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x6ADDF0
+namespace gamemd {
+void sub_6ADDF0(HWND a1, int a2, int a3)
+{
+{
+    int v5;
+    int v6;
+    bool v7;
+    HWND v8;
+    int i;
+    int ResourceID4CSF;
+    int PlayerCountMap;
+    bool v13;
+    if ( a2 == -1 )
+    PlayerCountMap = 8;
+    else
+    PlayerCountMap = ReadPlayerCountMap(a2);
+    v5 = ReadPlayerCountMap(a3);
+    v6 = v5 - PlayerCountMap;
+    if ( a2 >= 0 && a3 >= 0 && a2 < g_MultiplayerOptions && a3 < g_MultiplayerOptions && (v13 = IsRandMap::Sed(*(int *)(g_MultiplayerGameState + 4 * a2)), v7 = IsRandMap::Sed(*(int *)(g_MultiplayerGameState + 4 * a3)), v13) && v7 )
+  {
+    v8 = a1;
+    HideSkirmishSpawnLocations(a1, 1);
+    Skirmish_Setup_6ADDF0_Setup(a1, 1, v5 - 1);
+  }
+    else
+  {
+    v8 = a1;
+  }
+    if ( v6 <= 0 )
+  {
+    if ( v6 < 0 )
+    HideSkirmishSpawnLocations(v8, v5);
+  }
+    else
+  {
+    Skirmish_Setup_6ADDF0_Setup(v8, PlayerCountMap, v6);
+  }
+    if ( v8 && g_GameStateFlags )
+  {
+    for ( i = 1; i < 8; ++i )
+    {
+    ResourceID4CSF = GetResourceID4CSF((void *)i);
+    if ( g_GameStateFlags && *(char *)(g_GameStateFlags + 60) )
+    SetupLobbyPlayerSlots(v8, ResourceID4CSF, 3);
+    else
+    SetupLobbyPlayerSlots(v8, ResourceID4CSF, -2);
+    }
+  }
 }
 }
 } // namespace gamemd

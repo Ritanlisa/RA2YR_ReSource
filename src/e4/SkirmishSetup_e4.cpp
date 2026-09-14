@@ -445,36 +445,6 @@ char __thiscall SkirmishSetup::PlayButtonClickAnim(HWND this)
 }
 }
 
-// 0x5E70D0
-namespace gamemd {
-WPARAM SkirmishSetup_Setup_5E70D0(HWND hDlg, int a2)
-{
-{
-    WPARAM v4;
-    signed int v5;
-    LRESULT v7;
-    if ( !a2 )
-    return -1;
-    v4 = 0;
-    v5 = 0;
-    v7 = SendDlgItemMessageA(hDlg, 1363, 0x18Bu, 0, 0);
-    if ( v7 > 0 )
-  {
-    do
-    {
-    if ( SendDlgItemMessageA(hDlg, 1363, 0x199u, v5, 0) == a2 )
-    v4 = v5;
-    ++v5;
-    }
-    while ( v5 < v7 );
-  }
-    SendDlgItemMessageA(hDlg, 1363, 0x186u, v4, 0);
-    SendDlgItemMessageA(hDlg, 1363, 0x197u, v4, 0);
-    return v4;
-}
-}
-} // namespace gamemd
-
 // 0x5E8590
 namespace gamemd {
 ObjectClass * SkirmishSetup_Setup_5E8590()
@@ -571,6 +541,36 @@ LABEL_18:
     GameOption::SetDigest(*v10, v11); /*0x5e8716*/
     return (ObjectClass *)v5; /*0x5e871b*/
   }
+}
+}
+} // namespace gamemd
+
+// 0x5E70D0
+namespace gamemd {
+WPARAM SkirmishSetup_Setup_5E70D0(HWND hDlg, int a2)
+{
+{
+    WPARAM v4;
+    signed int v5;
+    LRESULT v7;
+    if ( !a2 )
+    return -1;
+    v4 = 0;
+    v5 = 0;
+    v7 = SendDlgItemMessageA(hDlg, 1363, 0x18Bu, 0, 0);
+    if ( v7 > 0 )
+  {
+    do
+    {
+    if ( SendDlgItemMessageA(hDlg, 1363, 0x199u, v5, 0) == a2 )
+    v4 = v5;
+    ++v5;
+    }
+    while ( v5 < v7 );
+  }
+    SendDlgItemMessageA(hDlg, 1363, 0x186u, v4, 0);
+    SendDlgItemMessageA(hDlg, 1363, 0x197u, v4, 0);
+    return v4;
 }
 }
 } // namespace gamemd

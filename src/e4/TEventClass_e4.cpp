@@ -586,34 +586,6 @@ int __thiscall TEventClass::_vt10(_DWORD *this, int a2, int a3)
 }
 } // namespace gamemd
 
-// 0x71F820
-namespace gamemd {
-int TEventClass::ProcessEvent(int a2)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    AbstractClass::ProcessPower((#378 *)this);
-    v3 = this->TEventClass_field_28;
-    if ( v3 )
-  {
-    v4 = (*(int (__stdcall **)(int))(*(int *)(v3 + 4) + 16))(v3 + 4);
-    Power::TimerProcess(v4);
-  }
-    Power::TimerProcess(this->TEventClass_field_2C);
-    v5 = this->TEventClass_field_30;
-    if ( v5 )
-  {
-    v6 = (*(int (__stdcall **)(int))(*(int *)(v5 + 4) + 16))(v5 + 4);
-    Power::TimerProcess(v6);
-  }
-    return Power::TimerProcess(this->TEventClass_field_34);
-}
-}
-} // namespace gamemd
-
 // 0x71F8C0
 namespace gamemd {
 int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
@@ -646,30 +618,6 @@ int __stdcall TEventClass::SaveLoad_Prefix(AbstractClass *aP0, int aP1)
     return 0; /*0x71f929*/
   }
   return result; /*0x71f92b*/
-}
-}
-} // namespace gamemd
-
-// 0x71F930
-namespace gamemd {
-int TEventClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x71FA70
-namespace gamemd {
-int TEventClass::Stub()
-{
-{
-    return this->eventType;
 }
 }
 } // namespace gamemd
@@ -732,6 +680,34 @@ TEventClass *__thiscall TEventClass::Fire(void **this, char a2)
 }
 } // namespace gamemd
 
+// 0x71F820
+namespace gamemd {
+int TEventClass::ProcessEvent(int a2)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    AbstractClass::ProcessPower((#378 *)this);
+    v3 = this->TEventClass_field_28;
+    if ( v3 )
+  {
+    v4 = (*(int (__stdcall **)(int))(*(int *)(v3 + 4) + 16))(v3 + 4);
+    Power::TimerProcess(v4);
+  }
+    Power::TimerProcess(this->TEventClass_field_2C);
+    v5 = this->TEventClass_field_30;
+    if ( v5 )
+  {
+    v6 = (*(int (__stdcall **)(int))(*(int *)(v5 + 4) + 16))(v5 + 4);
+    Power::TimerProcess(v6);
+  }
+    return Power::TimerProcess(this->TEventClass_field_34);
+}
+}
+} // namespace gamemd
+
 // 0x71F880
 namespace gamemd {
 int TEventClass::ddtor(int a1, unsigned int * a2)
@@ -743,6 +719,20 @@ int TEventClass::ddtor(int a1, unsigned int * a2)
   a2[2] = 1610655660;
   a2[3] = -1252326136;
   return 0;
+}
+} // namespace gamemd
+
+// 0x71F930
+namespace gamemd {
+int TEventClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
 }
 } // namespace gamemd
 
@@ -759,5 +749,15 @@ namespace gamemd {
 int TEventClass::StubReturn48()
 {
 return 48;
+}
+} // namespace gamemd
+
+// 0x71FA70
+namespace gamemd {
+int TEventClass::Stub()
+{
+{
+    return this->eventType;
+}
 }
 } // namespace gamemd

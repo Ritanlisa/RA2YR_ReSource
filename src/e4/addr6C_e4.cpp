@@ -178,21 +178,6 @@ char __thiscall sub_6C8900(int *this)
 }
 } // namespace gamemd
 
-// 0x6C89B0
-namespace gamemd {
-unsigned int * E4Recv_6C89B0::sub_6C89B0(size_t Size)
-{
-{
-    void *v3;
-    *(void**)this = Size;
-    v3 = __2_YAPAXI_Z(Size);
-    this->M4 = v3;
-    this->M8 = v3;
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x6C8B10
 namespace gamemd {
 int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
@@ -479,25 +464,6 @@ _DWORD *__thiscall sub_6C9780(char *this, _DWORD *a2, float *a3)
 }
 } // namespace gamemd
 
-// 0x6C9AC0
-namespace gamemd {
-unsigned int * E4Recv_6C9AC0::sub_6C9AC0()
-{
-{
-    *(void**)this = 0;
-    this->M4 = 0;
-    this->M8 = 0;
-    this->M12 = 0;
-    this->M16 = 0;
-    this->M20 = 0;
-    this->M24 = 0;
-    this->M28 = 0;
-    this->M32 = 0;
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x6CA1E0
 namespace gamemd {
 char E4Recv_6CA1E0::sub_6CA1E0(char * Source)
@@ -729,47 +695,6 @@ LABEL_8:
 }
 } // namespace gamemd
 
-// 0x6CE570
-namespace gamemd {
-ObjectClass * E4Recv_6CE570::sub_6CE570()
-{
-{
-    ObjectClass *v2;
-    const void **v3;
-    v2 = 0;
-    v3 = (const void **)&DataGlobal_830620.__pad_579C[51204];
-    while ( _strcmpi(*v3, this) )
-  {
-    ++v3;
-    v2 = (ObjectClass *)((char *)(v2) + 1);
-    if ( (int)v3 >= (int)&DataGlobal_830620.__pad_579C[51252] )
-    return (ObjectClass *)-1;
-  }
-    return v2;
-}
-}
-} // namespace gamemd
-
-// 0x6CF070
-namespace gamemd {
-int sub_6CF070()
-{
-{
-    sub_6CF8F0(&DataGlobal_B0C114, 0, 0);
-    DataGlobal_B0C114 = (int)&vt_DynamicVectorClass_SwizzlePointerClass;
-    DataGlobal_B0C128 = 10;
-    DataGlobal_B0C124 = 0;
-    sub_6CF8F0(&DataGlobal_B0C12C, 0, 0);
-    DataGlobal_B0C12C = (int)&vt_DynamicVectorClass_SwizzlePointerClass;
-    DataGlobal_B0C13C = 0;
-    SwizzleManagerClass_Instance = (int)&vt_SwizzleManagerClass;
-    DataGlobal_B0C128 = 1000;
-    DataGlobal_B0C140 = 1000;
-    return atexit(SwizzleManagerClass::Register);
-}
-}
-} // namespace gamemd
-
 // 0x6CF320
 namespace gamemd {
 int globalHelper_0CF320(unsigned int * a1, unsigned int * a2)
@@ -781,72 +706,6 @@ int __cdecl globalHelper_0CF320(_DWORD *a1, _DWORD *a2)
     return 0; /*0x6cf330*/
   else
     return *a1 >= *a2 ? 1 : -1;
-}
-}
-} // namespace gamemd
-
-// 0x6CF8F0
-namespace gamemd {
-unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v5;
-    int *v7;
-    int *v8;
-    int v9;
-    this->M4 = 0;
-    this->M8 = a2;
-    this->M12 = 1;
-    this->M13 = 0;
-    *(void**)this = &vt_VectorClass_SwizzlePointerClass;
-    if ( !a2 )
-    return this;
-    if ( !a3 )
-  {
-    v7 = __2_YAPAXI_Z(8 * a2);
-    if ( v7 )
-    {
-    v8 = v7;
-    if ( a2 - 1 >= 0 )
-      {
-    v9 = a2;
-    do
-        {
-    *v8 = 0;
-    v8[1] = 0;
-    v8 += 2;
-    --v9;
-        }
-    while ( v9 );
-    this->M4 = v7;
-    this->M13 = 1;
-    return this;
-      }
-    }
-    else
-    {
-    v7 = 0;
-    }
-    this->M4 = v7;
-    this->M13 = 1;
-    return this;
-  }
-    v4 = a3;
-    if ( a2 - 1 >= 0 )
-  {
-    v5 = a2;
-    do
-    {
-    *v4 = 0;
-    v4[1] = 0;
-    v4 += 2;
-    --v5;
-    }
-    while ( v5 );
-  }
-    this->M4 = a3;
-    return this;
 }
 }
 } // namespace gamemd
@@ -1176,6 +1035,21 @@ int sub_6C8990()
     DataGlobal_B0BDC8 = 0;
     DataGlobal_B0BDCC = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6C89B0
+namespace gamemd {
+unsigned int * E4Recv_6C89B0::sub_6C89B0(size_t Size)
+{
+{
+    void *v3;
+    *(void**)this = Size;
+    v3 = __2_YAPAXI_Z(Size);
+    this->M4 = v3;
+    this->M8 = v3;
+    return this;
 }
 }
 } // namespace gamemd
@@ -1641,6 +1515,25 @@ int sub_6C99B0()
 }
 } // namespace gamemd
 
+// 0x6C9AC0
+namespace gamemd {
+unsigned int * E4Recv_6C9AC0::sub_6C9AC0()
+{
+{
+    *(void**)this = 0;
+    this->M4 = 0;
+    this->M8 = 0;
+    this->M12 = 0;
+    this->M16 = 0;
+    this->M20 = 0;
+    this->M24 = 0;
+    this->M28 = 0;
+    this->M32 = 0;
+    return this;
+}
+}
+} // namespace gamemd
+
 // 0x6C9F00
 namespace gamemd {
 void nullsub_40()
@@ -2100,6 +1993,113 @@ int sub_6CE550()
     DataGlobal_B0C0F0 = 128;
     DataGlobal_B0C0F4 = 128;
     return 128;
+}
+}
+} // namespace gamemd
+
+// 0x6CE570
+namespace gamemd {
+ObjectClass * E4Recv_6CE570::sub_6CE570()
+{
+{
+    ObjectClass *v2;
+    const void **v3;
+    v2 = 0;
+    v3 = (const void **)&DataGlobal_830620.__pad_579C[51204];
+    while ( _strcmpi(*v3, this) )
+  {
+    ++v3;
+    v2 = (ObjectClass *)((char *)(v2) + 1);
+    if ( (int)v3 >= (int)&DataGlobal_830620.__pad_579C[51252] )
+    return (ObjectClass *)-1;
+  }
+    return v2;
+}
+}
+} // namespace gamemd
+
+// 0x6CF070
+namespace gamemd {
+int sub_6CF070()
+{
+{
+    sub_6CF8F0(&DataGlobal_B0C114, 0, 0);
+    DataGlobal_B0C114 = (int)&vt_DynamicVectorClass_SwizzlePointerClass;
+    DataGlobal_B0C128 = 10;
+    DataGlobal_B0C124 = 0;
+    sub_6CF8F0(&DataGlobal_B0C12C, 0, 0);
+    DataGlobal_B0C12C = (int)&vt_DynamicVectorClass_SwizzlePointerClass;
+    DataGlobal_B0C13C = 0;
+    SwizzleManagerClass_Instance = (int)&vt_SwizzleManagerClass;
+    DataGlobal_B0C128 = 1000;
+    DataGlobal_B0C140 = 1000;
+    return atexit(SwizzleManagerClass::Register);
+}
+}
+} // namespace gamemd
+
+// 0x6CF8F0
+namespace gamemd {
+unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v5;
+    int *v7;
+    int *v8;
+    int v9;
+    this->M4 = 0;
+    this->M8 = a2;
+    this->M12 = 1;
+    this->M13 = 0;
+    *(void**)this = &vt_VectorClass_SwizzlePointerClass;
+    if ( !a2 )
+    return this;
+    if ( !a3 )
+  {
+    v7 = __2_YAPAXI_Z(8 * a2);
+    if ( v7 )
+    {
+    v8 = v7;
+    if ( a2 - 1 >= 0 )
+      {
+    v9 = a2;
+    do
+        {
+    *v8 = 0;
+    v8[1] = 0;
+    v8 += 2;
+    --v9;
+        }
+    while ( v9 );
+    this->M4 = v7;
+    this->M13 = 1;
+    return this;
+      }
+    }
+    else
+    {
+    v7 = 0;
+    }
+    this->M4 = v7;
+    this->M13 = 1;
+    return this;
+  }
+    v4 = a3;
+    if ( a2 - 1 >= 0 )
+  {
+    v5 = a2;
+    do
+    {
+    *v4 = 0;
+    v4[1] = 0;
+    v4 += 2;
+    --v5;
+    }
+    while ( v5 );
+  }
+    this->M4 = a3;
+    return this;
 }
 }
 } // namespace gamemd

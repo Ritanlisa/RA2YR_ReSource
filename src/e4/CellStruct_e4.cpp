@@ -3,18 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
 
-// 0x42D470
-namespace gamemd {
-unsigned short * CellStruct::Set(short a2, short a3)
-{
-{
-    LOWORD(this->vfptr) = a2;
-    HIWORD(this->vfptr) = a3;
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x42D510
 namespace gamemd {
 IUnknown * CellStruct::Add(IUnknown * aP1, IUnknown * aP2)
@@ -82,6 +70,18 @@ IUnknown *__thiscall CellStruct::Sub(__int16 *this, IUnknown *aP1, IUnknown *aP2
   HIWORD(aP2a) = v4; /*0x588c7b*/
   aP1->field_0 = (int)aP2a; /*0x588c84*/
   return aP1; /*0x588c86*/
+}
+}
+} // namespace gamemd
+
+// 0x42D470
+namespace gamemd {
+unsigned short * CellStruct::Set(short a2, short a3)
+{
+{
+    LOWORD(this->vfptr) = a2;
+    HIWORD(this->vfptr) = a3;
+    return this;
 }
 }
 } // namespace gamemd

@@ -454,20 +454,6 @@ int __stdcall TriggerTypeClass::LoadTypeData(AbstractTypeClass *aP0, int aP1)
 }
 } // namespace gamemd
 
-// 0x727C80
-namespace gamemd {
-int TriggerTypeClass::Write(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x727BB0
 namespace gamemd {
 int TriggerTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
@@ -479,6 +465,20 @@ int TriggerTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   a2[2] = 1610655660;
   a2[3] = -1252326136;
   return 0;
+}
+} // namespace gamemd
+
+// 0x727C80
+namespace gamemd {
+int TriggerTypeClass::Write(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
 }
 } // namespace gamemd
 

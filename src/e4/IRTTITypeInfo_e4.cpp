@@ -2,18 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x4105E0
-namespace ra2 {
-namespace game {
-int IRTTITypeInfo::QueryInterface(int a1, const void * a2, unsigned int * a3)
-{
-{
-    return AbstractClass::QueryInterface(a1 - 4, a2, a3);
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x71D150
 namespace ra2 {
 namespace game {
@@ -50,6 +38,18 @@ _DWORD *__thiscall IRTTITypeInfo::loc_74F6A0(_DWORD *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x74f6d8*/
     __3_YAXPAX_Z(this); /*0x74f6db*/
   return this; /*0x74f6e5*/
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x4105E0
+namespace ra2 {
+namespace game {
+int IRTTITypeInfo::QueryInterface(int a1, const void * a2, unsigned int * a3)
+{
+{
+    return AbstractClass::QueryInterface(a1 - 4, a2, a3);
 }
 }
 } // namespace game

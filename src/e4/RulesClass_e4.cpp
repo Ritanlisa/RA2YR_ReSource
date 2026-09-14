@@ -37,22 +37,6 @@ _DWORD *__thiscall sub_538B30(_DWORD *this, int a2, int a3)
 }
 }
 
-// 0x6614F0
-int RulesClass::readGeneralSection(TechnoTypeClass * aP1)
-{
-{
-    return (*(int (__stdcall **)(TechnoTypeClass *, void *, int, int))(*(int *)aP1->vtable0 + 16))(aP1, this, 3, 0);
-}
-}
-
-// 0x661510
-int RulesClass::readCombatDamage(int a2)
-{
-{
-    return (*(int (__stdcall **)(int, void *, int, int))(*(int *)(a2) + 12))(a2, this, 3, 0);
-}
-}
-
 // 0x665650
 int RulesClass::RulesClass()
 {
@@ -770,48 +754,6 @@ int __thiscall sub_66D1F0(RulesClass *this)
 }
 }
 
-// 0x66D3A0
-int RulesClass::ReadColors()
-{
-{
-    char *v1;
-    int result;
-    int v3;
-    int i;
-    unsigned char *StringByIndex;
-    int Color;
-    unsigned char v7[4];
-    char v8[4];
-    char *v9;
-    v1 = v9;
-    result = INIClass::BinarySearchSection((int)v9, (unsigned char *)DataGlobal_839E5C);
-    if ( result )
-  {
-    result = INIClass::GetKeyCount(v1, (unsigned char *)DataGlobal_839E5C);
-    v3 = result;
-    for ( i = 0; i < v3; ++i )
-    {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v1, (unsigned char *)DataGlobal_839E5C, i);
-    v7[0] = 0;
-    v7[1] = 0;
-    v7[2] = 0;
-    Color = INIEntry::ReadColor( (unsigned char ***)v1, (int)v8, (unsigned char *)DataGlobal_839E5C, StringByIndex, v7);
-    LOWORD(v9) = *(short *)Color;
-    BYTE2(v9) = *(char *)(Color + 2);
-    System_Read((const char *)StringByIndex, (int)&v9);
-    System_Read_68C9C0((char *)StringByIndex, (int)&v9, (int)DataGlobal_886380, (int)&FileSystem_TEMPERAT_PAL, 1);
-    result = System_Read_68C9C0((char *)StringByIndex, (int)&v9, (int)DataGlobal_886380, (int)&FileSystem_TEMPERAT_PAL, 53);
-    }
-    LOBYTE(result) = 1;
-  }
-    else
-  {
-    LOBYTE(result) = 0;
-  }
-    return result;
-}
-}
-
 // 0x66D480
 int RulesClass::ReadColorAdd()
 {
@@ -870,72 +812,6 @@ int __thiscall sub_66D480(RulesClass *this)
     LOBYTE(result) = 0; /*0x66d521*/
   }
   return result; /*0x66d514*/
-}
-}
-
-// 0x672280
-int RulesClass::readCrateRules()
-{
-{
-    int KeyCount;
-    int i;
-    unsigned char *StringByIndex;
-    char Destination[32];
-    char *v6;
-    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)DataGlobal_839E34);
-    for ( i = 0; i < KeyCount; ++i )
-  {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)DataGlobal_839E34, i);
-    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)DataGlobal_839E34, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
-    {
-    KeywordType::FindOrCreate2(Destination);
-    }
-  }
-    return KeyCount > 0;
-}
-}
-
-// 0x6723D0
-int RulesClass::readRadiation()
-{
-{
-    int KeyCount;
-    int i;
-    unsigned char *StringByIndex;
-    char Destination[32];
-    char *v6;
-    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)DataGlobal_839E08);
-    for ( i = 0; i < KeyCount; ++i )
-  {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)DataGlobal_839E08, i);
-    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)DataGlobal_839E08, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
-    {
-    KeywordClass::FindOrCreate(Destination);
-    }
-  }
-    return KeyCount > 0;
-}
-}
-
-// 0x6725F0
-int RulesClass::ReadSidesList()
-{
-{
-    int KeyCount;
-    int i;
-    unsigned char *StringByIndex;
-    char Destination[32];
-    char *v6;
-    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)DataGlobal_839DEC);
-    for ( i = 0; i < KeyCount; ++i )
-  {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)DataGlobal_839DEC, i);
-    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)DataGlobal_839DEC, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
-    {
-    WeaponTypeClass::Process(Destination);
-    }
-  }
-    return KeyCount > 0;
 }
 }
 
@@ -1403,72 +1279,6 @@ int *__thiscall sub_67A310(int *this, int *a2)
 }
 }
 
-// 0x67A3C0
-int RulesClass::readTerrainTypes(TechnoTypeClass * aP1)
-{
-{
-    int v3;
-    int result;
-    int i;
-    int v6;
-    v3 = *(int *)aP1->vtable0;
-    v6 = this->LargeVisceroid;
-    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
-    result = v6;
-    for ( i = 0; i < v6; ++i )
-  {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->DetailMinFrameRateMovie + 4 * i, 4, 0);
-    result = v6;
-  }
-    return result;
-}
-}
-
-// 0x67A730
-int RulesClass::readSmudgeTypes()
-{
-{
-    return this->LargeVisceroid;
-}
-}
-
-// 0x67A7C0
-int RulesClass::readOverlayTypes()
-{
-{
-    return this->LargeVisceroid;
-}
-}
-
-// 0x67A7D0
-int RulesClass::readAnimations(TechnoTypeClass * aP1)
-{
-{
-    int v3;
-    int result;
-    int i;
-    int v6;
-    v3 = *(int *)aP1->vtable0;
-    v6 = this->LargeVisceroid;
-    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
-    result = v6;
-    for ( i = 0; i < v6; ++i )
-  {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->DetailMinFrameRateMovie + 4 * i, 4, 0);
-    result = v6;
-  }
-    return result;
-}
-}
-
-// 0x67A8A0
-int RulesClass::readWarheads()
-{
-{
-    return this->LargeVisceroid;
-}
-}
-
 // 0x67A8B0
 unsigned int * RulesClass::readParticles()
 {
@@ -1483,27 +1293,6 @@ _DWORD *__thiscall sub_67A8B0(_DWORD *this)
   *(this + 4) = 0; /*0x67a8c8*/
   *this = &vt_TypeList_TerrainTypeClass_const; /*0x67a8cb*/
   return this; /*0x67a8d1*/
-}
-}
-
-// 0x67A8E0
-int RulesClass::readParticleSystems(TechnoTypeClass * aP1)
-{
-{
-    int v3;
-    int result;
-    int i;
-    int v6;
-    v3 = *(int *)aP1->vtable0;
-    v6 = this->LargeVisceroid;
-    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
-    result = v6;
-    for ( i = 0; i < v6; ++i )
-  {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->DetailMinFrameRateMovie + 4 * i, 4, 0);
-    result = v6;
-  }
-    return result;
 }
 }
 
@@ -1672,5 +1461,216 @@ _DWORD *__thiscall sub_67C430(_DWORD *this, int a2, int a3)
     *((_BYTE *)this + 13) = 1; /*0x67c470*/
   }
   return this; /*0x67c45d*/
+}
+}
+
+// 0x6614F0
+int RulesClass::readGeneralSection(TechnoTypeClass * aP1)
+{
+{
+    return (*(int (__stdcall **)(TechnoTypeClass *, void *, int, int))(*(int *)aP1->vtable0 + 16))(aP1, this, 3, 0);
+}
+}
+
+// 0x661510
+int RulesClass::readCombatDamage(int a2)
+{
+{
+    return (*(int (__stdcall **)(int, void *, int, int))(*(int *)(a2) + 12))(a2, this, 3, 0);
+}
+}
+
+// 0x66D3A0
+int RulesClass::ReadColors()
+{
+{
+    char *v1;
+    int result;
+    int v3;
+    int i;
+    unsigned char *StringByIndex;
+    int Color;
+    unsigned char v7[4];
+    char v8[4];
+    char *v9;
+    v1 = v9;
+    result = INIClass::BinarySearchSection((int)v9, (unsigned char *)DataGlobal_839E5C);
+    if ( result )
+  {
+    result = INIClass::GetKeyCount(v1, (unsigned char *)DataGlobal_839E5C);
+    v3 = result;
+    for ( i = 0; i < v3; ++i )
+    {
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v1, (unsigned char *)DataGlobal_839E5C, i);
+    v7[0] = 0;
+    v7[1] = 0;
+    v7[2] = 0;
+    Color = INIEntry::ReadColor( (unsigned char ***)v1, (int)v8, (unsigned char *)DataGlobal_839E5C, StringByIndex, v7);
+    LOWORD(v9) = *(short *)Color;
+    BYTE2(v9) = *(char *)(Color + 2);
+    System_Read((const char *)StringByIndex, (int)&v9);
+    System_Read_68C9C0((char *)StringByIndex, (int)&v9, (int)DataGlobal_886380, (int)&FileSystem_TEMPERAT_PAL, 1);
+    result = System_Read_68C9C0((char *)StringByIndex, (int)&v9, (int)DataGlobal_886380, (int)&FileSystem_TEMPERAT_PAL, 53);
+    }
+    LOBYTE(result) = 1;
+  }
+    else
+  {
+    LOBYTE(result) = 0;
+  }
+    return result;
+}
+}
+
+// 0x672280
+int RulesClass::readCrateRules()
+{
+{
+    int KeyCount;
+    int i;
+    unsigned char *StringByIndex;
+    char Destination[32];
+    char *v6;
+    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)DataGlobal_839E34);
+    for ( i = 0; i < KeyCount; ++i )
+  {
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)DataGlobal_839E34, i);
+    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)DataGlobal_839E34, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
+    {
+    KeywordType::FindOrCreate2(Destination);
+    }
+  }
+    return KeyCount > 0;
+}
+}
+
+// 0x6723D0
+int RulesClass::readRadiation()
+{
+{
+    int KeyCount;
+    int i;
+    unsigned char *StringByIndex;
+    char Destination[32];
+    char *v6;
+    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)DataGlobal_839E08);
+    for ( i = 0; i < KeyCount; ++i )
+  {
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)DataGlobal_839E08, i);
+    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)DataGlobal_839E08, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
+    {
+    KeywordClass::FindOrCreate(Destination);
+    }
+  }
+    return KeyCount > 0;
+}
+}
+
+// 0x6725F0
+int RulesClass::ReadSidesList()
+{
+{
+    int KeyCount;
+    int i;
+    unsigned char *StringByIndex;
+    char Destination[32];
+    char *v6;
+    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)DataGlobal_839DEC);
+    for ( i = 0; i < KeyCount; ++i )
+  {
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)DataGlobal_839DEC, i);
+    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)DataGlobal_839DEC, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
+    {
+    WeaponTypeClass::Process(Destination);
+    }
+  }
+    return KeyCount > 0;
+}
+}
+
+// 0x67A3C0
+int RulesClass::readTerrainTypes(TechnoTypeClass * aP1)
+{
+{
+    int v3;
+    int result;
+    int i;
+    int v6;
+    v3 = *(int *)aP1->vtable0;
+    v6 = this->LargeVisceroid;
+    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
+    result = v6;
+    for ( i = 0; i < v6; ++i )
+  {
+    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->DetailMinFrameRateMovie + 4 * i, 4, 0);
+    result = v6;
+  }
+    return result;
+}
+}
+
+// 0x67A730
+int RulesClass::readSmudgeTypes()
+{
+{
+    return this->LargeVisceroid;
+}
+}
+
+// 0x67A7C0
+int RulesClass::readOverlayTypes()
+{
+{
+    return this->LargeVisceroid;
+}
+}
+
+// 0x67A7D0
+int RulesClass::readAnimations(TechnoTypeClass * aP1)
+{
+{
+    int v3;
+    int result;
+    int i;
+    int v6;
+    v3 = *(int *)aP1->vtable0;
+    v6 = this->LargeVisceroid;
+    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
+    result = v6;
+    for ( i = 0; i < v6; ++i )
+  {
+    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->DetailMinFrameRateMovie + 4 * i, 4, 0);
+    result = v6;
+  }
+    return result;
+}
+}
+
+// 0x67A8A0
+int RulesClass::readWarheads()
+{
+{
+    return this->LargeVisceroid;
+}
+}
+
+// 0x67A8E0
+int RulesClass::readParticleSystems(TechnoTypeClass * aP1)
+{
+{
+    int v3;
+    int result;
+    int i;
+    int v6;
+    v3 = *(int *)aP1->vtable0;
+    v6 = this->LargeVisceroid;
+    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
+    result = v6;
+    for ( i = 0; i < v6; ++i )
+  {
+    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->DetailMinFrameRateMovie + 4 * i, 4, 0);
+    result = v6;
+  }
+    return result;
 }
 }

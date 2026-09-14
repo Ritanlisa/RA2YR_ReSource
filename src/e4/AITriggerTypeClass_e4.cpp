@@ -686,19 +686,6 @@ void __thiscall AITriggerTypeClass_40_::sub_420370(int this)
 }
 } // namespace gamemd
 
-// 0x4203A0
-namespace gamemd {
-unsigned int AITriggerTypeClass_40::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->AITriggerTypeClass_40_field_0xC )
-    return (unsigned int)(a2 - this->AITriggerTypeClass_40_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4203C0
 namespace gamemd {
 int AITriggerTypeClass_40::Seek(int a2)
@@ -842,19 +829,6 @@ int __thiscall AITriggerTypeClass_40_::_vt04(int this, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x420530
-namespace gamemd {
-unsigned int AITriggerTypeClass_40::Write(int a2)
-{
-{
-    if ( (unsigned char)this->AITriggerTypeClass_40_field_0xC )
-    return (unsigned int)(a2 - this->AITriggerTypeClass_40_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x420550
 namespace gamemd {
 char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
@@ -994,3 +968,29 @@ int AITriggerTypeClass::GetObjectSize()
 {
 return 272;
 }
+
+// 0x4203A0
+namespace gamemd {
+unsigned int AITriggerTypeClass_40::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->AITriggerTypeClass_40_field_0xC )
+    return (unsigned int)(a2 - this->AITriggerTypeClass_40_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x420530
+namespace gamemd {
+unsigned int AITriggerTypeClass_40::Write(int a2)
+{
+{
+    if ( (unsigned char)this->AITriggerTypeClass_40_field_0xC )
+    return (unsigned int)(a2 - this->AITriggerTypeClass_40_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd

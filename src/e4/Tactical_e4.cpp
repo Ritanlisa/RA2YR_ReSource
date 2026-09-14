@@ -614,23 +614,6 @@ LABEL_11:
 }
 } // namespace gamemd
 
-// 0x4F4450
-namespace gamemd {
-char Tactical::SelectObject(int a2)
-{
-{
-    char result;
-    result = this->StubReturn56(a2);
-    if ( result )
-  {
-    DataGlobal_A8EF54 = (*(int (__thiscall **)(int))(*(int *)(a2) + 36))(a2);
-    return 1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x568350
 namespace gamemd {
 bool Tactical::IsCellVisible(IUnknown * aP1)
@@ -1577,32 +1560,6 @@ _DWORD *__thiscall Tactical::PixelToCell(int this, AbstractClass *aP1, IUnknown 
 }
 } // namespace gamemd
 
-// 0x6DA560
-namespace gamemd {
-int * Tactical::ScrollMap(Tactical * aP0, int a2)
-{
-{
-    int *result;
-    result = (int *)&DataGlobal_B05488.__pad_579C[8868];
-    do
-  {
-    if ( (Tactical *)*result == aP0 )
-    *result = 0;
-    result += 3;
-  }
-    while ( (int)result < (int)&DataGlobal_B05488.__pad_579C[14868] );
-    if ( aP0 == *(Tactical **)&DataGlobal_87C374.__pad_14B0[12628] )
-  {
-    result = (int *)MIXClass::CopyHeader((int)&DataGlobal_87C374.__pad_14B0[8132], 0);
-    *(int *)&DataGlobal_87C374.__pad_14B0[12628] = 0;
-    *(int *)&DataGlobal_87C374.__pad_14B0[12632] = 0;
-    *(int *)&DataGlobal_87C374.__pad_14B0[12636] = -1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6DA7D0
 namespace gamemd {
 int Tactical::AddCellToDrawList(IUnknown * aP1)
@@ -1968,79 +1925,6 @@ char __thiscall Tactical::DrawOverlay(_DWORD *this, int *a1, BuildingTypeClass *
 }
 } // namespace gamemd
 
-// 0x6DBD20
-namespace gamemd {
-int Tactical::InitMap(int a1, int a2)
-{
-{
-    int result;
-    int v3;
-    int v4;
-    int *v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    result = AbstractClass::SaveLoad_Prefix_0((int *)a1, a2);
-    if ( result >= 0 )
-  {
-    if ( a1 )
-    SmallFunc_6D1E30((int *)a1, (int)&a2);
-    v3 = *(int *)(a1 + 224);
-    v4 = 0;
-    *(int *)(a1 + 3504) = 0;
-    if ( v3 > 0 )
-    {
-    v5 = (int *)(a1 + 228);
-    do
-      {
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v5);
-    ++v4;
-    ++v5;
-      }
-    while ( v4 < *(int *)(a1 + 224) );
-    }
-    v6 = *(int *)(a1 + 3432);
-    v9 = *(int *)(a1 + 3428);
-    v10 = v6;
-    if ( !ClampCoordMap(&v9) || g_ArmageddonMode )
-    {
-    v7 = *(int *)(a1 + 3428);
-    v8 = *(int *)(a1 + 3432);
-    }
-    else
-    {
-    v7 = v9;
-    v8 = v10;
-    }
-    *(int *)(a1 + 3428) = v7;
-    *(int *)(a1 + 3444) = v7;
-    *(int *)(a1 + 3432) = v8;
-    *(int *)(a1 + 3448) = v8;
-    TacticalClass::CalcViewportCells(a1);
-    *(char *)(a1 + 3453) = 1;
-    return 0;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x6DBE00
-namespace gamemd {
-int Tactical::UpdateMapView(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6DC470
 namespace gamemd {
 Tactical * Tactical::UpdateView(char a2)
@@ -2106,19 +1990,6 @@ void __thiscall Tactical_42_::sub_6E47F0(int this)
   }
   *(_BYTE *)(this + 13) = 0; /*0x6e4811*/
   this->Tactical_42_field_0x8 = 0; /*0x6e4814*/
-}
-}
-} // namespace gamemd
-
-// 0x6E4820
-namespace gamemd {
-unsigned int Tactical_42::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->Tactical_42_field_0xC )
-    return (unsigned int)(a2 - this->Tactical_42_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -2239,19 +2110,6 @@ void __thiscall Tactical_42_::_vt03(int this)
 }
 } // namespace gamemd
 
-// 0x6E49B0
-namespace gamemd {
-unsigned int Tactical_42::InitMap(int a2)
-{
-{
-    if ( (unsigned char)this->Tactical_42_field_0xC )
-    return (unsigned int)(a2 - this->Tactical_42_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x6E49D0
 namespace gamemd {
 char Tactical_42::SetCapacity(int a2, unsigned int * a3)
@@ -2353,6 +2211,49 @@ VectorClass *__thiscall Tactical_42_::QueryInterface(_DWORD *this, char a2)
 }
 } // namespace gamemd
 
+// 0x4F4450
+namespace gamemd {
+char Tactical::SelectObject(int a2)
+{
+{
+    char result;
+    result = this->StubReturn56(a2);
+    if ( result )
+  {
+    DataGlobal_A8EF54 = (*(int (__thiscall **)(int))(*(int *)(a2) + 36))(a2);
+    return 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x6DA560
+namespace gamemd {
+int * Tactical::ScrollMap(Tactical * aP0, int a2)
+{
+{
+    int *result;
+    result = (int *)&DataGlobal_B05488.__pad_579C[8868];
+    do
+  {
+    if ( (Tactical *)*result == aP0 )
+    *result = 0;
+    result += 3;
+  }
+    while ( (int)result < (int)&DataGlobal_B05488.__pad_579C[14868] );
+    if ( aP0 == *(Tactical **)&DataGlobal_87C374.__pad_14B0[12628] )
+  {
+    result = (int *)MIXClass::CopyHeader((int)&DataGlobal_87C374.__pad_14B0[8132], 0);
+    *(int *)&DataGlobal_87C374.__pad_14B0[12628] = 0;
+    *(int *)&DataGlobal_87C374.__pad_14B0[12632] = 0;
+    *(int *)&DataGlobal_87C374.__pad_14B0[12636] = -1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x6DBCE0
 namespace gamemd {
 int Tactical::ddtor(int a1, unsigned int * a2)
@@ -2364,6 +2265,79 @@ int Tactical::ddtor(int a1, unsigned int * a2)
   a2[2] = 1610644609;
   a2[3] = -1252326136;
   return 0;
+}
+} // namespace gamemd
+
+// 0x6DBD20
+namespace gamemd {
+int Tactical::InitMap(int a1, int a2)
+{
+{
+    int result;
+    int v3;
+    int v4;
+    int *v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    result = AbstractClass::SaveLoad_Prefix_0((int *)a1, a2);
+    if ( result >= 0 )
+  {
+    if ( a1 )
+    SmallFunc_6D1E30((int *)a1, (int)&a2);
+    v3 = *(int *)(a1 + 224);
+    v4 = 0;
+    *(int *)(a1 + 3504) = 0;
+    if ( v3 > 0 )
+    {
+    v5 = (int *)(a1 + 228);
+    do
+      {
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v5);
+    ++v4;
+    ++v5;
+      }
+    while ( v4 < *(int *)(a1 + 224) );
+    }
+    v6 = *(int *)(a1 + 3432);
+    v9 = *(int *)(a1 + 3428);
+    v10 = v6;
+    if ( !ClampCoordMap(&v9) || g_ArmageddonMode )
+    {
+    v7 = *(int *)(a1 + 3428);
+    v8 = *(int *)(a1 + 3432);
+    }
+    else
+    {
+    v7 = v9;
+    v8 = v10;
+    }
+    *(int *)(a1 + 3428) = v7;
+    *(int *)(a1 + 3444) = v7;
+    *(int *)(a1 + 3432) = v8;
+    *(int *)(a1 + 3448) = v8;
+    TacticalClass::CalcViewportCells(a1);
+    *(char *)(a1 + 3453) = 1;
+    return 0;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x6DBE00
+namespace gamemd {
+int Tactical::UpdateMapView(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
 }
 } // namespace gamemd
 
@@ -2380,5 +2354,31 @@ namespace gamemd {
 int Tactical::StubReturn3608()
 {
 return 3608;
+}
+} // namespace gamemd
+
+// 0x6E4820
+namespace gamemd {
+unsigned int Tactical_42::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->Tactical_42_field_0xC )
+    return (unsigned int)(a2 - this->Tactical_42_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6E49B0
+namespace gamemd {
+unsigned int Tactical_42::InitMap(int a2)
+{
+{
+    if ( (unsigned char)this->Tactical_42_field_0xC )
+    return (unsigned int)(a2 - this->Tactical_42_field_0x4) >> 2;
+    else
+    return 0;
+}
 }
 } // namespace gamemd

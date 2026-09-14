@@ -285,23 +285,6 @@ _DWORD *__thiscall EventClass::resetEvent(_DWORD *this, BuildingClass *aP1, Buil
 }
 } // namespace gamemd
 
-// 0x40BE10
-namespace gamemd {
-void EventClass::finalizeEvent()
-{
-{
-    g_CommandClassVector = (int)&vt_VectorClass_CommandClass_const;
-    if ( g_CommandClass_Capacity && g_CommandClass_HasInit )
-  {
-    __3_YAXPAX_Z(g_CommandClass_Capacity);
-    g_CommandClass_Capacity = 0;
-  }
-    g_CommandClass_HasInit = 0;
-    g_CommandClass_Size = 0;
-}
-}
-} // namespace gamemd
-
 // 0x40C110
 namespace gamemd {
 VectorClass * EventClass::queueEvent(char a2)
@@ -323,19 +306,6 @@ VectorClass *__thiscall EventClass::queueEvent(_DWORD *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x40c148*/
     __3_YAXPAX_Z(this); /*0x40c14b*/
   return (VectorClass *)this; /*0x40c155*/
-}
-}
-} // namespace gamemd
-
-// 0x40C260
-namespace gamemd {
-unsigned int EventClass::dequeueEvent(int a2)
-{
-{
-    if ( (unsigned char)this->EventClass_field_0xC )
-    return (unsigned int)(a2 - this->EventClass_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -387,18 +357,6 @@ char __thiscall VectorClass_ptr_LightConvertClass::sub_40C410(void *this, int a2
   if ( v7 < *((_DWORD *)this + 4) ) /*0x40c4a9*/
     *((_DWORD *)this + 4) = v7; /*0x40c4ab*/
   return 1; /*0x40c4ae*/
-}
-}
-} // namespace gamemd
-
-// 0x40C590
-namespace gamemd {
-void EventClass::getEventCount()
-{
-{
-    long double v0;
-    v0 = pow(256.0, 2.0);
-    DataGlobal_87F6F8 = Math::Sqrt(v0 + v0);
 }
 }
 } // namespace gamemd
@@ -848,6 +806,48 @@ LABEL_23:
   Network::CopyAddress(v9, &v13, (int)v14); /*0x664500*/
   LaunchMultiplayerHost((int)this, v14); /*0x664516*/
   return v1; /*0x66451c*/
+}
+}
+} // namespace gamemd
+
+// 0x40BE10
+namespace gamemd {
+void EventClass::finalizeEvent()
+{
+{
+    g_CommandClassVector = (int)&vt_VectorClass_CommandClass_const;
+    if ( g_CommandClass_Capacity && g_CommandClass_HasInit )
+  {
+    __3_YAXPAX_Z(g_CommandClass_Capacity);
+    g_CommandClass_Capacity = 0;
+  }
+    g_CommandClass_HasInit = 0;
+    g_CommandClass_Size = 0;
+}
+}
+} // namespace gamemd
+
+// 0x40C260
+namespace gamemd {
+unsigned int EventClass::dequeueEvent(int a2)
+{
+{
+    if ( (unsigned char)this->EventClass_field_0xC )
+    return (unsigned int)(a2 - this->EventClass_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x40C590
+namespace gamemd {
+void EventClass::getEventCount()
+{
+{
+    long double v0;
+    v0 = pow(256.0, 2.0);
+    DataGlobal_87F6F8 = Math::Sqrt(v0 + v0);
 }
 }
 } // namespace gamemd

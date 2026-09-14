@@ -130,67 +130,6 @@ int __fastcall sub_53C0A0(_WORD *a1, int a2, unsigned __int16 a3, int a4, int a5
 }
 } // namespace gamemd
 
-// 0x5C0640
-namespace gamemd {
-char sub_5C0640(const char * a1, char * a2, int a3)
-{
-{
-    char *v3;
-    char i;
-    int *v5;
-    char v6;
-    int *v7;
-    char v8;
-    int v11[22];
-    char v12[12];
-    int v13;
-    char Source[200];
-    v3 = strcpy(Source, a1);
-    for ( i = Source[0]; i; i = *++v3 )
-  {
-    if ( i == 46 )
-    break;
-  }
-    *v3 = 0;
-    GameOptionsClass::UnlockMovieIfNeeded_MoviesList(g_GameModeOptions, Source);
-    strcpy(v3, aBik_0);
-    v5 = CCFileClass::Construct(v11, Source);
-    v6 = (*(int (__thiscall **)(int *, int))(*v5 + 20))(v5, 0);
-    v11[0] = &vt_CCFileClass;
-    v13 = 0;
-    Vector::Clear((int)v12);
-    v11[0] = &DataGlobal_7E1668;
-    BufferIOFileClass::Dtor(v11);
-    if ( !v6 )
-  {
-    strcpy(v3, aVqa);
-    v7 = CCFileClass::Construct(v11, Source);
-    v8 = (*(int (__thiscall **)(int *, int))(*v7 + 20))(v7, 0);
-    v11[0] = &vt_CCFileClass;
-    v13 = 0;
-    Vector::Clear((int)v12);
-    v11[0] = &DataGlobal_7E1668;
-    BufferIOFileClass::Dtor(v11);
-    if ( !v8 )
-    return 0;
-  }
-    if ( a2 )
-    strcpy(a2, Source);
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x5E8740
-namespace gamemd {
-BOOL sub_5E8740(int a1)
-{
-{
-    return wcscmp(*(const wchar_t **)(Game_PlayerInfoArray + 4 * a1), g_CurrentPlayerName) == 0;
-}
-}
-} // namespace gamemd
-
 // 0x652230
 namespace gamemd {
 char Render_Show(CCINIClass * aP0, int a2)
@@ -253,67 +192,6 @@ char Render_Show(CCINIClass *aP0, int a2)
     return ++dword_8B41F8; /*0x6522af*/
   }
   return result; /*0x6522a2*/
-}
-}
-} // namespace gamemd
-
-// 0x68ED80
-namespace gamemd {
-int Render_Get(ScoreScreen * aP0)
-{
-{
-    int v1;
-    int v2;
-    HouseClass *v4;
-    int v5;
-    int v6;
-    int v7;
-    ScoreScreen *v9;
-    int v10;
-    float v11;
-    int v12;
-    #375 *other;
-    float othera;
-    v1 = 0;
-    v2 = 0;
-    v12 = 0;
-    v10 = 0;
-    if ( (int)HouseClass_Count > 0 )
-  {
-    do
-    {
-    v4 = *(HouseClass **)&HouseClass_Array->__pad_0[4 * v10];
-    if ( (unsigned char)HouseClass::IsAlliedWith(aP0, (IUnknown *)v4) && (unsigned char)HouseClass::IsAlliedWith(v4, (IUnknown *)aP0) || aP0 == (ScoreScreen *)v4 )
-      {
-    v5 = VectorClass::GetCount(v4->ownedInfantryTypes2) + v2;
-    v6 = VectorClass::GetCount(v4->__pad_5564) + v5;
-    v7 = VectorClass::GetCount(&v4->__pad_5564[20]) + v6;
-    v2 = VectorClass::GetCount(&v4->__pad_5564[40]) + v7;
-    v1 += v4->killedBuildingsOfHouses[0] + *(int *)v4->__pad_5488;
-      }
-    ++v10;
-    }
-    while ( v10 < (int)HouseClass_Count );
-    v12 = v2;
-  }
-    Debug::Log();
-    if ( v2 + v1 <= 0 )
-    v11 = 0.0;
-    else
-    v11 = (double)v12 / (double)(v2 + v1);
-    Debug::Log();
-    (*(void (__stdcall **)(int *))(aP0->ScoreScreen_field_0x24 + 24))(&aP0->ScoreScreen_field_0x24);
-    Debug::Log();
-    other = (#375 *)(aP0[18].ScoreScreen_field_0x10 + aP0[11].ScoreScreen_field_0x24);
-    if ( (int)other <= 0 )
-    othera = 0.0;
-    else
-    othera = (double)(*(int (__stdcall **)(int *))(aP0->ScoreScreen_field_0x24 + 24))(&aP0->ScoreScreen_field_0x24)
-    / (double)(int)other;
-    Debug::Log();
-    v9 = (ScoreScreen *)Math::RoundToInt((othera + v11) * 0.5 * 100.0);
-    Debug::Log();
-    return (int)v9->__pad_0;
 }
 }
 } // namespace gamemd
@@ -502,17 +380,6 @@ int __stdcall Render_DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, in
   return result; /*0x705847*/
 }
 }
-
-// 0x72E820
-namespace gamemd {
-void Render_Draw(ConvertClass * a1, int * a2, char a3)
-{
-{
-    RenderScoreScreen(a1, a2, a3);
-    UI_Draw_72E730( a1, a2, *(int *)&DataGlobal_B05488.__pad_579C[20392], *(int *)&DataGlobal_B05488.__pad_579C[20268], *(int *)&DataGlobal_B05488.__pad_579C[19936]);
-}
-}
-} // namespace gamemd
 
 // 0x780D90
 namespace gamemd {
@@ -1283,16 +1150,6 @@ char sub_731BF0()
 }
 } // namespace gamemd
 
-// 0x774070
-namespace gamemd {
-BOOL sub_774070()
-{
-{
-    return DataGlobal_B72D0C && *(int *)(DataGlobal_B72D0C + 8) && *(char *)(DataGlobal_B72D0C + 1036);
-}
-}
-} // namespace gamemd
-
 // 0x777E00
 namespace gamemd {
 BOOL sub_777E00()
@@ -1634,43 +1491,6 @@ int __fastcall Render_Render_554280(unsigned __int16 *a0, AbstractClass *aP1, in
 }
 } // namespace gamemd
 
-// 0x556D40
-namespace gamemd {
-void sub_556D40()
-{
-{
-    int i;
-    int *v1;
-    int v2;
-    int *v3;
-    for ( i = DataGlobal_ABCB88 - 1; i >= 0; --i )
-  {
-    v1 = (int *)*((int *)(DataGlobal_ABCB7C) + i);
-    Render_Render_556B70(v1);
-    if ( v1[1] || v1[4 * v1[3] + 7] )
-    {
-    Render_Render_556C00((int)v1);
-    }
-    else if ( v1 )
-    {
-    v3 = v1;
-    v2 = (*(int (__thiscall **)(int *, int **))(DataGlobal_ABCB78 + 16))(&DataGlobal_ABCB78, &v3);
-    if ( v2 != -1 && v2 < DataGlobal_ABCB88 && v2 < --DataGlobal_ABCB88 )
-      {
-    do
-        {
-    ++v2;
-    *((int *)(DataGlobal_ABCB7C) + v2 - 1) = *((int *)(DataGlobal_ABCB7C) + v2);
-        }
-    while ( v2 < DataGlobal_ABCB88 );
-      }
-    __3_YAXPAX_Z(v1);
-    }
-  }
-}
-}
-} // namespace gamemd
-
 // 0x5BE970
 namespace gamemd {
 int sub_5BE970(int a1)
@@ -1691,21 +1511,6 @@ int sub_5BE990(int a1)
 int __stdcall sub_5BE990(int a1)
 {
   return MEMORY[0x82D02C][7 * a1]; /*0x5be9a4*/
-}
-}
-} // namespace gamemd
-
-// 0x5FFFA0
-namespace gamemd {
-char sub_5FFFA0()
-{
-{
-    char result;
-    int i;
-    result = DataGlobal_AC1688;
-    for ( i = DataGlobal_AC1688 - 1; i >= 0; --i )
-    result = BuildingLight::CalculateShading(*((int **)DataGlobal_AC167C + i));
-    return result;
 }
 }
 } // namespace gamemd
@@ -1746,36 +1551,6 @@ void sub_63B0A0()
     if ( (unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(v5 + 540), HouseClass_Player) ) /*0x63b136*/
       ScriptAction::ProcessIdleAction(v5); /*0x63b141*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x63CA80
-namespace gamemd {
-unsigned int * sub_63CA80(unsigned int * a1, unsigned char * a2, int a3)
-{
-{
-    int *ScenarioClassActionCoords;
-    int v5;
-    int v6;
-    int v7;
-    int *v8;
-    int v10[3];
-    ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, a2);
-    v5 = *ScenarioClassActionCoords;
-    v6 = ScenarioClassActionCoords[1];
-    v7 = ScenarioClassActionCoords[2];
-    if ( *ScenarioClassActionCoords == -1 && v6 == -1 && v7 == -1 && a3 )
-  {
-    v8 = (int *)(*(int (__thiscall **)(int, int *))(*(int *)(a3) + 88))(a3, v10);
-    v5 = *v8;
-    v6 = v8[1];
-    v7 = v8[2];
-  }
-    *a1 = v5;
-    *((int*)(a1) + 1) = v6;
-    *((int*)(a1) + 2) = v7;
-    return a1;
 }
 }
 } // namespace gamemd
@@ -1907,6 +1682,270 @@ LABEL_7:
 }
 } // namespace gamemd
 
+// 0x7760B0
+namespace gamemd {
+HFONT Render_Render_7760B0(HDC hdc, const char * a2, LONG a3, LONG a4, char a5)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+HFONT __fastcall Render_Render_7760B0(HDC hdc, const char *a2, LONG a3, LONG a4, char a5)
+{
+  HFONT v7; // eax
+  HFONT v8; // esi
+  HGDIOBJ v9; // ebx
+  HGDIOBJ v10; // eax
+  struct tagPOINT pt; // [esp+10h] [ebp-7Ch] BYREF
+  struct tagTEXTMETRICA tm; // [esp+18h] [ebp-74h] BYREF
+  LOGFONTA lf; // [esp+50h] [ebp-3Ch] BYREF
+
+  SaveDC(hdc); /*0x7760bc*/
+  SetGraphicsMode(hdc, 2); /*0x7760c5*/
+  ModifyWorldTransform(hdc, 0, 1u); /*0x7760d1*/
+  SetViewportOrgEx(hdc, 0, 0, 0); /*0x7760db*/
+  SetWindowOrgEx(hdc, 0, 0, 0); /*0x7760e5*/
+  pt.x = a3; /*0x776101*/
+  pt.y = a4; /*0x776105*/
+  DPtoLP(hdc, &pt, 1); /*0x776109*/
+  memset(&lf.lfWidth, 0, 12); /*0x77610f*/
+  lf.lfHeight = -pt.y; /*0x776121*/
+  lf.lfCharSet = 0; /*0x776133*/
+  lf.lfOutPrecision = 0; /*0x77613b*/
+  lf.lfClipPrecision = 0; /*0x776145*/
+  lf.lfWeight = (a5 & 1) != 0 ? 0x2BC : 0;
+  lf.lfUnderline = (a5 & 4) != 0; /*0x77615c*/
+  lf.lfStrikeOut = (a5 & 8) != 0; /*0x776160*/
+  lf.lfQuality = 0; /*0x77616c*/
+  lf.lfItalic = (a5 & 2) != 0; /*0x776176*/
+  lf.lfPitchAndFamily = 0; /*0x776187*/
+  strcpy(lf.lfFaceName, a2); /*0x77618b*/
+  v7 = CreateFontIndirectA(&lf); /*0x77619f*/
+  v8 = v7; /*0x7761a1*/
+  if ( a3 ) /*0x7761aa*/
+  {
+    v9 = SelectObject(hdc, v7); /*0x7761ba*/
+    GetTextMetricsA(hdc, &tm); /*0x7761be*/
+    v10 = SelectObject(hdc, v9); /*0x7761c6*/
+    DeleteObject(v10); /*0x7761c9*/
+    lf.lfWidth = Math::RoundToInt(fabs((double)pt.x) * (double)tm.tmAveCharWidth / fabs((double)pt.y) + 0.5); /*0x7761ec*/
+    v8 = CreateFontIndirectA(&lf); /*0x7761f7*/
+  }
+  RestoreDC(hdc, -1); /*0x7761fc*/
+  return v8; /*0x776204*/
+}
+}
+} // namespace gamemd
+
+// 0x556D40
+namespace gamemd {
+void sub_556D40()
+{
+{
+    int i;
+    int *v1;
+    int v2;
+    int *v3;
+    for ( i = DataGlobal_ABCB88 - 1; i >= 0; --i )
+  {
+    v1 = (int *)*((int *)(DataGlobal_ABCB7C) + i);
+    Render_Render_556B70(v1);
+    if ( v1[1] || v1[4 * v1[3] + 7] )
+    {
+    Render_Render_556C00((int)v1);
+    }
+    else if ( v1 )
+    {
+    v3 = v1;
+    v2 = (*(int (__thiscall **)(int *, int **))(DataGlobal_ABCB78 + 16))(&DataGlobal_ABCB78, &v3);
+    if ( v2 != -1 && v2 < DataGlobal_ABCB88 && v2 < --DataGlobal_ABCB88 )
+      {
+    do
+        {
+    ++v2;
+    *((int *)(DataGlobal_ABCB7C) + v2 - 1) = *((int *)(DataGlobal_ABCB7C) + v2);
+        }
+    while ( v2 < DataGlobal_ABCB88 );
+      }
+    __3_YAXPAX_Z(v1);
+    }
+  }
+}
+}
+} // namespace gamemd
+
+// 0x5C0640
+namespace gamemd {
+char sub_5C0640(const char * a1, char * a2, int a3)
+{
+{
+    char *v3;
+    char i;
+    int *v5;
+    char v6;
+    int *v7;
+    char v8;
+    int v11[22];
+    char v12[12];
+    int v13;
+    char Source[200];
+    v3 = strcpy(Source, a1);
+    for ( i = Source[0]; i; i = *++v3 )
+  {
+    if ( i == 46 )
+    break;
+  }
+    *v3 = 0;
+    GameOptionsClass::UnlockMovieIfNeeded_MoviesList(g_GameModeOptions, Source);
+    strcpy(v3, aBik_0);
+    v5 = CCFileClass::Construct(v11, Source);
+    v6 = (*(int (__thiscall **)(int *, int))(*v5 + 20))(v5, 0);
+    v11[0] = &vt_CCFileClass;
+    v13 = 0;
+    Vector::Clear((int)v12);
+    v11[0] = &DataGlobal_7E1668;
+    BufferIOFileClass::Dtor(v11);
+    if ( !v6 )
+  {
+    strcpy(v3, aVqa);
+    v7 = CCFileClass::Construct(v11, Source);
+    v8 = (*(int (__thiscall **)(int *, int))(*v7 + 20))(v7, 0);
+    v11[0] = &vt_CCFileClass;
+    v13 = 0;
+    Vector::Clear((int)v12);
+    v11[0] = &DataGlobal_7E1668;
+    BufferIOFileClass::Dtor(v11);
+    if ( !v8 )
+    return 0;
+  }
+    if ( a2 )
+    strcpy(a2, Source);
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x5E8740
+namespace gamemd {
+BOOL sub_5E8740(int a1)
+{
+{
+    return wcscmp(*(const wchar_t **)(Game_PlayerInfoArray + 4 * a1), g_CurrentPlayerName) == 0;
+}
+}
+} // namespace gamemd
+
+// 0x5FFFA0
+namespace gamemd {
+char sub_5FFFA0()
+{
+{
+    char result;
+    int i;
+    result = DataGlobal_AC1688;
+    for ( i = DataGlobal_AC1688 - 1; i >= 0; --i )
+    result = BuildingLight::CalculateShading(*((int **)DataGlobal_AC167C + i));
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x63CA80
+namespace gamemd {
+unsigned int * sub_63CA80(unsigned int * a1, unsigned char * a2, int a3)
+{
+{
+    int *ScenarioClassActionCoords;
+    int v5;
+    int v6;
+    int v7;
+    int *v8;
+    int v10[3];
+    ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, a2);
+    v5 = *ScenarioClassActionCoords;
+    v6 = ScenarioClassActionCoords[1];
+    v7 = ScenarioClassActionCoords[2];
+    if ( *ScenarioClassActionCoords == -1 && v6 == -1 && v7 == -1 && a3 )
+  {
+    v8 = (int *)(*(int (__thiscall **)(int, int *))(*(int *)(a3) + 88))(a3, v10);
+    v5 = *v8;
+    v6 = v8[1];
+    v7 = v8[2];
+  }
+    *a1 = v5;
+    *((int*)(a1) + 1) = v6;
+    *((int*)(a1) + 2) = v7;
+    return a1;
+}
+}
+} // namespace gamemd
+
+// 0x660530
+namespace gamemd {
+bool sub_660530()
+{
+  return g_TriggerEventState == 0;
+}
+} // namespace gamemd
+
+// 0x68ED80
+namespace gamemd {
+int Render_Get(ScoreScreen * aP0)
+{
+{
+    int v1;
+    int v2;
+    HouseClass *v4;
+    int v5;
+    int v6;
+    int v7;
+    ScoreScreen *v9;
+    int v10;
+    float v11;
+    int v12;
+    #375 *other;
+    float othera;
+    v1 = 0;
+    v2 = 0;
+    v12 = 0;
+    v10 = 0;
+    if ( (int)HouseClass_Count > 0 )
+  {
+    do
+    {
+    v4 = *(HouseClass **)&HouseClass_Array->__pad_0[4 * v10];
+    if ( (unsigned char)HouseClass::IsAlliedWith(aP0, (IUnknown *)v4) && (unsigned char)HouseClass::IsAlliedWith(v4, (IUnknown *)aP0) || aP0 == (ScoreScreen *)v4 )
+      {
+    v5 = VectorClass::GetCount(v4->ownedInfantryTypes2) + v2;
+    v6 = VectorClass::GetCount(v4->__pad_5564) + v5;
+    v7 = VectorClass::GetCount(&v4->__pad_5564[20]) + v6;
+    v2 = VectorClass::GetCount(&v4->__pad_5564[40]) + v7;
+    v1 += v4->killedBuildingsOfHouses[0] + *(int *)v4->__pad_5488;
+      }
+    ++v10;
+    }
+    while ( v10 < (int)HouseClass_Count );
+    v12 = v2;
+  }
+    Debug::Log();
+    if ( v2 + v1 <= 0 )
+    v11 = 0.0;
+    else
+    v11 = (double)v12 / (double)(v2 + v1);
+    Debug::Log();
+    (*(void (__stdcall **)(int *))(aP0->ScoreScreen_field_0x24 + 24))(&aP0->ScoreScreen_field_0x24);
+    Debug::Log();
+    other = (#375 *)(aP0[18].ScoreScreen_field_0x10 + aP0[11].ScoreScreen_field_0x24);
+    if ( (int)other <= 0 )
+    othera = 0.0;
+    else
+    othera = (double)(*(int (__stdcall **)(int *))(aP0->ScoreScreen_field_0x24 + 24))(&aP0->ScoreScreen_field_0x24)
+    / (double)(int)other;
+    Debug::Log();
+    v9 = (ScoreScreen *)Math::RoundToInt((othera + v11) * 0.5 * 100.0);
+    Debug::Log();
+    return (int)v9->__pad_0;
+}
+}
+} // namespace gamemd
+
 // 0x6D9A50
 namespace gamemd {
 int sub_6D9A50(int a1, int a2, int a3, int a4)
@@ -1984,6 +2023,17 @@ ObjectClass * Render_Render_72B520()
 }
 } // namespace gamemd
 
+// 0x72E820
+namespace gamemd {
+void Render_Draw(ConvertClass * a1, int * a2, char a3)
+{
+{
+    RenderScoreScreen(a1, a2, a3);
+    UI_Draw_72E730( a1, a2, *(int *)&DataGlobal_B05488.__pad_579C[20392], *(int *)&DataGlobal_B05488.__pad_579C[20268], *(int *)&DataGlobal_B05488.__pad_579C[19936]);
+}
+}
+} // namespace gamemd
+
 // 0x72EB50
 namespace gamemd {
 void * sub_72EB50()
@@ -2006,54 +2056,12 @@ void * sub_72EB50()
 }
 } // namespace gamemd
 
-// 0x7760B0
+// 0x774070
 namespace gamemd {
-HFONT Render_Render_7760B0(HDC hdc, const char * a2, LONG a3, LONG a4, char a5)
+BOOL sub_774070()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HFONT __fastcall Render_Render_7760B0(HDC hdc, const char *a2, LONG a3, LONG a4, char a5)
 {
-  HFONT v7; // eax
-  HFONT v8; // esi
-  HGDIOBJ v9; // ebx
-  HGDIOBJ v10; // eax
-  struct tagPOINT pt; // [esp+10h] [ebp-7Ch] BYREF
-  struct tagTEXTMETRICA tm; // [esp+18h] [ebp-74h] BYREF
-  LOGFONTA lf; // [esp+50h] [ebp-3Ch] BYREF
-
-  SaveDC(hdc); /*0x7760bc*/
-  SetGraphicsMode(hdc, 2); /*0x7760c5*/
-  ModifyWorldTransform(hdc, 0, 1u); /*0x7760d1*/
-  SetViewportOrgEx(hdc, 0, 0, 0); /*0x7760db*/
-  SetWindowOrgEx(hdc, 0, 0, 0); /*0x7760e5*/
-  pt.x = a3; /*0x776101*/
-  pt.y = a4; /*0x776105*/
-  DPtoLP(hdc, &pt, 1); /*0x776109*/
-  memset(&lf.lfWidth, 0, 12); /*0x77610f*/
-  lf.lfHeight = -pt.y; /*0x776121*/
-  lf.lfCharSet = 0; /*0x776133*/
-  lf.lfOutPrecision = 0; /*0x77613b*/
-  lf.lfClipPrecision = 0; /*0x776145*/
-  lf.lfWeight = (a5 & 1) != 0 ? 0x2BC : 0;
-  lf.lfUnderline = (a5 & 4) != 0; /*0x77615c*/
-  lf.lfStrikeOut = (a5 & 8) != 0; /*0x776160*/
-  lf.lfQuality = 0; /*0x77616c*/
-  lf.lfItalic = (a5 & 2) != 0; /*0x776176*/
-  lf.lfPitchAndFamily = 0; /*0x776187*/
-  strcpy(lf.lfFaceName, a2); /*0x77618b*/
-  v7 = CreateFontIndirectA(&lf); /*0x77619f*/
-  v8 = v7; /*0x7761a1*/
-  if ( a3 ) /*0x7761aa*/
-  {
-    v9 = SelectObject(hdc, v7); /*0x7761ba*/
-    GetTextMetricsA(hdc, &tm); /*0x7761be*/
-    v10 = SelectObject(hdc, v9); /*0x7761c6*/
-    DeleteObject(v10); /*0x7761c9*/
-    lf.lfWidth = Math::RoundToInt(fabs((double)pt.x) * (double)tm.tmAveCharWidth / fabs((double)pt.y) + 0.5); /*0x7761ec*/
-    v8 = CreateFontIndirectA(&lf); /*0x7761f7*/
-  }
-  RestoreDC(hdc, -1); /*0x7761fc*/
-  return v8; /*0x776204*/
+    return DataGlobal_B72D0C && *(int *)(DataGlobal_B72D0C + 8) && *(char *)(DataGlobal_B72D0C + 1036);
 }
 }
 } // namespace gamemd
@@ -2090,14 +2098,6 @@ int sub_7C3690(int a1, int a2)
   }
     return result;
 }
-}
-} // namespace gamemd
-
-// 0x660530
-namespace gamemd {
-bool sub_660530()
-{
-  return g_TriggerEventState == 0;
 }
 } // namespace gamemd
 
