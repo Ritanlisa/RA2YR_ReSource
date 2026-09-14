@@ -199,32 +199,24 @@ int __userpurge AircraftClass::DeployWithAnim@<eax>(
 namespace gamemd {
 char AircraftClass::ValidateMovement(int _10, int * a2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall AircraftClass::ValidateMovement(_DWORD *this, int _10, int *a2, int a4)
 {
-  FootClass *v5; // eax
-  char result; // al
-
-  v5 = (FootClass *)(*(unsigned int (__thiscall **)(_DWORD *, int *, int))(*this + 116))(this, a2, a4); /*0x417be1*/
-  switch ( (unsigned int)v5 ) /*0x417bf4*/
+    FootClass *v5;
+    char result;
+    v5 = (FootClass *)this->GetCursorOverObject(a2, a4);
+    switch ( (unsigned int)v5 )
   {
-    case 2u: /*0x417bf4*/
-      result = 0; /*0x417c14*/
-      break; /*0x417c17*/
-    case 3u: /*0x417bf4*/
-      result = (*(char (__thiscall **)(_DWORD *, int, _DWORD, int *, _DWORD))(*this + 888))(this, 7, 0, a2, 0); /*0x417c25*/
-      break; /*0x417c2e*/
-    case 4u: /*0x417bf4*/
-      result = (*(char (__thiscall **)(_DWORD *, int, _DWORD, _DWORD, _DWORD))(*this + 888))(this, 16, 0, 0, 0); /*0x417c3d*/
-      break; /*0x417c46*/
-    case 0x11u: /*0x417bf4*/
-      result = (*(char (__thiscall **)(_DWORD *, int, _DWORD, int *, _DWORD))(*this + 888))(this, 2, 0, a2, 0); /*0x417c06*/
-      break; /*0x417c0f*/
-    default:
-      result = FootClass::ValidateMove(this, v5, a2, a4); /*0x417c4e*/
-      break; /*0x417c4e*/
+    case 2u: result = 0;
+    break;
+    case 3u: result = this->ExecuteMissionCommand(7, 0, a2, 0);
+    break;
+    case 4u: result = this->ExecuteMissionCommand(16, 0, 0, 0);
+    break;
+    case 0x11u: result = this->ExecuteMissionCommand(2, 0, a2, 0);
+    break;
+    default: result = FootClass::ValidateMove(this, v5, a2, a4);
+    break;
   }
-  return result; /*0x417c0c*/
+    return result;
 }
 }
 } // namespace gamemd

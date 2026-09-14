@@ -37,10 +37,8 @@ void __thiscall RawFileClass_Dtor(int *this)
 // 0x65CB30
 int RawFileClass::Close(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RawFileClass::_vt08(void *this, int a2, int a3)
 {
-  (*(void (__thiscall **)(void *, int))(*(_DWORD *)this + 8))(this, a2); /*0x65cb3c*/
-  return (*(int (__thiscall **)(void *, int))(*(_DWORD *)this + 28))(this, a3); /*0x65cb4b*/
+    this->SetName(a2);
+    return this->Open2(a3);
 }
 }

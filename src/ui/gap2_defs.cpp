@@ -321,18 +321,14 @@ int __thiscall DropListClass::_vt39(void *this, wchar_t *Source)
 } }
 // 0x4B4FF0
 namespace gamemd { int DropListClass::KillFocus() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DropListClass::_vt40(_DWORD *this)
 {
-  return (*(int (__thiscall **)(_DWORD *))(*(this + 44) + 156))(this + 44);
+    return (*(int (__thiscall **)(int *))(this->List + 156))(this + 44);
 }
 } }
 // 0x4B5010
 namespace gamemd { int DropListClass::GetItemData() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DropListClass::_vt41(_DWORD *this)
 {
-  return (*(int (__thiscall **)(_DWORD *))(*(this + 44) + 152))(this + 44);
+    return (*(int (__thiscall **)(int *))(this->List + 152))(this + 44);
 }
 } }
 // 0x4B50A0
@@ -449,10 +445,8 @@ void __thiscall DropListClass::_vt42(_DWORD *this, wchar_t *String1)
 } }
 // 0x4B55B0
 namespace gamemd { int DropListClass::ScrollUp() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DropListClass::_vt44(_DWORD *this)
 {
-  return (*(int (__thiscall **)(_DWORD *))(*(this + 44) + 148))(this + 44);
+    return (*(int (__thiscall **)(int *))(this->List + 148))(this + 44);
 }
 } }
 // 0x4B55D0
@@ -4736,15 +4730,12 @@ char __thiscall sub_6A8330(_DWORD *this)
 } }
 // 0x6A83E0
 namespace gamemd { int SidebarClass::sortCameoList() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6A83E0(_DWORD *this)
 {
-  int i; // esi
-  char result; // al
-
-  for ( i = 0; i < 60; ++i ) /*0x6a83e4*/
-    result = Tactical::SelectObject(&MEMORY[0x87F7E8], 56 * (i + 60 * *(this + 14)) + 11566720); /*0x6a8408*/
-  return result; /*0x6a8413*/
+    int i;
+    char result;
+    for ( i = 0; i < 60; ++i )
+    result = Tactical::SelectObject(&DataGlobal_87F7E8, 56 * (i + 60 *(void**)this->playerIndex) + 11566720);
+    return result;
 }
 } }
 // 0x6A8B30

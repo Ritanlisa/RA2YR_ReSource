@@ -987,18 +987,15 @@ LABEL_10:
 namespace gamemd {
 char MPCooperative::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MPCooperative::_vt05(char **this, int a2)
 {
-  char *v2; // ecx
-
-  if ( MEMORY[0xA8DA84] == 2 ) /*0x5c1d8b*/
+    char *v2;
+    if ( Game_PlayerCount == 2 )
   {
-    v2 = *(this + 16); /*0x5c1d8d*/
-    if ( v2 ) /*0x5c1d92*/
-      String::AssignWideToChar(v2, *(char **)MEMORY[0xA8DA78], *(char **)(MEMORY[0xA8DA78] + 4)); /*0x5c1da0*/
+    v2 = this->coopSaveFileName;
+    if ( v2 )
+    String::AssignWideToChar(v2, *(char **)Game_PlayerInfoArray, *(char **)(Game_PlayerInfoArray + 4));
   }
-  return ScenarioClass::MissionStubReturnZero2(a2); /*0x5c1db1*/
+    return ScenarioClass::MissionStubReturnZero2(a2);
 }
 }
 } // namespace gamemd
@@ -2829,28 +2826,25 @@ void __thiscall MPCooperative::sub_5C44E0(int *this, int a2)
 namespace gamemd {
 int MPCooperative::checkVictory()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MPCooperative::sub_5C4670(int *this)
 {
-  int v2; // esi
-  int v3; // ecx
-  int v5; // [esp+8h] [ebp-Ch] BYREF
-  int v6; // [esp+Ch] [ebp-8h] BYREF
-  int v7; // [esp+10h] [ebp-4h] BYREF
-
-  v2 = 0; /*0x5c4677*/
-  v3 = *(this + 16); /*0x5c4679*/
-  if ( !v3 ) /*0x5c467e*/
-    return 0; /*0x5c4681*/
-  MPCooperative::GetMovieScore(v3, &v5); /*0x5c468d*/
-  Movie::GetState(*(this + 16), &v6); /*0x5c469a*/
-  if ( v5 == v6 ) /*0x5c46a9*/
+    int v2;
+    int v3;
+    int v5;
+    int v6;
+    int v7;
+    v2 = 0;
+    v3 = this->coopSaveFileName;
+    if ( !v3 )
+    return 0;
+    MPCooperative::GetMovieScore(v3, &v5);
+    Movie::GetState(this->coopSaveFileName, &v6);
+    if ( v5 == v6 )
   {
-    Movie::GetSectionID(*(this + 16), &v7); /*0x5c46b3*/
-    v2 = 1 << v7; /*0x5c46c1*/
-    Debug::Log(); /*0x5c46ca*/
+    Movie::GetSectionID(this->coopSaveFileName, &v7);
+    v2 = 1 << v7;
+    Debug::Log();
   }
-  return v2; /*0x5c4680*/
+    return v2;
 }
 }
 } // namespace gamemd
@@ -2945,32 +2939,22 @@ LABEL_16:
 namespace gamemd {
 char MPCooperative::spawnUnits(int a2, void * Block, int a4, short a5, int a6, int a7, unsigned int * a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MPCooperative::sub_5C4E90(
-        _DWORD *this,
-        int a2,
-        void *Block,
-        int a4,
-        __int16 a5,
-        int a6,
-        int a7,
-        _DWORD *a8)
 {
-  *a8 = 0; /*0x5c4e94*/
-  if ( *(this + 16) ) /*0x5c4e9a*/
+    *a8 = 0;
+    if ( this->coopSaveFileName )
   {
-    if ( Block ) /*0x5c4ea7*/
+    if ( Block )
     {
-      if ( HIBYTE(a5) ) /*0x5c4eaf*/
-        __3_YAXPAX_Z(Block); /*0x5c4eb2*/
+    if ( HIBYTE(a5) )
+    __3_YAXPAX_Z(Block);
     }
-    return 1; /*0x5c4eba*/
+    return 1;
   }
-  else
+    else
   {
-    if ( Block && HIBYTE(a5) ) /*0x5c4ec9*/
-      __3_YAXPAX_Z(Block); /*0x5c4ecc*/
-    return 0; /*0x5c4ed4*/
+    if ( Block && HIBYTE(a5) )
+    __3_YAXPAX_Z(Block);
+    return 0;
   }
 }
 }

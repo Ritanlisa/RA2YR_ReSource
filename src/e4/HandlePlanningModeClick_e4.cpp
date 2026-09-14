@@ -7,22 +7,19 @@
 namespace gamemd {
 BOOL E4Recv_63DB20::sub_63DB20(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_63DB20(_DWORD *this, _DWORD *a2)
 {
-  int v2; // eax
-  int v3; // edx
-  BOOL result; // eax
-
-  result = 0; /*0x63db54*/
-  if ( *a2 >= *this && *a2 < *this + *(this + 2) ) /*0x63db36*/
+    int v2;
+    int v3;
+    int result;
+    result = 0;
+    if ( *a2 >= *(void**)this && *a2 < *(void**)(this) + this->M8 )
   {
-    v2 = a2[1]; /*0x63db38*/
-    v3 = *(this + 1); /*0x63db3b*/
-    if ( v2 >= v3 && v2 < v3 + *(this + 3) ) /*0x63db49*/
-      return 1; /*0x63db2b*/
+    v2 = *((int*)(a2) + 1);
+    v3 = this->M4;
+    if ( v2 >= v3 && v2 < v3 + this->M12 )
+    return 1;
   }
-  return result; /*0x63db50*/
+    return result;
 }
 }
 } // namespace gamemd

@@ -869,67 +869,64 @@ namespace ra2 {
 namespace game {
 char TechnoClass::ScanAdjacentCells()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_703CC0(_BYTE *this)
 {
-  _DWORD *v2; // esi
-  _DWORD *v3; // edi
-  _DWORD *v4; // ebp
-  _DWORD *v5; // ebx
-  _DWORD *v6; // eax
-  int v7; // edi
-  int v8; // eax
-  int v9; // ebx
-  int v10; // ebp
-  int v12; // [esp+10h] [ebp-14h] BYREF
-  int v13; // [esp+14h] [ebp-10h] BYREF
-  int v14; // [esp+18h] [ebp-Ch] BYREF
-  int v15; // [esp+1Ch] [ebp-8h] BYREF
-  int v16; // [esp+20h] [ebp-4h] BYREF
-
-  v12 = *(_DWORD *)(*(int (__thiscall **)(_BYTE *, int *))(*(_DWORD *)this + 440))(this, &v16); /*0x703ce4*/
-  v2 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v12); /*0x703ced*/
-  if ( !v2 || *(this + 140) ) /*0x703cf7*/
-    return 0; /*0x703cf7*/
-  LOWORD(v13) = v12 + MEMORY[0x89F698]; /*0x703d1c*/
-  HIWORD(v13) = HIWORD(v12) + HIWORD(MEMORY[0x89F698]); /*0x703d21*/
-  v14 = v13; /*0x703d2e*/
-  v3 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v14); /*0x703d4f*/
-  HIWORD(v13) = HIWORD(v12) + HIWORD(MEMORY[0x89F688][0]); /*0x703d57*/
-  LOWORD(v13) = v12 + LOWORD(MEMORY[0x89F688][0]); /*0x703d5c*/
-  v15 = v13; /*0x703d69*/
-  v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v15); /*0x703d88*/
-  HIWORD(v13) = HIWORD(v12) + HIWORD(MEMORY[0x89F690]); /*0x703d91*/
-  LOWORD(v13) = v12 + MEMORY[0x89F690]; /*0x703d96*/
-  v16 = v13; /*0x703da9*/
-  v5 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v16); /*0x703dbc*/
-  LOWORD(v13) = v12 + MEMORY[0x89F6A0]; /*0x703dcb*/
-  HIWORD(v13) = HIWORD(v12) + HIWORD(MEMORY[0x89F6A0]); /*0x703dd4*/
-  v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v13); /*0x703de7*/
-  if ( (v2[80] & 0x400) != 0 ) /*0x703df5*/
-    return 1; /*0x703df5*/
-  if ( v3 ) /*0x703df9*/
+    int *v2;
+    int *v3;
+    int *v4;
+    int *v5;
+    int *v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    int v12;
+    int v13;
+    int v14;
+    int v15;
+    int v16;
+    v12 = *(int *)this->GetCellCoords_Alt(&v16);
+    v2 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v12);
+    if ( !v2 || this->onBridge )
+    return 0;
+    LOWORD(v13) = v12 + g_DirectionOffsetPool;
+    HIWORD(v13) = HIWORD(v12) + HIWORD(g_DirectionOffsetPool);
+    v14 = v13;
+    v3 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v14);
+    HIWORD(v13) = HIWORD(v12) + HIWORD(Direction_X_Offsets[0]);
+    LOWORD(v13) = v12 + LOWORD(Direction_X_Offsets[0]);
+    v15 = v13;
+    v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v15);
+    HIWORD(v13) = HIWORD(v12) + HIWORD(g_CellDirectionOffsets);
+    LOWORD(v13) = v12 + g_CellDirectionOffsets;
+    v16 = v13;
+    v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v16);
+    LOWORD(v13) = v12 + Direction_Y_Offsets;
+    HIWORD(v13) = HIWORD(v12) + HIWORD(Direction_Y_Offsets);
+    v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v13);
+    if ( (v2[80] & 0x400) != 0 )
+    return 1;
+    if ( v3 )
   {
-    v7 = v3[80]; /*0x703dfb*/
-    if ( (v7 & 0x400) != 0 && (v7 & 0x800) != 0 ) /*0x703e0f*/
-      return 1; /*0x703e0f*/
+    v7 = v3[80];
+    if ( (v7 & 0x400) != 0 && (v7 & 0x800) != 0 )
+    return 1;
   }
-  if ( v6 ) /*0x703e13*/
+    if ( v6 )
   {
-    v8 = v6[80]; /*0x703e15*/
-    if ( (v8 & 0x400) != 0 && (v8 & 0x800) == 0 ) /*0x703e23*/
-      return 1; /*0x703e23*/
+    v8 = v6[80];
+    if ( (v8 & 0x400) != 0 && (v8 & 0x800) == 0 )
+    return 1;
   }
-  if ( v5 ) /*0x703e27*/
+    if ( v5 )
   {
-    v9 = v5[80]; /*0x703e29*/
-    if ( (v9 & 0x400) != 0 && (v9 & 0x800) == 0 ) /*0x703e37*/
-      return 1; /*0x703e37*/
+    v9 = v5[80];
+    if ( (v9 & 0x400) != 0 && (v9 & 0x800) == 0 )
+    return 1;
   }
-  if ( v4 && (v10 = v4[80], (v10 & 0x400) != 0) && (v10 & 0x800) != 0 ) /*0x703e51*/
-    return 1; /*0x703e56*/
-  else
-    return 0; /*0x703e60*/
+    if ( v4 && (v10 = v4[80], (v10 & 0x400) != 0) && (v10 & 0x800) != 0 )
+    return 1;
+    else
+    return 0;
 }
 }
 } // namespace game
@@ -1102,8 +1099,6 @@ int __stdcall TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3,
 // 0x70D0D0
 namespace ra2 {
 namespace game {
-bool TechnoClass::HasVoiceResponse(int weaponIndex)
-{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall TechnoTypeClass::HasVoiceResponse(TechnoClass *this, int weaponIndex)
 {
@@ -1118,7 +1113,6 @@ bool __thiscall TechnoTypeClass::HasVoiceResponse(TechnoClass *this, int weaponI
     return 1; /*0x70d11c*/
   return VeterancyStruct::IsElite((float *)v3->__pad_0) /*0x70d142*/
       && (*(_BYTE *)(v4 + weaponIndex + 668) || *(_BYTE *)(v4 + weaponIndex + 686));
-}
 }
 } // namespace game
 } // namespace ra2

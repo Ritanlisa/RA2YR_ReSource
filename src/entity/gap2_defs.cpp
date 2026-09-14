@@ -13424,14 +13424,11 @@ char __thiscall BulletClass::ProcessObstacle(_DWORD *this, IUnknown *aP1, const 
 
 // 0x468B90
 namespace gamemd { int BulletClass::UpdateFlightPath() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BulletClass::_vt30(_DWORD *this)
 {
-  int v1; // eax
-
-  v1 = -(*(_BYTE *)(*(this + 43) + 759) != 0); /*0x468b9e*/
-  LOBYTE(v1) = v1 & 0xFE; /*0x468ba0*/
-  return v1 + 3; /*0x468ba5*/
+    int v1;
+    v1 = -(*(char *)(this->Type + 759) != 0);
+    LOBYTE(v1) = v1 & 0xFE;
+    return v1 + 3;
 }
 } }
 
@@ -13807,24 +13804,18 @@ char __thiscall sub_46B0C0(void *this, int a2, float *a3, _DWORD *a4, _DWORD *a5
 
 // 0x46B280
 namespace gamemd { int BulletClass::InitScalable() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BulletClass::InitScalable(_DWORD **this)
 {
-  int v2; // eax
-  int v3; // edx
-
-  if ( unk_89DE28 < unk_89DE20 /*0x46b2b7*/
-    || (unk_89DE25 || !unk_89DE20)
-    && unk_89DE2C > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(unk_89DE18 + 8))(&unk_89DE18, unk_89DE20 + unk_89DE2C, 0) )
+    int v2;
+    int v3;
+    if ( DataGlobal_89DE28 < DataGlobal_89DE20 || (DataGlobal_89DE25 || !DataGlobal_89DE20) && DataGlobal_89DE2C > 0 && (*(unsigned char (__thiscall **)(int *, int, int))(DataGlobal_89DE18 + 8))(&DataGlobal_89DE18, DataGlobal_89DE20 + DataGlobal_89DE2C, 0) )
   {
-    v2 = unk_89DE28++; /*0x46b2c4*/
-    *((_DWORD *)unk_89DE1C + v2) = this; /*0x46b2d3*/
+    v2 = DataGlobal_89DE28++;
+    *((int *)(DataGlobal_89DE1C) + v2) = this;
   }
-  v3 = unk_89DE28 - 5; /*0x46b2dc*/
-  if ( unk_89DE28 - 5 < 0 ) /*0x46b2e1*/
-    v3 = 0; /*0x46b2e3*/
-  return BulletTypeClass::SetScaledSpawnDelay(*(this + 43), v3 / 3 + (*(this + 43))[185]); /*0x46b307*/
+    v3 = DataGlobal_89DE28 - 5;
+    if ( DataGlobal_89DE28 - 5 < 0 )
+    v3 = 0;
+    return BulletTypeClass::SetScaledSpawnDelay(this->Type, v3 / 3 + (this->Type)[185]);
 }
 } }
 
@@ -13840,10 +13831,8 @@ int __thiscall BulletClass::_vt123(_DWORD *this, int a2)
 
 // 0x46B5B0
 namespace gamemd { int BulletClass::CheckMissionAbort() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BulletClass::_vt34(_DWORD *this)
 {
-  return *(this + 43); /*0x46b5b6*/
+    return this->Type;
 }
 } }
 
@@ -18039,10 +18028,8 @@ int __thiscall ParticleClass::vt_entry_1E8(int this)
 
 // 0x62D990
 namespace gamemd { int ParticleClass::Stub() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ParticleClass::_vt34(_DWORD *this)
 {
-  return *(this + 43); /*0x62d996*/
+    return this->Type;
 }
 } }
 
@@ -20177,55 +20164,52 @@ char __thiscall TerrainClass::ApplyCellModifications(#374 *this)
 
 // 0x71CC50
 namespace gamemd { int TerrainClass::CheckSpawnConditions(void* a1, int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TerrainClass::_vt65(_BYTE *this, int *a2, char a3, int a4)
 {
-  int *v5; // eax
-  int v6; // ebx
-  int v7; // ebp
-  _DWORD *v8; // eax
-  int v9; // edx
-  int v10; // ecx
-  int v11; // ebx
-  int v12; // eax
-  int v13; // ebp
-  int v14; // ebx
-  _DWORD *v15; // eax
-  int v16; // ecx
-  int v18; // [esp+10h] [ebp-18h] BYREF
-  int v19; // [esp+14h] [ebp-14h]
-  _DWORD v20[4]; // [esp+18h] [ebp-10h] BYREF
-
-  if ( !MEMORY[0xA8ED6B] && g_hWnd && (!a3 && !*(this + 128) || !*(this + 116) || *(this + 129)) ) /*0x71cc8c*/
-    return 0; /*0x71cc8c*/
-  *(this + 128) = 0; /*0x71ccad*/
-  v5 = ClipRectIntersection(v20, a2, &MEMORY[0x886FA0], 0, 0); /*0x71ccb4*/
-  *a2 = *v5; /*0x71ccbd*/
-  a2[1] = v5[1]; /*0x71ccc2*/
-  a2[2] = v5[2]; /*0x71ccc8*/
-  a2[3] = v5[3]; /*0x71ccce*/
-  v6 = MEMORY[0x886FA0]; /*0x71ccd3*/
-  v7 = MEMORY[0x886FA4]; /*0x71ccd9*/
-  v8 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, _DWORD *))(*(_DWORD *)this + 300))(this, v20); /*0x71cce6*/
-  v9 = v8[1]; /*0x71ccee*/
-  v10 = v6 + *v8; /*0x71ccf1*/
-  v11 = v8[2]; /*0x71ccf3*/
-  v12 = v8[3]; /*0x71ccf6*/
-  v13 = v9 + v7; /*0x71ccf9*/
-  if ( *a2 >= v10 + v11 ) /*0x71cd01*/
-    return 0; /*0x71cd01*/
-  v14 = a2[1]; /*0x71cd07*/
-  if ( v14 >= v13 + v12 || *a2 + a2[2] <= v10 || v14 + a2[3] <= v13 ) /*0x71cd20*/
-    return 0; /*0x71cd90*/
-  v15 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, _DWORD *))(*(_DWORD *)this + 172))(this, v20); /*0x71cd30*/
-  Coord::To_Screen(MEMORY[0x887324], v15, &v18); /*0x71cd3d*/
-  if ( *a2 > MEMORY[0x886FA0] ) /*0x71cd4b*/
-    v18 += MEMORY[0x886FA0] - *a2; /*0x71cd55*/
-  v16 = a2[1]; /*0x71cd59*/
-  if ( v16 > MEMORY[0x886FA4] ) /*0x71cd63*/
-    v19 += MEMORY[0x886FA4] - v16; /*0x71cd6d*/
-  (*(void (__thiscall **)(_BYTE *, int *, int *))(*(_DWORD *)this + 276))(this, &v18, a2); /*0x71cd7b*/
-  return 1; /*0x71cd81*/
+    int *v5;
+    int v6;
+    int v7;
+    int *v8;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    int v14;
+    int *v15;
+    int v16;
+    int v18;
+    int v19;
+    int v20[4];
+    if ( !g_ArmageddonMode && g_hWnd && (!a3 && !this->needsRedraw || !this->isOnMap || this->inLimbo) )
+    return 0;
+    this->needsRedraw = 0;
+    v5 = ClipRectIntersection(v20, a2, &DSurface_ViewBounds, 0, 0);
+    *a2 = *v5;
+    *((int*)(a2) + 1) = v5[1];
+    *((int*)(a2) + 2) = v5[2];
+    *((int*)(a2) + 3) = v5[3];
+    v6 = DSurface_ViewBounds;
+    v7 = g_Map_VisibleRect;
+    v8 = (int *)this->Export(v20);
+    v9 = v8[1];
+    v10 = v6 + *v8;
+    v11 = v8[2];
+    v12 = v8[3];
+    v13 = v9 + v7;
+    if ( *a2 >= v10 + v11 )
+    return 0;
+    v14 = *((int*)(a2) + 1);
+    if ( v14 >= v13 + v12 || *a2 + *((int*)(a2) + 2) <= v10 || v14 + *((int*)(a2) + 3) <= v13 )
+    return 0;
+    v15 = (int *)this->GetCoordsThunk2(v20);
+    Coord::To_Screen(g_TacticalClass_Instance, v15, &v18);
+    if ( *a2 > DSurface_ViewBounds )
+    v18 += DSurface_ViewBounds - *a2;
+    v16 = *((int*)(a2) + 1);
+    if ( v16 > g_Map_VisibleRect )
+    v19 += g_Map_VisibleRect - v16;
+    this->Draw(&v18, a2);
+    return 1;
 }
 } }
 
@@ -20545,13 +20529,11 @@ namespace gamemd { int TiberiumClass::Stub() {
 
 // 0x723710
 namespace gamemd { void* TiberiumClass::DrawOre(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TiberiumClass *__thiscall TiberiumClass::DrawOre(void *this, char a2)
 {
-  TiberiumClass::CleanupMembers((int)this); /*0x723713*/
-  if ( (a2 & 1) != 0 ) /*0x72371d*/
-    __3_YAXPAX_Z(this); /*0x723720*/
-  return (TiberiumClass *)this; /*0x72372a*/
+    TiberiumClass::CleanupMembers((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TiberiumClass *)this;
 }
 } }
 

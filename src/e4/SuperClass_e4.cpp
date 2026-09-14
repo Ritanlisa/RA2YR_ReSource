@@ -263,72 +263,50 @@ void __thiscall sub_6CB120(int this)
 namespace gamemd {
 void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void **__thiscall SuperClass::CreateChronoAnim(int this, AbstractClass *aP1, SuperClass *aP2, int a4)
 {
-  AnimClass *v5; // eax
-  IUnknown *v6; // eax
-  IUnknown *v7; // eax
-  void **result; // eax
-  int v9; // [esp+4h] [ebp-10h] BYREF
-  CoordStruct aP2a; // [esp+8h] [ebp-Ch] BYREF
-
-  v5 = *(AnimClass **)(this + 104); /*0x6cb3a6*/
-  if ( v5 ) /*0x6cb3ab*/
+    AnimClass *v5;
+    IUnknown *v6;
+    IUnknown *v7;
+    void **result;
+    int v9;
+    CoordStruct aP2a;
+    v5 = *(AnimClass **)(this + 104);
+    if ( v5 )
   {
-    v5->__pad_194[1] = 0; /*0x6cb3ad*/
-    this->SuperClass_field_0x68 = 0; /*0x6cb3b4*/
-    v9 = this; /*0x6cb3cb*/
-    v6 = (IUnknown *)(*(int (__thiscall **)(char *, int *))(*(_DWORD *)&stru_B05488.__pad_579C[18836] + 16))( /*0x6cb3cf*/
-                       &stru_B05488.__pad_579C[18836],
-                       &v9);
-    if ( v6 != (IUnknown *)-1 ) /*0x6cb3d5*/
-      DynamicVector::RemoveItem(&stru_B05488.__pad_579C[18836], v6); /*0x6cb3dd*/
+    v5->__pad_194[1] = 0;
+    this->SuperClass_field_0x68 = 0;
+    v9 = this;
+    v6 = (IUnknown *)(*(int (__thiscall **)(char *, int *))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 16))( &DataGlobal_B05488.__pad_579C[18836], &v9);
+    if ( v6 != (IUnknown *)-1 )
+    DynamicVector::RemoveItem(&DataGlobal_B05488.__pad_579C[18836], v6);
   }
-  if ( (unsigned char)this->SuperClass_field_0x6C ) /*0x6cb3e2*/
+    if ( (unsigned char)this->SuperClass_field_0x6C )
   {
-    v9 = this; /*0x6cb3f9*/
-    v7 = (IUnknown *)(*(int (__thiscall **)(char *, int *))(*(_DWORD *)&stru_B05488.__pad_579C[18836] + 16))( /*0x6cb3fd*/
-                       &stru_B05488.__pad_579C[18836],
-                       &v9);
-    if ( v7 != (IUnknown *)-1 ) /*0x6cb403*/
-      DynamicVector::RemoveItem(&stru_B05488.__pad_579C[18836], v7); /*0x6cb40b*/
-    *(_BYTE *)(this + 108) = 0; /*0x6cb410*/
+    v9 = this;
+    v7 = (IUnknown *)(*(int (__thiscall **)(char *, int *))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 16))( &DataGlobal_B05488.__pad_579C[18836], &v9);
+    if ( v7 != (IUnknown *)-1 )
+    DynamicVector::RemoveItem(&DataGlobal_B05488.__pad_579C[18836], v7);
+    this->AnimationGotInvalid = 0;
   }
-  result = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6cb419*/
-  if ( result ) /*0x6cb423*/
+    result = (void **)__2_YAPAXI_Z(0x1C8u);
+    if ( result )
   {
-    aP2a.X = (int)aP1; /*0x6cb444*/
-    aP2a.Y = (int)aP2; /*0x6cb455*/
-    aP2a.Z = a4 + 5; /*0x6cb459*/
-    result = (void **)AnimClass::ctor( /*0x6cb467*/
-                        result,
-                        *(CoordStruct **)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 816),
-                        &aP2a,
-                        0,
-                        (CoordStruct *)1,
-                        (void *)0x600,
-                        0,
-                        0);
-    if ( result ) /*0x6cb470*/
+    aP2a.X = (int)aP1;
+    aP2a.Y = (int)aP2;
+    aP2a.Z = a4 + 5;
+    result = (void **)AnimClass::ctor( result, *(CoordStruct **)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 816), &aP2a, 0, (CoordStruct *)1, (void *)0x600, 0, 0);
+    if ( result )
     {
-      this->SuperClass_field_0x68 = result; /*0x6cb472*/
-      result = *(void ***)&stru_B05488.__pad_579C[18844]; /*0x6cb475*/
-      if ( *(int *)&stru_B05488.__pad_579C[18852] < *(int *)&stru_B05488.__pad_579C[18844] /*0x6cb4ae*/
-        || (stru_B05488.__pad_579C[18849] || !*(_DWORD *)&stru_B05488.__pad_579C[18844])
-        && *(int *)&stru_B05488.__pad_579C[18856] > 0
-        && (result = (void **)(*(int (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[18836] + 8))(
-                                &stru_B05488.__pad_579C[18836],
-                                *(_DWORD *)&stru_B05488.__pad_579C[18844] + *(_DWORD *)&stru_B05488.__pad_579C[18856],
-                                0),
-            (_BYTE)result) )
+    this->SuperClass_field_0x68 = result;
+    result = *(void ***)&DataGlobal_B05488.__pad_579C[18844];
+    if ( *(int *)&DataGlobal_B05488.__pad_579C[18852] < *(int *)&DataGlobal_B05488.__pad_579C[18844] || (DataGlobal_B05488.__pad_579C[18849] || !*(int *)&DataGlobal_B05488.__pad_579C[18844]) && *(int *)&DataGlobal_B05488.__pad_579C[18856] > 0 && (result = (void **)(*(int (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 8))( &DataGlobal_B05488.__pad_579C[18836], *(int *)&DataGlobal_B05488.__pad_579C[18844] + *(int *)&DataGlobal_B05488.__pad_579C[18856], 0), (char)result) )
       {
-        result = (void **)(*(_DWORD *)&stru_B05488.__pad_579C[18852])++; /*0x6cb4b6*/
-        *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[18840] + 4 * (_DWORD)result) = this; /*0x6cb4c5*/
+    result = (void **)(*(int *)&DataGlobal_B05488.__pad_579C[18852])++;
+    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18840] + 4 * (int)result) = this;
       }
     }
   }
-  return result; /*0x6cb4c8*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -337,42 +315,36 @@ void **__thiscall SuperClass::CreateChronoAnim(int this, AbstractClass *aP1, Sup
 namespace gamemd {
 char SuperClass::SetOnHold(CoordStruct * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall SuperClass::SetOnHold(int this, CoordStruct *aP1)
 {
-  IUnknown *v3; // esi
-  int v4; // eax
-  int v5; // eax
-
-  if ( !*(_BYTE *)(this + 109) /*0x6cb4ea*/
-    || *(_BYTE *)(this + 110)
-    || (_BYTE)aP1 == (unsigned char)this->SuperClass_field_0x70
-    || !(unsigned char)this->SuperClass_field_0x60 )
+    IUnknown *v3;
+    int v4;
+    int v5;
+    if ( !this->Granted || this->OneTime || (char)aP1 == (unsigned char)this->SuperClass_field_0x70 || !(unsigned char)this->SuperClass_field_0x60 )
   {
-    return 0; /*0x6cb552*/
+    return 0;
   }
-  if ( (_BYTE)aP1 || *(_BYTE *)(this->SuperClass_field_0x28 + 245) ) /*0x6cb4f9*/
+    if ( (char)aP1 || *(char *)(this->SuperClass_field_0x28 + 245) )
   {
-    v3 = *(IUnknown **)(this + 48); /*0x6cb51c*/
-    if ( v3 != (IUnknown *)-1 ) /*0x6cb522*/
+    v3 = *(IUnknown **)(this + 48);
+    if ( v3 != (IUnknown *)-1 )
     {
-      v4 = this->SuperClass_field_0x38; /*0x6cb524*/
-      if ( *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - (int)v3 >= v4 ) /*0x6cb536*/
-        v5 = 0; /*0x6cb53c*/
-      else
-        v5 = v4 - (*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664] - (_DWORD)v3); /*0x6cb538*/
-      this->SuperClass_field_0x38 = v5; /*0x6cb53e*/
-      this->SuperClass_field_0x30 = -1; /*0x6cb541*/
+    v4 = this->SuperClass_field_0x38;
+    if ( *(int *)&g_NetworkPlayerBuffer.__pad_14B0[664] - (int)v3 >= v4 )
+    v5 = 0;
+    else
+    v5 = v4 - (*(int *)&g_NetworkPlayerBuffer.__pad_14B0[664] - (int)v3);
+    this->SuperClass_field_0x38 = v5;
+    this->SuperClass_field_0x30 = -1;
     }
   }
-  else if ( this->SuperClass_field_0x30 == -1 ) /*0x6cb507*/
+    else if ( this->SuperClass_field_0x30 == -1 )
   {
-    this->SuperClass_field_0x30 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb510*/
-    *(_BYTE *)(this + 112) = 0; /*0x6cb513*/
-    return 1; /*0x6cb519*/
+    this->SuperClass_field_0x30 = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[664];
+    this->IsOnHold = 0;
+    return 1;
   }
-  *(_BYTE *)(this + 112) = (_BYTE)aP1; /*0x6cb548*/
-  return 1; /*0x6cb518*/
+    this->IsOnHold = (char)aP1;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -568,11 +540,9 @@ char __thiscall SuperClass::Lose(_BYTE *this)
 namespace gamemd {
 char SuperClass::SetReadiness(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall SuperClass::SetReadiness(_BYTE *this, char a2)
 {
-  *(this + 111) = a2; /*0x6cb824*/
-  return a2; /*0x6cb827*/
+    this->IsCharged = a2;
+    return a2;
 }
 }
 } // namespace gamemd
@@ -960,11 +930,9 @@ char __thiscall SuperClass::SetCharge(int this, int a2)
 namespace gamemd {
 int SuperClass::SetRechargeTime(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SuperClass::SetRechargeTime(_DWORD *this, int a2)
 {
-  *(this + 9) = a2; /*0x6cc284*/
-  return a2; /*0x6cc287*/
+    this->CustomChargeTime = a2;
+    return a2;
 }
 }
 } // namespace gamemd
@@ -973,10 +941,8 @@ int __thiscall SuperClass::SetRechargeTime(_DWORD *this, int a2)
 namespace gamemd {
 void SuperClass::ResetRechargeTime()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall SuperClass::ResetRechargeTime(_DWORD *this)
 {
-  *(this + 9) = -1; /*0x6cc290*/
+    this->CustomChargeTime = -1;
 }
 }
 } // namespace gamemd
@@ -985,41 +951,38 @@ void __thiscall SuperClass::ResetRechargeTime(_DWORD *this)
 namespace gamemd {
 wchar_t * SuperClass::NameReadiness()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall SuperClass::NameReadiness(int this)
 {
-  int v1; // ecx
-  int v2; // ecx
-
-  if ( (unsigned char)this->SuperClass_field_0x70 ) /*0x6cc2b0*/
-    return GetStringCSF(MEMORY[0x83FB2C], 0, MEMORY[0x842510], 950); /*0x6cc34d*/
-  if ( *(_BYTE *)(this->SuperClass_field_0x28 + 229) ) /*0x6cc2be*/
+    int v1;
+    int v2;
+    if ( (unsigned char)this->SuperClass_field_0x70 )
+    return GetStringCSF(DataGlobal_83FB2C, 0, g_Str_File_Super_CPP, 950);
+    if ( *(char *)(this->SuperClass_field_0x28 + 229) )
   {
-    v1 = this->SuperClass_field_0x7C; /*0x6cc2c8*/
-    if ( v1 ) /*0x6cc2ce*/
+    v1 = this->SuperClass_field_0x7C;
+    if ( v1 )
     {
-      v2 = v1 - 1; /*0x6cc2d0*/
-      if ( v2 ) /*0x6cc2d1*/
+    v2 = v1 - 1;
+    if ( v2 )
       {
-        if ( v2 != 1 ) /*0x6cc2d4*/
-          return 0; /*0x6cc2d8*/
-        return GetStringCSF(MEMORY[0x8424FC], 0, MEMORY[0x842510], 925); /*0x6cc2ea*/
+    if ( v2 != 1 )
+    return 0;
+    return GetStringCSF(DataGlobal_8424FC, 0, g_Str_File_Super_CPP, 925);
       }
-      else
+    else
       {
-        return GetStringCSF(g_Str_TXT_READY, 0, MEMORY[0x842510], 922); /*0x6cc301*/
+    return GetStringCSF(g_Str_TXT_READY, 0, g_Str_File_Super_CPP, 922);
       }
     }
     else
     {
-      return GetStringCSF(MEMORY[0x8424EC], 0, MEMORY[0x842510], 919); /*0x6cc318*/
+    return GetStringCSF(DataGlobal_8424EC, 0, g_Str_File_Super_CPP, 919);
     }
   }
-  else
+    else
   {
-    if ( !*(_BYTE *)(this + 111) ) /*0x6cc323*/
-      return 0; /*0x6cc323*/
-    return GetStringCSF(g_Str_TXT_READY, 0, MEMORY[0x842510], 944); /*0x6cc336*/
+    if ( !this->IsCharged )
+    return 0;
+    return GetStringCSF(g_Str_TXT_READY, 0, g_Str_File_Super_CPP, 944);
   }
 }
 }
@@ -1029,14 +992,12 @@ wchar_t *__thiscall SuperClass::NameReadiness(int this)
 namespace gamemd {
 char SuperClass::CanFire()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall SuperClass::CanFire(int this)
 {
-  if ( (unsigned char)this->SuperClass_field_0x70 ) /*0x6cc360*/
-    return 0; /*0x6cc381*/
-  if ( *(_BYTE *)(this->SuperClass_field_0x28 + 229) ) /*0x6cc36a*/
-    return this->SuperClass_field_0x7C != 0; /*0x6cc379*/
-  return *(_BYTE *)(this + 111); /*0x6cc37c*/
+    if ( (unsigned char)this->SuperClass_field_0x70 )
+    return 0;
+    if ( *(char *)(this->SuperClass_field_0x28 + 229) )
+    return this->SuperClass_field_0x7C != 0;
+    return this->IsCharged;
 }
 }
 } // namespace gamemd
@@ -1103,10 +1064,8 @@ void SuperClass::Launch(int ecx0, int a2, short * aP3, char a4)
 namespace gamemd {
 bool SuperClass::ShouldDrawProgress()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall SuperClass::ShouldDrawProgress(int this)
 {
-  return *(_BYTE *)(this->SuperClass_field_0x28 + 229) || *(_BYTE *)(this + 111) == 0; /*0x6cde9d*/
+    return *(char *)(this->SuperClass_field_0x28 + 229) || this->IsCharged == 0;
 }
 }
 } // namespace gamemd
@@ -1166,22 +1125,19 @@ int __stdcall SuperClass::LoadFromStream(AbstractClass *aP0, int aP1)
 namespace gamemd {
 long long SuperClass::ExecuteAction(unsigned int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 __thiscall SuperClass::_vt10(int this, unsigned int a2, int a3)
 {
-  __int64 result; // rax
-
-  result = a2; /*0x6cdff8*/
-  if ( a2 == this->SuperClass_field_0x2C ) /*0x6cdffc*/
-    this->SuperClass_field_0x2C = 0; /*0x6cdffe*/
-  if ( a2 == this->SuperClass_field_0x28 ) /*0x6ce004*/
-    this->SuperClass_field_0x28 = 0; /*0x6ce006*/
-  if ( a2 == this->SuperClass_field_0x68 ) /*0x6ce00f*/
+    __int64 result;
+    result = a2;
+    if ( a2 == this->SuperClass_field_0x2C )
+    this->SuperClass_field_0x2C = 0;
+    if ( a2 == this->SuperClass_field_0x28 )
+    this->SuperClass_field_0x28 = 0;
+    if ( a2 == this->SuperClass_field_0x68 )
   {
-    this->SuperClass_field_0x68 = 0; /*0x6ce011*/
-    *(_BYTE *)(this + 108) = 1; /*0x6ce014*/
+    this->SuperClass_field_0x68 = 0;
+    this->AnimationGotInvalid = 1;
   }
-  return result; /*0x6ce00e*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1302,28 +1258,25 @@ int *__thiscall SuperClass::Reset(int this)
 namespace gamemd {
 bool SuperClass::ShouldFlashTab()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall SuperClass::ShouldFlashTab(int this)
 {
-  int v1; // eax
-  int v2; // eax
-
-  if ( (unsigned char)this->SuperClass_field_0x70 ) /*0x6ce1a0*/
-    return 0; /*0x6ce1a5*/
-  v1 = this->SuperClass_field_0x28; /*0x6ce1a7*/
-  if ( *(_BYTE *)(v1 + 229) ) /*0x6ce1aa*/
+    int v1;
+    int v2;
+    if ( (unsigned char)this->SuperClass_field_0x70 )
+    return 0;
+    v1 = this->SuperClass_field_0x28;
+    if ( *(char *)(v1 + 229) )
   {
-    if ( !this->SuperClass_field_0x7C ) /*0x6ce1b9*/
-      return 0; /*0x6ce1b9*/
+    if ( !this->SuperClass_field_0x7C )
+    return 0;
   }
-  else if ( !*(_BYTE *)(this + 111) ) /*0x6ce1c2*/
+    else if ( !this->IsCharged )
   {
-    return 0; /*0x6ce1c2*/
+    return 0;
   }
-  v2 = *(_DWORD *)(v1 + 232); /*0x6ce1c4*/
-  if ( v2 == -1 ) /*0x6ce1cd*/
-    return 1; /*0x6ce1d1*/
-  return v2 && v2 + this->SuperClass_field_0x74 > (int)MEMORY[0xA8ED84]; /*0x6ce1d1*/
+    v2 = *(int *)(v1 + 232);
+    if ( v2 == -1 )
+    return 1;
+    return v2 && v2 + this->SuperClass_field_0x74 > (int)g_CurrentFrame;
 }
 }
 } // namespace gamemd

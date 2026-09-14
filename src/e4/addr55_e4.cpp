@@ -13,8 +13,6 @@
 // 0x550080
 namespace ra2 {
 namespace game {
-void ObjectClass::sub_550080()
-{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_550080(ObjectClass **this)
 {
@@ -73,7 +71,6 @@ LABEL_8:
     }
     __3_YAXPAX_Z(this); /*0x550138*/
   }
-}
 }
 } // namespace game
 } // namespace ra2

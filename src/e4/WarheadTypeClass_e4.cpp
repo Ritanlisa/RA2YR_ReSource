@@ -266,13 +266,11 @@ void *__thiscall WarheadTypeClass::parseModifiers(INIEntry_INIClass *this, char 
 // 0x52AE00
 WarheadTypeClass * WarheadTypeClass::parseAnimations(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-WarheadTypeClass *__thiscall WarheadTypeClass::parseAnimations(char *this, char a2)
 {
-  WarheadTypeClass::parseVerses(this); /*0x52ae03*/
-  if ( (a2 & 1) != 0 ) /*0x52ae0d*/
-    __3_YAXPAX_Z(this); /*0x52ae10*/
-  return (WarheadTypeClass *)this; /*0x52ae1a*/
+    WarheadTypeClass::parseVerses(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (WarheadTypeClass *)this;
 }
 }
 
@@ -843,22 +841,18 @@ WarheadTypeClass *__thiscall WarheadTypeClass::Destructor(void **this, char a2)
 // 0x75E690
 CCINIClass * WarheadTypeClass::checkImmunity(TypeList * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-CCINIClass *__thiscall WarheadTypeClass::checkImmunity(_DWORD *this, TypeList *aP1)
 {
-  *this = &vt_TypeList_VoxelAnimTypeClass_const; /*0x75e692*/
-  return (CCINIClass *)this; /*0x75e698*/
+    *(void**)this = &vt_TypeList_VoxelAnimTypeClass_const;
+    return (CCINIClass *)this;
 }
 }
 
 // 0x75E6A0
 DynamicVector * WarheadTypeClass::calculateDamage(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall WarheadTypeClass::calculateDamage(_DWORD *this, AbstractClass *aP1)
 {
-  *this = &vt_TypeList_int; /*0x75e6a2*/
-  return (DynamicVector *)this; /*0x75e6a8*/
+    *(void**)this = &vt_TypeList_int;
+    return (DynamicVector *)this;
 }
 }
 

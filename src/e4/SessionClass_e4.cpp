@@ -2421,23 +2421,20 @@ LABEL_58:
 // 0x69D460
 VectorClass * SessionClass::validateGame(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall SessionClass::validateGame(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x69d463*/
-  *this = &vt_VectorClass_enum_DiskID; /*0x69d466*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x69d470*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_enum_DiskID;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x69d478*/
-    *(this + 1) = 0; /*0x69d480*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x69d48b*/
-  *(this + 2) = 0; /*0x69d491*/
-  if ( (a2 & 1) != 0 ) /*0x69d498*/
-    __3_YAXPAX_Z(this); /*0x69d49b*/
-  return (VectorClass *)this; /*0x69d4a5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 

@@ -7,13 +7,10 @@
 namespace gamemd {
 bool E4Recv_6B8AF0::sub_6B8AF0(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_6B8AF0(_DWORD *this, _DWORD *a2)
 {
-  int v2; // eax
-
-  v2 = *this ^ *a2; /*0x6b8af8*/
-  return !(_BYTE)v2 && (v2 & 0x7FF00) == 0; /*0x6b8b07*/
+    int v2;
+    v2 = *(void**)this ^ *a2;
+    return !(char)v2 && (v2 & 0x7FF00) == 0;
 }
 }
 } // namespace gamemd

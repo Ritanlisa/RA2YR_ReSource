@@ -419,60 +419,57 @@ int __thiscall TActionClass::_vt10(_DWORD *this, int a2, int a3)
 namespace gamemd {
 char TActionClass::executeEnterAction(int a2, int _10, unsigned int * a3, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeEnterAction(_DWORD *this, int a2, int _10, _DWORD *a3, IUnknown *aP4)
 {
-  void *v5; // esi
-  int Field11; // eax
-  int v7; // edi
-  char v9; // bl
-  int i; // ebp
-  int v11; // esi
-  _DWORD *v12; // ecx
-
-  v5 = (void *)*(this + 36); /*0x6e0aa1*/
-  if ( !a3 ) /*0x6e0aae*/
-    return 0; /*0x6e0aae*/
-  if ( v5 == (void *)8997 ) /*0x6e0ab6*/
+    void *v5;
+    int Field11;
+    int v7;
+    char v9;
+    int i;
+    int v11;
+    int *v12;
+    v5 = (void *)this->Value;
+    if ( !a3 )
+    return 0;
+    if ( v5 == (void *)8997 )
   {
-    Field11 = Property::GetField11(a3); /*0x6e0ab8*/
+    Field11 = Property::GetField11(a3);
   }
-  else
-  {
-    if ( v5 == (void *)-1 ) /*0x6e0ac2*/
-      return 0; /*0x6e0ae7*/
-    if ( BuildingType::IsSpecialType(v5) ) /*0x6e0ac6*/
-      Field11 = BuildingType::FindOwnerHouse(v5); /*0x6e0ad1*/
     else
-      Field11 = HouseClass::FindOwner(v5); /*0x6e0ad8*/
-  }
-  v7 = Field11; /*0x6e0add*/
-  if ( !Field11 ) /*0x6e0ae1*/
-    return 0; /*0x6e0ae1*/
-  v9 = 0; /*0x6e0af1*/
-  for ( i = 0; i < *(int *)&MEMORY[0xA8D63C].__pad_14B0[412]; ++i ) /*0x6e0af7*/
   {
-    v11 = *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[400] + 4 * i); /*0x6e0afe*/
-    if ( *(_BYTE *)(v11 + 144) ) /*0x6e0b01*/
+    if ( v5 == (void *)-1 )
+    return 0;
+    if ( BuildingType::IsSpecialType(v5) )
+    Field11 = BuildingType::FindOwnerHouse(v5);
+    else
+    Field11 = HouseClass::FindOwner(v5);
+  }
+    v7 = Field11;
+    if ( !Field11 )
+    return 0;
+    v9 = 0;
+    for ( i = 0; i < *(int *)&g_NetworkPlayerBuffer.__pad_14B0[412]; ++i )
+  {
+    v11 = *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[400] + 4 * i);
+    if ( *(char *)(v11 + 144) )
     {
-      if ( *(_BYTE *)(v11 + 116) ) /*0x6e0b0b*/
+    if ( *(char *)(v11 + 116) )
       {
-        if ( !*(_BYTE *)(v11 + 129) ) /*0x6e0b12*/
+    if ( !*(char *)(v11 + 129) )
         {
-          v12 = *(_DWORD **)(v11 + 52); /*0x6e0b1c*/
-          if ( v12 ) /*0x6e0b21*/
+    v12 = *(int **)(v11 + 52);
+    if ( v12 )
           {
-            if ( LinkedList::Contains(v12, (IUnknown *)a3) ) /*0x6e0b28*/
+    if ( LinkedList::Contains(v12, (IUnknown *)a3) )
             {
-              (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v11 + 980))(v11, v7, 0); /*0x6e0b38*/
-              v9 = 1; /*0x6e0b3e*/
+    (*(void (__thiscall **)(int, int, int))(*(int *)(v11) + 980))(v11, v7, 0);
+    v9 = 1;
             }
           }
         }
       }
     }
   }
-  return v9; /*0x6e0ae3*/
+    return v9;
 }
 }
 } // namespace gamemd
@@ -579,32 +576,29 @@ char __thiscall TActionClass::ConvertHouseUnits(_DWORD *this, int a2, int _14, _
 namespace gamemd {
 char TActionClass::executeCaptureAction(void * a1, int _C, unsigned int * a3, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeCaptureAction(_DWORD *this, void *a1, int _C, _DWORD *a3, IUnknown *aP4)
 {
-  void *v5; // esi
-  int Field11; // eax
-
-  v5 = (void *)*(this + 36); /*0x6e0ca1*/
-  if ( !a3 ) /*0x6e0cad*/
-    return 0; /*0x6e0cad*/
-  if ( v5 == (void *)8997 ) /*0x6e0cb5*/
+    void *v5;
+    int Field11;
+    v5 = (void *)this->Value;
+    if ( !a3 )
+    return 0;
+    if ( v5 == (void *)8997 )
   {
-    Field11 = Property::GetField11(a3); /*0x6e0cb7*/
+    Field11 = Property::GetField11(a3);
   }
-  else
-  {
-    if ( v5 == (void *)-1 ) /*0x6e0cc1*/
-      return 0; /*0x6e0ce3*/
-    if ( BuildingType::IsSpecialType(v5) ) /*0x6e0cc5*/
-      Field11 = BuildingType::FindOwnerHouse(v5); /*0x6e0cd0*/
     else
-      Field11 = HouseClass::FindOwner(v5); /*0x6e0cd7*/
+  {
+    if ( v5 == (void *)-1 )
+    return 0;
+    if ( BuildingType::IsSpecialType(v5) )
+    Field11 = BuildingType::FindOwnerHouse(v5);
+    else
+    Field11 = HouseClass::FindOwner(v5);
   }
-  if ( !Field11 ) /*0x6e0cde*/
-    return 0; /*0x6e0cde*/
-  TActionClass::executeAttackAction(a1, Field11); /*0x6e0ceb*/
-  return 1; /*0x6e0ce2*/
+    if ( !Field11 )
+    return 0;
+    TActionClass::executeAttackAction(a1, Field11);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -613,32 +607,29 @@ char __thiscall TActionClass::executeCaptureAction(_DWORD *this, void *a1, int _
 namespace gamemd {
 char TActionClass::executeSabotageAction(unsigned int * a1, int _C, unsigned int * a3, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeSabotageAction(_DWORD *this, _DWORD *a1, int _C, _DWORD *a3, IUnknown *aP4)
 {
-  void *v5; // esi
-  int Field11; // eax
-
-  v5 = (void *)*(this + 36); /*0x6e0d01*/
-  if ( !a3 ) /*0x6e0d0d*/
-    return 0; /*0x6e0d0d*/
-  if ( v5 == (void *)8997 ) /*0x6e0d15*/
+    void *v5;
+    int Field11;
+    v5 = (void *)this->Value;
+    if ( !a3 )
+    return 0;
+    if ( v5 == (void *)8997 )
   {
-    Field11 = Property::GetField11(a3); /*0x6e0d17*/
+    Field11 = Property::GetField11(a3);
   }
-  else
-  {
-    if ( v5 == (void *)-1 ) /*0x6e0d21*/
-      return 0; /*0x6e0d43*/
-    if ( BuildingType::IsSpecialType(v5) ) /*0x6e0d25*/
-      Field11 = BuildingType::FindOwnerHouse(v5); /*0x6e0d30*/
     else
-      Field11 = HouseClass::FindOwner(v5); /*0x6e0d37*/
+  {
+    if ( v5 == (void *)-1 )
+    return 0;
+    if ( BuildingType::IsSpecialType(v5) )
+    Field11 = BuildingType::FindOwnerHouse(v5);
+    else
+    Field11 = HouseClass::FindOwner(v5);
   }
-  if ( !Field11 ) /*0x6e0d3e*/
-    return 0; /*0x6e0d3e*/
-  TActionClass::executeMoveAction(a1, Field11); /*0x6e0d4b*/
-  return 1; /*0x6e0d42*/
+    if ( !Field11 )
+    return 0;
+    TActionClass::executeMoveAction(a1, Field11);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -802,36 +793,30 @@ char __thiscall TActionClass::PlayAudioAtRandomWP(int *this, int a2, int a3, int
 namespace gamemd {
 char TActionClass::executeGuardAreaAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeGuardAreaAction(int *this, int a2, int a3, int a4, IUnknown *aP4)
 {
-  IUnknown **WorldCoords; // eax
-  BuildingTypeClass *v6; // esi
-  _DWORD *Infantry; // eax
-  __int16 v9[2]; // [esp+4h] [ebp-1Ch] BYREF
-  IUnknown *v10; // [esp+8h] [ebp-18h] BYREF
-  IUnknown *v11; // [esp+Ch] [ebp-14h]
-  IUnknown *v12; // [esp+10h] [ebp-10h]
-  _DWORD v13[3]; // [esp+14h] [ebp-Ch] BYREF
-
-  WorldCoords = (IUnknown **)Cell::GetWorldCoords((__int16 *)MEMORY[0xA8B230], v13, *(this + 17)); /*0x6e1993*/
-  v10 = *WorldCoords; /*0x6e199c*/
-  v11 = WorldCoords[1]; /*0x6e19a3*/
-  v12 = WorldCoords[2]; /*0x6e19b1*/
-  v9[0] = (int)v10 / 256; /*0x6e19d1*/
-  v9[1] = (int)v11 / 256; /*0x6e19d6*/
-  if ( v9[0] == *(_WORD *)&MEMORY[0xB077F8].__pad_579C[5868] /*0x6e1a14*/
-    && (unsigned __int16)((int)v11 / 256) == *(_WORD *)&MEMORY[0xB077F8].__pad_579C[5870]
-    || (v6 = (BuildingTypeClass *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v9), (Infantry = Cell::IsBridge(v6)) == 0)
-    && (Infantry = CellClass::FindInfantry(v6, 0)) == 0 )
+    IUnknown **WorldCoords;
+    BuildingTypeClass *v6;
+    int *Infantry;
+    short v9[2];
+    IUnknown *v10;
+    IUnknown *v11;
+    IUnknown *v12;
+    int v13[3];
+    WorldCoords = (IUnknown **)Cell::GetWorldCoords((short *)g_ScenarioClass_Instance, v13, this->Waypoint);
+    v10 = *WorldCoords;
+    v11 = WorldCoords[1];
+    v12 = WorldCoords[2];
+    v9[0] = (int)v10 / 256;
+    v9[1] = (int)v11 / 256;
+    if ( v9[0] == *(short *)&g_OverlayTypeConfig.__pad_579C[5868] && (unsigned short)((int)v11 / 256) == *(short *)&g_OverlayTypeConfig.__pad_579C[5870] || (v6 = (BuildingTypeClass *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v9), (Infantry = Cell::IsBridge(v6)) == 0) && (Infantry = CellClass::FindInfantry(v6, 0)) == 0 )
   {
-    globalHelper_050F40(&v10, 1); /*0x6e1a31*/
-    return 1; /*0x6e1a36*/
+    globalHelper_050F40(&v10, 1);
+    return 1;
   }
-  else
+    else
   {
-    ObjectClass::CheckFlagD0(Infantry, (IUnknown *)0xFFFFFFFF); /*0x6e1a1a*/
-    return 1; /*0x6e1a1f*/
+    ObjectClass::CheckFlagD0(Infantry, (IUnknown *)0xFFFFFFFF);
+    return 1;
   }
 }
 }
@@ -841,16 +826,13 @@ char __thiscall TActionClass::executeGuardAreaAction(int *this, int a2, int a3, 
 namespace gamemd {
 char TActionClass::executePatrolAction(void * a1, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executePatrolAction(int *this, void *a1, int a3, int a4, IUnknown *aP4)
 {
-  int *Waypoint_Location; // eax
-  int *v7; // [esp+0h] [ebp-4h] BYREF
-
-  v7 = this; /*0x6e1a40*/
-  Waypoint_Location = ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v7, *(this + 17)); /*0x6e1a50*/
-  SelectSimilarBuildingTypes(a1, *Waypoint_Location); /*0x6e1a5c*/
-  return 1; /*0x6e1a64*/
+    int *Waypoint_Location;
+    int *v7;
+    v7 = this;
+    Waypoint_Location = ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, this->Waypoint);
+    SelectSimilarBuildingTypes(a1, *Waypoint_Location);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -859,33 +841,29 @@ char __thiscall TActionClass::executePatrolAction(int *this, void *a1, int a3, i
 namespace gamemd {
 char TActionClass::executeScatterAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeScatterAction(int *this, int a2, int a3, int a4, IUnknown *aP4)
 {
-  int v5; // esi
-  int v6; // kr00_4
-  int v8[3]; // [esp+0h] [ebp-14h] BYREF
-  __int16 v9[4]; // [esp+Ch] [ebp-8h] BYREF
-
-  if ( HouseClass_Player->__pad_220[32] ) /*0x6e1a78*/
-    return 1; /*0x6e1b79*/
-  *(_DWORD *)v9 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], v8, *(this + 36)); /*0x6e1aaa*/
-  if ( (*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v9) + 80) & 0x100) != 0 /*0x6e1ad6*/
-    || (*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v9) + 80) & 0x400) != 0 )
+    int v5;
+    int v6;
+    int v8[3];
+    short v9[4];
+    if ( HouseClass_Player->__pad_220[32] )
+    return 1;
+    *(int *)v9 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, v8, this->Value);
+    if ( (*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v9) + 80) & 0x100) != 0 || (*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v9) + 80) & 0x400) != 0 )
   {
-    v5 = 4; /*0x6e1adc*/
+    v5 = 4;
   }
-  else
+    else
   {
-    v5 = 0; /*0x6e1ad8*/
+    v5 = 0;
   }
-  v6 = v5 + *((char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v9) + 283); /*0x6e1afc*/
-  v8[2] = v6 * *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[5964]; /*0x6e1b36*/
-  v8[1] = ((__int16)(v9[1] - v6 / 2) << 8) + 128; /*0x6e1b3d*/
-  v8[0] = ((__int16)(v9[0] - v6 / 2) << 8) + 128; /*0x6e1b4c*/
-  TActionClass_Helper(v8, *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 1580)); /*0x6e1b61*/
-  CellSystem::UpdateVisibility(&MEMORY[0x87F7E8]); /*0x6e1b6b*/
-  return 1; /*0x6e1b73*/
+    v6 = v5 + *((char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v9) + 283);
+    v8[2] = v6 * *(int *)&g_OverlayTypeConfig.__pad_579C[5964];
+    v8[1] = ((short)(v9[1] - v6 / 2) << 8) + 128;
+    v8[0] = ((short)(v9[0] - v6 / 2) << 8) + 128;
+    TActionClass_Helper(v8, *(int *)(*(int *)&DataGlobal_87F8E4.__pad_5568[9108] + 1580));
+    CellSystem::UpdateVisibility(&DataGlobal_87F7E8);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1071,33 +1049,30 @@ char __thiscall TActionClass::executeLoadAction(int *this, int a2, int a3, int a
 namespace gamemd {
 char TActionClass::executeUnloadAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeUnloadAction(_DWORD *this, int a2, int a3, int a4, IUnknown *aP4)
 {
-  int v6; // esi
-  int *v7; // ecx
-  _BYTE *v8; // eax
-  int difficulty2; // edx
-
-  if ( !*(this + 20) ) /*0x6e2af4*/
-    return 1; /*0x6e2af4*/
-  v6 = 0; /*0x6e2b00*/
-  if ( *(int *)&MEMORY[0xA8D63C].__pad_14B0[12] <= 0 ) /*0x6e2b04*/
-    return 1; /*0x6e2b69*/
-  do /*0x6e2b5e*/
+    int v6;
+    int *v7;
+    char *v8;
+    int difficulty2;
+    if ( !this->TriggerType )
+    return 1;
+    v6 = 0;
+    if ( *(int *)&g_NetworkPlayerBuffer.__pad_14B0[12] <= 0 )
+    return 1;
+    do
   {
-    v7 = *(int **)(*(_DWORD *)MEMORY[0xA8D63C].__pad_14B0 + 4 * v6); /*0x6e2b0f*/
-    v8 = (_BYTE *)v7[9]; /*0x6e2b12*/
-    if ( v8 == (_BYTE *)*(this + 20) ) /*0x6e2b17*/
+    v7 = *(int **)(*(int *)g_NetworkPlayerBuffer.__pad_14B0 + 4 * v6);
+    v8 = (char *)v7[9];
+    if ( v8 == (char *)this->TriggerType )
     {
-      difficulty2 = MEMORY[0xA8B230]->difficulty2; /*0x6e2b1f*/
-      if ( (difficulty2 || v8[156]) && (difficulty2 != 1 || v8[157]) && (difficulty2 != 2 || v8[158]) ) /*0x6e2b47*/
-        TActionClass::executeAirstrikeAction(v7); /*0x6e2b51*/
+    difficulty2 = g_ScenarioClass_Instance->difficulty2;
+    if ( (difficulty2 || v8[156]) && (difficulty2 != 1 || v8[157]) && (difficulty2 != 2 || v8[158]) )
+    TActionClass::executeAirstrikeAction(v7);
     }
-    ++v6; /*0x6e2b5b*/
+    ++v6;
   }
-  while ( v6 < *(int *)&MEMORY[0xA8D63C].__pad_14B0[12] ); /*0x6e2b5e*/
-  return 1; /*0x6e2b61*/
+    while ( v6 < *(int *)&g_NetworkPlayerBuffer.__pad_14B0[12] );
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1186,16 +1161,10 @@ char __thiscall TActionClass::SpawnMeteorShower(int *this, AbstractClass *aP1, i
 namespace gamemd {
 char TActionClass::executeSelfDestructAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeSelfDestructAction(_DWORD *this, int a2, int a3, int a4, IUnknown *aP4)
 {
-  UpdateSurfaceAnimations( /*0x6e2e8d*/
-    10 * *(this + 36),
-    10 * MEMORY[0xA8B230]->nukeLevel,
-    10 * MEMORY[0xA8B230]->nukeAmbientChangeRate,
-    0);
-  MEMORY[0xA8B230]->nukeGround = *(this + 36); /*0x6e2ea1*/
-  return 1; /*0x6e2ea0*/
+    UpdateSurfaceAnimations( 10 *(void**)this->Value, 10 * g_ScenarioClass_Instance->nukeLevel, 10 * g_ScenarioClass_Instance->nukeAmbientChangeRate, 0);
+    g_ScenarioClass_Instance->nukeGround = this->Value;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1204,16 +1173,10 @@ char __thiscall TActionClass::executeSelfDestructAction(_DWORD *this, int a2, in
 namespace gamemd {
 char TActionClass::executeExplodeAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeExplodeAction(_DWORD *this, int a2, int a3, int a4, IUnknown *aP4)
 {
-  UpdateSurfaceAnimations( /*0x6e2edd*/
-    10 * MEMORY[0xA8B230]->nukeGround,
-    10 * *(this + 36),
-    10 * MEMORY[0xA8B230]->nukeAmbientChangeRate,
-    0);
-  MEMORY[0xA8B230]->nukeLevel = *(this + 36); /*0x6e2ef1*/
-  return 1; /*0x6e2ef0*/
+    UpdateSurfaceAnimations( 10 * g_ScenarioClass_Instance->nukeGround, 10 *(void**)this->Value, 10 * g_ScenarioClass_Instance->nukeAmbientChangeRate, 0);
+    g_ScenarioClass_Instance->nukeLevel = this->Value;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1222,12 +1185,10 @@ char __thiscall TActionClass::executeExplodeAction(_DWORD *this, int a2, int a3,
 namespace gamemd {
 char TActionClass::executeChronoshiftAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeChronoshiftAction(_DWORD *this, int a2, int a3, int a4, IUnknown *aP4)
 {
-  UpdateSurfaceAnimations(10 * MEMORY[0xA8B230]->nukeGround, 10 * MEMORY[0xA8B230]->nukeLevel, 10 * *(this + 36), 0); /*0x6e2f2d*/
-  MEMORY[0xA8B230]->nukeAmbientChangeRate = *(this + 36); /*0x6e2f41*/
-  return 1; /*0x6e2f40*/
+    UpdateSurfaceAnimations(10 * g_ScenarioClass_Instance->nukeGround, 10 * g_ScenarioClass_Instance->nukeLevel, 10 *(void**)this->Value, 0);
+    g_ScenarioClass_Instance->nukeAmbientChangeRate = this->Value;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1236,32 +1197,29 @@ char __thiscall TActionClass::executeChronoshiftAction(_DWORD *this, int a2, int
 namespace gamemd {
 char TActionClass::executePlaceBeaconAction(int a2, int _C, unsigned int * a3, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executePlaceBeaconAction(_DWORD *this, int a2, int _C, _DWORD *a3, IUnknown *aP4)
 {
-  void *v5; // esi
-  void *Field11; // eax
-
-  v5 = (void *)*(this + 36); /*0x6e3181*/
-  if ( !a3 ) /*0x6e318d*/
-    return 0; /*0x6e318d*/
-  if ( v5 == (void *)8997 ) /*0x6e3195*/
+    void *v5;
+    void *Field11;
+    v5 = (void *)this->Value;
+    if ( !a3 )
+    return 0;
+    if ( v5 == (void *)8997 )
   {
-    Field11 = (void *)Property::GetField11(a3); /*0x6e3197*/
+    Field11 = (void *)Property::GetField11(a3);
   }
-  else
-  {
-    if ( v5 == (void *)-1 ) /*0x6e31a1*/
-      return 0; /*0x6e31c3*/
-    if ( BuildingType::IsSpecialType(v5) ) /*0x6e31a5*/
-      Field11 = (void *)BuildingType::FindOwnerHouse(v5); /*0x6e31b0*/
     else
-      Field11 = (void *)HouseClass::FindOwner(v5); /*0x6e31b7*/
+  {
+    if ( v5 == (void *)-1 )
+    return 0;
+    if ( BuildingType::IsSpecialType(v5) )
+    Field11 = (void *)BuildingType::FindOwnerHouse(v5);
+    else
+    Field11 = (void *)HouseClass::FindOwner(v5);
   }
-  if ( !Field11 ) /*0x6e31be*/
-    return 0; /*0x6e31be*/
-  HouseClass::ClearLowPowerTargets(Field11); /*0x6e31c8*/
-  return 1; /*0x6e31c2*/
+    if ( !Field11 )
+    return 0;
+    HouseClass::ClearLowPowerTargets(Field11);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1270,32 +1228,29 @@ char __thiscall TActionClass::executePlaceBeaconAction(_DWORD *this, int a2, int
 namespace gamemd {
 char TActionClass::executeJumpjetAction(int a2, int _C, unsigned int * a3, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeJumpjetAction(_DWORD *this, int a2, int _C, _DWORD *a3, IUnknown *aP4)
 {
-  void *v5; // esi
-  void *Field11; // eax
-
-  v5 = (void *)*(this + 36); /*0x6e31e1*/
-  if ( !a3 ) /*0x6e31ed*/
-    return 0; /*0x6e31ed*/
-  if ( v5 == (void *)8997 ) /*0x6e31f5*/
+    void *v5;
+    void *Field11;
+    v5 = (void *)this->Value;
+    if ( !a3 )
+    return 0;
+    if ( v5 == (void *)8997 )
   {
-    Field11 = (void *)Property::GetField11(a3); /*0x6e31f7*/
+    Field11 = (void *)Property::GetField11(a3);
   }
-  else
-  {
-    if ( v5 == (void *)-1 ) /*0x6e3201*/
-      return 0; /*0x6e3223*/
-    if ( BuildingType::IsSpecialType(v5) ) /*0x6e3205*/
-      Field11 = (void *)BuildingType::FindOwnerHouse(v5); /*0x6e3210*/
     else
-      Field11 = (void *)HouseClass::FindOwner(v5); /*0x6e3217*/
+  {
+    if ( v5 == (void *)-1 )
+    return 0;
+    if ( BuildingType::IsSpecialType(v5) )
+    Field11 = (void *)BuildingType::FindOwnerHouse(v5);
+    else
+    Field11 = (void *)HouseClass::FindOwner(v5);
   }
-  if ( !Field11 ) /*0x6e321e*/
-    return 0; /*0x6e321e*/
-  HouseClass::DestroyAllBuildings(Field11); /*0x6e3228*/
-  return 1; /*0x6e3222*/
+    if ( !Field11 )
+    return 0;
+    HouseClass::DestroyAllBuildings(Field11);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1304,32 +1259,29 @@ char __thiscall TActionClass::executeJumpjetAction(_DWORD *this, int a2, int _C,
 namespace gamemd {
 char TActionClass::executeOpenGateAction(int a2, int _C, unsigned int * a3, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeOpenGateAction(_DWORD *this, int a2, int _C, _DWORD *a3, IUnknown *aP4)
 {
-  void *v5; // esi
-  void *Field11; // eax
-
-  v5 = (void *)*(this + 36); /*0x6e3241*/
-  if ( !a3 ) /*0x6e324d*/
-    return 0; /*0x6e324d*/
-  if ( v5 == (void *)8997 ) /*0x6e3255*/
+    void *v5;
+    void *Field11;
+    v5 = (void *)this->Value;
+    if ( !a3 )
+    return 0;
+    if ( v5 == (void *)8997 )
   {
-    Field11 = (void *)Property::GetField11(a3); /*0x6e3257*/
+    Field11 = (void *)Property::GetField11(a3);
   }
-  else
-  {
-    if ( v5 == (void *)-1 ) /*0x6e3261*/
-      return 0; /*0x6e3283*/
-    if ( BuildingType::IsSpecialType(v5) ) /*0x6e3265*/
-      Field11 = (void *)BuildingType::FindOwnerHouse(v5); /*0x6e3270*/
     else
-      Field11 = (void *)HouseClass::FindOwner(v5); /*0x6e3277*/
+  {
+    if ( v5 == (void *)-1 )
+    return 0;
+    if ( BuildingType::IsSpecialType(v5) )
+    Field11 = (void *)BuildingType::FindOwnerHouse(v5);
+    else
+    Field11 = (void *)HouseClass::FindOwner(v5);
   }
-  if ( !Field11 ) /*0x6e327e*/
-    return 0; /*0x6e327e*/
-  HouseClass::DestroyAllNonBuildingsNonNaval(Field11); /*0x6e3288*/
-  return 1; /*0x6e3282*/
+    if ( !Field11 )
+    return 0;
+    HouseClass::DestroyAllNonBuildingsNonNaval(Field11);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1338,32 +1290,29 @@ char __thiscall TActionClass::executeOpenGateAction(_DWORD *this, int a2, int _C
 namespace gamemd {
 char TActionClass::executeCloseGateAction(int a2, int _C, unsigned int * a3, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeCloseGateAction(_DWORD *this, int a2, int _C, _DWORD *a3, IUnknown *aP4)
 {
-  void *v5; // esi
-  void *Field11; // eax
-
-  v5 = (void *)*(this + 36); /*0x6e32a1*/
-  if ( !a3 ) /*0x6e32ad*/
-    return 0; /*0x6e32ad*/
-  if ( v5 == (void *)8997 ) /*0x6e32b5*/
+    void *v5;
+    void *Field11;
+    v5 = (void *)this->Value;
+    if ( !a3 )
+    return 0;
+    if ( v5 == (void *)8997 )
   {
-    Field11 = (void *)Property::GetField11(a3); /*0x6e32b7*/
+    Field11 = (void *)Property::GetField11(a3);
   }
-  else
-  {
-    if ( v5 == (void *)-1 ) /*0x6e32c1*/
-      return 0; /*0x6e32e3*/
-    if ( BuildingType::IsSpecialType(v5) ) /*0x6e32c5*/
-      Field11 = (void *)BuildingType::FindOwnerHouse(v5); /*0x6e32d0*/
     else
-      Field11 = (void *)HouseClass::FindOwner(v5); /*0x6e32d7*/
+  {
+    if ( v5 == (void *)-1 )
+    return 0;
+    if ( BuildingType::IsSpecialType(v5) )
+    Field11 = (void *)BuildingType::FindOwnerHouse(v5);
+    else
+    Field11 = (void *)HouseClass::FindOwner(v5);
   }
-  if ( !Field11 ) /*0x6e32de*/
-    return 0; /*0x6e32de*/
-  HouseClass::DestroyAllNonBuildingsNaval(Field11); /*0x6e32e8*/
-  return 1; /*0x6e32e2*/
+    if ( !Field11 )
+    return 0;
+    HouseClass::DestroyAllNonBuildingsNaval(Field11);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1372,61 +1321,57 @@ char __thiscall TActionClass::executeCloseGateAction(_DWORD *this, int a2, int _
 namespace gamemd {
 char TActionClass::CreateNukeEffect(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::CreateNukeEffect(int *this, AbstractClass *aP1, int a3, int a4, AbstractClass *aP4)
 {
-  int v5; // esi
-  BuildingTypeClass *v6; // edi
-  TechnoClass *v7; // eax
-  BulletClass *UIObjectCOM; // edi
-  double v9; // st7
-  double v10; // st7
-  int v11; // eax
-  TechnoClass *v13; // [esp-10h] [ebp-68h]
-  InfantryClass *v14; // [esp-Ch] [ebp-64h]
-  int v15; // [esp+Ch] [ebp-4Ch] BYREF
-  double v16; // [esp+10h] [ebp-48h] BYREF
-  double v17; // [esp+18h] [ebp-40h]
-  double v18; // [esp+20h] [ebp-38h]
-  int v19; // [esp+28h] [ebp-30h] BYREF
-  int v20; // [esp+2Ch] [ebp-2Ch]
-  int GroundHeight; // [esp+30h] [ebp-28h]
-  _DWORD v22[3]; // [esp+34h] [ebp-24h] BYREF
-  _QWORD v23[3]; // [esp+40h] [ebp-18h] BYREF
-
-  v15 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v16, *(this + 17)); /*0x6e3433*/
-  GroundHeight = 0; /*0x6e3437*/
-  v20 = (SHIWORD(v15) << 8) + 128; /*0x6e3458*/
-  v19 = ((__int16)v15 << 8) + 128; /*0x6e3462*/
-  GroundHeight = Cell::GetGroundHeight(&v19); /*0x6e346b*/
-  if ( (*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v15) + 80) & 0x100) != 0 ) /*0x6e3487*/
-    GroundHeight += *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[5952]; /*0x6e3495*/
-  v5 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10016] /*0x6e34ad*/
-                 + 4 * SuperWeaponClass::FindByName(g_INI_Key_NukePayload));
-  v6 = *(BuildingTypeClass **)(v5 + 160); /*0x6e34c3*/
-  v14 = *(InfantryClass **)(v5 + 172); /*0x6e34c9*/
-  v13 = *(TechnoClass **)(v5 + 164); /*0x6e34ca*/
-  v7 = (TechnoClass *)Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&v19); /*0x6e34d3*/
-  UIObjectCOM = (BulletClass *)CreateUIObjectCOM((AbstractClass *)v6, v7, 0, v13, v14, 50, 0); /*0x6e34e1*/
-  Function::Method_46B260(UIObjectCOM, v5); /*0x6e34e6*/
-  v22[0] = v19; /*0x6e34ff*/
-  v22[1] = v20; /*0x6e3503*/
-  v22[2] = GroundHeight + 20000; /*0x6e3507*/
-  if ( !UIObjectCOM ) /*0x6e350b*/
-    return 0; /*0x6e35dc*/
-  v16 = Math::SinCos(1.570748388432313); /*0x6e3520*/
-  v16 = Math::ArcTan2(1.570748388432313) * v16 * -100.0; /*0x6e3547*/
-  v17 = Math::ArcTan2(1.570748388432313); /*0x6e3550*/
-  v9 = Math::ArcTan2(1.570748388432313); /*0x6e355e*/
-  v18 = v16; /*0x6e356f*/
-  *(double *)&v23[1] = v16; /*0x6e358b*/
-  v17 = v9 * v17 * -100.0; /*0x6e358f*/
-  *(double *)v23 = v17; /*0x6e359b*/
-  v10 = Math::SinCos(1.570748388432313); /*0x6e35ab*/
-  v11 = *(_DWORD *)UIObjectCOM->__pad_0; /*0x6e35b6*/
-  *(double *)&v23[2] = v10 * -100.0; /*0x6e35c5*/
-  (*(void (__thiscall **)(BulletClass *, _DWORD *, _QWORD *))(v11 + 496))(UIObjectCOM, v22, v23); /*0x6e35cb*/
-  return 1; /*0x6e35d3*/
+    int v5;
+    BuildingTypeClass *v6;
+    TechnoClass *v7;
+    BulletClass *UIObjectCOM;
+    double v9;
+    double v10;
+    int v11;
+    TechnoClass *v13;
+    InfantryClass *v14;
+    int v15;
+    double v16;
+    double v17;
+    double v18;
+    int v19;
+    int v20;
+    int GroundHeight;
+    int v22[3];
+    __int64 v23[3];
+    v15 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v16, this->Waypoint);
+    GroundHeight = 0;
+    v20 = (SHIWORD(v15) << 8) + 128;
+    v19 = ((short)v15 << 8) + 128;
+    GroundHeight = Cell::GetGroundHeight(&v19);
+    if ( (*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v15) + 80) & 0x100) != 0 )
+    GroundHeight += *(int *)&g_OverlayTypeConfig.__pad_579C[5952];
+    v5 = *(int *)(*(int *)&DataGlobal_87F8E4.__pad_5568[10016] + 4 * SuperWeaponClass::FindByName(g_INI_Key_NukePayload));
+    v6 = *(BuildingTypeClass **)(v5 + 160);
+    v14 = *(InfantryClass **)(v5 + 172);
+    v13 = *(TechnoClass **)(v5 + 164);
+    v7 = (TechnoClass *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&v19);
+    UIObjectCOM = (BulletClass *)CreateUIObjectCOM((AbstractClass *)v6, v7, 0, v13, v14, 50, 0);
+    Function::Method_46B260(UIObjectCOM, v5);
+    v22[0] = v19;
+    v22[1] = v20;
+    v22[2] = GroundHeight + 20000;
+    if ( !UIObjectCOM )
+    return 0;
+    v16 = Math::SinCos(1.570748388432313);
+    v16 = Math::ArcTan2(1.570748388432313) * v16 * -100.0;
+    v17 = Math::ArcTan2(1.570748388432313);
+    v9 = Math::ArcTan2(1.570748388432313);
+    v18 = v16;
+    *(double *)&v23[1] = v16;
+    v17 = v9 * v17 * -100.0;
+    *(double *)v23 = v17;
+    v10 = Math::SinCos(1.570748388432313);
+    v11 = *(int *)UIObjectCOM->__pad_0;
+    *(double *)&v23[2] = v10 * -100.0;
+    (*(void (__thiscall **)(BulletClass *, int *, __int64 *))(v11 + 496))(UIObjectCOM, v22, v23);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1506,13 +1451,11 @@ char __thiscall TActionClass::executeParadropAction(int *this, int a2, int a3, i
 namespace gamemd {
 char TActionClass::executeLightningAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeLightningAction(int *this, int a2, int a3, int a4, IUnknown *aP4)
 {
-  if ( !a2 ) /*0x6e3b48*/
-    return 0; /*0x6e3b4a*/
-  HouseClass::CreateRadarOutage(a2, *(this + 36)); /*0x6e3b56*/
-  return 1; /*0x6e3b4c*/
+    if ( !a2 )
+    return 0;
+    HouseClass::CreateRadarOutage(a2, this->Value);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1607,16 +1550,13 @@ int __thiscall TActionClass::_vt13(int this, int a2)
 namespace gamemd {
 char TActionClass::executePsychicDominatorAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executePsychicDominatorAction(unsigned int *this, int a2, int a3, int a4, IUnknown *aP4)
 {
-  unsigned int v5; // esi
-
-  v5 = *(this + 36); /*0x6e4101*/
-  if ( v5 >= 4 || !PlayerClass::HasPlayers((_DWORD *)(3988 * v5 + 8916268)) ) /*0x6e4124*/
-    return 0; /*0x6e413e*/
-  SidebarClass::SwitchTab((int)&MEMORY[0x87F7E8], v5); /*0x6e4133*/
-  return 1; /*0x6e413a*/
+    unsigned int v5;
+    v5 = this->Value;
+    if ( v5 >= 4 || !PlayerClass::HasPlayers((int *)(3988 * v5 + 8916268)) )
+    return 0;
+    SidebarClass::SwitchTab((int)&DataGlobal_87F7E8, v5);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1667,48 +1607,45 @@ LABEL_7:
 namespace gamemd {
 char TActionClass::executeForceShieldAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeForceShieldAction(int *this, int a2, int a3, int a4, IUnknown *aP4)
 {
-  int v5; // edi
-  void *v7; // eax
-  _DWORD *v8; // eax
-  int IndexByName; // eax
-  int v10; // ecx
-  int v11; // eax
-  int v12; // esi
-  IUnknown *v14; // [esp+8h] [ebp-1Ch] BYREF
-  _DWORD v15[3]; // [esp+Ch] [ebp-18h] BYREF
-  _BYTE v16[12]; // [esp+18h] [ebp-Ch] BYREF
-
-  v5 = a2; /*0x6e4205*/
-  if ( !a2 ) /*0x6e420d*/
-    return 0; /*0x6e420d*/
-  a2 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v14, *(this + 17)); /*0x6e4233*/
-  v7 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2); /*0x6e4237*/
-  v8 = (_DWORD *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v7 + 72))(v7, v16); /*0x6e4245*/
-  v15[0] = *v8; /*0x6e424a*/
-  v15[1] = v8[1]; /*0x6e4251*/
-  v15[2] = v8[2]; /*0x6e425b*/
-  IndexByName = BuildingTypeClass::FindIndexByName(this + 21); /*0x6e425f*/
-  if ( IndexByName < 0 ) /*0x6e4266*/
-    return 0; /*0x6e4266*/
-  if ( IndexByName > (int)g_TriggerClassCount ) /*0x6e426e*/
-    return 0; /*0x6e426e*/
-  v10 = *((_DWORD *)g_TriggerTypeCount + IndexByName); /*0x6e4276*/
-  if ( !v10 ) /*0x6e427b*/
-    return 0; /*0x6e427b*/
-  v11 = (*(int (__thiscall **)(int, int))(*(_DWORD *)v10 + 140))(v10, v5); /*0x6e4280*/
-  v12 = v11; /*0x6e4286*/
-  if ( !v11 ) /*0x6e428a*/
-    return 0; /*0x6e428a*/
-  if ( !(*(unsigned __int8 (__thiscall **)(int, _DWORD *, _DWORD))(*(_DWORD *)v11 + 1168))(v11, v15, 0) ) /*0x6e4297*/
+    int v5;
+    void *v7;
+    int *v8;
+    int IndexByName;
+    int v10;
+    int v11;
+    int v12;
+    IUnknown *v14;
+    int v15[3];
+    char v16[12];
+    v5 = a2;
+    if ( !a2 )
+    return 0;
+    a2 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v14, this->Waypoint);
+    v7 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&a2);
+    v8 = (int *)(*(int (__thiscall **)(void *, char *))(*(int *)(v7) + 72))(v7, v16);
+    v15[0] = *v8;
+    v15[1] = v8[1];
+    v15[2] = v8[2];
+    IndexByName = BuildingTypeClass::FindIndexByName(this + 21);
+    if ( IndexByName < 0 )
+    return 0;
+    if ( IndexByName > (int)g_TriggerClassCount )
+    return 0;
+    v10 = *((int *)(g_TriggerTypeCount) + IndexByName);
+    if ( !v10 )
+    return 0;
+    v11 = (*(int (__thiscall **)(int, int))(*(int *)(v10) + 140))(v10, v5);
+    v12 = v11;
+    if ( !v11 )
+    return 0;
+    if ( !(*(unsigned char (__thiscall **)(int, int *, int))(*(int *)(v11) + 1168))(v11, v15, 0) )
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)v12 + 248))(v12); /*0x6e42a5*/
-    return 0; /*0x6e42b2*/
+    (*(void (__thiscall **)(int))(*(int *)(v12) + 248))(v12);
+    return 0;
   }
-  (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v12 + 1244))(v12, 0); /*0x6e42bb*/
-  return 1; /*0x6e42ab*/
+    (*(void (__thiscall **)(int, int))(*(int *)(v12) + 1244))(v12, 0);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1763,18 +1700,15 @@ char __thiscall TActionClass::executeNukeAction(int *this, int a2, int a3, int a
 namespace gamemd {
 char TActionClass::executeSpyPlaneAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeSpyPlaneAction(int *this, int a2, int a3, int a4, IUnknown *aP4)
 {
-  int v5; // eax
-
-  if ( !a2 ) /*0x6e4366*/
-    return 0; /*0x6e4366*/
-  v5 = *(this + 36); /*0x6e4368*/
-  if ( v5 < 0 || v5 > *(_DWORD *)(a2 + 612) ) /*0x6e4378*/
-    return 0; /*0x6e438d*/
-  SuperClass::ResetRechargeTime(*(_DWORD **)(*(_DWORD *)(a2 + 600) + 4 * v5)); /*0x6e4383*/
-  return 1; /*0x6e438a*/
+    int v5;
+    if ( !a2 )
+    return 0;
+    v5 = this->Value;
+    if ( v5 < 0 || v5 > *(int *)(a2 + 612) )
+    return 0;
+    SuperClass::ResetRechargeTime(*(int **)(*(int *)(a2 + 600) + 4 * v5));
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1783,18 +1717,15 @@ char __thiscall TActionClass::executeSpyPlaneAction(int *this, int a2, int a3, i
 namespace gamemd {
 char TActionClass::executeChronoSphereAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeChronoSphereAction(int *this, int a2, int a3, int a4, IUnknown *aP4)
 {
-  int v5; // eax
-
-  if ( !a2 ) /*0x6e43a6*/
-    return 0; /*0x6e43a6*/
-  v5 = *(this + 36); /*0x6e43a8*/
-  if ( v5 < 0 || v5 > *(_DWORD *)(a2 + 612) ) /*0x6e43b8*/
-    return 0; /*0x6e43cd*/
-  SuperClass::Reset(*(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * v5)); /*0x6e43c3*/
-  return 1; /*0x6e43ca*/
+    int v5;
+    if ( !a2 )
+    return 0;
+    v5 = this->Value;
+    if ( v5 < 0 || v5 > *(int *)(a2 + 612) )
+    return 0;
+    SuperClass::Reset(*(int *)(*(int *)(a2 + 600) + 4 * v5));
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1803,21 +1734,18 @@ char __thiscall TActionClass::executeChronoSphereAction(int *this, int a2, int a
 namespace gamemd {
 char TActionClass::executeWeatherStormAction(unsigned int * a1, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeWeatherStormAction(int *this, _DWORD *a1, int a3, int a4, IUnknown *aP4)
 {
-  _DWORD *v5; // esi
-  _DWORD *v7; // eax
-
-  v5 = a1; /*0x6e43e1*/
-  if ( !a1 ) /*0x6e43e7*/
-    return 0; /*0x6e43e9*/
-  v7 = (_DWORD *)*ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &a1, *(this + 17)); /*0x6e4403*/
-  a1 = v7; /*0x6e440c*/
-  if ( v7 == *(_DWORD **)&MEMORY[0xB077F8].__pad_579C[5868] ) /*0x6e4410*/
-    return 0; /*0x6e4420*/
-  TActionClass::executeGuardAction(v5, (int)v7); /*0x6e4429*/
-  return 1; /*0x6e43eb*/
+    int *v5;
+    int *v7;
+    v5 = a1;
+    if ( !a1 )
+    return 0;
+    v7 = (int *)*ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &a1, this->Waypoint);
+    a1 = v7;
+    if ( v7 == *(int **)&g_OverlayTypeConfig.__pad_579C[5868] )
+    return 0;
+    TActionClass::executeGuardAction(v5, (int)v7);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1826,21 +1754,18 @@ char __thiscall TActionClass::executeWeatherStormAction(int *this, _DWORD *a1, i
 namespace gamemd {
 char TActionClass::executeDominatorAction(unsigned int * a1, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeDominatorAction(int *this, _DWORD *a1, int a3, int a4, IUnknown *aP4)
 {
-  _DWORD *v5; // esi
-  _DWORD *v7; // eax
-
-  v5 = a1; /*0x6e4461*/
-  if ( !a1 ) /*0x6e4467*/
-    return 0; /*0x6e4469*/
-  v7 = (_DWORD *)*ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &a1, *(this + 17)); /*0x6e4483*/
-  a1 = v7; /*0x6e448c*/
-  if ( v7 == *(_DWORD **)&MEMORY[0xB077F8].__pad_579C[5868] ) /*0x6e4490*/
-    return 0; /*0x6e44a0*/
-  TActionClass::executeHuntAction(v5, (int)v7); /*0x6e44a9*/
-  return 1; /*0x6e446b*/
+    int *v5;
+    int *v7;
+    v5 = a1;
+    if ( !a1 )
+    return 0;
+    v7 = (int *)*ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &a1, this->Waypoint);
+    a1 = v7;
+    if ( v7 == *(int **)&g_OverlayTypeConfig.__pad_579C[5868] )
+    return 0;
+    TActionClass::executeHuntAction(v5, (int)v7);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1849,21 +1774,18 @@ char __thiscall TActionClass::executeDominatorAction(int *this, _DWORD *a1, int 
 namespace gamemd {
 char TActionClass::executeRevealAction(unsigned int * a1, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeRevealAction(int *this, _DWORD *a1, int a3, int a4, IUnknown *aP4)
 {
-  _DWORD *v5; // esi
-  _DWORD *v7; // eax
-
-  v5 = a1; /*0x6e44e1*/
-  if ( !a1 ) /*0x6e44e7*/
-    return 0; /*0x6e44e9*/
-  v7 = (_DWORD *)*ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &a1, *(this + 17)); /*0x6e4503*/
-  a1 = v7; /*0x6e450c*/
-  if ( v7 == *(_DWORD **)&MEMORY[0xB077F8].__pad_579C[5868] ) /*0x6e4510*/
-    return 0; /*0x6e4520*/
-  TActionClass::executeDeployAction(v5, (int)v7); /*0x6e4529*/
-  return 1; /*0x6e44eb*/
+    int *v5;
+    int *v7;
+    v5 = a1;
+    if ( !a1 )
+    return 0;
+    v7 = (int *)*ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &a1, this->Waypoint);
+    a1 = v7;
+    if ( v7 == *(int **)&g_OverlayTypeConfig.__pad_579C[5868] )
+    return 0;
+    TActionClass::executeDeployAction(v5, (int)v7);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1872,21 +1794,18 @@ char __thiscall TActionClass::executeRevealAction(int *this, _DWORD *a1, int a3,
 namespace gamemd {
 char TActionClass::executeEMPulseAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeEMPulseAction(int this, int a2, int a3, int a4, IUnknown *aP4)
 {
-  int i; // ebp
-  int v7; // edi
-
-  if ( !a2 ) /*0x6e456c*/
-    return 0; /*0x6e456e*/
-  for ( i = *(_DWORD *)(a2 + 120) - 1; i >= 0; --i ) /*0x6e457a*/
+    int i;
+    int v7;
+    if ( !a2 )
+    return 0;
+    for ( i = *(int *)(a2 + 120) - 1; i >= 0; --i )
   {
-    v7 = *(_DWORD *)(*(_DWORD *)(a2 + 108) + 4 * i); /*0x6e4585*/
-    if ( !strcmp((const char *)(*(_DWORD *)(v7 + 1312) + 36), (const char *)(this + 84)) ) /*0x6e459a*/
-      *(_DWORD *)(v7 + 240) = *(_DWORD *)(this + 144); /*0x6e45cb*/
+    v7 = *(int *)(*(int *)(a2 + 108) + 4 * i);
+    if ( !strcmp((const char *)(*(int *)(v7 + 1312) + 36), (const char *)(this + 84)) )
+    *(int *)(v7 + 240) = this->Value;
   }
-  return 1; /*0x6e4570*/
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1981,11 +1900,9 @@ LABEL_11:
 namespace gamemd {
 int TActionClass::executeAirstrikeAction()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_7268F0(int *this)
 {
-  *((_BYTE *)this + 68) = 1; /*0x7268f0*/
-  return BuildingClass::ProcessUpgradeEffects(this);
+    this->Waypoint = 1;
+    return BuildingClass::ProcessUpgradeEffects(this);
 }
 }
 } // namespace gamemd
@@ -1994,10 +1911,8 @@ int __thiscall sub_7268F0(int *this)
 namespace gamemd {
 void TActionClass::executeDetonateAction()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_726900(_BYTE *this)
 {
-  *(this + 68) = 0; /*0x726900*/
+    this->Waypoint = 0;
 }
 }
 } // namespace gamemd

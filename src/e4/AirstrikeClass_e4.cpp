@@ -378,8 +378,6 @@ AirstrikeClass *__thiscall AirstrikeClass::CopyTo(_DWORD *this, char a2)
 // 0x420E90
 namespace ra2 {
 namespace game {
-char AirstrikeClass::UpdateAll()
-{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char sub_420E90()
 {
@@ -437,7 +435,6 @@ LABEL_9:
     while ( v4 >= 0 ); /*0x420f36*/
   }
   return (char)v0; /*0x420f38*/
-}
 }
 } // namespace game
 } // namespace ra2
