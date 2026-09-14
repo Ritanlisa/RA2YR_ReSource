@@ -16287,7 +16287,7 @@ retn    4
 
 // IDA: 0x746810 (PerFrameUpdate, 167B)
 // 0x746810
-int UnitClass::PerFrameUpdate()
+int UnitClass::PerFrameUpdate(int _DWORD *a1@<ecx>, int int a2@<edi>)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__usercall UnitClass_PerFrameUpdate@<eax>(_DWORD *a1@<ecx>, int a2@<edi>)
@@ -16345,76 +16345,6 @@ LABEL_9:
   }
   return result;
 }
-
-/* ASM:
-push    esi
-push    edi
-mov     esi, ecx
-call    TechnoClass__Update
-mov     edi, [esi+6C4h]
-test    edi, edi
-jz      loc_7468B4
-mov     eax, [esi+21Ch]
-test    eax, eax
-jz      short loc_746860
-mov     eax, [eax+34h]
-xor     ecx, ecx
-add     eax, 168h
-mov     edx, [eax+10h]
-test    edx, edx
-jle     short loc_746860
-mov     eax, [eax+4]
-
-loc_746845:                             ; CODE XREF: UnitClass__PerFrameUpdate+3F↓j
-cmp     [eax], edi
-jz      short loc_746853
-inc     ecx
-add     eax, 4
-cmp     ecx, edx
-jl      short loc_746845
-jmp     short loc_746860
-; ---------------------------------------------------------------------------
-
-loc_746853:                             ; CODE XREF: UnitClass__PerFrameUpdate+37↑j
-push    1
-lea     ecx, [esi+150h]
-call    Power__ChangedHouse
-
-loc_746860:                             ; CODE XREF: UnitClass__PerFrameUpdate+1F↑j
-; UnitClass__PerFrameUpdate+30↑j ...
-mov     eax, [esi+21Ch]
-test    eax, eax
-jz      short loc_74689B
-mov     cl, [eax+2C0h]
-test    cl, cl
-jz      short loc_74689B
-mov     eax, [esi+6C4h]
-mov     cl, [eax+0CCEh]
-test    cl, cl
-jnz     short loc_74689B
-mov     cl, [eax+0C8Eh]
-test    cl, cl
-jz      short loc_74689B
-push    1
-lea     ecx, [esi+150h]
-call    Power__ChangedHouse
-
-loc_74689B:                             ; CODE XREF: UnitClass__PerFrameUpdate+58↑j
-; UnitClass__PerFrameUpdate+62↑j ...
-mov     eax, [esi+6C4h]
-mov     cl, [eax+805h]
-test    cl, cl
-jz      short loc_7468B4
-push    0
-mov     ecx, esi
-call    UnitClass__SetTurret
-
-loc_7468B4:                             ; CODE XREF: UnitClass__PerFrameUpdate+11↑j
-; UnitClass__PerFrameUpdate+99↑j
-pop     edi
-pop     esi
-retn
-*/
 }
 
 // IDA: 0x7446E0 (HandleTargetDestroyed, 56B)

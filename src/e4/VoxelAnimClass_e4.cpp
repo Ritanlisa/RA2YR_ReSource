@@ -368,7 +368,7 @@ LABEL_6:
 
 // 0x749F30
 namespace gamemd {
-int VoxelAnimClass_Update()
+int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)

@@ -13,7 +13,7 @@ char UnholyAlliance::Read()
 
 // 0x5CB440
 namespace gamemd {
-int UnholyAlliance_GetResult()
+int UnholyAlliance::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)

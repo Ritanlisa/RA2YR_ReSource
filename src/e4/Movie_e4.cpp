@@ -275,7 +275,7 @@ void Movie::Play(CCINIClass *aP0, int a2, CCINIClass *aP2, IUnknown *aP3, char a
 
 // 0x5BF260
 namespace gamemd {
-int Movie_PlayWrapper()
+int Movie::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)

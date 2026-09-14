@@ -1332,46 +1332,43 @@ LABEL_21:
 // 0x4CD510
 char JumpjetLocomotionClass::IsMapCoordVisible()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_4CD510(_DWORD *this)
 {
-  _DWORD *v2; // eax
-  bool v3; // al
-  _BYTE *v4; // ecx
-  int i; // eax
-  _DWORD *v6; // esi
-  int v7; // eax
-  int v8; // eax
-  _DWORD v10[3]; // [esp+4h] [ebp-Ch] BYREF
-
-  v2 = (_DWORD *)(*(this + 3) + 156); /*0x4cd519*/
-  v10[0] = *v2; /*0x4cd520*/
-  v10[1] = v2[1]; /*0x4cd52c*/
-  v10[2] = v2[2]; /*0x4cd538*/
-  v3 = IsCoordVisibleMap(&MEMORY[0x87F7E8], v10); /*0x4cd53c*/
-  v4 = (_BYTE *)*(this + 3); /*0x4cd541*/
-  if ( v3 ) /*0x4cd546*/
+    int *v2;
+    bool v3;
+    char *v4;
+    int i;
+    int *v6;
+    int v7;
+    int v8;
+    int v10[3];
+    v2 = (int *)(this->LinkedTo + 156);
+    v10[0] = *v2;
+    v10[1] = v2[1];
+    v10[2] = v2[2];
+    v3 = IsCoordVisibleMap(&DataGlobal_87F7E8, v10);
+    v4 = (char *)this->LinkedTo;
+    if ( v3 )
   {
-    v4[981] = 1; /*0x4cd5f0*/
-    return 0; /*0x4cd5f0*/
+    v4[981] = 1;
+    return 0;
   }
-  if ( (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v4 + 388))(v4) != 4 ) /*0x4cd557*/
-    return 0; /*0x4cd5f7*/
-  for ( i = *(this + 3); *(_DWORD *)(i + 280); i = *(this + 3) ) /*0x4cd566*/
+    if ( (*(int (__thiscall **)(char *))(*(int *)(v4) + 388))(v4) != 4 )
+    return 0;
+    for ( i = this->LinkedTo; *(int *)(i + 280); i = this->LinkedTo )
   {
-    v6 = (_DWORD *)LinkedList::Pop((_DWORD *)(i + 276)); /*0x4cd57c*/
-    if ( sub_413CD0((int)v6) ) /*0x4cd580*/
-      *(_BYTE *)(v6[135] + 505) = 1; /*0x4cd58f*/
-    v7 = v6[373]; /*0x4cd595*/
-    if ( v7 ) /*0x4cd59d*/
-      *(_BYTE *)(v7 + 130) = 1; /*0x4cd59f*/
-    if ( v6 ) /*0x4cd5a7*/
-      (*(void (__thiscall **)(_DWORD *, int))(*v6 + 32))(v6, 1); /*0x4cd5ae*/
+    v6 = (int *)LinkedList::Pop((int *)(i + 276));
+    if ( sub_413CD0((int)v6) )
+    *(char *)(v6[135] + 505) = 1;
+    v7 = v6[373];
+    if ( v7 )
+    *(char *)(v7 + 130) = 1;
+    if ( v6 )
+    (*(void (__thiscall **)(int *, int))(*v6 + 32))(v6, 1);
   }
-  v8 = *(_DWORD *)(*(this + 3) + 1492); /*0x4cd5c2*/
-  if ( v8 ) /*0x4cd5ca*/
-    *(_BYTE *)(v8 + 130) = 1; /*0x4cd5cc*/
-  (*(void (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 928))(*(this + 3)); /*0x4cd5d7*/
-  (*(void (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 248))(*(this + 3)); /*0x4cd5e2*/
-  return 1; /*0x4cd5eb*/
+    v8 = *(int *)(this->LinkedTo + 1492);
+    if ( v8 )
+    *(char *)(v8 + 130) = 1;
+    (*(void (__thiscall **)(int))(*(int *)this->LinkedTo + 928))(this->LinkedTo);
+    (*(void (__thiscall **)(int))(*(int *)this->LinkedTo + 248))(this->LinkedTo);
+    return 1;
 }

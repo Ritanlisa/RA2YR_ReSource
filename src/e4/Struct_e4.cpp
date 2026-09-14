@@ -120,26 +120,24 @@ _BYTE *__thiscall Struct::Zero3(_BYTE *this)
 
 // 0x53F4E0
 namespace gamemd {
-int Struct_ZeroInitAndSetup_0()
+int Struct::ZeroInitAndSetup_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall Struct::ZeroInitAndSetup_0(_DWORD *this)
+// 0x53f4e0
+    int __thiscall Struct::ZeroInitAndSetup_0(int *(void**)this)
 {
-  return Struct::ZeroInitAndSetup(this);
+    return Struct::ZeroInitAndSetup(this);
 }
 }
 } // namespace gamemd
 
 // 0x5EF280
 namespace gamemd {
-int Struct_ZeroInitAndSetup_0_0()
+int Struct::ZeroInitAndSetup_0_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall Struct::ZeroInitAndSetup_0_0(NullModemConnClass *this)
+// 0x5ef280
+    int __thiscall Struct::ZeroInitAndSetup_0_0(NullModemConnClass *(void**)this)
 {
-  return Struct::ZeroInitAndSetup(this);
+    return Struct::ZeroInitAndSetup(this);
 }
 }
 } // namespace gamemd

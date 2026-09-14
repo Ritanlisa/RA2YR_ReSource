@@ -4,19 +4,17 @@
 
 // 0x5CB6C0
 namespace gamemd {
-int VtableStub_5CB6C0()
+int VtableStub::5CB6C0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall VtableStub::5CB6C0(_DWORD *this)
 {
-  *this = &vt_MSAnim; /*0x5cb6c0*/
+    *(void**)this = &vt_MSAnim;
 }
 }
 } // namespace gamemd
 
 // 0x643E70
 namespace gamemd {
-int VtableStub_643E70()
+int VtableStub::643E70()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall VtableStub::643E70(_DWORD *this)

@@ -1390,14 +1390,12 @@ void __thiscall BuildingClass::sub_459FF0(int this)
 }
 } }
 // 0x45A020
-namespace gamemd { int BuildingClass::updateFactoryProduction(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall BuildingClass::sub_45A020(int this, int a2)
+namespace gamemd { int BuildingClass::updateFactoryProduction(int a2) {
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x45a020*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x45a035*/
-  else
-    return 0; /*0x45a027*/
+    if ( this->vtable3 )
+    return (unsigned int)(a2 - this->vtable1) >> 2;
+    else
+    return 0;
 }
 } }
 // 0x465D70

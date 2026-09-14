@@ -39,13 +39,11 @@ int sub_746EC0()
 
 // 0x7473C0
 namespace gamemd {
-int UnitTypeClass_j__do_always_noconv_codecvt_base_std__MBE_NXZ_19_0()
+int UnitTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-char __thiscall UnitTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19_0(std::codecvt_base *this)
+    char __thiscall UnitTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19_0(std::codecvt_base *(void**)this)
 {
-  return AbstractClass::processWeaponFire(this);
+    return AbstractClass::processWeaponFire(this);
 }
 }
 } // namespace gamemd

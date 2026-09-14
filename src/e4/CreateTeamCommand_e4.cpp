@@ -118,65 +118,60 @@ TauntCommandClass * CreateTeamCommand::performAction_25(char a2)
 
 // 0x536C00
 namespace gamemd {
-int CreateTeamCommand_performAction_79()
+int CreateTeamCommand::performAction_79()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-wchar_t *__thiscall CreateTeamCommand::performAction_79(AllToCheerCommandClass *this)
+// 0x536c00
+    wchar_t *__thiscall CreateTeamCommand::performAction_79(AllToCheerCommandClass *(void**)this)
 {
-  return UI_Create_730F30(); /*0x536c05*/
+    return UI_Create_730F30();
 }
 }
 } // namespace gamemd
 
 // 0x536EA0
 namespace gamemd {
-int CreateTeamCommand_performAction_104()
+int CreateTeamCommand::performAction_104()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall CreateTeamCommand::performAction_104(CenterBaseCommandClass *this)
+// 0x536ea0
+    int __thiscall CreateTeamCommand::performAction_104(CenterBaseCommandClass *(void**)this)
 {
-  return TAction::CenterOnStartCoords(); /*0x536ea5*/
+    return TAction::CenterOnStartCoords();
 }
 }
 } // namespace gamemd
 
 // 0x536F20
 namespace gamemd {
-int CreateTeamCommand_performAction_109()
+int CreateTeamCommand::performAction_109()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-char *__thiscall CreateTeamCommand::performAction_109(AllianceCommandClass *this)
+// 0x536f20
+    char *__thiscall CreateTeamCommand::performAction_109(AllianceCommandClass *(void**)this)
 {
-  return UI_Create_7318F0(); /*0x536f25*/
+    return UI_Create_7318F0();
 }
 }
 } // namespace gamemd
 
 // 0x537130
 namespace gamemd {
-int CreateTeamCommand_performAction_128()
+int CreateTeamCommand::performAction_128()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-unsigned __int16 __thiscall CreateTeamCommand::performAction_128(CenterREventCommandClass *this)
+// 0x537130
+    unsigned short __thiscall CreateTeamCommand::performAction_128(CenterREventCommandClass *(void**)this)
 {
-  return UI_Create_734120(); /*0x537135*/
+    return UI_Create_734120();
 }
 }
 } // namespace gamemd
 
 // 0x5372D0
 namespace gamemd {
-int CreateTeamCommand_performAction_143()
+int CreateTeamCommand::performAction_143()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-char __thiscall CreateTeamCommand::performAction_143(OptionsCommandClass *this)
+// 0x5372d0
+    char __thiscall CreateTeamCommand::performAction_143(OptionsCommandClass *(void**)this)
 {
-  return UI_Create(); /*0x5372d5*/
+    return UI_Create();
 }
 }
 } // namespace gamemd

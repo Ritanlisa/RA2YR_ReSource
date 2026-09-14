@@ -2566,44 +2566,52 @@ namespace gamemd {
 int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
-// {
-//   HWND WindowA; // eax
-//   HWND v6; // esi
-//   int v7; // edi
-//   char *v8; // eax
-//   char *v9; // esi
-//   int v10; // esi
-//   _DWORD *v11; // eax
-//   CCINIClass *v12; // eax
-//   int Int_Overwrite; // eax
-//   int v14; // eax
-//   int v15; // esi
-//   char *i; // eax
-//   _DWORD *v17; // eax
-//   _DWORD *v18; // eax
-//   _DWORD *v19; // esi
-//   wchar_t *StringCSF; // eax
-//   wchar_t *v21; // eax
-//   IID **v22; // esi
-//   int v23; // eax
-//   HMODULE LibraryA; // eax
-//   HMODULE v25; // edi
-//   void (*ProcAddress)(void); // eax
-//   TClassFactory_VCStreamClass__ *v27; // eax
-//   IUnknown *v28; // eax
-//   TClassFactory_VWaveClass__ *v29; // eax
-//   IUnknown *v30; // eax
-//   TClassFactory_VTerrainTypeClass__ *v31; // eax
-//   IUnknown *v32; // eax
-//   TClassFactory_VTerrainClass__ *v33; // eax
-//   IUnknown *v34; // eax
-//   TClassFactory_VSuperWeaponTypeClass__ *v35; // eax
-//   IUnknown *v36; // eax
-//   TClassFactory_VSuperClass__ *v37; // eax
-//   IUnknown *v38; ... [65684 chars total]
-// end truncated pseudocode
+int __stdcall WinMain(int hInstance, int hPrevInstance, char *lpCmdLine, int nShowCmd)
+{
+  int v5; // eax
+  int v6; // esi
+  int v7; // edi
+  char *v8; // eax
+  char **v9; // esi
+  int v10; // esi
+  _DWORD *v11; // eax
+  _DWORD *v12; // eax
+  int Int_Overwrite; // eax
+  int v14; // eax
+  int v15; // esi
+  char *i; // eax
+  _DWORD *v17; // eax
+  _DWORD *v18; // eax
+  int v19; // esi
+  #72 *StringCSF; // eax
+  #72 *v21; // eax
+  #33 **v22; // esi
+  int v23; // eax
+  int v24; // eax
+  int v25; // edi
+  void (*v26)(void); // eax
+  _DWORD *v27; // eax
+  _DWORD *v28; // eax
+  _DWORD *v29; // eax
+  _DWORD *v30; // eax
+  _DWORD *v31; // eax
+  _DWORD *v32; // eax
+  _DWORD *v33; // eax
+  _DWORD *v34; // eax
+  _DWORD *v35; // eax
+  _DWORD *v36; // eax
+  _DWORD *v37; // eax
+  _DWORD *v38; // eax
+  _DWORD *v39; // eax
+  _DWORD *v40; // eax
+  _DWORD *v41; // eax
+  _DWORD *v42; // eax
+  _DWORD *v43; // eax
+  _DWORD *v44; // eax
+  _DWORD *v45; // eax
+  _DWORD *v46; // eax
+  _DWORD *v47; // eax
+  _DWOR... [61048 chars total]
 }
 } // namespace gamemd
 

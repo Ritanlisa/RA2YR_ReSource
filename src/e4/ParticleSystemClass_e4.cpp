@@ -75,7 +75,7 @@ BOOL __thiscall ParticleSystemClass::_vt17(int this)
 
 // 0x630230
 namespace gamemd {
-int ParticleSystemClass_ddtor()
+int ParticleSystemClass_16::Write(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)

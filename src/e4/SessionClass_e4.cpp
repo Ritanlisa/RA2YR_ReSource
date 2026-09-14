@@ -2624,21 +2624,18 @@ char SessionClass::Release(int a2, unsigned int * a3)
 // 0x69C940
 int SessionClass::Read(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SessionClass::_vt04(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x69c940*/
-  result = 0; /*0x69c943*/
-  if ( v2 <= 0 ) /*0x69c948*/
-    return -1; /*0x69c95f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x69c94e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->unknown_10;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->MPGameMode; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x69c95d*/
-      return -1; /*0x69c95d*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x69c962*/
+    return result;
 }

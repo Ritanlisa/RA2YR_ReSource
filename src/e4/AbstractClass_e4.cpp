@@ -133,7 +133,7 @@ void __thiscall AbstractClass::Initialize(_DWORD *this, TechnoClass *aP1, Techno
 
 // 0x44B760
 namespace gamemd {
-int AbstractClass_COMStub_133()
+int AbstractClass::COMStub_133()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
@@ -146,7 +146,7 @@ int __thiscall AbstractClass::COMStub_133(#377 *this)
 
 // 0x44B770
 namespace gamemd {
-int AbstractClass_COMStub_137()
+int AbstractClass::COMStub_137()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk

@@ -3450,15 +3450,13 @@ void TacticalClass::RenderIsometricOverlay(const RectangleStruct& viewRect)
 // IDA: 0x658780 -- TacticalClass::renderOverlay
 // Thin wrapper that delegates to RenderIsometricOverlay.
 // 0x658780
-void TacticalClass::renderOverlay()
+void TacticalClass::renderOverlay(int * Block, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TacticalClass::sub_658780(_DWORD *Block, char a2)
 {
-  GadgetClass::Dtor(Block);
-  if ( (a2 & 1) != 0 )
+    GadgetClass::Dtor(Block);
+    if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(Block);
-  return Block;
+    return Block;
 }
 
 /* ASM:
@@ -4608,7 +4606,7 @@ retn
 // IDA: 0x653760 -- TacticalClass::PixelToCellCheck
 // Converts pixel coordinates to cell coordinates and checks validity.
 // 0x653760
-bool TacticalClass::PixelToCellCheck(const Point2D& pixel, CellStruct* out_cell) const
+bool TacticalClass::PixelToCellCheck(int * a1, int * a2) const
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__stdcall TacticalClass_PixelToCellCheck(_DWORD *a1, int *a2)

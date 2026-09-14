@@ -228,7 +228,7 @@ char E4Recv_770B30::sub_770B30(int a2, void ** a3)
 
 // 0x770E70
 namespace gamemd {
-void sub_770E70(char **this@<ecx> a1, ObjectClass * aP1, ObjectClass * aP2, ObjectClass aP3)
+void String::Assign()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __userpurge sub_770E70(char **this@<ecx>, ObjectClass *aP1, ObjectClass *aP2, ObjectClass aP3)

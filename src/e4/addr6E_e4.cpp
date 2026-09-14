@@ -73,7 +73,7 @@ char __thiscall sub_6E0290(_BYTE *this, int a2, int a3, int a4, int a5)
 
 // 0x6E2050
 namespace gamemd {
-int globalHelper_0E2050()
+int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -110,7 +110,7 @@ char __thiscall sub_6E2790(int *this, int a2, int a3, int a4, int a5)
 
 // 0x6E30C0
 namespace gamemd {
-int CreateHouseClass()
+int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)

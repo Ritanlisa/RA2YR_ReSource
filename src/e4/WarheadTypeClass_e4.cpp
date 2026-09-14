@@ -156,21 +156,18 @@ char __thiscall WarheadTypeClass::_vt02(void *this, int a2, _DWORD *a3)
 // 0x525400
 int WarheadTypeClass::Init(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WarheadTypeClass::_vt04(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x525400*/
-  result = 0; /*0x525403*/
-  if ( v2 <= 0 ) /*0x525408*/
-    return -1; /*0x52541f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x52540e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->DeformTreshold;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->UIName; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x52541d*/
-      return -1; /*0x52541d*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x525422*/
+    return result;
 }

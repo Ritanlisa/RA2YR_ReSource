@@ -4,13 +4,12 @@
 
 // 0x40D270
 namespace gamemd {
-int SidebarClass_initButtons2()
+int SidebarClass::initButtons2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-char __thiscall SidebarClass::initButtons2(void *this)
+// 0x40d270
+    char __thiscall SidebarClass::initButtons2(void *(void**)this)
 {
-  return SidebarClass::InitButtons(this);
+    return SidebarClass::InitButtons(this);
 }
 }
 } // namespace gamemd

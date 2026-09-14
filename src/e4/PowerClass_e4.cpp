@@ -4,7 +4,7 @@
 
 // 0x63F7B0
 namespace gamemd {
-int PowerClass_Stub()
+int PowerClass::Stub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk

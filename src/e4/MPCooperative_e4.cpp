@@ -3005,7 +3005,7 @@ char __thiscall MPCooperative::sub_5C4E90(
 
 // 0x5C4F10
 namespace gamemd {
-int MPCooperative_QueryInterface()
+int MPCooperative::processTurnEnd(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)

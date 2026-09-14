@@ -124,13 +124,11 @@ _DWORD *__thiscall WTFMode_FindObjectByType(_DWORD *this, char a2)
 }
 } }
 // 0x4A31F0
-namespace gamemd { bool CStreamClass::IsEmpty() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_4A31F0(_DWORD *this, int a2)
+namespace gamemd { bool CStreamClass::IsEmpty(int a2) {
 {
-  if ( a2 ) /*0x4a31f9*/
-    WinAPI::Wrapper(-2147467261); /*0x4a3200*/
-  return *this == 0; /*0x4a320e*/
+    if ( a2 )
+    WinAPI::Wrapper(-2147467261);
+    return *(void**)this == 0;
 }
 } }
 // 0x4A4AD0
@@ -149,14 +147,12 @@ namespace gamemd { void CStreamClass::ClearBuffer() {
 }
 } }
 // 0x4A4B00
-namespace gamemd { int CStreamClass::PointerToIndex(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall CStreamClass::sub_4A4B00(int this, int a2)
+namespace gamemd { int CStreamClass::PointerToIndex(int a2) {
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4a4b00*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4a4b15*/
-  else
-    return 0; /*0x4a4b07*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 } }
 // 0x4A4CB0
@@ -207,7 +203,7 @@ char __thiscall CStreamClass::sub_4A4CB0(void *this, int a2, _DWORD *a3)
 }
 } }
 // 0x4A4D60
-namespace gamemd { int CStreamClass::FindItem(void* a1) {
+namespace gamemd { int CStreamClass::FindItem(int * a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CStreamClass::sub_4A4D60(int *this, _DWORD *a2)
 {

@@ -17631,29 +17631,25 @@ bool BuildingClass::ProductionCheck()
 
 // IDA 0x452670: check if can accept production type
 // 0x452670
-bool BuildingClass::CanAcceptType(int type_idx)
+bool BuildingClass::CanAcceptType(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall BuildingClass_CanAcceptType(int this, int a2, int a3)
 {
-  int v4; // eax
-
-  if ( a3 != *(_DWORD *)(this + 540)
-    || _strcmpi((const void *)(a2 + 3720), (const void *)(*(_DWORD *)(this + 1312) + 36)) )
+    int v4;
+    if ( a3 != this->Owner || _strcmpi((const void *)(a2 + 3720), (const void *)(this->Type + 36)) )
   {
     return 0;
   }
-  v4 = *(_DWORD *)(a2 + 5884);
-  if ( v4 == -1 )
+    v4 = *(int *)(a2 + 5884);
+    if ( v4 == -1 )
   {
-    if ( *(char *)(this + 1794) < *(_DWORD *)(*(_DWORD *)(this + 1312) + 5344) )
-      return 1;
+    if ( this->UpgradeLevel < *(int *)(this->Type + 5344) )
+    return 1;
   }
-  else if ( v4 <= 0 || v4 > 3 )
+    else if ( v4 <= 0 || v4 > 3 )
   {
     return 0;
   }
-  return !*(_BYTE *)(this + 1794);
+    return !this->UpgradeLevel;
 }
 
 /* ASM:
@@ -21192,33 +21188,30 @@ void BuildingClass::CreateIdleAnim() {}
 
 // IDA 0x451750: play upgrade animation
 // 0x451750
-void BuildingClass::PlayUpgradeAnim()
+void BuildingClass::PlayUpgradeAnim(int a2, int a3, int a4, void * a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass_PlayUpgradeAnim(_DWORD *this, int a2, int a3, int a4, void *a5)
 {
-  int result; // eax
-  _BYTE *v6; // edx
-
-  if ( (_BYTE)a3 )
+    int result;
+    char *v6;
+    if ( (char)a3 )
   {
     result = a2;
-    v6 = (_BYTE *)(*(this + 328) + 68 * a2 + 3932);
+    v6 = (char *)(this->Type + 68 * a2 + 3932);
   }
-  else
-  {
-    result = a2;
-    if ( (_BYTE)a4 )
-      v6 = (_BYTE *)(*(this + 328) + 68 * a2 + 3948);
     else
-      v6 = (_BYTE *)(*(this + 328) + 68 * a2 + 3916);
+  {
+    result = a2;
+    if ( (char)a4 )
+    v6 = (char *)(this->Type + 68 * a2 + 3948);
+    else
+    v6 = (char *)(this->Type + 68 * a2 + 3916);
   }
-  if ( v6 )
+    if ( v6 )
   {
     if ( *v6 )
-      return BuildingClass::PlayAnim(this, (int)v6, v6, result, a3, a4, a5);
+    return BuildingClass::PlayAnim(this, (int)v6, v6, result, a3, a4, a5);
   }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -22539,7 +22532,7 @@ void BuildingClass::SaveLoad_Register()
 
 // IDA 0x634310: copy type data for rendering
 // 0x634310
-void BuildingClass::CopyTypeDataForRender()
+void BuildingClass::CopyTypeDataForRender(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_634310(int *this, int a2, int a3)
@@ -22580,57 +22573,6 @@ LABEL_9:
   *(_BYTE *)(a2 + 110) = v8[2];
   return a2;
 }
-
-/* ASM:
-mov     edx, [ecx+10h]
-push    ebx
-xor     eax, eax
-push    esi
-push    edi
-test    edx, edx
-jle     short loc_63433C
-mov     esi, [ecx+4]
-mov     edi, [esp+0Ch+arg_4]
-mov     ecx, esi
-
-loc_634325:                             ; CODE XREF: BuildingClass__CopyTypeDataForRender+21↓j
-mov     ebx, [ecx]
-cmp     [ebx], edi
-jz      short loc_634337
-inc     eax
-add     ecx, 4
-cmp     eax, edx
-jl      short loc_634325
-xor     eax, eax
-jmp     short loc_634343
-; ---------------------------------------------------------------------------
-
-loc_634337:                             ; CODE XREF: BuildingClass__CopyTypeDataForRender+19↑j
-cmp     eax, 0FFFFFFFFh
-jnz     short loc_634340
-
-loc_63433C:                             ; CODE XREF: BuildingClass__CopyTypeDataForRender+A↑j
-xor     eax, eax
-jmp     short loc_634343
-; ---------------------------------------------------------------------------
-
-loc_634340:                             ; CODE XREF: BuildingClass__CopyTypeDataForRender+2A↑j
-mov     eax, [esi+eax*4]
-
-loc_634343:                             ; CODE XREF: BuildingClass__CopyTypeDataForRender+25↑j
-; BuildingClass__CopyTypeDataForRender+2E↑j
-mov     esi, [eax+4]
-mov     eax, [esp+0Ch+arg_0]
-mov     ecx, 1Bh
-mov     edi, eax
-rep movsd
-movsw
-movsb
-pop     edi
-pop     esi
-pop     ebx
-retn    8
-*/
 }
 
 // IDA 0x705d20: get type pointer (duplicate of GetTypePtr at different address)
@@ -23713,31 +23655,28 @@ void BuildingClass::Unlimbo_UnitDeliveryFix() {}
 
 // IDA 0x452170: set connected building mission
 // 0x452170
-void BuildingClass::SetConnectedBuildingMission()
+void BuildingClass::SetConnectedBuildingMission(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass_SetConnectedBuildingMission(int *this, int a2)
 {
-  char v3; // bl
-  int *v4; // ecx
-  int v5; // esi
-  int result; // eax
-
-  v3 = a2;
-  if ( a2 == 15 && (*(int (__thiscall **)(int *, _DWORD, _DWORD))(*this + 104))(this, 0, 0) == 5 )
+    char v3;
+    int *v4;
+    int v5;
+    int result;
+    v3 = a2;
+    if ( a2 == 15 && this->IsAboveScreenMargin(0, 0) == 5 )
     v3 = 16;
-  v4 = this + 343;
-  v5 = 21;
-  do
+    v4 = this + 343;
+    v5 = 21;
+    do
   {
     result = *v4;
     if ( *v4 )
-      *(_BYTE *)(result + 376) = v3;
+    *(char *)(result + 376) = v3;
     ++v4;
     --v5;
   }
-  while ( v5 );
-  return result;
+    while ( v5 );
+    return result;
 }
 
 /* ASM:
@@ -24261,13 +24200,11 @@ bool BuildingClass::ValidatePath() { return true; }
 
 // IDA 0x717890: set production slot
 // 0x717890
-void BuildingClass::SetSlot(int slot)
+void BuildingClass::SetSlot(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass_SetSlot(_DWORD *this, int a2, int a3)
 {
-  *(this + a3 + 517) = a2;
-  return a3;
+    *(this + a3 + 517) = a2;
+    return a3;
 }
 
 /* ASM:

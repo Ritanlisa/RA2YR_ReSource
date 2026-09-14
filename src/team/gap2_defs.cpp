@@ -1658,7 +1658,7 @@ int __thiscall sub_6E8160(int *this)
 }
 } }
 // 0x6EC9A0
-namespace gamemd { int TeamClass::SelectWaypointTarget(int a1, int a2) {
+namespace gamemd { int TeamClass::SelectWaypointTarget(TeamClass * aP1, char a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TeamClass::SelectWaypointTarget(int this, TeamClass *aP1, char a3)
 {
@@ -1711,7 +1711,7 @@ LABEL_12:
 }
 } }
 // 0x6ECA70
-namespace gamemd { int TeamClass::SelectAttackTarget(int a1, int a2) {
+namespace gamemd { int TeamClass::SelectAttackTarget(ScriptClass * aP1, char a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TeamClass::SelectAttackTarget(int this, ScriptClass *aP1, char a3)
 {
@@ -2118,7 +2118,7 @@ LABEL_14:
 }
 } }
 // 0x6EE310
-namespace gamemd { int TeamClass::SelectAreaAttackTarget(int a1, int a2) {
+namespace gamemd { int TeamClass::SelectAreaAttackTarget(ScriptClass * aP1, TeamClass * aP2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall TeamClass::SelectAreaAttackTarget(int this, ScriptClass *aP1, TeamClass *aP2)
 {
@@ -2525,45 +2525,37 @@ LABEL_10:
 }
 } }
 // 0x6EF610
-namespace gamemd { void TeamClass::PlayMemberAnimation(int a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall TeamClass::PlayMemberAnimation(int this, ScriptClass *aP1, char a3)
+namespace gamemd { void TeamClass::PlayMemberAnimation(ScriptClass * aP1, char a3) {
 {
-  int v3; // eax
-  IUnknown *v4; // esi
-  CoordStruct *v5; // ebx
-  CoordStruct *v6; // ebp
-  ObjectClass *v7; // edi
-  CoordStruct *v8; // eax
-  AnimClass *v9; // eax
-  _BYTE v11[12]; // [esp+10h] [ebp-Ch] BYREF
-
-  v3 = *(_DWORD *)&aP1->__pad_0[4]; /*0x6ef61e*/
-  if ( a3 /*0x6ef65e*/
-    && (unsigned __int16)v3 < *(int *)&MEMORY[0x89F690].__pad_579C[62260]
-    && (v4 = *(IUnknown **)(this + 84),
-        v5 = (CoordStruct *)HIWORD(v3),
-        v6 = *(CoordStruct **)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * (unsigned __int16)v3),
-        v4) )
+    int v3;
+    IUnknown *v4;
+    CoordStruct *v5;
+    CoordStruct *v6;
+    ObjectClass *v7;
+    CoordStruct *v8;
+    AnimClass *v9;
+    char v11[12];
+    v3 = *(int *)&aP1->__pad_0[4];
+    if ( a3 && (unsigned short)v3 < *(int *)&g_CellDirectionOffsets.__pad_579C[62260] && (v4 = *(IUnknown **)(this + 84), v5 = (CoordStruct *)HIWORD(v3), v6 = *(CoordStruct **)(*(int *)&g_CellDirectionOffsets.__pad_579C[62248] + 4 * (unsigned short)v3), v4) )
   {
-    do /*0x6ef6a9*/
+    do
     {
-      v7 = (ObjectClass *)__2_YAPAXI_Z(0x1C8u); /*0x6ef66b*/
-      if ( v7 ) /*0x6ef672*/
+    v7 = (ObjectClass *)__2_YAPAXI_Z(0x1C8u);
+    if ( v7 )
       {
-        v8 = (CoordStruct *)(*(int (__thiscall **)(IUnknown *, _BYTE *))(v4->field_0 + 72))(v4, v11); /*0x6ef689*/
-        v9 = AnimClass::ctor((void **)v7, v6, v8, 0, v5, (void *)0x600, 0, 0); /*0x6ef690*/
-        if ( v9 ) /*0x6ef697*/
-          BuildingClass::AimTurret(v9, v4); /*0x6ef69c*/
+    v8 = (CoordStruct *)(*(int (__thiscall **)(IUnknown *, char *))(v4->field_0 + 72))(v4, v11);
+    v9 = AnimClass::ctor((void **)v7, v6, v8, 0, v5, (void *)0x600, 0, 0);
+    if ( v9 )
+    BuildingClass::AimTurret(v9, v4);
       }
-      v4 = *(IUnknown **)&v4->__pad_524[180]; /*0x6ef6a1*/
+    v4 = *(IUnknown **)&v4->__pad_524[180];
     }
-    while ( v4 ); /*0x6ef6a9*/
-    *(_BYTE *)(this + 128) = 1; /*0x6ef6b2*/
+    while ( v4 );
+    this->stepCompleted = 1;
   }
-  else
+    else
   {
-    *(_BYTE *)(this + 128) = 1; /*0x6ef6c2*/
+    this->stepCompleted = 1;
   }
 }
 } }
@@ -3775,40 +3767,37 @@ char __thiscall TriggerTypeClass::_vt26(int this, char *a2)
 }
 } }
 // 0x727B30
-namespace gamemd { int TriggerTypeClass::PowerDrainUpdate(void* a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TriggerTypeClass::_vt13(int this, int *a2)
+namespace gamemd { int TriggerTypeClass::PowerDrainUpdate(int * a2) {
 {
-  int v3; // eax
-  int v4; // eax
-  int v5; // eax
-  int result; // eax
-  int v7; // eax
-  int v8; // esi
-  int v9; // eax
-
-  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x727b39*/
-  v3 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(_DWORD *)(this + 164) + 4) + 16))(*(_DWORD *)(this + 164) + 4); /*0x727b4a*/
-  Power::TimerProcess(v3); /*0x727b50*/
-  v4 = *(_DWORD *)(this + 168); /*0x727b55*/
-  if ( v4 ) /*0x727b5d*/
+    int v3;
+    int v4;
+    int v5;
+    int result;
+    int v7;
+    int v8;
+    int v9;
+    AbstractTypeClass::ProcessPower((char *)this, a2);
+    v3 = (*(int (__stdcall **)(int))(*(int *)(this->house + 4) + 16))(this->house + 4);
+    Power::TimerProcess(v3);
+    v4 = this->nextTrigger;
+    if ( v4 )
   {
-    v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x727b66*/
-    Power::TimerProcess(v5); /*0x727b6c*/
+    v5 = (*(int (__stdcall **)(int))(*(int *)(v4 + 4) + 16))(v4 + 4);
+    Power::TimerProcess(v5);
   }
-  result = *(_DWORD *)(this + 172); /*0x727b71*/
-  if ( result ) /*0x727b79*/
+    result = this->firstEvent;
+    if ( result )
   {
-    v7 = (*(int (__stdcall **)(int))(*(_DWORD *)(result + 4) + 16))(result + 4); /*0x727b82*/
-    result = Power::TimerProcess(v7); /*0x727b88*/
+    v7 = (*(int (__stdcall **)(int))(*(int *)(result + 4) + 16))(result + 4);
+    result = Power::TimerProcess(v7);
   }
-  v8 = *(_DWORD *)(this + 176); /*0x727b8d*/
-  if ( v8 ) /*0x727b95*/
+    v8 = this->firstAction;
+    if ( v8 )
   {
-    v9 = (*(int (__stdcall **)(int))(*(_DWORD *)(v8 + 4) + 16))(v8 + 4); /*0x727b9e*/
-    return Power::TimerProcess(v9); /*0x727ba4*/
+    v9 = (*(int (__stdcall **)(int))(*(int *)(v8 + 4) + 16))(v8 + 4);
+    return Power::TimerProcess(v9);
   }
-  return result; /*0x727ba9*/
+    return result;
 }
 } }
 // 0x727CC0

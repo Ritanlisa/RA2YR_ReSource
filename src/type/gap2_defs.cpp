@@ -22,14 +22,12 @@ namespace gamemd { short BuildingTypeClass::GetFoundationWidth() const {
 // 0x0 (lnk)
 namespace gamemd { AbstractTypeClass::AbstractTypeClass(char const *) noexcept {} }
 // 0x45ECA0
-namespace gamemd { short BuildingTypeClass::GetFoundationHeight(bool) const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingTypeClass::GetFoundationHeight(int this, IUnknown *aP1)
+namespace gamemd { short BuildingTypeClass::GetFoundationHeight(IUnknown * aP1) const {
 {
-  if ( (_BYTE)aP1 && *(_BYTE *)(this + 5488) ) /*0x45eca8*/
-    return dword_819310[*(_DWORD *)(this + 3824)] + 1; /*0x45ecc4*/
-  else
-    return dword_819310[*(_DWORD *)(this + 3824)]; /*0x45ecd1*/
+    if ( (char)aP1 && this->Bib )
+    return DataGlobal_819310[this->Foundation] + 1;
+    else
+    return DataGlobal_819310[this->Foundation];
 }
 } }
 // 0x0 (lnk)

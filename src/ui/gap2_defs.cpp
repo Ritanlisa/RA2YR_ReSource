@@ -68,65 +68,60 @@ namespace gamemd { void MouseClass::initCursor() {
 }
 } }
 // 0x40D570
-namespace gamemd { int MouseClass::updateCursorState(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall MouseClass::sub_40D570(int this, int a2)
+namespace gamemd { int MouseClass::updateCursorState(int a2) {
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x40d570*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x40d585*/
-  else
-    return 0; /*0x40d577*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 } }
 // 0x40D720
-namespace gamemd { int MouseClass::selectCursor(int a1, void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MouseClass::sub_40D720(void *this, int a2, _DWORD *a3)
+namespace gamemd { int MouseClass::selectCursor(int a2, int * a3) {
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x40d72c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x40d732*/
-    if ( a3 ) /*0x40d738*/
-      v4 = a3; /*0x40d74e*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40d74a*/
-    *((_BYTE *)this + 12) = 1; /*0x40d752*/
-    if ( !v4 ) /*0x40d756*/
-      return 0; /*0x40d7ca*/
-    if ( *((_DWORD *)this + 1) ) /*0x40d758*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->Items )
     {
-      v5 = *((_DWORD *)this + 2); /*0x40d75f*/
-      if ( a2 < v5 ) /*0x40d764*/
-        v5 = a2; /*0x40d766*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x40d76c*/
-        ++i; /*0x40d771*/
-      if ( *((_BYTE *)this + 13) ) /*0x40d77e*/
+    v5 = this->Capacity;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->Items + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40d789*/
-        *((_DWORD *)this + 1) = 0; /*0x40d791*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Items = 0;
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x40d79a*/
-    *((_DWORD *)this + 2) = a2; /*0x40d7a2*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x40d7a5*/
+    this->Items = v4;
+    this->Capacity = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x40d7ae*/
+    this->Clear();
   }
-  v7 = *((_DWORD *)this + 2); /*0x40d7b1*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x40d7b9*/
-    *((_DWORD *)this + 4) = v7; /*0x40d7bb*/
-  return 1; /*0x40d7be*/
+    v7 = this->Capacity;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
 }
 } }
 // 0x40D7D0
-namespace gamemd { int MouseClass::getCursorFrame(void* a1) {
+namespace gamemd { int MouseClass::getCursorFrame(int * a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall MouseClass::sub_40D7D0(int *this, _DWORD *a2)
 {
@@ -1061,14 +1056,12 @@ namespace gamemd { void CheckListClass::initList() {
 }
 } }
 // 0x556EE0
-namespace gamemd { int CheckListClass::addItem(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall CheckListClass::sub_556EE0(int this, int a2)
+namespace gamemd { int CheckListClass::addItem(int a2) {
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x556ee0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x556ef5*/
-  else
-    return 0; /*0x556ee7*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 } }
 // 0x557090
@@ -1116,7 +1109,7 @@ namespace gamemd { int CheckListClass::removeItem(int a2, void* a3) {
 }
 } }
 // 0x557140
-namespace gamemd { int CheckListClass::checkItem(void* a1) {
+namespace gamemd { int CheckListClass::checkItem(int * a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CheckListClass::sub_557140(int *this, _DWORD *a2)
 {
@@ -1536,14 +1529,12 @@ namespace gamemd { void CheckListClass::scrollList() {
 }
 } }
 // 0x558210
-namespace gamemd { int CheckListClass::selectItem(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall CheckListClass::sub_558210(int this, int a2)
+namespace gamemd { int CheckListClass::selectItem(int a2) {
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x558210*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x558225*/
-  else
-    return 0; /*0x558217*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 } }
 // 0x5583C0
@@ -1591,7 +1582,7 @@ namespace gamemd { int CheckListClass::clearList(int a2, void* a3) {
 }
 } }
 // 0x558470
-namespace gamemd { int CheckListClass::getItemCount(void* a1) {
+namespace gamemd { int CheckListClass::getItemCount(int * a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CheckListClass::sub_558470(int *this, _DWORD *a2)
 {
@@ -2447,36 +2438,33 @@ _DWORD *__thiscall sub_5BE9B0(_DWORD *this, int a2)
 }
 } }
 // 0x5BEA30
-namespace gamemd { void* MouseClass::loadCursor(int a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_5BEA30(_DWORD *this, int a2, int a3)
+namespace gamemd { void* MouseClass::loadCursor(int a2, int a3) {
 {
-  void *v4; // eax
-
-  *(this + 1) = 0; /*0x5bea3a*/
-  *(this + 2) = a2; /*0x5bea41*/
-  *((_BYTE *)this + 12) = 1; /*0x5bea44*/
-  *((_BYTE *)this + 13) = 0; /*0x5bea48*/
-  *this = &vt_VectorClass_HashObject_unsigned_int_unsigned_int; /*0x5bea4c*/
-  if ( a2 ) /*0x5bea52*/
+    void *v4;
+    this->Items = 0;
+    this->Capacity = a2;
+    this->IsInitialized = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_HashObject_unsigned_int_unsigned_int;
+    if ( a2 )
   {
-    if ( a3 ) /*0x5bea5a*/
+    if ( a3 )
     {
-      *(this + 1) = a3; /*0x5bea5d*/
+    this->Items = a3;
     }
     else
     {
-      v4 = __2_YAPAXI_Z(8 * a2); /*0x5bea6e*/
-      if ( !v4 ) /*0x5bea78*/
-        v4 = 0; /*0x5bea81*/
-      *(this + 1) = v4; /*0x5bea83*/
-      *((_BYTE *)this + 13) = 1; /*0x5bea86*/
+    v4 = __2_YAPAXI_Z(8 * a2);
+    if ( !v4 )
+    v4 = 0;
+    this->Items = v4;
+    this->IsAllocated = 1;
     }
   }
-  *this = &vt_DynamicVectorClass_HashObject_unsigned_int_unsigned_int; /*0x5bea8a*/
-  *(this + 5) = 10; /*0x5bea90*/
-  *(this + 4) = 0; /*0x5bea97*/
-  return this; /*0x5beaa0*/
+    *(void**)this = &vt_DynamicVectorClass_HashObject_unsigned_int_unsigned_int;
+    this->CapacityIncrement = 10;
+    this->Count = 0;
+    return this;
 }
 } }
 // 0x5D3A60
@@ -3878,40 +3866,37 @@ char __thiscall MouseClass::_vt44(int this, _DWORD *a2)
 }
 } }
 // 0x6969C0
-namespace gamemd { int ListBox::SetCustomEntry() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall ListBox_SetCustomEntry(HWND *this, int nIDDlgItem, LPARAM a3, void *a4)
+namespace gamemd { int ListBox::SetCustomEntry(int nIDDlgItem, LPARAM a3, void * a4) {
 {
-  HWND result; // eax
-  HWND v5; // ebx
-  wchar_t *String; // eax
-  LRESULT v7; // esi
-  int wParam; // [esp+Ch] [ebp-84h]
-  char lParam[128]; // [esp+10h] [ebp-80h] BYREF
-
-  result = GetDlgItem(*this, nIDDlgItem); /*0x6969d1*/
-  v5 = result; /*0x6969d7*/
-  if ( result ) /*0x6969db*/
+    HWND result;
+    HWND v5;
+    wchar_t *String;
+    LRESULT v7;
+    int wParam;
+    char lParam[128];
+    result = GetDlgItem(*(void**)this, nIDDlgItem);
+    v5 = result;
+    if ( result )
   {
-    wParam = FindListBoxItem(result, -1, a3); /*0x696a05*/
-    SendMessageA(v5, 0x4BDu, wParam, (LPARAM)lParam); /*0x696a09*/
-    result = (HWND)strchr(lParam, 45); /*0x696a12*/
-    if ( result ) /*0x696a1c*/
+    wParam = FindListBoxItem(result, -1, a3);
+    SendMessageA(v5, 0x4BDu, wParam, (LPARAM)lParam);
+    result = (HWND)strchr(lParam, 45);
+    if ( result )
     {
-      result = (HWND)_strcmpi(a4, (char *)result + 1); /*0x696a2c*/
-      if ( result ) /*0x696a36*/
+    result = (HWND)_strcmpi(a4, (char *)(result) + 1);
+    if ( result )
       {
-        String = GetStringCSF(MEMORY[0x83EBBC], 0, MEMORY[0x83EC28], 1187); /*0x696a4e*/
-        sprintf(lParam, MEMORY[0x83ECF4], String); /*0x696a5e*/
-        strcat(lParam, (const char *)a4); /*0x696a87*/
-        SendMessageA(v5, 0x144u, wParam, 0); /*0x696a9b*/
-        v7 = SendMessageA(v5, 0x4BCu, 0, (LPARAM)lParam); /*0x696ab3*/
-        SendMessageA(v5, 0x151u, v7, a3); /*0x696abd*/
-        return (HWND)SendMessageA(v5, 0x14Eu, v7, 0); /*0x696ac8*/
+    String = GetStringCSF(g_Str_TXT_CUSTOM, 0, g_Str_File_SerialEd_cpp, 1187);
+    sprintf(lParam, DataGlobal_83ECF4, String);
+    strcat(lParam, (const char *)a4);
+    SendMessageA(v5, 0x144u, wParam, 0);
+    v7 = SendMessageA(v5, 0x4BCu, 0, (LPARAM)lParam);
+    SendMessageA(v5, 0x151u, v7, a3);
+    return (HWND)SendMessageA(v5, 0x14Eu, v7, 0);
       }
     }
   }
-  return result; /*0x696acb*/
+    return result;
 }
 } }
 // 0x69DFC0
@@ -8159,80 +8144,74 @@ namespace gamemd { int ToolTipClass::seek(int a1) {
 }
 } }
 // 0x724C90
-namespace gamemd { int ToolTipClass::addRef(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ToolTipManager_7_::_vt01(int *this, int a2)
+namespace gamemd { int ToolTipClass::addRef(int a2) {
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x724c92*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x724c9d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x724c9f*/
-    if ( v2 <= 0 ) /*0x724ca3*/
-      return 1; /*0x724cc3*/
-    v4 = (_DWORD *)*(this + 1); /*0x724ca5*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x724cab*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x724cb4*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x724cb6*/
-      ++v4; /*0x724cb7*/
-      if ( v3 >= v2 ) /*0x724cbc*/
-        return 1; /*0x724cbc*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x724cbe*/
+    return 0;
 }
 } }
 // 0x724CD0
-namespace gamemd { int ToolTipClass::readString(int a1, void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ToolTipManager_7_::sub_724CD0(void *this, int a2, _DWORD *a3)
+namespace gamemd { int ToolTipClass::readString(int a2, int * a3) {
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x724cdc*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x724ce6*/
-    if ( a3 ) /*0x724cec*/
-      v4 = a3; /*0x724d02*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x724cfe*/
-    *((_BYTE *)this + 12) = 1; /*0x724d06*/
-    if ( v4 ) /*0x724d0a*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( *((_DWORD *)this + 1) ) /*0x724d15*/
+    if ( this->Items )
       {
-        v6 = *((_DWORD *)this + 2); /*0x724d1c*/
-        if ( a2 < v6 ) /*0x724d21*/
-          v6 = a2; /*0x724d23*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x724d29*/
-          ++i; /*0x724d2e*/
-        if ( *((_BYTE *)this + 13) ) /*0x724d3b*/
+    v6 = this->Capacity;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->Items + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x724d46*/
-          *((_DWORD *)this + 1) = 0; /*0x724d4e*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Items = 0;
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x724d57*/
-      *((_DWORD *)this + 2) = a2; /*0x724d5f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x724d62*/
-      return 1; /*0x724d68*/
+    this->Items = v4;
+    this->Capacity = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x724d0f*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x724d72*/
-    return 1; /*0x724d78*/
+    this->Clear();
+    return 1;
   }
 }
 } }
@@ -8249,88 +8228,80 @@ namespace gamemd { void ToolTipClass::writeString() {
 }
 } }
 // 0x724DB0
-namespace gamemd { int ToolTipClass::seekString(void* a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ToolTipManager_7_::sub_724DB0(int this, _DWORD *a2)
+namespace gamemd { int ToolTipClass::seekString(int * a2) {
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !*(_BYTE *)(this + 12) ) /*0x724db0*/
-    return 0; /*0x724db8*/
-  v3 = *(_DWORD *)(this + 8); /*0x724dbe*/
-  result = 0; /*0x724dc1*/
-  if ( v3 <= 0 ) /*0x724dc5*/
-    return -1; /*0x724ddc*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x724dcb*/
+    int result;
+    int v3;
+    int *i;
+    if ( !this->IsInitialized )
+    return 0;
+    v3 = this->Capacity;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x724dda*/
-      return -1; /*0x724dda*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x724dba*/
+    return result;
 }
 } }
 // 0x724DF0
-namespace gamemd { int ToolTipClass::setString(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall ToolTipManager_7_::sub_724DF0(int this, int a2)
+namespace gamemd { int ToolTipClass::setString(int a2) {
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x724df0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x724e05*/
-  else
-    return 0; /*0x724df7*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 } }
 // 0x724E10
-namespace gamemd { int ToolTipClass::release(int a1, void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ToolTipManager_7_::_vt02(void *this, int a2, _DWORD *a3)
+namespace gamemd { int ToolTipClass::release(int a2, int * a3) {
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x724e1c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x724e22*/
-    if ( a3 ) /*0x724e28*/
-      v4 = a3; /*0x724e3e*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x724e3a*/
-    *((_BYTE *)this + 12) = 1; /*0x724e42*/
-    if ( !v4 ) /*0x724e46*/
-      return 0; /*0x724eba*/
-    if ( *((_DWORD *)this + 1) ) /*0x724e48*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->Items )
     {
-      v5 = *((_DWORD *)this + 2); /*0x724e4f*/
-      if ( a2 < v5 ) /*0x724e54*/
-        v5 = a2; /*0x724e56*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x724e5c*/
-        ++i; /*0x724e61*/
-      if ( *((_BYTE *)this + 13) ) /*0x724e6e*/
+    v5 = this->Capacity;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->Items + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x724e79*/
-        *((_DWORD *)this + 1) = 0; /*0x724e81*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Items = 0;
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x724e8a*/
-    *((_DWORD *)this + 2) = a2; /*0x724e92*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x724e95*/
+    this->Items = v4;
+    this->Capacity = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x724e9e*/
+    this->Clear();
   }
-  v7 = *((_DWORD *)this + 2); /*0x724ea1*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x724ea9*/
-    *((_DWORD *)this + 4) = v7; /*0x724eab*/
-  return 1; /*0x724eae*/
+    v7 = this->Capacity;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
 }
 } }
 // 0x724EC0
-namespace gamemd { int ToolTipClass::read(void* a1) {
+namespace gamemd { int ToolTipClass::read(int * a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ToolTipManager_7_::_vt04(int *this, _DWORD *a2)
 {

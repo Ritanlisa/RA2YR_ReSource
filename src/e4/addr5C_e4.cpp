@@ -70,12 +70,10 @@ char __usercall sub_5C00E0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
 
 // 0x5C0540
 namespace gamemd {
-int BinkMovieHandle___vt03(unsigned char a2)
+int BinkMovieHandle::_vt03(unsigned char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BinkMovieHandle::_vt03(_DWORD **this, unsigned __int8 a2)
 {
-  return BinkMovie::Pause(*(this + 4), a2); /*0x5c054d*/
+    return BinkMovie::Pause(this->height, a2);
 }
 }
 } // namespace gamemd
@@ -246,13 +244,11 @@ char __thiscall MPCooperative::_vt07(int *this, int a2)
 
 // 0x5C36F0
 namespace gamemd {
-int MPCooperative_j__do_always_noconv_codecvt_base_std__MBE_NXZ_17()
+int MPCooperative::j__do_always_noconv_codecvt_base_std__MBE_NXZ_17()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-bool __thiscall MPCooperative::j__do_always_noconv_codecvt_base_std__MBE_NXZ_17(std::codecvt_base *this)
+    bool __thiscall MPCooperative::j__do_always_noconv_codecvt_base_std__MBE_NXZ_17(std::codecvt_base *(void**)this)
 {
-  return ScenarioClass::processAI(this);
+    return ScenarioClass::processAI(this);
 }
 }
 } // namespace gamemd

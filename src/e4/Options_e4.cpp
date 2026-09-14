@@ -549,52 +549,51 @@ void __thiscall Options::SetVoiceVolume(Options *this, float volume, int pad)
 namespace gamemd {
 int Options::DialogProc(CCINIClass hWnd)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// int __stdcall Options::DialogProc(CCINIClass hWnd)
-// {
-//   _DWORD *v1; // eax
-//   HWND v2; // ecx
-//   WNDPROC *v3; // eax
-//   int v4; // esi
-//   int v5; // eax
-//   int v6; // edi
-//   unsigned int v7; // ebx
-//   LRESULT v8; // esi
-//   LRESULT v9; // ecx
-//   LONG v10; // esi
-//   HWND v11; // eax
-//   LONG v12; // ecx
-//   int v13; // edx
-//   LONG (__stdcall *v14)(HWND, int); // ebp
-//   _DWORD *v15; // ecx
-//   _DWORD *v16; // eax
-//   HWND v17; // eax
-//   int v18; // esi
-//   int v19; // eax
-//   ObjectClass *v23; // ebx
-//   int v21; // eax
-//   int v22; // esi
-//   void (__thiscall ***ecx51)(_DWORD, int); // ecx
-//   HDC DC; // esi
-//   int result; // eax
-//   int v26; // edx
-//   LRESULT v27; // eax
-//   int v28; // ebp
-//   HWND v29; // ecx
-//   LRESULT (__stdcall *v30)(HWND, UINT, WPARAM, LPARAM); // esi
-//   int v31; // eax
-//   int v32; // eax
-//   LRESULT (__stdcall **v33)(HWND, UINT, WPARAM, LPARAM); // eax
-//   LRESULT v34; // eax
-//   int *v35; // edi
-//   _DWORD *v36; // ebx
-//   int v37; // eax
-//   int v38; // ecx
-//   WPARAM v39; // ebp
-//   CCINIClass *v43; // ecx
-//   CCINIClass ... [120002 chars total]
-// end truncated pseudocode
+{
+    int *v4;
+    int v5;
+    int *v6;
+    int *v7;
+    int *v8;
+    int v9;
+    unsigned int v10;
+    int v11;
+    int v12;
+    float v13;
+    unsigned int v14;
+    int v15;
+    int v16;
+    LONG (__stdcall *v17)(HWND, int);
+    int *v18;
+    int *v19;
+    int v20;
+    int v21;
+    int v22;
+    unsigned int v23;
+    int *v24;
+    int *v25;
+    void (__thiscall ***v26)(int, int);
+    int v27;
+    int result;
+    int v29;
+    int v30;
+    int v31;
+    int v32;
+    int v33;
+    int v34;
+    int *v35;
+    int *v36;
+    int v37;
+    int *v38;
+    int *v39;
+    int v40;
+    int v41;
+    int v42;
+    int v43;
+    int v44;
+    int v45;
+    int v46;
+    int v47;
 }
 } // namespace gamemd
 

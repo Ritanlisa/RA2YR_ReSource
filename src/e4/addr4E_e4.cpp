@@ -2139,7 +2139,7 @@ LABEL_10:
 
 // 0x4E9240
 namespace gamemd {
-char HouseClass__vt_02_(int a2, unsigned int * a3)
+char HouseClass::vt_02_(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall HouseClass::vt_02_(void *this, int a2, _DWORD *a3)
@@ -2192,67 +2192,60 @@ char __thiscall HouseClass::vt_02_(void *this, int a2, _DWORD *a3)
 
 // 0x4E92F0
 namespace gamemd {
-void HouseClass__vt_03_()
+void HouseClass::vt_03_()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall HouseClass::vt_03_(int this)
 {
-  if ( this->vtable1 && *(_BYTE *)(this + 13) ) /*0x4e92fd*/
+    if ( this->vtable1 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x4e9303*/
-    this->vtable1 = 0; /*0x4e930b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->vtable1 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x4e930e*/
-  this->vtable2 = 0; /*0x4e9311*/
+    this->IsAllocated = 0;
+    this->vtable2 = 0;
 }
 }
 } // namespace gamemd
 
 // 0x4E9320
 namespace gamemd {
-int HouseClass__vt_04_(unsigned int * a2)
+int HouseClass::vt_04_(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass::vt_04_(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->vtable3 ) /*0x4e9320*/
-    return 0; /*0x4e9328*/
-  v3 = this->vtable2; /*0x4e932e*/
-  result = 0; /*0x4e9331*/
-  if ( v3 <= 0 ) /*0x4e9335*/
-    return -1; /*0x4e934c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x4e933b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->vtable3 )
+    return 0;
+    v3 = this->vtable2;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x4e934a*/
-      return -1; /*0x4e934a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x4e932a*/
+    return result;
 }
 }
 } // namespace gamemd
 
 // 0x4E9360
 namespace gamemd {
-unsigned int HouseClass__vt_05_(int a2)
+unsigned int HouseClass::vt_05_(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall HouseClass::vt_05_(int this, int a2)
 {
-  if ( (unsigned char)this->vtable3 ) /*0x4e9360*/
-    return (unsigned int)(a2 - this->vtable1) >> 2; /*0x4e9375*/
-  else
-    return 0; /*0x4e9367*/
+    if ( (unsigned char)this->vtable3 )
+    return (unsigned int)(a2 - this->vtable1) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
 
 // 0x4E9E20
 namespace gamemd {
-char ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
+char ParticleSystemClass::vt_02_(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ParticleSystemClass::vt_02_(void *this, int a2, _DWORD *a3)
@@ -2305,7 +2298,7 @@ char __thiscall ParticleSystemClass::vt_02_(void *this, int a2, _DWORD *a3)
 
 // 0x4E9ED0
 namespace gamemd {
-void ParticleSystemClass__vt_03_()
+void ParticleSystemClass::vt_03_()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ParticleSystemClass::vt_03_(int this)
@@ -2323,92 +2316,81 @@ void __thiscall ParticleSystemClass::vt_03_(int this)
 
 // 0x4E9F00
 namespace gamemd {
-int ParticleSystemClass__vt_04_(unsigned int * a2)
+int ParticleSystemClass::vt_04_(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ParticleSystemClass::vt_04_(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->vtable3 ) /*0x4e9f00*/
-    return 0; /*0x4e9f08*/
-  v3 = this->vtable2; /*0x4e9f0e*/
-  result = 0; /*0x4e9f11*/
-  if ( v3 <= 0 ) /*0x4e9f15*/
-    return -1; /*0x4e9f2c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x4e9f1b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->vtable3 )
+    return 0;
+    v3 = this->vtable2;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x4e9f2a*/
-      return -1; /*0x4e9f2a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x4e9f0a*/
+    return result;
 }
 }
 } // namespace gamemd
 
 // 0x4E9F40
 namespace gamemd {
-unsigned int ParticleSystemClass__vt_05_(int a2)
+unsigned int ParticleSystemClass::vt_05_(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall ParticleSystemClass::vt_05_(int this, int a2)
 {
-  if ( (unsigned char)this->vtable3 ) /*0x4e9f40*/
-    return (unsigned int)(a2 - this->vtable1) >> 2; /*0x4e9f55*/
-  else
-    return 0; /*0x4e9f47*/
+    if ( (unsigned char)this->vtable3 )
+    return (unsigned int)(a2 - this->vtable1) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
 
 // 0x4EF4E0
 namespace gamemd {
-VectorClass * HouseClass__vt_00_(char a2)
+VectorClass * HouseClass::vt_00_(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall HouseClass::vt_00_(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x4ef4e3*/
-  *this = &vt_VectorClass_TagClass; /*0x4ef4e6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x4ef4f0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_TagClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x4ef4f8*/
-    *(this + 1) = 0; /*0x4ef500*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x4ef50b*/
-  *(this + 2) = 0; /*0x4ef511*/
-  if ( (a2 & 1) != 0 ) /*0x4ef518*/
-    __3_YAXPAX_Z(this); /*0x4ef51b*/
-  return (VectorClass *)this; /*0x4ef525*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
 
 // 0x4EF800
 namespace gamemd {
-VectorClass * ParticleSystemClass__vt_00_(char a2)
+VectorClass * ParticleSystemClass::vt_00_(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall ParticleSystemClass::vt_00_(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x4ef803*/
-  *this = &vt_VectorClass_ParticleClass; /*0x4ef806*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x4ef810*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_ParticleClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x4ef818*/
-    *(this + 1) = 0; /*0x4ef820*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x4ef82b*/
-  *(this + 2) = 0; /*0x4ef831*/
-  if ( (a2 & 1) != 0 ) /*0x4ef838*/
-    __3_YAXPAX_Z(this); /*0x4ef83b*/
-  return (VectorClass *)this; /*0x4ef845*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd

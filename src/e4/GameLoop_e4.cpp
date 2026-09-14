@@ -4,13 +4,12 @@
 
 // 0x77D710
 namespace gamemd {
-int GameLoop_Thunk()
+int GameLoop::Thunk()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-char __thiscall GameLoop::Thunk(CreateGameDialogControl *this)
+// 0x77d710
+    char __thiscall GameLoop::Thunk(CreateGameDialogControl *(void**)this)
 {
-  return Game::ProcessIdle(this);
+    return Game::ProcessIdle(this);
 }
 }
 } // namespace gamemd

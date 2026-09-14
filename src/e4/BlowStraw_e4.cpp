@@ -29,13 +29,11 @@ TabClass * BlowStraw_29::Read(char a2)
 
 // 0x6D0260
 namespace gamemd {
-int BlowStraw_29_Stub()
+int BlowStraw_29_::Stub()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall BlowStraw_29_::Stub(int *this)
+    int __thiscall BlowStraw_29_::Stub(int *(void**)this)
 {
-  return ObjectClass::processDamage(this);
+    return ObjectClass::processDamage(this);
 }
 }
 } // namespace gamemd

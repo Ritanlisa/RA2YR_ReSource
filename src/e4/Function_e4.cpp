@@ -4,7 +4,7 @@
 
 // 0x643E80
 namespace gamemd {
-int Function_643E80()
+int Function::643E80(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Function::643E80(_DWORD *this, int a2)
@@ -17,12 +17,10 @@ int __thiscall Function::643E80(_DWORD *this, int a2)
 
 // 0x645D00
 namespace gamemd {
-int Function_645D00()
+int Function::645D00(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall Function::645D00(char *this, int a2)
 {
-  return this + 4 * a2; /*0x645d07*/
+    return this + 4 * a2;
 }
 }
 } // namespace gamemd

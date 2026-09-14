@@ -835,7 +835,7 @@ LABEL_36:
 
 // 0x4DE620
 namespace gamemd {
-int ObjectClass_IsHeightAboveThreshold_0()
+int ObjectClass::IsHeightAboveThreshold_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
@@ -848,26 +848,24 @@ int __thiscall ObjectClass::IsHeightAboveThreshold_0(#374 *this)
 
 // 0x4E14A0
 namespace gamemd {
-int ObjectClass_InputThunkA()
+int ObjectClass::InputThunkA()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall ObjectClass::InputThunkA(_DWORD *this)
+// 0x4e14a0
+    int __thiscall ObjectClass::InputThunkA(int *(void**)this)
 {
-  return ObjectClass::GetWidth(this);
+    return ObjectClass::GetWidth(this);
 }
 }
 } // namespace gamemd
 
 // 0x4E14B0
 namespace gamemd {
-int ObjectClass_InputThunkB()
+int ObjectClass::InputThunkB()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-int __thiscall ObjectClass::InputThunkB(_DWORD *this)
+// 0x4e14b0
+    int __thiscall ObjectClass::InputThunkB(int *(void**)this)
 {
-  return ObjectClass::GetHeight(this);
+    return ObjectClass::GetHeight(this);
 }
 }
 } // namespace gamemd
@@ -996,7 +994,7 @@ LABEL_16:
 
 // 0x5228B0
 namespace gamemd {
-int ObjectClass_GetTypeVt40_0()
+int ObjectClass::GetTypeVt40_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
@@ -1009,7 +1007,7 @@ int __thiscall ObjectClass::GetTypeVt40_0(#377 *this)
 
 // 0x5228C0
 namespace gamemd {
-int ObjectClass_GetTypeVt41_0()
+int ObjectClass::GetTypeVt41_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
@@ -2354,7 +2352,7 @@ int __thiscall ObjectClass::setTarget(TextLabelClass *this, int a2)
 
 // 0x746CB0
 namespace gamemd {
-int ObjectClass_GetTypeVt40_2()
+int ObjectClass::GetTypeVt40_2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
@@ -2367,7 +2365,7 @@ int __thiscall ObjectClass::GetTypeVt40_2(#377 *this)
 
 // 0x746CC0
 namespace gamemd {
-int ObjectClass_GetTypeVt41_2()
+int ObjectClass::GetTypeVt41_2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
@@ -2407,13 +2405,12 @@ int __thiscall sub_74CD60(_WORD *this)
 
 // 0x77D200
 namespace gamemd {
-int ObjectClass_j_Game_ProcessIdle()
+int ObjectClass::j_Game_ProcessIdle()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-char __thiscall ObjectClass::j_Game_ProcessIdle(SimpleWonlineDialogControl *this)
+// 0x77d200
+    char __thiscall ObjectClass::j_Game_ProcessIdle(SimpleWonlineDialogControl *(void**)this)
 {
-  return Game::ProcessIdle((CreateGameDialogControl *)this);
+    return Game::ProcessIdle((CreateGameDialogControl *)this);
 }
 }
 } // namespace gamemd

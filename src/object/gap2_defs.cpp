@@ -972,30 +972,24 @@ int __thiscall ObjectClass_CleanupAudioAndRefs(int this)
 }
 } } }
 // 0x439080
-namespace ra2 { namespace game { int TechnoClass::checkRange(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TechnoClass::checkRange(_DWORD *this, TechnoClass *aP1)
+namespace ra2 { namespace game { int TechnoClass::checkRange(TechnoClass * aP1) {
 {
-  HashTable *v2; // eax
-  _DWORD *v3; // esi
-  int v4; // ecx
-  int v5; // eax
-  int v6; // edx
-
-  v2 = (HashTable *)*(this + 10); /*0x439080*/
-  v3 = this + 6; /*0x439084*/
-  v4 = *(this + 8); /*0x439087*/
-  if ( (int)v2 < v4 /*0x4390ae*/
-    || ((LOBYTE(v5) = *((_BYTE *)v3 + 13), (_BYTE)v5) || !v4)
-    && (v5 = v3[5], v5 > 0)
-    && (LOBYTE(v5) = (*(int (__thiscall **)(_DWORD *, int, _DWORD))(*v3 + 8))(v3, v4 + v5, 0), (_BYTE)v5) )
+    HashTable *v2;
+    int *v3;
+    int v4;
+    int v5;
+    int v6;
+    v2 = (HashTable *)this->owningHouseIndex;
+    v3 = this + 6;
+    v4 = this->needsSave;
+    if ( (int)v2 < v4 || ((LOBYTE(v5) = *((char *)(v3) + 13), (char)v5) || !v4) && (v5 = v3[5], v5 > 0) && (LOBYTE(v5) = (*(int (__thiscall **)(int *, int, int))(*v3 + 8))(v3, v4 + v5, 0), (char)v5) )
   {
-    v5 = v3[4]; /*0x4390b0*/
-    v6 = v3[1]; /*0x4390b3*/
-    v3[4] = v5 + 1; /*0x4390b9*/
-    *(_DWORD *)(v6 + 4 * v5) = aP1; /*0x4390c0*/
+    v5 = v3[4];
+    v6 = v3[1];
+    v3[4] = v5 + 1;
+    *(int *)(v6 + 4 * v5) = aP1;
   }
-  return v5; /*0x4390c3*/
+    return v5;
 }
 } } }
 // 0x439150
@@ -3033,26 +3027,23 @@ char __thiscall VectorClass_ptr_InfantryClass::_vt02(void *this, int a2, _DWORD 
 }
 } } }
 // 0x45A500
-namespace ra2 { namespace game { int FootClass::GetSize(void* a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VectorClass_ptr_InfantryClass::_vt04(int this, _DWORD *a2)
+namespace ra2 { namespace game { int FootClass::GetSize(int * a2) {
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !*(_BYTE *)(this + 12) ) /*0x45a500*/
-    return 0; /*0x45a508*/
-  v3 = *(_DWORD *)(this + 8); /*0x45a50e*/
-  result = 0; /*0x45a511*/
-  if ( v3 <= 0 ) /*0x45a515*/
-    return -1; /*0x45a52c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x45a51b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !this->vfptr_3 )
+    return 0;
+    v3 = this->vfptr_2;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x45a52a*/
-      return -1; /*0x45a52a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x45a50a*/
+    return result;
 }
 } } }
 // 0x45AA60
@@ -3648,14 +3639,12 @@ namespace ra2 { namespace game { void AbstractClass::processScriptEvent() {
 }
 } } }
 // 0x4CA8C0
-namespace ra2 { namespace game { int AbstractClass::checkScriptCondition(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall AbstractClass::sub_4CA8C0(int this, int a2)
+namespace ra2 { namespace game { int AbstractClass::checkScriptCondition(int a2) {
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4ca8c0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4ca8d5*/
-  else
-    return 0; /*0x4ca8c7*/
+    if ( this->vtable3 )
+    return (unsigned int)(a2 - this->vtable1) >> 2;
+    else
+    return 0;
 }
 } } }
 // 0x4CAA70

@@ -120,10 +120,8 @@ int __thiscall StreamClass::Set(_DWORD *this, IUnknown *aP1)
 // 0x55A930
 char StreamClass::GetDirty(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall StreamClass_GetDirty(int a1)
 {
-  return *(_BYTE *)(a1 + 12); /*0x55a937*/
+    return *(char *)(a1 + 12);
 }
 }
 

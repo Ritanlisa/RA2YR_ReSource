@@ -88,7 +88,7 @@ namespace gamemd { int HouseClass::SaveTriggerNodeData(void* a1, void* a2) {
 }
 } }
 // 0x42F180
-namespace gamemd { int BaseClass::ProcessPowerTimer(void* a1) {
+namespace gamemd { int BaseClass::ProcessPowerTimer(AbstractClass * aP1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BaseClass::ProcessPowerTimer(int *this, AbstractClass *aP1)
 {
@@ -186,37 +186,34 @@ namespace gamemd { int BaseClass::Seek(int a1, int a2) {
 }
 } }
 // 0x42F490
-namespace gamemd { int BaseClass::AddRef(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BaseClass::_vt01(int *this, int a2)
+namespace gamemd { int BaseClass::AddRef(int a2) {
 {
-  int v2; // edi
-  int v3; // esi
-  int v4; // edx
-  int v5; // eax
-  _WORD *v6; // ecx
-  int v7; // edx
-
-  v2 = *(this + 2); /*0x42f49b*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x42f4a0*/
+    int v2;
+    int v3;
+    int v4;
+    int v5;
+    short *v6;
+    int v7;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x42f4a2*/
-    if ( v2 <= 0 ) /*0x42f4a6*/
-      return 1; /*0x42f4e0*/
-    v4 = *(_DWORD *)(a2 + 4); /*0x42f4a8*/
-    v5 = *(this + 1); /*0x42f4ab*/
-    v6 = (_WORD *)(v4 + 4); /*0x42f4ae*/
-    v7 = v4 - v5; /*0x42f4b1*/
-    while ( *(_DWORD *)v5 == *(_DWORD *)(v7 + v5) && *(_WORD *)(v5 + 4) == *v6 && *(_WORD *)(v5 + 6) == v6[1] ) /*0x42f4cd*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = *(int *)(a2 + 4);
+    v5 = this->Items;
+    v6 = (short *)(v4 + 4);
+    v7 = v4 - v5;
+    while ( *(int *)v5 == *(int *)(v7 + v5) && *(short *)(v5 + 4) == *v6 && *(short *)(v5 + 6) == v6[1] )
     {
-      ++v3; /*0x42f4cf*/
-      v6 += 8; /*0x42f4d0*/
-      v5 += 16; /*0x42f4d3*/
-      if ( v3 >= v2 ) /*0x42f4d8*/
-        return 1; /*0x42f4d8*/
+    ++v3;
+    v6 += 8;
+    v5 += 16;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x42f4da*/
+    return 0;
 }
 } }
 // 0x42F4F0
@@ -298,28 +295,23 @@ char __thiscall BaseClass::_vt02(void *this, int a2, char *a3)
 }
 } }
 // 0x42F5E0
-namespace gamemd { int BaseClass::Read(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BaseClass::_vt04(int *this, int a2)
+namespace gamemd { int BaseClass::Read(int a2) {
 {
-  int v2; // edx
-  int result; // eax
-  int i; // ecx
-
-  v2 = *(this + 4); /*0x42f5e0*/
-  result = 0; /*0x42f5e4*/
-  if ( v2 <= 0 ) /*0x42f5ea*/
-    return -1; /*0x42f615*/
-  for ( i = *(this + 1); /*0x42f5f0*/
-        *(_DWORD *)i != *(_DWORD *)a2
-     || *(_WORD *)(i + 4) != *(_WORD *)(a2 + 4)
-     || *(_WORD *)(i + 6) != *(_WORD *)(a2 + 6);
-        i += 16 )
-  {
-    if ( ++result >= v2 ) /*0x42f613*/
-      return -1; /*0x42f613*/
+    int v2;
+    int result;
+    int i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = this->Items;
+    *(int *)i != *(int *)a2 || *(short *)(i + 4) != *(short *)(a2 + 4)
+    || *(short *)(i + 6) != *(short *)(a2 + 6);
+    i += 16 ) {
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x42f618*/
+    return result;
 }
 } }
 // 0x42F970

@@ -72,14 +72,12 @@ namespace gamemd { void EnumConnectionPointsClass::ClearBuffer() {
 }
 } }
 // 0x4A0F50
-namespace gamemd { int EnumConnectionPointsClass::PointerToIndex(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall EnumConnectionPointsClass::sub_4A0F50(int this, int a2)
+namespace gamemd { int EnumConnectionPointsClass::PointerToIndex(int a2) {
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x4a0f50*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4a0f65*/
-  else
-    return 0; /*0x4a0f57*/
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 } }
 // 0x4A13C0
@@ -127,7 +125,7 @@ namespace gamemd { int EnumConnectionPointsClass::SetCapacity(int a2, void* a3) 
 }
 } }
 // 0x4A1470
-namespace gamemd { int EnumConnectionPointsClass::FindItem(void* a1) {
+namespace gamemd { int EnumConnectionPointsClass::FindItem(int * a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall EnumConnectionPointsClass::sub_4A1470(int *this, _DWORD *a2)
 {
@@ -300,18 +298,15 @@ namespace gamemd { void* COMObject::SwapReference(int a2) {
 }
 } }
 // 0x53EDE0
-namespace gamemd { int Struct::Copy6Bytes(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall Struct::Copy6Bytes(char *this, IPXManagerClass *aP1)
+namespace gamemd { int Struct::Copy6Bytes(IPXManagerClass * aP1) {
 {
-  char *v2; // ecx
-  __int16 result; // ax
-
-  v2 = this + 4; /*0x53ede4*/
-  *(_DWORD *)v2 = aP1->Socket; /*0x53ede9*/
-  result = *(_WORD *)&aP1->Initialized; /*0x53edeb*/
-  *((_WORD *)v2 + 2) = result; /*0x53edef*/
-  return result; /*0x53edf3*/
+    char *v2;
+    short result;
+    v2 = this + 4;
+    *(int *)v2 = aP1->Socket;
+    result = *(short *)&aP1->Initialized;
+    *((short *)(v2) + 2) = result;
+    return result;
 }
 } }
 // 0x54A120
@@ -1024,7 +1019,7 @@ char __thiscall COMClass::sub_7659F0(_BYTE *this, int a2, _DWORD *a3)
 }
 } }
 // 0x765B10
-namespace gamemd { int COMClass::unregisterObject(int a1) {
+namespace gamemd { int COMClass::unregisterObject(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall COMClass::sub_765B10(int *this, int a2)
 {

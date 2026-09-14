@@ -112,13 +112,12 @@ double __thiscall TechnoTypeClass::GetThreatMultiplier(float *this, TechnoTypeCl
 
 // 0x5247C0
 namespace gamemd {
-int TechnoTypeClass_CanAttackMove_IgnoreWeapon_0()
+int TechnoTypeClass::CanAttackMove_IgnoreWeapon_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-bool __thiscall TechnoTypeClass::CanAttackMove_IgnoreWeapon_0(int this)
+// 0x5247c0
+    bool __thiscall TechnoTypeClass::CanAttackMove_IgnoreWeapon_0(int this)
 {
-  return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
+    return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
 }
 }
 } // namespace gamemd
@@ -1655,13 +1654,12 @@ char TechnoTypeClass::RemoveItem(int a2)
 
 // 0x7473D0
 namespace gamemd {
-int TechnoTypeClass_CanAttackMove_IgnoreWeapon_0_0()
+int TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-bool __thiscall TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0(int this)
+// 0x7473d0
+    bool __thiscall TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0(int this)
 {
-  return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
+    return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
 }
 }
 } // namespace gamemd

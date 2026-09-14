@@ -111,13 +111,11 @@ LABEL_7:
 
 // 0x5247B0
 namespace gamemd {
-int InfantryTypeClass_j__do_always_noconv_codecvt_base_std__MBE_NXZ_19()
+int InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-bool __thiscall InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19(std::codecvt_base *this)
+    bool __thiscall InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19(std::codecvt_base *(void**)this)
 {
-  return AbstractClass::processWeaponFire(this);
+    return AbstractClass::processWeaponFire(this);
 }
 }
 } // namespace gamemd

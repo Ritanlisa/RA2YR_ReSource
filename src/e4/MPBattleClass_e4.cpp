@@ -56,13 +56,12 @@ _DWORD *__thiscall MPBattleClass::MPFreeForAllClass(
 
 // 0x5CA7D0
 namespace gamemd {
-int MPBattleClass_vt_entry_18()
+int MPBattleClass::vt_entry_18()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// attributes: thunk
-bool __thiscall MPBattleClass::vt_entry_18(std::codecvt_base *this)
+// 0x5ca7d0
+    bool __thiscall MPBattleClass::vt_entry_18(std::codecvt_base *(void**)this)
 {
-  return ScenarioClass::createStartingForces(this);
+    return ScenarioClass::createStartingForces(this);
 }
 }
 } // namespace gamemd

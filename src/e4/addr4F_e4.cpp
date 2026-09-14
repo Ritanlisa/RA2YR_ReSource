@@ -1142,7 +1142,7 @@ int __thiscall sub_4F3460(
 
 // 0x4F38B0
 namespace gamemd {
-int sub_4F38B0()
+int E4Recv_4F3AB0::sub_4F3AB0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)

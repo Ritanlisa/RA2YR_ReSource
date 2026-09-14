@@ -24,7 +24,7 @@ void __thiscall sub_470C30(CampaignEndScoreClass *this)
 
 // 0x472A80
 namespace gamemd {
-void CaptureManagerClass__vt_03_()
+void CaptureManagerClass::vt_03_()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall CaptureManagerClass::vt_03_(int this)
@@ -46,7 +46,7 @@ void __thiscall CaptureManagerClass::vt_03_(int this)
 
 // 0x472AD0
 namespace gamemd {
-int CaptureManagerClass__vt_06_(int a2)
+int CaptureManagerClass::vt_06_(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CaptureManagerClass::vt_06_(_DWORD *this, int a2)
