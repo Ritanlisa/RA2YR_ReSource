@@ -54,18 +54,6 @@ _DWORD *__thiscall MPBattleClass::MPFreeForAllClass(
 }
 }
 
-// 0x5CA7D0
-namespace gamemd {
-int MPBattleClass::vt_entry_18()
-{
-// 0x5ca7d0
-    bool __thiscall MPBattleClass::vt_entry_18(std::codecvt_base *(void**)this)
-{
-    return ScenarioClass::createStartingForces(this);
-}
-}
-} // namespace gamemd
-
 // 0x5C6150
 unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerManBattle * aP2, const char ** a3, MultiplayerManBattle * aP4, char aP5, MultiplayerManBattle * aP6)
 {
@@ -95,6 +83,18 @@ unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege
     return this;
 }
 }
+
+// 0x5CA7D0
+namespace gamemd {
+int MPBattleClass::vt_entry_18()
+{
+// 0x5ca7d0
+    bool __thiscall MPBattleClass::vt_entry_18(std::codecvt_base *(void**)this)
+{
+    return ScenarioClass::createStartingForces(this);
+}
+}
+} // namespace gamemd
 
 // 0x5CACF0
 long long MPBattleClass::isValidMap()

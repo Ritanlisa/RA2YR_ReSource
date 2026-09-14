@@ -2,35 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x41C500
-char BuildingTypeClass::Enqueue(int a2)
-{
-{
-    char *v3;
-    int i;
-    int v5;
-    int *v6;
-    int v7;
-    if ( a2 < 0 )
-    return 0;
-    v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->vtable2));
-    if ( !v3 )
-    return 0;
-    for ( i = 0; i < this->vtable1; *(int *)&v3[v5 + 4] = v6[1] )
-  {
-    v5 = 8 * i;
-    v6 = (int *)(*(int *)(this) + 8 * i++);
-    *(int *)&v3[v5] = *v6;
-  }
-    __3_YAXPAX_Z(*(void **)this);
-    v7 = a2 + this->vtable2;
-    *(int *)this = v3;
-    this->vtable2 = v7;
-    this->uniqueId = 0;
-    return 1;
-}
-}
-
 // 0x45DD90
 int BuildingTypeClass::ConstructFull(char * Source)
 {
@@ -615,51 +586,6 @@ void BuildingTypeClass::LoadRepairAnimations(#376 *this)
       }
     }
   }
-}
-}
-
-// 0x45ECE0
-int BuildingTypeClass::GetMaxPips()
-{
-{
-    int result;
-    int v2;
-    int v3;
-    result = 60 * DataGlobal_8192B8[this->Foundation] / 8;
-    if ( this->PipScale == 2 )
-  {
-    if ( this->Weeder )
-    {
-    v2 = g_RulesClass_Instance[1].?[1];
-    if ( v2 >= 0 )
-      {
-    if ( v2 <= result )
-    return g_RulesClass_Instance[1].?[1];
-      }
-    else
-      {
-    return 0;
-      }
-    }
-    else
-    {
-    v3 = this->Storage;
-    if ( v3 >= 0 )
-      {
-    if ( v3 <= result )
-    return v3;
-      }
-    else
-      {
-    return 0;
-      }
-    }
-  }
-    else if ( this->PipScale != 4 )
-  {
-    return ObjectClass::GetModeSpecificValue((int *)this);
-  }
-    return result;
 }
 }
 
@@ -2233,6 +2159,35 @@ LABEL_6:
 }
 }
 
+// 0x41C500
+char BuildingTypeClass::Enqueue(int a2)
+{
+{
+    char *v3;
+    int i;
+    int v5;
+    int *v6;
+    int v7;
+    if ( a2 < 0 )
+    return 0;
+    v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->vtable2));
+    if ( !v3 )
+    return 0;
+    for ( i = 0; i < this->vtable1; *(int *)&v3[v5 + 4] = v6[1] )
+  {
+    v5 = 8 * i;
+    v6 = (int *)(*(int *)(this) + 8 * i++);
+    *(int *)&v3[v5] = *v6;
+  }
+    __3_YAXPAX_Z(*(void **)this);
+    v7 = a2 + this->vtable2;
+    *(int *)this = v3;
+    this->vtable2 = v7;
+    this->uniqueId = 0;
+    return 1;
+}
+}
+
 // 0x41C590
 size_t BuildingTypeClass::Dequeue(BuildingClass * aP1)
 {
@@ -2294,6 +2249,51 @@ int BuildingTypeClass::FindIndexByName()
     return -1;
   }
     return v2;
+}
+}
+
+// 0x45ECE0
+int BuildingTypeClass::GetMaxPips()
+{
+{
+    int result;
+    int v2;
+    int v3;
+    result = 60 * DataGlobal_8192B8[this->Foundation] / 8;
+    if ( this->PipScale == 2 )
+  {
+    if ( this->Weeder )
+    {
+    v2 = g_RulesClass_Instance[1].?[1];
+    if ( v2 >= 0 )
+      {
+    if ( v2 <= result )
+    return g_RulesClass_Instance[1].?[1];
+      }
+    else
+      {
+    return 0;
+      }
+    }
+    else
+    {
+    v3 = this->Storage;
+    if ( v3 >= 0 )
+      {
+    if ( v3 <= result )
+    return v3;
+      }
+    else
+      {
+    return 0;
+      }
+    }
+  }
+    else if ( this->PipScale != 4 )
+  {
+    return ObjectClass::GetModeSpecificValue((int *)this);
+  }
+    return result;
 }
 }
 

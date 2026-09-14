@@ -16,62 +16,6 @@
 #include "e4/classes/E4Recv_54EBF0_e4.hpp"
 #include "e4/classes/E4Recv_54F6D0_e4.hpp"
 
-// 0x5408F0
-namespace gamemd {
-char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short a7)
-{
-{
-    int *v8;
-    int *v9;
-    short v10;
-    *(int *)this = &vt_IPXManagerClass;
-    if ( g_NetworkInterface )
-  {
-    (**(void (__thiscall ***)(int, int))g_NetworkInterface)(g_NetworkInterface, 1);
-    g_NetworkInterface = 0;
-  }
-    v8 = __2_YAPAXI_Z(0x3F310u);
-    if ( v8 )
-    v9 = IPXInterfaceClass::Construct(v8);
-    else
-    v9 = 0;
-    g_NetworkInterface = (int)v9;
-    if ( WinsockInterface::Init(v9) )
-    this->M4 = 1;
-    else
-    this->M4 = 0;
-    if ( g_NetworkInterface )
-    (**(void (__thiscall ***)(int, int))g_NetworkInterface)(g_NetworkInterface, 1);
-    g_NetworkInterface = 0;
-    this->M8 = a2;
-    this->M12 = a4;
-    this->M24 = a2;
-    this->M20 = a5;
-    this->M28 = a5;
-    this->M32 = a7;
-    LOBYTE(v10) = HIBYTE(a6);
-    HIBYTE(v10) = a6;
-    this->M34 = v10;
-    this->M5 = 0;
-    this->M16 = a3;
-    this->M36 = 0;
-    this->M68 = 0;
-    this->M84 = 0;
-    memset(this + 40, 0, 0x1Cu);
-    this->M72 = 0;
-    this->M168 = -1;
-    this->M92 = -1;
-    this->M76 = 0;
-    this->M80 = 0;
-    this->M160 = 0;
-    this->M164 = 0;
-    this->M88 = 2;
-    this->M96 = 60;
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x540C50
 namespace gamemd {
 int E4Recv_540C50::sub_540C50()
@@ -1066,39 +1010,6 @@ int __thiscall UpdateFootMovement(int this)
 }
 } // namespace gamemd
 
-// 0x54E690
-namespace gamemd {
-void E4Recv_54E690::sub_54E690()
-{
-{
-    int i;
-    int v3;
-    int *v4;
-    int *v5;
-    int v6;
-    void *v7;
-    i = this->M28 - 1;
-    for ( ; i >= 0; --i )
-    __3_YAXPAX_Z(*(void **)(this->M16 + 4 * i));
-    v3 = this->M12;
-    v4 = this + 3;
-    v5 = this + 3;
-    v6 = this->M20;
-    (*(void (__thiscall **)(int *))(v3 + 12))(v5);
-    (*(void (__thiscall **)(int *, int, int))(*v4 + 8))(v4, v6, 0);
-    v7 = (void *)v4[1];
-    *v4 = &vt_VectorClass_KamikazeControl;
-    if ( v7 && *((char *)(v4) + 13) )
-  {
-    __3_YAXPAX_Z(v7);
-    v4[1] = 0;
-  }
-    *((char *)(v4) + 13) = 0;
-    v4[2] = 0;
-}
-}
-} // namespace gamemd
-
 // 0x5406E0
 namespace gamemd {
 void sub_5406E0()
@@ -1257,6 +1168,62 @@ int sub_5408D0()
     DataGlobal_AA0640 = 0;
     DataGlobal_AA0644 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5408F0
+namespace gamemd {
+char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short a7)
+{
+{
+    int *v8;
+    int *v9;
+    short v10;
+    *(int *)this = &vt_IPXManagerClass;
+    if ( g_NetworkInterface )
+  {
+    (**(void (__thiscall ***)(int, int))g_NetworkInterface)(g_NetworkInterface, 1);
+    g_NetworkInterface = 0;
+  }
+    v8 = __2_YAPAXI_Z(0x3F310u);
+    if ( v8 )
+    v9 = IPXInterfaceClass::Construct(v8);
+    else
+    v9 = 0;
+    g_NetworkInterface = (int)v9;
+    if ( WinsockInterface::Init(v9) )
+    this->M4 = 1;
+    else
+    this->M4 = 0;
+    if ( g_NetworkInterface )
+    (**(void (__thiscall ***)(int, int))g_NetworkInterface)(g_NetworkInterface, 1);
+    g_NetworkInterface = 0;
+    this->M8 = a2;
+    this->M12 = a4;
+    this->M24 = a2;
+    this->M20 = a5;
+    this->M28 = a5;
+    this->M32 = a7;
+    LOBYTE(v10) = HIBYTE(a6);
+    HIBYTE(v10) = a6;
+    this->M34 = v10;
+    this->M5 = 0;
+    this->M16 = a3;
+    this->M36 = 0;
+    this->M68 = 0;
+    this->M84 = 0;
+    memset(this + 40, 0, 0x1Cu);
+    this->M72 = 0;
+    this->M168 = -1;
+    this->M92 = -1;
+    this->M76 = 0;
+    this->M80 = 0;
+    this->M160 = 0;
+    this->M164 = 0;
+    this->M88 = 2;
+    this->M96 = 60;
+    return this;
 }
 }
 } // namespace gamemd
@@ -2269,6 +2236,39 @@ unsigned int * E4Recv_54E360::sub_54E360()
     this->M4 = v2;
     this->M8 = 100;
     return this;
+}
+}
+} // namespace gamemd
+
+// 0x54E690
+namespace gamemd {
+void E4Recv_54E690::sub_54E690()
+{
+{
+    int i;
+    int v3;
+    int *v4;
+    int *v5;
+    int v6;
+    void *v7;
+    i = this->M28 - 1;
+    for ( ; i >= 0; --i )
+    __3_YAXPAX_Z(*(void **)(this->M16 + 4 * i));
+    v3 = this->M12;
+    v4 = this + 3;
+    v5 = this + 3;
+    v6 = this->M20;
+    (*(void (__thiscall **)(int *))(v3 + 12))(v5);
+    (*(void (__thiscall **)(int *, int, int))(*v4 + 8))(v4, v6, 0);
+    v7 = (void *)v4[1];
+    *v4 = &vt_VectorClass_KamikazeControl;
+    if ( v7 && *((char *)(v4) + 13) )
+  {
+    __3_YAXPAX_Z(v7);
+    v4[1] = 0;
+  }
+    *((char *)(v4) + 13) = 0;
+    v4[2] = 0;
 }
 }
 } // namespace gamemd

@@ -1,6 +1,29 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_632000_e4.hpp"
+#include "e4/classes/E4Recv_632030_e4.hpp"
+#include "e4/classes/E4Recv_67BFA0_e4.hpp"
+#include "e4/classes/E4Recv_6AC840_e4.hpp"
+#include "e4/classes/E4Recv_6AC8D0_e4.hpp"
+#include "e4/classes/E4Recv_6B2520_e4.hpp"
+#include "e4/classes/E4Recv_6E7330_e4.hpp"
+#include "e4/classes/E4Recv_74E8A0_e4.hpp"
+#include "e4/classes/E4Recv_751520_e4.hpp"
+#include "e4/classes/E4Recv_7515C0_e4.hpp"
+#include "e4/classes/E4Recv_7668F0_e4.hpp"
+#include "e4/classes/E4Recv_766900_e4.hpp"
+#include "e4/classes/E4Recv_766910_e4.hpp"
+#include "e4/classes/E4Recv_766EE0_e4.hpp"
+#include "e4/classes/E4Recv_766F70_e4.hpp"
+#include "e4/classes/E4Recv_770430_e4.hpp"
+#include "e4/classes/E4Recv_776880_e4.hpp"
+#include "e4/classes/E4Recv_7768A0_e4.hpp"
+#include "e4/classes/E4Recv_7A2FC0_e4.hpp"
+#include "e4/classes/E4Recv_7A41A0_e4.hpp"
+#include "e4/classes/E4Recv_7AC670_e4.hpp"
+#include "e4/classes/E4Recv_7AC680_e4.hpp"
+#include "e4/classes/E4Recv_7AD410_e4.hpp"
 
 // 0x52A9E0
 namespace gamemd {
@@ -91,22 +114,6 @@ LABEL_7:
     goto LABEL_7; /*0x52b77e*/
   }
   return (int)&aP0->__pad_0[8 * (v3 / 2)]; /*0x52b784*/
-}
-}
-} // namespace gamemd
-
-// 0x5BDB90
-namespace gamemd {
-int sub_5BDB90(int a1, char a2)
-{
-{
-    int result;
-    if ( !a2 )
-    return MouseClass_Cursors[7 * a1];
-    result = DataGlobal_82D034[7 * a1];
-    if ( result == -1 )
-    return MouseClass_Cursors[7 * a1];
-    return result;
 }
 }
 } // namespace gamemd
@@ -418,6 +425,22 @@ LABEL_6:
     if ( ++v6 >= *(int *)stru_B05488.__pad_58 ) /*0x68ca13*/
       goto LABEL_6; /*0x68ca13*/
   }
+}
+}
+} // namespace gamemd
+
+// 0x5BDB90
+namespace gamemd {
+int sub_5BDB90(int a1, char a2)
+{
+{
+    int result;
+    if ( !a2 )
+    return MouseClass_Cursors[7 * a1];
+    result = DataGlobal_82D034[7 * a1];
+    if ( result == -1 )
+    return MouseClass_Cursors[7 * a1];
+    return result;
 }
 }
 } // namespace gamemd

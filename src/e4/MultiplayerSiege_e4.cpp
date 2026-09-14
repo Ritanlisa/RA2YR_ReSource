@@ -202,18 +202,6 @@ LABEL_26:
 }
 }
 
-// 0x5CABD0
-MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
-{
-{
-    *(void**)this = &vt_MultiplayerSiege;
-    MultiplayerGameMode::Dtor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (MultiplayerSiege *)this;
-}
-}
-
 // 0x5CA7E0
 char MultiplayerSiege::StubReturnFalse()
 {
@@ -337,5 +325,17 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
     return 1;
     (*(void (__thiscall **)(int *, int))(*v8 + 32))(v8, 1);
     return 0;
+}
+}
+
+// 0x5CABD0
+MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
+{
+{
+    *(void**)this = &vt_MultiplayerSiege;
+    MultiplayerGameMode::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (MultiplayerSiege *)this;
 }
 }

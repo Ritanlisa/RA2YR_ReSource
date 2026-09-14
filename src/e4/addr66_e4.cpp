@@ -1,10 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_660050_e4.hpp"
 #include "e4/classes/E4Recv_660AD0_e4.hpp"
 #include "e4/classes/E4Recv_660AE0_e4.hpp"
 #include "e4/classes/E4Recv_660AF0_e4.hpp"
 #include "e4/classes/E4Recv_6616B0_e4.hpp"
+#include "e4/classes/E4Recv_661770_e4.hpp"
 #include "e4/classes/E4Recv_661960_e4.hpp"
 #include "e4/classes/E4Recv_661A60_e4.hpp"
 #include "e4/classes/E4Recv_661B70_e4.hpp"
@@ -194,27 +196,6 @@ LABEL_6:
 }
 } // namespace gamemd
 
-// 0x662240
-namespace gamemd {
-double E4Recv_662240::sub_662240()
-{
-{
-    int v1;
-    int v2;
-    double v3;
-    int v5;
-    v1 = this->M24 - *(int *)(this->M12 + 156);
-    v2 = this->M28 - *(int *)(this->M12 + 160);
-    v5 = this->M32 - *(int *)(this->M12 + 164);
-    v3 = Math::Sqrt((double)(v2 * v2 + v1 * v1));
-    if ( v3 <= 0.0 )
-    return -1.570796326794897;
-    else
-    return Math::ArcTan((double)v5 / v3);
-}
-}
-} // namespace gamemd
-
 // 0x6622C0
 namespace gamemd {
 char UpdateBullets(int a1)
@@ -270,43 +251,6 @@ char UpdateBullets(int a1)
 //   double st7_69; // st7
 //   double... [29151 chars total]
 // end truncated pseudocode
-}
-} // namespace gamemd
-
-// 0x663960
-namespace gamemd {
-void E4Recv_663960::sub_663960()
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    void *v5;
-    while ( this->M16 )
-  {
-    __3_YAXPAX_Z(**((void ***)(this) + 1));
-    v2 = this->M16;
-    if ( v2 > 0 )
-    {
-    v3 = v2 - 1;
-    v4 = 0;
-    for ( this->M16 = v3;
-    v4 < this->M16;
-    *(int *)(this->M4 + 4 * v4 - 4) = *(int *)(this->M4 + 4 * v4) ) {
-    ++v4;
-      }
-    }
-  }
-    v5 = (void *)this->M4;
-    *(int *)this = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct;
-    if ( v5 && (unsigned char)this->M13 )
-  {
-    __3_YAXPAX_Z(v5);
-    this->M4 = 0;
-  }
-    this->M13 = 0;
-    this->M8 = 0;
-}
 }
 } // namespace gamemd
 
@@ -835,6 +779,27 @@ void E4Recv_661F30::sub_661F30()
 }
 } // namespace gamemd
 
+// 0x662240
+namespace gamemd {
+double E4Recv_662240::sub_662240()
+{
+{
+    int v1;
+    int v2;
+    double v3;
+    int v5;
+    v1 = this->M24 - *(int *)(this->M12 + 156);
+    v2 = this->M28 - *(int *)(this->M12 + 160);
+    v5 = this->M32 - *(int *)(this->M12 + 164);
+    v3 = Math::Sqrt((double)(v2 * v2 + v1 * v1));
+    if ( v3 <= 0.0 )
+    return -1.570796326794897;
+    else
+    return Math::ArcTan((double)v5 / v3);
+}
+}
+} // namespace gamemd
+
 // 0x6633C0
 namespace gamemd {
 void nullsub_224(int a1)
@@ -1082,6 +1047,43 @@ unsigned int * E4Recv_6638E0::sub_6638E0()
     this->M24 = 0;
     this->M28 = 0;
     return this;
+}
+}
+} // namespace gamemd
+
+// 0x663960
+namespace gamemd {
+void E4Recv_663960::sub_663960()
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    void *v5;
+    while ( this->M16 )
+  {
+    __3_YAXPAX_Z(**((void ***)(this) + 1));
+    v2 = this->M16;
+    if ( v2 > 0 )
+    {
+    v3 = v2 - 1;
+    v4 = 0;
+    for ( this->M16 = v3;
+    v4 < this->M16;
+    *(int *)(this->M4 + 4 * v4 - 4) = *(int *)(this->M4 + 4 * v4) ) {
+    ++v4;
+      }
+    }
+  }
+    v5 = (void *)this->M4;
+    *(int *)this = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct;
+    if ( v5 && (unsigned char)this->M13 )
+  {
+    __3_YAXPAX_Z(v5);
+    this->M4 = 0;
+  }
+    this->M13 = 0;
+    this->M8 = 0;
 }
 }
 } // namespace gamemd

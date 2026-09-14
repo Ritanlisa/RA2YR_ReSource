@@ -2,20 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x4754B0
-int OverlayTypeClass::ReadINIString(CCINIClass * aP1, unsigned char * a2, AnimTypeClass * aP3)
-{
-{
-    INIClass *v5;
-    INIClass Destination[2];
-    v5 = (INIClass *)sub_48DFD0((unsigned int)aP3);
-    if ( INIClass::GetString(this, (INIClass *)aP1, a2, v5, Destination, 128) )
-    return OverlayTypeClass::LookupByName(Destination);
-    else
-    return (int)aP3->__pad_0;
-}
-}
-
 // 0x5FE250
 unsigned int * OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
 {
@@ -269,33 +255,6 @@ char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 }
 }
 
-// 0x5FEA50
-int OverlayTypeClass::PowerDrainUpdate(int * a2)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    AbstractTypeClass::ProcessPower((char *)this, a2);
-    Power::TimerProcess(this->LandType);
-    Power::TimerProcess(this->CellAnim);
-    Power::TimerProcess(this->Strength);
-    Power::TimerProcess(this->Wall);
-    LOBYTE(v3) = this->NoUseTileLandType;
-    Power::FlagProcess(a2, v3);
-    LOBYTE(v4) = this->IsVeinholeMonster;
-    v5 = Power::FlagProcess(a2, v4);
-    LOBYTE(v5) = this->IsVeins;
-    Power::FlagProcess(a2, v5);
-    LOBYTE(v6) = this->ImageLoaded;
-    Power::FlagProcess(a2, v6);
-    LOBYTE(v7) = this->IsRubble;
-    return Power::FlagProcess(a2, v7);
-}
-}
-
 // 0x5FEAF0
 int OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
@@ -486,6 +445,20 @@ _DWORD *__thiscall OverlayTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
 }
 }
 
+// 0x4754B0
+int OverlayTypeClass::ReadINIString(CCINIClass * aP1, unsigned char * a2, AnimTypeClass * aP3)
+{
+{
+    INIClass *v5;
+    INIClass Destination[2];
+    v5 = (INIClass *)sub_48DFD0((unsigned int)aP3);
+    if ( INIClass::GetString(this, (INIClass *)aP1, a2, v5, Destination, 128) )
+    return OverlayTypeClass::LookupByName(Destination);
+    else
+    return (int)aP3->__pad_0;
+}
+}
+
 // 0x48DF80
 int OverlayTypeClass::LookupByName()
 {
@@ -568,6 +541,33 @@ unsigned int * OverlayTypeClass::vt_entry_6C(unsigned int * a0, OverlayTypeClass
     *((int*)(a0) + 1) = *(int *)&aP1->__pad_0[4];
     *((int*)(a0) + 2) = *(int *)&aP1->__pad_0[8];
     return a0;
+}
+}
+
+// 0x5FEA50
+int OverlayTypeClass::PowerDrainUpdate(int * a2)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    AbstractTypeClass::ProcessPower((char *)this, a2);
+    Power::TimerProcess(this->LandType);
+    Power::TimerProcess(this->CellAnim);
+    Power::TimerProcess(this->Strength);
+    Power::TimerProcess(this->Wall);
+    LOBYTE(v3) = this->NoUseTileLandType;
+    Power::FlagProcess(a2, v3);
+    LOBYTE(v4) = this->IsVeinholeMonster;
+    v5 = Power::FlagProcess(a2, v4);
+    LOBYTE(v5) = this->IsVeins;
+    Power::FlagProcess(a2, v5);
+    LOBYTE(v6) = this->ImageLoaded;
+    Power::FlagProcess(a2, v6);
+    LOBYTE(v7) = this->IsRubble;
+    return Power::FlagProcess(a2, v7);
 }
 }
 

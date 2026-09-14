@@ -2,6 +2,55 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/E4Recv_68C260_e4.hpp"
+
+// 0x5AC430
+namespace gamemd {
+unsigned int * DynamicVector::Copy(VectorClass * aP1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall DynamicVector::Copy(_DWORD *this, VectorClass *aP1)
+{
+  int v3; // eax
+  int v4; // eax
+  int v5; // ecx
+  int v6; // eax
+
+  if ( this == (_DWORD *)aP1 ) /*0x5ac43a*/
+    goto LABEL_8; /*0x5ac43a*/
+  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x5ac43e*/
+  v3 = aP1->Capacity; /*0x5ac441*/
+  *(this + 2) = v3; /*0x5ac446*/
+  if ( !v3 ) /*0x5ac449*/
+  {
+    *(this + 1) = 0; /*0x5ac496*/
+    *((_BYTE *)this + 13) = 0; /*0x5ac49d*/
+LABEL_8:
+    *(this + 4) = aP1[1].vtable0; /*0x5ac4a1*/
+    *(this + 5) = aP1[1].Items; /*0x5ac4aa*/
+    return this; /*0x5ac4ad*/
+  }
+  v4 = __2_YAPAXI_Z(4 * v3); /*0x5ac453*/
+  *(this + 1) = v4; /*0x5ac45b*/
+  if ( !v4 ) /*0x5ac460*/
+    goto LABEL_8; /*0x5ac460*/
+  v5 = *(this + 2); /*0x5ac462*/
+  v6 = 0; /*0x5ac465*/
+  *((_BYTE *)this + 13) = 1; /*0x5ac469*/
+  if ( v5 <= 0 ) /*0x5ac46d*/
+    goto LABEL_8; /*0x5ac46d*/
+  do /*0x5ac481*/
+  {
+    *(_DWORD *)(*(this + 1) + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x5ac478*/
+    ++v6; /*0x5ac47e*/
+  }
+  while ( v6 < *(this + 2) ); /*0x5ac481*/
+  *(this + 4) = aP1[1].vtable0; /*0x5ac486*/
+  *(this + 5) = aP1[1].Items; /*0x5ac48c*/
+  return this; /*0x5ac491*/
+}
+}
+} // namespace gamemd
 
 // 0x413A70
 namespace gamemd {
@@ -190,54 +239,6 @@ char DynamicVector::Add_Alt2(DynamicVector * aP1)
     this->DynamicVector_field_0x10 = v6 + 1;
     *(int *)(v7 + 4 * v6) = *(int *)aP1->__pad_0;
     return 1;
-}
-}
-} // namespace gamemd
-
-// 0x5AC430
-namespace gamemd {
-unsigned int * DynamicVector::Copy(VectorClass * aP1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall DynamicVector::Copy(_DWORD *this, VectorClass *aP1)
-{
-  int v3; // eax
-  int v4; // eax
-  int v5; // ecx
-  int v6; // eax
-
-  if ( this == (_DWORD *)aP1 ) /*0x5ac43a*/
-    goto LABEL_8; /*0x5ac43a*/
-  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x5ac43e*/
-  v3 = aP1->Capacity; /*0x5ac441*/
-  *(this + 2) = v3; /*0x5ac446*/
-  if ( !v3 ) /*0x5ac449*/
-  {
-    *(this + 1) = 0; /*0x5ac496*/
-    *((_BYTE *)this + 13) = 0; /*0x5ac49d*/
-LABEL_8:
-    *(this + 4) = aP1[1].vtable0; /*0x5ac4a1*/
-    *(this + 5) = aP1[1].Items; /*0x5ac4aa*/
-    return this; /*0x5ac4ad*/
-  }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x5ac453*/
-  *(this + 1) = v4; /*0x5ac45b*/
-  if ( !v4 ) /*0x5ac460*/
-    goto LABEL_8; /*0x5ac460*/
-  v5 = *(this + 2); /*0x5ac462*/
-  v6 = 0; /*0x5ac465*/
-  *((_BYTE *)this + 13) = 1; /*0x5ac469*/
-  if ( v5 <= 0 ) /*0x5ac46d*/
-    goto LABEL_8; /*0x5ac46d*/
-  do /*0x5ac481*/
-  {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x5ac478*/
-    ++v6; /*0x5ac47e*/
-  }
-  while ( v6 < *(this + 2) ); /*0x5ac481*/
-  *(this + 4) = aP1[1].vtable0; /*0x5ac486*/
-  *(this + 5) = aP1[1].Items; /*0x5ac48c*/
-  return this; /*0x5ac491*/
 }
 }
 } // namespace gamemd

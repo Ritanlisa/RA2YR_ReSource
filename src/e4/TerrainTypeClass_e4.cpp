@@ -2,37 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x53FFA0
-int TerrainTypeClass::GetTileData(AnimClass * aP1, void * a2, signed int * a3, unsigned int * a4, unsigned short * a5, unsigned int * a6)
-{
-{
-    IPXGlobalConnClass *v7;
-    int TileType;
-    int v9;
-    int v10;
-    int *v11;
-    v7 = (IPXGlobalConnClass *)this->Foundation;
-    if ( *(int *)v7[1].__pad_0 < (int)aP1 )
-    return 0;
-    TileType = Terrain::GetTileType(v7, aP1);
-    if ( !TileType || (*(char *)TileType & 2) != 0 )
-    return 0;
-    v9 = *(int *)(TileType + 12);
-    v10 = *(int *)(TileType + 8) - 16;
-    if ( v10 > 0 )
-    qmemcpy(a2, (const void *)(v9 + 16), v10);
-    *a3 = v10;
-    *a5 = *(short *)(v9 + 14);
-    v11 = *(int **)(TileType + 20);
-    *a4 = *v11;
-    *((int*)(a4) + 1) = v11[1];
-    *((int*)(a4) + 2) = v11[2];
-    if ( a6 )
-    *a6 = *(int *)(v9 + 4);
-    return 1;
-}
-}
-
 // 0x5447C0
 unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6)
 {
@@ -461,6 +430,37 @@ TerrainTypeClass *__fastcall TerrainTypeClass::ddtor(void **this, AbstractClass 
   if ( (a3 & 1) != 0 ) /*0x71e3fa*/
     __3_YAXPAX_Z(this); /*0x71e3fd*/
   return (TerrainTypeClass *)this; /*0x71e407*/
+}
+}
+
+// 0x53FFA0
+int TerrainTypeClass::GetTileData(AnimClass * aP1, void * a2, signed int * a3, unsigned int * a4, unsigned short * a5, unsigned int * a6)
+{
+{
+    IPXGlobalConnClass *v7;
+    int TileType;
+    int v9;
+    int v10;
+    int *v11;
+    v7 = (IPXGlobalConnClass *)this->Foundation;
+    if ( *(int *)v7[1].__pad_0 < (int)aP1 )
+    return 0;
+    TileType = Terrain::GetTileType(v7, aP1);
+    if ( !TileType || (*(char *)TileType & 2) != 0 )
+    return 0;
+    v9 = *(int *)(TileType + 12);
+    v10 = *(int *)(TileType + 8) - 16;
+    if ( v10 > 0 )
+    qmemcpy(a2, (const void *)(v9 + 16), v10);
+    *a3 = v10;
+    *a5 = *(short *)(v9 + 14);
+    v11 = *(int **)(TileType + 20);
+    *a4 = *v11;
+    *((int*)(a4) + 1) = v11[1];
+    *((int*)(a4) + 2) = v11[2];
+    if ( a6 )
+    *a6 = *(int *)(v9 + 4);
+    return 1;
 }
 }
 

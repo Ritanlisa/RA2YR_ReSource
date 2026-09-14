@@ -3,27 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/WDTState_4_e4.hpp"
 
-// 0x76B710
-namespace gamemd {
-int WDTState_4::ddtor()
-{
-{
-    int (__thiscall ***v2)(int, int);
-    int result;
-    v2 = *(int (__thiscall ****)(int, int))(this + 4);
-    this->WDTState_4_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    result = (**v2)(v2, 3);
-    this->WDTState_4_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->Capacity = 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x76BA70
 namespace gamemd {
 char WDTState_4::Release(int a2, unsigned int * a3)
@@ -124,6 +103,40 @@ char __thiscall WDTState_4_::_vt02(_BYTE *this, int a2, _DWORD *a3)
 }
 } // namespace gamemd
 
+// 0x76B710
+namespace gamemd {
+int WDTState_4::ddtor()
+{
+{
+    int (__thiscall ***v2)(int, int);
+    int result;
+    v2 = *(int (__thiscall ****)(int, int))(this + 4);
+    this->WDTState_4_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    result = (**v2)(v2, 3);
+    this->WDTState_4_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x76B740
+namespace gamemd {
+unsigned int WDTState_4::Write(int a2)
+{
+{
+    if ( (unsigned char)this->WDTState_4_field_0xC )
+    return (unsigned int)(a2 - this->WDTState_4_field_0x4) >> 3;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x76BB90
 namespace gamemd {
 int WDTState_4::Read(int a2)
@@ -163,19 +176,6 @@ DynamicVector * WDTState_4::QueryInterface(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
-}
-}
-} // namespace gamemd
-
-// 0x76B740
-namespace gamemd {
-unsigned int WDTState_4::Write(int a2)
-{
-{
-    if ( (unsigned char)this->WDTState_4_field_0xC )
-    return (unsigned int)(a2 - this->WDTState_4_field_0x4) >> 3;
-    else
-    return 0;
 }
 }
 } // namespace gamemd

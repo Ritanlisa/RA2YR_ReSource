@@ -1,0 +1,9 @@
+// E2 minimal declaration (auto-generated, full layout via member_lookup/til)
+#pragma once
+
+namespace gamemd {
+struct E4Recv_74E1C0 {
+    void* vfptr;  // minimal E2 declaration
+    void VeinholeMonster_Process();  // 0x74E1C0
+};
+} // namespace gamemd

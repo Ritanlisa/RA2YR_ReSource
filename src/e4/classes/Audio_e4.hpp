@@ -4,10 +4,8 @@
 namespace gamemd {
 struct Audio {
     void* vfptr;  // minimal E2 declaration
-    int InitChannels();  // 0x401080
     int GetChannelStatus();  // 0x402720
     int ReleaseChannelRefs();  // 0x404D80
-    int FlushChannel();  // 0x404DD0
     int UpdatePlaybackPosition();  // 0x4054A0
     ObjectClass * ProcessMixerOutput();  // 0x4063B0
     BOOL ApplyFormatFlags(int * a1, char * a2);  // 0x406870
@@ -22,6 +20,8 @@ struct Audio {
     char InitFromINI();  // 0x7510D0
     void * LoadSoundINI();  // 0x7513F0
     unsigned int GetSamplePosition(MouseClass * aP1, MouseClass * aP2);  // 0x7BD130
+    int InitChannels();  // 0x401080
+    int FlushChannel();  // 0x404DD0
     void Shutdown();  // 0x406D40
     BOOL IsSoundEnabled();  // 0x407000
     void * GetEnabled();  // 0x407010

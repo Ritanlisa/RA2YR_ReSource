@@ -296,6 +296,7 @@ LABEL_21:
   }
 }
 } }
+
 // 0x41C3F0
 namespace gamemd { void BulletClass::NormalizeZeroVector() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -308,6 +309,7 @@ void __thiscall sub_41C3F0(double *this)
   }
 }
 } }
+
 // 0x421EA0
 namespace gamemd { void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -656,6 +658,7 @@ AnimClass *__thiscall AnimClass::ctor(
   }
 }
 } }
+
 // 0x422720
 namespace gamemd { int AnimClass::SimpleCtor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -727,6 +730,7 @@ int __thiscall AnimClass_SimpleCtor(int this)
   return this; /*0x4228d4*/
 }
 } }
+
 // 0x422B80
 namespace gamemd { void TerrainClass::ClearAnimationLinkFlags() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -746,6 +750,7 @@ void __thiscall sub_422B80(void *this)
   }
 }
 } }
+
 // 0x422BC0
 namespace gamemd { int AnimClass::SetAnimSpeed() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -754,6 +759,7 @@ int __thiscall AnimClass::_vt46(int this)
   return *(_DWORD *)(this + 260) + ObjectClass::GetBoundingSize((#374 *)this); /*0x422bce*/
 }
 } }
+
 // 0x422BE0
 namespace gamemd { void* AnimClass::UpdateZAdjust(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -795,6 +801,7 @@ int *__thiscall AnimClass::UpdateZAdjust(#374 *this, int *a2)
   }
 }
 } }
+
 // 0x422C70
 namespace gamemd { int AnimClass::CheckLayerFlags(int a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -806,12 +813,14 @@ char __thiscall AnimClass::CheckLayerFlags(int this, ObjectClass *aP1, ObjectCla
     return ObjectClass::CalcDrawRect((#374 *)this); /*0x422c8e*/
 }
 } }
+
 // 0x4238B0
 namespace gamemd { bool AnimClass::UpdateMirrorState(int a1) {
 {
     return (unsigned char)ObjectClass::UpdateProductionDisplay((#374 *)this) != 0;
 }
 } }
+
 // 0x423930
 namespace gamemd { int AnimClass::UpdateProjectileTrajectory() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -903,6 +912,7 @@ int __thiscall AnimClass::_vt122(char *this)
   return v3; /*0x423aae*/
 }
 } }
+
 // 0x425150
 namespace gamemd { int AnimClass::ClearTargetReferences(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -941,6 +951,7 @@ ParticleSystemClass *__thiscall AnimClass::ClearTargetReferences(int *this, Part
   return result; /*0x4251e1*/
 }
 } }
+
 // 0x425280
 namespace gamemd { int AnimClass::SaveLoad_Prefix(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1004,6 +1015,7 @@ int __thiscall AnimClass::SaveLoad_Prefix(void *this, ObjectClass *aP1, int aP1a
   return (int)Register->__pad_0; /*0x42535a*/
 }
 } }
+
 // 0x425410
 namespace gamemd { int AnimClass::ProcessPower(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1047,6 +1059,7 @@ int __thiscall AnimClass::ProcessPower(int this, int *a2)
   return Power::FlagProcess(a2, v10); /*0x425507*/
 }
 } }
+
 // 0x425510
 namespace gamemd { int AnimClass::CheckEndOfSequence() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1055,6 +1068,7 @@ int __thiscall AnimClass::_vt123(_DWORD *this)
   return *(_DWORD *)(*(this + 50) + 704); /*0x42551c*/
 }
 } }
+
 // 0x425530
 namespace gamemd { int AnimClass::Undeploy() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1079,6 +1093,7 @@ char __thiscall AnimClass::Undeploy(#374 *this)
   return 1; /*0x4255a2*/
 }
 } }
+
 // 0x4255B0
 namespace gamemd { int AnimClass::ProcessCraterFormation() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1109,6 +1124,7 @@ int __thiscall AnimClass::ProcessCraterFormation(void **this)
   return ObjectClass::Destroy((#374 *)this); /*0x425624*/
 }
 } }
+
 // 0x425630
 namespace gamemd { int AnimClass::CheckDamageFlags() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1126,6 +1142,7 @@ int __thiscall AnimClass::_vt116(_DWORD *this)
   return result; /*0x42566b*/
 }
 } }
+
 // 0x426270
 namespace gamemd { int AnimClass::UpdateDamageRadius(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1152,6 +1169,7 @@ int __thiscall AnimClass::_vt60(void *this, _DWORD *a2)
   return result; /*0x4262d3*/
 }
 } }
+
 // 0x426590
 namespace gamemd { void* AnimClass::MissionStubReturnZero3(int a2) {
 {
@@ -1161,6 +1179,7 @@ namespace gamemd { void* AnimClass::MissionStubReturnZero3(int a2) {
     return (AnimClass *)this;
 }
 } }
+
 // 0x4397E0
 namespace gamemd { void* AnimClass::InitRotation(void* a1, int a2, int a3, int a4, int a5, int a6, int a7, void* a8, double a9) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1239,6 +1258,7 @@ _DWORD *__thiscall AnimClass::InitRotation(
   return Float4::Copy((float *)this + 12, (IUnknown *)&v22, (IUnknown *)v16); /*0x439992*/
 }
 } }
+
 // 0x447E00
 namespace gamemd { int AnimClass::initAnimation() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1262,6 +1282,7 @@ int __thiscall BuildingClass::DistanceToTarget(#377 *this)
   return Math::RoundToInt(v4); /*0x447e81*/
 }
 } }
+
 // 0x448070
 namespace gamemd { bool AnimClass::updateAnimation(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1327,9 +1348,7 @@ LABEL_17:
   return *(_BYTE *)(this + 979) != v12; /*0x44808c*/
 }
 } }
-// 0x448260
-namespace gamemd { int AnimClass::drawFrame() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+
 // 0x448260
 int __thiscall AnimClass::drawFrame(#377 *this)
 {
@@ -4038,6 +4057,2716 @@ add     esp, 50h
 retn    8
 */
 } }
+
+// 0x448260
+int __thiscall AnimClass::drawFrame(#377 *this)
+{
+  int result; // eax
+  int v2; // ebp
+  int v3; // edi
+  int v5; // ecx
+  int v6; // ecx
+  int v7; // ecx
+  int v8; // eax
+  int v9; // edx
+  int v10; // eax
+  int v11; // edx
+  int v12; // edx
+  int v13; // edi
+  int v14; // ecx
+  int v15; // eax
+  int v16; // ecx
+  #375 *v17; // ecx
+  int v18; // ecx
+  __int64 v19; // rax
+  int v20; // edx
+  _BYTE *v21; // ecx
+  int v22; // edi
+  _BYTE **v23; // ebp
+  int v24; // eax
+  int Member; // eax
+  _BYTE *v26; // edi
+  _DWORD *v27; // ebp
+  _DWORD *v28; // eax
+  int *v29; // eax
+  char v30; // bl
+  int v31; // eax
+  int v32; // edi
+  int v33; // eax
+  #377 *v34; // ecx
+  int v35; // ecx
+  int v36; // ecx
+  int v37; // ebx
+  int v38; // eax
+  int v39; // ecx
+  _DWORD *v40; // edx
+  int v41; // eax
+  int v42; // eax
+  int v43; // ecx
+  int v44; // ecx
+  int v45; // edx
+  int v46; // eax
+  int v47; // ecx
+  int v48; // ecx
+  int v49; // edx
+  int v50; // eax
+  int v51; // ecx
+  int v52; // ecx
+  int v53; // eax
+  int v54; // eax
+  int v55; // eax
+  int v56; // ecx
+  int v57; // ecx
+  int v58; // edx
+  int v59; // eax
+  int v60; // ecx
+  int v61; // ecx
+  int v62; // eax
+  int v63; // eax
+  int v64; // eax
+  int v65; // ecx
+  int v66; // ecx
+  int v67; // edx
+  int v68; // eax
+  int v69; // ecx
+  int v70; // ecx
+  int v71; // edx
+  int v72; // eax
+  int v73; // ecx
+  int v74; // ecx
+  int v75; // edx
+  int v76; // eax
+  int v77; // ecx
+  int v78; // ecx
+  int v79; // edx
+  int v80; // eax
+  int v81; // ecx
+  int v82; // ecx
+  int v83; // eax
+  int v84; // eax
+  int v85; // ecx
+  int v86; // ecx
+  int v87; // ecx
+  int v88; // eax
+  int v89; // ecx
+  int v90; // eax
+  int v91; // eax
+  int v92; // eax
+  char v93; // cl
+  int v94; // edx
+  int v95; // edi
+  int v96; // eax
+  char v97; // cl
+  int v98; // eax
+  int v99; // edx
+  int v100; // eax
+  int v101; // ecx
+  int v102; // ebp
+  int v103; // eax
+  int v104; // edi
+  int v105; // eax
+  int v106; // ecx
+  _DWORD *v107; // edx
+  int v108; // ebp
+  int v109; // ecx
+  int v110; // eax
+  int v111; // eax
+  int v112; // edx
+  int v113; // ecx
+  int v114; // eax
+  int v115; // eax
+  int v116; // edx
+  int v117; // eax
+  int v118; // ecx
+  int v119; // eax
+  int v120; // eax
+  int v121; // edx
+  int v122; // ecx
+  int v123; // eax
+  int v124; // eax
+  int v125; // edx
+  int v126; // eax
+  int v127; // ecx
+  int v128; // eax
+  int v129; // eax
+  int v130; // edx
+  int v131; // ecx
+  int v132; // eax
+  int v133; // eax
+  int v134; // edx
+  int v135; // ecx
+  int v136; // eax
+  int v137; // eax
+  int v138; // edx
+  int v139; // ecx
+  int v140; // eax
+  int v141; // eax
+  int v142; // edx
+  int v143; // ecx
+  int v144; // eax
+  int v145; // eax
+  int v146; // edx
+  int v147; // ecx
+  int v148; // eax
+  int v149; // eax
+  int v150; // edx
+  int v151; // ecx
+  int v152; // edx
+  int v153; // ecx
+  int v154; // ecx
+  int v155; // eax
+  int v156; // ecx
+  int v157; // eax
+  int v158; // ecx
+  int v159; // edi
+  _DWORD **v160; // eax
+  int v161; // eax
+  char i; // al
+  int v163; // ecx
+  int v164; // eax
+  int v165; // ecx
+  int v166; // eax
+  int v167; // eax
+  int v168; // edx
+  int v169; // [esp+A4h] [ebp-60h]
+  int v170; // [esp+A8h] [ebp-5Ch]
+  char v171[8]; // [esp+B4h] [ebp-50h] BYREF
+  int v172; // [esp+BCh] [ebp-48h] BYREF
+  int v173; // [esp+C0h] [ebp-44h]
+  int v174; // [esp+C4h] [ebp-40h]
+  int v175[3]; // [esp+C8h] [ebp-3Ch] BYREF
+  int v176[3]; // [esp+D4h] [ebp-30h] BYREF
+  int v177[3]; // [esp+E0h] [ebp-24h] BYREF
+  void **v178; // [esp+ECh] [ebp-18h] BYREF
+  void *Block; // [esp+F0h] [ebp-14h]
+  int v180; // [esp+F4h] [ebp-10h]
+  int v181; // [esp+F8h] [ebp-Ch]
+  int v182; // [esp+FCh] [ebp-8h]
+  int v183; // [esp+100h] [ebp-4h]
+  #375 *v184; // [esp+108h] [ebp+4h]
+  #377 *v185; // [esp+10Ch] [ebp+8h] BYREF
+  int v186; // [esp+110h] [ebp+Ch]
+
+  if ( v184 == *((#375 **)this + 135) )
+  {
+    LOBYTE(result) = 0;
+  }
+  else
+  {
+    v5 = *((_DWORD *)this + 14);
+    if ( v5 && !*(_BYTE *)(*((_DWORD *)this + 328) + 5499) )
+      ObjectClass::CleanupAudioAndRefs(v5);
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5831) )
+      *((_BYTE *)v184 + 22264) = 1;
+    if ( *(_BYTE *)(*(_DWORD *)(*((_DWORD *)this + 135) + 52) + 422) )
+    {
+      v6 = *((_DWORD *)this + 328);
+      if ( *(_DWORD *)(v6 + 5464) )
+      {
+        HouseClass::AddPower(v184, *(_DWORD *)(v6 + 5464));
+        v7 = *(_DWORD *)(*((_DWORD *)this + 328) + 5472);
+        *((_DWORD *)this + 436) = dword_A8ED54[12];
+        *((_DWORD *)this + 437) = v173;
+        *((_DWORD *)this + 438) = v7;
+      }
+    }
+    v8 = *((_DWORD *)this + 132);
+    v170 = v2;
+    v169 = v3;
+    v9 = 1 << *(_DWORD *)(*((_DWORD *)v184 + 13) + 184);
+    if ( (v8 & v9) != 0 )
+    {
+      v10 = v8 - v9;
+      v11 = *((_DWORD *)this + 328);
+      *((_DWORD *)this + 132) = v10;
+      if ( *(_BYTE *)(v11 + 5796) )
+      {
+        v12 = 0;
+        *(_DWORD *)(*((_DWORD *)this + 135) + 21732) = 0;
+        v13 = *(_DWORD *)(*((_DWORD *)this + 135) + 120);
+        if ( v13 > 0 )
+        {
+          do
+          {
+            v14 = *((_DWORD *)this + 135);
+            v15 = *(_DWORD *)(*(_DWORD *)(v14 + 108) + 4 * v12);
+            if ( v15 && !*(_BYTE *)(v15 + 129) && *(_BYTE *)(*(_DWORD *)(v15 + 1312) + 5796) )
+              *(_DWORD *)(v14 + 21732) |= *(_DWORD *)(v15 + 528);
+            ++v12;
+          }
+          while ( v12 < v13 );
+        }
+        MapClass::MarkForRedraw(MEMORY[0x87F7E8], 2);
+      }
+    }
+    v16 = *((_DWORD *)this + 328);
+    *((_BYTE *)this + 979) = 0;
+    if ( *(_BYTE *)(v16 + 5822) )
+      BuildingClass::DemolishBridgeCheck((int *)this, 0);
+    if ( (unsigned __int8)House::IsHumanPlayer(*((#375 **)this + 135)) || (unsigned __int8)House::IsHumanPlayer(v184) )
+    {
+      if ( !*(_BYTE *)(*((_DWORD *)v184 + 13) + 422) && (_BYTE)v185 )
+      {
+        if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5458) )
+        {
+          v17 = (#375 *)*((_DWORD *)this + 135);
+          if ( v17 != v184 )
+          {
+            if ( (unsigned __int8)House::IsHumanPlayer(v17) )
+              VoxClass::FindAndPlay(aEvaTechbuildin, -1);
+            if ( (unsigned __int8)House::IsHumanPlayer(v184) )
+            {
+              if ( (unsigned __int8)House::IsHumanPlayer(v184) )
+              {
+                v18 = *(_DWORD *)(*((_DWORD *)this + 328) + 5460);
+                if ( v18 != -1 )
+                  UpdateThemeManager(v18, -1, -1);
+              }
+            }
+          }
+        }
+        else
+        {
+          v19 = ((__int64 (__thiscall *)(#377 *, #377 **))*(_DWORD *)(*(_DWORD *)this + 440))(this, &v185);
+          if ( CreateTriggerClassIfFarEnough(10, SHIDWORD(v19), *(_DWORD *)v19) )
+            VoxClass::FindAndPlay(aEvaBuildingcap, -1);
+        }
+      }
+      LOBYTE(MEMORY[0x87F7E8][1347]) = 1;
+      MapClass::MarkForRedraw(MEMORY[0x87F7E8], 0);
+    }
+    v20 = *((_DWORD *)this + 328);
+    *((_BYTE *)this + 128) = 1;
+    *((_BYTE *)this + 1740) = 1;
+    if ( *(_BYTE *)(v20 + 5458) )
+    {
+      v21 = (_BYTE *)*((_DWORD *)this + 389);
+      *((_BYTE *)this + 1770) = 1;
+      if ( v21 )
+        Trigger::EnableOnce(v21, 0);
+      if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5822) )
+        BuildingClass::RepairPlacement(this, 0);
+      v22 = 0;
+      v23 = (_BYTE **)((char *)this + 1372);
+      do
+      {
+        if ( *(_BYTE *)(v22 + *((_DWORD *)this + 328) + 3980) && *v23 )
+          VtableStub::Method_425270(*v23);
+        v22 += 68;
+        ++v23;
+      }
+      while ( v22 < 1428 );
+    }
+    if ( MEMORY[0x87F7E8][536212] == 4
+      && !*(_BYTE *)((*(int (__thiscall **)(#377 *, int, int))(*(_DWORD *)this + 132))(this, v169, v170) + 3231) )
+    {
+      HouseClass::IncrementStat((_DWORD *)v184 + 4314, *(_DWORD *)(*((_DWORD *)this + 328) + 3576));
+    }
+    VectorClass_ReestablishPtr::Construct(&v178, 0, 0);
+    v24 = *((_DWORD *)this + 58);
+    v178 = &DynamicVectorClass<Reestablish *>::`vftable';
+    v183 = 10;
+    v182 = 0;
+    v185 = 0;
+    if ( v24 > 0 )
+    {
+      do
+      {
+        Member = Team::GetMember(this, (int)v185);
+        v26 = (_BYTE *)Member;
+        if ( Member )
+        {
+          if ( (*(_BYTE *)(Member + 20) & 4) != 0 )
+          {
+            if ( (*(int (__thiscall **)(#377 *, int, int))(*(_DWORD *)this + 632))(this, 19, Member) == 1 )
+            {
+              if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5821)
+                || (v27 = (_DWORD *)(*(int (__thiscall **)(#377 *, int *, _BYTE *))(*(_DWORD *)this + 168))(
+                                      this,
+                                      v175,
+                                      v26),
+                    v28 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, int *))(*(_DWORD *)v26 + 72))(v26, v176),
+                    v29 = Coord::Subtract(v177, *v28 - *v27, v28[1] - v27[1], v28[2] - v27[2]),
+                    v172 = *v29,
+                    v173 = v29[1],
+                    v174 = v29[2],
+                    (int)Coord::Length(&v172) < 64) )
+              {
+                v30 = v26[1048];
+                (*(void (__thiscall **)(_BYTE *, #375 *, int))(*(_DWORD *)v26 + 980))(v26, v184, 1);
+                v31 = __2_YAPAXI_Z(8);
+                if ( v31 )
+                {
+                  *(_DWORD *)v31 = v26;
+                  *(_BYTE *)(v31 + 4) = v30;
+                  v32 = v31;
+                }
+                else
+                {
+                  v32 = 0;
+                }
+                if ( v182 < v180
+                  || (BYTE1(v181) || !v180)
+                  && v183 > 0
+                  && ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v178[2])(&v178, v180 + v183, 0) )
+                {
+                  v33 = v182++;
+                  *((_DWORD *)Block + v33) = v32;
+                }
+                goto LABEL_66;
+              }
+            }
+          }
+          else
+          {
+            v26 = 0;
+          }
+          (*(void (__thiscall **)(#377 *, int, _BYTE *))(*(_DWORD *)this + 632))(this, 23, v26);
+          (*(void (__thiscall **)(#377 *, int, _BYTE *))(*(_DWORD *)this + 632))(this, 3, v26);
+        }
+LABEL_66:
+        v34 = (#377 *)*((_DWORD *)this + 58);
+        v185 = (#377 *)((char *)v185 + 1);
+      }
+      while ( (int)v185 < (int)v34 );
+    }
+    v35 = *((_DWORD *)this + 329);
+    if ( v35 )
+    {
+      FactoryClass::AbandonProduction(v35);
+      v36 = *((_DWORD *)this + 329);
+      if ( v36 )
+        (*(void (__thiscall **)(int, int))(*(_DWORD *)v36 + 32))(v36, 1);
+      *((_DWORD *)this + 329) = 0;
+    }
+    BuildingClass::DecrementTypeCounter(*((_DWORD **)this + 135), this);
+    v37 = *((_DWORD *)this + 135);
+    ScriptAction::GetWaypointCoords(v171, this);
+    *((_BYTE *)this + 1763) = 1;
+    v38 = 0;
+    v39 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 2236);
+    if ( v39 > 0 )
+    {
+      v40 = *(_DWORD **)(MEMORY[0x87F7E8][7806] + 2224);
+      while ( *v40 != *((_DWORD *)this + 328) )
+      {
+        ++v38;
+        ++v40;
+        if ( v38 >= v39 )
+          goto LABEL_80;
+      }
+      v41 = *(_DWORD *)(v37 + 80);
+      v185 = this;
+      v42 = (*(int (__thiscall **)(int, #377 **))(v41 + 16))(v37 + 80, &v185);
+      if ( v42 != -1 )
+      {
+        v43 = *(_DWORD *)(v37 + 96);
+        if ( v42 < v43 )
+        {
+          v44 = v43 - 1;
+          for ( *(_DWORD *)(v37 + 96) = v44;
+                v42 < *(_DWORD *)(v37 + 96);
+                *(_DWORD *)(*(_DWORD *)(v37 + 84) + 4 * v42 - 4) = *(_DWORD *)(*(_DWORD *)(v37 + 84) + 4 * v42) )
+          {
+            ++v42;
+          }
+        }
+      }
+    }
+LABEL_80:
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5801) )
+    {
+      v45 = *(_DWORD *)(v37 + 128);
+      v185 = this;
+      v46 = (*(int (__thiscall **)(int, #377 **))(v45 + 16))(v37 + 128, &v185);
+      if ( v46 != -1 )
+      {
+        v47 = *(_DWORD *)(v37 + 144);
+        if ( v46 < v47 )
+        {
+          v48 = v47 - 1;
+          for ( *(_DWORD *)(v37 + 144) = v48;
+                v46 < *(_DWORD *)(v37 + 144);
+                *(_DWORD *)(*(_DWORD *)(v37 + 132) + 4 * v46 - 4) = *(_DWORD *)(*(_DWORD *)(v37 + 132) + 4 * v46) )
+          {
+            ++v46;
+          }
+        }
+      }
+    }
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5805) )
+    {
+      v49 = *(_DWORD *)(v37 + 152);
+      v185 = this;
+      v50 = (*(int (__thiscall **)(int, #377 **))(v49 + 16))(v37 + 152, &v185);
+      if ( v50 != -1 )
+      {
+        v51 = *(_DWORD *)(v37 + 168);
+        if ( v50 < v51 )
+        {
+          v52 = v51 - 1;
+          for ( *(_DWORD *)(v37 + 168) = v52;
+                v50 < *(_DWORD *)(v37 + 168);
+                *(_DWORD *)(*(_DWORD *)(v37 + 156) + 4 * v50 - 4) = *(_DWORD *)(*(_DWORD *)(v37 + 156) + 4 * v50) )
+          {
+            ++v50;
+          }
+        }
+      }
+    }
+    v53 = *((_DWORD *)this + 328);
+    if ( *(_BYTE *)(v53 + 5806) || *(_BYTE *)(v53 + 5807) )
+    {
+      v54 = *(_DWORD *)(v37 + 176);
+      v185 = this;
+      v55 = (*(int (__thiscall **)(int, #377 **))(v54 + 16))(v37 + 176, &v185);
+      if ( v55 != -1 )
+      {
+        v56 = *(_DWORD *)(v37 + 192);
+        if ( v55 < v56 )
+        {
+          v57 = v56 - 1;
+          for ( *(_DWORD *)(v37 + 192) = v57;
+                v55 < *(_DWORD *)(v37 + 192);
+                *(_DWORD *)(*(_DWORD *)(v37 + 180) + 4 * v55 - 4) = *(_DWORD *)(*(_DWORD *)(v37 + 180) + 4 * v55) )
+          {
+            ++v55;
+          }
+        }
+      }
+    }
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5803) )
+    {
+      v58 = *(_DWORD *)(v37 + 200);
+      v185 = this;
+      v59 = (*(int (__thiscall **)(int, #377 **))(v58 + 16))(v37 + 200, &v185);
+      if ( v59 != -1 )
+      {
+        v60 = *(_DWORD *)(v37 + 216);
+        if ( v59 < v60 )
+        {
+          v61 = v60 - 1;
+          for ( *(_DWORD *)(v37 + 216) = v61;
+                v59 < *(_DWORD *)(v37 + 216);
+                *(_DWORD *)(*(_DWORD *)(v37 + 204) + 4 * v59 - 4) = *(_DWORD *)(*(_DWORD *)(v37 + 204) + 4 * v59) )
+          {
+            ++v59;
+          }
+        }
+      }
+    }
+    v62 = *((_DWORD *)this + 328);
+    if ( *(_BYTE *)(v62 + 5499) )
+    {
+      if ( *(int *)(v62 + 1588) > -1 )
+      {
+        v63 = *(_DWORD *)(v37 + 224);
+        v185 = this;
+        v64 = (*(int (__thiscall **)(int, #377 **))(v63 + 16))(v37 + 224, &v185);
+        if ( v64 != -1 )
+        {
+          v65 = *(_DWORD *)(v37 + 240);
+          if ( v64 < v65 )
+          {
+            v66 = v65 - 1;
+            for ( *(_DWORD *)(v37 + 240) = v66;
+                  v64 < *(_DWORD *)(v37 + 240);
+                  *(_DWORD *)(*(_DWORD *)(v37 + 228) + 4 * v64 - 4) = *(_DWORD *)(*(_DWORD *)(v37 + 228) + 4 * v64) )
+            {
+              ++v64;
+            }
+          }
+        }
+      }
+    }
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5804) )
+    {
+      v67 = *(_DWORD *)(v37 + 248);
+      v185 = this;
+      v68 = (*(int (__thiscall **)(int, #377 **))(v67 + 16))(v37 + 248, &v185);
+      if ( v68 != -1 )
+      {
+        v69 = *(_DWORD *)(v37 + 264);
+        if ( v68 < v69 )
+        {
+          v70 = v69 - 1;
+          for ( *(_DWORD *)(v37 + 264) = v70;
+                v68 < *(_DWORD *)(v37 + 264);
+                *(_DWORD *)(*(_DWORD *)(v37 + 252) + 4 * v68 - 4) = *(_DWORD *)(*(_DWORD *)(v37 + 252) + 4 * v68) )
+          {
+            ++v68;
+          }
+        }
+      }
+    }
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5808) )
+    {
+      v71 = *(_DWORD *)(v37 + 272);
+      v185 = this;
+      v72 = (*(int (__thiscall **)(int, #377 **))(v71 + 16))(v37 + 272, &v185);
+      if ( v72 != -1 )
+      {
+        v73 = *(_DWORD *)(v37 + 288);
+        if ( v72 < v73 )
+        {
+          v74 = v73 - 1;
+          for ( *(_DWORD *)(v37 + 288) = v74;
+                v72 < *(_DWORD *)(v37 + 288);
+                *(_DWORD *)(*(_DWORD *)(v37 + 276) + 4 * v72 - 4) = *(_DWORD *)(*(_DWORD *)(v37 + 276) + 4 * v72) )
+          {
+            ++v72;
+          }
+        }
+      }
+    }
+    if ( *(int *)(*((_DWORD *)this + 328) + 5900) > 0 )
+    {
+      v75 = *(_DWORD *)(v37 + 296);
+      v185 = this;
+      v76 = (*(int (__thiscall **)(int, #377 **))(v75 + 16))(v37 + 296, &v185);
+      if ( v76 != -1 )
+      {
+        v77 = *(_DWORD *)(v37 + 312);
+        if ( v76 < v77 )
+        {
+          v78 = v77 - 1;
+          for ( *(_DWORD *)(v37 + 312) = v78;
+                v76 < *(_DWORD *)(v37 + 312);
+                *(_DWORD *)(*(_DWORD *)(v37 + 300) + 4 * v76 - 4) = *(_DWORD *)(*(_DWORD *)(v37 + 300) + 4 * v76) )
+          {
+            ++v76;
+          }
+        }
+      }
+    }
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5837) )
+    {
+      v79 = *(_DWORD *)(v37 + 320);
+      v185 = this;
+      v80 = (*(int (__thiscall **)(int, #377 **))(v79 + 16))(v37 + 320, &v185);
+      if ( v80 != -1 )
+      {
+        v81 = *(_DWORD *)(v37 + 336);
+        if ( v80 < v81 )
+        {
+          v82 = v81 - 1;
+          for ( *(_DWORD *)(v37 + 336) = v82;
+                v80 < *(_DWORD *)(v37 + 336);
+                *(_DWORD *)(*(_DWORD *)(v37 + 324) + 4 * v80 - 4) = *(_DWORD *)(*(_DWORD *)(v37 + 324) + 4 * v80) )
+          {
+            ++v80;
+          }
+        }
+      }
+      HouseClass::CalculateCostMultipliers((float *)v37);
+    }
+    v83 = *(_DWORD *)(v37 + 104);
+    v185 = this;
+    v84 = (*(int (__thiscall **)(int, #377 **, int, int))(v83 + 16))(v37 + 104, &v185, v169, v170);
+    if ( v84 != -1 )
+    {
+      v85 = *(_DWORD *)(v37 + 120);
+      if ( v84 < v85 )
+      {
+        v86 = v85 - 1;
+        for ( *(_DWORD *)(v37 + 120) = v86;
+              v84 < *(_DWORD *)(v37 + 120);
+              *(_DWORD *)(*(_DWORD *)(v37 + 108) + 4 * v84 - 4) = *(_DWORD *)(*(_DWORD *)(v37 + 108) + 4 * v84) )
+        {
+          ++v84;
+        }
+      }
+    }
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5836) )
+      --*(_DWORD *)(v37 + 21388);
+    v87 = *(_DWORD *)(*((_DWORD *)this + 328) + 5476);
+    if ( v87 )
+    {
+      if ( *((_BYTE *)this + 1764) )
+      {
+        *(_DWORD *)(*((_DWORD *)this + 135) + 356) -= v87;
+        v88 = *((_DWORD *)this + 135);
+        if ( *(int *)(v88 + 356) < 0 )
+          *(_DWORD *)(v88 + 356) = 0;
+      }
+    }
+    v89 = *(_DWORD *)(*((_DWORD *)this + 328) + 5480);
+    if ( v89 )
+    {
+      if ( *((_BYTE *)this + 1764) )
+      {
+        *(_DWORD *)(*((_DWORD *)this + 135) + 360) -= v89;
+        v90 = *((_DWORD *)this + 135);
+        if ( *(int *)(v90 + 360) < 0 )
+          *(_DWORD *)(v90 + 360) = 0;
+      }
+    }
+    v91 = *((_DWORD *)this + 328);
+    if ( *(_BYTE *)(v91 + 5835) )
+      *(_DWORD *)(v37 + 724) -= *(_DWORD *)(v91 + 6016);
+    v92 = *((_DWORD *)this + 328);
+    if ( *(_BYTE *)(v92 + 5831) )
+    {
+      v93 = *((_BYTE *)this + 1772);
+      *((_BYTE *)this + 1771) = -1;
+      if ( !v93 )
+        *((_BYTE *)this + 1772) = *(_BYTE *)(v92 + 5895);
+      v94 = *(_DWORD *)this;
+      *((_BYTE *)this + 128) = 1;
+      *((_BYTE *)this + 1772) = 1;
+      (*(void (__thiscall **)(#377 *, int))(v94 + 1040))(this, 1);
+    }
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 3281) )
+      (*(void (__thiscall **)(#377 *))(*(_DWORD *)this + 1048))(this);
+    (*(void (__thiscall **)(#377 *, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)this + 1164))(this, 0, 0, 0, 0);
+    v95 = v186;
+    TechnoClass::ProcessCapture((int *)this, v186, v186, 1);
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5831) )
+    {
+      if ( (*(unsigned __int8 (__thiscall **)(#377 *))(*(_DWORD *)this + 848))(this) )
+      {
+        v96 = *((_DWORD *)this + 328);
+        if ( *(_BYTE *)(v96 + 5831) )
+        {
+          v97 = *((_BYTE *)this + 1772);
+          *((_BYTE *)this + 1771) = 1;
+          if ( v97 == *(_BYTE *)(v96 + 5895) )
+            *((_BYTE *)this + 1772) = 0;
+          *((_BYTE *)this + 128) = 1;
+        }
+      }
+    }
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 3281)
+      && (*(unsigned __int8 (__thiscall **)(#377 *))(*(_DWORD *)this + 848))(this) )
+    {
+      (*(void (__thiscall **)(#377 *))(*(_DWORD *)this + 1044))(this);
+    }
+    AnimClass::updateAnimation((int)this, 0);
+    *(_DWORD *)(v37 + 21728) = this;
+    BuildingClass::CalcExitCoords((int *)v37);
+    BuildingClass::CalcExitCoords(*((int **)this + 135));
+    v98 = *((_DWORD *)this + 135);
+    if ( *(#377 **)(v98 + 21728) == this )
+      *(_DWORD *)(v98 + 21728) = 0;
+    if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v37) && *(_BYTE *)(*((_DWORD *)this + 328) + 5817) )
+    {
+      MEMORY[0x87F7E8][1129] = 0;
+      MEMORY[0x87F7E8][1130] = 0;
+      MEMORY[0x87F7E8][1131] = -1;
+      Mouse::SetBounds((int)MEMORY[0x87F7E8], 0);
+    }
+    BuildingClass::IncrementOccupantTypeCounter(*((_DWORD **)this + 135), this);
+    v99 = *(_DWORD *)this;
+    *((_BYTE *)this + 1768) = 0;
+    (*(void (__thiscall **)(#377 *, int))(v99 + 1244))(this, 1);
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5822) )
+    {
+      if ( !MEMORY[0x87F7E8][539633] )
+      {
+        if ( !*((_BYTE *)this + 144)
+          || *((_BYTE *)this + 129)
+          || (BuildingClass::DemolishBridge(this),
+              BuildingClass::DemolishBridge(this),
+              BuildingClass::DemolishBridge(this),
+              BuildingClass::DemolishBridge(this),
+              BuildingClass::RepairPlacement(this, 1),
+              !MEMORY[0x87F7E8][539633]) )
+        {
+          if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5822) )
+            *((_DWORD *)this + 390) = 0;
+        }
+      }
+    }
+    if ( (unsigned __int8)House::IsHumanPlayer(*((#375 **)this + 135)) )
+    {
+      (*(void (__thiscall **)(#377 *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)this + 1160))(
+        this,
+        0,
+        0,
+        0,
+        0,
+        0);
+      MapClass::MarkForRedraw(MEMORY[0x87F7E8], 1);
+    }
+    v100 = 1 << *(_DWORD *)(*(_DWORD *)(v95 + 52) + 184);
+    v101 = *((_DWORD *)this + 132);
+    if ( (v101 & v100) != 0 )
+      *((_DWORD *)this + 132) = v101 & ~v100;
+    v102 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 484))(this);
+    v103 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 444))(this);
+    v104 = (*(int (__thiscall **)(#377 *, _DWORD))(*(_DWORD *)this + 1124))(this, *(__int16 *)(v103 + 266));
+    if ( (*(unsigned __int8 (__thiscall **)(#377 *))(*(_DWORD *)this + 352))(this)
+      || *((_DWORD *)this + 165) && *(_DWORD *)(*((_DWORD *)this + 165) + 80) == IsObjectTypeBuildingType((int)this) )
+    {
+      LOWORD(v104) = Techno::StartInvulnerability(v104);
+    }
+    *((_WORD *)this + 896) = v104;
+    BuildingClass::SyncCrateVisuals((char *)this, v102, (unsigned __int16)v104);
+    BuildingClass::SetConnectedBuildingMission((int *)this, *((char *)this + 1773));
+    v105 = 0;
+    v106 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 2236);
+    if ( v106 <= 0 )
+    {
+LABEL_183:
+      v108 = (int)v184;
+    }
+    else
+    {
+      v107 = *(_DWORD **)(MEMORY[0x87F7E8][7806] + 2224);
+      while ( *v107 != *((_DWORD *)this + 328) )
+      {
+        ++v105;
+        ++v107;
+        if ( v105 >= v106 )
+          goto LABEL_183;
+      }
+      v108 = (int)v184;
+      v165 = *((_DWORD *)v184 + 22);
+      if ( *((_DWORD *)v184 + 24) < v165
+        || (*((_BYTE *)v184 + 93) || !v165)
+        && (v166 = *((_DWORD *)v184 + 25), v166 > 0)
+        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*((_DWORD *)v184 + 20) + 8))(
+             (int)v184 + 80,
+             v165 + v166,
+             0) )
+      {
+        v167 = *((_DWORD *)v184 + 24);
+        v168 = *((_DWORD *)v184 + 21);
+        *((_DWORD *)v184 + 24) = v167 + 1;
+        *(_DWORD *)(v168 + 4 * v167) = this;
+      }
+    }
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5801) )
+    {
+      v109 = *(_DWORD *)(v108 + 136);
+      if ( *(_DWORD *)(v108 + 144) < v109
+        || (*(_BYTE *)(v108 + 141) || !v109)
+        && (v110 = *(_DWORD *)(v108 + 148), v110 > 0)
+        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v108 + 128) + 8))(
+             v108 + 128,
+             v109 + v110,
+             0) )
+      {
+        v111 = *(_DWORD *)(v108 + 144);
+        v112 = *(_DWORD *)(v108 + 132);
+        *(_DWORD *)(v108 + 144) = v111 + 1;
+        *(_DWORD *)(v112 + 4 * v111) = this;
+      }
+    }
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5805) )
+    {
+      v113 = *(_DWORD *)(v108 + 160);
+      if ( *(_DWORD *)(v108 + 168) < v113
+        || (*(_BYTE *)(v108 + 165) || !v113)
+        && (v114 = *(_DWORD *)(v108 + 172), v114 > 0)
+        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v108 + 152) + 8))(
+             v108 + 152,
+             v113 + v114,
+             0) )
+      {
+        v115 = *(_DWORD *)(v108 + 168);
+        v116 = *(_DWORD *)(v108 + 156);
+        *(_DWORD *)(v108 + 168) = v115 + 1;
+        *(_DWORD *)(v116 + 4 * v115) = this;
+      }
+    }
+    v117 = *((_DWORD *)this + 328);
+    if ( *(_BYTE *)(v117 + 5806) || *(_BYTE *)(v117 + 5807) )
+    {
+      v118 = *(_DWORD *)(v108 + 184);
+      if ( *(_DWORD *)(v108 + 192) < v118
+        || (*(_BYTE *)(v108 + 189) || !v118)
+        && (v119 = *(_DWORD *)(v108 + 196), v119 > 0)
+        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v108 + 176) + 8))(
+             v108 + 176,
+             v118 + v119,
+             0) )
+      {
+        v120 = *(_DWORD *)(v108 + 192);
+        v121 = *(_DWORD *)(v108 + 180);
+        *(_DWORD *)(v108 + 192) = v120 + 1;
+        *(_DWORD *)(v121 + 4 * v120) = this;
+      }
+    }
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5803) )
+    {
+      v122 = *(_DWORD *)(v108 + 208);
+      if ( *(_DWORD *)(v108 + 216) < v122
+        || (*(_BYTE *)(v108 + 213) || !v122)
+        && (v123 = *(_DWORD *)(v108 + 220), v123 > 0)
+        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v108 + 200) + 8))(
+             v108 + 200,
+             v122 + v123,
+             0) )
+      {
+        v124 = *(_DWORD *)(v108 + 216);
+        v125 = *(_DWORD *)(v108 + 204);
+        *(_DWORD *)(v108 + 216) = v124 + 1;
+        *(_DWORD *)(v125 + 4 * v124) = this;
+      }
+    }
+    v126 = *((_DWORD *)this + 328);
+    if ( *(_BYTE *)(v126 + 5499) && *(int *)(v126 + 1588) > -1 )
+    {
+      v127 = *(_DWORD *)(v108 + 232);
+      if ( *(_DWORD *)(v108 + 240) < v127
+        || (*(_BYTE *)(v108 + 237) || !v127)
+        && (v128 = *(_DWORD *)(v108 + 244), v128 > 0)
+        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v108 + 224) + 8))(
+             v108 + 224,
+             v127 + v128,
+             0) )
+      {
+        v129 = *(_DWORD *)(v108 + 240);
+        v130 = *(_DWORD *)(v108 + 228);
+        *(_DWORD *)(v108 + 240) = v129 + 1;
+        *(_DWORD *)(v130 + 4 * v129) = this;
+      }
+    }
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5804) )
+    {
+      v131 = *(_DWORD *)(v108 + 256);
+      if ( *(_DWORD *)(v108 + 264) < v131
+        || (*(_BYTE *)(v108 + 261) || !v131)
+        && (v132 = *(_DWORD *)(v108 + 268), v132 > 0)
+        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v108 + 248) + 8))(
+             v108 + 248,
+             v131 + v132,
+             0) )
+      {
+        v133 = *(_DWORD *)(v108 + 264);
+        v134 = *(_DWORD *)(v108 + 252);
+        *(_DWORD *)(v108 + 264) = v133 + 1;
+        *(_DWORD *)(v134 + 4 * v133) = this;
+      }
+    }
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5808) )
+    {
+      v135 = *(_DWORD *)(v108 + 280);
+      if ( *(_DWORD *)(v108 + 288) < v135
+        || (*(_BYTE *)(v108 + 285) || !v135)
+        && (v136 = *(_DWORD *)(v108 + 292), v136 > 0)
+        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v108 + 272) + 8))(
+             v108 + 272,
+             v136 + v135,
+             0) )
+      {
+        v137 = *(_DWORD *)(v108 + 288);
+        v138 = *(_DWORD *)(v108 + 276);
+        *(_DWORD *)(v108 + 288) = v137 + 1;
+        *(_DWORD *)(v138 + 4 * v137) = this;
+      }
+    }
+    if ( *(int *)(*((_DWORD *)this + 328) + 5900) > 0 )
+    {
+      v139 = *(_DWORD *)(v108 + 304);
+      if ( *(_DWORD *)(v108 + 312) < v139
+        || (*(_BYTE *)(v108 + 309) || !v139)
+        && (v140 = *(_DWORD *)(v108 + 316), v140 > 0)
+        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v108 + 296) + 8))(
+             v108 + 296,
+             v140 + v139,
+             0) )
+      {
+        v141 = *(_DWORD *)(v108 + 312);
+        v142 = *(_DWORD *)(v108 + 300);
+        *(_DWORD *)(v108 + 312) = v141 + 1;
+        *(_DWORD *)(v142 + 4 * v141) = this;
+      }
+    }
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5837) )
+    {
+      v143 = *(_DWORD *)(v108 + 328);
+      if ( *(_DWORD *)(v108 + 336) < v143
+        || (*(_BYTE *)(v108 + 333) || !v143)
+        && (v144 = *(_DWORD *)(v108 + 340), v144 > 0)
+        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v108 + 320) + 8))(
+             v108 + 320,
+             v144 + v143,
+             0) )
+      {
+        v145 = *(_DWORD *)(v108 + 336);
+        v146 = *(_DWORD *)(v108 + 324);
+        *(_DWORD *)(v108 + 336) = v145 + 1;
+        *(_DWORD *)(v146 + 4 * v145) = this;
+      }
+      HouseClass::CalculateCostMultipliers((float *)v108);
+    }
+    v147 = *(_DWORD *)(v108 + 112);
+    if ( *(_DWORD *)(v108 + 120) < v147
+      || (*(_BYTE *)(v108 + 117) || !v147)
+      && (v148 = *(_DWORD *)(v108 + 124), v148 > 0)
+      && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v108 + 104) + 8))(v108 + 104, v148 + v147, 0) )
+    {
+      v149 = *(_DWORD *)(v108 + 120);
+      v150 = *(_DWORD *)(v108 + 108);
+      *(_DWORD *)(v108 + 120) = v149 + 1;
+      *(_DWORD *)(v150 + 4 * v149) = this;
+    }
+    if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5836) )
+      ++*(_DWORD *)(*((_DWORD *)this + 135) + 21388);
+    v151 = *(_DWORD *)(*((_DWORD *)this + 328) + 5476);
+    if ( v151 )
+      *(_DWORD *)(*((_DWORD *)this + 135) + 356) += v151;
+    v152 = *((_DWORD *)this + 328);
+    v153 = *(_DWORD *)(v152 + 5480);
+    if ( v153 )
+      *(_DWORD *)(*((_DWORD *)this + 135) + 360) += v153;
+    v154 = *((_DWORD *)this + 328);
+    if ( *(_BYTE *)(v154 + 5835) )
+      *(_DWORD *)(*((_DWORD *)this + 135) + 724) += *(_DWORD *)(v154 + 6016);
+    v155 = *((_DWORD *)this + 328);
+    v156 = *(_DWORD *)(v155 + 3768);
+    if ( v156 )
+    {
+      LOBYTE(v152) = *(_BYTE *)(v155 + 3278);
+      HouseClass::UpdateProduction(v37, v156, v152, 0);
+      v157 = *((_DWORD *)this + 328);
+      LOBYTE(v158) = *(_BYTE *)(v157 + 3278);
+      HouseClass::UpdateProduction(v108, *(_DWORD *)(v157 + 3768), v158, 0);
+    }
+    v159 = 0;
+    if ( v182 > 0 )
+    {
+      v160 = (_DWORD **)Block;
+      do
+      {
+        (*(void (__thiscall **)(#377 *, int, _DWORD))(*(_DWORD *)this + 632))(this, 2, *v160[v159]);
+        v160 = (_DWORD **)Block;
+        if ( *(_BYTE *)(*((_DWORD *)Block + v159) + 4) )
+        {
+          *((_BYTE *)this + 1048) = 1;
+          *(_BYTE *)(*v160[v159] + 1048) = 1;
+          v160 = (_DWORD **)Block;
+        }
+        ++v159;
+      }
+      while ( v159 < v182 );
+    }
+    if ( MEMORY[0x87F7E8][536212] )
+    {
+      if ( !(unsigned __int8)House::IsCurrentPlayer((#375 *)v108) )
+      {
+        v161 = *((_DWORD *)this + 83);
+        if ( v161 != v108 && !*(_BYTE *)(*(_DWORD *)(v161 + 52) + 422) )
+        {
+          for ( i = *((_BYTE *)this + 1794); i > 0; i = *((_BYTE *)this + 1794) )
+          {
+            v163 = *((_DWORD *)this + i + 378);
+            v164 = (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v163 + 184))(v163, *((_DWORD *)this + 135), 1);
+            HouseClass::AddPower(*((_DWORD **)this + 135), v164);
+            BuildingClass::ClearSuperWeaponAnim((int)this);
+            *(_BYTE *)(*((_DWORD *)this + 135) + 22392) = 1;
+            *(_BYTE *)(*((_DWORD *)this + 135) + 22393) = 1;
+          }
+          (*(void (__thiscall **)(#377 *, int))(*(_DWORD *)this + 416))(this, 1);
+        }
+      }
+    }
+    *(_BYTE *)(v37 + 508) = 1;
+    result = (int)Block;
+    *(_BYTE *)(v108 + 508) = 1;
+    v178 = &VectorClass<Reestablish *>::`vftable';
+    if ( result )
+    {
+      if ( BYTE1(v181) )
+        __3_YAXPAX_Z((void *)result);
+    }
+    LOBYTE(result) = 1;
+  }
+  return result;
+}
+
+/* ASM:
+Block           = dword ptr -14h
+var_10          = dword ptr -10h
+var_C           = dword ptr -0Ch
+var_8           = dword ptr -8
+var_4           = dword ptr -4
+arg_0           = dword ptr  4
+arg_4           = dword ptr  8
+arg_8           = dword ptr  0Ch
+
+sub     esp, 50h
+push    ebx
+mov     ebx, [esp+54h+arg_0]
+push    esi
+mov     esi, ecx
+cmp     ebx, [esi+21Ch]
+jz      loc_4493FC
+mov     ecx, [esi+38h]
+test    ecx, ecx
+jz      short loc_448293
+mov     eax, [esi+520h]
+mov     dl, [eax+157Bh]
+test    dl, dl
+jnz     short loc_448293
+call    ObjectClass__CleanupAudioAndRefs
+
+loc_448293:                             ; CODE XREF: AnimClass__drawFrame+1C↑j
+; AnimClass__drawFrame+2C↑j
+mov     ecx, [esi+520h]
+mov     al, [ecx+16C7h]
+test    al, al
+jz      short loc_4482AA
+mov     byte ptr [ebx+56F8h], 1
+
+loc_4482AA:                             ; CODE XREF: AnimClass__drawFrame+41↑j
+mov     edx, [esi+21Ch]
+mov     eax, [edx+34h]
+mov     cl, [eax+1A6h]
+test    cl, cl
+jz      short loc_4482FC
+mov     ecx, [esi+520h]
+mov     eax, [ecx+1558h]
+test    eax, eax
+jz      short loc_4482FC
+push    eax
+mov     ecx, ebx
+call    HouseClass__AddPower
+mov     edx, [esi+520h]
+mov     eax, dword_A8ED54+30h
+mov     ecx, [edx+1560h]
+lea     edx, [esi+6D0h]
+mov     [esi+6D0h], eax
+mov     eax, [esp+58h+var_44]
+mov     [edx+4], eax
+mov     [edx+8], ecx
+
+loc_4482FC:                             ; CODE XREF: AnimClass__drawFrame+5B↑j
+; AnimClass__drawFrame+6B↑j
+mov     ecx, [ebx+34h]
+mov     eax, [esi+210h]
+mov     edx, 1
+push    ebp
+mov     ecx, [ecx+0B8h]
+push    edi
+shl     edx, cl
+test    edx, eax
+jz      loc_4483A0
+sub     eax, edx
+mov     edx, [esi+520h]
+mov     [esi+210h], eax
+mov     al, [edx+16A4h]
+test    al, al
+jz      short loc_4483A0
+mov     eax, [esi+21Ch]
+xor     edx, edx
+mov     dword ptr [eax+54E4h], 0
+mov     ecx, [esi+21Ch]
+mov     edi, [ecx+78h]
+test    edi, edi
+jle     short loc_448394
+
+loc_448353:                             ; CODE XREF: AnimClass__drawFrame+132↓j
+mov     ecx, [esi+21Ch]
+mov     eax, [ecx+6Ch]
+mov     eax, [eax+edx*4]
+test    eax, eax
+jz      short loc_44838F
+cmp     byte ptr [eax+81h], 0
+jnz     short loc_44838F
+mov     ebp, [eax+520h]
+cmp     byte ptr [ebp+16A4h], 0
+jz      short loc_44838F
+mov     eax, [eax+210h]
+mov     ebp, [ecx+54E4h]
+or      ebp, eax
+mov     [ecx+54E4h], ebp
+
+loc_44838F:                             ; CODE XREF: AnimClass__drawFrame+101↑j
+; AnimClass__drawFrame+10A↑j ...
+inc     edx
+cmp     edx, edi
+jl      short loc_448353
+
+loc_448394:                             ; CODE XREF: AnimClass__drawFrame+F1↑j
+push    2
+mov     ecx, 87F7E8h
+call    MapClass__MarkForRedraw
+
+loc_4483A0:                             ; CODE XREF: AnimClass__drawFrame+B6↑j
+; AnimClass__drawFrame+D2↑j
+mov     ecx, [esi+520h]
+mov     byte ptr [esi+3D3h], 0
+mov     al, [ecx+16BEh]
+test    al, al
+jz      short loc_4483C0
+push    0
+mov     ecx, esi
+call    BuildingClass__DemolishBridgeCheck
+
+loc_4483C0:                             ; CODE XREF: AnimClass__drawFrame+155↑j
+mov     ecx, [esi+21Ch] ; this
+call    House__IsHumanPlayer
+test    al, al
+jnz     short loc_4483DE
+mov     ecx, ebx        ; this
+call    House__IsHumanPlayer
+test    al, al
+jz      loc_4484A2
+
+loc_4483DE:                             ; CODE XREF: AnimClass__drawFrame+16D↑j
+mov     edx, [ebx+34h]
+mov     al, [edx+1A6h]
+test    al, al
+jnz     loc_44848F
+mov     al, byte ptr [esp+60h+arg_4]
+test    al, al
+jz      loc_44848F
+mov     eax, [esi+520h]
+mov     cl, [eax+1552h]
+test    cl, cl
+jz      short loc_448460
+mov     ecx, [esi+21Ch] ; this
+cmp     ecx, ebx
+jz      short loc_44848F
+call    House__IsHumanPlayer
+test    al, al
+jz      short loc_44842D
+push    0FFFFFFFFh      ; int
+or      edx, 0FFFFFFFFh
+mov     ecx, offset aEvaTechbuildin ; "EVA_TechBuildingLost"
+call    VoxClass__FindAndPlay
+
+loc_44842D:                             ; CODE XREF: AnimClass__drawFrame+1BC↑j
+mov     ecx, ebx        ; this
+call    House__IsHumanPlayer
+test    al, al
+jz      short loc_44848F
+mov     ecx, ebx        ; this
+call    House__IsHumanPlayer
+test    al, al
+jz      short loc_44848F
+mov     ecx, [esi+520h]
+mov     ecx, [ecx+1554h]
+cmp     ecx, 0FFFFFFFFh
+jz      short loc_44848F
+push    0FFFFFFFFh
+or      edx, 0FFFFFFFFh
+call    UpdateThemeManager
+jmp     short loc_44848F
+; ---------------------------------------------------------------------------
+
+loc_448460:                             ; CODE XREF: AnimClass__drawFrame+1A9↑j
+mov     edx, [esi]
+lea     eax, [esp+60h+arg_4]
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+1B8h]
+mov     ecx, [eax]
+push    ecx
+mov     ecx, 0Ah
+call    CreateTriggerClassIfFarEnough
+test    al, al
+jz      short loc_44848F
+push    0FFFFFFFFh      ; int
+or      edx, 0FFFFFFFFh
+mov     ecx, offset aEvaBuildingcap ; "EVA_BuildingCaptured"
+call    VoxClass__FindAndPlay
+
+loc_44848F:                             ; CODE XREF: AnimClass__drawFrame+189↑j
+; AnimClass__drawFrame+195↑j ...
+push    0
+mov     ecx, 87F7E8h
+mov     byte ptr ds:880CF4h, 1
+call    MapClass__MarkForRedraw
+
+loc_4484A2:                             ; CODE XREF: AnimClass__drawFrame+178↑j
+mov     edx, [esi+520h]
+mov     byte ptr [esi+80h], 1
+mov     byte ptr [esi+6CCh], 1
+mov     al, [edx+1552h]
+test    al, al
+jz      short loc_448524
+mov     ecx, [esi+614h]
+mov     byte ptr [esi+6EAh], 1
+test    ecx, ecx
+jz      short loc_4484D8
+push    0
+call    Trigger__EnableOnce
+
+loc_4484D8:                             ; CODE XREF: AnimClass__drawFrame+26F↑j
+mov     eax, [esi+520h]
+mov     cl, [eax+16BEh]
+test    cl, cl
+jz      short loc_4484F1
+push    0
+mov     ecx, esi
+call    BuildingClass__RepairPlacement
+
+loc_4484F1:                             ; CODE XREF: AnimClass__drawFrame+286↑j
+xor     edi, edi
+lea     ebp, [esi+55Ch]
+
+loc_4484F9:                             ; CODE XREF: AnimClass__drawFrame+2C2↓j
+mov     ecx, [esi+520h]
+mov     al, [edi+ecx+0F8Ch]
+test    al, al
+jz      short loc_448516
+mov     ecx, [ebp+0]
+test    ecx, ecx
+jz      short loc_448516
+call    VtableStub__425270
+
+loc_448516:                             ; CODE XREF: AnimClass__drawFrame+2A8↑j
+; AnimClass__drawFrame+2AF↑j
+add     edi, 44h ; 'D'
+add     ebp, 4
+cmp     edi, 594h
+jl      short loc_4484F9
+
+loc_448524:                             ; CODE XREF: AnimClass__drawFrame+25E↑j
+cmp     dword ptr ds:0A8B238h, 4
+jnz     short loc_448559
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+84h]
+mov     cl, [eax+0C9Fh]
+test    cl, cl
+jnz     short loc_448559
+mov     eax, [esi+520h]
+mov     ecx, [eax+0DF8h]
+push    ecx
+lea     ecx, [ebx+4368h]
+call    HouseClass__IncrementStat
+
+loc_448559:                             ; CODE XREF: AnimClass__drawFrame+2CB↑j
+; AnimClass__drawFrame+2DF↑j
+xor     edi, edi
+lea     ecx, [esp+60h+var_18]
+push    edi
+push    edi
+call    VectorClass_ReestablishPtr__Construct
+mov     eax, [esi+0E8h]
+mov     [esp+60h+var_18], offset ??_7?$DynamicVectorClass@PAVReestablish@@@@6B@ ; const DynamicVectorClass<Reestablish *>::`vftable'
+cmp     eax, edi
+mov     [esp+60h+var_4], 0Ah
+mov     [esp+60h+var_8], edi
+mov     [esp+60h+arg_4], edi
+jle     loc_4486DF
+
+loc_44858C:                             ; CODE XREF: AnimClass__drawFrame+479↓j
+mov     edx, [esp+60h+arg_4]
+mov     ecx, esi
+push    edx
+call    Team__GetMember
+mov     edi, eax
+test    edi, edi
+jz      loc_4486C8
+test    byte ptr [edi+14h], 4
+jnz     short loc_4485C9
+xor     edi, edi
+
+loc_4485AA:                             ; CODE XREF: AnimClass__drawFrame+379↓j
+; AnimClass__drawFrame+3EC↓j
+mov     edx, [esi]
+push    edi
+push    17h
+mov     ecx, esi
+call    dword ptr [edx+278h]
+mov     eax, [esi]
+push    edi
+push    3
+mov     ecx, esi
+call    dword ptr [eax+278h]
+jmp     loc_4486C8
+; ---------------------------------------------------------------------------
+
+loc_4485C9:                             ; CODE XREF: AnimClass__drawFrame+346↑j
+mov     eax, [esi]
+push    edi
+push    13h
+mov     ecx, esi
+call    dword ptr [eax+278h]
+cmp     eax, 1
+jnz     short loc_4485AA
+mov     ecx, [esi+520h]
+mov     al, [ecx+16BDh]
+test    al, al
+jnz     short loc_448652
+mov     edx, [esi]
+lea     eax, [esp+60h+var_3C]
+push    edi
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+0A8h]
+mov     edx, [edi]
+mov     ebp, eax
+lea     eax, [esp+60h+var_30]
+mov     ecx, edi
+push    eax
+call    dword ptr [edx+48h]
+mov     ecx, [eax+8]
+mov     ebx, [ebp+8]
+mov     edx, [eax+4]
+mov     eax, [eax]
+sub     ecx, ebx
+mov     ebx, [ebp+4]
+sub     edx, ebx
+mov     ebx, [ebp+0]
+push    ecx
+sub     eax, ebx
+push    edx
+push    eax
+lea     ecx, [esp+6Ch+var_24]
+call    Coord__Subtract
+mov     ecx, [eax]
+mov     [esp+60h+var_48], ecx
+lea     ecx, [esp+60h+var_48]
+mov     edx, [eax+4]
+mov     [esp+60h+var_44], edx
+mov     eax, [eax+8]
+mov     [esp+60h+var_40], eax
+call    Coord__Length
+cmp     eax, 40h ; '@'
+jge     loc_4485AA
+
+loc_448652:                             ; CODE XREF: AnimClass__drawFrame+389↑j
+mov     eax, [esp+60h+arg_0]
+mov     edx, [edi]
+mov     bl, [edi+418h]
+push    1
+push    eax
+mov     ecx, edi
+call    dword ptr [edx+3D4h]
+push    8               ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_448680
+mov     [eax], edi
+mov     [eax+4], bl
+mov     edi, eax
+jmp     short loc_448682
+; ---------------------------------------------------------------------------
+
+loc_448680:                             ; CODE XREF: AnimClass__drawFrame+415↑j
+xor     edi, edi
+
+loc_448682:                             ; CODE XREF: AnimClass__drawFrame+41E↑j
+mov     eax, [esp+60h+var_10]
+mov     ecx, [esp+60h+var_8]
+cmp     ecx, eax
+jl      short loc_4486B6
+mov     cl, byte ptr [esp+60h+var_C+1]
+test    cl, cl
+jnz     short loc_44869A
+test    eax, eax
+jnz     short loc_4486C8
+
+loc_44869A:                             ; CODE XREF: AnimClass__drawFrame+434↑j
+mov     ecx, [esp+60h+var_4]
+test    ecx, ecx
+jle     short loc_4486C8
+mov     edx, [esp+60h+var_18]
+add     ecx, eax
+push    0
+push    ecx
+lea     ecx, [esp+68h+var_18]
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_4486C8
+
+loc_4486B6:                             ; CODE XREF: AnimClass__drawFrame+42C↑j
+mov     ecx, [esp+60h+var_8]
+mov     eax, ecx
+inc     ecx
+mov     [esp+60h+var_8], ecx
+mov     ecx, [esp+60h+Block]
+mov     [ecx+eax*4], edi
+
+loc_4486C8:                             ; CODE XREF: AnimClass__drawFrame+33C↑j
+; AnimClass__drawFrame+364↑j ...
+mov     eax, [esp+60h+arg_4]
+mov     ecx, [esi+0E8h]
+inc     eax
+cmp     eax, ecx
+mov     [esp+60h+arg_4], eax
+jl      loc_44858C
+
+loc_4486DF:                             ; CODE XREF: AnimClass__drawFrame+326↑j
+mov     ecx, [esi+524h]
+xor     ebp, ebp
+cmp     ecx, ebp
+jz      short loc_448707
+call    BuildingClass__AbandonProduction
+mov     ecx, [esi+524h]
+cmp     ecx, ebp
+jz      short loc_448701
+mov     edx, [ecx]
+push    1
+call    dword ptr [edx+20h]
+
+loc_448701:                             ; CODE XREF: AnimClass__drawFrame+498↑j
+mov     [esi+524h], ebp
+
+loc_448707:                             ; CODE XREF: AnimClass__drawFrame+489↑j
+mov     ecx, [esi+21Ch]
+push    esi
+call    BuildingClass__DecrementTypeCounter
+mov     ebx, [esi+21Ch]
+push    esi
+lea     ecx, [esp+64h+var_50]
+call    ScriptAction__GetWaypointCoords
+mov     byte ptr [esi+6E3h], 1
+mov     edx, ds:8871E0h
+xor     eax, eax
+mov     ecx, [edx+8BCh]
+cmp     ecx, ebp
+jle     short loc_448790
+mov     edi, [esi+520h]
+mov     edx, [edx+8B0h]
+
+loc_448748:                             ; CODE XREF: AnimClass__drawFrame+4F2↓j
+cmp     [edx], edi
+jz      short loc_448756
+inc     eax
+add     edx, 4
+cmp     eax, ecx
+jl      short loc_448748
+jmp     short loc_448790
+; ---------------------------------------------------------------------------
+
+loc_448756:                             ; CODE XREF: AnimClass__drawFrame+4EA↑j
+mov     eax, [ebx+50h]
+lea     edi, [ebx+50h]
+lea     ecx, [esp+60h+arg_4]
+mov     [esp+60h+arg_4], esi
+push    ecx
+mov     ecx, edi
+call    dword ptr [eax+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_448790
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jge     short loc_448790
+dec     ecx
+cmp     eax, ecx
+mov     [edi+10h], ecx
+jge     short loc_448790
+
+loc_44877E:                             ; CODE XREF: AnimClass__drawFrame+52E↓j
+mov     ecx, [edi+4]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jl      short loc_44877E
+
+loc_448790:                             ; CODE XREF: AnimClass__drawFrame+4DA↑j
+; AnimClass__drawFrame+4F4↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16A9h]
+test    cl, cl
+jz      short loc_4487E0
+mov     edx, [ebx+80h]
+lea     edi, [ebx+80h]
+lea     eax, [esp+60h+arg_4]
+mov     ecx, edi
+push    eax
+mov     [esp+64h+arg_4], esi
+call    dword ptr [edx+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_4487E0
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jge     short loc_4487E0
+dec     ecx
+cmp     eax, ecx
+mov     [edi+10h], ecx
+jge     short loc_4487E0
+
+loc_4487CE:                             ; CODE XREF: AnimClass__drawFrame+57E↓j
+mov     ecx, [edi+4]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jl      short loc_4487CE
+
+loc_4487E0:                             ; CODE XREF: AnimClass__drawFrame+53E↑j
+; AnimClass__drawFrame+55D↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16ADh]
+test    cl, cl
+jz      short loc_448830
+mov     edx, [ebx+98h]
+lea     edi, [ebx+98h]
+lea     eax, [esp+60h+arg_4]
+mov     ecx, edi
+push    eax
+mov     [esp+64h+arg_4], esi
+call    dword ptr [edx+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_448830
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jge     short loc_448830
+dec     ecx
+cmp     eax, ecx
+mov     [edi+10h], ecx
+jge     short loc_448830
+
+loc_44881E:                             ; CODE XREF: AnimClass__drawFrame+5CE↓j
+mov     ecx, [edi+4]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jl      short loc_44881E
+
+loc_448830:                             ; CODE XREF: AnimClass__drawFrame+58E↑j
+; AnimClass__drawFrame+5AD↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16AEh]
+test    cl, cl
+jnz     short loc_44884A
+mov     cl, [eax+16AFh]
+test    cl, cl
+jz      short loc_44888A
+
+loc_44884A:                             ; CODE XREF: AnimClass__drawFrame+5DE↑j
+mov     eax, [ebx+0B0h]
+lea     edi, [ebx+0B0h]
+lea     ecx, [esp+60h+arg_4]
+mov     [esp+60h+arg_4], esi
+push    ecx
+mov     ecx, edi
+call    dword ptr [eax+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_44888A
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jge     short loc_44888A
+dec     ecx
+cmp     eax, ecx
+mov     [edi+10h], ecx
+jge     short loc_44888A
+
+loc_448878:                             ; CODE XREF: AnimClass__drawFrame+628↓j
+mov     ecx, [edi+4]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jl      short loc_448878
+
+loc_44888A:                             ; CODE XREF: AnimClass__drawFrame+5E8↑j
+; AnimClass__drawFrame+607↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16ABh]
+test    cl, cl
+jz      short loc_4488DA
+mov     edx, [ebx+0C8h]
+lea     edi, [ebx+0C8h]
+lea     eax, [esp+60h+arg_4]
+mov     ecx, edi
+push    eax
+mov     [esp+64h+arg_4], esi
+call    dword ptr [edx+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_4488DA
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jge     short loc_4488DA
+dec     ecx
+cmp     eax, ecx
+mov     [edi+10h], ecx
+jge     short loc_4488DA
+
+loc_4488C8:                             ; CODE XREF: AnimClass__drawFrame+678↓j
+mov     ecx, [edi+4]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jl      short loc_4488C8
+
+loc_4488DA:                             ; CODE XREF: AnimClass__drawFrame+638↑j
+; AnimClass__drawFrame+657↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+157Bh]
+test    cl, cl
+jz      short loc_448933
+cmp     dword ptr [eax+634h], 0FFFFFFFFh
+jle     short loc_448933
+mov     eax, [ebx+0E0h]
+lea     edi, [ebx+0E0h]
+lea     ecx, [esp+60h+arg_4]
+mov     [esp+60h+arg_4], esi
+push    ecx
+mov     ecx, edi
+call    dword ptr [eax+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_448933
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jge     short loc_448933
+dec     ecx
+cmp     eax, ecx
+mov     [edi+10h], ecx
+jge     short loc_448933
+
+loc_448921:                             ; CODE XREF: AnimClass__drawFrame+6D1↓j
+mov     ecx, [edi+4]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jl      short loc_448921
+
+loc_448933:                             ; CODE XREF: AnimClass__drawFrame+688↑j
+; AnimClass__drawFrame+691↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16ACh]
+test    cl, cl
+jz      short loc_448983
+mov     edx, [ebx+0F8h]
+lea     edi, [ebx+0F8h]
+lea     eax, [esp+60h+arg_4]
+mov     ecx, edi
+push    eax
+mov     [esp+64h+arg_4], esi
+call    dword ptr [edx+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_448983
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jge     short loc_448983
+dec     ecx
+cmp     eax, ecx
+mov     [edi+10h], ecx
+jge     short loc_448983
+
+loc_448971:                             ; CODE XREF: AnimClass__drawFrame+721↓j
+mov     ecx, [edi+4]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jl      short loc_448971
+
+loc_448983:                             ; CODE XREF: AnimClass__drawFrame+6E1↑j
+; AnimClass__drawFrame+700↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16B0h]
+test    cl, cl
+jz      short loc_4489D3
+mov     edx, [ebx+110h]
+lea     edi, [ebx+110h]
+lea     eax, [esp+60h+arg_4]
+mov     ecx, edi
+push    eax
+mov     [esp+64h+arg_4], esi
+call    dword ptr [edx+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_4489D3
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jge     short loc_4489D3
+dec     ecx
+cmp     eax, ecx
+mov     [edi+10h], ecx
+jge     short loc_4489D3
+
+loc_4489C1:                             ; CODE XREF: AnimClass__drawFrame+771↓j
+mov     ecx, [edi+4]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jl      short loc_4489C1
+
+loc_4489D3:                             ; CODE XREF: AnimClass__drawFrame+731↑j
+; AnimClass__drawFrame+750↑j ...
+mov     eax, [esi+520h]
+cmp     [eax+170Ch], ebp
+jle     short loc_448A21
+mov     edx, [ebx+128h]
+lea     edi, [ebx+128h]
+lea     eax, [esp+60h+arg_4]
+mov     ecx, edi
+push    eax
+mov     [esp+64h+arg_4], esi
+call    dword ptr [edx+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_448A21
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jge     short loc_448A21
+dec     ecx
+cmp     eax, ecx
+mov     [edi+10h], ecx
+jge     short loc_448A21
+
+loc_448A0F:                             ; CODE XREF: AnimClass__drawFrame+7BF↓j
+mov     ecx, [edi+4]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jl      short loc_448A0F
+
+loc_448A21:                             ; CODE XREF: AnimClass__drawFrame+77F↑j
+; AnimClass__drawFrame+79E↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16CDh]
+test    cl, cl
+jz      short loc_448A78
+mov     edx, [ebx+140h]
+lea     edi, [ebx+140h]
+lea     eax, [esp+60h+arg_4]
+mov     ecx, edi
+push    eax
+mov     [esp+64h+arg_4], esi
+call    dword ptr [edx+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_448A71
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jge     short loc_448A71
+dec     ecx
+cmp     eax, ecx
+mov     [edi+10h], ecx
+jge     short loc_448A71
+
+loc_448A5F:                             ; CODE XREF: AnimClass__drawFrame+80F↓j
+mov     ecx, [edi+4]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jl      short loc_448A5F
+
+loc_448A71:                             ; CODE XREF: AnimClass__drawFrame+7EE↑j
+; AnimClass__drawFrame+7F5↑j ...
+mov     ecx, ebx
+call    HouseClass__CalculateCostMultipliers
+
+loc_448A78:                             ; CODE XREF: AnimClass__drawFrame+7CF↑j
+mov     eax, [ebx+68h]
+lea     edi, [ebx+68h]
+lea     ecx, [esp+60h+arg_4]
+mov     [esp+60h+arg_4], esi
+push    ecx
+mov     ecx, edi
+call    dword ptr [eax+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_448AB2
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jge     short loc_448AB2
+dec     ecx
+cmp     eax, ecx
+mov     [edi+10h], ecx
+jge     short loc_448AB2
+
+loc_448AA0:                             ; CODE XREF: AnimClass__drawFrame+850↓j
+mov     ecx, [edi+4]
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, [edi+10h]
+cmp     eax, ecx
+jl      short loc_448AA0
+
+loc_448AB2:                             ; CODE XREF: AnimClass__drawFrame+82F↑j
+; AnimClass__drawFrame+836↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16CCh]
+test    cl, cl
+jz      short loc_448AC8
+dec     dword ptr [ebx+538Ch]
+
+loc_448AC8:                             ; CODE XREF: AnimClass__drawFrame+860↑j
+mov     ecx, [esi+520h]
+mov     ecx, [ecx+1564h]
+cmp     ecx, ebp
+jz      short loc_448B0A
+mov     al, [esi+6E4h]
+test    al, al
+jz      short loc_448B0A
+mov     eax, [esi+21Ch]
+mov     edx, [eax+164h]
+sub     edx, ecx
+mov     [eax+164h], edx
+mov     eax, [esi+21Ch]
+cmp     [eax+164h], ebp
+jge     short loc_448B0A
+mov     [eax+164h], ebp
+
+loc_448B0A:                             ; CODE XREF: AnimClass__drawFrame+876↑j
+; AnimClass__drawFrame+880↑j ...
+mov     edx, [esi+520h]
+mov     ecx, [edx+1568h]
+cmp     ecx, ebp
+jz      short loc_448B4C
+mov     al, [esi+6E4h]
+test    al, al
+jz      short loc_448B4C
+mov     eax, [esi+21Ch]
+mov     edx, [eax+168h]
+sub     edx, ecx
+mov     [eax+168h], edx
+mov     eax, [esi+21Ch]
+cmp     [eax+168h], ebp
+jge     short loc_448B4C
+mov     [eax+168h], ebp
+
+loc_448B4C:                             ; CODE XREF: AnimClass__drawFrame+8B8↑j
+; AnimClass__drawFrame+8C2↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16CBh]
+test    cl, cl
+jz      short loc_448B70
+mov     eax, [eax+1780h]
+mov     ecx, [ebx+2D4h]
+sub     ecx, eax
+mov     [ebx+2D4h], ecx
+
+loc_448B70:                             ; CODE XREF: AnimClass__drawFrame+8FA↑j
+mov     eax, [esi+520h]
+mov     cl, [eax+16C7h]
+test    cl, cl
+jz      short loc_448BB7
+mov     cl, [esi+6ECh]
+mov     byte ptr [esi+6EBh], 0FFh
+test    cl, cl
+jnz     short loc_448B9D
+mov     cl, [eax+1707h]
+mov     [esi+6ECh], cl
+
+loc_448B9D:                             ; CODE XREF: AnimClass__drawFrame+92F↑j
+mov     edx, [esi]
+push    1
+mov     ecx, esi
+mov     byte ptr [esi+80h], 1
+mov     byte ptr [esi+6ECh], 1
+call    dword ptr [edx+410h]
+
+loc_448BB7:                             ; CODE XREF: AnimClass__drawFrame+91E↑j
+mov     eax, [esi+520h]
+mov     cl, [eax+0CD1h]
+test    cl, cl
+jz      short loc_448BD1
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+418h]
+
+loc_448BD1:                             ; CODE XREF: AnimClass__drawFrame+965↑j
+mov     eax, [esi]
+push    ebp
+push    ebp
+push    ebp
+push    ebp
+mov     ecx, esi
+call    dword ptr [eax+48Ch]
+mov     edi, [esp+58h+arg_8]
+push    1
+push    edi
+mov     ecx, esi
+call    TechnoClass__ProcessCapture
+mov     ecx, [esi+520h]
+mov     al, [ecx+16C7h]
+test    al, al
+jz      short loc_448C3E
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+350h]
+test    al, al
+jz      short loc_448C3E
+mov     eax, [esi+520h]
+mov     cl, [eax+16C7h]
+test    cl, cl
+jz      short loc_448C3E
+mov     cl, [esi+6ECh]
+mov     byte ptr [esi+6EBh], 1
+cmp     cl, [eax+1707h]
+jnz     short loc_448C37
+mov     byte ptr [esi+6ECh], 0
+
+loc_448C37:                             ; CODE XREF: AnimClass__drawFrame+9CE↑j
+mov     byte ptr [esi+80h], 1
+
+loc_448C3E:                             ; CODE XREF: AnimClass__drawFrame+99B↑j
+; AnimClass__drawFrame+9A9↑j ...
+mov     edx, [esi+520h]
+mov     al, [edx+0CD1h]
+test    al, al
+jz      short loc_448C66
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+350h]
+test    al, al
+jz      short loc_448C66
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+414h]
+
+loc_448C66:                             ; CODE XREF: AnimClass__drawFrame+9EC↑j
+; AnimClass__drawFrame+9FA↑j
+push    ebp
+mov     ecx, esi
+call    AnimClass__updateAnimation
+mov     ecx, ebx
+mov     [ebx+54E0h], esi
+call    BuildingClass__CalcExitCoords
+mov     ecx, [esi+21Ch]
+call    BuildingClass__CalcExitCoords
+mov     eax, [esi+21Ch]
+cmp     [eax+54E0h], esi
+jnz     short loc_448C9A
+mov     [eax+54E0h], ebp
+
+loc_448C9A:                             ; CODE XREF: AnimClass__drawFrame+A32↑j
+mov     ecx, ebx        ; this
+call    House__IsHumanPlayer
+test    al, al
+jz      short loc_448CD6
+mov     eax, [esi+520h]
+mov     cl, [eax+16B9h]
+test    cl, cl
+jz      short loc_448CD6
+push    ebp
+mov     ecx, 87F7E8h
+mov     ds:88098Ch, ebp
+mov     ds:880990h, ebp
+mov     dword ptr ds:880994h, 0FFFFFFFFh
+call    Mouse__SetBounds
+
+loc_448CD6:                             ; CODE XREF: AnimClass__drawFrame+A43↑j
+; AnimClass__drawFrame+A53↑j
+mov     ecx, [esi+21Ch]
+push    esi
+call    BuildingClass__IncrementOccupantTypeCounter
+mov     edx, [esi]
+push    1
+mov     ecx, esi
+mov     byte ptr [esi+6E8h], 0
+call    dword ptr [edx+4DCh]
+mov     eax, [esi+520h]
+mov     cl, [eax+16BEh]
+test    cl, cl
+jz      short loc_448D6B
+cmp     ds:0A8E7ACh, ebp
+jnz     short loc_448D6B
+mov     al, [esi+90h]
+test    al, al
+jz      short loc_448D55
+mov     al, [esi+81h]
+test    al, al
+jnz     short loc_448D55
+push    ebp
+mov     ecx, esi        ; this
+call    BuildingClass__DemolishBridge
+push    2
+mov     ecx, esi        ; this
+call    BuildingClass__DemolishBridge
+push    4
+mov     ecx, esi        ; this
+call    BuildingClass__DemolishBridge
+push    6
+mov     ecx, esi        ; this
+call    BuildingClass__DemolishBridge
+push    1
+mov     ecx, esi
+call    BuildingClass__RepairPlacement
+cmp     ds:0A8E7ACh, ebp
+jnz     short loc_448D6B
+
+loc_448D55:                             ; CODE XREF: AnimClass__drawFrame+AB5↑j
+; AnimClass__drawFrame+ABF↑j
+mov     ecx, [esi+520h]
+mov     al, [ecx+16BEh]
+test    al, al
+jz      short loc_448D6B
+mov     [esi+618h], ebp
+
+loc_448D6B:                             ; CODE XREF: AnimClass__drawFrame+AA3↑j
+; AnimClass__drawFrame+AAB↑j ...
+mov     ecx, [esi+21Ch] ; this
+call    House__IsHumanPlayer
+test    al, al
+jz      short loc_448D95
+mov     edx, [esi]
+push    ebp
+push    ebp
+push    ebp
+push    ebp
+push    ebp
+mov     ecx, esi
+call    dword ptr [edx+488h]
+push    1
+mov     ecx, 87F7E8h
+call    MapClass__MarkForRedraw
+
+loc_448D95:                             ; CODE XREF: AnimClass__drawFrame+B18↑j
+mov     ecx, [edi+34h]
+mov     eax, 1
+mov     ecx, [ecx+0B8h]
+shl     eax, cl
+mov     ecx, [esi+210h]
+test    eax, ecx
+jz      short loc_448DB9
+not     eax
+and     eax, ecx
+mov     [esi+210h], eax
+
+loc_448DB9:                             ; CODE XREF: AnimClass__drawFrame+B4D↑j
+mov     edx, [esi]
+mov     ecx, esi
+call    dword ptr [edx+1E4h]
+mov     ebp, eax
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+1BCh]
+movsx   eax, word ptr [eax+10Ah]
+mov     edx, [esi]
+push    eax
+mov     ecx, esi
+call    dword ptr [edx+464h]
+mov     edi, eax
+mov     eax, [esi]
+mov     ecx, esi
+call    dword ptr [eax+160h]
+test    al, al
+jnz     short loc_448E0D
+mov     eax, [esi+294h]
+test    eax, eax
+jz      short loc_448E17
+mov     ecx, esi
+call    IsObjectTypeBuildingType
+mov     ecx, [esi+294h]
+cmp     [ecx+50h], eax
+jnz     short loc_448E17
+
+loc_448E0D:                             ; CODE XREF: AnimClass__drawFrame+B8F↑j
+push    edi
+mov     ecx, esi
+call    Techno__StartInvulnerability
+mov     edi, eax
+
+loc_448E17:                             ; CODE XREF: AnimClass__drawFrame+B99↑j
+; AnimClass__drawFrame+BAB↑j
+mov     [esi+700h], di
+and     edi, 0FFFFh
+push    edi
+push    ebp
+mov     ecx, esi
+call    BuildingClass__SyncCrateVisuals
+movsx   edx, byte ptr [esi+6EDh]
+push    edx
+mov     ecx, esi
+call    BuildingClass__SetConnectedBuildingMission
+mov     edx, ds:8871E0h
+xor     eax, eax
+mov     ecx, [edx+8BCh]
+test    ecx, ecx
+jle     short loc_448E6A
+mov     edi, [esi+520h]
+mov     edx, [edx+8B0h]
+
+loc_448E5A:                             ; CODE XREF: AnimClass__drawFrame+C08↓j
+cmp     [edx], edi
+jz      loc_4493A9
+inc     eax
+add     edx, 4
+cmp     eax, ecx
+jl      short loc_448E5A
+
+loc_448E6A:                             ; CODE XREF: AnimClass__drawFrame+BEC↑j
+mov     ebp, [esp+60h+arg_0]
+
+loc_448E6E:                             ; CODE XREF: AnimClass__drawFrame+1163↓j
+; AnimClass__drawFrame+116E↓j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16A9h]
+test    cl, cl
+jz      short loc_448EC5
+mov     ecx, [ebp+88h]
+mov     eax, [ebp+90h]
+lea     edi, [ebp+80h]
+cmp     eax, ecx
+jl      short loc_448EB6
+mov     al, [edi+0Dh]
+test    al, al
+jnz     short loc_448E9F
+test    ecx, ecx
+jnz     short loc_448EC5
+
+loc_448E9F:                             ; CODE XREF: AnimClass__drawFrame+C39↑j
+mov     eax, [edi+14h]
+test    eax, eax
+jle     short loc_448EC5
+mov     edx, [edi]
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, edi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_448EC5
+
+loc_448EB6:                             ; CODE XREF: AnimClass__drawFrame+C32↑j
+mov     eax, [edi+10h]
+mov     edx, [edi+4]
+lea     ecx, [eax+1]
+mov     [edi+10h], ecx
+mov     [edx+eax*4], esi
+
+loc_448EC5:                             ; CODE XREF: AnimClass__drawFrame+C1C↑j
+; AnimClass__drawFrame+C3D↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16ADh]
+test    cl, cl
+jz      short loc_448F1C
+mov     ecx, [ebp+0A0h]
+mov     eax, [ebp+0A8h]
+lea     edi, [ebp+98h]
+cmp     eax, ecx
+jl      short loc_448F0D
+mov     al, [edi+0Dh]
+test    al, al
+jnz     short loc_448EF6
+test    ecx, ecx
+jnz     short loc_448F1C
+
+loc_448EF6:                             ; CODE XREF: AnimClass__drawFrame+C90↑j
+mov     eax, [edi+14h]
+test    eax, eax
+jle     short loc_448F1C
+mov     edx, [edi]
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, edi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_448F1C
+
+loc_448F0D:                             ; CODE XREF: AnimClass__drawFrame+C89↑j
+mov     eax, [edi+10h]
+mov     edx, [edi+4]
+lea     ecx, [eax+1]
+mov     [edi+10h], ecx
+mov     [edx+eax*4], esi
+
+loc_448F1C:                             ; CODE XREF: AnimClass__drawFrame+C73↑j
+; AnimClass__drawFrame+C94↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16AEh]
+test    cl, cl
+jnz     short loc_448F36
+mov     cl, [eax+16AFh]
+test    cl, cl
+jz      short loc_448F7D
+
+loc_448F36:                             ; CODE XREF: AnimClass__drawFrame+CCA↑j
+mov     ecx, [ebp+0B8h]
+mov     eax, [ebp+0C0h]
+lea     edi, [ebp+0B0h]
+cmp     eax, ecx
+jl      short loc_448F6E
+mov     al, [edi+0Dh]
+test    al, al
+jnz     short loc_448F57
+test    ecx, ecx
+jnz     short loc_448F7D
+
+loc_448F57:                             ; CODE XREF: AnimClass__drawFrame+CF1↑j
+mov     eax, [edi+14h]
+test    eax, eax
+jle     short loc_448F7D
+mov     edx, [edi]
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, edi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_448F7D
+
+loc_448F6E:                             ; CODE XREF: AnimClass__drawFrame+CEA↑j
+mov     eax, [edi+10h]
+mov     edx, [edi+4]
+lea     ecx, [eax+1]
+mov     [edi+10h], ecx
+mov     [edx+eax*4], esi
+
+loc_448F7D:                             ; CODE XREF: AnimClass__drawFrame+CD4↑j
+; AnimClass__drawFrame+CF5↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16ABh]
+test    cl, cl
+jz      short loc_448FD4
+mov     ecx, [ebp+0D0h]
+mov     eax, [ebp+0D8h]
+lea     edi, [ebp+0C8h]
+cmp     eax, ecx
+jl      short loc_448FC5
+mov     al, [edi+0Dh]
+test    al, al
+jnz     short loc_448FAE
+test    ecx, ecx
+jnz     short loc_448FD4
+
+loc_448FAE:                             ; CODE XREF: AnimClass__drawFrame+D48↑j
+mov     eax, [edi+14h]
+test    eax, eax
+jle     short loc_448FD4
+mov     edx, [edi]
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, edi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_448FD4
+
+loc_448FC5:                             ; CODE XREF: AnimClass__drawFrame+D41↑j
+mov     eax, [edi+10h]
+mov     edx, [edi+4]
+lea     ecx, [eax+1]
+mov     [edi+10h], ecx
+mov     [edx+eax*4], esi
+
+loc_448FD4:                             ; CODE XREF: AnimClass__drawFrame+D2B↑j
+; AnimClass__drawFrame+D4C↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+157Bh]
+test    cl, cl
+jz      short loc_449034
+cmp     dword ptr [eax+634h], 0FFFFFFFFh
+jle     short loc_449034
+mov     ecx, [ebp+0E8h]
+mov     eax, [ebp+0F0h]
+lea     edi, [ebp+0E0h]
+cmp     eax, ecx
+jl      short loc_449025
+mov     al, [edi+0Dh]
+test    al, al
+jnz     short loc_44900E
+test    ecx, ecx
+jnz     short loc_449034
+
+loc_44900E:                             ; CODE XREF: AnimClass__drawFrame+DA8↑j
+mov     eax, [edi+14h]
+test    eax, eax
+jle     short loc_449034
+mov     edx, [edi]
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, edi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_449034
+
+loc_449025:                             ; CODE XREF: AnimClass__drawFrame+DA1↑j
+mov     eax, [edi+10h]
+mov     edx, [edi+4]
+lea     ecx, [eax+1]
+mov     [edi+10h], ecx
+mov     [edx+eax*4], esi
+
+loc_449034:                             ; CODE XREF: AnimClass__drawFrame+D82↑j
+; AnimClass__drawFrame+D8B↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16ACh]
+test    cl, cl
+jz      short loc_44908B
+mov     ecx, [ebp+100h]
+mov     eax, [ebp+108h]
+lea     edi, [ebp+0F8h]
+cmp     eax, ecx
+jl      short loc_44907C
+mov     al, [edi+0Dh]
+test    al, al
+jnz     short loc_449065
+test    ecx, ecx
+jnz     short loc_44908B
+
+loc_449065:                             ; CODE XREF: AnimClass__drawFrame+DFF↑j
+mov     eax, [edi+14h]
+test    eax, eax
+jle     short loc_44908B
+mov     edx, [edi]
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, edi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_44908B
+
+loc_44907C:                             ; CODE XREF: AnimClass__drawFrame+DF8↑j
+mov     eax, [edi+10h]
+mov     edx, [edi+4]
+lea     ecx, [eax+1]
+mov     [edi+10h], ecx
+mov     [edx+eax*4], esi
+
+loc_44908B:                             ; CODE XREF: AnimClass__drawFrame+DE2↑j
+; AnimClass__drawFrame+E03↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16B0h]
+test    cl, cl
+jz      short loc_4490E2
+mov     ecx, [ebp+118h]
+mov     eax, [ebp+120h]
+lea     edi, [ebp+110h]
+cmp     eax, ecx
+jl      short loc_4490D3
+mov     al, [edi+0Dh]
+test    al, al
+jnz     short loc_4490BC
+test    ecx, ecx
+jnz     short loc_4490E2
+
+loc_4490BC:                             ; CODE XREF: AnimClass__drawFrame+E56↑j
+mov     eax, [edi+14h]
+test    eax, eax
+jle     short loc_4490E2
+mov     edx, [edi]
+add     ecx, eax
+push    0
+push    ecx
+mov     ecx, edi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_4490E2
+
+loc_4490D3:                             ; CODE XREF: AnimClass__drawFrame+E4F↑j
+mov     eax, [edi+10h]
+mov     edx, [edi+4]
+lea     ecx, [eax+1]
+mov     [edi+10h], ecx
+mov     [edx+eax*4], esi
+
+loc_4490E2:                             ; CODE XREF: AnimClass__drawFrame+E39↑j
+; AnimClass__drawFrame+E5A↑j ...
+mov     eax, [esi+520h]
+mov     ecx, [eax+170Ch]
+test    ecx, ecx
+jle     short loc_449139
+mov     ecx, [ebp+130h]
+mov     eax, [ebp+138h]
+lea     edi, [ebp+128h]
+cmp     eax, ecx
+jl      short loc_44912A
+mov     al, [edi+0Dh]
+test    al, al
+jnz     short loc_449113
+test    ecx, ecx
+jnz     short loc_449139
+
+loc_449113:                             ; CODE XREF: AnimClass__drawFrame+EAD↑j
+mov     eax, [edi+14h]
+test    eax, eax
+jle     short loc_449139
+mov     edx, [edi]
+add     ecx, eax
+push    0
+push    ecx
+mov     ecx, edi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_449139
+
+loc_44912A:                             ; CODE XREF: AnimClass__drawFrame+EA6↑j
+mov     eax, [edi+10h]
+mov     edx, [edi+4]
+lea     ecx, [eax+1]
+mov     [edi+10h], ecx
+mov     [edx+eax*4], esi
+
+loc_449139:                             ; CODE XREF: AnimClass__drawFrame+E90↑j
+; AnimClass__drawFrame+EB1↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16CDh]
+test    cl, cl
+jz      short loc_449197
+mov     ecx, [ebp+148h]
+mov     eax, [ebp+150h]
+lea     edi, [ebp+140h]
+cmp     eax, ecx
+jl      short loc_449181
+mov     al, [edi+0Dh]
+test    al, al
+jnz     short loc_44916A
+test    ecx, ecx
+jnz     short loc_449190
+
+loc_44916A:                             ; CODE XREF: AnimClass__drawFrame+F04↑j
+mov     eax, [edi+14h]
+test    eax, eax
+jle     short loc_449190
+mov     edx, [edi]
+add     ecx, eax
+push    0
+push    ecx
+mov     ecx, edi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_449190
+
+loc_449181:                             ; CODE XREF: AnimClass__drawFrame+EFD↑j
+mov     eax, [edi+10h]
+mov     edx, [edi+4]
+lea     ecx, [eax+1]
+mov     [edi+10h], ecx
+mov     [edx+eax*4], esi
+
+loc_449190:                             ; CODE XREF: AnimClass__drawFrame+F08↑j
+; AnimClass__drawFrame+F0F↑j ...
+mov     ecx, ebp
+call    HouseClass__CalculateCostMultipliers
+
+loc_449197:                             ; CODE XREF: AnimClass__drawFrame+EE7↑j
+mov     ecx, [ebp+70h]
+mov     eax, [ebp+78h]
+lea     edi, [ebp+68h]
+cmp     eax, ecx
+jl      short loc_4491C6
+mov     al, [edi+0Dh]
+test    al, al
+jnz     short loc_4491AF
+test    ecx, ecx
+jnz     short loc_4491D5
+
+loc_4491AF:                             ; CODE XREF: AnimClass__drawFrame+F49↑j
+mov     eax, [edi+14h]
+test    eax, eax
+jle     short loc_4491D5
+mov     edx, [edi]
+add     ecx, eax
+push    0
+push    ecx
+mov     ecx, edi
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_4491D5
+
+loc_4491C6:                             ; CODE XREF: AnimClass__drawFrame+F42↑j
+mov     eax, [edi+10h]
+mov     edx, [edi+4]
+lea     ecx, [eax+1]
+mov     [edi+10h], ecx
+mov     [edx+eax*4], esi
+
+loc_4491D5:                             ; CODE XREF: AnimClass__drawFrame+F4D↑j
+; AnimClass__drawFrame+F54↑j ...
+mov     eax, [esi+520h]
+mov     cl, [eax+16CCh]
+test    cl, cl
+jz      short loc_4491F1
+mov     eax, [esi+21Ch]
+inc     dword ptr [eax+538Ch]
+
+loc_4491F1:                             ; CODE XREF: AnimClass__drawFrame+F83↑j
+mov     ecx, [esi+520h]
+mov     ecx, [ecx+1564h]
+test    ecx, ecx
+jz      short loc_44920D
+mov     eax, [esi+21Ch]
+add     [eax+164h], ecx
+
+loc_44920D:                             ; CODE XREF: AnimClass__drawFrame+F9F↑j
+mov     edx, [esi+520h]
+mov     ecx, [edx+1568h]
+test    ecx, ecx
+jz      short loc_449229
+mov     eax, [esi+21Ch]
+add     [eax+168h], ecx
+
+loc_449229:                             ; CODE XREF: AnimClass__drawFrame+FBB↑j
+mov     ecx, [esi+520h]
+mov     al, [ecx+16CBh]
+test    al, al
+jz      short loc_44924B
+mov     eax, [esi+21Ch]
+mov     ecx, [ecx+1780h]
+add     [eax+2D4h], ecx
+
+loc_44924B:                             ; CODE XREF: AnimClass__drawFrame+FD7↑j
+mov     eax, [esi+520h]
+mov     ecx, [eax+0EB8h]
+test    ecx, ecx
+jz      short loc_449289
+mov     dl, [eax+0CCEh]
+push    0
+push    edx
+push    ecx
+mov     ecx, ebx
+call    HouseClass__UpdateProduction
+mov     eax, [esi+520h]
+push    0
+mov     cl, [eax+0CCEh]
+mov     edx, [eax+0EB8h]
+push    ecx
+push    edx
+mov     ecx, ebp
+call    HouseClass__UpdateProduction
+
+loc_449289:                             ; CODE XREF: AnimClass__drawFrame+FF9↑j
+mov     eax, [esp+60h+var_8]
+xor     edi, edi
+test    eax, eax
+jle     short loc_4492D7
+mov     eax, [esp+60h+Block]
+
+loc_449297:                             ; CODE XREF: AnimClass__drawFrame+1075↓j
+mov     eax, [eax+edi*4]
+mov     edx, [esi]
+mov     ecx, [eax]
+push    ecx
+push    2
+mov     ecx, esi
+call    dword ptr [edx+278h]
+mov     eax, [esp+60h+Block]
+mov     edx, [eax+edi*4]
+mov     cl, [edx+4]
+test    cl, cl
+jz      short loc_4492CE
+mov     byte ptr [esi+418h], 1
+mov     eax, [eax+edi*4]
+mov     ecx, [eax]
+mov     byte ptr [ecx+418h], 1
+mov     eax, [esp+60h+Block]
+
+loc_4492CE:                             ; CODE XREF: AnimClass__drawFrame+1055↑j
+mov     ecx, [esp+60h+var_8]
+inc     edi
+cmp     edi, ecx
+jl      short loc_449297
+
+loc_4492D7:                             ; CODE XREF: AnimClass__drawFrame+1031↑j
+mov     eax, ds:0A8B238h
+test    eax, eax
+jz      loc_44936E
+mov     ecx, ebp        ; this
+call    House__IsCurrentPlayer
+test    al, al
+jnz     short loc_44936E
+mov     eax, [esi+14Ch]
+cmp     eax, ebp
+jz      short loc_44936E
+mov     edx, [eax+34h]
+mov     al, [edx+1A6h]
+test    al, al
+jnz     short loc_44936E
+mov     al, [esi+702h]
+test    al, al
+jle     short loc_449362
+
+loc_449310:                             ; CODE XREF: AnimClass__drawFrame+1100↓j
+movsx   eax, al
+push    1
+mov     ecx, [esi+eax*4+5E8h]
+mov     eax, [esi+21Ch]
+push    eax
+mov     edx, [ecx]
+call    dword ptr [edx+0B8h]
+mov     ecx, [esi+21Ch]
+push    eax
+call    HouseClass__AddPower
+mov     ecx, esi
+call    BuildingClass__ClearSuperWeaponAnim
+mov     ecx, [esi+21Ch]
+mov     byte ptr [ecx+5778h], 1
+mov     edx, [esi+21Ch]
+mov     byte ptr [edx+5779h], 1
+mov     al, [esi+702h]
+test    al, al
+jg      short loc_449310
+
+loc_449362:                             ; CODE XREF: AnimClass__drawFrame+10AE↑j
+mov     eax, [esi]
+push    1
+mov     ecx, esi
+call    dword ptr [eax+1A0h]
+
+loc_44936E:                             ; CODE XREF: AnimClass__drawFrame+107E↑j
+; AnimClass__drawFrame+108D↑j ...
+mov     byte ptr [ebx+1FCh], 1
+mov     eax, [esp+60h+Block]
+mov     byte ptr [ebp+1FCh], 1
+pop     edi
+test    eax, eax
+mov     [esp+5Ch+var_18], offset ??_7?$VectorClass@PAVReestablish@@@@6B@ ; const VectorClass<Reestablish *>::`vftable'
+pop     ebp
+jz      short loc_44939F
+mov     cl, byte ptr [esp+58h+var_C+1]
+test    cl, cl
+jz      short loc_44939F
+push    eax             ; Block
+call    ??3_YAXPAX_Z
+add     esp, 4
+
+loc_44939F:                             ; CODE XREF: AnimClass__drawFrame+112C↑j
+; AnimClass__drawFrame+1134↑j
+pop     esi
+mov     al, 1
+pop     ebx
+add     esp, 50h
+retn    8
+; ---------------------------------------------------------------------------
+
+loc_4493A9:                             ; CODE XREF: AnimClass__drawFrame+BFC↑j
+mov     ebp, [esp+60h+arg_0]
+mov     ecx, [ebp+58h]
+mov     eax, [ebp+60h]
+lea     edi, [ebp+50h]
+cmp     eax, ecx
+jl      short loc_4493E8
+mov     al, [edi+0Dh]
+test    al, al
+jnz     short loc_4493C9
+test    ecx, ecx
+jnz     loc_448E6E
+
+loc_4493C9:                             ; CODE XREF: AnimClass__drawFrame+115F↑j
+mov     eax, [edi+14h]
+test    eax, eax
+jle     loc_448E6E
+mov     edx, [edi]
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, edi
+call    dword ptr [edx+8]
+test    al, al
+jz      loc_448E6E
+
+loc_4493E8:                             ; CODE XREF: AnimClass__drawFrame+1158↑j
+mov     eax, [edi+10h]
+mov     edx, [edi+4]
+lea     ecx, [eax+1]
+mov     [edi+10h], ecx
+mov     [edx+eax*4], esi
+jmp     loc_448E6E
+; ---------------------------------------------------------------------------
+
+loc_4493FC:                             ; CODE XREF: AnimClass__drawFrame+11↑j
+pop     esi
+xor     al, al
+pop     ebx
+add     esp, 50h
+retn    8
+*/
+} }
+
 // 0x449540
 namespace gamemd { int AnimClass::resetAnimation() {
 {
@@ -4090,6 +6819,7 @@ namespace gamemd { int AnimClass::resetAnimation() {
     return 1;
 }
 } }
+
 // 0x449A50
 namespace gamemd { int AnimClass::setLoopCount() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -4147,6 +6877,7 @@ int __thiscall BuildingClass::vt_145_(#377 *this)
   return 1; /*0x449b27*/
 }
 } }
+
 // 0x449C30
 namespace gamemd { int AnimClass::finalizeAnimation() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -4201,15 +6932,14 @@ LABEL_7:
   }
 }
 } }
+
 // 0x4666C0
 namespace gamemd { bool BulletClass::CheckMirrorState(int a1) {
 {
     return (unsigned char)ObjectClass::UpdateProductionDisplay((#374 *)this) != 0;
 }
 } }
-// 0x4666E0
-namespace gamemd { int BulletClass::ProcessNukeExplosion() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
+
 // 0x4666e0
 char __thiscall BulletClass::ProcessNukeExplosion(int *this)
 {
@@ -7240,6 +9970,3038 @@ pop     ebp
 retn
 */
 } }
+
+// 0x4666e0
+char __thiscall BulletClass::ProcessNukeExplosion(int *this)
+{
+  int v2; // eax
+  int v3; // eax
+  int v4; // ecx
+  char v5; // al
+  unsigned __int8 v6; // bl
+  int v7; // esi
+  void **v8; // eax
+  int v9; // eax
+  double v10; // st6
+  double v11; // st5
+  double *v12; // ebx
+  double v13; // st3
+  double v14; // st7
+  int v15; // ecx
+  int v16; // eax
+  int v17; // edx
+  char v18; // al
+  int v19; // edx
+  double v20; // st7
+  double v21; // st7
+  double v22; // st7
+  unsigned int v23; // eax
+  unsigned int v24; // edx
+  int v25; // ecx
+  _DWORD *v26; // eax
+  _BYTE *v27; // ecx
+  int v28; // eax
+  double *v29; // esi
+  double v30; // st7
+  __int64 v31; // rax
+  int v32; // edi
+  _DWORD *v33; // eax
+  int *v34; // eax
+  int v35; // edx
+  int v36; // eax
+  double v37; // st7
+  int v38; // ecx
+  char v39; // si
+  __int16 v40; // cx
+  char *v41; // eax
+  double v42; // st7
+  double v43; // st6
+  double v44; // st5
+  double v45; // st7
+  int v46; // edx
+  int *v47; // eax
+  int v48; // edx
+  double v49; // st7
+  int v50; // esi
+  int *v51; // eax
+  int v52; // edx
+  int v53; // eax
+  double v54; // st7
+  int v55; // eax
+  double v56; // st7
+  double v57; // st7
+  char v59; // c0
+  int v60; // eax
+  int v61; // eax
+  double *v62; // ebx
+  double v63; // st7
+  int v64; // ecx
+  int v65; // eax
+  double FiringDistance; // st7
+  int v67; // eax
+  double v68; // st7
+  int v69; // eax
+  double v70; // st7
+  double v71; // st7
+  double v72; // st7
+  int v73; // edx
+  int v74; // esi
+  int v75; // edi
+  int v76; // eax
+  int v77; // ecx
+  int v78; // esi
+  int v79; // edx
+  int v80; // eax
+  _DWORD *v81; // ecx
+  int v82; // eax
+  int v83; // eax
+  int v84; // edi
+  _DWORD *v85; // esi
+  char v86; // bl
+  double v87; // st7
+  _DWORD *v88; // edi
+  _DWORD *v89; // esi
+  int Byte284; // eax
+  float *v91; // eax
+  float *v92; // eax
+  float v93; // eax
+  double v94; // st7
+  unsigned int v95; // esi
+  unsigned int v96; // edi
+  int v97; // eax
+  int v98; // eax
+  int v99; // esi
+  int v100; // eax
+  _DWORD *v101; // esi
+  _DWORD *v102; // edi
+  _DWORD *v103; // esi
+  _DWORD *v104; // eax
+  _DWORD *v105; // eax
+  _DWORD *ClosestObjectCell; // esi
+  int v107; // eax
+  bool IsAlliedWithObjectHouse; // al
+  int v109; // ecx
+  int v110; // edx
+  double v111; // st7
+  bool v112; // al
+  int v113; // edx
+  double *v114; // esi
+  int v115; // edx
+  int v116; // edx
+  bool v117; // al
+  int v118; // edx
+  bool v119; // bl
+  int v120; // eax
+  int v121; // esi
+  int v122; // ecx
+  int v123; // eax
+  int v124; // eax
+  int v125; // ecx
+  int v126; // eax
+  double v127; // kr00_8
+  int v128; // ebx
+  int *v129; // eax
+  int v130; // ecx
+  double v131; // st7
+  int v132; // ecx
+  double v133; // st7
+  double v134; // st7
+  double v135; // st7
+  int v136; // esi
+  int v137; // eax
+  __int64 v138; // rax
+  int Index; // eax
+  void *v140; // edi
+  void **v141; // esi
+  int v142; // eax
+  void *v143; // eax
+  void **v144; // eax
+  int v145; // eax
+  int v147; // [esp+10h] [ebp-1B4h]
+  int v148; // [esp+14h] [ebp-1B0h]
+  int v149; // [esp+14h] [ebp-1B0h]
+  int v150; // [esp+14h] [ebp-1B0h]
+  __int64 v151; // [esp+14h] [ebp-1B0h]
+  int v152; // [esp+18h] [ebp-1ACh]
+  int v153; // [esp+18h] [ebp-1ACh]
+  int v154; // [esp+18h] [ebp-1ACh]
+  float v155; // [esp+18h] [ebp-1ACh]
+  int GroundHeight; // [esp+2Ch] [ebp-198h] BYREF
+  int v157; // [esp+30h] [ebp-194h]
+  int v158; // [esp+34h] [ebp-190h]
+  int v159; // [esp+38h] [ebp-18Ch]
+  int v160; // [esp+3Ch] [ebp-188h]
+  double v161; // [esp+40h] [ebp-184h] BYREF
+  int v162; // [esp+48h] [ebp-17Ch]
+  double v163[2]; // [esp+4Ch] [ebp-178h] BYREF
+  double v164; // [esp+60h] [ebp-164h] BYREF
+  int v165; // [esp+68h] [ebp-15Ch]
+  int v166[2]; // [esp+6Ch] [ebp-158h] BYREF
+  int v167; // [esp+74h] [ebp-150h]
+  int v168; // [esp+7Ch] [ebp-148h]
+  _DWORD *v169; // [esp+80h] [ebp-144h]
+  double v170[3]; // [esp+84h] [ebp-140h] BYREF
+  double v171[2]; // [esp+9Ch] [ebp-128h] BYREF
+  double v172; // [esp+ACh] [ebp-118h] BYREF
+  double v173; // [esp+B4h] [ebp-110h]
+  double v174; // [esp+BCh] [ebp-108h]
+  int v175; // [esp+C4h] [ebp-100h] BYREF
+  int v176; // [esp+C8h] [ebp-FCh]
+  int v177; // [esp+CCh] [ebp-F8h]
+  _QWORD v178[3]; // [esp+D0h] [ebp-F4h] BYREF
+  double v179[3]; // [esp+E8h] [ebp-DCh] BYREF
+  int v180; // [esp+100h] [ebp-C4h] BYREF
+  float v181[12]; // [esp+104h] [ebp-C0h] BYREF
+  float v182[12]; // [esp+134h] [ebp-90h] BYREF
+  char v183[48]; // [esp+164h] [ebp-60h] BYREF
+  float v184[12]; // [esp+194h] [ebp-30h] BYREF
+
+  ObjectClass::DetectCloaked((#374 *)this);
+  LOBYTE(v2) = *((_BYTE *)this + 144);
+  if ( !(_BYTE)v2 )
+    return v2;
+  if ( !*((_BYTE *)this + 344) )
+  {
+    v4 = *(this + 43);
+    HIBYTE(v159) = 0;
+    LOBYTE(v158) = 0;
+    if ( *(_BYTE *)(v4 + 668) )
+      LOBYTE(v158) = *((_BYTE *)this + 141) == 0;
+    if ( *(_BYTE *)(v4 + 756) || *(_BYTE *)(v4 + 757) )
+    {
+      v5 = *((_BYTE *)this + 301) - 1;
+      *((_BYTE *)this + 301) = v5;
+      if ( !v5 )
+      {
+        v6 = *((_BYTE *)this + 300) + 1;
+        *((_BYTE *)this + 301) = *(_BYTE *)(v4 + 758);
+        *((_BYTE *)this + 300) = v6;
+        if ( v6 > *(_BYTE *)(v4 + 757) )
+          *((_BYTE *)this + 300) = *(_BYTE *)(v4 + 756);
+      }
+    }
+    v161 = *(double *)(this + 39);
+    v162 = *(this + 41);
+    if ( *(_DWORD *)(v4 + 728) )
+    {
+      v7 = *(_DWORD *)(v4 + 744);
+      if ( v7 )
+      {
+        if ( !(dword_A8ED54[12] % v7) )
+        {
+          v8 = (void **)__2_YAPAXI_Z(456);
+          if ( v8 )
+LABEL_23:
+            AnimClass::ctor(v8, *(void **)(*(this + 43) + 728), (int *)&v161, (void *)1, 1, (void *)0x600, 0, 0);
+        }
+      }
+      else if ( !(dword_A8ED54[12] % *(_DWORD *)(v4 + 740)) )
+      {
+        v8 = (void **)__2_YAPAXI_Z(456);
+        if ( v8 )
+          goto LABEL_23;
+      }
+    }
+    v9 = *(this + 43);
+    v160 = 0;
+    if ( *(int *)(v9 + 732) > 0 )
+    {
+      v10 = *((double *)this + 30);
+      v11 = *((double *)this + 29);
+      v12 = (double *)(this + 58);
+      v13 = *((double *)this + 31) * *((double *)this + 31);
+      GroundHeight = *(this + 68);
+      v14 = Math::Sqrt(v11 * v11 + v10 * v10 + v13);
+      v15 = *(this + 43);
+      v16 = *(_DWORD *)(v15 + 736);
+      v171[0] = v14;
+      if ( v16 )
+      {
+        v17 = *(this + 66);
+        if ( v17 < v16 )
+        {
+          *(this + 66) = v17 + 1;
+          if ( v17 + 1 >= *(_DWORD *)(v15 + 736) )
+            goto LABEL_31;
+        }
+      }
+      else if ( *(this + 68) >= 40 || (double)GroundHeight <= v171[0] + 0.5 )
+      {
+LABEL_31:
+        *((_BYTE *)this + 261) = 0;
+      }
+      v18 = *((_BYTE *)this + 261);
+      v19 = *(_DWORD *)(v15 + 720);
+      v169 = (_DWORD *)v19;
+      if ( v18 && !*(_DWORD *)(v15 + 736) )
+      {
+        v19 = dword_A8ED54[12] % 2 == 0;
+        v169 = (_DWORD *)v19;
+      }
+      v20 = (double)GroundHeight;
+      if ( v171[0] >= v20 )
+      {
+        if ( v171[0] <= v20 )
+          goto LABEL_50;
+        GroundHeight = v19 / 2;
+        v171[0] = v171[0] - (double)(v19 / 2);
+        if ( v171[0] <= 0.0 )
+          v171[0] = 0.0;
+        if ( *v12 != 0.0 || *((double *)this + 30) != 0.0 || *((double *)this + 31) != 0.0 )
+        {
+LABEL_49:
+          v21 = Math::Sqrt(
+                  *((double *)this + 31) * *((double *)this + 31)
+                + *((double *)this + 30) * *((double *)this + 30)
+                + *v12 * *v12);
+          v22 = v171[0] / v21;
+          *v12 = v22 * *v12;
+          *((double *)this + 30) = v22 * *((double *)this + 30);
+          *((double *)this + 31) = v22 * *((double *)this + 31);
+LABEL_50:
+          v172 = *v12;
+          LODWORD(v173) = *(this + 60);
+          v23 = *(this + 63);
+          v24 = *(this + 62);
+          HIDWORD(v173) = *(this + 61);
+          v25 = *(this + 67);
+          v174 = COERCE_DOUBLE(__PAIR64__(v23, v24));
+          if ( v25 )
+            v26 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v25 + 88))(v25, &v175);
+          else
+            v26 = &MEMORY[0x87F7E8][31122];
+          LODWORD(v163[0]) = *v26;
+          v27 = (_BYTE *)*(this + 67);
+          HIDWORD(v163[0]) = v26[1];
+          LODWORD(v163[1]) = v26[2];
+          if ( v27 && (v27[20] & 2) != 0 )
+          {
+            v28 = (*(int (__thiscall **)(_BYTE *, int *))(*(_DWORD *)v27 + 164))(v27, &v175);
+            v163[0] = *(double *)v28;
+            LODWORD(v163[1]) = *(_DWORD *)(v28 + 8);
+          }
+          v29 = (double *)(MEMORY[0x87F7E8][7806] + 1432);
+          GroundHeight = (dword_A8ED54[12] + (*(int (__stdcall **)(int *))(*(this + 1) + 16))(this + 1)) % 15;
+          v30 = Math::SinCos((double)GroundHeight * 0.06666666666666667 * 6.283185307179586);
+          v31 = Math::RoundToInt((v30 * *v29 + *v29 + 1.0) * (double)*(int *)(*(this + 43) + 732));
+          v32 = v31;
+          LODWORD(v31) = *this;
+          GroundHeight = v32;
+          v33 = (_DWORD *)(*(int (__fastcall **)(int *, _DWORD, int *))(v31 + 72))(this, HIDWORD(v31), &v175);
+          v34 = Coord::Subtract(v171, *v33 - LODWORD(v163[0]), v33[1] - HIDWORD(v163[0]), v33[2] - LODWORD(v163[1]));
+          v166[0] = *v34;
+          v35 = v34[1];
+          v36 = v34[2];
+          v166[1] = v35;
+          v167 = v36;
+          v37 = Math::Sqrt((double)v35 * (double)v35 + (double)v36 * (double)v36 + (double)v166[0] * (double)v166[0]);
+          if ( (int)Math::RoundToInt(v37) < 256 )
+          {
+            v37 = (double)GroundHeight * 1.5;
+            LOBYTE(v32) = Math::RoundToInt(v37);
+          }
+          v164 = v161;
+          v38 = *(this + 67);
+          v165 = v162;
+          v39 = v38 && (*(int (__thiscall **)(int))(*(_DWORD *)v38 + 44))(v38) == 2;
+          LOBYTE(v40) = 0;
+          HIBYTE(v40) = *((_BYTE *)this + 261) == 0 ? v32 : 0;
+          v41 = (char *)*(this + 43);
+          LOWORD(GroundHeight) = v40;
+          GroundHeight = Movement::CalcVelocity(
+                           &v172,
+                           (unsigned int *)&v161,
+                           v37,
+                           (unsigned int *)v163,
+                           (__int16 *)&GroundHeight,
+                           v39,
+                           v41[660],
+                           v41[665],
+                           v41[669]);
+          v169 = Coord::To_Cell(MEMORY[0x87F7E8], &v161);
+          *(double *)v178 = v172;
+          *(double *)&v178[1] = v173;
+          *(double *)&v178[2] = v174;
+          qmemcpy(v12, v178, 0x18u);
+          v42 = *((double *)this + 31);
+          v43 = *((double *)this + 30);
+          v44 = *v12;
+          *(double *)v166 = (double)GroundHeight;
+          v45 = Math::Sqrt(v44 * v44 + v43 * v43 + v42 * v42) * 0.5;
+          if ( v45 >= *(double *)v166 || (*(int (__thiscall **)(int *))(*this + 456))(this) <= 0 )
+          {
+            v46 = *this;
+            LOBYTE(v158) = 1;
+            v160 = 1;
+            if ( (*(int (__thiscall **)(int *))(v46 + 456))(this) > 0
+              && !*(_BYTE *)(*(this + 43) + 660)
+              && (LODWORD(v163[0]) != MEMORY[0x87F7E8][31122]
+               || *(_QWORD *)((char *)v163 + 4) != *(_QWORD *)&MEMORY[0x87F7E8][31123]) )
+            {
+              v161 = v163[0];
+              v162 = LODWORD(v163[1]);
+            }
+          }
+          if ( LODWORD(v163[0]) == MEMORY[0x87F7E8][31122]
+            && *(_QWORD *)((char *)v163 + 4) == *(_QWORD *)&MEMORY[0x87F7E8][31123]
+            && (*(int (__thiscall **)(int *))(*this + 456))(this) >= *(_DWORD *)(MEMORY[0x87F7E8][7806] + 1440) )
+          {
+            LOBYTE(v158) = 1;
+            v160 = 1;
+          }
+          v47 = Coord::Subtract(
+                  &v175,
+                  LODWORD(v164) - LODWORD(v163[0]),
+                  HIDWORD(v164) - HIDWORD(v163[0]),
+                  v165 - LODWORD(v163[1]));
+          v166[0] = *v47;
+          v48 = v47[2];
+          v166[1] = v47[1];
+          v167 = v48;
+          v49 = Math::Sqrt((double)v48 * (double)v48 + (double)v166[1] * (double)v166[1] + (double)v166[0]
+                                                                                         * (double)v166[0]);
+          v50 = Math::RoundToInt(v49);
+          v51 = Coord::Subtract(
+                  v171,
+                  LODWORD(v161) - LODWORD(v163[0]),
+                  HIDWORD(v161) - HIDWORD(v163[0]),
+                  v162 - LODWORD(v163[1]));
+          v166[0] = *v51;
+          v52 = v51[1];
+          v53 = v51[2];
+          v166[1] = v52;
+          v167 = v53;
+          v54 = Math::Sqrt((double)v53 * (double)v53 + (double)v52 * (double)v52 + (double)v166[0] * (double)v166[0]);
+          GroundHeight = v50 - Math::RoundToInt(v54);
+          if ( !*((_BYTE *)this + 261) )
+          {
+            v55 = *(this + 70);
+            if ( v55 >= 60 )
+            {
+              v57 = *((double *)this + 36) * 0.9833333333333333 + (double)GroundHeight;
+              *((double *)this + 36) = v57;
+              if ( !v59 && v57 < 60.0 )
+              {
+                v60 = *(this + 43);
+                if ( !*(_BYTE *)(v60 + 660) && !*(_BYTE *)(v60 + 665) )
+                {
+                  LOBYTE(v158) = 1;
+                  v160 = 1;
+                  goto LABEL_184;
+                }
+              }
+            }
+            else
+            {
+              v56 = (double)GroundHeight;
+              *(this + 70) = v55 + 1;
+              *((double *)this + 36) = v56 + *((double *)this + 36);
+            }
+          }
+          if ( !v160
+            && ((v169[80] & 0x100) != 0 || (*((_DWORD *)Coord::To_Cell(MEMORY[0x87F7E8], &v164) + 80) & 0x100) != 0) )
+          {
+            v61 = MEMORY[0x87F7E8][31135] + Cell::GetGroundHeight(&v161);
+            if ( v162 > v61 && v165 < v61 )
+            {
+              v160 = 1;
+              v162 = v61;
+LABEL_183:
+              LOBYTE(v158) = 1;
+              goto LABEL_184;
+            }
+            if ( v162 < v61 && v165 > v61 )
+            {
+              v160 = 1;
+              v162 = v61;
+              goto LABEL_183;
+            }
+          }
+LABEL_184:
+          v116 = *this;
+          if ( v160 == 2 )
+          {
+            (*(void (__thiscall **)(int *, int))(v116 + 292))(this, 2);
+          }
+          else
+          {
+            (*(void (__thiscall **)(int *, int))(v116 + 292))(this, 2);
+            (*(void (__thiscall **)(int *, double *))(*this + 436))(this, &v161);
+            if ( (_BYTE)v158
+              || (v164 = *(double *)(this + 39),
+                  v165 = *(this + 41),
+                  v117 = BulletClass::CheckBulletCollision(this, (int *)&v164),
+                  v118 = *this,
+                  v119 = v117,
+                  LOBYTE(v158) = v117,
+                  (*(void (__thiscall **)(int *, double *))(v118 + 436))(this, &v164),
+                  v119) )
+            {
+              if ( (*(int (__thiscall **)(int *))(*this + 456))(this) < 0 )
+                (*(void (__thiscall **)(int *, _DWORD))(*this + 460))(this, 0);
+            }
+            v120 = *(this + 43);
+            if ( *(int *)(v120 + 732) > 0 || *(_BYTE *)(v120 + 672) )
+              v121 = BulletClass::CheckProximityDetonation(this + 46, &v161);
+            else
+              v121 = 0;
+            v122 = *(this + 44);
+            v168 = v121;
+            if ( v122 && *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v122 + 132))(v122) + 3476) && v121 == 2 )
+            {
+              v121 = 1;
+              v168 = 1;
+            }
+            if ( !(_BYTE)v158 )
+            {
+              v123 = *(this + 43);
+              if ( *(_BYTE *)(v123 + 668) || !v121 )
+              {
+                if ( *(_BYTE *)(v123 + 678) )
+                {
+                  v124 = *(this + 27);
+                  if ( v124 > 5 )
+                    *(this + 27) = v124 - 1;
+                }
+                goto LABEL_233;
+              }
+            }
+            v125 = *(this + 67);
+            if ( v125 && (v168 == 1 || HIBYTE(v159)) )
+            {
+              v126 = *(this + 43);
+              if ( !*(_BYTE *)(v126 + 660) && !*(_BYTE *)(v126 + 674) )
+              {
+                v127 = v161;
+                v128 = v162;
+                v129 = (int *)(*(int (__thiscall **)(int, double *))(*(_DWORD *)v125 + 88))(v125, v179);
+                v175 = *v129;
+                v176 = v129[1];
+                v130 = v129[2];
+                HIDWORD(v164) = HIDWORD(v127) - v176;
+                v165 = (v130 + v128) / 2 - v130;
+                LODWORD(v164) = LODWORD(v127) - v175;
+                v131 = Math::Sqrt(
+                         (double)(LODWORD(v127) - v175) * (double)(LODWORD(v127) - v175)
+                       + (double)v165 * (double)v165
+                       + (double)SHIDWORD(v164) * (double)SHIDWORD(v164));
+                v132 = Math::RoundToInt(v131);
+                GroundHeight = v132;
+                if ( HIBYTE(v159) )
+                  GroundHeight = v132 / 3;
+                if ( v168 == 1
+                  || ((v133 = Math::Sqrt(
+                                *((double *)this + 29) * *((double *)this + 29)
+                              + *((double *)this + 30) * *((double *)this + 30)
+                              + *((double *)this + 31) * *((double *)this + 31)),
+                       v133 + v133 >= 128.0)
+                    ? (v135 = Math::Sqrt(
+                                *((double *)this + 29) * *((double *)this + 29)
+                              + *((double *)this + 30) * *((double *)this + 30)
+                              + *((double *)this + 31) * *((double *)this + 31)),
+                       v134 = v135 + v135)
+                    : (v134 = 128.0),
+                      (double)GroundHeight <= v134) )
+                {
+                  v136 = *this;
+                  v137 = (*(int (__thiscall **)(_DWORD, double *))(*(_DWORD *)*(this + 67) + 72))(*(this + 67), v163);
+                  (*(void (__thiscall **)(int *, int))(v136 + 436))(this, v137);
+                }
+              }
+            }
+            if ( AbstractTypeClass::NameEquals(*(this + 74), aNuke) )
+            {
+              if ( (*(int (__thiscall **)(int *))(*this + 456))(this) < 0 )
+                (*(void (__thiscall **)(int *, _DWORD))(*this + 460))(this, 0);
+              Entity_Process();
+              v138 = ((__int64 (__thiscall *)(int *, double *))*(_DWORD *)(*this + 440))(this, v171);
+              CreateTriggerClassIfFarEnough(13, SHIDWORD(v138), *(_DWORD *)v138);
+              Index = AnimTypeClass::FindIndex(aNukeball);
+              if ( Index != -1 )
+              {
+                v140 = *(void **)(MEMORY[0x87F7E8][53851] + 4 * Index);
+                if ( v140 )
+                {
+                  v141 = (void **)__2_YAPAXI_Z(456);
+                  if ( v141 )
+                  {
+                    v166[0] = *(this + 39);
+                    v166[1] = *(this + 40);
+                    v167 = *(this + 41);
+                    v142 = *(this + 41);
+                    v151 = (unsigned int)v142;
+                    v143 = (void *)Return::HRESULT_Fail(*(this + 39), *(this + 40), v142);
+                    v144 = AnimClass::ctor(v141, v140, v166, 0, 1, (void *)0x2600, v143, SBYTE4(v151));
+                  }
+                  else
+                  {
+                    v144 = 0;
+                  }
+                  *(this + 85) = (int)v144;
+                  *((_BYTE *)this + 344) = 1;
+                  if ( dword_A8ED54[131613] < dword_A8ED54[131611]
+                    || (BYTE1(dword_A8ED54[131612]) || !dword_A8ED54[131611])
+                    && dword_A8ED54[131614] > 0
+                    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_A8ED54[131609] + 8))(
+                         &dword_A8ED54[131609],
+                         dword_A8ED54[131614] + dword_A8ED54[131611],
+                         0) )
+                  {
+                    v145 = dword_A8ED54[131613]++;
+                    *(_DWORD *)(dword_A8ED54[131610] + 4 * v145) = this;
+                  }
+                  goto LABEL_233;
+                }
+              }
+            }
+            BulletClass::Fire((int)this, v158);
+          }
+          (*(void (__thiscall **)(int *))(*this + 248))(this);
+LABEL_233:
+          LOWORD(GroundHeight) = SLODWORD(v161) / 256;
+          v2 = SHIDWORD(v161) / 256;
+          HIWORD(GroundHeight) = SHIDWORD(v161) / 256;
+          *(this + 83) = GroundHeight;
+          return v2;
+        }
+      }
+      else
+      {
+        v171[0] = (double)(int)v169 + v171[0];
+        if ( v171[0] >= v20 )
+          v171[0] = v20;
+        if ( *v12 != 0.0 || *((double *)this + 30) != 0.0 || *((double *)this + 31) != 0.0 )
+          goto LABEL_49;
+      }
+      *(_DWORD *)v12 = 0;
+      *(this + 59) = 1079574528;
+      goto LABEL_49;
+    }
+    v62 = (double *)(this + 58);
+    v63 = *((double *)this + 31);
+    v170[0] = *((double *)this + 29);
+    v64 = *(this + 61);
+    LODWORD(v170[1]) = *(this + 60);
+    v170[2] = v63;
+    HIDWORD(v170[1]) = v64;
+    qmemcpy(v178, v170, sizeof(v178));
+    v172 = v170[0];
+    v173 = v170[1];
+    v174 = v63;
+    v160 = Math::Sqrt(v170[1] * v170[1] + v170[0] * v170[0] + v170[2] * v170[2]) < 8.0;
+    v65 = *(this + 43);
+    v170[0] = (double)SLODWORD(v161);
+    v170[1] = (double)SHIDWORD(v161);
+    v170[2] = (double)v162;
+    FiringDistance = (double)*(int *)(MEMORY[0x87F7E8][7806] + 5816);
+    if ( *(_BYTE *)(v65 + 661) )
+      FiringDistance = RulesClass::GetFiringDistance();
+    v67 = *(this + 43);
+    if ( *(_BYTE *)(v67 + 704) )
+    {
+      v68 = Math::Sqrt(
+              *v62 * *v62
+            + *((double *)this + 30) * *((double *)this + 30)
+            + *((double *)this + 31) * *((double *)this + 31));
+      v69 = Math::RoundToInt(v68);
+      if ( v69 < *(this + 68) )
+      {
+        GroundHeight = v69 + *(_DWORD *)(*(this + 43) + 720);
+        *(double *)v166 = (double)GroundHeight;
+        if ( *v62 == 0.0 && *((double *)this + 30) == 0.0 && *((double *)this + 31) == 0.0 )
+        {
+          *(_DWORD *)v62 = 0;
+          *(this + 59) = 1079574528;
+        }
+        v70 = Math::Sqrt(
+                *((double *)this + 31) * *((double *)this + 31)
+              + *((double *)this + 30) * *((double *)this + 30)
+              + *v62 * *v62);
+        v71 = *(double *)v166 / v70;
+        *v62 = v71 * *v62;
+        *((double *)this + 30) = v71 * *((double *)this + 30);
+        *((double *)this + 31) = v71 * *((double *)this + 31);
+      }
+      v72 = *((double *)this + 31);
+      v179[0] = *v62;
+      v73 = *(this + 61);
+      LODWORD(v179[1]) = *(this + 60);
+      HIDWORD(v179[1]) = v73;
+      v74 = Math::RoundToInt(v72);
+      v75 = Math::RoundToInt(v72);
+      v76 = Math::RoundToInt(v72);
+      v164 = v161;
+      LODWORD(v161) += v74;
+      v77 = *(this + 43);
+      v165 = v162;
+      HIDWORD(v161) += v75;
+      v162 += v76;
+      if ( v162 <= *(_DWORD *)(v77 + 700) )
+      {
+        if ( (*(int (__thiscall **)(int *))(*this + 456))(this) >= 0 )
+        {
+          v78 = Cell::GetGroundHeight(&v161) + MEMORY[0x87F7E8][31135];
+          if ( (*((_DWORD *)Coord::To_Cell(MEMORY[0x87F7E8], &v161) + 80) & 0x100) != 0
+            || (*((_DWORD *)Coord::To_Cell(MEMORY[0x87F7E8], &v164) + 80) & 0x100) != 0 )
+          {
+            if ( v162 < v78 )
+            {
+              if ( v165 >= v78 )
+              {
+                v160 = 1;
+                LOBYTE(v158) = 1;
+              }
+            }
+            else if ( v165 < v78 )
+            {
+              v160 = 1;
+              LOBYTE(v158) = 1;
+            }
+          }
+        }
+        else
+        {
+          v160 = 1;
+          LOBYTE(v158) = 1;
+        }
+      }
+      else
+      {
+        v160 = 1;
+        LOBYTE(v158) = 1;
+      }
+LABEL_152:
+      v98 = *(this + 80);
+      LOWORD(GroundHeight) = SLODWORD(v161) / 256;
+      HIWORD(GroundHeight) = SHIDWORD(v161) / 256;
+      v180 = GroundHeight;
+      v99 = v98 / 256;
+      v100 = *(this + 81) / 256;
+      LOWORD(GroundHeight) = v99;
+      HIWORD(GroundHeight) = v100;
+      LODWORD(v171[0]) = GroundHeight;
+      if ( (unsigned __int16)(SLODWORD(v161) / 256) == (_WORD)v99
+        && (unsigned __int16)(SHIDWORD(v161) / 256) == (_WORD)v100
+        && !*(_BYTE *)(*(this + 43) + 704)
+        && (*(int (__thiscall **)(int *))(*this + 456))(this) < 2 * MEMORY[0x87F7E8][31138]
+        || (v101 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v180),
+            v102 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)v171),
+            v103 = Cell::IsBridge(v101),
+            v104 = Cell::IsBridge(v102),
+            v103)
+        && !*(_BYTE *)(*(this + 43) + 704)
+        && v103 == v104
+        && (*(int (__thiscall **)(int *))(*this + 456))(this) < 2 * MEMORY[0x87F7E8][31138] )
+      {
+        v160 = 1;
+        LOBYTE(v158) = 1;
+        HIBYTE(v159) = 1;
+        goto LABEL_184;
+      }
+      v166[0] = 0;
+      v166[1] = 0;
+      v105 = Coord::To_Cell(MEMORY[0x87F7E8], &v161);
+      ClosestObjectCell = (_DWORD *)Object::FindClosestObjectCell(v105, v166, 0, 0);
+      v107 = *(this + 44);
+      if ( !v107 || (HIBYTE(v157) = 1, ClosestObjectCell != (_DWORD *)v107) )
+        HIBYTE(v157) = 0;
+      if ( !ClosestObjectCell
+        || !v107
+        || (IsAlliedWithObjectHouse = Object::IsAlliedWithObjectHouse(*(_DWORD **)(v107 + 540), (int)ClosestObjectCell),
+            BYTE2(v157) = 1,
+            !IsAlliedWithObjectHouse) )
+      {
+        BYTE2(v157) = 0;
+      }
+      v112 = 0;
+      if ( ClosestObjectCell )
+      {
+        v109 = ClosestObjectCell[40];
+        LODWORD(v164) = LODWORD(v161) - ClosestObjectCell[39];
+        v110 = ClosestObjectCell[41];
+        HIDWORD(v164) = HIDWORD(v161) - v109;
+        v165 = v162 - v110;
+        v111 = Math::Sqrt(
+                 (double)SLODWORD(v164) * (double)SLODWORD(v164)
+               + (double)(v162 - v110) * (double)(v162 - v110)
+               + (double)(HIDWORD(v161) - v109) * (double)(HIDWORD(v161) - v109));
+        if ( (int)Math::RoundToInt(v111) < 128 )
+          v112 = 1;
+      }
+      if ( HIWORD(v157) || !v112 )
+      {
+        if ( !Tactical::IsCellVisible(MEMORY[0x87F7E8], &v161) )
+        {
+          v160 = 2;
+          LOBYTE(v158) = 1;
+          v161 = *(double *)(this + 39);
+          v162 = *(this + 41);
+          goto LABEL_184;
+        }
+        v115 = *(this + 43);
+        *(double *)&v178[1] = v173;
+        *(double *)v178 = v172;
+        if ( !*(_BYTE *)(v115 + 704) )
+        {
+          v179[0] = *(double *)v178;
+          v179[1] = *(double *)&v178[1];
+          v179[2] = v174;
+          qmemcpy(this + 58, v179, 0x18u);
+        }
+        if ( Math::Sqrt(
+               *((double *)this + 29) * *((double *)this + 29)
+             + *((double *)this + 30) * *((double *)this + 30)
+             + *((double *)this + 31) * *((double *)this + 31)) < 10.0
+          && (*(int (__thiscall **)(int *))(*this + 456))(this) < 10 )
+        {
+          v160 = 1;
+          goto LABEL_183;
+        }
+      }
+      else
+      {
+        v113 = *(this + 43);
+        v160 = 1;
+        LOBYTE(v158) = 1;
+        if ( !*(_BYTE *)(v113 + 674) )
+        {
+          v114 = (double *)(ClosestObjectCell + 39);
+          v161 = *v114;
+          v162 = *((_DWORD *)v114 + 2);
+        }
+      }
+      goto LABEL_184;
+    }
+    v79 = *(_DWORD *)(v67 + 712);
+    v80 = *(_DWORD *)(v67 + 716);
+    v81 = (_DWORD *)*(this + 44);
+    v166[0] = v79;
+    v169 = v81;
+    v166[1] = v80;
+    v174 = v174 - FiringDistance;
+    v152 = Math::RoundToInt(v170[2]);
+    v148 = Math::RoundToInt(v170[1]);
+    v82 = Math::RoundToInt(v170[0]);
+    Coord::Subtract(&v175, v82, v148, v152);
+    BulletClass::AddVector3(v170, &v172);
+    v153 = Math::RoundToInt(v170[2]);
+    v149 = Math::RoundToInt(v170[1]);
+    v83 = Math::RoundToInt(v170[0]);
+    Coord3D::Set(&v164, v83, v149, v153);
+    GroundHeight = Cell::GetGroundHeight(&v164);
+    v84 = GroundHeight + MEMORY[0x87F7E8][31135];
+    v168 = GroundHeight + MEMORY[0x87F7E8][31135];
+    v85 = Coord::To_Cell(MEMORY[0x87F7E8], &v164);
+    HIWORD(v157) = 0;
+    if ( (v85[80] & 0x100) != 0 || (*((_DWORD *)Coord::To_Cell(MEMORY[0x87F7E8], &v175) + 80) & 0x100) != 0 )
+    {
+      if ( v165 < v84 )
+      {
+        if ( v177 >= v84 )
+          HIBYTE(v157) = 1;
+      }
+      else if ( v177 < v84 )
+      {
+        BYTE2(v157) = 1;
+      }
+    }
+    v86 = 0;
+    if ( !HIWORD(v157) )
+    {
+      v87 = (double)GroundHeight;
+      if ( v170[2] < v87 || v170[2] - 150.0 >= v87 )
+      {
+LABEL_134:
+        v163[0] = (double)GroundHeight;
+        if ( v170[2] >= v163[0] && !HIWORD(v157) && !v86 )
+          goto LABEL_151;
+        if ( v169 )
+        {
+          if ( HIBYTE(v157) )
+          {
+            v94 = (double)v168;
+          }
+          else
+          {
+            if ( !BYTE2(v157) )
+            {
+LABEL_151:
+              v95 = Math::RoundToInt(v170[0]);
+              v96 = Math::RoundToInt(v170[1]);
+              v97 = Math::RoundToInt(v170[2]);
+              v161 = COERCE_DOUBLE(__PAIR64__(v96, v95));
+              v162 = v97;
+              goto LABEL_152;
+            }
+            GroundHeight = v84 - 20;
+            v94 = (double)(v84 - 20);
+          }
+          v170[2] = v94;
+        }
+        else
+        {
+          if ( HIBYTE(v157) )
+          {
+            v170[2] = (double)v168;
+          }
+          else if ( BYTE2(v157) )
+          {
+            GroundHeight = v84 - 20;
+            v170[2] = (double)(v84 - 20);
+          }
+          else
+          {
+            GroundHeight -= 100;
+            if ( (double)GroundHeight < v170[2] )
+              v170[2] = v163[0];
+          }
+          Byte284 = CellClass::GetByte284(&v164);
+          qmemcpy(v181, CopyAudioData(v183, Byte284), sizeof(v181));
+          qmemcpy(v182, InvertMatrix3x3Signs(v184, v181), sizeof(v182));
+          *(float *)&v154 = v174;
+          *(float *)&v150 = -v173;
+          *(float *)&v147 = v172;
+          Triple::Set(v163, v147, v150, v154);
+          v91 = Matrix3x3::TransformPoint(v182, (float *)v179, (float *)v163);
+          v163[0] = *(double *)v91;
+          v155 = *(double *)v166;
+          *(float *)&v163[1] = v91[2];
+          Coord::Scale((float *)v163, v155);
+          *(float *)&v163[1] = -*(float *)&v163[1];
+          v92 = Matrix3x3::TransformPoint(v181, (float *)v166, (float *)v163);
+          v163[0] = *(double *)v92;
+          v93 = v92[2];
+          v172 = *(float *)v163;
+          v173 = -*((float *)v163 + 1);
+          *(float *)&v163[1] = v93;
+          v174 = v93;
+        }
+        v160 = 1;
+        LOBYTE(v158) = 1;
+        goto LABEL_151;
+      }
+      v88 = Cell::IsBridge(v85);
+      if ( !v88 && !BuildingPlacement::ValidateType(v85, -1, -1) )
+      {
+        v84 = v168;
+        goto LABEL_134;
+      }
+      v86 = 1;
+      if ( v88 )
+      {
+        v89 = v169;
+        if ( v88 == v169 || *(_BYTE *)(v88[328] + 5823) && (int)v88[390] >= 8 )
+          v86 = 0;
+        if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*v88 + 128))(v88) )
+          v86 = 0;
+        if ( v89 && Object::IsAlliedWithObjectHouse((_DWORD *)v169[135], (int)v88) )
+          v86 = 0;
+      }
+    }
+    v84 = v168;
+    goto LABEL_134;
+  }
+  v2 = *(this + 85);
+  if ( !v2 )
+  {
+    GroundHeight = (int)this;
+    v3 = (*(int (__thiscall **)(int *, int *))(dword_A8ED54[131609] + 16))(&dword_A8ED54[131609], &GroundHeight);
+    if ( v3 != -1 && v3 < dword_A8ED54[131613] )
+    {
+      --dword_A8ED54[131613];
+      for ( ;
+            v3 < dword_A8ED54[131613];
+            *(_DWORD *)(dword_A8ED54[131610] + 4 * v3 - 4) = *(_DWORD *)(dword_A8ED54[131610] + 4 * v3) )
+      {
+        ++v3;
+      }
+    }
+    *((_BYTE *)this + 344) = 0;
+    BulletClass::Fire((int)this, 0);
+    LOBYTE(v2) = (*(char (__thiscall **)(int *))(*this + 248))(this);
+  }
+  return v2;
+}
+
+/* ASM:
+push    ebp
+mov     ebp, esp
+and     esp, 0FFFFFFF8h
+sub     esp, 198h
+push    ebx
+push    ebp
+push    esi
+push    edi
+mov     ebp, ecx
+call    ObjectClass__DetectCloaked
+mov     al, [ebp+90h]
+test    al, al
+jz      loc_467FEE
+mov     al, [ebp+158h]
+test    al, al
+jz      short loc_466789
+mov     eax, [ebp+154h]
+test    eax, eax
+jnz     loc_467FEE
+mov     edx, dword_A8ED54+80864h
+lea     eax, [esp+1A8h+var_198]
+push    eax
+mov     ecx, (offset dword_A8ED54+80864h)
+mov     [esp+1ACh+var_198], ebp
+call    dword ptr [edx+10h]
+cmp     eax, 0FFFFFFFFh
+jz      short loc_466766
+mov     ecx, dword_A8ED54+80874h
+cmp     eax, ecx
+jge     short loc_466766
+dec     ecx
+cmp     eax, ecx
+mov     dword_A8ED54+80874h, ecx
+jge     short loc_466766
+
+loc_46674E:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+84↓j
+mov     ecx, dword_A8ED54+80868h
+inc     eax
+mov     edx, [ecx+eax*4]
+mov     [ecx+eax*4-4], edx
+mov     ecx, dword_A8ED54+80874h
+cmp     eax, ecx
+jl      short loc_46674E
+
+loc_466766:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+57↑j
+; BulletClass__ProcessNukeExplosion+61↑j ...
+push    0
+mov     ecx, ebp
+mov     byte ptr [ebp+158h], 0
+call    BulletClass__Fire
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+0F8h]
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn
+; ---------------------------------------------------------------------------
+
+loc_466789:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+2D↑j
+mov     ecx, [ebp+0ACh]
+mov     byte ptr [esp+1A8h+var_18C+3], 0
+mov     byte ptr [esp+1A8h+var_190], 0
+mov     al, [ecx+29Ch]
+test    al, al
+jz      short loc_4667B2
+mov     al, [ebp+8Dh]
+test    al, al
+jnz     short loc_4667B2
+mov     byte ptr [esp+1A8h+var_190], 1
+
+loc_4667B2:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+C1↑j
+; BulletClass__ProcessNukeExplosion+CB↑j
+mov     al, [ecx+2F4h]
+test    al, al
+jnz     short loc_4667C6
+mov     al, [ecx+2F5h]
+test    al, al
+jz      short loc_466808
+
+loc_4667C6:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+DA↑j
+mov     al, [ebp+12Dh]
+dec     al
+mov     [ebp+12Dh], al
+jnz     short loc_466808
+mov     bl, [ebp+12Ch]
+mov     dl, [ecx+2F6h]
+inc     bl
+mov     [ebp+12Dh], dl
+mov     [ebp+12Ch], bl
+mov     dl, [ecx+2F5h]
+mov     al, bl
+cmp     al, dl
+jbe     short loc_466808
+mov     al, [ecx+2F4h]
+mov     [ebp+12Ch], al
+
+loc_466808:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+E4↑j
+; BulletClass__ProcessNukeExplosion+F4↑j ...
+lea     eax, [ebp+9Ch]
+mov     edx, [ebp+9Ch]
+mov     dword ptr [esp+1A8h+var_184], edx
+mov     edx, [eax+4]
+mov     dword ptr [esp+1A8h+var_184+4], edx
+mov     eax, [eax+8]
+mov     [esp+1A8h+var_17C], eax
+mov     eax, [ecx+2D8h]
+test    eax, eax
+jz      loc_4668BD
+mov     esi, [ecx+2E8h]
+mov     eax, dword_A8ED54+30h
+test    esi, esi
+cdq
+jz      short loc_46687C
+idiv    esi
+test    edx, edx
+jnz     short loc_4668BD
+push    1C8h            ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_4668BD
+mov     edx, [ebp+0ACh]
+push    0
+push    0
+push    600h
+push    1
+lea     ecx, [esp+1B8h+var_184]
+push    1
+push    ecx
+mov     ecx, [edx+2D8h]
+push    ecx
+jmp     short loc_4668B6
+; ---------------------------------------------------------------------------
+
+loc_46687C:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+162↑j
+idiv    dword ptr [ecx+2E4h]
+test    edx, edx
+jnz     short loc_4668BD
+push    1C8h            ; Size
+call    ??2_YAPAXI_Z
+add     esp, 4
+test    eax, eax
+jz      short loc_4668BD
+mov     ecx, [ebp+0ACh]
+push    0               ; char
+push    0               ; int
+push    600h            ; int
+push    1               ; int
+lea     edx, [esp+1B8h+var_184]
+push    1               ; int
+push    edx             ; int
+mov     edx, [ecx+2D8h]
+push    edx             ; int
+
+loc_4668B6:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+19A↑j
+mov     ecx, eax        ; void **
+call    AnimClass__ctor
+
+loc_4668BD:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+14E↑j
+; BulletClass__ProcessNukeExplosion+168↑j ...
+mov     eax, [ebp+0ACh]
+mov     [esp+1A8h+var_188], 0
+mov     ecx, [eax+2DCh]
+test    ecx, ecx
+jle     loc_4670C3
+fld     qword ptr [ebp+0F8h]
+fld     qword ptr [ebp+0F0h]
+fld     qword ptr [ebp+0E8h]
+lea     ebx, [ebp+0E8h]
+sub     esp, 8
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+mov     ecx, [ebp+110h]
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+mov     [esp+1B0h+var_198], ecx
+faddp   st(1), st
+fstp    [esp+1B0h+var_1B0] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+mov     ecx, [ebp+0ACh]
+add     esp, 8
+mov     eax, [ecx+2E0h]
+fstp    [esp+1A8h+var_128]
+test    eax, eax
+jnz     short loc_46695B
+cmp     dword ptr [ebp+110h], 28h ; '('
+jge     short loc_466978
+fld     [esp+1A8h+var_128]
+fadd    ds:dbl_7E1738
+fild    [esp+1A8h+var_198]
+fcompp
+fnstsw  ax
+test    ah, 41h
+jz      short loc_46697F
+jmp     short loc_466978
+; ---------------------------------------------------------------------------
+
+loc_46695B:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+254↑j
+mov     edx, [ebp+108h]
+cmp     edx, eax
+jge     short loc_46697F
+lea     eax, [edx+1]
+mov     [ebp+108h], eax
+mov     edx, [ecx+2E0h]
+cmp     eax, edx
+jl      short loc_46697F
+
+loc_466978:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+25D↑j
+; BulletClass__ProcessNukeExplosion+279↑j
+mov     byte ptr [ebp+105h], 0
+
+loc_46697F:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+277↑j
+; BulletClass__ProcessNukeExplosion+283↑j ...
+mov     al, [ebp+105h]
+mov     edx, [ecx+2D0h]
+test    al, al
+mov     [esp+1A8h+var_144], edx
+jz      short loc_4669B9
+mov     eax, [ecx+2E0h]
+test    eax, eax
+jnz     short loc_4669B9
+mov     edx, dword_A8ED54+30h
+and     edx, 80000001h
+jns     short loc_4669B0
+dec     edx
+or      edx, 0FFFFFFFEh
+inc     edx
+
+loc_4669B0:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+2C9↑j
+neg     edx
+sbb     edx, edx
+inc     edx
+mov     [esp+1A8h+var_144], edx
+
+loc_4669B9:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+2B1↑j
+; BulletClass__ProcessNukeExplosion+2BB↑j
+fild    [esp+1A8h+var_198]
+fld     [esp+1A8h+var_128]
+fcomp   st(1)
+fnstsw  ax
+test    ah, 1
+jz      short loc_466A33
+fild    [esp+1A8h+var_144]
+fadd    [esp+1A8h+var_128]
+fst     [esp+1A8h+var_128]
+fcomp   st(1)
+fnstsw  ax
+test    ah, 1
+jnz     short loc_4669F1
+fstp    [esp+1A8h+var_128]
+jmp     short loc_4669F3
+; ---------------------------------------------------------------------------
+
+loc_4669F1:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+306↑j
+fstp    st
+
+loc_4669F3:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+30F↑j
+fld     qword ptr [ebx]
+fcomp   ds:dbl_7E2800
+fnstsw  ax
+test    ah, 40h
+jz      loc_466AC5
+fld     qword ptr [ebx+8]
+fcomp   ds:dbl_7E2800
+fnstsw  ax
+test    ah, 40h
+jz      loc_466AC5
+fld     qword ptr [ebx+10h]
+fcomp   ds:dbl_7E2800
+fnstsw  ax
+test    ah, 40h
+jz      loc_466AC5
+jmp     loc_466AB8
+; ---------------------------------------------------------------------------
+
+loc_466A33:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+2EB↑j
+fld     [esp+1A8h+var_128]
+fcomp   st(1)
+fnstsw  ax
+test    ah, 41h
+fstp    st
+jnz     loc_466B0C
+mov     eax, edx
+cdq
+sub     eax, edx
+sar     eax, 1
+mov     [esp+1A8h+var_198], eax
+fild    [esp+1A8h+var_198]
+fsubr   [esp+1A8h+var_128]
+fst     [esp+1A8h+var_128]
+fcomp   ds:dbl_7E2800
+fnstsw  ax
+test    ah, 41h
+jz      short loc_466A89
+mov     dword ptr [esp+1A8h+var_128], 0
+mov     dword ptr [esp+1A8h+var_128+4], 0
+
+loc_466A89:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+391↑j
+fld     qword ptr [ebx]
+fcomp   ds:dbl_7E2800
+fnstsw  ax
+test    ah, 40h
+jz      short loc_466AC5
+fld     qword ptr [ebx+8]
+fcomp   ds:dbl_7E2800
+fnstsw  ax
+test    ah, 40h
+jz      short loc_466AC5
+fld     qword ptr [ebx+10h]
+fcomp   ds:dbl_7E2800
+fnstsw  ax
+test    ah, 40h
+jz      short loc_466AC5
+
+loc_466AB8:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+34E↑j
+mov     dword ptr [ebx], 0
+mov     dword ptr [ebx+4], 40590000h
+
+loc_466AC5:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+320↑j
+; BulletClass__ProcessNukeExplosion+334↑j ...
+fld     qword ptr [ebx+10h]
+fld     qword ptr [ebx+8]
+fld     qword ptr [ebx]
+fld     st(2)
+fmul    st, st(3)
+fld     st(2)
+fmul    st, st(3)
+sub     esp, 8
+faddp   st(1), st
+fld     st(1)
+fmul    st, st(2)
+faddp   st(1), st
+fstp    [esp+1B0h+var_1B0] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+fdivr   [esp+1B0h+var_128]
+add     esp, 8
+fld     st
+fmul    qword ptr [ebx]
+fstp    qword ptr [ebx]
+fld     st
+fmul    qword ptr [ebx+8]
+fstp    qword ptr [ebx+8]
+fmul    qword ptr [ebx+10h]
+fstp    qword ptr [ebx+10h]
+
+loc_466B0C:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+363↑j
+mov     edx, ebx
+mov     eax, [edx]
+mov     dword ptr [esp+1A8h+var_118], eax
+mov     ecx, [edx+4]
+mov     dword ptr [esp+1A8h+var_118+4], ecx
+mov     eax, [edx+8]
+mov     dword ptr [esp+1A8h+var_110], eax
+mov     eax, [ebx+14h]
+mov     ecx, [edx+0Ch]
+mov     edx, [ebx+10h]
+mov     dword ptr [esp+1A8h+var_110+4], ecx
+mov     ecx, [ebp+10Ch]
+test    ecx, ecx
+mov     dword ptr [esp+1A8h+var_108], edx
+mov     dword ptr [esp+1A8h+var_108+4], eax
+jz      short loc_466B62
+mov     edx, [ecx]
+lea     eax, [esp+1A8h+var_100]
+push    eax
+call    dword ptr [edx+58h]
+jmp     short loc_466B67
+; ---------------------------------------------------------------------------
+
+loc_466B62:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+471↑j
+mov     eax, 89DE30h
+
+loc_466B67:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+480↑j
+mov     ecx, [eax]
+mov     dword ptr [esp+1A8h+var_178], ecx
+mov     edx, [eax+4]
+mov     ecx, [ebp+10Ch]
+mov     dword ptr [esp+1A8h+var_178+4], edx
+mov     eax, [eax+8]
+test    ecx, ecx
+mov     dword ptr [esp+1A8h+var_178+8], eax
+jz      short loc_466BAF
+test    byte ptr [ecx+14h], 2
+jz      short loc_466BAF
+mov     edx, [ecx]
+lea     eax, [esp+1A8h+var_100]
+push    eax
+call    dword ptr [edx+0A4h]
+mov     ecx, [eax]
+mov     dword ptr [esp+1A8h+var_178], ecx
+mov     edx, [eax+4]
+mov     dword ptr [esp+1A8h+var_178+4], edx
+mov     eax, [eax+8]
+mov     dword ptr [esp+1A8h+var_178+8], eax
+
+loc_466BAF:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+4A3↑j
+; BulletClass__ProcessNukeExplosion+4A9↑j
+mov     ecx, ds:8871E0h
+mov     edx, [ebp+4]
+lea     eax, [ebp+4]
+push    eax
+lea     esi, [ecx+598h]
+call    dword ptr [edx+10h]
+mov     ecx, dword_A8ED54+30h
+sub     esp, 8
+add     eax, ecx
+mov     ecx, 0Fh
+cdq
+idiv    ecx
+mov     [esp+1B0h+var_198], edx
+fild    [esp+1B0h+var_198]
+fmul    ds:dbl_7E48F8
+fmul    ds:dbl_7E3CC0
+fstp    [esp+1B0h+var_1B0] ; double
+call    Math__SinCos
+fmul    qword ptr [esi]
+fld     qword ptr [esi]
+fadd    ds:dbl_7E1718
+mov     edx, [ebp+0ACh]
+add     esp, 8
+faddp   st(1), st
+fimul   dword ptr [edx+2DCh]
+call    Math__RoundToInt
+lea     ecx, [esp+1A8h+var_100]
+mov     edi, eax
+mov     eax, [ebp+0]
+push    ecx
+mov     ecx, ebp
+mov     [esp+1ACh+var_198], edi
+call    dword ptr [eax+48h]
+mov     edx, [eax+8]
+mov     esi, dword ptr [esp+1A8h+var_178+8]
+mov     ecx, [eax+4]
+sub     edx, esi
+mov     esi, dword ptr [esp+1A8h+var_178+4]
+push    edx
+mov     edx, [eax]
+sub     ecx, esi
+push    ecx
+mov     ecx, dword ptr [esp+1B0h+var_178]
+sub     edx, ecx
+lea     ecx, [esp+1B0h+var_128]
+push    edx
+call    Coord__Subtract
+mov     ecx, [eax]
+sub     esp, 8
+mov     [esp+1B0h+var_158], ecx
+mov     edx, [eax+4]
+fild    [esp+1B0h+var_158]
+mov     eax, [eax+8]
+mov     [esp+1B0h+var_158+4], edx
+mov     [esp+1B0h+var_150], eax
+fild    [esp+1B0h+var_150]
+fild    [esp+1B0h+var_158+4]
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+faddp   st(1), st
+fstp    [esp+1B0h+var_1B0] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+add     esp, 8
+call    Math__RoundToInt
+cmp     eax, 100h
+jge     short loc_466CB4
+fild    [esp+1A8h+var_198]
+fmul    ds:dbl_7E48F0
+call    Math__RoundToInt
+mov     edi, eax
+
+loc_466CB4:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+5C1↑j
+mov     ecx, dword ptr [esp+1A8h+var_184]
+mov     edx, dword ptr [esp+1A8h+var_184+4]
+mov     eax, [esp+1A8h+var_17C]
+mov     dword ptr [esp+1A8h+var_164], ecx
+mov     ecx, [ebp+10Ch]
+mov     dword ptr [esp+1A8h+var_164+4], edx
+test    ecx, ecx
+mov     [esp+1A8h+var_15C], eax
+jz      short loc_466CE7
+mov     edx, [ecx]
+call    dword ptr [edx+2Ch]
+cmp     eax, 2
+jnz     short loc_466CE7
+mov     esi, 1
+jmp     short loc_466CE9
+; ---------------------------------------------------------------------------
+
+loc_466CE7:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+5F4↑j
+; BulletClass__ProcessNukeExplosion+5FE↑j
+xor     esi, esi
+
+loc_466CE9:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+605↑j
+mov     al, [ebp+105h]
+neg     al
+sbb     eax, eax
+xor     ecx, ecx
+not     eax
+and     eax, edi
+mov     ch, al
+mov     eax, [ebp+0ACh]
+mov     word ptr [esp+1A8h+var_198], cx
+mov     dl, [eax+29Dh]
+mov     cl, [eax+299h]
+push    edx
+mov     dl, [eax+294h]
+push    ecx
+push    edx
+lea     eax, [esp+1B4h+var_198]
+push    esi
+lea     ecx, [esp+1B8h+var_178]
+push    eax
+push    ecx
+lea     edx, [esp+1C0h+var_118]
+lea     ecx, [esp+1C0h+var_184]
+call    Movement__CalcVelocity
+lea     edx, [esp+1A8h+var_184]
+mov     ecx, 87F7E8h
+push    edx
+mov     [esp+1ACh+var_198], eax
+call    Coord__To_Cell
+mov     ecx, dword ptr [esp+1A8h+var_118+4]
+mov     edx, dword ptr [esp+1A8h+var_110]
+mov     [esp+1A8h+var_144], eax
+mov     eax, dword ptr [esp+1A8h+var_118]
+mov     dword ptr [esp+1A8h+var_F4+4], ecx
+mov     ecx, dword ptr [esp+1A8h+var_108]
+mov     dword ptr [esp+1A8h+var_F4], eax
+mov     eax, dword ptr [esp+1A8h+var_110+4]
+mov     dword ptr [esp+1A8h+var_EC], edx
+mov     edx, dword ptr [esp+1A8h+var_108+4]
+mov     dword ptr [esp+1A8h+var_E4], ecx
+mov     ecx, 6
+lea     esi, [esp+1A8h+var_F4]
+mov     edi, ebx
+mov     dword ptr [esp+1A8h+var_EC+4], eax
+mov     dword ptr [esp+1A8h+var_E4+4], edx
+rep movsd
+fld     qword ptr [ebx+10h]
+fld     qword ptr [ebx+8]
+fld     qword ptr [ebx]
+fild    [esp+1A8h+var_198]
+fstp    qword ptr [esp+1A8h+var_158]
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+sub     esp, 8
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+faddp   st(1), st
+fstp    [esp+1B0h+var_1B0] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+fmul    ds:dbl_7E1738
+fcomp   qword ptr [esp+1B0h+var_158]
+add     esp, 8
+fnstsw  ax
+test    ah, 1
+jz      short loc_466E05
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+1C8h]
+test    eax, eax
+jg      short loc_466E66
+
+loc_466E05:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+714↑j
+mov     edx, [ebp+0]
+mov     edi, 1
+mov     ecx, ebp
+mov     byte ptr [esp+1A8h+var_190], 1
+mov     [esp+1A8h+var_188], edi
+call    dword ptr [edx+1C8h]
+test    eax, eax
+jle     short loc_466E6B
+mov     eax, [ebp+0ACh]
+mov     cl, [eax+294h]
+test    cl, cl
+jnz     short loc_466E6B
+mov     eax, dword ptr [esp+1A8h+var_178]
+mov     ecx, ds:89DE30h
+mov     edx, dword ptr [esp+1A8h+var_178+4]
+cmp     eax, ecx
+mov     ecx, dword ptr [esp+1A8h+var_178+8]
+jnz     short loc_466E58
+cmp     edx, ds:89DE34h
+jnz     short loc_466E58
+cmp     ecx, ds:89DE38h
+jz      short loc_466E6B
+
+loc_466E58:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+766↑j
+; BulletClass__ProcessNukeExplosion+76E↑j
+mov     dword ptr [esp+1A8h+var_184], eax
+mov     dword ptr [esp+1A8h+var_184+4], edx
+mov     [esp+1A8h+var_17C], ecx
+jmp     short loc_466E6B
+; ---------------------------------------------------------------------------
+
+loc_466E66:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+723↑j
+mov     edi, 1
+
+loc_466E6B:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+740↑j
+; BulletClass__ProcessNukeExplosion+750↑j ...
+mov     ecx, ds:89DE30h
+mov     eax, dword ptr [esp+1A8h+var_178]
+cmp     eax, ecx
+jnz     short loc_466EB6
+mov     edx, ds:89DE34h
+mov     eax, dword ptr [esp+1A8h+var_178+4]
+cmp     eax, edx
+jnz     short loc_466EB6
+mov     eax, ds:89DE38h
+mov     ecx, dword ptr [esp+1A8h+var_178+8]
+cmp     ecx, eax
+jnz     short loc_466EB6
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+1C8h]
+mov     ecx, ds:8871E0h
+cmp     eax, [ecx+5A0h]
+jl      short loc_466EB6
+mov     byte ptr [esp+1A8h+var_190], 1
+mov     [esp+1A8h+var_188], edi
+
+loc_466EB6:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+797↑j
+; BulletClass__ProcessNukeExplosion+7A5↑j ...
+mov     edx, [esp+1A8h+var_15C]
+mov     ecx, dword ptr [esp+1A8h+var_178+8]
+mov     eax, dword ptr [esp+1A8h+var_164+4]
+mov     ebx, dword ptr [esp+1A8h+var_178+4]
+sub     edx, ecx
+mov     ecx, dword ptr [esp+1A8h+var_164]
+push    edx
+mov     edx, dword ptr [esp+1ACh+var_178]
+sub     eax, ebx
+sub     ecx, edx
+push    eax
+push    ecx
+lea     ecx, [esp+1B4h+var_100]
+call    Coord__Subtract
+mov     edx, [eax]
+sub     esp, 8
+mov     [esp+1B0h+var_158], edx
+mov     ecx, [eax+4]
+fild    [esp+1B0h+var_158]
+mov     edx, [eax+8]
+mov     [esp+1B0h+var_158+4], ecx
+fild    [esp+1B0h+var_158+4]
+mov     [esp+1B0h+var_150], edx
+fild    [esp+1B0h+var_150]
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+faddp   st(1), st
+fstp    [esp+1B0h+var_1B0] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+add     esp, 8
+call    Math__RoundToInt
+mov     edx, dword ptr [esp+1A8h+var_178+8]
+mov     ecx, dword ptr [esp+1A8h+var_184+4]
+mov     ebx, dword ptr [esp+1A8h+var_178+4]
+mov     esi, eax
+mov     eax, [esp+1A8h+var_17C]
+sub     ecx, ebx
+sub     eax, edx
+mov     edx, dword ptr [esp+1A8h+var_184]
+push    eax
+push    ecx
+mov     ecx, dword ptr [esp+1B0h+var_178]
+sub     edx, ecx
+lea     ecx, [esp+1B0h+var_128]
+push    edx
+call    Coord__Subtract
+mov     ecx, [eax]
+sub     esp, 8
+mov     [esp+1B0h+var_158], ecx
+mov     edx, [eax+4]
+fild    [esp+1B0h+var_158]
+mov     eax, [eax+8]
+mov     [esp+1B0h+var_158+4], edx
+fild    [esp+1B0h+var_158+4]
+mov     [esp+1B0h+var_150], eax
+fild    [esp+1B0h+var_150]
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+faddp   st(1), st
+fstp    [esp+1B0h+var_1B0] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+add     esp, 8
+call    Math__RoundToInt
+sub     esi, eax
+mov     [esp+1A8h+var_198], esi
+mov     al, [ebp+105h]
+test    al, al
+jnz     short loc_467032
+mov     eax, [ebp+118h]
+cmp     eax, 3Ch ; '<'
+jge     short loc_466FD8
+fild    [esp+1A8h+var_198]
+inc     eax
+mov     [ebp+118h], eax
+fadd    qword ptr [ebp+120h]
+fstp    qword ptr [ebp+120h]
+jmp     short loc_467032
+; ---------------------------------------------------------------------------
+
+loc_466FD8:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+8DD↑j
+fld     qword ptr [ebp+120h]
+fmul    ds:dbl_7E48E8
+fiadd   [esp+1A8h+var_198]
+fcom    ds:dbl_7E2800
+fst     qword ptr [ebp+120h]
+fnstsw  ax
+test    ah, 1
+jnz     short loc_467030
+fcomp   ds:dbl_7E1728
+fnstsw  ax
+test    ah, 1
+jz      short loc_467032
+mov     eax, [ebp+0ACh]
+mov     cl, [eax+294h]
+test    cl, cl
+jnz     short loc_467032
+mov     cl, [eax+299h]
+test    cl, cl
+jnz     short loc_467032
+mov     byte ptr [esp+1A8h+var_190], 1
+mov     [esp+1A8h+var_188], edi
+jmp     loc_467B7A
+; ---------------------------------------------------------------------------
+
+loc_467030:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+919↑j
+fstp    st
+
+loc_467032:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+8D2↑j
+; BulletClass__ProcessNukeExplosion+8F6↑j ...
+mov     eax, [esp+1A8h+var_188]
+test    eax, eax
+jnz     loc_467B7A
+mov     ecx, [esp+1A8h+var_144]
+mov     esi, 100h
+test    [ecx+140h], esi
+jnz     short loc_46706A
+lea     edx, [esp+1A8h+var_164]
+mov     ecx, 87F7E8h
+push    edx
+call    Coord__To_Cell
+test    [eax+140h], esi
+jz      loc_467B7A
+
+loc_46706A:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+96D↑j
+lea     eax, [esp+1A8h+var_184]
+mov     ecx, 87F7E8h
+push    eax
+call    Cell__GetGroundHeight
+mov     ecx, ds:89DE64h
+mov     edx, [esp+1A8h+var_15C]
+add     eax, ecx
+mov     ecx, [esp+1A8h+var_17C]
+cmp     ecx, eax
+jle     short loc_4670A2
+cmp     edx, eax
+jge     short loc_4670A2
+mov     [esp+1A8h+var_188], 1
+mov     [esp+1A8h+var_17C], eax
+jmp     loc_467B75
+; ---------------------------------------------------------------------------
+
+loc_4670A2:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+9AB↑j
+; BulletClass__ProcessNukeExplosion+9AF↑j
+cmp     ecx, eax
+jge     loc_467B7A
+cmp     edx, eax
+jle     loc_467B7A
+mov     [esp+1A8h+var_188], 1
+mov     [esp+1A8h+var_17C], eax
+jmp     loc_467B75
+; ---------------------------------------------------------------------------
+
+loc_4670C3:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1F3↑j
+lea     ebx, [ebp+0E8h]
+lea     esi, [esp+1A8h+var_140]
+mov     edx, ebx
+lea     edi, [esp+1A8h+var_F4]
+fld     qword ptr [ebx+10h]
+mov     eax, [edx]
+sub     esp, 8
+mov     dword ptr [esp+1B0h+var_140], eax
+mov     ecx, [edx+4]
+mov     dword ptr [esp+1B0h+var_140+4], ecx
+mov     eax, [edx+8]
+mov     ecx, [edx+0Ch]
+mov     dword ptr [esp+1B0h+var_138], eax
+fstp    [esp+1B0h+var_130]
+mov     dword ptr [esp+1B0h+var_138+4], ecx
+mov     edx, dword ptr [esp+1B0h+var_140]
+fld     [esp+1B0h+var_138]
+fmul    [esp+1B0h+var_138]
+fld     [esp+1B0h+var_140]
+fmul    [esp+1B0h+var_140]
+mov     eax, dword ptr [esp+1B0h+var_140+4]
+mov     ecx, 6
+rep movsd
+faddp   st(1), st
+fld     [esp+1B0h+var_130]
+fmul    [esp+1B0h+var_130]
+faddp   st(1), st
+fstp    [esp+1B0h+var_1B0] ; double
+mov     ecx, dword ptr [esp+1B0h+var_138]
+mov     dword ptr [esp+1B0h+var_118], edx
+mov     edx, dword ptr [esp+1B0h+var_138+4]
+mov     dword ptr [esp+1B0h+var_118+4], eax
+mov     eax, dword ptr [esp+1B0h+var_130]
+mov     dword ptr [esp+1B0h+var_110], ecx
+mov     ecx, dword ptr [esp+1B0h+var_130+4]
+mov     dword ptr [esp+1B0h+var_110+4], edx
+mov     dword ptr [esp+1B0h+var_108], eax
+mov     dword ptr [esp+1B0h+var_108+4], ecx
+call    Math__Sqrt
+fcomp   ds:dbl_7E48E0
+add     esp, 8
+fnstsw  ax
+test    ah, 1
+jz      short loc_46718F
+mov     [esp+1A8h+var_188], 1
+
+loc_46718F:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+AA5↑j
+fild    dword ptr [esp+1A8h+var_184]
+mov     eax, [ebp+0ACh]
+mov     edx, ds:8871E0h
+fstp    [esp+1A8h+var_140]
+fild    dword ptr [esp+1A8h+var_184+4]
+fstp    [esp+1A8h+var_138]
+fild    [esp+1A8h+var_17C]
+fstp    [esp+1A8h+var_130]
+mov     cl, [eax+295h]
+fild    dword ptr [edx+16B8h]
+test    cl, cl
+jz      short loc_4671CA
+fstp    st
+call    RulesClass__GetFiringDistance
+
+loc_4671CA:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+AE1↑j
+mov     eax, [ebp+0ACh]
+mov     cl, [eax+2C0h]
+test    cl, cl
+jz      loc_467402
+fstp    st
+fld     qword ptr [ebx+10h]
+fld     qword ptr [ebx+8]
+fld     qword ptr [ebx]
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+sub     esp, 8
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+faddp   st(1), st
+fstp    [esp+1B0h+var_1B0] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+add     esp, 8
+call    Math__RoundToInt
+cmp     eax, [ebp+110h]
+jge     loc_4672B7
+mov     ecx, [ebp+0ACh]
+mov     edx, [ecx+2D0h]
+add     edx, eax
+mov     [esp+1A8h+var_198], edx
+fild    [esp+1A8h+var_198]
+fstp    qword ptr [esp+1A8h+var_158]
+fld     qword ptr [ebx]
+fcomp   ds:dbl_7E2800
+fnstsw  ax
+test    ah, 40h
+jz      short loc_467273
+fld     qword ptr [ebx+8]
+fcomp   ds:dbl_7E2800
+fnstsw  ax
+test    ah, 40h
+jz      short loc_467273
+fld     qword ptr [ebx+10h]
+fcomp   ds:dbl_7E2800
+fnstsw  ax
+test    ah, 40h
+jz      short loc_467273
+mov     dword ptr [ebx], 0
+mov     dword ptr [ebx+4], 40590000h
+
+loc_467273:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+B64↑j
+; BulletClass__ProcessNukeExplosion+B74↑j ...
+fld     qword ptr [ebx+10h]
+fld     qword ptr [ebx+8]
+fld     qword ptr [ebx]
+fld     st(2)
+fmul    st, st(3)
+fld     st(2)
+fmul    st, st(3)
+sub     esp, 8
+faddp   st(1), st
+fld     st(1)
+fmul    st, st(2)
+faddp   st(1), st
+fstp    [esp+1B0h+var_1B0] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+fdivr   qword ptr [esp+1B0h+var_158]
+add     esp, 8
+fld     st
+fmul    qword ptr [ebx]
+fstp    qword ptr [ebx]
+fld     st
+fmul    qword ptr [ebx+8]
+fstp    qword ptr [ebx+8]
+fmul    qword ptr [ebx+10h]
+fstp    qword ptr [ebx+10h]
+
+loc_4672B7:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+B37↑j
+mov     eax, ebx
+fld     qword ptr [ebx+10h]
+mov     ecx, [eax]
+mov     dword ptr [esp+1A8h+var_DC], ecx
+mov     edx, [eax+4]
+mov     dword ptr [esp+1A8h+var_DC+4], edx
+mov     ecx, [eax+8]
+fld     [esp+1A8h+var_DC]
+mov     edx, [eax+0Ch]
+mov     dword ptr [esp+1A8h+var_D4], ecx
+mov     dword ptr [esp+1A8h+var_D4+4], edx
+call    Math__RoundToInt
+fld     [esp+1A8h+var_D4]
+mov     esi, eax
+call    Math__RoundToInt
+mov     edi, eax
+call    Math__RoundToInt
+mov     ecx, dword ptr [esp+1A8h+var_184]
+mov     edx, dword ptr [esp+1A8h+var_184+4]
+mov     ebx, [esp+1A8h+var_17C]
+mov     dword ptr [esp+1A8h+var_164], ecx
+add     ecx, esi
+mov     dword ptr [esp+1A8h+var_164+4], edx
+mov     dword ptr [esp+1A8h+var_184], ecx
+mov     ecx, [ebp+0ACh]
+add     edx, edi
+add     eax, ebx
+mov     [esp+1A8h+var_15C], ebx
+mov     dword ptr [esp+1A8h+var_184+4], edx
+mov     [esp+1A8h+var_17C], eax
+mov     edx, [ecx+2BCh]
+cmp     eax, edx
+jle     short loc_467350
+mov     [esp+1A8h+var_188], 1
+mov     byte ptr [esp+1A8h+var_190], 1
+jmp     loc_4677D3
+; ---------------------------------------------------------------------------
+
+loc_467350:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+C5C↑j
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+1C8h]
+test    eax, eax
+jge     short loc_467371
+mov     [esp+1A8h+var_188], 1
+mov     byte ptr [esp+1A8h+var_190], 1
+jmp     loc_4677D3
+; ---------------------------------------------------------------------------
+
+loc_467371:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+C7D↑j
+lea     eax, [esp+1A8h+var_184]
+mov     ecx, 87F7E8h
+push    eax
+call    Cell__GetGroundHeight
+mov     ecx, ds:89DE64h
+lea     edx, [esp+1A8h+var_184]
+push    edx
+lea     esi, [eax+ecx]
+mov     ecx, 87F7E8h
+call    Coord__To_Cell
+mov     ecx, [eax+140h]
+mov     edi, 100h
+test    edi, ecx
+jnz     short loc_4673C2
+lea     eax, [esp+1A8h+var_164]
+mov     ecx, 87F7E8h
+push    eax
+call    Coord__To_Cell
+test    [eax+140h], edi
+jz      loc_4677D3
+
+loc_4673C2:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+CC5↑j
+mov     eax, [esp+1A8h+var_17C]
+cmp     eax, esi
+mov     eax, [esp+1A8h+var_15C]
+jl      short loc_4673E8
+cmp     eax, esi
+jge     loc_4677D3
+mov     [esp+1A8h+var_188], 1
+mov     byte ptr [esp+1A8h+var_190], 1
+jmp     loc_4677D3
+; ---------------------------------------------------------------------------
+
+loc_4673E8:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+CEC↑j
+cmp     eax, esi
+jl      loc_4677D3
+mov     [esp+1A8h+var_188], 1
+mov     byte ptr [esp+1A8h+var_190], 1
+jmp     loc_4677D3
+; ---------------------------------------------------------------------------
+
+loc_467402:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+AF8↑j
+fld     [esp+1A8h+var_108]
+mov     edx, [eax+2C8h]
+mov     eax, [eax+2CCh]
+fsub    st, st(1)
+mov     ecx, [ebp+0B0h]
+mov     [esp+1A8h+var_158], edx
+mov     [esp+1A8h+var_144], ecx
+mov     [esp+1A8h+var_158+4], eax
+fstp    [esp+1A8h+var_108]
+fstp    st
+fld     [esp+1A8h+var_130]
+call    Math__RoundToInt
+fld     [esp+1A8h+var_138]
+push    eax
+call    Math__RoundToInt
+fld     [esp+1ACh+var_140]
+push    eax
+call    Math__RoundToInt
+push    eax
+lea     ecx, [esp+1B4h+var_100]
+call    Coord__Subtract
+lea     ecx, [esp+1A8h+var_118]
+push    ecx
+lea     ecx, [esp+1ACh+var_140]
+call    BulletClass__AddVector3
+fld     [esp+1A8h+var_130]
+call    Math__RoundToInt
+fld     [esp+1A8h+var_138]
+push    eax
+call    Math__RoundToInt
+fld     [esp+1ACh+var_140]
+push    eax
+call    Math__RoundToInt
+push    eax
+lea     ecx, [esp+1B4h+var_164]
+call    Coord3D__Set
+lea     edx, [esp+1A8h+var_164]
+mov     ecx, 87F7E8h
+push    edx
+call    Cell__GetGroundHeight
+mov     ecx, ds:89DE64h
+lea     edx, [esp+1A8h+var_164]
+push    edx
+mov     [esp+1ACh+var_198], eax
+lea     edi, [eax+ecx]
+mov     ecx, 87F7E8h
+mov     [esp+1ACh+var_148], edi
+call    Coord__To_Cell
+mov     esi, eax
+mov     ebx, 100h
+mov     byte ptr [esp+1A8h+var_194+3], 0
+mov     byte ptr [esp+1A8h+var_194+2], 0
+test    [esi+140h], ebx
+jnz     short loc_4674F6
+lea     eax, [esp+1A8h+var_100]
+mov     ecx, 87F7E8h
+push    eax
+call    Coord__To_Cell
+test    [eax+140h], ebx
+jz      short loc_467519
+
+loc_4674F6:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+DFA↑j
+mov     eax, [esp+1A8h+var_15C]
+cmp     eax, edi
+mov     eax, [esp+1A8h+var_F8]
+jl      short loc_467510
+cmp     eax, edi
+jge     short loc_467519
+mov     byte ptr [esp+1A8h+var_194+2], 1
+jmp     short loc_467519
+; ---------------------------------------------------------------------------
+
+loc_467510:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+E23↑j
+cmp     eax, edi
+jl      short loc_467519
+mov     byte ptr [esp+1A8h+var_194+3], 1
+
+loc_467519:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+E14↑j
+; BulletClass__ProcessNukeExplosion+E27↑j ...
+mov     al, byte ptr [esp+1A8h+var_194+3]
+xor     bl, bl
+test    al, al
+jnz     loc_4675D2
+mov     al, byte ptr [esp+1A8h+var_194+2]
+test    al, al
+jnz     loc_4675D2
+fild    [esp+1A8h+var_198]
+fld     [esp+1A8h+var_130]
+fcomp   st(1)
+fnstsw  ax
+test    ah, 1
+jnz     loc_4675D8
+fld     [esp+1A8h+var_130]
+fsub    ds:dbl_7E48D8
+fcomp   st(1)
+fnstsw  ax
+test    ah, 1
+fstp    st
+jz      short loc_4675DA
+mov     ecx, esi
+call    Cell__IsBridge
+mov     edi, eax
+test    edi, edi
+jnz     short loc_46757F
+push    0FFFFFFFFh
+push    0FFFFFFFFh
+mov     ecx, esi
+call    BuildingPlacement__ValidateType
+test    al, al
+jnz     short loc_46757F
+mov     edi, [esp+1A8h+var_148]
+jmp     short loc_4675DA
+; ---------------------------------------------------------------------------
+
+loc_46757F:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+E88↑j
+; BulletClass__ProcessNukeExplosion+E97↑j
+test    edi, edi
+mov     bl, 1
+jz      short loc_4675D2
+mov     esi, [esp+1A8h+var_144]
+cmp     edi, esi
+jz      short loc_4675A6
+mov     ecx, [edi+520h]
+mov     al, [ecx+16BFh]
+test    al, al
+jz      short loc_4675A8
+cmp     dword ptr [edi+618h], 8
+jl      short loc_4675A8
+
+loc_4675A6:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+EAB↑j
+xor     bl, bl
+
+loc_4675A8:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+EBB↑j
+; BulletClass__ProcessNukeExplosion+EC4↑j
+mov     edx, [edi]
+mov     ecx, edi
+call    dword ptr [edx+80h]
+test    al, al
+jz      short loc_4675B8
+xor     bl, bl
+
+loc_4675B8:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+ED4↑j
+test    esi, esi
+jz      short loc_4675D2
+mov     eax, [esp+1A8h+var_144]
+push    edi
+mov     ecx, [eax+21Ch]
+call    Object__IsAlliedWithObjectHouse
+test    al, al
+jz      short loc_4675D2
+xor     bl, bl
+
+loc_4675D2:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+E41↑j
+; BulletClass__ProcessNukeExplosion+E4D↑j ...
+mov     edi, [esp+1A8h+var_148]
+jmp     short loc_4675DA
+; ---------------------------------------------------------------------------
+
+loc_4675D8:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+E62↑j
+fstp    st
+
+loc_4675DA:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+E7B↑j
+; BulletClass__ProcessNukeExplosion+E9D↑j ...
+fild    [esp+1A8h+var_198]
+fstp    qword ptr [esp+1A8h+var_178]
+fld     [esp+1A8h+var_130]
+fcomp   qword ptr [esp+1A8h+var_178]
+fnstsw  ax
+mov     al, byte ptr [esp+1A8h+var_194+3]
+test    ah, 1
+jnz     short loc_467609
+test    al, al
+jnz     short loc_467609
+mov     cl, byte ptr [esp+1A8h+var_194+2]
+test    cl, cl
+jnz     short loc_467609
+test    bl, bl
+jz      loc_4677A8
+
+loc_467609:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+F13↑j
+; BulletClass__ProcessNukeExplosion+F17↑j ...
+mov     ecx, [esp+1A8h+var_144]
+test    ecx, ecx
+jnz     loc_46777A
+test    al, al
+jz      short loc_467623
+fild    [esp+1A8h+var_148]
+fstp    [esp+1A8h+var_130]
+jmp     short loc_467666
+; ---------------------------------------------------------------------------
+
+loc_467623:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+F37↑j
+mov     al, byte ptr [esp+1A8h+var_194+2]
+test    al, al
+jz      short loc_46763C
+add     edi, 0FFFFFFECh
+mov     [esp+1A8h+var_198], edi
+fild    [esp+1A8h+var_198]
+fstp    [esp+1A8h+var_130]
+jmp     short loc_467666
+; ---------------------------------------------------------------------------
+
+loc_46763C:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+F49↑j
+mov     ecx, [esp+1A8h+var_198]
+add     ecx, 0FFFFFF9Ch
+mov     [esp+1A8h+var_198], ecx
+fild    [esp+1A8h+var_198]
+fcomp   [esp+1A8h+var_130]
+fnstsw  ax
+test    ah, 1
+jz      short loc_467666
+mov     edx, dword ptr [esp+1A8h+var_178]
+mov     eax, dword ptr [esp+1A8h+var_178+4]
+mov     dword ptr [esp+1A8h+var_130], edx
+mov     dword ptr [esp+1A8h+var_130+4], eax
+
+loc_467666:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+F41↑j
+; BulletClass__ProcessNukeExplosion+F5A↑j ...
+lea     ecx, [esp+1A8h+var_164]
+push    ecx
+mov     ecx, ds:887324h
+call    CellClass__GetByte284
+mov     edx, eax
+lea     ecx, [esp+1A8h+var_60]
+call    CopyAudioData
+mov     ecx, 0Ch
+mov     esi, eax
+lea     edi, [esp+1A8h+var_C0]
+lea     edx, [esp+1A8h+var_C0]
+rep movsd
+lea     ecx, [esp+1A8h+var_30]
+call    InvertMatrix3x3Signs
+mov     ecx, 0Ch
+mov     esi, eax
+lea     edi, [esp+1A8h+var_90]
+rep movsd
+fld     [esp+1A8h+var_108]
+push    ecx
+fstp    dword ptr [esp+1ACh+var_1B0+4]
+fld     [esp+1ACh+var_110]
+push    ecx
+fchs
+fstp    dword ptr [esp+1B0h+var_1B0]
+fld     [esp+1B0h+var_118]
+push    ecx
+lea     ecx, [esp+1B4h+var_178]
+fstp    dword ptr [esp+1B4h+var_1B8+4]
+call    Triple__Set
+lea     edx, [esp+1A8h+var_178]
+lea     eax, [esp+1A8h+var_DC]
+push    edx
+push    eax
+lea     ecx, [esp+1B0h+var_90]
+call    Matrix3x3__TransformPoint
+mov     ecx, [eax]
+fld     qword ptr [esp+1A8h+var_158]
+mov     dword ptr [esp+1A8h+var_178], ecx
+mov     edx, [eax+4]
+mov     dword ptr [esp+1A8h+var_178+4], edx
+push    ecx
+mov     eax, [eax+8]
+lea     ecx, [esp+1ACh+var_178]
+fstp    dword ptr [esp+1ACh+var_1B0+4] ; float
+mov     dword ptr [esp+1ACh+var_178+8], eax
+call    Coord__Scale
+fld     dword ptr [esp+1A8h+var_178+8]
+lea     ecx, [esp+1A8h+var_178]
+lea     edx, [esp+1A8h+var_158]
+fchs
+fstp    dword ptr [esp+1A8h+var_178+8]
+push    ecx
+push    edx
+lea     ecx, [esp+1B0h+var_C0]
+call    Matrix3x3__TransformPoint
+mov     ecx, [eax]
+mov     dword ptr [esp+1A8h+var_178], ecx
+mov     edx, [eax+4]
+fld     dword ptr [esp+1A8h+var_178]
+mov     dword ptr [esp+1A8h+var_178+4], edx
+mov     eax, [eax+8]
+fstp    [esp+1A8h+var_118]
+fld     dword ptr [esp+1A8h+var_178+4]
+fchs
+fstp    [esp+1A8h+var_110]
+mov     dword ptr [esp+1A8h+var_178+8], eax
+fld     dword ptr [esp+1A8h+var_178+8]
+fstp    [esp+1A8h+var_108]
+jmp     short loc_46779B
+; ---------------------------------------------------------------------------
+
+loc_46777A:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+F2F↑j
+test    al, al
+jz      short loc_467784
+fild    [esp+1A8h+var_148]
+jmp     short loc_467797
+; ---------------------------------------------------------------------------
+
+loc_467784:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+109C↑j
+mov     al, byte ptr [esp+1A8h+var_194+2]
+test    al, al
+jz      short loc_4677A8
+add     edi, 0FFFFFFECh
+mov     [esp+1A8h+var_198], edi
+fild    [esp+1A8h+var_198]
+
+loc_467797:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+10A2↑j
+fstp    [esp+1A8h+var_130]
+
+loc_46779B:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1098↑j
+mov     [esp+1A8h+var_188], 1
+mov     byte ptr [esp+1A8h+var_190], 1
+
+loc_4677A8:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+F23↑j
+; BulletClass__ProcessNukeExplosion+10AA↑j
+fld     [esp+1A8h+var_140]
+call    Math__RoundToInt
+fld     [esp+1A8h+var_138]
+mov     esi, eax
+call    Math__RoundToInt
+fld     [esp+1A8h+var_130]
+mov     edi, eax
+call    Math__RoundToInt
+mov     dword ptr [esp+1A8h+var_184], esi
+mov     dword ptr [esp+1A8h+var_184+4], edi
+mov     [esp+1A8h+var_17C], eax
+
+loc_4677D3:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+C6B↑j
+; BulletClass__ProcessNukeExplosion+C8C↑j ...
+mov     eax, dword ptr [esp+1A8h+var_184]
+cdq
+and     edx, 0FFh
+add     eax, edx
+mov     ecx, eax
+mov     eax, dword ptr [esp+1A8h+var_184+4]
+cdq
+and     edx, 0FFh
+add     eax, edx
+mov     edi, eax
+mov     eax, [ebp+140h]
+sar     ecx, 8
+sar     edi, 8
+mov     word ptr [esp+1A8h+var_198], cx
+mov     word ptr [esp+1A8h+var_198+2], di
+mov     edx, [esp+1A8h+var_198]
+mov     [esp+1A8h+var_C4], edx
+cdq
+and     edx, 0FFh
+add     eax, edx
+mov     esi, eax
+mov     eax, [ebp+144h]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     esi, 8
+sar     eax, 8
+mov     word ptr [esp+1A8h+var_198], si
+mov     word ptr [esp+1A8h+var_198+2], ax
+mov     edx, [esp+1A8h+var_198]
+cmp     cx, si
+mov     dword ptr [esp+1A8h+var_128], edx
+jnz     short loc_467890
+cmp     di, ax
+jnz     short loc_467890
+mov     eax, [ebp+0ACh]
+mov     cl, [eax+2C0h]
+test    cl, cl
+jnz     short loc_467890
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+1C8h]
+mov     ecx, ds:89DE70h
+lea     edx, [ecx+ecx]
+cmp     eax, edx
+jge     short loc_467890
+
+loc_467879:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1216↓j
+mov     [esp+1A8h+var_188], 1
+mov     byte ptr [esp+1A8h+var_190], 1
+mov     byte ptr [esp+1A8h+var_18C+3], 1
+jmp     loc_467B7A
+; ---------------------------------------------------------------------------
+
+loc_467890:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+116A↑j
+; BulletClass__ProcessNukeExplosion+116F↑j ...
+lea     eax, [esp+1A8h+var_C4]
+mov     ecx, 87F7E8h
+push    eax
+call    CellCoord__To_CellObj
+lea     ecx, [esp+1A8h+var_128]
+mov     esi, eax
+push    ecx
+mov     ecx, 87F7E8h
+call    CellCoord__To_CellObj
+mov     ecx, esi
+mov     edi, eax
+call    Cell__IsBridge
+mov     ecx, edi
+mov     esi, eax
+call    Cell__IsBridge
+test    esi, esi
+jz      short loc_4678F8
+mov     edx, [ebp+0ACh]
+mov     cl, [edx+2C0h]
+test    cl, cl
+jnz     short loc_4678F8
+cmp     esi, eax
+jnz     short loc_4678F8
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+1C8h]
+mov     ecx, ds:89DE70h
+lea     edx, [ecx+ecx]
+cmp     eax, edx
+jl      short loc_467879
+
+loc_4678F8:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+11EA↑j
+; BulletClass__ProcessNukeExplosion+11FA↑j ...
+xor     edi, edi
+lea     eax, [esp+1A8h+var_158]
+push    edi
+push    edi
+lea     ecx, [esp+1B0h+var_184]
+push    eax
+push    ecx
+mov     ecx, 87F7E8h
+mov     [esp+1B8h+var_158], edi
+mov     [esp+1B8h+var_158+4], edi
+call    Coord__To_Cell
+mov     ecx, eax
+call    Object__FindClosestObjectCell
+mov     esi, eax
+mov     eax, [ebp+0B0h]
+cmp     esi, edi
+setnz   bl
+cmp     eax, edi
+setnz   cl
+test    cl, cl
+jz      short loc_46793E
+cmp     esi, eax
+mov     byte ptr [esp+1A8h+var_194+3], 1
+jz      short loc_467943
+
+loc_46793E:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1253↑j
+mov     byte ptr [esp+1A8h+var_194+3], 0
+
+loc_467943:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+125C↑j
+test    bl, bl
+jz      short loc_467960
+test    cl, cl
+jz      short loc_467960
+mov     ecx, [eax+21Ch]
+push    esi
+call    Object__IsAlliedWithObjectHouse
+test    al, al
+mov     byte ptr [esp+1A8h+var_194+2], 1
+jnz     short loc_467965
+
+loc_467960:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1265↑j
+; BulletClass__ProcessNukeExplosion+1269↑j
+mov     byte ptr [esp+1A8h+var_194+2], 0
+
+loc_467965:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+127E↑j
+test    bl, bl
+jz      short loc_4679D5
+mov     edi, dword ptr [esp+1A8h+var_184]
+lea     edx, [esi+9Ch]
+sub     esp, 8
+mov     eax, [edx]
+sub     edi, eax
+mov     eax, dword ptr [esp+1B0h+var_184+4]
+mov     ecx, [edx+4]
+mov     dword ptr [esp+1B0h+var_164], edi
+sub     eax, ecx
+mov     ecx, [esp+1B0h+var_17C]
+mov     edx, [edx+8]
+mov     dword ptr [esp+1B0h+var_164+4], eax
+fild    dword ptr [esp+1B0h+var_164+4]
+sub     ecx, edx
+mov     [esp+1B0h+var_15C], ecx
+fild    [esp+1B0h+var_15C]
+fild    dword ptr [esp+1B0h+var_164]
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+faddp   st(1), st
+fstp    [esp+1B0h+var_1B0] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+add     esp, 8
+call    Math__RoundToInt
+cmp     eax, 80h
+jge     short loc_4679D5
+mov     al, 1
+jmp     short loc_4679D7
+; ---------------------------------------------------------------------------
+
+loc_4679D5:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1287↑j
+; BulletClass__ProcessNukeExplosion+12EF↑j
+xor     al, al
+
+loc_4679D7:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+12F3↑j
+mov     cl, byte ptr [esp+1A8h+var_194+3]
+test    cl, cl
+jnz     short loc_467A2B
+mov     cl, byte ptr [esp+1A8h+var_194+2]
+test    cl, cl
+jnz     short loc_467A2B
+test    al, al
+jz      short loc_467A2B
+mov     edx, [ebp+0ACh]
+mov     [esp+1A8h+var_188], 1
+mov     byte ptr [esp+1A8h+var_190], 1
+mov     al, [edx+2A2h]
+test    al, al
+jnz     loc_467B7A
+add     esi, 9Ch
+mov     eax, [esi]
+mov     dword ptr [esp+1A8h+var_184], eax
+mov     ecx, [esi+4]
+mov     dword ptr [esp+1A8h+var_184+4], ecx
+mov     edx, [esi+8]
+mov     [esp+1A8h+var_17C], edx
+jmp     loc_467B7A
+; ---------------------------------------------------------------------------
+
+loc_467A2B:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+12FD↑j
+; BulletClass__ProcessNukeExplosion+1305↑j ...
+lea     eax, [esp+1A8h+var_184]
+mov     ecx, 87F7E8h
+push    eax
+call    Tactical__IsCellVisible
+test    al, al
+jnz     short loc_467A6A
+lea     eax, [ebp+9Ch]
+mov     [esp+1A8h+var_188], 2
+mov     byte ptr [esp+1A8h+var_190], 1
+mov     ecx, [eax]
+mov     dword ptr [esp+1A8h+var_184], ecx
+mov     edx, [eax+4]
+mov     dword ptr [esp+1A8h+var_184+4], edx
+mov     eax, [eax+8]
+mov     [esp+1A8h+var_17C], eax
+jmp     loc_467B7A
+; ---------------------------------------------------------------------------
+
+loc_467A6A:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+135C↑j
+mov     edx, dword ptr [esp+1A8h+var_118+4]
+mov     eax, dword ptr [esp+1A8h+var_110]
+mov     ecx, dword ptr [esp+1A8h+var_118]
+mov     dword ptr [esp+1A8h+var_F4+4], edx
+mov     edx, [ebp+0ACh]
+mov     dword ptr [esp+1A8h+var_EC], eax
+mov     dword ptr [esp+1A8h+var_F4], ecx
+mov     ecx, dword ptr [esp+1A8h+var_110+4]
+mov     al, [edx+2C0h]
+mov     dword ptr [esp+1A8h+var_EC+4], ecx
+test    al, al
+jnz     short loc_467B1A
+mov     ecx, dword ptr [esp+1A8h+var_F4+4]
+mov     eax, dword ptr [esp+1A8h+var_F4]
+mov     edx, dword ptr [esp+1A8h+var_EC]
+mov     dword ptr [esp+1A8h+var_DC+4], ecx
+mov     ecx, dword ptr [esp+1A8h+var_108]
+mov     dword ptr [esp+1A8h+var_DC], eax
+mov     eax, dword ptr [esp+1A8h+var_EC+4]
+mov     dword ptr [esp+1A8h+var_D4], edx
+mov     edx, dword ptr [esp+1A8h+var_108+4]
+mov     dword ptr [esp+1A8h+var_CC], ecx
+mov     ecx, 6
+lea     esi, [esp+1A8h+var_DC]
+lea     edi, [ebp+0E8h]
+mov     dword ptr [esp+1A8h+var_D4+4], eax
+mov     dword ptr [esp+1A8h+var_CC+4], edx
+rep movsd
+
+loc_467B1A:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+13D0↑j
+fld     qword ptr [ebp+0F8h]
+fld     qword ptr [ebp+0F0h]
+fld     qword ptr [ebp+0E8h]
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+sub     esp, 8
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+faddp   st(1), st
+fstp    [esp+1B0h+var_1B0] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+fcomp   ds:dbl_7E44A8
+add     esp, 8
+fnstsw  ax
+test    ah, 1
+jz      short loc_467B7A
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+1C8h]
+cmp     eax, 0Ah
+jge     short loc_467B7A
+mov     [esp+1A8h+var_188], 1
+
+loc_467B75:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+9BD↑j
+; BulletClass__ProcessNukeExplosion+9DE↑j
+mov     byte ptr [esp+1A8h+var_190], 1
+
+loc_467B7A:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+94B↑j
+; BulletClass__ProcessNukeExplosion+958↑j ...
+mov     eax, [esp+1A8h+var_188]
+mov     edx, [ebp+0]
+sub     eax, 2
+push    2
+mov     ecx, ebp
+jz      loc_467FA9
+call    dword ptr [edx+124h]
+mov     eax, [ebp+0]
+lea     ecx, [esp+1A8h+var_184]
+push    ecx
+mov     ecx, ebp
+call    dword ptr [eax+1B4h]
+mov     al, byte ptr [esp+1A8h+var_190]
+test    al, al
+jnz     short loc_467BF0
+lea     eax, [ebp+9Ch]
+mov     edx, [ebp+9Ch]
+mov     dword ptr [esp+1A8h+var_164], edx
+mov     ecx, [eax+4]
+mov     dword ptr [esp+1A8h+var_164+4], ecx
+mov     ecx, ebp
+mov     edx, [eax+8]
+lea     eax, [esp+1A8h+var_164]
+push    eax
+mov     [esp+1ACh+var_15C], edx
+call    BulletClass__CheckBulletCollision
+mov     edx, [ebp+0]
+mov     bl, al
+lea     eax, [esp+1A8h+var_164]
+mov     ecx, ebp
+push    eax
+mov     byte ptr [esp+1ACh+var_190], bl
+call    dword ptr [edx+1B4h]
+test    bl, bl
+jz      short loc_467C0C
+
+loc_467BF0:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+14CA↑j
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+1C8h]
+test    eax, eax
+jge     short loc_467C0C
+mov     eax, [ebp+0]
+push    0
+mov     ecx, ebp
+call    dword ptr [eax+1CCh]
+
+loc_467C0C:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+150E↑j
+; BulletClass__ProcessNukeExplosion+151D↑j
+mov     eax, [ebp+0ACh]
+mov     ecx, [eax+2DCh]
+test    ecx, ecx
+jg      short loc_467C2A
+mov     cl, [eax+2A0h]
+test    cl, cl
+jnz     short loc_467C2A
+xor     esi, esi
+jmp     short loc_467C3C
+; ---------------------------------------------------------------------------
+
+loc_467C2A:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+153A↑j
+; BulletClass__ProcessNukeExplosion+1544↑j
+lea     ecx, [esp+1A8h+var_184]
+push    ecx
+lea     ecx, [ebp+0B8h]
+call    BulletClass__CheckProximityDetonation
+mov     esi, eax
+
+loc_467C3C:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1548↑j
+mov     ecx, [ebp+0B0h]
+mov     [esp+1A8h+var_148], esi
+test    ecx, ecx
+jz      short loc_467C6A
+mov     edx, [ecx]
+call    dword ptr [edx+84h]
+mov     cl, [eax+0D94h]
+test    cl, cl
+jz      short loc_467C6A
+cmp     esi, 2
+jnz     short loc_467C6A
+mov     esi, 1
+mov     [esp+1A8h+var_148], esi
+
+loc_467C6A:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1568↑j
+; BulletClass__ProcessNukeExplosion+157A↑j ...
+mov     al, byte ptr [esp+1A8h+var_190]
+test    al, al
+jnz     short loc_467CA9
+mov     eax, [ebp+0ACh]
+mov     cl, [eax+29Ch]
+test    cl, cl
+jnz     short loc_467C86
+test    esi, esi
+jnz     short loc_467CA9
+
+loc_467C86:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+15A0↑j
+mov     cl, [eax+2A6h]
+test    cl, cl
+jz      loc_467FBA
+mov     eax, [ebp+6Ch]
+cmp     eax, 5
+jle     loc_467FBA
+dec     eax
+mov     [ebp+6Ch], eax
+jmp     loc_467FBA
+; ---------------------------------------------------------------------------
+
+loc_467CA9:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1590↑j
+; BulletClass__ProcessNukeExplosion+15A4↑j
+mov     ecx, [ebp+10Ch]
+test    ecx, ecx
+jz      loc_467E53
+cmp     [esp+1A8h+var_148], 1
+jz      short loc_467CCA
+mov     al, byte ptr [esp+1A8h+var_18C+3]
+test    al, al
+jz      loc_467E53
+
+loc_467CCA:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+15DC↑j
+mov     eax, [ebp+0ACh]
+mov     dl, [eax+294h]
+test    dl, dl
+jnz     loc_467E53
+mov     dl, [eax+2A2h]
+test    dl, dl
+jnz     loc_467E53
+mov     eax, [ecx]
+mov     esi, dword ptr [esp+1A8h+var_184]
+mov     edi, dword ptr [esp+1A8h+var_184+4]
+mov     ebx, [esp+1A8h+var_17C]
+lea     edx, [esp+1A8h+var_DC]
+push    edx
+call    dword ptr [eax+58h]
+mov     ecx, [eax]
+sub     esp, 8
+mov     [esp+1B0h+var_100], ecx
+mov     edx, [eax+4]
+mov     [esp+1B0h+var_FC], edx
+mov     ecx, [eax+8]
+lea     eax, [ecx+ebx]
+mov     ebx, [esp+1B0h+var_FC]
+cdq
+sub     eax, edx
+mov     edx, [esp+1B0h+var_100]
+sar     eax, 1
+sub     edi, ebx
+sub     eax, ecx
+mov     dword ptr [esp+1B0h+var_164+4], edi
+sub     esi, edx
+fild    dword ptr [esp+1B0h+var_164+4]
+mov     [esp+1B0h+var_15C], eax
+mov     dword ptr [esp+1B0h+var_164], esi
+fild    [esp+1B0h+var_15C]
+fild    dword ptr [esp+1B0h+var_164]
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+faddp   st(1), st
+fstp    [esp+1B0h+var_1B0] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+add     esp, 8
+call    Math__RoundToInt
+mov     ecx, eax
+mov     al, byte ptr [esp+1A8h+var_18C+3]
+test    al, al
+mov     [esp+1A8h+var_198], ecx
+jz      short loc_467D98
+mov     eax, 55555556h
+imul    ecx
+mov     eax, edx
+shr     eax, 1Fh
+add     edx, eax
+mov     [esp+1A8h+var_198], edx
+
+loc_467D98:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+16A4↑j
+cmp     [esp+1A8h+var_148], 1
+jz      loc_467E37
+fld     qword ptr [ebp+0F8h]
+fld     qword ptr [ebp+0F0h]
+fld     qword ptr [ebp+0E8h]
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+sub     esp, 8
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+faddp   st(1), st
+fstp    [esp+1B0h+var_1B0] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+fadd    st, st
+fcomp   ds:dbl_7E2808
+add     esp, 8
+fnstsw  ax
+test    ah, 1
+jz      short loc_467DF0
+fld     ds:dbl_7E2808
+jmp     short loc_467E28
+; ---------------------------------------------------------------------------
+
+loc_467DF0:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1706↑j
+fld     qword ptr [ebp+0F8h]
+fld     qword ptr [ebp+0F0h]
+fld     qword ptr [ebp+0E8h]
+fld     st
+fmul    st, st(1)
+fld     st(2)
+fmul    st, st(3)
+sub     esp, 8
+faddp   st(1), st
+fld     st(3)
+fmul    st, st(4)
+faddp   st(1), st
+fstp    [esp+1B0h+var_1B0] ; double
+fstp    st
+fstp    st
+fstp    st
+call    Math__Sqrt
+fadd    st, st
+add     esp, 8
+
+loc_467E28:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+170E↑j
+fild    [esp+1A8h+var_198]
+fcomp   st(1)
+fnstsw  ax
+test    ah, 41h
+fstp    st
+jz      short loc_467E53
+
+loc_467E37:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+16BD↑j
+mov     ecx, [ebp+10Ch]
+mov     esi, [ebp+0]
+lea     eax, [esp+1A8h+var_178]
+mov     edx, [ecx]
+push    eax
+call    dword ptr [edx+48h]
+push    eax
+mov     ecx, ebp
+call    dword ptr [esi+1B4h]
+
+loc_467E53:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+15D1↑j
+; BulletClass__ProcessNukeExplosion+15E4↑j ...
+mov     ecx, [ebp+128h]
+push    offset aNuke    ; "NUKE"
+call    AbstractTypeClass__NameEquals
+test    al, al
+jz      loc_467F9B
+mov     edx, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [edx+1C8h]
+test    eax, eax
+jge     short loc_467E87
+mov     eax, [ebp+0]
+push    0
+mov     ecx, ebp
+call    dword ptr [eax+1CCh]
+
+loc_467E87:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1798↑j
+call    Entity_Process
+mov     edx, [ebp+0]
+lea     eax, [esp+1A8h+var_128]
+push    eax
+mov     ecx, ebp
+call    dword ptr [edx+1B8h]
+mov     ecx, [eax]
+push    ecx
+mov     ecx, 0Dh
+call    CreateTriggerClassIfFarEnough
+mov     ecx, offset aNukeball ; "NUKEBALL"
+call    AnimTypeClass__FindIndex
+cmp     eax, 0FFFFFFFFh
+jz      loc_467F9B
+mov     edx, ds:8B4154h
+mov     edi, [edx+eax*4]
+test    edi, edi
+jz      loc_467F9B
+push    1C8h            ; Size
+call    ??2_YAPAXI_Z
+mov     esi, eax
+add     esp, 4
+test    esi, esi
+jz      short loc_467F34
+lea     eax, [ebp+9Ch]
+push    0               ; char
+mov     ecx, eax
+sub     esp, 0Ch
+mov     edx, [ecx]
+mov     [esp+1B8h+var_158], edx
+mov     edx, [ecx+4]
+mov     [esp+1B8h+var_158+4], edx
+mov     edx, esp
+mov     ecx, [ecx+8]
+mov     [esp+1B8h+var_150], ecx
+mov     ecx, [eax]
+mov     [edx], ecx
+mov     ecx, [eax+4]
+mov     eax, [eax+8]
+mov     [edx+4], ecx
+mov     [edx+8], eax
+call    Return__HRESULT_Fail
+push    eax             ; int
+push    2600h           ; int
+push    1               ; int
+lea     ecx, [esp+1B8h+var_158]
+push    0               ; int
+push    ecx             ; int
+push    edi             ; int
+mov     ecx, esi        ; void **
+call    AnimClass__ctor
+jmp     short loc_467F36
+; ---------------------------------------------------------------------------
+
+loc_467F34:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1801↑j
+xor     eax, eax
+
+loc_467F36:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1852↑j
+mov     [ebp+154h], eax
+mov     byte ptr [ebp+158h], 1
+mov     eax, dword_A8ED54+8086Ch
+mov     ecx, dword_A8ED54+80874h
+cmp     ecx, eax
+jl      short loc_467F81
+mov     cl, byte ptr dword_A8ED54+80871h
+test    cl, cl
+jnz     short loc_467F60
+test    eax, eax
+jnz     short loc_467FBA
+
+loc_467F60:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+187A↑j
+mov     ecx, dword_A8ED54+80878h
+test    ecx, ecx
+jle     short loc_467FBA
+mov     edx, dword_A8ED54+80864h
+add     eax, ecx
+push    0
+push    eax
+mov     ecx, (offset dword_A8ED54+80864h)
+call    dword ptr [edx+8]
+test    al, al
+jz      short loc_467FBA
+
+loc_467F81:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1870↑j
+mov     ecx, dword_A8ED54+80874h
+mov     eax, ecx
+inc     ecx
+mov     dword_A8ED54+80874h, ecx
+mov     ecx, dword_A8ED54+80868h
+mov     [ecx+eax*4], ebp
+jmp     short loc_467FBA
+; ---------------------------------------------------------------------------
+
+loc_467F9B:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1785↑j
+; BulletClass__ProcessNukeExplosion+17D9↑j ...
+mov     edx, [esp+1A8h+var_190]
+mov     ecx, ebp
+push    edx
+call    BulletClass__Fire
+jmp     short loc_467FAF
+; ---------------------------------------------------------------------------
+
+loc_467FA9:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+14A8↑j
+call    dword ptr [edx+124h]
+
+loc_467FAF:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+18C7↑j
+mov     eax, [ebp+0]
+mov     ecx, ebp
+call    dword ptr [eax+0F8h]
+
+loc_467FBA:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+15AE↑j
+; BulletClass__ProcessNukeExplosion+15BA↑j ...
+mov     eax, dword ptr [esp+1A8h+var_184]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+1A8h+var_198], ax
+mov     eax, dword ptr [esp+1A8h+var_184+4]
+cdq
+and     edx, 0FFh
+add     eax, edx
+sar     eax, 8
+mov     word ptr [esp+1A8h+var_198+2], ax
+mov     ecx, [esp+1A8h+var_198]
+mov     [ebp+14Ch], ecx
+
+loc_467FEE:                             ; CODE XREF: BulletClass__ProcessNukeExplosion+1F↑j
+; BulletClass__ProcessNukeExplosion+37↑j
+pop     edi
+pop     esi
+pop     ebp
+pop     ebx
+mov     esp, ebp
+pop     ebp
+retn
+*/
+} }
+
 // 0x468090
 namespace gamemd { void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -7379,6 +13141,7 @@ void __thiscall BulletClass::SetupVoxelTransform(void *this, int *a2, int *a3)
   }
 }
 } }
+
 // 0x468430
 namespace gamemd { int BulletClass::LoseTarget() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -7408,6 +13171,7 @@ __int16 __thiscall BulletClass::LoseTarget(_DWORD **this)
   return (__int16)v2; /*0x4684c0*/
 }
 } }
+
 // 0x4684E0
 namespace gamemd { int BulletClass::ProcessImpact(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -7484,6 +13248,7 @@ __int16 __thiscall BulletClass::_vt10(int this, char *a2, char *a3)
   return (__int16)v5; /*0x468612*/
 }
 } }
+
 // 0x468670
 namespace gamemd { int BulletClass::ProcessObstacle(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -7656,6 +13421,7 @@ char __thiscall BulletClass::ProcessObstacle(_DWORD *this, IUnknown *aP1, const 
   return 1; /*0x468b74*/
 }
 } }
+
 // 0x468B90
 namespace gamemd { int BulletClass::UpdateFlightPath() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -7668,6 +13434,7 @@ int __thiscall BulletClass::_vt30(_DWORD *this)
   return v1 + 3; /*0x468ba5*/
 }
 } }
+
 // 0x468BB0
 namespace gamemd { bool BulletClass::CheckBulletCollision(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -7752,6 +13519,7 @@ bool __thiscall BulletClass::CheckBulletCollision(_DWORD *this, IUnknown *aP1)
   return result; /*0x468c78*/
 }
 } }
+
 // 0x468D80
 namespace gamemd { int BulletClass::Fire(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -7912,6 +13680,7 @@ LABEL_30:
   return v21; /*0x469091*/
 }
 } }
+
 // 0x46AE70
 namespace gamemd { int BulletClass::SaveLoad_Prefix(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -7958,6 +13727,7 @@ int __thiscall BulletClass::SaveLoad_Prefix(void *this, int *a1, ObjectClass *aP
   return result; /*0x46af99*/
 }
 } }
+
 // 0x46B0C0
 namespace gamemd { int BulletClass::RenderVoxelBullet(int a1, void* a2, void* a3, void* a4, int a5, int a6, int a7) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -8034,6 +13804,7 @@ char __thiscall sub_46B0C0(void *this, int a2, float *a3, _DWORD *a4, _DWORD *a5
            0);
 }
 } }
+
 // 0x46B280
 namespace gamemd { int BulletClass::InitScalable() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -8056,6 +13827,7 @@ int __thiscall BulletClass::InitScalable(_DWORD **this)
   return BulletTypeClass::SetScaledSpawnDelay(*(this + 43), v3 / 3 + (*(this + 43))[185]); /*0x46b307*/
 }
 } }
+
 // 0x46B5A0
 namespace gamemd { int BulletClass::CheckEndOfSequence(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -8065,6 +13837,7 @@ int __thiscall BulletClass::_vt123(_DWORD *this, int a2)
   return a2; /*0x46b5aa*/
 }
 } }
+
 // 0x46B5B0
 namespace gamemd { int BulletClass::CheckMissionAbort() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -8073,6 +13846,7 @@ int __thiscall BulletClass::_vt34(_DWORD *this)
   return *(this + 43); /*0x46b5b6*/
 }
 } }
+
 // 0x46B5C0
 namespace gamemd { void* BulletClass::CheckActionStatus(int a2) {
 {
@@ -8082,6 +13856,7 @@ namespace gamemd { void* BulletClass::CheckActionStatus(int a2) {
     return (BulletClass *)this;
 }
 } }
+
 // 0x46B960
 namespace gamemd { void* BulletClass::AddVector3(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -8093,6 +13868,7 @@ double *__thiscall sub_46B960(double *this, double *a2)
   return this; /*0x46b97e*/
 }
 } }
+
 // 0x487C70
 namespace gamemd { int TerrainClass::SetFieldF8(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -8102,6 +13878,7 @@ int __thiscall TerrainClass::SetFieldF8(_DWORD *this, int a2)
   return a2; /*0x487c7a*/
 }
 } }
+
 // 0x4E1100
 namespace gamemd { void* BulletClass::ResetDetonationTimer() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -8118,6 +13895,7 @@ _DWORD *__thiscall sub_4E1100(_DWORD *this)
   return this; /*0x4e1127*/
 }
 } }
+
 // 0x4E1130
 namespace gamemd { int BulletClass::InitDetonationTimer(void* a1, void* a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -8150,6 +13928,7 @@ __int64 __thiscall sub_4E1130(_DWORD *this, _DWORD *a2, _DWORD *a3, int a4, int 
   return result; /*0x4e11e4*/
 }
 } }
+
 // 0x4E11F0
 namespace gamemd { int BulletClass::CheckProximityDetonation(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -8189,6 +13968,7 @@ LABEL_5:
   return 0; /*0x4e1282*/
 }
 } }
+
 // 0x4E87B0
 namespace gamemd { int ParticleSystemClass::updateParticles(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -8200,6 +13980,7 @@ unsigned int __thiscall ParticleSystemClass::sub_4E87B0(int this, int a2)
     return 0; /*0x4e87b7*/
 }
 } }
+
 // 0x4E9DE0
 namespace gamemd { int ParticleSystemClass::AddRef(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -8229,6 +14010,7 @@ char __thiscall ParticleSystemClass::_vt01(int *this, int a2)
   return 0; /*0x4e9e0e*/
 }
 } }
+
 // 0x4E9F60
 namespace gamemd { int ParticleSystemClass::Release(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -8276,6 +14058,7 @@ char __thiscall ParticleSystemClass::_vt02(void *this, int a2, _DWORD *a3)
   return 1; /*0x4e9ffe*/
 }
 } }
+
 // 0x4EA010
 namespace gamemd { int ParticleSystemClass::Init(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -8297,6 +14080,7 @@ int __thiscall ParticleSystemClass::_vt04(int *this, _DWORD *a2)
   return result; /*0x4ea032*/
 }
 } }
+
 // 0x4EB3E0
 namespace gamemd { int ParticleSystemClass::ReallocateBuffer(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -8344,6 +14128,7 @@ char __thiscall ParticleSystemClass::sub_4EB3E0(void *this, int a2, _DWORD *a3)
   return 1; /*0x4eb47e*/
 }
 } }
+
 // 0x4EB490
 namespace gamemd { int ParticleSystemClass::processParticleFrame(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -8365,6 +14150,7 @@ int __thiscall ParticleSystemClass::sub_4EB490(int *this, _DWORD *a2)
   return result; /*0x4eb4b2*/
 }
 } }
+
 // 0x4EF850
 namespace gamemd { void* ParticleSystemClass::QueryInterface(int a2) {
 {
@@ -8383,6 +14169,7 @@ namespace gamemd { void* ParticleSystemClass::QueryInterface(int a2) {
     return (DynamicVector *)this;
 }
 } }
+
 // 0x4EFDA0
 namespace gamemd { void* ParticleSystemClass::finalizeParticles(int a2) {
 {
@@ -8401,6 +14188,7 @@ namespace gamemd { void* ParticleSystemClass::finalizeParticles(int a2) {
     return (DynamicVector *)this;
 }
 } }
+
 // 0x547CF0
 namespace gamemd { void TerrainClass::GenerateTexture(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17) {
 
@@ -10547,6 +16335,7 @@ add     esp, 1Ch
 retn    44h ; 'D'
 */
 } }
+
 // 0x549E90
 namespace gamemd { int TerrainClass::InitTheatre() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -10704,6 +16493,7 @@ int __thiscall TerrainClass_InitTheatre(int *this)
   return result; /*0x54a10d*/
 }
 } }
+
 // 0x574000
 namespace gamemd { void TerrainClass::ProcessSlope(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -11054,6 +16844,7 @@ LABEL_79:
   }
 }
 } }
+
 // 0x59C920
 namespace gamemd { int TiberiumClass::Grow(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -11609,6 +17400,7 @@ LABEL_122:
   return 0; /*0x59cc78*/
 }
 } }
+
 // 0x5B35E0
 namespace gamemd { int ParticleClass::MissionDispatch() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -11643,6 +17435,7 @@ int __thiscall BuildingClass::MissionDispatch(#377 *this)
   return result; /*0x5b3641*/
 }
 } }
+
 // 0x5FD6A0
 namespace gamemd { int OverlayClass::WriteINI() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -11763,6 +17556,7 @@ int __thiscall OverlayClass::WriteINI(char *this)
   return Pipe::Dtor(v21); /*0x5fd8e1*/
 }
 } }
+
 // 0x5FE020
 namespace gamemd { void* OverlayClass::updateOverlayState(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -11775,6 +17569,7 @@ TechnoClass *__thiscall OverlayClass::updateOverlayState(_DWORD *this, int a2, i
   return (TechnoClass *)this; /*0x5fe03d*/
 }
 } }
+
 // 0x62B5E0
 namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -11965,6 +17760,7 @@ ParticleClass *__thiscall ParticleClass::Construct(
   return (ParticleClass *)this; /*0x62bb15*/
 }
 } }
+
 // 0x62C3A0
 namespace gamemd { void ParticleClass::UpdateParticlePhysics() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -12035,6 +17831,7 @@ void __thiscall sub_62C3A0(void *this)
   }
 }
 } }
+
 // 0x62C540
 namespace gamemd { void ParticleClass::UpdateAnimationDrift() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -12103,6 +17900,7 @@ void __thiscall sub_62C540(int this)
     *(float *)(this + 228) = *(float *)(this + 228) - *(float *)(v9 + 768); /*0x62c6ca*/
 }
 } }
+
 // 0x62CE40
 namespace gamemd { int ParticleClass::Dispatch() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -12136,6 +17934,7 @@ int __thiscall ParticleClass_Dispatch(int this)
   return result; /*0x62ce9e*/
 }
 } }
+
 // 0x62D3F0
 namespace gamemd { void ParticleClass::CheckWaterImpact() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -12193,12 +17992,14 @@ void __thiscall sub_62D3F0(_DWORD *this)
   }
 }
 } }
+
 // 0x62D6F0
 namespace gamemd { bool ParticleClass::CheckMirrorState(int a1) {
 {
     return (unsigned char)ObjectClass::UpdateProductionDisplay((#374 *)this) != 0;
 }
 } }
+
 // 0x62D830
 namespace gamemd { int ParticleClass::vt_entry_1E8() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -12235,6 +18036,7 @@ int __thiscall ParticleClass::vt_entry_1E8(int this)
   return 0; /*0x62d8d2*/
 }
 } }
+
 // 0x62D990
 namespace gamemd { int ParticleClass::Stub() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -12243,6 +18045,7 @@ int __thiscall ParticleClass::_vt34(_DWORD *this)
   return *(this + 43); /*0x62d996*/
 }
 } }
+
 // 0x62D9A0
 namespace gamemd { void* ParticleClass::UpdateParticle(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -12281,6 +18084,7 @@ ParticleClass *__thiscall ParticleClass::UpdateParticle(void **this, char a2)
   return (ParticleClass *)this; /*0x62da39*/
 }
 } }
+
 // 0x62DC50
 namespace gamemd { int ParticleSystemClass::Constructor(int a1, void* a2, int a3, void* a4, void* a5, int a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -12413,6 +18217,7 @@ ParticleSystemClass *__thiscall ParticleSystemClass::Constructor(
   return (ParticleSystemClass *)this; /*0x62df07*/
 }
 } }
+
 // 0x62DF20
 namespace gamemd { int ParticleClass::ProcessCreation() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -12475,6 +18280,7 @@ int __thiscall sub_62DF20(int this)
   return this; /*0x62e06c*/
 }
 } }
+
 // 0x62E280
 namespace gamemd { void ParticleSystemClass::CreateBuildingLight(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -12525,6 +18331,7 @@ void __thiscall ParticleSystemClass::CreateBuildingLight(int *this, int a2, Tech
   }
 }
 } }
+
 // 0x62E380
 namespace gamemd { int ParticleSystemClass::CreateParticle(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -12568,6 +18375,7 @@ int __thiscall ParticleSystemClass::CreateParticle(_DWORD *this, IUnknown *aP1, 
   return (int)v5->__pad_0; /*0x62e41f*/
 }
 } }
+
 // 0x62E4C0
 namespace gamemd { int ParticleClass::CreateInstance(void* a1, float a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -12638,6 +18446,7 @@ int __thiscall ParticleClass::CreateInstance(int this, ParticleSystemClass *aP1,
   return (int)v6->__pad_0; /*0x62e5c0*/
 }
 } }
+
 // 0x62E6D0
 namespace gamemd { void ParticleSystemClass::UpdateAllParticles() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -12729,6 +18538,7 @@ void __thiscall sub_62E6D0(int this)
   }
 }
 } }
+
 // 0x62F230
 namespace gamemd { int ParticleSystemClass::SpawnParticle() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13102,6 +18912,7 @@ char __thiscall ParticleSystemClass::SpawnParticle(int this)
   return (char)v52; /*0x62f998*/
 }
 } }
+
 // 0x62FD60
 namespace gamemd { int ParticleSystemClass::Update() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13164,6 +18975,7 @@ char __thiscall ParticleSystemClass::Update(_BYTE *this)
   return v3; /*0x62fe42*/
 }
 } }
+
 // 0x62FE90
 namespace gamemd { int ParticleSystemClass::UpdateSystem(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13206,6 +19018,7 @@ int __thiscall ParticleSystemClass::UpdateSystem(int this, IUnknown *aP1, int a3
   return (int)result; /*0x62ff19*/
 }
 } }
+
 // 0x62FF20
 namespace gamemd { int ParticleSystemClass::Write(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13284,6 +19097,7 @@ LABEL_14:
   return result; /*0x630088*/
 }
 } }
+
 // 0x630100
 namespace gamemd { int ParticleSystemClass::PowerDrainUpdate(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13317,6 +19131,7 @@ int __thiscall ParticleSystemClass::PowerDrainUpdate(int this, AbstractClass *aP
   return Power::TimerProcess(aP1); /*0x630194*/
 }
 } }
+
 // 0x6301E0
 namespace gamemd { void ParticleSystemClass::ProcessFrame() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13325,12 +19140,14 @@ void __thiscall ParticleSystemClass::_vt62(_BYTE *this)
   *(this + 248) = 1; /*0x6301e0*/
 }
 } }
+
 // 0x630220
 namespace gamemd { int ParticleSystemClass::Stub() {
 {
     return this->Type;
 }
 } }
+
 // 0x6302A0
 namespace gamemd { void* ParticleSystemClass::resetSystemState(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13354,6 +19171,7 @@ _DWORD *__thiscall sub_6302A0(_DWORD *this, int a2, int a3)
   return this; /*0x6302cd*/
 }
 } }
+
 // 0x65B2F0
 namespace gamemd { void RadSiteClass::Constructor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13393,12 +19211,14 @@ void __thiscall RadSiteClass::Constructor(void **this)
   AbstractClass::DTOR(this); /*0x65b38f*/
 }
 } }
+
 // 0x65B3B0
 namespace gamemd { int RadSiteClass::PowerDrainUpdate(int a1) {
 {
     return AbstractClass::ProcessPower((#378 *)this);
 }
 } }
+
 // 0x65B800
 namespace gamemd { int RadSiteClass::Tick() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13472,6 +19292,7 @@ LABEL_11:
   return result; /*0x65b8dc*/
 }
 } }
+
 // 0x65BED0
 namespace gamemd { void* RadSiteClass::ProcessEvent(int a2) {
 {
@@ -13481,6 +19302,7 @@ namespace gamemd { void* RadSiteClass::ProcessEvent(int a2) {
     return (RadSiteClass *)this;
 }
 } }
+
 // 0x6620F0
 namespace gamemd { int BulletClass::ComputeImpactTrajectory(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13530,6 +19352,7 @@ char __thiscall sub_6620F0(int this, int a2)
   return 1; /*0x6621b0*/
 }
 } }
+
 // 0x71B7B0
 namespace gamemd { int TerrainClass::CleanupMembers() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13605,6 +19428,7 @@ int __thiscall sub_71B7B0(int this)
   return ObjectClass::Dtor((_DWORD *)this); /*0x71b910*/
 }
 } }
+
 // 0x71B920
 namespace gamemd { int TerrainClass::UpdateAnims(int a1, int a2, int a3, int a4, int a5, int a6, void* a7) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13704,6 +19528,7 @@ LABEL_19:
   return (TerrainClass *)this; /*0x71bdd7*/
 }
 } }
+
 // 0x71BB90
 namespace gamemd { void* TerrainClass::Construct(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13803,6 +19628,7 @@ LABEL_19:
   return (TerrainClass *)this; /*0x71bdd7*/
 }
 } }
+
 // 0x71BFB0
 namespace gamemd { int TerrainClass::CheckNearbyObjects(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13840,6 +19666,7 @@ char __userpurge TerrainClass::CheckNearbyObjects@<al>(int this@<ecx>, MouseClas
   return 1; /*0x71c026*/
 }
 } }
+
 // 0x71C070
 namespace gamemd { void* TerrainClass::ClearCellFlags(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13866,6 +19693,7 @@ _BYTE *__thiscall TerrainClass::_vt61(_DWORD *this, _DWORD *a2)
   return result; /*0x71c0f6*/
 }
 } }
+
 // 0x71C110
 namespace gamemd { void* TerrainClass::SetOccupyBit_PassableTerrain(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13892,6 +19720,7 @@ _BYTE *__thiscall TerrainClass::SetOccupyBit_PassableTerrain(_DWORD *this, _DWOR
   return result; /*0x71c196*/
 }
 } }
+
 // 0x71C1B0
 namespace gamemd { void TerrainClass::Draw(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13981,6 +19810,7 @@ void __thiscall TerrainClass::Draw(unsigned int *this, int *a2, int *a3)
   }
 }
 } }
+
 // 0x71C360
 namespace gamemd { void TerrainClass::ProcessDestructionAnim(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -14050,6 +19880,7 @@ void __thiscall TerrainClass::_vt70(unsigned __int8 *this, int *a2, int *a3)
   }
 }
 } }
+
 // 0x71C4D0
 namespace gamemd { int TerrainClass::IsPlacementValid(int a1, int a2, int a3, int a4, int a5) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -14098,6 +19929,7 @@ int __thiscall TerrainClass::_vt107(_DWORD *this, int a2, int a3, int a4, int a5
   return 0; /*0x71c58e*/
 }
 } }
+
 // 0x71C5B0
 namespace gamemd { int TerrainClass::PlayAmbientAnimation() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -14155,6 +19987,7 @@ char __thiscall TerrainClass::PlayAmbientAnimation(IUnknown *this)
   return 1; /*0x71c694*/
 }
 } }
+
 // 0x71C6B0
 namespace gamemd { int TerrainClass::ProcessTick() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -14193,6 +20026,7 @@ char __thiscall TerrainClass::_vt95(void *this)
   return (char)v2; /*0x71c72b*/
 }
 } }
+
 // 0x71C730
 namespace gamemd { int TerrainClass::Update() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -14284,6 +20118,7 @@ int __thiscall TerrainClass::Update(int this)
   return result; /*0x71c839*/
 }
 } }
+
 // 0x71C930
 namespace gamemd { int TerrainClass::ApplyCellModifications() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -14339,6 +20174,7 @@ char __thiscall TerrainClass::ApplyCellModifications(#374 *this)
   return v8; /*0x71ca67*/
 }
 } }
+
 // 0x71CC50
 namespace gamemd { int TerrainClass::CheckSpawnConditions(void* a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -14392,6 +20228,7 @@ char __thiscall TerrainClass::_vt65(_BYTE *this, int *a2, char a3, int a4)
   return 1; /*0x71cd81*/
 }
 } }
+
 // 0x71CF50
 namespace gamemd { int TerrainClass::PowerDrainUpdate(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -14415,6 +20252,7 @@ int __thiscall TerrainClass::_vt13(int this, int *a2)
   return Power::TimerProcess(*(_DWORD *)(this + 212)); /*0x71cfc0*/
 }
 } }
+
 // 0x71CFD0
 namespace gamemd { int TerrainClass::ProcessFrameStep(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -14428,6 +20266,7 @@ int __thiscall TerrainClass::ProcessFrameStep(int this, int a2, ParticleSystemCl
   return result; /*0x71cff5*/
 }
 } }
+
 // 0x71D160
 namespace gamemd { void* TerrainClass::Export(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -14528,6 +20367,7 @@ _DWORD *__thiscall TerrainClass::Export(int this, _DWORD *a2)
   }
 }
 } }
+
 // 0x71D350
 namespace gamemd { void* TerrainClass::MissionStubReturnZero4(int a2) {
 {
@@ -14537,6 +20377,7 @@ namespace gamemd { void* TerrainClass::MissionStubReturnZero4(int a2) {
     return (TerrainClass *)this;
 }
 } }
+
 // 0x721880
 namespace gamemd { int TiberiumClass::CleanupMembers() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -14628,6 +20469,7 @@ int __thiscall sub_721880(int this)
   return AbstractTypeClass::Dtor((_DWORD *)this); /*0x721a3f*/
 }
 } }
+
 // 0x721DC0
 namespace gamemd { int TiberiumClass::Harvest(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -14643,6 +20485,7 @@ int __thiscall TiberiumClass::_vt13(int this, int *a2)
   return Power::TimerProcess(*(_DWORD *)(this + 232)); /*0x721e30*/
 }
 } }
+
 // 0x7220A0
 namespace gamemd { int TiberiumClass::SpreadGrowth(int a1, void* a2) {
 {
@@ -14656,6 +20499,7 @@ namespace gamemd { int TiberiumClass::SpreadGrowth(int a1, void* a2) {
     return result;
 }
 } }
+
 // 0x722140
 namespace gamemd { int TiberiumClass::UpdateField(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -14691,3 +20535,533 @@ int __thiscall TiberiumClass::_vt10(int *this, int a2, int a3)
   return result; /*0x722199*/
 }
 } }
+
+// 0x723700
+namespace gamemd { int TiberiumClass::Stub() {
+{
+    return this->isInLogic;
+}
+} }
+
+// 0x723710
+namespace gamemd { void* TiberiumClass::DrawOre(int a2) {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+TiberiumClass *__thiscall TiberiumClass::DrawOre(void *this, char a2)
+{
+  TiberiumClass::CleanupMembers((int)this); /*0x723713*/
+  if ( (a2 & 1) != 0 ) /*0x72371d*/
+    __3_YAXPAX_Z(this); /*0x723720*/
+  return (TiberiumClass *)this; /*0x72372a*/
+}
+} }
+
+// 0x727FD0
+namespace gamemd { void* TubeClass::Construct(void* a1, int a2) {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+AbstractClass *__thiscall TubeClass::Construct(AbstractClass *this, CCINIClass *aP1, int a3)
+{
+  int v4; // eax
+  _WORD *v5; // eax
+  int v6; // ecx
+  AbstractClass **v7; // edi
+
+  AbstractClass::Constructor(this); /*0x727fd5*/
+  *((_DWORD *)this + 9) = *(_DWORD *)aP1->__pad_0; /*0x727fe4*/
+  *((_DWORD *)this + 10) = *(_DWORD *)aP1->__pad_0; /*0x727fec*/
+  *((_DWORD *)this + 11) = a3; /*0x727ff0*/
+  *((_DWORD *)this + 112) = 0; /*0x727ff3*/
+  *(_DWORD *)this->__pad_0 = &TubeClass::`vftable'; /*0x727ffd*/
+  *(_DWORD *)&this->__pad_0[4] = &TubeClass::`vftable'; /*0x728003*/
+  *(_DWORD *)&this->__pad_0[8] = &TubeClass::`vftable'; /*0x728009*/
+  *(_DWORD *)&this->__pad_0[12] = &vt_TubeClass; /*0x728010*/
+  AbstractClass::GenerateUniqueID((int)&this->__pad_0[4]); /*0x728017*/
+  memset((char *)this + 48, 0xFFu, 0x190u); /*0x728027*/
+  if ( *(int *)&stru_89E138.__pad_1600D[3] < *(int *)&stru_89E138.__pad_15FF8[16] /*0x72805f*/
+    || (stru_89E138.__pad_1600D[0] || !*(_DWORD *)&stru_89E138.__pad_15FF8[16])
+    && *(int *)&stru_89E138.__pad_1600D[7] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_89E138.__pad_15FF8[8] + 8))(
+         &stru_89E138.__pad_15FF8[8],
+         *(_DWORD *)&stru_89E138.__pad_15FF8[16] + *(_DWORD *)&stru_89E138.__pad_1600D[7],
+         0) )
+  {
+    v4 = (*(_DWORD *)&stru_89E138.__pad_1600D[3])++; /*0x72806c*/
+    *(_DWORD *)(*(_DWORD *)&stru_89E138.__pad_15FF8[12] + 4 * v4) = this; /*0x72807b*/
+  }
+  if ( *(_WORD *)aP1->__pad_0 || *(_WORD *)&aP1->__pad_0[2] ) /*0x728084*/
+  {
+    v5 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)aP1->__pad_0); /*0x728091*/
+    v6 = 0; /*0x72809c*/
+    if ( *(int *)&stru_89E138.__pad_1600D[3] <= 0 ) /*0x7280a0*/
+    {
+LABEL_13:
+      LOWORD(v6) = -1; /*0x7280b4*/
+    }
+    else
+    {
+      v7 = *(AbstractClass ***)&stru_89E138.__pad_15FF8[12]; /*0x7280a2*/
+      while ( *v7 != this ) /*0x7280aa*/
+      {
+        ++v6; /*0x7280ac*/
+        ++v7; /*0x7280ad*/
+        if ( v6 >= *(int *)&stru_89E138.__pad_1600D[3] ) /*0x7280b2*/
+          goto LABEL_13; /*0x7280b2*/
+      }
+    }
+    v5[139] = v6; /*0x7280b7*/
+  }
+  return this; /*0x7280c0*/
+}
+} }
+
+// 0x728630
+namespace gamemd { int TubeClass::PowerDrainUpdate(void* a1) {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall TubeClass::_vt13(int this, unsigned int *a2)
+{
+  int *v3; // ebx
+  int v4; // ebp
+
+  AbstractClass::ProcessPower((#378 *)this); /*0x72863b*/
+  Checksummer::Add_WORD(a2, *(_WORD *)(this + 36)); /*0x728647*/
+  Checksummer::Add_WORD(a2, *(_WORD *)(this + 38)); /*0x728653*/
+  Checksummer::Add_WORD(a2, *(_WORD *)(this + 40)); /*0x72865f*/
+  Checksummer::Add_WORD(a2, *(_WORD *)(this + 42)); /*0x72866b*/
+  Power::TimerProcess(*(_DWORD *)(this + 44)); /*0x728676*/
+  v3 = (int *)(this + 48); /*0x72867b*/
+  v4 = 100; /*0x72867e*/
+  do /*0x728691*/
+  {
+    Power::TimerProcess(*v3++); /*0x728688*/
+    --v4; /*0x728690*/
+  }
+  while ( v4 ); /*0x728691*/
+  return Power::TimerProcess(*(_DWORD *)(this + 448)); /*0x7286a1*/
+}
+} }
+
+// 0x728710
+namespace gamemd { void* TubeClass::ProcessEvent(int a1) {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+TubeClass *__thiscall TubeClass::ProcessEvent(_DWORD *Block, char a2)
+{
+  __int16 *v3; // eax
+  int v4; // ecx
+  _DWORD **v5; // edx
+  int v6; // eax
+  _DWORD *v8; // [esp+4h] [ebp-4h] BYREF
+
+  *Block = &TubeClass::`vftable'; /*0x728716*/
+  *(Block + 1) = &TubeClass::`vftable'; /*0x72871c*/
+  *(Block + 2) = &TubeClass::`vftable'; /*0x728723*/
+  *(Block + 3) = &vt_TubeClass; /*0x72872a*/
+  AbstractClass::AnnounceExpiredPointer((void **)Block, 1); /*0x728731*/
+  v3 = (__int16 *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)Block + 18); /*0x72873f*/
+  if ( v3 ) /*0x728746*/
+  {
+    v4 = 0; /*0x72874f*/
+    if ( MEMORY[0x8B4148] <= 0 ) /*0x728753*/
+    {
+LABEL_6:
+      v4 = -1; /*0x728767*/
+    }
+    else
+    {
+      v5 = (_DWORD **)MEMORY[0x8B413C]; /*0x728755*/
+      while ( *v5 != Block ) /*0x72875d*/
+      {
+        ++v4; /*0x72875f*/
+        ++v5; /*0x728760*/
+        if ( v4 >= MEMORY[0x8B4148] ) /*0x728765*/
+          goto LABEL_6; /*0x728765*/
+      }
+    }
+    if ( v3[139] == v4 ) /*0x728774*/
+      v3[139] = -1; /*0x728776*/
+  }
+  v8 = Block; /*0x72878f*/
+  v6 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0x8B4138] + 16))(&MEMORY[0x8B4138], &v8); /*0x728793*/
+  if ( v6 != -1 && v6 < MEMORY[0x8B4148] && v6 < --MEMORY[0x8B4148] ) /*0x7287ae*/
+  {
+    do /*0x7287c6*/
+    {
+      ++v6; /*0x7287b6*/
+      *((_DWORD *)MEMORY[0x8B413C] + v6 - 1) = *((_DWORD *)MEMORY[0x8B413C] + v6); /*0x7287ba*/
+    }
+    while ( v6 < MEMORY[0x8B4148] ); /*0x7287c6*/
+  }
+  AbstractClass::DTOR(Block); /*0x7287ca*/
+  if ( (a2 & 1) != 0 ) /*0x7287d4*/
+    __3_YAXPAX_Z(Block); /*0x7287d7*/
+  return (TubeClass *)Block; /*0x7287e1*/
+}
+} }
+
+// 0x729370
+namespace gamemd { void AnimClass::ProcessSequence() {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void __thiscall sub_729370(int this)
+{
+  int v2; // edi
+  int v3; // edx
+  int v4; // eax
+  int *v5; // ecx
+  void **v6; // eax
+  int *v7; // ecx
+  int v8; // [esp+10h] [ebp-Ch] BYREF
+  int v9; // [esp+14h] [ebp-8h]
+  int v10; // [esp+18h] [ebp-4h]
+
+  v2 = *(_DWORD *)(this + 52); /*0x729377*/
+  if ( !v2 ) /*0x729380*/
+    goto LABEL_7; /*0x729380*/
+  v3 = *(_DWORD *)(this + 40); /*0x729382*/
+  v4 = *(_DWORD *)(this + 48); /*0x729385*/
+  if ( v3 != -1 ) /*0x72938b*/
+  {
+    if ( (int)MEMORY[0xA8ED84] - v3 >= v4 ) /*0x729397*/
+      v4 = 0; /*0x72939d*/
+    else
+      v4 -= (int)MEMORY[0xA8ED84] - v3; /*0x729399*/
+  }
+  if ( (double)(v2 - v4) / (double)*(int *)(this + 52) == 1.0 ) /*0x7293b8*/
+  {
+LABEL_7:
+    (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 12) + 1348))( /*0x7293ca*/
+      *(_DWORD *)(this + 12),
+      0,
+      1072693248);
+    v5 = *(int **)(this + 12); /*0x7293d0*/
+    *(_DWORD *)(this + 24) = 3; /*0x7293d3*/
+    v5 += 39; /*0x7293da*/
+    v8 = *v5; /*0x7293e4*/
+    v9 = v5[1]; /*0x7293ef*/
+    v10 = v5[2]; /*0x7293fb*/
+    StartAudioControllerAt(MEMORY[0x8871E0]->ImpactLandSound, (int)&v8, 0); /*0x729405*/
+    v6 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x72940f*/
+    if ( v6 ) /*0x729419*/
+    {
+      v7 = (int *)(*(_DWORD *)(this + 12) + 156); /*0x729420*/
+      v8 = *v7; /*0x729433*/
+      v9 = v7[1]; /*0x72943a*/
+      v10 = v7[2]; /*0x729446*/
+      AnimClass::ctor(v6, (void *)MEMORY[0x8871E0]->?[3], &v8, 0, 1, (void *)0x600, 0, 0); /*0x729459*/
+    }
+    (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 220))(*(_DWORD *)(this + 12), 0); /*0x729465*/
+  }
+}
+} }
+
+// 0x755D10
+namespace gamemd { void WaveClass::Destroy() {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void __thiscall WaveClass_Destroy(int this)
+{
+  void *v2; // eax
+  void *v3; // eax
+
+  if ( *(_DWORD *)(this + 16) ) /*0x755d16*/
+    __3_YAXPAX_Z(*(void **)(this + 16)); /*0x755d1e*/
+  v2 = *(void **)(this + 20); /*0x755d26*/
+  *(_DWORD *)(this + 16) = 0; /*0x755d29*/
+  if ( v2 ) /*0x755d2e*/
+    __3_YAXPAX_Z(v2); /*0x755d31*/
+  v3 = *(void **)(this + 24); /*0x755d39*/
+  *(_DWORD *)(this + 20) = 0; /*0x755d3c*/
+  if ( v3 ) /*0x755d41*/
+    __3_YAXPAX_Z(v3); /*0x755d44*/
+  *(_DWORD *)(this + 24) = 0; /*0x755d4c*/
+}
+} }
+
+// 0x75E950
+namespace gamemd { void* WaveClass::Constructor(void* a1, void* a2, void* a3, void* a4, void* a5) {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+WaveClass *__thiscall WaveClass::Constructor(
+        void **this,
+        int *a1,
+        IUnknown *aP2,
+        IUnknown *aP3,
+        void *a4,
+        InfantryClass *aP5)
+{
+  int v7; // edx
+  int v9; // eax
+  int v10; // eax
+  _DWORD *v11; // edx
+  int v12; // eax
+  int v13; // edx
+  int v14; // edx
+
+  ObjectClass::ctor(this); /*0x75e956*/
+  *(this + 78) = 0; /*0x75e969*/
+  *(this + 80) = 0; /*0x75e96f*/
+  *(this + 43) = aP5; /*0x75e975*/
+  *(this + 44) = a4; /*0x75e97b*/
+  *((_BYTE *)this + 300) = 1; /*0x75e981*/
+  *((_BYTE *)this + 301) = 0; /*0x75e988*/
+  *(this + 76) = (void *)100; /*0x75e98e*/
+  *(this + 77) = 0; /*0x75e998*/
+  *(this + 79) = 0; /*0x75e99e*/
+  *(this + 81) = 0; /*0x75e9a4*/
+  *(this + 82) = 0; /*0x75e9aa*/
+  *(this + 83) = 0; /*0x75e9b0*/
+  *(this + 104) = 0; /*0x75e9b6*/
+  *(this + 105) = 0; /*0x75e9bc*/
+  *(this + 106) = 0; /*0x75e9c2*/
+  *(this + 116) = 0; /*0x75e9ce*/
+  *(this + 117) = aP3; /*0x75e9d4*/
+  FrameSnapshot::Init((_WORD *)this + 236); /*0x75e9da*/
+  *(this + 125) = 0; /*0x75e9e1*/
+  *(this + 126) = (void *)5; /*0x75e9e7*/
+  *((_BYTE *)this + 508) = 1; /*0x75e9f1*/
+  *((_BYTE *)this + 509) = 0; /*0x75e9f8*/
+  *(this + 124) = &vt_VectorClass_CellClass; /*0x75e9fe*/
+  *(this + 125) = (void *)__2_YAPAXI_Z(0x14u); /*0x75ea18*/
+  *((_BYTE *)this + 509) = 1; /*0x75ea1e*/
+  *(this + 124) = &vt_DynamicVectorClass_CellClass; /*0x75ea25*/
+  *(this + 129) = (void *)10; /*0x75ea2f*/
+  *(this + 128) = 0; /*0x75ea39*/
+  *this = &WaveClass::`vftable'; /*0x75ea3f*/
+  *(this + 1) = &WaveClass::`vftable'; /*0x75ea45*/
+  *(this + 2) = &vt_WaveClass; /*0x75ea4b*/
+  *(this + 3) = &off_7F6BC8; /*0x75ea52*/
+  v7 = a1[1] - aP2->field_4; /*0x75ea66*/
+  if ( Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)((*a1 - aP2->field_0) * (*a1 - aP2->field_0) + v7 * v7))) >= 240.0 ) /*0x75ea91*/
+  {
+    AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x75eaa4*/
+    if ( *(int *)&HouseClass_Player.__pad_5568[22932] < *(int *)&HouseClass_Player.__pad_5568[22924] /*0x75eadd*/
+      || (HouseClass_Player.__pad_5568[22929] || !*(_DWORD *)&HouseClass_Player.__pad_5568[22924])
+      && *(int *)&HouseClass_Player.__pad_5568[22936] > 0
+      && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player.__pad_5568[22916] + 8))(
+           &HouseClass_Player.__pad_5568[22916],
+           *(_DWORD *)&HouseClass_Player.__pad_5568[22924] + *(_DWORD *)&HouseClass_Player.__pad_5568[22936],
+           0) )
+    {
+      v9 = (*(_DWORD *)&HouseClass_Player.__pad_5568[22932])++; /*0x75eaea*/
+      *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22920] + 4 * v9) = this; /*0x75eaf9*/
+    }
+    if ( !byte_B725CC ) /*0x75eb02*/
+      Voxel::InitDistanceTable(); /*0x75eb04*/
+    if ( *(this + 44) == (void *)3 ) /*0x75eb10*/
+      Voxel::LightRender(this, (AbstractClass **)a1, (int)aP2); /*0x75eb1a*/
+    else
+      Voxel::SectionProject(this, a1, (int)aP2); /*0x75eb29*/
+    *(this + 106) = 0; /*0x75eb3c*/
+    *(this + 115) = (void *)CalcMathFacing8(this + 51, this + 57); /*0x75eb51*/
+    WaveClass::DrawWave(this, (WaveClass *)(this + 45), 0); /*0x75eb57*/
+    v10 = (int)*(this + 44); /*0x75eb5c*/
+    if ( v10 > 0 && v10 <= 2 ) /*0x75eb69*/
+    {
+      v11 = *(this + 83); /*0x75eb6b*/
+      v12 = (int)*(this + 55); /*0x75eb71*/
+      *(this + 78) = 0; /*0x75eb77*/
+      *(this + 79) = (void *)1072693248; /*0x75eb7d*/
+      *(this + 116) = (void *)160; /*0x75eb87*/
+      *v11 = v12; /*0x75eb91*/
+      v11[1] = *(this + 56); /*0x75eb99*/
+      v13 = (int)*(this + 83); /*0x75eb9c*/
+      *(_DWORD *)(v13 + 8) = *(this + 53); /*0x75eba8*/
+      *(_DWORD *)(v13 + 12) = *(this + 54); /*0x75ebb1*/
+      v14 = (int)*(this + 83); /*0x75ebb4*/
+      *(_DWORD *)(v14 + 16) = *(this + 57); /*0x75ebbc*/
+      *(_DWORD *)(v14 + 20) = *(this + 58); /*0x75ebc2*/
+    }
+    Voxel::TransformMatrix((int)this); /*0x75ebc7*/
+    return (WaveClass *)this; /*0x75ebcc*/
+  }
+  else
+  {
+    ObjectClass::Destroy((#374 *)this); /*0x75ea95*/
+    return (WaveClass *)this; /*0x75ea9a*/
+  }
+}
+} }
+
+// 0x75ED30
+namespace gamemd { int WaveClass::Destructor() {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall sub_75ED30(int this)
+{
+  int v2; // eax
+  void *v3; // eax
+  int v5; // [esp+8h] [ebp-4h] BYREF
+
+  *(_DWORD *)this = &WaveClass::`vftable'; /*0x75ed37*/
+  *(_DWORD *)(this + 4) = &WaveClass::`vftable'; /*0x75ed3d*/
+  *(_DWORD *)(this + 8) = &vt_WaveClass; /*0x75ed44*/
+  *(_DWORD *)(this + 12) = &off_7F6BC8; /*0x75ed4b*/
+  AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x75ed52*/
+  v5 = this; /*0x75ed67*/
+  v2 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xA8EC38] + 16))(&MEMORY[0xA8EC38], &v5); /*0x75ed6b*/
+  if ( v2 != -1 && v2 < MEMORY[0xA8EC48] && v2 < --MEMORY[0xA8EC48] ) /*0x75ed86*/
+  {
+    do /*0x75ed9e*/
+    {
+      ++v2; /*0x75ed8e*/
+      *((_DWORD *)MEMORY[0xA8EC3C] + v2 - 1) = *((_DWORD *)MEMORY[0xA8EC3C] + v2); /*0x75ed92*/
+    }
+    while ( v2 < MEMORY[0xA8EC48] ); /*0x75ed9e*/
+  }
+  (*(void (__thiscall **)(int))(*(_DWORD *)(this + 496) + 12))(this + 496); /*0x75edae*/
+  v3 = *(void **)(this + 500); /*0x75edb1*/
+  *(_DWORD *)(this + 496) = &vt_VectorClass_CellClass; /*0x75edb4*/
+  if ( v3 && *(_BYTE *)(this + 509) ) /*0x75edbe*/
+  {
+    __3_YAXPAX_Z(v3); /*0x75edc6*/
+    *(_DWORD *)(this + 500) = 0; /*0x75edce*/
+  }
+  *(_BYTE *)(this + 509) = 0; /*0x75edd7*/
+  *(_DWORD *)(this + 504) = 0; /*0x75eddb*/
+  return ObjectClass::Dtor((_DWORD *)this); /*0x75ede7*/
+}
+} }
+
+// 0x75F610
+namespace gamemd { int WaveClass::UpdateWave(int a1, int a2) {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall WaveClass::UpdateWave(int this, int a2, ParticleSystemClass *aP2)
+{
+  TechnoClass *result; // eax
+
+  Object::Unlink((#374 *)this); /*0x75f61e*/
+  result = 0; /*0x75f629*/
+  if ( *(_DWORD *)(this + 468) == a2 ) /*0x75f62d*/
+    *(_DWORD *)(this + 468) = 0; /*0x75f62f*/
+  if ( *(_DWORD *)(this + 172) == a2 ) /*0x75f63b*/
+    *(_DWORD *)(this + 172) = 0; /*0x75f63d*/
+  return (int)result->__pad_0; /*0x75f643*/
+}
+} }
+
+// 0x75F8B0
+namespace gamemd { int WaveClass::DrawWave(void* a1, int a2) {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall WaveClass::DrawWave(_BYTE *this, WaveClass *aP1, int a3)
+{
+  int v4; // ebp
+  void *v5; // eax
+  int v6; // edx
+  int v8; // [esp-10h] [ebp-18h]
+
+  if ( !HouseClass_Player.__pad_5568[22252] ) /*0x75f8bb*/
+    return 0; /*0x75f8bb*/
+  if ( !*(this + 129) ) /*0x75f8c1*/
+    return 0; /*0x75f8c1*/
+  if ( *(this + 116) ) /*0x75f8cf*/
+    return 0; /*0x75f8cf*/
+  if ( !*(_DWORD *)&HouseClass_Player.__pad_5568[21752] ) /*0x75f8e5*/
+  {
+    v4 = *(_DWORD *)this; /*0x75f8eb*/
+    v8 = *(_DWORD *)&aP1->__pad_0[8]; /*0x75f8f1*/
+    v5 = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)aP1); /*0x75f8fa*/
+    if ( (*(int (__thiscall **)(_BYTE *, void *, int, int, _DWORD, int))(v4 + 428))(this, v5, -1, v8, 0, 1) ) /*0x75f902*/
+      return 0; /*0x75f902*/
+  }
+  v6 = *(_DWORD *)this; /*0x75f90d*/
+  *(this + 129) = 0; /*0x75f912*/
+  *(this + 128) = 0; /*0x75f919*/
+  (*(void (__thiscall **)(_BYTE *, WaveClass *))(v6 + 436))(this, aP1); /*0x75f920*/
+  if ( !(*(unsigned __int8 (__thiscall **)(_BYTE *, int))(*(_DWORD *)this + 292))(this, 1) ) /*0x75f92c*/
+    return 0; /*0x75f96c*/
+  if ( *(this + 144) ) /*0x75f936*/
+  {
+    if ( (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 120))(this) != -1 ) /*0x75f94a*/
+      Targeting::Readd((IUnknown *)this); /*0x75f952*/
+    ObjectClass::SetDeployState((ObjectClass *)this, 0); /*0x75f95f*/
+  }
+  return 1; /*0x75f964*/
+}
+} }
+
+// 0x75F980
+namespace gamemd { int WaveClass::UpdateWavePosition() {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall WaveClass::UpdateWavePosition(ObjectClass *this)
+{
+  if ( !HouseClass_Player.__pad_5568[22252] || this->inLimbo ) /*0x75f98c*/
+    return 0; /*0x75f9de*/
+  (*(void (__thiscall **)(ObjectClass *, int))(*(_DWORD *)this->__pad_0 + 220))(this, 1); /*0x75f99a*/
+  (*(void (__thiscall **)(ObjectClass *, _DWORD))(*(_DWORD *)this->__pad_0 + 292))(this, 0); /*0x75f9a6*/
+  RemoveTarget((IUnknown *)this); /*0x75f9b2*/
+  VectorClass::RemoveItem((int *)&stru_87C374.__pad_14B0[8020], this); /*0x75f9bd*/
+  (*(void (__thiscall **)(ObjectClass *))(*(_DWORD *)this->__pad_0 + 284))(this); /*0x75f9c6*/
+  this->inLimbo = 1; /*0x75f9cc*/
+  this->needsRedraw = 0; /*0x75f9d3*/
+  return 1; /*0x75f9dc*/
+}
+} }
+
+// 0x75F9F0
+namespace gamemd { void WaveClass::ProcessWaveCollision(void* a1, void* a2) {
+{
+    if ( (g_ScenarioClass_Instance->nextScenario[0] & 0x1000) == 0 || !Game::Stub3((int)(this + 45)) || !Game::Stub3((int)(this + 48)) )
+  {
+    switch ( this->WaveClass_field_15C )
+    {
+    case 0: Voxel::ShadowCalc((int)this, aP1, a2);
+    break;
+    case 1: case 2: Voxel::FaceDraw(this, aP1, (WaveClass *)a2);
+    break;
+    case 3: Surface::RenderToSurfaceVoxel((int)this, aP1, a2);
+    break;
+    default: return;
+    }
+  }
+}
+} }
+
+// 0x760F50
+namespace gamemd { int WaveClass::Update() {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall WaveClass::Update(#374 *this)
+{
+  int result; // eax
+  int v3; // eax
+  int i; // edi
+  ObjectClass *Coords; // eax
+  int v6; // eax
+  int v7[3]; // [esp+4h] [ebp-Ch] BYREF
+
+  result = *((_DWORD *)this + 44); /*0x760f56*/
+  switch ( result ) /*0x760f65*/
+  {
+    case 0: /*0x760f65*/
+      Voxel::TransformMatrix((int)this); /*0x760fa0*/
+      for ( i = 0; i < *((_DWORD *)this + 128); ++i ) /*0x760faf*/
+      {
+        Coords = (ObjectClass *)CellClass::GetCoords(*(_DWORD **)(*((_DWORD *)this + 125) + 4 * i), v7); /*0x760fbf*/
+        WaveClass::DamageArea((int *)this, Coords); /*0x760fc7*/
+      }
+      v6 = *((_DWORD *)this + 76) - 1; /*0x760fde*/
+      *((_DWORD *)this + 76) = v6; /*0x760fdf*/
+      if ( v6 >= 0 ) /*0x760fe5*/
+        goto LABEL_3; /*0x760fe5*/
+      result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 248))(this); /*0x760feb*/
+      break; /*0x760ff5*/
+    case 1: /*0x760f65*/
+    case 2: /*0x760f65*/
+      result = *((_DWORD *)this + 116) - 6; /*0x760fff*/
+      *((_DWORD *)this + 116) = result; /*0x761001*/
+      if ( result < 32 ) /*0x76100a*/
+        goto LABEL_9; /*0x76100a*/
+      break; /*0x76100a*/
+    case 3: /*0x760f65*/
+      Voxel::TransformMatrix((int)this); /*0x760f6e*/
+      v3 = *((_DWORD *)this + 76) - 1; /*0x760f79*/
+      *((_DWORD *)this + 76) = v3; /*0x760f7a*/
+      if ( v3 < 0 ) /*0x760f80*/
+LABEL_9:
+        result = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 248))(this); /*0x76100c*/
+      else
+LABEL_3:
+        result = ObjectClass::DetectCloaked(this); /*0x760f91*/
+      break; /*0x760f9c*/
+    default:
+      return result;
+  }
+  return result; /*0x760f8c*/
+}
+} }
+
+// 0x7632D0
+namespace gamemd { void* WaveClass::Constructor_7632D0(int a1, int a2) { return nullptr; } }

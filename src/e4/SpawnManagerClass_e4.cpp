@@ -497,21 +497,6 @@ LABEL_20:
 } // namespace game
 } // namespace ra2
 
-// 0x6B8140
-namespace ra2 {
-namespace game {
-SpawnManagerClass * SpawnManagerClass::ProcessEvent(char a2)
-{
-{
-    SpawnManagerClass::Constructor_SpawnManagerClass((int)this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (SpawnManagerClass *)this;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x6B83A0
 namespace ra2 {
 namespace game {
@@ -546,6 +531,88 @@ _DWORD *__thiscall SpawnManagerClass::Constructor_6B83A0(_DWORD *this, DynamicVe
 } // namespace game
 } // namespace ra2
 
+// 0x6B7ED0
+namespace ra2 {
+namespace game {
+int SpawnManagerClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 108652929;
+  a2[1] = 299085213;
+  a2[2] = 268441278;
+  a2[3] = 1822515787;
+  return 0;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x6B80B0
+namespace ra2 {
+namespace game {
+int SpawnManagerClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    int v4;
+    int i;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+  {
+    v4 = *a1;
+    aP2 = *(int *)&aP0->UINameLabel[11];
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
+    if ( result >= 0 )
+    {
+    for ( i = 0; i < aP2; ++i )
+      {
+    result = (*(int (__stdcall **)(int *, int, int, int))(*a1 + 16))( a1, *(int *)(*(int *)&aP0->zero_3C + 4 * i), 24, 0);
+    if ( result < 0 )
+    break;
+      }
+    }
+  }
+    return result;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x6B8120
+namespace ra2 {
+namespace game {
+int SpawnManagerClass::StubReturn116()
+{
+return 116;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x6B8130
+namespace ra2 {
+namespace game {
+int SpawnManagerClass::StubReturn65()
+{
+return 65;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x6B8140
+namespace ra2 {
+namespace game {
+SpawnManagerClass * SpawnManagerClass::ProcessEvent(char a2)
+{
+{
+    SpawnManagerClass::Constructor_SpawnManagerClass((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (SpawnManagerClass *)this;
+}
+}
+} // namespace game
+} // namespace ra2
+
 // 0x6B8160
 namespace gamemd {
 void SpawnManagerClass_25::ddtor()
@@ -561,6 +628,19 @@ void SpawnManagerClass_25::ddtor()
   }
     this->IsAllocated = 0;
     this->SpawnManagerClass_25_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x6B8190
+namespace gamemd {
+unsigned int SpawnManagerClass_25::LoadState(int a2)
+{
+{
+    if ( (unsigned char)this->SpawnManagerClass_25_field_0xC )
+    return (unsigned int)(a2 - this->SpawnManagerClass_25_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -692,86 +772,6 @@ DynamicVector * SpawnManagerClass_25::QueryInterface(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
-}
-}
-} // namespace gamemd
-
-// 0x6B7ED0
-namespace ra2 {
-namespace game {
-int SpawnManagerClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 108652929;
-  a2[1] = 299085213;
-  a2[2] = 268441278;
-  a2[3] = 1822515787;
-  return 0;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x6B80B0
-namespace ra2 {
-namespace game {
-int SpawnManagerClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    int v4;
-    int i;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-  {
-    v4 = *a1;
-    aP2 = *(int *)&aP0->UINameLabel[11];
-    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
-    if ( result >= 0 )
-    {
-    for ( i = 0; i < aP2; ++i )
-      {
-    result = (*(int (__stdcall **)(int *, int, int, int))(*a1 + 16))( a1, *(int *)(*(int *)&aP0->zero_3C + 4 * i), 24, 0);
-    if ( result < 0 )
-    break;
-      }
-    }
-  }
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x6B8120
-namespace ra2 {
-namespace game {
-int SpawnManagerClass::StubReturn116()
-{
-return 116;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x6B8130
-namespace ra2 {
-namespace game {
-int SpawnManagerClass::StubReturn65()
-{
-return 65;
-}
-} // namespace game
-} // namespace ra2
-
-// 0x6B8190
-namespace gamemd {
-unsigned int SpawnManagerClass_25::LoadState(int a2)
-{
-{
-    if ( (unsigned char)this->SpawnManagerClass_25_field_0xC )
-    return (unsigned int)(a2 - this->SpawnManagerClass_25_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd

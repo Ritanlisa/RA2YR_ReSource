@@ -239,6 +239,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // --- e4 declarations (BEGIN) ---
     char InitFromINIEVA();  // 0x753000
 // --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    void FillBuddyListWOL();  // 0x79AF10
+// --- e4 declarations (END) ---
 };
 
 // Hash table for INI section lookup (used by INIClass::BinarySearchSection)

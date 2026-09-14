@@ -225,19 +225,6 @@ LABEL_6:
 }
 } // namespace gamemd
 
-// 0x5CEB60
-namespace gamemd {
-MSAnim * ScenarioClass::checkWinningConditions(char a2)
-{
-{
-    *(void**)this = &vt_MSAnim;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (MSAnim *)this;
-}
-}
-} // namespace gamemd
-
 // 0x5D6430
 namespace gamemd {
 int ScenarioClass_dispatchEvents()
@@ -295,25 +282,6 @@ char __stdcall ScenarioClass_AssignStartPositions(char a1)
   if ( Block && v7 ) /*0x5d6c58*/
     __3_YAXPAX_Z(Block); /*0x5d6c5b*/
   return 1; /*0x5d6c4f*/
-}
-}
-} // namespace gamemd
-
-// 0x5D80B0
-namespace gamemd {
-void ScenarioClass::sub_5D80B0()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->Count = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->Items = 0;
-  }
-    this->IsAllocated = 0;
-    this->Capacity = 0;
 }
 }
 } // namespace gamemd
@@ -1042,6 +1010,19 @@ int ScenarioClass_ClearFlag_0()
 }
 } // namespace gamemd
 
+// 0x5CEB60
+namespace gamemd {
+MSAnim * ScenarioClass::checkWinningConditions(char a2)
+{
+{
+    *(void**)this = &vt_MSAnim;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (MSAnim *)this;
+}
+}
+} // namespace gamemd
+
 // 0x5D5DB0
 namespace gamemd {
 int ScenarioClass::MissionStubReturnZero()
@@ -1109,6 +1090,25 @@ namespace gamemd {
 char ScenarioClass::processAI()
 {
 return 1;
+}
+} // namespace gamemd
+
+// 0x5D80B0
+namespace gamemd {
+void ScenarioClass::sub_5D80B0()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
+  }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
+}
 }
 } // namespace gamemd
 

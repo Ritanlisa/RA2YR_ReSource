@@ -2,42 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x488EE0
-int ColorListClass::GetColor(int a2)
-{
-{
-    return this->GetIndex(a2, 0);
-}
-}
-
-// 0x488F00
-ColorListClass * ColorListClass::QueryInterface(char a2)
-{
-{
-    int v3;
-    char *v4;
-    void *v5;
-    v3 = *((int *)(this) + 93);
-    v4 = this + 372;
-    *(int *)this = &vt_ColorListClass;
-    (*(void (__thiscall **)(char *))(v3 + 12))(this + 372);
-    *((int *)(this) + 100) = 0;
-    v5 = (void *)*((int *)(v4) + 1);
-    *(int *)v4 = &vt_VectorClass_int;
-    if ( v5 && v4[13] )
-  {
-    __3_YAXPAX_Z(v5);
-    *((int *)(v4) + 1) = 0;
-  }
-    v4[13] = 0;
-    *((int *)(v4) + 2) = 0;
-    ListClass::Destruct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (ColorListClass *)this;
-}
-}
-
 // 0x557AE0
 int ColorListClass::SetColor()
 {
@@ -101,5 +65,41 @@ void __thiscall ColorListClass::_vt45(_DWORD *this, wchar_t *String2)
     }
     (*(void (__thiscall **)(_DWORD *, int))(*this + 184))(this, v3); /*0x558051*/
   }
+}
+}
+
+// 0x488EE0
+int ColorListClass::GetColor(int a2)
+{
+{
+    return this->GetIndex(a2, 0);
+}
+}
+
+// 0x488F00
+ColorListClass * ColorListClass::QueryInterface(char a2)
+{
+{
+    int v3;
+    char *v4;
+    void *v5;
+    v3 = *((int *)(this) + 93);
+    v4 = this + 372;
+    *(int *)this = &vt_ColorListClass;
+    (*(void (__thiscall **)(char *))(v3 + 12))(this + 372);
+    *((int *)(this) + 100) = 0;
+    v5 = (void *)*((int *)(v4) + 1);
+    *(int *)v4 = &vt_VectorClass_int;
+    if ( v5 && v4[13] )
+  {
+    __3_YAXPAX_Z(v5);
+    *((int *)(v4) + 1) = 0;
+  }
+    v4[13] = 0;
+    *((int *)(v4) + 2) = 0;
+    ListClass::Destruct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (ColorListClass *)this;
 }
 }

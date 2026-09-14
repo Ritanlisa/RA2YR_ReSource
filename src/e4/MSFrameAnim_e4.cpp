@@ -19,60 +19,6 @@ MSFrameAnim *__thiscall MSFrameAnim::QueryInterface(_DWORD *this, char a2)
 }
 } // namespace gamemd
 
-// 0x769C50
-namespace gamemd {
-int MSFrameAnim::initAnimation()
-{
-{
-    int (__thiscall ***v2)(int, int);
-    int result;
-    v2 = *(int (__thiscall ****)(int, int))(this + 4);
-    this->MSFrameAnim_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    result = (**v2)(v2, 3);
-    this->MSFrameAnim_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->MSFrameAnim_field_0x8 = 0;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x769CD0
-namespace gamemd {
-void MSFrameAnim::stopAnimation()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->MSFrameAnim_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->MSFrameAnim_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->MSFrameAnim_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x769D90
-namespace gamemd {
-rc_ptr * MSFrameAnim::resumeAnimation(char a2)
-{
-{
-    *(void**)this = &vt_rc_ptr_WorldDominationTour_Map;
-    ComPtr::Release(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (rc_ptr *)this;
-}
-}
-} // namespace gamemd
-
 // 0x769FE0
 namespace gamemd {
 char MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
@@ -169,6 +115,153 @@ char __thiscall MSFrameAnim::sub_769FE0(_BYTE *this, int a2, _DWORD *a3)
   if ( v12 < this->MSFrameAnim_field_0x10 ) /*0x76a0e4*/
     this->MSFrameAnim_field_0x10 = v12; /*0x76a0e6*/
   return 1; /*0x76a0e9*/
+}
+}
+} // namespace gamemd
+
+// 0x767ED0
+namespace gamemd {
+char MSFrameAnim::Load(int a1, int * a2)
+{
+{
+    if ( DataGlobal_8487BC )
+    RenderScoreScreen(a1, a2, 1);
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x767EF0
+namespace gamemd {
+void MSFrameAnim::Draw(int a1, int * a2)
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    if ( DataGlobal_8487BD )
+  {
+    v2 = (*(int (__thiscall **)(int))(*(int *)(a1) + 124))(a1);
+    v3 = (*(int (__thiscall **)(int))(*(int *)(a1) + 128))(a1);
+    if ( a2 )
+    {
+    v4 = *((int*)(a2) + 1);
+    v7 = *a2;
+    v5 = *((int*)(a2) + 2);
+    v6 = *((int*)(a2) + 3);
+    v8 = v4;
+    v10 = v6;
+    v9 = v5;
+    }
+    else
+    {
+    v7 = 0;
+    v8 = 0;
+    v9 = v2;
+    v10 = v3;
+    }
+    RenderScoreScreen(a1, &v7, 1);
+  }
+}
+}
+} // namespace gamemd
+
+// 0x767F80
+namespace gamemd {
+unsigned int * MSFrameAnim::UpdateFrame(unsigned int * a1)
+{
+{
+    *a1 = 0;
+    *((int*)(a1) + 1) = 0;
+    *((int*)(a1) + 2) = 640;
+    *((int*)(a1) + 3) = 480;
+    return a1;
+}
+}
+} // namespace gamemd
+
+// 0x769C50
+namespace gamemd {
+int MSFrameAnim::initAnimation()
+{
+{
+    int (__thiscall ***v2)(int, int);
+    int result;
+    v2 = *(int (__thiscall ****)(int, int))(this + 4);
+    this->MSFrameAnim_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    result = (**v2)(v2, 3);
+    this->MSFrameAnim_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->MSFrameAnim_field_0x8 = 0;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x769C80
+namespace gamemd {
+unsigned int MSFrameAnim::startAnimation(int a2)
+{
+{
+    if ( (unsigned char)this->MSFrameAnim_field_0xC )
+    return (unsigned int)(a2 - this->MSFrameAnim_field_0x4) >> 3;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x769CD0
+namespace gamemd {
+void MSFrameAnim::stopAnimation()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->MSFrameAnim_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->MSFrameAnim_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->MSFrameAnim_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x769D00
+namespace gamemd {
+unsigned int MSFrameAnim::pauseAnimation(int a2)
+{
+{
+    if ( (unsigned char)this->MSFrameAnim_field_0xC )
+    return (unsigned int)(a2 - this->MSFrameAnim_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x769D90
+namespace gamemd {
+rc_ptr * MSFrameAnim::resumeAnimation(char a2)
+{
+{
+    *(void**)this = &vt_rc_ptr_WorldDominationTour_Map;
+    ComPtr::Release(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (rc_ptr *)this;
 }
 }
 } // namespace gamemd
@@ -303,99 +396,6 @@ DynamicVector * MSFrameAnim::setScale(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
-}
-}
-} // namespace gamemd
-
-// 0x767ED0
-namespace gamemd {
-char MSFrameAnim::Load(int a1, int * a2)
-{
-{
-    if ( DataGlobal_8487BC )
-    RenderScoreScreen(a1, a2, 1);
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x767EF0
-namespace gamemd {
-void MSFrameAnim::Draw(int a1, int * a2)
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    if ( DataGlobal_8487BD )
-  {
-    v2 = (*(int (__thiscall **)(int))(*(int *)(a1) + 124))(a1);
-    v3 = (*(int (__thiscall **)(int))(*(int *)(a1) + 128))(a1);
-    if ( a2 )
-    {
-    v4 = *((int*)(a2) + 1);
-    v7 = *a2;
-    v5 = *((int*)(a2) + 2);
-    v6 = *((int*)(a2) + 3);
-    v8 = v4;
-    v10 = v6;
-    v9 = v5;
-    }
-    else
-    {
-    v7 = 0;
-    v8 = 0;
-    v9 = v2;
-    v10 = v3;
-    }
-    RenderScoreScreen(a1, &v7, 1);
-  }
-}
-}
-} // namespace gamemd
-
-// 0x767F80
-namespace gamemd {
-unsigned int * MSFrameAnim::UpdateFrame(unsigned int * a1)
-{
-{
-    *a1 = 0;
-    *((int*)(a1) + 1) = 0;
-    *((int*)(a1) + 2) = 640;
-    *((int*)(a1) + 3) = 480;
-    return a1;
-}
-}
-} // namespace gamemd
-
-// 0x769C80
-namespace gamemd {
-unsigned int MSFrameAnim::startAnimation(int a2)
-{
-{
-    if ( (unsigned char)this->MSFrameAnim_field_0xC )
-    return (unsigned int)(a2 - this->MSFrameAnim_field_0x4) >> 3;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x769D00
-namespace gamemd {
-unsigned int MSFrameAnim::pauseAnimation(int a2)
-{
-{
-    if ( (unsigned char)this->MSFrameAnim_field_0xC )
-    return (unsigned int)(a2 - this->MSFrameAnim_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd

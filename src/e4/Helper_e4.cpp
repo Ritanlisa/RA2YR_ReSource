@@ -1,6 +1,31 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_634970_e4.hpp"
+#include "e4/classes/E4Recv_65A7E0_e4.hpp"
+#include "e4/classes/E4Recv_69E900_e4.hpp"
+#include "e4/classes/E4Recv_74CDB0_e4.hpp"
+
+// 0x6F2040
+namespace gamemd {
+int sub_6F2040()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int sub_6F2040()
+{
+  int result; // eax
+  int i; // esi
+
+  result = MEMORY[0xA8ECB0]; /*0x6f2040*/
+  for ( i = 0; i < MEMORY[0xA8ECB0]; ++i ) /*0x6f204a*/
+  {
+    TeamTypeClass::ProcessTaskForce(*((_DWORD *)MEMORY[0xA8ECA4] + i)); /*0x6f2054*/
+    result = MEMORY[0xA8ECB0]; /*0x6f2059*/
+  }
+  return result; /*0x6f2063*/
+}
+}
+} // namespace gamemd
 
 // 0x4371D0
 char Helper::ProcessData(void ** a1, int a2, int * a3)
@@ -39,27 +64,6 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
     return v6;
 }
 }
-
-// 0x6F2040
-namespace gamemd {
-int sub_6F2040()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6F2040()
-{
-  int result; // eax
-  int i; // esi
-
-  result = MEMORY[0xA8ECB0]; /*0x6f2040*/
-  for ( i = 0; i < MEMORY[0xA8ECB0]; ++i ) /*0x6f204a*/
-  {
-    TeamTypeClass::ProcessTaskForce(*((_DWORD *)MEMORY[0xA8ECA4] + i)); /*0x6f2054*/
-    result = MEMORY[0xA8ECB0]; /*0x6f2059*/
-  }
-  return result; /*0x6f2063*/
-}
-}
-} // namespace gamemd
 
 // 0x550240
 namespace gamemd {

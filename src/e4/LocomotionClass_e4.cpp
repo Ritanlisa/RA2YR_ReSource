@@ -151,17 +151,6 @@ int __thiscall sub_513C20(int this)
 }
 }
 
-// 0x5172F0
-LocomotionClass * LocomotionClass::ProcessMove(char a2)
-{
-{
-    LocomotionClass::Construct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (LocomotionClass *)this;
-}
-}
-
 // 0x54AC40
 int LocomotionClass::Update()
 {
@@ -226,5 +215,16 @@ void __thiscall LocomotionClass_Constructor(_DWORD *this)
   *this = &LocomotionClass::`vftable'; /*0x55a6f0*/
   *(this + 1) = &vt_LocomotionClass; /*0x55a6f6*/
   *(this + 3) = 0; /*0x55a6fd*/
+}
+}
+
+// 0x5172F0
+LocomotionClass * LocomotionClass::ProcessMove(char a2)
+{
+{
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (LocomotionClass *)this;
 }
 }

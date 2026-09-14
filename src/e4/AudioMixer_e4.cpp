@@ -2,20 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x401000
-int AudioMixer::Init()
-{
-{
-    SetupSampleAudioMixer(this, (ObjectClass *)0x4000);
-    SetupSampleAudioMixer(this + 10, (ObjectClass *)0x64);
-    SetupSampleAudioMixer(this + 20, (ObjectClass *)0x2000);
-    SetRateMixerSample(this + 10, 10, 0x3E8u, 0);
-    SetRateMixerSample(this, 0x4000, 0x3E8u, 0);
-    SetRateMixerSample(this + 20, 0x4000, 0x3E8u, 0);
-    return EndBufferMixer(this, 0x4000);
-}
-}
-
 // 0x406650
 int AudioMixer::SetVolume()
 {
@@ -121,6 +107,20 @@ int __thiscall AudioMixer_PlaySample(_DWORD *this)
       return 1; /*0x407244*/
     }
   }
+}
+}
+
+// 0x401000
+int AudioMixer::Init()
+{
+{
+    SetupSampleAudioMixer(this, (ObjectClass *)0x4000);
+    SetupSampleAudioMixer(this + 10, (ObjectClass *)0x64);
+    SetupSampleAudioMixer(this + 20, (ObjectClass *)0x2000);
+    SetRateMixerSample(this + 10, 10, 0x3E8u, 0);
+    SetRateMixerSample(this, 0x4000, 0x3E8u, 0);
+    SetRateMixerSample(this + 20, 0x4000, 0x3E8u, 0);
+    return EndBufferMixer(this, 0x4000);
 }
 }
 

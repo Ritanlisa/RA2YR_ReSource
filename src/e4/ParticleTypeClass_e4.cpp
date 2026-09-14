@@ -24,28 +24,6 @@ void __thiscall ParticleTypeClass::_vt03(int this)
 }
 } // namespace gamemd
 
-// 0x477AC0
-namespace gamemd {
-TypeList * ParticleTypeClass::QueryInterface(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_RGBClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (TypeList *)this;
-}
-}
-} // namespace gamemd
-
 // 0x4784F0
 namespace gamemd {
 char ParticleTypeClass::Release(int a2, char * a3)
@@ -156,27 +134,6 @@ char __thiscall ParticleTypeClass::_vt02(void *this, int a2, char *a3)
     this->ParticleTypeClass_field_0x10 = v15; /*0x4785d3*/
   return 1; /*0x4785d6*/
 }
-}
-} // namespace gamemd
-
-// 0x4785F0
-namespace gamemd {
-int ParticleTypeClass::Init(unsigned char * a2)
-{
-{
-    int v2;
-    int result;
-    char *i;
-    v2 = this->ImpactParticle;
-    result = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = (char *)this->ParticleTypeClass_field_28C; *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2); i += 3 )
-  {
-    if ( ++result >= v2 )
-    return -1;
-  }
-    return result;
 }
 } // namespace gamemd
 
@@ -858,6 +815,49 @@ unsigned int ParticleTypeClass::LoadTypeData(int a2)
     else
     return 0;
 }
+}
+} // namespace gamemd
+
+// 0x477AC0
+namespace gamemd {
+TypeList * ParticleTypeClass::QueryInterface(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_RGBClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TypeList *)this;
+}
+}
+} // namespace gamemd
+
+// 0x4785F0
+namespace gamemd {
+int ParticleTypeClass::Init(unsigned char * a2)
+{
+{
+    int v2;
+    int result;
+    char *i;
+    v2 = this->ImpactParticle;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (char *)this->ParticleTypeClass_field_28C; *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2); i += 3 )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
 }
 } // namespace gamemd
 

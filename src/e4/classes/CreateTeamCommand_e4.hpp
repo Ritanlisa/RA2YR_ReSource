@@ -4,18 +4,22 @@
 namespace gamemd {
 struct CreateTeamCommand {
     void* vfptr;  // minimal E2 declaration
+    int vt02();  // 0x535CF0
+    unsigned int * performAction_148();  // 0x537350
+    unsigned int * performAction_153();  // 0x537440
+    unsigned int * performAction_158();  // 0x537530
+    char performAction_241(int a2, unsigned int * a3);  // 0x5386A0
+    rc_ptr_base * performAction_243(char a2);  // 0x538A20
+    char performAction_245(char a2, int a3);  // 0x6A6A00
+    void performAction_246();  // 0x731060
     unsigned int * Construct(int a2);  // 0x535C00
     ObjectClass * AddRef();  // 0x535C20
     CreateTeamCommand * performAction_0(char a2);  // 0x535CD0
-    int vt02();  // 0x535CF0
     CommandClass * performAction_1(char a2);  // 0x535D00
     SelectTeamCommand * performAction_22(char a2);  // 0x536090
     AddTeamCommand * performAction_23(char a2);  // 0x536180
     CenterTeamCommand * performAction_24(char a2);  // 0x536270
     TauntCommandClass * performAction_25(char a2);  // 0x536580
-    unsigned int * performAction_148();  // 0x537350
-    unsigned int * performAction_153();  // 0x537440
-    unsigned int * performAction_158();  // 0x537530
     ToggleSellCommandClass * performAction_214(char a2);  // 0x5381A0
     ToggleRepairCommandClass * performAction_215(char a2);  // 0x5381C0
     ScatterCommandClass * performAction_219(char a2);  // 0x538240
@@ -27,12 +31,8 @@ struct CreateTeamCommand {
     CursorPositionCommandClass * performAction_237(char a2);  // 0x538480
     DeleteCommandClass * performAction_238(char a2);  // 0x5384A0
     void performAction_239();  // 0x5384C0
-    char performAction_241(int a2, unsigned int * a3);  // 0x5386A0
     int performAction_242(unsigned int * a2);  // 0x538750
-    rc_ptr_base * performAction_243(char a2);  // 0x538A20
     DynamicVector * performAction_244(char a2);  // 0x538AE0
-    char performAction_245(char a2, int a3);  // 0x6A6A00
-    void performAction_246();  // 0x731060
     unsigned int * performAction_216(char a2);  // 0x5381E0
     unsigned int * performAction_217(char a2);  // 0x538200
     unsigned int * performAction_218(char a2);  // 0x538220

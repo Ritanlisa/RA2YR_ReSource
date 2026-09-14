@@ -9,12 +9,12 @@ struct NetworkLobby {
     INT_PTR DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lParam);  // 0x5DE520
     void SetupPlayers();  // 0x5E8EA0
     int AssignPlayerSlot();  // 0x5E9240
-    char CheckLobbyConditions();  // 0x5E9290
     int InitLobbyDropdowns();  // 0x5E9E00
     HWND * Dispatch();  // 0x5EA2A0
     char SetupPlayerSlotControls();  // 0x5EB660
-    wchar_t * DeleteAndZero();  // 0x5EDFC0
     char FillOptionCombo();  // 0x5EE3A0
+    char CheckLobbyConditions();  // 0x5E9290
+    wchar_t * DeleteAndZero();  // 0x5EDFC0
     int GetPlayerCount(char a1);  // 0x5DA080
     char ValidateSerialNumber();  // 0x5DC170
     BOOL IsValidPlayerName();  // 0x5E9470

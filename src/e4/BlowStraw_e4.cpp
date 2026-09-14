@@ -3,41 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/BlowStraw_29_e4.hpp"
 
-// 0x5BE9E0
-namespace gamemd {
-TabClass * BlowStraw_29::Read(char a2)
-{
-{
-    char *v3;
-    int v4;
-    v3 = this + 21484;
-    v4 = 4;
-    do
-  {
-    v3 -= 3988;
-    Array::ForEachReverse((int)v3, 52, 75, (int (__thiscall *)(int))nullsub_56);
-    --v4;
-  }
-    while ( v4 );
-    RadarClass::Destruct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (TabClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x6D0260
-namespace gamemd {
-int BlowStraw_29_::Stub()
-{
-    int __thiscall BlowStraw_29_::Stub(int *(void**)this)
-{
-    return ObjectClass::processDamage(this);
-}
-}
-} // namespace gamemd
-
 // 0x6D0680
 namespace gamemd {
 int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
@@ -261,6 +226,41 @@ LABEL_5:
   if ( HouseClass_Player ) /*0x731bad*/
     v7 = *((_DWORD *)HouseClass_Player + 22549); /*0x731baf*/
   return (wchar_t *)MessageListClass::AddMessage(MEMORY[0xA8BC60], 0, 0, v6, v7, 16454, 240, 1); /*0x731b43*/
+}
+}
+} // namespace gamemd
+
+// 0x5BE9E0
+namespace gamemd {
+TabClass * BlowStraw_29::Read(char a2)
+{
+{
+    char *v3;
+    int v4;
+    v3 = this + 21484;
+    v4 = 4;
+    do
+  {
+    v3 -= 3988;
+    Array::ForEachReverse((int)v3, 52, 75, (int (__thiscall *)(int))nullsub_56);
+    --v4;
+  }
+    while ( v4 );
+    RadarClass::Destruct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TabClass *)this;
+}
+}
+} // namespace gamemd
+
+// 0x6D0260
+namespace gamemd {
+int BlowStraw_29_::Stub()
+{
+    int __thiscall BlowStraw_29_::Stub(int *(void**)this)
+{
+    return ObjectClass::processDamage(this);
 }
 }
 } // namespace gamemd

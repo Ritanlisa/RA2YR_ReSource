@@ -25,27 +25,6 @@ int __thiscall sub_401910(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x402550
-namespace gamemd {
-void AudioStream::Destructor()
-{
-{
-    void (__thiscall *v2)(int *);
-    (*(void (**)(void))(*(this + 53) + 40))();
-    if ( (*(char *)(this + 41) & 5) != 0 )
-    (*(void (__thiscall **)(int *))(*(this + 53) + 16))(this);
-    (*(void (__thiscall **)(int *))(*(this + 53) + 44))(this);
-    v2 = (void (__thiscall *)(int *))*(this + 47);
-    if ( v2 )
-    v2(this);
-    *(this + 90) = 0;
-    AudioStream::InitListAndCounters((int)this);
-    (*(void (__thiscall **)(int *))(*(this + 53) + 8))(this);
-    __3_YAXPAX_Z(this);
-}
-}
-} // namespace gamemd
-
 // 0x4026B0
 namespace gamemd {
 int AudioStream::Stop()
@@ -1439,6 +1418,27 @@ unsigned int __thiscall AudioStream_GetPosition(int this)
 {
   return (unsigned int)(60 * (*(int (__cdecl **)(int))(this + 80))(this)) / *(_DWORD *)(this + 120) /*0x7c3982*/
        + *(_DWORD *)(this + 328);
+}
+}
+} // namespace gamemd
+
+// 0x402550
+namespace gamemd {
+void AudioStream::Destructor()
+{
+{
+    void (__thiscall *v2)(int *);
+    (*(void (**)(void))(*(this + 53) + 40))();
+    if ( (*(char *)(this + 41) & 5) != 0 )
+    (*(void (__thiscall **)(int *))(*(this + 53) + 16))(this);
+    (*(void (__thiscall **)(int *))(*(this + 53) + 44))(this);
+    v2 = (void (__thiscall *)(int *))*(this + 47);
+    if ( v2 )
+    v2(this);
+    *(this + 90) = 0;
+    AudioStream::InitListAndCounters((int)this);
+    (*(void (__thiscall **)(int *))(*(this + 53) + 8))(this);
+    __3_YAXPAX_Z(this);
 }
 }
 } // namespace gamemd

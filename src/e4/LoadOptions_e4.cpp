@@ -90,6 +90,137 @@ LoadOptions *__thiscall LoadOptions::QueryInterface(char *this, char a2)
 }
 } // namespace gamemd
 
+// 0x67FD20
+namespace gamemd {
+char LoadOptions_Load(LPCCH lpMultiByteStr, int a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __fastcall LoadOptions_Load(LPCCH lpMultiByteStr, int a2)
+{
+  IStorage *v3; // eax
+  bool v4; // sf
+  IStorage *ppstgOpen; // [esp+4h] [ebp-84h] BYREF
+  WCHAR WideCharStr[64]; // [esp+8h] [ebp-80h] BYREF
+
+  MultiByteToWideChar(0, 0, lpMultiByteStr, -1, WideCharStr, 64); /*0x67fd3f*/
+  ppstgOpen = 0; /*0x67fd65*/
+  if ( StgOpenStorage(WideCharStr, 0, 0x12u, 0, 0, &ppstgOpen) < 0 ) /*0x67fd75*/
+  {
+    v3 = ppstgOpen; /*0x67fd77*/
+LABEL_4:
+    if ( v3 ) /*0x67fd93*/
+      v3->lpVtbl->Release(v3); /*0x67fd98*/
+    return 0; /*0x67fda4*/
+  }
+  v4 = ScenarioPropertyReadCOM(a2, (int)ppstgOpen) < 0; /*0x67fd89*/
+  v3 = ppstgOpen; /*0x67fd8b*/
+  if ( v4 ) /*0x67fd8f*/
+    goto LABEL_4; /*0x67fd8f*/
+  if ( ppstgOpen ) /*0x67fda7*/
+    ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67fdac*/
+  return 1; /*0x67fd9d*/
+}
+}
+} // namespace gamemd
+
+// 0x559EB0
+namespace gamemd {
+bool LoadOptions::ddtor(LPCSTR lpFileName)
+{
+{
+    return DeleteFileA(lpFileName);
+}
+}
+} // namespace gamemd
+
+// 0x559ED0
+namespace gamemd {
+char LoadOptions::Read(wchar_t * Destination, int a2)
+{
+{
+    const CHAR *v2;
+    char v3;
+    const wchar_t *v4;
+    const wchar_t *v5;
+    char *v6;
+    int v8[253];
+    if ( !Destination && !a2 )
+    return 0;
+    v2 = (const CHAR *)(a2 + 44);
+    if ( !_strcmpi((const void *)(a2 + 44), MultiByteStr) )
+    return 0;
+    GameState::Reset(v8);
+    v3 = LoadOptions_Load(v2, (int)v8);
+    if ( !v3 )
+    return 0;
+    if ( ReadPointerFromECX3(v8) == DataGlobal_83D560 )
+  {
+    v5 = (const wchar_t *)_raw_name_type_info__QBEPBDXZ((type_info *)v8);
+    wcscpy(Destination, v5);
+    *((char *)(Destination) + 437) = 0;
+  }
+    else
+  {
+    v4 = (const wchar_t *)_raw_name_type_info__QBEPBDXZ((type_info *)v8);
+    wcscpy(Destination, v4);
+    *((char *)(Destination) + 437) = 1;
+  }
+    *((char *)(Destination) + 436) = v3;
+    *((int *)(Destination) + 72) = LoadOptions::GetFlag99(v8);
+    *((int *)(Destination) + 106) = LoadOptions::GetFlag98(v8);
+    *((int *)(Destination) + 110) = LoadOptions::GetFlag252(v8);
+    strcpy((char *)(Destination) + 256, v2);
+    v6 = LoadOptions::GetData((char *)v8);
+    wcscpy(Destination + 148, (const wchar_t *)v6);
+    if ( !strlen((const char *)(Destination) + 256) )
+    strcpy((char *)(Destination) + 256, (const char *)(a2 + 304));
+    *((int *)(Destination) + 108) = *(int *)(a2 + 24);
+    *((int *)(Destination) + 107) = *(int *)(a2 + 20);
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x55A050
+namespace gamemd {
+wchar_t * LoadOptions::Write()
+{
+{
+    return GetStringCSF(aGuiLoadmission, 0, g_Str_File_LoadDlg_CPP, 1216);
+}
+}
+} // namespace gamemd
+
+// 0x55A070
+namespace gamemd {
+wchar_t * LoadOptions::Seek()
+{
+{
+    return GetStringCSF(aGuiSavemission, 0, g_Str_File_LoadDlg_CPP, 1222);
+}
+}
+} // namespace gamemd
+
+// 0x55A090
+namespace gamemd {
+wchar_t * LoadOptions::Open()
+{
+{
+    return GetStringCSF(aGuiDeletemissi, 0, g_Str_File_LoadDlg_CPP, 1228);
+}
+}
+} // namespace gamemd
+
+// 0x55A0B0
+namespace gamemd {
+wchar_t * LoadOptions::Close()
+{
+{
+    return GetStringCSF(aTxtGameWasSave, 0, g_Str_File_LoadDlg_CPP, 1234);
+}
+}
+} // namespace gamemd
+
 // 0x55A180
 namespace gamemd {
 unsigned int LoadOptions::vt05(int a2)
@@ -256,143 +387,12 @@ DynamicVector * LoadOptions::vt00(char a2)
 }
 } // namespace gamemd
 
-// 0x67FD20
-namespace gamemd {
-char LoadOptions_Load(LPCCH lpMultiByteStr, int a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall LoadOptions_Load(LPCCH lpMultiByteStr, int a2)
-{
-  IStorage *v3; // eax
-  bool v4; // sf
-  IStorage *ppstgOpen; // [esp+4h] [ebp-84h] BYREF
-  WCHAR WideCharStr[64]; // [esp+8h] [ebp-80h] BYREF
-
-  MultiByteToWideChar(0, 0, lpMultiByteStr, -1, WideCharStr, 64); /*0x67fd3f*/
-  ppstgOpen = 0; /*0x67fd65*/
-  if ( StgOpenStorage(WideCharStr, 0, 0x12u, 0, 0, &ppstgOpen) < 0 ) /*0x67fd75*/
-  {
-    v3 = ppstgOpen; /*0x67fd77*/
-LABEL_4:
-    if ( v3 ) /*0x67fd93*/
-      v3->lpVtbl->Release(v3); /*0x67fd98*/
-    return 0; /*0x67fda4*/
-  }
-  v4 = ScenarioPropertyReadCOM(a2, (int)ppstgOpen) < 0; /*0x67fd89*/
-  v3 = ppstgOpen; /*0x67fd8b*/
-  if ( v4 ) /*0x67fd8f*/
-    goto LABEL_4; /*0x67fd8f*/
-  if ( ppstgOpen ) /*0x67fda7*/
-    ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67fdac*/
-  return 1; /*0x67fd9d*/
-}
-}
-} // namespace gamemd
-
 // 0x681100
 namespace gamemd {
 char * LoadOptions::GetData()
 {
 {
     return this + 264;
-}
-}
-} // namespace gamemd
-
-// 0x559EB0
-namespace gamemd {
-bool LoadOptions::ddtor(LPCSTR lpFileName)
-{
-{
-    return DeleteFileA(lpFileName);
-}
-}
-} // namespace gamemd
-
-// 0x559ED0
-namespace gamemd {
-char LoadOptions::Read(wchar_t * Destination, int a2)
-{
-{
-    const CHAR *v2;
-    char v3;
-    const wchar_t *v4;
-    const wchar_t *v5;
-    char *v6;
-    int v8[253];
-    if ( !Destination && !a2 )
-    return 0;
-    v2 = (const CHAR *)(a2 + 44);
-    if ( !_strcmpi((const void *)(a2 + 44), MultiByteStr) )
-    return 0;
-    GameState::Reset(v8);
-    v3 = LoadOptions_Load(v2, (int)v8);
-    if ( !v3 )
-    return 0;
-    if ( ReadPointerFromECX3(v8) == DataGlobal_83D560 )
-  {
-    v5 = (const wchar_t *)_raw_name_type_info__QBEPBDXZ((type_info *)v8);
-    wcscpy(Destination, v5);
-    *((char *)(Destination) + 437) = 0;
-  }
-    else
-  {
-    v4 = (const wchar_t *)_raw_name_type_info__QBEPBDXZ((type_info *)v8);
-    wcscpy(Destination, v4);
-    *((char *)(Destination) + 437) = 1;
-  }
-    *((char *)(Destination) + 436) = v3;
-    *((int *)(Destination) + 72) = LoadOptions::GetFlag99(v8);
-    *((int *)(Destination) + 106) = LoadOptions::GetFlag98(v8);
-    *((int *)(Destination) + 110) = LoadOptions::GetFlag252(v8);
-    strcpy((char *)(Destination) + 256, v2);
-    v6 = LoadOptions::GetData((char *)v8);
-    wcscpy(Destination + 148, (const wchar_t *)v6);
-    if ( !strlen((const char *)(Destination) + 256) )
-    strcpy((char *)(Destination) + 256, (const char *)(a2 + 304));
-    *((int *)(Destination) + 108) = *(int *)(a2 + 24);
-    *((int *)(Destination) + 107) = *(int *)(a2 + 20);
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x55A050
-namespace gamemd {
-wchar_t * LoadOptions::Write()
-{
-{
-    return GetStringCSF(aGuiLoadmission, 0, g_Str_File_LoadDlg_CPP, 1216);
-}
-}
-} // namespace gamemd
-
-// 0x55A070
-namespace gamemd {
-wchar_t * LoadOptions::Seek()
-{
-{
-    return GetStringCSF(aGuiSavemission, 0, g_Str_File_LoadDlg_CPP, 1222);
-}
-}
-} // namespace gamemd
-
-// 0x55A090
-namespace gamemd {
-wchar_t * LoadOptions::Open()
-{
-{
-    return GetStringCSF(aGuiDeletemissi, 0, g_Str_File_LoadDlg_CPP, 1228);
-}
-}
-} // namespace gamemd
-
-// 0x55A0B0
-namespace gamemd {
-wchar_t * LoadOptions::Close()
-{
-{
-    return GetStringCSF(aTxtGameWasSave, 0, g_Str_File_LoadDlg_CPP, 1234);
 }
 }
 } // namespace gamemd

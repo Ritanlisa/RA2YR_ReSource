@@ -117,14 +117,6 @@ int __thiscall StreamClass::Set(_DWORD *this, IUnknown *aP1)
 }
 }
 
-// 0x55A930
-char StreamClass::GetDirty(int a1)
-{
-{
-    return *(char *)(a1 + 12);
-}
-}
-
 // 0x4B4C30
 BOOL StreamClass::IsInactive(IUnknown * aP0)
 {
@@ -166,5 +158,13 @@ int StreamClass::ClearDirty(unsigned char * a1)
 {
     *((int*)(a1) + 12) = 0;
     return (*(int (__stdcall **)(char *))(*(int *)(a1) + 96))(a1);
+}
+}
+
+// 0x55A930
+char StreamClass::GetDirty(int a1)
+{
+{
+    return *(char *)(a1 + 12);
 }
 }

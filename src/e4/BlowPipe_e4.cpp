@@ -4,6 +4,48 @@
 #include "e4/classes/BlowPipe_23_e4.hpp"
 #include "e4/classes/BlowPipe_31_e4.hpp"
 
+// 0x63DC20
+namespace gamemd {
+void BlowPipe_31::ddtor()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->BlowPipe_31_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->BlowPipe_31_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->BlowPipe_31_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x63DC50
+namespace gamemd {
+unsigned int BlowPipe_31::Write(int a2)
+{
+{
+    if ( (unsigned char)this->BlowPipe_31_field_0xC )
+    return (unsigned int)(a2 - this->BlowPipe_31_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x63DC70
+namespace gamemd {
+int BlowPipe_31::Seek(int a2)
+{
+{
+    return *(int *)(this->Items + 4 * a2);
+}
+}
+} // namespace gamemd
+
 // 0x63DC80
 namespace gamemd {
 void BlowPipe_23::Clear()
@@ -19,6 +61,19 @@ void BlowPipe_23::Clear()
   }
     this->IsAllocated = 0;
     this->BlowPipe_23_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x63DCB0
+namespace gamemd {
+unsigned int BlowPipe_23::GetCount(int a2)
+{
+{
+    if ( (unsigned char)this->BlowPipe_23_field_0xC )
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -48,6 +103,49 @@ void BlowPipe_23::Clear_0()
   }
     this->IsAllocated = 0;
     this->BlowPipe_23_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x63DD10
+namespace gamemd {
+unsigned int BlowPipe_23::GetCount_0(int a2)
+{
+{
+    if ( (unsigned char)this->BlowPipe_23_field_0xC )
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x63E310
+namespace gamemd {
+char BlowPipe_31::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
+    {
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
 }
 }
 } // namespace gamemd
@@ -139,6 +237,88 @@ int BlowPipe_23::FindItemIndex(unsigned int * a2)
   }
     return result;
 }
+}
+} // namespace gamemd
+
+// 0x63E470
+namespace gamemd {
+unsigned int BlowPipe_23::GetCount_1(int a2)
+{
+{
+    if ( (unsigned char)this->BlowPipe_23_field_0xC )
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x63E490
+namespace gamemd {
+char BlowPipe_31::Release(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->BlowPipe_31_field_0x4 )
+    {
+    v5 = this->BlowPipe_31_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->BlowPipe_31_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+      {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->BlowPipe_31_field_0x4 = 0;
+      }
+    }
+    this->BlowPipe_31_field_0x4 = v4;
+    this->BlowPipe_31_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+  }
+    else
+  {
+    this->ddtor();
+  }
+    v7 = this->BlowPipe_31_field_0x8;
+    if ( v7 < this->BlowPipe_31_field_0x10 )
+    this->BlowPipe_31_field_0x10 = v7;
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x63E620
+namespace gamemd {
+int BlowPipe_31::Read(unsigned int * a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
 }
 } // namespace gamemd
 
@@ -258,6 +438,19 @@ int BlowPipe_23::Read(unsigned int * a2)
     return -1;
   }
     return result;
+}
+}
+} // namespace gamemd
+
+// 0x63E7B0
+namespace gamemd {
+unsigned int BlowPipe_23::Write(int a2)
+{
+{
+    if ( (unsigned char)this->BlowPipe_23_field_0xC )
+    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -422,6 +615,28 @@ VectorClass * BlowPipe_23::Destructor(char a2)
 }
 } // namespace gamemd
 
+// 0x63EDE0
+namespace gamemd {
+DynamicVector * BlowPipe_31::QueryInterface(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_PlanningNodeClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
+}
+}
+} // namespace gamemd
+
 // 0x63EE30
 namespace gamemd {
 VectorClass * BlowPipe_23::QueryInterface(char a2)
@@ -484,221 +699,6 @@ DynamicVector * BlowPipe_23::Destructor_1(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
-}
-}
-} // namespace gamemd
-
-// 0x63DC20
-namespace gamemd {
-void BlowPipe_31::ddtor()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->BlowPipe_31_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->BlowPipe_31_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->BlowPipe_31_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x63DC70
-namespace gamemd {
-int BlowPipe_31::Seek(int a2)
-{
-{
-    return *(int *)(this->Items + 4 * a2);
-}
-}
-} // namespace gamemd
-
-// 0x63E310
-namespace gamemd {
-char BlowPipe_31::AddRef(int a2)
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    int v5;
-    v2 = this->Capacity;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = (int *)this->Items;
-    v5 = *(int *)(a2 + 4) - (int)v4;
-    while ( *v4 == *(int *)((char *)(v4) + v5) )
-    {
-    ++v3;
-    ++v4;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x63E490
-namespace gamemd {
-char BlowPipe_31::Release(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v5;
-    int i;
-    int v7;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( !v4 )
-    return 0;
-    if ( this->BlowPipe_31_field_0x4 )
-    {
-    v5 = this->BlowPipe_31_field_0x8;
-    if ( a2 < v5 )
-    v5 = a2;
-    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->BlowPipe_31_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-      {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->BlowPipe_31_field_0x4 = 0;
-      }
-    }
-    this->BlowPipe_31_field_0x4 = v4;
-    this->BlowPipe_31_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-  }
-    else
-  {
-    this->ddtor();
-  }
-    v7 = this->BlowPipe_31_field_0x8;
-    if ( v7 < this->BlowPipe_31_field_0x10 )
-    this->BlowPipe_31_field_0x10 = v7;
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x63E620
-namespace gamemd {
-int BlowPipe_31::Read(unsigned int * a2)
-{
-{
-    int v2;
-    int result;
-    int *i;
-    v2 = this->Count;
-    result = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = (int *)this->Items; *i != *a2; ++i )
-  {
-    if ( ++result >= v2 )
-    return -1;
-  }
-    return result;
-}
-} // namespace gamemd
-
-// 0x63EDE0
-namespace gamemd {
-DynamicVector * BlowPipe_31::QueryInterface(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_PlanningNodeClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
-}
-}
-} // namespace gamemd
-
-// 0x63DC50
-namespace gamemd {
-unsigned int BlowPipe_31::Write(int a2)
-{
-{
-    if ( (unsigned char)this->BlowPipe_31_field_0xC )
-    return (unsigned int)(a2 - this->BlowPipe_31_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x63DCB0
-namespace gamemd {
-unsigned int BlowPipe_23::GetCount(int a2)
-{
-{
-    if ( (unsigned char)this->BlowPipe_23_field_0xC )
-    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x63DD10
-namespace gamemd {
-unsigned int BlowPipe_23::GetCount_0(int a2)
-{
-{
-    if ( (unsigned char)this->BlowPipe_23_field_0xC )
-    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x63E470
-namespace gamemd {
-unsigned int BlowPipe_23::GetCount_1(int a2)
-{
-{
-    if ( (unsigned char)this->BlowPipe_23_field_0xC )
-    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x63E7B0
-namespace gamemd {
-unsigned int BlowPipe_23::Write(int a2)
-{
-{
-    if ( (unsigned char)this->BlowPipe_23_field_0xC )
-    return (unsigned int)(a2 - this->BlowPipe_23_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd

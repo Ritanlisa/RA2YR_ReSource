@@ -2,17 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x7669F0
-VectorCursor * COMClass::disconnectPoint(char a2)
-{
-{
-    *(void**)this = &vt_VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorCursor *)this;
-}
-}
-
 // 0x767010
 rc_ptr_base * COMClass::lockServer(char a2)
 {
@@ -55,5 +44,16 @@ rc_ptr_base *__thiscall COMClass::lockServer(rc_ptr_base *this, char a2)
       __3_YAXPAX_Z(this); /*0x76706b*/
     return this; /*0x767073*/
   }
+}
+}
+
+// 0x7669F0
+VectorCursor * COMClass::disconnectPoint(char a2)
+{
+{
+    *(void**)this = &vt_VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorCursor *)this;
 }
 }

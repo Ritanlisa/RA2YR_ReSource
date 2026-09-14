@@ -3029,17 +3029,6 @@ int Dialog_GetCurrentType()
 }
 } // namespace gamemd
 
-// 0x775BA0
-namespace gamemd {
-BOOL Dialog::GetField()
-{
-{
-    EnumChildWindows(this, (WNDENUMPROC)DialogClass::Reposition, 1);
-    return DialogClass::Reposition((SkirmishDialog *)this, 0);
-}
-}
-} // namespace gamemd
-
 // 0x4E4EC0
 namespace gamemd {
 int Dialog::SideIDToIndex()
@@ -3367,6 +3356,17 @@ int Dialog::FindByPtr()
     return 0;
   }
     return (int)*(&g_ClipboardBuffer + 2 * v1);
+}
+}
+} // namespace gamemd
+
+// 0x775BA0
+namespace gamemd {
+BOOL Dialog::GetField()
+{
+{
+    EnumChildWindows(this, (WNDENUMPROC)DialogClass::Reposition, 1);
+    return DialogClass::Reposition((SkirmishDialog *)this, 0);
 }
 }
 } // namespace gamemd

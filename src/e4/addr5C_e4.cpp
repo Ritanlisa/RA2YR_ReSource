@@ -3,9 +3,11 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_5C0630_e4.hpp"
 #include "e4/classes/E4Recv_5C0E10_e4.hpp"
+#include "e4/classes/E4Recv_5C1300_e4.hpp"
 #include "e4/classes/E4Recv_5C5D20_e4.hpp"
 #include "e4/classes/E4Recv_5C60D0_e4.hpp"
 #include "e4/classes/E4Recv_5C6190_e4.hpp"
+#include "e4/classes/E4Recv_5C80A0_e4.hpp"
 #include "e4/classes/E4Recv_5C8470_e4.hpp"
 #include "e4/classes/E4Recv_5C9420_e4.hpp"
 #include "e4/classes/E4Recv_5CA670_e4.hpp"
@@ -13,6 +15,7 @@
 #include "e4/classes/E4Recv_5CAF00_e4.hpp"
 #include "e4/classes/E4Recv_5CAF70_e4.hpp"
 #include "e4/classes/E4Recv_5CB3E0_e4.hpp"
+#include "e4/classes/E4Recv_5CB790_e4.hpp"
 #include "e4/classes/E4Recv_5CD570_e4.hpp"
 #include "e4/classes/E4Recv_5CD690_e4.hpp"
 #include "e4/classes/E4Recv_5CE0C0_e4.hpp"
@@ -64,16 +67,6 @@ char __usercall sub_5C00E0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
     }
   }
   return result; /*0x5c018d*/
-}
-}
-} // namespace gamemd
-
-// 0x5C0540
-namespace gamemd {
-int BinkMovieHandle::_vt03(unsigned char a2)
-{
-{
-    return BinkMovie::Pause(this->height, a2);
 }
 }
 } // namespace gamemd
@@ -238,17 +231,6 @@ char __thiscall MPCooperative::_vt07(int *this, int a2)
     return 1; /*0x5c188f*/
   }
   return v3; /*0x5c17dc*/
-}
-}
-} // namespace gamemd
-
-// 0x5C36F0
-namespace gamemd {
-int MPCooperative::j__do_always_noconv_codecvt_base_std__MBE_NXZ_17()
-{
-    bool __thiscall MPCooperative::j__do_always_noconv_codecvt_base_std__MBE_NXZ_17(std::codecvt_base *(void**)this)
-{
-    return ScenarioClass::processAI(this);
 }
 }
 } // namespace gamemd
@@ -2802,62 +2784,6 @@ int __cdecl sub_5C9AE0(const void *a1, const void *a2)
 }
 } // namespace gamemd
 
-// 0x5CD570
-namespace gamemd {
-int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int * a6, int a7, int a8, char a9, char a10)
-{
-{
-    size_t v11;
-    int v12;
-    int v13;
-    int v15;
-    int v16;
-    int v17;
-    this->M8 = a4;
-    this->M4 = a3;
-    this->M12 = 1;
-    v11 = 0;
-    this->M16 = Timer::GetTicks();
-    this->M24 = 0;
-    *(int *)this = &vt_MSAnim;
-    WideString::AssignFromPtr((wchar_t **)(this + 28), a2);
-    this->M44 = a8;
-    this->M48 = a9;
-    this->M32 = 0;
-    this->M36 = a7;
-    this->M40 = 0;
-    this->M52 = a5;
-    this->M72 = 0;
-    this->M73 = a10;
-    this->M76 = 0;
-    *(int *)this = &vt_MSPrintAnim;
-    this->M16 = Timer::GetTicks();
-    this->M20 = v15;
-    this->M24 = a7;
-    sub_5CD690(this, a6);
-    if ( a10 )
-  {
-    v17 = 0;
-    v16 = *(int *)(this->M52 + 4);
-    if ( WideString::GetChar((const wchar_t **)(this + 28), 0) )
-    {
-    do
-      {
-    if ( WideString::GetChar((const wchar_t **)(this + 28), v11) == 10 )
-    break;
-    v12 = **(int **)(this + 52);
-    LOWORD(v13) = WideString::GetChar((const wchar_t **)(this + 28), v11++);
-    v17 += (*(int (__thiscall **)(int, int))(v12 + 4))(this->M52, v13);
-      }
-    while ( WideString::GetChar((const wchar_t **)(this + 28), v11) );
-    }
-    this->M76 = (this->M64 - v17 - v16) / 2;
-  }
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x5CD690
 namespace gamemd {
 unsigned int * E4Recv_5CD690::sub_5CD690(int * a2)
@@ -3286,69 +3212,21 @@ LABEL_5:
 }
 } // namespace gamemd
 
-// 0x5CE3A0
-namespace gamemd {
-int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
-{
-{
-    int *v4;
-    int result;
-    int v6;
-    int v7;
-    int v8;
-    size_t v9;
-    int v10;
-    int v11;
-    int v12;
-    int v13;
-    int v14;
-    int v15;
-    size_t i;
-    int v17[4];
-    int v18;
-    if ( !a3 || (v4 = ClipRectIntersection(v17, a3, (int *)(this + 56), 0, 0), result = v4[2], v6 = v4[3], result > 0) && v6 > 0 )
-  {
-    result = this->M32;
-    v7 = this->M8;
-    v8 = this->M4;
-    v9 = 0;
-    v18 = v7;
-    for ( i = result; v9 < i; ++v9 )
-    {
-    if ( WideString::GetChar((const wchar_t **)(this + 28), v9) == 10 )
-      {
-    v8 = this->M4;
-    v7 += *(int *)(this->M52 + 8);
-    v14 = *(int *)(this->M52 + 8);
-    v18 = v7;
-    result = (*(int (__thiscall **)(int))(*(int *)(a2) + 128))(a2);
-    if ( v7 + v14 >= result )
-    return result;
-      }
-    else
-      {
-    v15 = **(int **)(this + 52);
-    LOWORD(v10) = WideString::GetChar((const wchar_t **)(this + 28), v9);
-    (*(void (__thiscall **)(int, int, int, int, int, int, int))(v15 + 16))( this->M52, a2, v10, v8, v7, 2, 1);
-    v11 = **(int **)(this + 52);
-    LOWORD(v12) = WideString::GetChar((const wchar_t **)(this + 28), v9);
-    v13 = (*(int (__thiscall **)(int, int))(v11 + 4))(this->M52, v12);
-    v7 = v18;
-    v8 += v13;
-      }
-    result = i;
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x5C0330
 namespace gamemd {
 void nullsub_176()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x5C0540
+namespace gamemd {
+int BinkMovieHandle::_vt03(unsigned char a2)
+{
+{
+    return BinkMovie::Pause(this->height, a2);
+}
 }
 } // namespace gamemd
 
@@ -3520,6 +3398,17 @@ int sub_5C12E0()
     DataGlobal_ABF410 = 0;
     DataGlobal_ABF414 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5C36F0
+namespace gamemd {
+int MPCooperative::j__do_always_noconv_codecvt_base_std__MBE_NXZ_17()
+{
+    bool __thiscall MPCooperative::j__do_always_noconv_codecvt_base_std__MBE_NXZ_17(std::codecvt_base *(void**)this)
+{
+    return ScenarioClass::processAI(this);
 }
 }
 } // namespace gamemd
@@ -5037,6 +4926,62 @@ void nullsub_190()
 }
 } // namespace gamemd
 
+// 0x5CD570
+namespace gamemd {
+int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int * a6, int a7, int a8, char a9, char a10)
+{
+{
+    size_t v11;
+    int v12;
+    int v13;
+    int v15;
+    int v16;
+    int v17;
+    this->M8 = a4;
+    this->M4 = a3;
+    this->M12 = 1;
+    v11 = 0;
+    this->M16 = Timer::GetTicks();
+    this->M24 = 0;
+    *(int *)this = &vt_MSAnim;
+    WideString::AssignFromPtr((wchar_t **)(this + 28), a2);
+    this->M44 = a8;
+    this->M48 = a9;
+    this->M32 = 0;
+    this->M36 = a7;
+    this->M40 = 0;
+    this->M52 = a5;
+    this->M72 = 0;
+    this->M73 = a10;
+    this->M76 = 0;
+    *(int *)this = &vt_MSPrintAnim;
+    this->M16 = Timer::GetTicks();
+    this->M20 = v15;
+    this->M24 = a7;
+    sub_5CD690(this, a6);
+    if ( a10 )
+  {
+    v17 = 0;
+    v16 = *(int *)(this->M52 + 4);
+    if ( WideString::GetChar((const wchar_t **)(this + 28), 0) )
+    {
+    do
+      {
+    if ( WideString::GetChar((const wchar_t **)(this + 28), v11) == 10 )
+    break;
+    v12 = **(int **)(this + 52);
+    LOWORD(v13) = WideString::GetChar((const wchar_t **)(this + 28), v11++);
+    v17 += (*(int (__thiscall **)(int, int))(v12 + 4))(this->M52, v13);
+      }
+    while ( WideString::GetChar((const wchar_t **)(this + 28), v11) );
+    }
+    this->M76 = (this->M64 - v17 - v16) / 2;
+  }
+    return this;
+}
+}
+} // namespace gamemd
+
 // 0x5CDB90
 namespace gamemd {
 int sub_5CDB90(const wchar_t ** a1, int a2, int a3)
@@ -5096,6 +5041,64 @@ int E4Recv_5CE330::sub_5CE330(const wchar_t ** a2)
     ++v4;
   }
     return v3;
+}
+}
+} // namespace gamemd
+
+// 0x5CE3A0
+namespace gamemd {
+int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
+{
+{
+    int *v4;
+    int result;
+    int v6;
+    int v7;
+    int v8;
+    size_t v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    int v14;
+    int v15;
+    size_t i;
+    int v17[4];
+    int v18;
+    if ( !a3 || (v4 = ClipRectIntersection(v17, a3, (int *)(this + 56), 0, 0), result = v4[2], v6 = v4[3], result > 0) && v6 > 0 )
+  {
+    result = this->M32;
+    v7 = this->M8;
+    v8 = this->M4;
+    v9 = 0;
+    v18 = v7;
+    for ( i = result; v9 < i; ++v9 )
+    {
+    if ( WideString::GetChar((const wchar_t **)(this + 28), v9) == 10 )
+      {
+    v8 = this->M4;
+    v7 += *(int *)(this->M52 + 8);
+    v14 = *(int *)(this->M52 + 8);
+    v18 = v7;
+    result = (*(int (__thiscall **)(int))(*(int *)(a2) + 128))(a2);
+    if ( v7 + v14 >= result )
+    return result;
+      }
+    else
+      {
+    v15 = **(int **)(this + 52);
+    LOWORD(v10) = WideString::GetChar((const wchar_t **)(this + 28), v9);
+    (*(void (__thiscall **)(int, int, int, int, int, int, int))(v15 + 16))( this->M52, a2, v10, v8, v7, 2, 1);
+    v11 = **(int **)(this + 52);
+    LOWORD(v12) = WideString::GetChar((const wchar_t **)(this + 28), v9);
+    v13 = (*(int (__thiscall **)(int, int))(v11 + 4))(this->M52, v12);
+    v7 = v18;
+    v8 += v13;
+      }
+    result = i;
+    }
+  }
+    return result;
 }
 }
 } // namespace gamemd

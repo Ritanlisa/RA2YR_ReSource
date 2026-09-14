@@ -2247,10 +2247,6 @@ retn
 // ============================================================
 
 // 0x522600
-int InfantryClass::FireAtTargetPos()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x522600
 int __thiscall InfantryClass::FireAtTargetPos(int *this, int a2, int a3, int a4)
 {
   int v4; // eax

@@ -1067,19 +1067,6 @@ LABEL_4:
 }
 } // namespace gamemd
 
-// 0x6915B0
-namespace gamemd {
-BOOL TeamClass::Check()
-{
-{
-    unsigned int v1;
-    v1 = this->owner + 1;
-    this->owner = v1;
-    return v1 < *(int *)(this->buildingType + 160);
-}
-}
-} // namespace gamemd
-
 // 0x6E52A0
 namespace gamemd {
 TagClass * TeamClass::FindOrCreate()
@@ -1370,69 +1357,6 @@ void __fastcall TeamClass::Destructor(void **this, AbstractClass *a2)
 }
 } // namespace gamemd
 
-// 0x6E9050
-namespace gamemd {
-char TeamClass::SelectMember(AbstractClass * aP1)
-{
-{
-    AbstractClass *v4;
-    FootClass *v5;
-    AbstractClass *v6;
-    AbstractClass *movementDestination;
-    bool v8;
-    AbstractClass *v9;
-    FootClass *v10;
-    bool aP1a;
-    v4 = *(AbstractClass **)(this + 60);
-    if ( aP1 != v4 )
-  {
-    v5 = *(FootClass **)(this + 84);
-    if ( v4 )
-    {
-    for ( ; v5; v5 = (FootClass *)v5->nextTeamMember )
-      {
-    v6 = *(AbstractClass **)(this + 60);
-    movementDestination = (AbstractClass *)v5->movementDestination;
-    aP1a = v5->sprayOffsetIndex == (int)v6;
-    v8 = movementDestination == v6;
-    if ( (AbstractClass *)v5->sprayOffsetIndex == v6 || movementDestination == v6 )
-        {
-    (*(void (__thiscall **)(FootClass *, int, int))(*(int *)v5->__pad_0 + 488))(v5, 5, 0);
-    if ( v8 )
-    (*(void (__thiscall **)(FootClass *, int, int))(*(int *)v5->__pad_0 + 1152))(v5, 0, 1);
-    if ( aP1a )
-    (*(void (__thiscall **)(FootClass *, int))(*(int *)v5->__pad_0 + 968))(v5, 0);
-        }
-      }
-    }
-  }
-    v9 = *(AbstractClass **)(this + 64);
-    if ( v9 == *(AbstractClass **)(this + 60) || !v9 )
-    this->focus = aP1;
-    this->queuedFocus = aP1;
-    if ( aP1 )
-  {
-    v9 = (AbstractClass *)(*(int (__thiscall **)(AbstractClass *))(*(int *)aP1->__pad_0 + 44))(aP1);
-    if ( v9 == (AbstractClass *)11 )
-    {
-    LOBYTE(v9) = Type::CheckAmbiguity(&DataGlobal_87C374.__pad_14B0[8132], (int)aP1, 1);
-    if ( (char)v9 )
-      {
-    this->unknown82 = 0;
-      }
-    else
-      {
-    v10 = *(FootClass **)(this + 84);
-    for ( this->unknown82 = 1; v10; v10 = (FootClass *)v10->nextTeamMember )
-    LOBYTE(v9) = (*(int (__thiscall **)(FootClass *, int, int))(*(int *)v10->__pad_0 + 1152))(v10, 0, 1);
-      }
-    }
-  }
-    return (char)v9;
-}
-}
-} // namespace gamemd
-
 // 0x6E9140
 namespace gamemd {
 void TeamClass::Update(TechnoClass * aP0, unsigned int * a1, int j)
@@ -1553,110 +1477,6 @@ LABEL_14:
   if ( this ) /*0x6ea4d6*/
     (*(void (__thiscall **)(void *, int))(*(_DWORD *)this + 32))(this, 1); /*0x6ea4de*/
   return 0; /*0x6ea47c*/
-}
-}
-} // namespace gamemd
-
-// 0x6EA500
-namespace gamemd {
-char TeamClass::AddMember(IUnknown * aP1, IUnknown * aP2)
-{
-{
-    IUnknown *v3;
-    char result;
-    char v6;
-    int v7;
-    int eax12;
-    AbstractClass *v8;
-    int v10;
-    v3 = aP1;
-    if ( !aP1 )
-    return 0;
-    v6 = (char)aP2;
-    result = TeamClass::ValidateMember((int *)this, (TechnoClass *)aP1, (int *)&aP1, (char)aP2);
-    if ( result )
-  {
-    v7 = *(int *)&v3->__pad_524[176];
-    if ( v7 )
-    TeamClass::LiberateMember_Start(v7, v3, 0xFFFFFFFF, 0);
-    if ( !v6 )
-    ++*(int *)(this + 4 * (int)aP1 + 136);
-    v3->__pad_524[357] = this->firstUnit == 0;
-    *(int *)&v3->__pad_524[180] = this->firstUnit;
-    this->firstUnit = v3;
-    *(int *)&v3->__pad_524[176] = this;
-    *(int *)&v3->__pad_1D8[60] = TeamTypeClass::GetGroup(*(int **)(this + 36));
-    if ( this->tag && (!*(char *)(this->buildingType + 179) || *(int *)((*(int (__thiscall **)(IUnknown *))(v3->field_0 + 132))(v3) + 1504) > 0) )
-    {
-    ObjectClass::SetReference(v3, this->tag);
-    }
-    ++this->totalObjects;
-    eax12 = (*(int (__thiscall **)(IUnknown *))(v3->field_0 + 704))(v3);
-    v8 = *(AbstractClass **)(this + 52);
-    this->totalThreatValue += eax12;
-    if ( !v8 )
-    TeamClass::FindClosestEnemy(this, (AbstractClass *)(this + 52), (AbstractClass *)(this + 56));
-    v10 = this->buildingType;
-    this->TeamClass_field_7E = 1;
-    this->needsToDisappear = 1;
-    v3->__pad_3BC[102] = *(char *)(v10 + 245);
-    return 1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x6EA610
-namespace gamemd {
-bool TeamClass::ValidateMember(TechnoClass * aP1, int * a2, char a4)
-{
-{
-    int v5;
-    int v6;
-    int *v7;
-    bool v8;
-    int queuedMission;
-    TechnoClass *v11;
-    if ( this == (int *)aP1[1].queuedMission || !aP1 || !aP1->isAliveFlag || !aP1->health || !*(int *)&g_NetworkPlayerBuffer.__pad_1140[48] && aP1->inLimbo || aP1->focus != (void *)this->owner || Team::AllMembersValid((int *)aP1->__pad_0) && ((*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 44))(aP1) != 2 || !*(char *)(aP1[1].ironTintTimer[2] + 3597)) )
-  {
-    return 0;
-  }
-    *a2 = 0;
-    if ( *(int *)(*(int *)(this->buildingType + 228) + 156) > 0 )
-  {
-    do
-    {
-    v5 = *a2;
-    if ( *(int *)(*(int *)(this->buildingType + 228) + 8 * v5 + 168) == (*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 136))(aP1) )
-    break;
-    *a2 = v5 + 1;
-    }
-    while ( v5 + 1 < *(int *)(*(int *)(this->buildingType + 228) + 156) );
-  }
-    if ( *a2 == *(int *)(*(int *)(this->buildingType + 228) + 156) && !a4 )
-    return 0;
-    if ( (*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 388))(aP1) != -1 )
-  {
-    v6 = (*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 388))(aP1);
-    if ( !IPersistStream::SetField(v6) )
-    return 0;
-  }
-    if ( !aP1->__pad_3F7[42] && !*(char *)(this->buildingType + 169) )
-    return 0;
-    v7 = (int *)this->currentScript;
-    v8 = 0;
-    if ( v7 )
-    v8 = *SessionClass::GetEntry(v7, (IUnknown *)&v11) == 8;
-    if ( (*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 44))(aP1) == 2 )
-    v8 = 1;
-    return (aP1->__pad_3F7[43] || !*(char *)(this->buildingType + 169) || v8)
-    && !TeamClass::HasAnyMemberFlagged(aP1)
-    && !FootClass::checkPassability(aP1)
-    && !aP1->spawnManager && ((queuedMission = aP1[1].queuedMission) == 0 || *(int *)(*(int *)(queuedMission + 36) + 180) < *(int *)(this->buildingType + 180))
-    && ((*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 44))(aP1) != 2 || !*(int *)(*(int (__thiscall **)(TechnoClass *, int))(*(int *)aP1->__pad_0 + 1016))(aP1, 0) || LODWORD(aP1->pitchAngle))
-    && (*(this + *a2 + 34) < *(int *)(*(int *)(this->buildingType + 228) + 8 * *a2 + 164) || a4)
-    && !aP1->spawnManager && aP1->isBerserk_duration_left == 0;
 }
 }
 } // namespace gamemd
@@ -3057,6 +2877,186 @@ char TeamClass::SetField11(ScriptClass * aP1)
 {
     this->owner = aP1;
     return 1;
+}
+}
+} // namespace gamemd
+
+// 0x6915B0
+namespace gamemd {
+BOOL TeamClass::Check()
+{
+{
+    unsigned int v1;
+    v1 = this->owner + 1;
+    this->owner = v1;
+    return v1 < *(int *)(this->buildingType + 160);
+}
+}
+} // namespace gamemd
+
+// 0x6E9050
+namespace gamemd {
+char TeamClass::SelectMember(AbstractClass * aP1)
+{
+{
+    AbstractClass *v4;
+    FootClass *v5;
+    AbstractClass *v6;
+    AbstractClass *movementDestination;
+    bool v8;
+    AbstractClass *v9;
+    FootClass *v10;
+    bool aP1a;
+    v4 = *(AbstractClass **)(this + 60);
+    if ( aP1 != v4 )
+  {
+    v5 = *(FootClass **)(this + 84);
+    if ( v4 )
+    {
+    for ( ; v5; v5 = (FootClass *)v5->nextTeamMember )
+      {
+    v6 = *(AbstractClass **)(this + 60);
+    movementDestination = (AbstractClass *)v5->movementDestination;
+    aP1a = v5->sprayOffsetIndex == (int)v6;
+    v8 = movementDestination == v6;
+    if ( (AbstractClass *)v5->sprayOffsetIndex == v6 || movementDestination == v6 )
+        {
+    (*(void (__thiscall **)(FootClass *, int, int))(*(int *)v5->__pad_0 + 488))(v5, 5, 0);
+    if ( v8 )
+    (*(void (__thiscall **)(FootClass *, int, int))(*(int *)v5->__pad_0 + 1152))(v5, 0, 1);
+    if ( aP1a )
+    (*(void (__thiscall **)(FootClass *, int))(*(int *)v5->__pad_0 + 968))(v5, 0);
+        }
+      }
+    }
+  }
+    v9 = *(AbstractClass **)(this + 64);
+    if ( v9 == *(AbstractClass **)(this + 60) || !v9 )
+    this->focus = aP1;
+    this->queuedFocus = aP1;
+    if ( aP1 )
+  {
+    v9 = (AbstractClass *)(*(int (__thiscall **)(AbstractClass *))(*(int *)aP1->__pad_0 + 44))(aP1);
+    if ( v9 == (AbstractClass *)11 )
+    {
+    LOBYTE(v9) = Type::CheckAmbiguity(&DataGlobal_87C374.__pad_14B0[8132], (int)aP1, 1);
+    if ( (char)v9 )
+      {
+    this->unknown82 = 0;
+      }
+    else
+      {
+    v10 = *(FootClass **)(this + 84);
+    for ( this->unknown82 = 1; v10; v10 = (FootClass *)v10->nextTeamMember )
+    LOBYTE(v9) = (*(int (__thiscall **)(FootClass *, int, int))(*(int *)v10->__pad_0 + 1152))(v10, 0, 1);
+      }
+    }
+  }
+    return (char)v9;
+}
+}
+} // namespace gamemd
+
+// 0x6EA500
+namespace gamemd {
+char TeamClass::AddMember(IUnknown * aP1, IUnknown * aP2)
+{
+{
+    IUnknown *v3;
+    char result;
+    char v6;
+    int v7;
+    int eax12;
+    AbstractClass *v8;
+    int v10;
+    v3 = aP1;
+    if ( !aP1 )
+    return 0;
+    v6 = (char)aP2;
+    result = TeamClass::ValidateMember((int *)this, (TechnoClass *)aP1, (int *)&aP1, (char)aP2);
+    if ( result )
+  {
+    v7 = *(int *)&v3->__pad_524[176];
+    if ( v7 )
+    TeamClass::LiberateMember_Start(v7, v3, 0xFFFFFFFF, 0);
+    if ( !v6 )
+    ++*(int *)(this + 4 * (int)aP1 + 136);
+    v3->__pad_524[357] = this->firstUnit == 0;
+    *(int *)&v3->__pad_524[180] = this->firstUnit;
+    this->firstUnit = v3;
+    *(int *)&v3->__pad_524[176] = this;
+    *(int *)&v3->__pad_1D8[60] = TeamTypeClass::GetGroup(*(int **)(this + 36));
+    if ( this->tag && (!*(char *)(this->buildingType + 179) || *(int *)((*(int (__thiscall **)(IUnknown *))(v3->field_0 + 132))(v3) + 1504) > 0) )
+    {
+    ObjectClass::SetReference(v3, this->tag);
+    }
+    ++this->totalObjects;
+    eax12 = (*(int (__thiscall **)(IUnknown *))(v3->field_0 + 704))(v3);
+    v8 = *(AbstractClass **)(this + 52);
+    this->totalThreatValue += eax12;
+    if ( !v8 )
+    TeamClass::FindClosestEnemy(this, (AbstractClass *)(this + 52), (AbstractClass *)(this + 56));
+    v10 = this->buildingType;
+    this->TeamClass_field_7E = 1;
+    this->needsToDisappear = 1;
+    v3->__pad_3BC[102] = *(char *)(v10 + 245);
+    return 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x6EA610
+namespace gamemd {
+bool TeamClass::ValidateMember(TechnoClass * aP1, int * a2, char a4)
+{
+{
+    int v5;
+    int v6;
+    int *v7;
+    bool v8;
+    int queuedMission;
+    TechnoClass *v11;
+    if ( this == (int *)aP1[1].queuedMission || !aP1 || !aP1->isAliveFlag || !aP1->health || !*(int *)&g_NetworkPlayerBuffer.__pad_1140[48] && aP1->inLimbo || aP1->focus != (void *)this->owner || Team::AllMembersValid((int *)aP1->__pad_0) && ((*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 44))(aP1) != 2 || !*(char *)(aP1[1].ironTintTimer[2] + 3597)) )
+  {
+    return 0;
+  }
+    *a2 = 0;
+    if ( *(int *)(*(int *)(this->buildingType + 228) + 156) > 0 )
+  {
+    do
+    {
+    v5 = *a2;
+    if ( *(int *)(*(int *)(this->buildingType + 228) + 8 * v5 + 168) == (*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 136))(aP1) )
+    break;
+    *a2 = v5 + 1;
+    }
+    while ( v5 + 1 < *(int *)(*(int *)(this->buildingType + 228) + 156) );
+  }
+    if ( *a2 == *(int *)(*(int *)(this->buildingType + 228) + 156) && !a4 )
+    return 0;
+    if ( (*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 388))(aP1) != -1 )
+  {
+    v6 = (*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 388))(aP1);
+    if ( !IPersistStream::SetField(v6) )
+    return 0;
+  }
+    if ( !aP1->__pad_3F7[42] && !*(char *)(this->buildingType + 169) )
+    return 0;
+    v7 = (int *)this->currentScript;
+    v8 = 0;
+    if ( v7 )
+    v8 = *SessionClass::GetEntry(v7, (IUnknown *)&v11) == 8;
+    if ( (*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 44))(aP1) == 2 )
+    v8 = 1;
+    return (aP1->__pad_3F7[43] || !*(char *)(this->buildingType + 169) || v8)
+    && !TeamClass::HasAnyMemberFlagged(aP1)
+    && !FootClass::checkPassability(aP1)
+    && !aP1->spawnManager && ((queuedMission = aP1[1].queuedMission) == 0 || *(int *)(*(int *)(queuedMission + 36) + 180) < *(int *)(this->buildingType + 180))
+    && ((*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 44))(aP1) != 2 || !*(int *)(*(int (__thiscall **)(TechnoClass *, int))(*(int *)aP1->__pad_0 + 1016))(aP1, 0) || LODWORD(aP1->pitchAngle))
+    && (*(this + *a2 + 34) < *(int *)(*(int *)(this->buildingType + 228) + 8 * *a2 + 164) || a4)
+    && !aP1->spawnManager && aP1->isBerserk_duration_left == 0;
 }
 }
 } // namespace gamemd

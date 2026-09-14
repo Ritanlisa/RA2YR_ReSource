@@ -2,21 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x5E9560
-char GameOption::CheckDuplicate()
-{
-{
-    LPARAM *v0;
-    v0 = &g_NetworkPlayerName;
-    while ( *v0 != g_Lobby_MaxPlayers )
-  {
-    if ( (int)++v0 >= (int)&g_PlayerNameListEnd )
-    return 1;
-  }
-    return 0;
-}
-}
-
 // 0x69ACC0
 int GameOption::GetField()
 {
@@ -69,5 +54,20 @@ char *__thiscall GameOption::SetDigest(char *this, CCINIClass *aP1)
     qmemcpy(this + 348, &stru_830620.__pad_579C[38440], (unsigned int)result); /*0x69adc8*/
   }
   return result; /*0x69ada4*/
+}
+}
+
+// 0x5E9560
+char GameOption::CheckDuplicate()
+{
+{
+    LPARAM *v0;
+    v0 = &g_NetworkPlayerName;
+    while ( *v0 != g_Lobby_MaxPlayers )
+  {
+    if ( (int)++v0 >= (int)&g_PlayerNameListEnd )
+    return 1;
+  }
+    return 0;
 }
 }

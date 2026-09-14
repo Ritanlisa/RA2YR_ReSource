@@ -12,36 +12,12 @@
 #include "e4/classes/E4Recv_6C9940_e4.hpp"
 #include "e4/classes/E4Recv_6C9960_e4.hpp"
 #include "e4/classes/E4Recv_6C9AC0_e4.hpp"
+#include "e4/classes/E4Recv_6C9F10_e4.hpp"
 #include "e4/classes/E4Recv_6CA1E0_e4.hpp"
 #include "e4/classes/E4Recv_6CA5A0_e4.hpp"
 #include "e4/classes/E4Recv_6CE570_e4.hpp"
 #include "e4/classes/E4Recv_6CF8F0_e4.hpp"
 #include "e4/classes/E4Recv_6CFE10_e4.hpp"
-
-// 0x6C6540
-namespace gamemd {
-unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int aP1, ControlClass * aP5, int aP3, int aP4)
-{
-{
-    DropListClass *Instance;
-    GadgetClass::Construct(this, (GadgetClass *)aP1, (GadgetClass *)aP5, (GadgetClass *)aP3, (ControlClass *)aP4, 0, 0);
-    Buffer::Init(this + 9, 0, 0);
-    this->M48 = 0;
-    this->M52 = a4;
-    *(void**)this = &vt_StaticButtonClass;
-    StaticButtonClass::Draw((void **)this, (DropListClass *)String, 0);
-    if ( aP3 == -1 || aP4 == -1 )
-  {
-    Instance = (DropListClass *)TextRenderer::GetInstance();
-    if ( aP3 == -1 )
-    this->M20 = Text::MeasureWidth(this->M48, 0);
-    if ( aP4 == -1 )
-    this->M24 = Instance->DropListClass_field_0x1C;
-  }
-    return this;
-}
-}
-} // namespace gamemd
 
 // 0x6C6F50
 namespace gamemd {
@@ -114,107 +90,6 @@ int sub_6C87F0()
   MEMORY[0xB0BD2C] = v1; /*0x6c8805*/
   MEMORY[0xB0BDB4] = 1; /*0x6c880a*/
   return v1; /*0x6c8811*/
-}
-}
-} // namespace gamemd
-
-// 0x6C8840
-namespace gamemd {
-rc_ptr * E4Recv_6C8840::sub_6C8840(char a2)
-{
-{
-    *(void**)this = &vt_rc_ptr_PlayerProfile;
-    ComPtr::Release(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (rc_ptr *)this;
-}
-}
-} // namespace gamemd
-
-// 0x6C8900
-namespace gamemd {
-char E4Recv_6C8900::sub_6C8900()
-{
-{
-    int v2;
-    int v4;
-    void *v5;
-    const void *v6;
-    int v7;
-    v2 = *(void**)this;
-    if ( *(void**)this < this->M4 )
-    return 0;
-    v4 = 2 * v2;
-    if ( 2 * v2 < 10 )
-    v4 = 10;
-    v5 = __2_YAPAXI_Z(32776 * v4);
-    memset(v5, 0, 4 * ((unsigned int)(32776 * v4) >> 2));
-    v7 = (int)v5;
-    v6 = (const void *)this->M8;
-    if ( v6 )
-    qmemcpy(v5, v6, 32776 * *(void**)this);
-    __3_YAXPAX_Z((void *)this->M8);
-    this->M4 = v4;
-    this->M8 = v7;
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x6C8B10
-namespace gamemd {
-int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
-{
-{
-    int v6;
-    int *v8;
-    int v9;
-    unsigned int v10;
-    char *v11;
-    int v12;
-    int v13;
-    char *v14;
-    int v15;
-    v6 = this->M8;
-    if ( v6 + 12 > (unsigned int)(this->M4 + *(void**)this) )
-    return 0;
-    v12 = this->M8;
-    this->M8 = v6 + 12;
-    if ( !v6 )
-    return 0;
-    *(short *)v6 = a4;
-    *(short *)(v6 + 2) = a5;
-    *(short *)(v6 + 4) = *(short *)(a3 + 8);
-    *(short *)(v6 + 6) = *(short *)(a3 + 12);
-    *(int *)(v6 + 8) = this->M8;
-    v8 = CellStruct::Copy((int *)a3, &v13);
-    v9 = a2;
-    v14 = (char *)(*(int (__thiscall **)(int, int, int))(*(int *)(a2) + 92))(a2, *v8, v8[1]);
-    v15 = 0;
-    if ( *(int *)(a3 + 12) > 0 )
-  {
-    while ( 1 )
-    {
-    v10 = Map_Append(v14, (int)&DataGlobal_B0BDD0, *(int *)(a3 + 8));
-    v11 = (char *)this->M8;
-    if ( (unsigned int)&v11[v10] > this->M4 + *(void**)this || (this->M8 = &v11[v10], !v11) )
-      {
-    (*(void (__thiscall **)(int))(*(int *)(v9) + 96))(v9);
-    return 0;
-      }
-    qmemcpy(v11, &DataGlobal_B0BDD0, v10);
-    ++v15;
-    v14 += (*(int (__thiscall **)(int))(*(int *)(a2) + 116))(a2);
-    if ( v15 >= *(int *)(a3 + 12) )
-    break;
-    v9 = a2;
-    }
-    v6 = v12;
-    v9 = a2;
-  }
-    (*(void (__thiscall **)(int))(*(int *)(v9) + 96))(v9);
-    return v6;
 }
 }
 } // namespace gamemd
@@ -401,43 +276,6 @@ int __userpurge DlgProcScoreScreen@<eax>(
     return 0; /*0x6c9374*/
   }
   return result; /*0x6c905c*/
-}
-}
-} // namespace gamemd
-
-// 0x6C9780
-namespace gamemd {
-unsigned int * E4Recv_6C9780::sub_6C9780(unsigned int * a2, float * a3)
-{
-{
-    int v3;
-    float *v4;
-    char *v5;
-    double v6;
-    int v8;
-    int v9;
-    int v10;
-    int v11;
-    v8 = 0;
-    v9 = 0;
-    v3 = 4;
-    v10 = 0;
-    v11 = 0;
-    v4 = a3;
-    v5 = (char *)(this - (char *)a3);
-    do
-  {
-    v6 = *(float *)((char *)(v4) + (int)v5) - *v4;
-    ++v4;
-    --v3;
-    *(float *)((char *)(v4) + (char *)&v8 - (char *)a3 - 4) = v6;
-  }
-    while ( v3 );
-    *a2 = v8;
-    *((int*)(a2) + 1) = v9;
-    *((int*)(a2) + 2) = v10;
-    *((int*)(a2) + 3) = v11;
-    return a2;
 }
 }
 } // namespace gamemd
@@ -700,31 +538,6 @@ void __fastcall sub_6CFD20(int a1, int a2)
 }
 } // namespace gamemd
 
-// 0x6CFD30
-namespace gamemd {
-int sub_6CFD30(int a1)
-{
-{
-    return g_ObjectTrackingPool[a1];
-}
-}
-} // namespace gamemd
-
-// 0x6CFD40
-namespace gamemd {
-char * FontClass_GetEntry(int a1)
-{
-{
-    unsigned int v1;
-    v1 = g_ObjectTrackingPool[a1];
-    if ( v1 > 0x18 )
-    return 0;
-    else
-    return (char *)&DataGlobal_B0C1C0 + 96 * v1;
-}
-}
-} // namespace gamemd
-
 // 0x6CFD60
 namespace gamemd {
 unsigned int * sub_6CFD60(unsigned int * a1, int a2)
@@ -789,6 +602,31 @@ int sub_6C6520()
     DataGlobal_B0BD00 = 0;
     DataGlobal_B0BD04 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6C6540
+namespace gamemd {
+unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int aP1, ControlClass * aP5, int aP3, int aP4)
+{
+{
+    DropListClass *Instance;
+    GadgetClass::Construct(this, (GadgetClass *)aP1, (GadgetClass *)aP5, (GadgetClass *)aP3, (ControlClass *)aP4, 0, 0);
+    Buffer::Init(this + 9, 0, 0);
+    this->M48 = 0;
+    this->M52 = a4;
+    *(void**)this = &vt_StaticButtonClass;
+    StaticButtonClass::Draw((void **)this, (DropListClass *)String, 0);
+    if ( aP3 == -1 || aP4 == -1 )
+  {
+    Instance = (DropListClass *)TextRenderer::GetInstance();
+    if ( aP3 == -1 )
+    this->M20 = Text::MeasureWidth(this->M48, 0);
+    if ( aP4 == -1 )
+    this->M24 = Instance->DropListClass_field_0x1C;
+  }
+    return this;
 }
 }
 } // namespace gamemd
@@ -998,6 +836,50 @@ void sub_6C6B60()
 }
 } // namespace gamemd
 
+// 0x6C8840
+namespace gamemd {
+rc_ptr * E4Recv_6C8840::sub_6C8840(char a2)
+{
+{
+    *(void**)this = &vt_rc_ptr_PlayerProfile;
+    ComPtr::Release(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (rc_ptr *)this;
+}
+}
+} // namespace gamemd
+
+// 0x6C8900
+namespace gamemd {
+char E4Recv_6C8900::sub_6C8900()
+{
+{
+    int v2;
+    int v4;
+    void *v5;
+    const void *v6;
+    int v7;
+    v2 = *(void**)this;
+    if ( *(void**)this < this->M4 )
+    return 0;
+    v4 = 2 * v2;
+    if ( 2 * v2 < 10 )
+    v4 = 10;
+    v5 = __2_YAPAXI_Z(32776 * v4);
+    memset(v5, 0, 4 * ((unsigned int)(32776 * v4) >> 2));
+    v7 = (int)v5;
+    v6 = (const void *)this->M8;
+    if ( v6 )
+    qmemcpy(v5, v6, 32776 * *(void**)this);
+    __3_YAXPAX_Z((void *)this->M8);
+    this->M4 = v4;
+    this->M8 = v7;
+    return 1;
+}
+}
+} // namespace gamemd
+
 // 0x6C8990
 namespace gamemd {
 int sub_6C8990()
@@ -1023,6 +905,63 @@ unsigned int * E4Recv_6C89B0::sub_6C89B0(size_t Size)
     this->M4 = v3;
     this->M8 = v3;
     return this;
+}
+}
+} // namespace gamemd
+
+// 0x6C8B10
+namespace gamemd {
+int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
+{
+{
+    int v6;
+    int *v8;
+    int v9;
+    unsigned int v10;
+    char *v11;
+    int v12;
+    int v13;
+    char *v14;
+    int v15;
+    v6 = this->M8;
+    if ( v6 + 12 > (unsigned int)(this->M4 + *(void**)this) )
+    return 0;
+    v12 = this->M8;
+    this->M8 = v6 + 12;
+    if ( !v6 )
+    return 0;
+    *(short *)v6 = a4;
+    *(short *)(v6 + 2) = a5;
+    *(short *)(v6 + 4) = *(short *)(a3 + 8);
+    *(short *)(v6 + 6) = *(short *)(a3 + 12);
+    *(int *)(v6 + 8) = this->M8;
+    v8 = CellStruct::Copy((int *)a3, &v13);
+    v9 = a2;
+    v14 = (char *)(*(int (__thiscall **)(int, int, int))(*(int *)(a2) + 92))(a2, *v8, v8[1]);
+    v15 = 0;
+    if ( *(int *)(a3 + 12) > 0 )
+  {
+    while ( 1 )
+    {
+    v10 = Map_Append(v14, (int)&DataGlobal_B0BDD0, *(int *)(a3 + 8));
+    v11 = (char *)this->M8;
+    if ( (unsigned int)&v11[v10] > this->M4 + *(void**)this || (this->M8 = &v11[v10], !v11) )
+      {
+    (*(void (__thiscall **)(int))(*(int *)(v9) + 96))(v9);
+    return 0;
+      }
+    qmemcpy(v11, &DataGlobal_B0BDD0, v10);
+    ++v15;
+    v14 += (*(int (__thiscall **)(int))(*(int *)(a2) + 116))(a2);
+    if ( v15 >= *(int *)(a3 + 12) )
+    break;
+    v9 = a2;
+    }
+    v6 = v12;
+    v9 = a2;
+  }
+    (*(void (__thiscall **)(int))(*(int *)(v9) + 96))(v9);
+    return v6;
 }
 }
 } // namespace gamemd
@@ -1410,6 +1349,43 @@ unsigned int * E4Recv_6C96E0::sub_6C96E0(unsigned int * a2, int a3)
     *((int*)(a2) + 1) = v10;
     *((int*)(a2) + 2) = v11;
     *((int*)(a2) + 3) = v12;
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x6C9780
+namespace gamemd {
+unsigned int * E4Recv_6C9780::sub_6C9780(unsigned int * a2, float * a3)
+{
+{
+    int v3;
+    float *v4;
+    char *v5;
+    double v6;
+    int v8;
+    int v9;
+    int v10;
+    int v11;
+    v8 = 0;
+    v9 = 0;
+    v3 = 4;
+    v10 = 0;
+    v11 = 0;
+    v4 = a3;
+    v5 = (char *)(this - (char *)a3);
+    do
+  {
+    v6 = *(float *)((char *)(v4) + (int)v5) - *v4;
+    ++v4;
+    --v3;
+    *(float *)((char *)(v4) + (char *)&v8 - (char *)a3 - 4) = v6;
+  }
+    while ( v3 );
+    *a2 = v8;
+    *((int*)(a2) + 1) = v9;
+    *((int*)(a2) + 2) = v10;
+    *((int*)(a2) + 3) = v11;
     return a2;
 }
 }
@@ -2330,6 +2306,31 @@ void sub_6CFC60()
     DataGlobal_B0C1AC |= 4u;
     ShapeButtonClass::Destructor((int)DataGlobal_B0CC40);
   }
+}
+}
+} // namespace gamemd
+
+// 0x6CFD30
+namespace gamemd {
+int sub_6CFD30(int a1)
+{
+{
+    return g_ObjectTrackingPool[a1];
+}
+}
+} // namespace gamemd
+
+// 0x6CFD40
+namespace gamemd {
+char * FontClass_GetEntry(int a1)
+{
+{
+    unsigned int v1;
+    v1 = g_ObjectTrackingPool[a1];
+    if ( v1 > 0x18 )
+    return 0;
+    else
+    return (char *)&DataGlobal_B0C1C0 + 96 * v1;
 }
 }
 } // namespace gamemd

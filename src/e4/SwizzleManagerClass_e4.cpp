@@ -3,80 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/SwizzleManagerClass_19_e4.hpp"
 
-// 0x6CF490
-int SwizzleManagerClass::Add(SwizzleManagerClass * aP0, SwizzleManagerClass * aP1, unsigned int * a2)
-{
-{
-    if ( !aP1 || !a2 )
-    return -2147467261;
-    *a2 = aP1;
-    return 0;
-}
-}
-
-// 0x6CF4F0
-namespace gamemd {
-void SwizzleManagerClass_19::ClearBuffer()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->SwizzleManagerClass_19_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->SwizzleManagerClass_19_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->SwizzleManagerClass_19_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x6CF540
-namespace gamemd {
-unsigned int * SwizzleManagerClass_19::Lookup(unsigned int * a2, int a3)
-{
-{
-    int v3;
-    v3 = this->Items;
-    *a2 = *(int *)(v3 + 8 * a3);
-    *((int*)(a2) + 1) = *(int *)(v3 + 8 * a3 + 4);
-    return a2;
-}
-}
-} // namespace gamemd
-
-// 0x6CF560
-namespace gamemd {
-char SwizzleManagerClass_19::AddRef(int a2)
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    int v5;
-    v2 = this->Capacity;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = (int *)this->Items;
-    v5 = *(int *)(a2 + 4) - (int)v4;
-    while ( *v4 == *(int *)((char *)(v4) + v5) )
-    {
-    ++v3;
-    v4 += 2;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x6CF5A0
 namespace gamemd {
 char SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
@@ -184,46 +110,6 @@ char __thiscall SwizzleManagerClass_19_::_vt02(void *this, int a2, _DWORD *a3)
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x6cf684*/
     return 1; /*0x6cf68a*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x6CF690
-namespace gamemd {
-void SwizzleManagerClass_19::ddtor()
-{
-{
-    if ( this->SwizzleManagerClass_19_field_0x4 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(*(void **)(this + 4));
-    this->SwizzleManagerClass_19_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->SwizzleManagerClass_19_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x6CF6C0
-namespace gamemd {
-int SwizzleManagerClass_19::Init(unsigned int * a2)
-{
-{
-    int result;
-    int v3;
-    int *i;
-    if ( !(unsigned char)this->SwizzleManagerClass_19_field_0xC )
-    return 0;
-    v3 = this->SwizzleManagerClass_19_field_0x8;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = *(int **)(this + 4); *i != *a2; i += 2 )
-  {
-    if ( ++result >= v3 )
-    return -1;
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -337,6 +223,170 @@ char __thiscall SwizzleManagerClass_19_::sub_6CF720(void *this, int a2, _DWORD *
 }
 } // namespace gamemd
 
+// 0x6CF490
+int SwizzleManagerClass::Add(SwizzleManagerClass * aP0, SwizzleManagerClass * aP1, unsigned int * a2)
+{
+{
+    if ( !aP1 || !a2 )
+    return -2147467261;
+    *a2 = aP1;
+    return 0;
+}
+}
+
+// 0x6CF4B0
+int SwizzleManagerClass::AddRef(int a1)
+{
+return 1;
+}
+
+// 0x6CF4C0
+int SwizzleManagerClass::Release(int a1)
+{
+return 1;
+}
+
+// 0x6CF4D0
+int SwizzleManagerClass::Remove(int a1, int a2, int a3)
+{
+return -2147467263;
+}
+
+// 0x6CF4E0
+int SwizzleManagerClass::Lookup(int a1, int a2, int a3, int a4)
+{
+return -2147467263;
+}
+
+// 0x6CF4F0
+namespace gamemd {
+void SwizzleManagerClass_19::ClearBuffer()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->SwizzleManagerClass_19_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->SwizzleManagerClass_19_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->SwizzleManagerClass_19_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x6CF520
+namespace gamemd {
+unsigned int SwizzleManagerClass_19::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->SwizzleManagerClass_19_field_0xC )
+    return (unsigned int)(a2 - this->SwizzleManagerClass_19_field_0x4) >> 3;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6CF540
+namespace gamemd {
+unsigned int * SwizzleManagerClass_19::Lookup(unsigned int * a2, int a3)
+{
+{
+    int v3;
+    v3 = this->Items;
+    *a2 = *(int *)(v3 + 8 * a3);
+    *((int*)(a2) + 1) = *(int *)(v3 + 8 * a3 + 4);
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x6CF560
+namespace gamemd {
+char SwizzleManagerClass_19::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
+    {
+    ++v3;
+    v4 += 2;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6CF690
+namespace gamemd {
+void SwizzleManagerClass_19::ddtor()
+{
+{
+    if ( this->SwizzleManagerClass_19_field_0x4 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->SwizzleManagerClass_19_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->SwizzleManagerClass_19_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x6CF6C0
+namespace gamemd {
+int SwizzleManagerClass_19::Init(unsigned int * a2)
+{
+{
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->SwizzleManagerClass_19_field_0xC )
+    return 0;
+    v3 = this->SwizzleManagerClass_19_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; i += 2 )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x6CF700
+namespace gamemd {
+unsigned int SwizzleManagerClass_19::Add(int a2)
+{
+{
+    if ( (unsigned char)this->SwizzleManagerClass_19_field_0xC )
+    return (unsigned int)(a2 - this->SwizzleManagerClass_19_field_0x4) >> 3;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x6CF820
 namespace gamemd {
 int SwizzleManagerClass_19::FindItem(unsigned int * a2)
@@ -398,56 +448,6 @@ DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerCl
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
-}
-}
-} // namespace gamemd
-
-// 0x6CF4B0
-int SwizzleManagerClass::AddRef(int a1)
-{
-return 1;
-}
-
-// 0x6CF4C0
-int SwizzleManagerClass::Release(int a1)
-{
-return 1;
-}
-
-// 0x6CF4D0
-int SwizzleManagerClass::Remove(int a1, int a2, int a3)
-{
-return -2147467263;
-}
-
-// 0x6CF4E0
-int SwizzleManagerClass::Lookup(int a1, int a2, int a3, int a4)
-{
-return -2147467263;
-}
-
-// 0x6CF520
-namespace gamemd {
-unsigned int SwizzleManagerClass_19::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->SwizzleManagerClass_19_field_0xC )
-    return (unsigned int)(a2 - this->SwizzleManagerClass_19_field_0x4) >> 3;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x6CF700
-namespace gamemd {
-unsigned int SwizzleManagerClass_19::Add(int a2)
-{
-{
-    if ( (unsigned char)this->SwizzleManagerClass_19_field_0xC )
-    return (unsigned int)(a2 - this->SwizzleManagerClass_19_field_0x4) >> 3;
-    else
-    return 0;
 }
 }
 } // namespace gamemd

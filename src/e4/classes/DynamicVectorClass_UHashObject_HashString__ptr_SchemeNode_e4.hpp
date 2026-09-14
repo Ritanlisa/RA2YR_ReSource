@@ -7,16 +7,16 @@ struct DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode {
     BOOL HashEntryCompare(unsigned char * a2);  // 0x517590
     unsigned int * Destructor(char a2);  // 0x6244A0
     unsigned int * Destructor_0(char a2);  // 0x6244C0
+    char SetCapacity_0(int a2, char * a3);  // 0x6284A0
+    char Remove(CCINIClass * aP1, unsigned char * a2);  // 0x628BB0
     void Clear_627D20();  // 0x627D20
     void Clear_627D80();  // 0x627D80
     char SetCapacity(int a2, unsigned int * a3);  // 0x627F90
     int FindItemIndex(unsigned int * a2);  // 0x628040
-    char SetCapacity_0(int a2, char * a3);  // 0x6284A0
     DynamicVector * Destructor_1(char a2);  // 0x628640
     char * Add(char a2);  // 0x628690
     DynamicVector * Destructor_2(char a2);  // 0x6287B0
     void ddtor();  // 0x628800
-    char Remove(CCINIClass * aP1, unsigned char * a2);  // 0x628BB0
     unsigned int GetCount(int a2);  // 0x627D50
     unsigned int GetItemIndex(int a2);  // 0x627DB0
     int GetItem(int a2, int a3);  // 0x627DE0

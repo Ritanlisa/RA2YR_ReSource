@@ -2,6 +2,14 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
+// 0x7E0000
+namespace gamemd {
+void nullsub_272()
+{
+  ;
+}
+} // namespace gamemd
+
 // 0x7E0001
 namespace gamemd {
 void  __spoils<ecx> sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int a5)
@@ -164,14 +172,6 @@ void  __spoils<ecx> sub_7E01D2(unsigned char * a1, unsigned char * a2, unsigned 
   }
     while ( v8 );
 }
-}
-} // namespace gamemd
-
-// 0x7E0000
-namespace gamemd {
-void nullsub_272()
-{
-  ;
 }
 } // namespace gamemd
 

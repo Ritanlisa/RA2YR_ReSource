@@ -13,17 +13,6 @@ int __thiscall LinkClass_Destroy(_DWORD *this)
 }
 }
 
-// 0x4E1AD0
-LinkClass * LinkClass::Destru_vt00(char a2)
-{
-{
-    LinkClass::Destruct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (LinkClass *)this;
-}
-}
-
 // 0x5565A0
 int LinkClass::Destruct()
 {
@@ -49,5 +38,16 @@ int __thiscall LinkClass_Destructor(_DWORD *this)
   if ( Prev == this && (_DWORD *)result != this ) /*0x5565e2*/
     return (*(int (__thiscall **)(int))(*(_DWORD *)result + 24))(result); /*0x5565e8*/
   return result; /*0x5565eb*/
+}
+}
+
+// 0x4E1AD0
+LinkClass * LinkClass::Destru_vt00(char a2)
+{
+{
+    LinkClass::Destruct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (LinkClass *)this;
 }
 }

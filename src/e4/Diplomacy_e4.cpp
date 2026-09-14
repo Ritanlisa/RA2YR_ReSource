@@ -2,14 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x656580
-char * Diplomacy::GetField(BuildingTypeClass * aP1)
-{
-{
-    return this + 24 * aP1->Foundation + 4728;
-}
-}
-
 // 0x657DA0
 int Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
@@ -288,3 +280,11 @@ LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
 }
 }
 } // namespace gamemd
+
+// 0x656580
+char * Diplomacy::GetField(BuildingTypeClass * aP1)
+{
+{
+    return this + 24 * aP1->Foundation + 4728;
+}
+}

@@ -2,30 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x42E410
-IUnknown * Rect::Set(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4)
-{
-{
-    *(void**)this = aP1;
-    this->Y = aP2;
-    this->Width = aP3;
-    this->Height = aP4;
-    return (IUnknown *)this;
-}
-}
-
-// 0x45A130
-AbstractClass * Rect::Construct(IUnknown * aP1, AbstractClass * aP2, AbstractClass * aP3)
-{
-{
-    *(void**)this = aP1->field_0;
-    this->Y = aP1->field_4;
-    this->Width = aP2;
-    this->Height = aP3;
-    return (AbstractClass *)this;
-}
-}
-
 // 0x487F40
 BOOL Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
 {
@@ -95,6 +71,30 @@ BOOL __stdcall Rect::Union(IUnknown *aP0, const RECT *lprcSrc1, const RECT *lprc
       return (BOOL)v15; /*0x487fcf*/
     }
   }
+}
+}
+
+// 0x42E410
+IUnknown * Rect::Set(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4)
+{
+{
+    *(void**)this = aP1;
+    this->Y = aP2;
+    this->Width = aP3;
+    this->Height = aP4;
+    return (IUnknown *)this;
+}
+}
+
+// 0x45A130
+AbstractClass * Rect::Construct(IUnknown * aP1, AbstractClass * aP2, AbstractClass * aP3)
+{
+{
+    *(void**)this = aP1->field_0;
+    this->Y = aP1->field_4;
+    this->Width = aP2;
+    this->Height = aP3;
+    return (AbstractClass *)this;
 }
 }
 

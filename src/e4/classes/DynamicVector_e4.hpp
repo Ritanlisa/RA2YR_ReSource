@@ -4,6 +4,7 @@
 namespace gamemd {
 struct DynamicVector {
     void* vfptr;  // minimal E2 declaration
+    unsigned int * Copy(VectorClass * aP1);  // 0x5AC430
     char AddItem(VectorClass * aP1);  // 0x413A70
     unsigned int * Constructor_Cell(ObjectClass * aP1, ObjectClass * aP2);  // 0x42F670
     char RemoveItem(IUnknown * aP1);  // 0x45ADD0
@@ -11,7 +12,6 @@ struct DynamicVector {
     int GetOrGrow(DynamicVector * aP1);  // 0x49FAE0
     char Add_Alt4(VectorClass * aP1);  // 0x5253B0
     char Add_Alt2(DynamicVector * aP1);  // 0x538780
-    unsigned int * Copy(VectorClass * aP1);  // 0x5AC430
     char Add_Alt3(VectorClass * aP1);  // 0x5AD7D0
     char GrowCapacity();  // 0x624810
     int Read(TechnoTypeClass * aP1);  // 0x67A520

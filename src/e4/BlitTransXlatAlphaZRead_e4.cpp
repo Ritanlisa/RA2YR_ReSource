@@ -2,14 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x494890
-int BlitTransXlatAlphaZRead_ushort::CallBlit0_2(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-{
-{
-    return (*((int (__thiscall **)(BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
-}
-}
-
 // 0x494920
 unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9)
 {
@@ -265,63 +257,11 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt04(
 }
 }
 
-// 0x49A3A0
-std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter(char a2)
+// 0x494890
+int BlitTransXlatAlphaZRead_ushort::CallBlit0_2(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 {
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-
-// 0x49A3C0
-std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-
-// 0x49A3E0
-std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-
-// 0x49A400
-std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-
-// 0x49A420
-BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 2);
-    *(void**)this = &vt_BlitTransXlatAlphaZRead_unsigned_short;
-    FractalNoise::Release(v3);
-    *(this + 2) = 0;
-    *(void**)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitTransXlatAlphaZRead_ushort *)this;
+    return (*((int (__thiscall **)(BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 
@@ -386,5 +326,65 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_10(int a2, int a3, int a4, int a5,
 {
 {
     return (*((int (__thiscall **)(BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
+}
+}
+
+// 0x49A3A0
+std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
+}
+}
+
+// 0x49A3C0
+std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
+}
+}
+
+// 0x49A3E0
+std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
+}
+}
+
+// 0x49A400
+std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
+}
+}
+
+// 0x49A420
+BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 2);
+    *(void**)this = &vt_BlitTransXlatAlphaZRead_unsigned_short;
+    FractalNoise::Release(v3);
+    *(this + 2) = 0;
+    *(void**)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransXlatAlphaZRead_ushort *)this;
 }
 }

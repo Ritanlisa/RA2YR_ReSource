@@ -2,6 +2,8 @@
 #pragma once
 #include <cstdint>
 
+extern char DataGlobal_833280[78800];  // data: 0x833280
+extern char DataGlobal_83F120[30000];  // data: 0x83F120
 extern double DataGlobal_7E1708;  // data: 0x7E1708
 extern double DataGlobal_7E1710;  // data: 0x7E1710
 extern double DataGlobal_7E1718;  // data: 0x7E1718
@@ -2406,6 +2408,7 @@ extern unsigned char aBuildtimeinfan[4];  // data: 0x825320
 extern unsigned char aBuildtimeunits[4];  // data: 0x82530C
 extern unsigned char aBummer[4];  // data: 0x821CA8
 extern unsigned char aCabhut[4];  // data: 0x82BA00
+extern unsigned char aCanceled[4];  // data: 0x848F18
 extern unsigned char aCenterbase[4];  // data: 0x827514
 extern unsigned char aCenteronradare[4];  // data: 0x827610
 extern unsigned char aCenterview[4];  // data: 0x8274E0
@@ -2456,17 +2459,33 @@ extern unsigned char aDRa2mdpostCred[4];  // data: 0x81FBBC
 extern unsigned char aDRa2mdpostDisp[4];  // data: 0x8201A8
 extern unsigned char aDRa2mdpostGame[4];  // data: 0x822848
 extern unsigned char aDRa2mdpostMpla[4];  // data: 0x82E134
+extern unsigned char aDRa2mdpostWdtp[4];  // data: 0x848D80
 extern unsigned char aDRa2mdpostWolp[4];  // data: 0x84A0D0
 extern unsigned char aDraw[4];  // data: 0x8491E8
 extern unsigned char aDrop[4];  // data: 0x826574
 extern unsigned char aDsurfaceCreate[4];  // data: 0x8206F0
 extern unsigned char aDsurfaceCreate_0[4];  // data: 0x820680
+extern unsigned char aEdge[4];  // data: 0x824DD0
 extern unsigned char aEnum[4];  // data: 0x82CD38
 extern unsigned char aError[4];  // data: 0x849B60
 extern unsigned char aErrorRecursive[4];  // data: 0x821CC0
+extern unsigned char aEvaAlliancebro[4];  // data: 0x824808
+extern unsigned char aEvaAlliancefor[4];  // data: 0x8247E4
+extern unsigned char aEvaAlliancereq[4];  // data: 0x82479C
 extern unsigned char aEvaBuildingonl[4];  // data: 0x8190C8
+extern unsigned char aEvaEnemyallian[4];  // data: 0x8247CC
 extern unsigned char aEvaLightningst[4];  // data: 0x828080
+extern unsigned char aEvaMissionacco[4];  // data: 0x824C54
+extern unsigned char aEvaMissionfail[4];  // data: 0x824CAC
+extern unsigned char aEvaOurallyisun[4];  // data: 0x82474C
+extern unsigned char aEvaOurbaseisun[4];  // data: 0x824768
+extern unsigned char aEvaPlayerdefea[4];  // data: 0x824B70
+extern unsigned char aEvaRequestinga[4];  // data: 0x8247B4
+extern unsigned char aEvaRobottanksb[4];  // data: 0x824FE4
 extern unsigned char aEvaUnitlost[4];  // data: 0x822620
+extern unsigned char aEvaUnitready[4];  // data: 0x8249A0
+extern unsigned char aEvaYouarevicto[4];  // data: 0x824C2C
+extern unsigned char aEvaYouhavelost[4];  // data: 0x824C08
 extern unsigned char aExpandDat[4];  // data: 0x822210
 extern unsigned char aExtrasynccheck[4];  // data: 0x827938
 extern unsigned char aExtraSyncInfoO[4];  // data: 0x8279D8
@@ -2484,9 +2503,11 @@ extern unsigned char aFollow[4];  // data: 0x818BB4
 extern unsigned char aFriendlyname[4];  // data: 0x8497BC
 extern unsigned char aGameFnt[4];  // data: 0x818B98
 extern unsigned char aGameSyncLoggin[4];  // data: 0x82794C
+extern unsigned char aGaplug[4];  // data: 0x824EB8
 extern unsigned char aGlslmdShp[4];  // data: 0x826898
 extern unsigned char aGlsmdPal[4];  // data: 0x8268B0
 extern unsigned char aGlssmdShp[4];  // data: 0x8268A4
+extern unsigned char aGt18Bmp[4];  // data: 0x84CDA8
 extern unsigned char aGuardobject[4];  // data: 0x827488
 extern unsigned char aGuiBlank[4];  // data: 0x81B4AC
 extern unsigned char aGuiBlueabbrev[4];  // data: 0x822B48
@@ -2495,6 +2516,7 @@ extern unsigned char aGuiCancel[4];  // data: 0x82635C
 extern unsigned char aGuiConfirmmode[4];  // data: 0x82A57C
 extern unsigned char aGuiCreatingcha[4];  // data: 0x84B8A8
 extern unsigned char aGuiDebug[4];  // data: 0x827AF8
+extern unsigned char aGuiDefault[4];  // data: 0x84A1AC
 extern unsigned char aGuiDeletemapme[4];  // data: 0x82BC5C
 extern unsigned char aGuiDeletemissi[4];  // data: 0x829FC8
 extern unsigned char aGuiGoldabbrev[4];  // data: 0x822B68
@@ -2510,6 +2532,7 @@ extern unsigned char aGuiNoserversav[4];  // data: 0x84B800
 extern unsigned char aGuiObserver[4];  // data: 0x8229EC
 extern unsigned char aGuiOrangeabbre[4];  // data: 0x822B24
 extern unsigned char aGuiPinkabbrev[4];  // data: 0x822AEC
+extern unsigned char aGuiPlaywdt[4];  // data: 0x848DD8
 extern unsigned char aGuiPurpleabbre[4];  // data: 0x822AFC
 extern unsigned char aGuiRandomex[4];  // data: 0x8229DC
 extern unsigned char aGuiRedabbrev[4];  // data: 0x822B58
@@ -2517,6 +2540,8 @@ extern unsigned char aGuiRestart[4];  // data: 0x8240E4
 extern unsigned char aGuiSavemapmenu[4];  // data: 0x82BC4C
 extern unsigned char aGuiSavemission[4];  // data: 0x829FB4
 extern unsigned char aGuiSkyblueabbr[4];  // data: 0x822B10
+extern unsigned char aGuiUserprofile[4];  // data: 0x84A194
+extern unsigned char aGuiWelcomeupda[4];  // data: 0x84A180
 extern unsigned char aGuiWwbrand[4];  // data: 0x82687C
 extern unsigned char aHealthnav[4];  // data: 0x827334
 extern unsigned char aHey[4];  // data: 0x81FFC4
@@ -2531,6 +2556,7 @@ extern unsigned char aHttpApiregiste_1[4];  // data: 0x84B500
 extern unsigned char aHttpPrivacypol[4];  // data: 0x84BA1C
 extern unsigned char aIdx[4];  // data: 0x815E80
 extern unsigned char aIncomemult[4];  // data: 0x8252B8
+extern unsigned char aInetmib1Dll[4];  // data: 0x84C9BC
 extern unsigned char aInfantrytab[4];  // data: 0x827048
 extern unsigned char aIntroWav[4];  // data: 0x82CFF4
 extern unsigned char aIsotem[4];  // data: 0x7E1BBC
@@ -2538,16 +2564,22 @@ extern unsigned char aIsotemp[4];  // data: 0x7E1BB2
 extern unsigned char aItemmax[4];  // data: 0x82418C
 extern unsigned char aLangruleIni[4];  // data: 0x826228
 extern unsigned char aLauncherNotifi[4];  // data: 0x81F484
+extern unsigned char aLayouts[4];  // data: 0x848DFC
 extern unsigned char aLdsc[4];  // data: 0x848CD0
 extern unsigned char aLevel[4];  // data: 0x81B0D4
 extern unsigned char aLoading[4];  // data: 0x82C1BC
 extern unsigned char aLob39[4];  // data: 0x84A22C
+extern unsigned char aLosingthreshol[4];  // data: 0x848E90
+extern unsigned char aMapcheckTxt[4];  // data: 0x82AF00
 extern unsigned char aMapenter[4];  // data: 0x848F00
 extern unsigned char aMapleave[4];  // data: 0x848F0C
 extern unsigned char aMapselmdIni[4];  // data: 0x830370
+extern unsigned char aMegalosingthre[4];  // data: 0x848E7C
+extern unsigned char aMegawinningthr[4];  // data: 0x848EA0
 extern unsigned char aMessages[4];  // data: 0x82652C
 extern unsigned char aMode_0[4];  // data: 0x84BA40
 extern unsigned char aModem[4];  // data: 0x82CECC
+extern unsigned char aMousecancel[4];  // data: 0x848F6C
 extern unsigned char aMpdebug[4];  // data: 0x82657C
 extern unsigned char aMpIllegalteam[4];  // data: 0x82FF0C
 extern unsigned char aMpNoattackers[4];  // data: 0x82FEE8
@@ -2593,6 +2625,7 @@ extern unsigned char aProgbar2Shp[4];  // data: 0x82BF18
 extern unsigned char aRa2tsL[4];  // data: 0x825CE0
 extern unsigned char aRa2tsS[4];  // data: 0x825CE8
 extern unsigned char aRandmapSed[4];  // data: 0x82BC30
+extern unsigned char aRegpath[4];  // data: 0x84A944
 extern unsigned char aRing1[4];  // data: 0x8182F0
 extern unsigned char aRmcacheMmp[4];  // data: 0x82BB0C
 extern unsigned char aRmglevellights[4];  // data: 0x82BD8C
@@ -2618,15 +2651,22 @@ extern unsigned char aSGame[4];  // data: 0x84D590
 extern unsigned char aShroudShp[4];  // data: 0x81CE18
 extern unsigned char aSidebardown[4];  // data: 0x82767C
 extern unsigned char aSidebarup[4];  // data: 0x82764C
+extern unsigned char aSnmpapiDll[4];  // data: 0x84C974
+extern unsigned char aSnmpextensioni[4];  // data: 0x84C944
+extern unsigned char aSnmpextensionq[4];  // data: 0x84C930
+extern unsigned char aSnmputilmemall[4];  // data: 0x84C91C
+extern unsigned char aSnmputilmemfre[4];  // data: 0x84C90C
 extern unsigned char aSnowambientlig[4];  // data: 0x82BD30
 extern unsigned char aSnoworepatchla[4];  // data: 0x82BC80
 extern unsigned char aSocket_1[4];  // data: 0x826588
 extern unsigned char aSorryYouCanOnl[4];  // data: 0x821C3C
 extern unsigned char aSounds[4];  // data: 0x8302CC
+extern unsigned char aSounds_0[4];  // data: 0x848E04
 extern unsigned char aSpeedaircraftm[4];  // data: 0x825338
 extern unsigned char aSpeedcontrol[4];  // data: 0x826564
 extern unsigned char aSpeedinfantrym[4];  // data: 0x82535C
 extern unsigned char aSpeedunitsmult[4];  // data: 0x82534C
+extern unsigned char aSpyplaneOverfl[4];  // data: 0x816D2C
 extern unsigned char aStart443900100[4];  // data: 0x84D638
 extern unsigned char aStart443900100_0[4];  // data: 0x84D5E4
 extern unsigned char aStartup[4];  // data: 0x8491E0
@@ -2654,6 +2694,8 @@ extern unsigned char aSun[4];  // data: 0x818704
 extern unsigned char aSyslistview32[4];  // data: 0x849E3C
 extern unsigned char aSystreeview32[4];  // data: 0x849E54
 extern unsigned char aTarget800[4];  // data: 0x849168
+extern unsigned char aTargetdividing[4];  // data: 0x848ECC
+extern unsigned char aTargetpalette[4];  // data: 0x848EE0
 extern unsigned char aTargetzoom[4];  // data: 0x849058
 extern unsigned char aTauntsTauam02i[4];  // data: 0x846770
 extern unsigned char aTech[4];  // data: 0x81C1C8
@@ -2678,8 +2720,12 @@ extern unsigned char aTotk[4];  // data: 0x848CF8
 extern unsigned char aTxtAboutToTryM[4];  // data: 0x82A290
 extern unsigned char aTxtAlliance[4];  // data: 0x827558
 extern unsigned char aTxtAllianceDes[4];  // data: 0x827568
+extern unsigned char aTxtApimissing[4];  // data: 0x84A930
+extern unsigned char aTxtApiwrongver[4];  // data: 0x84A94C
+extern unsigned char aTxtAtWar[4];  // data: 0x82481C
 extern unsigned char aTxtAwayLoading[4];  // data: 0x8262F0
 extern unsigned char aTxtAwayQuickma[4];  // data: 0x84C600
+extern unsigned char aTxtBack[4];  // data: 0x848DCC
 extern unsigned char aTxtBadChankey[4];  // data: 0x84B8D0
 extern unsigned char aTxtBannedtill[4];  // data: 0x84B234
 extern unsigned char aTxtBattleclanG[4];  // data: 0x84A710
@@ -2695,6 +2741,7 @@ extern unsigned char aTxtChancreateF[4];  // data: 0x84ACC8
 extern unsigned char aTxtChanUnban[4];  // data: 0x84B244
 extern unsigned char aTxtClanFilter[4];  // data: 0x84A44C
 extern unsigned char aTxtConnecting[4];  // data: 0x84D758
+extern unsigned char aTxtConnectingS[4];  // data: 0x84B430
 extern unsigned char aTxtCopyright[4];  // data: 0x826888
 extern unsigned char aTxtCreatedChan[4];  // data: 0x84ACB4
 extern unsigned char aTxtDefenseTabD[4];  // data: 0x827030
@@ -2714,6 +2761,7 @@ extern unsigned char aTxtGameRestart[4];  // data: 0x84ABB8
 extern unsigned char aTxtGameWasSave[4];  // data: 0x829FE0
 extern unsigned char aTxtGuard[4];  // data: 0x827494
 extern unsigned char aTxtGuardDesc[4];  // data: 0x8274A0
+extern unsigned char aTxtHasAllied[4];  // data: 0x8247F8
 extern unsigned char aTxtHowToReply[4];  // data: 0x84B00C
 extern unsigned char aTxtInfantryTab[4];  // data: 0x827054
 extern unsigned char aTxtInfantryTab_0[4];  // data: 0x827068
@@ -2736,6 +2784,7 @@ extern unsigned char aTxtLob6[4];  // data: 0x84A610
 extern unsigned char aTxtLob7[4];  // data: 0x84A604
 extern unsigned char aTxtLob8[4];  // data: 0x84A5F8
 extern unsigned char aTxtLoginUsed[4];  // data: 0x84AC90
+extern unsigned char aTxtLost[4];  // data: 0x824CA0
 extern unsigned char aTxtNextObjectD[4];  // data: 0x827260
 extern unsigned char aTxtNobrowser[4];  // data: 0x84A484
 extern unsigned char aTxtNoClan[4];  // data: 0x84CE18
@@ -2754,6 +2803,13 @@ extern unsigned char aTxtPasswordToo[4];  // data: 0x84B714
 extern unsigned char aTxtPasswordVer[4];  // data: 0x84B72C
 extern unsigned char aTxtPlaceBeacon[4];  // data: 0x8275E4
 extern unsigned char aTxtPlaceBeacon_0[4];  // data: 0x8275F8
+extern unsigned char aTxtPlayerDefea[4];  // data: 0x824C18
+extern unsigned char aTxtPlayerToolt[4];  // data: 0x84BAE0
+extern unsigned char aTxtPlayerToolt_0[4];  // data: 0x84BAC4
+extern unsigned char aTxtPlayerToolt_1[4];  // data: 0x84BAA8
+extern unsigned char aTxtPlayerToolt_2[4];  // data: 0x84BA8C
+extern unsigned char aTxtPlayerToolt_3[4];  // data: 0x84BA6C
+extern unsigned char aTxtPlayerToolt_4[4];  // data: 0x84BA50
 extern unsigned char aTxtPrevObject[4];  // data: 0x8273C0
 extern unsigned char aTxtPrevObjectD[4];  // data: 0x8273D0
 extern unsigned char aTxtRadarEvent[4];  // data: 0x827624
@@ -2767,6 +2823,8 @@ extern unsigned char aTxtSaveCampAva[4];  // data: 0x82DF50
 extern unsigned char aTxtSavingGame[4];  // data: 0x820DD4
 extern unsigned char aTxtScatter[4];  // data: 0x8274C0
 extern unsigned char aTxtScatterDesc[4];  // data: 0x8274CC
+extern unsigned char aTxtScenarioLos[4];  // data: 0x824CC0
+extern unsigned char aTxtScenarioWon[4];  // data: 0x824C6C
 extern unsigned char aTxtScrncap[4];  // data: 0x827A28
 extern unsigned char aTxtScrncapDesc[4];  // data: 0x827A34
 extern unsigned char aTxtSellMode[4];  // data: 0x8275C0
@@ -2798,6 +2856,7 @@ extern unsigned char aTxtUnablePlayW[4];  // data: 0x82C6AC
 extern unsigned char aTxtUnitTab[4];  // data: 0x827088
 extern unsigned char aTxtUnitTabDesc[4];  // data: 0x827098
 extern unsigned char aTxtUserKicked[4];  // data: 0x84B264
+extern unsigned char aTxtVictorious[4];  // data: 0x824C44
 extern unsigned char aTxtViewBookmar[4];  // data: 0x8276DC
 extern unsigned char aTxtViewBookmar_0[4];  // data: 0x8276F0
 extern unsigned char aTxtViewBookmar_1[4];  // data: 0x827710
@@ -2807,6 +2866,7 @@ extern unsigned char aTxtViewBookmar_4[4];  // data: 0x827758
 extern unsigned char aTxtViewBookmar_5[4];  // data: 0x827778
 extern unsigned char aTxtViewBookmar_6[4];  // data: 0x82778C
 extern unsigned char aTxtWolLoggingO[4];  // data: 0x84B3D8
+extern unsigned char aTxtYouleft[4];  // data: 0x84B380
 extern unsigned char aTxtYoureKicked[4];  // data: 0x84B274
 extern unsigned char aUnittab[4];  // data: 0x827080
 extern unsigned char aUnknownStatus[4];  // data: 0x84AAA0
@@ -2818,12 +2878,16 @@ extern unsigned char aView1[4];  // data: 0x8276D4
 extern unsigned char aView2[4];  // data: 0x827708
 extern unsigned char aView3[4];  // data: 0x82773C
 extern unsigned char aView4[4];  // data: 0x827770
+extern unsigned char aVoiceovers[4];  // data: 0x848E0C
 extern unsigned char aVqa[4];  // data: 0x8241A4
 extern unsigned char aW[4];  // data: 0x82AF10
 extern unsigned char aWaitingForMess[4];  // data: 0x81F460
+extern unsigned char aWdtAlliedheldt[4];  // data: 0x8490A8
 extern unsigned char aWdtBases[4];  // data: 0x8484B0
 extern unsigned char aWdtchoicemdIni[4];  // data: 0x84D864
 extern unsigned char aWdtCrates[4];  // data: 0x84843C
+extern unsigned char aWdtDefaultlong[4];  // data: 0x848D40
+extern unsigned char aWdtDefaultshor[4];  // data: 0x848D60
 extern unsigned char aWdtFactionsele_0[4];  // data: 0x84D7F8
 extern unsigned char aWdtFactionsele_1[4];  // data: 0x84D7D8
 extern unsigned char aWdtfsasmPcx[4];  // data: 0x84D844
@@ -2837,10 +2901,21 @@ extern unsigned char aWdtNoredeploym[4];  // data: 0x848448
 extern unsigned char aWdtNotshortgam[4];  // data: 0x848480
 extern unsigned char aWdtRedeployabl[4];  // data: 0x84845C
 extern unsigned char aWdtShortgame[4];  // data: 0x848494
+extern unsigned char aWdtSovietheldt[4];  // data: 0x8490C0
 extern unsigned char aWdtTechlevel[4];  // data: 0x8484BC
+extern unsigned char aWdtTerritorypr[4];  // data: 0x849064
+extern unsigned char aWdtTerritoryse_0[4];  // data: 0x84908C
+extern unsigned char aWdtTerritorysu[4];  // data: 0x849078
 extern unsigned char aWdtUnitcount[4];  // data: 0x848470
 extern unsigned char aWin[4];  // data: 0x826504
+extern unsigned char aWinningthresho[4];  // data: 0x848EB8
 extern unsigned char aWmInitdialog[4];  // data: 0x821CB0
+extern unsigned char aWolBuddydisabl[4];  // data: 0x84CDF0
+extern unsigned char aWolBuddyofflin[4];  // data: 0x84CDDC
+extern unsigned char aWolBuddyonline[4];  // data: 0x84CDB4
+extern unsigned char aWolBuddyplayin[4];  // data: 0x84CD90
+extern unsigned char aWolBuddyquickm[4];  // data: 0x84CDC4
+extern unsigned char aWolBuddyunknow[4];  // data: 0x84CD78
 extern unsigned char aWolChanneljoin[4];  // data: 0x84D074
 extern unsigned char aWolGamefull[4];  // data: 0x84CE08
 extern unsigned char aWolMatchattemp[4];  // data: 0x84D570
@@ -2860,9 +2935,11 @@ extern unsigned char aWolMatchwaitin[4];  // data: 0x84D5B4
 extern unsigned char aWolNomatchinga[4];  // data: 0x84D0AC
 extern unsigned char aWolResolutionl[4];  // data: 0x84B860
 extern unsigned char aWolResolutionl_0[4];  // data: 0x84B844
+extern unsigned char aWolWdtterritor[4];  // data: 0x848F54
 extern unsigned char aWrenchShp[4];  // data: 0x819404
 extern unsigned char aWurl[4];  // data: 0x848CE0
 extern unsigned char aYr1[4];  // data: 0x81FFC0
+extern unsigned char aZoomingtarget[4];  // data: 0x848EF0
 extern unsigned char aZotclot9[4];  // data: 0x84B698
 extern unsigned char BSurface_Vtable[4];  // data: 0x7E2070
 extern unsigned char CRTGlobal_B7819C[4];  // data: 0xB7819C
@@ -3524,6 +3601,7 @@ extern unsigned char DataGlobal_83D098[38328];  // data: 0x83D098
 extern unsigned char DataGlobal_83D0A4[38316];  // data: 0x83D0A4
 extern unsigned char DataGlobal_83D4AC[37284];  // data: 0x83D4AC
 extern unsigned char DataGlobal_83D4CC[37252];  // data: 0x83D4CC
+extern unsigned char DataGlobal_83D4F0[37216];  // data: 0x83D4F0
 extern unsigned char DataGlobal_83D4FC[];  // data: 0x83D4FC
 extern unsigned char DataGlobal_83D50C[37188];  // data: 0x83D50C
 extern unsigned char DataGlobal_83D518[37176];  // data: 0x83D518
@@ -5000,6 +5078,7 @@ extern unsigned char DataGlobal_89A2F0[4];  // data: 0x89A2F0
 extern unsigned char DataGlobal_89A2F2[4];  // data: 0x89A2F2
 extern unsigned char DataGlobal_89A2F8[4];  // data: 0x89A2F8
 extern unsigned char DataGlobal_89A300[4];  // data: 0x89A300
+extern unsigned char DataGlobal_89A30C;  // data: 0x89A30C
 extern unsigned char DataGlobal_89A324[4];  // data: 0x89A324
 extern unsigned char DataGlobal_89C268[4];  // data: 0x89C268
 extern unsigned char DataGlobal_89C26C[4];  // data: 0x89C26C
@@ -11650,6 +11729,7 @@ extern unsigned char vt_VectorClass_AirstrikeClass[4];  // data: 0x7E295C
 extern unsigned char vt_VectorClass_AITriggerTypeClass[4];  // data: 0x7E9B84
 extern unsigned char vt_VectorClass_AlphaLightingRemapClass[4];  // data: 0x7E2AF0
 extern unsigned char vt_VectorClass_AlphaShapeClass[4];  // data: 0x7E3258
+extern unsigned char vt_VectorClass_AngerStruct[4];  // data: 0x7EA984
 extern unsigned char vt_VectorClass_AnimClass[4];  // data: 0x7E9F44
 extern unsigned char vt_VectorClass_AnimClass_const[4];  // data: 0x7EBFEC
 extern unsigned char vt_VectorClass_AnimTypeClass[4];  // data: 0x7EA304
@@ -11700,6 +11780,7 @@ extern unsigned char vt_VectorClass_HashObject_HashString_SchemeNode[4];  // dat
 extern unsigned char vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass[4];  // data: 0x7F044C
 extern unsigned char vt_VectorClass_HouseClass[4];  // data: 0x7E9F04
 extern unsigned char vt_VectorClass_HouseClass_BuildChoiceClass[4];  // data: 0x7EA7D4
+extern unsigned char vt_VectorClass_HouseClass_StartingTechnoStruct[4];  // data: 0x7EA964
 extern unsigned char vt_VectorClass_HouseTypeClass[4];  // data: 0x7EA084
 extern unsigned char vt_VectorClass_HSVClass[4];  // data: 0x7EF7F0
 extern unsigned char vt_VectorClass_HWND[4];  // data: 0x7EECAC
@@ -11759,6 +11840,7 @@ extern unsigned char vt_VectorClass_rc_ptr_WorldDominationTour_Conflict[4];  // 
 extern unsigned char vt_VectorClass_rc_ptr_WorldDominationTour_GameOption[4];  // data: 0x7F6FF4
 extern unsigned char vt_VectorClass_rc_ptr_WorldDominationTour_Territory[4];  // data: 0x7F7184
 extern unsigned char vt_VectorClass_RGBClass[4];  // data: 0x7E4E38
+extern unsigned char vt_VectorClass_ScoutStruct[4];  // data: 0x7EA9A4
 extern unsigned char vt_VectorClass_ScriptClass[4];  // data: 0x7E1B44
 extern unsigned char vt_VectorClass_ScriptTypeClass[4];  // data: 0x7EA144
 extern unsigned char vt_VectorClass_ShadowControlClass[4];  // data: 0x7F42FC
@@ -11771,6 +11853,7 @@ extern unsigned char vt_VectorClass_SmudgeTypeClass_const[4];  // data: 0x7F0D7C
 extern unsigned char vt_VectorClass_SpawnManagerClass[4];  // data: 0x7F3604
 extern unsigned char vt_VectorClass_SpawnManagerClass_SpawnControl[4];  // data: 0x7F36D4
 extern unsigned char vt_VectorClass_SpotLightClass[4];  // data: 0x7EF6DC
+extern unsigned char vt_VectorClass_SubTitle[4];  // data: 0x7F3F8C
 extern unsigned char vt_VectorClass_SubzoneConnectionStruct[4];  // data: 0x7E177C
 extern unsigned char vt_VectorClass_SubzoneTrackingStruct[4];  // data: 0x7ED500
 extern unsigned char vt_VectorClass_SuperClass[4];  // data: 0x7EA504
@@ -14618,3 +14701,4 @@ extern void* vt_WorldDominationTour_State;  // data: 0x7F7314
 extern void* vt_WorldDominationTour_Territory;  // data: 0x7F7334
 extern void* vt_WorldDominationTour_Voices_Anim;  // data: 0x7F7354
 extern void* vt_WWMouseClass;  // data: 0x7F7B2C
+extern wchar_t DataGlobal_AC4D30[32904];  // data: 0xAC4D30

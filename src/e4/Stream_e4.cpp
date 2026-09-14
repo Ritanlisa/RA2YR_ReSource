@@ -28,16 +28,6 @@ int __thiscall Stream::FlushAndReset(_DWORD *this)
 }
 }
 
-// 0x45A050
-int Stream::GetChecked()
-{
-{
-    if ( !*(int *)this )
-    WinAPI::Wrapper(-2147467261);
-    return *(int *)this;
-}
-}
-
 // 0x49FB70
 int Stream::ReadIntArray(int a2)
 {
@@ -241,5 +231,15 @@ LABEL_14:
   *(this + 1361) = 0; /*0x7594fa*/
   *(_DWORD *)this = 0; /*0x759500*/
   return this; /*0x7594b6*/
+}
+}
+
+// 0x45A050
+int Stream::GetChecked()
+{
+{
+    if ( !*(int *)this )
+    WinAPI::Wrapper(-2147467261);
+    return *(int *)this;
 }
 }

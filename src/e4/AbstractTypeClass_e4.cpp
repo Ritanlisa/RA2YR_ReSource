@@ -128,14 +128,6 @@ int __thiscall AbstractTypeClass_Dtor(_DWORD *this)
 }
 }
 
-// 0x410A40
-BOOL AbstractTypeClass::NameEquals(void * a2)
-{
-{
-    return _strcmpi(a2, (const void *)(this + 36)) == 0;
-}
-}
-
 // 0x410A60
 char AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
 {
@@ -200,20 +192,6 @@ char __thiscall AbstractTypeClass::LoadFromINI(int this, AbstractTypeClass *aP1)
 }
 }
 
-// 0x410B90
-char AbstractTypeClass::WriteINI(CCINIClass * aP1)
-{
-{
-    INIClass *v3;
-    v3 = (INIClass *)(this + 36);
-    INIClass::ClearSection((int)aP1, (INIClass *)(this + 36), 0);
-    INIClass::SetString(aP1->__pad_0, v3, (INIClass *)&Format.fallRate, (INIClass *)(this + 100));
-    if ( this->UINameLabel )
-    INIClass::SetString(aP1->__pad_0, v3, (INIClass *)&Format.objectTypeFlags, (INIClass *)(this + 61));
-    return 1;
-}
-}
-
 // 0x410BE0
 int AbstractTypeClass::ProcessPower(AbstractClass * aP1)
 {
@@ -255,6 +233,28 @@ AbstractTypeClass *__thiscall AbstractTypeClass::ddtor(_DWORD *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x410ca4*/
     __3_YAXPAX_Z(this); /*0x410ca7*/
   return (AbstractTypeClass *)this; /*0x410cb1*/
+}
+}
+
+// 0x410A40
+BOOL AbstractTypeClass::NameEquals(void * a2)
+{
+{
+    return _strcmpi(a2, (const void *)(this + 36)) == 0;
+}
+}
+
+// 0x410B90
+char AbstractTypeClass::WriteINI(CCINIClass * aP1)
+{
+{
+    INIClass *v3;
+    v3 = (INIClass *)(this + 36);
+    INIClass::ClearSection((int)aP1, (INIClass *)(this + 36), 0);
+    INIClass::SetString(aP1->__pad_0, v3, (INIClass *)&Format.fallRate, (INIClass *)(this + 100));
+    if ( this->UINameLabel )
+    INIClass::SetString(aP1->__pad_0, v3, (INIClass *)&Format.objectTypeFlags, (INIClass *)(this + 61));
+    return 1;
 }
 }
 

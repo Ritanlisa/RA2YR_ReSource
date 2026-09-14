@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_5785F0_e4.hpp"
 #include "e4/classes/E4Recv_578B70_e4.hpp"
 #include "e4/classes/E4Recv_578C50_e4.hpp"
 

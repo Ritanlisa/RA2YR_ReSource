@@ -3,63 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Vector_e4.hpp"
 
-// 0x41C2E0
-namespace gamemd {
-unsigned short * Vector::ToFacingMath(unsigned short * a2)
-{
-{
-    double v3;
-    double v5;
-    v5 = Math::Sqrt(*(void**)this * *(void**)(this) + this->Items *(void**)this->Items);
-    v3 = Math::CalcAngle(this->Capacity, v5);
-    *a2 = Math::RoundToInt((v3 - 1.570796326794897) * -10430.06004058427);
-    return a2;
-}
-}
-} // namespace gamemd
-
-// 0x43AE50
-namespace gamemd {
-void Vector::Clear()
-{
-{
-    if ( (unsigned char)this->Vector_field_0x8 )
-    __3_YAXPAX_Z(*(void **)this);
-    *(int *)this = 0;
-    this->Vector_field_0x4 = 0;
-    this->Capacity = 0;
-}
-}
-} // namespace gamemd
-
-// 0x45AE10
-namespace gamemd {
-char Vector::RemoveAt(AbstractClass * aP1)
-{
-{
-    int v2;
-    AbstractClass *v3;
-    int v4;
-    v2 = this->Count;
-    v3 = aP1;
-    if ( (int)aP1 >= v2 )
-    return 0;
-    v4 = v2 - 1;
-    this->Count = v4;
-    if ( (int)aP1 < v4 )
-  {
-    do
-    {
-    v3 = (AbstractClass *)((char *)(v3) + 1);
-    *(int *)(this->Items + 4 * (int)v3 - 4) = *(int *)(this->Items + 4 * (int)v3);
-    }
-    while ( (int)v3 < this->Count );
-  }
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x4C1B50
 namespace gamemd {
 double Math_Vector2D_Magnitude()
@@ -73,58 +16,6 @@ double __thiscall Math_Vector2D_Magnitude(int *this)
   Math::RoundToInt(result); /*0x4c1b71*/
   return result; /*0x4c1b6e*/
 }
-}
-} // namespace gamemd
-
-// 0x4D2E40
-namespace gamemd {
-char Vector::ReallocDynamic(int a2)
-{
-{
-    char *v3;
-    int i;
-    int v5;
-    int *v6;
-    int v7;
-    if ( a2 < 0 )
-    return 0;
-    v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->Vector_field_0x8));
-    if ( !v3 )
-    return 0;
-    for ( i = 0; i < this->Vector_field_0x4; *(int *)&v3[v5 + 4] = v6[1] )
-  {
-    v5 = 8 * i;
-    v6 = (int *)(*(int *)(this) + 8 * i++);
-    *(int *)&v3[v5] = *v6;
-  }
-    __3_YAXPAX_Z(*(void **)this);
-    v7 = a2 + this->Vector_field_0x8;
-    *(int *)this = v3;
-    this->Vector_field_0x8 = v7;
-    this->Vector_field_0x10 = 0;
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x4E0550
-namespace gamemd {
-int Vector::Find(unsigned int * a2)
-{
-{
-    int v2;
-    int result;
-    int *i;
-    v2 = this->Count;
-    result = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = (int *)this->Items; *i != *a2; ++i )
-  {
-    if ( ++result >= v2 )
-    return -1;
-  }
-    return result;
 }
 } // namespace gamemd
 
@@ -193,6 +84,115 @@ void __thiscall Vector_Cleanup2(int this)
   *(_BYTE *)(this + 13) = 0; /*0x67abfe*/
   this->Vector_field_0x8 = 0; /*0x67ac01*/
 }
+}
+} // namespace gamemd
+
+// 0x41C2E0
+namespace gamemd {
+unsigned short * Vector::ToFacingMath(unsigned short * a2)
+{
+{
+    double v3;
+    double v5;
+    v5 = Math::Sqrt(*(void**)this * *(void**)(this) + this->Items *(void**)this->Items);
+    v3 = Math::CalcAngle(this->Capacity, v5);
+    *a2 = Math::RoundToInt((v3 - 1.570796326794897) * -10430.06004058427);
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x43AE50
+namespace gamemd {
+void Vector::Clear()
+{
+{
+    if ( (unsigned char)this->Vector_field_0x8 )
+    __3_YAXPAX_Z(*(void **)this);
+    *(int *)this = 0;
+    this->Vector_field_0x4 = 0;
+    this->Capacity = 0;
+}
+}
+} // namespace gamemd
+
+// 0x45AE10
+namespace gamemd {
+char Vector::RemoveAt(AbstractClass * aP1)
+{
+{
+    int v2;
+    AbstractClass *v3;
+    int v4;
+    v2 = this->Count;
+    v3 = aP1;
+    if ( (int)aP1 >= v2 )
+    return 0;
+    v4 = v2 - 1;
+    this->Count = v4;
+    if ( (int)aP1 < v4 )
+  {
+    do
+    {
+    v3 = (AbstractClass *)((char *)(v3) + 1);
+    *(int *)(this->Items + 4 * (int)v3 - 4) = *(int *)(this->Items + 4 * (int)v3);
+    }
+    while ( (int)v3 < this->Count );
+  }
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x4D2E40
+namespace gamemd {
+char Vector::ReallocDynamic(int a2)
+{
+{
+    char *v3;
+    int i;
+    int v5;
+    int *v6;
+    int v7;
+    if ( a2 < 0 )
+    return 0;
+    v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->Vector_field_0x8));
+    if ( !v3 )
+    return 0;
+    for ( i = 0; i < this->Vector_field_0x4; *(int *)&v3[v5 + 4] = v6[1] )
+  {
+    v5 = 8 * i;
+    v6 = (int *)(*(int *)(this) + 8 * i++);
+    *(int *)&v3[v5] = *v6;
+  }
+    __3_YAXPAX_Z(*(void **)this);
+    v7 = a2 + this->Vector_field_0x8;
+    *(int *)this = v3;
+    this->Vector_field_0x8 = v7;
+    this->Vector_field_0x10 = 0;
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x4E0550
+namespace gamemd {
+int Vector::Find(unsigned int * a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
 }
 } // namespace gamemd
 

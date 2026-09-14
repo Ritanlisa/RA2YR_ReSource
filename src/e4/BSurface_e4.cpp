@@ -76,40 +76,6 @@ _DWORD *__thiscall BSurface_Constructor(_DWORD *this, int a2, int a3, int a4, in
 }
 } // namespace gamemd
 
-// 0x411630
-namespace gamemd {
-int BSurface::GetBytesPerPixel()
-{
-{
-    return this->BytesPerPixel;
-}
-}
-} // namespace gamemd
-
-// 0x411640
-namespace gamemd {
-int BSurface::GetPitch()
-{
-{
-    return this->BytesPerPixel *(void**)this->GetWidth();
-}
-}
-} // namespace gamemd
-
-// 0x411650
-namespace gamemd {
-BSurface * BSurface::ScalarDtor(char a2)
-{
-{
-    Vector::Clear((int)(this + 20));
-    *(int *)this = &Surface_Vtable;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BSurface *)this;
-}
-}
-} // namespace gamemd
-
 // 0x7B8C60
 namespace gamemd {
 bool BSurface::CreateTripleBuffer()
@@ -326,3 +292,37 @@ char BSurface::Stub(int a1, int a2)
 {
 return 1;
 }
+
+// 0x411630
+namespace gamemd {
+int BSurface::GetBytesPerPixel()
+{
+{
+    return this->BytesPerPixel;
+}
+}
+} // namespace gamemd
+
+// 0x411640
+namespace gamemd {
+int BSurface::GetPitch()
+{
+{
+    return this->BytesPerPixel *(void**)this->GetWidth();
+}
+}
+} // namespace gamemd
+
+// 0x411650
+namespace gamemd {
+BSurface * BSurface::ScalarDtor(char a2)
+{
+{
+    Vector::Clear((int)(this + 20));
+    *(int *)this = &Surface_Vtable;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BSurface *)this;
+}
+}
+} // namespace gamemd

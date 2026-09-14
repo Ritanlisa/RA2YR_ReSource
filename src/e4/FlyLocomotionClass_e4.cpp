@@ -193,19 +193,6 @@ LABEL_45:
 }
 }
 
-// 0x4D03A0
-FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
-{
-{
-    *(void**)this = vt_FlyLocomotionClass;
-    *(this + 1) = &vt_FlyLocomotionClass;
-    LocomotionClass::Construct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (FlyLocomotionClass *)this;
-}
-}
-
 // 0x4CFC80
 int FlyLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
@@ -222,4 +209,17 @@ int FlyLocomotionClass::ddtor(int a1, unsigned int * a2)
 int FlyLocomotionClass::StubReturn96()
 {
 return 96;
+}
+
+// 0x4D03A0
+FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
+{
+{
+    *(void**)this = vt_FlyLocomotionClass;
+    *(this + 1) = &vt_FlyLocomotionClass;
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (FlyLocomotionClass *)this;
+}
 }

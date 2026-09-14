@@ -2,50 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x451690
-namespace gamemd {
-char BuildingClass::ClearSuperWeaponAnim()
-{
-{
-    char result;
-    int v3;
-    bool v4;
-    int v5;
-    char v6;
-    result = this->UpgradeLevel;
-    if ( result )
-  {
-    v3 = result;
-    v4 = 0;
-    v5 = *(int *)(this + 4 * result + 1512);
-    if ( v5 && (v4 = *(int *)(v5 + 5872) != -1, *(char *)(v5 + 3233)) )
-    {
-    BuildingClass::ClearAnims((int *)this, (TechnoClass *)9);
-    *(int *)(this + 4 *(void**)this->UpgradeLevel + 1512) = 0;
-    this->UpgradeLevel = 0;
-    this->SuperWeaponToken = -1;
-    if ( v4 )
-      {
-    SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->focus);
-    return 1;
-      }
-    }
-    else
-    {
-    BuildingClass::ClearAnims((int *)this, (TechnoClass *)(v3 - 1));
-    v6 = this->UpgradeLevel - 1;
-    this->UpgradeLevel = v6;
-    *(int *)(this + 4 * v6 + 1516) = 0;
-    if ( v4 )
-    SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->focus);
-    }
-    return 1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x453E20
 namespace gamemd {
 int BuildingClass::LoadFromStream()
@@ -280,27 +236,6 @@ int __thiscall BuildingClass::AssignDestination_SyncLog(#377 *this)
   }
   return result; /*0x455d93*/
 }
-}
-} // namespace gamemd
-
-// 0x45A610
-namespace gamemd {
-int BuildingClass::FindInPointerArray(unsigned int * a2)
-{
-{
-    int v2;
-    int result;
-    int *i;
-    v2 = this->uniqueId;
-    result = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = (int *)this->vtable1; *i != *a2; ++i )
-  {
-    if ( ++result >= v2 )
-    return -1;
-  }
-    return result;
 }
 } // namespace gamemd
 
@@ -675,6 +610,50 @@ int BuildingClass_ProcessSell()
 }
 } // namespace gamemd
 
+// 0x451690
+namespace gamemd {
+char BuildingClass::ClearSuperWeaponAnim()
+{
+{
+    char result;
+    int v3;
+    bool v4;
+    int v5;
+    char v6;
+    result = this->UpgradeLevel;
+    if ( result )
+  {
+    v3 = result;
+    v4 = 0;
+    v5 = *(int *)(this + 4 * result + 1512);
+    if ( v5 && (v4 = *(int *)(v5 + 5872) != -1, *(char *)(v5 + 3233)) )
+    {
+    BuildingClass::ClearAnims((int *)this, (TechnoClass *)9);
+    *(int *)(this + 4 *(void**)this->UpgradeLevel + 1512) = 0;
+    this->UpgradeLevel = 0;
+    this->SuperWeaponToken = -1;
+    if ( v4 )
+      {
+    SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->focus);
+    return 1;
+      }
+    }
+    else
+    {
+    BuildingClass::ClearAnims((int *)this, (TechnoClass *)(v3 - 1));
+    v6 = this->UpgradeLevel - 1;
+    this->UpgradeLevel = v6;
+    *(int *)(this + 4 * v6 + 1516) = 0;
+    if ( v4 )
+    SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->focus);
+    }
+    return 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x459DB0
 namespace gamemd {
 TechnoClass * BuildingClass::ClearLimpetCheck()
@@ -692,6 +671,27 @@ namespace gamemd {
 int BuildingClass::Mission_Guard()
 {
 return 1824;
+}
+} // namespace gamemd
+
+// 0x45A610
+namespace gamemd {
+int BuildingClass::FindInPointerArray(unsigned int * a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->uniqueId;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->vtable1; *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
 }
 } // namespace gamemd
 

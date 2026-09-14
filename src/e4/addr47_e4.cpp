@@ -24,7 +24,7 @@ void __thiscall sub_470C30(CampaignEndScoreClass *this)
 
 // 0x472A80
 namespace gamemd {
-void CaptureManagerClass::vt_03_()
+void CaptureManagerClass__vt_03_()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall CaptureManagerClass::vt_03_(int this)
@@ -46,76 +46,12 @@ void __thiscall CaptureManagerClass::vt_03_(int this)
 
 // 0x472AD0
 namespace gamemd {
-int CaptureManagerClass::vt_06_(int a2)
+int CaptureManagerClass__vt_06_(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CaptureManagerClass::vt_06_(_DWORD *this, int a2)
 {
   return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x472ada*/
-}
-}
-} // namespace gamemd
-
-// 0x474540
-namespace gamemd {
-CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
-{
-{
-    CCINIClass *v5;
-    CCINIClass v6;
-    if ( !a3 )
-    return (CCINIClass *)INIClass::WriteToString((int *)this, aP1);
-    INIClass::ClearSection(this, &g_INI_Key_Digest, 0);
-    memset(v6.headNode, 0, 9);
-    v6.unknown38 = 0;
-    v6.INIClass_field_3C = 0;
-    *(int *)&v6.__pad_20[4] = 1732584193;
-    *(int *)&v6.__pad_20[8] = -271733879;
-    v6.INIClass_field_2C = -1732584194;
-    v6.unknown30 = 271733878;
-    *(int *)&v6.needsSave_flag = -1009589776;
-    *(int *)v6.__pad_0 = &vt_SHAPipe;
-    INIClass::WriteToString((int *)this, &v6);
-    SHA1::ComputeThunk(&v6, (ObjectClass *)(this + 65));
-    this->M64 = 1;
-    Pipe::Dtor((int *)v6.__pad_0);
-    INIClass::ReadBase64Data( (char *)this, (unsigned char *)&g_INI_Key_Digest, (ObjectClass *)(this + 65), (ObjectClass *)0x14);
-    v5 = (CCINIClass *)INIClass::WriteToString((int *)this, aP1);
-    INIClass::ClearSection(this, &g_INI_Key_Digest, 0);
-    return v5;
-}
-}
-} // namespace gamemd
-
-// 0x476E20
-namespace gamemd {
-int E4Recv_476E20::sub_476E20()
-{
-{
-    int v3[3];
-    char v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    int v11;
-    v3[1] = 0;
-    v3[2] = 0;
-    v4 = 0;
-    v10 = 0;
-    v11 = 0;
-    v5 = 1732584193;
-    v6 = -271733879;
-    v7 = -1732584194;
-    v8 = 271733878;
-    v9 = -1009589776;
-    v3[0] = (int)&vt_SHAPipe;
-    INIClass::WriteToString((int *)this, (int)v3);
-    SHA1::ComputeThunk(v3, (char *)(this + 65));
-    this->M64 = 1;
-    return Pipe::Dtor(v3);
 }
 }
 } // namespace gamemd
@@ -557,6 +493,8 @@ LABEL_13:
 // 0x47A080
 namespace ra2 {
 namespace game {
+void ObjectClass::sub_47A080(DWORD a2)
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_47A080(ObjectClass *this, DWORD a2)
 {
@@ -596,6 +534,7 @@ LABEL_8:
 LABEL_9:
   DriveControlCD(this, FileA, a2); /*0x47a18e*/
   CloseHandle(FileA); /*0x47a19b*/
+}
 }
 } // namespace game
 } // namespace ra2
@@ -638,22 +577,6 @@ LABEL_5:
   if ( (InBuffer[6] & 1) != 0 ) /*0x47a9aa*/
     goto LABEL_5; /*0x47a9aa*/
   return 1; /*0x47a9b7*/
-}
-}
-} // namespace gamemd
-
-// 0x47AA00
-namespace gamemd {
-CDFileClass * E4Recv_47AA00::sub_47AA00(char ** a2)
-{
-{
-    char *v3;
-    BufferIOFileClass::Constructor(this);
-    this->M84 = 0;
-    *(int *)this = &DataGlobal_7E1668;
-    v3 = String::GetOrEmpty_Alt(a2);
-    FileClass::OpenWithCDSearch(this, (IUnknown *)v3);
-    return (CDFileClass *)this;
 }
 }
 } // namespace gamemd
@@ -2226,12 +2149,76 @@ int sub_4741D0()
 }
 } // namespace gamemd
 
+// 0x474540
+namespace gamemd {
+CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
+{
+{
+    CCINIClass *v5;
+    CCINIClass v6;
+    if ( !a3 )
+    return (CCINIClass *)INIClass::WriteToString((int *)this, aP1);
+    INIClass::ClearSection(this, &g_INI_Key_Digest, 0);
+    memset(v6.headNode, 0, 9);
+    v6.unknown38 = 0;
+    v6.INIClass_field_3C = 0;
+    *(int *)&v6.__pad_20[4] = 1732584193;
+    *(int *)&v6.__pad_20[8] = -271733879;
+    v6.INIClass_field_2C = -1732584194;
+    v6.unknown30 = 271733878;
+    *(int *)&v6.needsSave_flag = -1009589776;
+    *(int *)v6.__pad_0 = &vt_SHAPipe;
+    INIClass::WriteToString((int *)this, &v6);
+    SHA1::ComputeThunk(&v6, (ObjectClass *)(this + 65));
+    this->M64 = 1;
+    Pipe::Dtor((int *)v6.__pad_0);
+    INIClass::ReadBase64Data( (char *)this, (unsigned char *)&g_INI_Key_Digest, (ObjectClass *)(this + 65), (ObjectClass *)0x14);
+    v5 = (CCINIClass *)INIClass::WriteToString((int *)this, aP1);
+    INIClass::ClearSection(this, &g_INI_Key_Digest, 0);
+    return v5;
+}
+}
+} // namespace gamemd
+
 // 0x474660
 namespace gamemd {
 char E4Recv_474660::sub_474660(unsigned char * Block, char * a3, int a4)
 {
 {
     return INIClass::SetDouble(this, Block, a3, (double)a4 * 0.00390625);
+}
+}
+} // namespace gamemd
+
+// 0x476E20
+namespace gamemd {
+int E4Recv_476E20::sub_476E20()
+{
+{
+    int v3[3];
+    char v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    int v11;
+    v3[1] = 0;
+    v3[2] = 0;
+    v4 = 0;
+    v10 = 0;
+    v11 = 0;
+    v5 = 1732584193;
+    v6 = -271733879;
+    v7 = -1732584194;
+    v8 = 271733878;
+    v9 = -1009589776;
+    v3[0] = (int)&vt_SHAPipe;
+    INIClass::WriteToString((int *)this, (int)v3);
+    SHA1::ComputeThunk(v3, (char *)(this + 65));
+    this->M64 = 1;
+    return Pipe::Dtor(v3);
 }
 }
 } // namespace gamemd
@@ -2656,6 +2643,22 @@ bool sub_47A620(HANDLE hDevice, DWORD BytesReturned)
     return 0;
   }
     return (InBuffer[6] & 1) == 0;
+}
+}
+} // namespace gamemd
+
+// 0x47AA00
+namespace gamemd {
+CDFileClass * E4Recv_47AA00::sub_47AA00(char ** a2)
+{
+{
+    char *v3;
+    BufferIOFileClass::Constructor(this);
+    this->M84 = 0;
+    *(int *)this = &DataGlobal_7E1668;
+    v3 = String::GetOrEmpty_Alt(a2);
+    FileClass::OpenWithCDSearch(this, (IUnknown *)v3);
+    return (CDFileClass *)this;
 }
 }
 } // namespace gamemd

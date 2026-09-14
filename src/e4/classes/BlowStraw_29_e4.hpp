@@ -4,7 +4,7 @@
 namespace gamemd {
 struct BlowStraw_29 {
     void* vfptr;  // minimal E2 declaration
-    TabClass * Read(char a2);  // 0x5BE9E0
     int Seek(TabClass * aP1, unsigned int * a2);  // 0x6D0680
+    TabClass * Read(char a2);  // 0x5BE9E0
 };
 } // namespace gamemd

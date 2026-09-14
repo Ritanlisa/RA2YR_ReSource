@@ -743,6 +743,8 @@ LABEL_33:
 // 0x472640
 namespace ra2 {
 namespace game {
+char CaptureManagerClass::NeedsToDrawLinks()
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall CaptureManagerClass::NeedsToDrawLinks(_DWORD *this)
 {
@@ -786,6 +788,8 @@ LABEL_12:
   }
   return 0; /*0x472650*/
 }
+}
+} // namespace game
 } // namespace ra2
 
 // 0x4726C0
@@ -1126,32 +1130,6 @@ void __thiscall CaptureManagerClass::sub_472C30(int this)
 } // namespace game
 } // namespace ra2
 
-// 0x472C60
-namespace ra2 {
-namespace game {
-int CaptureManagerClass::IndexOf(unsigned int * a2)
-{
-{
-    int result;
-    int v3;
-    int *i;
-    if ( !(unsigned char)this->vtable3 )
-    return 0;
-    v3 = this->vtable2;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = *(int **)(this + 4); *i != *a2; ++i )
-  {
-    if ( ++result >= v3 )
-    return -1;
-  }
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x472CC0
 namespace ra2 {
 namespace game {
@@ -1227,54 +1205,6 @@ int __thiscall CaptureManagerClass::_vt04(int *this, _DWORD *a2)
       return -1; /*0x472d8d*/
   }
   return result; /*0x472d92*/
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x473000
-namespace ra2 {
-namespace game {
-VectorClass * CaptureManagerClass::Constructor_VectorClass_ControlNode___(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_ControlNode;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x473050
-namespace ra2 {
-namespace game {
-DynamicVector * CaptureManagerClass::QueryInterface(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_ControlNode;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
 }
 }
 } // namespace game
@@ -1406,6 +1336,32 @@ unsigned int CaptureManagerClass::LoadTypeData(int a2)
 } // namespace game
 } // namespace ra2
 
+// 0x472C60
+namespace ra2 {
+namespace game {
+int CaptureManagerClass::IndexOf(unsigned int * a2)
+{
+{
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->vtable3 )
+    return 0;
+    v3 = this->vtable2;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
+}
+}
+} // namespace game
+} // namespace ra2
+
 // 0x472CA0
 namespace ra2 {
 namespace game {
@@ -1416,6 +1372,54 @@ unsigned int CaptureManagerClass::PointerToIndex(int a2)
     return (unsigned int)(a2 - this->vtable1) >> 2;
     else
     return 0;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x473000
+namespace ra2 {
+namespace game {
+VectorClass * CaptureManagerClass::Constructor_VectorClass_ControlNode___(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_ControlNode;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x473050
+namespace ra2 {
+namespace game {
+DynamicVector * CaptureManagerClass::QueryInterface(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_ControlNode;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace game

@@ -2,18 +2,9 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x5CB3F0
-char UnholyAlliance::Read()
-{
-{
-    Bases = 1;
-    return 1;
-}
-}
-
 // 0x5CB440
 namespace gamemd {
-int UnholyAlliance::QueryInterface(char a2)
+int UnholyAlliance_GetResult()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -31,6 +22,15 @@ UnholyAlliance *__thiscall UnholyAlliance::QueryInterface(_DWORD *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
     __3_YAXPAX_Z(this); /*0x5cb556*/
   return (UnholyAlliance *)this; /*0x5cb560*/
+}
+}
+
+// 0x5CB3F0
+char UnholyAlliance::Read()
+{
+{
+    Bases = 1;
+    return 1;
 }
 }
 

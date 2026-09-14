@@ -248,47 +248,6 @@ LABEL_7:
 }
 } // namespace gamemd
 
-// 0x4D4FC0
-namespace gamemd {
-unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
-{
-{
-    int v2;
-    short *v3;
-    int *v4;
-    int *v5;
-    int *v6;
-    int v7;
-    int v9;
-    int v10;
-    char v11[4];
-    v2 = 0;
-    while ( 1 )
-  {
-    v3 = (short *)this->Vf440(v11);
-    LOWORD(v9) = LOWORD(Direction_X_Offsets[v2 & 7]) + *v3;
-    HIWORD(v9) = v3[1] + HIWORD(Direction_X_Offsets[v2 & 7]);
-    v10 = v9;
-    v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v10);
-    v5 = Cell::IsBridge(v4);
-    v6 = v5;
-    if ( v5 )
-    {
-    if ( *(char *)(v5[328] + 5493) )
-      {
-    v7 = (*(int (__thiscall **)(int *))(*v5 + 60))(v5);
-    if ( v7 == this->Vf60() )
-    break;
-      }
-    }
-    if ( ++v2 >= 8 )
-    return 0;
-  }
-    return v6;
-}
-}
-} // namespace gamemd
-
 // 0x4DB8A0
 namespace gamemd {
 LPVOID E4Recv_4DB8A0::sub_4DB8A0()
@@ -782,6 +741,47 @@ void sub_4D31A0()
   }
     DataGlobal_8B3DCD = 0;
     DataGlobal_8B3DC8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4D4FC0
+namespace gamemd {
+unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
+{
+{
+    int v2;
+    short *v3;
+    int *v4;
+    int *v5;
+    int *v6;
+    int v7;
+    int v9;
+    int v10;
+    char v11[4];
+    v2 = 0;
+    while ( 1 )
+  {
+    v3 = (short *)this->Vf440(v11);
+    LOWORD(v9) = LOWORD(Direction_X_Offsets[v2 & 7]) + *v3;
+    HIWORD(v9) = v3[1] + HIWORD(Direction_X_Offsets[v2 & 7]);
+    v10 = v9;
+    v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v10);
+    v5 = Cell::IsBridge(v4);
+    v6 = v5;
+    if ( v5 )
+    {
+    if ( *(char *)(v5[328] + 5493) )
+      {
+    v7 = (*(int (__thiscall **)(int *))(*v5 + 60))(v5);
+    if ( v7 == this->Vf60() )
+    break;
+      }
+    }
+    if ( ++v2 >= 8 )
+    return 0;
+  }
+    return v6;
 }
 }
 } // namespace gamemd

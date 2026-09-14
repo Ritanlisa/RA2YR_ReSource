@@ -664,29 +664,6 @@ int __thiscall sub_4C3DD0(int *this, int a2)
 }
 } // namespace gamemd
 
-// 0x4C4FC0
-namespace gamemd {
-int E4Recv_4C4FC0::sub_4C4FC0(int a2)
-{
-{
-    int result;
-    int v4;
-    int v5;
-    int v6;
-    result = Power::TimerProcess(*(void**)this);
-    v4 = this->M4;
-    if ( v4 )
-  {
-    v5 = (*(int (__thiscall **)(int))(*(int *)(v4) + 44))(v4);
-    Power::TimerProcess(v5);
-    v6 = (*(int (__stdcall **)(int))(*(int *)(this->M4 + 4) + 16))(this->M4 + 4);
-    return Power::TimerProcess(v6);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x4C68E0
 namespace gamemd {
 char * AnimClass::sub_4C68E0(int a2, int a3, IUnknown * aP3, IUnknown * aP4, int a6, char a7, int a8, char a9, int a10, int a11)
@@ -728,64 +705,6 @@ char *__thiscall sub_4C68E0(
     *(int *)((char *)&this->field_14 + 3) = a10; /*0x4c6941*/
     *(int *)((char *)&this->field_0 + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c6949*/
     return (char *)this; /*0x4c694c*/
-  }
-}
-}
-} // namespace gamemd
-
-// 0x4C69E0
-namespace gamemd {
-char * E4Recv_4C69E0::sub_4C69E0(int a2, char a3, int a4, unsigned short * a5)
-{
-{
-    Debug::Log();
-    if ( a2 < 0 )
-  {
-    this->M2 = -1;
-    *(void**)this = 0;
-    this->M3 = g_CurrentFrame;
-    return this;
-  }
-    else
-  {
-    this->M2 = a2;
-    *(void**)this = a3;
-    this->M7 = a4;
-    this->M11 = -1;
-    this->M15 = 0;
-    this->M19 = *a5;
-    this->M21 = *((int*)(a5) + 1);
-    this->M3 = g_CurrentFrame;
-    return this;
-  }
-}
-}
-} // namespace gamemd
-
-// 0x4C6A60
-namespace gamemd {
-char * E4Recv_4C6A60::sub_4C6A60(int a2, char a3, int a4, int a5, unsigned short * a6)
-{
-{
-    Debug::Log();
-    if ( a2 < 0 )
-  {
-    this->M2 = -1;
-    *(void**)this = 0;
-    this->M3 = g_CurrentFrame;
-    return this;
-  }
-    else
-  {
-    this->M2 = a2;
-    *(void**)this = a3;
-    this->M11 = a5;
-    this->M7 = a4;
-    this->M15 = 0;
-    this->M19 = *a6;
-    this->M21 = *((int*)(a6) + 1);
-    this->M3 = g_CurrentFrame;
-    return this;
   }
 }
 }
@@ -1111,30 +1030,6 @@ double __stdcall ComputeDistortionVariant(float a1)
 }
 } // namespace gamemd
 
-// 0x4CB1A0
-namespace gamemd {
-double ComputeChronosphereDistortion(float a1)
-{
-{
-    int v1;
-    char v2;
-    signed int v3;
-    int v4;
-    v1 = Math::RoundToInt(DataGlobal_8223B4 * a1);
-    v2 = v1 & 1;
-    v3 = (v1 / 2) & 0x80001FFF;
-    if ( v3 >= 0 || (v3 = (((short)v3 - 1) | 0xFFFFE000) + 1, v3 >= 0) )
-    v4 = v3 + 2048;
-    else
-    v4 = v3 + 10240;
-    if ( v2 && v4 < 10239 )
-    return DataGlobal_84F088[v4];
-    else
-    return DataGlobal_84F084[v4];
-}
-}
-} // namespace gamemd
-
 // 0x4CB4C0
 namespace gamemd {
 int sub_4CB4C0()
@@ -1250,32 +1145,6 @@ ObjectClass *__thiscall sub_4CB6A0(char *this, RandomStruct *aP1, int a3)
   qmemcpy(v6, &a3 + (v5 >> 2), v5 & 3); /*0x4cb6e5*/
   this->M12 = 0; /*0x4cb6e8*/
   return (ObjectClass *)this; /*0x4cb6e7*/
-}
-}
-} // namespace gamemd
-
-// 0x4CB8B0
-namespace gamemd {
-u_short E4Recv_4CB8B0::sub_4CB8B0()
-{
-{
-    u_short v2;
-    u_short v3;
-    u_short result;
-    switch ( (unsigned short)this->M4 )
-  {
-    case 3: case 4: **(short **)(this + 8) = htons(**(short **)(this + 8));
-    break;
-    case 5: case 6: **(int **)(this + 8) = htonl(**(int **)(this + 8));
-    break;
-    default: break;
-  }
-    v2 = htons((unsigned short)this->M4);
-    v3 = (unsigned short)this->M6;
-    this->M4 = v2;
-    result = htons(v3);
-    this->M6 = result;
-    return result;
 }
 }
 } // namespace gamemd
@@ -2435,6 +2304,29 @@ int sub_4C4ED0()
 }
 } // namespace gamemd
 
+// 0x4C4FC0
+namespace gamemd {
+int E4Recv_4C4FC0::sub_4C4FC0(int a2)
+{
+{
+    int result;
+    int v4;
+    int v5;
+    int v6;
+    result = Power::TimerProcess(*(void**)this);
+    v4 = this->M4;
+    if ( v4 )
+  {
+    v5 = (*(int (__thiscall **)(int))(*(int *)(v4) + 44))(v4);
+    Power::TimerProcess(v5);
+    v6 = (*(int (__stdcall **)(int))(*(int *)(this->M4 + 4) + 16))(this->M4 + 4);
+    return Power::TimerProcess(v6);
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x4C5000
 namespace gamemd {
 void sub_4C5000()
@@ -3025,6 +2917,64 @@ int sub_4C6550()
 }
 } // namespace gamemd
 
+// 0x4C69E0
+namespace gamemd {
+char * E4Recv_4C69E0::sub_4C69E0(int a2, char a3, int a4, unsigned short * a5)
+{
+{
+    Debug::Log();
+    if ( a2 < 0 )
+  {
+    this->M2 = -1;
+    *(void**)this = 0;
+    this->M3 = g_CurrentFrame;
+    return this;
+  }
+    else
+  {
+    this->M2 = a2;
+    *(void**)this = a3;
+    this->M7 = a4;
+    this->M11 = -1;
+    this->M15 = 0;
+    this->M19 = *a5;
+    this->M21 = *((int*)(a5) + 1);
+    this->M3 = g_CurrentFrame;
+    return this;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x4C6A60
+namespace gamemd {
+char * E4Recv_4C6A60::sub_4C6A60(int a2, char a3, int a4, int a5, unsigned short * a6)
+{
+{
+    Debug::Log();
+    if ( a2 < 0 )
+  {
+    this->M2 = -1;
+    *(void**)this = 0;
+    this->M3 = g_CurrentFrame;
+    return this;
+  }
+    else
+  {
+    this->M2 = a2;
+    *(void**)this = a3;
+    this->M11 = a5;
+    this->M7 = a4;
+    this->M15 = 0;
+    this->M19 = *a6;
+    this->M21 = *((int*)(a6) + 1);
+    this->M3 = g_CurrentFrame;
+    return this;
+  }
+}
+}
+} // namespace gamemd
+
 // 0x4C6BE0
 namespace gamemd {
 char * E4Recv_4C6BE0::sub_4C6BE0(int a2, char a3, int a4, int a5)
@@ -3310,6 +3260,30 @@ void nullsub_133()
 }
 } // namespace gamemd
 
+// 0x4CB1A0
+namespace gamemd {
+double ComputeChronosphereDistortion(float a1)
+{
+{
+    int v1;
+    char v2;
+    signed int v3;
+    int v4;
+    v1 = Math::RoundToInt(DataGlobal_8223B4 * a1);
+    v2 = v1 & 1;
+    v3 = (v1 / 2) & 0x80001FFF;
+    if ( v3 >= 0 || (v3 = (((short)v3 - 1) | 0xFFFFE000) + 1, v3 >= 0) )
+    v4 = v3 + 2048;
+    else
+    v4 = v3 + 10240;
+    if ( v2 && v4 < 10239 )
+    return DataGlobal_84F088[v4];
+    else
+    return DataGlobal_84F084[v4];
+}
+}
+} // namespace gamemd
+
 // 0x4CB3D0
 namespace gamemd {
 double globalHelper_0CB3D0(AbstractClass * aP0, AbstractClass * aP1)
@@ -3347,6 +3321,32 @@ double globalHelper_0CB3D0(AbstractClass * aP0, AbstractClass * aP1)
     if ( *(float *)&aP0 < 0.0 )
     return -result;
   }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4CB8B0
+namespace gamemd {
+u_short E4Recv_4CB8B0::sub_4CB8B0()
+{
+{
+    u_short v2;
+    u_short v3;
+    u_short result;
+    switch ( (unsigned short)this->M4 )
+  {
+    case 3: case 4: **(short **)(this + 8) = htons(**(short **)(this + 8));
+    break;
+    case 5: case 6: **(int **)(this + 8) = htonl(**(int **)(this + 8));
+    break;
+    default: break;
+  }
+    v2 = htons((unsigned short)this->M4);
+    v3 = (unsigned short)this->M6;
+    this->M4 = v2;
+    result = htons(v3);
+    this->M6 = result;
     return result;
 }
 }

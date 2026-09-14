@@ -91,6 +91,16 @@ int sub_5C09A0()
 }
 } // namespace gamemd
 
+// 0x5C0980
+namespace gamemd {
+BOOL sub_5C0980()
+{
+{
+    return g_BigIntPool || DataGlobal_ABF3F8;
+}
+}
+} // namespace gamemd
+
 // 0x724000
 namespace gamemd {
 char * E4Recv_724000::sub_724000(int a2)
@@ -126,16 +136,6 @@ char * E4Recv_724000::sub_724000(int a2)
     this->M600 = 0;
     this->M604 = 0;
     return this;
-}
-}
-} // namespace gamemd
-
-// 0x5C0980
-namespace gamemd {
-BOOL sub_5C0980()
-{
-{
-    return g_BigIntPool || DataGlobal_ABF3F8;
 }
 }
 } // namespace gamemd

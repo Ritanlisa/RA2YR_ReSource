@@ -10,12 +10,12 @@ struct String {
     int SplitComma(ObjectClass * aP1);  // 0x5D0380
     int NormalizeNewlines();  // 0x5F3350
     int To_Waypoint();  // 0x763690
-    ObjectClass * FormatDword();  // 0x777B30
-    ObjectClass * CopyConstant();  // 0x777B60
     void TrimLeft(ObjectClass * aP1);  // 0x7B51D0
     char Replace(char * SubStr, const char * a3);  // 0x7B57A0
     int Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3);  // 0x7B5F10
     int Tokenize2(int a2, wchar_t * Str, void ** a4);  // 0x7B7A60
+    ObjectClass * FormatDword();  // 0x777B30
+    ObjectClass * CopyConstant();  // 0x777B60
     char * CopyUpper(ObjectClass * aP1);  // 0x4F4C30
     char * Copy(const char * a2);  // 0x4F4C70
     char * CopyChecked(const char * a2);  // 0x4F4CB0

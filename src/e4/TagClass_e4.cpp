@@ -213,34 +213,6 @@ LABEL_45:
 }
 } // namespace gamemd
 
-// 0x6E5610
-namespace gamemd {
-int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
-{
-{
-    TriggerClass *v4;
-    TagTypeClass *result;
-    if ( this->buildingType == a2 )
-    this->buildingType = 0;
-    v4 = *(TriggerClass **)(this + 40);
-    if ( v4 == (TriggerClass *)a2 )
-    this->firstTrigger = v4->nextTrigger;
-    result = *(TagTypeClass **)(this + 36);
-    if ( !result )
-  {
-    this->destroyed = 1;
-    result = *(TagTypeClass **)&DataGlobal_B05488.__pad_579C[19068];
-    if ( *(int *)&DataGlobal_B05488.__pad_579C[19076] < *(int *)&DataGlobal_B05488.__pad_579C[19068] || (DataGlobal_B05488.__pad_579C[19073] || !*(int *)&DataGlobal_B05488.__pad_579C[19068]) && *(int *)&DataGlobal_B05488.__pad_579C[19080] > 0 && (result = (TagTypeClass *)(*(int (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[19060] + 8))( &DataGlobal_B05488.__pad_579C[19060], *(int *)&DataGlobal_B05488.__pad_579C[19068] + *(int *)&DataGlobal_B05488.__pad_579C[19080], 0), (char)result) )
-    {
-    result = (TagTypeClass *)(*(int *)&DataGlobal_B05488.__pad_579C[19076])++;
-    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[19064] + 4 * (int)result) = this;
-    }
-  }
-    return (int)result->__pad_0;
-}
-}
-} // namespace gamemd
-
 // 0x6E56E0
 namespace gamemd {
 int TagClass::ProcessTag(int * a2)
@@ -294,19 +266,6 @@ int __stdcall TagClass::LoadTag(AbstractClass *aP0, int aP1)
     return 0; /*0x6e578b*/
   }
   return result; /*0x6e578d*/
-}
-}
-} // namespace gamemd
-
-// 0x6E58B0
-namespace gamemd {
-TagClass * TagClass::ProcessTrigger(char a2)
-{
-{
-    TagClass::Destructor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (TagClass *)this;
 }
 }
 } // namespace gamemd
@@ -374,6 +333,34 @@ int __thiscall TagClass_Unlink(int *this)
 }
 } // namespace gamemd
 
+// 0x6E5610
+namespace gamemd {
+int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
+{
+{
+    TriggerClass *v4;
+    TagTypeClass *result;
+    if ( this->buildingType == a2 )
+    this->buildingType = 0;
+    v4 = *(TriggerClass **)(this + 40);
+    if ( v4 == (TriggerClass *)a2 )
+    this->firstTrigger = v4->nextTrigger;
+    result = *(TagTypeClass **)(this + 36);
+    if ( !result )
+  {
+    this->destroyed = 1;
+    result = *(TagTypeClass **)&DataGlobal_B05488.__pad_579C[19068];
+    if ( *(int *)&DataGlobal_B05488.__pad_579C[19076] < *(int *)&DataGlobal_B05488.__pad_579C[19068] || (DataGlobal_B05488.__pad_579C[19073] || !*(int *)&DataGlobal_B05488.__pad_579C[19068]) && *(int *)&DataGlobal_B05488.__pad_579C[19080] > 0 && (result = (TagTypeClass *)(*(int (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[19060] + 8))( &DataGlobal_B05488.__pad_579C[19060], *(int *)&DataGlobal_B05488.__pad_579C[19068] + *(int *)&DataGlobal_B05488.__pad_579C[19080], 0), (char)result) )
+    {
+    result = (TagTypeClass *)(*(int *)&DataGlobal_B05488.__pad_579C[19076])++;
+    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[19064] + 4 * (int)result) = this;
+    }
+  }
+    return (int)result->__pad_0;
+}
+}
+} // namespace gamemd
+
 // 0x6E56A0
 namespace gamemd {
 int TagClass::ddtor(int a1, unsigned int * a2)
@@ -415,5 +402,18 @@ namespace gamemd {
 int TagClass::StubReturn44()
 {
 return 44;
+}
+} // namespace gamemd
+
+// 0x6E58B0
+namespace gamemd {
+TagClass * TagClass::ProcessTrigger(char a2)
+{
+{
+    TagClass::Destructor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TagClass *)this;
+}
 }
 } // namespace gamemd

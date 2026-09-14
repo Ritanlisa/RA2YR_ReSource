@@ -59,51 +59,6 @@ int __stdcall Array::ForEachReverse(ObjectClass *aP0, int a2, int a3, int (__thi
 }
 } // namespace gamemd
 
-// 0x49B720
-namespace gamemd {
-void Array::Cleanup()
-{
-{
-    int i;
-    if ( this->Array_field_0x3C )
-  {
-    for ( i = 0; i < this->Array_field_0x40; ++i )
-    {
-    if ( *(int *)(this->Array_field_0x3C + 4 * i) )
-    __3_YAXPAX_Z(*(void **)(this->Array_field_0x3C + 4 * i));
-    }
-    __3_YAXPAX_Z(*(void **)(this + 60));
-  }
-}
-}
-} // namespace gamemd
-
-// 0x49D070
-namespace gamemd {
-char Array::GetElementAt(unsigned int * a2, int a3)
-{
-{
-    int v3;
-    char result;
-    v3 = a3;
-    result = 0;
-    *a2 = 0;
-    if ( a3 == -1 )
-    v3 = this->Array_field_0x38;
-    if ( v3 < 0 || v3 >= this->Array_field_0x40 )
-    v3 = -1;
-    if ( (unsigned char)this->Array_field_0x6C )
-  {
-    if ( v3 != -1 )
-    *a2 = *(int *)(this->Array_field_0x3C + 4 * v3);
-    if ( *a2 )
-    return 1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x557AC0
 namespace gamemd {
 int Array::GetClamped(CheckListClass * aP1)
@@ -388,6 +343,51 @@ char __thiscall Array::InsertElement(int *this, const void *a1, ObjectClass *aP2
     qmemcpy(v14, a1, 0x10Cu); /*0x7ad917*/
   ++*this; /*0x7ad91e*/
   return 1; /*0x7ad91b*/
+}
+}
+} // namespace gamemd
+
+// 0x49B720
+namespace gamemd {
+void Array::Cleanup()
+{
+{
+    int i;
+    if ( this->Array_field_0x3C )
+  {
+    for ( i = 0; i < this->Array_field_0x40; ++i )
+    {
+    if ( *(int *)(this->Array_field_0x3C + 4 * i) )
+    __3_YAXPAX_Z(*(void **)(this->Array_field_0x3C + 4 * i));
+    }
+    __3_YAXPAX_Z(*(void **)(this + 60));
+  }
+}
+}
+} // namespace gamemd
+
+// 0x49D070
+namespace gamemd {
+char Array::GetElementAt(unsigned int * a2, int a3)
+{
+{
+    int v3;
+    char result;
+    v3 = a3;
+    result = 0;
+    *a2 = 0;
+    if ( a3 == -1 )
+    v3 = this->Array_field_0x38;
+    if ( v3 < 0 || v3 >= this->Array_field_0x40 )
+    v3 = -1;
+    if ( (unsigned char)this->Array_field_0x6C )
+  {
+    if ( v3 != -1 )
+    *a2 = *(int *)(this->Array_field_0x3C + 4 * v3);
+    if ( *a2 )
+    return 1;
+  }
+    return result;
 }
 }
 } // namespace gamemd

@@ -1,8 +1,28 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_597430_e4.hpp"
+#include "e4/classes/E4Recv_6342E0_e4.hpp"
 #include "e4/classes/E4Recv_634B20_e4.hpp"
 #include "e4/classes/E4Recv_637640_e4.hpp"
+#include "e4/classes/E4Recv_63B050_e4.hpp"
+#include "e4/classes/E4Recv_63E5D0_e4.hpp"
+#include "e4/classes/E4Recv_6550C0_e4.hpp"
+#include "e4/classes/E4Recv_65FB80_e4.hpp"
+#include "e4/classes/E4Recv_6EF470_e4.hpp"
+#include "e4/classes/E4Recv_6F2230_e4.hpp"
+#include "e4/classes/E4Recv_6F25E0_e4.hpp"
+#include "e4/classes/E4Recv_6F26E0_e4.hpp"
+#include "e4/classes/E4Recv_6F2780_e4.hpp"
+#include "e4/classes/E4Recv_6F27F0_e4.hpp"
+#include "e4/classes/E4Recv_750060_e4.hpp"
+#include "e4/classes/E4Recv_764FA0_e4.hpp"
+#include "e4/classes/E4Recv_765410_e4.hpp"
+#include "e4/classes/E4Recv_765C90_e4.hpp"
+#include "e4/classes/E4Recv_76E430_e4.hpp"
+#include "e4/classes/E4Recv_76E750_e4.hpp"
+#include "e4/classes/E4Recv_7AF500_e4.hpp"
+#include "e4/classes/E4Recv_7B0490_e4.hpp"
 #include "e4/classes/Team_e4.hpp"
 
 // 0x561180

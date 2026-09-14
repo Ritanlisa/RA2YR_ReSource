@@ -419,46 +419,6 @@ int __stdcall SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
 }
 } // namespace gamemd
 
-// 0x6CE910
-namespace gamemd {
-int SuperWeaponTypeClass::SD_vt13(int * a2)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    AbstractTypeClass::ProcessPower((char *)this, a2);
-    Power::TimerProcess(this->ArrayIndex);
-    Power::TimerProcess(this->ActionValue);
-    Power::TimerProcess(this->RechargeVoice);
-    Power::TimerProcess(this->ChargingVoice);
-    Power::TimerProcess(this->ImpatientVoice);
-    v3 = Power::TimerProcess(this->SuspendVoice);
-    LOBYTE(v3) = this->IsPowered;
-    Power::FlagProcess(a2, v3);
-    LOBYTE(v4) = this->DisableableFromShell;
-    Power::FlagProcess(a2, v4);
-    LOBYTE(v5) = this->PreClick;
-    v6 = Power::FlagProcess(a2, v5);
-    LOBYTE(v6) = this->PostClick;
-    Power::FlagProcess(a2, v6);
-    Power::TimerProcess(this->PreDependent);
-    LOBYTE(v7) = this->ShowTimer;
-    Power::FlagProcess(a2, v7);
-    Power::TimerProcess(this->RechargeTime);
-    Power::TimerProcess(this->Type);
-    LOBYTE(v8) = this->UseChargeDrain;
-    v9 = Power::FlagProcess(a2, v8);
-    LOBYTE(v9) = this->ManualControl;
-    return Power::FlagProcess(a2, v9);
-}
-}
-} // namespace gamemd
-
 // 0x6CEA20
 namespace gamemd {
 char SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
@@ -947,6 +907,46 @@ namespace gamemd {
 int SuperWeaponTypeClass::SD_vt12()
 {
 return 256;
+}
+} // namespace gamemd
+
+// 0x6CE910
+namespace gamemd {
+int SuperWeaponTypeClass::SD_vt13(int * a2)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    AbstractTypeClass::ProcessPower((char *)this, a2);
+    Power::TimerProcess(this->ArrayIndex);
+    Power::TimerProcess(this->ActionValue);
+    Power::TimerProcess(this->RechargeVoice);
+    Power::TimerProcess(this->ChargingVoice);
+    Power::TimerProcess(this->ImpatientVoice);
+    v3 = Power::TimerProcess(this->SuspendVoice);
+    LOBYTE(v3) = this->IsPowered;
+    Power::FlagProcess(a2, v3);
+    LOBYTE(v4) = this->DisableableFromShell;
+    Power::FlagProcess(a2, v4);
+    LOBYTE(v5) = this->PreClick;
+    v6 = Power::FlagProcess(a2, v5);
+    LOBYTE(v6) = this->PostClick;
+    Power::FlagProcess(a2, v6);
+    Power::TimerProcess(this->PreDependent);
+    LOBYTE(v7) = this->ShowTimer;
+    Power::FlagProcess(a2, v7);
+    Power::TimerProcess(this->RechargeTime);
+    Power::TimerProcess(this->Type);
+    LOBYTE(v8) = this->UseChargeDrain;
+    v9 = Power::FlagProcess(a2, v8);
+    LOBYTE(v9) = this->ManualControl;
+    return Power::FlagProcess(a2, v9);
+}
 }
 } // namespace gamemd
 

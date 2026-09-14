@@ -140,104 +140,6 @@ LABEL_14:
 }
 } // namespace gamemd
 
-// 0x431D90
-namespace gamemd {
-void E4Recv_431D90::sub_431D90()
-{
-{
-    if ( this->M48 )
-  {
-    if ( (unsigned char)this->M36 )
-    {
-    __3_YAXPAX_Z(*(void **)(this + 48));
-    this->M36 = 0;
-    }
-    this->M48 = 0;
-  }
-    this->M52 = 0;
-    this->M37 = 0;
-    this->M39 = 0;
-    this->M40 = 0;
-    this->M41 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x434700
-namespace gamemd {
-unsigned char * E4Recv_434700::sub_434700()
-{
-{
-    char *result;
-    int *v3;
-    int v4;
-    char *v5;
-    char *v6;
-    int v7;
-    unsigned int v8;
-    unsigned int v9;
-    result = malloc(*(int *)(this->M4 + 4) * *(int *)(this->M4 + 8) + 2);
-    v3 = (int *)this->M4;
-    this->M8 = result;
-    if ( v3 )
-  {
-    v4 = *(unsigned short *)(v3[6] + 176);
-    if ( (short)v4 )
-    {
-    v5 = (char *)(v3[7] + (v4 - 1) * v3[5]);
-    if ( v5 )
-      {
-    v6 = v5 + 1;
-    *result = *v5;
-    v7 = this->M4;
-    v8 = 0;
-    result = (char *)(this->M8 + 1);
-    for ( ; v8 < *(int *)(v7 + 8); ++v8 )
-        {
-    v9 = 0;
-    if ( *(int *)(v7 + 4) )
-          {
-    do
-            {
-    *result++ = ~*v6++;
-    ++v9;
-            }
-    while ( v9 < *(int *)(this->M4 + 4) );
-          }
-    v7 = this->M4;
-        }
-      }
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4349F0
-namespace gamemd {
-BOOL E4Recv_4349F0::sub_4349F0()
-{
-{
-    int result;
-    this->M4 = 0;
-    this->M32 = 0;
-    this->M12 = 0;
-    this->M8 = 0;
-    this->M36 = 0x7FFF;
-    this->M38 = 13653;
-    this->M40 = 64;
-    this->M64 = 1;
-    this->M65 = 1;
-    this->M24 = 1;
-    this->M28 = 1;
-    result = SetRect((LPRECT)(this + 48), 0, 0, 0, 0);
-    this->M44 = 1;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x4373B0
 namespace gamemd {
 char BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XSurface * aP3, int a4, XSurface * aP5, XSurface * aP6, XSurface * aP7, XSurface * aP8, int a10, int a11, int a12)
@@ -981,110 +883,6 @@ void __thiscall sub_43A600(BrainClass *this)
 }
 } // namespace gamemd
 
-// 0x43A670
-namespace gamemd {
-int E4Recv_43A670::sub_43A670()
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    v2 = 0;
-    v3 = this->M20;
-    if ( v3 > 0 )
-  {
-    do
-    {
-    v4 = *(int *)(this->M8 + 4 * v2);
-    if ( v4 )
-    (*(void (__thiscall **)(int, int))(*(int *)(v4) + 32))(v4, 1);
-    ++v2;
-    *(int *)(this->M8 + 4 * v2 - 4) = 0;
-    }
-    while ( v2 < v3 );
-  }
-    return (*(int (__thiscall **)(int *))(this->M4 + 12))(this + 1);
-}
-}
-} // namespace gamemd
-
-// 0x43A6B0
-namespace gamemd {
-int E4Recv_43A6B0::sub_43A6B0(int a2, int a3)
-{
-{
-    int v4;
-    int v5;
-    int v6;
-    v4 = 0;
-    v5 = this->M20;
-    if ( v5 > 0 )
-  {
-    do
-    {
-    v6 = *(int *)(this->M8 + 4 * v4);
-    if ( v6 )
-    (*(void (__thiscall **)(int, int))(*(int *)(v6) + 32))(v6, 1);
-    ++v4;
-    *(int *)(this->M8 + 4 * v4 - 4) = 0;
-    }
-    while ( v4 < v5 );
-  }
-    (*(void (__thiscall **)(int *))(this->M4 + 12))(this + 1);
-    this->M28 = a2;
-    this->M32 = a3;
-    return a2;
-}
-}
-} // namespace gamemd
-
-// 0x43A770
-namespace gamemd {
-int E4Recv_43A770::sub_43A770(unsigned int * a2, int a3)
-{
-{
-    int *v3;
-    int result;
-    int *v6;
-    int v7;
-    int v8;
-    int v9;
-    int *v10;
-    int v11;
-    v3 = a2;
-    if ( !a2 )
-    return -2147467261;
-    v6 = (int *)this->M20;
-    v7 = *a2;
-    v10 = a2;
-    a2 = v6;
-    result = (*(int (__stdcall **)(int *, int **, int, int))(v7 + 16))(v10, &a2, 4, 0);
-    if ( result >= 0 )
-  {
-    v8 = 0;
-    if ( (int)a2 <= 0 )
-    {
-    return 0;
-    }
-    else
-    {
-    v9 = a3;
-    while ( 1 )
-      {
-    v11 = *(int *)(this->M8 + 4 * v8);
-    result = (*(int (__stdcall **)(int, int *, int))(*(int *)(v11) + 24))(v11, v3, v9);
-    if ( result < 0 )
-    break;
-    if ( ++v8 >= (int)a2 )
-    return 0;
-      }
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x43AA90
 namespace gamemd {
 unsigned int * BrainClass::sub_43AA90(char a2)
@@ -1125,43 +923,6 @@ _DWORD *__thiscall sub_43AA90(BrainClass *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x43ab05*/
     __3_YAXPAX_Z(this); /*0x43ab08*/
   return &this->vfptr; /*0x43ab12*/
-}
-}
-} // namespace gamemd
-
-// 0x43ADF0
-namespace gamemd {
-ObjectClass * E4Recv_43ADF0::sub_43ADF0(unsigned int * a1)
-{
-{
-    this->M8 = 0;
-    *(int *)this = *a1;
-    this->M4 = *((int*)(a1) + 1);
-    return (ObjectClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x43EE50
-namespace gamemd {
-int E4Recv_43EE50::sub_43EE50()
-{
-{
-    int *Value;
-    int v3;
-    int result;
-    int v5;
-    if ( !this->Vf1020() || !this->M1408 )
-    return 0;
-    Value = ProgressTimer::GetValue((short *)(this) + 452, &v5);
-    v3 = this->M1408;
-    result = DataGlobal_7F4890[((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F];
-    if ( v3 )
-  {
-    *(int *)(v3 + 172) = result;
-    *(int *)(v3 + 196) = 0;
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -1455,6 +1216,29 @@ int E4Recv_431930::sub_431930(int a2)
 }
 } // namespace gamemd
 
+// 0x431D90
+namespace gamemd {
+void E4Recv_431D90::sub_431D90()
+{
+{
+    if ( this->M48 )
+  {
+    if ( (unsigned char)this->M36 )
+    {
+    __3_YAXPAX_Z(*(void **)(this + 48));
+    this->M36 = 0;
+    }
+    this->M48 = 0;
+  }
+    this->M52 = 0;
+    this->M37 = 0;
+    this->M39 = 0;
+    this->M40 = 0;
+    this->M41 = 0;
+}
+}
+} // namespace gamemd
+
 // 0x432670
 namespace gamemd {
 int sub_432670()
@@ -1545,6 +1329,57 @@ int E4Recv_434100::sub_434100(int a2)
 }
 } // namespace gamemd
 
+// 0x434700
+namespace gamemd {
+unsigned char * E4Recv_434700::sub_434700()
+{
+{
+    char *result;
+    int *v3;
+    int v4;
+    char *v5;
+    char *v6;
+    int v7;
+    unsigned int v8;
+    unsigned int v9;
+    result = malloc(*(int *)(this->M4 + 4) * *(int *)(this->M4 + 8) + 2);
+    v3 = (int *)this->M4;
+    this->M8 = result;
+    if ( v3 )
+  {
+    v4 = *(unsigned short *)(v3[6] + 176);
+    if ( (short)v4 )
+    {
+    v5 = (char *)(v3[7] + (v4 - 1) * v3[5]);
+    if ( v5 )
+      {
+    v6 = v5 + 1;
+    *result = *v5;
+    v7 = this->M4;
+    v8 = 0;
+    result = (char *)(this->M8 + 1);
+    for ( ; v8 < *(int *)(v7 + 8); ++v8 )
+        {
+    v9 = 0;
+    if ( *(int *)(v7 + 4) )
+          {
+    do
+            {
+    *result++ = ~*v6++;
+    ++v9;
+            }
+    while ( v9 < *(int *)(this->M4 + 4) );
+          }
+    v7 = this->M4;
+        }
+      }
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x434840
 namespace gamemd {
 char sub_434840(unsigned int * a1, unsigned int * a2, unsigned int * a3)
@@ -1580,6 +1415,30 @@ char sub_434840(unsigned int * a1, unsigned int * a2, unsigned int * a3)
     *((int*)(a1) + 2) = v5;
     return 1;
   }
+}
+}
+} // namespace gamemd
+
+// 0x4349F0
+namespace gamemd {
+BOOL E4Recv_4349F0::sub_4349F0()
+{
+{
+    int result;
+    this->M4 = 0;
+    this->M32 = 0;
+    this->M12 = 0;
+    this->M8 = 0;
+    this->M36 = 0x7FFF;
+    this->M38 = 13653;
+    this->M40 = 64;
+    this->M64 = 1;
+    this->M65 = 1;
+    this->M24 = 1;
+    this->M28 = 1;
+    result = SetRect((LPRECT)(this + 48), 0, 0, 0, 0);
+    this->M44 = 1;
+    return result;
 }
 }
 } // namespace gamemd
@@ -2491,6 +2350,123 @@ int sub_43A330()
 }
 } // namespace gamemd
 
+// 0x43A670
+namespace gamemd {
+int E4Recv_43A670::sub_43A670()
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    v2 = 0;
+    v3 = this->M20;
+    if ( v3 > 0 )
+  {
+    do
+    {
+    v4 = *(int *)(this->M8 + 4 * v2);
+    if ( v4 )
+    (*(void (__thiscall **)(int, int))(*(int *)(v4) + 32))(v4, 1);
+    ++v2;
+    *(int *)(this->M8 + 4 * v2 - 4) = 0;
+    }
+    while ( v2 < v3 );
+  }
+    return (*(int (__thiscall **)(int *))(this->M4 + 12))(this + 1);
+}
+}
+} // namespace gamemd
+
+// 0x43A6B0
+namespace gamemd {
+int E4Recv_43A6B0::sub_43A6B0(int a2, int a3)
+{
+{
+    int v4;
+    int v5;
+    int v6;
+    v4 = 0;
+    v5 = this->M20;
+    if ( v5 > 0 )
+  {
+    do
+    {
+    v6 = *(int *)(this->M8 + 4 * v4);
+    if ( v6 )
+    (*(void (__thiscall **)(int, int))(*(int *)(v6) + 32))(v6, 1);
+    ++v4;
+    *(int *)(this->M8 + 4 * v4 - 4) = 0;
+    }
+    while ( v4 < v5 );
+  }
+    (*(void (__thiscall **)(int *))(this->M4 + 12))(this + 1);
+    this->M28 = a2;
+    this->M32 = a3;
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x43A770
+namespace gamemd {
+int E4Recv_43A770::sub_43A770(unsigned int * a2, int a3)
+{
+{
+    int *v3;
+    int result;
+    int *v6;
+    int v7;
+    int v8;
+    int v9;
+    int *v10;
+    int v11;
+    v3 = a2;
+    if ( !a2 )
+    return -2147467261;
+    v6 = (int *)this->M20;
+    v7 = *a2;
+    v10 = a2;
+    a2 = v6;
+    result = (*(int (__stdcall **)(int *, int **, int, int))(v7 + 16))(v10, &a2, 4, 0);
+    if ( result >= 0 )
+  {
+    v8 = 0;
+    if ( (int)a2 <= 0 )
+    {
+    return 0;
+    }
+    else
+    {
+    v9 = a3;
+    while ( 1 )
+      {
+    v11 = *(int *)(this->M8 + 4 * v8);
+    result = (*(int (__stdcall **)(int, int *, int))(*(int *)(v11) + 24))(v11, v3, v9);
+    if ( result < 0 )
+    break;
+    if ( ++v8 >= (int)a2 )
+    return 0;
+      }
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x43ADF0
+namespace gamemd {
+ObjectClass * E4Recv_43ADF0::sub_43ADF0(unsigned int * a1)
+{
+{
+    this->M8 = 0;
+    *(int *)this = *a1;
+    this->M4 = *((int*)(a1) + 1);
+    return (ObjectClass *)this;
+}
+}
+} // namespace gamemd
+
 // 0x43AF10
 namespace gamemd {
 unsigned int * E4Recv_43AF10::sub_43AF10()
@@ -2661,6 +2637,30 @@ int sub_43B130()
     DataGlobal_89C810 = 0;
     DataGlobal_89C814 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x43EE50
+namespace gamemd {
+int E4Recv_43EE50::sub_43EE50()
+{
+{
+    int *Value;
+    int v3;
+    int result;
+    int v5;
+    if ( !this->Vf1020() || !this->M1408 )
+    return 0;
+    Value = ProgressTimer::GetValue((short *)(this) + 452, &v5);
+    v3 = this->M1408;
+    result = DataGlobal_7F4890[((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F];
+    if ( v3 )
+  {
+    *(int *)(v3 + 172) = result;
+    *(int *)(v3 + 196) = 0;
+  }
+    return result;
 }
 }
 } // namespace gamemd

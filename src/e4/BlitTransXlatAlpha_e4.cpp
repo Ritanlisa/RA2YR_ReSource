@@ -292,63 +292,6 @@ int __thiscall BlitTransXlatAlpha_ushort::_vt04(
 }
 } // namespace gamemd
 
-// 0x49A1A0
-namespace gamemd {
-std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x49A1C0
-namespace gamemd {
-std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_0(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x49A1E0
-namespace gamemd {
-std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_1(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x49A240
-namespace gamemd {
-BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 2);
-    *(void**)this = &vt_BlitTransXlatAlpha_unsigned_short;
-    FractalNoise::Release(v3);
-    *(this + 2) = 0;
-    *(void**)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitTransXlatAlpha_ushort *)this;
-}
-}
-} // namespace gamemd
-
 // 0x4939D0
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -435,6 +378,63 @@ int BlitTransXlatAlpha_ushort::CallBlit0_7(int a2, int a3, int a4, int a5, int a
 {
 {
     return (*((int (__thiscall **)(BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
+}
+}
+} // namespace gamemd
+
+// 0x49A1A0
+namespace gamemd {
+std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x49A1C0
+namespace gamemd {
+std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_0(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x49A1E0
+namespace gamemd {
+std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_1(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x49A240
+namespace gamemd {
+BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 2);
+    *(void**)this = &vt_BlitTransXlatAlpha_unsigned_short;
+    FractalNoise::Release(v3);
+    *(this + 2) = 0;
+    *(void**)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransXlatAlpha_ushort *)this;
 }
 }
 } // namespace gamemd

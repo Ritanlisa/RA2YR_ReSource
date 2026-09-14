@@ -8,53 +8,6 @@
 #include "e4/classes/E4Recv_41FD40_e4.hpp"
 #include "e4/classes/E4Recv_41FD50_e4.hpp"
 
-// 0x410DC0
-namespace gamemd {
-int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
-{
-{
-    short *v8;
-    short *v9;
-    int v10;
-    int v11;
-    int v12;
-    int v13;
-    short v14;
-    int v16;
-    v8 = (short *)(*(int (__thiscall **)(int, int, int))(*(int *)(a2) + 92))(a2, a3, a4);
-    v9 = (short *)(this->M16 + this->M24);
-    v10 = (*(int (__thiscall **)(int))(*(int *)(a2) + 116))(a2);
-    v11 = a5;
-    v12 = v10 / 2 - a5;
-    if ( v8 && a6 > 0 )
-  {
-    v16 = a6;
-    do
-    {
-    if ( v11 > 0 )
-      {
-    v13 = v11;
-    do
-        {
-    v14 = *v9++;
-    *v8++ = v14;
-    if ( (unsigned int)v9 >= this->M28 )
-    v9 = (short *)((char *)v9 - this->M32);
-    --v13;
-        }
-    while ( v13 );
-    v11 = a5;
-      }
-    v8 += v12;
-    --v16;
-    }
-    while ( v16 );
-  }
-    return (*(int (__thiscall **)(int))(*(int *)(a2) + 96))(a2);
-}
-}
-} // namespace gamemd
-
 // 0x4116A0
 namespace gamemd {
 int sub_4116A0(unsigned int a1)
@@ -936,19 +889,6 @@ int __cdecl CompareFunction(_DWORD *a1, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x41DD10
-namespace gamemd {
-char E4Recv_41DD10::sub_41DD10()
-{
-{
-    this->M64 = g_CurrentFrame;
-    this->M60 = 0;
-    this->M61 = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x410070
 namespace gamemd {
 void sub_410070()
@@ -1180,6 +1120,53 @@ int sub_410CC0()
     DataGlobal_887740 = 0;
     DataGlobal_887744 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x410DC0
+namespace gamemd {
+int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
+{
+{
+    short *v8;
+    short *v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    short v14;
+    int v16;
+    v8 = (short *)(*(int (__thiscall **)(int, int, int))(*(int *)(a2) + 92))(a2, a3, a4);
+    v9 = (short *)(this->M16 + this->M24);
+    v10 = (*(int (__thiscall **)(int))(*(int *)(a2) + 116))(a2);
+    v11 = a5;
+    v12 = v10 / 2 - a5;
+    if ( v8 && a6 > 0 )
+  {
+    v16 = a6;
+    do
+    {
+    if ( v11 > 0 )
+      {
+    v13 = v11;
+    do
+        {
+    v14 = *v9++;
+    *v8++ = v14;
+    if ( (unsigned int)v9 >= this->M28 )
+    v9 = (short *)((char *)v9 - this->M32);
+    --v13;
+        }
+    while ( v13 );
+    v11 = a5;
+      }
+    v8 += v12;
+    --v16;
+    }
+    while ( v16 );
+  }
+    return (*(int (__thiscall **)(int))(*(int *)(a2) + 96))(a2);
 }
 }
 } // namespace gamemd
@@ -2095,6 +2082,19 @@ void sub_41D2C0()
   }
     DataGlobal_889FC5 = 0;
     DataGlobal_889FC0 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x41DD10
+namespace gamemd {
+char E4Recv_41DD10::sub_41DD10()
+{
+{
+    this->M64 = g_CurrentFrame;
+    this->M60 = 0;
+    this->M61 = 0;
+    return 0;
 }
 }
 } // namespace gamemd

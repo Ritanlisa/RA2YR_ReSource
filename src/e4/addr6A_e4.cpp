@@ -10,55 +10,6 @@
 #include "e4/classes/E4Recv_6AACE0_e4.hpp"
 #include "e4/classes/E4Recv_6ABA60_e4.hpp"
 
-// 0x6A04C0
-namespace gamemd {
-char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
-{
-{
-    int v2;
-    int *v4;
-    TechnoClass *v5;
-    IUnknown *v6;
-    int *v7;
-    AbstractClass *v9;
-    v2 = g_OverlayTypeConfig.field_0;
-    v4 = (int *)(this + 64);
-    if ( this->M64 != g_OverlayTypeConfig.field_0 || this->M68 != g_OverlayTypeConfig.field_4 || this->M72 != g_OverlayTypeConfig.field_8 )
-  {
-    *v4 = g_OverlayTypeConfig.field_0;
-    this->M68 = g_OverlayTypeConfig.field_4;
-    v5 = (TechnoClass *)g_OverlayTypeConfig.field_8;
-    this->M99 = 0;
-    this->M72 = v5;
-    v2 = g_OverlayTypeConfig.field_0;
-  }
-    if ( aP1->field_0 != v2 || aP1->field_4 != g_OverlayTypeConfig.field_4 || aP1->field_8 != g_OverlayTypeConfig.field_8 )
-  {
-    *v4 = aP1->field_0;
-    this->M68 = aP1->field_4;
-    v6 = (IUnknown *)aP1->field_8;
-    this->M99 = 1;
-    this->M72 = v6;
-    v9 = *(AbstractClass **)(this + 12);
-    v7 = Coord::To_Cell(&DataGlobal_87F7E8, aP1);
-    if ( CrateClass::ProcessPickup(v7, v9) && !*(char *)(this->M12 + 129) )
-    {
-    WalkLocomotion::MoveTo(this, aP1, 1);
-    return 1;
-    }
-    if ( *(char *)(this->M12 + 144) )
-    {
-    *v4 = g_OverlayTypeConfig.field_0;
-    this->M68 = g_OverlayTypeConfig.field_4;
-    this->M72 = g_OverlayTypeConfig.field_8;
-    this->M99 = 0;
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x6A6AF0
 namespace gamemd {
 char E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
@@ -297,32 +248,6 @@ char __thiscall sub_6A93F0(int this)
   }
   MEMORY[0x884B8F] = 1; /*0x6a9498*/
   return v5; /*0x6a9496*/
-}
-}
-} // namespace gamemd
-
-// 0x6ABA60
-namespace gamemd {
-char E4Recv_6ABA60::sub_6ABA60(int a2, int a3, int a4)
-{
-{
-    int v4;
-    int v5;
-    int *i;
-    v4 = this->M84;
-    v5 = 0;
-    if ( v4 <= 0 )
-    return 0;
-    for ( i = (int *)(this + 88); i[1] != a3 || *i != a4; i += 13 )
-  {
-    if ( ++v5 >= v4 )
-    return 0;
-  }
-    *(int *)(this + 52 * v5 + 100) = a2;
-    this->M61 = 1;
-    this->M60 = 1;
-    MapClass::MarkForRedraw(&DataGlobal_87F7E8, 0);
-    return 1;
 }
 }
 } // namespace gamemd
@@ -904,6 +829,55 @@ LABEL_53:
 } // namespace game
 } // namespace ra2
 
+// 0x6A04C0
+namespace gamemd {
+char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
+{
+{
+    int v2;
+    int *v4;
+    TechnoClass *v5;
+    IUnknown *v6;
+    int *v7;
+    AbstractClass *v9;
+    v2 = g_OverlayTypeConfig.field_0;
+    v4 = (int *)(this + 64);
+    if ( this->M64 != g_OverlayTypeConfig.field_0 || this->M68 != g_OverlayTypeConfig.field_4 || this->M72 != g_OverlayTypeConfig.field_8 )
+  {
+    *v4 = g_OverlayTypeConfig.field_0;
+    this->M68 = g_OverlayTypeConfig.field_4;
+    v5 = (TechnoClass *)g_OverlayTypeConfig.field_8;
+    this->M99 = 0;
+    this->M72 = v5;
+    v2 = g_OverlayTypeConfig.field_0;
+  }
+    if ( aP1->field_0 != v2 || aP1->field_4 != g_OverlayTypeConfig.field_4 || aP1->field_8 != g_OverlayTypeConfig.field_8 )
+  {
+    *v4 = aP1->field_0;
+    this->M68 = aP1->field_4;
+    v6 = (IUnknown *)aP1->field_8;
+    this->M99 = 1;
+    this->M72 = v6;
+    v9 = *(AbstractClass **)(this + 12);
+    v7 = Coord::To_Cell(&DataGlobal_87F7E8, aP1);
+    if ( CrateClass::ProcessPickup(v7, v9) && !*(char *)(this->M12 + 129) )
+    {
+    WalkLocomotion::MoveTo(this, aP1, 1);
+    return 1;
+    }
+    if ( *(char *)(this->M12 + 144) )
+    {
+    *v4 = g_OverlayTypeConfig.field_0;
+    this->M68 = g_OverlayTypeConfig.field_4;
+    this->M72 = g_OverlayTypeConfig.field_8;
+    this->M99 = 0;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x6A3DA0
 namespace gamemd {
 void nullsub_230()
@@ -1457,6 +1431,32 @@ int E4Recv_6AACE0::sub_6AACE0(int a2, int a3)
     this->M44 = a2;
     this->M48 = a3;
     return a2;
+}
+}
+} // namespace gamemd
+
+// 0x6ABA60
+namespace gamemd {
+char E4Recv_6ABA60::sub_6ABA60(int a2, int a3, int a4)
+{
+{
+    int v4;
+    int v5;
+    int *i;
+    v4 = this->M84;
+    v5 = 0;
+    if ( v4 <= 0 )
+    return 0;
+    for ( i = (int *)(this + 88); i[1] != a3 || *i != a4; i += 13 )
+  {
+    if ( ++v5 >= v4 )
+    return 0;
+  }
+    *(int *)(this + 52 * v5 + 100) = a2;
+    this->M61 = 1;
+    this->M60 = 1;
+    MapClass::MarkForRedraw(&DataGlobal_87F7E8, 0);
+    return 1;
 }
 }
 } // namespace gamemd

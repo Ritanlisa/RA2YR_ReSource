@@ -2,24 +2,24 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
+// 0x643E70
+namespace gamemd {
+int VtableStub_643E70()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void __thiscall VtableStub::643E70(_DWORD *this)
+{
+  *(this + 25) = 0; /*0x643e70*/
+}
+}
+} // namespace gamemd
+
 // 0x5CB6C0
 namespace gamemd {
 int VtableStub::5CB6C0()
 {
 {
     *(void**)this = &vt_MSAnim;
-}
-}
-} // namespace gamemd
-
-// 0x643E70
-namespace gamemd {
-int VtableStub::643E70()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall VtableStub::643E70(_DWORD *this)
-{
-  *(this + 25) = 0; /*0x643e70*/
 }
 }
 } // namespace gamemd

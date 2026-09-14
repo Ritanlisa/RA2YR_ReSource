@@ -2,47 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x475B70
-char WeaponTypeClass::ReadTrajectoryData(WeaponTypeClass * aP1, char * a2, int a4)
-{
-{
-    BuildingTypeClass *v4;
-    int v5;
-    ObjectClass *v6;
-    BuildingTypeClass *v8;
-    char Source[125];
-    short v10;
-    char v11;
-    Source[0] = DataGlobal_87C374.__pad_579C[33876];
-    memset(&Source[1], 0, 0x7Cu);
-    v10 = 0;
-    v11 = 0;
-    v4 = g_TriggerClassCount;
-    if ( (int)g_TriggerClassCount > 32 )
-    v4 = (BuildingTypeClass *)32;
-    v5 = 0;
-    v8 = v4;
-    if ( (int)v4 > 0 )
-  {
-    v6 = (ObjectClass *)g_TriggerTypeCount;
-    do
-    {
-    if ( ((1 << v5) & a4) != 0 )
-      {
-    if ( Source[0] )
-    strcat(Source, (const char *)&DataGlobal_817F40.nextObject);
-    strcat(Source, (const char *)(*(int *)v6->__pad_0 + 36));
-    v4 = v8;
-      }
-    ++v5;
-    v6 = (ObjectClass *)((char *)(v6) + 4);
-    }
-    while ( v5 < (int)v4 );
-  }
-    return INIClass::SetString(this, (INIClass *)aP1, (INIClass *)a2, (INIClass *)Source);
-}
-}
-
 // 0x512680
 HouseTypeClass * WeaponTypeClass::Create()
 {
@@ -553,6 +512,47 @@ WeaponTypeClass *__thiscall WeaponTypeClass::ddtor(void **this, char a2)
   if ( (a2 & 1) != 0 ) /*0x77321f*/
     __3_YAXPAX_Z(this); /*0x773222*/
   return (WeaponTypeClass *)this; /*0x77322c*/
+}
+}
+
+// 0x475B70
+char WeaponTypeClass::ReadTrajectoryData(WeaponTypeClass * aP1, char * a2, int a4)
+{
+{
+    BuildingTypeClass *v4;
+    int v5;
+    ObjectClass *v6;
+    BuildingTypeClass *v8;
+    char Source[125];
+    short v10;
+    char v11;
+    Source[0] = DataGlobal_87C374.__pad_579C[33876];
+    memset(&Source[1], 0, 0x7Cu);
+    v10 = 0;
+    v11 = 0;
+    v4 = g_TriggerClassCount;
+    if ( (int)g_TriggerClassCount > 32 )
+    v4 = (BuildingTypeClass *)32;
+    v5 = 0;
+    v8 = v4;
+    if ( (int)v4 > 0 )
+  {
+    v6 = (ObjectClass *)g_TriggerTypeCount;
+    do
+    {
+    if ( ((1 << v5) & a4) != 0 )
+      {
+    if ( Source[0] )
+    strcat(Source, (const char *)&DataGlobal_817F40.nextObject);
+    strcat(Source, (const char *)(*(int *)v6->__pad_0 + 36));
+    v4 = v8;
+      }
+    ++v5;
+    v6 = (ObjectClass *)((char *)(v6) + 4);
+    }
+    while ( v5 < (int)v4 );
+  }
+    return INIClass::SetString(this, (INIClass *)aP1, (INIClass *)a2, (INIClass *)Source);
 }
 }
 

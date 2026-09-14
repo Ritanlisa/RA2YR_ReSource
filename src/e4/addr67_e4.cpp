@@ -2,20 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x674500
-int RulesClass::sub_674500()
-{
-{
-    int result;
-    RulesClass *v2;
-    INIClass::ReadDifficultyModifiers(v2);
-    INIClass::ReadDifficultyModifiers(v2);
-    result = INIClass::ReadDifficultyModifiers(v2);
-    LOBYTE(result) = 1;
-    return result;
-}
-}
-
 // 0x679CC0
 namespace gamemd {
 int sub_679CC0()
@@ -298,6 +284,20 @@ InfantryTypeClass *__fastcall ReadINIClassInfantryTypeList(
 }
 }
 } // namespace gamemd
+
+// 0x674500
+int RulesClass::sub_674500()
+{
+{
+    int result;
+    RulesClass *v2;
+    INIClass::ReadDifficultyModifiers(v2);
+    INIClass::ReadDifficultyModifiers(v2);
+    result = INIClass::ReadDifficultyModifiers(v2);
+    LOBYTE(result) = 1;
+    return result;
+}
+}
 
 // 0x679EC0
 namespace gamemd {

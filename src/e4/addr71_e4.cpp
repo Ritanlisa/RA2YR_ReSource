@@ -22,16 +22,6 @@ int __cdecl sub_710860(_DWORD *a1, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x717A40
-namespace gamemd {
-int E4Recv_717A40::ReadPointerFromECX4()
-{
-{
-    return *(int *)this;
-}
-}
-} // namespace gamemd
-
 // 0x7187A0
 namespace gamemd {
 char E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
@@ -171,29 +161,6 @@ char __thiscall ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
     }
   }
   return (char)v12; /*0x7189d4*/
-}
-}
-} // namespace gamemd
-
-// 0x71C8E0
-namespace gamemd {
-char E4Recv_71C8E0::sub_71C8E0()
-{
-{
-    char result;
-    int v2;
-    result = (unsigned char)this->M205;
-    if ( !result )
-  {
-    this->M205 = 1;
-    this->M180 = g_CurrentFrame;
-    this->M192 = 2;
-    this->M184 = v2;
-    this->M188 = 2;
-    this->M172 = 0;
-    return v2;
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -542,6 +509,16 @@ namespace gamemd {
 void nullsub_86()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x717A40
+namespace gamemd {
+int E4Recv_717A40::ReadPointerFromECX4()
+{
+{
+    return *(int *)this;
+}
 }
 } // namespace gamemd
 
@@ -1068,6 +1045,29 @@ int sub_71B790()
     DataGlobal_B0ECE8 = 0;
     DataGlobal_B0ECEC = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x71C8E0
+namespace gamemd {
+char E4Recv_71C8E0::sub_71C8E0()
+{
+{
+    char result;
+    int v2;
+    result = (unsigned char)this->M205;
+    if ( !result )
+  {
+    this->M205 = 1;
+    this->M180 = g_CurrentFrame;
+    this->M192 = 2;
+    this->M184 = v2;
+    this->M188 = 2;
+    this->M172 = 0;
+    return v2;
+  }
+    return result;
 }
 }
 } // namespace gamemd

@@ -3,14 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/MapSeedClass_18_e4.hpp"
 
-// 0x597FA0
-wchar_t * MapSeedClass::GetCell()
-{
-{
-    return GetStringCSF(aGuiSavemapmenu, 0, g_Str_File_MapGen_cpp, 5578);
-}
-}
-
 // 0x5A5B50
 short MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
 {
@@ -503,6 +495,30 @@ LABEL_23:
 }
 }
 
+// 0x597FA0
+wchar_t * MapSeedClass::GetCell()
+{
+{
+    return GetStringCSF(aGuiSavemapmenu, 0, g_Str_File_MapGen_cpp, 5578);
+}
+}
+
+// 0x597FC0
+wchar_t * MapSeedClass::SetCell()
+{
+{
+    return GetStringCSF(aGuiDeletemapme, 0, g_Str_File_MapGen_cpp, 5584);
+}
+}
+
+// 0x597FE0
+wchar_t * MapSeedClass::Validate()
+{
+{
+    return GetStringCSF(aGuiMapsaved, 0, g_Str_File_MapGen_cpp, 5590);
+}
+}
+
 // 0x5AC270
 MapSeedClass * MapSeedClass::QueryInterface(char a2)
 {
@@ -511,28 +527,6 @@ MapSeedClass * MapSeedClass::QueryInterface(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (MapSeedClass *)this;
-}
-}
-
-// 0x5ACB80
-int MapSeedClass::GenerateSeed(unsigned int * a2)
-{
-{
-    int result;
-    int v3;
-    int *i;
-    if ( !(unsigned char)this->MapSeedClass_field_0x0C )
-    return 0;
-    v3 = this->MapSeedClass_field_0x08;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = *(int **)(this + 4); *i != *a2; ++i )
-  {
-    if ( ++result >= v3 )
-    return -1;
-  }
-    return result;
 }
 }
 
@@ -551,6 +545,19 @@ void MapSeedClass_18::ClearBuffer()
   }
     this->IsAllocated = 0;
     this->MapSeedClass_18_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x5AC4F0
+namespace gamemd {
+unsigned int MapSeedClass_18::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->MapSeedClass_18_field_0xC )
+    return (unsigned int)(a2 - this->MapSeedClass_18_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -657,6 +664,41 @@ void MapSeedClass_18::ddtor()
   }
     this->IsAllocated = 0;
     this->MapSeedClass_18_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x5ACB80
+int MapSeedClass::GenerateSeed(unsigned int * a2)
+{
+{
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->MapSeedClass_field_0x0C )
+    return 0;
+    v3 = this->MapSeedClass_field_0x08;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
+}
+}
+
+// 0x5ACBC0
+namespace gamemd {
+unsigned int MapSeedClass_18::Generate(int a2)
+{
+{
+    if ( (unsigned char)this->MapSeedClass_18_field_0xC )
+    return (unsigned int)(a2 - this->MapSeedClass_18_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -770,48 +812,6 @@ DynamicVector * MapSeedClass_18::Constructor_VectorClass__WIN32_FIND_DATAA___(ch
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
-}
-}
-} // namespace gamemd
-
-// 0x597FC0
-wchar_t * MapSeedClass::SetCell()
-{
-{
-    return GetStringCSF(aGuiDeletemapme, 0, g_Str_File_MapGen_cpp, 5584);
-}
-}
-
-// 0x597FE0
-wchar_t * MapSeedClass::Validate()
-{
-{
-    return GetStringCSF(aGuiMapsaved, 0, g_Str_File_MapGen_cpp, 5590);
-}
-}
-
-// 0x5AC4F0
-namespace gamemd {
-unsigned int MapSeedClass_18::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->MapSeedClass_18_field_0xC )
-    return (unsigned int)(a2 - this->MapSeedClass_18_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x5ACBC0
-namespace gamemd {
-unsigned int MapSeedClass_18::Generate(int a2)
-{
-{
-    if ( (unsigned char)this->MapSeedClass_18_field_0xC )
-    return (unsigned int)(a2 - this->MapSeedClass_18_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd

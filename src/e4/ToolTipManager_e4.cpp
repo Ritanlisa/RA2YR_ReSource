@@ -25,6 +25,20 @@ int ToolTipManager::ddtor(char a2)
 }
 }
 
+// 0x724BB0
+void ToolTipManager::read(int a1)
+{
+{
+    Debug::Log();
+}
+}
+
+// 0x724BD0
+int ToolTipManager::stubReturnFalse(int a1)
+{
+return 0;
+}
+
 // 0x724F40
 namespace gamemd {
 DynamicVector * ToolTipManager_7::QueryInterface(char a2)
@@ -46,17 +60,3 @@ DynamicVector * ToolTipManager_7::QueryInterface(char a2)
 }
 }
 } // namespace gamemd
-
-// 0x724BB0
-void ToolTipManager::read(int a1)
-{
-{
-    Debug::Log();
-}
-}
-
-// 0x724BD0
-int ToolTipManager::stubReturnFalse(int a1)
-{
-return 0;
-}

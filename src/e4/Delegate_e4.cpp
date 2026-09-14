@@ -165,68 +165,6 @@ int __thiscall Delegate::StreamToBuffer(CacheStraw *this, char *a1, int a3)
 }
 }
 
-// 0x52AE20
-GenericNode * Delegate::Constructor_GenericNode(char a2)
-{
-{
-    GenericNode *v3;
-    GenericNode *v4;
-    *(void**)this = (GenericNode *)&vt_GenericNode;
-    if ( this )
-  {
-    v3 = *(this + 1);
-    if ( v3 )
-    {
-    v4 = *(this + 2);
-    if ( v4 )
-      {
-    v4->Previous = v3;
-    *(int *)(*(this + 1))[1].__pad_0 = *(this + 2);
-    *(this + 2) = 0;
-    *(this + 1) = 0;
-      }
-    }
-  }
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (GenericNode *)this;
-}
-}
-
-// 0x52AE70
-int * Delegate::ClearVectorAndStraw(char a2)
-{
-{
-    Vector::Clear((int)&this->__pad_0[12]);
-    Straw::Dtor((int *)this->__pad_0);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (int *)this->__pad_0;
-}
-}
-
-// 0x52AEA0
-int * Delegate::DestroyStraw(char a2)
-{
-{
-    Straw::Dtor((int *)this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (int *)this;
-}
-}
-
-// 0x52AEE0
-int * Delegate::DestroyPipe(char a2)
-{
-{
-    Pipe::Dtor((int *)this->__pad_0);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (int *)this->__pad_0;
-}
-}
-
 // 0x631D10
 Pipe * Delegate::Dispatch(Pipe * aP1, Pipe * aP2)
 {
@@ -300,5 +238,67 @@ int __thiscall Delegate::Invoke(_DWORD *this, int a2, Straw *aP2)
     return (*(int (__thiscall **)(Straw *, int, Straw *))(*(_DWORD *)v3->__pad_0 + 8))(v3, a2, aP2); /*0x6c98f3*/
   else
     return 0; /*0x6c98f9*/
+}
+}
+
+// 0x52AE20
+GenericNode * Delegate::Constructor_GenericNode(char a2)
+{
+{
+    GenericNode *v3;
+    GenericNode *v4;
+    *(void**)this = (GenericNode *)&vt_GenericNode;
+    if ( this )
+  {
+    v3 = *(this + 1);
+    if ( v3 )
+    {
+    v4 = *(this + 2);
+    if ( v4 )
+      {
+    v4->Previous = v3;
+    *(int *)(*(this + 1))[1].__pad_0 = *(this + 2);
+    *(this + 2) = 0;
+    *(this + 1) = 0;
+      }
+    }
+  }
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (GenericNode *)this;
+}
+}
+
+// 0x52AE70
+int * Delegate::ClearVectorAndStraw(char a2)
+{
+{
+    Vector::Clear((int)&this->__pad_0[12]);
+    Straw::Dtor((int *)this->__pad_0);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (int *)this->__pad_0;
+}
+}
+
+// 0x52AEA0
+int * Delegate::DestroyStraw(char a2)
+{
+{
+    Straw::Dtor((int *)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (int *)this;
+}
+}
+
+// 0x52AEE0
+int * Delegate::DestroyPipe(char a2)
+{
+{
+    Pipe::Dtor((int *)this->__pad_0);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (int *)this->__pad_0;
 }
 }

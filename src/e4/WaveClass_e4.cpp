@@ -2,71 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x75F330
-namespace gamemd {
-char WaveClass::DamageArea(ObjectClass * aP1)
-{
-{
-    int v3;
-    ObjectClass *v4;
-    char *v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    int v11;
-    int v12;
-    int v13;
-    int v15;
-    int v16;
-    v3 = this->Owner;
-    if ( v3 )
-  {
-    v4 = aP1;
-    LOWORD(aP1) = *(int *)aP1->__pad_0 / 256;
-    HIWORD(aP1) = *(int *)&v4->__pad_0[4] / 256;
-    v5 = (char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1);
-    v6 = (*(int (__thiscall **)(int, int))(*(int *)this->Owner + 1016))(this->Owner, 0);
-    v7 = *(int *)v6;
-    v15 = *(int *)(*(int *)(v6) + 172);
-    v16 = *(int *)(*(int *)(v6) + 152);
-    if ( (*((int *)(v5) + 80) & 0x100) != 0 && this->WaveClass_field_168 >= DataGlobal_B725C8 * (v5[283] + 4) )
-    v8 = *((int *)(v5) + 58);
-    else
-    v8 = *((int *)(v5) + 57);
-    for ( ; v8; v8 = *(int *)(v8 + 48) )
-    {
-    v9 = this->Owner;
-    if ( v8 != v9 && *(char *)(v8 + 144) && *(char *)(v8 + 116) && !*(char *)(v8 + 129) && *(int *)(v8 + 108) > 0 )
-    (*(void (__thiscall **)(int, int *, int, int, int, int, int, int))(*(int *)(v8) + 364))( v8, &v16, 0, v15, v9, 0, 0, 0);
-    }
-    v10 = *((int *)(v5) + 17);
-    if ( v10 != -1 )
-    {
-    v11 = *(int *)&g_BuildingTypeClass_Array->__pad_0[4 * v10];
-    if ( *(char *)(v11 + 689) )
-      {
-    aP1 = (ObjectClass *)*((int *)(v5) + 9);
-    CellChainReact();
-      }
-    if ( *(char *)(v11 + 680) )
-    BuildingClass::SellEffects((int)v5, *(TechnoClass **)(v7 + 152));
-    }
-    LOBYTE(v3) = CellClass::IsActiveOrNext(v5);
-    if ( (char)v3 )
-    {
-    v12 = *(int *)(*(int *)&DataGlobal_87F8E4.__pad_5568[9108] + 6092);
-    v3 = Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x63);
-    if ( v3 < v12 )
-    LOBYTE(v3) = LayerClass::DestroyCliff((int *)&DataGlobal_87F7E8, v13, (int)v5);
-    }
-  }
-    return v3;
-}
-}
-} // namespace gamemd
-
 // 0x75F650
 namespace gamemd {
 int WaveClass::LoadWaveData(int a2, int a3)
@@ -192,6 +127,71 @@ WaveClass *__thiscall WaveClass::ddtor(void **this, char a2)
   if ( (a2 & 1) != 0 ) /*0x7632be*/
     __3_YAXPAX_Z(this); /*0x7632c1*/
   return (WaveClass *)this; /*0x7632cb*/
+}
+}
+} // namespace gamemd
+
+// 0x75F330
+namespace gamemd {
+char WaveClass::DamageArea(ObjectClass * aP1)
+{
+{
+    int v3;
+    ObjectClass *v4;
+    char *v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    int v15;
+    int v16;
+    v3 = this->Owner;
+    if ( v3 )
+  {
+    v4 = aP1;
+    LOWORD(aP1) = *(int *)aP1->__pad_0 / 256;
+    HIWORD(aP1) = *(int *)&v4->__pad_0[4] / 256;
+    v5 = (char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1);
+    v6 = (*(int (__thiscall **)(int, int))(*(int *)this->Owner + 1016))(this->Owner, 0);
+    v7 = *(int *)v6;
+    v15 = *(int *)(*(int *)(v6) + 172);
+    v16 = *(int *)(*(int *)(v6) + 152);
+    if ( (*((int *)(v5) + 80) & 0x100) != 0 && this->WaveClass_field_168 >= DataGlobal_B725C8 * (v5[283] + 4) )
+    v8 = *((int *)(v5) + 58);
+    else
+    v8 = *((int *)(v5) + 57);
+    for ( ; v8; v8 = *(int *)(v8 + 48) )
+    {
+    v9 = this->Owner;
+    if ( v8 != v9 && *(char *)(v8 + 144) && *(char *)(v8 + 116) && !*(char *)(v8 + 129) && *(int *)(v8 + 108) > 0 )
+    (*(void (__thiscall **)(int, int *, int, int, int, int, int, int))(*(int *)(v8) + 364))( v8, &v16, 0, v15, v9, 0, 0, 0);
+    }
+    v10 = *((int *)(v5) + 17);
+    if ( v10 != -1 )
+    {
+    v11 = *(int *)&g_BuildingTypeClass_Array->__pad_0[4 * v10];
+    if ( *(char *)(v11 + 689) )
+      {
+    aP1 = (ObjectClass *)*((int *)(v5) + 9);
+    CellChainReact();
+      }
+    if ( *(char *)(v11 + 680) )
+    BuildingClass::SellEffects((int)v5, *(TechnoClass **)(v7 + 152));
+    }
+    LOBYTE(v3) = CellClass::IsActiveOrNext(v5);
+    if ( (char)v3 )
+    {
+    v12 = *(int *)(*(int *)&DataGlobal_87F8E4.__pad_5568[9108] + 6092);
+    v3 = Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x63);
+    if ( v3 < v12 )
+    LOBYTE(v3) = LayerClass::DestroyCliff((int *)&DataGlobal_87F7E8, v13, (int)v5);
+    }
+  }
+    return v3;
 }
 }
 } // namespace gamemd

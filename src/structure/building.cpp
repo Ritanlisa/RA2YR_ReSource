@@ -22454,10 +22454,6 @@ int BuildingClass::GetZDrawOffset() const
 
 // IDA 0x449410: get bounding size extension
 // 0x449410
-int BuildingClass::GetBoundingSizeExt() const
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x449410
 int __thiscall BuildingClass::GetBoundingSizeExt(#377 *this)
 {
   return (*(_BYTE *)(*((_DWORD *)this + 328) + 5829) != 0 ? 0x20 : 0)

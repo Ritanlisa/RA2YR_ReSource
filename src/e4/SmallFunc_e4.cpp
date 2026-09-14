@@ -1,7 +1,15 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_582D30_e4.hpp"
+#include "e4/classes/E4Recv_5866C0_e4.hpp"
 #include "e4/classes/E4Recv_5AFEF0_e4.hpp"
+#include "e4/classes/E4Recv_5D9360_e4.hpp"
+#include "e4/classes/E4Recv_692290_e4.hpp"
+#include "e4/classes/E4Recv_6A94F0_e4.hpp"
+#include "e4/classes/E4Recv_6CF1D0_e4.hpp"
+#include "e4/classes/E4Recv_6D1E30_e4.hpp"
+#include "e4/classes/E4Recv_721D10_e4.hpp"
 #include "e4/classes/E4Recv_728A00_e4.hpp"
 
 // 0x40D1B0
@@ -27,28 +35,6 @@ void __cdecl sub_40D1B0()
   }
   while ( v1 ); /*0x40d1f0*/
   RadarClass::Destruct(&MEMORY[0x87F7E8]); /*0x40d1f7*/
-}
-}
-} // namespace gamemd
-
-// 0x5AFEF0
-namespace gamemd {
-int E4Recv_5AFEF0::sub_5AFEF0()
-{
-{
-    int v2;
-    LocomotionClass::Init((int *)this);
-    this->M24 = g_MatrixTransformState;
-    this->M28 = DataGlobal_ABEE14;
-    this->M32 = DataGlobal_ABEE18;
-    this->M36 = g_MatrixTransformState;
-    this->M40 = DataGlobal_ABEE14;
-    v2 = DataGlobal_ABEE18;
-    this->M48 = 0;
-    *(void**)this = vt_MechLocomotionClass;
-    this->M44 = v2;
-    this->M4 = &vt_MechLocomotionClass;
-    return this;
 }
 }
 } // namespace gamemd
@@ -106,27 +92,6 @@ LABEL_11:
     i = (CCINIClass *)((char *)i + 1); /*0x6f1a8e*/
   }
   return result; /*0x6f1aa2*/
-}
-}
-} // namespace gamemd
-
-// 0x728A00
-namespace gamemd {
-int E4Recv_728A00::sub_728A00()
-{
-{
-    LocomotionClass::Init((int *)this);
-    this->M24 = 0;
-    this->M28 = DataGlobal_B0F910;
-    this->M32 = DataGlobal_B0F914;
-    this->M36 = DataGlobal_B0F918;
-    this->M40 = g_CurrentFrame;
-    this->M48 = 0;
-    this->M52 = 0;
-    this->M56 = 0;
-    *(void**)this = vt_TunnelLocomotionClass;
-    this->M4 = &vt_TunnelLocomotionClass;
-    return this;
 }
 }
 } // namespace gamemd
@@ -200,6 +165,28 @@ char sub_5A1F60()
     v0 = Cliff::ProcessTransitions(i, -1);
   }
     return v0;
+}
+}
+} // namespace gamemd
+
+// 0x5AFEF0
+namespace gamemd {
+int E4Recv_5AFEF0::sub_5AFEF0()
+{
+{
+    int v2;
+    LocomotionClass::Init((int *)this);
+    this->M24 = g_MatrixTransformState;
+    this->M28 = DataGlobal_ABEE14;
+    this->M32 = DataGlobal_ABEE18;
+    this->M36 = g_MatrixTransformState;
+    this->M40 = DataGlobal_ABEE14;
+    v2 = DataGlobal_ABEE18;
+    this->M48 = 0;
+    *(void**)this = vt_MechLocomotionClass;
+    this->M44 = v2;
+    this->M4 = &vt_MechLocomotionClass;
+    return this;
 }
 }
 } // namespace gamemd
@@ -296,6 +283,27 @@ char SmallFunc_6E3120(int _8, _UNKNOWN ** a1, unsigned int * a2, IUnknown * aP3,
     return 0;
     HouseClass::RespawnStartingBuildings(Field11, v8, v9, (int)v10);
     return 1;
+}
+}
+} // namespace gamemd
+
+// 0x728A00
+namespace gamemd {
+int E4Recv_728A00::sub_728A00()
+{
+{
+    LocomotionClass::Init((int *)this);
+    this->M24 = 0;
+    this->M28 = DataGlobal_B0F910;
+    this->M32 = DataGlobal_B0F914;
+    this->M36 = DataGlobal_B0F918;
+    this->M40 = g_CurrentFrame;
+    this->M48 = 0;
+    this->M52 = 0;
+    this->M56 = 0;
+    *(void**)this = vt_TunnelLocomotionClass;
+    this->M4 = &vt_TunnelLocomotionClass;
+    return this;
 }
 }
 } // namespace gamemd

@@ -4,8 +4,8 @@
 namespace gamemd {
 struct DynamicVectorClass_SubzoneConn {
     void* vfptr;  // minimal E2 declaration
-    DynamicVector * Add(char a2);  // 0x5890B0
     char Release(int a2, char * a3);  // 0x589190
+    DynamicVector * Add(char a2);  // 0x5890B0
     int GetSize(unsigned int * a2);  // 0x5892D0
     unsigned int Remove(int a2);  // 0x588CC0
 };

@@ -2,14 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x4A3C00
-void CreditsScreen::Init()
-{
-{
-    *(void**)this = 0;
-}
-}
-
 // 0x531A00
 int CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
@@ -75,5 +67,13 @@ int __stdcall CreditsScreen_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   CreditsScreen::Init(Buffer); /*0x531bea*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531bfc*/
   return 0; /*0x531bfe*/
+}
+}
+
+// 0x4A3C00
+void CreditsScreen::Init()
+{
+{
+    *(void**)this = 0;
 }
 }

@@ -4,11 +4,19 @@
 #include "e4/classes/E4Recv_690400_e4.hpp"
 #include "e4/classes/E4Recv_690530_e4.hpp"
 #include "e4/classes/E4Recv_6905F0_e4.hpp"
+#include "e4/classes/E4Recv_691590_e4.hpp"
+#include "e4/classes/E4Recv_693440_e4.hpp"
+#include "e4/classes/E4Recv_695BC0_e4.hpp"
+#include "e4/classes/E4Recv_696200_e4.hpp"
 #include "e4/classes/E4Recv_6966D0_e4.hpp"
 #include "e4/classes/E4Recv_696950_e4.hpp"
+#include "e4/classes/E4Recv_697F10_e4.hpp"
+#include "e4/classes/E4Recv_6990A0_e4.hpp"
 #include "e4/classes/E4Recv_69ADE0_e4.hpp"
+#include "e4/classes/E4Recv_69B170_e4.hpp"
 #include "e4/classes/E4Recv_69B690_e4.hpp"
 #include "e4/classes/E4Recv_69E060_e4.hpp"
+#include "e4/classes/E4Recv_69E430_e4.hpp"
 #include "e4/classes/E4Recv_69E9F0_e4.hpp"
 #include "e4/classes/E4Recv_69F0C0_e4.hpp"
 #include "e4/classes/E4Recv_69F1B0_e4.hpp"
@@ -56,38 +64,6 @@ int __thiscall sub_690400(int *this)
              MEMORY[0x88730C],
              0);
   return result; /*0x6904b7*/
-}
-}
-} // namespace gamemd
-
-// 0x6905F0
-namespace gamemd {
-char * E4Recv_6905F0::sub_6905F0()
-{
-{
-    void *v2;
-    char *result;
-    v2 = (void *)this->M12;
-    *(void**)this = &vt_ScoreFontClass;
-    if ( v2 && (unsigned char)this->M16 == 1 )
-  {
-    __3_YAXPAX_Z(v2);
-    this->M12 = 0;
-    this->M16 = 0;
-  }
-    result = (char *)--DataGlobal_B0558C;
-    if ( !DataGlobal_B0558C )
-  {
-    result = &DataGlobal_B05594;
-    do
-    {
-    *((int *)result - 1) = 0;
-    *result = 0;
-    result += 8;
-    }
-    while ( (int)result < (int)((char *)&DataGlobal_B055A8 + 4) );
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -1388,50 +1364,6 @@ LABEL_38:
 }
 } // namespace gamemd
 
-// 0x6966D0
-namespace gamemd {
-HWND E4Recv_6966D0::sub_6966D0()
-{
-{
-    bool v2;
-    HWND DlgItem;
-    HWND result;
-    v2 = this->M148 == 0;
-    DlgItem = GetDlgItem(*(HWND *)this, 1628);
-    if ( DlgItem )
-    SendMessageA(DlgItem, 0xF1u, v2, 0);
-    result = GetDlgItem(*(HWND *)this, 1627);
-    if ( result )
-    return (HWND)SendMessageA(result, 0xF1u, !v2, 0);
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x696950
-namespace gamemd {
-HWND E4Recv_696950::sub_696950()
-{
-{
-    HWND result;
-    HWND v3;
-    result = GetDlgItem(*(HWND *)this, 1626);
-    v3 = result;
-    if ( result )
-  {
-    ShowWindow(result, 0);
-    EnableWindow(v3, 0);
-    SendMessageA(v3, 0x4B5u, 0x10u, this + 8);
-    this->M23 = 0;
-    String::Trim((char *)(this + 8));
-    _strupr((char *)(this + 8));
-    return ListBox::SetCustomEntry((HWND *)this, 1625, 3, (void *)(this + 8));
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6994F0
 namespace gamemd {
 int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, CampaignScore * aP3, unsigned char * a4, unsigned int * a5, unsigned int * a6)
@@ -1699,22 +1631,6 @@ int __stdcall sub_69BCC0(ObjectClass *aP0)
 }
 } // namespace gamemd
 
-// 0x69E9F0
-namespace gamemd {
-int E4Recv_69E9F0::sub_69E9F0(int a1, Straw * aP2)
-{
-{
-    Pipe *v4;
-    if ( !a1 || (int)aP2 < 1 )
-    return 0;
-    v4 = (Pipe *)Delegate::Invoke((int *)this, a1, aP2);
-    if ( !(unsigned char)this->M12 )
-    SHA1::Process((Pipe *)(this + 16), (Pipe *)a1, v4);
-    return (int)v4->__pad_0;
-}
-}
-} // namespace gamemd
-
 // 0x69F0C0
 namespace gamemd {
 void * E4Recv_69F0C0::sub_69F0C0(void * a2)
@@ -1809,6 +1725,38 @@ void E4Recv_690530::sub_690530(void * a2, int a3)
       }
     }
   }
+}
+}
+} // namespace gamemd
+
+// 0x6905F0
+namespace gamemd {
+char * E4Recv_6905F0::sub_6905F0()
+{
+{
+    void *v2;
+    char *result;
+    v2 = (void *)this->M12;
+    *(void**)this = &vt_ScoreFontClass;
+    if ( v2 && (unsigned char)this->M16 == 1 )
+  {
+    __3_YAXPAX_Z(v2);
+    this->M12 = 0;
+    this->M16 = 0;
+  }
+    result = (char *)--DataGlobal_B0558C;
+    if ( !DataGlobal_B0558C )
+  {
+    result = &DataGlobal_B05594;
+    do
+    {
+    *((int *)result - 1) = 0;
+    *result = 0;
+    result += 8;
+    }
+    while ( (int)result < (int)((char *)&DataGlobal_B055A8 + 4) );
+  }
+    return result;
 }
 }
 } // namespace gamemd
@@ -2499,6 +2447,50 @@ int sub_6956B0()
 }
 } // namespace gamemd
 
+// 0x6966D0
+namespace gamemd {
+HWND E4Recv_6966D0::sub_6966D0()
+{
+{
+    bool v2;
+    HWND DlgItem;
+    HWND result;
+    v2 = this->M148 == 0;
+    DlgItem = GetDlgItem(*(HWND *)this, 1628);
+    if ( DlgItem )
+    SendMessageA(DlgItem, 0xF1u, v2, 0);
+    result = GetDlgItem(*(HWND *)this, 1627);
+    if ( result )
+    return (HWND)SendMessageA(result, 0xF1u, !v2, 0);
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x696950
+namespace gamemd {
+HWND E4Recv_696950::sub_696950()
+{
+{
+    HWND result;
+    HWND v3;
+    result = GetDlgItem(*(HWND *)this, 1626);
+    v3 = result;
+    if ( result )
+  {
+    ShowWindow(result, 0);
+    EnableWindow(v3, 0);
+    SendMessageA(v3, 0x4B5u, 0x10u, this + 8);
+    this->M23 = 0;
+    String::Trim((char *)(this + 8));
+    _strupr((char *)(this + 8));
+    return ListBox::SetCustomEntry((HWND *)this, 1625, 3, (void *)(this + 8));
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x696D00
 namespace gamemd {
 int sub_696D00()
@@ -2787,6 +2779,22 @@ int sub_69E070()
     DataGlobal_B077A8 = 0;
     DataGlobal_B077AC = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x69E9F0
+namespace gamemd {
+int E4Recv_69E9F0::sub_69E9F0(int a1, Straw * aP2)
+{
+{
+    Pipe *v4;
+    if ( !a1 || (int)aP2 < 1 )
+    return 0;
+    v4 = (Pipe *)Delegate::Invoke((int *)this, a1, aP2);
+    if ( !(unsigned char)this->M12 )
+    SHA1::Process((Pipe *)(this + 16), (Pipe *)a1, v4);
+    return (int)v4->__pad_0;
 }
 }
 } // namespace gamemd

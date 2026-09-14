@@ -64,9 +64,13 @@
 #include "e4/classes/E4Recv_63A4A0_e4.hpp"
 #include "e4/classes/E4Recv_63AD30_e4.hpp"
 #include "e4/classes/E4Recv_63B080_e4.hpp"
+#include "e4/classes/E4Recv_63C690_e4.hpp"
+#include "e4/classes/E4Recv_63CAE0_e4.hpp"
 #include "e4/classes/E4Recv_63CF10_e4.hpp"
 #include "e4/classes/E4Recv_63CFC0_e4.hpp"
 #include "e4/classes/E4Recv_63D2D0_e4.hpp"
+#include "e4/classes/E4Recv_63D480_e4.hpp"
+#include "e4/classes/E4Recv_63DAD0_e4.hpp"
 #include "e4/classes/E4Recv_63F810_e4.hpp"
 #include "e4/classes/E4Recv_63F8F0_e4.hpp"
 #include "e4/classes/E4Recv_63FDC0_e4.hpp"
@@ -756,6 +760,8 @@ void __thiscall sub_631F30(PixelFXClass *this)
 // 0x632A70
 namespace ra2 {
 namespace game {
+int ObjectClass::sub_632A70(int a2, int a3, ObjectClass * aP3)
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_632A70(ObjectClass *this, int a2, int a3, ObjectClass *aP3)
 {
@@ -766,6 +772,7 @@ int __thiscall sub_632A70(ObjectClass *this, int a2, int a3, ObjectClass *aP3)
   LOBYTE(result) = *(_DWORD *)this->__pad_0 | 1; /*0x632a8c*/
   *(_DWORD *)this->__pad_0 = result; /*0x632a8e*/
   return result; /*0x632a90*/
+}
 }
 } // namespace game
 } // namespace ra2
@@ -835,78 +842,6 @@ LABEL_11:
   a1[1] = -1; /*0x633c4a*/
   a1[2] = -1; /*0x633c4d*/
   return a1; /*0x633c35*/
-}
-}
-} // namespace gamemd
-
-// 0x6347A0
-namespace gamemd {
-int E4Recv_6347A0::sub_6347A0(int a2)
-{
-{
-    return *(int *)(this->M36 + 4 * a2);
-}
-}
-} // namespace gamemd
-
-// 0x635210
-namespace gamemd {
-int E4Recv_635210::sub_635210()
-{
-{
-    int result;
-    int v3;
-    char *v4;
-    int *ScenarioClassActionCoords;
-    int v6;
-    int v7;
-    int *v8;
-    int v9;
-    int v10;
-    int v11;
-    int v12;
-    int v13[3];
-    int v14[3];
-    char v15[112];
-    char v16[108];
-    short v17;
-    char v18;
-    this->M176 = -1;
-    result = this->M168;
-    if ( result )
-  {
-    result = this->M48;
-    qmemcpy(v15, (const void *)(this + 56), 0x6Eu);
-    v3 = 0;
-    v11 = result;
-    v15[110] = (unsigned char)this->M166;
-    if ( result > 0 )
-    {
-    while ( 1 )
-      {
-    v4 = *(char **)(this->M36 + 4 * v3);
-    qmemcpy(v16, v4, sizeof(v16));
-    v4 += 108;
-    v17 = *(short *)v4;
-    v18 = v4[2];
-    ScenarioClassActionCoords = GetScenarioClassActionCoords(v13, v15);
-    v6 = *ScenarioClassActionCoords;
-    v7 = ScenarioClassActionCoords[1];
-    v12 = ScenarioClassActionCoords[2];
-    v8 = GetScenarioClassActionCoords(v14, v16);
-    result = *v8;
-    v9 = v8[1];
-    v10 = v8[2];
-    if ( v6 == result && v7 == v9 && v12 == v10 )
-    break;
-    result = v11;
-    if ( ++v3 >= v11 )
-    return result;
-      }
-    this->M176 = v3;
-    }
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -1117,19 +1052,6 @@ LABEL_9:
   *(_WORD *)(a2 + 108) = *(_WORD *)v11; /*0x636f4b*/
   *(_BYTE *)(a2 + 110) = v11[2]; /*0x636f4d*/
   return a2; /*0x636f4e*/
-}
-}
-} // namespace gamemd
-
-// 0x636FA0
-namespace gamemd {
-int E4Recv_636FA0::sub_636FA0(int a2, int a3)
-{
-{
-    this->M144 = a2;
-    this->M148 = a3;
-    this->M152 = 1;
-    return a2;
 }
 }
 } // namespace gamemd
@@ -4445,6 +4367,16 @@ int E4Recv_634700::sub_634700()
 }
 } // namespace gamemd
 
+// 0x6347A0
+namespace gamemd {
+int E4Recv_6347A0::sub_6347A0(int a2)
+{
+{
+    return *(int *)(this->M36 + 4 * a2);
+}
+}
+} // namespace gamemd
+
 // 0x634800
 namespace gamemd {
 char * E4Recv_634800::sub_634800()
@@ -4561,6 +4493,68 @@ char E4Recv_634960::sub_634960()
 {
 {
     return this->M28;
+}
+}
+} // namespace gamemd
+
+// 0x635210
+namespace gamemd {
+int E4Recv_635210::sub_635210()
+{
+{
+    int result;
+    int v3;
+    char *v4;
+    int *ScenarioClassActionCoords;
+    int v6;
+    int v7;
+    int *v8;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13[3];
+    int v14[3];
+    char v15[112];
+    char v16[108];
+    short v17;
+    char v18;
+    this->M176 = -1;
+    result = this->M168;
+    if ( result )
+  {
+    result = this->M48;
+    qmemcpy(v15, (const void *)(this + 56), 0x6Eu);
+    v3 = 0;
+    v11 = result;
+    v15[110] = (unsigned char)this->M166;
+    if ( result > 0 )
+    {
+    while ( 1 )
+      {
+    v4 = *(char **)(this->M36 + 4 * v3);
+    qmemcpy(v16, v4, sizeof(v16));
+    v4 += 108;
+    v17 = *(short *)v4;
+    v18 = v4[2];
+    ScenarioClassActionCoords = GetScenarioClassActionCoords(v13, v15);
+    v6 = *ScenarioClassActionCoords;
+    v7 = ScenarioClassActionCoords[1];
+    v12 = ScenarioClassActionCoords[2];
+    v8 = GetScenarioClassActionCoords(v14, v16);
+    result = *v8;
+    v9 = v8[1];
+    v10 = v8[2];
+    if ( v6 == result && v7 == v9 && v12 == v10 )
+    break;
+    result = v11;
+    if ( ++v3 >= v11 )
+    return result;
+      }
+    this->M176 = v3;
+    }
+  }
+    return result;
 }
 }
 } // namespace gamemd
@@ -4762,6 +4756,19 @@ unsigned int E4Recv_636D90::_GetExecutionResourceId_irtualProcessor_details_Conc
 {
 {
     return this->M140;
+}
+}
+} // namespace gamemd
+
+// 0x636FA0
+namespace gamemd {
+int E4Recv_636FA0::sub_636FA0(int a2, int a3)
+{
+{
+    this->M144 = a2;
+    this->M148 = a3;
+    this->M152 = 1;
+    return a2;
 }
 }
 } // namespace gamemd

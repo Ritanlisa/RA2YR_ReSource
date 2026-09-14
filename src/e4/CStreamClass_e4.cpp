@@ -132,6 +132,124 @@ CStreamClass *__userpurge CStreamClass::ddtor@<eax>(void *Block@<ecx>, ULONG a2@
 }
 } // namespace gamemd
 
+// 0x4A2E00
+int CStreamClass::Read(int a1, int a2, int a3, int a4, int a5)
+{
+{
+    if ( *(char *)(a1 + 16) || *(char *)(a1 + 17) )
+    return -2147467259;
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int, int, int, int))(**(int **)(a1 + 8) + 20))( *(int *)(a1 + 8), a2, a3, a4, a5);
+}
+}
+
+// 0x4A2E50
+int CStreamClass::Write(int a1, int a2, int a3)
+{
+{
+    if ( *(char *)(a1 + 16) || *(char *)(a1 + 17) )
+    return -2147467259;
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int, int))(**(int **)(a1 + 8) + 24))(*(int *)(a1 + 8), a2, a3);
+}
+}
+
+// 0x4A2EA0
+int CStreamClass::Seek(int a1, int a2, int a3, int a4, int a5, int a6)
+{
+{
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int, int, int, int, int))(**(int **)(a1 + 8) + 28))( *(int *)(a1 + 8), a2, a3, a4, a5, a6);
+}
+}
+
+// 0x4A2EE0
+int CStreamClass::SetSize(int a1, int a2)
+{
+{
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int))(**(int **)(a1 + 8) + 32))(*(int *)(a1 + 8), a2);
+}
+}
+
+// 0x4A2F10
+int CStreamClass::Commit(int a1)
+{
+{
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int))(**(int **)(a1 + 8) + 36))(*(int *)(a1 + 8));
+}
+}
+
+// 0x4A2F40
+int CStreamClass::Revert(int a1, int a2, int a3, int a4, int a5, int a6)
+{
+{
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int, int, int, int, int))(**(int **)(a1 + 8) + 40))( *(int *)(a1 + 8), a2, a3, a4, a5, a6);
+}
+}
+
+// 0x4A2F80
+int CStreamClass::LockRegion(int a1, int a2, int a3, int a4, int a5, int a6)
+{
+{
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int, int, int, int, int))(**(int **)(a1 + 8) + 44))( *(int *)(a1 + 8), a2, a3, a4, a5, a6);
+}
+}
+
+// 0x4A2FC0
+int CStreamClass::UnlockRegion(int a1, int a2, int a3)
+{
+{
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int, int))(**(int **)(a1 + 8) + 48))(*(int *)(a1 + 8), a2, a3);
+}
+}
+
+// 0x4A2FF0
+int CStreamClass::Stat(int a1, int a2)
+{
+{
+    if ( !*(int *)(a1 + 8) )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int, int))(**(int **)(a1 + 8) + 52))(*(int *)(a1 + 8), a2);
+}
+}
+
+// 0x4A3220
+int CStreamClass::IStreamQueryInterface(int a1, const void * a2, unsigned int * a3)
+{
+{
+    return CStreamClass::QueryInterface(a1 - 4, a2, a3);
+}
+}
+
+// 0x4A3230
+LONG CStreamClass::IStreamAddRef(int a1)
+{
+{
+    return CStreamClass::AddRef(a1 - 4);
+}
+}
+
+// 0x4A3240
+LONG CStreamClass::IStreamRelease(int a1)
+{
+{
+    return CStreamClass::Release((volatile LONG *)(a1 - 4));
+}
+}
+
 // 0x4A4B20
 namespace gamemd {
 int CStreamClass_16::Seek(int a2)
@@ -262,6 +380,19 @@ int CStreamClass_16::Read(unsigned int * a2)
 }
 } // namespace gamemd
 
+// 0x4A4C90
+namespace gamemd {
+unsigned int CStreamClass_16::Write(int a2)
+{
+{
+    if ( (unsigned char)this->CStreamClass_16_field_0xC )
+    return (unsigned int)(a2 - this->CStreamClass_16_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x4A4D90
 namespace gamemd {
 VectorClass * CStreamClass_16::QueryInterface(char a2)
@@ -280,137 +411,6 @@ VectorClass * CStreamClass_16::QueryInterface(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x4A2E00
-int CStreamClass::Read(int a1, int a2, int a3, int a4, int a5)
-{
-{
-    if ( *(char *)(a1 + 16) || *(char *)(a1 + 17) )
-    return -2147467259;
-    if ( !*(int *)(a1 + 8) )
-    WinAPI::Wrapper(-2147467261);
-    return (*(int (__stdcall **)(int, int, int, int, int))(**(int **)(a1 + 8) + 20))( *(int *)(a1 + 8), a2, a3, a4, a5);
-}
-}
-
-// 0x4A2E50
-int CStreamClass::Write(int a1, int a2, int a3)
-{
-{
-    if ( *(char *)(a1 + 16) || *(char *)(a1 + 17) )
-    return -2147467259;
-    if ( !*(int *)(a1 + 8) )
-    WinAPI::Wrapper(-2147467261);
-    return (*(int (__stdcall **)(int, int, int))(**(int **)(a1 + 8) + 24))(*(int *)(a1 + 8), a2, a3);
-}
-}
-
-// 0x4A2EA0
-int CStreamClass::Seek(int a1, int a2, int a3, int a4, int a5, int a6)
-{
-{
-    if ( !*(int *)(a1 + 8) )
-    WinAPI::Wrapper(-2147467261);
-    return (*(int (__stdcall **)(int, int, int, int, int, int))(**(int **)(a1 + 8) + 28))( *(int *)(a1 + 8), a2, a3, a4, a5, a6);
-}
-}
-
-// 0x4A2EE0
-int CStreamClass::SetSize(int a1, int a2)
-{
-{
-    if ( !*(int *)(a1 + 8) )
-    WinAPI::Wrapper(-2147467261);
-    return (*(int (__stdcall **)(int, int))(**(int **)(a1 + 8) + 32))(*(int *)(a1 + 8), a2);
-}
-}
-
-// 0x4A2F10
-int CStreamClass::Commit(int a1)
-{
-{
-    if ( !*(int *)(a1 + 8) )
-    WinAPI::Wrapper(-2147467261);
-    return (*(int (__stdcall **)(int))(**(int **)(a1 + 8) + 36))(*(int *)(a1 + 8));
-}
-}
-
-// 0x4A2F40
-int CStreamClass::Revert(int a1, int a2, int a3, int a4, int a5, int a6)
-{
-{
-    if ( !*(int *)(a1 + 8) )
-    WinAPI::Wrapper(-2147467261);
-    return (*(int (__stdcall **)(int, int, int, int, int, int))(**(int **)(a1 + 8) + 40))( *(int *)(a1 + 8), a2, a3, a4, a5, a6);
-}
-}
-
-// 0x4A2F80
-int CStreamClass::LockRegion(int a1, int a2, int a3, int a4, int a5, int a6)
-{
-{
-    if ( !*(int *)(a1 + 8) )
-    WinAPI::Wrapper(-2147467261);
-    return (*(int (__stdcall **)(int, int, int, int, int, int))(**(int **)(a1 + 8) + 44))( *(int *)(a1 + 8), a2, a3, a4, a5, a6);
-}
-}
-
-// 0x4A2FC0
-int CStreamClass::UnlockRegion(int a1, int a2, int a3)
-{
-{
-    if ( !*(int *)(a1 + 8) )
-    WinAPI::Wrapper(-2147467261);
-    return (*(int (__stdcall **)(int, int, int))(**(int **)(a1 + 8) + 48))(*(int *)(a1 + 8), a2, a3);
-}
-}
-
-// 0x4A2FF0
-int CStreamClass::Stat(int a1, int a2)
-{
-{
-    if ( !*(int *)(a1 + 8) )
-    WinAPI::Wrapper(-2147467261);
-    return (*(int (__stdcall **)(int, int))(**(int **)(a1 + 8) + 52))(*(int *)(a1 + 8), a2);
-}
-}
-
-// 0x4A3220
-int CStreamClass::IStreamQueryInterface(int a1, const void * a2, unsigned int * a3)
-{
-{
-    return CStreamClass::QueryInterface(a1 - 4, a2, a3);
-}
-}
-
-// 0x4A3230
-LONG CStreamClass::IStreamAddRef(int a1)
-{
-{
-    return CStreamClass::AddRef(a1 - 4);
-}
-}
-
-// 0x4A3240
-LONG CStreamClass::IStreamRelease(int a1)
-{
-{
-    return CStreamClass::Release((volatile LONG *)(a1 - 4));
-}
-}
-
-// 0x4A4C90
-namespace gamemd {
-unsigned int CStreamClass_16::Write(int a2)
-{
-{
-    if ( (unsigned char)this->CStreamClass_16_field_0xC )
-    return (unsigned int)(a2 - this->CStreamClass_16_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd

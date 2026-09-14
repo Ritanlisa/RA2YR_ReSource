@@ -18,144 +18,6 @@
 #include "e4/classes/E4Recv_48B070_e4.hpp"
 #include "e4/classes/E4Recv_48BB00_e4.hpp"
 
-// 0x483710
-namespace gamemd {
-char E4Recv_483710::sub_483710()
-{
-{
-    int BuildingByTiberiumType;
-    int v3;
-    IUnknown *v4;
-    if ( !*(char *)(*(int *)&HouseClass_Player.__pad_5568[8060] + 13478) )
-    return 0;
-    BuildingByTiberiumType = FindBuildingByTiberiumType(*(IUnknown **)(this + 68));
-    if ( BuildingByTiberiumType == -1 )
-    return 0;
-    v3 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18632] + 4 * BuildingByTiberiumType);
-    if ( (unsigned char)this->M284 || *(unsigned char *)(this + 286) >= *(int *)(v3 + 228) - 1 || *(double *)(v3 + 176) < 0.00001 )
-  {
-    return 0;
-  }
-    v4 = (IUnknown *)FindBuildingByTiberiumType(*(IUnknown **)(this + 68));
-    return Crate::FindPlacement(this, v4, 1);
-}
-}
-} // namespace gamemd
-
-// 0x484F50
-namespace gamemd {
-int E4Recv_484F50::sub_484F50()
-{
-{
-    int v2;
-    int result;
-    int *v4;
-    int *v5;
-    int v6;
-    int *v7;
-    char v8[40];
-    v2 = 0;
-    result = this->M228;
-    if ( result )
-  {
-    v4 = (int *)v8;
-    do
-    {
-    if ( v2 >= 10 )
-    break;
-    *v4 = result;
-    result = *(int *)(result + 48);
-    ++v2;
-    ++v4;
-    }
-    while ( result );
-  }
-    if ( v2 > 0 )
-  {
-    v5 = v8;
-    v6 = v2;
-    do
-    {
-    v7 = (int *)*v5;
-    (*(void (__thiscall **)(int, int))(*(int *)*v5 + 460))(*v5, 0);
-    if ( (*(int (__thiscall **)(int *))(*v7 + 44))(v7) == 1 || (result = (*(int (__thiscall **)(int *))(*v7 + 44))(v7), result == 2) )
-      {
-    if ( !v7[413] )
-    WinAPI::Wrapper(-2147467261);
-    result = (*(int (__stdcall **)(int, int))(*(int *)v7[413] + 124))( v7[413], *(unsigned char *)(this + 284));
-      }
-    ++v5;
-    --v6;
-    }
-    while ( v6 );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x486D90
-namespace gamemd {
-int E4Recv_486D90::sub_486D90(char a2)
-{
-{
-    int v3;
-    int v5;
-    int v6;
-    bool v7;
-    int *v8;
-    int v9;
-    int v10;
-    int v11;
-    v3 = 1 << a2;
-    if ( (this->M220 & (1 << a2)) == 0 )
-    return -1;
-    v5 = 0;
-    v6 = 0;
-    v7 = 1;
-    do
-  {
-    if ( v7 )
-    {
-    v9 = v5 & 7;
-    v10 = this->M36;
-    LOWORD(v11) = LOWORD(Direction_X_Offsets[v9]) + v10;
-    HIWORD(v11) = HIWORD(v10) + HIWORD(Direction_X_Offsets[v9]);
-    v10 = v11;
-    v8 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v10);
-    }
-    else
-    {
-    v8 = this;
-    }
-    if ( (v3 & v8[55]) != 0 )
-    v6 |= 1 << v5;
-    v7 = (unsigned int)++v5 < 8;
-  }
-    while ( v5 < 8 );
-    return v6;
-}
-}
-} // namespace gamemd
-
-// 0x487EA0
-namespace gamemd {
-unsigned int * Coord_Neighbor(unsigned int * a1, unsigned short * a2, char a3)
-{
-{
-    int *result;
-    int v4;
-    int v5;
-    result = a1;
-    v4 = a3 & 7;
-    LOWORD(v5) = *a2 + LOWORD(Direction_X_Offsets[v4]);
-    HIWORD(v5) = *((int*)(a2) + 1) + HIWORD(Direction_X_Offsets[v4]);
-    *result = v5;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x4880F0
 namespace gamemd {
 int E4Recv_4880F0::sub_4880F0(int a2)
@@ -219,67 +81,6 @@ int __thiscall sub_4880F0(int this, int a2)
   }
   (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x4881f5*/
   return 1; /*0x4881fd*/
-}
-}
-} // namespace gamemd
-
-// 0x488280
-namespace gamemd {
-CheckListClass * E4Recv_488280::sub_488280(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
-{
-{
-    ListClass::Construct((int)this, aP1, a3, a4, aP4, a6, aP6, aP7, a9);
-    this->M372 = 0;
-    *(int *)this = &vt_CheckListClass;
-    return (CheckListClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x488760
-namespace gamemd {
-ColorListClass * E4Recv_488760::sub_488760(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
-{
-{
-    ListClass::Construct((int)this, aP1, a3, a4, aP4, a6, aP6, aP7, a9);
-    this->M376 = 0;
-    this->M380 = 0;
-    this->M384 = 1;
-    this->M385 = 0;
-    this->M372 = &vt_DynamicVectorClass_int;
-    this->M392 = 10;
-    this->M388 = 0;
-    this->M400 = 0;
-    this->M396 = 1;
-    *(void**)this = &vt_ColorListClass;
-    return (ColorListClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x4887F0
-namespace gamemd {
-int E4Recv_4887F0::sub_4887F0()
-{
-{
-    int v2;
-    int *v3;
-    void *v4;
-    v2 = this->M372;
-    v3 = this + 93;
-    *(void**)this = &vt_ColorListClass;
-    (*(void (__thiscall **)(int *))(v2 + 12))(this + 93);
-    this->M400 = 0;
-    v4 = (void *)v3[1];
-    *v3 = &vt_VectorClass_int;
-    if ( v4 && *((char *)(v3) + 13) )
-  {
-    __3_YAXPAX_Z(v4);
-    v3[1] = 0;
-  }
-    *((char *)(v3) + 13) = 0;
-    v3[2] = 0;
-    return ListClass::Destruct(this);
 }
 }
 } // namespace gamemd
@@ -587,19 +388,6 @@ void __thiscall sub_48B1F0(CommBufferClass *this)
   __3_YAXPAX_Z((void *)this->field_34); /*0x48b27c*/
   __3_YAXPAX_Z(*(void **)&this->__pad_28[8]); /*0x48b285*/
   __3_YAXPAX_Z(*((void **)this + 16)); /*0x48b28e*/
-}
-}
-} // namespace gamemd
-
-// 0x48BB00
-namespace gamemd {
-ObjectClass * E4Recv_48BB00::sub_48BB00(char a2)
-{
-{
-    sub_48B1F0(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (ObjectClass *)this;
 }
 }
 } // namespace gamemd
@@ -1137,6 +925,30 @@ int sub_48E480()
 }
 } // namespace gamemd
 
+// 0x483710
+namespace gamemd {
+char E4Recv_483710::sub_483710()
+{
+{
+    int BuildingByTiberiumType;
+    int v3;
+    IUnknown *v4;
+    if ( !*(char *)(*(int *)&HouseClass_Player.__pad_5568[8060] + 13478) )
+    return 0;
+    BuildingByTiberiumType = FindBuildingByTiberiumType(*(IUnknown **)(this + 68));
+    if ( BuildingByTiberiumType == -1 )
+    return 0;
+    v3 = *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18632] + 4 * BuildingByTiberiumType);
+    if ( (unsigned char)this->M284 || *(unsigned char *)(this + 286) >= *(int *)(v3 + 228) - 1 || *(double *)(v3 + 176) < 0.00001 )
+  {
+    return 0;
+  }
+    v4 = (IUnknown *)FindBuildingByTiberiumType(*(IUnknown **)(this + 68));
+    return Crate::FindPlacement(this, v4, 1);
+}
+}
+} // namespace gamemd
+
 // 0x484A80
 namespace gamemd {
 int sub_484A80(int a1)
@@ -1153,6 +965,58 @@ namespace gamemd {
 char sub_484F10(int a1)
 {
 return 1;
+}
+} // namespace gamemd
+
+// 0x484F50
+namespace gamemd {
+int E4Recv_484F50::sub_484F50()
+{
+{
+    int v2;
+    int result;
+    int *v4;
+    int *v5;
+    int v6;
+    int *v7;
+    char v8[40];
+    v2 = 0;
+    result = this->M228;
+    if ( result )
+  {
+    v4 = (int *)v8;
+    do
+    {
+    if ( v2 >= 10 )
+    break;
+    *v4 = result;
+    result = *(int *)(result + 48);
+    ++v2;
+    ++v4;
+    }
+    while ( result );
+  }
+    if ( v2 > 0 )
+  {
+    v5 = v8;
+    v6 = v2;
+    do
+    {
+    v7 = (int *)*v5;
+    (*(void (__thiscall **)(int, int))(*(int *)*v5 + 460))(*v5, 0);
+    if ( (*(int (__thiscall **)(int *))(*v7 + 44))(v7) == 1 || (result = (*(int (__thiscall **)(int *))(*v7 + 44))(v7), result == 2) )
+      {
+    if ( !v7[413] )
+    WinAPI::Wrapper(-2147467261);
+    result = (*(int (__stdcall **)(int, int))(*(int *)v7[413] + 124))( v7[413], *(unsigned char *)(this + 284));
+      }
+    ++v5;
+    --v6;
+    }
+    while ( v6 );
+  }
+    return result;
+}
 }
 } // namespace gamemd
 
@@ -1192,6 +1056,50 @@ bool E4Recv_4866F0::sub_4866F0()
 }
 } // namespace gamemd
 
+// 0x486D90
+namespace gamemd {
+int E4Recv_486D90::sub_486D90(char a2)
+{
+{
+    int v3;
+    int v5;
+    int v6;
+    bool v7;
+    int *v8;
+    int v9;
+    int v10;
+    int v11;
+    v3 = 1 << a2;
+    if ( (this->M220 & (1 << a2)) == 0 )
+    return -1;
+    v5 = 0;
+    v6 = 0;
+    v7 = 1;
+    do
+  {
+    if ( v7 )
+    {
+    v9 = v5 & 7;
+    v10 = this->M36;
+    LOWORD(v11) = LOWORD(Direction_X_Offsets[v9]) + v10;
+    HIWORD(v11) = HIWORD(v10) + HIWORD(Direction_X_Offsets[v9]);
+    v10 = v11;
+    v8 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v10);
+    }
+    else
+    {
+    v8 = this;
+    }
+    if ( (v3 & v8[55]) != 0 )
+    v6 |= 1 << v5;
+    v7 = (unsigned int)++v5 < 8;
+  }
+    while ( v5 < 8 );
+    return v6;
+}
+}
+} // namespace gamemd
+
 // 0x4879B0
 namespace gamemd {
 char E4Recv_4879B0::sub_4879B0()
@@ -1221,6 +1129,24 @@ unsigned int E4Recv_487C80::_GetNumberOfActiveVirtualProcessors_SchedulerBase_de
 {
 {
     return this->M248;
+}
+}
+} // namespace gamemd
+
+// 0x487EA0
+namespace gamemd {
+unsigned int * Coord_Neighbor(unsigned int * a1, unsigned short * a2, char a3)
+{
+{
+    int *result;
+    int v4;
+    int v5;
+    result = a1;
+    v4 = a3 & 7;
+    LOWORD(v5) = *a2 + LOWORD(Direction_X_Offsets[v4]);
+    HIWORD(v5) = *((int*)(a2) + 1) + HIWORD(Direction_X_Offsets[v4]);
+    *result = v5;
+    return result;
 }
 }
 } // namespace gamemd
@@ -1272,6 +1198,19 @@ int sub_488260()
 }
 } // namespace gamemd
 
+// 0x488280
+namespace gamemd {
+CheckListClass * E4Recv_488280::sub_488280(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
+{
+{
+    ListClass::Construct((int)this, aP1, a3, a4, aP4, a6, aP6, aP7, a9);
+    this->M372 = 0;
+    *(int *)this = &vt_CheckListClass;
+    return (CheckListClass *)this;
+}
+}
+} // namespace gamemd
+
 // 0x488740
 namespace gamemd {
 int sub_488740()
@@ -1282,6 +1221,54 @@ int sub_488740()
     DataGlobal_89E7F0 = 0;
     DataGlobal_89E7F4 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x488760
+namespace gamemd {
+ColorListClass * E4Recv_488760::sub_488760(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
+{
+{
+    ListClass::Construct((int)this, aP1, a3, a4, aP4, a6, aP6, aP7, a9);
+    this->M376 = 0;
+    this->M380 = 0;
+    this->M384 = 1;
+    this->M385 = 0;
+    this->M372 = &vt_DynamicVectorClass_int;
+    this->M392 = 10;
+    this->M388 = 0;
+    this->M400 = 0;
+    this->M396 = 1;
+    *(void**)this = &vt_ColorListClass;
+    return (ColorListClass *)this;
+}
+}
+} // namespace gamemd
+
+// 0x4887F0
+namespace gamemd {
+int E4Recv_4887F0::sub_4887F0()
+{
+{
+    int v2;
+    int *v3;
+    void *v4;
+    v2 = this->M372;
+    v3 = this + 93;
+    *(void**)this = &vt_ColorListClass;
+    (*(void (__thiscall **)(int *))(v2 + 12))(this + 93);
+    this->M400 = 0;
+    v4 = (void *)v3[1];
+    *v3 = &vt_VectorClass_int;
+    if ( v4 && *((char *)(v3) + 13) )
+  {
+    __3_YAXPAX_Z(v4);
+    v3[1] = 0;
+  }
+    *((char *)(v3) + 13) = 0;
+    v3[2] = 0;
+    return ListClass::Destruct(this);
 }
 }
 } // namespace gamemd
@@ -1594,6 +1581,19 @@ int sub_48B0C0()
     DataGlobal_89E880 = 0;
     DataGlobal_89E884 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x48BB00
+namespace gamemd {
+ObjectClass * E4Recv_48BB00::sub_48BB00(char a2)
+{
+{
+    sub_48B1F0(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (ObjectClass *)this;
 }
 }
 } // namespace gamemd

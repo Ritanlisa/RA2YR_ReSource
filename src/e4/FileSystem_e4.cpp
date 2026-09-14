@@ -2,50 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x5F76B0
-void FileSystem::InitPipShapes()
-{
-{
-    int v0[9];
-    if ( !FileSystem_PIPBRD_SHP )
-  {
-    RawFileClass::Construct(v0, (int)DataGlobal_832AA8);
-    FileSystem_PIPBRD_SHP = (int)CCFileClass::ReadEntireFile(v0);
-    DataGlobal_AC1488 = FileSystem_PIPBRD_SHP != 0;
-    if ( !FileSystem_PIPBRD_SHP )
-    FileSystem_PIPBRD_SHP = SearchMIXFile(DataGlobal_832AA8, 0);
-    RawFileClass::Dtor(v0);
-  }
-    if ( !FileSystem_PIPS_SHP )
-  {
-    RawFileClass::Construct(v0, (int)DataGlobal_832A9C);
-    FileSystem_PIPS_SHP = (int)CCFileClass::ReadEntireFile(v0);
-    DataGlobal_AC1489 = FileSystem_PIPS_SHP != 0;
-    if ( !FileSystem_PIPS_SHP )
-    FileSystem_PIPS_SHP = SearchMIXFile(DataGlobal_832A9C, 0);
-    RawFileClass::Dtor(v0);
-  }
-    if ( !FileSystem_PIPS2_SHP )
-  {
-    RawFileClass::Construct(v0, (int)DataGlobal_832A90);
-    FileSystem_PIPS2_SHP = (int)CCFileClass::ReadEntireFile(v0);
-    DataGlobal_AC148A = FileSystem_PIPS2_SHP != 0;
-    if ( !FileSystem_PIPS2_SHP )
-    FileSystem_PIPS2_SHP = SearchMIXFile(DataGlobal_832A90, 0);
-    RawFileClass::Dtor(v0);
-  }
-    if ( !FileSystem_TALKBUBL_SHP )
-  {
-    RawFileClass::Construct(v0, (int)DataGlobal_832A80);
-    FileSystem_TALKBUBL_SHP = (int)CCFileClass::ReadEntireFile(v0);
-    DataGlobal_AC148B = FileSystem_TALKBUBL_SHP != 0;
-    if ( !FileSystem_TALKBUBL_SHP )
-    FileSystem_TALKBUBL_SHP = SearchMIXFile(DataGlobal_832A80, 0);
-    RawFileClass::Dtor(v0);
-  }
-}
-}
-
 // 0x626DA0
 int FileSystem::ProcessNextFileExtension()
 {
@@ -210,6 +166,50 @@ LABEL_36:
     }
   }
   return v27; /*0x626eb6*/
+}
+}
+
+// 0x5F76B0
+void FileSystem::InitPipShapes()
+{
+{
+    int v0[9];
+    if ( !FileSystem_PIPBRD_SHP )
+  {
+    RawFileClass::Construct(v0, (int)DataGlobal_832AA8);
+    FileSystem_PIPBRD_SHP = (int)CCFileClass::ReadEntireFile(v0);
+    DataGlobal_AC1488 = FileSystem_PIPBRD_SHP != 0;
+    if ( !FileSystem_PIPBRD_SHP )
+    FileSystem_PIPBRD_SHP = SearchMIXFile(DataGlobal_832AA8, 0);
+    RawFileClass::Dtor(v0);
+  }
+    if ( !FileSystem_PIPS_SHP )
+  {
+    RawFileClass::Construct(v0, (int)DataGlobal_832A9C);
+    FileSystem_PIPS_SHP = (int)CCFileClass::ReadEntireFile(v0);
+    DataGlobal_AC1489 = FileSystem_PIPS_SHP != 0;
+    if ( !FileSystem_PIPS_SHP )
+    FileSystem_PIPS_SHP = SearchMIXFile(DataGlobal_832A9C, 0);
+    RawFileClass::Dtor(v0);
+  }
+    if ( !FileSystem_PIPS2_SHP )
+  {
+    RawFileClass::Construct(v0, (int)DataGlobal_832A90);
+    FileSystem_PIPS2_SHP = (int)CCFileClass::ReadEntireFile(v0);
+    DataGlobal_AC148A = FileSystem_PIPS2_SHP != 0;
+    if ( !FileSystem_PIPS2_SHP )
+    FileSystem_PIPS2_SHP = SearchMIXFile(DataGlobal_832A90, 0);
+    RawFileClass::Dtor(v0);
+  }
+    if ( !FileSystem_TALKBUBL_SHP )
+  {
+    RawFileClass::Construct(v0, (int)DataGlobal_832A80);
+    FileSystem_TALKBUBL_SHP = (int)CCFileClass::ReadEntireFile(v0);
+    DataGlobal_AC148B = FileSystem_TALKBUBL_SHP != 0;
+    if ( !FileSystem_TALKBUBL_SHP )
+    FileSystem_TALKBUBL_SHP = SearchMIXFile(DataGlobal_832A80, 0);
+    RawFileClass::Dtor(v0);
+  }
 }
 }
 

@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_5E7160_e4.hpp"
+#include "e4/classes/E4Recv_5E93F0_e4.hpp"
 #include "e4/classes/E4Recv_5EE200_e4.hpp"
 
 // 0x5E2820
@@ -3505,53 +3506,6 @@ void __fastcall EnablePlayerSlotControls(HWND hDlg, bool a2)
 }
 } // namespace gamemd
 
-// 0x5EDEF0
-namespace gamemd {
-char ** Player_GetTypeString(char ** a1, wchar_t * a2)
-{
-{
-    if ( a2 == (wchar_t *)g_HouseClass_ObserverFlags )
-  {
-    String::Assign(a1, DataGlobal_831704[0]);
-    return a1;
-  }
-    else if ( a2 == (wchar_t *)g_Lobby_PlayerCount )
-  {
-    String::Assign(a1, DataGlobal_831708[0]);
-    return a1;
-  }
-    else if ( a2 == g_Lobby_PlayerReady )
-  {
-    String::Assign(a1, DataGlobal_83170C[0]);
-    return a1;
-  }
-    else if ( a2 == (wchar_t *)g_Lobby_PlayerTeam )
-  {
-    String::Assign(a1, DataGlobal_831710[0]);
-    return a1;
-  }
-    else if ( a2 == (wchar_t *)g_Lobby_PlayerSide )
-  {
-    String::Assign(a1, DataGlobal_831714[0]);
-    return a1;
-  }
-    else if ( a2 == (wchar_t *)g_Lobby_PlayerColor )
-  {
-    String::Assign(a1, DataGlobal_831718[0]);
-    return a1;
-  }
-    else
-  {
-    if ( a2 == (wchar_t *)g_Lobby_MaxPlayers )
-    String::Assign(a1, DataGlobal_83171C);
-    else
-    String::Assign(a1, DataGlobal_83170C[0]);
-    return a1;
-  }
-}
-}
-} // namespace gamemd
-
 // 0x5EE510
 namespace gamemd {
 int Lobby_RefreshPlayerSlots(unsigned int a1)
@@ -4123,6 +4077,53 @@ wchar_t ** ReadChatMessage(wchar_t ** a1, HWND a2)
     WideString::AssignFromPtr(a1, (const wchar_t **)&v8);
     DeleteAndZero::Alt(&v8);
     return a1;
+}
+}
+} // namespace gamemd
+
+// 0x5EDEF0
+namespace gamemd {
+char ** Player_GetTypeString(char ** a1, wchar_t * a2)
+{
+{
+    if ( a2 == (wchar_t *)g_HouseClass_ObserverFlags )
+  {
+    String::Assign(a1, DataGlobal_831704[0]);
+    return a1;
+  }
+    else if ( a2 == (wchar_t *)g_Lobby_PlayerCount )
+  {
+    String::Assign(a1, DataGlobal_831708[0]);
+    return a1;
+  }
+    else if ( a2 == g_Lobby_PlayerReady )
+  {
+    String::Assign(a1, DataGlobal_83170C[0]);
+    return a1;
+  }
+    else if ( a2 == (wchar_t *)g_Lobby_PlayerTeam )
+  {
+    String::Assign(a1, DataGlobal_831710[0]);
+    return a1;
+  }
+    else if ( a2 == (wchar_t *)g_Lobby_PlayerSide )
+  {
+    String::Assign(a1, DataGlobal_831714[0]);
+    return a1;
+  }
+    else if ( a2 == (wchar_t *)g_Lobby_PlayerColor )
+  {
+    String::Assign(a1, DataGlobal_831718[0]);
+    return a1;
+  }
+    else
+  {
+    if ( a2 == (wchar_t *)g_Lobby_MaxPlayers )
+    String::Assign(a1, DataGlobal_83171C);
+    else
+    String::Assign(a1, DataGlobal_83170C[0]);
+    return a1;
+  }
 }
 }
 } // namespace gamemd

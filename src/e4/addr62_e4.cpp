@@ -22,7 +22,13 @@
 #include "e4/classes/E4Recv_628B00_e4.hpp"
 #include "e4/classes/E4Recv_629530_e4.hpp"
 #include "e4/classes/E4Recv_629710_e4.hpp"
+#include "e4/classes/E4Recv_62C6E0_e4.hpp"
+#include "e4/classes/E4Recv_62CB10_e4.hpp"
 #include "e4/classes/E4Recv_62D510_e4.hpp"
+#include "e4/classes/E4Recv_62E430_e4.hpp"
+#include "e4/classes/E4Recv_62E840_e4.hpp"
+#include "e4/classes/E4Recv_62ED40_e4.hpp"
+#include "e4/classes/E4Recv_62F9A0_e4.hpp"
 
 // 0x620050
 namespace gamemd {
@@ -2050,93 +2056,6 @@ bool __thiscall sub_6242B0(HWND this)
 }
 } // namespace gamemd
 
-// 0x626250
-namespace gamemd {
-int E4Recv_626250::sub_626250(const char * a2, int a3)
-{
-{
-    strcpy((char *)this, a2);
-    this->M256 = a3;
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x626290
-namespace gamemd {
-void E4Recv_626290::sub_626290()
-{
-{
-    int v2;
-    int v3;
-    int i;
-    int v5;
-    void *v6;
-    void (__thiscall ***v7)(int, int);
-    v2 = this->M256;
-    if ( v2 )
-  {
-    v3 = *(int *)(v2 + 16);
-    for ( i = 0; i < v3; ++i )
-    {
-    v5 = *(int *)(this->M256 + 4);
-    v6 = *(void **)(v5 + 4 * i);
-    if ( v6 )
-      {
-    ColorScheme::Destructor(*(int *)(v5 + 4 * i));
-    __3_YAXPAX_Z(v6);
-      }
-    }
-    v7 = (void (__thiscall ***)(int, int))this->M256;
-    if ( v7 )
-    (**v7)(v7, 1);
-    this->M256 = 0;
-  }
-}
-}
-} // namespace gamemd
-
-// 0x6262F0
-namespace gamemd {
-int E4Recv_6262F0::sub_6262F0(int a2)
-{
-{
-    int result;
-    int v4;
-    int i;
-    int v6;
-    void *v7;
-    void (__thiscall ***v8)(int, int);
-    result = this->M256;
-    if ( result )
-  {
-    v4 = *(int *)(result + 16);
-    for ( i = 0; i < v4; ++i )
-    {
-    v6 = *(int *)(this->M256 + 4);
-    v7 = *(void **)(v6 + 4 * i);
-    if ( v7 )
-      {
-    ColorScheme::Destructor(*(int *)(v6 + 4 * i));
-    __3_YAXPAX_Z(v7);
-      }
-    }
-    v8 = (void (__thiscall ***)(int, int))this->M256;
-    if ( v8 )
-    (**v8)(v8, 1);
-    this->M256 = 0;
-    this->M256 = a2;
-    return a2;
-  }
-    else
-  {
-    this->M256 = a2;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x627020
 namespace gamemd {
 unsigned int * sub_627020()
@@ -2459,58 +2378,6 @@ void __thiscall sub_629530(int this)
     }
     *(_BYTE *)(this + 84) = 0; /*0x6295a0*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x62D510
-namespace gamemd {
-int E4Recv_62D510::sub_62D510()
-{
-{
-    double v2;
-    char *v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int GroundHeight;
-    int v12;
-    int v13;
-    int v14;
-    int v15[3];
-    v2 = this->M228;
-    v3 = (char *)(this + 39);
-    *(float *)v15 = this->M156;
-    v4 = this->M160;
-    v5 = this->M164;
-    v6 = this->M156;
-    v15[2] = v5;
-    v7 = *((int *)(v3) + 1);
-    v12 = v6;
-    v8 = *((int *)(v3) + 2);
-    v13 = v7;
-    v14 = v8;
-    v15[1] = v4;
-    if ( v2 > 0.0 )
-  {
-    v9 = this->M264;
-    v12 = this->M256 + v6;
-    v13 = this->M260 + v7;
-    v14 = v9 + v8;
-  }
-    if ( this->M228 > 0.0 )
-  {
-    GroundHeight = Cell::GetGroundHeight(v15);
-    if ( Cell::GetGroundHeight(&v12) > GroundHeight )
-    {
-    this->M301 = 1;
-    this->M305 = 1;
-    }
-  }
-    return this->Vf436(&v12);
 }
 }
 } // namespace gamemd
@@ -3022,6 +2889,93 @@ unsigned char E4Recv_6261B0::sub_6261B0(ObjectClass * aP1, int a3, int a4)
 }
 } // namespace gamemd
 
+// 0x626250
+namespace gamemd {
+int E4Recv_626250::sub_626250(const char * a2, int a3)
+{
+{
+    strcpy((char *)this, a2);
+    this->M256 = a3;
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x626290
+namespace gamemd {
+void E4Recv_626290::sub_626290()
+{
+{
+    int v2;
+    int v3;
+    int i;
+    int v5;
+    void *v6;
+    void (__thiscall ***v7)(int, int);
+    v2 = this->M256;
+    if ( v2 )
+  {
+    v3 = *(int *)(v2 + 16);
+    for ( i = 0; i < v3; ++i )
+    {
+    v5 = *(int *)(this->M256 + 4);
+    v6 = *(void **)(v5 + 4 * i);
+    if ( v6 )
+      {
+    ColorScheme::Destructor(*(int *)(v5 + 4 * i));
+    __3_YAXPAX_Z(v6);
+      }
+    }
+    v7 = (void (__thiscall ***)(int, int))this->M256;
+    if ( v7 )
+    (**v7)(v7, 1);
+    this->M256 = 0;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x6262F0
+namespace gamemd {
+int E4Recv_6262F0::sub_6262F0(int a2)
+{
+{
+    int result;
+    int v4;
+    int i;
+    int v6;
+    void *v7;
+    void (__thiscall ***v8)(int, int);
+    result = this->M256;
+    if ( result )
+  {
+    v4 = *(int *)(result + 16);
+    for ( i = 0; i < v4; ++i )
+    {
+    v6 = *(int *)(this->M256 + 4);
+    v7 = *(void **)(v6 + 4 * i);
+    if ( v7 )
+      {
+    ColorScheme::Destructor(*(int *)(v6 + 4 * i));
+    __3_YAXPAX_Z(v7);
+      }
+    }
+    v8 = (void (__thiscall ***)(int, int))this->M256;
+    if ( v8 )
+    (**v8)(v8, 1);
+    this->M256 = 0;
+    this->M256 = a2;
+    return a2;
+  }
+    else
+  {
+    this->M256 = a2;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x626660
 namespace gamemd {
 int String_HashMod31(char * a1)
@@ -3503,6 +3457,58 @@ int sub_62B5C0()
     DataGlobal_AC49A8 = 0;
     DataGlobal_AC49AC = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x62D510
+namespace gamemd {
+int E4Recv_62D510::sub_62D510()
+{
+{
+    double v2;
+    char *v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int GroundHeight;
+    int v12;
+    int v13;
+    int v14;
+    int v15[3];
+    v2 = this->M228;
+    v3 = (char *)(this + 39);
+    *(float *)v15 = this->M156;
+    v4 = this->M160;
+    v5 = this->M164;
+    v6 = this->M156;
+    v15[2] = v5;
+    v7 = *((int *)(v3) + 1);
+    v12 = v6;
+    v8 = *((int *)(v3) + 2);
+    v13 = v7;
+    v14 = v8;
+    v15[1] = v4;
+    if ( v2 > 0.0 )
+  {
+    v9 = this->M264;
+    v12 = this->M256 + v6;
+    v13 = this->M260 + v7;
+    v14 = v9 + v8;
+  }
+    if ( this->M228 > 0.0 )
+  {
+    GroundHeight = Cell::GetGroundHeight(v15);
+    if ( Cell::GetGroundHeight(&v12) > GroundHeight )
+    {
+    this->M301 = 1;
+    this->M305 = 1;
+    }
+  }
+    return this->Vf436(&v12);
 }
 }
 } // namespace gamemd

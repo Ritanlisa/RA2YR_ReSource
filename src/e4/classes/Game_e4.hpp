@@ -18,12 +18,12 @@ struct Game {
     int SerializeGameSaveState();  // 0x67F9C0
     int validateScenario(unsigned int * a2);  // 0x680F70
     char LoadMultiplayerScoreAssets();  // 0x72D730
-    void * shutdownGame();  // 0x72D830
     void EncodeGameSetupState();  // 0x77E430
     char ProcessIdle();  // 0x77F900
     int CreateAIPlayer();  // 0x796DE0
     int CreateAIPlayer_Potato();  // 0x796ED0
     char SetupWOLTournament();  // 0x7A2330
+    void * shutdownGame();  // 0x72D830
     int CheckForGameCD();  // 0x4790A0
     int loadCampaignData();  // 0x550000
     void processStartup();  // 0x5B56F0

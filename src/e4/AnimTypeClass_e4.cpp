@@ -478,20 +478,6 @@ LABEL_6:
 }
 } // namespace gamemd
 
-// 0x428C10
-namespace gamemd {
-int AnimTypeClass::GetAnimData(int a2, int a3)
-{
-{
-    int result;
-    result = this->Next;
-    if ( result == a2 )
-    this->Next = 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x428C30
 namespace gamemd {
 int AnimTypeClass::GetDamage()
@@ -559,16 +545,6 @@ int __thiscall AnimTypeClass::_vt39(char *this)
     return v6; /*0x428dd2*/
   }
   return result; /*0x428dd4*/
-}
-}
-} // namespace gamemd
-
-// 0x428E60
-namespace gamemd {
-int AnimTypeClass::GetAuxField()
-{
-{
-    return this->MiddleFrameIndex;
 }
 }
 } // namespace gamemd
@@ -727,6 +703,20 @@ int AnimTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 }
 } // namespace gamemd
 
+// 0x428C10
+namespace gamemd {
+int AnimTypeClass::GetAnimData(int a2, int a3)
+{
+{
+    int result;
+    result = this->Next;
+    if ( result == a2 )
+    this->Next = 0;
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x428E40
 namespace gamemd {
 int AnimTypeClass::Thunk_AnimTypeClass_sub_428E40()
@@ -740,6 +730,16 @@ namespace gamemd {
 int AnimTypeClass::Thunk_AnimTypeClass_sub_428E50()
 {
 return 5;
+}
+} // namespace gamemd
+
+// 0x428E60
+namespace gamemd {
+int AnimTypeClass::GetAuxField()
+{
+{
+    return this->MiddleFrameIndex;
+}
 }
 } // namespace gamemd
 

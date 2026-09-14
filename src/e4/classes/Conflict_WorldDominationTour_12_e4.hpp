@@ -4,14 +4,14 @@
 namespace gamemd {
 struct Conflict_WorldDominationTour_12 {
     void* vfptr;  // minimal E2 declaration
+    char Release(int a2, unsigned int * a3);  // 0x766C10
+    char Constructor_1(int a2, unsigned int * a3);  // 0x766DC0
     unsigned int * Seek(unsigned int * a2, int a3);  // 0x766850
     rc_ptr * Constructor(char a2);  // 0x766960
     rc_ptr * Constructor_0(char a2);  // 0x766990
     char AddRef(int a2);  // 0x766BC0
-    char Release(int a2, unsigned int * a3);  // 0x766C10
     int ddtor();  // 0x766D30
     int Read(int a2);  // 0x766D60
-    char Constructor_1(int a2, unsigned int * a3);  // 0x766DC0
     int IndexOf(int a2);  // 0x766F40
     VectorClass * QueryInterface(char a2);  // 0x766FC0
     DynamicVector * Constructor_2(char a2);  // 0x767080

@@ -2,15 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x4085A0
-int Struct::ZeroInit32()
-{
-{
-    memset(this, 0, 0x20u);
-    return 0;
-}
-}
-
 // 0x48B2A0
 int Struct::ClearAllMemberFlags()
 {
@@ -115,6 +106,15 @@ _BYTE *__thiscall Struct::Zero3(_BYTE *this)
   *(this + 1) = 0; /*0x4b9bd6*/
   *(this + 2) = 0; /*0x4b9bd9*/
   return this; /*0x4b9bdc*/
+}
+}
+
+// 0x4085A0
+int Struct::ZeroInit32()
+{
+{
+    memset(this, 0, 0x20u);
+    return 0;
 }
 }
 

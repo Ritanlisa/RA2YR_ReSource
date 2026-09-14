@@ -1,9 +1,32 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_5B6EB0_e4.hpp"
+#include "e4/classes/E4Recv_5CE4A0_e4.hpp"
+#include "e4/classes/E4Recv_5D1C90_e4.hpp"
+#include "e4/classes/E4Recv_60B350_e4.hpp"
+#include "e4/classes/E4Recv_60B420_e4.hpp"
+#include "e4/classes/E4Recv_60B550_e4.hpp"
+#include "e4/classes/E4Recv_60B610_e4.hpp"
+#include "e4/classes/E4Recv_60B7A0_e4.hpp"
+#include "e4/classes/E4Recv_60C7D0_e4.hpp"
+#include "e4/classes/E4Recv_60C930_e4.hpp"
+#include "e4/classes/E4Recv_60CAF0_e4.hpp"
+#include "e4/classes/E4Recv_60CCC0_e4.hpp"
+#include "e4/classes/E4Recv_60CDB0_e4.hpp"
+#include "e4/classes/E4Recv_630EA0_e4.hpp"
+#include "e4/classes/E4Recv_631380_e4.hpp"
+#include "e4/classes/E4Recv_631500_e4.hpp"
+#include "e4/classes/E4Recv_631B20_e4.hpp"
+#include "e4/classes/E4Recv_637D00_e4.hpp"
 #include "e4/classes/E4Recv_642E00_e4.hpp"
 #include "e4/classes/E4Recv_642E40_e4.hpp"
 #include "e4/classes/E4Recv_643670_e4.hpp"
+#include "e4/classes/E4Recv_660BB0_e4.hpp"
+#include "e4/classes/E4Recv_660BE0_e4.hpp"
+#include "e4/classes/E4Recv_6A4F20_e4.hpp"
+#include "e4/classes/E4Recv_791AA0_e4.hpp"
+#include "e4/classes/E4Recv_7B7980_e4.hpp"
 
 // 0x52B6D0
 namespace gamemd {

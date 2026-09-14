@@ -6,7 +6,9 @@
 #include "e4/classes/E4Recv_5D25D0_e4.hpp"
 #include "e4/classes/E4Recv_5D2650_e4.hpp"
 #include "e4/classes/E4Recv_5D30C0_e4.hpp"
+#include "e4/classes/E4Recv_5D4430_e4.hpp"
 #include "e4/classes/E4Recv_5D4F20_e4.hpp"
+#include "e4/classes/E4Recv_5D6D80_e4.hpp"
 #include "e4/classes/E4Recv_5D7580_e4.hpp"
 #include "e4/classes/E4Recv_5D7CD0_e4.hpp"
 #include "e4/classes/E4Recv_5D7FF0_e4.hpp"
@@ -1042,16 +1044,6 @@ int GameInit_Complete()
 }
 } // namespace gamemd
 
-// 0x5D8FC0
-namespace gamemd {
-void E4Recv_5D8FC0::__Release__NonReentrantLock_details_Concurrency__QAEXXZ()
-{
-{
-    *(int *)this = 0;
-}
-}
-} // namespace gamemd
-
 // 0x5D9060
 namespace gamemd {
 short E4Recv_5D9060::sub_5D9060(int a2)
@@ -1457,31 +1449,6 @@ LABEL_47:
   }
 LABEL_54:
   --*(_DWORD *)&HouseClass_Player.__pad_5568[8856]; /*0x5dab60*/
-}
-}
-} // namespace gamemd
-
-// 0x5DB680
-namespace gamemd {
-char InitNetworkGameState()
-{
-{
-    int v1;
-    char v2[8];
-    if ( !Network_Init(g_NetworkManager) )
-    return 0;
-    if ( g_GameMode_Current[0] != 4 )
-  {
-    if ( DataGlobal_A8D5FC )
-    {
-    Network::CopyAddress(&DataGlobal_A8D600, &v1, (int)v2);
-    Network_Init_542FC0(&v1);
-    }
-  }
-    LoadNetworkShareStrings();
-    Game::ResetFlags();
-    Network::InitPlayerSlots();
-    return 1;
 }
 }
 } // namespace gamemd
@@ -3040,6 +3007,16 @@ unsigned int * E4Recv_5D8FB0::sub_5D8FB0()
 }
 } // namespace gamemd
 
+// 0x5D8FC0
+namespace gamemd {
+void E4Recv_5D8FC0::__Release__NonReentrantLock_details_Concurrency__QAEXXZ()
+{
+{
+    *(int *)this = 0;
+}
+}
+} // namespace gamemd
+
 // 0x5DA4B0
 namespace gamemd {
 int sub_5DA4B0()
@@ -3410,6 +3387,31 @@ unsigned char sub_5DAF20()
     Event::Dispatch();
     NetworkLobby::MessageHandler();
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5DB680
+namespace gamemd {
+char InitNetworkGameState()
+{
+{
+    int v1;
+    char v2[8];
+    if ( !Network_Init(g_NetworkManager) )
+    return 0;
+    if ( g_GameMode_Current[0] != 4 )
+  {
+    if ( DataGlobal_A8D5FC )
+    {
+    Network::CopyAddress(&DataGlobal_A8D600, &v1, (int)v2);
+    Network_Init_542FC0(&v1);
+    }
+  }
+    LoadNetworkShareStrings();
+    Game::ResetFlags();
+    Network::InitPlayerSlots();
+    return 1;
 }
 }
 } // namespace gamemd

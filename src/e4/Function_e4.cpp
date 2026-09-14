@@ -4,7 +4,7 @@
 
 // 0x643E80
 namespace gamemd {
-int Function::643E80(int a2)
+int Function_643E80()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Function::643E80(_DWORD *this, int a2)

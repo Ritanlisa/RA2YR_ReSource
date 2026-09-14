@@ -486,30 +486,6 @@ char __thiscall FactoryClass::StartProduction_2(int this)
 }
 } // namespace gamemd
 
-// 0x4CA620
-namespace gamemd {
-char FactoryClass::RemoveOneFromQueue(char a2)
-{
-{
-    int *v2;
-    int v3;
-    int v4;
-    int v5;
-    v2 = this + 16;
-    v3 = (*(int (__thiscall **)(int *, char *))(this->onHold + 16))(this + 16, &a2);
-    if ( v3 == -1 )
-    return 0;
-    v4 = v2[4];
-    if ( v3 >= v4 )
-    return 0;
-    v5 = v4 - 1;
-    for ( v2[4] = v5; v3 < v2[4]; *(int *)(v2[1] + 4 * v3 - 4) = *(int *)(v2[1] + 4 * v3) )
-    ++v3;
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x4CA670
 namespace gamemd {
 int FactoryClass::CountType(IUnknown * aP1)
@@ -685,6 +661,89 @@ char __thiscall sub_635060(int this, int a2)
 }
 } // namespace gamemd
 
+// 0x4CA230
+namespace gamemd {
+int FactoryClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 887937448;
+  a2[1] = 298977968;
+  a2[2] = 1610655660;
+  a2[3] = -1252326136;
+  return 0;
+}
+} // namespace gamemd
+
+// 0x4CA3C0
+namespace gamemd {
+int FactoryClass::Seek(int * a1, int * a2, int a3)
+{
+{
+    int result;
+    int v4;
+    int i;
+    result = AbstractClass::SaveLoad_Prefix(a1, a2, a3);
+    if ( result >= 0 )
+  {
+    v4 = *a2;
+    a3 = *((int*)(a1) + 20);
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a2, &a3, 4, 0);
+    if ( result >= 0 )
+    {
+    for ( i = 0; i < a3; ++i )
+      {
+    if ( (*(int (__stdcall **)(int *, int, int, int))(*a2 + 16))(a2, *((int*)(a1) + 17) + 4 * i, 4, 0) < 0 )
+    break;
+      }
+    return 0;
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4CA620
+namespace gamemd {
+char FactoryClass::RemoveOneFromQueue(char a2)
+{
+{
+    int *v2;
+    int v3;
+    int v4;
+    int v5;
+    v2 = this + 16;
+    v3 = (*(int (__thiscall **)(int *, char *))(this->onHold + 16))(this + 16, &a2);
+    if ( v3 == -1 )
+    return 0;
+    v4 = v2[4];
+    if ( v3 >= v4 )
+    return 0;
+    v5 = v4 - 1;
+    for ( v2[4] = v5; v3 < v2[4]; *(int *)(v2[1] + 4 * v3 - 4) = *(int *)(v2[1] + 4 * v3) )
+    ++v3;
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x4CA750
+namespace gamemd {
+int FactoryClass::StubReturn12()
+{
+return 12;
+}
+} // namespace gamemd
+
+// 0x4CA760
+namespace gamemd {
+int FactoryClass::StubReturn116()
+{
+return 116;
+}
+} // namespace gamemd
+
 // 0x4CA8E0
 namespace gamemd {
 int FactoryClass_33::Seek(int a2)
@@ -815,6 +874,19 @@ int FactoryClass_33::Read(unsigned int * a2)
 }
 } // namespace gamemd
 
+// 0x4CAA50
+namespace gamemd {
+unsigned int FactoryClass_33::Write(int a2)
+{
+{
+    if ( (unsigned char)this->FactoryClass_33_field_0xC )
+    return (unsigned int)(a2 - this->FactoryClass_33_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x4CAB50
 namespace gamemd {
 VectorClass * FactoryClass_33::QueryInterface(char a2)
@@ -833,78 +905,6 @@ VectorClass * FactoryClass_33::QueryInterface(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x4CA230
-namespace gamemd {
-int FactoryClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 887937448;
-  a2[1] = 298977968;
-  a2[2] = 1610655660;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
-// 0x4CA3C0
-namespace gamemd {
-int FactoryClass::Seek(int * a1, int * a2, int a3)
-{
-{
-    int result;
-    int v4;
-    int i;
-    result = AbstractClass::SaveLoad_Prefix(a1, a2, a3);
-    if ( result >= 0 )
-  {
-    v4 = *a2;
-    a3 = *((int*)(a1) + 20);
-    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a2, &a3, 4, 0);
-    if ( result >= 0 )
-    {
-    for ( i = 0; i < a3; ++i )
-      {
-    if ( (*(int (__stdcall **)(int *, int, int, int))(*a2 + 16))(a2, *((int*)(a1) + 17) + 4 * i, 4, 0) < 0 )
-    break;
-      }
-    return 0;
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4CA750
-namespace gamemd {
-int FactoryClass::StubReturn12()
-{
-return 12;
-}
-} // namespace gamemd
-
-// 0x4CA760
-namespace gamemd {
-int FactoryClass::StubReturn116()
-{
-return 116;
-}
-} // namespace gamemd
-
-// 0x4CAA50
-namespace gamemd {
-unsigned int FactoryClass_33::Write(int a2)
-{
-{
-    if ( (unsigned char)this->FactoryClass_33_field_0xC )
-    return (unsigned int)(a2 - this->FactoryClass_33_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd

@@ -2,18 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x401950
-unsigned int * FileClass::loc_401950(char a2)
-{
-{
-    *(void**)this = &DataGlobal_7E1668;
-    BufferIOFileClass::Dtor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-
 // 0x473AE0
 int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 {
@@ -355,47 +343,6 @@ int __thiscall FileClass_Close(_DWORD *this)
 }
 }
 
-// 0x65D190
-int FileClass::Delete()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall FileClass_Delete(LPCSTR *this)
-{
-  LPCSTR v3; // edi
-  DWORD LastError; // eax
-  int v5; // [esp-8h] [ebp-Ch]
-
-  (*((void (__thiscall **)(LPCSTR *))*this + 13))(this); /*0x65d195*/
-  if ( *(this + 6) ) /*0x65d198*/
-  {
-    if ( (*((unsigned __int8 (__thiscall **)(LPCSTR *, _DWORD))*this + 5))(this, 0) ) /*0x65d1b6*/
-    {
-      if ( DeleteFileA(*(this + 6)) ) /*0x65d1c5*/
-      {
-        return 1; /*0x65d1e8*/
-      }
-      else
-      {
-        v3 = *this; /*0x65d1d3*/
-        v5 = (int)*(this + 6); /*0x65d1d5*/
-        LastError = GetLastError(); /*0x65d1d7*/
-        (*((void (__thiscall **)(LPCSTR *, DWORD, _DWORD, int))v3 + 16))(this, LastError, 0, v5); /*0x65d1e0*/
-        return 0; /*0x65d1e4*/
-      }
-    }
-    else
-    {
-      return 0; /*0x65d1bd*/
-    }
-  }
-  else
-  {
-    (*((void (__thiscall **)(LPCSTR *, int, _DWORD, _DWORD))*this + 16))(this, 2, 0, 0); /*0x65d1a9*/
-    return 0; /*0x65d1ac*/
-  }
-}
-}
-
 // 0x76F020
 int FileClass::GetState()
 {
@@ -413,6 +360,18 @@ int FileClass::SetState()
 int __thiscall FileClass::SetState(_DWORD *this)
 {
   return *(this + 1); /*0x76f073*/
+}
+}
+
+// 0x401950
+unsigned int * FileClass::loc_401950(char a2)
+{
+{
+    *(void**)this = &DataGlobal_7E1668;
+    BufferIOFileClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 

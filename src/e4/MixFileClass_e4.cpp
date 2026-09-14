@@ -2,61 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x69E180
-void MixFileClass::DestroyCache()
-{
-{
-    void *v0;
-    void *v1;
-    void *v2;
-    int v3;
-    int v4;
-    v0 = DataGlobal_B077B0;
-    if ( DataGlobal_B077B0 )
-  {
-    do
-    {
-    v1 = (void *)*((int *)(v0) + 6);
-    if ( v0 )
-      {
-    if ( *(short *)v0 == 0xFFFF )
-        {
-    if ( *((char *)(v0) + 16) )
-          {
-    v2 = (void *)*((int *)(v0) + 3);
-    if ( v2 )
-    MixFileClass::CacheNode_Dtor(v2, 1);
-    *((int *)(v0) + 3) = 0;
-    *((char *)(v0) + 16) = 0;
-          }
-    v3 = *((int *)(v0) + 6);
-    if ( v3 )
-    *(int *)(v3 + 28) = *((int *)(v0) + 7);
-    v4 = *((int *)(v0) + 7);
-    if ( v4 )
-    *(int *)(v4 + 24) = *((int *)(v0) + 6);
-    else
-    DataGlobal_B077B0 = (void *)*((int *)(v0) + 6);
-    if ( *((int *)(v0) + 2) )
-          {
-    free(*((void **)(v0) + 2));
-    *((int *)(v0) + 2) = 0;
-          }
-        }
-    __3_YAXPAX_Z(v0);
-      }
-    v0 = v1;
-    }
-    while ( v1 );
-    DataGlobal_B077B0 = 0;
-  }
-    else
-  {
-    DataGlobal_B077B0 = 0;
-  }
-}
-}
-
 // 0x69E210
 void MixFileClass::CleanupCache()
 {
@@ -143,6 +88,61 @@ void sub_69E210()
     MEMORY[0xB077B4] = 0; /*0x69e2fd*/
     MEMORY[0xB077B8] = 0; /*0x69e303*/
     MEMORY[0xB077BC] = 0; /*0x69e309*/
+  }
+}
+}
+
+// 0x69E180
+void MixFileClass::DestroyCache()
+{
+{
+    void *v0;
+    void *v1;
+    void *v2;
+    int v3;
+    int v4;
+    v0 = DataGlobal_B077B0;
+    if ( DataGlobal_B077B0 )
+  {
+    do
+    {
+    v1 = (void *)*((int *)(v0) + 6);
+    if ( v0 )
+      {
+    if ( *(short *)v0 == 0xFFFF )
+        {
+    if ( *((char *)(v0) + 16) )
+          {
+    v2 = (void *)*((int *)(v0) + 3);
+    if ( v2 )
+    MixFileClass::CacheNode_Dtor(v2, 1);
+    *((int *)(v0) + 3) = 0;
+    *((char *)(v0) + 16) = 0;
+          }
+    v3 = *((int *)(v0) + 6);
+    if ( v3 )
+    *(int *)(v3 + 28) = *((int *)(v0) + 7);
+    v4 = *((int *)(v0) + 7);
+    if ( v4 )
+    *(int *)(v4 + 24) = *((int *)(v0) + 6);
+    else
+    DataGlobal_B077B0 = (void *)*((int *)(v0) + 6);
+    if ( *((int *)(v0) + 2) )
+          {
+    free(*((void **)(v0) + 2));
+    *((int *)(v0) + 2) = 0;
+          }
+        }
+    __3_YAXPAX_Z(v0);
+      }
+    v0 = v1;
+    }
+    while ( v1 );
+    DataGlobal_B077B0 = 0;
+  }
+    else
+  {
+    DataGlobal_B077B0 = 0;
   }
 }
 }

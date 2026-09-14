@@ -2,14 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x410600
-int XSurface::vt_entry_40(int a1)
-{
-{
-    return AbstractClass::COMStub_Release(a1 - 4);
-}
-}
-
 // 0x411560
 int XSurface::Lock(int a2, int a3)
 {
@@ -29,17 +21,6 @@ char __thiscall XSurface_Unlock(_DWORD *this)
 {
   --*(this + 3); /*0x411574*/
   return 1; /*0x411579*/
-}
-}
-
-// 0x4115A0
-XSurface * XSurface::ScalarDtor(char a2)
-{
-{
-    *(int *)this = &Surface_Vtable;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (XSurface *)this;
 }
 }
 
@@ -992,6 +973,14 @@ char __thiscall XSurface::Blit(
 }
 }
 
+// 0x410600
+int XSurface::vt_entry_40(int a1)
+{
+{
+    return AbstractClass::COMStub_Release(a1 - 4);
+}
+}
+
 // 0x411500
 char XSurface::entry_68_(int a1, int a2)
 {
@@ -1002,6 +991,17 @@ return 1;
 char XSurface::StubReturnFalse()
 {
 return 0;
+}
+
+// 0x4115A0
+XSurface * XSurface::ScalarDtor(char a2)
+{
+{
+    *(int *)this = &Surface_Vtable;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (XSurface *)this;
+}
 }
 
 // 0x4C9150

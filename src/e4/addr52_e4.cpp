@@ -63,16 +63,6 @@ LABEL_11:
 }
 } // namespace gamemd
 
-// 0x522540
-namespace gamemd {
-char E4Recv_522540::sub_522540()
-{
-{
-    return *(char *)(this->M1728 + 1708);
-}
-}
-} // namespace gamemd
-
 // 0x523440
 namespace gamemd {
 int BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2)
@@ -105,17 +95,6 @@ LABEL_7:
     goto LABEL_7; /*0x52346e*/
   }
   return (int)&aP0->__pad_0[8 * (v3 / 2)]; /*0x523474*/
-}
-}
-} // namespace gamemd
-
-// 0x5247B0
-namespace gamemd {
-int InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19()
-{
-    bool __thiscall InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19(std::codecvt_base *(void**)this)
-{
-    return AbstractClass::processWeaponFire(this);
 }
 }
 } // namespace gamemd
@@ -1658,6 +1637,16 @@ char E4Recv_520260::sub_520260()
 }
 } // namespace gamemd
 
+// 0x522540
+namespace gamemd {
+char E4Recv_522540::sub_522540()
+{
+{
+    return *(char *)(this->M1728 + 1708);
+}
+}
+} // namespace gamemd
+
 // 0x522A50
 namespace gamemd {
 void nullsub_146(int a1)
@@ -1833,6 +1822,17 @@ namespace gamemd {
 void nullsub_147()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x5247B0
+namespace gamemd {
+int InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19()
+{
+    bool __thiscall InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19(std::codecvt_base *(void**)this)
+{
+    return AbstractClass::processWeaponFire(this);
+}
 }
 } // namespace gamemd
 

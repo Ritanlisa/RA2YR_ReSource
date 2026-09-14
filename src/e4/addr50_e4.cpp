@@ -137,41 +137,6 @@ LABEL_18:
 }
 } // namespace gamemd
 
-// 0x5093C0
-namespace gamemd {
-int E4Recv_5093C0::sub_5093C0(int a2)
-{
-{
-    int v2;
-    int result;
-    int *i;
-    v2 = this->M22036;
-    result = 0;
-    if ( v2 > 0 )
-  {
-    i = (int *)this->M22024;
-    for ( ; *i != a2; i += 2 )
-    {
-    if ( ++result >= v2 )
-    return result;
-    }
-    return UpdateHouseClassAnger((unsigned int)this, (int)i, -*(int *)(this->M22024 + 8 * result + 4), a2);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x50C160
-namespace gamemd {
-double E4Recv_50C160::sub_50C160()
-{
-{
-    return *(float *)(this->M52 + 328);
-}
-}
-} // namespace gamemd
-
 // 0x5004E0
 namespace gamemd {
 int House_GetTechLevel(int a1, int a2)
@@ -302,6 +267,31 @@ int HouseClass::sub_5092F0(int a2)
 }
 } // namespace gamemd
 
+// 0x5093C0
+namespace gamemd {
+int E4Recv_5093C0::sub_5093C0(int a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->M22036;
+    result = 0;
+    if ( v2 > 0 )
+  {
+    i = (int *)this->M22024;
+    for ( ; *i != a2; i += 2 )
+    {
+    if ( ++result >= v2 )
+    return result;
+    }
+    return UpdateHouseClassAnger((unsigned int)this, (int)i, -*(int *)(this->M22024 + 8 * result + 4), a2);
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x509CC0
 namespace gamemd {
 void nullsub_144(int a1)
@@ -353,6 +343,16 @@ void sub_50B920(int a1, int a2, int a3)
     *(int *)(a3 + 4) = 1081073664;
     }
   }
+}
+}
+} // namespace gamemd
+
+// 0x50C160
+namespace gamemd {
+double E4Recv_50C160::sub_50C160()
+{
+{
+    return *(float *)(this->M52 + 328);
 }
 }
 } // namespace gamemd

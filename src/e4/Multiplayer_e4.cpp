@@ -2,14 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x53F1F0
-void Multiplayer::Screen()
-{
-{
-    DataGlobal_828140 = (int)this;
-}
-}
-
 // 0x688380
 VectorClass * Multiplayer::FindStartPositions()
 {
@@ -341,5 +333,13 @@ LABEL_25:
       Event::Dispatch(); /*0x69b148*/
     }
   }
+}
+}
+
+// 0x53F1F0
+void Multiplayer::Screen()
+{
+{
+    DataGlobal_828140 = (int)this;
 }
 }

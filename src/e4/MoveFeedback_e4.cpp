@@ -2,175 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x40B960
-char MoveFeedback::AddRef(int a2)
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    int v5;
-    v2 = this->Capacity;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = (int *)this->Items;
-    v5 = *(int *)(a2 + 4) - (int)v4;
-    while ( *v4 == *(int *)((char *)(v4) + v5) )
-    {
-    ++v3;
-    ++v4;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
-}
-}
-
-// 0x40BB90
-int MoveFeedback::Draw(unsigned int * a2)
-{
-{
-    int v2;
-    int result;
-    int *i;
-    v2 = this->Count;
-    result = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = (int *)this->Items; *i != *a2; ++i )
-  {
-    if ( ++result >= v2 )
-    return -1;
-  }
-    return result;
-}
-
-// 0x40BCB0
-DynamicVector * MoveFeedback::QueryInterface(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_TechnoClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
-}
-}
-
-// 0x40BE50
-void MoveFeedback::Destroy()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->MoveFeedback_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->MoveFeedback_field_0x04 = 0;
-  }
-    this->IsAllocated = 0;
-    this->MoveFeedback_field_0x08 = 0;
-}
-}
-
-// 0x40C030
-char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v5;
-    int i;
-    int v7;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( !v4 )
-    return 0;
-    if ( this->MoveFeedback_field_0x04 )
-    {
-    v5 = this->MoveFeedback_field_0x08;
-    if ( a2 < v5 )
-    v5 = a2;
-    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->MoveFeedback_field_0x04 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-      {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->MoveFeedback_field_0x04 = 0;
-      }
-    }
-    this->MoveFeedback_field_0x04 = v4;
-    this->MoveFeedback_field_0x08 = a2;
-    this->IsAllocated = a3 == 0;
-  }
-    else
-  {
-    this->Clear();
-  }
-    v7 = this->MoveFeedback_field_0x08;
-    if ( v7 < this->MoveFeedback_field_0x10 )
-    this->MoveFeedback_field_0x10 = v7;
-    return 1;
-}
-}
-
-// 0x40C0E0
-int MoveFeedback::FindMoveItem(unsigned int * a2)
-{
-{
-    int v2;
-    int result;
-    int *i;
-    v2 = this->Count;
-    result = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = (int *)this->Items; *i != *a2; ++i )
-  {
-    if ( ++result >= v2 )
-    return -1;
-  }
-    return result;
-}
-
-// 0x40C160
-DynamicVector * MoveFeedback::Constructor(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_CommandClass_const;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
-}
-}
-
 // 0x7327D0
 char MoveFeedback::ProcessCommand()
 {
@@ -292,6 +123,90 @@ char __thiscall MoveFeedback_Process(void *this)
 }
 }
 
+// 0x40B960
+char MoveFeedback::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
+    {
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+
+// 0x40BB90
+int MoveFeedback::Draw(unsigned int * a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
+}
+
+// 0x40BCB0
+DynamicVector * MoveFeedback::QueryInterface(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_TechnoClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
+}
+}
+
+// 0x40BE50
+void MoveFeedback::Destroy()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->MoveFeedback_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->MoveFeedback_field_0x04 = 0;
+  }
+    this->IsAllocated = 0;
+    this->MoveFeedback_field_0x08 = 0;
+}
+}
+
 // 0x40BE80
 unsigned int MoveFeedback::GetIndex2(int a2)
 {
@@ -300,5 +215,90 @@ unsigned int MoveFeedback::GetIndex2(int a2)
     return (unsigned int)(a2 - this->MoveFeedback_field_0x04) >> 2;
     else
     return 0;
+}
+}
+
+// 0x40C030
+char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->MoveFeedback_field_0x04 )
+    {
+    v5 = this->MoveFeedback_field_0x08;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->MoveFeedback_field_0x04 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+      {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->MoveFeedback_field_0x04 = 0;
+      }
+    }
+    this->MoveFeedback_field_0x04 = v4;
+    this->MoveFeedback_field_0x08 = a2;
+    this->IsAllocated = a3 == 0;
+  }
+    else
+  {
+    this->Clear();
+  }
+    v7 = this->MoveFeedback_field_0x08;
+    if ( v7 < this->MoveFeedback_field_0x10 )
+    this->MoveFeedback_field_0x10 = v7;
+    return 1;
+}
+}
+
+// 0x40C0E0
+int MoveFeedback::FindMoveItem(unsigned int * a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
+}
+
+// 0x40C160
+DynamicVector * MoveFeedback::Constructor(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_CommandClass_const;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }

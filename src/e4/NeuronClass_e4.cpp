@@ -220,6 +220,19 @@ int NeuronClass_25::Activate(unsigned int * a2)
 }
 } // namespace gamemd
 
+// 0x43AC90
+namespace gamemd {
+unsigned int NeuronClass_25::Fire(int a2)
+{
+{
+    if ( (unsigned char)this->NeuronClass_25_field_0xC )
+    return (unsigned int)(a2 - this->NeuronClass_25_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x43ACB0
 namespace gamemd {
 VectorClass * NeuronClass_25::QueryInterface(char a2)
@@ -238,19 +251,6 @@ VectorClass * NeuronClass_25::QueryInterface(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x43AC90
-namespace gamemd {
-unsigned int NeuronClass_25::Fire(int a2)
-{
-{
-    if ( (unsigned char)this->NeuronClass_25_field_0xC )
-    return (unsigned int)(a2 - this->NeuronClass_25_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd

@@ -75,7 +75,7 @@ BOOL __thiscall ParticleSystemClass::_vt17(int this)
 
 // 0x630230
 namespace gamemd {
-int ParticleSystemClass_16::Write(int a2)
+int ParticleSystemClass_ddtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -91,6 +91,194 @@ int __thiscall ParticleSystemClass_16_::_vt06(_DWORD *this, int a2)
 {
   return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x4e87da*/
 }
+}
+} // namespace gamemd
+
+// 0x4E82F0
+namespace gamemd {
+void ParticleSystemClass_32::ClearBuffer()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->ParticleSystemClass_32_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->ParticleSystemClass_32_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->ParticleSystemClass_32_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E8320
+namespace gamemd {
+unsigned int ParticleSystemClass_32::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->ParticleSystemClass_32_field_0xC )
+    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E84A0
+namespace gamemd {
+unsigned int ParticleSystemClass::LoadTypeData(int a2)
+{
+{
+    if ( (unsigned char)this->vtable3 )
+    return (unsigned int)(a2 - this->vtable1) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E87E0
+namespace gamemd {
+void ParticleSystemClass_32::Destroy()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->ParticleSystemClass_32_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->ParticleSystemClass_32_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->ParticleSystemClass_32_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E8810
+namespace gamemd {
+unsigned int ParticleSystemClass_32::GetIndex2(int a2)
+{
+{
+    if ( (unsigned char)this->ParticleSystemClass_32_field_0xC )
+    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E8830
+namespace gamemd {
+int ParticleSystemClass_32::Write(int a2)
+{
+{
+    return *(int *)(this->Items + 4 * a2);
+}
+}
+} // namespace gamemd
+
+// 0x4E8840
+namespace gamemd {
+void ParticleSystemClass_32::ReleaseBuffer()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->ParticleSystemClass_32_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->ParticleSystemClass_32_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->ParticleSystemClass_32_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E8870
+namespace gamemd {
+unsigned int ParticleSystemClass_32_::GetElementIndex(int a2)
+{
+{
+    if ( (unsigned char)this->ParticleSystemClass_32__field_0xC )
+    return (unsigned int)(a2 - this->ParticleSystemClass_32__field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E95E0
+namespace gamemd {
+char ParticleSystemClass_32::SetCapacity(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->ParticleSystemClass_32_field_0x4 )
+    {
+    v5 = this->ParticleSystemClass_32_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->ParticleSystemClass_32_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+      {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->ParticleSystemClass_32_field_0x4 = 0;
+      }
+    }
+    this->ParticleSystemClass_32_field_0x4 = v4;
+    this->ParticleSystemClass_32_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+  }
+    else
+  {
+    this->Destroy();
+  }
+    v7 = this->ParticleSystemClass_32_field_0x8;
+    if ( v7 < this->ParticleSystemClass_32_field_0x10 )
+    this->ParticleSystemClass_32_field_0x10 = v7;
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x4E9690
+namespace gamemd {
+int ParticleSystemClass_32::FindItem(unsigned int * a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
 }
 } // namespace gamemd
 
@@ -214,161 +402,16 @@ int ParticleSystemClass_16::Init(unsigned int * a2)
 }
 } // namespace gamemd
 
-// 0x4EFD50
+// 0x4EB3C0
 namespace gamemd {
-VectorClass * ParticleSystemClass_16::QueryInterface(char a2)
+unsigned int ParticleSystemClass_16::Read(int a2)
 {
 {
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_SmudgeClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x4E82F0
-namespace gamemd {
-void ParticleSystemClass_32::ClearBuffer()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->ParticleSystemClass_32_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->ParticleSystemClass_32_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->ParticleSystemClass_32_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E87E0
-namespace gamemd {
-void ParticleSystemClass_32::Destroy()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->ParticleSystemClass_32_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->ParticleSystemClass_32_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->ParticleSystemClass_32_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E8830
-namespace gamemd {
-int ParticleSystemClass_32::Write(int a2)
-{
-{
-    return *(int *)(this->Items + 4 * a2);
-}
-}
-} // namespace gamemd
-
-// 0x4E8840
-namespace gamemd {
-void ParticleSystemClass_32::ReleaseBuffer()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->ParticleSystemClass_32_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->ParticleSystemClass_32_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->ParticleSystemClass_32_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E95E0
-namespace gamemd {
-char ParticleSystemClass_32::SetCapacity(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v5;
-    int i;
-    int v7;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
+    if ( (unsigned char)this->ParticleSystemClass_16_field_0xC )
+    return (unsigned int)(a2 - this->ParticleSystemClass_16_field_0x4) >> 2;
     else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( !v4 )
     return 0;
-    if ( this->ParticleSystemClass_32_field_0x4 )
-    {
-    v5 = this->ParticleSystemClass_32_field_0x8;
-    if ( a2 < v5 )
-    v5 = a2;
-    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->ParticleSystemClass_32_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-      {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->ParticleSystemClass_32_field_0x4 = 0;
-      }
-    }
-    this->ParticleSystemClass_32_field_0x4 = v4;
-    this->ParticleSystemClass_32_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-  }
-    else
-  {
-    this->Destroy();
-  }
-    v7 = this->ParticleSystemClass_32_field_0x8;
-    if ( v7 < this->ParticleSystemClass_32_field_0x10 )
-    this->ParticleSystemClass_32_field_0x10 = v7;
-    return 1;
 }
-}
-} // namespace gamemd
-
-// 0x4E9690
-namespace gamemd {
-int ParticleSystemClass_32::FindItem(unsigned int * a2)
-{
-{
-    int v2;
-    int result;
-    int *i;
-    v2 = this->Count;
-    result = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = (int *)this->Items; *i != *a2; ++i )
-  {
-    if ( ++result >= v2 )
-    return -1;
-  }
-    return result;
 }
 } // namespace gamemd
 
@@ -492,6 +535,19 @@ int ParticleSystemClass_32::Init(unsigned int * a2)
 }
 } // namespace gamemd
 
+// 0x4EB620
+namespace gamemd {
+unsigned int ParticleSystemClass_32::Read(int a2)
+{
+{
+    if ( (unsigned char)this->ParticleSystemClass_32_field_0xC )
+    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x4EB640
 namespace gamemd {
 char ParticleSystemClass_32::CopyParticles2(int a2, unsigned int * a3)
@@ -558,94 +614,6 @@ int ParticleSystemClass_32::FindParticle2(unsigned int * a2)
     return -1;
   }
     return result;
-}
-} // namespace gamemd
-
-// 0x4EF5D0
-namespace gamemd {
-DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_BuildingClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
-}
-}
-} // namespace gamemd
-
-// 0x4EFDF0
-namespace gamemd {
-VectorClass * ParticleSystemClass_32::QueryInterface(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_TerrainClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x4EFE40
-namespace gamemd {
-DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_TerrainClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
-}
-}
-} // namespace gamemd
-
-// 0x4EFEE0
-namespace gamemd {
-DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_AircraftClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
-}
 }
 } // namespace gamemd
 
@@ -718,80 +686,112 @@ int ParticleSystemClass_32_::FindElementByValue(unsigned int * a2)
 }
 } // namespace gamemd
 
-// 0x4E8320
+// 0x4EF5D0
 namespace gamemd {
-unsigned int ParticleSystemClass_32::PointerToIndex(int a2)
+DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___(char a2)
 {
 {
-    if ( (unsigned char)this->ParticleSystemClass_32_field_0xC )
-    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2;
-    else
-    return 0;
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_BuildingClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
 
-// 0x4E84A0
+// 0x4EFD50
 namespace gamemd {
-unsigned int ParticleSystemClass::LoadTypeData(int a2)
+VectorClass * ParticleSystemClass_16::QueryInterface(char a2)
 {
 {
-    if ( (unsigned char)this->vtable3 )
-    return (unsigned int)(a2 - this->vtable1) >> 2;
-    else
-    return 0;
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_SmudgeClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
 
-// 0x4E8810
+// 0x4EFDF0
 namespace gamemd {
-unsigned int ParticleSystemClass_32::GetIndex2(int a2)
+VectorClass * ParticleSystemClass_32::QueryInterface(char a2)
 {
 {
-    if ( (unsigned char)this->ParticleSystemClass_32_field_0xC )
-    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2;
-    else
-    return 0;
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_TerrainClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
 
-// 0x4E8870
+// 0x4EFE40
 namespace gamemd {
-unsigned int ParticleSystemClass_32_::GetElementIndex(int a2)
+DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(char a2)
 {
 {
-    if ( (unsigned char)this->ParticleSystemClass_32__field_0xC )
-    return (unsigned int)(a2 - this->ParticleSystemClass_32__field_0x4) >> 2;
-    else
-    return 0;
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_TerrainClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
 
-// 0x4EB3C0
+// 0x4EFEE0
 namespace gamemd {
-unsigned int ParticleSystemClass_16::Read(int a2)
+DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___(char a2)
 {
 {
-    if ( (unsigned char)this->ParticleSystemClass_16_field_0xC )
-    return (unsigned int)(a2 - this->ParticleSystemClass_16_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4EB620
-namespace gamemd {
-unsigned int ParticleSystemClass_32::Read(int a2)
-{
-{
-    if ( (unsigned char)this->ParticleSystemClass_32_field_0xC )
-    return (unsigned int)(a2 - this->ParticleSystemClass_32_field_0x4) >> 2;
-    else
-    return 0;
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_AircraftClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd

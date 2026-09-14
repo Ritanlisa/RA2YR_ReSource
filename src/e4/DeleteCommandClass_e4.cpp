@@ -3,15 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/DeleteCommandClass_28_e4.hpp"
 
-// 0x537F10
-unsigned int * DeleteCommandClass::Constructor()
-{
-{
-    *(void**)this = &vt_DeleteCommandClass;
-    return this;
-}
-}
-
 // 0x537F90
 namespace gamemd {
 int DeleteCommandClass_Undo()
@@ -24,6 +15,45 @@ char __stdcall DeleteCommandClass::_vt08(int a1)
 }
 }
 } // namespace gamemd
+
+// 0x537F10
+unsigned int * DeleteCommandClass::Constructor()
+{
+{
+    *(void**)this = &vt_DeleteCommandClass;
+    return this;
+}
+}
+
+// 0x537F20
+char * DeleteCommandClass::AddRef()
+{
+return aDelete;
+}
+
+// 0x537F30
+wchar_t * DeleteCommandClass::Release()
+{
+{
+    return GetStringCSF(aCmndDelete, 0, g_Str_File_Init_CPP, 6559);
+}
+}
+
+// 0x537F50
+wchar_t * DeleteCommandClass::ddtor()
+{
+{
+    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 6561);
+}
+}
+
+// 0x537F70
+wchar_t * DeleteCommandClass::Read()
+{
+{
+    return GetStringCSF(aCmndDeletedesc, 0, g_Str_File_Init_CPP, 6563);
+}
+}
 
 // 0x53C4C0
 namespace gamemd {
@@ -40,6 +70,19 @@ void DeleteCommandClass_28::ClearBuffer()
   }
     this->IsAllocated = 0;
     this->DeleteCommandClass_28_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x53C4F0
+namespace gamemd {
+unsigned int DeleteCommandClass_28::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->DeleteCommandClass_28_field_0xC )
+    return (unsigned int)(a2 - this->DeleteCommandClass_28_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -174,6 +217,19 @@ int DeleteCommandClass_28::Read(unsigned int * a2)
 }
 } // namespace gamemd
 
+// 0x53C680
+namespace gamemd {
+unsigned int DeleteCommandClass_28::Write(int a2)
+{
+{
+    if ( (unsigned char)this->DeleteCommandClass_28_field_0xC )
+    return (unsigned int)(a2 - this->DeleteCommandClass_28_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x53C6A0
 namespace gamemd {
 char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
@@ -283,62 +339,6 @@ DynamicVector * DeleteCommandClass_28::Constructor(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
-}
-}
-} // namespace gamemd
-
-// 0x537F20
-char * DeleteCommandClass::AddRef()
-{
-return aDelete;
-}
-
-// 0x537F30
-wchar_t * DeleteCommandClass::Release()
-{
-{
-    return GetStringCSF(aCmndDelete, 0, g_Str_File_Init_CPP, 6559);
-}
-}
-
-// 0x537F50
-wchar_t * DeleteCommandClass::ddtor()
-{
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 6561);
-}
-}
-
-// 0x537F70
-wchar_t * DeleteCommandClass::Read()
-{
-{
-    return GetStringCSF(aCmndDeletedesc, 0, g_Str_File_Init_CPP, 6563);
-}
-}
-
-// 0x53C4F0
-namespace gamemd {
-unsigned int DeleteCommandClass_28::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->DeleteCommandClass_28_field_0xC )
-    return (unsigned int)(a2 - this->DeleteCommandClass_28_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x53C680
-namespace gamemd {
-unsigned int DeleteCommandClass_28::Write(int a2)
-{
-{
-    if ( (unsigned char)this->DeleteCommandClass_28_field_0xC )
-    return (unsigned int)(a2 - this->DeleteCommandClass_28_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd

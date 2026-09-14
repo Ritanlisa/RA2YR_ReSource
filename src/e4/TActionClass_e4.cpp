@@ -930,33 +930,6 @@ char __thiscall TActionClass::executeRetreatAction(int *this, AbstractClass *aP1
 }
 } // namespace gamemd
 
-// 0x6E21E0
-namespace gamemd {
-char TActionClass::executeFollowAction(int a2, int a3, int a4, IUnknown * aP4)
-{
-{
-    int *v5;
-    int i;
-    int j;
-    v5 = this + 13;
-    DataGlobal_87F8E4.field_0 = *v5;
-    DataGlobal_87F8E4.field_4 = (void *)v5[1];
-    DataGlobal_87F8E4.field_8 = (void *)v5[2];
-    DataGlobal_87F8E4.field_C = (void *)v5[3];
-    RadarClass::Process(&DataGlobal_87F7E8);
-    LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
-    for ( i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); i; i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) )
-    House::AnnounceUpgrade(i, (IUnknown *)0xFFFFFFFF);
-    Terrain::ConnectivityGraph(&DataGlobal_87F7E8);
-    MapClass::BuildSubzones(&DataGlobal_87F7E8);
-    FogOfWar::Render((int **)&DataGlobal_87F7E8);
-    for ( j = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[100] - 1; j >= 0; --j )
-    (*(void (__thiscall **)(int, int))(**(int **)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[88] + 4 * j) + 1184))( *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[88] + 4 * j), 1);
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x6E2290
 namespace gamemd {
 char TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown * aP4)
@@ -2045,6 +2018,33 @@ int TActionClass::executeAttackAction(int a2)
     v4[184] = a2;
   }
     return result;
+}
+}
+} // namespace gamemd
+
+// 0x6E21E0
+namespace gamemd {
+char TActionClass::executeFollowAction(int a2, int a3, int a4, IUnknown * aP4)
+{
+{
+    int *v5;
+    int i;
+    int j;
+    v5 = this + 13;
+    DataGlobal_87F8E4.field_0 = *v5;
+    DataGlobal_87F8E4.field_4 = (void *)v5[1];
+    DataGlobal_87F8E4.field_8 = (void *)v5[2];
+    DataGlobal_87F8E4.field_C = (void *)v5[3];
+    RadarClass::Process(&DataGlobal_87F7E8);
+    LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
+    for ( i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); i; i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) )
+    House::AnnounceUpgrade(i, (IUnknown *)0xFFFFFFFF);
+    Terrain::ConnectivityGraph(&DataGlobal_87F7E8);
+    MapClass::BuildSubzones(&DataGlobal_87F7E8);
+    FogOfWar::Render((int **)&DataGlobal_87F7E8);
+    for ( j = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[100] - 1; j >= 0; --j )
+    (*(void (__thiscall **)(int, int))(**(int **)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[88] + 4 * j) + 1184))( *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[88] + 4 * j), 1);
+    return 1;
 }
 }
 } // namespace gamemd

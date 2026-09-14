@@ -58,6 +58,9 @@ public:
     bool IsRookie();   // 0x74FFC0
     bool IsVeteran();  // 0x74FF90
     bool IsElite();    // 0x750010
+// --- e4 declarations (BEGIN) ---
+    void Accumulate(int a2, int a3);  // 0x74FF50
+// --- e4 declarations (END) ---
 };
 
 struct TurretControl {

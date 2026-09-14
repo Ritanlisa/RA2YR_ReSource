@@ -2,42 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x658A70
-void RadarHashVector::ddtor()
-{
-{
-    if ( this->RadarHashVector_field_0x04 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(*(void **)(this + 4));
-    this->RadarHashVector_field_0x04 = 0;
-  }
-    this->IsAllocated = 0;
-    this->RadarHashVector_field_0x08 = 0;
-}
-}
-
-// 0x658AA0
-int RadarHashVector::Read(unsigned int * a2)
-{
-{
-    int result;
-    int v3;
-    int *i;
-    if ( !(unsigned char)this->RadarHashVector_field_0x0C )
-    return 0;
-    v3 = this->RadarHashVector_field_0x08;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = *(int **)(this + 4); *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2); i += 4 )
-  {
-    if ( ++result >= v3 )
-    return -1;
-  }
-    return result;
-}
-}
-
 // 0x658B10
 char RadarHashVector::ComputeHashIndex(int a2, char * a3)
 {
@@ -151,6 +115,125 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
 }
 }
 
+// 0x658DE0
+unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapClass *aP2)
+{
+  void **v4; // eax
+  MapClass *v5; // ecx
+  int v6; // eax
+  _DWORD *v7; // ecx
+  MapClass *v8; // edx
+
+  *(this + 1) = 0; /*0x658ded*/
+  *(this + 2) = aP1; /*0x658df0*/
+  *((_BYTE *)this + 12) = 1; /*0x658df3*/
+  *((_BYTE *)this + 13) = 0; /*0x658df7*/
+  *this = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658dfa*/
+  if ( aP1 ) /*0x658e00*/
+  {
+    if ( aP2 ) /*0x658e08*/
+    {
+      if ( (int)&aP1[-1].field_16C0 + 3 >= 0 ) /*0x658e0f*/
+      {
+        v4 = &aP2->field_4; /*0x658e11*/
+        v5 = aP1; /*0x658e14*/
+        do /*0x658e21*/
+        {
+          *(v4 - 1) = 0; /*0x658e15*/
+          *v4 = 0; /*0x658e18*/
+          v4[1] = 0; /*0x658e1a*/
+          v4 += 4; /*0x658e1d*/
+          v5 = (MapClass *)((char *)v5 - 1); /*0x658e20*/
+        }
+        while ( v5 ); /*0x658e21*/
+      }
+      *(this + 1) = aP2; /*0x658e23*/
+    }
+    else
+    {
+      v6 = __2_YAPAXI_Z(16 * (_DWORD)aP1); /*0x658e2e*/
+      if ( v6 ) /*0x658e38*/
+      {
+        if ( (int)&aP1[-1].field_16C0 + 3 >= 0 ) /*0x658e3f*/
+        {
+          v7 = (_DWORD *)(v6 + 4); /*0x658e41*/
+          v8 = aP1; /*0x658e44*/
+          do /*0x658e51*/
+          {
+            *(v7 - 1) = 0; /*0x658e45*/
+            *v7 = 0; /*0x658e48*/
+            v7[1] = 0; /*0x658e4a*/
+            v7 += 4; /*0x658e4d*/
+            v8 = (MapClass *)((char *)v8 - 1); /*0x658e50*/
+          }
+          while ( v8 ); /*0x658e51*/
+        }
+      }
+      else
+      {
+        v6 = 0; /*0x658e55*/
+      }
+      *(this + 1) = v6; /*0x658e57*/
+      *((_BYTE *)this + 13) = 1; /*0x658e5a*/
+    }
+  }
+  *this = &vt_DynamicVectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658e5e*/
+  *(this + 5) = 10; /*0x658e64*/
+  *(this + 4) = 0; /*0x658e6b*/
+  return this; /*0x658e70*/
+}
+}
+
+// 0x658A70
+void RadarHashVector::ddtor()
+{
+{
+    if ( this->RadarHashVector_field_0x04 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->RadarHashVector_field_0x04 = 0;
+  }
+    this->IsAllocated = 0;
+    this->RadarHashVector_field_0x08 = 0;
+}
+}
+
+// 0x658AA0
+int RadarHashVector::Read(unsigned int * a2)
+{
+{
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->RadarHashVector_field_0x0C )
+    return 0;
+    v3 = this->RadarHashVector_field_0x08;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2); i += 4 )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
+}
+}
+
+// 0x658AF0
+unsigned int RadarHashVector::Write(int a2)
+{
+{
+    if ( (unsigned char)this->RadarHashVector_field_0x0C )
+    return (unsigned int)(a2 - this->RadarHashVector_field_0x04) >> 4;
+    else
+    return 0;
+}
+}
+
 // 0x658C20
 int RadarHashVector::FindItemIndex(unsigned int * a2)
 {
@@ -247,88 +330,5 @@ VectorClass * RadarHashVector::QueryInterface(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
-}
-}
-
-// 0x658DE0
-unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapClass *aP2)
-{
-  void **v4; // eax
-  MapClass *v5; // ecx
-  int v6; // eax
-  _DWORD *v7; // ecx
-  MapClass *v8; // edx
-
-  *(this + 1) = 0; /*0x658ded*/
-  *(this + 2) = aP1; /*0x658df0*/
-  *((_BYTE *)this + 12) = 1; /*0x658df3*/
-  *((_BYTE *)this + 13) = 0; /*0x658df7*/
-  *this = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658dfa*/
-  if ( aP1 ) /*0x658e00*/
-  {
-    if ( aP2 ) /*0x658e08*/
-    {
-      if ( (int)&aP1[-1].field_16C0 + 3 >= 0 ) /*0x658e0f*/
-      {
-        v4 = &aP2->field_4; /*0x658e11*/
-        v5 = aP1; /*0x658e14*/
-        do /*0x658e21*/
-        {
-          *(v4 - 1) = 0; /*0x658e15*/
-          *v4 = 0; /*0x658e18*/
-          v4[1] = 0; /*0x658e1a*/
-          v4 += 4; /*0x658e1d*/
-          v5 = (MapClass *)((char *)v5 - 1); /*0x658e20*/
-        }
-        while ( v5 ); /*0x658e21*/
-      }
-      *(this + 1) = aP2; /*0x658e23*/
-    }
-    else
-    {
-      v6 = __2_YAPAXI_Z(16 * (_DWORD)aP1); /*0x658e2e*/
-      if ( v6 ) /*0x658e38*/
-      {
-        if ( (int)&aP1[-1].field_16C0 + 3 >= 0 ) /*0x658e3f*/
-        {
-          v7 = (_DWORD *)(v6 + 4); /*0x658e41*/
-          v8 = aP1; /*0x658e44*/
-          do /*0x658e51*/
-          {
-            *(v7 - 1) = 0; /*0x658e45*/
-            *v7 = 0; /*0x658e48*/
-            v7[1] = 0; /*0x658e4a*/
-            v7 += 4; /*0x658e4d*/
-            v8 = (MapClass *)((char *)v8 - 1); /*0x658e50*/
-          }
-          while ( v8 ); /*0x658e51*/
-        }
-      }
-      else
-      {
-        v6 = 0; /*0x658e55*/
-      }
-      *(this + 1) = v6; /*0x658e57*/
-      *((_BYTE *)this + 13) = 1; /*0x658e5a*/
-    }
-  }
-  *this = &vt_DynamicVectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658e5e*/
-  *(this + 5) = 10; /*0x658e64*/
-  *(this + 4) = 0; /*0x658e6b*/
-  return this; /*0x658e70*/
-}
-}
-
-// 0x658AF0
-unsigned int RadarHashVector::Write(int a2)
-{
-{
-    if ( (unsigned char)this->RadarHashVector_field_0x0C )
-    return (unsigned int)(a2 - this->RadarHashVector_field_0x04) >> 4;
-    else
-    return 0;
 }
 }

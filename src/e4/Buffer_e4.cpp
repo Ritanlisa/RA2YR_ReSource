@@ -2,101 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x43AD00
-unsigned int * Buffer::Init(int a2, AbstractClass * aP2)
-{
-{
-    *(void**)this = a2;
-    this->Items = aP2;
-    this->Capacity = 0;
-    if ( !a2 && (int)aP2 > 0 )
-  {
-    *(void**)this = __2_YAPAXI_Z((size_t)aP2);
-    this->Capacity = 1;
-  }
-    return this;
-}
-}
-
-// 0x488030
-DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_ObjectClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
-}
-}
-
-// 0x6C89E0
-int Buffer::AppendCellData(AbstractClass * aP1, int a3)
-{
-{
-    AbstractClass *v4;
-    int *v7;
-    AbstractClass *v8;
-    int v9;
-    unsigned int v10;
-    char *v11;
-    int v12;
-    int v13;
-    int v14;
-    AbstractClass *v15;
-    char *v16;
-    v4 = (AbstractClass *)this->Capacity;
-    if ( (unsigned int)&v4->__pad_0[12] > this->Items + *(void**)this )
-    return 0;
-    v15 = (AbstractClass *)this->Capacity;
-    this->Capacity = &v4->__pad_0[12];
-    if ( !v4 )
-    return 0;
-    *(short *)v4->__pad_0 = *(short *)a3;
-    *(short *)&v4->__pad_0[2] = *(short *)(a3 + 4);
-    *(short *)&v4->__pad_0[4] = *(short *)(a3 + 16);
-    *(short *)&v4->__pad_0[6] = *(short *)(a3 + 20);
-    *(int *)&v4->__pad_0[8] = this->Capacity;
-    v7 = CellStruct::Copy((int *)(a3 + 8), (IUnknown *)&v14);
-    v8 = aP1;
-    v16 = (char *)(*(int (__thiscall **)(AbstractClass *, int, int))(*(int *)aP1->__pad_0 + 92))( aP1, *v7, v7[1]);
-    v9 = *(int *)(a3 + 20);
-    v14 = 0;
-    if ( v9 > 0 )
-  {
-    while ( 1 )
-    {
-    v10 = Map_Append(v16, (int)&g_OverlayTypeConfig.__pad_14B0[12584], *(int *)(a3 + 16));
-    v11 = (char *)this->Capacity;
-    if ( (unsigned int)&v11[v10] > this->Items + *(void**)this || (this->Capacity = &v11[v10], !v11) )
-      {
-    (*(void (__thiscall **)(AbstractClass *))(*(int *)v8->__pad_0 + 96))(v8);
-    return 0;
-      }
-    qmemcpy(v11, &g_OverlayTypeConfig.__pad_14B0[12584], v10);
-    v13 = *(int *)aP1->__pad_0;
-    v12 = ++v14;
-    v16 += (*(int (__thiscall **)(AbstractClass *))(v13 + 116))(aP1);
-    if ( v12 >= *(int *)(a3 + 20) )
-    break;
-    v8 = aP1;
-    }
-    v4 = v15;
-    v8 = aP1;
-  }
-    (*(void (__thiscall **)(AbstractClass *))(*(int *)v8->__pad_0 + 96))(v8);
-    return (int)v4->__pad_0;
-}
-}
-
 // 0x7BCB50
 char * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4)
 {
@@ -500,6 +405,42 @@ LABEL_16:
 }
 }
 
+// 0x43AD00
+unsigned int * Buffer::Init(int a2, AbstractClass * aP2)
+{
+{
+    *(void**)this = a2;
+    this->Items = aP2;
+    this->Capacity = 0;
+    if ( !a2 && (int)aP2 > 0 )
+  {
+    *(void**)this = __2_YAPAXI_Z((size_t)aP2);
+    this->Capacity = 1;
+  }
+    return this;
+}
+}
+
+// 0x488030
+DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_ObjectClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
+}
+}
+
 // 0x632B70
 int * Buffer::RotateBufferCrypto(int * a2, int a3)
 {
@@ -509,5 +450,64 @@ int * Buffer::RotateBufferCrypto(int * a2, int a3)
     RotateBitBufferLeft(v4, a3, 64);
     qmemcpy(a2, v4, 0x100u);
     return a2;
+}
+}
+
+// 0x6C89E0
+int Buffer::AppendCellData(AbstractClass * aP1, int a3)
+{
+{
+    AbstractClass *v4;
+    int *v7;
+    AbstractClass *v8;
+    int v9;
+    unsigned int v10;
+    char *v11;
+    int v12;
+    int v13;
+    int v14;
+    AbstractClass *v15;
+    char *v16;
+    v4 = (AbstractClass *)this->Capacity;
+    if ( (unsigned int)&v4->__pad_0[12] > this->Items + *(void**)this )
+    return 0;
+    v15 = (AbstractClass *)this->Capacity;
+    this->Capacity = &v4->__pad_0[12];
+    if ( !v4 )
+    return 0;
+    *(short *)v4->__pad_0 = *(short *)a3;
+    *(short *)&v4->__pad_0[2] = *(short *)(a3 + 4);
+    *(short *)&v4->__pad_0[4] = *(short *)(a3 + 16);
+    *(short *)&v4->__pad_0[6] = *(short *)(a3 + 20);
+    *(int *)&v4->__pad_0[8] = this->Capacity;
+    v7 = CellStruct::Copy((int *)(a3 + 8), (IUnknown *)&v14);
+    v8 = aP1;
+    v16 = (char *)(*(int (__thiscall **)(AbstractClass *, int, int))(*(int *)aP1->__pad_0 + 92))( aP1, *v7, v7[1]);
+    v9 = *(int *)(a3 + 20);
+    v14 = 0;
+    if ( v9 > 0 )
+  {
+    while ( 1 )
+    {
+    v10 = Map_Append(v16, (int)&g_OverlayTypeConfig.__pad_14B0[12584], *(int *)(a3 + 16));
+    v11 = (char *)this->Capacity;
+    if ( (unsigned int)&v11[v10] > this->Items + *(void**)this || (this->Capacity = &v11[v10], !v11) )
+      {
+    (*(void (__thiscall **)(AbstractClass *))(*(int *)v8->__pad_0 + 96))(v8);
+    return 0;
+      }
+    qmemcpy(v11, &g_OverlayTypeConfig.__pad_14B0[12584], v10);
+    v13 = *(int *)aP1->__pad_0;
+    v12 = ++v14;
+    v16 += (*(int (__thiscall **)(AbstractClass *))(v13 + 116))(aP1);
+    if ( v12 >= *(int *)(a3 + 20) )
+    break;
+    v8 = aP1;
+    }
+    v4 = v15;
+    v8 = aP1;
+  }
+    (*(void (__thiscall **)(AbstractClass *))(*(int *)v8->__pad_0 + 96))(v8);
+    return (int)v4->__pad_0;
 }
 }

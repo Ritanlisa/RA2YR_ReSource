@@ -9,23 +9,6 @@
 #include "e4/classes/TypeList_cptr_ParticleSystemTypeClass_e4.hpp"
 #include "e4/classes/TypeList_cptr_TerrainTypeClass_e4.hpp"
 
-// 0x477840
-void TypeList::ddtor()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->Count = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->Items = 0;
-  }
-    this->IsAllocated = 0;
-    this->Capacity = 0;
-}
-}
-
 // 0x459F90
 namespace gamemd {
 void TypeList_cptr_ParticleSystemTypeClass::GetClassIdentifier()
@@ -275,6 +258,23 @@ VectorClass * TypeList_Particle::Add(char a2)
 }
 }
 } // namespace gamemd
+
+// 0x477840
+void TypeList::ddtor()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
+  }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
+}
+}
 
 // 0x477870
 unsigned int TypeList::GetCapacity(int a2)

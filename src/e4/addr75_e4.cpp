@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_750440_e4.hpp"
 #include "e4/classes/E4Recv_752CB0_e4.hpp"
 #include "e4/classes/E4Recv_7531A0_e4.hpp"
 #include "e4/classes/E4Recv_754900_e4.hpp"
@@ -8,8 +9,10 @@
 #include "e4/classes/E4Recv_7564A0_e4.hpp"
 #include "e4/classes/E4Recv_7564E0_e4.hpp"
 #include "e4/classes/E4Recv_756570_e4.hpp"
+#include "e4/classes/E4Recv_756860_e4.hpp"
 #include "e4/classes/E4Recv_7589F0_e4.hpp"
 #include "e4/classes/E4Recv_758AD0_e4.hpp"
+#include "e4/classes/E4Recv_758B70_e4.hpp"
 #include "e4/classes/E4Recv_758E10_e4.hpp"
 #include "e4/classes/E4Recv_759760_e4.hpp"
 #include "e4/classes/E4Recv_759790_e4.hpp"
@@ -1023,33 +1026,6 @@ int __fastcall sub_754740(int a1, int a2, unsigned int a3, int a4)
     while ( v6 ); /*0x754797*/
   }
   return result; /*0x75479b*/
-}
-}
-} // namespace gamemd
-
-// 0x755AC0
-namespace gamemd {
-int sub_755AC0(int a1)
-{
-{
-    return DataGlobal_8467FC[a1];
-}
-}
-} // namespace gamemd
-
-// 0x755CB0
-namespace gamemd {
-unsigned int * E4Recv_755CB0::sub_755CB0()
-{
-{
-    *(char *)this = 0;
-    this->M4 = 0;
-    this->M8 = 0;
-    this->M12 = 0;
-    this->M16 = 0;
-    this->M20 = 0;
-    this->M24 = 0;
-    return this;
 }
 }
 } // namespace gamemd
@@ -2119,31 +2095,6 @@ LPDIRECTDRAW E4Recv_759790::sub_759790()
 LPDIRECTDRAW __thiscall sub_759790(int this)
 {
   return Surface::CreateSurfacePalette((void *)(this + 516));
-}
-}
-} // namespace gamemd
-
-// 0x759BC0
-namespace gamemd {
-unsigned int E4Recv_759BC0::sub_759BC0(signed int a2)
-{
-{
-    signed int v2;
-    unsigned int result;
-    v2 = a2;
-    if ( a2 == -1 )
-    v2 = this->M1288 - 1;
-    if ( this->M1284 != v2 )
-  {
-    if ( ProcessAudioStreamBuffer(this->M512, v2, 0) != -6 )
-    this->M1284 = v2;
-    this->M1284 = v2;
-  }
-    MovieClass::RenderLoop((char *)this, v2, 0);
-    result = this->M1284;
-    if ( result >= this->M1288 )
-    this->M1284 = 0;
-    return result;
 }
 }
 } // namespace gamemd
@@ -3610,6 +3561,16 @@ void * VoxelAnim_InterpolatePose(void * a1, int a2, int a3, double a4)
 }
 } // namespace gamemd
 
+// 0x755AC0
+namespace gamemd {
+int sub_755AC0(int a1)
+{
+{
+    return DataGlobal_8467FC[a1];
+}
+}
+} // namespace gamemd
+
 // 0x755AD0
 namespace gamemd {
 char sub_755AD0(unsigned int * a1, int * a2)
@@ -3671,6 +3632,23 @@ int sub_755C90()
     DataGlobal_B45588 = 0;
     DataGlobal_B4558C = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x755CB0
+namespace gamemd {
+unsigned int * E4Recv_755CB0::sub_755CB0()
+{
+{
+    *(char *)this = 0;
+    this->M4 = 0;
+    this->M8 = 0;
+    this->M12 = 0;
+    this->M16 = 0;
+    this->M20 = 0;
+    this->M24 = 0;
+    return this;
 }
 }
 } // namespace gamemd
@@ -3966,6 +3944,31 @@ unsigned char * E4Recv_759760::sub_759760(const void * a2)
     qmemcpy(this + 516, a2, 0x300u);
     this->M1320 = 1;
     return this;
+}
+}
+} // namespace gamemd
+
+// 0x759BC0
+namespace gamemd {
+unsigned int E4Recv_759BC0::sub_759BC0(signed int a2)
+{
+{
+    signed int v2;
+    unsigned int result;
+    v2 = a2;
+    if ( a2 == -1 )
+    v2 = this->M1288 - 1;
+    if ( this->M1284 != v2 )
+  {
+    if ( ProcessAudioStreamBuffer(this->M512, v2, 0) != -6 )
+    this->M1284 = v2;
+    this->M1284 = v2;
+  }
+    MovieClass::RenderLoop((char *)this, v2, 0);
+    result = this->M1284;
+    if ( result >= this->M1288 )
+    this->M1284 = 0;
+    return result;
 }
 }
 } // namespace gamemd

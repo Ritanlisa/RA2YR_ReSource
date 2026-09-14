@@ -622,6 +622,15 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     GenericNode * sub_764A20();  // 0x764A20
     unsigned char ToggleSidebarDisplay(unsigned int * a0, TabClass * aP1, int a3, int _20, SidebarClass * a4, char a6);  // 0x6A7D70
 // --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    char DispatchTeamOrders(int a2, int a3);  // 0x6EF110
+    rc_ptr * ShowWDTTerritorySelection(unsigned int * a2);  // 0x76CDA0
+    int ReadSettingsWOL();  // 0x779C90
+    int SavePersonaConfigWOL();  // 0x779F10
+    int InitializeWestwoodOnline();  // 0x785370
+    wchar_t * HandlePageWOL();  // 0x78A6B0
+    void ShowWDTTerritorySelection_Show();  // 0x76E180
+// --- e4 declarations (END) ---
 };
 
 } // namespace game

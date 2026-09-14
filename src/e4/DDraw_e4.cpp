@@ -37,33 +37,6 @@ void __thiscall sub_4A3640(_DWORD *this)
 }
 }
 
-// 0x4A3DD0
-int DDraw::LogError()
-{
-{
-    int v1;
-    int result;
-    CHAR Text[80];
-    if ( this )
-  {
-    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2760] )
-    {
-    return (*(int (**)(void))&DataGlobal_89E138.__pad_14B0[2760])();
-    }
-    else
-    {
-    sprintf(Text, &g_Str_Trace_DDRAW_DLL_Error_code____08X, (INIClass *)this);
-    return MessageBoxA(g_hWnd, Text, g_Str_Direct_X, 0x30u);
-    }
-  }
-    else if ( v1 )
-  {
-    return MessageBoxA( g_hWnd, (LPCSTR)&g_Str_Trace_DDRAW_DLL_Error_code____08X.referenceCount, (LPCSTR)&g_Str_Trace_DDRAW_DLL_Error_code____08X.ambientSoundController[4], 0);
-  }
-    return result;
-}
-}
-
 // 0x4A3E40
 int DDraw::CapabilityCheck()
 {
@@ -254,6 +227,33 @@ char __thiscall DDraw_HandleSuspend(_DWORD *this)
     }
   }
   return v1; /*0x5d25c4*/
+}
+}
+
+// 0x4A3DD0
+int DDraw::LogError()
+{
+{
+    int v1;
+    int result;
+    CHAR Text[80];
+    if ( this )
+  {
+    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2760] )
+    {
+    return (*(int (**)(void))&DataGlobal_89E138.__pad_14B0[2760])();
+    }
+    else
+    {
+    sprintf(Text, &g_Str_Trace_DDRAW_DLL_Error_code____08X, (INIClass *)this);
+    return MessageBoxA(g_hWnd, Text, g_Str_Direct_X, 0x30u);
+    }
+  }
+    else if ( v1 )
+  {
+    return MessageBoxA( g_hWnd, (LPCSTR)&g_Str_Trace_DDRAW_DLL_Error_code____08X.referenceCount, (LPCSTR)&g_Str_Trace_DDRAW_DLL_Error_code____08X.ambientSoundController[4], 0);
+  }
+    return result;
 }
 }
 

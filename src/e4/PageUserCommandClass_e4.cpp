@@ -11,17 +11,6 @@ unsigned int * PageUserCommandClass::PageUserCommandClass()
 }
 }
 
-// 0x537E50
-char PageUserCommandClass::Do(int a1)
-{
-{
-    char result;
-    if ( g_GameMode_Current[0] == 4 )
-    return UI_Add();
-    return result;
-}
-}
-
 // 0x537DE0
 char * PageUserCommandClass::AddRef()
 {
@@ -51,5 +40,16 @@ wchar_t * PageUserCommandClass::Read()
 {
 {
     return GetStringCSF(DataGlobal_827A98, 0, g_Str_File_Init_CPP, 7567);
+}
+}
+
+// 0x537E50
+char PageUserCommandClass::Do(int a1)
+{
+{
+    char result;
+    if ( g_GameMode_Current[0] == 4 )
+    return UI_Add();
+    return result;
 }
 }

@@ -583,57 +583,6 @@ int __thiscall NetworkLobby::AssignPlayerSlot(LPARAM this)
 }
 } // namespace gamemd
 
-// 0x5E9290
-namespace gamemd {
-char NetworkLobby::CheckLobbyConditions()
-{
-{
-    int v2;
-    int v3;
-    LPARAM *v4;
-    LPARAM v5;
-    if ( g_GameMode_Current[0] == 4 )
-  {
-    if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() )
-    v2 = 6;
-    else
-    v2 = 2;
-  }
-    else
-  {
-    v2 = 8;
-  }
-    if ( !g_MPCooperativeState && v2 < 7 )
-    ++v2;
-    v3 = 0;
-    v4 = &g_NetworkPlayerName;
-    while ( 1 )
-  {
-    LOBYTE(v5) = GUID::Compare((char *)(*v4 + 40), (int)this);
-    if ( (char)v5 )
-    break;
-    ++v4;
-    ++v3;
-    if ( (int)v4 >= (int)&g_PlayerNameListEnd )
-    return v5;
-  }
-    v5 = *(&g_NetworkPlayerName + v3);
-    if ( *(int *)(v5 + 107) == -1 )
-  {
-    *(&g_NetworkPlayerName + v3) = g_Lobby_MaxPlayers;
-  }
-    else
-  {
-    v5 = g_HouseClass_ObserverFlags;
-    if ( v3 >= v2 )
-    v5 = g_Lobby_PlayerCount;
-    *(&g_NetworkPlayerName + v3) = v5;
-  }
-    return v5;
-}
-}
-} // namespace gamemd
-
 // 0x5E9E00
 namespace gamemd {
 int NetworkLobby::InitLobbyDropdowns()
@@ -829,71 +778,6 @@ char __thiscall NetworkLobby::SetupPlayerSlotControls(HWND this)
 }
 } // namespace gamemd
 
-// 0x5EDFC0
-namespace gamemd {
-wchar_t * NetworkLobby::DeleteAndZero()
-{
-{
-    LPARAM v2;
-    LPARAM v4;
-    wchar_t *v5;
-    LPARAM v6;
-    LPARAM v7;
-    LPARAM v8;
-    LPARAM v9;
-    void *v10;
-    if ( WideString::IsASCII(this) )
-  {
-    ToWideStringCharAlt((char **)&v10, this);
-    if ( String::Equals_Alt((const char **)&v10, DataGlobal_831704[0]) )
-    {
-    v2 = g_HouseClass_ObserverFlags;
-    DeleteAndZero(&v10);
-    return (wchar_t *)v2;
-    }
-    if ( String::Equals_Alt((const char **)&v10, DataGlobal_831708[0]) )
-    {
-    v4 = g_Lobby_PlayerCount;
-    DeleteAndZero(&v10);
-    return (wchar_t *)v4;
-    }
-    if ( String::Equals_Alt((const char **)&v10, DataGlobal_83170C[0]) )
-    {
-    v5 = g_Lobby_PlayerReady;
-    DeleteAndZero(&v10);
-    return v5;
-    }
-    if ( String::Equals_Alt((const char **)&v10, DataGlobal_831710[0]) )
-    {
-    v6 = g_Lobby_PlayerTeam;
-    DeleteAndZero(&v10);
-    return (wchar_t *)v6;
-    }
-    if ( String::Equals_Alt((const char **)&v10, DataGlobal_831714[0]) )
-    {
-    v7 = g_Lobby_PlayerSide;
-    DeleteAndZero(&v10);
-    return (wchar_t *)v7;
-    }
-    if ( String::Equals_Alt((const char **)&v10, DataGlobal_831718[0]) )
-    {
-    v8 = g_Lobby_PlayerColor;
-    DeleteAndZero(&v10);
-    return (wchar_t *)v8;
-    }
-    if ( String::Equals_Alt((const char **)&v10, DataGlobal_83171C) )
-    {
-    v9 = g_Lobby_MaxPlayers;
-    DeleteAndZero(&v10);
-    return (wchar_t *)v9;
-    }
-    DeleteAndZero(&v10);
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x5EE3A0
 namespace gamemd {
 char NetworkLobby::FillOptionCombo()
@@ -1050,6 +934,57 @@ char NetworkLobby::ValidateSerialNumber()
 }
 } // namespace gamemd
 
+// 0x5E9290
+namespace gamemd {
+char NetworkLobby::CheckLobbyConditions()
+{
+{
+    int v2;
+    int v3;
+    LPARAM *v4;
+    LPARAM v5;
+    if ( g_GameMode_Current[0] == 4 )
+  {
+    if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() )
+    v2 = 6;
+    else
+    v2 = 2;
+  }
+    else
+  {
+    v2 = 8;
+  }
+    if ( !g_MPCooperativeState && v2 < 7 )
+    ++v2;
+    v3 = 0;
+    v4 = &g_NetworkPlayerName;
+    while ( 1 )
+  {
+    LOBYTE(v5) = GUID::Compare((char *)(*v4 + 40), (int)this);
+    if ( (char)v5 )
+    break;
+    ++v4;
+    ++v3;
+    if ( (int)v4 >= (int)&g_PlayerNameListEnd )
+    return v5;
+  }
+    v5 = *(&g_NetworkPlayerName + v3);
+    if ( *(int *)(v5 + 107) == -1 )
+  {
+    *(&g_NetworkPlayerName + v3) = g_Lobby_MaxPlayers;
+  }
+    else
+  {
+    v5 = g_HouseClass_ObserverFlags;
+    if ( v3 >= v2 )
+    v5 = g_Lobby_PlayerCount;
+    *(&g_NetworkPlayerName + v3) = v5;
+  }
+    return v5;
+}
+}
+} // namespace gamemd
+
 // 0x5E9470
 namespace gamemd {
 BOOL NetworkLobby::IsValidPlayerName()
@@ -1156,6 +1091,71 @@ char NetworkLobby::CheckPlayerNames()
     }
   }
     return 1;
+}
+}
+} // namespace gamemd
+
+// 0x5EDFC0
+namespace gamemd {
+wchar_t * NetworkLobby::DeleteAndZero()
+{
+{
+    LPARAM v2;
+    LPARAM v4;
+    wchar_t *v5;
+    LPARAM v6;
+    LPARAM v7;
+    LPARAM v8;
+    LPARAM v9;
+    void *v10;
+    if ( WideString::IsASCII(this) )
+  {
+    ToWideStringCharAlt((char **)&v10, this);
+    if ( String::Equals_Alt((const char **)&v10, DataGlobal_831704[0]) )
+    {
+    v2 = g_HouseClass_ObserverFlags;
+    DeleteAndZero(&v10);
+    return (wchar_t *)v2;
+    }
+    if ( String::Equals_Alt((const char **)&v10, DataGlobal_831708[0]) )
+    {
+    v4 = g_Lobby_PlayerCount;
+    DeleteAndZero(&v10);
+    return (wchar_t *)v4;
+    }
+    if ( String::Equals_Alt((const char **)&v10, DataGlobal_83170C[0]) )
+    {
+    v5 = g_Lobby_PlayerReady;
+    DeleteAndZero(&v10);
+    return v5;
+    }
+    if ( String::Equals_Alt((const char **)&v10, DataGlobal_831710[0]) )
+    {
+    v6 = g_Lobby_PlayerTeam;
+    DeleteAndZero(&v10);
+    return (wchar_t *)v6;
+    }
+    if ( String::Equals_Alt((const char **)&v10, DataGlobal_831714[0]) )
+    {
+    v7 = g_Lobby_PlayerSide;
+    DeleteAndZero(&v10);
+    return (wchar_t *)v7;
+    }
+    if ( String::Equals_Alt((const char **)&v10, DataGlobal_831718[0]) )
+    {
+    v8 = g_Lobby_PlayerColor;
+    DeleteAndZero(&v10);
+    return (wchar_t *)v8;
+    }
+    if ( String::Equals_Alt((const char **)&v10, DataGlobal_83171C) )
+    {
+    v9 = g_Lobby_MaxPlayers;
+    DeleteAndZero(&v10);
+    return (wchar_t *)v9;
+    }
+    DeleteAndZero(&v10);
+  }
+    return 0;
 }
 }
 } // namespace gamemd

@@ -258,6 +258,10 @@ public:
     virtual void Constructor(); // 0x767300
 
     uint8_t GameOption_WorldDominationTour_field_0x04[4];
+// --- e4 declarations (BEGIN) ---
+    void * ConstructorWDTFlagOption_Create(int arg0, void * a2, int arg8, void * a4, ObjectClass * aP5);  // 0x767820
+    void * System_Init_766A10(int a2, int arg4, void * a3, ObjectClass * aP4);  // 0x766A10
+// --- e4 declarations (END) ---
 };
 // 4 methods in IDA
 // CSP: GameOptions matched via T1

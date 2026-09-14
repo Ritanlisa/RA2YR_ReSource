@@ -1517,45 +1517,6 @@ char __thiscall Game::LoadMultiplayerScoreAssets(void *this)
 }
 } // namespace gamemd
 
-// 0x72D830
-namespace gamemd {
-void * Game::shutdownGame()
-{
-{
-    void *result;
-    char *v2;
-    if ( this )
-  {
-    if ( this == (void *)1 )
-    {
-    if ( g_DisplayWidth == 640 )
-    result = LoadFileSHP(DataGlobal_844CA8, (bool *)&DataGlobal_B0FC7D);
-    else
-    result = LoadFileSHP(DataGlobal_844CAC, (bool *)&DataGlobal_B0FC7D);
-    DataGlobal_B0FB1C = result;
-    }
-    else
-    {
-    v2 = DataGlobal_844CB0[0];
-    if ( g_DisplayWidth != 640 )
-    v2 = DataGlobal_844CB4;
-    result = LoadFileSHP(v2, (bool *)&DataGlobal_B0FC7D);
-    DataGlobal_B0FB1C = result;
-    }
-  }
-    else
-  {
-    if ( g_DisplayWidth == 640 )
-    result = LoadFileSHP(DataGlobal_844CA0, (bool *)&DataGlobal_B0FC7D);
-    else
-    result = LoadFileSHP(DataGlobal_844CA4, (bool *)&DataGlobal_B0FC7D);
-    DataGlobal_B0FB1C = result;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x77E430
 namespace gamemd {
 void Game::EncodeGameSetupState()
@@ -2498,6 +2459,45 @@ int Game::readIniSettings()
     result = *(void**)this;
     if ( *(void**)this )
     return (*(int (__stdcall **)(int))(*(int *)(result) + 8))(result);
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x72D830
+namespace gamemd {
+void * Game::shutdownGame()
+{
+{
+    void *result;
+    char *v2;
+    if ( this )
+  {
+    if ( this == (void *)1 )
+    {
+    if ( g_DisplayWidth == 640 )
+    result = LoadFileSHP(DataGlobal_844CA8, (bool *)&DataGlobal_B0FC7D);
+    else
+    result = LoadFileSHP(DataGlobal_844CAC, (bool *)&DataGlobal_B0FC7D);
+    DataGlobal_B0FB1C = result;
+    }
+    else
+    {
+    v2 = DataGlobal_844CB0[0];
+    if ( g_DisplayWidth != 640 )
+    v2 = DataGlobal_844CB4;
+    result = LoadFileSHP(v2, (bool *)&DataGlobal_B0FC7D);
+    DataGlobal_B0FB1C = result;
+    }
+  }
+    else
+  {
+    if ( g_DisplayWidth == 640 )
+    result = LoadFileSHP(DataGlobal_844CA0, (bool *)&DataGlobal_B0FC7D);
+    else
+    result = LoadFileSHP(DataGlobal_844CA4, (bool *)&DataGlobal_B0FC7D);
+    DataGlobal_B0FB1C = result;
+  }
     return result;
 }
 }

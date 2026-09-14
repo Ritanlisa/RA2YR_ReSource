@@ -7,6 +7,8 @@
 #include "e4/classes/E4Recv_56AF40_e4.hpp"
 #include "e4/classes/E4Recv_56B0F0_e4.hpp"
 #include "e4/classes/E4Recv_56B250_e4.hpp"
+#include "e4/classes/E4Recv_56DB70_e4.hpp"
+#include "e4/classes/E4Recv_56E890_e4.hpp"
 
 // 0x560BF0
 namespace gamemd {
@@ -484,58 +486,6 @@ int __stdcall sub_568140(int *a1, int a2)
 }
 } // namespace gamemd
 
-// 0x56AE40
-namespace gamemd {
-int E4Recv_56AE40::sub_56AE40(int a2)
-{
-{
-    int v3;
-    int i;
-    int v5;
-    char *v6;
-    int j;
-    int v8;
-    char *v9;
-    int k;
-    int v11;
-    char *v12;
-    int v14[10];
-    v3 = 0;
-    LCWPipe::Constructor(v14, 0, 0x2000);
-    Pipe::SetDelegate(v14, a2);
-    for ( i = 0; i < this->M320; ++i )
-  {
-    v5 = *(int *)(this->M316 + 4 * i);
-    if ( v5 )
-    v6 = LCW::Compress((int)v14, (char *)(v5 + 56), 2);
-    else
-    v6 = LCW::Compress((int)v14, DataGlobal_ABDC88, 2);
-    v3 += (int)v6;
-  }
-    for ( j = 0; j < this->M320; ++j )
-  {
-    v8 = *(int *)(this->M316 + 4 * j);
-    if ( v8 )
-    v9 = LCW::Compress((int)v14, (char *)(v8 + 282), 1);
-    else
-    v9 = LCW::Compress((int)v14, (char *)&DataGlobal_ABDD6A, 1);
-    v3 += (int)v9;
-  }
-    for ( k = 0; k < this->M320; ++k )
-  {
-    v11 = *(int *)(this->M316 + 4 * k);
-    if ( v11 )
-    v12 = LCW::Compress((int)v14, (char *)(v11 + 283), 1);
-    else
-    v12 = LCW::Compress((int)v14, DataGlobal_ABDD6B, 1);
-    v3 += (int)v12;
-  }
-    LCWPipe::Dtor(v14);
-    return v3;
-}
-}
-} // namespace gamemd
-
 // 0x56AF40
 namespace gamemd {
 char * E4Recv_56AF40::sub_56AF40(int a2)
@@ -619,66 +569,6 @@ char *__thiscall sub_56AF40(int *this, int a2)
 }
 } // namespace gamemd
 
-// 0x56B0F0
-namespace gamemd {
-int E4Recv_56B0F0::sub_56B0F0(int * a2)
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    int v11;
-    int v12;
-    int v13;
-    int i;
-    int *v16;
-    int v17;
-    v2 = 0;
-    v3 = 0;
-    v4 = a2;
-    v16 = this;
-    for ( i = 0; v3 < v16[80]; i = v3 )
-  {
-    v5 = *(int *)(this->M316 + 4 * v3);
-    if ( v3 )
-    {
-    if ( v5 )
-      {
-    v6 = *(int *)(v5 + 36);
-    v7 = this->M244;
-    HIWORD(a2) = HIWORD(v6);
-    v8 = (short)v6;
-    v9 = SHIWORD(v6);
-    a2 = (int *)(SHIWORD(a2) + v8);
-    if ( (int)a2 > v7 && v8 - v9 < v7 && v9 - v8 < v7 && (int)a2 <= v7 + 2 * v16[62] )
-        {
-    a2 = *(int **)(v5 + 36);
-    if ( a2 != (int *)g_MapSeedState && (int *)v5 != g_CellClassArray && (*(int *)(v5 + 56) != 0xFFFF || *(char *)(v5 + 283) > 0) )
-          {
-    v10 = (*(int (__thiscall **)(int *, int **, int))(*v4 + 16))(v4, &a2, 4) + v2;
-    v11 = (*(int (__thiscall **)(int *, int, int))(*v4 + 16))(v4, v5 + 56, 4) + v10;
-    v12 = (*(int (__thiscall **)(int *, int, int))(*v4 + 16))(v4, v5 + 282, 1) + v11;
-    v2 = (*(int (__thiscall **)(int *, int, int))(*v4 + 16))(v4, v5 + 283, 1) + v12;
-          }
-        }
-      }
-    }
-    this = v16;
-    v3 = i + 1;
-  }
-    v13 = *v4;
-    v17 = g_MapSeedState;
-    return v2 + (*(int (__thiscall **)(int *, int *, int))(v13 + 16))(v4, &v17, 4);
-}
-}
-} // namespace gamemd
-
 // 0x56B250
 namespace gamemd {
 int E4Recv_56B250::sub_56B250(int a2)
@@ -751,61 +641,6 @@ int __thiscall sub_56B250(int *this, int a2)
   v12 = (*(int (__thiscall **)(int *))(v17[0] + 4))(v17); /*0x56b3cf*/
   LZOPipe::Destructor(v17); /*0x56b3d1*/
   return v12 + v11; /*0x56b3d9*/
-}
-}
-} // namespace gamemd
-
-// 0x56F7A0
-namespace gamemd {
-char sub_56F7A0(unsigned short * a1, int a2)
-{
-{
-    int v2;
-    short v3;
-    unsigned int v4;
-    int *v5;
-    unsigned char v6;
-    int v7;
-    v2 = a2 & 7;
-    v3 = Direction_X_Offsets[v2];
-    LOWORD(v2) = *((int*)(a1) + 1) + HIWORD(Direction_X_Offsets[v2]);
-    LOWORD(a2) = *a1 + v3;
-    HIWORD(a2) = v2;
-    v4 = (short)a2 + ((short)v2 << 9);
-    if ( v4 >= 0x40000 || (v5 = *(int **)(g_Shroud_CellArray + 4 * v4)) == 0 )
-  {
-    g_Map_GlobalCellIndex = a2;
-    v5 = g_CellClassArray;
-  }
-    if ( *((char *)(v5) + 320) < 0 )
-  {
-    v6 = *((char *)(v5) + 286);
-    if ( v6 >= 9u )
-    {
-    if ( v6 <= 0xCu )
-      {
-    *((char *)(v5) + 286) = 13;
-      }
-    else if ( v6 == 14 )
-      {
-    *((char *)(v5) + 286) = 15;
-      }
-    }
-  }
-    v7 = v5[14] - g_TerrainBridgeIndex + 1;
-    if ( v7 == DataGlobal_AA1548 || v7 == DataGlobal_AA0740 )
-  {
-    LOBYTE(v7) = Cell::UpdateTileType((short *)&a2, 1, 0);
-  }
-    else if ( v7 == g_TerrainSoundConfig )
-  {
-    LOBYTE(v7) = Cell::SetTileType((short *)&a2, g_TerrainSoundConfig + g_TerrainBridgeIndex + 1, -1, -1, 0);
-  }
-    else if ( v7 == g_TerrainSoundConfig + 1 )
-  {
-    LOBYTE(v7) = Cell::SetTileType((short *)&a2, g_TerrainSoundConfig + g_TerrainBridgeIndex + 2, -1, -1, 0);
-  }
-    return v7;
 }
 }
 } // namespace gamemd
@@ -1082,6 +917,118 @@ unsigned int * E4Recv_565610::sub_565610(unsigned int * a2, short * a3)
 }
 } // namespace gamemd
 
+// 0x56AE40
+namespace gamemd {
+int E4Recv_56AE40::sub_56AE40(int a2)
+{
+{
+    int v3;
+    int i;
+    int v5;
+    char *v6;
+    int j;
+    int v8;
+    char *v9;
+    int k;
+    int v11;
+    char *v12;
+    int v14[10];
+    v3 = 0;
+    LCWPipe::Constructor(v14, 0, 0x2000);
+    Pipe::SetDelegate(v14, a2);
+    for ( i = 0; i < this->M320; ++i )
+  {
+    v5 = *(int *)(this->M316 + 4 * i);
+    if ( v5 )
+    v6 = LCW::Compress((int)v14, (char *)(v5 + 56), 2);
+    else
+    v6 = LCW::Compress((int)v14, DataGlobal_ABDC88, 2);
+    v3 += (int)v6;
+  }
+    for ( j = 0; j < this->M320; ++j )
+  {
+    v8 = *(int *)(this->M316 + 4 * j);
+    if ( v8 )
+    v9 = LCW::Compress((int)v14, (char *)(v8 + 282), 1);
+    else
+    v9 = LCW::Compress((int)v14, (char *)&DataGlobal_ABDD6A, 1);
+    v3 += (int)v9;
+  }
+    for ( k = 0; k < this->M320; ++k )
+  {
+    v11 = *(int *)(this->M316 + 4 * k);
+    if ( v11 )
+    v12 = LCW::Compress((int)v14, (char *)(v11 + 283), 1);
+    else
+    v12 = LCW::Compress((int)v14, DataGlobal_ABDD6B, 1);
+    v3 += (int)v12;
+  }
+    LCWPipe::Dtor(v14);
+    return v3;
+}
+}
+} // namespace gamemd
+
+// 0x56B0F0
+namespace gamemd {
+int E4Recv_56B0F0::sub_56B0F0(int * a2)
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    int i;
+    int *v16;
+    int v17;
+    v2 = 0;
+    v3 = 0;
+    v4 = a2;
+    v16 = this;
+    for ( i = 0; v3 < v16[80]; i = v3 )
+  {
+    v5 = *(int *)(this->M316 + 4 * v3);
+    if ( v3 )
+    {
+    if ( v5 )
+      {
+    v6 = *(int *)(v5 + 36);
+    v7 = this->M244;
+    HIWORD(a2) = HIWORD(v6);
+    v8 = (short)v6;
+    v9 = SHIWORD(v6);
+    a2 = (int *)(SHIWORD(a2) + v8);
+    if ( (int)a2 > v7 && v8 - v9 < v7 && v9 - v8 < v7 && (int)a2 <= v7 + 2 * v16[62] )
+        {
+    a2 = *(int **)(v5 + 36);
+    if ( a2 != (int *)g_MapSeedState && (int *)v5 != g_CellClassArray && (*(int *)(v5 + 56) != 0xFFFF || *(char *)(v5 + 283) > 0) )
+          {
+    v10 = (*(int (__thiscall **)(int *, int **, int))(*v4 + 16))(v4, &a2, 4) + v2;
+    v11 = (*(int (__thiscall **)(int *, int, int))(*v4 + 16))(v4, v5 + 56, 4) + v10;
+    v12 = (*(int (__thiscall **)(int *, int, int))(*v4 + 16))(v4, v5 + 282, 1) + v11;
+    v2 = (*(int (__thiscall **)(int *, int, int))(*v4 + 16))(v4, v5 + 283, 1) + v12;
+          }
+        }
+      }
+    }
+    this = v16;
+    v3 = i + 1;
+  }
+    v13 = *v4;
+    v17 = g_MapSeedState;
+    return v2 + (*(int (__thiscall **)(int *, int *, int))(v13 + 16))(v4, &v17, 4);
+}
+}
+} // namespace gamemd
+
 // 0x56C200
 namespace gamemd {
 int sub_56C200()
@@ -1251,6 +1198,61 @@ char globalHelper_06F690(IUnknown * aP0, IUnknown * aP1)
     else if ( v7 == g_TerrainSoundConfig + 2 )
   {
     LOBYTE(v7) = Cell::SetTileType( (IUnknown *)&aP1, (IUnknown *)(g_TerrainSoundConfig + g_TerrainBridgeIndex + 2), (IUnknown *)0xFFFFFFFF, (IUnknown *)0xFFFFFFFF, 0);
+  }
+    return v7;
+}
+}
+} // namespace gamemd
+
+// 0x56F7A0
+namespace gamemd {
+char sub_56F7A0(unsigned short * a1, int a2)
+{
+{
+    int v2;
+    short v3;
+    unsigned int v4;
+    int *v5;
+    unsigned char v6;
+    int v7;
+    v2 = a2 & 7;
+    v3 = Direction_X_Offsets[v2];
+    LOWORD(v2) = *((int*)(a1) + 1) + HIWORD(Direction_X_Offsets[v2]);
+    LOWORD(a2) = *a1 + v3;
+    HIWORD(a2) = v2;
+    v4 = (short)a2 + ((short)v2 << 9);
+    if ( v4 >= 0x40000 || (v5 = *(int **)(g_Shroud_CellArray + 4 * v4)) == 0 )
+  {
+    g_Map_GlobalCellIndex = a2;
+    v5 = g_CellClassArray;
+  }
+    if ( *((char *)(v5) + 320) < 0 )
+  {
+    v6 = *((char *)(v5) + 286);
+    if ( v6 >= 9u )
+    {
+    if ( v6 <= 0xCu )
+      {
+    *((char *)(v5) + 286) = 13;
+      }
+    else if ( v6 == 14 )
+      {
+    *((char *)(v5) + 286) = 15;
+      }
+    }
+  }
+    v7 = v5[14] - g_TerrainBridgeIndex + 1;
+    if ( v7 == DataGlobal_AA1548 || v7 == DataGlobal_AA0740 )
+  {
+    LOBYTE(v7) = Cell::UpdateTileType((short *)&a2, 1, 0);
+  }
+    else if ( v7 == g_TerrainSoundConfig )
+  {
+    LOBYTE(v7) = Cell::SetTileType((short *)&a2, g_TerrainSoundConfig + g_TerrainBridgeIndex + 1, -1, -1, 0);
+  }
+    else if ( v7 == g_TerrainSoundConfig + 1 )
+  {
+    LOBYTE(v7) = Cell::SetTileType((short *)&a2, g_TerrainSoundConfig + g_TerrainBridgeIndex + 2, -1, -1, 0);
   }
     return v7;
 }

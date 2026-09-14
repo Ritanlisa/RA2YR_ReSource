@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_625C00_e4.hpp"
+#include "e4/classes/E4Recv_6B0490_e4.hpp"
+#include "e4/classes/E4Recv_746D90_e4.hpp"
+#include "e4/classes/E4Recv_77A870_e4.hpp"
+#include "e4/classes/E4Recv_77A890_e4.hpp"
+#include "e4/classes/E4Recv_77A8B0_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
 
 // 0x48D080

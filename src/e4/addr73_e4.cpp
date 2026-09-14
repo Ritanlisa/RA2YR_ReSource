@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_730990_e4.hpp"
+#include "e4/classes/E4Recv_730A10_e4.hpp"
+#include "e4/classes/E4Recv_7310D0_e4.hpp"
 #include "e4/classes/E4Recv_731130_e4.hpp"
 #include "e4/classes/E4Recv_7325C0_e4.hpp"
 #include "e4/classes/E4Recv_733380_e4.hpp"
@@ -9,6 +12,8 @@
 #include "e4/classes/E4Recv_734F50_e4.hpp"
 #include "e4/classes/E4Recv_734F80_e4.hpp"
 #include "e4/classes/E4Recv_736C10_e4.hpp"
+#include "e4/classes/E4Recv_736DF0_e4.hpp"
+#include "e4/classes/E4Recv_737180_e4.hpp"
 
 // 0x730AF0
 namespace gamemd {
@@ -516,17 +521,6 @@ char __fastcall sub_7321D0(int a1, unsigned __int8 (__fastcall *a2)(_DWORD, int)
       return 0; /*0x7321f4*/
   }
   return 1; /*0x7321f6*/
-}
-}
-} // namespace gamemd
-
-// 0x7325C0
-namespace gamemd {
-BOOL E4Recv_7325C0::sub_7325C0()
-{
-{
-    return this->Vf44() != 6 && *(char *)(this->Vf132() + 3516)
-    && this->Vf316();
 }
 }
 } // namespace gamemd
@@ -2249,6 +2243,17 @@ wchar_t * FillUnitTooltipUI(wchar_t * Destination, wchar_t * Source)
     v12 = GetStringCSF((wchar_t *)&DataGlobal_830620.__pad_579C[63520], 0, &DataGlobal_830620.__pad_579C[63452], 1022);
     return wcscpy(v2, v12);
   }
+}
+}
+} // namespace gamemd
+
+// 0x7325C0
+namespace gamemd {
+BOOL E4Recv_7325C0::sub_7325C0()
+{
+{
+    return this->Vf44() != 6 && *(char *)(this->Vf132() + 3516)
+    && this->Vf316();
 }
 }
 } // namespace gamemd

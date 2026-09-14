@@ -319,19 +319,6 @@ int __thiscall TagTypeClass::_vt16(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x6E64C0
-namespace gamemd {
-TagTypeClass * TagTypeClass::ddtor(char a2)
-{
-{
-    TagTypeClass::CleanupMembers((int)this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (TagTypeClass *)this;
-}
-}
-} // namespace gamemd
-
 // 0x727AA0
 namespace gamemd {
 TriggerTypeClass * TagTypeClass::FindOrCreateTriggerType()
@@ -404,5 +391,18 @@ namespace gamemd {
 int TagTypeClass::GetObjectSize()
 {
 return 164;
+}
+} // namespace gamemd
+
+// 0x6E64C0
+namespace gamemd {
+TagTypeClass * TagTypeClass::ddtor(char a2)
+{
+{
+    TagTypeClass::CleanupMembers((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TagTypeClass *)this;
+}
 }
 } // namespace gamemd

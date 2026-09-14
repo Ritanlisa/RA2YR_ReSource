@@ -111,6 +111,42 @@ int __thiscall IsometricTileTypeClass::_vt16(_DWORD *this)
 }
 }
 
+// 0x549D70
+int IsometricTileTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
+}
+
+// 0x549D90
+int IsometricTileTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1525862010;
+  a2[1] = 298976820;
+  a2[2] = 1610654892;
+  a2[3] = -1252326136;
+  return 0;
+}
+
+// 0x54A140
+int IsometricTileTypeClass::GetTypeIdentifier()
+{
+return 18;
+}
+
+// 0x54A150
+int IsometricTileTypeClass::GetObjectSize()
+{
+return 780;
+}
+
 // 0x54A170
 IsometricTileTypeClass * IsometricTileTypeClass::ddtor(char a2)
 {
@@ -136,6 +172,17 @@ void IsometricTileTypeClass::ClearBuffer()
   }
     this->IsAllocated = 0;
     this->IsometricTileTypeClass_field_0x08 = 0;
+}
+}
+
+// 0x54A1C0
+unsigned int IsometricTileTypeClass::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->IsometricTileTypeClass_field_0x0C )
+    return (unsigned int)(a2 - this->IsometricTileTypeClass_field_0x04) >> 2;
+    else
+    return 0;
 }
 }
 
@@ -244,52 +291,5 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
     this->IsAllocated = 1;
   }
     return this;
-}
-}
-
-// 0x549D70
-int IsometricTileTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-
-// 0x549D90
-int IsometricTileTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1525862010;
-  a2[1] = 298976820;
-  a2[2] = 1610654892;
-  a2[3] = -1252326136;
-  return 0;
-}
-
-// 0x54A140
-int IsometricTileTypeClass::GetTypeIdentifier()
-{
-return 18;
-}
-
-// 0x54A150
-int IsometricTileTypeClass::GetObjectSize()
-{
-return 780;
-}
-
-// 0x54A1C0
-unsigned int IsometricTileTypeClass::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->IsometricTileTypeClass_field_0x0C )
-    return (unsigned int)(a2 - this->IsometricTileTypeClass_field_0x04) >> 2;
-    else
-    return 0;
 }
 }

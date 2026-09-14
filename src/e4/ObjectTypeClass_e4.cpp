@@ -1,19 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
-
-// 0x41CBF0
-unsigned int * ObjectTypeClass::vt_entry_7C(unsigned int * a1)
-{
-{
-    int v1;
-    v1 = 2 * DataGlobal_889F58;
-    *a1 = 256;
-    *((int*)(a1) + 1) = 256;
-    *((int*)(a1) + 2) = v1;
-    return a1;
-}
-}
+#include "e4/classes/E4Recv_6CEE60_e4.hpp"
 
 // 0x46C790
 BulletTypeClass * ObjectTypeClass::FindOrCreate()
@@ -124,17 +112,6 @@ int __thiscall sub_474F50(unsigned __int8 ***this, unsigned __int8 *a2, unsigned
   }
   INIClass::GetString(this, a2, a3, v4, Destination, 32); /*0x474f85*/
   return ObjectTypeClass_Read(Destination); /*0x474f93*/
-}
-}
-
-// 0x5F1C30
-int ObjectTypeClass::CreateInstance(CampaignScore * aP1, CampaignScore * aP2)
-{
-{
-    if ( this->zero_3C )
-    return (*(int (__thiscall **)(int, CampaignScore *, CampaignScore *))(**(int **)(this + 56) + 16))( this->TargetStrengthCoefficient, aP1, aP2);
-    else
-    return 0;
 }
 }
 
@@ -568,55 +545,6 @@ void ObjectTypeClass::UnloadPipsSHP()
     }
     MEMORY[0xAC148B] = 0; /*0x5f78f1*/
   }
-}
-}
-
-// 0x5F8080
-void ObjectTypeClass::CleanupWeapons()
-{
-{
-    char *v1;
-    int v2;
-    void *v3;
-    void **v4;
-    void *v5;
-    void *v6;
-    v1 = this + 204;
-    v2 = 18;
-    do
-  {
-    v3 = (void *)*((int *)v1 - 1);
-    if ( v3 )
-    {
-    WaveClass::Destroy(*((int *)v1 - 1));
-    __3_YAXPAX_Z(v3);
-    *((int *)v1 - 1) = 0;
-    }
-    v4 = *(void ***)v1;
-    if ( *(int *)v1 )
-    {
-    String::Release(*(void ***)v1);
-    __3_YAXPAX_Z(v4);
-    *(int *)v1 = 0;
-    }
-    v5 = (void *)*((int *)(v1) + 35);
-    if ( v5 )
-    {
-    WaveClass::Destroy(*((int *)(v1) + 35));
-    __3_YAXPAX_Z(v5);
-    *((int *)(v1) + 35) = 0;
-    }
-    v6 = (void *)*((int *)(v1) + 36);
-    if ( v6 )
-    {
-    String::Release(*((void ***)(v1) + 36));
-    __3_YAXPAX_Z(v6);
-    *((int *)(v1) + 36) = 0;
-    }
-    v1 += 8;
-    --v2;
-  }
-    while ( v2 );
 }
 }
 
@@ -1110,17 +1038,6 @@ int __stdcall ObjectTypeClass::LoadCleanup(IUnknown *aP0, ObjectTypeClass *aP1)
 }
 }
 
-// 0x5F9AE0
-ObjectTypeClass * ObjectTypeClass::Destru_vt08(char a2)
-{
-{
-    ObjectTypeClass::Destruct((int)this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (ObjectTypeClass *)this;
-}
-}
-
 // 0x5F9B60
 int ObjectTypeClass::FreeLoaderBuffer()
 {
@@ -1426,6 +1343,19 @@ _DWORD *__thiscall sub_717C00(_DWORD *this, _DWORD *a2)
 }
 }
 
+// 0x41CBF0
+unsigned int * ObjectTypeClass::vt_entry_7C(unsigned int * a1)
+{
+{
+    int v1;
+    v1 = 2 * DataGlobal_889F58;
+    *a1 = 256;
+    *((int*)(a1) + 1) = 256;
+    *((int*)(a1) + 2) = v1;
+    return a1;
+}
+}
+
 // 0x41CF80
 unsigned int * ObjectTypeClass::Copy(unsigned int * a0, ObjectTypeClass * aP1)
 {
@@ -1666,6 +1596,17 @@ int ObjectTypeClass::loadTypeMember_48DFF0()
 }
 }
 
+// 0x5F1C30
+int ObjectTypeClass::CreateInstance(CampaignScore * aP1, CampaignScore * aP2)
+{
+{
+    if ( this->zero_3C )
+    return (*(int (__thiscall **)(int, CampaignScore *, CampaignScore *))(**(int **)(this + 56) + 16))( this->TargetStrengthCoefficient, aP1, aP2);
+    else
+    return 0;
+}
+}
+
 // 0x5F75C0
 unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
 {
@@ -1674,6 +1615,66 @@ unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
     *((int*)(a1) + 1) = 10;
     *((int*)(a1) + 2) = 10;
     return a1;
+}
+}
+
+// 0x5F8080
+void ObjectTypeClass::CleanupWeapons()
+{
+{
+    char *v1;
+    int v2;
+    void *v3;
+    void **v4;
+    void *v5;
+    void *v6;
+    v1 = this + 204;
+    v2 = 18;
+    do
+  {
+    v3 = (void *)*((int *)v1 - 1);
+    if ( v3 )
+    {
+    WaveClass::Destroy(*((int *)v1 - 1));
+    __3_YAXPAX_Z(v3);
+    *((int *)v1 - 1) = 0;
+    }
+    v4 = *(void ***)v1;
+    if ( *(int *)v1 )
+    {
+    String::Release(*(void ***)v1);
+    __3_YAXPAX_Z(v4);
+    *(int *)v1 = 0;
+    }
+    v5 = (void *)*((int *)(v1) + 35);
+    if ( v5 )
+    {
+    WaveClass::Destroy(*((int *)(v1) + 35));
+    __3_YAXPAX_Z(v5);
+    *((int *)(v1) + 35) = 0;
+    }
+    v6 = (void *)*((int *)(v1) + 36);
+    if ( v6 )
+    {
+    String::Release(*((void ***)(v1) + 36));
+    __3_YAXPAX_Z(v6);
+    *((int *)(v1) + 36) = 0;
+    }
+    v1 += 8;
+    --v2;
+  }
+    while ( v2 );
+}
+}
+
+// 0x5F9AE0
+ObjectTypeClass * ObjectTypeClass::Destru_vt08(char a2)
+{
+{
+    ObjectTypeClass::Destruct((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (ObjectTypeClass *)this;
 }
 }
 

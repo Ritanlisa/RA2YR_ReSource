@@ -2,7 +2,12 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_7011A0_e4.hpp"
+#include "e4/classes/E4Recv_706BD0_e4.hpp"
+#include "e4/classes/E4Recv_707280_e4.hpp"
+#include "e4/classes/E4Recv_7087C0_e4.hpp"
 #include "e4/classes/E4Recv_70DE20_e4.hpp"
+#include "e4/classes/E4Recv_70E5A0_e4.hpp"
+#include "e4/classes/E4Recv_70F1D0_e4.hpp"
 #include "e4/classes/E4Recv_70F740_e4.hpp"
 #include "e4/classes/E4Recv_70FE40_e4.hpp"
 #include "e4/classes/E4Recv_70FE50_e4.hpp"
@@ -1002,6 +1007,27 @@ DWORD __fastcall TechnoClass_RevealRadarEvent(int a1, int a2)
 }
 } // namespace gamemd
 
+// 0x70D180
+namespace gamemd {
+void GlobalFlag_Set(char a1)
+{
+{
+    DataGlobal_843108 = a1;
+}
+}
+} // namespace gamemd
+
+// 0x70DE20
+namespace gamemd {
+int E4Recv_70DE20::sub_70DE20(int a2)
+{
+{
+    this->M324 += a2;
+    return a2;
+}
+}
+} // namespace gamemd
+
 // 0x70F740
 namespace gamemd {
 int E4Recv_70F740::sub_70F740(int a2)
@@ -1014,6 +1040,17 @@ int E4Recv_70F740::sub_70F740(int a2)
     v2[1] = v4;
     v2[2] = a2;
     return v4;
+}
+}
+} // namespace gamemd
+
+// 0x70FE40
+namespace gamemd {
+int E4Recv_70FE40::sub_70FE40(int a2)
+{
+{
+    this->M464 = a2;
+    return a2;
 }
 }
 } // namespace gamemd
@@ -1041,38 +1078,6 @@ int E4Recv_70FE50::sub_70FE50()
     this->M460 = 0;
   }
     return result;
-}
-}
-} // namespace gamemd
-
-// 0x70D180
-namespace gamemd {
-void GlobalFlag_Set(char a1)
-{
-{
-    DataGlobal_843108 = a1;
-}
-}
-} // namespace gamemd
-
-// 0x70DE20
-namespace gamemd {
-int E4Recv_70DE20::sub_70DE20(int a2)
-{
-{
-    this->M324 += a2;
-    return a2;
-}
-}
-} // namespace gamemd
-
-// 0x70FE40
-namespace gamemd {
-int E4Recv_70FE40::sub_70FE40(int a2)
-{
-{
-    this->M464 = a2;
-    return a2;
 }
 }
 } // namespace gamemd

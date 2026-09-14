@@ -3,338 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/EventClass_e4.hpp"
 
-// 0x40B6A0
-namespace gamemd {
-void EventClass::initEvent()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->Count = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->EventClass_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->EventClass_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x40B740
-namespace gamemd {
-char EventClass::processEvent(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v6;
-    int i;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( v4 )
-    {
-    if ( this->EventClass_field_0x4 )
-      {
-    v6 = this->EventClass_field_0x8;
-    if ( a2 < v6 )
-    v6 = a2;
-    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->EventClass_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-        {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->EventClass_field_0x4 = 0;
-        }
-      }
-    this->EventClass_field_0x4 = v4;
-    this->EventClass_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-    return 1;
-    }
-    else
-    {
-    return 0;
-    }
-  }
-    else
-  {
-    this->initEvent();
-    return 1;
-  }
-}
-}
-} // namespace gamemd
-
-// 0x40B880
-namespace gamemd {
-char EventClass::validateEvent(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v5;
-    int i;
-    int v7;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( !v4 )
-    return 0;
-    if ( this->EventClass_field_0x4 )
-    {
-    v5 = this->EventClass_field_0x8;
-    if ( a2 < v5 )
-    v5 = a2;
-    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->EventClass_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-      {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->EventClass_field_0x4 = 0;
-      }
-    }
-    this->EventClass_field_0x4 = v4;
-    this->EventClass_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-  }
-    else
-  {
-    this->initEvent();
-  }
-    v7 = this->EventClass_field_0x8;
-    if ( v7 < this->Count )
-    this->Count = v7;
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x40B9A0
-namespace gamemd {
-char EventClass::dispatchEvent(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v6;
-    int i;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( v4 )
-    {
-    if ( this->EventClass_field_0x4 )
-      {
-    v6 = this->EventClass_field_0x8;
-    if ( a2 < v6 )
-    v6 = a2;
-    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->EventClass_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-        {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->EventClass_field_0x4 = 0;
-        }
-      }
-    this->EventClass_field_0x4 = v4;
-    this->EventClass_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-    return 1;
-    }
-    else
-    {
-    return 0;
-    }
-  }
-    else
-  {
-    this->initEvent();
-    return 1;
-  }
-}
-}
-} // namespace gamemd
-
-// 0x40BAE0
-namespace gamemd {
-char EventClass::checkCondition(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v5;
-    int i;
-    int v7;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( !v4 )
-    return 0;
-    if ( this->EventClass_field_0x4 )
-    {
-    v5 = this->EventClass_field_0x8;
-    if ( a2 < v5 )
-    v5 = a2;
-    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->EventClass_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-      {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->EventClass_field_0x4 = 0;
-      }
-    }
-    this->EventClass_field_0x4 = v4;
-    this->EventClass_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-  }
-    else
-  {
-    this->initEvent();
-  }
-    v7 = this->EventClass_field_0x8;
-    if ( v7 < this->Count )
-    this->Count = v7;
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x40BC10
-namespace gamemd {
-DynamicVector * EventClass::executeAction(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_BombClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
-}
-}
-} // namespace gamemd
-
-// 0x40BD00
-namespace gamemd {
-unsigned int * EventClass::resetEvent(BuildingClass * aP1, BuildingClass * aP2)
-{
-{
-    this->Items = 0;
-    this->Capacity = aP1;
-    this->IsInitialized = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_TechnoClass;
-    if ( aP1 )
-  {
-    if ( aP2 )
-    {
-    this->Items = aP2;
-    return this;
-    }
-    this->Items = __2_YAPAXI_Z(4 * (int)aP1);
-    this->IsAllocated = 1;
-  }
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x40C110
-namespace gamemd {
-VectorClass * EventClass::queueEvent(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_CommandClass_const;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x40C410
-namespace gamemd {
-char EventClass::clearEvents(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v5;
-    int i;
-    int v7;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( !v4 )
-    return 0;
-    if ( this->EventClass_field_0x4 )
-    {
-    v5 = this->EventClass_field_0x8;
-    if ( a2 < v5 )
-    v5 = a2;
-    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->EventClass_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-      {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->EventClass_field_0x4 = 0;
-      }
-    }
-    this->EventClass_field_0x4 = v4;
-    this->EventClass_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-  }
-    else
-  {
-    this->initEvent();
-  }
-    v7 = this->EventClass_field_0x8;
-    if ( v7 < this->Count )
-    this->Count = v7;
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x48B390
 namespace gamemd {
 int EventClass::serializeEvent()
@@ -784,6 +452,268 @@ LABEL_23:
 }
 } // namespace gamemd
 
+// 0x40B6A0
+namespace gamemd {
+void EventClass::initEvent()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->EventClass_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->EventClass_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x40B740
+namespace gamemd {
+char EventClass::processEvent(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
+    {
+    if ( this->EventClass_field_0x4 )
+      {
+    v6 = this->EventClass_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->EventClass_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+        {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->EventClass_field_0x4 = 0;
+        }
+      }
+    this->EventClass_field_0x4 = v4;
+    this->EventClass_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
+    }
+    else
+    {
+    return 0;
+    }
+  }
+    else
+  {
+    this->initEvent();
+    return 1;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x40B880
+namespace gamemd {
+char EventClass::validateEvent(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->EventClass_field_0x4 )
+    {
+    v5 = this->EventClass_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->EventClass_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+      {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->EventClass_field_0x4 = 0;
+      }
+    }
+    this->EventClass_field_0x4 = v4;
+    this->EventClass_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+  }
+    else
+  {
+    this->initEvent();
+  }
+    v7 = this->EventClass_field_0x8;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x40B9A0
+namespace gamemd {
+char EventClass::dispatchEvent(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
+    {
+    if ( this->EventClass_field_0x4 )
+      {
+    v6 = this->EventClass_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->EventClass_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+        {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->EventClass_field_0x4 = 0;
+        }
+      }
+    this->EventClass_field_0x4 = v4;
+    this->EventClass_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
+    }
+    else
+    {
+    return 0;
+    }
+  }
+    else
+  {
+    this->initEvent();
+    return 1;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x40BAE0
+namespace gamemd {
+char EventClass::checkCondition(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->EventClass_field_0x4 )
+    {
+    v5 = this->EventClass_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->EventClass_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+      {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->EventClass_field_0x4 = 0;
+      }
+    }
+    this->EventClass_field_0x4 = v4;
+    this->EventClass_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+  }
+    else
+  {
+    this->initEvent();
+  }
+    v7 = this->EventClass_field_0x8;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x40BC10
+namespace gamemd {
+DynamicVector * EventClass::executeAction(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_BombClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
+}
+}
+} // namespace gamemd
+
+// 0x40BD00
+namespace gamemd {
+unsigned int * EventClass::resetEvent(BuildingClass * aP1, BuildingClass * aP2)
+{
+{
+    this->Items = 0;
+    this->Capacity = aP1;
+    this->IsInitialized = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_TechnoClass;
+    if ( aP1 )
+  {
+    if ( aP2 )
+    {
+    this->Items = aP2;
+    return this;
+    }
+    this->Items = __2_YAPAXI_Z(4 * (int)aP1);
+    this->IsAllocated = 1;
+  }
+    return this;
+}
+}
+} // namespace gamemd
+
 // 0x40BE10
 namespace gamemd {
 void EventClass::finalizeEvent()
@@ -801,6 +731,28 @@ void EventClass::finalizeEvent()
 }
 } // namespace gamemd
 
+// 0x40C110
+namespace gamemd {
+VectorClass * EventClass::queueEvent(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_CommandClass_const;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
+}
+}
+} // namespace gamemd
+
 // 0x40C260
 namespace gamemd {
 unsigned int EventClass::dequeueEvent(int a2)
@@ -810,6 +762,54 @@ unsigned int EventClass::dequeueEvent(int a2)
     return (unsigned int)(a2 - this->EventClass_field_0x4) >> 2;
     else
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x40C410
+namespace gamemd {
+char EventClass::clearEvents(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->EventClass_field_0x4 )
+    {
+    v5 = this->EventClass_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->EventClass_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+      {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->EventClass_field_0x4 = 0;
+      }
+    }
+    this->EventClass_field_0x4 = v4;
+    this->EventClass_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+  }
+    else
+  {
+    this->initEvent();
+  }
+    v7 = this->EventClass_field_0x8;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
 }
 }
 } // namespace gamemd

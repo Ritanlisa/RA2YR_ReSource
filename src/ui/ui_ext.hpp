@@ -385,6 +385,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int LoadCampaignScoreAssetsGame();  // 0x72D300
     void* LoadScreenAssets();  // 0x72D460
     // --- gap2 auto-generated stub declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    void PlayerSkirmishSlotHandler_Handle_7A28B0();  // 0x7A28B0
+// --- e4 declarations (END) ---
 };
 // 2 methods in IDA
 class CampaignSelect

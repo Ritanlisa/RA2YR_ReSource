@@ -106,22 +106,6 @@ _DWORD *__thiscall sub_42C1C0(char *this)
 }
 }
 
-// 0x430F30
-char MapClass::isCellAccessible(int a2)
-{
-{
-    int v2;
-    char *i;
-    v2 = 0;
-    for ( i = this + 12 * a2; *(int *)i; i += 4 )
-  {
-    if ( ++v2 >= 3 )
-    return 0;
-  }
-    return 1;
-}
-}
-
 // 0x485130
 int MapClass::RemoveCellReference(int a2)
 {
@@ -3200,25 +3184,6 @@ char __stdcall MapClass::InitTileData(MouseClass *aP0, int aP3)
 }
 }
 
-// 0x581F50
-unsigned int * MapClass::BuildSubzones()
-{
-{
-    int v2;
-    int *v3;
-    v2 = 2;
-    v3 = this + 47;
-    do
-  {
-    (*(void (__thiscall **)(int *))(*v3 + 12))(v3);
-    Subzone::BuildGraph(this, v2--);
-    v3 -= 6;
-  }
-    while ( v2 >= 0 );
-    return MapClass::AllocArrays(g_AudioInitFlag);
-}
-}
-
 // 0x5856B0
 char MapClass::InitializeTileData(MapClass * aP1)
 {
@@ -3534,45 +3499,6 @@ LABEL_20:
 }
 }
 
-// 0x588BF0
-MapClass * MapClass::Destru_vt04(char a2)
-{
-{
-    MapClass::Destruct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (MapClass *)this;
-}
-}
-
-// 0x588EF0
-int MapClass::InitCellVe_vt06(int a2)
-{
-{
-    return *(int *)(this->Items + 4 * a2);
-}
-}
-
-// 0x589060
-VectorClass * MapClass::InitCellVe_vt00(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_CellClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
-}
-
 // 0x589370
 char MapClass::AllocateCellDataBuffer(int a2, char * a3)
 {
@@ -3685,42 +3611,6 @@ LABEL_14:
   this->MapClass_field_0x8 = v3; /*0x58947e*/
   *((_BYTE *)this + 13) = a3 == 0; /*0x589481*/
   return 1; /*0x589408*/
-}
-}
-
-// 0x5894A0
-void MapClass::allocateCellArrays()
-{
-{
-    if ( this->MapClass_field_0x4 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(*(void **)(this + 4));
-    this->MapClass_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->MapClass_field_0x8 = 0;
-}
-}
-
-// 0x5894D0
-int MapClass::FindSubzoneConnectionIndex(unsigned short * a2)
-{
-{
-    int result;
-    int v3;
-    short *i;
-    if ( !(unsigned char)this->MapClass_field_0xC )
-    return 0;
-    v3 = this->MapClass_field_0x8;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = *(short **)(this + 4); *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2) || i[3] != *((int*)(a2) + 3); i += 8 )
-  {
-    if ( ++result >= v3 )
-    return -1;
-  }
-    return result;
 }
 }
 
@@ -3862,118 +3752,6 @@ _DWORD *__thiscall sub_589BD0(_DWORD *this)
   *(this + 7) = 0; /*0x589bfd*/
   *(this + 8) = 0; /*0x589c00*/
   return this; /*0x589c05*/
-}
-}
-
-// 0x589CA0
-char MapClass::InitCellVe_vt01(int a2)
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    int v5;
-    v2 = this->Capacity;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = (int *)this->Items;
-    v5 = *(int *)(a2 + 4) - (int)v4;
-    while ( *v4 == *(int *)((char *)(v4) + v5) )
-    {
-    ++v3;
-    ++v4;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
-}
-}
-
-// 0x589CE0
-char MapClass::InitCellVe_vt02(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v6;
-    int i;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( v4 )
-    {
-    if ( this->MapClass_field_0x4 )
-      {
-    v6 = this->MapClass_field_0x8;
-    if ( a2 < v6 )
-    v6 = a2;
-    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->MapClass_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-        {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->MapClass_field_0x4 = 0;
-        }
-      }
-    this->MapClass_field_0x4 = v4;
-    this->MapClass_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-    return 1;
-    }
-    else
-    {
-    return 0;
-    }
-  }
-    else
-  {
-    this->IsCellPassable();
-    return 1;
-  }
-}
-}
-
-// 0x589D90
-void MapClass::InitCellVe_vt03()
-{
-{
-    if ( this->MapClass_field_0x4 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(*(void **)(this + 4));
-    this->MapClass_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->MapClass_field_0x8 = 0;
-}
-}
-
-// 0x589DC0
-int MapClass::InitCellVe_vt04(unsigned int * a2)
-{
-{
-    int result;
-    int v3;
-    int *i;
-    if ( !(unsigned char)this->MapClass_field_0xC )
-    return 0;
-    v3 = this->MapClass_field_0x8;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = *(int **)(this + 4); *i != *a2; ++i )
-  {
-    if ( ++result >= v3 )
-    return -1;
-  }
-    return result;
 }
 }
 
@@ -4365,42 +4143,6 @@ int sub_5A17F0()
 }
 }
 
-// 0x5AC5A0
-void MapClass::checkCellBounds()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->MapClass_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->MapClass_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->MapClass_field_0x8 = 0;
-}
-}
-
-// 0x5AD0C0
-int MapClass::updatePathfindingGrid(unsigned int * a2)
-{
-{
-    int v2;
-    int result;
-    int *i;
-    v2 = this->Count;
-    result = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = (int *)this->Items; *i != *a2; ++i )
-  {
-    if ( ++result >= v2 )
-    return -1;
-  }
-    return result;
-}
-
 // 0x6D8260
 unsigned int MapClass::TransformCoordToScreen(int a2, unsigned int * a3)
 {
@@ -4605,6 +4347,22 @@ int __thiscall sub_7BCF50(_DWORD *this, unsigned __int16 a2)
   v3 = *(this + 5); /*0x7bcf6b*/
   v5[2] = v2; /*0x7bcf74*/
   return (*(int (__thiscall **)(int, _DWORD *, _DWORD))(*(_DWORD *)v3 + 20))(v3, v5, a2); /*0x7bcf83*/
+}
+}
+
+// 0x430F30
+char MapClass::isCellAccessible(int a2)
+{
+{
+    int v2;
+    char *i;
+    v2 = 0;
+    for ( i = this + 12 * a2; *(int *)i; i += 4 )
+  {
+    if ( ++v2 >= 3 )
+    return 0;
+  }
+    return 1;
 }
 }
 
@@ -4917,6 +4675,36 @@ int MapClass::TriggerEVA(IUnknown * aP0)
 }
 }
 
+// 0x581F50
+unsigned int * MapClass::BuildSubzones()
+{
+{
+    int v2;
+    int *v3;
+    v2 = 2;
+    v3 = this + 47;
+    do
+  {
+    (*(void (__thiscall **)(int *))(*v3 + 12))(v3);
+    Subzone::BuildGraph(this, v2--);
+    v3 -= 6;
+  }
+    while ( v2 >= 0 );
+    return MapClass::AllocArrays(g_AudioInitFlag);
+}
+}
+
+// 0x588BF0
+MapClass * MapClass::Destru_vt04(char a2)
+{
+{
+    MapClass::Destruct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (MapClass *)this;
+}
+}
+
 // 0x588DE0
 unsigned int MapClass::initCellVectors(int a2)
 {
@@ -4928,6 +4716,70 @@ unsigned int MapClass::initCellVectors(int a2)
 }
 }
 
+// 0x588EF0
+int MapClass::InitCellVe_vt06(int a2)
+{
+{
+    return *(int *)(this->Items + 4 * a2);
+}
+}
+
+// 0x589060
+VectorClass * MapClass::InitCellVe_vt00(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_CellClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
+}
+}
+
+// 0x5894A0
+void MapClass::allocateCellArrays()
+{
+{
+    if ( this->MapClass_field_0x4 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->MapClass_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->MapClass_field_0x8 = 0;
+}
+}
+
+// 0x5894D0
+int MapClass::FindSubzoneConnectionIndex(unsigned short * a2)
+{
+{
+    int result;
+    int v3;
+    short *i;
+    if ( !(unsigned char)this->MapClass_field_0xC )
+    return 0;
+    v3 = this->MapClass_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(short **)(this + 4); *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2) || i[3] != *((int*)(a2) + 3); i += 8 )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
+}
+}
+
 // 0x589530
 unsigned int MapClass::initSubzoneData(int a2)
 {
@@ -4936,6 +4788,118 @@ unsigned int MapClass::initSubzoneData(int a2)
     return (unsigned int)(a2 - this->MapClass_field_0x4) >> 4;
     else
     return 0;
+}
+}
+
+// 0x589CA0
+char MapClass::InitCellVe_vt01(int a2)
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
+    {
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+
+// 0x589CE0
+char MapClass::InitCellVe_vt02(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
+    {
+    if ( this->MapClass_field_0x4 )
+      {
+    v6 = this->MapClass_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->MapClass_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+        {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->MapClass_field_0x4 = 0;
+        }
+      }
+    this->MapClass_field_0x4 = v4;
+    this->MapClass_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
+    }
+    else
+    {
+    return 0;
+    }
+  }
+    else
+  {
+    this->IsCellPassable();
+    return 1;
+  }
+}
+}
+
+// 0x589D90
+void MapClass::InitCellVe_vt03()
+{
+{
+    if ( this->MapClass_field_0x4 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->MapClass_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->MapClass_field_0x8 = 0;
+}
+}
+
+// 0x589DC0
+int MapClass::InitCellVe_vt04(unsigned int * a2)
+{
+{
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->MapClass_field_0xC )
+    return 0;
+    v3 = this->MapClass_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
 }
 }
 
@@ -4975,6 +4939,23 @@ int MapClass::GetTileDataField14(MapResourceClass * aP0)
 }
 }
 
+// 0x5AC5A0
+void MapClass::checkCellBounds()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->MapClass_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->MapClass_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->MapClass_field_0x8 = 0;
+}
+}
+
 // 0x5AC5D0
 unsigned int MapClass::validateCellCoord(int a2)
 {
@@ -4984,6 +4965,25 @@ unsigned int MapClass::validateCellCoord(int a2)
     else
     return 0;
 }
+}
+
+// 0x5AD0C0
+int MapClass::updatePathfindingGrid(unsigned int * a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
 }
 
 // 0x5F60A0

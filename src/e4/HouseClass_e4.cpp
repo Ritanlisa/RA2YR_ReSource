@@ -149,32 +149,6 @@ int __stdcall HouseClass_RevealShroudForAllies(char a1, int a2)
 }
 } // namespace gamemd
 
-// 0x4E8270
-namespace gamemd {
-std::locale::facet * HouseClass::initAngerStruct(char a2)
-{
-{
-    *(int *)this = &vt_VersionClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x4F28C0
-namespace gamemd {
-VectorCursor * HouseClass::vt_placeholder_07(char a2)
-{
-{
-    *(int *)this = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorCursor *)this;
-}
-}
-} // namespace gamemd
-
 // 0x4F2B40
 namespace gamemd {
 unsigned int * HouseClass::vt_placeholder_09()
@@ -197,62 +171,6 @@ _DWORD *__thiscall HouseClass_24_::sub_4F2B50(_DWORD *this)
 {
   --*(this + 2); /*0x4f2b52*/
   return this; /*0x4f2b55*/
-}
-}
-} // namespace gamemd
-
-// 0x4F9610
-namespace gamemd {
-double HouseClass::GiveTiberium_Storage(AbstractClass * aP1, BuildingClass * aP2)
-{
-{
-    this->siloMoney = Math::RoundToInt(*(float *)&aP1 * 5.0 + (double)(int)this->siloMoney);
-    this->balance = Math::RoundToInt( (double)*(int *)(*(int *)(*(int *)&g_OverlayTypeConfig.__pad_579C[9560] + 4 * (int)aP2) + 184) * *(float *)(this->relatedTagsCapacity + 328) * *(float *)&aP1 + (double)(int)this->balance);
-    return *(float *)&aP1;
-}
-}
-} // namespace gamemd
-
-// 0x4F9970
-namespace gamemd {
-char HouseClass::UpdateAllSilos(int a2, int a3)
-{
-{
-    int v3;
-    int v5;
-    double v6;
-    int v7;
-    int i;
-    int v9;
-    v3 = 0;
-    if ( a3 )
-    v3 = Math::RoundToInt((double)a2 / (double)a3 * 4.0 + 0.5);
-    v5 = 0;
-    if ( this->totalStorage )
-  {
-    v6 = Float4::Sum((float *)(this + 764));
-    v5 = Math::RoundToInt(v6 / (double)this->totalStorage * 4.0 + 0.5);
-  }
-    if ( v3 != v5 )
-  {
-    v7 = this->bunkersCount;
-    for ( i = 0; i < v7; ++i )
-    {
-    v5 = this->absorbersCount;
-    v9 = *(int *)(v5 + 4 * i);
-    if ( v9 )
-      {
-    LOBYTE(v5) = *(char *)(v9 + 129);
-    if ( !(char)v5 )
-        {
-    LOBYTE(v5) = *(char *)(*(int *)(v9 + 1312) + 5800);
-    if ( (char)v5 )
-    LOBYTE(v5) = (*(int (__thiscall **)(int, int))(*(int *)(v9) + 292))(v9, 2);
-        }
-      }
-    }
-  }
-    return v5;
 }
 }
 } // namespace gamemd
@@ -287,65 +205,6 @@ LABEL_8:
   else
     LOBYTE(result) = ((1 << v3) & *(_DWORD *)&result->__pad_5778[16]) != 0; /*0x4f9a84*/
   return (int)result; /*0x4f9a60*/
-}
-}
-} // namespace gamemd
-
-// 0x4FB920
-namespace gamemd {
-unsigned int * HouseClass::SDDTORAllAndTriggers()
-{
-{
-    int v1;
-    int *v3;
-    int *v4;
-    int *result;
-    int v6;
-    int v7;
-    v1 = 0;
-    if ( g_SidebarState > 0 )
-  {
-    v3 = g_TechnoClass_Count;
-    do
-    {
-    v4 = (int *)v3[v1];
-    if ( (int *)v4[135] == this )
-      {
-    if ( v4 )
-        {
-    (*(void (__thiscall **)(int *, int))(*v4 + 32))(v4, 1);
-    v3 = g_TechnoClass_Count;
-        }
-    --v1;
-      }
-    ++v1;
-    }
-    while ( v1 < g_SidebarState );
-  }
-    result = (int *)g_ProductionQueueState;
-    v6 = 0;
-    if ( g_ProductionQueueState > 0 )
-  {
-    result = g_TriggerClassCapacity;
-    do
-    {
-    if ( *(int *)(*(int *)(result[v6] + 36) + 164) == this->relatedTagsCapacity )
-      {
-    v7 = result[v6];
-    if ( v7 )
-        {
-    (*(void (__thiscall **)(int, int))(*(int *)(v7) + 32))(v7, 1);
-    result = g_TriggerClassCapacity;
-        }
-    --v6;
-      }
-    ++v6;
-    }
-    while ( v6 < g_ProductionQueueState );
-  }
-    if ( this )
-    return (int *)this->getMovementSpeed(1);
-    return result;
 }
 }
 } // namespace gamemd
@@ -396,52 +255,6 @@ LABEL_10:
     this->killedUnitsOfHouses = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[1196]; /*0x4fbf41*/
   }
   return v4; /*0x4fbf43*/
-}
-}
-} // namespace gamemd
-
-// 0x4FBF60
-namespace gamemd {
-char HouseClass::DroppedFlag(UnitClass * aP1, int a3)
-{
-{
-    MouseClass *v3;
-    HouseClass *v5;
-    void *v6;
-    char v7;
-    void *v8;
-    int productionFactory_plants_capacity;
-    int v11;
-    int v12;
-    v3 = (MouseClass *)aP1;
-    if ( !LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (IUnknown *)aP1) )
-    return 0;
-    HouseClass::IsCellOccupied((int)this, (IUnknown *)this->ourFlagCoords, a3);
-    v5 = (HouseClass *)this->relatedTagsCapacity;
-    aP1 = (UnitClass *)v3->field_0;
-    productionFactory_plants_capacity = v5->productionFactory_plants_capacity;
-    v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1);
-    v7 = HouseClass::MarkCellBuildable((int)v6, productionFactory_plants_capacity);
-    if ( v7 || (a3 = 0, aP1 = (UnitClass *)*LayerClass::Pathfinding_Find( &DataGlobal_87F7E8, 0, &v12, (short *)v3, 1, -1, 0, 0, 1, 1, 0, 0, 0, 1, (short *)&a3, 0, 0), aP1 != *(UnitClass **)&g_NetworkPlayerBuffer.__pad_14B0[1196]) && (v11 = *(int *)(this->relatedTagsCapacity + 184), v8 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1), (v7 = HouseClass::MarkCellBuildable((int)v8, v11)) != 0) )
-  {
-    this->ourFlagCoords = (int)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1);
-  }
-    return v7;
-}
-}
-} // namespace gamemd
-
-// 0x4FC060
-namespace gamemd {
-char HouseClass::PickedUpFlag(ObjectClass * aP1, char a3)
-{
-{
-    if ( !aP1 || aP1->inLimbo )
-    return 0;
-    HouseClass::IsCellOccupied((int)this, (IUnknown *)this->ourFlagCoords, a3);
-    HouseClass::SetPrimaryFactory(aP1, *(int *)(this->relatedTagsCapacity + 184));
-    this->ourFlagCoords = (int)aP1;
-    return 1;
 }
 }
 } // namespace gamemd
@@ -1474,41 +1287,6 @@ int __thiscall HouseClass::GetCameoTypeIndex(void *this, int a2)
 }
 } // namespace gamemd
 
-// 0x54B980
-namespace gamemd {
-char HouseClass::Set()
-{
-{
-    short *v2;
-    int *Value;
-    int v4;
-    int v6;
-    LOBYTE(v2) = (*(int (__stdcall **)(int))(this->vtable1 + 16))(this + 4);
-    if ( (char)v2 )
-  {
-    (*(void (__thiscall **)(int, int, int))(**(int **)(this + 12) + 1348))( this->vtable3, 0, 1072693248);
-    Value = ProgressTimer::GetValue((short *)(this->vtable3 + 904), &v6);
-    FacingClass::Set_SyncLog((char *)(this + 84), Value);
-    v4 = this->relatedTags;
-    this->absorbersCapacity = 0;
-    this->bunkersCount = 0;
-    this->bunkers = 0;
-    this->bunkersCapacity = 0;
-    this->occupiables = v4;
-    LOBYTE(v2) = HouseClass::IonSensitivesShouldBeOffline();
-    if ( !(char)v2 )
-    {
-    v2 = (short *)(*(int (__thiscall **)(int, int *))(**(int **)(this + 12) + 756))(this->vtable3, &v6);
-    if ( *v2 == DataGlobal_ABC588 && v2[1] == DataGlobal_ABC58A )
-    LOBYTE(v2) = GadgetGrid::InsertItem(g_CellClassManager, this->vtable3);
-    this->unitRepairStations = 1;
-    }
-  }
-    return (char)v2;
-}
-}
-} // namespace gamemd
-
 // 0x5D70F0
 namespace gamemd {
 char HouseClass::AIDecision(ObjectClass * aP0, int * a1)
@@ -1909,12 +1687,139 @@ char __thiscall sub_740DF0(_DWORD *this, int a2)
 }
 } // namespace gamemd
 
+// 0x429210
+namespace gamemd {
+int HouseClass::QueryInterface_Helper()
+{
+{
+    int v2;
+    const void *v3;
+    int *v4;
+    if ( !v4 )
+    return -2147467261;
+    if ( memcmp(v3, &DataGlobal_7F7CA0, 0x10u) && memcmp(v3, &IID_IUnknown, 0x10u) )
+    return -2147467262;
+    *v4 = v2;
+    (*(void (__stdcall **)(int))(*(int *)(v2) + 4))(v2);
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x429270
+namespace gamemd {
+int HouseClass::QueryInterface_Dispatch()
+{
+{
+    int *v1;
+    int v3;
+    int v4;
+    const void *v5;
+    int *v6;
+    v1 = v6;
+    if ( !v6 )
+    return -2147024809;
+    *v6 = 0;
+    if ( v4 )
+    return -2147221232;
+    v3 = -2147467262;
+    if ( !memcmp(v5, &DataGlobal_7E36C0, 0x10u) || !memcmp(v5, &IID_IUnknown, 0x10u) )
+  {
+    if ( !&punk )
+    return -2147024882;
+    v3 = (*(int (__stdcall **)(IUnknown *, const void *, int *))punk.field_0)(&punk, v5, v6);
+    if ( v3 < 0 )
+    __3_YAXPAX_Z(&punk);
+    v1 = v6;
+  }
+    if ( !memcmp(v5, &DataGlobal_7EA6E8, 0x10u) )
+  {
+    if ( !&DataGlobal_87F7E8 )
+    return -2147024882;
+    v3 = ((int (__stdcall *)(MouseClass **, const void *, int *))DataGlobal_87F7E8->field_0)( &DataGlobal_87F7E8, v5, v1);
+    if ( v3 < 0 )
+    __3_YAXPAX_Z(&DataGlobal_87F7E8);
+  }
+    return v3;
+}
+}
+} // namespace gamemd
+
+// 0x42F380
+namespace gamemd {
+int HouseClass::FailedToPlaceNode(int a1)
+{
+{
+    int result;
+    int v2;
+    result = a1;
+    if ( a1 )
+  {
+    v2 = *(int *)(a1 + 12) + 1;
+    *(int *)(a1 + 12) = v2;
+    return v2;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4E8240
+namespace gamemd {
+int HouseClass::vt_placeholder_00()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x4E8250
+namespace gamemd {
+int HouseClass::vt_placeholder_01()
+{
+return 1;
+}
+} // namespace gamemd
+
+// 0x4E8260
+namespace gamemd {
+int HouseClass::vt_placeholder_02()
+{
+return 0;
+}
+} // namespace gamemd
+
+// 0x4E8270
+namespace gamemd {
+std::locale::facet * HouseClass::initAngerStruct(char a2)
+{
+{
+    *(int *)this = &vt_VersionClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
+}
+}
+} // namespace gamemd
+
 // 0x4F28A0
 namespace gamemd {
 int HouseClass_24::Seek(int a2)
 {
 {
     return *(int *)(this->Items + 4 * a2);
+}
+}
+} // namespace gamemd
+
+// 0x4F28C0
+namespace gamemd {
+VectorCursor * HouseClass::vt_placeholder_07(char a2)
+{
+{
+    *(int *)this = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorCursor *)this;
 }
 }
 } // namespace gamemd
@@ -2039,6 +1944,19 @@ int HouseClass_24::Read(unsigned int * a2)
 }
 } // namespace gamemd
 
+// 0x4F2A40
+namespace gamemd {
+unsigned int HouseClass_24::Write(int a2)
+{
+{
+    if ( (unsigned char)this->HouseClass_24_field_0xC )
+    return (unsigned int)(a2 - this->HouseClass_24_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x4F2B60
 namespace gamemd {
 VectorClass * HouseClass_24::QueryInterface(char a2)
@@ -2057,120 +1975,6 @@ VectorClass * HouseClass_24::QueryInterface(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x429210
-namespace gamemd {
-int HouseClass::QueryInterface_Helper()
-{
-{
-    int v2;
-    const void *v3;
-    int *v4;
-    if ( !v4 )
-    return -2147467261;
-    if ( memcmp(v3, &DataGlobal_7F7CA0, 0x10u) && memcmp(v3, &IID_IUnknown, 0x10u) )
-    return -2147467262;
-    *v4 = v2;
-    (*(void (__stdcall **)(int))(*(int *)(v2) + 4))(v2);
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x429270
-namespace gamemd {
-int HouseClass::QueryInterface_Dispatch()
-{
-{
-    int *v1;
-    int v3;
-    int v4;
-    const void *v5;
-    int *v6;
-    v1 = v6;
-    if ( !v6 )
-    return -2147024809;
-    *v6 = 0;
-    if ( v4 )
-    return -2147221232;
-    v3 = -2147467262;
-    if ( !memcmp(v5, &DataGlobal_7E36C0, 0x10u) || !memcmp(v5, &IID_IUnknown, 0x10u) )
-  {
-    if ( !&punk )
-    return -2147024882;
-    v3 = (*(int (__stdcall **)(IUnknown *, const void *, int *))punk.field_0)(&punk, v5, v6);
-    if ( v3 < 0 )
-    __3_YAXPAX_Z(&punk);
-    v1 = v6;
-  }
-    if ( !memcmp(v5, &DataGlobal_7EA6E8, 0x10u) )
-  {
-    if ( !&DataGlobal_87F7E8 )
-    return -2147024882;
-    v3 = ((int (__stdcall *)(MouseClass **, const void *, int *))DataGlobal_87F7E8->field_0)( &DataGlobal_87F7E8, v5, v1);
-    if ( v3 < 0 )
-    __3_YAXPAX_Z(&DataGlobal_87F7E8);
-  }
-    return v3;
-}
-}
-} // namespace gamemd
-
-// 0x42F380
-namespace gamemd {
-int HouseClass::FailedToPlaceNode(int a1)
-{
-{
-    int result;
-    int v2;
-    result = a1;
-    if ( a1 )
-  {
-    v2 = *(int *)(a1 + 12) + 1;
-    *(int *)(a1 + 12) = v2;
-    return v2;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4E8240
-namespace gamemd {
-int HouseClass::vt_placeholder_00()
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x4E8250
-namespace gamemd {
-int HouseClass::vt_placeholder_01()
-{
-return 1;
-}
-} // namespace gamemd
-
-// 0x4E8260
-namespace gamemd {
-int HouseClass::vt_placeholder_02()
-{
-return 0;
-}
-} // namespace gamemd
-
-// 0x4F2A40
-namespace gamemd {
-unsigned int HouseClass_24::Write(int a2)
-{
-{
-    if ( (unsigned char)this->HouseClass_24_field_0xC )
-    return (unsigned int)(a2 - this->HouseClass_24_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd
@@ -2224,12 +2028,173 @@ int HouseClass::QueryInterface(CCINIClass * aP0, const void * a1, unsigned int *
 }
 } // namespace gamemd
 
+// 0x4F9610
+namespace gamemd {
+double HouseClass::GiveTiberium_Storage(AbstractClass * aP1, BuildingClass * aP2)
+{
+{
+    this->siloMoney = Math::RoundToInt(*(float *)&aP1 * 5.0 + (double)(int)this->siloMoney);
+    this->balance = Math::RoundToInt( (double)*(int *)(*(int *)(*(int *)&g_OverlayTypeConfig.__pad_579C[9560] + 4 * (int)aP2) + 184) * *(float *)(this->relatedTagsCapacity + 328) * *(float *)&aP1 + (double)(int)this->balance);
+    return *(float *)&aP1;
+}
+}
+} // namespace gamemd
+
+// 0x4F9970
+namespace gamemd {
+char HouseClass::UpdateAllSilos(int a2, int a3)
+{
+{
+    int v3;
+    int v5;
+    double v6;
+    int v7;
+    int i;
+    int v9;
+    v3 = 0;
+    if ( a3 )
+    v3 = Math::RoundToInt((double)a2 / (double)a3 * 4.0 + 0.5);
+    v5 = 0;
+    if ( this->totalStorage )
+  {
+    v6 = Float4::Sum((float *)(this + 764));
+    v5 = Math::RoundToInt(v6 / (double)this->totalStorage * 4.0 + 0.5);
+  }
+    if ( v3 != v5 )
+  {
+    v7 = this->bunkersCount;
+    for ( i = 0; i < v7; ++i )
+    {
+    v5 = this->absorbersCount;
+    v9 = *(int *)(v5 + 4 * i);
+    if ( v9 )
+      {
+    LOBYTE(v5) = *(char *)(v9 + 129);
+    if ( !(char)v5 )
+        {
+    LOBYTE(v5) = *(char *)(*(int *)(v9 + 1312) + 5800);
+    if ( (char)v5 )
+    LOBYTE(v5) = (*(int (__thiscall **)(int, int))(*(int *)(v9) + 292))(v9, 2);
+        }
+      }
+    }
+  }
+    return v5;
+}
+}
+} // namespace gamemd
+
 // 0x4F9B50
 namespace gamemd {
 int HouseClass::MakeAlly(int a2, char a3)
 {
 {
     return HouseClass::HandleAlliance((int)this, *(int *)&HouseClass_Array->__pad_0[4 * a2], a3);
+}
+}
+} // namespace gamemd
+
+// 0x4FB920
+namespace gamemd {
+unsigned int * HouseClass::SDDTORAllAndTriggers()
+{
+{
+    int v1;
+    int *v3;
+    int *v4;
+    int *result;
+    int v6;
+    int v7;
+    v1 = 0;
+    if ( g_SidebarState > 0 )
+  {
+    v3 = g_TechnoClass_Count;
+    do
+    {
+    v4 = (int *)v3[v1];
+    if ( (int *)v4[135] == this )
+      {
+    if ( v4 )
+        {
+    (*(void (__thiscall **)(int *, int))(*v4 + 32))(v4, 1);
+    v3 = g_TechnoClass_Count;
+        }
+    --v1;
+      }
+    ++v1;
+    }
+    while ( v1 < g_SidebarState );
+  }
+    result = (int *)g_ProductionQueueState;
+    v6 = 0;
+    if ( g_ProductionQueueState > 0 )
+  {
+    result = g_TriggerClassCapacity;
+    do
+    {
+    if ( *(int *)(*(int *)(result[v6] + 36) + 164) == this->relatedTagsCapacity )
+      {
+    v7 = result[v6];
+    if ( v7 )
+        {
+    (*(void (__thiscall **)(int, int))(*(int *)(v7) + 32))(v7, 1);
+    result = g_TriggerClassCapacity;
+        }
+    --v6;
+      }
+    ++v6;
+    }
+    while ( v6 < g_ProductionQueueState );
+  }
+    if ( this )
+    return (int *)this->getMovementSpeed(1);
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4FBF60
+namespace gamemd {
+char HouseClass::DroppedFlag(UnitClass * aP1, int a3)
+{
+{
+    MouseClass *v3;
+    HouseClass *v5;
+    void *v6;
+    char v7;
+    void *v8;
+    int productionFactory_plants_capacity;
+    int v11;
+    int v12;
+    v3 = (MouseClass *)aP1;
+    if ( !LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (IUnknown *)aP1) )
+    return 0;
+    HouseClass::IsCellOccupied((int)this, (IUnknown *)this->ourFlagCoords, a3);
+    v5 = (HouseClass *)this->relatedTagsCapacity;
+    aP1 = (UnitClass *)v3->field_0;
+    productionFactory_plants_capacity = v5->productionFactory_plants_capacity;
+    v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1);
+    v7 = HouseClass::MarkCellBuildable((int)v6, productionFactory_plants_capacity);
+    if ( v7 || (a3 = 0, aP1 = (UnitClass *)*LayerClass::Pathfinding_Find( &DataGlobal_87F7E8, 0, &v12, (short *)v3, 1, -1, 0, 0, 1, 1, 0, 0, 0, 1, (short *)&a3, 0, 0), aP1 != *(UnitClass **)&g_NetworkPlayerBuffer.__pad_14B0[1196]) && (v11 = *(int *)(this->relatedTagsCapacity + 184), v8 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1), (v7 = HouseClass::MarkCellBuildable((int)v8, v11)) != 0) )
+  {
+    this->ourFlagCoords = (int)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1);
+  }
+    return v7;
+}
+}
+} // namespace gamemd
+
+// 0x4FC060
+namespace gamemd {
+char HouseClass::PickedUpFlag(ObjectClass * aP1, char a3)
+{
+{
+    if ( !aP1 || aP1->inLimbo )
+    return 0;
+    HouseClass::IsCellOccupied((int)this, (IUnknown *)this->ourFlagCoords, a3);
+    HouseClass::SetPrimaryFactory(aP1, *(int *)(this->relatedTagsCapacity + 184));
+    this->ourFlagCoords = (int)aP1;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -2290,6 +2255,41 @@ char HouseClass::IonSensitivesShouldBeOffline()
 // 0x50e350
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x54B980
+namespace gamemd {
+char HouseClass::Set()
+{
+{
+    short *v2;
+    int *Value;
+    int v4;
+    int v6;
+    LOBYTE(v2) = (*(int (__stdcall **)(int))(this->vtable1 + 16))(this + 4);
+    if ( (char)v2 )
+  {
+    (*(void (__thiscall **)(int, int, int))(**(int **)(this + 12) + 1348))( this->vtable3, 0, 1072693248);
+    Value = ProgressTimer::GetValue((short *)(this->vtable3 + 904), &v6);
+    FacingClass::Set_SyncLog((char *)(this + 84), Value);
+    v4 = this->relatedTags;
+    this->absorbersCapacity = 0;
+    this->bunkersCount = 0;
+    this->bunkers = 0;
+    this->bunkersCapacity = 0;
+    this->occupiables = v4;
+    LOBYTE(v2) = HouseClass::IonSensitivesShouldBeOffline();
+    if ( !(char)v2 )
+    {
+    v2 = (short *)(*(int (__thiscall **)(int, int *))(**(int **)(this + 12) + 756))(this->vtable3, &v6);
+    if ( *v2 == DataGlobal_ABC588 && v2[1] == DataGlobal_ABC58A )
+    LOBYTE(v2) = GadgetGrid::InsertItem(g_CellClassManager, this->vtable3);
+    this->unitRepairStations = 1;
+    }
+  }
+    return (char)v2;
+}
 }
 } // namespace gamemd
 

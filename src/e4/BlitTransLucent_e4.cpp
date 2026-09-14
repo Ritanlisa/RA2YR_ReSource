@@ -2,41 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x494500
-int BlitTransLucent25Alpha_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-{
-{
-    return (*((int (__thiscall **)(BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
-}
-}
-
-// 0x49A340
-BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 2);
-    *(void**)this = &vt_BlitTransLucent25Alpha_unsigned_short;
-    FractalNoise::Release(v3);
-    *(this + 2) = 0;
-    *(void**)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitTransLucent25Alpha_ushort *)this;
-}
-}
-
-// 0x49A380
-std::locale::facet * BlitTransLucent25Alpha_ushort::Constructor_Blitter(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-
 // 0x496130
 int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
@@ -67,58 +32,6 @@ int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::sub_496130(
            a9,
            a10,
            a11);
-}
-}
-
-// 0x496170
-int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
-{
-{
-    int v11;
-    int result;
-    int v15;
-    int v17;
-    int v18;
-    unsigned char v19;
-    unsigned char v20;
-    v11 = a5;
-    result = arg0;
-    v15 = **((int **)(this) + 1);
-    if ( a5 <= 0 )
-  {
-    v18 = a4;
-  }
-    else
-  {
-    do
-    {
-    if ( *a2++ )
-    --v11;
-    else
-    v11 -= *a2++;
-    }
-    while ( v11 > 0 );
-    v17 = -v11;
-    v18 = a4 - v17;
-    result = arg0 + 2 * v17;
-  }
-    while ( v18 > 0 )
-  {
-    v19 = *a2++;
-    if ( v19 )
-    {
-    result += 2;
-    --v18;
-    *(short *)(result - 2) = *(short *)(this->BlitTransLucent25AlphaZReadWrite_ushort_field_0x08 + 2 * *(unsigned char *)(v19 + v15));
-    }
-    else
-    {
-    v20 = *a2++;
-    v18 -= v20;
-    result += 2 * v20;
-    }
-  }
-    return result;
 }
 }
 
@@ -184,6 +97,125 @@ _WORD *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(
 }
 }
 
+// 0x494500
+int BlitTransLucent25Alpha_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+{
+    return (*((int (__thiscall **)(BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
+}
+}
+
+// 0x494530
+int BlitTransLucent25Alpha_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+{
+{
+    return (*((int (__thiscall **)(BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
+}
+}
+
+// 0x494560
+int BlitTransLucent25Alpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+{
+{
+    return (*((int (__thiscall **)(BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
+}
+}
+
+// 0x496170
+int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
+{
+{
+    int v11;
+    int result;
+    int v15;
+    int v17;
+    int v18;
+    unsigned char v19;
+    unsigned char v20;
+    v11 = a5;
+    result = arg0;
+    v15 = **((int **)(this) + 1);
+    if ( a5 <= 0 )
+  {
+    v18 = a4;
+  }
+    else
+  {
+    do
+    {
+    if ( *a2++ )
+    --v11;
+    else
+    v11 -= *a2++;
+    }
+    while ( v11 > 0 );
+    v17 = -v11;
+    v18 = a4 - v17;
+    result = arg0 + 2 * v17;
+  }
+    while ( v18 > 0 )
+  {
+    v19 = *a2++;
+    if ( v19 )
+    {
+    result += 2;
+    --v18;
+    *(short *)(result - 2) = *(short *)(this->BlitTransLucent25AlphaZReadWrite_ushort_field_0x08 + 2 * *(unsigned char *)(v19 + v15));
+    }
+    else
+    {
+    v20 = *a2++;
+    v18 -= v20;
+    result += 2 * v20;
+    }
+  }
+    return result;
+}
+}
+
+// 0x496210
+int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
+{
+{
+    return (*((int (__thiscall **)(RLEBlitTransZRemapXlat_G *, int, int, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+}
+}
+
+// 0x4962D0
+int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
+{
+{
+    return (*((int (__thiscall **)(RLEBlitTransDarken_G *, int, int, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+}
+}
+
+// 0x49A340
+BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 2);
+    *(void**)this = &vt_BlitTransLucent25Alpha_unsigned_short;
+    FractalNoise::Release(v3);
+    *(this + 2) = 0;
+    *(void**)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransLucent25Alpha_ushort *)this;
+}
+}
+
+// 0x49A380
+std::locale::facet * BlitTransLucent25Alpha_ushort::Constructor_Blitter(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
+}
+}
+
 // 0x49A720
 BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushort::Blit(char a2)
 {
@@ -230,37 +262,5 @@ std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBli
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return this;
-}
-}
-
-// 0x494530
-int BlitTransLucent25Alpha_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-{
-{
-    return (*((int (__thiscall **)(BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
-}
-}
-
-// 0x494560
-int BlitTransLucent25Alpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-{
-{
-    return (*((int (__thiscall **)(BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
-}
-}
-
-// 0x496210
-int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
-{
-{
-    return (*((int (__thiscall **)(RLEBlitTransZRemapXlat_G *, int, int, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
-}
-}
-
-// 0x4962D0
-int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
-{
-{
-    return (*((int (__thiscall **)(RLEBlitTransDarken_G *, int, int, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
 }
 }

@@ -142,46 +142,6 @@ _DWORD *__thiscall ConnectionPointClass::Construct(_DWORD *this, _DWORD *a1, Con
 }
 }
 
-// 0x4A0F70
-namespace gamemd {
-int ConnectionPointClass_9::EnumConnections(int a2)
-{
-{
-    return *(int *)(this->Items + 4 * a2);
-}
-}
-} // namespace gamemd
-
-// 0x4A1240
-namespace gamemd {
-char ConnectionPointClass_9::AddRef(int a2)
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    int v5;
-    v2 = this->Capacity;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = (int *)this->Items;
-    v5 = *(int *)(a2 + 4) - (int)v4;
-    while ( *v4 == *(int *)((char *)(v4) + v5) )
-    {
-    ++v3;
-    ++v4;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4A1280
 namespace gamemd {
 char ConnectionPointClass_9::Release(int a2, unsigned int * a3)
@@ -235,52 +195,6 @@ char __thiscall ConnectionPointClass_9_::_vt02(void *this, int a2, _DWORD *a3)
 }
 } // namespace gamemd
 
-// 0x4A1360
-namespace gamemd {
-int ConnectionPointClass_9::Advise(unsigned int * a2)
-{
-{
-    int result;
-    int v3;
-    int *i;
-    if ( !(unsigned char)this->ConnectionPointClass_9_field_0xC )
-    return 0;
-    v3 = this->ConnectionPointClass_9_field_0x8;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = *(int **)(this + 4); *i != *a2; ++i )
-  {
-    if ( ++result >= v3 )
-    return -1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4A14F0
-namespace gamemd {
-VectorClass * ConnectionPointClass_9::QueryInterface(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_IConnectionPoint;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
 // 0x4A0700
 int ConnectionPointClass::EnumConnections(int a1, int a2)
 {
@@ -315,6 +229,70 @@ int ConnectionPointClass::EnumConnections(int a1, int a2)
 }
 }
 
+// 0x4A0F70
+namespace gamemd {
+int ConnectionPointClass_9::EnumConnections(int a2)
+{
+{
+    return *(int *)(this->Items + 4 * a2);
+}
+}
+} // namespace gamemd
+
+// 0x4A1240
+namespace gamemd {
+char ConnectionPointClass_9::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
+    {
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4A1360
+namespace gamemd {
+int ConnectionPointClass_9::Advise(unsigned int * a2)
+{
+{
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->ConnectionPointClass_9_field_0xC )
+    return 0;
+    v3 = this->ConnectionPointClass_9_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x4A13A0
 namespace gamemd {
 unsigned int ConnectionPointClass_9::Unadvise(int a2)
@@ -324,6 +302,28 @@ unsigned int ConnectionPointClass_9::Unadvise(int a2)
     return (unsigned int)(a2 - this->ConnectionPointClass_9_field_0x4) >> 2;
     else
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4A14F0
+namespace gamemd {
+VectorClass * ConnectionPointClass_9::QueryInterface(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_IConnectionPoint;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd

@@ -270,215 +270,6 @@ LABEL_39:
 }
 } // namespace gamemd
 
-// 0x4B0DF0
-namespace gamemd {
-char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
-{
-{
-    int v2;
-    int *v4;
-    TechnoClass *v5;
-    IUnknown *v6;
-    int *v7;
-    AbstractClass *v9;
-    v2 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
-    v4 = (int *)(this + 64);
-    if ( this->M64 != *(int *)&g_CellDirectionOffsets.__pad_DFC[772] || this->M68 != *(int *)&g_CellDirectionOffsets.__pad_DFC[776] || this->M72 != *(int *)&g_CellDirectionOffsets.__pad_DFC[780] )
-  {
-    *v4 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
-    this->M68 = *(int *)&g_CellDirectionOffsets.__pad_DFC[776];
-    v5 = *(TechnoClass **)&g_CellDirectionOffsets.__pad_DFC[780];
-    this->M99 = 0;
-    this->M72 = v5;
-    v2 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
-  }
-    if ( aP1->field_0 != v2 || aP1->field_4 != *(int *)&g_CellDirectionOffsets.__pad_DFC[776] || aP1->field_8 != *(int *)&g_CellDirectionOffsets.__pad_DFC[780] )
-  {
-    *v4 = aP1->field_0;
-    this->M68 = aP1->field_4;
-    v6 = (IUnknown *)aP1->field_8;
-    this->M99 = 1;
-    this->M72 = v6;
-    v9 = *(AbstractClass **)(this + 12);
-    v7 = Coord::To_Cell(&DataGlobal_87F7E8, aP1);
-    if ( CrateClass::ProcessPickup(v7, v9) && !*(char *)(this->M12 + 129) )
-    {
-    JumpjetLocomotion::MoveTo(this, aP1, 1);
-    return 1;
-    }
-    if ( *(char *)(this->M12 + 144) )
-    {
-    *v4 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
-    this->M68 = *(int *)&g_CellDirectionOffsets.__pad_DFC[776];
-    this->M72 = *(int *)&g_CellDirectionOffsets.__pad_DFC[780];
-    this->M99 = 0;
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4B4E10
-namespace gamemd {
-DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String, int a4, DropListClass * aP4, ControlClass * aP5, ControlClass * aP6, ControlClass * aP7, int a9, ListClass * a10, int a11)
-{
-{
-    AbstractClass *Instance;
-    int v13;
-    sub_4C2FC0((int *)this, aP1, (ControlClass *)String, a4, aP4, aP5, aP6, aP7, 18, 7);
-    this->M72 = 0;
-    this->M76 = a9;
-    ShapeButtonClass::Constructor((char *)(this + 80), 0, a11, (int)&aP5->__pad_0[(int)aP7], (int)aP6, 0, 0, 0);
-    ListClass::Construct( this + 176, 0, (int)aP5, (int)&aP6->__pad_0[*(short *)(a11 + 4)], (ListClass *)&aP7->__pad_0[*(short *)(a11 + 2)], a9, (ControlClass *)aP4, a10, a11);
-    *(int *)this = &vt_DropListClass;
-    Instance = TextRenderer::GetInstance();
-    v13 = this->M176;
-    this->M24 = Instance->referenceCount + 1;
-    (*(void (__thiscall **)(int, int))(v13 + 132))(this + 176, this);
-    (*(void (__thiscall **)(int, int))(this->M80 + 132))(this + 80, this);
-    return (DropListClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x4B53E0
-namespace gamemd {
-int E4Recv_4B53E0::sub_4B53E0(int a2)
-{
-{
-    int v3;
-    ControlClass::CtorFromData((int *)this, a2);
-    this->M44 = *(int *)(a2 + 44);
-    this->M48 = *(int *)(a2 + 48);
-    this->M52 = *(int *)(a2 + 52);
-    this->M56 = *(int *)(a2 + 56);
-    this->M60 = *(int *)(a2 + 60);
-    this->M64 = *(int *)(a2 + 64);
-    this->M68 = *(int *)(a2 + 68);
-    *(int *)this = &vt_EditClass;
-    this->M72 = *(char *)(a2 + 72);
-    this->M76 = *(int *)(a2 + 76);
-    ControlClass::CtorFromData((int *)(this + 80), a2 + 80);
-    this->M124 = *(char *)(a2 + 124);
-    this->M125 = *(char *)(a2 + 125);
-    this->M128 = *(int *)(a2 + 128);
-    this->M80 = &vt_ToggleClass;
-    this->M132 = *(char *)(a2 + 132);
-    this->M136 = *(int *)(a2 + 136);
-    this->M140 = *(int *)(a2 + 140);
-    this->M144 = *(char *)(a2 + 144);
-    this->M148 = *(int *)(a2 + 148);
-    this->M152 = *(int *)(a2 + 152);
-    this->M156 = *(char *)(a2 + 156);
-    this->M160 = *(int *)(a2 + 160);
-    this->M164 = *(char *)(a2 + 164);
-    this->M165 = *(char *)(a2 + 165);
-    this->M168 = *(int *)(a2 + 168);
-    this->M172 = *(char *)(a2 + 172);
-    this->M80 = &vt_ShapeButtonClass;
-    sub_557380(this + 176, a2 + 176);
-    v3 = this->M176;
-    *(int *)this = &vt_DropListClass;
-    (*(void (__thiscall **)(int, int))(v3 + 132))(this + 176, this);
-    (*(void (__thiscall **)(int, int))(this->M80 + 132))(this + 80, this);
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x4B56E0
-namespace gamemd {
-int E4Recv_4B56E0::sub_4B56E0(int a2)
-{
-{
-    LinkedList::MoveNode((void *)this, (void *)a2);
-    this->M12 = *(int *)(a2 + 12);
-    this->M16 = *(int *)(a2 + 16);
-    this->M20 = *(int *)(a2 + 20);
-    this->M24 = *(int *)(a2 + 24);
-    this->M28 = *(char *)(a2 + 28);
-    this->M29 = *(char *)(a2 + 29);
-    this->M30 = *(char *)(a2 + 30);
-    this->M32 = *(int *)(a2 + 32);
-    this->M36 = *(int *)(a2 + 36);
-    this->M40 = *(int *)(a2 + 40);
-    this->M44 = *(char *)(a2 + 44);
-    this->M45 = *(char *)(a2 + 45);
-    this->M46 = *(char *)(a2 + 46);
-    this->M48 = *(int *)(a2 + 48);
-    this->M52 = *(int *)(a2 + 52);
-    this->M56 = *(int *)(a2 + 56);
-    this->M60 = *(int *)(a2 + 60);
-    this->M64 = *(int *)(a2 + 64);
-    this->M68 = *(char *)(a2 + 68);
-    this->M72 = *(int *)(a2 + 72);
-    this->M76 = *(int *)(a2 + 76);
-    this->M80 = *(int *)(a2 + 80);
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x4B5780
-namespace gamemd {
-int E4Recv_4B5780::sub_4B5780(int a2)
-{
-{
-    LinkedList::MoveNode((void *)this, (void *)a2);
-    this->M12 = *(int *)(a2 + 12);
-    this->M16 = *(int *)(a2 + 16);
-    this->M20 = *(int *)(a2 + 20);
-    this->M24 = *(int *)(a2 + 24);
-    this->M28 = *(char *)(a2 + 28);
-    this->M29 = *(char *)(a2 + 29);
-    this->M30 = *(char *)(a2 + 30);
-    this->M32 = *(int *)(a2 + 32);
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x4B5830
-namespace gamemd {
-unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
-{
-{
-    int v3;
-    void *v4;
-    int v5;
-    int v6;
-    if ( this == a2 )
-    return this;
-    this->Vf12();
-    v3 = *((int*)(a2) + 2);
-    this->M8 = v3;
-    if ( !v3 )
-  {
-    this->M4 = 0;
-    this->M13 = 0;
-    return this;
-  }
-    v4 = __2_YAPAXI_Z(4 * v3);
-    this->M4 = v4;
-    if ( !v4 )
-    return this;
-    v5 = this->M8;
-    v6 = 0;
-    this->M13 = 1;
-    if ( v5 <= 0 )
-    return this;
-    do
-  {
-    *(int *)(this->M4 + 4 * v6) = *(int *)(*((int*)(a2) + 1) + 4 * v6);
-    ++v6;
-  }
-    while ( v6 < this->M8 );
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x4B69E0
 namespace gamemd {
 char E4Recv_4B69E0::sub_4B69E0(int a2)
@@ -583,31 +374,6 @@ LABEL_12:
   *(this + 4) = v10; /*0x4b6b5f*/
   *(this + v10 + 5) = 0; /*0x4b6b62*/
   return 1; /*0x4b6b6a*/
-}
-}
-} // namespace gamemd
-
-// 0x4B6B80
-namespace gamemd {
-char E4Recv_4B6B80::sub_4B6B80()
-{
-{
-    int v2;
-    char result;
-    v2 = this->M16;
-    this->M12 = 0;
-    if ( v2 > 0 )
-  {
-    do
-    {
-    result = sub_4B6AB0((int *)this, 0);
-    --v2;
-    }
-    while ( v2 );
-  }
-    this->M16 = 0;
-    this->M40 = 0;
-    return result;
 }
 }
 } // namespace gamemd
@@ -896,6 +662,55 @@ LABEL_17:
 }
 } // namespace gamemd
 
+// 0x4B0DF0
+namespace gamemd {
+char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
+{
+{
+    int v2;
+    int *v4;
+    TechnoClass *v5;
+    IUnknown *v6;
+    int *v7;
+    AbstractClass *v9;
+    v2 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
+    v4 = (int *)(this + 64);
+    if ( this->M64 != *(int *)&g_CellDirectionOffsets.__pad_DFC[772] || this->M68 != *(int *)&g_CellDirectionOffsets.__pad_DFC[776] || this->M72 != *(int *)&g_CellDirectionOffsets.__pad_DFC[780] )
+  {
+    *v4 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
+    this->M68 = *(int *)&g_CellDirectionOffsets.__pad_DFC[776];
+    v5 = *(TechnoClass **)&g_CellDirectionOffsets.__pad_DFC[780];
+    this->M99 = 0;
+    this->M72 = v5;
+    v2 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
+  }
+    if ( aP1->field_0 != v2 || aP1->field_4 != *(int *)&g_CellDirectionOffsets.__pad_DFC[776] || aP1->field_8 != *(int *)&g_CellDirectionOffsets.__pad_DFC[780] )
+  {
+    *v4 = aP1->field_0;
+    this->M68 = aP1->field_4;
+    v6 = (IUnknown *)aP1->field_8;
+    this->M99 = 1;
+    this->M72 = v6;
+    v9 = *(AbstractClass **)(this + 12);
+    v7 = Coord::To_Cell(&DataGlobal_87F7E8, aP1);
+    if ( CrateClass::ProcessPickup(v7, v9) && !*(char *)(this->M12 + 129) )
+    {
+    JumpjetLocomotion::MoveTo(this, aP1, 1);
+    return 1;
+    }
+    if ( *(char *)(this->M12 + 144) )
+    {
+    *v4 = *(int *)&g_CellDirectionOffsets.__pad_DFC[772];
+    this->M68 = *(int *)&g_CellDirectionOffsets.__pad_DFC[776];
+    this->M72 = *(int *)&g_CellDirectionOffsets.__pad_DFC[780];
+    this->M99 = 0;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x4B4770
 namespace gamemd {
 void nullsub_118()
@@ -914,6 +729,166 @@ int sub_4B4DF0()
     DataGlobal_8A07E0 = 0;
     DataGlobal_8A07E4 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4B4E10
+namespace gamemd {
+DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String, int a4, DropListClass * aP4, ControlClass * aP5, ControlClass * aP6, ControlClass * aP7, int a9, ListClass * a10, int a11)
+{
+{
+    AbstractClass *Instance;
+    int v13;
+    sub_4C2FC0((int *)this, aP1, (ControlClass *)String, a4, aP4, aP5, aP6, aP7, 18, 7);
+    this->M72 = 0;
+    this->M76 = a9;
+    ShapeButtonClass::Constructor((char *)(this + 80), 0, a11, (int)&aP5->__pad_0[(int)aP7], (int)aP6, 0, 0, 0);
+    ListClass::Construct( this + 176, 0, (int)aP5, (int)&aP6->__pad_0[*(short *)(a11 + 4)], (ListClass *)&aP7->__pad_0[*(short *)(a11 + 2)], a9, (ControlClass *)aP4, a10, a11);
+    *(int *)this = &vt_DropListClass;
+    Instance = TextRenderer::GetInstance();
+    v13 = this->M176;
+    this->M24 = Instance->referenceCount + 1;
+    (*(void (__thiscall **)(int, int))(v13 + 132))(this + 176, this);
+    (*(void (__thiscall **)(int, int))(this->M80 + 132))(this + 80, this);
+    return (DropListClass *)this;
+}
+}
+} // namespace gamemd
+
+// 0x4B53E0
+namespace gamemd {
+int E4Recv_4B53E0::sub_4B53E0(int a2)
+{
+{
+    int v3;
+    ControlClass::CtorFromData((int *)this, a2);
+    this->M44 = *(int *)(a2 + 44);
+    this->M48 = *(int *)(a2 + 48);
+    this->M52 = *(int *)(a2 + 52);
+    this->M56 = *(int *)(a2 + 56);
+    this->M60 = *(int *)(a2 + 60);
+    this->M64 = *(int *)(a2 + 64);
+    this->M68 = *(int *)(a2 + 68);
+    *(int *)this = &vt_EditClass;
+    this->M72 = *(char *)(a2 + 72);
+    this->M76 = *(int *)(a2 + 76);
+    ControlClass::CtorFromData((int *)(this + 80), a2 + 80);
+    this->M124 = *(char *)(a2 + 124);
+    this->M125 = *(char *)(a2 + 125);
+    this->M128 = *(int *)(a2 + 128);
+    this->M80 = &vt_ToggleClass;
+    this->M132 = *(char *)(a2 + 132);
+    this->M136 = *(int *)(a2 + 136);
+    this->M140 = *(int *)(a2 + 140);
+    this->M144 = *(char *)(a2 + 144);
+    this->M148 = *(int *)(a2 + 148);
+    this->M152 = *(int *)(a2 + 152);
+    this->M156 = *(char *)(a2 + 156);
+    this->M160 = *(int *)(a2 + 160);
+    this->M164 = *(char *)(a2 + 164);
+    this->M165 = *(char *)(a2 + 165);
+    this->M168 = *(int *)(a2 + 168);
+    this->M172 = *(char *)(a2 + 172);
+    this->M80 = &vt_ShapeButtonClass;
+    sub_557380(this + 176, a2 + 176);
+    v3 = this->M176;
+    *(int *)this = &vt_DropListClass;
+    (*(void (__thiscall **)(int, int))(v3 + 132))(this + 176, this);
+    (*(void (__thiscall **)(int, int))(this->M80 + 132))(this + 80, this);
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x4B56E0
+namespace gamemd {
+int E4Recv_4B56E0::sub_4B56E0(int a2)
+{
+{
+    LinkedList::MoveNode((void *)this, (void *)a2);
+    this->M12 = *(int *)(a2 + 12);
+    this->M16 = *(int *)(a2 + 16);
+    this->M20 = *(int *)(a2 + 20);
+    this->M24 = *(int *)(a2 + 24);
+    this->M28 = *(char *)(a2 + 28);
+    this->M29 = *(char *)(a2 + 29);
+    this->M30 = *(char *)(a2 + 30);
+    this->M32 = *(int *)(a2 + 32);
+    this->M36 = *(int *)(a2 + 36);
+    this->M40 = *(int *)(a2 + 40);
+    this->M44 = *(char *)(a2 + 44);
+    this->M45 = *(char *)(a2 + 45);
+    this->M46 = *(char *)(a2 + 46);
+    this->M48 = *(int *)(a2 + 48);
+    this->M52 = *(int *)(a2 + 52);
+    this->M56 = *(int *)(a2 + 56);
+    this->M60 = *(int *)(a2 + 60);
+    this->M64 = *(int *)(a2 + 64);
+    this->M68 = *(char *)(a2 + 68);
+    this->M72 = *(int *)(a2 + 72);
+    this->M76 = *(int *)(a2 + 76);
+    this->M80 = *(int *)(a2 + 80);
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x4B5780
+namespace gamemd {
+int E4Recv_4B5780::sub_4B5780(int a2)
+{
+{
+    LinkedList::MoveNode((void *)this, (void *)a2);
+    this->M12 = *(int *)(a2 + 12);
+    this->M16 = *(int *)(a2 + 16);
+    this->M20 = *(int *)(a2 + 20);
+    this->M24 = *(int *)(a2 + 24);
+    this->M28 = *(char *)(a2 + 28);
+    this->M29 = *(char *)(a2 + 29);
+    this->M30 = *(char *)(a2 + 30);
+    this->M32 = *(int *)(a2 + 32);
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x4B5830
+namespace gamemd {
+unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
+{
+{
+    int v3;
+    void *v4;
+    int v5;
+    int v6;
+    if ( this == a2 )
+    return this;
+    this->Vf12();
+    v3 = *((int*)(a2) + 2);
+    this->M8 = v3;
+    if ( !v3 )
+  {
+    this->M4 = 0;
+    this->M13 = 0;
+    return this;
+  }
+    v4 = __2_YAPAXI_Z(4 * v3);
+    this->M4 = v4;
+    if ( !v4 )
+    return this;
+    v5 = this->M8;
+    v6 = 0;
+    this->M13 = 1;
+    if ( v5 <= 0 )
+    return this;
+    do
+  {
+    *(int *)(this->M4 + 4 * v6) = *(int *)(*((int*)(a2) + 1) + 4 * v6);
+    ++v6;
+  }
+    while ( v6 < this->M8 );
+    return this;
 }
 }
 } // namespace gamemd
@@ -1247,6 +1222,31 @@ namespace gamemd {
 void nullsub_126()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x4B6B80
+namespace gamemd {
+char E4Recv_4B6B80::sub_4B6B80()
+{
+{
+    int v2;
+    char result;
+    v2 = this->M16;
+    this->M12 = 0;
+    if ( v2 > 0 )
+  {
+    do
+    {
+    result = sub_4B6AB0((int *)this, 0);
+    --v2;
+    }
+    while ( v2 );
+  }
+    this->M16 = 0;
+    this->M40 = 0;
+    return result;
+}
 }
 } // namespace gamemd
 

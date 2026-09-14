@@ -3,7 +3,9 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_7A0DD0_e4.hpp"
 #include "e4/classes/E4Recv_7A2830_e4.hpp"
+#include "e4/classes/E4Recv_7AC9D0_e4.hpp"
 #include "e4/classes/E4Recv_7ACBD0_e4.hpp"
+#include "e4/classes/E4Recv_7AF3D0_e4.hpp"
 #include "e4/classes/E4Recv_7AF640_e4.hpp"
 
 // 0x7A0430
@@ -1341,16 +1343,6 @@ LABEL_16:
 }
 } // namespace gamemd
 
-// 0x7ACBD0
-namespace gamemd {
-void E4Recv_7ACBD0::__Release__NonReentrantLock_details_Concurrency__QAEXXZ_1()
-{
-{
-    *(int *)this = 0;
-}
-}
-} // namespace gamemd
-
 // 0x7AF640
 namespace gamemd {
 int E4Recv_7AF640::sub_7AF640(int a2)
@@ -1943,6 +1935,16 @@ namespace gamemd {
 void nullsub_265()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x7ACBD0
+namespace gamemd {
+void E4Recv_7ACBD0::__Release__NonReentrantLock_details_Concurrency__QAEXXZ_1()
+{
+{
+    *(int *)this = 0;
+}
 }
 } // namespace gamemd
 

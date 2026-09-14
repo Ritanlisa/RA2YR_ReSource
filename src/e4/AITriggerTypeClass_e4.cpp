@@ -664,6 +664,18 @@ AITriggerTypeClass *__thiscall AITriggerTypeClass::ddtor(_DWORD *this, char a2)
 }
 }
 
+// 0x41FFD0
+int AITriggerTypeClass::GetTypeIdentifier()
+{
+return 59;
+}
+
+// 0x41FFE0
+int AITriggerTypeClass::GetObjectSize()
+{
+return 272;
+}
+
 // 0x420370
 namespace gamemd {
 void AITriggerTypeClass_40::ClearBuffer()
@@ -679,6 +691,19 @@ void AITriggerTypeClass_40::ClearBuffer()
   }
     this->IsAllocated = 0;
     this->AITriggerTypeClass_40_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4203A0
+namespace gamemd {
+unsigned int AITriggerTypeClass_40::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->AITriggerTypeClass_40_field_0xC )
+    return (unsigned int)(a2 - this->AITriggerTypeClass_40_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -813,6 +838,19 @@ int AITriggerTypeClass_40::Read(unsigned int * a2)
 }
 } // namespace gamemd
 
+// 0x420530
+namespace gamemd {
+unsigned int AITriggerTypeClass_40::Write(int a2)
+{
+{
+    if ( (unsigned char)this->AITriggerTypeClass_40_field_0xC )
+    return (unsigned int)(a2 - this->AITriggerTypeClass_40_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x420550
 namespace gamemd {
 char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
@@ -922,44 +960,6 @@ DynamicVector * AITriggerTypeClass_40::Constructor_VectorClass_AlphaLightingRema
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
-}
-}
-} // namespace gamemd
-
-// 0x41FFD0
-int AITriggerTypeClass::GetTypeIdentifier()
-{
-return 59;
-}
-
-// 0x41FFE0
-int AITriggerTypeClass::GetObjectSize()
-{
-return 272;
-}
-
-// 0x4203A0
-namespace gamemd {
-unsigned int AITriggerTypeClass_40::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->AITriggerTypeClass_40_field_0xC )
-    return (unsigned int)(a2 - this->AITriggerTypeClass_40_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x420530
-namespace gamemd {
-unsigned int AITriggerTypeClass_40::Write(int a2)
-{
-{
-    if ( (unsigned char)this->AITriggerTypeClass_40_field_0xC )
-    return (unsigned int)(a2 - this->AITriggerTypeClass_40_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd

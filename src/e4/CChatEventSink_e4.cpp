@@ -391,17 +391,6 @@ LABEL_104:
 }
 }
 
-// 0x7AD350
-ObjectClass * CChatEventSink::DeleteAndZero(char a2)
-{
-{
-    DeleteAndZero(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (ObjectClass *)this;
-}
-}
-
 // 0x7AD930
 char CChatEventSink::GrowBuffer()
 {
@@ -436,14 +425,6 @@ char __thiscall sub_7AD930(int *this)
 }
 }
 
-// 0x7AECB0
-int CChatEventSink::ComputeBucketMask(int a2)
-{
-{
-    return (*(int (__thiscall **)(int))(this + 24))(a2) & ((1 << this->CChatEventSink_field_0x0C) - 1);
-}
-}
-
 // 0x7AED40
 char CChatEventSink::ProcessChatEvent()
 {
@@ -472,6 +453,38 @@ char __thiscall sub_7AED40(int *this)
   *(this + 1) = v4; /*0x7aedc0*/
   *(this + 2) = v7; /*0x7aedc3*/
   return 1; /*0x7aed4f*/
+}
+}
+
+// 0x7AEE90
+char CChatEventSink::Check(unsigned int * a2, int a3)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall sub_7AEE90(int *this, _DWORD *a2, int a3)
+{
+  if ( a3 < 0 || a3 >= *this ) /*0x7aee9a*/
+    return 0; /*0x7aeead*/
+  *a2 = *(_DWORD *)(*(this + 2) + 4 * a3); /*0x7aeea6*/
+  return 1; /*0x7aeeaa*/
+}
+}
+
+// 0x7AD350
+ObjectClass * CChatEventSink::DeleteAndZero(char a2)
+{
+{
+    DeleteAndZero(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (ObjectClass *)this;
+}
+}
+
+// 0x7AECB0
+int CChatEventSink::ComputeBucketMask(int a2)
+{
+{
+    return (*(int (__thiscall **)(int))(this + 24))(a2) & ((1 << this->CChatEventSink_field_0x0C) - 1);
 }
 }
 
@@ -517,19 +530,6 @@ char CChatEventSink::EnsureCapacity(int a2)
     }
   }
     return 1;
-}
-}
-
-// 0x7AEE90
-char CChatEventSink::Check(unsigned int * a2, int a3)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_7AEE90(int *this, _DWORD *a2, int a3)
-{
-  if ( a3 < 0 || a3 >= *this ) /*0x7aee9a*/
-    return 0; /*0x7aeead*/
-  *a2 = *(_DWORD *)(*(this + 2) + 4 * a3); /*0x7aeea6*/
-  return 1; /*0x7aeeaa*/
 }
 }
 

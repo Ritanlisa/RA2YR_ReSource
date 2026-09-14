@@ -20,215 +20,20 @@
 #include "e4/classes/E4Recv_7767F0_e4.hpp"
 #include "e4/classes/E4Recv_776EB0_e4.hpp"
 #include "e4/classes/E4Recv_777BB0_e4.hpp"
+#include "e4/classes/E4Recv_778710_e4.hpp"
+#include "e4/classes/E4Recv_779B50_e4.hpp"
+#include "e4/classes/E4Recv_779DD0_e4.hpp"
+#include "e4/classes/E4Recv_77A080_e4.hpp"
+#include "e4/classes/E4Recv_77A9F0_e4.hpp"
 #include "e4/classes/E4Recv_77D240_e4.hpp"
 #include "e4/classes/E4Recv_77D3F0_e4.hpp"
-
-// 0x770850
-namespace gamemd {
-void E4Recv_770850::sub_770850(unsigned int * a1, char ** a2, int a4, ObjectClass * aP4)
-{
-{
-    Selection_WorldDominationTour *v6;
-    int v7;
-    void **v8;
-    int i;
-    void *v10;
-    int v11;
-    int v12;
-    int v13;
-    void *v14;
-    ObjectClass *v15;
-    char **v16;
-    char *v17;
-    char *a2a;
-    v16 = (char **)aP4;
-    v6 = StaticString::Factory(*(void**)this);
-    ConcatStringAlloc(&a2a, (const char **)v6, v16);
-    unknown_libname_73(&v17);
-    String::Assign((char **)&aP4, &DataGlobal_87F8E4.__pad_5568[20760]);
-    INIClass::ReadString((ObjectClass *)a1, (ObjectClass *)a2, (ObjectClass *)&a2a, (ReferenceCounted *)&aP4, (int)&v17);
-    DeleteAndZero((void **)&aP4);
-    v7 = (int)*(this + 6 * a4 + 223);
-    v8 = this + 6 * a4 + 223;
-    (*(void (__thiscall **)(void **))(v7 + 12))(v8);
-    unknown_libname_73(&aP4);
-    for ( i = String::Tokenize((const char **)&v17, 0, &Delimiter, (ObjectClass *)&aP4);
-    i != -1;
-    i = String::Tokenize((const char **)&v17, i, &Delimiter, (ObjectClass *)&aP4) ) {
-    __1_Timevec_std__QAE_XZ((std::_Timevec *)&aP4);
-    v10 = v8[2];
-    v12 = v11;
-    if ( (int)v8[4] >= (int)v10 )
-    {
-    if ( !*((char *)(v8) + 13) && v10 )
-    continue;
-    v13 = (int)v8[5];
-    if ( v13 <= 0 || !(*((unsigned char (__thiscall **)(void **, int, int))*v8 + 2))(v8, (int)v10 + v13, 0) )
-    continue;
-    }
-    v14 = v8[4];
-    v15 = (ObjectClass *)v8[1];
-    v8[4] = (char *)(v14) + 1;
-    *(int *)&v15->__pad_0[4 * (int)v14] = v12;
-  }
-    DeleteAndZero((void **)&aP4);
-    DeleteAndZero((void **)&v17);
-    DeleteAndZero((void **)&a2a);
-}
-}
-} // namespace gamemd
-
-// 0x770970
-namespace gamemd {
-char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
-{
-{
-    char **v4;
-    int v5;
-    int v6;
-    int v7;
-    int v9;
-    int v10;
-    char **v11;
-    char **v12;
-    char **v13;
-    char **v14;
-    void *v15;
-    v4 = (char **)a4;
-    v5 = *(void**)this;
-    v6 = (int)(this + 37 * a2 + 12 * a3 + 2);
-    DeleteAndZero::Alt2(a4);
-    v7 = *(int *)(v6 + 16);
-    if ( v7 <= 0 )
-    return 0;
-    if ( v7 == 1 )
-    v9 = 0;
-    else
-    v9 = Random::Range(Randomizer_Global, 0, v7 - 1);
-    v10 = *(int *)(*(int *)(v6 + 4) + 4 * v9);
-    if ( v5 == 3 )
-  {
-    v11 = FormatStringInt((char **)&a3, v10, 2);
-    v12 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v11);
-    String::Reassign(v4, (const char **)v12);
-    DeleteAndZero((void **)&a2);
-    DeleteAndZero((void **)&a3);
-  }
-    else
-  {
-    v13 = FormatStringInt((char **)&v15, v10, 2);
-    v14 = ProcessStringAndCopy((char **)&a4, g_Str_WWD_Allied, v13);
-    String::Reassign(v4, (const char **)v14);
-    DeleteAndZero((void **)&a4);
-    DeleteAndZero(&v15);
-  }
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x770A50
-namespace gamemd {
-char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
-{
-{
-    char **v4;
-    int v5;
-    int v6;
-    int v7;
-    int v9;
-    int v10;
-    char **v11;
-    char **v12;
-    char **v13;
-    char **v14;
-    void *v15;
-    v4 = (char **)a4;
-    v5 = *(void**)this;
-    v6 = (int)(this + 37 * a2 + 12 * a3 + 8);
-    DeleteAndZero::Alt2(a4);
-    v7 = *(int *)(v6 + 16);
-    if ( v7 <= 0 )
-    return 0;
-    if ( v7 == 1 )
-    v9 = 0;
-    else
-    v9 = Random::Range(Randomizer_Global, 0, v7 - 1);
-    v10 = *(int *)(*(int *)(v6 + 4) + 4 * v9);
-    if ( v5 == 3 )
-  {
-    v11 = FormatStringInt((char **)&a3, v10, 2);
-    v12 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v11);
-    String::Reassign(v4, (const char **)v12);
-    DeleteAndZero((void **)&a2);
-    DeleteAndZero((void **)&a3);
-  }
-    else
-  {
-    v13 = FormatStringInt((char **)&v15, v10, 2);
-    v14 = ProcessStringAndCopy((char **)&a4, g_Str_WWD_Allied, v13);
-    String::Reassign(v4, (const char **)v14);
-    DeleteAndZero((void **)&a4);
-    DeleteAndZero(&v15);
-  }
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x770B30
-namespace gamemd {
-char E4Recv_770B30::sub_770B30(int a2, void ** a3)
-{
-{
-    char **v3;
-    int v4;
-    int v5;
-    int v6;
-    int v8;
-    int v9;
-    char **v10;
-    char **v11;
-    char **v12;
-    char **v13;
-    void *v14;
-    void *v15;
-    v3 = (char **)a3;
-    v4 = *(void**)this;
-    v5 = (int)(this + 6 * a2 + 223);
-    DeleteAndZero::Alt2(a3);
-    v6 = *(int *)(v5 + 16);
-    if ( v6 <= 0 )
-    return 0;
-    if ( v6 == 1 )
-    v8 = 0;
-    else
-    v8 = Random::Range(Randomizer_Global, 0, v6 - 1);
-    v9 = *(int *)(*(int *)(v5 + 4) + 4 * v8);
-    if ( v4 == 3 )
-  {
-    v10 = FormatStringInt((char **)&a3, v9, 2);
-    v11 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v10);
-    String::Reassign(v3, (const char **)v11);
-    DeleteAndZero((void **)&a2);
-    DeleteAndZero((void **)&a3);
-  }
-    else
-  {
-    v12 = FormatStringInt((char **)&v15, v9, 2);
-    v13 = ProcessStringAndCopy((char **)&v14, g_Str_WWD_Allied, v12);
-    String::Reassign(v3, (const char **)v13);
-    DeleteAndZero(&v14);
-    DeleteAndZero(&v15);
-  }
-    return 1;
-}
-}
-} // namespace gamemd
+#include "e4/classes/E4Recv_77D4C0_e4.hpp"
+#include "e4/classes/E4Recv_77E1D0_e4.hpp"
+#include "e4/classes/E4Recv_77E300_e4.hpp"
 
 // 0x770E70
 namespace gamemd {
-void String::Assign()
+void sub_770E70(char **this@<ecx> a1, ObjectClass * aP1, ObjectClass * aP2, ObjectClass aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __userpurge sub_770E70(char **this@<ecx>, ObjectClass *aP1, ObjectClass *aP2, ObjectClass aP3)
@@ -250,44 +55,6 @@ void __userpurge sub_770E70(char **this@<ecx>, ObjectClass *aP1, ObjectClass *aP
 }
 } // namespace gamemd
 
-// 0x771710
-namespace gamemd {
-int E4Recv_771710::sub_771710()
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int result;
-    v2 = this->M976;
-    v3 = v2 - 1;
-    if ( v2 > this->M956 )
-  {
-    do
-    {
-    v4 = this->M976;
-    if ( v3 < v4 )
-      {
-    v5 = v4 - 1;
-    v6 = v3;
-    for ( this->M976 = v5; v6 < this->M976; ++v6 )
-    String::Reassign( (char **)(this->M964 + 4 * v6), (const char **)(this->M964 + 4 * v6 + 4));
-      }
-    v7 = v3--;
-    }
-    while ( v7 > this->M956 );
-  }
-    result = this->M956;
-    if ( !result )
-    this->M952 = 1;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x771890
 namespace gamemd {
 void E4Recv_771890::sub_771890()
@@ -297,25 +64,6 @@ void __thiscall sub_771890(_DWORD *this)
 {
   *this = &vt_WorldDominationTour_Voices_Anim; /*0x771890*/
   VtableStub::5CB6C0(this); /*0x771896*/
-}
-}
-} // namespace gamemd
-
-// 0x771A00
-namespace gamemd {
-void E4Recv_771A00::sub_771A00()
-{
-{
-    CCINIClass *v2;
-    v2 = (CCINIClass *)this->M4;
-    *(int *)this = &vt_VectorClass_unsigned_int;
-    if ( v2 && (unsigned char)this->M13 )
-  {
-    __3_YAXPAX_Z(v2);
-    this->M4 = 0;
-  }
-    this->M13 = 0;
-    this->M8 = 0;
 }
 }
 } // namespace gamemd
@@ -1009,43 +757,6 @@ void __thiscall sub_776570(void *this)
       ImageList_DragShowNolock(1); /*0x77665d*/
     }
   }
-}
-}
-} // namespace gamemd
-
-// 0x776EB0
-namespace gamemd {
-void * E4Recv_776EB0::sub_776EB0()
-{
-{
-    DWORD dwBuildNumber;
-    DWORD dwMinorVersion;
-    DWORD dwPlatformId;
-    struct _OSVERSIONINFOA VersionInformation;
-    *(int *)this = 0;
-    this->M4 = 0;
-    this->M8 = 0;
-    this->M140 = 0;
-    this->M141 = 0;
-    VersionInformation.dwOSVersionInfoSize = 148;
-    GetVersionExA(&VersionInformation);
-    dwBuildNumber = VersionInformation.dwBuildNumber;
-    dwMinorVersion = VersionInformation.dwMinorVersion;
-    *(int *)this = VersionInformation.dwMajorVersion;
-    this->M8 = dwBuildNumber;
-    dwPlatformId = VersionInformation.dwPlatformId;
-    this->M4 = dwMinorVersion;
-    if ( dwPlatformId == 1 )
-  {
-    this->M140 = 1;
-  }
-    else if ( dwPlatformId == 2 )
-  {
-    this->M141 = 1;
-  }
-    strncpy((char *)(this) + 12, VersionInformation.szCSDVersion, 0x7Fu);
-    this->M139 = 0;
-    return this;
 }
 }
 } // namespace gamemd
@@ -3930,6 +3641,209 @@ int sub_770250()
 }
 } // namespace gamemd
 
+// 0x770850
+namespace gamemd {
+void E4Recv_770850::sub_770850(unsigned int * a1, char ** a2, int a4, ObjectClass * aP4)
+{
+{
+    Selection_WorldDominationTour *v6;
+    int v7;
+    void **v8;
+    int i;
+    void *v10;
+    int v11;
+    int v12;
+    int v13;
+    void *v14;
+    ObjectClass *v15;
+    char **v16;
+    char *v17;
+    char *a2a;
+    v16 = (char **)aP4;
+    v6 = StaticString::Factory(*(void**)this);
+    ConcatStringAlloc(&a2a, (const char **)v6, v16);
+    unknown_libname_73(&v17);
+    String::Assign((char **)&aP4, &DataGlobal_87F8E4.__pad_5568[20760]);
+    INIClass::ReadString((ObjectClass *)a1, (ObjectClass *)a2, (ObjectClass *)&a2a, (ReferenceCounted *)&aP4, (int)&v17);
+    DeleteAndZero((void **)&aP4);
+    v7 = (int)*(this + 6 * a4 + 223);
+    v8 = this + 6 * a4 + 223;
+    (*(void (__thiscall **)(void **))(v7 + 12))(v8);
+    unknown_libname_73(&aP4);
+    for ( i = String::Tokenize((const char **)&v17, 0, &Delimiter, (ObjectClass *)&aP4);
+    i != -1;
+    i = String::Tokenize((const char **)&v17, i, &Delimiter, (ObjectClass *)&aP4) ) {
+    __1_Timevec_std__QAE_XZ((std::_Timevec *)&aP4);
+    v10 = v8[2];
+    v12 = v11;
+    if ( (int)v8[4] >= (int)v10 )
+    {
+    if ( !*((char *)(v8) + 13) && v10 )
+    continue;
+    v13 = (int)v8[5];
+    if ( v13 <= 0 || !(*((unsigned char (__thiscall **)(void **, int, int))*v8 + 2))(v8, (int)v10 + v13, 0) )
+    continue;
+    }
+    v14 = v8[4];
+    v15 = (ObjectClass *)v8[1];
+    v8[4] = (char *)(v14) + 1;
+    *(int *)&v15->__pad_0[4 * (int)v14] = v12;
+  }
+    DeleteAndZero((void **)&aP4);
+    DeleteAndZero((void **)&v17);
+    DeleteAndZero((void **)&a2a);
+}
+}
+} // namespace gamemd
+
+// 0x770970
+namespace gamemd {
+char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
+{
+{
+    char **v4;
+    int v5;
+    int v6;
+    int v7;
+    int v9;
+    int v10;
+    char **v11;
+    char **v12;
+    char **v13;
+    char **v14;
+    void *v15;
+    v4 = (char **)a4;
+    v5 = *(void**)this;
+    v6 = (int)(this + 37 * a2 + 12 * a3 + 2);
+    DeleteAndZero::Alt2(a4);
+    v7 = *(int *)(v6 + 16);
+    if ( v7 <= 0 )
+    return 0;
+    if ( v7 == 1 )
+    v9 = 0;
+    else
+    v9 = Random::Range(Randomizer_Global, 0, v7 - 1);
+    v10 = *(int *)(*(int *)(v6 + 4) + 4 * v9);
+    if ( v5 == 3 )
+  {
+    v11 = FormatStringInt((char **)&a3, v10, 2);
+    v12 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v11);
+    String::Reassign(v4, (const char **)v12);
+    DeleteAndZero((void **)&a2);
+    DeleteAndZero((void **)&a3);
+  }
+    else
+  {
+    v13 = FormatStringInt((char **)&v15, v10, 2);
+    v14 = ProcessStringAndCopy((char **)&a4, g_Str_WWD_Allied, v13);
+    String::Reassign(v4, (const char **)v14);
+    DeleteAndZero((void **)&a4);
+    DeleteAndZero(&v15);
+  }
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x770A50
+namespace gamemd {
+char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
+{
+{
+    char **v4;
+    int v5;
+    int v6;
+    int v7;
+    int v9;
+    int v10;
+    char **v11;
+    char **v12;
+    char **v13;
+    char **v14;
+    void *v15;
+    v4 = (char **)a4;
+    v5 = *(void**)this;
+    v6 = (int)(this + 37 * a2 + 12 * a3 + 8);
+    DeleteAndZero::Alt2(a4);
+    v7 = *(int *)(v6 + 16);
+    if ( v7 <= 0 )
+    return 0;
+    if ( v7 == 1 )
+    v9 = 0;
+    else
+    v9 = Random::Range(Randomizer_Global, 0, v7 - 1);
+    v10 = *(int *)(*(int *)(v6 + 4) + 4 * v9);
+    if ( v5 == 3 )
+  {
+    v11 = FormatStringInt((char **)&a3, v10, 2);
+    v12 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v11);
+    String::Reassign(v4, (const char **)v12);
+    DeleteAndZero((void **)&a2);
+    DeleteAndZero((void **)&a3);
+  }
+    else
+  {
+    v13 = FormatStringInt((char **)&v15, v10, 2);
+    v14 = ProcessStringAndCopy((char **)&a4, g_Str_WWD_Allied, v13);
+    String::Reassign(v4, (const char **)v14);
+    DeleteAndZero((void **)&a4);
+    DeleteAndZero(&v15);
+  }
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x770B30
+namespace gamemd {
+char E4Recv_770B30::sub_770B30(int a2, void ** a3)
+{
+{
+    char **v3;
+    int v4;
+    int v5;
+    int v6;
+    int v8;
+    int v9;
+    char **v10;
+    char **v11;
+    char **v12;
+    char **v13;
+    void *v14;
+    void *v15;
+    v3 = (char **)a3;
+    v4 = *(void**)this;
+    v5 = (int)(this + 6 * a2 + 223);
+    DeleteAndZero::Alt2(a3);
+    v6 = *(int *)(v5 + 16);
+    if ( v6 <= 0 )
+    return 0;
+    if ( v6 == 1 )
+    v8 = 0;
+    else
+    v8 = Random::Range(Randomizer_Global, 0, v6 - 1);
+    v9 = *(int *)(*(int *)(v5 + 4) + 4 * v8);
+    if ( v4 == 3 )
+  {
+    v10 = FormatStringInt((char **)&a3, v9, 2);
+    v11 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v10);
+    String::Reassign(v3, (const char **)v11);
+    DeleteAndZero((void **)&a2);
+    DeleteAndZero((void **)&a3);
+  }
+    else
+  {
+    v12 = FormatStringInt((char **)&v15, v9, 2);
+    v13 = ProcessStringAndCopy((char **)&v14, g_Str_WWD_Allied, v12);
+    String::Reassign(v3, (const char **)v13);
+    DeleteAndZero(&v14);
+    DeleteAndZero(&v15);
+  }
+    return 1;
+}
+}
+} // namespace gamemd
+
 // 0x770D70
 namespace gamemd {
 void sub_770D70(const char ** a1, unsigned int * a2)
@@ -4063,6 +3977,44 @@ char E4Recv_770FE0::sub_770FE0(int a2, int a3, void ** a4)
 }
 } // namespace gamemd
 
+// 0x771710
+namespace gamemd {
+int E4Recv_771710::sub_771710()
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int result;
+    v2 = this->M976;
+    v3 = v2 - 1;
+    if ( v2 > this->M956 )
+  {
+    do
+    {
+    v4 = this->M976;
+    if ( v3 < v4 )
+      {
+    v5 = v4 - 1;
+    v6 = v3;
+    for ( this->M976 = v5; v6 < this->M976; ++v6 )
+    String::Reassign( (char **)(this->M964 + 4 * v6), (const char **)(this->M964 + 4 * v6 + 4));
+      }
+    v7 = v3--;
+    }
+    while ( v7 > this->M956 );
+  }
+    result = this->M956;
+    if ( !result )
+    this->M952 = 1;
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x771780
 namespace gamemd {
 void nullsub_259()
@@ -4140,6 +4092,25 @@ int E4Recv_7719E0::sub_7719E0()
     this->M20 = 10;
     this->M16 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x771A00
+namespace gamemd {
+void E4Recv_771A00::sub_771A00()
+{
+{
+    CCINIClass *v2;
+    v2 = (CCINIClass *)this->M4;
+    *(int *)this = &vt_VectorClass_unsigned_int;
+    if ( v2 && (unsigned char)this->M13 )
+  {
+    __3_YAXPAX_Z(v2);
+    this->M4 = 0;
+  }
+    this->M13 = 0;
+    this->M8 = 0;
 }
 }
 } // namespace gamemd
@@ -4997,6 +4968,43 @@ namespace gamemd {
 void nullsub_261()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x776EB0
+namespace gamemd {
+void * E4Recv_776EB0::sub_776EB0()
+{
+{
+    DWORD dwBuildNumber;
+    DWORD dwMinorVersion;
+    DWORD dwPlatformId;
+    struct _OSVERSIONINFOA VersionInformation;
+    *(int *)this = 0;
+    this->M4 = 0;
+    this->M8 = 0;
+    this->M140 = 0;
+    this->M141 = 0;
+    VersionInformation.dwOSVersionInfoSize = 148;
+    GetVersionExA(&VersionInformation);
+    dwBuildNumber = VersionInformation.dwBuildNumber;
+    dwMinorVersion = VersionInformation.dwMinorVersion;
+    *(int *)this = VersionInformation.dwMajorVersion;
+    this->M8 = dwBuildNumber;
+    dwPlatformId = VersionInformation.dwPlatformId;
+    this->M4 = dwMinorVersion;
+    if ( dwPlatformId == 1 )
+  {
+    this->M140 = 1;
+  }
+    else if ( dwPlatformId == 2 )
+  {
+    this->M141 = 1;
+  }
+    strncpy((char *)(this) + 12, VersionInformation.szCSDVersion, 0x7Fu);
+    this->M139 = 0;
+    return this;
+}
 }
 } // namespace gamemd
 

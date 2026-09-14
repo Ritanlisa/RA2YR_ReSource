@@ -10,6 +10,8 @@
 #include "e4/classes/E4Recv_681220_e4.hpp"
 #include "e4/classes/E4Recv_681260_e4.hpp"
 #include "e4/classes/E4Recv_6812A0_e4.hpp"
+#include "e4/classes/E4Recv_681840_e4.hpp"
+#include "e4/classes/E4Recv_683060_e4.hpp"
 #include "e4/classes/E4Recv_689790_e4.hpp"
 #include "e4/classes/E4Recv_689820_e4.hpp"
 #include "e4/classes/E4Recv_689960_e4.hpp"
@@ -18,26 +20,7 @@
 #include "e4/classes/E4Recv_68B8A0_e4.hpp"
 #include "e4/classes/E4Recv_68F8A0_e4.hpp"
 #include "e4/classes/E4Recv_68FB10_e4.hpp"
-
-// 0x681090
-namespace gamemd {
-int E4Recv_681090::ReadPointerFromECX3()
-{
-{
-    return *(int *)this;
-}
-}
-} // namespace gamemd
-
-// 0x6810C0
-namespace gamemd {
-const char * E4Recv_6810C0::_raw_name_type_info__QBEPBDXZ()
-{
-{
-    return (char *)(this) + 8;
-}
-}
-} // namespace gamemd
+#include "e4/classes/E4Recv_68FBB0_e4.hpp"
 
 // 0x682640
 namespace gamemd {
@@ -1681,140 +1664,32 @@ LABEL_8:
 }
 } // namespace gamemd
 
-// 0x689960
-namespace gamemd {
-char E4Recv_689960::sub_689960(const char * a2, char a3)
-{
-{
-    unsigned int v3;
-    const char *i;
-    char v6;
-    v3 = 0;
-    for ( i = this + 9354; strcmp(a2, i); i += 41 )
-  {
-    if ( (int)++v3 >= 100 )
-    return 1;
-  }
-    if ( v3 == -1 )
-    return 1;
-    if ( v3 >= 0x64 )
-    return 0;
-    v6 = *(this + 40 * v3 + v3 + 9394);
-    if ( v6 != a3 )
-  {
-    *((char *)(this) + 40 * v3 + v3 + 9394) = a3;
-    this->M13482 = 1;
-    TriggerActionQueue::ProcessAll((void *)v3);
-  }
-    return v6;
-}
-}
-} // namespace gamemd
-
-// 0x68F8A0
-namespace gamemd {
-int E4Recv_68F8A0::sub_68F8A0()
-{
-{
-    int v2;
-    unsigned int v3;
-    int *v4;
-    int v5;
-    int v6;
-    int v7;
-    int *v8;
-    int v9;
-    int v10;
-    int v11;
-    int v12;
-    int result;
-    int v14;
-    int *v15;
-    char Buffer[20];
-    v2 = (*(int (__stdcall **)(char *))(*((int *)(HouseClass_Player) + 9) + 24))((char *)(HouseClass_Player) + 36);
-    sprintf(Buffer, g_Str_Trace__d, v2);
-    v3 = strlen(Buffer) + 1;
-    v4 = __2_YAPAXI_Z(0x2Cu);
-    if ( v4 )
-  {
-    v5 = this->M12;
-    v6 = this->M4 + 214;
-    v4[1] = 590 - 12 * (v3 - 1) + *(int *)this;
-    v4[2] = v6;
-    v4[3] = Timer::GetTicks();
-    v4[5] = 0;
-    v4[10] = v5;
-    v4[6] = Buffer;
-    v4[7] = 0;
-    v4[8] = 0;
-    *((char *)(v4) + 36) = 0;
-    *v4 = &vt_ScorePrintClass;
-  }
-    else
-  {
-    v4 = 0;
-  }
-    v7 = this->M36;
-    v8 = (int *)(this + 28);
-    if ( this->M44 < v7 || ((unsigned char)this->M41 || !v7) && (v9 = this->M48, v9 > 0) && (*(unsigned char (__thiscall **)(int, int, int))(*v8 + 8))(this + 28, v7 + v9, 0) )
-  {
-    v10 = this->M44;
-    v11 = this->M32;
-    this->M44 = v10 + 1;
-    *(int *)(v11 + 4 * v10) = v4;
-  }
-    v12 = *v8;
-    v15 = v4;
-    for ( result = (*(int (__thiscall **)(int, int **))(v12 + 16))(this + 28, &v15);
-    result != -1;
-    result = (*(int (__thiscall **)(int, int **))(v14 + 16))(this + 28, &v15) ) {
-    Screen::TransitionLoop((int *)this, 1);
-    v14 = *v8;
-    v15 = v4;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x68FB10
-namespace gamemd {
-unsigned int * E4Recv_68FB10::sub_68FB10(unsigned int * a2, int a3, size_t BufferCount, wchar_t * Format, wchar_t * a6, int a7, int a8)
-{
-{
-    wchar_t *v8;
-    int *v10;
-    int v11;
-    int *v12;
-    int v13;
-    int v14;
-    CampaignScore *v16;
-    wchar_t Buffer[64];
-    v8 = Format;
-    if ( (int)Format >= (int)a6 )
-    v8 = a6;
-    swprintf(Buffer, BufferCount, v8, v16);
-    v10 = (int *)this->M12;
-    v11 = a8 - v10[2];
-    (*(void (__thiscall **)(int *, int, wchar_t *, int, int, int))(*v10 + 12))(v10, a3, Buffer, a7, v11, 2);
-    v12 = (int *)this->M12;
-    v13 = v12[2];
-    v14 = (*(int (__thiscall **)(int *, wchar_t *))(*v12 + 8))(v12, Buffer);
-    *a2 = a7;
-    *((int*)(a2) + 1) = v11;
-    *((int*)(a2) + 2) = v14;
-    *((int*)(a2) + 3) = v13;
-    return a2;
-}
-}
-} // namespace gamemd
-
 // 0x681070
 namespace gamemd {
 int E4Recv_681070::sub_681070()
 {
 {
     return this->M4;
+}
+}
+} // namespace gamemd
+
+// 0x681090
+namespace gamemd {
+int E4Recv_681090::ReadPointerFromECX3()
+{
+{
+    return *(int *)this;
+}
+}
+} // namespace gamemd
+
+// 0x6810C0
+namespace gamemd {
+const char * E4Recv_6810C0::_raw_name_type_info__QBEPBDXZ()
+{
+{
+    return (char *)(this) + 8;
 }
 }
 } // namespace gamemd
@@ -2233,6 +2108,36 @@ int E4Recv_689820::sub_689820(const char * a2)
 }
 } // namespace gamemd
 
+// 0x689960
+namespace gamemd {
+char E4Recv_689960::sub_689960(const char * a2, char a3)
+{
+{
+    unsigned int v3;
+    const char *i;
+    char v6;
+    v3 = 0;
+    for ( i = this + 9354; strcmp(a2, i); i += 41 )
+  {
+    if ( (int)++v3 >= 100 )
+    return 1;
+  }
+    if ( v3 == -1 )
+    return 1;
+    if ( v3 >= 0x64 )
+    return 0;
+    v6 = *(this + 40 * v3 + v3 + 9394);
+    if ( v6 != a3 )
+  {
+    *((char *)(this) + 40 * v3 + v3 + 9394) = a3;
+    this->M13482 = 1;
+    TriggerActionQueue::ProcessAll((void *)v3);
+  }
+    return v6;
+}
+}
+} // namespace gamemd
+
 // 0x689A30
 namespace gamemd {
 char E4Recv_689A30::sub_689A30(const char * a2, unsigned char * a3)
@@ -2522,6 +2427,104 @@ int sub_68CD00()
     DataGlobal_B05568 = 128;
     DataGlobal_B0556C = 128;
     return 128;
+}
+}
+} // namespace gamemd
+
+// 0x68F8A0
+namespace gamemd {
+int E4Recv_68F8A0::sub_68F8A0()
+{
+{
+    int v2;
+    unsigned int v3;
+    int *v4;
+    int v5;
+    int v6;
+    int v7;
+    int *v8;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    int result;
+    int v14;
+    int *v15;
+    char Buffer[20];
+    v2 = (*(int (__stdcall **)(char *))(*((int *)(HouseClass_Player) + 9) + 24))((char *)(HouseClass_Player) + 36);
+    sprintf(Buffer, g_Str_Trace__d, v2);
+    v3 = strlen(Buffer) + 1;
+    v4 = __2_YAPAXI_Z(0x2Cu);
+    if ( v4 )
+  {
+    v5 = this->M12;
+    v6 = this->M4 + 214;
+    v4[1] = 590 - 12 * (v3 - 1) + *(int *)this;
+    v4[2] = v6;
+    v4[3] = Timer::GetTicks();
+    v4[5] = 0;
+    v4[10] = v5;
+    v4[6] = Buffer;
+    v4[7] = 0;
+    v4[8] = 0;
+    *((char *)(v4) + 36) = 0;
+    *v4 = &vt_ScorePrintClass;
+  }
+    else
+  {
+    v4 = 0;
+  }
+    v7 = this->M36;
+    v8 = (int *)(this + 28);
+    if ( this->M44 < v7 || ((unsigned char)this->M41 || !v7) && (v9 = this->M48, v9 > 0) && (*(unsigned char (__thiscall **)(int, int, int))(*v8 + 8))(this + 28, v7 + v9, 0) )
+  {
+    v10 = this->M44;
+    v11 = this->M32;
+    this->M44 = v10 + 1;
+    *(int *)(v11 + 4 * v10) = v4;
+  }
+    v12 = *v8;
+    v15 = v4;
+    for ( result = (*(int (__thiscall **)(int, int **))(v12 + 16))(this + 28, &v15);
+    result != -1;
+    result = (*(int (__thiscall **)(int, int **))(v14 + 16))(this + 28, &v15) ) {
+    Screen::TransitionLoop((int *)this, 1);
+    v14 = *v8;
+    v15 = v4;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x68FB10
+namespace gamemd {
+unsigned int * E4Recv_68FB10::sub_68FB10(unsigned int * a2, int a3, size_t BufferCount, wchar_t * Format, wchar_t * a6, int a7, int a8)
+{
+{
+    wchar_t *v8;
+    int *v10;
+    int v11;
+    int *v12;
+    int v13;
+    int v14;
+    CampaignScore *v16;
+    wchar_t Buffer[64];
+    v8 = Format;
+    if ( (int)Format >= (int)a6 )
+    v8 = a6;
+    swprintf(Buffer, BufferCount, v8, v16);
+    v10 = (int *)this->M12;
+    v11 = a8 - v10[2];
+    (*(void (__thiscall **)(int *, int, wchar_t *, int, int, int))(*v10 + 12))(v10, a3, Buffer, a7, v11, 2);
+    v12 = (int *)this->M12;
+    v13 = v12[2];
+    v14 = (*(int (__thiscall **)(int *, wchar_t *))(*v12 + 8))(v12, Buffer);
+    *a2 = a7;
+    *((int*)(a2) + 1) = v11;
+    *((int*)(a2) + 2) = v14;
+    *((int*)(a2) + 3) = v13;
+    return a2;
 }
 }
 } // namespace gamemd

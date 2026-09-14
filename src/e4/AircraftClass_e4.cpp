@@ -632,18 +632,6 @@ LABEL_35:
 }
 } // namespace gamemd
 
-// 0x41ADC0
-namespace gamemd {
-int AircraftClass::ProcessDockCheck()
-{
-{
-    if ( !this->Locomotor )
-    WinAPI::Wrapper(-2147467261);
-    return (*(int (__stdcall **)(int))(*(int *)this->Locomotor + 116))(this->Locomotor);
-}
-}
-} // namespace gamemd
-
 // 0x41ADF0
 namespace gamemd {
 int AircraftClass::RevealSight(int a2, int a3)
@@ -822,24 +810,6 @@ LABEL_18:
 }
 } // namespace gamemd
 
-// 0x41B980
-namespace gamemd {
-int AircraftClass::IsBelowScreen()
-{
-{
-    AircraftTypeClass *v1;
-    v1 = (AircraftTypeClass *)this->Type;
-    if ( v1 != *(AircraftTypeClass **)&g_RulesClass_Instance->__pad_240[672] && v1 != *(AircraftTypeClass **)&g_RulesClass_Instance->__pad_240[724] )
-  {
-    return ObjectClass::IsBelowScreen(this);
-  }
-    if ( !this->locomotor )
-    WinAPI::Wrapper(-2147467261);
-    return (*(unsigned char (__stdcall **)(int))(**((int **)(this) + 413) + 128))(this->locomotor) == 0;
-}
-}
-} // namespace gamemd
-
 // 0x41B9F0
 namespace gamemd {
 int AircraftClass::UpdateDocking(int a2)
@@ -920,25 +890,14 @@ LABEL_4:
 }
 } // namespace gamemd
 
-// 0x41C1D0
+// 0x41ADC0
 namespace gamemd {
-int AircraftClass::CheckMissionAbort()
+int AircraftClass::ProcessDockCheck()
 {
 {
-    return *(int *)(this->Type + 96);
-}
-}
-} // namespace gamemd
-
-// 0x41C210
-namespace gamemd {
-AircraftClass * AircraftClass::CheckActionStatus(char a2)
-{
-{
-    AircraftClass::Destruct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (AircraftClass *)this;
+    if ( !this->Locomotor )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int))(*(int *)this->Locomotor + 116))(this->Locomotor);
 }
 }
 } // namespace gamemd
@@ -949,6 +908,24 @@ HRESULT AircraftClass::CheckPassengerCount(IPersistStream * a0, FootClass * aP1,
 {
 {
     return ObjectClass::SaveToStream_Common(a0, aP1, a2);
+}
+}
+} // namespace gamemd
+
+// 0x41B980
+namespace gamemd {
+int AircraftClass::IsBelowScreen()
+{
+{
+    AircraftTypeClass *v1;
+    v1 = (AircraftTypeClass *)this->Type;
+    if ( v1 != *(AircraftTypeClass **)&g_RulesClass_Instance->__pad_240[672] && v1 != *(AircraftTypeClass **)&g_RulesClass_Instance->__pad_240[724] )
+  {
+    return ObjectClass::IsBelowScreen(this);
+  }
+    if ( !this->locomotor )
+    WinAPI::Wrapper(-2147467261);
+    return (*(unsigned char (__stdcall **)(int))(**((int **)(this) + 413) + 128))(this->locomotor) == 0;
 }
 }
 } // namespace gamemd
@@ -1031,12 +1008,35 @@ int AircraftClass::PowerDrainProcess(int a1, unsigned int * a2)
 }
 } // namespace gamemd
 
+// 0x41C1D0
+namespace gamemd {
+int AircraftClass::CheckMissionAbort()
+{
+{
+    return *(int *)(this->Type + 96);
+}
+}
+} // namespace gamemd
+
 // 0x41C200
 namespace gamemd {
 int AircraftClass::CheckMissionFail()
 {
 {
     return this->Type;
+}
+}
+} // namespace gamemd
+
+// 0x41C210
+namespace gamemd {
+AircraftClass * AircraftClass::CheckActionStatus(char a2)
+{
+{
+    AircraftClass::Destruct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (AircraftClass *)this;
 }
 }
 } // namespace gamemd

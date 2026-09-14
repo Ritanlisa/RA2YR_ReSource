@@ -2,15 +2,19 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_652CD0_e4.hpp"
+#include "e4/classes/E4Recv_6547C0_e4.hpp"
 #include "e4/classes/E4Recv_655050_e4.hpp"
 #include "e4/classes/E4Recv_655890_e4.hpp"
 #include "e4/classes/E4Recv_659560_e4.hpp"
 #include "e4/classes/E4Recv_659570_e4.hpp"
 #include "e4/classes/E4Recv_659590_e4.hpp"
+#include "e4/classes/E4Recv_659650_e4.hpp"
 #include "e4/classes/E4Recv_6599C0_e4.hpp"
 #include "e4/classes/E4Recv_659A30_e4.hpp"
+#include "e4/classes/E4Recv_65C6D0_e4.hpp"
 #include "e4/classes/E4Recv_65C890_e4.hpp"
 #include "e4/classes/E4Recv_65C910_e4.hpp"
+#include "e4/classes/E4Recv_65DD30_e4.hpp"
 #include "e4/classes/E4Recv_65FB60_e4.hpp"
 #include "e4/classes/RAMFileClass_e4.hpp"
 
@@ -636,69 +640,6 @@ char __thiscall sub_659590(_DWORD *this, _DWORD *a2, _DWORD *a3, __int16 a4)
              0);
   }
   return result; /*0x659642*/
-}
-}
-} // namespace gamemd
-
-// 0x6599C0
-namespace gamemd {
-void E4Recv_6599C0::sub_6599C0()
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    v2 = this->M48 - this->M36;
-    v3 = this->M56 - this->M44;
-    v4 = this->M52 - this->M40;
-    this->M92 = v2;
-    this->M96 = v4;
-    this->M100 = v3;
-    *(double *)(this + 104) = Math::Sqrt((double)(this->M100 *(void**)this->M100 + this->M96 *(void**)this->M96 + this->M92 *(void**)this->M92));
-}
-}
-} // namespace gamemd
-
-// 0x659A30
-namespace gamemd {
-short E4Recv_659A30::sub_659A30()
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    int v5;
-    double v6;
-    short *v7;
-    int v8;
-    short result;
-    char v10;
-    v2 = Math::RoundToInt(*(double *)(this + 104) / *(double *)(this + 24));
-    v3 = this->M92;
-    v4 = this->M96;
-    v5 = this->M100;
-    this->M140 = v2;
-    if ( v2 )
-  {
-    v3 /= v2;
-    v4 /= v2;
-    v5 /= v2;
-  }
-    v6 = (double)this->M124 / (double)this->M60;
-    this->M144 = v3;
-    this->M148 = v4;
-    this->M152 = v5;
-    this->M156 = this->M36;
-    this->M160 = this->M40;
-    this->M164 = this->M44;
-    v7 = (short *)(this + 32);
-    v8 = this + 192;
-    result = *v7;
-    v10 = *((char *)(v7) + 2);
-    *(double *)(v8 - 64) = v6 * *(double *)(v8 - 128);
-    *(short *)v8 = result;
-    *(char *)(v8 + 2) = v10;
-    return result;
 }
 }
 } // namespace gamemd
@@ -2832,6 +2773,69 @@ char E4Recv_659570::sub_659570()
 {
 {
     return this->M9;
+}
+}
+} // namespace gamemd
+
+// 0x6599C0
+namespace gamemd {
+void E4Recv_6599C0::sub_6599C0()
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    v2 = this->M48 - this->M36;
+    v3 = this->M56 - this->M44;
+    v4 = this->M52 - this->M40;
+    this->M92 = v2;
+    this->M96 = v4;
+    this->M100 = v3;
+    *(double *)(this + 104) = Math::Sqrt((double)(this->M100 *(void**)this->M100 + this->M96 *(void**)this->M96 + this->M92 *(void**)this->M92));
+}
+}
+} // namespace gamemd
+
+// 0x659A30
+namespace gamemd {
+short E4Recv_659A30::sub_659A30()
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    int v5;
+    double v6;
+    short *v7;
+    int v8;
+    short result;
+    char v10;
+    v2 = Math::RoundToInt(*(double *)(this + 104) / *(double *)(this + 24));
+    v3 = this->M92;
+    v4 = this->M96;
+    v5 = this->M100;
+    this->M140 = v2;
+    if ( v2 )
+  {
+    v3 /= v2;
+    v4 /= v2;
+    v5 /= v2;
+  }
+    v6 = (double)this->M124 / (double)this->M60;
+    this->M144 = v3;
+    this->M148 = v4;
+    this->M152 = v5;
+    this->M156 = this->M36;
+    this->M160 = this->M40;
+    this->M164 = this->M44;
+    v7 = (short *)(this + 32);
+    v8 = this + 192;
+    result = *v7;
+    v10 = *((char *)(v7) + 2);
+    *(double *)(v8 - 64) = v6 * *(double *)(v8 - 128);
+    *(short *)v8 = result;
+    *(char *)(v8 + 2) = v10;
+    return result;
 }
 }
 } // namespace gamemd

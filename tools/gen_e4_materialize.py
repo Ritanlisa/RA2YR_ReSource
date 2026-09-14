@@ -33,6 +33,11 @@ REC_HEAD = "// =================================================================
 # src 已有体函数的地址集合：行首 `// 0xADDR` 注解 + 3 行内出现定义形态（含 `(` 与 `{`）。
 # 行尾注解（vtable 槽位 `virtual X(); // 0xADDR`）与 `data:` 全局不算函数体。
 LINE_ADDR_RE = re.compile(r"^\s*//\s*(?:IDA\s+)?0[xX]([0-9A-Fa-f]{5,8})\s*$")
+# G10 修复：def 行行尾注解（`RET Cls::M(...) { // 0xADDR` 或 def 行尾注解）也是
+# 已有体的证据——replace_body/舰队波维护的内联注解形态，旧扫描器不可见导致
+# 544 个真体被误判 bodyless 而 e4 桶重复物化（双定义 + marker&completed 矛盾）。
+DEF_INLINE_ADDR_RE = re.compile(
+    r"^\s*[\w:&<>,\*\s]+\([^;]*\)\s*(?:const\s*)?\{?\s*//\s*0[xX]([0-9A-Fa-f]{5,8})\s*$")
 
 
 def scan_src_addrs():
@@ -50,16 +55,21 @@ def scan_src_addrs():
         files += 1
         for i, ln in enumerate(lines):
             m = LINE_ADDR_RE.match(ln)
-            if not m:
+            if m:
+                a = int(m.group(1), 16)
+                if not (0x401000 <= a <= 0x7E0FFF):
+                    continue
+                window = lines[i + 1:i + 4]
+                has_def = any("(" in w for w in window) and any(
+                    w.rstrip().endswith("{") or "{" in w for w in window)
+                if has_def:
+                    addrs.add(a)
                 continue
-            a = int(m.group(1), 16)
-            if not (0x401000 <= a <= 0x7E0FFF):
-                continue
-            window = lines[i + 1:i + 4]
-            has_def = any("(" in w for w in window) and any(
-                w.rstrip().endswith("{") or "{" in w for w in window)
-            if has_def:
-                addrs.add(a)
+            m2 = DEF_INLINE_ADDR_RE.match(ln)
+            if m2:
+                a = int(m2.group(1), 16)
+                if 0x401000 <= a <= 0x7E0FFF:
+                    addrs.add(a)
     return addrs, files
 
 
@@ -597,8 +607,11 @@ def scan_e4_preserved():
                 # 记录头判据（正向+上下文）：
                 #  a) 下一非空行以 'namespace' 开头（member/free 标准形态）；或
                 #  b) 下一非空行是 def 行，且上一非空行以 '}' 收尾（上一记录闭合）
-                # G1 内注解两种形态均被排除：def 行后（上一行=def 头）、
-                # pending 块 marker 区内（上一代码行='{'）。
+                # G10 修复：b) 的 prev 守卫扩展——文件首记录的上一非空行是
+                # `#include`/`//` 注释 prelude 或文件起点（G9 波次译体大量为
+                # 文件首记录，旧守卫漏识别 → refresh 重复物化毁译体）。
+                # G1 内注解两种形态仍被排除：def 行后（上一行=def 头）、
+                # pending 块 marker 区内（下一行='{' 非 def）。
                 k = i + 1
                 while k < len(lines) and not lines[k].strip():
                     k += 1
@@ -611,14 +624,29 @@ def scan_e4_preserved():
                     while j >= 0 and not lines[j].strip():
                         j -= 1
                     prev = lines[j].strip() if j >= 0 else ""
-                    if prev.startswith("}"):
+                    if (prev.startswith("}") or prev.startswith("#")
+                            or prev.startswith("//") or j < 0):
                         starts.append(i)
+            # G10 修复：def 行行尾内联注解（`RET Cls::M(...) { // 0xADDR`）
+            # 也是记录起点——舰队波 replace_body 维护的形态，旧扫描器不可见。
+            m2 = DEF_INLINE_ADDR_RE.match(ln)
+            if m2:
+                starts.append(i)
         for bi, s in enumerate(starts):
             e = starts[bi + 1] if bi + 1 < len(starts) else len(lines)
             block = "\n".join(lines[s:e]).rstrip()
-            try:
-                addr = int(lines[s].strip()[3:], 16)
-            except ValueError:
+            addr = None
+            head = lines[s].strip()
+            if REC_ADDR_LINE.match(head):
+                try:
+                    addr = int(head[3:], 16)
+                except ValueError:
+                    addr = None
+            else:
+                m2 = DEF_INLINE_ADDR_RE.match(lines[s])
+                if m2:
+                    addr = int(m2.group(1), 16)
+            if addr is None:
                 continue
             if MARKER not in block:
                 preserved[addr] = (p.name, block)

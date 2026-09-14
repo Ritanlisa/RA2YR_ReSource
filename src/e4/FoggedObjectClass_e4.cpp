@@ -808,17 +808,6 @@ _DWORD *__thiscall FoggedObjectClass::_vt24(_DWORD *this, _DWORD *a2)
 }
 }
 
-// 0x4D2910
-FoggedObjectClass * FoggedObjectClass::ddtor(char a2)
-{
-{
-    DestructFoggedObjectClass((int)this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (FoggedObjectClass *)this;
-}
-}
-
 // 0x4D29B0
 char FoggedObjectClass::AddRef(int a2)
 {
@@ -993,6 +982,102 @@ int __thiscall FoggedObjectClass::_vt04(int *this, _DWORD *a2)
 }
 }
 
+// 0x4E07B0
+namespace gamemd {
+int FoggedObjectClass_42::FindItem(unsigned int * a2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall FoggedObjectClass_42_::sub_4E07B0(int *this, _DWORD *a2)
+{
+  int v2; // edx
+  int result; // eax
+  _DWORD *i; // ecx
+
+  v2 = *(this + 4); /*0x4e07b0*/
+  result = 0; /*0x4e07b3*/
+  if ( v2 <= 0 ) /*0x4e07b8*/
+    return -1; /*0x4e07cf*/
+  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x4e07be*/
+  {
+    if ( ++result >= v2 ) /*0x4e07cd*/
+      return -1; /*0x4e07cd*/
+  }
+  return result; /*0x4e07d2*/
+}
+}
+} // namespace gamemd
+
+// 0x4D24A0
+int FoggedObjectClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    int v4;
+    int v5;
+    int v6;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+  {
+    v4 = *a1;
+    aP2 = *(int *)&aP0->Name[8];
+    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
+    if ( result >= 0 )
+    {
+    v5 = 0;
+    if ( aP2 > 0 )
+      {
+    v6 = 0;
+    do
+        {
+    if ( (*(int (__stdcall **)(int *, char *, int, int))(*a1 + 16))(a1, (char *)aP0->UIName + v6, 16, 0) < 0 )
+    break;
+    ++v5;
+    v6 += 16;
+        }
+    while ( v5 < aP2 );
+      }
+    return 0;
+    }
+  }
+    return result;
+}
+}
+
+// 0x4D27B0
+int FoggedObjectClass::GetTypeIdentifier()
+{
+return 61;
+}
+
+// 0x4D27C0
+int FoggedObjectClass::GetObjectSize()
+{
+return 120;
+}
+
+// 0x4D27D0
+int FoggedObjectClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 474417934;
+  a2[1] = 299002327;
+  a2[2] = 1610674872;
+  a2[3] = -318126072;
+  return 0;
+}
+
+// 0x4D2910
+FoggedObjectClass * FoggedObjectClass::ddtor(char a2)
+{
+{
+    DestructFoggedObjectClass((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (FoggedObjectClass *)this;
+}
+}
+
 // 0x4D2D60
 DynamicVector * FoggedObjectClass::QueryInterface(char a2)
 {
@@ -1028,6 +1113,19 @@ void FoggedObjectClass_42::ClearBuffer()
   }
     this->IsAllocated = 0;
     this->FoggedObjectClass_42_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E0220
+namespace gamemd {
+unsigned int FoggedObjectClass_42::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->FoggedObjectClass_42_field_0xC )
+    return (unsigned int)(a2 - this->FoggedObjectClass_42_field_0x4) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1162,6 +1260,19 @@ int FoggedObjectClass_42::Read(unsigned int * a2)
 }
 } // namespace gamemd
 
+// 0x4E06E0
+namespace gamemd {
+unsigned int FoggedObjectClass_42::Write(int a2)
+{
+{
+    if ( (unsigned char)this->FoggedObjectClass_42_field_0xC )
+    return (unsigned int)(a2 - this->FoggedObjectClass_42_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x4E0700
 namespace gamemd {
 char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
@@ -1210,31 +1321,6 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
 }
 } // namespace gamemd
 
-// 0x4E07B0
-namespace gamemd {
-int FoggedObjectClass_42::FindItem(unsigned int * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall FoggedObjectClass_42_::sub_4E07B0(int *this, _DWORD *a2)
-{
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x4e07b0*/
-  result = 0; /*0x4e07b3*/
-  if ( v2 <= 0 ) /*0x4e07b8*/
-    return -1; /*0x4e07cf*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x4e07be*/
-  {
-    if ( ++result >= v2 ) /*0x4e07cd*/
-      return -1; /*0x4e07cd*/
-  }
-  return result; /*0x4e07d2*/
-}
-}
-} // namespace gamemd
-
 // 0x4E0CE0
 namespace gamemd {
 VectorClass * FoggedObjectClass_42::QueryInterface(char a2)
@@ -1253,92 +1339,6 @@ VectorClass * FoggedObjectClass_42::QueryInterface(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x4D24A0
-int FoggedObjectClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    int v4;
-    int v5;
-    int v6;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-  {
-    v4 = *a1;
-    aP2 = *(int *)&aP0->Name[8];
-    result = (*(int (__stdcall **)(int *, int *, int, int))(v4 + 16))(a1, &aP2, 4, 0);
-    if ( result >= 0 )
-    {
-    v5 = 0;
-    if ( aP2 > 0 )
-      {
-    v6 = 0;
-    do
-        {
-    if ( (*(int (__stdcall **)(int *, char *, int, int))(*a1 + 16))(a1, (char *)aP0->UIName + v6, 16, 0) < 0 )
-    break;
-    ++v5;
-    v6 += 16;
-        }
-    while ( v5 < aP2 );
-      }
-    return 0;
-    }
-  }
-    return result;
-}
-}
-
-// 0x4D27B0
-int FoggedObjectClass::GetTypeIdentifier()
-{
-return 61;
-}
-
-// 0x4D27C0
-int FoggedObjectClass::GetObjectSize()
-{
-return 120;
-}
-
-// 0x4D27D0
-int FoggedObjectClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 474417934;
-  a2[1] = 299002327;
-  a2[2] = 1610674872;
-  a2[3] = -318126072;
-  return 0;
-}
-
-// 0x4E0220
-namespace gamemd {
-unsigned int FoggedObjectClass_42::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->FoggedObjectClass_42_field_0xC )
-    return (unsigned int)(a2 - this->FoggedObjectClass_42_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E06E0
-namespace gamemd {
-unsigned int FoggedObjectClass_42::Write(int a2)
-{
-{
-    if ( (unsigned char)this->FoggedObjectClass_42_field_0xC )
-    return (unsigned int)(a2 - this->FoggedObjectClass_42_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd

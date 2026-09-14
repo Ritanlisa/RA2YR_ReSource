@@ -2,14 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x41CB50
-char TechnoTypeClass::vt_entry_A0()
-{
-{
-    return 0;
-}
-}
-
 // 0x48DCD0
 int TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
 {
@@ -109,18 +101,6 @@ double __thiscall TechnoTypeClass::GetThreatMultiplier(float *this, TechnoTypeCl
   return result; /*0x50bedc*/
 }
 }
-
-// 0x5247C0
-namespace gamemd {
-int TechnoTypeClass::CanAttackMove_IgnoreWeapon_0()
-{
-// 0x5247c0
-    bool __thiscall TechnoTypeClass::CanAttackMove_IgnoreWeapon_0(int this)
-{
-    return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
-}
-}
-} // namespace gamemd
 
 // 0x6F06E0
 unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
@@ -1589,17 +1569,6 @@ int __thiscall TechnoTypeClass::SaveLoad_Prefix_0(
 }
 }
 
-// 0x7179A0
-TechnoTypeClass * TechnoTypeClass::ddtor(char a2)
-{
-{
-    TechnoTypeClass::DTOR((int)this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (TechnoTypeClass *)this;
-}
-}
-
 // 0x717AF0
 unsigned int * TechnoTypeClass::Constructor()
 {
@@ -1614,6 +1583,86 @@ _DWORD *__thiscall sub_717AF0(_DWORD *this)
   *(this + 4) = 0; /*0x717b08*/
   *this = &vt_TypeList_ParticleSystemTypeClass_const; /*0x717b0b*/
   return this; /*0x717b11*/
+}
+}
+
+// 0x41CB50
+char TechnoTypeClass::vt_entry_A0()
+{
+{
+    return 0;
+}
+}
+
+// 0x5247C0
+namespace gamemd {
+int TechnoTypeClass::CanAttackMove_IgnoreWeapon_0()
+{
+// 0x5247c0
+    bool __thiscall TechnoTypeClass::CanAttackMove_IgnoreWeapon_0(int this)
+{
+    return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
+}
+}
+} // namespace gamemd
+
+// 0x711E90
+bool TechnoTypeClass::CanAttackMove_IgnoreWeapon()
+{
+{
+    return this->Weapon && !this->PreventAttackMove;
+}
+}
+
+// 0x711EE0
+double TechnoTypeClass::ComputeBuildTime()
+{
+{
+    double result;
+    result = (double)this->Cost * *((double *)g_RulesClass_Instance + 745) * 0.9;
+    Math::RoundToInt(result);
+    return result;
+}
+}
+
+// 0x7179A0
+TechnoTypeClass * TechnoTypeClass::ddtor(char a2)
+{
+{
+    TechnoTypeClass::DTOR((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TechnoTypeClass *)this;
+}
+}
+
+// 0x717B20
+int TechnoTypeClass::SaveLoadDataArray(TechnoTypeClass * aP1)
+{
+{
+    int v3;
+    int result;
+    int i;
+    int v6;
+    v3 = *(int *)aP1->vtable0;
+    v6 = this->uniqueId;
+    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
+    result = v6;
+    for ( i = 0; i < v6; ++i )
+  {
+    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->vtable1 + 4 * i, 4, 0);
+    result = v6;
+  }
+    return result;
+}
+}
+
+// 0x717BC0
+unsigned int * TechnoTypeClass::Constructor_0(ObjectTypeClass * aP1)
+{
+{
+    *(void**)this = &vt_DynamicVectorClass_VoxelAnimTypeClass_const;
+    return this;
 }
 }
 
@@ -1663,52 +1712,3 @@ int TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0()
 }
 }
 } // namespace gamemd
-
-// 0x711E90
-bool TechnoTypeClass::CanAttackMove_IgnoreWeapon()
-{
-{
-    return this->Weapon && !this->PreventAttackMove;
-}
-}
-
-// 0x711EE0
-double TechnoTypeClass::ComputeBuildTime()
-{
-{
-    double result;
-    result = (double)this->Cost * *((double *)g_RulesClass_Instance + 745) * 0.9;
-    Math::RoundToInt(result);
-    return result;
-}
-}
-
-// 0x717B20
-int TechnoTypeClass::SaveLoadDataArray(TechnoTypeClass * aP1)
-{
-{
-    int v3;
-    int result;
-    int i;
-    int v6;
-    v3 = *(int *)aP1->vtable0;
-    v6 = this->uniqueId;
-    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
-    result = v6;
-    for ( i = 0; i < v6; ++i )
-  {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->vtable1 + 4 * i, 4, 0);
-    result = v6;
-  }
-    return result;
-}
-}
-
-// 0x717BC0
-unsigned int * TechnoTypeClass::Constructor_0(ObjectTypeClass * aP1)
-{
-{
-    *(void**)this = &vt_DynamicVectorClass_VoxelAnimTypeClass_const;
-    return this;
-}
-}

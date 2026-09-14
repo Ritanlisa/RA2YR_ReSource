@@ -2,18 +2,21 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Audio_e4.hpp"
-
-// 0x401080
-namespace gamemd {
-int Audio::InitChannels()
-{
-{
-    ((void (*)(void))AudioMixer::PlaySample)();
-    AudioMixer::PlaySample(this + 40);
-    return AudioMixer::PlaySample(this + 80);
-}
-}
-} // namespace gamemd
+#include "e4/classes/E4Recv_5E9340_e4.hpp"
+#include "e4/classes/E4Recv_6C6B00_e4.hpp"
+#include "e4/classes/E4Recv_6C8870_e4.hpp"
+#include "e4/classes/E4Recv_76BF00_e4.hpp"
+#include "e4/classes/E4Recv_7BD170_e4.hpp"
+#include "e4/classes/E4Recv_7BD290_e4.hpp"
+#include "e4/classes/E4Recv_7BD2B0_e4.hpp"
+#include "e4/classes/E4Recv_7BE4A0_e4.hpp"
+#include "e4/classes/E4Recv_7BE660_e4.hpp"
+#include "e4/classes/E4Recv_7BE670_e4.hpp"
+#include "e4/classes/E4Recv_7C0490_e4.hpp"
+#include "e4/classes/E4Recv_7C1150_e4.hpp"
+#include "e4/classes/E4Recv_7C1A70_e4.hpp"
+#include "e4/classes/E4Recv_7C1BE0_e4.hpp"
+#include "e4/classes/E4Recv_7C3750_e4.hpp"
 
 // 0x402720
 namespace gamemd {
@@ -77,22 +80,6 @@ int __thiscall Audio::ReleaseChannelRefs(_DWORD *this)
     *(this + 42) = 0; /*0x404daf*/
   }
   return result; /*0x404dba*/
-}
-}
-} // namespace gamemd
-
-// 0x404DD0
-namespace gamemd {
-int Audio::FlushChannel()
-{
-{
-    LinkedList::Init(this);
-    *(this + 78) = 0;
-    if ( *((char *)(this) + 24) >= 0 )
-    PushFrontLinkedListAlt(DataGlobal_87E2A8, (int)this);
-    else
-    __3_YAXPAX_Z(this);
-    return --DataGlobal_87E28C;
 }
 }
 } // namespace gamemd
@@ -2612,6 +2599,34 @@ LABEL_8:
     goto LABEL_9; /*0x7c38df*/
   }
   return result; /*0x7c3904*/
+}
+}
+} // namespace gamemd
+
+// 0x401080
+namespace gamemd {
+int Audio::InitChannels()
+{
+{
+    ((void (*)(void))AudioMixer::PlaySample)();
+    AudioMixer::PlaySample(this + 40);
+    return AudioMixer::PlaySample(this + 80);
+}
+}
+} // namespace gamemd
+
+// 0x404DD0
+namespace gamemd {
+int Audio::FlushChannel()
+{
+{
+    LinkedList::Init(this);
+    *(this + 78) = 0;
+    if ( *((char *)(this) + 24) >= 0 )
+    PushFrontLinkedListAlt(DataGlobal_87E2A8, (int)this);
+    else
+    __3_YAXPAX_Z(this);
+    return --DataGlobal_87E28C;
 }
 }
 } // namespace gamemd

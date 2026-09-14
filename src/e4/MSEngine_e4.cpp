@@ -3,76 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/MSEngine_e4.hpp"
 
-// 0x5AC520
-namespace gamemd {
-void MSEngine::ClearBuffer()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->MSEngine_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->MSEngine_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->MSEngine_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x5AC570
-namespace gamemd {
-unsigned int * MSEngine::Shutdown(unsigned int * a2, int a3)
-{
-{
-    int *v3;
-    v3 = (int *)(this->Items + 16 * a3);
-    *a2 = *v3;
-    *((int*)(a2) + 1) = v3[1];
-    *((int*)(a2) + 2) = v3[2];
-    *((int*)(a2) + 3) = v3[3];
-    return a2;
-}
-}
-} // namespace gamemd
-
-// 0x5ACCC0
-namespace gamemd {
-char MSEngine::AddRef(int a2)
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    int *v5;
-    int *v6;
-    int v7;
-    v2 = this->Capacity;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = *(int *)(a2 + 4);
-    v5 = (int *)this->Items;
-    v6 = (int *)(v4 + 8);
-    v7 = v4 - (int)v5;
-    while ( *v5 == *(int *)((char *)(v5) + v7) && v5[1] == *(v6 - 1) && v5[2] == *v6 && v5[3] == v6[1] )
-    {
-    ++v3;
-    v6 += 4;
-    v5 += 4;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x5ACD30
 namespace gamemd {
 char MSEngine::Release(int a2, char * a3)
@@ -157,46 +87,6 @@ char __thiscall MSEngine::_vt02(void *this, int a2, char *a3)
 }
 } // namespace gamemd
 
-// 0x5ACE20
-namespace gamemd {
-void MSEngine::ddtor()
-{
-{
-    if ( this->MSEngine_field_0x4 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(*(void **)(this + 4));
-    this->MSEngine_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->MSEngine_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x5ACE50
-namespace gamemd {
-int MSEngine::Init(unsigned int * a2)
-{
-{
-    int result;
-    int v3;
-    int *i;
-    if ( !(unsigned char)this->MSEngine_field_0xC )
-    return 0;
-    v3 = this->MSEngine_field_0x8;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = *(int **)(this + 4); *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2) || i[3] != *((int*)(a2) + 3); i += 4 )
-  {
-    if ( ++result >= v3 )
-    return -1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x5ACED0
 namespace gamemd {
 char MSEngine::SetCapacity(int a2, char * a3)
@@ -275,71 +165,6 @@ char __thiscall MSEngine::sub_5ACED0(void *this, int a2, char *a3)
   if ( v12 < this->MSEngine_field_0x10 ) /*0x5acfa2*/
     this->MSEngine_field_0x10 = v12; /*0x5acfa4*/
   return 1; /*0x5acfa7*/
-}
-}
-} // namespace gamemd
-
-// 0x5ACFC0
-namespace gamemd {
-int MSEngine::FindItem(unsigned int * a2)
-{
-{
-    int v2;
-    int result;
-    int *i;
-    v2 = this->Count;
-    result = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = (int *)this->Items; *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2) || i[3] != *((int*)(a2) + 3); i += 4 )
-  {
-    if ( ++result >= v2 )
-    return -1;
-  }
-    return result;
-}
-} // namespace gamemd
-
-// 0x5AD4D0
-namespace gamemd {
-VectorClass * MSEngine::QueryInterface(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_TRect_int;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x5AD520
-namespace gamemd {
-DynamicVector * MSEngine::Constructor(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_TRect_int;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -533,6 +358,25 @@ int __thiscall MSEngine::ProcessEvents(_DWORD *this, MSVQAnim *aP1, int a3)
 }
 } // namespace gamemd
 
+// 0x5AC520
+namespace gamemd {
+void MSEngine::ClearBuffer()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->MSEngine_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->MSEngine_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->MSEngine_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
 // 0x5AC550
 namespace gamemd {
 unsigned int MSEngine::PointerToIndex(int a2)
@@ -546,6 +390,97 @@ unsigned int MSEngine::PointerToIndex(int a2)
 }
 } // namespace gamemd
 
+// 0x5AC570
+namespace gamemd {
+unsigned int * MSEngine::Shutdown(unsigned int * a2, int a3)
+{
+{
+    int *v3;
+    v3 = (int *)(this->Items + 16 * a3);
+    *a2 = *v3;
+    *((int*)(a2) + 1) = v3[1];
+    *((int*)(a2) + 2) = v3[2];
+    *((int*)(a2) + 3) = v3[3];
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x5ACCC0
+namespace gamemd {
+char MSEngine::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    int *v5;
+    int *v6;
+    int v7;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = *(int *)(a2 + 4);
+    v5 = (int *)this->Items;
+    v6 = (int *)(v4 + 8);
+    v7 = v4 - (int)v5;
+    while ( *v5 == *(int *)((char *)(v5) + v7) && v5[1] == *(v6 - 1) && v5[2] == *v6 && v5[3] == v6[1] )
+    {
+    ++v3;
+    v6 += 4;
+    v5 += 4;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5ACE20
+namespace gamemd {
+void MSEngine::ddtor()
+{
+{
+    if ( this->MSEngine_field_0x4 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->MSEngine_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->MSEngine_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x5ACE50
+namespace gamemd {
+int MSEngine::Init(unsigned int * a2)
+{
+{
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->MSEngine_field_0xC )
+    return 0;
+    v3 = this->MSEngine_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2) || i[3] != *((int*)(a2) + 3); i += 4 )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x5ACEB0
 namespace gamemd {
 unsigned int MSEngine::Run(int a2)
@@ -555,6 +490,71 @@ unsigned int MSEngine::Run(int a2)
     return (unsigned int)(a2 - this->MSEngine_field_0x4) >> 4;
     else
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x5ACFC0
+namespace gamemd {
+int MSEngine::FindItem(unsigned int * a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2) || i[3] != *((int*)(a2) + 3); i += 4 )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
+}
+} // namespace gamemd
+
+// 0x5AD4D0
+namespace gamemd {
+VectorClass * MSEngine::QueryInterface(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_TRect_int;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
+}
+}
+} // namespace gamemd
+
+// 0x5AD520
+namespace gamemd {
+DynamicVector * MSEngine::Constructor(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_TRect_int;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd

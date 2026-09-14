@@ -144,59 +144,6 @@ char __fastcall UpdateBuildingActiveAnim(int a1, int edx0)
 }
 } // namespace gamemd
 
-// 0x4517D0
-namespace gamemd {
-int E4Recv_4517D0::sub_4517D0()
-{
-{
-    int *v2;
-    int v3;
-    int v4;
-    int result;
-    int *v6;
-    int *v7;
-    int v8;
-    int v9;
-    int v10;
-    int v11;
-    int **v12;
-    int v13;
-    int v14;
-    int v15;
-    int v16[3];
-    int v17[3];
-    v2 = (int *)((int (__thiscall *)(int **, int *))(*(void**)this)[43])(this, v16);
-    v3 = 0;
-    v13 = *v2;
-    v14 = v2[1];
-    v4 = v2[2];
-    result = (int)(this + 343);
-    v15 = v4;
-    v12 = this + 343;
-    do
-  {
-    v6 = *v12;
-    if ( *v12 )
-    {
-    v7 = Matrix3x4::TransformCell((float *)g_TacticalClass_Instance, v17, &(this->M1312)[v3 + 991]);
-    v8 = v13 + *v7;
-    v9 = v7[1];
-    v10 = v7[2];
-    v16[1] = v14 + v9;
-    v11 = *v6;
-    v16[2] = v15 + v10;
-    v16[0] = v8;
-    result = (*(int (__thiscall **)(int *, int *))(v11 + 436))(v6, v16);
-    }
-    v3 += 17;
-    ++v12;
-  }
-    while ( v3 < 357 );
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x452000
 namespace gamemd {
 int sub_452000(unsigned int * a1)
@@ -279,38 +226,6 @@ int __fastcall sub_452000(_DWORD *a1)
   }
   while ( v13 ); /*0x45215b*/
   return result; /*0x45215d*/
-}
-}
-} // namespace gamemd
-
-// 0x4528A0
-namespace gamemd {
-bool E4Recv_4528A0::sub_4528A0(int a2)
-{
-{
-    int *v3;
-    int v4;
-    int v5;
-    int v6;
-    int *v7;
-    int v8;
-    int v9;
-    double v10;
-    int v12;
-    int v13;
-    int v14;
-    v3 = (int *)this->Vf72(&v12);
-    v4 = *v3;
-    v5 = v3[1];
-    v6 = v3[2];
-    v7 = (int *)(*(int (__thiscall **)(int, int *))(*(int *)(a2) + 72))(a2, &v12);
-    v8 = v4 - *v7;
-    v9 = v7[2];
-    v13 = v5 - v7[1];
-    v12 = v8;
-    v14 = v6 - v9;
-    v10 = Math::Sqrt((double)v8 * (double)v8 + (double)(v6 - v9) * (double)(v6 - v9) + (double)v13 * (double)v13);
-    return (int)Math::RoundToInt(v10) <= *(int *)(this->M1312 + 5900) << 8;
 }
 }
 } // namespace gamemd
@@ -677,28 +592,64 @@ int __thiscall sub_45DD50(void *this)
 }
 } // namespace gamemd
 
-// 0x45E8B0
-namespace gamemd {
-int E4Recv_45E8B0::sub_45E8B0(int a2, int a3, int a4, int a5)
-{
-{
-    int result;
-    char *v6;
-    result = 3 * a2 + 963;
-    v6 = (char *)(this + 3 * a2);
-    *((int *)(v6) + 961) = a3;
-    *((int *)(v6) + 962) = a4;
-    *(this + result) = a5;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x4503E0
 namespace gamemd {
 void nullsub_101()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x4517D0
+namespace gamemd {
+int E4Recv_4517D0::sub_4517D0()
+{
+{
+    int *v2;
+    int v3;
+    int v4;
+    int result;
+    int *v6;
+    int *v7;
+    int v8;
+    int v9;
+    int v10;
+    int v11;
+    int **v12;
+    int v13;
+    int v14;
+    int v15;
+    int v16[3];
+    int v17[3];
+    v2 = (int *)((int (__thiscall *)(int **, int *))(*(void**)this)[43])(this, v16);
+    v3 = 0;
+    v13 = *v2;
+    v14 = v2[1];
+    v4 = v2[2];
+    result = (int)(this + 343);
+    v15 = v4;
+    v12 = this + 343;
+    do
+  {
+    v6 = *v12;
+    if ( *v12 )
+    {
+    v7 = Matrix3x4::TransformCell((float *)g_TacticalClass_Instance, v17, &(this->M1312)[v3 + 991]);
+    v8 = v13 + *v7;
+    v9 = v7[1];
+    v10 = v7[2];
+    v16[1] = v14 + v9;
+    v11 = *v6;
+    v16[2] = v15 + v10;
+    v16[0] = v8;
+    result = (*(int (__thiscall **)(int *, int *))(v11 + 436))(v6, v16);
+    }
+    v3 += 17;
+    ++v12;
+  }
+    while ( v3 < 357 );
+    return result;
+}
 }
 } // namespace gamemd
 
@@ -747,6 +698,38 @@ void globalHelper_051EE0(int a1, int a2, IUnknown * aP4)
     }
     while ( v6 < 1428 );
   }
+}
+}
+} // namespace gamemd
+
+// 0x4528A0
+namespace gamemd {
+bool E4Recv_4528A0::sub_4528A0(int a2)
+{
+{
+    int *v3;
+    int v4;
+    int v5;
+    int v6;
+    int *v7;
+    int v8;
+    int v9;
+    double v10;
+    int v12;
+    int v13;
+    int v14;
+    v3 = (int *)this->Vf72(&v12);
+    v4 = *v3;
+    v5 = v3[1];
+    v6 = v3[2];
+    v7 = (int *)(*(int (__thiscall **)(int, int *))(*(int *)(a2) + 72))(a2, &v12);
+    v8 = v4 - *v7;
+    v9 = v7[2];
+    v13 = v5 - v7[1];
+    v12 = v8;
+    v14 = v6 - v9;
+    v10 = Math::Sqrt((double)v8 * (double)v8 + (double)(v6 - v9) * (double)(v6 - v9) + (double)v13 * (double)v13);
+    return (int)Math::RoundToInt(v10) <= *(int *)(this->M1312 + 5900) << 8;
 }
 }
 } // namespace gamemd
@@ -1039,6 +1022,23 @@ namespace gamemd {
 void nullsub_6()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x45E8B0
+namespace gamemd {
+int E4Recv_45E8B0::sub_45E8B0(int a2, int a3, int a4, int a5)
+{
+{
+    int result;
+    char *v6;
+    result = 3 * a2 + 963;
+    v6 = (char *)(this + 3 * a2);
+    *((int *)(v6) + 961) = a3;
+    *((int *)(v6) + 962) = a4;
+    *(this + result) = a5;
+    return result;
+}
 }
 } // namespace gamemd
 

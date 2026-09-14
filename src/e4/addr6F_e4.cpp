@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_6F03F0_e4.hpp"
+#include "e4/classes/E4Recv_6FD800_e4.hpp"
 
 // 0x6F0AB0
 namespace gamemd {

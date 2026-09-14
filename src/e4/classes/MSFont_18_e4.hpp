@@ -4,6 +4,7 @@
 namespace gamemd {
 struct MSFont_18 {
     void* vfptr;  // minimal E2 declaration
+    char SetCapacity8(int a2, unsigned int * a3);  // 0x5D55A0
     void ClearBuffer();  // 0x5D5080
     int GetSize(int a2);  // 0x5D50D0
     void Destroy();  // 0x5D50E0
@@ -13,7 +14,6 @@ struct MSFont_18 {
     int Create(unsigned int * a2);  // 0x5D5270
     char SetCapacity(int a2, unsigned int * a3);  // 0x5D52D0
     int FindItem(unsigned int * a2);  // 0x5D5380
-    char SetCapacity8(int a2, unsigned int * a3);  // 0x5D55A0
     int FindPair8(unsigned int * a2);  // 0x5D56A0
     VectorClass * QueryInterface(char a2);  // 0x5D56E0
     DynamicVector * Constructor_VectorClass_HWND_____(char a2);  // 0x5D5730

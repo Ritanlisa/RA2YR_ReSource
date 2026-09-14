@@ -4,8 +4,8 @@
 namespace gamemd {
 struct Map_WorldDominationTour_43 {
     void* vfptr;  // minimal E2 declaration
-    char AddRef(int a2);  // 0x76A390
     char Release(int a2, char * a3);  // 0x76A3F0
+    char AddRef(int a2);  // 0x76A390
     void ddtor();  // 0x76A4F0
     VectorClass * QueryInterface(char a2);  // 0x76A770
     unsigned int * Seek(unsigned int * a2, int a3);  // 0x769D30

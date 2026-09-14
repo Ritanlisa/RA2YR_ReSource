@@ -22,6 +22,19 @@ void Dial8Class_48::ClearBuffer()
 }
 } // namespace gamemd
 
+// 0x4A7D50
+namespace gamemd {
+unsigned int Dial8Class_48::PointerToIndex(int a2)
+{
+{
+    if ( (unsigned char)this->Dial8Class_48_field_0xC )
+    return (unsigned int)(a2 - this->Dial8Class_48_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x4A7D70
 namespace gamemd {
 int Dial8Class_48::Seek(int a2)
@@ -152,6 +165,19 @@ int Dial8Class_48::Read(unsigned int * a2)
 }
 } // namespace gamemd
 
+// 0x4A7EE0
+namespace gamemd {
+unsigned int Dial8Class_48::Write(int a2)
+{
+{
+    if ( (unsigned char)this->Dial8Class_48_field_0xC )
+    return (unsigned int)(a2 - this->Dial8Class_48_field_0x4) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
 // 0x4A7F00
 namespace gamemd {
 char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
@@ -261,32 +287,6 @@ DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(char a2
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
-}
-}
-} // namespace gamemd
-
-// 0x4A7D50
-namespace gamemd {
-unsigned int Dial8Class_48::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->Dial8Class_48_field_0xC )
-    return (unsigned int)(a2 - this->Dial8Class_48_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4A7EE0
-namespace gamemd {
-unsigned int Dial8Class_48::Write(int a2)
-{
-{
-    if ( (unsigned char)this->Dial8Class_48_field_0xC )
-    return (unsigned int)(a2 - this->Dial8Class_48_field_0x4) >> 2;
-    else
-    return 0;
 }
 }
 } // namespace gamemd

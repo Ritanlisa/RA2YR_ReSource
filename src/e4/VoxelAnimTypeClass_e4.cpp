@@ -505,30 +505,6 @@ int __stdcall VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 }
 } // namespace gamemd
 
-// 0x74B8F0
-namespace gamemd {
-long long VoxelAnimTypeClass::GetData(ObjectTypeClass * aP1, int a3)
-{
-{
-    __int64 result;
-    result = (unsigned int)aP1;
-    if ( (ObjectTypeClass *)this->Warhead == aP1 )
-    this->Warhead = 0;
-    if ( (ObjectTypeClass *)this->BounceAnim == aP1 )
-    this->BounceAnim = 0;
-    if ( (ObjectTypeClass *)this->ExpireAnim == aP1 )
-    this->ExpireAnim = 0;
-    if ( (ObjectTypeClass *)this->TrailerAnim == aP1 )
-    this->TrailerAnim = 0;
-    if ( (ObjectTypeClass *)this->Spawns == aP1 )
-    this->Spawns = 0;
-    if ( (ObjectTypeClass *)this->AttachedSystem == aP1 )
-    this->AttachedSystem = 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x74BA30
 namespace gamemd {
 VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(char a2)
@@ -603,6 +579,30 @@ int VoxelAnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass
     result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2);
     if ( result >= 0 )
     return 0;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x74B8F0
+namespace gamemd {
+long long VoxelAnimTypeClass::GetData(ObjectTypeClass * aP1, int a3)
+{
+{
+    __int64 result;
+    result = (unsigned int)aP1;
+    if ( (ObjectTypeClass *)this->Warhead == aP1 )
+    this->Warhead = 0;
+    if ( (ObjectTypeClass *)this->BounceAnim == aP1 )
+    this->BounceAnim = 0;
+    if ( (ObjectTypeClass *)this->ExpireAnim == aP1 )
+    this->ExpireAnim = 0;
+    if ( (ObjectTypeClass *)this->TrailerAnim == aP1 )
+    this->TrailerAnim = 0;
+    if ( (ObjectTypeClass *)this->Spawns == aP1 )
+    this->Spawns = 0;
+    if ( (ObjectTypeClass *)this->AttachedSystem == aP1 )
+    this->AttachedSystem = 0;
     return result;
 }
 }

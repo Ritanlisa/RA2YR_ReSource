@@ -248,60 +248,6 @@ LABEL_39:
 }
 } // namespace gamemd
 
-// 0x4F1720
-namespace gamemd {
-HWND Options::InitDialogControls()
-{
-{
-    HWND result;
-    HWND v3;
-    IUnknown *v4;
-    LPARAM v5;
-    IUnknown *v6;
-    const char **Options;
-    HWND DlgItem;
-    unsigned char v9;
-    int v10[14];
-    result = (HWND)g_GameMode_Current[0];
-    if ( !g_GameMode_Current[0] || g_GameMode_Current[0] == 5 )
-  {
-    Options = (const char **)LoadOptions::LoadOptions(v10);
-    v9 = LoadOptions::Check(Options);
-    LoadOptions::Cleanup(v10);
-    DlgItem = GetDlgItem(this, 1310);
-    if ( DlgItem )
-    EnableWindow(DlgItem, v9);
-    result = GetDlgItem(this, 1312);
-    if ( result )
-    return (HWND)EnableWindow(result, v9);
-  }
-    else if ( g_GameMode_Current[0] == 4 )
-  {
-    result = (HWND)MuteSWLaunches;
-    if ( !MuteSWLaunches )
-    {
-    v3 = GetDlgItem(this, 1007);
-    v4 = (IUnknown *)v3;
-    if ( v3 )
-      {
-    v5 = 3 - (int)g_NetworkHostState;
-    SendMessageA(v3, 0x406u, 1u, 196608);
-    SendMessageA((HWND)v4, 0x405u, 1u, v5);
-      }
-    result = GetDlgItem(this, 1321);
-    v6 = (IUnknown *)result;
-    if ( result )
-      {
-    SendMessageA(result, 0x406u, 1u, 393216);
-    return (HWND)SendMessageA((HWND)v6, 0x405u, 1u, 6 - *(int *)g_GameModeOptions);
-      }
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x558840
 namespace gamemd {
 bool Options::PrepareSaveLoadDlg()
@@ -541,69 +487,6 @@ void __thiscall Options::SetVoiceVolume(Options *this, float volume, int pad)
   if ( (_BYTE)pad ) /*0x5fa5e6*/
     PlayVocClass(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1808), 0x2000, *(float *)&this->__pad_34[8], 0); /*0x5fa5ff*/
   Debug::Log(); /*0x5fa612*/
-}
-}
-} // namespace gamemd
-
-// 0x618D40
-namespace gamemd {
-int Options::DialogProc(CCINIClass hWnd)
-{
-{
-    int *v4;
-    int v5;
-    int *v6;
-    int *v7;
-    int *v8;
-    int v9;
-    unsigned int v10;
-    int v11;
-    int v12;
-    float v13;
-    unsigned int v14;
-    int v15;
-    int v16;
-    LONG (__stdcall *v17)(HWND, int);
-    int *v18;
-    int *v19;
-    int v20;
-    int v21;
-    int v22;
-    unsigned int v23;
-    int *v24;
-    int *v25;
-    void (__thiscall ***v26)(int, int);
-    int v27;
-    int result;
-    int v29;
-    int v30;
-    int v31;
-    int v32;
-    int v33;
-    int v34;
-    int *v35;
-    int *v36;
-    int v37;
-    int *v38;
-    int *v39;
-    int v40;
-    int v41;
-    int v42;
-    int v43;
-    int v44;
-    int v45;
-    int v46;
-    int v47;
-}
-} // namespace gamemd
-
-// 0x624460
-namespace gamemd {
-void Options::ClearComboBoxes()
-{
-{
-    DeleteAndZero::Alt(this + 2);
-    DeleteAndZero::Alt(this + 1);
 }
 }
 } // namespace gamemd
@@ -941,6 +824,123 @@ char __thiscall sub_625A20(int *this)
   *(this + 1) = v4; /*0x625a99*/
   *(this + 2) = v7; /*0x625a9c*/
   return 1; /*0x625a2f*/
+}
+}
+} // namespace gamemd
+
+// 0x4F1720
+namespace gamemd {
+HWND Options::InitDialogControls()
+{
+{
+    HWND result;
+    HWND v3;
+    IUnknown *v4;
+    LPARAM v5;
+    IUnknown *v6;
+    const char **Options;
+    HWND DlgItem;
+    unsigned char v9;
+    int v10[14];
+    result = (HWND)g_GameMode_Current[0];
+    if ( !g_GameMode_Current[0] || g_GameMode_Current[0] == 5 )
+  {
+    Options = (const char **)LoadOptions::LoadOptions(v10);
+    v9 = LoadOptions::Check(Options);
+    LoadOptions::Cleanup(v10);
+    DlgItem = GetDlgItem(this, 1310);
+    if ( DlgItem )
+    EnableWindow(DlgItem, v9);
+    result = GetDlgItem(this, 1312);
+    if ( result )
+    return (HWND)EnableWindow(result, v9);
+  }
+    else if ( g_GameMode_Current[0] == 4 )
+  {
+    result = (HWND)MuteSWLaunches;
+    if ( !MuteSWLaunches )
+    {
+    v3 = GetDlgItem(this, 1007);
+    v4 = (IUnknown *)v3;
+    if ( v3 )
+      {
+    v5 = 3 - (int)g_NetworkHostState;
+    SendMessageA(v3, 0x406u, 1u, 196608);
+    SendMessageA((HWND)v4, 0x405u, 1u, v5);
+      }
+    result = GetDlgItem(this, 1321);
+    v6 = (IUnknown *)result;
+    if ( result )
+      {
+    SendMessageA(result, 0x406u, 1u, 393216);
+    return (HWND)SendMessageA((HWND)v6, 0x405u, 1u, 6 - *(int *)g_GameModeOptions);
+      }
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x618D40
+namespace gamemd {
+int Options::DialogProc(CCINIClass hWnd)
+{
+{
+    int *v4;
+    int v5;
+    int *v6;
+    int *v7;
+    int *v8;
+    int v9;
+    unsigned int v10;
+    int v11;
+    int v12;
+    float v13;
+    unsigned int v14;
+    int v15;
+    int v16;
+    LONG (__stdcall *v17)(HWND, int);
+    int *v18;
+    int *v19;
+    int v20;
+    int v21;
+    int v22;
+    unsigned int v23;
+    int *v24;
+    int *v25;
+    void (__thiscall ***v26)(int, int);
+    int v27;
+    int result;
+    int v29;
+    int v30;
+    int v31;
+    int v32;
+    int v33;
+    int v34;
+    int *v35;
+    int *v36;
+    int v37;
+    int *v38;
+    int *v39;
+    int v40;
+    int v41;
+    int v42;
+    int v43;
+    int v44;
+    int v45;
+    int v46;
+    int v47;
+}
+} // namespace gamemd
+
+// 0x624460
+namespace gamemd {
+void Options::ClearComboBoxes()
+{
+{
+    DeleteAndZero::Alt(this + 2);
+    DeleteAndZero::Alt(this + 1);
 }
 }
 } // namespace gamemd

@@ -1,20 +1,38 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_57B870_e4.hpp"
+#include "e4/classes/E4Recv_57B990_e4.hpp"
+#include "e4/classes/E4Recv_57CAB0_e4.hpp"
+#include "e4/classes/E4Recv_57CBE0_e4.hpp"
+#include "e4/classes/E4Recv_5AD930_e4.hpp"
+#include "e4/classes/E4Recv_5AD9F0_e4.hpp"
 #include "e4/classes/E4Recv_5ADD10_e4.hpp"
+#include "e4/classes/E4Recv_5CC690_e4.hpp"
+#include "e4/classes/E4Recv_5CEDD0_e4.hpp"
+#include "e4/classes/E4Recv_5EF010_e4.hpp"
 #include "e4/classes/E4Recv_5FBF70_e4.hpp"
+#include "e4/classes/E4Recv_65FE00_e4.hpp"
+#include "e4/classes/E4Recv_660540_e4.hpp"
+#include "e4/classes/E4Recv_681060_e4.hpp"
+#include "e4/classes/E4Recv_681080_e4.hpp"
+#include "e4/classes/E4Recv_6810A0_e4.hpp"
+#include "e4/classes/E4Recv_6810D0_e4.hpp"
+#include "e4/classes/E4Recv_681110_e4.hpp"
+#include "e4/classes/E4Recv_681130_e4.hpp"
+#include "e4/classes/E4Recv_6811C0_e4.hpp"
+#include "e4/classes/E4Recv_681200_e4.hpp"
+#include "e4/classes/E4Recv_681240_e4.hpp"
+#include "e4/classes/E4Recv_681280_e4.hpp"
+#include "e4/classes/E4Recv_6812C0_e4.hpp"
+#include "e4/classes/E4Recv_683050_e4.hpp"
+#include "e4/classes/E4Recv_6B4100_e4.hpp"
+#include "e4/classes/E4Recv_7694C0_e4.hpp"
+#include "e4/classes/E4Recv_769C20_e4.hpp"
 #include "e4/classes/Map_WorldDominationTour_20_e4.hpp"
 #include "e4/classes/Map_WorldDominationTour_28_e4.hpp"
 #include "e4/classes/Map_WorldDominationTour_38_e4.hpp"
 #include "e4/classes/Map_WorldDominationTour_43_e4.hpp"
-
-// 0x535BE0
-unsigned int Map::IsCellFlag(int a1)
-{
-{
-    return ((unsigned int)~a1 >> 11) & 1;
-}
-}
 
 // 0x539760
 namespace gamemd {
@@ -1588,48 +1606,6 @@ void sub_6DA980()
 }
 } // namespace gamemd
 
-// 0x769DC0
-namespace gamemd {
-VectorCursor * Map_WorldDominationTour_20::Constructor(char a2)
-{
-{
-    *(void**)this = &vt_VectorCursor_TRect_int_VectorClass_TRect_int;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorCursor *)this;
-}
-}
-} // namespace gamemd
-
-// 0x769DE0
-namespace gamemd {
-char Map_WorldDominationTour_20::AddRef(int a2)
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    int *i;
-    v2 = this->Capacity;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = (int *)(this->Items + 4);
-    for ( i = (int *)(*(int *)(a2 + 4) + 4); *v4 == *i; i += 2 )
-    {
-    ++v3;
-    v4 += 2;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x769E30
 namespace gamemd {
 char Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
@@ -1725,71 +1701,6 @@ LABEL_14:
 }
 } // namespace gamemd
 
-// 0x769F50
-namespace gamemd {
-int Map_WorldDominationTour_20::ddtor()
-{
-{
-    int (__thiscall ***v2)(int, int);
-    int result;
-    v2 = *(int (__thiscall ****)(int, int))(this + 4);
-    if ( v2 && this->IsAllocated )
-  {
-    result = (**v2)(v2, 3);
-    this->Map_WorldDominationTour_20_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->Map_WorldDominationTour_20_field_0x8 = 0;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x769F80
-namespace gamemd {
-int Map_WorldDominationTour_20::Read(int a2)
-{
-{
-    int result;
-    int v3;
-    int *i;
-    if ( !(unsigned char)this->Map_WorldDominationTour_20_field_0xC )
-    return 0;
-    v3 = this->Map_WorldDominationTour_20_field_0x8;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = (int *)(this->Map_WorldDominationTour_20_field_0x4 + 4); *i != *(int *)(a2 + 4); i += 2 )
-  {
-    if ( ++result >= v3 )
-    return -1;
-  }
-    return result;
-}
-} // namespace gamemd
-
-// 0x76A5C0
-namespace gamemd {
-VectorClass * Map_WorldDominationTour_20::QueryInterface(char a2)
-{
-{
-    void (__thiscall ***v3)(int, int);
-    v3 = (void (__thiscall ***)(int, int))*(this + 1);
-    *(void**)this = &vt_VectorClass_rc_ptr_WorldDominationTour_Territory;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    (**v3)(v3, 3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
 // 0x76A610
 namespace gamemd {
 rc_ptr_base * Map_WorldDominationTour_20::Constructor_0(char a2)
@@ -1833,159 +1744,6 @@ rc_ptr_base *__thiscall Map_WorldDominationTour_20_::Constructor_0(rc_ptr_base *
       __3_YAXPAX_Z(this); /*0x76a66b*/
     return this; /*0x76a673*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x76A130
-namespace gamemd {
-char Map_WorldDominationTour_28::AddRef(int a2)
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    int v5;
-    v2 = this->Capacity;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = (int *)this->Items;
-    v5 = *(int *)(a2 + 4) - (int)v4;
-    while ( *v4 == *(int *)((char *)(v4) + v5) )
-    {
-    ++v3;
-    ++v4;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x76A170
-namespace gamemd {
-char Map_WorldDominationTour_28::Release(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v6;
-    int i;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( v4 )
-    {
-    if ( this->Map_WorldDominationTour_28_field_0x4 )
-      {
-    v6 = this->Map_WorldDominationTour_28_field_0x8;
-    if ( a2 < v6 )
-    v6 = a2;
-    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->Map_WorldDominationTour_28_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-        {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->Map_WorldDominationTour_28_field_0x4 = 0;
-        }
-      }
-    this->Map_WorldDominationTour_28_field_0x4 = v4;
-    this->Map_WorldDominationTour_28_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-    return 1;
-    }
-    else
-    {
-    return 0;
-    }
-  }
-    else
-  {
-    this->ddtor();
-    return 1;
-  }
-}
-}
-} // namespace gamemd
-
-// 0x76A220
-namespace gamemd {
-void Map_WorldDominationTour_28::ddtor()
-{
-{
-    if ( this->Map_WorldDominationTour_28_field_0x4 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(*(void **)(this + 4));
-    this->Map_WorldDominationTour_28_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->Map_WorldDominationTour_28_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x76A6D0
-namespace gamemd {
-VectorClass * Map_WorldDominationTour_28::QueryInterface(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_WorldDominationTour_Map_AnimationPalette;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x76A390
-namespace gamemd {
-char Map_WorldDominationTour_43::AddRef(int a2)
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    int *v5;
-    int *v6;
-    int v7;
-    v2 = this->Capacity;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = *(int *)(a2 + 4);
-    v5 = (int *)this->Items;
-    v6 = (int *)(v4 + 8);
-    v7 = v4 - (int)v5;
-    while ( *v5 == *(int *)((char *)(v5) + v7) && v5[1] == *(v6 - 1) && v5[2] == *v6 )
-    {
-    ++v3;
-    v6 += 3;
-    v5 += 3;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
 }
 }
 } // namespace gamemd
@@ -2106,43 +1864,13 @@ char __thiscall Map_WorldDominationTour_43_::_vt02(void *this, int a2, char *a3)
 }
 } // namespace gamemd
 
-// 0x76A4F0
-namespace gamemd {
-void Map_WorldDominationTour_43::ddtor()
+// 0x535BE0
+unsigned int Map::IsCellFlag(int a1)
 {
 {
-    if ( this->Map_WorldDominationTour_43_field_0x4 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(*(void **)(this + 4));
-    this->Map_WorldDominationTour_43_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->Map_WorldDominationTour_43_field_0x8 = 0;
+    return ((unsigned int)~a1 >> 11) & 1;
 }
 }
-} // namespace gamemd
-
-// 0x76A770
-namespace gamemd {
-VectorClass * Map_WorldDominationTour_43::QueryInterface(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_WorldDominationTour_Centroid;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
-}
-} // namespace gamemd
 
 // 0x578D80
 namespace gamemd {
@@ -2893,6 +2621,91 @@ unsigned int * sub_769D70(unsigned int * a1, int a2)
 }
 } // namespace gamemd
 
+// 0x769DC0
+namespace gamemd {
+VectorCursor * Map_WorldDominationTour_20::Constructor(char a2)
+{
+{
+    *(void**)this = &vt_VectorCursor_TRect_int_VectorClass_TRect_int;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorCursor *)this;
+}
+}
+} // namespace gamemd
+
+// 0x769DE0
+namespace gamemd {
+char Map_WorldDominationTour_20::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    int *i;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)(this->Items + 4);
+    for ( i = (int *)(*(int *)(a2 + 4) + 4); *v4 == *i; i += 2 )
+    {
+    ++v3;
+    v4 += 2;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x769F50
+namespace gamemd {
+int Map_WorldDominationTour_20::ddtor()
+{
+{
+    int (__thiscall ***v2)(int, int);
+    int result;
+    v2 = *(int (__thiscall ****)(int, int))(this + 4);
+    if ( v2 && this->IsAllocated )
+  {
+    result = (**v2)(v2, 3);
+    this->Map_WorldDominationTour_20_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->Map_WorldDominationTour_20_field_0x8 = 0;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x769F80
+namespace gamemd {
+int Map_WorldDominationTour_20::Read(int a2)
+{
+{
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->Map_WorldDominationTour_20_field_0xC )
+    return 0;
+    v3 = this->Map_WorldDominationTour_20_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = (int *)(this->Map_WorldDominationTour_20_field_0x4 + 4); *i != *(int *)(a2 + 4); i += 2 )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
+}
+} // namespace gamemd
+
 // 0x769FC0
 namespace gamemd {
 unsigned int Map_WorldDominationTour_20::Write(int a2)
@@ -2902,6 +2715,102 @@ unsigned int Map_WorldDominationTour_20::Write(int a2)
     return (unsigned int)(a2 - this->Map_WorldDominationTour_20_field_0x4) >> 3;
     else
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x76A130
+namespace gamemd {
+char Map_WorldDominationTour_28::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
+    {
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x76A170
+namespace gamemd {
+char Map_WorldDominationTour_28::Release(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
+    {
+    if ( this->Map_WorldDominationTour_28_field_0x4 )
+      {
+    v6 = this->Map_WorldDominationTour_28_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->Map_WorldDominationTour_28_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+        {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Map_WorldDominationTour_28_field_0x4 = 0;
+        }
+      }
+    this->Map_WorldDominationTour_28_field_0x4 = v4;
+    this->Map_WorldDominationTour_28_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
+    }
+    else
+    {
+    return 0;
+    }
+  }
+    else
+  {
+    this->ddtor();
+    return 1;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x76A220
+namespace gamemd {
+void Map_WorldDominationTour_28::ddtor()
+{
+{
+    if ( this->Map_WorldDominationTour_28_field_0x4 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->Map_WorldDominationTour_28_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->Map_WorldDominationTour_28_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -2939,6 +2848,57 @@ unsigned int Map_WorldDominationTour_28::Write(int a2)
     return (unsigned int)(a2 - this->Map_WorldDominationTour_28_field_0x4) >> 2;
     else
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x76A390
+namespace gamemd {
+char Map_WorldDominationTour_43::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    int *v5;
+    int *v6;
+    int v7;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = *(int *)(a2 + 4);
+    v5 = (int *)this->Items;
+    v6 = (int *)(v4 + 8);
+    v7 = v4 - (int)v5;
+    while ( *v5 == *(int *)((char *)(v5) + v7) && v5[1] == *(v6 - 1) && v5[2] == *v6 )
+    {
+    ++v3;
+    v6 += 3;
+    v5 += 3;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x76A4F0
+namespace gamemd {
+void Map_WorldDominationTour_43::ddtor()
+{
+{
+    if ( this->Map_WorldDominationTour_43_field_0x4 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->Map_WorldDominationTour_43_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->Map_WorldDominationTour_43_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -2998,6 +2958,72 @@ unsigned int * Map_WorldDominationTour_38::ddtor()
 {
     --*(this + 2);
     return this;
+}
+}
+} // namespace gamemd
+
+// 0x76A5C0
+namespace gamemd {
+VectorClass * Map_WorldDominationTour_20::QueryInterface(char a2)
+{
+{
+    void (__thiscall ***v3)(int, int);
+    v3 = (void (__thiscall ***)(int, int))*(this + 1);
+    *(void**)this = &vt_VectorClass_rc_ptr_WorldDominationTour_Territory;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    (**v3)(v3, 3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
+}
+}
+} // namespace gamemd
+
+// 0x76A6D0
+namespace gamemd {
+VectorClass * Map_WorldDominationTour_28::QueryInterface(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_WorldDominationTour_Map_AnimationPalette;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
+}
+}
+} // namespace gamemd
+
+// 0x76A770
+namespace gamemd {
+VectorClass * Map_WorldDominationTour_43::QueryInterface(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_WorldDominationTour_Centroid;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd

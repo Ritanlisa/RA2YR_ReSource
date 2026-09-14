@@ -58,6 +58,7 @@ int __thiscall Power::FinalizeDrain(AbstractClass *this, int a2)
   }
   return result; /*0x4a1c8e*/
 }
+}
 } // namespace gamemd
 
 // 0x4A1CA0
@@ -101,6 +102,7 @@ int __thiscall Power::FlagProcess(AbstractClass *this, int a2)
     *(_DWORD *)&this->__pad_0[4] = 0; /*0x4a1d1d*/
   }
   return result; /*0x4a1d23*/
+}
 }
 } // namespace gamemd
 

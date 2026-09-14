@@ -1260,10 +1260,6 @@ int DSurface::GetPitch() const
 // Calls IDirectDrawSurface7::GetBltStatus(DDGBS_ISBLTDONE)
 // Returns true if blit is complete (DD_OK)
 // 0x4baf20
-bool DSurface::CheckBltStatus()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x4baf20
 BOOL __thiscall DSurface::CheckBltStatus(_DWORD **this)
 {
   return (*(int (__stdcall **)(_DWORD, int))(**(this + 7) + 52))(*(this + 7), 1) == 0;

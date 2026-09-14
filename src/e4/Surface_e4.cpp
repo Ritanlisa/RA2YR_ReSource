@@ -1,38 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
-
-// 0x411510
-unsigned int * Surface::GetRect(unsigned int * a2)
-{
-{
-    int v3;
-    int v4;
-    v3 = this->Width;
-    v4 = this->Height;
-    *a2 = 0;
-    *((int*)(a2) + 1) = 0;
-    *((int*)(a2) + 2) = v3;
-    *((int*)(a2) + 3) = v4;
-    return a2;
-}
-}
-
-// 0x411540
-int Surface::GetWidth()
-{
-{
-    return this->Width;
-}
-}
-
-// 0x411550
-int Surface::GetHeight()
-{
-{
-    return this->Height;
-}
-}
+#include "e4/classes/E4Recv_5B6CD0_e4.hpp"
 
 // 0x411580
 BOOL Surface::IsLocked()
@@ -41,69 +10,6 @@ BOOL Surface::IsLocked()
 BOOL __thiscall Surface_IsLocked(_DWORD *this)
 {
   return *(this + 3) != 0; /*0x41158a*/
-}
-}
-
-// 0x4A4780
-LPDIRECTDRAW Surface::CreateSurfacePalette()
-{
-{
-    LPDIRECTDRAW result;
-    int v3;
-    BombClass *v4;
-    char *v5;
-    char v6;
-    char *v7;
-    char v8;
-    char v9;
-    if ( this != (AbstractClass *)&DataGlobal_89E138.__pad_14B0[936] )
-    memcpy(&DataGlobal_89E138.__pad_14B0[936], this, 0x300u);
-    result = *(LPDIRECTDRAW *)&DataGlobal_89E138.__pad_14B0[2732];
-    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2732] )
-  {
-    v3 = *(int *)&DataGlobal_89E138.__pad_14B0[2740];
-    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2740] )
-    {
-    v4 = (BombClass *)this;
-    v5 = &DataGlobal_89E138.__pad_14B0[1709];
-    do
-      {
-    v6 = v4->__pad_0[0];
-    v9 = v4->__pad_0[1];
-    v7 = &v4->__pad_0[2];
-    v5 += 4;
-    v8 = *v7;
-    *(v5 - 5) = v6;
-    v4 = (BombClass *)(v7 + 1);
-    *(v5 - 4) = v9;
-    *(v5 - 3) = v8;
-      }
-    while ( (int)v5 < 9044117 );
-    result = *(LPDIRECTDRAW *)&DataGlobal_89E138.__pad_14B0[1704];
-    if ( *(int *)&DataGlobal_89E138.__pad_14B0[1704] )
-      {
-    if ( !DataGlobal_89E138.__pad_14B0[2736] )
-        {
-    (*(void (__stdcall **)(int, int))(*(int *)(v3) + 124))(v3, *(int *)&DataGlobal_89E138.__pad_14B0[1704]);
-    result = *(LPDIRECTDRAW *)&DataGlobal_89E138.__pad_14B0[1704];
-    DataGlobal_89E138.__pad_14B0[2736] = 1;
-        }
-    return ((LPDIRECTDRAW (__stdcall *)(LPDIRECTDRAW, int, int, int, char *))result->lpVtbl->CreateSurface)( result, 0, 0, 256, &DataGlobal_89E138.__pad_14B0[1708]);
-      }
-    }
-  }
-    return result;
-}
-}
-
-// 0x4AEC60
-unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2)
-{
-{
-    this->Width = aP1;
-    this->Height = aP2;
-    *(void**)this = &Surface_Vtable;
-    return this;
 }
 }
 
@@ -2173,10 +2079,105 @@ LABEL_103:
 }
 }
 
+// 0x411510
+unsigned int * Surface::GetRect(unsigned int * a2)
+{
+{
+    int v3;
+    int v4;
+    v3 = this->Width;
+    v4 = this->Height;
+    *a2 = 0;
+    *((int*)(a2) + 1) = 0;
+    *((int*)(a2) + 2) = v3;
+    *((int*)(a2) + 3) = v4;
+    return a2;
+}
+}
+
+// 0x411540
+int Surface::GetWidth()
+{
+{
+    return this->Width;
+}
+}
+
+// 0x411550
+int Surface::GetHeight()
+{
+{
+    return this->Height;
+}
+}
+
 // 0x4115C0
 char Surface::StubReturnFalse()
 {
 return 0;
+}
+
+// 0x4A4780
+LPDIRECTDRAW Surface::CreateSurfacePalette()
+{
+{
+    LPDIRECTDRAW result;
+    int v3;
+    BombClass *v4;
+    char *v5;
+    char v6;
+    char *v7;
+    char v8;
+    char v9;
+    if ( this != (AbstractClass *)&DataGlobal_89E138.__pad_14B0[936] )
+    memcpy(&DataGlobal_89E138.__pad_14B0[936], this, 0x300u);
+    result = *(LPDIRECTDRAW *)&DataGlobal_89E138.__pad_14B0[2732];
+    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2732] )
+  {
+    v3 = *(int *)&DataGlobal_89E138.__pad_14B0[2740];
+    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2740] )
+    {
+    v4 = (BombClass *)this;
+    v5 = &DataGlobal_89E138.__pad_14B0[1709];
+    do
+      {
+    v6 = v4->__pad_0[0];
+    v9 = v4->__pad_0[1];
+    v7 = &v4->__pad_0[2];
+    v5 += 4;
+    v8 = *v7;
+    *(v5 - 5) = v6;
+    v4 = (BombClass *)(v7 + 1);
+    *(v5 - 4) = v9;
+    *(v5 - 3) = v8;
+      }
+    while ( (int)v5 < 9044117 );
+    result = *(LPDIRECTDRAW *)&DataGlobal_89E138.__pad_14B0[1704];
+    if ( *(int *)&DataGlobal_89E138.__pad_14B0[1704] )
+      {
+    if ( !DataGlobal_89E138.__pad_14B0[2736] )
+        {
+    (*(void (__stdcall **)(int, int))(*(int *)(v3) + 124))(v3, *(int *)&DataGlobal_89E138.__pad_14B0[1704]);
+    result = *(LPDIRECTDRAW *)&DataGlobal_89E138.__pad_14B0[1704];
+    DataGlobal_89E138.__pad_14B0[2736] = 1;
+        }
+    return ((LPDIRECTDRAW (__stdcall *)(LPDIRECTDRAW, int, int, int, char *))result->lpVtbl->CreateSurface)( result, 0, 0, 256, &DataGlobal_89E138.__pad_14B0[1708]);
+      }
+    }
+  }
+    return result;
+}
+}
+
+// 0x4AEC60
+unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2)
+{
+{
+    this->Width = aP1;
+    this->Height = aP2;
+    *(void**)this = &Surface_Vtable;
+    return this;
+}
 }
 
 // 0x620F60

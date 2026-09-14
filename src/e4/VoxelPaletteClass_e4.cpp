@@ -2,23 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x753B70
-int VoxelPaletteClass::LoadFromFile()
-{
-{
-    int v2;
-    int v4[8];
-    VoxelPalette::Init(v4, (int)&DataGlobal_B2FB78, (int)g_VoxelColorPalette);
-    v2 = VoxelPaletteClass::ConvertFromFile(v4, (int)this);
-    DataGlobal_B2FB74 = v4[0];
-    DataGlobal_B4317C = v4[1];
-    DataGlobal_B2FB58 = v4[2];
-    DataGlobal_B43178 = v4[3];
-    VoxelPalette::Reset((int)v4);
-    return v2;
-}
-}
-
 // 0x758A30
 int VoxelPaletteClass::ConvertFromFile(int a2)
 {
@@ -53,5 +36,22 @@ LABEL_5:
   }
   (*(void (__thiscall **)(int))(*(_DWORD *)a2 + 52))(a2); /*0x758ab5*/
   return v3; /*0x758ab8*/
+}
+}
+
+// 0x753B70
+int VoxelPaletteClass::LoadFromFile()
+{
+{
+    int v2;
+    int v4[8];
+    VoxelPalette::Init(v4, (int)&DataGlobal_B2FB78, (int)g_VoxelColorPalette);
+    v2 = VoxelPaletteClass::ConvertFromFile(v4, (int)this);
+    DataGlobal_B2FB74 = v4[0];
+    DataGlobal_B4317C = v4[1];
+    DataGlobal_B2FB58 = v4[2];
+    DataGlobal_B43178 = v4[3];
+    VoxelPalette::Reset((int)v4);
+    return v2;
 }
 }

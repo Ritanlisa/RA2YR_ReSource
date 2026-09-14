@@ -139,33 +139,6 @@ LABEL_6:
 }
 }
 
-// 0x5C05E0
-unsigned int BinkMovieHandle::BlitToTarget()
-{
-{
-    return 0x3E8 / (unsigned int)(*(int *)(*(int *)(this->height + 4) + 20) / *(int *)(*(int *)(this->height + 4) + 24));
-}
-}
-
-// 0x5C0A30
-BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
-{
-{
-    BinkMovie *v3;
-    v3 = *(this + 4);
-    *(void**)this = (BinkMovie *)&vt_BinkMovieHandle;
-    if ( v3 )
-  {
-    BinkMovie::Stop((int)v3);
-    __3_YAXPAX_Z(v3);
-  }
-    *(void**)this = (BinkMovie *)&vt_MovieHandle;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BinkMovieHandle *)this;
-}
-}
-
 // 0x432BD0
 int BinkMovieHandle::Check(int a2)
 {
@@ -243,10 +216,37 @@ int BinkMovieHandle::AdjustSurfaceFormat(int a2)
 }
 }
 
+// 0x5C05E0
+unsigned int BinkMovieHandle::BlitToTarget()
+{
+{
+    return 0x3E8 / (unsigned int)(*(int *)(*(int *)(this->height + 4) + 20) / *(int *)(*(int *)(this->height + 4) + 24));
+}
+}
+
 // 0x5C05F0
 unsigned int * BinkMovieHandle::Close()
 {
 {
     return BinkMovieHandle::CopyFrameToSurface(this->height);
+}
+}
+
+// 0x5C0A30
+BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
+{
+{
+    BinkMovie *v3;
+    v3 = *(this + 4);
+    *(void**)this = (BinkMovie *)&vt_BinkMovieHandle;
+    if ( v3 )
+  {
+    BinkMovie::Stop((int)v3);
+    __3_YAXPAX_Z(v3);
+  }
+    *(void**)this = (BinkMovie *)&vt_MovieHandle;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BinkMovieHandle *)this;
 }
 }

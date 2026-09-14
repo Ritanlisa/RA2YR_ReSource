@@ -715,87 +715,6 @@ int __thiscall sub_66D150(RulesClass *this)
 }
 }
 
-// 0x66D1F0
-int RulesClass::readSpecialWeapons()
-{
-{
-    int result;
-    char Bool_Overwrite;
-    int v4;
-    double v5;
-    int v6;
-    result = INIClass::BinarySearchSection(v6, (unsigned char *)DataGlobal_839E64);
-    if ( result )
-  {
-    Bool_Overwrite = INIClass::ReadBool_Overwrite( v6, (unsigned char *)DataGlobal_839E64, (unsigned char *)DataGlobal_83B39C, (unsigned char)this->ForceShieldColor);
-    v4 = this->FallBackCoefficient;
-    this->ForceShieldColor = Bool_Overwrite;
-    HIDWORD(v5) = this->CrewCount;
-    LODWORD(v5) = v4;
-    *((double *)(this) + 779) = INIClass::ReadDouble_Overwrite( v6, (unsigned char *)DataGlobal_839E64, (unsigned char *)DataGlobal_83B384, v5);
-    LOBYTE(result) = 1;
-  }
-    else
-  {
-    LOBYTE(result) = 0;
-  }
-    return result;
-}
-}
-
-// 0x66D480
-int RulesClass::ReadColorAdd()
-{
-{
-    char *v1;
-    int result;
-    int v4;
-    char *v5;
-    unsigned char *StringByIndex;
-    int Coord;
-    char *v8;
-    char v9;
-    bool v10;
-    char v11[4];
-    int v12;
-    char *v13;
-    v1 = v13;
-    result = INIClass::BinarySearchSection((int)v13, (unsigned char *)DataGlobal_839E50);
-    if ( result )
-  {
-    result = INIClass::GetKeyCount(v1, (unsigned char *)DataGlobal_839E50);
-    v4 = 0;
-    v12 = result;
-    if ( result > 0 )
-    {
-    v5 = (char *)(this) + 6260;
-    do
-      {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v1, (unsigned char *)DataGlobal_839E50, v4);
-    LOWORD(v13) = 0;
-    BYTE2(v13) = 0;
-    Coord = INIClass::GetCoord( (unsigned char ***)v1, (int)v11, (unsigned char *)DataGlobal_839E50, StringByIndex, (unsigned char *)&v13);
-    v8 = v5;
-    ++v4;
-    v5 += 3;
-    v9 = *(char *)(Coord + 2);
-    *(short *)v8 = *(short *)Coord;
-    result = v12;
-    v10 = v4 < v12;
-    v8[2] = v9;
-      }
-    while ( v10 );
-    }
-    LOBYTE(result) = 1;
-  }
-    else
-  {
-    LOBYTE(result) = 0;
-  }
-    return result;
-}
-}
-
 // 0x673E80
 int RulesClass::ReadPowerupsSection()
 {
@@ -1461,6 +1380,34 @@ int RulesClass::readCombatDamage(int a2)
 }
 }
 
+// 0x66D1F0
+int RulesClass::readSpecialWeapons()
+{
+{
+    int result;
+    char Bool_Overwrite;
+    int v4;
+    double v5;
+    int v6;
+    result = INIClass::BinarySearchSection(v6, (unsigned char *)DataGlobal_839E64);
+    if ( result )
+  {
+    Bool_Overwrite = INIClass::ReadBool_Overwrite( v6, (unsigned char *)DataGlobal_839E64, (unsigned char *)DataGlobal_83B39C, (unsigned char)this->ForceShieldColor);
+    v4 = this->FallBackCoefficient;
+    this->ForceShieldColor = Bool_Overwrite;
+    HIDWORD(v5) = this->CrewCount;
+    LODWORD(v5) = v4;
+    *((double *)(this) + 779) = INIClass::ReadDouble_Overwrite( v6, (unsigned char *)DataGlobal_839E64, (unsigned char *)DataGlobal_83B384, v5);
+    LOBYTE(result) = 1;
+  }
+    else
+  {
+    LOBYTE(result) = 0;
+  }
+    return result;
+}
+}
+
 // 0x66D3A0
 int RulesClass::ReadColors()
 {
@@ -1492,6 +1439,59 @@ int RulesClass::ReadColors()
     System_Read((const char *)StringByIndex, (int)&v9);
     System_Read_68C9C0((char *)StringByIndex, (int)&v9, (int)DataGlobal_886380, (int)&FileSystem_TEMPERAT_PAL, 1);
     result = System_Read_68C9C0((char *)StringByIndex, (int)&v9, (int)DataGlobal_886380, (int)&FileSystem_TEMPERAT_PAL, 53);
+    }
+    LOBYTE(result) = 1;
+  }
+    else
+  {
+    LOBYTE(result) = 0;
+  }
+    return result;
+}
+}
+
+// 0x66D480
+int RulesClass::ReadColorAdd()
+{
+{
+    char *v1;
+    int result;
+    int v4;
+    char *v5;
+    unsigned char *StringByIndex;
+    int Coord;
+    char *v8;
+    char v9;
+    bool v10;
+    char v11[4];
+    int v12;
+    char *v13;
+    v1 = v13;
+    result = INIClass::BinarySearchSection((int)v13, (unsigned char *)DataGlobal_839E50);
+    if ( result )
+  {
+    result = INIClass::GetKeyCount(v1, (unsigned char *)DataGlobal_839E50);
+    v4 = 0;
+    v12 = result;
+    if ( result > 0 )
+    {
+    v5 = (char *)(this) + 6260;
+    do
+      {
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v1, (unsigned char *)DataGlobal_839E50, v4);
+    LOWORD(v13) = 0;
+    BYTE2(v13) = 0;
+    Coord = INIClass::GetCoord( (unsigned char ***)v1, (int)v11, (unsigned char *)DataGlobal_839E50, StringByIndex, (unsigned char *)&v13);
+    v8 = v5;
+    ++v4;
+    v5 += 3;
+    v9 = *(char *)(Coord + 2);
+    *(short *)v8 = *(short *)Coord;
+    result = v12;
+    v10 = v4 < v12;
+    v8[2] = v9;
+      }
+    while ( v10 );
     }
     LOBYTE(result) = 1;
   }

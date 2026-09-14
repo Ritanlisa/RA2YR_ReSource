@@ -17,35 +17,6 @@ _BYTE *__thiscall Palette_6BitTo16Bit(_BYTE *this, char a2, char a3, char a4)
 }
 } // namespace gamemd
 
-// 0x632BE0
-unsigned char * Palette::ConvertIndices(int a2)
-{
-{
-    int v3;
-    int v4;
-    short *v5;
-    short *v6;
-    *(void**)this = 0;
-    v3 = Hash_Check_5C61E0();
-    v4 = Hash_Check();
-    if ( v3 <= 0 )
-    return this;
-    v5 = (short *)v4;
-    v6 = this + 2;
-    do
-  {
-    LOWORD(v4) = *v5;
-    v4 = ShiftBigIntAndScan(v4, 64);
-    *v6 = v4;
-    ++v5;
-    ++v6;
-    --v3;
-  }
-    while ( v3 );
-    return this;
-}
-}
-
 // 0x642130
 namespace gamemd {
 int Palette_Preview_Generate()
@@ -351,6 +322,35 @@ int Palette::FindClosestColor(int a2)
   }
     while ( v2 < 256 );
     return v8;
+}
+}
+
+// 0x632BE0
+unsigned char * Palette::ConvertIndices(int a2)
+{
+{
+    int v3;
+    int v4;
+    short *v5;
+    short *v6;
+    *(void**)this = 0;
+    v3 = Hash_Check_5C61E0();
+    v4 = Hash_Check();
+    if ( v3 <= 0 )
+    return this;
+    v5 = (short *)v4;
+    v6 = this + 2;
+    do
+  {
+    LOWORD(v4) = *v5;
+    v4 = ShiftBigIntAndScan(v4, 64);
+    *v6 = v4;
+    ++v5;
+    ++v6;
+    --v3;
+  }
+    while ( v3 );
+    return this;
 }
 }
 

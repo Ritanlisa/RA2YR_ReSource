@@ -88,14 +88,6 @@ void __thiscall HashTable_Grow2(_DWORD *this)
 }
 }
 
-// 0x625070
-int HashTable::ComputeHash(int a2)
-{
-{
-    return (*(int (__thiscall **)(int))(this + 24))(a2) & ((1 << this->HashTable_field_0x0C) - 1);
-}
-}
-
 // 0x625090
 char HashTable::RemoveAndResize(unsigned int * a2, unsigned char * a3)
 {
@@ -1953,5 +1945,13 @@ void __thiscall sub_7AEC00(_DWORD *this)
     }
     __3_YAXPAX_Z(v3); /*0x7aeca0*/
   }
+}
+}
+
+// 0x625070
+int HashTable::ComputeHash(int a2)
+{
+{
+    return (*(int (__thiscall **)(int))(this + 24))(a2) & ((1 << this->HashTable_field_0x0C) - 1);
 }
 }

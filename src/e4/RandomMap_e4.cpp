@@ -3,127 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/RandomMap_e4.hpp"
 
-// 0x42F420
-namespace gamemd {
-void RandomMap::ddtor()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->RandomMap_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->Items = 0;
-  }
-    this->IsAllocated = 0;
-    this->RandomMap_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x42F450
-namespace gamemd {
-unsigned int RandomMap::Write(int a2)
-{
-{
-    if ( (unsigned char)this->RandomMap_field_0xC )
-    return (unsigned int)(a2 - this->Items) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x42F470
-namespace gamemd {
-unsigned int * RandomMap::Seek(unsigned int * a2, int a3)
-{
-{
-    *a2 = *(int *)(this->Items + 4 * a3);
-    return a2;
-}
-}
-} // namespace gamemd
-
-// 0x42F620
-namespace gamemd {
-char RandomMap::AddRef(int a2)
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    short *v5;
-    short *v6;
-    int v7;
-    v2 = this->Capacity;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = *(int *)(a2 + 4);
-    v5 = (short *)this->Items;
-    v6 = (short *)(v4 + 2);
-    v7 = v4 - (int)v5;
-    while ( *v5 == *(short *)((char *)(v5) + v7) && v5[1] == *v6 )
-    {
-    ++v3;
-    v6 += 2;
-    v5 += 2;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x42F930
-namespace gamemd {
-int RandomMap::Read(unsigned short * a2)
-{
-{
-    int v2;
-    int result;
-    short *i;
-    v2 = this->Count;
-    result = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = (short *)this->Items; *i != *a2 || i[1] != *((int*)(a2) + 1); i += 2 )
-  {
-    if ( ++result >= v2 )
-    return -1;
-  }
-    return result;
-}
-} // namespace gamemd
-
-// 0x42FBF0
-namespace gamemd {
-DynamicVector * RandomMap::QueryInterface(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_Cell;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
-}
-}
-} // namespace gamemd
-
 // 0x486790
 namespace gamemd {
 bool RandomMap::Check()
@@ -6262,131 +6141,6 @@ LABEL_19:
 }
 } // namespace gamemd
 
-// 0x5AC290
-namespace gamemd {
-unsigned int * RandomMap::Constructor_VectorClass_Cell_(char a2)
-{
-{
-    void (__thiscall ***v3)(int, int);
-    int v4;
-    void *v5;
-    int *v7;
-    v3 = (void (__thiscall ***)(int, int))*(void**)this;
-    if ( v3 )
-  {
-    (**v3)(v3, 1);
-    *(void**)this = 0;
-  }
-    v7 = this;
-    v4 = (*(int (__thiscall **)(int *, int **))(g_RandomMap_BuildObject + 16))(&g_RandomMap_BuildObject, &v7);
-    if ( v4 != -1 && v4 < g_RandomMap_TileData && v4 < --g_RandomMap_TileData )
-  {
-    do
-    {
-    ++v4;
-    *((int *)(g_RandomMap_TerrainState) + v4 - 1) = *((int *)(g_RandomMap_TerrainState) + v4);
-    }
-    while ( v4 < g_RandomMap_TileData );
-  }
-    v5 = (void *)*(this + 11);
-    *(this + 10) = &vt_VectorClass_Cell;
-    if ( v5 && *((char *)(this) + 53) )
-  {
-    __3_YAXPAX_Z(v5);
-    *(this + 11) = 0;
-  }
-    *((char *)(this) + 53) = 0;
-    *(this + 12) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x5AD820
-namespace gamemd {
-unsigned int * RandomMap::Constructor(int a2, int a3)
-{
-{
-    this->Items = 0;
-    this->Capacity = a2;
-    this->IsInitialized = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_CellClass;
-    if ( a2 )
-  {
-    if ( a3 )
-    {
-    this->Items = a3;
-    return this;
-    }
-    this->Items = __2_YAPAXI_Z(4 * a2);
-    this->IsAllocated = 1;
-  }
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x5ADA40
-namespace gamemd {
-unsigned int * RandomMap::Constructor_0(int a2, int a3)
-{
-{
-    void *v5;
-    this->Items = 0;
-    this->Capacity = a2;
-    this->IsInitialized = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_TRect_int;
-    if ( a2 )
-  {
-    if ( a3 )
-    {
-    this->Items = a3;
-    return this;
-    }
-    v5 = __2_YAPAXI_Z(16 * a2);
-    if ( v5 )
-    {
-    this->Items = v5;
-    this->IsAllocated = 1;
-    return this;
-    }
-    this->IsAllocated = 1;
-    this->Items = 0;
-  }
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x5ADAB0
-namespace gamemd {
-unsigned int * RandomMap::Constructor_1(int a2, int a3)
-{
-{
-    this->Items = 0;
-    this->Capacity = a2;
-    this->IsInitialized = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_double;
-    if ( a2 )
-  {
-    if ( a3 )
-    {
-    this->Items = a3;
-    return this;
-    }
-    this->Items = __2_YAPAXI_Z(8 * a2);
-    this->IsAllocated = 1;
-  }
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x5B9C90
 namespace gamemd {
 void RandomMap::RegenerateRandomMapPreview()
@@ -6814,6 +6568,127 @@ LABEL_39:
 }
 } // namespace gamemd
 
+// 0x42F420
+namespace gamemd {
+void RandomMap::ddtor()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->RandomMap_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
+  }
+    this->IsAllocated = 0;
+    this->RandomMap_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x42F450
+namespace gamemd {
+unsigned int RandomMap::Write(int a2)
+{
+{
+    if ( (unsigned char)this->RandomMap_field_0xC )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x42F470
+namespace gamemd {
+unsigned int * RandomMap::Seek(unsigned int * a2, int a3)
+{
+{
+    *a2 = *(int *)(this->Items + 4 * a3);
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x42F620
+namespace gamemd {
+char RandomMap::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    short *v5;
+    short *v6;
+    int v7;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = *(int *)(a2 + 4);
+    v5 = (short *)this->Items;
+    v6 = (short *)(v4 + 2);
+    v7 = v4 - (int)v5;
+    while ( *v5 == *(short *)((char *)(v5) + v7) && v5[1] == *v6 )
+    {
+    ++v3;
+    v6 += 2;
+    v5 += 2;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x42F930
+namespace gamemd {
+int RandomMap::Read(unsigned short * a2)
+{
+{
+    int v2;
+    int result;
+    short *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (short *)this->Items; *i != *a2 || i[1] != *((int*)(a2) + 1); i += 2 )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
+}
+} // namespace gamemd
+
+// 0x42FBF0
+namespace gamemd {
+DynamicVector * RandomMap::QueryInterface(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_Cell;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
+}
+}
+} // namespace gamemd
+
 // 0x58CF90
 namespace gamemd {
 int RandomMap::GenerateTerrainForAllCells()
@@ -6848,6 +6723,131 @@ int RandomMap::GenerateTerrainForAllCells()
     while ( v2 );
   }
     return result;
+}
+}
+} // namespace gamemd
+
+// 0x5AC290
+namespace gamemd {
+unsigned int * RandomMap::Constructor_VectorClass_Cell_(char a2)
+{
+{
+    void (__thiscall ***v3)(int, int);
+    int v4;
+    void *v5;
+    int *v7;
+    v3 = (void (__thiscall ***)(int, int))*(void**)this;
+    if ( v3 )
+  {
+    (**v3)(v3, 1);
+    *(void**)this = 0;
+  }
+    v7 = this;
+    v4 = (*(int (__thiscall **)(int *, int **))(g_RandomMap_BuildObject + 16))(&g_RandomMap_BuildObject, &v7);
+    if ( v4 != -1 && v4 < g_RandomMap_TileData && v4 < --g_RandomMap_TileData )
+  {
+    do
+    {
+    ++v4;
+    *((int *)(g_RandomMap_TerrainState) + v4 - 1) = *((int *)(g_RandomMap_TerrainState) + v4);
+    }
+    while ( v4 < g_RandomMap_TileData );
+  }
+    v5 = (void *)*(this + 11);
+    *(this + 10) = &vt_VectorClass_Cell;
+    if ( v5 && *((char *)(this) + 53) )
+  {
+    __3_YAXPAX_Z(v5);
+    *(this + 11) = 0;
+  }
+    *((char *)(this) + 53) = 0;
+    *(this + 12) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x5AD820
+namespace gamemd {
+unsigned int * RandomMap::Constructor(int a2, int a3)
+{
+{
+    this->Items = 0;
+    this->Capacity = a2;
+    this->IsInitialized = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_CellClass;
+    if ( a2 )
+  {
+    if ( a3 )
+    {
+    this->Items = a3;
+    return this;
+    }
+    this->Items = __2_YAPAXI_Z(4 * a2);
+    this->IsAllocated = 1;
+  }
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x5ADA40
+namespace gamemd {
+unsigned int * RandomMap::Constructor_0(int a2, int a3)
+{
+{
+    void *v5;
+    this->Items = 0;
+    this->Capacity = a2;
+    this->IsInitialized = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_TRect_int;
+    if ( a2 )
+  {
+    if ( a3 )
+    {
+    this->Items = a3;
+    return this;
+    }
+    v5 = __2_YAPAXI_Z(16 * a2);
+    if ( v5 )
+    {
+    this->Items = v5;
+    this->IsAllocated = 1;
+    return this;
+    }
+    this->IsAllocated = 1;
+    this->Items = 0;
+  }
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x5ADAB0
+namespace gamemd {
+unsigned int * RandomMap::Constructor_1(int a2, int a3)
+{
+{
+    this->Items = 0;
+    this->Capacity = a2;
+    this->IsInitialized = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_double;
+    if ( a2 )
+  {
+    if ( a3 )
+    {
+    this->Items = a3;
+    return this;
+    }
+    this->Items = __2_YAPAXI_Z(8 * a2);
+    this->IsAllocated = 1;
+  }
+    return this;
 }
 }
 } // namespace gamemd

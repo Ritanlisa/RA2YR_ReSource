@@ -1012,78 +1012,6 @@ TeamTypeClass *__thiscall TeamTypeClass::ddtor(void **this, char a2)
 }
 } // namespace gamemd
 
-// 0x6F21B0
-namespace gamemd {
-void TeamTypeClass_28::ClearBuffer()
-{
-{
-    int v2;
-    v2 = this->TeamTypeClass_28_field_0x4;
-    this->TeamTypeClass_28_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z((void *)(v2 - 4));
-    this->TeamTypeClass_28_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->TeamTypeClass_28_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x6F2210
-namespace gamemd {
-unsigned int * TeamTypeClass_28::Seek(unsigned int * a2, int a3)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    v3 = this->Items;
-    v4 = *(int *)(v3 + 8 * a3);
-    v5 = v3 + 8 * a3;
-    *a2 = v4;
-    *((int*)(a2) + 1) = *(int *)(v5 + 4);
-    return a2;
-}
-}
-} // namespace gamemd
-
-// 0x6F2290
-namespace gamemd {
-char TeamTypeClass_28::AddRef(int a2)
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    int *v5;
-    int *v6;
-    int v7;
-    v2 = this->Capacity;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = *(int *)(a2 + 4);
-    v5 = (int *)this->Items;
-    v6 = (int *)(v4 + 4);
-    v7 = v4 - (int)v5;
-    while ( *v5 == *(int *)((char *)(v5) + v7) && v5[1] == *v6 )
-    {
-    ++v3;
-    v6 += 2;
-    v5 += 2;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x6F22F0
 namespace gamemd {
 char TeamTypeClass_28::Release(int a2, int * a3)
@@ -1193,48 +1121,6 @@ char __thiscall TeamTypeClass_28_::_vt02(void *this, int a2, int *a3)
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x6f23e5*/
     return 1; /*0x6f23eb*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x6F2400
-namespace gamemd {
-void TeamTypeClass_28::ddtor()
-{
-{
-    int v2;
-    v2 = this->TeamTypeClass_28_field_0x4;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z((void *)(v2 - 4));
-    this->TeamTypeClass_28_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->TeamTypeClass_28_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x6F2440
-namespace gamemd {
-int TeamTypeClass_28::Read(unsigned int * a2)
-{
-{
-    int result;
-    int v3;
-    int *i;
-    if ( !(unsigned char)this->TeamTypeClass_28_field_0xC )
-    return 0;
-    v3 = this->TeamTypeClass_28_field_0x8;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = *(int **)(this + 4); *i != *a2 || i[1] != *((int*)(a2) + 1); i += 2 )
-  {
-    if ( ++result >= v3 )
-    return -1;
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -1352,71 +1238,6 @@ char __thiscall TeamTypeClass_28_::sub_6F24B0(void *this, int a2, int *a3)
   if ( v16 < this->TeamTypeClass_28_field_0x10 ) /*0x6f25b6*/
     this->TeamTypeClass_28_field_0x10 = v16; /*0x6f25b8*/
   return 1; /*0x6f25bb*/
-}
-}
-} // namespace gamemd
-
-// 0x6F2640
-namespace gamemd {
-int TeamTypeClass_28::FindItem(unsigned int * a2)
-{
-{
-    int v2;
-    int result;
-    int *i;
-    v2 = this->Count;
-    result = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = (int *)this->Items; *i != *a2 || i[1] != *((int*)(a2) + 1); i += 2 )
-  {
-    if ( ++result >= v2 )
-    return -1;
-  }
-    return result;
-}
-} // namespace gamemd
-
-// 0x6F2680
-namespace gamemd {
-VectorClass * TeamTypeClass_28::QueryInterface(char a2)
-{
-{
-    int v3;
-    v3 = *(this + 1);
-    *(void**)this = &vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z((void *)(v3 - 4));
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x6F2720
-namespace gamemd {
-DynamicVector * TeamTypeClass_28::Constructor(char a2)
-{
-{
-    int v3;
-    v3 = *(this + 1);
-    *(void**)this = &vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z((void *)(v3 - 4));
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -1571,6 +1392,25 @@ return 248;
 }
 } // namespace gamemd
 
+// 0x6F21B0
+namespace gamemd {
+void TeamTypeClass_28::ClearBuffer()
+{
+{
+    int v2;
+    v2 = this->TeamTypeClass_28_field_0x4;
+    this->TeamTypeClass_28_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z((void *)(v2 - 4));
+    this->TeamTypeClass_28_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->TeamTypeClass_28_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
 // 0x6F21F0
 namespace gamemd {
 unsigned int TeamTypeClass_28::PointerToIndex(int a2)
@@ -1584,6 +1424,101 @@ unsigned int TeamTypeClass_28::PointerToIndex(int a2)
 }
 } // namespace gamemd
 
+// 0x6F2210
+namespace gamemd {
+unsigned int * TeamTypeClass_28::Seek(unsigned int * a2, int a3)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    v3 = this->Items;
+    v4 = *(int *)(v3 + 8 * a3);
+    v5 = v3 + 8 * a3;
+    *a2 = v4;
+    *((int*)(a2) + 1) = *(int *)(v5 + 4);
+    return a2;
+}
+}
+} // namespace gamemd
+
+// 0x6F2290
+namespace gamemd {
+char TeamTypeClass_28::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    int *v5;
+    int *v6;
+    int v7;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = *(int *)(a2 + 4);
+    v5 = (int *)this->Items;
+    v6 = (int *)(v4 + 4);
+    v7 = v4 - (int)v5;
+    while ( *v5 == *(int *)((char *)(v5) + v7) && v5[1] == *v6 )
+    {
+    ++v3;
+    v6 += 2;
+    v5 += 2;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6F2400
+namespace gamemd {
+void TeamTypeClass_28::ddtor()
+{
+{
+    int v2;
+    v2 = this->TeamTypeClass_28_field_0x4;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z((void *)(v2 - 4));
+    this->TeamTypeClass_28_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->TeamTypeClass_28_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x6F2440
+namespace gamemd {
+int TeamTypeClass_28::Read(unsigned int * a2)
+{
+{
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->TeamTypeClass_28_field_0xC )
+    return 0;
+    v3 = this->TeamTypeClass_28_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2 || i[1] != *((int*)(a2) + 1); i += 2 )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x6F2490
 namespace gamemd {
 unsigned int TeamTypeClass_28::Write(int a2)
@@ -1593,6 +1528,71 @@ unsigned int TeamTypeClass_28::Write(int a2)
     return (unsigned int)(a2 - this->TeamTypeClass_28_field_0x4) >> 3;
     else
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6F2640
+namespace gamemd {
+int TeamTypeClass_28::FindItem(unsigned int * a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2 || i[1] != *((int*)(a2) + 1); i += 2 )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
+}
+} // namespace gamemd
+
+// 0x6F2680
+namespace gamemd {
+VectorClass * TeamTypeClass_28::QueryInterface(char a2)
+{
+{
+    int v3;
+    v3 = *(this + 1);
+    *(void**)this = &vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z((void *)(v3 - 4));
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
+}
+}
+} // namespace gamemd
+
+// 0x6F2720
+namespace gamemd {
+DynamicVector * TeamTypeClass_28::Constructor(char a2)
+{
+{
+    int v3;
+    v3 = *(this + 1);
+    *(void**)this = &vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z((void *)(v3 - 4));
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd

@@ -286,17 +286,6 @@ void __thiscall WWMouseClass::_vt05(_BYTE *this)
 }
 }
 
-// 0x7BA300
-MouseClass * WWMouseClass::updateHotspot(char a2)
-{
-{
-    *(void**)this = &vt_Mouse;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (MouseClass *)this;
-}
-}
-
 // 0x7BA330
 char WWMouseClass::checkCapture()
 {
@@ -349,5 +338,16 @@ int WWMouseClass::checkVisible()
 {
 {
     return this->showCursor();
+}
+}
+
+// 0x7BA300
+MouseClass * WWMouseClass::updateHotspot(char a2)
+{
+{
+    *(void**)this = &vt_Mouse;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (MouseClass *)this;
 }
 }

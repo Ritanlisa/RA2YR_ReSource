@@ -2,20 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x4399E0
-namespace gamemd {
-float * VoxelAnimClass::QuaternionToMatrix(float * a2)
-{
-{
-    float *v2;
-    float v4[12];
-    v2 = ToQuaternionMatrix(v4, this + 12);
-    qmemcpy(a2, v2, 0x30u);
-    return a2;
-}
-}
-} // namespace gamemd
-
 // 0x4CAF20
 namespace gamemd {
 unsigned int VoxelAnimClass::ProcessFrame()
@@ -368,7 +354,7 @@ LABEL_6:
 
 // 0x749F30
 namespace gamemd {
-int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
+int VoxelAnimClass_Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -459,19 +445,6 @@ int __thiscall VoxelAnimClass::_vt34(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x74AB50
-namespace gamemd {
-VoxelAnimClass * VoxelAnimClass::DrawVoxel(char a2)
-{
-{
-    VoxelAnimClass::CleanupMembers(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VoxelAnimClass *)this;
-}
-}
-} // namespace gamemd
-
 // 0x75AA90
 namespace gamemd {
 int VoxelAnimClass::Reset()
@@ -556,6 +529,20 @@ int __thiscall sub_75EBE0(int this)
 }
 } // namespace gamemd
 
+// 0x4399E0
+namespace gamemd {
+float * VoxelAnimClass::QuaternionToMatrix(float * a2)
+{
+{
+    float *v2;
+    float v4[12];
+    v2 = ToQuaternionMatrix(v4, this + 12);
+    qmemcpy(a2, v2, 0x30u);
+    return a2;
+}
+}
+} // namespace gamemd
+
 // 0x74A960
 namespace gamemd {
 int VoxelAnimClass::StubReturn3()
@@ -609,5 +596,18 @@ namespace gamemd {
 int VoxelAnimClass::StubReturnFalse(int a1)
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x74AB50
+namespace gamemd {
+VoxelAnimClass * VoxelAnimClass::DrawVoxel(char a2)
+{
+{
+    VoxelAnimClass::CleanupMembers(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VoxelAnimClass *)this;
+}
 }
 } // namespace gamemd

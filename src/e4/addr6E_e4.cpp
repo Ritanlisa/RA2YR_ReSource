@@ -5,10 +5,12 @@
 #include "e4/classes/E4Recv_6E0250_e4.hpp"
 #include "e4/classes/E4Recv_6E0270_e4.hpp"
 #include "e4/classes/E4Recv_6E0290_e4.hpp"
+#include "e4/classes/E4Recv_6E0490_e4.hpp"
 #include "e4/classes/E4Recv_6E0790_e4.hpp"
 #include "e4/classes/E4Recv_6E07F0_e4.hpp"
 #include "e4/classes/E4Recv_6E0850_e4.hpp"
 #include "e4/classes/E4Recv_6E1180_e4.hpp"
+#include "e4/classes/E4Recv_6E14A0_e4.hpp"
 #include "e4/classes/E4Recv_6E2790_e4.hpp"
 #include "e4/classes/E4Recv_6E2A50_e4.hpp"
 #include "e4/classes/E4Recv_6E3380_e4.hpp"
@@ -16,11 +18,14 @@
 #include "e4/classes/E4Recv_6E37F0_e4.hpp"
 #include "e4/classes/E4Recv_6E3F70_e4.hpp"
 #include "e4/classes/E4Recv_6E5290_e4.hpp"
+#include "e4/classes/E4Recv_6E5FE0_e4.hpp"
 #include "e4/classes/E4Recv_6E6B70_e4.hpp"
 #include "e4/classes/E4Recv_6E8000_e4.hpp"
 #include "e4/classes/E4Recv_6E85B0_e4.hpp"
 #include "e4/classes/E4Recv_6EA080_e4.hpp"
+#include "e4/classes/E4Recv_6EA0D0_e4.hpp"
 #include "e4/classes/E4Recv_6EC370_e4.hpp"
+#include "e4/classes/E4Recv_6ED200_e4.hpp"
 #include "e4/classes/E4Recv_6EDDC0_e4.hpp"
 #include "e4/classes/E4Recv_6EDE80_e4.hpp"
 #include "e4/classes/E4Recv_6EDF10_e4.hpp"
@@ -28,7 +33,9 @@
 #include "e4/classes/E4Recv_6EDFB0_e4.hpp"
 #include "e4/classes/E4Recv_6EDFD0_e4.hpp"
 #include "e4/classes/E4Recv_6EE050_e4.hpp"
+#include "e4/classes/E4Recv_6EE800_e4.hpp"
 #include "e4/classes/E4Recv_6EF450_e4.hpp"
+#include "e4/classes/E4Recv_6EF700_e4.hpp"
 #include "e4/classes/E4Recv_6EFC70_e4.hpp"
 #include "e4/classes/Tactical_42_e4.hpp"
 
@@ -73,7 +80,7 @@ char __thiscall sub_6E0290(_BYTE *this, int a2, int a3, int a4, int a5)
 
 // 0x6E2050
 namespace gamemd {
-int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
+int globalHelper_0E2050()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -110,7 +117,7 @@ char __thiscall sub_6E2790(int *this, int a2, int a3, int a4, int a5)
 
 // 0x6E30C0
 namespace gamemd {
-int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
+int CreateHouseClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -139,33 +146,6 @@ char __thiscall sub_6E3380(int *this, int a2, int a3, int a4, int a5)
   if ( v5 ) /*0x6e33e3*/
     ActionQueue::PushEntry(v5, v8, v9, GroundHeight); /*0x6e3400*/
   return 1; /*0x6e3407*/
-}
-}
-} // namespace gamemd
-
-// 0x6E35F0
-namespace gamemd {
-char E4Recv_6E35F0::sub_6E35F0(void * a2, int a3, int a4, int a5)
-{
-{
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int GroundHeight;
-    v6 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, this->M68);
-    GroundHeight = 0;
-    v9 = (SHIWORD(v6) << 8) + 128;
-    v8 = ((short)v6 << 8) + 128;
-    GroundHeight = Cell::GetGroundHeight(&v8);
-    if ( (*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v6) + 80) & 0x100) != 0 )
-    GroundHeight += DataGlobal_B0E6D4;
-    LOWORD(v7) = v8 / 256;
-    HIWORD(v7) = v9 / 256;
-    if ( LightningStorm::IsActive() )
-    return 0;
-    LightningStorm::Start(HIDWORD(g_RulesClass_Instance[1].?), *(int *)&g_RulesClass_Instance[1].?[4], v7, a2);
-    return 1;
 }
 }
 } // namespace gamemd
@@ -245,40 +225,6 @@ char __stdcall sub_6E4090(int a1, int a2, int a3, int a4)
 }
 } // namespace gamemd
 
-// 0x6E4B00
-namespace gamemd {
-unsigned int * Tactical_42::loc_6E4B00(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_TActionClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x6E6B70
-namespace gamemd {
-unsigned char * E4Recv_6E6B70::sub_6E6B70(unsigned int * a2)
-{
-{
-    this->M4 = 11;
-    *(int *)this = *a2 / 256 + 1000 * (*((int*)(a2) + 1) / 256);
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x6E8000
 namespace gamemd {
 unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
@@ -335,28 +281,6 @@ _DWORD *__thiscall sub_6E8000(_DWORD *this, int a2)
 }
 } // namespace gamemd
 
-// 0x6EA080
-namespace gamemd {
-char E4Recv_6EA080::sub_6EA080()
-{
-{
-    int v2;
-    char result;
-    v2 = this->M84;
-    this->M127 = 1;
-    this->M120 = 1;
-    for ( this->M122 = 0; v2; v2 = *(int *)(v2 + 1496) )
-  {
-    if ( (unsigned char)this->M123 || (unsigned char)this->M119 )
-    *(char *)(v2 + 1673) = 1;
-  }
-    result = SetLandTypeMap(*(int **)(this + 40));
-    this->M128 = 1;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6EC250
 namespace gamemd {
 int sub_6EC250(int a1, int a2)
@@ -392,82 +316,6 @@ int __fastcall sub_6EC250(int a1, int a2)
     result = MEMORY[0x8B40F8]; /*0x6ec2e8*/
   }
   return result; /*0x6ec2f9*/
-}
-}
-} // namespace gamemd
-
-// 0x6EDDC0
-namespace gamemd {
-int E4Recv_6EDDC0::sub_6EDDC0(int a2, int a3)
-{
-{
-    int *v4;
-    int result;
-    v4 = *(int **)(this + 84);
-    if ( v4 )
-  {
-    do
-    {
-    result = (*(int (__thiscall **)(int *, int))(*v4 + 1312))(v4, *(int *)(a2 + 4));
-    v4 = (int *)v4[374];
-    }
-    while ( v4 );
-    this->M128 = 1;
-  }
-    else
-  {
-    this->M128 = 1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x6EDF10
-namespace gamemd {
-void E4Recv_6EDF10::sub_6EDF10(int a2, int a3)
-{
-{
-    int *i;
-    int *v5;
-    int v6;
-    int v7;
-    char v8[12];
-    for ( i = *(int **)(this + 84); i; i = (int *)i[374] )
-  {
-    v5 = (int *)(*(int (__thiscall **)(int *, char *))(*i + 72))(i, v8);
-    LOWORD(v6) = *v5 / 256;
-    HIWORD(v6) = v5[1] / 256;
-    v7 = v6;
-    MapClass::TriggerEVA((short *)&v7);
-  }
-    this->M128 = 1;
-}
-}
-} // namespace gamemd
-
-// 0x6EDF90
-namespace gamemd {
-char E4Recv_6EDF90::sub_6EDF90(int a2, int a3)
-{
-{
-    *(char *)(this->M44 + 494) = 1;
-    this->M128 = 1;
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x6EDFB0
-namespace gamemd {
-int E4Recv_6EDFB0::sub_6EDFB0(int a2, int a3)
-{
-{
-    int result;
-    result = this->M44;
-    *(int *)(result + 592) = 4;
-    this->M128 = 1;
-    return result;
 }
 }
 } // namespace gamemd
@@ -511,36 +359,6 @@ void __thiscall sub_6EDFD0(int this, int a2, int a3)
   }
   while ( v5 ); /*0x6ee038*/
   *(_BYTE *)(this + 128) = 1; /*0x6ee03a*/
-}
-}
-} // namespace gamemd
-
-// 0x6EE050
-namespace gamemd {
-int E4Recv_6EE050::sub_6EE050(int a2, int a3)
-{
-{
-    int *v4;
-    int *v5;
-    int result;
-    v4 = *(int **)(this + 84);
-    if ( v4 )
-  {
-    do
-    {
-    v5 = (int *)v4[374];
-    (*(void (__thiscall **)(int *))(*v4 + 212))(v4);
-    result = (*(int (__thiscall **)(int *))(*v4 + 248))(v4);
-    v4 = v5;
-    }
-    while ( v5 );
-    this->M128 = 1;
-  }
-    else
-  {
-    this->M128 = 1;
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -1026,6 +844,33 @@ char globalHelper_0E2C20(int a1, int a2, int a3, IUnknown * aP3)
 }
 } // namespace gamemd
 
+// 0x6E35F0
+namespace gamemd {
+char E4Recv_6E35F0::sub_6E35F0(void * a2, int a3, int a4, int a5)
+{
+{
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int GroundHeight;
+    v6 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, this->M68);
+    GroundHeight = 0;
+    v9 = (SHIWORD(v6) << 8) + 128;
+    v8 = ((short)v6 << 8) + 128;
+    GroundHeight = Cell::GetGroundHeight(&v8);
+    if ( (*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v6) + 80) & 0x100) != 0 )
+    GroundHeight += DataGlobal_B0E6D4;
+    LOWORD(v7) = v8 / 256;
+    HIWORD(v7) = v9 / 256;
+    if ( LightningStorm::IsActive() )
+    return 0;
+    LightningStorm::Start(HIDWORD(g_RulesClass_Instance[1].?), *(int *)&g_RulesClass_Instance[1].?[4], v7, a2);
+    return 1;
+}
+}
+} // namespace gamemd
+
 // 0x6E3F70
 namespace gamemd {
 unsigned int * E4Recv_6E3F70::sub_6E3F70(unsigned int * a2)
@@ -1077,6 +922,28 @@ char globalHelper_0E4540(unsigned int * a0, int a2, int a3, IUnknown * aP3)
     return 0;
     GlobalHelper_0E4540_Helper(a0);
     return 1;
+}
+}
+} // namespace gamemd
+
+// 0x6E4B00
+namespace gamemd {
+unsigned int * Tactical_42::loc_6E4B00(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_TActionClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 } // namespace gamemd
@@ -1682,6 +1549,18 @@ void sub_6E6A80()
 }
 } // namespace gamemd
 
+// 0x6E6B70
+namespace gamemd {
+unsigned char * E4Recv_6E6B70::sub_6E6B70(unsigned int * a2)
+{
+{
+    this->M4 = 11;
+    *(int *)this = *a2 / 256 + 1000 * (*((int*)(a2) + 1) / 256);
+    return this;
+}
+}
+} // namespace gamemd
+
 // 0x6E7C70
 namespace gamemd {
 void sub_6E7C70()
@@ -2025,6 +1904,28 @@ int sub_6E8A70()
 }
 } // namespace gamemd
 
+// 0x6EA080
+namespace gamemd {
+char E4Recv_6EA080::sub_6EA080()
+{
+{
+    int v2;
+    char result;
+    v2 = this->M84;
+    this->M127 = 1;
+    this->M120 = 1;
+    for ( this->M122 = 0; v2; v2 = *(int *)(v2 + 1496) )
+  {
+    if ( (unsigned char)this->M123 || (unsigned char)this->M119 )
+    *(char *)(v2 + 1673) = 1;
+  }
+    result = SetLandTypeMap(*(int **)(this + 40));
+    this->M128 = 1;
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x6EC370
 namespace gamemd {
 char E4Recv_6EC370::sub_6EC370()
@@ -2049,12 +1950,118 @@ char E4Recv_6EC370::sub_6EC370()
 }
 } // namespace gamemd
 
+// 0x6EDDC0
+namespace gamemd {
+int E4Recv_6EDDC0::sub_6EDDC0(int a2, int a3)
+{
+{
+    int *v4;
+    int result;
+    v4 = *(int **)(this + 84);
+    if ( v4 )
+  {
+    do
+    {
+    result = (*(int (__thiscall **)(int *, int))(*v4 + 1312))(v4, *(int *)(a2 + 4));
+    v4 = (int *)v4[374];
+    }
+    while ( v4 );
+    this->M128 = 1;
+  }
+    else
+  {
+    this->M128 = 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x6EDE80
 namespace gamemd {
 void E4Recv_6EDE80::sub_6EDE80(int a2, int a3)
 {
 {
     this->M128 = 1;
+}
+}
+} // namespace gamemd
+
+// 0x6EDF10
+namespace gamemd {
+void E4Recv_6EDF10::sub_6EDF10(int a2, int a3)
+{
+{
+    int *i;
+    int *v5;
+    int v6;
+    int v7;
+    char v8[12];
+    for ( i = *(int **)(this + 84); i; i = (int *)i[374] )
+  {
+    v5 = (int *)(*(int (__thiscall **)(int *, char *))(*i + 72))(i, v8);
+    LOWORD(v6) = *v5 / 256;
+    HIWORD(v6) = v5[1] / 256;
+    v7 = v6;
+    MapClass::TriggerEVA((short *)&v7);
+  }
+    this->M128 = 1;
+}
+}
+} // namespace gamemd
+
+// 0x6EDF90
+namespace gamemd {
+char E4Recv_6EDF90::sub_6EDF90(int a2, int a3)
+{
+{
+    *(char *)(this->M44 + 494) = 1;
+    this->M128 = 1;
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x6EDFB0
+namespace gamemd {
+int E4Recv_6EDFB0::sub_6EDFB0(int a2, int a3)
+{
+{
+    int result;
+    result = this->M44;
+    *(int *)(result + 592) = 4;
+    this->M128 = 1;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x6EE050
+namespace gamemd {
+int E4Recv_6EE050::sub_6EE050(int a2, int a3)
+{
+{
+    int *v4;
+    int *v5;
+    int result;
+    v4 = *(int **)(this + 84);
+    if ( v4 )
+  {
+    do
+    {
+    v5 = (int *)v4[374];
+    (*(void (__thiscall **)(int *))(*v4 + 212))(v4);
+    result = (*(int (__thiscall **)(int *))(*v4 + 248))(v4);
+    v4 = v5;
+    }
+    while ( v5 );
+    this->M128 = 1;
+  }
+    else
+  {
+    this->M128 = 1;
+  }
+    return result;
 }
 }
 } // namespace gamemd

@@ -2,34 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x55A730
-float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
-{
-{
-    signed int v3;
-    int *v4;
-    float *result;
-    float v6;
-    int v7;
-    float v8[12];
-    Matrix3x4::Identity(v8);
-    v3 = a1;
-    a1 = (((unsigned int)((*ProgressTimer::GetValue((short *)(*(int *)(a1 + 8) + 904), &v7) >> 10) + 1) >> 1) & 0x1F)
-    - 8;
-    v6 = (double)a1 * -0.1963495408493621;
-    Matrix2D::Rotate(v8, v6);
-    v4 = a3;
-    if ( a3 && *a3 != -1 )
-  {
-    *a3 *= 32;
-    *v4 |= ((unsigned int)((*ProgressTimer::GetValue((short *)(*(int *)(v3 + 8) + 904), &a1) >> 10) + 1) >> 1) & 0x1F;
-  }
-    result = a2;
-    qmemcpy(a2, v8, 0x30u);
-    return result;
-}
-}
-
 // 0x5F8CE0
 char Turret::LoadVoxelTurretAndBarrel()
 {
@@ -176,5 +148,33 @@ char __thiscall LoadVoxelTurretAndBarrel(void *this)
     }
   }
   return v2; /*0x5f9059*/
+}
+}
+
+// 0x55A730
+float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
+{
+{
+    signed int v3;
+    int *v4;
+    float *result;
+    float v6;
+    int v7;
+    float v8[12];
+    Matrix3x4::Identity(v8);
+    v3 = a1;
+    a1 = (((unsigned int)((*ProgressTimer::GetValue((short *)(*(int *)(a1 + 8) + 904), &v7) >> 10) + 1) >> 1) & 0x1F)
+    - 8;
+    v6 = (double)a1 * -0.1963495408493621;
+    Matrix2D::Rotate(v8, v6);
+    v4 = a3;
+    if ( a3 && *a3 != -1 )
+  {
+    *a3 *= 32;
+    *v4 |= ((unsigned int)((*ProgressTimer::GetValue((short *)(*(int *)(v3 + 8) + 904), &a1) >> 10) + 1) >> 1) & 0x1F;
+  }
+    result = a2;
+    qmemcpy(a2, v8, 0x30u);
+    return result;
 }
 }

@@ -608,6 +608,7 @@ DropPodLocomotionClass::DropPodLocomotionClass(noinit_t) noexcept : LocomotionCl
 // Formerly misnamed Locomotor::GetSpeed (fabricated class). Reads
 // {StartTime@0, pad@4, TimeLeft@8}; returns frames left, or TimeLeft
 // itself when not started (StartTime == -1).
+// 0x426630
 int CDTimerClass::TimeRemaining()
 {
     int result = TimeLeft;
@@ -625,6 +626,7 @@ int CDTimerClass::TimeRemaining()
 // already elapsed, then adopts the new desired facing and restarts the
 // rotation timer. Word widths follow the original (DirStruct low word holds
 // the facing value).
+// 0x4C9220
 int FacingClass::Update(unsigned int* a1)
 {
     unsigned short v2 = (unsigned short)DesiredFacing;
@@ -690,6 +692,7 @@ int FacingClass::Update(unsigned int* a1)
 // FacingClass - network-sync variant (0x4c9300): step the displayed facing by
 // the elapsed fraction, then either accept the desired facing immediately
 // (timer zeroed, returns 0 when already in place) or snap both facings to it.
+// 0x4C9300
 int FacingClass::Set_SyncLog(unsigned int* a1)
 {
     unsigned int v11 = DesiredFacing;

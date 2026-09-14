@@ -550,62 +550,6 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
 }
 }
 
-// 0x524790
-int InfantryTypeClass::GetGameplayValue()
-{
-{
-    return g_RulesClass_Instance[1].?;
-}
-}
-
-// 0x524840
-int InfantryTypeClass::PowerDrainUpdate(int * a2)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    int v11;
-    int v12;
-    int v13;
-    BuildingTypeClass::ProcessPower(this, a2);
-    Power::TimerProcess(this->Pip);
-    Checksummer::Add_Buffer((unsigned int *)a2, *(unsigned char **)(this + 3644), 1512);
-    Power::TimerProcess(this->FireUp);
-    Power::TimerProcess(this->FireProne);
-    Power::TimerProcess(this->VoiceComment.Count);
-    Power::TimerProcess(this->DeadBodies.Count);
-    Power::TimerProcess(this->DeathAnims.Count);
-    LOBYTE(v3) = this->Fearless;
-    Power::FlagProcess(a2, v3);
-    LOBYTE(v4) = this->Crawls;
-    v5 = Power::FlagProcess(a2, v4);
-    LOBYTE(v5) = this->Infiltrate;
-    Power::FlagProcess(a2, v5);
-    LOBYTE(v6) = this->Fraidycat;
-    Power::FlagProcess(a2, v6);
-    LOBYTE(v7) = this->TiberiumProof;
-    v8 = Power::FlagProcess(a2, v7);
-    LOBYTE(v8) = this->Civilian;
-    Power::FlagProcess(a2, v8);
-    LOBYTE(v9) = this->C4;
-    Power::FlagProcess(a2, v9);
-    LOBYTE(v10) = this->Engineer;
-    v11 = Power::FlagProcess(a2, v10);
-    LOBYTE(v11) = this->Agent;
-    Power::FlagProcess(a2, v11);
-    LOBYTE(v12) = this->Thief;
-    Power::FlagProcess(a2, v12);
-    LOBYTE(v13) = this->VehicleThief;
-    return Power::FlagProcess(a2, v13);
-}
-}
-
 // 0x524960
 namespace gamemd {
 int InfantryTypeClass_LoadTypeData()
@@ -917,6 +861,14 @@ unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
 }
 }
 
+// 0x524790
+int InfantryTypeClass::GetGameplayValue()
+{
+{
+    return g_RulesClass_Instance[1].?;
+}
+}
+
 // 0x5247A0
 int InfantryTypeClass::StubReturnFalse()
 {
@@ -943,6 +895,54 @@ unsigned int * InfantryTypeClass::ClampToGroundHeight(unsigned int * a1, int * a
     *((int*)(a1) + 1) = v6;
     *((int*)(a1) + 2) = v3;
     return a1;
+}
+}
+
+// 0x524840
+int InfantryTypeClass::PowerDrainUpdate(int * a2)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    BuildingTypeClass::ProcessPower(this, a2);
+    Power::TimerProcess(this->Pip);
+    Checksummer::Add_Buffer((unsigned int *)a2, *(unsigned char **)(this + 3644), 1512);
+    Power::TimerProcess(this->FireUp);
+    Power::TimerProcess(this->FireProne);
+    Power::TimerProcess(this->VoiceComment.Count);
+    Power::TimerProcess(this->DeadBodies.Count);
+    Power::TimerProcess(this->DeathAnims.Count);
+    LOBYTE(v3) = this->Fearless;
+    Power::FlagProcess(a2, v3);
+    LOBYTE(v4) = this->Crawls;
+    v5 = Power::FlagProcess(a2, v4);
+    LOBYTE(v5) = this->Infiltrate;
+    Power::FlagProcess(a2, v5);
+    LOBYTE(v6) = this->Fraidycat;
+    Power::FlagProcess(a2, v6);
+    LOBYTE(v7) = this->TiberiumProof;
+    v8 = Power::FlagProcess(a2, v7);
+    LOBYTE(v8) = this->Civilian;
+    Power::FlagProcess(a2, v8);
+    LOBYTE(v9) = this->C4;
+    Power::FlagProcess(a2, v9);
+    LOBYTE(v10) = this->Engineer;
+    v11 = Power::FlagProcess(a2, v10);
+    LOBYTE(v11) = this->Agent;
+    Power::FlagProcess(a2, v11);
+    LOBYTE(v12) = this->Thief;
+    Power::FlagProcess(a2, v12);
+    LOBYTE(v13) = this->VehicleThief;
+    return Power::FlagProcess(a2, v13);
 }
 }
 

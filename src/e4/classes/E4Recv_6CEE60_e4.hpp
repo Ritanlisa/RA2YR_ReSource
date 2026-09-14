@@ -1,0 +1,9 @@
+// E2 minimal declaration (auto-generated, full layout via member_lookup/til)
+#pragma once
+
+namespace gamemd {
+struct E4Recv_6CEE60 {
+    void* vfptr;  // minimal E2 declaration
+    int ObjectTypeClass_Read();  // 0x6CEE60
+};
+} // namespace gamemd

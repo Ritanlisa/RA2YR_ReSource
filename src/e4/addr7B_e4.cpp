@@ -1400,105 +1400,6 @@ int __thiscall sub_7BC580(int *this, ObjectClass *aP1, double a3)
 }
 } // namespace gamemd
 
-// 0x7BC640
-namespace gamemd {
-BlitPlain * E4Recv_7BC640::___Gfacet_locale_std__UAEPAXI_Z_148(char a2)
-{
-{
-    *(void**)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitPlain *)this;
-}
-}
-} // namespace gamemd
-
-// 0x7BC660
-namespace gamemd {
-BlitPlain * E4Recv_7BC660::___Gfacet_locale_std__UAEPAXI_Z_149(char a2)
-{
-{
-    *(void**)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitPlain *)this;
-}
-}
-} // namespace gamemd
-
-// 0x7BC680
-namespace gamemd {
-BlitTrans * E4Recv_7BC680::___Gfacet_locale_std__UAEPAXI_Z_150(char a2)
-{
-{
-    *(void**)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitTrans *)this;
-}
-}
-} // namespace gamemd
-
-// 0x7BC6A0
-namespace gamemd {
-BlitTrans * E4Recv_7BC6A0::___Gfacet_locale_std__UAEPAXI_Z_151(char a2)
-{
-{
-    *(void**)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitTrans *)this;
-}
-}
-} // namespace gamemd
-
-// 0x7BCA50
-namespace gamemd {
-int E4Recv_7BCA50::sub_7BCA50(int a2, int a3, int a4, int a5, int a6)
-{
-{
-    short *v8;
-    short *v9;
-    int v10;
-    int v11;
-    int v12;
-    int v13;
-    short v14;
-    int v16;
-    v8 = (short *)(*(int (__thiscall **)(int, int, int))(*(int *)(a2) + 92))(a2, a3, a4);
-    v9 = (short *)(this->M16 + this->M24);
-    v10 = (*(int (__thiscall **)(int))(*(int *)(a2) + 116))(a2);
-    v11 = a5;
-    v12 = v10 / 2 - a5;
-    if ( v8 && a6 > 0 )
-  {
-    v16 = a6;
-    do
-    {
-    if ( v11 > 0 )
-      {
-    v13 = v11;
-    do
-        {
-    v14 = *v9++;
-    *v8++ = v14;
-    if ( (unsigned int)v9 >= this->M28 )
-    v9 = (short *)((char *)v9 - this->M32);
-    --v13;
-        }
-    while ( v13 );
-    v11 = a5;
-      }
-    v8 += v12;
-    --v16;
-    }
-    while ( v16 );
-  }
-    return (*(int (__thiscall **)(int))(*(int *)(a2) + 96))(a2);
-}
-}
-} // namespace gamemd
-
 // 0x7BD470
 namespace gamemd {
 int sub_7BD470(int a1)
@@ -1668,89 +1569,6 @@ char __thiscall sub_7BEFE0(int this)
     }
   }
   return v3; /*0x7bf0a7*/
-}
-}
-} // namespace gamemd
-
-// 0x7BF0B0
-namespace gamemd {
-int E4Recv_7BF0B0::sub_7BF0B0()
-{
-{
-    int *v2;
-    void (__cdecl *v3)(int *, int, int, int);
-    int v4;
-    void (__cdecl *v5)(int *, int, int *, int);
-    int (__cdecl *v6)(int *, int);
-    v2 = (int *)this->M1756;
-    if ( (v2[5] & 4) != 0 || ((unsigned char)this->M105 & 1) != 0 )
-  {
-    if ( (v2[5] & 4) != 0 )
-    {
-    v3 = (void (__cdecl *)(int *, int, int, int))this->M72;
-    if ( v3 )
-    v3(this, 2, v2[2], v2[10]);
-    }
-    else
-    {
-    v4 = this->M420;
-    if ( (v4 & 1) != 0 )
-      {
-    LOBYTE(v4) = v4 & 0xFE;
-    this->M420 = v4;
-    v5 = (void (__cdecl *)(int *, int, int *, int))this->M72;
-    if ( v5 )
-    v5(this, 2, this + 113, this->M448);
-      }
-    }
-  }
-    sub_7BE940((int)this, v2);
-    v6 = (int (__cdecl *)(int *, int))this->M76;
-    if ( v6 && v6(this, v2[7]) )
-    return -2;
-    else
-    return -1;
-}
-}
-} // namespace gamemd
-
-// 0x7BF190
-namespace gamemd {
-int E4Recv_7BF190::sub_7BF190()
-{
-{
-    int *v2;
-    void (__cdecl *v3)(int *, int, int, int);
-    int v4;
-    void (__cdecl *v5)(int *, int, int *, int);
-    int (__cdecl *v6)(int *, int);
-    v2 = (int *)this->M1756;
-    if ( (v2[5] & 4) != 0 || ((unsigned char)this->M105 & 1) != 0 )
-  {
-    if ( (v2[5] & 4) != 0 )
-    {
-    v3 = (void (__cdecl *)(int *, int, int, int))this->M72;
-    if ( v3 )
-    v3(this, 2, v2[2], v2[10]);
-    }
-    else
-    {
-    v4 = this->M420;
-    if ( (v4 & 1) != 0 )
-      {
-    LOBYTE(v4) = v4 & 0xFE;
-    this->M420 = v4;
-    v5 = (void (__cdecl *)(int *, int, int *, int))this->M72;
-    if ( v5 )
-    v5(this, 2, this + 113, this->M448);
-      }
-    }
-  }
-    v6 = (int (__cdecl *)(int *, int))this->M76;
-    if ( v6 && v6(this, v2[7]) )
-    return -2;
-    else
-    return -1;
 }
 }
 } // namespace gamemd
@@ -3517,6 +3335,58 @@ void sub_7BC610(int a1, char * a2, int a3, int a4, int a5, int a6, int a7, int a
 }
 } // namespace gamemd
 
+// 0x7BC640
+namespace gamemd {
+BlitPlain * E4Recv_7BC640::___Gfacet_locale_std__UAEPAXI_Z_148(char a2)
+{
+{
+    *(void**)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitPlain *)this;
+}
+}
+} // namespace gamemd
+
+// 0x7BC660
+namespace gamemd {
+BlitPlain * E4Recv_7BC660::___Gfacet_locale_std__UAEPAXI_Z_149(char a2)
+{
+{
+    *(void**)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitPlain *)this;
+}
+}
+} // namespace gamemd
+
+// 0x7BC680
+namespace gamemd {
+BlitTrans * E4Recv_7BC680::___Gfacet_locale_std__UAEPAXI_Z_150(char a2)
+{
+{
+    *(void**)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTrans *)this;
+}
+}
+} // namespace gamemd
+
+// 0x7BC6A0
+namespace gamemd {
+BlitTrans * E4Recv_7BC6A0::___Gfacet_locale_std__UAEPAXI_Z_151(char a2)
+{
+{
+    *(void**)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTrans *)this;
+}
+}
+} // namespace gamemd
+
 // 0x7BC6C0
 namespace gamemd {
 int E4Recv_7BC6C0::sub_7BC6C0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -3701,6 +3571,53 @@ int sub_7BC950()
 }
 } // namespace gamemd
 
+// 0x7BCA50
+namespace gamemd {
+int E4Recv_7BCA50::sub_7BCA50(int a2, int a3, int a4, int a5, int a6)
+{
+{
+    short *v8;
+    short *v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    short v14;
+    int v16;
+    v8 = (short *)(*(int (__thiscall **)(int, int, int))(*(int *)(a2) + 92))(a2, a3, a4);
+    v9 = (short *)(this->M16 + this->M24);
+    v10 = (*(int (__thiscall **)(int))(*(int *)(a2) + 116))(a2);
+    v11 = a5;
+    v12 = v10 / 2 - a5;
+    if ( v8 && a6 > 0 )
+  {
+    v16 = a6;
+    do
+    {
+    if ( v11 > 0 )
+      {
+    v13 = v11;
+    do
+        {
+    v14 = *v9++;
+    *v8++ = v14;
+    if ( (unsigned int)v9 >= this->M28 )
+    v9 = (short *)((char *)v9 - this->M32);
+    --v13;
+        }
+    while ( v13 );
+    v11 = a5;
+      }
+    v8 += v12;
+    --v16;
+    }
+    while ( v16 );
+  }
+    return (*(int (__thiscall **)(int))(*(int *)(a2) + 96))(a2);
+}
+}
+} // namespace gamemd
+
 // 0x7BCAF0
 namespace gamemd {
 char * sub_7BCAF0(char * a1, int a2, unsigned short a3)
@@ -3865,6 +3782,48 @@ int E4Recv_7BEA40::sub_7BEA40()
 }
 } // namespace gamemd
 
+// 0x7BF0B0
+namespace gamemd {
+int E4Recv_7BF0B0::sub_7BF0B0()
+{
+{
+    int *v2;
+    void (__cdecl *v3)(int *, int, int, int);
+    int v4;
+    void (__cdecl *v5)(int *, int, int *, int);
+    int (__cdecl *v6)(int *, int);
+    v2 = (int *)this->M1756;
+    if ( (v2[5] & 4) != 0 || ((unsigned char)this->M105 & 1) != 0 )
+  {
+    if ( (v2[5] & 4) != 0 )
+    {
+    v3 = (void (__cdecl *)(int *, int, int, int))this->M72;
+    if ( v3 )
+    v3(this, 2, v2[2], v2[10]);
+    }
+    else
+    {
+    v4 = this->M420;
+    if ( (v4 & 1) != 0 )
+      {
+    LOBYTE(v4) = v4 & 0xFE;
+    this->M420 = v4;
+    v5 = (void (__cdecl *)(int *, int, int *, int))this->M72;
+    if ( v5 )
+    v5(this, 2, this + 113, this->M448);
+      }
+    }
+  }
+    sub_7BE940((int)this, v2);
+    v6 = (int (__cdecl *)(int *, int))this->M76;
+    if ( v6 && v6(this, v2[7]) )
+    return -2;
+    else
+    return -1;
+}
+}
+} // namespace gamemd
+
 // 0x7BF140
 namespace gamemd {
 int E4Recv_7BF140::sub_7BF140()
@@ -3884,6 +3843,47 @@ int E4Recv_7BF140::sub_7BF140()
     return -1;
   }
     return result;
+}
+}
+} // namespace gamemd
+
+// 0x7BF190
+namespace gamemd {
+int E4Recv_7BF190::sub_7BF190()
+{
+{
+    int *v2;
+    void (__cdecl *v3)(int *, int, int, int);
+    int v4;
+    void (__cdecl *v5)(int *, int, int *, int);
+    int (__cdecl *v6)(int *, int);
+    v2 = (int *)this->M1756;
+    if ( (v2[5] & 4) != 0 || ((unsigned char)this->M105 & 1) != 0 )
+  {
+    if ( (v2[5] & 4) != 0 )
+    {
+    v3 = (void (__cdecl *)(int *, int, int, int))this->M72;
+    if ( v3 )
+    v3(this, 2, v2[2], v2[10]);
+    }
+    else
+    {
+    v4 = this->M420;
+    if ( (v4 & 1) != 0 )
+      {
+    LOBYTE(v4) = v4 & 0xFE;
+    this->M420 = v4;
+    v5 = (void (__cdecl *)(int *, int, int *, int))this->M72;
+    if ( v5 )
+    v5(this, 2, this + 113, this->M448);
+      }
+    }
+  }
+    v6 = (int (__cdecl *)(int *, int))this->M76;
+    if ( v6 && v6(this, v2[7]) )
+    return -2;
+    else
+    return -1;
 }
 }
 } // namespace gamemd

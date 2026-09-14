@@ -75,20 +75,6 @@ _DWORD *__thiscall sub_438300(_DWORD *this, int a2, int a3)
 }
 } // namespace gamemd
 
-// 0x4AECA0
-namespace gamemd {
-int * GameClass::initDisplay(char a2)
-{
-{
-    Vector::Clear((int)(this + 3));
-    Pipe::Dtor((int *)this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (int *)this;
-}
-}
-} // namespace gamemd
-
 // 0x5D2260
 namespace gamemd {
 int GameClass::loadScenarioFiles(ObjectClass * aP1)
@@ -264,30 +250,6 @@ LABEL_8:
 }
 } // namespace gamemd
 
-// 0x5E8AE0
-namespace gamemd {
-void GameClass::InitDifficultyButtons()
-{
-{
-    signed int v0;
-    if ( g_GameMode_Current[0] == 4 )
-  {
-    if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() )
-    v0 = 6;
-    else
-    v0 = 2;
-  }
-    else
-  {
-    v0 = 8;
-  }
-    memset32(&g_NetworkPlayerName, g_HouseClass_ObserverFlags, v0);
-    if ( v0 < 8 )
-    memset32((void *)(4 * v0 + 11066000), g_Lobby_PlayerCount, 8 - v0);
-}
-}
-} // namespace gamemd
-
 // 0x631D30
 namespace gamemd {
 int GameClass::GetRelatedObject()
@@ -384,31 +346,6 @@ Pipe *__thiscall GameClass::WriteEncryptedStream(int this, BombClass *Src, signe
 }
 } // namespace gamemd
 
-// 0x632FF0
-namespace gamemd {
-PKPipe * GameClass::validateGameFile(char a2)
-{
-{
-    int *v3;
-    Pipe *v4;
-    v3 = (int *)*(this + 8);
-    v4 = (Pipe *)(this + 5);
-    *(this + 5) = &vt_BlowPipe;
-    if ( v3 )
-  {
-    COMObject::Release(v3);
-    __3_YAXPAX_Z(v3);
-  }
-    v4->Pipe_field_0x0C = 0;
-    Pipe::Dtor((int *)v4->__pad_0);
-    Pipe::Dtor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (PKPipe *)this;
-}
-}
-} // namespace gamemd
-
 // 0x633130
 namespace gamemd {
 int GameClass::ReadEncryptedStream(char * a2, signed int Size)
@@ -488,31 +425,6 @@ int __thiscall GameClass::ReadEncryptedStream(int this, char *a2, signed int Siz
     v4 = Size - v4; /*0x6332c3*/
   }
   return v16 + Delegate::Invoke((_DWORD *)this, (int)v3, (Straw *)v4); /*0x6331db*/
-}
-}
-} // namespace gamemd
-
-// 0x633370
-namespace gamemd {
-PKStrawClass * GameClass::applyGameSettings(char a2)
-{
-{
-    int *v3;
-    Straw *v4;
-    v3 = (int *)*(this + 8);
-    v4 = (Straw *)(this + 5);
-    *(this + 5) = &vt_BlowStraw;
-    if ( v3 )
-  {
-    COMObject::Release(v3);
-    __3_YAXPAX_Z(v3);
-  }
-    v4[1].Straw_field_0x04 = 0;
-    Straw::Dtor((int *)v4->__pad_0);
-    Straw::Dtor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (PKStrawClass *)this;
 }
 }
 } // namespace gamemd
@@ -759,6 +671,44 @@ int __thiscall GameClass::processNetworkPacket(BufferPipe *this, void *Src, sign
 }
 } // namespace gamemd
 
+// 0x4AECA0
+namespace gamemd {
+int * GameClass::initDisplay(char a2)
+{
+{
+    Vector::Clear((int)(this + 3));
+    Pipe::Dtor((int *)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (int *)this;
+}
+}
+} // namespace gamemd
+
+// 0x5E8AE0
+namespace gamemd {
+void GameClass::InitDifficultyButtons()
+{
+{
+    signed int v0;
+    if ( g_GameMode_Current[0] == 4 )
+  {
+    if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() )
+    v0 = 6;
+    else
+    v0 = 2;
+  }
+    else
+  {
+    v0 = 8;
+  }
+    memset32(&g_NetworkPlayerName, g_HouseClass_ObserverFlags, v0);
+    if ( v0 < 8 )
+    memset32((void *)(4 * v0 + 11066000), g_Lobby_PlayerCount, 8 - v0);
+}
+}
+} // namespace gamemd
+
 // 0x5E99C0
 namespace gamemd {
 wchar_t * GameClass::GetDifficultyString()
@@ -791,12 +741,62 @@ int GameClass::loadGameState(int a2)
 }
 } // namespace gamemd
 
+// 0x632FF0
+namespace gamemd {
+PKPipe * GameClass::validateGameFile(char a2)
+{
+{
+    int *v3;
+    Pipe *v4;
+    v3 = (int *)*(this + 8);
+    v4 = (Pipe *)(this + 5);
+    *(this + 5) = &vt_BlowPipe;
+    if ( v3 )
+  {
+    COMObject::Release(v3);
+    __3_YAXPAX_Z(v3);
+  }
+    v4->Pipe_field_0x0C = 0;
+    Pipe::Dtor((int *)v4->__pad_0);
+    Pipe::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (PKPipe *)this;
+}
+}
+} // namespace gamemd
+
 // 0x633360
 namespace gamemd {
 int GameClass::parseGameOptions(int a2)
 {
 {
     return this->GetRelatedObject(a2);
+}
+}
+} // namespace gamemd
+
+// 0x633370
+namespace gamemd {
+PKStrawClass * GameClass::applyGameSettings(char a2)
+{
+{
+    int *v3;
+    Straw *v4;
+    v3 = (int *)*(this + 8);
+    v4 = (Straw *)(this + 5);
+    *(this + 5) = &vt_BlowStraw;
+    if ( v3 )
+  {
+    COMObject::Release(v3);
+    __3_YAXPAX_Z(v3);
+  }
+    v4[1].Straw_field_0x04 = 0;
+    Straw::Dtor((int *)v4->__pad_0);
+    Straw::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (PKStrawClass *)this;
 }
 }
 } // namespace gamemd

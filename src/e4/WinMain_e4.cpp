@@ -1,29 +1,73 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
-
-// 0x49F8B0
-LSTATUS WinMain::CleanupResource()
-{
-{
-    LSTATUS result;
-    HKEY phkResult;
-    phkResult = (HKEY)this;
-    Debug::Log();
-    if ( lpBaseAddress )
-  {
-    UnmapViewOfFile(lpBaseAddress);
-    lpBaseAddress = 0;
-  }
-    result = RegOpenKeyExA(HKEY_CLASSES_ROOT, SubKey, 0, 0xF003Fu, &phkResult);
-    if ( !result )
-  {
-    RegDeleteValueA(phkResult, ValueName);
-    return RegCloseKey(phkResult);
-  }
-    return result;
-}
-}
+#include "e4/classes/E4Recv_6BFD40_e4.hpp"
+#include "e4/classes/E4Recv_6BFEC0_e4.hpp"
+#include "e4/classes/E4Recv_6C0040_e4.hpp"
+#include "e4/classes/E4Recv_6C01C0_e4.hpp"
+#include "e4/classes/E4Recv_6C0340_e4.hpp"
+#include "e4/classes/E4Recv_6C04C0_e4.hpp"
+#include "e4/classes/E4Recv_6C0640_e4.hpp"
+#include "e4/classes/E4Recv_6C07C0_e4.hpp"
+#include "e4/classes/E4Recv_6C0940_e4.hpp"
+#include "e4/classes/E4Recv_6C0C40_e4.hpp"
+#include "e4/classes/E4Recv_6C0DC0_e4.hpp"
+#include "e4/classes/E4Recv_6C0F40_e4.hpp"
+#include "e4/classes/E4Recv_6C10C0_e4.hpp"
+#include "e4/classes/E4Recv_6C1240_e4.hpp"
+#include "e4/classes/E4Recv_6C13C0_e4.hpp"
+#include "e4/classes/E4Recv_6C1540_e4.hpp"
+#include "e4/classes/E4Recv_6C16C0_e4.hpp"
+#include "e4/classes/E4Recv_6C1840_e4.hpp"
+#include "e4/classes/E4Recv_6C19C0_e4.hpp"
+#include "e4/classes/E4Recv_6C1B40_e4.hpp"
+#include "e4/classes/E4Recv_6C1CC0_e4.hpp"
+#include "e4/classes/E4Recv_6C1E40_e4.hpp"
+#include "e4/classes/E4Recv_6C1FC0_e4.hpp"
+#include "e4/classes/E4Recv_6C2140_e4.hpp"
+#include "e4/classes/E4Recv_6C22C0_e4.hpp"
+#include "e4/classes/E4Recv_6C2440_e4.hpp"
+#include "e4/classes/E4Recv_6C25C0_e4.hpp"
+#include "e4/classes/E4Recv_6C2740_e4.hpp"
+#include "e4/classes/E4Recv_6C28C0_e4.hpp"
+#include "e4/classes/E4Recv_6C2A40_e4.hpp"
+#include "e4/classes/E4Recv_6C2BC0_e4.hpp"
+#include "e4/classes/E4Recv_6C2D40_e4.hpp"
+#include "e4/classes/E4Recv_6C2EC0_e4.hpp"
+#include "e4/classes/E4Recv_6C3040_e4.hpp"
+#include "e4/classes/E4Recv_6C31C0_e4.hpp"
+#include "e4/classes/E4Recv_6C3340_e4.hpp"
+#include "e4/classes/E4Recv_6C34C0_e4.hpp"
+#include "e4/classes/E4Recv_6C3640_e4.hpp"
+#include "e4/classes/E4Recv_6C37C0_e4.hpp"
+#include "e4/classes/E4Recv_6C3940_e4.hpp"
+#include "e4/classes/E4Recv_6C3AC0_e4.hpp"
+#include "e4/classes/E4Recv_6C3C40_e4.hpp"
+#include "e4/classes/E4Recv_6C3DC0_e4.hpp"
+#include "e4/classes/E4Recv_6C3F40_e4.hpp"
+#include "e4/classes/E4Recv_6C40C0_e4.hpp"
+#include "e4/classes/E4Recv_6C4240_e4.hpp"
+#include "e4/classes/E4Recv_6C43C0_e4.hpp"
+#include "e4/classes/E4Recv_6C4540_e4.hpp"
+#include "e4/classes/E4Recv_6C46C0_e4.hpp"
+#include "e4/classes/E4Recv_6C4840_e4.hpp"
+#include "e4/classes/E4Recv_6C49C0_e4.hpp"
+#include "e4/classes/E4Recv_6C4B40_e4.hpp"
+#include "e4/classes/E4Recv_6C4CC0_e4.hpp"
+#include "e4/classes/E4Recv_6C4E40_e4.hpp"
+#include "e4/classes/E4Recv_6C4FC0_e4.hpp"
+#include "e4/classes/E4Recv_6C5140_e4.hpp"
+#include "e4/classes/E4Recv_6C52C0_e4.hpp"
+#include "e4/classes/E4Recv_6C5440_e4.hpp"
+#include "e4/classes/E4Recv_6C55C0_e4.hpp"
+#include "e4/classes/E4Recv_6C5740_e4.hpp"
+#include "e4/classes/E4Recv_6C58C0_e4.hpp"
+#include "e4/classes/E4Recv_6C5A40_e4.hpp"
+#include "e4/classes/E4Recv_6C5BC0_e4.hpp"
+#include "e4/classes/E4Recv_6C5D40_e4.hpp"
+#include "e4/classes/E4Recv_6C5EC0_e4.hpp"
+#include "e4/classes/E4Recv_6C6040_e4.hpp"
+#include "e4/classes/RAMFileClass_e4.hpp"
 
 // 0x5BC180
 namespace gamemd {
@@ -365,6 +409,29 @@ HANDLE sub_7B84F0()
 }
 }
 } // namespace gamemd
+
+// 0x49F8B0
+LSTATUS WinMain::CleanupResource()
+{
+{
+    LSTATUS result;
+    HKEY phkResult;
+    phkResult = (HKEY)this;
+    Debug::Log();
+    if ( lpBaseAddress )
+  {
+    UnmapViewOfFile(lpBaseAddress);
+    lpBaseAddress = 0;
+  }
+    result = RegOpenKeyExA(HKEY_CLASSES_ROOT, SubKey, 0, 0xF003Fu, &phkResult);
+    if ( !result )
+  {
+    RegDeleteValueA(phkResult, ValueName);
+    return RegCloseKey(phkResult);
+  }
+    return result;
+}
+}
 
 // 0x53E6B0
 namespace gamemd {

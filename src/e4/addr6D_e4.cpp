@@ -1,9 +1,19 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_6D04D0_e4.hpp"
 #include "e4/classes/E4Recv_6D1570_e4.hpp"
 #include "e4/classes/E4Recv_6D1E80_e4.hpp"
+#include "e4/classes/E4Recv_6D3290_e4.hpp"
+#include "e4/classes/E4Recv_6D3470_e4.hpp"
 #include "e4/classes/E4Recv_6D4E00_e4.hpp"
+#include "e4/classes/E4Recv_6D5730_e4.hpp"
+#include "e4/classes/E4Recv_6D5C50_e4.hpp"
+#include "e4/classes/E4Recv_6D6170_e4.hpp"
+#include "e4/classes/E4Recv_6D9CE0_e4.hpp"
+#include "e4/classes/E4Recv_6DA9D0_e4.hpp"
+#include "e4/classes/E4Recv_6DC420_e4.hpp"
+#include "e4/classes/LWCViewClass_e4.hpp"
 
 // 0x6D0F10
 namespace gamemd {
@@ -79,17 +89,6 @@ void __thiscall sub_6D1E80(_DWORD *this)
   *(this + 3) = &vt_Tactical; /*0x6d1e94*/
   MEMORY[0x887324] = 0; /*0x6d1e9b*/
   AbstractClass::DTOR(this); /*0x6d1ea5*/
-}
-}
-} // namespace gamemd
-
-// 0x6D4E00
-namespace gamemd {
-void E4Recv_6D4E00::sub_6D4E00()
-{
-{
-    this->M164 = -1;
-    this->M36 = 0;
 }
 }
 } // namespace gamemd
@@ -180,58 +179,6 @@ _DWORD *__stdcall sub_6D6BB0(_WORD *a1)
     }
   }
   return result; /*0x6d6cfc*/
-}
-}
-} // namespace gamemd
-
-// 0x6D8C60
-namespace gamemd {
-int sub_6D8C60(int a1, int a2)
-{
-{
-    int *v3;
-    int v4;
-    int v5;
-    int v6;
-    int result;
-    int v8;
-    int v9;
-    int v10;
-    int v12;
-    int v13;
-    char v14[12];
-    v3 = (int *)(*(int (__thiscall **)(int, char *))(*(int *)(a1) + 72))(a1, v14);
-    v10 = v3[1];
-    v4 = (-60 * v10 / 2 + 60 * *v3 / 2) / 256;
-    v5 = (30 * v10 / 2 + 30 * *v3 / 2) / 256;
-    v6 = Math::RoundToInt((double)(int)v3[2] * DataGlobal_B0CD48 + (double)(v3[2] >= 728) + 0.5);
-    v12 = v4;
-    v13 = v5 - v6;
-    result = (int)g_TacticalClass_Instance[45].__tail_0;
-    v8 = v4 - (unsigned int)g_TacticalClass_Instance[44].__tail_0;
-    v9 = v13 - result;
-    v12 = v8;
-    v13 -= result;
-    if ( v8 >= -360 )
-  {
-    result = DataGlobal_B0CE30 + 360;
-    if ( v8 <= DataGlobal_B0CE30 + 360 && v9 >= -180 && v9 <= DataGlobal_B0CE34 + 180 )
-    {
-    (*(void (__thiscall **)(int, int *, int))(*(int *)(a1) + 268))(a1, &v12, a2);
-    return (*(int (__thiscall **)(int, int *, int))(*(int *)(a1) + 272))(a1, &v12, a2);
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x6DC430
-namespace gamemd {
-int Map_GetCoordData(int a1)
-{
-{
-    return DataGlobal_B0CEC8[3 * a1];
 }
 }
 } // namespace gamemd
@@ -582,6 +529,17 @@ void nullsub_238(int a1, int a2)
 }
 } // namespace gamemd
 
+// 0x6D4E00
+namespace gamemd {
+void E4Recv_6D4E00::sub_6D4E00()
+{
+{
+    this->M164 = -1;
+    this->M36 = 0;
+}
+}
+} // namespace gamemd
+
 // 0x6D61C0
 namespace gamemd {
 int sub_6D61C0(int a1, int a2, int * a3, int * a4)
@@ -703,6 +661,48 @@ char ClampCoordMap(AbstractClass * aP0)
 }
 } // namespace gamemd
 
+// 0x6D8C60
+namespace gamemd {
+int sub_6D8C60(int a1, int a2)
+{
+{
+    int *v3;
+    int v4;
+    int v5;
+    int v6;
+    int result;
+    int v8;
+    int v9;
+    int v10;
+    int v12;
+    int v13;
+    char v14[12];
+    v3 = (int *)(*(int (__thiscall **)(int, char *))(*(int *)(a1) + 72))(a1, v14);
+    v10 = v3[1];
+    v4 = (-60 * v10 / 2 + 60 * *v3 / 2) / 256;
+    v5 = (30 * v10 / 2 + 30 * *v3 / 2) / 256;
+    v6 = Math::RoundToInt((double)(int)v3[2] * DataGlobal_B0CD48 + (double)(v3[2] >= 728) + 0.5);
+    v12 = v4;
+    v13 = v5 - v6;
+    result = (int)g_TacticalClass_Instance[45].__tail_0;
+    v8 = v4 - (unsigned int)g_TacticalClass_Instance[44].__tail_0;
+    v9 = v13 - result;
+    v12 = v8;
+    v13 -= result;
+    if ( v8 >= -360 )
+  {
+    result = DataGlobal_B0CE30 + 360;
+    if ( v8 <= DataGlobal_B0CE30 + 360 && v9 >= -180 && v9 <= DataGlobal_B0CE34 + 180 )
+    {
+    (*(void (__thiscall **)(int, int *, int))(*(int *)(a1) + 268))(a1, &v12, a2);
+    return (*(int (__thiscall **)(int, int *, int))(*(int *)(a1) + 272))(a1, &v12, a2);
+    }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x6DA350
 namespace gamemd {
 void nullsub_42()
@@ -732,6 +732,16 @@ namespace gamemd {
 void nullsub_44()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x6DC430
+namespace gamemd {
+int Map_GetCoordData(int a1)
+{
+{
+    return DataGlobal_B0CEC8[3 * a1];
+}
 }
 } // namespace gamemd
 

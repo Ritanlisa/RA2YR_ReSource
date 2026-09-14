@@ -1,6 +1,26 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/E4Recv_626120_e4.hpp"
+#include "e4/classes/E4Recv_6345A0_e4.hpp"
+#include "e4/classes/E4Recv_634770_e4.hpp"
+#include "e4/classes/E4Recv_635490_e4.hpp"
+#include "e4/classes/E4Recv_63D0F0_e4.hpp"
+#include "e4/classes/E4Recv_65A1B0_e4.hpp"
+#include "e4/classes/E4Recv_68FFE0_e4.hpp"
+#include "e4/classes/E4Recv_6BAFA0_e4.hpp"
+#include "e4/classes/E4Recv_6C9900_e4.hpp"
+#include "e4/classes/E4Recv_6CABA0_e4.hpp"
+#include "e4/classes/E4Recv_7597A0_e4.hpp"
+#include "e4/classes/E4Recv_759830_e4.hpp"
+#include "e4/classes/E4Recv_759850_e4.hpp"
+#include "e4/classes/E4Recv_759880_e4.hpp"
+#include "e4/classes/E4Recv_759EA0_e4.hpp"
+#include "e4/classes/E4Recv_759EB0_e4.hpp"
+#include "e4/classes/E4Recv_759F20_e4.hpp"
+#include "e4/classes/E4Recv_783B80_e4.hpp"
+#include "e4/classes/E4Recv_7B71D0_e4.hpp"
 
 // 0x52FF90
 namespace gamemd {
@@ -1491,26 +1511,6 @@ int __fastcall Render_Render_554280(unsigned __int16 *a0, AbstractClass *aP1, in
 }
 } // namespace gamemd
 
-// 0x5BE970
-namespace gamemd {
-int sub_5BE970(int a1)
-{
-{
-    return MouseClass_Cursors[7 * a1];
-}
-}
-} // namespace gamemd
-
-// 0x5BE990
-namespace gamemd {
-int sub_5BE990(int a1)
-{
-{
-    return DataGlobal_82D02C[7 * a1];
-}
-}
-} // namespace gamemd
-
 // 0x63B0A0
 namespace gamemd {
 void sub_63B0A0()
@@ -1763,6 +1763,26 @@ void sub_556D40()
     __3_YAXPAX_Z(v1);
     }
   }
+}
+}
+} // namespace gamemd
+
+// 0x5BE970
+namespace gamemd {
+int sub_5BE970(int a1)
+{
+{
+    return MouseClass_Cursors[7 * a1];
+}
+}
+} // namespace gamemd
+
+// 0x5BE990
+namespace gamemd {
+int sub_5BE990(int a1)
+{
+{
+    return DataGlobal_82D02C[7 * a1];
 }
 }
 } // namespace gamemd

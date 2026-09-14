@@ -2,7 +2,12 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_5A1C70_e4.hpp"
+#include "e4/classes/E4Recv_5A1FB0_e4.hpp"
+#include "e4/classes/E4Recv_5A2F50_e4.hpp"
+#include "e4/classes/E4Recv_5A35F0_e4.hpp"
 #include "e4/classes/E4Recv_5A6BA0_e4.hpp"
+#include "e4/classes/E4Recv_5A82E0_e4.hpp"
+#include "e4/classes/E4Recv_5A95B0_e4.hpp"
 #include "e4/classes/E4Recv_5A9920_e4.hpp"
 #include "e4/classes/E4Recv_5A9960_e4.hpp"
 #include "e4/classes/E4Recv_5A9980_e4.hpp"
@@ -2807,42 +2812,6 @@ LABEL_22:
 }
 } // namespace gamemd
 
-// 0x5A9920
-namespace gamemd {
-ObjectClass * E4Recv_5A9920::sub_5A9920(unsigned int * a1, ObjectClass * aP2)
-{
-{
-    *(void**)this = *a1;
-    this->M4 = aP2;
-    return (ObjectClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x5A9960
-namespace gamemd {
-ObjectClass * E4Recv_5A9960::sub_5A9960(unsigned int * a1)
-{
-{
-    *(void**)this = *a1;
-    this->M4 = *((int*)(a1) + 1);
-    return (ObjectClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x5A9BF0
-namespace gamemd {
-Concurrency::details::_ReaderWriterLock * E4Recv_5A9BF0::__0_ReaderWriterLock_details_Concurrency__QAE_XZ()
-{
-{
-    *(int *)this = 0;
-    this->M4 = 0;
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x5A9C40
 namespace gamemd {
 unsigned int * InitializePathData()
@@ -2905,68 +2874,6 @@ int __cdecl sub_5AD9C0(_DWORD *a1, _DWORD *a2)
     return 0; /*0x5ad9d0*/
   else
     return *a1 >= *a2 ? 1 : -1;
-}
-}
-} // namespace gamemd
-
-// 0x5AE530
-namespace gamemd {
-DWORD E4Recv_5AE530::sub_5AE530(ObjectClass * aP1, ObjectClass * aP2)
-{
-{
-    ObjectClass *v3;
-    DWORD result;
-    int v5;
-    v3 = (ObjectClass *)this;
-    String::Reassign(this + 50, (AbstractClass *)aP1);
-    result = Timer::GetTicks();
-    v3 = (ObjectClass *)((char *)(v3) + 204);
-    *(int *)v3->__pad_0 = result;
-    *(int *)&v3->__pad_0[4] = v5;
-    *(int *)&v3->__pad_0[8] = aP2;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x5AEC40
-namespace gamemd {
-int E4Recv_5AEC40::sub_5AEC40(float a2)
-{
-{
-    double v2;
-    double v4;
-    double v5;
-    double v6;
-    int result;
-    float v8;
-    float v9;
-    float v10;
-    float v11;
-    float v12;
-    float v13;
-    float v14;
-    v2 = a2;
-    v14 = Math::SinCos(a2);
-    v4 = Math::ArcTan2(v2);
-    v10 = this->M20;
-    v5 = -v14;
-    v8 = this->M32;
-    v11 = this->M24;
-    v6 = this->M16;
-    v9 = this->M36;
-    v13 = this->M28;
-    result = this->M40;
-    v12 = this->M44;
-    this->M16 = v8 * v5 + v6 * v4;
-    this->M20 = v9 * v5 + v10 * v4;
-    this->M24 = *(float *)&result * v5 + v11 * v4;
-    this->M28 = v12 * v5 + v13 * v4;
-    this->M32 = v8 * v4 + v6 * v14;
-    this->M36 = v9 * v4 + v10 * v14;
-    this->M40 = *(float *)&result * v4 + v11 * v14;
-    this->M44 = v12 * v4 + v13 * v14;
-    return result;
 }
 }
 } // namespace gamemd
@@ -3284,6 +3191,30 @@ unsigned int * globalHelper_0A7640(unsigned int * a0, MapSeedClass * aP1)
 }
 } // namespace gamemd
 
+// 0x5A9920
+namespace gamemd {
+ObjectClass * E4Recv_5A9920::sub_5A9920(unsigned int * a1, ObjectClass * aP2)
+{
+{
+    *(void**)this = *a1;
+    this->M4 = aP2;
+    return (ObjectClass *)this;
+}
+}
+} // namespace gamemd
+
+// 0x5A9960
+namespace gamemd {
+ObjectClass * E4Recv_5A9960::sub_5A9960(unsigned int * a1)
+{
+{
+    *(void**)this = *a1;
+    this->M4 = *((int*)(a1) + 1);
+    return (ObjectClass *)this;
+}
+}
+} // namespace gamemd
+
 // 0x5A9980
 namespace gamemd {
 unsigned int * E4Recv_5A9980::sub_5A9980(int a2, unsigned int * a3, int a4, unsigned int * a5, int a6)
@@ -3309,6 +3240,18 @@ unsigned int * E4Recv_5A99F0::sub_5A99F0(unsigned int * a2)
     this->M8 = *((int*)(a2) + 2);
     this->M12 = *((int*)(a2) + 3);
     this->M16 = *((int*)(a2) + 4);
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x5A9BF0
+namespace gamemd {
+Concurrency::details::_ReaderWriterLock * E4Recv_5A9BF0::__0_ReaderWriterLock_details_Concurrency__QAE_XZ()
+{
+{
+    *(int *)this = 0;
+    this->M4 = 0;
     return this;
 }
 }
@@ -3536,6 +3479,26 @@ char E4Recv_5AE500::sub_5AE500(const char ** a2)
 }
 } // namespace gamemd
 
+// 0x5AE530
+namespace gamemd {
+DWORD E4Recv_5AE530::sub_5AE530(ObjectClass * aP1, ObjectClass * aP2)
+{
+{
+    ObjectClass *v3;
+    DWORD result;
+    int v5;
+    v3 = (ObjectClass *)this;
+    String::Reassign(this + 50, (AbstractClass *)aP1);
+    result = Timer::GetTicks();
+    v3 = (ObjectClass *)((char *)(v3) + 204);
+    *(int *)v3->__pad_0 = result;
+    *(int *)&v3->__pad_0[4] = v5;
+    *(int *)&v3->__pad_0[8] = aP2;
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x5AE570
 namespace gamemd {
 void nullsub_170(int a1)
@@ -3549,6 +3512,48 @@ namespace gamemd {
 void nullsub_171(int a1)
 {
   ;
+}
+} // namespace gamemd
+
+// 0x5AEC40
+namespace gamemd {
+int E4Recv_5AEC40::sub_5AEC40(float a2)
+{
+{
+    double v2;
+    double v4;
+    double v5;
+    double v6;
+    int result;
+    float v8;
+    float v9;
+    float v10;
+    float v11;
+    float v12;
+    float v13;
+    float v14;
+    v2 = a2;
+    v14 = Math::SinCos(a2);
+    v4 = Math::ArcTan2(v2);
+    v10 = this->M20;
+    v5 = -v14;
+    v8 = this->M32;
+    v11 = this->M24;
+    v6 = this->M16;
+    v9 = this->M36;
+    v13 = this->M28;
+    result = this->M40;
+    v12 = this->M44;
+    this->M16 = v8 * v5 + v6 * v4;
+    this->M20 = v9 * v5 + v10 * v4;
+    this->M24 = *(float *)&result * v5 + v11 * v4;
+    this->M28 = v12 * v5 + v13 * v4;
+    this->M32 = v8 * v4 + v6 * v14;
+    this->M36 = v9 * v4 + v10 * v14;
+    this->M40 = *(float *)&result * v4 + v11 * v14;
+    this->M44 = v12 * v4 + v13 * v14;
+    return result;
+}
 }
 } // namespace gamemd
 

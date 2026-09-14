@@ -82,28 +82,6 @@ _DWORD *__thiscall sub_4E0A00(_DWORD *this, int a2, _DWORD *a3)
 }
 } // namespace gamemd
 
-// 0x4E0D30
-namespace gamemd {
-unsigned int * FoggedObjectClass_42::loc_4E0D30(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_FootClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x4E1FE0
 namespace gamemd {
 int GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
@@ -300,41 +278,6 @@ LABEL_38:
     return 0; /*0x4e23b3*/
   }
   return result; /*0x4e2229*/
-}
-}
-} // namespace gamemd
-
-// 0x4E2A50
-namespace gamemd {
-int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass * aP4, int aP5)
-{
-{
-    int v7;
-    int v8;
-    ControlClass::Construct( (int *)this, aP1, (ControlClass *)aP2, (ControlClass *)aP3, aP4, (ControlClass *)aP5, 7, (ControlClass *)1);
-    v7 = this->M48;
-    *(int *)this = &vt_GaugeClass;
-    if ( v7 != 255 )
-  {
-    this->M48 = 255;
-    VectorClass_ptr_ConvertClass::MarkDirty((char *)this);
-  }
-    v8 = 0;
-    if ( this->M48 < 0 )
-    v8 = this->M48;
-    if ( v8 != this->M52 )
-  {
-    this->M52 = v8;
-    this->Vf72();
-  }
-    this->M45 = 1;
-    this->M46 = (int)aP4 > aP5;
-    this->M44 = 1;
-    this->M56 = 0;
-    this->M60 = 0;
-    this->M64 = 0;
-    *(int *)this = &vt_TriColorGaugeClass;
-    return this;
 }
 }
 } // namespace gamemd
@@ -793,16 +736,6 @@ LABEL_6:
 }
 } // namespace gamemd
 
-// 0x4E4580
-namespace gamemd {
-bool IsAvailableColorhWnd(int a1)
-{
-{
-    return DataGlobal_8B4040[3 * a1] != -1;
-}
-}
-} // namespace gamemd
-
 // 0x4E45A0
 namespace gamemd {
 bool FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
@@ -1242,16 +1175,6 @@ LABEL_22:
     }
   }
   return result; /*0x4e4e18*/
-}
-}
-} // namespace gamemd
-
-// 0x4E50A0
-namespace gamemd {
-bool sub_4E50A0(int a1)
-{
-{
-    return DataGlobal_8B3F38[3 * a1] != -1;
 }
 }
 } // namespace gamemd
@@ -1903,23 +1826,6 @@ LABEL_22:
 }
 } // namespace gamemd
 
-// 0x4E6070
-namespace gamemd {
-int E4Recv_4E6070::sub_4E6070()
-{
-{
-    this->M104 = 0;
-    this->M108 = 0;
-    Debug::Log();
-    memset((void *)this, 0xFFu, 0x18u);
-    this->M24 = -1;
-    *(int *)(this + 4 * (this->M104)++) = 2;
-    Debug::Log();
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x4E6860
 namespace gamemd {
 int sub_4E6860()
@@ -2139,7 +2045,7 @@ LABEL_10:
 
 // 0x4E9240
 namespace gamemd {
-char HouseClass::vt_02_(int a2, int * a3)
+char HouseClass__vt_02_(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall HouseClass::vt_02_(void *this, int a2, _DWORD *a3)
@@ -2190,62 +2096,9 @@ char __thiscall HouseClass::vt_02_(void *this, int a2, _DWORD *a3)
 }
 } // namespace gamemd
 
-// 0x4E92F0
-namespace gamemd {
-void HouseClass::vt_03_()
-{
-{
-    if ( this->vtable1 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(*(void **)(this + 4));
-    this->vtable1 = 0;
-  }
-    this->IsAllocated = 0;
-    this->vtable2 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E9320
-namespace gamemd {
-int HouseClass::vt_04_(int * a2)
-{
-{
-    int result;
-    int v3;
-    int *i;
-    if ( !(unsigned char)this->vtable3 )
-    return 0;
-    v3 = this->vtable2;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = *(int **)(this + 4); *i != *a2; ++i )
-  {
-    if ( ++result >= v3 )
-    return -1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4E9360
-namespace gamemd {
-unsigned int HouseClass::vt_05_(int a2)
-{
-{
-    if ( (unsigned char)this->vtable3 )
-    return (unsigned int)(a2 - this->vtable1) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x4E9E20
 namespace gamemd {
-char ParticleSystemClass::vt_02_(int a2, int * a3)
+char ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall ParticleSystemClass::vt_02_(void *this, int a2, _DWORD *a3)
@@ -2298,7 +2151,7 @@ char __thiscall ParticleSystemClass::vt_02_(void *this, int a2, _DWORD *a3)
 
 // 0x4E9ED0
 namespace gamemd {
-void ParticleSystemClass::vt_03_()
+void ParticleSystemClass__vt_03_()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ParticleSystemClass::vt_03_(int this)
@@ -2314,92 +2167,33 @@ void __thiscall ParticleSystemClass::vt_03_(int this)
 }
 } // namespace gamemd
 
-// 0x4E9F00
-namespace gamemd {
-int ParticleSystemClass::vt_04_(int * a2)
-{
-{
-    int result;
-    int v3;
-    int *i;
-    if ( !(unsigned char)this->vtable3 )
-    return 0;
-    v3 = this->vtable2;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = *(int **)(this + 4); *i != *a2; ++i )
-  {
-    if ( ++result >= v3 )
-    return -1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4E9F40
-namespace gamemd {
-unsigned int ParticleSystemClass::vt_05_(int a2)
-{
-{
-    if ( (unsigned char)this->vtable3 )
-    return (unsigned int)(a2 - this->vtable1) >> 2;
-    else
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x4EF4E0
-namespace gamemd {
-VectorClass * HouseClass::vt_00_(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_TagClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x4EF800
-namespace gamemd {
-VectorClass * ParticleSystemClass::vt_00_(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_ParticleClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
 // 0x4E0C30
 namespace gamemd {
 void nullsub_138()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x4E0D30
+namespace gamemd {
+unsigned int * FoggedObjectClass_42::loc_4E0D30(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_FootClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
+}
 }
 } // namespace gamemd
 
@@ -2754,6 +2548,41 @@ int sub_4E24E0()
 }
 } // namespace gamemd
 
+// 0x4E2A50
+namespace gamemd {
+int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass * aP4, int aP5)
+{
+{
+    int v7;
+    int v8;
+    ControlClass::Construct( (int *)this, aP1, (ControlClass *)aP2, (ControlClass *)aP3, aP4, (ControlClass *)aP5, 7, (ControlClass *)1);
+    v7 = this->M48;
+    *(int *)this = &vt_GaugeClass;
+    if ( v7 != 255 )
+  {
+    this->M48 = 255;
+    VectorClass_ptr_ConvertClass::MarkDirty((char *)this);
+  }
+    v8 = 0;
+    if ( this->M48 < 0 )
+    v8 = this->M48;
+    if ( v8 != this->M52 )
+  {
+    this->M52 = v8;
+    this->Vf72();
+  }
+    this->M45 = 1;
+    this->M46 = (int)aP4 > aP5;
+    this->M44 = 1;
+    this->M56 = 0;
+    this->M60 = 0;
+    this->M64 = 0;
+    *(int *)this = &vt_TriColorGaugeClass;
+    return this;
+}
+}
+} // namespace gamemd
+
 // 0x4E3110
 namespace gamemd {
 int sub_4E3110()
@@ -3049,6 +2878,16 @@ LPARAM * InitGameDropdownColors()
 }
 } // namespace gamemd
 
+// 0x4E4580
+namespace gamemd {
+bool IsAvailableColorhWnd(int a1)
+{
+{
+    return DataGlobal_8B4040[3 * a1] != -1;
+}
+}
+} // namespace gamemd
+
 // 0x4E4770
 namespace gamemd {
 LRESULT FillListBox(HWND hDlg, int nIDDlgItem)
@@ -3162,6 +3001,16 @@ void Lobby_ResetFactionTable(int a1)
 }
 } // namespace gamemd
 
+// 0x4E50A0
+namespace gamemd {
+bool sub_4E50A0(int a1)
+{
+{
+    return DataGlobal_8B3F38[3 * a1] != -1;
+}
+}
+} // namespace gamemd
+
 // 0x4E5260
 namespace gamemd {
 LRESULT SetupComboBoxRandomAlliance(HWND hDlg, int nIDDlgItem)
@@ -3242,6 +3091,23 @@ LRESULT GetComboBoxSelectedRaw2(HWND hDlg, int nIDDlgItem, WPARAM wParam)
     if ( wParam == -1 )
     v3 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x147u, 0, 0);
     return SendDlgItemMessageA(hDlg, nIDDlgItem, 0x150u, v3, 0);
+}
+}
+} // namespace gamemd
+
+// 0x4E6070
+namespace gamemd {
+int E4Recv_4E6070::sub_4E6070()
+{
+{
+    this->M104 = 0;
+    this->M108 = 0;
+    Debug::Log();
+    memset((void *)this, 0xFFu, 0x18u);
+    this->M24 = -1;
+    *(int *)(this + 4 * (this->M104)++) = 2;
+    Debug::Log();
+    return this;
 }
 }
 } // namespace gamemd
@@ -5478,6 +5344,140 @@ char sub_4E8220()
     DataGlobal_A8E980 = -1;
     DataGlobal_A8E981 = -1;
     return -1;
+}
+}
+} // namespace gamemd
+
+// 0x4E92F0
+namespace gamemd {
+void HouseClass::vt_03_()
+{
+{
+    if ( this->vtable1 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->vtable1 = 0;
+  }
+    this->IsAllocated = 0;
+    this->vtable2 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E9320
+namespace gamemd {
+int HouseClass::vt_04_(int * a2)
+{
+{
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->vtable3 )
+    return 0;
+    v3 = this->vtable2;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4E9360
+namespace gamemd {
+unsigned int HouseClass::vt_05_(int a2)
+{
+{
+    if ( (unsigned char)this->vtable3 )
+    return (unsigned int)(a2 - this->vtable1) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E9F00
+namespace gamemd {
+int ParticleSystemClass::vt_04_(int * a2)
+{
+{
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->vtable3 )
+    return 0;
+    v3 = this->vtable2;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x4E9F40
+namespace gamemd {
+unsigned int ParticleSystemClass::vt_05_(int a2)
+{
+{
+    if ( (unsigned char)this->vtable3 )
+    return (unsigned int)(a2 - this->vtable1) >> 2;
+    else
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4EF4E0
+namespace gamemd {
+VectorClass * HouseClass::vt_00_(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_TagClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
+}
+}
+} // namespace gamemd
+
+// 0x4EF800
+namespace gamemd {
+VectorClass * ParticleSystemClass::vt_00_(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_ParticleClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd

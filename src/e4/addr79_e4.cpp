@@ -3,7 +3,10 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_793120_e4.hpp"
 #include "e4/classes/E4Recv_793CD0_e4.hpp"
+#include "e4/classes/E4Recv_795650_e4.hpp"
 #include "e4/classes/E4Recv_79BF50_e4.hpp"
+#include "e4/classes/E4Recv_79C040_e4.hpp"
+#include "e4/classes/E4Recv_79C8D0_e4.hpp"
 
 // 0x792CF0
 namespace gamemd {

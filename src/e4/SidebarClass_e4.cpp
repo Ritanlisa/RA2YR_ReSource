@@ -2,18 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x40D270
-namespace gamemd {
-int SidebarClass::initButtons2()
-{
-// 0x40d270
-    char __thiscall SidebarClass::initButtons2(void *(void**)this)
-{
-    return SidebarClass::InitButtons(this);
-}
-}
-} // namespace gamemd
-
 // 0x4C9C50
 char SidebarClass::draw()
 {
@@ -795,6 +783,18 @@ char SidebarClass_LoadResources()
   return result; /*0x6ac1fb*/
 }
 }
+
+// 0x40D270
+namespace gamemd {
+int SidebarClass::initButtons2()
+{
+// 0x40d270
+    char __thiscall SidebarClass::initButtons2(void *(void**)this)
+{
+    return SidebarClass::InitButtons(this);
+}
+}
+} // namespace gamemd
 
 // 0x653010
 void SidebarClass::CreateScrollButtons()

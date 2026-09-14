@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_6C61C0_e4.hpp"
 
 // 0x43A500
 int COM::GetClassID(int a1, unsigned int * a2)

@@ -278,17 +278,6 @@ int __thiscall IPXInterfaceClass::_vt20(_DWORD *this, int a2)
 }
 }
 
-// 0x7B1790
-IPXInterfaceClass * IPXInterfaceClass::QueryInterface(char a2)
-{
-{
-    WinsockInterfaceClass::WinsockInterfaceClass((int)this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (IPXInterfaceClass *)this;
-}
-}
-
 // 0x7B19C0
 char * IPXInterfaceClass::bindSocket()
 {
@@ -545,34 +534,6 @@ __int16 __thiscall IPXInterfaceClass::Connect(int this, const void *a1, unsigned
 }
 }
 
-// 0x7B2840
-void IPXInterfaceClass::getSocketCount()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->Count = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->Initialized = 0;
-  }
-    this->IsAllocated = 0;
-    this->LocalNetwork = 0;
-}
-}
-
-// 0x7B2870
-unsigned int IPXInterfaceClass::resetSocket(int a2)
-{
-{
-    if ( (unsigned char)this->LocalNode )
-    return (unsigned int)(a2 - this->Initialized) >> 2;
-    else
-    return 0;
-}
-}
-
 // 0x7B2A20
 char IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
 {
@@ -622,45 +583,6 @@ char __thiscall IPXInterfaceClass::sub_7B2A20(void *this, int a2, _DWORD *a3)
 }
 }
 
-// 0x7B2AD0
-int IPXInterfaceClass::initSession(unsigned int * a2)
-{
-{
-    int v2;
-    int result;
-    int *i;
-    v2 = this->Count;
-    result = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = (int *)this->Initialized; *i != *a2; ++i )
-  {
-    if ( ++result >= v2 )
-    return -1;
-  }
-    return result;
-}
-
-// 0x7B2B50
-DynamicVector * IPXInterfaceClass::closeSession(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
-}
-}
-
 // 0x7B1720
 void IPXInterfaceClass::StubReturnFalse(int a1, int a2)
 {
@@ -695,6 +617,17 @@ return 1;
 int IPXInterfaceClass::COMStub_Ret1139(int a1)
 {
 return 1139;
+}
+
+// 0x7B1790
+IPXInterfaceClass * IPXInterfaceClass::QueryInterface(char a2)
+{
+{
+    WinsockInterfaceClass::WinsockInterfaceClass((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (IPXInterfaceClass *)this;
+}
 }
 
 // 0x7B1FD0
@@ -761,5 +694,72 @@ char IPXInterfaceClass::ReceivePacket(char * name, AnimClass * aP1)
     Debug::Log();
     return 1;
   }
+}
+}
+
+// 0x7B2840
+void IPXInterfaceClass::getSocketCount()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->Initialized = 0;
+  }
+    this->IsAllocated = 0;
+    this->LocalNetwork = 0;
+}
+}
+
+// 0x7B2870
+unsigned int IPXInterfaceClass::resetSocket(int a2)
+{
+{
+    if ( (unsigned char)this->LocalNode )
+    return (unsigned int)(a2 - this->Initialized) >> 2;
+    else
+    return 0;
+}
+}
+
+// 0x7B2AD0
+int IPXInterfaceClass::initSession(unsigned int * a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Initialized; *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
+}
+
+// 0x7B2B50
+DynamicVector * IPXInterfaceClass::closeSession(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }

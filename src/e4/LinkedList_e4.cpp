@@ -2,20 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x407450
-int LinkedList::Init()
-{
-{
-    int result;
-    *(void**)this->Tail = *(void**)this;
-    result = (int)*(void**)this;
-    (*(void**)this)[1] = this->Tail;
-    *(void**)this = this;
-    this->Tail = this;
-    return result;
-}
-}
-
 // 0x4791F0
 char LinkedList::LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4)
 {
@@ -284,27 +270,6 @@ _DWORD *__thiscall LinkedList_FindPrev(_DWORD *this)
 }
 }
 
-// 0x556670
-unsigned int * LinkedList::FindNext()
-{
-{
-    int *v1;
-    int *result;
-    v1 = this + 1;
-    if ( !this->Tail )
-    return this;
-    do
-  {
-    result = (int *)*v1;
-    if ( (int *)*v1 == this )
-    break;
-    v1 = result + 1;
-  }
-    while ( result[1] );
-    return result;
-}
-}
-
 // 0x5566A0
 int LinkedList::InsertAfter(int a2)
 {
@@ -471,6 +436,20 @@ char __thiscall LinkedList::Contains(_DWORD *this, IUnknown *aP1)
 }
 }
 
+// 0x407450
+int LinkedList::Init()
+{
+{
+    int result;
+    *(void**)this->Tail = *(void**)this;
+    result = (int)*(void**)this;
+    (*(void**)this)[1] = this->Tail;
+    *(void**)this = this;
+    this->Tail = this;
+    return result;
+}
+}
+
 // 0x407520
 int * LinkedList::Next()
 {
@@ -536,6 +515,27 @@ int LinkedList::Pop()
     *(int *)(result + 48) = 0;
     --*(void**)this;
   }
+    return result;
+}
+}
+
+// 0x556670
+unsigned int * LinkedList::FindNext()
+{
+{
+    int *v1;
+    int *result;
+    v1 = this + 1;
+    if ( !this->Tail )
+    return this;
+    do
+  {
+    result = (int *)*v1;
+    if ( (int *)*v1 == this )
+    break;
+    v1 = result + 1;
+  }
+    while ( result[1] );
     return result;
 }
 }

@@ -430,24 +430,6 @@ LABEL_21:
 }
 } // namespace gamemd
 
-// 0x4A35F0
-namespace gamemd {
-char * Tactical::SetCellTransform(int a2, CoordStruct * aP2, int a4, CoordStruct * aP4, int a6, int a7)
-{
-{
-    char *result;
-    result = this + 32 * a2;
-    *(int *)result = aP2;
-    *((int *)(result) + 1) = a4;
-    *((int *)(result) + 2) = aP4;
-    *((int *)(result) + 6) = a6;
-    *((int *)(result) + 7) = a7;
-    *((int *)(result) + 3) = 1065353216;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x4A91B0
 namespace gamemd {
 unsigned int * Tactical::MouseMove(MouseClass * aP1, MouseClass * aP2)
@@ -1935,203 +1917,6 @@ Tactical *__thiscall Tactical::UpdateView(_DWORD *this, char a2)
 }
 } // namespace gamemd
 
-// 0x6E4970
-namespace gamemd {
-int Tactical::Init(unsigned int * a2)
-{
-{
-    int result;
-    int v3;
-    int *i;
-    if ( !(unsigned char)this->Tactical_field_0xC )
-    return 0;
-    v3 = this->Tactical_field_0x8;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = *(int **)(this + 4); *i != *a2; ++i )
-  {
-    if ( ++result >= v3 )
-    return -1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x6E47F0
-namespace gamemd {
-void Tactical_42::ClearBuffer()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->Tactical_42_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->Tactical_42_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->Tactical_42_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x6E4840
-namespace gamemd {
-int Tactical_42::UpdateView(int a2)
-{
-{
-    return *(int *)(this->Items + 4 * a2);
-}
-}
-} // namespace gamemd
-
-// 0x6E4850
-namespace gamemd {
-char Tactical_42::AddRef(int a2)
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    int v5;
-    v2 = this->Capacity;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = (int *)this->Items;
-    v5 = *(int *)(a2 + 4) - (int)v4;
-    while ( *v4 == *(int *)((char *)(v4) + v5) )
-    {
-    ++v3;
-    ++v4;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x6E4890
-namespace gamemd {
-char Tactical_42::Release(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v6;
-    int i;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( v4 )
-    {
-    if ( this->Tactical_42_field_0x4 )
-      {
-    v6 = this->Tactical_42_field_0x8;
-    if ( a2 < v6 )
-    v6 = a2;
-    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->Tactical_42_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-        {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->Tactical_42_field_0x4 = 0;
-        }
-      }
-    this->Tactical_42_field_0x4 = v4;
-    this->Tactical_42_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-    return 1;
-    }
-    else
-    {
-    return 0;
-    }
-  }
-    else
-  {
-    this->FindItem();
-    return 1;
-  }
-}
-}
-} // namespace gamemd
-
-// 0x6E4940
-namespace gamemd {
-void Tactical_42::ddtor()
-{
-{
-    if ( this->Tactical_42_field_0x4 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(*(void **)(this + 4));
-    this->Tactical_42_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->Tactical_42_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x6E49D0
-namespace gamemd {
-char Tactical_42::SetCapacity(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v5;
-    int i;
-    int v7;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( !v4 )
-    return 0;
-    if ( this->Tactical_42_field_0x4 )
-    {
-    v5 = this->Tactical_42_field_0x8;
-    if ( a2 < v5 )
-    v5 = a2;
-    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->Tactical_42_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-      {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->Tactical_42_field_0x4 = 0;
-      }
-    }
-    this->Tactical_42_field_0x4 = v4;
-    this->Tactical_42_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-  }
-    else
-  {
-    this->FindItem();
-  }
-    v7 = this->Tactical_42_field_0x8;
-    if ( v7 < this->Tactical_42_field_0x10 )
-    this->Tactical_42_field_0x10 = v7;
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x6E4A80
 namespace gamemd {
 int Tactical_42::FindItem(unsigned int * a2)
@@ -2157,24 +1942,20 @@ int __thiscall Tactical_42_::sub_6E4A80(int *this, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x6E4AB0
+// 0x4A35F0
 namespace gamemd {
-VectorClass * Tactical_42::QueryInterface(char a2)
+char * Tactical::SetCellTransform(int a2, CoordStruct * aP2, int a4, CoordStruct * aP4, int a6, int a7)
 {
 {
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_TActionClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
+    char *result;
+    result = this + 32 * a2;
+    *(int *)result = aP2;
+    *((int *)(result) + 1) = a4;
+    *((int *)(result) + 2) = aP4;
+    *((int *)(result) + 6) = a6;
+    *((int *)(result) + 7) = a7;
+    *((int *)(result) + 3) = 1065353216;
+    return result;
 }
 }
 } // namespace gamemd
@@ -2325,6 +2106,25 @@ return 3608;
 }
 } // namespace gamemd
 
+// 0x6E47F0
+namespace gamemd {
+void Tactical_42::ClearBuffer()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Tactical_42_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->Tactical_42_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->Tactical_42_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
 // 0x6E4820
 namespace gamemd {
 unsigned int Tactical_42::PointerToIndex(int a2)
@@ -2338,6 +2138,136 @@ unsigned int Tactical_42::PointerToIndex(int a2)
 }
 } // namespace gamemd
 
+// 0x6E4840
+namespace gamemd {
+int Tactical_42::UpdateView(int a2)
+{
+{
+    return *(int *)(this->Items + 4 * a2);
+}
+}
+} // namespace gamemd
+
+// 0x6E4850
+namespace gamemd {
+char Tactical_42::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
+    {
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6E4890
+namespace gamemd {
+char Tactical_42::Release(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
+    {
+    if ( this->Tactical_42_field_0x4 )
+      {
+    v6 = this->Tactical_42_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->Tactical_42_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+        {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Tactical_42_field_0x4 = 0;
+        }
+      }
+    this->Tactical_42_field_0x4 = v4;
+    this->Tactical_42_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
+    }
+    else
+    {
+    return 0;
+    }
+  }
+    else
+  {
+    this->FindItem();
+    return 1;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x6E4940
+namespace gamemd {
+void Tactical_42::ddtor()
+{
+{
+    if ( this->Tactical_42_field_0x4 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->Tactical_42_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->Tactical_42_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x6E4970
+namespace gamemd {
+int Tactical::Init(unsigned int * a2)
+{
+{
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->Tactical_field_0xC )
+    return 0;
+    v3 = this->Tactical_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x6E49B0
 namespace gamemd {
 unsigned int Tactical_42::InitMap(int a2)
@@ -2347,6 +2277,76 @@ unsigned int Tactical_42::InitMap(int a2)
     return (unsigned int)(a2 - this->Tactical_42_field_0x4) >> 2;
     else
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6E49D0
+namespace gamemd {
+char Tactical_42::SetCapacity(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->Tactical_42_field_0x4 )
+    {
+    v5 = this->Tactical_42_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->Tactical_42_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+      {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Tactical_42_field_0x4 = 0;
+      }
+    }
+    this->Tactical_42_field_0x4 = v4;
+    this->Tactical_42_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+  }
+    else
+  {
+    this->FindItem();
+  }
+    v7 = this->Tactical_42_field_0x8;
+    if ( v7 < this->Tactical_42_field_0x10 )
+    this->Tactical_42_field_0x10 = v7;
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x6E4AB0
+namespace gamemd {
+VectorClass * Tactical_42::QueryInterface(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_TActionClass;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd

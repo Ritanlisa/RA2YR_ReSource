@@ -70,22 +70,6 @@ char __thiscall Cell_IsOccupied(void **this, __int16 *a2, char a3)
 }
 } // namespace gamemd
 
-// 0x4265B0
-namespace gamemd {
-unsigned short * Cell::GetHeight(BuildingTypeClass * aP1, int * a2)
-{
-{
-    double v4;
-    if ( *(int *)aP1->vtable0 == *a2 && *(int *)&aP1->vtable0[4] == *((int*)(a2) + 1) )
-    *(void**)this = 0;
-    v4 = Math::CalcAngle((double)*(int *)&aP1->vtable0[4] - (double)*((int*)(a2) + 1), (double)*a2 - (double)*(int *)aP1->vtable0);
-    LOWORD(aP1) = Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427);
-    *(int *)this = aP1;
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x42B1C0
 namespace gamemd {
 int Cell::PosToIndex()
@@ -1527,32 +1511,6 @@ Cell *__thiscall Cell::Clear(_WORD *this)
 }
 } // namespace gamemd
 
-// 0x68BD00
-namespace gamemd {
-unsigned int * Cell::GetWorldCoords(unsigned int * a2, int a3)
-{
-{
-    int *v3;
-    int *v4;
-    int v5;
-    int v6;
-    int v7;
-    char v9[12];
-    v3 = CellCoord::To_CellObj(&DataGlobal_87F7E8, this + 2 * a3 + 793);
-    v4 = (int *)(*(int (__thiscall **)(int *, char *))(*v3 + 72))(v3, v9);
-    v5 = *v4;
-    v6 = v4[1];
-    v7 = v4[2];
-    if ( (v3[80] & 0x500) != 0 )
-    v7 += DataGlobal_B054BC;
-    *a2 = v5;
-    *((int*)(a2) + 1) = v6;
-    *((int*)(a2) + 2) = v7;
-    return a2;
-}
-}
-} // namespace gamemd
-
 // 0x6B5F80
 namespace gamemd {
 char Cell::IsWalkable(unsigned short * a2, char a3)
@@ -1944,6 +1902,22 @@ LABEL_38:
 }
 } // namespace gamemd
 
+// 0x4265B0
+namespace gamemd {
+unsigned short * Cell::GetHeight(BuildingTypeClass * aP1, int * a2)
+{
+{
+    double v4;
+    if ( *(int *)aP1->vtable0 == *a2 && *(int *)&aP1->vtable0[4] == *((int*)(a2) + 1) )
+    *(void**)this = 0;
+    v4 = Math::CalcAngle((double)*(int *)&aP1->vtable0[4] - (double)*((int*)(a2) + 1), (double)*a2 - (double)*(int *)aP1->vtable0);
+    LOWORD(aP1) = Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427);
+    *(int *)this = aP1;
+    return this;
+}
+}
+} // namespace gamemd
+
 // 0x4870D0
 namespace gamemd {
 BOOL Cell::IsPassableOffset(IUnknown * aP1)
@@ -2052,6 +2026,32 @@ bool Cell::IsPassable(IUnknown * aP0)
     }
   }
     return (NeighbourContent[75] & 8) == 0;
+}
+}
+} // namespace gamemd
+
+// 0x68BD00
+namespace gamemd {
+unsigned int * Cell::GetWorldCoords(unsigned int * a2, int a3)
+{
+{
+    int *v3;
+    int *v4;
+    int v5;
+    int v6;
+    int v7;
+    char v9[12];
+    v3 = CellCoord::To_CellObj(&DataGlobal_87F7E8, this + 2 * a3 + 793);
+    v4 = (int *)(*(int (__thiscall **)(int *, char *))(*v3 + 72))(v3, v9);
+    v5 = *v4;
+    v6 = v4[1];
+    v7 = v4[2];
+    if ( (v3[80] & 0x500) != 0 )
+    v7 += DataGlobal_B054BC;
+    *a2 = v5;
+    *((int*)(a2) + 1) = v6;
+    *((int*)(a2) + 2) = v7;
+    return a2;
 }
 }
 } // namespace gamemd

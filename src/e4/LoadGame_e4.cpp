@@ -2,54 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x54E7B0
-int LoadGame::LoadPointArray(int a2)
-{
-{
-    int v3;
-    int *v4;
-    int v5;
-    int *v6;
-    int v7;
-    int v8;
-    int v9;
-    int v11;
-    int *v12;
-    int v13;
-    v12 = this;
-    v3 = (*(int (__stdcall **)(int, int *, int, int))(*(int *)(a2) + 12))(a2, &v11, 4, 0);
-    if ( v3 >= 0 )
-  {
-    v13 = 0;
-    while ( v13 < v11 )
-    {
-    v4 = (int *)__2_YAPAXI_Z(8u);
-    v3 = (*(int (__stdcall **)(int, int *, int, int))(*(int *)(a2) + 12))(a2, v4, 8, 0);
-    if ( v3 < 0 )
-    break;
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4);
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 1);
-    v5 = v12[5];
-    v6 = v12 + 3;
-    if ( v12[7] >= v5 )
-      {
-    if ( !*((char *)(v12) + 25) && v5 )
-    continue;
-    v7 = v12[8];
-    if ( v7 <= 0 || !(*(unsigned char (__thiscall **)(int *, int, int))(*v6 + 8))(v12 + 3, v5 + v7, 0) )
-    continue;
-      }
-    v8 = v6[4];
-    v9 = v6[1];
-    v6[4] = v8 + 1;
-    *(int *)(v9 + 4 * v8) = v4;
-    ++v13;
-    }
-  }
-    return v3;
-}
-}
-
 // 0x660840
 bool LoadGame::LoadTriggerEvents()
 {
@@ -386,6 +338,54 @@ int __thiscall sub_7533F0(void *this)
     }
   }
   return result; /*0x7534c6*/
+}
+}
+
+// 0x54E7B0
+int LoadGame::LoadPointArray(int a2)
+{
+{
+    int v3;
+    int *v4;
+    int v5;
+    int *v6;
+    int v7;
+    int v8;
+    int v9;
+    int v11;
+    int *v12;
+    int v13;
+    v12 = this;
+    v3 = (*(int (__stdcall **)(int, int *, int, int))(*(int *)(a2) + 12))(a2, &v11, 4, 0);
+    if ( v3 >= 0 )
+  {
+    v13 = 0;
+    while ( v13 < v11 )
+    {
+    v4 = (int *)__2_YAPAXI_Z(8u);
+    v3 = (*(int (__stdcall **)(int, int *, int, int))(*(int *)(a2) + 12))(a2, v4, 8, 0);
+    if ( v3 < 0 )
+    break;
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 1);
+    v5 = v12[5];
+    v6 = v12 + 3;
+    if ( v12[7] >= v5 )
+      {
+    if ( !*((char *)(v12) + 25) && v5 )
+    continue;
+    v7 = v12[8];
+    if ( v7 <= 0 || !(*(unsigned char (__thiscall **)(int *, int, int))(*v6 + 8))(v12 + 3, v5 + v7, 0) )
+    continue;
+      }
+    v8 = v6[4];
+    v9 = v6[1];
+    v6[4] = v8 + 1;
+    *(int *)(v9 + 4 * v8) = v4;
+    ++v13;
+    }
+  }
+    return v3;
 }
 }
 

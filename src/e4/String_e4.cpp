@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_5EEF60_e4.hpp"
+#include "e4/classes/E4Recv_7B4A10_e4.hpp"
+#include "e4/classes/E4Recv_7B6780_e4.hpp"
+#include "e4/classes/E4Recv_7B7660_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 
 // 0x49B760
@@ -164,28 +168,6 @@ int __thiscall String::To_Waypoint(char *this)
     return toupper(*(this + 1)) + 26 * v2 - 39; /*0x7636db*/
   else
     return v2; /*0x7636e0*/
-}
-}
-} // namespace gamemd
-
-// 0x777B30
-namespace gamemd {
-ObjectClass * String::FormatDword()
-{
-{
-    sprintf(this, (ObjectClass *)&DataGlobal_817F40.fallRate, DataGlobal_822D1C);
-    return (ObjectClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x777B60
-namespace gamemd {
-ObjectClass * String::CopyConstant()
-{
-{
-    strncpy(this, g_Str_gsmallwoo, (IUnknown *)0x20);
-    return (ObjectClass *)this;
 }
 }
 } // namespace gamemd
@@ -730,6 +712,28 @@ char * String::Trim()
     }
   }
     return this;
+}
+}
+} // namespace gamemd
+
+// 0x777B30
+namespace gamemd {
+ObjectClass * String::FormatDword()
+{
+{
+    sprintf(this, (ObjectClass *)&DataGlobal_817F40.fallRate, DataGlobal_822D1C);
+    return (ObjectClass *)this;
+}
+}
+} // namespace gamemd
+
+// 0x777B60
+namespace gamemd {
+ObjectClass * String::CopyConstant()
+{
+{
+    strncpy(this, g_Str_gsmallwoo, (IUnknown *)0x20);
+    return (ObjectClass *)this;
 }
 }
 } // namespace gamemd

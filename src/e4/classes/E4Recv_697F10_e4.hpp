@@ -1,0 +1,9 @@
+// E2 minimal declaration (auto-generated, full layout via member_lookup/til)
+#pragma once
+
+namespace gamemd {
+struct E4Recv_697F10 {
+    void* vfptr;  // minimal E2 declaration
+    int ReadGameSettingsINI(CCINIClass * aP1, int a1, unsigned int * a3, unsigned int * a4);  // 0x697F10
+};
+} // namespace gamemd

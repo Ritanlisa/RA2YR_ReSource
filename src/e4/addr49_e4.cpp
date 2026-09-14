@@ -238,35 +238,6 @@ int __thiscall sub_490400(int this)
 }
 } // namespace gamemd
 
-// 0x491670
-namespace gamemd {
-char E4Recv_491670::sub_491670(unsigned char * a1, char * a2, int a4, int a5, int a6, int a7, int a8, int a9)
-{
-{
-    char result;
-    int v12;
-    result = a4;
-    if ( a4 > 0 )
-  {
-    v12 = a4;
-    do
-    {
-    result = *a2++;
-    if ( result )
-      {
-    result = *(char *)(this->M4 + (unsigned char)*a1);
-    *a1 = result;
-      }
-    ++a1;
-    --v12;
-    }
-    while ( v12 );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x491B40
 namespace gamemd {
 int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int a10, char * a11)
@@ -978,524 +949,6 @@ unsigned __int16 *__thiscall sub_492370(
 }
 } // namespace gamemd
 
-// 0x4924C0
-namespace gamemd {
-void E4Recv_4924C0::sub_4924C0(int a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
-{
-{
-    int v9;
-    unsigned char v12;
-    v9 = a4;
-    if ( a4 > 0 )
-  {
-    do
-    {
-    v12 = *a3++;
-    a2 += 2;
-    --v9;
-    *(short *)(a2 - 2) = *(short *)(this->M4 + 2 * v12);
-    }
-    while ( v9 );
-  }
-}
-}
-} // namespace gamemd
-
-// 0x492590
-namespace gamemd {
-char E4Recv_492590::sub_492590(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9)
-{
-{
-    int v9;
-    short v10;
-    int v13;
-    v9 = **((int **)(this) + 1);
-    LOBYTE(v10) = a4;
-    if ( a4 > 0 )
-  {
-    v13 = a4;
-    do
-    {
-    LOBYTE(v10) = *a2++;
-    if ( (char)v10 )
-      {
-    v10 = *(short *)(this->M8 + 2 * *(unsigned char *)((unsigned char)v10 + v9));
-    *a1 = v10;
-      }
-    ++a1;
-    --v13;
-    }
-    while ( v13 );
-  }
-    return v10;
-}
-}
-} // namespace gamemd
-
-// 0x492920
-namespace gamemd {
-char E4Recv_492920::sub_492920(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
-{
-{
-    short v9;
-    int v12;
-    LOBYTE(v9) = a4;
-    if ( a4 > 0 )
-  {
-    v12 = a4;
-    do
-    {
-    LOBYTE(v9) = *a3++;
-    if ( (char)v9 )
-      {
-    v9 = ((unsigned short)this->M8 & (*a2 >> 2))
-    + 3 * ((unsigned short)this->M8 & (*(short *)(this->M4 + 2 * (unsigned char)v9) >> 2));
-    *a2 = v9;
-      }
-    ++a2;
-    --v12;
-    }
-    while ( v12 );
-  }
-    return v9;
-}
-}
-} // namespace gamemd
-
-// 0x492A10
-namespace gamemd {
-unsigned short * E4Recv_492A10::sub_492A10(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
-{
-{
-    unsigned short *result;
-    int v12;
-    TacticalMap *v13;
-    unsigned short v14;
-    result = a5;
-    if ( a4 > 0 )
-  {
-    v12 = a4;
-    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-    do
-    {
-    v14 = *result++;
-    if ( argC < v14 )
-      {
-    *a1 = *(short *)(this->M4 + 2 * *a2);
-    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-      }
-    ++a2;
-    ++a1;
-    if ( (unsigned int)result >= v13->TacticalMap_field_1C )
-    result = (unsigned short *)((char *)result - v13->TacticalMap_field_20);
-    --v12;
-    }
-    while ( v12 );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x492B00
-namespace gamemd {
-unsigned short * E4Recv_492B00::sub_492B00(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, int a7, int a8, int a9)
-{
-{
-    unsigned short *result;
-    int *v11;
-    int v13;
-    unsigned short v14;
-    result = a6;
-    if ( a4 > 0 )
-  {
-    v11 = g_ZBufferDescriptor;
-    v13 = a4;
-    do
-    {
-    v14 = *result++;
-    if ( a5 < v14 && *a3 )
-      {
-    *a2 = *(short *)(this->M4 + 2 * (unsigned char)*a3);
-    v11 = g_ZBufferDescriptor;
-      }
-    ++a3;
-    ++a2;
-    if ( (unsigned int)result >= v11[7] )
-    result = (unsigned short *)((char *)result - v11[8]);
-    --v13;
-    }
-    while ( v13 );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x492C00
-namespace gamemd {
-unsigned short * E4Recv_492C00::sub_492C00(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
-{
-{
-    unsigned short *result;
-    TacticalMap *v13;
-    unsigned short v14;
-    int v15;
-    unsigned short *a5a;
-    result = a5;
-    v15 = **((int **)(this) + 1);
-    if ( a4 > 0 )
-  {
-    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-    a5a = (unsigned short *)a4;
-    do
-    {
-    v14 = *result++;
-    if ( argC < v14 && *a2 )
-      {
-    *a1 = *(short *)(this->M8 + 2 * *(unsigned char *)((unsigned char)*a2 + v15));
-    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-      }
-    ++a2;
-    ++a1;
-    if ( (unsigned int)result >= v13->TacticalMap_field_1C )
-    result = (unsigned short *)((char *)result - v13->TacticalMap_field_20);
-    a5a = (unsigned short *)((char *)a5a - 1);
-    }
-    while ( a5a );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x492E10
-namespace gamemd {
-int E4Recv_492E10::sub_492E10(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
-{
-{
-    int result;
-    TacticalMap *v12;
-    unsigned short v14;
-    unsigned short *a5a;
-    result = a4;
-    if ( a4 > 0 )
-  {
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-    a5a = (unsigned short *)a4;
-    do
-    {
-    v14 = *a5++;
-    if ( argC < v14 && *a2 )
-      {
-    *a1 = 3 * ((unsigned short)this->M2 & (*a1 >> 2))
-    + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-      }
-    ++a2;
-    ++a1;
-    if ( (unsigned int)a5 >= v12->TacticalMap_field_1C )
-    a5 = (unsigned short *)((char *)a5 - v12->TacticalMap_field_20);
-    result = (int)a5a - 1;
-    a5a = (unsigned short *)((char *)a5a - 1);
-    }
-    while ( a5a );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x492F30
-namespace gamemd {
-unsigned short * E4Recv_492F30::sub_492F30(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
-{
-{
-    unsigned short *result;
-    TacticalMap *v12;
-    unsigned short v13;
-    unsigned short *a5a;
-    result = a5;
-    if ( a4 > 0 )
-  {
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-    a5a = (unsigned short *)a4;
-    do
-    {
-    v13 = *result++;
-    if ( argC < v13 && *a2 )
-      {
-    *a1 = ((unsigned short)this->M2 & (*a1 >> 1))
-    + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 1));
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-      }
-    ++a2;
-    ++a1;
-    if ( (unsigned int)result >= v12->TacticalMap_field_1C )
-    result = (unsigned short *)((char *)result - v12->TacticalMap_field_20);
-    a5a = (unsigned short *)((char *)a5a - 1);
-    }
-    while ( a5a );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x493050
-namespace gamemd {
-int E4Recv_493050::sub_493050(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
-{
-{
-    int result;
-    TacticalMap *v12;
-    unsigned short v14;
-    unsigned short *a5a;
-    result = a4;
-    if ( a4 > 0 )
-  {
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-    a5a = (unsigned short *)a4;
-    do
-    {
-    v14 = *a5++;
-    if ( argC < v14 && *a2 )
-      {
-    *a1 = ((unsigned short)this->M2 & (*a1 >> 2))
-    + 3 * ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-      }
-    ++a2;
-    ++a1;
-    if ( (unsigned int)a5 >= v12->TacticalMap_field_1C )
-    a5 = (unsigned short *)((char *)a5 - v12->TacticalMap_field_20);
-    result = (int)a5a - 1;
-    a5a = (unsigned short *)((char *)a5a - 1);
-    }
-    while ( a5a );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x493170
-namespace gamemd {
-int E4Recv_493170::sub_493170(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
-{
-{
-    int result;
-    TacticalMap *v12;
-    unsigned short v14;
-    unsigned short *a5a;
-    result = a4;
-    if ( a4 > 0 )
-  {
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-    a5a = (unsigned short *)a4;
-    do
-    {
-    v14 = *a5++;
-    if ( argC < v14 && *a2 )
-      {
-    *a1 = 3 * ((unsigned short)this->M2 & (a1[a9] >> 2))
-    + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-      }
-    ++a2;
-    ++a1;
-    if ( (unsigned int)a5 >= v12->TacticalMap_field_1C )
-    a5 = (unsigned short *)((char *)a5 - v12->TacticalMap_field_20);
-    result = (int)a5a - 1;
-    a5a = (unsigned short *)((char *)a5a - 1);
-    }
-    while ( a5a );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4932A0
-namespace gamemd {
-unsigned short * E4Recv_4932A0::sub_4932A0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
-{
-{
-    unsigned short *result;
-    TacticalMap *v12;
-    unsigned short v13;
-    unsigned short *a5a;
-    result = a5;
-    if ( a4 > 0 )
-  {
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-    a5a = (unsigned short *)a4;
-    do
-    {
-    v13 = *result++;
-    if ( argC < v13 && *a2 )
-      {
-    *a1 = ((unsigned short)this->M2 & (a1[a9] >> 1))
-    + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 1));
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-      }
-    ++a2;
-    ++a1;
-    if ( (unsigned int)result >= v12->TacticalMap_field_1C )
-    result = (unsigned short *)((char *)result - v12->TacticalMap_field_20);
-    a5a = (unsigned short *)((char *)a5a - 1);
-    }
-    while ( a5a );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x4933D0
-namespace gamemd {
-int E4Recv_4933D0::sub_4933D0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
-{
-{
-    int result;
-    TacticalMap *v12;
-    unsigned short v14;
-    unsigned short *a5a;
-    result = a4;
-    if ( a4 > 0 )
-  {
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-    a5a = (unsigned short *)a4;
-    do
-    {
-    v14 = *a5++;
-    if ( argC < v14 && *a2 )
-      {
-    *a1 = ((unsigned short)this->M2 & (a1[a9] >> 2))
-    + 3 * ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-      }
-    ++a2;
-    ++a1;
-    if ( (unsigned int)a5 >= v12->TacticalMap_field_1C )
-    a5 = (unsigned short *)((char *)a5 - v12->TacticalMap_field_20);
-    result = (int)a5a - 1;
-    a5a = (unsigned short *)((char *)a5a - 1);
-    }
-    while ( a5a );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x493500
-namespace gamemd {
-unsigned short * E4Recv_493500::sub_493500(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
-{
-{
-    short *result;
-    TacticalMap *v12;
-    short *a5a;
-    result = a5;
-    if ( a4 > 0 )
-  {
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-    a5a = (short *)a4;
-    do
-    {
-    if ( argC < (unsigned short)*result )
-      {
-    *a1 = *(short *)(this->M4 + 2 * *a2);
-    *result = (unsigned char)argC;
-    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-      }
-    ++result;
-    ++a2;
-    ++a1;
-    if ( (unsigned int)result >= v12->TacticalMap_field_1C )
-    result = (short *)((char *)result - v12->TacticalMap_field_20);
-    a5a = (short *)((char *)a5a - 1);
-    }
-    while ( a5a );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x493600
-namespace gamemd {
-unsigned short * E4Recv_493600::sub_493600(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, int a7, int a8, int a9)
-{
-{
-    short *result;
-    int *v10;
-    int v13;
-    result = a6;
-    if ( a4 > 0 )
-  {
-    v10 = g_ZBufferDescriptor;
-    v13 = a4;
-    do
-    {
-    if ( a5 < (unsigned short)*result && *a3 )
-      {
-    *a2 = *(short *)(this->M4 + 2 * (unsigned char)*a3);
-    *result = a5;
-    v10 = g_ZBufferDescriptor;
-      }
-    ++result;
-    ++a3;
-    ++a2;
-    if ( (unsigned int)result >= v10[7] )
-    result = (short *)((char *)result - v10[8]);
-    --v13;
-    }
-    while ( v13 );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x493710
-namespace gamemd {
-unsigned short * E4Recv_493710::sub_493710(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
-{
-{
-    short *result;
-    int v10;
-    TacticalMap *v11;
-    short *a5a;
-    result = a5;
-    v10 = **((int **)(this) + 1);
-    if ( a4 > 0 )
-  {
-    v11 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-    a5a = (short *)a4;
-    do
-    {
-    if ( argC < (unsigned short)*result && *a2 )
-      {
-    *a1 = *(short *)(this->M8 + 2 * *(unsigned char *)((unsigned char)*a2 + v10));
-    *result = argC;
-    v11 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
-      }
-    ++result;
-    ++a2;
-    ++a1;
-    if ( (unsigned int)result >= v11->TacticalMap_field_1C )
-    result = (short *)((char *)result - v11->TacticalMap_field_20);
-    a5a = (short *)((char *)a5a - 1);
-    }
-    while ( a5a );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x496310
 namespace gamemd {
 int E4Recv_496310::sub_496310()
@@ -1562,59 +1015,6 @@ int __thiscall sub_496310(RLEBlitTransLucent75_G *this)
     }
   }
   return result; /*0x4963a9*/
-}
-}
-} // namespace gamemd
-
-// 0x4963F0
-namespace gamemd {
-unsigned short * E4Recv_4963F0::sub_4963F0(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
-{
-{
-    int v11;
-    short *result;
-    int v15;
-    int v16;
-    unsigned char v17;
-    unsigned char v18;
-    v11 = a5;
-    result = a1;
-    if ( a5 <= 0 )
-  {
-    v16 = a4;
-  }
-    else
-  {
-    do
-    {
-    if ( *a2++ )
-    --v11;
-    else
-    v11 -= *a2++;
-    }
-    while ( v11 > 0 );
-    v15 = -v11;
-    result = &a1[v15];
-    v16 = a4 - v15;
-  }
-    while ( v16 > 0 )
-  {
-    v17 = *a2++;
-    if ( v17 )
-    {
-    --v16;
-    *result = ((unsigned short)this->M2 & (*result >> 1))
-    + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * v17) >> 1));
-    ++result;
-    }
-    else
-    {
-    v18 = *a2++;
-    v16 -= v18;
-    result += v18;
-    }
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -2624,149 +2024,6 @@ unsigned __int16 *__thiscall sub_497390(
 }
 } // namespace gamemd
 
-// 0x499CA0
-namespace gamemd {
-BlitTransXlat * E4Recv_499CA0::___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitTransXlat *)this;
-}
-}
-} // namespace gamemd
-
-// 0x499D80
-namespace gamemd {
-RLEBlitTransXlat * E4Recv_499D80::___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
-{
-{
-    *(int *)this = &vt_RLEBlitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (RLEBlitTransXlat *)this;
-}
-}
-} // namespace gamemd
-
-// 0x499E20
-namespace gamemd {
-RLEBlitTransXlatZRead * E4Recv_499E20::___Gfacet_locale_std__UAEPAXI_Z_16(char a2)
-{
-{
-    *(int *)this = &vt_RLEBlitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (RLEBlitTransXlatZRead *)this;
-}
-}
-} // namespace gamemd
-
-// 0x499F20
-namespace gamemd {
-BlitPlainXlat * E4Recv_499F20::___Gfacet_locale_std__UAEPAXI_Z_24(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitPlainXlat *)this;
-}
-}
-} // namespace gamemd
-
-// 0x499F60
-namespace gamemd {
-BlitTransDarken * E4Recv_499F60::___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitTransDarken *)this;
-}
-}
-} // namespace gamemd
-
-// 0x499F80
-namespace gamemd {
-BlitTransLucent75 * E4Recv_499F80::___Gfacet_locale_std__UAEPAXI_Z_27(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitTransLucent75 *)this;
-}
-}
-} // namespace gamemd
-
-// 0x499FA0
-namespace gamemd {
-BlitTransLucent50 * E4Recv_499FA0::___Gfacet_locale_std__UAEPAXI_Z_28(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitTransLucent50 *)this;
-}
-}
-} // namespace gamemd
-
-// 0x499FC0
-namespace gamemd {
-BlitTransLucent25 * E4Recv_499FC0::___Gfacet_locale_std__UAEPAXI_Z_29(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitTransLucent25 *)this;
-}
-}
-} // namespace gamemd
-
-// 0x49A000
-namespace gamemd {
-BlitTransXlatZRead * E4Recv_49A000::___Gfacet_locale_std__UAEPAXI_Z_31(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitTransXlatZRead *)this;
-}
-}
-} // namespace gamemd
-
-// 0x49A140
-namespace gamemd {
-BlitTransXlatZReadWrite * E4Recv_49A140::___Gfacet_locale_std__UAEPAXI_Z_41(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitTransXlatZReadWrite *)this;
-}
-}
-} // namespace gamemd
-
-// 0x49A820
-namespace gamemd {
-RLEBlitTransXlatZRead * E4Recv_49A820::___Gfacet_locale_std__UAEPAXI_Z_58(char a2)
-{
-{
-    *(int *)this = &vt_RLEBlitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (RLEBlitTransXlatZRead *)this;
-}
-}
-} // namespace gamemd
-
 // 0x49B7E0
 namespace gamemd {
 void FillScoreScreenStats(IUnknown * Destination, char a2)
@@ -3624,67 +2881,6 @@ char __thiscall SerializeCampaignOptions(char *this)
 }
 } // namespace gamemd
 
-// 0x49DA60
-namespace gamemd {
-unsigned int * E4Recv_49DA60::sub_49DA60()
-{
-{
-    int *result;
-    int *v2;
-    int *v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    result = this;
-    v2 = this + 4;
-    v3 = this + 7;
-    result[1] = 0;
-    result[2] = 0;
-    v2[1] = 0;
-    v2[2] = 0;
-    *v2 = &vt_GenericNode;
-    v3[1] = 0;
-    v3[2] = 0;
-    *v3 = &vt_GenericNode;
-    result[3] = &vt_GenericList;
-    if ( v3 )
-  {
-    v4 = v3[1];
-    if ( v4 )
-    {
-    v5 = v3[2];
-    if ( v5 )
-      {
-    *(int *)(v5 + 4) = v4;
-    *(int *)(v3[1] + 8) = v3[2];
-    v3[2] = 0;
-    v3[1] = 0;
-      }
-    }
-  }
-    v6 = v2[1];
-    v3[2] = v2;
-    v3[1] = v6;
-    v7 = v2[1];
-    if ( v7 )
-    *(int *)(v7 + 8) = v3;
-    v2[1] = v3;
-    result[3] = &vt_List_INIClass_INISection;
-    result[10] = 0;
-    result[11] = 0;
-    result[12] = 0;
-    *((char *)(result) + 52) = 0;
-    result[14] = 0;
-    result[15] = 0;
-    *((char *)(result) + 64) = 0;
-    *result = &CCINIClass_Vtable;
-    *((char *)(result) + 96) = 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x49E7C0
 namespace gamemd {
 char * E4Recv_49E7C0::sub_49E7C0(char a2)
@@ -3935,6 +3131,35 @@ int E4Recv_491360::sub_491360(int a2, int a3, int a4, int a5, int a6, int a7, in
 {
 {
     return this->Vf4(a2, a3, a4, a5, a6, a7, a8, 0);
+}
+}
+} // namespace gamemd
+
+// 0x491670
+namespace gamemd {
+char E4Recv_491670::sub_491670(unsigned char * a1, char * a2, int a4, int a5, int a6, int a7, int a8, int a9)
+{
+{
+    char result;
+    int v12;
+    result = a4;
+    if ( a4 > 0 )
+  {
+    v12 = a4;
+    do
+    {
+    result = *a2++;
+    if ( result )
+      {
+    result = *(char *)(this->M4 + (unsigned char)*a1);
+    *a1 = result;
+      }
+    ++a1;
+    --v12;
+    }
+    while ( v12 );
+  }
+    return result;
 }
 }
 } // namespace gamemd
@@ -4357,6 +3582,29 @@ int E4Recv_492480::sub_492480(int a2, int a3, int a4, int a5, int a6, int a7, in
 }
 } // namespace gamemd
 
+// 0x4924C0
+namespace gamemd {
+void E4Recv_4924C0::sub_4924C0(int a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
+{
+{
+    int v9;
+    unsigned char v12;
+    v9 = a4;
+    if ( a4 > 0 )
+  {
+    do
+    {
+    v12 = *a3++;
+    a2 += 2;
+    --v9;
+    *(short *)(a2 - 2) = *(short *)(this->M4 + 2 * v12);
+    }
+    while ( v9 );
+  }
+}
+}
+} // namespace gamemd
+
 // 0x492500
 namespace gamemd {
 int E4Recv_492500::sub_492500(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -4383,6 +3631,37 @@ int E4Recv_492560::sub_492560(int a2, int a3, int a4, int a5, int a6, int a7, in
 {
 {
     return this->Vf4(a2, a3, a4, a5, a6, a7, a8, 0);
+}
+}
+} // namespace gamemd
+
+// 0x492590
+namespace gamemd {
+char E4Recv_492590::sub_492590(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9)
+{
+{
+    int v9;
+    short v10;
+    int v13;
+    v9 = **((int **)(this) + 1);
+    LOBYTE(v10) = a4;
+    if ( a4 > 0 )
+  {
+    v13 = a4;
+    do
+    {
+    LOBYTE(v10) = *a2++;
+    if ( (char)v10 )
+      {
+    v10 = *(short *)(this->M8 + 2 * *(unsigned char *)((unsigned char)v10 + v9));
+    *a1 = v10;
+      }
+    ++a1;
+    --v13;
+    }
+    while ( v13 );
+  }
+    return v10;
 }
 }
 } // namespace gamemd
@@ -4602,6 +3881,36 @@ int E4Recv_4928F0::sub_4928F0(int a2, int a3, int a4, int a5, int a6, int a7, in
 }
 } // namespace gamemd
 
+// 0x492920
+namespace gamemd {
+char E4Recv_492920::sub_492920(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
+{
+{
+    short v9;
+    int v12;
+    LOBYTE(v9) = a4;
+    if ( a4 > 0 )
+  {
+    v12 = a4;
+    do
+    {
+    LOBYTE(v9) = *a3++;
+    if ( (char)v9 )
+      {
+    v9 = ((unsigned short)this->M8 & (*a2 >> 2))
+    + 3 * ((unsigned short)this->M8 & (*(short *)(this->M4 + 2 * (unsigned char)v9) >> 2));
+    *a2 = v9;
+      }
+    ++a2;
+    --v12;
+    }
+    while ( v12 );
+  }
+    return v9;
+}
+}
+} // namespace gamemd
+
 // 0x492980
 namespace gamemd {
 int E4Recv_492980::sub_492980(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -4628,6 +3937,41 @@ int E4Recv_4929E0::sub_4929E0(int a2, int a3, int a4, int a5, int a6, int a7, in
 {
 {
     return this->Vf4(a2, a3, a4, a5, a6, a7, a8, 0);
+}
+}
+} // namespace gamemd
+
+// 0x492A10
+namespace gamemd {
+unsigned short * E4Recv_492A10::sub_492A10(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
+{
+{
+    unsigned short *result;
+    int v12;
+    TacticalMap *v13;
+    unsigned short v14;
+    result = a5;
+    if ( a4 > 0 )
+  {
+    v12 = a4;
+    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    do
+    {
+    v14 = *result++;
+    if ( argC < v14 )
+      {
+    *a1 = *(short *)(this->M4 + 2 * *a2);
+    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+      }
+    ++a2;
+    ++a1;
+    if ( (unsigned int)result >= v13->TacticalMap_field_1C )
+    result = (unsigned short *)((char *)result - v13->TacticalMap_field_20);
+    --v12;
+    }
+    while ( v12 );
+  }
+    return result;
 }
 }
 } // namespace gamemd
@@ -4662,6 +4006,41 @@ int E4Recv_492AD0::sub_492AD0(int a2, int a3, int a4, int a5, int a6, int a7, in
 }
 } // namespace gamemd
 
+// 0x492B00
+namespace gamemd {
+unsigned short * E4Recv_492B00::sub_492B00(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, int a7, int a8, int a9)
+{
+{
+    unsigned short *result;
+    int *v11;
+    int v13;
+    unsigned short v14;
+    result = a6;
+    if ( a4 > 0 )
+  {
+    v11 = g_ZBufferDescriptor;
+    v13 = a4;
+    do
+    {
+    v14 = *result++;
+    if ( a5 < v14 && *a3 )
+      {
+    *a2 = *(short *)(this->M4 + 2 * (unsigned char)*a3);
+    v11 = g_ZBufferDescriptor;
+      }
+    ++a3;
+    ++a2;
+    if ( (unsigned int)result >= v11[7] )
+    result = (unsigned short *)((char *)result - v11[8]);
+    --v13;
+    }
+    while ( v13 );
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x492B70
 namespace gamemd {
 int E4Recv_492B70::sub_492B70(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -4688,6 +4067,43 @@ int E4Recv_492BD0::sub_492BD0(int a2, int a3, int a4, int a5, int a6, int a7, in
 {
 {
     return this->Vf4(a2, a3, a4, a5, a6, a7, a8, 0);
+}
+}
+} // namespace gamemd
+
+// 0x492C00
+namespace gamemd {
+unsigned short * E4Recv_492C00::sub_492C00(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
+{
+{
+    unsigned short *result;
+    TacticalMap *v13;
+    unsigned short v14;
+    int v15;
+    unsigned short *a5a;
+    result = a5;
+    v15 = **((int **)(this) + 1);
+    if ( a4 > 0 )
+  {
+    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (unsigned short *)a4;
+    do
+    {
+    v14 = *result++;
+    if ( argC < v14 && *a2 )
+      {
+    *a1 = *(short *)(this->M8 + 2 * *(unsigned char *)((unsigned char)*a2 + v15));
+    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+      }
+    ++a2;
+    ++a1;
+    if ( (unsigned int)result >= v13->TacticalMap_field_1C )
+    result = (unsigned short *)((char *)result - v13->TacticalMap_field_20);
+    a5a = (unsigned short *)((char *)a5a - 1);
+    }
+    while ( a5a );
+  }
+    return result;
 }
 }
 } // namespace gamemd
@@ -4787,6 +4203,43 @@ int E4Recv_492DE0::sub_492DE0(int a2, int a3, int a4, int a5, int a6, int a7, in
 }
 } // namespace gamemd
 
+// 0x492E10
+namespace gamemd {
+int E4Recv_492E10::sub_492E10(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
+{
+{
+    int result;
+    TacticalMap *v12;
+    unsigned short v14;
+    unsigned short *a5a;
+    result = a4;
+    if ( a4 > 0 )
+  {
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (unsigned short *)a4;
+    do
+    {
+    v14 = *a5++;
+    if ( argC < v14 && *a2 )
+      {
+    *a1 = 3 * ((unsigned short)this->M2 & (*a1 >> 2))
+    + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+      }
+    ++a2;
+    ++a1;
+    if ( (unsigned int)a5 >= v12->TacticalMap_field_1C )
+    a5 = (unsigned short *)((char *)a5 - v12->TacticalMap_field_20);
+    result = (int)a5a - 1;
+    a5a = (unsigned short *)((char *)a5a - 1);
+    }
+    while ( a5a );
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x492EA0
 namespace gamemd {
 int E4Recv_492EA0::sub_492EA0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -4813,6 +4266,42 @@ int E4Recv_492F00::sub_492F00(int a2, int a3, int a4, int a5, int a6, int a7, in
 {
 {
     return (*((int (__thiscall **)(BlitTransLucent75ZRead_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
+}
+}
+} // namespace gamemd
+
+// 0x492F30
+namespace gamemd {
+unsigned short * E4Recv_492F30::sub_492F30(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
+{
+{
+    unsigned short *result;
+    TacticalMap *v12;
+    unsigned short v13;
+    unsigned short *a5a;
+    result = a5;
+    if ( a4 > 0 )
+  {
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (unsigned short *)a4;
+    do
+    {
+    v13 = *result++;
+    if ( argC < v13 && *a2 )
+      {
+    *a1 = ((unsigned short)this->M2 & (*a1 >> 1))
+    + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 1));
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+      }
+    ++a2;
+    ++a1;
+    if ( (unsigned int)result >= v12->TacticalMap_field_1C )
+    result = (unsigned short *)((char *)result - v12->TacticalMap_field_20);
+    a5a = (unsigned short *)((char *)a5a - 1);
+    }
+    while ( a5a );
+  }
+    return result;
 }
 }
 } // namespace gamemd
@@ -4847,6 +4336,43 @@ int E4Recv_493020::sub_493020(int a2, int a3, int a4, int a5, int a6, int a7, in
 }
 } // namespace gamemd
 
+// 0x493050
+namespace gamemd {
+int E4Recv_493050::sub_493050(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
+{
+{
+    int result;
+    TacticalMap *v12;
+    unsigned short v14;
+    unsigned short *a5a;
+    result = a4;
+    if ( a4 > 0 )
+  {
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (unsigned short *)a4;
+    do
+    {
+    v14 = *a5++;
+    if ( argC < v14 && *a2 )
+      {
+    *a1 = ((unsigned short)this->M2 & (*a1 >> 2))
+    + 3 * ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+      }
+    ++a2;
+    ++a1;
+    if ( (unsigned int)a5 >= v12->TacticalMap_field_1C )
+    a5 = (unsigned short *)((char *)a5 - v12->TacticalMap_field_20);
+    result = (int)a5a - 1;
+    a5a = (unsigned short *)((char *)a5a - 1);
+    }
+    while ( a5a );
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x4930E0
 namespace gamemd {
 int E4Recv_4930E0::sub_4930E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -4873,6 +4399,43 @@ int E4Recv_493140::sub_493140(int a2, int a3, int a4, int a5, int a6, int a7, in
 {
 {
     return (*((int (__thiscall **)(BlitTransLucent25ZRead_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
+}
+}
+} // namespace gamemd
+
+// 0x493170
+namespace gamemd {
+int E4Recv_493170::sub_493170(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
+{
+{
+    int result;
+    TacticalMap *v12;
+    unsigned short v14;
+    unsigned short *a5a;
+    result = a4;
+    if ( a4 > 0 )
+  {
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (unsigned short *)a4;
+    do
+    {
+    v14 = *a5++;
+    if ( argC < v14 && *a2 )
+      {
+    *a1 = 3 * ((unsigned short)this->M2 & (a1[a9] >> 2))
+    + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+      }
+    ++a2;
+    ++a1;
+    if ( (unsigned int)a5 >= v12->TacticalMap_field_1C )
+    a5 = (unsigned short *)((char *)a5 - v12->TacticalMap_field_20);
+    result = (int)a5a - 1;
+    a5a = (unsigned short *)((char *)a5a - 1);
+    }
+    while ( a5a );
+  }
+    return result;
 }
 }
 } // namespace gamemd
@@ -4907,6 +4470,42 @@ int E4Recv_493270::sub_493270(int a2, int a3, int a4, int a5, int a6, int a7, in
 }
 } // namespace gamemd
 
+// 0x4932A0
+namespace gamemd {
+unsigned short * E4Recv_4932A0::sub_4932A0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
+{
+{
+    unsigned short *result;
+    TacticalMap *v12;
+    unsigned short v13;
+    unsigned short *a5a;
+    result = a5;
+    if ( a4 > 0 )
+  {
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (unsigned short *)a4;
+    do
+    {
+    v13 = *result++;
+    if ( argC < v13 && *a2 )
+      {
+    *a1 = ((unsigned short)this->M2 & (a1[a9] >> 1))
+    + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 1));
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+      }
+    ++a2;
+    ++a1;
+    if ( (unsigned int)result >= v12->TacticalMap_field_1C )
+    result = (unsigned short *)((char *)result - v12->TacticalMap_field_20);
+    a5a = (unsigned short *)((char *)a5a - 1);
+    }
+    while ( a5a );
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x493340
 namespace gamemd {
 int E4Recv_493340::sub_493340(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -4933,6 +4532,43 @@ int E4Recv_4933A0::sub_4933A0(int a2, int a3, int a4, int a5, int a6, int a7, in
 {
 {
     return (*((int (__thiscall **)(BlitTransLucent50ZReadWarp_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
+}
+}
+} // namespace gamemd
+
+// 0x4933D0
+namespace gamemd {
+int E4Recv_4933D0::sub_4933D0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
+{
+{
+    int result;
+    TacticalMap *v12;
+    unsigned short v14;
+    unsigned short *a5a;
+    result = a4;
+    if ( a4 > 0 )
+  {
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (unsigned short *)a4;
+    do
+    {
+    v14 = *a5++;
+    if ( argC < v14 && *a2 )
+      {
+    *a1 = ((unsigned short)this->M2 & (a1[a9] >> 2))
+    + 3 * ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+      }
+    ++a2;
+    ++a1;
+    if ( (unsigned int)a5 >= v12->TacticalMap_field_1C )
+    a5 = (unsigned short *)((char *)a5 - v12->TacticalMap_field_20);
+    result = (int)a5a - 1;
+    a5a = (unsigned short *)((char *)a5a - 1);
+    }
+    while ( a5a );
+  }
+    return result;
 }
 }
 } // namespace gamemd
@@ -4967,6 +4603,41 @@ int E4Recv_4934D0::sub_4934D0(int a2, int a3, int a4, int a5, int a6, int a7, in
 }
 } // namespace gamemd
 
+// 0x493500
+namespace gamemd {
+unsigned short * E4Recv_493500::sub_493500(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
+{
+{
+    short *result;
+    TacticalMap *v12;
+    short *a5a;
+    result = a5;
+    if ( a4 > 0 )
+  {
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (short *)a4;
+    do
+    {
+    if ( argC < (unsigned short)*result )
+      {
+    *a1 = *(short *)(this->M4 + 2 * *a2);
+    *result = (unsigned char)argC;
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+      }
+    ++result;
+    ++a2;
+    ++a1;
+    if ( (unsigned int)result >= v12->TacticalMap_field_1C )
+    result = (short *)((char *)result - v12->TacticalMap_field_20);
+    a5a = (short *)((char *)a5a - 1);
+    }
+    while ( a5a );
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x493570
 namespace gamemd {
 int E4Recv_493570::sub_493570(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -4997,6 +4668,41 @@ int E4Recv_4935D0::sub_4935D0(int a2, int a3, int a4, int a5, int a6, int a7, in
 }
 } // namespace gamemd
 
+// 0x493600
+namespace gamemd {
+unsigned short * E4Recv_493600::sub_493600(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, int a7, int a8, int a9)
+{
+{
+    short *result;
+    int *v10;
+    int v13;
+    result = a6;
+    if ( a4 > 0 )
+  {
+    v10 = g_ZBufferDescriptor;
+    v13 = a4;
+    do
+    {
+    if ( a5 < (unsigned short)*result && *a3 )
+      {
+    *a2 = *(short *)(this->M4 + 2 * (unsigned char)*a3);
+    *result = a5;
+    v10 = g_ZBufferDescriptor;
+      }
+    ++result;
+    ++a3;
+    ++a2;
+    if ( (unsigned int)result >= v10[7] )
+    result = (short *)((char *)result - v10[8]);
+    --v13;
+    }
+    while ( v13 );
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x493680
 namespace gamemd {
 int E4Recv_493680::sub_493680(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
@@ -5023,6 +4729,43 @@ int E4Recv_4936E0::sub_4936E0(int a2, int a3, int a4, int a5, int a6, int a7, in
 {
 {
     return this->Vf4(a2, a3, a4, a5, a6, a7, a8, 0);
+}
+}
+} // namespace gamemd
+
+// 0x493710
+namespace gamemd {
+unsigned short * E4Recv_493710::sub_493710(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
+{
+{
+    short *result;
+    int v10;
+    TacticalMap *v11;
+    short *a5a;
+    result = a5;
+    v10 = **((int **)(this) + 1);
+    if ( a4 > 0 )
+  {
+    v11 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (short *)a4;
+    do
+    {
+    if ( argC < (unsigned short)*result && *a2 )
+      {
+    *a1 = *(short *)(this->M8 + 2 * *(unsigned char *)((unsigned char)*a2 + v10));
+    *result = argC;
+    v11 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+      }
+    ++result;
+    ++a2;
+    ++a1;
+    if ( (unsigned int)result >= v11->TacticalMap_field_1C )
+    result = (short *)((char *)result - v11->TacticalMap_field_20);
+    a5a = (short *)((char *)a5a - 1);
+    }
+    while ( a5a );
+  }
+    return result;
 }
 }
 } // namespace gamemd
@@ -5128,6 +4871,59 @@ int E4Recv_4963B0::sub_4963B0(int a2, int a3, int a4, int a5, int a6, int a7, in
 {
 {
     return (*((int (__thiscall **)(RLEBlitTransLucent75_G *, int, int, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+}
+}
+} // namespace gamemd
+
+// 0x4963F0
+namespace gamemd {
+unsigned short * E4Recv_4963F0::sub_4963F0(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
+{
+{
+    int v11;
+    short *result;
+    int v15;
+    int v16;
+    unsigned char v17;
+    unsigned char v18;
+    v11 = a5;
+    result = a1;
+    if ( a5 <= 0 )
+  {
+    v16 = a4;
+  }
+    else
+  {
+    do
+    {
+    if ( *a2++ )
+    --v11;
+    else
+    v11 -= *a2++;
+    }
+    while ( v11 > 0 );
+    v15 = -v11;
+    result = &a1[v15];
+    v16 = a4 - v15;
+  }
+    while ( v16 > 0 )
+  {
+    v17 = *a2++;
+    if ( v17 )
+    {
+    --v16;
+    *result = ((unsigned short)this->M2 & (*result >> 1))
+    + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * v17) >> 1));
+    ++result;
+    }
+    else
+    {
+    v18 = *a2++;
+    v16 -= v18;
+    result += v18;
+    }
+  }
+    return result;
 }
 }
 } // namespace gamemd
@@ -5337,6 +5133,19 @@ int E4Recv_497470::sub_497470(int a2, int a3, int a4, int a5, int a6, int a7, in
 }
 } // namespace gamemd
 
+// 0x499CA0
+namespace gamemd {
+BlitTransXlat * E4Recv_499CA0::___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransXlat *)this;
+}
+}
+} // namespace gamemd
+
 // 0x499D40
 namespace gamemd {
 std::locale::facet * E4Recv_499D40::___Gfacet_locale_std__UAEPAXI_Z_9(char a2)
@@ -5359,6 +5168,19 @@ std::locale::facet * E4Recv_499D60::___Gfacet_locale_std__UAEPAXI_Z_10(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return this;
+}
+}
+} // namespace gamemd
+
+// 0x499D80
+namespace gamemd {
+RLEBlitTransXlat * E4Recv_499D80::___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
+{
+{
+    *(int *)this = &vt_RLEBlitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (RLEBlitTransXlat *)this;
 }
 }
 } // namespace gamemd
@@ -5398,6 +5220,19 @@ std::locale::facet * E4Recv_499E00::___Gfacet_locale_std__UAEPAXI_Z_15(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return this;
+}
+}
+} // namespace gamemd
+
+// 0x499E20
+namespace gamemd {
+RLEBlitTransXlatZRead * E4Recv_499E20::___Gfacet_locale_std__UAEPAXI_Z_16(char a2)
+{
+{
+    *(int *)this = &vt_RLEBlitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (RLEBlitTransXlatZRead *)this;
 }
 }
 } // namespace gamemd
@@ -5493,6 +5328,19 @@ std::locale::facet * E4Recv_499F00::___Gfacet_locale_std__UAEPAXI_Z_23(char a2)
 }
 } // namespace gamemd
 
+// 0x499F20
+namespace gamemd {
+BlitPlainXlat * E4Recv_499F20::___Gfacet_locale_std__UAEPAXI_Z_24(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitPlainXlat *)this;
+}
+}
+} // namespace gamemd
+
 // 0x499F40
 namespace gamemd {
 std::locale::facet * E4Recv_499F40::___Gfacet_locale_std__UAEPAXI_Z_25(char a2)
@@ -5506,6 +5354,58 @@ std::locale::facet * E4Recv_499F40::___Gfacet_locale_std__UAEPAXI_Z_25(char a2)
 }
 } // namespace gamemd
 
+// 0x499F60
+namespace gamemd {
+BlitTransDarken * E4Recv_499F60::___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransDarken *)this;
+}
+}
+} // namespace gamemd
+
+// 0x499F80
+namespace gamemd {
+BlitTransLucent75 * E4Recv_499F80::___Gfacet_locale_std__UAEPAXI_Z_27(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransLucent75 *)this;
+}
+}
+} // namespace gamemd
+
+// 0x499FA0
+namespace gamemd {
+BlitTransLucent50 * E4Recv_499FA0::___Gfacet_locale_std__UAEPAXI_Z_28(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransLucent50 *)this;
+}
+}
+} // namespace gamemd
+
+// 0x499FC0
+namespace gamemd {
+BlitTransLucent25 * E4Recv_499FC0::___Gfacet_locale_std__UAEPAXI_Z_29(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransLucent25 *)this;
+}
+}
+} // namespace gamemd
+
 // 0x499FE0
 namespace gamemd {
 std::locale::facet * E4Recv_499FE0::___Gfacet_locale_std__UAEPAXI_Z_30(char a2)
@@ -5515,6 +5415,19 @@ std::locale::facet * E4Recv_499FE0::___Gfacet_locale_std__UAEPAXI_Z_30(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return this;
+}
+}
+} // namespace gamemd
+
+// 0x49A000
+namespace gamemd {
+BlitTransXlatZRead * E4Recv_49A000::___Gfacet_locale_std__UAEPAXI_Z_31(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransXlatZRead *)this;
 }
 }
 } // namespace gamemd
@@ -5636,6 +5549,19 @@ std::locale::facet * E4Recv_49A120::___Gfacet_locale_std__UAEPAXI_Z_40(char a2)
 }
 } // namespace gamemd
 
+// 0x49A140
+namespace gamemd {
+BlitTransXlatZReadWrite * E4Recv_49A140::___Gfacet_locale_std__UAEPAXI_Z_41(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransXlatZReadWrite *)this;
+}
+}
+} // namespace gamemd
+
 // 0x49A160
 namespace gamemd {
 std::locale::facet * E4Recv_49A160::___Gfacet_locale_std__UAEPAXI_Z_42(char a2)
@@ -5697,6 +5623,19 @@ std::locale::facet * E4Recv_49A800::___Gfacet_locale_std__UAEPAXI_Z_57(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return this;
+}
+}
+} // namespace gamemd
+
+// 0x49A820
+namespace gamemd {
+RLEBlitTransXlatZRead * E4Recv_49A820::___Gfacet_locale_std__UAEPAXI_Z_58(char a2)
+{
+{
+    *(int *)this = &vt_RLEBlitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (RLEBlitTransXlatZRead *)this;
 }
 }
 } // namespace gamemd
@@ -6051,6 +5990,67 @@ char Hex_EncodeDigit(int a1)
   if ( a1 >= 10 )
     return a1 + 55;
   return a1 + 48;
+}
+} // namespace gamemd
+
+// 0x49DA60
+namespace gamemd {
+unsigned int * E4Recv_49DA60::sub_49DA60()
+{
+{
+    int *result;
+    int *v2;
+    int *v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    result = this;
+    v2 = this + 4;
+    v3 = this + 7;
+    result[1] = 0;
+    result[2] = 0;
+    v2[1] = 0;
+    v2[2] = 0;
+    *v2 = &vt_GenericNode;
+    v3[1] = 0;
+    v3[2] = 0;
+    *v3 = &vt_GenericNode;
+    result[3] = &vt_GenericList;
+    if ( v3 )
+  {
+    v4 = v3[1];
+    if ( v4 )
+    {
+    v5 = v3[2];
+    if ( v5 )
+      {
+    *(int *)(v5 + 4) = v4;
+    *(int *)(v3[1] + 8) = v3[2];
+    v3[2] = 0;
+    v3[1] = 0;
+      }
+    }
+  }
+    v6 = v2[1];
+    v3[2] = v2;
+    v3[1] = v6;
+    v7 = v2[1];
+    if ( v7 )
+    *(int *)(v7 + 8) = v3;
+    v2[1] = v3;
+    result[3] = &vt_List_INIClass_INISection;
+    result[10] = 0;
+    result[11] = 0;
+    result[12] = 0;
+    *((char *)(result) + 52) = 0;
+    result[14] = 0;
+    result[15] = 0;
+    *((char *)(result) + 64) = 0;
+    *result = &CCINIClass_Vtable;
+    *((char *)(result) + 96) = 0;
+    return result;
+}
 }
 } // namespace gamemd
 

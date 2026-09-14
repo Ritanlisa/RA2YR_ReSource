@@ -2,21 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x5B36E0
-namespace ra2 {
-namespace game {
-char IPersistStream::SetField(int a1)
-{
-{
-    if ( a1 == -1 )
-    return 1;
-    else
-    return DataGlobal_A8E3AE[32 * a1];
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x5B2E50
 namespace ra2 {
 namespace game {
@@ -33,6 +18,21 @@ namespace game {
 int IPersistStream::GetMaxSize()
 {
 return 450;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5B36E0
+namespace ra2 {
+namespace game {
+char IPersistStream::SetField(int a1)
+{
+{
+    if ( a1 == -1 )
+    return 1;
+    else
+    return DataGlobal_A8E3AE[32 * a1];
+}
 }
 } // namespace game
 } // namespace ra2

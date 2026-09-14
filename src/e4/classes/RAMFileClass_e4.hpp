@@ -10,6 +10,8 @@ struct RAMFileClass {
     int nullsub_0_4(int a2, int a3);  // 0x65C420
     int nullsub_0_6(int a2);  // 0x65C560
     void * nullsub_0_10(char a2);  // 0x65C5A0
+    unsigned char * WinMain_Helper_65C250(int a2, MixFileClass * aP2);  // 0x65C250
+    void WinMain_Helper_65C2A0();  // 0x65C2A0
     char * nullsub_0_5();  // 0x65C550
 };
 } // namespace gamemd

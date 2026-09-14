@@ -4,12 +4,6 @@
 namespace gamemd {
 struct RandomMap {
     void* vfptr;  // minimal E2 declaration
-    void ddtor();  // 0x42F420
-    unsigned int Write(int a2);  // 0x42F450
-    unsigned int * Seek(unsigned int * a2, int a3);  // 0x42F470
-    char AddRef(int a2);  // 0x42F620
-    int Read(unsigned short * a2);  // 0x42F930
-    DynamicVector * QueryInterface(char a2);  // 0x42FBF0
     bool Check();  // 0x486790
     unsigned int * TerrainTileDataConstructor(int a2);  // 0x58BF70
     int GenerateTerrain();  // 0x58C800
@@ -42,13 +36,19 @@ struct RandomMap {
     int PlaceResources();  // 0x5A3AE0
     int GenerateRandomMapTerrain();  // 0x5A4280
     int PlaceMapSeedBuildings();  // 0x5A80B0
+    void RegenerateRandomMapPreview();  // 0x5B9C90
+    unsigned int * PlaceTileSet();  // 0x6558D0
+    char RemoveMatching(IUnknown * aP1);  // 0x74EF10
+    void ddtor();  // 0x42F420
+    unsigned int Write(int a2);  // 0x42F450
+    unsigned int * Seek(unsigned int * a2, int a3);  // 0x42F470
+    char AddRef(int a2);  // 0x42F620
+    int Read(unsigned short * a2);  // 0x42F930
+    DynamicVector * QueryInterface(char a2);  // 0x42FBF0
     unsigned int * Constructor_VectorClass_Cell_(char a2);  // 0x5AC290
     unsigned int * Constructor(int a2, int a3);  // 0x5AD820
     unsigned int * Constructor_0(int a2, int a3);  // 0x5ADA40
     unsigned int * Constructor_1(int a2, int a3);  // 0x5ADAB0
-    void RegenerateRandomMapPreview();  // 0x5B9C90
-    unsigned int * PlaceTileSet();  // 0x6558D0
-    char RemoveMatching(IUnknown * aP1);  // 0x74EF10
     int GenerateTerrainForAllCells();  // 0x58CF90
 };
 } // namespace gamemd

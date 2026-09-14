@@ -2,43 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x5E8BF0
-wchar_t * Player::FindByName()
-{
-{
-    int v3;
-    int v4;
-    const wchar_t *v5;
-    if ( !wcscmp((const wchar_t *)g_HouseClass_ObserverFlags, this) )
-    return (wchar_t *)g_HouseClass_ObserverFlags;
-    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerCount, this) )
-    return (wchar_t *)g_Lobby_PlayerCount;
-    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerTeam, this) )
-    return (wchar_t *)g_Lobby_PlayerTeam;
-    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerSide, this) )
-    return (wchar_t *)g_Lobby_PlayerSide;
-    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerColor, this) )
-    return (wchar_t *)g_Lobby_PlayerColor;
-    if ( !wcscmp(g_Lobby_PlayerReady, this) )
-    return g_Lobby_PlayerReady;
-    if ( !wcscmp((const wchar_t *)g_Lobby_MaxPlayers, this) )
-    return (wchar_t *)g_Lobby_MaxPlayers;
-    v3 = Game_PlayerCount;
-    v4 = 0;
-    if ( Game_PlayerCount <= 0 )
-    return 0;
-    while ( 1 )
-  {
-    v5 = *(const wchar_t **)(Game_PlayerInfoArray + 4 * v4);
-    if ( !wcscmp(v5, this) )
-    break;
-    if ( ++v4 >= v3 )
-    return 0;
-  }
-    return (wchar_t *)v5;
-}
-}
-
 // 0x5E8DC0
 void Player::BuildListString()
 {
@@ -85,6 +48,43 @@ void __thiscall Player::BuildListString(wchar_t *this)
     v2 = (SessionClass *)((char *)v2 + 4); /*0x5e8e80*/
   }
   while ( (int)v2 < (int)&HouseClass_Player.__pad_5568[18428] ); /*0x5e8e89*/
+}
+}
+
+// 0x5E8BF0
+wchar_t * Player::FindByName()
+{
+{
+    int v3;
+    int v4;
+    const wchar_t *v5;
+    if ( !wcscmp((const wchar_t *)g_HouseClass_ObserverFlags, this) )
+    return (wchar_t *)g_HouseClass_ObserverFlags;
+    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerCount, this) )
+    return (wchar_t *)g_Lobby_PlayerCount;
+    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerTeam, this) )
+    return (wchar_t *)g_Lobby_PlayerTeam;
+    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerSide, this) )
+    return (wchar_t *)g_Lobby_PlayerSide;
+    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerColor, this) )
+    return (wchar_t *)g_Lobby_PlayerColor;
+    if ( !wcscmp(g_Lobby_PlayerReady, this) )
+    return g_Lobby_PlayerReady;
+    if ( !wcscmp((const wchar_t *)g_Lobby_MaxPlayers, this) )
+    return (wchar_t *)g_Lobby_MaxPlayers;
+    v3 = Game_PlayerCount;
+    v4 = 0;
+    if ( Game_PlayerCount <= 0 )
+    return 0;
+    while ( 1 )
+  {
+    v5 = *(const wchar_t **)(Game_PlayerInfoArray + 4 * v4);
+    if ( !wcscmp(v5, this) )
+    break;
+    if ( ++v4 >= v3 )
+    return 0;
+  }
+    return (wchar_t *)v5;
 }
 }
 

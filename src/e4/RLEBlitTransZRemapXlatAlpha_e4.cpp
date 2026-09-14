@@ -2,14 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x497880
-int RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
-{
-{
-    return (*((int (__thiscall **)(RLEBlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
-}
-}
-
 // 0x497A10
 unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlatAlpha_ushort * aP4, int a6, int _2C, unsigned short * a7, int a9, int a10, int a11)
 {
@@ -123,6 +115,14 @@ int __thiscall RLEBlitTransZRemapXlatAlpha_ushort::_vt02(
            a9,
            a10,
            a11);
+}
+}
+
+// 0x497880
+int RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
+{
+{
+    return (*((int (__thiscall **)(RLEBlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
 }
 }
 

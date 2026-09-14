@@ -1,7 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_592AF0_e4.hpp"
+#include "e4/classes/E4Recv_593030_e4.hpp"
+#include "e4/classes/E4Recv_593AF0_e4.hpp"
 #include "e4/classes/E4Recv_5942F0_e4.hpp"
+#include "e4/classes/E4Recv_594870_e4.hpp"
+#include "e4/classes/E4Recv_595400_e4.hpp"
 #include "e4/classes/E4Recv_5980A0_e4.hpp"
 
 // 0x5904B0
@@ -830,20 +835,6 @@ LABEL_39:
 }
 } // namespace gamemd
 
-// 0x5980A0
-namespace gamemd {
-unsigned int * E4Recv_5980A0::sub_5980A0(int a2)
-{
-{
-    this->M8 = 0;
-    *(char *)this = 0;
-    this->M12 = 0;
-    this->M16 = a2;
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x59A8F0
 namespace gamemd {
 void ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass * aP2)
@@ -1234,6 +1225,20 @@ double sub_598000()
 {
 {
     return (double)(unsigned int)Random::State(&g_Randomizer) * 2.328306437080797e-10;
+}
+}
+} // namespace gamemd
+
+// 0x5980A0
+namespace gamemd {
+unsigned int * E4Recv_5980A0::sub_5980A0(int a2)
+{
+{
+    this->M8 = 0;
+    *(char *)this = 0;
+    this->M12 = 0;
+    this->M16 = a2;
+    return this;
 }
 }
 } // namespace gamemd

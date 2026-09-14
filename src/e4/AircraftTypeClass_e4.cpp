@@ -204,14 +204,6 @@ AircraftTypeClass *__thiscall AircraftTypeClass::ddtor(void **this, char a2)
 }
 }
 
-// 0x712120
-int AircraftTypeClass::GetGameplayValue()
-{
-{
-    return g_RulesClass_Instance[1].?;
-}
-}
-
 // 0x41CB20
 AircraftClass * AircraftTypeClass::ConstructAircraft(AbstractClass * ppv)
 {
@@ -317,5 +309,13 @@ int AircraftTypeClass::GetAuxField()
 {
 {
     return this->ArrayIndex;
+}
+}
+
+// 0x712120
+int AircraftTypeClass::GetGameplayValue()
+{
+{
+    return g_RulesClass_Instance[1].?;
 }
 }

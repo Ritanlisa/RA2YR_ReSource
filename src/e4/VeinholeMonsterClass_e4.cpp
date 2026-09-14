@@ -54,17 +54,6 @@ LABEL_9:
 }
 } // namespace gamemd
 
-// 0x74F340
-VeinholeMonsterClass * VeinholeMonsterClass::SpreadTiberium(char a2)
-{
-{
-    DestroyVeinholeMonster(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VeinholeMonsterClass *)this;
-}
-}
-
 // 0x74EEE0
 int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2)
 {
@@ -103,4 +92,15 @@ return 63;
 int VeinholeMonsterClass::StubReturn264()
 {
 return 264;
+}
+
+// 0x74F340
+VeinholeMonsterClass * VeinholeMonsterClass::SpreadTiberium(char a2)
+{
+{
+    DestroyVeinholeMonster(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VeinholeMonsterClass *)this;
+}
 }

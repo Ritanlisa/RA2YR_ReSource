@@ -18,19 +18,6 @@ void __thiscall AbstractClass::DTOR(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x4115D0
-namespace gamemd {
-Surface * AbstractClass::getObjectValue(char a2)
-{
-{
-    *(int *)this = &Surface_Vtable;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (Surface *)this;
-}
-}
-} // namespace gamemd
-
 // 0x426A80
 namespace gamemd {
 int AbstractClass::getMapCoords()
@@ -133,7 +120,7 @@ void __thiscall AbstractClass::Initialize(_DWORD *this, TechnoClass *aP1, Techno
 
 // 0x44B760
 namespace gamemd {
-int AbstractClass::COMStub_133()
+int AbstractClass_COMStub_133()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
@@ -146,7 +133,7 @@ int __thiscall AbstractClass::COMStub_133(#377 *this)
 
 // 0x44B770
 namespace gamemd {
-int AbstractClass::COMStub_137()
+int AbstractClass_COMStub_137()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
@@ -165,71 +152,6 @@ bool AbstractClass::addRef(unsigned short * a2, int a3)
 bool __thiscall AbstractClass::sub_464AC0(int this, _WORD *a2, int a3)
 {
   return *(_BYTE *)(this + 5891) || BuildingClass::ValidatePath((int *)this, a2, a3); /*0x464aca*/
-}
-}
-} // namespace gamemd
-
-// 0x499CC0
-namespace gamemd {
-Blitter * AbstractClass::getTileIndex(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (Blitter *)this;
-}
-}
-} // namespace gamemd
-
-// 0x499CE0
-namespace gamemd {
-BlitPlainXlat * AbstractClass::setTileIndex(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitPlainXlat *)this;
-}
-}
-} // namespace gamemd
-
-// 0x499D00
-namespace gamemd {
-BlitTransXlat * AbstractClass::getOverlayType(char a2)
-{
-{
-    *(int *)this = &vt_Blitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BlitTransXlat *)this;
-}
-}
-} // namespace gamemd
-
-// 0x499DA0
-namespace gamemd {
-RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
-{
-{
-    *(int *)this = &vt_RLEBlitter;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (RLEBlitter *)this;
-}
-}
-} // namespace gamemd
-
-// 0x4F4C00
-namespace gamemd {
-GScreenClass * AbstractClass::getHouseHandle(char a2)
-{
-{
-    *(int *)this = &DataGlobal_7EA6FC;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (GScreenClass *)this;
 }
 }
 } // namespace gamemd
@@ -568,19 +490,6 @@ _DWORD *__thiscall AbstractClass::updateShroudMap(InitializerBase_MultiplayerGam
   if ( (a2 & 1) != 0 ) /*0x5d809f*/
     __3_YAXPAX_Z(this); /*0x5d80a2*/
   return &this->vfptr; /*0x5d80ac*/
-}
-}
-} // namespace gamemd
-
-// 0x65C610
-namespace gamemd {
-FileClass * AbstractClass::processAITrigger(char a2)
-{
-{
-    *(void**)this = &vt_FileClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (FileClass *)this;
 }
 }
 } // namespace gamemd
@@ -1037,6 +946,19 @@ void AbstractClass::COM_Stub_Return0(int a1)
 }
 } // namespace gamemd
 
+// 0x4115D0
+namespace gamemd {
+Surface * AbstractClass::getObjectValue(char a2)
+{
+{
+    *(int *)this = &Surface_Vtable;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (Surface *)this;
+}
+}
+} // namespace gamemd
+
 // 0x417FD0
 namespace gamemd {
 int AbstractClass::GetField9()
@@ -1387,6 +1309,45 @@ return 11;
 }
 } // namespace gamemd
 
+// 0x499CC0
+namespace gamemd {
+Blitter * AbstractClass::getTileIndex(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (Blitter *)this;
+}
+}
+} // namespace gamemd
+
+// 0x499CE0
+namespace gamemd {
+BlitPlainXlat * AbstractClass::setTileIndex(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitPlainXlat *)this;
+}
+}
+} // namespace gamemd
+
+// 0x499D00
+namespace gamemd {
+BlitTransXlat * AbstractClass::getOverlayType(char a2)
+{
+{
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransXlat *)this;
+}
+}
+} // namespace gamemd
+
 // 0x499D20
 namespace gamemd {
 std::locale::facet * AbstractClass::setOverlayFlags(char a2)
@@ -1396,6 +1357,19 @@ std::locale::facet * AbstractClass::setOverlayFlags(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return this;
+}
+}
+} // namespace gamemd
+
+// 0x499DA0
+namespace gamemd {
+RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
+{
+{
+    *(int *)this = &vt_RLEBlitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (RLEBlitter *)this;
 }
 }
 } // namespace gamemd
@@ -1455,6 +1429,19 @@ unsigned int AbstractClass::queueMission(int a2)
     return (unsigned int)(a2 - this->vtable1) >> 2;
     else
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4F4C00
+namespace gamemd {
+GScreenClass * AbstractClass::getHouseHandle(char a2)
+{
+{
+    *(int *)this = &DataGlobal_7EA6FC;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (GScreenClass *)this;
 }
 }
 } // namespace gamemd
@@ -1974,6 +1961,19 @@ void AbstractClass::resetTeamState()
 {
 {
     this->referenceCount = 0;
+}
+}
+} // namespace gamemd
+
+// 0x65C610
+namespace gamemd {
+FileClass * AbstractClass::processAITrigger(char a2)
+{
+{
+    *(void**)this = &vt_FileClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (FileClass *)this;
 }
 }
 } // namespace gamemd

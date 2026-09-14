@@ -295,19 +295,6 @@ int *__thiscall TextRenderer::MeasureBuilding2(ProgressScreenClass *this)
 }
 } // namespace gamemd
 
-// 0x727CD0
-namespace gamemd {
-TriggerTypeClass * TextRenderer::Destructor(char a2)
-{
-{
-    TriggerClass::ProcessEvents((int)this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (TriggerTypeClass *)this;
-}
-}
-} // namespace gamemd
-
 // 0x4A60E0
 namespace gamemd {
 unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, ObjectClass * aP2, ConvertClass * aP3, int a2, int a6, int a7, int a8, CampaignScore * aP8)
@@ -339,6 +326,19 @@ unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, Obje
     *(int *)&aP0->field_2[2] = *(int *)&v11->__pad_0[4];
     return aP0->__pad_0;
   }
+}
+}
+} // namespace gamemd
+
+// 0x727CD0
+namespace gamemd {
+TriggerTypeClass * TextRenderer::Destructor(char a2)
+{
+{
+    TriggerClass::ProcessEvents((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TriggerTypeClass *)this;
 }
 }
 } // namespace gamemd

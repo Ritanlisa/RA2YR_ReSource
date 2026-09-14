@@ -1,13 +1,17 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_641B00_e4.hpp"
 #include "e4/classes/E4Recv_6429E0_e4.hpp"
+#include "e4/classes/E4Recv_643720_e4.hpp"
 #include "e4/classes/E4Recv_644850_e4.hpp"
 #include "e4/classes/E4Recv_6458D0_e4.hpp"
 #include "e4/classes/E4Recv_645B60_e4.hpp"
+#include "e4/classes/E4Recv_645BB0_e4.hpp"
 #include "e4/classes/E4Recv_645CD0_e4.hpp"
 #include "e4/classes/E4Recv_645D60_e4.hpp"
 #include "e4/classes/E4Recv_646D00_e4.hpp"
+#include "e4/classes/E4Recv_64A7B0_e4.hpp"
 #include "e4/classes/E4Recv_64AAA0_e4.hpp"
 
 // 0x6406E0
@@ -38,34 +42,6 @@ void __cdecl sub_6429A0()
     MEMORY[0xAC4FB0] = 0; /*0x6429c1*/
   }
   MEMORY[0xAC4FAC] = 0; /*0x6429c8*/
-}
-}
-} // namespace gamemd
-
-// 0x6429E0
-namespace gamemd {
-unsigned int * E4Recv_6429E0::sub_6429E0()
-{
-{
-    this->field_48 = 0;
-    *(int *)this->__pad_4C = 0;
-    *(int *)&this->__pad_4C[4] = 0;
-    this->field_54 = 0;
-    this->M88 = 0;
-    this->M92 = 0;
-    this->M96 = 0;
-    this->M97 = 0;
-    this->M98 = 0;
-    this->M100 = 0;
-    this->M104 = 0;
-    this->M108 = 0;
-    this->M120 = -1;
-    this->M128 = -1;
-    this->M112 = 0;
-    this->M124 = 0;
-    *(int *)this->__pad_0 = &vt_ProgressScreenClass;
-    memset(&this->__pad_0[8], 0, 0x40u);
-    return this->__pad_0;
 }
 }
 } // namespace gamemd
@@ -3046,6 +3022,34 @@ int sub_642980()
 {
     sub_6429E0(g_UIManager);
     return atexit(sub_6429A0);
+}
+}
+} // namespace gamemd
+
+// 0x6429E0
+namespace gamemd {
+unsigned int * E4Recv_6429E0::sub_6429E0()
+{
+{
+    this->field_48 = 0;
+    *(int *)this->__pad_4C = 0;
+    *(int *)&this->__pad_4C[4] = 0;
+    this->field_54 = 0;
+    this->M88 = 0;
+    this->M92 = 0;
+    this->M96 = 0;
+    this->M97 = 0;
+    this->M98 = 0;
+    this->M100 = 0;
+    this->M104 = 0;
+    this->M108 = 0;
+    this->M120 = -1;
+    this->M128 = -1;
+    this->M112 = 0;
+    this->M124 = 0;
+    *(int *)this->__pad_0 = &vt_ProgressScreenClass;
+    memset(&this->__pad_0[8], 0, 0x40u);
+    return this->__pad_0;
 }
 }
 } // namespace gamemd

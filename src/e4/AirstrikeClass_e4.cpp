@@ -108,24 +108,6 @@ int __stdcall AirstrikeClass::Write(AbstractClass *aP0, int aP1)
 } // namespace game
 } // namespace ra2
 
-// 0x41D830
-namespace ra2 {
-namespace game {
-char AirstrikeClass::StartMission(int * a2)
-{
-{
-    char result;
-    result = (char)a2;
-    if ( !this->AirstrikeClass_field_3C )
-    return AirstrikeClass::SpawnAircraft(this, a2);
-    if ( a2 != *(int **)(this + 80) )
-    return AirstrikeClass::ReassignTarget(this, (int)a2);
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x41D860
 namespace ra2 {
 namespace game {
@@ -396,6 +378,8 @@ AirstrikeClass *__thiscall AirstrikeClass::CopyTo(_DWORD *this, char a2)
 // 0x420E90
 namespace ra2 {
 namespace game {
+char AirstrikeClass::UpdateAll()
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char sub_420E90()
 {
@@ -454,6 +438,7 @@ LABEL_9:
   }
   return (char)v0; /*0x420f38*/
 }
+}
 } // namespace game
 } // namespace ra2
 
@@ -493,6 +478,24 @@ int AirstrikeClass::ddtor(int a1, unsigned int * a2)
   a2[2] = -1610574449;
   a2[3] = -1672772828;
   return 0;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x41D830
+namespace ra2 {
+namespace game {
+char AirstrikeClass::StartMission(int * a2)
+{
+{
+    char result;
+    result = (char)a2;
+    if ( !this->AirstrikeClass_field_3C )
+    return AirstrikeClass::SpawnAircraft(this, a2);
+    if ( a2 != *(int **)(this + 80) )
+    return AirstrikeClass::ReassignTarget(this, (int)a2);
+    return result;
+}
 }
 } // namespace game
 } // namespace ra2

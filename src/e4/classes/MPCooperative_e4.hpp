@@ -4,10 +4,8 @@
 namespace gamemd {
 struct MPCooperative {
     void* vfptr;  // minimal E2 declaration
-    unsigned int * initGame();  // 0x46D330
     unsigned int * startGame();  // 0x470C00
     int processTurn(char * a2, char * a3);  // 0x49B660
-    char GetMovieScore(CampaignEndScoreClass * aP1);  // 0x49BCA0
     char BuildScoreEntries(int a2, CCINIClass * aP2);  // 0x49BCE0
     char WriteCoopSaveINI();  // 0x49BE40
     bool ReadCoopSaveINI();  // 0x49D120
@@ -39,6 +37,9 @@ struct MPCooperative {
     int InitializePlayers();  // 0x5C4CA0
     char spawnUnits(int a2, void * Block, int a4, short a5, int a6, int a7, unsigned int * a8);  // 0x5C4E90
     unsigned int * processTurnEnd(unsigned int * a2);  // 0x5C4F30
+    int finalizeSession();  // 0x696F30
+    unsigned int * initGame();  // 0x46D330
+    char GetMovieScore(CampaignEndScoreClass * aP1);  // 0x49BCA0
     DynamicVector * saveGameState(char a2);  // 0x5C4FC0
     void loadGameState();  // 0x5C5010
     int dispatchEvent(int a2);  // 0x5C5060
@@ -58,7 +59,6 @@ struct MPCooperative {
     VectorClass * processVote(char a2);  // 0x5C58A0
     DynamicVector * tallyVotes(char a2);  // 0x5C5990
     unsigned int * applyVoteResult(int a2, int a3);  // 0x5C59E0
-    int finalizeSession();  // 0x696F30
     HWND CheckReady(HWND hDlg);  // 0x5C21A0
     void Clone(HWND hDlg);  // 0x5C2640
     char ValidateSettings();  // 0x5C2CB0

@@ -13,6 +13,17 @@ unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
 }
 }
 
+// 0x691020
+unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2)
+{
+{
+    *(void**)this = &vt_ScoreAnimClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
+}
+}
+
 // 0x6910A0
 unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
 {
@@ -38,17 +49,6 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
     }
     while ( (int)v4 < (int)((char *)&DataGlobal_B055A8 + 4) );
   }
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-
-// 0x691020
-unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2)
-{
-{
-    *(void**)this = &vt_ScoreAnimClass;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return this;

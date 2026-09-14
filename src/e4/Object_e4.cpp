@@ -1,6 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_588960_e4.hpp"
+#include "e4/classes/E4Recv_5A99B0_e4.hpp"
+#include "e4/classes/E4Recv_63EFB0_e4.hpp"
+#include "e4/classes/E4Recv_6B5440_e4.hpp"
+#include "e4/classes/E4Recv_710750_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
 
 // 0x47C3D0
@@ -1005,19 +1010,6 @@ char __fastcall Object_Init(char a1, int a2, int a3, char a4, int a5)
 }
 } // namespace gamemd
 
-// 0x7AD330
-namespace gamemd {
-SessionClass * Object::DtorWithDelete(char a2)
-{
-{
-    DeleteAndZero(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (SessionClass *)this;
-}
-}
-} // namespace gamemd
-
 // 0x7DEEFA
 namespace gamemd {
 char Object_Calc(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
@@ -1884,6 +1876,19 @@ BOOL sub_733C60(int a1, const char * a2)
     const char *v4;
     v4 = (const char *)((*(int (__thiscall **)(int))(*(int *)(a1) + 136))(a1) + 36);
     return a2 && !strcmp(v4, a2) && (*(unsigned char (__thiscall **)(int))(*(int *)(a1) + 316))(a1);
+}
+}
+} // namespace gamemd
+
+// 0x7AD330
+namespace gamemd {
+SessionClass * Object::DtorWithDelete(char a2)
+{
+{
+    DeleteAndZero(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (SessionClass *)this;
 }
 }
 } // namespace gamemd

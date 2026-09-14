@@ -289,34 +289,6 @@ void __thiscall sub_4A0450(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x4A08D0
-namespace gamemd {
-void E4Recv_4A08D0::sub_4A08D0()
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    void *v5;
-    v2 = this->M24;
-    *(void**)this = &vt_ConnectionPointClass;
-    (*(void (__stdcall **)(int))(*(int *)(v2) + 8))(v2);
-    v3 = this->M28;
-    v4 = this + 7;
-    (*(void (__thiscall **)(int *))(v3 + 12))(v4);
-    v5 = (void *)v4[1];
-    *v4 = &vt_VectorClass_tagCONNECTDATA;
-    if ( v5 && *((char *)(v4) + 13) )
-  {
-    __3_YAXPAX_Z(v5);
-    v4[1] = 0;
-  }
-    *((char *)(v4) + 13) = 0;
-    v4[2] = 0;
-}
-}
-} // namespace gamemd
-
 // 0x4A0B20
 int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
 {
@@ -388,71 +360,6 @@ int __stdcall EnumConnectionPointsClass::_vt06(_DWORD *a1, _DWORD *a2)
   return 0; /*0x4a0b2c*/
 }
 }
-
-// 0x4A0CE0
-namespace gamemd {
-unsigned int * E4Recv_4A0CE0::sub_4A0CE0(unsigned int * a2)
-{
-{
-    int *v3;
-    int v4;
-    void *v5;
-    int v6;
-    int v7;
-    int i;
-    int v10;
-    v3 = this + 3;
-    this->M4 = *((int*)(a2) + 1);
-    this->M8 = 0;
-    this->M16 = 0;
-    this->M20 = 0;
-    this->M24 = 1;
-    this->M25 = 0;
-    this->M12 = &vt_VectorClass_IConnectionPoint;
-    if ( this + 3 != a2 + 3 )
-  {
-    VectorClass::CleanupTyped((int)(this + 3));
-    v4 = *((int*)(a2) + 5);
-    this->M20 = v4;
-    if ( v4 )
-    {
-    v5 = __2_YAPAXI_Z(4 * v4);
-    this->M16 = v5;
-    if ( v5 )
-      {
-    v6 = this->M20;
-    v7 = 0;
-    this->M25 = 1;
-    if ( v6 > 0 )
-        {
-    do
-          {
-    *(int *)(this->M16 + 4 * v7) = *(int *)(*((int*)(a2) + 4) + 4 * v7);
-    ++v7;
-          }
-    while ( v7 < this->M20 );
-        }
-      }
-    }
-    else
-    {
-    this->M16 = 0;
-    this->M25 = 0;
-    }
-  }
-    this->M28 = *((int*)(a2) + 7);
-    this->M32 = *((int*)(a2) + 8);
-    *v3 = &vt_DynamicVectorClass_IConnectionPoint;
-    *(void**)this = &vt_EnumConnectionPointsClass;
-    for ( i = 0; i < this->M28; ++i )
-  {
-    v10 = *(int *)(this->M16 + 4 * i);
-    (*(void (__stdcall **)(int))(*(int *)(v10) + 4))(v10);
-  }
-    return this;
-}
-}
-} // namespace gamemd
 
 // 0x4A0DB0
 namespace gamemd {
@@ -579,46 +486,6 @@ unsigned __int8 __userpurge DrawSidebarCreditsTimer@<al>(int a1@<ecx>, int a2@<e
     }
   }
   return result; /*0x4a24ed*/
-}
-}
-} // namespace gamemd
-
-// 0x4A2880
-namespace gamemd {
-void E4Recv_4A2880::sub_4A2880()
-{
-{
-    int v2;
-    void *v3;
-    void *v4;
-    int v5;
-    ULONG v6;
-    v2 = this->M8;
-    *(void**)this = vt_CStreamClass;
-    this->M4 = &vt_CStreamClass;
-    if ( v2 )
-  {
-    if ( (unsigned char)this->M17 && this->M20 > 0 && this->M8 )
-    IStream::Read(*((IStream **)(this) + 6), *((void **)(this) + 5), v6);
-    if ( this->M8 && (*(int (__stdcall **)(int, int))(**((int **)(this) + 2) + 32))(this->M8, 0) >= 0 )
-    {
-    if ( !this->M8 )
-    WinAPI::Wrapper(-2147467261);
-    (*(void (__stdcall **)(int))(**((int **)(this) + 2) + 8))(this->M8);
-    this->M8 = 0;
-    }
-  }
-    __3_YAXPAX_Z(*((void **)(this) + 8));
-    v3 = (void *)this->M24;
-    this->M32 = 0;
-    __3_YAXPAX_Z(v3);
-    v4 = (void *)this->M28;
-    this->M24 = 0;
-    __3_YAXPAX_Z(v4);
-    this->M28 = 0;
-    v5 = this->M8;
-    if ( v5 )
-    (*(void (__stdcall **)(int))(*(int *)(v5) + 8))(v5);
 }
 }
 } // namespace gamemd
@@ -3073,6 +2940,99 @@ LABEL_17:
 }
 } // namespace gamemd
 
+// 0x4A08D0
+namespace gamemd {
+void E4Recv_4A08D0::sub_4A08D0()
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    void *v5;
+    v2 = this->M24;
+    *(void**)this = &vt_ConnectionPointClass;
+    (*(void (__stdcall **)(int))(*(int *)(v2) + 8))(v2);
+    v3 = this->M28;
+    v4 = this + 7;
+    (*(void (__thiscall **)(int *))(v3 + 12))(v4);
+    v5 = (void *)v4[1];
+    *v4 = &vt_VectorClass_tagCONNECTDATA;
+    if ( v5 && *((char *)(v4) + 13) )
+  {
+    __3_YAXPAX_Z(v5);
+    v4[1] = 0;
+  }
+    *((char *)(v4) + 13) = 0;
+    v4[2] = 0;
+}
+}
+} // namespace gamemd
+
+// 0x4A0CE0
+namespace gamemd {
+unsigned int * E4Recv_4A0CE0::sub_4A0CE0(unsigned int * a2)
+{
+{
+    int *v3;
+    int v4;
+    void *v5;
+    int v6;
+    int v7;
+    int i;
+    int v10;
+    v3 = this + 3;
+    this->M4 = *((int*)(a2) + 1);
+    this->M8 = 0;
+    this->M16 = 0;
+    this->M20 = 0;
+    this->M24 = 1;
+    this->M25 = 0;
+    this->M12 = &vt_VectorClass_IConnectionPoint;
+    if ( this + 3 != a2 + 3 )
+  {
+    VectorClass::CleanupTyped((int)(this + 3));
+    v4 = *((int*)(a2) + 5);
+    this->M20 = v4;
+    if ( v4 )
+    {
+    v5 = __2_YAPAXI_Z(4 * v4);
+    this->M16 = v5;
+    if ( v5 )
+      {
+    v6 = this->M20;
+    v7 = 0;
+    this->M25 = 1;
+    if ( v6 > 0 )
+        {
+    do
+          {
+    *(int *)(this->M16 + 4 * v7) = *(int *)(*((int*)(a2) + 4) + 4 * v7);
+    ++v7;
+          }
+    while ( v7 < this->M20 );
+        }
+      }
+    }
+    else
+    {
+    this->M16 = 0;
+    this->M25 = 0;
+    }
+  }
+    this->M28 = *((int*)(a2) + 7);
+    this->M32 = *((int*)(a2) + 8);
+    *v3 = &vt_DynamicVectorClass_IConnectionPoint;
+    *(void**)this = &vt_EnumConnectionPointsClass;
+    for ( i = 0; i < this->M28; ++i )
+  {
+    v10 = *(int *)(this->M16 + 4 * i);
+    (*(void (__stdcall **)(int))(*(int *)(v10) + 4))(v10);
+  }
+    return this;
+}
+}
+} // namespace gamemd
+
 // 0x4A1540
 namespace gamemd {
 int sub_4A1540()
@@ -3418,6 +3378,46 @@ int sub_4A2330()
     DataGlobal_89F940 = 128;
     DataGlobal_89F944 = 128;
     return 128;
+}
+}
+} // namespace gamemd
+
+// 0x4A2880
+namespace gamemd {
+void E4Recv_4A2880::sub_4A2880()
+{
+{
+    int v2;
+    void *v3;
+    void *v4;
+    int v5;
+    ULONG v6;
+    v2 = this->M8;
+    *(void**)this = vt_CStreamClass;
+    this->M4 = &vt_CStreamClass;
+    if ( v2 )
+  {
+    if ( (unsigned char)this->M17 && this->M20 > 0 && this->M8 )
+    IStream::Read(*((IStream **)(this) + 6), *((void **)(this) + 5), v6);
+    if ( this->M8 && (*(int (__stdcall **)(int, int))(**((int **)(this) + 2) + 32))(this->M8, 0) >= 0 )
+    {
+    if ( !this->M8 )
+    WinAPI::Wrapper(-2147467261);
+    (*(void (__stdcall **)(int))(**((int **)(this) + 2) + 8))(this->M8);
+    this->M8 = 0;
+    }
+  }
+    __3_YAXPAX_Z(*((void **)(this) + 8));
+    v3 = (void *)this->M24;
+    this->M32 = 0;
+    __3_YAXPAX_Z(v3);
+    v4 = (void *)this->M28;
+    this->M24 = 0;
+    __3_YAXPAX_Z(v4);
+    this->M28 = 0;
+    v5 = this->M8;
+    if ( v5 )
+    (*(void (__stdcall **)(int))(*(int *)(v5) + 8))(v5);
 }
 }
 } // namespace gamemd

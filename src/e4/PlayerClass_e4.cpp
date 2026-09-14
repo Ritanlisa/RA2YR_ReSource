@@ -2,22 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x5D62C0
-char PlayerClass::AssignPlayerIndex()
-{
-{
-    int i;
-    for ( i = 0; i < Game_PlayerCount; ++i )
-  {
-    if ( SessionClass::GetPlayerSide(*(int *)(Game_PlayerInfoArray + 4 * i)) == -3 )
-    *(int *)(*(int *)(Game_PlayerInfoArray + 4 * i) + 107) = -1;
-    else
-    *(int *)(*(int *)(Game_PlayerInfoArray + 4 * i) + 107) = i;
-  }
-    return 1;
-}
-}
-
 // 0x5D8CB0
 char PlayerClass::SetHouse(int a2)
 {
@@ -33,6 +17,22 @@ char __thiscall PlayerClass_SetHouse(_DWORD *this, int a2)
     return 1; /*0x5d8cd8*/
   }
   return result; /*0x5d8cc2*/
+}
+}
+
+// 0x5D62C0
+char PlayerClass::AssignPlayerIndex()
+{
+{
+    int i;
+    for ( i = 0; i < Game_PlayerCount; ++i )
+  {
+    if ( SessionClass::GetPlayerSide(*(int *)(Game_PlayerInfoArray + 4 * i)) == -3 )
+    *(int *)(*(int *)(Game_PlayerInfoArray + 4 * i) + 107) = -1;
+    else
+    *(int *)(*(int *)(Game_PlayerInfoArray + 4 * i) + 107) = i;
+  }
+    return 1;
 }
 }
 

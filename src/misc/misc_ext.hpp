@@ -1048,6 +1048,9 @@ public:
     void* SetCell();  // 0x597fc0
     void* Validate();  // 0x597fe0
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    char PlaceCityArea(short * a2, short * a3, void * a4);  // 0x591740
+// --- e4 declarations (END) ---
 };
 // 3 methods in IDA
 class MapSizeGameOption_WorldDominationTour
@@ -5243,6 +5246,9 @@ public:
     int ddtor(int a1, unsigned int * a2);  // 0x74F2D0
     int StubReturn63();  // 0x74F310
     int StubReturn264();  // 0x74F320
+// --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    void Update_0x74D7C0();  // 0x74D7C0
 // --- e4 declarations (END) ---
 };
 // 1 methods in IDA

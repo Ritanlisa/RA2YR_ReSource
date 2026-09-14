@@ -4,9 +4,9 @@
 namespace gamemd {
 struct VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass {
     void* vfptr;  // minimal E2 declaration
-    char AddRef(int a2);  // 0x4E07E0
     char Release(int a2, int * a3);  // 0x4E0840
     char SetCapacity(int a2, int * a3);  // 0x4E0B10
+    char AddRef(int a2);  // 0x4E07E0
     int FindItemIndex(unsigned int * a2);  // 0x4E0CA0
     VectorClass * QueryInterface(char a2);  // 0x4E0D80
     DynamicVector * Constructor(char a2);  // 0x4E0E20

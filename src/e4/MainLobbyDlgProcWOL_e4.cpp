@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_77A760_e4.hpp"
+#include "e4/classes/E4Recv_77A780_e4.hpp"
+#include "e4/classes/E4Recv_77A7A0_e4.hpp"
+#include "e4/classes/E4Recv_798F50_e4.hpp"
 
 // 0x624020
 namespace gamemd {

@@ -693,6 +693,13 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // --- e4 declarations (BEGIN) ---
     int sub_674500();  // 0x674500
 // --- e4 declarations (END) ---
+// --- e4 declarations (BEGIN) ---
+    int ResetRules();  // 0x6686C0
+    int ReadCrateRulesINI();  // 0x66B900
+    int ReadMaximumPlayersINI();  // 0x672230
+    int sub_672840();  // 0x672840
+    int InitInterfaceStubsCOM();  // 0x678850
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

@@ -157,17 +157,6 @@ int __stdcall TunnelLocomotionClass::_vt05(int *a1, int *a2)
 }
 }
 
-// 0x72A210
-TunnelLocomotionClass * TunnelLocomotionClass::ProcessMove(char a2)
-{
-{
-    LocomotionClass::Construct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (TunnelLocomotionClass *)this;
-}
-}
-
 // 0x72A110
 int TunnelLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
@@ -184,4 +173,15 @@ int TunnelLocomotionClass::ddtor(int a1, unsigned int * a2)
 int TunnelLocomotionClass::StubReturn60()
 {
 return 60;
+}
+
+// 0x72A210
+TunnelLocomotionClass * TunnelLocomotionClass::ProcessMove(char a2)
+{
+{
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TunnelLocomotionClass *)this;
+}
 }

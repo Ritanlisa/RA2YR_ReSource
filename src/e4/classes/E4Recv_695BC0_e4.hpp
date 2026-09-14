@@ -1,0 +1,9 @@
+// E2 minimal declaration (auto-generated, full layout via member_lookup/til)
+#pragma once
+
+namespace gamemd {
+struct E4Recv_695BC0 {
+    void* vfptr;  // minimal E2 declaration
+    char ModemConfig_ApplySettings();  // 0x695BC0
+};
+} // namespace gamemd

@@ -442,14 +442,6 @@ char __userpurge UnitTypeClass::LoadFromINI@<al>(int a1@<ecx>, double a2@<st0>, 
 }
 } // namespace gamemd
 
-// 0x747F20
-int UnitTypeClass::GetGameplayValue()
-{
-{
-    return g_RulesClass_Instance[1].?;
-}
-}
-
 // 0x748010
 int UnitTypeClass::LoadFromINI2(int a1, int a2)
 {
@@ -598,6 +590,14 @@ unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
     *((int*)(a1) + 1) = v6;
     *((int*)(a1) + 2) = v3;
     return a1;
+}
+}
+
+// 0x747F20
+int UnitTypeClass::GetGameplayValue()
+{
+{
+    return g_RulesClass_Instance[1].?;
 }
 }
 

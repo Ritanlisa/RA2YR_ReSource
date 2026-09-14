@@ -5,10 +5,10 @@ namespace gamemd {
 struct MSFrameAnim {
     void* vfptr;  // minimal E2 declaration
     MSFrameAnim * QueryInterface(char a2);  // 0x769BD0
+    char setFrameRate(int a2, unsigned int * a3);  // 0x769FE0
     int initAnimation();  // 0x769C50
     void stopAnimation();  // 0x769CD0
     rc_ptr * resumeAnimation(char a2);  // 0x769D90
-    char setFrameRate(int a2, unsigned int * a3);  // 0x769FE0
     int getCurrentFrame(int a2);  // 0x76A100
     char loopAnimation(int a2, unsigned int * a3);  // 0x76A2B0
     int resetAnimation(unsigned int * a2);  // 0x76A360

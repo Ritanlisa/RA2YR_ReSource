@@ -2,20 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x5B1960
-int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
-{
-{
-    if ( !a2 )
-    return -2147467261;
-    *a2 = 1439777208;
-    *((int*)(a2) + 1) = 298965908;
-    *((int*)(a2) + 2) = 1610651820;
-    *((int*)(a2) + 3) = -1252326136;
-    return 0;
-}
-}
-
 // 0x5B19A0
 int MechLocomotionClass::BeginMove(int * a1, int * a2)
 {
@@ -37,6 +23,26 @@ int __stdcall MechLocomotionClass::_vt05(int *a1, int *a2)
 }
 }
 
+// 0x5B1960
+int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
+{
+{
+    if ( !a2 )
+    return -2147467261;
+    *a2 = 1439777208;
+    *((int*)(a2) + 1) = 298965908;
+    *((int*)(a2) + 2) = 1610651820;
+    *((int*)(a2) + 3) = -1252326136;
+    return 0;
+}
+}
+
+// 0x5B1B40
+int MechLocomotionClass::StubReturn52()
+{
+return 52;
+}
+
 // 0x5B1B50
 MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
 {
@@ -48,10 +54,4 @@ MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
     __3_YAXPAX_Z(this);
     return (MechLocomotionClass *)this;
 }
-}
-
-// 0x5B1B40
-int MechLocomotionClass::StubReturn52()
-{
-return 52;
 }

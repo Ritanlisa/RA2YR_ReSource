@@ -1,6 +1,16 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_5CF830_e4.hpp"
+#include "e4/classes/E4Recv_5E23D0_e4.hpp"
+#include "e4/classes/E4Recv_5EE100_e4.hpp"
+#include "e4/classes/E4Recv_6319C0_e4.hpp"
+#include "e4/classes/E4Recv_652540_e4.hpp"
+#include "e4/classes/E4Recv_652560_e4.hpp"
+#include "e4/classes/E4Recv_6525A0_e4.hpp"
+#include "e4/classes/E4Recv_69BBF0_e4.hpp"
+#include "e4/classes/E4Recv_6E7C20_e4.hpp"
+#include "e4/classes/E4Recv_7ADB00_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
 
 // 0x4311C0
@@ -971,26 +981,6 @@ bool __thiscall Network::processPacket(char *this, TechnoTypeClass *aP1)
   }
   while ( v7 ); /*0x53efdc*/
   return !v7; /*0x53ef8f*/
-}
-}
-} // namespace gamemd
-
-// 0x53F0E0
-namespace gamemd {
-char * Network::FormatAddress(IUnknown * aP1)
-{
-{
-    IUnknown *v2;
-    int v3;
-    v2 = aP1;
-    if ( !aP1 )
-    v2 = (IUnknown *)this;
-    v3 = v2->field_4;
-    if ( DataGlobal_828140 == 1 )
-    sprintf( &g_NetworkPlayerBuffer.__pad_579C[54948], DataGlobal_828158, (unsigned char)v2->field_0, BYTE1(v2->field_0), (unsigned char)BYTE2(v2->field_0), HIBYTE(v2->field_0), (unsigned char)v3, BYTE1(v3), BYTE2(v3), HIBYTE(v3), (unsigned char)LOWORD(v2->field_8), HIBYTE(LOWORD(v2->field_8)));
-    else
-    sprintf( &g_NetworkPlayerBuffer.__pad_579C[54948], DataGlobal_828144, (unsigned char)v3, BYTE1(v3), BYTE2(v3), HIBYTE(v3), *(void**)this);
-    return &g_NetworkPlayerBuffer.__pad_579C[54948];
 }
 }
 } // namespace gamemd
@@ -3033,43 +3023,6 @@ LABEL_20:
 }
 } // namespace gamemd
 
-// 0x5E3630
-namespace gamemd {
-char sub_5E3630()
-{
-{
-    unsigned int v0;
-    int v1;
-    int i;
-    int v4[113];
-    short v5;
-    char v6;
-    if ( g_GameMode_Current[0] == 3 )
-  {
-    memset(v4, 0, sizeof(v4));
-    v5 = 0;
-    v6 = 0;
-    v4[0] = 40;
-    v0 = strlen(g_GameSetupBuffer) + 1;
-    qmemcpy(&v4[1], g_GameSetupBuffer, v0);
-    v1 = Game_PlayerCount;
-    for ( i = 1; i < v1; ++i )
-    {
-    Network::SendMessage((int)g_NetworkManager, (int)v4, 455, 1, *(int *)(Game_PlayerInfoArray + 4 * i) + 40, 0, 0);
-    LOBYTE(v0) = Event::Dispatch();
-    }
-  }
-    else
-  {
-    LOBYTE(v0) = LOBYTE(g_GameMode_Current[0]) - 4;
-    if ( g_GameMode_Current[0] == 4 )
-    LOBYTE(v0) = (unsigned char)Network_Create_7A2730();
-  }
-    return v0;
-}
-}
-} // namespace gamemd
-
 // 0x5EF4E0
 namespace gamemd {
 int Network_ModemConnectionDialog()
@@ -3554,18 +3507,6 @@ LABEL_121:
   }
   Dialog::Destroy((SkirmishDialog *)hWnd); /*0x5efec4*/
   return (ObjectClass *)v51; /*0x5efecd*/
-}
-}
-} // namespace gamemd
-
-// 0x5F0040
-namespace gamemd {
-int Network::CleanupOnDisconnect()
-{
-{
-    if ( (g_NetworkEventPending & 2) == 0 && g_GameMode_Current[0] == 1 )
-    NullModemClass::Negotiate((int)&g_EventManager);
-    return ObjectClass::DetachAndFree(&g_EventManager);
 }
 }
 } // namespace gamemd
@@ -4644,28 +4585,6 @@ _DWORD *__thiscall sub_69B540(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x74FD20
-namespace gamemd {
-int Network::GetMaxPacketSize()
-{
-{
-    int v1;
-    unsigned int *v2;
-    unsigned int v4;
-    v1 = 2;
-    v2 = (unsigned int *)&DataGlobal_846150;
-    while ( v4 < *v2 )
-  {
-    v2 -= 2;
-    --v1;
-    if ( (int)v2 < (int)&DataGlobal_846140 )
-    return DataGlobal_846154;
-  }
-    return DataGlobal_846144[2 * v1];
-}
-}
-} // namespace gamemd
-
 // 0x792F10
 namespace gamemd {
 void Network::SyncPlayerList()
@@ -4978,28 +4897,6 @@ int sub_53F540()
 }
 } // namespace gamemd
 
-// 0x5DA6C0
-namespace gamemd {
-char sub_5DA6C0()
-{
-{
-    int v1;
-    char v2[8];
-    if ( !Network_Init((int)g_NetworkManager) )
-    return 0;
-    if ( g_GameMode_Current[0] != 4 )
-  {
-    if ( DataGlobal_A8D5FC )
-    {
-    Network::CopyAddress(&DataGlobal_A8D600, &v1, (int)v2);
-    Network_Init_542FC0(g_NetworkManager, (int)&v1);
-    }
-  }
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x796FC0
 namespace gamemd {
 int sub_796FC0()
@@ -5221,104 +5118,6 @@ LABEL_5:
 }
 } // namespace gamemd
 
-// 0x64B410
-namespace gamemd {
-int sub_64B410(int a1, int * a2)
-{
-{
-    int *v2;
-    int v4;
-    int v5;
-    int v7;
-    v2 = a2;
-    if ( g_GameMode_Current[0] == 1 || g_GameMode_Current[0] == 2 )
-  {
-    if ( (*(int (__thiscall **)(int))(*(int *)(a1) + 16))(a1) )
-    {
-    ++g_GameFlags_Campaign;
-    if ( !Network_Process_5F0120((int)v2) )
-      {
-    --g_GameFlags_Campaign;
-    return 0;
-      }
-    --g_GameFlags_Campaign;
-    }
-    return 1;
-  }
-    if ( g_GameMode_Current[0] != 3 && g_GameMode_Current[0] != 4 )
-    return 1;
-    v4 = 0;
-    v5 = 0x7FFFFFFF;
-    v7 = 0;
-    if ( (*(int (__thiscall **)(int))(*(int *)(a1) + 16))(a1) > 0 )
-  {
-    do
-    {
-    if ( *v2 < v5 )
-      {
-    v5 = *v2;
-    v7 = v4;
-      }
-    ++v4;
-    v2 += 6;
-    }
-    while ( v4 < (*(int (__thiscall **)(int))(*(int *)(a1) + 16))(a1) );
-    v2 = a2;
-  }
-    KickNetworkPlayerNow(a1, v7, (int)v2, 1u);
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x64D9E0
-namespace gamemd {
-int sub_64D9E0()
-{
-{
-    int result;
-    int v1;
-    short v2;
-    int v3;
-    int i;
-    int Buffer;
-    if ( g_CurrentFrame || (result = g_GameMode_Current[0]) == 0 )
-  {
-    v1 = 0;
-    Buffer = 0;
-    if ( g_GameInitState > 0 )
-    {
-    v2 = g_MenuInitFlags;
-    v3 = g_GameInitState;
-    do
-      {
-    if ( g_CurrentFrame == *(wchar_t **)((char *)&DataGlobal_8B4207 + 111 * (v2 & 0x3FFF)) && (DataGlobal_8B4205[111 * (v2 & 0x3FFF)] & 1) == 0 )
-        {
-    ++v1;
-        }
-    ++v2;
-    --v3;
-      }
-    while ( v3 );
-    Buffer = v1;
-    }
-    FileClass::Write(g_MainLoopObject, &Buffer, 4u);
-    result = g_GameInitState;
-    for ( i = 0; i < g_GameInitState; ++i )
-    {
-    if ( g_CurrentFrame == *(wchar_t **)((char *)&DataGlobal_8B4207 + 111 * (((short)g_MenuInitFlags + (short)i) & 0x3FFF)) && (DataGlobal_8B4205[111 * (((short)g_MenuInitFlags + (short)i) & 0x3FFF)] & 1) == 0 )
-      {
-    FileClass::Write(g_MainLoopObject, &g_MenuInitComplete[111 * (((short)g_MenuInitFlags + (short)i) & 0x3FFF)], 0x6Fu);
-    --Buffer;
-      }
-    result = g_GameInitState;
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x652110
 namespace gamemd {
 char * sub_652110(int a1, int a2)
@@ -5352,20 +5151,6 @@ char *__fastcall sub_652110(int a1, int a2)
 }
 } // namespace gamemd
 
-// 0x6ABC40
-namespace gamemd {
-int sub_6ABC40()
-{
-{
-    int result;
-    result = g_GameMode_Current[0];
-    if ( g_GameMode_Current[0] )
-    DataGlobal_A8EDA0 = 8;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x7B2730
 namespace gamemd {
 int sub_7B2730()
@@ -5388,6 +5173,26 @@ int Network::CopyAddress_Small(IPXManagerClass * aP1)
     aP1->Socket = *(int *)v3;
     *(short *)&aP1->Initialized = *((short *)(v3) + 2);
     return (int)aP1;
+}
+}
+} // namespace gamemd
+
+// 0x53F0E0
+namespace gamemd {
+char * Network::FormatAddress(IUnknown * aP1)
+{
+{
+    IUnknown *v2;
+    int v3;
+    v2 = aP1;
+    if ( !aP1 )
+    v2 = (IUnknown *)this;
+    v3 = v2->field_4;
+    if ( DataGlobal_828140 == 1 )
+    sprintf( &g_NetworkPlayerBuffer.__pad_579C[54948], DataGlobal_828158, (unsigned char)v2->field_0, BYTE1(v2->field_0), (unsigned char)BYTE2(v2->field_0), HIBYTE(v2->field_0), (unsigned char)v3, BYTE1(v3), BYTE2(v3), HIBYTE(v3), (unsigned char)LOWORD(v2->field_8), HIBYTE(LOWORD(v2->field_8)));
+    else
+    sprintf( &g_NetworkPlayerBuffer.__pad_579C[54948], DataGlobal_828144, (unsigned char)v3, BYTE1(v3), BYTE2(v3), HIBYTE(v3), *(void**)this);
+    return &g_NetworkPlayerBuffer.__pad_579C[54948];
 }
 }
 } // namespace gamemd
@@ -5709,6 +5514,65 @@ int sub_5DA040(char a1)
 }
 } // namespace gamemd
 
+// 0x5DA6C0
+namespace gamemd {
+char sub_5DA6C0()
+{
+{
+    int v1;
+    char v2[8];
+    if ( !Network_Init((int)g_NetworkManager) )
+    return 0;
+    if ( g_GameMode_Current[0] != 4 )
+  {
+    if ( DataGlobal_A8D5FC )
+    {
+    Network::CopyAddress(&DataGlobal_A8D600, &v1, (int)v2);
+    Network_Init_542FC0(g_NetworkManager, (int)&v1);
+    }
+  }
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x5E3630
+namespace gamemd {
+char sub_5E3630()
+{
+{
+    unsigned int v0;
+    int v1;
+    int i;
+    int v4[113];
+    short v5;
+    char v6;
+    if ( g_GameMode_Current[0] == 3 )
+  {
+    memset(v4, 0, sizeof(v4));
+    v5 = 0;
+    v6 = 0;
+    v4[0] = 40;
+    v0 = strlen(g_GameSetupBuffer) + 1;
+    qmemcpy(&v4[1], g_GameSetupBuffer, v0);
+    v1 = Game_PlayerCount;
+    for ( i = 1; i < v1; ++i )
+    {
+    Network::SendMessage((int)g_NetworkManager, (int)v4, 455, 1, *(int *)(Game_PlayerInfoArray + 4 * i) + 40, 0, 0);
+    LOBYTE(v0) = Event::Dispatch();
+    }
+  }
+    else
+  {
+    LOBYTE(v0) = LOBYTE(g_GameMode_Current[0]) - 4;
+    if ( g_GameMode_Current[0] == 4 )
+    LOBYTE(v0) = (unsigned char)Network_Create_7A2730();
+  }
+    return v0;
+}
+}
+} // namespace gamemd
+
 // 0x5E36E0
 namespace gamemd {
 void sub_5E36E0()
@@ -5832,6 +5696,18 @@ HWND Network::handleTimeout()
 }
 } // namespace gamemd
 
+// 0x5F0040
+namespace gamemd {
+int Network::CleanupOnDisconnect()
+{
+{
+    if ( (g_NetworkEventPending & 2) == 0 && g_GameMode_Current[0] == 1 )
+    NullModemClass::Negotiate((int)&g_EventManager);
+    return ObjectClass::DetachAndFree(&g_EventManager);
+}
+}
+} // namespace gamemd
+
 // 0x5F6790
 namespace gamemd {
 int * sub_5F6790(int * a1, int a2)
@@ -5886,6 +5762,56 @@ BOOL Network_Start(HWND hWnd, LPARAM lParam)
 }
 } // namespace gamemd
 
+// 0x64B410
+namespace gamemd {
+int sub_64B410(int a1, int * a2)
+{
+{
+    int *v2;
+    int v4;
+    int v5;
+    int v7;
+    v2 = a2;
+    if ( g_GameMode_Current[0] == 1 || g_GameMode_Current[0] == 2 )
+  {
+    if ( (*(int (__thiscall **)(int))(*(int *)(a1) + 16))(a1) )
+    {
+    ++g_GameFlags_Campaign;
+    if ( !Network_Process_5F0120((int)v2) )
+      {
+    --g_GameFlags_Campaign;
+    return 0;
+      }
+    --g_GameFlags_Campaign;
+    }
+    return 1;
+  }
+    if ( g_GameMode_Current[0] != 3 && g_GameMode_Current[0] != 4 )
+    return 1;
+    v4 = 0;
+    v5 = 0x7FFFFFFF;
+    v7 = 0;
+    if ( (*(int (__thiscall **)(int))(*(int *)(a1) + 16))(a1) > 0 )
+  {
+    do
+    {
+    if ( *v2 < v5 )
+      {
+    v5 = *v2;
+    v7 = v4;
+      }
+    ++v4;
+    v2 += 6;
+    }
+    while ( v4 < (*(int (__thiscall **)(int))(*(int *)(a1) + 16))(a1) );
+    v2 = a2;
+  }
+    KickNetworkPlayerNow(a1, v7, (int)v2, 1u);
+    return 1;
+}
+}
+} // namespace gamemd
+
 // 0x64D990
 namespace gamemd {
 void sub_64D990()
@@ -5910,6 +5836,54 @@ void sub_64D990()
     }
     while ( v0 );
   }
+}
+}
+} // namespace gamemd
+
+// 0x64D9E0
+namespace gamemd {
+int sub_64D9E0()
+{
+{
+    int result;
+    int v1;
+    short v2;
+    int v3;
+    int i;
+    int Buffer;
+    if ( g_CurrentFrame || (result = g_GameMode_Current[0]) == 0 )
+  {
+    v1 = 0;
+    Buffer = 0;
+    if ( g_GameInitState > 0 )
+    {
+    v2 = g_MenuInitFlags;
+    v3 = g_GameInitState;
+    do
+      {
+    if ( g_CurrentFrame == *(wchar_t **)((char *)&DataGlobal_8B4207 + 111 * (v2 & 0x3FFF)) && (DataGlobal_8B4205[111 * (v2 & 0x3FFF)] & 1) == 0 )
+        {
+    ++v1;
+        }
+    ++v2;
+    --v3;
+      }
+    while ( v3 );
+    Buffer = v1;
+    }
+    FileClass::Write(g_MainLoopObject, &Buffer, 4u);
+    result = g_GameInitState;
+    for ( i = 0; i < g_GameInitState; ++i )
+    {
+    if ( g_CurrentFrame == *(wchar_t **)((char *)&DataGlobal_8B4207 + 111 * (((short)g_MenuInitFlags + (short)i) & 0x3FFF)) && (DataGlobal_8B4205[111 * (((short)g_MenuInitFlags + (short)i) & 0x3FFF)] & 1) == 0 )
+      {
+    FileClass::Write(g_MainLoopObject, &g_MenuInitComplete[111 * (((short)g_MenuInitFlags + (short)i) & 0x3FFF)], 0x6Fu);
+    --Buffer;
+      }
+    result = g_GameInitState;
+    }
+  }
+    return result;
 }
 }
 } // namespace gamemd
@@ -6009,6 +5983,20 @@ bool Network::sendGameEvent(Modem * aP0, int _10, unsigned int * a2)
 }
 } // namespace gamemd
 
+// 0x6ABC40
+namespace gamemd {
+int sub_6ABC40()
+{
+{
+    int result;
+    result = g_GameMode_Current[0];
+    if ( g_GameMode_Current[0] )
+    DataGlobal_A8EDA0 = 8;
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x72CD60
 namespace gamemd {
 char sub_72CD60()
@@ -6059,6 +6047,28 @@ void sub_72CDB0()
     }
   }
     DataGlobal_B0FCE5 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x74FD20
+namespace gamemd {
+int Network::GetMaxPacketSize()
+{
+{
+    int v1;
+    unsigned int *v2;
+    unsigned int v4;
+    v1 = 2;
+    v2 = (unsigned int *)&DataGlobal_846150;
+    while ( v4 < *v2 )
+  {
+    v2 -= 2;
+    --v1;
+    if ( (int)v2 < (int)&DataGlobal_846140 )
+    return DataGlobal_846154;
+  }
+    return DataGlobal_846144[2 * v1];
 }
 }
 } // namespace gamemd

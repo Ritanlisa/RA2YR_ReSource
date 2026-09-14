@@ -14,7 +14,6 @@ struct Network {
     char * CopyAddress(unsigned int * a2, int a3);  // 0x53EDA0
     int IsBroadcastAddr();  // 0x53EE00
     bool processPacket(TechnoTypeClass * aP1);  // 0x53EF60
-    char * FormatAddress(IUnknown * aP1);  // 0x53F0E0
     int SetConnectionParams(IUnknown * aP1, int a3, int a4, CellStruct * aP4);  // 0x540C60
     int sendData(AnimClass * aP1);  // 0x540F00
     int GetSendCount();  // 0x540F90
@@ -41,7 +40,6 @@ struct Network {
     unsigned short ResolveNetworkAddress(unsigned short a2);  // 0x5DA0B0
     int processQueue();  // 0x5E2BA0
     int CountDisconnectedHouses();  // 0x5E2BE0
-    int CleanupOnDisconnect();  // 0x5F0040
     char AddFrameEvent();  // 0x6471A0
     void QueueProcessingLoop();  // 0x6475F0
     int syncGameState();  // 0x64AC90
@@ -54,9 +52,11 @@ struct Network {
     char * processAcknowledgment(IUnknown * aP1);  // 0x6642A0
     char * reconnect(DynamicVector * aP1, short a3);  // 0x664400
     unsigned int * processGameEvent();  // 0x69B540
-    int GetMaxPacketSize();  // 0x74FD20
     void SyncPlayerList();  // 0x792F10
     int finalizeSession();  // 0x7B2DB0
+    char * FormatAddress(IUnknown * aP1);  // 0x53F0E0
+    int CleanupOnDisconnect();  // 0x5F0040
+    int GetMaxPacketSize();  // 0x74FD20
     short SetPort(IPXManagerClass * aP1);  // 0x53F200
     int SendSettingsRequest();  // 0x5B5E90
     char QueryAddress(IPXManagerClass * aP0, int a2, int a3, char a4);  // 0x5D90E0

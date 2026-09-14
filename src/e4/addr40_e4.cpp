@@ -529,33 +529,6 @@ int *__fastcall CreateAudioChannel(int a1, const void *a2)
 }
 } // namespace gamemd
 
-// 0x402EF0
-namespace gamemd {
-void E4Recv_402EF0::sub_402EF0()
-{
-{
-    int *Next;
-    int *i;
-    int v4;
-    int v5;
-    Next = (int *)AudioQueue::GetNext(this + 62);
-    for ( i = Next; Next; i = Next )
-  {
-    Next = (int *)AudioQueue::GetNextAlt(Next);
-    AudioStream::Destructor(i);
-  }
-    (*(void (__thiscall **)(int *))(*(int *)(*(this + 6) + 12) + 32))(this);
-    *(int *)(*(this + 6) + 4 * *(this + 7) + 28) = 0;
-    v4 = *(this + 6);
-    v5 = *(int *)(v4 + 16) - 1;
-    *(int *)(v4 + 16) = v5;
-    if ( v5 < 0 )
-    *(int *)(*(this + 6) + 16) = 0;
-    __3_YAXPAX_Z(this);
-}
-}
-} // namespace gamemd
-
 // 0x403210
 namespace gamemd {
 void * sub_403210()
@@ -1184,119 +1157,6 @@ LABEL_30:
   }
   --this->M616; /*0x404d50*/
   return v17; /*0x404bf5*/
-}
-}
-} // namespace gamemd
-
-// 0x4053E0
-namespace gamemd {
-int E4Recv_4053E0::sub_4053E0()
-{
-{
-    __int64 v2;
-    LODWORD(v2) = this->M344;
-    if ( !(int)v2 )
-  {
-    LODWORD(v2) = this->M28;
-    if ( (int)v2 == 2 )
-    {
-    LODWORD(v2) = Audio::Callback();
-    *(__int64 *)(this + 320) -= v2;
-    }
-  }
-    ++this->M344;
-    return v2;
-}
-}
-} // namespace gamemd
-
-// 0x405430
-namespace gamemd {
-int E4Recv_405430::sub_405430()
-{
-{
-    __int64 v2;
-    int v3;
-    __int64 v4;
-    LODWORD(v2) = this->M344;
-    if ( (int)v2 )
-  {
-    v3 = this->M344 - 1;
-    this->M344 = v3;
-    if ( v3 < 0 )
-    this->M344 = 0;
-    LODWORD(v2) = this->M344;
-    if ( !(int)v2 )
-    {
-    LODWORD(v2) = this->M28;
-    if ( (int)v2 == 2 )
-      {
-    LODWORD(v4) = Audio::Callback();
-    v2 = *(__int64 *)(this + 320) + v4;
-    *(__int64 *)(this + 320) = v2;
-      }
-    }
-  }
-    return v2;
-}
-}
-} // namespace gamemd
-
-// 0x4059F0
-namespace gamemd {
-int E4Recv_4059F0::sub_4059F0()
-{
-{
-    *(int *)(this->M192 + 28) = 4;
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x405A00
-namespace gamemd {
-int E4Recv_405A00::sub_405A00()
-{
-{
-    int *v1;
-    int v2;
-    int v3;
-    unsigned int v5;
-    __int64 v6;
-    v1 = (int *)this->M192;
-    v2 = v1[6];
-    LOBYTE(v2) = v2 & 0xFD;
-    v1[6] = v2;
-    v3 = 4;
-    if ( v1[7] == 4 )
-    return 0;
-    if ( v1[82] || v1[154] || v1[79] )
-    v3 = 1;
-    else
-    v1[79] = 0;
-    if ( v1[79] )
-  {
-    v5 = v1[79];
-    v1[8] = v3;
-    if ( v1[86] )
-    {
-    v1[80] = v5;
-    v1[81] = 0;
-    }
-    else
-    {
-    LODWORD(v6) = Audio::Callback();
-    *((__int64 *)(v1) + 40) = v5 + v6;
-    }
-    v1[7] = 2;
-    v1[79] = 0;
-    return 0;
-  }
-    else
-  {
-    v1[7] = v3;
-    return 0;
-  }
 }
 }
 } // namespace gamemd
@@ -3315,34 +3175,6 @@ void __cdecl unknown_libname_3()
 }
 } // namespace gamemd
 
-// 0x40E390
-GenericNode * GenericNode::sub_40E390(char a2)
-{
-{
-    GenericNode *v3;
-    GenericNode *v4;
-    *(void**)this = (GenericNode *)&vt_GenericNode;
-    if ( this )
-  {
-    v3 = *(this + 1);
-    if ( v3 )
-    {
-    v4 = *(this + 2);
-    if ( v4 )
-      {
-    v4->Previous = v3;
-    *(int *)(*(this + 1))[1].__pad_0 = *(this + 2);
-    *(this + 2) = 0;
-    *(this + 1) = 0;
-      }
-    }
-  }
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (GenericNode *)this;
-}
-}
-
 // 0x40E3E0
 namespace gamemd {
 GenericList * E4Recv_40E3E0::sub_40E3E0(char a2)
@@ -3849,6 +3681,33 @@ int sub_402940()
 }
 } // namespace gamemd
 
+// 0x402EF0
+namespace gamemd {
+void E4Recv_402EF0::sub_402EF0()
+{
+{
+    int *Next;
+    int *i;
+    int v4;
+    int v5;
+    Next = (int *)AudioQueue::GetNext(this + 62);
+    for ( i = Next; Next; i = Next )
+  {
+    Next = (int *)AudioQueue::GetNextAlt(Next);
+    AudioStream::Destructor(i);
+  }
+    (*(void (__thiscall **)(int *))(*(int *)(*(this + 6) + 12) + 32))(this);
+    *(int *)(*(this + 6) + 4 * *(this + 7) + 28) = 0;
+    v4 = *(this + 6);
+    v5 = *(int *)(v4 + 16) - 1;
+    *(int *)(v4 + 16) = v5;
+    if ( v5 < 0 )
+    *(int *)(*(this + 6) + 16) = 0;
+    __3_YAXPAX_Z(this);
+}
+}
+} // namespace gamemd
+
 // 0x403460
 namespace gamemd {
 int sub_403460()
@@ -4257,6 +4116,60 @@ int E4Recv_4052E0::sub_4052E0()
 }
 } // namespace gamemd
 
+// 0x4053E0
+namespace gamemd {
+int E4Recv_4053E0::sub_4053E0()
+{
+{
+    __int64 v2;
+    LODWORD(v2) = this->M344;
+    if ( !(int)v2 )
+  {
+    LODWORD(v2) = this->M28;
+    if ( (int)v2 == 2 )
+    {
+    LODWORD(v2) = Audio::Callback();
+    *(__int64 *)(this + 320) -= v2;
+    }
+  }
+    ++this->M344;
+    return v2;
+}
+}
+} // namespace gamemd
+
+// 0x405430
+namespace gamemd {
+int E4Recv_405430::sub_405430()
+{
+{
+    __int64 v2;
+    int v3;
+    __int64 v4;
+    LODWORD(v2) = this->M344;
+    if ( (int)v2 )
+  {
+    v3 = this->M344 - 1;
+    this->M344 = v3;
+    if ( v3 < 0 )
+    this->M344 = 0;
+    LODWORD(v2) = this->M344;
+    if ( !(int)v2 )
+    {
+    LODWORD(v2) = this->M28;
+    if ( (int)v2 == 2 )
+      {
+    LODWORD(v4) = Audio::Callback();
+    v2 = *(__int64 *)(this + 320) + v4;
+    *(__int64 *)(this + 320) = v2;
+      }
+    }
+  }
+    return v2;
+}
+}
+} // namespace gamemd
+
 // 0x405490
 namespace gamemd {
 int sub_405490()
@@ -4264,6 +4177,65 @@ int sub_405490()
 int sub_405490(unsigned int * this_)
 {
 return this_[86];
+}
+}
+} // namespace gamemd
+
+// 0x4059F0
+namespace gamemd {
+int E4Recv_4059F0::sub_4059F0()
+{
+{
+    *(int *)(this->M192 + 28) = 4;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x405A00
+namespace gamemd {
+int E4Recv_405A00::sub_405A00()
+{
+{
+    int *v1;
+    int v2;
+    int v3;
+    unsigned int v5;
+    __int64 v6;
+    v1 = (int *)this->M192;
+    v2 = v1[6];
+    LOBYTE(v2) = v2 & 0xFD;
+    v1[6] = v2;
+    v3 = 4;
+    if ( v1[7] == 4 )
+    return 0;
+    if ( v1[82] || v1[154] || v1[79] )
+    v3 = 1;
+    else
+    v1[79] = 0;
+    if ( v1[79] )
+  {
+    v5 = v1[79];
+    v1[8] = v3;
+    if ( v1[86] )
+    {
+    v1[80] = v5;
+    v1[81] = 0;
+    }
+    else
+    {
+    LODWORD(v6) = Audio::Callback();
+    *((__int64 *)(v1) + 40) = v5 + v6;
+    }
+    v1[7] = 2;
+    v1[79] = 0;
+    return 0;
+  }
+    else
+  {
+    v1[7] = v3;
+    return 0;
+  }
 }
 }
 } // namespace gamemd
@@ -7629,6 +7601,34 @@ int unknown_libname_9()
 }
 }
 } // namespace gamemd
+
+// 0x40E390
+GenericNode * GenericNode::sub_40E390(char a2)
+{
+{
+    GenericNode *v3;
+    GenericNode *v4;
+    *(void**)this = (GenericNode *)&vt_GenericNode;
+    if ( this )
+  {
+    v3 = *(this + 1);
+    if ( v3 )
+    {
+    v4 = *(this + 2);
+    if ( v4 )
+      {
+    v4->Previous = v3;
+    *(int *)(*(this + 1))[1].__pad_0 = *(this + 2);
+    *(this + 2) = 0;
+    *(this + 1) = 0;
+      }
+    }
+  }
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (GenericNode *)this;
+}
+}
 
 // 0x40E4A0
 namespace gamemd {

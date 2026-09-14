@@ -5,7 +5,6 @@ namespace gamemd {
 struct Cell {
     void* vfptr;  // minimal E2 declaration
     char IsOccupied(short * a2, char a3);  // 0x419B00
-    unsigned short * GetHeight(BuildingTypeClass * aP1, int * a2);  // 0x4265B0
     int PosToIndex();  // 0x42B1C0
     char CanPlaceBuilding(IUnknown * this, unsigned int * a2);  // 0x43B4C0
     void ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * aP4);  // 0x481670
@@ -33,10 +32,11 @@ struct Cell {
     int GetAdjacencyFlags(MouseClass * aP0);  // 0x579B70
     int GetTerrainMask(IUnknown * aP1, int a3);  // 0x57B210
     Cell * Clear();  // 0x5A9940
-    unsigned int * GetWorldCoords(unsigned int * a2, int a3);  // 0x68BD00
     char IsWalkable(unsigned short * a2, char a3);  // 0x6B5F80
     char CreateCrater(IUnknown aP2);  // 0x6D2790
     int GetAdjacentPassableMask(IUnknown * aP0, int a2);  // 0x6D8700
+    unsigned short * GetHeight(BuildingTypeClass * aP1, int * a2);  // 0x4265B0
+    unsigned int * GetWorldCoords(unsigned int * a2, int a3);  // 0x68BD00
     BOOL IsPassableOffset(IUnknown * aP1);  // 0x4870D0
     int PosToLinearIndex(IUnknown * aP0);  // 0x56BC50
     int DecodeFlags();  // 0x56CB80

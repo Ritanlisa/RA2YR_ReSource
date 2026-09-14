@@ -1,6 +1,18 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_764FC0_e4.hpp"
+#include "e4/classes/E4Recv_768000_e4.hpp"
+#include "e4/classes/E4Recv_7692F0_e4.hpp"
+#include "e4/classes/E4Recv_76A7E0_e4.hpp"
+#include "e4/classes/E4Recv_76BFC0_e4.hpp"
+#include "e4/classes/E4Recv_76C970_e4.hpp"
+#include "e4/classes/E4Recv_76CA60_e4.hpp"
+#include "e4/classes/E4Recv_76CBF0_e4.hpp"
+#include "e4/classes/E4Recv_76EEB0_e4.hpp"
+#include "e4/classes/E4Recv_76F210_e4.hpp"
+#include "e4/classes/E4Recv_76F500_e4.hpp"
+#include "e4/classes/E4Recv_771800_e4.hpp"
 
 // 0x767FB0
 namespace gamemd {

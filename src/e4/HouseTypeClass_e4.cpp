@@ -1142,402 +1142,6 @@ VectorClass *__fastcall HouseTypeClass::ReadCountryName(
 }
 } // namespace gamemd
 
-// 0x512990
-namespace gamemd {
-void HouseTypeClass_28::ddtor()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->HouseTypeClass_28_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->HouseTypeClass_28_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->HouseTypeClass_28_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x5129E0
-namespace gamemd {
-int HouseTypeClass_28::Seek(int a2)
-{
-{
-    return *(int *)(this->Items + 4 * a2);
-}
-}
-} // namespace gamemd
-
-// 0x512A90
-namespace gamemd {
-TypeList * HouseTypeClass_28::QueryInterface(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (TypeList *)this;
-}
-}
-} // namespace gamemd
-
-// 0x5133E0
-namespace gamemd {
-char HouseTypeClass_28::AddRef(int a2)
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    int v5;
-    v2 = this->Capacity;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = (int *)this->Items;
-    v5 = *(int *)(a2 + 4) - (int)v4;
-    while ( *v4 == *(int *)((char *)(v4) + v5) )
-    {
-    ++v3;
-    ++v4;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x513610
-namespace gamemd {
-char HouseTypeClass_28::Release(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v5;
-    int i;
-    int v7;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( !v4 )
-    return 0;
-    if ( this->HouseTypeClass_28_field_0x4 )
-    {
-    v5 = this->HouseTypeClass_28_field_0x8;
-    if ( a2 < v5 )
-    v5 = a2;
-    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->HouseTypeClass_28_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-      {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->HouseTypeClass_28_field_0x4 = 0;
-      }
-    }
-    this->HouseTypeClass_28_field_0x4 = v4;
-    this->HouseTypeClass_28_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-  }
-    else
-  {
-    this->ddtor();
-  }
-    v7 = this->HouseTypeClass_28_field_0x8;
-    if ( v7 < this->HouseTypeClass_28_field_0x10 )
-    this->HouseTypeClass_28_field_0x10 = v7;
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x513710
-namespace gamemd {
-int HouseTypeClass_28::Read(unsigned int * a2)
-{
-{
-    int v2;
-    int result;
-    int *i;
-    v2 = this->Count;
-    result = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = (int *)this->Items; *i != *a2; ++i )
-  {
-    if ( ++result >= v2 )
-    return -1;
-  }
-    return result;
-}
-} // namespace gamemd
-
-// 0x512900
-namespace gamemd {
-void HouseTypeClass_36::ddtor()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->HouseTypeClass_36_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->HouseTypeClass_36_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->HouseTypeClass_36_field_0x8 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x512950
-namespace gamemd {
-int HouseTypeClass_36::Seek(int a2)
-{
-{
-    return *(int *)(this->Items + 4 * a2);
-}
-}
-} // namespace gamemd
-
-// 0x512A40
-namespace gamemd {
-TypeList * HouseTypeClass_36::QueryInterface(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_UnitTypeClass_const;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (TypeList *)this;
-}
-}
-} // namespace gamemd
-
-// 0x512B80
-namespace gamemd {
-VectorClass * HouseTypeClass_36::Constructor(char a2)
-{
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
-}
-} // namespace gamemd
-
-// 0x513010
-namespace gamemd {
-char HouseTypeClass_36::AddRef(int a2)
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    int v5;
-    v2 = this->Capacity;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = (int *)this->Items;
-    v5 = *(int *)(a2 + 4) - (int)v4;
-    while ( *v4 == *(int *)((char *)(v4) + v5) )
-    {
-    ++v3;
-    ++v4;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x513240
-namespace gamemd {
-char HouseTypeClass_36::Release(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v5;
-    int i;
-    int v7;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( !v4 )
-    return 0;
-    if ( this->HouseTypeClass_36_field_0x4 )
-    {
-    v5 = this->HouseTypeClass_36_field_0x8;
-    if ( a2 < v5 )
-    v5 = a2;
-    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->HouseTypeClass_36_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-      {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->HouseTypeClass_36_field_0x4 = 0;
-      }
-    }
-    this->HouseTypeClass_36_field_0x4 = v4;
-    this->HouseTypeClass_36_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-  }
-    else
-  {
-    this->ddtor();
-  }
-    v7 = this->HouseTypeClass_36_field_0x8;
-    if ( v7 < this->HouseTypeClass_36_field_0x10 )
-    this->HouseTypeClass_36_field_0x10 = v7;
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x513340
-namespace gamemd {
-int HouseTypeClass_36::Read(unsigned int * a2)
-{
-{
-    int v2;
-    int result;
-    int *i;
-    v2 = this->Count;
-    result = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = (int *)this->Items; *i != *a2; ++i )
-  {
-    if ( ++result >= v2 )
-    return -1;
-  }
-    return result;
-}
-} // namespace gamemd
-
-// 0x513420
-namespace gamemd {
-char HouseTypeClass_36::SetCapacity(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v6;
-    int i;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( v4 )
-    {
-    if ( this->HouseTypeClass_36_field_0x4 )
-      {
-    v6 = this->HouseTypeClass_36_field_0x8;
-    if ( a2 < v6 )
-    v6 = a2;
-    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->HouseTypeClass_36_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-        {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->HouseTypeClass_36_field_0x4 = 0;
-        }
-      }
-    this->HouseTypeClass_36_field_0x4 = v4;
-    this->HouseTypeClass_36_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-    return 1;
-    }
-    else
-    {
-    return 0;
-    }
-  }
-    else
-  {
-    this->ddtor();
-    return 1;
-  }
-}
-}
-} // namespace gamemd
-
-// 0x513500
-namespace gamemd {
-int HouseTypeClass_36::IndexOf(unsigned int * a2)
-{
-{
-    int result;
-    int v3;
-    int *i;
-    if ( !(unsigned char)this->HouseTypeClass_36_field_0xC )
-    return 0;
-    v3 = this->HouseTypeClass_36_field_0x8;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = *(int **)(this + 4); *i != *a2; ++i )
-  {
-    if ( ++result >= v3 )
-    return -1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x4756F0
 namespace gamemd {
 int HouseTypeClass::loadCountryData(unsigned char * a2, unsigned char * a3, int a4)
@@ -1686,6 +1290,25 @@ return 1;
 }
 } // namespace gamemd
 
+// 0x512900
+namespace gamemd {
+void HouseTypeClass_36::ddtor()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->HouseTypeClass_36_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->HouseTypeClass_36_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->HouseTypeClass_36_field_0x8 = 0;
+}
+}
+} // namespace gamemd
+
 // 0x512930
 namespace gamemd {
 unsigned int HouseTypeClass_36::Write(int a2)
@@ -1695,6 +1318,35 @@ unsigned int HouseTypeClass_36::Write(int a2)
     return (unsigned int)(a2 - this->HouseTypeClass_36_field_0x4) >> 2;
     else
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x512950
+namespace gamemd {
+int HouseTypeClass_36::Seek(int a2)
+{
+{
+    return *(int *)(this->Items + 4 * a2);
+}
+}
+} // namespace gamemd
+
+// 0x512990
+namespace gamemd {
+void HouseTypeClass_28::ddtor()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->HouseTypeClass_28_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->HouseTypeClass_28_field_0x4 = 0;
+  }
+    this->IsAllocated = 0;
+    this->HouseTypeClass_28_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -1712,6 +1364,285 @@ unsigned int HouseTypeClass_28::Write(int a2)
 }
 } // namespace gamemd
 
+// 0x5129E0
+namespace gamemd {
+int HouseTypeClass_28::Seek(int a2)
+{
+{
+    return *(int *)(this->Items + 4 * a2);
+}
+}
+} // namespace gamemd
+
+// 0x512A40
+namespace gamemd {
+TypeList * HouseTypeClass_36::QueryInterface(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_UnitTypeClass_const;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TypeList *)this;
+}
+}
+} // namespace gamemd
+
+// 0x512A90
+namespace gamemd {
+TypeList * HouseTypeClass_28::QueryInterface(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TypeList *)this;
+}
+}
+} // namespace gamemd
+
+// 0x512B80
+namespace gamemd {
+VectorClass * HouseTypeClass_36::Constructor(char a2)
+{
+{
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
+    if ( v3 && *((char *)(this) + 13) )
+  {
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
+  }
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
+}
+}
+} // namespace gamemd
+
+// 0x513010
+namespace gamemd {
+char HouseTypeClass_36::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
+    {
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x513240
+namespace gamemd {
+char HouseTypeClass_36::Release(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->HouseTypeClass_36_field_0x4 )
+    {
+    v5 = this->HouseTypeClass_36_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->HouseTypeClass_36_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+      {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->HouseTypeClass_36_field_0x4 = 0;
+      }
+    }
+    this->HouseTypeClass_36_field_0x4 = v4;
+    this->HouseTypeClass_36_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+  }
+    else
+  {
+    this->ddtor();
+  }
+    v7 = this->HouseTypeClass_36_field_0x8;
+    if ( v7 < this->HouseTypeClass_36_field_0x10 )
+    this->HouseTypeClass_36_field_0x10 = v7;
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x513340
+namespace gamemd {
+int HouseTypeClass_36::Read(unsigned int * a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
+}
+} // namespace gamemd
+
+// 0x5133E0
+namespace gamemd {
+char HouseTypeClass_28::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
+    {
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x513420
+namespace gamemd {
+char HouseTypeClass_36::SetCapacity(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
+    {
+    if ( this->HouseTypeClass_36_field_0x4 )
+      {
+    v6 = this->HouseTypeClass_36_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->HouseTypeClass_36_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+        {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->HouseTypeClass_36_field_0x4 = 0;
+        }
+      }
+    this->HouseTypeClass_36_field_0x4 = v4;
+    this->HouseTypeClass_36_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
+    }
+    else
+    {
+    return 0;
+    }
+  }
+    else
+  {
+    this->ddtor();
+    return 1;
+  }
+}
+}
+} // namespace gamemd
+
+// 0x513500
+namespace gamemd {
+int HouseTypeClass_36::IndexOf(unsigned int * a2)
+{
+{
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->HouseTypeClass_36_field_0xC )
+    return 0;
+    v3 = this->HouseTypeClass_36_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
+  {
+    if ( ++result >= v3 )
+    return -1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x513540
 namespace gamemd {
 unsigned int HouseTypeClass_36::PointerToIndex(int a2)
@@ -1722,6 +1653,75 @@ unsigned int HouseTypeClass_36::PointerToIndex(int a2)
     else
     return 0;
 }
+}
+} // namespace gamemd
+
+// 0x513610
+namespace gamemd {
+char HouseTypeClass_28::Release(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
+  {
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->HouseTypeClass_28_field_0x4 )
+    {
+    v5 = this->HouseTypeClass_28_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->HouseTypeClass_28_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+      {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->HouseTypeClass_28_field_0x4 = 0;
+      }
+    }
+    this->HouseTypeClass_28_field_0x4 = v4;
+    this->HouseTypeClass_28_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+  }
+    else
+  {
+    this->ddtor();
+  }
+    v7 = this->HouseTypeClass_28_field_0x8;
+    if ( v7 < this->HouseTypeClass_28_field_0x10 )
+    this->HouseTypeClass_28_field_0x10 = v7;
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x513710
+namespace gamemd {
+int HouseTypeClass_28::Read(unsigned int * a2)
+{
+{
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
+  {
+    if ( ++result >= v2 )
+    return -1;
+  }
+    return result;
 }
 } // namespace gamemd
 
