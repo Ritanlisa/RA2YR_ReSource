@@ -934,30 +934,25 @@ char __thiscall TActionClass::executeRetreatAction(int *this, AbstractClass *aP1
 namespace gamemd {
 char TActionClass::executeFollowAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeFollowAction(int *this, int a2, int a3, int a4, IUnknown *aP4)
 {
-  int *v5; // ecx
-  int i; // eax
-  int j; // esi
-
-  v5 = this + 13; /*0x6e21e0*/
-  MEMORY[0x87F8E4].field_0 = *v5; /*0x6e21e5*/
-  MEMORY[0x87F8E4].field_4 = (void *)v5[1]; /*0x6e21ed*/
-  MEMORY[0x87F8E4].field_8 = (void *)v5[2]; /*0x6e21f6*/
-  MEMORY[0x87F8E4].field_C = (void *)v5[3]; /*0x6e21fe*/
-  RadarClass::Process(&MEMORY[0x87F7E8]); /*0x6e2209*/
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x6e2213*/
-  for ( i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); i; i = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) ) /*0x6e2224*/
-    House::AnnounceUpgrade(i, (IUnknown *)0xFFFFFFFF); /*0x6e222a*/
-  Terrain::ConnectivityGraph(&MEMORY[0x87F7E8]); /*0x6e2243*/
-  MapClass::BuildSubzones(&MEMORY[0x87F7E8]); /*0x6e224d*/
-  FogOfWar::Render((int **)&MEMORY[0x87F7E8]); /*0x6e2257*/
-  for ( j = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[100] - 1; j >= 0; --j ) /*0x6e2267*/
-    (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[88] + 4 * j) + 1184))( /*0x6e2275*/
-      *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[88] + 4 * j),
-      1);
-  return 1; /*0x6e2281*/
+    int *v5;
+    int i;
+    int j;
+    v5 = this + 13;
+    DataGlobal_87F8E4.field_0 = *v5;
+    DataGlobal_87F8E4.field_4 = (void *)v5[1];
+    DataGlobal_87F8E4.field_8 = (void *)v5[2];
+    DataGlobal_87F8E4.field_C = (void *)v5[3];
+    RadarClass::Process(&DataGlobal_87F7E8);
+    LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
+    for ( i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); i; i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) )
+    House::AnnounceUpgrade(i, (IUnknown *)0xFFFFFFFF);
+    Terrain::ConnectivityGraph(&DataGlobal_87F7E8);
+    MapClass::BuildSubzones(&DataGlobal_87F7E8);
+    FogOfWar::Render((int **)&DataGlobal_87F7E8);
+    for ( j = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[100] - 1; j >= 0; --j )
+    (*(void (__thiscall **)(int, int))(**(int **)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[88] + 4 * j) + 1184))( *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_14B0[88] + 4 * j), 1);
+    return 1;
 }
 }
 } // namespace gamemd

@@ -299,13 +299,11 @@ int *__thiscall TextRenderer::MeasureBuilding2(ProgressScreenClass *this)
 namespace gamemd {
 TriggerTypeClass * TextRenderer::Destructor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TriggerTypeClass *__thiscall TextRenderer::Destructor(void *this, char a2)
 {
-  TriggerClass::ProcessEvents((int)this); /*0x727cd3*/
-  if ( (a2 & 1) != 0 ) /*0x727cdd*/
-    __3_YAXPAX_Z(this); /*0x727ce0*/
-  return (TriggerTypeClass *)this; /*0x727cea*/
+    TriggerClass::ProcessEvents((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TriggerTypeClass *)this;
 }
 }
 } // namespace gamemd

@@ -423,41 +423,38 @@ int __stdcall SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
 namespace gamemd {
 int SuperWeaponTypeClass::SD_vt13(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SuperWeaponTypeClass::SD_vt13(int this, int *a2)
 {
-  int v3; // eax
-  int v4; // ecx
-  int v5; // edx
-  int v6; // eax
-  int v7; // edx
-  int v8; // edx
-  int v9; // eax
-
-  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6ce919*/
-  Power::TimerProcess(this->ArrayIndex); /*0x6ce927*/
-  Power::TimerProcess(this->ActionValue); /*0x6ce935*/
-  Power::TimerProcess(this->RechargeVoice); /*0x6ce943*/
-  Power::TimerProcess(this->ChargingVoice); /*0x6ce951*/
-  Power::TimerProcess(this->ImpatientVoice); /*0x6ce95f*/
-  v3 = Power::TimerProcess(this->SuspendVoice); /*0x6ce96d*/
-  LOBYTE(v3) = this->IsPowered; /*0x6ce972*/
-  Power::FlagProcess(a2, v3); /*0x6ce97b*/
-  LOBYTE(v4) = this->DisableableFromShell; /*0x6ce980*/
-  Power::FlagProcess(a2, v4); /*0x6ce989*/
-  LOBYTE(v5) = this->PreClick; /*0x6ce98e*/
-  v6 = Power::FlagProcess(a2, v5); /*0x6ce997*/
-  LOBYTE(v6) = this->PostClick; /*0x6ce99c*/
-  Power::FlagProcess(a2, v6); /*0x6ce9a5*/
-  Power::TimerProcess(this->PreDependent); /*0x6ce9b3*/
-  LOBYTE(v7) = this->ShowTimer; /*0x6ce9b8*/
-  Power::FlagProcess(a2, v7); /*0x6ce9c1*/
-  Power::TimerProcess(this->RechargeTime); /*0x6ce9cf*/
-  Power::TimerProcess(this->Type); /*0x6ce9dd*/
-  LOBYTE(v8) = this->UseChargeDrain; /*0x6ce9e2*/
-  v9 = Power::FlagProcess(a2, v8); /*0x6ce9eb*/
-  LOBYTE(v9) = this->ManualControl; /*0x6ce9f0*/
-  return Power::FlagProcess(a2, v9); /*0x6ce9fe*/
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    AbstractTypeClass::ProcessPower((char *)this, a2);
+    Power::TimerProcess(this->ArrayIndex);
+    Power::TimerProcess(this->ActionValue);
+    Power::TimerProcess(this->RechargeVoice);
+    Power::TimerProcess(this->ChargingVoice);
+    Power::TimerProcess(this->ImpatientVoice);
+    v3 = Power::TimerProcess(this->SuspendVoice);
+    LOBYTE(v3) = this->IsPowered;
+    Power::FlagProcess(a2, v3);
+    LOBYTE(v4) = this->DisableableFromShell;
+    Power::FlagProcess(a2, v4);
+    LOBYTE(v5) = this->PreClick;
+    v6 = Power::FlagProcess(a2, v5);
+    LOBYTE(v6) = this->PostClick;
+    Power::FlagProcess(a2, v6);
+    Power::TimerProcess(this->PreDependent);
+    LOBYTE(v7) = this->ShowTimer;
+    Power::FlagProcess(a2, v7);
+    Power::TimerProcess(this->RechargeTime);
+    Power::TimerProcess(this->Type);
+    LOBYTE(v8) = this->UseChargeDrain;
+    v9 = Power::FlagProcess(a2, v8);
+    LOBYTE(v9) = this->ManualControl;
+    return Power::FlagProcess(a2, v9);
 }
 }
 } // namespace gamemd

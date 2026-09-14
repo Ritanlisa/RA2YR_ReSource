@@ -7,20 +7,17 @@
 namespace gamemd {
 void MSEngine::ClearBuffer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MSEngine::sub_5AC520(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x5ac526*/
-  this->MSEngine_field_0x10 = 0; /*0x5ac529*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5ac530*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->MSEngine_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x5ac536*/
-    this->MSEngine_field_0x4 = 0; /*0x5ac53e*/
+    __3_YAXPAX_Z(v2);
+    this->MSEngine_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x5ac541*/
-  this->MSEngine_field_0x8 = 0; /*0x5ac544*/
+    this->IsAllocated = 0;
+    this->MSEngine_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -29,17 +26,14 @@ void __thiscall MSEngine::sub_5AC520(int this)
 namespace gamemd {
 unsigned int * MSEngine::Shutdown(unsigned int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MSEngine::_vt06(_DWORD *this, _DWORD *a2, int a3)
 {
-  _DWORD *v3; // ecx
-
-  v3 = (_DWORD *)(*(this + 1) + 16 * a3); /*0x5ac57d*/
-  *a2 = *v3; /*0x5ac587*/
-  a2[1] = v3[1]; /*0x5ac58c*/
-  a2[2] = v3[2]; /*0x5ac592*/
-  a2[3] = v3[3]; /*0x5ac599*/
-  return a2; /*0x5ac595*/
+    int *v3;
+    v3 = (int *)(this->Items + 16 * a3);
+    *a2 = *v3;
+    *((int*)(a2) + 1) = v3[1];
+    *((int*)(a2) + 2) = v3[2];
+    *((int*)(a2) + 3) = v3[3];
+    return a2;
 }
 }
 } // namespace gamemd
@@ -48,36 +42,33 @@ _DWORD *__thiscall MSEngine::_vt06(_DWORD *this, _DWORD *a2, int a3)
 namespace gamemd {
 char MSEngine::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSEngine::_vt01(int *this, int a2)
 {
-  int v2; // edi
-  int v3; // esi
-  int v4; // edx
-  _DWORD *v5; // eax
-  _DWORD *v6; // ecx
-  int v7; // edx
-
-  v2 = *(this + 2); /*0x5acccb*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x5accd0*/
+    int v2;
+    int v3;
+    int v4;
+    int *v5;
+    int *v6;
+    int v7;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x5accd2*/
-    if ( v2 <= 0 ) /*0x5accd6*/
-      return 1; /*0x5acd1a*/
-    v4 = *(_DWORD *)(a2 + 4); /*0x5accd8*/
-    v5 = (_DWORD *)*(this + 1); /*0x5accdb*/
-    v6 = (_DWORD *)(v4 + 8); /*0x5accde*/
-    v7 = v4 - (_DWORD)v5; /*0x5acce1*/
-    while ( *v5 == *(_DWORD *)((char *)v5 + v7) && v5[1] == *(v6 - 1) && v5[2] == *v6 && v5[3] == v6[1] ) /*0x5acd07*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = *(int *)(a2 + 4);
+    v5 = (int *)this->Items;
+    v6 = (int *)(v4 + 8);
+    v7 = v4 - (int)v5;
+    while ( *v5 == *(int *)((char *)(v5) + v7) && v5[1] == *(v6 - 1) && v5[2] == *v6 && v5[3] == v6[1] )
     {
-      ++v3; /*0x5acd09*/
-      v6 += 4; /*0x5acd0a*/
-      v5 += 4; /*0x5acd0d*/
-      if ( v3 >= v2 ) /*0x5acd12*/
-        return 1; /*0x5acd12*/
+    ++v3;
+    v6 += 4;
+    v5 += 4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x5acd14*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -170,16 +161,14 @@ char __thiscall MSEngine::_vt02(void *this, int a2, char *a3)
 namespace gamemd {
 void MSEngine::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MSEngine::_vt03(int this)
 {
-  if ( this->MSEngine_field_0x4 && *(_BYTE *)(this + 13) ) /*0x5ace2d*/
+    if ( this->MSEngine_field_0x4 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x5ace33*/
-    this->MSEngine_field_0x4 = 0; /*0x5ace3b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->MSEngine_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x5ace3e*/
-  this->MSEngine_field_0x8 = 0; /*0x5ace41*/
+    this->IsAllocated = 0;
+    this->MSEngine_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -188,25 +177,22 @@ void __thiscall MSEngine::_vt03(int this)
 namespace gamemd {
 int MSEngine::Init(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSEngine::_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // esi
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->MSEngine_field_0xC ) /*0x5ace50*/
-    return 0; /*0x5ace5e*/
-  v3 = this->MSEngine_field_0x8; /*0x5ace64*/
-  result = 0; /*0x5ace67*/
-  if ( v3 <= 0 ) /*0x5ace6b*/
-    return -1; /*0x5acea0*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5ace71*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->MSEngine_field_0xC )
+    return 0;
+    v3 = this->MSEngine_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2) || i[3] != *((int*)(a2) + 3); i += 4 )
   {
-    if ( ++result >= v3 ) /*0x5ace9e*/
-      return -1; /*0x5ace9e*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x5ace5b*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -297,24 +283,20 @@ char __thiscall MSEngine::sub_5ACED0(void *this, int a2, char *a3)
 namespace gamemd {
 int MSEngine::FindItem(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSEngine::sub_5ACFC0(int *this, _DWORD *a2)
 {
-  int v2; // esi
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x5acfc3*/
-  result = 0; /*0x5acfc6*/
-  if ( v2 <= 0 ) /*0x5acfcb*/
-    return -1; /*0x5ad000*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5acfd1*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2) || i[3] != *((int*)(a2) + 3); i += 4 )
   {
-    if ( ++result >= v2 ) /*0x5acffe*/
-      return -1; /*0x5acffe*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x5ad003*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -322,23 +304,20 @@ int __thiscall MSEngine::sub_5ACFC0(int *this, _DWORD *a2)
 namespace gamemd {
 VectorClass * MSEngine::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall MSEngine::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5ad4d3*/
-  *this = &vt_VectorClass_TRect_int; /*0x5ad4d6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5ad4e0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_TRect_int;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x5ad4e8*/
-    *(this + 1) = 0; /*0x5ad4f0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x5ad4fb*/
-  *(this + 2) = 0; /*0x5ad501*/
-  if ( (a2 & 1) != 0 ) /*0x5ad508*/
-    __3_YAXPAX_Z(this); /*0x5ad50b*/
-  return (VectorClass *)this; /*0x5ad515*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
@@ -347,23 +326,20 @@ VectorClass *__thiscall MSEngine::QueryInterface(_DWORD *this, char a2)
 namespace gamemd {
 DynamicVector * MSEngine::Constructor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MSEngine::Constructor(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5ad523*/
-  *this = &vt_VectorClass_TRect_int; /*0x5ad526*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5ad530*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_TRect_int;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x5ad538*/
-    *(this + 1) = 0; /*0x5ad540*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x5ad54b*/
-  *(this + 2) = 0; /*0x5ad551*/
-  if ( (a2 & 1) != 0 ) /*0x5ad558*/
-    __3_YAXPAX_Z(this); /*0x5ad55b*/
-  return (DynamicVector *)this; /*0x5ad565*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd

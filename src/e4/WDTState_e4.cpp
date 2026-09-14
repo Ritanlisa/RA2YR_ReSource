@@ -7,22 +7,19 @@
 namespace gamemd {
 int WDTState_4::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WDTState_4_::_vt03(int this)
 {
-  int (__thiscall ***v2)(_DWORD, int); // ecx
-  int result; // eax
-
-  v2 = *(int (__thiscall ****)(_DWORD, int))(this + 4); /*0x76b716*/
-  this->WDTState_4_field_0x10 = 0; /*0x76b719*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x76b720*/
+    int (__thiscall ***v2)(int, int);
+    int result;
+    v2 = *(int (__thiscall ****)(int, int))(this + 4);
+    this->WDTState_4_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    result = (**v2)(v2, 3); /*0x76b72d*/
-    this->WDTState_4_field_0x4 = 0; /*0x76b72f*/
+    result = (**v2)(v2, 3);
+    this->WDTState_4_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x76b732*/
-  *(_DWORD *)(this + 8) = 0; /*0x76b735*/
-  return result; /*0x76b738*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
+    return result;
 }
 }
 } // namespace gamemd
@@ -131,24 +128,20 @@ char __thiscall WDTState_4_::_vt02(_BYTE *this, int a2, _DWORD *a3)
 namespace gamemd {
 int WDTState_4::Read(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WDTState_4_::_vt04(int *this, int a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x76bb90*/
-  result = 0; /*0x76bb93*/
-  if ( v2 <= 0 ) /*0x76bb98*/
-    return -1; /*0x76bbb3*/
-  for ( i = (_DWORD *)(*(this + 1) + 4); *i != *(_DWORD *)(a2 + 4); i += 2 ) /*0x76bba1*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)(this->Items + 4); *i != *(int *)(a2 + 4); i += 2 )
   {
-    if ( ++result >= v2 ) /*0x76bbb1*/
-      return -1; /*0x76bbb1*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x76bbb6*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -156,23 +149,20 @@ int __thiscall WDTState_4_::_vt04(int *this, int a2)
 namespace gamemd {
 DynamicVector * WDTState_4::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall WDTState_4_::QueryInterface(_DWORD *this, char a2)
 {
-  void (__thiscall ***v3)(_DWORD, int); // ecx
-
-  v3 = (void (__thiscall ***)(_DWORD, int))*(this + 1); /*0x76bc13*/
-  *this = &vt_VectorClass_rc_ptr_WDTTerritory; /*0x76bc16*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x76bc20*/
+    void (__thiscall ***v3)(int, int);
+    v3 = (void (__thiscall ***)(int, int))*(this + 1);
+    *(void**)this = &vt_VectorClass_rc_ptr_WDTTerritory;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    (**v3)(v3, 3); /*0x76bc2f*/
-    *(this + 1) = 0; /*0x76bc31*/
+    (**v3)(v3, 3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x76bc3c*/
-  *(this + 2) = 0; /*0x76bc42*/
-  if ( (a2 & 1) != 0 ) /*0x76bc49*/
-    __3_YAXPAX_Z(this); /*0x76bc4c*/
-  return (DynamicVector *)this; /*0x76bc56*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd

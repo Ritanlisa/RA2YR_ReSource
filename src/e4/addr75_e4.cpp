@@ -1031,10 +1031,8 @@ int __fastcall sub_754740(int a1, int a2, unsigned int a3, int a4)
 namespace gamemd {
 int sub_755AC0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_755AC0(int a1)
 {
-  return MEMORY[0x8467FC][a1]; /*0x755ac7*/
+    return DataGlobal_8467FC[a1];
 }
 }
 } // namespace gamemd
@@ -1043,17 +1041,15 @@ int __fastcall sub_755AC0(int a1)
 namespace gamemd {
 unsigned int * E4Recv_755CB0::sub_755CB0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_755CB0(_DWORD *this)
 {
-  *(_BYTE *)this = 0; /*0x755cb4*/
-  *(this + 1) = 0; /*0x755cb6*/
-  *(this + 2) = 0; /*0x755cb9*/
-  *(this + 3) = 0; /*0x755cbc*/
-  *(this + 4) = 0; /*0x755cbf*/
-  *(this + 5) = 0; /*0x755cc2*/
-  *(this + 6) = 0; /*0x755cc5*/
-  return this; /*0x755cc8*/
+    *(char *)this = 0;
+    this->M4 = 0;
+    this->M8 = 0;
+    this->M12 = 0;
+    this->M16 = 0;
+    this->M20 = 0;
+    this->M24 = 0;
+    return this;
 }
 }
 } // namespace gamemd
@@ -2131,26 +2127,23 @@ LPDIRECTDRAW __thiscall sub_759790(int this)
 namespace gamemd {
 unsigned int E4Recv_759BC0::sub_759BC0(signed int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall sub_759BC0(int this, signed int a2)
 {
-  signed int v2; // edi
-  unsigned int result; // eax
-
-  v2 = a2; /*0x759bc2*/
-  if ( a2 == -1 ) /*0x759bcb*/
-    v2 = this->M1288 - 1; /*0x759bd3*/
-  if ( this->M1284 != v2 ) /*0x759bda*/
+    signed int v2;
+    unsigned int result;
+    v2 = a2;
+    if ( a2 == -1 )
+    v2 = this->M1288 - 1;
+    if ( this->M1284 != v2 )
   {
-    if ( ProcessAudioStreamBuffer(this->M512, v2, 0) != -6 ) /*0x759bee*/
-      this->M1284 = v2; /*0x759bf0*/
-    this->M1284 = v2; /*0x759bf6*/
+    if ( ProcessAudioStreamBuffer(this->M512, v2, 0) != -6 )
+    this->M1284 = v2;
+    this->M1284 = v2;
   }
-  MovieClass::RenderLoop((char *)this, v2, 0); /*0x759c01*/
-  result = this->M1284; /*0x759c06*/
-  if ( result >= this->M1288 ) /*0x759c14*/
-    this->M1284 = 0; /*0x759c16*/
-  return result; /*0x759c20*/
+    MovieClass::RenderLoop((char *)this, v2, 0);
+    result = this->M1284;
+    if ( result >= this->M1288 )
+    this->M1284 = 0;
+    return result;
 }
 }
 } // namespace gamemd

@@ -6,13 +6,11 @@
 // 0x5D3450
 MSFont * MSFont::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-MSFont *__thiscall MSFont::QueryInterface(void *this, char a2)
 {
-  MSFont::Constructor_MSFont(this); /*0x5d3453*/
-  if ( (a2 & 1) != 0 ) /*0x5d345d*/
-    __3_YAXPAX_Z(this); /*0x5d3460*/
-  return (MSFont *)this; /*0x5d346a*/
+    MSFont::Constructor_MSFont(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (MSFont *)this;
 }
 }
 
@@ -20,20 +18,17 @@ MSFont *__thiscall MSFont::QueryInterface(void *this, char a2)
 namespace gamemd {
 void MSFont_18::ClearBuffer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MSFont_18_::sub_5D5080(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x5d5086*/
-  this->MSFont_18_field_0x10 = 0; /*0x5d5089*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d5090*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->MSFont_18_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x5d5096*/
-    this->MSFont_18_field_0x4 = 0; /*0x5d509e*/
+    __3_YAXPAX_Z(v2);
+    this->MSFont_18_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x5d50a1*/
-  this->MSFont_18_field_0x8 = 0; /*0x5d50a4*/
+    this->IsAllocated = 0;
+    this->MSFont_18_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -42,10 +37,8 @@ void __thiscall MSFont_18_::sub_5D5080(int this)
 namespace gamemd {
 int MSFont_18::GetSize(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSFont_18_::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x5d50da*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -54,20 +47,17 @@ int __thiscall MSFont_18_::_vt06(_DWORD *this, int a2)
 namespace gamemd {
 void MSFont_18::Destroy()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MSFont_18_::sub_5D50E0(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x5d50e6*/
-  this->MSFont_18_field_0x10 = 0; /*0x5d50e9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d50f0*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->MSFont_18_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x5d50f6*/
-    this->MSFont_18_field_0x4 = 0; /*0x5d50fe*/
+    __3_YAXPAX_Z(v2);
+    this->MSFont_18_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x5d5101*/
-  this->MSFont_18_field_0x8 = 0; /*0x5d5104*/
+    this->IsAllocated = 0;
+    this->MSFont_18_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -76,31 +66,28 @@ void __thiscall MSFont_18_::sub_5D50E0(int this)
 namespace gamemd {
 char MSFont_18::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSFont_18_::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x5d5152*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x5d515d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x5d515f*/
-    if ( v2 <= 0 ) /*0x5d5163*/
-      return 1; /*0x5d5183*/
-    v4 = (_DWORD *)*(this + 1); /*0x5d5165*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x5d516b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x5d5174*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x5d5176*/
-      ++v4; /*0x5d5177*/
-      if ( v3 >= v2 ) /*0x5d517c*/
-        return 1; /*0x5d517c*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x5d517e*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -109,50 +96,47 @@ char __thiscall MSFont_18_::_vt01(int *this, int a2)
 namespace gamemd {
 char MSFont_18::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSFont_18_::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x5d519c*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x5d51a6*/
-    if ( a3 ) /*0x5d51ac*/
-      v4 = a3; /*0x5d51c2*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d51be*/
-    *((_BYTE *)this + 12) = 1; /*0x5d51c6*/
-    if ( v4 ) /*0x5d51ca*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( this->MSFont_18_field_0x4 ) /*0x5d51d5*/
+    if ( this->MSFont_18_field_0x4 )
       {
-        v6 = this->MSFont_18_field_0x8; /*0x5d51dc*/
-        if ( a2 < v6 ) /*0x5d51e1*/
-          v6 = a2; /*0x5d51e3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->MSFont_18_field_0x4 + 4 * i - 4) ) /*0x5d51e9*/
-          ++i; /*0x5d51ee*/
-        if ( *((_BYTE *)this + 13) ) /*0x5d51fb*/
+    v6 = this->MSFont_18_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->MSFont_18_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d5206*/
-          this->MSFont_18_field_0x4 = 0; /*0x5d520e*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->MSFont_18_field_0x4 = 0;
         }
       }
-      this->MSFont_18_field_0x4 = v4; /*0x5d5217*/
-      this->MSFont_18_field_0x8 = a2; /*0x5d521f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x5d5222*/
-      return 1; /*0x5d5228*/
+    this->MSFont_18_field_0x4 = v4;
+    this->MSFont_18_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x5d51cf*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d5232*/
-    return 1; /*0x5d5238*/
+    this->ClearBuffer();
+    return 1;
   }
 }
 }
@@ -162,16 +146,14 @@ char __thiscall MSFont_18_::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 void MSFont_18::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MSFont_18_::_vt03(int this)
 {
-  if ( this->MSFont_18_field_0x4 && *(_BYTE *)(this + 13) ) /*0x5d524d*/
+    if ( this->MSFont_18_field_0x4 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x5d5253*/
-    this->MSFont_18_field_0x4 = 0; /*0x5d525b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->MSFont_18_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x5d525e*/
-  this->MSFont_18_field_0x8 = 0; /*0x5d5261*/
+    this->IsAllocated = 0;
+    this->MSFont_18_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -180,25 +162,22 @@ void __thiscall MSFont_18_::_vt03(int this)
 namespace gamemd {
 int MSFont_18::Create(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSFont_18_::_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->MSFont_18_field_0xC ) /*0x5d5270*/
-    return 0; /*0x5d5278*/
-  v3 = this->MSFont_18_field_0x8; /*0x5d527e*/
-  result = 0; /*0x5d5281*/
-  if ( v3 <= 0 ) /*0x5d5285*/
-    return -1; /*0x5d529c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x5d528b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->MSFont_18_field_0xC )
+    return 0;
+    v3 = this->MSFont_18_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x5d529a*/
-      return -1; /*0x5d529a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x5d527a*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -207,49 +186,46 @@ int __thiscall MSFont_18_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 char MSFont_18::SetCapacity(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSFont_18_::sub_5D52D0(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x5d52dc*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x5d52e2*/
-    if ( a3 ) /*0x5d52e8*/
-      v4 = a3; /*0x5d52fe*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d52fa*/
-    *((_BYTE *)this + 12) = 1; /*0x5d5302*/
-    if ( !v4 ) /*0x5d5306*/
-      return 0; /*0x5d537a*/
-    if ( this->MSFont_18_field_0x4 ) /*0x5d5308*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->MSFont_18_field_0x4 )
     {
-      v5 = this->MSFont_18_field_0x8; /*0x5d530f*/
-      if ( a2 < v5 ) /*0x5d5314*/
-        v5 = a2; /*0x5d5316*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MSFont_18_field_0x4 + 4 * i - 4) ) /*0x5d531c*/
-        ++i; /*0x5d5321*/
-      if ( *((_BYTE *)this + 13) ) /*0x5d532e*/
+    v5 = this->MSFont_18_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->MSFont_18_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d5339*/
-        this->MSFont_18_field_0x4 = 0; /*0x5d5341*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->MSFont_18_field_0x4 = 0;
       }
     }
-    this->MSFont_18_field_0x4 = v4; /*0x5d534a*/
-    this->MSFont_18_field_0x8 = a2; /*0x5d5352*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x5d5355*/
+    this->MSFont_18_field_0x4 = v4;
+    this->MSFont_18_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d535e*/
+    this->ClearBuffer();
   }
-  v7 = this->MSFont_18_field_0x8; /*0x5d5361*/
-  if ( v7 < this->MSFont_18_field_0x10 ) /*0x5d5369*/
-    this->MSFont_18_field_0x10 = v7; /*0x5d536b*/
-  return 1; /*0x5d536e*/
+    v7 = this->MSFont_18_field_0x8;
+    if ( v7 < this->MSFont_18_field_0x10 )
+    this->MSFont_18_field_0x10 = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -258,24 +234,20 @@ char __thiscall MSFont_18_::sub_5D52D0(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int MSFont_18::FindItem(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSFont_18_::sub_5D5380(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x5d5380*/
-  result = 0; /*0x5d5383*/
-  if ( v2 <= 0 ) /*0x5d5388*/
-    return -1; /*0x5d539f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x5d538e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x5d539d*/
-      return -1; /*0x5d539d*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x5d53a2*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -392,24 +364,20 @@ char __thiscall MSFont_18_::sub_5D55A0(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int MSFont_18::FindPair8(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MSFont_18_::sub_5D56A0(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x5d56a0*/
-  result = 0; /*0x5d56a5*/
-  if ( v2 <= 0 ) /*0x5d56ab*/
-    return -1; /*0x5d56cc*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x5d56b1*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2 || i[1] != *((int*)(a2) + 1); i += 2 )
   {
-    if ( ++result >= v2 ) /*0x5d56ca*/
-      return -1; /*0x5d56ca*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x5d56cf*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -417,23 +385,20 @@ int __thiscall MSFont_18_::sub_5D56A0(int *this, _DWORD *a2)
 namespace gamemd {
 VectorClass * MSFont_18::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall MSFont_18_::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5d56e3*/
-  *this = &vt_VectorClass_HWND; /*0x5d56e6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d56f0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_HWND;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x5d56f8*/
-    *(this + 1) = 0; /*0x5d5700*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x5d570b*/
-  *(this + 2) = 0; /*0x5d5711*/
-  if ( (a2 & 1) != 0 ) /*0x5d5718*/
-    __3_YAXPAX_Z(this); /*0x5d571b*/
-  return (VectorClass *)this; /*0x5d5725*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
@@ -442,23 +407,20 @@ VectorClass *__thiscall MSFont_18_::QueryInterface(_DWORD *this, char a2)
 namespace gamemd {
 DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MSFont_18_::Constructor_VectorClass_HWND_____(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5d5733*/
-  *this = &vt_VectorClass_HWND; /*0x5d5736*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d5740*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_HWND;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x5d5748*/
-    *(this + 1) = 0; /*0x5d5750*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x5d575b*/
-  *(this + 2) = 0; /*0x5d5761*/
-  if ( (a2 & 1) != 0 ) /*0x5d5768*/
-    __3_YAXPAX_Z(this); /*0x5d576b*/
-  return (DynamicVector *)this; /*0x5d5775*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -467,23 +429,20 @@ DynamicVector *__thiscall MSFont_18_::Constructor_VectorClass_HWND_____(_DWORD *
 namespace gamemd {
 DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MSFont_18_::Constructor_VectorClass_AcceleratorTracker_(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5d57d3*/
-  *this = &vt_VectorClass_AcceleratorTracker; /*0x5d57d6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d57e0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_AcceleratorTracker;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x5d57e8*/
-    *(this + 1) = 0; /*0x5d57f0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x5d57fb*/
-  *(this + 2) = 0; /*0x5d5801*/
-  if ( (a2 & 1) != 0 ) /*0x5d5808*/
-    __3_YAXPAX_Z(this); /*0x5d580b*/
-  return (DynamicVector *)this; /*0x5d5815*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd

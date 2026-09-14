@@ -644,22 +644,17 @@ char __thiscall sub_659590(_DWORD *this, _DWORD *a2, _DWORD *a3, __int16 a4)
 namespace gamemd {
 void E4Recv_6599C0::sub_6599C0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_6599C0(int this)
 {
-  int v2; // eax
-  int v3; // edx
-  int v4; // ecx
-
-  v2 = this->M48 - this->M36; /*0x6599d8*/
-  v3 = this->M56 - this->M44; /*0x6599dd*/
-  v4 = this->M52 - this->M40; /*0x6599e2*/
-  this->M92 = v2; /*0x6599e6*/
-  this->M96 = v4; /*0x6599e8*/
-  this->M100 = v3; /*0x6599eb*/
-  *(double *)(this + 104) = Math::Sqrt((double)(this->M100 * this->M100 /*0x659a19*/
-                                              + this->M96 * this->M96
-                                              + this->M92 * this->M92));
+    int v2;
+    int v3;
+    int v4;
+    v2 = this->M48 - this->M36;
+    v3 = this->M56 - this->M44;
+    v4 = this->M52 - this->M40;
+    this->M92 = v2;
+    this->M96 = v4;
+    this->M100 = v3;
+    *(double *)(this + 104) = Math::Sqrt((double)(this->M100 *(void**)this->M100 + this->M96 *(void**)this->M96 + this->M92 *(void**)this->M92));
 }
 }
 } // namespace gamemd
@@ -668,45 +663,42 @@ void __thiscall sub_6599C0(int this)
 namespace gamemd {
 short E4Recv_659A30::sub_659A30()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall sub_659A30(int this)
 {
-  int v2; // eax
-  int v3; // edi
-  int v4; // ebx
-  int v5; // ebp
-  double v6; // st7
-  __int16 *v7; // edx
-  int v8; // esi
-  __int16 result; // ax
-  char v10; // cl
-
-  v2 = Math::RoundToInt(*(double *)(this + 104) / *(double *)(this + 24)); /*0x659a3c*/
-  v3 = this->M92; /*0x659a41*/
-  v4 = this->M96; /*0x659a44*/
-  v5 = this->M100; /*0x659a47*/
-  this->M140 = v2; /*0x659a4e*/
-  if ( v2 ) /*0x659a54*/
+    int v2;
+    int v3;
+    int v4;
+    int v5;
+    double v6;
+    short *v7;
+    int v8;
+    short result;
+    char v10;
+    v2 = Math::RoundToInt(*(double *)(this + 104) / *(double *)(this + 24));
+    v3 = this->M92;
+    v4 = this->M96;
+    v5 = this->M100;
+    this->M140 = v2;
+    if ( v2 )
   {
-    v3 /= v2; /*0x659a5b*/
-    v4 /= v2; /*0x659a62*/
-    v5 /= v2; /*0x659a69*/
+    v3 /= v2;
+    v4 /= v2;
+    v5 /= v2;
   }
-  v6 = (double)*(int *)(this + 124) / (double)*(int *)(this + 60); /*0x659a6e*/
-  this->M144 = v3; /*0x659a80*/
-  this->M148 = v4; /*0x659a83*/
-  this->M152 = v5; /*0x659a86*/
-  this->M156 = this->M36; /*0x659a8b*/
-  this->M160 = this->M40; /*0x659a90*/
-  this->M164 = this->M44; /*0x659a96*/
-  v7 = (__int16 *)(this + 32); /*0x659a99*/
-  v8 = this + 192; /*0x659a9c*/
-  result = *v7; /*0x659aa2*/
-  v10 = *((_BYTE *)v7 + 2); /*0x659aa5*/
-  *(double *)(v8 - 64) = v6 * *(double *)(v8 - 128); /*0x659aab*/
-  *(_WORD *)v8 = result; /*0x659aae*/
-  *(_BYTE *)(v8 + 2) = v10; /*0x659ab1*/
-  return result; /*0x659ab4*/
+    v6 = (double)this->M124 / (double)this->M60;
+    this->M144 = v3;
+    this->M148 = v4;
+    this->M152 = v5;
+    this->M156 = this->M36;
+    this->M160 = this->M40;
+    this->M164 = this->M44;
+    v7 = (short *)(this + 32);
+    v8 = this + 192;
+    result = *v7;
+    v10 = *((char *)(v7) + 2);
+    *(double *)(v8 - 64) = v6 * *(double *)(v8 - 128);
+    *(short *)v8 = result;
+    *(char *)(v8 + 2) = v10;
+    return result;
 }
 }
 } // namespace gamemd

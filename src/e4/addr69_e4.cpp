@@ -64,33 +64,30 @@ int __thiscall sub_690400(int *this)
 namespace gamemd {
 char * E4Recv_6905F0::sub_6905F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_6905F0(_DWORD *this)
 {
-  void *v2; // eax
-  char *result; // eax
-
-  v2 = (void *)*(this + 3); /*0x6905f6*/
-  *this = &vt_ScoreFontClass; /*0x6905f9*/
-  if ( v2 && (unsigned char)this->M16 == 1 ) /*0x690607*/
+    void *v2;
+    char *result;
+    v2 = (void *)this->M12;
+    *(void**)this = &vt_ScoreFontClass;
+    if ( v2 && (unsigned char)this->M16 == 1 )
   {
-    __3_YAXPAX_Z(v2); /*0x69060a*/
-    *(this + 3) = 0; /*0x690612*/
-    *((_BYTE *)this + 16) = 0; /*0x690615*/
+    __3_YAXPAX_Z(v2);
+    this->M12 = 0;
+    this->M16 = 0;
   }
-  result = (char *)--MEMORY[0xB0558C]; /*0x69061d*/
-  if ( !MEMORY[0xB0558C] ) /*0x690623*/
+    result = (char *)--DataGlobal_B0558C;
+    if ( !DataGlobal_B0558C )
   {
-    result = &MEMORY[0xB05594]; /*0x690625*/
-    do /*0x690637*/
+    result = &DataGlobal_B05594;
+    do
     {
-      *((_DWORD *)result - 1) = 0; /*0x69062a*/
-      *result = 0; /*0x69062d*/
-      result += 8; /*0x69062f*/
+    *((int *)result - 1) = 0;
+    *result = 0;
+    result += 8;
     }
-    while ( (int)result < (int)((char *)&MEMORY[0xB055A8] + 4) ); /*0x690637*/
+    while ( (int)result < (int)((char *)&DataGlobal_B055A8 + 4) );
   }
-  return result; /*0x690639*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1395,21 +1392,18 @@ LABEL_38:
 namespace gamemd {
 HWND E4Recv_6966D0::sub_6966D0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall sub_6966D0(int this)
 {
-  bool v2; // bl
-  HWND DlgItem; // eax
-  HWND result; // eax
-
-  v2 = this->M148 == 0; /*0x6966ec*/
-  DlgItem = GetDlgItem(*(HWND *)this, 1628); /*0x6966ef*/
-  if ( DlgItem ) /*0x6966f9*/
-    SendMessageA(DlgItem, 0xF1u, v2, 0); /*0x69670c*/
-  result = GetDlgItem(*(HWND *)this, 1627); /*0x696716*/
-  if ( result ) /*0x69671a*/
-    return (HWND)SendMessageA(result, 0xF1u, !v2, 0); /*0x69672c*/
-  return result; /*0x69672e*/
+    bool v2;
+    HWND DlgItem;
+    HWND result;
+    v2 = this->M148 == 0;
+    DlgItem = GetDlgItem(*(HWND *)this, 1628);
+    if ( DlgItem )
+    SendMessageA(DlgItem, 0xF1u, v2, 0);
+    result = GetDlgItem(*(HWND *)this, 1627);
+    if ( result )
+    return (HWND)SendMessageA(result, 0xF1u, !v2, 0);
+    return result;
 }
 }
 } // namespace gamemd
@@ -1418,25 +1412,22 @@ HWND __thiscall sub_6966D0(int this)
 namespace gamemd {
 HWND E4Recv_696950::sub_696950()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall sub_696950(int this)
 {
-  HWND result; // eax
-  HWND v3; // ebx
-
-  result = GetDlgItem(*(HWND *)this, 1626); /*0x69695c*/
-  v3 = result; /*0x696962*/
-  if ( result ) /*0x696966*/
+    HWND result;
+    HWND v3;
+    result = GetDlgItem(*(HWND *)this, 1626);
+    v3 = result;
+    if ( result )
   {
-    ShowWindow(result, 0); /*0x69696c*/
-    EnableWindow(v3, 0); /*0x696975*/
-    SendMessageA(v3, 0x4B5u, 0x10u, this + 8); /*0x696987*/
-    *(_BYTE *)(this + 23) = 0; /*0x69698f*/
-    String::Trim((char *)(this + 8)); /*0x696993*/
-    _strupr((char *)(this + 8)); /*0x696999*/
-    return ListBox::SetCustomEntry((HWND *)this, 1625, 3, (void *)(this + 8)); /*0x6969ab*/
+    ShowWindow(result, 0);
+    EnableWindow(v3, 0);
+    SendMessageA(v3, 0x4B5u, 0x10u, this + 8);
+    this->M23 = 0;
+    String::Trim((char *)(this + 8));
+    _strupr((char *)(this + 8));
+    return ListBox::SetCustomEntry((HWND *)this, 1625, 3, (void *)(this + 8));
   }
-  return result; /*0x6969b1*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1712,17 +1703,14 @@ int __stdcall sub_69BCC0(ObjectClass *aP0)
 namespace gamemd {
 int E4Recv_69E9F0::sub_69E9F0(int a1, Straw * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_69E9F0(int this, int a1, Straw *aP2)
 {
-  Pipe *v4; // ebx
-
-  if ( !a1 || (int)aP2 < 1 ) /*0x69ea03*/
-    return 0; /*0x69ea29*/
-  v4 = (Pipe *)Delegate::Invoke((_DWORD *)this, a1, aP2); /*0x69ea0d*/
-  if ( !(unsigned char)this->M12 ) /*0x69ea0f*/
-    SHA1::Process((Pipe *)(this + 16), (Pipe *)a1, v4); /*0x69ea1b*/
-  return (int)v4->__pad_0; /*0x69ea23*/
+    Pipe *v4;
+    if ( !a1 || (int)aP2 < 1 )
+    return 0;
+    v4 = (Pipe *)Delegate::Invoke((int *)this, a1, aP2);
+    if ( !(unsigned char)this->M12 )
+    SHA1::Process((Pipe *)(this + 16), (Pipe *)a1, v4);
+    return (int)v4->__pad_0;
 }
 }
 } // namespace gamemd

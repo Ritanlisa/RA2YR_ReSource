@@ -109,19 +109,16 @@ _DWORD *__thiscall sub_42C1C0(char *this)
 // 0x430F30
 char MapClass::isCellAccessible(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_430F30(char *this, int a2)
 {
-  int v2; // eax
-  char *i; // ecx
-
-  v2 = 0; /*0x430f34*/
-  for ( i = this + 12 * a2; *(_DWORD *)i; i += 4 ) /*0x430f39*/
+    int v2;
+    char *i;
+    v2 = 0;
+    for ( i = this + 12 * a2; *(int *)i; i += 4 )
   {
-    if ( ++v2 >= 3 ) /*0x430f48*/
-      return 0; /*0x430f4c*/
+    if ( ++v2 >= 3 )
+    return 0;
   }
-  return 1; /*0x430f4c*/
+    return 1;
 }
 }
 
@@ -3206,22 +3203,19 @@ char __stdcall MapClass::InitTileData(MouseClass *aP0, int aP3)
 // 0x581F50
 unsigned int * MapClass::BuildSubzones()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MapClass_BuildSubzones(_DWORD *this)
 {
-  int v2; // esi
-  _DWORD *v3; // edi
-
-  v2 = 2; /*0x581f55*/
-  v3 = this + 47; /*0x581f5a*/
-  do /*0x581f75*/
+    int v2;
+    int *v3;
+    v2 = 2;
+    v3 = this + 47;
+    do
   {
-    (*(void (__thiscall **)(_DWORD *))(*v3 + 12))(v3); /*0x581f64*/
-    Subzone::BuildGraph(this, v2--); /*0x581f6a*/
-    v3 -= 6; /*0x581f70*/
+    (*(void (__thiscall **)(int *))(*v3 + 12))(v3);
+    Subzone::BuildGraph(this, v2--);
+    v3 -= 6;
   }
-  while ( v2 >= 0 ); /*0x581f75*/
-  return MapClass::AllocArrays(MEMORY[0x87E8B8]); /*0x581f81*/
+    while ( v2 >= 0 );
+    return MapClass::AllocArrays(g_AudioInitFlag);
 }
 }
 
@@ -3543,46 +3537,39 @@ LABEL_20:
 // 0x588BF0
 MapClass * MapClass::Destru_vt04(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-MapClass *__thiscall MapClass::Destru_vt04(char *this, char a2)
 {
-  MapClass::Destruct(this); /*0x588bf3*/
-  if ( (a2 & 1) != 0 ) /*0x588bfd*/
-    __3_YAXPAX_Z(this); /*0x588c00*/
-  return (MapClass *)this; /*0x588c0a*/
+    MapClass::Destruct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (MapClass *)this;
 }
 }
 
 // 0x588EF0
 int MapClass::InitCellVe_vt06(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MapClass::InitCellVe_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x588efa*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 
 // 0x589060
 VectorClass * MapClass::InitCellVe_vt00(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall MapClass::InitCellVe_vt00(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x589063*/
-  *this = &vt_VectorClass_CellClass; /*0x589066*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x589070*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_CellClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x589078*/
-    *(this + 1) = 0; /*0x589080*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x58908b*/
-  *(this + 2) = 0; /*0x589091*/
-  if ( (a2 & 1) != 0 ) /*0x589098*/
-    __3_YAXPAX_Z(this); /*0x58909b*/
-  return (VectorClass *)this; /*0x5890a5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 
@@ -3704,41 +3691,36 @@ LABEL_14:
 // 0x5894A0
 void MapClass::allocateCellArrays()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MapClass::sub_5894A0(int this)
 {
-  if ( this->MapClass_field_0x4 && *(_BYTE *)(this + 13) ) /*0x5894ad*/
+    if ( this->MapClass_field_0x4 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x5894b3*/
-    this->MapClass_field_0x4 = 0; /*0x5894bb*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->MapClass_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x5894be*/
-  this->MapClass_field_0x8 = 0; /*0x5894c1*/
+    this->IsAllocated = 0;
+    this->MapClass_field_0x8 = 0;
 }
 }
 
 // 0x5894D0
 int MapClass::FindSubzoneConnectionIndex(unsigned short * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MapClass::sub_5894D0(int this, _WORD *a2)
 {
-  int result; // eax
-  int v3; // esi
-  _WORD *i; // ecx
-
-  if ( !(unsigned char)this->MapClass_field_0xC ) /*0x5894d0*/
-    return 0; /*0x5894dc*/
-  v3 = this->MapClass_field_0x8; /*0x5894e2*/
-  result = 0; /*0x5894e5*/
-  if ( v3 <= 0 ) /*0x5894e9*/
-    return -1; /*0x589520*/
-  for ( i = *(_WORD **)(this + 4); *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 8 ) /*0x5894ef*/
+    int result;
+    int v3;
+    short *i;
+    if ( !(unsigned char)this->MapClass_field_0xC )
+    return 0;
+    v3 = this->MapClass_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(short **)(this + 4); *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2) || i[3] != *((int*)(a2) + 3); i += 8 )
   {
-    if ( ++result >= v3 ) /*0x58951e*/
-      return -1; /*0x58951e*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x5894da*/
+    return result;
 }
 }
 
@@ -3886,81 +3868,75 @@ _DWORD *__thiscall sub_589BD0(_DWORD *this)
 // 0x589CA0
 char MapClass::InitCellVe_vt01(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MapClass::InitCellVe_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x589ca2*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x589cad*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x589caf*/
-    if ( v2 <= 0 ) /*0x589cb3*/
-      return 1; /*0x589cd3*/
-    v4 = (_DWORD *)*(this + 1); /*0x589cb5*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x589cbb*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x589cc4*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x589cc6*/
-      ++v4; /*0x589cc7*/
-      if ( v3 >= v2 ) /*0x589ccc*/
-        return 1; /*0x589ccc*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x589cce*/
+    return 0;
 }
 }
 
 // 0x589CE0
 char MapClass::InitCellVe_vt02(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MapClass::InitCellVe_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x589cec*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x589cf6*/
-    if ( a3 ) /*0x589cfc*/
-      v4 = a3; /*0x589d12*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x589d0e*/
-    *((_BYTE *)this + 12) = 1; /*0x589d16*/
-    if ( v4 ) /*0x589d1a*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( this->MapClass_field_0x4 ) /*0x589d25*/
+    if ( this->MapClass_field_0x4 )
       {
-        v6 = this->MapClass_field_0x8; /*0x589d2c*/
-        if ( a2 < v6 ) /*0x589d31*/
-          v6 = a2; /*0x589d33*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->MapClass_field_0x4 + 4 * i - 4) ) /*0x589d39*/
-          ++i; /*0x589d3e*/
-        if ( *((_BYTE *)this + 13) ) /*0x589d4b*/
+    v6 = this->MapClass_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->MapClass_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x589d56*/
-          this->MapClass_field_0x4 = 0; /*0x589d5e*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->MapClass_field_0x4 = 0;
         }
       }
-      this->MapClass_field_0x4 = v4; /*0x589d67*/
-      this->MapClass_field_0x8 = a2; /*0x589d6f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x589d72*/
-      return 1; /*0x589d78*/
+    this->MapClass_field_0x4 = v4;
+    this->MapClass_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x589d1f*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x589d82*/
-    return 1; /*0x589d88*/
+    this->IsCellPassable();
+    return 1;
   }
 }
 }
@@ -3968,41 +3944,36 @@ char __thiscall MapClass::InitCellVe_vt02(void *this, int a2, _DWORD *a3)
 // 0x589D90
 void MapClass::InitCellVe_vt03()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MapClass::InitCellVe_vt03(int this)
 {
-  if ( this->MapClass_field_0x4 && *(_BYTE *)(this + 13) ) /*0x589d9d*/
+    if ( this->MapClass_field_0x4 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x589da3*/
-    this->MapClass_field_0x4 = 0; /*0x589dab*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->MapClass_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x589dae*/
-  this->MapClass_field_0x8 = 0; /*0x589db1*/
+    this->IsAllocated = 0;
+    this->MapClass_field_0x8 = 0;
 }
 }
 
 // 0x589DC0
 int MapClass::InitCellVe_vt04(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MapClass::InitCellVe_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->MapClass_field_0xC ) /*0x589dc0*/
-    return 0; /*0x589dc8*/
-  v3 = this->MapClass_field_0x8; /*0x589dce*/
-  result = 0; /*0x589dd1*/
-  if ( v3 <= 0 ) /*0x589dd5*/
-    return -1; /*0x589dec*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x589ddb*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->MapClass_field_0xC )
+    return 0;
+    v3 = this->MapClass_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x589dea*/
-      return -1; /*0x589dea*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x589dca*/
+    return result;
 }
 }
 
@@ -4397,44 +4368,37 @@ int sub_5A17F0()
 // 0x5AC5A0
 void MapClass::checkCellBounds()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MapClass::sub_5AC5A0(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x5ac5a6*/
-  this->MapClass_field_0x10 = 0; /*0x5ac5a9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5ac5b0*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->MapClass_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x5ac5b6*/
-    this->MapClass_field_0x4 = 0; /*0x5ac5be*/
+    __3_YAXPAX_Z(v2);
+    this->MapClass_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x5ac5c1*/
-  this->MapClass_field_0x8 = 0; /*0x5ac5c4*/
+    this->IsAllocated = 0;
+    this->MapClass_field_0x8 = 0;
 }
 }
 
 // 0x5AD0C0
 int MapClass::updatePathfindingGrid(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MapClass::sub_5AD0C0(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x5ad0c0*/
-  result = 0; /*0x5ad0c3*/
-  if ( v2 <= 0 ) /*0x5ad0c8*/
-    return -1; /*0x5ad0df*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x5ad0ce*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x5ad0dd*/
-      return -1; /*0x5ad0dd*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x5ad0e2*/
-}
+    return result;
 }
 
 // 0x6D8260

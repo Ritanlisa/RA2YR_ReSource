@@ -5,40 +5,37 @@
 // 0x5E8BF0
 wchar_t * Player::FindByName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall Player::FindByName(wchar_t *this)
 {
-  int v3; // ebp
-  int v4; // esi
-  const wchar_t *v5; // edi
-
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC119C], this) ) /*0x5e8bfd*/
-    return (wchar_t *)MEMORY[0xAC119C]; /*0x5e8c09*/
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11A0], this) ) /*0x5e8c1b*/
-    return (wchar_t *)MEMORY[0xAC11A0]; /*0x5e8c27*/
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11A4], this) ) /*0x5e8c39*/
-    return (wchar_t *)MEMORY[0xAC11A4]; /*0x5e8c45*/
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11A8], this) ) /*0x5e8c56*/
-    return (wchar_t *)MEMORY[0xAC11A8]; /*0x5e8c62*/
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11AC], this) ) /*0x5e8c74*/
-    return (wchar_t *)MEMORY[0xAC11AC]; /*0x5e8c80*/
-  if ( !wcscmp(MEMORY[0xAC11B0], this) ) /*0x5e8c92*/
-    return MEMORY[0xAC11B0]; /*0x5e8c9e*/
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11B4], this) ) /*0x5e8caf*/
-    return (wchar_t *)MEMORY[0xAC11B4]; /*0x5e8cbb*/
-  v3 = MEMORY[0xA8DA84]; /*0x5e8cc5*/
-  v4 = 0; /*0x5e8ccb*/
-  if ( MEMORY[0xA8DA84] <= 0 ) /*0x5e8ccf*/
-    return 0; /*0x5e8ced*/
-  while ( 1 ) /*0x5e8cd8*/
+    int v3;
+    int v4;
+    const wchar_t *v5;
+    if ( !wcscmp((const wchar_t *)g_HouseClass_ObserverFlags, this) )
+    return (wchar_t *)g_HouseClass_ObserverFlags;
+    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerCount, this) )
+    return (wchar_t *)g_Lobby_PlayerCount;
+    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerTeam, this) )
+    return (wchar_t *)g_Lobby_PlayerTeam;
+    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerSide, this) )
+    return (wchar_t *)g_Lobby_PlayerSide;
+    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerColor, this) )
+    return (wchar_t *)g_Lobby_PlayerColor;
+    if ( !wcscmp(g_Lobby_PlayerReady, this) )
+    return g_Lobby_PlayerReady;
+    if ( !wcscmp((const wchar_t *)g_Lobby_MaxPlayers, this) )
+    return (wchar_t *)g_Lobby_MaxPlayers;
+    v3 = Game_PlayerCount;
+    v4 = 0;
+    if ( Game_PlayerCount <= 0 )
+    return 0;
+    while ( 1 )
   {
-    v5 = *(const wchar_t **)(MEMORY[0xA8DA78] + 4 * v4); /*0x5e8cd8*/
-    if ( !wcscmp(v5, this) ) /*0x5e8cdc*/
-      break; /*0x5e8cdc*/
-    if ( ++v4 >= v3 ) /*0x5e8ceb*/
-      return 0; /*0x5e8ceb*/
+    v5 = *(const wchar_t **)(Game_PlayerInfoArray + 4 * v4);
+    if ( !wcscmp(v5, this) )
+    break;
+    if ( ++v4 >= v3 )
+    return 0;
   }
-  return (wchar_t *)v5; /*0x5e8c0e*/
+    return (wchar_t *)v5;
 }
 }
 

@@ -5,17 +5,14 @@
 // 0x674500
 int RulesClass::sub_674500()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_674500(RulesClass *this)
 {
-  int result; // eax
-  RulesClass *v2; // [esp+Ch] [ebp+4h]
-
-  INIClass::ReadDifficultyModifiers(v2); /*0x674515*/
-  INIClass::ReadDifficultyModifiers(v2); /*0x674527*/
-  result = INIClass::ReadDifficultyModifiers(v2); /*0x674539*/
-  LOBYTE(result) = 1; /*0x67453f*/
-  return result; /*0x67453e*/
+    int result;
+    RulesClass *v2;
+    INIClass::ReadDifficultyModifiers(v2);
+    INIClass::ReadDifficultyModifiers(v2);
+    result = INIClass::ReadDifficultyModifiers(v2);
+    LOBYTE(result) = 1;
+    return result;
 }
 }
 

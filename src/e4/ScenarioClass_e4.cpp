@@ -229,13 +229,11 @@ LABEL_6:
 namespace gamemd {
 MSAnim * ScenarioClass::checkWinningConditions(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-MSAnim *__thiscall ScenarioClass::checkWinningConditions(_DWORD *this, char a2)
 {
-  *this = &vt_MSAnim; /*0x5ceb69*/
-  if ( (a2 & 1) != 0 ) /*0x5ceb6f*/
-    __3_YAXPAX_Z(this); /*0x5ceb72*/
-  return (MSAnim *)this; /*0x5ceb7c*/
+    *(void**)this = &vt_MSAnim;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (MSAnim *)this;
 }
 }
 } // namespace gamemd
@@ -305,20 +303,17 @@ char __stdcall ScenarioClass_AssignStartPositions(char a1)
 namespace gamemd {
 void ScenarioClass::sub_5D80B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall ScenarioClass::sub_5D80B0(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x5d80b6*/
-  *(_DWORD *)(this + 16) = 0; /*0x5d80b9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5d80c0*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x5d80c6*/
-    *(_DWORD *)(this + 4) = 0; /*0x5d80ce*/
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x5d80d1*/
-  *(_DWORD *)(this + 8) = 0; /*0x5d80d4*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 } // namespace gamemd

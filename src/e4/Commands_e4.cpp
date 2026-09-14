@@ -5,10 +5,8 @@
 // 0x537A50
 char * Commands::AddRef()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall Commands::AddRef(MultiplayerDebugCommandClass *this)
 {
-  return aMultiplayerdeb; /*0x537a55*/
+    return aMultiplayerdeb;
 }
 }
 

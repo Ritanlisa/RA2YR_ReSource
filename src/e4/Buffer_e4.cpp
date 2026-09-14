@@ -5,106 +5,95 @@
 // 0x43AD00
 unsigned int * Buffer::Init(int a2, AbstractClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Buffer::Init(_DWORD *this, int a2, AbstractClass *aP2)
 {
-  *this = a2; /*0x43ad0d*/
-  *(this + 1) = aP2; /*0x43ad0f*/
-  *((_BYTE *)this + 8) = 0; /*0x43ad12*/
-  if ( !a2 && (int)aP2 > 0 ) /*0x43ad1a*/
+    *(void**)this = a2;
+    this->Items = aP2;
+    this->Capacity = 0;
+    if ( !a2 && (int)aP2 > 0 )
   {
-    *this = __2_YAPAXI_Z((size_t)aP2); /*0x43ad25*/
-    *((_BYTE *)this + 8) = 1; /*0x43ad27*/
+    *(void**)this = __2_YAPAXI_Z((size_t)aP2);
+    this->Capacity = 1;
   }
-  return this; /*0x43ad2d*/
+    return this;
 }
 }
 
 // 0x488030
 DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall Buffer::Constructor_VectorClass_ObjectClass___(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x488033*/
-  *this = &vt_VectorClass_ObjectClass; /*0x488036*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x488040*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_ObjectClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x488048*/
-    *(this + 1) = 0; /*0x488050*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x48805b*/
-  *(this + 2) = 0; /*0x488061*/
-  if ( (a2 & 1) != 0 ) /*0x488068*/
-    __3_YAXPAX_Z(this); /*0x48806b*/
-  return (DynamicVector *)this; /*0x488075*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 
 // 0x6C89E0
 int Buffer::AppendCellData(AbstractClass * aP1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Buffer::AppendCellData(_DWORD *this, AbstractClass *aP1, int a3)
 {
-  AbstractClass *v4; // edi
-  _DWORD *v7; // eax
-  AbstractClass *v8; // esi
-  int v9; // eax
-  unsigned int v10; // eax
-  char *v11; // edi
-  int v12; // esi
-  int v13; // edx
-  int v14; // [esp+10h] [ebp-10h] BYREF
-  AbstractClass *v15; // [esp+18h] [ebp-8h]
-  _BYTE *v16; // [esp+28h] [ebp+8h]
-
-  v4 = (AbstractClass *)*(this + 2); /*0x6c89e9*/
-  if ( (unsigned int)&v4->__pad_0[12] > *(this + 1) + *this ) /*0x6c89f9*/
-    return 0; /*0x6c89f9*/
-  v15 = (AbstractClass *)*(this + 2); /*0x6c89fd*/
-  *(this + 2) = &v4->__pad_0[12]; /*0x6c8a01*/
-  if ( !v4 ) /*0x6c8a04*/
-    return 0; /*0x6c8a06*/
-  *(_WORD *)v4->__pad_0 = *(_WORD *)a3; /*0x6c8a19*/
-  *(_WORD *)&v4->__pad_0[2] = *(_WORD *)(a3 + 4); /*0x6c8a20*/
-  *(_WORD *)&v4->__pad_0[4] = *(_WORD *)(a3 + 16); /*0x6c8a28*/
-  *(_WORD *)&v4->__pad_0[6] = *(_WORD *)(a3 + 20); /*0x6c8a34*/
-  *(_DWORD *)&v4->__pad_0[8] = *(this + 2); /*0x6c8a3f*/
-  v7 = CellStruct::Copy((int *)(a3 + 8), (IUnknown *)&v14); /*0x6c8a42*/
-  v8 = aP1; /*0x6c8a49*/
-  v16 = (_BYTE *)(*(int (__thiscall **)(AbstractClass *, _DWORD, _DWORD))(*(_DWORD *)aP1->__pad_0 + 92))( /*0x6c8a61*/
-                   aP1,
-                   *v7,
-                   v7[1]);
-  v9 = *(_DWORD *)(a3 + 20); /*0x6c8a65*/
-  v14 = 0; /*0x6c8a6a*/
-  if ( v9 > 0 ) /*0x6c8a72*/
+    AbstractClass *v4;
+    int *v7;
+    AbstractClass *v8;
+    int v9;
+    unsigned int v10;
+    char *v11;
+    int v12;
+    int v13;
+    int v14;
+    AbstractClass *v15;
+    char *v16;
+    v4 = (AbstractClass *)this->Capacity;
+    if ( (unsigned int)&v4->__pad_0[12] > this->Items + *(void**)this )
+    return 0;
+    v15 = (AbstractClass *)this->Capacity;
+    this->Capacity = &v4->__pad_0[12];
+    if ( !v4 )
+    return 0;
+    *(short *)v4->__pad_0 = *(short *)a3;
+    *(short *)&v4->__pad_0[2] = *(short *)(a3 + 4);
+    *(short *)&v4->__pad_0[4] = *(short *)(a3 + 16);
+    *(short *)&v4->__pad_0[6] = *(short *)(a3 + 20);
+    *(int *)&v4->__pad_0[8] = this->Capacity;
+    v7 = CellStruct::Copy((int *)(a3 + 8), (IUnknown *)&v14);
+    v8 = aP1;
+    v16 = (char *)(*(int (__thiscall **)(AbstractClass *, int, int))(*(int *)aP1->__pad_0 + 92))( aP1, *v7, v7[1]);
+    v9 = *(int *)(a3 + 20);
+    v14 = 0;
+    if ( v9 > 0 )
   {
-    while ( 1 ) /*0x6c8a8a*/
+    while ( 1 )
     {
-      v10 = Map_Append(v16, (int)&MEMORY[0xB077F8].__pad_14B0[12584], *(_DWORD *)(a3 + 16)); /*0x6c8a8a*/
-      v11 = (char *)*(this + 2); /*0x6c8a8f*/
-      if ( (unsigned int)&v11[v10] > *(this + 1) + *this || (*(this + 2) = &v11[v10], !v11) ) /*0x6c8aa4*/
+    v10 = Map_Append(v16, (int)&g_OverlayTypeConfig.__pad_14B0[12584], *(int *)(a3 + 16));
+    v11 = (char *)this->Capacity;
+    if ( (unsigned int)&v11[v10] > this->Items + *(void**)this || (this->Capacity = &v11[v10], !v11) )
       {
-        (*(void (__thiscall **)(AbstractClass *))(*(_DWORD *)v8->__pad_0 + 96))(v8); /*0x6c8ae6*/
-        return 0; /*0x6c8af2*/
+    (*(void (__thiscall **)(AbstractClass *))(*(int *)v8->__pad_0 + 96))(v8);
+    return 0;
       }
-      qmemcpy(v11, &MEMORY[0xB077F8].__pad_14B0[12584], v10); /*0x6c8ab0*/
-      v13 = *(_DWORD *)aP1->__pad_0; /*0x6c8ac2*/
-      v12 = ++v14; /*0x6c8ac1*/
-      v16 += (*(int (__thiscall **)(AbstractClass *))(v13 + 116))(aP1); /*0x6c8ad6*/
-      if ( v12 >= *(_DWORD *)(a3 + 20) ) /*0x6c8ada*/
-        break; /*0x6c8ada*/
-      v8 = aP1; /*0x6c8adc*/
+    qmemcpy(v11, &g_OverlayTypeConfig.__pad_14B0[12584], v10);
+    v13 = *(int *)aP1->__pad_0;
+    v12 = ++v14;
+    v16 += (*(int (__thiscall **)(AbstractClass *))(v13 + 116))(aP1);
+    if ( v12 >= *(int *)(a3 + 20) )
+    break;
+    v8 = aP1;
     }
-    v4 = v15; /*0x6c8af5*/
-    v8 = aP1; /*0x6c8af9*/
+    v4 = v15;
+    v8 = aP1;
   }
-  (*(void (__thiscall **)(AbstractClass *))(*(_DWORD *)v8->__pad_0 + 96))(v8); /*0x6c8b01*/
-  return (int)v4->__pad_0; /*0x6c8a08*/
+    (*(void (__thiscall **)(AbstractClass *))(*(int *)v8->__pad_0 + 96))(v8);
+    return (int)v4->__pad_0;
 }
 }
 

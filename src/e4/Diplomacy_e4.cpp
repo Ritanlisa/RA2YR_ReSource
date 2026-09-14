@@ -5,10 +5,8 @@
 // 0x656580
 char * Diplomacy::GetField(BuildingTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall Diplomacy::GetField(char *this, BuildingTypeClass *aP1)
 {
-  return this + 24 * aP1->Foundation + 4728; /*0x656595*/
+    return this + 24 * aP1->Foundation + 4728;
 }
 }
 

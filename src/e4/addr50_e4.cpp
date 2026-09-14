@@ -141,25 +141,23 @@ LABEL_18:
 namespace gamemd {
 int E4Recv_5093C0::sub_5093C0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5093C0(int *this, int a2)
 {
-  int v2; // esi
-  int result; // eax
-  _DWORD *i; // edx
-
-  v2 = *(this + 5509); /*0x5093c2*/
-  result = 0; /*0x5093c8*/
-  if ( v2 > 0 ) /*0x5093cd*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->M22036;
+    result = 0;
+    if ( v2 > 0 )
   {
-    for ( i = (_DWORD *)*(this + 5506); *i != a2; i += 2 ) /*0x5093d9*/
+    i = (int *)this->M22024;
+    for ( ; *i != a2; i += 2 )
     {
-      if ( ++result >= v2 ) /*0x5093e5*/
-        return result; /*0x5093e5*/
+    if ( ++result >= v2 )
+    return result;
     }
-    return UpdateHouseClassAnger((unsigned int)this, (int)i, -*(_DWORD *)(*(this + 5506) + 8 * result + 4), a2); /*0x5093f5*/
+    return UpdateHouseClassAnger((unsigned int)this, (int)i, -*(int *)(this->M22024 + 8 * result + 4), a2);
   }
-  return result; /*0x5093e7*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -168,10 +166,8 @@ int __thiscall sub_5093C0(int *this, int a2)
 namespace gamemd {
 double E4Recv_50C160::sub_50C160()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall sub_50C160(_DWORD *this)
 {
-  return *(float *)(*(this + 13) + 328); /*0x50c169*/
+    return *(float *)(this->M52 + 328);
 }
 }
 } // namespace gamemd

@@ -394,13 +394,11 @@ LABEL_104:
 // 0x7AD350
 ObjectClass * CChatEventSink::DeleteAndZero(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall CChatEventSink::DeleteAndZero(void **this, char a2)
 {
-  DeleteAndZero(this); /*0x7ad353*/
-  if ( (a2 & 1) != 0 ) /*0x7ad35d*/
-    __3_YAXPAX_Z(this); /*0x7ad360*/
-  return (ObjectClass *)this; /*0x7ad36a*/
+    DeleteAndZero(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (ObjectClass *)this;
 }
 }
 
@@ -441,10 +439,8 @@ char __thiscall sub_7AD930(int *this)
 // 0x7AECB0
 int CChatEventSink::ComputeBucketMask(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_7AECB0(int this, int a2)
 {
-  return (*(int (__thiscall **)(int))(this + 24))(a2) & ((1 << this->CChatEventSink_field_0x0C) - 1); /*0x7aecc4*/
+    return (*(int (__thiscall **)(int))(this + 24))(a2) & ((1 << this->CChatEventSink_field_0x0C) - 1);
 }
 }
 
@@ -482,51 +478,45 @@ char __thiscall sub_7AED40(int *this)
 // 0x7AEDD0
 char CChatEventSink::EnsureCapacity(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_7AEDD0(void *this, int a2)
 {
-  int v3; // esi
-  int v5; // ecx
-  int v6; // eax
-  int v7; // ecx
-  int v8; // ebp
-  void *v9; // eax
-  const void *v10; // esi
-  void *v11; // [esp+Ch] [ebp+4h]
-
-  v3 = *(_DWORD *)this; /*0x7aedd4*/
-  if ( !*(_DWORD *)this ) /*0x7aedd4*/
-    return 0; /*0x7aeddb*/
-  v5 = a2; /*0x7aede1*/
-  if ( a2 < 0 ) /*0x7aede7*/
-    v5 = 0; /*0x7aede9*/
-  if ( v5 >= v3 ) /*0x7aeded*/
-    v5 = v3 - 1; /*0x7aedef*/
-  memcpy( /*0x7aee0f*/
-    (void *)(this->CChatEventSink_field_0x08 + 4 * v5),
-    (const void *)(this->CChatEventSink_field_0x08 + 4 * (v5 + 1)),
-    4 * (v3 + 0x3FFFFFFF * (v5 + 1)));
-  v6 = *(_DWORD *)this - 1; /*0x7aee1a*/
-  *(_DWORD *)this = v6; /*0x7aee1c*/
-  v7 = this->CChatEventSink_field_0x04; /*0x7aee1e*/
-  if ( 3 * v6 <= v7 ) /*0x7aee26*/
+    int v3;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    void *v9;
+    const void *v10;
+    void *v11;
+    v3 = *(int *)this;
+    if ( !*(int *)this )
+    return 0;
+    v5 = a2;
+    if ( a2 < 0 )
+    v5 = 0;
+    if ( v5 >= v3 )
+    v5 = v3 - 1;
+    memcpy( (void *)(this->CChatEventSink_field_0x08 + 4 * v5), (const void *)(this->CChatEventSink_field_0x08 + 4 * (v5 + 1)), 4 * (v3 + 0x3FFFFFFF * (v5 + 1)));
+    v6 = *(int *)this - 1;
+    *(int *)this = v6;
+    v7 = this->CChatEventSink_field_0x04;
+    if ( 3 * v6 <= v7 )
   {
-    v8 = v7 / 2; /*0x7aee2f*/
-    if ( v7 / 2 < 10 ) /*0x7aee34*/
-      v8 = 10; /*0x7aee36*/
-    if ( v8 < v7 ) /*0x7aee3d*/
+    v8 = v7 / 2;
+    if ( v7 / 2 < 10 )
+    v8 = 10;
+    if ( v8 < v7 )
     {
-      v9 = __2_YAPAXI_Z(4 * v8); /*0x7aee47*/
-      v10 = (const void *)this->CChatEventSink_field_0x08; /*0x7aee4c*/
-      v11 = v9; /*0x7aee54*/
-      if ( v10 ) /*0x7aee58*/
-        qmemcpy(v9, v10, 4 * *(_DWORD *)this); /*0x7aee66*/
-      __3_YAXPAX_Z(*((void **)this + 2)); /*0x7aee73*/
-      this->CChatEventSink_field_0x08 = v11; /*0x7aee7f*/
-      this->CChatEventSink_field_0x04 = v8; /*0x7aee82*/
+    v9 = __2_YAPAXI_Z(4 * v8);
+    v10 = (const void *)this->CChatEventSink_field_0x08;
+    v11 = v9;
+    if ( v10 )
+    qmemcpy(v9, v10, 4 * *(int *)this);
+    __3_YAXPAX_Z(*((void **)(this) + 2));
+    this->CChatEventSink_field_0x08 = v11;
+    this->CChatEventSink_field_0x04 = v8;
     }
   }
-  return 1; /*0x7aedda*/
+    return 1;
 }
 }
 

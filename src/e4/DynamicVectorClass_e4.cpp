@@ -14,86 +14,79 @@
 // 0x4779E0
 unsigned int * DynamicVectorClass::Copy(DynamicVector * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall DynamicVectorClass::Copy(_DWORD *this, DynamicVector *aP1)
 {
-  int v3; // eax
-  int v4; // eax
-  int v5; // ecx
-  int v6; // eax
-
-  *(this + 1) = 0; /*0x4779ed*/
-  *(this + 2) = 0; /*0x4779f0*/
-  this->IsInitialized = 1; /*0x4779f3*/
-  this->IsAllocated = 0; /*0x4779f7*/
-  *this = &vt_VectorClass_int; /*0x4779fa*/
-  if ( this != (_DWORD *)aP1 ) /*0x477a00*/
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    this->Items = 0;
+    this->Capacity = 0;
+    this->IsInitialized = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_int;
+    if ( this != (int *)aP1 )
   {
-    VectorClass::Destroy((int)this); /*0x477a02*/
-    v3 = aP1->field_8; /*0x477a08*/
-    *(this + 2) = v3; /*0x477a0d*/
-    if ( v3 ) /*0x477a10*/
+    VectorClass::Destroy((int)this);
+    v3 = aP1->field_8;
+    this->Capacity = v3;
+    if ( v3 )
     {
-      v4 = __2_YAPAXI_Z(4 * v3); /*0x477a16*/
-      *(this + 1) = v4; /*0x477a20*/
-      if ( v4 ) /*0x477a23*/
+    v4 = __2_YAPAXI_Z(4 * v3);
+    this->Items = v4;
+    if ( v4 )
       {
-        v5 = *(this + 2); /*0x477a25*/
-        v6 = 0; /*0x477a28*/
-        this->IsAllocated = 1; /*0x477a2c*/
-        if ( v5 > 0 ) /*0x477a30*/
+    v5 = this->Capacity;
+    v6 = 0;
+    this->IsAllocated = 1;
+    if ( v5 > 0 )
         {
-          do /*0x477a44*/
+    do
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x477a3b*/
-            ++v6; /*0x477a41*/
+    *(int *)(this->Items + 4 * v6) = *(int *)(*(int *)&aP1->field_1[3] + 4 * v6);
+    ++v6;
           }
-          while ( v6 < *(this + 2) ); /*0x477a44*/
+    while ( v6 < this->Capacity );
         }
       }
     }
     else
     {
-      *(this + 1) = 0; /*0x477a48*/
-      this->IsAllocated = 0; /*0x477a4b*/
+    this->Items = 0;
+    this->IsAllocated = 0;
     }
   }
-  *(this + 4) = aP1->field_10; /*0x477a51*/
-  *(this + 5) = *(_DWORD *)aP1->__pad_14; /*0x477a57*/
-  *this = &vt_DynamicVectorClass_int; /*0x477a5a*/
-  return this; /*0x477a62*/
+    this->Count = aP1->field_10;
+    this->CapacityIncrement = *(int *)aP1->__pad_14;
+    *(void**)this = &vt_DynamicVectorClass_int;
+    return this;
 }
 }
 
 // 0x50EA00
 void DynamicVectorClass::Destroy()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall DynamicVectorClass_Destroy(int this)
 {
-  if ( this->Items && this->IsAllocated ) /*0x50ea0d*/
+    if ( this->Items && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x50ea13*/
-    this->Items = 0; /*0x50ea1b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->Items = 0;
   }
-  this->IsAllocated = 0; /*0x50ea1e*/
-  this->Capacity = 0; /*0x50ea21*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 
 // 0x5251C0
 void DynamicVectorClass::Destroy_Alt()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall DynamicVectorClass_Destroy_Alt(int this)
 {
-  if ( this->Items && this->IsAllocated ) /*0x5251cd*/
+    if ( this->Items && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x5251d3*/
-    this->Items = 0; /*0x5251db*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->Items = 0;
   }
-  this->IsAllocated = 0; /*0x5251de*/
-  this->Capacity = 0; /*0x5251e1*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 
@@ -101,23 +94,20 @@ void __thiscall DynamicVectorClass_Destroy_Alt(int this)
 namespace gamemd {
 VectorClass * DynamicVectorClass_AnimType::Add(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall DynamicVectorClass_AnimType::Add(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x525013*/
-  *this = &vt_VectorClass_AnimTypeClass_const; /*0x525016*/
-  if ( v3 && this->IsAllocated ) /*0x525020*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_AnimTypeClass_const;
+    if ( v3 && *(int *)(this + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x525028*/
-    *(this + 1) = 0; /*0x525030*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x52503b*/
-  *(this + 2) = 0; /*0x525041*/
-  if ( (a2 & 1) != 0 ) /*0x525048*/
-    __3_YAXPAX_Z(this); /*0x52504b*/
-  return (VectorClass *)this; /*0x525055*/
+    *(int *)(this + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
@@ -179,25 +169,22 @@ char __thiscall DynamicVectorClass_AnimType::_vt02(void *this, int a2, _DWORD *a
 namespace gamemd {
 int DynamicVectorClass_AnimType::GetSize(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DynamicVectorClass_AnimType::_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !this->IsInitialized ) /*0x5251f0*/
-    return 0; /*0x5251f8*/
-  v3 = this->Capacity; /*0x5251fe*/
-  result = 0; /*0x525201*/
-  if ( v3 <= 0 ) /*0x525205*/
-    return -1; /*0x52521c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x52520b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !this->IsInitialized )
+    return 0;
+    v3 = this->Capacity;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x52521a*/
-      return -1; /*0x52521a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x5251fa*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -206,23 +193,20 @@ int __thiscall DynamicVectorClass_AnimType::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 DynamicVector * DynamicVectorClass_cptr_AnimTypeClass::Add(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall DynamicVectorClass_cptr_AnimTypeClass::Add(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5252b3*/
-  *this = &vt_VectorClass_AnimTypeClass_const; /*0x5252b6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5252c0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_AnimTypeClass_const;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x5252c8*/
-    *(this + 1) = 0; /*0x5252d0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x5252db*/
-  *(this + 2) = 0; /*0x5252e1*/
-  if ( (a2 & 1) != 0 ) /*0x5252e8*/
-    __3_YAXPAX_Z(this); /*0x5252eb*/
-  return (DynamicVector *)this; /*0x5252f5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -231,23 +215,20 @@ DynamicVector *__thiscall DynamicVectorClass_cptr_AnimTypeClass::Add(_DWORD *thi
 namespace gamemd {
 DynamicVector * DynamicVectorClass_cptr_VoxelAnimTypeClass::Add(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall DynamicVectorClass_cptr_VoxelAnimTypeClass::Add(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x67c063*/
-  *this = &vt_VectorClass_VoxelAnimTypeClass_const; /*0x67c066*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x67c070*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_VoxelAnimTypeClass_const;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x67c078*/
-    *(this + 1) = 0; /*0x67c080*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x67c08b*/
-  *(this + 2) = 0; /*0x67c091*/
-  if ( (a2 & 1) != 0 ) /*0x67c098*/
-    __3_YAXPAX_Z(this); /*0x67c09b*/
-  return (DynamicVector *)this; /*0x67c0a5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -256,20 +237,17 @@ DynamicVector *__thiscall DynamicVectorClass_cptr_VoxelAnimTypeClass::Add(_DWORD
 namespace gamemd {
 void DynamicVectorClass_PAD::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall DynamicVectorClass_PAD::_vt03(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x49e956*/
-  this->Count = 0; /*0x49e959*/
-  if ( v2 && this->IsAllocated ) /*0x49e960*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x49e966*/
-    this->Items = 0; /*0x49e96e*/
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
   }
-  this->IsAllocated = 0; /*0x49e971*/
-  this->Capacity = 0; /*0x49e974*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 } // namespace gamemd
@@ -278,10 +256,8 @@ void __thiscall DynamicVectorClass_PAD::_vt03(int this)
 namespace gamemd {
 int DynamicVectorClass_PAD::Clear(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DynamicVectorClass_PAD::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x49e9aa*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -290,20 +266,17 @@ int __thiscall DynamicVectorClass_PAD::_vt06(_DWORD *this, int a2)
 namespace gamemd {
 void DynamicVectorClass_PAD::Clear_49E9B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall DynamicVectorClass_PAD::sub_49E9B0(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x49e9b6*/
-  this->Count = 0; /*0x49e9b9*/
-  if ( v2 && this->IsAllocated ) /*0x49e9c0*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x49e9c6*/
-    this->Items = 0; /*0x49e9ce*/
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
   }
-  this->IsAllocated = 0; /*0x49e9d1*/
-  this->Capacity = 0; /*0x49e9d4*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 } // namespace gamemd
@@ -312,31 +285,28 @@ void __thiscall DynamicVectorClass_PAD::sub_49E9B0(int this)
 namespace gamemd {
 char DynamicVectorClass_PAD::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DynamicVectorClass_PAD::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x49ea32*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x49ea3d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x49ea3f*/
-    if ( v2 <= 0 ) /*0x49ea43*/
-      return 1; /*0x49ea63*/
-    v4 = (_DWORD *)*(this + 1); /*0x49ea45*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x49ea4b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x49ea54*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x49ea56*/
-      ++v4; /*0x49ea57*/
-      if ( v3 >= v2 ) /*0x49ea5c*/
-        return 1; /*0x49ea5c*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x49ea5e*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -345,49 +315,46 @@ char __thiscall DynamicVectorClass_PAD::_vt01(int *this, int a2)
 namespace gamemd {
 char DynamicVectorClass_PAD::Remove(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DynamicVectorClass_PAD::Remove(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x49ea7c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    this->IsInitialized = 0; /*0x49ea82*/
-    if ( a3 ) /*0x49ea88*/
-      v4 = a3; /*0x49ea9e*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x49ea9a*/
-    this->IsInitialized = 1; /*0x49eaa2*/
-    if ( !v4 ) /*0x49eaa6*/
-      return 0; /*0x49eb1a*/
-    if ( this->Items ) /*0x49eaa8*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->Items )
     {
-      v5 = this->Capacity; /*0x49eaaf*/
-      if ( a2 < v5 ) /*0x49eab4*/
-        v5 = a2; /*0x49eab6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x49eabc*/
-        ++i; /*0x49eac1*/
-      if ( this->IsAllocated ) /*0x49eace*/
+    v5 = this->Capacity;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->Items + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x49ead9*/
-        this->Items = 0; /*0x49eae1*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Items = 0;
       }
     }
-    this->Items = v4; /*0x49eaea*/
-    this->Capacity = a2; /*0x49eaf2*/
-    this->IsAllocated = a3 == 0; /*0x49eaf5*/
+    this->Items = v4;
+    this->Capacity = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x49eafe*/
+    this->ddtor();
   }
-  v7 = this->Capacity; /*0x49eb01*/
-  if ( v7 < this->Count ) /*0x49eb09*/
-    this->Count = v7; /*0x49eb0b*/
-  return 1; /*0x49eb0e*/
+    v7 = this->Capacity;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -396,24 +363,20 @@ char __thiscall DynamicVectorClass_PAD::Remove(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int DynamicVectorClass_PAD::GetSize(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DynamicVectorClass_PAD::_vt04(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x49eb20*/
-  result = 0; /*0x49eb23*/
-  if ( v2 <= 0 ) /*0x49eb28*/
-    return -1; /*0x49eb3f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x49eb2e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x49eb3d*/
-      return -1; /*0x49eb3d*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x49eb42*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -421,49 +384,46 @@ int __thiscall DynamicVectorClass_PAD::_vt04(int *this, _DWORD *a2)
 namespace gamemd {
 char DynamicVectorClass_PAD::SetCapacity(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DynamicVectorClass_PAD::sub_49ED30(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x49ed3c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    this->IsInitialized = 0; /*0x49ed42*/
-    if ( a3 ) /*0x49ed48*/
-      v4 = a3; /*0x49ed5e*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x49ed5a*/
-    this->IsInitialized = 1; /*0x49ed62*/
-    if ( !v4 ) /*0x49ed66*/
-      return 0; /*0x49edda*/
-    if ( this->Items ) /*0x49ed68*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->Items )
     {
-      v5 = this->Capacity; /*0x49ed6f*/
-      if ( a2 < v5 ) /*0x49ed74*/
-        v5 = a2; /*0x49ed76*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x49ed7c*/
-        ++i; /*0x49ed81*/
-      if ( this->IsAllocated ) /*0x49ed8e*/
+    v5 = this->Capacity;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->Items + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x49ed99*/
-        this->Items = 0; /*0x49eda1*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Items = 0;
       }
     }
-    this->Items = v4; /*0x49edaa*/
-    this->Capacity = a2; /*0x49edb2*/
-    this->IsAllocated = a3 == 0; /*0x49edb5*/
+    this->Items = v4;
+    this->Capacity = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x49edbe*/
+    this->ddtor();
   }
-  v7 = this->Capacity; /*0x49edc1*/
-  if ( v7 < this->Count ) /*0x49edc9*/
-    this->Count = v7; /*0x49edcb*/
-  return 1; /*0x49edce*/
+    v7 = this->Capacity;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -472,24 +432,20 @@ char __thiscall DynamicVectorClass_PAD::sub_49ED30(void *this, int a2, _DWORD *a
 namespace gamemd {
 int DynamicVectorClass_PAD::FindItemIndex(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DynamicVectorClass_PAD::sub_49EDE0(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x49ede0*/
-  result = 0; /*0x49ede3*/
-  if ( v2 <= 0 ) /*0x49ede8*/
-    return -1; /*0x49edff*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x49edee*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x49edfd*/
-      return -1; /*0x49edfd*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x49ee02*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -497,23 +453,20 @@ int __thiscall DynamicVectorClass_PAD::sub_49EDE0(int *this, _DWORD *a2)
 namespace gamemd {
 DynamicVector * DynamicVectorClass_PAD::Add(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall DynamicVectorClass_PAD::Add(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x49ee13*/
-  *this = &vt_VectorClass_char; /*0x49ee16*/
-  if ( v3 && this->IsAllocated ) /*0x49ee20*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_char;
+    if ( v3 && *(int *)(this + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x49ee28*/
-    *(this + 1) = 0; /*0x49ee30*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x49ee3b*/
-  *(this + 2) = 0; /*0x49ee41*/
-  if ( (a2 & 1) != 0 ) /*0x49ee48*/
-    __3_YAXPAX_Z(this); /*0x49ee4b*/
-  return (DynamicVector *)this; /*0x49ee55*/
+    *(int *)(this + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -522,23 +475,20 @@ DynamicVector *__thiscall DynamicVectorClass_PAD::Add(_DWORD *this, char a2)
 namespace gamemd {
 DynamicVector * DynamicVectorClass_PAD::Destructor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall DynamicVectorClass_PAD::Destructor(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x49f043*/
-  *this = &vt_VectorClass_DynamicVectorClass_char; /*0x49f046*/
-  if ( v3 && this->IsAllocated ) /*0x49f050*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_DynamicVectorClass_char;
+    if ( v3 && *(int *)(this + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x49f058*/
-    *(this + 1) = 0; /*0x49f060*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x49f06b*/
-  *(this + 2) = 0; /*0x49f071*/
-  if ( (a2 & 1) != 0 ) /*0x49f078*/
-    __3_YAXPAX_Z(this); /*0x49f07b*/
-  return (DynamicVector *)this; /*0x49f085*/
+    *(int *)(this + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -547,10 +497,8 @@ DynamicVector *__thiscall DynamicVectorClass_PAD::Destructor(_DWORD *this, char 
 namespace gamemd {
 int DynamicVectorClass_PAD_16::Get(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DynamicVectorClass_PAD_16_::Get(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x49ea0a*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -559,31 +507,28 @@ int __thiscall DynamicVectorClass_PAD_16_::Get(_DWORD *this, int a2)
 namespace gamemd {
 char DynamicVectorClass_PAD_16::Add(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DynamicVectorClass_PAD_16_::Add(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x49eb52*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x49eb5d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x49eb5f*/
-    if ( v2 <= 0 ) /*0x49eb63*/
-      return 1; /*0x49eb83*/
-    v4 = (_DWORD *)*(this + 1); /*0x49eb65*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x49eb6b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x49eb74*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x49eb76*/
-      ++v4; /*0x49eb77*/
-      if ( v3 >= v2 ) /*0x49eb7c*/
-        return 1; /*0x49eb7c*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x49eb7e*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -592,50 +537,47 @@ char __thiscall DynamicVectorClass_PAD_16_::Add(int *this, int a2)
 namespace gamemd {
 char DynamicVectorClass_PAD_16::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DynamicVectorClass_PAD_16_::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x49eb9c*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    this->IsInitialized = 0; /*0x49eba6*/
-    if ( a3 ) /*0x49ebac*/
-      v4 = a3; /*0x49ebc2*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x49ebbe*/
-    this->IsInitialized = 1; /*0x49ebc6*/
-    if ( v4 ) /*0x49ebca*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( this->Items ) /*0x49ebd5*/
+    if ( this->Items )
       {
-        v6 = this->Capacity; /*0x49ebdc*/
-        if ( a2 < v6 ) /*0x49ebe1*/
-          v6 = a2; /*0x49ebe3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x49ebe9*/
-          ++i; /*0x49ebee*/
-        if ( this->IsAllocated ) /*0x49ebfb*/
+    v6 = this->Capacity;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->Items + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x49ec06*/
-          this->Items = 0; /*0x49ec0e*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Items = 0;
         }
       }
-      this->Items = v4; /*0x49ec17*/
-      this->Capacity = a2; /*0x49ec1f*/
-      this->IsAllocated = a3 == 0; /*0x49ec22*/
-      return 1; /*0x49ec28*/
+    this->Items = v4;
+    this->Capacity = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x49ebcf*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x49ec32*/
-    return 1; /*0x49ec38*/
+    this->Remove();
+    return 1;
   }
 }
 }
@@ -645,16 +587,14 @@ char __thiscall DynamicVectorClass_PAD_16_::_vt02(void *this, int a2, _DWORD *a3
 namespace gamemd {
 void DynamicVectorClass_PAD_16::Remove()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall DynamicVectorClass_PAD_16_::Remove(int this)
 {
-  if ( this->Items && this->IsAllocated ) /*0x49ec4d*/
+    if ( this->Items && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x49ec53*/
-    this->Items = 0; /*0x49ec5b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->Items = 0;
   }
-  this->IsAllocated = 0; /*0x49ec5e*/
-  this->Capacity = 0; /*0x49ec61*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 } // namespace gamemd
@@ -663,25 +603,22 @@ void __thiscall DynamicVectorClass_PAD_16_::Remove(int this)
 namespace gamemd {
 int DynamicVectorClass_PAD_16::GetSize(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DynamicVectorClass_PAD_16_::_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !this->IsInitialized ) /*0x49ec70*/
-    return 0; /*0x49ec78*/
-  v3 = this->Capacity; /*0x49ec7e*/
-  result = 0; /*0x49ec81*/
-  if ( v3 <= 0 ) /*0x49ec85*/
-    return -1; /*0x49ec9c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x49ec8b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !this->IsInitialized )
+    return 0;
+    v3 = this->Capacity;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x49ec9a*/
-      return -1; /*0x49ec9a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x49ec7a*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -690,23 +627,20 @@ int __thiscall DynamicVectorClass_PAD_16_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 VectorClass * DynamicVectorClass_PAD_16::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall DynamicVectorClass_PAD_16_::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x49eff3*/
-  *this = &vt_VectorClass_DynamicVectorClass_char; /*0x49eff6*/
-  if ( v3 && this->IsAllocated ) /*0x49f000*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_DynamicVectorClass_char;
+    if ( v3 && *(int *)(this + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x49f008*/
-    *(this + 1) = 0; /*0x49f010*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x49f01b*/
-  *(this + 2) = 0; /*0x49f021*/
-  if ( (a2 & 1) != 0 ) /*0x49f028*/
-    __3_YAXPAX_Z(this); /*0x49f02b*/
-  return (VectorClass *)this; /*0x49f035*/
+    *(int *)(this + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
@@ -715,20 +649,17 @@ VectorClass *__thiscall DynamicVectorClass_PAD_16_::QueryInterface(_DWORD *this,
 namespace gamemd {
 void DynamicVectorClass_ptr_NodeNameType::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall DynamicVectorClass_ptr_NodeNameType::_vt03(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x5c5076*/
-  this->Count = 0; /*0x5c5079*/
-  if ( v2 && this->IsAllocated ) /*0x5c5080*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x5c5086*/
-    this->Items = 0; /*0x5c508e*/
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
   }
-  this->IsAllocated = 0; /*0x5c5091*/
-  this->Capacity = 0; /*0x5c5094*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 } // namespace gamemd
@@ -737,10 +668,8 @@ void __thiscall DynamicVectorClass_ptr_NodeNameType::_vt03(int this)
 namespace gamemd {
 int DynamicVectorClass_ptr_NodeNameType::Clear(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DynamicVectorClass_ptr_NodeNameType::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x5c50ca*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -749,31 +678,28 @@ int __thiscall DynamicVectorClass_ptr_NodeNameType::_vt06(_DWORD *this, int a2)
 namespace gamemd {
 char DynamicVectorClass_ptr_NodeNameType::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DynamicVectorClass_ptr_NodeNameType::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x5c5392*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x5c539d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x5c539f*/
-    if ( v2 <= 0 ) /*0x5c53a3*/
-      return 1; /*0x5c53c3*/
-    v4 = (_DWORD *)*(this + 1); /*0x5c53a5*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x5c53ab*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x5c53b4*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x5c53b6*/
-      ++v4; /*0x5c53b7*/
-      if ( v3 >= v2 ) /*0x5c53bc*/
-        return 1; /*0x5c53bc*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x5c53be*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -782,49 +708,46 @@ char __thiscall DynamicVectorClass_ptr_NodeNameType::_vt01(int *this, int a2)
 namespace gamemd {
 char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DynamicVectorClass_ptr_NodeNameType::Remove(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x5c551c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    this->IsInitialized = 0; /*0x5c5522*/
-    if ( a3 ) /*0x5c5528*/
-      v4 = a3; /*0x5c553e*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5c553a*/
-    this->IsInitialized = 1; /*0x5c5542*/
-    if ( !v4 ) /*0x5c5546*/
-      return 0; /*0x5c55ba*/
-    if ( this->Items ) /*0x5c5548*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->Items )
     {
-      v5 = this->Capacity; /*0x5c554f*/
-      if ( a2 < v5 ) /*0x5c5554*/
-        v5 = a2; /*0x5c5556*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x5c555c*/
-        ++i; /*0x5c5561*/
-      if ( this->IsAllocated ) /*0x5c556e*/
+    v5 = this->Capacity;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->Items + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5c5579*/
-        this->Items = 0; /*0x5c5581*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Items = 0;
       }
     }
-    this->Items = v4; /*0x5c558a*/
-    this->Capacity = a2; /*0x5c5592*/
-    this->IsAllocated = a3 == 0; /*0x5c5595*/
+    this->Items = v4;
+    this->Capacity = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5c559e*/
+    this->ddtor();
   }
-  v7 = this->Capacity; /*0x5c55a1*/
-  if ( v7 < this->Count ) /*0x5c55a9*/
-    this->Count = v7; /*0x5c55ab*/
-  return 1; /*0x5c55ae*/
+    v7 = this->Capacity;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -833,24 +756,20 @@ char __thiscall DynamicVectorClass_ptr_NodeNameType::Remove(void *this, int a2, 
 namespace gamemd {
 int DynamicVectorClass_ptr_NodeNameType::GetSize(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DynamicVectorClass_ptr_NodeNameType::_vt04(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x5c55c0*/
-  result = 0; /*0x5c55c3*/
-  if ( v2 <= 0 ) /*0x5c55c8*/
-    return -1; /*0x5c55df*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x5c55ce*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x5c55dd*/
-      return -1; /*0x5c55dd*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x5c55e2*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -858,23 +777,20 @@ int __thiscall DynamicVectorClass_ptr_NodeNameType::_vt04(int *this, _DWORD *a2)
 namespace gamemd {
 DynamicVector * DynamicVectorClass_ptr_NodeNameType::Add(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall DynamicVectorClass_ptr_NodeNameType::Add(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5c58f3*/
-  *this = &vt_VectorClass_NodeNameType; /*0x5c58f6*/
-  if ( v3 && this->IsAllocated ) /*0x5c5900*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_NodeNameType;
+    if ( v3 && *(int *)(this + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x5c5908*/
-    *(this + 1) = 0; /*0x5c5910*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x5c591b*/
-  *(this + 2) = 0; /*0x5c5921*/
-  if ( (a2 & 1) != 0 ) /*0x5c5928*/
-    __3_YAXPAX_Z(this); /*0x5c592b*/
-  return (DynamicVector *)this; /*0x5c5935*/
+    *(int *)(this + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -883,23 +799,20 @@ DynamicVector *__thiscall DynamicVectorClass_ptr_NodeNameType::Add(_DWORD *this,
 namespace gamemd {
 DynamicVector * DynamicVectorClass_SubzoneConn::Add(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall DynamicVectorClass_SubzoneConn::Add(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5890b3*/
-  *this = &vt_VectorClass_SubzoneConnectionStruct; /*0x5890b6*/
-  if ( v3 && this->IsAllocated ) /*0x5890c0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_SubzoneConnectionStruct;
+    if ( v3 && *(int *)(this + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x5890c8*/
-    *(this + 1) = 0; /*0x5890d0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x5890db*/
-  *(this + 2) = 0; /*0x5890e1*/
-  if ( (a2 & 1) != 0 ) /*0x5890e8*/
-    __3_YAXPAX_Z(this); /*0x5890eb*/
-  return (DynamicVector *)this; /*0x5890f5*/
+    *(int *)(this + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -1017,24 +930,20 @@ char __thiscall DynamicVectorClass_SubzoneConn::_vt02(void *this, int a2, char *
 namespace gamemd {
 int DynamicVectorClass_SubzoneConn::GetSize(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DynamicVectorClass_SubzoneConn::_vt04(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x5892d0*/
-  result = 0; /*0x5892d3*/
-  if ( v2 <= 0 ) /*0x5892d8*/
-    return -1; /*0x5892ef*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; i += 2 ) /*0x5892de*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; i += 2 )
   {
-    if ( ++result >= v2 ) /*0x5892ed*/
-      return -1; /*0x5892ed*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x5892f2*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -1088,20 +997,17 @@ _DWORD *__thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::De
 namespace gamemd {
 void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear_627D20()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::sub_627D20(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x627d26*/
-  this->Count = 0; /*0x627d29*/
-  if ( v2 && this->IsAllocated ) /*0x627d30*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x627d36*/
-    this->Items = 0; /*0x627d3e*/
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
   }
-  this->IsAllocated = 0; /*0x627d41*/
-  this->Capacity = 0; /*0x627d44*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 } // namespace gamemd
@@ -1110,20 +1016,17 @@ void __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::sub_6
 namespace gamemd {
 void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear_627D80()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::sub_627D80(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x627d86*/
-  this->Count = 0; /*0x627d89*/
-  if ( v2 && this->IsAllocated ) /*0x627d90*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x627d96*/
-    this->Items = 0; /*0x627d9e*/
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
   }
-  this->IsAllocated = 0; /*0x627da1*/
-  this->Capacity = 0; /*0x627da4*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 } // namespace gamemd
@@ -1132,49 +1035,46 @@ void __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::sub_6
 namespace gamemd {
 char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::sub_627F90(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x627f9c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    this->IsInitialized = 0; /*0x627fa2*/
-    if ( a3 ) /*0x627fa8*/
-      v4 = a3; /*0x627fbe*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x627fba*/
-    this->IsInitialized = 1; /*0x627fc2*/
-    if ( !v4 ) /*0x627fc6*/
-      return 0; /*0x62803a*/
-    if ( this->Items ) /*0x627fc8*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->Items )
     {
-      v5 = this->Capacity; /*0x627fcf*/
-      if ( a2 < v5 ) /*0x627fd4*/
-        v5 = a2; /*0x627fd6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x627fdc*/
-        ++i; /*0x627fe1*/
-      if ( this->IsAllocated ) /*0x627fee*/
+    v5 = this->Capacity;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->Items + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x627ff9*/
-        this->Items = 0; /*0x628001*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Items = 0;
       }
     }
-    this->Items = v4; /*0x62800a*/
-    this->Capacity = a2; /*0x628012*/
-    this->IsAllocated = a3 == 0; /*0x628015*/
+    this->Items = v4;
+    this->Capacity = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x62801e*/
+    this->Clear_627D80();
   }
-  v7 = this->Capacity; /*0x628021*/
-  if ( v7 < this->Count ) /*0x628029*/
-    this->Count = v7; /*0x62802b*/
-  return 1; /*0x62802e*/
+    v7 = this->Capacity;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1183,24 +1083,20 @@ char __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::sub_6
 namespace gamemd {
 int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::FindItemIndex(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::sub_628040(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x628040*/
-  result = 0; /*0x628043*/
-  if ( v2 <= 0 ) /*0x628048*/
-    return -1; /*0x62805f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x62804e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x62805d*/
-      return -1; /*0x62805d*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x628062*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -1321,25 +1217,20 @@ char __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::sub_6
 namespace gamemd {
 DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_1(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_1(
-        _DWORD *this,
-        char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x628643*/
-  *this = &vt_VectorClass_ColorScheme; /*0x628646*/
-  if ( v3 && this->IsAllocated ) /*0x628650*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_ColorScheme;
+    if ( v3 && *(int *)(this + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x628658*/
-    *(this + 1) = 0; /*0x628660*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x62866b*/
-  *(this + 2) = 0; /*0x628671*/
-  if ( (a2 & 1) != 0 ) /*0x628678*/
-    __3_YAXPAX_Z(this); /*0x62867b*/
-  return (DynamicVector *)this; /*0x628685*/
+    *(int *)(this + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -1348,62 +1239,59 @@ DynamicVector *__thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeN
 namespace gamemd {
 char * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Add(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Add(_DWORD *this, char a2)
 {
-  int v3; // eax
-  _DWORD *v4; // ebp
-  int v5; // ecx
-  int v6; // eax
-  _DWORD *v7; // esi
-  int v8; // edi
-  void *v9; // eax
-  void *v11; // eax
-
-  if ( (a2 & 2) != 0 ) /*0x62869a*/
+    int v3;
+    int *v4;
+    int v5;
+    int v6;
+    int *v7;
+    int v8;
+    void *v9;
+    void *v11;
+    if ( (a2 & 2) != 0 )
   {
-    v3 = *(this - 1); /*0x62869c*/
-    v4 = this - 1; /*0x6286a0*/
-    v5 = 3 * v3; /*0x6286a3*/
-    v6 = v3 - 1; /*0x6286a6*/
-    v7 = this + 2 * v5; /*0x6286a7*/
-    if ( v6 >= 0 ) /*0x6286aa*/
+    v3 = *(this - 1);
+    v4 = this - 1;
+    v5 = 3 * v3;
+    v6 = v3 - 1;
+    v7 = this + 2 * v5;
+    if ( v6 >= 0 )
     {
-      v8 = v6 + 1; /*0x6286ad*/
-      do /*0x6286da*/
+    v8 = v6 + 1;
+    do
       {
-        v9 = (void *)*(v7 - 5); /*0x6286b2*/
-        v7 -= 6; /*0x6286b5*/
-        *v7 = &vt_VectorClass_HashObject_HashString_SchemeNode; /*0x6286ba*/
-        if ( v9 && *((_BYTE *)v7 + 13) ) /*0x6286c2*/
+    v9 = (void *)*(v7 - 5);
+    v7 -= 6;
+    *v7 = &vt_VectorClass_HashObject_HashString_SchemeNode;
+    if ( v9 && *((char *)(v7) + 13) )
         {
-          __3_YAXPAX_Z(v9); /*0x6286c8*/
-          v7[1] = 0; /*0x6286d0*/
+    __3_YAXPAX_Z(v9);
+    v7[1] = 0;
         }
-        --v8; /*0x6286d3*/
-        *((_BYTE *)v7 + 13) = 0; /*0x6286d4*/
-        v7[2] = 0; /*0x6286d7*/
+    --v8;
+    *((char *)(v7) + 13) = 0;
+    v7[2] = 0;
       }
-      while ( v8 ); /*0x6286da*/
+    while ( v8 );
     }
-    if ( (a2 & 1) != 0 ) /*0x6286e2*/
-      __3_YAXPAX_Z(v4); /*0x6286e5*/
-    return (char *)v4; /*0x6286ed*/
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(v4);
+    return (char *)v4;
   }
-  else
+    else
   {
-    v11 = (void *)*(this + 1); /*0x6286f5*/
-    *this = &vt_VectorClass_HashObject_HashString_SchemeNode; /*0x6286fc*/
-    if ( v11 && this->IsAllocated ) /*0x628704*/
+    v11 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_HashObject_HashString_SchemeNode;
+    if ( v11 && *(int *)(this + 13) )
     {
-      __3_YAXPAX_Z(v11); /*0x62870a*/
-      *(this + 1) = 0; /*0x628712*/
+    __3_YAXPAX_Z(v11);
+    *(this + 1) = 0;
     }
-    this->IsAllocated = 0; /*0x628719*/
-    *(this + 2) = 0; /*0x62871e*/
-    if ( (a2 & 1) != 0 ) /*0x628721*/
-      __3_YAXPAX_Z(this); /*0x628724*/
-    return (char *)this; /*0x62872c*/
+    *(int *)(this + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (char *)this;
   }
 }
 }
@@ -1413,25 +1301,20 @@ char *__thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Add(
 namespace gamemd {
 DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_2(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_2(
-        _DWORD *this,
-        char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x6287b3*/
-  *this = &vt_VectorClass_HSVClass; /*0x6287b6*/
-  if ( v3 && this->IsAllocated ) /*0x6287c0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_HSVClass;
+    if ( v3 && *(int *)(this + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x6287c8*/
-    *(this + 1) = 0; /*0x6287d0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x6287db*/
-  *(this + 2) = 0; /*0x6287e1*/
-  if ( (a2 & 1) != 0 ) /*0x6287e8*/
-    __3_YAXPAX_Z(this); /*0x6287eb*/
-  return (DynamicVector *)this; /*0x6287f5*/
+    *(int *)(this + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -1440,20 +1323,17 @@ DynamicVector *__thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeN
 namespace gamemd {
 void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::_vt03(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x628806*/
-  this->Count = 0; /*0x628809*/
-  if ( v2 && this->IsAllocated ) /*0x628810*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x628816*/
-    this->Items = 0; /*0x62881e*/
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
   }
-  this->IsAllocated = 0; /*0x628821*/
-  this->Capacity = 0; /*0x628824*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 } // namespace gamemd
@@ -1577,20 +1457,17 @@ char __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Remov
 namespace gamemd {
 void DynamicVectorClass_uint::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall DynamicVectorClass_uint::_vt03(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x42d546*/
-  this->Count = 0; /*0x42d549*/
-  if ( v2 && this->IsAllocated ) /*0x42d550*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x42d556*/
-    this->Items = 0; /*0x42d55e*/
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
   }
-  this->IsAllocated = 0; /*0x42d561*/
-  this->Capacity = 0; /*0x42d564*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 } // namespace gamemd
@@ -1599,10 +1476,8 @@ void __thiscall DynamicVectorClass_uint::_vt03(int this)
 namespace gamemd {
 int DynamicVectorClass_uint::Clear(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DynamicVectorClass_uint::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x42d59a*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -1611,31 +1486,28 @@ int __thiscall DynamicVectorClass_uint::_vt06(_DWORD *this, int a2)
 namespace gamemd {
 char DynamicVectorClass_uint::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DynamicVectorClass_uint::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x42d602*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x42d60d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x42d60f*/
-    if ( v2 <= 0 ) /*0x42d613*/
-      return 1; /*0x42d633*/
-    v4 = (_DWORD *)*(this + 1); /*0x42d615*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x42d61b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x42d624*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x42d626*/
-      ++v4; /*0x42d627*/
-      if ( v3 >= v2 ) /*0x42d62c*/
-        return 1; /*0x42d62c*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x42d62e*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1644,50 +1516,47 @@ char __thiscall DynamicVectorClass_uint::_vt01(int *this, int a2)
 namespace gamemd {
 char DynamicVectorClass_uint::SetCapacity(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DynamicVectorClass_uint::sub_42D640(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x42d64c*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    this->IsInitialized = 0; /*0x42d656*/
-    if ( a3 ) /*0x42d65c*/
-      v4 = a3; /*0x42d672*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x42d66e*/
-    this->IsInitialized = 1; /*0x42d676*/
-    if ( v4 ) /*0x42d67a*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( this->Items ) /*0x42d685*/
+    if ( this->Items )
       {
-        v6 = this->Capacity; /*0x42d68c*/
-        if ( a2 < v6 ) /*0x42d691*/
-          v6 = a2; /*0x42d693*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x42d699*/
-          ++i; /*0x42d69e*/
-        if ( this->IsAllocated ) /*0x42d6ab*/
+    v6 = this->Capacity;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->Items + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x42d6b6*/
-          this->Items = 0; /*0x42d6be*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Items = 0;
         }
       }
-      this->Items = v4; /*0x42d6c7*/
-      this->Capacity = a2; /*0x42d6cf*/
-      this->IsAllocated = a3 == 0; /*0x42d6d2*/
-      return 1; /*0x42d6d8*/
+    this->Items = v4;
+    this->Capacity = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x42d67f*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x42d6e2*/
-    return 1; /*0x42d6e8*/
+    this->ddtor();
+    return 1;
   }
 }
 }
@@ -1697,16 +1566,14 @@ char __thiscall DynamicVectorClass_uint::sub_42D640(void *this, int a2, _DWORD *
 namespace gamemd {
 void DynamicVectorClass_uint::Clear_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall DynamicVectorClass_uint::sub_42D6F0(int this)
 {
-  if ( this->Items && this->IsAllocated ) /*0x42d6fd*/
+    if ( this->Items && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x42d703*/
-    this->Items = 0; /*0x42d70b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->Items = 0;
   }
-  this->IsAllocated = 0; /*0x42d70e*/
-  this->Capacity = 0; /*0x42d711*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 } // namespace gamemd
@@ -1715,25 +1582,22 @@ void __thiscall DynamicVectorClass_uint::sub_42D6F0(int this)
 namespace gamemd {
 int DynamicVectorClass_uint::FindItemIndex(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DynamicVectorClass_uint::sub_42D720(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !this->IsInitialized ) /*0x42d720*/
-    return 0; /*0x42d728*/
-  v3 = this->Capacity; /*0x42d72e*/
-  result = 0; /*0x42d731*/
-  if ( v3 <= 0 ) /*0x42d735*/
-    return -1; /*0x42d74c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x42d73b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !this->IsInitialized )
+    return 0;
+    v3 = this->Capacity;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x42d74a*/
-      return -1; /*0x42d74a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x42d72a*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1742,49 +1606,46 @@ int __thiscall DynamicVectorClass_uint::sub_42D720(int this, _DWORD *a2)
 namespace gamemd {
 char DynamicVectorClass_uint::Remove(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DynamicVectorClass_uint::Remove(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x42d78c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    this->IsInitialized = 0; /*0x42d792*/
-    if ( a3 ) /*0x42d798*/
-      v4 = a3; /*0x42d7ae*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x42d7aa*/
-    this->IsInitialized = 1; /*0x42d7b2*/
-    if ( !v4 ) /*0x42d7b6*/
-      return 0; /*0x42d82a*/
-    if ( this->Items ) /*0x42d7b8*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->Items )
     {
-      v5 = this->Capacity; /*0x42d7bf*/
-      if ( a2 < v5 ) /*0x42d7c4*/
-        v5 = a2; /*0x42d7c6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x42d7cc*/
-        ++i; /*0x42d7d1*/
-      if ( this->IsAllocated ) /*0x42d7de*/
+    v5 = this->Capacity;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->Items + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x42d7e9*/
-        this->Items = 0; /*0x42d7f1*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Items = 0;
       }
     }
-    this->Items = v4; /*0x42d7fa*/
-    this->Capacity = a2; /*0x42d802*/
-    this->IsAllocated = a3 == 0; /*0x42d805*/
+    this->Items = v4;
+    this->Capacity = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x42d80e*/
+    this->ddtor();
   }
-  v7 = this->Capacity; /*0x42d811*/
-  if ( v7 < this->Count ) /*0x42d819*/
-    this->Count = v7; /*0x42d81b*/
-  return 1; /*0x42d81e*/
+    v7 = this->Capacity;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1793,24 +1654,20 @@ char __thiscall DynamicVectorClass_uint::Remove(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int DynamicVectorClass_uint::GetSize(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DynamicVectorClass_uint::_vt04(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x42d880*/
-  result = 0; /*0x42d883*/
-  if ( v2 <= 0 ) /*0x42d888*/
-    return -1; /*0x42d89f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x42d88e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x42d89d*/
-      return -1; /*0x42d89d*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x42d8a2*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -1818,23 +1675,20 @@ int __thiscall DynamicVectorClass_uint::_vt04(int *this, _DWORD *a2)
 namespace gamemd {
 VectorClass * DynamicVectorClass_uint::Destructor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall DynamicVectorClass_uint::Destructor(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x42db13*/
-  *this = &vt_VectorClass_unsigned_int; /*0x42db16*/
-  if ( v3 && this->IsAllocated ) /*0x42db20*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_unsigned_int;
+    if ( v3 && *(int *)(this + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x42db28*/
-    *(this + 1) = 0; /*0x42db30*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x42db3b*/
-  *(this + 2) = 0; /*0x42db41*/
-  if ( (a2 & 1) != 0 ) /*0x42db48*/
-    __3_YAXPAX_Z(this); /*0x42db4b*/
-  return (VectorClass *)this; /*0x42db55*/
+    *(int *)(this + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
@@ -1843,23 +1697,20 @@ VectorClass *__thiscall DynamicVectorClass_uint::Destructor(_DWORD *this, char a
 namespace gamemd {
 DynamicVectorClass_uint * DynamicVectorClass_uint::Add(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVectorClass_uint *__thiscall DynamicVectorClass_uint::Add(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x42db63*/
-  *this = &vt_VectorClass_unsigned_int; /*0x42db66*/
-  if ( v3 && this->IsAllocated ) /*0x42db70*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_unsigned_int;
+    if ( v3 && *(int *)(this + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x42db78*/
-    *(this + 1) = 0; /*0x42db80*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x42db8b*/
-  *(this + 2) = 0; /*0x42db91*/
-  if ( (a2 & 1) != 0 ) /*0x42db98*/
-    __3_YAXPAX_Z(this); /*0x42db9b*/
-  return (DynamicVectorClass_uint *)this; /*0x42dba5*/
+    *(int *)(this + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVectorClass_uint *)this;
 }
 }
 } // namespace gamemd

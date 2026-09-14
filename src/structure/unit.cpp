@@ -15212,54 +15212,52 @@ retn    0Ch
 // 0x6b4c80
 int UnitClass::ReadINI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6b4c80
-int __thiscall UnitClass::ReadINI(char *this)
+    int __thiscall UnitClass::ReadINI(char *(void**)this)
 {
-  int result; // eax
-  int v3; // ecx
-  unsigned __int8 *StringByIndex; // eax
-  char *v5; // eax
-  int _6B5440; // esi
-  char *v7; // eax
-  __int16 v8; // di
-  char *v9; // eax
-  __int16 v10; // bx
-  char *v11; // eax
-  void **v12; // eax
-  int i; // [esp+4h] [ebp-94h]
-  int v14; // [esp+8h] [ebp-90h]
-  int v15[3]; // [esp+Ch] [ebp-8Ch] BYREF
-  char String[128]; // [esp+18h] [ebp-80h] BYREF
-
-  INIClass::ResetSection(this);
-  result = INIClass::GetKeyCount(this, (unsigned __int8 *)aSmudge);
-  v3 = 0;
-  v14 = result;
-  for ( i = 0; i < v14; ++i )
+    int result;
+    int v3;
+    unsigned char *StringByIndex;
+    char *v5;
+    int _6B5440;
+    char *v7;
+    short v8;
+    char *v9;
+    short v10;
+    char *v11;
+    void **v12;
+    int i;
+    int v14;
+    int v15[3];
+    char String[128];
+    INIClass::ResetSection(this);
+    result = INIClass::GetKeyCount(this, (unsigned char *)aSmudge);
+    v3 = 0;
+    v14 = result;
+    for ( i = 0; i < v14; ++i )
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(this, (unsigned __int8 *)aSmudge, v3);
-    INIClass::GetString((unsigned __int8 ***)this, (unsigned __int8 **)aSmudge, StringByIndex, 0, String, 128);
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(this, (unsigned char *)aSmudge, v3);
+    INIClass::GetString((unsigned char ***)this, (unsigned char **)aSmudge, StringByIndex, 0, String, 128);
     v5 = strtok(String, Delimiter);
     _6B5440 = Object_Read_6B5440(v5);
     if ( _6B5440 != -1 )
     {
-      v7 = strtok(0, Delimiter);
-      if ( v7 )
+    v7 = strtok(0, Delimiter);
+    if ( v7 )
       {
-        v8 = atoi(v7);
-        v9 = strtok(0, Delimiter);
-        v10 = atoi(v9);
-        v11 = strtok(0, Delimiter);
-        if ( !v11 || !atoi(v11) )
+    v8 = atoi(v7);
+    v9 = strtok(0, Delimiter);
+    v10 = atoi(v9);
+    v11 = strtok(0, Delimiter);
+    if ( !v11 || !atoi(v11) )
         {
-          v12 = (void **)__2_YAPAXI_Z(176);
-          if ( v12 )
+    v12 = (void **)__2_YAPAXI_Z(176);
+    if ( v12 )
           {
-            v15[0] = (v8 << 8) + 128;
-            v15[1] = (v10 << 8) + 128;
-            v15[2] = 0;
-            UnitClass::Create(v12, *(void **)(MEMORY[0x87F7E8][539917] + 4 * _6B5440), v15, -1);
+    v15[0] = (v8 << 8) + 128;
+    v15[1] = (v10 << 8) + 128;
+    v15[2] = 0;
+    UnitClass::Create(v12, *(void **)(DataGlobal_87F7E8[539917] + 4 * _6B5440), v15, -1);
           }
         }
       }
@@ -15267,7 +15265,7 @@ int __thiscall UnitClass::ReadINI(char *this)
     result = v14;
     v3 = i + 1;
   }
-  return result;
+    return result;
 }
 
 /* ASM:

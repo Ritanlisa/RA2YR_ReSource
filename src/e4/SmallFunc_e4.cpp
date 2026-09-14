@@ -35,23 +35,20 @@ void __cdecl sub_40D1B0()
 namespace gamemd {
 int E4Recv_5AFEF0::sub_5AFEF0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5AFEF0(int this)
 {
-  int v2; // eax
-
-  LocomotionClass::Init((_DWORD *)this); /*0x5afef3*/
-  this->M24 = g_MatrixTransformState; /*0x5aff01*/
-  this->M28 = MEMORY[0xABEE14]; /*0x5aff0a*/
-  this->M32 = MEMORY[0xABEE18]; /*0x5aff16*/
-  this->M36 = g_MatrixTransformState; /*0x5aff1e*/
-  this->M40 = MEMORY[0xABEE14]; /*0x5aff26*/
-  v2 = MEMORY[0xABEE18]; /*0x5aff29*/
-  *(_BYTE *)(this + 48) = 0; /*0x5aff2e*/
-  *(_DWORD *)this = &MechLocomotionClass::`vftable'; /*0x5aff32*/
-  this->M44 = v2; /*0x5aff38*/
-  this->M4 = &vt_MechLocomotionClass; /*0x5aff3b*/
-  return this; /*0x5aff44*/
+    int v2;
+    LocomotionClass::Init((int *)this);
+    this->M24 = g_MatrixTransformState;
+    this->M28 = DataGlobal_ABEE14;
+    this->M32 = DataGlobal_ABEE18;
+    this->M36 = g_MatrixTransformState;
+    this->M40 = DataGlobal_ABEE14;
+    v2 = DataGlobal_ABEE18;
+    this->M48 = 0;
+    *(void**)this = vt_MechLocomotionClass;
+    this->M44 = v2;
+    this->M4 = &vt_MechLocomotionClass;
+    return this;
 }
 }
 } // namespace gamemd
@@ -117,21 +114,19 @@ LABEL_11:
 namespace gamemd {
 int E4Recv_728A00::sub_728A00()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_728A00(int this)
 {
-  LocomotionClass::Init((_DWORD *)this); /*0x728a03*/
-  this->M24 = 0; /*0x728a0d*/
-  this->M28 = MEMORY[0xB0F910]; /*0x728a16*/
-  this->M32 = MEMORY[0xB0F914]; /*0x728a1e*/
-  this->M36 = MEMORY[0xB0F918]; /*0x728a27*/
-  this->M40 = MEMORY[0xA8ED84]; /*0x728a30*/
-  this->M48 = 0; /*0x728a33*/
-  this->M52 = 0; /*0x728a36*/
-  *(_BYTE *)(this + 56) = 0; /*0x728a39*/
-  *(_DWORD *)this = &TunnelLocomotionClass::`vftable'; /*0x728a3c*/
-  this->M4 = &vt_TunnelLocomotionClass; /*0x728a42*/
-  return this; /*0x728a4b*/
+    LocomotionClass::Init((int *)this);
+    this->M24 = 0;
+    this->M28 = DataGlobal_B0F910;
+    this->M32 = DataGlobal_B0F914;
+    this->M36 = DataGlobal_B0F918;
+    this->M40 = g_CurrentFrame;
+    this->M48 = 0;
+    this->M52 = 0;
+    this->M56 = 0;
+    *(void**)this = vt_TunnelLocomotionClass;
+    this->M4 = &vt_TunnelLocomotionClass;
+    return this;
 }
 }
 } // namespace gamemd

@@ -94,13 +94,11 @@ LoadOptions *__thiscall LoadOptions::QueryInterface(char *this, char a2)
 namespace gamemd {
 unsigned int LoadOptions::vt05(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall LoadOptions::vt05(int this, int a2)
 {
-  if ( (unsigned char)this->field_0C ) /*0x55a180*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x55a195*/
-  else
-    return 0; /*0x55a187*/
+    if ( (unsigned char)this->field_0C )
+    return (unsigned int)(a2 - this->Items) >> 2;
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -109,10 +107,8 @@ unsigned int __thiscall LoadOptions::vt05(int this, int a2)
 namespace gamemd {
 int LoadOptions::vt06(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LoadOptions::vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x55a1aa*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -121,31 +117,28 @@ int __thiscall LoadOptions::vt06(_DWORD *this, int a2)
 namespace gamemd {
 char LoadOptions::vt01(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall LoadOptions::vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x55a1b2*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x55a1bd*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x55a1bf*/
-    if ( v2 <= 0 ) /*0x55a1c3*/
-      return 1; /*0x55a1e3*/
-    v4 = (_DWORD *)*(this + 1); /*0x55a1c5*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x55a1cb*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x55a1d4*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x55a1d6*/
-      ++v4; /*0x55a1d7*/
-      if ( v3 >= v2 ) /*0x55a1dc*/
-        return 1; /*0x55a1dc*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x55a1de*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -154,49 +147,46 @@ char __thiscall LoadOptions::vt01(int *this, int a2)
 namespace gamemd {
 char LoadOptions::vt02(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall LoadOptions::vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x55a33c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x55a342*/
-    if ( a3 ) /*0x55a348*/
-      v4 = a3; /*0x55a35e*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x55a35a*/
-    *((_BYTE *)this + 12) = 1; /*0x55a362*/
-    if ( !v4 ) /*0x55a366*/
-      return 0; /*0x55a3da*/
-    if ( *((_DWORD *)this + 1) ) /*0x55a368*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->Items )
     {
-      v5 = *((_DWORD *)this + 2); /*0x55a36f*/
-      if ( a2 < v5 ) /*0x55a374*/
-        v5 = a2; /*0x55a376*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x55a37c*/
-        ++i; /*0x55a381*/
-      if ( *((_BYTE *)this + 13) ) /*0x55a38e*/
+    v5 = this->Capacity;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->Items + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x55a399*/
-        *((_DWORD *)this + 1) = 0; /*0x55a3a1*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Items = 0;
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x55a3aa*/
-    *((_DWORD *)this + 2) = a2; /*0x55a3b2*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x55a3b5*/
+    this->Items = v4;
+    this->Capacity = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x55a3be*/
+    this->Clear();
   }
-  v7 = *((_DWORD *)this + 2); /*0x55a3c1*/
-  if ( v7 < this->max_entries ) /*0x55a3c9*/
-    this->max_entries = v7; /*0x55a3cb*/
-  return 1; /*0x55a3ce*/
+    v7 = this->Capacity;
+    if ( v7 < this->max_entries )
+    this->max_entries = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -205,24 +195,20 @@ char __thiscall LoadOptions::vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int LoadOptions::vt04(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LoadOptions::vt04(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x55a3e0*/
-  result = 0; /*0x55a3e3*/
-  if ( v2 <= 0 ) /*0x55a3e8*/
-    return -1; /*0x55a3ff*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x55a3ee*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->max_entries;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x55a3fd*/
-      return -1; /*0x55a3fd*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x55a402*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -230,23 +216,20 @@ int __thiscall LoadOptions::vt04(int *this, _DWORD *a2)
 namespace gamemd {
 VectorClass * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall LoadOptions::Constructor_VectorClass_FileEntryClass___(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x55a413*/
-  *this = &vt_VectorClass_FileEntryClass; /*0x55a416*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x55a420*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_FileEntryClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x55a428*/
-    *(this + 1) = 0; /*0x55a430*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x55a43b*/
-  *(this + 2) = 0; /*0x55a441*/
-  if ( (a2 & 1) != 0 ) /*0x55a448*/
-    __3_YAXPAX_Z(this); /*0x55a44b*/
-  return (VectorClass *)this; /*0x55a455*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
@@ -255,23 +238,20 @@ VectorClass *__thiscall LoadOptions::Constructor_VectorClass_FileEntryClass___(_
 namespace gamemd {
 DynamicVector * LoadOptions::vt00(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall LoadOptions::vt00(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x55a463*/
-  *this = &vt_VectorClass_FileEntryClass; /*0x55a466*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x55a470*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_FileEntryClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x55a478*/
-    *(this + 1) = 0; /*0x55a480*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x55a48b*/
-  *(this + 2) = 0; /*0x55a491*/
-  if ( (a2 & 1) != 0 ) /*0x55a498*/
-    __3_YAXPAX_Z(this); /*0x55a49b*/
-  return (DynamicVector *)this; /*0x55a4a5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -313,10 +293,8 @@ LABEL_4:
 namespace gamemd {
 char * LoadOptions::GetData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_681100(char *this)
 {
-  return this + 264; /*0x681106*/
+    return this + 264;
 }
 }
 } // namespace gamemd

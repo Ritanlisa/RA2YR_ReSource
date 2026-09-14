@@ -28,23 +28,20 @@ void __thiscall ParticleTypeClass::_vt03(int this)
 namespace gamemd {
 TypeList * ParticleTypeClass::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TypeList *__thiscall ParticleTypeClass::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x477ac3*/
-  *this = &vt_VectorClass_RGBClass; /*0x477ac6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x477ad0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_RGBClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x477ad8*/
-    *(this + 1) = 0; /*0x477ae0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x477aeb*/
-  *(this + 2) = 0; /*0x477af1*/
-  if ( (a2 & 1) != 0 ) /*0x477af8*/
-    __3_YAXPAX_Z(this); /*0x477afb*/
-  return (TypeList *)this; /*0x477b05*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TypeList *)this;
 }
 }
 } // namespace gamemd
@@ -166,24 +163,20 @@ char __thiscall ParticleTypeClass::_vt02(void *this, int a2, char *a3)
 namespace gamemd {
 int ParticleTypeClass::Init(unsigned char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ParticleTypeClass::_vt04(int *this, _BYTE *a2)
 {
-  int v2; // esi
-  int result; // eax
-  _BYTE *i; // ecx
-
-  v2 = *(this + 4); /*0x4785f2*/
-  result = 0; /*0x4785f5*/
-  if ( v2 <= 0 ) /*0x4785fa*/
-    return -1; /*0x478621*/
-  for ( i = (_BYTE *)*(this + 1); *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 3 ) /*0x478600*/
+    int v2;
+    int result;
+    char *i;
+    v2 = this->ImpactParticle;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (char *)this->ParticleTypeClass_field_28C; *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2); i += 3 )
   {
-    if ( ++result >= v2 ) /*0x47861f*/
-      return -1; /*0x47861f*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x478624*/
-}
+    return result;
 }
 } // namespace gamemd
 

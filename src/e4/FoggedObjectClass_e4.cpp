@@ -811,13 +811,11 @@ _DWORD *__thiscall FoggedObjectClass::_vt24(_DWORD *this, _DWORD *a2)
 // 0x4D2910
 FoggedObjectClass * FoggedObjectClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-FoggedObjectClass *__thiscall FoggedObjectClass::ddtor(void *this, char a2)
 {
-  DestructFoggedObjectClass((int)this); /*0x4d2913*/
-  if ( (a2 & 1) != 0 ) /*0x4d291d*/
-    __3_YAXPAX_Z(this); /*0x4d2920*/
-  return (FoggedObjectClass *)this; /*0x4d292a*/
+    DestructFoggedObjectClass((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (FoggedObjectClass *)this;
 }
 }
 
@@ -998,23 +996,20 @@ int __thiscall FoggedObjectClass::_vt04(int *this, _DWORD *a2)
 // 0x4D2D60
 DynamicVector * FoggedObjectClass::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall FoggedObjectClass::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x4d2d63*/
-  *this = &vt_VectorClass_FoggedObjectClass_DrawRecord; /*0x4d2d66*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x4d2d70*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_FoggedObjectClass_DrawRecord;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x4d2d78*/
-    *(this + 1) = 0; /*0x4d2d80*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x4d2d8b*/
-  *(this + 2) = 0; /*0x4d2d91*/
-  if ( (a2 & 1) != 0 ) /*0x4d2d98*/
-    __3_YAXPAX_Z(this); /*0x4d2d9b*/
-  return (DynamicVector *)this; /*0x4d2da5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 
@@ -1022,20 +1017,17 @@ DynamicVector *__thiscall FoggedObjectClass::QueryInterface(_DWORD *this, char a
 namespace gamemd {
 void FoggedObjectClass_42::ClearBuffer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall FoggedObjectClass_42_::sub_4E01F0(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x4e01f6*/
-  this->FoggedObjectClass_42_field_0x10 = 0; /*0x4e01f9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x4e0200*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->FoggedObjectClass_42_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x4e0206*/
-    this->FoggedObjectClass_42_field_0x4 = 0; /*0x4e020e*/
+    __3_YAXPAX_Z(v2);
+    this->FoggedObjectClass_42_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x4e0211*/
-  this->FoggedObjectClass_42_field_0x8 = 0; /*0x4e0214*/
+    this->IsAllocated = 0;
+    this->FoggedObjectClass_42_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -1044,10 +1036,8 @@ void __thiscall FoggedObjectClass_42_::sub_4E01F0(int this)
 namespace gamemd {
 int FoggedObjectClass_42::Seek(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall FoggedObjectClass_42_::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x4e024a*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -1056,31 +1046,28 @@ int __thiscall FoggedObjectClass_42_::_vt06(_DWORD *this, int a2)
 namespace gamemd {
 char FoggedObjectClass_42::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall FoggedObjectClass_42_::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x4e0582*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x4e058d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x4e058f*/
-    if ( v2 <= 0 ) /*0x4e0593*/
-      return 1; /*0x4e05b3*/
-    v4 = (_DWORD *)*(this + 1); /*0x4e0595*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x4e059b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x4e05a4*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x4e05a6*/
-      ++v4; /*0x4e05a7*/
-      if ( v3 >= v2 ) /*0x4e05ac*/
-        return 1; /*0x4e05ac*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x4e05ae*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1089,50 +1076,47 @@ char __thiscall FoggedObjectClass_42_::_vt01(int *this, int a2)
 namespace gamemd {
 char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall FoggedObjectClass_42_::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x4e05cc*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x4e05d6*/
-    if ( a3 ) /*0x4e05dc*/
-      v4 = a3; /*0x4e05f2*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e05ee*/
-    *((_BYTE *)this + 12) = 1; /*0x4e05f6*/
-    if ( v4 ) /*0x4e05fa*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( this->FoggedObjectClass_42_field_0x4 ) /*0x4e0605*/
+    if ( this->FoggedObjectClass_42_field_0x4 )
       {
-        v6 = this->FoggedObjectClass_42_field_0x8; /*0x4e060c*/
-        if ( a2 < v6 ) /*0x4e0611*/
-          v6 = a2; /*0x4e0613*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->FoggedObjectClass_42_field_0x4 + 4 * i - 4) ) /*0x4e0619*/
-          ++i; /*0x4e061e*/
-        if ( *((_BYTE *)this + 13) ) /*0x4e062b*/
+    v6 = this->FoggedObjectClass_42_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->FoggedObjectClass_42_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e0636*/
-          this->FoggedObjectClass_42_field_0x4 = 0; /*0x4e063e*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->FoggedObjectClass_42_field_0x4 = 0;
         }
       }
-      this->FoggedObjectClass_42_field_0x4 = v4; /*0x4e0647*/
-      this->FoggedObjectClass_42_field_0x8 = a2; /*0x4e064f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x4e0652*/
-      return 1; /*0x4e0658*/
+    this->FoggedObjectClass_42_field_0x4 = v4;
+    this->FoggedObjectClass_42_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x4e05ff*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4e0662*/
-    return 1; /*0x4e0668*/
+    this->FindItem();
+    return 1;
   }
 }
 }
@@ -1142,16 +1126,14 @@ char __thiscall FoggedObjectClass_42_::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 void FoggedObjectClass_42::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall FoggedObjectClass_42_::_vt03(int this)
 {
-  if ( this->FoggedObjectClass_42_field_0x4 && *(_BYTE *)(this + 13) ) /*0x4e067d*/
+    if ( this->FoggedObjectClass_42_field_0x4 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x4e0683*/
-    this->FoggedObjectClass_42_field_0x4 = 0; /*0x4e068b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->FoggedObjectClass_42_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x4e068e*/
-  this->FoggedObjectClass_42_field_0x8 = 0; /*0x4e0691*/
+    this->IsAllocated = 0;
+    this->FoggedObjectClass_42_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -1160,25 +1142,22 @@ void __thiscall FoggedObjectClass_42_::_vt03(int this)
 namespace gamemd {
 int FoggedObjectClass_42::Read(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall FoggedObjectClass_42_::_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->FoggedObjectClass_42_field_0xC ) /*0x4e06a0*/
-    return 0; /*0x4e06a8*/
-  v3 = this->FoggedObjectClass_42_field_0x8; /*0x4e06ae*/
-  result = 0; /*0x4e06b1*/
-  if ( v3 <= 0 ) /*0x4e06b5*/
-    return -1; /*0x4e06cc*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x4e06bb*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->FoggedObjectClass_42_field_0xC )
+    return 0;
+    v3 = this->FoggedObjectClass_42_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x4e06ca*/
-      return -1; /*0x4e06ca*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x4e06aa*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1187,49 +1166,46 @@ int __thiscall FoggedObjectClass_42_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall FoggedObjectClass_42_::sub_4E0700(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x4e070c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x4e0712*/
-    if ( a3 ) /*0x4e0718*/
-      v4 = a3; /*0x4e072e*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e072a*/
-    *((_BYTE *)this + 12) = 1; /*0x4e0732*/
-    if ( !v4 ) /*0x4e0736*/
-      return 0; /*0x4e07aa*/
-    if ( this->FoggedObjectClass_42_field_0x4 ) /*0x4e0738*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->FoggedObjectClass_42_field_0x4 )
     {
-      v5 = this->FoggedObjectClass_42_field_0x8; /*0x4e073f*/
-      if ( a2 < v5 ) /*0x4e0744*/
-        v5 = a2; /*0x4e0746*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->FoggedObjectClass_42_field_0x4 + 4 * i - 4) ) /*0x4e074c*/
-        ++i; /*0x4e0751*/
-      if ( *((_BYTE *)this + 13) ) /*0x4e075e*/
+    v5 = this->FoggedObjectClass_42_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->FoggedObjectClass_42_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e0769*/
-        this->FoggedObjectClass_42_field_0x4 = 0; /*0x4e0771*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->FoggedObjectClass_42_field_0x4 = 0;
       }
     }
-    this->FoggedObjectClass_42_field_0x4 = v4; /*0x4e077a*/
-    this->FoggedObjectClass_42_field_0x8 = a2; /*0x4e0782*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x4e0785*/
+    this->FoggedObjectClass_42_field_0x4 = v4;
+    this->FoggedObjectClass_42_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4e078e*/
+    this->FindItem();
   }
-  v7 = this->FoggedObjectClass_42_field_0x8; /*0x4e0791*/
-  if ( v7 < this->FoggedObjectClass_42_field_0x10 ) /*0x4e0799*/
-    this->FoggedObjectClass_42_field_0x10 = v7; /*0x4e079b*/
-  return 1; /*0x4e079e*/
+    v7 = this->FoggedObjectClass_42_field_0x8;
+    if ( v7 < this->FoggedObjectClass_42_field_0x10 )
+    this->FoggedObjectClass_42_field_0x10 = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1263,23 +1239,20 @@ int __thiscall FoggedObjectClass_42_::sub_4E07B0(int *this, _DWORD *a2)
 namespace gamemd {
 VectorClass * FoggedObjectClass_42::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall FoggedObjectClass_42_::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x4e0ce3*/
-  *this = &vt_VectorClass_FootClass; /*0x4e0ce6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x4e0cf0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_FootClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x4e0cf8*/
-    *(this + 1) = 0; /*0x4e0d00*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x4e0d0b*/
-  *(this + 2) = 0; /*0x4e0d11*/
-  if ( (a2 & 1) != 0 ) /*0x4e0d18*/
-    __3_YAXPAX_Z(this); /*0x4e0d1b*/
-  return (VectorClass *)this; /*0x4e0d25*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd

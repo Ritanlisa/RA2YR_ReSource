@@ -5,28 +5,8 @@
 // 0x494890
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_2(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlphaZRead_ushort::CallBlit0_2(
-        BlitTranslucentWriteAlpha_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8)
 {
-  return (*((int (__thiscall **)(BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr /*0x4948ba*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 
@@ -288,71 +268,60 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt04(
 // 0x49A3A0
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-std::locale::facet *__thiscall BlitTransXlatAlphaZRead_ushort::Constructor_Blitter(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x49a3a9*/
-  if ( (a2 & 1) != 0 ) /*0x49a3af*/
-    __3_YAXPAX_Z(this); /*0x49a3b2*/
-  return this; /*0x49a3bc*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 
 // 0x49A3C0
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-std::locale::facet *__thiscall BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x49a3c9*/
-  if ( (a2 & 1) != 0 ) /*0x49a3cf*/
-    __3_YAXPAX_Z(this); /*0x49a3d2*/
-  return this; /*0x49a3dc*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 
 // 0x49A3E0
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-std::locale::facet *__thiscall BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x49a3e9*/
-  if ( (a2 & 1) != 0 ) /*0x49a3ef*/
-    __3_YAXPAX_Z(this); /*0x49a3f2*/
-  return this; /*0x49a3fc*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 
 // 0x49A400
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-std::locale::facet *__thiscall BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x49a409*/
-  if ( (a2 & 1) != 0 ) /*0x49a40f*/
-    __3_YAXPAX_Z(this); /*0x49a412*/
-  return this; /*0x49a41c*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 
 // 0x49A420
 BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BlitTransXlatAlphaZRead_ushort *__thiscall BlitTransXlatAlphaZRead_ushort::Blit(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 2); /*0x49a428*/
-  *this = &vt_BlitTransXlatAlphaZRead_unsigned_short; /*0x49a42b*/
-  FractalNoise::Release(v3); /*0x49a432*/
-  *(this + 2) = 0; /*0x49a43b*/
-  *this = &vt_Blitter; /*0x49a444*/
-  if ( (a2 & 1) != 0 ) /*0x49a44a*/
-    __3_YAXPAX_Z(this); /*0x49a44d*/
-  return (BlitTransXlatAlphaZRead_ushort *)this; /*0x49a457*/
+    void *v3;
+    v3 = (void *)*(this + 2);
+    *(void**)this = &vt_BlitTransXlatAlphaZRead_unsigned_short;
+    FractalNoise::Release(v3);
+    *(this + 2) = 0;
+    *(void**)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransXlatAlphaZRead_ushort *)this;
 }
 }
 

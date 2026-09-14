@@ -645,32 +645,29 @@ int __thiscall sub_4F2640(_DWORD *this, int (__thiscall ***a2)(_DWORD, int))
 namespace gamemd {
 int E4Recv_4F26E0::sub_4F26E0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4F26E0(char *this, int a2)
 {
-  int v2; // ecx
-  void **v4; // [esp+4h] [ebp-Ch] BYREF
-  char *v5; // [esp+8h] [ebp-8h]
-  int v6; // [esp+Ch] [ebp-4h]
-
-  v5 = this + 88; /*0x4f26e7*/
-  v6 = 0; /*0x4f26ef*/
-  v4 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem; /*0x4f26f7*/
-  if ( Map::CanScroll(&v4) ) /*0x4f26ff*/
+    int v2;
+    void **v4;
+    char *v5;
+    int v6;
+    v5 = this + 88;
+    v6 = 0;
+    v4 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem;
+    if ( Map::CanScroll(&v4) )
   {
-    do /*0x4f2738*/
+    do
     {
-      v2 = *(_DWORD *)(*((_DWORD *)v5 + 1) + 4 * v6); /*0x4f2719*/
-      if ( (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v2 + 8))(v2, a2) ) /*0x4f271e*/
-        break; /*0x4f2723*/
-      ((void (__thiscall *)(void ***))v4[2])(&v4); /*0x4f272d*/
+    v2 = *(int *)(*((int *)(v5) + 1) + 4 * v6);
+    if ( (*(unsigned char (__thiscall **)(int, int))(*(int *)(v2) + 8))(v2, a2) )
+    break;
+    ((void (__thiscall *)(void ***))v4[2])(&v4);
     }
-    while ( ((unsigned __int8 (__thiscall *)(void ***))v4[1])(&v4) ); /*0x4f2738*/
+    while ( ((unsigned char (__thiscall *)(void ***))v4[1])(&v4) );
   }
-  if ( ((unsigned __int8 (__thiscall *)(void ***))v4[1])(&v4) ) /*0x4f2747*/
-    return *(_DWORD *)(*((_DWORD *)v5 + 1) + 4 * v6); /*0x4f275a*/
-  else
-    return 0; /*0x4f2763*/
+    if ( ((unsigned char (__thiscall *)(void ***))v4[1])(&v4) )
+    return *(int *)(*((int *)(v5) + 1) + 4 * v6);
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -679,32 +676,29 @@ int __thiscall sub_4F26E0(char *this, int a2)
 namespace gamemd {
 int E4Recv_4F2770::sub_4F2770(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4F2770(char *this, int a2)
 {
-  int v2; // ecx
-  void **v4; // [esp+4h] [ebp-Ch] BYREF
-  char *v5; // [esp+8h] [ebp-8h]
-  int v6; // [esp+Ch] [ebp-4h]
-
-  v5 = this + 88; /*0x4f2777*/
-  v6 = 0; /*0x4f277f*/
-  v4 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem; /*0x4f2787*/
-  if ( Map::CanScroll(&v4) ) /*0x4f278f*/
+    int v2;
+    void **v4;
+    char *v5;
+    int v6;
+    v5 = this + 88;
+    v6 = 0;
+    v4 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem;
+    if ( Map::CanScroll(&v4) )
   {
-    do /*0x4f27c8*/
+    do
     {
-      v2 = *(_DWORD *)(*((_DWORD *)v5 + 1) + 4 * v6); /*0x4f27a9*/
-      if ( (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v2 + 4))(v2, a2) ) /*0x4f27ae*/
-        break; /*0x4f27b3*/
-      ((void (__thiscall *)(void ***))v4[2])(&v4); /*0x4f27bd*/
+    v2 = *(int *)(*((int *)(v5) + 1) + 4 * v6);
+    if ( (*(unsigned char (__thiscall **)(int, int))(*(int *)(v2) + 4))(v2, a2) )
+    break;
+    ((void (__thiscall *)(void ***))v4[2])(&v4);
     }
-    while ( ((unsigned __int8 (__thiscall *)(void ***))v4[1])(&v4) ); /*0x4f27c8*/
+    while ( ((unsigned char (__thiscall *)(void ***))v4[1])(&v4) );
   }
-  if ( ((unsigned __int8 (__thiscall *)(void ***))v4[1])(&v4) ) /*0x4f27d7*/
-    return *(_DWORD *)(*((_DWORD *)v5 + 1) + 4 * v6); /*0x4f27ea*/
-  else
-    return 0; /*0x4f27f3*/
+    if ( ((unsigned char (__thiscall *)(void ***))v4[1])(&v4) )
+    return *(int *)(*((int *)(v5) + 1) + 4 * v6);
+    else
+    return 0;
 }
 }
 } // namespace gamemd
@@ -857,77 +851,57 @@ int *__userpurge ParseINIAnimGadgetDefinition@<eax>(
 namespace gamemd {
 int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, GraphicMenuAnimItem * aP3, int * a4, GraphicMenuAnimItem * aP5, char ** a6, GraphicMenuAnimItem * aP7, GraphicMenuAnimItem * aP8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall sub_4F2F10(
-        int *this,
-        GraphicMenuAnimItem *aP1,
-        _DWORD *a2,
-        GraphicMenuAnimItem *aP3,
-        int *a4,
-        GraphicMenuAnimItem *aP5,
-        char **a6,
-        GraphicMenuAnimItem *aP7,
-        GraphicMenuAnimItem *aP8)
 {
-  int v10; // edx
-  char *v11; // eax
-  void *v12; // eax
-  MSShapeAnim *v13; // eax
-  int v15; // [esp+10h] [ebp-DCh] BYREF
-  _DWORD v16[22]; // [esp+14h] [ebp-D8h] BYREF
-  char v17[12]; // [esp+6Ch] [ebp-80h] BYREF
-  int v18; // [esp+78h] [ebp-74h]
-  _DWORD v19[22]; // [esp+80h] [ebp-6Ch] BYREF
-  char v20[12]; // [esp+D8h] [ebp-14h] BYREF
-  int v21; // [esp+E4h] [ebp-8h]
-
-  GraphicMenuItem::Constructor(this, aP1); /*0x4f2f21*/
-  *(this + 4) = *a4; /*0x4f2f3c*/
-  *(this + 5) = a4[1]; /*0x4f2f41*/
-  *(this + 6) = a4[2]; /*0x4f2f47*/
-  v10 = a4[3]; /*0x4f2f4a*/
-  *(this + 8) = 0; /*0x4f2f4d*/
-  *(this + 7) = v10; /*0x4f2f50*/
-  *(this + 9) = 0; /*0x4f2f5a*/
-  *this = (int)&vt_GraphicMenuAnimItem; /*0x4f2f5d*/
-  CCFileClass::Construct2(v19, (char **)aP5); /*0x4f2f63*/
-  CCFileClass::Construct2(v16, a6); /*0x4f2f74*/
-  if ( CCFileClass::Open(v19, 0) ) /*0x4f2f81*/
+    int v10;
+    char *v11;
+    void *v12;
+    MSShapeAnim *v13;
+    int v15;
+    int v16[22];
+    char v17[12];
+    int v18;
+    int v19[22];
+    char v20[12];
+    int v21;
+    GraphicMenuItem::Constructor(this, aP1);
+    this->M16 = *a4;
+    this->M20 = *((int*)(a4) + 1);
+    this->M24 = *((int*)(a4) + 2);
+    v10 = *((int*)(a4) + 3);
+    this->M32 = 0;
+    this->M28 = v10;
+    this->M36 = 0;
+    *(void**)this = (int)&vt_GraphicMenuAnimItem;
+    CCFileClass::Construct2(v19, (char **)aP5);
+    CCFileClass::Construct2(v16, a6);
+    if ( CCFileClass::Open(v19, 0) )
   {
-    if ( CCFileClass::Open(v16, 0) ) /*0x4f2f8f*/
+    if ( CCFileClass::Open(v16, 0) )
     {
-      v11 = String::GetOrEmpty_Alt(a6); /*0x4f2f9a*/
-      String::Assign((char **)&v15, v11); /*0x4f2fa4*/
-      *(this + 9) = (int)PaletteClass::Load((const char **)&v15); /*0x4f2fb6*/
-      DeleteAndZero((int)&v15); /*0x4f2fb9*/
-      v12 = (void *)__2_YAPAXI_Z(0x40u); /*0x4f2fc0*/
-      if ( v12 ) /*0x4f2fca*/
+    v11 = String::GetOrEmpty_Alt(a6);
+    String::Assign((char **)&v15, v11);
+    this->M36 = (int)PaletteClass::Load((const char **)&v15);
+    DeleteAndZero((int)&v15);
+    v12 = (void *)__2_YAPAXI_Z(0x40u);
+    if ( v12 )
       {
-        v13 = (MSShapeAnim *)MSShapeAnim::Constructor( /*0x4f2ff2*/
-                               v12,
-                               (MSShapeAnim *)aP5,
-                               *(MSShapeAnim **)aP3->__pad_0,
-                               aP3->GraphicMenuAnimItem_field_0x04,
-                               (MSShapeAnim *)*(this + 9),
-                               (int)aP7,
-                               (MSShapeAnim *)aP8,
-                               0);
-        if ( v13 ) /*0x4f2ff9*/
-          PriorityQueue::Add((Selection_WorldDominationTour *)a2, (MSAnim *)v13); /*0x4f3003*/
+    v13 = (MSShapeAnim *)MSShapeAnim::Constructor( v12, (MSShapeAnim *)aP5, *(MSShapeAnim **)aP3->__pad_0, aP3->GraphicMenuAnimItem_field_0x04, (MSShapeAnim *)this->M36, (int)aP7, (MSShapeAnim *)aP8, 0);
+    if ( v13 )
+    PriorityQueue::Add((Selection_WorldDominationTour *)a2, (MSAnim *)v13);
       }
     }
   }
-  v16[0] = &vt_CCFileClass; /*0x4f3011*/
-  v18 = 0; /*0x4f3015*/
-  Vector::Clear((int)v17); /*0x4f3019*/
-  v16[0] = &off_7E1668; /*0x4f3027*/
-  BufferIOFileClass::Dtor(v16); /*0x4f302b*/
-  v19[0] = &vt_CCFileClass; /*0x4f3037*/
-  v21 = 0; /*0x4f303e*/
-  Vector::Clear((int)v20); /*0x4f3045*/
-  v19[0] = &off_7E1668; /*0x4f3051*/
-  BufferIOFileClass::Dtor(v19); /*0x4f3058*/
-  return this; /*0x4f305f*/
+    v16[0] = &vt_CCFileClass;
+    v18 = 0;
+    Vector::Clear((int)v17);
+    v16[0] = &DataGlobal_7E1668;
+    BufferIOFileClass::Dtor(v16);
+    v19[0] = &vt_CCFileClass;
+    v21 = 0;
+    Vector::Clear((int)v20);
+    v19[0] = &DataGlobal_7E1668;
+    BufferIOFileClass::Dtor(v19);
+    return this;
 }
 }
 } // namespace gamemd
@@ -1358,46 +1332,43 @@ _BYTE *__userpurge sub_4F4E53@<eax>(
 namespace gamemd {
 int E4Recv_4F9670::sub_4F9670()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4F9670(int *this)
 {
-  int v2; // ebx
-  int v3; // edi
-  int v4; // esi
-  double v5; // st7
-  float v7; // [esp+Ch] [ebp-Ch]
-  float v8; // [esp+10h] [ebp-8h]
-  int v9; // [esp+14h] [ebp-4h]
-
-  v2 = 0; /*0x4f9678*/
-  v3 = 0; /*0x4f967a*/
-  v7 = 0.0; /*0x4f967f*/
-  v9 = *(this + 30); /*0x4f9685*/
-  if ( v9 <= 0 ) /*0x4f9689*/
-    return 0; /*0x4f96f5*/
-  do /*0x4f96e8*/
+    int v2;
+    int v3;
+    int v4;
+    double v5;
+    float v7;
+    float v8;
+    int v9;
+    v2 = 0;
+    v3 = 0;
+    v7 = 0.0;
+    v9 = this->M120;
+    if ( v9 <= 0 )
+    return 0;
+    do
   {
-    v4 = *(_DWORD *)(*(this + 27) + 4 * v3); /*0x4f968f*/
-    if ( v4 ) /*0x4f9694*/
+    v4 = *(int *)(this->M108 + 4 * v3);
+    if ( v4 )
     {
-      if ( *(_BYTE *)(v4 + 116) ) /*0x4f9696*/
+    if ( *(char *)(v4 + 116) )
       {
-        if ( *(int *)(*(_DWORD *)(v4 + 1312) + 2048) > 0 ) /*0x4f96af*/
+    if ( *(int *)(*(int *)(v4 + 1312) + 2048) > 0 )
         {
-          v8 = (float)*(int *)(*(_DWORD *)(v4 + 1312) + 2048); /*0x4f96bb*/
-          v5 = v8 - Float4::Sum((float *)(v4 + 828)); /*0x4f96c4*/
-          if ( !v2 || v5 > v7 ) /*0x4f96d5*/
+    v8 = (float)*(int *)(*(int *)(v4 + 1312) + 2048);
+    v5 = v8 - Float4::Sum((float *)(v4 + 828));
+    if ( !v2 || v5 > v7 )
           {
-            v7 = v5; /*0x4f96d7*/
-            v2 = v4; /*0x4f96db*/
+    v7 = v5;
+    v2 = v4;
           }
         }
       }
     }
-    ++v3; /*0x4f96e5*/
+    ++v3;
   }
-  while ( v3 < v9 ); /*0x4f96e8*/
-  return v2; /*0x4f96eb*/
+    while ( v3 < v9 );
+    return v2;
 }
 }
 } // namespace gamemd

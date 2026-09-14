@@ -585,23 +585,20 @@ int __thiscall WinModemClass::LogCommErrors(_DWORD *this, NullModemClass *aP1, c
 // 0x775610
 WinModemClass * WinModemClass::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-WinModemClass *__thiscall WinModemClass::QueryInterface(void *this, char a2)
 {
-  int v3; // eax
-
-  v3 = *((_DWORD *)this + 23); /*0x775613*/
-  *(_DWORD *)this = &vt_WinModemClass; /*0x775616*/
-  if ( v3 != -1 ) /*0x77561f*/
+    int v3;
+    v3 = *((int *)(this) + 23);
+    *(int *)this = &vt_WinModemClass;
+    if ( v3 != -1 )
   {
-    Debug::Log(); /*0x775626*/
-    CloseHandle(*((HANDLE *)this + 23)); /*0x775632*/
-    *((_DWORD *)this + 23) = -1; /*0x775638*/
+    Debug::Log();
+    CloseHandle(*((HANDLE *)(this) + 23));
+    *((int *)(this) + 23) = -1;
   }
-  if ( this->WinModemClass_field_0x24 ) /*0x77563f*/
-    __3_YAXPAX_Z(*((void **)this + 9)); /*0x775647*/
-  if ( (a2 & 1) != 0 ) /*0x775654*/
-    __3_YAXPAX_Z(this); /*0x775657*/
-  return (WinModemClass *)this; /*0x775661*/
+    if ( *(int *)(this + 36) )
+    __3_YAXPAX_Z(*((void **)(this) + 9));
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (WinModemClass *)this;
 }
 }

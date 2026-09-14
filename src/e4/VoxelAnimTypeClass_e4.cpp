@@ -509,25 +509,22 @@ int __stdcall VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 namespace gamemd {
 long long VoxelAnimTypeClass::GetData(ObjectTypeClass * aP1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 __thiscall VoxelAnimTypeClass::GetData(_DWORD *this, ObjectTypeClass *aP1, int a3)
 {
-  __int64 result; // rax
-
-  result = (unsigned int)aP1; /*0x74b8f0*/
-  if ( (ObjectTypeClass *)*(this + 190) == aP1 ) /*0x74b8ff*/
-    *(this + 190) = 0; /*0x74b901*/
-  if ( (ObjectTypeClass *)*(this + 185) == aP1 ) /*0x74b90d*/
-    *(this + 185) = 0; /*0x74b90f*/
-  if ( (ObjectTypeClass *)*(this + 186) == aP1 ) /*0x74b91b*/
-    *(this + 186) = 0; /*0x74b91d*/
-  if ( (ObjectTypeClass *)*(this + 187) == aP1 ) /*0x74b929*/
-    *(this + 187) = 0; /*0x74b92b*/
-  if ( (ObjectTypeClass *)*(this + 181) == aP1 ) /*0x74b937*/
-    *(this + 181) = 0; /*0x74b939*/
-  if ( (ObjectTypeClass *)*(this + 191) == aP1 ) /*0x74b948*/
-    *(this + 191) = 0; /*0x74b94a*/
-  return result; /*0x74b947*/
+    __int64 result;
+    result = (unsigned int)aP1;
+    if ( (ObjectTypeClass *)this->Warhead == aP1 )
+    this->Warhead = 0;
+    if ( (ObjectTypeClass *)this->BounceAnim == aP1 )
+    this->BounceAnim = 0;
+    if ( (ObjectTypeClass *)this->ExpireAnim == aP1 )
+    this->ExpireAnim = 0;
+    if ( (ObjectTypeClass *)this->TrailerAnim == aP1 )
+    this->TrailerAnim = 0;
+    if ( (ObjectTypeClass *)this->Spawns == aP1 )
+    this->Spawns = 0;
+    if ( (ObjectTypeClass *)this->AttachedSystem == aP1 )
+    this->AttachedSystem = 0;
+    return result;
 }
 }
 } // namespace gamemd

@@ -136,10 +136,8 @@ CStreamClass *__userpurge CStreamClass::ddtor@<eax>(void *Block@<ecx>, ULONG a2@
 namespace gamemd {
 int CStreamClass_16::Seek(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CStreamClass_16_::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x4a4b2a*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -148,31 +146,28 @@ int __thiscall CStreamClass_16_::_vt06(_DWORD *this, int a2)
 namespace gamemd {
 char CStreamClass_16::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CStreamClass_16_::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x4a4b32*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x4a4b3d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x4a4b3f*/
-    if ( v2 <= 0 ) /*0x4a4b43*/
-      return 1; /*0x4a4b63*/
-    v4 = (_DWORD *)*(this + 1); /*0x4a4b45*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x4a4b4b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x4a4b54*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x4a4b56*/
-      ++v4; /*0x4a4b57*/
-      if ( v3 >= v2 ) /*0x4a4b5c*/
-        return 1; /*0x4a4b5c*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x4a4b5e*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -181,50 +176,47 @@ char __thiscall CStreamClass_16_::_vt01(int *this, int a2)
 namespace gamemd {
 char CStreamClass_16::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CStreamClass_16_::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x4a4b7c*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x4a4b86*/
-    if ( a3 ) /*0x4a4b8c*/
-      v4 = a3; /*0x4a4ba2*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4a4b9e*/
-    *((_BYTE *)this + 12) = 1; /*0x4a4ba6*/
-    if ( v4 ) /*0x4a4baa*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( this->CStreamClass_16_field_0x4 ) /*0x4a4bb5*/
+    if ( this->CStreamClass_16_field_0x4 )
       {
-        v6 = this->CStreamClass_16_field_0x8; /*0x4a4bbc*/
-        if ( a2 < v6 ) /*0x4a4bc1*/
-          v6 = a2; /*0x4a4bc3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->CStreamClass_16_field_0x4 + 4 * i - 4) ) /*0x4a4bc9*/
-          ++i; /*0x4a4bce*/
-        if ( *((_BYTE *)this + 13) ) /*0x4a4bdb*/
+    v6 = this->CStreamClass_16_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->CStreamClass_16_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a4be6*/
-          this->CStreamClass_16_field_0x4 = 0; /*0x4a4bee*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->CStreamClass_16_field_0x4 = 0;
         }
       }
-      this->CStreamClass_16_field_0x4 = v4; /*0x4a4bf7*/
-      this->CStreamClass_16_field_0x8 = a2; /*0x4a4bff*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x4a4c02*/
-      return 1; /*0x4a4c08*/
+    this->CStreamClass_16_field_0x4 = v4;
+    this->CStreamClass_16_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x4a4baf*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4a4c12*/
-    return 1; /*0x4a4c18*/
+    this->ddtor();
+    return 1;
   }
 }
 }
@@ -234,16 +226,14 @@ char __thiscall CStreamClass_16_::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 void CStreamClass_16::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall CStreamClass_16_::_vt03(int this)
 {
-  if ( this->CStreamClass_16_field_0x4 && *(_BYTE *)(this + 13) ) /*0x4a4c2d*/
+    if ( this->CStreamClass_16_field_0x4 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x4a4c33*/
-    this->CStreamClass_16_field_0x4 = 0; /*0x4a4c3b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->CStreamClass_16_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x4a4c3e*/
-  this->CStreamClass_16_field_0x8 = 0; /*0x4a4c41*/
+    this->IsAllocated = 0;
+    this->CStreamClass_16_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -252,25 +242,22 @@ void __thiscall CStreamClass_16_::_vt03(int this)
 namespace gamemd {
 int CStreamClass_16::Read(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CStreamClass_16_::_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->CStreamClass_16_field_0xC ) /*0x4a4c50*/
-    return 0; /*0x4a4c58*/
-  v3 = this->CStreamClass_16_field_0x8; /*0x4a4c5e*/
-  result = 0; /*0x4a4c61*/
-  if ( v3 <= 0 ) /*0x4a4c65*/
-    return -1; /*0x4a4c7c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x4a4c6b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->CStreamClass_16_field_0xC )
+    return 0;
+    v3 = this->CStreamClass_16_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x4a4c7a*/
-      return -1; /*0x4a4c7a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x4a4c5a*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -279,23 +266,20 @@ int __thiscall CStreamClass_16_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 VectorClass * CStreamClass_16::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall CStreamClass_16_::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x4a4d93*/
-  *this = &vt_VectorClass_DDSURFACEDESC; /*0x4a4d96*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x4a4da0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_DDSURFACEDESC;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x4a4da8*/
-    *(this + 1) = 0; /*0x4a4db0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x4a4dbb*/
-  *(this + 2) = 0; /*0x4a4dc1*/
-  if ( (a2 & 1) != 0 ) /*0x4a4dc8*/
-    __3_YAXPAX_Z(this); /*0x4a4dcb*/
-  return (VectorClass *)this; /*0x4a4dd5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd

@@ -1014,54 +1014,51 @@ void __thiscall sub_76AB90(WDTTerritory *this)
 namespace gamemd {
 unsigned int * E4Recv_76ABE0::sub_76ABE0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_76ABE0(_DWORD *this)
 {
-  char *v2; // esi
-  int v3; // edx
-  void (__thiscall ***v4)(_DWORD, int); // ecx
-  bool v5; // zf
-  void **v7; // [esp+Ch] [ebp-18h] BYREF
-  void (__thiscall ***v8)(_DWORD, int); // [esp+10h] [ebp-14h]
-  int v9; // [esp+14h] [ebp-10h]
-  char v10; // [esp+18h] [ebp-Ch]
-  char v11; // [esp+19h] [ebp-Bh]
-  int v12; // [esp+1Ch] [ebp-8h]
-  int v13; // [esp+20h] [ebp-4h]
-
-  v2 = (char *)(this + 11); /*0x76abef*/
-  *(this + 1) = 0; /*0x76abf2*/
-  v13 = 10; /*0x76abf7*/
-  *(this + 16) = 10; /*0x76abfb*/
-  *((_BYTE *)this + 56) = 1; /*0x76ac02*/
-  v10 = 1; /*0x76ac05*/
-  *(this + 12) = 0; /*0x76ac09*/
-  *(this + 13) = 0; /*0x76ac0c*/
-  *((_BYTE *)this + 57) = 0; /*0x76ac0f*/
-  *(this + 11) = &vt_DynamicVectorClass_rc_ptr_WDTTerritory; /*0x76ac12*/
-  *(this + 15) = 0; /*0x76ac18*/
-  *this = &vt_WDTState; /*0x76ac1e*/
-  *((_BYTE *)this + 20) = 0; /*0x76ac24*/
-  *(this + 6) = 0; /*0x76ac27*/
-  *(this + 8) = 0; /*0x76ac2a*/
-  *(this + 9) = 0; /*0x76ac2d*/
-  *(this + 10) = 1000000; /*0x76ac30*/
-  v8 = 0; /*0x76ac37*/
-  v9 = 0; /*0x76ac3b*/
-  v11 = 0; /*0x76ac3f*/
-  v7 = &vt_DynamicVectorClass_rc_ptr_WDTTerritory; /*0x76ac43*/
-  v12 = 0; /*0x76ac4b*/
-  sub_76B7B0(this + 11, &v7); /*0x76ac4f*/
-  v3 = v13; /*0x76ac58*/
-  *((_DWORD *)v2 + 4) = v12; /*0x76ac5c*/
-  v4 = v8; /*0x76ac5f*/
-  v5 = v8 == 0; /*0x76ac63*/
-  *((_DWORD *)v2 + 5) = v3; /*0x76ac65*/
-  v7 = &vt_VectorClass_rc_ptr_WDTTerritory; /*0x76ac68*/
-  if ( !v5 && v11 ) /*0x76ac76*/
-    (**v4)(v4, 3); /*0x76ac7c*/
-  *(this + 17) = 0; /*0x76ac7e*/
-  return this; /*0x76ac83*/
+    char *v2;
+    int v3;
+    void (__thiscall ***v4)(int, int);
+    bool v5;
+    void **v7;
+    void (__thiscall ***v8)(int, int);
+    int v9;
+    char v10;
+    char v11;
+    int v12;
+    int v13;
+    v2 = (char *)(this + 11);
+    this->M4 = 0;
+    v13 = 10;
+    this->M64 = 10;
+    this->M56 = 1;
+    v10 = 1;
+    this->M48 = 0;
+    this->M52 = 0;
+    this->M57 = 0;
+    this->M44 = &vt_DynamicVectorClass_rc_ptr_WDTTerritory;
+    this->M60 = 0;
+    *(void**)this = &vt_WDTState;
+    this->M20 = 0;
+    this->M24 = 0;
+    this->M32 = 0;
+    this->M36 = 0;
+    this->M40 = 1000000;
+    v8 = 0;
+    v9 = 0;
+    v11 = 0;
+    v7 = &vt_DynamicVectorClass_rc_ptr_WDTTerritory;
+    v12 = 0;
+    sub_76B7B0(this + 11, &v7);
+    v3 = v13;
+    *((int *)(v2) + 4) = v12;
+    v4 = v8;
+    v5 = v8 == 0;
+    *((int *)(v2) + 5) = v3;
+    v7 = &vt_VectorClass_rc_ptr_WDTTerritory;
+    if ( !v5 && v11 )
+    (**v4)(v4, 3);
+    this->M68 = 0;
+    return this;
 }
 }
 } // namespace gamemd
@@ -1141,22 +1138,19 @@ _DWORD *__thiscall sub_76B7B0(_DWORD *this, _DWORD *a2)
 namespace gamemd {
 unsigned int * E4Recv_76D470::sub_76D470(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_76D470(int *this, _DWORD *a2)
 {
-  _DWORD *result; // eax
-  rc_ptr_base v4; // [esp+4h] [ebp-8h] BYREF
-
-  result = (_DWORD *)Surface::PixelToIndex(*(this + 279), a2); /*0x76d481*/
-  if ( result != (_DWORD *)*(this + 280) ) /*0x76d48c*/
+    int *result;
+    rc_ptr_base v4;
+    result = (int *)Surface::PixelToIndex(this->M1116, a2);
+    if ( result != (int *)this->M1120 )
   {
-    *(this + 280) = (int)result; /*0x76d48e*/
-    FindTerritoryWOL(&v4, *(this + 279) + 44, (int)result); /*0x76d4a2*/
-    TerritorySelectWDT(this, (ObjectClass *)&v4); /*0x76d4ae*/
-    v4.vfptr = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76d4b7*/
-    return ComPtr::Release(&v4); /*0x76d4bf*/
+    this->M1120 = (int)result;
+    FindTerritoryWOL(&v4, this->M1116 + 44, (int)result);
+    TerritorySelectWDT(this, (ObjectClass *)&v4);
+    v4.vfptr = &vt_rc_ptr_WorldDominationTour_Territory;
+    return ComPtr::Release(&v4);
   }
-  return result; /*0x76d4c4*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1165,34 +1159,31 @@ _DWORD *__thiscall sub_76D470(int *this, _DWORD *a2)
 namespace gamemd {
 void E4Recv_76DFD0::sub_76DFD0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_76DFD0(char *this)
 {
-  void *v2; // [esp+4h] [ebp-10h] BYREF
-  void **v3; // [esp+8h] [ebp-Ch] BYREF
-  char *v4; // [esp+Ch] [ebp-8h]
-  int v5; // [esp+10h] [ebp-4h]
-
-  String::Assign((char **)&v2, aMapenter); /*0x76dfdf*/
-  if ( String::NotEquals((const char **)&v2, 0) ) /*0x76dfea*/
+    void *v2;
+    void **v3;
+    char *v4;
+    int v5;
+    String::Assign((char **)&v2, aMapenter);
+    if ( String::NotEquals((const char **)&v2, 0) )
   {
-    v4 = this + 1172; /*0x76e001*/
-    v5 = 0; /*0x76e005*/
-    v3 = &vt_VectorCursor_MSSfxEntry_DynamicVectorClass_MSSfxEntry; /*0x76e00d*/
-    if ( Vector::HasCapacity(&v3) ) /*0x76e015*/
+    v4 = this + 1172;
+    v5 = 0;
+    v3 = &vt_VectorCursor_MSSfxEntry_DynamicVectorClass_MSSfxEntry;
+    if ( Vector::HasCapacity(&v3) )
     {
-      do /*0x76e04e*/
+    do
       {
-        if ( !String::Compare((const char **)&v2, *(const char ***)(*((_DWORD *)v4 + 1) + 4 * v5)) ) /*0x76e032*/
-          break; /*0x76e039*/
-        ((void (__thiscall *)(void ***))v3[2])(&v3); /*0x76e043*/
+    if ( !String::Compare((const char **)&v2, *(const char ***)(*((int *)(v4) + 1) + 4 * v5)) )
+    break;
+    ((void (__thiscall *)(void ***))v3[2])(&v3);
       }
-      while ( ((unsigned __int8 (__thiscall *)(void ***))v3[1])(&v3) ); /*0x76e04e*/
+    while ( ((unsigned char (__thiscall *)(void ***))v3[1])(&v3) );
     }
-    if ( ((unsigned __int8 (__thiscall *)(void ***))v3[1])(&v3) ) /*0x76e05d*/
-      nullsub_24(*(_DWORD *)(*((_DWORD *)v4 + 1) + 4 * v5)); /*0x76e072*/
+    if ( ((unsigned char (__thiscall *)(void ***))v3[1])(&v3) )
+    nullsub_24(*(int *)(*((int *)(v4) + 1) + 4 * v5));
   }
-  DeleteAndZero(&v2); /*0x76e07b*/
+    DeleteAndZero(&v2);
 }
 }
 } // namespace gamemd
@@ -1201,41 +1192,38 @@ void __thiscall sub_76DFD0(char *this)
 namespace gamemd {
 unsigned int * E4Recv_76E090::sub_76E090()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_76E090(int *this)
 {
-  ObjectClass *v3; // [esp+4h] [ebp-18h] BYREF
-  rc_ptr_base v4; // [esp+8h] [ebp-14h] BYREF
-  void **v5; // [esp+10h] [ebp-Ch] BYREF
-  int *v6; // [esp+14h] [ebp-8h]
-  int v7; // [esp+18h] [ebp-4h]
-
-  String::Assign((char **)&v3, aMapleave); /*0x76e09f*/
-  if ( String::NotEquals((const char **)&v3, 0) ) /*0x76e0aa*/
+    ObjectClass *v3;
+    rc_ptr_base v4;
+    void **v5;
+    int *v6;
+    int v7;
+    String::Assign((char **)&v3, aMapleave);
+    if ( String::NotEquals((const char **)&v3, 0) )
   {
-    v6 = this + 293; /*0x76e0c1*/
-    v7 = 0; /*0x76e0c5*/
-    v5 = &vt_VectorCursor_MSSfxEntry_DynamicVectorClass_MSSfxEntry; /*0x76e0cd*/
-    if ( Vector::HasCapacity(&v5) ) /*0x76e0d5*/
+    v6 = this + 293;
+    v7 = 0;
+    v5 = &vt_VectorCursor_MSSfxEntry_DynamicVectorClass_MSSfxEntry;
+    if ( Vector::HasCapacity(&v5) )
     {
-      do /*0x76e10e*/
+    do
       {
-        if ( !String::Compare((const char **)&v3, *(const char ***)(v6[1] + 4 * v7)) ) /*0x76e0f2*/
-          break; /*0x76e0f9*/
-        ((void (__thiscall *)(void ***))v5[2])(&v5); /*0x76e103*/
+    if ( !String::Compare((const char **)&v3, *(const char ***)(v6[1] + 4 * v7)) )
+    break;
+    ((void (__thiscall *)(void ***))v5[2])(&v5);
       }
-      while ( ((unsigned __int8 (__thiscall *)(void ***))v5[1])(&v5) ); /*0x76e10e*/
+    while ( ((unsigned char (__thiscall *)(void ***))v5[1])(&v5) );
     }
-    if ( ((unsigned __int8 (__thiscall *)(void ***))v5[1])(&v5) ) /*0x76e11d*/
-      nullsub_24(); /*0x76e132*/
+    if ( ((unsigned char (__thiscall *)(void ***))v5[1])(&v5) )
+    nullsub_24();
   }
-  DeleteAndZero((void **)&v3); /*0x76e13b*/
-  *(this + 280) = -1; /*0x76e144*/
-  ComPtr::Constructor(&v4); /*0x76e14e*/
-  v4.vfptr = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76e15a*/
-  TerritorySelectWDT(this, (ObjectClass *)&v4); /*0x76e162*/
-  v4.vfptr = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76e16b*/
-  return ComPtr::Release(&v4); /*0x76e178*/
+    DeleteAndZero((void **)&v3);
+    this->M1120 = -1;
+    ComPtr::Constructor(&v4);
+    v4.vfptr = &vt_rc_ptr_WorldDominationTour_Territory;
+    TerritorySelectWDT(this, (ObjectClass *)&v4);
+    v4.vfptr = &vt_rc_ptr_WorldDominationTour_Territory;
+    return ComPtr::Release(&v4);
 }
 }
 } // namespace gamemd

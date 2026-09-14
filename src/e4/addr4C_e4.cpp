@@ -668,24 +668,21 @@ int __thiscall sub_4C3DD0(int *this, int a2)
 namespace gamemd {
 int E4Recv_4C4FC0::sub_4C4FC0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4C4FC0(int *this, int a2)
 {
-  int result; // eax
-  int v4; // ecx
-  int v5; // eax
-  int v6; // eax
-
-  result = Power::TimerProcess(*this); /*0x4c4fcd*/
-  v4 = *(this + 1); /*0x4c4fd2*/
-  if ( v4 ) /*0x4c4fd7*/
+    int result;
+    int v4;
+    int v5;
+    int v6;
+    result = Power::TimerProcess(*(void**)this);
+    v4 = this->M4;
+    if ( v4 )
   {
-    v5 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4); /*0x4c4fdb*/
-    Power::TimerProcess(v5); /*0x4c4fe1*/
-    v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(this + 1) + 4) + 16))(*(this + 1) + 4); /*0x4c4ff0*/
-    return Power::TimerProcess(v6); /*0x4c4ff6*/
+    v5 = (*(int (__thiscall **)(int))(*(int *)(v4) + 44))(v4);
+    Power::TimerProcess(v5);
+    v6 = (*(int (__stdcall **)(int))(*(int *)(this->M4 + 4) + 16))(this->M4 + 4);
+    return Power::TimerProcess(v6);
   }
-  return result; /*0x4c4ffb*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -740,28 +737,26 @@ char *__thiscall sub_4C68E0(
 namespace gamemd {
 char * E4Recv_4C69E0::sub_4C69E0(int a2, char a3, int a4, unsigned short * a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_4C69E0(char *this, int a2, char a3, int a4, _WORD *a5)
 {
-  Debug::Log(); /*0x4c69fc*/
-  if ( a2 < 0 ) /*0x4c6a0a*/
+    Debug::Log();
+    if ( a2 < 0 )
   {
-    *(this + 2) = -1; /*0x4c6a48*/
-    *this = 0; /*0x4c6a4c*/
-    this->M3 = MEMORY[0xA8ED84]; /*0x4c6a57*/
-    return this; /*0x4c6a55*/
+    this->M2 = -1;
+    *(void**)this = 0;
+    this->M3 = g_CurrentFrame;
+    return this;
   }
-  else
+    else
   {
-    *(this + 2) = a2; /*0x4c6a10*/
-    *this = a3; /*0x4c6a17*/
-    this->M7 = a4; /*0x4c6a19*/
-    this->M11 = -1; /*0x4c6a1c*/
-    this->M15 = 0; /*0x4c6a23*/
-    *(_WORD *)(this + 19) = *a5; /*0x4c6a2d*/
-    *(_WORD *)(this + 21) = a5[1]; /*0x4c6a35*/
-    this->M3 = MEMORY[0xA8ED84]; /*0x4c6a3e*/
-    return this; /*0x4c6a41*/
+    this->M2 = a2;
+    *(void**)this = a3;
+    this->M7 = a4;
+    this->M11 = -1;
+    this->M15 = 0;
+    this->M19 = *a5;
+    this->M21 = *((int*)(a5) + 1);
+    this->M3 = g_CurrentFrame;
+    return this;
   }
 }
 }
@@ -771,28 +766,26 @@ char *__thiscall sub_4C69E0(char *this, int a2, char a3, int a4, _WORD *a5)
 namespace gamemd {
 char * E4Recv_4C6A60::sub_4C6A60(int a2, char a3, int a4, int a5, unsigned short * a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_4C6A60(char *this, int a2, char a3, int a4, int a5, _WORD *a6)
 {
-  Debug::Log(); /*0x4c6a7c*/
-  if ( a2 < 0 ) /*0x4c6a8a*/
+    Debug::Log();
+    if ( a2 < 0 )
   {
-    *(this + 2) = -1; /*0x4c6ac8*/
-    *this = 0; /*0x4c6acc*/
-    this->M3 = MEMORY[0xA8ED84]; /*0x4c6ad7*/
-    return this; /*0x4c6ad5*/
+    this->M2 = -1;
+    *(void**)this = 0;
+    this->M3 = g_CurrentFrame;
+    return this;
   }
-  else
+    else
   {
-    *(this + 2) = a2; /*0x4c6a90*/
-    *this = a3; /*0x4c6a97*/
-    this->M11 = a5; /*0x4c6a99*/
-    this->M7 = a4; /*0x4c6aa0*/
-    this->M15 = 0; /*0x4c6aa3*/
-    *(_WORD *)(this + 19) = *a6; /*0x4c6aad*/
-    *(_WORD *)(this + 21) = a6[1]; /*0x4c6ab5*/
-    this->M3 = MEMORY[0xA8ED84]; /*0x4c6abe*/
-    return this; /*0x4c6ac1*/
+    this->M2 = a2;
+    *(void**)this = a3;
+    this->M11 = a5;
+    this->M7 = a4;
+    this->M15 = 0;
+    this->M19 = *a6;
+    this->M21 = *((int*)(a6) + 1);
+    this->M3 = g_CurrentFrame;
+    return this;
   }
 }
 }
@@ -1122,25 +1115,22 @@ double __stdcall ComputeDistortionVariant(float a1)
 namespace gamemd {
 double ComputeChronosphereDistortion(float a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double __stdcall ComputeChronosphereDistortion(float a1)
 {
-  int v1; // eax
-  char v2; // cl
-  signed int v3; // eax
-  int v4; // eax
-
-  v1 = Math::RoundToInt(flt_8223B4 * a1); /*0x4cb1b1*/
-  v2 = v1 & 1; /*0x4cb1b4*/
-  v3 = (v1 / 2) & 0x80001FFF; /*0x4cb1b9*/
-  if ( v3 >= 0 || (v3 = (((_WORD)v3 - 1) | 0xFFFFE000) + 1, v3 >= 0) ) /*0x4cb1c7*/
-    v4 = v3 + 2048; /*0x4cb1d0*/
-  else
-    v4 = v3 + 10240; /*0x4cb1c9*/
-  if ( v2 && v4 < 10239 ) /*0x4cb1de*/
-    return MEMORY[0x84F088][v4]; /*0x4cb1e0*/
-  else
-    return MEMORY[0x84F084][v4]; /*0x4cb1ea*/
+    int v1;
+    char v2;
+    signed int v3;
+    int v4;
+    v1 = Math::RoundToInt(DataGlobal_8223B4 * a1);
+    v2 = v1 & 1;
+    v3 = (v1 / 2) & 0x80001FFF;
+    if ( v3 >= 0 || (v3 = (((short)v3 - 1) | 0xFFFFE000) + 1, v3 >= 0) )
+    v4 = v3 + 2048;
+    else
+    v4 = v3 + 10240;
+    if ( v2 && v4 < 10239 )
+    return DataGlobal_84F088[v4];
+    else
+    return DataGlobal_84F084[v4];
 }
 }
 } // namespace gamemd
@@ -1268,32 +1258,24 @@ ObjectClass *__thiscall sub_4CB6A0(char *this, RandomStruct *aP1, int a3)
 namespace gamemd {
 u_short E4Recv_4CB8B0::sub_4CB8B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-u_short __thiscall sub_4CB8B0(int this)
 {
-  u_short v2; // ax
-  u_short v3; // cx
-  u_short result; // ax
-
-  switch ( (unsigned short)this->M4 ) /*0x4cb8c1*/
+    u_short v2;
+    u_short v3;
+    u_short result;
+    switch ( (unsigned short)this->M4 )
   {
-    case 3: /*0x4cb8c1*/
-    case 4: /*0x4cb8c1*/
-      **(_WORD **)(this + 8) = htons(**(_WORD **)(this + 8)); /*0x4cb8d7*/
-      break; /*0x4cb8da*/
-    case 5: /*0x4cb8c1*/
-    case 6: /*0x4cb8c1*/
-      **(_DWORD **)(this + 8) = htonl(**(_DWORD **)(this + 8)); /*0x4cb8ea*/
-      break; /*0x4cb8ea*/
-    default:
-      break;
+    case 3: case 4: **(short **)(this + 8) = htons(**(short **)(this + 8));
+    break;
+    case 5: case 6: **(int **)(this + 8) = htonl(**(int **)(this + 8));
+    break;
+    default: break;
   }
-  v2 = htons((unsigned short)this->M4); /*0x4cb8ec*/
-  v3 = (unsigned short)this->M6; /*0x4cb8f6*/
-  *(_WORD *)(this + 4) = v2; /*0x4cb8fa*/
-  result = htons(v3); /*0x4cb8ff*/
-  *(_WORD *)(this + 6) = result; /*0x4cb904*/
-  return result; /*0x4cb908*/
+    v2 = htons((unsigned short)this->M4);
+    v3 = (unsigned short)this->M6;
+    this->M4 = v2;
+    result = htons(v3);
+    this->M6 = result;
+    return result;
 }
 }
 } // namespace gamemd

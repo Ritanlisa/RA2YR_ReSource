@@ -252,42 +252,39 @@ LABEL_7:
 namespace gamemd {
 unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_4D4FC0(void *this)
 {
-  int v2; // ebx
-  _WORD *v3; // eax
-  _DWORD *v4; // eax
-  _DWORD *v5; // eax
-  _DWORD *v6; // esi
-  int v7; // ebp
-  int v9; // [esp+10h] [ebp-Ch]
-  int v10; // [esp+14h] [ebp-8h] BYREF
-  char v11[4]; // [esp+18h] [ebp-4h] BYREF
-
-  v2 = 0; /*0x4d4fc9*/
-  while ( 1 ) /*0x4d4fd4*/
+    int v2;
+    short *v3;
+    int *v4;
+    int *v5;
+    int *v6;
+    int v7;
+    int v9;
+    int v10;
+    char v11[4];
+    v2 = 0;
+    while ( 1 )
   {
-    v3 = (_WORD *)(*(int (__thiscall **)(void *, char *))(*(_DWORD *)this + 440))(this, v11); /*0x4d4fd4*/
-    LOWORD(v9) = LOWORD(MEMORY[0x89F688][v2 & 7]) + *v3; /*0x4d4ff8*/
-    HIWORD(v9) = v3[1] + HIWORD(MEMORY[0x89F688][v2 & 7]); /*0x4d4ffe*/
-    v10 = v9; /*0x4d500c*/
-    v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v10); /*0x4d5010*/
-    v5 = Cell::IsBridge(v4); /*0x4d5017*/
-    v6 = v5; /*0x4d501c*/
-    if ( v5 ) /*0x4d5020*/
+    v3 = (short *)this->Vf440(v11);
+    LOWORD(v9) = LOWORD(Direction_X_Offsets[v2 & 7]) + *v3;
+    HIWORD(v9) = v3[1] + HIWORD(Direction_X_Offsets[v2 & 7]);
+    v10 = v9;
+    v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v10);
+    v5 = Cell::IsBridge(v4);
+    v6 = v5;
+    if ( v5 )
     {
-      if ( *(_BYTE *)(v5[328] + 5493) ) /*0x4d5028*/
+    if ( *(char *)(v5[328] + 5493) )
       {
-        v7 = (*(int (__thiscall **)(_DWORD *))(*v5 + 60))(v5); /*0x4d5039*/
-        if ( v7 == (*(int (__thiscall **)(void *))(*(_DWORD *)this + 60))(this) ) /*0x4d5044*/
-          break; /*0x4d5044*/
+    v7 = (*(int (__thiscall **)(int *))(*v5 + 60))(v5);
+    if ( v7 == this->Vf60() )
+    break;
       }
     }
-    if ( ++v2 >= 8 ) /*0x4d504a*/
-      return 0; /*0x4d5059*/
+    if ( ++v2 >= 8 )
+    return 0;
   }
-  return v6; /*0x4d5050*/
+    return v6;
 }
 }
 } // namespace gamemd

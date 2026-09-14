@@ -7,12 +7,10 @@
 namespace gamemd {
 int Audio::InitChannels()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Audio_InitChannels(char *this)
 {
-  ((void (*)(void))AudioMixer::PlaySample)(); /*0x401083*/
-  AudioMixer::PlaySample(this + 40); /*0x40108b*/
-  return AudioMixer::PlaySample(this + 80); /*0x401093*/
+    ((void (*)(void))AudioMixer::PlaySample)();
+    AudioMixer::PlaySample(this + 40);
+    return AudioMixer::PlaySample(this + 80);
 }
 }
 } // namespace gamemd
@@ -87,16 +85,14 @@ int __thiscall Audio::ReleaseChannelRefs(_DWORD *this)
 namespace gamemd {
 int Audio::FlushChannel()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Audio::FlushChannel(_DWORD **this)
 {
-  LinkedList::Init(this); /*0x404dd3*/
-  *(this + 78) = 0; /*0x404dd8*/
-  if ( *((char *)this + 24) >= 0 ) /*0x404de7*/
-    PushFrontLinkedListAlt(MEMORY[0x87E2A8], (int)this); /*0x404e07*/
-  else
-    __3_YAXPAX_Z(this); /*0x404dea*/
-  return --MEMORY[0x87E28C]; /*0x404dfd*/
+    LinkedList::Init(this);
+    *(this + 78) = 0;
+    if ( *((char *)(this) + 24) >= 0 )
+    PushFrontLinkedListAlt(DataGlobal_87E2A8, (int)this);
+    else
+    __3_YAXPAX_Z(this);
+    return --DataGlobal_87E28C;
 }
 }
 } // namespace gamemd

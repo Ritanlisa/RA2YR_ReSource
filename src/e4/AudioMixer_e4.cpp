@@ -5,16 +5,14 @@
 // 0x401000
 int AudioMixer::Init()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AudioMixer::Init(int *this)
 {
-  SetupSampleAudioMixer(this, (ObjectClass *)0x4000); /*0x40100a*/
-  SetupSampleAudioMixer(this + 10, (ObjectClass *)0x64); /*0x401019*/
-  SetupSampleAudioMixer(this + 20, (ObjectClass *)0x2000); /*0x401028*/
-  SetRateMixerSample(this + 10, 10, 0x3E8u, 0); /*0x40103b*/
-  SetRateMixerSample(this, 0x4000, 0x3E8u, 0); /*0x40104e*/
-  SetRateMixerSample(this + 20, 0x4000, 0x3E8u, 0); /*0x401061*/
-  return EndBufferMixer(this, 0x4000); /*0x40106d*/
+    SetupSampleAudioMixer(this, (ObjectClass *)0x4000);
+    SetupSampleAudioMixer(this + 10, (ObjectClass *)0x64);
+    SetupSampleAudioMixer(this + 20, (ObjectClass *)0x2000);
+    SetRateMixerSample(this + 10, 10, 0x3E8u, 0);
+    SetRateMixerSample(this, 0x4000, 0x3E8u, 0);
+    SetRateMixerSample(this + 20, 0x4000, 0x3E8u, 0);
+    return EndBufferMixer(this, 0x4000);
 }
 }
 

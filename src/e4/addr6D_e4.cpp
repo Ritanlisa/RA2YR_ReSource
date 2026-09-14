@@ -87,11 +87,9 @@ void __thiscall sub_6D1E80(_DWORD *this)
 namespace gamemd {
 void E4Recv_6D4E00::sub_6D4E00()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_6D4E00(int this)
 {
-  this->M164 = -1; /*0x6d4e00*/
-  *(_WORD *)(this + 36) = 0; /*0x6d4e0a*/
+    this->M164 = -1;
+    this->M36 = 0;
 }
 }
 } // namespace gamemd
@@ -190,43 +188,40 @@ _DWORD *__stdcall sub_6D6BB0(_WORD *a1)
 namespace gamemd {
 int sub_6D8C60(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_6D8C60(int a1, int a2)
 {
-  _DWORD *v3; // eax
-  int v4; // edi
-  int v5; // esi
-  int v6; // eax
-  int result; // eax
-  int v8; // edi
-  int v9; // esi
-  int v10; // [esp+18h] [ebp-1Ch]
-  int v12; // [esp+20h] [ebp-14h] BYREF
-  int v13; // [esp+24h] [ebp-10h]
-  _BYTE v14[12]; // [esp+28h] [ebp-Ch] BYREF
-
-  v3 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)a1 + 72))(a1, v14); /*0x6d8c77*/
-  v10 = v3[1]; /*0x6d8c89*/
-  v4 = (-60 * v10 / 2 + 60 * *v3 / 2) / 256; /*0x6d8cf7*/
-  v5 = (30 * v10 / 2 + 30 * *v3 / 2) / 256; /*0x6d8cfa*/
-  v6 = Math::RoundToInt((double)(int)v3[2] * MEMORY[0xB0CD48] + (double)(v3[2] >= 728) + 0.5); /*0x6d8d21*/
-  v12 = v4; /*0x6d8d2d*/
-  v13 = v5 - v6; /*0x6d8d31*/
-  result = (int)MEMORY[0x887324][45].__tail_0; /*0x6d8d3b*/
-  v8 = v4 - (unsigned int)MEMORY[0x887324][44].__tail_0; /*0x6d8d41*/
-  v9 = v13 - result; /*0x6d8d43*/
-  v12 = v8; /*0x6d8d4b*/
-  v13 -= result; /*0x6d8d4f*/
-  if ( v8 >= -360 ) /*0x6d8d53*/
+    int *v3;
+    int v4;
+    int v5;
+    int v6;
+    int result;
+    int v8;
+    int v9;
+    int v10;
+    int v12;
+    int v13;
+    char v14[12];
+    v3 = (int *)(*(int (__thiscall **)(int, char *))(*(int *)(a1) + 72))(a1, v14);
+    v10 = v3[1];
+    v4 = (-60 * v10 / 2 + 60 * *v3 / 2) / 256;
+    v5 = (30 * v10 / 2 + 30 * *v3 / 2) / 256;
+    v6 = Math::RoundToInt((double)(int)v3[2] * DataGlobal_B0CD48 + (double)(v3[2] >= 728) + 0.5);
+    v12 = v4;
+    v13 = v5 - v6;
+    result = (int)g_TacticalClass_Instance[45].__tail_0;
+    v8 = v4 - (unsigned int)g_TacticalClass_Instance[44].__tail_0;
+    v9 = v13 - result;
+    v12 = v8;
+    v13 -= result;
+    if ( v8 >= -360 )
   {
-    result = MEMORY[0xB0CE30] + 360; /*0x6d8d5a*/
-    if ( v8 <= MEMORY[0xB0CE30] + 360 && v9 >= -180 && v9 <= MEMORY[0xB0CE34] + 180 ) /*0x6d8d79*/
+    result = DataGlobal_B0CE30 + 360;
+    if ( v8 <= DataGlobal_B0CE30 + 360 && v9 >= -180 && v9 <= DataGlobal_B0CE34 + 180 )
     {
-      (*(void (__thiscall **)(int, int *, int))(*(_DWORD *)a1 + 268))(a1, &v12, a2); /*0x6d8d8a*/
-      return (*(int (__thiscall **)(int, int *, int))(*(_DWORD *)a1 + 272))(a1, &v12, a2); /*0x6d8d9b*/
+    (*(void (__thiscall **)(int, int *, int))(*(int *)(a1) + 268))(a1, &v12, a2);
+    return (*(int (__thiscall **)(int, int *, int))(*(int *)(a1) + 272))(a1, &v12, a2);
     }
   }
-  return result; /*0x6d8da1*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -235,10 +230,8 @@ int __fastcall sub_6D8C60(int a1, int a2)
 namespace gamemd {
 int Map_GetCoordData(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall Map_GetCoordData(int a1)
 {
-  return MEMORY[0xB0CEC8][3 * a1]; /*0x6dc43e*/
+    return DataGlobal_B0CEC8[3 * a1];
 }
 }
 } // namespace gamemd

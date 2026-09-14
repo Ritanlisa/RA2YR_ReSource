@@ -12,29 +12,26 @@
 namespace gamemd {
 long long E4Recv_6B1EE0::sub_6B1EE0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 __thiscall sub_6B1EE0(int this)
 {
-  int v2; // ebx
-  double v3; // st7
-  int v4; // edi
-  __int64 result; // rax
-
-  if ( (unsigned char)this->M46 ) /*0x6b1ee6*/
-    v2 = this->M20; /*0x6b1eed*/
-  else
-    v2 = this->M24; /*0x6b1ef2*/
-  v3 = (double)*(int *)(this + 48); /*0x6b1ef5*/
-  v4 = Math::RoundToInt(v3); /*0x6b1f0f*/
-  if ( v4 <= 4 ) /*0x6b1f11*/
-    v4 = 4; /*0x6b1f13*/
-  this->M76 = v4; /*0x6b1f1b*/
-  result = Math::RoundToInt(v3); /*0x6b1f22*/
-  if ( (int)result >= v2 - v4 ) /*0x6b1f31*/
-    this->M80 = v2 - v4; /*0x6b1f3b*/
-  else
-    this->M80 = result; /*0x6b1f33*/
-  return result; /*0x6b1f36*/
+    int v2;
+    double v3;
+    int v4;
+    __int64 result;
+    if ( (unsigned char)this->M46 )
+    v2 = this->M20;
+    else
+    v2 = this->M24;
+    v3 = (double)this->M48;
+    v4 = Math::RoundToInt(v3);
+    if ( v4 <= 4 )
+    v4 = 4;
+    this->M76 = v4;
+    result = Math::RoundToInt(v3);
+    if ( (int)result >= v2 - v4 )
+    this->M80 = v2 - v4;
+    else
+    this->M80 = result;
+    return result;
 }
 }
 } // namespace gamemd

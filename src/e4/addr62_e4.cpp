@@ -2054,12 +2054,10 @@ bool __thiscall sub_6242B0(HWND this)
 namespace gamemd {
 int E4Recv_626250::sub_626250(const char * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_626250(int this, const char *a2, int a3)
 {
-  strcpy((char *)this, a2); /*0x62626c*/
-  this->M256 = a3; /*0x62627c*/
-  return this; /*0x62627b*/
+    strcpy((char *)this, a2);
+    this->M256 = a3;
+    return this;
 }
 }
 } // namespace gamemd
@@ -2068,34 +2066,31 @@ int __thiscall sub_626250(int this, const char *a2, int a3)
 namespace gamemd {
 void E4Recv_626290::sub_626290()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_626290(_DWORD *this)
 {
-  int v2; // eax
-  int v3; // ebp
-  int i; // edi
-  int v5; // ecx
-  void *v6; // esi
-  void (__thiscall ***v7)(_DWORD, int); // ecx
-
-  v2 = *(this + 64); /*0x626293*/
-  if ( v2 ) /*0x62629b*/
+    int v2;
+    int v3;
+    int i;
+    int v5;
+    void *v6;
+    void (__thiscall ***v7)(int, int);
+    v2 = this->M256;
+    if ( v2 )
   {
-    v3 = *(_DWORD *)(v2 + 16); /*0x62629e*/
-    for ( i = 0; i < v3; ++i ) /*0x6262a6*/
+    v3 = *(int *)(v2 + 16);
+    for ( i = 0; i < v3; ++i )
     {
-      v5 = *(_DWORD *)(*(this + 64) + 4); /*0x6262af*/
-      v6 = *(void **)(v5 + 4 * i); /*0x6262b2*/
-      if ( v6 ) /*0x6262b7*/
+    v5 = *(int *)(this->M256 + 4);
+    v6 = *(void **)(v5 + 4 * i);
+    if ( v6 )
       {
-        ColorScheme::Destructor(*(_DWORD *)(v5 + 4 * i)); /*0x6262bb*/
-        __3_YAXPAX_Z(v6); /*0x6262c1*/
+    ColorScheme::Destructor(*(int *)(v5 + 4 * i));
+    __3_YAXPAX_Z(v6);
       }
     }
-    v7 = (void (__thiscall ***)(_DWORD, int))*(this + 64); /*0x6262cf*/
-    if ( v7 ) /*0x6262d9*/
-      (**v7)(v7, 1); /*0x6262df*/
-    *(this + 64) = 0; /*0x6262e1*/
+    v7 = (void (__thiscall ***)(int, int))this->M256;
+    if ( v7 )
+    (**v7)(v7, 1);
+    this->M256 = 0;
   }
 }
 }
@@ -2105,42 +2100,39 @@ void __thiscall sub_626290(_DWORD *this)
 namespace gamemd {
 int E4Recv_6262F0::sub_6262F0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6262F0(_DWORD *this, int a2)
 {
-  int result; // eax
-  int v4; // ebp
-  int i; // edi
-  int v6; // ecx
-  void *v7; // esi
-  void (__thiscall ***v8)(_DWORD, int); // ecx
-
-  result = *(this + 64); /*0x6262f3*/
-  if ( result ) /*0x6262fb*/
+    int result;
+    int v4;
+    int i;
+    int v6;
+    void *v7;
+    void (__thiscall ***v8)(int, int);
+    result = this->M256;
+    if ( result )
   {
-    v4 = *(_DWORD *)(result + 16); /*0x6262fe*/
-    for ( i = 0; i < v4; ++i ) /*0x626306*/
+    v4 = *(int *)(result + 16);
+    for ( i = 0; i < v4; ++i )
     {
-      v6 = *(_DWORD *)(*(this + 64) + 4); /*0x62630f*/
-      v7 = *(void **)(v6 + 4 * i); /*0x626312*/
-      if ( v7 ) /*0x626317*/
+    v6 = *(int *)(this->M256 + 4);
+    v7 = *(void **)(v6 + 4 * i);
+    if ( v7 )
       {
-        ColorScheme::Destructor(*(_DWORD *)(v6 + 4 * i)); /*0x62631b*/
-        __3_YAXPAX_Z(v7); /*0x626321*/
+    ColorScheme::Destructor(*(int *)(v6 + 4 * i));
+    __3_YAXPAX_Z(v7);
       }
     }
-    v8 = (void (__thiscall ***)(_DWORD, int))*(this + 64); /*0x62632f*/
-    if ( v8 ) /*0x626339*/
-      (**v8)(v8, 1); /*0x62633f*/
-    *(this + 64) = 0; /*0x626345*/
-    *(this + 64) = a2; /*0x62634f*/
-    return a2; /*0x626341*/
+    v8 = (void (__thiscall ***)(int, int))this->M256;
+    if ( v8 )
+    (**v8)(v8, 1);
+    this->M256 = 0;
+    this->M256 = a2;
+    return a2;
   }
-  else
+    else
   {
-    *(this + 64) = a2; /*0x62635d*/
+    this->M256 = a2;
   }
-  return result; /*0x626355*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -2475,53 +2467,50 @@ void __thiscall sub_629530(int this)
 namespace gamemd {
 int E4Recv_62D510::sub_62D510()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_62D510(float *this)
 {
-  double v2; // st7
-  char *v3; // edi
-  int v4; // ebx
-  int v5; // eax
-  int v6; // ecx
-  int v7; // edx
-  int v8; // edi
-  int v9; // eax
-  int GroundHeight; // edi
-  int v12; // [esp+Ch] [ebp-18h] BYREF
-  int v13; // [esp+10h] [ebp-14h]
-  int v14; // [esp+14h] [ebp-10h]
-  _DWORD v15[3]; // [esp+18h] [ebp-Ch] BYREF
-
-  v2 = *(this + 57); /*0x62d524*/
-  v3 = (char *)(this + 39); /*0x62d530*/
-  *(float *)v15 = *(this + 39); /*0x62d532*/
-  v4 = this->M160; /*0x62d536*/
-  v5 = this->M164; /*0x62d539*/
-  v6 = this->M156; /*0x62d53c*/
-  v15[2] = v5; /*0x62d53e*/
-  v7 = *((_DWORD *)v3 + 1); /*0x62d544*/
-  v12 = v6; /*0x62d547*/
-  v8 = *((_DWORD *)v3 + 2); /*0x62d54e*/
-  v13 = v7; /*0x62d551*/
-  v14 = v8; /*0x62d555*/
-  v15[1] = v4; /*0x62d559*/
-  if ( v2 > 0.0 ) /*0x62d55d*/
+    double v2;
+    char *v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int GroundHeight;
+    int v12;
+    int v13;
+    int v14;
+    int v15[3];
+    v2 = this->M228;
+    v3 = (char *)(this + 39);
+    *(float *)v15 = this->M156;
+    v4 = this->M160;
+    v5 = this->M164;
+    v6 = this->M156;
+    v15[2] = v5;
+    v7 = *((int *)(v3) + 1);
+    v12 = v6;
+    v8 = *((int *)(v3) + 2);
+    v13 = v7;
+    v14 = v8;
+    v15[1] = v4;
+    if ( v2 > 0.0 )
   {
-    v9 = this->M264; /*0x62d565*/
-    v12 = this->M256 + v6; /*0x62d56d*/
-    v13 = this->M260 + v7; /*0x62d57b*/
-    v14 = v9 + v8; /*0x62d57f*/
+    v9 = this->M264;
+    v12 = this->M256 + v6;
+    v13 = this->M260 + v7;
+    v14 = v9 + v8;
   }
-  if ( *(this + 57) > 0.0 ) /*0x62d594*/
+    if ( this->M228 > 0.0 )
   {
-    GroundHeight = Cell::GetGroundHeight(v15); /*0x62d5af*/
-    if ( Cell::GetGroundHeight(&v12) > GroundHeight ) /*0x62d5b8*/
+    GroundHeight = Cell::GetGroundHeight(v15);
+    if ( Cell::GetGroundHeight(&v12) > GroundHeight )
     {
-      *((_BYTE *)this + 301) = 1; /*0x62d5bc*/
-      *((_BYTE *)this + 305) = 1; /*0x62d5c2*/
+    this->M301 = 1;
+    this->M305 = 1;
     }
   }
-  return (*(int (__thiscall **)(float *, int *))(*(_DWORD *)this + 436))(this, &v12); /*0x62d5d7*/
+    return this->Vf436(&v12);
 }
 }
 } // namespace gamemd

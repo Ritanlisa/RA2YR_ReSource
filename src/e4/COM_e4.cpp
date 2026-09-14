@@ -5,16 +5,14 @@
 // 0x43A500
 int COM::GetClassID(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall COM_GetClassID(int a1, _DWORD *a2)
 {
-  if ( !a2 ) /*0x43a506*/
-    return -2147467261; /*0x43a508*/
-  *a2 = 605729558; /*0x43a516*/
-  a2[1] = 298994933; /*0x43a51e*/
-  a2[2] = 268445372; /*0x43a527*/
-  a2[3] = 1303416651; /*0x43a530*/
-  return 0; /*0x43a50d*/
+    if ( !a2 )
+    return -2147467261;
+    *a2 = 605729558;
+    *((int*)(a2) + 1) = 298994933;
+    *((int*)(a2) + 2) = 268445372;
+    *((int*)(a2) + 3) = 1303416651;
+    return 0;
 }
 }
 

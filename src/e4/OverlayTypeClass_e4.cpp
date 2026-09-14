@@ -5,21 +5,14 @@
 // 0x4754B0
 int OverlayTypeClass::ReadINIString(CCINIClass * aP1, unsigned char * a2, AnimTypeClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall OverlayTypeClass::ReadINIString(
-        unsigned __int8 ***this,
-        CCINIClass *aP1,
-        unsigned __int8 *a2,
-        AnimTypeClass *aP3)
 {
-  INIClass *v5; // eax
-  INIClass Destination[2]; // [esp+8h] [ebp-80h] BYREF
-
-  v5 = (INIClass *)sub_48DFD0((unsigned int)aP3); /*0x4754cd*/
-  if ( INIClass::GetString(this, (INIClass *)aP1, a2, v5, Destination, 128) ) /*0x4754e5*/
-    return OverlayTypeClass::LookupByName(Destination); /*0x4754f2*/
-  else
-    return (int)aP3->__pad_0; /*0x475502*/
+    INIClass *v5;
+    INIClass Destination[2];
+    v5 = (INIClass *)sub_48DFD0((unsigned int)aP3);
+    if ( INIClass::GetString(this, (INIClass *)aP1, a2, v5, Destination, 128) )
+    return OverlayTypeClass::LookupByName(Destination);
+    else
+    return (int)aP3->__pad_0;
 }
 }
 
@@ -279,30 +272,27 @@ char __thiscall OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 // 0x5FEA50
 int OverlayTypeClass::PowerDrainUpdate(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall OverlayTypeClass::_vt13(int this, int *a2)
 {
-  int v3; // ecx
-  int v4; // edx
-  int v5; // eax
-  int v6; // ecx
-  int v7; // edx
-
-  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x5fea59*/
-  Power::TimerProcess(this->LandType); /*0x5fea67*/
-  Power::TimerProcess(this->CellAnim); /*0x5fea75*/
-  Power::TimerProcess(this->Strength); /*0x5fea83*/
-  Power::TimerProcess(*(_DWORD *)(this + 676)); /*0x5fea91*/
-  LOBYTE(v3) = this->NoUseTileLandType; /*0x5fea96*/
-  Power::FlagProcess(a2, v3); /*0x5fea9f*/
-  LOBYTE(v4) = this->IsVeinholeMonster; /*0x5feaa4*/
-  v5 = Power::FlagProcess(a2, v4); /*0x5feaad*/
-  LOBYTE(v5) = this->IsVeins; /*0x5feab2*/
-  Power::FlagProcess(a2, v5); /*0x5feabb*/
-  LOBYTE(v6) = this->ImageLoaded; /*0x5feac0*/
-  Power::FlagProcess(a2, v6); /*0x5feac9*/
-  LOBYTE(v7) = this->IsRubble; /*0x5feace*/
-  return Power::FlagProcess(a2, v7); /*0x5feadc*/
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    AbstractTypeClass::ProcessPower((char *)this, a2);
+    Power::TimerProcess(this->LandType);
+    Power::TimerProcess(this->CellAnim);
+    Power::TimerProcess(this->Strength);
+    Power::TimerProcess(this->Wall);
+    LOBYTE(v3) = this->NoUseTileLandType;
+    Power::FlagProcess(a2, v3);
+    LOBYTE(v4) = this->IsVeinholeMonster;
+    v5 = Power::FlagProcess(a2, v4);
+    LOBYTE(v5) = this->IsVeins;
+    Power::FlagProcess(a2, v5);
+    LOBYTE(v6) = this->ImageLoaded;
+    Power::FlagProcess(a2, v6);
+    LOBYTE(v7) = this->IsRubble;
+    return Power::FlagProcess(a2, v7);
 }
 }
 

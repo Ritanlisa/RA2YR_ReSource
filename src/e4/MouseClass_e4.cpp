@@ -5,45 +5,42 @@
 // 0x6D1770
 char MouseClass::ToggleContextGadget(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall MouseClass::sub_6D1770(int a1, int a2)
 {
-  unsigned int v2; // eax
-  char *v3; // ecx
-  unsigned int v5; // eax
-  char *v6; // ecx
-
-  if ( a1 == 4551 ) /*0x6d1779*/
+    unsigned int v2;
+    char *v3;
+    unsigned int v5;
+    char *v6;
+    if ( a1 == 4551 )
   {
-    v2 = MEMORY[0xB0CB78][MEMORY[0xB0CC1C]]; /*0x6d1780*/
-    if ( v2 <= 0x18 ) /*0x6d1789*/
+    v2 = g_ObjectTrackingPool[DataGlobal_B0CC1C];
+    if ( v2 <= 0x18 )
     {
-      v3 = (char *)&MEMORY[0xB0C1C0] + 96 * v2; /*0x6d1796*/
-      if ( v3 ) /*0x6d179e*/
+    v3 = (char *)&DataGlobal_B0C1C0 + 96 * v2;
+    if ( v3 )
       {
-        if ( !v3[45] ) /*0x6d17a0*/
-          GadgetClass::Show(v3); /*0x6d17a7*/
+    if ( !v3[45] )
+    GadgetClass::Show(v3);
       }
     }
-    return 1; /*0x6d17ac*/
+    return 1;
   }
-  else if ( a1 == 4552 ) /*0x6d17b6*/
+    else if ( a1 == 4552 )
   {
-    v5 = MEMORY[0xB0CB78][MEMORY[0xB0CC1C]]; /*0x6d17be*/
-    if ( v5 <= 0x18 ) /*0x6d17c7*/
+    v5 = g_ObjectTrackingPool[DataGlobal_B0CC1C];
+    if ( v5 <= 0x18 )
     {
-      v6 = (char *)&MEMORY[0xB0C1C0] + 96 * v5; /*0x6d17d4*/
-      if ( v6 ) /*0x6d17dc*/
+    v6 = (char *)&DataGlobal_B0C1C0 + 96 * v5;
+    if ( v6 )
       {
-        if ( v6[45] ) /*0x6d17de*/
-          GadgetClass::Hide(v6); /*0x6d17e5*/
+    if ( v6[45] )
+    GadgetClass::Hide(v6);
       }
     }
-    return 1; /*0x6d17ea*/
+    return 1;
   }
-  else
+    else
   {
-    return 0; /*0x6d17ef*/
+    return 0;
   }
 }
 }

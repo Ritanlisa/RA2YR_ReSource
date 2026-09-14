@@ -186,13 +186,12 @@ bool LoadOptions::DeleteSaveFile(const char* filename) {
 // IDA 0x5587F0: Run — launch save/load dialog
 // 0x5587f0
 int LoadOptions::Run() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5587f0
-bool __thiscall LoadOptions::Run(const char **this)
+    bool __thiscall LoadOptions::Run(const char **(void**)this)
 {
-  *(this + 1) = (const char *)1;
-  *(this + 3) = 0;
-  return SaveLoadDialog::DlgProc(this);
+    this->Items = (const char *)1;
+    this->IsInitialized = 0;
+    return SaveLoadDialog::DlgProc(this);
 }
 
 /* ASM:
@@ -205,57 +204,51 @@ jmp     SaveLoadDialog__DlgProc
 // IDA 0x559C20: Check — scan for save files matching extension
 // 0x559c20
 bool LoadOptions::Check() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x559c20
-char __thiscall LoadOptions::Check(const char **this)
+    char __thiscall LoadOptions::Check(const char **(void**)this)
 {
-  char v2; // bl
-  const char *v3; // eax
-  int v4; // edi
-  char FileName[64]; // [esp+Ch] [ebp-33Ch] BYREF
-  _WORD v7[128]; // [esp+4Ch] [ebp-2FCh] BYREF
-  char v8; // [esp+14Ch] [ebp-1FCh]
-  int v9; // [esp+16Ch] [ebp-1DCh]
-  int v10; // [esp+170h] [ebp-1D8h]
-  __int16 v11; // [esp+174h] [ebp-1D4h]
-  int v12; // [esp+1F4h] [ebp-154h]
-  int v13; // [esp+1F8h] [ebp-150h]
-  int v14; // [esp+1FCh] [ebp-14Ch]
-  char v15; // [esp+200h] [ebp-148h]
-  char v16; // [esp+201h] [ebp-147h]
-  int v17; // [esp+204h] [ebp-144h]
-  _WORD FindFileData[160]; // [esp+208h] [ebp-140h] BYREF
-
-  v2 = 0;
-  v3 = *(this + 2);
-  v9 = 0;
-  v10 = -1;
-  v12 = -1;
-  v15 = 1;
-  v16 = 0;
-  v17 = 0;
-  v7[0] = 0;
-  v8 = 0;
-  v11 = 0;
-  v14 = 0;
-  v13 = 0;
-  sprintf(FileName, "*.%3s", v3);
-  v4 = ((int (__stdcall *)(char *, _WORD *))FindFirstFileA)(FileName, FindFileData);
-  if ( v4 != -1 )
+    char v2;
+    const char *v3;
+    int v4;
+    char FileName[64];
+    short v7[128];
+    char v8;
+    int v9;
+    int v10;
+    short v11;
+    int v12;
+    int v13;
+    int v14;
+    char v15;
+    char v16;
+    int v17;
+    short FindFileData[160];
+    v2 = 0;
+    v3 = this->Capacity;
+    v9 = 0;
+    v10 = -1;
+    v12 = -1;
+    v15 = 1;
+    v16 = 0;
+    v17 = 0;
+    v7[0] = 0;
+    v8 = 0;
+    v11 = 0;
+    v14 = 0;
+    v13 = 0;
+    sprintf(FileName, "*.%3s", v3);
+    v4 = ((int (__stdcall *)(char *, short *))FindFirstFileA)(FileName, FindFileData);
+    if ( v4 != -1 )
   {
-    while ( (FindFileData[0] & 0x116) != 0
-         || !_strcmpi(&FindFileData[22], MultiByteStr)
-         || (*((unsigned __int8 (__thiscall **)(const char **, _WORD *, _WORD *))*this + 4))(this, v7, FindFileData) != 1
-         || v16 )
+    while ( (FindFileData[0] & 0x116) != 0 || !_strcmpi(&FindFileData[22], MultiByteStr) || (*((unsigned char (__thiscall **)(const char **, short *, short *))*(void**)(this) + 4))(this, v7, FindFileData) != 1 || v16 )
     {
-      if ( !((int (__stdcall *)(int, _WORD *))FindNextFileA)(v4, FindFileData) )
-        goto LABEL_9;
+    if ( !((int (__stdcall *)(int, short *))FindNextFileA)(v4, FindFileData) )
+    goto LABEL_9;
     }
     v2 = 1;
   }
-LABEL_9:
-  ((void (__stdcall *)(int))FindClose)(v4);
-  return v2;
+    LABEL_9: ((void (__stdcall *)(int))FindClose)(v4);
+    return v2;
 }
 
 /* ASM:

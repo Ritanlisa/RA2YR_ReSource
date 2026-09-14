@@ -5,11 +5,9 @@
 // 0x4085A0
 int Struct::ZeroInit32()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Struct_ZeroInit32(void *this)
 {
-  memset(this, 0, 0x20u); /*0x4085aa*/
-  return 0; /*0x4085ac*/
+    memset(this, 0, 0x20u);
+    return 0;
 }
 }
 

@@ -26,10 +26,8 @@ int __cdecl sub_710860(_DWORD *a1, _DWORD *a2)
 namespace gamemd {
 int E4Recv_717A40::ReadPointerFromECX4()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ReadPointerFromECX4(void *this)
 {
-  return *(_DWORD *)this; /*0x717a42*/
+    return *(int *)this;
 }
 }
 } // namespace gamemd
@@ -181,24 +179,21 @@ char __thiscall ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
 namespace gamemd {
 char E4Recv_71C8E0::sub_71C8E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_71C8E0(int this)
 {
-  char result; // al
-  int v2; // [esp+4h] [ebp-8h]
-
-  result = (unsigned char)this->M205; /*0x71c8e0*/
-  if ( !result ) /*0x71c8eb*/
+    char result;
+    int v2;
+    result = (unsigned char)this->M205;
+    if ( !result )
   {
-    *(_BYTE *)(this + 205) = 1; /*0x71c8ee*/
-    this->M180 = MEMORY[0xA8ED84]; /*0x71c905*/
-    this->M192 = 2; /*0x71c90b*/
-    this->M184 = v2; /*0x71c911*/
-    this->M188 = 2; /*0x71c914*/
-    this->M172 = 0; /*0x71c917*/
-    return v2; /*0x71c907*/
+    this->M205 = 1;
+    this->M180 = g_CurrentFrame;
+    this->M192 = 2;
+    this->M184 = v2;
+    this->M188 = 2;
+    this->M172 = 0;
+    return v2;
   }
-  return result; /*0x71c922*/
+    return result;
 }
 }
 } // namespace gamemd

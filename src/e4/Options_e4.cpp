@@ -252,55 +252,52 @@ LABEL_39:
 namespace gamemd {
 HWND Options::InitDialogControls()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall Options::InitDialogControls(HWND this)
 {
-  HWND result; // eax
-  HWND v3; // eax
-  IUnknown *v4; // esi
-  LPARAM v5; // edi
-  IUnknown *v6; // esi
-  const char **Options; // eax
-  HWND DlgItem; // eax
-  unsigned __int8 v9; // [esp+10h] [ebp-3Ch]
-  _DWORD v10[14]; // [esp+14h] [ebp-38h] BYREF
-
-  result = (HWND)MEMORY[0xA8B238][0]; /*0x4f1720*/
-  if ( !MEMORY[0xA8B238][0] || MEMORY[0xA8B238][0] == 5 ) /*0x4f1739*/
+    HWND result;
+    HWND v3;
+    IUnknown *v4;
+    LPARAM v5;
+    IUnknown *v6;
+    const char **Options;
+    HWND DlgItem;
+    unsigned char v9;
+    int v10[14];
+    result = (HWND)g_GameMode_Current[0];
+    if ( !g_GameMode_Current[0] || g_GameMode_Current[0] == 5 )
   {
-    Options = (const char **)LoadOptions::LoadOptions(v10); /*0x4f17dd*/
-    v9 = LoadOptions::Check(Options); /*0x4f17ed*/
-    LoadOptions::Cleanup(v10); /*0x4f17f1*/
-    DlgItem = GetDlgItem(this, 1310); /*0x4f1802*/
-    if ( DlgItem ) /*0x4f1810*/
-      EnableWindow(DlgItem, v9); /*0x4f181c*/
-    result = GetDlgItem(this, 1312); /*0x4f1824*/
-    if ( result ) /*0x4f1828*/
-      return (HWND)EnableWindow(result, v9); /*0x4f1832*/
+    Options = (const char **)LoadOptions::LoadOptions(v10);
+    v9 = LoadOptions::Check(Options);
+    LoadOptions::Cleanup(v10);
+    DlgItem = GetDlgItem(this, 1310);
+    if ( DlgItem )
+    EnableWindow(DlgItem, v9);
+    result = GetDlgItem(this, 1312);
+    if ( result )
+    return (HWND)EnableWindow(result, v9);
   }
-  else if ( MEMORY[0xA8B238][0] == 4 ) /*0x4f1742*/
+    else if ( g_GameMode_Current[0] == 4 )
   {
-    result = (HWND)MEMORY[0xA8B538]; /*0x4f1748*/
-    if ( !MEMORY[0xA8B538] ) /*0x4f174f*/
+    result = (HWND)MuteSWLaunches;
+    if ( !MuteSWLaunches )
     {
-      v3 = GetDlgItem(this, 1007); /*0x4f175b*/
-      v4 = (IUnknown *)v3; /*0x4f1767*/
-      if ( v3 ) /*0x4f176b*/
+    v3 = GetDlgItem(this, 1007);
+    v4 = (IUnknown *)v3;
+    if ( v3 )
       {
-        v5 = 3 - (_DWORD)MEMORY[0xA8DB9C]; /*0x4f1785*/
-        SendMessageA(v3, 0x406u, 1u, 196608); /*0x4f1787*/
-        SendMessageA((HWND)v4, 0x405u, 1u, v5); /*0x4f1792*/
+    v5 = 3 - (int)g_NetworkHostState;
+    SendMessageA(v3, 0x406u, 1u, 196608);
+    SendMessageA((HWND)v4, 0x405u, 1u, v5);
       }
-      result = GetDlgItem(this, 1321); /*0x4f179a*/
-      v6 = (IUnknown *)result; /*0x4f17a0*/
-      if ( result ) /*0x4f17a4*/
+    result = GetDlgItem(this, 1321);
+    v6 = (IUnknown *)result;
+    if ( result )
       {
-        SendMessageA(result, 0x406u, 1u, 393216); /*0x4f17b7*/
-        return (HWND)SendMessageA((HWND)v6, 0x405u, 1u, 6 - *(_DWORD *)MEMORY[0xA8EB60]); /*0x4f17cf*/
+    SendMessageA(result, 0x406u, 1u, 393216);
+    return (HWND)SendMessageA((HWND)v6, 0x405u, 1u, 6 - *(int *)g_GameModeOptions);
       }
     }
   }
-  return result; /*0x4f17d1*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -605,11 +602,9 @@ int Options::DialogProc(CCINIClass hWnd)
 namespace gamemd {
 void Options::ClearComboBoxes()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_624460(void **this)
 {
-  DeleteAndZero::Alt(this + 2); /*0x624466*/
-  DeleteAndZero::Alt(this + 1); /*0x62446e*/
+    DeleteAndZero::Alt(this + 2);
+    DeleteAndZero::Alt(this + 1);
 }
 }
 } // namespace gamemd

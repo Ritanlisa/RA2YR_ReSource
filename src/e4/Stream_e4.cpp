@@ -31,12 +31,10 @@ int __thiscall Stream::FlushAndReset(_DWORD *this)
 // 0x45A050
 int Stream::GetChecked()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Stream_GetChecked(void *this)
 {
-  if ( !*(_DWORD *)this ) /*0x45a053*/
-    WinAPI::Wrapper(-2147467261); /*0x45a05d*/
-  return *(_DWORD *)this; /*0x45a064*/
+    if ( !*(int *)this )
+    WinAPI::Wrapper(-2147467261);
+    return *(int *)this;
 }
 }
 

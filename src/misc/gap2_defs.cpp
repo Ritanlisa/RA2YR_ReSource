@@ -17,15 +17,12 @@
 
 // 0x405170
 namespace gamemd { void* VocClass::GetSampleName() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall VocClass_GetSampleName(char *this)
 {
-  char *result; // eax
-
-  result = MEMORY[0x816204]; /*0x405177*/
-  if ( MEMORY[0x87E2A0] ) /*0x40517c*/
-    return this + 108; /*0x40517e*/
-  return result; /*0x405181*/
+    char *result;
+    result = DataGlobal_816204;
+    if ( g_AudioConfigState )
+    return this + 108;
+    return result;
 }
 } }
 // 0x406170
@@ -22336,13 +22333,11 @@ retn    4
 } }
 // 0x6CE220
 namespace gamemd { void* SuperClass::ProcessEvent(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-SuperClass *__thiscall SuperClass::ProcessEvent(void *this, char a2)
 {
-  SuperClass::CleanupMembers((int)this); /*0x6ce223*/
-  if ( (a2 & 1) != 0 ) /*0x6ce22d*/
-    __3_YAXPAX_Z(this); /*0x6ce230*/
-  return (SuperClass *)this; /*0x6ce23a*/
+    SuperClass::CleanupMembers((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (SuperClass *)this;
 }
 } }
 // 0x6CE270

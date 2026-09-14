@@ -834,14 +834,12 @@ LABEL_39:
 namespace gamemd {
 unsigned int * E4Recv_5980A0::sub_5980A0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_5980A0(_DWORD *this, int a2)
 {
-  *(this + 2) = 0; /*0x5980a4*/
-  *(_BYTE *)this = 0; /*0x5980a7*/
-  *(this + 3) = 0; /*0x5980a9*/
-  *(this + 4) = a2; /*0x5980b0*/
-  return this; /*0x5980b3*/
+    this->M8 = 0;
+    *(char *)this = 0;
+    this->M12 = 0;
+    this->M16 = a2;
+    return this;
 }
 }
 } // namespace gamemd

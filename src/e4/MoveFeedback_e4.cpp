@@ -5,192 +5,169 @@
 // 0x40B960
 char MoveFeedback::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MoveFeedback::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x40b962*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x40b96d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x40b96f*/
-    if ( v2 <= 0 ) /*0x40b973*/
-      return 1; /*0x40b993*/
-    v4 = (_DWORD *)*(this + 1); /*0x40b975*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x40b97b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x40b984*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x40b986*/
-      ++v4; /*0x40b987*/
-      if ( v3 >= v2 ) /*0x40b98c*/
-        return 1; /*0x40b98c*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x40b98e*/
+    return 0;
 }
 }
 
 // 0x40BB90
 int MoveFeedback::Draw(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MoveFeedback::_vt04(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x40bb90*/
-  result = 0; /*0x40bb93*/
-  if ( v2 <= 0 ) /*0x40bb98*/
-    return -1; /*0x40bbaf*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x40bb9e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x40bbad*/
-      return -1; /*0x40bbad*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x40bbb2*/
-}
+    return result;
 }
 
 // 0x40BCB0
 DynamicVector * MoveFeedback::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MoveFeedback::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x40bcb3*/
-  *this = &vt_VectorClass_TechnoClass; /*0x40bcb6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x40bcc0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_TechnoClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x40bcc8*/
-    *(this + 1) = 0; /*0x40bcd0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x40bcdb*/
-  *(this + 2) = 0; /*0x40bce1*/
-  if ( (a2 & 1) != 0 ) /*0x40bce8*/
-    __3_YAXPAX_Z(this); /*0x40bceb*/
-  return (DynamicVector *)this; /*0x40bcf5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 
 // 0x40BE50
 void MoveFeedback::Destroy()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MoveFeedback::sub_40BE50(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x40be56*/
-  this->MoveFeedback_field_0x10 = 0; /*0x40be59*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x40be60*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->MoveFeedback_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x40be66*/
-    this->MoveFeedback_field_0x04 = 0; /*0x40be6e*/
+    __3_YAXPAX_Z(v2);
+    this->MoveFeedback_field_0x04 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x40be71*/
-  this->MoveFeedback_field_0x08 = 0; /*0x40be74*/
+    this->IsAllocated = 0;
+    this->MoveFeedback_field_0x08 = 0;
 }
 }
 
 // 0x40C030
 char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MoveFeedback::sub_40C030(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x40c03c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x40c042*/
-    if ( a3 ) /*0x40c048*/
-      v4 = a3; /*0x40c05e*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40c05a*/
-    *((_BYTE *)this + 12) = 1; /*0x40c062*/
-    if ( !v4 ) /*0x40c066*/
-      return 0; /*0x40c0da*/
-    if ( this->MoveFeedback_field_0x04 ) /*0x40c068*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->MoveFeedback_field_0x04 )
     {
-      v5 = this->MoveFeedback_field_0x08; /*0x40c06f*/
-      if ( a2 < v5 ) /*0x40c074*/
-        v5 = a2; /*0x40c076*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->MoveFeedback_field_0x04 + 4 * i - 4) ) /*0x40c07c*/
-        ++i; /*0x40c081*/
-      if ( *((_BYTE *)this + 13) ) /*0x40c08e*/
+    v5 = this->MoveFeedback_field_0x08;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->MoveFeedback_field_0x04 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40c099*/
-        this->MoveFeedback_field_0x04 = 0; /*0x40c0a1*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->MoveFeedback_field_0x04 = 0;
       }
     }
-    this->MoveFeedback_field_0x04 = v4; /*0x40c0aa*/
-    this->MoveFeedback_field_0x08 = a2; /*0x40c0b2*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x40c0b5*/
+    this->MoveFeedback_field_0x04 = v4;
+    this->MoveFeedback_field_0x08 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x40c0be*/
+    this->Clear();
   }
-  v7 = this->MoveFeedback_field_0x08; /*0x40c0c1*/
-  if ( v7 < this->MoveFeedback_field_0x10 ) /*0x40c0c9*/
-    this->MoveFeedback_field_0x10 = v7; /*0x40c0cb*/
-  return 1; /*0x40c0ce*/
+    v7 = this->MoveFeedback_field_0x08;
+    if ( v7 < this->MoveFeedback_field_0x10 )
+    this->MoveFeedback_field_0x10 = v7;
+    return 1;
 }
 }
 
 // 0x40C0E0
 int MoveFeedback::FindMoveItem(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MoveFeedback::sub_40C0E0(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x40c0e0*/
-  result = 0; /*0x40c0e3*/
-  if ( v2 <= 0 ) /*0x40c0e8*/
-    return -1; /*0x40c0ff*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x40c0ee*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x40c0fd*/
-      return -1; /*0x40c0fd*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x40c102*/
-}
+    return result;
 }
 
 // 0x40C160
 DynamicVector * MoveFeedback::Constructor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MoveFeedback::Constructor(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x40c163*/
-  *this = &vt_VectorClass_CommandClass_const; /*0x40c166*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x40c170*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_CommandClass_const;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x40c178*/
-    *(this + 1) = 0; /*0x40c180*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x40c18b*/
-  *(this + 2) = 0; /*0x40c191*/
-  if ( (a2 & 1) != 0 ) /*0x40c198*/
-    __3_YAXPAX_Z(this); /*0x40c19b*/
-  return (DynamicVector *)this; /*0x40c1a5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 

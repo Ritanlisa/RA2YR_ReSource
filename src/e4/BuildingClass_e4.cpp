@@ -6,45 +6,42 @@
 namespace gamemd {
 char BuildingClass::ClearSuperWeaponAnim()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BuildingClass::ClearSuperWeaponAnim(int this)
 {
-  char result; // al
-  int v3; // ecx
-  bool v4; // bl
-  int v5; // eax
-  char v6; // cl
-
-  result = this->UpgradeLevel; /*0x451694*/
-  if ( result ) /*0x45169c*/
+    char result;
+    int v3;
+    bool v4;
+    int v5;
+    char v6;
+    result = this->UpgradeLevel;
+    if ( result )
   {
-    v3 = result; /*0x4516a1*/
-    v4 = 0; /*0x4516a4*/
-    v5 = *(_DWORD *)(this + 4 * result + 1512); /*0x4516a6*/
-    if ( v5 && (v4 = *(_DWORD *)(v5 + 5872) != -1, *(_BYTE *)(v5 + 3233)) ) /*0x4516c0*/
+    v3 = result;
+    v4 = 0;
+    v5 = *(int *)(this + 4 * result + 1512);
+    if ( v5 && (v4 = *(int *)(v5 + 5872) != -1, *(char *)(v5 + 3233)) )
     {
-      BuildingClass::ClearAnims((int *)this, (TechnoClass *)9); /*0x4516ce*/
-      *(_DWORD *)(this + 4 * *(char *)(this + 1794) + 1512) = 0; /*0x4516dc*/
-      this->UpgradeLevel = 0; /*0x4516e7*/
-      this->SuperWeaponToken = -1; /*0x4516ee*/
-      if ( v4 ) /*0x4516f8*/
+    BuildingClass::ClearAnims((int *)this, (TechnoClass *)9);
+    *(int *)(this + 4 *(void**)this->UpgradeLevel + 1512) = 0;
+    this->UpgradeLevel = 0;
+    this->SuperWeaponToken = -1;
+    if ( v4 )
       {
-        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->focus); /*0x451700*/
-        return 1; /*0x451709*/
+    SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->focus);
+    return 1;
       }
     }
     else
     {
-      BuildingClass::ClearAnims((int *)this, (TechnoClass *)(v3 - 1)); /*0x45170e*/
-      v6 = this->UpgradeLevel - 1; /*0x451719*/
-      this->UpgradeLevel = v6; /*0x45171b*/
-      *(_DWORD *)(this + 4 * v6 + 1516) = 0; /*0x451726*/
-      if ( v4 ) /*0x451731*/
-        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->focus); /*0x451739*/
+    BuildingClass::ClearAnims((int *)this, (TechnoClass *)(v3 - 1));
+    v6 = this->UpgradeLevel - 1;
+    this->UpgradeLevel = v6;
+    *(int *)(this + 4 * v6 + 1516) = 0;
+    if ( v4 )
+    SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->focus);
     }
-    return 1; /*0x45173f*/
+    return 1;
   }
-  return result; /*0x45169e*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -290,24 +287,20 @@ int __thiscall BuildingClass::AssignDestination_SyncLog(#377 *this)
 namespace gamemd {
 int BuildingClass::FindInPointerArray(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::sub_45A610(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x45a610*/
-  result = 0; /*0x45a613*/
-  if ( v2 <= 0 ) /*0x45a618*/
-    return -1; /*0x45a62f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x45a61e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->uniqueId;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->vtable1; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x45a62d*/
-      return -1; /*0x45a62d*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x45a632*/
-}
+    return result;
 }
 } // namespace gamemd
 

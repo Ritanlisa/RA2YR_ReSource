@@ -8,20 +8,17 @@
 namespace gamemd {
 void BlowPipe_23::Clear()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall BlowPipe_23_::sub_63DC80(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x63dc86*/
-  this->BlowPipe_23_field_0x10 = 0; /*0x63dc89*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x63dc90*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->BlowPipe_23_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x63dc96*/
-    this->BlowPipe_23_field_0x4 = 0; /*0x63dc9e*/
+    __3_YAXPAX_Z(v2);
+    this->BlowPipe_23_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x63dca1*/
-  this->BlowPipe_23_field_0x8 = 0; /*0x63dca4*/
+    this->IsAllocated = 0;
+    this->BlowPipe_23_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -30,10 +27,8 @@ void __thiscall BlowPipe_23_::sub_63DC80(int this)
 namespace gamemd {
 int BlowPipe_23::Seek(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlowPipe_23_::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x63dcda*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -42,20 +37,17 @@ int __thiscall BlowPipe_23_::_vt06(_DWORD *this, int a2)
 namespace gamemd {
 void BlowPipe_23::Clear_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall BlowPipe_23_::sub_63DCE0(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x63dce6*/
-  this->BlowPipe_23_field_0x10 = 0; /*0x63dce9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x63dcf0*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->BlowPipe_23_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x63dcf6*/
-    this->BlowPipe_23_field_0x4 = 0; /*0x63dcfe*/
+    __3_YAXPAX_Z(v2);
+    this->BlowPipe_23_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x63dd01*/
-  this->BlowPipe_23_field_0x8 = 0; /*0x63dd04*/
+    this->IsAllocated = 0;
+    this->BlowPipe_23_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -64,50 +56,47 @@ void __thiscall BlowPipe_23_::sub_63DCE0(int this)
 namespace gamemd {
 char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BlowPipe_23_::sub_63E350(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x63e35c*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x63e366*/
-    if ( a3 ) /*0x63e36c*/
-      v4 = a3; /*0x63e382*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e37e*/
-    *((_BYTE *)this + 12) = 1; /*0x63e386*/
-    if ( v4 ) /*0x63e38a*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( this->BlowPipe_23_field_0x4 ) /*0x63e395*/
+    if ( this->BlowPipe_23_field_0x4 )
       {
-        v6 = this->BlowPipe_23_field_0x8; /*0x63e39c*/
-        if ( a2 < v6 ) /*0x63e3a1*/
-          v6 = a2; /*0x63e3a3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->BlowPipe_23_field_0x4 + 4 * i - 4) ) /*0x63e3a9*/
-          ++i; /*0x63e3ae*/
-        if ( *((_BYTE *)this + 13) ) /*0x63e3bb*/
+    v6 = this->BlowPipe_23_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->BlowPipe_23_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e3c6*/
-          this->BlowPipe_23_field_0x4 = 0; /*0x63e3ce*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->BlowPipe_23_field_0x4 = 0;
         }
       }
-      this->BlowPipe_23_field_0x4 = v4; /*0x63e3d7*/
-      this->BlowPipe_23_field_0x8 = a2; /*0x63e3df*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x63e3e2*/
-      return 1; /*0x63e3e8*/
+    this->BlowPipe_23_field_0x4 = v4;
+    this->BlowPipe_23_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x63e38f*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x63e3f2*/
-    return 1; /*0x63e3f8*/
+    this->Clear();
+    return 1;
   }
 }
 }
@@ -117,16 +106,14 @@ char __thiscall BlowPipe_23_::sub_63E350(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 void BlowPipe_23::Clear_1()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall BlowPipe_23_::sub_63E400(int this)
 {
-  if ( this->BlowPipe_23_field_0x4 && *(_BYTE *)(this + 13) ) /*0x63e40d*/
+    if ( this->BlowPipe_23_field_0x4 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x63e413*/
-    this->BlowPipe_23_field_0x4 = 0; /*0x63e41b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->BlowPipe_23_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x63e41e*/
-  this->BlowPipe_23_field_0x8 = 0; /*0x63e421*/
+    this->IsAllocated = 0;
+    this->BlowPipe_23_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -135,25 +122,22 @@ void __thiscall BlowPipe_23_::sub_63E400(int this)
 namespace gamemd {
 int BlowPipe_23::FindItemIndex(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlowPipe_23_::sub_63E430(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->BlowPipe_23_field_0xC ) /*0x63e430*/
-    return 0; /*0x63e438*/
-  v3 = this->BlowPipe_23_field_0x8; /*0x63e43e*/
-  result = 0; /*0x63e441*/
-  if ( v3 <= 0 ) /*0x63e445*/
-    return -1; /*0x63e45c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x63e44b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->BlowPipe_23_field_0xC )
+    return 0;
+    v3 = this->BlowPipe_23_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x63e45a*/
-      return -1; /*0x63e45a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x63e43a*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -162,31 +146,28 @@ int __thiscall BlowPipe_23_::sub_63E430(int this, _DWORD *a2)
 namespace gamemd {
 char BlowPipe_23::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BlowPipe_23_::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x63e652*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x63e65d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x63e65f*/
-    if ( v2 <= 0 ) /*0x63e663*/
-      return 1; /*0x63e683*/
-    v4 = (_DWORD *)*(this + 1); /*0x63e665*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x63e66b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x63e674*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x63e676*/
-      ++v4; /*0x63e677*/
-      if ( v3 >= v2 ) /*0x63e67c*/
-        return 1; /*0x63e67c*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x63e67e*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -195,50 +176,47 @@ char __thiscall BlowPipe_23_::_vt01(int *this, int a2)
 namespace gamemd {
 char BlowPipe_23::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BlowPipe_23_::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x63e69c*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x63e6a6*/
-    if ( a3 ) /*0x63e6ac*/
-      v4 = a3; /*0x63e6c2*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e6be*/
-    *((_BYTE *)this + 12) = 1; /*0x63e6c6*/
-    if ( v4 ) /*0x63e6ca*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( this->BlowPipe_23_field_0x4 ) /*0x63e6d5*/
+    if ( this->BlowPipe_23_field_0x4 )
       {
-        v6 = this->BlowPipe_23_field_0x8; /*0x63e6dc*/
-        if ( a2 < v6 ) /*0x63e6e1*/
-          v6 = a2; /*0x63e6e3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->BlowPipe_23_field_0x4 + 4 * i - 4) ) /*0x63e6e9*/
-          ++i; /*0x63e6ee*/
-        if ( *((_BYTE *)this + 13) ) /*0x63e6fb*/
+    v6 = this->BlowPipe_23_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->BlowPipe_23_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e706*/
-          this->BlowPipe_23_field_0x4 = 0; /*0x63e70e*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->BlowPipe_23_field_0x4 = 0;
         }
       }
-      this->BlowPipe_23_field_0x4 = v4; /*0x63e717*/
-      this->BlowPipe_23_field_0x8 = a2; /*0x63e71f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x63e722*/
-      return 1; /*0x63e728*/
+    this->BlowPipe_23_field_0x4 = v4;
+    this->BlowPipe_23_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x63e6cf*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x63e732*/
-    return 1; /*0x63e738*/
+    this->Clear();
+    return 1;
   }
 }
 }
@@ -248,16 +226,14 @@ char __thiscall BlowPipe_23_::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 void BlowPipe_23::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall BlowPipe_23_::_vt03(int this)
 {
-  if ( this->BlowPipe_23_field_0x4 && *(_BYTE *)(this + 13) ) /*0x63e74d*/
+    if ( this->BlowPipe_23_field_0x4 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x63e753*/
-    this->BlowPipe_23_field_0x4 = 0; /*0x63e75b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->BlowPipe_23_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x63e75e*/
-  this->BlowPipe_23_field_0x8 = 0; /*0x63e761*/
+    this->IsAllocated = 0;
+    this->BlowPipe_23_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -266,25 +242,22 @@ void __thiscall BlowPipe_23_::_vt03(int this)
 namespace gamemd {
 int BlowPipe_23::Read(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlowPipe_23_::_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->BlowPipe_23_field_0xC ) /*0x63e770*/
-    return 0; /*0x63e778*/
-  v3 = this->BlowPipe_23_field_0x8; /*0x63e77e*/
-  result = 0; /*0x63e781*/
-  if ( v3 <= 0 ) /*0x63e785*/
-    return -1; /*0x63e79c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x63e78b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->BlowPipe_23_field_0xC )
+    return 0;
+    v3 = this->BlowPipe_23_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x63e79a*/
-      return -1; /*0x63e79a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x63e77a*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -293,49 +266,46 @@ int __thiscall BlowPipe_23_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BlowPipe_23_::sub_63E7D0(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x63e7dc*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x63e7e2*/
-    if ( a3 ) /*0x63e7e8*/
-      v4 = a3; /*0x63e7fe*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e7fa*/
-    *((_BYTE *)this + 12) = 1; /*0x63e802*/
-    if ( !v4 ) /*0x63e806*/
-      return 0; /*0x63e87a*/
-    if ( this->BlowPipe_23_field_0x4 ) /*0x63e808*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->BlowPipe_23_field_0x4 )
     {
-      v5 = this->BlowPipe_23_field_0x8; /*0x63e80f*/
-      if ( a2 < v5 ) /*0x63e814*/
-        v5 = a2; /*0x63e816*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->BlowPipe_23_field_0x4 + 4 * i - 4) ) /*0x63e81c*/
-        ++i; /*0x63e821*/
-      if ( *((_BYTE *)this + 13) ) /*0x63e82e*/
+    v5 = this->BlowPipe_23_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->BlowPipe_23_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e839*/
-        this->BlowPipe_23_field_0x4 = 0; /*0x63e841*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->BlowPipe_23_field_0x4 = 0;
       }
     }
-    this->BlowPipe_23_field_0x4 = v4; /*0x63e84a*/
-    this->BlowPipe_23_field_0x8 = a2; /*0x63e852*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x63e855*/
+    this->BlowPipe_23_field_0x4 = v4;
+    this->BlowPipe_23_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x63e85e*/
+    this->Clear();
   }
-  v7 = this->BlowPipe_23_field_0x8; /*0x63e861*/
-  if ( v7 < this->BlowPipe_23_field_0x10 ) /*0x63e869*/
-    this->BlowPipe_23_field_0x10 = v7; /*0x63e86b*/
-  return 1; /*0x63e86e*/
+    v7 = this->BlowPipe_23_field_0x8;
+    if ( v7 < this->BlowPipe_23_field_0x10 )
+    this->BlowPipe_23_field_0x10 = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -344,24 +314,20 @@ char __thiscall BlowPipe_23_::sub_63E7D0(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int BlowPipe_23::FindItemIndex_0(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlowPipe_23_::sub_63E8D0(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x63e8d0*/
-  result = 0; /*0x63e8d3*/
-  if ( v2 <= 0 ) /*0x63e8d8*/
-    return -1; /*0x63e8ef*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x63e8de*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x63e8ed*/
-      return -1; /*0x63e8ed*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x63e8f2*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -369,49 +335,46 @@ int __thiscall BlowPipe_23_::sub_63E8D0(int *this, _DWORD *a2)
 namespace gamemd {
 char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BlowPipe_23_::sub_63EAD0(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x63eadc*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x63eae2*/
-    if ( a3 ) /*0x63eae8*/
-      v4 = a3; /*0x63eafe*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63eafa*/
-    *((_BYTE *)this + 12) = 1; /*0x63eb02*/
-    if ( !v4 ) /*0x63eb06*/
-      return 0; /*0x63eb7a*/
-    if ( this->BlowPipe_23_field_0x4 ) /*0x63eb08*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->BlowPipe_23_field_0x4 )
     {
-      v5 = this->BlowPipe_23_field_0x8; /*0x63eb0f*/
-      if ( a2 < v5 ) /*0x63eb14*/
-        v5 = a2; /*0x63eb16*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->BlowPipe_23_field_0x4 + 4 * i - 4) ) /*0x63eb1c*/
-        ++i; /*0x63eb21*/
-      if ( *((_BYTE *)this + 13) ) /*0x63eb2e*/
+    v5 = this->BlowPipe_23_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->BlowPipe_23_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x63eb39*/
-        this->BlowPipe_23_field_0x4 = 0; /*0x63eb41*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->BlowPipe_23_field_0x4 = 0;
       }
     }
-    this->BlowPipe_23_field_0x4 = v4; /*0x63eb4a*/
-    this->BlowPipe_23_field_0x8 = a2; /*0x63eb52*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x63eb55*/
+    this->BlowPipe_23_field_0x4 = v4;
+    this->BlowPipe_23_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x63eb5e*/
+    this->Clear();
   }
-  v7 = this->BlowPipe_23_field_0x8; /*0x63eb61*/
-  if ( v7 < this->BlowPipe_23_field_0x10 ) /*0x63eb69*/
-    this->BlowPipe_23_field_0x10 = v7; /*0x63eb6b*/
-  return 1; /*0x63eb6e*/
+    v7 = this->BlowPipe_23_field_0x8;
+    if ( v7 < this->BlowPipe_23_field_0x10 )
+    this->BlowPipe_23_field_0x10 = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -420,24 +383,20 @@ char __thiscall BlowPipe_23_::sub_63EAD0(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int BlowPipe_23::FindItemIndex_1(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlowPipe_23_::sub_63EC20(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x63ec20*/
-  result = 0; /*0x63ec23*/
-  if ( v2 <= 0 ) /*0x63ec28*/
-    return -1; /*0x63ec3f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x63ec2e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x63ec3d*/
-      return -1; /*0x63ec3d*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x63ec42*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -445,23 +404,20 @@ int __thiscall BlowPipe_23_::sub_63EC20(int *this, _DWORD *a2)
 namespace gamemd {
 VectorClass * BlowPipe_23::Destructor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall BlowPipe_23_::Destructor(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x63ed93*/
-  *this = &vt_VectorClass_PlanningNodeClass; /*0x63ed96*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x63eda0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_PlanningNodeClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x63eda8*/
-    *(this + 1) = 0; /*0x63edb0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x63edbb*/
-  *(this + 2) = 0; /*0x63edc1*/
-  if ( (a2 & 1) != 0 ) /*0x63edc8*/
-    __3_YAXPAX_Z(this); /*0x63edcb*/
-  return (VectorClass *)this; /*0x63edd5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
@@ -470,23 +426,20 @@ VectorClass *__thiscall BlowPipe_23_::Destructor(_DWORD *this, char a2)
 namespace gamemd {
 VectorClass * BlowPipe_23::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall BlowPipe_23_::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x63ee33*/
-  *this = &vt_VectorClass_EventClass; /*0x63ee36*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x63ee40*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_EventClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x63ee48*/
-    *(this + 1) = 0; /*0x63ee50*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x63ee5b*/
-  *(this + 2) = 0; /*0x63ee61*/
-  if ( (a2 & 1) != 0 ) /*0x63ee68*/
-    __3_YAXPAX_Z(this); /*0x63ee6b*/
-  return (VectorClass *)this; /*0x63ee75*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
@@ -495,23 +448,20 @@ VectorClass *__thiscall BlowPipe_23_::QueryInterface(_DWORD *this, char a2)
 namespace gamemd {
 DynamicVector * BlowPipe_23::Destructor_0(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall BlowPipe_23_::Destructor_0(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x63ee83*/
-  *this = &vt_VectorClass_EventClass; /*0x63ee86*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x63ee90*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_EventClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x63ee98*/
-    *(this + 1) = 0; /*0x63eea0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x63eeab*/
-  *(this + 2) = 0; /*0x63eeb1*/
-  if ( (a2 & 1) != 0 ) /*0x63eeb8*/
-    __3_YAXPAX_Z(this); /*0x63eebb*/
-  return (DynamicVector *)this; /*0x63eec5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -520,23 +470,20 @@ DynamicVector *__thiscall BlowPipe_23_::Destructor_0(_DWORD *this, char a2)
 namespace gamemd {
 DynamicVector * BlowPipe_23::Destructor_1(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall BlowPipe_23_::Destructor_1(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x63ef23*/
-  *this = &vt_VectorClass_PlanningTokenClass; /*0x63ef26*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x63ef30*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_PlanningTokenClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x63ef38*/
-    *(this + 1) = 0; /*0x63ef40*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x63ef4b*/
-  *(this + 2) = 0; /*0x63ef51*/
-  if ( (a2 & 1) != 0 ) /*0x63ef58*/
-    __3_YAXPAX_Z(this); /*0x63ef5b*/
-  return (DynamicVector *)this; /*0x63ef65*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -545,20 +492,17 @@ DynamicVector *__thiscall BlowPipe_23_::Destructor_1(_DWORD *this, char a2)
 namespace gamemd {
 void BlowPipe_31::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall BlowPipe_31_::_vt03(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x63dc26*/
-  this->BlowPipe_31_field_0x10 = 0; /*0x63dc29*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x63dc30*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->BlowPipe_31_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x63dc36*/
-    this->BlowPipe_31_field_0x4 = 0; /*0x63dc3e*/
+    __3_YAXPAX_Z(v2);
+    this->BlowPipe_31_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x63dc41*/
-  this->BlowPipe_31_field_0x8 = 0; /*0x63dc44*/
+    this->IsAllocated = 0;
+    this->BlowPipe_31_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -567,10 +511,8 @@ void __thiscall BlowPipe_31_::_vt03(int this)
 namespace gamemd {
 int BlowPipe_31::Seek(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlowPipe_31_::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x63dc7a*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -579,31 +521,28 @@ int __thiscall BlowPipe_31_::_vt06(_DWORD *this, int a2)
 namespace gamemd {
 char BlowPipe_31::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BlowPipe_31_::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x63e312*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x63e31d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x63e31f*/
-    if ( v2 <= 0 ) /*0x63e323*/
-      return 1; /*0x63e343*/
-    v4 = (_DWORD *)*(this + 1); /*0x63e325*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x63e32b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x63e334*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x63e336*/
-      ++v4; /*0x63e337*/
-      if ( v3 >= v2 ) /*0x63e33c*/
-        return 1; /*0x63e33c*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x63e33e*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -612,49 +551,46 @@ char __thiscall BlowPipe_31_::_vt01(int *this, int a2)
 namespace gamemd {
 char BlowPipe_31::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BlowPipe_31_::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x63e49c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x63e4a2*/
-    if ( a3 ) /*0x63e4a8*/
-      v4 = a3; /*0x63e4be*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e4ba*/
-    *((_BYTE *)this + 12) = 1; /*0x63e4c2*/
-    if ( !v4 ) /*0x63e4c6*/
-      return 0; /*0x63e53a*/
-    if ( this->BlowPipe_31_field_0x4 ) /*0x63e4c8*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->BlowPipe_31_field_0x4 )
     {
-      v5 = this->BlowPipe_31_field_0x8; /*0x63e4cf*/
-      if ( a2 < v5 ) /*0x63e4d4*/
-        v5 = a2; /*0x63e4d6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->BlowPipe_31_field_0x4 + 4 * i - 4) ) /*0x63e4dc*/
-        ++i; /*0x63e4e1*/
-      if ( *((_BYTE *)this + 13) ) /*0x63e4ee*/
+    v5 = this->BlowPipe_31_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->BlowPipe_31_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e4f9*/
-        this->BlowPipe_31_field_0x4 = 0; /*0x63e501*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->BlowPipe_31_field_0x4 = 0;
       }
     }
-    this->BlowPipe_31_field_0x4 = v4; /*0x63e50a*/
-    this->BlowPipe_31_field_0x8 = a2; /*0x63e512*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x63e515*/
+    this->BlowPipe_31_field_0x4 = v4;
+    this->BlowPipe_31_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x63e51e*/
+    this->ddtor();
   }
-  v7 = this->BlowPipe_31_field_0x8; /*0x63e521*/
-  if ( v7 < this->BlowPipe_31_field_0x10 ) /*0x63e529*/
-    this->BlowPipe_31_field_0x10 = v7; /*0x63e52b*/
-  return 1; /*0x63e52e*/
+    v7 = this->BlowPipe_31_field_0x8;
+    if ( v7 < this->BlowPipe_31_field_0x10 )
+    this->BlowPipe_31_field_0x10 = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -663,24 +599,20 @@ char __thiscall BlowPipe_31_::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int BlowPipe_31::Read(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlowPipe_31_::_vt04(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x63e620*/
-  result = 0; /*0x63e623*/
-  if ( v2 <= 0 ) /*0x63e628*/
-    return -1; /*0x63e63f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x63e62e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x63e63d*/
-      return -1; /*0x63e63d*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x63e642*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -688,23 +620,20 @@ int __thiscall BlowPipe_31_::_vt04(int *this, _DWORD *a2)
 namespace gamemd {
 DynamicVector * BlowPipe_31::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall BlowPipe_31_::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x63ede3*/
-  *this = &vt_VectorClass_PlanningNodeClass; /*0x63ede6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x63edf0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_PlanningNodeClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x63edf8*/
-    *(this + 1) = 0; /*0x63ee00*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x63ee0b*/
-  *(this + 2) = 0; /*0x63ee11*/
-  if ( (a2 & 1) != 0 ) /*0x63ee18*/
-    __3_YAXPAX_Z(this); /*0x63ee1b*/
-  return (DynamicVector *)this; /*0x63ee25*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd

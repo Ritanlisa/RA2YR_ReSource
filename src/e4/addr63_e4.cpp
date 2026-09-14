@@ -756,8 +756,6 @@ void __thiscall sub_631F30(PixelFXClass *this)
 // 0x632A70
 namespace ra2 {
 namespace game {
-int ObjectClass::sub_632A70(int a2, int a3, ObjectClass * aP3)
-{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_632A70(ObjectClass *this, int a2, int a3, ObjectClass *aP3)
 {
@@ -768,7 +766,6 @@ int __thiscall sub_632A70(ObjectClass *this, int a2, int a3, ObjectClass *aP3)
   LOBYTE(result) = *(_DWORD *)this->__pad_0 | 1; /*0x632a8c*/
   *(_DWORD *)this->__pad_0 = result; /*0x632a8e*/
   return result; /*0x632a90*/
-}
 }
 } // namespace game
 } // namespace ra2
@@ -846,10 +843,8 @@ LABEL_11:
 namespace gamemd {
 int E4Recv_6347A0::sub_6347A0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6347A0(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 9) + 4 * a2); /*0x6347aa*/
+    return *(int *)(this->M36 + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -858,63 +853,60 @@ int __thiscall sub_6347A0(_DWORD *this, int a2)
 namespace gamemd {
 int E4Recv_635210::sub_635210()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_635210(int this)
 {
-  int result; // eax
-  int v3; // ebp
-  _BYTE *v4; // esi
-  int *ScenarioClassActionCoords; // eax
-  int v6; // esi
-  int v7; // edi
-  int *v8; // edx
-  int v9; // ecx
-  int v10; // edx
-  int v11; // [esp+10h] [ebp-108h]
-  int v12; // [esp+1Ch] [ebp-FCh]
-  int v13[3]; // [esp+20h] [ebp-F8h] BYREF
-  int v14[3]; // [esp+2Ch] [ebp-ECh] BYREF
-  _BYTE v15[112]; // [esp+38h] [ebp-E0h] BYREF
-  _BYTE v16[108]; // [esp+A8h] [ebp-70h] BYREF
-  __int16 v17; // [esp+114h] [ebp-4h]
-  char v18; // [esp+116h] [ebp-2h]
-
-  this->M176 = -1; /*0x63521b*/
-  result = this->M168; /*0x635225*/
-  if ( result ) /*0x63522e*/
+    int result;
+    int v3;
+    char *v4;
+    int *ScenarioClassActionCoords;
+    int v6;
+    int v7;
+    int *v8;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13[3];
+    int v14[3];
+    char v15[112];
+    char v16[108];
+    short v17;
+    char v18;
+    this->M176 = -1;
+    result = this->M168;
+    if ( result )
   {
-    result = this->M48; /*0x635240*/
-    qmemcpy(v15, (const void *)(this + 56), 0x6Eu); /*0x635243*/
-    v3 = 0; /*0x635247*/
-    v11 = result; /*0x635249*/
-    v15[110] = (unsigned char)this->M166; /*0x63524f*/
-    if ( result > 0 ) /*0x635250*/
+    result = this->M48;
+    qmemcpy(v15, (const void *)(this + 56), 0x6Eu);
+    v3 = 0;
+    v11 = result;
+    v15[110] = (unsigned char)this->M166;
+    if ( result > 0 )
     {
-      while ( 1 ) /*0x635265*/
+    while ( 1 )
       {
-        v4 = *(_BYTE **)(this->M36 + 4 * v3); /*0x635265*/
-        qmemcpy(v16, v4, sizeof(v16)); /*0x635268*/
-        v4 += 108; /*0x635268*/
-        v17 = *(_WORD *)v4; /*0x63526a*/
-        v18 = v4[2]; /*0x635270*/
-        ScenarioClassActionCoords = GetScenarioClassActionCoords(v13, v15); /*0x635271*/
-        v6 = *ScenarioClassActionCoords; /*0x635276*/
-        v7 = ScenarioClassActionCoords[1]; /*0x63527f*/
-        v12 = ScenarioClassActionCoords[2]; /*0x635285*/
-        v8 = GetScenarioClassActionCoords(v14, v16); /*0x635292*/
-        result = *v8; /*0x635294*/
-        v9 = v8[1]; /*0x635298*/
-        v10 = v8[2]; /*0x63529b*/
-        if ( v6 == result && v7 == v9 && v12 == v10 ) /*0x6352a8*/
-          break; /*0x6352a8*/
-        result = v11; /*0x6352aa*/
-        if ( ++v3 >= v11 ) /*0x6352b1*/
-          return result; /*0x6352b1*/
+    v4 = *(char **)(this->M36 + 4 * v3);
+    qmemcpy(v16, v4, sizeof(v16));
+    v4 += 108;
+    v17 = *(short *)v4;
+    v18 = v4[2];
+    ScenarioClassActionCoords = GetScenarioClassActionCoords(v13, v15);
+    v6 = *ScenarioClassActionCoords;
+    v7 = ScenarioClassActionCoords[1];
+    v12 = ScenarioClassActionCoords[2];
+    v8 = GetScenarioClassActionCoords(v14, v16);
+    result = *v8;
+    v9 = v8[1];
+    v10 = v8[2];
+    if ( v6 == result && v7 == v9 && v12 == v10 )
+    break;
+    result = v11;
+    if ( ++v3 >= v11 )
+    return result;
       }
-      this->M176 = v3; /*0x6352b5*/
+    this->M176 = v3;
     }
   }
-  return result; /*0x6352bb*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1133,13 +1125,11 @@ LABEL_9:
 namespace gamemd {
 int E4Recv_636FA0::sub_636FA0(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_636FA0(int this, int a2, int a3)
 {
-  this->M144 = a2; /*0x636fa8*/
-  this->M148 = a3; /*0x636fae*/
-  *(_BYTE *)(this + 152) = 1; /*0x636fb4*/
-  return a2; /*0x636fbb*/
+    this->M144 = a2;
+    this->M148 = a3;
+    this->M152 = 1;
+    return a2;
 }
 }
 } // namespace gamemd

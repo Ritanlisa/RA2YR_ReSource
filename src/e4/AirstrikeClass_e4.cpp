@@ -113,17 +113,14 @@ namespace ra2 {
 namespace game {
 char AirstrikeClass::StartMission(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall AirstrikeClass::StartMission(int this, int *a2)
 {
-  char result; // al
-
-  result = (char)a2; /*0x41d835*/
-  if ( !this->AirstrikeClass_field_3C ) /*0x41d830*/
-    return AirstrikeClass::SpawnAircraft(this, a2); /*0x41d83c*/
-  if ( a2 != *(int **)(this + 80) ) /*0x41d847*/
-    return AirstrikeClass::ReassignTarget(this, (int)a2); /*0x41d84a*/
-  return result; /*0x41d841*/
+    char result;
+    result = (char)a2;
+    if ( !this->AirstrikeClass_field_3C )
+    return AirstrikeClass::SpawnAircraft(this, a2);
+    if ( a2 != *(int **)(this + 80) )
+    return AirstrikeClass::ReassignTarget(this, (int)a2);
+    return result;
 }
 }
 } // namespace game
@@ -399,8 +396,6 @@ AirstrikeClass *__thiscall AirstrikeClass::CopyTo(_DWORD *this, char a2)
 // 0x420E90
 namespace ra2 {
 namespace game {
-char AirstrikeClass::UpdateAll()
-{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char sub_420E90()
 {
@@ -458,7 +453,6 @@ LABEL_9:
     while ( v4 >= 0 ); /*0x420f36*/
   }
   return (char)v0; /*0x420f38*/
-}
 }
 } // namespace game
 } // namespace ra2

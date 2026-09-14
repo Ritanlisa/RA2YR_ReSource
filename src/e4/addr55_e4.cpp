@@ -13,8 +13,6 @@
 // 0x550080
 namespace ra2 {
 namespace game {
-void ObjectClass::sub_550080()
-{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_550080(ObjectClass **this)
 {
@@ -73,7 +71,6 @@ LABEL_8:
     }
     __3_YAXPAX_Z(this); /*0x550138*/
   }
-}
 }
 } // namespace game
 } // namespace ra2
@@ -1215,14 +1212,12 @@ void __fastcall UpdateDeferredLightSurfaces(int a1, char a2)
 namespace gamemd {
 LightConvertClass * E4Recv_556520::sub_556520(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LightConvertClass *__thiscall sub_556520(_DWORD *this, char a2)
 {
-  *this = &vt_LightConvertClass; /*0x556523*/
-  sub_490400((int)this); /*0x556529*/
-  if ( (a2 & 1) != 0 ) /*0x556533*/
-    __3_YAXPAX_Z(this); /*0x556536*/
-  return (LightConvertClass *)this; /*0x556540*/
+    *(void**)this = &vt_LightConvertClass;
+    sub_490400((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (LightConvertClass *)this;
 }
 }
 } // namespace gamemd
@@ -1342,18 +1337,16 @@ char __thiscall CheckListClass::vt_19_(_DWORD *this, char a2, int a3, _DWORD *a4
 namespace gamemd {
 int E4Recv_5581A0::sub_5581A0(GaugeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5581A0(int this, GaugeClass *aP1)
 {
-  ControlClass::CtorFromData((_DWORD *)this, (EditClass *)aP1); /*0x5581a9*/
-  *(_BYTE *)(this + 44) = aP1[1].GaugeClass_field_0x0C; /*0x5581b1*/
-  *(_BYTE *)(this + 45) = BYTE1(aP1[1].GaugeClass_field_0x0C); /*0x5581b7*/
-  *(_BYTE *)(this + 46) = BYTE2(aP1[1].GaugeClass_field_0x0C); /*0x5581bd*/
-  this->M48 = aP1[1].GaugeClass_field_0x10; /*0x5581c3*/
-  this->M52 = aP1[1].GaugeClass_field_0x14; /*0x5581c9*/
-  this->M56 = aP1[1].GaugeClass_field_0x18; /*0x5581cf*/
-  *(_DWORD *)this = &vt_GaugeClass; /*0x5581d2*/
-  return this; /*0x5581da*/
+    ControlClass::CtorFromData((int *)this, (EditClass *)aP1);
+    this->M44 = aP1[1].GaugeClass_field_0x0C;
+    this->M45 = BYTE1(aP1[1].GaugeClass_field_0x0C);
+    this->M46 = BYTE2(aP1[1].GaugeClass_field_0x0C);
+    this->M48 = aP1[1].GaugeClass_field_0x10;
+    this->M52 = aP1[1].GaugeClass_field_0x14;
+    this->M56 = aP1[1].GaugeClass_field_0x18;
+    *(int *)this = &vt_GaugeClass;
+    return this;
 }
 }
 } // namespace gamemd

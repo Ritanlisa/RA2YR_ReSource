@@ -40,43 +40,35 @@ int __thiscall Rect_SetRedraw(_DWORD *this, char a2)
 } }
 // 0x4A0E60
 namespace gamemd { void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(
-        _DWORD *this,
-        char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x4a0e63*/
-  *this = &vt_VectorClass_IConnectionPoint; /*0x4a0e66*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x4a0e70*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_IConnectionPoint;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x4a0e78*/
-    *(this + 1) = 0; /*0x4a0e80*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x4a0e8b*/
-  *(this + 2) = 0; /*0x4a0e91*/
-  if ( (a2 & 1) != 0 ) /*0x4a0e98*/
-    __3_YAXPAX_Z(this); /*0x4a0e9b*/
-  return (DynamicVector *)this; /*0x4a0ea5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 } }
 // 0x4A0F20
 namespace gamemd { void EnumConnectionPointsClass::ClearBuffer() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall EnumConnectionPointsClass::sub_4A0F20(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x4a0f26*/
-  *(_DWORD *)(this + 16) = 0; /*0x4a0f29*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x4a0f30*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x4a0f36*/
-    *(_DWORD *)(this + 4) = 0; /*0x4a0f3e*/
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x4a0f41*/
-  *(_DWORD *)(this + 8) = 0; /*0x4a0f44*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 } }
 // 0x4A0F50
@@ -92,49 +84,46 @@ unsigned int __thiscall EnumConnectionPointsClass::sub_4A0F50(int this, int a2)
 } }
 // 0x4A13C0
 namespace gamemd { int EnumConnectionPointsClass::SetCapacity(int a2, void* a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall EnumConnectionPointsClass::sub_4A13C0(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x4a13cc*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x4a13d2*/
-    if ( a3 ) /*0x4a13d8*/
-      v4 = a3; /*0x4a13ee*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4a13ea*/
-    *((_BYTE *)this + 12) = 1; /*0x4a13f2*/
-    if ( !v4 ) /*0x4a13f6*/
-      return 0; /*0x4a146a*/
-    if ( *((_DWORD *)this + 1) ) /*0x4a13f8*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->Items )
     {
-      v5 = *((_DWORD *)this + 2); /*0x4a13ff*/
-      if ( a2 < v5 ) /*0x4a1404*/
-        v5 = a2; /*0x4a1406*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4a140c*/
-        ++i; /*0x4a1411*/
-      if ( *((_BYTE *)this + 13) ) /*0x4a141e*/
+    v5 = this->Capacity;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->Items + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a1429*/
-        *((_DWORD *)this + 1) = 0; /*0x4a1431*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Items = 0;
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x4a143a*/
-    *((_DWORD *)this + 2) = a2; /*0x4a1442*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x4a1445*/
+    this->Items = v4;
+    this->Capacity = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4a144e*/
+    this->ddtor();
   }
-  v7 = *((_DWORD *)this + 2); /*0x4a1451*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x4a1459*/
-    *((_DWORD *)this + 4) = v7; /*0x4a145b*/
-  return 1; /*0x4a145e*/
+    v7 = this->Capacity;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
 }
 } }
 // 0x4A1470
@@ -561,12 +550,10 @@ namespace gamemd { int ComPtr::ReleaseSimple() {
 } }
 // 0x683030
 namespace gamemd { int COMObject::ValidatePtr() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall COMObject_ValidatePtr(void *this)
 {
-  if ( !*(_DWORD *)this ) /*0x683033*/
-    WinAPI::Wrapper(-2147467261); /*0x68303d*/
-  return *(_DWORD *)this; /*0x683044*/
+    if ( !*(int *)this )
+    WinAPI::Wrapper(-2147467261);
+    return *(int *)this;
 }
 } }
 // 0x69B8C0
@@ -922,26 +909,22 @@ char __thiscall sub_732600(void *this)
 } }
 // 0x765790
 namespace gamemd { void* COMClass::invokeMethod(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__thiscall COMClass::invokeMethod(_DWORD *this, char a2)
 {
-  *this = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x765793*/
-  ComPtr::Release(this); /*0x765799*/
-  if ( (a2 & 1) != 0 ) /*0x7657a3*/
-    __3_YAXPAX_Z(this); /*0x7657a6*/
-  return (rc_ptr *)this; /*0x7657b0*/
+    *(void**)this = &vt_rc_ptr_WorldDominationTour_Campaign;
+    ComPtr::Release(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (rc_ptr *)this;
 }
 } }
 // 0x7657C0
 namespace gamemd { void* COMClass::getTypeInfo(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__thiscall COMClass::getTypeInfo(_DWORD *this, char a2)
 {
-  *this = &vt_rc_ptr_WorldDominationTour_State; /*0x7657c3*/
-  ComPtr::Release(this); /*0x7657c9*/
-  if ( (a2 & 1) != 0 ) /*0x7657d3*/
-    __3_YAXPAX_Z(this); /*0x7657d6*/
-  return (rc_ptr *)this; /*0x7657e0*/
+    *(void**)this = &vt_rc_ptr_WorldDominationTour_State;
+    ComPtr::Release(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (rc_ptr *)this;
 }
 } }
 // 0x7659F0
@@ -1075,29 +1058,24 @@ namespace gamemd { void* COMClass::releaseInterface() {
 } }
 // 0x7669C0
 namespace gamemd { void* COMClass::connectPoint(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__thiscall COMClass::connectPoint(_DWORD *this, char a2)
 {
-  *this = &vt_rc_ptr_WorldDominationTour_MapSizeGameOption; /*0x7669c3*/
-  ComPtr::Release(this); /*0x7669c9*/
-  if ( (a2 & 1) != 0 ) /*0x7669d3*/
-    __3_YAXPAX_Z(this); /*0x7669d6*/
-  return (rc_ptr *)this; /*0x7669e0*/
+    *(void**)this = &vt_rc_ptr_WorldDominationTour_MapSizeGameOption;
+    ComPtr::Release(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (rc_ptr *)this;
 }
 } }
 // 0x766A80
 namespace gamemd { int COMClass::enumConnections(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall COMClass::enumConnections(ValueGameOption_E_WorldDominationTour *this, int a2)
 {
-  bool v3; // zf
-  int result; // eax
-
-  v3 = Network_Connect_767310(a2) == 0; /*0x766a8d*/
-  result = 2; /*0x766a8f*/
-  if ( v3 ) /*0x766a94*/
-    return *((_DWORD *)this + 3); /*0x766a96*/
-  return result; /*0x766a99*/
+    bool v3;
+    int result;
+    v3 = Network_Connect_767310(a2) == 0;
+    result = 2;
+    if ( v3 )
+    return this->IsInitialized;
+    return result;
 }
 } }
 // 0x766AA0
@@ -1147,14 +1125,12 @@ wchar_t **__thiscall COMClass::adviseConnection(
 } }
 // 0x766B90
 namespace gamemd { void* COMClass::unadviseConnection(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void **__thiscall COMClass::unadviseConnection(ValueGameOption_E_WorldDominationTour *this, char a2)
 {
-  DeleteAndZero((void **)this + 5); /*0x766b96*/
-  GameOption_WorldDominationTour::Constructor((GameOption_WorldDominationTour *)this); /*0x766b9d*/
-  if ( (a2 & 1) != 0 ) /*0x766ba7*/
-    __3_YAXPAX_Z(this); /*0x766baa*/
-  return &this->vfptr; /*0x766bb4*/
+    DeleteAndZero((void **)(this) + 5);
+    GameOption_WorldDominationTour::Constructor((GameOption_WorldDominationTour *)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
 }
 } }
 // 0x7674E0
@@ -1172,14 +1148,12 @@ namespace gamemd { void* COMClass::coInitialize(void* a1, int a2, void* a3) { re
 namespace gamemd { void* COMClass::coUninitialize(int a1) { return nullptr; } }
 // 0x767C50
 namespace gamemd { void* COMClass::marshalInterface(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__thiscall COMClass::marshalInterface(_DWORD *this, char a2)
 {
-  *this = &vt_rc_ptr_WDTState; /*0x767c53*/
-  ComPtr::Release(this); /*0x767c59*/
-  if ( (a2 & 1) != 0 ) /*0x767c63*/
-    __3_YAXPAX_Z(this); /*0x767c66*/
-  return (rc_ptr *)this; /*0x767c70*/
+    *(void**)this = &vt_rc_ptr_WDTState;
+    ComPtr::Release(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (rc_ptr *)this;
 }
 } }
 // 0x76F060

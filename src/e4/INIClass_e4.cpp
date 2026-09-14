@@ -158,53 +158,50 @@ LABEL_14:
 namespace gamemd {
 int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall INIClass::GetStringByIndex(char *this, CCINIClass *aP1, CCINIClass *aP2)
 {
-  CCINIClass *v3; // esi
-  CCINIClass *v4; // edi
-  size_t v5; // eax
-  int v6; // eax
-  CCINIClass *v7; // edx
-  _DWORD *v8; // eax
-  unsigned int v10[3]; // [esp+8h] [ebp-Ch] BYREF
-
-  if ( !aP1 ) /*0x526ccd*/
-    return 0; /*0x526ccd*/
-  memset(v10, 0, sizeof(v10)); /*0x526cda*/
-  v3 = (CCINIClass *)(this + 40); /*0x526d02*/
-  v4 = (CCINIClass *)Checksummer::Add_Buffer(v10, (unsigned __int8 *)aP1, (IUnknown *)strlen(aP1->__pad_0)); /*0x526d05*/
-  aP1 = v4; /*0x526d07*/
-  if ( !v3->headNode[0] ) /*0x526d0b*/
-    return 0; /*0x526d10*/
-  if ( !SortedArray::CheckCache(v3, &aP1) ) /*0x526d19*/
+    CCINIClass *v3;
+    CCINIClass *v4;
+    size_t v5;
+    int v6;
+    CCINIClass *v7;
+    int *v8;
+    unsigned int v10[3];
+    if ( !aP1 )
+    return 0;
+    memset(v10, 0, sizeof(v10));
+    v3 = (CCINIClass *)(this + 40);
+    v4 = (CCINIClass *)Checksummer::Add_Buffer(v10, (unsigned char *)aP1, (IUnknown *)strlen(aP1->__pad_0));
+    aP1 = v4;
+    if ( !v3->headNode[0] )
+    return 0;
+    if ( !SortedArray::CheckCache(v3, &aP1) )
   {
-    v5 = SortedArray::BinarySearch((char **)v3, (CCINIClass *)&aP1); /*0x526d29*/
-    if ( !v5 ) /*0x526d30*/
-      return 0; /*0x526d30*/
-    v3->sectionHead[0] = v5; /*0x526d32*/
+    v5 = SortedArray::BinarySearch((char **)v3, (CCINIClass *)&aP1);
+    if ( !v5 )
+    return 0;
+    v3->sectionHead[0] = v5;
   }
-  aP1 = v4; /*0x526d3c*/
-  v6 = *(_DWORD *)SortedArray::FindValue((int)v3, (INIClass *)&aP1); /*0x526d45*/
-  if ( v6 ) /*0x526d49*/
+    aP1 = v4;
+    v6 = *(int *)SortedArray::FindValue((int)v3, (INIClass *)&aP1);
+    if ( v6 )
   {
-    v7 = aP2; /*0x526d4b*/
-    if ( (int)aP2 < *(_DWORD *)(v6 + 48) ) /*0x526d54*/
+    v7 = aP2;
+    if ( (int)aP2 < *(int *)(v6 + 48) )
     {
-      v8 = *(_DWORD **)(v6 + 24); /*0x526d56*/
-      if ( v8 ) /*0x526d5b*/
+    v8 = *(int **)(v6 + 24);
+    if ( v8 )
       {
-        while ( v8[1] && v8[2] ) /*0x526d69*/
+    while ( v8[1] && v8[2] )
         {
-          if ( !v7 ) /*0x526d6d*/
-            return v8[3]; /*0x526d80*/
-          v8 = (_DWORD *)v8[1]; /*0x526d6f*/
-          v7 = (CCINIClass *)((char *)v7 - 1); /*0x526d71*/
+    if ( !v7 )
+    return v8[3];
+    v8 = (int *)v8[1];
+    v7 = (CCINIClass *)((char *)v7 - 1);
         }
       }
     }
   }
-  return 0; /*0x526d7b*/
+    return 0;
 }
 }
 } // namespace gamemd

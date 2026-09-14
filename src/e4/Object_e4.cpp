@@ -1009,13 +1009,11 @@ char __fastcall Object_Init(char a1, int a2, int a3, char a4, int a5)
 namespace gamemd {
 SessionClass * Object::DtorWithDelete(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-SessionClass *__thiscall Object::DtorWithDelete(void **this, char a2)
 {
-  DeleteAndZero(this); /*0x7ad333*/
-  if ( (a2 & 1) != 0 ) /*0x7ad33d*/
-    __3_YAXPAX_Z(this); /*0x7ad340*/
-  return (SessionClass *)this; /*0x7ad34a*/
+    DeleteAndZero(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (SessionClass *)this;
 }
 }
 } // namespace gamemd

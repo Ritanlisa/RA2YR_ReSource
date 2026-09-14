@@ -5,34 +5,8 @@
 // 0x497880
 int RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1(
-        RLEBlitTransLucent25ZReadWrite_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10,
-        int a11,
-        int a12)
 {
-  return (*((int (__thiscall **)(RLEBlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, int, int, int))this->vfptr /*0x4978b7*/
-          + 1))(
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           a9,
-           a10,
-           a11);
+    return (*((int (__thiscall **)(RLEBlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
 }
 }
 
@@ -155,65 +129,48 @@ int __thiscall RLEBlitTransZRemapXlatAlpha_ushort::_vt02(
 // 0x49A9A0
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-std::locale::facet *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter(
-        std::locale::facet *this,
-        char a2)
 {
-  *(_DWORD *)this = &vt_RLEBlitter; /*0x49a9a9*/
-  if ( (a2 & 1) != 0 ) /*0x49a9af*/
-    __3_YAXPAX_Z(this); /*0x49a9b2*/
-  return this; /*0x49a9bc*/
+    *(int *)this = &vt_RLEBlitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 
 // 0x49A9C0
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_0(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-std::locale::facet *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_0(
-        std::locale::facet *this,
-        char a2)
 {
-  *(_DWORD *)this = &vt_RLEBlitter; /*0x49a9c9*/
-  if ( (a2 & 1) != 0 ) /*0x49a9cf*/
-    __3_YAXPAX_Z(this); /*0x49a9d2*/
-  return this; /*0x49a9dc*/
+    *(int *)this = &vt_RLEBlitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 
 // 0x49A9E0
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_1(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-std::locale::facet *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_1(
-        std::locale::facet *this,
-        char a2)
 {
-  *(_DWORD *)this = &vt_RLEBlitter; /*0x49a9e9*/
-  if ( (a2 & 1) != 0 ) /*0x49a9ef*/
-    __3_YAXPAX_Z(this); /*0x49a9f2*/
-  return this; /*0x49a9fc*/
+    *(int *)this = &vt_RLEBlitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 
 // 0x49AA40
 RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-RLEBlitTransZRemapXlatAlpha_ushort *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::QueryInterface(
-        _DWORD *this,
-        char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 3); /*0x49aa48*/
-  *this = &vt_RLEBlitTransZRemapXlatAlpha_unsigned_short; /*0x49aa4b*/
-  FractalNoise::Release(v3); /*0x49aa52*/
-  *(this + 3) = 0; /*0x49aa5b*/
-  *this = &vt_RLEBlitter; /*0x49aa64*/
-  if ( (a2 & 1) != 0 ) /*0x49aa6a*/
-    __3_YAXPAX_Z(this); /*0x49aa6d*/
-  return (RLEBlitTransZRemapXlatAlpha_ushort *)this; /*0x49aa77*/
+    void *v3;
+    v3 = (void *)*(this + 3);
+    *(void**)this = &vt_RLEBlitTransZRemapXlatAlpha_unsigned_short;
+    FractalNoise::Release(v3);
+    *(this + 3) = 0;
+    *(void**)this = &vt_RLEBlitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (RLEBlitTransZRemapXlatAlpha_ushort *)this;
 }
 }

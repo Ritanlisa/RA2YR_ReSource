@@ -6,74 +6,63 @@
 namespace gamemd {
 char WaveClass::DamageArea(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall WaveClass::DamageArea(int *this, ObjectClass *aP1)
 {
-  int v3; // eax
-  ObjectClass *v4; // ecx
-  char *v5; // edi
-  int v6; // eax
-  int v7; // ebx
-  int v8; // esi
-  int v9; // eax
-  int v10; // eax
-  int v11; // esi
-  int v12; // esi
-  int v13; // edx
-  int v15; // [esp+14h] [ebp-8h]
-  int v16; // [esp+18h] [ebp-4h] BYREF
-
-  v3 = *(this + 117); /*0x75f338*/
-  if ( v3 ) /*0x75f340*/
+    int v3;
+    ObjectClass *v4;
+    char *v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    int v15;
+    int v16;
+    v3 = this->Owner;
+    if ( v3 )
   {
-    v4 = aP1; /*0x75f346*/
-    LOWORD(aP1) = *(_DWORD *)aP1->__pad_0 / 256; /*0x75f359*/
-    HIWORD(aP1) = *(_DWORD *)&v4->__pad_0[4] / 256; /*0x75f372*/
-    v5 = (char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP1); /*0x75f391*/
-    v6 = (*(int (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 117) + 1016))(*(this + 117), 0); /*0x75f395*/
-    v7 = *(_DWORD *)v6; /*0x75f39b*/
-    v15 = *(_DWORD *)(*(_DWORD *)v6 + 172); /*0x75f3a9*/
-    v16 = *(_DWORD *)(*(_DWORD *)v6 + 152); /*0x75f3ad*/
-    if ( (*((_DWORD *)v5 + 80) & 0x100) != 0 && *(this + 47) >= dword_B725C8 * (v5[283] + 4) ) /*0x75f3d5*/
-      v8 = *((_DWORD *)v5 + 58); /*0x75f3d7*/
+    v4 = aP1;
+    LOWORD(aP1) = *(int *)aP1->__pad_0 / 256;
+    HIWORD(aP1) = *(int *)&v4->__pad_0[4] / 256;
+    v5 = (char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1);
+    v6 = (*(int (__thiscall **)(int, int))(*(int *)this->Owner + 1016))(this->Owner, 0);
+    v7 = *(int *)v6;
+    v15 = *(int *)(*(int *)(v6) + 172);
+    v16 = *(int *)(*(int *)(v6) + 152);
+    if ( (*((int *)(v5) + 80) & 0x100) != 0 && this->WaveClass_field_168 >= DataGlobal_B725C8 * (v5[283] + 4) )
+    v8 = *((int *)(v5) + 58);
     else
-      v8 = *((_DWORD *)v5 + 57); /*0x75f3df*/
-    for ( ; v8; v8 = *(_DWORD *)(v8 + 48) ) /*0x75f3e7*/
+    v8 = *((int *)(v5) + 57);
+    for ( ; v8; v8 = *(int *)(v8 + 48) )
     {
-      v9 = *(this + 117); /*0x75f3e9*/
-      if ( v8 != v9 && *(_BYTE *)(v8 + 144) && *(_BYTE *)(v8 + 116) && !*(_BYTE *)(v8 + 129) && *(int *)(v8 + 108) > 0 ) /*0x75f413*/
-        (*(void (__thiscall **)(int, int *, _DWORD, int, int, _DWORD, _DWORD, _DWORD))(*(_DWORD *)v8 + 364))( /*0x75f42c*/
-          v8,
-          &v16,
-          0,
-          v15,
-          v9,
-          0,
-          0,
-          0);
+    v9 = this->Owner;
+    if ( v8 != v9 && *(char *)(v8 + 144) && *(char *)(v8 + 116) && !*(char *)(v8 + 129) && *(int *)(v8 + 108) > 0 )
+    (*(void (__thiscall **)(int, int *, int, int, int, int, int, int))(*(int *)(v8) + 364))( v8, &v16, 0, v15, v9, 0, 0, 0);
     }
-    v10 = *((_DWORD *)v5 + 17); /*0x75f439*/
-    if ( v10 != -1 ) /*0x75f43f*/
+    v10 = *((int *)(v5) + 17);
+    if ( v10 != -1 )
     {
-      v11 = *(_DWORD *)&MEMORY[0xA83D84]->__pad_0[4 * v10]; /*0x75f447*/
-      if ( *(_BYTE *)(v11 + 689) ) /*0x75f44a*/
+    v11 = *(int *)&g_BuildingTypeClass_Array->__pad_0[4 * v10];
+    if ( *(char *)(v11 + 689) )
       {
-        aP1 = (ObjectClass *)*((_DWORD *)v5 + 9); /*0x75f45b*/
-        CellChainReact(); /*0x75f45f*/
+    aP1 = (ObjectClass *)*((int *)(v5) + 9);
+    CellChainReact();
       }
-      if ( *(_BYTE *)(v11 + 680) ) /*0x75f464*/
-        BuildingClass::SellEffects((int)v5, *(TechnoClass **)(v7 + 152)); /*0x75f477*/
+    if ( *(char *)(v11 + 680) )
+    BuildingClass::SellEffects((int)v5, *(TechnoClass **)(v7 + 152));
     }
-    LOBYTE(v3) = CellClass::IsActiveOrNext(v5); /*0x75f47e*/
-    if ( (_BYTE)v3 ) /*0x75f486*/
+    LOBYTE(v3) = CellClass::IsActiveOrNext(v5);
+    if ( (char)v3 )
     {
-      v12 = *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6092); /*0x75f497*/
-      v3 = Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)0x63); /*0x75f4a3*/
-      if ( v3 < v12 ) /*0x75f4aa*/
-        LOBYTE(v3) = LayerClass::DestroyCliff((int *)&MEMORY[0x87F7E8], v13, (int)v5); /*0x75f4b2*/
+    v12 = *(int *)(*(int *)&DataGlobal_87F8E4.__pad_5568[9108] + 6092);
+    v3 = Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x63);
+    if ( v3 < v12 )
+    LOBYTE(v3) = LayerClass::DestroyCliff((int *)&DataGlobal_87F7E8, v13, (int)v5);
     }
   }
-  return v3; /*0x75f4b7*/
+    return v3;
 }
 }
 } // namespace gamemd

@@ -74,17 +74,14 @@ char __thiscall Cell_IsOccupied(void **this, __int16 *a2, char a3)
 namespace gamemd {
 unsigned short * Cell::GetHeight(BuildingTypeClass * aP1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_WORD *__thiscall Cell::GetHeight(_WORD *this, BuildingTypeClass *aP1, int *a2)
 {
-  double v4; // st7
-
-  if ( *(_DWORD *)aP1->vtable0 == *a2 && *(_DWORD *)&aP1->vtable0[4] == a2[1] ) /*0x4265ca*/
-    *this = 0; /*0x4265cc*/
-  v4 = Math::CalcAngle((double)*(int *)&aP1->vtable0[4] - (double)a2[1], (double)*a2 - (double)*(int *)aP1->vtable0); /*0x4265e8*/
-  LOWORD(aP1) = Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427); /*0x426601*/
-  *(_DWORD *)this = aP1; /*0x42660a*/
-  return this; /*0x42660e*/
+    double v4;
+    if ( *(int *)aP1->vtable0 == *a2 && *(int *)&aP1->vtable0[4] == *((int*)(a2) + 1) )
+    *(void**)this = 0;
+    v4 = Math::CalcAngle((double)*(int *)&aP1->vtable0[4] - (double)*((int*)(a2) + 1), (double)*a2 - (double)*(int *)aP1->vtable0);
+    LOWORD(aP1) = Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427);
+    *(int *)this = aP1;
+    return this;
 }
 }
 } // namespace gamemd
@@ -1534,27 +1531,24 @@ Cell *__thiscall Cell::Clear(_WORD *this)
 namespace gamemd {
 unsigned int * Cell::GetWorldCoords(unsigned int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Cell_GetWorldCoords(__int16 *this, _DWORD *a2, int a3)
 {
-  _DWORD *v3; // esi
-  int *v4; // eax
-  int v5; // edx
-  int v6; // edi
-  int v7; // ecx
-  _BYTE v9[12]; // [esp+8h] [ebp-Ch] BYREF
-
-  v3 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], this + 2 * a3 + 793); /*0x68bd1b*/
-  v4 = (int *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(*v3 + 72))(v3, v9); /*0x68bd26*/
-  v5 = *v4; /*0x68bd29*/
-  v6 = v4[1]; /*0x68bd2b*/
-  v7 = v4[2]; /*0x68bd2e*/
-  if ( (v3[80] & 0x500) != 0 ) /*0x68bd3a*/
-    v7 += MEMORY[0xB054BC]; /*0x68bd3c*/
-  *a2 = v5; /*0x68bd48*/
-  a2[1] = v6; /*0x68bd4a*/
-  a2[2] = v7; /*0x68bd4e*/
-  return a2; /*0x68bd4d*/
+    int *v3;
+    int *v4;
+    int v5;
+    int v6;
+    int v7;
+    char v9[12];
+    v3 = CellCoord::To_CellObj(&DataGlobal_87F7E8, this + 2 * a3 + 793);
+    v4 = (int *)(*(int (__thiscall **)(int *, char *))(*v3 + 72))(v3, v9);
+    v5 = *v4;
+    v6 = v4[1];
+    v7 = v4[2];
+    if ( (v3[80] & 0x500) != 0 )
+    v7 += DataGlobal_B054BC;
+    *a2 = v5;
+    *((int*)(a2) + 1) = v6;
+    *((int*)(a2) + 2) = v7;
+    return a2;
 }
 }
 } // namespace gamemd

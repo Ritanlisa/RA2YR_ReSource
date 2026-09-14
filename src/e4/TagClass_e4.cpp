@@ -217,38 +217,26 @@ LABEL_45:
 namespace gamemd {
 int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TagClass::CheckEvent(int this, int a2, TagTypeClass *aP2)
 {
-  TriggerClass *v4; // eax
-  TagTypeClass *result; // eax
-
-  if ( this->buildingType == a2 ) /*0x6e561a*/
-    this->buildingType = 0; /*0x6e561c*/
-  v4 = *(TriggerClass **)(this + 40); /*0x6e5623*/
-  if ( v4 == (TriggerClass *)a2 ) /*0x6e5628*/
-    this->firstTrigger = v4->nextTrigger; /*0x6e562d*/
-  result = *(TagTypeClass **)(this + 36); /*0x6e5630*/
-  if ( !result ) /*0x6e5635*/
+    TriggerClass *v4;
+    TagTypeClass *result;
+    if ( this->buildingType == a2 )
+    this->buildingType = 0;
+    v4 = *(TriggerClass **)(this + 40);
+    if ( v4 == (TriggerClass *)a2 )
+    this->firstTrigger = v4->nextTrigger;
+    result = *(TagTypeClass **)(this + 36);
+    if ( !result )
   {
-    this->destroyed = 1; /*0x6e5637*/
-    result = *(TagTypeClass **)&stru_B05488.__pad_579C[19068]; /*0x6e563b*/
-    if ( *(int *)&stru_B05488.__pad_579C[19076] < *(int *)&stru_B05488.__pad_579C[19068] /*0x6e5675*/
-      || (stru_B05488.__pad_579C[19073] || !*(_DWORD *)&stru_B05488.__pad_579C[19068])
-      && *(int *)&stru_B05488.__pad_579C[19080] > 0
-      && (result = (TagTypeClass *)(*(int (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[19060]
-                                                                              + 8))(
-                                     &stru_B05488.__pad_579C[19060],
-                                     *(_DWORD *)&stru_B05488.__pad_579C[19068]
-                                   + *(_DWORD *)&stru_B05488.__pad_579C[19080],
-                                     0),
-          (_BYTE)result) )
+    this->destroyed = 1;
+    result = *(TagTypeClass **)&DataGlobal_B05488.__pad_579C[19068];
+    if ( *(int *)&DataGlobal_B05488.__pad_579C[19076] < *(int *)&DataGlobal_B05488.__pad_579C[19068] || (DataGlobal_B05488.__pad_579C[19073] || !*(int *)&DataGlobal_B05488.__pad_579C[19068]) && *(int *)&DataGlobal_B05488.__pad_579C[19080] > 0 && (result = (TagTypeClass *)(*(int (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[19060] + 8))( &DataGlobal_B05488.__pad_579C[19060], *(int *)&DataGlobal_B05488.__pad_579C[19068] + *(int *)&DataGlobal_B05488.__pad_579C[19080], 0), (char)result) )
     {
-      result = (TagTypeClass *)(*(_DWORD *)&stru_B05488.__pad_579C[19076])++; /*0x6e567d*/
-      *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19064] + 4 * (_DWORD)result) = this; /*0x6e568c*/
+    result = (TagTypeClass *)(*(int *)&DataGlobal_B05488.__pad_579C[19076])++;
+    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[19064] + 4 * (int)result) = this;
     }
   }
-  return (int)result->__pad_0; /*0x6e568f*/
+    return (int)result->__pad_0;
 }
 }
 } // namespace gamemd
@@ -314,13 +302,11 @@ int __stdcall TagClass::LoadTag(AbstractClass *aP0, int aP1)
 namespace gamemd {
 TagClass * TagClass::ProcessTrigger(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TagClass *__thiscall TagClass::ProcessTrigger(void **this, char a2)
 {
-  TagClass::Destructor(this); /*0x6e58b3*/
-  if ( (a2 & 1) != 0 ) /*0x6e58bd*/
-    __3_YAXPAX_Z(this); /*0x6e58c0*/
-  return (TagClass *)this; /*0x6e58ca*/
+    TagClass::Destructor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TagClass *)this;
 }
 }
 } // namespace gamemd

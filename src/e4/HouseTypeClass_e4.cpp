@@ -1146,20 +1146,17 @@ VectorClass *__fastcall HouseTypeClass::ReadCountryName(
 namespace gamemd {
 void HouseTypeClass_28::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall HouseTypeClass_28_::_vt03(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x512996*/
-  this->HouseTypeClass_28_field_0x10 = 0; /*0x512999*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5129a0*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->HouseTypeClass_28_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x5129a6*/
-    this->HouseTypeClass_28_field_0x4 = 0; /*0x5129ae*/
+    __3_YAXPAX_Z(v2);
+    this->HouseTypeClass_28_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x5129b1*/
-  this->HouseTypeClass_28_field_0x8 = 0; /*0x5129b4*/
+    this->IsAllocated = 0;
+    this->HouseTypeClass_28_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -1168,10 +1165,8 @@ void __thiscall HouseTypeClass_28_::_vt03(int this)
 namespace gamemd {
 int HouseTypeClass_28::Seek(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseTypeClass_28_::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x5129ea*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -1180,23 +1175,20 @@ int __thiscall HouseTypeClass_28_::_vt06(_DWORD *this, int a2)
 namespace gamemd {
 TypeList * HouseTypeClass_28::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TypeList *__thiscall HouseTypeClass_28_::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x512a93*/
-  *this = &vt_VectorClass_AircraftTypeClass_const; /*0x512a96*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x512aa0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x512aa8*/
-    *(this + 1) = 0; /*0x512ab0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x512abb*/
-  *(this + 2) = 0; /*0x512ac1*/
-  if ( (a2 & 1) != 0 ) /*0x512ac8*/
-    __3_YAXPAX_Z(this); /*0x512acb*/
-  return (TypeList *)this; /*0x512ad5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TypeList *)this;
 }
 }
 } // namespace gamemd
@@ -1205,31 +1197,28 @@ TypeList *__thiscall HouseTypeClass_28_::QueryInterface(_DWORD *this, char a2)
 namespace gamemd {
 char HouseTypeClass_28::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall HouseTypeClass_28_::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x5133e2*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x5133ed*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x5133ef*/
-    if ( v2 <= 0 ) /*0x5133f3*/
-      return 1; /*0x513413*/
-    v4 = (_DWORD *)*(this + 1); /*0x5133f5*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x5133fb*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x513404*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x513406*/
-      ++v4; /*0x513407*/
-      if ( v3 >= v2 ) /*0x51340c*/
-        return 1; /*0x51340c*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x51340e*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1238,49 +1227,46 @@ char __thiscall HouseTypeClass_28_::_vt01(int *this, int a2)
 namespace gamemd {
 char HouseTypeClass_28::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall HouseTypeClass_28_::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x51361c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x513622*/
-    if ( a3 ) /*0x513628*/
-      v4 = a3; /*0x51363e*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x51363a*/
-    *((_BYTE *)this + 12) = 1; /*0x513642*/
-    if ( !v4 ) /*0x513646*/
-      return 0; /*0x5136ba*/
-    if ( this->HouseTypeClass_28_field_0x4 ) /*0x513648*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->HouseTypeClass_28_field_0x4 )
     {
-      v5 = this->HouseTypeClass_28_field_0x8; /*0x51364f*/
-      if ( a2 < v5 ) /*0x513654*/
-        v5 = a2; /*0x513656*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->HouseTypeClass_28_field_0x4 + 4 * i - 4) ) /*0x51365c*/
-        ++i; /*0x513661*/
-      if ( *((_BYTE *)this + 13) ) /*0x51366e*/
+    v5 = this->HouseTypeClass_28_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->HouseTypeClass_28_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x513679*/
-        this->HouseTypeClass_28_field_0x4 = 0; /*0x513681*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->HouseTypeClass_28_field_0x4 = 0;
       }
     }
-    this->HouseTypeClass_28_field_0x4 = v4; /*0x51368a*/
-    this->HouseTypeClass_28_field_0x8 = a2; /*0x513692*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x513695*/
+    this->HouseTypeClass_28_field_0x4 = v4;
+    this->HouseTypeClass_28_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x51369e*/
+    this->ddtor();
   }
-  v7 = this->HouseTypeClass_28_field_0x8; /*0x5136a1*/
-  if ( v7 < this->HouseTypeClass_28_field_0x10 ) /*0x5136a9*/
-    this->HouseTypeClass_28_field_0x10 = v7; /*0x5136ab*/
-  return 1; /*0x5136ae*/
+    v7 = this->HouseTypeClass_28_field_0x8;
+    if ( v7 < this->HouseTypeClass_28_field_0x10 )
+    this->HouseTypeClass_28_field_0x10 = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1289,24 +1275,20 @@ char __thiscall HouseTypeClass_28_::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int HouseTypeClass_28::Read(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseTypeClass_28_::_vt04(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x513710*/
-  result = 0; /*0x513713*/
-  if ( v2 <= 0 ) /*0x513718*/
-    return -1; /*0x51372f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x51371e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x51372d*/
-      return -1; /*0x51372d*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x513732*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -1314,20 +1296,17 @@ int __thiscall HouseTypeClass_28_::_vt04(int *this, _DWORD *a2)
 namespace gamemd {
 void HouseTypeClass_36::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall HouseTypeClass_36_::_vt03(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x512906*/
-  this->HouseTypeClass_36_field_0x10 = 0; /*0x512909*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x512910*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->HouseTypeClass_36_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x512916*/
-    this->HouseTypeClass_36_field_0x4 = 0; /*0x51291e*/
+    __3_YAXPAX_Z(v2);
+    this->HouseTypeClass_36_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x512921*/
-  this->HouseTypeClass_36_field_0x8 = 0; /*0x512924*/
+    this->IsAllocated = 0;
+    this->HouseTypeClass_36_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -1336,10 +1315,8 @@ void __thiscall HouseTypeClass_36_::_vt03(int this)
 namespace gamemd {
 int HouseTypeClass_36::Seek(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseTypeClass_36_::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x51295a*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -1348,23 +1325,20 @@ int __thiscall HouseTypeClass_36_::_vt06(_DWORD *this, int a2)
 namespace gamemd {
 TypeList * HouseTypeClass_36::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TypeList *__thiscall HouseTypeClass_36_::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x512a43*/
-  *this = &vt_VectorClass_UnitTypeClass_const; /*0x512a46*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x512a50*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_UnitTypeClass_const;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x512a58*/
-    *(this + 1) = 0; /*0x512a60*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x512a6b*/
-  *(this + 2) = 0; /*0x512a71*/
-  if ( (a2 & 1) != 0 ) /*0x512a78*/
-    __3_YAXPAX_Z(this); /*0x512a7b*/
-  return (TypeList *)this; /*0x512a85*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TypeList *)this;
 }
 }
 } // namespace gamemd
@@ -1373,23 +1347,20 @@ TypeList *__thiscall HouseTypeClass_36_::QueryInterface(_DWORD *this, char a2)
 namespace gamemd {
 VectorClass * HouseTypeClass_36::Constructor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall HouseTypeClass_36_::Constructor(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x512b83*/
-  *this = &vt_VectorClass_AircraftTypeClass_const; /*0x512b86*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x512b90*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x512b98*/
-    *(this + 1) = 0; /*0x512ba0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x512bab*/
-  *(this + 2) = 0; /*0x512bb1*/
-  if ( (a2 & 1) != 0 ) /*0x512bb8*/
-    __3_YAXPAX_Z(this); /*0x512bbb*/
-  return (VectorClass *)this; /*0x512bc5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
@@ -1398,31 +1369,28 @@ VectorClass *__thiscall HouseTypeClass_36_::Constructor(_DWORD *this, char a2)
 namespace gamemd {
 char HouseTypeClass_36::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall HouseTypeClass_36_::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x513012*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x51301d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x51301f*/
-    if ( v2 <= 0 ) /*0x513023*/
-      return 1; /*0x513043*/
-    v4 = (_DWORD *)*(this + 1); /*0x513025*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x51302b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x513034*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x513036*/
-      ++v4; /*0x513037*/
-      if ( v3 >= v2 ) /*0x51303c*/
-        return 1; /*0x51303c*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x51303e*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1431,49 +1399,46 @@ char __thiscall HouseTypeClass_36_::_vt01(int *this, int a2)
 namespace gamemd {
 char HouseTypeClass_36::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall HouseTypeClass_36_::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x51324c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x513252*/
-    if ( a3 ) /*0x513258*/
-      v4 = a3; /*0x51326e*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x51326a*/
-    *((_BYTE *)this + 12) = 1; /*0x513272*/
-    if ( !v4 ) /*0x513276*/
-      return 0; /*0x5132ea*/
-    if ( this->HouseTypeClass_36_field_0x4 ) /*0x513278*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->HouseTypeClass_36_field_0x4 )
     {
-      v5 = this->HouseTypeClass_36_field_0x8; /*0x51327f*/
-      if ( a2 < v5 ) /*0x513284*/
-        v5 = a2; /*0x513286*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->HouseTypeClass_36_field_0x4 + 4 * i - 4) ) /*0x51328c*/
-        ++i; /*0x513291*/
-      if ( *((_BYTE *)this + 13) ) /*0x51329e*/
+    v5 = this->HouseTypeClass_36_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->HouseTypeClass_36_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5132a9*/
-        this->HouseTypeClass_36_field_0x4 = 0; /*0x5132b1*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->HouseTypeClass_36_field_0x4 = 0;
       }
     }
-    this->HouseTypeClass_36_field_0x4 = v4; /*0x5132ba*/
-    this->HouseTypeClass_36_field_0x8 = a2; /*0x5132c2*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x5132c5*/
+    this->HouseTypeClass_36_field_0x4 = v4;
+    this->HouseTypeClass_36_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5132ce*/
+    this->ddtor();
   }
-  v7 = this->HouseTypeClass_36_field_0x8; /*0x5132d1*/
-  if ( v7 < this->HouseTypeClass_36_field_0x10 ) /*0x5132d9*/
-    this->HouseTypeClass_36_field_0x10 = v7; /*0x5132db*/
-  return 1; /*0x5132de*/
+    v7 = this->HouseTypeClass_36_field_0x8;
+    if ( v7 < this->HouseTypeClass_36_field_0x10 )
+    this->HouseTypeClass_36_field_0x10 = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1482,24 +1447,20 @@ char __thiscall HouseTypeClass_36_::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int HouseTypeClass_36::Read(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseTypeClass_36_::_vt04(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x513340*/
-  result = 0; /*0x513343*/
-  if ( v2 <= 0 ) /*0x513348*/
-    return -1; /*0x51335f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x51334e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x51335d*/
-      return -1; /*0x51335d*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x513362*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -1507,50 +1468,47 @@ int __thiscall HouseTypeClass_36_::_vt04(int *this, _DWORD *a2)
 namespace gamemd {
 char HouseTypeClass_36::SetCapacity(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall HouseTypeClass_36_::sub_513420(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x51342c*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x513436*/
-    if ( a3 ) /*0x51343c*/
-      v4 = a3; /*0x513452*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x51344e*/
-    *((_BYTE *)this + 12) = 1; /*0x513456*/
-    if ( v4 ) /*0x51345a*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( this->HouseTypeClass_36_field_0x4 ) /*0x513465*/
+    if ( this->HouseTypeClass_36_field_0x4 )
       {
-        v6 = this->HouseTypeClass_36_field_0x8; /*0x51346c*/
-        if ( a2 < v6 ) /*0x513471*/
-          v6 = a2; /*0x513473*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->HouseTypeClass_36_field_0x4 + 4 * i - 4) ) /*0x513479*/
-          ++i; /*0x51347e*/
-        if ( *((_BYTE *)this + 13) ) /*0x51348b*/
+    v6 = this->HouseTypeClass_36_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->HouseTypeClass_36_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x513496*/
-          this->HouseTypeClass_36_field_0x4 = 0; /*0x51349e*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->HouseTypeClass_36_field_0x4 = 0;
         }
       }
-      this->HouseTypeClass_36_field_0x4 = v4; /*0x5134a7*/
-      this->HouseTypeClass_36_field_0x8 = a2; /*0x5134af*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x5134b2*/
-      return 1; /*0x5134b8*/
+    this->HouseTypeClass_36_field_0x4 = v4;
+    this->HouseTypeClass_36_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x51345f*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5134c2*/
-    return 1; /*0x5134c8*/
+    this->ddtor();
+    return 1;
   }
 }
 }
@@ -1560,25 +1518,22 @@ char __thiscall HouseTypeClass_36_::sub_513420(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int HouseTypeClass_36::IndexOf(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseTypeClass_36_::sub_513500(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->HouseTypeClass_36_field_0xC ) /*0x513500*/
-    return 0; /*0x513508*/
-  v3 = this->HouseTypeClass_36_field_0x8; /*0x51350e*/
-  result = 0; /*0x513511*/
-  if ( v3 <= 0 ) /*0x513515*/
-    return -1; /*0x51352c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x51351b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->HouseTypeClass_36_field_0xC )
+    return 0;
+    v3 = this->HouseTypeClass_36_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x51352a*/
-      return -1; /*0x51352a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x51350a*/
+    return result;
 }
 }
 } // namespace gamemd

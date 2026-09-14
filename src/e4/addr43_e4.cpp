@@ -144,23 +144,21 @@ LABEL_14:
 namespace gamemd {
 void E4Recv_431D90::sub_431D90()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_431D90(int this)
 {
-  if ( this->M48 ) /*0x431d96*/
+    if ( this->M48 )
   {
-    if ( (unsigned char)this->M36 ) /*0x431d9d*/
+    if ( (unsigned char)this->M36 )
     {
-      __3_YAXPAX_Z(*(void **)(this + 48)); /*0x431da3*/
-      *(_BYTE *)(this + 36) = 0; /*0x431dab*/
+    __3_YAXPAX_Z(*(void **)(this + 48));
+    this->M36 = 0;
     }
-    this->M48 = 0; /*0x431dae*/
+    this->M48 = 0;
   }
-  this->M52 = 0; /*0x431db1*/
-  *(_BYTE *)(this + 37) = 0; /*0x431db4*/
-  *(_BYTE *)(this + 39) = 0; /*0x431db7*/
-  *(_BYTE *)(this + 40) = 0; /*0x431dba*/
-  *(_BYTE *)(this + 41) = 0; /*0x431dbd*/
+    this->M52 = 0;
+    this->M37 = 0;
+    this->M39 = 0;
+    this->M40 = 0;
+    this->M41 = 0;
 }
 }
 } // namespace gamemd
@@ -169,51 +167,49 @@ void __thiscall sub_431D90(int this)
 namespace gamemd {
 unsigned char * E4Recv_434700::sub_434700()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__thiscall sub_434700(_DWORD *this)
 {
-  _BYTE *result; // eax
-  _DWORD *v3; // edx
-  int v4; // ecx
-  _BYTE *v5; // ecx
-  _BYTE *v6; // edi
-  int v7; // edx
-  unsigned int v8; // ebp
-  unsigned int v9; // ecx
-
-  result = malloc(*(_DWORD *)(*(this + 1) + 4) * *(_DWORD *)(*(this + 1) + 8) + 2); /*0x434713*/
-  v3 = (_DWORD *)*(this + 1); /*0x434718*/
-  *(this + 2) = result; /*0x434720*/
-  if ( v3 ) /*0x434723*/
+    char *result;
+    int *v3;
+    int v4;
+    char *v5;
+    char *v6;
+    int v7;
+    unsigned int v8;
+    unsigned int v9;
+    result = malloc(*(int *)(this->M4 + 4) * *(int *)(this->M4 + 8) + 2);
+    v3 = (int *)this->M4;
+    this->M8 = result;
+    if ( v3 )
   {
-    v4 = *(unsigned __int16 *)(v3[6] + 176); /*0x43472a*/
-    if ( (_WORD)v4 ) /*0x434733*/
+    v4 = *(unsigned short *)(v3[6] + 176);
+    if ( (short)v4 )
     {
-      v5 = (_BYTE *)(v3[7] + (v4 - 1) * v3[5]); /*0x43473e*/
-      if ( v5 ) /*0x434741*/
+    v5 = (char *)(v3[7] + (v4 - 1) * v3[5]);
+    if ( v5 )
       {
-        v6 = v5 + 1; /*0x434745*/
-        *result = *v5; /*0x434748*/
-        v7 = *(this + 1); /*0x43474a*/
-        v8 = 0; /*0x434750*/
-        for ( result = (_BYTE *)(*(this + 2) + 1); v8 < *(_DWORD *)(v7 + 8); ++v8 ) /*0x434752*/
+    v6 = v5 + 1;
+    *result = *v5;
+    v7 = this->M4;
+    v8 = 0;
+    result = (char *)(this->M8 + 1);
+    for ( ; v8 < *(int *)(v7 + 8); ++v8 )
         {
-          v9 = 0; /*0x43475e*/
-          if ( *(_DWORD *)(v7 + 4) ) /*0x43475b*/
+    v9 = 0;
+    if ( *(int *)(v7 + 4) )
           {
-            do /*0x434774*/
+    do
             {
-              *result++ = ~*v6++; /*0x434769*/
-              ++v9; /*0x434770*/
+    *result++ = ~*v6++;
+    ++v9;
             }
-            while ( v9 < *(_DWORD *)(*(this + 1) + 4) ); /*0x434774*/
+    while ( v9 < *(int *)(this->M4 + 4) );
           }
-          v7 = *(this + 1); /*0x434776*/
+    v7 = this->M4;
         }
       }
     }
   }
-  return result; /*0x434780*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -222,25 +218,22 @@ _BYTE *__thiscall sub_434700(_DWORD *this)
 namespace gamemd {
 BOOL E4Recv_4349F0::sub_4349F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_4349F0(int this)
 {
-  BOOL result; // eax
-
-  this->M4 = 0; /*0x4349f9*/
-  this->M32 = 0; /*0x4349fc*/
-  this->M12 = 0; /*0x4349ff*/
-  this->M8 = 0; /*0x434a02*/
-  *(_WORD *)(this + 36) = 0x7FFF; /*0x434a0f*/
-  *(_WORD *)(this + 38) = 13653; /*0x434a15*/
-  this->M40 = 64; /*0x434a1b*/
-  *(_BYTE *)(this + 64) = 1; /*0x434a22*/
-  *(_BYTE *)(this + 65) = 1; /*0x434a25*/
-  this->M24 = 1; /*0x434a28*/
-  this->M28 = 1; /*0x434a2b*/
-  result = SetRect((LPRECT)(this + 48), 0, 0, 0, 0); /*0x434a2e*/
-  this->M44 = 1; /*0x434a34*/
-  return result; /*0x434a37*/
+    int result;
+    this->M4 = 0;
+    this->M32 = 0;
+    this->M12 = 0;
+    this->M8 = 0;
+    this->M36 = 0x7FFF;
+    this->M38 = 13653;
+    this->M40 = 64;
+    this->M64 = 1;
+    this->M65 = 1;
+    this->M24 = 1;
+    this->M28 = 1;
+    result = SetRect((LPRECT)(this + 48), 0, 0, 0, 0);
+    this->M44 = 1;
+    return result;
 }
 }
 } // namespace gamemd
@@ -992,28 +985,25 @@ void __thiscall sub_43A600(BrainClass *this)
 namespace gamemd {
 int E4Recv_43A670::sub_43A670()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_43A670(int *this)
 {
-  int v2; // esi
-  int v3; // ebx
-  int v4; // ecx
-
-  v2 = 0; /*0x43a675*/
-  v3 = *(this + 5); /*0x43a677*/
-  if ( v3 > 0 ) /*0x43a67c*/
+    int v2;
+    int v3;
+    int v4;
+    v2 = 0;
+    v3 = this->M20;
+    if ( v3 > 0 )
   {
-    do /*0x43a69d*/
+    do
     {
-      v4 = *(_DWORD *)(*(this + 2) + 4 * v2); /*0x43a681*/
-      if ( v4 ) /*0x43a686*/
-        (*(void (__thiscall **)(int, int))(*(_DWORD *)v4 + 32))(v4, 1); /*0x43a68c*/
-      ++v2; /*0x43a692*/
-      *(_DWORD *)(*(this + 2) + 4 * v2 - 4) = 0; /*0x43a695*/
+    v4 = *(int *)(this->M8 + 4 * v2);
+    if ( v4 )
+    (*(void (__thiscall **)(int, int))(*(int *)(v4) + 32))(v4, 1);
+    ++v2;
+    *(int *)(this->M8 + 4 * v2 - 4) = 0;
     }
-    while ( v2 < v3 ); /*0x43a69d*/
+    while ( v2 < v3 );
   }
-  return (*(int (__thiscall **)(int *))(*(this + 1) + 12))(this + 1); /*0x43a6a8*/
+    return (*(int (__thiscall **)(int *))(this->M4 + 12))(this + 1);
 }
 }
 } // namespace gamemd
@@ -1022,31 +1012,28 @@ int __thiscall sub_43A670(int *this)
 namespace gamemd {
 int E4Recv_43A6B0::sub_43A6B0(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_43A6B0(int *this, int a2, int a3)
 {
-  int v4; // esi
-  int v5; // ebx
-  int v6; // ecx
-
-  v4 = 0; /*0x43a6b5*/
-  v5 = *(this + 5); /*0x43a6b7*/
-  if ( v5 > 0 ) /*0x43a6bc*/
+    int v4;
+    int v5;
+    int v6;
+    v4 = 0;
+    v5 = this->M20;
+    if ( v5 > 0 )
   {
-    do /*0x43a6dd*/
+    do
     {
-      v6 = *(_DWORD *)(*(this + 2) + 4 * v4); /*0x43a6c1*/
-      if ( v6 ) /*0x43a6c6*/
-        (*(void (__thiscall **)(int, int))(*(_DWORD *)v6 + 32))(v6, 1); /*0x43a6cc*/
-      ++v4; /*0x43a6d2*/
-      *(_DWORD *)(*(this + 2) + 4 * v4 - 4) = 0; /*0x43a6d5*/
+    v6 = *(int *)(this->M8 + 4 * v4);
+    if ( v6 )
+    (*(void (__thiscall **)(int, int))(*(int *)(v6) + 32))(v6, 1);
+    ++v4;
+    *(int *)(this->M8 + 4 * v4 - 4) = 0;
     }
-    while ( v4 < v5 ); /*0x43a6dd*/
+    while ( v4 < v5 );
   }
-  (*(void (__thiscall **)(int *))(*(this + 1) + 12))(this + 1); /*0x43a6e5*/
-  *(this + 7) = a2; /*0x43a6f0*/
-  *(this + 8) = a3; /*0x43a6f3*/
-  return a2; /*0x43a6f6*/
+    (*(void (__thiscall **)(int *))(this->M4 + 12))(this + 1);
+    this->M28 = a2;
+    this->M32 = a3;
+    return a2;
 }
 }
 } // namespace gamemd
@@ -1055,48 +1042,45 @@ int __thiscall sub_43A6B0(int *this, int a2, int a3)
 namespace gamemd {
 int E4Recv_43A770::sub_43A770(unsigned int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_43A770(_DWORD *this, _DWORD *a2, int a3)
 {
-  _DWORD *v3; // esi
-  int result; // eax
-  _DWORD *v6; // eax
-  int v7; // ecx
-  int v8; // edi
-  int v9; // ebp
-  _DWORD *v10; // [esp-8h] [ebp-20h]
-  int v11; // [esp-4h] [ebp-1Ch]
-
-  v3 = a2; /*0x43a773*/
-  if ( !a2 ) /*0x43a77c*/
-    return -2147467261; /*0x43a781*/
-  v6 = (_DWORD *)*(this + 5); /*0x43a78a*/
-  v7 = *a2; /*0x43a78d*/
-  v10 = a2; /*0x43a798*/
-  a2 = v6; /*0x43a799*/
-  result = (*(int (__stdcall **)(_DWORD *, _DWORD **, int, _DWORD))(v7 + 16))(v10, &a2, 4, 0); /*0x43a79d*/
-  if ( result >= 0 ) /*0x43a7a2*/
+    int *v3;
+    int result;
+    int *v6;
+    int v7;
+    int v8;
+    int v9;
+    int *v10;
+    int v11;
+    v3 = a2;
+    if ( !a2 )
+    return -2147467261;
+    v6 = (int *)this->M20;
+    v7 = *a2;
+    v10 = a2;
+    a2 = v6;
+    result = (*(int (__stdcall **)(int *, int **, int, int))(v7 + 16))(v10, &a2, 4, 0);
+    if ( result >= 0 )
   {
-    v8 = 0; /*0x43a7a8*/
-    if ( (int)a2 <= 0 ) /*0x43a7ac*/
+    v8 = 0;
+    if ( (int)a2 <= 0 )
     {
-      return 0; /*0x43a7cd*/
+    return 0;
     }
     else
     {
-      v9 = a3; /*0x43a7ae*/
-      while ( 1 ) /*0x43a7ba*/
+    v9 = a3;
+    while ( 1 )
       {
-        v11 = *(_DWORD *)(*(this + 2) + 4 * v8); /*0x43a7ba*/
-        result = (*(int (__stdcall **)(int, _DWORD *, int))(*(_DWORD *)v11 + 24))(v11, v3, v9); /*0x43a7bd*/
-        if ( result < 0 ) /*0x43a7c2*/
-          break; /*0x43a7c2*/
-        if ( ++v8 >= (int)a2 ) /*0x43a7cb*/
-          return 0; /*0x43a7cb*/
+    v11 = *(int *)(this->M8 + 4 * v8);
+    result = (*(int (__stdcall **)(int, int *, int))(*(int *)(v11) + 24))(v11, v3, v9);
+    if ( result < 0 )
+    break;
+    if ( ++v8 >= (int)a2 )
+    return 0;
       }
     }
   }
-  return result; /*0x43a77e*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1149,13 +1133,11 @@ _DWORD *__thiscall sub_43AA90(BrainClass *this, char a2)
 namespace gamemd {
 ObjectClass * E4Recv_43ADF0::sub_43ADF0(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall sub_43ADF0(_BYTE *this, _DWORD *a1)
 {
-  *(this + 8) = 0; /*0x43adf6*/
-  *(_DWORD *)this = *a1; /*0x43adfc*/
-  this->M4 = a1[1]; /*0x43ae01*/
-  return (ObjectClass *)this; /*0x43ae04*/
+    this->M8 = 0;
+    *(int *)this = *a1;
+    this->M4 = *((int*)(a1) + 1);
+    return (ObjectClass *)this;
 }
 }
 } // namespace gamemd
@@ -1164,25 +1146,22 @@ ObjectClass *__thiscall sub_43ADF0(_BYTE *this, _DWORD *a1)
 namespace gamemd {
 int E4Recv_43EE50::sub_43EE50()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_43EE50(_DWORD *this)
 {
-  _DWORD *Value; // eax
-  int v3; // esi
-  int result; // eax
-  int v5; // [esp+8h] [ebp-4h] BYREF
-
-  if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 1020))(this) || !*(this + 352) ) /*0x43ee63*/
-    return 0; /*0x43eea7*/
-  Value = ProgressTimer::GetValue((_WORD *)this + 452, &v5); /*0x43ee76*/
-  v3 = *(this + 352); /*0x43ee7d*/
-  result = dword_7F4890[((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F]; /*0x43ee8e*/
-  if ( v3 ) /*0x43ee95*/
+    int *Value;
+    int v3;
+    int result;
+    int v5;
+    if ( !this->Vf1020() || !this->M1408 )
+    return 0;
+    Value = ProgressTimer::GetValue((short *)(this) + 452, &v5);
+    v3 = this->M1408;
+    result = DataGlobal_7F4890[((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F];
+    if ( v3 )
   {
-    *(_DWORD *)(v3 + 172) = result; /*0x43ee97*/
-    *(_DWORD *)(v3 + 196) = 0; /*0x43ee9d*/
+    *(int *)(v3 + 172) = result;
+    *(int *)(v3 + 196) = 0;
   }
-  return result; /*0x43eea3*/
+    return result;
 }
 }
 } // namespace gamemd

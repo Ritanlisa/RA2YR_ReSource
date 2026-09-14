@@ -5,41 +5,36 @@
 // 0x658A70
 void RadarHashVector::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall RadarHashVector::_vt03(int this)
 {
-  if ( this->RadarHashVector_field_0x04 && *(_BYTE *)(this + 13) ) /*0x658a7d*/
+    if ( this->RadarHashVector_field_0x04 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x658a83*/
-    this->RadarHashVector_field_0x04 = 0; /*0x658a8b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->RadarHashVector_field_0x04 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x658a8e*/
-  this->RadarHashVector_field_0x08 = 0; /*0x658a91*/
+    this->IsAllocated = 0;
+    this->RadarHashVector_field_0x08 = 0;
 }
 }
 
 // 0x658AA0
 int RadarHashVector::Read(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RadarHashVector::_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->RadarHashVector_field_0x0C ) /*0x658aa0*/
-    return 0; /*0x658aae*/
-  v3 = this->RadarHashVector_field_0x08; /*0x658ab4*/
-  result = 0; /*0x658ab7*/
-  if ( v3 <= 0 ) /*0x658abb*/
-    return -1; /*0x658ae6*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 4 ) /*0x658ac1*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->RadarHashVector_field_0x0C )
+    return 0;
+    v3 = this->RadarHashVector_field_0x08;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2); i += 4 )
   {
-    if ( ++result >= v3 ) /*0x658ae4*/
-      return -1; /*0x658ae4*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x658aab*/
+    return result;
 }
 }
 
@@ -159,85 +154,78 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
 // 0x658C20
 int RadarHashVector::FindItemIndex(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RadarHashVector::sub_658C20(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x658c20*/
-  result = 0; /*0x658c25*/
-  if ( v2 <= 0 ) /*0x658c2b*/
-    return -1; /*0x658c56*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 4 ) /*0x658c31*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2 || i[1] != *((int*)(a2) + 1) || i[2] != *((int*)(a2) + 2); i += 4 )
   {
-    if ( ++result >= v2 ) /*0x658c54*/
-      return -1; /*0x658c54*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x658c59*/
-}
+    return result;
 }
 
 // 0x658C60
 char * RadarHashVector::Destructor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall RadarHashVector::Destructor(_DWORD *this, char a2)
 {
-  int v3; // eax
-  _DWORD *v4; // ebp
-  int v5; // ecx
-  int v6; // eax
-  _DWORD *v7; // esi
-  int v8; // edi
-  void *v9; // eax
-  void *v11; // eax
-
-  if ( (a2 & 2) != 0 ) /*0x658c6a*/
+    int v3;
+    int *v4;
+    int v5;
+    int v6;
+    int *v7;
+    int v8;
+    void *v9;
+    void *v11;
+    if ( (a2 & 2) != 0 )
   {
-    v3 = *(this - 1); /*0x658c6c*/
-    v4 = this - 1; /*0x658c70*/
-    v5 = 3 * v3; /*0x658c73*/
-    v6 = v3 - 1; /*0x658c76*/
-    v7 = this + 2 * v5; /*0x658c77*/
-    if ( v6 >= 0 ) /*0x658c7a*/
+    v3 = *(this - 1);
+    v4 = this - 1;
+    v5 = 3 * v3;
+    v6 = v3 - 1;
+    v7 = this + 2 * v5;
+    if ( v6 >= 0 )
     {
-      v8 = v6 + 1; /*0x658c7d*/
-      do /*0x658caa*/
+    v8 = v6 + 1;
+    do
       {
-        v9 = (void *)*(v7 - 5); /*0x658c82*/
-        v7 -= 6; /*0x658c85*/
-        *v7 = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658c8a*/
-        if ( v9 && *((_BYTE *)v7 + 13) ) /*0x658c92*/
+    v9 = (void *)*(v7 - 5);
+    v7 -= 6;
+    *v7 = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass;
+    if ( v9 && *((char *)(v7) + 13) )
         {
-          __3_YAXPAX_Z(v9); /*0x658c98*/
-          v7[1] = 0; /*0x658ca0*/
+    __3_YAXPAX_Z(v9);
+    v7[1] = 0;
         }
-        --v8; /*0x658ca3*/
-        *((_BYTE *)v7 + 13) = 0; /*0x658ca4*/
-        v7[2] = 0; /*0x658ca7*/
+    --v8;
+    *((char *)(v7) + 13) = 0;
+    v7[2] = 0;
       }
-      while ( v8 ); /*0x658caa*/
+    while ( v8 );
     }
-    if ( (a2 & 1) != 0 ) /*0x658cb2*/
-      __3_YAXPAX_Z(v4); /*0x658cb5*/
-    return (char *)v4; /*0x658cbd*/
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(v4);
+    return (char *)v4;
   }
-  else
+    else
   {
-    v11 = (void *)*(this + 1); /*0x658cc5*/
-    *this = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658ccc*/
-    if ( v11 && *((_BYTE *)this + 13) ) /*0x658cd4*/
+    v11 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass;
+    if ( v11 && *((char *)(this) + 13) )
     {
-      __3_YAXPAX_Z(v11); /*0x658cda*/
-      *(this + 1) = 0; /*0x658ce2*/
+    __3_YAXPAX_Z(v11);
+    *(this + 1) = 0;
     }
-    *((_BYTE *)this + 13) = 0; /*0x658ce9*/
-    *(this + 2) = 0; /*0x658cee*/
-    if ( (a2 & 1) != 0 ) /*0x658cf1*/
-      __3_YAXPAX_Z(this); /*0x658cf4*/
-    return (char *)this; /*0x658cfc*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (char *)this;
   }
 }
 }
@@ -245,23 +233,20 @@ char *__thiscall RadarHashVector::Destructor(_DWORD *this, char a2)
 // 0x658D10
 VectorClass * RadarHashVector::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall RadarHashVector::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x658d13*/
-  *this = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658d16*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x658d20*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x658d28*/
-    *(this + 1) = 0; /*0x658d30*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x658d3b*/
-  *(this + 2) = 0; /*0x658d41*/
-  if ( (a2 & 1) != 0 ) /*0x658d48*/
-    __3_YAXPAX_Z(this); /*0x658d4b*/
-  return (VectorClass *)this; /*0x658d55*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 

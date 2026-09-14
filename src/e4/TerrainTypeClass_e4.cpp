@@ -5,41 +5,31 @@
 // 0x53FFA0
 int TerrainTypeClass::GetTileData(AnimClass * aP1, void * a2, signed int * a3, unsigned int * a4, unsigned short * a5, unsigned int * a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TerrainTypeClass::GetTileData(
-        _DWORD *this,
-        AnimClass *aP1,
-        void *a2,
-        signed int *a3,
-        _DWORD *a4,
-        _WORD *a5,
-        _DWORD *a6)
 {
-  IPXGlobalConnClass *v7; // ecx
-  int TileType; // eax
-  int v9; // ebx
-  int v10; // edx
-  _DWORD *v11; // edx
-
-  v7 = (IPXGlobalConnClass *)*(this + 1); /*0x53ffa0*/
-  if ( *(_DWORD *)v7[1].__pad_0 < (int)aP1 ) /*0x53ffaa*/
-    return 0; /*0x53ffaa*/
-  TileType = Terrain::GetTileType(v7, aP1); /*0x53ffad*/
-  if ( !TileType || (*(_BYTE *)TileType & 2) != 0 ) /*0x53ffb9*/
-    return 0; /*0x540024*/
-  v9 = *(_DWORD *)(TileType + 12); /*0x53ffbf*/
-  v10 = *(_DWORD *)(TileType + 8) - 16; /*0x53ffc2*/
-  if ( v10 > 0 ) /*0x53ffc7*/
-    qmemcpy(a2, (const void *)(v9 + 16), v10); /*0x53ffda*/
-  *a3 = v10; /*0x53ffea*/
-  *a5 = *(_WORD *)(v9 + 14); /*0x53fff4*/
-  v11 = *(_DWORD **)(TileType + 20); /*0x53fff7*/
-  *a4 = *v11; /*0x540000*/
-  a4[1] = v11[1]; /*0x540005*/
-  a4[2] = v11[2]; /*0x54000b*/
-  if ( a6 ) /*0x540014*/
-    *a6 = *(_DWORD *)(v9 + 4); /*0x540019*/
-  return 1; /*0x540021*/
+    IPXGlobalConnClass *v7;
+    int TileType;
+    int v9;
+    int v10;
+    int *v11;
+    v7 = (IPXGlobalConnClass *)this->Foundation;
+    if ( *(int *)v7[1].__pad_0 < (int)aP1 )
+    return 0;
+    TileType = Terrain::GetTileType(v7, aP1);
+    if ( !TileType || (*(char *)TileType & 2) != 0 )
+    return 0;
+    v9 = *(int *)(TileType + 12);
+    v10 = *(int *)(TileType + 8) - 16;
+    if ( v10 > 0 )
+    qmemcpy(a2, (const void *)(v9 + 16), v10);
+    *a3 = v10;
+    *a5 = *(short *)(v9 + 14);
+    v11 = *(int **)(TileType + 20);
+    *a4 = *v11;
+    *((int*)(a4) + 1) = v11[1];
+    *((int*)(a4) + 2) = v11[2];
+    if ( a6 )
+    *a6 = *(int *)(v9 + 4);
+    return 1;
 }
 }
 

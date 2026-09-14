@@ -5,17 +5,14 @@
 // 0x407450
 int LinkedList::Init()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LinkedList_Init(_DWORD **this)
 {
-  int result; // eax
-
-  **(this + 1) = *this; /*0x407455*/
-  result = (int)*this; /*0x407457*/
-  (*this)[1] = *(this + 1); /*0x40745c*/
-  *this = this; /*0x40745f*/
-  *(this + 1) = this; /*0x407461*/
-  return result; /*0x407464*/
+    int result;
+    *(void**)this->Tail = *(void**)this;
+    result = (int)*(void**)this;
+    (*(void**)this)[1] = this->Tail;
+    *(void**)this = this;
+    this->Tail = this;
+    return result;
 }
 }
 
@@ -290,24 +287,21 @@ _DWORD *__thiscall LinkedList_FindPrev(_DWORD *this)
 // 0x556670
 unsigned int * LinkedList::FindNext()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall LinkedList_FindNext(_DWORD *this)
 {
-  _DWORD *v1; // edx
-  _DWORD *result; // eax
-
-  v1 = this + 1; /*0x556673*/
-  if ( !*(this + 1) ) /*0x556670*/
-    return this; /*0x55668d*/
-  do /*0x556681*/
+    int *v1;
+    int *result;
+    v1 = this + 1;
+    if ( !this->Tail )
+    return this;
+    do
   {
-    result = (_DWORD *)*v1; /*0x55667b*/
-    if ( (_DWORD *)*v1 == this ) /*0x55667f*/
-      break; /*0x55667f*/
-    v1 = result + 1; /*0x556684*/
+    result = (int *)*v1;
+    if ( (int *)*v1 == this )
+    break;
+    v1 = result + 1;
   }
-  while ( result[1] ); /*0x556681*/
-  return result; /*0x55668b*/
+    while ( result[1] );
+    return result;
 }
 }
 

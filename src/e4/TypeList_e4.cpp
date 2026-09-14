@@ -12,20 +12,17 @@
 // 0x477840
 void TypeList::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall TypeList::_vt03(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x477846*/
-  this->Count = 0; /*0x477849*/
-  if ( v2 && this->IsAllocated ) /*0x477850*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x477856*/
-    this->Items = 0; /*0x47785e*/
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
   }
-  this->IsAllocated = 0; /*0x477861*/
-  this->Capacity = 0; /*0x477864*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 

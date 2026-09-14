@@ -205,14 +205,12 @@ LABEL_26:
 // 0x5CABD0
 MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-MultiplayerSiege *__thiscall MultiplayerSiege::QueryInterface(_DWORD *this, char a2)
 {
-  *this = &vt_MultiplayerSiege; /*0x5cabd3*/
-  MultiplayerGameMode::Dtor(this); /*0x5cabd9*/
-  if ( (a2 & 1) != 0 ) /*0x5cabe3*/
-    __3_YAXPAX_Z(this); /*0x5cabe6*/
-  return (MultiplayerSiege *)this; /*0x5cabf0*/
+    *(void**)this = &vt_MultiplayerSiege;
+    MultiplayerGameMode::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (MultiplayerSiege *)this;
 }
 }
 

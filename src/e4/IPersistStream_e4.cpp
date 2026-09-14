@@ -7,13 +7,11 @@ namespace ra2 {
 namespace game {
 char IPersistStream::SetField(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall IPersistStream::SetField(int a1)
 {
-  if ( a1 == -1 ) /*0x5b36e3*/
-    return 1; /*0x5b36e5*/
-  else
-    return MEMORY[0xA8E3AE][32 * a1]; /*0x5b36eb*/
+    if ( a1 == -1 )
+    return 1;
+    else
+    return DataGlobal_A8E3AE[32 * a1];
 }
 }
 } // namespace game

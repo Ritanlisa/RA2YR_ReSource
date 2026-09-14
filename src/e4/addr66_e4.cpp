@@ -198,22 +198,19 @@ LABEL_6:
 namespace gamemd {
 double E4Recv_662240::sub_662240()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall sub_662240(_DWORD *this)
 {
-  int v1; // eax
-  int v2; // edx
-  double v3; // st7
-  int v5; // [esp+1Ch] [ebp-4h]
-
-  v1 = *(this + 6) - *(_DWORD *)(*(this + 3) + 156); /*0x66225b*/
-  v2 = *(this + 7) - *(_DWORD *)(*(this + 3) + 160); /*0x662263*/
-  v5 = *(this + 8) - *(_DWORD *)(*(this + 3) + 164); /*0x662267*/
-  v3 = Math::Sqrt((double)(v2 * v2 + v1 * v1)); /*0x662282*/
-  if ( v3 <= 0.0 ) /*0x662297*/
-    return -1.570796326794897; /*0x6622b5*/
-  else
-    return Math::ArcTan((double)v5 / v3); /*0x6622a7*/
+    int v1;
+    int v2;
+    double v3;
+    int v5;
+    v1 = this->M24 - *(int *)(this->M12 + 156);
+    v2 = this->M28 - *(int *)(this->M12 + 160);
+    v5 = this->M32 - *(int *)(this->M12 + 164);
+    v3 = Math::Sqrt((double)(v2 * v2 + v1 * v1));
+    if ( v3 <= 0.0 )
+    return -1.570796326794897;
+    else
+    return Math::ArcTan((double)v5 / v3);
 }
 }
 } // namespace gamemd
@@ -280,39 +277,35 @@ char UpdateBullets(int a1)
 namespace gamemd {
 void E4Recv_663960::sub_663960()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_663960(void *this)
 {
-  int v2; // eax
-  int v3; // ecx
-  int v4; // eax
-  void *v5; // eax
-
-  while ( this->M16 ) /*0x663966*/
+    int v2;
+    int v3;
+    int v4;
+    void *v5;
+    while ( this->M16 )
   {
-    __3_YAXPAX_Z(**((void ***)this + 1)); /*0x663971*/
-    v2 = this->M16; /*0x663976*/
-    if ( v2 > 0 ) /*0x66397e*/
+    __3_YAXPAX_Z(**((void ***)(this) + 1));
+    v2 = this->M16;
+    if ( v2 > 0 )
     {
-      v3 = v2 - 1; /*0x663980*/
-      v4 = 0; /*0x663983*/
-      for ( this->M16 = v3; /*0x66398a*/
-            v4 < this->M16;
-            *(_DWORD *)(this->M4 + 4 * v4 - 4) = *(_DWORD *)(this->M4 + 4 * v4) )
-      {
-        ++v4; /*0x66398f*/
+    v3 = v2 - 1;
+    v4 = 0;
+    for ( this->M16 = v3;
+    v4 < this->M16;
+    *(int *)(this->M4 + 4 * v4 - 4) = *(int *)(this->M4 + 4 * v4) ) {
+    ++v4;
       }
     }
   }
-  v5 = (void *)this->M4; /*0x6639a3*/
-  *(_DWORD *)this = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct; /*0x6639a6*/
-  if ( v5 && (unsigned char)this->M13 ) /*0x6639b0*/
+    v5 = (void *)this->M4;
+    *(int *)this = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct;
+    if ( v5 && (unsigned char)this->M13 )
   {
-    __3_YAXPAX_Z(v5); /*0x6639b6*/
-    this->M4 = 0; /*0x6639be*/
+    __3_YAXPAX_Z(v5);
+    this->M4 = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x6639c1*/
-  this->M8 = 0; /*0x6639c4*/
+    this->M13 = 0;
+    this->M8 = 0;
 }
 }
 } // namespace gamemd

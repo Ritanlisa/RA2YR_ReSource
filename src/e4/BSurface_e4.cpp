@@ -80,10 +80,8 @@ _DWORD *__thiscall BSurface_Constructor(_DWORD *this, int a2, int a3, int a4, in
 namespace gamemd {
 int BSurface::GetBytesPerPixel()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BSurface_GetBytesPerPixel(_DWORD *this)
 {
-  return *(this + 4); /*0x411633*/
+    return this->BytesPerPixel;
 }
 }
 } // namespace gamemd
@@ -92,10 +90,8 @@ int __thiscall BSurface_GetBytesPerPixel(_DWORD *this)
 namespace gamemd {
 int BSurface::GetPitch()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BSurface_GetPitch(_DWORD *this)
 {
-  return *(this + 4) * (*(int (__thiscall **)(_DWORD *))(*this + 124))(this); /*0x41164c*/
+    return this->BytesPerPixel *(void**)this->GetWidth();
 }
 }
 } // namespace gamemd
@@ -104,14 +100,12 @@ int __thiscall BSurface_GetPitch(_DWORD *this)
 namespace gamemd {
 BSurface * BSurface::ScalarDtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BSurface *__thiscall BSurface::ScalarDtor(char *this, char a2)
 {
-  Vector::Clear((int)(this + 20)); /*0x411656*/
-  *(_DWORD *)this = &Surface_Vtable; /*0x41165f*/
-  if ( (a2 & 1) != 0 ) /*0x411667*/
-    __3_YAXPAX_Z(this); /*0x41166a*/
-  return (BSurface *)this; /*0x411674*/
+    Vector::Clear((int)(this + 20));
+    *(int *)this = &Surface_Vtable;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BSurface *)this;
 }
 }
 } // namespace gamemd

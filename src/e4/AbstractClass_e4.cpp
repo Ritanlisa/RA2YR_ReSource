@@ -22,13 +22,11 @@ void __thiscall AbstractClass::DTOR(_DWORD *this)
 namespace gamemd {
 Surface * AbstractClass::getObjectValue(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-Surface *__thiscall AbstractClass::getObjectValue(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &Surface_Vtable; /*0x4115d9*/
-  if ( (a2 & 1) != 0 ) /*0x4115df*/
-    __3_YAXPAX_Z(this); /*0x4115e2*/
-  return (Surface *)this; /*0x4115ec*/
+    *(int *)this = &Surface_Vtable;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (Surface *)this;
 }
 }
 } // namespace gamemd
@@ -175,13 +173,11 @@ bool __thiscall AbstractClass::sub_464AC0(int this, _WORD *a2, int a3)
 namespace gamemd {
 Blitter * AbstractClass::getTileIndex(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-Blitter *__thiscall AbstractClass::getTileIndex(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x499cc9*/
-  if ( (a2 & 1) != 0 ) /*0x499ccf*/
-    __3_YAXPAX_Z(this); /*0x499cd2*/
-  return (Blitter *)this; /*0x499cdc*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (Blitter *)this;
 }
 }
 } // namespace gamemd
@@ -190,13 +186,11 @@ Blitter *__thiscall AbstractClass::getTileIndex(std::locale::facet *this, char a
 namespace gamemd {
 BlitPlainXlat * AbstractClass::setTileIndex(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BlitPlainXlat *__thiscall AbstractClass::setTileIndex(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x499ce9*/
-  if ( (a2 & 1) != 0 ) /*0x499cef*/
-    __3_YAXPAX_Z(this); /*0x499cf2*/
-  return (BlitPlainXlat *)this; /*0x499cfc*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitPlainXlat *)this;
 }
 }
 } // namespace gamemd
@@ -205,13 +199,11 @@ BlitPlainXlat *__thiscall AbstractClass::setTileIndex(std::locale::facet *this, 
 namespace gamemd {
 BlitTransXlat * AbstractClass::getOverlayType(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BlitTransXlat *__thiscall AbstractClass::getOverlayType(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x499d09*/
-  if ( (a2 & 1) != 0 ) /*0x499d0f*/
-    __3_YAXPAX_Z(this); /*0x499d12*/
-  return (BlitTransXlat *)this; /*0x499d1c*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransXlat *)this;
 }
 }
 } // namespace gamemd
@@ -220,13 +212,11 @@ BlitTransXlat *__thiscall AbstractClass::getOverlayType(std::locale::facet *this
 namespace gamemd {
 RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-RLEBlitter *__thiscall AbstractClass::clearOverlayFlags(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_RLEBlitter; /*0x499da9*/
-  if ( (a2 & 1) != 0 ) /*0x499daf*/
-    __3_YAXPAX_Z(this); /*0x499db2*/
-  return (RLEBlitter *)this; /*0x499dbc*/
+    *(int *)this = &vt_RLEBlitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (RLEBlitter *)this;
 }
 }
 } // namespace gamemd
@@ -235,13 +225,11 @@ RLEBlitter *__thiscall AbstractClass::clearOverlayFlags(std::locale::facet *this
 namespace gamemd {
 GScreenClass * AbstractClass::getHouseHandle(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-GScreenClass *__thiscall AbstractClass::getHouseHandle(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &off_7EA6FC; /*0x4f4c09*/
-  if ( (a2 & 1) != 0 ) /*0x4f4c0f*/
-    __3_YAXPAX_Z(this); /*0x4f4c12*/
-  return (GScreenClass *)this; /*0x4f4c1c*/
+    *(int *)this = &DataGlobal_7EA6FC;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (GScreenClass *)this;
 }
 }
 } // namespace gamemd
@@ -588,13 +576,11 @@ _DWORD *__thiscall AbstractClass::updateShroudMap(InitializerBase_MultiplayerGam
 namespace gamemd {
 FileClass * AbstractClass::processAITrigger(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-FileClass *__thiscall AbstractClass::processAITrigger(_DWORD *this, char a2)
 {
-  *this = &vt_FileClass; /*0x65c619*/
-  if ( (a2 & 1) != 0 ) /*0x65c61f*/
-    __3_YAXPAX_Z(this); /*0x65c622*/
-  return (FileClass *)this; /*0x65c62c*/
+    *(void**)this = &vt_FileClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (FileClass *)this;
 }
 }
 } // namespace gamemd

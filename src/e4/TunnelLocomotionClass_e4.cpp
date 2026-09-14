@@ -160,13 +160,11 @@ int __stdcall TunnelLocomotionClass::_vt05(int *a1, int *a2)
 // 0x72A210
 TunnelLocomotionClass * TunnelLocomotionClass::ProcessMove(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TunnelLocomotionClass *__thiscall TunnelLocomotionClass::ProcessMove(_DWORD *this, char a2)
 {
-  LocomotionClass::Construct(this); /*0x72a213*/
-  if ( (a2 & 1) != 0 ) /*0x72a21d*/
-    __3_YAXPAX_Z(this); /*0x72a220*/
-  return (TunnelLocomotionClass *)this; /*0x72a22a*/
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TunnelLocomotionClass *)this;
 }
 }
 

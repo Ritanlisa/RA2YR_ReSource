@@ -99,17 +99,14 @@ LABEL_7:
 namespace gamemd {
 int sub_5BDB90(int a1, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_5BDB90(int a1, char a2)
 {
-  int result; // eax
-
-  if ( !a2 ) /*0x5bdbaa*/
-    return MEMORY[0x82D028][7 * a1]; /*0x5bdbaa*/
-  result = MEMORY[0x82D034][7 * a1]; /*0x5bdbac*/
-  if ( result == -1 ) /*0x5bdbb2*/
-    return MEMORY[0x82D028][7 * a1]; /*0x5bdbb4*/
-  return result; /*0x5bdbb6*/
+    int result;
+    if ( !a2 )
+    return MouseClass_Cursors[7 * a1];
+    result = DataGlobal_82D034[7 * a1];
+    if ( result == -1 )
+    return MouseClass_Cursors[7 * a1];
+    return result;
 }
 }
 } // namespace gamemd

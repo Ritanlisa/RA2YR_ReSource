@@ -1006,17 +1006,14 @@ DWORD __fastcall TechnoClass_RevealRadarEvent(int a1, int a2)
 namespace gamemd {
 int E4Recv_70F740::sub_70F740(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_70F740(_DWORD *this, int a2)
 {
-  _DWORD *v2; // ecx
-  int v4; // [esp+4h] [ebp-8h]
-
-  v2 = this + 96; /*0x70f74c*/
-  *v2 = MEMORY[0xA8ED84]; /*0x70f752*/
-  v2[1] = v4; /*0x70f758*/
-  v2[2] = a2; /*0x70f75b*/
-  return v4; /*0x70f75e*/
+    int *v2;
+    int v4;
+    v2 = this + 96;
+    *v2 = g_CurrentFrame;
+    v2[1] = v4;
+    v2[2] = a2;
+    return v4;
 }
 }
 } // namespace gamemd
@@ -1025,28 +1022,25 @@ int __thiscall sub_70F740(_DWORD *this, int a2)
 namespace gamemd {
 int E4Recv_70FE50::sub_70FE50()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_70FE50(_DWORD *this)
 {
-  int v2; // ecx
-  int result; // eax
-
-  v2 = *(this + 117); /*0x70fe53*/
-  if ( v2 ) /*0x70fe5b*/
+    int v2;
+    int result;
+    v2 = this->M468;
+    if ( v2 )
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)v2 + 248))(v2); /*0x70fe5f*/
-    *(this + 117) = 0; /*0x70fe65*/
+    (*(void (__thiscall **)(int))(*(int *)(v2) + 248))(v2);
+    this->M468 = 0;
   }
-  result = *(this + 115); /*0x70fe6f*/
-  if ( result ) /*0x70fe77*/
+    result = this->M460;
+    if ( result )
   {
-    *(_DWORD *)(result + 464) = 0; /*0x70fe79*/
-    result = *(_DWORD *)(*(this + 115) + 540); /*0x70fe89*/
-    if ( result ) /*0x70fe91*/
-      *(_BYTE *)(result + 22392) = 1; /*0x70fe93*/
-    *(this + 115) = 0; /*0x70fe9a*/
+    *(int *)(result + 464) = 0;
+    result = *(int *)(this->M460 + 540);
+    if ( result )
+    *(char *)(result + 22392) = 1;
+    this->M460 = 0;
   }
-  return result; /*0x70fea4*/
+    return result;
 }
 }
 } // namespace gamemd

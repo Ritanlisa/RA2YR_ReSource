@@ -289,13 +289,11 @@ void __thiscall WWMouseClass::_vt05(_BYTE *this)
 // 0x7BA300
 MouseClass * WWMouseClass::updateHotspot(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-MouseClass *__thiscall WWMouseClass::updateHotspot(_DWORD *this, char a2)
 {
-  *this = &vt_Mouse; /*0x7ba309*/
-  if ( (a2 & 1) != 0 ) /*0x7ba30f*/
-    __3_YAXPAX_Z(this); /*0x7ba312*/
-  return (MouseClass *)this; /*0x7ba31c*/
+    *(void**)this = &vt_Mouse;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (MouseClass *)this;
 }
 }
 

@@ -5,11 +5,9 @@
 // 0x731D00
 void Selection::SetCurrent()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Selection_SetCurrent(void *this)
 {
-  MEMORY[0xB0FE54] = (int)this; /*0x731d00*/
-  MEMORY[0xB0FE58] = 0; /*0x731d06*/
+    DataGlobal_B0FE54 = (int)this;
+    DataGlobal_B0FE58 = 0;
 }
 }
 

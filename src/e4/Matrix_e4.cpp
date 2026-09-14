@@ -39,43 +39,39 @@ void __thiscall Matrix3x4::Translate(float *this, ParticleSystemClass *aP1)
 // 0x6D2360
 unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Matrix3x4::TransformCell(float *this, AbstractClass *aP1, AbstractClass *aP2)
 {
-  float *v4; // eax
-  BuildingTypeClass *v5; // esi
-  int v6; // eax
-  int v8; // [esp+4h] [ebp-1Ch]
-  float v9; // [esp+8h] [ebp-18h] BYREF
-  BuildingTypeClass *v10; // [esp+Ch] [ebp-14h]
-  int v11; // [esp+10h] [ebp-10h]
-  float v12[3]; // [esp+14h] [ebp-Ch] BYREF
-  AbstractClass *aP2a; // [esp+28h] [ebp+8h]
-
-  aP2a = *(AbstractClass **)aP2->__pad_0; /*0x6d2372*/
-  if ( (int)aP2a >= *(int *)&MEMORY[0xB077F8].__pad_5554[228] /*0x6d2386*/
-    || (v8 = *(_DWORD *)&aP2->__pad_0[4], v8 >= *(int *)&MEMORY[0xB077F8].__pad_5554[232]) )
+    float *v4;
+    BuildingTypeClass *v5;
+    int v6;
+    int v8;
+    float v9;
+    BuildingTypeClass *v10;
+    int v11;
+    float v12[3];
+    AbstractClass *aP2a;
+    aP2a = *(AbstractClass **)aP2->__pad_0;
+    if ( (int)aP2a >= *(int *)&g_OverlayTypeConfig.__pad_5554[228] || (v8 = *(int *)&aP2->__pad_0[4], v8 >= *(int *)&g_OverlayTypeConfig.__pad_5554[232]) )
   {
-    *(_DWORD *)aP1->__pad_0 = *(_DWORD *)&MEMORY[0xB077F8].__pad_5554[188]; /*0x6d2404*/
-    *(_DWORD *)&aP1->__pad_0[4] = *(_DWORD *)&MEMORY[0xB077F8].__pad_5554[192]; /*0x6d240c*/
-    *(_DWORD *)&aP1->__pad_0[8] = *(_DWORD *)&MEMORY[0xB077F8].__pad_5554[196]; /*0x6d2415*/
-    return aP1->__pad_0; /*0x6d23f7*/
+    *(int *)aP1->__pad_0 = *(int *)&g_OverlayTypeConfig.__pad_5554[188];
+    *(int *)&aP1->__pad_0[4] = *(int *)&g_OverlayTypeConfig.__pad_5554[192];
+    *(int *)&aP1->__pad_0[8] = *(int *)&g_OverlayTypeConfig.__pad_5554[196];
+    return aP1->__pad_0;
   }
-  else
+    else
   {
-    v9 = (float)(int)aP2a; /*0x6d2398*/
-    v11 = 0; /*0x6d23a4*/
-    *(float *)&v10 = (float)v8; /*0x6d23ac*/
-    v4 = TransformMatrix3x4Point(v12, this + 889, &v9); /*0x6d23b0*/
-    v9 = *v4; /*0x6d23b7*/
-    v10 = (BuildingTypeClass *)*((_DWORD *)v4 + 1); /*0x6d23c2*/
-    v11 = *((_DWORD *)v4 + 2); /*0x6d23c9*/
-    v5 = (BuildingTypeClass *)Math::RoundToInt(v9); /*0x6d23d6*/
-    v6 = Math::RoundToInt(*(float *)&v10); /*0x6d23d8*/
-    *(_DWORD *)aP1->__pad_0 = v5; /*0x6d23e5*/
-    *(_DWORD *)&aP1->__pad_0[4] = v6; /*0x6d23e7*/
-    *(_DWORD *)&aP1->__pad_0[8] = 0; /*0x6d23ec*/
-    return aP1->__pad_0; /*0x6d23ea*/
+    v9 = (float)(int)aP2a;
+    v11 = 0;
+    *(float *)&v10 = (float)v8;
+    v4 = TransformMatrix3x4Point(v12, this + 889, &v9);
+    v9 = *v4;
+    v10 = (BuildingTypeClass *)*((int *)(v4) + 1);
+    v11 = *((int *)(v4) + 2);
+    v5 = (BuildingTypeClass *)Math::RoundToInt(v9);
+    v6 = Math::RoundToInt(*(float *)&v10);
+    *(int *)aP1->__pad_0 = v5;
+    *(int *)&aP1->__pad_0[4] = v6;
+    *(int *)&aP1->__pad_0[8] = 0;
+    return aP1->__pad_0;
   }
 }
 }

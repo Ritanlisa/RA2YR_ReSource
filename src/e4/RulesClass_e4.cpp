@@ -718,100 +718,81 @@ int __thiscall sub_66D150(RulesClass *this)
 // 0x66D1F0
 int RulesClass::readSpecialWeapons()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_66D1F0(RulesClass *this)
 {
-  int result; // eax
-  char Bool_Overwrite; // al
-  int v4; // ecx
-  double v5; // [esp-8h] [ebp-10h]
-  int v6; // [esp+Ch] [ebp+4h]
-
-  result = INIClass::BinarySearchSection(v6, (unsigned __int8 *)MEMORY[0x839E64]); /*0x66d200*/
-  if ( result ) /*0x66d20c*/
+    int result;
+    char Bool_Overwrite;
+    int v4;
+    double v5;
+    int v6;
+    result = INIClass::BinarySearchSection(v6, (unsigned char *)DataGlobal_839E64);
+    if ( result )
   {
-    Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x66d223*/
-                       v6,
-                       (unsigned __int8 *)MEMORY[0x839E64],
-                       (unsigned __int8 *)MEMORY[0x83B39C],
-                       (unsigned char)this->ForceShieldColor);
-    v4 = this->FallBackCoefficient; /*0x66d228*/
-    *((_BYTE *)this + 6224) = Bool_Overwrite; /*0x66d22e*/
-    HIDWORD(v5) = this->CrewCount; /*0x66d240*/
-    LODWORD(v5) = v4; /*0x66d241*/
-    *((double *)this + 779) = INIClass::ReadDouble_Overwrite( /*0x66d24f*/
-                                v6,
-                                (unsigned __int8 *)MEMORY[0x839E64],
-                                (unsigned __int8 *)MEMORY[0x83B384],
-                                v5);
-    LOBYTE(result) = 1; /*0x66d256*/
+    Bool_Overwrite = INIClass::ReadBool_Overwrite( v6, (unsigned char *)DataGlobal_839E64, (unsigned char *)DataGlobal_83B39C, (unsigned char)this->ForceShieldColor);
+    v4 = this->FallBackCoefficient;
+    this->ForceShieldColor = Bool_Overwrite;
+    HIDWORD(v5) = this->CrewCount;
+    LODWORD(v5) = v4;
+    *((double *)(this) + 779) = INIClass::ReadDouble_Overwrite( v6, (unsigned char *)DataGlobal_839E64, (unsigned char *)DataGlobal_83B384, v5);
+    LOBYTE(result) = 1;
   }
-  else
+    else
   {
-    LOBYTE(result) = 0; /*0x66d25d*/
+    LOBYTE(result) = 0;
   }
-  return result; /*0x66d255*/
+    return result;
 }
 }
 
 // 0x66D480
 int RulesClass::ReadColorAdd()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_66D480(RulesClass *this)
 {
-  char *v1; // edi
-  int result; // eax
-  int v4; // esi
-  char *v5; // ebp
-  unsigned __int8 *StringByIndex; // eax
-  int Coord; // eax
-  char *v8; // edx
-  char v9; // cl
-  bool v10; // cc
-  char v11[4]; // [esp+Ch] [ebp-8h] BYREF
-  int v12; // [esp+10h] [ebp-4h]
-  char *v13; // [esp+18h] [ebp+4h] BYREF
-
-  v1 = v13; /*0x66d48b*/
-  result = INIClass::BinarySearchSection((int)v13, (unsigned __int8 *)MEMORY[0x839E50]); /*0x66d494*/
-  if ( result ) /*0x66d4a2*/
+    char *v1;
+    int result;
+    int v4;
+    char *v5;
+    unsigned char *StringByIndex;
+    int Coord;
+    char *v8;
+    char v9;
+    bool v10;
+    char v11[4];
+    int v12;
+    char *v13;
+    v1 = v13;
+    result = INIClass::BinarySearchSection((int)v13, (unsigned char *)DataGlobal_839E50);
+    if ( result )
   {
-    result = INIClass::GetKeyCount(v1, (unsigned __int8 *)MEMORY[0x839E50]); /*0x66d4ae*/
-    v4 = 0; /*0x66d4b3*/
-    v12 = result; /*0x66d4b7*/
-    if ( result > 0 ) /*0x66d4bb*/
+    result = INIClass::GetKeyCount(v1, (unsigned char *)DataGlobal_839E50);
+    v4 = 0;
+    v12 = result;
+    if ( result > 0 )
     {
-      v5 = (char *)this + 6260; /*0x66d4bd*/
-      do /*0x66d511*/
+    v5 = (char *)(this) + 6260;
+    do
       {
-        StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)MEMORY[0x839E50], v4); /*0x66d4cd*/
-        LOWORD(v13) = 0; /*0x66d4e6*/
-        BYTE2(v13) = 0; /*0x66d4ee*/
-        Coord = INIClass::GetCoord( /*0x66d4f2*/
-                  (unsigned __int8 ***)v1,
-                  (int)v11,
-                  (unsigned __int8 *)MEMORY[0x839E50],
-                  StringByIndex,
-                  (unsigned __int8 *)&v13);
-        v8 = v5; /*0x66d4f9*/
-        ++v4; /*0x66d4fb*/
-        v5 += 3; /*0x66d4fc*/
-        v9 = *(_BYTE *)(Coord + 2); /*0x66d502*/
-        *(_WORD *)v8 = *(_WORD *)Coord; /*0x66d505*/
-        result = v12; /*0x66d508*/
-        v10 = v4 < v12; /*0x66d50c*/
-        v8[2] = v9; /*0x66d50e*/
+    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v1, (unsigned char *)DataGlobal_839E50, v4);
+    LOWORD(v13) = 0;
+    BYTE2(v13) = 0;
+    Coord = INIClass::GetCoord( (unsigned char ***)v1, (int)v11, (unsigned char *)DataGlobal_839E50, StringByIndex, (unsigned char *)&v13);
+    v8 = v5;
+    ++v4;
+    v5 += 3;
+    v9 = *(char *)(Coord + 2);
+    *(short *)v8 = *(short *)Coord;
+    result = v12;
+    v10 = v4 < v12;
+    v8[2] = v9;
       }
-      while ( v10 ); /*0x66d511*/
+    while ( v10 );
     }
-    LOBYTE(result) = 1; /*0x66d516*/
+    LOBYTE(result) = 1;
   }
-  else
+    else
   {
-    LOBYTE(result) = 0; /*0x66d521*/
+    LOBYTE(result) = 0;
   }
-  return result; /*0x66d514*/
+    return result;
 }
 }
 

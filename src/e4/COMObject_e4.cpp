@@ -5,18 +5,16 @@
 // 0x4E1A00
 int COMObject::FindNextActive(unsigned char * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall COMObject_FindNextActive(_BYTE *a1)
 {
-  if ( !a1 ) /*0x4e1a02*/
-    return 0; /*0x4e1a16*/
-  while ( !a1[28] ) /*0x4e1a09*/
+    if ( !a1 )
+    return 0;
+    while ( !*((int*)(a1) + 28) )
   {
-    a1 = (_BYTE *)(*(int (__thiscall **)(_BYTE *))(*(_DWORD *)a1 + 4))(a1); /*0x4e1a10*/
-    if ( !a1 ) /*0x4e1a14*/
-      return 0; /*0x4e1a14*/
+    a1 = (char *)(*(int (__thiscall **)(char *))(*(int *)(a1) + 4))(a1);
+    if ( !a1 )
+    return 0;
   }
-  return 1; /*0x4e1a18*/
+    return 1;
 }
 }
 

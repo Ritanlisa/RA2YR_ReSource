@@ -5,59 +5,35 @@
 // 0x494500
 int BlitTransLucent25Alpha_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransLucent25Alpha_ushort::CallBlit0(
-        BlitTransXlatWriteAlpha_G *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8)
 {
-  return (*((int (__thiscall **)(BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, _DWORD))this->vfptr + 1))( /*0x49452a*/
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return (*((int (__thiscall **)(BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 }
 
 // 0x49A340
 BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BlitTransLucent25Alpha_ushort *__thiscall BlitTransLucent25Alpha_ushort::Blit(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 2); /*0x49a348*/
-  *this = &vt_BlitTransLucent25Alpha_unsigned_short; /*0x49a34b*/
-  FractalNoise::Release(v3); /*0x49a352*/
-  *(this + 2) = 0; /*0x49a35b*/
-  *this = &vt_Blitter; /*0x49a364*/
-  if ( (a2 & 1) != 0 ) /*0x49a36a*/
-    __3_YAXPAX_Z(this); /*0x49a36d*/
-  return (BlitTransLucent25Alpha_ushort *)this; /*0x49a377*/
+    void *v3;
+    v3 = (void *)*(this + 2);
+    *(void**)this = &vt_BlitTransLucent25Alpha_unsigned_short;
+    FractalNoise::Release(v3);
+    *(this + 2) = 0;
+    *(void**)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransLucent25Alpha_ushort *)this;
 }
 }
 
 // 0x49A380
 std::locale::facet * BlitTransLucent25Alpha_ushort::Constructor_Blitter(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-std::locale::facet *__thiscall BlitTransLucent25Alpha_ushort::Constructor_Blitter(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x49a389*/
-  if ( (a2 & 1) != 0 ) /*0x49a38f*/
-    __3_YAXPAX_Z(this); /*0x49a392*/
-  return this; /*0x49a39c*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 
@@ -97,66 +73,52 @@ int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::sub_496130(
 // 0x496170
 int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(
-        RLEBlitTransZRemapXlat_G *this,
-        int arg0,
-        unsigned __int8 *a2,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10,
-        int a11)
 {
-  int v11; // edx
-  int result; // eax
-  int v15; // ecx
-  int v17; // edx
-  int v18; // edi
-  unsigned __int8 v19; // dl
-  unsigned __int8 v20; // dl
-
-  v11 = a5; /*0x496170*/
-  result = arg0; /*0x496175*/
-  v15 = **((_DWORD **)this + 1); /*0x496187*/
-  if ( a5 <= 0 ) /*0x496189*/
+    int v11;
+    int result;
+    int v15;
+    int v17;
+    int v18;
+    unsigned char v19;
+    unsigned char v20;
+    v11 = a5;
+    result = arg0;
+    v15 = **((int **)(this) + 1);
+    if ( a5 <= 0 )
   {
-    v18 = a4; /*0x4961ad*/
+    v18 = a4;
   }
-  else
+    else
   {
-    do /*0x49619e*/
+    do
     {
-      if ( *a2++ ) /*0x49618b*/
-        --v11; /*0x49619b*/
-      else
-        v11 -= *a2++; /*0x496196*/
+    if ( *a2++ )
+    --v11;
+    else
+    v11 -= *a2++;
     }
-    while ( v11 > 0 ); /*0x49619e*/
-    v17 = -v11; /*0x4961a4*/
-    v18 = a4 - v17; /*0x4961a6*/
-    result = arg0 + 2 * v17; /*0x4961a8*/
+    while ( v11 > 0 );
+    v17 = -v11;
+    v18 = a4 - v17;
+    result = arg0 + 2 * v17;
   }
-  while ( v18 > 0 ) /*0x4961b3*/
+    while ( v18 > 0 )
   {
-    v19 = *a2++; /*0x4961b5*/
-    if ( v19 ) /*0x4961be*/
+    v19 = *a2++;
+    if ( v19 )
     {
-      result += 2; /*0x4961e4*/
-      --v18; /*0x4961e7*/
-      *(_WORD *)(result - 2) = *(_WORD *)(this->BlitTransLucent25AlphaZReadWrite_ushort_field_0x08 + 2 * *(unsigned __int8 *)(v19 + v15)); /*0x4961f2*/
+    result += 2;
+    --v18;
+    *(short *)(result - 2) = *(short *)(this->BlitTransLucent25AlphaZReadWrite_ushort_field_0x08 + 2 * *(unsigned char *)(v19 + v15));
     }
     else
     {
-      v20 = *a2++; /*0x4961c0*/
-      v18 -= v20; /*0x4961d1*/
-      result += 2 * v20; /*0x4961d3*/
+    v20 = *a2++;
+    v18 -= v20;
+    result += 2 * v20;
     }
   }
-  return result; /*0x4961fa*/
+    return result;
 }
 }
 
@@ -225,66 +187,49 @@ _WORD *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(
 // 0x49A720
 BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushort::Blit(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BlitTransLucent25AlphaZReadWrite_ushort *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Blit(
-        _DWORD *this,
-        char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 2); /*0x49a728*/
-  *this = &vt_BlitTransLucent25AlphaZReadWrite_unsigned_short; /*0x49a72b*/
-  FractalNoise::Release(v3); /*0x49a732*/
-  *(this + 2) = 0; /*0x49a73b*/
-  *this = &vt_Blitter; /*0x49a744*/
-  if ( (a2 & 1) != 0 ) /*0x49a74a*/
-    __3_YAXPAX_Z(this); /*0x49a74d*/
-  return (BlitTransLucent25AlphaZReadWrite_ushort *)this; /*0x49a757*/
+    void *v3;
+    v3 = (void *)*(this + 2);
+    *(void**)this = &vt_BlitTransLucent25AlphaZReadWrite_unsigned_short;
+    FractalNoise::Release(v3);
+    *(this + 2) = 0;
+    *(void**)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransLucent25AlphaZReadWrite_ushort *)this;
 }
 }
 
 // 0x49A760
 RLEBlitTransXlat * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-RLEBlitTransXlat *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter(
-        std::locale::facet *this,
-        char a2)
 {
-  *(_DWORD *)this = &vt_RLEBlitter; /*0x49a769*/
-  if ( (a2 & 1) != 0 ) /*0x49a76f*/
-    __3_YAXPAX_Z(this); /*0x49a772*/
-  return (RLEBlitTransXlat *)this; /*0x49a77c*/
+    *(int *)this = &vt_RLEBlitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (RLEBlitTransXlat *)this;
 }
 }
 
 // 0x49A780
 std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_0(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-std::locale::facet *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_0(
-        std::locale::facet *this,
-        char a2)
 {
-  *(_DWORD *)this = &vt_RLEBlitter; /*0x49a789*/
-  if ( (a2 & 1) != 0 ) /*0x49a78f*/
-    __3_YAXPAX_Z(this); /*0x49a792*/
-  return this; /*0x49a79c*/
+    *(int *)this = &vt_RLEBlitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 
 // 0x49A7A0
 std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_1(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-std::locale::facet *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_1(
-        std::locale::facet *this,
-        char a2)
 {
-  *(_DWORD *)this = &vt_RLEBlitter; /*0x49a7a9*/
-  if ( (a2 & 1) != 0 ) /*0x49a7af*/
-    __3_YAXPAX_Z(this); /*0x49a7b2*/
-  return this; /*0x49a7bc*/
+    *(int *)this = &vt_RLEBlitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 

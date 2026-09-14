@@ -524,12 +524,9 @@ char __fastcall sub_7321D0(int a1, unsigned __int8 (__fastcall *a2)(_DWORD, int)
 namespace gamemd {
 BOOL E4Recv_7325C0::sub_7325C0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_7325C0(void *this)
 {
-  return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 44))(this) != 6 /*0x7325f4*/
-      && *(_BYTE *)((*(int (__thiscall **)(void *))(*(_DWORD *)this + 132))(this) + 3516)
-      && (*(unsigned __int8 (__thiscall **)(void *))(*(_DWORD *)this + 316))(this);
+    return this->Vf44() != 6 && *(char *)(this->Vf132() + 3516)
+    && this->Vf316();
 }
 }
 } // namespace gamemd

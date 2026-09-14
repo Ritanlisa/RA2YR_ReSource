@@ -3033,11 +3033,9 @@ int Dialog_GetCurrentType()
 namespace gamemd {
 BOOL Dialog::GetField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Dialog::GetField(HWND this)
 {
-  EnumChildWindows(this, (WNDENUMPROC)DialogClass::Reposition, 1); /*0x775bab*/
-  return DialogClass::Reposition((SkirmishDialog *)this, 0); /*0x775bb9*/
+    EnumChildWindows(this, (WNDENUMPROC)DialogClass::Reposition, 1);
+    return DialogClass::Reposition((SkirmishDialog *)this, 0);
 }
 }
 } // namespace gamemd

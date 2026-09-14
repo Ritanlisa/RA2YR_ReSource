@@ -5,45 +5,40 @@
 // 0x427290
 char * AnimFile::Stub()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall AnimFile::_vt04(char *this)
 {
-  return this + 1292; /*0x427296*/
+    return this + 1292;
 }
 }
 
 // 0x4272A0
 AnimFile * AnimFile::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-AnimFile *__thiscall AnimFile::QueryInterface(void *this, char a2)
 {
-  char v3; // al
-  void (__thiscall ***v4)(_DWORD, int); // ecx
-
-  v3 = *((_BYTE *)this + 137); /*0x4272a6*/
-  *(_DWORD *)this = &vt_AnimFile; /*0x4272ac*/
-  if ( v3 ) /*0x4272b4*/
+    char v3;
+    void (__thiscall ***v4)(int, int);
+    v3 = *((char *)(this) + 137);
+    *(int *)this = &vt_AnimFile;
+    if ( v3 )
   {
-    (*(void (__thiscall **)(_DWORD))(**((_DWORD **)this + 33) + 52))(*((_DWORD *)this + 33)); /*0x4272be*/
-    *((_BYTE *)this + 137) = 0; /*0x4272c1*/
+    (*(void (__thiscall **)(int))(**((int **)(this) + 33) + 52))(*((int *)(this) + 33));
+    *((char *)(this) + 137) = 0;
   }
-  v4 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)this + 899); /*0x4272c7*/
-  *((_DWORD *)this + 33) = 0; /*0x4272cd*/
-  if ( v4 ) /*0x4272d5*/
+    v4 = (void (__thiscall ***)(int, int))*((int *)(this) + 899);
+    *((int *)(this) + 33) = 0;
+    if ( v4 )
   {
-    (**v4)(v4, 1); /*0x4272db*/
-    *((_DWORD *)this + 899) = 0; /*0x4272dd*/
+    (**v4)(v4, 1);
+    *((int *)(this) + 899) = 0;
   }
-  if ( *((_DWORD *)this + 900) ) /*0x4272e3*/
+    if ( *((int *)(this) + 900) )
   {
-    __3_YAXPAX_Z(*((void **)this + 900)); /*0x4272ee*/
-    *((_DWORD *)this + 900) = 0; /*0x4272f6*/
+    __3_YAXPAX_Z(*((void **)(this) + 900));
+    *((int *)(this) + 900) = 0;
   }
-  *((_BYTE *)this + 136) = 0; /*0x427300*/
-  *(_DWORD *)this = &vt_Animate; /*0x427308*/
-  if ( (a2 & 1) != 0 ) /*0x42730e*/
-    __3_YAXPAX_Z(this); /*0x427311*/
-  return (AnimFile *)this; /*0x42731b*/
+    *((char *)(this) + 136) = 0;
+    *(int *)this = &vt_Animate;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (AnimFile *)this;
 }
 }

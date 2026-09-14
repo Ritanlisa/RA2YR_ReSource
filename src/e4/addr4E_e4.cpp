@@ -86,23 +86,20 @@ _DWORD *__thiscall sub_4E0A00(_DWORD *this, int a2, _DWORD *a3)
 namespace gamemd {
 unsigned int * FoggedObjectClass_42::loc_4E0D30(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall FoggedObjectClass_42_::loc_4E0D30(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x4e0d33*/
-  *this = &vt_VectorClass_FootClass; /*0x4e0d36*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x4e0d40*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_FootClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x4e0d48*/
-    *(this + 1) = 0; /*0x4e0d50*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x4e0d5b*/
-  *(this + 2) = 0; /*0x4e0d61*/
-  if ( (a2 & 1) != 0 ) /*0x4e0d68*/
-    __3_YAXPAX_Z(this); /*0x4e0d6b*/
-  return this; /*0x4e0d75*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 } // namespace gamemd
@@ -311,44 +308,33 @@ LABEL_38:
 namespace gamemd {
 int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass * aP4, int aP5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4E2A50(int this, ControlClass *aP1, int aP2, int aP3, ControlClass *aP4, int aP5)
 {
-  int v7; // ecx
-  int v8; // eax
-
-  ControlClass::Construct( /*0x4e2a74*/
-    (_DWORD *)this,
-    aP1,
-    (ControlClass *)aP2,
-    (ControlClass *)aP3,
-    aP4,
-    (ControlClass *)aP5,
-    7,
-    (ControlClass *)1);
-  v7 = this->M48; /*0x4e2a79*/
-  *(_DWORD *)this = &vt_GaugeClass; /*0x4e2a83*/
-  if ( v7 != 255 ) /*0x4e2a89*/
+    int v7;
+    int v8;
+    ControlClass::Construct( (int *)this, aP1, (ControlClass *)aP2, (ControlClass *)aP3, aP4, (ControlClass *)aP5, 7, (ControlClass *)1);
+    v7 = this->M48;
+    *(int *)this = &vt_GaugeClass;
+    if ( v7 != 255 )
   {
-    this->M48 = 255; /*0x4e2a8d*/
-    VectorClass_ptr_ConvertClass::MarkDirty((_BYTE *)this); /*0x4e2a90*/
+    this->M48 = 255;
+    VectorClass_ptr_ConvertClass::MarkDirty((char *)this);
   }
-  v8 = 0; /*0x4e2a99*/
-  if ( *(int *)(this + 48) < 0 ) /*0x4e2a9d*/
-    v8 = this->M48; /*0x4e2a9f*/
-  if ( v8 != this->M52 ) /*0x4e2aa4*/
+    v8 = 0;
+    if ( this->M48 < 0 )
+    v8 = this->M48;
+    if ( v8 != this->M52 )
   {
-    this->M52 = v8; /*0x4e2aa6*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)this + 72))(this); /*0x4e2aad*/
+    this->M52 = v8;
+    this->Vf72();
   }
-  *(_BYTE *)(this + 45) = 1; /*0x4e2ab2*/
-  *(_BYTE *)(this + 46) = (int)aP4 > aP5; /*0x4e2ab9*/
-  *(_BYTE *)(this + 44) = 1; /*0x4e2abc*/
-  this->M56 = 0; /*0x4e2ac0*/
-  this->M60 = 0; /*0x4e2ac7*/
-  this->M64 = 0; /*0x4e2ace*/
-  *(_DWORD *)this = &vt_TriColorGaugeClass; /*0x4e2ad5*/
-  return this; /*0x4e2add*/
+    this->M45 = 1;
+    this->M46 = (int)aP4 > aP5;
+    this->M44 = 1;
+    this->M56 = 0;
+    this->M60 = 0;
+    this->M64 = 0;
+    *(int *)this = &vt_TriColorGaugeClass;
+    return this;
 }
 }
 } // namespace gamemd
@@ -811,10 +797,8 @@ LABEL_6:
 namespace gamemd {
 bool IsAvailableColorhWnd(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall IsAvailableColorhWnd(int a1)
 {
-  return MEMORY[0x8B4040][3 * a1] != -1; /*0x4e4592*/
+    return DataGlobal_8B4040[3 * a1] != -1;
 }
 }
 } // namespace gamemd
@@ -1266,10 +1250,8 @@ LABEL_22:
 namespace gamemd {
 bool sub_4E50A0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall sub_4E50A0(int a1)
 {
-  return MEMORY[0x8B3F38][3 * a1] != -1; /*0x4e50b2*/
+    return DataGlobal_8B3F38[3 * a1] != -1;
 }
 }
 } // namespace gamemd
@@ -1925,17 +1907,15 @@ LABEL_22:
 namespace gamemd {
 int E4Recv_4E6070::sub_4E6070()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4E6070(int this)
 {
-  this->M104 = 0; /*0x4e6087*/
-  this->M108 = 0; /*0x4e608a*/
-  Debug::Log(); /*0x4e608d*/
-  memset((void *)this, 0xFFu, 0x18u); /*0x4e609f*/
-  *(_WORD *)(this + 24) = -1; /*0x4e60a9*/
-  *(_DWORD *)(this + 4 * (this->M104)++) = 2; /*0x4e60cc*/
-  Debug::Log(); /*0x4e60d6*/
-  return this; /*0x4e612c*/
+    this->M104 = 0;
+    this->M108 = 0;
+    Debug::Log();
+    memset((void *)this, 0xFFu, 0x18u);
+    this->M24 = -1;
+    *(int *)(this + 4 * (this->M104)++) = 2;
+    Debug::Log();
+    return this;
 }
 }
 } // namespace gamemd

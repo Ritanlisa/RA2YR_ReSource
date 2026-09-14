@@ -490,23 +490,20 @@ HWND __fastcall sub_46DE20(HWND hDlg, int nCmdShow)
 namespace gamemd {
 int Lobby_GetPlayerColor(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Lobby_GetPlayerColor(int a1)
 {
-  wchar_t *v2; // esi
-
-  v2 = (wchar_t *)*(&MEMORY[0xA8DA90] + a1); /*0x46f814*/
-  if ( Player::IsObserver(v2) ) /*0x46f81d*/
-    return MEMORY[0xA8B2BC][a1]; /*0x46f826*/
-  if ( v2 == (wchar_t *)MEMORY[0xAC119C] ) /*0x46f836*/
-    return -2; /*0x46f839*/
-  if ( v2 == (wchar_t *)MEMORY[0xAC11A0] ) /*0x46f846*/
-    return -2; /*0x46f849*/
-  if ( v2 == MEMORY[0xAC11B0] ) /*0x46f856*/
-    return -2; /*0x46f859*/
-  if ( v2 == (wchar_t *)MEMORY[0xAC11B4] ) /*0x46f866*/
-    return -2; /*0x46f869*/
-  return SessionClass::GetPlayerColor((int)v2); /*0x46f82d*/
+    wchar_t *v2;
+    v2 = (wchar_t *)*(&g_NetworkPlayerName + a1);
+    if ( Player::IsObserver(v2) )
+    return g_CampaignConfig[a1];
+    if ( v2 == (wchar_t *)g_HouseClass_ObserverFlags )
+    return -2;
+    if ( v2 == (wchar_t *)g_Lobby_PlayerCount )
+    return -2;
+    if ( v2 == g_Lobby_PlayerReady )
+    return -2;
+    if ( v2 == (wchar_t *)g_Lobby_MaxPlayers )
+    return -2;
+    return SessionClass::GetPlayerColor((int)v2);
 }
 }
 } // namespace gamemd
@@ -515,23 +512,20 @@ int __fastcall Lobby_GetPlayerColor(int a1)
 namespace gamemd {
 int HouseClass_GetSideIndex(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall HouseClass_GetSideIndex(int a1)
 {
-  wchar_t *v2; // esi
-
-  v2 = (wchar_t *)*(&MEMORY[0xA8DA90] + a1); /*0x46f884*/
-  if ( Player::IsObserver(v2) ) /*0x46f88d*/
-    return MEMORY[0xA8B2DC][a1]; /*0x46f896*/
-  if ( v2 == (wchar_t *)MEMORY[0xAC119C] ) /*0x46f8a6*/
-    return -2; /*0x46f8a9*/
-  if ( v2 == (wchar_t *)MEMORY[0xAC11A0] ) /*0x46f8b6*/
-    return -2; /*0x46f8b9*/
-  if ( v2 == MEMORY[0xAC11B0] ) /*0x46f8c6*/
-    return -2; /*0x46f8c9*/
-  if ( v2 == (wchar_t *)MEMORY[0xAC11B4] ) /*0x46f8d6*/
-    return -2; /*0x46f8d9*/
-  return SessionClass::GetOption((int)v2); /*0x46f89d*/
+    wchar_t *v2;
+    v2 = (wchar_t *)*(&g_NetworkPlayerName + a1);
+    if ( Player::IsObserver(v2) )
+    return g_CampaignSideIndex[a1];
+    if ( v2 == (wchar_t *)g_HouseClass_ObserverFlags )
+    return -2;
+    if ( v2 == (wchar_t *)g_Lobby_PlayerCount )
+    return -2;
+    if ( v2 == g_Lobby_PlayerReady )
+    return -2;
+    if ( v2 == (wchar_t *)g_Lobby_MaxPlayers )
+    return -2;
+    return SessionClass::GetOption((int)v2);
 }
 }
 } // namespace gamemd

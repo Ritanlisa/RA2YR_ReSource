@@ -5,13 +5,11 @@
 // 0x7669F0
 VectorCursor * COMClass::disconnectPoint(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorCursor *__thiscall COMClass::disconnectPoint(_DWORD *this, char a2)
 {
-  *this = &vt_VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption; /*0x7669f9*/
-  if ( (a2 & 1) != 0 ) /*0x7669ff*/
-    __3_YAXPAX_Z(this); /*0x766a02*/
-  return (VectorCursor *)this; /*0x766a0c*/
+    *(void**)this = &vt_VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorCursor *)this;
 }
 }
 

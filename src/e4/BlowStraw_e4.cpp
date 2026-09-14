@@ -7,25 +7,22 @@
 namespace gamemd {
 TabClass * BlowStraw_29::Read(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TabClass *__thiscall BlowStraw_29_::Read(char *this, char a2)
 {
-  char *v3; // esi
-  int v4; // edi
-
-  v3 = this + 21484; /*0x5be9e5*/
-  v4 = 4; /*0x5be9eb*/
-  do /*0x5bea06*/
+    char *v3;
+    int v4;
+    v3 = this + 21484;
+    v4 = 4;
+    do
   {
-    v3 -= 3988; /*0x5be9f5*/
-    Array::ForEachReverse((int)v3, 52, 75, (int (__thiscall *)(int))nullsub_56); /*0x5bea00*/
-    --v4; /*0x5bea05*/
+    v3 -= 3988;
+    Array::ForEachReverse((int)v3, 52, 75, (int (__thiscall *)(int))nullsub_56);
+    --v4;
   }
-  while ( v4 ); /*0x5bea06*/
-  RadarClass::Destruct(this); /*0x5bea0a*/
-  if ( (a2 & 1) != 0 ) /*0x5bea14*/
-    __3_YAXPAX_Z(this); /*0x5bea17*/
-  return (TabClass *)this; /*0x5bea1f*/
+    while ( v4 );
+    RadarClass::Destruct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TabClass *)this;
 }
 }
 } // namespace gamemd

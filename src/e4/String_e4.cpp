@@ -172,11 +172,9 @@ int __thiscall String::To_Waypoint(char *this)
 namespace gamemd {
 ObjectClass * String::FormatDword()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall String::FormatDword(char *this)
 {
-  sprintf(this, (ObjectClass *)&stru_817F40.fallRate, dword_822D1C); /*0x777b3f*/
-  return (ObjectClass *)this; /*0x777b49*/
+    sprintf(this, (ObjectClass *)&DataGlobal_817F40.fallRate, DataGlobal_822D1C);
+    return (ObjectClass *)this;
 }
 }
 } // namespace gamemd
@@ -185,11 +183,9 @@ ObjectClass *__thiscall String::FormatDword(char *this)
 namespace gamemd {
 ObjectClass * String::CopyConstant()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall String::CopyConstant(char *this)
 {
-  strncpy(this, g_Str_gsmallwoo, (IUnknown *)0x20); /*0x777b6b*/
-  return (ObjectClass *)this; /*0x777b75*/
+    strncpy(this, g_Str_gsmallwoo, (IUnknown *)0x20);
+    return (ObjectClass *)this;
 }
 }
 } // namespace gamemd

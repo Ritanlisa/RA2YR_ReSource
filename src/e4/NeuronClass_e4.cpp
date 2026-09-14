@@ -94,10 +94,8 @@ NeuronClass *__thiscall NeuronClass::Reset(_DWORD *this, char a2)
 namespace gamemd {
 int NeuronClass_25::Update(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NeuronClass_25_::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x43ab2a*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -106,31 +104,28 @@ int __thiscall NeuronClass_25_::_vt06(_DWORD *this, int a2)
 namespace gamemd {
 char NeuronClass_25::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall NeuronClass_25_::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x43ab32*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x43ab3d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x43ab3f*/
-    if ( v2 <= 0 ) /*0x43ab43*/
-      return 1; /*0x43ab63*/
-    v4 = (_DWORD *)*(this + 1); /*0x43ab45*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x43ab4b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x43ab54*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x43ab56*/
-      ++v4; /*0x43ab57*/
-      if ( v3 >= v2 ) /*0x43ab5c*/
-        return 1; /*0x43ab5c*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x43ab5e*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -139,50 +134,47 @@ char __thiscall NeuronClass_25_::_vt01(int *this, int a2)
 namespace gamemd {
 char NeuronClass_25::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall NeuronClass_25_::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x43ab7c*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x43ab86*/
-    if ( a3 ) /*0x43ab8c*/
-      v4 = a3; /*0x43aba2*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x43ab9e*/
-    *((_BYTE *)this + 12) = 1; /*0x43aba6*/
-    if ( v4 ) /*0x43abaa*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( this->NeuronClass_25_field_0x4 ) /*0x43abb5*/
+    if ( this->NeuronClass_25_field_0x4 )
       {
-        v6 = this->NeuronClass_25_field_0x8; /*0x43abbc*/
-        if ( a2 < v6 ) /*0x43abc1*/
-          v6 = a2; /*0x43abc3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->NeuronClass_25_field_0x4 + 4 * i - 4) ) /*0x43abc9*/
-          ++i; /*0x43abce*/
-        if ( *((_BYTE *)this + 13) ) /*0x43abdb*/
+    v6 = this->NeuronClass_25_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->NeuronClass_25_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x43abe6*/
-          this->NeuronClass_25_field_0x4 = 0; /*0x43abee*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->NeuronClass_25_field_0x4 = 0;
         }
       }
-      this->NeuronClass_25_field_0x4 = v4; /*0x43abf7*/
-      this->NeuronClass_25_field_0x8 = a2; /*0x43abff*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x43ac02*/
-      return 1; /*0x43ac08*/
+    this->NeuronClass_25_field_0x4 = v4;
+    this->NeuronClass_25_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x43abaf*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x43ac12*/
-    return 1; /*0x43ac18*/
+    this->ddtor();
+    return 1;
   }
 }
 }
@@ -192,16 +184,14 @@ char __thiscall NeuronClass_25_::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 void NeuronClass_25::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall NeuronClass_25_::_vt03(int this)
 {
-  if ( this->NeuronClass_25_field_0x4 && *(_BYTE *)(this + 13) ) /*0x43ac2d*/
+    if ( this->NeuronClass_25_field_0x4 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x43ac33*/
-    this->NeuronClass_25_field_0x4 = 0; /*0x43ac3b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->NeuronClass_25_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x43ac3e*/
-  this->NeuronClass_25_field_0x8 = 0; /*0x43ac41*/
+    this->IsAllocated = 0;
+    this->NeuronClass_25_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -210,25 +200,22 @@ void __thiscall NeuronClass_25_::_vt03(int this)
 namespace gamemd {
 int NeuronClass_25::Activate(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NeuronClass_25_::_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->NeuronClass_25_field_0xC ) /*0x43ac50*/
-    return 0; /*0x43ac58*/
-  v3 = this->NeuronClass_25_field_0x8; /*0x43ac5e*/
-  result = 0; /*0x43ac61*/
-  if ( v3 <= 0 ) /*0x43ac65*/
-    return -1; /*0x43ac7c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x43ac6b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->NeuronClass_25_field_0xC )
+    return 0;
+    v3 = this->NeuronClass_25_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x43ac7a*/
-      return -1; /*0x43ac7a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x43ac5a*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -237,23 +224,20 @@ int __thiscall NeuronClass_25_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 VectorClass * NeuronClass_25::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall NeuronClass_25_::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x43acb3*/
-  *this = &vt_VectorClass_NeuronClass; /*0x43acb6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x43acc0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_NeuronClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x43acc8*/
-    *(this + 1) = 0; /*0x43acd0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x43acdb*/
-  *(this + 2) = 0; /*0x43ace1*/
-  if ( (a2 & 1) != 0 ) /*0x43ace8*/
-    __3_YAXPAX_Z(this); /*0x43aceb*/
-  return (VectorClass *)this; /*0x43acf5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd

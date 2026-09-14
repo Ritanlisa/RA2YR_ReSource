@@ -6,15 +6,12 @@
 namespace gamemd {
 float * VoxelAnimClass::QuaternionToMatrix(float * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-float *__thiscall sub_4399E0(float *this, float *a2)
 {
-  float *v2; // esi
-  float v4[12]; // [esp+8h] [ebp-30h] BYREF
-
-  v2 = ToQuaternionMatrix(v4, this + 12); /*0x4399f1*/
-  qmemcpy(a2, v2, 0x30u); /*0x4399fe*/
-  return a2; /*0x439a00*/
+    float *v2;
+    float v4[12];
+    v2 = ToQuaternionMatrix(v4, this + 12);
+    qmemcpy(a2, v2, 0x30u);
+    return a2;
 }
 }
 } // namespace gamemd
@@ -466,13 +463,11 @@ int __thiscall VoxelAnimClass::_vt34(_DWORD *this)
 namespace gamemd {
 VoxelAnimClass * VoxelAnimClass::DrawVoxel(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VoxelAnimClass *__thiscall VoxelAnimClass::DrawVoxel(#374 *this, char a2)
 {
-  VoxelAnimClass::CleanupMembers(this); /*0x74ab53*/
-  if ( (a2 & 1) != 0 ) /*0x74ab5d*/
-    __3_YAXPAX_Z(this); /*0x74ab60*/
-  return (VoxelAnimClass *)this; /*0x74ab6a*/
+    VoxelAnimClass::CleanupMembers(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VoxelAnimClass *)this;
 }
 }
 } // namespace gamemd

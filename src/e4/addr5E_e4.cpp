@@ -3509,46 +3509,44 @@ void __fastcall EnablePlayerSlotControls(HWND hDlg, bool a2)
 namespace gamemd {
 char ** Player_GetTypeString(char ** a1, wchar_t * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char **__fastcall Player_GetTypeString(char **a1, wchar_t *a2)
 {
-  if ( a2 == (wchar_t *)MEMORY[0xAC119C] ) /*0x5edefa*/
+    if ( a2 == (wchar_t *)g_HouseClass_ObserverFlags )
   {
-    String::Assign(a1, MEMORY[0x831704][0]); /*0x5edf02*/
-    return a1; /*0x5edf07*/
+    String::Assign(a1, DataGlobal_831704[0]);
+    return a1;
   }
-  else if ( a2 == (wchar_t *)MEMORY[0xAC11A0] ) /*0x5edf11*/
+    else if ( a2 == (wchar_t *)g_Lobby_PlayerCount )
   {
-    String::Assign(a1, MEMORY[0x831708][0]); /*0x5edf1c*/
-    return a1; /*0x5edf21*/
+    String::Assign(a1, DataGlobal_831708[0]);
+    return a1;
   }
-  else if ( a2 == MEMORY[0xAC11B0] ) /*0x5edf2b*/
+    else if ( a2 == g_Lobby_PlayerReady )
   {
-    String::Assign(a1, MEMORY[0x83170C][0]); /*0x5edf36*/
-    return a1; /*0x5edf3b*/
+    String::Assign(a1, DataGlobal_83170C[0]);
+    return a1;
   }
-  else if ( a2 == (wchar_t *)MEMORY[0xAC11A4] ) /*0x5edf45*/
+    else if ( a2 == (wchar_t *)g_Lobby_PlayerTeam )
   {
-    String::Assign(a1, MEMORY[0x831710][0]); /*0x5edf4f*/
-    return a1; /*0x5edf54*/
+    String::Assign(a1, DataGlobal_831710[0]);
+    return a1;
   }
-  else if ( a2 == (wchar_t *)MEMORY[0xAC11A8] ) /*0x5edf5e*/
+    else if ( a2 == (wchar_t *)g_Lobby_PlayerSide )
   {
-    String::Assign(a1, MEMORY[0x831714][0]); /*0x5edf69*/
-    return a1; /*0x5edf6e*/
+    String::Assign(a1, DataGlobal_831714[0]);
+    return a1;
   }
-  else if ( a2 == (wchar_t *)MEMORY[0xAC11AC] ) /*0x5edf78*/
+    else if ( a2 == (wchar_t *)g_Lobby_PlayerColor )
   {
-    String::Assign(a1, MEMORY[0x831718][0]); /*0x5edf83*/
-    return a1; /*0x5edf88*/
+    String::Assign(a1, DataGlobal_831718[0]);
+    return a1;
   }
-  else
-  {
-    if ( a2 == (wchar_t *)MEMORY[0xAC11B4] ) /*0x5edf92*/
-      String::Assign(a1, MEMORY[0x83171C]); /*0x5edf9c*/
     else
-      String::Assign(a1, MEMORY[0x83170C][0]); /*0x5edfae*/
-    return a1; /*0x5edfa1*/
+  {
+    if ( a2 == (wchar_t *)g_Lobby_MaxPlayers )
+    String::Assign(a1, DataGlobal_83171C);
+    else
+    String::Assign(a1, DataGlobal_83170C[0]);
+    return a1;
   }
 }
 }

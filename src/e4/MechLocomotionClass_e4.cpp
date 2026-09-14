@@ -5,16 +5,14 @@
 // 0x5B1960
 int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall MechLocomotionClass::_vt03(int a1, _DWORD *a2)
 {
-  if ( !a2 ) /*0x5b1966*/
-    return -2147467261; /*0x5b1968*/
-  *a2 = 1439777208; /*0x5b1976*/
-  a2[1] = 298965908; /*0x5b197e*/
-  a2[2] = 1610651820; /*0x5b1987*/
-  a2[3] = -1252326136; /*0x5b1990*/
-  return 0; /*0x5b196d*/
+    if ( !a2 )
+    return -2147467261;
+    *a2 = 1439777208;
+    *((int*)(a2) + 1) = 298965908;
+    *((int*)(a2) + 2) = 1610651820;
+    *((int*)(a2) + 3) = -1252326136;
+    return 0;
 }
 }
 
@@ -42,15 +40,13 @@ int __stdcall MechLocomotionClass::_vt05(int *a1, int *a2)
 // 0x5B1B50
 MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-MechLocomotionClass *__thiscall MechLocomotionClass::ProcessMove(_DWORD *this, char a2)
 {
-  *this = &MechLocomotionClass::`vftable'; /*0x5b1b53*/
-  *(this + 1) = &vt_MechLocomotionClass; /*0x5b1b59*/
-  LocomotionClass::Construct(this); /*0x5b1b60*/
-  if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
-    __3_YAXPAX_Z(this); /*0x5b1b6d*/
-  return (MechLocomotionClass *)this; /*0x5b1b77*/
+    *(void**)this = vt_MechLocomotionClass;
+    *(this + 1) = &vt_MechLocomotionClass;
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (MechLocomotionClass *)this;
 }
 }
 

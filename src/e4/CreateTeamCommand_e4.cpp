@@ -7,12 +7,10 @@
 namespace gamemd {
 unsigned int * CreateTeamCommand::Construct(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall CreateTeamCommand_Constructor(_DWORD *this, int a2)
 {
-  *(this + 1) = a2; /*0x535c06*/
-  *this = &vt_CreateTeamCommandClass; /*0x535c09*/
-  return this; /*0x535c0f*/
+    this->Items = a2;
+    *(void**)this = &vt_CreateTeamCommandClass;
+    return this;
 }
 }
 } // namespace gamemd
@@ -21,11 +19,9 @@ _DWORD *__thiscall CreateTeamCommand_Constructor(_DWORD *this, int a2)
 namespace gamemd {
 ObjectClass * CreateTeamCommand::AddRef()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall CreateTeamCommand::AddRef(_DWORD *this)
 {
-  sprintf(&HouseClass_Player.__pad_5568[25344], &stru_826F84, (INIClass *)*(this + 1)); /*0x535c2e*/
-  return (ObjectClass *)&HouseClass_Player.__pad_5568[25344]; /*0x535c3b*/
+    sprintf(&HouseClass_Player.__pad_5568[25344], &DataGlobal_826F84, (INIClass *)this->Items);
+    return (ObjectClass *)&HouseClass_Player.__pad_5568[25344];
 }
 }
 } // namespace gamemd
@@ -34,13 +30,11 @@ ObjectClass *__thiscall CreateTeamCommand::AddRef(_DWORD *this)
 namespace gamemd {
 CreateTeamCommand * CreateTeamCommand::performAction_0(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-CreateTeamCommand *__thiscall CreateTeamCommand::performAction_0(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_CommandClass; /*0x535cd9*/
-  if ( (a2 & 1) != 0 ) /*0x535cdf*/
-    __3_YAXPAX_Z(this); /*0x535ce2*/
-  return (CreateTeamCommand *)this; /*0x535cec*/
+    *(int *)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (CreateTeamCommand *)this;
 }
 }
 } // namespace gamemd
@@ -61,13 +55,11 @@ int __thiscall CreateTeamCommand::vt02(void *this)
 namespace gamemd {
 CommandClass * CreateTeamCommand::performAction_1(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-CommandClass *__thiscall CreateTeamCommand::performAction_1(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_CommandClass; /*0x535d09*/
-  if ( (a2 & 1) != 0 ) /*0x535d0f*/
-    __3_YAXPAX_Z(this); /*0x535d12*/
-  return (CommandClass *)this; /*0x535d1c*/
+    *(int *)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (CommandClass *)this;
 }
 }
 } // namespace gamemd
@@ -76,13 +68,11 @@ CommandClass *__thiscall CreateTeamCommand::performAction_1(std::locale::facet *
 namespace gamemd {
 SelectTeamCommand * CreateTeamCommand::performAction_22(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-SelectTeamCommand *__thiscall CreateTeamCommand::performAction_22(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_CommandClass; /*0x536099*/
-  if ( (a2 & 1) != 0 ) /*0x53609f*/
-    __3_YAXPAX_Z(this); /*0x5360a2*/
-  return (SelectTeamCommand *)this; /*0x5360ac*/
+    *(int *)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (SelectTeamCommand *)this;
 }
 }
 } // namespace gamemd
@@ -91,13 +81,11 @@ SelectTeamCommand *__thiscall CreateTeamCommand::performAction_22(std::locale::f
 namespace gamemd {
 AddTeamCommand * CreateTeamCommand::performAction_23(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-AddTeamCommand *__thiscall CreateTeamCommand::performAction_23(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_CommandClass; /*0x536189*/
-  if ( (a2 & 1) != 0 ) /*0x53618f*/
-    __3_YAXPAX_Z(this); /*0x536192*/
-  return (AddTeamCommand *)this; /*0x53619c*/
+    *(int *)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (AddTeamCommand *)this;
 }
 }
 } // namespace gamemd
@@ -106,13 +94,11 @@ AddTeamCommand *__thiscall CreateTeamCommand::performAction_23(std::locale::face
 namespace gamemd {
 CenterTeamCommand * CreateTeamCommand::performAction_24(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-CenterTeamCommand *__thiscall CreateTeamCommand::performAction_24(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_CommandClass; /*0x536279*/
-  if ( (a2 & 1) != 0 ) /*0x53627f*/
-    __3_YAXPAX_Z(this); /*0x536282*/
-  return (CenterTeamCommand *)this; /*0x53628c*/
+    *(int *)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (CenterTeamCommand *)this;
 }
 }
 } // namespace gamemd
@@ -121,13 +107,11 @@ CenterTeamCommand *__thiscall CreateTeamCommand::performAction_24(std::locale::f
 namespace gamemd {
 TauntCommandClass * CreateTeamCommand::performAction_25(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TauntCommandClass *__thiscall CreateTeamCommand::performAction_25(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_CommandClass; /*0x536589*/
-  if ( (a2 & 1) != 0 ) /*0x53658f*/
-    __3_YAXPAX_Z(this); /*0x536592*/
-  return (TauntCommandClass *)this; /*0x53659c*/
+    *(int *)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TauntCommandClass *)this;
 }
 }
 } // namespace gamemd
@@ -291,13 +275,11 @@ _DWORD *__thiscall CreateTeamCommand::performAction_158(View3CommandClass *this)
 namespace gamemd {
 ToggleSellCommandClass * CreateTeamCommand::performAction_214(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ToggleSellCommandClass *__thiscall CreateTeamCommand::performAction_214(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_CommandClass; /*0x5381a9*/
-  if ( (a2 & 1) != 0 ) /*0x5381af*/
-    __3_YAXPAX_Z(this); /*0x5381b2*/
-  return (ToggleSellCommandClass *)this; /*0x5381bc*/
+    *(int *)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (ToggleSellCommandClass *)this;
 }
 }
 } // namespace gamemd
@@ -306,13 +288,11 @@ ToggleSellCommandClass *__thiscall CreateTeamCommand::performAction_214(std::loc
 namespace gamemd {
 ToggleRepairCommandClass * CreateTeamCommand::performAction_215(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ToggleRepairCommandClass *__thiscall CreateTeamCommand::performAction_215(_DWORD *this, char a2)
 {
-  *this = &vt_CommandClass; /*0x5381c9*/
-  if ( (a2 & 1) != 0 ) /*0x5381cf*/
-    __3_YAXPAX_Z(this); /*0x5381d2*/
-  return (ToggleRepairCommandClass *)this; /*0x5381dc*/
+    *(void**)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (ToggleRepairCommandClass *)this;
 }
 }
 } // namespace gamemd
@@ -321,13 +301,11 @@ ToggleRepairCommandClass *__thiscall CreateTeamCommand::performAction_215(_DWORD
 namespace gamemd {
 ScatterCommandClass * CreateTeamCommand::performAction_219(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ScatterCommandClass *__thiscall CreateTeamCommand::performAction_219(_DWORD *this, char a2)
 {
-  *this = &vt_CommandClass; /*0x538249*/
-  if ( (a2 & 1) != 0 ) /*0x53824f*/
-    __3_YAXPAX_Z(this); /*0x538252*/
-  return (ScatterCommandClass *)this; /*0x53825c*/
+    *(void**)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (ScatterCommandClass *)this;
 }
 }
 } // namespace gamemd
@@ -336,13 +314,11 @@ ScatterCommandClass *__thiscall CreateTeamCommand::performAction_219(_DWORD *thi
 namespace gamemd {
 GuardCommandClass * CreateTeamCommand::performAction_220(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-GuardCommandClass *__thiscall CreateTeamCommand::performAction_220(_DWORD *this, char a2)
 {
-  *this = &vt_CommandClass; /*0x538269*/
-  if ( (a2 & 1) != 0 ) /*0x53826f*/
-    __3_YAXPAX_Z(this); /*0x538272*/
-  return (GuardCommandClass *)this; /*0x53827c*/
+    *(void**)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (GuardCommandClass *)this;
 }
 }
 } // namespace gamemd
@@ -351,13 +327,11 @@ GuardCommandClass *__thiscall CreateTeamCommand::performAction_220(_DWORD *this,
 namespace gamemd {
 StopCommandClass * CreateTeamCommand::performAction_221(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-StopCommandClass *__thiscall CreateTeamCommand::performAction_221(_DWORD *this, char a2)
 {
-  *this = &vt_CommandClass; /*0x538289*/
-  if ( (a2 & 1) != 0 ) /*0x53828f*/
-    __3_YAXPAX_Z(this); /*0x538292*/
-  return (StopCommandClass *)this; /*0x53829c*/
+    *(void**)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (StopCommandClass *)this;
 }
 }
 } // namespace gamemd
@@ -366,13 +340,11 @@ StopCommandClass *__thiscall CreateTeamCommand::performAction_221(_DWORD *this, 
 namespace gamemd {
 DeployCommandClass * CreateTeamCommand::performAction_223(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DeployCommandClass *__thiscall CreateTeamCommand::performAction_223(_DWORD *this, char a2)
 {
-  *this = &vt_CommandClass; /*0x5382c9*/
-  if ( (a2 & 1) != 0 ) /*0x5382cf*/
-    __3_YAXPAX_Z(this); /*0x5382d2*/
-  return (DeployCommandClass *)this; /*0x5382dc*/
+    *(void**)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DeployCommandClass *)this;
 }
 }
 } // namespace gamemd
@@ -381,13 +353,11 @@ DeployCommandClass *__thiscall CreateTeamCommand::performAction_223(_DWORD *this
 namespace gamemd {
 ScreenCaptureCommandClass * CreateTeamCommand::performAction_235(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ScreenCaptureCommandClass *__thiscall CreateTeamCommand::performAction_235(_DWORD *this, char a2)
 {
-  *this = &vt_CommandClass; /*0x538449*/
-  if ( (a2 & 1) != 0 ) /*0x53844f*/
-    __3_YAXPAX_Z(this); /*0x538452*/
-  return (ScreenCaptureCommandClass *)this; /*0x53845c*/
+    *(void**)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (ScreenCaptureCommandClass *)this;
 }
 }
 } // namespace gamemd
@@ -396,13 +366,11 @@ ScreenCaptureCommandClass *__thiscall CreateTeamCommand::performAction_235(_DWOR
 namespace gamemd {
 PageUserCommandClass * CreateTeamCommand::performAction_236(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-PageUserCommandClass *__thiscall CreateTeamCommand::performAction_236(_DWORD *this, char a2)
 {
-  *this = &vt_CommandClass; /*0x538469*/
-  if ( (a2 & 1) != 0 ) /*0x53846f*/
-    __3_YAXPAX_Z(this); /*0x538472*/
-  return (PageUserCommandClass *)this; /*0x53847c*/
+    *(void**)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (PageUserCommandClass *)this;
 }
 }
 } // namespace gamemd
@@ -411,13 +379,11 @@ PageUserCommandClass *__thiscall CreateTeamCommand::performAction_236(_DWORD *th
 namespace gamemd {
 CursorPositionCommandClass * CreateTeamCommand::performAction_237(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-CursorPositionCommandClass *__thiscall CreateTeamCommand::performAction_237(_DWORD *this, char a2)
 {
-  *this = &vt_CommandClass; /*0x538489*/
-  if ( (a2 & 1) != 0 ) /*0x53848f*/
-    __3_YAXPAX_Z(this); /*0x538492*/
-  return (CursorPositionCommandClass *)this; /*0x53849c*/
+    *(void**)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (CursorPositionCommandClass *)this;
 }
 }
 } // namespace gamemd
@@ -426,13 +392,11 @@ CursorPositionCommandClass *__thiscall CreateTeamCommand::performAction_237(_DWO
 namespace gamemd {
 DeleteCommandClass * CreateTeamCommand::performAction_238(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DeleteCommandClass *__thiscall CreateTeamCommand::performAction_238(_DWORD *this, char a2)
 {
-  *this = &vt_CommandClass; /*0x5384a9*/
-  if ( (a2 & 1) != 0 ) /*0x5384af*/
-    __3_YAXPAX_Z(this); /*0x5384b2*/
-  return (DeleteCommandClass *)this; /*0x5384bc*/
+    *(void**)this = &vt_CommandClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DeleteCommandClass *)this;
 }
 }
 } // namespace gamemd
@@ -441,20 +405,17 @@ DeleteCommandClass *__thiscall CreateTeamCommand::performAction_238(_DWORD *this
 namespace gamemd {
 void CreateTeamCommand::performAction_239()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall CreateTeamCommand::sub_5384C0(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x5384c6*/
-  this->CreateTeamCommand_field_0x10 = 0; /*0x5384c9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5384d0*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->CreateTeamCommand_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x5384d6*/
-    this->CreateTeamCommand_field_0x4 = 0; /*0x5384de*/
+    __3_YAXPAX_Z(v2);
+    this->CreateTeamCommand_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x5384e1*/
-  *(_DWORD *)(this + 8) = 0; /*0x5384e4*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 }
 } // namespace gamemd
@@ -514,24 +475,20 @@ char __thiscall CreateTeamCommand::sub_5386A0(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int CreateTeamCommand::performAction_242(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CreateTeamCommand::sub_538750(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x538750*/
-  result = 0; /*0x538753*/
-  if ( v2 <= 0 ) /*0x538758*/
-    return -1; /*0x53876f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x53875e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x53876d*/
-      return -1; /*0x53876d*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x538772*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -586,23 +543,20 @@ rc_ptr_base *__thiscall CreateTeamCommand::performAction_243(rc_ptr_base *this, 
 namespace gamemd {
 DynamicVector * CreateTeamCommand::performAction_244(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall CreateTeamCommand::performAction_244(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x538ae3*/
-  *this = &vt_VectorClass_CCINIClass; /*0x538ae6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x538af0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_CCINIClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x538af8*/
-    *(this + 1) = 0; /*0x538b00*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x538b0b*/
-  *(this + 2) = 0; /*0x538b11*/
-  if ( (a2 & 1) != 0 ) /*0x538b18*/
-    __3_YAXPAX_Z(this); /*0x538b1b*/
-  return (DynamicVector *)this; /*0x538b25*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd

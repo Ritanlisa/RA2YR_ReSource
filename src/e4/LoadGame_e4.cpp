@@ -5,51 +5,48 @@
 // 0x54E7B0
 int LoadGame::LoadPointArray(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_54E7B0(_DWORD *this, int a2)
 {
-  int v3; // ebx
-  int *v4; // edi
-  int v5; // eax
-  _DWORD *v6; // esi
-  int v7; // ecx
-  int v8; // eax
-  int v9; // edx
-  int v11; // [esp+28h] [ebp-8h] BYREF
-  _DWORD *v12; // [esp+2Ch] [ebp-4h]
-  int v13; // [esp+34h] [ebp+4h]
-
-  v12 = this; /*0x54e7ba*/
-  v3 = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, &v11, 4, 0); /*0x54e7cf*/
-  if ( v3 >= 0 ) /*0x54e7d3*/
+    int v3;
+    int *v4;
+    int v5;
+    int *v6;
+    int v7;
+    int v8;
+    int v9;
+    int v11;
+    int *v12;
+    int v13;
+    v12 = this;
+    v3 = (*(int (__stdcall **)(int, int *, int, int))(*(int *)(a2) + 12))(a2, &v11, 4, 0);
+    if ( v3 >= 0 )
   {
-    v13 = 0; /*0x54e7dd*/
-    while ( v13 < v11 ) /*0x54e7e7*/
+    v13 = 0;
+    while ( v13 < v11 )
     {
-      v4 = (int *)__2_YAPAXI_Z(8u); /*0x54e7fa*/
-      v3 = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, v4, 8, 0); /*0x54e805*/
-      if ( v3 < 0 ) /*0x54e809*/
-        break; /*0x54e809*/
-      ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v4); /*0x54e811*/
-      ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v4 + 1); /*0x54e81f*/
-      v5 = v12[5]; /*0x54e828*/
-      v6 = v12 + 3; /*0x54e82b*/
-      if ( v12[7] >= v5 ) /*0x54e833*/
+    v4 = (int *)__2_YAPAXI_Z(8u);
+    v3 = (*(int (__stdcall **)(int, int *, int, int))(*(int *)(a2) + 12))(a2, v4, 8, 0);
+    if ( v3 < 0 )
+    break;
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4);
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 1);
+    v5 = v12[5];
+    v6 = v12 + 3;
+    if ( v12[7] >= v5 )
       {
-        if ( !*((_BYTE *)v12 + 25) && v5 ) /*0x54e83e*/
-          continue; /*0x54e83e*/
-        v7 = v12[8]; /*0x54e840*/
-        if ( v7 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v6 + 8))(v12 + 3, v5 + v7, 0) ) /*0x54e850*/
-          continue; /*0x54e850*/
+    if ( !*((char *)(v12) + 25) && v5 )
+    continue;
+    v7 = v12[8];
+    if ( v7 <= 0 || !(*(unsigned char (__thiscall **)(int *, int, int))(*v6 + 8))(v12 + 3, v5 + v7, 0) )
+    continue;
       }
-      v8 = v6[4]; /*0x54e857*/
-      v9 = v6[1]; /*0x54e85a*/
-      v6[4] = v8 + 1; /*0x54e860*/
-      *(_DWORD *)(v9 + 4 * v8) = v4; /*0x54e863*/
-      ++v13; /*0x54e871*/
+    v8 = v6[4];
+    v9 = v6[1];
+    v6[4] = v8 + 1;
+    *(int *)(v9 + 4 * v8) = v4;
+    ++v13;
     }
   }
-  return v3; /*0x54e87b*/
+    return v3;
 }
 }
 

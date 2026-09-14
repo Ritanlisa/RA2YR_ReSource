@@ -55,53 +55,50 @@ void __thiscall WinsockInterfaceClass_Destructor(int this)
 // 0x7B2780
 SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-SOCKET *__thiscall WinsockInterfaceClass::Destru_vt00(SOCKET *this, char a2)
 {
-  char v3; // al
-  void *v4; // eax
-  void *v5; // eax
-  void *v6; // eax
-
-  v3 = *((_BYTE *)this + 258152); /*0x7b2786*/
-  *this = (SOCKET)&vt_WinsockInterfaceClass; /*0x7b278c*/
-  if ( v3 ) /*0x7b2794*/
+    char v3;
+    void *v4;
+    void *v5;
+    void *v6;
+    v3 = *((char *)(this) + 258152);
+    *(void**)this = (SOCKET)&vt_WinsockInterfaceClass;
+    if ( v3 )
   {
-    NetworkClass::UnregisterAsync(this); /*0x7b2796*/
-    (*(void (__thiscall **)(SOCKET *))(*this + 4))(this); /*0x7b27a0*/
-    WSACleanup(); /*0x7b27a3*/
-    *((_BYTE *)this + 258152) = 0; /*0x7b27a8*/
+    NetworkClass::UnregisterAsync(this);
+    (*(void (__thiscall **)(SOCKET *))(*(void**)(this) + 4))(this);
+    WSACleanup();
+    *((char *)(this) + 258152) = 0;
   }
-  v4 = (void *)*(this + 15); /*0x7b27ae*/
-  *(this + 14) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b27b1*/
-  if ( v4 && *((_BYTE *)this + 69) ) /*0x7b27bc*/
+    v4 = (void *)*(this + 15);
+    *(this + 14) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType;
+    if ( v4 && *((char *)(this) + 69) )
   {
-    __3_YAXPAX_Z(v4); /*0x7b27c2*/
-    *(this + 15) = 0; /*0x7b27ca*/
+    __3_YAXPAX_Z(v4);
+    *(this + 15) = 0;
   }
-  *((_BYTE *)this + 69) = 0; /*0x7b27cd*/
-  *(this + 16) = 0; /*0x7b27d0*/
-  v5 = (void *)*(this + 9); /*0x7b27d3*/
-  *(this + 8) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b27d6*/
-  if ( v5 && *((_BYTE *)this + 45) ) /*0x7b27e1*/
+    *((char *)(this) + 69) = 0;
+    *(this + 16) = 0;
+    v5 = (void *)*(this + 9);
+    *(this + 8) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType;
+    if ( v5 && *((char *)(this) + 45) )
   {
-    __3_YAXPAX_Z(v5); /*0x7b27e7*/
-    *(this + 9) = 0; /*0x7b27ef*/
+    __3_YAXPAX_Z(v5);
+    *(this + 9) = 0;
   }
-  *((_BYTE *)this + 45) = 0; /*0x7b27f2*/
-  *(this + 10) = 0; /*0x7b27f5*/
-  v6 = (void *)*(this + 3); /*0x7b27f8*/
-  *(this + 2) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b27fb*/
-  if ( v6 && *((_BYTE *)this + 21) ) /*0x7b2806*/
+    *((char *)(this) + 45) = 0;
+    *(this + 10) = 0;
+    v6 = (void *)*(this + 3);
+    *(this + 2) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType;
+    if ( v6 && *((char *)(this) + 21) )
   {
-    __3_YAXPAX_Z(v6); /*0x7b280c*/
-    *(this + 3) = 0; /*0x7b2814*/
+    __3_YAXPAX_Z(v6);
+    *(this + 3) = 0;
   }
-  *((_BYTE *)this + 21) = 0; /*0x7b281b*/
-  *(this + 4) = 0; /*0x7b2820*/
-  if ( (a2 & 1) != 0 ) /*0x7b2823*/
-    __3_YAXPAX_Z(this); /*0x7b2826*/
-  return this; /*0x7b2830*/
+    *((char *)(this) + 21) = 0;
+    *(this + 4) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 

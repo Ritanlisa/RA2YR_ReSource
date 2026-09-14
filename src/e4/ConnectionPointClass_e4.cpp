@@ -146,10 +146,8 @@ _DWORD *__thiscall ConnectionPointClass::Construct(_DWORD *this, _DWORD *a1, Con
 namespace gamemd {
 int ConnectionPointClass_9::EnumConnections(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ConnectionPointClass_9_::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x4a0f7a*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -158,31 +156,28 @@ int __thiscall ConnectionPointClass_9_::_vt06(_DWORD *this, int a2)
 namespace gamemd {
 char ConnectionPointClass_9::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ConnectionPointClass_9_::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x4a1242*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x4a124d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x4a124f*/
-    if ( v2 <= 0 ) /*0x4a1253*/
-      return 1; /*0x4a1273*/
-    v4 = (_DWORD *)*(this + 1); /*0x4a1255*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x4a125b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x4a1264*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x4a1266*/
-      ++v4; /*0x4a1267*/
-      if ( v3 >= v2 ) /*0x4a126c*/
-        return 1; /*0x4a126c*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x4a126e*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -244,25 +239,22 @@ char __thiscall ConnectionPointClass_9_::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int ConnectionPointClass_9::Advise(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ConnectionPointClass_9_::_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->ConnectionPointClass_9_field_0xC ) /*0x4a1360*/
-    return 0; /*0x4a1368*/
-  v3 = this->ConnectionPointClass_9_field_0x8; /*0x4a136e*/
-  result = 0; /*0x4a1371*/
-  if ( v3 <= 0 ) /*0x4a1375*/
-    return -1; /*0x4a138c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x4a137b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->ConnectionPointClass_9_field_0xC )
+    return 0;
+    v3 = this->ConnectionPointClass_9_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x4a138a*/
-      return -1; /*0x4a138a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x4a136a*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -271,23 +263,20 @@ int __thiscall ConnectionPointClass_9_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 VectorClass * ConnectionPointClass_9::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall ConnectionPointClass_9_::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x4a14f3*/
-  *this = &vt_VectorClass_IConnectionPoint; /*0x4a14f6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x4a1500*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_IConnectionPoint;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x4a1508*/
-    *(this + 1) = 0; /*0x4a1510*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x4a151b*/
-  *(this + 2) = 0; /*0x4a1521*/
-  if ( (a2 & 1) != 0 ) /*0x4a1528*/
-    __3_YAXPAX_Z(this); /*0x4a152b*/
-  return (VectorClass *)this; /*0x4a1535*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd

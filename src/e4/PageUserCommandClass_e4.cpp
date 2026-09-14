@@ -5,25 +5,20 @@
 // 0x537DD0
 unsigned int * PageUserCommandClass::PageUserCommandClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_537DD0(_DWORD *this)
 {
-  *this = &vt_PageUserCommandClass; /*0x537dd2*/
-  return this; /*0x537dd8*/
+    *(void**)this = &vt_PageUserCommandClass;
+    return this;
 }
 }
 
 // 0x537E50
 char PageUserCommandClass::Do(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall PageUserCommandClass::_vt08(int a1)
 {
-  char result; // al
-
-  if ( MEMORY[0xA8B238][0] == 4 ) /*0x537e57*/
-    return UI_Add(); /*0x537e59*/
-  return result; /*0x537e5e*/
+    char result;
+    if ( g_GameMode_Current[0] == 4 )
+    return UI_Add();
+    return result;
 }
 }
 

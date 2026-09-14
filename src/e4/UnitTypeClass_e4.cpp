@@ -445,10 +445,8 @@ char __userpurge UnitTypeClass::LoadFromINI@<al>(int a1@<ecx>, double a2@<st0>, 
 // 0x747F20
 int UnitTypeClass::GetGameplayValue()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int UnitTypeClass::_vt45()
 {
-  return MEMORY[0x8871E0][1].?; /*0x747f2b*/
+    return g_RulesClass_Instance[1].?;
 }
 }
 

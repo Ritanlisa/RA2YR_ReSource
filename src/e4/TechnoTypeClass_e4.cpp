@@ -5,10 +5,8 @@
 // 0x41CB50
 char TechnoTypeClass::vt_entry_A0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char TechnoTypeClass::vt_entry_A0()
 {
-  return 0; /*0x41cb52*/
+    return 0;
 }
 }
 
@@ -1595,13 +1593,11 @@ int __thiscall TechnoTypeClass::SaveLoad_Prefix_0(
 // 0x7179A0
 TechnoTypeClass * TechnoTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TechnoTypeClass *__thiscall TechnoTypeClass::ddtor(void *this, char a2)
 {
-  TechnoTypeClass::DTOR((int)this); /*0x7179a3*/
-  if ( (a2 & 1) != 0 ) /*0x7179ad*/
-    __3_YAXPAX_Z(this); /*0x7179b0*/
-  return (TechnoTypeClass *)this; /*0x7179ba*/
+    TechnoTypeClass::DTOR((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TechnoTypeClass *)this;
 }
 }
 
@@ -1625,40 +1621,35 @@ _DWORD *__thiscall sub_717AF0(_DWORD *this)
 // 0x717BE0
 VectorClass * TechnoTypeClass::Constructor_1(ObjectTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall TechnoTypeClass::Constructor_1(_DWORD *this, ObjectTypeClass *aP1)
 {
-  *this = &vt_DynamicVectorClass_BuildingTypeClass_const; /*0x717be2*/
-  return (VectorClass *)this; /*0x717be8*/
+    *(void**)this = &vt_DynamicVectorClass_BuildingTypeClass_const;
+    return (VectorClass *)this;
 }
 }
 
 // 0x717DB0
 char TechnoTypeClass::RemoveItem(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_717DB0(_DWORD *this, int a2)
 {
-  int v2; // edx
-  int v3; // eax
-  int v4; // edx
-
-  v2 = *(this + 4); /*0x717db0*/
-  v3 = a2; /*0x717db3*/
-  if ( a2 >= v2 ) /*0x717db9*/
-    return 0; /*0x717ddc*/
-  v4 = v2 - 1; /*0x717dbb*/
-  *(this + 4) = v4; /*0x717dbe*/
-  if ( a2 < v4 ) /*0x717dc1*/
+    int v2;
+    int v3;
+    int v4;
+    v2 = this->uniqueId;
+    v3 = a2;
+    if ( a2 >= v2 )
+    return 0;
+    v4 = v2 - 1;
+    this->uniqueId = v4;
+    if ( a2 < v4 )
   {
-    do /*0x717dd4*/
+    do
     {
-      ++v3; /*0x717dc7*/
-      *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3); /*0x717dcb*/
+    ++v3;
+    *(int *)(this->vtable1 + 4 * v3 - 4) = *(int *)(this->vtable1 + 4 * v3);
     }
-    while ( v3 < *(this + 4) ); /*0x717dd4*/
+    while ( v3 < this->uniqueId );
   }
-  return 1; /*0x717dd9*/
+    return 1;
 }
 }
 

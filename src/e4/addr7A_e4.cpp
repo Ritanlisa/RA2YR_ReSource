@@ -1345,11 +1345,8 @@ LABEL_16:
 namespace gamemd {
 void E4Recv_7ACBD0::__Release__NonReentrantLock_details_Concurrency__QAEXXZ_1()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall __Release__NonReentrantLock_details_Concurrency__QAEXXZ_1(
-        Concurrency::details::_NonReentrantLock *this)
 {
-  *(_DWORD *)this = 0; /*0x7acbd0*/
+    *(int *)this = 0;
 }
 }
 } // namespace gamemd

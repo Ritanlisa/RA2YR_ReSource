@@ -7,10 +7,8 @@
 namespace gamemd {
 int CampaignProperties_WorldDominationTour_22::Seek(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CampaignProperties_WorldDominationTour_22_::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x5d277a*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -19,25 +17,22 @@ int __thiscall CampaignProperties_WorldDominationTour_22_::_vt06(_DWORD *this, i
 namespace gamemd {
 int CampaignProperties_WorldDominationTour_22::Read(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CampaignProperties_WorldDominationTour_22_::_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->CampaignProperties_WorldDominationTour_22_field_0xC ) /*0x5d2900*/
-    return 0; /*0x5d2908*/
-  v3 = this->CampaignProperties_WorldDominationTour_22_field_0x8; /*0x5d290e*/
-  result = 0; /*0x5d2911*/
-  if ( v3 <= 0 ) /*0x5d2915*/
-    return -1; /*0x5d292c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x5d291b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->CampaignProperties_WorldDominationTour_22_field_0xC )
+    return 0;
+    v3 = this->CampaignProperties_WorldDominationTour_22_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x5d292a*/
-      return -1; /*0x5d292a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x5d290a*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -46,23 +41,20 @@ int __thiscall CampaignProperties_WorldDominationTour_22_::_vt04(int this, _DWOR
 namespace gamemd {
 VectorClass * CampaignProperties_WorldDominationTour_22::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall CampaignProperties_WorldDominationTour_22_::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5d2ca3*/
-  *this = &vt_VectorClass_MSAnim; /*0x5d2ca6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d2cb0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_MSAnim;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x5d2cb8*/
-    *(this + 1) = 0; /*0x5d2cc0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x5d2ccb*/
-  *(this + 2) = 0; /*0x5d2cd1*/
-  if ( (a2 & 1) != 0 ) /*0x5d2cd8*/
-    __3_YAXPAX_Z(this); /*0x5d2cdb*/
-  return (VectorClass *)this; /*0x5d2ce5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
@@ -71,10 +63,8 @@ VectorClass *__thiscall CampaignProperties_WorldDominationTour_22_::QueryInterfa
 namespace gamemd {
 BOOL CampaignProperties_WorldDominationTour_22::AddRef()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall CampaignProperties_WorldDominationTour_22_::_vt01(_DWORD *this)
 {
-  return *(this + 2) < *(_DWORD *)(*(this + 1) + 16); /*0x76f0fd*/
+    return this->Capacity < *(int *)(this->Items + 16);
 }
 }
 } // namespace gamemd
@@ -83,11 +73,9 @@ BOOL __thiscall CampaignProperties_WorldDominationTour_22_::_vt01(_DWORD *this)
 namespace gamemd {
 unsigned int * CampaignProperties_WorldDominationTour_22::Release()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall CampaignProperties_WorldDominationTour_22_::_vt02(_DWORD *this)
 {
-  ++*(this + 2); /*0x76f1a2*/
-  return this; /*0x76f1a5*/
+    ++this->Capacity;
+    return this;
 }
 }
 } // namespace gamemd
@@ -96,11 +84,9 @@ _DWORD *__thiscall CampaignProperties_WorldDominationTour_22_::_vt02(_DWORD *thi
 namespace gamemd {
 unsigned int * CampaignProperties_WorldDominationTour_22::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall CampaignProperties_WorldDominationTour_22_::_vt03(_DWORD *this)
 {
-  --*(this + 2); /*0x76f1b2*/
-  return this; /*0x76f1b5*/
+    --this->Capacity;
+    return this;
 }
 }
 } // namespace gamemd

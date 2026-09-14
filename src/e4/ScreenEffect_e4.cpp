@@ -5,10 +5,8 @@
 // 0x753AE0
 void ScreenEffect::Stub2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void ScreenEffect::Stub2()
 {
-  ; /*0x753ae0*/
+    ;
 }
 }
 

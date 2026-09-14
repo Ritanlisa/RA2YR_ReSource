@@ -5,39 +5,32 @@
 // 0x411510
 unsigned int * Surface::GetRect(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Surface_GetRect(_DWORD *this, _DWORD *a2)
 {
-  int v3; // edi
-  int v4; // ecx
-
-  v3 = *(this + 1); /*0x411517*/
-  v4 = *(this + 2); /*0x41151a*/
-  *a2 = 0; /*0x411523*/
-  a2[1] = 0; /*0x411525*/
-  a2[2] = v3; /*0x411528*/
-  a2[3] = v4; /*0x41152d*/
-  return a2; /*0x41152b*/
+    int v3;
+    int v4;
+    v3 = this->Width;
+    v4 = this->Height;
+    *a2 = 0;
+    *((int*)(a2) + 1) = 0;
+    *((int*)(a2) + 2) = v3;
+    *((int*)(a2) + 3) = v4;
+    return a2;
 }
 }
 
 // 0x411540
 int Surface::GetWidth()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Surface_GetWidth(_DWORD *this)
 {
-  return *(this + 1); /*0x411543*/
+    return this->Width;
 }
 }
 
 // 0x411550
 int Surface::GetHeight()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Surface_GetHeight(_DWORD *this)
 {
-  return *(this + 2); /*0x411553*/
+    return this->Height;
 }
 }
 
@@ -54,73 +47,63 @@ BOOL __thiscall Surface_IsLocked(_DWORD *this)
 // 0x4A4780
 LPDIRECTDRAW Surface::CreateSurfacePalette()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LPDIRECTDRAW __thiscall Surface::CreateSurfacePalette(AbstractClass *this)
 {
-  LPDIRECTDRAW result; // eax
-  int v3; // edi
-  BombClass *v4; // eax
-  char *v5; // ecx
-  char v6; // dl
-  char *v7; // eax
-  char v8; // bl
-  char v9; // [esp+8h] [ebp-4h]
-
-  if ( this != (AbstractClass *)&stru_89E138.__pad_14B0[936] ) /*0x4a478b*/
-    memcpy(&stru_89E138.__pad_14B0[936], this, 0x300u); /*0x4a4798*/
-  result = *(LPDIRECTDRAW *)&stru_89E138.__pad_14B0[2732]; /*0x4a47a0*/
-  if ( *(_DWORD *)&stru_89E138.__pad_14B0[2732] ) /*0x4a47a7*/
+    LPDIRECTDRAW result;
+    int v3;
+    BombClass *v4;
+    char *v5;
+    char v6;
+    char *v7;
+    char v8;
+    char v9;
+    if ( this != (AbstractClass *)&DataGlobal_89E138.__pad_14B0[936] )
+    memcpy(&DataGlobal_89E138.__pad_14B0[936], this, 0x300u);
+    result = *(LPDIRECTDRAW *)&DataGlobal_89E138.__pad_14B0[2732];
+    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2732] )
   {
-    v3 = *(_DWORD *)&stru_89E138.__pad_14B0[2740]; /*0x4a47a9*/
-    if ( *(_DWORD *)&stru_89E138.__pad_14B0[2740] ) /*0x4a47b1*/
+    v3 = *(int *)&DataGlobal_89E138.__pad_14B0[2740];
+    if ( *(int *)&DataGlobal_89E138.__pad_14B0[2740] )
     {
-      v4 = (BombClass *)this; /*0x4a47b4*/
-      v5 = &stru_89E138.__pad_14B0[1709]; /*0x4a47b6*/
-      do /*0x4a47e5*/
+    v4 = (BombClass *)this;
+    v5 = &DataGlobal_89E138.__pad_14B0[1709];
+    do
       {
-        v6 = v4->__pad_0[0]; /*0x4a47bf*/
-        v9 = v4->__pad_0[1]; /*0x4a47c5*/
-        v7 = &v4->__pad_0[2]; /*0x4a47c9*/
-        v5 += 4; /*0x4a47cc*/
-        v8 = *v7; /*0x4a47cf*/
-        *(v5 - 5) = v6; /*0x4a47d1*/
-        v4 = (BombClass *)(v7 + 1); /*0x4a47d8*/
-        *(v5 - 4) = v9; /*0x4a47d9*/
-        *(v5 - 3) = v8; /*0x4a47dc*/
+    v6 = v4->__pad_0[0];
+    v9 = v4->__pad_0[1];
+    v7 = &v4->__pad_0[2];
+    v5 += 4;
+    v8 = *v7;
+    *(v5 - 5) = v6;
+    v4 = (BombClass *)(v7 + 1);
+    *(v5 - 4) = v9;
+    *(v5 - 3) = v8;
       }
-      while ( (int)v5 < 9044117 ); /*0x4a47e5*/
-      result = *(LPDIRECTDRAW *)&stru_89E138.__pad_14B0[1704]; /*0x4a47e7*/
-      if ( *(_DWORD *)&stru_89E138.__pad_14B0[1704] ) /*0x4a47ef*/
+    while ( (int)v5 < 9044117 );
+    result = *(LPDIRECTDRAW *)&DataGlobal_89E138.__pad_14B0[1704];
+    if ( *(int *)&DataGlobal_89E138.__pad_14B0[1704] )
       {
-        if ( !stru_89E138.__pad_14B0[2736] ) /*0x4a47f9*/
+    if ( !DataGlobal_89E138.__pad_14B0[2736] )
         {
-          (*(void (__stdcall **)(int, _DWORD))(*(_DWORD *)v3 + 124))(v3, *(_DWORD *)&stru_89E138.__pad_14B0[1704]); /*0x4a47ff*/
-          result = *(LPDIRECTDRAW *)&stru_89E138.__pad_14B0[1704]; /*0x4a4802*/
-          stru_89E138.__pad_14B0[2736] = 1; /*0x4a4807*/
+    (*(void (__stdcall **)(int, int))(*(int *)(v3) + 124))(v3, *(int *)&DataGlobal_89E138.__pad_14B0[1704]);
+    result = *(LPDIRECTDRAW *)&DataGlobal_89E138.__pad_14B0[1704];
+    DataGlobal_89E138.__pad_14B0[2736] = 1;
         }
-        return ((LPDIRECTDRAW (__stdcall *)(LPDIRECTDRAW, _DWORD, _DWORD, int, char *))result->lpVtbl->CreateSurface)( /*0x4a481f*/
-                 result,
-                 0,
-                 0,
-                 256,
-                 &stru_89E138.__pad_14B0[1708]);
+    return ((LPDIRECTDRAW (__stdcall *)(LPDIRECTDRAW, int, int, int, char *))result->lpVtbl->CreateSurface)( result, 0, 0, 256, &DataGlobal_89E138.__pad_14B0[1708]);
       }
     }
   }
-  return result; /*0x4a4822*/
+    return result;
 }
 }
 
 // 0x4AEC60
 unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Surface::Construct(_DWORD *this, ObjectClass *aP1, IUnknown *aP2)
 {
-  *(this + 1) = aP1; /*0x4aec6a*/
-  *(this + 2) = aP2; /*0x4aec6d*/
-  *this = &Surface_Vtable; /*0x4aec70*/
-  return this; /*0x4aec76*/
+    this->Width = aP1;
+    this->Height = aP2;
+    *(void**)this = &Surface_Vtable;
+    return this;
 }
 }
 

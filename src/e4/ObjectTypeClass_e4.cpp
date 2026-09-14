@@ -5,16 +5,13 @@
 // 0x41CBF0
 unsigned int * ObjectTypeClass::vt_entry_7C(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall ObjectTypeClass::vt_entry_7C(_DWORD *a1)
 {
-  int v1; // esi
-
-  v1 = 2 * MEMORY[0x889F58]; /*0x41cbfc*/
-  *a1 = 256; /*0x41cc07*/
-  a1[1] = 256; /*0x41cc09*/
-  a1[2] = v1; /*0x41cc0c*/
-  return a1; /*0x41cc0f*/
+    int v1;
+    v1 = 2 * DataGlobal_889F58;
+    *a1 = 256;
+    *((int*)(a1) + 1) = 256;
+    *((int*)(a1) + 2) = v1;
+    return a1;
 }
 }
 
@@ -133,16 +130,11 @@ int __thiscall sub_474F50(unsigned __int8 ***this, unsigned __int8 *a2, unsigned
 // 0x5F1C30
 int ObjectTypeClass::CreateInstance(CampaignScore * aP1, CampaignScore * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::CreateInstance(int this, CampaignScore *aP1, CampaignScore *aP2)
 {
-  if ( *(_DWORD *)(this + 60) ) /*0x5f1c30*/
-    return (*(int (__thiscall **)(_DWORD, CampaignScore *, CampaignScore *))(**(_DWORD **)(this + 56) + 16))( /*0x5f1c4b*/
-             *(_DWORD *)(this + 56),
-             aP1,
-             aP2);
-  else
-    return 0; /*0x5f1c37*/
+    if ( this->zero_3C )
+    return (*(int (__thiscall **)(int, CampaignScore *, CampaignScore *))(**(int **)(this + 56) + 16))( this->TargetStrengthCoefficient, aP1, aP2);
+    else
+    return 0;
 }
 }
 
@@ -582,52 +574,49 @@ void ObjectTypeClass::UnloadPipsSHP()
 // 0x5F8080
 void ObjectTypeClass::CleanupWeapons()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall ObjectTypeClass::CleanupWeapons(char *this)
 {
-  char *v1; // esi
-  int v2; // ebp
-  void *v3; // edi
-  void **v4; // edi
-  void *v5; // edi
-  void *v6; // edi
-
-  v1 = this + 204; /*0x5f8084*/
-  v2 = 18; /*0x5f808a*/
-  do /*0x5f8107*/
+    char *v1;
+    int v2;
+    void *v3;
+    void **v4;
+    void *v5;
+    void *v6;
+    v1 = this + 204;
+    v2 = 18;
+    do
   {
-    v3 = (void *)*((_DWORD *)v1 - 1); /*0x5f8091*/
-    if ( v3 ) /*0x5f8096*/
+    v3 = (void *)*((int *)v1 - 1);
+    if ( v3 )
     {
-      WaveClass::Destroy(*((_DWORD *)v1 - 1)); /*0x5f809a*/
-      __3_YAXPAX_Z(v3); /*0x5f80a0*/
-      *((_DWORD *)v1 - 1) = 0; /*0x5f80a8*/
+    WaveClass::Destroy(*((int *)v1 - 1));
+    __3_YAXPAX_Z(v3);
+    *((int *)v1 - 1) = 0;
     }
-    v4 = *(void ***)v1; /*0x5f80ab*/
-    if ( *(_DWORD *)v1 ) /*0x5f80ab*/
+    v4 = *(void ***)v1;
+    if ( *(int *)v1 )
     {
-      String::Release(*(void ***)v1); /*0x5f80b3*/
-      __3_YAXPAX_Z(v4); /*0x5f80b9*/
-      *(_DWORD *)v1 = 0; /*0x5f80c1*/
+    String::Release(*(void ***)v1);
+    __3_YAXPAX_Z(v4);
+    *(int *)v1 = 0;
     }
-    v5 = (void *)*((_DWORD *)v1 + 35); /*0x5f80c3*/
-    if ( v5 ) /*0x5f80cb*/
+    v5 = (void *)*((int *)(v1) + 35);
+    if ( v5 )
     {
-      WaveClass::Destroy(*((_DWORD *)v1 + 35)); /*0x5f80cf*/
-      __3_YAXPAX_Z(v5); /*0x5f80d5*/
-      *((_DWORD *)v1 + 35) = 0; /*0x5f80dd*/
+    WaveClass::Destroy(*((int *)(v1) + 35));
+    __3_YAXPAX_Z(v5);
+    *((int *)(v1) + 35) = 0;
     }
-    v6 = (void *)*((_DWORD *)v1 + 36); /*0x5f80e3*/
-    if ( v6 ) /*0x5f80eb*/
+    v6 = (void *)*((int *)(v1) + 36);
+    if ( v6 )
     {
-      String::Release(*((void ***)v1 + 36)); /*0x5f80ef*/
-      __3_YAXPAX_Z(v6); /*0x5f80f5*/
-      *((_DWORD *)v1 + 36) = 0; /*0x5f80fd*/
+    String::Release(*((void ***)(v1) + 36));
+    __3_YAXPAX_Z(v6);
+    *((int *)(v1) + 36) = 0;
     }
-    v1 += 8; /*0x5f8103*/
-    --v2; /*0x5f8106*/
+    v1 += 8;
+    --v2;
   }
-  while ( v2 ); /*0x5f8107*/
+    while ( v2 );
 }
 }
 
@@ -1124,13 +1113,11 @@ int __stdcall ObjectTypeClass::LoadCleanup(IUnknown *aP0, ObjectTypeClass *aP1)
 // 0x5F9AE0
 ObjectTypeClass * ObjectTypeClass::Destru_vt08(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectTypeClass *__thiscall ObjectTypeClass::Destru_vt08(void *this, char a2)
 {
-  ObjectTypeClass::Destruct((int)this); /*0x5f9ae3*/
-  if ( (a2 & 1) != 0 ) /*0x5f9aed*/
-    __3_YAXPAX_Z(this); /*0x5f9af0*/
-  return (ObjectTypeClass *)this; /*0x5f9afa*/
+    ObjectTypeClass::Destruct((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (ObjectTypeClass *)this;
 }
 }
 

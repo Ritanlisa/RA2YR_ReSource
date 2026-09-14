@@ -142,33 +142,27 @@ LABEL_6:
 // 0x5C05E0
 unsigned int BinkMovieHandle::BlitToTarget()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall BinkMovieHandle::_vt09(_DWORD *this)
 {
-  return 0x3E8 /*0x432c06*/
-       / (unsigned int)(*(_DWORD *)(*(_DWORD *)(*(this + 4) + 4) + 20) / *(_DWORD *)(*(_DWORD *)(*(this + 4) + 4) + 24));
+    return 0x3E8 / (unsigned int)(*(int *)(*(int *)(this->height + 4) + 20) / *(int *)(*(int *)(this->height + 4) + 24));
 }
 }
 
 // 0x5C0A30
 BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BinkMovieHandle *__thiscall BinkMovieHandle::QueryInterface(BinkMovie **this, char a2)
 {
-  BinkMovie *v3; // edi
-
-  v3 = *(this + 4); /*0x5c0a34*/
-  *this = (BinkMovie *)&vt_BinkMovieHandle; /*0x5c0a37*/
-  if ( v3 ) /*0x5c0a3f*/
+    BinkMovie *v3;
+    v3 = *(this + 4);
+    *(void**)this = (BinkMovie *)&vt_BinkMovieHandle;
+    if ( v3 )
   {
-    BinkMovie::Stop((int)v3); /*0x5c0a43*/
-    __3_YAXPAX_Z(v3); /*0x5c0a49*/
+    BinkMovie::Stop((int)v3);
+    __3_YAXPAX_Z(v3);
   }
-  *this = (BinkMovie *)&vt_MovieHandle; /*0x5c0a55*/
-  if ( (a2 & 1) != 0 ) /*0x5c0a5d*/
-    __3_YAXPAX_Z(this); /*0x5c0a60*/
-  return (BinkMovieHandle *)this; /*0x5c0a6a*/
+    *(void**)this = (BinkMovie *)&vt_MovieHandle;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BinkMovieHandle *)this;
 }
 }
 

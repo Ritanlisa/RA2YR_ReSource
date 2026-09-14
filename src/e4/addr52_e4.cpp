@@ -67,10 +67,8 @@ LABEL_11:
 namespace gamemd {
 char E4Recv_522540::sub_522540()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_522540(_DWORD *this)
 {
-  return *(_BYTE *)(*(this + 432) + 1708); /*0x52254c*/
+    return *(char *)(this->M1728 + 1708);
 }
 }
 } // namespace gamemd

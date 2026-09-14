@@ -655,23 +655,20 @@ int __thiscall UDPInterfaceClass_Destru::sub_7B4550(int *this, _DWORD *a2)
 // 0x7B45D0
 DynamicVector * UDPInterfaceClass::receivePacket(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall UDPInterfaceClass::receivePacket(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x7b45d3*/
-  *this = &vt_VectorClass_unsigned_char; /*0x7b45d6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x7b45e0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_unsigned_char;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x7b45e8*/
-    *(this + 1) = 0; /*0x7b45f0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x7b45fb*/
-  *(this + 2) = 0; /*0x7b4601*/
-  if ( (a2 & 1) != 0 ) /*0x7b4608*/
-    __3_YAXPAX_Z(this); /*0x7b460b*/
-  return (DynamicVector *)this; /*0x7b4615*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 

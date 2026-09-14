@@ -482,15 +482,12 @@ LABEL_6:
 namespace gamemd {
 int AnimTypeClass::GetAnimData(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AnimTypeClass::_vt10(_DWORD *this, int a2, int a3)
 {
-  int result; // eax
-
-  result = *(this + 178); /*0x428c10*/
-  if ( result == a2 ) /*0x428c1c*/
-    *(this + 178) = 0; /*0x428c1e*/
-  return result; /*0x428c28*/
+    int result;
+    result = this->Next;
+    if ( result == a2 )
+    this->Next = 0;
+    return result;
 }
 }
 } // namespace gamemd
@@ -570,10 +567,8 @@ int __thiscall AnimTypeClass::_vt39(char *this)
 namespace gamemd {
 int AnimTypeClass::GetAuxField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AnimTypeClass::_vt16(_DWORD *this)
 {
-  return *(this + 165); /*0x428e66*/
+    return this->MiddleFrameIndex;
 }
 }
 } // namespace gamemd

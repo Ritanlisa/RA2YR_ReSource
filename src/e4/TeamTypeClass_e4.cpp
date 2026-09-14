@@ -1016,20 +1016,17 @@ TeamTypeClass *__thiscall TeamTypeClass::ddtor(void **this, char a2)
 namespace gamemd {
 void TeamTypeClass_28::ClearBuffer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall TeamTypeClass_28_::sub_6F21B0(int this)
 {
-  int v2; // eax
-
-  v2 = this->TeamTypeClass_28_field_0x4; /*0x6f21b6*/
-  this->TeamTypeClass_28_field_0x10 = 0; /*0x6f21b9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x6f21c0*/
+    int v2;
+    v2 = this->TeamTypeClass_28_field_0x4;
+    this->TeamTypeClass_28_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z((void *)(v2 - 4)); /*0x6f21d1*/
-    this->TeamTypeClass_28_field_0x4 = 0; /*0x6f21d9*/
+    __3_YAXPAX_Z((void *)(v2 - 4));
+    this->TeamTypeClass_28_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x6f21dc*/
-  this->TeamTypeClass_28_field_0x8 = 0; /*0x6f21df*/
+    this->IsAllocated = 0;
+    this->TeamTypeClass_28_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -1038,19 +1035,16 @@ void __thiscall TeamTypeClass_28_::sub_6F21B0(int this)
 namespace gamemd {
 unsigned int * TeamTypeClass_28::Seek(unsigned int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TeamTypeClass_28_::_vt06(_DWORD *this, _DWORD *a2, int a3)
 {
-  int v3; // eax
-  int v4; // edx
-  int v5; // ecx
-
-  v3 = *(this + 1); /*0x6f2210*/
-  v4 = *(_DWORD *)(v3 + 8 * a3); /*0x6f2217*/
-  v5 = v3 + 8 * a3; /*0x6f221a*/
-  *a2 = v4; /*0x6f2221*/
-  a2[1] = *(_DWORD *)(v5 + 4); /*0x6f2226*/
-  return a2; /*0x6f2229*/
+    int v3;
+    int v4;
+    int v5;
+    v3 = this->Items;
+    v4 = *(int *)(v3 + 8 * a3);
+    v5 = v3 + 8 * a3;
+    *a2 = v4;
+    *((int*)(a2) + 1) = *(int *)(v5 + 4);
+    return a2;
 }
 }
 } // namespace gamemd
@@ -1059,36 +1053,33 @@ _DWORD *__thiscall TeamTypeClass_28_::_vt06(_DWORD *this, _DWORD *a2, int a3)
 namespace gamemd {
 char TeamTypeClass_28::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TeamTypeClass_28_::_vt01(int *this, int a2)
 {
-  int v2; // edi
-  int v3; // esi
-  int v4; // edx
-  _DWORD *v5; // eax
-  _DWORD *v6; // ecx
-  int v7; // edx
-
-  v2 = *(this + 2); /*0x6f229b*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x6f22a0*/
+    int v2;
+    int v3;
+    int v4;
+    int *v5;
+    int *v6;
+    int v7;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x6f22a2*/
-    if ( v2 <= 0 ) /*0x6f22a6*/
-      return 1; /*0x6f22d6*/
-    v4 = *(_DWORD *)(a2 + 4); /*0x6f22a8*/
-    v5 = (_DWORD *)*(this + 1); /*0x6f22ab*/
-    v6 = (_DWORD *)(v4 + 4); /*0x6f22ae*/
-    v7 = v4 - (_DWORD)v5; /*0x6f22b1*/
-    while ( *v5 == *(_DWORD *)((char *)v5 + v7) && v5[1] == *v6 ) /*0x6f22c3*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = *(int *)(a2 + 4);
+    v5 = (int *)this->Items;
+    v6 = (int *)(v4 + 4);
+    v7 = v4 - (int)v5;
+    while ( *v5 == *(int *)((char *)(v5) + v7) && v5[1] == *v6 )
     {
-      ++v3; /*0x6f22c5*/
-      v6 += 2; /*0x6f22c6*/
-      v5 += 2; /*0x6f22c9*/
-      if ( v3 >= v2 ) /*0x6f22ce*/
-        return 1; /*0x6f22ce*/
+    ++v3;
+    v6 += 2;
+    v5 += 2;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x6f22d0*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -1210,19 +1201,16 @@ char __thiscall TeamTypeClass_28_::_vt02(void *this, int a2, int *a3)
 namespace gamemd {
 void TeamTypeClass_28::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall TeamTypeClass_28_::_vt03(int this)
 {
-  int v2; // eax
-
-  v2 = this->TeamTypeClass_28_field_0x4; /*0x6f2406*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x6f240d*/
+    int v2;
+    v2 = this->TeamTypeClass_28_field_0x4;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z((void *)(v2 - 4)); /*0x6f241e*/
-    this->TeamTypeClass_28_field_0x4 = 0; /*0x6f2426*/
+    __3_YAXPAX_Z((void *)(v2 - 4));
+    this->TeamTypeClass_28_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x6f2429*/
-  this->TeamTypeClass_28_field_0x8 = 0; /*0x6f242c*/
+    this->IsAllocated = 0;
+    this->TeamTypeClass_28_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -1231,25 +1219,22 @@ void __thiscall TeamTypeClass_28_::_vt03(int this)
 namespace gamemd {
 int TeamTypeClass_28::Read(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TeamTypeClass_28_::_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->TeamTypeClass_28_field_0xC ) /*0x6f2440*/
-    return 0; /*0x6f244e*/
-  v3 = this->TeamTypeClass_28_field_0x8; /*0x6f2454*/
-  result = 0; /*0x6f2457*/
-  if ( v3 <= 0 ) /*0x6f245b*/
-    return -1; /*0x6f247c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x6f2461*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->TeamTypeClass_28_field_0xC )
+    return 0;
+    v3 = this->TeamTypeClass_28_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2 || i[1] != *((int*)(a2) + 1); i += 2 )
   {
-    if ( ++result >= v3 ) /*0x6f247a*/
-      return -1; /*0x6f247a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x6f244b*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1375,24 +1360,20 @@ char __thiscall TeamTypeClass_28_::sub_6F24B0(void *this, int a2, int *a3)
 namespace gamemd {
 int TeamTypeClass_28::FindItem(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TeamTypeClass_28_::sub_6F2640(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x6f2640*/
-  result = 0; /*0x6f2645*/
-  if ( v2 <= 0 ) /*0x6f264b*/
-    return -1; /*0x6f266c*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x6f2651*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2 || i[1] != *((int*)(a2) + 1); i += 2 )
   {
-    if ( ++result >= v2 ) /*0x6f266a*/
-      return -1; /*0x6f266a*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x6f266f*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -1400,23 +1381,20 @@ int __thiscall TeamTypeClass_28_::sub_6F2640(int *this, _DWORD *a2)
 namespace gamemd {
 VectorClass * TeamTypeClass_28::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall TeamTypeClass_28_::QueryInterface(_DWORD *this, char a2)
 {
-  int v3; // eax
-
-  v3 = *(this + 1); /*0x6f2683*/
-  *this = &vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass; /*0x6f2686*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x6f2690*/
+    int v3;
+    v3 = *(this + 1);
+    *(void**)this = &vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z((void *)(v3 - 4)); /*0x6f26a3*/
-    *(this + 1) = 0; /*0x6f26ab*/
+    __3_YAXPAX_Z((void *)(v3 - 4));
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x6f26b6*/
-  *(this + 2) = 0; /*0x6f26bc*/
-  if ( (a2 & 1) != 0 ) /*0x6f26c3*/
-    __3_YAXPAX_Z(this); /*0x6f26c6*/
-  return (VectorClass *)this; /*0x6f26d0*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
@@ -1425,23 +1403,20 @@ VectorClass *__thiscall TeamTypeClass_28_::QueryInterface(_DWORD *this, char a2)
 namespace gamemd {
 DynamicVector * TeamTypeClass_28::Constructor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall TeamTypeClass_28_::Constructor(_DWORD *this, char a2)
 {
-  int v3; // eax
-
-  v3 = *(this + 1); /*0x6f2723*/
-  *this = &vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass; /*0x6f2726*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x6f2730*/
+    int v3;
+    v3 = *(this + 1);
+    *(void**)this = &vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z((void *)(v3 - 4)); /*0x6f2743*/
-    *(this + 1) = 0; /*0x6f274b*/
+    __3_YAXPAX_Z((void *)(v3 - 4));
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x6f2756*/
-  *(this + 2) = 0; /*0x6f275c*/
-  if ( (a2 & 1) != 0 ) /*0x6f2763*/
-    __3_YAXPAX_Z(this); /*0x6f2766*/
-  return (DynamicVector *)this; /*0x6f2770*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd

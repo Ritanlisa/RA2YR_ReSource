@@ -177,50 +177,37 @@ LABEL_12:
 namespace gamemd {
 char TaskForceClass::GetUnitCount(unsigned char *** aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TaskForceClass::GetUnitCount(int this, unsigned __int8 ***aP1)
 {
-  INIClass *v3; // edi
-  _DWORD *v4; // eax
-  INIClass *v5; // ecx
-  INIClass *v6; // eax
-  int v8; // [esp+8h] [ebp-A8h] BYREF
-  char Buffer[32]; // [esp+10h] [ebp-A0h] BYREF
-  INIClass Destination[2]; // [esp+30h] [ebp-80h] BYREF
-
-  INIClass::ResetSection(aP1); /*0x6e8433*/
-  if ( !AbstractTypeClass::LoadFromINI(this, (AbstractTypeClass *)aP1) ) /*0x6e843b*/
-    return 0; /*0x6e84f7*/
-  v3 = 0; /*0x6e844a*/
-  this->TaskForceClass_field_0x9C = 0; /*0x6e844f*/
-  do /*0x6e84cb*/
+    INIClass *v3;
+    int *v4;
+    INIClass *v5;
+    INIClass *v6;
+    int v8;
+    char Buffer[32];
+    INIClass Destination[2];
+    INIClass::ResetSection(aP1);
+    if ( !AbstractTypeClass::LoadFromINI(this, (AbstractTypeClass *)aP1) )
+    return 0;
+    v3 = 0;
+    this->TaskForceClass_field_0x9C = 0;
+    do
   {
-    sprintf(Buffer, MEMORY[0x817F6C], v3); /*0x6e8460*/
-    if ( (int)INIClass::GetString( /*0x6e8486*/
-                aP1,
-                (INIClass *)(this + 36),
-                (unsigned __int8 *)Buffer,
-                (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
-                Destination,
-                128) > 0 )
+    sprintf(Buffer, g_Str_Trace__d, v3);
+    if ( (int)INIClass::GetString( aP1, (INIClass *)(this + 36), (unsigned char *)Buffer, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) > 0 )
     {
-      v4 = TaskForceClass::ParseUnitCountAndType(&v8, Destination[0].__pad_0); /*0x6e8491*/
-      v5 = *(INIClass **)(this + 156); /*0x6e8496*/
-      *(_DWORD *)(this + 8 * (_DWORD)v5 + 164) = *v4; /*0x6e849e*/
-      *(_DWORD *)(this + 8 * (_DWORD)v5 + 168) = v4[1]; /*0x6e84a8*/
-      v6 = *(INIClass **)(this + 156); /*0x6e84af*/
-      if ( *(_DWORD *)(this + 8 * (_DWORD)v6 + 168) ) /*0x6e84b5*/
-        this->TaskForceClass_field_0x9C = &v6->__pad_0[1]; /*0x6e84c1*/
+    v4 = TaskForceClass::ParseUnitCountAndType(&v8, Destination[0].__pad_0);
+    v5 = *(INIClass **)(this + 156);
+    *(int *)(this + 8 * (int)v5 + 164) = *v4;
+    *(int *)(this + 8 * (int)v5 + 168) = v4[1];
+    v6 = *(INIClass **)(this + 156);
+    if ( *(int *)(this + 8 * (int)v6 + 168) )
+    this->TaskForceClass_field_0x9C = &v6->__pad_0[1];
     }
-    v3 = (INIClass *)((char *)v3 + 1); /*0x6e84c7*/
+    v3 = (INIClass *)((char *)(v3) + 1);
   }
-  while ( (int)v3 < 6 ); /*0x6e84cb*/
-  this->TaskForceClass_field_0x98 = INIClass::ReadInt_Overwrite( /*0x6e84e2*/
-                              (int)aP1,
-                              (unsigned __int8 *)(this + 36),
-                              (CCINIClass *)&stru_830620.__pad_579C[53256],
-                              *(INIClass **)(this + 152));
-  return 1; /*0x6e84e9*/
+    while ( (int)v3 < 6 );
+    this->TaskForceClass_field_0x98 = INIClass::ReadInt_Overwrite( (int)aP1, (unsigned char *)(this + 36), (CCINIClass *)&DataGlobal_830620.__pad_579C[53256], *(INIClass **)(this + 152));
+    return 1;
 }
 }
 } // namespace gamemd
@@ -229,36 +216,33 @@ char __thiscall TaskForceClass::GetUnitCount(int this, unsigned __int8 ***aP1)
 namespace gamemd {
 char TaskForceClass::GetUnitType(char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TaskForceClass::_vt26(int this, char *a2)
 {
-  int v3; // esi
-  _DWORD *v4; // ebx
-  char *v5; // eax
-  char Buffer[32]; // [esp+8h] [ebp-20h] BYREF
-
-  if ( !AbstractTypeClass::WriteINI((char *)this, a2) ) /*0x6e851c*/
-    return 0; /*0x6e85a5*/
-  v3 = 0; /*0x6e8527*/
-  v4 = (_DWORD *)(this + 164); /*0x6e8529*/
-  do /*0x6e857d*/
+    int v3;
+    int *v4;
+    char *v5;
+    char Buffer[32];
+    if ( !AbstractTypeClass::WriteINI((char *)this, a2) )
+    return 0;
+    v3 = 0;
+    v4 = (int *)(this + 164);
+    do
   {
-    sprintf(Buffer, MEMORY[0x817F6C], v3); /*0x6e853a*/
-    if ( v3 >= this->TaskForceClass_field_0x9C ) /*0x6e854a*/
+    sprintf(Buffer, g_Str_Trace__d, v3);
+    if ( v3 >= this->TaskForceClass_field_0x9C )
     {
-      INIClass::ClearSection((int)a2, this + 36, (unsigned __int8 *)Buffer); /*0x6e8571*/
+    INIClass::ClearSection((int)a2, this + 36, (unsigned char *)Buffer);
     }
     else
     {
-      v5 = TaskForceClass::Check(v4); /*0x6e854e*/
-      INIClass::SetString(a2, (unsigned __int8 *)(this + 36), Buffer, v5); /*0x6e855f*/
+    v5 = TaskForceClass::Check(v4);
+    INIClass::SetString(a2, (unsigned char *)(this + 36), Buffer, v5);
     }
-    ++v3; /*0x6e8576*/
-    v4 += 2; /*0x6e8577*/
+    ++v3;
+    v4 += 2;
   }
-  while ( v3 < 6 ); /*0x6e857d*/
-  INIClass::SetInt(a2, (unsigned __int8 *)(this + 36), MEMORY[0x842DC4], this->TaskForceClass_field_0x98, 0); /*0x6e8593*/
-  return 1; /*0x6e859a*/
+    while ( v3 < 6 );
+    INIClass::SetInt(a2, (unsigned char *)(this + 36), g_INI_Key_Group, this->TaskForceClass_field_0x98, 0);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -305,12 +289,10 @@ int __stdcall TaskForceClass::LoadTaskForce(AbstractTypeClass *aP0, int aP1)
 namespace gamemd {
 int TaskForceClass::LoadTask(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TaskForceClass::_vt13(int this, int *a2)
 {
-  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6e8759*/
-  Power::TimerProcess(this->TaskForceClass_field_0x98); /*0x6e8767*/
-  return Power::TimerProcess(this->TaskForceClass_field_0x9C); /*0x6e877a*/
+    AbstractTypeClass::ProcessPower((char *)this, a2);
+    Power::TimerProcess(this->TaskForceClass_field_0x98);
+    return Power::TimerProcess(this->TaskForceClass_field_0x9C);
 }
 }
 } // namespace gamemd

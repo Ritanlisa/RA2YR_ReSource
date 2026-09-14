@@ -79,14 +79,12 @@ _DWORD *__thiscall sub_438300(_DWORD *this, int a2, int a3)
 namespace gamemd {
 int * GameClass::initDisplay(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall GameClass::initDisplay(BufferPipe *this, char a2)
 {
-  Vector::Clear((int)(this + 3)); /*0x4aeca6*/
-  Pipe::Dtor((int *)this); /*0x4aecad*/
-  if ( (a2 & 1) != 0 ) /*0x4aecb7*/
-    __3_YAXPAX_Z(this); /*0x4aecba*/
-  return (int *)this; /*0x4aecc4*/
+    Vector::Clear((int)(this + 3));
+    Pipe::Dtor((int *)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (int *)this;
 }
 }
 } // namespace gamemd
@@ -270,25 +268,22 @@ LABEL_8:
 namespace gamemd {
 void GameClass::InitDifficultyButtons()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void GameClass_InitDifficultyButtons()
 {
-  signed int v0; // edx
-
-  if ( MEMORY[0xA8B238][0] == 4 ) /*0x5e8ae7*/
+    signed int v0;
+    if ( g_GameMode_Current[0] == 4 )
   {
-    if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5e8af2*/
-      v0 = 6; /*0x5e8b02*/
+    if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() )
+    v0 = 6;
     else
-      v0 = 2; /*0x5e8afb*/
+    v0 = 2;
   }
-  else
+    else
   {
-    v0 = 8; /*0x5e8b09*/
+    v0 = 8;
   }
-  memset32(&MEMORY[0xA8DA90], MEMORY[0xAC119C], v0); /*0x5e8b1f*/
-  if ( v0 < 8 ) /*0x5e8b24*/
-    memset32((void *)(4 * v0 + 11066000), MEMORY[0xAC11A0], 8 - v0); /*0x5e8b39*/
+    memset32(&g_NetworkPlayerName, g_HouseClass_ObserverFlags, v0);
+    if ( v0 < 8 )
+    memset32((void *)(4 * v0 + 11066000), g_Lobby_PlayerCount, 8 - v0);
 }
 }
 } // namespace gamemd
@@ -393,26 +388,23 @@ Pipe *__thiscall GameClass::WriteEncryptedStream(int this, BombClass *Src, signe
 namespace gamemd {
 PKPipe * GameClass::validateGameFile(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-PKPipe *__thiscall GameClass::validateGameFile(_DWORD *this, char a2)
 {
-  int *v3; // ebx
-  Pipe *v4; // esi
-
-  v3 = (int *)*(this + 8); /*0x632ff5*/
-  v4 = (Pipe *)(this + 5); /*0x632ff8*/
-  *(this + 5) = &vt_BlowPipe; /*0x632ffd*/
-  if ( v3 ) /*0x633003*/
+    int *v3;
+    Pipe *v4;
+    v3 = (int *)*(this + 8);
+    v4 = (Pipe *)(this + 5);
+    *(this + 5) = &vt_BlowPipe;
+    if ( v3 )
   {
-    COMObject::Release(v3); /*0x633007*/
-    __3_YAXPAX_Z(v3); /*0x63300d*/
+    COMObject::Release(v3);
+    __3_YAXPAX_Z(v3);
   }
-  v4->Pipe_field_0x0C = 0; /*0x633017*/
-  Pipe::Dtor((int *)v4->__pad_0); /*0x63301e*/
-  Pipe::Dtor(this); /*0x633025*/
-  if ( (a2 & 1) != 0 ) /*0x63302f*/
-    __3_YAXPAX_Z(this); /*0x633032*/
-  return (PKPipe *)this; /*0x63303c*/
+    v4->Pipe_field_0x0C = 0;
+    Pipe::Dtor((int *)v4->__pad_0);
+    Pipe::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (PKPipe *)this;
 }
 }
 } // namespace gamemd
@@ -504,26 +496,23 @@ int __thiscall GameClass::ReadEncryptedStream(int this, char *a2, signed int Siz
 namespace gamemd {
 PKStrawClass * GameClass::applyGameSettings(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-PKStrawClass *__thiscall GameClass::applyGameSettings(_DWORD *this, char a2)
 {
-  int *v3; // ebx
-  Straw *v4; // esi
-
-  v3 = (int *)*(this + 8); /*0x633375*/
-  v4 = (Straw *)(this + 5); /*0x633378*/
-  *(this + 5) = &vt_BlowStraw; /*0x63337d*/
-  if ( v3 ) /*0x633383*/
+    int *v3;
+    Straw *v4;
+    v3 = (int *)*(this + 8);
+    v4 = (Straw *)(this + 5);
+    *(this + 5) = &vt_BlowStraw;
+    if ( v3 )
   {
-    COMObject::Release(v3); /*0x633387*/
-    __3_YAXPAX_Z(v3); /*0x63338d*/
+    COMObject::Release(v3);
+    __3_YAXPAX_Z(v3);
   }
-  v4[1].Straw_field_0x04 = 0; /*0x633397*/
-  Straw::Dtor((int *)v4->__pad_0); /*0x63339e*/
-  Straw::Dtor(this); /*0x6333a5*/
-  if ( (a2 & 1) != 0 ) /*0x6333af*/
-    __3_YAXPAX_Z(this); /*0x6333b2*/
-  return (PKStrawClass *)this; /*0x6333bc*/
+    v4[1].Straw_field_0x04 = 0;
+    Straw::Dtor((int *)v4->__pad_0);
+    Straw::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (PKStrawClass *)this;
 }
 }
 } // namespace gamemd

@@ -743,8 +743,6 @@ LABEL_33:
 // 0x472640
 namespace ra2 {
 namespace game {
-char CaptureManagerClass::NeedsToDrawLinks()
-{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall CaptureManagerClass::NeedsToDrawLinks(_DWORD *this)
 {
@@ -788,8 +786,6 @@ LABEL_12:
   }
   return 0; /*0x472650*/
 }
-}
-} // namespace game
 } // namespace ra2
 
 // 0x4726C0
@@ -1135,25 +1131,22 @@ namespace ra2 {
 namespace game {
 int CaptureManagerClass::IndexOf(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CaptureManagerClass::sub_472C60(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->vtable3 ) /*0x472c60*/
-    return 0; /*0x472c68*/
-  v3 = this->vtable2; /*0x472c6e*/
-  result = 0; /*0x472c71*/
-  if ( v3 <= 0 ) /*0x472c75*/
-    return -1; /*0x472c8c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x472c7b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->vtable3 )
+    return 0;
+    v3 = this->vtable2;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x472c8a*/
-      return -1; /*0x472c8a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x472c6a*/
+    return result;
 }
 }
 } // namespace game
@@ -1244,23 +1237,20 @@ namespace ra2 {
 namespace game {
 VectorClass * CaptureManagerClass::Constructor_VectorClass_ControlNode___(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall CaptureManagerClass::Constructor_VectorClass_ControlNode___(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x473003*/
-  *this = &vt_VectorClass_ControlNode; /*0x473006*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x473010*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_ControlNode;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x473018*/
-    *(this + 1) = 0; /*0x473020*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x47302b*/
-  *(this + 2) = 0; /*0x473031*/
-  if ( (a2 & 1) != 0 ) /*0x473038*/
-    __3_YAXPAX_Z(this); /*0x47303b*/
-  return (VectorClass *)this; /*0x473045*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace game
@@ -1271,23 +1261,20 @@ namespace ra2 {
 namespace game {
 DynamicVector * CaptureManagerClass::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall CaptureManagerClass::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x473053*/
-  *this = &vt_VectorClass_ControlNode; /*0x473056*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x473060*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_ControlNode;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x473068*/
-    *(this + 1) = 0; /*0x473070*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x47307b*/
-  *(this + 2) = 0; /*0x473081*/
-  if ( (a2 & 1) != 0 ) /*0x473088*/
-    __3_YAXPAX_Z(this); /*0x47308b*/
-  return (DynamicVector *)this; /*0x473095*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace game

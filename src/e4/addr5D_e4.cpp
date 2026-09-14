@@ -1046,10 +1046,8 @@ int GameInit_Complete()
 namespace gamemd {
 void E4Recv_5D8FC0::__Release__NonReentrantLock_details_Concurrency__QAEXXZ()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall __Release__NonReentrantLock_details_Concurrency__QAEXXZ(Concurrency::details::_NonReentrantLock *this)
 {
-  *(_DWORD *)this = 0; /*0x5d8fc0*/
+    *(int *)this = 0;
 }
 }
 } // namespace gamemd
@@ -1467,26 +1465,23 @@ LABEL_54:
 namespace gamemd {
 char InitNetworkGameState()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char InitNetworkGameState()
 {
-  int v1; // [esp+0h] [ebp-Ch] BYREF
-  _BYTE v2[8]; // [esp+4h] [ebp-8h] BYREF
-
-  if ( !Network_Init(MEMORY[0xA8E9C0]) ) /*0x5db688*/
-    return 0; /*0x5db691*/
-  if ( MEMORY[0xA8B238][0] != 4 ) /*0x5db69e*/
+    int v1;
+    char v2[8];
+    if ( !Network_Init(g_NetworkManager) )
+    return 0;
+    if ( g_GameMode_Current[0] != 4 )
   {
-    if ( MEMORY[0xA8D5FC] ) /*0x5db6a7*/
+    if ( DataGlobal_A8D5FC )
     {
-      Network::CopyAddress(&MEMORY[0xA8D600], &v1, (int)v2); /*0x5db6b8*/
-      Network_Init_542FC0(&v1); /*0x5db6c7*/
+    Network::CopyAddress(&DataGlobal_A8D600, &v1, (int)v2);
+    Network_Init_542FC0(&v1);
     }
   }
-  LoadNetworkShareStrings(); /*0x5db6cc*/
-  Game::ResetFlags(); /*0x5db6d1*/
-  Network::InitPlayerSlots(); /*0x5db6d6*/
-  return 1; /*0x5db693*/
+    LoadNetworkShareStrings();
+    Game::ResetFlags();
+    Network::InitPlayerSlots();
+    return 1;
 }
 }
 } // namespace gamemd

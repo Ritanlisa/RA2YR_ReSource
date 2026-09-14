@@ -12,48 +12,45 @@
 namespace gamemd {
 int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_410DC0(_DWORD *this, int a2, int a3, int a4, int a5, int a6)
 {
-  _WORD *v8; // edi
-  __int16 *v9; // esi
-  int v10; // eax
-  int v11; // edx
-  int v12; // eax
-  int v13; // ecx
-  __int16 v14; // dx
-  int v16; // [esp+14h] [ebp+4h]
-
-  v8 = (_WORD *)(*(int (__thiscall **)(int, int, int))(*(_DWORD *)a2 + 92))(a2, a3, a4); /*0x410de2*/
-  v9 = (__int16 *)(*(this + 4) + *(this + 6)); /*0x410de9*/
-  v10 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 116))(a2); /*0x410deb*/
-  v11 = a5; /*0x410df1*/
-  v12 = v10 / 2 - a5; /*0x410df7*/
-  if ( v8 && a6 > 0 ) /*0x410e03*/
+    short *v8;
+    short *v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    short v14;
+    int v16;
+    v8 = (short *)(*(int (__thiscall **)(int, int, int))(*(int *)(a2) + 92))(a2, a3, a4);
+    v9 = (short *)(this->M16 + this->M24);
+    v10 = (*(int (__thiscall **)(int))(*(int *)(a2) + 116))(a2);
+    v11 = a5;
+    v12 = v10 / 2 - a5;
+    if ( v8 && a6 > 0 )
   {
-    v16 = a6; /*0x410e05*/
-    do /*0x410e38*/
+    v16 = a6;
+    do
     {
-      if ( v11 > 0 ) /*0x410e0b*/
+    if ( v11 > 0 )
       {
-        v13 = v11; /*0x410e0d*/
-        do /*0x410e26*/
+    v13 = v11;
+    do
         {
-          v14 = *v9++; /*0x410e0f*/
-          *v8++ = v14; /*0x410e15*/
-          if ( (unsigned int)v9 >= *(this + 7) ) /*0x410e20*/
-            v9 = (__int16 *)((char *)v9 - *(this + 8)); /*0x410e22*/
-          --v13; /*0x410e25*/
+    v14 = *v9++;
+    *v8++ = v14;
+    if ( (unsigned int)v9 >= this->M28 )
+    v9 = (short *)((char *)v9 - this->M32);
+    --v13;
         }
-        while ( v13 ); /*0x410e26*/
-        v11 = a5; /*0x410e28*/
+    while ( v13 );
+    v11 = a5;
       }
-      v8 += v12; /*0x410e30*/
-      --v16; /*0x410e34*/
+    v8 += v12;
+    --v16;
     }
-    while ( v16 ); /*0x410e38*/
+    while ( v16 );
   }
-  return (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 96))(a2); /*0x410e42*/
+    return (*(int (__thiscall **)(int))(*(int *)(a2) + 96))(a2);
 }
 }
 } // namespace gamemd
@@ -943,13 +940,11 @@ int __cdecl CompareFunction(_DWORD *a1, _DWORD *a2)
 namespace gamemd {
 char E4Recv_41DD10::sub_41DD10()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_41DD10(int this)
 {
-  this->M64 = MEMORY[0xA8ED84]; /*0x41dd15*/
-  *(_BYTE *)(this + 60) = 0; /*0x41dd1a*/
-  *(_BYTE *)(this + 61) = 0; /*0x41dd1d*/
-  return 0; /*0x41dd20*/
+    this->M64 = g_CurrentFrame;
+    this->M60 = 0;
+    this->M61 = 0;
+    return 0;
 }
 }
 } // namespace gamemd

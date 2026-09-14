@@ -281,13 +281,11 @@ int __thiscall IPXInterfaceClass::_vt20(_DWORD *this, int a2)
 // 0x7B1790
 IPXInterfaceClass * IPXInterfaceClass::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-IPXInterfaceClass *__thiscall IPXInterfaceClass::QueryInterface(void *this, char a2)
 {
-  WinsockInterfaceClass::WinsockInterfaceClass((int)this); /*0x7b1793*/
-  if ( (a2 & 1) != 0 ) /*0x7b179d*/
-    __3_YAXPAX_Z(this); /*0x7b17a0*/
-  return (IPXInterfaceClass *)this; /*0x7b17aa*/
+    WinsockInterfaceClass::WinsockInterfaceClass((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (IPXInterfaceClass *)this;
 }
 }
 
@@ -550,33 +548,28 @@ __int16 __thiscall IPXInterfaceClass::Connect(int this, const void *a1, unsigned
 // 0x7B2840
 void IPXInterfaceClass::getSocketCount()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall IPXInterfaceClass::sub_7B2840(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x7b2846*/
-  *(_DWORD *)(this + 16) = 0; /*0x7b2849*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x7b2850*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x7b2856*/
-    *(_DWORD *)(this + 4) = 0; /*0x7b285e*/
+    __3_YAXPAX_Z(v2);
+    this->Initialized = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x7b2861*/
-  this->LocalNetwork = 0; /*0x7b2864*/
+    this->IsAllocated = 0;
+    this->LocalNetwork = 0;
 }
 }
 
 // 0x7B2870
 unsigned int IPXInterfaceClass::resetSocket(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall IPXInterfaceClass::sub_7B2870(int this, int a2)
 {
-  if ( (unsigned char)this->LocalNode ) /*0x7b2870*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x7b2885*/
-  else
-    return 0; /*0x7b2877*/
+    if ( (unsigned char)this->LocalNode )
+    return (unsigned int)(a2 - this->Initialized) >> 2;
+    else
+    return 0;
 }
 }
 
@@ -632,46 +625,39 @@ char __thiscall IPXInterfaceClass::sub_7B2A20(void *this, int a2, _DWORD *a3)
 // 0x7B2AD0
 int IPXInterfaceClass::initSession(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IPXInterfaceClass::sub_7B2AD0(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x7b2ad0*/
-  result = 0; /*0x7b2ad3*/
-  if ( v2 <= 0 ) /*0x7b2ad8*/
-    return -1; /*0x7b2aef*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x7b2ade*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Initialized; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x7b2aed*/
-      return -1; /*0x7b2aed*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x7b2af2*/
-}
+    return result;
 }
 
 // 0x7B2B50
 DynamicVector * IPXInterfaceClass::closeSession(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall IPXInterfaceClass::closeSession(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x7b2b53*/
-  *this = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b2b56*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x7b2b60*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x7b2b68*/
-    *(this + 1) = 0; /*0x7b2b70*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x7b2b7b*/
-  *(this + 2) = 0; /*0x7b2b81*/
-  if ( (a2 & 1) != 0 ) /*0x7b2b88*/
-    __3_YAXPAX_Z(this); /*0x7b2b8b*/
-  return (DynamicVector *)this; /*0x7b2b95*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 

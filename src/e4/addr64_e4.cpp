@@ -46,28 +46,26 @@ void __cdecl sub_6429A0()
 namespace gamemd {
 unsigned int * E4Recv_6429E0::sub_6429E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_6429E0(ProgressScreenClass *this)
 {
-  this->field_48 = 0; /*0x6429e8*/
-  *(_DWORD *)this->__pad_4C = 0; /*0x6429eb*/
-  *(_DWORD *)&this->__pad_4C[4] = 0; /*0x6429ee*/
-  this->field_54 = 0; /*0x6429f1*/
-  *((_BYTE *)this + 88) = 0; /*0x6429f4*/
-  this->M92 = 0; /*0x6429f7*/
-  *((_BYTE *)this + 96) = 0; /*0x6429fa*/
-  *((_BYTE *)this + 97) = 0; /*0x6429fd*/
-  *((_BYTE *)this + 98) = 0; /*0x642a00*/
-  this->M100 = 0; /*0x642a03*/
-  this->M104 = 0; /*0x642a06*/
-  this->M108 = 0; /*0x642a09*/
-  this->M120 = -1; /*0x642a0c*/
-  this->M128 = -1; /*0x642a0f*/
-  *((_BYTE *)this + 112) = 0; /*0x642a1d*/
-  this->M124 = 0; /*0x642a20*/
-  *(_DWORD *)this->__pad_0 = &vt_ProgressScreenClass; /*0x642a23*/
-  memset(&this->__pad_0[8], 0, 0x40u); /*0x642a29*/
-  return this->__pad_0; /*0x642a2d*/
+    this->field_48 = 0;
+    *(int *)this->__pad_4C = 0;
+    *(int *)&this->__pad_4C[4] = 0;
+    this->field_54 = 0;
+    this->M88 = 0;
+    this->M92 = 0;
+    this->M96 = 0;
+    this->M97 = 0;
+    this->M98 = 0;
+    this->M100 = 0;
+    this->M104 = 0;
+    this->M108 = 0;
+    this->M120 = -1;
+    this->M128 = -1;
+    this->M112 = 0;
+    this->M124 = 0;
+    *(int *)this->__pad_0 = &vt_ProgressScreenClass;
+    memset(&this->__pad_0[8], 0, 0x40u);
+    return this->__pad_0;
 }
 }
 } // namespace gamemd

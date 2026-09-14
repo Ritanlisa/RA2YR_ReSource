@@ -95,40 +95,37 @@ int sub_5C09A0()
 namespace gamemd {
 char * E4Recv_724000::sub_724000(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_724000(char *this, int a2)
 {
-  char *v3; // ecx
-  int v4; // edx
-
-  v3 = this + 564; /*0x72400a*/
-  this->M4 = 0; /*0x724010*/
-  this->M8 = a2; /*0x724013*/
-  *(this + 12) = 0; /*0x724016*/
-  this->M552 = 1000; /*0x724019*/
-  this->M560 = 10000; /*0x724023*/
-  *((_DWORD *)v3 + 1) = 0; /*0x72402d*/
-  *((_DWORD *)v3 + 2) = 0; /*0x724030*/
-  v3[12] = 1; /*0x724033*/
-  v3[13] = 0; /*0x724037*/
-  *(_DWORD *)v3 = &vt_DynamicVectorClass_ToolTip_const; /*0x72403a*/
-  *((_DWORD *)v3 + 5) = 10; /*0x724040*/
-  *((_DWORD *)v3 + 4) = 0; /*0x724047*/
-  this->M588 = 0; /*0x72404a*/
-  this->M592 = 0; /*0x724050*/
-  this->M596 = 0; /*0x724056*/
-  *(this + 600) = 0; /*0x72405c*/
-  this->M604 = 0; /*0x724062*/
-  v4 = *(_DWORD *)v3; /*0x724068*/
-  *(_DWORD *)this = &vt_ToolTipManager; /*0x72406a*/
-  (*(void (__thiscall **)(char *))(v4 + 12))(v3); /*0x724070*/
-  __3_YAXPAX_Z(*((void **)this + 147)); /*0x72407a*/
-  this->M588 = 0; /*0x724082*/
-  this->M592 = 0; /*0x724088*/
-  this->M596 = 0; /*0x72408e*/
-  *(this + 600) = 0; /*0x724094*/
-  this->M604 = 0; /*0x72409a*/
-  return this; /*0x7240a2*/
+    char *v3;
+    int v4;
+    v3 = this + 564;
+    this->M4 = 0;
+    this->M8 = a2;
+    this->M12 = 0;
+    this->M552 = 1000;
+    this->M560 = 10000;
+    *((int *)(v3) + 1) = 0;
+    *((int *)(v3) + 2) = 0;
+    v3[12] = 1;
+    v3[13] = 0;
+    *(int *)v3 = &vt_DynamicVectorClass_ToolTip_const;
+    *((int *)(v3) + 5) = 10;
+    *((int *)(v3) + 4) = 0;
+    this->M588 = 0;
+    this->M592 = 0;
+    this->M596 = 0;
+    this->M600 = 0;
+    this->M604 = 0;
+    v4 = *(int *)v3;
+    *(int *)this = &vt_ToolTipManager;
+    (*(void (__thiscall **)(char *))(v4 + 12))(v3);
+    __3_YAXPAX_Z(*((void **)(this) + 147));
+    this->M588 = 0;
+    this->M592 = 0;
+    this->M596 = 0;
+    this->M600 = 0;
+    this->M604 = 0;
+    return this;
 }
 }
 } // namespace gamemd

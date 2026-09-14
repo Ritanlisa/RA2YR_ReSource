@@ -6,25 +6,18 @@
 namespace gamemd {
 int sub_5EA9B0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_5EA9B0(int a1)
 {
-  wchar_t *v1; // eax
-
-  v1 = (wchar_t *)*(&MEMORY[0xA8DA90] + a1); /*0x5ea9b0*/
-  if ( v1 /*0x5ea9d1*/
-    && (v1 == (wchar_t *)MEMORY[0xAC11A4] || v1 == (wchar_t *)MEMORY[0xAC11A8] || v1 == (wchar_t *)MEMORY[0xAC11AC]) )
+    wchar_t *v1;
+    v1 = (wchar_t *)*(&g_NetworkPlayerName + a1);
+    if ( v1 && (v1 == (wchar_t *)g_Lobby_PlayerTeam || v1 == (wchar_t *)g_Lobby_PlayerSide || v1 == (wchar_t *)g_Lobby_PlayerColor) )
   {
-    return MEMORY[0xA8B2BC][a1]; /*0x5ea9d3*/
+    return g_CampaignConfig[a1];
   }
-  if ( v1 == (wchar_t *)MEMORY[0xAC119C] /*0x5ea9f9*/
-    || v1 == (wchar_t *)MEMORY[0xAC11A0]
-    || v1 == MEMORY[0xAC11B0]
-    || v1 == (wchar_t *)MEMORY[0xAC11B4] )
+    if ( v1 == (wchar_t *)g_HouseClass_ObserverFlags || v1 == (wchar_t *)g_Lobby_PlayerCount || v1 == g_Lobby_PlayerReady || v1 == (wchar_t *)g_Lobby_MaxPlayers )
   {
-    return -2; /*0x5eaa02*/
+    return -2;
   }
-  return SessionClass::GetPlayerColor(*(&MEMORY[0xA8DA90] + a1)); /*0x5ea9da*/
+    return SessionClass::GetPlayerColor(*(&g_NetworkPlayerName + a1));
 }
 }
 } // namespace gamemd
@@ -33,25 +26,18 @@ int __fastcall sub_5EA9B0(int a1)
 namespace gamemd {
 int sub_5EAA10(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_5EAA10(int a1)
 {
-  wchar_t *v1; // eax
-
-  v1 = (wchar_t *)*(&MEMORY[0xA8DA90] + a1); /*0x5eaa10*/
-  if ( v1 /*0x5eaa31*/
-    && (v1 == (wchar_t *)MEMORY[0xAC11A4] || v1 == (wchar_t *)MEMORY[0xAC11A8] || v1 == (wchar_t *)MEMORY[0xAC11AC]) )
+    wchar_t *v1;
+    v1 = (wchar_t *)*(&g_NetworkPlayerName + a1);
+    if ( v1 && (v1 == (wchar_t *)g_Lobby_PlayerTeam || v1 == (wchar_t *)g_Lobby_PlayerSide || v1 == (wchar_t *)g_Lobby_PlayerColor) )
   {
-    return MEMORY[0xA8B2DC][a1]; /*0x5eaa33*/
+    return g_CampaignSideIndex[a1];
   }
-  if ( v1 == (wchar_t *)MEMORY[0xAC119C] /*0x5eaa59*/
-    || v1 == (wchar_t *)MEMORY[0xAC11A0]
-    || v1 == MEMORY[0xAC11B0]
-    || v1 == (wchar_t *)MEMORY[0xAC11B4] )
+    if ( v1 == (wchar_t *)g_HouseClass_ObserverFlags || v1 == (wchar_t *)g_Lobby_PlayerCount || v1 == g_Lobby_PlayerReady || v1 == (wchar_t *)g_Lobby_MaxPlayers )
   {
-    return -2; /*0x5eaa62*/
+    return -2;
   }
-  return SessionClass::GetOption(*(&MEMORY[0xA8DA90] + a1)); /*0x5eaa3a*/
+    return SessionClass::GetOption(*(&g_NetworkPlayerName + a1));
 }
 }
 } // namespace gamemd
@@ -83,25 +69,18 @@ void sub_7A0E50()
 namespace gamemd {
 int sub_5EAA70(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_5EAA70(int a1)
 {
-  wchar_t *v1; // eax
-
-  v1 = (wchar_t *)*(&MEMORY[0xA8DA90] + a1); /*0x5eaa70*/
-  if ( v1 /*0x5eaa91*/
-    && (v1 == (wchar_t *)MEMORY[0xAC11A4] || v1 == (wchar_t *)MEMORY[0xAC11A8] || v1 == (wchar_t *)MEMORY[0xAC11AC]) )
+    wchar_t *v1;
+    v1 = (wchar_t *)*(&g_NetworkPlayerName + a1);
+    if ( v1 && (v1 == (wchar_t *)g_Lobby_PlayerTeam || v1 == (wchar_t *)g_Lobby_PlayerSide || v1 == (wchar_t *)g_Lobby_PlayerColor) )
   {
-    return MEMORY[0xA8B2FC][a1]; /*0x5eaa93*/
+    return g_CampaignFactionSlot[a1];
   }
-  if ( v1 == (wchar_t *)MEMORY[0xAC119C] /*0x5eaab9*/
-    || v1 == (wchar_t *)MEMORY[0xAC11A0]
-    || v1 == MEMORY[0xAC11B0]
-    || v1 == (wchar_t *)MEMORY[0xAC11B4] )
+    if ( v1 == (wchar_t *)g_HouseClass_ObserverFlags || v1 == (wchar_t *)g_Lobby_PlayerCount || v1 == g_Lobby_PlayerReady || v1 == (wchar_t *)g_Lobby_MaxPlayers )
   {
-    return -2; /*0x5eaac2*/
+    return -2;
   }
-  return SessionClass::GetOption2(*(&MEMORY[0xA8DA90] + a1)); /*0x5eaa9a*/
+    return SessionClass::GetOption2(*(&g_NetworkPlayerName + a1));
 }
 }
 } // namespace gamemd

@@ -5,14 +5,12 @@
 // 0x5CED10
 MSBitPrintAnim * MSBitPrintAnim::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-MSBitPrintAnim *__thiscall MSBitPrintAnim::QueryInterface(void **this, char a2)
 {
-  *this = &vt_MSBitPrintAnim; /*0x5ced16*/
-  DeleteAndZero::Alt(this + 7); /*0x5ced1c*/
-  *this = &vt_MSAnim; /*0x5ced25*/
-  if ( (a2 & 1) != 0 ) /*0x5ced2d*/
-    __3_YAXPAX_Z(this); /*0x5ced30*/
-  return (MSBitPrintAnim *)this; /*0x5ced3a*/
+    *(void**)this = &vt_MSBitPrintAnim;
+    DeleteAndZero::Alt(this + 7);
+    *(void**)this = &vt_MSAnim;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (MSBitPrintAnim *)this;
 }
 }

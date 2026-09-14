@@ -5,18 +5,15 @@
 // 0x4E24A0
 unsigned int Time::GetElapsedMS()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int Time_GetElapsedMS()
 {
-  DWORD Time; // eax
-  unsigned int v1; // ecx
-
-  Time = timeGetTime(); /*0x4e24a0*/
-  if ( Time > MEMORY[0x8B3F14] ) /*0x4e24ae*/
-    v1 = 3 * (Time - MEMORY[0x8B3F14]); /*0x4e24c5*/
-  else
-    v1 = 3 * (Time - MEMORY[0x8B3F14] - 1); /*0x4e24b3*/
-  return v1 / 0x32; /*0x4e24c2*/
+    DWORD Time;
+    unsigned int v1;
+    Time = timeGetTime();
+    if ( Time > DataGlobal_8B3F14 )
+    v1 = 3 * (Time - DataGlobal_8B3F14);
+    else
+    v1 = 3 * (Time - DataGlobal_8B3F14 - 1);
+    return v1 / 0x32;
 }
 }
 

@@ -2810,67 +2810,54 @@ int __cdecl sub_5C9AE0(const void *a1, const void *a2)
 namespace gamemd {
 int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int * a6, int a7, int a8, char a9, char a10)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5CD570(
-        int this,
-        const wchar_t **a2,
-        int a3,
-        int a4,
-        int a5,
-        int *a6,
-        int a7,
-        int a8,
-        char a9,
-        char a10)
 {
-  size_t v11; // ebx
-  int v12; // ebp
-  int v13; // eax
-  int v15; // [esp+14h] [ebp-8h]
-  int v16; // [esp+3Ch] [ebp+20h]
-  int v17; // [esp+40h] [ebp+24h]
-
-  this->M8 = a4; /*0x5cd581*/
-  this->M4 = a3; /*0x5cd587*/
-  *(_BYTE *)(this + 12) = 1; /*0x5cd58a*/
-  v11 = 0; /*0x5cd597*/
-  this->M16 = Timer::GetTicks(); /*0x5cd59c*/
-  this->M24 = 0; /*0x5cd59f*/
-  *(_DWORD *)this = &vt_MSAnim; /*0x5cd5a5*/
-  WideString::AssignFromPtr((wchar_t **)(this + 28), a2); /*0x5cd5ab*/
-  this->M44 = a8; /*0x5cd5c0*/
-  *(_BYTE *)(this + 48) = a9; /*0x5cd5c7*/
-  this->M32 = 0; /*0x5cd5ce*/
-  this->M36 = a7; /*0x5cd5d1*/
-  this->M40 = 0; /*0x5cd5d4*/
-  this->M52 = a5; /*0x5cd5d7*/
-  *(_BYTE *)(this + 72) = 0; /*0x5cd5da*/
-  *(_BYTE *)(this + 73) = a10; /*0x5cd5dd*/
-  this->M76 = 0; /*0x5cd5e0*/
-  *(_DWORD *)this = &vt_MSPrintAnim; /*0x5cd5e3*/
-  this->M16 = Timer::GetTicks(); /*0x5cd5f6*/
-  this->M20 = v15; /*0x5cd5f9*/
-  this->M24 = a7; /*0x5cd5ff*/
-  sub_5CD690(this, a6); /*0x5cd602*/
-  if ( a10 ) /*0x5cd60b*/
+    size_t v11;
+    int v12;
+    int v13;
+    int v15;
+    int v16;
+    int v17;
+    this->M8 = a4;
+    this->M4 = a3;
+    this->M12 = 1;
+    v11 = 0;
+    this->M16 = Timer::GetTicks();
+    this->M24 = 0;
+    *(int *)this = &vt_MSAnim;
+    WideString::AssignFromPtr((wchar_t **)(this + 28), a2);
+    this->M44 = a8;
+    this->M48 = a9;
+    this->M32 = 0;
+    this->M36 = a7;
+    this->M40 = 0;
+    this->M52 = a5;
+    this->M72 = 0;
+    this->M73 = a10;
+    this->M76 = 0;
+    *(int *)this = &vt_MSPrintAnim;
+    this->M16 = Timer::GetTicks();
+    this->M20 = v15;
+    this->M24 = a7;
+    sub_5CD690(this, a6);
+    if ( a10 )
   {
-    v17 = 0; /*0x5cd611*/
-    v16 = *(_DWORD *)(this->M52 + 4); /*0x5cd618*/
-    if ( WideString::GetChar((const wchar_t **)(this + 28), 0) ) /*0x5cd61e*/
+    v17 = 0;
+    v16 = *(int *)(this->M52 + 4);
+    if ( WideString::GetChar((const wchar_t **)(this + 28), 0) )
     {
-      do /*0x5cd658*/
+    do
       {
-        if ( WideString::GetChar((const wchar_t **)(this + 28), v11) == 10 ) /*0x5cd634*/
-          break; /*0x5cd634*/
-        v12 = **(_DWORD **)(this + 52); /*0x5cd63c*/
-        LOWORD(v13) = WideString::GetChar((const wchar_t **)(this + 28), v11++); /*0x5cd63e*/
-        v17 += (*(int (__thiscall **)(_DWORD, int))(v12 + 4))(this->M52, v13); /*0x5cd651*/
+    if ( WideString::GetChar((const wchar_t **)(this + 28), v11) == 10 )
+    break;
+    v12 = **(int **)(this + 52);
+    LOWORD(v13) = WideString::GetChar((const wchar_t **)(this + 28), v11++);
+    v17 += (*(int (__thiscall **)(int, int))(v12 + 4))(this->M52, v13);
       }
-      while ( WideString::GetChar((const wchar_t **)(this + 28), v11) ); /*0x5cd658*/
+    while ( WideString::GetChar((const wchar_t **)(this + 28), v11) );
     }
-    this->M76 = (this->M64 - v17 - v16) / 2; /*0x5cd676*/
+    this->M76 = (this->M64 - v17 - v16) / 2;
   }
-  return this; /*0x5cd67b*/
+    return this;
 }
 }
 } // namespace gamemd
@@ -3307,67 +3294,56 @@ LABEL_5:
 namespace gamemd {
 int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5CE3A0(int this, int a2, int *a3)
 {
-  _DWORD *v4; // ecx
-  int result; // eax
-  int v6; // ecx
-  int v7; // ebp
-  int v8; // ebx
-  size_t v9; // edi
-  int v10; // eax
-  int v11; // ebp
-  int v12; // eax
-  int v13; // eax
-  int v14; // [esp+18h] [ebp-28h]
-  int v15; // [esp+18h] [ebp-28h]
-  size_t i; // [esp+1Ch] [ebp-24h]
-  _DWORD v17[4]; // [esp+30h] [ebp-10h] BYREF
-  int v18; // [esp+48h] [ebp+8h]
-
-  if ( !a3 /*0x5ce3e1*/
-    || (v4 = ClipRectIntersection(v17, a3, (int *)(this + 56), 0, 0), result = v4[2], v6 = v4[3], result > 0) && v6 > 0 )
+    int *v4;
+    int result;
+    int v6;
+    int v7;
+    int v8;
+    size_t v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    int v14;
+    int v15;
+    size_t i;
+    int v17[4];
+    int v18;
+    if ( !a3 || (v4 = ClipRectIntersection(v17, a3, (int *)(this + 56), 0, 0), result = v4[2], v6 = v4[3], result > 0) && v6 > 0 )
   {
-    result = this->M32; /*0x5ce3e7*/
-    v7 = this->M8; /*0x5ce3ea*/
-    v8 = this->M4; /*0x5ce3ed*/
-    v9 = 0; /*0x5ce3f0*/
-    v18 = v7; /*0x5ce3f4*/
-    for ( i = result; v9 < i; ++v9 ) /*0x5ce3fc*/
+    result = this->M32;
+    v7 = this->M8;
+    v8 = this->M4;
+    v9 = 0;
+    v18 = v7;
+    for ( i = result; v9 < i; ++v9 )
     {
-      if ( WideString::GetChar((const wchar_t **)(this + 28), v9) == 10 ) /*0x5ce40f*/
+    if ( WideString::GetChar((const wchar_t **)(this + 28), v9) == 10 )
       {
-        v8 = this->M4; /*0x5ce414*/
-        v7 += *(_DWORD *)(this->M52 + 8); /*0x5ce41e*/
-        v14 = *(_DWORD *)(this->M52 + 8); /*0x5ce420*/
-        v18 = v7; /*0x5ce426*/
-        result = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 128))(a2); /*0x5ce42a*/
-        if ( v7 + v14 >= result ) /*0x5ce438*/
-          return result; /*0x5ce438*/
+    v8 = this->M4;
+    v7 += *(int *)(this->M52 + 8);
+    v14 = *(int *)(this->M52 + 8);
+    v18 = v7;
+    result = (*(int (__thiscall **)(int))(*(int *)(a2) + 128))(a2);
+    if ( v7 + v14 >= result )
+    return result;
       }
-      else
+    else
       {
-        v15 = **(_DWORD **)(this + 52); /*0x5ce44b*/
-        LOWORD(v10) = WideString::GetChar((const wchar_t **)(this + 28), v9); /*0x5ce44f*/
-        (*(void (__thiscall **)(_DWORD, int, int, int, int, int, int))(v15 + 16))( /*0x5ce461*/
-          this->M52,
-          a2,
-          v10,
-          v8,
-          v7,
-          2,
-          1);
-        v11 = **(_DWORD **)(this + 52); /*0x5ce46b*/
-        LOWORD(v12) = WideString::GetChar((const wchar_t **)(this + 28), v9); /*0x5ce46d*/
-        v13 = (*(int (__thiscall **)(_DWORD, int))(v11 + 4))(this->M52, v12); /*0x5ce476*/
-        v7 = v18; /*0x5ce479*/
-        v8 += v13; /*0x5ce47d*/
+    v15 = **(int **)(this + 52);
+    LOWORD(v10) = WideString::GetChar((const wchar_t **)(this + 28), v9);
+    (*(void (__thiscall **)(int, int, int, int, int, int, int))(v15 + 16))( this->M52, a2, v10, v8, v7, 2, 1);
+    v11 = **(int **)(this + 52);
+    LOWORD(v12) = WideString::GetChar((const wchar_t **)(this + 28), v9);
+    v13 = (*(int (__thiscall **)(int, int))(v11 + 4))(this->M52, v12);
+    v7 = v18;
+    v8 += v13;
       }
-      result = i; /*0x5ce47f*/
+    result = i;
     }
   }
-  return result; /*0x5ce48c*/
+    return result;
 }
 }
 } // namespace gamemd

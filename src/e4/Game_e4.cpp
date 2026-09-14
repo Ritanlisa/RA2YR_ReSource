@@ -1521,40 +1521,37 @@ char __thiscall Game::LoadMultiplayerScoreAssets(void *this)
 namespace gamemd {
 void * Game::shutdownGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall sub_72D830(void *this)
 {
-  void *result; // eax
-  char *v2; // ecx
-
-  if ( this ) /*0x72d832*/
+    void *result;
+    char *v2;
+    if ( this )
   {
-    if ( this == (void *)1 ) /*0x72d86f*/
+    if ( this == (void *)1 )
     {
-      if ( MEMORY[0x8A00A4] == 640 ) /*0x72d87b*/
-        result = LoadFileSHP(MEMORY[0x844CA8], (bool *)&MEMORY[0xB0FC7D]); /*0x72d883*/
-      else
-        result = LoadFileSHP(MEMORY[0x844CAC], (bool *)&MEMORY[0xB0FC7D]); /*0x72d894*/
-      MEMORY[0xB0FB1C] = result; /*0x72d888*/
+    if ( g_DisplayWidth == 640 )
+    result = LoadFileSHP(DataGlobal_844CA8, (bool *)&DataGlobal_B0FC7D);
+    else
+    result = LoadFileSHP(DataGlobal_844CAC, (bool *)&DataGlobal_B0FC7D);
+    DataGlobal_B0FB1C = result;
     }
     else
     {
-      v2 = MEMORY[0x844CB0][0]; /*0x72d89f*/
-      if ( MEMORY[0x8A00A4] != 640 ) /*0x72d8af*/
-        v2 = MEMORY[0x844CB4]; /*0x72d8b1*/
-      result = LoadFileSHP(v2, (bool *)&MEMORY[0xB0FC7D]); /*0x72d8b7*/
-      MEMORY[0xB0FB1C] = result; /*0x72d8bc*/
+    v2 = DataGlobal_844CB0[0];
+    if ( g_DisplayWidth != 640 )
+    v2 = DataGlobal_844CB4;
+    result = LoadFileSHP(v2, (bool *)&DataGlobal_B0FC7D);
+    DataGlobal_B0FB1C = result;
     }
   }
-  else
-  {
-    if ( MEMORY[0x8A00A4] == 640 ) /*0x72d843*/
-      result = LoadFileSHP(MEMORY[0x844CA0], (bool *)&MEMORY[0xB0FC7D]); /*0x72d84b*/
     else
-      result = LoadFileSHP(MEMORY[0x844CA4], (bool *)&MEMORY[0xB0FC7D]); /*0x72d85c*/
-    MEMORY[0xB0FB1C] = result; /*0x72d850*/
+  {
+    if ( g_DisplayWidth == 640 )
+    result = LoadFileSHP(DataGlobal_844CA0, (bool *)&DataGlobal_B0FC7D);
+    else
+    result = LoadFileSHP(DataGlobal_844CA4, (bool *)&DataGlobal_B0FC7D);
+    DataGlobal_B0FB1C = result;
   }
-  return result; /*0x72d855*/
+    return result;
 }
 }
 } // namespace gamemd

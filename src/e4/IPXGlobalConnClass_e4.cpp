@@ -303,28 +303,25 @@ LABEL_13:
 // 0x540670
 IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-IPXGlobalConnClass *__thiscall IPXGlobalConnClass::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 52); /*0x540673*/
-  *this = &vt_IPXGlobalConnClass; /*0x540679*/
-  if ( v3 ) /*0x540681*/
+    void *v3;
+    v3 = (void *)*(this + 52);
+    *(void**)this = &vt_IPXGlobalConnClass;
+    if ( v3 )
   {
-    __3_YAXPAX_Z(v3); /*0x540684*/
-    *(this + 52) = 0; /*0x54068c*/
+    __3_YAXPAX_Z(v3);
+    *(this + 52) = 0;
   }
-  if ( *(this + 51) ) /*0x540696*/
+    if ( *(this + 51) )
   {
-    __3_YAXPAX_Z((void *)*(this + 51)); /*0x5406a1*/
-    *(this + 51) = 0; /*0x5406a9*/
+    __3_YAXPAX_Z((void *)*(this + 51));
+    *(this + 51) = 0;
   }
-  *this = &vt_IPXConnClass; /*0x5406b5*/
-  ConnectionClass::dtor(this); /*0x5406bb*/
-  if ( (a2 & 1) != 0 ) /*0x5406c5*/
-    __3_YAXPAX_Z(this); /*0x5406c8*/
-  return (IPXGlobalConnClass *)this; /*0x5406d2*/
+    *(void**)this = &vt_IPXConnClass;
+    ConnectionClass::dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (IPXGlobalConnClass *)this;
 }
 }
 

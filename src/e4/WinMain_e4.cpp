@@ -5,26 +5,23 @@
 // 0x49F8B0
 LSTATUS WinMain::CleanupResource()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LSTATUS __thiscall WinMain::CleanupResource(AnimClass *this)
 {
-  LSTATUS result; // eax
-  HKEY phkResult; // [esp+0h] [ebp-4h] BYREF
-
-  phkResult = (HKEY)this; /*0x49f8b0*/
-  Debug::Log(); /*0x49f8b6*/
-  if ( MEMORY[0x89F75C] ) /*0x49f8c5*/
+    LSTATUS result;
+    HKEY phkResult;
+    phkResult = (HKEY)this;
+    Debug::Log();
+    if ( lpBaseAddress )
   {
-    UnmapViewOfFile(MEMORY[0x89F75C]); /*0x49f8c8*/
-    MEMORY[0x89F75C] = 0; /*0x49f8ce*/
+    UnmapViewOfFile(lpBaseAddress);
+    lpBaseAddress = 0;
   }
-  result = RegOpenKeyExA(HKEY_CLASSES_ROOT, SubKey, 0, 0xF003Fu, &phkResult); /*0x49f8ee*/
-  if ( !result ) /*0x49f8f6*/
+    result = RegOpenKeyExA(HKEY_CLASSES_ROOT, SubKey, 0, 0xF003Fu, &phkResult);
+    if ( !result )
   {
-    RegDeleteValueA(phkResult, ValueName); /*0x49f902*/
-    return RegCloseKey(phkResult); /*0x49f90d*/
+    RegDeleteValueA(phkResult, ValueName);
+    return RegCloseKey(phkResult);
   }
-  return result; /*0x49f914*/
+    return result;
 }
 }
 

@@ -54,20 +54,17 @@ MouseClass *__thiscall MouseClass::InitMouse(char *Block, char a2)
 } }
 // 0x40D540
 namespace gamemd { void MouseClass::initCursor() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MouseClass::sub_40D540(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x40d546*/
-  *(_DWORD *)(this + 16) = 0; /*0x40d549*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x40d550*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x40d556*/
-    *(_DWORD *)(this + 4) = 0; /*0x40d55e*/
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x40d561*/
-  *(_DWORD *)(this + 8) = 0; /*0x40d564*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 } }
 // 0x40D570
@@ -151,23 +148,20 @@ int __thiscall MouseClass::sub_40D7D0(int *this, _DWORD *a2)
 } }
 // 0x40D850
 namespace gamemd { void* MouseClass::applyCursorSettings(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall MouseClass::applyCursorSettings(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x40d853*/
-  *this = &vt_VectorClass_MixFileClass; /*0x40d856*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x40d860*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_MixFileClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x40d868*/
-    *(this + 1) = 0; /*0x40d870*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x40d87b*/
-  *(this + 2) = 0; /*0x40d881*/
-  if ( (a2 & 1) != 0 ) /*0x40d888*/
-    __3_YAXPAX_Z(this); /*0x40d88b*/
-  return (DynamicVector *)this; /*0x40d895*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 } }
 // 0x433F50
@@ -476,16 +470,14 @@ int __thiscall DropListClass::_vt45(_DWORD *this, int a2)
 } }
 // 0x4B55F0
 namespace gamemd { void* DropListClass::QueryInterface(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DropListClass *__thiscall DropListClass::QueryInterface(_DWORD *this, char a2)
 {
-  *this = &vt_DropListClass; /*0x4b55f9*/
-  ListClass::Destruct(this + 44); /*0x4b55ff*/
-  ShapeButtonClass::Destructor((int)(this + 20)); /*0x4b5607*/
-  DropListClass::Constructor(this); /*0x4b560e*/
-  if ( (a2 & 1) != 0 ) /*0x4b5618*/
-    __3_YAXPAX_Z(this); /*0x4b561b*/
-  return (DropListClass *)this; /*0x4b5625*/
+    *(void**)this = &vt_DropListClass;
+    ListClass::Destruct(this + 44);
+    ShapeButtonClass::Destructor((int)(this + 20));
+    DropListClass::Constructor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DropListClass *)this;
 }
 } }
 // 0x4C30B0
@@ -1055,20 +1047,17 @@ char __thiscall TauntCommandClass::_vt08(_BYTE *this, int a2)
 } }
 // 0x556EB0
 namespace gamemd { void CheckListClass::initList() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall CheckListClass::sub_556EB0(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x556eb6*/
-  *(_DWORD *)(this + 16) = 0; /*0x556eb9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x556ec0*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x556ec6*/
-    *(_DWORD *)(this + 4) = 0; /*0x556ece*/
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x556ed1*/
-  *(_DWORD *)(this + 8) = 0; /*0x556ed4*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 } }
 // 0x556EE0
@@ -1084,49 +1073,46 @@ unsigned int __thiscall CheckListClass::sub_556EE0(int this, int a2)
 } }
 // 0x557090
 namespace gamemd { int CheckListClass::removeItem(int a2, void* a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CheckListClass::sub_557090(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x55709c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x5570a2*/
-    if ( a3 ) /*0x5570a8*/
-      v4 = a3; /*0x5570be*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5570ba*/
-    *((_BYTE *)this + 12) = 1; /*0x5570c2*/
-    if ( !v4 ) /*0x5570c6*/
-      return 0; /*0x55713a*/
-    if ( *((_DWORD *)this + 1) ) /*0x5570c8*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->Items )
     {
-      v5 = *((_DWORD *)this + 2); /*0x5570cf*/
-      if ( a2 < v5 ) /*0x5570d4*/
-        v5 = a2; /*0x5570d6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5570dc*/
-        ++i; /*0x5570e1*/
-      if ( *((_BYTE *)this + 13) ) /*0x5570ee*/
+    v5 = this->Capacity;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->Items + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5570f9*/
-        *((_DWORD *)this + 1) = 0; /*0x557101*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Items = 0;
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x55710a*/
-    *((_DWORD *)this + 2) = a2; /*0x557112*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x557115*/
+    this->Items = v4;
+    this->Capacity = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x55711e*/
+    this->ddtor();
   }
-  v7 = *((_DWORD *)this + 2); /*0x557121*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x557129*/
-    *((_DWORD *)this + 4) = v7; /*0x55712b*/
-  return 1; /*0x55712e*/
+    v7 = this->Capacity;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
 }
 } }
 // 0x557140
@@ -1152,23 +1138,20 @@ int __thiscall CheckListClass::sub_557140(int *this, _DWORD *a2)
 } }
 // 0x5571C0
 namespace gamemd { void* CheckListClass::toggleItem(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall CheckListClass::toggleItem(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x5571c3*/
-  *this = &vt_VectorClass_LineTrail; /*0x5571c6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5571d0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_LineTrail;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x5571d8*/
-    *(this + 1) = 0; /*0x5571e0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x5571eb*/
-  *(this + 2) = 0; /*0x5571f1*/
-  if ( (a2 & 1) != 0 ) /*0x5571f8*/
-    __3_YAXPAX_Z(this); /*0x5571fb*/
-  return (DynamicVector *)this; /*0x557205*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 } }
 // 0x557570
@@ -1485,80 +1468,71 @@ void __thiscall CheckListClass::_vt18(int this)
 } }
 // 0x558060
 namespace gamemd { void* ListClass::Destru_vt00(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ListClass *__thiscall ListClass::Destru_vt00(_BYTE *this, char a2)
 {
-  char v3; // al
-  GaugeClass *v4; // edx
-  void *v5; // eax
-
-  v3 = *(this + 84); /*0x558066*/
-  *(_DWORD *)this = &vt_ListClass; /*0x558069*/
-  if ( v3 ) /*0x558071*/
+    char v3;
+    GaugeClass *v4;
+    void *v5;
+    v3 = *(this + 84);
+    *(int *)this = &vt_ListClass;
+    if ( v3 )
   {
-    v4 = (GaugeClass *)*((_DWORD *)this + 70); /*0x55807c*/
-    *((_DWORD *)this + 5) += *((_DWORD *)this + 75); /*0x558084*/
-    *(this + 84) = 0; /*0x55808d*/
-    ((void (__thiscall *)(_BYTE *))v4[1].GaugeClass_field_0x04)(this + 280); /*0x558090*/
-    (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)this + 22) + 36))(this + 88); /*0x558099*/
-    (*(void (__thiscall **)(_BYTE *))(*((_DWORD *)this + 46) + 36))(this + 184); /*0x5580a8*/
-    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 72))(this); /*0x5580af*/
+    v4 = (GaugeClass *)*((int *)(this) + 70);
+    *((int *)(this) + 5) += *((int *)(this) + 75);
+    *(this + 84) = 0;
+    ((void (__thiscall *)(char *))v4[1].GaugeClass_field_0x04)(this + 280);
+    (*(void (__thiscall **)(char *))(*((int *)(this) + 22) + 36))(this + 88);
+    (*(void (__thiscall **)(char *))(*((int *)(this) + 46) + 36))(this + 184);
+    (*(void (__thiscall **)(char *))(*(int *)(this) + 72))(this);
   }
-  SliderClass::Destructor((_DWORD *)this + 70); /*0x5580b8*/
-  ShapeButtonClass::Destructor((int)(this + 184)); /*0x5580c3*/
-  ShapeButtonClass::Destructor((int)(this + 88)); /*0x5580cb*/
-  v5 = (void *)*((_DWORD *)this + 14); /*0x5580d0*/
-  *((_DWORD *)this + 13) = &vt_VectorClass_unsigned_short_const; /*0x5580d3*/
-  if ( v5 && *(this + 65) ) /*0x5580de*/
+    SliderClass::Destructor((int *)(this) + 70);
+    ShapeButtonClass::Destructor((int)(this + 184));
+    ShapeButtonClass::Destructor((int)(this + 88));
+    v5 = (void *)*((int *)(this) + 14);
+    *((int *)(this) + 13) = &vt_VectorClass_unsigned_short_const;
+    if ( v5 && *(this + 65) )
   {
-    __3_YAXPAX_Z(v5); /*0x5580e4*/
-    *((_DWORD *)this + 14) = 0; /*0x5580ec*/
+    __3_YAXPAX_Z(v5);
+    *((int *)(this) + 14) = 0;
   }
-  *(this + 65) = 0; /*0x5580f1*/
-  *((_DWORD *)this + 15) = 0; /*0x5580f4*/
-  GadgetClass::Dtor(this); /*0x5580f7*/
-  if ( (a2 & 1) != 0 ) /*0x558101*/
-    __3_YAXPAX_Z(this); /*0x558104*/
-  return (ListClass *)this; /*0x55810e*/
+    *(this + 65) = 0;
+    *((int *)(this) + 15) = 0;
+    GadgetClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (ListClass *)this;
 }
 } }
 // 0x558130
 namespace gamemd { void* CheckListClass::drawList(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall CheckListClass::drawList(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x558133*/
-  *this = &vt_VectorClass_unsigned_short_const; /*0x558136*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x558140*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_unsigned_short_const;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x558148*/
-    *(this + 1) = 0; /*0x558150*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x55815b*/
-  *(this + 2) = 0; /*0x558161*/
-  if ( (a2 & 1) != 0 ) /*0x558168*/
-    __3_YAXPAX_Z(this); /*0x55816b*/
-  return (DynamicVector *)this; /*0x558175*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 } }
 // 0x5581E0
 namespace gamemd { void CheckListClass::scrollList() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall CheckListClass::sub_5581E0(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x5581e6*/
-  *(_DWORD *)(this + 16) = 0; /*0x5581e9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5581f0*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x5581f6*/
-    *(_DWORD *)(this + 4) = 0; /*0x5581fe*/
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x558201*/
-  *(_DWORD *)(this + 8) = 0; /*0x558204*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 } }
 // 0x558210
@@ -1574,49 +1548,46 @@ unsigned int __thiscall CheckListClass::sub_558210(int this, int a2)
 } }
 // 0x5583C0
 namespace gamemd { int CheckListClass::clearList(int a2, void* a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CheckListClass::sub_5583C0(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x5583cc*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x5583d2*/
-    if ( a3 ) /*0x5583d8*/
-      v4 = a3; /*0x5583ee*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5583ea*/
-    *((_BYTE *)this + 12) = 1; /*0x5583f2*/
-    if ( !v4 ) /*0x5583f6*/
-      return 0; /*0x55846a*/
-    if ( *((_DWORD *)this + 1) ) /*0x5583f8*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->Items )
     {
-      v5 = *((_DWORD *)this + 2); /*0x5583ff*/
-      if ( a2 < v5 ) /*0x558404*/
-        v5 = a2; /*0x558406*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x55840c*/
-        ++i; /*0x558411*/
-      if ( *((_BYTE *)this + 13) ) /*0x55841e*/
+    v5 = this->Capacity;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->Items + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x558429*/
-        *((_DWORD *)this + 1) = 0; /*0x558431*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->Items = 0;
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x55843a*/
-    *((_DWORD *)this + 2) = a2; /*0x558442*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x558445*/
+    this->Items = v4;
+    this->Capacity = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x55844e*/
+    this->ddtor();
   }
-  v7 = *((_DWORD *)this + 2); /*0x558451*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x558459*/
-    *((_DWORD *)this + 4) = v7; /*0x55845b*/
-  return 1; /*0x55845e*/
+    v7 = this->Capacity;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
 }
 } }
 // 0x558470
@@ -3503,13 +3474,11 @@ wchar_t *__thiscall PowerClass::_vt33(_DWORD *this, int a2)
 } }
 // 0x6404B0
 namespace gamemd { void* PowerClass::Initialize(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-PowerClass *__thiscall PowerClass::Initialize(_DWORD *this, char a2)
 {
-  RadarClass::Destruct(this); /*0x6404b3*/
-  if ( (a2 & 1) != 0 ) /*0x6404bd*/
-    __3_YAXPAX_Z(this); /*0x6404c0*/
-  return (PowerClass *)this; /*0x6404ca*/
+    RadarClass::Destruct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (PowerClass *)this;
 }
 } }
 // 0x6568A0
@@ -3750,56 +3719,47 @@ LABEL_10:
 } }
 // 0x674650
 namespace gamemd { int SidebarClass::ReadButtonList() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SidebarClass::ReadButtonList(RulesClass *this)
 {
-  char *v1; // edi
-  int result; // eax
-  int i; // esi
-  int v4; // edi
-  int v5; // esi
-  char *j; // eax
-  int v7; // eax
-  char String[512]; // [esp+8h] [ebp-200h] BYREF
-  unsigned __int8 ***v9; // [esp+20Ch] [ebp+4h]
-  char v10; // [esp+210h] [ebp+8h]
-
-  v1 = MEMORY[0x839D1C]; /*0x67465e*/
-  if ( !v10 ) /*0x674664*/
-    v1 = MEMORY[0x839D3C]; /*0x674666*/
-  result = INIClass::BinarySearchSection((int)v9, (unsigned __int8 *)v1); /*0x674676*/
-  if ( result ) /*0x674682*/
+    char *v1;
+    int result;
+    int i;
+    int v4;
+    int v5;
+    char *j;
+    int v7;
+    char String[512];
+    unsigned char ***v9;
+    char v10;
+    v1 = DataGlobal_839D1C;
+    if ( !v10 )
+    v1 = DataGlobal_839D3C;
+    result = INIClass::BinarySearchSection((int)v9, (unsigned char *)v1);
+    if ( result )
   {
-    for ( i = 0; i < 25; ++i ) /*0x674689*/
-      globalHelper_0CFD20(i, MEMORY[0x8427CC]); /*0x674693*/
-    result = INIClass::GetString( /*0x6746b9*/
-               v9,
-               (unsigned __int8 *)v1,
-               (unsigned __int8 *)MEMORY[0x839D10],
-               &MEMORY[0x889F64],
-               String,
-               512);
-    if ( result ) /*0x6746c0*/
+    for ( i = 0; i < 25; ++i )
+    globalHelper_0CFD20(i, DataGlobal_8427CC);
+    result = INIClass::GetString( v9, (unsigned char *)v1, (unsigned char *)DataGlobal_839D10, &g_INI_DefaultBuffer, String, 512);
+    if ( result )
     {
-      v4 = 0; /*0x6746cc*/
-      v5 = 0; /*0x6746ce*/
-      for ( j = strtok(String, MEMORY[0x817F70]); j; j = strtok(0, MEMORY[0x817F70]) ) /*0x6746da*/
+    v4 = 0;
+    v5 = 0;
+    for ( j = strtok(String, Delimiter); j; j = strtok(0, Delimiter) )
       {
-        v7 = SidebarClass::findEntryIndexByName(j); /*0x6746de*/
-        if ( v7 != MEMORY[0x8427CC] ) /*0x6746e9*/
-          globalHelper_0CFD20(v7, v5); /*0x6746ef*/
-        ++v4; /*0x6746f9*/
-        ++v5; /*0x6746fc*/
+    v7 = SidebarClass::findEntryIndexByName(j);
+    if ( v7 != DataGlobal_8427CC )
+    globalHelper_0CFD20(v7, v5);
+    ++v4;
+    ++v5;
       }
-      result = globalHelper_0CFDB0(v4); /*0x67470b*/
+    result = globalHelper_0CFDB0(v4);
     }
-    LOBYTE(result) = 1; /*0x674712*/
+    LOBYTE(result) = 1;
   }
-  else
+    else
   {
-    LOBYTE(result) = 0; /*0x67471f*/
+    LOBYTE(result) = 0;
   }
-  return result; /*0x674711*/
+    return result;
 }
 } }
 // 0x68C710
@@ -7123,13 +7083,11 @@ namespace gamemd { int SidebarClass::saveLoadPrefix2(int a1) {
 } }
 // 0x6AC780
 namespace gamemd { void* SidebarClass::queryInterface(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall SidebarClass::queryInterface(_DWORD *this, char a2)
 {
-  GadgetClass::Dtor(this); /*0x6ac783*/
-  if ( (a2 & 1) != 0 ) /*0x6ac78d*/
-    __3_YAXPAX_Z(this); /*0x6ac790*/
-  return this; /*0x6ac79a*/
+    GadgetClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 } }
 // 0x6AC7C0
@@ -8280,16 +8238,14 @@ char __thiscall ToolTipManager_7_::sub_724CD0(void *this, int a2, _DWORD *a3)
 } }
 // 0x724D80
 namespace gamemd { void ToolTipClass::writeString() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall ToolTipManager_7_::sub_724D80(int this)
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x724d8d*/
+    if ( this->Items && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x724d93*/
-    *(_DWORD *)(this + 4) = 0; /*0x724d9b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->Items = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x724d9e*/
-  *(_DWORD *)(this + 8) = 0; /*0x724da1*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 } }
 // 0x724DB0
@@ -8396,23 +8352,20 @@ int __thiscall ToolTipManager_7_::_vt04(int *this, _DWORD *a2)
 } }
 // 0x724EF0
 namespace gamemd { void* ToolTipClass::compareString(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall ToolTipClass::compareString(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x724ef3*/
-  *this = &vt_VectorClass_ToolTip_const; /*0x724ef6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x724f00*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_ToolTip_const;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x724f08*/
-    *(this + 1) = 0; /*0x724f10*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x724f1b*/
-  *(this + 2) = 0; /*0x724f21*/
-  if ( (a2 & 1) != 0 ) /*0x724f28*/
-    __3_YAXPAX_Z(this); /*0x724f2b*/
-  return (VectorClass *)this; /*0x724f35*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 } }
 // 0x724FA0

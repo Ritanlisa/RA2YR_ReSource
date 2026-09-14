@@ -14,52 +14,47 @@
 namespace gamemd {
 char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6A04C0(int this, IUnknown *aP1)
 {
-  int v2; // eax
-  int *v4; // edi
-  TechnoClass *v5; // eax
-  IUnknown *v6; // eax
-  _DWORD *v7; // eax
-  AbstractClass *v9; // [esp-4h] [ebp-10h]
-
-  v2 = MEMORY[0xB077F8].field_0; /*0x6a04c1*/
-  v4 = (int *)(this + 64); /*0x6a04cd*/
-  if ( this->M64 != MEMORY[0xB077F8].field_0 /*0x6a04ec*/
-    || this->M68 != MEMORY[0xB077F8].field_4
-    || this->M72 != MEMORY[0xB077F8].field_8 )
+    int v2;
+    int *v4;
+    TechnoClass *v5;
+    IUnknown *v6;
+    int *v7;
+    AbstractClass *v9;
+    v2 = g_OverlayTypeConfig.field_0;
+    v4 = (int *)(this + 64);
+    if ( this->M64 != g_OverlayTypeConfig.field_0 || this->M68 != g_OverlayTypeConfig.field_4 || this->M72 != g_OverlayTypeConfig.field_8 )
   {
-    *v4 = MEMORY[0xB077F8].field_0; /*0x6a04f0*/
-    this->M68 = MEMORY[0xB077F8].field_4; /*0x6a04f8*/
-    v5 = (TechnoClass *)MEMORY[0xB077F8].field_8; /*0x6a04fb*/
-    *(_BYTE *)(this + 99) = 0; /*0x6a0500*/
-    this->M72 = v5; /*0x6a0504*/
-    v2 = MEMORY[0xB077F8].field_0; /*0x6a0507*/
+    *v4 = g_OverlayTypeConfig.field_0;
+    this->M68 = g_OverlayTypeConfig.field_4;
+    v5 = (TechnoClass *)g_OverlayTypeConfig.field_8;
+    this->M99 = 0;
+    this->M72 = v5;
+    v2 = g_OverlayTypeConfig.field_0;
   }
-  if ( aP1->field_0 != v2 || aP1->field_4 != MEMORY[0xB077F8].field_4 || aP1->field_8 != MEMORY[0xB077F8].field_8 ) /*0x6a052d*/
+    if ( aP1->field_0 != v2 || aP1->field_4 != g_OverlayTypeConfig.field_4 || aP1->field_8 != g_OverlayTypeConfig.field_8 )
   {
-    *v4 = aP1->field_0; /*0x6a0535*/
-    this->M68 = aP1->field_4; /*0x6a053a*/
-    v6 = (IUnknown *)aP1->field_8; /*0x6a053d*/
-    *(_BYTE *)(this + 99) = 1; /*0x6a0540*/
-    this->M72 = v6; /*0x6a0544*/
-    v9 = *(AbstractClass **)(this + 12); /*0x6a054a*/
-    v7 = Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x6a0551*/
-    if ( CrateClass::ProcessPickup(v7, v9) && !*(_BYTE *)(this->M12 + 129) ) /*0x6a0564*/
+    *v4 = aP1->field_0;
+    this->M68 = aP1->field_4;
+    v6 = (IUnknown *)aP1->field_8;
+    this->M99 = 1;
+    this->M72 = v6;
+    v9 = *(AbstractClass **)(this + 12);
+    v7 = Coord::To_Cell(&DataGlobal_87F7E8, aP1);
+    if ( CrateClass::ProcessPickup(v7, v9) && !*(char *)(this->M12 + 129) )
     {
-      WalkLocomotion::MoveTo(this, aP1, 1); /*0x6a0573*/
-      return 1; /*0x6a057d*/
+    WalkLocomotion::MoveTo(this, aP1, 1);
+    return 1;
     }
-    if ( *(_BYTE *)(this->M12 + 144) ) /*0x6a0583*/
+    if ( *(char *)(this->M12 + 144) )
     {
-      *v4 = MEMORY[0xB077F8].field_0; /*0x6a0593*/
-      this->M68 = MEMORY[0xB077F8].field_4; /*0x6a059b*/
-      this->M72 = MEMORY[0xB077F8].field_8; /*0x6a05a3*/
-      *(_BYTE *)(this + 99) = 0; /*0x6a05a6*/
+    *v4 = g_OverlayTypeConfig.field_0;
+    this->M68 = g_OverlayTypeConfig.field_4;
+    this->M72 = g_OverlayTypeConfig.field_8;
+    this->M99 = 0;
     }
   }
-  return 0; /*0x6a0578*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -310,27 +305,24 @@ char __thiscall sub_6A93F0(int this)
 namespace gamemd {
 char E4Recv_6ABA60::sub_6ABA60(int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6ABA60(int this, int a2, int a3, int a4)
 {
-  int v4; // esi
-  int v5; // eax
-  _DWORD *i; // edx
-
-  v4 = this->M84; /*0x6aba62*/
-  v5 = 0; /*0x6aba65*/
-  if ( v4 <= 0 ) /*0x6aba6a*/
-    return 0; /*0x6aba88*/
-  for ( i = (_DWORD *)(this + 88); i[1] != a3 || *i != a4; i += 13 ) /*0x6aba74*/
+    int v4;
+    int v5;
+    int *i;
+    v4 = this->M84;
+    v5 = 0;
+    if ( v4 <= 0 )
+    return 0;
+    for ( i = (int *)(this + 88); i[1] != a3 || *i != a4; i += 13 )
   {
-    if ( ++v5 >= v4 ) /*0x6aba86*/
-      return 0; /*0x6aba86*/
+    if ( ++v5 >= v4 )
+    return 0;
   }
-  *(_DWORD *)(this + 52 * v5 + 100) = a2; /*0x6aba9e*/
-  *(_BYTE *)(this + 61) = 1; /*0x6abaa2*/
-  *(_BYTE *)(this + 60) = 1; /*0x6abaa5*/
-  MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6abaad*/
-  return 1; /*0x6aba88*/
+    *(int *)(this + 52 * v5 + 100) = a2;
+    this->M61 = 1;
+    this->M60 = 1;
+    MapClass::MarkForRedraw(&DataGlobal_87F7E8, 0);
+    return 1;
 }
 }
 } // namespace gamemd

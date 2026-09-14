@@ -5,14 +5,11 @@
 // 0x6C9690
 float Float::Accumulate(float value, int index)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-float __thiscall Float::Accumulate(float *this, float value, int index)
 {
-  double v3; // st7
-
-  v3 = value + *(this + index); /*0x6c9698*/
-  *(this + index) = v3; /*0x6c969b*/
-  return v3; /*0x6c969e*/
+    double v3;
+    v3 = value + *(this + index);
+    *(this + index) = v3;
+    return v3;
 }
 }
 

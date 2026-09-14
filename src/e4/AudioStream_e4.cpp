@@ -29,22 +29,19 @@ int __thiscall sub_401910(_DWORD *this)
 namespace gamemd {
 void AudioStream::Destructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall AudioStream::Destructor(_DWORD *this)
 {
-  void (__thiscall *v2)(_DWORD *); // eax
-
-  (*(void (**)(void))(*(this + 53) + 40))(); /*0x402559*/
-  if ( (*(_BYTE *)(this + 41) & 5) != 0 ) /*0x402563*/
-    (*(void (__thiscall **)(_DWORD *))(*(this + 53) + 16))(this); /*0x40256d*/
-  (*(void (__thiscall **)(_DWORD *))(*(this + 53) + 44))(this); /*0x402578*/
-  v2 = (void (__thiscall *)(_DWORD *))*(this + 47); /*0x40257b*/
-  if ( v2 ) /*0x402583*/
-    v2(this); /*0x402587*/
-  *(this + 90) = 0; /*0x40258b*/
-  AudioStream::InitListAndCounters((int)this); /*0x402595*/
-  (*(void (__thiscall **)(_DWORD *))(*(this + 53) + 8))(this); /*0x4025a2*/
-  __3_YAXPAX_Z(this); /*0x4025a6*/
+    void (__thiscall *v2)(int *);
+    (*(void (**)(void))(*(this + 53) + 40))();
+    if ( (*(char *)(this + 41) & 5) != 0 )
+    (*(void (__thiscall **)(int *))(*(this + 53) + 16))(this);
+    (*(void (__thiscall **)(int *))(*(this + 53) + 44))(this);
+    v2 = (void (__thiscall *)(int *))*(this + 47);
+    if ( v2 )
+    v2(this);
+    *(this + 90) = 0;
+    AudioStream::InitListAndCounters((int)this);
+    (*(void (__thiscall **)(int *))(*(this + 53) + 8))(this);
+    __3_YAXPAX_Z(this);
 }
 }
 } // namespace gamemd

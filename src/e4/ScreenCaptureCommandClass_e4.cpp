@@ -5,11 +5,9 @@
 // 0x537B40
 unsigned int * ScreenCaptureCommandClass::Constructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_537B40(_DWORD *this)
 {
-  *this = &vt_ScreenCaptureCommandClass; /*0x537b42*/
-  return this; /*0x537b48*/
+    *(void**)this = &vt_ScreenCaptureCommandClass;
+    return this;
 }
 }
 

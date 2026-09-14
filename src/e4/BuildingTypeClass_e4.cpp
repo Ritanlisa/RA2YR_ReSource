@@ -5,32 +5,29 @@
 // 0x41C500
 char BuildingTypeClass::Enqueue(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BuildingTypeClass_Enqueue(int this, int a2)
 {
-  char *v3; // edi
-  int i; // ecx
-  int v5; // eax
-  _DWORD *v6; // edx
-  int v7; // eax
-
-  if ( a2 < 0 ) /*0x41c50c*/
-    return 0; /*0x41c50c*/
-  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->vtable2)); /*0x41c520*/
-  if ( !v3 ) /*0x41c527*/
-    return 0; /*0x41c580*/
-  for ( i = 0; i < this->vtable1; *(_DWORD *)&v3[v5 + 4] = v6[1] ) /*0x41c535*/
+    char *v3;
+    int i;
+    int v5;
+    int *v6;
+    int v7;
+    if ( a2 < 0 )
+    return 0;
+    v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->vtable2));
+    if ( !v3 )
+    return 0;
+    for ( i = 0; i < this->vtable1; *(int *)&v3[v5 + 4] = v6[1] )
   {
-    v5 = 8 * i; /*0x41c539*/
-    v6 = (_DWORD *)(*(_DWORD *)this + 8 * i++); /*0x41c542*/
-    *(_DWORD *)&v3[v5] = *v6; /*0x41c547*/
+    v5 = 8 * i;
+    v6 = (int *)(*(int *)(this) + 8 * i++);
+    *(int *)&v3[v5] = *v6;
   }
-  __3_YAXPAX_Z(*(void **)this); /*0x41c55b*/
-  v7 = a2 + this->vtable2; /*0x41c566*/
-  *(_DWORD *)this = v3; /*0x41c568*/
-  this->vtable2 = v7; /*0x41c56a*/
-  this->uniqueId = 0; /*0x41c56d*/
-  return 1; /*0x41c574*/
+    __3_YAXPAX_Z(*(void **)this);
+    v7 = a2 + this->vtable2;
+    *(int *)this = v3;
+    this->vtable2 = v7;
+    this->uniqueId = 0;
+    return 1;
 }
 }
 
@@ -624,48 +621,45 @@ void BuildingTypeClass::LoadRepairAnimations(#376 *this)
 // 0x45ECE0
 int BuildingTypeClass::GetMaxPips()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingTypeClass::GetMaxPips(int this)
 {
-  int result; // eax
-  int v2; // ecx
-  int v3; // ecx
-
-  result = 60 * dword_8192B8[this->Foundation] / 8; /*0x45ed02*/
-  if ( this->PipScale == 2 ) /*0x45ed08*/
+    int result;
+    int v2;
+    int v3;
+    result = 60 * DataGlobal_8192B8[this->Foundation] / 8;
+    if ( this->PipScale == 2 )
   {
-    if ( this->Weeder ) /*0x45ed14*/
+    if ( this->Weeder )
     {
-      v2 = MEMORY[0x8871E0][1].?[1]; /*0x45ed24*/
-      if ( v2 >= 0 ) /*0x45ed2c*/
+    v2 = g_RulesClass_Instance[1].?[1];
+    if ( v2 >= 0 )
       {
-        if ( v2 <= result ) /*0x45ed33*/
-          return MEMORY[0x8871E0][1].?[1]; /*0x45ed35*/
+    if ( v2 <= result )
+    return g_RulesClass_Instance[1].?[1];
       }
-      else
+    else
       {
-        return 0; /*0x45ed2e*/
+    return 0;
       }
     }
     else
     {
-      v3 = this->Storage; /*0x45ed38*/
-      if ( v3 >= 0 ) /*0x45ed40*/
+    v3 = this->Storage;
+    if ( v3 >= 0 )
       {
-        if ( v3 <= result ) /*0x45ed47*/
-          return v3; /*0x45ed49*/
+    if ( v3 <= result )
+    return v3;
       }
-      else
+    else
       {
-        return 0; /*0x45ed42*/
+    return 0;
       }
     }
   }
-  else if ( this->PipScale != 4 ) /*0x45ed0d*/
+    else if ( this->PipScale != 4 )
   {
-    return ObjectClass::GetModeSpecificValue((int *)this); /*0x45ed0f*/
+    return ObjectClass::GetModeSpecificValue((int *)this);
   }
-  return result; /*0x45ed30*/
+    return result;
 }
 }
 

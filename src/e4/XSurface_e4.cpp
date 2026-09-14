@@ -5,10 +5,8 @@
 // 0x410600
 int XSurface::vt_entry_40(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall INoticeSource_Stub1(int a1)
 {
-  return AbstractClass::COMStub_Release(a1 - 4);
+    return AbstractClass::COMStub_Release(a1 - 4);
 }
 }
 
@@ -37,13 +35,11 @@ char __thiscall XSurface_Unlock(_DWORD *this)
 // 0x4115A0
 XSurface * XSurface::ScalarDtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-XSurface *__thiscall XSurface::ScalarDtor(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &Surface_Vtable; /*0x4115a9*/
-  if ( (a2 & 1) != 0 ) /*0x4115af*/
-    __3_YAXPAX_Z(this); /*0x4115b2*/
-  return (XSurface *)this; /*0x4115bc*/
+    *(int *)this = &Surface_Vtable;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (XSurface *)this;
 }
 }
 

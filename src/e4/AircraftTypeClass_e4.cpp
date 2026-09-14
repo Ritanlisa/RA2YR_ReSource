@@ -207,10 +207,8 @@ AircraftTypeClass *__thiscall AircraftTypeClass::ddtor(void **this, char a2)
 // 0x712120
 int AircraftTypeClass::GetGameplayValue()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int AircraftTypeClass::_vt45()
 {
-  return MEMORY[0x8871E0][1].?; /*0x71212b*/
+    return g_RulesClass_Instance[1].?;
 }
 }
 

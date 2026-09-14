@@ -5,10 +5,8 @@
 // 0x4A3C00
 void CreditsScreen::Init()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_4A3C00(_BYTE *this)
 {
-  *this = 0; /*0x4a3c00*/
+    *(void**)this = 0;
 }
 }
 

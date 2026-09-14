@@ -5,28 +5,24 @@
 // 0x42E410
 IUnknown * Rect::Set(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-IUnknown *__thiscall Rect::Set(_DWORD *this, IUnknown *aP1, IUnknown *aP2, IUnknown *aP3, IUnknown *aP4)
 {
-  *this = aP1; /*0x42e41a*/
-  *(this + 1) = aP2; /*0x42e420*/
-  *(this + 2) = aP3; /*0x42e427*/
-  *(this + 3) = aP4; /*0x42e42a*/
-  return (IUnknown *)this; /*0x42e42d*/
+    *(void**)this = aP1;
+    this->Y = aP2;
+    this->Width = aP3;
+    this->Height = aP4;
+    return (IUnknown *)this;
 }
 }
 
 // 0x45A130
 AbstractClass * Rect::Construct(IUnknown * aP1, AbstractClass * aP2, AbstractClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-AbstractClass *__thiscall Rect::Construct(_DWORD *this, IUnknown *aP1, AbstractClass *aP2, AbstractClass *aP3)
 {
-  *this = aP1->field_0; /*0x45a138*/
-  *(this + 1) = aP1->field_4; /*0x45a141*/
-  *(this + 2) = aP2; /*0x45a148*/
-  *(this + 3) = aP3; /*0x45a14b*/
-  return (AbstractClass *)this; /*0x45a14e*/
+    *(void**)this = aP1->field_0;
+    this->Y = aP1->field_4;
+    this->Width = aP2;
+    this->Height = aP3;
+    return (AbstractClass *)this;
 }
 }
 

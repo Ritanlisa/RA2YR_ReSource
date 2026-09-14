@@ -5958,33 +5958,31 @@ retn
 // 0x5090a0
 void TacticalClass::updateVisibility()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5090a0
-int __thiscall TacticalClass::updateVisibility(int *this)
+    int __thiscall TacticalClass::updateVisibility(int *(void**)this)
 {
-  int v1; // esi
-  int *i; // edi
-  int v3; // eax
-  int v4; // eax
-
-  v1 = 0;
-  for ( i = this + 132; ; ++i )
+    int v1;
+    int *i;
+    int v3;
+    int v4;
+    v1 = 0;
+    for ( i = this + 132; ; ++i )
   {
     v3 = *i;
     if ( !*i )
     {
-      v4 = __2_YAPAXI_Z(64);
-      if ( v4 )
-        v3 = WaypointPathClass::Init(v4);
-      else
-        v3 = 0;
+    v4 = __2_YAPAXI_Z(64);
+    if ( v4 )
+    v3 = WaypointPathClass::Init(v4);
+    else
+    v3 = 0;
     }
-    if ( !*(_DWORD *)(v3 + 56) )
-      break;
+    if ( !*(int *)(v3 + 56) )
+    break;
     if ( ++v1 >= 12 )
-      return -1;
+    return -1;
   }
-  return v1;
+    return v1;
 }
 
 /* ASM:

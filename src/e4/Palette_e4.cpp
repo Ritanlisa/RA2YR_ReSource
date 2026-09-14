@@ -20,32 +20,29 @@ _BYTE *__thiscall Palette_6BitTo16Bit(_BYTE *this, char a2, char a3, char a4)
 // 0x632BE0
 unsigned char * Palette::ConvertIndices(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__thiscall Palette_ConvertIndices(_BYTE *this, int a2)
 {
-  int v3; // ebx
-  int v4; // eax
-  _WORD *v5; // esi
-  _WORD *v6; // edi
-
-  *this = 0; /*0x632be9*/
-  v3 = Hash_Check_5C61E0(); /*0x632bf1*/
-  v4 = Hash_Check(); /*0x632bf3*/
-  if ( v3 <= 0 ) /*0x632bfa*/
-    return this; /*0x632c31*/
-  v5 = (_WORD *)v4; /*0x632c02*/
-  v6 = this + 2; /*0x632c04*/
-  do /*0x632c23*/
+    int v3;
+    int v4;
+    short *v5;
+    short *v6;
+    *(void**)this = 0;
+    v3 = Hash_Check_5C61E0();
+    v4 = Hash_Check();
+    if ( v3 <= 0 )
+    return this;
+    v5 = (short *)v4;
+    v6 = this + 2;
+    do
   {
-    LOWORD(v4) = *v5; /*0x632c07*/
-    v4 = ShiftBigIntAndScan(v4, 64); /*0x632c14*/
-    *v6 = v4; /*0x632c19*/
-    ++v5; /*0x632c1c*/
-    ++v6; /*0x632c1f*/
-    --v3; /*0x632c22*/
+    LOWORD(v4) = *v5;
+    v4 = ShiftBigIntAndScan(v4, 64);
+    *v6 = v4;
+    ++v5;
+    ++v6;
+    --v3;
   }
-  while ( v3 ); /*0x632c23*/
-  return this; /*0x632c2b*/
+    while ( v3 );
+    return this;
 }
 }
 

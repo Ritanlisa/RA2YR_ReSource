@@ -131,10 +131,8 @@ int __thiscall AbstractTypeClass_Dtor(_DWORD *this)
 // 0x410A40
 BOOL AbstractTypeClass::NameEquals(void * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall AbstractTypeClass::NameEquals(int this, void *a2)
 {
-  return _strcmpi(a2, (const void *)(this + 36)) == 0; /*0x410a56*/
+    return _strcmpi(a2, (const void *)(this + 36)) == 0;
 }
 }
 
@@ -205,17 +203,14 @@ char __thiscall AbstractTypeClass::LoadFromINI(int this, AbstractTypeClass *aP1)
 // 0x410B90
 char AbstractTypeClass::WriteINI(CCINIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall AbstractTypeClass::WriteINI(char *this, CCINIClass *aP1)
 {
-  INIClass *v3; // edi
-
-  v3 = (INIClass *)(this + 36); /*0x410b9b*/
-  INIClass::ClearSection((int)aP1, (INIClass *)(this + 36), 0); /*0x410ba1*/
-  INIClass::SetString(aP1->__pad_0, v3, (INIClass *)&stru_817828.fallRate, (INIClass *)(this + 100)); /*0x410bb2*/
-  if ( *(this + 61) ) /*0x410bb7*/
-    INIClass::SetString(aP1->__pad_0, v3, (INIClass *)&stru_817828.objectTypeFlags, (INIClass *)(this + 61)); /*0x410bca*/
-  return 1; /*0x410bcf*/
+    INIClass *v3;
+    v3 = (INIClass *)(this + 36);
+    INIClass::ClearSection((int)aP1, (INIClass *)(this + 36), 0);
+    INIClass::SetString(aP1->__pad_0, v3, (INIClass *)&Format.fallRate, (INIClass *)(this + 100));
+    if ( this->UINameLabel )
+    INIClass::SetString(aP1->__pad_0, v3, (INIClass *)&Format.objectTypeFlags, (INIClass *)(this + 61));
+    return 1;
 }
 }
 

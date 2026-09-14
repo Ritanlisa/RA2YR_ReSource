@@ -323,13 +323,11 @@ int __thiscall TagTypeClass::_vt16(_DWORD *this)
 namespace gamemd {
 TagTypeClass * TagTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TagTypeClass *__thiscall TagTypeClass::ddtor(void *this, char a2)
 {
-  TagTypeClass::CleanupMembers((int)this); /*0x6e64c3*/
-  if ( (a2 & 1) != 0 ) /*0x6e64cd*/
-    __3_YAXPAX_Z(this); /*0x6e64d0*/
-  return (TagTypeClass *)this; /*0x6e64da*/
+    TagTypeClass::CleanupMembers((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (TagTypeClass *)this;
 }
 }
 } // namespace gamemd

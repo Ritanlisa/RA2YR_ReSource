@@ -1082,24 +1082,20 @@ int __thiscall BuildingLightClass::SD_vt13(int this, unsigned int *a2)
 } }
 // 0x437030
 namespace gamemd { int BuildingLightClass::SD_vt53() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BuildingLightClass::SD_vt53(#374 *this)
 {
-  if ( !(unsigned __int8)ObjectClass::Undeploy(this) ) /*0x437033*/
-    return 0; /*0x43704b*/
-  VectorClass::RemoveItem((int *)&MEMORY[0x87F778], (ObjectClass *)this); /*0x437042*/
-  return 1; /*0x437049*/
+    if ( !(unsigned char)ObjectClass::Undeploy(this) )
+    return 0;
+    VectorClass::RemoveItem((int *)&g_GameConfigManager, (ObjectClass *)this);
+    return 1;
 }
 } }
 // 0x437050
 namespace gamemd { int BuildingLightClass::SD_vt54(int a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BuildingLightClass::SD_vt54(#374 *this, int a2, int a3)
 {
-  if ( !(unsigned __int8)ObjectClass::Deploy(this) ) /*0x43705f*/
-    return 0; /*0x43707b*/
-  ObjectClass::SetDeployState((ObjectClass *)this, 0); /*0x437070*/
-  return 1; /*0x437077*/
+    if ( !(unsigned char)ObjectClass::Deploy(this) )
+    return 0;
+    ObjectClass::SetDeployState((ObjectClass *)this, 0);
+    return 1;
 }
 } }
 // 0x43B680
@@ -1679,16 +1675,13 @@ char __thiscall sub_4DA030(int *this)
 } }
 // 0x4F9750
 namespace gamemd { double BuildingClass::checkRepairEligibility(HouseClass* pHouse) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall sub_4F9750(float *this)
 {
-  float *v1; // esi
-
-  v1 = this + 197; /*0x4f9751*/
-  if ( Float4::Sum(this + 197) == 0.0 ) /*0x4f9769*/
-    return 0.0; /*0x4f976b*/
-  else
-    return Float4::Sum(v1) / (double)MEMORY[0x8871E0][1].?[1]; /*0x4f9780*/
+    float *v1;
+    v1 = this + 197;
+    if ( Float4::Sum(this + 197) == 0.0 )
+    return 0.0;
+    else
+    return Float4::Sum(v1) / (double)g_RulesClass_Instance[1].?[1];
 }
 } }
 // 0x4FAD20

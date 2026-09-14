@@ -26,12 +26,10 @@ bool __thiscall GaugeClass::_vt37(_BYTE *this, int a2)
 // 0x4E30D0
 GaugeClass * GaugeClass::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-GaugeClass *__thiscall GaugeClass::QueryInterface(_DWORD *this, char a2)
 {
-  GadgetClass::Dtor(this); /*0x4e30d3*/
-  if ( (a2 & 1) != 0 ) /*0x4e30dd*/
-    __3_YAXPAX_Z(this); /*0x4e30e0*/
-  return (GaugeClass *)this; /*0x4e30ea*/
+    GadgetClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (GaugeClass *)this;
 }
 }

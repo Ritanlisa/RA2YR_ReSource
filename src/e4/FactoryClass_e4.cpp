@@ -490,25 +490,22 @@ char __thiscall FactoryClass::StartProduction_2(int this)
 namespace gamemd {
 char FactoryClass::RemoveOneFromQueue(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall FactoryClass::RemoveOneFromQueue(_DWORD *this, char a2)
 {
-  _DWORD *v2; // esi
-  int v3; // eax
-  int v4; // ecx
-  int v5; // ecx
-
-  v2 = this + 16; /*0x4ca624*/
-  v3 = (*(int (__thiscall **)(_DWORD *, char *))(*(this + 16) + 16))(this + 16, &a2); /*0x4ca62e*/
-  if ( v3 == -1 ) /*0x4ca634*/
-    return 0; /*0x4ca634*/
-  v4 = v2[4]; /*0x4ca636*/
-  if ( v3 >= v4 ) /*0x4ca63b*/
-    return 0; /*0x4ca65d*/
-  v5 = v4 - 1; /*0x4ca63d*/
-  for ( v2[4] = v5; v3 < v2[4]; *(_DWORD *)(v2[1] + 4 * v3 - 4) = *(_DWORD *)(v2[1] + 4 * v3) ) /*0x4ca643*/
-    ++v3; /*0x4ca648*/
-  return 1; /*0x4ca659*/
+    int *v2;
+    int v3;
+    int v4;
+    int v5;
+    v2 = this + 16;
+    v3 = (*(int (__thiscall **)(int *, char *))(this->onHold + 16))(this + 16, &a2);
+    if ( v3 == -1 )
+    return 0;
+    v4 = v2[4];
+    if ( v3 >= v4 )
+    return 0;
+    v5 = v4 - 1;
+    for ( v2[4] = v5; v3 < v2[4]; *(int *)(v2[1] + 4 * v3 - 4) = *(int *)(v2[1] + 4 * v3) )
+    ++v3;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -692,10 +689,8 @@ char __thiscall sub_635060(int this, int a2)
 namespace gamemd {
 int FactoryClass_33::Seek(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall FactoryClass_33_::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x4ca8ea*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -704,31 +699,28 @@ int __thiscall FactoryClass_33_::_vt06(_DWORD *this, int a2)
 namespace gamemd {
 char FactoryClass_33::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall FactoryClass_33_::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x4ca8f2*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x4ca8fd*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x4ca8ff*/
-    if ( v2 <= 0 ) /*0x4ca903*/
-      return 1; /*0x4ca923*/
-    v4 = (_DWORD *)*(this + 1); /*0x4ca905*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x4ca90b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x4ca914*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x4ca916*/
-      ++v4; /*0x4ca917*/
-      if ( v3 >= v2 ) /*0x4ca91c*/
-        return 1; /*0x4ca91c*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x4ca91e*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -737,50 +729,47 @@ char __thiscall FactoryClass_33_::_vt01(int *this, int a2)
 namespace gamemd {
 char FactoryClass_33::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall FactoryClass_33_::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x4ca93c*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x4ca946*/
-    if ( a3 ) /*0x4ca94c*/
-      v4 = a3; /*0x4ca962*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ca95e*/
-    *((_BYTE *)this + 12) = 1; /*0x4ca966*/
-    if ( v4 ) /*0x4ca96a*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( this->FactoryClass_33_field_0x4 ) /*0x4ca975*/
+    if ( this->FactoryClass_33_field_0x4 )
       {
-        v6 = this->FactoryClass_33_field_0x8; /*0x4ca97c*/
-        if ( a2 < v6 ) /*0x4ca981*/
-          v6 = a2; /*0x4ca983*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->FactoryClass_33_field_0x4 + 4 * i - 4) ) /*0x4ca989*/
-          ++i; /*0x4ca98e*/
-        if ( *((_BYTE *)this + 13) ) /*0x4ca99b*/
+    v6 = this->FactoryClass_33_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->FactoryClass_33_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ca9a6*/
-          this->FactoryClass_33_field_0x4 = 0; /*0x4ca9ae*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->FactoryClass_33_field_0x4 = 0;
         }
       }
-      this->FactoryClass_33_field_0x4 = v4; /*0x4ca9b7*/
-      this->FactoryClass_33_field_0x8 = a2; /*0x4ca9bf*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x4ca9c2*/
-      return 1; /*0x4ca9c8*/
+    this->FactoryClass_33_field_0x4 = v4;
+    this->FactoryClass_33_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x4ca96f*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4ca9d2*/
-    return 1; /*0x4ca9d8*/
+    this->ddtor();
+    return 1;
   }
 }
 }
@@ -790,16 +779,14 @@ char __thiscall FactoryClass_33_::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 void FactoryClass_33::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall FactoryClass_33_::_vt03(int this)
 {
-  if ( this->FactoryClass_33_field_0x4 && *(_BYTE *)(this + 13) ) /*0x4ca9ed*/
+    if ( this->FactoryClass_33_field_0x4 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x4ca9f3*/
-    this->FactoryClass_33_field_0x4 = 0; /*0x4ca9fb*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->FactoryClass_33_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x4ca9fe*/
-  this->FactoryClass_33_field_0x8 = 0; /*0x4caa01*/
+    this->IsAllocated = 0;
+    this->FactoryClass_33_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -808,25 +795,22 @@ void __thiscall FactoryClass_33_::_vt03(int this)
 namespace gamemd {
 int FactoryClass_33::Read(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall FactoryClass_33_::_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->FactoryClass_33_field_0xC ) /*0x4caa10*/
-    return 0; /*0x4caa18*/
-  v3 = this->FactoryClass_33_field_0x8; /*0x4caa1e*/
-  result = 0; /*0x4caa21*/
-  if ( v3 <= 0 ) /*0x4caa25*/
-    return -1; /*0x4caa3c*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x4caa2b*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->FactoryClass_33_field_0xC )
+    return 0;
+    v3 = this->FactoryClass_33_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x4caa3a*/
-      return -1; /*0x4caa3a*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x4caa1a*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -835,23 +819,20 @@ int __thiscall FactoryClass_33_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 VectorClass * FactoryClass_33::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall FactoryClass_33_::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x4cab53*/
-  *this = &vt_VectorClass_TechnoTypeClass_const; /*0x4cab56*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x4cab60*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_TechnoTypeClass_const;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x4cab68*/
-    *(this + 1) = 0; /*0x4cab70*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x4cab7b*/
-  *(this + 2) = 0; /*0x4cab81*/
-  if ( (a2 & 1) != 0 ) /*0x4cab88*/
-    __3_YAXPAX_Z(this); /*0x4cab8b*/
-  return (VectorClass *)this; /*0x4cab95*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd

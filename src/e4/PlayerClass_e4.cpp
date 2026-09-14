@@ -5,19 +5,16 @@
 // 0x5D62C0
 char PlayerClass::AssignPlayerIndex()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char PlayerClass_AssignPlayerIndex()
 {
-  int i; // esi
-
-  for ( i = 0; i < MEMORY[0xA8DA84]; ++i ) /*0x5d62ca*/
+    int i;
+    for ( i = 0; i < Game_PlayerCount; ++i )
   {
-    if ( SessionClass::GetPlayerSide(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * i)) == -3 ) /*0x5d62dc*/
-      *(_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * i) + 107) = -1; /*0x5d62e7*/
+    if ( SessionClass::GetPlayerSide(*(int *)(Game_PlayerInfoArray + 4 * i)) == -3 )
+    *(int *)(*(int *)(Game_PlayerInfoArray + 4 * i) + 107) = -1;
     else
-      *(_DWORD *)(*(_DWORD *)(MEMORY[0xA8DA78] + 4 * i) + 107) = i; /*0x5d62f8*/
+    *(int *)(*(int *)(Game_PlayerInfoArray + 4 * i) + 107) = i;
   }
-  return 1; /*0x5d6307*/
+    return 1;
 }
 }
 

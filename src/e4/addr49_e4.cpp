@@ -242,39 +242,27 @@ int __thiscall sub_490400(int this)
 namespace gamemd {
 char E4Recv_491670::sub_491670(unsigned char * a1, char * a2, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_491670(
-        BlitTransRemapDest_E *this,
-        _BYTE *a1,
-        char *a2,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9)
 {
-  char result; // al
-  int v12; // edi
-
-  result = a4; /*0x491670*/
-  if ( a4 > 0 ) /*0x491676*/
+    char result;
+    int v12;
+    result = a4;
+    if ( a4 > 0 )
   {
-    v12 = a4; /*0x491683*/
-    do /*0x49169a*/
+    v12 = a4;
+    do
     {
-      result = *a2++; /*0x491685*/
-      if ( result ) /*0x49168a*/
+    result = *a2++;
+    if ( result )
       {
-        result = *(_BYTE *)(this->M4 + (unsigned __int8)*a1); /*0x491693*/
-        *a1 = result; /*0x491696*/
+    result = *(char *)(this->M4 + (unsigned char)*a1);
+    *a1 = result;
       }
-      ++a1; /*0x491698*/
-      --v12; /*0x491699*/
+    ++a1;
+    --v12;
     }
-    while ( v12 ); /*0x49169a*/
+    while ( v12 );
   }
-  return result; /*0x49169f*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -994,23 +982,20 @@ unsigned __int16 *__thiscall sub_492370(
 namespace gamemd {
 void E4Recv_4924C0::sub_4924C0(int a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_4924C0(_DWORD *this, int a2, unsigned __int8 *a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  int v9; // esi
-  unsigned __int8 v12; // [esp+14h] [ebp+Ch]
-
-  v9 = a4; /*0x4924c1*/
-  if ( a4 > 0 ) /*0x4924ca*/
+    int v9;
+    unsigned char v12;
+    v9 = a4;
+    if ( a4 > 0 )
   {
-    do /*0x4924f5*/
+    do
     {
-      v12 = *a3++; /*0x4924da*/
-      a2 += 2; /*0x4924e3*/
-      --v9; /*0x4924ec*/
-      *(_WORD *)(a2 - 2) = *(_WORD *)(*(this + 1) + 2 * v12); /*0x4924f1*/
+    v12 = *a3++;
+    a2 += 2;
+    --v9;
+    *(short *)(a2 - 2) = *(short *)(this->M4 + 2 * v12);
     }
-    while ( v9 ); /*0x4924f5*/
+    while ( v9 );
   }
 }
 }
@@ -1020,41 +1005,29 @@ void __thiscall sub_4924C0(_DWORD *this, int a2, unsigned __int8 *a3, int a4, in
 namespace gamemd {
 char E4Recv_492590::sub_492590(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_492590(
-        BlitTransZRemapXlat_G *this,
-        _WORD *a1,
-        _BYTE *a2,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9)
 {
-  int v9; // edi
-  __int16 v10; // ax
-  int v13; // ebp
-
-  v9 = **((_DWORD **)this + 1); /*0x492594*/
-  LOBYTE(v10) = a4; /*0x492596*/
-  if ( a4 > 0 ) /*0x49259c*/
+    int v9;
+    short v10;
+    int v13;
+    v9 = **((int **)(this) + 1);
+    LOBYTE(v10) = a4;
+    if ( a4 > 0 )
   {
-    v13 = a4; /*0x4925a9*/
-    do /*0x4925d2*/
+    v13 = a4;
+    do
     {
-      LOBYTE(v10) = *a2++; /*0x4925ab*/
-      if ( (_BYTE)v10 ) /*0x4925b4*/
+    LOBYTE(v10) = *a2++;
+    if ( (char)v10 )
       {
-        v10 = *(_WORD *)(this->M8 + 2 * *(unsigned __int8 *)((unsigned __int8)v10 + v9)); /*0x4925c7*/
-        *a1 = v10; /*0x4925cb*/
+    v10 = *(short *)(this->M8 + 2 * *(unsigned char *)((unsigned char)v10 + v9));
+    *a1 = v10;
       }
-      ++a1; /*0x4925ce*/
-      --v13; /*0x4925d1*/
+    ++a1;
+    --v13;
     }
-    while ( v13 ); /*0x4925d2*/
+    while ( v13 );
   }
-  return v10; /*0x4925d7*/
+    return v10;
 }
 }
 } // namespace gamemd
@@ -1063,31 +1036,28 @@ char __thiscall sub_492590(
 namespace gamemd {
 char E4Recv_492920::sub_492920(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_492920(int this, _WORD *a2, _BYTE *a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  __int16 v9; // ax
-  int v12; // ebx
-
-  LOBYTE(v9) = a4; /*0x492920*/
-  if ( a4 > 0 ) /*0x492926*/
+    short v9;
+    int v12;
+    LOBYTE(v9) = a4;
+    if ( a4 > 0 )
   {
-    v12 = a4; /*0x492934*/
-    do /*0x492971*/
+    v12 = a4;
+    do
     {
-      LOBYTE(v9) = *a3++; /*0x492936*/
-      if ( (_BYTE)v9 ) /*0x49293f*/
+    LOBYTE(v9) = *a3++;
+    if ( (char)v9 )
       {
-        v9 = ((unsigned short)this->M8 & (*a2 >> 2)) /*0x492968*/
-           + 3 * ((unsigned short)this->M8 & (*(_WORD *)(this->M4 + 2 * (unsigned __int8)v9) >> 2));
-        *a2 = v9; /*0x49296a*/
+    v9 = ((unsigned short)this->M8 & (*a2 >> 2))
+    + 3 * ((unsigned short)this->M8 & (*(short *)(this->M4 + 2 * (unsigned char)v9) >> 2));
+    *a2 = v9;
       }
-      ++a2; /*0x49296d*/
-      --v12; /*0x492970*/
+    ++a2;
+    --v12;
     }
-    while ( v12 ); /*0x492971*/
+    while ( v12 );
   }
-  return v9; /*0x492977*/
+    return v9;
 }
 }
 } // namespace gamemd
@@ -1096,45 +1066,33 @@ char __thiscall sub_492920(int this, _WORD *a2, _BYTE *a3, int a4, int a5, int a
 namespace gamemd {
 unsigned short * E4Recv_492A10::sub_492A10(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int16 *__thiscall sub_492A10(
-        BlitPlainXlatZRead_G *this,
-        _WORD *a1,
-        unsigned __int8 *a2,
-        int a4,
-        int argC,
-        unsigned __int16 *a5,
-        int a7,
-        int a8,
-        int a9)
 {
-  unsigned __int16 *result; // eax
-  int v12; // ebp
-  TacticalMap *v13; // edx
-  unsigned __int16 v14; // bx
-
-  result = a5; /*0x492a14*/
-  if ( a4 > 0 ) /*0x492a1a*/
+    unsigned short *result;
+    int v12;
+    TacticalMap *v13;
+    unsigned short v14;
+    result = a5;
+    if ( a4 > 0 )
   {
-    v12 = a4; /*0x492a28*/
-    v13 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492a2a*/
-    do /*0x492a61*/
+    v12 = a4;
+    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    do
     {
-      v14 = *result++; /*0x492a32*/
-      if ( argC < v14 ) /*0x492a3c*/
+    v14 = *result++;
+    if ( argC < v14 )
       {
-        *a1 = *(_WORD *)(this->M4 + 2 * *a2); /*0x492a49*/
-        v13 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492a4c*/
+    *a1 = *(short *)(this->M4 + 2 * *a2);
+    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
       }
-      ++a2; /*0x492a55*/
-      ++a1; /*0x492a56*/
-      if ( (unsigned int)result >= v13->TacticalMap_field_1C ) /*0x492a5b*/
-        result = (unsigned __int16 *)((char *)result - v13->TacticalMap_field_20); /*0x492a5d*/
-      --v12; /*0x492a60*/
+    ++a2;
+    ++a1;
+    if ( (unsigned int)result >= v13->TacticalMap_field_1C )
+    result = (unsigned short *)((char *)result - v13->TacticalMap_field_20);
+    --v12;
     }
-    while ( v12 ); /*0x492a61*/
+    while ( v12 );
   }
-  return result; /*0x492a67*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1143,45 +1101,33 @@ unsigned __int16 *__thiscall sub_492A10(
 namespace gamemd {
 unsigned short * E4Recv_492B00::sub_492B00(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int16 *__thiscall sub_492B00(
-        _DWORD *this,
-        _WORD *a2,
-        _BYTE *a3,
-        int a4,
-        int a5,
-        unsigned __int16 *a6,
-        int a7,
-        int a8,
-        int a9)
 {
-  unsigned __int16 *result; // eax
-  _DWORD *v11; // esi
-  int v13; // ebp
-  unsigned __int16 v14; // dx
-
-  result = a6; /*0x492b04*/
-  if ( a4 > 0 ) /*0x492b0a*/
+    unsigned short *result;
+    int *v11;
+    int v13;
+    unsigned short v14;
+    result = a6;
+    if ( a4 > 0 )
   {
-    v11 = MEMORY[0x887644]; /*0x492b13*/
-    v13 = a4; /*0x492b1e*/
-    do /*0x492b61*/
+    v11 = g_ZBufferDescriptor;
+    v13 = a4;
+    do
     {
-      v14 = *result++; /*0x492b22*/
-      if ( a5 < v14 && *a3 ) /*0x492b32*/
+    v14 = *result++;
+    if ( a5 < v14 && *a3 )
       {
-        *a2 = *(_WORD *)(*(this + 1) + 2 * (unsigned __int8)*a3); /*0x492b49*/
-        v11 = MEMORY[0x887644]; /*0x492b4c*/
+    *a2 = *(short *)(this->M4 + 2 * (unsigned char)*a3);
+    v11 = g_ZBufferDescriptor;
       }
-      ++a3; /*0x492b55*/
-      ++a2; /*0x492b56*/
-      if ( (unsigned int)result >= v11[7] ) /*0x492b5b*/
-        result = (unsigned __int16 *)((char *)result - v11[8]); /*0x492b5d*/
-      --v13; /*0x492b60*/
+    ++a3;
+    ++a2;
+    if ( (unsigned int)result >= v11[7] )
+    result = (unsigned short *)((char *)result - v11[8]);
+    --v13;
     }
-    while ( v13 ); /*0x492b61*/
+    while ( v13 );
   }
-  return result; /*0x492b67*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1190,47 +1136,35 @@ unsigned __int16 *__thiscall sub_492B00(
 namespace gamemd {
 unsigned short * E4Recv_492C00::sub_492C00(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int16 *__thiscall sub_492C00(
-        BlitTransZRemapXlatZRead_G *this,
-        _WORD *a1,
-        _BYTE *a2,
-        int a4,
-        int argC,
-        unsigned __int16 *a5,
-        int a7,
-        int a8,
-        int a9)
 {
-  unsigned __int16 *result; // eax
-  TacticalMap *v13; // edi
-  unsigned __int16 v14; // cx
-  int v15; // [esp+4h] [ebp-4h]
-  unsigned __int16 *a5a; // [esp+1Ch] [ebp+14h]
-
-  result = a5; /*0x492c04*/
-  v15 = **((_DWORD **)this + 1); /*0x492c0d*/
-  if ( a4 > 0 ) /*0x492c17*/
+    unsigned short *result;
+    TacticalMap *v13;
+    unsigned short v14;
+    int v15;
+    unsigned short *a5a;
+    result = a5;
+    v15 = **((int **)(this) + 1);
+    if ( a4 > 0 )
   {
-    v13 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492c24*/
-    a5a = (unsigned __int16 *)a4; /*0x492c2a*/
-    do /*0x492c82*/
+    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (unsigned short *)a4;
+    do
     {
-      v14 = *result++; /*0x492c34*/
-      if ( argC < v14 && *a2 ) /*0x492c42*/
+    v14 = *result++;
+    if ( argC < v14 && *a2 )
       {
-        *a1 = *(_WORD *)(this->M8 + 2 * *(unsigned __int8 *)((unsigned __int8)*a2 + v15)); /*0x492c62*/
-        v13 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492c65*/
+    *a1 = *(short *)(this->M8 + 2 * *(unsigned char *)((unsigned char)*a2 + v15));
+    v13 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
       }
-      ++a2; /*0x492c6e*/
-      ++a1; /*0x492c6f*/
-      if ( (unsigned int)result >= v13->TacticalMap_field_1C ) /*0x492c74*/
-        result = (unsigned __int16 *)((char *)result - v13->TacticalMap_field_20); /*0x492c76*/
-      a5a = (unsigned __int16 *)((char *)a5a - 1); /*0x492c7e*/
+    ++a2;
+    ++a1;
+    if ( (unsigned int)result >= v13->TacticalMap_field_1C )
+    result = (unsigned short *)((char *)result - v13->TacticalMap_field_20);
+    a5a = (unsigned short *)((char *)a5a - 1);
     }
-    while ( a5a ); /*0x492c82*/
+    while ( a5a );
   }
-  return result; /*0x492c87*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1239,47 +1173,35 @@ unsigned __int16 *__thiscall sub_492C00(
 namespace gamemd {
 int E4Recv_492E10::sub_492E10(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_492E10(
-        BlitTransLucent75ZRead_G *this,
-        _WORD *a1,
-        _BYTE *a2,
-        int a4,
-        int argC,
-        unsigned __int16 *a5,
-        int a7,
-        int a8,
-        int a9)
 {
-  int result; // eax
-  TacticalMap *v12; // esi
-  unsigned __int16 v14; // ax
-  unsigned __int16 *a5a; // [esp+14h] [ebp+14h]
-
-  result = a4; /*0x492e10*/
-  if ( a4 > 0 ) /*0x492e1a*/
+    int result;
+    TacticalMap *v12;
+    unsigned short v14;
+    unsigned short *a5a;
+    result = a4;
+    if ( a4 > 0 )
   {
-    v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492e23*/
-    a5a = (unsigned __int16 *)a4; /*0x492e2e*/
-    do /*0x492e95*/
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (unsigned short *)a4;
+    do
     {
-      v14 = *a5++; /*0x492e38*/
-      if ( argC < v14 && *a2 ) /*0x492e46*/
+    v14 = *a5++;
+    if ( argC < v14 && *a2 )
       {
-        *a1 = 3 * ((unsigned short)this->M2 & (*a1 >> 2)) /*0x492e75*/
-            + ((unsigned short)this->M2 & (*(_WORD *)(this->M4 + 2 * (unsigned __int8)*a2) >> 2));
-        v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492e78*/
+    *a1 = 3 * ((unsigned short)this->M2 & (*a1 >> 2))
+    + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
       }
-      ++a2; /*0x492e81*/
-      ++a1; /*0x492e82*/
-      if ( (unsigned int)a5 >= v12->TacticalMap_field_1C ) /*0x492e87*/
-        a5 = (unsigned __int16 *)((char *)a5 - v12->TacticalMap_field_20); /*0x492e89*/
-      result = (int)a5a - 1; /*0x492e90*/
-      a5a = (unsigned __int16 *)((char *)a5a - 1); /*0x492e91*/
+    ++a2;
+    ++a1;
+    if ( (unsigned int)a5 >= v12->TacticalMap_field_1C )
+    a5 = (unsigned short *)((char *)a5 - v12->TacticalMap_field_20);
+    result = (int)a5a - 1;
+    a5a = (unsigned short *)((char *)a5a - 1);
     }
-    while ( a5a ); /*0x492e95*/
+    while ( a5a );
   }
-  return result; /*0x492e9b*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1288,46 +1210,34 @@ int __thiscall sub_492E10(
 namespace gamemd {
 unsigned short * E4Recv_492F30::sub_492F30(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int16 *__thiscall sub_492F30(
-        BlitTransLucent50ZRead_G *this,
-        _WORD *a1,
-        _BYTE *a2,
-        int a4,
-        int argC,
-        unsigned __int16 *a5,
-        int a7,
-        int a8,
-        int a9)
 {
-  unsigned __int16 *result; // eax
-  TacticalMap *v12; // edi
-  unsigned __int16 v13; // dx
-  unsigned __int16 *a5a; // [esp+14h] [ebp+14h]
-
-  result = a5; /*0x492f34*/
-  if ( a4 > 0 ) /*0x492f3a*/
+    unsigned short *result;
+    TacticalMap *v12;
+    unsigned short v13;
+    unsigned short *a5a;
+    result = a5;
+    if ( a4 > 0 )
   {
-    v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492f48*/
-    a5a = (unsigned __int16 *)a4; /*0x492f4e*/
-    do /*0x492fb1*/
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (unsigned short *)a4;
+    do
     {
-      v13 = *result++; /*0x492f58*/
-      if ( argC < v13 && *a2 ) /*0x492f66*/
+    v13 = *result++;
+    if ( argC < v13 && *a2 )
       {
-        *a1 = ((unsigned short)this->M2 & (*a1 >> 1)) /*0x492f91*/
-            + ((unsigned short)this->M2 & (*(_WORD *)(this->M4 + 2 * (unsigned __int8)*a2) >> 1));
-        v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492f94*/
+    *a1 = ((unsigned short)this->M2 & (*a1 >> 1))
+    + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 1));
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
       }
-      ++a2; /*0x492f9d*/
-      ++a1; /*0x492f9e*/
-      if ( (unsigned int)result >= v12->TacticalMap_field_1C ) /*0x492fa3*/
-        result = (unsigned __int16 *)((char *)result - v12->TacticalMap_field_20); /*0x492fa5*/
-      a5a = (unsigned __int16 *)((char *)a5a - 1); /*0x492fad*/
+    ++a2;
+    ++a1;
+    if ( (unsigned int)result >= v12->TacticalMap_field_1C )
+    result = (unsigned short *)((char *)result - v12->TacticalMap_field_20);
+    a5a = (unsigned short *)((char *)a5a - 1);
     }
-    while ( a5a ); /*0x492fb1*/
+    while ( a5a );
   }
-  return result; /*0x492fb7*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1336,47 +1246,35 @@ unsigned __int16 *__thiscall sub_492F30(
 namespace gamemd {
 int E4Recv_493050::sub_493050(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_493050(
-        BlitTransLucent25ZRead_G *this,
-        _WORD *a1,
-        _BYTE *a2,
-        int a4,
-        int argC,
-        unsigned __int16 *a5,
-        int a7,
-        int a8,
-        int a9)
 {
-  int result; // eax
-  TacticalMap *v12; // esi
-  unsigned __int16 v14; // ax
-  unsigned __int16 *a5a; // [esp+14h] [ebp+14h]
-
-  result = a4; /*0x493050*/
-  if ( a4 > 0 ) /*0x49305a*/
+    int result;
+    TacticalMap *v12;
+    unsigned short v14;
+    unsigned short *a5a;
+    result = a4;
+    if ( a4 > 0 )
   {
-    v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493063*/
-    a5a = (unsigned __int16 *)a4; /*0x49306e*/
-    do /*0x4930d5*/
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (unsigned short *)a4;
+    do
     {
-      v14 = *a5++; /*0x493078*/
-      if ( argC < v14 && *a2 ) /*0x493086*/
+    v14 = *a5++;
+    if ( argC < v14 && *a2 )
       {
-        *a1 = ((unsigned short)this->M2 & (*a1 >> 2)) /*0x4930b5*/
-            + 3 * ((unsigned short)this->M2 & (*(_WORD *)(this->M4 + 2 * (unsigned __int8)*a2) >> 2));
-        v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x4930b8*/
+    *a1 = ((unsigned short)this->M2 & (*a1 >> 2))
+    + 3 * ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
       }
-      ++a2; /*0x4930c1*/
-      ++a1; /*0x4930c2*/
-      if ( (unsigned int)a5 >= v12->TacticalMap_field_1C ) /*0x4930c7*/
-        a5 = (unsigned __int16 *)((char *)a5 - v12->TacticalMap_field_20); /*0x4930c9*/
-      result = (int)a5a - 1; /*0x4930d0*/
-      a5a = (unsigned __int16 *)((char *)a5a - 1); /*0x4930d1*/
+    ++a2;
+    ++a1;
+    if ( (unsigned int)a5 >= v12->TacticalMap_field_1C )
+    a5 = (unsigned short *)((char *)a5 - v12->TacticalMap_field_20);
+    result = (int)a5a - 1;
+    a5a = (unsigned short *)((char *)a5a - 1);
     }
-    while ( a5a ); /*0x4930d5*/
+    while ( a5a );
   }
-  return result; /*0x4930db*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1385,47 +1283,35 @@ int __thiscall sub_493050(
 namespace gamemd {
 int E4Recv_493170::sub_493170(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_493170(
-        BlitTransLucent75ZReadWarp_G *this,
-        _WORD *a1,
-        _BYTE *a2,
-        int a4,
-        int argC,
-        unsigned __int16 *a5,
-        int a7,
-        int a8,
-        int a9)
 {
-  int result; // eax
-  TacticalMap *v12; // esi
-  unsigned __int16 v14; // ax
-  unsigned __int16 *a5a; // [esp+14h] [ebp+14h]
-
-  result = a4; /*0x493170*/
-  if ( a4 > 0 ) /*0x49317a*/
+    int result;
+    TacticalMap *v12;
+    unsigned short v14;
+    unsigned short *a5a;
+    result = a4;
+    if ( a4 > 0 )
   {
-    v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493187*/
-    a5a = (unsigned __int16 *)a4; /*0x493192*/
-    do /*0x4931fe*/
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (unsigned short *)a4;
+    do
     {
-      v14 = *a5++; /*0x49319c*/
-      if ( argC < v14 && *a2 ) /*0x4931aa*/
+    v14 = *a5++;
+    if ( argC < v14 && *a2 )
       {
-        *a1 = 3 * ((unsigned short)this->M2 & (a1[a9] >> 2)) /*0x4931de*/
-            + ((unsigned short)this->M2 & (*(_WORD *)(this->M4 + 2 * (unsigned __int8)*a2) >> 2));
-        v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x4931e1*/
+    *a1 = 3 * ((unsigned short)this->M2 & (a1[a9] >> 2))
+    + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
       }
-      ++a2; /*0x4931ea*/
-      ++a1; /*0x4931eb*/
-      if ( (unsigned int)a5 >= v12->TacticalMap_field_1C ) /*0x4931f0*/
-        a5 = (unsigned __int16 *)((char *)a5 - v12->TacticalMap_field_20); /*0x4931f2*/
-      result = (int)a5a - 1; /*0x4931f9*/
-      a5a = (unsigned __int16 *)((char *)a5a - 1); /*0x4931fa*/
+    ++a2;
+    ++a1;
+    if ( (unsigned int)a5 >= v12->TacticalMap_field_1C )
+    a5 = (unsigned short *)((char *)a5 - v12->TacticalMap_field_20);
+    result = (int)a5a - 1;
+    a5a = (unsigned short *)((char *)a5a - 1);
     }
-    while ( a5a ); /*0x4931fe*/
+    while ( a5a );
   }
-  return result; /*0x493204*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1434,46 +1320,34 @@ int __thiscall sub_493170(
 namespace gamemd {
 unsigned short * E4Recv_4932A0::sub_4932A0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int16 *__thiscall sub_4932A0(
-        BlitTransLucent50ZReadWarp_G *this,
-        _WORD *a1,
-        _BYTE *a2,
-        int a4,
-        int argC,
-        unsigned __int16 *a5,
-        int a7,
-        int a8,
-        int a9)
 {
-  unsigned __int16 *result; // eax
-  TacticalMap *v12; // edi
-  unsigned __int16 v13; // dx
-  unsigned __int16 *a5a; // [esp+14h] [ebp+14h]
-
-  result = a5; /*0x4932a4*/
-  if ( a4 > 0 ) /*0x4932aa*/
+    unsigned short *result;
+    TacticalMap *v12;
+    unsigned short v13;
+    unsigned short *a5a;
+    result = a5;
+    if ( a4 > 0 )
   {
-    v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x4932bc*/
-    a5a = (unsigned __int16 *)a4; /*0x4932c2*/
-    do /*0x49332a*/
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (unsigned short *)a4;
+    do
     {
-      v13 = *result++; /*0x4932cc*/
-      if ( argC < v13 && *a2 ) /*0x4932da*/
+    v13 = *result++;
+    if ( argC < v13 && *a2 )
       {
-        *a1 = ((unsigned short)this->M2 & (a1[a9] >> 1)) /*0x49330a*/
-            + ((unsigned short)this->M2 & (*(_WORD *)(this->M4 + 2 * (unsigned __int8)*a2) >> 1));
-        v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x49330d*/
+    *a1 = ((unsigned short)this->M2 & (a1[a9] >> 1))
+    + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 1));
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
       }
-      ++a2; /*0x493316*/
-      ++a1; /*0x493317*/
-      if ( (unsigned int)result >= v12->TacticalMap_field_1C ) /*0x49331c*/
-        result = (unsigned __int16 *)((char *)result - v12->TacticalMap_field_20); /*0x49331e*/
-      a5a = (unsigned __int16 *)((char *)a5a - 1); /*0x493326*/
+    ++a2;
+    ++a1;
+    if ( (unsigned int)result >= v12->TacticalMap_field_1C )
+    result = (unsigned short *)((char *)result - v12->TacticalMap_field_20);
+    a5a = (unsigned short *)((char *)a5a - 1);
     }
-    while ( a5a ); /*0x49332a*/
+    while ( a5a );
   }
-  return result; /*0x493330*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1482,47 +1356,35 @@ unsigned __int16 *__thiscall sub_4932A0(
 namespace gamemd {
 int E4Recv_4933D0::sub_4933D0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4933D0(
-        BlitTransLucent25ZReadWarp_G *this,
-        _WORD *a1,
-        _BYTE *a2,
-        int a4,
-        int argC,
-        unsigned __int16 *a5,
-        int a7,
-        int a8,
-        int a9)
 {
-  int result; // eax
-  TacticalMap *v12; // esi
-  unsigned __int16 v14; // ax
-  unsigned __int16 *a5a; // [esp+14h] [ebp+14h]
-
-  result = a4; /*0x4933d0*/
-  if ( a4 > 0 ) /*0x4933da*/
+    int result;
+    TacticalMap *v12;
+    unsigned short v14;
+    unsigned short *a5a;
+    result = a4;
+    if ( a4 > 0 )
   {
-    v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x4933e7*/
-    a5a = (unsigned __int16 *)a4; /*0x4933f2*/
-    do /*0x49345e*/
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (unsigned short *)a4;
+    do
     {
-      v14 = *a5++; /*0x4933fc*/
-      if ( argC < v14 && *a2 ) /*0x49340a*/
+    v14 = *a5++;
+    if ( argC < v14 && *a2 )
       {
-        *a1 = ((unsigned short)this->M2 & (a1[a9] >> 2)) /*0x49343e*/
-            + 3 * ((unsigned short)this->M2 & (*(_WORD *)(this->M4 + 2 * (unsigned __int8)*a2) >> 2));
-        v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493441*/
+    *a1 = ((unsigned short)this->M2 & (a1[a9] >> 2))
+    + 3 * ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * (unsigned char)*a2) >> 2));
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
       }
-      ++a2; /*0x49344a*/
-      ++a1; /*0x49344b*/
-      if ( (unsigned int)a5 >= v12->TacticalMap_field_1C ) /*0x493450*/
-        a5 = (unsigned __int16 *)((char *)a5 - v12->TacticalMap_field_20); /*0x493452*/
-      result = (int)a5a - 1; /*0x493459*/
-      a5a = (unsigned __int16 *)((char *)a5a - 1); /*0x49345a*/
+    ++a2;
+    ++a1;
+    if ( (unsigned int)a5 >= v12->TacticalMap_field_1C )
+    a5 = (unsigned short *)((char *)a5 - v12->TacticalMap_field_20);
+    result = (int)a5a - 1;
+    a5a = (unsigned short *)((char *)a5a - 1);
     }
-    while ( a5a ); /*0x49345e*/
+    while ( a5a );
   }
-  return result; /*0x493464*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1531,45 +1393,33 @@ int __thiscall sub_4933D0(
 namespace gamemd {
 unsigned short * E4Recv_493500::sub_493500(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_WORD *__thiscall sub_493500(
-        BlitPlainXlatZReadWrite_G *this,
-        _WORD *a1,
-        unsigned __int8 *a2,
-        int a4,
-        int argC,
-        _WORD *a5,
-        int a7,
-        int a8,
-        int a9)
 {
-  _WORD *result; // eax
-  TacticalMap *v12; // edi
-  _WORD *a5a; // [esp+18h] [ebp+14h]
-
-  result = a5; /*0x493500*/
-  if ( a4 > 0 ) /*0x49350d*/
+    short *result;
+    TacticalMap *v12;
+    short *a5a;
+    result = a5;
+    if ( a4 > 0 )
   {
-    v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x49351a*/
-    a5a = (_WORD *)a4; /*0x493520*/
-    do /*0x493566*/
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (short *)a4;
+    do
     {
-      if ( argC < (unsigned __int16)*result ) /*0x49352f*/
+    if ( argC < (unsigned short)*result )
       {
-        *a1 = *(_WORD *)(this->M4 + 2 * *a2); /*0x49353c*/
-        *result = (unsigned __int8)argC; /*0x493543*/
-        v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493546*/
+    *a1 = *(short *)(this->M4 + 2 * *a2);
+    *result = (unsigned char)argC;
+    v12 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
       }
-      ++result; /*0x49354f*/
-      ++a2; /*0x493552*/
-      ++a1; /*0x493553*/
-      if ( (unsigned int)result >= v12->TacticalMap_field_1C ) /*0x493558*/
-        result = (_WORD *)((char *)result - v12->TacticalMap_field_20); /*0x49355a*/
-      a5a = (_WORD *)((char *)a5a - 1); /*0x493562*/
+    ++result;
+    ++a2;
+    ++a1;
+    if ( (unsigned int)result >= v12->TacticalMap_field_1C )
+    result = (short *)((char *)result - v12->TacticalMap_field_20);
+    a5a = (short *)((char *)a5a - 1);
     }
-    while ( a5a ); /*0x493566*/
+    while ( a5a );
   }
-  return result; /*0x49356b*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1578,36 +1428,33 @@ _WORD *__thiscall sub_493500(
 namespace gamemd {
 unsigned short * E4Recv_493600::sub_493600(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_WORD *__thiscall sub_493600(_DWORD *this, _WORD *a2, _BYTE *a3, int a4, int a5, _WORD *a6, int a7, int a8, int a9)
 {
-  _WORD *result; // eax
-  _DWORD *v10; // esi
-  int v13; // [esp+14h] [ebp+14h]
-
-  result = a6; /*0x493604*/
-  if ( a4 > 0 ) /*0x49360a*/
+    short *result;
+    int *v10;
+    int v13;
+    result = a6;
+    if ( a4 > 0 )
   {
-    v10 = MEMORY[0x887644]; /*0x493613*/
-    v13 = a4; /*0x49361e*/
-    do /*0x493670*/
+    v10 = g_ZBufferDescriptor;
+    v13 = a4;
+    do
     {
-      if ( a5 < (unsigned __int16)*result && *a3 ) /*0x493633*/
+    if ( a5 < (unsigned short)*result && *a3 )
       {
-        *a2 = *(_WORD *)(*(this + 1) + 2 * (unsigned __int8)*a3); /*0x49364a*/
-        *result = a5; /*0x49364d*/
-        v10 = MEMORY[0x887644]; /*0x493650*/
+    *a2 = *(short *)(this->M4 + 2 * (unsigned char)*a3);
+    *result = a5;
+    v10 = g_ZBufferDescriptor;
       }
-      ++result; /*0x493659*/
-      ++a3; /*0x49365c*/
-      ++a2; /*0x49365d*/
-      if ( (unsigned int)result >= v10[7] ) /*0x493662*/
-        result = (_WORD *)((char *)result - v10[8]); /*0x493664*/
-      --v13; /*0x49366c*/
+    ++result;
+    ++a3;
+    ++a2;
+    if ( (unsigned int)result >= v10[7] )
+    result = (short *)((char *)result - v10[8]);
+    --v13;
     }
-    while ( v13 ); /*0x493670*/
+    while ( v13 );
   }
-  return result; /*0x493676*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1616,47 +1463,35 @@ _WORD *__thiscall sub_493600(_DWORD *this, _WORD *a2, _BYTE *a3, int a4, int a5,
 namespace gamemd {
 unsigned short * E4Recv_493710::sub_493710(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_WORD *__thiscall sub_493710(
-        BlitTransZRemapXlatZReadWrite_G *this,
-        _WORD *a1,
-        _BYTE *a2,
-        int a4,
-        int argC,
-        _WORD *a5,
-        int a7,
-        int a8,
-        int a9)
 {
-  _WORD *result; // eax
-  int v10; // ecx
-  TacticalMap *v11; // esi
-  _WORD *a5a; // [esp+18h] [ebp+14h]
-
-  result = a5; /*0x493715*/
-  v10 = **((_DWORD **)this + 1); /*0x493722*/
-  if ( a4 > 0 ) /*0x493724*/
+    short *result;
+    int v10;
+    TacticalMap *v11;
+    short *a5a;
+    result = a5;
+    v10 = **((int **)(this) + 1);
+    if ( a4 > 0 )
   {
-    v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x49372d*/
-    a5a = (_WORD *)a4; /*0x493738*/
-    do /*0x493793*/
+    v11 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
+    a5a = (short *)a4;
+    do
     {
-      if ( argC < (unsigned __int16)*result && *a2 ) /*0x49374d*/
+    if ( argC < (unsigned short)*result && *a2 )
       {
-        *a1 = *(_WORD *)(this->M8 + 2 * *(unsigned __int8 *)((unsigned __int8)*a2 + v10)); /*0x49376d*/
-        *result = argC; /*0x493770*/
-        v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493773*/
+    *a1 = *(short *)(this->M8 + 2 * *(unsigned char *)((unsigned char)*a2 + v10));
+    *result = argC;
+    v11 = *(TacticalMap **)&DataGlobal_87F8E4.__pad_5568[10232];
       }
-      ++result; /*0x49377c*/
-      ++a2; /*0x49377f*/
-      ++a1; /*0x493780*/
-      if ( (unsigned int)result >= v11->TacticalMap_field_1C ) /*0x493785*/
-        result = (_WORD *)((char *)result - v11->TacticalMap_field_20); /*0x493787*/
-      a5a = (_WORD *)((char *)a5a - 1); /*0x49378f*/
+    ++result;
+    ++a2;
+    ++a1;
+    if ( (unsigned int)result >= v11->TacticalMap_field_1C )
+    result = (short *)((char *)result - v11->TacticalMap_field_20);
+    a5a = (short *)((char *)a5a - 1);
     }
-    while ( a5a ); /*0x493793*/
+    while ( a5a );
   }
-  return result; /*0x49379a*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1735,65 +1570,51 @@ int __thiscall sub_496310(RLEBlitTransLucent75_G *this)
 namespace gamemd {
 unsigned short * E4Recv_4963F0::sub_4963F0(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_WORD *__thiscall sub_4963F0(
-        RLEBlitTransLucent50_G *this,
-        _WORD *a1,
-        unsigned __int8 *a2,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10,
-        int a11)
 {
-  int v11; // edx
-  _WORD *result; // eax
-  int v15; // edx
-  int v16; // edi
-  unsigned __int8 v17; // dl
-  unsigned __int8 v18; // dl
-
-  v11 = a5; /*0x4963f0*/
-  result = a1; /*0x496400*/
-  if ( a5 <= 0 ) /*0x496402*/
+    int v11;
+    short *result;
+    int v15;
+    int v16;
+    unsigned char v17;
+    unsigned char v18;
+    v11 = a5;
+    result = a1;
+    if ( a5 <= 0 )
   {
-    v16 = a4; /*0x496426*/
+    v16 = a4;
   }
-  else
+    else
   {
-    do /*0x496417*/
+    do
     {
-      if ( *a2++ ) /*0x496404*/
-        --v11; /*0x496414*/
-      else
-        v11 -= *a2++; /*0x49640f*/
+    if ( *a2++ )
+    --v11;
+    else
+    v11 -= *a2++;
     }
-    while ( v11 > 0 ); /*0x496417*/
-    v15 = -v11; /*0x496419*/
-    result = &a1[v15]; /*0x49641b*/
-    v16 = a4 - v15; /*0x496422*/
+    while ( v11 > 0 );
+    v15 = -v11;
+    result = &a1[v15];
+    v16 = a4 - v15;
   }
-  while ( v16 > 0 ) /*0x49642c*/
+    while ( v16 > 0 )
   {
-    v17 = *a2++; /*0x496430*/
-    if ( v17 ) /*0x496439*/
+    v17 = *a2++;
+    if ( v17 )
     {
-      --v16; /*0x496478*/
-      *result = ((unsigned short)this->M2 & (*result >> 1)) /*0x496479*/
-              + ((unsigned short)this->M2 & (*(_WORD *)(this->M4 + 2 * v17) >> 1));
-      ++result; /*0x49647c*/
+    --v16;
+    *result = ((unsigned short)this->M2 & (*result >> 1))
+    + ((unsigned short)this->M2 & (*(short *)(this->M4 + 2 * v17) >> 1));
+    ++result;
     }
     else
     {
-      v18 = *a2++; /*0x49643b*/
-      v16 -= v18; /*0x49644c*/
-      result += v18; /*0x49644e*/
+    v18 = *a2++;
+    v16 -= v18;
+    result += v18;
     }
   }
-  return result; /*0x496485*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -2807,13 +2628,11 @@ unsigned __int16 *__thiscall sub_497390(
 namespace gamemd {
 BlitTransXlat * E4Recv_499CA0::___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BlitTransXlat *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_4(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x499ca9*/
-  if ( (a2 & 1) != 0 ) /*0x499caf*/
-    __3_YAXPAX_Z(this); /*0x499cb2*/
-  return (BlitTransXlat *)this; /*0x499cbc*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransXlat *)this;
 }
 }
 } // namespace gamemd
@@ -2822,13 +2641,11 @@ BlitTransXlat *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_4(std::locale::facet *
 namespace gamemd {
 RLEBlitTransXlat * E4Recv_499D80::___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-RLEBlitTransXlat *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_11(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_RLEBlitter; /*0x499d89*/
-  if ( (a2 & 1) != 0 ) /*0x499d8f*/
-    __3_YAXPAX_Z(this); /*0x499d92*/
-  return (RLEBlitTransXlat *)this; /*0x499d9c*/
+    *(int *)this = &vt_RLEBlitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (RLEBlitTransXlat *)this;
 }
 }
 } // namespace gamemd
@@ -2837,13 +2654,11 @@ RLEBlitTransXlat *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_11(std::locale::fac
 namespace gamemd {
 RLEBlitTransXlatZRead * E4Recv_499E20::___Gfacet_locale_std__UAEPAXI_Z_16(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-RLEBlitTransXlatZRead *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_16(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_RLEBlitter; /*0x499e29*/
-  if ( (a2 & 1) != 0 ) /*0x499e2f*/
-    __3_YAXPAX_Z(this); /*0x499e32*/
-  return (RLEBlitTransXlatZRead *)this; /*0x499e3c*/
+    *(int *)this = &vt_RLEBlitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (RLEBlitTransXlatZRead *)this;
 }
 }
 } // namespace gamemd
@@ -2852,13 +2667,11 @@ RLEBlitTransXlatZRead *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_16(std::locale
 namespace gamemd {
 BlitPlainXlat * E4Recv_499F20::___Gfacet_locale_std__UAEPAXI_Z_24(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BlitPlainXlat *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_24(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x499f29*/
-  if ( (a2 & 1) != 0 ) /*0x499f2f*/
-    __3_YAXPAX_Z(this); /*0x499f32*/
-  return (BlitPlainXlat *)this; /*0x499f3c*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitPlainXlat *)this;
 }
 }
 } // namespace gamemd
@@ -2867,13 +2680,11 @@ BlitPlainXlat *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_24(std::locale::facet 
 namespace gamemd {
 BlitTransDarken * E4Recv_499F60::___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BlitTransDarken *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_26(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x499f69*/
-  if ( (a2 & 1) != 0 ) /*0x499f6f*/
-    __3_YAXPAX_Z(this); /*0x499f72*/
-  return (BlitTransDarken *)this; /*0x499f7c*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransDarken *)this;
 }
 }
 } // namespace gamemd
@@ -2882,13 +2693,11 @@ BlitTransDarken *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_26(std::locale::face
 namespace gamemd {
 BlitTransLucent75 * E4Recv_499F80::___Gfacet_locale_std__UAEPAXI_Z_27(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BlitTransLucent75 *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_27(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x499f89*/
-  if ( (a2 & 1) != 0 ) /*0x499f8f*/
-    __3_YAXPAX_Z(this); /*0x499f92*/
-  return (BlitTransLucent75 *)this; /*0x499f9c*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransLucent75 *)this;
 }
 }
 } // namespace gamemd
@@ -2897,13 +2706,11 @@ BlitTransLucent75 *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_27(std::locale::fa
 namespace gamemd {
 BlitTransLucent50 * E4Recv_499FA0::___Gfacet_locale_std__UAEPAXI_Z_28(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BlitTransLucent50 *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_28(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x499fa9*/
-  if ( (a2 & 1) != 0 ) /*0x499faf*/
-    __3_YAXPAX_Z(this); /*0x499fb2*/
-  return (BlitTransLucent50 *)this; /*0x499fbc*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransLucent50 *)this;
 }
 }
 } // namespace gamemd
@@ -2912,13 +2719,11 @@ BlitTransLucent50 *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_28(std::locale::fa
 namespace gamemd {
 BlitTransLucent25 * E4Recv_499FC0::___Gfacet_locale_std__UAEPAXI_Z_29(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BlitTransLucent25 *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_29(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x499fc9*/
-  if ( (a2 & 1) != 0 ) /*0x499fcf*/
-    __3_YAXPAX_Z(this); /*0x499fd2*/
-  return (BlitTransLucent25 *)this; /*0x499fdc*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransLucent25 *)this;
 }
 }
 } // namespace gamemd
@@ -2927,13 +2732,11 @@ BlitTransLucent25 *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_29(std::locale::fa
 namespace gamemd {
 BlitTransXlatZRead * E4Recv_49A000::___Gfacet_locale_std__UAEPAXI_Z_31(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BlitTransXlatZRead *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_31(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x49a009*/
-  if ( (a2 & 1) != 0 ) /*0x49a00f*/
-    __3_YAXPAX_Z(this); /*0x49a012*/
-  return (BlitTransXlatZRead *)this; /*0x49a01c*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransXlatZRead *)this;
 }
 }
 } // namespace gamemd
@@ -2942,13 +2745,11 @@ BlitTransXlatZRead *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_31(std::locale::f
 namespace gamemd {
 BlitTransXlatZReadWrite * E4Recv_49A140::___Gfacet_locale_std__UAEPAXI_Z_41(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BlitTransXlatZReadWrite *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_41(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_Blitter; /*0x49a149*/
-  if ( (a2 & 1) != 0 ) /*0x49a14f*/
-    __3_YAXPAX_Z(this); /*0x49a152*/
-  return (BlitTransXlatZReadWrite *)this; /*0x49a15c*/
+    *(int *)this = &vt_Blitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BlitTransXlatZReadWrite *)this;
 }
 }
 } // namespace gamemd
@@ -2957,13 +2758,11 @@ BlitTransXlatZReadWrite *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_41(std::loca
 namespace gamemd {
 RLEBlitTransXlatZRead * E4Recv_49A820::___Gfacet_locale_std__UAEPAXI_Z_58(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-RLEBlitTransXlatZRead *__thiscall ___Gfacet_locale_std__UAEPAXI_Z_58(std::locale::facet *this, char a2)
 {
-  *(_DWORD *)this = &vt_RLEBlitter; /*0x49a829*/
-  if ( (a2 & 1) != 0 ) /*0x49a82f*/
-    __3_YAXPAX_Z(this); /*0x49a832*/
-  return (RLEBlitTransXlatZRead *)this; /*0x49a83c*/
+    *(int *)this = &vt_RLEBlitter;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (RLEBlitTransXlatZRead *)this;
 }
 }
 } // namespace gamemd
@@ -3829,62 +3628,59 @@ char __thiscall SerializeCampaignOptions(char *this)
 namespace gamemd {
 unsigned int * E4Recv_49DA60::sub_49DA60()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_49DA60(_DWORD *this)
 {
-  _DWORD *result; // eax
-  _DWORD *v2; // esi
-  _DWORD *v3; // ecx
-  int v4; // ebx
-  int v5; // edi
-  int v6; // edi
-  int v7; // edi
-
-  result = this; /*0x49da60*/
-  v2 = this + 4; /*0x49da66*/
-  v3 = this + 7; /*0x49da69*/
-  result[1] = 0; /*0x49da6c*/
-  result[2] = 0; /*0x49da6f*/
-  v2[1] = 0; /*0x49da72*/
-  v2[2] = 0; /*0x49da75*/
-  *v2 = &vt_GenericNode; /*0x49da78*/
-  v3[1] = 0; /*0x49da7e*/
-  v3[2] = 0; /*0x49da81*/
-  *v3 = &vt_GenericNode; /*0x49da84*/
-  result[3] = &vt_GenericList; /*0x49da8d*/
-  if ( v3 ) /*0x49da94*/
+    int *result;
+    int *v2;
+    int *v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    result = this;
+    v2 = this + 4;
+    v3 = this + 7;
+    result[1] = 0;
+    result[2] = 0;
+    v2[1] = 0;
+    v2[2] = 0;
+    *v2 = &vt_GenericNode;
+    v3[1] = 0;
+    v3[2] = 0;
+    *v3 = &vt_GenericNode;
+    result[3] = &vt_GenericList;
+    if ( v3 )
   {
-    v4 = v3[1]; /*0x49da96*/
-    if ( v4 ) /*0x49da9b*/
+    v4 = v3[1];
+    if ( v4 )
     {
-      v5 = v3[2]; /*0x49da9d*/
-      if ( v5 ) /*0x49daa2*/
+    v5 = v3[2];
+    if ( v5 )
       {
-        *(_DWORD *)(v5 + 4) = v4; /*0x49daa4*/
-        *(_DWORD *)(v3[1] + 8) = v3[2]; /*0x49daad*/
-        v3[2] = 0; /*0x49dab0*/
-        v3[1] = 0; /*0x49dab3*/
+    *(int *)(v5 + 4) = v4;
+    *(int *)(v3[1] + 8) = v3[2];
+    v3[2] = 0;
+    v3[1] = 0;
       }
     }
   }
-  v6 = v2[1]; /*0x49dab6*/
-  v3[2] = v2; /*0x49dab9*/
-  v3[1] = v6; /*0x49dabc*/
-  v7 = v2[1]; /*0x49dabf*/
-  if ( v7 ) /*0x49dac4*/
-    *(_DWORD *)(v7 + 8) = v3; /*0x49dac6*/
-  v2[1] = v3; /*0x49dac9*/
-  result[3] = &vt_List_INIClass_INISection; /*0x49dacc*/
-  result[10] = 0; /*0x49dad4*/
-  result[11] = 0; /*0x49dad7*/
-  result[12] = 0; /*0x49dada*/
-  *((_BYTE *)result + 52) = 0; /*0x49dadd*/
-  result[14] = 0; /*0x49dae0*/
-  result[15] = 0; /*0x49dae4*/
-  *((_BYTE *)result + 64) = 0; /*0x49dae7*/
-  *result = &CCINIClass_Vtable; /*0x49daea*/
-  *((_BYTE *)result + 96) = 0; /*0x49daf0*/
-  return result; /*0x49dad3*/
+    v6 = v2[1];
+    v3[2] = v2;
+    v3[1] = v6;
+    v7 = v2[1];
+    if ( v7 )
+    *(int *)(v7 + 8) = v3;
+    v2[1] = v3;
+    result[3] = &vt_List_INIClass_INISection;
+    result[10] = 0;
+    result[11] = 0;
+    result[12] = 0;
+    *((char *)(result) + 52) = 0;
+    result[14] = 0;
+    result[15] = 0;
+    *((char *)(result) + 64) = 0;
+    *result = &CCINIClass_Vtable;
+    *((char *)(result) + 96) = 0;
+    return result;
 }
 }
 } // namespace gamemd

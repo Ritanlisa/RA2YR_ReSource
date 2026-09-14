@@ -135,20 +135,17 @@ BOOL __thiscall sub_4A31F0(_DWORD *this, int a2)
 } }
 // 0x4A4AD0
 namespace gamemd { void CStreamClass::ClearBuffer() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall CStreamClass::sub_4A4AD0(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x4a4ad6*/
-  *(_DWORD *)(this + 16) = 0; /*0x4a4ad9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x4a4ae0*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x4a4ae6*/
-    *(_DWORD *)(this + 4) = 0; /*0x4a4aee*/
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x4a4af1*/
-  *(_DWORD *)(this + 8) = 0; /*0x4a4af4*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 } }
 // 0x4A4B00
@@ -232,41 +229,35 @@ int __thiscall CStreamClass::sub_4A4D60(int *this, _DWORD *a2)
 } }
 // 0x4A4DE0
 namespace gamemd { void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x4a4de3*/
-  *this = &vt_VectorClass_DDSURFACEDESC; /*0x4a4de6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x4a4df0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_DDSURFACEDESC;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x4a4df8*/
-    *(this + 1) = 0; /*0x4a4e00*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x4a4e0b*/
-  *(this + 2) = 0; /*0x4a4e11*/
-  if ( (a2 & 1) != 0 ) /*0x4a4e18*/
-    __3_YAXPAX_Z(this); /*0x4a4e1b*/
-  return (DynamicVector *)this; /*0x4a4e25*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 } }
 // 0x55A150
 namespace gamemd { void LoadOptions::vt03() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall LoadOptions::vt03(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x55a156*/
-  *(_DWORD *)(this + 16) = 0; /*0x55a159*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x55a160*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->max_entries = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x55a166*/
-    *(_DWORD *)(this + 4) = 0; /*0x55a16e*/
+    __3_YAXPAX_Z(v2);
+    this->Items = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x55a171*/
-  *(_DWORD *)(this + 8) = 0; /*0x55a174*/
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 } }
 // 0x5AE6F0

@@ -196,15 +196,13 @@ LABEL_45:
 // 0x4D03A0
 FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-FlyLocomotionClass *__thiscall FlyLocomotionClass::ProcessMove(_DWORD *this, char a2)
 {
-  *this = &FlyLocomotionClass::`vftable'; /*0x4d03a3*/
-  *(this + 1) = &vt_FlyLocomotionClass; /*0x4d03a9*/
-  LocomotionClass::Construct(this); /*0x4d03b0*/
-  if ( (a2 & 1) != 0 ) /*0x4d03ba*/
-    __3_YAXPAX_Z(this); /*0x4d03bd*/
-  return (FlyLocomotionClass *)this; /*0x4d03c7*/
+    *(void**)this = vt_FlyLocomotionClass;
+    *(this + 1) = &vt_FlyLocomotionClass;
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (FlyLocomotionClass *)this;
 }
 }
 

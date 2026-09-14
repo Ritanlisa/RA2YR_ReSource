@@ -114,153 +114,136 @@ int __thiscall IsometricTileTypeClass::_vt16(_DWORD *this)
 // 0x54A170
 IsometricTileTypeClass * IsometricTileTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-IsometricTileTypeClass *__thiscall IsometricTileTypeClass::ddtor(void *this, char a2)
 {
-  IsometricTileTypeClass::CleanupMembers((int)this); /*0x54a173*/
-  if ( (a2 & 1) != 0 ) /*0x54a17d*/
-    __3_YAXPAX_Z(this); /*0x54a180*/
-  return (IsometricTileTypeClass *)this; /*0x54a18a*/
+    IsometricTileTypeClass::CleanupMembers((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (IsometricTileTypeClass *)this;
 }
 }
 
 // 0x54A190
 void IsometricTileTypeClass::ClearBuffer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall IsometricTileTypeClass::sub_54A190(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x54a196*/
-  this->IsometricTileTypeClass_field_0x10 = 0; /*0x54a199*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x54a1a0*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->IsometricTileTypeClass_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x54a1a6*/
-    this->IsometricTileTypeClass_field_0x04 = 0; /*0x54a1ae*/
+    __3_YAXPAX_Z(v2);
+    this->IsometricTileTypeClass_field_0x04 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x54a1b1*/
-  this->IsometricTileTypeClass_field_0x08 = 0; /*0x54a1b4*/
+    this->IsAllocated = 0;
+    this->IsometricTileTypeClass_field_0x08 = 0;
 }
 }
 
 // 0x54A3D0
 char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall IsometricTileTypeClass::sub_54A3D0(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x54a3dc*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x54a3e2*/
-    if ( a3 ) /*0x54a3e8*/
-      v4 = a3; /*0x54a3fe*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x54a3fa*/
-    *((_BYTE *)this + 12) = 1; /*0x54a402*/
-    if ( !v4 ) /*0x54a406*/
-      return 0; /*0x54a47a*/
-    if ( this->IsometricTileTypeClass_field_0x04 ) /*0x54a408*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->IsometricTileTypeClass_field_0x04 )
     {
-      v5 = this->IsometricTileTypeClass_field_0x08; /*0x54a40f*/
-      if ( a2 < v5 ) /*0x54a414*/
-        v5 = a2; /*0x54a416*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->IsometricTileTypeClass_field_0x04 + 4 * i - 4) ) /*0x54a41c*/
-        ++i; /*0x54a421*/
-      if ( *((_BYTE *)this + 13) ) /*0x54a42e*/
+    v5 = this->IsometricTileTypeClass_field_0x08;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->IsometricTileTypeClass_field_0x04 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x54a439*/
-        this->IsometricTileTypeClass_field_0x04 = 0; /*0x54a441*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->IsometricTileTypeClass_field_0x04 = 0;
       }
     }
-    this->IsometricTileTypeClass_field_0x04 = v4; /*0x54a44a*/
-    this->IsometricTileTypeClass_field_0x08 = a2; /*0x54a452*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x54a455*/
+    this->IsometricTileTypeClass_field_0x04 = v4;
+    this->IsometricTileTypeClass_field_0x08 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x54a45e*/
+    this->GetClassIdentifier();
   }
-  v7 = this->IsometricTileTypeClass_field_0x08; /*0x54a461*/
-  if ( v7 < this->IsometricTileTypeClass_field_0x10 ) /*0x54a469*/
-    this->IsometricTileTypeClass_field_0x10 = v7; /*0x54a46b*/
-  return 1; /*0x54a46e*/
+    v7 = this->IsometricTileTypeClass_field_0x08;
+    if ( v7 < this->IsometricTileTypeClass_field_0x10 )
+    this->IsometricTileTypeClass_field_0x10 = v7;
+    return 1;
 }
 }
 
 // 0x54A480
 int IsometricTileTypeClass::FindItem(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IsometricTileTypeClass::sub_54A480(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x54a480*/
-  result = 0; /*0x54a483*/
-  if ( v2 <= 0 ) /*0x54a488*/
-    return -1; /*0x54a49f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x54a48e*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x54a49d*/
-      return -1; /*0x54a49d*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x54a4a2*/
-}
+    return result;
 }
 
 // 0x54A760
 DynamicVector * IsometricTileTypeClass::Constructor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall IsometricTileTypeClass::Constructor(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x54a763*/
-  *this = &vt_VectorClass_unsigned_short; /*0x54a766*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x54a770*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_unsigned_short;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x54a778*/
-    *(this + 1) = 0; /*0x54a780*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x54a78b*/
-  *(this + 2) = 0; /*0x54a791*/
-  if ( (a2 & 1) != 0 ) /*0x54a798*/
-    __3_YAXPAX_Z(this); /*0x54a79b*/
-  return (DynamicVector *)this; /*0x54a7a5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 
 // 0x54A850
 unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_54A850(_DWORD *this, int a2, int a3)
 {
-  *(this + 1) = 0; /*0x54a85b*/
-  *(this + 2) = a2; /*0x54a85e*/
-  *((_BYTE *)this + 12) = 1; /*0x54a861*/
-  *((_BYTE *)this + 13) = 0; /*0x54a865*/
-  *this = &vt_VectorClass_unsigned_short; /*0x54a868*/
-  if ( a2 ) /*0x54a86e*/
+    this->Items = 0;
+    this->Capacity = a2;
+    this->IsInitialized = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_unsigned_short;
+    if ( a2 )
   {
-    if ( a3 ) /*0x54a876*/
+    if ( a3 )
     {
-      *(this + 1) = a3; /*0x54a878*/
-      return this; /*0x54a87e*/
+    this->Items = a3;
+    return this;
     }
-    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x54a88d*/
-    *((_BYTE *)this + 13) = 1; /*0x54a890*/
+    this->Items = __2_YAPAXI_Z(4 * a2);
+    this->IsAllocated = 1;
   }
-  return this; /*0x54a87d*/
+    return this;
 }
 }
 

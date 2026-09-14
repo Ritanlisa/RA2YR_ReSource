@@ -1366,80 +1366,6 @@ void __thiscall BuildingClass_Deactivate(int this)
   }
   while ( v5 < 1428 );
 }
-
-/* ASM:
-push    ebx
-push    esi
-push    edi
-mov     edi, ecx
-mov     ecx, [edi+614h]
-mov     byte ptr [edi+6EAh], 0
-test    ecx, ecx
-jz      short loc_45249D
-push    0
-call    MapClass__ScrollOnce
-
-loc_45249D:                             ; CODE XREF: BuildingClass__Deactivate+14↑j
-mov     eax, [edi+520h]
-mov     cl, [eax+16C7h]
-test    cl, cl
-jz      short loc_4524D1
-mov     cl, [edi+6ECh]
-mov     byte ptr [edi+6EBh], 0FFh
-test    cl, cl
-jnz     short loc_4524CA
-mov     cl, [eax+1707h]
-mov     [edi+6ECh], cl
-
-loc_4524CA:                             ; CODE XREF: BuildingClass__Deactivate+3C↑j
-mov     byte ptr [edi+80h], 1
-
-loc_4524D1:                             ; CODE XREF: BuildingClass__Deactivate+2B↑j
-mov     cl, [eax+0CD1h]
-test    cl, cl
-jz      short loc_4524EF
-mov     al, [edi+269h]
-test    al, al
-jz      short loc_4524EF
-mov     edx, [edi]
-mov     ecx, edi
-call    dword ptr [edx+418h]
-
-loc_4524EF:                             ; CODE XREF: BuildingClass__Deactivate+59↑j
-; BuildingClass__Deactivate+63↑j
-mov     eax, [edi+520h]
-mov     cl, [eax+16BEh]
-test    cl, cl
-jz      short loc_452508
-push    0
-mov     ecx, edi
-call    BuildingClass__RepairPlacement
-
-loc_452508:                             ; CODE XREF: BuildingClass__Deactivate+7D↑j
-xor     esi, esi
-lea     ebx, [edi+55Ch]
-
-loc_452510:                             ; CODE XREF: BuildingClass__Deactivate+B8↓j
-mov     ecx, [edi+520h]
-mov     al, [ecx+esi+0F8Ch]
-test    al, al
-jz      short loc_45252C
-mov     ecx, [ebx]
-test    ecx, ecx
-jz      short loc_45252C
-call    BuildingClass__SetField8
-
-loc_45252C:                             ; CODE XREF: BuildingClass__Deactivate+9F↑j
-; BuildingClass__Deactivate+A5↑j
-add     esi, 44h ; 'D'
-add     ebx, 4
-cmp     esi, 594h
-jl      short loc_452510
-pop     edi
-pop     esi
-pop     ebx
-retn
-*/
 }
 
 // IDA 0x459e80: Destroyed notification — set destroyed state
@@ -8051,39 +7977,35 @@ RectangleStruct* BuildingClass::GetPlacementRect(RectangleStruct* out) const
 // IDA 0x44e3a0: check overlap with other buildings
 // 0x44e3a0
 bool BuildingClass::CheckOverlapWithOthers() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_44E3A0(_DWORD *this)
 {
-  int v2; // ebp
-  _WORD *v3; // esi
-  _DWORD *v4; // eax
-  char v6; // [esp+13h] [ebp-9h]
-  int v7; // [esp+14h] [ebp-8h]
-  int v8; // [esp+18h] [ebp-4h] BYREF
-
-  v2 = *(_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 440))(this, &v8);
-  v3 = (_WORD *)(*(int (__thiscall **)(_DWORD *, _DWORD))(*this + 264))(this, 0);
-  v6 = 0;
-LABEL_2:
-  while ( *v3 != 0x7FFF || v3[1] != 0x7FFF )
+    int v2;
+    short *v3;
+    int *v4;
+    char v6;
+    int v7;
+    int v8;
+    v2 = *(int *)this->SetZ(&v8);
+    v3 = (short *)this->CheckPlayerOwned(0);
+    v6 = 0;
+    LABEL_2: while ( *v3 != 0x7FFF || v3[1] != 0x7FFF )
   {
     LOWORD(v7) = v2 + *v3;
     HIWORD(v7) = HIWORD(v2) + v3[1];
     v8 = v7;
     v3 += 2;
-    v4 = (_DWORD *)*((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v8) + 57);
+    v4 = (int *)*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v8) + 57);
     if ( v4 )
     {
-      while ( this == v4 )
+    while ( this == v4 )
       {
-        v4 = (_DWORD *)v4[12];
-        if ( !v4 )
-          goto LABEL_2;
+    v4 = (int *)v4[12];
+    if ( !v4 )
+    goto LABEL_2;
       }
-      v6 = 1;
+    v6 = 1;
     }
   }
-  return v6;
+    return v6;
 }
 
 /* ASM:
@@ -13142,32 +13064,26 @@ void BuildingClass::ToggleSellMode() { Sell(); }
 // 0x5f5dd0
 int BuildingClass::GetSellPriority()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass_GetSellPriority(int *this)
 {
-  int result; // eax
-  double v3; // st7
-  double v4; // [esp+4h] [ebp-8h]
-  double v5; // [esp+4h] [ebp-8h]
-  double v6; // [esp+4h] [ebp-8h]
-
-  v4 = (double)*(this + 27);
-  if ( v4 / (double)*(int *)((*(int (__thiscall **)(int *))(*this + 136))(this) + 160) <= *((double *)MEMORY[0x8871E0]
-                                                                                          + 737)
-    && *(this + 27) > 0 )
+    int result;
+    double v3;
+    double v4;
+    double v5;
+    double v6;
+    v4 = (double)this->health;
+    if ( v4 / (double)*(int *)(this->HasValidWeapon() + 160) <= *((double *)g_RulesClass_Instance + 737) && this->health > 0 )
   {
     return 0;
   }
-  v5 = (double)*(this + 27);
-  if ( v5 / (double)*(int *)((*(int (__thiscall **)(int *))(*this + 136))(this) + 160) <= *((double *)MEMORY[0x8871E0]
-                                                                                          + 737) )
+    v5 = (double)this->health;
+    if ( v5 / (double)*(int *)(this->HasValidWeapon() + 160) <= *((double *)g_RulesClass_Instance + 737) )
     return 2;
-  v6 = (double)*(this + 27);
-  v3 = v6 / (double)*(int *)((*(int (__thiscall **)(int *))(*this + 136))(this) + 160);
-  result = 1;
-  if ( v3 > *((double *)MEMORY[0x8871E0] + 736) )
+    v6 = (double)this->health;
+    v3 = v6 / (double)*(int *)(this->HasValidWeapon() + 160);
+    result = 1;
+    if ( v3 > *((double *)g_RulesClass_Instance + 736) )
     return 2;
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -14221,10 +14137,8 @@ bool BuildingClass::IsBeingRepairedOrCaptured()
 // IDA 0x459ed0: missile building mission
 int BuildingClass::Mission_Missile()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall BuildingClass_IsBeingRepairedOrCaptured(int this)
 {
-  return *(_DWORD *)(this + 704) || *(_BYTE *)(this + 708); /*0x7105f6*/
+    return this->locomotorTarget || this->locomotorSource;
 }
     return {}; // TODO stub - retranslate via C-line pipeline
 }
@@ -16348,13 +16262,10 @@ int BuildingClass::GetPowerOutput()
 // 0x44e880
 int BuildingClass::GetPowerDrain()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall BuildingClass_GetHealthRatio(int *this)
 {
-  double v2; // [esp+0h] [ebp-8h]
-
-  v2 = (double)*(this + 27);
-  return v2 / (double)*(int *)((*(int (__thiscall **)(int *))(*this + 136))(this) + 160);
+    double v2;
+    v2 = (double)this->health;
+    return v2 / (double)*(int *)(this->HasValidWeapon() + 160);
 }
 
 /* ASM:
@@ -16378,13 +16289,10 @@ int BuildingClass::UpdatePowerDrain() { PowerDrainUpdate(0); return 0; }
 // 0x4525f0
 bool BuildingClass::IsPoweredOn()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall BuildingClass_IsPoweredOn(_DWORD *this)
 {
-  if ( !*(_BYTE *)(*(this + 328) + 5815) ) /*0x4525f9*/
-    return 1; /*0x452603*/
-  return (*(int (__thiscall **)(_DWORD *))(*this + 388))(this) == 24 /*0x452605*/
-      && BuildingClass::CheckPowerFlags((_BYTE *)this + 848);
+    if ( !*(char *)(this->Type + 5815) )
+    return 1;
+    return this->GetCurrentMission() == 24 && BuildingClass::CheckPowerFlags((char *)(this) + 848);
 }
     return false; // TODO stub - retranslate via C-line pipeline
 }
@@ -18188,34 +18096,32 @@ void BuildingClass::Capture() { CaptureBuilding(); }
 // 0x4521c0
 void BuildingClass::DisableTemporal()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4521c0
-int __thiscall BuildingClass::DisableTemporal(int *this)
+    int __thiscall BuildingClass::DisableTemporal(int *(void**)this)
 {
-  int *v1; // ecx
-  int v2; // edx
-  int result; // eax
-  int v4; // esi
-
-  *((_BYTE *)this + 1632) = 0;
-  v1 = this + 343;
-  v2 = 21;
-  do
+    int *v1;
+    int v2;
+    int result;
+    int v4;
+    this->HasPower = 0;
+    v1 = this + 343;
+    v2 = 21;
+    do
   {
     result = *v1;
     if ( *v1 )
     {
-      v4 = *(_DWORD *)(result + 172);
-      *(_BYTE *)(result + 282) = 1;
-      *(_BYTE *)(result + 283) = 0;
-      *(_DWORD *)(result + 284) = v4;
-      *(_BYTE *)(result + 281) = 1;
+    v4 = *(int *)(result + 172);
+    *(char *)(result + 282) = 1;
+    *(char *)(result + 283) = 0;
+    *(int *)(result + 284) = v4;
+    *(char *)(result + 281) = 1;
     }
     ++v1;
     --v2;
   }
-  while ( v2 );
-  return result;
+    while ( v2 );
+    return result;
 }
 
 /* ASM:
@@ -22899,32 +22805,30 @@ int BuildingClass::GetObjectData() { return 0; }
 // 0x455b90
 int BuildingClass::GetFWFlags()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x455b90
-int __thiscall BuildingClass::GetFWFlags(_DWORD *this)
+    int __thiscall BuildingClass::GetFWFlags(int *(void**)this)
 {
-  _DWORD *v1; // ecx
-  int v2; // ebx
-  _DWORD *v3; // edi
-  signed int i; // esi
-  _DWORD *NeighbourContent; // eax
-  _DWORD *v6; // eax
-  _DWORD v8[3]; // [esp+Ch] [ebp-Ch] BYREF
-
-  v1 = this + 39;
-  v2 = 0;
-  v8[0] = *v1;
-  v8[1] = v1[1];
-  v8[2] = v1[2];
-  v3 = Coord::To_Cell(&MEMORY[0x87F7E8], v8);
-  for ( i = 0; i < 8; i += 2 )
+    int *v1;
+    int v2;
+    int *v3;
+    signed int i;
+    int *NeighbourContent;
+    int *v6;
+    int v8[3];
+    v1 = this + 39;
+    v2 = 0;
+    v8[0] = *v1;
+    v8[1] = v1[1];
+    v8[2] = v1[2];
+    v3 = Coord::To_Cell(&DataGlobal_87F7E8, v8);
+    for ( i = 0; i < 8; i += 2 )
   {
     NeighbourContent = Cell::GetNeighbourContent(v3, i);
     v6 = Cell::IsBridge(NeighbourContent);
-    if ( v6 && *(_BYTE *)(v6[328] + 5824) && !*((_BYTE *)v6 + 129) && *((_BYTE *)v6 + 144) )
-      v2 |= 1 << (i >> 1);
+    if ( v6 && *(char *)(v6[328] + 5824) && !*((char *)(v6) + 129) && *((char *)(v6) + 144) )
+    v2 |= 1 << (i >> 1);
   }
-  return v2;
+    return v2;
 }
 
 /* ASM:
@@ -24185,25 +24089,22 @@ void BuildingClass::ClearLimpetCheck()
 // IDA 0x487c10: check if C4 is active
 // 0x487c10
 bool BuildingClass::CheckC4Active() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BuildingClass_CheckC4Active(int this)
 {
-  _DWORD *v3; // esi
-
-  if ( *(_BYTE *)(this + 284) )
+    int *v3;
+    if ( this->deployAnim )
     return 0;
-  if ( !MEMORY[0xA8E9A0] )
-    return MEMORY[0x89EA60][36 * *(_DWORD *)(this + 236)];
-  v3 = *(_DWORD **)(this + 228);
-  if ( !v3 )
-    return MEMORY[0x89EA60][36 * *(_DWORD *)(this + 236)];
-  while ( (*(int (__thiscall **)(_DWORD *))(*v3 + 44))(v3) != 6 )
-  {
-    v3 = (_DWORD *)v3[12];
+    if ( !g_WTFMode )
+    return DataGlobal_89EA60[36 *(void**)this->animation];
+    v3 = *(int **)(this + 228);
     if ( !v3 )
-      return MEMORY[0x89EA60][36 * *(_DWORD *)(this + 236)];
+    return DataGlobal_89EA60[36 *(void**)this->animation];
+    while ( (*(int (__thiscall **)(int *))(*v3 + 44))(v3) != 6 )
+  {
+    v3 = (int *)v3[12];
+    if ( !v3 )
+    return DataGlobal_89EA60[36 *(void**)this->animation];
   }
-  return 0;
+    return 0;
 }
 
 /* ASM:

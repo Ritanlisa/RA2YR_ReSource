@@ -28,20 +28,17 @@ CreateGameDialogControl *__thiscall WonlineStringDialogControl_12_::Constructor_
 namespace gamemd {
 void WonlineStringDialogControl_12::ClearBuffer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall WonlineStringDialogControl_12_::sub_7AC970(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x7ac976*/
-  this->WonlineStringDialogControl_12_field_0x10 = 0; /*0x7ac979*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x7ac980*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->WonlineStringDialogControl_12_field_0x10 = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x7ac986*/
-    this->WonlineStringDialogControl_12_field_0x4 = 0; /*0x7ac98e*/
+    __3_YAXPAX_Z(v2);
+    this->WonlineStringDialogControl_12_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x7ac991*/
-  this->WonlineStringDialogControl_12_field_0x8 = 0; /*0x7ac994*/
+    this->IsAllocated = 0;
+    this->WonlineStringDialogControl_12_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -50,10 +47,8 @@ void __thiscall WonlineStringDialogControl_12_::sub_7AC970(int this)
 namespace gamemd {
 int WonlineStringDialogControl_12::Seek(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WonlineStringDialogControl_12_::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x7ac9ca*/
+    return *(int *)(this->Items + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -62,31 +57,28 @@ int __thiscall WonlineStringDialogControl_12_::_vt06(_DWORD *this, int a2)
 namespace gamemd {
 char WonlineStringDialogControl_12::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall WonlineStringDialogControl_12_::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x7ad092*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x7ad09d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->Capacity;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x7ad09f*/
-    if ( v2 <= 0 ) /*0x7ad0a3*/
-      return 1; /*0x7ad0c3*/
-    v4 = (_DWORD *)*(this + 1); /*0x7ad0a5*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x7ad0ab*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x7ad0b4*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->Items;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x7ad0b6*/
-      ++v4; /*0x7ad0b7*/
-      if ( v3 >= v2 ) /*0x7ad0bc*/
-        return 1; /*0x7ad0bc*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x7ad0be*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -95,50 +87,47 @@ char __thiscall WonlineStringDialogControl_12_::_vt01(int *this, int a2)
 namespace gamemd {
 char WonlineStringDialogControl_12::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall WonlineStringDialogControl_12_::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x7ad0dc*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x7ad0e6*/
-    if ( a3 ) /*0x7ad0ec*/
-      v4 = a3; /*0x7ad102*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x7ad0fe*/
-    *((_BYTE *)this + 12) = 1; /*0x7ad106*/
-    if ( v4 ) /*0x7ad10a*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( this->WonlineStringDialogControl_12_field_0x4 ) /*0x7ad115*/
+    if ( this->WonlineStringDialogControl_12_field_0x4 )
       {
-        v6 = this->WonlineStringDialogControl_12_field_0x8; /*0x7ad11c*/
-        if ( a2 < v6 ) /*0x7ad121*/
-          v6 = a2; /*0x7ad123*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->WonlineStringDialogControl_12_field_0x4 + 4 * i - 4) ) /*0x7ad129*/
-          ++i; /*0x7ad12e*/
-        if ( *((_BYTE *)this + 13) ) /*0x7ad13b*/
+    v6 = this->WonlineStringDialogControl_12_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->WonlineStringDialogControl_12_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x7ad146*/
-          this->WonlineStringDialogControl_12_field_0x4 = 0; /*0x7ad14e*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->WonlineStringDialogControl_12_field_0x4 = 0;
         }
       }
-      this->WonlineStringDialogControl_12_field_0x4 = v4; /*0x7ad157*/
-      this->WonlineStringDialogControl_12_field_0x8 = a2; /*0x7ad15f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x7ad162*/
-      return 1; /*0x7ad168*/
+    this->WonlineStringDialogControl_12_field_0x4 = v4;
+    this->WonlineStringDialogControl_12_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x7ad10f*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x7ad172*/
-    return 1; /*0x7ad178*/
+    this->ClearBuffer();
+    return 1;
   }
 }
 }
@@ -148,16 +137,14 @@ char __thiscall WonlineStringDialogControl_12_::_vt02(void *this, int a2, _DWORD
 namespace gamemd {
 void WonlineStringDialogControl_12::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall WonlineStringDialogControl_12_::_vt03(int this)
 {
-  if ( this->WonlineStringDialogControl_12_field_0x4 && *(_BYTE *)(this + 13) ) /*0x7ad18d*/
+    if ( this->WonlineStringDialogControl_12_field_0x4 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x7ad193*/
-    this->WonlineStringDialogControl_12_field_0x4 = 0; /*0x7ad19b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->WonlineStringDialogControl_12_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x7ad19e*/
-  this->WonlineStringDialogControl_12_field_0x8 = 0; /*0x7ad1a1*/
+    this->IsAllocated = 0;
+    this->WonlineStringDialogControl_12_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -166,25 +153,22 @@ void __thiscall WonlineStringDialogControl_12_::_vt03(int this)
 namespace gamemd {
 int WonlineStringDialogControl_12::Read(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WonlineStringDialogControl_12_::_vt04(int this, _DWORD *a2)
 {
-  int result; // eax
-  int v3; // edx
-  _DWORD *i; // ecx
-
-  if ( !(unsigned char)this->WonlineStringDialogControl_12_field_0xC ) /*0x7ad1b0*/
-    return 0; /*0x7ad1b8*/
-  v3 = this->WonlineStringDialogControl_12_field_0x8; /*0x7ad1be*/
-  result = 0; /*0x7ad1c1*/
-  if ( v3 <= 0 ) /*0x7ad1c5*/
-    return -1; /*0x7ad1dc*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x7ad1cb*/
+    int result;
+    int v3;
+    int *i;
+    if ( !(unsigned char)this->WonlineStringDialogControl_12_field_0xC )
+    return 0;
+    v3 = this->WonlineStringDialogControl_12_field_0x8;
+    result = 0;
+    if ( v3 <= 0 )
+    return -1;
+    for ( i = *(int **)(this + 4); *i != *a2; ++i )
   {
-    if ( ++result >= v3 ) /*0x7ad1da*/
-      return -1; /*0x7ad1da*/
+    if ( ++result >= v3 )
+    return -1;
   }
-  return result; /*0x7ad1ba*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -193,49 +177,46 @@ int __thiscall WonlineStringDialogControl_12_::_vt04(int this, _DWORD *a2)
 namespace gamemd {
 char WonlineStringDialogControl_12::SetCapacity(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall WonlineStringDialogControl_12_::sub_7AD210(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x7ad21c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x7ad222*/
-    if ( a3 ) /*0x7ad228*/
-      v4 = a3; /*0x7ad23e*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x7ad23a*/
-    *((_BYTE *)this + 12) = 1; /*0x7ad242*/
-    if ( !v4 ) /*0x7ad246*/
-      return 0; /*0x7ad2ba*/
-    if ( this->WonlineStringDialogControl_12_field_0x4 ) /*0x7ad248*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->WonlineStringDialogControl_12_field_0x4 )
     {
-      v5 = this->WonlineStringDialogControl_12_field_0x8; /*0x7ad24f*/
-      if ( a2 < v5 ) /*0x7ad254*/
-        v5 = a2; /*0x7ad256*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->WonlineStringDialogControl_12_field_0x4 + 4 * i - 4) ) /*0x7ad25c*/
-        ++i; /*0x7ad261*/
-      if ( *((_BYTE *)this + 13) ) /*0x7ad26e*/
+    v5 = this->WonlineStringDialogControl_12_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->WonlineStringDialogControl_12_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x7ad279*/
-        this->WonlineStringDialogControl_12_field_0x4 = 0; /*0x7ad281*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->WonlineStringDialogControl_12_field_0x4 = 0;
       }
     }
-    this->WonlineStringDialogControl_12_field_0x4 = v4; /*0x7ad28a*/
-    this->WonlineStringDialogControl_12_field_0x8 = a2; /*0x7ad292*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x7ad295*/
+    this->WonlineStringDialogControl_12_field_0x4 = v4;
+    this->WonlineStringDialogControl_12_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x7ad29e*/
+    this->ClearBuffer();
   }
-  v7 = this->WonlineStringDialogControl_12_field_0x8; /*0x7ad2a1*/
-  if ( v7 < this->WonlineStringDialogControl_12_field_0x10 ) /*0x7ad2a9*/
-    this->WonlineStringDialogControl_12_field_0x10 = v7; /*0x7ad2ab*/
-  return 1; /*0x7ad2ae*/
+    v7 = this->WonlineStringDialogControl_12_field_0x8;
+    if ( v7 < this->WonlineStringDialogControl_12_field_0x10 )
+    this->WonlineStringDialogControl_12_field_0x10 = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -244,24 +225,20 @@ char __thiscall WonlineStringDialogControl_12_::sub_7AD210(void *this, int a2, _
 namespace gamemd {
 int WonlineStringDialogControl_12::FindItem(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WonlineStringDialogControl_12_::sub_7AD2C0(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
-
-  v2 = *(this + 4); /*0x7ad2c0*/
-  result = 0; /*0x7ad2c3*/
-  if ( v2 <= 0 ) /*0x7ad2c8*/
-    return -1; /*0x7ad2df*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x7ad2ce*/
+    int v2;
+    int result;
+    int *i;
+    v2 = this->Count;
+    result = 0;
+    if ( v2 <= 0 )
+    return -1;
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
-    if ( ++result >= v2 ) /*0x7ad2dd*/
-      return -1; /*0x7ad2dd*/
+    if ( ++result >= v2 )
+    return -1;
   }
-  return result; /*0x7ad2e2*/
-}
+    return result;
 }
 } // namespace gamemd
 
@@ -269,23 +246,20 @@ int __thiscall WonlineStringDialogControl_12_::sub_7AD2C0(int *this, _DWORD *a2)
 namespace gamemd {
 VectorClass * WonlineStringDialogControl_12::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall WonlineStringDialogControl_12_::QueryInterface(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x7ad373*/
-  *this = &vt_VectorClass_tConnInfoStruct; /*0x7ad376*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x7ad380*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_tConnInfoStruct;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x7ad388*/
-    *(this + 1) = 0; /*0x7ad390*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x7ad39b*/
-  *(this + 2) = 0; /*0x7ad3a1*/
-  if ( (a2 & 1) != 0 ) /*0x7ad3a8*/
-    __3_YAXPAX_Z(this); /*0x7ad3ab*/
-  return (VectorClass *)this; /*0x7ad3b5*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
@@ -294,25 +268,20 @@ VectorClass *__thiscall WonlineStringDialogControl_12_::QueryInterface(_DWORD *t
 namespace gamemd {
 DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfoStruct___(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall WonlineStringDialogControl_12_::Constructor_VectorClass_tConnInfoStruct___(
-        _DWORD *this,
-        char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x7ad3c3*/
-  *this = &vt_VectorClass_tConnInfoStruct; /*0x7ad3c6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x7ad3d0*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_tConnInfoStruct;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x7ad3d8*/
-    *(this + 1) = 0; /*0x7ad3e0*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x7ad3eb*/
-  *(this + 2) = 0; /*0x7ad3f1*/
-  if ( (a2 & 1) != 0 ) /*0x7ad3f8*/
-    __3_YAXPAX_Z(this); /*0x7ad3fb*/
-  return (DynamicVector *)this; /*0x7ad405*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd

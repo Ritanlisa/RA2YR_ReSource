@@ -636,12 +636,10 @@ LABEL_35:
 namespace gamemd {
 int AircraftClass::ProcessDockCheck()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AircraftClass::_vt30(_DWORD *this)
 {
-  if ( !*(this + 413) ) /*0x41adc3*/
-    WinAPI::Wrapper(-2147467261); /*0x41add2*/
-  return (*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 116))(*(this + 413)); /*0x41ade3*/
+    if ( !this->Locomotor )
+    WinAPI::Wrapper(-2147467261);
+    return (*(int (__stdcall **)(int))(*(int *)this->Locomotor + 116))(this->Locomotor);
 }
 }
 } // namespace gamemd
@@ -828,20 +826,16 @@ LABEL_18:
 namespace gamemd {
 int AircraftClass::IsBelowScreen()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AircraftClass::IsBelowScreen(#374 *this)
 {
-  AircraftTypeClass *v1; // eax
-
-  v1 = (AircraftTypeClass *)this->Type; /*0x41b989*/
-  if ( v1 != *(AircraftTypeClass **)&MEMORY[0x8871E0]->__pad_240[672] /*0x41b99d*/
-    && v1 != *(AircraftTypeClass **)&MEMORY[0x8871E0]->__pad_240[724] )
+    AircraftTypeClass *v1;
+    v1 = (AircraftTypeClass *)this->Type;
+    if ( v1 != *(AircraftTypeClass **)&g_RulesClass_Instance->__pad_240[672] && v1 != *(AircraftTypeClass **)&g_RulesClass_Instance->__pad_240[724] )
   {
-    return ObjectClass::IsBelowScreen(this); /*0x41b9a1*/
+    return ObjectClass::IsBelowScreen(this);
   }
-  if ( !this->locomotor ) /*0x41b9a8*/
-    WinAPI::Wrapper(-2147467261); /*0x41b9b7*/
-  return (*(unsigned __int8 (__stdcall **)(_DWORD))(**((_DWORD **)this + 413) + 128))(this->locomotor) == 0; /*0x41b9a6*/
+    if ( !this->locomotor )
+    WinAPI::Wrapper(-2147467261);
+    return (*(unsigned char (__stdcall **)(int))(**((int **)(this) + 413) + 128))(this->locomotor) == 0;
 }
 }
 } // namespace gamemd
@@ -930,10 +924,8 @@ LABEL_4:
 namespace gamemd {
 int AircraftClass::CheckMissionAbort()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AircraftClass::_vt36(_DWORD *this)
 {
-  return *(_DWORD *)(*(this + 433) + 96); /*0x41c1d9*/
+    return *(int *)(this->Type + 96);
 }
 }
 } // namespace gamemd
@@ -942,13 +934,11 @@ int __thiscall AircraftClass::_vt36(_DWORD *this)
 namespace gamemd {
 AircraftClass * AircraftClass::CheckActionStatus(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-AircraftClass *__thiscall AircraftClass::CheckActionStatus(void **this, char a2)
 {
-  AircraftClass::Destruct(this); /*0x41c213*/
-  if ( (a2 & 1) != 0 ) /*0x41c21d*/
-    __3_YAXPAX_Z(this); /*0x41c220*/
-  return (AircraftClass *)this; /*0x41c22a*/
+    AircraftClass::Destruct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (AircraftClass *)this;
 }
 }
 } // namespace gamemd

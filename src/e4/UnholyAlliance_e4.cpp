@@ -5,11 +5,9 @@
 // 0x5CB3F0
 char UnholyAlliance::Read()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char UnholyAlliance::_vt04()
 {
-  MEMORY[0xA8B258] = 1; /*0x5cb3f2*/
-  return 1; /*0x5cb3f7*/
+    Bases = 1;
+    return 1;
 }
 }
 

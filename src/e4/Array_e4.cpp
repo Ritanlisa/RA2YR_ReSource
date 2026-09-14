@@ -63,19 +63,16 @@ int __stdcall Array::ForEachReverse(ObjectClass *aP0, int a2, int a3, int (__thi
 namespace gamemd {
 void Array::Cleanup()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Array_Cleanup(int this)
 {
-  int i; // edi
-
-  if ( this->Array_field_0x3C ) /*0x49b723*/
+    int i;
+    if ( this->Array_field_0x3C )
   {
-    for ( i = 0; i < this->Array_field_0x40; ++i ) /*0x49b732*/
+    for ( i = 0; i < this->Array_field_0x40; ++i )
     {
-      if ( *(_DWORD *)(this->Array_field_0x3C + 4 * i) ) /*0x49b737*/
-        __3_YAXPAX_Z(*(void **)(this->Array_field_0x3C + 4 * i)); /*0x49b73f*/
+    if ( *(int *)(this->Array_field_0x3C + 4 * i) )
+    __3_YAXPAX_Z(*(void **)(this->Array_field_0x3C + 4 * i));
     }
-    __3_YAXPAX_Z(*(void **)(this + 60)); /*0x49b753*/
+    __3_YAXPAX_Z(*(void **)(this + 60));
   }
 }
 }
@@ -85,27 +82,24 @@ void __thiscall Array_Cleanup(int this)
 namespace gamemd {
 char Array::GetElementAt(unsigned int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Array_GetElementAt(int this, _DWORD *a2, int a3)
 {
-  int v3; // edx
-  char result; // al
-
-  v3 = a3; /*0x49d070*/
-  result = 0; /*0x49d079*/
-  *a2 = 0; /*0x49d07e*/
-  if ( a3 == -1 ) /*0x49d084*/
-    v3 = this->Array_field_0x38; /*0x49d086*/
-  if ( v3 < 0 || v3 >= this->Array_field_0x40 ) /*0x49d094*/
-    v3 = -1; /*0x49d096*/
-  if ( (unsigned char)this->Array_field_0x6C ) /*0x49d09a*/
+    int v3;
+    char result;
+    v3 = a3;
+    result = 0;
+    *a2 = 0;
+    if ( a3 == -1 )
+    v3 = this->Array_field_0x38;
+    if ( v3 < 0 || v3 >= this->Array_field_0x40 )
+    v3 = -1;
+    if ( (unsigned char)this->Array_field_0x6C )
   {
-    if ( v3 != -1 ) /*0x49d0a5*/
-      *a2 = *(_DWORD *)(this->Array_field_0x3C + 4 * v3); /*0x49d0ad*/
-    if ( *a2 ) /*0x49d0af*/
-      return 1; /*0x49d0b4*/
+    if ( v3 != -1 )
+    *a2 = *(int *)(this->Array_field_0x3C + 4 * v3);
+    if ( *a2 )
+    return 1;
   }
-  return result; /*0x49d0b6*/
+    return result;
 }
 }
 } // namespace gamemd

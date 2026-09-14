@@ -1495,10 +1495,8 @@ int __fastcall Render_Render_554280(unsigned __int16 *a0, AbstractClass *aP1, in
 namespace gamemd {
 int sub_5BE970(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_5BE970(int a1)
 {
-  return MEMORY[0x82D028][7 * a1]; /*0x5be984*/
+    return MouseClass_Cursors[7 * a1];
 }
 }
 } // namespace gamemd
@@ -1507,10 +1505,8 @@ int __stdcall sub_5BE970(int a1)
 namespace gamemd {
 int sub_5BE990(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_5BE990(int a1)
 {
-  return MEMORY[0x82D02C][7 * a1]; /*0x5be9a4*/
+    return DataGlobal_82D02C[7 * a1];
 }
 }
 } // namespace gamemd

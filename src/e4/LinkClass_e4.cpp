@@ -16,13 +16,11 @@ int __thiscall LinkClass_Destroy(_DWORD *this)
 // 0x4E1AD0
 LinkClass * LinkClass::Destru_vt00(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LinkClass *__thiscall LinkClass::Destru_vt00(_DWORD *this, char a2)
 {
-  LinkClass::Destruct(this); /*0x4e1ad3*/
-  if ( (a2 & 1) != 0 ) /*0x4e1add*/
-    __3_YAXPAX_Z(this); /*0x4e1ae0*/
-  return (LinkClass *)this; /*0x4e1aea*/
+    LinkClass::Destruct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (LinkClass *)this;
 }
 }
 

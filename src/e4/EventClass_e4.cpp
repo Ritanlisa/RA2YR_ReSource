@@ -7,20 +7,17 @@
 namespace gamemd {
 void EventClass::initEvent()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MoveFeedback::_vt03(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x40b6a6*/
-  *(_DWORD *)(this + 16) = 0; /*0x40b6a9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x40b6b0*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x40b6b6*/
-    this->EventClass_field_0x4 = 0; /*0x40b6be*/
+    __3_YAXPAX_Z(v2);
+    this->EventClass_field_0x4 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x40b6c1*/
-  this->EventClass_field_0x8 = 0; /*0x40b6c4*/
+    this->IsAllocated = 0;
+    this->EventClass_field_0x8 = 0;
 }
 }
 } // namespace gamemd
@@ -29,50 +26,47 @@ void __thiscall MoveFeedback::_vt03(int this)
 namespace gamemd {
 char EventClass::processEvent(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VectorClass_ptr_BombClass::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x40b74c*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x40b756*/
-    if ( a3 ) /*0x40b75c*/
-      v4 = a3; /*0x40b772*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40b76e*/
-    *((_BYTE *)this + 12) = 1; /*0x40b776*/
-    if ( v4 ) /*0x40b77a*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( this->EventClass_field_0x4 ) /*0x40b785*/
+    if ( this->EventClass_field_0x4 )
       {
-        v6 = this->EventClass_field_0x8; /*0x40b78c*/
-        if ( a2 < v6 ) /*0x40b791*/
-          v6 = a2; /*0x40b793*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->EventClass_field_0x4 + 4 * i - 4) ) /*0x40b799*/
-          ++i; /*0x40b79e*/
-        if ( *((_BYTE *)this + 13) ) /*0x40b7ab*/
+    v6 = this->EventClass_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->EventClass_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40b7b6*/
-          this->EventClass_field_0x4 = 0; /*0x40b7be*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->EventClass_field_0x4 = 0;
         }
       }
-      this->EventClass_field_0x4 = v4; /*0x40b7c7*/
-      this->EventClass_field_0x8 = a2; /*0x40b7cf*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x40b7d2*/
-      return 1; /*0x40b7d8*/
+    this->EventClass_field_0x4 = v4;
+    this->EventClass_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x40b77f*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x40b7e2*/
-    return 1; /*0x40b7e8*/
+    this->initEvent();
+    return 1;
   }
 }
 }
@@ -82,49 +76,46 @@ char __thiscall VectorClass_ptr_BombClass::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 char EventClass::validateEvent(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MoveFeedback::sub_40B880(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x40b88c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x40b892*/
-    if ( a3 ) /*0x40b898*/
-      v4 = a3; /*0x40b8ae*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40b8aa*/
-    *((_BYTE *)this + 12) = 1; /*0x40b8b2*/
-    if ( !v4 ) /*0x40b8b6*/
-      return 0; /*0x40b92a*/
-    if ( this->EventClass_field_0x4 ) /*0x40b8b8*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->EventClass_field_0x4 )
     {
-      v5 = this->EventClass_field_0x8; /*0x40b8bf*/
-      if ( a2 < v5 ) /*0x40b8c4*/
-        v5 = a2; /*0x40b8c6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->EventClass_field_0x4 + 4 * i - 4) ) /*0x40b8cc*/
-        ++i; /*0x40b8d1*/
-      if ( *((_BYTE *)this + 13) ) /*0x40b8de*/
+    v5 = this->EventClass_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->EventClass_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40b8e9*/
-        this->EventClass_field_0x4 = 0; /*0x40b8f1*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->EventClass_field_0x4 = 0;
       }
     }
-    this->EventClass_field_0x4 = v4; /*0x40b8fa*/
-    this->EventClass_field_0x8 = a2; /*0x40b902*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x40b905*/
+    this->EventClass_field_0x4 = v4;
+    this->EventClass_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x40b90e*/
+    this->initEvent();
   }
-  v7 = this->EventClass_field_0x8; /*0x40b911*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x40b919*/
-    *((_DWORD *)this + 4) = v7; /*0x40b91b*/
-  return 1; /*0x40b91e*/
+    v7 = this->EventClass_field_0x8;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -133,50 +124,47 @@ char __thiscall MoveFeedback::sub_40B880(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 char EventClass::dispatchEvent(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VectorClass_Techno::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x40b9ac*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x40b9b6*/
-    if ( a3 ) /*0x40b9bc*/
-      v4 = a3; /*0x40b9d2*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40b9ce*/
-    *((_BYTE *)this + 12) = 1; /*0x40b9d6*/
-    if ( v4 ) /*0x40b9da*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( v4 )
     {
-      if ( this->EventClass_field_0x4 ) /*0x40b9e5*/
+    if ( this->EventClass_field_0x4 )
       {
-        v6 = this->EventClass_field_0x8; /*0x40b9ec*/
-        if ( a2 < v6 ) /*0x40b9f1*/
-          v6 = a2; /*0x40b9f3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->EventClass_field_0x4 + 4 * i - 4) ) /*0x40b9f9*/
-          ++i; /*0x40b9fe*/
-        if ( *((_BYTE *)this + 13) ) /*0x40ba0b*/
+    v6 = this->EventClass_field_0x8;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->EventClass_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40ba16*/
-          this->EventClass_field_0x4 = 0; /*0x40ba1e*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->EventClass_field_0x4 = 0;
         }
       }
-      this->EventClass_field_0x4 = v4; /*0x40ba27*/
-      this->EventClass_field_0x8 = a2; /*0x40ba2f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x40ba32*/
-      return 1; /*0x40ba38*/
+    this->EventClass_field_0x4 = v4;
+    this->EventClass_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x40b9df*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x40ba42*/
-    return 1; /*0x40ba48*/
+    this->initEvent();
+    return 1;
   }
 }
 }
@@ -186,49 +174,46 @@ char __thiscall VectorClass_Techno::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 char EventClass::checkCondition(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MoveFeedback::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x40baec*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x40baf2*/
-    if ( a3 ) /*0x40baf8*/
-      v4 = a3; /*0x40bb0e*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40bb0a*/
-    *((_BYTE *)this + 12) = 1; /*0x40bb12*/
-    if ( !v4 ) /*0x40bb16*/
-      return 0; /*0x40bb8a*/
-    if ( this->EventClass_field_0x4 ) /*0x40bb18*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->EventClass_field_0x4 )
     {
-      v5 = this->EventClass_field_0x8; /*0x40bb1f*/
-      if ( a2 < v5 ) /*0x40bb24*/
-        v5 = a2; /*0x40bb26*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->EventClass_field_0x4 + 4 * i - 4) ) /*0x40bb2c*/
-        ++i; /*0x40bb31*/
-      if ( *((_BYTE *)this + 13) ) /*0x40bb3e*/
+    v5 = this->EventClass_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->EventClass_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40bb49*/
-        this->EventClass_field_0x4 = 0; /*0x40bb51*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->EventClass_field_0x4 = 0;
       }
     }
-    this->EventClass_field_0x4 = v4; /*0x40bb5a*/
-    this->EventClass_field_0x8 = a2; /*0x40bb62*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x40bb65*/
+    this->EventClass_field_0x4 = v4;
+    this->EventClass_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x40bb6e*/
+    this->initEvent();
   }
-  v7 = this->EventClass_field_0x8; /*0x40bb71*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x40bb79*/
-    *((_DWORD *)this + 4) = v7; /*0x40bb7b*/
-  return 1; /*0x40bb7e*/
+    v7 = this->EventClass_field_0x8;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -237,23 +222,20 @@ char __thiscall MoveFeedback::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 DynamicVector * EventClass::executeAction(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall EventClass::executeAction(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x40bc13*/
-  *this = &vt_VectorClass_BombClass; /*0x40bc16*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x40bc20*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_BombClass;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x40bc28*/
-    *(this + 1) = 0; /*0x40bc30*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x40bc3b*/
-  *(this + 2) = 0; /*0x40bc41*/
-  if ( (a2 & 1) != 0 ) /*0x40bc48*/
-    __3_YAXPAX_Z(this); /*0x40bc4b*/
-  return (DynamicVector *)this; /*0x40bc55*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DynamicVector *)this;
 }
 }
 } // namespace gamemd
@@ -262,25 +244,23 @@ DynamicVector *__thiscall EventClass::executeAction(_DWORD *this, char a2)
 namespace gamemd {
 unsigned int * EventClass::resetEvent(BuildingClass * aP1, BuildingClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall EventClass::resetEvent(_DWORD *this, BuildingClass *aP1, BuildingClass *aP2)
 {
-  *(this + 1) = 0; /*0x40bd0b*/
-  *(this + 2) = aP1; /*0x40bd0e*/
-  *((_BYTE *)this + 12) = 1; /*0x40bd11*/
-  *((_BYTE *)this + 13) = 0; /*0x40bd15*/
-  *this = &vt_VectorClass_TechnoClass; /*0x40bd18*/
-  if ( aP1 ) /*0x40bd1e*/
+    this->Items = 0;
+    this->Capacity = aP1;
+    this->IsInitialized = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_TechnoClass;
+    if ( aP1 )
   {
-    if ( aP2 ) /*0x40bd26*/
+    if ( aP2 )
     {
-      *(this + 1) = aP2; /*0x40bd28*/
-      return this; /*0x40bd2e*/
+    this->Items = aP2;
+    return this;
     }
-    *(this + 1) = __2_YAPAXI_Z(4 * (_DWORD)aP1); /*0x40bd3d*/
-    *((_BYTE *)this + 13) = 1; /*0x40bd40*/
+    this->Items = __2_YAPAXI_Z(4 * (int)aP1);
+    this->IsAllocated = 1;
   }
-  return this; /*0x40bd2d*/
+    return this;
 }
 }
 } // namespace gamemd
@@ -289,23 +269,20 @@ _DWORD *__thiscall EventClass::resetEvent(_DWORD *this, BuildingClass *aP1, Buil
 namespace gamemd {
 VectorClass * EventClass::queueEvent(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall EventClass::queueEvent(_DWORD *this, char a2)
 {
-  void *v3; // eax
-
-  v3 = (void *)*(this + 1); /*0x40c113*/
-  *this = &vt_VectorClass_CommandClass_const; /*0x40c116*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x40c120*/
+    void *v3;
+    v3 = (void *)*(this + 1);
+    *(void**)this = &vt_VectorClass_CommandClass_const;
+    if ( v3 && *((char *)(this) + 13) )
   {
-    __3_YAXPAX_Z(v3); /*0x40c128*/
-    *(this + 1) = 0; /*0x40c130*/
+    __3_YAXPAX_Z(v3);
+    *(this + 1) = 0;
   }
-  *((_BYTE *)this + 13) = 0; /*0x40c13b*/
-  *(this + 2) = 0; /*0x40c141*/
-  if ( (a2 & 1) != 0 ) /*0x40c148*/
-    __3_YAXPAX_Z(this); /*0x40c14b*/
-  return (VectorClass *)this; /*0x40c155*/
+    *((char *)(this) + 13) = 0;
+    *(this + 2) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (VectorClass *)this;
 }
 }
 } // namespace gamemd
@@ -314,49 +291,46 @@ VectorClass *__thiscall EventClass::queueEvent(_DWORD *this, char a2)
 namespace gamemd {
 char EventClass::clearEvents(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VectorClass_ptr_LightConvertClass::sub_40C410(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x40c41c*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x40c422*/
-    if ( a3 ) /*0x40c428*/
-      v4 = a3; /*0x40c43e*/
+    this->IsInitialized = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40c43a*/
-    *((_BYTE *)this + 12) = 1; /*0x40c442*/
-    if ( !v4 ) /*0x40c446*/
-      return 0; /*0x40c4ba*/
-    if ( this->EventClass_field_0x4 ) /*0x40c448*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->IsInitialized = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->EventClass_field_0x4 )
     {
-      v5 = this->EventClass_field_0x8; /*0x40c44f*/
-      if ( a2 < v5 ) /*0x40c454*/
-        v5 = a2; /*0x40c456*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->EventClass_field_0x4 + 4 * i - 4) ) /*0x40c45c*/
-        ++i; /*0x40c461*/
-      if ( *((_BYTE *)this + 13) ) /*0x40c46e*/
+    v5 = this->EventClass_field_0x8;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->EventClass_field_0x4 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40c479*/
-        this->EventClass_field_0x4 = 0; /*0x40c481*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->EventClass_field_0x4 = 0;
       }
     }
-    this->EventClass_field_0x4 = v4; /*0x40c48a*/
-    this->EventClass_field_0x8 = a2; /*0x40c492*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x40c495*/
+    this->EventClass_field_0x4 = v4;
+    this->EventClass_field_0x8 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x40c49e*/
+    this->initEvent();
   }
-  v7 = this->EventClass_field_0x8; /*0x40c4a1*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x40c4a9*/
-    *((_DWORD *)this + 4) = v7; /*0x40c4ab*/
-  return 1; /*0x40c4ae*/
+    v7 = this->EventClass_field_0x8;
+    if ( v7 < this->Count )
+    this->Count = v7;
+    return 1;
 }
 }
 } // namespace gamemd
