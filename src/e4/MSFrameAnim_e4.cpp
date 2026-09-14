@@ -8,13 +8,13 @@ namespace gamemd {
 MSFrameAnim * MSFrameAnim::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-MSFrameAnim *__thiscall MSFrameAnim::QueryInterface(_DWORD *this, char a2)
+MSFrameAnim *__thiscall MSFrameAnim::QueryInterface(_DWORD *Block, char a2)
 {
-  *this = &vt_MSFrameAnim; /*0x769bd3*/
-  VtableStub::5CB6C0(this); /*0x769bd9*/
+  *Block = &vt_MSFrameAnim; /*0x769bd3*/
+  VtableStub::5CB6C0(Block); /*0x769bd9*/
   if ( (a2 & 1) != 0 ) /*0x769be3*/
-    __3_YAXPAX_Z(this); /*0x769be6*/
-  return (MSFrameAnim *)this; /*0x769bf0*/
+    __3_YAXPAX_Z(Block); /*0x769be6*/
+  return (MSFrameAnim *)Block; /*0x769bf0*/
 }
 }
 } // namespace gamemd

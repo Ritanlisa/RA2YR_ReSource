@@ -579,16 +579,11 @@ int __stdcall BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 // 0x46C820
 int BulletTypeClass::GetWarhead(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BulletTypeClass::_vt10(_DWORD *this, int a2, int a3)
-{
-  int result; // eax
-
-  result = a2; /*0x46c820*/
-  if ( a2 == *(this + 182) ) /*0x46c82c*/
-    *(this + 182) = 0; /*0x46c82e*/
-  return result; /*0x46c838*/
-}
+    int result;
+    result = a2;
+    if ( a2 == this->ROT )
+        this->ROT = 0;
+    return result;
 }
 
 // 0x46C890

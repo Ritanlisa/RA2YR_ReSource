@@ -264,16 +264,12 @@ void EventClass::ProcessEvent()
 
 // 0x53EC70
 namespace gamemd {
-SHORT EventClass::GetKeyStateSafe()
+SHORT EventClass::GetKeyStateSafe(unsigned char nVirtKey)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-SHORT __thiscall EventClass::GetKeyStateSafe(unsigned __int8 this)
-{
-  if ( unk_AA0444 ) /*0x53ec77*/
-    return unk_AA0168[this]; /*0x53ec87*/
-  else
-    return GetKeyState(this); /*0x53ec7a*/
-}
+    if ( g_StreamBufferState )
+        return *(DataGlobal_AA0168 + nVirtKey);
+    else
+        return GetKeyState(nVirtKey);
 }
 } // namespace gamemd
 

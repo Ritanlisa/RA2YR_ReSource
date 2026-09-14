@@ -394,24 +394,17 @@ LABEL_38:
 namespace gamemd {
 int TActionClass::ExecuteAction(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TActionClass::_vt10(_DWORD *this, int a2, int a3)
-{
-  int v3; // eax
-  int result; // eax
-
-  v3 = *(this + 10); /*0x6dd2c0*/
-  if ( v3 == a2 ) /*0x6dd2c9*/
-    *(this + 10) = *(_DWORD *)(v3 + 40); /*0x6dd2ce*/
-  result = 0; /*0x6dd2d5*/
-  if ( *(this + 12) == a2 ) /*0x6dd2d9*/
-    *(this + 12) = 0; /*0x6dd2db*/
-  if ( *(this + 20) == a2 ) /*0x6dd2e1*/
-    *(this + 20) = 0; /*0x6dd2e3*/
-  if ( *(this + 19) == a2 ) /*0x6dd2ec*/
-    *(this + 19) = 0; /*0x6dd2ee*/
-  return result; /*0x6dd2f1*/
-}
+    TActionClass* v3;
+    v3 = this->NextAction;
+    if ( v3 == (TActionClass*)a2 )
+        this->NextAction = v3->NextAction;
+    if ( this->TeamType == (TeamTypeClass*)a2 )
+        this->TeamType = (TeamTypeClass*)0;
+    if ( this->TriggerType == (TriggerTypeClass*)a2 )
+        this->TriggerType = (TriggerTypeClass*)0;
+    if ( this->TagType == (TagTypeClass*)a2 )
+        this->TagType = (TagTypeClass*)0;
+    return 0;
 }
 } // namespace gamemd
 
@@ -749,43 +742,39 @@ char __thiscall TActionClass::RevealTileTypeAtWaypoint(int *this, int a2, int a3
 namespace gamemd {
 char TActionClass::PlayAudioAtRandomWP(int a2, int a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::PlayAudioAtRandomWP(int *this, int a2, int a3, int a4, int a5)
-{
-  int v5; // esi
-  int v7; // edi
-  _DWORD *v8; // ebx
-  __int16 *v9; // ecx
-  int v10; // eax
-  int v11; // ecx
-  _DWORD v13[3]; // [esp+10h] [ebp-1A0h] BYREF
-  int v14; // [esp+1Ch] [ebp-194h] BYREF
-  _DWORD v15[100]; // [esp+20h] [ebp-190h] BYREF
+    int v5;
+    int v7;
+    int *v8;
+    short *v9;
+    int v10;
+    int v11;
+    int v13[3];
+    int v14;
+    int v15[100];
 
-  v5 = 0; /*0x6e178a*/
-  v7 = 0; /*0x6e178e*/
-  v8 = v15; /*0x6e1790*/
-  do /*0x6e17cc*/
-  {
-    if ( ScenarioClass::Is_Waypoint_Valid((char *)MEMORY[0xA8B230], v7) ) /*0x6e179b*/
+    v5 = 0;
+    v7 = 0;
+    v8 = v15;
+    do
     {
-      ++v5; /*0x6e17b7*/
-      *v8++ = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v14, v7); /*0x6e17b8*/
-      if ( v5 == 400 ) /*0x6e17c3*/
-        break; /*0x6e17c3*/
+        if ( ScenarioClass::Is_Waypoint_Valid((char *)DataGlobal_A8B230, v7) )
+        {
+            ++v5;
+            *v8++ = *ScenarioClass::Get_Waypoint_Location((char *)DataGlobal_A8B230, &v14, v7);
+            if ( v5 == 400 )
+                break;
+        }
+        ++v7;
     }
-    ++v7; /*0x6e17c5*/
-  }
-  while ( v7 < 702 ); /*0x6e17cc*/
-  v9 = (__int16 *)&v15[Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, v5 - 1)]; /*0x6e17e3*/
-  v10 = (v9[1] << 8) + 128; /*0x6e1800*/
-  v13[0] = (*v9 << 8) + 128; /*0x6e1805*/
-  v11 = *(this + 36); /*0x6e1809*/
-  v13[1] = v10; /*0x6e180f*/
-  v13[2] = 0; /*0x6e1813*/
-  PlayAudioAt2(v11, v13, 0); /*0x6e181b*/
-  return 1; /*0x6e1820*/
-}
+    while ( v7 < 702 );
+    v9 = (short *)&v15[Random::Range((_DWORD *)DataGlobal_A8B230 + 134, 0, v5 - 1)];
+    v10 = (v9[1] << 8) + 128;
+    v13[0] = (*v9 << 8) + 128;
+    v11 = this->Value;
+    v13[1] = v10;
+    v13[2] = 0;
+    PlayAudioAt2(v11, v13, 0);
+    return 1;
 }
 } // namespace gamemd
 

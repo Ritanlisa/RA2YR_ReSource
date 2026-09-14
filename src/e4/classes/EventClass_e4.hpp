@@ -12,7 +12,7 @@ struct EventClass {
     char * AddEventEx(SelectClass_StripClass_SidebarClass * aP1, unsigned char a3, IUnknown * aP3, SelectClass_StripClass_SidebarClass * aP4, SelectClass_StripClass_SidebarClass * aP5);  // 0x4C6970
     char * Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6);  // 0x4C6AE0
     void ProcessEvent();  // 0x4C6CB0
-    SHORT GetKeyStateSafe();  // 0x53EC70
+    SHORT GetKeyStateSafe(unsigned char nVirtKey);  // 0x53EC70
     int deserializeEvent(int a2, IUnknown * aP2);  // 0x542280
     char Enqueue(unsigned short a2, char a3);  // 0x54F200
     int CheckFlag();  // 0x5F19C0

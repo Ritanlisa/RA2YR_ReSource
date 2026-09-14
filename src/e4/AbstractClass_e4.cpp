@@ -423,14 +423,10 @@ char __usercall AbstractClass::sub_5C03D0@<al>(int a1@<ebx>, int a2@<ebp>, int a
 namespace gamemd {
 unsigned int * AbstractClass::checkVisibility(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall AbstractClass::checkVisibility(InitializerBase_MultiplayerGameMode *this, char a2)
-{
-  this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d7fd9*/
-  if ( (a2 & 1) != 0 ) /*0x5d7fdf*/
-    __3_YAXPAX_Z(this); /*0x5d7fe2*/
-  return &this->vfptr; /*0x5d7fec*/
-}
+    *(void **)this = vt_MultiplayerGameMode_InitializerBase;
+    if ( (a2 & 1) != 0 )
+        __3_YAXPAX_Z(this);
+    return (unsigned int **)this;
 }
 } // namespace gamemd
 
@@ -438,14 +434,10 @@ _DWORD *__thiscall AbstractClass::checkVisibility(InitializerBase_MultiplayerGam
 namespace gamemd {
 unsigned int * AbstractClass::updateVisibilityState(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall AbstractClass::updateVisibilityState(InitializerBase_MultiplayerGameMode *this, char a2)
-{
-  this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d8039*/
-  if ( (a2 & 1) != 0 ) /*0x5d803f*/
-    __3_YAXPAX_Z(this); /*0x5d8042*/
-  return &this->vfptr; /*0x5d804c*/
-}
+    *(void **)this = vt_MultiplayerGameMode_InitializerBase;
+    if ( (a2 & 1) != 0 )
+        __3_YAXPAX_Z(this);
+    return (unsigned int **)this;
 }
 } // namespace gamemd
 
@@ -453,14 +445,10 @@ _DWORD *__thiscall AbstractClass::updateVisibilityState(InitializerBase_Multipla
 namespace gamemd {
 unsigned int * AbstractClass::processFogReveal(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall AbstractClass::processFogReveal(InitializerBase_MultiplayerGameMode *this, char a2)
-{
-  this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d8059*/
-  if ( (a2 & 1) != 0 ) /*0x5d805f*/
-    __3_YAXPAX_Z(this); /*0x5d8062*/
-  return &this->vfptr; /*0x5d806c*/
-}
+    *(void **)this = vt_MultiplayerGameMode_InitializerBase;
+    if ( (a2 & 1) != 0 )
+        __3_YAXPAX_Z(this);
+    return (unsigned int **)this;
 }
 } // namespace gamemd
 
@@ -468,14 +456,10 @@ _DWORD *__thiscall AbstractClass::processFogReveal(InitializerBase_MultiplayerGa
 namespace gamemd {
 unsigned int * AbstractClass::checkShroudState(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall AbstractClass::checkShroudState(InitializerBase_MultiplayerGameMode *this, char a2)
-{
-  this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d8079*/
-  if ( (a2 & 1) != 0 ) /*0x5d807f*/
-    __3_YAXPAX_Z(this); /*0x5d8082*/
-  return &this->vfptr; /*0x5d808c*/
-}
+    *(void **)this = vt_MultiplayerGameMode_InitializerBase;
+    if ( (a2 & 1) != 0 )
+        __3_YAXPAX_Z(this);
+    return (unsigned int **)this;
 }
 } // namespace gamemd
 
@@ -483,14 +467,10 @@ _DWORD *__thiscall AbstractClass::checkShroudState(InitializerBase_MultiplayerGa
 namespace gamemd {
 unsigned int * AbstractClass::updateShroudMap(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall AbstractClass::updateShroudMap(InitializerBase_MultiplayerGameMode *this, char a2)
-{
-  this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d8099*/
-  if ( (a2 & 1) != 0 ) /*0x5d809f*/
-    __3_YAXPAX_Z(this); /*0x5d80a2*/
-  return &this->vfptr; /*0x5d80ac*/
-}
+    *(void **)this = vt_MultiplayerGameMode_InitializerBase;
+    if ( (a2 & 1) != 0 )
+        __3_YAXPAX_Z(this);
+    return (unsigned int **)this;
 }
 } // namespace gamemd
 
