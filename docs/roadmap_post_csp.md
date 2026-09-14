@@ -2106,3 +2106,82 @@ OO 语法替换 → 提交重锚 → RA2MCP 翻译。**IDA 全程在线**（当�
 3. **issue #72**：thunk 合法别名符号管道。
 4. **TActionClass@40-48 已命名**（PointerExpired 族解锁）；其余 member-missing
    527 distinct 按 A1 双源法逐类推进。
+
+---
+
+## 执行日志 — 2026-09-14 G11 会话：截断真值修复链 + 验证器对称性七连 + 舰队波（completed 11,505 → 11,696）
+
+用户指令四段式（G4/G5/G8/G9/G10 同款第 6 次）：IDA MCP + CSP 结果补全签名/类/全局 →
+OO 语法替换 → 提交重锚 → RA2MCP 翻译。**IDA 全程在线**（当场探测确认，uptime 57min）。
+
+### 证据补全（提交 e0cf04c1 + 重锚）
+
+| 项 | 产出 | 机制 |
+|---|---|---|
+| **截断块全量修复** | **src 截断标记 60→0**（48 文件清零） | gen_e4_materialize 接入 ida_cache 置换（签名合成/OO 重写之前，完整伪码同吃成员重写）；DEF_INLINE_DECL 纯声明不算有体注释 |
+| **G10 截断 cache 暴露** | 23 条 HTTP 输出预算截断的 cache 经 py_eval 进程内全量重取（0x712170 最大 168K） | G10 的 74/75 回填实际有 23 条只存了 ~1K + `[NNNNN chars total]` 尾 |
+| **诚实复位** | **10 个 G10 假完成复位 pending**（对截断真值验证通过的假阳性；0x60d540 GameScreen_DlgProc 等，全量真值下缺 59 事件） | completed 11,505 → 11,495 真实口径 |
+| **vt_ 全量补齐** | **+515 符号**（模板实例 191 live 反修饰匹配 + RTTI 主表 324） | g_by_addr 同址 DataGlobal 后置重排（vt_ 优先）；vftable-ref 232→8 |
+| vtable 槽位 | +12 槽（g10 主表直读法两轮） | foreign 诚实拒绝（CCFileClass@4=ObjectClass::GetMember06 误名族挂 A2） |
+| DataGlobal | +7（INI key 字符串铁证 4：LANScrollText/LastNickSlot/ScrollRate/GuardArea + 标量 1 + 对象指针 2） | 使用形态类型化 |
+| OO refresh | preserved 10,963 / rewritten 4,557 / unmapped 5,590 | 双物化外科 2（0x76E180/0x76FEB0 gap2 已译体 vs e4 pending） |
+
+### 验证器对称性七连（本会话核心发现：G10 截断修复暴露的系统性 FAIL 链）
+
+舰队波首轮 0/177 全灭 → 逐层归因（全部经 completed 池抽样回归 119-120/120 PASS）：
+
+1. **vt_ 0 事件**（efv_cpp_resolve）：IDA 侧对 vftable 引用零提取（实测
+   `MEMORY[0x..]=&X::`vftable'` 仅目标 WRITE），cpp 侧 global 解析造单侧
+   READ(global)——G4 以来安装词汇的对称性缺口，vt_ 符号入 signals.globals 后显形。
+2. **til 直渲 this->Name 对称提取**（efv_ida_events + verify 单函数路径传参）：
+   v4/live 伪码直接携带 IDA til 成员名（`this->field_0`），IDA 侧原无提取、
+   cpp 侧未解析发通配——单侧事件恒不对称。现两侧镜像（解析→偏移事件/
+   未解析→同款通配）；class 经 C++ 体前置定位传参（sub_* 名无 `::`）。
+3. **元素单位派发缩放 ×4**：`(CAST)*this + N` 的 N 是元素算术（cast 使 *this
+   成为 4B 元素表指针），`+18→72/+73→292/+110→440` 实证全中真槽位；
+   判定=前置闭 cast + N%4≠0（38 个 N%4==0 歧义保守字面，0 completed 暴露）。
+4. **goto 守卫先于 DECL_RE**：`goto LABEL_N;` 被声明正则吃成 (type=goto,
+   name=LABEL_N) 原样透传——G7 只守卫了 break/continue；vftable 兜底解锁
+   CRT 状态机块后暴露（goto skip 6→329 诚实分类）。
+5. **双层括号派发解包**：`(*((CAST)BASE))(args)` 的 cast 提取吞掉全部内容。
+6. **THIS_BASE 扩展**：`*(CAST)(this) + N` 派发基座形态。
+7. **g5_fleet vftable RHS 兜底**：任意 LHS 的 vftable 引用统一重写 vt_ 符号，
+   LHS 走正常成员解析路径（member-target/out-struct/cast 形态）。
+
+### 舰队波 + 事故与修复
+
+- **波 1（1c8eef89）：167 桶 +202 全 CFG 验证**（addr40 9/14、gap2 桶 2-3/桶）；
+  +0x4C68E0 手动语义批。**too-long max-lines 150 重测 0/24**——G8 否决在新词汇
+  下维持（switch 状态机/memory-chain 是生成器天花板，语义翻译队列实证）。
+- **两次中断波遗留 36 个 replaced-未验证记录**全部从 cache 重建标准 pending 块
+  （HEAD 无对应记录——本会话 refresh 新物化）；3 处重复记录 + 3 处括号损伤
+  外科修复（g7 权威口径 fresh=0）。
+- **验收**：括号 fresh 0 / 注解 10,158+0+0 / 一致性 91/7 基线 /
+  marker&completed 对账 0。
+
+### 度量变化（本会话）
+
+| 指标 | 会话前 | 会话后 |
+|---|---|---|
+| MCP completed | 11,505 | **11,696**（+202 波 +1 语义 -10 诚实复位） |
+| MCP pending | 5,150 | **4,935** |
+| src 截断标记 | 60 块/48 文件 | **0** |
+| vt_ 符号 | ~699 | **+515（模板 191 + RTTI 主表 324）** |
+| ida_cache | 23 条截断污染 | 全量重取（g11-live-pyeval） |
+| vftable-ref skip | 232 | 8 |
+| goto 诚实分类 | 6 | 329（透传 bug 修复后） |
+| 一致性 | 91/7 | 91/7（基线维持） |
+| auto-fill-baseline | 9ae672b1 | **1c8eef89**（两次重锚：e0cf04c1 → 1c8eef89；重锚不清账） |
+
+### 遗留与下一步（G11 后续队列）
+
+1. **too-long 2,044 + goto 328 + FAIL-recycle**：语义翻译主体（新词汇下
+   max-lines 提升仍 0/24——规则生成器天花板三次实证）。LLM 手动批/agent 舰队。
+2. **raw-this-residue 607**：真类无名区（til field_* 占位）——A1 成员考古
+   （本会话 til 批查 24 类目标偏移全 field_*/越界，G10 跳过名单维持）。
+3. **hash-type 176 / ternary 124 / param-mismatch ~80**：小词汇或 def/hpp 手术。
+4. **38 个 cast-direct N%4==0 派发歧义**：需逐函数二进制仲裁（0 completed 暴露，
+   非阻塞）。
+5. **HEAD 既有 284 个 replaced-未验证记录**（历史波次遗留，非本会话引入）：
+   下次 refresh 前需甄别（防 scan_e4_preserved 误固化）。
+

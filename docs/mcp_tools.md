@@ -173,11 +173,11 @@ IDA MCP（`127.0.0.1:13337`）的连接状态**非持久，IDA 可能无效**：
   审计器已跳过 `[IDA decompile]` 伪码块、inline ASM 操作数，以及**已在别处
   有注解声明的同名命中**（G8 后两遍扫描——舰队译文体保留的 IDA 局部声明
   `CHAR Buffer[1024];` 影射已注解全局，无注解义务）。
-- `signals.json` 当前 MCP completed **11,505** / pending **5,150**（G10 诚实
-  口径：G9 的 11,665/4,624 含 G9 波 1 截断损害——7 文件 1,160 条记录丢失、
-  316 幽灵 completed 已复位；marker&completed 对账 = 0）；`_by_name` 与主表
-  函数名集合一致，0 missing / 0 extra / 0 name conflicts。
-- `member_lookup.json` 1,651 类（G10 后，+A1 语义成员 37）；**注意
+- `signals.json` 当前 MCP completed **11,696** / pending **4,935**（G11 口径：
+  G10 的 11,505 + 202 舰队波 + 1 语义批 − 10 个 G10 截断假完成复位——G10 的
+  HTTP 回填有 23 条 cache 本身被输出预算截断，对截断真值验证通过的完成是假
+  阳性；marker&completed 对账 = 0）；`_by_name` 与主表函数名集合一致。
+- `member_lookup.json` 1,651 类（G11 后；vt_ 符号 515 新增入 e4_globals/signals）；**注意
   `signals._member_by_name` 是 resolver 消费的独立体系**，与 member_lookup
   漂移不同步会错解析（G10 曾修正 BulletTypeClass 65 条）；BuildingTypeClass
   3800 区段已按 IDA til 重排，get_context 不再对该区段发出已知坏区警告。

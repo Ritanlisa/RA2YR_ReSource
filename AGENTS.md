@@ -185,7 +185,7 @@ cmake --build build_linux
 | 编译错误 / 警告 | **0 / 0** (gamemd 来自 _generated/ 和主要模块) |
 | symbol-locked | **symbols-locked-v2** — 全部 19,067 函数 1:1:1 映射 (IDA↔signals↔hpp)，0 naming mismatches |
 | completed (符号定义) | **19,133 / 19,133 (100%)** — 所有函数在 IDA/signals.json/hpp 中有名称和地址 |
-| translated (完整IDA对照) | **11,505** — MCP completed 诚实口径（G10 会话修复 G9 截断损害：316 幽灵复位 + 162 舰队波 + 9 语义翻译）；pending **5,150**（真实总账：G9 的 4,624 因截断少计 ~1,460）；2026-09-14 G10 会话（IDA 在线窗口：cache 回填 74/A1 命名 37/BulletTypeClass mbn 修正 65/舰队波+语义批，详见 docs/roadmap_post_csp.md G10 执行日志） |
+| translated (完整IDA对照) | **11,696** — MCP completed 诚实口径（G11 会话：+202 舰队波全 CFG + 1 语义批 − 10 个 G10 截断假完成诚实复位）；pending **4,935**；2026-09-14 G11 会话（IDA 在线：截断块 60→0 全修复 + vt_ 符号 +515 + 验证器对称性七连——vt_ 0 事件/til this->Name 镜像/元素派发 ×4/goto 守卫，详见 docs/roadmap_post_csp.md G11 执行日志） |
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
 | sub_* 残留 | **5,468** — 函数级别 (非类成员)，0 已翻译 |
