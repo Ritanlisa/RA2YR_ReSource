@@ -25,7 +25,7 @@
 > | **G5 舰队波** | ✅ **completed 2,477 → 3,736（+1,259 全 CFG 验证）** | g5_fleet.py 直驱（fleetA 规则泛化）：addr7C **414**/addr40 245/addr77 209/addr72 149/addr4E 96/addr49 46/gap2 ~91（Gap2Recv 机制首批）；PASS 率 addr 桶 97-100%、gap2 59%；生成器加固（三元/memory-chain/断词/残留 cast 跳过 + signals↔extern 同步 1,330）；波后括号零新增/审计基线维持 |
 > | **G4 证据补全轮** | ✅ 完成（2026-09-10，72175ec7） | vtable_offsets +208 类 + 639 vt_ 全局 + CRT 87 全局 + #26 FactoryClass 破案 |
 > | **G3 舰队波 1** | ✅ +1,360（VectorClass 桶） | 直驱范式确立 |
-> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP pending **4,624**；completed **11,665**（G9 波 2 后）。续波队列 = A1 成员命名（raw-this-residue 525）→ too-long 语义翻译/分块 → FAIL-recycle 复杂体词汇 → vftable-ref 长尾 |
+> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP pending **4,935**；completed **11,696**（G11 后）。**清偿总计划见文末「Phase H」**：H1 即时收割 319 → H2 A1 命名轮（解锁 raw-this 605）→ H3 机械小 fry ~210 → H4 舰队波 2 → H5 语义翻译主体 2,365（too-long+goto，agent 舰队）→ H6 词汇专项 → H7 A2 owner 考古；里程碑 M1~M4 到 0 |
 > | B1 apply_sigs 550 失败 | ✅ 完成 | fail=0，914 处 return/param 编辑落盘 |
 > | B2 mass_type 1 失败 | ✅ 完成 | CRT RTTI 折叠体池级过滤 |
 > | B3 枚举通道 | ✅ 完成 | 5 枚举声明 + 8 成员 + 2 参数回填 |
@@ -2185,3 +2185,58 @@ OO 语法替换 → 提交重锚 → RA2MCP 翻译。**IDA 全程在线**（当�
 5. **HEAD 既有 284 个 replaced-未验证记录**（历史波次遗留，非本会话引入）：
    下次 refresh 前需甄别（防 scan_e4_preserved 误固化）。
 
+
+---
+
+## Phase H — 剩余 4,935 pending 清偿总计划（2026-09-14 G11 会话末制定）
+
+> 数据基线：MCP pending **4,935**（dry-scan 归因 4,881 + ~54 无伪码/ASM-only 块）。
+> 归因构成（2026-09-14 G11 末 dry-scan 权威口径，`.omo/g8_dryscan.json`）：
+
+| # | 类别 | 块数 | 根因 | 解法（已实证的边界） |
+|---|---|---|---|---|
+| 1 | too-long | **2,037** | 体长 >60 行，switch 状态机/memory-chain/三元长链主导 | **LLM 语义翻译**。规则生成器天花板三次实证（G8 max-lines 200 = 8.5%、G11 新词汇下 150 = 0/24） |
+| 2 | raw-this-residue | **605** | 真类无名区（til `field_*`/`__pad_*` 占位，529 distinct） | **A1 成员语义命名前置**（YRpp 声明序 + LoadFromINI 参数槽位 + ctor 写入三源法；G10 单会话 37 名、G9 容器族 306 名先例） |
+| 3 | goto | **328** | CRT 状态机 LABEL 交叉跳转 | **LLM 语义翻译**（goto→结构化控制流；G9 试点 PlayAudioAtRandomWP do-while 镜像先例） |
+| 4 | GENERATED | **319** | 生成器已可产码 | **舰队波直驱**（无前置；按新词汇 PASS 率预期 +80~150） |
+| 5 | hash-type | **175** | 伪码含 `#NN` 内部类型 ID | 词汇缺口：需 IDA live 会话解析 #NN→真类型后加 TYPE_MAP，或手动批次 |
+| 6 | ternary | **124** | 三元 `?:` 与 IDA 扁平块 CFG 不对称 | 逐形态算术化词汇（fleetA CompareFunc `2*(a>=b)-1` 先例推广）；不易算术化者手动 |
+| 7 | param-mismatch | **~110** | def 合成签名参数名/参数数 vs v4 伪码错位 | **def/hpp 双手术**（G8 sigfix 机械清偿 155+52 先例，可脚本化批产） |
+| 8 | free-this | 46 | 自由形态 def 丢 this（thunk 族） | def 成员化手术（G9 defix 54 先例） |
+| 9 | ida-broken-arrow | 31 | 伪码 `->?` 破损渲染 | IDA live `get_context` 重取置换（在线窗口） |
+| 10 | IDA-ism 残留 | 24 | `dword_`/`unk_` 裸名全局 | 全局命名考古（A1 附带） |
+| 11 | slot foreign / member 长尾 | ~150 | T19 误归属（44 向量族）/ 真无名 | A2 owner 考古（G9 RTTI 链离线化，`.omo/g9_owner.json` 清单） |
+| 12 | 无伪码/ASM-only | ~54 | 导出即无伪码 | 纯汇编兜底翻译或诚实 defer（单列不计入翻译 KPI） |
+
+### 执行波次（依赖排序）
+
+| 波 | 内容 | 前置 | 方法 | 预期净增 | 估时 |
+|---|---|---|---|---|---|
+| **H1 即时收割** | 319 GENERATED 直驱 | 无 | g5_fleet 直驱（`.omo/g11_fleet_driver.py` 现成） | +80~150 | 1 波 ~15 min |
+| **H2 A1 命名轮** | 529 distinct 成员（头部：CCFileClass@100/Cell@56/CheckListClass@280/LayerClass@244/NullModemClass@56…；G10 跳过名单逐一复核） | 无（快照消费为主，IDA 在线增强） | 三源证据表 → rename_symbol 四方同步 → member_lookup/_member_by_name 双体系 | 解锁 #2 全部 605 + #11 member 长尾 | 2-3 会话 |
+| **H3 机械小 Fry** | param-mismatch ~110 + free-this 46 + IDA-ism 24 + broken-arrow 31（live） | IDA 在线（broken-arrow/部分签名） | sigfix/defix 脚本化批产 + live 重取 | +120~180 | 1 会话 |
+| **H4 舰队波 2** | H2/H3 解锁块直驱（raw-this 605 + member ~150） | H2+H3 | g5_fleet 直驱 | +250~400 | 1-2 波 |
+| **H5 语义翻译主线** | too-long 2,037 + goto 328 = **2,365**（持久主体） | 无硬前置（H2 提升可读性） | **agent 舰队 MCP 全流程**（G3 范式：3 agent 分桶 + CFG 双射规则书 + FAIL 自动回滚）；优先序 = 调用频次 × 类核心度（building.cpp 71 / TechnoClass 族 / 工厂生产链 → UI/INI/网络）；手动批 G10 实测 ~9/会话含考古，agent 舰队 G3 实测 +118/波 | 每波 +60~120 | **主体 ≈ 15-25 会话** |
+| **H6 词汇专项** | ternary 124（算术化逐形态）+ hash-type 175（#NN 考古） | IDA 在线（#NN 解析） | 每形态 20 块试点 → PASS≥60% 推广，否则转 H5 手动 | +150~250 | 1-2 会话 |
+| **H7 A2 owner 考古** | slot foreign 95 + 44 向量族误归属 | 无（G9 链离线可用） | RTTI owner 链批量改名（A2） | 间接解锁 | 1 会话（可与 H2 并行） |
+
+### 里程碑
+
+| 里程碑 | 口径 | 预计 |
+|---|---|---|
+| M1 机械面清偿 | H1+H3+H4 后 pending → **~3,900-4,100** | 近期（3-4 会话） |
+| M2 词汇收益落地 | H6 后 pending → **~3,700** | 中期 |
+| M3 语义翻译 50% | H5 过半，pending → **~1,800** | 远期主体 |
+| M4 全量翻译完成 | pending → **0**，进入 D1-D4 集成验收 | Phase 1 出口 |
+
+### 执行纪律（既有裁决沿用）
+
+1. **completed 语义不放松**：每块 mark_completed 必须过 exec-flow CFG 双射；
+   截断/无缓存真值不得验证（G11 的 10 假完成复位为鉴）。
+2. **FAIL 自动回滚**：舰队波 FAIL 块回滚 pending，不硬留译体。
+3. **语义翻译的 CFG 范式**：条件方向照抄 IDA 文本 / 单块表达式优先非短路 /
+   三元降级菱形块 / 默认赋值+覆盖镜像（G2 会话沉淀五条全适用）。
+4. **每波固定动作**：括号 HEAD-delta（g7 权威口径）→ annotations_audit →
+   audit_consistency → marker&completed 对账 → 提交重锚。
+5. **中断波恢复协议**：replaced-未验证记录从 ida_cache 重建 pending 块
+   （G11 会话 36 块重建流程已脚本化验证）。
