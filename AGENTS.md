@@ -189,7 +189,7 @@ cmake --build build_linux
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
 | sub_* 残留 | **5,468** — 函数级别 (非类成员)，0 已翻译 |
-| 命名一致性 | 215 剩余 (59 method_diff + 116 wrong_class + 40 other)，需逐函数审查 |
+| 命名一致性 | 91 raw / 7 normalized（G10 实测；增量均为别名自愈型 + E3 hpp 声明名变体，翻译时自然吸收；基线 69/3） |
 | REVERSE 标记 | ~32（2 Inject 活跃, 39 None） |
 | 幂等自动判定 | Phase 1+2 完成: TRUE 31%, FALSE 36%, UNCERTAIN 33% |
 | 源文件 | ~130 .hpp + ~135 .cpp (~110,000 行) |

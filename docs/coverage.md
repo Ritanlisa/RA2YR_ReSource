@@ -2,19 +2,21 @@
 
 > ⚠ 本文档的子系统细节（vtable 解码、类覆盖清单）为早期考证快照，仍然有效；
 > **当前总体进度以 `AGENTS.md` 状态表和 `docs/roadmap_post_csp.md` 执行日志为权威**
-> （2026-09-14 G8 口径：MCP completed 10,350 / pending 6,541，全 CFG 验证）。
+> （2026-09-14 G10 口径：MCP completed 11,505 / pending 5,150——**诚实口径**，
+> 含 G9 截断损害修复：316 幽灵 completed 复位，全 CFG 验证）。
 
-## 翻译总进度（G8 会话后，2026-09-14）
+## 翻译总进度（G10 会话后，2026-09-14）
 
 | 指标 | 数值 |
 |--------|-------|
-| MCP completed | **10,350**（全 CFG 双射验证；G3-G8 舰队波 + E5 校准 + G1 收割 + 历史真翻译） |
-| MCP pending | **6,541**（too-long 1,988 / raw-this-residue 1,451 / residual-this-cast 610 / 其余长尾） |
+| MCP completed | **11,505**（诚实口径：G9 期末 11,665 含 316 幽灵已复位；G10 净增 = 舰队波 +162 + 语义批 +9，全 CFG 双射验证） |
+| MCP pending | **5,150**（真实总账——G9 的 4,624 因 G9 波 1 截断少计 ~1,460；构成：too-long ~1,776 / FAIL-recycle 618 / raw-this-residue ~500 / 其余长尾） |
+| marker&completed 矛盾 | **0**（G10 对账修复；G9 曾潜伏 582） |
 | src 函数体覆盖 | ~17,870 / 19,133（93.5%；未翻译函数以 IDA 原始反编译活代码块占位，裁决 v2） |
-| 偏移→OO 重写 | rewritten 6,289 / unmapped 5,468（refresh 口径） |
-| vtable_offsets | 337 类（槽位→方法名真值，验证器权威） |
-| member_lookup | 1,304 类 |
-| signals.globals | 12,845 地址（DataGlobal / vt_ / CRT 批产含） |
+| 偏移→OO 重写 | rewritten 5,850 / unmapped 4,558（G10 refresh 口径） |
+| vtable_offsets | 398 类（槽位→方法名真值，验证器权威） |
+| member_lookup | 1,651 类（G10 A1 +37 语义成员：TActionClass 全链/SuperClass 全链等） |
+| signals.globals | 12,910 地址（DataGlobal / vt_ / CRT 批产含） |
 
 ## 编译状态
 

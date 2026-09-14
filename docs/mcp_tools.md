@@ -164,21 +164,28 @@ IDA MCP（`127.0.0.1:13337`）的连接状态**非持久，IDA 可能无效**：
 - 常驻 HTTP 服务按 `member_lookup.json` mtime 失效缓存；修改服务器源码后仍需重启服务，源码不会热加载。
 - 隔离回归：`python tools/test_rename_symbol.py`；MCP heavy smoke 会验证真实含 `::` 的 dry-run。
 
-## 地址对应现状（2026-09-14 G8 会话后）
+## 地址对应现状（2026-09-14 G10 会话后）
 
-- 函数注解审计：matched **9,831** / missing with known address **0** /
-  addr mismatch **6**（同名函数地址歧义挂账，G9 波 2 记录）/ unknown in signals
-  **1,706**（helper/别名形态，翻译时甄别）。
-- 全局变量注解审计：annotated **13,582** / missing **0**。
+- 函数注解审计：matched **10,175** / missing with known address **0** /
+  addr mismatch **0**（G9 波 2 的 6 个同名歧义已随 marker&completed 对账清零）/
+  unknown in signals **1,706**（helper/别名形态，翻译时甄别）。
+- 全局变量注解审计：annotated **13,582+** / missing **0**。
   审计器已跳过 `[IDA decompile]` 伪码块、inline ASM 操作数，以及**已在别处
   有注解声明的同名命中**（G8 后两遍扫描——舰队译文体保留的 IDA 局部声明
   `CHAR Buffer[1024];` 影射已注解全局，无注解义务）。
-- `signals.json` 当前 MCP completed **11,665** / pending **4,624**（G9 后）；
-  `_by_name` 与主表函数名集合一致，0 missing / 0 extra / 0 name conflicts。
-- `member_lookup.json` 1,304 类（G8 后）；BuildingTypeClass 3800 区段已按
-  IDA til 重排，get_context 不再对该区段发出已知坏区警告。
+- `signals.json` 当前 MCP completed **11,505** / pending **5,150**（G10 诚实
+  口径：G9 的 11,665/4,624 含 G9 波 1 截断损害——7 文件 1,160 条记录丢失、
+  316 幽灵 completed 已复位；marker&completed 对账 = 0）；`_by_name` 与主表
+  函数名集合一致，0 missing / 0 extra / 0 name conflicts。
+- `member_lookup.json` 1,651 类（G10 后，+A1 语义成员 37）；**注意
+  `signals._member_by_name` 是 resolver 消费的独立体系**，与 member_lookup
+  漂移不同步会错解析（G10 曾修正 BulletTypeClass 65 条）；BuildingTypeClass
+  3800 区段已按 IDA til 重排，get_context 不再对该区段发出已知坏区警告。
 - rename 引入的新定义缺注解可由 `annotations_fix`（默认 dry-run）一键补齐——
   09-08 的 33 个 + G8 波 1 的 18 个 bodies 定义注解即由此恢复。
+- **验证器词汇（G10）**：全局索引读必须 `*(DataGlobal_X + i)` 退化指针形态
+  （下标形态不发 cpp READ 事件）；数字开头 thunk 名（VtableStub::NNN）非法
+  C++ 标识符不可译（issue #72，需别名符号管道）。
 
 ## 数据源
 
