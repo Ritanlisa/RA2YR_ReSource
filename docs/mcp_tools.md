@@ -154,7 +154,7 @@ IDA MCP（`127.0.0.1:13337`）的连接状态**非持久，IDA 可能无效**：
 - `efv_cpp_events.py` 已排除函数定义签名被误识别为 PascalCase 自调用的情况；
   `Func(...) {` / `Func(...) const {` 不再生成伪造的 `CALL(Func)` 事件。
 - 修改共享 verifier/event extractor 后，必须用退出码回归已 completed 函数
-  （抽样回归先例：G5 119/120 PASS）。completed 池现约 10,350 个（G8 后），
+  （抽样回归先例：G5 119/120 PASS）。completed 池现约 11,505 个（G10 诚实口径），
   全量回归改抽样 + 按桶回归。
 - MCP HTTP 常驻服务不会热加载 Python 源码。修改服务器后需重启服务；否则本地
   直跑结果与 HTTP 工具返回可能暂时不一致。
