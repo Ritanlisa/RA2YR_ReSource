@@ -543,36 +543,27 @@ int __thiscall BulletTypeClass::ProcessPower(int this, int *a2)
 // 0x46C6A0
 int BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 {
-  int result; // eax
-
-  result = ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1); /*0x46c6ab*/
-  if ( result >= 0 ) /*0x46c6b2*/
+    int result;
+    result = ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1);
+    if ( result >= 0 )
   {
-    if ( aP0 ) /*0x46c6b6*/
+    if ( aP0 )
     {
-      ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1); /*0x46c6bf*/
-      *(_DWORD *)aP0->__pad_0 = &BulletTypeClass::`vftable'; /*0x46c6c4*/
-      *(_DWORD *)&aP0->__pad_0[4] = &BulletTypeClass::`vftable'; /*0x46c6ca*/
-      *(_DWORD *)&aP0->__pad_0[8] = &BulletTypeClass::`vftable'; /*0x46c6d1*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_BulletTypeClass; /*0x46c6d8*/
+    ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_BulletTypeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_BulletTypeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_BulletTypeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_BulletTypeClass;
     }
-    VoxelAnimType::LoadAnim(aP0->__pad_0); /*0x46c6e1*/
-    ObjectTypeClass::Load2DArt(aP0->__pad_0); /*0x46c6e8*/
-    ObjectPtr::RegisterForTracking( /*0x46c6f9*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].UINameLabel[7]);
-    ObjectPtr::RegisterForTracking( /*0x46c70a*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].referenceCount);
-    ObjectPtr::RegisterForTracking( /*0x46c71b*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].NeedsSaveOrLink);
-    return 0; /*0x46c720*/
+    VoxelAnimType::LoadAnim(aP0->__pad_0);
+    ObjectTypeClass::Load2DArt(aP0->__pad_0);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[7]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].referenceCount);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].NeedsSaveOrLink);
+    return 0;
   }
-  return result; /*0x46c722*/
+    return result;
 }
 }
 

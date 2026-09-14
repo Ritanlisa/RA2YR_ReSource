@@ -64,28 +64,25 @@ char __stdcall LoadOptions::_vt02(LPCCH lpMultiByteStr, wchar_t *Source)
 namespace gamemd {
 LoadOptions * LoadOptions::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LoadOptions *__thiscall LoadOptions::QueryInterface(char *this, char a2)
 {
-  int v3; // esi
-  void *v4; // eax
-
-  v3 = 0; /*0x55a0d4*/
-  for ( *(_DWORD *)this = &vt_LoadOptionsClass; v3 < this->capacity; ++v3 ) /*0x55a0e1*/
-    __3_YAXPAX_Z(*(void **)(*((_DWORD *)this + 9) + 4 * v3)); /*0x55a0ea*/
-  (*(void (__thiscall **)(char *))(*((_DWORD *)this + 8) + 12))(this + 32); /*0x55a102*/
-  v4 = (void *)*((_DWORD *)this + 9); /*0x55a105*/
-  *((_DWORD *)this + 8) = &vt_VectorClass_FileEntryClass; /*0x55a108*/
-  if ( v4 && *(this + 45) ) /*0x55a112*/
+    int v3;
+    void *v4;
+    v3 = 0;
+    for ( *(int *)this = &vt_LoadOptionsClass; v3 < *(int *)(this + 48); ++v3 )
+    __3_YAXPAX_Z(*(void **)(*((int *)(this) + 9) + 4 * v3));
+    (*(void (__thiscall **)(char *))(*((int *)(this) + 8) + 12))(this + 32);
+    v4 = (void *)*((int *)(this) + 9);
+    *((int *)(this) + 8) = &vt_VectorClass_FileEntryClass;
+    if ( v4 && *(this + 45) )
   {
-    __3_YAXPAX_Z(v4); /*0x55a11a*/
-    *((_DWORD *)this + 9) = 0; /*0x55a122*/
+    __3_YAXPAX_Z(v4);
+    *((int *)(this) + 9) = 0;
   }
-  *(this + 45) = 0; /*0x55a12d*/
-  *((_DWORD *)this + 10) = 0; /*0x55a133*/
-  if ( (a2 & 1) != 0 ) /*0x55a13a*/
-    __3_YAXPAX_Z(this); /*0x55a13d*/
-  return (LoadOptions *)this; /*0x55a147*/
+    *(this + 45) = 0;
+    *((int *)(this) + 10) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (LoadOptions *)this;
 }
 }
 } // namespace gamemd

@@ -210,56 +210,53 @@ char *__thiscall WarheadTypeClass::parseVerses(INISection_INIClass *this)
 // 0x52AD50
 void * WarheadTypeClass::parseModifiers(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall WarheadTypeClass::parseModifiers(INIEntry_INIClass *this, char a2)
 {
-  CCINIClass *v3; // eax
-  int v4; // eax
-  int v5; // edi
-  int v6; // ecx
-  int v7; // eax
-  void *v9; // [esp-8h] [ebp-10h]
-
-  v3 = (CCINIClass *)this->field_C; /*0x52ad54*/
-  *(_DWORD *)this->__pad_0 = &vt_INIClass_INIEntry; /*0x52ad57*/
-  free(v3); /*0x52ad5e*/
-  v9 = (void *)this->field_10; /*0x52ad68*/
-  this->field_C = 0; /*0x52ad69*/
-  free(v9); /*0x52ad6c*/
-  v4 = *(_DWORD *)this->__pad_14; /*0x52ad71*/
-  this->field_10 = 0; /*0x52ad79*/
-  if ( v4 ) /*0x52ad7c*/
+    CCINIClass *v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    void *v9;
+    v3 = (CCINIClass *)this->field_C;
+    *(int *)this->__pad_0 = &vt_INIClass_INIEntry;
+    free(v3);
+    v9 = (void *)this->field_10;
+    this->field_C = 0;
+    free(v9);
+    v4 = *(int *)this->__pad_14;
+    this->field_10 = 0;
+    if ( v4 )
   {
-    do /*0x52ada0*/
+    do
     {
-      free(**(void ***)this->__pad_14); /*0x52ad85*/
-      v5 = *(_DWORD *)(*(_DWORD *)this->__pad_14 + 4); /*0x52ad8f*/
-      __3_YAXPAX_Z(*(void **)this->__pad_14); /*0x52ad93*/
-      *(_DWORD *)this->__pad_14 = v5; /*0x52ad9d*/
+    free(**(void ***)this->__pad_14);
+    v5 = *(int *)(*(int *)this->__pad_14 + 4);
+    __3_YAXPAX_Z(*(void **)this->__pad_14);
+    *(int *)this->__pad_14 = v5;
     }
-    while ( v5 ); /*0x52ada0*/
+    while ( v5 );
   }
-  free((void *)this->field_18); /*0x52ada7*/
-  this->field_18 = 0; /*0x52adb1*/
-  *(_DWORD *)this->__pad_0 = &vt_GenericNode; /*0x52adb4*/
-  if ( this ) /*0x52adba*/
+    free((void *)this->field_18);
+    this->field_18 = 0;
+    *(int *)this->__pad_0 = &vt_GenericNode;
+    if ( this )
   {
-    v6 = *(_DWORD *)&this->__pad_0[4]; /*0x52adbc*/
-    if ( v6 ) /*0x52adc1*/
+    v6 = *(int *)&this->__pad_0[4];
+    if ( v6 )
     {
-      v7 = *(_DWORD *)&this->__pad_0[8]; /*0x52adc3*/
-      if ( v7 ) /*0x52adc8*/
+    v7 = *(int *)&this->__pad_0[8];
+    if ( v7 )
       {
-        *(_DWORD *)(v7 + 4) = v6; /*0x52adca*/
-        *(_DWORD *)(*(_DWORD *)&this->__pad_0[4] + 8) = *(_DWORD *)&this->__pad_0[8]; /*0x52add3*/
-        *(_DWORD *)&this->__pad_0[8] = 0; /*0x52add6*/
-        *(_DWORD *)&this->__pad_0[4] = 0; /*0x52add9*/
+    *(int *)(v7 + 4) = v6;
+    *(int *)(*(int *)&this->__pad_0[4] + 8) = *(int *)&this->__pad_0[8];
+    *(int *)&this->__pad_0[8] = 0;
+    *(int *)&this->__pad_0[4] = 0;
       }
     }
   }
-  if ( (a2 & 1) != 0 ) /*0x52ade1*/
-    __3_YAXPAX_Z(this); /*0x52ade4*/
-  return this; /*0x52adee*/
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
 }
 }
 

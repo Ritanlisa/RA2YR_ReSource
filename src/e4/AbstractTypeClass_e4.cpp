@@ -81,22 +81,19 @@ LABEL_9:
 // 0x410960
 int AbstractTypeClass::Init(AbstractTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractTypeClass::Init(int this, AbstractTypeClass *aP1)
 {
-  char v3; // al
-
-  AbstractClass::InitVtables((_DWORD *)this, (int)aP1); /*0x410968*/
-  v3 = (unsigned char)this->UINameLabel; /*0x41096d*/
-  *(_DWORD *)this = &AbstractTypeClass::`vftable'; /*0x410975*/
-  this->vtable1 = &AbstractTypeClass::`vftable'; /*0x41097b*/
-  this->vtable2 = &AbstractTypeClass::`vftable'; /*0x410982*/
-  this->vtable3 = &vt_AbstractTypeClass; /*0x410989*/
-  if ( v3 ) /*0x410990*/
-    this->UIName = GetStringCSF((wchar_t *)(this + 61), 0, MEMORY[0x817830], 127); /*0x4109a0*/
-  else
-    this->UIName = &MEMORY[0x87F8E4].__pad_5568[10472]; /*0x4109a9*/
-  return this; /*0x4109a5*/
+    char v3;
+    AbstractClass::InitVtables((int *)this, (int)aP1);
+    v3 = (unsigned char)this->UINameLabel;
+    *(void**)this = vt_AbstractTypeClass;
+    this->vtable1 = (unsigned int)vt_AbstractTypeClass;
+    this->vtable2 = (unsigned int)vt_AbstractTypeClass;
+    this->vtable3 = &vt_AbstractTypeClass;
+    if ( v3 )
+    this->UIName = GetStringCSF((wchar_t *)(this + 61), 0, DataGlobal_817830, 127);
+    else
+    this->UIName = &DataGlobal_87F8E4.__pad_5568[10472];
+    return this;
 }
 }
 

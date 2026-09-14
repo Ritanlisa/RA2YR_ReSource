@@ -445,66 +445,60 @@ char __userpurge UnitTypeClass::LoadFromINI@<al>(int a1@<ecx>, double a2@<st0>, 
 // 0x748010
 int UnitTypeClass::LoadFromINI2(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall UnitTypeClass::_vt05(int a1, int a2)
 {
-  int result; // eax
-  char v3; // [esp+7h] [ebp-105h] BYREF
-  char Buffer[260]; // [esp+8h] [ebp-104h] BYREF
-
-  result = TechnoTypeClass::SaveLoad_Prefix(a1, a2); /*0x748024*/
-  if ( result >= 0 ) /*0x74802b*/
+    int result;
+    char v3;
+    char Buffer[260];
+    result = TechnoTypeClass::SaveLoad_Prefix(a1, a2);
+    if ( result >= 0 )
   {
-    if ( a1 ) /*0x74802f*/
+    if ( a1 )
     {
-      TechnoTypeClass::Construct(a1, (int)&v3); /*0x748038*/
-      *(_DWORD *)a1 = &UnitTypeClass::`vftable'; /*0x74803d*/
-      *(_DWORD *)(a1 + 4) = &UnitTypeClass::`vftable'; /*0x748043*/
-      *(_DWORD *)(a1 + 8) = &UnitTypeClass::`vftable'; /*0x74804a*/
-      *(_DWORD *)(a1 + 12) = &vt_UnitTypeClass; /*0x748051*/
+    TechnoTypeClass::Construct(a1, (int)&v3);
+    *(int *)a1 = (unsigned int)vt_UnitTypeClass;
+    *(int *)(a1 + 4) = (unsigned int)vt_UnitTypeClass;
+    *(int *)(a1 + 8) = (unsigned int)vt_UnitTypeClass;
+    *(int *)(a1 + 12) = &vt_UnitTypeClass;
     }
-    VoxelAnimType::LoadAnim((char *)a1); /*0x74805a*/
-    ObjectTypeClass::Load2DArt((char *)a1); /*0x748061*/
-    if ( *(_DWORD *)(a1 + 3672) ) /*0x748066*/
+    VoxelAnimType::LoadAnim((char *)a1);
+    ObjectTypeClass::Load2DArt((char *)a1);
+    if ( *(int *)(a1 + 3672) )
     {
-      _makepath(Buffer, 0, 0, (const char *)(a1 + 3678), Ext); /*0x748085*/
-      *(_DWORD *)(a1 + 3672) = SearchMIXFile(Buffer, 0); /*0x748098*/
+    _makepath(Buffer, 0, 0, (const char *)(a1 + 3678), Ext);
+    *(int *)(a1 + 3672) = SearchMIXFile(Buffer, 0);
     }
-    return 0; /*0x74809e*/
+    return 0;
   }
-  return result; /*0x7480a0*/
+    return result;
 }
 }
 
 // 0x748190
 UnitTypeClass * UnitTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-UnitTypeClass *__thiscall UnitTypeClass::ddtor(void **this, char a2)
 {
-  int v3; // eax
-  void **v5; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &UnitTypeClass::`vftable'; /*0x748196*/
-  *(this + 1) = &UnitTypeClass::`vftable'; /*0x74819c*/
-  *(this + 2) = &UnitTypeClass::`vftable'; /*0x7481a3*/
-  *(this + 3) = &vt_UnitTypeClass; /*0x7481aa*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x7481b1*/
-  v5 = this; /*0x7481c6*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(UnitTypeClass_Array + 16))(&UnitTypeClass_Array, &v5); /*0x7481ca*/
-  if ( v3 != -1 && v3 < g_CrateCount && v3 < --g_CrateCount ) /*0x7481e5*/
+    int v3;
+    void **v5;
+    *(void**)this = vt_UnitTypeClass;
+    *(this + 1) = (unsigned int)vt_UnitTypeClass;
+    *(this + 2) = (unsigned int)vt_UnitTypeClass;
+    *(this + 3) = &vt_UnitTypeClass;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    v5 = this;
+    v3 = (*(int (__thiscall **)(int *, void ***))(UnitTypeClass_Array + 16))(&UnitTypeClass_Array, &v5);
+    if ( v3 != -1 && v3 < g_CrateCount && v3 < --g_CrateCount )
   {
-    do /*0x7481fd*/
+    do
     {
-      ++v3; /*0x7481ed*/
-      *((_DWORD *)g_UnitTypeCount2 + v3 - 1) = *((_DWORD *)g_UnitTypeCount2 + v3); /*0x7481f1*/
+    ++v3;
+    *((int *)(g_UnitTypeCount2) + v3 - 1) = *((int *)(g_UnitTypeCount2) + v3);
     }
-    while ( v3 < g_CrateCount ); /*0x7481fd*/
+    while ( v3 < g_CrateCount );
   }
-  TechnoTypeClass::DTOR((int)this); /*0x748201*/
-  if ( (a2 & 1) != 0 ) /*0x74820b*/
-    __3_YAXPAX_Z(this); /*0x74820e*/
-  return (UnitTypeClass *)this; /*0x748218*/
+    TechnoTypeClass::DTOR((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (UnitTypeClass *)this;
 }
 }
 

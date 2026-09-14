@@ -586,53 +586,44 @@ int __thiscall Screen::TransitionLoop(MPCooperative *this, int a2)
 // 0x690360
 int Screen::CleanupTransitionObjects()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Screen::CleanupTransitionObjects(MPCooperative *this)
 {
-  int result; // eax
-  int i; // edi
-  int v4; // ecx
-  void (__thiscall ***v5)(_DWORD, int); // ecx
-  char *v6; // eax
-  char *v7; // ecx
-  int v8; // eax
-
-  MEMORY[0xB05584] = 0; /*0x69036b*/
-  if ( MEMORY[0x8A00A0] ) /*0x690372*/
+    int result;
+    int i;
+    int v4;
+    void (__thiscall ***v5)(int, int);
+    char *v6;
+    char *v7;
+    int v8;
+    DataGlobal_B05584 = 0;
+    if ( g_LoadScreenFlag )
   {
-    MEMORY[0x8A00A0] = 0; /*0x69037a*/
-    (*(void (__thiscall **)(IUnknown *, _DWORD))(MEMORY[0x88730C]->field_0 + 24))(MEMORY[0x88730C], 0); /*0x690385*/
-    (*(void (__thiscall **)(IUnknown *, int, _DWORD, int))(MEMORY[0x88730C]->field_0 + 4))( /*0x69039a*/
-      MEMORY[0x88730C],
-      MEMORY[0x887310],
-      0,
-      1);
+    g_LoadScreenFlag = 0;
+    (*(void (__thiscall **)(IUnknown *, int))(g_DSurface_Hidden->field_0 + 24))(g_DSurface_Hidden, 0);
+    (*(void (__thiscall **)(IUnknown *, int, int, int))(g_DSurface_Hidden->field_0 + 4))( g_DSurface_Hidden, DSurface_Alternate, 0, 1);
   }
-  result = (int)this->field_2C; /*0x69039d*/
-  for ( i = 0; i < result; ++i ) /*0x6903a4*/
+    result = (int)this->field_2C;
+    for ( i = 0; i < result; ++i )
   {
-    v4 = *(_DWORD *)(*(_DWORD *)&this->__pad_18[8] + 4 * i); /*0x6903ad*/
-    if ( (*(unsigned __int8 (__thiscall **)(int, void *))(*(_DWORD *)v4 + 12))(v4, this->field_8) == 1 ) /*0x6903b7*/
+    v4 = *(int *)(*(int *)&this->__pad_18[8] + 4 * i);
+    if ( (*(unsigned char (__thiscall **)(int, void *))(*(int *)(v4) + 12))(v4, this->field_8) == 1 )
     {
-      v5 = *(void (__thiscall ****)(_DWORD, int))(*(_DWORD *)&this->__pad_18[8] + 4 * i); /*0x6903bc*/
-      if ( v5 ) /*0x6903c1*/
-        (**v5)(v5, 1); /*0x6903c7*/
-      v6 = (char *)this->field_2C; /*0x6903c9*/
-      if ( i < (int)v6 ) /*0x6903ce*/
+    v5 = *(void (__thiscall ****)(int, int))(*(int *)&this->__pad_18[8] + 4 * i);
+    if ( v5 )
+    (**v5)(v5, 1);
+    v6 = (char *)this->field_2C;
+    if ( i < (int)v6 )
       {
-        v7 = v6 - 1; /*0x6903d0*/
-        v8 = i; /*0x6903d3*/
-        for ( this->field_2C = v7; /*0x6903da*/
-              v8 < (int)this->field_2C;
-              *(_DWORD *)(*(_DWORD *)&this->__pad_18[8] + 4 * v8 - 4) = *(_DWORD *)(*(_DWORD *)&this->__pad_18[8]
-                                                                                  + 4 * v8) )
-        {
-          ++v8; /*0x6903df*/
+    v7 = v6 - 1;
+    v8 = i;
+    for ( this->field_2C = v7;
+    v8 < (int)this->field_2C;
+    *(int *)(*(int *)&this->__pad_18[8] + 4 * v8 - 4) = *(int *)(*(int *)&this->__pad_18[8] + 4 * v8) ) {
+    ++v8;
         }
       }
     }
-    result = (int)this->field_2C; /*0x6903ee*/
+    result = (int)this->field_2C;
   }
-  return result; /*0x6903f6*/
+    return result;
 }
 }

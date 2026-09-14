@@ -7,14 +7,12 @@
 namespace gamemd {
 unsigned int * MPCooperative::startGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MPCooperative::startGame(CampaignEndScoreClass *this)
 {
-  this->vfptr = &vt_CampaignEndScoreClass; /*0x470c04*/
-  unk_89E008 = -1; /*0x470c0a*/
-  unk_89E020 = 0; /*0x470c14*/
-  unk_89DFD4 = 0; /*0x470c1a*/
-  return &this->vfptr; /*0x470c20*/
+    this->vfptr = &vt_CampaignEndScoreClass;
+    DataGlobal_89E008 = -1;
+    DataGlobal_89E020 = 0;
+    DataGlobal_89DFD4 = 0;
+    return &this->vfptr;
 }
 }
 } // namespace gamemd

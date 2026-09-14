@@ -127,49 +127,39 @@ namespace ra2 {
 namespace game {
 int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ParasiteClass::LoadParasite(int *a0, AbstractClass *aP1)
 {
-  int result; // eax
-  int v3; // ebp
-  IUnknown *v4; // edx
-  int v5; // eax
-
-  result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)a0, aP1); /*0x6295bc*/
-  v3 = result; /*0x6295c1*/
-  if ( result >= 0 ) /*0x6295c5*/
+    int result;
+    int v3;
+    IUnknown *v4;
+    int v5;
+    result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)a0, aP1);
+    v3 = result;
+    if ( result >= 0 )
   {
-    if ( a0 ) /*0x6295cd*/
+    if ( a0 )
     {
-      AbstractClass::InitVtables(a0, (IUnknown *)&aP1); /*0x6295d6*/
-      v4 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x6295db*/
-      a0[13] = 0; /*0x6295e1*/
-      a0[11] = (int)v4; /*0x6295e8*/
-      a0[14] = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x6295f0*/
-      a0[16] = 0; /*0x6295f3*/
-      *a0 = (int)&ParasiteClass::`vftable'; /*0x6295fa*/
-      a0[1] = (int)&ParasiteClass::`vftable'; /*0x629600*/
-      a0[2] = (int)&ParasiteClass::`vftable'; /*0x629607*/
-      a0[3] = (int)&vt_ParasiteClass; /*0x62960e*/
+    AbstractClass::InitVtables(a0, (IUnknown *)&aP1);
+    v4 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
+    *((int*)(a0) + 13) = 0;
+    *((int*)(a0) + 11) = (int)v4;
+    *((int*)(a0) + 14) = *(int *)&HouseClass_Player.__pad_5568[23248];
+    *((int*)(a0) + 16) = 0;
+    *a0 = (int)(unsigned int)vt_ParasiteClass;
+    a0[1] = (unsigned int)vt_ParasiteClass;
+    a0[2] = (unsigned int)vt_ParasiteClass;
+    *((int*)(a0) + 3) = (int)&vt_ParasiteClass;
     }
-    if ( a0[17] /*0x629657*/
-      && (*(int *)&stru_B05488.__pad_579C[18852] < *(int *)&stru_B05488.__pad_579C[18844]
-       || (stru_B05488.__pad_579C[18849] || !*(_DWORD *)&stru_B05488.__pad_579C[18844])
-       && *(int *)&stru_B05488.__pad_579C[18856] > 0
-       && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[18836] + 8))(
-            &stru_B05488.__pad_579C[18836],
-            *(_DWORD *)&stru_B05488.__pad_579C[18844] + *(_DWORD *)&stru_B05488.__pad_579C[18856],
-            0)) )
+    if ( *((int*)(a0) + 17) && (*(int *)&DataGlobal_B05488.__pad_579C[18852] < *(int *)&DataGlobal_B05488.__pad_579C[18844] || (DataGlobal_B05488.__pad_579C[18849] || !*(int *)&DataGlobal_B05488.__pad_579C[18844]) && *(int *)&DataGlobal_B05488.__pad_579C[18856] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 8))( &DataGlobal_B05488.__pad_579C[18836], *(int *)&DataGlobal_B05488.__pad_579C[18844] + *(int *)&DataGlobal_B05488.__pad_579C[18856], 0)) )
     {
-      v5 = (*(_DWORD *)&stru_B05488.__pad_579C[18852])++; /*0x629664*/
-      *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[18840] + 4 * v5) = a0; /*0x629673*/
+    v5 = (*(int *)&DataGlobal_B05488.__pad_579C[18852])++;
+    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18840] + 4 * v5) = a0;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)(a0 + 9)); /*0x62967f*/
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)(a0 + 10)); /*0x62968d*/
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)(a0 + 17)); /*0x629698*/
-    return v3; /*0x62969e*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)(a0 + 9));
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)(a0 + 10));
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)(a0 + 17));
+    return v3;
   }
-  return result; /*0x6296a0*/
+    return result;
 }
 }
 } // namespace game

@@ -155,55 +155,49 @@ bool __stdcall JumpjetLocomotionClass::sub_6A3F50(int a1, int a2, int a3, int a4
 // 0x75C680
 HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HRESULT __stdcall WalkLocomotionClass::_vt05(int *a1, int *pStm)
 {
-  IStream *v2; // edi
-  int v3; // ebx
-  int v4; // eax
-  LPVOID *v5; // esi
-
-  v2 = (IStream *)pStm; /*0x75c687*/
-  v3 = SwizzleManager::SaveLoad(a1, pStm); /*0x75c692*/
-  if ( v3 < 0 ) /*0x75c696*/
-    return v3; /*0x75c696*/
-  if ( a1 ) /*0x75c69a*/
+    IStream *v2;
+    int v3;
+    int v4;
+    LPVOID *v5;
+    v2 = (IStream *)pStm;
+    v3 = SwizzleManager::SaveLoad(a1, pStm);
+    if ( v3 < 0 )
+    return v3;
+    if ( a1 )
   {
-    a1[14] = 0; /*0x75c69c*/
-    *a1 = (int)&WalkLocomotionClass::`vftable'; /*0x75c6a3*/
-    a1[1] = (int)&WalkLocomotionClass::`vftable'; /*0x75c6a9*/
-    a1[6] = (int)&vt_WalkLocomotionClass; /*0x75c6b0*/
+    *((int*)(a1) + 14) = 0;
+    *a1 = (int)(unsigned int)vt_WalkLocomotionClass;
+    a1[1] = (unsigned int)vt_WalkLocomotionClass;
+    *((int*)(a1) + 6) = (int)&vt_WalkLocomotionClass;
   }
-  v2->__pad_0->Read(v2, &pStm, 1, 0); /*0x75c6c3*/
-  if ( !(_BYTE)pStm ) /*0x75c6cc*/
-    return v3; /*0x75c6f8*/
-  v4 = a1[14]; /*0x75c6ce*/
-  v5 = (LPVOID *)(a1 + 14); /*0x75c6d1*/
-  if ( v4 ) /*0x75c6d6*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x75c6db*/
-  *v5 = 0; /*0x75c6e5*/
-  return OleLoadFromStream(v2, &IID_ILocomotion, v5); /*0x75c6f1*/
+    v2->__pad_0->Read(v2, &pStm, 1, 0);
+    if ( !(char)pStm )
+    return v3;
+    v4 = *((int*)(a1) + 14);
+    v5 = (LPVOID *)(a1 + 14);
+    if ( v4 )
+    (*(void (__stdcall **)(int))(*(int *)(v4) + 8))(v4);
+    *v5 = 0;
+    return OleLoadFromStream(v2, &IID_ILocomotion, v5);
 }
 }
 
 // 0x75CBE0
 WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-WalkLocomotionClass *__thiscall WalkLocomotionClass::ProcessMove(ILocomotion **this, char a2)
 {
-  ILocomotion *v3; // eax
-
-  *this = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbe3*/
-  *(this + 1) = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbe9*/
-  *(this + 6) = (ILocomotion *)&vt_WalkLocomotionClass; /*0x75cbf0*/
-  v3 = *(this + 14); /*0x75cbf7*/
-  if ( v3 ) /*0x75cbfc*/
-    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x75cc01*/
-  LocomotionClass::Construct(this); /*0x75cc06*/
-  if ( (a2 & 1) != 0 ) /*0x75cc10*/
-    __3_YAXPAX_Z(this); /*0x75cc13*/
-  return (WalkLocomotionClass *)this; /*0x75cc1d*/
+    ILocomotion *v3;
+    *(void**)this = (unsigned int)vt_WalkLocomotionClass;
+    *(this + 1) = (unsigned int)vt_WalkLocomotionClass;
+    *(this + 6) = (ILocomotion *)&vt_WalkLocomotionClass;
+    v3 = *(this + 14);
+    if ( v3 )
+    (*(void (__stdcall **)(ILocomotion *))(*(int *)(v3) + 8))(v3);
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (WalkLocomotionClass *)this;
 }
 }
 

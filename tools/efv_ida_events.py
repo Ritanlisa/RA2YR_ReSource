@@ -79,6 +79,8 @@ from efv_model import (
     call_virtual,
     read_global,
     write_global,
+    read_member_unresolved,
+    write_member_unresolved,
     RET,
 )
 
@@ -99,6 +101,11 @@ from efv_ida_cfg import build_ida_cfg
 import re as _re
 _IDA_VTABLE_INDIRECT = _re.compile(
     r'\(\*(?:[^();]|\([^()]*\))*?this[^();]*?\+\s*(\d+)\s*\)\s*\)\s*\(')
+
+# G11: til-named member access `this->Name` (live/v4 rendering carries IDA til
+# member names directly in the pseudocode). Method calls `this->Name(` are
+# excluded (the dispatch patterns own them).
+_IDA_THIS_NAMED = _re.compile(r'\bthis->(\w+)')
 
 # PROVEN leaf-extraction logic, imported verbatim from the original verifier.
 # `verify_execution_flow.py` is a REVERSE-pipeline protected file: imported,
@@ -171,7 +178,7 @@ def get_maps():
 # IDA leaf extractor (PORTED — builds events via efv_model builders)
 # ============================================================
 
-def make_ida_leaf(this_type, M):
+def make_ida_leaf(this_type, M, class_name=None):
     """Return `leaf(fragment_text) -> list[event_str]`.
 
     A faithful port of `verify_execution_flow.make_ida_leaf`: same regexes,
@@ -222,9 +229,37 @@ def make_ida_leaf(this_type, M):
             ev = write_member(off) if _is_write(text, m.end()) else read_member(off)
             hits.append((m.start(), m.end(), ev))
 
+        # --- G11: til-named member accesses `this->Name` ---
+        # Symmetric with the C++ side's _this_member_event: resolved name ->
+        # READ/WRITE(member,off); unresolved -> element-scoped wildcard (mirror
+        # exemption; both sides then carry identical wildcard events).
+        if class_name:
+            for m in _IDA_THIS_NAMED.finditer(text):
+                if text[m.end():m.end()+1] == '(':
+                    continue  # method call -> dispatch patterns own it
+                nm = m.group(1)
+                off = None
+                mn2o = getattr(M, 'member_name_to_off', None)
+                if mn2o is not None:
+                    off = (mn2o.get(class_name) or {}).get(nm)
+                if off is not None:
+                    ev = write_member(off) if _is_write(text, m.end()) else read_member(off)
+                else:
+                    ev = write_member_unresolved() if _is_write(text, m.end()) else read_member_unresolved()
+                hits.append((m.start(), m.end(), ev))
+
         # --- vtable dispatch `(*(*this + N))(...)` -> CALL(vfptr+N) ---
+        # G11: element-unit dispatch `(*(CAST)*this + N)(...)` — the cast types
+        # *this as a function-pointer table (4B elements), so +N is ELEMENT
+        # arithmetic (byte = 4N). Distinguisher: `*this` immediately preceded
+        # by a closed cast `)`. Bare operand form `((*this + N))` keeps the
+        # literal byte offset. Empirically: +18/+73/+110/+90 all land on real
+        # slot byte offsets only when scaled x4.
         for m in _IDA_VTABLE.finditer(text):
-            hits.append((m.start(), m.end(), call_virtual(int(m.group(1)))))
+            n = int(m.group(1))
+            if n % 4 != 0 and m.start() > 0 and text[m.start()-1] == ')':
+                n *= 4
+            hits.append((m.start(), m.end(), call_virtual(n)))
         # --- vtable dispatch via local var `(vN + N))(this)` -> CALL(vfptr+N) ---
         for m in _IDA_VTABLE_LOCAL.finditer(text):
             hits.append((m.start(), m.end(), call_virtual(int(m.group(2)))))
@@ -286,7 +321,7 @@ def make_ida_leaf(this_type, M):
 # CFG event extraction (the public entry point)
 # ============================================================
 
-def extract_events_into(cfg, this_type, maps=None):
+def extract_events_into(cfg, this_type, maps=None, class_name=None):
     """Replace every block's RAW pseudocode `ordered_events` (placeholders from
     T7) with the extracted CANONICAL events, in source order, IN PLACE.
 
@@ -302,7 +337,7 @@ def extract_events_into(cfg, this_type, maps=None):
     """
     if maps is None:
         maps = get_maps()
-    leaf = make_ida_leaf(this_type, maps)
+    leaf = make_ida_leaf(this_type, maps, class_name=class_name)
     for block in cfg:
         events = []
         for fragment in block.ordered_events:

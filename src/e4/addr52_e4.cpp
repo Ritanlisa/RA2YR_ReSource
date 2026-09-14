@@ -754,50 +754,47 @@ char __thiscall sub_52A610(char *this, void *a2)
 namespace gamemd {
 void E4Recv_52AAF0::sub_52AAF0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_52AAF0(INIEntry_INIClass *this)
 {
-  CCINIClass *v2; // eax
-  int v3; // eax
-  int v4; // edi
-  int v5; // ecx
-  int v6; // eax
-  void *v7; // [esp-8h] [ebp-10h]
-
-  v2 = (CCINIClass *)this->field_C; /*0x52aaf4*/
-  *(_DWORD *)this->__pad_0 = &vt_INIClass_INIEntry; /*0x52aaf7*/
-  free(v2); /*0x52aafe*/
-  v7 = (void *)this->field_10; /*0x52ab08*/
-  this->field_C = 0; /*0x52ab09*/
-  free(v7); /*0x52ab0c*/
-  v3 = *(_DWORD *)this->__pad_14; /*0x52ab11*/
-  this->field_10 = 0; /*0x52ab19*/
-  if ( v3 ) /*0x52ab1c*/
+    CCINIClass *v2;
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    void *v7;
+    v2 = (CCINIClass *)this->field_C;
+    *(int *)this->__pad_0 = &vt_INIClass_INIEntry;
+    free(v2);
+    v7 = (void *)this->field_10;
+    this->field_C = 0;
+    free(v7);
+    v3 = *(int *)this->__pad_14;
+    this->field_10 = 0;
+    if ( v3 )
   {
-    do /*0x52ab40*/
+    do
     {
-      free(**(void ***)this->__pad_14); /*0x52ab25*/
-      v4 = *(_DWORD *)(*(_DWORD *)this->__pad_14 + 4); /*0x52ab2f*/
-      __3_YAXPAX_Z(*(void **)this->__pad_14); /*0x52ab33*/
-      *(_DWORD *)this->__pad_14 = v4; /*0x52ab3d*/
+    free(**(void ***)this->__pad_14);
+    v4 = *(int *)(*(int *)this->__pad_14 + 4);
+    __3_YAXPAX_Z(*(void **)this->__pad_14);
+    *(int *)this->__pad_14 = v4;
     }
-    while ( v4 ); /*0x52ab40*/
+    while ( v4 );
   }
-  free((void *)this->field_18); /*0x52ab47*/
-  this->field_18 = 0; /*0x52ab51*/
-  *(_DWORD *)this->__pad_0 = &vt_GenericNode; /*0x52ab54*/
-  if ( this ) /*0x52ab5a*/
+    free((void *)this->field_18);
+    this->field_18 = 0;
+    *(int *)this->__pad_0 = &vt_GenericNode;
+    if ( this )
   {
-    v5 = *(_DWORD *)&this->__pad_0[4]; /*0x52ab5c*/
-    if ( v5 ) /*0x52ab61*/
+    v5 = *(int *)&this->__pad_0[4];
+    if ( v5 )
     {
-      v6 = *(_DWORD *)&this->__pad_0[8]; /*0x52ab63*/
-      if ( v6 ) /*0x52ab68*/
+    v6 = *(int *)&this->__pad_0[8];
+    if ( v6 )
       {
-        *(_DWORD *)(v6 + 4) = v5; /*0x52ab6a*/
-        *(_DWORD *)(*(_DWORD *)&this->__pad_0[4] + 8) = *(_DWORD *)&this->__pad_0[8]; /*0x52ab73*/
-        *(_DWORD *)&this->__pad_0[8] = 0; /*0x52ab76*/
-        *(_DWORD *)&this->__pad_0[4] = 0; /*0x52ab79*/
+    *(int *)(v6 + 4) = v5;
+    *(int *)(*(int *)&this->__pad_0[4] + 8) = *(int *)&this->__pad_0[8];
+    *(int *)&this->__pad_0[8] = 0;
+    *(int *)&this->__pad_0[4] = 0;
       }
     }
   }

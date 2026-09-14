@@ -37,27 +37,24 @@ int __thiscall RocketLocomotionClass::RocketLocomotionClass(int this)
 // 0x663410
 int RocketLocomotionClass::BeginMove(int * a1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall RocketLocomotionClass::_vt05(int *a1, int *a2)
 {
-  int result; // eax
-  wchar_t *v3; // ecx
-
-  result = SwizzleManager::SaveLoad(a1, a2); /*0x66341b*/
-  if ( result >= 0 ) /*0x663422*/
+    int result;
+    wchar_t *v3;
+    result = SwizzleManager::SaveLoad(a1, a2);
+    if ( result >= 0 )
   {
-    if ( a1 ) /*0x663426*/
+    if ( a1 )
     {
-      *a1 = (int)&LocomotionClass::`vftable'; /*0x663428*/
-      a1[1] = (int)&vt_LocomotionClass; /*0x66342e*/
-      v3 = MEMORY[0xA8ED84]; /*0x663435*/
-      a1[15] = 0; /*0x66343b*/
-      a1[13] = (int)v3; /*0x663442*/
-      *a1 = (int)&RocketLocomotionClass::`vftable'; /*0x663445*/
-      a1[1] = (int)&vt_RocketLocomotionClass; /*0x66344b*/
+    *a1 = (int)(unsigned int)vt_LocomotionClass;
+    *((int*)(a1) + 1) = (int)&vt_LocomotionClass;
+    v3 = g_CurrentFrame;
+    *((int*)(a1) + 15) = 0;
+    *((int*)(a1) + 13) = (int)v3;
+    *a1 = (int)(unsigned int)vt_RocketLocomotionClass;
+    *((int*)(a1) + 1) = (int)&vt_RocketLocomotionClass;
     }
   }
-  return result; /*0x663452*/
+    return result;
 }
 }
 

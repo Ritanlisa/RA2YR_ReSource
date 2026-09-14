@@ -243,29 +243,24 @@ int __thiscall TagClass::_vt13(int this, int *a2)
 namespace gamemd {
 int TagClass::LoadTag(AbstractClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TagClass::LoadTag(AbstractClass *aP0, int aP1)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x6e573b*/
-  if ( result >= 0 ) /*0x6e5742*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( result >= 0 )
   {
-    if ( aP0 ) /*0x6e5746*/
+    if ( aP0 )
     {
-      AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x6e574f*/
-      *(_DWORD *)aP0->__pad_0 = &TagClass::`vftable'; /*0x6e5754*/
-      *(_DWORD *)&aP0->__pad_0[4] = &TagClass::`vftable'; /*0x6e575a*/
-      *(_DWORD *)&aP0->__pad_0[8] = &TagClass::`vftable'; /*0x6e5761*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_TagClass; /*0x6e5768*/
+    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_TagClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TagClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TagClass;
+    *(int *)&aP0->__pad_0[12] = &vt_TagClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x6e5778*/
-    ObjectPtr::RegisterForTracking( /*0x6e5786*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].__pad_0[4]);
-    return 0; /*0x6e578b*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
+    return 0;
   }
-  return result; /*0x6e578d*/
+    return result;
 }
 }
 } // namespace gamemd

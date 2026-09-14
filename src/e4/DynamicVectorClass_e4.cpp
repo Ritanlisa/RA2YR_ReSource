@@ -189,15 +189,11 @@ BOOL __thiscall sub_517590(_BYTE *this, _BYTE *a2)
 namespace gamemd {
 unsigned int * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor(
-        DialogControl_OwnerDraw *this,
-        char a2)
 {
-  this->vfptr = &vt_OwnerDraw_DialogControl; /*0x6244a9*/
-  if ( (a2 & 1) != 0 ) /*0x6244af*/
-    __3_YAXPAX_Z(this); /*0x6244b2*/
-  return &this->vfptr; /*0x6244bc*/
+    this->vfptr = &vt_OwnerDraw_DialogControl;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
 }
 }
 } // namespace gamemd
@@ -206,15 +202,11 @@ _DWORD *__thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::De
 namespace gamemd {
 unsigned int * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_0(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_0(
-        DialogControl_OwnerDraw *this,
-        char a2)
 {
-  this->vfptr = &vt_OwnerDraw_DialogControl; /*0x6244c9*/
-  if ( (a2 & 1) != 0 ) /*0x6244cf*/
-    __3_YAXPAX_Z(this); /*0x6244d2*/
-  return &this->vfptr; /*0x6244dc*/
+    this->vfptr = &vt_OwnerDraw_DialogControl;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
 }
 }
 } // namespace gamemd

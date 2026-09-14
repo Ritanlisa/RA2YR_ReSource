@@ -5,21 +5,18 @@
 // 0x5170B0
 int HoverLocomotionClass::BeginMove(int a1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall HoverLocomotionClass::_vt05(int a1, int *a2)
 {
-  int v2; // edi
-
-  v2 = SwizzleManager::SaveLoad((int *)a1, a2); /*0x5170c1*/
-  if ( v2 >= 0 && a1 ) /*0x5170c9*/
+    int v2;
+    v2 = SwizzleManager::SaveLoad((int *)a1, a2);
+    if ( v2 >= 0 && a1 )
   {
-    *(_DWORD *)a1 = &LocomotionClass::`vftable'; /*0x5170ce*/
-    *(_DWORD *)(a1 + 4) = &vt_LocomotionClass; /*0x5170d4*/
-    FrameSnapshot::Init((_WORD *)(a1 + 48)); /*0x5170db*/
-    *(_DWORD *)a1 = &HoverLocomotionClass::`vftable'; /*0x5170e0*/
-    *(_DWORD *)(a1 + 4) = &vt_HoverLocomotionClass; /*0x5170e6*/
+    *(int *)a1 = (unsigned int)vt_LocomotionClass;
+    *(int *)(a1 + 4) = &vt_LocomotionClass;
+    FrameSnapshot::Init((short *)(a1 + 48));
+    *(int *)a1 = (unsigned int)vt_HoverLocomotionClass;
+    *(int *)(a1 + 4) = &vt_HoverLocomotionClass;
   }
-  return v2; /*0x5170ef*/
+    return v2;
 }
 }
 

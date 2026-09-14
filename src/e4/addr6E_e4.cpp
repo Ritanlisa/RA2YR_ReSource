@@ -229,54 +229,51 @@ char __stdcall sub_6E4090(int a1, int a2, int a3, int a4)
 namespace gamemd {
 unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_6E8000(_DWORD *this, int a2)
 {
-  _DWORD *result; // eax
-  _DWORD *v3; // ecx
-  int v4; // edi
-  int v5; // esi
-  int v6; // edx
-
-  result = this; /*0x6e8004*/
-  *(this + 2) = &vt_INoticeSink; /*0x6e8008*/
-  *(this + 3) = &vt_INoticeSource; /*0x6e800f*/
-  *(this + 4) = *(_DWORD *)(a2 + 16); /*0x6e801c*/
-  *((_BYTE *)this + 20) = *(_BYTE *)(a2 + 20); /*0x6e8022*/
-  *(this + 6) = *(_DWORD *)(a2 + 24); /*0x6e8028*/
-  *(this + 7) = *(_DWORD *)(a2 + 28); /*0x6e802e*/
-  *((_BYTE *)this + 32) = *(_BYTE *)(a2 + 32); /*0x6e8034*/
-  *this = &AbstractClass::`vftable'; /*0x6e803f*/
-  *(this + 1) = &AbstractClass::`vftable'; /*0x6e8045*/
-  *(this + 2) = &AbstractClass::`vftable'; /*0x6e804c*/
-  *(this + 3) = &vt_AbstractClass; /*0x6e8053*/
-  qmemcpy(this + 9, (const void *)(a2 + 36), 0x19u); /*0x6e805a*/
-  qmemcpy((char *)this + 61, (const void *)(a2 + 61), 0x20u); /*0x6e8068*/
-  *(this + 24) = *(_DWORD *)(a2 + 96); /*0x6e8070*/
-  qmemcpy(this + 25, (const void *)(a2 + 100), 0x31u); /*0x6e807b*/
-  *this = &TaskForceClass::`vftable'; /*0x6e807e*/
-  *(this + 1) = &TaskForceClass::`vftable'; /*0x6e8084*/
-  *(this + 2) = &TaskForceClass::`vftable'; /*0x6e808b*/
-  *(this + 3) = &vt_TaskForceClass; /*0x6e8092*/
-  v3 = this + 41; /*0x6e809f*/
-  result[38] = *(_DWORD *)(a2 + 152); /*0x6e80a5*/
-  result[39] = *(_DWORD *)(a2 + 156); /*0x6e80b1*/
-  v4 = result[39]; /*0x6e80bd*/
-  result[40] = *(_DWORD *)(a2 + 160); /*0x6e80c3*/
-  v5 = 0; /*0x6e80c9*/
-  if ( v4 > 0 ) /*0x6e80cd*/
+    int *result;
+    int *v3;
+    int v4;
+    int v5;
+    int v6;
+    result = this;
+    this->M8 = &vt_INoticeSink;
+    this->M12 = &vt_INoticeSource;
+    this->M16 = *(int *)(a2 + 16);
+    this->M20 = *(char *)(a2 + 20);
+    this->M24 = *(int *)(a2 + 24);
+    this->M28 = *(int *)(a2 + 28);
+    this->M32 = *(char *)(a2 + 32);
+    *(void**)this = vt_AbstractClass;
+    this->M4 = (unsigned int)vt_AbstractClass;
+    this->M8 = (unsigned int)vt_AbstractClass;
+    this->M12 = &vt_AbstractClass;
+    qmemcpy(this + 9, (const void *)(a2 + 36), 0x19u);
+    qmemcpy((char *)(this) + 61, (const void *)(a2 + 61), 0x20u);
+    this->M96 = *(int *)(a2 + 96);
+    qmemcpy(this + 25, (const void *)(a2 + 100), 0x31u);
+    *(void**)this = vt_TaskForceClass;
+    this->M4 = (unsigned int)vt_TaskForceClass;
+    this->M8 = (unsigned int)vt_TaskForceClass;
+    this->M12 = &vt_TaskForceClass;
+    v3 = this + 41;
+    result[38] = *(int *)(a2 + 152);
+    result[39] = *(int *)(a2 + 156);
+    v4 = result[39];
+    result[40] = *(int *)(a2 + 160);
+    v5 = 0;
+    if ( v4 > 0 )
   {
-    v6 = a2 - (_DWORD)result; /*0x6e80cf*/
-    do /*0x6e80e9*/
+    v6 = a2 - (int)result;
+    do
     {
-      ++v5; /*0x6e80d4*/
-      *v3 = *(_DWORD *)((char *)v3 + v6); /*0x6e80d5*/
-      v3[1] = *(_DWORD *)((char *)v3 + v6 + 4); /*0x6e80db*/
-      v3 += 2; /*0x6e80e4*/
+    ++v5;
+    *v3 = *(int *)((char *)(v3) + v6);
+    v3[1] = *(int *)((char *)(v3) + v6 + 4);
+    v3 += 2;
     }
-    while ( v5 < result[39] ); /*0x6e80e9*/
+    while ( v5 < result[39] );
   }
-  return result; /*0x6e80eb*/
+    return result;
 }
 }
 } // namespace gamemd

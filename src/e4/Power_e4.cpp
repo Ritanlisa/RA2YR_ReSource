@@ -20,43 +20,41 @@ int __thiscall Power_Update(_DWORD *this, int *a2)
 namespace gamemd {
 int Power::FinalizeDrain(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Power::FinalizeDrain(AbstractClass *this, int a2)
 {
-  int v2; // eax
-  int result; // eax
-  unsigned int i; // eax
-  int *v5; // esi
-  unsigned int v6; // eax
-  int v7; // edi
-
-  v2 = *(_DWORD *)&this->__pad_0[4]; /*0x4a1c10*/
-  if ( !v2 ) /*0x4a1c15*/
-    *(_DWORD *)&this->__pad_0[8] = 0; /*0x4a1c17*/
-  this->__pad_0[v2 + 8] = a2; /*0x4a1c1f*/
-  result = *(_DWORD *)&this->__pad_0[4] + 1; /*0x4a1c27*/
-  *(_DWORD *)&this->__pad_0[4] = result; /*0x4a1c29*/
-  if ( result == 4 ) /*0x4a1c2f*/
+    int v2;
+    int result;
+    unsigned int i;
+    int *v5;
+    unsigned int v6;
+    int v7;
+    v2 = *(int *)&this->__pad_0[4];
+    if ( !v2 )
+    *(int *)&this->__pad_0[8] = 0;
+    this->__pad_0[v2 + 8] = a2;
+    result = *(int *)&this->__pad_0[4] + 1;
+    *(int *)&this->__pad_0[4] = result;
+    if ( result == 4 )
   {
-    this->__pad_0[12] = this->__pad_0[4]; /*0x4a1c34*/
-    for ( i = *(_DWORD *)&this->__pad_0[4] + 1; i < 4; ++i ) /*0x4a1c3d*/
-      this->__pad_0[i + 8] = this->__pad_0[8]; /*0x4a1c42*/
-    a2 = *(_DWORD *)&this->__pad_0[8]; /*0x4a1c50*/
-    v5 = &a2; /*0x4a1c57*/
-    v6 = ~*(_DWORD *)this->__pad_0; /*0x4a1c5b*/
-    v7 = 4; /*0x4a1c5d*/
-    do /*0x4a1c7e*/
+    this->__pad_0[12] = this->__pad_0[4];
+    i = *(int *)&this->__pad_0[4] + 1;
+    for ( ; i < 4; ++i )
+    this->__pad_0[i + 8] = this->__pad_0[8];
+    a2 = *(int *)&this->__pad_0[8];
+    v5 = &a2;
+    v6 = ~*(int *)this->__pad_0;
+    v7 = 4;
+    do
     {
-      v6 = CRC32_Table[*(unsigned __int8 *)v5 ^ (unsigned __int8)v6] ^ (v6 >> 8); /*0x4a1c7a*/
-      v5 = (int *)((char *)v5 + 1); /*0x4a1c7c*/
-      --v7; /*0x4a1c7d*/
+    v6 = CRC32_Table[*(unsigned char *)v5 ^ (unsigned char)v6] ^ (v6 >> 8);
+    v5 = (int *)((char *)(v5) + 1);
+    --v7;
     }
-    while ( v7 ); /*0x4a1c7e*/
-    result = ~v6; /*0x4a1c80*/
-    *(_DWORD *)this->__pad_0 = result; /*0x4a1c83*/
-    *(_DWORD *)&this->__pad_0[4] = 0; /*0x4a1c85*/
+    while ( v7 );
+    result = ~v6;
+    *(int *)this->__pad_0 = result;
+    *(int *)&this->__pad_0[4] = 0;
   }
-  return result; /*0x4a1c8e*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -65,43 +63,41 @@ int __thiscall Power::FinalizeDrain(AbstractClass *this, int a2)
 namespace gamemd {
 int Power::FlagProcess(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Power::FlagProcess(AbstractClass *this, int a2)
 {
-  int v2; // eax
-  int result; // eax
-  unsigned int i; // eax
-  int *v5; // esi
-  unsigned int v6; // eax
-  int v7; // edi
-
-  v2 = *(_DWORD *)&this->__pad_0[4]; /*0x4a1ca0*/
-  if ( !v2 ) /*0x4a1ca7*/
-    *(_DWORD *)&this->__pad_0[8] = 0; /*0x4a1ca9*/
-  this->__pad_0[v2 + 8] = (_BYTE)a2 != 0; /*0x4a1cb7*/
-  result = *(_DWORD *)&this->__pad_0[4] + 1; /*0x4a1cbf*/
-  *(_DWORD *)&this->__pad_0[4] = result; /*0x4a1cc1*/
-  if ( result == 4 ) /*0x4a1cc7*/
+    int v2;
+    int result;
+    unsigned int i;
+    int *v5;
+    unsigned int v6;
+    int v7;
+    v2 = *(int *)&this->__pad_0[4];
+    if ( !v2 )
+    *(int *)&this->__pad_0[8] = 0;
+    this->__pad_0[v2 + 8] = (char)a2 != 0;
+    result = *(int *)&this->__pad_0[4] + 1;
+    *(int *)&this->__pad_0[4] = result;
+    if ( result == 4 )
   {
-    this->__pad_0[12] = this->__pad_0[4]; /*0x4a1ccc*/
-    for ( i = *(_DWORD *)&this->__pad_0[4] + 1; i < 4; ++i ) /*0x4a1cd5*/
-      this->__pad_0[i + 8] = this->__pad_0[8]; /*0x4a1cda*/
-    a2 = *(_DWORD *)&this->__pad_0[8]; /*0x4a1ce8*/
-    v5 = &a2; /*0x4a1cef*/
-    v6 = ~*(_DWORD *)this->__pad_0; /*0x4a1cf3*/
-    v7 = 4; /*0x4a1cf5*/
-    do /*0x4a1d16*/
+    this->__pad_0[12] = this->__pad_0[4];
+    i = *(int *)&this->__pad_0[4] + 1;
+    for ( ; i < 4; ++i )
+    this->__pad_0[i + 8] = this->__pad_0[8];
+    a2 = *(int *)&this->__pad_0[8];
+    v5 = &a2;
+    v6 = ~*(int *)this->__pad_0;
+    v7 = 4;
+    do
     {
-      v6 = CRC32_Table[*(unsigned __int8 *)v5 ^ (unsigned __int8)v6] ^ (v6 >> 8); /*0x4a1d12*/
-      v5 = (int *)((char *)v5 + 1); /*0x4a1d14*/
-      --v7; /*0x4a1d15*/
+    v6 = CRC32_Table[*(unsigned char *)v5 ^ (unsigned char)v6] ^ (v6 >> 8);
+    v5 = (int *)((char *)(v5) + 1);
+    --v7;
     }
-    while ( v7 ); /*0x4a1d16*/
-    result = ~v6; /*0x4a1d18*/
-    *(_DWORD *)this->__pad_0 = result; /*0x4a1d1b*/
-    *(_DWORD *)&this->__pad_0[4] = 0; /*0x4a1d1d*/
+    while ( v7 );
+    result = ~v6;
+    *(int *)this->__pad_0 = result;
+    *(int *)&this->__pad_0[4] = 0;
   }
-  return result; /*0x4a1d23*/
+    return result;
 }
 }
 } // namespace gamemd

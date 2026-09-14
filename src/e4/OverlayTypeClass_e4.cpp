@@ -354,32 +354,29 @@ void *__thiscall sub_5FEDE0(int this)
 // 0x5FEF30
 OverlayTypeClass * OverlayTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-OverlayTypeClass *__thiscall OverlayTypeClass::ddtor(void **this, char a2)
 {
-  int v3; // eax
-  void **v5; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &OverlayTypeClass::`vftable'; /*0x5fef36*/
-  *(this + 1) = &OverlayTypeClass::`vftable'; /*0x5fef3c*/
-  *(this + 2) = &OverlayTypeClass::`vftable'; /*0x5fef43*/
-  *(this + 3) = &vt_OverlayTypeClass; /*0x5fef4a*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x5fef51*/
-  v5 = this; /*0x5fef66*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA83D80] + 16))(&MEMORY[0xA83D80], &v5); /*0x5fef6a*/
-  if ( v3 != -1 && v3 < MEMORY[0xA83D90] && v3 < --MEMORY[0xA83D90] ) /*0x5fef85*/
+    int v3;
+    void **v5;
+    *(void**)this = vt_OverlayTypeClass;
+    *(this + 1) = (unsigned int)vt_OverlayTypeClass;
+    *(this + 2) = (unsigned int)vt_OverlayTypeClass;
+    *(this + 3) = &vt_OverlayTypeClass;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    v5 = this;
+    v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_A83D80 + 16))(&DataGlobal_A83D80, &v5);
+    if ( v3 != -1 && v3 < g_ObjectTypeConfig && v3 < --g_ObjectTypeConfig )
   {
-    do /*0x5fef9d*/
+    do
     {
-      ++v3; /*0x5fef8d*/
-      *(_DWORD *)&MEMORY[0xA83D84]->vtable0[4 * v3 - 4] = *(_DWORD *)&MEMORY[0xA83D84]->vtable0[4 * v3]; /*0x5fef91*/
+    ++v3;
+    *(int *)&g_BuildingTypeClass_Array->vtable0[4 * v3 - 4] = *(int *)&g_BuildingTypeClass_Array->vtable0[4 * v3];
     }
-    while ( v3 < MEMORY[0xA83D90] ); /*0x5fef9d*/
+    while ( v3 < g_ObjectTypeConfig );
   }
-  ObjectTypeClass::Destruct((int)this); /*0x5fefa1*/
-  if ( (a2 & 1) != 0 ) /*0x5fefab*/
-    __3_YAXPAX_Z(this); /*0x5fefae*/
-  return (OverlayTypeClass *)this; /*0x5fefb8*/
+    ObjectTypeClass::Destruct((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (OverlayTypeClass *)this;
 }
 }
 

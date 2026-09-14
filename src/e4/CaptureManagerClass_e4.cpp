@@ -980,41 +980,38 @@ namespace ra2 {
 namespace game {
 CaptureManagerClass * CaptureManagerClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-CaptureManagerClass *__thiscall CaptureManagerClass::ddtor(_DWORD *this, char a2)
 {
-  int v3; // eax
-  void *v4; // eax
-  _DWORD *v6; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &CaptureManagerClass::`vftable'; /*0x4729cd*/
-  *(this + 1) = &CaptureManagerClass::`vftable'; /*0x4729d3*/
-  *(this + 2) = &CaptureManagerClass::`vftable'; /*0x4729da*/
-  *(this + 3) = &vt_CaptureManagerClass; /*0x4729e1*/
-  v6 = this; /*0x4729ef*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_89E0F0 + 16))(&dword_89E0F0, &v6); /*0x4729f3*/
-  if ( v3 != -1 && v3 < dword_89E100 && v3 < --dword_89E100 ) /*0x472a0e*/
+    int v3;
+    void *v4;
+    int *v6;
+    *(void**)this = vt_CaptureManagerClass;
+    *(this + 1) = (unsigned int)vt_CaptureManagerClass;
+    *(this + 2) = (unsigned int)vt_CaptureManagerClass;
+    *(this + 3) = &vt_CaptureManagerClass;
+    v6 = this;
+    v3 = (*(int (__thiscall **)(int *, int **))(DataGlobal_89E0F0 + 16))(&DataGlobal_89E0F0, &v6);
+    if ( v3 != -1 && v3 < DataGlobal_89E100 && v3 < --DataGlobal_89E100 )
   {
-    do /*0x472a26*/
+    do
     {
-      ++v3; /*0x472a16*/
-      *((_DWORD *)unk_89E0F4 + v3 - 1) = *((_DWORD *)unk_89E0F4 + v3); /*0x472a1a*/
+    ++v3;
+    *((int *)(DataGlobal_89E0F4) + v3 - 1) = *((int *)(DataGlobal_89E0F4) + v3);
     }
-    while ( v3 < dword_89E100 ); /*0x472a26*/
+    while ( v3 < DataGlobal_89E100 );
   }
-  v4 = (void *)*(this + 10); /*0x472a28*/
-  *(this + 9) = &vt_VectorClass_ControlNode; /*0x472a2b*/
-  if ( v4 && *((_BYTE *)this + 49) ) /*0x472a36*/
+    v4 = (void *)*(this + 10);
+    *(this + 9) = &vt_VectorClass_ControlNode;
+    if ( v4 && *((char *)(this) + 49) )
   {
-    __3_YAXPAX_Z(v4); /*0x472a3e*/
-    *(this + 10) = 0; /*0x472a46*/
+    __3_YAXPAX_Z(v4);
+    *(this + 10) = 0;
   }
-  *((_BYTE *)this + 49) = 0; /*0x472a4f*/
-  *(this + 11) = 0; /*0x472a53*/
-  AbstractClass::DTOR(this); /*0x472a5a*/
-  if ( (a2 & 1) != 0 ) /*0x472a64*/
-    __3_YAXPAX_Z(this); /*0x472a67*/
-  return (CaptureManagerClass *)this; /*0x472a71*/
+    *((char *)(this) + 49) = 0;
+    *(this + 11) = 0;
+    AbstractClass::DTOR(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (CaptureManagerClass *)this;
 }
 }
 } // namespace game

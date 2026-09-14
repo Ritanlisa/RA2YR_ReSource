@@ -149,32 +149,25 @@ LABEL_16:
 namespace gamemd {
 int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TriggerClass::LoadTrigger(AbstractClass *aP0, int aP1)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x72686b*/
-  if ( result >= 0 ) /*0x726872*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( result >= 0 )
   {
-    if ( aP0 ) /*0x726876*/
+    if ( aP0 )
     {
-      AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x72687f*/
-      *(_DWORD *)aP0->__pad_0 = &TriggerClass::`vftable'; /*0x726884*/
-      *(_DWORD *)&aP0->__pad_0[4] = &TriggerClass::`vftable'; /*0x72688a*/
-      *(_DWORD *)&aP0->__pad_0[8] = &TriggerClass::`vftable'; /*0x726891*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_TriggerClass; /*0x726898*/
+    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_TriggerClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TriggerClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TriggerClass;
+    *(int *)&aP0->__pad_0[12] = &vt_TriggerClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x7268a8*/
-    ObjectPtr::RegisterForTracking( /*0x7268b6*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( /*0x7268c4*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].__pad_0[8]);
-    return 0; /*0x7268c9*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
+    return 0;
   }
-  return result; /*0x7268cb*/
+    return result;
 }
 }
 } // namespace gamemd

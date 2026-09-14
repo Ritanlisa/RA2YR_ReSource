@@ -40,31 +40,24 @@ int __thiscall DiskLaserClass::DiskLaserClass(int this)
 // 0x4A7B90
 int DiskLaserClass::Write(AbstractClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall DiskLaserClass::Write(AbstractClass *aP0, int aP1)
 {
-  AbstractClass *Prefix_0; // edi
-
-  Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x4a7ba1*/
-  if ( (int)Prefix_0 >= 0 ) /*0x4a7ba5*/
+    AbstractClass *Prefix_0;
+    Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( (int)Prefix_0 >= 0 )
   {
-    if ( aP0 ) /*0x4a7ba9*/
+    if ( aP0 )
     {
-      AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x4a7bb2*/
-      *(_DWORD *)aP0->__pad_0 = &DiskLaserClass::`vftable'; /*0x4a7bb7*/
-      *(_DWORD *)&aP0->__pad_0[4] = &DiskLaserClass::`vftable'; /*0x4a7bbd*/
-      *(_DWORD *)&aP0->__pad_0[8] = &DiskLaserClass::`vftable'; /*0x4a7bc4*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_DiskLaserClass; /*0x4a7bcb*/
+    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_DiskLaserClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_DiskLaserClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_DiskLaserClass;
+    *(int *)&aP0->__pad_0[12] = &vt_DiskLaserClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x4a7bdb*/
-    ObjectPtr::RegisterForTracking( /*0x4a7be9*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( /*0x4a7bf7*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].__pad_0[8]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
   }
-  return (int)Prefix_0->__pad_0; /*0x4a7bfe*/
+    return (int)Prefix_0->__pad_0;
 }
 }
 

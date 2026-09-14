@@ -41,21 +41,18 @@ int __thiscall FlyLocomotionClass::LocomotionClass(int this)
 // 0x4CFCC0
 int FlyLocomotionClass::BeginMove(int * a1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall FlyLocomotionClass::_vt05(int *a1, int *a2)
 {
-  int result; // eax
-
-  result = SwizzleManager::SaveLoad(a1, a2); /*0x4cfccb*/
-  if ( result >= 0 ) /*0x4cfcd2*/
+    int result;
+    result = SwizzleManager::SaveLoad(a1, a2);
+    if ( result >= 0 )
   {
-    if ( a1 ) /*0x4cfcd6*/
+    if ( a1 )
     {
-      *a1 = (int)&FlyLocomotionClass::`vftable'; /*0x4cfcd8*/
-      a1[1] = (int)&vt_FlyLocomotionClass; /*0x4cfcde*/
+    *a1 = (int)(unsigned int)vt_FlyLocomotionClass;
+    *((int*)(a1) + 1) = (int)&vt_FlyLocomotionClass;
     }
   }
-  return result; /*0x4cfce5*/
+    return result;
 }
 }
 

@@ -16,25 +16,22 @@
 namespace gamemd {
 void sub_40D1B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_40D1B0()
 {
-  int *v0; // esi
-  int v1; // edi
-
-  MEMORY[0x87F7E8].field_0 = (struct IUnknownVtbl *)&MouseClass::`vftable'; /*0x40d1b2*/
-  MEMORY[0x884D00] = (int)&vt_MouseClass; /*0x40d1bc*/
-  v0 = &MEMORY[0x884B84]; /*0x40d1c6*/
-  v1 = 4; /*0x40d1cb*/
-  do /*0x40d1f0*/
+    int *v0;
+    int v1;
+    DataGlobal_87F7E8.field_0 = (struct IUnknownVtbl *)(unsigned int)vt_MouseClass;
+    DataGlobal_884D00 = (int)&vt_MouseClass;
+    v0 = &DataGlobal_884B84;
+    v1 = 4;
+    do
   {
-    v0 -= 997; /*0x40d1d0*/
-    Array::ForEachReverse((int)(v0 + 20), 52, 75, (int (__thiscall *)(int))nullsub_56); /*0x40d1e3*/
-    nullsub_57(v0); /*0x40d1ea*/
-    --v1; /*0x40d1ef*/
+    v0 -= 997;
+    Array::ForEachReverse((int)(v0 + 20), 52, 75, (int (__thiscall *)(int))nullsub_56);
+    nullsub_57(v0);
+    --v1;
   }
-  while ( v1 ); /*0x40d1f0*/
-  RadarClass::Destruct(&MEMORY[0x87F7E8]); /*0x40d1f7*/
+    while ( v1 );
+    RadarClass::Destruct(&DataGlobal_87F7E8);
 }
 }
 } // namespace gamemd

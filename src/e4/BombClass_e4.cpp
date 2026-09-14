@@ -125,33 +125,26 @@ namespace ra2 {
 namespace game {
 int BombClass::Write(AbstractClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall BombClass::Write(AbstractClass *aP0, int aP1)
 {
-  AbstractClass *Prefix_0; // edi
-
-  Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x438b51*/
-  if ( (int)Prefix_0 >= 0 ) /*0x438b55*/
+    AbstractClass *Prefix_0;
+    Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( (int)Prefix_0 >= 0 )
   {
-    if ( aP0 ) /*0x438b59*/
+    if ( aP0 )
     {
-      AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x438b62*/
-      *(_DWORD *)aP0->__pad_0 = &BombClass::`vftable'; /*0x438b67*/
-      *(_DWORD *)&aP0->__pad_0[4] = &BombClass::`vftable'; /*0x438b6d*/
-      *(_DWORD *)&aP0->__pad_0[8] = &BombClass::`vftable'; /*0x438b74*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_BombClass; /*0x438b7b*/
+    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_BombClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_BombClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_BombClass;
+    *(int *)&aP0->__pad_0[12] = &vt_BombClass;
     }
-    AudioController::Init(&aP0[1].nextArrayIndex); /*0x438b85*/
-    *(_DWORD *)&aP0[2].__pad_0[12] = 0; /*0x438b8d*/
-    ObjectPtr::RegisterForTracking( /*0x438b9a*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x438ba8*/
-    ObjectPtr::RegisterForTracking( /*0x438bb6*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].__pad_0[8]);
+    AudioController::Init(&aP0[1].nextArrayIndex);
+    *(int *)&aP0[2].__pad_0[12] = 0;
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
   }
-  return (int)Prefix_0->__pad_0; /*0x438bbd*/
+    return (int)Prefix_0->__pad_0;
 }
 }
 } // namespace game
@@ -162,32 +155,29 @@ namespace ra2 {
 namespace game {
 BombClass * BombClass::CopyTo(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BombClass *__thiscall BombClass::CopyTo(_DWORD *this, char a2)
 {
-  int v3; // eax
-  _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &BombClass::`vftable'; /*0x4393f7*/
-  *(this + 1) = &BombClass::`vftable'; /*0x4393fd*/
-  *(this + 2) = &BombClass::`vftable'; /*0x439404*/
-  *(this + 3) = &vt_BombClass; /*0x43940b*/
-  AudioFileClass::Release(this + 15); /*0x439412*/
-  v5 = this; /*0x439427*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/
-  if ( v3 != -1 && v3 < dword_89C678 && v3 < --dword_89C678 ) /*0x439446*/
+    int v3;
+    int *v5;
+    *(void**)this = vt_BombClass;
+    *(this + 1) = (unsigned int)vt_BombClass;
+    *(this + 2) = (unsigned int)vt_BombClass;
+    *(this + 3) = &vt_BombClass;
+    AudioFileClass::Release(this + 15);
+    v5 = this;
+    v3 = (*(int (__thiscall **)(int *, int **))(DataGlobal_89C668 + 16))(&DataGlobal_89C668, &v5);
+    if ( v3 != -1 && v3 < DataGlobal_89C678 && v3 < --DataGlobal_89C678 )
   {
-    do /*0x43945e*/
+    do
     {
-      ++v3; /*0x43944e*/
-      *((_DWORD *)unk_89C66C + v3 - 1) = *((_DWORD *)unk_89C66C + v3); /*0x439452*/
+    ++v3;
+    *((int *)(DataGlobal_89C66C) + v3 - 1) = *((int *)(DataGlobal_89C66C) + v3);
     }
-    while ( v3 < dword_89C678 ); /*0x43945e*/
+    while ( v3 < DataGlobal_89C678 );
   }
-  AbstractClass::DTOR(this); /*0x439462*/
-  if ( (a2 & 1) != 0 ) /*0x43946c*/
-    __3_YAXPAX_Z(this); /*0x43946f*/
-  return (BombClass *)this; /*0x439479*/
+    AbstractClass::DTOR(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BombClass *)this;
 }
 }
 } // namespace game

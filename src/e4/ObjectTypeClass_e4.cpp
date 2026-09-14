@@ -4,15 +4,16 @@
 #include "e4/classes/E4Recv_6CEE60_e4.hpp"
 
 // 0x46C790
+namespace gamemd {
 BulletTypeClass * ObjectTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BulletTypeClass *__thiscall ObjectTypeClass::FindOrCreate(ObjectClass *this)
+BulletTypeClass *__thiscall ObjectTypeClass::FindOrCreate(ObjectClass *Source)
 {
   int v2; // esi
   _BYTE *v3; // eax
 
-  if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x46c7ac*/
+  if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x46c7ac*/
     return 0; /*0x46c80f*/
   v2 = 0; /*0x46c7bd*/
   if ( (int)g_BulletTypeInitState <= 0 ) /*0x46c7c1*/
@@ -20,10 +21,10 @@ BulletTypeClass *__thiscall ObjectTypeClass::FindOrCreate(ObjectClass *this)
 LABEL_6:
     v3 = (_BYTE *)__2_YAPAXI_Z(0x2F8u); /*0x46c7e6*/
     if ( v3 ) /*0x46c7f5*/
-      return (BulletTypeClass *)BulletTypeClass::Construct(v3, this); /*0x46c801*/
+      return (BulletTypeClass *)BulletTypeClass::Construct(v3, Source); /*0x46c801*/
     return 0; /*0x46c7f5*/
   }
-  while ( _strcmpi((const void *)(*(_DWORD *)&dword_A83C84->__pad_0[4 * v2] + 36), this) ) /*0x46c7da*/
+  while ( _strcmpi((const void *)(*(_DWORD *)&dword_A83C84->__pad_0[4 * v2] + 36), Source) ) /*0x46c7da*/
   {
     if ( ++v2 >= (int)g_BulletTypeInitState ) /*0x46c7e4*/
       goto LABEL_6; /*0x46c7e4*/
@@ -31,6 +32,7 @@ LABEL_6:
   return *(BulletTypeClass **)&dword_A83C84->__pad_0[4 * v2]; /*0x46c7ff*/
 }
 }
+} // namespace gamemd
 
 // 0x473980
 int ObjectTypeClass::loadTypeMember_473980()
@@ -53,10 +55,8 @@ int __thiscall ObjectTypeClass::loadTypeMember_473980(void *this)
       return -1; /*0x4739bb*/
   }
   return v2; /*0x4739bd*/
-}
-}
-
 // 0x474940
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -90,6 +90,7 @@ int __thiscall ObjectTypeClass::loadTypeMember_5474940(
   return dword_81B9B4[2 * v4]; /*0x47498b*/
 }
 }
+} // namespace gamemd
 
 // 0x474F50
 int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
@@ -116,6 +117,7 @@ int __thiscall sub_474F50(unsigned __int8 ***this, unsigned __int8 *a2, unsigned
 }
 
 // 0x5F61A0
+namespace gamemd {
 void ObjectTypeClass::ReleaseWaveAndString()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -140,6 +142,7 @@ void __thiscall ObjectTypeClass_ReleaseWaveAndString(int *this)
   *(this + 1) = 0; /*0x5f61d7*/
 }
 }
+} // namespace gamemd
 
 // 0x5F7090
 int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
@@ -891,6 +894,7 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
 }
 
 // 0x5F9710
+namespace gamemd {
 void ObjectTypeClass::SetRTTI71()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -899,6 +903,7 @@ void __thiscall ObjectTypeClass_SetRTTI71(_BYTE *this)
   *(this + 1) = 71; /*0x5f9710*/
 }
 }
+} // namespace gamemd
 
 // 0x5F9720
 int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
@@ -1039,6 +1044,7 @@ int __stdcall ObjectTypeClass::LoadCleanup(IUnknown *aP0, ObjectTypeClass *aP1)
 }
 
 // 0x5F9B60
+namespace gamemd {
 int ObjectTypeClass::FreeLoaderBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1046,13 +1052,14 @@ int __thiscall ObjectTypeClass::FreeLoaderBuffer(int this)
 {
   __3_YAXPAX_Z(*(void **)this); /*0x5f9b66*/
   *(_DWORD *)this = 0; /*0x5f9b70*/
-  this->vtable1 = 0; /*0x5f9b72*/
-  this->vtable2 = 0; /*0x5f9b75*/
+  *(_DWORD *)(this + 4) = 0; /*0x5f9b72*/
+  *(_DWORD *)(this + 8) = 0; /*0x5f9b75*/
   *(_BYTE *)(this + 12) = 0; /*0x5f9b78*/
-  this->uniqueId = 0; /*0x5f9b7b*/
+  *(_DWORD *)(this + 16) = 0; /*0x5f9b7b*/
   return 0; /*0x5f9b7e*/
 }
 }
+} // namespace gamemd
 
 // 0x712040
 int ObjectTypeClass::SelectArtOrAlt()
@@ -5110,6 +5117,7 @@ char __thiscall sub_717820(int this)
 }
 
 // 0x7179D0
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_57179D0(WeaponTypeClass * aP1, CCINIClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -5127,12 +5135,14 @@ int __thiscall ObjectTypeClass::loadTypeMember_57179D0(_DWORD *this, WeaponTypeC
   *(_DWORD *)&aP1->__pad_0[4] = *(this + 1); /*0x717a06*/
   *(_DWORD *)&aP1->__pad_0[8] = *(this + 2); /*0x717a0c*/
   *(_DWORD *)&aP1->__pad_0[12] = *(this + 3); /*0x717a12*/
-  LOWORD(aP1->uniqueId) = (unsigned short)this->uniqueId; /*0x717a1a*/
+  LOWORD(aP1->uniqueId) = *((_WORD *)this + 8); /*0x717a1a*/
   return (int)aP1->__pad_0; /*0x717a19*/
 }
 }
+} // namespace gamemd
 
 // 0x717A50
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A50(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -5147,8 +5157,10 @@ int __thiscall sub_717A50(_DWORD *this, int a2)
   return result; /*0x717a60*/
 }
 }
+} // namespace gamemd
 
 // 0x717A80
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A80(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -5163,8 +5175,10 @@ int __thiscall sub_717A80(_DWORD *this, int a2)
   return result; /*0x717a90*/
 }
 }
+} // namespace gamemd
 
 // 0x717AB0
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717AB0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -5179,6 +5193,7 @@ int __thiscall sub_717AB0(_DWORD *this, int a2)
   return result; /*0x717ac0*/
 }
 }
+} // namespace gamemd
 
 // 0x717C00
 unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)

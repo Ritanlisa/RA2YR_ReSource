@@ -6,26 +6,23 @@
 namespace gamemd {
 int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ScriptClass::LoadState(AbstractClass *aP0, int aP1)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x69163b*/
-  if ( result >= 0 ) /*0x691642*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( result >= 0 )
   {
-    if ( aP0 ) /*0x691646*/
+    if ( aP0 )
     {
-      AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x69164f*/
-      *(_DWORD *)aP0->__pad_0 = &ScriptClass::`vftable'; /*0x691654*/
-      *(_DWORD *)&aP0->__pad_0[4] = &ScriptClass::`vftable'; /*0x69165a*/
-      *(_DWORD *)&aP0->__pad_0[8] = &ScriptClass::`vftable'; /*0x691661*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_ScriptClass; /*0x691668*/
+    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_ScriptClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_ScriptClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_ScriptClass;
+    *(int *)&aP0->__pad_0[12] = &vt_ScriptClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x691678*/
-    return 0; /*0x69167d*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
+    return 0;
   }
-  return result; /*0x69167f*/
+    return result;
 }
 }
 } // namespace gamemd

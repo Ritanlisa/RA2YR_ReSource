@@ -272,13 +272,11 @@ int __thiscall GameClass_GetRelatedObject(_DWORD *this)
 namespace gamemd {
 unsigned int * GameClass::saveGameState(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall GameClass::saveGameState(PixelFXClass *this, char a2)
 {
-  this->vfptr = &vt_PixelFXClass; /*0x631f49*/
-  if ( (a2 & 1) != 0 ) /*0x631f4f*/
-    __3_YAXPAX_Z(this); /*0x631f52*/
-  return &this->vfptr; /*0x631f5c*/
+    this->vfptr = &vt_PixelFXClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
 }
 }
 } // namespace gamemd

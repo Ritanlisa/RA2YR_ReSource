@@ -2125,49 +2125,33 @@ LABEL_180:
 namespace gamemd {
 int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SuperClass::LoadFromStream(AbstractClass *aP0, int aP1)
 {
-  int result; // eax
-  int v3; // eax
-
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x6cdefb*/
-  if ( result >= 0 ) /*0x6cdf02*/
+    int result;
+    int v3;
+    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( result >= 0 )
   {
-    if ( aP0 ) /*0x6cdf0a*/
+    if ( aP0 )
     {
-      AbstractClass::Constructor(aP0); /*0x6cdf0e*/
-      *(_DWORD *)aP0->__pad_0 = &SuperClass::`vftable'; /*0x6cdf13*/
-      *(_DWORD *)&aP0->__pad_0[4] = &SuperClass::`vftable'; /*0x6cdf19*/
-      *(_DWORD *)&aP0->__pad_0[8] = &SuperClass::`vftable'; /*0x6cdf20*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_SuperClass; /*0x6cdf27*/
+    AbstractClass::Constructor(aP0);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_SuperClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_SuperClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_SuperClass;
+    *(int *)&aP0->__pad_0[12] = &vt_SuperClass;
     }
-    if ( aP0[2].NeedsSaveOrLink /*0x6cdf70*/
-      && (*(int *)&stru_B05488.__pad_579C[18852] < *(int *)&stru_B05488.__pad_579C[18844]
-       || (stru_B05488.__pad_579C[18849] || !*(_DWORD *)&stru_B05488.__pad_579C[18844])
-       && *(int *)&stru_B05488.__pad_579C[18856] > 0
-       && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[18836] + 8))(
-            &stru_B05488.__pad_579C[18836],
-            *(_DWORD *)&stru_B05488.__pad_579C[18844] + *(_DWORD *)&stru_B05488.__pad_579C[18856],
-            0)) )
+    if ( aP0[2].NeedsSaveOrLink && (*(int *)&DataGlobal_B05488.__pad_579C[18852] < *(int *)&DataGlobal_B05488.__pad_579C[18844] || (DataGlobal_B05488.__pad_579C[18849] || !*(int *)&DataGlobal_B05488.__pad_579C[18844]) && *(int *)&DataGlobal_B05488.__pad_579C[18856] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 8))( &DataGlobal_B05488.__pad_579C[18836], *(int *)&DataGlobal_B05488.__pad_579C[18844] + *(int *)&DataGlobal_B05488.__pad_579C[18856], 0)) )
     {
-      v3 = (*(_DWORD *)&stru_B05488.__pad_579C[18852])++; /*0x6cdf7d*/
-      *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[18840] + 4 * v3) = aP0; /*0x6cdf8c*/
+    v3 = (*(int *)&DataGlobal_B05488.__pad_579C[18852])++;
+    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18840] + 4 * v3) = aP0;
     }
-    ObjectPtr::RegisterForTracking( /*0x6cdf98*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( /*0x6cdfa6*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].__pad_0[8]);
-    ObjectPtr::RegisterForTracking( /*0x6cdfb1*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[2].NeedsSaveOrLink);
-    *(_DWORD *)aP0[2].__pad_0 = 0; /*0x6cdfb6*/
-    *(_DWORD *)&aP0[2].__pad_0[4] = 0; /*0x6cdfbd*/
-    return 0; /*0x6cdfc4*/
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].NeedsSaveOrLink);
+    *(int *)aP0[2].__pad_0 = 0;
+    *(int *)&aP0[2].__pad_0[4] = 0;
+    return 0;
   }
-  return result; /*0x6cdfc7*/
+    return result;
 }
 }
 } // namespace gamemd

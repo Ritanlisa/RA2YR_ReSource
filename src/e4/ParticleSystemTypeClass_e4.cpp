@@ -248,18 +248,16 @@ int __thiscall ParticleSystemTypeClass::_vt13(int this, int *a2)
 namespace gamemd {
 int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 {
-  if ( ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1) >= 0 && aP0 ) /*0x6447f6*/
+    if ( ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1) >= 0 && aP0 )
   {
-    ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1); /*0x6447ff*/
-    *(_DWORD *)aP0->__pad_0 = &ParticleSystemTypeClass::`vftable'; /*0x644804*/
-    *(_DWORD *)&aP0->__pad_0[4] = &ParticleSystemTypeClass::`vftable'; /*0x64480a*/
-    *(_DWORD *)&aP0->__pad_0[8] = &ParticleSystemTypeClass::`vftable'; /*0x644811*/
-    *(_DWORD *)&aP0->__pad_0[12] = &vt_ParticleSystemTypeClass; /*0x644818*/
+    ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_ParticleSystemTypeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_ParticleSystemTypeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_ParticleSystemTypeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_ParticleSystemTypeClass;
   }
-  return 0; /*0x644821*/
+    return 0;
 }
 }
 } // namespace gamemd

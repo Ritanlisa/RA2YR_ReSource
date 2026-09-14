@@ -1334,12 +1334,9 @@ void __thiscall sub_406530(AbstractTypeClass *this)
 // 0x406540
 void AbstractTypeClass::sub_406540()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_406540(AbstractTypeClass *this)
 {
-  int v1; // edx
-
-  *(_DWORD *)&this->UINameLabel[3] = v1; /*0x406540*/
+    int v1;
+    *(int *)&this->UINameLabel[3] = v1;
 }
 }
 
@@ -1379,119 +1376,96 @@ int __thiscall sub_406570(AbstractTypeClass *this)
 // 0x4065C0
 void AbstractTypeClass::sub_4065C0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_4065C0(AbstractTypeClass *this)
 {
-  int v1; // edx
-
-  this->abstractFlags = v1; /*0x4065c0*/
+    int v1;
+    this->abstractFlags = v1;
 }
 }
 
 // 0x4065D0
 void AbstractTypeClass::sub_4065D0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_4065D0(AbstractTypeClass *this)
 {
-  int v1; // edx
-
-  *(_DWORD *)&this->UINameLabel[11] = v1; /*0x4065d0*/
+    int v1;
+    *(int *)&this->UINameLabel[11] = v1;
 }
 }
 
 // 0x4065E0
 void AbstractTypeClass::sub_4065E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_4065E0(AbstractTypeClass *this)
 {
-  int v1; // edx
-
-  *(_DWORD *)&this->UINameLabel[19] = v1; /*0x4065e0*/
+    int v1;
+    *(int *)&this->UINameLabel[19] = v1;
 }
 }
 
 // 0x4065F0
 int AbstractTypeClass::sub_4065F0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4065F0(AbstractTypeClass *this, int a2)
 {
-  *(_DWORD *)&this->UINameLabel[23] = a2; /*0x4065f4*/
-  return a2; /*0x4065f7*/
+    *(int *)&this->UINameLabel[23] = a2;
+    return a2;
 }
 }
 
 // 0x406600
 int AbstractTypeClass::sub_406600()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_406600(AbstractTypeClass *this)
 {
-  int v1; // edx
-  int v3; // [esp+4h] [ebp+4h]
-
-  *(_DWORD *)&this->UINameLabel[27] = v1; /*0x406604*/
-  *(_DWORD *)&this->UINameLabel[31] = v3; /*0x406607*/
-  return v3; /*0x40660a*/
+    int v1;
+    int v3;
+    *(int *)&this->UINameLabel[27] = v1;
+    *(int *)&this->UINameLabel[31] = v3;
+    return v3;
 }
 }
 
 // 0x406610
 int AbstractTypeClass::sub_406610()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_406610(AbstractTypeClass *this)
 {
-  void *v1; // edx
-  int v3; // [esp+4h] [ebp+4h]
-
-  this->UIName = v1; /*0x406614*/
-  *(_DWORD *)this->Name = v3; /*0x406617*/
-  return v3; /*0x40661a*/
+    void *v1;
+    int v3;
+    this->UIName = v1;
+    *(int *)this->Name = v3;
+    return v3;
 }
 }
 
 // 0x406620
 int AbstractTypeClass::sub_406620()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_406620(AbstractTypeClass *this)
 {
-  int v1; // edx
-  int result; // eax
-
-  if ( v1 <= 100 ) /*0x406623*/
+    int v1;
+    int result;
+    if ( v1 <= 100 )
   {
-    if ( v1 >= 0 ) /*0x406630*/
+    if ( v1 >= 0 )
     {
-      *(_DWORD *)&this->Name[4] = v1; /*0x406638*/
+    *(int *)&this->Name[4] = v1;
     }
     else
     {
-      *(_DWORD *)&this->Name[4] = 0; /*0x406634*/
-      return 0; /*0x406632*/
+    *(int *)&this->Name[4] = 0;
+    return 0;
     }
   }
-  else
+    else
   {
-    *(_DWORD *)&this->Name[4] = 100; /*0x40662a*/
-    return 100; /*0x406625*/
+    *(int *)&this->Name[4] = 100;
+    return 100;
   }
-  return result; /*0x40662d*/
+    return result;
 }
 }
 
 // 0x406640
 void AbstractTypeClass::sub_406640()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_406640(AbstractTypeClass *this)
 {
-  int v1; // edx
-
-  *(_DWORD *)&this->UINameLabel[15] = v1; /*0x406640*/
+    int v1;
+    *(int *)&this->UINameLabel[15] = v1;
 }
 }
 

@@ -19,26 +19,23 @@ int __thiscall AlphaShapeClass::SD_vt13(int this, int a2)
 // 0x420DE0
 int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall AlphaShapeClass::SD_vt05(AbstractClass *aP0, int aP1)
 {
-  AbstractClass *Prefix_0; // edi
-
-  Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x420df1*/
-  if ( (int)Prefix_0 >= 0 ) /*0x420df5*/
+    AbstractClass *Prefix_0;
+    Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( (int)Prefix_0 >= 0 )
   {
-    if ( aP0 ) /*0x420df9*/
+    if ( aP0 )
     {
-      AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x420e02*/
-      *(_DWORD *)aP0->__pad_0 = &AlphaShapeClass::`vftable'; /*0x420e07*/
-      *(_DWORD *)&aP0->__pad_0[4] = &AlphaShapeClass::`vftable'; /*0x420e0d*/
-      *(_DWORD *)&aP0->__pad_0[8] = &AlphaShapeClass::`vftable'; /*0x420e14*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_AlphaShapeClass; /*0x420e1b*/
+    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_AlphaShapeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_AlphaShapeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AlphaShapeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_AlphaShapeClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x420e2b*/
-    aP0[1].abstractFlags = 0; /*0x420e30*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
+    aP0[1].abstractFlags = 0;
   }
-  return (int)Prefix_0->__pad_0; /*0x420e39*/
+    return (int)Prefix_0->__pad_0;
 }
 }
 

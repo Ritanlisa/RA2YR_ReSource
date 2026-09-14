@@ -7,13 +7,11 @@
 namespace gamemd {
 void AbstractClass::DTOR()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall AbstractClass::DTOR(_DWORD *this)
 {
-  *this = &AbstractClass::`vftable'; /*0x4101f0*/
-  *(this + 1) = &AbstractClass::`vftable'; /*0x4101f6*/
-  *(this + 2) = &AbstractClass::`vftable'; /*0x4101fd*/
-  *(this + 3) = &vt_AbstractClass; /*0x410204*/
+    *(void**)this = vt_AbstractClass;
+    this->vtable1 = (unsigned int)vt_AbstractClass;
+    this->vtable2 = (unsigned int)vt_AbstractClass;
+    this->vtable3 = &vt_AbstractClass;
 }
 }
 } // namespace gamemd
@@ -356,17 +354,15 @@ void ***__userpurge RemoveObjectFromHouse@<eax>(_DWORD *a1@<ecx>, int a2@<edi>, 
 namespace gamemd {
 MissionClass * AbstractClass::getWeaponRange(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-MissionClass *__thiscall AbstractClass::getWeaponRange(_DWORD *this, char a2)
 {
-  *this = &MissionClass::`vftable'; /*0x5b3a63*/
-  *(this + 1) = &MissionClass::`vftable'; /*0x5b3a69*/
-  *(this + 2) = &MissionClass::`vftable'; /*0x5b3a70*/
-  *(this + 3) = &vt_MissionClass; /*0x5b3a77*/
-  ObjectClass::Dtor(this); /*0x5b3a7e*/
-  if ( (a2 & 1) != 0 ) /*0x5b3a88*/
-    __3_YAXPAX_Z(this); /*0x5b3a8b*/
-  return (MissionClass *)this; /*0x5b3a95*/
+    *(void**)this = vt_MissionClass;
+    *(this + 1) = (unsigned int)vt_MissionClass;
+    *(this + 2) = (unsigned int)vt_MissionClass;
+    *(this + 3) = &vt_MissionClass;
+    ObjectClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (MissionClass *)this;
 }
 }
 } // namespace gamemd

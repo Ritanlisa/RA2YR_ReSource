@@ -173,27 +173,24 @@ int __thiscall SmudgeTypeClass::_vt13(int this, int *a2)
 // 0x6B5850
 int SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SmudgeTypeClass::LoadTypeData(ObjectTypeClass *aP0, int aP1)
 {
-  int result; // eax
-
-  result = ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1); /*0x6b585b*/
-  if ( result >= 0 ) /*0x6b5862*/
+    int result;
+    result = ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1);
+    if ( result >= 0 )
   {
-    if ( aP0 ) /*0x6b5866*/
+    if ( aP0 )
     {
-      ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1); /*0x6b586f*/
-      *(_DWORD *)aP0->__pad_0 = &SmudgeTypeClass::`vftable'; /*0x6b5874*/
-      *(_DWORD *)&aP0->__pad_0[4] = &SmudgeTypeClass::`vftable'; /*0x6b587a*/
-      *(_DWORD *)&aP0->__pad_0[8] = &SmudgeTypeClass::`vftable'; /*0x6b5881*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_SmudgeTypeClass; /*0x6b5888*/
+    ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_SmudgeTypeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_SmudgeTypeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_SmudgeTypeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_SmudgeTypeClass;
     }
-    VoxelAnimType::LoadAnim(aP0->__pad_0); /*0x6b5891*/
-    ObjectTypeClass::Load2DArt(aP0->__pad_0); /*0x6b5898*/
-    return 0; /*0x6b589d*/
+    VoxelAnimType::LoadAnim(aP0->__pad_0);
+    ObjectTypeClass::Load2DArt(aP0->__pad_0);
+    return 0;
   }
-  return result; /*0x6b589f*/
+    return result;
 }
 }
 

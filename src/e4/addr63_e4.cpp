@@ -749,10 +749,8 @@ int __stdcall NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3
 namespace gamemd {
 void E4Recv_631F30::sub_631F30()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_631F30(PixelFXClass *this)
 {
-  this->vfptr = &vt_PixelFXClass; /*0x631f30*/
+    this->vfptr = &vt_PixelFXClass;
 }
 }
 } // namespace gamemd
@@ -762,16 +760,13 @@ namespace ra2 {
 namespace game {
 int ObjectClass::sub_632A70(int a2, int a3, ObjectClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_632A70(ObjectClass *this, int a2, int a3, ObjectClass *aP3)
 {
-  int result; // eax
-
-  sub_5C8E40(this, a2, a3, aP3, 64); /*0x632a85*/
-  result = *(_DWORD *)this->__pad_0; /*0x632a8a*/
-  LOBYTE(result) = *(_DWORD *)this->__pad_0 | 1; /*0x632a8c*/
-  *(_DWORD *)this->__pad_0 = result; /*0x632a8e*/
-  return result; /*0x632a90*/
+    int result;
+    sub_5C8E40(this, a2, a3, aP3, 64);
+    result = *(int *)this->__pad_0;
+    LOBYTE(result) = *(int *)this->__pad_0 | 1;
+    *(int *)this->__pad_0 = result;
+    return result;
 }
 }
 } // namespace game

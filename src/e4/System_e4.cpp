@@ -336,28 +336,25 @@ int sub_7C8F46()
 namespace gamemd {
 rc_ptr * System_Init_7676F0(rc_ptr_base * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__fastcall System_Init_7676F0(rc_ptr_base *a1, int a2)
 {
-  _DWORD *v4; // eax
-  int v5; // edi
-
-  v4 = (_DWORD *)__2_YAPAXI_Z(0xCu); /*0x7676f8*/
-  if ( v4 ) /*0x767702*/
+    int *v4;
+    int v5;
+    v4 = (int *)__2_YAPAXI_Z(0xCu);
+    if ( v4 )
   {
-    v4[2] = a2; /*0x767704*/
-    v4[1] = 0; /*0x767707*/
-    *v4 = &vt_WorldDominationTour_MapSizeGameOption; /*0x76770e*/
-    v5 = (int)v4; /*0x767714*/
+    v4[2] = a2;
+    v4[1] = 0;
+    *v4 = &vt_WorldDominationTour_MapSizeGameOption;
+    v5 = (int)v4;
   }
-  else
+    else
   {
-    v5 = 0; /*0x767718*/
+    v5 = 0;
   }
-  ComPtr::Constructor(a1); /*0x76771c*/
-  a1->vfptr = &vt_rc_ptr_WorldDominationTour_MapSizeGameOption; /*0x767723*/
-  ComPtr::Set(a1, v5); /*0x76772a*/
-  return (rc_ptr *)a1; /*0x767731*/
+    ComPtr::Constructor(a1);
+    a1->vfptr = &vt_rc_ptr_WorldDominationTour_MapSizeGameOption;
+    ComPtr::Set(a1, v5);
+    return (rc_ptr *)a1;
 }
 }
 } // namespace gamemd

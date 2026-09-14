@@ -14,10 +14,8 @@
 namespace gamemd {
 void E4Recv_470C30::sub_470C30()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_470C30(CampaignEndScoreClass *this)
 {
-  this->vfptr = &vt_CampaignEndScoreClass; /*0x470c30*/
+    this->vfptr = &vt_CampaignEndScoreClass;
 }
 }
 } // namespace gamemd

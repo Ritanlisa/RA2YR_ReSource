@@ -5501,12 +5501,10 @@ void __thiscall j_Exception_Destructor(void *this)
 namespace gamemd {
 exception * E4Recv_7CA9CC::sub_7CA9CC(struct exception * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-exception *__thiscall sub_7CA9CC(bad_typeid *this, struct exception *a1)
 {
-  __0exception_QAE_ABV0__Z((exception *)this, a1); /*0x7ca9d3*/
-  this->vfptr = &vt_bad_typeid; /*0x7ca9d8*/
-  return (exception *)this; /*0x7ca9e0*/
+    __0exception_QAE_ABV0__Z((exception *)this, a1);
+    this->vfptr = &vt_bad_typeid;
+    return (exception *)this;
 }
 }
 } // namespace gamemd

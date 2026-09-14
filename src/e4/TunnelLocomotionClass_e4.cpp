@@ -132,28 +132,25 @@ LABEL_8:
 // 0x72A150
 int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TunnelLocomotionClass::_vt05(int *a1, int *a2)
 {
-  int result; // eax
-  wchar_t *v3; // edx
-
-  result = SwizzleManager::SaveLoad(a1, a2); /*0x72a15b*/
-  if ( result >= 0 ) /*0x72a164*/
+    int result;
+    wchar_t *v3;
+    result = SwizzleManager::SaveLoad(a1, a2);
+    if ( result >= 0 )
   {
-    if ( a1 ) /*0x72a168*/
+    if ( a1 )
     {
-      *a1 = (int)&LocomotionClass::`vftable'; /*0x72a16a*/
-      a1[1] = (int)&vt_LocomotionClass; /*0x72a170*/
-      v3 = MEMORY[0xA8ED84]; /*0x72a177*/
-      a1[12] = 0; /*0x72a17d*/
-      a1[10] = (int)v3; /*0x72a180*/
-      a1[13] = 0; /*0x72a183*/
-      *a1 = (int)&TunnelLocomotionClass::`vftable'; /*0x72a186*/
-      a1[1] = (int)&vt_TunnelLocomotionClass; /*0x72a18c*/
+    *a1 = (int)(unsigned int)vt_LocomotionClass;
+    *((int*)(a1) + 1) = (int)&vt_LocomotionClass;
+    v3 = g_CurrentFrame;
+    *((int*)(a1) + 12) = 0;
+    *((int*)(a1) + 10) = (int)v3;
+    *((int*)(a1) + 13) = 0;
+    *a1 = (int)(unsigned int)vt_TunnelLocomotionClass;
+    *((int*)(a1) + 1) = (int)&vt_TunnelLocomotionClass;
     }
   }
-  return result; /*0x72a193*/
+    return result;
 }
 }
 

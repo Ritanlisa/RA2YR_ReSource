@@ -258,33 +258,30 @@ _DWORD *__thiscall sub_4A0380(_DWORD *this, _DWORD *a2)
 namespace gamemd {
 void E4Recv_4A0450::sub_4A0450()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_4A0450(_DWORD *this)
 {
-  int v2; // edi
-  int v3; // edx
-  _DWORD *v4; // esi
-  void *v5; // eax
-  int v6; // [esp-4h] [ebp-10h]
-
-  v2 = 0; /*0x4a0457*/
-  for ( *this = &vt_EnumConnectionsClass; v2 < *(this + 5); ++v2 ) /*0x4a0464*/
+    int v2;
+    int v3;
+    int *v4;
+    void *v5;
+    int v6;
+    v2 = 0;
+    for ( *(void**)this = &vt_EnumConnectionsClass; v2 < this->M20; ++v2 )
   {
-    v6 = *(_DWORD *)(*(this + 2) + 8 * v2); /*0x4a046c*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v6 + 8))(v6); /*0x4a046f*/
+    v6 = *(int *)(this->M8 + 8 * v2);
+    (*(void (__stdcall **)(int))(*(int *)(v6) + 8))(v6);
   }
-  v3 = *(this + 1); /*0x4a047a*/
-  v4 = this + 1; /*0x4a047d*/
-  (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v4); /*0x4a0482*/
-  v5 = (void *)v4[1]; /*0x4a0485*/
-  *v4 = &vt_VectorClass_tagCONNECTDATA; /*0x4a0488*/
-  if ( v5 && *((_BYTE *)v4 + 13) ) /*0x4a0492*/
+    v3 = this->M4;
+    v4 = this + 1;
+    (*(void (__thiscall **)(int *))(v3 + 12))(v4);
+    v5 = (void *)v4[1];
+    *v4 = &vt_VectorClass_tagCONNECTDATA;
+    if ( v5 && *((char *)(v4) + 13) )
   {
-    __3_YAXPAX_Z(v5); /*0x4a0498*/
-    v4[1] = 0; /*0x4a04a0*/
+    __3_YAXPAX_Z(v5);
+    v4[1] = 0;
   }
-  *((_BYTE *)v4 + 13) = 0; /*0x4a04a3*/
-  v4[2] = 0; /*0x4a04a6*/
+    *((char *)(v4) + 13) = 0;
+    v4[2] = 0;
 }
 }
 } // namespace gamemd
@@ -365,33 +362,30 @@ int __stdcall EnumConnectionPointsClass::_vt06(_DWORD *a1, _DWORD *a2)
 namespace gamemd {
 void E4Recv_4A0DB0::sub_4A0DB0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_4A0DB0(_DWORD *this)
 {
-  int v2; // edi
-  int v3; // edx
-  _DWORD *v4; // esi
-  void *v5; // eax
-  int v6; // [esp-4h] [ebp-10h]
-
-  v2 = 0; /*0x4a0db7*/
-  for ( *this = &vt_EnumConnectionPointsClass; v2 < *(this + 7); ++v2 ) /*0x4a0dc4*/
+    int v2;
+    int v3;
+    int *v4;
+    void *v5;
+    int v6;
+    v2 = 0;
+    for ( *(void**)this = &vt_EnumConnectionPointsClass; v2 < this->M28; ++v2 )
   {
-    v6 = *(_DWORD *)(*(this + 4) + 4 * v2); /*0x4a0dcc*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v6 + 8))(v6); /*0x4a0dcf*/
+    v6 = *(int *)(this->M16 + 4 * v2);
+    (*(void (__stdcall **)(int))(*(int *)(v6) + 8))(v6);
   }
-  v3 = *(this + 3); /*0x4a0dda*/
-  v4 = this + 3; /*0x4a0ddd*/
-  (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v4); /*0x4a0de2*/
-  v5 = (void *)v4[1]; /*0x4a0de5*/
-  *v4 = &vt_VectorClass_IConnectionPoint; /*0x4a0de8*/
-  if ( v5 && *((_BYTE *)v4 + 13) ) /*0x4a0df2*/
+    v3 = this->M12;
+    v4 = this + 3;
+    (*(void (__thiscall **)(int *))(v3 + 12))(v4);
+    v5 = (void *)v4[1];
+    *v4 = &vt_VectorClass_IConnectionPoint;
+    if ( v5 && *((char *)(v4) + 13) )
   {
-    __3_YAXPAX_Z(v5); /*0x4a0df8*/
-    v4[1] = 0; /*0x4a0e00*/
+    __3_YAXPAX_Z(v5);
+    v4[1] = 0;
   }
-  *((_BYTE *)v4 + 13) = 0; /*0x4a0e03*/
-  v4[2] = 0; /*0x4a0e06*/
+    *((char *)(v4) + 13) = 0;
+    v4[2] = 0;
 }
 }
 } // namespace gamemd

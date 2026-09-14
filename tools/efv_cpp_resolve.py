@@ -161,6 +161,12 @@ class Resolver:
         if not ident:
             return (None, None)
 
+        # G11: vtable 符号（vt_*，安装词汇 RHS）恒 0 事件——IDA 侧对 vftable
+        # 引用不提取任何事件（实测 MEMORY[0x..]=&X::`vftable' 仅目标 WRITE），
+        # cpp 侧若按 global 解析会造单侧 READ(global) 不对称。
+        if ident.startswith('vt_'):
+            return (None, None)
+
         # 1. LOCAL shadow takes precedence over any same-named member/global.
         if ident in self.locals:
             return ("local", None)

@@ -362,46 +362,36 @@ char __thiscall VectorClass_Cell::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 int VectorClass_cptr_MultiMission::j_vt09(unsigned char * a1, signed int a3, int a4, int a5, int a6, int a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VectorClass_cptr_MultiMission::j_vt09(
-        NullModemConnClass *this,
-        unsigned __int8 *a1,
-        signed int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7)
 {
-  _WORD *v8; // eax
-  signed int v9; // edi
-  unsigned int *v10; // eax
-  unsigned int v11; // esi
-  int v12; // eax
-
-  if ( *(_DWORD *)&this->__pad_0[76] == -1 ) /*0x5ef197*/
-    return 0; /*0x5ef199*/
-  v8 = (_WORD *)this->field_50; /*0x5ef19f*/
-  *v8 = -9539; /*0x5ef1af*/
-  v8[1] = a3; /*0x5ef1b4*/
-  v8[2] = -8529; /*0x5ef1b8*/
-  qmemcpy((void *)(this->field_50 + 6), a1, a3); /*0x5ef1cb*/
-  v9 = 0; /*0x5ef1dc*/
-  v10 = (unsigned int *)(this->field_50 + a3 + 6); /*0x5ef1de*/
-  v11 = 0; /*0x5ef1e0*/
-  if ( a3 > 0 ) /*0x5ef1ec*/
+    short *v8;
+    signed int v9;
+    unsigned int *v10;
+    unsigned int v11;
+    int v12;
+    if ( *(int *)&this->__pad_0[76] == -1 )
+    return 0;
+    v8 = (short *)this->field_50;
+    *v8 = -9539;
+    v8[1] = a3;
+    v8[2] = -8529;
+    qmemcpy((void *)(this->field_50 + 6), a1, a3);
+    v9 = 0;
+    v10 = (unsigned int *)(this->field_50 + a3 + 6);
+    v11 = 0;
+    if ( a3 > 0 )
   {
-    do /*0x5ef200*/
+    do
     {
-      v12 = a1[v9++] + (v11 >> 31); /*0x5ef1f8*/
-      v11 = v12 + 2 * v11; /*0x5ef1fd*/
+    v12 = a1[v9++] + (v11 >> 31);
+    v11 = v12 + 2 * v11;
     }
-    while ( v9 < a3 ); /*0x5ef200*/
-    v10 = (unsigned int *)(this->field_50 + a3 + 6); /*0x5ef206*/
+    while ( v9 < a3 );
+    v10 = (unsigned int *)(this->field_50 + a3 + 6);
   }
-  *v10 = v11; /*0x5ef20a*/
-  *(_BYTE *)(a3 + 10 + this->field_50) = 13; /*0x5ef212*/
-  WinModemClass::WriteSerial((int)g_ClipboardBuffer, (LPCVOID)this->field_50, (WinModemClass *)(a3 + 11)); /*0x5ef222*/
-  return 1; /*0x5ef19b*/
+    *v10 = v11;
+    *(char *)(a3 + 10 + this->field_50) = 13;
+    WinModemClass::WriteSerial((int)g_ClipboardBuffer, (LPCVOID)this->field_50, (WinModemClass *)(a3 + 11));
+    return 1;
 }
 }
 } // namespace gamemd
@@ -410,18 +400,15 @@ int __thiscall VectorClass_cptr_MultiMission::j_vt09(
 namespace gamemd {
 unsigned int * VectorClass_cptr_MultiMission::j_vt00(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall VectorClass_cptr_MultiMission::j_vt00(NullModemConnClass *this, char a2)
 {
-  IPXConnClass *v3; // eax
-
-  v3 = (IPXConnClass *)this->field_50; /*0x5ef293*/
-  *(_DWORD *)this->__pad_0 = &vt_NullModemConnClass; /*0x5ef296*/
-  __3_YAXPAX_Z(v3); /*0x5ef29d*/
-  ConnectionClass::dtor(this); /*0x5ef2a7*/
-  if ( (a2 & 1) != 0 ) /*0x5ef2b1*/
-    __3_YAXPAX_Z(this); /*0x5ef2b4*/
-  return this->__pad_0; /*0x5ef2be*/
+    IPXConnClass *v3;
+    v3 = (IPXConnClass *)this->field_50;
+    *(int *)this->__pad_0 = &vt_NullModemConnClass;
+    __3_YAXPAX_Z(v3);
+    ConnectionClass::dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this->__pad_0;
 }
 }
 } // namespace gamemd
@@ -1457,14 +1444,12 @@ char __thiscall VectorClass_ptr_PlanningBranchClass::_vt02(void *this, int a2, _
 namespace gamemd {
 unsigned int * VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(MapSizeGameOption_WorldDominationTour *this, char a2)
 {
-  this->vfptr = &off_7F7220; /*0x76b6c3*/
-  ReferenceCounted::Constructor(this); /*0x76b6c9*/
-  if ( (a2 & 1) != 0 ) /*0x76b6d3*/
-    __3_YAXPAX_Z(this); /*0x76b6d6*/
-  return &this->vfptr; /*0x76b6e0*/
+    this->vfptr = &vt_WDTTerritory;
+    ReferenceCounted::Constructor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
 }
 }
 } // namespace gamemd

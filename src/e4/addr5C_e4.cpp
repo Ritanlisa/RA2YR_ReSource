@@ -154,11 +154,9 @@ _DWORD *__fastcall Movie_Create(int a1, int a2, int *a3)
 namespace gamemd {
 void E4Recv_5C0E10::sub_5C0E10()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5C0E10(MultiplayerBattle *this)
 {
-  this->vfptr = &vt_MultiplayerBattle; /*0x5c0e10*/
-  MultiplayerGameMode::Dtor(this); /*0x5c0e16*/
+    this->vfptr = &vt_MultiplayerBattle;
+    MultiplayerGameMode::Dtor(this);
 }
 }
 } // namespace gamemd
@@ -239,11 +237,9 @@ char __thiscall MPCooperative::_vt07(int *this, int a2)
 namespace gamemd {
 void E4Recv_5C5D20::sub_5C5D20()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5C5D20(FreeForAll *this)
 {
-  this->vfptr = &vt_FreeForAll; /*0x5c5d20*/
-  MultiplayerGameMode::Dtor(this); /*0x5c5d26*/
+    this->vfptr = &vt_FreeForAll;
+    MultiplayerGameMode::Dtor(this);
 }
 }
 } // namespace gamemd

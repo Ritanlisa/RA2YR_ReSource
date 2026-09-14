@@ -295,16 +295,14 @@ AbstractClass *__thiscall AbstractClass_Constructor(AbstractClass *this)
 } } }
 // 0x4101C0
 namespace ra2 { namespace game { void* AbstractClass::InitVtables(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall AbstractClass::InitVtables(_DWORD *this, IUnknown *aP1)
 {
-  *(this + 2) = &vt_INoticeSink; /*0x4101c2*/
-  *(this + 3) = &vt_INoticeSource; /*0x4101c9*/
-  *this = &AbstractClass::`vftable'; /*0x4101d0*/
-  *(this + 1) = &AbstractClass::`vftable'; /*0x4101d6*/
-  *(this + 2) = &AbstractClass::`vftable'; /*0x4101dd*/
-  *(this + 3) = &vt_AbstractClass; /*0x4101e4*/
-  return this; /*0x4101eb*/
+    this->vtable2 = &vt_INoticeSink;
+    this->vtable3 = &vt_INoticeSource;
+    *(void**)this = vt_AbstractClass;
+    this->vtable1 = (unsigned int)vt_AbstractClass;
+    this->vtable2 = (unsigned int)vt_AbstractClass;
+    this->vtable3 = &vt_AbstractClass;
+    return this;
 }
 } } }
 // 0x410300
@@ -378,18 +376,15 @@ int __thiscall AbstractClass::GetCoordsEx(#374 *this)
 } } }
 // 0x4105A0
 namespace ra2 { namespace game { int AbstractClass::COMStub_8() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractClass::COMStub_8(AbstractClass *this)
 {
-  char v3; // [esp+8h] [ebp+4h]
-
-  *(_DWORD *)this->__pad_0 = &AbstractClass::`vftable'; /*0x4105a9*/
-  *(_DWORD *)&this->__pad_0[4] = &AbstractClass::`vftable'; /*0x4105af*/
-  *(_DWORD *)&this->__pad_0[8] = &AbstractClass::`vftable'; /*0x4105b6*/
-  *(_DWORD *)&this->__pad_0[12] = &vt_AbstractClass; /*0x4105bd*/
-  if ( (v3 & 1) != 0 ) /*0x4105c4*/
-    __3_YAXPAX_Z(this); /*0x4105c7*/
-  return (int)this->__pad_0; /*0x4105d1*/
+    char v3;
+    *(int *)this->__pad_0 = (unsigned int)vt_AbstractClass;
+    *(int *)&this->__pad_0[4] = (unsigned int)vt_AbstractClass;
+    *(int *)&this->__pad_0[8] = (unsigned int)vt_AbstractClass;
+    *(int *)&this->__pad_0[12] = &vt_AbstractClass;
+    if ( (v3 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (int)this->__pad_0;
 }
 } } }
 // 0x414BB0
@@ -13276,29 +13271,26 @@ int __thiscall AbstractClass::checkWeaponCooldown(TextButtonClass *this, int a2)
 
 // 0x720020
 namespace ra2 { namespace game { int AbstractClass::getCurrentWeapon(int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall AbstractClass::getCurrentWeapon(TextButtonClass *this, int a2, char a3)
 {
-  int v4; // edx
-  int v5; // eax
-  CampaignScore *Instance; // edi
-
-  v4 = *(_DWORD *)this->__pad_0; /*0x720027*/
-  this->field_38 = a2; /*0x720029*/
-  (*(void (**)(void))(v4 + 72))(); /*0x72002c*/
-  LOBYTE(v5) = a3; /*0x72002f*/
-  if ( a3 ) /*0x720035*/
+    int v4;
+    int v5;
+    CampaignScore *Instance;
+    v4 = *(int *)this->__pad_0;
+    this->field_38 = a2;
+    (*(void (**)(void))(v4 + 72))();
+    LOBYTE(v5) = a3;
+    if ( a3 )
   {
-    v5 = this->field_38; /*0x720037*/
-    if ( v5 ) /*0x72003c*/
+    v5 = this->field_38;
+    if ( v5 )
     {
-      Instance = (CampaignScore *)TextRenderer::GetInstance(); /*0x720047*/
-      v5 = Text::MeasureWidth(this->field_38, 0) + 8; /*0x720056*/
-      *(_DWORD *)&this->__pad_0[20] = v5; /*0x720059*/
-      *(_DWORD *)&this->__pad_0[24] = Instance->CampaignScore_field_0x1C + 2; /*0x720063*/
+    Instance = (CampaignScore *)TextRenderer::GetInstance();
+    v5 = Text::MeasureWidth(this->field_38, 0) + 8;
+    *(int *)&this->__pad_0[20] = v5;
+    *(int *)&this->__pad_0[24] = Instance->CampaignScore_field_0x1C + 2;
     }
   }
-  return v5; /*0x720066*/
+    return v5;
 }
 } } }
 

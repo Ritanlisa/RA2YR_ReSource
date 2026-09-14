@@ -1946,11 +1946,9 @@ AbstractClass *__fastcall GetDialogText(HWND hWnd, void **a2)
 namespace gamemd {
 unsigned int * E4Recv_624080::sub_624080()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_624080(DialogControl_OwnerDraw *this)
 {
-  this->vfptr = &vt_OwnerDraw_DialogControl; /*0x624082*/
-  return &this->vfptr; /*0x624088*/
+    this->vfptr = &vt_OwnerDraw_DialogControl;
+    return &this->vfptr;
 }
 }
 } // namespace gamemd
@@ -1959,10 +1957,8 @@ _DWORD *__thiscall sub_624080(DialogControl_OwnerDraw *this)
 namespace gamemd {
 void E4Recv_624090::sub_624090()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_624090(DialogControl_OwnerDraw *this)
 {
-  this->vfptr = &vt_OwnerDraw_DialogControl; /*0x624090*/
+    this->vfptr = &vt_OwnerDraw_DialogControl;
 }
 }
 } // namespace gamemd

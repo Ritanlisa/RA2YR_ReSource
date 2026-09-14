@@ -6,25 +6,22 @@
 namespace gamemd {
 int TubeClass::LoadState(AbstractClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TubeClass::LoadState(AbstractClass *aP0, int aP1)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x7281ab*/
-  if ( result >= 0 ) /*0x7281b2*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( result >= 0 )
   {
-    if ( aP0 ) /*0x7281b6*/
+    if ( aP0 )
     {
-      AbstractClass::Constructor(aP0); /*0x7281ba*/
-      *(_DWORD *)aP0->__pad_0 = &TubeClass::`vftable'; /*0x7281bf*/
-      *(_DWORD *)&aP0->__pad_0[4] = &TubeClass::`vftable'; /*0x7281c5*/
-      *(_DWORD *)&aP0->__pad_0[8] = &TubeClass::`vftable'; /*0x7281cc*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_TubeClass; /*0x7281d3*/
+    AbstractClass::Constructor(aP0);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_TubeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TubeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TubeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_TubeClass;
     }
-    return 0; /*0x7281da*/
+    return 0;
   }
-  return result; /*0x7281dc*/
+    return result;
 }
 }
 } // namespace gamemd

@@ -147,7 +147,7 @@ HWND __thiscall sub_696AE0(int this)
         }
         SendMessageA(v4, 0x186u, v6, 0); /*0x696c1d*/
         SendMessageA(v4, 0x197u, v6, 0); /*0x696c28*/
-        this->M152 = v6; /*0x696c2e*/
+        *(_DWORD *)(this + 152) = v6; /*0x696c2e*/
         return (HWND)this; /*0x696c2a*/
       }
     }
@@ -161,48 +161,45 @@ HWND __thiscall sub_696AE0(int this)
 namespace gamemd {
 HWND E4Recv_696C40::sub_696C40()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall sub_696C40(int this)
 {
-  HWND result; // eax
-  HWND v3; // edi
-  LRESULT v4; // esi
-  int v5; // eax
-
-  result = GetDlgItem(*(HWND *)this, 1630); /*0x696c4f*/
-  v3 = result; /*0x696c55*/
-  if ( result ) /*0x696c59*/
+    HWND result;
+    HWND v3;
+    LRESULT v4;
+    int v5;
+    result = GetDlgItem(*(HWND *)this, 1630);
+    v3 = result;
+    if ( result )
   {
-    result = (HWND)SendMessageA(result, 0x18Bu, 0, 0); /*0x696c6f*/
-    if ( (int)result > 0 ) /*0x696c73*/
+    result = (HWND)SendMessageA(result, 0x18Bu, 0, 0);
+    if ( (int)result > 0 )
     {
-      result = (HWND)SendMessageA(v3, 0x188u, 0, 0); /*0x696c7f*/
-      v4 = (LRESULT)result; /*0x696c81*/
-      if ( result != HWND_MESSAGE|0x2 ) /*0x696c86*/
+    result = (HWND)SendMessageA(v3, 0x188u, 0, 0);
+    v4 = (LRESULT)result;
+    if ( result != HWND_MESSAGE|0x2 )
       {
-        SendMessageA(v3, 0x182u, (WPARAM)result, 0); /*0x696c91*/
-        if ( v4 < MEMORY[0xA8DB5C] ) /*0x696c9b*/
+    SendMessageA(v3, 0x182u, (WPARAM)result, 0);
+    if ( v4 < DataGlobal_A8DB5C )
         {
-          v5 = v4; /*0x696c9e*/
-          if ( v4 < --MEMORY[0xA8DB5C] ) /*0x696ca8*/
+    v5 = v4;
+    if ( v4 < --DataGlobal_A8DB5C )
           {
-            do /*0x696cc0*/
+    do
             {
-              ++v5; /*0x696cb0*/
-              *(_DWORD *)(MEMORY[0xA8DB50] + 4 * v5 - 4) = *(_DWORD *)(MEMORY[0xA8DB50] + 4 * v5); /*0x696cb4*/
+    ++v5;
+    *(int *)(DataGlobal_A8DB50 + 4 * v5 - 4) = *(int *)(DataGlobal_A8DB50 + 4 * v5);
             }
-            while ( v5 < MEMORY[0xA8DB5C] ); /*0x696cc0*/
+    while ( v5 < DataGlobal_A8DB5C );
           }
         }
-        if ( v4 >= SendMessageA(v3, 0x18Bu, 0, 0) ) /*0x696cd0*/
-          --v4; /*0x696cd2*/
-        SendMessageA(v3, 0x186u, v4, 0); /*0x696cdc*/
-        result = (HWND)SendMessageA(v3, 0x197u, v4, 0); /*0x696ce7*/
-        this->M152 = v4; /*0x696ce9*/
+    if ( v4 >= SendMessageA(v3, 0x18Bu, 0, 0) )
+    --v4;
+    SendMessageA(v3, 0x186u, v4, 0);
+    result = (HWND)SendMessageA(v3, 0x197u, v4, 0);
+    this->M152 = v4;
       }
     }
   }
-  return result; /*0x696cef*/
+    return result;
 }
 }
 } // namespace gamemd

@@ -5,55 +5,49 @@
 // 0x69EE90
 HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HRESULT __stdcall ShipLocomotionClass::_vt05(int *a1, int *pStm)
 {
-  IStream *v2; // edi
-  int v3; // ebx
-  int v4; // eax
-  LPVOID *v5; // esi
-
-  v2 = (IStream *)pStm; /*0x69ee97*/
-  v3 = SwizzleManager::SaveLoad(a1, pStm); /*0x69eea2*/
-  if ( v3 < 0 ) /*0x69eea6*/
-    return v3; /*0x69eea6*/
-  if ( a1 ) /*0x69eeaa*/
+    IStream *v2;
+    int v3;
+    int v4;
+    LPVOID *v5;
+    v2 = (IStream *)pStm;
+    v3 = SwizzleManager::SaveLoad(a1, pStm);
+    if ( v3 < 0 )
+    return v3;
+    if ( a1 )
   {
-    a1[26] = 0; /*0x69eeac*/
-    *a1 = (int)&ShipLocomotionClass::`vftable'; /*0x69eeb3*/
-    a1[1] = (int)&vt_ShipLocomotionClass; /*0x69eeb9*/
-    a1[6] = (int)&off_7F2D68; /*0x69eec0*/
+    *((int*)(a1) + 26) = 0;
+    *a1 = (int)(unsigned int)vt_ShipLocomotionClass;
+    *((int*)(a1) + 1) = (int)&vt_ShipLocomotionClass;
+    *((int*)(a1) + 6) = (int)&vt_ShipLocomotionClass_2;
   }
-  v2->__pad_0->Read(v2, &pStm, 1, 0); /*0x69eed3*/
-  if ( !(_BYTE)pStm ) /*0x69eedc*/
-    return v3; /*0x69ef08*/
-  v4 = a1[26]; /*0x69eede*/
-  v5 = (LPVOID *)(a1 + 26); /*0x69eee1*/
-  if ( v4 ) /*0x69eee6*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x69eeeb*/
-  *v5 = 0; /*0x69eef5*/
-  return OleLoadFromStream(v2, &IID_ILocomotion, v5); /*0x69ef01*/
+    v2->__pad_0->Read(v2, &pStm, 1, 0);
+    if ( !(char)pStm )
+    return v3;
+    v4 = *((int*)(a1) + 26);
+    v5 = (LPVOID *)(a1 + 26);
+    if ( v4 )
+    (*(void (__stdcall **)(int))(*(int *)(v4) + 8))(v4);
+    *v5 = 0;
+    return OleLoadFromStream(v2, &IID_ILocomotion, v5);
 }
 }
 
 // 0x6A42B0
 ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ShipLocomotionClass *__thiscall ShipLocomotionClass::ProcessMove(ILocomotion **this, char a2)
 {
-  ILocomotion *v3; // eax
-
-  *this = (ILocomotion *)&ShipLocomotionClass::`vftable'; /*0x6a42b3*/
-  *(this + 1) = (ILocomotion *)&vt_ShipLocomotionClass; /*0x6a42b9*/
-  *(this + 6) = (ILocomotion *)&off_7F2D68; /*0x6a42c0*/
-  v3 = *(this + 26); /*0x6a42c7*/
-  if ( v3 ) /*0x6a42cc*/
-    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x6a42d1*/
-  LocomotionClass::Construct(this); /*0x6a42d6*/
-  if ( (a2 & 1) != 0 ) /*0x6a42e0*/
-    __3_YAXPAX_Z(this); /*0x6a42e3*/
-  return (ShipLocomotionClass *)this; /*0x6a42ed*/
+    ILocomotion *v3;
+    *(void**)this = (unsigned int)vt_ShipLocomotionClass;
+    *(this + 1) = (ILocomotion *)&vt_ShipLocomotionClass;
+    *(this + 6) = (ILocomotion *)&vt_ShipLocomotionClass_2;
+    v3 = *(this + 26);
+    if ( v3 )
+    (*(void (__stdcall **)(ILocomotion *))(*(int *)(v3) + 8))(v3);
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (ShipLocomotionClass *)this;
 }
 }
 

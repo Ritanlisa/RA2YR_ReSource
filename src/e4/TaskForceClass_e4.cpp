@@ -177,36 +177,33 @@ LABEL_12:
 namespace gamemd {
 int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TaskForceClass::LoadTaskForce(AbstractTypeClass *aP0, int aP1)
 {
-  int result; // eax
-  MouseClass *v3; // esi
-  int v4; // edi
-
-  result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1); /*0x6e86ab*/
-  if ( result >= 0 ) /*0x6e86b2*/
+    int result;
+    MouseClass *v3;
+    int v4;
+    result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1);
+    if ( result >= 0 )
   {
-    if ( aP0 ) /*0x6e86b6*/
+    if ( aP0 )
     {
-      AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1); /*0x6e86bf*/
-      *(_DWORD *)aP0->__pad_0 = &TaskForceClass::`vftable'; /*0x6e86c4*/
-      *(_DWORD *)&aP0->__pad_0[4] = &TaskForceClass::`vftable'; /*0x6e86ca*/
-      *(_DWORD *)&aP0->__pad_0[8] = &TaskForceClass::`vftable'; /*0x6e86d1*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_TaskForceClass; /*0x6e86d8*/
+    AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_TaskForceClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TaskForceClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TaskForceClass;
+    *(int *)&aP0->__pad_0[12] = &vt_TaskForceClass;
     }
-    v3 = (MouseClass *)&aP0[1].uniqueId; /*0x6e86e0*/
-    v4 = 6; /*0x6e86e6*/
-    do /*0x6e86fa*/
+    v3 = (MouseClass *)&aP0[1].uniqueId;
+    v4 = 6;
+    do
     {
-      ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], v3); /*0x6e86f1*/
-      v3 = (MouseClass *)((char *)v3 + 8); /*0x6e86f6*/
-      --v4; /*0x6e86f9*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], v3);
+    v3 = (MouseClass *)((char *)(v3) + 8);
+    --v4;
     }
-    while ( v4 ); /*0x6e86fa*/
-    return 0; /*0x6e86fc*/
+    while ( v4 );
+    return 0;
   }
-  return result; /*0x6e86ff*/
+    return result;
 }
 }
 } // namespace gamemd

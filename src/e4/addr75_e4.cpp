@@ -2012,43 +2012,6 @@ char __usercall ProcessVoxelScanSamples@<al>(unsigned int a1@<ebx>, int a2@<ebp>
 } // namespace gamemd
 
 // 0x758AD0
-namespace gamemd {
-int E4Recv_758AD0::sub_758AD0(int * a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_758AD0(_DWORD *this, int *a2)
-{
-  int v3; // ebx
-  int v4; // eax
-  int v5; // edx
-  int v6; // ecx
-  int v7; // edx
-  _DWORD v9[4]; // [esp+Ch] [ebp-10h] BYREF
-
-  v3 = 0; /*0x758ae2*/
-  if ( !(*(int (__thiscall **)(int *, int))(*a2 + 28))(a2, 2) ) /*0x758ae4*/
-    goto LABEL_5; /*0x758ae4*/
-  v4 = *(this + 2); /*0x758aed*/
-  v5 = *(this + 1); /*0x758af0*/
-  v9[0] = *this; /*0x758af3*/
-  v6 = *(this + 3); /*0x758af7*/
-  v9[2] = v4; /*0x758afa*/
-  v9[1] = v5; /*0x758afe*/
-  v7 = *a2; /*0x758b02*/
-  v9[3] = v6; /*0x758b08*/
-  if ( (*(int (__thiscall **)(int *, _DWORD *, int))(v7 + 48))(a2, v9, 16) != 16 /*0x758b4a*/
-    || (*(int (__thiscall **)(int *, _DWORD, int))(*a2 + 48))(a2, *(this + 4), 768) != 768
-    || (*(int (__thiscall **)(int *, _DWORD, _DWORD))(*a2 + 48))(a2, *(this + 5), *(this + 2) << 8) != *(this + 2) << 8 )
-  {
-LABEL_5:
-    v3 = 1; /*0x758b4c*/
-  }
-  (*(void (__thiscall **)(int *))(*a2 + 52))(a2); /*0x758b55*/
-  return v3; /*0x758b58*/
-}
-}
-} // namespace gamemd
-
 // 0x759180
 namespace gamemd {
 int sub_759180()
@@ -2068,6 +2031,18 @@ int sub_759180()
 }
 } // namespace gamemd
 
+// 0x759790
+namespace gamemd {
+LPDIRECTDRAW E4Recv_759790::sub_759790()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+LPDIRECTDRAW __thiscall sub_759790(int this)
+{
+  return Surface::CreateSurfacePalette((void *)(this + 516));
+}
+}
+} // namespace gamemd
+
 // 0x7591C0
 namespace gamemd {
 void sub_7591C0()
@@ -2083,18 +2058,6 @@ void __cdecl sub_7591C0()
   }
   byte_B45B65 = 0; /*0x7591ed*/
   dword_B45B60 = 0; /*0x7591f3*/
-}
-}
-} // namespace gamemd
-
-// 0x759790
-namespace gamemd {
-LPDIRECTDRAW E4Recv_759790::sub_759790()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LPDIRECTDRAW __thiscall sub_759790(int this)
-{
-  return Surface::CreateSurfacePalette((void *)(this + 516));
 }
 }
 } // namespace gamemd
@@ -2265,7 +2228,7 @@ int AnimSystem_Reset(int a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall AnimSystem_Reset(int a1)
 {
-  byte_B45BA8[a1 >> 3] |= 1 << (a1 & 7); /*0x75a7dc*/
+  MEMORY[0xB45BA8][a1 >> 3] |= 1 << (a1 & 7); /*0x75a7dc*/
   return a1 >> 3; /*0x75a7e2*/
 }
 }

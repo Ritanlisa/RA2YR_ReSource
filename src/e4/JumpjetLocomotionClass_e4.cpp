@@ -2040,34 +2040,31 @@ int __stdcall JumpjetLocomotionClass::sub_54B4D0(int a1)
 // 0x54B750
 HRESULT JumpjetLocomotionClass::InitClass(int * a1, int * pStm)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HRESULT __stdcall JumpjetLocomotionClass::_vt05(int *a1, int *pStm)
 {
-  IStream *v2; // edi
-  int v3; // ebx
-  int v4; // eax
-  LPVOID *v5; // esi
-
-  v2 = (IStream *)pStm; /*0x54b757*/
-  v3 = SwizzleManager::SaveLoad(a1, pStm); /*0x54b762*/
-  if ( v3 < 0 ) /*0x54b766*/
-    return v3; /*0x54b766*/
-  if ( a1 ) /*0x54b76a*/
+    IStream *v2;
+    int v3;
+    int v4;
+    LPVOID *v5;
+    v2 = (IStream *)pStm;
+    v3 = SwizzleManager::SaveLoad(a1, pStm);
+    if ( v3 < 0 )
+    return v3;
+    if ( a1 )
   {
-    a1[37] = 0; /*0x54b76c*/
-    *a1 = (int)&JumpjetLocomotionClass::`vftable'; /*0x54b776*/
-    a1[1] = (int)&JumpjetLocomotionClass::`vftable'; /*0x54b77c*/
-    a1[6] = (int)&vt_JumpjetLocomotionClass; /*0x54b783*/
+    *((int*)(a1) + 37) = 0;
+    *a1 = (int)(unsigned int)vt_JumpjetLocomotionClass;
+    a1[1] = (unsigned int)vt_JumpjetLocomotionClass;
+    *((int*)(a1) + 6) = (int)&vt_JumpjetLocomotionClass;
   }
-  v2->__pad_0->Read(v2, &pStm, 1, 0); /*0x54b796*/
-  if ( !(_BYTE)pStm ) /*0x54b79f*/
-    return v3; /*0x54b7d1*/
-  v4 = a1[37]; /*0x54b7a1*/
-  v5 = (LPVOID *)(a1 + 37); /*0x54b7a7*/
-  if ( v4 ) /*0x54b7af*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x54b7b4*/
-  *v5 = 0; /*0x54b7be*/
-  return OleLoadFromStream(v2, &IID_ILocomotion, v5); /*0x54b7ca*/
+    v2->__pad_0->Read(v2, &pStm, 1, 0);
+    if ( !(char)pStm )
+    return v3;
+    v4 = *((int*)(a1) + 37);
+    v5 = (LPVOID *)(a1 + 37);
+    if ( v4 )
+    (*(void (__stdcall **)(int))(*(int *)(v4) + 8))(v4);
+    *v5 = 0;
+    return OleLoadFromStream(v2, &IID_ILocomotion, v5);
 }
 }
 
@@ -2228,21 +2225,18 @@ float *__stdcall JumpjetLocomotionClass::sub_54DCC0(signed int a1, float *a2, _D
 // 0x54DFA0
 JumpjetLocomotionClass * JumpjetLocomotionClass::ProcessAttach(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-JumpjetLocomotionClass *__thiscall JumpjetLocomotionClass::ProcessAttach(int *this, char a2)
 {
-  int v3; // eax
-
-  *this = (int)&JumpjetLocomotionClass::`vftable'; /*0x54dfa3*/
-  *(this + 1) = (int)&JumpjetLocomotionClass::`vftable'; /*0x54dfa9*/
-  *(this + 6) = (int)&vt_JumpjetLocomotionClass; /*0x54dfb0*/
-  v3 = *(this + 37); /*0x54dfb7*/
-  if ( v3 ) /*0x54dfbf*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 8))(v3); /*0x54dfc4*/
-  LocomotionClass::Construct(this); /*0x54dfc9*/
-  if ( (a2 & 1) != 0 ) /*0x54dfd3*/
-    __3_YAXPAX_Z(this); /*0x54dfd6*/
-  return (JumpjetLocomotionClass *)this; /*0x54dfe0*/
+    int v3;
+    *(void**)this = vt_JumpjetLocomotionClass;
+    *(this + 1) = (int)(unsigned int)vt_JumpjetLocomotionClass;
+    *(this + 6) = (int)&vt_JumpjetLocomotionClass;
+    v3 = *(this + 37);
+    if ( v3 )
+    (*(void (__stdcall **)(int))(*(int *)(v3) + 8))(v3);
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (JumpjetLocomotionClass *)this;
 }
 }
 
@@ -2735,40 +2729,37 @@ LABEL_5:
 // 0x719CA0
 HRESULT JumpjetLocomotionClass::InitMultiFieldArray_0(int * a1, int * pStm)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HRESULT __stdcall JumpjetLocomotionClass::sub_719CA0(int *a1, int *pStm)
 {
-  IStream *v2; // edi
-  int v3; // ebp
-  wchar_t *v4; // eax
-  int v5; // eax
-  LPVOID *v6; // esi
-
-  v2 = (IStream *)pStm; /*0x719ca7*/
-  v3 = SwizzleManager::SaveLoad(a1, pStm); /*0x719cb2*/
-  if ( v3 < 0 ) /*0x719cb6*/
-    return v3; /*0x719cb6*/
-  if ( a1 ) /*0x719cba*/
+    IStream *v2;
+    int v3;
+    wchar_t *v4;
+    int v5;
+    LPVOID *v6;
+    v2 = (IStream *)pStm;
+    v3 = SwizzleManager::SaveLoad(a1, pStm);
+    if ( v3 < 0 )
+    return v3;
+    if ( a1 )
   {
-    *a1 = (int)&LocomotionClass::`vftable'; /*0x719cbc*/
-    a1[1] = (int)&vt_LocomotionClass; /*0x719cc2*/
-    v4 = MEMORY[0xA8ED84]; /*0x719cc9*/
-    a1[17] = 0; /*0x719cce*/
-    a1[15] = (int)v4; /*0x719cd5*/
-    a1[18] = 0; /*0x719cd8*/
-    *a1 = (int)&TeleportLocomotionClass::`vftable'; /*0x719cdf*/
-    a1[1] = (int)&TeleportLocomotionClass::`vftable'; /*0x719ce5*/
-    a1[6] = (int)&vt_TeleportLocomotionClass; /*0x719cec*/
+    *a1 = (int)(unsigned int)vt_LocomotionClass;
+    *((int*)(a1) + 1) = (int)&vt_LocomotionClass;
+    v4 = g_CurrentFrame;
+    *((int*)(a1) + 17) = 0;
+    *((int*)(a1) + 15) = (int)v4;
+    *((int*)(a1) + 18) = 0;
+    *a1 = (int)(unsigned int)vt_TeleportLocomotionClass;
+    a1[1] = (unsigned int)vt_TeleportLocomotionClass;
+    *((int*)(a1) + 6) = (int)&vt_TeleportLocomotionClass;
   }
-  v2->__pad_0->Read(v2, &pStm, 1, 0); /*0x719cff*/
-  if ( !(_BYTE)pStm ) /*0x719d08*/
-    return v3; /*0x719d34*/
-  v5 = a1[18]; /*0x719d0a*/
-  v6 = (LPVOID *)(a1 + 18); /*0x719d0d*/
-  if ( v5 ) /*0x719d12*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v5 + 8))(v5); /*0x719d17*/
-  *v6 = 0; /*0x719d21*/
-  return OleLoadFromStream(v2, &IID_ILocomotion, v6); /*0x719d2d*/
+    v2->__pad_0->Read(v2, &pStm, 1, 0);
+    if ( !(char)pStm )
+    return v3;
+    v5 = *((int*)(a1) + 18);
+    v6 = (LPVOID *)(a1 + 18);
+    if ( v5 )
+    (*(void (__stdcall **)(int))(*(int *)(v5) + 8))(v5);
+    *v6 = 0;
+    return OleLoadFromStream(v2, &IID_ILocomotion, v6);
 }
 }
 

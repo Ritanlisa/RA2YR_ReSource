@@ -335,28 +335,25 @@ int __thiscall TerrainTypeClass::_vt13(int this, int *a2)
 // 0x71E1D0
 int TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 {
-  int result; // eax
-
-  result = ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1); /*0x71e1db*/
-  if ( result >= 0 ) /*0x71e1e2*/
+    int result;
+    result = ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1);
+    if ( result >= 0 )
   {
-    if ( aP0 ) /*0x71e1e6*/
+    if ( aP0 )
     {
-      ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1); /*0x71e1ef*/
-      *(_DWORD *)aP0->__pad_0 = &TerrainTypeClass::`vftable'; /*0x71e1f4*/
-      *(_DWORD *)&aP0->__pad_0[4] = &TerrainTypeClass::`vftable'; /*0x71e1fa*/
-      *(_DWORD *)&aP0->__pad_0[8] = &TerrainTypeClass::`vftable'; /*0x71e201*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_TerrainTypeClass; /*0x71e208*/
+    ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_TerrainTypeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TerrainTypeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TerrainTypeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_TerrainTypeClass;
     }
-    VoxelAnimType::LoadAnim(aP0->__pad_0); /*0x71e211*/
-    ObjectTypeClass::Load2DArt(aP0->__pad_0); /*0x71e218*/
-    *(_DWORD *)aP0[1].__pad_24 = 40 * *(_DWORD *)&aP0[1].__pad_0[4] + 11595200; /*0x71e22d*/
-    return 0; /*0x71e233*/
+    VoxelAnimType::LoadAnim(aP0->__pad_0);
+    ObjectTypeClass::Load2DArt(aP0->__pad_0);
+    *(int *)aP0[1].__pad_24 = 40 * *(int *)&aP0[1].__pad_0[4] + 11595200;
+    return 0;
   }
-  return result; /*0x71e235*/
+    return result;
 }
 }
 

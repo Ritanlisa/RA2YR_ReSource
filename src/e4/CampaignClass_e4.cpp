@@ -119,25 +119,22 @@ LABEL_7:
 namespace gamemd {
 int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CampaignClass::Write(AbstractTypeClass *aP0, int aP1)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1); /*0x46d00b*/
-  if ( result >= 0 ) /*0x46d012*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1);
+    if ( result >= 0 )
   {
-    if ( aP0 ) /*0x46d016*/
+    if ( aP0 )
     {
-      AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1); /*0x46d01f*/
-      *(_DWORD *)aP0->__pad_0 = &CampaignClass::`vftable'; /*0x46d024*/
-      *(_DWORD *)&aP0->__pad_0[4] = &CampaignClass::`vftable'; /*0x46d02a*/
-      *(_DWORD *)&aP0->__pad_0[8] = &CampaignClass::`vftable'; /*0x46d031*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_CampaignClass; /*0x46d038*/
+    AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_CampaignClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_CampaignClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_CampaignClass;
+    *(int *)&aP0->__pad_0[12] = &vt_CampaignClass;
     }
-    return 0; /*0x46d03f*/
+    return 0;
   }
-  return result; /*0x46d041*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -146,32 +143,29 @@ int __stdcall CampaignClass::Write(AbstractTypeClass *aP0, int aP1)
 namespace gamemd {
 CampaignClass * CampaignClass::DTOR(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-CampaignClass *__thiscall CampaignClass::DTOR(void **this, char a2)
 {
-  int v3; // eax
-  void **v5; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &CampaignClass::`vftable'; /*0x46d096*/
-  *(this + 1) = &CampaignClass::`vftable'; /*0x46d09c*/
-  *(this + 2) = &CampaignClass::`vftable'; /*0x46d0a3*/
-  *(this + 3) = &vt_CampaignClass; /*0x46d0aa*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x46d0b1*/
-  v5 = this; /*0x46d0c6*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(dword_A83CF8 + 16))(&dword_A83CF8, &v5); /*0x46d0ca*/
-  if ( v3 != -1 && v3 < g_UnitTypeInitState && v3 < --g_UnitTypeInitState ) /*0x46d0e5*/
+    int v3;
+    void **v5;
+    *(void**)this = vt_CampaignClass;
+    *(this + 1) = (unsigned int)vt_CampaignClass;
+    *(this + 2) = (unsigned int)vt_CampaignClass;
+    *(this + 3) = &vt_CampaignClass;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    v5 = this;
+    v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_A83CF8 + 16))(&DataGlobal_A83CF8, &v5);
+    if ( v3 != -1 && v3 < g_UnitTypeInitState && v3 < --g_UnitTypeInitState )
   {
-    do /*0x46d0fd*/
+    do
     {
-      ++v3; /*0x46d0ed*/
-      *((_DWORD *)g_CampaignTypeArray + v3 - 1) = *((_DWORD *)g_CampaignTypeArray + v3); /*0x46d0f1*/
+    ++v3;
+    *((int *)(g_CampaignTypeArray) + v3 - 1) = *((int *)(g_CampaignTypeArray) + v3);
     }
-    while ( v3 < g_UnitTypeInitState ); /*0x46d0fd*/
+    while ( v3 < g_UnitTypeInitState );
   }
-  AbstractTypeClass::Dtor(this); /*0x46d101*/
-  if ( (a2 & 1) != 0 ) /*0x46d10b*/
-    __3_YAXPAX_Z(this); /*0x46d10e*/
-  return (CampaignClass *)this; /*0x46d118*/
+    AbstractTypeClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (CampaignClass *)this;
 }
 }
 } // namespace gamemd

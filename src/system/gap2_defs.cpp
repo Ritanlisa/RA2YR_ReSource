@@ -1348,6 +1348,8 @@ BOOL __thiscall FileClass::Load(int *this, CDFileClass *aP1)
 } }
 // 0x473E50
 namespace gamemd { int CCFileClass::Destru_vt14() {
+namespace gamemd { int CCFileClass::Destru_vt14() {
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CCFileClass::Destru_vt14(HANDLE *this)
 {
@@ -1383,7 +1385,9 @@ int __thiscall CCFileClass::Destru_vt14(HANDLE *this)
   BufferIOFileClass::Dtor(v8); /*0x473ee8*/
   return v5; /*0x473eef*/
 }
-} }
+}
+} // namespace gamemd
+
 // 0x473F00
 namespace gamemd { int CCFileClass::Destru_vt15(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -29266,26 +29270,22 @@ int __thiscall TacticalClass::FindInVector(int *this, _DWORD *a2)
 namespace gamemd { void* TacticalClass::DestroyVector(int a1) { return nullptr; } }
 // 0x5C0FE0
 namespace gamemd { void* ScenarioClass::initAI(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ScenarioClass::initAI(MultiplayerBattle *this, char a2)
 {
-  this->vfptr = &vt_MultiplayerBattle; /*0x5c0fe3*/
-  MultiplayerGameMode::Dtor(this); /*0x5c0fe9*/
-  if ( (a2 & 1) != 0 ) /*0x5c0ff3*/
-    __3_YAXPAX_Z(this); /*0x5c0ff6*/
-  return &this->vfptr; /*0x5c1000*/
+    this->vfptr = &vt_MultiplayerBattle;
+    MultiplayerGameMode::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
 }
 } }
 // 0x5C5E40
 namespace gamemd { void* ScenarioClass::executeTriggerActions(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ScenarioClass::executeTriggerActions(FreeForAll *this, char a2)
 {
-  this->vfptr = &vt_FreeForAll; /*0x5c5e43*/
-  MultiplayerGameMode::Dtor(this); /*0x5c5e49*/
-  if ( (a2 & 1) != 0 ) /*0x5c5e53*/
-    __3_YAXPAX_Z(this); /*0x5c5e56*/
-  return &this->vfptr; /*0x5c5e60*/
+    this->vfptr = &vt_FreeForAll;
+    MultiplayerGameMode::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
 }
 } }
 // 0x5CBDA0
@@ -30962,12 +30962,10 @@ void __thiscall sub_62E650(int *this)
 } }
 // 0x631E30
 namespace gamemd { void* TacticalClass::saveConfig(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TacticalClass::saveConfig(PixelFXClass *this, int a2)
 {
-  this->vfptr = &vt_PixelFXClass; /*0x631e38*/
-  BuildingDebris::Init(this, a2); /*0x631e3e*/
-  return &this->vfptr; /*0x631e45*/
+    this->vfptr = &vt_PixelFXClass;
+    BuildingDebris::Init(this, a2);
+    return &this->vfptr;
 }
 } }
 // 0x633B90

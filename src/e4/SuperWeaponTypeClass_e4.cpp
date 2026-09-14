@@ -326,57 +326,48 @@ LABEL_16:
 namespace gamemd {
 int SuperWeaponTypeClass::SuperWeaponTypeClass(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SuperWeaponTypeClass::SuperWeaponTypeClass(int this, ObjectClass *aP1)
 {
-  int v3; // eax
-
-  AbstractTypeClass::Constructor(this, (AbstractClass *)aP1); /*0x6ce5bb*/
-  this->WeaponType = 0; /*0x6ce5cb*/
-  this->RechargeVoice = -1; /*0x6ce5d1*/
-  this->ChargingVoice = -1; /*0x6ce5d7*/
-  this->ImpatientVoice = -1; /*0x6ce5dd*/
-  this->SuspendVoice = -1; /*0x6ce5e3*/
-  this->RechargeTime = 4500; /*0x6ce5e9*/
-  this->Type = -1; /*0x6ce5f3*/
-  this->SidebarImage = 0; /*0x6ce5f9*/
-  this->ActionValue = 0; /*0x6ce5ff*/
-  this->SpecialSound = -1; /*0x6ce605*/
-  this->StartSound = -1; /*0x6ce60b*/
-  this->AuxBuilding = 0; /*0x6ce611*/
-  *(_BYTE *)(this + 204) = 0; /*0x6ce617*/
-  this->FlashSidebarTabFrames = -1; /*0x6ce619*/
-  this->PreDependent = -1; /*0x6ce61f*/
-  this->UseChargeDrain = 0; /*0x6ce628*/
-  this->IsPowered = 1; /*0x6ce62f*/
-  this->DisableableFromShell = 0; /*0x6ce636*/
-  this->AIDefendAgainst = 0; /*0x6ce63c*/
-  this->PreClick = 0; /*0x6ce642*/
-  this->PostClick = 0; /*0x6ce648*/
-  this->ShowTimer = 0; /*0x6ce64e*/
-  this->ManualControl = 0; /*0x6ce654*/
-  this->Range = 0; /*0x6ce65a*/
-  this->LineMultiplier = 0; /*0x6ce660*/
-  *(_DWORD *)this = &SuperWeaponTypeClass::`vftable'; /*0x6ce666*/
-  this->vtable1 = &SuperWeaponTypeClass::`vftable'; /*0x6ce66d*/
-  this->vtable2 = &SuperWeaponTypeClass::`vftable'; /*0x6ce673*/
-  this->vtable3 = &vt_SuperWeaponTypeClass; /*0x6ce67a*/
-  AbstractClass::GenerateUniqueID(this + 4); /*0x6ce681*/
-  this->ArrayIndex = *(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[324]; /*0x6ce68c*/
-  if ( *(int *)&MEMORY[0xA8D63C].__pad_BC0[324] < *(int *)&MEMORY[0xA8D63C].__pad_BC0[316] /*0x6ce6c4*/
-    || (MEMORY[0xA8D63C].__pad_BC0[321] || !*(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[316])
-    && *(int *)&MEMORY[0xA8D63C].__pad_BC0[328] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[308] + 8))(
-         &MEMORY[0xA8D63C].__pad_BC0[308],
-         *(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[316] + *(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[328],
-         0) )
+    int v3;
+    AbstractTypeClass::Constructor(this, (AbstractClass *)aP1);
+    this->WeaponType = 0;
+    this->RechargeVoice = -1;
+    this->ChargingVoice = -1;
+    this->ImpatientVoice = -1;
+    this->SuspendVoice = -1;
+    this->RechargeTime = 4500;
+    this->Type = -1;
+    this->SidebarImage = 0;
+    this->ActionValue = 0;
+    this->SpecialSound = -1;
+    this->StartSound = -1;
+    this->AuxBuilding = 0;
+    this->SidebarImageFile = 0;
+    this->FlashSidebarTabFrames = -1;
+    this->PreDependent = -1;
+    this->UseChargeDrain = 0;
+    this->IsPowered = 1;
+    this->DisableableFromShell = 0;
+    this->AIDefendAgainst = 0;
+    this->PreClick = 0;
+    this->PostClick = 0;
+    this->ShowTimer = 0;
+    this->ManualControl = 0;
+    this->Range = 0;
+    this->LineMultiplier = 0;
+    *(void**)this = vt_SuperWeaponTypeClass;
+    this->vtable1 = (unsigned int)vt_SuperWeaponTypeClass;
+    this->vtable2 = (unsigned int)vt_SuperWeaponTypeClass;
+    this->vtable3 = &vt_SuperWeaponTypeClass;
+    AbstractClass::GenerateUniqueID(this + 4);
+    this->ArrayIndex = *(int *)&g_NetworkPlayerBuffer.__pad_BC0[324];
+    if ( *(int *)&g_NetworkPlayerBuffer.__pad_BC0[324] < *(int *)&g_NetworkPlayerBuffer.__pad_BC0[316] || (g_NetworkPlayerBuffer.__pad_BC0[321] || !*(int *)&g_NetworkPlayerBuffer.__pad_BC0[316]) && *(int *)&g_NetworkPlayerBuffer.__pad_BC0[328] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&g_NetworkPlayerBuffer.__pad_BC0[308] + 8))( &g_NetworkPlayerBuffer.__pad_BC0[308], *(int *)&g_NetworkPlayerBuffer.__pad_BC0[316] + *(int *)&g_NetworkPlayerBuffer.__pad_BC0[328], 0) )
   {
-    v3 = (*(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[324])++; /*0x6ce6d1*/
-    *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[312] + 4 * v3) = this; /*0x6ce6e0*/
+    v3 = (*(int *)&g_NetworkPlayerBuffer.__pad_BC0[324])++;
+    *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_BC0[312] + 4 * v3) = this;
   }
-  if ( this + 36 != this + 204 ) /*0x6ce6e8*/
-    qmemcpy((void *)(this + 204), (const void *)(this + 36), 0x19u); /*0x6ce6ef*/
-  return this; /*0x6ce6f2*/
+    if ( this + 36 != this + 204 )
+    qmemcpy((void *)(this + 204), (const void *)(this + 36), 0x19u);
+    return this;
 }
 }
 } // namespace gamemd
@@ -385,36 +376,33 @@ int __thiscall SuperWeaponTypeClass::SuperWeaponTypeClass(int this, ObjectClass 
 namespace gamemd {
 int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
-  int result; // eax
-  int v3; // eax
-  char v4; // [esp+7h] [ebp-201h] BYREF
-  char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
-
-  result = AbstractClass::SaveLoad_Prefix_0((_DWORD *)a1, a2); /*0x6ce814*/
-  if ( result >= 0 ) /*0x6ce81b*/
+    int result;
+    int v3;
+    char v4;
+    char Buffer[512];
+    result = AbstractClass::SaveLoad_Prefix_0((int *)a1, a2);
+    if ( result >= 0 )
   {
-    if ( a1 ) /*0x6ce823*/
+    if ( a1 )
     {
-      AbstractTypeClass::Init(a1, (int)&v4); /*0x6ce82c*/
-      *(_DWORD *)(a1 + 184) = 0; /*0x6ce831*/
-      *(_DWORD *)a1 = &SuperWeaponTypeClass::`vftable'; /*0x6ce83b*/
-      *(_DWORD *)(a1 + 4) = &SuperWeaponTypeClass::`vftable'; /*0x6ce841*/
-      *(_DWORD *)(a1 + 8) = &SuperWeaponTypeClass::`vftable'; /*0x6ce848*/
-      *(_DWORD *)(a1 + 12) = &vt_SuperWeaponTypeClass; /*0x6ce84f*/
+    AbstractTypeClass::Init(a1, (int)&v4);
+    *(int *)(a1 + 184) = 0;
+    *(int *)a1 = (unsigned int)vt_SuperWeaponTypeClass;
+    *(int *)(a1 + 4) = (unsigned int)vt_SuperWeaponTypeClass;
+    *(int *)(a1 + 8) = (unsigned int)vt_SuperWeaponTypeClass;
+    *(int *)(a1 + 12) = &vt_SuperWeaponTypeClass;
     }
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 156)); /*0x6ce862*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 200)); /*0x6ce873*/
-    _makepath(Buffer, 0, 0, (const char *)(a1 + 204), Ext); /*0x6ce88d*/
-    v3 = SearchMIXFile(Buffer, 0); /*0x6ce89b*/
-    *(_DWORD *)(a1 + 184) = v3; /*0x6ce8a2*/
-    if ( !v3 ) /*0x6ce8a8*/
-      *(_DWORD *)(a1 + 184) = SearchMIXFile(g_Str_File_XXICON_SHP, 0); /*0x6ce8b6*/
-    return 0; /*0x6ce8bc*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 156));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 200));
+    _makepath(Buffer, 0, 0, (const char *)(a1 + 204), Ext);
+    v3 = SearchMIXFile(Buffer, 0);
+    *(int *)(a1 + 184) = v3;
+    if ( !v3 )
+    *(int *)(a1 + 184) = SearchMIXFile(g_Str_File_XXICON_SHP, 0);
+    return 0;
   }
-  return result; /*0x6ce8be*/
+    return result;
 }
 }
 } // namespace gamemd

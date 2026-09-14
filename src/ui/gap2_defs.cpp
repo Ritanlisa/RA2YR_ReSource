@@ -291,22 +291,19 @@ namespace gamemd { int CheckListClass::SetFocus(int a1) {
 } }
 // 0x4886E0
 namespace gamemd { void* CheckListClass::QueryInterface(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-CheckListClass *__thiscall CheckListClass::QueryInterface(unsigned int *this, char a2)
 {
-  CCINIClass *Clamped; // edi
-
-  *this = (unsigned int)&vt_CheckListClass; /*0x4886e3*/
-  while ( *(this + 17) ) /*0x4886e9*/
+    CCINIClass *Clamped;
+    *(void**)this = (unsigned int)&vt_CheckListClass;
+    while ( *(this + 17) )
   {
-    Clamped = (CCINIClass *)Array::GetClamped(this, 0); /*0x4886fe*/
-    ListClass::RemoveItem(this, 0); /*0x488700*/
-    __3_YAXPAX_Z(Clamped); /*0x488706*/
+    Clamped = (CCINIClass *)Array::GetClamped(this, 0);
+    ListClass::RemoveItem(this, 0);
+    __3_YAXPAX_Z(Clamped);
   }
-  ListClass::Destruct(this); /*0x488718*/
-  if ( (a2 & 1) != 0 ) /*0x488722*/
-    __3_YAXPAX_Z(this); /*0x488725*/
-  return (CheckListClass *)this; /*0x48872f*/
+    ListClass::Destruct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (CheckListClass *)this;
 }
 } }
 // 0x4B4FB0

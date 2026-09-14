@@ -668,43 +668,30 @@ int __thiscall sub_4C3DD0(int *this, int a2)
 namespace gamemd {
 char * AnimClass::sub_4C68E0(int a2, int a3, IUnknown * aP3, IUnknown * aP4, int a6, char a7, int a8, char a9, int a10, int a11)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_4C68E0(
-        AnimClass *this,
-        int a2,
-        int a3,
-        IUnknown *aP3,
-        IUnknown *aP4,
-        int a6,
-        char a7,
-        int a8,
-        char a9,
-        int a10,
-        int a11)
 {
-  Debug::Log(); /*0x4c68e8*/
-  if ( a2 < 0 ) /*0x4c68f6*/
+    Debug::Log();
+    if ( a2 < 0 )
   {
-    BYTE2(this->field_0) = -1; /*0x4c6952*/
-    LOBYTE(this->field_0) = 0; /*0x4c6956*/
-    *(int *)((char *)&this->field_0 + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c6961*/
-    return (char *)this; /*0x4c695f*/
+    BYTE2(this->field_0) = -1;
+    LOBYTE(this->field_0) = 0;
+    *(int *)((char *)&this->field_0 + 3) = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[664];
+    return (char *)this;
   }
-  else
+    else
   {
-    BYTE2(this->field_0) = a2; /*0x4c6900*/
-    LOBYTE(this->field_0) = 5; /*0x4c6906*/
-    *(void **)((char *)&this->field_4 + 3) = (void *)a3; /*0x4c6909*/
-    HIBYTE(this->field_8) = (_BYTE)aP3; /*0x4c690e*/
-    this->__pad_C[0] = (char)aP4; /*0x4c6919*/
-    *(_DWORD *)&this->__pad_C[1] = a6; /*0x4c6920*/
-    this->__pad_C[5] = a7; /*0x4c6926*/
-    *(_DWORD *)&this->__pad_C[6] = a8; /*0x4c6930*/
-    *(_DWORD *)&this->__pad_18[3] = a11; /*0x4c6937*/
-    BYTE2(this->field_14) = a9; /*0x4c693a*/
-    *(int *)((char *)&this->field_14 + 3) = a10; /*0x4c6941*/
-    *(int *)((char *)&this->field_0 + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c6949*/
-    return (char *)this; /*0x4c694c*/
+    BYTE2(this->field_0) = a2;
+    LOBYTE(this->field_0) = 5;
+    *(void **)((char *)&this->field_4 + 3) = (void *)a3;
+    HIBYTE(this->field_8) = (char)aP3;
+    this->__pad_C[0] = (char)aP4;
+    *(int *)&this->__pad_C[1] = a6;
+    this->__pad_C[5] = a7;
+    *(int *)&this->__pad_C[6] = a8;
+    *(int *)&this->__pad_18[3] = a11;
+    BYTE2(this->field_14) = a9;
+    *(int *)((char *)&this->field_14 + 3) = a10;
+    *(int *)((char *)&this->field_0 + 3) = *(int *)&g_NetworkPlayerBuffer.__pad_14B0[664];
+    return (char *)this;
   }
 }
 }

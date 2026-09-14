@@ -72,22 +72,19 @@ void __thiscall sub_771890(_DWORD *this)
 namespace gamemd {
 char AnimClass::sub_773590(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_773590(AnimClass *this, int a2, int a3)
 {
-  void **v4; // esi
-
-  *(_DWORD *)&this->__pad_40C[4] = a2; /*0x77359e*/
-  Debug::Log(); /*0x7735a4*/
-  v4 = &this->field_8; /*0x7735ac*/
-  if ( CoCreateInstance(&stru_7F7C60, 0, 1u, &stru_7F7C30, &this->field_8) >= 0 ) /*0x7735c6*/
+    void **v4;
+    *(int *)&this->__pad_40C[4] = a2;
+    Debug::Log();
+    v4 = &this->field_8;
+    if ( CoCreateInstance(&DataGlobal_7F7C60, 0, 1u, &DataGlobal_7F7C30, &this->field_8) >= 0 )
   {
-    Debug::Log(); /*0x7735cd*/
-    (*(void (__stdcall **)(void *, AnimClass *))(*(_DWORD *)*v4 + 20))(*v4, this); /*0x7735db*/
-    (*(void (__stdcall **)(void *, int, int))(*(_DWORD *)*v4 + 12))(*v4, a2, a3); /*0x7735e9*/
-    (*(void (__stdcall **)(void *, int))(*(_DWORD *)*v4 + 60))(*v4, 1); /*0x7735f3*/
+    Debug::Log();
+    (*(void (__stdcall **)(void *, AnimClass *))(*(int *)*v4 + 20))(*v4, this);
+    (*(void (__stdcall **)(void *, int, int))(*(int *)*v4 + 12))(*v4, a2, a3);
+    (*(void (__stdcall **)(void *, int))(*(int *)*v4 + 60))(*v4, 1);
   }
-  return 1; /*0x7735f6*/
+    return 1;
 }
 }
 } // namespace gamemd

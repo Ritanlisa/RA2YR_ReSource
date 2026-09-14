@@ -1028,10 +1028,16 @@ def canonicalize_branch_polarity(cfg):
     return cfg
 
 
-def _build_ida_cfg_events(efv, ida_decompiled, this_type, M):
+def _build_ida_cfg_events(efv, ida_decompiled, this_type, M, class_name=None):
     cfg = efv["ida_cfg"].build_ida_cfg(ida_decompiled)
     cfg = efv["normalize"].normalize(cfg)
-    efv["ida_events"].extract_events_into(cfg, this_type, maps=M)
+    # G11: class_name enables til-named `this->Member` extraction (symmetric
+    # with the C++ side's this-> handling); None keeps the legacy behavior.
+    try:
+        efv["ida_events"].extract_events_into(cfg, this_type, maps=M,
+                                              class_name=class_name)
+    except TypeError:
+        efv["ida_events"].extract_events_into(cfg, this_type, maps=M)
     cfg = efv["normalize"].normalize(cfg)
     canonicalize_branch_polarity(cfg)
     return cfg
@@ -1271,11 +1277,10 @@ def verify_single_function(ida_addr, func_name, display_name, M,
     if signals is None:
         signals = efv["cpp_events"].get_signals()
 
-    # ---- IDA side ----
-    this_type = detect_this_type(ida_decompiled)
-    ida_cfg = _build_ida_cfg_events(efv, ida_decompiled, this_type, M)
-
     # ---- locate the C++ implementation ----
+    # (G11: moved BEFORE the IDA build so the located body's class_name can
+    # drive til-named `this->Member` extraction on the IDA side — sub_* names
+    # carry no `::` and the class is only visible in the C++ def.)
     # Name-first (exact def-pattern match), addr as fallback: the by-addr
     # backward walk can false-positive onto a def-SHAPED line inside the
     # PREVIOUS function's body (e.g. an ASM comment block carrying call-like
@@ -1287,6 +1292,21 @@ def verify_single_function(ida_addr, func_name, display_name, M,
         body = find_cpp_function(display_name)
     if not body and ida_addr:
         body = find_cpp_function_by_addr(ida_addr)
+
+    # ---- IDA side ----
+    this_type = detect_this_type(ida_decompiled)
+    # G11: class for til-named `this->Member` extraction (mirror of the C++
+    # side's this-> handling); None keeps the legacy behavior.
+    _ida_cls = None
+    if body and body.get("class_name"):
+        _ida_cls = body.get("class_name")
+    elif func_name and "::" in func_name:
+        _ida_cls = func_name.split("::")[0]
+    elif display_name and "::" in display_name:
+        _ida_cls = display_name.split("::")[0]
+    ida_cfg = _build_ida_cfg_events(efv, ida_decompiled, this_type, M,
+                                    class_name=_ida_cls)
+
     if not body:
         if verbose:
             print("  C++ source : NOT FOUND", file=sys.stderr)

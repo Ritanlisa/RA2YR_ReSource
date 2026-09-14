@@ -91,25 +91,22 @@ int __thiscall sub_554830(int this)
 // 0x5550C0
 int LightSourceClass::Write(AbstractClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall LightSourceClass::Write(AbstractClass *aP0, int aP1)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x5550cb*/
-  if ( result >= 0 ) /*0x5550d2*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( result >= 0 )
   {
-    if ( aP0 ) /*0x5550d6*/
+    if ( aP0 )
     {
-      AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x5550df*/
-      *(_DWORD *)aP0->__pad_0 = &LightSourceClass::`vftable'; /*0x5550e4*/
-      *(_DWORD *)&aP0->__pad_0[4] = &LightSourceClass::`vftable'; /*0x5550ea*/
-      *(_DWORD *)&aP0->__pad_0[8] = &LightSourceClass::`vftable'; /*0x5550f1*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_LightSourceClass; /*0x5550f8*/
+    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_LightSourceClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_LightSourceClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_LightSourceClass;
+    *(int *)&aP0->__pad_0[12] = &vt_LightSourceClass;
     }
-    return 0; /*0x5550ff*/
+    return 0;
   }
-  return result; /*0x555101*/
+    return result;
 }
 }
 

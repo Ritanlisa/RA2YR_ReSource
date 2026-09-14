@@ -89,6 +89,8 @@ namespace gamemd { int HouseClass::SaveTriggerNodeData(void* a1, void* a2) {
 } }
 // 0x42F180
 namespace gamemd { int BaseClass::ProcessPowerTimer(AbstractClass * aP1) {
+namespace gamemd { int BaseClass::ProcessPowerTimer(AbstractClass * aP1) {
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BaseClass::ProcessPowerTimer(int *this, AbstractClass *aP1)
 {
@@ -119,7 +121,9 @@ int __thiscall BaseClass::ProcessPowerTimer(int *this, AbstractClass *aP1)
   }
   return result; /*0x42f1da*/
 }
-} }
+}
+} // namespace gamemd
+
 // 0x42F1E0
 namespace gamemd { void* BaseClass::Construct(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -626,6 +630,8 @@ namespace gamemd { int HouseClass::ReadHouseNamesToBitmask(void* a1, void* a2, i
 
 // 0x4752E0
 namespace gamemd { int HouseClass::WriteHouseListToINI(void* aP1, void* a2, int a4) {
+namespace gamemd { int HouseClass::WriteHouseListToINI(void* aP1, void* a2, int a4) {
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall HouseClass::WriteHouseListToINI(char *this, CCINIClass *aP1, char *a2, int a4)
 {
@@ -660,7 +666,8 @@ char __thiscall HouseClass::WriteHouseListToINI(char *this, CCINIClass *aP1, cha
   else
     return 1; /*0x4753d8*/
 }
-} }
+}
+} // namespace gamemd
 
 // 0x475980
 namespace gamemd { int HouseClass::ReadIntFromINI(void* a1, void* a2, int a3) {
@@ -723,6 +730,8 @@ namespace gamemd { bool HouseClass::HasType() {
 
 // 0x48DB80
 namespace gamemd { int HouseClass::FindHouseIndexByName() {
+namespace gamemd { int HouseClass::FindHouseIndexByName() {
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall HouseClass::FindHouseIndexByName(void *this)
 {
@@ -742,7 +751,8 @@ int __thiscall HouseClass::FindHouseIndexByName(void *this)
   }
   return v2; /*0x48dbac*/
 }
-} }
+}
+} // namespace gamemd
 
 // 0x49F9B0
 namespace gamemd { void* CounterClass::Construct() {
@@ -10852,6 +10862,8 @@ char __thiscall HouseClass::RegisterGain_0(int this, TechnoClass *aP1, int a3)
 
 // 0x502D30
 namespace gamemd { int HouseClass::FindOwner() {
+namespace gamemd { int HouseClass::FindOwner() {
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall HouseClass_FindOwner(void *this)
 {
@@ -10872,7 +10884,8 @@ int __thiscall HouseClass_FindOwner(void *this)
   }
   return result; /*0x502d5c*/
 }
-} }
+}
+} // namespace gamemd
 
 // 0x502D60
 namespace gamemd { int HouseClass::UpdatePowerTimers(void* a1) {
@@ -16607,6 +16620,8 @@ namespace gamemd { double HouseClass::GetBuildingDamageMultiplier(void* a2) {
 
 // 0x50C170
 namespace gamemd { int HouseClass::FindByName() {
+namespace gamemd { int HouseClass::FindByName() {
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall HouseClass_FindByName(const char *this)
 {
@@ -16627,7 +16642,8 @@ int __thiscall HouseClass_FindByName(const char *this)
   }
   return v1; /*0x50c1f8*/
 }
-} }
+}
+} // namespace gamemd
 
 // 0x50C210
 namespace gamemd { void HouseClass::SetPrimaryTechBuilding() {

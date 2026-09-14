@@ -419,23 +419,20 @@ char sub_55FC80()
 namespace gamemd {
 void Options::SetScoreVolume(float volume, int pad)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Options::SetScoreVolume(Options *this, float volume, int pad)
 {
-  double v4; // st7
-  int v5; // eax
-  int v6; // eax
-
-  if ( volume >= 1.0 ) /*0x5fa4b2*/
-    v4 = 1.0; /*0x5fa4ba*/
-  else
-    v4 = volume; /*0x5fa4b4*/
-  *(float *)&this->__pad_34[12] = v4; /*0x5fa4c0*/
-  v5 = Math::RoundToInt(v4 * 16384.0); /*0x5fa4c9*/
-  EndBufferMixer(*(int **)&stru_87C374.__pad_14B0[3872], v5); /*0x5fa4d6*/
-  v6 = Math::RoundToInt(*(float *)&this->__pad_34[12] * 255.0); /*0x5fa4e4*/
-  GameSettings::SetScoreVolume(&g_BuildingTypeClass_Count, v6); /*0x5fa4ef*/
-  Debug::Log(); /*0x5fa502*/
+    double v4;
+    int v5;
+    int v6;
+    if ( volume >= 1.0 )
+    v4 = 1.0;
+    else
+    v4 = volume;
+    *(float *)&this->__pad_34[12] = v4;
+    v5 = Math::RoundToInt(v4 * 16384.0);
+    EndBufferMixer(*(int **)&DataGlobal_87C374.__pad_14B0[3872], v5);
+    v6 = Math::RoundToInt(*(float *)&this->__pad_34[12] * 255.0);
+    GameSettings::SetScoreVolume(&g_BuildingTypeClass_Count, v6);
+    Debug::Log();
 }
 }
 } // namespace gamemd
@@ -444,22 +441,19 @@ void __thiscall Options::SetScoreVolume(Options *this, float volume, int pad)
 namespace gamemd {
 void Options::SetSoundVolume(float volume, int pad)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Options::SetSoundVolume(Options *this, float volume, int pad)
 {
-  double v3; // st7
-  int v4; // eax
-
-  if ( volume >= 1.0 ) /*0x5fa522*/
-    v3 = 1.0; /*0x5fa52a*/
-  else
-    v3 = volume; /*0x5fa524*/
-  *(float *)&this->__pad_34[4] = v3; /*0x5fa530*/
-  v4 = Math::RoundToInt(v3 * 16384.0); /*0x5fa539*/
-  EndBufferMixer(*(int **)&stru_87C374.__pad_14B0[3876], v4); /*0x5fa546*/
-  if ( (_BYTE)pad ) /*0x5fa551*/
-    PlayVocClass(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1808), 0x2000, 1.0, 0); /*0x5fa56a*/
-  Debug::Log(); /*0x5fa57d*/
+    double v3;
+    int v4;
+    if ( volume >= 1.0 )
+    v3 = 1.0;
+    else
+    v3 = volume;
+    *(float *)&this->__pad_34[4] = v3;
+    v4 = Math::RoundToInt(v3 * 16384.0);
+    EndBufferMixer(*(int **)&DataGlobal_87C374.__pad_14B0[3876], v4);
+    if ( (char)pad )
+    PlayVocClass(*(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 1808), 0x2000, 1.0, 0);
+    Debug::Log();
 }
 }
 } // namespace gamemd
@@ -468,25 +462,22 @@ void __thiscall Options::SetSoundVolume(Options *this, float volume, int pad)
 namespace gamemd {
 void Options::SetVoiceVolume(float volume, int pad)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Options::SetVoiceVolume(Options *this, float volume, int pad)
 {
-  double v4; // st7
-  int v5; // eax
-  int v6; // eax
-
-  if ( volume >= 1.0 ) /*0x5fa5a2*/
-    v4 = 1.0; /*0x5fa5aa*/
-  else
-    v4 = volume; /*0x5fa5a4*/
-  *(float *)&this->__pad_34[8] = v4; /*0x5fa5b0*/
-  v5 = Math::RoundToInt(v4 * 255.0); /*0x5fa5b9*/
-  ThemeClass::GetField(v5); /*0x5fa5c0*/
-  v6 = Math::RoundToInt(*(float *)&this->__pad_34[8] * 16384.0); /*0x5fa5ce*/
-  EndBufferMixer(*(int **)&stru_87C374.__pad_14B0[3868], v6); /*0x5fa5db*/
-  if ( (_BYTE)pad ) /*0x5fa5e6*/
-    PlayVocClass(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1808), 0x2000, *(float *)&this->__pad_34[8], 0); /*0x5fa5ff*/
-  Debug::Log(); /*0x5fa612*/
+    double v4;
+    int v5;
+    int v6;
+    if ( volume >= 1.0 )
+    v4 = 1.0;
+    else
+    v4 = volume;
+    *(float *)&this->__pad_34[8] = v4;
+    v5 = Math::RoundToInt(v4 * 255.0);
+    ThemeClass::GetField(v5);
+    v6 = Math::RoundToInt(*(float *)&this->__pad_34[8] * 16384.0);
+    EndBufferMixer(*(int **)&DataGlobal_87C374.__pad_14B0[3868], v6);
+    if ( (char)pad )
+    PlayVocClass(*(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 1808), 0x2000, *(float *)&this->__pad_34[8], 0);
+    Debug::Log();
 }
 }
 } // namespace gamemd

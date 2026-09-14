@@ -5,21 +5,18 @@
 // 0x5B19A0
 int MechLocomotionClass::BeginMove(int * a1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall MechLocomotionClass::_vt05(int *a1, int *a2)
 {
-  int result; // eax
-
-  result = SwizzleManager::SaveLoad(a1, a2); /*0x5b19ab*/
-  if ( result >= 0 ) /*0x5b19b2*/
+    int result;
+    result = SwizzleManager::SaveLoad(a1, a2);
+    if ( result >= 0 )
   {
-    if ( a1 ) /*0x5b19b6*/
+    if ( a1 )
     {
-      *a1 = (int)&MechLocomotionClass::`vftable'; /*0x5b19b8*/
-      a1[1] = (int)&vt_MechLocomotionClass; /*0x5b19be*/
+    *a1 = (int)(unsigned int)vt_MechLocomotionClass;
+    *((int*)(a1) + 1) = (int)&vt_MechLocomotionClass;
     }
   }
-  return result; /*0x5b19c5*/
+    return result;
 }
 }
 

@@ -54,31 +54,28 @@ _DWORD *__thiscall sub_65B1E0(_DWORD *this)
 namespace gamemd {
 int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall RadSiteClass::SaveLoad_Prefix(AbstractClass *aP0, int aP1)
 {
-  AbstractClass *Prefix_0; // edi
-  IUnknown *v3; // edx
-
-  Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x65b3e1*/
-  if ( (int)Prefix_0 >= 0 ) /*0x65b3e5*/
+    AbstractClass *Prefix_0;
+    IUnknown *v3;
+    Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( (int)Prefix_0 >= 0 )
   {
-    if ( aP0 ) /*0x65b3e9*/
+    if ( aP0 )
     {
-      AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x65b3f2*/
-      v3 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x65b3f7*/
-      *(_DWORD *)&aP0[1].__pad_0[12] = 0; /*0x65b3fd*/
-      *(_DWORD *)&aP0[1].__pad_0[4] = v3; /*0x65b404*/
-      aP0[1].uniqueId = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x65b40c*/
-      aP0[1].nextArrayIndex = 0; /*0x65b40f*/
-      *(_DWORD *)aP0->__pad_0 = &RadSiteClass::`vftable'; /*0x65b416*/
-      *(_DWORD *)&aP0->__pad_0[4] = &RadSiteClass::`vftable'; /*0x65b41c*/
-      *(_DWORD *)&aP0->__pad_0[8] = &RadSiteClass::`vftable'; /*0x65b423*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_RadSiteClass; /*0x65b42a*/
+    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
+    v3 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
+    *(int *)&aP0[1].__pad_0[12] = 0;
+    *(int *)&aP0[1].__pad_0[4] = v3;
+    aP0[1].uniqueId = *(int *)&HouseClass_Player.__pad_5568[23248];
+    aP0[1].nextArrayIndex = 0;
+    *(int *)aP0->__pad_0 = (unsigned int)vt_RadSiteClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_RadSiteClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_RadSiteClass;
+    *(int *)&aP0->__pad_0[12] = &vt_RadSiteClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x65b43a*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
   }
-  return (int)Prefix_0->__pad_0; /*0x65b441*/
+    return (int)Prefix_0->__pad_0;
 }
 }
 } // namespace gamemd

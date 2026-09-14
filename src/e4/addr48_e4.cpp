@@ -1125,53 +1125,50 @@ CommBufferClass *__thiscall sub_48B0E0(CommBufferClass *this, int a2, int a3, si
 namespace gamemd {
 void CommBufferClass::sub_48B1F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_48B1F0(CommBufferClass *this)
 {
-  int v2; // ebx
-  int v3; // eax
-  int v4; // edi
-  CCINIClass *v5; // edx
-  int v6; // ebx
-  int v7; // edi
-  CCINIClass *v8; // edx
-
-  v2 = 0; /*0x48b1f4*/
-  v3 = *(_DWORD *)&this->__pad_0[4]; /*0x48b1f7*/
-  *(_DWORD *)this->__pad_0 = &vt_CommBufferClass; /*0x48b1fa*/
-  if ( v3 > 0 ) /*0x48b202*/
+    int v2;
+    int v3;
+    int v4;
+    CCINIClass *v5;
+    int v6;
+    int v7;
+    CCINIClass *v8;
+    v2 = 0;
+    v3 = *(int *)&this->__pad_0[4];
+    *(int *)this->__pad_0 = &vt_CommBufferClass;
+    if ( v3 > 0 )
   {
-    v4 = 0; /*0x48b204*/
-    do /*0x48b233*/
+    v4 = 0;
+    do
     {
-      __3_YAXPAX_Z(*(void **)(this->field_24 + v4 * 4 + 20)); /*0x48b20e*/
-      v5 = (CCINIClass *)this->field_24; /*0x48b213*/
-      if ( v5->sectionHead[v4 + 3] ) /*0x48b219*/
-        __3_YAXPAX_Z((void *)v5->sectionHead[v4 + 3]); /*0x48b222*/
-      ++v2; /*0x48b22d*/
-      v4 += 9; /*0x48b22e*/
+    __3_YAXPAX_Z(*(void **)(this->field_24 + v4 * 4 + 20));
+    v5 = (CCINIClass *)this->field_24;
+    if ( v5->sectionHead[v4 + 3] )
+    __3_YAXPAX_Z((void *)v5->sectionHead[v4 + 3]);
+    ++v2;
+    v4 += 9;
     }
-    while ( v2 < *(_DWORD *)&this->__pad_0[4] ); /*0x48b233*/
+    while ( v2 < *(int *)&this->__pad_0[4] );
   }
-  v6 = 0; /*0x48b238*/
-  if ( this->field_8 > 0 ) /*0x48b23c*/
+    v6 = 0;
+    if ( this->field_8 > 0 )
   {
-    v7 = 0; /*0x48b23e*/
-    do /*0x48b26d*/
+    v7 = 0;
+    do
     {
-      __3_YAXPAX_Z(*(void **)(this->field_34 + v7 * 4 + 12)); /*0x48b248*/
-      v8 = (CCINIClass *)this->field_34; /*0x48b24d*/
-      if ( v8->sectionHead[v7 + 1] ) /*0x48b253*/
-        __3_YAXPAX_Z((void *)v8->sectionHead[v7 + 1]); /*0x48b25c*/
-      ++v6; /*0x48b267*/
-      v7 += 6; /*0x48b268*/
+    __3_YAXPAX_Z(*(void **)(this->field_34 + v7 * 4 + 12));
+    v8 = (CCINIClass *)this->field_34;
+    if ( v8->sectionHead[v7 + 1] )
+    __3_YAXPAX_Z((void *)v8->sectionHead[v7 + 1]);
+    ++v6;
+    v7 += 6;
     }
-    while ( v6 < this->field_8 ); /*0x48b26d*/
+    while ( v6 < this->field_8 );
   }
-  __3_YAXPAX_Z((void *)this->field_24); /*0x48b273*/
-  __3_YAXPAX_Z((void *)this->field_34); /*0x48b27c*/
-  __3_YAXPAX_Z(*(void **)&this->__pad_28[8]); /*0x48b285*/
-  __3_YAXPAX_Z(*((void **)this + 16)); /*0x48b28e*/
+    __3_YAXPAX_Z((void *)this->field_24);
+    __3_YAXPAX_Z((void *)this->field_34);
+    __3_YAXPAX_Z(*(void **)&this->__pad_28[8]);
+    __3_YAXPAX_Z(*((void **)(this) + 16));
 }
 }
 } // namespace gamemd

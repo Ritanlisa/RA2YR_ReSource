@@ -80,15 +80,13 @@ int sub_6D1130()
 namespace gamemd {
 void E4Recv_6D1E80::sub_6D1E80()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_6D1E80(_DWORD *this)
 {
-  *this = &Tactical::`vftable'; /*0x6d1e80*/
-  *(this + 1) = &Tactical::`vftable'; /*0x6d1e86*/
-  *(this + 2) = &Tactical::`vftable'; /*0x6d1e8d*/
-  *(this + 3) = &vt_Tactical; /*0x6d1e94*/
-  MEMORY[0x887324] = 0; /*0x6d1e9b*/
-  AbstractClass::DTOR(this); /*0x6d1ea5*/
+    *(void**)this = vt_Tactical;
+    this->M4 = (unsigned int)vt_Tactical;
+    this->M8 = (unsigned int)vt_Tactical;
+    this->M12 = &vt_Tactical;
+    g_TacticalClass_Instance = 0;
+    AbstractClass::DTOR(this);
 }
 }
 } // namespace gamemd

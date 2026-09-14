@@ -145,30 +145,25 @@ char __userpurge AircraftTypeClass::vt_25_@<al>(int a1@<ecx>, double a2@<st0>, u
 // 0x41CE20
 int AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall AircraftTypeClass::LoadFromINI(ObjectTypeClass *aP0, int aP1)
 {
-  int result; // eax
-
-  result = TechnoTypeClass::SaveLoad_Prefix(aP0, aP1); /*0x41ce2b*/
-  if ( result >= 0 ) /*0x41ce32*/
+    int result;
+    result = TechnoTypeClass::SaveLoad_Prefix(aP0, aP1);
+    if ( result >= 0 )
   {
-    if ( aP0 ) /*0x41ce36*/
+    if ( aP0 )
     {
-      TechnoTypeClass::Construct((int)aP0, (ObjectTypeClass *)&aP1); /*0x41ce3f*/
-      *(_DWORD *)aP0->__pad_0 = &AircraftTypeClass::`vftable'; /*0x41ce44*/
-      *(_DWORD *)&aP0->__pad_0[4] = &AircraftTypeClass::`vftable'; /*0x41ce4a*/
-      *(_DWORD *)&aP0->__pad_0[8] = &AircraftTypeClass::`vftable'; /*0x41ce51*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_AircraftTypeClass; /*0x41ce58*/
+    TechnoTypeClass::Construct((int)aP0, (ObjectTypeClass *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_AircraftTypeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_AircraftTypeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AircraftTypeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_AircraftTypeClass;
     }
-    ObjectPtr::RegisterForTracking( /*0x41ce6b*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[5].ChargerBarrels[6]);
-    VoxelAnimType::LoadAnim(aP0->__pad_0); /*0x41ce72*/
-    ObjectTypeClass::Load2DArt(aP0->__pad_0); /*0x41ce79*/
-    return 0; /*0x41ce7e*/
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[5].ChargerBarrels[6]);
+    VoxelAnimType::LoadAnim(aP0->__pad_0);
+    ObjectTypeClass::Load2DArt(aP0->__pad_0);
+    return 0;
   }
-  return result; /*0x41ce80*/
+    return result;
 }
 }
 

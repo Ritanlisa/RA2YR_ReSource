@@ -694,11 +694,9 @@ char __fastcall sub_5D6000(HWND hWnd, int a2)
 namespace gamemd {
 unsigned int * E4Recv_5D7580::sub_5D7580()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_5D7580(InitializerBase_MultiplayerGameMode *this)
 {
-  this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d7582*/
-  return &this->vfptr; /*0x5d7588*/
+    this->vfptr = &vt_MultiplayerGameMode_InitializerBase;
+    return &this->vfptr;
 }
 }
 } // namespace gamemd
@@ -977,10 +975,8 @@ LABEL_50:
 namespace gamemd {
 void E4Recv_5D7CD0::sub_5D7CD0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5D7CD0(InitializerBase_MultiplayerGameMode *this)
 {
-  this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d7cd0*/
+    this->vfptr = &vt_MultiplayerGameMode_InitializerBase;
 }
 }
 } // namespace gamemd

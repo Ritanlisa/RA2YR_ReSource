@@ -5,52 +5,20 @@
 // 0x5C0DD0
 unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * aP2, const char ** a3, MultiplayerBattle * aP4, char aP5, MultiplayerBattle * aP6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MPBattleClass::initGame(
-        MultiplayerBattle *this,
-        const wchar_t **a1,
-        MultiplayerBattle *aP2,
-        const char **a3,
-        MultiplayerBattle *aP4,
-        char aP5,
-        MultiplayerBattle *aP6)
 {
-  MultiplayerGameMode::Construct( /*0x5c0df3*/
-    this,
-    (MultiplayerGameMode *)a1,
-    (MultiplayerGameMode *)aP2,
-    (MultiplayerGameMode *)a3,
-    (MultiplayerGameMode *)aP4,
-    (MultiplayerGameMode *)aP5,
-    (MultiplayerGameMode *)aP6);
-  this->vfptr = &vt_MultiplayerBattle; /*0x5c0df8*/
-  return &this->vfptr; /*0x5c0e00*/
+    MultiplayerGameMode::Construct( this, (MultiplayerGameMode *)a1, (MultiplayerGameMode *)aP2, (MultiplayerGameMode *)a3, (MultiplayerGameMode *)aP4, (MultiplayerGameMode *)aP5, (MultiplayerGameMode *)aP6);
+    this->vfptr = &vt_MultiplayerBattle;
+    return &this->vfptr;
 }
 }
 
 // 0x5C5CE0
 unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll * aP2, const char ** a3, FreeForAll * aP4, char aP5, FreeForAll * aP6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MPBattleClass::MPFreeForAllClass(
-        FreeForAll *this,
-        const wchar_t **a1,
-        FreeForAll *aP2,
-        const char **a3,
-        FreeForAll *aP4,
-        char aP5,
-        FreeForAll *aP6)
 {
-  MultiplayerGameMode::Construct( /*0x5c5d03*/
-    this,
-    (MultiplayerGameMode *)a1,
-    (MultiplayerGameMode *)aP2,
-    (MultiplayerGameMode *)a3,
-    (MultiplayerGameMode *)aP4,
-    (MultiplayerGameMode *)aP5,
-    (MultiplayerGameMode *)aP6);
-  this->vfptr = &vt_FreeForAll; /*0x5c5d08*/
-  return &this->vfptr; /*0x5c5d10*/
+    MultiplayerGameMode::Construct( this, (MultiplayerGameMode *)a1, (MultiplayerGameMode *)aP2, (MultiplayerGameMode *)a3, (MultiplayerGameMode *)aP4, (MultiplayerGameMode *)aP5, (MultiplayerGameMode *)aP6);
+    this->vfptr = &vt_FreeForAll;
+    return &this->vfptr;
 }
 }
 

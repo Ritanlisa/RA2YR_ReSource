@@ -186,55 +186,49 @@ char __stdcall DroppodLocomotionClass::ILoco_Process(int a1)
 // 0x4B6240
 HRESULT DropPodLocomotionClass::BeginMove(int * a1, int * pStm)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HRESULT __stdcall DropPodLocomotionClass::_vt05(int *a1, int *pStm)
 {
-  IStream *v2; // edi
-  int v3; // ebx
-  int v4; // eax
-  LPVOID *v5; // esi
-
-  v2 = (IStream *)pStm; /*0x4b6247*/
-  v3 = SwizzleManager::SaveLoad(a1, pStm); /*0x4b6252*/
-  if ( v3 < 0 ) /*0x4b6256*/
-    return v3; /*0x4b6256*/
-  if ( a1 ) /*0x4b625a*/
+    IStream *v2;
+    int v3;
+    int v4;
+    LPVOID *v5;
+    v2 = (IStream *)pStm;
+    v3 = SwizzleManager::SaveLoad(a1, pStm);
+    if ( v3 < 0 )
+    return v3;
+    if ( a1 )
   {
-    a1[11] = 0; /*0x4b625c*/
-    *a1 = (int)&DropPodLocomotionClass::`vftable'; /*0x4b6263*/
-    a1[1] = (int)&DropPodLocomotionClass::`vftable'; /*0x4b6269*/
-    a1[6] = (int)&vt_DropPodLocomotionClass; /*0x4b6270*/
+    *((int*)(a1) + 11) = 0;
+    *a1 = (int)(unsigned int)vt_DropPodLocomotionClass;
+    a1[1] = (unsigned int)vt_DropPodLocomotionClass;
+    *((int*)(a1) + 6) = (int)&vt_DropPodLocomotionClass;
   }
-  v2->__pad_0->Read(v2, &pStm, 1, 0); /*0x4b6283*/
-  if ( !(_BYTE)pStm ) /*0x4b628c*/
-    return v3; /*0x4b62b8*/
-  v4 = a1[11]; /*0x4b628e*/
-  v5 = (LPVOID *)(a1 + 11); /*0x4b6291*/
-  if ( v4 ) /*0x4b6296*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x4b629b*/
-  *v5 = 0; /*0x4b62a5*/
-  return OleLoadFromStream(v2, &IID_ILocomotion, v5); /*0x4b62b1*/
+    v2->__pad_0->Read(v2, &pStm, 1, 0);
+    if ( !(char)pStm )
+    return v3;
+    v4 = *((int*)(a1) + 11);
+    v5 = (LPVOID *)(a1 + 11);
+    if ( v4 )
+    (*(void (__stdcall **)(int))(*(int *)(v4) + 8))(v4);
+    *v5 = 0;
+    return OleLoadFromStream(v2, &IID_ILocomotion, v5);
 }
 }
 
 // 0x4B66F0
 DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DropPodLocomotionClass *__thiscall DropPodLocomotionClass::ProcessMove(ILocomotion **this, char a2)
 {
-  ILocomotion *v3; // eax
-
-  *this = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b66f3*/
-  *(this + 1) = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b66f9*/
-  *(this + 6) = (ILocomotion *)&vt_DropPodLocomotionClass; /*0x4b6700*/
-  v3 = *(this + 11); /*0x4b6707*/
-  if ( v3 ) /*0x4b670c*/
-    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x4b6711*/
-  LocomotionClass::Construct(this); /*0x4b6716*/
-  if ( (a2 & 1) != 0 ) /*0x4b6720*/
-    __3_YAXPAX_Z(this); /*0x4b6723*/
-  return (DropPodLocomotionClass *)this; /*0x4b672d*/
+    ILocomotion *v3;
+    *(void**)this = (unsigned int)vt_DropPodLocomotionClass;
+    *(this + 1) = (unsigned int)vt_DropPodLocomotionClass;
+    *(this + 6) = (ILocomotion *)&vt_DropPodLocomotionClass;
+    v3 = *(this + 11);
+    if ( v3 )
+    (*(void (__stdcall **)(ILocomotion *))(*(int *)(v3) + 8))(v3);
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DropPodLocomotionClass *)this;
 }
 }
 

@@ -1901,18 +1901,16 @@ char __thiscall Tactical::DrawOverlay(_DWORD *this, int *a1, BuildingTypeClass *
 namespace gamemd {
 Tactical * Tactical::UpdateView(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-Tactical *__thiscall Tactical::UpdateView(_DWORD *this, char a2)
 {
-  *this = &Tactical::`vftable'; /*0x6dc473*/
-  *(this + 1) = &Tactical::`vftable'; /*0x6dc479*/
-  *(this + 2) = &Tactical::`vftable'; /*0x6dc480*/
-  *(this + 3) = &vt_Tactical; /*0x6dc487*/
-  MEMORY[0x887324] = 0; /*0x6dc48e*/
-  AbstractClass::DTOR(this); /*0x6dc498*/
-  if ( (a2 & 1) != 0 ) /*0x6dc4a2*/
-    __3_YAXPAX_Z(this); /*0x6dc4a5*/
-  return (Tactical *)this; /*0x6dc4af*/
+    *(void**)this = vt_Tactical;
+    *(this + 1) = (unsigned int)vt_Tactical;
+    *(this + 2) = (unsigned int)vt_Tactical;
+    *(this + 3) = &vt_Tactical;
+    g_TacticalClass_Instance = 0;
+    AbstractClass::DTOR(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (Tactical *)this;
 }
 }
 } // namespace gamemd

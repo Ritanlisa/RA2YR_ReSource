@@ -1005,11 +1005,9 @@ LABEL_68:
 namespace gamemd {
 void E4Recv_76AB90::sub_76AB90()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_76AB90(WDTTerritory *this)
 {
-  this->vfptr = &off_7F7220; /*0x76ab90*/
-  ReferenceCounted::Constructor(this); /*0x76ab96*/
+    this->vfptr = &vt_WDTTerritory;
+    ReferenceCounted::Constructor(this);
 }
 }
 } // namespace gamemd

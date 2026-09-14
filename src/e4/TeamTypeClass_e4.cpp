@@ -783,37 +783,26 @@ _DWORD *__thiscall TeamTypeClass::GetTransportWaypoint(int *this, _DWORD *a2)
 namespace gamemd {
 int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TeamTypeClass::LoadTypeData(AbstractTypeClass *aP0, int aP1)
 {
-  int result; // eax
-
-  result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1); /*0x6f1bbb*/
-  if ( result >= 0 ) /*0x6f1bc2*/
+    int result;
+    result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1);
+    if ( result >= 0 )
   {
-    if ( aP0 ) /*0x6f1bc6*/
+    if ( aP0 )
     {
-      AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1); /*0x6f1bcf*/
-      *(_DWORD *)aP0->__pad_0 = &TeamTypeClass::`vftable'; /*0x6f1bd4*/
-      *(_DWORD *)&aP0->__pad_0[4] = &TeamTypeClass::`vftable'; /*0x6f1bda*/
-      *(_DWORD *)&aP0->__pad_0[8] = &TeamTypeClass::`vftable'; /*0x6f1be1*/
-      *(_DWORD *)&aP0->__pad_0[12] = &vt_TeamTypeClass; /*0x6f1be8*/
+    AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_TeamTypeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TeamTypeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TeamTypeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_TeamTypeClass;
     }
-    ObjectPtr::RegisterForTracking( /*0x6f1bfb*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].__pad_24[8]);
-    ObjectPtr::RegisterForTracking( /*0x6f1c0c*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].__pad_24[20]);
-    ObjectPtr::RegisterForTracking( /*0x6f1c1d*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].UINameLabel[11]);
-    ObjectPtr::RegisterForTracking( /*0x6f1c2e*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].UINameLabel[15]);
-    return 0; /*0x6f1c33*/
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_24[8]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_24[20]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[11]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[15]);
+    return 0;
   }
-  return result; /*0x6f1c35*/
+    return result;
 }
 }
 } // namespace gamemd

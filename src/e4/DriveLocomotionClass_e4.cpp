@@ -5,55 +5,49 @@
 // 0x4AF780
 HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HRESULT __stdcall DriveLocomotionClass::_vt05(int *a1, int *pStm)
 {
-  IStream *v2; // edi
-  int v3; // ebx
-  int v4; // eax
-  LPVOID *v5; // esi
-
-  v2 = (IStream *)pStm; /*0x4af787*/
-  v3 = SwizzleManager::SaveLoad(a1, pStm); /*0x4af792*/
-  if ( v3 < 0 ) /*0x4af796*/
-    return v3; /*0x4af796*/
-  if ( a1 ) /*0x4af79a*/
+    IStream *v2;
+    int v3;
+    int v4;
+    LPVOID *v5;
+    v2 = (IStream *)pStm;
+    v3 = SwizzleManager::SaveLoad(a1, pStm);
+    if ( v3 < 0 )
+    return v3;
+    if ( a1 )
   {
-    a1[26] = 0; /*0x4af79c*/
-    *a1 = (int)&DriveLocomotionClass::`vftable'; /*0x4af7a3*/
-    a1[1] = (int)&vt_DriveLocomotionClass; /*0x4af7a9*/
-    a1[6] = (int)&off_7E7E8C; /*0x4af7b0*/
+    *((int*)(a1) + 26) = 0;
+    *a1 = (int)(unsigned int)vt_DriveLocomotionClass;
+    *((int*)(a1) + 1) = (int)&vt_DriveLocomotionClass;
+    *((int*)(a1) + 6) = (int)&vt_DriveLocomotionClass_2;
   }
-  v2->__pad_0->Read(v2, &pStm, 1, 0); /*0x4af7c3*/
-  if ( !(_BYTE)pStm ) /*0x4af7cc*/
-    return v3; /*0x4af7f8*/
-  v4 = a1[26]; /*0x4af7ce*/
-  v5 = (LPVOID *)(a1 + 26); /*0x4af7d1*/
-  if ( v4 ) /*0x4af7d6*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x4af7db*/
-  *v5 = 0; /*0x4af7e5*/
-  return OleLoadFromStream(v2, &IID_ILocomotion, v5); /*0x4af7f1*/
+    v2->__pad_0->Read(v2, &pStm, 1, 0);
+    if ( !(char)pStm )
+    return v3;
+    v4 = *((int*)(a1) + 26);
+    v5 = (LPVOID *)(a1 + 26);
+    if ( v4 )
+    (*(void (__stdcall **)(int))(*(int *)(v4) + 8))(v4);
+    *v5 = 0;
+    return OleLoadFromStream(v2, &IID_ILocomotion, v5);
 }
 }
 
 // 0x4B4D00
 DriveLocomotionClass * DriveLocomotionClass::ProcessMove(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-DriveLocomotionClass *__thiscall DriveLocomotionClass::ProcessMove(ILocomotion **this, char a2)
 {
-  ILocomotion *v3; // eax
-
-  *this = (ILocomotion *)&DriveLocomotionClass::`vftable'; /*0x4b4d03*/
-  *(this + 1) = (ILocomotion *)&vt_DriveLocomotionClass; /*0x4b4d09*/
-  *(this + 6) = (ILocomotion *)&off_7E7E8C; /*0x4b4d10*/
-  v3 = *(this + 26); /*0x4b4d17*/
-  if ( v3 ) /*0x4b4d1c*/
-    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)v3 + 8))(v3); /*0x4b4d21*/
-  LocomotionClass::Construct(this); /*0x4b4d26*/
-  if ( (a2 & 1) != 0 ) /*0x4b4d30*/
-    __3_YAXPAX_Z(this); /*0x4b4d33*/
-  return (DriveLocomotionClass *)this; /*0x4b4d3d*/
+    ILocomotion *v3;
+    *(void**)this = (unsigned int)vt_DriveLocomotionClass;
+    *(this + 1) = (ILocomotion *)&vt_DriveLocomotionClass;
+    *(this + 6) = (ILocomotion *)&vt_DriveLocomotionClass_2;
+    v3 = *(this + 26);
+    if ( v3 )
+    (*(void (__stdcall **)(ILocomotion *))(*(int *)(v3) + 8))(v3);
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DriveLocomotionClass *)this;
 }
 }
 

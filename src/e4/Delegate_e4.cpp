@@ -80,88 +80,82 @@ int __thiscall Delegate::ProcessBitmapStream(Base64Pipe *this, char *Src, int a3
 // 0x42DF40
 int Delegate::ProcessBitmapAndDispatch()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Delegate::ProcessBitmapAndDispatch(Base64Pipe *this)
 {
-  Pipe *v2; // edi
-  BombClass *v3; // edx
-  Pipe *pad_14; // edi
-  Pipe *v5; // eax
-
-  v2 = 0; /*0x42df44*/
-  v3 = (BombClass *)this->field_10; /*0x42df46*/
-  if ( v3 ) /*0x42df4b*/
+    Pipe *v2;
+    BombClass *v3;
+    Pipe *pad_14;
+    Pipe *v5;
+    v2 = 0;
+    v3 = (BombClass *)this->field_10;
+    if ( v3 )
   {
-    if ( this->field_C ) /*0x42df4d*/
+    if ( this->field_C )
     {
-      pad_14 = (Pipe *)&this->field_18; /*0x42df64*/
-      v5 = (Pipe *)DecodeBitmapRGB((Pipe *)this->__pad_14, v3, &this->field_18, 3); /*0x42df6d*/
+    pad_14 = (Pipe *)&this->field_18;
+    v5 = (Pipe *)DecodeBitmapRGB((Pipe *)this->__pad_14, v3, &this->field_18, 3);
     }
     else
     {
-      pad_14 = (Pipe *)this->__pad_14; /*0x42df54*/
-      v5 = (Pipe *)EncodeBitmapRGB((Pipe *)&this->field_18, (int)v3, this->__pad_14, 4); /*0x42df5d*/
+    pad_14 = (Pipe *)this->__pad_14;
+    v5 = (Pipe *)EncodeBitmapRGB((Pipe *)&this->field_18, (int)v3, this->__pad_14, 4);
     }
-    v2 = Delegate::Dispatch(this, pad_14, v5); /*0x42df7b*/
-    this->field_10 = 0; /*0x42df7d*/
+    v2 = Delegate::Dispatch(this, pad_14, v5);
+    this->field_10 = 0;
   }
-  return (int)&v2->__pad_0[GameClass::GetRelatedObject(this)]; /*0x42df8d*/
+    return (int)&v2->__pad_0[GameClass::GetRelatedObject(this)];
 }
 }
 
 // 0x4A2780
 int Delegate::StreamToBuffer(char * a1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Delegate::StreamToBuffer(CacheStraw *this, char *a1, int a3)
 {
-  int result; // eax
-  char *v5; // ebp
-  ModemGame *v6; // ebx
-  Straw *v7; // edi
-  int v8; // ecx
-  int v9; // eax
-  ModemGame *v10; // [esp+10h] [ebp-4h]
-
-  result = 0; /*0x4a2786*/
-  v10 = 0; /*0x4a278c*/
-  if ( *(_DWORD *)&this->__pad_0[12] ) /*0x4a2789*/
+    int result;
+    char *v5;
+    ModemGame *v6;
+    Straw *v7;
+    int v8;
+    int v9;
+    ModemGame *v10;
+    result = 0;
+    v10 = 0;
+    if ( *(int *)&this->__pad_0[12] )
   {
-    v5 = a1; /*0x4a2794*/
-    if ( a1 ) /*0x4a279a*/
+    v5 = a1;
+    if ( a1 )
     {
-      v6 = (ModemGame *)a3; /*0x4a279c*/
-      if ( a3 > 0 ) /*0x4a27a2*/
+    v6 = (ModemGame *)a3;
+    if ( a3 > 0 )
       {
-        do /*0x4a2805*/
+    do
         {
-          v7 = (Straw *)this->field_1C; /*0x4a27a4*/
-          if ( (int)v7 > 0 ) /*0x4a27a9*/
+    v7 = (Straw *)this->field_1C;
+    if ( (int)v7 > 0 )
           {
-            if ( (int)v7 >= (int)v6 ) /*0x4a27ad*/
-              v7 = (Straw *)v6; /*0x4a27af*/
-            memcpy(v5, (const void *)(*(_DWORD *)&this->__pad_0[12] + *(_DWORD *)&this->__pad_14[4]), (size_t)v7); /*0x4a27bc*/
-            v8 = this->field_1C - (_DWORD)v7; /*0x4a27cf*/
-            v6 = (ModemGame *)((char *)v6 - (int)v7); /*0x4a27d4*/
-            *(_DWORD *)&this->__pad_14[4] += v7; /*0x4a27d6*/
-            v10 = (ModemGame *)((char *)v10 + (_DWORD)v7); /*0x4a27d9*/
-            this->field_1C = v8; /*0x4a27dd*/
-            v5 = &v5[(_DWORD)v7]; /*0x4a27e0*/
+    if ( (int)v7 >= (int)v6 )
+    v7 = (Straw *)v6;
+    memcpy(v5, (const void *)(*(int *)&this->__pad_0[12] + *(int *)&this->__pad_14[4]), (size_t)v7);
+    v8 = this->field_1C - (int)v7;
+    v6 = (ModemGame *)((char *)v6 - (int)v7);
+    *(int *)&this->__pad_14[4] += v7;
+    v10 = (ModemGame *)((char *)(v10) + (int)v7);
+    this->field_1C = v8;
+    v5 = &v5[(int)v7];
           }
-          if ( !v6 ) /*0x4a27e4*/
-            break; /*0x4a27e4*/
-          v9 = Delegate::Invoke(this, *(_DWORD *)&this->__pad_0[12], (Straw *)this->field_10); /*0x4a27f0*/
-          this->field_1C = v9; /*0x4a27f7*/
-          *(_DWORD *)&this->__pad_14[4] = 0; /*0x4a27fa*/
-          if ( !v9 ) /*0x4a2801*/
-            break; /*0x4a2801*/
+    if ( !v6 )
+    break;
+    v9 = Delegate::Invoke(this, *(int *)&this->__pad_0[12], (Straw *)this->field_10);
+    this->field_1C = v9;
+    *(int *)&this->__pad_14[4] = 0;
+    if ( !v9 )
+    break;
         }
-        while ( (int)v6 > 0 ); /*0x4a2805*/
-        return (int)v10->__pad_0; /*0x4a2807*/
+    while ( (int)v6 > 0 );
+    return (int)v10->__pad_0;
       }
     }
   }
-  return result; /*0x4a280b*/
+    return result;
 }
 }
 
