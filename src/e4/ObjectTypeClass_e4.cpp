@@ -1097,47 +1097,3925 @@ int __thiscall ObjectTypeClass_SelectArtOrAlt(_DWORD *this)
 char ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 ***a2)
-// {
-//   int v3; // ecx
-//   int v4; // ebp
-//   WeaponTypeClass *v5; // edi
-//   WeaponTypeClass *v6; // eax
-//   char Bool_Overwrite; // al
-//   double Double_Overwrite; // st7
-//   double v9; // st7
-//   INIClass *v10; // ecx
-//   _DWORD *GUID_Overwrite; // eax
-//   INIClass *v12; // edx
-//   INIClass *v13; // edx
-//   INIClass *v14; // ecx
-//   INIClass *v15; // eax
-//   INIClass *v16; // edx
-//   INIClass *v17; // ecx
-//   INIClass *v18; // eax
-//   int Int_Overwrite; // eax
-//   CCINIClass *v11; // eax
-//   ObjectClass *i; // eax
-//   int v22; // edx
-//   int v23; // eax
-//   INIClass *inited; // eax
-//   int v25; // eax
-//   AbstractClass *j; // eax
-//   int edx29; // edx
-//   int v28; // eax
-//   char al29; // al
-//   CCINIClass *v21; // edi
-//   WeaponTypeClass *eax33; // eax
-//   WeaponTypeClass *v32; // eax
-//   CCINIClass *v24; // ecx
-//   WeaponTypeClass *v34; // edi
-//   WeaponTypeClass *eax42; // eax
-//   CCINIClass *v27; // edi
-//   void *eax45; // eax
-//   CCINIClass *v29; // edi
-//   void *eax4... [190476 chars total]
-// end truncated pseudocode
+char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 ***a2)
+{
+  int v3; // ecx
+  int v4; // ebp
+  WeaponTypeClass *v5; // edi
+  WeaponTypeClass *v6; // eax
+  char Bool_Overwrite; // al
+  double Double_Overwrite; // st7
+  double v9; // st7
+  INIClass *v10; // ecx
+  _DWORD *GUID_Overwrite; // eax
+  INIClass *v12; // edx
+  INIClass *v13; // edx
+  INIClass *v14; // ecx
+  INIClass *v15; // eax
+  INIClass *v16; // edx
+  INIClass *v17; // ecx
+  INIClass *v18; // eax
+  int Int_Overwrite; // eax
+  CCINIClass *v11; // eax
+  ObjectClass *i; // eax
+  int v22; // edx
+  int v23; // eax
+  INIClass *inited; // eax
+  int v25; // eax
+  AbstractClass *j; // eax
+  int edx29; // edx
+  int v28; // eax
+  char al29; // al
+  CCINIClass *v21; // edi
+  WeaponTypeClass *eax33; // eax
+  WeaponTypeClass *v32; // eax
+  CCINIClass *v24; // ecx
+  WeaponTypeClass *v34; // edi
+  WeaponTypeClass *eax42; // eax
+  CCINIClass *v27; // edi
+  void *eax45; // eax
+  CCINIClass *v29; // edi
+  void *eax48; // eax
+  CCINIClass *v31; // edi
+  void *eax51; // eax
+  INIClass *v33; // eax
+  int eax56; // eax
+  INIClass *v35; // eax
+  int eax56a; // eax
+  INIClass *v37; // eax
+  int eax56b; // eax
+  INIClass *v39; // eax
+  int eax56c; // eax
+  INIClass *v41; // eax
+  int v51; // eax
+  INIClass *v43; // eax
+  int v53; // eax
+  INIClass *v45; // eax
+  int v55; // eax
+  INIClass *v47; // eax
+  int v57; // eax
+  CCINIClass *v49; // edi
+  CCINIClass *Index; // eax
+  int v60; // edi
+  int v61; // eax
+  int v62; // edi
+  int v63; // eax
+  int v64; // edi
+  int v65; // eax
+  int v66; // edi
+  int v67; // eax
+  int v68; // edi
+  int v69; // eax
+  int v70; // edi
+  int v71; // eax
+  int v72; // edi
+  int v73; // eax
+  int v74; // edi
+  int v75; // eax
+  int v76; // edi
+  int v77; // eax
+  int v78; // edi
+  int v79; // eax
+  int v80; // edi
+  int v81; // eax
+  int v82; // edi
+  int v83; // eax
+  int TypeMember_54749E0; // eax
+  char *k; // eax
+  int v86; // edx
+  int v87; // eax
+  BuildingTypeClass *v88; // edi
+  BuildingTypeClass *v89; // eax
+  UnitTypeClass *v90; // edi
+  UnitTypeClass *Alt; // eax
+  UnitTypeClass *v92; // edi
+  UnitTypeClass *eax110; // eax
+  char v94; // al
+  char al112a; // al
+  char v96; // cl
+  char al112b; // al
+  int v98; // edi
+  int v99; // eax
+  int v100; // edi
+  int v101; // eax
+  CCINIClass *v93; // edi
+  CCINIClass *v103; // eax
+  INIClass *v95; // eax
+  int v105; // eax
+  INIClass *v97; // eax
+  int v107; // eax
+  int v108; // edx
+  void *v109; // eax
+  int v110; // edi
+  int v111; // eax
+  int v112; // edi
+  int v113; // eax
+  int v114; // edi
+  int v115; // eax
+  int v116; // edi
+  int v117; // eax
+  int v118; // edi
+  int v119; // eax
+  int v120; // edi
+  int v121; // eax
+  int v122; // edi
+  int v123; // eax
+  int v124; // edi
+  int v125; // eax
+  int v126; // edi
+  int v127; // eax
+  int v128; // edi
+  int v129; // eax
+  int v130; // edi
+  int v131; // eax
+  int v132; // edi
+  int v133; // eax
+  int v134; // edi
+  int v135; // eax
+  int v136; // edi
+  int v137; // eax
+  int v138; // edi
+  int v139; // eax
+  int v140; // edi
+  int v141; // eax
+  int v142; // edi
+  int v143; // eax
+  int v144; // edi
+  int v145; // eax
+  AbstractClass *m; // eax
+  int v147; // ecx
+  int v148; // edx
+  void *v149; // eax
+  AbstractClass *n; // eax
+  int v151; // ecx
+  int v152; // edx
+  void *v153; // eax
+  ParticleSystemTypeClass *v154; // edi
+  ParticleSystemTypeClass *v155; // eax
+  ParticleSystemTypeClass *v156; // edi
+  ParticleSystemTypeClass *v157; // eax
+  int *Coord2; // eax
+  int v159; // ecx
+  int v160; // edx
+  int v161; // eax
+  ObjectClass *ii; // eax
+  int v163; // ecx
+  int v164; // edx
+  void *v165; // eax
+  ObjectClass *jj; // eax
+  int v167; // ecx
+  int v168; // edx
+  void *v169; // eax
+  int *eax231; // eax
+  int edx231; // edx
+  char v172; // al
+  int *eax231a; // eax
+  int *eax231b; // eax
+  int *v175; // eax
+  int *v176; // eax
+  int *eax231e; // eax
+  INIClass **v178; // edi
+  CCINIClass *v170; // ecx
+  INIClass *v171; // eax
+  int v181; // eax
+  CCINIClass *v173; // eax
+  INIClass *v174; // eax
+  int v184; // eax
+  CCINIClass *v177; // edi
+  void *v186; // eax
+  int v187; // eax
+  int eax246; // eax
+  int v189; // edx
+  UnitTypeClass *edi252; // edi
+  UnitTypeClass *v191; // eax
+  AnimTypeClass *edi255; // edi
+  AnimTypeClass *eax256; // eax
+  int eax258; // eax
+  int ecx258; // ecx
+  INIClass *v188; // eax
+  int edx258; // edx
+  INIClass *v190; // eax
+  int eax258a; // eax
+  INIClass *v192; // eax
+  INIClass *v193; // eax
+  INIClass *v194; // eax
+  INIClass *v195; // eax
+  int v204; // edx
+  INIClass *v196; // eax
+  INIClass *v197; // eax
+  int ecx258a; // ecx
+  INIClass *v199; // eax
+  int edx258b; // edx
+  INIClass *v201; // eax
+  int eax258b; // eax
+  INIClass *v203; // eax
+  int ecx258b; // ecx
+  INIClass *v205; // eax
+  int edx258c; // edx
+  INIClass *v207; // eax
+  int eax258c; // eax
+  INIClass *v209; // eax
+  int ecx258c; // ecx
+  INIClass *v211; // eax
+  int edx258d; // edx
+  INIClass *v213; // eax
+  int eax258d; // eax
+  INIClass *v215; // eax
+  int ecx258d; // ecx
+  INIClass *v217; // eax
+  int edx258e; // edx
+  INIClass *v219; // eax
+  int eax258e; // eax
+  INIClass *v221; // eax
+  int ecx258e; // ecx
+  INIClass *v223; // eax
+  int edx258f; // edx
+  INIClass *v225; // eax
+  int v235; // eax
+  INIClass *v227; // eax
+  int ecx258f; // ecx
+  INIClass *v229; // eax
+  INIClass *v230; // eax
+  INIClass *v231; // eax
+  INIClass *v232; // eax
+  INIClass *v233; // eax
+  INIClass *v234; // eax
+  int ecx258g; // ecx
+  INIClass *v236; // eax
+  INIClass *v237; // eax
+  INIClass *v238; // eax
+  INIClass *v239; // eax
+  INIClass *v240; // eax
+  int eax258g; // eax
+  INIClass *v242; // eax
+  int ecx258h; // ecx
+  INIClass *v244; // eax
+  int edx258g; // edx
+  INIClass *v246; // eax
+  int eax258h; // eax
+  INIClass *v248; // eax
+  int ecx258i; // ecx
+  INIClass *v250; // eax
+  int edx258h; // edx
+  INIClass *v252; // eax
+  int v262; // eax
+  INIClass *v254; // eax
+  int ecx258j; // ecx
+  INIClass *v256; // eax
+  int edx258i; // edx
+  INIClass *v258; // eax
+  int eax258j; // eax
+  INIClass *v260; // eax
+  INIClass *v261; // eax
+  int v271; // edx
+  INIClass *v263; // eax
+  INIClass *v264; // eax
+  INIClass *v265; // eax
+  INIClass *v266; // eax
+  INIClass *v267; // eax
+  INIClass *v268; // eax
+  INIClass *v269; // eax
+  INIClass *v270; // eax
+  int v280; // eax
+  INIClass *v272; // eax
+  INIClass *v273; // eax
+  int edx258k; // edx
+  INIClass *v275; // eax
+  int v285; // eax
+  INIClass *v277; // eax
+  int v287; // ecx
+  INIClass *v279; // eax
+  int v289; // edx
+  INIClass *v281; // eax
+  int v291; // eax
+  INIClass *v283; // eax
+  INIClass *v284; // eax
+  int eax258n; // eax
+  INIClass *v286; // eax
+  int eax258o; // eax
+  INIClass *v288; // eax
+  int eax258p; // eax
+  INIClass *v290; // eax
+  int v300; // eax
+  INIClass *v292; // eax
+  int v302; // eax
+  INIClass *v294; // eax
+  int eax258s; // eax
+  INIClass *v296; // eax
+  int eax258t; // eax
+  INIClass *v298; // eax
+  int v308; // eax
+  int ecx258l; // ecx
+  INIClass *v301; // eax
+  int edx258m; // edx
+  INIClass *v303; // eax
+  INIClass *v304; // eax
+  INIClass *v305; // eax
+  INIClass *v306; // eax
+  INIClass *v307; // eax
+  int v317; // eax
+  INIClass *v309; // eax
+  CCINIClass *Abilities; // eax
+  INIClass *v311; // eax
+  CCINIClass *v321; // eax
+  int eax260; // eax
+  INIClass *v314; // eax
+  int v324; // ecx
+  INIClass *v316; // eax
+  int v326; // edx
+  INIClass *v318; // eax
+  CCINIClass *v319; // eax
+  INIClass *v320; // eax
+  int ecx272; // ecx
+  INIClass *v322; // eax
+  int edx273; // edx
+  INIClass *v323; // eax
+  int eax273; // eax
+  INIClass *v325; // eax
+  int ecx273; // ecx
+  INIClass *v327; // eax
+  ObjectClass *v328; // eax
+  INIClass *v329; // eax
+  IUnknown *v340; // edx
+  INIClass *v330; // eax
+  INIClass *v331; // eax
+  INIClass *v332; // eax
+  int v344; // ecx
+  INIClass *v334; // eax
+  int v346; // edx
+  INIClass *v336; // eax
+  int eax283; // eax
+  INIClass *v338; // eax
+  INIClass *v339; // eax
+  int edx283b; // edx
+  INIClass *v341; // eax
+  int v353; // eax
+  INIClass *v343; // eax
+  char al283; // al
+  INIClass *v345; // eax
+  IUnknown *edx283; // edx
+  char *v358; // edx
+  INIClass *v347; // eax
+  IUnknown *v360; // edx
+  INIClass *v348; // eax
+  char *edx289a; // edx
+  INIClass *v350; // eax
+  IUnknown *edx289; // edx
+  WeaponTypeClass *v351; // edi
+  INIClass *v352; // eax
+  int *Point3D_Overwrite; // eax
+  INIClass *v354; // eax
+  INIClass *v355; // eax
+  int edx294; // edx
+  INIClass *v357; // eax
+  char al294; // al
+  INIClass *v359; // eax
+  int *v374; // eax
+  INIClass *v361; // eax
+  INIClass *v362; // eax
+  int edx294a; // edx
+  INIClass *v364; // eax
+  CCINIClass *v365; // ecx
+  INIClass *v366; // eax
+  int *eax296; // eax
+  INIClass *v368; // eax
+  INIClass *v369; // eax
+  INIClass *v370; // eax
+  int *v385; // eax
+  INIClass *v372; // eax
+  INIClass *v373; // eax
+  int eax296b; // eax
+  INIClass *v375; // eax
+  int *eax296c; // eax
+  INIClass *v377; // eax
+  INIClass *v378; // eax
+  INIClass *v379; // eax
+  int *v394; // eax
+  INIClass *v381; // eax
+  INIClass *v382; // eax
+  INIClass *v392; // esi
+  INIClass *v384; // eax
+  int *v399; // eax
+  int v400; // ecx
+  int v401; // ecx
+  INIClass *v388; // eax
+  char v403; // al
+  INIClass *v390; // eax
+  int *v405; // eax
+  INIClass *eax299c; // eax
+  int TypeMember_5474E40; // eax
+  _BYTE *v408; // ecx
+  int Info; // eax
+  int v410; // ecx
+  VectorClass v412; // [esp-14h] [ebp-398h] BYREF
+  _BYTE aP3[12]; // [esp-4h] [ebp-388h]
+  INIClass *v414; // [esp+8h] [ebp-37Ch]
+  int v415; // [esp+Ch] [ebp-378h]
+  CCINIClass aP2; // [esp+18h] [ebp-36Ch] BYREF
+  INIClass String[2]; // [esp+E4h] [ebp-2A0h] BYREF
+  INIClass aP4; // [esp+164h] [ebp-220h] BYREF
+
+  v4 = v3;
+  INIClass::ResetSection(aP0);
+  if ( !ObjectTypeClass::LoadFromINI((char *)v4, aP0) )
+    return 0;
+  *(_DWORD *)(v4 + 1540) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[59236],
+                             *(INIClass **)(v4 + 1540));
+  *(_DWORD *)(v4 + 1536) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[59220],
+                             *(INIClass **)(v4 + 1536));
+  *(_DWORD *)(v4 + 1660) = ObjectTypeClass::loadTypeMember_476FC0(
+                             (unsigned __int8 ***)aP0,
+                             (CCINIClass *)(v4 + 36),
+                             (unsigned __int8 *)&stru_830620.__pad_579C[59208],
+                             *(CCINIClass **)(v4 + 1660));
+  *(_BYTE *)(v4 + 1828) = INIClass::ReadBool_Overwrite(
+                            (int)&stru_87C374.__pad_579C[22128],
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[59196],
+                            *(_BYTE *)(v4 + 1828));
+  *(_BYTE *)(v4 + 3212) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[59184],
+                            *(_BYTE *)(v4 + 3212));
+  *(_DWORD *)(v4 + 660) = INIClass::ReadInt_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[59172],
+                            *(INIClass **)(v4 + 660));
+  *(_DWORD *)(v4 + 664) = INIClass::ReadInt_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[59160],
+                            *(INIClass **)(v4 + 664));
+  *(_BYTE *)(v4 + 3213) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[59144],
+                            *(_BYTE *)(v4 + 3213));
+  *(_BYTE *)(v4 + 3220) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[59136],
+                            *(_BYTE *)(v4 + 3220));
+  *(_BYTE *)(v4 + 3225) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[59124],
+                            *(_BYTE *)(v4 + 3225));
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 1464);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[59112];
+  *(_DWORD *)aP3 = v4 + 36;
+  *(_DWORD *)(v4 + 1464) = INIClass::ReadCoord(*(double *)aP3, *(int *)&aP3[8], v414, v415);
+  *(_BYTE *)(v4 + 3349) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_14B0[6796],
+                            *(_BYTE *)(v4 + 3349));
+  v5 = *(WeaponTypeClass **)(v4 + 3352);
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)(v4 + 36),
+         (unsigned __int8 *)&stru_830620.__pad_579C[21344],
+         (INIClass *)&stru_87C374.__pad_579C[33876],
+         String,
+         128) )
+  {
+    v6 = InfantryTypeClass::Find((ObjectClass *)String);
+  }
+  else
+  {
+    v6 = v5;
+  }
+  *(_DWORD *)(v4 + 3352) = v6;
+  *(double *)&aP3[4] = *(float *)(v4 + 3356);
+  *(float *)(v4 + 3356) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            (INIClass *)(v4 + 36),
+                            (unsigned __int8 *)&stru_830620.__pad_579C[59084],
+                            *(INIClass **)&aP3[4]);
+  *(_DWORD *)(v4 + 1560) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[27288],
+                             *(INIClass **)(v4 + 1560));
+  Bool_Overwrite = INIClass::ReadBool_Overwrite(
+                     (int)aP0,
+                     (unsigned __int8 *)(v4 + 36),
+                     (CCINIClass *)&stru_830620.__pad_579C[59072],
+                     *(_BYTE *)(v4 + 3221));
+  *(_DWORD *)&aP3[8] = -1074790400;
+  *(_DWORD *)&aP3[4] = 0;
+  *(_DWORD *)aP3 = &stru_830620.__pad_579C[59060];
+  *(_DWORD *)&v412.IsInitialized = v4 + 36;
+  *(_BYTE *)(v4 + 3221) = Bool_Overwrite;
+  Double_Overwrite = INIClass::ReadDouble_Overwrite(
+                       (int)aP0,
+                       *(INIClass **)&v412.IsInitialized,
+                       *(unsigned __int8 **)aP3,
+                       *(INIClass **)&aP3[4]);
+  if ( Double_Overwrite != -1.0 )
+    *(double *)(v4 + 944) = Double_Overwrite * 0.0174532925199433;
+  *(_DWORD *)&aP3[8] = -1074790400;
+  v9 = INIClass::ReadDouble_Overwrite(
+         (int)aP0,
+         (INIClass *)(v4 + 36),
+         (unsigned __int8 *)&stru_830620.__pad_579C[59048],
+         0);
+  if ( v9 != -1.0 )
+    *(double *)(v4 + 928) = v9 * 0.0174532925199433;
+  v10 = *(INIClass **)(v4 + 936);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 940);
+  *(double *)(v4 + 936) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            (INIClass *)(v4 + 36),
+                            (unsigned __int8 *)&stru_830620.__pad_579C[59036],
+                            v10);
+  GUID_Overwrite = (_DWORD *)INIClass::ReadGUID_Overwrite(
+                               (int)aP0,
+                               (int)aP2.sectionHead,
+                               (INIClass *)(v4 + 36),
+                               (unsigned __int8 *)&stru_830620.__pad_579C[59024],
+                               *(_DWORD *)(v4 + 844),
+                               *(_DWORD *)(v4 + 848),
+                               *(_DWORD *)(v4 + 852),
+                               *(_DWORD *)(v4 + 856));
+  *(_DWORD *)(v4 + 844) = *GUID_Overwrite;
+  *(_DWORD *)(v4 + 848) = GUID_Overwrite[1];
+  *(_DWORD *)(v4 + 852) = GUID_Overwrite[2];
+  *(_DWORD *)(v4 + 856) = GUID_Overwrite[3];
+  *(_DWORD *)(v4 + 784) = INIClass::ReadInt_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[59008],
+                            *(INIClass **)(v4 + 784));
+  v12 = *(INIClass **)(v4 + 752);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 756);
+  *(double *)(v4 + 752) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            (INIClass *)(v4 + 36),
+                            (unsigned __int8 *)&stru_830620.__pad_579C[58980],
+                            v12);
+  *(_DWORD *)(v4 + 760) = INIClass::ReadInt_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[58960],
+                            *(INIClass **)(v4 + 760));
+  v13 = *(INIClass **)(v4 + 768);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 772);
+  *(double *)(v4 + 768) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            (INIClass *)(v4 + 36),
+                            (unsigned __int8 *)&stru_830620.__pad_579C[58936],
+                            v13);
+  v14 = *(INIClass **)(v4 + 776);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 780);
+  *(double *)(v4 + 776) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            (INIClass *)(v4 + 36),
+                            (unsigned __int8 *)&stru_830620.__pad_579C[58916],
+                            v14);
+  v15 = *(INIClass **)(v4 + 880);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 884);
+  *(double *)(v4 + 880) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            (INIClass *)(v4 + 36),
+                            (unsigned __int8 *)&stru_830620.__pad_579C[58908],
+                            v15);
+  v16 = *(INIClass **)(v4 + 888);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 892);
+  *(double *)(v4 + 888) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            (INIClass *)(v4 + 36),
+                            (unsigned __int8 *)&stru_830620.__pad_579C[58892],
+                            v16);
+  v17 = *(INIClass **)(v4 + 896);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 900);
+  *(double *)(v4 + 896) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            (INIClass *)(v4 + 36),
+                            (unsigned __int8 *)g_INI_Key_Size,
+                            v17);
+  v18 = *(INIClass **)(v4 + 904);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 908);
+  *(double *)(v4 + 904) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            (INIClass *)(v4 + 36),
+                            (unsigned __int8 *)&stru_830620.__pad_579C[58880],
+                            v18);
+  *(_BYTE *)(v4 + 912) = INIClass::ReadBool_Overwrite(
+                           (int)aP0,
+                           (unsigned __int8 *)(v4 + 36),
+                           (CCINIClass *)&stru_830620.__pad_579C[58868],
+                           *(_BYTE *)(v4 + 912));
+  *(_DWORD *)(v4 + 916) = ObjectTypeClass::loadTypeMember_5477590(
+                            (unsigned __int8 ***)aP0,
+                            (CCINIClass *)(v4 + 36),
+                            (unsigned __int8 *)&stru_830620.__pad_579C[58860],
+                            *(CCINIClass **)(v4 + 916));
+  *(_DWORD *)(v4 + 1468) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[58848],
+                             *(INIClass **)(v4 + 1468));
+  Int_Overwrite = INIClass::ReadInt_Overwrite(
+                    (int)aP0,
+                    (unsigned __int8 *)(v4 + 36),
+                    (CCINIClass *)&stru_830620.__pad_579C[58836],
+                    *(INIClass **)(v4 + 1472));
+  *(_DWORD *)(v4 + 1472) = Int_Overwrite;
+  if ( Int_Overwrite < 0 )
+    *(_DWORD *)(v4 + 1472) = 0;
+  v11 = *(CCINIClass **)(v4 + 1472);
+  if ( *(_DWORD *)(v4 + 1468) < (int)v11 )
+    *(_DWORD *)(v4 + 1468) = v11;
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)(v4 + 36),
+         (unsigned __int8 *)&stru_830620.__pad_579C[58824],
+         (INIClass *)&stru_87C374.__pad_579C[33876],
+         String,
+         128) )
+  {
+    DynamicVector::Constructor_VoxelAnim(&aP2.unknown30, 0, 0);
+    aP2.unknown30 = (int)&vt_TypeList_VoxelAnimTypeClass_const;
+    for ( i = (ObjectClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
+          i;
+          i = (ObjectClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+    {
+      if ( !i->__pad_0[0] )
+        break;
+      aP2.headNode[2] = (int)UnitTypeClass::FindOrCreate(i);
+      if ( aP2.headNode[2] )
+        DynamicVector::Add2(&aP2.unknown30, (VectorClass *)&aP2.headNode[2]);
+    }
+    TypeList::CopyVoxelAnim(aP2.sectionHead, (VectorClass *)&aP2.unknown30);
+    aP2.unknown30 = (int)&vt_VectorClass_VoxelAnimTypeClass_const;
+    Vector::Cleanup2((int)&aP2.unknown30);
+  }
+  else
+  {
+    TypeList::CopyVoxelAnim(aP2.sectionHead, (VectorClass *)(v4 + 788));
+  }
+  VectorClass::CopyAssign((_DWORD *)(v4 + 788), (VectorClass *)aP2.sectionHead);
+  v22 = *(_DWORD *)aP2.__pad_20;
+  v23 = *(_DWORD *)&aP2.__pad_20[4];
+  *(_DWORD *)(v4 + 812) = *(_DWORD *)&aP2.__pad_20[8];
+  *(_DWORD *)(v4 + 804) = v22;
+  *(_DWORD *)(v4 + 808) = v23;
+  aP2.sectionHead[0] = (int)&vt_VectorClass_VoxelAnimTypeClass_const;
+  Vector::Cleanup2((int)aP2.sectionHead);
+  aP2.headNode[2] = (int)&v412;
+  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 816));
+  *(_DWORD *)aP2.headNode[2] = &vt_TypeList_int;
+  inited = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  aP2.headNode[2] = INIClass::ReadIntList(
+                      (unsigned __int8 ***)aP0,
+                      (int)aP2.sectionHead,
+                      inited,
+                      (unsigned __int8 *)&stru_830620.__pad_579C[58808],
+                      (void **)v412.vtable0,
+                      v412.Items,
+                      v412.Capacity,
+                      *(__int16 *)&v412.IsInitialized,
+                      *(int *)aP3,
+                      *(int *)&aP3[4],
+                      *(int *)&aP3[8]);
+  TypeList::Copy((_DWORD *)(v4 + 816), (_DWORD *)aP2.headNode[2]);
+  v25 = aP2.headNode[2];
+  *(_DWORD *)(v4 + 832) = *(_DWORD *)(aP2.headNode[2] + 16);
+  *(_DWORD *)(v4 + 836) = *(_DWORD *)(v25 + 20);
+  *(_DWORD *)(v4 + 840) = *(_DWORD *)(v25 + 24);
+  aP2.sectionHead[0] = (int)&vt_VectorClass_int;
+  VectorClass::Destroy((int)aP2.sectionHead);
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)(v4 + 36),
+         (unsigned __int8 *)&stru_830620.__pad_579C[58796],
+         (INIClass *)&stru_87C374.__pad_579C[33876],
+         String,
+         128) )
+  {
+    DynamicVectorClass::AnimTypeConstructor(&aP2.unknown30, 0, 0);
+    aP2.unknown30 = (int)&vt_TypeList_AnimTypeClass_const;
+    for ( j = (AbstractClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
+          j;
+          j = (AbstractClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+    {
+      if ( !j->__pad_0[0] )
+        break;
+      aP2.headNode[2] = (int)AnimTypeClass::FindOrCreate(j);
+      if ( aP2.headNode[2] )
+        DynamicVector::Add_Alt4(&aP2.unknown30, (VectorClass *)&aP2.headNode[2]);
+    }
+    TypeList::AnimTypeCopy(aP2.sectionHead, (VectorClass *)&aP2.unknown30);
+    aP2.unknown30 = (int)&vt_VectorClass_AnimTypeClass_const;
+    DynamicVectorClass::Destroy_Alt((int)&aP2.unknown30);
+  }
+  else
+  {
+    TypeList::AnimTypeCopy(aP2.sectionHead, (VectorClass *)(v4 + 1476));
+  }
+  VectorClass::CopyDefault((_DWORD *)(v4 + 1476), (VectorClass *)aP2.sectionHead);
+  edx29 = *(_DWORD *)&aP2.__pad_20[4];
+  v28 = *(_DWORD *)&aP2.__pad_20[8];
+  *(_DWORD *)(v4 + 1492) = *(_DWORD *)aP2.__pad_20;
+  *(_DWORD *)(v4 + 1496) = edx29;
+  *(_DWORD *)(v4 + 1500) = v28;
+  aP2.sectionHead[0] = (int)&vt_VectorClass_AnimTypeClass_const;
+  DynamicVectorClass::Destroy_Alt((int)aP2.sectionHead);
+  *(_BYTE *)(v4 + 2054) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[58776],
+                            *(_BYTE *)(v4 + 2054));
+  *(_DWORD *)(v4 + 2056) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[58764],
+                             *(INIClass **)(v4 + 2056));
+  *(_DWORD *)(v4 + 2060) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[58752],
+                             *(INIClass **)(v4 + 2060));
+  *(_BYTE *)(v4 + 2064) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[58736],
+                            *(_BYTE *)(v4 + 2064));
+  al29 = INIClass::ReadBool_Overwrite(
+           (int)aP0,
+           (unsigned __int8 *)(v4 + 36),
+           (CCINIClass *)&stru_830620.__pad_579C[58720],
+           *(_BYTE *)(v4 + 2704));
+  *(_BYTE *)(v4 + 2704) = al29;
+  if ( *(int *)(v4 + 2056) <= 0 )
+  {
+    if ( !al29 )
+    {
+      v34 = *(WeaponTypeClass **)(v4 + 2200);
+      if ( INIClass::GetString(
+             (unsigned __int8 ***)aP0,
+             (INIClass *)(v4 + 36),
+             (unsigned __int8 *)&stru_830620.__pad_579C[58684],
+             (INIClass *)&stru_87C374.__pad_579C[33876],
+             (INIClass *)&aP2.CCINIClass_field_4C,
+             128) )
+      {
+        eax42 = InfantryTypeClass::Find((ObjectClass *)&aP2.CCINIClass_field_4C);
+      }
+      else
+      {
+        eax42 = v34;
+      }
+      *(_DWORD *)&aP3[8] = 128;
+      *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+      *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+      *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[58672];
+      *(_DWORD *)(v4 + 2200) = eax42;
+      v27 = *(CCINIClass **)(v4 + 2228);
+      if ( INIClass::GetString(
+             (unsigned __int8 ***)aP0,
+             (INIClass *)(v4 + 36),
+             *(unsigned __int8 **)&v412.IsInitialized,
+             *(INIClass **)aP3,
+             *(INIClass **)&aP3[4],
+             *(int *)&aP3[8]) )
+      {
+        eax45 = InfantryTypeClass::Find((ObjectClass *)&aP2.CCINIClass_field_4C);
+      }
+      else
+      {
+        eax45 = v27;
+      }
+      *(_DWORD *)(v4 + 2228) = eax45;
+      v29 = *(CCINIClass **)(v4 + 2708);
+      if ( INIClass::GetString(
+             (unsigned __int8 ***)aP0,
+             (INIClass *)(v4 + 36),
+             (unsigned __int8 *)&stru_830620.__pad_579C[58656],
+             (INIClass *)&stru_87C374.__pad_579C[33876],
+             (INIClass *)&aP2.CCINIClass_field_4C,
+             128) )
+      {
+        eax48 = InfantryTypeClass::Find((ObjectClass *)&aP2.CCINIClass_field_4C);
+      }
+      else
+      {
+        eax48 = v29;
+      }
+      *(_DWORD *)&aP3[8] = 128;
+      *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+      *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+      *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[58640];
+      *(_DWORD *)(v4 + 2708) = eax48;
+      v31 = *(CCINIClass **)(v4 + 2736);
+      if ( INIClass::GetString(
+             (unsigned __int8 ***)aP0,
+             (INIClass *)(v4 + 36),
+             *(unsigned __int8 **)&v412.IsInitialized,
+             *(INIClass **)aP3,
+             *(INIClass **)&aP3[4],
+             *(int *)&aP3[8]) )
+      {
+        eax51 = InfantryTypeClass::Find((ObjectClass *)&aP2.CCINIClass_field_4C);
+      }
+      else
+      {
+        eax51 = v31;
+      }
+      *(_DWORD *)(v4 + 2736) = eax51;
+    }
+  }
+  else if ( *(int *)(v4 + 2060) > 0 )
+  {
+    aP2.headNode[2] = 1;
+    v21 = (CCINIClass *)(v4 + 2708);
+    do
+    {
+      sprintf((char *const)&aP2.unknown30, (ObjectClass *)&stru_830620.__pad_579C[58708], (INIClass *)aP2.headNode[2]);
+      sprintf((char *const)aP2.sectionHead, (ObjectClass *)&stru_830620.__pad_579C[58692], (INIClass *)aP2.headNode[2]);
+      *(_DWORD *)aP2.__pad_0 = v21[-6].sectionHead[1];
+      if ( INIClass::GetString(
+             (unsigned __int8 ***)aP0,
+             (INIClass *)(v4 + 36),
+             (unsigned __int8 *)&aP2.unknown30,
+             (INIClass *)&stru_87C374.__pad_579C[33876],
+             String,
+             128) )
+      {
+        eax33 = InfantryTypeClass::Find((ObjectClass *)String);
+      }
+      else
+      {
+        eax33 = *(WeaponTypeClass **)aP2.__pad_0;
+      }
+      v21[-6].sectionHead[1] = (int)eax33;
+      *(_DWORD *)aP2.__pad_0 = *(_DWORD *)v21->__pad_0;
+      if ( INIClass::GetString(
+             (unsigned __int8 ***)aP0,
+             (INIClass *)(v4 + 36),
+             (unsigned __int8 *)aP2.sectionHead,
+             (INIClass *)&stru_87C374.__pad_579C[33876],
+             (INIClass *)&aP2.CCINIClass_field_4C,
+             128) )
+      {
+        v32 = InfantryTypeClass::Find((ObjectClass *)&aP2.CCINIClass_field_4C);
+      }
+      else
+      {
+        v32 = *(WeaponTypeClass **)aP2.__pad_0;
+      }
+      *(_DWORD *)v21->__pad_0 = v32;
+      v24 = *(CCINIClass **)(v4 + 2060);
+      ++aP2.headNode[2];
+      v21 = (CCINIClass *)((char *)v21 + 28);
+    }
+    while ( aP2.headNode[2] - 1 < (int)v24 );
+  }
+  if ( *(_BYTE *)(v4 + 2704) )
+  {
+    *(_DWORD *)(v4 + 2200) = 0;
+    *(_DWORD *)(v4 + 2228) = 0;
+    *(_DWORD *)(v4 + 2708) = 0;
+    *(_DWORD *)(v4 + 2736) = 0;
+  }
+  *(_DWORD *)aP2.__pad_0 = &v412;
+  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1128));
+  **(_DWORD **)aP2.__pad_0 = &vt_TypeList_int;
+  v33 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)aP2.__pad_0 = GetINIClassIntList(
+                             (int)aP2.sectionHead,
+                             (unsigned __int8 ***)aP0,
+                             v33,
+                             (unsigned __int8 *)&stru_830620.__pad_579C[58628],
+                             (void **)v412.vtable0,
+                             v412.Items,
+                             v412.Capacity,
+                             *(__int16 *)&v412.IsInitialized,
+                             *(int *)aP3,
+                             *(int *)&aP3[4],
+                             *(int *)&aP3[8]);
+  TypeList::Copy((_DWORD *)(v4 + 1128), *(_DWORD **)aP2.__pad_0);
+  eax56 = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)(v4 + 1144) = *(_DWORD *)(*(_DWORD *)aP2.__pad_0 + 16);
+  *(_DWORD *)(v4 + 1148) = *(_DWORD *)(eax56 + 20);
+  *(_DWORD *)(v4 + 1152) = *(_DWORD *)(eax56 + 24);
+  aP2.sectionHead[0] = (int)&vt_VectorClass_int;
+  VectorClass::Destroy((int)aP2.sectionHead);
+  *(_DWORD *)aP2.__pad_0 = &v412;
+  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1044));
+  **(_DWORD **)aP2.__pad_0 = &vt_TypeList_int;
+  v35 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)aP2.__pad_0 = GetINIClassIntList(
+                             (int)aP2.sectionHead,
+                             (unsigned __int8 ***)aP0,
+                             v35,
+                             (unsigned __int8 *)&stru_830620.__pad_579C[58616],
+                             (void **)v412.vtable0,
+                             v412.Items,
+                             v412.Capacity,
+                             *(__int16 *)&v412.IsInitialized,
+                             *(int *)aP3,
+                             *(int *)&aP3[4],
+                             *(int *)&aP3[8]);
+  TypeList::Copy((_DWORD *)(v4 + 1044), *(_DWORD **)aP2.__pad_0);
+  eax56a = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)(v4 + 1060) = *(_DWORD *)(*(_DWORD *)aP2.__pad_0 + 16);
+  *(_DWORD *)(v4 + 1064) = *(_DWORD *)(eax56a + 20);
+  *(_DWORD *)(v4 + 1068) = *(_DWORD *)(eax56a + 24);
+  aP2.sectionHead[0] = (int)&vt_VectorClass_int;
+  VectorClass::Destroy((int)aP2.sectionHead);
+  *(_DWORD *)aP2.__pad_0 = &v412;
+  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1072));
+  **(_DWORD **)aP2.__pad_0 = &vt_TypeList_int;
+  v37 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)aP2.__pad_0 = GetINIClassIntList(
+                             (int)aP2.sectionHead,
+                             (unsigned __int8 ***)aP0,
+                             v37,
+                             (unsigned __int8 *)&stru_830620.__pad_579C[58596],
+                             (void **)v412.vtable0,
+                             v412.Items,
+                             v412.Capacity,
+                             *(__int16 *)&v412.IsInitialized,
+                             *(int *)aP3,
+                             *(int *)&aP3[4],
+                             *(int *)&aP3[8]);
+  TypeList::Copy((_DWORD *)(v4 + 1072), *(_DWORD **)aP2.__pad_0);
+  eax56b = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)(v4 + 1088) = *(_DWORD *)(*(_DWORD *)aP2.__pad_0 + 16);
+  *(_DWORD *)(v4 + 1092) = *(_DWORD *)(eax56b + 20);
+  *(_DWORD *)(v4 + 1096) = *(_DWORD *)(eax56b + 24);
+  aP2.sectionHead[0] = (int)&vt_VectorClass_int;
+  VectorClass::Destroy((int)aP2.sectionHead);
+  *(_DWORD *)aP2.__pad_0 = &v412;
+  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1100));
+  **(_DWORD **)aP2.__pad_0 = &vt_TypeList_int;
+  v39 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)aP2.__pad_0 = GetINIClassIntList(
+                             (int)aP2.sectionHead,
+                             (unsigned __int8 ***)aP0,
+                             v39,
+                             (unsigned __int8 *)&stru_830620.__pad_579C[58572],
+                             (void **)v412.vtable0,
+                             v412.Items,
+                             v412.Capacity,
+                             *(__int16 *)&v412.IsInitialized,
+                             *(int *)aP3,
+                             *(int *)&aP3[4],
+                             *(int *)&aP3[8]);
+  TypeList::Copy((_DWORD *)(v4 + 1100), *(_DWORD **)aP2.__pad_0);
+  eax56c = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)(v4 + 1116) = *(_DWORD *)(*(_DWORD *)aP2.__pad_0 + 16);
+  *(_DWORD *)(v4 + 1120) = *(_DWORD *)(eax56c + 20);
+  *(_DWORD *)(v4 + 1124) = *(_DWORD *)(eax56c + 24);
+  aP2.sectionHead[0] = (int)&vt_VectorClass_int;
+  VectorClass::Destroy((int)aP2.sectionHead);
+  *(_DWORD *)aP2.__pad_0 = &v412;
+  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1156));
+  **(_DWORD **)aP2.__pad_0 = &vt_TypeList_int;
+  v41 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)aP2.__pad_0 = GetINIClassIntList(
+                             (int)aP2.sectionHead,
+                             (unsigned __int8 ***)aP0,
+                             v41,
+                             (unsigned __int8 *)&stru_830620.__pad_579C[58560],
+                             (void **)v412.vtable0,
+                             v412.Items,
+                             v412.Capacity,
+                             *(__int16 *)&v412.IsInitialized,
+                             *(int *)aP3,
+                             *(int *)&aP3[4],
+                             *(int *)&aP3[8]);
+  TypeList::Copy((_DWORD *)(v4 + 1156), *(_DWORD **)aP2.__pad_0);
+  v51 = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)(v4 + 1172) = *(_DWORD *)(*(_DWORD *)aP2.__pad_0 + 16);
+  *(_DWORD *)(v4 + 1176) = *(_DWORD *)(v51 + 20);
+  *(_DWORD *)(v4 + 1180) = *(_DWORD *)(v51 + 24);
+  aP2.sectionHead[0] = (int)&vt_VectorClass_int;
+  VectorClass::Destroy((int)aP2.sectionHead);
+  *(_DWORD *)aP2.__pad_0 = &v412;
+  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1184));
+  **(_DWORD **)aP2.__pad_0 = &vt_TypeList_int;
+  v43 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)aP2.__pad_0 = GetINIClassIntList(
+                             (int)aP2.sectionHead,
+                             (unsigned __int8 ***)aP0,
+                             v43,
+                             (unsigned __int8 *)&stru_830620.__pad_579C[58540],
+                             (void **)v412.vtable0,
+                             v412.Items,
+                             v412.Capacity,
+                             *(__int16 *)&v412.IsInitialized,
+                             *(int *)aP3,
+                             *(int *)&aP3[4],
+                             *(int *)&aP3[8]);
+  TypeList::Copy((_DWORD *)(v4 + 1184), *(_DWORD **)aP2.__pad_0);
+  v53 = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)(v4 + 1200) = *(_DWORD *)(*(_DWORD *)aP2.__pad_0 + 16);
+  *(_DWORD *)(v4 + 1204) = *(_DWORD *)(v53 + 20);
+  *(_DWORD *)(v4 + 1208) = *(_DWORD *)(v53 + 24);
+  aP2.sectionHead[0] = (int)&vt_VectorClass_int;
+  VectorClass::Destroy((int)aP2.sectionHead);
+  *(_DWORD *)aP2.__pad_0 = &v412;
+  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1212));
+  **(_DWORD **)aP2.__pad_0 = &vt_TypeList_int;
+  v45 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)aP2.__pad_0 = GetINIClassIntList(
+                             (int)aP2.sectionHead,
+                             (unsigned __int8 ***)aP0,
+                             v45,
+                             (unsigned __int8 *)&stru_830620.__pad_579C[58528],
+                             (void **)v412.vtable0,
+                             v412.Items,
+                             v412.Capacity,
+                             *(__int16 *)&v412.IsInitialized,
+                             *(int *)aP3,
+                             *(int *)&aP3[4],
+                             *(int *)&aP3[8]);
+  TypeList::Copy((_DWORD *)(v4 + 1212), *(_DWORD **)aP2.__pad_0);
+  v55 = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)(v4 + 1228) = *(_DWORD *)(*(_DWORD *)aP2.__pad_0 + 16);
+  *(_DWORD *)(v4 + 1232) = *(_DWORD *)(v55 + 20);
+  *(_DWORD *)(v4 + 1236) = *(_DWORD *)(v55 + 24);
+  aP2.sectionHead[0] = (int)&vt_VectorClass_int;
+  VectorClass::Destroy((int)aP2.sectionHead);
+  *(_DWORD *)aP2.__pad_0 = &v412;
+  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1240));
+  **(_DWORD **)aP2.__pad_0 = &vt_TypeList_int;
+  v47 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)aP2.__pad_0 = GetINIClassIntList(
+                             (int)aP2.sectionHead,
+                             (unsigned __int8 ***)aP0,
+                             v47,
+                             (unsigned __int8 *)&stru_830620.__pad_579C[58512],
+                             (void **)v412.vtable0,
+                             v412.Items,
+                             v412.Capacity,
+                             *(__int16 *)&v412.IsInitialized,
+                             *(int *)aP3,
+                             *(int *)&aP3[4],
+                             *(int *)&aP3[8]);
+  TypeList::Copy((_DWORD *)(v4 + 1240), *(_DWORD **)aP2.__pad_0);
+  v57 = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)(v4 + 1256) = *(_DWORD *)(*(_DWORD *)aP2.__pad_0 + 16);
+  *(_DWORD *)(v4 + 1260) = *(_DWORD *)(v57 + 20);
+  *(_DWORD *)(v4 + 1264) = *(_DWORD *)(v57 + 24);
+  aP2.sectionHead[0] = (int)&vt_VectorClass_int;
+  VectorClass::Destroy((int)aP2.sectionHead);
+  v49 = *(CCINIClass **)(v4 + 1324);
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)(v4 + 36),
+         (unsigned __int8 *)&stru_830620.__pad_579C[58500],
+         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&aP2.CCINIClass_field_4C,
+         128) )
+  {
+    Index = (CCINIClass *)VocClass::FindIndex(&aP2.CCINIClass_field_4C);
+    if ( Index != (CCINIClass *)-1 )
+      v49 = Index;
+  }
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[58488];
+  *(_DWORD *)(v4 + 1324) = v49;
+  v60 = *(_DWORD *)(v4 + 1328);
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v61 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v61 == -1) )
+  {
+    v61 = v60;
+  }
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[58476];
+  *(_DWORD *)(v4 + 1328) = v61;
+  v62 = *(_DWORD *)(v4 + 1332);
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v63 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v63 == -1) )
+  {
+    v63 = v62;
+  }
+  *(_DWORD *)(v4 + 1332) = v63;
+  v64 = *(_DWORD *)(v4 + 1336);
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          (unsigned __int8 *)&stru_830620.__pad_579C[58464],
+          (INIClass *)&stru_87C374.__pad_579C[33876],
+          (INIClass *)&aP2.CCINIClass_field_4C,
+          128)
+    || (v65 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v65 == -1) )
+  {
+    v65 = v64;
+  }
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[19480];
+  *(_DWORD *)(v4 + 1336) = v65;
+  v66 = *(_DWORD *)(v4 + 1340);
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v67 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v67 == -1) )
+  {
+    v67 = v66;
+  }
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[19464];
+  *(_DWORD *)(v4 + 1340) = v67;
+  v68 = *(_DWORD *)(v4 + 1344);
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v69 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v69 == -1) )
+  {
+    v69 = v68;
+  }
+  *(_DWORD *)(v4 + 1344) = v69;
+  v70 = *(_DWORD *)(v4 + 1348);
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          (unsigned __int8 *)&stru_830620.__pad_579C[58448],
+          (INIClass *)&stru_87C374.__pad_579C[33876],
+          (INIClass *)&aP2.CCINIClass_field_4C,
+          128)
+    || (v71 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v71 == -1) )
+  {
+    v71 = v70;
+  }
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[19448];
+  *(_DWORD *)(v4 + 1348) = v71;
+  v72 = *(_DWORD *)(v4 + 1352);
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v73 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v73 == -1) )
+  {
+    v73 = v72;
+  }
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[58432];
+  *(_DWORD *)(v4 + 1352) = v73;
+  v74 = *(_DWORD *)(v4 + 1356);
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v75 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v75 == -1) )
+  {
+    v75 = v74;
+  }
+  *(_DWORD *)(v4 + 1356) = v75;
+  v76 = *(_DWORD *)(v4 + 1360);
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          (unsigned __int8 *)&stru_830620.__pad_579C[58416],
+          (INIClass *)&stru_87C374.__pad_579C[33876],
+          (INIClass *)&aP2.CCINIClass_field_4C,
+          128)
+    || (v77 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v77 == -1) )
+  {
+    v77 = v76;
+  }
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[58400];
+  *(_DWORD *)(v4 + 1360) = v77;
+  v78 = *(_DWORD *)(v4 + 1364);
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v79 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v79 == -1) )
+  {
+    v79 = v78;
+  }
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[58388];
+  *(_DWORD *)(v4 + 1364) = v79;
+  v80 = *(_DWORD *)(v4 + 1368);
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v81 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v81 == -1) )
+  {
+    v81 = v80;
+  }
+  *(_DWORD *)(v4 + 1368) = v81;
+  v82 = *(_DWORD *)(v4 + 1372);
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          (unsigned __int8 *)&stru_830620.__pad_579C[58372],
+          (INIClass *)&stru_87C374.__pad_579C[33876],
+          (INIClass *)&aP2.CCINIClass_field_4C,
+          128)
+    || (v83 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v83 == -1) )
+  {
+    v83 = v82;
+  }
+  *(_DWORD *)(v4 + 1372) = v83;
+  *(_BYTE *)(v4 + 3219) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[58360],
+                            *(_BYTE *)(v4 + 3219));
+  *(_DWORD *)(v4 + 2048) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[58352],
+                             *(INIClass **)(v4 + 2048));
+  *(_DWORD *)(v4 + 952) = INIClass::ReadInt_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[58340],
+                            *(INIClass **)(v4 + 952));
+  TypeMember_54749E0 = ObjectTypeClass::loadTypeMember_54749E0(
+                         (unsigned __int8 ***)aP0,
+                         (CCINIClass *)(v4 + 36),
+                         (unsigned __int8 *)&stru_830620.__pad_579C[58328],
+                         *(_DWORD *)(v4 + 956));
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[58320];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 956) = TypeMember_54749E0;
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)v412.Capacity,
+         *(unsigned __int8 **)&v412.IsInitialized,
+         *(INIClass **)aP3,
+         *(INIClass **)&aP3[4],
+         *(int *)&aP3[8]) )
+  {
+    DynamicVectorClass::BuildingTypeConstructor(&aP2.unknown30, 0, 0);
+    aP2.unknown30 = (int)&vt_TypeList_BuildingTypeClass_const;
+    for ( k = strtok((char *)&aP2.CCINIClass_field_4C, (ObjectClass *)&stru_817F40.nextObject);
+          k;
+          k = strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+    {
+      if ( !*k )
+        break;
+      *(_DWORD *)aP2.__pad_0 = BuildingTypeClass::FindOrCreate(k);
+      if ( *(_DWORD *)aP2.__pad_0 )
+        DynamicVector::Add_Alt3(&aP2.unknown30, (VectorClass *)&aP2);
+    }
+    TypeList::BuildingTypeCopy(aP2.sectionHead, (VectorClass *)&aP2.unknown30);
+    aP2.unknown30 = (int)&vt_VectorClass_BuildingTypeClass_const;
+    DynamicVectorClass::Destroy((int)&aP2.unknown30);
+  }
+  else
+  {
+    TypeList::BuildingTypeCopy(aP2.sectionHead, (VectorClass *)(v4 + 1000));
+  }
+  VectorClass::CopyBuilding((_DWORD *)(v4 + 1000), (VectorClass *)aP2.sectionHead);
+  v86 = *(_DWORD *)aP2.__pad_20;
+  v87 = *(_DWORD *)&aP2.__pad_20[4];
+  *(_DWORD *)(v4 + 1024) = *(_DWORD *)&aP2.__pad_20[8];
+  *(_DWORD *)(v4 + 1016) = v86;
+  *(_DWORD *)(v4 + 1020) = v87;
+  aP2.sectionHead[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+  DynamicVectorClass::Destroy((int)aP2.sectionHead);
+  v88 = *(BuildingTypeClass **)(v4 + 1028);
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)(v4 + 36),
+         (unsigned __int8 *)&stru_830620.__pad_579C[58308],
+         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&aP2.CCINIClass_field_4C,
+         128) )
+  {
+    v89 = BuildingTypeClass::FindOrCreate((char *)&aP2.CCINIClass_field_4C);
+  }
+  else
+  {
+    v89 = v88;
+  }
+  *(_DWORD *)(v4 + 1028) = v89;
+  v90 = *(UnitTypeClass **)(v4 + 1032);
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)(v4 + 36),
+         (unsigned __int8 *)&stru_830620.__pad_579C[58292],
+         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&aP2.CCINIClass_field_4C,
+         128) )
+  {
+    Alt = BuildingTypeClass::FindOrCreateAlt((INIClass *)&aP2.CCINIClass_field_4C);
+  }
+  else
+  {
+    Alt = v90;
+  }
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[58280];
+  *(_DWORD *)(v4 + 1032) = Alt;
+  v92 = *(UnitTypeClass **)(v4 + 1036);
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)(v4 + 36),
+         *(unsigned __int8 **)&v412.IsInitialized,
+         *(INIClass **)aP3,
+         *(INIClass **)&aP3[4],
+         *(int *)&aP3[8]) )
+  {
+    eax110 = BuildingTypeClass::FindOrCreateAlt((INIClass *)&aP2.CCINIClass_field_4C);
+  }
+  else
+  {
+    eax110 = v92;
+  }
+  *(_DWORD *)(v4 + 1036) = eax110;
+  *(_BYTE *)(v4 + 1040) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[58268],
+                            *(_BYTE *)(v4 + 1040));
+  *(_BYTE *)(v4 + 3366) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[58252],
+                            *(_BYTE *)(v4 + 3366));
+  v94 = INIClass::ReadBool_Overwrite(
+          (int)aP0,
+          (unsigned __int8 *)(v4 + 36),
+          (CCINIClass *)&stru_830620.__pad_579C[58236],
+          *(_BYTE *)(v4 + 3364));
+  aP3[8] = *(_BYTE *)(v4 + 3361);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[58224];
+  *(_DWORD *)aP3 = v4 + 36;
+  *(_BYTE *)(v4 + 3364) = v94;
+  *(_BYTE *)(v4 + 3361) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            *(unsigned __int8 **)aP3,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  al112a = INIClass::ReadBool_Overwrite(
+             (int)aP0,
+             (unsigned __int8 *)(v4 + 36),
+             (CCINIClass *)&stru_830620.__pad_579C[58204],
+             *(_BYTE *)(v4 + 3362));
+  v96 = *(_BYTE *)(v4 + 3233);
+  *(_BYTE *)(v4 + 3362) = al112a;
+  al112b = INIClass::ReadBool_Overwrite(
+             (int)aP0,
+             (unsigned __int8 *)(v4 + 36),
+             (CCINIClass *)&stru_830620.__pad_579C[58196],
+             v96);
+  v98 = *(_DWORD *)(v4 + 1376);
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[58176];
+  v412.Capacity = v4 + 36;
+  *(_BYTE *)(v4 + 3233) = al112b;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)v412.Capacity,
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v99 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v99 == -1) )
+  {
+    v99 = v98;
+  }
+  v100 = *(_DWORD *)(v4 + 1380);
+  *(_DWORD *)(v4 + 1376) = v99;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          (unsigned __int8 *)&stru_830620.__pad_579C[58156],
+          (INIClass *)&stru_87C374.__pad_579C[33876],
+          (INIClass *)&aP2.CCINIClass_field_4C,
+          128)
+    || (v101 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v101 == -1) )
+  {
+    v101 = v100;
+  }
+  v93 = *(CCINIClass **)(v4 + 1384);
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[58136];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1380) = v101;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)v412.Capacity,
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v103 = (CCINIClass *)VocClass::FindIndex(&aP2.CCINIClass_field_4C), v103 == (CCINIClass *)-1) )
+  {
+    v103 = v93;
+  }
+  *(_DWORD *)(v4 + 1384) = v103;
+  *(_DWORD *)aP2.__pad_0 = &v412;
+  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1268));
+  **(_DWORD **)aP2.__pad_0 = &vt_TypeList_int;
+  v95 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)aP2.__pad_0 = GetINIClassIntList(
+                             (int)aP2.sectionHead,
+                             (unsigned __int8 ***)aP0,
+                             v95,
+                             (unsigned __int8 *)&stru_830620.__pad_579C[58124],
+                             (void **)v412.vtable0,
+                             v412.Items,
+                             v412.Capacity,
+                             *(__int16 *)&v412.IsInitialized,
+                             *(int *)aP3,
+                             *(int *)&aP3[4],
+                             *(int *)&aP3[8]);
+  TypeList::Copy((_DWORD *)(v4 + 1268), *(_DWORD **)aP2.__pad_0);
+  v105 = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)(v4 + 1284) = *(_DWORD *)(*(_DWORD *)aP2.__pad_0 + 16);
+  *(_DWORD *)(v4 + 1288) = *(_DWORD *)(v105 + 20);
+  *(_DWORD *)(v4 + 1292) = *(_DWORD *)(v105 + 24);
+  aP2.sectionHead[0] = (int)&vt_VectorClass_int;
+  if ( aP2.sectionHead[1] && BYTE1(aP2.sectionCount) )
+    __3_YAXPAX_Z((void *)aP2.sectionHead[1]);
+  *(_DWORD *)aP2.__pad_0 = &v412;
+  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1296));
+  **(_DWORD **)aP2.__pad_0 = &vt_TypeList_int;
+  v97 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)aP2.__pad_0 = GetINIClassIntList(
+                             (int)aP2.sectionHead,
+                             (unsigned __int8 ***)aP0,
+                             v97,
+                             (unsigned __int8 *)&stru_830620.__pad_579C[58112],
+                             (void **)v412.vtable0,
+                             v412.Items,
+                             v412.Capacity,
+                             *(__int16 *)&v412.IsInitialized,
+                             *(int *)aP3,
+                             *(int *)&aP3[4],
+                             *(int *)&aP3[8]);
+  TypeList::Copy((_DWORD *)(v4 + 1296), *(_DWORD **)aP2.__pad_0);
+  v107 = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)(v4 + 1312) = *(_DWORD *)(*(_DWORD *)aP2.__pad_0 + 16);
+  *(_DWORD *)(v4 + 1316) = *(_DWORD *)(v107 + 20);
+  v108 = *(_DWORD *)(v107 + 24);
+  v109 = (void *)aP2.sectionHead[1];
+  *(_DWORD *)(v4 + 1320) = v108;
+  aP2.sectionHead[0] = (int)&vt_VectorClass_int;
+  if ( v109 && BYTE1(aP2.sectionCount) )
+    __3_YAXPAX_Z(v109);
+  v110 = *(_DWORD *)(v4 + 1388);
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          (unsigned __int8 *)&stru_830620.__pad_579C[58100],
+          (INIClass *)&stru_87C374.__pad_579C[33876],
+          (INIClass *)&aP2.CCINIClass_field_4C,
+          128)
+    || (v111 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v111 == -1) )
+  {
+    v111 = v110;
+  }
+  v112 = *(_DWORD *)(v4 + 1392);
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[58084];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1388) = v111;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)v412.Capacity,
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v113 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v113 == -1) )
+  {
+    v113 = v112;
+  }
+  v114 = *(_DWORD *)(v4 + 1396);
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[19432];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1392) = v113;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)v412.Capacity,
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v115 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v115 == -1) )
+  {
+    v115 = v114;
+  }
+  v116 = *(_DWORD *)(v4 + 1400);
+  *(_DWORD *)(v4 + 1396) = v115;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          (unsigned __int8 *)&stru_830620.__pad_579C[19416],
+          (INIClass *)&stru_87C374.__pad_579C[33876],
+          (INIClass *)&aP2.CCINIClass_field_4C,
+          128)
+    || (v117 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v117 == -1) )
+  {
+    v117 = v116;
+  }
+  v118 = *(_DWORD *)(v4 + 1404);
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[58068];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1400) = v117;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)v412.Capacity,
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v119 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v119 == -1) )
+  {
+    v119 = v118;
+  }
+  v120 = *(_DWORD *)(v4 + 1408);
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[58040];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1404) = v119;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)v412.Capacity,
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v121 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v121 == -1) )
+  {
+    v121 = v120;
+  }
+  v122 = *(_DWORD *)(v4 + 1412);
+  *(_DWORD *)(v4 + 1408) = v121;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          (unsigned __int8 *)&stru_830620.__pad_579C[58008],
+          (INIClass *)&stru_87C374.__pad_579C[33876],
+          (INIClass *)&aP2.CCINIClass_field_4C,
+          128)
+    || (v123 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v123 == -1) )
+  {
+    v123 = v122;
+  }
+  v124 = *(_DWORD *)(v4 + 1416);
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[57980];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1412) = v123;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)v412.Capacity,
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v125 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v125 == -1) )
+  {
+    v125 = v124;
+  }
+  v126 = *(_DWORD *)(v4 + 1420);
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[57948];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1416) = v125;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)v412.Capacity,
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v127 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v127 == -1) )
+  {
+    v127 = v126;
+  }
+  v128 = *(_DWORD *)(v4 + 1424);
+  *(_DWORD *)(v4 + 1420) = v127;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          (unsigned __int8 *)&stru_830620.__pad_579C[57936],
+          (INIClass *)&stru_87C374.__pad_579C[33876],
+          (INIClass *)&aP2.CCINIClass_field_4C,
+          128)
+    || (v129 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v129 == -1) )
+  {
+    v129 = v128;
+  }
+  v130 = *(_DWORD *)(v4 + 1428);
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[57920];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1424) = v129;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)v412.Capacity,
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v131 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v131 == -1) )
+  {
+    v131 = v130;
+  }
+  v132 = *(_DWORD *)(v4 + 1432);
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[18804];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1428) = v131;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)v412.Capacity,
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v133 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v133 == -1) )
+  {
+    v133 = v132;
+  }
+  v134 = *(_DWORD *)(v4 + 1436);
+  *(_DWORD *)(v4 + 1432) = v133;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          (unsigned __int8 *)&stru_830620.__pad_579C[18784],
+          (INIClass *)&stru_87C374.__pad_579C[33876],
+          (INIClass *)&aP2.CCINIClass_field_4C,
+          128)
+    || (v135 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v135 == -1) )
+  {
+    v135 = v134;
+  }
+  v136 = *(_DWORD *)(v4 + 1440);
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[18760];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1436) = v135;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)v412.Capacity,
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v137 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v137 == -1) )
+  {
+    v137 = v136;
+  }
+  v138 = *(_DWORD *)(v4 + 1444);
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[18736];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1440) = v137;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)v412.Capacity,
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v139 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v139 == -1) )
+  {
+    v139 = v138;
+  }
+  v140 = *(_DWORD *)(v4 + 1448);
+  *(_DWORD *)(v4 + 1444) = v139;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)(v4 + 36),
+          (unsigned __int8 *)&stru_830620.__pad_579C[18720],
+          (INIClass *)&stru_87C374.__pad_579C[33876],
+          (INIClass *)&aP2.CCINIClass_field_4C,
+          128)
+    || (v141 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v141 == -1) )
+  {
+    v141 = v140;
+  }
+  v142 = *(_DWORD *)(v4 + 1452);
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[18704];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1448) = v141;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)v412.Capacity,
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v143 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v143 == -1) )
+  {
+    v143 = v142;
+  }
+  v144 = *(_DWORD *)(v4 + 1456);
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[18824];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1452) = v143;
+  if ( !INIClass::GetString(
+          (unsigned __int8 ***)aP0,
+          (INIClass *)v412.Capacity,
+          *(unsigned __int8 **)&v412.IsInitialized,
+          *(INIClass **)aP3,
+          *(INIClass **)&aP3[4],
+          *(int *)&aP3[8])
+    || (v145 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v145 == -1) )
+  {
+    v145 = v144;
+  }
+  *(_DWORD *)(v4 + 1456) = v145;
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)(v4 + 36),
+         (unsigned __int8 *)&g_INI_Key_Speed.needsSave_flag,
+         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&aP2.CCINIClass_field_4C,
+         128) )
+  {
+    DynamicVectorClass::AnimTypeConstructor(&aP2.unknown30, 0, 0);
+    aP2.unknown30 = (int)&vt_TypeList_AnimTypeClass_const;
+    for ( m = (AbstractClass *)strtok((char *)&aP2.CCINIClass_field_4C, (ObjectClass *)&stru_817F40.nextObject);
+          m;
+          m = (AbstractClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+    {
+      if ( !m->__pad_0[0] )
+        break;
+      *(_DWORD *)aP2.__pad_0 = AnimTypeClass::FindOrCreate(m);
+      if ( *(_DWORD *)aP2.__pad_0 )
+        DynamicVector::Add_Alt4(&aP2.unknown30, (VectorClass *)&aP2);
+    }
+    TypeList::AnimTypeCopy(aP2.sectionHead, (VectorClass *)&aP2.unknown30);
+    aP2.unknown30 = (int)&vt_VectorClass_AnimTypeClass_const;
+    DynamicVectorClass::Destroy_Alt((int)&aP2.unknown30);
+  }
+  else
+  {
+    TypeList::AnimTypeCopy(aP2.sectionHead, (VectorClass *)(v4 + 1836));
+  }
+  VectorClass::CopyDefault((_DWORD *)(v4 + 1836), (VectorClass *)aP2.sectionHead);
+  v147 = *(_DWORD *)&aP2.__pad_20[4];
+  v148 = *(_DWORD *)&aP2.__pad_20[8];
+  *(_DWORD *)(v4 + 1852) = *(_DWORD *)aP2.__pad_20;
+  v149 = (void *)aP2.sectionHead[1];
+  *(_DWORD *)(v4 + 1856) = v147;
+  *(_DWORD *)(v4 + 1860) = v148;
+  aP2.sectionHead[0] = (int)&vt_VectorClass_AnimTypeClass_const;
+  if ( v149 && BYTE1(aP2.sectionCount) )
+    __3_YAXPAX_Z(v149);
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)(v4 + 36),
+         (unsigned __int8 *)&stru_830620.__pad_579C[57908],
+         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&aP2.CCINIClass_field_4C,
+         128) )
+  {
+    DynamicVectorClass::AnimTypeConstructor(&aP2.unknown30, 0, 0);
+    aP2.unknown30 = (int)&vt_TypeList_AnimTypeClass_const;
+    for ( n = (AbstractClass *)strtok((char *)&aP2.CCINIClass_field_4C, (ObjectClass *)&stru_817F40.nextObject);
+          n;
+          n = (AbstractClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+    {
+      if ( !n->__pad_0[0] )
+        break;
+      *(_DWORD *)aP2.__pad_0 = AnimTypeClass::FindOrCreate(n);
+      if ( *(_DWORD *)aP2.__pad_0 )
+        DynamicVector::Add_Alt4(&aP2.unknown30, (VectorClass *)&aP2);
+    }
+    TypeList::AnimTypeCopy(aP2.sectionHead, (VectorClass *)&aP2.unknown30);
+    aP2.unknown30 = (int)&vt_VectorClass_AnimTypeClass_const;
+    DynamicVectorClass::Destroy_Alt((int)&aP2.unknown30);
+  }
+  else
+  {
+    TypeList::AnimTypeCopy(aP2.sectionHead, (VectorClass *)(v4 + 1864));
+  }
+  VectorClass::CopyDefault((_DWORD *)(v4 + 1864), (VectorClass *)aP2.sectionHead);
+  v151 = *(_DWORD *)&aP2.__pad_20[4];
+  v152 = *(_DWORD *)&aP2.__pad_20[8];
+  *(_DWORD *)(v4 + 1880) = *(_DWORD *)aP2.__pad_20;
+  v153 = (void *)aP2.sectionHead[1];
+  *(_DWORD *)(v4 + 1884) = v151;
+  *(_DWORD *)(v4 + 1888) = v152;
+  aP2.sectionHead[0] = (int)&vt_VectorClass_AnimTypeClass_const;
+  if ( v153 && BYTE1(aP2.sectionCount) )
+    __3_YAXPAX_Z(v153);
+  v154 = *(ParticleSystemTypeClass **)(v4 + 1892);
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)(v4 + 36),
+         (unsigned __int8 *)&stru_830620.__pad_579C[57884],
+         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&aP2.CCINIClass_field_4C,
+         128) )
+  {
+    v155 = BuildingTypeClass::LoadOrGet((ObjectClass *)&aP2.CCINIClass_field_4C);
+  }
+  else
+  {
+    v155 = v154;
+  }
+  v156 = *(ParticleSystemTypeClass **)(v4 + 1908);
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[57856];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1892) = v155;
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)v412.Capacity,
+         *(unsigned __int8 **)&v412.IsInitialized,
+         *(INIClass **)aP3,
+         *(INIClass **)&aP3[4],
+         *(int *)&aP3[8]) )
+  {
+    v157 = BuildingTypeClass::LoadOrGet((ObjectClass *)&aP2.CCINIClass_field_4C);
+  }
+  else
+  {
+    v157 = v156;
+  }
+  *(_DWORD *)&aP3[8] = v4 + 1896;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[57832];
+  *(_DWORD *)aP3 = v4 + 36;
+  *(_DWORD *)&v412.IsInitialized = &aP2.unknown30;
+  *(_DWORD *)(v4 + 1908) = v157;
+  Coord2 = INIClass::GetCoord2(
+             (unsigned __int8 ***)aP0,
+             *(int **)&v412.IsInitialized,
+             *(CCINIClass **)aP3,
+             *(unsigned __int8 **)&aP3[4],
+             *(int **)&aP3[8]);
+  v159 = *Coord2;
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)(v4 + 1896) = v159;
+  v160 = Coord2[1];
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)(v4 + 1900) = v160;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  v161 = Coord2[2];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[57808];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1904) = v161;
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)v412.Capacity,
+         *(unsigned __int8 **)&v412.IsInitialized,
+         *(INIClass **)aP3,
+         *(INIClass **)&aP3[4],
+         *(int *)&aP3[8]) )
+  {
+    TypeList::ParticleConstructor(&aP2.unknown30, 0, 0);
+    aP2.unknown30 = (int)&vt_TypeList_ParticleSystemTypeClass_const;
+    for ( ii = (ObjectClass *)strtok((char *)&aP2.CCINIClass_field_4C, (ObjectClass *)&stru_817F40.nextObject);
+          ii;
+          ii = (ObjectClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+    {
+      if ( !ii->__pad_0[0] )
+        break;
+      *(_DWORD *)aP2.__pad_0 = BuildingTypeClass::LoadOrGet(ii);
+      if ( *(_DWORD *)aP2.__pad_0 )
+        TypeList::PushBack(&aP2.unknown30, (VectorClass *)&aP2);
+    }
+    VectorClass::CopyParticle(aP2.sectionHead, (DynamicVector *)&aP2.unknown30);
+    aP2.unknown30 = (int)&vt_VectorClass_ParticleSystemTypeClass_const;
+    VectorClass::Cleanup((int)&aP2.unknown30);
+  }
+  else
+  {
+    VectorClass::CopyParticle(aP2.sectionHead, (DynamicVector *)(v4 + 1912));
+  }
+  ObjectTypeClass::loadTypeMember_5717C00((_DWORD *)(v4 + 1912), aP2.sectionHead);
+  v163 = *(_DWORD *)aP2.__pad_20;
+  v164 = *(_DWORD *)&aP2.__pad_20[4];
+  *(_DWORD *)(v4 + 1936) = *(_DWORD *)&aP2.__pad_20[8];
+  v165 = (void *)aP2.sectionHead[1];
+  *(_DWORD *)(v4 + 1928) = v163;
+  *(_DWORD *)(v4 + 1932) = v164;
+  aP2.sectionHead[0] = (int)&vt_VectorClass_ParticleSystemTypeClass_const;
+  if ( v165 && BYTE1(aP2.sectionCount) )
+    __3_YAXPAX_Z(v165);
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)(v4 + 36),
+         (unsigned __int8 *)&stru_830620.__pad_579C[57784],
+         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&aP2.CCINIClass_field_4C,
+         128) )
+  {
+    TypeList::ParticleConstructor(&aP2.unknown30, 0, 0);
+    aP2.unknown30 = (int)&vt_TypeList_ParticleSystemTypeClass_const;
+    for ( jj = (ObjectClass *)strtok((char *)&aP2.CCINIClass_field_4C, (ObjectClass *)&stru_817F40.nextObject);
+          jj;
+          jj = (ObjectClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+    {
+      if ( !jj->__pad_0[0] )
+        break;
+      *(_DWORD *)aP2.__pad_0 = BuildingTypeClass::LoadOrGet(jj);
+      if ( *(_DWORD *)aP2.__pad_0 )
+        TypeList::PushBack(&aP2.unknown30, (VectorClass *)&aP2);
+    }
+    VectorClass::CopyParticle(aP2.sectionHead, (DynamicVector *)&aP2.unknown30);
+    aP2.unknown30 = (int)&vt_VectorClass_ParticleSystemTypeClass_const;
+    VectorClass::Cleanup((int)&aP2.unknown30);
+  }
+  else
+  {
+    VectorClass::CopyParticle(aP2.sectionHead, (DynamicVector *)(v4 + 1940));
+  }
+  ObjectTypeClass::loadTypeMember_5717C00((_DWORD *)(v4 + 1940), aP2.sectionHead);
+  v167 = *(_DWORD *)aP2.__pad_20;
+  v168 = *(_DWORD *)&aP2.__pad_20[4];
+  *(_DWORD *)(v4 + 1964) = *(_DWORD *)&aP2.__pad_20[8];
+  v169 = (void *)aP2.sectionHead[1];
+  *(_DWORD *)(v4 + 1956) = v167;
+  *(_DWORD *)(v4 + 1960) = v168;
+  aP2.sectionHead[0] = (int)&vt_VectorClass_ParticleSystemTypeClass_const;
+  if ( v169 && BYTE1(aP2.sectionCount) )
+    __3_YAXPAX_Z(v169);
+  eax231 = INIClass::GetCoord2(
+             (unsigned __int8 ***)aP0,
+             &aP2.unknown30,
+             (CCINIClass *)(v4 + 36),
+             (unsigned __int8 *)&stru_830620.__pad_579C[57764],
+             (int *)(v4 + 1968));
+  *(_DWORD *)(v4 + 1968) = *eax231;
+  *(_DWORD *)(v4 + 1972) = eax231[1];
+  edx231 = eax231[2];
+  aP3[8] = *(_BYTE *)(v4 + 1980);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[57744];
+  *(_DWORD *)aP3 = v4 + 36;
+  *(_DWORD *)(v4 + 1976) = edx231;
+  v172 = INIClass::ReadBool_Overwrite((int)aP0, *(unsigned __int8 **)aP3, *(CCINIClass **)&aP3[4], aP3[8]);
+  *(_DWORD *)&aP3[8] = v4 + 1984;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[57724];
+  *(_DWORD *)aP3 = v4 + 36;
+  *(_DWORD *)&v412.IsInitialized = &aP2.unknown30;
+  *(_BYTE *)(v4 + 1980) = v172;
+  eax231a = INIClass::GetCoord2(
+              (unsigned __int8 ***)aP0,
+              *(int **)&v412.IsInitialized,
+              *(CCINIClass **)aP3,
+              *(unsigned __int8 **)&aP3[4],
+              *(int **)&aP3[8]);
+  *(_DWORD *)(v4 + 1984) = *eax231a;
+  *(_DWORD *)(v4 + 1988) = eax231a[1];
+  *(_DWORD *)(v4 + 1992) = eax231a[2];
+  eax231b = INIClass::GetCoord2(
+              (unsigned __int8 ***)aP0,
+              &aP2.unknown30,
+              (CCINIClass *)(v4 + 36),
+              (unsigned __int8 *)&stru_830620.__pad_579C[57700],
+              (int *)(v4 + 1996));
+  *(_DWORD *)(v4 + 1996) = *eax231b;
+  *(_DWORD *)(v4 + 2000) = eax231b[1];
+  *(_DWORD *)(v4 + 2004) = eax231b[2];
+  v175 = INIClass::GetCoord2(
+           (unsigned __int8 ***)aP0,
+           &aP2.unknown30,
+           (CCINIClass *)(v4 + 36),
+           (unsigned __int8 *)&stru_830620.__pad_579C[57676],
+           (int *)(v4 + 2008));
+  *(_DWORD *)(v4 + 2008) = *v175;
+  *(_DWORD *)(v4 + 2012) = v175[1];
+  *(_DWORD *)(v4 + 2016) = v175[2];
+  v176 = INIClass::GetCoord2(
+           (unsigned __int8 ***)aP0,
+           &aP2.unknown30,
+           (CCINIClass *)(v4 + 36),
+           (unsigned __int8 *)&stru_830620.__pad_579C[57648],
+           (int *)(v4 + 2020));
+  *(_DWORD *)(v4 + 2020) = *v176;
+  *(_DWORD *)(v4 + 2024) = v176[1];
+  *(_DWORD *)(v4 + 2028) = v176[2];
+  eax231e = INIClass::GetCoord2(
+              (unsigned __int8 ***)aP0,
+              &aP2.unknown30,
+              (CCINIClass *)(v4 + 36),
+              (unsigned __int8 *)&stru_830620.__pad_579C[57624],
+              (int *)(v4 + 2032));
+  *(_DWORD *)(v4 + 2032) = *eax231e;
+  *(_DWORD *)(v4 + 2036) = eax231e[1];
+  *(_DWORD *)(v4 + 2040) = eax231e[2];
+  *(_BYTE *)(v4 + 3230) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57616],
+                            *(_BYTE *)(v4 + 3230));
+  *(_BYTE *)(v4 + 3231) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57604],
+                            *(_BYTE *)(v4 + 3231));
+  *(_BYTE *)(v4 + 3232) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57592],
+                            *(_BYTE *)(v4 + 3232));
+  *(_BYTE *)(v4 + 3280) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57580],
+                            *(_BYTE *)(v4 + 3280));
+  *(_BYTE *)(v4 + 3281) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57564],
+                            *(_BYTE *)(v4 + 3281));
+  *(_BYTE *)(v4 + 3282) = INIClass::ReadInt_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57544],
+                            (INIClass *)*(char *)(v4 + 3282));
+  *(_BYTE *)(v4 + 3283) = INIClass::ReadInt_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57520],
+                            (INIClass *)*(char *)(v4 + 3283));
+  *(_BYTE *)(v4 + 3284) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57508],
+                            *(_BYTE *)(v4 + 3284));
+  *(_BYTE *)(v4 + 3229) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57500],
+                            *(_BYTE *)(v4 + 3229));
+  *(_BYTE *)(v4 + 3285) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57488],
+                            *(_BYTE *)(v4 + 3285));
+  *(_DWORD *)(v4 + 3288) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[57472],
+                             *(INIClass **)(v4 + 3288));
+  *(_DWORD *)(v4 + 3340) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[57464],
+                             *(INIClass **)(v4 + 3340));
+  *(_DWORD *)(v4 + 3344) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[57452],
+                             *(INIClass **)(v4 + 3344));
+  if ( *(_BYTE *)(v4 + 3285) && *(int *)(v4 + 3288) > 1 )
+  {
+    aP2.headNode[2] = 1;
+    v178 = (INIClass **)(v4 + 3316);
+    do
+    {
+      sprintf(aP2.__pad_0, (ObjectClass *)&stru_830620.__pad_579C[57444], (INIClass *)aP2.headNode[2]);
+      sprintf((char *const)&aP2.unknown30, (ObjectClass *)&stru_830620.__pad_579C[57428], (INIClass *)aP2.headNode[2]);
+      *(v178 - 6) = (INIClass *)INIClass::ReadInt_Overwrite((int)aP0, (unsigned __int8 *)(v4 + 36), &aP2, *(v178 - 6));
+      *v178 = (INIClass *)INIClass::ReadInt_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&aP2.unknown30,
+                            *v178);
+      v170 = *(CCINIClass **)(v4 + 3288);
+      ++v178;
+      ++aP2.headNode[2];
+    }
+    while ( aP2.headNode[2] - 1 < (int)v170 );
+  }
+  *(_DWORD *)(v4 + 980) = ObjectTypeClass::loadTypeMember_5474940(
+                            (unsigned __int8 ***)aP0,
+                            (CCINIClass *)(v4 + 36),
+                            (unsigned __int8 *)&stru_830620.__pad_579C[57416],
+                            *(_DWORD *)(v4 + 980));
+  *(_BYTE *)(v4 + 984) = INIClass::ReadBool_Overwrite(
+                           (int)aP0,
+                           (unsigned __int8 *)(v4 + 36),
+                           (CCINIClass *)&stru_830620.__pad_579C[57400],
+                           *(_BYTE *)(v4 + 984));
+  *(_DWORD *)(v4 + 988) = INIClass::ReadInt_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57376],
+                            *(INIClass **)(v4 + 988));
+  *(_DWORD *)(v4 + 992) = INIClass::ReadInt_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57348],
+                            *(INIClass **)(v4 + 992));
+  *(_DWORD *)(v4 + 996) = INIClass::ReadInt_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57340],
+                            *(INIClass **)(v4 + 996));
+  *(_DWORD *)aP2.__pad_0 = &v412;
+  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1592));
+  **(_DWORD **)aP2.__pad_0 = &vt_TypeList_int;
+  v171 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)aP2.__pad_0 = LoadBuildingTypeClassPrerequisites(
+                             aP2.sectionHead,
+                             (unsigned __int8 ***)aP0,
+                             v171,
+                             (unsigned __int8 *)&stru_830620.__pad_579C[57324],
+                             v412);
+  TypeList::Copy((_DWORD *)(v4 + 1592), *(_DWORD **)aP2.__pad_0);
+  v181 = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)(v4 + 1608) = *(_DWORD *)(*(_DWORD *)aP2.__pad_0 + 16);
+  *(_DWORD *)(v4 + 1612) = *(_DWORD *)(v181 + 20);
+  *(_DWORD *)(v4 + 1616) = *(_DWORD *)(v181 + 24);
+  aP2.sectionHead[0] = (int)&vt_VectorClass_int;
+  if ( aP2.sectionHead[1] && BYTE1(aP2.sectionCount) )
+    __3_YAXPAX_Z((void *)aP2.sectionHead[1]);
+  *(_DWORD *)aP2.__pad_0 = &v412;
+  IntVector::Copy(&v412, (VectorClass *)(v4 + 1620));
+  v173 = *(CCINIClass **)aP2.__pad_0;
+  *(_DWORD *)(*(_DWORD *)aP2.__pad_0 + 16) = *(_DWORD *)(v4 + 1636);
+  v173->sectionHead[1] = *(_DWORD *)(v4 + 1640);
+  *(_DWORD *)v173->__pad_0 = &vt_TypeList_int;
+  v174 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)aP2.__pad_0 = LoadBuildingTypeClassPrerequisites(
+                             aP2.sectionHead,
+                             (unsigned __int8 ***)aP0,
+                             v174,
+                             (unsigned __int8 *)&stru_830620.__pad_579C[57300],
+                             v412);
+  TypeList::Copy((_DWORD *)(v4 + 1620), *(_DWORD **)aP2.__pad_0);
+  v184 = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)(v4 + 1636) = *(_DWORD *)(*(_DWORD *)aP2.__pad_0 + 16);
+  *(_DWORD *)(v4 + 1640) = *(_DWORD *)(v184 + 20);
+  *(_DWORD *)(v4 + 1644) = *(_DWORD *)(v184 + 24);
+  aP2.sectionHead[0] = (int)&vt_VectorClass_int;
+  if ( aP2.sectionHead[1] && BYTE1(aP2.sectionCount) )
+    __3_YAXPAX_Z((void *)aP2.sectionHead[1]);
+  *(_DWORD *)(v4 + 1512) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[57292],
+                             *(INIClass **)(v4 + 1512));
+  *(_BYTE *)(v4 + 3388) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57272],
+                            *(_BYTE *)(v4 + 3388));
+  *(_BYTE *)(v4 + 3389) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57252],
+                            *(_BYTE *)(v4 + 3389));
+  *(_DWORD *)(v4 + 1520) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[57236],
+                             *(INIClass **)(v4 + 1520));
+  *(_DWORD *)(v4 + 1524) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[57216],
+                             *(INIClass **)(v4 + 1524));
+  *(_DWORD *)(v4 + 1528) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[57204],
+                             *(INIClass **)(v4 + 1528));
+  *(_DWORD *)(v4 + 1532) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[57184],
+                             *(INIClass **)(v4 + 1532));
+  *(_DWORD *)(v4 + 1548) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[57160],
+                             *(INIClass **)(v4 + 1548));
+  *(double *)&aP3[4] = *(float *)(v4 + 1544);
+  *(float *)(v4 + 1544) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            (INIClass *)(v4 + 36),
+                            (unsigned __int8 *)&stru_830620.__pad_579C[57140],
+                            *(INIClass **)&aP3[4]);
+  *(_BYTE *)(v4 + 1518) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57128],
+                            *(_BYTE *)(v4 + 1518));
+  *(_BYTE *)(v4 + 1519) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57116],
+                            *(_BYTE *)(v4 + 1519));
+  *(_BYTE *)(v4 + 1508) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57104],
+                            *(_BYTE *)(v4 + 1508));
+  *(_BYTE *)(v4 + 1516) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57084],
+                            *(_BYTE *)(v4 + 1516));
+  *(_BYTE *)(v4 + 1517) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57064],
+                            *(_BYTE *)(v4 + 1517));
+  *(_BYTE *)(v4 + 3375) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57052],
+                            *(_BYTE *)(v4 + 3375));
+  *(_BYTE *)(v4 + 3376) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57036],
+                            *(_BYTE *)(v4 + 3376));
+  *(_BYTE *)(v4 + 3377) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57020],
+                            *(_BYTE *)(v4 + 3377));
+  *(_BYTE *)(v4 + 3378) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[57000],
+                            *(_BYTE *)(v4 + 3378));
+  *(_BYTE *)(v4 + 3481) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56980],
+                            *(_BYTE *)(v4 + 3481));
+  *(_BYTE *)(v4 + 3482) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56964],
+                            *(_BYTE *)(v4 + 3482));
+  *(_BYTE *)(v4 + 3379) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56944],
+                            *(_BYTE *)(v4 + 3379));
+  *(_BYTE *)(v4 + 3380) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56920],
+                            *(_BYTE *)(v4 + 3380));
+  *(_BYTE *)(v4 + 3483) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56896],
+                            *(_BYTE *)(v4 + 3483));
+  *(_BYTE *)(v4 + 3484) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56868],
+                            *(_BYTE *)(v4 + 3484));
+  *(_BYTE *)(v4 + 3485) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56840],
+                            *(_BYTE *)(v4 + 3485));
+  *(_DWORD *)(v4 + 3488) = INIClass::ParseFlagList(
+                             (unsigned __int8 ***)aP0,
+                             (CCINIClass *)(v4 + 36),
+                             (unsigned __int8 *)&stru_830620.__pad_579C[56824],
+                             *(_DWORD *)(v4 + 3488));
+  *(_DWORD *)(v4 + 3496) = INIClass::ParseFlagList(
+                             (unsigned __int8 ***)aP0,
+                             (CCINIClass *)(v4 + 36),
+                             (unsigned __int8 *)&stru_830620.__pad_579C[56808],
+                             *(_DWORD *)(v4 + 3496));
+  *(_DWORD *)(v4 + 3492) = INIClass::ParseFlagList(
+                             (unsigned __int8 ***)aP0,
+                             (CCINIClass *)(v4 + 36),
+                             (unsigned __int8 *)&stru_830620.__pad_579C[56792],
+                             *(_DWORD *)(v4 + 3492));
+  *(_DWORD *)(v4 + 1588) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             aTechlevel,
+                             *(INIClass **)(v4 + 1588));
+  *(_DWORD *)&aP3[8] = INIClass::ReadInt_Overwrite(
+                         (int)aP0,
+                         (unsigned __int8 *)(v4 + 36),
+                         (CCINIClass *)&stru_830620.__pad_579C[56776],
+                         *(INIClass **)(v4 + 1564));
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56756];
+  *(_DWORD *)aP3 = v4 + 36;
+  *(_DWORD *)(v4 + 1564) = *(_DWORD *)&aP3[8];
+  *(_DWORD *)(v4 + 1568) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             *(unsigned __int8 **)aP3,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  v177 = *(CCINIClass **)(v4 + 1572);
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)(v4 + 36),
+         (unsigned __int8 *)&stru_830620.__pad_579C[56736],
+         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&aP2.CCINIClass_field_4C,
+         128) )
+  {
+    v177 = (CCINIClass *)KeywordClass::FindOrCreate((ObjectClass *)&aP2.CCINIClass_field_4C);
+  }
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[56712];
+  v412.Capacity = v4 + 36;
+  *(_DWORD *)(v4 + 1572) = v177;
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)v412.Capacity,
+         *(unsigned __int8 **)&v412.IsInitialized,
+         *(INIClass **)aP3,
+         *(INIClass **)&aP3[4],
+         *(int *)&aP3[8]) )
+  {
+    v186 = KeywordClass::FindOrCreate((ObjectClass *)&aP2.CCINIClass_field_4C);
+  }
+  else
+  {
+    v186 = v177;
+  }
+  *(_DWORD *)(v4 + 1576) = v186;
+  *(_DWORD *)&aP3[8] = INIClass::ReadInt_Overwrite(
+                         (int)aP0,
+                         (unsigned __int8 *)(v4 + 36),
+                         (CCINIClass *)&stru_830620.__pad_579C[56688],
+                         *(INIClass **)(v4 + 1580));
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56660];
+  *(_DWORD *)aP3 = v4 + 36;
+  *(_DWORD *)(v4 + 1580) = *(_DWORD *)&aP3[8];
+  v187 = INIClass::ReadInt_Overwrite((int)aP0, *(unsigned __int8 **)aP3, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
+  *(_DWORD *)&aP3[8] = -1;
+  *(_DWORD *)&aP3[4] = &g_INI_Key_Speed;
+  *(_DWORD *)aP3 = v4 + 36;
+  *(_DWORD *)(v4 + 1584) = v187;
+  eax246 = INIClass::ReadInt_Overwrite(
+             (int)aP0,
+             *(unsigned __int8 **)aP3,
+             *(CCINIClass **)&aP3[4],
+             *(INIClass **)&aP3[8]);
+  if ( eax246 != -1 )
+  {
+    if ( eax246 >= 100 )
+      eax246 = 100;
+    v189 = ((eax246 <= 0 ? 0 : eax246) << 8) / 100;
+    if ( v189 >= 255 )
+      v189 = 255;
+    *(_DWORD *)(v4 + 1656) = v189;
+  }
+  *(_DWORD *)(v4 + 1552) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_825430.ownsFile,
+                             *(INIClass **)(v4 + 1552));
+  *(_DWORD *)(v4 + 1556) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[56652],
+                             *(INIClass **)(v4 + 1556));
+  edi252 = *(UnitTypeClass **)(v4 + 1720);
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)(v4 + 36),
+         (unsigned __int8 *)&stru_830620.__pad_579C[56636],
+         (INIClass *)&stru_87C374.__pad_579C[33876],
+         (INIClass *)&aP2.CCINIClass_field_4C,
+         128) )
+  {
+    v191 = BuildingTypeClass::FindOrCreateAlt((INIClass *)&aP2.CCINIClass_field_4C);
+  }
+  else
+  {
+    v191 = edi252;
+  }
+  *(_DWORD *)&aP3[8] = 128;
+  *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = aDeployinganim;
+  *(_DWORD *)(v4 + 1720) = v191;
+  edi255 = *(AnimTypeClass **)(v4 + 1724);
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)aP0,
+         (INIClass *)(v4 + 36),
+         *(unsigned __int8 **)&v412.IsInitialized,
+         *(INIClass **)aP3,
+         *(INIClass **)&aP3[4],
+         *(int *)&aP3[8]) )
+  {
+    eax256 = AnimTypeClass::FindOrCreate((AbstractClass *)&aP2.CCINIClass_field_4C);
+  }
+  else
+  {
+    eax256 = edi255;
+  }
+  *(_DWORD *)(v4 + 1724) = eax256;
+  *(_DWORD *)(v4 + 1664) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[56624],
+                             *(INIClass **)(v4 + 1664));
+  *(_DWORD *)(v4 + 1668) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_81BBC8.sectionHead[2],
+                             *(INIClass **)(v4 + 1668));
+  *(_DWORD *)(v4 + 1672) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[56616],
+                             *(INIClass **)(v4 + 1672));
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 1676);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56600];
+  *(_DWORD *)aP3 = v4 + 36;
+  *(_DWORD *)(v4 + 1676) = INIClass::ReadCoord(*(double *)aP3, *(int *)&aP3[8], v414, v415);
+  *(_DWORD *)(v4 + 1700) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[56580],
+                             *(INIClass **)(v4 + 1700));
+  *(_DWORD *)(v4 + 1704) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[56560],
+                             *(INIClass **)(v4 + 1704));
+  *(_BYTE *)(v4 + 1708) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56548],
+                            *(_BYTE *)(v4 + 1708));
+  *(_BYTE *)(v4 + 1709) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56532],
+                            *(_BYTE *)(v4 + 1709));
+  *(_BYTE *)(v4 + 1710) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56520],
+                            *(_BYTE *)(v4 + 1710));
+  *(_BYTE *)(v4 + 1711) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56504],
+                            *(_BYTE *)(v4 + 1711));
+  *(_BYTE *)(v4 + 1712) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56488],
+                            *(_BYTE *)(v4 + 1712));
+  *(_DWORD *)(v4 + 1688) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[56480],
+                             *(INIClass **)(v4 + 1688));
+  *(_DWORD *)(v4 + 1692) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[56468],
+                             *(INIClass **)(v4 + 1692));
+  *(_DWORD *)(v4 + 1696) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[56452],
+                             *(INIClass **)(v4 + 1696));
+  *(_BYTE *)(v4 + 1713) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56428],
+                            *(_BYTE *)(v4 + 1713));
+  *(double *)&aP3[4] = *(float *)(v4 + 1716);
+  *(float *)(v4 + 1716) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            (INIClass *)(v4 + 36),
+                            (unsigned __int8 *)&stru_830620.__pad_579C[56396],
+                            *(INIClass **)&aP3[4]);
+  *(_BYTE *)(v4 + 1680) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56380],
+                            *(_BYTE *)(v4 + 1680));
+  *(_BYTE *)(v4 + 1681) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56368],
+                            *(_BYTE *)(v4 + 1681));
+  *(_BYTE *)(v4 + 1682) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56360],
+                            *(_BYTE *)(v4 + 1682));
+  *(_BYTE *)(v4 + 1683) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56352],
+                            *(_BYTE *)(v4 + 1683));
+  *(_BYTE *)(v4 + 1684) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56340],
+                            *(_BYTE *)(v4 + 1684));
+  *(_BYTE *)(v4 + 1685) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56328],
+                            *(_BYTE *)(v4 + 1685));
+  *(_BYTE *)(v4 + 1736) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56308],
+                            *(_BYTE *)(v4 + 1736));
+  eax258 = INIClass::ReadInt_Overwrite(
+             (int)aP0,
+             (unsigned __int8 *)(v4 + 36),
+             (CCINIClass *)&stru_830620.__pad_579C[56300],
+             *(INIClass **)(v4 + 1832));
+  *(_DWORD *)(v4 + 1832) = eax258;
+  *(_DWORD *)(v4 + 1652) = eax258;
+  *(_DWORD *)(v4 + 1648) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[56288],
+                             *(INIClass **)(v4 + 1648));
+  *(_DWORD *)(v4 + 1740) = INIClass::ParseFlagList(
+                             (unsigned __int8 ***)aP0,
+                             (CCINIClass *)(v4 + 36),
+                             (unsigned __int8 *)&stru_830620.__pad_579C[56280],
+                             *(_DWORD *)(v4 + 1740));
+  *(_DWORD *)(v4 + 1744) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)(v4 + 36),
+                             (CCINIClass *)&stru_830620.__pad_579C[56260],
+                             *(INIClass **)(v4 + 1744));
+  *(_BYTE *)(v4 + 3214) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56248],
+                            *(_BYTE *)(v4 + 3214));
+  *(_BYTE *)(v4 + 3277) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56240],
+                            *(_BYTE *)(v4 + 3277));
+  *(_BYTE *)(v4 + 2053) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56232],
+                            *(_BYTE *)(v4 + 2053));
+  *(_BYTE *)(v4 + 3278) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56224],
+                            *(_BYTE *)(v4 + 3278));
+  *(_BYTE *)(v4 + 3276) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56212],
+                            *(_BYTE *)(v4 + 3276));
+  *(_BYTE *)(v4 + 3226) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)(v4 + 36),
+                            (CCINIClass *)&stru_830620.__pad_579C[56200],
+                            *(_BYTE *)(v4 + 3226));
+  LOBYTE(ecx258) = *(_BYTE *)(v4 + 3227);
+  *(_DWORD *)&aP3[8] = ecx258;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56184];
+  v188 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3227) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v188,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(edx258) = *(_BYTE *)(v4 + 3348);
+  *(_DWORD *)&aP3[8] = edx258;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56172];
+  v190 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3348) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v190,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(eax258a) = *(_BYTE *)(v4 + 3360);
+  *(_DWORD *)&aP3[8] = eax258a;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56160];
+  v192 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3360) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v192,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 1820);
+  *(_DWORD *)&aP3[4] = &stru_81B138.INIClass_field_2C;
+  v193 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 1820) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v193,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 1504);
+  *(_DWORD *)&aP3[4] = &stru_81BBC8.headNode[2];
+  v194 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 1504) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v194,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 976);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56148];
+  v195 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 976) = INIClass::ReadInt_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v195,
+                            *(CCINIClass **)&aP3[4],
+                            *(INIClass **)&aP3[8]);
+  v204 = *(_DWORD *)(v4 + 968);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 972);
+  *(_DWORD *)&aP3[4] = v204;
+  *(_DWORD *)aP3 = &stru_830620.__pad_579C[56136];
+  v196 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(double *)(v4 + 968) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            v196,
+                            *(unsigned __int8 **)aP3,
+                            *(INIClass **)&aP3[4]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 1732);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56120];
+  v197 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 1732) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v197,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  LOBYTE(ecx258a) = *(_BYTE *)(v4 + 3223);
+  *(_DWORD *)&aP3[8] = ecx258a;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56108];
+  v199 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3223) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v199,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(edx258b) = *(_BYTE *)(v4 + 3222);
+  *(_DWORD *)&aP3[8] = edx258b;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56096];
+  v201 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3222) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v201,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(eax258b) = *(_BYTE *)(v4 + 3218);
+  *(_DWORD *)&aP3[8] = eax258b;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[28344];
+  v203 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3218) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v203,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(ecx258b) = *(_BYTE *)(v4 + 3217);
+  *(_DWORD *)&aP3[8] = ecx258b;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56080];
+  v205 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3217) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v205,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(edx258c) = *(_BYTE *)(v4 + 1749);
+  *(_DWORD *)&aP3[8] = edx258c;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56052];
+  v207 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 1749) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v207,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(eax258c) = *(_BYTE *)(v4 + 1748);
+  *(_DWORD *)&aP3[8] = eax258c;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56040];
+  v209 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 1748) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v209,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(ecx258c) = *(_BYTE *)(v4 + 3216);
+  *(_DWORD *)&aP3[8] = ecx258c;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56028];
+  v211 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3216) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v211,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(edx258d) = *(_BYTE *)(v4 + 3367);
+  *(_DWORD *)&aP3[8] = edx258d;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56012];
+  v213 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3367) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v213,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(eax258d) = *(_BYTE *)(v4 + 3368);
+  *(_DWORD *)&aP3[8] = eax258d;
+  *(_DWORD *)&aP3[4] = &stru_81BB58;
+  v215 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3368) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v215,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(ecx258d) = *(_BYTE *)(v4 + 3369);
+  *(_DWORD *)&aP3[8] = ecx258d;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[56000];
+  v217 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3369) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v217,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(edx258e) = *(_BYTE *)(v4 + 3370);
+  *(_DWORD *)&aP3[8] = edx258e;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55980];
+  v219 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3370) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v219,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(eax258e) = *(_BYTE *)(v4 + 3373);
+  *(_DWORD *)&aP3[8] = eax258e;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[30492];
+  v221 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3373) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v221,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(ecx258e) = *(_BYTE *)(v4 + 3383);
+  *(_DWORD *)&aP3[8] = ecx258e;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55960];
+  v223 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3383) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v223,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(edx258f) = *(_BYTE *)(v4 + 3433);
+  *(_DWORD *)&aP3[8] = edx258f;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55948];
+  v225 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3433) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v225,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(v235) = *(_BYTE *)(v4 + 3434);
+  *(_DWORD *)&aP3[8] = v235;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55932];
+  v227 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3434) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v227,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(ecx258f) = *(_BYTE *)(v4 + 3390);
+  *(_DWORD *)&aP3[8] = ecx258f;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55924];
+  v229 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3390) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v229,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3392);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55912];
+  v230 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3392) = GetINIClassInt((unsigned __int8 ***)aP0, v230, *(unsigned __int8 **)&aP3[4], *(int *)&aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3400);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55896];
+  v231 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3400) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v231,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3396);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55880];
+  v232 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3396) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v232,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3404);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55864];
+  v233 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3404) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v233,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3408);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55844];
+  v234 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3408) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v234,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  LOBYTE(ecx258g) = *(_BYTE *)(v4 + 3412);
+  *(_DWORD *)&aP3[8] = ecx258g;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55836];
+  v236 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3412) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v236,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3416);
+  *(_DWORD *)&aP3[4] = &stru_8184C8;
+  v237 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3416) = GetINIClassKeyword(
+                             (unsigned __int8 ***)aP0,
+                             v237,
+                             *(unsigned __int8 **)&aP3[4],
+                             *(int *)&aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3424);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55820];
+  v238 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3424) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v238,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3420);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55804];
+  v239 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3420) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v239,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3428);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55788];
+  v240 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  eax258g = INIClass::ReadInt_Overwrite(
+              (int)aP0,
+              (unsigned __int8 *)v240,
+              *(CCINIClass **)&aP3[4],
+              *(INIClass **)&aP3[8]);
+  *(_DWORD *)(v4 + 3428) = eax258g;
+  LOBYTE(eax258g) = *(_BYTE *)(v4 + 3432);
+  *(_DWORD *)&aP3[8] = eax258g;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55772];
+  v242 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3432) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v242,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(ecx258h) = *(_BYTE *)(v4 + 3385);
+  *(_DWORD *)&aP3[8] = ecx258h;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55752];
+  v244 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3385) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v244,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(edx258g) = *(_BYTE *)(v4 + 3386);
+  *(_DWORD *)&aP3[8] = edx258g;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55740];
+  v246 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3386) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v246,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(eax258h) = *(_BYTE *)(v4 + 3384);
+  *(_DWORD *)&aP3[8] = eax258h;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55724];
+  v248 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3384) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v248,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(ecx258i) = *(_BYTE *)(v4 + 3381);
+  *(_DWORD *)&aP3[8] = ecx258i;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55704];
+  v250 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3381) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v250,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(edx258h) = *(_BYTE *)(v4 + 3382);
+  *(_DWORD *)&aP3[8] = edx258h;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55680];
+  v252 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3382) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v252,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(v262) = *(_BYTE *)(v4 + 3478);
+  *(_DWORD *)&aP3[8] = v262;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55660];
+  v254 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3478) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v254,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(ecx258j) = *(_BYTE *)(v4 + 3374);
+  *(_DWORD *)&aP3[8] = ecx258j;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55648];
+  v256 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3374) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v256,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(edx258i) = *(_BYTE *)(v4 + 3479);
+  *(_DWORD *)&aP3[8] = edx258i;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55640];
+  v258 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3479) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v258,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(eax258j) = *(_BYTE *)(v4 + 3387);
+  *(_DWORD *)&aP3[8] = eax258j;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55624];
+  v260 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3387) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v260,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3436);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55600];
+  v261 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3436) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v261,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  LOBYTE(v271) = *(_BYTE *)(v4 + 3480);
+  *(_DWORD *)&aP3[8] = v271;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55588];
+  v263 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3480) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v263,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3440);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55572];
+  v264 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3440) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v264,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3444);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55556];
+  v265 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3444) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v265,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  *(double *)&aP3[4] = *(float *)(v4 + 3448);
+  *(_DWORD *)aP3 = &stru_830620.__pad_579C[55540];
+  v266 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(float *)(v4 + 3448) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            v266,
+                            *(unsigned __int8 **)aP3,
+                            *(INIClass **)&aP3[4]);
+  *(double *)&aP3[4] = *(float *)(v4 + 3452);
+  *(_DWORD *)aP3 = &stru_830620.__pad_579C[55524];
+  v267 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(float *)(v4 + 3452) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            v267,
+                            *(unsigned __int8 **)aP3,
+                            *(INIClass **)&aP3[4]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3456);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55508];
+  v268 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3456) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v268,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  *(double *)&aP3[4] = *(float *)(v4 + 3460);
+  *(_DWORD *)aP3 = &stru_830620.__pad_579C[55492];
+  v269 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(float *)(v4 + 3460) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            v269,
+                            *(unsigned __int8 **)aP3,
+                            *(INIClass **)&aP3[4]);
+  *(double *)&aP3[4] = *(float *)(v4 + 3464);
+  *(_DWORD *)aP3 = &stru_830620.__pad_579C[55476];
+  v270 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(float *)(v4 + 3464) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            v270,
+                            *(unsigned __int8 **)aP3,
+                            *(INIClass **)&aP3[4]);
+  LOBYTE(v280) = *(_BYTE *)(v4 + 3468);
+  *(_DWORD *)&aP3[8] = v280;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55456];
+  v272 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3468) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v272,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3472);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55436];
+  v273 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3472) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v273,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  LOBYTE(edx258k) = *(_BYTE *)(v4 + 3476);
+  *(_DWORD *)&aP3[8] = edx258k;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55428];
+  v275 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3476) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v275,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(v285) = *(_BYTE *)(v4 + 3477);
+  *(_DWORD *)&aP3[8] = v285;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55416];
+  v277 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3477) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v277,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(v287) = *(_BYTE *)(v4 + 1728);
+  *(_DWORD *)&aP3[8] = v287;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55396];
+  v279 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 1728) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v279,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(v289) = *(_BYTE *)(v4 + 1729);
+  *(_DWORD *)&aP3[8] = v289;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55368];
+  v281 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 1729) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v281,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(v291) = *(_BYTE *)(v4 + 3234);
+  *(_DWORD *)&aP3[8] = v291;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55352];
+  v283 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3234) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v283,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  *(_DWORD *)&aP3[8] = ReadPointerFromECX4((void *)(v4 + 3236));
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55336];
+  v284 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  eax258n = INIClass::ReadInt_Overwrite(
+              (int)aP0,
+              (unsigned __int8 *)v284,
+              *(CCINIClass **)&aP3[4],
+              *(INIClass **)&aP3[8]);
+  ObjectTypeClass::loadTypeMember_5717A30((_DWORD *)(v4 + 3236), eax258n);
+  *(_DWORD *)&aP3[8] = ObjectTypeClass::loadTypeMember_5717A70((_DWORD *)(v4 + 3236));
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55312];
+  v286 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  eax258o = INIClass::ReadInt_Overwrite(
+              (int)aP0,
+              (unsigned __int8 *)v286,
+              *(CCINIClass **)&aP3[4],
+              *(INIClass **)&aP3[8]);
+  ObjectTypeClass::loadTypeMember_5717A50((_DWORD *)(v4 + 3236), eax258o);
+  *(_DWORD *)&aP3[8] = ObjectTypeClass::loadTypeMember_5717AD0((_DWORD *)(v4 + 3236));
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55292];
+  v288 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  eax258p = INIClass::ReadInt_Overwrite(
+              (int)aP0,
+              (unsigned __int8 *)v288,
+              *(CCINIClass **)&aP3[4],
+              *(INIClass **)&aP3[8]);
+  ObjectTypeClass::loadTypeMember_5717AB0((_DWORD *)(v4 + 3236), eax258p);
+  *(_DWORD *)&aP3[8] = ObjectTypeClass::loadTypeMember_5717AA0((_DWORD *)(v4 + 3236));
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55272];
+  v290 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  v300 = INIClass::ReadInt_Overwrite((int)aP0, (unsigned __int8 *)v290, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
+  ObjectTypeClass::loadTypeMember_5717A80((_DWORD *)(v4 + 3236), v300);
+  qmemcpy((void *)(v4 + 3256), (const void *)(v4 + 3236), 0x14u);
+  *(_DWORD *)&aP3[8] = ReadPointerFromECX4((void *)(v4 + 3236));
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55256];
+  v292 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  v302 = INIClass::ReadInt_Overwrite((int)aP0, (unsigned __int8 *)v292, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
+  ObjectTypeClass::loadTypeMember_5717A30((_DWORD *)(v4 + 3256), v302);
+  *(_DWORD *)&aP3[8] = ObjectTypeClass::loadTypeMember_5717A70((_DWORD *)(v4 + 3236));
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55232];
+  v294 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  eax258s = INIClass::ReadInt_Overwrite(
+              (int)aP0,
+              (unsigned __int8 *)v294,
+              *(CCINIClass **)&aP3[4],
+              *(INIClass **)&aP3[8]);
+  ObjectTypeClass::loadTypeMember_5717A50((_DWORD *)(v4 + 3256), eax258s);
+  *(_DWORD *)&aP3[8] = ObjectTypeClass::loadTypeMember_5717AD0((_DWORD *)(v4 + 3236));
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55212];
+  v296 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  eax258t = INIClass::ReadInt_Overwrite(
+              (int)aP0,
+              (unsigned __int8 *)v296,
+              *(CCINIClass **)&aP3[4],
+              *(INIClass **)&aP3[8]);
+  ObjectTypeClass::loadTypeMember_5717AB0((_DWORD *)(v4 + 3256), eax258t);
+  *(_DWORD *)&aP3[8] = ObjectTypeClass::loadTypeMember_5717AA0((_DWORD *)(v4 + 3236));
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55192];
+  v298 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  v308 = INIClass::ReadInt_Overwrite((int)aP0, (unsigned __int8 *)v298, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
+  ObjectTypeClass::loadTypeMember_5717A80((_DWORD *)(v4 + 3256), v308);
+  LOBYTE(ecx258l) = *(_BYTE *)(v4 + 3371);
+  *(_DWORD *)&aP3[8] = ecx258l;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55172];
+  v301 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3371) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v301,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(edx258m) = *(_BYTE *)(v4 + 3517);
+  *(_DWORD *)&aP3[8] = edx258m;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55160];
+  v303 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3517) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v303,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3520);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55148];
+  v304 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3520) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v304,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3524);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55132];
+  v305 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3524) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v305,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3528);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55116];
+  v306 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_DWORD *)(v4 + 3528) = INIClass::ReadInt_Overwrite(
+                             (int)aP0,
+                             (unsigned __int8 *)v306,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 3532);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55100];
+  v307 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  v317 = INIClass::ReadInt_Overwrite((int)aP0, (unsigned __int8 *)v307, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
+  *(_DWORD *)&aP3[8] = v4 + 668;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55080];
+  *(_DWORD *)(v4 + 3532) = v317;
+  v309 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  Abilities = (CCINIClass *)INIEntry::ReadAbilities(
+                              (unsigned __int8 ***)aP0,
+                              (CCINIClass *)&aP2.unknown30,
+                              (CCINIClass *)v309,
+                              *(unsigned __int8 **)&aP3[4],
+                              *(int *)&aP3[8]);
+  ObjectTypeClass::loadTypeMember_57179D0((_DWORD *)(v4 + 668), (WeaponTypeClass *)aP2.sectionHead, Abilities);
+  nullsub_86();
+  nullsub_86();
+  *(_DWORD *)&aP3[8] = v4 + 686;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[55064];
+  v311 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  v321 = (CCINIClass *)INIEntry::ReadAbilities(
+                         (unsigned __int8 ***)aP0,
+                         (CCINIClass *)&aP2.unknown30,
+                         (CCINIClass *)v311,
+                         *(unsigned __int8 **)&aP3[4],
+                         *(int *)&aP3[8]);
+  ObjectTypeClass::loadTypeMember_57179D0((_DWORD *)(v4 + 686), (WeaponTypeClass *)aP2.sectionHead, v321);
+  nullsub_86();
+  nullsub_86();
+  if ( *(double *)(v4 + 712) == 0.0 )
+  {
+    *(_DWORD *)aP2.__pad_0 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4160);
+    aP2.headNode[0] = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4164);
+  }
+  else
+  {
+    eax260 = *(_DWORD *)(v4 + 716);
+    *(_DWORD *)aP2.__pad_0 = *(_DWORD *)(v4 + 712);
+    aP2.headNode[0] = eax260;
+  }
+  *(_DWORD *)&aP3[8] = aP2.headNode[0];
+  *(_DWORD *)&aP3[4] = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)aP3 = &stru_830620.__pad_579C[55036];
+  v314 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(double *)(v4 + 712) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            v314,
+                            *(unsigned __int8 **)aP3,
+                            *(INIClass **)&aP3[4]);
+  if ( *(double *)(v4 + 720) == 0.0 )
+  {
+    *(_DWORD *)aP2.__pad_0 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4168);
+    aP2.headNode[0] = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4172);
+  }
+  else
+  {
+    v324 = *(_DWORD *)(v4 + 724);
+    *(_DWORD *)aP2.__pad_0 = *(_DWORD *)(v4 + 720);
+    aP2.headNode[0] = v324;
+  }
+  *(_DWORD *)&aP3[8] = aP2.headNode[0];
+  *(_DWORD *)&aP3[4] = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)aP3 = &stru_830620.__pad_579C[55004];
+  v316 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(double *)(v4 + 720) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            v316,
+                            *(unsigned __int8 **)aP3,
+                            *(INIClass **)&aP3[4]);
+  if ( *(double *)(v4 + 728) == 0.0 )
+  {
+    *(_DWORD *)aP2.__pad_0 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4176);
+    aP2.headNode[0] = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4180);
+  }
+  else
+  {
+    v326 = *(_DWORD *)(v4 + 732);
+    *(_DWORD *)aP2.__pad_0 = *(_DWORD *)(v4 + 728);
+    aP2.headNode[0] = v326;
+  }
+  *(_DWORD *)&aP3[8] = aP2.headNode[0];
+  *(_DWORD *)&aP3[4] = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)aP3 = &stru_830620.__pad_579C[54972];
+  v318 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(double *)(v4 + 728) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            v318,
+                            *(unsigned __int8 **)aP3,
+                            *(INIClass **)&aP3[4]);
+  if ( *(double *)(v4 + 736) == 0.0 )
+  {
+    *(_DWORD *)aP2.__pad_0 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4184);
+    aP2.headNode[0] = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4188);
+  }
+  else
+  {
+    v319 = *(CCINIClass **)(v4 + 740);
+    *(_DWORD *)aP2.__pad_0 = *(_DWORD *)(v4 + 736);
+    aP2.headNode[0] = (int)v319;
+  }
+  *(_DWORD *)&aP3[8] = aP2.headNode[0];
+  *(_DWORD *)&aP3[4] = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)aP3 = &stru_830620.__pad_579C[54944];
+  v320 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(double *)(v4 + 736) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            v320,
+                            *(unsigned __int8 **)aP3,
+                            *(INIClass **)&aP3[4]);
+  if ( *(double *)(v4 + 744) == 0.0 )
+  {
+    *(_DWORD *)aP2.__pad_0 = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4192);
+    aP2.headNode[0] = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4196);
+  }
+  else
+  {
+    ecx272 = *(_DWORD *)(v4 + 748);
+    *(_DWORD *)aP2.__pad_0 = *(_DWORD *)(v4 + 744);
+    aP2.headNode[0] = ecx272;
+  }
+  *(_DWORD *)&aP3[8] = aP2.headNode[0];
+  *(_DWORD *)&aP3[4] = *(_DWORD *)aP2.__pad_0;
+  *(_DWORD *)aP3 = &stru_830620.__pad_579C[54916];
+  v322 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(double *)(v4 + 744) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            v322,
+                            *(unsigned __int8 **)aP3,
+                            *(INIClass **)&aP3[4]);
+  edx273 = *(_DWORD *)(v4 + 704);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 708);
+  *(_DWORD *)&aP3[4] = edx273;
+  *(_DWORD *)aP3 = &stru_830620.__pad_579C[54896];
+  v323 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(double *)(v4 + 704) = INIClass::ReadDouble_Overwrite(
+                            (int)aP0,
+                            v323,
+                            *(unsigned __int8 **)aP3,
+                            *(INIClass **)&aP3[4]);
+  LOBYTE(eax273) = *(_BYTE *)(v4 + 3516);
+  *(_DWORD *)&aP3[8] = eax273;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54872];
+  v325 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3516) = INIClass::ReadBool_Overwrite(
+                            (int)aP0,
+                            (unsigned __int8 *)v325,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(ecx273) = *(_BYTE *)(v4 + 3500);
+  *(_DWORD *)&aP3[8] = ecx273;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54860];
+  v327 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  *(_BYTE *)(v4 + 3500) = INIClass::ReadBool_Overwrite(
+                            (int)&stru_87C374.__pad_579C[22128],
+                            (unsigned __int8 *)v327,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  *(_BYTE *)(v4 + 3228) = 0;
+  v328 = *(ObjectClass **)(v4 + 2200);
+  if ( v328 && v328->location[2] > 0 )
+    *(_BYTE *)(v4 + 3228) = 1;
+  *(_DWORD *)&aP3[8] = Ext;
+  v329 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+  _makepath(aP4.__pad_20, 0, 0, (ObjectClass *)v329, *(const char **)&aP3[8]);
+  if ( *(_BYTE *)(v4 + 168) && *(_DWORD *)(v4 + 164) )
+  {
+    __3_YAXPAX_Z(*(void **)(v4 + 164));
+    *(_DWORD *)(v4 + 164) = 0;
+    *(_BYTE *)(v4 + 168) = 0;
+  }
+  if ( (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) != 7 )
+  {
+    LOBYTE(v340) = 0;
+    *(_DWORD *)(v4 + 164) = SearchMIXFile(aP4.__pad_20, v340);
+  }
+  *(_DWORD *)&aP3[8] = 32;
+  *(_DWORD *)&aP3[4] = v4 + 3536;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_824238.sectionCount;
+  v330 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+  INIClass::GetString(
+    (unsigned __int8 ***)&stru_87C374.__pad_579C[22128],
+    v330,
+    *(unsigned __int8 **)&v412.IsInitialized,
+    *(INIClass **)aP3,
+    *(INIClass **)&aP3[4],
+    *(int *)&aP3[8]);
+  ObjectTypeClass::loadTypeMember_5717820(v4);
+  if ( FileSystem::ProcessNextFileExtension() > 1 )
+  {
+    *(_DWORD *)&aP3[8] = &stru_830620.__pad_579C[54788];
+    Debug::Log();
+    ExitProgram((void *)0xFFFFFFFF);
+  }
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 1824);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54772];
+  v331 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+  *(_DWORD *)(v4 + 1824) = INIClass::ReadInt_Overwrite(
+                             (int)&stru_87C374.__pad_579C[22128],
+                             (unsigned __int8 *)v331,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 1816);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54760];
+  v332 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+  *(_DWORD *)(v4 + 1816) = INIClass::ReadInt_Overwrite(
+                             (int)&stru_87C374.__pad_579C[22128],
+                             (unsigned __int8 *)v332,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  LOBYTE(v344) = *(_BYTE *)(v4 + 3279);
+  *(_DWORD *)&aP3[8] = v344;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54748];
+  v334 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+  *(_BYTE *)(v4 + 3279) = INIClass::ReadBool_Overwrite(
+                            (int)&stru_87C374.__pad_579C[22128],
+                            (unsigned __int8 *)v334,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(v346) = *(_BYTE *)(v4 + 3363);
+  *(_DWORD *)&aP3[8] = v346;
+  *(_DWORD *)&aP3[4] = &unk_818610;
+  v336 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+  *(_BYTE *)(v4 + 3363) = INIClass::ReadBool_Overwrite(
+                            (int)&stru_87C374.__pad_579C[22128],
+                            (unsigned __int8 *)v336,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(eax283) = *(_BYTE *)(v4 + 3365);
+  *(_DWORD *)&aP3[8] = eax283;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54736];
+  v338 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+  *(_BYTE *)(v4 + 3365) = INIClass::ReadBool_Overwrite(
+                            (int)&stru_87C374.__pad_579C[22128],
+                            (unsigned __int8 *)v338,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 2044);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54724];
+  v339 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+  *(_DWORD *)(v4 + 2044) = INIClass::ReadInt_Overwrite(
+                             (int)&stru_87C374.__pad_579C[22128],
+                             (unsigned __int8 *)v339,
+                             *(CCINIClass **)&aP3[4],
+                             *(INIClass **)&aP3[8]);
+  LOBYTE(edx283b) = *(_BYTE *)(v4 + 3518);
+  *(_DWORD *)&aP3[8] = edx283b;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54704];
+  v341 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+  *(_BYTE *)(v4 + 3518) = INIClass::ReadBool_Overwrite(
+                            (int)&stru_87C374.__pad_579C[22128],
+                            (unsigned __int8 *)v341,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+  LOBYTE(v353) = *(_BYTE *)(v4 + 3519);
+  *(_DWORD *)&aP3[8] = v353;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54684];
+  v343 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+  al283 = INIClass::ReadBool_Overwrite(
+            (int)&stru_87C374.__pad_579C[22128],
+            (unsigned __int8 *)v343,
+            *(CCINIClass **)&aP3[4],
+            aP3[8]);
+  *(_DWORD *)&aP3[8] = 25;
+  *(_DWORD *)&aP3[4] = &aP4;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[54676];
+  *(_BYTE *)(v4 + 3519) = al283;
+  v345 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+  INIClass::GetString(
+    (unsigned __int8 ***)&stru_87C374.__pad_579C[22128],
+    v345,
+    *(unsigned __int8 **)&v412.IsInitialized,
+    *(INIClass **)aP3,
+    *(INIClass **)&aP3[4],
+    *(int *)&aP3[8]);
+  if ( !strlen(aP4.__pad_0) )
+    goto LABEL_286;
+  v358 = (char *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 1750));
+  *(_DWORD *)&aP3[8] = Ext;
+  strcpy(v358, aP4.__pad_0);
+  v347 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 1750));
+  _makepath(aP4.__pad_20, 0, 0, (ObjectClass *)v347, *(const char **)&aP3[8]);
+  if ( !*(_DWORD *)(v4 + 1776) )
+  {
+    LOBYTE(v360) = 0;
+    *(_DWORD *)(v4 + 1776) = SearchMIXFile(aP4.__pad_20, v360);
+LABEL_286:
+    if ( !*(_DWORD *)(v4 + 1776) )
+    {
+      LOBYTE(edx283) = 0;
+      *(_DWORD *)(v4 + 1776) = SearchMIXFile(g_Str_File_XXICON_SHP, edx283);
+    }
+  }
+  *(_DWORD *)&aP3[8] = 25;
+  *(_DWORD *)&aP3[4] = &aP4;
+  *(_DWORD *)aP3 = &stru_87C374.__pad_579C[33876];
+  *(_DWORD *)&v412.IsInitialized = &stru_830620.__pad_579C[54664];
+  v348 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+  INIClass::GetString(
+    (unsigned __int8 ***)&stru_87C374.__pad_579C[22128],
+    v348,
+    *(unsigned __int8 **)&v412.IsInitialized,
+    *(INIClass **)aP3,
+    *(INIClass **)&aP3[4],
+    *(int *)&aP3[8]);
+  if ( strlen(aP4.__pad_0) )
+  {
+    edx289a = (char *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 1781));
+    *(_DWORD *)&aP3[8] = Ext;
+    strcpy(edx289a, aP4.__pad_0);
+    v350 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 1781));
+    _makepath(aP4.__pad_20, 0, 0, (ObjectClass *)v350, *(const char **)&aP3[8]);
+    if ( !*(_DWORD *)(v4 + 1808) )
+    {
+      LOBYTE(edx289) = 0;
+      *(_DWORD *)(v4 + 1808) = SearchMIXFile(aP4.__pad_20, edx289);
+    }
+  }
+  if ( HouseClass::HasPower((_DWORD *)v4) )
+  {
+    if ( *(int *)(v4 + 2060) > 0 )
+    {
+      aP2.headNode[2] = 1;
+      v351 = (WeaponTypeClass *)(v4 + 2204);
+      do
+      {
+        sprintf(
+          (char *const)aP2.sectionHead,
+          (ObjectClass *)&stru_830620.__pad_579C[58708],
+          (INIClass *)aP2.headNode[2]);
+        sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620.__pad_579C[54656], (INIClass *)aP2.sectionHead);
+        *(_DWORD *)&aP3[8] = v351;
+        *(_DWORD *)&aP3[4] = String;
+        v352 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+        Point3D_Overwrite = INIClass::ReadPoint3D_Overwrite(
+                              &stru_87C374.__pad_579C[22128],
+                              (CCINIClass *)&aP2.unknown30,
+                              (unsigned __int8 *)v352,
+                              *(int *)&aP3[4],
+                              *(_DWORD **)&aP3[8]);
+        *(_DWORD *)v351->__pad_0 = *Point3D_Overwrite;
+        *(_DWORD *)&v351->__pad_0[4] = Point3D_Overwrite[1];
+        *(_DWORD *)&v351->__pad_0[8] = Point3D_Overwrite[2];
+        sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620.__pad_579C[54640], (INIClass *)aP2.sectionHead);
+        *(_DWORD *)&aP3[8] = *(_DWORD *)&v351->__pad_0[12];
+        *(_DWORD *)&aP3[4] = String;
+        v354 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+        *(_DWORD *)&v351->__pad_0[12] = INIClass::ReadInt_Overwrite(
+                                          (int)&stru_87C374.__pad_579C[22128],
+                                          (unsigned __int8 *)v354,
+                                          *(CCINIClass **)&aP3[4],
+                                          *(INIClass **)&aP3[8]);
+        sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620.__pad_579C[54620], (INIClass *)aP2.sectionHead);
+        *(_DWORD *)&aP3[8] = v351->uniqueId;
+        *(_DWORD *)&aP3[4] = String;
+        v355 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+        v351->uniqueId = INIClass::ReadInt_Overwrite(
+                           (int)&stru_87C374.__pad_579C[22128],
+                           (unsigned __int8 *)v355,
+                           *(CCINIClass **)&aP3[4],
+                           *(INIClass **)&aP3[8]);
+        sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620.__pad_579C[54604], (INIClass *)aP2.sectionHead);
+        LOBYTE(edx294) = v351->abstractFlags;
+        *(_DWORD *)&aP3[8] = edx294;
+        *(_DWORD *)&aP3[4] = String;
+        v357 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+        al294 = INIClass::ReadBool_Overwrite(
+                  (int)&stru_87C374.__pad_579C[22128],
+                  (unsigned __int8 *)v357,
+                  *(CCINIClass **)&aP3[4],
+                  aP3[8]);
+        *(_DWORD *)&aP3[8] = aP2.headNode[2];
+        *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[58692];
+        *(_DWORD *)aP3 = aP2.sectionHead;
+        LOBYTE(v351->abstractFlags) = al294;
+        sprintf(*(char *const *)aP3, *(ObjectClass **)&aP3[4], *(INIClass **)&aP3[8]);
+        sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620.__pad_579C[54656], (INIClass *)aP2.sectionHead);
+        *(_DWORD *)&aP3[8] = v351;
+        *(_DWORD *)&aP3[4] = String;
+        v359 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+        v374 = INIClass::ReadPoint3D_Overwrite(
+                 &stru_87C374.__pad_579C[22128],
+                 &aP2,
+                 (unsigned __int8 *)v359,
+                 *(int *)&aP3[4],
+                 *(_DWORD **)&aP3[8]);
+        *(_DWORD *)&v351[1].CellRangefinding = *v374;
+        *(_DWORD *)&v351[1].TerrainFire = v374[1];
+        v351[1].DisguiseFakeBlinkTime = v374[2];
+        sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620.__pad_579C[54640], (INIClass *)aP2.sectionHead);
+        *(_DWORD *)&aP3[8] = *(_DWORD *)&v351->__pad_0[12];
+        *(_DWORD *)&aP3[4] = String;
+        v361 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+        *(_DWORD *)&v351[1].InfiniteMindControl = INIClass::ReadInt_Overwrite(
+                                                    (int)&stru_87C374.__pad_579C[22128],
+                                                    (unsigned __int8 *)v361,
+                                                    *(CCINIClass **)&aP3[4],
+                                                    *(INIClass **)&aP3[8]);
+        sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620.__pad_579C[54620], (INIClass *)aP2.sectionHead);
+        *(_DWORD *)&aP3[8] = v351->uniqueId;
+        *(_DWORD *)&aP3[4] = String;
+        v362 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+        *(_DWORD *)&v351[1].Suicide = INIClass::ReadInt_Overwrite(
+                                        (int)&stru_87C374.__pad_579C[22128],
+                                        (unsigned __int8 *)v362,
+                                        *(CCINIClass **)&aP3[4],
+                                        *(INIClass **)&aP3[8]);
+        sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620.__pad_579C[54604], (INIClass *)aP2.sectionHead);
+        LOBYTE(edx294a) = v351->abstractFlags;
+        *(_DWORD *)&aP3[8] = edx294a;
+        *(_DWORD *)&aP3[4] = String;
+        v364 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+        v351[1].Charges = INIClass::ReadBool_Overwrite(
+                            (int)&stru_87C374.__pad_579C[22128],
+                            (unsigned __int8 *)v364,
+                            *(CCINIClass **)&aP3[4],
+                            aP3[8]);
+        v365 = *(CCINIClass **)(v4 + 2060);
+        ++aP2.headNode[2];
+        v351 = (WeaponTypeClass *)((char *)v351 + 28);
+      }
+      while ( aP2.headNode[2] - 1 < (int)v365 );
+    }
+  }
+  else
+  {
+    *(_DWORD *)&aP3[8] = v4 + 2204;
+    *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54588];
+    v366 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+    eax296 = INIClass::ReadPoint3D_Overwrite(
+               &stru_87C374.__pad_579C[22128],
+               (CCINIClass *)&aP2.unknown30,
+               (unsigned __int8 *)v366,
+               *(int *)&aP3[4],
+               *(_DWORD **)&aP3[8]);
+    *(_DWORD *)(v4 + 2204) = *eax296;
+    *(_DWORD *)(v4 + 2208) = eax296[1];
+    *(_DWORD *)(v4 + 2212) = eax296[2];
+    *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 2216);
+    *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54572];
+    v368 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+    *(_DWORD *)(v4 + 2216) = INIClass::ReadInt_Overwrite(
+                               (int)&stru_87C374.__pad_579C[22128],
+                               (unsigned __int8 *)v368,
+                               *(CCINIClass **)&aP3[4],
+                               *(INIClass **)&aP3[8]);
+    *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 2220);
+    *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54552];
+    v369 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+    *(_DWORD *)(v4 + 2220) = INIClass::ReadInt_Overwrite(
+                               (int)&stru_87C374.__pad_579C[22128],
+                               (unsigned __int8 *)v369,
+                               *(CCINIClass **)&aP3[4],
+                               *(INIClass **)&aP3[8]);
+    *(_DWORD *)&aP3[8] = v4 + 2232;
+    *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54532];
+    v370 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+    v385 = INIClass::ReadPoint3D_Overwrite(
+             &stru_87C374.__pad_579C[22128],
+             (CCINIClass *)&aP2.unknown30,
+             (unsigned __int8 *)v370,
+             *(int *)&aP3[4],
+             *(_DWORD **)&aP3[8]);
+    *(_DWORD *)(v4 + 2232) = *v385;
+    *(_DWORD *)(v4 + 2236) = v385[1];
+    *(_DWORD *)(v4 + 2240) = v385[2];
+    *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 2244);
+    *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54516];
+    v372 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+    *(_DWORD *)(v4 + 2244) = INIClass::ReadInt_Overwrite(
+                               (int)&stru_87C374.__pad_579C[22128],
+                               (unsigned __int8 *)v372,
+                               *(CCINIClass **)&aP3[4],
+                               *(INIClass **)&aP3[8]);
+    *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 2248);
+    *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54496];
+    v373 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+    eax296b = INIClass::ReadInt_Overwrite(
+                (int)&stru_87C374.__pad_579C[22128],
+                (unsigned __int8 *)v373,
+                *(CCINIClass **)&aP3[4],
+                *(INIClass **)&aP3[8]);
+    *(_DWORD *)&aP3[8] = v4 + 2204;
+    *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54476];
+    *(_DWORD *)(v4 + 2248) = eax296b;
+    v375 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+    eax296c = INIClass::ReadPoint3D_Overwrite(
+                &stru_87C374.__pad_579C[22128],
+                (CCINIClass *)&aP2.unknown30,
+                (unsigned __int8 *)v375,
+                *(int *)&aP3[4],
+                *(_DWORD **)&aP3[8]);
+    *(_DWORD *)(v4 + 2712) = *eax296c;
+    *(_DWORD *)(v4 + 2716) = eax296c[1];
+    *(_DWORD *)(v4 + 2720) = eax296c[2];
+    *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 2216);
+    *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54456];
+    v377 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+    *(_DWORD *)(v4 + 2724) = INIClass::ReadInt_Overwrite(
+                               (int)&stru_87C374.__pad_579C[22128],
+                               (unsigned __int8 *)v377,
+                               *(CCINIClass **)&aP3[4],
+                               *(INIClass **)&aP3[8]);
+    *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 2220);
+    *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54432];
+    v378 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+    *(_DWORD *)(v4 + 2728) = INIClass::ReadInt_Overwrite(
+                               (int)&stru_87C374.__pad_579C[22128],
+                               (unsigned __int8 *)v378,
+                               *(CCINIClass **)&aP3[4],
+                               *(INIClass **)&aP3[8]);
+    *(_DWORD *)&aP3[8] = v4 + 2232;
+    *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54408];
+    v379 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+    v394 = INIClass::ReadPoint3D_Overwrite(
+             &stru_87C374.__pad_579C[22128],
+             (CCINIClass *)&aP2.unknown30,
+             (unsigned __int8 *)v379,
+             *(int *)&aP3[4],
+             *(_DWORD **)&aP3[8]);
+    *(_DWORD *)(v4 + 2740) = *v394;
+    *(_DWORD *)(v4 + 2744) = v394[1];
+    *(_DWORD *)(v4 + 2748) = v394[2];
+    *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 2244);
+    *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54388];
+    v381 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+    *(_DWORD *)(v4 + 2752) = INIClass::ReadInt_Overwrite(
+                               (int)&stru_87C374.__pad_579C[22128],
+                               (unsigned __int8 *)v381,
+                               *(CCINIClass **)&aP3[4],
+                               *(INIClass **)&aP3[8]);
+    *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 2248);
+    *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54364];
+    v382 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+    *(_DWORD *)(v4 + 2756) = INIClass::ReadInt_Overwrite(
+                               (int)&stru_87C374.__pad_579C[22128],
+                               (unsigned __int8 *)v382,
+                               *(CCINIClass **)&aP3[4],
+                               *(INIClass **)&aP3[8]);
+  }
+  v392 = 0;
+  aP2.headNode[2] = v4 + 2140;
+  do
+  {
+    sprintf((char *const)aP2.sectionHead, (ObjectClass *)&stru_830620.__pad_579C[54348], v392);
+    *(_DWORD *)&aP3[8] = v4 + 2204;
+    *(_DWORD *)&aP3[4] = aP2.sectionHead;
+    v384 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+    v399 = INIClass::ReadPoint3D_Overwrite(
+             &stru_87C374.__pad_579C[22128],
+             (CCINIClass *)&aP2.unknown30,
+             (unsigned __int8 *)v384,
+             *(int *)&aP3[4],
+             *(_DWORD **)&aP3[8]);
+    v400 = aP2.headNode[2];
+    v392 = (INIClass *)((char *)v392 + 1);
+    *(_DWORD *)aP2.headNode[2] = *v399;
+    *(_DWORD *)(v400 + 4) = v399[1];
+    *(_DWORD *)(v400 + 8) = v399[2];
+    v401 = v400 + 12;
+    aP2.headNode[2] = v401;
+  }
+  while ( (int)v392 < 5 );
+  LOBYTE(v401) = *(_BYTE *)(v4 + 2052);
+  *(_DWORD *)&aP3[8] = v401;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54320];
+  v388 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+  v403 = INIClass::ReadBool_Overwrite(
+           (int)&stru_87C374.__pad_579C[22128],
+           (unsigned __int8 *)v388,
+           *(CCINIClass **)&aP3[4],
+           aP3[8]);
+  *(_DWORD *)&aP3[8] = v4 + 3504;
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54300];
+  *(_BYTE *)(v4 + 2052) = v403;
+  v390 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
+  v405 = INIClass::ReadPoint3D_Overwrite(
+           &stru_87C374.__pad_579C[22128],
+           (CCINIClass *)&aP2.unknown30,
+           (unsigned __int8 *)v390,
+           *(int *)&aP3[4],
+           *(_DWORD **)&aP3[8]);
+  *(_DWORD *)(v4 + 3504) = *v405;
+  *(_DWORD *)(v4 + 3508) = v405[1];
+  *(_DWORD *)(v4 + 3512) = v405[2];
+  *(_DWORD *)&aP3[8] = *(_DWORD *)(v4 + 1460);
+  *(_DWORD *)&aP3[4] = &stru_830620.__pad_579C[54284];
+  eax299c = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
+  TypeMember_5474E40 = ObjectTypeClass::loadTypeMember_5474E40(
+                         (unsigned __int8 ***)aP0,
+                         eax299c,
+                         *(unsigned __int8 **)&aP3[4],
+                         *(int *)&aP3[8]);
+  *(_DWORD *)(v4 + 1460) = TypeMember_5474E40;
+  *(_BYTE *)(v4 + 3372) = TypeMember_5474E40 == 6;
+  if ( *(_BYTE *)(v4 + 566) )
+  {
+    VoxelAnimType::LoadAnim((char *)v4);
+  }
+  else if ( *(_BYTE *)(v4 + 3233) )
+  {
+    Turret::LoadVoxelTurretAndBarrel((void *)v4);
+  }
+  v408 = *(_BYTE **)(v4 + 176);
+  if ( v408 )
+  {
+    if ( ObjectTypeClass::loadTypeMember_5717AE0(v408) )
+    {
+      Info = VoxelSection::GetInfo(*(_DWORD **)(v4 + 176), 0, 0);
+      *(_DWORD *)&aP3[8] = 0;
+      v410 = *(unsigned __int8 *)(Info + 161);
+      *(_DWORD *)&aP3[4] = 0;
+      *(_DWORD *)aP2.__pad_0 = v410;
+      *(double *)(v4 + 864) = (double)v410 * 0.5 + 0.5;
+      *(_DWORD *)aP2.__pad_0 = *(unsigned __int8 *)(VoxelSection::GetInfo(
+                                                      *(_DWORD **)(v4 + 176),
+                                                      *(SomeVoxelCache **)&aP3[4],
+                                                      *(SomeVoxelCache **)&aP3[8])
+                                                  + 160);
+      *(double *)(v4 + 872) = (double)*(int *)aP2.__pad_0 * 0.5;
+    }
+  }
+  return 1;
+}
+
 }
 
 // 0x7170A0

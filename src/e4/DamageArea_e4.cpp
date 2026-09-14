@@ -6,60 +6,626 @@
 int DamageArea::ApplyScatter()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// int __thiscall DamageArea_ApplyScatter(int this)
-// {
-//   int v2; // edi
-//   _DWORD *v3; // eax
-//   int v4; // edi
-//   int v5; // eax
-//   int v6; // ecx
-//   int v7; // ecx
-//   int v8; // eax
-//   int v9; // edx
-//   int *v10; // ecx
-//   int v11; // edi
-//   _DWORD *v12; // eax
-//   int v13; // edx
-//   int v14; // eax
-//   int v15; // ecx
-//   int result; // eax
-//   void **v17; // esi
-//   int v18; // ebx
-//   void *VersusMultiplier; // eax
-//   int *v20; // ecx
-//   _DWORD *v21; // ecx
-//   int v22; // eax
-//   int v23; // ecx
-//   int v24; // eax
-//   int v25; // ebx
-//   int v26; // edi
-//   unsigned int v27; // ebx
-//   unsigned int v28; // ebp
-//   double v29; // st7
-//   double v30; // st7
-//   int v31; // eax
-//   int v32; // ecx
-//   int v33; // edi
-//   int v34; // eax
-//   int v35; // eax
-//   int *v36; // eax
-//   int v37; // ecx
-//   int v38; // edi
-//   int v39; // eax
-//   int v40; // eax
-//   int v41; // eax
-//   int v42; // ecx
-//   _DWORD *v43; // ebp
-//   int v44; // ebx
-//   int v45; // ebp
-//   double v46; // st7
-//   int v47; // eax
-//   bool v48; // bl
-//   int v49; // ebp
-//   int v50; // eax
-//   int v5... [24554 chars total]
-// end truncated pseudocode
+int __thiscall DamageArea_ApplyScatter(int this)
+{
+  int v2; // edi
+  _DWORD *v3; // eax
+  int v4; // edi
+  int v5; // eax
+  int v6; // ecx
+  int v7; // ecx
+  int v8; // eax
+  int v9; // edx
+  int *v10; // ecx
+  int v11; // edi
+  _DWORD *v12; // eax
+  int v13; // edx
+  int v14; // eax
+  int v15; // ecx
+  int result; // eax
+  void **v17; // esi
+  int v18; // ebx
+  void *VersusMultiplier; // eax
+  int *v20; // ecx
+  _DWORD *v21; // ecx
+  int v22; // eax
+  int v23; // ecx
+  int v24; // eax
+  int v25; // ebx
+  int v26; // edi
+  unsigned int v27; // ebx
+  unsigned int v28; // ebp
+  double v29; // st7
+  double v30; // st7
+  int v31; // eax
+  int v32; // ecx
+  int v33; // edi
+  int v34; // eax
+  int v35; // eax
+  int *v36; // eax
+  int v37; // ecx
+  int v38; // edi
+  int v39; // eax
+  int v40; // eax
+  int v41; // eax
+  int v42; // ecx
+  _DWORD *v43; // ebp
+  int v44; // ebx
+  int v45; // ebp
+  double v46; // st7
+  int v47; // eax
+  bool v48; // bl
+  int v49; // ebp
+  int v50; // eax
+  int v51; // eax
+  int v52; // eax
+  int v53; // ebx
+  int v54; // ebx
+  int v55; // eax
+  int v56; // ecx
+  int v57; // eax
+  int v58; // edx
+  int v59; // eax
+  int v60; // eax
+  int v61; // edi
+  int *v62; // ecx
+  int v63; // ecx
+  int v64; // kr44_4
+  _DWORD *v65; // eax
+  int v66; // edi
+  double v67; // st7
+  unsigned int v68; // ebp
+  unsigned int v69; // ebx
+  double v70; // st7
+  double v71; // st7
+  int v72; // ecx
+  int *v73; // ecx
+  int (__stdcall ***v74)(_DWORD, void *, double *); // eax
+  int v75; // edi
+  int v76; // eax
+  double v77; // st7
+  double v78; // st6
+  double v79; // st6
+  int *v80; // edi
+  int v81; // edx
+  double v82; // st7
+  int v83; // eax
+  int v84; // eax
+  int v85; // ecx
+  double v86; // st7
+  int v87; // eax
+  int *v88; // ecx
+  int v89; // edi
+  int v90; // ebx
+  _WORD *v91; // eax
+  int v92; // eax
+  int *v93; // ecx
+  double v95; // st7
+  char v96; // c0
+  double v97; // st7
+  __int64 v98; // [esp+30h] [ebp-70h]
+  char v99; // [esp+4Bh] [ebp-55h]
+  int v100; // [esp+4Ch] [ebp-54h]
+  double v101; // [esp+50h] [ebp-50h] BYREF
+  double v102; // [esp+58h] [ebp-48h] BYREF
+  int v103; // [esp+64h] [ebp-3Ch] BYREF
+  double v104; // [esp+68h] [ebp-38h] BYREF
+  int v105; // [esp+70h] [ebp-30h]
+  double v106; // [esp+78h] [ebp-28h] BYREF
+  int v107; // [esp+80h] [ebp-20h]
+  double v108; // [esp+88h] [ebp-18h] BYREF
+  unsigned int v109; // [esp+90h] [ebp-10h]
+  int v110; // [esp+94h] [ebp-Ch] BYREF
+  int v111; // [esp+98h] [ebp-8h]
+  int v112; // [esp+9Ch] [ebp-4h]
+
+  v2 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, double *))(**(_DWORD **)(this + 12) + 440))(
+                    *(_DWORD *)(this + 12),
+                    &v106);
+  v3 = (_DWORD *)(*(_DWORD *)(this + 12) + 1376);
+  v103 = v2;
+  if ( v2 != *v3 && (*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)(this + 4) + 128))(this + 4) )
+    Coord::ToGridIndex((char *)MEMORY[0x887888], *(_DWORD *)(this + 12), *(_DWORD *)(*(_DWORD *)(this + 12) + 1376), v2);
+  if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 388))(*(_DWORD *)(this + 12)) == 7
+    && *(_BYTE *)(this + 92) )
+  {
+    *(_BYTE *)(this + 92) = 0;
+  }
+  v4 = this + 4;
+  if ( (*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)(this + 4) + 96))(this + 4)
+    && *(_DWORD *)(*(_DWORD *)(this + 12) + 108)
+    || !(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 456))(*(_DWORD *)(this + 12)) )
+  {
+    v20 = *(int **)(this + 12);
+    if ( v20[27] > 0 )
+    {
+      if ( v20[361] )
+      {
+        if ( (*(int (__thiscall **)(int *))(*v20 + 388))(v20) == 5 )
+        {
+          v21 = *(_DWORD **)(this + 12);
+          if ( v21[45] == -1 && !*(_BYTE *)(this + 24) )
+            (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*v21 + 488))(v21, 2, 0);
+        }
+      }
+    }
+LABEL_34:
+    result = (*(int (__stdcall **)(int))(*(_DWORD *)v4 + 16))(this + 4);
+    if ( !(_BYTE)result )
+      return result;
+    v22 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(*(_DWORD *)(this + 12));
+    v23 = *(_DWORD *)(this + 12);
+    v103 = v22;
+    v99 = *(_BYTE *)(v22 + 3221);
+    (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v23 + 292))(v23, 0);
+    v24 = *(_DWORD *)(this + 12);
+    v108 = *(double *)(v24 + 156);
+    v109 = *(_DWORD *)(v24 + 164);
+    v25 = *ProgressTimer::GetValue((_WORD *)(v24 + 904), &v106);
+    LODWORD(v101) = (*(int (__stdcall **)(int))(*(_DWORD *)v4 + 132))(this + 4);
+    if ( SLODWORD(v101) > 0 )
+    {
+      v26 = v109;
+      v104 = (double)((__int16)v25 - 0x3FFF) * -0.00009587672516830327;
+      v27 = HIDWORD(v104);
+      v28 = LODWORD(v104);
+      v102 = (double)SHIDWORD(v108);
+      v101 = (double)SLODWORD(v101);
+      v29 = Math::SinCos(v104);
+      LODWORD(v102) = Math::RoundToInt(v102 - v29 * v101);
+      v30 = Math::ArcTan2(COERCE_DOUBLE(__PAIR64__(v27, v28)));
+      v31 = Math::RoundToInt(v30 * v101 + (double)SLODWORD(v108));
+      Coord::Subtract(&v104, v31, SLODWORD(v102), v26);
+      v109 = v105;
+      v108 = v104;
+      LODWORD(v102) = *(_DWORD *)CellStruct::Set(&v104, SLODWORD(v104) / 256, SHIDWORD(v104) / 256);
+      LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v102);
+    }
+    LOWORD(v102) = SLODWORD(v108) / 256;
+    WORD1(v102) = SHIDWORD(v108) / 256;
+    if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v102)
+      || !(*(unsigned __int8 (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 1244))(*(_DWORD *)(this + 12)) )
+    {
+      goto LABEL_50;
+    }
+    v32 = *(_DWORD *)(this + 12);
+    if ( v32 && (*(int (__thiscall **)(int))(*(_DWORD *)v32 + 44))(v32) == 2 )
+    {
+      v33 = *(_DWORD *)(this + 12);
+      v34 = v33 ? ((*(int (__thiscall **)(_DWORD))(*(_DWORD *)v33 + 44))(*(_DWORD *)(this + 12)) == 2 ? v33 : 0) : 0;
+      if ( *(_BYTE *)(*(_DWORD *)(v34 + 1732) + 3595) )
+        goto LABEL_50;
+    }
+    LOWORD(v102) = SLODWORD(v108) / 256;
+    WORD1(v102) = SHIDWORD(v108) / 256;
+    LODWORD(v101) = LODWORD(v102);
+    v35 = (__int16)*(_DWORD *)DamageArea::CalcScatterOffset(&v106, &v101) >= MEMORY[0x87F914] / 2
+        ? LODWORD(v108) - 128
+        : LODWORD(v108) + 128;
+    LODWORD(v108) = v35;
+    LOWORD(v102) = v35 / 256;
+    WORD1(v102) = SHIDWORD(v108) / 256;
+    if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v102)
+      || (v36 = RandomCoordScatter(&v110, (int *)&v108, 64, 0),
+          v108 = *(double *)v36,
+          v109 = v36[2],
+          LOWORD(v102) = SLODWORD(v108) / 256,
+          WORD1(v102) = SHIDWORD(v108) / 256,
+          LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v102)) )
+    {
+LABEL_50:
+      (*(void (__thiscall **)(_DWORD, double *))(**(_DWORD **)(this + 12) + 436))(*(_DWORD *)(this + 12), &v108);
+    }
+    v37 = *(_DWORD *)(this + 12);
+    LODWORD(v101) = 0;
+    v38 = (*(int (__thiscall **)(int))(*(_DWORD *)v37 + 456))(v37);
+    v39 = *(_DWORD *)(this + 12);
+    if ( !*(_BYTE *)(v39 + 140) && v38 >= MEMORY[0x8B3CAC] )
+    {
+      v40 = v39 + 156;
+      v106 = *(double *)v40;
+      v107 = *(_DWORD *)(v40 + 8);
+      if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v106) + 80) & 0x100) != 0 )
+      {
+        v38 -= MEMORY[0x8B3CAC];
+        LODWORD(v101) = MEMORY[0x8B3CAC];
+      }
+    }
+    v41 = *(_DWORD *)(this + 28);
+    v42 = *(_DWORD *)(this + 32);
+    v112 = *(_DWORD *)(this + 36);
+    v43 = (_DWORD *)(*(_DWORD *)(this + 12) + 156);
+    v44 = *(_DWORD *)(*(_DWORD *)(this + 12) + 160);
+    LODWORD(v106) = v41 - *v43;
+    v45 = v43[2];
+    HIDWORD(v106) = v42 - v44;
+    v112 = v45;
+    v46 = Math::Sqrt((double)(v42 - v44) * (double)(v42 - v44) + (double)SLODWORD(v106) * (double)SLODWORD(v106));
+    LODWORD(v102) = Math::RoundToInt(v46);
+    if ( v38 >= *(_DWORD *)(this + 56) || (v47 = *(_DWORD *)(this + 12), *(int *)(v47 + 108) <= 0) )
+    {
+      v54 = LODWORD(v101);
+    }
+    else
+    {
+      v48 = 0;
+      v100 = 0;
+      if ( v47 )
+      {
+        v49 = (**(int (__stdcall ***)(int, void *, double *))v47)(v47, &unk_822410, &v104);
+        if ( v49 >= 0 )
+        {
+          LODWORD(v106) = LODWORD(v104);
+          v50 = LODWORD(v104);
+        }
+        else
+        {
+          v50 = 0;
+        }
+        v100 = v50;
+        if ( v49 < 0 && v49 != -2147467262 )
+          WinAPI::Wrapper(v49);
+        if ( v50 )
+          v48 = (*(int (__stdcall **)(int))(*(_DWORD *)v50 + 20))(v50) != 0;
+      }
+      v51 = *(_DWORD *)(this + 56);
+      if ( v99 )
+      {
+        v52 = v51 - v38;
+        if ( v52 > 16 )
+          v52 = 16;
+      }
+      else
+      {
+        v52 = v51 - v38;
+        v53 = v48 ? 10 : 20;
+        if ( v53 < v52 )
+          v52 = v53;
+      }
+      v54 = LODWORD(v101);
+      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 460))(
+        *(_DWORD *)(this + 12),
+        LODWORD(v101) + v38 + v52);
+      *(_BYTE *)(*(_DWORD *)(this + 12) + 140) = 0;
+      if ( v100 )
+        (*(void (__stdcall **)(int))(*(_DWORD *)v100 + 8))(v100);
+    }
+    v55 = *(_DWORD *)(this + 56);
+    if ( v38 <= v55 && *(_DWORD *)(*(_DWORD *)(this + 12) + 108) )
+    {
+LABEL_114:
+      v73 = *(int **)(this + 12);
+      if ( v73[27] > 0
+        && !*(_BYTE *)(this + 81)
+        && (!*(_BYTE *)(this + 80) || (*(int (__thiscall **)(int *))(*v73 + 456))(v73) >= *(_DWORD *)(this + 56) / 2)
+        && (*(_DWORD *)(this + 28) != MEMORY[0x8B3C78]
+         || *(_DWORD *)(this + 32) != MEMORY[0x8B3C7C]
+         || *(_DWORD *)(this + 36) != MEMORY[0x8B3C80]) )
+      {
+        v74 = *(int (__stdcall ****)(_DWORD, void *, double *))(this + 12);
+        v75 = 0;
+        if ( v74 )
+        {
+          v76 = (**v74)(v74, &unk_822410, &v106);
+          v75 = v76 < 0 ? 0 : LODWORD(v106);
+          if ( v76 < 0 && v76 != -2147467262 )
+            WinAPI::Wrapper(v76);
+        }
+        if ( (unsigned __int8)DamageArea::CheckOccupancyEligibility(this) )
+        {
+          if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(*(_DWORD *)(this + 12)) + 3367) )
+          {
+            if ( *(_BYTE *)(this + 80) || !*(_DWORD *)(*(_DWORD *)(this + 12) + 692) )
+            {
+              *(_DWORD *)(this + 64) = 0;
+              *(_DWORD *)(this + 68) = 0;
+            }
+            else
+            {
+              *(_DWORD *)(this + 64) = 0;
+              *(_DWORD *)(this + 68) = 1072693248;
+            }
+          }
+          else
+          {
+            v77 = (double)SLODWORD(v102);
+            v78 = v77 / (double)*(int *)(v103 + 760);
+            if ( v78 > 1.0 )
+              v78 = 1.0;
+            *(double *)(this + 64) = v78;
+            if ( v78 < 0.1 )
+            {
+              if ( SLODWORD(v102) <= 85 )
+              {
+                v79 = *(double *)(this + 72) * 0.5;
+                *(_DWORD *)(this + 64) = 0;
+                *(_DWORD *)(this + 68) = 0;
+                *(double *)(this + 72) = v79;
+              }
+              else
+              {
+                *(_DWORD *)(this + 64) = -1717986918;
+                *(_DWORD *)(this + 68) = 1069128089;
+              }
+            }
+            if ( v77 < *(double *)(this + 72) )
+              *(double *)(this + 72) = v77;
+            if ( *(double *)(this + 64) == 0.0 && *(double *)(this + 72) == 0.0 && SLODWORD(v102) > 0 )
+            {
+              *(_DWORD *)(this + 72) = -1717986918;
+              *(_DWORD *)(this + 76) = 1068079513;
+            }
+          }
+        }
+        else
+        {
+          *(_DWORD *)(this + 64) = 0;
+          *(_DWORD *)(this + 68) = 1072693248;
+        }
+        if ( v75 )
+          (*(void (__stdcall **)(int))(*(_DWORD *)v75 + 8))(v75);
+      }
+      if ( v99 )
+      {
+        if ( *(int *)(*(_DWORD *)(this + 12) + 108) > 0 && *(double *)(this + 72) > 0.0 && !*(_BYTE *)(this + 80) )
+        {
+          LODWORD(v106) = *(_DWORD *)(v103 + 760);
+          if ( SLODWORD(v102) < SLODWORD(v106) )
+          {
+            v80 = *(int **)(this + 12);
+            v81 = *v80;
+            v106 = 1.0 - ((double)SLODWORD(v102) - (double)SLODWORD(v106) * 0.6) / ((double)SLODWORD(v106) * 0.4);
+            v82 = *(double *)((*(int (__thiscall **)(int *))(v81 + 132))(v80) + 944);
+            v83 = *v80;
+            v104 = v82;
+            v84 = (*(int (__thiscall **)(int *))(v83 + 132))(v80);
+            v85 = *(_DWORD *)(this + 12);
+            if ( v106 * *(double *)(v84 + 944) <= v104 )
+            {
+              v87 = (*(int (__thiscall **)(int))(*(_DWORD *)v85 + 132))(v85);
+              v86 = v106 * *(double *)(v87 + 944);
+            }
+            else
+            {
+              v86 = *(double *)((*(int (__thiscall **)(int))(*(_DWORD *)v85 + 132))(v85) + 944);
+            }
+            *(float *)(*(_DWORD *)(this + 12) + 744) = v86;
+          }
+        }
+      }
+      if ( !*(_BYTE *)(this + 92) )
+      {
+        v88 = *(int **)(this + 12);
+        if ( v88[27] > 0 && !*(_BYTE *)(this + 81) && !*(_BYTE *)(this + 80) )
+        {
+          v89 = *(_DWORD *)(this + 28) / 256;
+          v90 = *(_DWORD *)(this + 32) / 256;
+          v91 = (_WORD *)(*(int (__thiscall **)(int *, double *))(*v88 + 440))(v88, &v106);
+          if ( (_WORD)v89 == *v91 && (_WORD)v90 == v91[1] && *(double *)(this + 64) == 0.0 )
+          {
+            v92 = *(_DWORD *)(this + 12);
+            if ( !*(_DWORD *)(v92 + 692) || !*(_DWORD *)(v92 + 764) )
+              LocomotionClass::CheckBridgeBlock(this);
+          }
+        }
+      }
+      v93 = *(int **)(this + 12);
+      if ( v93[27] <= 0 )
+        return (*(int (__thiscall **)(int *, int))(*v93 + 292))(v93, 1);
+      v95 = *(double *)(this + 72);
+      if ( v96 )
+      {
+        v97 = v95 + 0.1;
+        if ( v97 >= *(double *)(this + 64) )
+LABEL_171:
+          v97 = *(double *)(this + 64);
+      }
+      else
+      {
+        if ( v95 <= *(double *)(this + 64) )
+          return (*(int (__thiscall **)(int *, int))(*v93 + 292))(v93, 1);
+        v97 = *(double *)(this + 72) - 0.1;
+        if ( v97 <= *(double *)(this + 64) )
+          goto LABEL_171;
+      }
+      *(double *)(this + 72) = v97;
+      return (*(int (__thiscall **)(int *, int))(*v93 + 292))(v93, 1);
+    }
+    v56 = v38 - v55;
+    if ( v99 )
+    {
+      if ( !*(_BYTE *)(this + 81) )
+      {
+        v59 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 132))(*(_DWORD *)(this + 12));
+        if ( *(_DWORD *)(this + 56) == (*(int (__thiscall **)(int))(*(_DWORD *)v59 + 188))(v59) )
+        {
+          if ( v38 > 16 )
+          {
+            v56 = 16;
+            goto LABEL_97;
+          }
+        }
+        else if ( v38 > 6 )
+        {
+          v56 = 6;
+          goto LABEL_97;
+        }
+        v56 = v38;
+        goto LABEL_97;
+      }
+      v57 = v56 / 20 + 10;
+      v58 = v57;
+      if ( v57 >= 48 )
+        v58 = 48;
+      if ( v58 < v56 )
+      {
+        if ( v57 >= 48 )
+          v56 = 48;
+        else
+          v56 = v56 / 20 + 10;
+      }
+    }
+    else
+    {
+      if ( v56 / 20 < v56 )
+        v56 /= 20;
+      if ( v56 < 50 )
+      {
+        if ( v56 <= 20 )
+          v56 = 20;
+      }
+      else
+      {
+        v56 = 50;
+      }
+    }
+LABEL_97:
+    v60 = *(_DWORD *)(this + 12);
+    v61 = v38 - v56;
+    if ( !*(_DWORD *)(v60 + 108) && v61 <= 1 )
+    {
+      v61 = 1;
+      goto LABEL_105;
+    }
+    if ( v61 >= 0 )
+    {
+      if ( v61 )
+      {
+LABEL_105:
+        (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 460))(*(_DWORD *)(this + 12), v54 + v61);
+        v62 = *(int **)(this + 12);
+        if ( v62[27] > 0
+          && (*(_DWORD *)(this + 28) != MEMORY[0x8B3C78]
+           || *(_DWORD *)(this + 32) != MEMORY[0x8B3C7C]
+           || *(_DWORD *)(this + 36) != MEMORY[0x8B3C80])
+          && ((*(int (__thiscall **)(int *))(*v62 + 388))(v62) != 7
+           || (v63 = *(_DWORD *)(*(_DWORD *)(this + 12) + 1444)) == 0
+           || (*(int (__thiscall **)(int))(*(_DWORD *)v63 + 44))(v63) != 6
+           || !*(_BYTE *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(this + 12) + 1444) + 1312) + 5835)) )
+        {
+          v64 = *(_DWORD *)(this + 32);
+          v65 = (_DWORD *)(*(_DWORD *)(this + 12) + 156);
+          v110 = ((__int16)(*(_DWORD *)(this + 28) / 256) << 8) + 128;
+          LODWORD(v106) = *v65;
+          v111 = ((__int16)(v64 / 256) << 8) + 128;
+          HIDWORD(v106) = v65[1];
+          v101 = (double)SLODWORD(v106);
+          v66 = v65[2];
+          v104 = (double)SHIDWORD(v106);
+          v67 = Math::CalcAngle(v104 - (double)v111, (double)v110 - v101);
+          v106 = (double)((__int16)Math::RoundToInt((v67 - 1.570796326794897) * -10430.06004058427) - 0x3FFF)
+               * -0.00009587672516830327;
+          v68 = HIDWORD(v106);
+          v69 = LODWORD(v106);
+          v70 = Math::SinCos(v106);
+          LODWORD(v106) = Math::RoundToInt(v104 - v70 * 5.0);
+          v71 = Math::ArcTan2(COERCE_DOUBLE(__PAIR64__(v68, v69)));
+          v110 = Math::RoundToInt(v71 * 5.0 + v101);
+          v111 = LODWORD(v106);
+          v72 = *(_DWORD *)(this + 12);
+          v112 = v66;
+          (*(void (__thiscall **)(int, int *))(*(_DWORD *)v72 + 436))(v72, &v110);
+        }
+        goto LABEL_114;
+      }
+    }
+    else
+    {
+      v61 = 0;
+    }
+    if ( v54 > 0 )
+    {
+      *(_BYTE *)(v60 + 140) = 1;
+      v54 = 0;
+    }
+    goto LABEL_105;
+  }
+  v5 = *(_DWORD *)(this + 12);
+  v6 = *(_DWORD *)(this + 88);
+  if ( *(_DWORD *)(v5 + 108) )
+    v7 = v6 + 3;
+  else
+    v7 = v6 + 1;
+  v8 = v5 + 156;
+  *(_DWORD *)(this + 88) = v7;
+  v108 = *(double *)v8;
+  v9 = *(_DWORD *)(this + 88);
+  v105 = *(_DWORD *)(v8 + 8);
+  v104 = v108;
+  v109 = v105 - v9;
+  Cell::GetGroundHeight(&v108);
+  Coord::To_Cell(&MEMORY[0x87F7E8], &v108);
+  LOWORD(v102) = SLODWORD(v108) / 256;
+  WORD1(v102) = SHIDWORD(v108) / 256;
+  v103 = LODWORD(v102);
+  if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v103) )
+  {
+    RemoveTarget(*(_DWORD *)(this + 12));
+    (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 292))(*(_DWORD *)(this + 12), 0);
+    (*(void (__thiscall **)(_DWORD, double *))(**(_DWORD **)(this + 12) + 436))(*(_DWORD *)(this + 12), &v108);
+    (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 292))(*(_DWORD *)(this + 12), 1);
+    Targeting::Readd(*(_DWORD **)(this + 12));
+  }
+  if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 456))(*(_DWORD *)(this + 12)) > 0 )
+    goto LABEL_34;
+  GadgetGrid::RemoveItem(MEMORY[0x887888], *(_DWORD *)(this + 12));
+  (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 460))(*(_DWORD *)(this + 12), 0);
+  v10 = *(int **)(this + 12);
+  v11 = v10[27];
+  if ( !v11 )
+  {
+    LOWORD(v102) = SLODWORD(v108) / 256;
+    WORD1(v102) = SHIDWORD(v108) / 256;
+    v103 = LODWORD(v102);
+    TechnoClass::ComputeCombatDamage(v10, 0);
+    v12 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v103);
+    v13 = **(_DWORD **)(this + 12);
+    if ( v12[59] == 2 )
+    {
+      v14 = *(_DWORD *)((*(int (**)(void))(v13 + 132))() + 1340);
+      if ( v14 != -1 )
+        goto LABEL_23;
+      v14 = *((_DWORD *)MEMORY[0x8871E0] + 128);
+    }
+    else
+    {
+      v14 = *(_DWORD *)((*(int (**)(void))(v13 + 132))() + 1344);
+      if ( v14 != -1 )
+        goto LABEL_23;
+      v14 = *((_DWORD *)MEMORY[0x8871E0] + 129);
+    }
+    if ( v14 == -1 )
+      return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 248))(*(_DWORD *)(this + 12));
+LABEL_23:
+    v15 = *(_DWORD *)(this + 12) + 156;
+    v106 = *(double *)v15;
+    v107 = *(_DWORD *)(v15 + 8);
+    StartAudioControllerAt(v14, (int)&v106, 0);
+    return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 248))(*(_DWORD *)(this + 12));
+  }
+  (*(void (__stdcall **)(int *, _DWORD, _DWORD, _DWORD, int, int, _DWORD))(*v10 + 364))(
+    v10 + 27,
+    0,
+    *((_DWORD *)MEMORY[0x8871E0] + 1002),
+    0,
+    1,
+    1,
+    0);
+  LOWORD(v102) = SLODWORD(v108) / 256;
+  WORD1(v102) = SHIDWORD(v108) / 256;
+  LODWORD(v101) = LODWORD(v102);
+  v17 = (void **)__2_YAPAXI_Z(0x1C8u);
+  if ( v17 )
+  {
+    v18 = *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v101) + 59);
+    v98 = v109;
+    LODWORD(v98) = Return::HRESULT_Fail(SLODWORD(v108), SHIDWORD(v108), v109);
+    VersusMultiplier = (void *)GetWarheadVersusMultiplier(v11, *((_DWORD *)MEMORY[0x8871E0] + 1002), v18, &v104);
+    AnimClass::ctor(v17, VersusMultiplier, (int *)&v108, 0, 1, (void *)0x2600, (void *)v98, SBYTE4(v98));
+  }
+  CreateSmokeEffectAt(v11, *((_DWORD *)MEMORY[0x8871E0] + 1002), SLODWORD(v108), SHIDWORD(v108), v109, 0, 0);
+  return PlaySoundEffectAt(&v108, v11, 0, *((_DWORD *)MEMORY[0x8871E0] + 1002), 1, 0);
+}
 }
 
 // 0x4D0180

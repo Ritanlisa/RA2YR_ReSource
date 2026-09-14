@@ -509,38 +509,345 @@ namespace gamemd {
 int Map_InitCellOffsets()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// int Map_InitCellOffsets()
-// {
-//   int v1; // [esp+10h] [ebp-4h] BYREF
-//
-//   unk_89D368 = 0x10000; /*0x45c32b*/
-//   unk_89D36C = 0x1FFFF; /*0x45c33e*/
-//   unk_89D370 = 65537; /*0x45c352*/
-//   unk_89D374 = 0xFFFF; /*0x45c365*/
-//   unk_89D378 = 1; /*0x45c379*/
-//   unk_89D380 = -1; /*0x45c38c*/
-//   unk_89D37C = -65536; /*0x45c391*/
-//   unk_89D384 = -65535; /*0x45c3b8*/
-//   unk_89D388 = 2147450879; /*0x45c3be*/
-//   memset(&unk_89D38C, 0, 0x54u); /*0x45c3d4*/
-//   unk_89D3E0 = 0x10000; /*0x45c3ed*/
-//   unk_89D3E4 = 65537; /*0x45c406*/
-//   unk_89D3E8 = 0x1FFFF; /*0x45c419*/
-//   unk_89D3EC = 65538; /*0x45c42d*/
-//   unk_89D3F0 = 0xFFFF; /*0x45c440*/
-//   unk_89D3F4 = 2; /*0x45c454*/
-//   unk_89D3F8 = -65536; /*0x45c467*/
-//   unk_89D3FC = -65535; /*0x45c46d*/
-//   unk_89D404 = -65534; /*0x45c48e*/
-//   unk_89D400 = -1; /*0x45c498*/
-//   unk_89D408 = 2147450879; /*0x45c4ac*/
-//   memset(&unk_89D40C, 0, 0x4Cu); /*0x45c4be*/
-//   unk_89D458 = 0x20000; /*0x45c4dc*/
-//   unk_89D45C = 131073; /*0x45c4ef*/
-//   unk_89D460 = 196607; /*0x45c503*/
-//   unk_89D464 = 0x1FFF... [14497 chars total]
-// end truncated pseudocode
+int Map_InitCellOffsets()
+{
+  int v1; // [esp+10h] [ebp-4h] BYREF
+
+  unk_89D368 = 0x10000;
+  unk_89D36C = 0x1FFFF;
+  unk_89D370 = 65537;
+  unk_89D374 = 0xFFFF;
+  unk_89D378 = 1;
+  unk_89D380 = -1;
+  unk_89D37C = -65536;
+  unk_89D384 = -65535;
+  unk_89D388 = 2147450879;
+  memset(&unk_89D38C, 0, 0x54u);
+  unk_89D3E0 = 0x10000;
+  unk_89D3E4 = 65537;
+  unk_89D3E8 = 0x1FFFF;
+  unk_89D3EC = 65538;
+  unk_89D3F0 = 0xFFFF;
+  unk_89D3F4 = 2;
+  unk_89D3F8 = -65536;
+  unk_89D3FC = -65535;
+  unk_89D404 = -65534;
+  unk_89D400 = -1;
+  unk_89D408 = 2147450879;
+  memset(&unk_89D40C, 0, 0x4Cu);
+  unk_89D458 = 0x20000;
+  unk_89D45C = 131073;
+  unk_89D460 = 196607;
+  unk_89D464 = 0x1FFFF;
+  unk_89D468 = 65537;
+  unk_89D46C = 0xFFFF;
+  unk_89D470 = 1;
+  unk_89D478 = -1;
+  unk_89D474 = -65536;
+  unk_89D47C = -65535;
+  unk_89D480 = 2147450879;
+  memset(&unk_89D484, 0, 0x4Cu);
+  unk_89D4D0 = 0x20000;
+  unk_89D4D4 = 131073;
+  unk_89D4D8 = 196607;
+  unk_89D4DC = 131074;
+  unk_89D4E0 = 0x1FFFF;
+  unk_89D4E4 = 65538;
+  unk_89D4E8 = 0xFFFF;
+  unk_89D4EC = 2;
+  unk_89D4F0 = -65536;
+  unk_89D4F4 = -65535;
+  unk_89D4F8 = -1;
+  unk_89D4FC = -65534;
+  unk_89D500 = 2147450879;
+  memset(&unk_89D504, 0, 0x44u);
+  unk_89D548 = 196608;
+  unk_89D54C = 196609;
+  unk_89D550 = 0x3FFFF;
+  unk_89D554 = 196610;
+  unk_89D558 = 196607;
+  unk_89D55C = 131074;
+  unk_89D560 = 0x1FFFF;
+  unk_89D564 = 65538;
+  unk_89D568 = 0xFFFF;
+  unk_89D56C = 2;
+  unk_89D570 = -65536;
+  unk_89D574 = -65535;
+  unk_89D57C = -65534;
+  unk_89D578 = -1;
+  unk_89D580 = 2147450879;
+  memset(&unk_89D584, 0, 0x3Cu);
+  unk_89D5C0 = 0x20000;
+  unk_89D5C4 = 131073;
+  unk_89D5C8 = 131074;
+  unk_89D5CC = 196607;
+  unk_89D5D0 = 131075;
+  unk_89D5D4 = 0x1FFFF;
+  unk_89D5D8 = 65539;
+  unk_89D5DC = 0xFFFF;
+  unk_89D5E0 = 3;
+  unk_89D5E4 = -65536;
+  unk_89D5E8 = -65535;
+  unk_89D5EC = -65534;
+  unk_89D5F0 = -1;
+  unk_89D5F4 = -65533;
+  unk_89D5F8 = 2147450879;
+  memset(&unk_89D5FC, 0, 0x3Cu);
+  unk_89D638 = 196608;
+  unk_89D63C = 196609;
+  unk_89D640 = 196610;
+  unk_89D644 = 0x3FFFF;
+  unk_89D648 = 196611;
+  unk_89D64C = 196607;
+  unk_89D650 = 131075;
+  unk_89D654 = 0x1FFFF;
+  unk_89D658 = 65539;
+  unk_89D65C = 0xFFFF;
+  unk_89D660 = 3;
+  unk_89D664 = -65536;
+  unk_89D668 = -65535;
+  unk_89D66C = -65534;
+  unk_89D670 = -1;
+  unk_89D674 = -65533;
+  unk_89D678 = 2147450879;
+  memset(&unk_89D67C, 0, 0x34u);
+  unk_89D6B0 = -1;
+  unk_89D6B4 = -65536;
+  unk_89D6B8 = -65535;
+  unk_89D6BC = -65534;
+  unk_89D6C0 = -65533;
+  unk_89D6C4 = 0xFFFF;
+  unk_89D6C8 = 3;
+  unk_89D6CC = 0x1FFFF;
+  unk_89D6D0 = 65539;
+  unk_89D6D4 = 196607;
+  unk_89D6D8 = 131075;
+  unk_89D6DC = 0x3FFFF;
+  unk_89D6E0 = 196611;
+  unk_89D6E8 = 262147;
+  unk_89D6E4 = 327679;
+  unk_89D6EC = 393215;
+  unk_89D6F0 = 327680;
+  unk_89D6F4 = 327681;
+  unk_89D6F8 = 327682;
+  unk_89D6FC = 327683;
+  unk_89D700 = 2147450879;
+  memset(&unk_89D704, 0, 0x24u);
+  unk_89D728 = 0x20000;
+  unk_89D72C = 131073;
+  unk_89D730 = 131074;
+  unk_89D734 = 131075;
+  unk_89D738 = 196607;
+  unk_89D73C = 131076;
+  unk_89D740 = 0x1FFFF;
+  unk_89D744 = 65540;
+  unk_89D748 = 0xFFFF;
+  unk_89D74C = 4;
+  unk_89D750 = -65536;
+  unk_89D754 = -65535;
+  unk_89D75C = -65533;
+  unk_89D758 = -65534;
+  unk_89D760 = -1;
+  unk_89D764 = -65532;
+  unk_89D768 = 2147450879;
+  memset(&unk_89D76C, 0, 0x34u);
+  unk_89D7A0 = 0;
+  unk_89D7A4 = 2147450879;
+  memset(&unk_89D7A8, 0, 0x70u);
+  unk_89D818 = -1;
+  unk_89D81C = -65536;
+  unk_89D820 = -65535;
+  unk_89D824 = 0xFFFF;
+  unk_89D828 = 1;
+  unk_89D82C = 0x1FFFF;
+  unk_89D830 = 65537;
+  unk_89D834 = 196607;
+  unk_89D838 = 131073;
+  unk_89D83C = 0x3FFFF;
+  unk_89D844 = 196609;
+  unk_89D840 = 196608;
+  unk_89D848 = 2147450879;
+  memset(&unk_89D84C, 0, 0x44u);
+  unk_89D890 = -1;
+  unk_89D894 = -65536;
+  unk_89D898 = -65535;
+  unk_89D89C = -65534;
+  unk_89D8A0 = -65533;
+  unk_89D8A4 = 0xFFFF;
+  unk_89D8A8 = 3;
+  unk_89D8AC = 0x1FFFF;
+  unk_89D8B0 = 0x10000;
+  unk_89D8B4 = 65537;
+  unk_89D8B8 = 65538;
+  unk_89D8BC = 65539;
+  unk_89D8C0 = 2147450879;
+  memset(&unk_89D8C4, 0, 0x44u);
+  unk_89D908 = 196608;
+  unk_89D90C = 196609;
+  unk_89D910 = 196610;
+  unk_89D914 = 0x3FFFF;
+  unk_89D918 = 196611;
+  unk_89D91C = 196607;
+  unk_89D920 = 131075;
+  unk_89D924 = 0x1FFFF;
+  unk_89D928 = 65539;
+  unk_89D92C = 0xFFFF;
+  unk_89D930 = 3;
+  unk_89D934 = -65536;
+  unk_89D938 = -65535;
+  unk_89D93C = -65534;
+  unk_89D944 = -65533;
+  unk_89D940 = -1;
+  unk_89D948 = 2147450879;
+  memset(&unk_89D94C, 0, 0x34u);
+  unk_89D980 = -1;
+  unk_89D984 = -65536;
+  unk_89D988 = -65535;
+  unk_89D98C = 0xFFFF;
+  unk_89D990 = 1;
+  unk_89D994 = 0x1FFFF;
+  unk_89D998 = 65537;
+  unk_89D9A0 = 131073;
+  unk_89D99C = 196607;
+  unk_89D9A4 = 0x3FFFF;
+  unk_89D9A8 = 196609;
+  unk_89D9AC = 327679;
+  unk_89D9B4 = 262145;
+  unk_89D9B0 = 0x40000;
+  unk_89D9B8 = 2147450879;
+  memset(&unk_89D9BC, 0, 0x3Cu);
+  unk_89D9F8 = -1;
+  unk_89D9FC = -65536;
+  unk_89DA00 = -65535;
+  unk_89DA04 = 0xFFFF;
+  unk_89DA08 = 1;
+  unk_89DA0C = 0x1FFFF;
+  unk_89DA10 = 65537;
+  unk_89DA18 = 131073;
+  unk_89DA14 = 196607;
+  unk_89DA1C = 0x3FFFF;
+  unk_89DA20 = 196609;
+  unk_89DA28 = 262145;
+  unk_89DA24 = 327679;
+  unk_89DA2C = 393215;
+  unk_89DA30 = 327680;
+  unk_89DA34 = 327681;
+  unk_89DA38 = 2147450879;
+  memset(&unk_89DA3C, 0, 0x34u);
+  unk_89DA70 = -1;
+  unk_89DA74 = -65536;
+  unk_89DA78 = -65535;
+  unk_89DA7C = -65534;
+  unk_89DA80 = 0xFFFF;
+  unk_89DA84 = 2;
+  unk_89DA88 = 0x1FFFF;
+  unk_89DA8C = 65538;
+  unk_89DA90 = 196607;
+  unk_89DA94 = 131074;
+  unk_89DA98 = 0x3FFFF;
+  unk_89DA9C = 196610;
+  unk_89DAA0 = 393215;
+  unk_89DAA4 = 327682;
+  unk_89DAA8 = 458751;
+  unk_89DAAC = 393216;
+  unk_89DAB4 = 393218;
+  unk_89DAB0 = 393217;
+  unk_89DAB8 = 2147450879;
+  memset(&unk_89DABC, 0, 0x2Cu);
+  unk_89DAE8 = -1;
+  unk_89DAEC = -65536;
+  unk_89DAF0 = -65535;
+  unk_89DAF4 = -65534;
+  unk_89DAF8 = 0xFFFF;
+  unk_89DAFC = 2;
+  unk_89DB00 = 0x1FFFF;
+  unk_89DB04 = 65538;
+  unk_89DB08 = 196607;
+  unk_89DB0C = 131074;
+  unk_89DB10 = 0x3FFFF;
+  unk_89DB14 = 196610;
+  unk_89DB18 = 393215;
+  unk_89DB1C = 327680;
+  unk_89DB24 = 327682;
+  unk_89DB20 = 327681;
+  unk_89DB28 = 2147450879;
+  memset(&unk_89DB2C, 0, 0x34u);
+  unk_89DB60 = -1;
+  unk_89DB64 = -65536;
+  unk_89DB68 = -65535;
+  v1 = -65532;
+  unk_89DB70 = -65533;
+  unk_89DB6C = -65534;
+  unk_89DB74 = -65532;
+  unk_89DB78 = *(_DWORD *)CellStruct::Set(&v1, 5, -1);
+  unk_89DB7C = *(_DWORD *)CellStruct::Set(&v1, -1, 0);
+  unk_89DB80 = *(_DWORD *)CellStruct::Set(&v1, 5, 0);
+  unk_89DB84 = *(_DWORD *)CellStruct::Set(&v1, -1, 1);
+  unk_89DB88 = *(_DWORD *)CellStruct::Set(&v1, 5, 1);
+  unk_89DB8C = *(_DWORD *)CellStruct::Set(&v1, -1, 2);
+  unk_89DB90 = *(_DWORD *)CellStruct::Set(&v1, 5, 2);
+  unk_89DB94 = *(_DWORD *)CellStruct::Set(&v1, -1, 3);
+  unk_89DB98 = *(_DWORD *)CellStruct::Set(&v1, 0, 3);
+  unk_89DB9C = *(_DWORD *)CellStruct::Set(&v1, 1, 3);
+  unk_89DBA0 = *(_DWORD *)CellStruct::Set(&v1, 2, 3);
+  unk_89DBA4 = *(_DWORD *)CellStruct::Set(&v1, 3, 3);
+  unk_89DBA8 = *(_DWORD *)CellStruct::Set(&v1, 4, 3);
+  unk_89DBAC = *(_DWORD *)CellStruct::Set(&v1, 5, 3);
+  unk_89DBB0 = *(_DWORD *)CellStruct::Set(&v1, 0x7FFF, 0x7FFF);
+  memset(&stru_89DBB4, 0, 0x24u);
+  Array::ForEach((int)&stru_89DBB4, 4, 9, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2);
+  unk_89DBD8 = *(_DWORD *)CellStruct::Set(&v1, -1, -1);
+  unk_89DBDC = *(_DWORD *)CellStruct::Set(&v1, 0, -1);
+  unk_89DBE0 = *(_DWORD *)CellStruct::Set(&v1, 1, -1);
+  unk_89DBE4 = *(_DWORD *)CellStruct::Set(&v1, 2, -1);
+  unk_89DBE8 = *(_DWORD *)CellStruct::Set(&v1, 3, -1);
+  unk_89DBEC = *(_DWORD *)CellStruct::Set(&v1, 4, -1);
+  unk_89DBF0 = *(_DWORD *)CellStruct::Set(&v1, -1, 4);
+  unk_89DBF4 = *(_DWORD *)CellStruct::Set(&v1, 0, 4);
+  unk_89DBF8 = *(_DWORD *)CellStruct::Set(&v1, 1, 4);
+  unk_89DBFC = *(_DWORD *)CellStruct::Set(&v1, 2, 4);
+  unk_89DC00 = *(_DWORD *)CellStruct::Set(&v1, 3, 4);
+  unk_89DC04 = *(_DWORD *)CellStruct::Set(&v1, 4, 4);
+  unk_89DC08 = *(_DWORD *)CellStruct::Set(&v1, -1, 0);
+  unk_89DC0C = *(_DWORD *)CellStruct::Set(&v1, -1, 1);
+  unk_89DC10 = *(_DWORD *)CellStruct::Set(&v1, -1, 2);
+  unk_89DC14 = *(_DWORD *)CellStruct::Set(&v1, -1, 3);
+  unk_89DC18 = *(_DWORD *)CellStruct::Set(&v1, -1, 4);
+  unk_89DC1C = *(_DWORD *)CellStruct::Set(&v1, 4, 0);
+  unk_89DC20 = *(_DWORD *)CellStruct::Set(&v1, 4, 1);
+  unk_89DC24 = *(_DWORD *)CellStruct::Set(&v1, 4, 2);
+  unk_89DC28 = *(_DWORD *)CellStruct::Set(&v1, 4, 3);
+  unk_89DC2C = *(_DWORD *)CellStruct::Set(&v1, 4, 4);
+  unk_89DC30 = *(_DWORD *)CellStruct::Set(&v1, 0x7FFF, 0x7FFF);
+  memset(&stru_89DC34, 0, 0x1Cu);
+  Array::ForEach((int)&stru_89DC34, 4, 7, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2);
+  MEMORY[0x89DC50] = *(_DWORD *)CellStruct::Set(&v1, 0, 4);
+  MEMORY[0x89DC54] = *(_DWORD *)CellStruct::Set(&v1, 1, 4);
+  unk_89DC58 = *(_DWORD *)CellStruct::Set(&v1, 2, 4);
+  unk_89DC5C = *(_DWORD *)CellStruct::Set(&v1, -1, 4);
+  unk_89DC60 = *(_DWORD *)CellStruct::Set(&v1, 3, 4);
+  unk_89DC64 = *(_DWORD *)CellStruct::Set(&v1, -1, 2);
+  unk_89DC68 = *(_DWORD *)CellStruct::Set(&v1, 3, 2);
+  unk_89DC6C = *(_DWORD *)CellStruct::Set(&v1, -1, 1);
+  unk_89DC70 = *(_DWORD *)CellStruct::Set(&v1, 3, 1);
+  unk_89DC74 = *(_DWORD *)CellStruct::Set(&v1, -1, 0);
+  unk_89DC78 = *(_DWORD *)CellStruct::Set(&v1, 3, 0);
+  unk_89DC7C = *(_DWORD *)CellStruct::Set(&v1, 0, -1);
+  unk_89DC80 = *(_DWORD *)CellStruct::Set(&v1, 1, -1);
+  unk_89DC84 = *(_DWORD *)CellStruct::Set(&v1, 2, -1);
+  unk_89DC88 = *(_DWORD *)CellStruct::Set(&v1, -1, -1);
+  unk_89DC8C = *(_DWORD *)CellStruct::Set(&v1, 3, -1);
+  unk_89DC90 = *(_DWORD *)CellStruct::Set(&v1, 0x7FFF, 0x7FFF);
+  memset(&stru_89DC94, 0, 0x34u);
+  Array::ForEach((int)&stru_89DC94, 4, 13, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2);
+  unk_89DCC8 = *(_DWORD *)CellStruct::Set(&v1, 2, -1);
+  unk_89DCCC = *(_DWORD *)CellStruct::Set(&v1, 0x7FFF, 0x7FFF);
+  memset(&stru_89DCD0, 0, 0x70u);
+  Array::ForEach((int)&stru_89DCD0, 4, 28, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2);
+  unk_89DD40 = *(_DWORD *)CellStruct::Set(&v1, 0x7FFF, 0x7FFF);
+  memset(&stru_89DD44, 0, 0x74u);
+  return Array::ForEach((int)&stru_89DD44, 4, 29, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2);
+}
 }
 } // namespace gamemd
 

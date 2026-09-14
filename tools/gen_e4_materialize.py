@@ -38,6 +38,10 @@ LINE_ADDR_RE = re.compile(r"^\s*//\s*(?:IDA\s+)?0[xX]([0-9A-Fa-f]{5,8})\s*$")
 # 544 个真体被误判 bodyless 而 e4 桶重复物化（双定义 + marker&completed 矛盾）。
 DEF_INLINE_ADDR_RE = re.compile(
     r"^\s*[\w:&<>,\*\s]+\([^;]*\)\s*(?:const\s*)?\{?\s*//\s*0[xX]([0-9A-Fa-f]{5,8})\s*$")
+# G11: 行尾 ';' 的纯声明（_generated/global_funcs.hpp 原型）不是有体定义——
+# 曾把 12 个截断 pending 排除出 bodyless，陈旧截断块在 e4 桶永不刷新。
+DEF_INLINE_DECL_RE = re.compile(
+    r"^\s*[\w:&<>,\*\s]+\([^;]*\)\s*(?:const\s*)?;\s*//\s*0[xX]([0-9A-Fa-f]{5,8})\s*$")
 
 
 def scan_src_addrs():
@@ -414,6 +418,20 @@ def rewrite_pseudocode(pseudo, cls, mmap, stats):
 # ---------------------------------------------------------------- signature synth
 TRUNC_MARK = re.compile(r"\[\d+ chars total\]")
 
+IDA_CACHE_DIR = ROOT / ".omo" / "ida_cache"
+
+
+def trunc_cache_get(addr):
+    """G11: v4 截断记录的 ida_cache 完整伪码（G10 起 live 回填，与导出同源渲染）。
+    无缓存/空内容返回 None——调用方诚实保持截断形态。"""
+    p = IDA_CACHE_DIR / ("func_0x%X.json" % addr)
+    try:
+        d = json.loads(p.read_text(encoding="utf-8"))
+        code = d.get("decompiled") or ""
+        return code if code.strip() else None
+    except (OSError, ValueError):
+        return None
+
 
 def emit_pseudo(pseudo):
     """截断记录（export_funcs 输出上限）→ 注释化伪码 + 空体，保持括号平衡。"""
@@ -744,6 +762,13 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
     idscan = re.compile(r"[A-Za-z_]\w*")
 
     for fn in bodyless:
+        # G11: v4 截断伪码（[NNN chars total]）→ ida_cache 完整版置换（live 回填）；
+        # 置换发生在签名合成/OO 重写之前，完整伪码同样吃成员重写。无缓存诚实截断。
+        if TRUNC_MARK.search(fn.pseudocode):
+            full = trunc_cache_get(fn.addr)
+            if full:
+                fn.pseudocode = full
+                stats["trunc_repaired"] = stats.get("trunc_repaired", 0) + 1
         sig = synth_signature(fn)
         # 类归属与方法名以记录名行（fn.name = IDA label = signals 权威）为准；
         # 伪码声明行的名字可能是 T14 时代嵌入的旧类型名（如 _vt06 vs Clear）。

@@ -195,32 +195,6 @@ int __userpurge AircraftClass::DeployWithAnim@<eax>(
 }
 } // namespace gamemd
 
-// 0x417BD0
-namespace gamemd {
-char AircraftClass::ValidateMovement(int _10, int * a2, int a4)
-{
-{
-    FootClass *v5;
-    char result;
-    v5 = (FootClass *)this->GetCursorOverObject(a2, a4);
-    switch ( (unsigned int)v5 )
-  {
-    case 2u: result = 0;
-    break;
-    case 3u: result = this->ExecuteMissionCommand(7, 0, a2, 0);
-    break;
-    case 4u: result = this->ExecuteMissionCommand(16, 0, 0, 0);
-    break;
-    case 0x11u: result = this->ExecuteMissionCommand(2, 0, a2, 0);
-    break;
-    default: result = FootClass::ValidateMove(this, v5, a2, a4);
-    break;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x417CC0
 namespace gamemd {
 int AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown * a3)
@@ -878,6 +852,32 @@ LABEL_4:
       break; /*0x41bb7e*/
   }
   return result; /*0x41bb83*/
+}
+}
+} // namespace gamemd
+
+// 0x417BD0
+namespace gamemd {
+char AircraftClass::ValidateMovement(int _10, int * a2, int a4)
+{
+{
+    FootClass *v5;
+    char result;
+    v5 = (FootClass *)this->GetCursorOverObject(a2, a4);
+    switch ( (unsigned int)v5 )
+  {
+    case 2u: result = 0;
+    break;
+    case 3u: result = this->ExecuteMissionCommand(7, 0, a2, 0);
+    break;
+    case 4u: result = this->ExecuteMissionCommand(16, 0, 0, 0);
+    break;
+    case 0x11u: result = this->ExecuteMissionCommand(2, 0, a2, 0);
+    break;
+    default: result = FootClass::ValidateMove(this, v5, a2, a4);
+    break;
+  }
+    return result;
 }
 }
 } // namespace gamemd

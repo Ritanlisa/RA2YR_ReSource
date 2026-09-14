@@ -104,35 +104,6 @@ wchar_t **__thiscall sub_7665D0(char *this, wchar_t **a2)
 }
 } // namespace gamemd
 
-// 0x76FEB0
-namespace gamemd {
-void E4Recv_76FEB0::TerritorySelectWDT_Process(int a2, ObjectClass * aP2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall TerritorySelectWDT_Process(_DWORD *this, int a2, ObjectClass *aP2)
-{
-  int v4; // ecx
-  _DWORD *v5; // eax
-  _DWORD v6[4]; // [esp+8h] [ebp-20h] BYREF
-  _BYTE v7[16]; // [esp+18h] [ebp-10h] BYREF
-
-  v4 = *(this + 10); /*0x76feb6*/
-  if ( v4 ) /*0x76febb*/
-  {
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)v4 + 4))(v4, a2); /*0x76fec5*/
-    v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)*(this + 10) + 24))(*(this + 10), v7); /*0x76fed2*/
-    v6[0] = *v5; /*0x76fedb*/
-    v6[1] = v5[1]; /*0x76fee2*/
-    v6[2] = v5[2]; /*0x76fee9*/
-    v6[3] = v5[3]; /*0x76fef7*/
-    Team::ReleaseAll((int *)aP2->__pad_0, (ObjectClass *)v6); /*0x76fefb*/
-    DSurface::Flip2(); /*0x76ff02*/
-    MSEngine::ProcessEvents(aP2, (MSVQAnim *)*(this + 10), 300000); /*0x76ff12*/
-  }
-}
-}
-} // namespace gamemd
-
 // 0x7714B0
 namespace gamemd {
 void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)

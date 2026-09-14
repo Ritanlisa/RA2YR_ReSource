@@ -1673,46 +1673,1318 @@ namespace gamemd {
 char * DlgSkirmishMenuProc(HWND a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// char *__fastcall DlgSkirmishMenuProc(HWND a1, HWND a2)
-// {
-//   HWND *v3; // eax
-//   int v4; // esi
-//   char *result; // eax
-//   _DWORD *v6; // eax
-//   HWND *v7; // eax
-//   _DWORD *v8; // eax
-//   int v9; // eax
-//   HWND *v10; // eax
-//   _DWORD *v11; // eax
-//   int v12; // eax
-//   HWND v13; // [esp+8h] [ebp-4h] BYREF
-//
-//   v13 = a1; /*0x6040bc*/
-//   if ( !MEMORY[0xAC1B04] ) /*0x6040c0*/
-//     goto LABEL_5; /*0x6040c0*/
-//   v3 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v13) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x6040e1*/
-//   if ( !v3 ) /*0x6040e6*/
-//     goto LABEL_5; /*0x6040e6*/
-//   while ( *v3 != v13 ) /*0x6040ee*/
-//   {
-//     v3 = (HWND *)v3[129]; /*0x6040f0*/
-//     if ( !v3 ) /*0x6040f8*/
-//       goto LABEL_5; /*0x6040f8*/
-//   }
-//   v6 = v3 + 1; /*0x60410f*/
-//   if ( v6 ) /*0x604114*/
-//     v4 = v6[27]; /*0x604116*/
-//   else
-// LABEL_5:
-//     v4 = 0; /*0x6040fa*/
-//   result = (char *)GetDlgCtrlID(a2); /*0x6040fd*/
-//   if ( result ) /*0x604105*/
-//   {
-//     if ( result == (char *)-1 ) /*0x60411e*/
-//       return 0; /*0x60411e*/
-//     switch... [55429 chars total]
-// end truncated pseudocode
+char *__fastcall DlgSkirmishMenuProc(HWND a1, HWND a2)
+{
+  HWND *v3; // eax
+  int v4; // esi
+  char *result; // eax
+  _DWORD *v6; // eax
+  HWND *v7; // eax
+  _DWORD *v8; // eax
+  int v9; // eax
+  HWND *v10; // eax
+  _DWORD *v11; // eax
+  int v12; // eax
+  HWND v13; // [esp+8h] [ebp-4h] BYREF
+
+  v13 = a1;
+  if ( !MEMORY[0xAC1B04] )
+    goto LABEL_5;
+  v3 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v13) & ((1 << MEMORY[0xAC1B0C]) - 1)));
+  if ( !v3 )
+    goto LABEL_5;
+  while ( *v3 != v13 )
+  {
+    v3 = (HWND *)v3[129];
+    if ( !v3 )
+      goto LABEL_5;
+  }
+  v6 = v3 + 1;
+  if ( v6 )
+    v4 = v6[27];
+  else
+LABEL_5:
+    v4 = 0;
+  result = (char *)GetDlgCtrlID(a2);
+  if ( result )
+  {
+    if ( result == (char *)-1 )
+      return 0;
+    switch ( v4 )
+    {
+      case 226:
+        if ( result == (char *)1667 )
+          return MEMORY[0x835784];
+        if ( result == (char *)1668 )
+          return MEMORY[0x83576C];
+        if ( result == (char *)1400 )
+          return MEMORY[0x835754];
+        if ( result == (char *)1670 )
+          return MEMORY[0x83573C];
+        if ( result == (char *)1372 )
+          return MEMORY[0x835724];
+        if ( result != (char *)1375 )
+        {
+          if ( result == (char *)1006 )
+            return MEMORY[0x835708];
+          return 0;
+        }
+        return MEMORY[0x833DE4];
+      case 256:
+        if ( result == (char *)1672 )
+          return MEMORY[0x8356EC];
+        if ( result == (char *)1673 )
+          return MEMORY[0x8356CC];
+        if ( result == (char *)1401 )
+          return MEMORY[0x8356B0];
+        if ( result == (char *)1670 )
+          return MEMORY[0x835698];
+        return 0;
+      case 148:
+        if ( result == (char *)1770 )
+          return (char *)aSttAlliedcampa;
+        if ( result == (char *)1771 )
+          return MEMORY[0x83567C];
+        if ( result == (char *)1772 )
+          return (char *)aSttSovietcampa;
+        if ( result == (char *)1295 )
+          return MEMORY[0x83565C];
+        if ( result == (char *)1038 )
+          return MEMORY[0x835644];
+        if ( result == (char *)1109 )
+          return MEMORY[0x835630];
+        if ( result == (char *)1670 )
+          return MEMORY[0x835618];
+        return 0;
+      case 183:
+        if ( result == (char *)1317 )
+          return MEMORY[0x835608];
+        if ( result == (char *)1039 )
+          return MEMORY[0x8355F4];
+        if ( result == (char *)1670 )
+          return MEMORY[0x8355E0];
+        return 0;
+      case 258:
+        if ( result == (char *)1696 )
+          return MEMORY[0x8355C8];
+        if ( result == (char *)1291
+          || result == (char *)1294
+          || result == (char *)1302
+          || result == (char *)1306
+          || result == (char *)1307
+          || result == (char *)1308
+          || result == (char *)1309 )
+        {
+          return MEMORY[0x8353E4];
+        }
+        if ( result == (char *)1754
+          || result == (char *)1755
+          || result == (char *)1756
+          || result == (char *)1757
+          || result == (char *)1758
+          || result == (char *)1759
+          || result == (char *)1760
+          || result == (char *)1761 )
+        {
+          return MEMORY[0x835400];
+        }
+        if ( result == (char *)1697
+          || result == (char *)1296
+          || result == (char *)1299
+          || result == (char *)1310
+          || result == (char *)1300
+          || result == (char *)1311
+          || result == (char *)1312
+          || result == (char *)1313 )
+        {
+          return MEMORY[0x835418];
+        }
+        if ( result == (char *)1698
+          || result == (char *)1314
+          || result == (char *)1315
+          || result == (char *)1316
+          || result == (char *)1317
+          || result == (char *)1318
+          || result == (char *)1319
+          || result == (char *)1320 )
+        {
+          return MEMORY[0x835434];
+        }
+        if ( result != (char *)1699
+          && result != (char *)1700
+          && result != (char *)1701
+          && result != (char *)1702
+          && result != (char *)1703
+          && result != (char *)1704
+          && result != (char *)1706
+          && result != (char *)1707 )
+        {
+          if ( result != (char *)1901
+            && result != (char *)1902
+            && result != (char *)1903
+            && result != (char *)1904
+            && result != (char *)1905
+            && result != (char *)1906
+            && result != (char *)1907
+            && result != (char *)1908 )
+          {
+            if ( result == (char *)1321 )
+              return MEMORY[0x8355B0];
+            if ( result == (char *)1297 )
+              return MEMORY[0x835594];
+            if ( result == (char *)1292 )
+              return MEMORY[0x83557C];
+            if ( result == (char *)1450 )
+              return MEMORY[0x835560];
+            if ( result == (char *)1683 )
+              return MEMORY[0x835544];
+            if ( result == (char *)1358 )
+              return MEMORY[0x835528];
+            if ( result == (char *)1690 )
+              return MEMORY[0x83550C];
+            if ( result == (char *)1693 )
+              return MEMORY[0x8354EC];
+            if ( result == (char *)1686 )
+              return MEMORY[0x8354D4];
+            if ( result == (char *)1128 )
+              return MEMORY[0x8354B8];
+            if ( result == (char *)1772 )
+              return MEMORY[0x83549C];
+            if ( result == (char *)1448 )
+              return MEMORY[0x835480];
+            if ( result == (char *)1559 )
+              return MEMORY[0x835464];
+            if ( result == (char *)1472 )
+              return MEMORY[0x83544C];
+            return 0;
+          }
+          return MEMORY[0x83377C];
+        }
+        return (char *)aSttHostcombost;
+      case 187:
+        if ( result == (char *)1345 )
+          return MEMORY[0x8353CC];
+        if ( result == (char *)1342 )
+          return (char *)MEMORY[0x8353B8];
+        if ( result == (char *)1353 )
+          return (char *)MEMORY[0x8353A4];
+        if ( result == (char *)1343 )
+          return MEMORY[0x835390];
+        if ( result == (char *)1344 )
+          return MEMORY[0x83537C];
+        if ( result == (char *)1740 )
+          return MEMORY[0x835368];
+        if ( result != (char *)1741 )
+        {
+          if ( result == (char *)1888 )
+            return MEMORY[0x835354];
+          if ( result == (char *)1742 )
+            return MEMORY[0x83533C];
+          if ( result == (char *)1472 )
+            return MEMORY[0x835328];
+          return 0;
+        }
+LABEL_590:
+        if ( !MEMORY[0xAC10C8] )
+          return MEMORY[0x83444C];
+        return MEMORY[0x83533C];
+      case 188:
+      case 194:
+        if ( result == (char *)1746
+          || result == (char *)1747
+          || result == (char *)1748
+          || result == (char *)1749
+          || result == (char *)1750
+          || result == (char *)1751
+          || result == (char *)1752
+          || result == (char *)1753 )
+        {
+          return MEMORY[0x83374C];
+        }
+        if ( result == (char *)1041
+          || result == (char *)1042
+          || result == (char *)1043
+          || result == (char *)1044
+          || result == (char *)1045
+          || result == (char *)1046
+          || result == (char *)1047
+          || result == (char *)1048 )
+        {
+          return (char *)MEMORY[0x833768];
+        }
+        if ( result == (char *)1754
+          || result == (char *)1755
+          || result == (char *)1756
+          || result == (char *)1757
+          || result == (char *)1758
+          || result == (char *)1759
+          || result == (char *)1760
+          || result == (char *)1761 )
+        {
+          return MEMORY[0x833C04];
+        }
+        if ( result == (char *)1697
+          || result == (char *)1296
+          || result == (char *)1299
+          || result == (char *)1310
+          || result == (char *)1300
+          || result == (char *)1311
+          || result == (char *)1312
+          || result == (char *)1313 )
+        {
+          return MEMORY[0x833C18];
+        }
+        if ( result == (char *)1698
+          || result == (char *)1314
+          || result == (char *)1315
+          || result == (char *)1316
+          || result == (char *)1317
+          || result == (char *)1318
+          || result == (char *)1319
+          || result == (char *)1320 )
+        {
+          return MEMORY[0x833C30];
+        }
+        if ( result == (char *)1699
+          || result == (char *)1700
+          || result == (char *)1701
+          || result == (char *)1702
+          || result == (char *)1703
+          || result == (char *)1704
+          || result == (char *)1706
+          || result == (char *)1707 )
+        {
+          return (char *)aSttHostcombost;
+        }
+        if ( result == (char *)1901
+          || result == (char *)1902
+          || result == (char *)1903
+          || result == (char *)1904
+          || result == (char *)1905
+          || result == (char *)1906
+          || result == (char *)1907
+          || result == (char *)1908 )
+        {
+          return MEMORY[0x83377C];
+        }
+        if ( result == (char *)1321 )
+          return MEMORY[0x8338A4];
+        if ( result == (char *)1026 )
+          return MEMORY[0x83388C];
+        if ( result == (char *)1359 )
+          return MEMORY[0x833878];
+        if ( result == (char *)1000 )
+          return MEMORY[0x833860];
+        if ( result == (char *)1358 )
+          return MEMORY[0x833848];
+        if ( result == (char *)1690 )
+          return MEMORY[0x833830];
+        if ( result == (char *)1693 )
+          return MEMORY[0x833814];
+        if ( result == (char *)1357 )
+          return MEMORY[0x833800];
+        if ( result == (char *)1343 )
+          return MEMORY[0x833C44];
+        if ( result == (char *)1344 )
+          return MEMORY[0x833C58];
+        if ( result == (char *)1128 )
+          return MEMORY[0x8337E8];
+        if ( result == (char *)1448 )
+          return MEMORY[0x8337D0];
+        if ( result == (char *)1416 )
+          return MEMORY[0x8337BC];
+        if ( result == (char *)1450 )
+          return MEMORY[0x8337A4];
+        if ( result == (char *)2 )
+        {
+          if ( v4 == 194 )
+            return MEMORY[0x833FF0];
+          else
+            return MEMORY[0x833790];
+        }
+        if ( result == (char *)1474 )
+          return MEMORY[0x834318];
+        break;
+      case 189:
+      case 201:
+        if ( result == (char *)1746
+          || result == (char *)1747
+          || result == (char *)1748
+          || result == (char *)1749
+          || result == (char *)1750
+          || result == (char *)1751
+          || result == (char *)1752
+          || result == (char *)1753 )
+        {
+          return MEMORY[0x8338B8];
+        }
+        if ( result == (char *)1041
+          || result == (char *)1042
+          || result == (char *)1043
+          || result == (char *)1044
+          || result == (char *)1045
+          || result == (char *)1046
+          || result == (char *)1047
+          || result == (char *)1048 )
+        {
+          return (char *)MEMORY[0x8338D4];
+        }
+        if ( result == (char *)1754
+          || result == (char *)1755
+          || result == (char *)1756
+          || result == (char *)1757
+          || result == (char *)1758
+          || result == (char *)1759
+          || result == (char *)1760
+          || result == (char *)1761 )
+        {
+          return MEMORY[0x8338EC];
+        }
+        if ( result == (char *)1697
+          || result == (char *)1296
+          || result == (char *)1299
+          || result == (char *)1310
+          || result == (char *)1300
+          || result == (char *)1311
+          || result == (char *)1312
+          || result == (char *)1313 )
+        {
+          return MEMORY[0x833904];
+        }
+        if ( result == (char *)1698
+          || result == (char *)1314
+          || result == (char *)1315
+          || result == (char *)1316
+          || result == (char *)1317
+          || result == (char *)1318
+          || result == (char *)1319
+          || result == (char *)1320 )
+        {
+          return MEMORY[0x83391C];
+        }
+        if ( result == (char *)1699
+          || result == (char *)1700
+          || result == (char *)1701
+          || result == (char *)1702
+          || result == (char *)1703
+          || result == (char *)1704
+          || result == (char *)1706
+          || result == (char *)1707 )
+        {
+          return MEMORY[0x833930];
+        }
+        if ( result == (char *)1901
+          || result == (char *)1902
+          || result == (char *)1903
+          || result == (char *)1904
+          || result == (char *)1905
+          || result == (char *)1906
+          || result == (char *)1907
+          || result == (char *)1908 )
+        {
+          return MEMORY[0x833944];
+        }
+        if ( result == (char *)1321 )
+          return MEMORY[0x833A80];
+        if ( result == (char *)1026 )
+          return MEMORY[0x833A68];
+        if ( result == (char *)1359 )
+          return MEMORY[0x833A54];
+        if ( result == (char *)1000 )
+          return MEMORY[0x833A3C];
+        if ( result == (char *)1358 )
+          return MEMORY[0x833A24];
+        if ( result == (char *)1690 )
+          return MEMORY[0x833A0C];
+        if ( result == (char *)1693 )
+          return MEMORY[0x8339F0];
+        if ( result == (char *)1357 )
+          return MEMORY[0x8339DC];
+        if ( result == (char *)1343 )
+          return MEMORY[0x8339C8];
+        if ( result == (char *)1344 )
+          return MEMORY[0x8339B4];
+        if ( result == (char *)1128 )
+          return MEMORY[0x83399C];
+        if ( result == (char *)1448 )
+          return MEMORY[0x833984];
+        if ( result == (char *)1439 )
+          return MEMORY[0x83396C];
+        if ( result == (char *)2 )
+        {
+          if ( v4 == 201 )
+            return MEMORY[0x833FF0];
+          else
+            return MEMORY[0x833958];
+        }
+        if ( result == (char *)1474 )
+          return MEMORY[0x834318];
+        break;
+      case 257:
+        if ( result == (char *)1677 )
+          return MEMORY[0x835310];
+        if ( result == (char *)1678 )
+          return MEMORY[0x8352F8];
+        if ( result == (char *)1679 )
+          return MEMORY[0x8352DC];
+        if ( result == (char *)1670 )
+          return MEMORY[0x8352C4];
+        return 0;
+      case 297:
+        if ( result == (char *)1861 )
+          return MEMORY[0x8352B4];
+        if ( result == (char *)1670 )
+          return MEMORY[0x83529C];
+        if ( result == (char *)1860 )
+          return MEMORY[0x83528C];
+        return 0;
+      case 213:
+        if ( result == (char *)1486 )
+          return MEMORY[0x835270];
+        if ( result == (char *)1485 )
+          return MEMORY[0x835254];
+        if ( result == (char *)1670 )
+          return MEMORY[0x83523C];
+        if ( result == (char *)1652 )
+          return MEMORY[0x835224];
+        if ( result == (char *)1323 )
+          return MEMORY[0x83520C];
+        if ( result == (char *)1773 )
+          return MEMORY[0x8351F4];
+        if ( result == (char *)1321 )
+          return MEMORY[0x8351DC];
+        if ( result == (char *)1295 )
+          return MEMORY[0x8351C0];
+        if ( result == (char *)1537 )
+          return MEMORY[0x8351A4];
+        if ( result == (char *)1540 )
+          return MEMORY[0x83518C];
+        if ( result == (char *)1538 )
+          return MEMORY[0x835174];
+        if ( result == (char *)1322 )
+          return MEMORY[0x83515C];
+        if ( result == (char *)1306 )
+          return MEMORY[0x83513C];
+        if ( result == (char *)1327 )
+          return MEMORY[0x835124];
+        if ( result == (char *)1330 )
+          return MEMORY[0x83510C];
+        if ( result == (char *)1334 )
+          return MEMORY[0x8350F4];
+        return 0;
+      case 215:
+        if ( result == (char *)1492 )
+          return MEMORY[0x8350DC];
+        if ( result == (char *)1489 )
+          return MEMORY[0x8350C0];
+        if ( result == (char *)1491 )
+          return MEMORY[0x8350A4];
+        if ( result == (char *)1890 )
+          return MEMORY[0x83508C];
+        if ( result == (char *)1495 )
+          return MEMORY[0x835074];
+        if ( result == (char *)1 )
+          return MEMORY[0x83505C];
+        if ( result == (char *)2 )
+          return MEMORY[0x835040];
+        return 0;
+      case 163:
+        if ( result == (char *)1223 )
+          return MEMORY[0x835024];
+        if ( result == (char *)1769 )
+          return MEMORY[0x835004];
+        if ( result == (char *)1224 )
+          return MEMORY[0x834FE8];
+        if ( result == (char *)1596 )
+          return MEMORY[0x834FCC];
+        if ( result == (char *)1597 )
+          return MEMORY[0x834FB4];
+        if ( result == (char *)1229 )
+          return MEMORY[0x834F9C];
+        if ( result == (char *)1231 )
+          return MEMORY[0x834F80];
+        if ( result == (char *)1595 )
+          return MEMORY[0x834F64];
+        if ( result == (char *)1232 )
+          return MEMORY[0x834F48];
+        if ( result == (char *)1670 )
+          return MEMORY[0x834F30];
+        return 0;
+      case 268:
+        if ( result == (char *)1767 )
+          return MEMORY[0x834F14];
+        if ( result == (char *)1059 )
+          return MEMORY[0x834EF8];
+        return 0;
+      case 182:
+        if ( result == (char *)1737 )
+        {
+          v13 = a2;
+          if ( MEMORY[0xAC1B04] )
+          {
+            v7 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v13) & ((1 << MEMORY[0xAC1B0C]) - 1)));
+            if ( v7 )
+            {
+              while ( *v7 != v13 )
+              {
+                v7 = (HWND *)v7[129];
+                if ( !v7 )
+                  return MEMORY[0x834EEC];
+              }
+              v8 = v7 + 1;
+              if ( v8 )
+              {
+                v9 = v8[48];
+                if ( v9 == 3 )
+                  return MEMORY[0x834ECC];
+                if ( v9 == 2 )
+                  return MEMORY[0x834EB0];
+              }
+            }
+          }
+        }
+        else
+        {
+          if ( result != (char *)1810 )
+          {
+            if ( result == (char *)1670 )
+              return MEMORY[0x834E54];
+            return 0;
+          }
+          v13 = a2;
+          if ( MEMORY[0xAC1B04] )
+          {
+            v10 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v13) & ((1 << MEMORY[0xAC1B0C]) - 1)));
+            if ( v10 )
+            {
+              while ( *v10 != v13 )
+              {
+                v10 = (HWND *)v10[129];
+                if ( !v10 )
+                  return MEMORY[0x834EEC];
+              }
+              v11 = v10 + 1;
+              if ( v11 )
+              {
+                v12 = v11[48];
+                if ( v12 == 4 )
+                  return MEMORY[0x834E90];
+                if ( v12 == 5 )
+                  return MEMORY[0x834E70];
+              }
+            }
+          }
+        }
+        return MEMORY[0x834EEC];
+      case 217:
+        if ( result == (char *)1473 )
+          return MEMORY[0x834E3C];
+        if ( result == (char *)1738 )
+          return MEMORY[0x834E20];
+        return 0;
+      case 115:
+        if ( result == (char *)1041
+          || result == (char *)1042
+          || result == (char *)1043
+          || result == (char *)1044
+          || result == (char *)1045
+          || result == (char *)1046
+          || result == (char *)1047
+          || result == (char *)1048 )
+        {
+          return MEMORY[0x834D8C];
+        }
+        if ( result == (char *)1743
+          || result == (char *)1744
+          || result == (char *)1745
+          || result == (char *)1746
+          || result == (char *)1747
+          || result == (char *)1748
+          || result == (char *)1749 )
+        {
+          return MEMORY[0x834DA8];
+        }
+        if ( result == (char *)1750
+          || result == (char *)1751
+          || result == (char *)1752
+          || result == (char *)1753
+          || result == (char *)1762
+          || result == (char *)1763
+          || result == (char *)1764 )
+        {
+          return MEMORY[0x834DC0];
+        }
+        if ( result == (char *)1049
+          || result == (char *)1050
+          || result == (char *)1051
+          || result == (char *)1052
+          || result == (char *)1053
+          || result == (char *)1054
+          || result == (char *)1055
+          || result == (char *)1056 )
+        {
+          return MEMORY[0x834DDC];
+        }
+        if ( result == (char *)1059 )
+          return MEMORY[0x834E04];
+        if ( result == (char *)1840 )
+          return MEMORY[0x834DF4];
+        return 0;
+      case 3003:
+        if ( result == (char *)1321 )
+          return MEMORY[0x834D70];
+        if ( result == (char *)1322 )
+          return MEMORY[0x834D54];
+        if ( result == (char *)1323 )
+          return MEMORY[0x834D38];
+        if ( result == (char *)1538 )
+          return MEMORY[0x834D1C];
+        if ( result == (char *)1537 )
+          return MEMORY[0x834CFC];
+        if ( result == (char *)1540 )
+          return MEMORY[0x834CE4];
+        if ( result == (char *)1306 )
+          return MEMORY[0x834CC4];
+        if ( result == (char *)1325 )
+          return MEMORY[0x834CA8];
+        if ( result == (char *)1324 )
+          return MEMORY[0x834C8C];
+        if ( result == (char *)1670 )
+          return MEMORY[0x834C74];
+        return 0;
+      case 261:
+        if ( result == (char *)1029 )
+          return MEMORY[0x834C58];
+        if ( result == (char *)1002 )
+          return MEMORY[0x834C40];
+        if ( result == (char *)1031 )
+          return MEMORY[0x834C28];
+        if ( result == (char *)1030 )
+          return MEMORY[0x834C10];
+        if ( result == (char *)1032 )
+          return MEMORY[0x834BF4];
+        if ( result == (char *)1003 )
+          return MEMORY[0x834BD4];
+        if ( result == (char *)1569 )
+          return MEMORY[0x834BB8];
+        if ( result == (char *)1568 )
+          return MEMORY[0x834B9C];
+        if ( result == (char *)1730 )
+          return MEMORY[0x834B80];
+        if ( result == (char *)1731 )
+          return MEMORY[0x834B64];
+        if ( result == (char *)1732 )
+          return MEMORY[0x834B48];
+        if ( result == (char *)1733 )
+          return MEMORY[0x834B2C];
+        if ( result == (char *)1472 )
+          return MEMORY[0x834B10];
+        return 0;
+      case 693:
+        if ( result == (char *)1320 )
+          return MEMORY[0x834AF8];
+        if ( result == (char *)1736 )
+          return MEMORY[0x834AE0];
+        if ( result == (char *)1670 )
+          return MEMORY[0x83529C];
+        return 0;
+      case 692:
+        if ( result == (char *)1319 )
+          return MEMORY[0x834AC8];
+        if ( result == (char *)1318 )
+          return MEMORY[0x834AB4];
+        if ( result == (char *)1735 )
+          return MEMORY[0x834A9C];
+        if ( result == (char *)1670 )
+          return MEMORY[0x834A84];
+        return 0;
+      case 264:
+        if ( result == (char *)1746 )
+          return MEMORY[0x834A6C];
+        if ( result == (char *)1002 )
+          return MEMORY[0x834A54];
+        if ( result != (char *)1041
+          && result != (char *)1042
+          && result != (char *)1043
+          && result != (char *)1044
+          && result != (char *)1045
+          && result != (char *)1046
+          && result != (char *)1047
+          && result != (char *)1048 )
+        {
+          if ( result != (char *)1049
+            && result != (char *)1050
+            && result != (char *)1051
+            && result != (char *)1052
+            && result != (char *)1053
+            && result != (char *)1054
+            && result != (char *)1055
+            && result != (char *)1056 )
+          {
+            if ( result != (char *)1699
+              && result != (char *)1700
+              && result != (char *)1705
+              && result != (char *)1708
+              && result != (char *)1711
+              && result != (char *)1714
+              && result != (char *)1717
+              && result != (char *)1720 )
+            {
+              if ( result != (char *)1701
+                && result != (char *)1703
+                && result != (char *)1706
+                && result != (char *)1709
+                && result != (char *)1712
+                && result != (char *)1715
+                && result != (char *)1718
+                && result != (char *)1721 )
+              {
+                if ( result != (char *)1702
+                  && result != (char *)1704
+                  && result != (char *)1707
+                  && result != (char *)1710
+                  && result != (char *)1713
+                  && result != (char *)1716
+                  && result != (char *)1719
+                  && result != (char *)1722 )
+                {
+                  goto LABEL_885;
+                }
+                return MEMORY[0x833BA0];
+              }
+              return MEMORY[0x833B88];
+            }
+            return MEMORY[0x833B70];
+          }
+          return MEMORY[0x833B58];
+        }
+        return MEMORY[0x833B40];
+      case 181:
+        if ( result == (char *)1313 )
+          return MEMORY[0x834A34];
+        if ( result == (char *)1310 )
+          return MEMORY[0x834A18];
+        if ( result == (char *)1311 )
+          return MEMORY[0x8349FC];
+        if ( result == (char *)1312 )
+          return MEMORY[0x8349E0];
+        if ( result == (char *)1314 )
+          return MEMORY[0x8349C4];
+        if ( result == (char *)1670 )
+          return MEMORY[0x8349A8];
+        return 0;
+      case 3002:
+        if ( result == (char *)1313 )
+          return MEMORY[0x834988];
+        if ( result == (char *)1314 )
+          return MEMORY[0x83496C];
+        if ( result == (char *)1670 )
+          return MEMORY[0x834950];
+        return 0;
+      case 234:
+        if ( result == (char *)1600
+          || result == (char *)1602
+          || result == (char *)1601
+          || result == (char *)1603
+          || result == (char *)1604
+          || result == (char *)1605
+          || result == (char *)1606
+          || result == (char *)1607 )
+        {
+          return MEMORY[0x8348C8];
+        }
+        if ( result == (char *)1608
+          || result == (char *)1609
+          || result == (char *)1610
+          || result == (char *)1611
+          || result == (char *)1612
+          || result == (char *)1613
+          || result == (char *)1614
+          || result == (char *)1615 )
+        {
+          return MEMORY[0x8348E4];
+        }
+        if ( result == (char *)1616 )
+          return MEMORY[0x834938];
+        if ( result == (char *)1617 )
+          return MEMORY[0x834920];
+        if ( result == (char *)2 )
+          return MEMORY[0x834900];
+        return 0;
+      case 107:
+        if ( result == (char *)1771 )
+          return MEMORY[0x8348AC];
+        if ( result == (char *)1363 )
+          return MEMORY[0x834894];
+        if ( result == (char *)1128 )
+          return MEMORY[0x834878];
+        if ( result == (char *)1733 )
+          return MEMORY[0x83485C];
+        if ( result == (char *)1411 )
+          return MEMORY[0x834840];
+        if ( result == (char *)1472 )
+          return MEMORY[0x834824];
+        return 0;
+      case 184:
+        if ( result == (char *)1327 )
+          return MEMORY[0x83480C];
+        if ( result == (char *)1330 )
+          return MEMORY[0x8347F4];
+        if ( result == (char *)1334 )
+          return MEMORY[0x8347DC];
+        if ( result == (char *)1328 )
+          return MEMORY[0x8347C4];
+        if ( result == (char *)1331 )
+          return MEMORY[0x8347AC];
+        if ( result == (char *)1332 )
+          return MEMORY[0x834794];
+        if ( result == (char *)1329 )
+          return MEMORY[0x83477C];
+        if ( result == (char *)1333 )
+          return MEMORY[0x834764];
+        if ( result == (char *)1670 )
+          return MEMORY[0x83474C];
+        return 0;
+      case 259:
+        if ( result == (char *)1777 )
+          return MEMORY[0x834734];
+        if ( result == (char *)1778 )
+          return MEMORY[0x83471C];
+        if ( result == (char *)1779 )
+          return MEMORY[0x834708];
+        if ( result == (char *)1780 )
+          return MEMORY[0x8346F0];
+        if ( result == (char *)1782 )
+          return MEMORY[0x8346DC];
+        if ( result == (char *)1059 )
+          return MEMORY[0x8346C0];
+        return 0;
+      case 255:
+        if ( result == (char *)1007 )
+          return MEMORY[0x8346A4];
+        if ( result == (char *)1321 )
+          return MEMORY[0x834684];
+        if ( result == (char *)1313 )
+          return MEMORY[0x834664];
+        if ( result == (char *)1314 )
+          return MEMORY[0x834644];
+        if ( result == (char *)1653 )
+          return MEMORY[0x834950];
+        return 0;
+      case 290:
+        if ( result == (char *)1785 )
+          return MEMORY[0x834624];
+        if ( result == (char *)1 )
+          return MEMORY[0x83460C];
+        if ( result == (char *)2 )
+          return MEMORY[0x8345F4];
+        return 0;
+      case 274:
+        if ( result == (char *)1785 )
+          return MEMORY[0x8345D8];
+        if ( result == (char *)1 )
+          return MEMORY[0x8345C4];
+        if ( result == (char *)2 )
+          return MEMORY[0x8345B0];
+        return 0;
+      case 278:
+        if ( result == (char *)1673 )
+          return MEMORY[0x834598];
+        if ( result == (char *)1776 )
+          return MEMORY[0x834584];
+        if ( result == (char *)1777 )
+          return MEMORY[0x834570];
+        if ( result == (char *)1793 )
+          return MEMORY[0x834558];
+        if ( result == (char *)1780 )
+          return MEMORY[0x834544];
+        if ( result == (char *)1781 )
+          return MEMORY[0x834530];
+        if ( result == (char *)1579 )
+          return MEMORY[0x834518];
+        if ( result == (char *)1581 )
+          return MEMORY[0x834504];
+        if ( result == (char *)1888 )
+          return MEMORY[0x835354];
+        if ( result == (char *)1474 )
+          return MEMORY[0x8344F0];
+        if ( result == (char *)1794 )
+          return MEMORY[0x8344E0];
+        if ( result == (char *)1795 )
+          return MEMORY[0x8344CC];
+        if ( result == (char *)1796 )
+          return MEMORY[0x8344B8];
+        if ( result == (char *)1670 )
+          return MEMORY[0x8344A4];
+        return 0;
+      case 275:
+        if ( result == (char *)1373 )
+          return MEMORY[0x834488];
+        if ( result == (char *)1343 )
+          return MEMORY[0x835390];
+        if ( result == (char *)1344 )
+          return MEMORY[0x83537C];
+        if ( result == (char *)1005 )
+          return MEMORY[0x834478];
+        if ( result == (char *)1341 )
+          return MEMORY[0x834460];
+        if ( result == (char *)1579 )
+          return MEMORY[0x835368];
+        if ( result != (char *)1581 )
+        {
+          if ( result == (char *)1888 )
+            return MEMORY[0x835354];
+          if ( result == (char *)1673 )
+            return MEMORY[0x83443C];
+          if ( result == (char *)1672 )
+            return MEMORY[0x834430];
+          if ( result == (char *)1955 )
+            return MEMORY[0x83441C];
+          if ( result == (char *)1958 )
+            return MEMORY[0x834410];
+          if ( result == (char *)1567 )
+            return MEMORY[0x8343FC];
+          if ( result == (char *)1670 )
+            return MEMORY[0x8343E8];
+          if ( result == (char *)1897 )
+            return MEMORY[0x8343D0];
+          if ( result == (char *)1896 )
+            return MEMORY[0x8343B8];
+          if ( result == (char *)1895 )
+            return MEMORY[0x8343A0];
+          if ( result == (char *)1893 )
+            return MEMORY[0x834388];
+          if ( result == (char *)1894 )
+            return MEMORY[0x834374];
+          if ( result == (char *)1898 )
+            return MEMORY[0x83435C];
+          if ( result == (char *)1899 )
+            return MEMORY[0x834344];
+          if ( result == (char *)1900 )
+            return MEMORY[0x83432C];
+          if ( result == (char *)1474 )
+            return MEMORY[0x834318];
+          return 0;
+        }
+        goto LABEL_590;
+      case 254:
+        if ( result == (char *)1008 )
+          return MEMORY[0x8342FC];
+        if ( result == (char *)1 )
+          return MEMORY[0x8342EC];
+        if ( result == (char *)2 )
+          return MEMORY[0x8342D8];
+        return 0;
+      case 271:
+        if ( result == (char *)1576 )
+          return MEMORY[0x8342C0];
+        if ( result == (char *)1836 )
+          return MEMORY[0x8342A8];
+        if ( result == (char *)1837 )
+          return MEMORY[0x834290];
+        if ( result == (char *)1337 )
+          return MEMORY[0x83427C];
+        if ( result == (char *)1770 )
+          return MEMORY[0x834268];
+        if ( result == (char *)1771 )
+          return MEMORY[0x834254];
+        if ( result == (char *)1670 )
+          return MEMORY[0x834240];
+        if ( result == (char *)1772 )
+          return MEMORY[0x834228];
+        return 0;
+      case 285:
+        if ( result == (char *)1576 )
+          return MEMORY[0x834218];
+        if ( result == (char *)1836 )
+          return MEMORY[0x8342A8];
+        if ( result == (char *)1337 )
+          return MEMORY[0x83427C];
+        if ( result == (char *)1770 )
+          return MEMORY[0x834268];
+        if ( result == (char *)1670 )
+          return MEMORY[0x834240];
+        if ( result == (char *)1772 )
+          return MEMORY[0x834228];
+        if ( result == (char *)1577 )
+          return MEMORY[0x8341FC];
+        if ( result == (char *)1578 )
+          return MEMORY[0x8342FC];
+        if ( result == (char *)1697 )
+          return MEMORY[0x8341E0];
+        if ( result == (char *)1698 )
+          return MEMORY[0x8341C4];
+        return 0;
+      case 279:
+        if ( result == (char *)1343 )
+          return MEMORY[0x8341B0];
+        if ( result == (char *)1472 )
+        {
+          if ( MEMORY[0xA8B238][0] != 4 )
+            return MEMORY[0x834188];
+          result = MEMORY[0x83419C];
+          if ( MEMORY[0xA8B244] != 3 )
+            return MEMORY[0x834188];
+          return result;
+        }
+        return 0;
+      case 276:
+        if ( result == (char *)1576 )
+          return MEMORY[0x83416C];
+        if ( result == (char *)1577 )
+          return MEMORY[0x8341FC];
+        if ( result == (char *)1578 )
+          return MEMORY[0x8342FC];
+        if ( result == (char *)1697 )
+          return MEMORY[0x8341E0];
+        if ( result == (char *)1698 )
+          return MEMORY[0x8341C4];
+        if ( result == (char *)1791 )
+          return MEMORY[0x83414C];
+        if ( result == (char *)1776 )
+          return MEMORY[0x834130];
+        if ( result == (char *)1777 )
+          return MEMORY[0x834114];
+        if ( result == (char *)1793 )
+          return MEMORY[0x8340F4];
+        if ( result == (char *)1780 )
+          return MEMORY[0x8340D8];
+        if ( result == (char *)1781 )
+          return MEMORY[0x8340BC];
+        if ( result == (char *)1671 )
+          return MEMORY[0x83443C];
+        if ( result == (char *)1672 )
+          return MEMORY[0x834430];
+        if ( result == (char *)1955 )
+          return MEMORY[0x83441C];
+        if ( result == (char *)1670 )
+          return MEMORY[0x8340A0];
+        if ( result == (char *)1770 )
+          return MEMORY[0x834268];
+        if ( result == (char *)1771 )
+          return MEMORY[0x834254];
+        if ( result == (char *)1772 )
+          return MEMORY[0x834228];
+        if ( result == (char *)1907 )
+          return MEMORY[0x83408C];
+        return 0;
+      case 195:
+        if ( result == (char *)1352 )
+          return MEMORY[0x834070];
+        if ( result == (char *)1836 )
+          return MEMORY[0x834058];
+        if ( result == (char *)1577 )
+          return MEMORY[0x83403C];
+        if ( result == (char *)1644 )
+          return MEMORY[0x83401C];
+        if ( result == (char *)1 )
+          return MEMORY[0x834008];
+        if ( result == (char *)2 )
+          return MEMORY[0x833FF0];
+        if ( result == (char *)1822 )
+          return MEMORY[0x833FD0];
+        return 0;
+      case 700:
+        if ( result == (char *)1525 )
+          return MEMORY[0x833FBC];
+        if ( result == (char *)1526 )
+          return MEMORY[0x833F9C];
+        if ( result == (char *)1527 )
+          return MEMORY[0x833F88];
+        if ( result == (char *)1528 )
+          return MEMORY[0x833F74];
+        if ( result == (char *)1529 )
+          return MEMORY[0x833F54];
+        if ( result == (char *)1 )
+          return MEMORY[0x833F40];
+        if ( result == (char *)1594 )
+          return MEMORY[0x833F24];
+        if ( result == (char *)2 )
+          return MEMORY[0x833F0C];
+        if ( result == (char *)1773 )
+          return MEMORY[0x8351F4];
+        if ( result == (char *)1530 )
+          return MEMORY[0x833EF0];
+        if ( result == (char *)1531 )
+          return MEMORY[0x833ED4];
+        if ( result == (char *)1909 )
+          return MEMORY[0x833EBC];
+        if ( result == (char *)1908 )
+          return MEMORY[0x833EA0];
+        return 0;
+      case 270:
+        if ( result == (char *)1776 )
+          return MEMORY[0x834130];
+        if ( result == (char *)1777 )
+          return MEMORY[0x834114];
+        if ( result == (char *)1793 )
+          return MEMORY[0x8340F4];
+        if ( result == (char *)1780 )
+          return MEMORY[0x8340D8];
+        if ( result == (char *)1781 )
+          return MEMORY[0x8340BC];
+        if ( result == (char *)1760 )
+          return MEMORY[0x833E84];
+        if ( result == (char *)1761 )
+          return MEMORY[0x833E68];
+        if ( result == (char *)1762 )
+          return MEMORY[0x83443C];
+        if ( result == (char *)1763 )
+          return MEMORY[0x833E54];
+        if ( result == (char *)1764 )
+          return MEMORY[0x833E38];
+        if ( result == (char *)1670 )
+          return MEMORY[0x833E24];
+        if ( result == (char *)1905 )
+          return MEMORY[0x833E14];
+        if ( result == (char *)1943 )
+          return MEMORY[0x833E00];
+        goto LABEL_797;
+      case 284:
+        if ( result == (char *)1760 )
+          return MEMORY[0x833E84];
+        if ( result == (char *)1761 )
+          return MEMORY[0x833E68];
+        if ( result == (char *)1762 )
+          return MEMORY[0x83443C];
+        if ( result == (char *)1763 )
+          return MEMORY[0x833E54];
+        if ( result == (char *)1670 )
+          return MEMORY[0x833E24];
+        if ( result == (char *)1905 )
+          return MEMORY[0x833E14];
+LABEL_797:
+        if ( result != (char *)1375 )
+          return 0;
+        return MEMORY[0x833DE4];
+      case 231:
+        if ( result == (char *)1582 )
+          return MEMORY[0x833DCC];
+        if ( result == (char *)1583 )
+          return MEMORY[0x833DB8];
+        if ( result == (char *)1584 )
+          return MEMORY[0x833DA0];
+        if ( result == (char *)1574 )
+          return MEMORY[0x833D88];
+        if ( result == (char *)1585 || result == (char *)1802 )
+          return MEMORY[0x833D1C];
+        if ( result == (char *)1 )
+          return MEMORY[0x833D6C];
+        if ( result == (char *)1398 )
+          return MEMORY[0x833D50];
+        if ( result == (char *)2 )
+          return MEMORY[0x833D38];
+        return 0;
+      case 230:
+      case 243:
+      case 244:
+        if ( result == (char *)1 )
+          return MEMORY[0x833B2C];
+        if ( result == (char *)2 )
+          return MEMORY[0x833B14];
+        if ( result == (char *)1576 )
+          return MEMORY[0x833AFC];
+        if ( result == (char *)1836 )
+          return MEMORY[0x833AE4];
+        if ( result == (char *)1575 )
+          return MEMORY[0x833ACC];
+        if ( result == (char *)1509 )
+          return MEMORY[0x833AB0];
+        if ( result == (char *)1643 || result == (char *)1803 )
+          return MEMORY[0x833A98];
+        return 0;
+      case 293:
+        if ( result == (char *)1670 )
+          return MEMORY[0x833D08];
+        else
+          return MEMORY[0x833CEC];
+      case 3014:
+        if ( result == (char *)1921 || result == (char *)1922 )
+          return MEMORY[0x833B40];
+        if ( result == (char *)1923 || result == (char *)1924 )
+          return MEMORY[0x833B58];
+        if ( result == (char *)1925 || result == (char *)1926 )
+          return MEMORY[0x833B70];
+        if ( result == (char *)1927 || result == (char *)1928 )
+          return MEMORY[0x833B88];
+        if ( result == (char *)1929 || result == (char *)1930 )
+          return MEMORY[0x833BA0];
+        if ( result == (char *)1843 )
+          return MEMORY[0x833CCC];
+        if ( result == (char *)1819 )
+          return MEMORY[0x833CB4];
+        if ( result == (char *)1842 )
+          return MEMORY[0x833C98];
+        if ( result == (char *)1745 )
+          return MEMORY[0x833C80];
+        if ( result == (char *)1472 )
+          return MEMORY[0x833C6C];
+        if ( result == (char *)1002 )
+          return MEMORY[0x834A54];
+        if ( result == (char *)1041 || result == (char *)1042 )
+          return MEMORY[0x833B40];
+        if ( result != (char *)1754 && result != (char *)1755 )
+        {
+          if ( result != (char *)1697 && result != (char *)1296 )
+          {
+            if ( result != (char *)1698 && result != (char *)1314 )
+            {
+              if ( result == (char *)1344 )
+                return MEMORY[0x833C58];
+              if ( result == (char *)1343 )
+                return MEMORY[0x833C44];
+              return 0;
+            }
+            return MEMORY[0x833C30];
+          }
+          return MEMORY[0x833C18];
+        }
+        return MEMORY[0x833C04];
+      case 3015:
+        if ( result == (char *)1843 )
+          return MEMORY[0x833CCC];
+        if ( result == (char *)1845 )
+          return MEMORY[0x833BE8];
+        if ( result == (char *)1842 )
+          return MEMORY[0x833C98];
+        if ( result == (char *)1002 )
+          return MEMORY[0x833BD4];
+        if ( result != (char *)1041 && result != (char *)1042 && result != (char *)1850 && result != (char *)1849 )
+        {
+          if ( result != (char *)1049 && result != (char *)1050 )
+          {
+            if ( result != (char *)1699 && result != (char *)1700 )
+            {
+              if ( result != (char *)1701 && result != (char *)1703 )
+              {
+                if ( result != (char *)1702
+                  && result != (char *)1704
+                  && result != (char *)1851
+                  && result != (char *)1848 )
+                {
+LABEL_885:
+                  if ( result == (char *)1745 )
+                    return MEMORY[0x833BB8];
+                  return 0;
+                }
+                return MEMORY[0x833BA0];
+              }
+              return MEMORY[0x833B88];
+            }
+            return MEMORY[0x833B70];
+          }
+          return MEMORY[0x833B58];
+        }
+        return MEMORY[0x833B40];
+      default:
+        return 0;
+    }
+    if ( result == (char *)1005 )
+      return MEMORY[0x834478];
+    return 0;
+  }
+  return result;
+}
 }
 } // namespace gamemd
 
@@ -1754,61 +3026,598 @@ namespace gamemd {
 LRESULT GadgetClass_RenderAnimation(HWND a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// LRESULT __fastcall GadgetClass_RenderAnimation(HWND a1, char a2)
-// {
-//   int v2; // esi
-//   int v3; // eax
-//   _DWORD *v4; // eax
-//   int v5; // eax
-//   _DWORD *v6; // eax
-//   _DWORD *v7; // eax
-//   _DWORD *v8; // eax
-//   int v9; // eax
-//   _DWORD *v10; // eax
-//   int v11; // eax
-//   int v12; // ebx
-//   int v13; // edx
-//   int *v14; // eax
-//   int v15; // edi
-//   int v16; // esi
-//   int v17; // ebp
-//   int v18; // eax
-//   int v19; // eax
-//   int v20; // ecx
-//   int v21; // edx
-//   int v22; // esi
-//   HWND v23; // edi
-//   int v24; // ebp
-//   int v25; // edi
-//   int *v26; // edx
-//   int v27; // eax
-//   int *v28; // ecx
-//   int v29; // esi
-//   int v30; // ecx
-//   int v31; // edi
-//   int v32; // ebx
-//   int v33; // ebp
-//   _DWORD *v34; // eax
-//   int v35; // esi
-//   int *v36; // eax
-//   int v37; // eax
-//   int *v38; // eax
-//   int v39; // esi
-//   int *v40; // eax
-//   int *v41; // eax
-//   int *v42; // eax
-//   int v43; // eax
-//   _DWORD *v44; // esi
-//   int v45; // ebx
-//   int v46; // eax
-//   int v47; // esi
-//   int v48; // ebx
-//   int v49; // edx
-//   int v50; // eax
-//   int v51; // eax
-//   in... [19354 chars total]
-// end truncated pseudocode
+LRESULT __fastcall GadgetClass_RenderAnimation(HWND a1, char a2)
+{
+  int v2; // esi
+  int v3; // eax
+  _DWORD *v4; // eax
+  int v5; // eax
+  _DWORD *v6; // eax
+  _DWORD *v7; // eax
+  _DWORD *v8; // eax
+  int v9; // eax
+  _DWORD *v10; // eax
+  int v11; // eax
+  int v12; // ebx
+  int v13; // edx
+  int *v14; // eax
+  int v15; // edi
+  int v16; // esi
+  int v17; // ebp
+  int v18; // eax
+  int v19; // eax
+  int v20; // ecx
+  int v21; // edx
+  int v22; // esi
+  HWND v23; // edi
+  int v24; // ebp
+  int v25; // edi
+  int *v26; // edx
+  int v27; // eax
+  int *v28; // ecx
+  int v29; // esi
+  int v30; // ecx
+  int v31; // edi
+  int v32; // ebx
+  int v33; // ebp
+  _DWORD *v34; // eax
+  int v35; // esi
+  int *v36; // eax
+  int v37; // eax
+  int *v38; // eax
+  int v39; // esi
+  int *v40; // eax
+  int *v41; // eax
+  int *v42; // eax
+  int v43; // eax
+  _DWORD *v44; // esi
+  int v45; // ebx
+  int v46; // eax
+  int v47; // esi
+  int v48; // ebx
+  int v49; // edx
+  int v50; // eax
+  int v51; // eax
+  int v52; // esi
+  int v53; // eax
+  char v54; // bl
+  int *v55; // eax
+  int v56; // eax
+  void *v57; // edx
+  char v60; // [esp+3Ah] [ebp-18Ah]
+  char v61; // [esp+3Bh] [ebp-189h]
+  HWND v62; // [esp+3Ch] [ebp-188h] BYREF
+  char v63; // [esp+43h] [ebp-181h]
+  int v64; // [esp+44h] [ebp-180h]
+  int *v65; // [esp+48h] [ebp-17Ch]
+  void *Block; // [esp+4Ch] [ebp-178h]
+  int v67; // [esp+50h] [ebp-174h]
+  int v68; // [esp+54h] [ebp-170h]
+  int v69[2]; // [esp+58h] [ebp-16Ch] BYREF
+  int v70; // [esp+60h] [ebp-164h]
+  HWND hWnd; // [esp+64h] [ebp-160h]
+  int v72[4]; // [esp+68h] [ebp-15Ch] BYREF
+  void *v73; // [esp+78h] [ebp-14Ch]
+  int v74; // [esp+7Ch] [ebp-148h]
+  int v75; // [esp+80h] [ebp-144h]
+  int v76; // [esp+84h] [ebp-140h] BYREF
+  int v77; // [esp+88h] [ebp-13Ch]
+  int v78; // [esp+8Ch] [ebp-138h]
+  void *v79; // [esp+90h] [ebp-134h]
+  void *v80; // [esp+94h] [ebp-130h]
+  int v81; // [esp+98h] [ebp-12Ch]
+  int v82; // [esp+9Ch] [ebp-128h] BYREF
+  int v83; // [esp+A0h] [ebp-124h]
+  int v84; // [esp+A8h] [ebp-11Ch]
+  int v85; // [esp+ACh] [ebp-118h]
+  int v86; // [esp+B0h] [ebp-114h]
+  int v87; // [esp+B4h] [ebp-110h]
+  int v88; // [esp+B8h] [ebp-10Ch]
+  int v89; // [esp+BCh] [ebp-108h]
+  int v90[2]; // [esp+C0h] [ebp-104h] BYREF
+  int v91[2]; // [esp+C8h] [ebp-FCh] BYREF
+  int v92[2]; // [esp+D0h] [ebp-F4h] BYREF
+  int v93; // [esp+D8h] [ebp-ECh] BYREF
+  int v94; // [esp+DCh] [ebp-E8h]
+  int v95; // [esp+E0h] [ebp-E4h]
+  int v96; // [esp+E4h] [ebp-E0h]
+  int v97; // [esp+E8h] [ebp-DCh] BYREF
+  int v98; // [esp+ECh] [ebp-D8h]
+  int v99; // [esp+F0h] [ebp-D4h]
+  int v100; // [esp+F4h] [ebp-D0h]
+  int v101; // [esp+F8h] [ebp-CCh]
+  int v102[2]; // [esp+FCh] [ebp-C8h] BYREF
+  int v103[2]; // [esp+104h] [ebp-C0h] BYREF
+  int v104; // [esp+10Ch] [ebp-B8h]
+  void *v105; // [esp+110h] [ebp-B4h]
+  _DWORD v106[4]; // [esp+114h] [ebp-B0h] BYREF
+  int v107[4]; // [esp+124h] [ebp-A0h] BYREF
+  _DWORD v108[4]; // [esp+134h] [ebp-90h] BYREF
+  int v109[4]; // [esp+144h] [ebp-80h] BYREF
+  _DWORD v110[4]; // [esp+154h] [ebp-70h] BYREF
+  _DWORD v111[4]; // [esp+164h] [ebp-60h] BYREF
+  struct tagRECT v112; // [esp+174h] [ebp-50h] BYREF
+  struct tagRECT Rect; // [esp+184h] [ebp-40h] BYREF
+  int v114; // [esp+194h] [ebp-30h] BYREF
+  int v115; // [esp+19Ch] [ebp-28h] BYREF
+  int v116; // [esp+1A4h] [ebp-20h] BYREF
+  int v117; // [esp+1ACh] [ebp-18h] BYREF
+  int v118; // [esp+1B4h] [ebp-10h] BYREF
+  int v119; // [esp+1BCh] [ebp-8h] BYREF
+
+  v2 = (int)a1;
+  hWnd = a1;
+  v62 = a1;
+  if ( !MEMORY[0xAC1B04] )
+    goto LABEL_6;
+  v3 = HashTable::ComputeHash((int)&MEMORY[0xAC1B00], (int)&v62);
+  a1 = (HWND)MEMORY[0xAC1B00];
+  v4 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + v3);
+  if ( !v4 )
+    goto LABEL_6;
+  a1 = v62;
+  while ( (HWND)*v4 != v62 )
+  {
+    v4 = (_DWORD *)v4[129];
+    if ( !v4 )
+      goto LABEL_6;
+  }
+  v7 = v4 + 1;
+  if ( v7 )
+    v63 = *((_BYTE *)v7 + 215);
+  else
+LABEL_6:
+    v63 = 0;
+  v62 = (HWND)v2;
+  if ( !MEMORY[0xAC1B04] )
+    goto LABEL_17;
+  v5 = HashTable::ComputeHash((int)&MEMORY[0xAC1B00], (int)&v62);
+  a1 = (HWND)MEMORY[0xAC1B00];
+  v6 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + v5);
+  if ( !v6 )
+    goto LABEL_17;
+  a1 = v62;
+  while ( (HWND)*v6 != v62 )
+  {
+    v6 = (_DWORD *)v6[129];
+    if ( !v6 )
+      goto LABEL_17;
+  }
+  v8 = v6 + 1;
+  if ( v8 )
+    v60 = *((_BYTE *)v8 + 214);
+  else
+LABEL_17:
+    v60 = 0;
+  v62 = (HWND)v2;
+  if ( !MEMORY[0xAC1B04] )
+    goto LABEL_23;
+  v9 = HashTable::ComputeHash((int)&MEMORY[0xAC1B00], (int)&v62);
+  a1 = (HWND)MEMORY[0xAC1B00];
+  v10 = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + v9);
+  if ( !v10 )
+    goto LABEL_23;
+  a1 = v62;
+  while ( (HWND)*v10 != v62 )
+  {
+    v10 = (_DWORD *)v10[129];
+    if ( !v10 )
+      goto LABEL_23;
+  }
+  v34 = v10 + 1;
+  if ( v34 )
+    v61 = *((_BYTE *)v34 + 213);
+  else
+LABEL_23:
+    v61 = 0;
+  v85 = VtableStub_72E280(a1);
+  v65 = (int *)UI_Helper_72E2C0();
+  v79 = MEMORY[0xB0FAF8];
+  v69[0] = (int)MEMORY[0xB0FAC4];
+  v73 = MEMORY[0xB0F9DC];
+  v105 = MEMORY[0xB0FAC0];
+  v11 = VtableStub_72D450();
+  v12 = MEMORY[0xB0FA20];
+  v80 = MEMORY[0xB0FB00];
+  v62 = (HWND)v11;
+  v13 = *(_DWORD *)MEMORY[0x887310];
+  v70 = MEMORY[0xB0FA20];
+  v14 = (int *)(*(int (__thiscall **)(int, int *))(v13 + 120))(MEMORY[0x887310], &v82);
+  v72[0] = *v14;
+  v72[1] = v14[1];
+  v72[2] = v14[2];
+  v72[3] = v14[3];
+  v109[0] = *(_DWORD *)MEMORY[0xB0FC20];
+  v109[1] = *((_DWORD *)MEMORY[0xB0FC20] + 1);
+  v109[2] = *((_DWORD *)MEMORY[0xB0FC20] + 2);
+  v109[3] = *((_DWORD *)MEMORY[0xB0FC20] + 3);
+  v107[0] = *(_DWORD *)MEMORY[0xB0FC14];
+  v107[1] = *((_DWORD *)MEMORY[0xB0FC14] + 1);
+  v107[2] = *((_DWORD *)MEMORY[0xB0FC14] + 2);
+  v107[3] = *((_DWORD *)MEMORY[0xB0FC14] + 3);
+  v97 = *(_DWORD *)MEMORY[0xB0FC18];
+  v98 = *((_DWORD *)MEMORY[0xB0FC18] + 1);
+  v99 = *((_DWORD *)MEMORY[0xB0FC18] + 2);
+  v100 = *((_DWORD *)MEMORY[0xB0FC18] + 3);
+  v15 = *(_DWORD *)MEMORY[0xB0FC10];
+  v82 = *(_DWORD *)MEMORY[0xB0FC10];
+  v83 = *((_DWORD *)MEMORY[0xB0FC10] + 1);
+  v16 = v83;
+  v17 = *((_DWORD *)MEMORY[0xB0FC10] + 2);
+  v18 = *(_DWORD *)MEMORY[0xB0FC1C];
+  v84 = *((_DWORD *)MEMORY[0xB0FC10] + 3);
+  v93 = v18;
+  v94 = *((_DWORD *)MEMORY[0xB0FC1C] + 1);
+  v95 = *((_DWORD *)MEMORY[0xB0FC1C] + 2);
+  v96 = *((_DWORD *)MEMORY[0xB0FC1C] + 3);
+  ScreenDialogToClient(hWnd, &v112);
+  GetWindowRect(hWnd, &Rect);
+  v19 = Rect.left - v112.left;
+  v20 = Rect.top - v112.top;
+  v21 = v16;
+  v22 = v12 * v84;
+  if ( v61 )
+  {
+    v15 = v97;
+    v17 = v99;
+    v21 = v98;
+    v22 += v83;
+  }
+  v110[1] = v21;
+  v106[1] = v20 + v21;
+  v110[3] = v22;
+  v106[3] = v22;
+  v110[0] = v15;
+  v111[0] = v93;
+  v111[1] = v94;
+  v106[0] = v19 + v15;
+  v110[2] = v17;
+  v68 = a2 != 0 ? -1 : 1;
+  v106[2] = v17;
+  v111[2] = v95;
+  v111[3] = v96;
+  v108[2] = v95;
+  v108[3] = v96;
+  v108[0] = v19 + v93;
+  v108[1] = v20 + v94;
+  v78 = 5;
+  if ( a2 )
+    v78 = 10;
+  v87 = 11;
+  if ( a2 )
+    v87 = 16;
+  v89 = 1;
+  if ( a2 )
+    v89 = 6;
+  v86 = 0;
+  if ( a2 )
+    v86 = 5;
+  v88 = 0;
+  if ( a2 )
+    v88 = 5;
+  v23 = hWnd;
+  MEMORY[0xAC1CAC] = 0;
+  EnumChildWindows(hWnd, EnumFunc, 0);
+  v24 = v70;
+  v74 = MEMORY[0xAC1CAC];
+  v75 = v70 - 1;
+  v81 = v83;
+  if ( v60 )
+    v81 = v83 + v84;
+  MEMORY[0xAC4894] = 0;
+  EnumChildWindows(v23, sub_60A250, 0);
+  HIBYTE(v67) = MEMORY[0xAC4894] >= 1;
+  if ( MEMORY[0xAC4894] < 1 )
+    ++v75;
+  v25 = v24 + 1;
+  v101 = v24 + 1;
+  v26 = (int *)__2_YAPAXI_Z(4 * (v24 + 3));
+  Block = v26;
+  v27 = 1;
+  if ( v24 + 1 > 0 )
+  {
+    v28 = v26;
+    do
+      *v28++ = v27++;
+    while ( v27 - 1 < v25 );
+  }
+  v29 = v24 + 3;
+  v30 = 0;
+  v26[v29 - 1] = 0;
+  v26[v25] = v27 + 1;
+  v26[v29 - 3] = 0;
+  if ( v24 + 3 > 0 )
+  {
+    do
+    {
+      if ( v30 <= *v26 )
+        v30 = *v26;
+      ++v26;
+      --v29;
+    }
+    while ( v29 );
+  }
+  v64 = 0;
+  v104 = v30 + 6;
+  if ( v30 + 6 > 0 )
+  {
+    v31 = (int)v65;
+    v32 = v85;
+    v33 = v69[0];
+    while ( 1 )
+    {
+      v35 = (int)v73;
+      if ( v60 )
+      {
+        v36 = Copy8Bytes(&v116, v107);
+        v102[0] = *v36;
+        v102[1] = v36[1];
+        v37 = v64 - *((_DWORD *)Block + v70);
+        if ( v37 < 0 )
+        {
+          DrawToSurfaceSHP(MEMORY[0x887310], v32, v35, a2 != 0 ? 6 : 0, v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        }
+        else if ( v37 >= 6 && !a2 )
+        {
+          DrawToSurfaceSHP(MEMORY[0x887310], v32, v35, 6u, v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        }
+      }
+      if ( v61 )
+      {
+        v38 = Copy8Bytes(&v114, &v97);
+        v76 = *v38;
+        v77 = v38[1];
+        v39 = v64 - *((_DWORD *)Block + v101);
+        if ( v39 < 0 )
+        {
+          DrawToSurfaceSHP(MEMORY[0x887310], v32, (int)v79, a2 == 0, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        }
+        else if ( v39 >= 6 )
+        {
+          DrawToSurfaceSHP(MEMORY[0x887310], v32, (int)v79, a2 != 0, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        }
+        else
+        {
+          v40 = Copy8Bytes(&v118, v109);
+          v76 = *v40;
+          v77 = v40[1];
+          DrawToSurfaceSHP(MEMORY[0x887310], v32, (int)v79, 1u, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          v41 = Copy8Bytes(&v117, &v97);
+          v76 = *v41;
+          v77 = v41[1];
+          DrawToSurfaceSHP(
+            MEMORY[0x887310],
+            v32,
+            (int)v105,
+            v86 + v68 * v39,
+            &v76,
+            v72,
+            1024,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0);
+        }
+      }
+      if ( v60 )
+      {
+        v42 = Copy8Bytes(&v119, v107);
+        v103[0] = *v42;
+        v103[1] = v42[1];
+        v43 = v64 - *((_DWORD *)Block + v70);
+        if ( v43 < 0 )
+        {
+          v43 = -1;
+LABEL_68:
+          DrawToSurfaceSHP(
+            MEMORY[0x887310],
+            v32,
+            (int)v73,
+            v89 + v68 * v43,
+            v103,
+            v72,
+            1024,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0);
+          goto LABEL_69;
+        }
+        if ( v43 < 6 )
+          goto LABEL_68;
+        if ( a2 )
+          DrawToSurfaceSHP(MEMORY[0x887310], v32, (int)v73, 0, v103, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+      }
+LABEL_69:
+      if ( v74 > 0 )
+      {
+        v44 = Block;
+        v45 = v81;
+        v65 = (int *)v74;
+        do
+        {
+          v46 = v64 - *v44;
+          v90[0] = v82;
+          v90[1] = v45;
+          if ( v46 < 0 )
+          {
+            DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, a2 != 0 ? 10 : 1, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          }
+          else if ( v46 >= 6 )
+          {
+            DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, a2 != 0 ? 1 : 10, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          }
+          else
+          {
+            DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, v78 + v68 * v46, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          }
+          ++v44;
+          v45 += v84;
+          v65 = (int *)((char *)v65 - 1);
+        }
+        while ( v65 );
+      }
+      if ( v74 < v75 )
+      {
+        v65 = (int *)((char *)Block + 4 * v74);
+        v47 = v81 + v84 * v74;
+        v48 = v75 - v74;
+        while ( 1 )
+        {
+          v92[0] = v82;
+          v49 = *v65;
+          v92[1] = v47;
+          v50 = v64 - v49;
+          if ( v64 - v49 >= 0 )
+          {
+            if ( v50 >= 6 )
+              goto LABEL_87;
+            if ( v50 != -1 )
+              break;
+          }
+          DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, a2 != 0 ? 0xA : 0, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+LABEL_89:
+          v47 += v84;
+          --v48;
+          ++v65;
+          if ( !v48 )
+            goto LABEL_90;
+        }
+        if ( v50 != -2 )
+        {
+          DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, v87 + v68 * v50, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          goto LABEL_89;
+        }
+LABEL_87:
+        DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, a2 != 0 ? 0 : 10, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        goto LABEL_89;
+      }
+LABEL_90:
+      if ( HIBYTE(v67) )
+      {
+        v51 = *((_DWORD *)MEMORY[0xB0FC28] + 1);
+        v91[0] = v82;
+        v52 = *((_DWORD *)Block + v70 - 1);
+        v91[1] = v51 - v84;
+        v53 = v64 - v52;
+        if ( v64 - v52 < 0 )
+          goto LABEL_94;
+        if ( v53 >= 6 )
+          goto LABEL_96;
+        if ( v53 == -1 )
+        {
+LABEL_94:
+          DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, a2 != 0 ? 10 : 1, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          goto LABEL_98;
+        }
+        if ( v53 == -2 )
+LABEL_96:
+          DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, a2 != 0 ? 1 : 10, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        else
+          DrawToSurfaceSHP(MEMORY[0x887310], v31, v33, v78 + v68 * v53, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+      }
+LABEL_98:
+      v54 = v63;
+      if ( !v63 )
+        goto LABEL_116;
+      v55 = Copy8Bytes(&v115, &v93);
+      v69[0] = *v55;
+      v69[1] = v55[1];
+      v56 = v64 - *((_DWORD *)Block + v70 + 2);
+      if ( v56 < 0 )
+      {
+        if ( a2 )
+        {
+          v57 = MEMORY[0xB0FB34];
+        }
+        else
+        {
+          if ( MEMORY[0x8A00A4] >= 800 )
+            v69[0] += 80;
+          v57 = v80;
+        }
+        goto LABEL_106;
+      }
+      if ( v56 >= 6 )
+      {
+        if ( a2 )
+        {
+          if ( MEMORY[0x8A00A4] >= 800 )
+            v69[0] += 80;
+          v57 = v80;
+        }
+        else
+        {
+          v57 = MEMORY[0xB0FB34];
+        }
+LABEL_106:
+        DrawToSurfaceSHP(MEMORY[0x887310], (int)v62, (int)v57, 0, v69, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        goto LABEL_116;
+      }
+      if ( MEMORY[0x8A00A4] >= 800 )
+        v69[0] += 80;
+      DrawToSurfaceSHP(
+        MEMORY[0x887310],
+        (int)v62,
+        (int)v80,
+        v88 + v68 * v56,
+        v69,
+        v72,
+        1024,
+        0,
+        0,
+        0,
+        1000,
+        0,
+        0,
+        0,
+        0,
+        0);
+LABEL_116:
+      (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)MEMORY[0x887308] + 92))(MEMORY[0x887308], 0, 0);
+      (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)MEMORY[0x887310] + 92))(MEMORY[0x887310], 0, 0);
+      (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))(
+        MEMORY[0x887308],
+        v106,
+        MEMORY[0x887310],
+        v110,
+        0,
+        1);
+      if ( v54 )
+        (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)MEMORY[0x887308] + 8))(
+          MEMORY[0x887308],
+          v108,
+          MEMORY[0x887310],
+          v111,
+          0,
+          1);
+      (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887310] + 96))(MEMORY[0x887310]);
+      (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887308] + 96))(MEMORY[0x887308]);
+      UpdateAudioVideo();
+      Sleep(0x1Eu);
+      if ( ++v64 >= v104 )
+        break;
+      v32 = v85;
+    }
+  }
+  __3_YAXPAX_Z(Block);
+  if ( !a2 )
+    return SendMessageA(hWnd, 0x4EDu, 0, 0);
+  PlayVocClass(*((_DWORD *)MEMORY[0x8871E0] + 468), 0x2000, 1.0, 0);
+  while ( (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 40))(MEMORY[0x887640]) )
+    (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]);
+  return SendMessageA(hWnd, 0x4ECu, 0, 0);
+}
 }
 } // namespace gamemd
 

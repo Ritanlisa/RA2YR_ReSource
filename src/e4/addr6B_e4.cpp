@@ -2539,44 +2539,1415 @@ namespace gamemd {
 int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
-// {
-//   HWND WindowA; // eax
-//   HWND v6; // esi
-//   int v7; // edi
-//   char *v8; // eax
-//   char *v9; // esi
-//   int v10; // esi
-//   _DWORD *v11; // eax
-//   CCINIClass *v12; // eax
-//   int Int_Overwrite; // eax
-//   int v14; // eax
-//   int v15; // esi
-//   char *i; // eax
-//   _DWORD *v17; // eax
-//   _DWORD *v18; // eax
-//   _DWORD *v19; // esi
-//   wchar_t *StringCSF; // eax
-//   wchar_t *v21; // eax
-//   IID **v22; // esi
-//   int v23; // eax
-//   HMODULE LibraryA; // eax
-//   HMODULE v25; // edi
-//   void (*ProcAddress)(void); // eax
-//   TClassFactory_VCStreamClass__ *v27; // eax
-//   IUnknown *v28; // eax
-//   TClassFactory_VWaveClass__ *v29; // eax
-//   IUnknown *v30; // eax
-//   TClassFactory_VTerrainTypeClass__ *v31; // eax
-//   IUnknown *v32; // eax
-//   TClassFactory_VTerrainClass__ *v33; // eax
-//   IUnknown *v34; // eax
-//   TClassFactory_VSuperWeaponTypeClass__ *v35; // eax
-//   IUnknown *v36; // eax
-//   TClassFactory_VSuperClass__ *v37; // eax
-//   IUnknown *v38; ... [65684 chars total]
-// end truncated pseudocode
+int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
+{
+  HWND WindowA; // eax
+  HWND v6; // esi
+  int v7; // edi
+  char *v8; // eax
+  char *v9; // esi
+  int v10; // esi
+  _DWORD *v11; // eax
+  CCINIClass *v12; // eax
+  int Int_Overwrite; // eax
+  int v14; // eax
+  int v15; // esi
+  char *i; // eax
+  _DWORD *v17; // eax
+  _DWORD *v18; // eax
+  _DWORD *v19; // esi
+  wchar_t *StringCSF; // eax
+  wchar_t *v21; // eax
+  IID **v22; // esi
+  int v23; // eax
+  HMODULE LibraryA; // eax
+  HMODULE v25; // edi
+  void (*ProcAddress)(void); // eax
+  TClassFactory_VCStreamClass__ *v27; // eax
+  IUnknown *v28; // eax
+  TClassFactory_VWaveClass__ *v29; // eax
+  IUnknown *v30; // eax
+  TClassFactory_VTerrainTypeClass__ *v31; // eax
+  IUnknown *v32; // eax
+  TClassFactory_VTerrainClass__ *v33; // eax
+  IUnknown *v34; // eax
+  TClassFactory_VSuperWeaponTypeClass__ *v35; // eax
+  IUnknown *v36; // eax
+  TClassFactory_VSuperClass__ *v37; // eax
+  IUnknown *v38; // eax
+  TClassFactory_VTactical__ *v39; // eax
+  IUnknown *v40; // eax
+  TClassFactory_VCellClass__ *v41; // eax
+  IUnknown *v42; // eax
+  TClassFactory_VEMPulseClass__ *v43; // eax
+  IUnknown *v44; // eax
+  TClassFactory_VLightSourceClass__ *v45; // eax
+  IUnknown *v46; // eax
+  TClassFactory_VSideClass__ *v47; // eax
+  IUnknown *v48; // eax
+  TClassFactory_VTiberiumClass__ *v49; // eax
+  IUnknown *v50; // eax
+  TClassFactory_VTubeClass__ *v51; // eax
+  IUnknown *v52; // eax
+  TClassFactory_VCampaignClass__ *v53; // eax
+  IUnknown *v54; // eax
+  TClassFactory_VBuildingLightClass__ *v55; // eax
+  IUnknown *v56; // eax
+  TClassFactory_VWaypointPathClass__ *v57; // eax
+  IUnknown *v58; // eax
+  TClassFactory_VTemporalClass__ *v59; // eax
+  IUnknown *v60; // eax
+  TClassFactory_VAirstrikeClass__ *v61; // eax
+  IUnknown *v62; // eax
+  TClassFactory_VSpawnManagerClass__ *v63; // eax
+  IUnknown *v64; // eax
+  TClassFactory_VSlaveManagerClass__ *v65; // eax
+  IUnknown *Instance; // eax
+  TClassFactory_VCaptureManagerClass__ *v67; // eax
+  IUnknown *v68; // eax
+  TClassFactory_VDiskLaserClass__ *v69; // eax
+  IUnknown *v70; // eax
+  TClassFactory_VParasiteClass__ *v71; // eax
+  IUnknown *v72; // eax
+  TClassFactory_VBombClass__ *v73; // eax
+  IUnknown *v74; // eax
+  TClassFactory_VRadSiteClass__ *v75; // eax
+  IUnknown *v76; // eax
+  TClassFactory_VTEventClass__ *v77; // eax
+  IUnknown *v78; // eax
+  TClassFactory_VVoxelAnimTypeClass__ *v79; // eax
+  IUnknown *v80; // eax
+  TClassFactory_VVoxelAnimClass__ *v81; // eax
+  IUnknown *v82; // eax
+  TClassFactory_VTActionClass__ *v83; // eax
+  IUnknown *v84; // eax
+  TClassFactory_VTriggerClass__ *v85; // eax
+  IUnknown *v86; // eax
+  TClassFactory_VTriggerTypeClass__ *v87; // eax
+  IUnknown *v88; // eax
+  TClassFactory_VScriptClass__ *v89; // eax
+  IUnknown *v90; // eax
+  TClassFactory_VScriptTypeClass__ *v91; // eax
+  IUnknown *v92; // eax
+  TClassFactory_VTagClass__ *v93; // eax
+  IUnknown *v94; // eax
+  TClassFactory_VTagTypeClass__ *v95; // eax
+  IUnknown *v96; // eax
+  TClassFactory_VTeamClass__ *v97; // eax
+  IUnknown *v98; // eax
+  TClassFactory_VTeamTypeClass__ *v99; // eax
+  IUnknown *v100; // eax
+  TClassFactory_VTaskForceClass__ *v101; // eax
+  IUnknown *v102; // eax
+  TClassFactory_VUnitTypeClass__ *v103; // eax
+  IUnknown *v104; // eax
+  TClassFactory_VBuildingTypeClass__ *v105; // eax
+  IUnknown *v106; // eax
+  TClassFactory_VAircraftTypeClass__ *v107; // eax
+  IUnknown *v108; // eax
+  TClassFactory_VInfantryTypeClass__ *v109; // eax
+  IUnknown *v110; // eax
+  TClassFactory_VBulletTypeClass__ *v111; // eax
+  IUnknown *v112; // eax
+  TClassFactory_VIsometricTileTypeClass__ *v113; // eax
+  IUnknown *v114; // eax
+  TClassFactory_VOverlayTypeClass__ *v115; // eax
+  IUnknown *v116; // eax
+  TClassFactory_VSmudgeTypeClass__ *v117; // eax
+  IUnknown *v118; // eax
+  TClassFactory_VUnitClass__ *v119; // eax
+  IUnknown *v120; // eax
+  TClassFactory_VBuildingClass__ *v121; // eax
+  IUnknown *v122; // eax
+  TClassFactory_VAircraftClass__ *v123; // eax
+  IUnknown *v124; // eax
+  TClassFactory_VInfantryClass__ *v125; // eax
+  IUnknown *v126; // eax
+  TClassFactory_VAnimClass__ *v127; // eax
+  IUnknown *v128; // eax
+  TClassFactory_VAnimTypeClass__ *v129; // eax
+  IUnknown *v130; // eax
+  TClassFactory_VHouseTypeClass__ *v131; // eax
+  IUnknown *v132; // eax
+  TClassFactory_VHouseClass__ *v133; // eax
+  IUnknown *v134; // eax
+  TClassFactory_VDriveLocomotionClass__ *v135; // eax
+  IUnknown *v136; // eax
+  TClassFactory_VJumpjetLocomotionClass__ *v137; // eax
+  IUnknown *v138; // eax
+  TClassFactory_VHoverLocomotionClass__ *v139; // eax
+  IUnknown *v140; // eax
+  TClassFactory_VRocketLocomotionClass__ *v141; // eax
+  IUnknown *v142; // eax
+  TClassFactory_VTunnelLocomotionClass__ *v143; // eax
+  IUnknown *v144; // eax
+  TClassFactory_VWalkLocomotionClass__ *v145; // eax
+  IUnknown *v146; // eax
+  TClassFactory_VDropPodLocomotionClass__ *v147; // eax
+  IUnknown *v148; // eax
+  TClassFactory_VFlyLocomotionClass__ *v149; // eax
+  IUnknown *v150; // eax
+  TClassFactory_VTeleportLocomotionClass__ *v151; // eax
+  IUnknown *v152; // eax
+  TClassFactory_VMechLocomotionClass__ *v153; // eax
+  IUnknown *v154; // eax
+  TClassFactory_VShipLocomotionClass__ *v155; // eax
+  IUnknown *v156; // eax
+  TClassFactory_VBulletClass__ *v157; // eax
+  IUnknown *v158; // eax
+  TClassFactory_VFactoryClass__ *v159; // eax
+  IUnknown *v160; // eax
+  TClassFactory_VWarheadTypeClass__ *v161; // eax
+  IUnknown *v162; // eax
+  TClassFactory_VWeaponTypeClass__ *v163; // eax
+  IUnknown *v164; // eax
+  TClassFactory_VParticleClass__ *v165; // eax
+  IUnknown *v166; // eax
+  TClassFactory_VParticleTypeClass__ *v167; // eax
+  IUnknown *v168; // eax
+  TClassFactory_VParticleSystemClass__ *v169; // eax
+  IUnknown *v170; // eax
+  TClassFactory_VParticleSystemTypeClass__ *v171; // eax
+  IUnknown *v172; // eax
+  TClassFactory_VAITriggerTypeClass__ *v173; // eax
+  IUnknown *v174; // eax
+  TClassFactory_VNeuronClass__ *v175; // eax
+  IUnknown *v176; // eax
+  TClassFactory_VFoggedObjectClass__ *v177; // eax
+  IUnknown *v178; // eax
+  TClassFactory_VAlphaShapeClass__ *v179; // eax
+  IUnknown *v180; // eax
+  wchar_t *v181; // eax
+  int v182; // esi
+  _DWORD *v183; // eax
+  _DWORD *v184; // eax
+  std::codecvt_base *v185; // ecx
+  wchar_t *v186; // eax
+  wchar_t *v187; // eax
+  bool v188; // al
+  wchar_t *v189; // eax
+  int edi325; // edi
+  wchar_t *v191; // eax
+  int eax333; // eax
+  wchar_t *v193; // eax
+  Frame *v194; // ecx
+  _DWORD *v195; // eax
+  _DWORD *v196; // eax
+  CCINIClass *v197; // esi
+  _DWORD *v198; // eax
+  _DWORD *v199; // eax
+  MouseClass *v190; // eax
+  int v201; // ecx
+  ObjectClass *v192; // eax
+  Frame *v203; // ecx
+  wchar_t *v204; // eax
+  wchar_t *v205; // [esp-4h] [ebp-E40h]
+  wchar_t *v206; // [esp-4h] [ebp-E40h]
+  wchar_t *v207; // [esp-4h] [ebp-E40h]
+  wchar_t *v208; // [esp-4h] [ebp-E40h]
+  wchar_t *v209; // [esp-4h] [ebp-E40h]
+  CampaignScore *v210; // [esp+4h] [ebp-E38h]
+  _BYTE v211[516]; // [esp+60h] [ebp-DDCh] BYREF
+  RAMFileClass v212; // [esp+264h] [ebp-BD8h] BYREF
+  void *v213[95]; // [esp+284h] [ebp-BB8h] BYREF
+  LPVOID ppv[2]; // [esp+400h] [ebp-A3Ch] BYREF
+  DynamicVector dwRegister; // [esp+408h] [ebp-A34h] BYREF
+  __int16 v216; // [esp+434h] [ebp-A08h]
+  INIClass String[8]; // [esp+444h] [ebp-9F8h] BYREF
+  ObjectClass aP2; // [esp+680h] [ebp-7BCh] BYREF
+  CCINIClass *aP1; // [esp+730h] [ebp-70Ch]
+  char Drive[4]; // [esp+73Ch] [ebp-700h] BYREF
+  char Dir[260]; // [esp+740h] [ebp-6FCh] BYREF
+  CHAR Filename[132]; // [esp+844h] [ebp-5F8h] BYREF
+  wchar_t Buffer[512]; // [esp+8C8h] [ebp-574h] BYREF
+  char *FullPath; // [esp+CC8h] [ebp-174h] BYREF
+  char v225; // [esp+CCCh] [ebp-170h] BYREF
+  CHAR PathName[260]; // [esp+D1Ch] [ebp-120h] BYREF
+  int v227; // [esp+E20h] [ebp-1Ch]
+  CPPEH_RECORD ms_exc; // [esp+E24h] [ebp-18h]
+
+  g_hInstance = (ObjectClass *)hInstance;
+  dword_B730E8 = GetCurrentThreadId();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  Debug::Log();
+  if ( !CopyProtection::CheckLauncher() )
+  {
+LABEL_2:
+    Debug::Log();
+    return 0;
+  }
+  *(_DWORD *)&stru_B05488.__pad_579C[4288] = CreateMutexA(0, 0, &stru_830620.__pad_579C[45400]);
+  if ( GetLastError() == 183 )
+  {
+    WindowA = FindWindowA(&stru_830620.__pad_579C[45400], 0);
+    v6 = WindowA;
+    if ( WindowA )
+    {
+      SetForegroundWindow(WindowA);
+      ShowWindow(v6, 9);
+    }
+    if ( *(_DWORD *)&stru_B05488.__pad_579C[4288] )
+    {
+      CloseHandle(*(HANDLE *)&stru_B05488.__pad_579C[4288]);
+      *(_DWORD *)&stru_B05488.__pad_579C[4288] = 0;
+    }
+    goto LABEL_2;
+  }
+  Debug::Log();
+  do
+  {
+    *(_DWORD *)&stru_B05488.__pad_579C[4292] = OpenMutexA(0x1F0001u, 0, &stru_830620.__pad_579C[45300]);
+    if ( *(_DWORD *)&stru_B05488.__pad_579C[4292] )
+    {
+      Debug::Log();
+      if ( WaitForSingleObject(*(HANDLE *)&stru_B05488.__pad_579C[4292], 0x7530u) == -1 )
+      {
+        Debug::Log();
+        CloseHandle(*(HANDLE *)&stru_B05488.__pad_579C[4292]);
+        *(_DWORD *)&stru_B05488.__pad_579C[4292] = 0;
+      }
+    }
+    if ( *(_DWORD *)&stru_B05488.__pad_579C[4292] )
+      break;
+    *(_DWORD *)&stru_B05488.__pad_579C[4292] = CreateMutexA(0, 0, &stru_830620.__pad_579C[45300]);
+    if ( GetLastError() == 183 )
+    {
+      CloseHandle(*(HANDLE *)&stru_B05488.__pad_579C[4292]);
+      *(_DWORD *)&stru_B05488.__pad_579C[4292] = 0;
+      Sleep(0x9C4u);
+    }
+    else
+    {
+      Debug::Log();
+    }
+  }
+  while ( !*(_DWORD *)&stru_B05488.__pad_579C[4292] );
+  Debug::Log();
+  _controlfp(0x300u, 0x300u);
+  CRT_FPU_InitControlWord();
+  GetModuleFileNameA(hInstance, Filename, 0x84u);
+  v7 = 1;
+  v227 = 1;
+  FullPath = Filename;
+  v8 = strtok(lpCmdLine, (ObjectClass *)&stru_830620.__pad_3BC[56]);
+  v9 = &v225;
+  do
+  {
+    if ( !v8 )
+      break;
+    *(_DWORD *)v9 = String::Trim(v8);
+    ++v7;
+    v9 += 4;
+    v8 = strtok(0, (ObjectClass *)&stru_830620.__pad_3BC[56]);
+  }
+  while ( v7 < 20 );
+  v227 = v7;
+  _splitpath(FullPath, Drive, Dir, 0, 0);
+  _makepath(PathName, Drive, Dir, 0, 0);
+  SetCurrentDirectoryA(PathName);
+  v10 = 1;
+  if ( !ParseCommandLine(v7, (int)&FullPath) )
+    goto LABEL_374;
+  v11 = (_DWORD *)__2_YAPAXI_Z(0x24u);
+  if ( v11 )
+    v12 = (CCINIClass *)RawFileClass::Construct(v11, (RawFileClass *)&stru_826420.__pad_20[4]);
+  else
+    v12 = 0;
+  aP1 = v12;
+  CCINIClass::Load(&stru_87C374.__pad_579C[21936], (MultiplayerGameMode *)v12, 0, 0);
+  stru_830620.__pad_579C[44208] = INIClass::ReadBool_Overwrite(
+                                    (int)&stru_87C374.__pad_579C[21936],
+                                    (unsigned __int8 *)&stru_830620.__pad_14B0[5776],
+                                    (CCINIClass *)&stru_830620.__pad_579C[45164],
+                                    1);
+  HouseClass_Player.__pad_5568[23215] = INIClass::ReadBool_Overwrite(
+                                          (int)&stru_87C374.__pad_579C[21936],
+                                          (unsigned __int8 *)&stru_830620.__pad_14B0[5776],
+                                          (CCINIClass *)&stru_830620.__pad_14B0[5644],
+                                          0);
+  *(_DWORD *)&HouseClass_Player.__pad_5568[22736] = INIClass::ReadInt_Overwrite(
+                                                      (int)&stru_87C374.__pad_579C[21936],
+                                                      (unsigned __int8 *)&stru_830620.__pad_14B0[5776],
+                                                      (CCINIClass *)&stru_830620.__pad_14B0[5784],
+                                                      *(INIClass **)&HouseClass_Player.__pad_5568[22736]);
+  *(_DWORD *)&HouseClass_Player.__pad_5568[22740] = INIClass::ReadInt_Overwrite(
+                                                      (int)&stru_87C374.__pad_579C[21936],
+                                                      (unsigned __int8 *)&stru_830620.__pad_14B0[5776],
+                                                      (CCINIClass *)&stru_830620.__pad_14B0[5760],
+                                                      *(INIClass **)&HouseClass_Player.__pad_5568[22740]);
+  Int_Overwrite = INIClass::ReadInt_Overwrite(
+                    (int)&stru_87C374.__pad_579C[21936],
+                    (unsigned __int8 *)&stru_830620.__pad_14B0[5520],
+                    (CCINIClass *)&stru_830620.__pad_14B0[5452],
+                    0);
+  if ( Int_Overwrite > 0 )
+  {
+    v14 = Int_Overwrite + 0x4000;
+    if ( v14 >= 0x4000 && v14 < 0x8000 )
+      Network::GetField(&HouseClass_Player.__pad_5568[22284], v14);
+  }
+  memset(String, 0, sizeof(String));
+  if ( INIClass::GetString(
+         (unsigned __int8 ***)&stru_87C374.__pad_579C[21936],
+         (INIClass *)&stru_830620.__pad_14B0[5520],
+         (unsigned __int8 *)&stru_830620.__pad_14B0[5436],
+         0,
+         String,
+         512)
+    && String
+    && strlen(String[0].__pad_0) )
+  {
+    v15 = 0;
+    for ( i = strtok(String[0].__pad_0, &stru_826598); i; i = strtok(0, &stru_826598) )
+    {
+      sscanf(i, (const char *const)&stru_825BAC.owningHouseIndex, dwRegister.__pad_20);
+      dwRegister.__pad_20[v15++ + 4] = dwRegister.__pad_20[0];
+    }
+    if ( v15 >= 4 )
+    {
+      *(_DWORD *)&HouseClass_Player.__pad_5568[17224] = 1;
+      dwRegister.field_28 = -1;
+      v216 = -1;
+      v17 = NetworkAddress::Assign(&dwRegister.field_10, &dwRegister.__pad_20[4], (IUnknown *)&dwRegister.field_28, 0);
+      *(_DWORD *)&HouseClass_Player.__pad_5568[17228] = *v17;
+      *(_DWORD *)&HouseClass_Player.__pad_5568[17232] = v17[1];
+      *(_DWORD *)&HouseClass_Player.__pad_5568[17236] = v17[2];
+    }
+  }
+  v18 = (_DWORD *)__2_YAPAXI_Z(0x320u);
+  v19 = v18;
+  if ( v18 )
+  {
+    NetworkSession::ResetState(v18);
+    v19[199] = 1;
+    *(_DWORD *)&stru_87C374.__pad_14B0[8012] = v19;
+  }
+  else
+  {
+    *(_DWORD *)&stru_87C374.__pad_14B0[8012] = 0;
+  }
+  if ( DiskSpace::CheckAvailable() < 0x2000 )
+  {
+    StringCSF = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[45116], 0, &stru_830620.__pad_579C[45136], 1931);
+    swprintf(Buffer, (const size_t)StringCSF, 0, v210);
+    v21 = GetStringCSF(g_Str_TXT_SHORT_TITLE, 0, &stru_830620.__pad_579C[45136], 1932);
+    if ( WideMessageBox(0, Buffer, v21, 0x24u) == 7 )
+    {
+      OleUninitialize();
+      return 1;
+    }
+  }
+  OleInitialize(0);
+  v22 = &off_7F3710;
+  while ( 1 )
+  {
+    ppv[0] = 0;
+    v23 = COMClassFactory::Register(ppv, *v22, 0, 7u);
+    LOBYTE(dwRegister.field_8) = v23 < 0;
+    if ( v23 < 0 )
+    {
+      LOBYTE(dwRegister.field_8) = 0;
+      LibraryA = LoadLibraryA(v22[1]->Data2);
+      v25 = LibraryA;
+      if ( LibraryA )
+      {
+        ProcAddress = (void (*)(void))GetProcAddress(LibraryA, &stru_830620.__pad_579C[45096]);
+        if ( !ProcAddress || (ProcAddress(), COMClassFactory::Register(ppv, *v22, 0, 7u) < 0) )
+          LOBYTE(dwRegister.field_8) = 1;
+        FreeLibrary(v25);
+      }
+      else
+      {
+        LOBYTE(dwRegister.field_8) = 1;
+      }
+    }
+    if ( LOBYTE(dwRegister.field_8) )
+      break;
+    if ( !ppv[0] )
+      WinAPI::Wrapper(-2147467261);
+    (*(void (__stdcall **)(LPVOID))(*(_DWORD *)ppv[0] + 8))(ppv[0]);
+    ppv[0] = 0;
+    COM_SafeRelease((int *)ppv);
+    v22 += 2;
+    if ( (int)v22 >= (int)&stru_7F3718 )
+      goto LABEL_56;
+  }
+  COM_SafeRelease((int *)ppv);
+LABEL_56:
+  RegisterClassesCOM();
+  CoRegisterClassObject(&rguid, (LPUNKNOWN)&HouseClass_Player.__pad_5568[22036], 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v27 = (TClassFactory_VCStreamClass__ *)__2_YAPAXI_Z(8u);
+  if ( v27 )
+    v28 = (IUnknown *)ClassFactory_CStream::Construct(v27);
+  else
+    v28 = 0;
+  CoRegisterClassObject(&stru_7E9540, v28, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v29 = (TClassFactory_VWaveClass__ *)__2_YAPAXI_Z(8u);
+  if ( v29 )
+    v30 = (IUnknown *)ClassFactory_Wave::Construct(v29);
+  else
+    v30 = 0;
+  CoRegisterClassObject(&stru_7E9720, v30, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v31 = (TClassFactory_VTerrainTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v31 )
+    v32 = (IUnknown *)COMClassFactory_3::Construct(v31);
+  else
+    v32 = 0;
+  CoRegisterClassObject(&stru_7E95E0, v32, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v33 = (TClassFactory_VTerrainClass__ *)__2_YAPAXI_Z(8u);
+  if ( v33 )
+    v34 = (IUnknown *)COMClassFactory_4::Construct(v33);
+  else
+    v34 = 0;
+  CoRegisterClassObject(&stru_7E9740, v34, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v35 = (TClassFactory_VSuperWeaponTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v35 )
+    v36 = (IUnknown *)COMClassFactory_5::Construct(v35);
+  else
+    v36 = 0;
+  CoRegisterClassObject(&stru_7E9570, v36, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v37 = (TClassFactory_VSuperClass__ *)__2_YAPAXI_Z(8u);
+  if ( v37 )
+    v38 = (IUnknown *)COMClassFactory_6::Construct(v37);
+  else
+    v38 = 0;
+  CoRegisterClassObject(&stru_7E9580, v38, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v39 = (TClassFactory_VTactical__ *)__2_YAPAXI_Z(8u);
+  if ( v39 )
+    v40 = (IUnknown *)COMClassFactory_7::Construct(v39);
+  else
+    v40 = 0;
+  CoRegisterClassObject(&stru_7E9950, v40, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v41 = (TClassFactory_VCellClass__ *)__2_YAPAXI_Z(8u);
+  if ( v41 )
+    v42 = (IUnknown *)COMClassFactory_8::Construct(v41);
+  else
+    v42 = 0;
+  CoRegisterClassObject(&stru_7E9930, v42, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v43 = (TClassFactory_VEMPulseClass__ *)__2_YAPAXI_Z(8u);
+  if ( v43 )
+    v44 = (IUnknown *)COMClassFactory_9::Construct(v43);
+  else
+    v44 = 0;
+  CoRegisterClassObject(&stru_7E9940, v44, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v45 = (TClassFactory_VLightSourceClass__ *)__2_YAPAXI_Z(8u);
+  if ( v45 )
+    v46 = (IUnknown *)COMClassFactory_10::Construct(v45);
+  else
+    v46 = 0;
+  CoRegisterClassObject(&stru_7E98F0, v46, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v47 = (TClassFactory_VSideClass__ *)__2_YAPAXI_Z(8u);
+  if ( v47 )
+    v48 = (IUnknown *)WinMain_Helper_6BFD40(v47);
+  else
+    v48 = 0;
+  CoRegisterClassObject(&stru_7E9910, v48, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v49 = (TClassFactory_VTiberiumClass__ *)__2_YAPAXI_Z(8u);
+  if ( v49 )
+    v50 = (IUnknown *)WinMain_Helper_6BFEC0(v49);
+  else
+    v50 = 0;
+  CoRegisterClassObject(&stru_7E9920, v50, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v51 = (TClassFactory_VTubeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v51 )
+    v52 = (IUnknown *)WinMain_Helper_6C0040(v51);
+  else
+    v52 = 0;
+  CoRegisterClassObject(&stru_7E9750, v52, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v53 = (TClassFactory_VCampaignClass__ *)__2_YAPAXI_Z(8u);
+  if ( v53 )
+    v54 = (IUnknown *)WinMain_Helper_6C01C0(v53);
+  else
+    v54 = 0;
+  CoRegisterClassObject(&stru_7E9900, v54, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v55 = (TClassFactory_VBuildingLightClass__ *)__2_YAPAXI_Z(8u);
+  if ( v55 )
+    v56 = (IUnknown *)WinMain_Helper_6C0340(v55);
+  else
+    v56 = 0;
+  CoRegisterClassObject(&stru_7E9730, v56, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v57 = (TClassFactory_VWaypointPathClass__ *)__2_YAPAXI_Z(8u);
+  if ( v57 )
+    v58 = (IUnknown *)WinMain_Helper_6C04C0(v57);
+  else
+    v58 = 0;
+  CoRegisterClassObject(&stru_7E9850, v58, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v59 = (TClassFactory_VTemporalClass__ *)__2_YAPAXI_Z(8u);
+  if ( v59 )
+    v60 = (IUnknown *)WinMain_Helper_6C0640(v59);
+  else
+    v60 = 0;
+  CoRegisterClassObject(&stru_7E98D0, v60, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v61 = (TClassFactory_VAirstrikeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v61 )
+    v62 = (IUnknown *)WinMain_Helper_6C07C0(v61);
+  else
+    v62 = 0;
+  CoRegisterClassObject(&stru_7E98E0, v62, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v63 = (TClassFactory_VSpawnManagerClass__ *)__2_YAPAXI_Z(8u);
+  if ( v63 )
+    v64 = (IUnknown *)WinMain_Helper_6C0940(v63);
+  else
+    v64 = 0;
+  CoRegisterClassObject(&stru_7E9860, v64, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v65 = (TClassFactory_VSlaveManagerClass__ *)__2_YAPAXI_Z(8u);
+  if ( v65 )
+    Instance = (IUnknown *)COMClassFactory::CreateInstance(v65);
+  else
+    Instance = 0;
+  CoRegisterClassObject(&stru_7E9870, Instance, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v67 = (TClassFactory_VCaptureManagerClass__ *)__2_YAPAXI_Z(8u);
+  if ( v67 )
+    v68 = (IUnknown *)WinMain_Helper_6C0C40(v67);
+  else
+    v68 = 0;
+  CoRegisterClassObject(&stru_7E9880, v68, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v69 = (TClassFactory_VDiskLaserClass__ *)__2_YAPAXI_Z(8u);
+  if ( v69 )
+    v70 = (IUnknown *)WinMain_Helper_6C0DC0(v69);
+  else
+    v70 = 0;
+  CoRegisterClassObject(&stru_7E9890, v70, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v71 = (TClassFactory_VParasiteClass__ *)__2_YAPAXI_Z(8u);
+  if ( v71 )
+    v72 = (IUnknown *)WinMain_Helper_6C0F40(v71);
+  else
+    v72 = 0;
+  CoRegisterClassObject(&stru_7E98A0, v72, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v73 = (TClassFactory_VBombClass__ *)__2_YAPAXI_Z(8u);
+  if ( v73 )
+    v74 = (IUnknown *)WinMain_Helper_6C10C0(v73);
+  else
+    v74 = 0;
+  CoRegisterClassObject(&stru_7E98B0, v74, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v75 = (TClassFactory_VRadSiteClass__ *)__2_YAPAXI_Z(8u);
+  if ( v75 )
+    v76 = (IUnknown *)WinMain_Helper_6C1240(v75);
+  else
+    v76 = 0;
+  CoRegisterClassObject(&stru_7E98C0, v76, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v77 = (TClassFactory_VTEventClass__ *)__2_YAPAXI_Z(8u);
+  if ( v77 )
+    v78 = (IUnknown *)WinMain_Helper_6C13C0(v77);
+  else
+    v78 = 0;
+  CoRegisterClassObject(&stru_7E9810, v78, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v79 = (TClassFactory_VVoxelAnimTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v79 )
+    v80 = (IUnknown *)WinMain_Helper_6C1540(v79);
+  else
+    v80 = 0;
+  CoRegisterClassObject(&stru_7E9790, v80, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v81 = (TClassFactory_VVoxelAnimClass__ *)__2_YAPAXI_Z(8u);
+  if ( v81 )
+    v82 = (IUnknown *)WinMain_Helper_6C16C0(v81);
+  else
+    v82 = 0;
+  CoRegisterClassObject(&stru_7E9650, v82, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v83 = (TClassFactory_VTActionClass__ *)__2_YAPAXI_Z(8u);
+  if ( v83 )
+    v84 = (IUnknown *)WinMain_Helper_6C1840(v83);
+  else
+    v84 = 0;
+  CoRegisterClassObject(&stru_7E9800, v84, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v85 = (TClassFactory_VTriggerClass__ *)__2_YAPAXI_Z(8u);
+  if ( v85 )
+    v86 = (IUnknown *)WinMain_Helper_6C19C0(v85);
+  else
+    v86 = 0;
+  CoRegisterClassObject(&stru_7E97E0, v86, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v87 = (TClassFactory_VTriggerTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v87 )
+    v88 = (IUnknown *)WinMain_Helper_6C1B40(v87);
+  else
+    v88 = 0;
+  CoRegisterClassObject(&stru_7E97F0, v88, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v89 = (TClassFactory_VScriptClass__ *)__2_YAPAXI_Z(8u);
+  if ( v89 )
+    v90 = (IUnknown *)WinMain_Helper_6C1CC0(v89);
+  else
+    v90 = 0;
+  CoRegisterClassObject(&stru_7E97A0, v90, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v91 = (TClassFactory_VScriptTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v91 )
+    v92 = (IUnknown *)WinMain_Helper_6C1E40(v91);
+  else
+    v92 = 0;
+  CoRegisterClassObject(&stru_7E97B0, v92, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v93 = (TClassFactory_VTagClass__ *)__2_YAPAXI_Z(8u);
+  if ( v93 )
+    v94 = (IUnknown *)WinMain_Helper_6C1FC0(v93);
+  else
+    v94 = 0;
+  CoRegisterClassObject(&stru_7E97C0, v94, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v95 = (TClassFactory_VTagTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v95 )
+    v96 = (IUnknown *)WinMain_Helper_6C2140(v95);
+  else
+    v96 = 0;
+  CoRegisterClassObject(&stru_7E97D0, v96, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v97 = (TClassFactory_VTeamClass__ *)__2_YAPAXI_Z(8u);
+  if ( v97 )
+    v98 = (IUnknown *)WinMain_Helper_6C22C0(v97);
+  else
+    v98 = 0;
+  CoRegisterClassObject(&stru_7E9760, v98, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v99 = (TClassFactory_VTeamTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v99 )
+    v100 = (IUnknown *)WinMain_Helper_6C2440(v99);
+  else
+    v100 = 0;
+  CoRegisterClassObject(&stru_7E9780, v100, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v101 = (TClassFactory_VTaskForceClass__ *)__2_YAPAXI_Z(8u);
+  if ( v101 )
+    v102 = (IUnknown *)WinMain_Helper_6C25C0(v101);
+  else
+    v102 = 0;
+  CoRegisterClassObject(&stru_7E9770, v102, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v103 = (TClassFactory_VUnitTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v103 )
+    v104 = (IUnknown *)WinMain_Helper_6C2740(v103);
+  else
+    v104 = 0;
+  CoRegisterClassObject(&stru_7E9590, v104, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v105 = (TClassFactory_VBuildingTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v105 )
+    v106 = (IUnknown *)WinMain_Helper_6C28C0(v105);
+  else
+    v106 = 0;
+  CoRegisterClassObject(&stru_7E95C0, v106, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v107 = (TClassFactory_VAircraftTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v107 )
+    v108 = (IUnknown *)WinMain_Helper_6C2A40(v107);
+  else
+    v108 = 0;
+  CoRegisterClassObject(&stru_7E95B0, v108, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v109 = (TClassFactory_VInfantryTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v109 )
+    v110 = (IUnknown *)WinMain_Helper_6C2BC0(v109);
+  else
+    v110 = 0;
+  CoRegisterClassObject(&stru_7E95A0, v110, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v111 = (TClassFactory_VBulletTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v111 )
+    v112 = (IUnknown *)WinMain_Helper_6C2D40(v111);
+  else
+    v112 = 0;
+  CoRegisterClassObject(&stru_7E95D0, v112, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v113 = (TClassFactory_VIsometricTileTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v113 )
+    v114 = (IUnknown *)WinMain_Helper_6C2EC0(v113);
+  else
+    v114 = 0;
+  CoRegisterClassObject(&stru_7E95F0, v114, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v115 = (TClassFactory_VOverlayTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v115 )
+    v116 = (IUnknown *)WinMain_Helper_6C3040(v115);
+  else
+    v116 = 0;
+  CoRegisterClassObject(&stru_7E9600, v116, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v117 = (TClassFactory_VSmudgeTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v117 )
+    v118 = (IUnknown *)WinMain_Helper_6C31C0(v117);
+  else
+    v118 = 0;
+  CoRegisterClassObject(&stru_7E9610, v118, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v119 = (TClassFactory_VUnitClass__ *)__2_YAPAXI_Z(8u);
+  if ( v119 )
+    v120 = (IUnknown *)WinMain_Helper_6C3340(v119);
+  else
+    v120 = 0;
+  CoRegisterClassObject(&stru_7E96F0, v120, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v121 = (TClassFactory_VBuildingClass__ *)__2_YAPAXI_Z(8u);
+  if ( v121 )
+    v122 = (IUnknown *)WinMain_Helper_6C34C0(v121);
+  else
+    v122 = 0;
+  CoRegisterClassObject(&stru_7E96A0, v122, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v123 = (TClassFactory_VAircraftClass__ *)__2_YAPAXI_Z(8u);
+  if ( v123 )
+    v124 = (IUnknown *)WinMain_Helper_6C3640(v123);
+  else
+    v124 = 0;
+  CoRegisterClassObject(&stru_7E9660, v124, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v125 = (TClassFactory_VInfantryClass__ *)__2_YAPAXI_Z(8u);
+  if ( v125 )
+    v126 = (IUnknown *)WinMain_Helper_6C37C0(v125);
+  else
+    v126 = 0;
+  CoRegisterClassObject(&stru_7E9680, v126, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v127 = (TClassFactory_VAnimClass__ *)__2_YAPAXI_Z(8u);
+  if ( v127 )
+    v128 = (IUnknown *)WinMain_Helper_6C3940(v127);
+  else
+    v128 = 0;
+  CoRegisterClassObject(&stru_7E9670, v128, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v129 = (TClassFactory_VAnimTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v129 )
+    v130 = (IUnknown *)WinMain_Helper_6C3AC0(v129);
+  else
+    v130 = 0;
+  CoRegisterClassObject(&stru_7E9620, v130, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v131 = (TClassFactory_VHouseTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v131 )
+    v132 = (IUnknown *)WinMain_Helper_6C3C40(v131);
+  else
+    v132 = 0;
+  CoRegisterClassObject(&stru_7E9630, v132, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v133 = (TClassFactory_VHouseClass__ *)__2_YAPAXI_Z(8u);
+  if ( v133 )
+    v134 = (IUnknown *)WinMain_Helper_6C3DC0(v133);
+  else
+    v134 = 0;
+  CoRegisterClassObject(&stru_7E9560, v134, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v135 = (TClassFactory_VDriveLocomotionClass__ *)__2_YAPAXI_Z(8u);
+  if ( v135 )
+    v136 = (IUnknown *)WinMain_Helper_6C3F40(v135);
+  else
+    v136 = 0;
+  CoRegisterClassObject(&stru_7E9A30, v136, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v137 = (TClassFactory_VJumpjetLocomotionClass__ *)__2_YAPAXI_Z(8u);
+  if ( v137 )
+    v138 = (IUnknown *)WinMain_Helper_6C40C0(v137);
+  else
+    v138 = 0;
+  CoRegisterClassObject(&g_CLSID_JumpjetLocomotion, v138, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v139 = (TClassFactory_VHoverLocomotionClass__ *)__2_YAPAXI_Z(8u);
+  if ( v139 )
+    v140 = (IUnknown *)WinMain_Helper_6C4240(v139);
+  else
+    v140 = 0;
+  CoRegisterClassObject(&stru_7E9A40, v140, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v141 = (TClassFactory_VRocketLocomotionClass__ *)__2_YAPAXI_Z(8u);
+  if ( v141 )
+    v142 = (IUnknown *)WinMain_Helper_6C43C0(v141);
+  else
+    v142 = 0;
+  CoRegisterClassObject(&g_CLSID_ShipLocomotion, v142, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v143 = (TClassFactory_VTunnelLocomotionClass__ *)__2_YAPAXI_Z(8u);
+  if ( v143 )
+    v144 = (IUnknown *)WinMain_Helper_6C4540(v143);
+  else
+    v144 = 0;
+  CoRegisterClassObject(&stru_7E9A50, v144, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v145 = (TClassFactory_VWalkLocomotionClass__ *)__2_YAPAXI_Z(8u);
+  if ( v145 )
+    v146 = (IUnknown *)WinMain_Helper_6C46C0(v145);
+  else
+    v146 = 0;
+  CoRegisterClassObject(&g_CLSID_WalkLocomotion, v146, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v147 = (TClassFactory_VDropPodLocomotionClass__ *)__2_YAPAXI_Z(8u);
+  if ( v147 )
+    v148 = (IUnknown *)WinMain_Helper_6C4840(v147);
+  else
+    v148 = 0;
+  CoRegisterClassObject(&g_CLSID_DriveLocomotion, v148, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v149 = (TClassFactory_VFlyLocomotionClass__ *)__2_YAPAXI_Z(8u);
+  if ( v149 )
+    v150 = (IUnknown *)WinMain_Helper_6C49C0(v149);
+  else
+    v150 = 0;
+  CoRegisterClassObject(&g_CLSID_FlyLocomotion, v150, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v151 = (TClassFactory_VTeleportLocomotionClass__ *)__2_YAPAXI_Z(8u);
+  if ( v151 )
+    v152 = (IUnknown *)WinMain_Helper_6C4B40(v151);
+  else
+    v152 = 0;
+  CoRegisterClassObject(&g_CLSID_HoverLocomotion, v152, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v153 = (TClassFactory_VMechLocomotionClass__ *)__2_YAPAXI_Z(8u);
+  if ( v153 )
+    v154 = (IUnknown *)WinMain_Helper_6C4CC0(v153);
+  else
+    v154 = 0;
+  CoRegisterClassObject(&g_CLSID_TunnelLocomotion, v154, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v155 = (TClassFactory_VShipLocomotionClass__ *)__2_YAPAXI_Z(8u);
+  if ( v155 )
+    v156 = (IUnknown *)WinMain_Helper_6C4E40(v155);
+  else
+    v156 = 0;
+  CoRegisterClassObject(&g_CLSID_DriveLocomotion2, v156, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v157 = (TClassFactory_VBulletClass__ *)__2_YAPAXI_Z(8u);
+  if ( v157 )
+    v158 = (IUnknown *)WinMain_Helper_6C4FC0(v157);
+  else
+    v158 = 0;
+  CoRegisterClassObject(&rclsid, v158, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v159 = (TClassFactory_VFactoryClass__ *)__2_YAPAXI_Z(8u);
+  if ( v159 )
+    v160 = (IUnknown *)WinMain_Helper_6C5140(v159);
+  else
+    v160 = 0;
+  CoRegisterClassObject(&stru_7E9820, v160, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v161 = (TClassFactory_VWarheadTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v161 )
+    v162 = (IUnknown *)WinMain_Helper_6C52C0(v161);
+  else
+    v162 = 0;
+  CoRegisterClassObject(&stru_7E9840, v162, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v163 = (TClassFactory_VWeaponTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v163 )
+    v164 = (IUnknown *)WinMain_Helper_6C5440(v163);
+  else
+    v164 = 0;
+  CoRegisterClassObject(&stru_7E9830, v164, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v165 = (TClassFactory_VParticleClass__ *)__2_YAPAXI_Z(8u);
+  if ( v165 )
+    v166 = (IUnknown *)WinMain_Helper_6C55C0(v165);
+  else
+    v166 = 0;
+  CoRegisterClassObject(&stru_7E9700, v166, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v167 = (TClassFactory_VParticleTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v167 )
+    v168 = (IUnknown *)WinMain_Helper_6C5740(v167);
+  else
+    v168 = 0;
+  CoRegisterClassObject(&stru_7E9710, v168, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v169 = (TClassFactory_VParticleSystemClass__ *)__2_YAPAXI_Z(8u);
+  if ( v169 )
+    v170 = (IUnknown *)WinMain_Helper_6C58C0(v169);
+  else
+    v170 = 0;
+  CoRegisterClassObject(&stru_7E96C0, v170, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v171 = (TClassFactory_VParticleSystemTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v171 )
+    v172 = (IUnknown *)WinMain_Helper_6C5A40(v171);
+  else
+    v172 = 0;
+  CoRegisterClassObject(&stru_7E96D0, v172, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v173 = (TClassFactory_VAITriggerTypeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v173 )
+    v174 = (IUnknown *)WinMain_Helper_6C5BC0(v173);
+  else
+    v174 = 0;
+  CoRegisterClassObject(&stru_7E9960, v174, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v175 = (TClassFactory_VNeuronClass__ *)__2_YAPAXI_Z(8u);
+  if ( v175 )
+    v176 = (IUnknown *)WinMain_Helper_6C5D40(v175);
+  else
+    v176 = 0;
+  CoRegisterClassObject(&stru_7E9980, v176, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v177 = (TClassFactory_VFoggedObjectClass__ *)__2_YAPAXI_Z(8u);
+  if ( v177 )
+    v178 = (IUnknown *)WinMain_Helper_6C5EC0(v177);
+  else
+    v178 = 0;
+  CoRegisterClassObject(&stru_7E9990, v178, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  v179 = (TClassFactory_VAlphaShapeClass__ *)__2_YAPAXI_Z(8u);
+  if ( v179 )
+    v180 = (IUnknown *)WinMain_Helper_6C6040(v179);
+  else
+    v180 = 0;
+  CoRegisterClassObject(&stru_7E99A0, v180, 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&stru_B05488.__pad_579C[4196], &dwRegister);
+  RegisterActiveObject(&unk_89A29C, &rguid, 1u, (DWORD *)&stru_B05488.__pad_579C[4296]);
+  if ( LOBYTE(dwRegister.field_8) )
+  {
+    v205 = GetStringCSF(g_Str_TXT_SHORT_TITLE, 0, &stru_830620.__pad_579C[45136], 1618);
+    v181 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[45072], 0, &stru_830620.__pad_579C[45136], 1618);
+    WideMessageBox(0, v181, v205, 0x30u);
+    if ( LOBYTE(dwRegister.field_8) )
+      exit(1);
+  }
+  Debug::Log();
+  Debug::Log();
+  WinMain_Helper_65C250(
+    &v212,
+    (int)"[PublicKey]\n1=AihRvNoIbTn85FZRYNZRcT+i6KpU+maCsEqr3Q5q+LDB5tH7Tz2qQ38V\n\n",
+    (MixFileClass *)strlen("[PublicKey]\n1=AihRvNoIbTn85FZRYNZRcT+i6KpU+maCsEqr3Q5q+LDB5tH7Tz2qQ38V\n\n"));
+  INIClass::INIClass(v213);
+  Debug::Log();
+  FileStraw::Open(v213, (int)&v212, 0);
+  Debug::Log();
+  qmemcpy(&stru_87C374.__pad_579C[20080], WinMain_Init(v213, v211, 1), 0x204u);
+  HashTable::DestroyHashTableINIClass(v213);
+  WinMain_Helper_65C2A0(&v212);
+  v182 = dword_81C1D0;
+  SetSoundWarning(-2);
+  v183 = (_DWORD *)__2_YAPAXI_Z(0x28u);
+  if ( v183 )
+    *(_DWORD *)&stru_87C374.__pad_579C[13044] = MixFileClass::FromFile(
+                                                  v183,
+                                                  (MixFileClass *)&stru_830620.__pad_579C[44960],
+                                                  (int)&stru_87C374.__pad_579C[20080]);
+  else
+    *(_DWORD *)&stru_87C374.__pad_579C[13044] = 0;
+  v184 = (_DWORD *)__2_YAPAXI_Z(0x28u);
+  if ( v184 )
+    *(_DWORD *)&stru_87C374.__pad_579C[13040] = MixFileClass::FromFile(
+                                                  v184,
+                                                  (MixFileClass *)&stru_830620.__pad_579C[44944],
+                                                  (int)&stru_87C374.__pad_579C[20080]);
+  else
+    *(_DWORD *)&stru_87C374.__pad_579C[13040] = 0;
+  SetSoundWarning(v182);
+  atexit(WinMainSetup);
+  WinMain_Helper_7B84F0();
+  if ( !CSFClass::LoadFile(&stru_830620.__pad_579C[44932]) )
+  {
+    MessageBoxA(0, &stru_830620.__pad_579C[44700], &stru_830620.__pad_579C[44920], 0x10u);
+    return 0;
+  }
+  LOBYTE(v185) = 1;
+  if ( !_do_always_noconv_codecvt_base_std__MBE_NXZ_3(v185) )
+    return 0;
+  if ( !GetSystemMetrics(19) || !GetSystemMetrics(43) )
+  {
+    v209 = GetStringCSF(g_Str_TXT_SHORT_TITLE, 0, &stru_830620.__pad_579C[45136], 1999);
+    v204 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[44556], 0, &stru_830620.__pad_579C[45136], 1999);
+    WideMessageBox(0, v204, v209, 0x10u);
+    exit(1);
+  }
+  if ( (unsigned int)sub_4AECD0(&stru_830620.__pad_579C[44684]) < 0x40046 )
+  {
+    v186 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[44668], 0, &stru_830620.__pad_579C[45136], 2009);
+    swprintf(Buffer, (const size_t)v186, (const wchar_t *const)&stru_830620.__pad_579C[44684], (CampaignScore *)4);
+    v187 = GetStringCSF(g_Str_TXT_SHORT_TITLE, 0, &stru_830620.__pad_579C[45136], 2010);
+    WideMessageBox(0, Buffer, v187, 0x10u);
+    exit(1);
+  }
+  RegisterActiveObject((IUnknown *)&stru_87C374.__pad_14B0[8132], &rguid, 1u, (DWORD *)&stru_830620.__pad_579C[44216]);
+  if ( *(_DWORD *)&HouseClass_Player.__pad_5568[22736] == -1 || *(_DWORD *)&HouseClass_Player.__pad_5568[22740] == -1 )
+  {
+    v188 = stru_87C374.__pad_579C[23317] && *(int *)&stru_87C374.__pad_579C[23176] < 5;
+    if ( v188 || sub_4A4130() > 0x200000 )
+    {
+      *(_DWORD *)&HouseClass_Player.__pad_5568[22736] = 800;
+      *(_DWORD *)&HouseClass_Player.__pad_5568[22740] = 600;
+    }
+    else
+    {
+      *(_DWORD *)&HouseClass_Player.__pad_5568[22736] = 640;
+      *(_DWORD *)&HouseClass_Player.__pad_5568[22740] = 480;
+    }
+  }
+  if ( HouseClass_Player.__pad_5568[23215] )
+  {
+    InitWindowCreation((ObjectClass *)hInstance, nShowCmd, 640, 480);
+    sub_4A3FD0();
+    if ( stru_89E138.__pad_14B0[912] )
+    {
+      *(_DWORD *)&stru_87C374.__pad_579C[21664] = 0;
+      *(_DWORD *)&stru_87C374.__pad_579C[21668] = 0;
+      *(_DWORD *)&stru_87C374.__pad_579C[21672] = 640;
+      *(_DWORD *)&stru_87C374.__pad_579C[21676] = 480;
+      *(_DWORD *)&stru_89E138.__pad_14B0[2748] = 640;
+      *(_DWORD *)&stru_89E138.__pad_14B0[2752] = 480;
+      *(_DWORD *)&stru_89E138.__pad_14B0[2756] = g_Is16BitMode != 0 ? 16 : 8;
+    }
+    else
+    {
+      aP2.location[0] = (unsigned __int8)InitializeDDraw(
+                                           (int)g_hWnd,
+                                           (ObjectClass *)0x280,
+                                           0x1E0u,
+                                           g_Is16BitMode != 0 ? 16 : 8);
+      *(_DWORD *)&stru_87C374.__pad_579C[21664] = 0;
+      *(_DWORD *)&stru_87C374.__pad_579C[21668] = 0;
+      *(_DWORD *)&stru_87C374.__pad_579C[21672] = 640;
+      *(_DWORD *)&stru_87C374.__pad_579C[21676] = 480;
+      if ( !aP2.location[0] )
+      {
+        sub_4A40C0();
+        v206 = GetStringCSF(g_Str_TXT_SHORT_TITLE, 0, &stru_830620.__pad_579C[45136], 2160);
+        v189 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[44640], 0, &stru_830620.__pad_579C[45136], 2159);
+        WideMessageBox((CampaignScore *)g_hWnd, v189, v206, 0x30u);
+        exit(1);
+      }
+    }
+  }
+  else
+  {
+    InitWindowCreation(
+      (ObjectClass *)hInstance,
+      nShowCmd,
+      *(int *)&HouseClass_Player.__pad_5568[22744],
+      *(int *)&HouseClass_Player.__pad_5568[22748]);
+    sub_4A3FD0();
+    if ( stru_89E138.__pad_14B0[912] )
+    {
+      *(_DWORD *)&stru_87C374.__pad_579C[21664] = 0;
+      *(_DWORD *)&stru_87C374.__pad_579C[21668] = 0;
+      *(_DWORD *)&stru_87C374.__pad_579C[21672] = *(_DWORD *)&HouseClass_Player.__pad_5568[22744];
+      *(_DWORD *)&stru_87C374.__pad_579C[21676] = *(_DWORD *)&HouseClass_Player.__pad_5568[22748];
+      *(_DWORD *)&stru_89E138.__pad_14B0[2748] = *(_DWORD *)&HouseClass_Player.__pad_5568[22744];
+      *(_DWORD *)&stru_89E138.__pad_14B0[2752] = *(_DWORD *)&HouseClass_Player.__pad_5568[22748];
+      *(_DWORD *)&stru_89E138.__pad_14B0[2756] = g_Is16BitMode != 0 ? 16 : 8;
+    }
+    else
+    {
+      edi325 = (unsigned __int8)InitializeDDraw(
+                                  (int)g_hWnd,
+                                  *(ObjectClass **)&HouseClass_Player.__pad_5568[22744],
+                                  *(DWORD *)&HouseClass_Player.__pad_5568[22748],
+                                  g_Is16BitMode != 0 ? 16 : 8);
+      *(_DWORD *)&stru_87C374.__pad_579C[21664] = 0;
+      *(_DWORD *)&stru_87C374.__pad_579C[21668] = 0;
+      *(_DWORD *)&stru_87C374.__pad_579C[21672] = *(_DWORD *)&HouseClass_Player.__pad_5568[22744];
+      *(_DWORD *)&stru_87C374.__pad_579C[21676] = *(_DWORD *)&HouseClass_Player.__pad_5568[22748];
+      if ( !edi325 )
+      {
+        if ( *(_DWORD *)&HouseClass_Player.__pad_5568[22736] != 640
+          || *(_DWORD *)&HouseClass_Player.__pad_5568[22740] != 480 )
+        {
+          *(_DWORD *)&HouseClass_Player.__pad_5568[22736] = 640;
+          *(_DWORD *)&HouseClass_Player.__pad_5568[22740] = 480;
+          edi325 = (unsigned __int8)InitializeDDraw(
+                                      (int)g_hWnd,
+                                      (ObjectClass *)0x280,
+                                      0x1E0u,
+                                      g_Is16BitMode != 0 ? 16 : 8);
+          *(_DWORD *)&stru_87C374.__pad_579C[21664] = 0;
+          *(_DWORD *)&stru_87C374.__pad_579C[21668] = 0;
+          *(_DWORD *)&stru_87C374.__pad_579C[21672] = *(_DWORD *)&HouseClass_Player.__pad_5568[22736];
+          *(_DWORD *)&stru_87C374.__pad_579C[21676] = *(_DWORD *)&HouseClass_Player.__pad_5568[22740];
+        }
+        if ( !edi325 )
+        {
+          sub_4A40C0();
+          v207 = GetStringCSF(g_Str_TXT_SHORT_TITLE, 0, &stru_830620.__pad_579C[45136], 2216);
+          v191 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[44640], 0, &stru_830620.__pad_579C[45136], 2215);
+          WideMessageBox((CampaignScore *)g_hWnd, v191, v207, 0x30u);
+          exit(1);
+        }
+      }
+    }
+  }
+  if ( *(_DWORD *)&HouseClass_Player.__pad_5568[25808] && InitializeAudioStreaming(1000, 102400) )
+  {
+    if ( *(_DWORD *)&HouseClass_Player.__pad_5568[25808] == 1 )
+    {
+      WinMain_Helper_53E4F0(&stru_830620.__pad_579C[44656]);
+    }
+    else if ( *(_DWORD *)&HouseClass_Player.__pad_5568[25808] == 2 )
+    {
+      WinMain_Write(&stru_830620.__pad_579C[44656]);
+    }
+  }
+  *(_DWORD *)&stru_87C374.__pad_579C[22520] = DSurface::CreatePrimary(0);
+  eax333 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22520] + 112))(*(_DWORD *)&stru_87C374.__pad_579C[22520]);
+  g_Is16BitMode = eax333 == 2;
+  if ( eax333 != 2 )
+  {
+    v208 = GetStringCSF(g_Str_TXT_SHORT_TITLE, 0, &stru_830620.__pad_579C[45136], 2245);
+    v193 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[44624], 0, &stru_830620.__pad_579C[45136], 2245);
+    WideMessageBox((CampaignScore *)g_hWnd, v193, v208, 0x30u);
+    GameClass::Shutdown();
+  }
+  do
+    MessageLoop();
+  while ( !HouseClass_Player.__pad_5568[23244] );
+  if ( !CopyProtection::NotifyLauncher() )
+  {
+    Debug::Log();
+    exit(1);
+  }
+  do
+    MessageLoop();
+  while ( !HouseClass_Player.__pad_5568[23244] );
+  stru_89E138.__pad_14B0[2744] = 0;
+  if ( !stru_89E138.__pad_14B0[912] )
+    (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22520] + 24))(
+      *(_DWORD *)&stru_87C374.__pad_579C[22520],
+      0);
+  WinMain_Create(g_hInstance, g_hWnd, stru_89E138.__pad_14B0[912]);
+  WinMain_Helper_637070();
+  nullsub_18();
+  if ( stru_89E138.__pad_14B0[6151] )
+  {
+    if ( !sub_4C1600() )
+      goto LABEL_345;
+    DDraw::CleanupSurfaces();
+    stru_89E138.__pad_14B0[6151] = 0;
+  }
+  stru_89E138.__pad_14B0[6152] = 0;
+LABEL_345:
+  aP2.NeedsSaveOrLink = 0;
+  aP2.objectTypeFlags = 0;
+  aP2.owningHouseIndex = 168;
+  aP2.fallRate = *(_DWORD *)&stru_87C374.__pad_579C[21676];
+  aP2.uniqueId = 0;
+  aP2.abstractFlags = 0;
+  aP2.nextArrayIndex = *(_DWORD *)&stru_87C374.__pad_579C[21672] - 168;
+  aP2.referenceCount = *(_DWORD *)&stru_87C374.__pad_579C[21676];
+  *(_DWORD *)aP2.__pad_0 = 0;
+  *(_DWORD *)&aP2.__pad_0[4] = 0;
+  *(_DWORD *)&aP2.__pad_0[8] = *(_DWORD *)&stru_87C374.__pad_579C[21672] - 168;
+  *(_DWORD *)&aP2.__pad_0[12] = *(_DWORD *)&stru_87C374.__pad_579C[21676];
+  AllocateSurfaceScreenSurfaces(
+    (int)&stru_87C374.__pad_579C[21664],
+    &aP2,
+    (ObjectClass *)&aP2.uniqueId,
+    (int)&aP2.NeedsSaveOrLink,
+    0);
+  if ( stru_89E138.__pad_14B0[6151] && InitializeRadialGradientTexture() )
+  {
+    DDraw::CleanupSurfaces();
+    stru_89E138.__pad_14B0[6151] = 0;
+    stru_89E138.__pad_14B0[6152] = 0;
+  }
+  *(_DWORD *)&stru_87C374.__pad_579C[22532] = *(_DWORD *)&stru_87C374.__pad_579C[22524];
+  LOBYTE(v194) = 1;
+  Frame::Present(v194, 0);
+  v195 = (_DWORD *)__2_YAPAXI_Z(0x30u);
+  if ( v195 )
+    v196 = BSurface::ConstructEx(
+             v195,
+             *(int *)&stru_87C374.__pad_579C[21648],
+             *(int *)&stru_87C374.__pad_579C[21652],
+             480,
+             480 - *(_DWORD *)&stru_87C374.__pad_579C[21652]);
+  else
+    v196 = 0;
+  *(_DWORD *)&stru_87C374.__pad_579C[23348] = v196;
+  v197 = aP1;
+  v196[9] = 0x8000;
+  v198 = (_DWORD *)__2_YAPAXI_Z(0x30u);
+  if ( v198 )
+  {
+    *(_DWORD *)&stru_87C374.__pad_14B0[4224] = BSurface::Construct(
+                                                 v198,
+                                                 *(int *)&stru_87C374.__pad_579C[21648],
+                                                 *(int *)&stru_87C374.__pad_579C[21652],
+                                                 480,
+                                                 480 - *(_DWORD *)&stru_87C374.__pad_579C[21652]);
+    v197 = aP1;
+  }
+  else
+  {
+    *(_DWORD *)&stru_87C374.__pad_14B0[4224] = 0;
+  }
+  v199 = (_DWORD *)__2_YAPAXI_Z(0x98u);
+  if ( v199 )
+    v190 = (MouseClass *)MouseClass::Construct(
+                           v199,
+                           *(ObjectClass **)&stru_87C374.__pad_579C[22520],
+                           (IUnknown *)g_hWnd);
+  else
+    v190 = 0;
+  *(_DWORD *)&stru_87C374.__pad_579C[23344] = v190;
+  (*(void (__thiscall **)(MouseClass *))(v190->field_0 + 12))(v190);
+  *(_DWORD *)&HouseClass_Player.__pad_5568[22176] = 0;
+  if ( *(_DWORD *)&HouseClass_Player.__pad_5568[22172] )
+  {
+    v201 = *(_DWORD *)&HouseClass_Player.__pad_5568[22068];
+    *(_DWORD *)&HouseClass_Player.__pad_5568[22176] = 1;
+  }
+  else
+  {
+    v201 = -1;
+  }
+  CD::SetCurrentInstance((void *)v201);
+  Performance::Profile();
+  *(_DWORD *)&HouseClass_Player.__pad_5568[22188] = *(_DWORD *)&HouseClass_Player.__pad_5568[22188] & 0xFFFFFFFB
+                                                  | (4
+                                                   * (INIClass::ReadBool_Overwrite(
+                                                        (int)&stru_87C374.__pad_579C[21936],
+                                                        (unsigned __int8 *)&g_INI_Key_Intro,
+                                                        (CCINIClass *)&stru_830620.__pad_579C[44588],
+                                                        1)
+                                                    & 1));
+  aP2.location[1] = 0;
+  LOBYTE(aP2.location[2]) = 0;
+  ReadRegistryOptionsWOL(&aP2.location[1]);
+  if ( !InfantryClass::SetField6(&aP2.location[1])
+    && !WinMain_Helper(&aP2.location[1])
+    && !Flag::IsNot2(&aP2.location[1]) )
+  {
+    v192 = *(ObjectClass **)&HouseClass_Player.__pad_5568[22188];
+    LOBYTE(v192) = HouseClass_Player.__pad_5568[22188] | 8;
+    *(_DWORD *)&HouseClass_Player.__pad_5568[22188] = v192;
+  }
+  if ( (HouseClass_Player.__pad_5568[22188] & 4) == 4 )
+  {
+    INIClass::SetBool(&stru_87C374.__pad_579C[21936], &g_INI_Key_Intro, &stru_830620.__pad_579C[44588], 0);
+    (*(void (__thiscall **)(CCINIClass *))(*(_DWORD *)v197->__pad_0 + 52))(v197);
+    (*(void (__thiscall **)(CCINIClass *, int))(*(_DWORD *)v197->__pad_0 + 28))(v197, 1);
+    INIClass::WriteDigest(&stru_87C374.__pad_579C[21936], v197, 0);
+  }
+  (*(void (__thiscall **)(CCINIClass *))(*(_DWORD *)v197->__pad_0 + 52))(v197);
+  if ( v197 )
+    (**(void (__thiscall ***)(CCINIClass *, int))v197->__pad_0)(v197, 1);
+  if ( HouseClass_Player.__pad_5568[25848] )
+  {
+    MainGame();
+  }
+  else
+  {
+    ms_exc.registration.TryLevel = 0;
+    Debug::Log();
+    MainGame();
+    ms_exc.registration.TryLevel = -1;
+    SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)TopLevelExceptionFilter);
+  }
+  (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[23344] + 12))(*(_DWORD *)&stru_87C374.__pad_579C[23344]);
+  (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)&stru_87C374.__pad_579C[22524] + 24))(
+    *(_DWORD *)&stru_87C374.__pad_579C[22524],
+    0);
+  LOBYTE(v203) = 1;
+  Frame::Present(v203, 0);
+  *(_DWORD *)&HouseClass_Player.__pad_5568[23332] = 1;
+  ThemeManager::Cleanup((int)&g_BuildingTypeClass_Count);
+  Audio::Shutdown();
+  PostMessageA(g_hWnd, 2u, 0, 0);
+  do
+    MessageLoop();
+  while ( *(_DWORD *)&HouseClass_Player.__pad_5568[23332] == 1 );
+  v10 = 0;
+LABEL_374:
+  WinMain_Helper_5D7E50();
+  WinMainSetup_Setup_65FD50();
+  TacticalClass::CleanupResources();
+  WinMainSetup_Setup_626FF0();
+  _ioterm();
+  ObjectTypeClass::UnloadPipsSHP();
+  nullsub_31();
+  j_PlanningNodeClass_CleanupAll();
+  WinMainSetup_Setup_72AC40();
+  WinMainSetup_Setup_730970();
+  LoadProgressMgr::Destroy();
+  WinMainSetup_Setup_5BE940();
+  WinMainSetup_Setup_5DB6F0();
+  if ( *(_DWORD *)&stru_830620.__pad_579C[44216] != -1 )
+  {
+    RevokeActiveObject(*(DWORD *)&stru_830620.__pad_579C[44216], 0);
+    *(_DWORD *)&stru_830620.__pad_579C[44216] = -1;
+  }
+  CoDisconnectObject(&unk_89A29C, 0);
+  OleUninitialize();
+  return v10;
+}
+
 }
 } // namespace gamemd
 

@@ -493,6 +493,8 @@ LABEL_13:
 // 0x47A080
 namespace ra2 {
 namespace game {
+void ObjectClass::sub_47A080(DWORD a2)
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_47A080(ObjectClass *this, DWORD a2)
 {
@@ -532,6 +534,7 @@ LABEL_8:
 LABEL_9:
   DriveControlCD(this, FileA, a2); /*0x47a18e*/
   CloseHandle(FileA); /*0x47a19b*/
+}
 }
 } // namespace game
 } // namespace ra2

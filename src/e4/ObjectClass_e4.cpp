@@ -2317,11 +2317,14 @@ char __thiscall ObjectClass_FindPlacementPosition(_DWORD *this, int a2, int a3, 
 // 0x72A660
 namespace ra2 {
 namespace game {
+int ObjectClass::setTarget(int a2)
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ObjectClass::setTarget(TextLabelClass *this, int a2)
 {
   *(_DWORD *)&this->__pad_2C[4] = a2; /*0x72a664*/
   return a2; /*0x72a667*/
+}
 }
 } // namespace game
 } // namespace ra2
@@ -2382,6 +2385,8 @@ int __thiscall sub_74CD60(_WORD *this)
 // 0x7A2E70
 namespace ra2 {
 namespace game {
+unsigned int * ObjectClass::loc_7A2E70(char a2)
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ObjectClass::loc_7A2E70(SimpleWonlineDialogControl *this, char a2)
 {
@@ -2390,6 +2395,7 @@ _DWORD *__thiscall ObjectClass::loc_7A2E70(SimpleWonlineDialogControl *this, cha
   if ( (a2 & 1) != 0 ) /*0x7a2e83*/
     __3_YAXPAX_Z(this); /*0x7a2e86*/
   return &this->vfptr; /*0x7a2e90*/
+}
 }
 } // namespace game
 } // namespace ra2

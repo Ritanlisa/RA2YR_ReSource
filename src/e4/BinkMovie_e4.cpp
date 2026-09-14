@@ -764,50 +764,711 @@ namespace gamemd {
 int BinkMovie::WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// int __stdcall BinkMovie_WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam)
-// {
-//   HWND v4; // ecx
-//   _DWORD *v5; // esi
-//   HWND *v6; // eax
-//   int result; // eax
-//   UINT v8; // ebp
-//   void (__thiscall ***v9)(_DWORD, int); // eax
-//   int v10; // eax
-//   HWND v11; // edi
-//   void (__thiscall ***v12)(_DWORD, int); // ecx
-//   void (__thiscall ***v13)(_DWORD, int); // ecx
-//   LRESULT (__stdcall *v14)(HWND, UINT, WPARAM, LPARAM); // esi
-//   int v15; // eax
-//   int v16; // eax
-//   _DWORD *v17; // edi
-//   int v18; // eax
-//   int v19; // ecx
-//   _DWORD *v20; // ecx
-//   LONG right; // edx
-//   int v22; // eax
-//   unsigned int v23; // eax
-//   bool v24; // bl
-//   bool v25; // bl
-//   bool v26; // cl
-//   bool v27; // al
-//   int v28; // esi
-//   LONG v29; // edi
-//   LONG v30; // ecx
-//   int v31; // ebp
-//   int v32; // ecx
-//   LONG v33; // eax
-//   int v34; // edi
-//   int v35; // edx
-//   struct tagRECT *v36; // eax
-//   unsigned int v37; // edi
-//   signed int v38; // edi
-//   HWND v39; // esi
-//   LONG WindowLongA; // eax
-//   char v41; // dl
-//   int v42; // ecx
-//   int v43; //... [23667 chars total]
-// end truncated pseudocode
+int __stdcall BinkMovie_WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam)
+{
+  HWND v4; // ecx
+  _DWORD *v5; // esi
+  HWND *v6; // eax
+  int result; // eax
+  UINT v8; // ebp
+  void (__thiscall ***v9)(_DWORD, int); // eax
+  int v10; // eax
+  HWND v11; // edi
+  void (__thiscall ***v12)(_DWORD, int); // ecx
+  void (__thiscall ***v13)(_DWORD, int); // ecx
+  LRESULT (__stdcall *v14)(HWND, UINT, WPARAM, LPARAM); // esi
+  int v15; // eax
+  int v16; // eax
+  _DWORD *v17; // edi
+  int v18; // eax
+  int v19; // ecx
+  _DWORD *v20; // ecx
+  LONG right; // edx
+  int v22; // eax
+  unsigned int v23; // eax
+  bool v24; // bl
+  bool v25; // bl
+  bool v26; // cl
+  bool v27; // al
+  int v28; // esi
+  LONG v29; // edi
+  LONG v30; // ecx
+  int v31; // ebp
+  int v32; // ecx
+  LONG v33; // eax
+  int v34; // edi
+  int v35; // edx
+  struct tagRECT *v36; // eax
+  unsigned int v37; // edi
+  signed int v38; // edi
+  HWND v39; // esi
+  LONG WindowLongA; // eax
+  char v41; // dl
+  int v42; // ecx
+  int v43; // ecx
+  signed int v44; // ecx
+  signed int v45; // eax
+  signed int v46; // eax
+  int v47; // ecx
+  void (__thiscall ***v48)(_DWORD, int); // ecx
+  HWND v49; // edi
+  void (__thiscall ***v50)(_DWORD, int); // ecx
+  int v51; // eax
+  char v52; // bl
+  int v53; // eax
+  UINT v54; // eax
+  void (__thiscall ***v55)(_DWORD, int); // ecx
+  int v56; // eax
+  int i; // eax
+  HWND v58; // eax
+  HWND v59; // edi
+  _DWORD *j; // eax
+  HWND Parent; // eax
+  UINT v62; // eax
+  LPARAM v63; // edi
+  LPARAM v64; // eax
+  int v65; // esi
+  HWND v66; // edi
+  void (__thiscall ***v67)(_DWORD, int); // ecx
+  int v68; // ebp
+  void (__thiscall ***v69)(_DWORD, int); // ecx
+  _DWORD *v70; // eax
+  void (__thiscall ***v71)(_DWORD, int); // ecx
+  void (__thiscall ***v72)(_DWORD, int); // ecx
+  int v73; // esi
+  int v74; // esi
+  int v75; // esi
+  LRESULT (__stdcall **v76)(HWND, UINT, WPARAM, LPARAM); // eax
+  bool v77; // [esp+34h] [ebp-7Ah]
+  bool v78; // [esp+35h] [ebp-79h]
+  bool v79; // [esp+35h] [ebp-79h]
+  HWND v80; // [esp+36h] [ebp-78h] BYREF
+  struct tagRECT v81; // [esp+3Ah] [ebp-74h] BYREF
+  int v82; // [esp+4Ah] [ebp-64h]
+  struct tagRECT Rect; // [esp+4Eh] [ebp-60h] BYREF
+  struct tagRECT v84; // [esp+5Eh] [ebp-50h] BYREF
+  struct tagRECT v85; // [esp+6Eh] [ebp-40h] BYREF
+  LONG left; // [esp+7Eh] [ebp-30h] BYREF
+  LONG top; // [esp+82h] [ebp-2Ch]
+  int v88; // [esp+86h] [ebp-28h]
+  int v89; // [esp+8Ah] [ebp-24h]
+  struct tagRECT X; // [esp+8Eh] [ebp-20h] BYREF
+  _DWORD v91[4]; // [esp+9Eh] [ebp-10h] BYREF
+
+  v4 = hWnd;
+  v5 = 0;
+  v80 = hWnd;
+  if ( MEMORY[0xAC1B04] )
+  {
+    v6 = (HWND *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v80) & ((1 << MEMORY[0xAC1B0C]) - 1)));
+    if ( v6 )
+    {
+      while ( *v6 != v80 )
+      {
+        v6 = (HWND *)v6[129];
+        if ( !v6 )
+          goto LABEL_7;
+      }
+      v5 = v6 + 1;
+    }
+LABEL_7:
+    v4 = hWnd;
+  }
+  if ( !v5 )
+    return 0;
+  v8 = Msg;
+  if ( Msg > 0x4D4 )
+  {
+    switch ( Msg )
+    {
+      case 0x4D5u:
+        if ( v5[28] != 4 )
+          return 0;
+        v5[38] = lParam;
+        InvalidateRect(hWnd, 0, 1);
+        return 0;
+      case 0x4D6u:
+        result = -1;
+        if ( v5[28] == 4 )
+          return v5[38];
+        return result;
+      case 0x4D7u:
+        if ( v5[28] != 4 )
+          return 0;
+        v5[41] = lParam;
+        return 0;
+      case 0x4DFu:
+        if ( wParam < 0 || wParam >= MEMORY[0xABF3A0] )
+          return 0;
+        v66 = v4;
+        v67 = (void (__thiscall ***)(_DWORD, int))v5[22];
+        v68 = *((_DWORD *)MEMORY[0xABF394] + wParam);
+        if ( v67 )
+        {
+          (**v67)(v67, 1);
+          v5[22] = 0;
+        }
+        KillTimer(v66, 0x65u);
+        v69 = (void (__thiscall ***)(_DWORD, int))v5[24];
+        if ( v69 )
+        {
+          (**v69)(v69, 1);
+          v5[24] = 0;
+        }
+        ScreenDialogToClient(v66, &X);
+        v70 = CreateMovie(v68, MEMORY[0x887310], 0);
+        v5[22] = v70;
+        if ( v70 )
+          goto LABEL_165;
+        KillTimer(v66, 0x65u);
+        v50 = (void (__thiscall ***)(_DWORD, int))v5[24];
+        if ( v50 )
+          goto LABEL_174;
+        return 0;
+      case 0x4E0u:
+        v74 = v5[22];
+        if ( !v74 )
+          return 0;
+        (*(void (__thiscall **)(int, int))(*(_DWORD *)v74 + 12))(v74, 1);
+        return 0;
+      case 0x4E1u:
+        v75 = v5[22];
+        if ( !v75 )
+          return 0;
+        (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v75 + 12))(v75, 0);
+        return 0;
+      case 0x4E2u:
+        v49 = v4;
+        v48 = (void (__thiscall ***)(_DWORD, int))v5[22];
+        if ( v48 )
+          goto LABEL_100;
+        goto LABEL_101;
+      case 0x4E3u:
+        v5[23] = wParam;
+        return 0;
+      case 0x4E4u:
+        v66 = v4;
+        v71 = (void (__thiscall ***)(_DWORD, int))v5[22];
+        if ( v71 )
+        {
+          (**v71)(v71, 1);
+          v5[22] = 0;
+        }
+        KillTimer(v66, 0x65u);
+        v72 = (void (__thiscall ***)(_DWORD, int))v5[24];
+        if ( v72 )
+        {
+          (**v72)(v72, 1);
+          v5[24] = 0;
+        }
+        ScreenDialogToClient(v66, &X);
+        v70 = CreateMovie(lParam, MEMORY[0x887310], 0);
+        v5[22] = v70;
+        if ( v70 )
+        {
+LABEL_165:
+          (*(void (__thiscall **)(_DWORD *, LONG, LONG))(*v70 + 24))(v70, X.left, X.top);
+          MoveWindow(v66, X.left, X.top, *(_DWORD *)(v5[22] + 8), *(_DWORD *)(v5[22] + 12), 0);
+          SetTimer(v66, 0x65u, 0x22u, 0);
+          return 0;
+        }
+        KillTimer(v66, 0x65u);
+        v50 = (void (__thiscall ***)(_DWORD, int))v5[24];
+        if ( v50 )
+          goto LABEL_174;
+        return 0;
+      case 0x4EEu:
+        if ( v5[28] != 1 || *((_BYTE *)v5 + 168) )
+          return 0;
+        *((_BYTE *)v5 + 168) = 1;
+        v5[32] = 1;
+        SetTimer(hWnd, 0, v5[33], 0);
+        InvalidateRect(hWnd, 0, 0);
+        return 0;
+      case 0x4F0u:
+        v73 = v5[22];
+        if ( !v73 )
+          return 0;
+        (*(void (__thiscall **)(int))(*(_DWORD *)v73 + 40))(v73);
+        return 0;
+      default:
+        goto LABEL_34;
+    }
+  }
+  if ( Msg == 1236 )
+  {
+    if ( v5[28] == 4 && *((_BYTE *)v5 + 168) )
+    {
+      KillTimer(v4, 0);
+      *((_BYTE *)v5 + 168) = 0;
+      return 0;
+    }
+    return 0;
+  }
+  if ( Msg > 0x497 )
+  {
+    switch ( Msg )
+    {
+      case 0x498u:
+        v63 = lParam;
+        if ( lParam != v5[59] )
+          InvalidateRect(v4, 0, 0);
+        if ( v63 == -1 )
+          v5[59] = MEMORY[0xAC18A4];
+        else
+          v5[59] = v63;
+        result = 0;
+        break;
+      case 0x4B1u:
+        v64 = lParam;
+        *((_BYTE *)v5 + 180) = 1;
+        v5[46] = v64;
+        result = 0;
+        break;
+      case 0x4B2u:
+      case 0x4B4u:
+        v65 = v5[4];
+        if ( v65 )
+        {
+          ScreenDialogToClient(v4, &v84);
+          GetClientRect(hWnd, &v85);
+          left = v84.left;
+          top = v84.top;
+          X.bottom = v85.bottom + 1;
+          v89 = v85.bottom + 1;
+          X.left = 0;
+          X.top = 0;
+          X.right = v85.right + 1;
+          v88 = v85.right + 1;
+          (*(void (__thiscall **)(int, LONG *, int, struct tagRECT *, _DWORD, int))(*(_DWORD *)MEMORY[0x887310] + 8))(
+            MEMORY[0x887310],
+            &left,
+            v65,
+            &X,
+            0,
+            1);
+          InvalidateRect(hWnd, 0, 0);
+        }
+        result = 1;
+        break;
+      case 0x4D3u:
+        if ( !v5[30] || v5[28] != 4 || *((_BYTE *)v5 + 168) )
+          return 0;
+        *((_BYTE *)v5 + 168) = 1;
+        Parent = GetParent(hWnd);
+        v62 = BinkMovie::HandleKeyboard(Parent, hWnd);
+        SetTimer(hWnd, 0, v62, 0);
+        result = 0;
+        break;
+      default:
+        goto LABEL_34;
+    }
+    return result;
+  }
+  if ( Msg == 1175 )
+  {
+    if ( MEMORY[0xAC1B4C] )
+    {
+      v56 = MEMORY[0xAC1B60](&hWnd);
+      v4 = hWnd;
+      for ( i = *((_DWORD *)MEMORY[0xAC1B48] + (v56 & ((1 << MEMORY[0xAC1B54]) - 1))); i; i = *(_DWORD *)(i + 8) )
+      {
+        if ( *(HWND *)i == hWnd )
+          break;
+      }
+    }
+    v58 = GetParent(v4);
+    v5[28] = 0;
+    v59 = hWnd;
+    v81.left = (LONG)v58;
+    if ( MEMORY[0xAC1B04] )
+    {
+      for ( j = (_DWORD *)*((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v81) & ((1 << MEMORY[0xAC1B0C]) - 1)));
+            j;
+            j = (_DWORD *)j[129] )
+      {
+        if ( *j == v81.left )
+          break;
+      }
+    }
+    GetDlgCtrlID(v59);
+    v5[43] = 12;
+    v5[59] = MEMORY[0xAC18A4];
+    return 0;
+  }
+  if ( Msg <= 0xF )
+  {
+    if ( Msg == 15 )
+    {
+      if ( *((_BYTE *)v5 + 188) || v5[22] )
+      {
+        ValidateRect(v4, 0);
+        return 0;
+      }
+      if ( !v5[4] )
+      {
+        ScreenDialogToClient(v4, &X);
+        GetClientRect(hWnd, &Rect);
+        v17 = __2_YAPAXI_Z(0x20u);
+        if ( v17 )
+        {
+          v18 = Rect.bottom + 1;
+          v19 = Rect.right + 1;
+          v17[2] = Rect.bottom + 1;
+          v17[1] = v19;
+          v17[3] = 0;
+          *v17 = &XSurface_Vtable;
+          v17[4] = 2;
+          Buffer::Init(v17 + 5, 0, 2 * v19 * v18);
+          *v17 = &BSurface_Vtable;
+          v20 = v17;
+        }
+        else
+        {
+          v20 = 0;
+        }
+        right = Rect.right;
+        v5[4] = v20;
+        ++MEMORY[0xAC48B4];
+        v81.left = X.left;
+        v85.bottom = Rect.bottom + 1;
+        v81.bottom = Rect.bottom + 1;
+        v85.left = 0;
+        v85.top = 0;
+        v85.right = right + 1;
+        v81.top = X.top;
+        v81.right = right + 1;
+        (*(void (__thiscall **)(_DWORD *, struct tagRECT *, int, struct tagRECT *, _DWORD, int))(*v20 + 8))(
+          v20,
+          &v85,
+          MEMORY[0x887310],
+          &v81,
+          0,
+          1);
+        v4 = hWnd;
+      }
+      ScreenDialogToClient(v4, &v84);
+      if ( *((_BYTE *)v5 + 180) )
+      {
+        v85.left = v84.left;
+        v85.top = v84.top;
+        v85.bottom = v84.bottom - v84.top;
+        v22 = v5[46];
+        v85.right = v84.right - v84.left;
+        (*(void (__thiscall **)(int, struct tagRECT *, int))(*(_DWORD *)MEMORY[0x887310] + 20))(
+          MEMORY[0x887310],
+          &v85,
+          (*((unsigned __int8 *)v5 + 184) >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0])
+        | (BYTE1(v22) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
+        | (BYTE2(v22) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]));
+      }
+      v23 = v5[28];
+      v24 = v23 == 1;
+      if ( v23 < 2 )
+      {
+        if ( v5[10] && (!v23 || *((_BYTE *)v5 + 168)) )
+        {
+          WindowLongA = GetWindowLongA(hWnd, -16);
+          v41 = 16;
+          if ( (WindowLongA & 1) != 0 )
+          {
+            v41 = 17;
+          }
+          else if ( (WindowLongA & 2) != 0 )
+          {
+            v41 = 18;
+          }
+          v42 = v5[59];
+          if ( (WindowLongA & 0x8000000) != 0 )
+            v42 = MEMORY[0xAC1CB4];
+          PrintFontLayout(
+            MEMORY[0x887310],
+            (unsigned __int16 *)v5[10],
+            &v84,
+            (_DWORD *)v5[25],
+            v42,
+            v41,
+            v5[43],
+            0,
+            v5[32],
+            v5[35]);
+          v43 = v5[36];
+          if ( v43 != -1 )
+            PlayVocClass(v43, 0x2000, 1.0, 0);
+          if ( v24 )
+          {
+            v44 = wcslen((const wchar_t *)v5[10]) + v5[35] + 1;
+            v45 = v5[32];
+            if ( v45 < v44 )
+            {
+              v46 = v5[34] + v45;
+              v5[32] = v46;
+              if ( v46 >= v44 )
+                KillTimer(hWnd, 0);
+            }
+          }
+        }
+      }
+      else
+      {
+        v25 = v23 == 2;
+        v26 = v23 == 3;
+        v78 = v23 == 3;
+        v27 = v23 == 4;
+        v77 = v27;
+        if ( (v25 || v26 || v27) && (signed int)(GetTickCount() - v5[39]) > v5[40] )
+        {
+          Rect.left = v84.left;
+          Rect.top = v84.top;
+          Rect.right = v84.right - v84.left;
+          Rect.bottom = v84.bottom - v84.top;
+          GetClientRect(hWnd, &v85);
+          left = v85.left;
+          top = v85.top;
+          v89 = v85.bottom - v85.top;
+          v88 = v85.right - v85.left;
+          (*(void (__thiscall **)(int, struct tagRECT *, _DWORD, LONG *, _DWORD, int))(*(_DWORD *)MEMORY[0x887310] + 8))(
+            MEMORY[0x887310],
+            &Rect,
+            v5[4],
+            &left,
+            0,
+            1);
+          if ( v25 )
+          {
+            v28 = v5[5];
+            if ( v28 )
+            {
+              v29 = (*(int (__thiscall **)(int))(*(_DWORD *)v28 + 124))(v28);
+              v30 = (*(int (__thiscall **)(int))(*(_DWORD *)v28 + 128))(v28);
+              v81 = Rect;
+              if ( Rect.right > v29 )
+              {
+                v81.right = v29;
+                v81.left = Rect.left + (Rect.right - v29) / 2;
+              }
+              if ( Rect.bottom > v30 )
+              {
+                v81.bottom = v30;
+                v81.top += (Rect.bottom - v30) / 2;
+              }
+              Surface::BlitTransparent(
+                &v81.left,
+                MEMORY[0x887310],
+                v28,
+                (255 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) | (255 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]));
+              ValidateRect(hWnd, 0);
+              return 0;
+            }
+          }
+          else if ( v78 || v77 )
+          {
+            v31 = v5[30];
+            if ( v31 )
+            {
+              v32 = Rect.left;
+              v33 = *(__int16 *)(v31 + 4);
+              v34 = Rect.top;
+              v82 = v5[29];
+              v81.left = v33;
+              v35 = *(__int16 *)(v31 + 2);
+              X.right = Rect.right;
+              if ( Rect.right > v35 )
+                v32 = Rect.left + (Rect.right - v35) / 2;
+              if ( Rect.bottom > v81.left )
+                v34 = (Rect.bottom - v81.left) / 2 + Rect.top;
+              v81.left = v32;
+              v81.top = v34;
+              v36 = (struct tagRECT *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)MEMORY[0x887310] + 120))(
+                                        MEMORY[0x887310],
+                                        v91);
+              v37 = v5[38];
+              X = *v36;
+              DrawToSurfaceSHP(MEMORY[0x887310], v82, v31, v37, &v81.left, &X.left, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+              if ( v77 )
+              {
+                if ( *((_BYTE *)v5 + 168) )
+                {
+                  v38 = v37 + 1;
+                  if ( v38 >= v5[37] )
+                    v38 = 0;
+                  v5[38] = v38;
+                  v39 = (HWND)v5[41];
+                  if ( v39 )
+                  {
+                    SendMessageA(v39, 0x4D8u, v38, (LPARAM)hWnd);
+                    ValidateRect(hWnd, 0);
+                    return 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      ValidateRect(hWnd, 0);
+      return 0;
+    }
+    if ( Msg != 2 )
+    {
+      if ( Msg != 3 && Msg != 5 )
+        goto LABEL_34;
+LABEL_118:
+      v55 = (void (__thiscall ***)(_DWORD, int))v5[4];
+      if ( v55 )
+        (**v55)(v55, 1);
+      v5[4] = 0;
+      InvalidateRect(hWnd, 0, 0);
+      return 0;
+    }
+    v9 = (void (__thiscall ***)(_DWORD, int))v5[4];
+    if ( v9 )
+    {
+      (**v9)(v9, 1);
+      v5[4] = 0;
+      v4 = hWnd;
+    }
+    if ( *((_BYTE *)v5 + 124) )
+    {
+      __3_YAXPAX_Z((void *)v5[30]);
+      v5[30] = 0;
+      v4 = hWnd;
+    }
+    v10 = v5[28];
+    if ( v10 == 1 )
+    {
+      if ( *((_BYTE *)v5 + 168) )
+        goto LABEL_28;
+    }
+    else if ( v10 == 4 )
+    {
+LABEL_28:
+      KillTimer(v4, 0);
+      v4 = hWnd;
+    }
+    v11 = v4;
+    v12 = (void (__thiscall ***)(_DWORD, int))v5[22];
+    if ( v12 )
+    {
+      (**v12)(v12, 1);
+      v5[22] = 0;
+    }
+    KillTimer(v11, 0x65u);
+    v13 = (void (__thiscall ***)(_DWORD, int))v5[24];
+    if ( v13 )
+    {
+      (**v13)(v13, 1);
+      v5[24] = 0;
+    }
+    v4 = hWnd;
+    goto LABEL_34;
+  }
+  if ( Msg == 71 )
+    goto LABEL_118;
+  if ( Msg == 275 )
+  {
+    if ( wParam == 101 )
+    {
+      v47 = v5[22];
+      if ( v47 )
+      {
+        if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v47 + 4))(v47) )
+          InvalidateRect(hWnd, 0, 0);
+        if ( (*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)v5[22] + 20))(v5[22]) )
+        {
+          if ( v5[23] )
+          {
+            (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)v5[22] + 28))(v5[22], 1);
+            Debug::Log();
+            return 0;
+          }
+          v48 = (void (__thiscall ***)(_DWORD, int))v5[22];
+          v49 = hWnd;
+          if ( v48 )
+          {
+LABEL_100:
+            (**v48)(v48, 1);
+            v5[22] = 0;
+          }
+LABEL_101:
+          KillTimer(v49, 0x65u);
+          v50 = (void (__thiscall ***)(_DWORD, int))v5[24];
+          if ( v50 )
+          {
+LABEL_174:
+            (**v50)(v50, 1);
+            v5[24] = 0;
+            return 0;
+          }
+        }
+      }
+      return 0;
+    }
+    v51 = v5[28];
+    if ( v51 == 1 )
+    {
+      InvalidateRect(v4, 0, 1);
+      return 0;
+    }
+    v79 = v51 == 4;
+    if ( v51 == 2 || v51 == 3 )
+    {
+      v52 = 1;
+    }
+    else
+    {
+      v52 = 0;
+      if ( v51 != 4 )
+        return 0;
+    }
+    if ( (signed int)(GetTickCount() - v5[39]) > v5[40] )
+    {
+      if ( v52 || v79 && *((_BYTE *)v5 + 168) )
+      {
+        InvalidateRect(hWnd, 0, 1);
+        if ( v52 )
+        {
+          KillTimer(hWnd, 0);
+          return 0;
+        }
+      }
+      if ( !v5[37] )
+      {
+        KillTimer(hWnd, 0);
+        v53 = v5[30];
+        if ( v53 )
+        {
+          v54 = *(__int16 *)(v53 + 6);
+          v5[37] = v54;
+          SetTimer(hWnd, 0, v54, 0);
+          return 0;
+        }
+      }
+    }
+    return 0;
+  }
+LABEL_34:
+  v14 = 0;
+  if ( MEMORY[0xAC1B4C] )
+  {
+    v15 = MEMORY[0xAC1B60](&hWnd);
+    v4 = hWnd;
+    v16 = *((_DWORD *)MEMORY[0xAC1B48] + (v15 & ((1 << MEMORY[0xAC1B54]) - 1)));
+    if ( v16 )
+    {
+      while ( *(HWND *)v16 != hWnd )
+      {
+        v16 = *(_DWORD *)(v16 + 8);
+        if ( !v16 )
+          return CallWindowProcA(v14, v4, v8, wParam, lParam);
+      }
+      v76 = (LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM))(v16 + 4);
+      if ( v76 )
+        v14 = *v76;
+    }
+  }
+  return CallWindowProcA(v14, v4, v8, wParam, lParam);
+}
 }
 } // namespace gamemd
 

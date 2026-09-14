@@ -743,6 +743,8 @@ LABEL_33:
 // 0x472640
 namespace ra2 {
 namespace game {
+char CaptureManagerClass::NeedsToDrawLinks()
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall CaptureManagerClass::NeedsToDrawLinks(_DWORD *this)
 {
@@ -785,6 +787,7 @@ LABEL_12:
     goto LABEL_13; /*0x4726a7*/
   }
   return 0; /*0x472650*/
+}
 }
 } // namespace game
 } // namespace ra2

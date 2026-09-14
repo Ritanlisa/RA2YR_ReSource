@@ -733,63 +733,392 @@ namespace gamemd {
 char Dialog_InitCountryIcons(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// char __fastcall Dialog_InitCountryIcons(int a1, int a2)
-// {
-//   int v2; // edx
-//   int v3; // edx
-//   int v4; // edx
-//   int v5; // edx
-//   int v6; // edx
-//   int v7; // edx
-//   int v8; // edx
-//   int v9; // edx
-//   int v10; // edx
-//   int v11; // edx
-//   int v12; // edx
-//   int v13; // edx
-//   int v14; // edx
-//   int v15; // edx
-//   int v16; // edx
-//   int v17; // edx
-//   int v18; // edx
-//   int v19; // edx
-//   int v20; // edx
-//   int v21; // edx
-//   int v22; // edx
-//   int v23; // edx
-//   int v24; // edx
-//   int v25; // edx
-//   int v26; // edx
-//   int v27; // edx
-//   int v28; // edx
-//   int v29; // edx
-//   int v30; // edx
-//   int v31; // edx
-//   int v32; // edx
-//   int v33; // edx
-//   int v34; // edx
-//   int v35; // edx
-//   int v36; // edx
-//   int v37; // edx
-//   int v38; // edx
-//   int v39; // edx
-//   int v40; // edx
-//   int v41; // edx
-//   int v42; // edx
-//   int v43; // edx
-//   int v44; // edx
-//   int v45; // edx
-//   int v46; // edx
-//   int v47; // edx
-//   int v48; // edx
-//   int v49; // edx
-//   int v50; // edx
-//   int v51; // edx
-//   int v52; // edx
-//   int v53; // edx
-//   int v54; // ... [20523 chars total]
-// end truncated pseudocode
+char __fastcall Dialog_InitCountryIcons(int a1, int a2)
+{
+  int v2; // edx
+  int v3; // edx
+  int v4; // edx
+  int v5; // edx
+  int v6; // edx
+  int v7; // edx
+  int v8; // edx
+  int v9; // edx
+  int v10; // edx
+  int v11; // edx
+  int v12; // edx
+  int v13; // edx
+  int v14; // edx
+  int v15; // edx
+  int v16; // edx
+  int v17; // edx
+  int v18; // edx
+  int v19; // edx
+  int v20; // edx
+  int v21; // edx
+  int v22; // edx
+  int v23; // edx
+  int v24; // edx
+  int v25; // edx
+  int v26; // edx
+  int v27; // edx
+  int v28; // edx
+  int v29; // edx
+  int v30; // edx
+  int v31; // edx
+  int v32; // edx
+  int v33; // edx
+  int v34; // edx
+  int v35; // edx
+  int v36; // edx
+  int v37; // edx
+  int v38; // edx
+  int v39; // edx
+  int v40; // edx
+  int v41; // edx
+  int v42; // edx
+  int v43; // edx
+  int v44; // edx
+  int v45; // edx
+  int v46; // edx
+  int v47; // edx
+  int v48; // edx
+  int v49; // edx
+  int v50; // edx
+  int v51; // edx
+  int v52; // edx
+  int v53; // edx
+  int v54; // edx
+  int v55; // edx
+  int v56; // edx
+  int v57; // edx
+  int v58; // edx
+  int v59; // edx
+  int v60; // edx
+  int v61; // edx
+  int v62; // edx
+  int v63; // edx
+  int v64; // edx
+  int v65; // edx
+  int v66; // edx
+  int v67; // edx
+  int v68; // edx
+  int v69; // edx
+  int v70; // edx
+  int v71; // edx
+  int v72; // edx
+  int v73; // edx
+  int v74; // edx
+  int v75; // edx
+  int v76; // edx
+  int v77; // edx
+  int v78; // edx
+  int v79; // edx
+  int v80; // edx
+  int v81; // edx
+  int v82; // edx
+  int v83; // edx
+  int v84; // edx
+  int v85; // edx
+  int v86; // edx
+  int v87; // edx
+  int v88; // edx
+  int v89; // edx
+  int v90; // edx
+  int v91; // edx
+  int v92; // edx
+  int v93; // edx
+  int v94; // edx
+  int v95; // edx
+  int v96; // edx
+  int v97; // edx
+  int v98; // edx
+  int v99; // edx
+  int v100; // edx
+  int v101; // edx
+  int v102; // edx
+  int v103; // edx
+  int v104; // edx
+  int v105; // edx
+  int v106; // edx
+  int v107; // edx
+  int v108; // edx
+  int v109; // edx
+  int v110; // edx
+  int v111; // edx
+  int v112; // edx
+  int v113; // edx
+  int v114; // edx
+  int v115; // edx
+  int v116; // edx
+  int v117; // edx
+  int v118; // edx
+  int v119; // edx
+  int v120; // edx
+  int v121; // edx
+  int v122; // edx
+  int v123; // edx
+  int v124; // edx
+  int v125; // edx
+  int v126; // edx
+  int v127; // edx
+  int v128; // edx
+  int v129; // edx
+  int v130; // edx
+  int v131; // edx
+  int v132; // edx
+  int v133; // edx
+  int v134; // edx
+  int v135; // edx
+  int v136; // edx
+  int v137; // edx
+  int v138; // edx
+  int v139; // edx
+  int v140; // edx
+  int v141; // edx
+  int v142; // edx
+  int v143; // edx
+  int v144; // edx
+  int v145; // edx
+  int v146; // edx
+  int v147; // edx
+  int v148; // edx
+  int v149; // edx
+  int v150; // edx
+  int v151; // edx
+  int v152; // edx
+  int v153; // edx
+  int v154; // edx
+  int v155; // edx
+  int v156; // edx
+  int v157; // edx
+  int v158; // edx
+  int v159; // edx
+  int v160; // edx
+  int v161; // edx
+  int v162; // edx
+  int v163; // edx
+  int v164; // edx
+  int v165; // edx
+  int v166; // edx
+  int v167; // edx
+  int v168; // edx
+  int v169; // edx
+  int v170; // edx
+  int v171; // edx
+  int v172; // edx
+  int v173; // edx
+  int v174; // edx
+  int v175; // edx
+  int v176; // edx
+  int v177; // edx
+  int v178; // edx
+  int v179; // edx
+  int v180; // edx
+  int v181; // edx
+  int v182; // edx
+  int v183; // edx
+  int v184; // edx
+  int v185; // edx
+  int v186; // edx
+  int v187; // edx
+  int v188; // edx
+  int v189; // edx
+  int v190; // edx
+  int v191; // edx
+
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], a2, MEMORY[0x833654], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v2, MEMORY[0x8363C4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v3, MEMORY[0x8363B8], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v4, MEMORY[0x8363AC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v5, MEMORY[0x8363A0], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v6, MEMORY[0x836394], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v7, MEMORY[0x836388], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v8, MEMORY[0x83637C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v9, MEMORY[0x836370], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v10, MEMORY[0x836364], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v11, MEMORY[0x836358], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v12, MEMORY[0x83634C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v13, MEMORY[0x836340], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v14, MEMORY[0x836334], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v15, MEMORY[0x836328], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v16, MEMORY[0x836318], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v17, MEMORY[0x836308], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v18, MEMORY[0x8362F8], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v19, MEMORY[0x8362E8], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v20, MEMORY[0x8362DC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v21, MEMORY[0x8362CC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v22, MEMORY[0x835A00], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v23, MEMORY[0x8359C8], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v24, MEMORY[0x8359E4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v25, MEMORY[0x8359AC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v26, MEMORY[0x8359D4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v27, MEMORY[0x8359F0], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v28, MEMORY[0x8359B8], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v29, MEMORY[0x8362C0], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v30, MEMORY[0x8362B4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v31, MEMORY[0x8362A8], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v32, MEMORY[0x83629C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v33, MEMORY[0x836290], 1, 0);
+  UI_Init_6BA120(MEMORY[0x836284]);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v34, MEMORY[0x836278], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v35, MEMORY[0x83626C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v36, MEMORY[0x83625C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v37, MEMORY[0x83624C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v38, MEMORY[0x83623C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v39, MEMORY[0x83622C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v40, MEMORY[0x836220], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v41, MEMORY[0x836214], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v42, MEMORY[0x836208], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v43, MEMORY[0x8361FC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v44, MEMORY[0x8361F0], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v45, MEMORY[0x8361E4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v46, MEMORY[0x8361D8], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v47, MEMORY[0x8361CC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v48, MEMORY[0x8361C0], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v49, MEMORY[0x8361B4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v50, MEMORY[0x8361A8], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v51, MEMORY[0x83619C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v52, MEMORY[0x836190], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v53, MEMORY[0x836184], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v54, MEMORY[0x836174], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v55, MEMORY[0x836164], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v56, MEMORY[0x836158], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v57, MEMORY[0x83614C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v58, MEMORY[0x836140], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v59, MEMORY[0x836134], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v60, MEMORY[0x835944], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v61, MEMORY[0x836128], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v62, MEMORY[0x83611C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v63, MEMORY[0x836110], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v64, MEMORY[0x836104], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v65, MEMORY[0x8360F8], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v66, MEMORY[0x835908], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v67, MEMORY[0x8358FC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v68, MEMORY[0x835920], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v69, MEMORY[0x8358E4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v70, MEMORY[0x8358F0], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v71, MEMORY[0x835914], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v72, MEMORY[0x83592C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v73, MEMORY[0x835938], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v74, MEMORY[0x8360EC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v75, MEMORY[0x8360DC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v76, MEMORY[0x8360D0], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v77, MEMORY[0x8360C4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v78, MEMORY[0x8360B4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v79, MEMORY[0x8360A8], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v80, g_Str_File_wolacpt_pcx, 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v81, g_Str_File_wolhost_pcx, 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v82, MEMORY[0x83609C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v83, MEMORY[0x831DDC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v84, MEMORY[0x831DD0], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v85, MEMORY[0x83608C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v86, MEMORY[0x83607C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v87, MEMORY[0x836070], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v88, MEMORY[0x836064], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v89, MEMORY[0x836054], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v90, MEMORY[0x836044], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v91, MEMORY[0x836034], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v92, MEMORY[0x836028], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v93, MEMORY[0x83601C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v94, MEMORY[0x836010], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v95, MEMORY[0x836000], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v96, MEMORY[0x835FF4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v97, MEMORY[0x835FE4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v98, MEMORY[0x835FD4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v99, MEMORY[0x835FC8], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v100, MEMORY[0x835FBC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v101, MEMORY[0x835FB0], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v102, MEMORY[0x835FA4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v103, MEMORY[0x835F98], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v104, MEMORY[0x835F8C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v105, MEMORY[0x835F80], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v106, MEMORY[0x835F74], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v107, MEMORY[0x835F68], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v108, MEMORY[0x835F5C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v109, MEMORY[0x835F4C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v110, MEMORY[0x835F3C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v111, MEMORY[0x835F2C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v112, MEMORY[0x835F1C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v113, MEMORY[0x835F0C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v114, MEMORY[0x835EFC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v115, MEMORY[0x835EEC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v116, MEMORY[0x835EDC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v117, MEMORY[0x835A1C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v118, MEMORY[0x835A28], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v119, MEMORY[0x835A10], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v120, MEMORY[0x835ECC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v121, MEMORY[0x835EBC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v122, MEMORY[0x835EAC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v123, MEMORY[0x835E9C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v124, MEMORY[0x835E8C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v125, MEMORY[0x835E7C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v126, MEMORY[0x835E6C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v127, MEMORY[0x835E5C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v128, MEMORY[0x835E50], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v129, MEMORY[0x835998], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v130, MEMORY[0x835E44], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v131, MEMORY[0x835974], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v132, MEMORY[0x835980], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v133, MEMORY[0x83598C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v134, MEMORY[0x835E34], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v135, MEMORY[0x835E24], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v136, MEMORY[0x835E14], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v137, MEMORY[0x835E04], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v138, MEMORY[0x835DF4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v139, MEMORY[0x835DE4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v140, MEMORY[0x835DD4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v141, MEMORY[0x835DC4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v142, MEMORY[0x835DB4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v143, MEMORY[0x835DA4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v144, MEMORY[0x835D94], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v145, MEMORY[0x835D84], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v146, MEMORY[0x835D74], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v147, MEMORY[0x835D64], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v148, MEMORY[0x835D54], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v149, MEMORY[0x835D44], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v150, MEMORY[0x835D34], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v151, MEMORY[0x835D24], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v152, MEMORY[0x835D14], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v153, MEMORY[0x835D04], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v154, MEMORY[0x835CF4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v155, MEMORY[0x835CE4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v156, MEMORY[0x835CD4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v157, MEMORY[0x835CC4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v158, MEMORY[0x835CB4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v159, MEMORY[0x835CA8], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v160, MEMORY[0x835C9C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v161, MEMORY[0x835C90], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v162, MEMORY[0x835C7C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v163, MEMORY[0x835C68], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v164, MEMORY[0x835C54], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v165, MEMORY[0x835C40], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v166, MEMORY[0x835C2C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v167, MEMORY[0x835C18], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v168, MEMORY[0x835C04], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v169, MEMORY[0x835BF0], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v170, MEMORY[0x835BDC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v171, MEMORY[0x835BC8], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v172, MEMORY[0x835BB4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v173, MEMORY[0x835BA0], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v174, MEMORY[0x835B8C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v175, MEMORY[0x835B78], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v176, MEMORY[0x835B64], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v177, MEMORY[0x835B50], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v178, MEMORY[0x835B3C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v179, MEMORY[0x835B28], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v180, MEMORY[0x835B14], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v181, MEMORY[0x835B00], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v182, MEMORY[0x835AEC], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v183, MEMORY[0x835AD8], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v184, MEMORY[0x835AC4], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v185, MEMORY[0x835AB0], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v186, MEMORY[0x835A9C], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v187, MEMORY[0x835A88], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v188, MEMORY[0x835A74], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v189, MEMORY[0x835A60], 2, 0);
+  LoadPaletteFromFile((int)MEMORY[0xAC4848], v190, MEMORY[0x835A4C], 2, 0);
+  return LoadPaletteFromFile((int)MEMORY[0xAC4848], v191, MEMORY[0x835A38], 2, 0);
+}
 }
 } // namespace gamemd
 

@@ -23,61 +23,530 @@ namespace gamemd {
 int Trigger_AllocateLog(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// int __fastcall Trigger_AllocateLog(int a1)
-// {
-//   int result; // eax
-//   int v3; // edi
-//   int v4; // ebx
-//   int v5; // ebp
-//   int i; // esi
-//   int v7; // ecx
-//   char *v8; // eax
-//   char v9; // dl
-//   int v10; // ebp
-//   int v11; // ebx
-//   int *v12; // eax
-//   int v13; // ecx
-//   int v14; // ebx
-//   int v15; // esi
-//   int v16; // edi
-//   int v17; // ecx
-//   int v18; // edx
-//   char v19; // al
-//   __int16 *v20; // ebp
-//   int v21; // ebx
-//   void *v22; // eax
-//   char *Name; // eax
-//   __int16 *v24; // edi
-//   int v25; // ebx
-//   void *v26; // eax
-//   char *v27; // eax
-//   int v28; // edi
-//   int v29; // ecx
-//   int v30; // edx
-//   __int16 *v31; // ebp
-//   int v32; // ebx
-//   void *v33; // eax
-//   char *v34; // eax
-//   __int16 *v35; // edi
-//   int v36; // ebx
-//   void *v37; // eax
-//   char *v38; // eax
-//   bool v39; // cc
-//   int v40; // edi
-//   int v41; // ecx
-//   int v42; // edx
-//   char v43; // al
-//   __int16 *v44; // ebp
-//   int v45; // ebx
-//   void *v46; // eax
-//   char *v47; // eax
-//   __int16 *v48; // edi
-//   int v49; // ebx
-//   void *v50; // eax
-//   char *v51; // eax
-//   ... [21401 chars total]
-// end truncated pseudocode
+int __fastcall Trigger_AllocateLog(int a1)
+{
+  int result; // eax
+  int v3; // edi
+  int v4; // ebx
+  int v5; // ebp
+  int i; // esi
+  int v7; // ecx
+  char *v8; // eax
+  char v9; // dl
+  int v10; // ebp
+  int v11; // ebx
+  int *v12; // eax
+  int v13; // ecx
+  int v14; // ebx
+  int v15; // esi
+  int v16; // edi
+  int v17; // ecx
+  int v18; // edx
+  char v19; // al
+  __int16 *v20; // ebp
+  int v21; // ebx
+  void *v22; // eax
+  char *Name; // eax
+  __int16 *v24; // edi
+  int v25; // ebx
+  void *v26; // eax
+  char *v27; // eax
+  int v28; // edi
+  int v29; // ecx
+  int v30; // edx
+  __int16 *v31; // ebp
+  int v32; // ebx
+  void *v33; // eax
+  char *v34; // eax
+  __int16 *v35; // edi
+  int v36; // ebx
+  void *v37; // eax
+  char *v38; // eax
+  bool v39; // cc
+  int v40; // edi
+  int v41; // ecx
+  int v42; // edx
+  char v43; // al
+  __int16 *v44; // ebp
+  int v45; // ebx
+  void *v46; // eax
+  char *v47; // eax
+  __int16 *v48; // edi
+  int v49; // ebx
+  void *v50; // eax
+  char *v51; // eax
+  int v52; // ebx
+  int v53; // edi
+  int v54; // ecx
+  int v55; // edx
+  int v56; // ebp
+  char v57; // al
+  __int16 *v58; // edi
+  void *v59; // eax
+  char *v60; // eax
+  int *v61; // ebx
+  _DWORD *v62; // eax
+  int v63; // ebp
+  _DWORD *v64; // edi
+  int v65; // ecx
+  int v66; // edx
+  int v67; // eax
+  int v68; // eax
+  int v69; // eax
+  int v70; // ebp
+  int v71; // ebx
+  _DWORD *v72; // edi
+  int v73; // ecx
+  int v74; // edx
+  int v75; // eax
+  int v76; // eax
+  int v77; // eax
+  int v78; // [esp+18h] [ebp-20h]
+  int v79; // [esp+18h] [ebp-20h]
+  int v80; // [esp+1Ch] [ebp-1Ch]
+  int v81; // [esp+1Ch] [ebp-1Ch]
+  _DWORD *v82; // [esp+1Ch] [ebp-1Ch]
+  _DWORD *v83; // [esp+20h] [ebp-18h]
+  int v84; // [esp+24h] [ebp-14h] BYREF
+  _DWORD v85[3]; // [esp+28h] [ebp-10h] BYREF
+  int v86; // [esp+34h] [ebp-4h]
+
+  if ( byte_B04880 )
+  {
+    v3 = 828 * a1 + 11298400;
+    v83 = (_DWORD *)v3;
+    *(_DWORD *)v3 = *(_DWORD *)MEMORY[0xAC51FC];
+    MEMORY[0xAC6664][207 * a1] = Random::State((_DWORD *)MEMORY[0xA8B230] + 134);
+    MEMORY[0xAC6664][207 * a1 + 1] = MEMORY[0xA8ED84];
+    v4 = 0;
+    v5 = 828 * a1 + 11298412;
+    do
+    {
+      *(_DWORD *)(v5 + 56) = -1;
+      if ( v4 < HouseClass_Count )
+      {
+        *(_BYTE *)v5 = 0;
+        for ( i = 0; i < MEMORY[0xA8DA84]; ++i )
+        {
+          v7 = *(_DWORD *)(MEMORY[0xA8DA78] + 4 * i);
+          if ( *(_DWORD *)(v7 + 111) == v4 )
+          {
+            v8 = ToWideStringChar((char *)v7);
+            strncpy((char *)v5, v8, 0x14u);
+          }
+        }
+        if ( !*(_BYTE *)v5
+          && (!_strcmpi((const void *)(*(_DWORD *)(*((_DWORD *)HouseClass_Array + v4) + 52) + 36), g_INI_Key_Neutral)
+           || !_strcmpi((const void *)(*(_DWORD *)(*((_DWORD *)HouseClass_Array + v4) + 52) + 36), MEMORY[0x817318])) )
+        {
+          strcpy((char *)v5, (const char *)(*(_DWORD *)(*((_DWORD *)HouseClass_Array + v4) + 52) + 36));
+          v3 = (int)v83;
+        }
+        v9 = *(_BYTE *)(*((_DWORD *)HouseClass_Array + v4) + 492);
+        *(_BYTE *)(v5 + 52) = 0;
+        *(_BYTE *)(v5 + 20) = v9;
+        strncpy(
+          (char *)(v5 + 21),
+          *(const char **)(*((_DWORD *)MEMORY[0xB054D4] + *(_DWORD *)(*((_DWORD *)HouseClass_Array + v4) + 90196)) + 772),
+          0x1Fu);
+        *(_DWORD *)(v5 + 56) = v4;
+        *(_BYTE *)(v5 + 91) = 0;
+        strncpy(
+          (char *)(v5 + 60),
+          (const char *)(*((_DWORD *)g_SuperWeaponTypeCount
+                         + *(_DWORD *)(*(_DWORD *)(*((_DWORD *)HouseClass_Array + v4) + 52) + 180))
+                       + 36),
+          0x1Fu);
+      }
+      ++v4;
+      v5 += 92;
+    }
+    while ( v4 < 8 );
+    v10 = MEMORY[0x87F788];
+    v11 = MEMORY[0xA8EB50] + MEMORY[0xA8E3A0] + MEMORY[0xA83DF8] + MEMORY[0x8B4118];
+    v12 = MEMORY[0x8A0370];
+    do
+    {
+      v13 = *v12;
+      v12 += 6;
+      v10 += v13;
+    }
+    while ( (int)v12 < (int)&MEMORY[0x8A03E8] );
+    if ( !*(_DWORD *)(v3 + 820) )
+      *(_DWORD *)(v3 + 820) = __2_YAPAXI_Z(*(_DWORD *)(v3 + 824));
+    v14 = 40 * v10 + 104 * v11;
+    if ( (unsigned int)(v14 + 1024) > *(_DWORD *)(v3 + 824) )
+    {
+      __3_YAXPAX_Z(*(void **)(v3 + 820));
+      *(_DWORD *)(v3 + 824) = (v14 + 0xFFFF) & 0xFFFF0000;
+      Debug::Log();
+      *(_DWORD *)(v3 + 820) = __2_YAPAXI_Z(*(_DWORD *)(v3 + 824));
+    }
+    v15 = *(_DWORD *)(v3 + 820);
+    v78 = 0;
+    *(_DWORD *)(v3 + 768) = v15;
+    for ( *(_DWORD *)(v3 + 752) = MEMORY[0xA83DF8]; v78 < MEMORY[0xA83DF8]; ++v78 )
+    {
+      v16 = *((_DWORD *)MEMORY[0xA83DEC] + v78);
+      v17 = *(_DWORD *)(v16 + 156);
+      v18 = *(_DWORD *)(v16 + 160);
+      v86 = *(_DWORD *)(v16 + 164);
+      *(_DWORD *)v15 = v17 / 10 + ((v18 / 10) << 16);
+      *(_BYTE *)(v15 + 100) = (unsigned int)((*ProgressTimer::GetValue((_WORD *)(v16 + 904), &v84) >> 7) + 1) >> 1;
+      *(_BYTE *)(v15 + 102) = (*(int (__thiscall **)(int))(*(_DWORD *)v16 + 388))(v16);
+      *(_DWORD *)(v15 + 4) = *(_DWORD *)(*(_DWORD *)(v16 + 1728) + 3576);
+      *(_BYTE *)(v15 + 103) = Math::RoundToInt(*(double *)(v16 + 1400) * 256.0);
+      v19 = *(_BYTE *)(*(_DWORD *)(v16 + 540) + 48);
+      *(_BYTE *)(v15 + 31) = 0;
+      *(_BYTE *)(v15 + 32) = v19;
+      strncpy((char *)(v15 + 8), (const char *)(*(_DWORD *)(v16 + 1728) + 36), 0x17u);
+      v20 = *(__int16 **)(v16 + 1444);
+      v21 = 0;
+      if ( v20 )
+      {
+        if ( (v20[10] & 1) != 0 )
+        {
+          v21 = (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v20 + 64))(v20);
+        }
+        else if ( (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v20 + 44))(v20) == 11 )
+        {
+          v21 = v20[18] | (v20[19] << 16);
+        }
+        v22 = (void *)(*(int (__thiscall **)(__int16 *))(*(_DWORD *)v20 + 44))(v20);
+        Name = AbstractType::FindName(v22);
+        *(_BYTE *)(v15 + 91) = 0;
+        *(_DWORD *)(v15 + 64) = v21;
+        strncpy((char *)(v15 + 68), Name, 0x17u);
+      }
+      else
+      {
+        *(_DWORD *)(v15 + 64) = 0;
+        *(_BYTE *)(v15 + 68) = 0;
+      }
+      v24 = *(__int16 **)(v16 + 692);
+      v25 = 0;
+      if ( v24 )
+      {
+        if ( (v24[10] & 1) != 0 )
+        {
+          v25 = (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v24 + 64))(v24);
+        }
+        else if ( (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v24 + 44))(v24) == 11 )
+        {
+          v25 = v24[18] | (v24[19] << 16);
+        }
+        v26 = (void *)(*(int (__thiscall **)(__int16 *))(*(_DWORD *)v24 + 44))(v24);
+        v27 = AbstractType::FindName(v26);
+        *(_BYTE *)(v15 + 63) = 0;
+        *(_DWORD *)(v15 + 36) = v25;
+        strncpy((char *)(v15 + 40), v27, 0x17u);
+      }
+      else
+      {
+        *(_DWORD *)(v15 + 36) = 0;
+        *(_BYTE *)(v15 + 40) = 0;
+      }
+      v15 += 104;
+    }
+    v80 = 0;
+    v83[189] = MEMORY[0x8B4118];
+    if ( MEMORY[0x8B4118] > 0 )
+    {
+      do
+      {
+        v28 = *((_DWORD *)MEMORY[0x8B410C] + v80);
+        v29 = *(_DWORD *)(v28 + 156);
+        v30 = *(_DWORD *)(v28 + 160);
+        v86 = *(_DWORD *)(v28 + 164);
+        *(_DWORD *)v15 = v29 / 10 + ((v30 / 10) << 16);
+        *(_BYTE *)(v15 + 100) = (unsigned int)((*ProgressTimer::GetValue((_WORD *)(v28 + 904), &v84) >> 7) + 1) >> 1;
+        *(_BYTE *)(v15 + 101) = (unsigned int)((*ProgressTimer::GetValue((_WORD *)(v28 + 928), v85) >> 7) + 1) >> 1;
+        *(_BYTE *)(v15 + 102) = (*(int (__thiscall **)(int))(*(_DWORD *)v28 + 388))(v28);
+        *(_DWORD *)(v15 + 4) = *(_DWORD *)(*(_DWORD *)(v28 + 1732) + 3576);
+        *(_BYTE *)(v15 + 103) = Math::RoundToInt(*(double *)(v28 + 1400) * 256.0);
+        *(_BYTE *)(v15 + 32) = *(_BYTE *)(*(_DWORD *)(v28 + 540) + 48);
+        if ( !*(_DWORD *)(v28 + 1652) )
+          WinAPI::Wrapper(-2147467261);
+        *(_WORD *)(v15 + 96) = (*(int (__stdcall **)(_DWORD))(**(_DWORD **)(v28 + 1652) + 188))(*(_DWORD *)(v28 + 1652));
+        if ( !*(_DWORD *)(v28 + 1652) )
+          WinAPI::Wrapper(-2147467261);
+        *(_WORD *)(v15 + 98) = (*(int (__stdcall **)(_DWORD))(**(_DWORD **)(v28 + 1652) + 192))(*(_DWORD *)(v28 + 1652));
+        if ( !*(_DWORD *)(v28 + 1652) )
+          WinAPI::Wrapper(-2147467261);
+        *(_DWORD *)(v15 + 92) = (*(int (__stdcall **)(_DWORD))(**(_DWORD **)(v28 + 1652) + 196))(*(_DWORD *)(v28 + 1652));
+        *(_BYTE *)(v15 + 31) = 0;
+        strncpy((char *)(v15 + 8), (const char *)(*(_DWORD *)(v28 + 1732) + 36), 0x17u);
+        v31 = *(__int16 **)(v28 + 1444);
+        v32 = 0;
+        if ( v31 )
+        {
+          if ( (v31[10] & 1) != 0 )
+          {
+            v32 = (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v31 + 64))(v31);
+          }
+          else if ( (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v31 + 44))(v31) == 11 )
+          {
+            v32 = v31[18] | (v31[19] << 16);
+          }
+          v33 = (void *)(*(int (__thiscall **)(__int16 *))(*(_DWORD *)v31 + 44))(v31);
+          v34 = AbstractType::FindName(v33);
+          *(_BYTE *)(v15 + 91) = 0;
+          *(_DWORD *)(v15 + 64) = v32;
+          strncpy((char *)(v15 + 68), v34, 0x17u);
+        }
+        else
+        {
+          *(_DWORD *)(v15 + 64) = 0;
+          *(_BYTE *)(v15 + 68) = 0;
+        }
+        v35 = *(__int16 **)(v28 + 692);
+        v36 = 0;
+        if ( v35 )
+        {
+          if ( (v35[10] & 1) != 0 )
+          {
+            v36 = (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v35 + 64))(v35);
+          }
+          else if ( (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v35 + 44))(v35) == 11 )
+          {
+            v36 = v35[18] | (v35[19] << 16);
+          }
+          v37 = (void *)(*(int (__thiscall **)(__int16 *))(*(_DWORD *)v35 + 44))(v35);
+          v38 = AbstractType::FindName(v37);
+          *(_BYTE *)(v15 + 63) = 0;
+          *(_DWORD *)(v15 + 36) = v36;
+          strncpy((char *)(v15 + 40), v38, 0x17u);
+        }
+        else
+        {
+          *(_DWORD *)(v15 + 36) = 0;
+          *(_BYTE *)(v15 + 40) = 0;
+        }
+        v15 += 104;
+        v39 = v80 + 1 < MEMORY[0x8B4118];
+        ++v78;
+        ++v80;
+      }
+      while ( v39 );
+    }
+    v81 = 0;
+    v83[190] = MEMORY[0xA8E3A0];
+    if ( MEMORY[0xA8E3A0] > 0 )
+    {
+      do
+      {
+        v40 = *((_DWORD *)MEMORY[0xA8E394] + v81);
+        v41 = *(_DWORD *)(v40 + 156);
+        v42 = *(_DWORD *)(v40 + 160);
+        v86 = *(_DWORD *)(v40 + 164);
+        *(_DWORD *)v15 = v41 / 10 + ((v42 / 10) << 16);
+        *(_BYTE *)(v15 + 100) = (unsigned int)((*ProgressTimer::GetValue((_WORD *)(v40 + 904), v85) >> 7) + 1) >> 1;
+        *(_BYTE *)(v15 + 102) = (*(int (__thiscall **)(int))(*(_DWORD *)v40 + 388))(v40);
+        *(_DWORD *)(v15 + 4) = *(_DWORD *)(*(_DWORD *)(v40 + 1732) + 3576);
+        *(_BYTE *)(v15 + 103) = Math::RoundToInt(*(double *)(v40 + 1400) * 256.0);
+        v43 = *(_BYTE *)(*(_DWORD *)(v40 + 540) + 48);
+        *(_BYTE *)(v15 + 31) = 0;
+        *(_BYTE *)(v15 + 32) = v43;
+        strncpy((char *)(v15 + 8), (const char *)(*(_DWORD *)(v40 + 1732) + 36), 0x17u);
+        v44 = *(__int16 **)(v40 + 1444);
+        v45 = 0;
+        if ( v44 )
+        {
+          if ( (v44[10] & 1) != 0 )
+          {
+            v45 = (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v44 + 64))(v44);
+          }
+          else if ( (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v44 + 44))(v44) == 11 )
+          {
+            v45 = v44[18] | (v44[19] << 16);
+          }
+          v46 = (void *)(*(int (__thiscall **)(__int16 *))(*(_DWORD *)v44 + 44))(v44);
+          v47 = AbstractType::FindName(v46);
+          *(_BYTE *)(v15 + 91) = 0;
+          *(_DWORD *)(v15 + 64) = v45;
+          strncpy((char *)(v15 + 68), v47, 0x17u);
+        }
+        else
+        {
+          *(_DWORD *)(v15 + 64) = 0;
+          *(_BYTE *)(v15 + 68) = 0;
+        }
+        v48 = *(__int16 **)(v40 + 692);
+        v49 = 0;
+        if ( v48 )
+        {
+          if ( (v48[10] & 1) != 0 )
+          {
+            v49 = (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v48 + 64))(v48);
+          }
+          else if ( (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v48 + 44))(v48) == 11 )
+          {
+            v49 = v48[18] | (v48[19] << 16);
+          }
+          v50 = (void *)(*(int (__thiscall **)(__int16 *))(*(_DWORD *)v48 + 44))(v48);
+          v51 = AbstractType::FindName(v50);
+          *(_BYTE *)(v15 + 63) = 0;
+          *(_DWORD *)(v15 + 36) = v49;
+          strncpy((char *)(v15 + 40), v51, 0x17u);
+        }
+        else
+        {
+          *(_DWORD *)(v15 + 36) = 0;
+          *(_BYTE *)(v15 + 40) = 0;
+        }
+        v15 += 104;
+        v39 = v81 + 1 < MEMORY[0xA8E3A0];
+        ++v78;
+        ++v81;
+      }
+      while ( v39 );
+    }
+    v52 = 0;
+    for ( v83[191] = MEMORY[0xA8EB50]; v52 < MEMORY[0xA8EB50]; ++v78 )
+    {
+      v53 = *((_DWORD *)MEMORY[0xA8EB44] + v52);
+      v54 = *(_DWORD *)(v53 + 156);
+      v55 = *(_DWORD *)(v53 + 160);
+      v86 = *(_DWORD *)(v53 + 164);
+      *(_DWORD *)v15 = v54 / 10 + ((v55 / 10) << 16);
+      *(_BYTE *)(v15 + 100) = (unsigned int)((*ProgressTimer::GetValue((_WORD *)(v53 + 904), v85) >> 7) + 1) >> 1;
+      *(_BYTE *)(v15 + 102) = (*(int (__thiscall **)(int))(*(_DWORD *)v53 + 388))(v53);
+      v56 = 0;
+      *(_DWORD *)(v15 + 4) = *(_DWORD *)(*(_DWORD *)(v53 + 1312) + 3576);
+      v57 = *(_BYTE *)(*(_DWORD *)(v53 + 540) + 48);
+      *(_DWORD *)(v15 + 64) = 0;
+      *(_BYTE *)(v15 + 32) = v57;
+      *(_BYTE *)(v15 + 68) = 0;
+      *(_BYTE *)(v15 + 31) = 0;
+      strncpy((char *)(v15 + 8), (const char *)(*(_DWORD *)(v53 + 1312) + 36), 0x17u);
+      v58 = *(__int16 **)(v53 + 692);
+      if ( v58 )
+      {
+        if ( (v58[10] & 1) != 0 )
+        {
+          v56 = (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v58 + 64))(v58);
+        }
+        else if ( (*(int (__thiscall **)(__int16 *))(*(_DWORD *)v58 + 44))(v58) == 11 )
+        {
+          v56 = v58[18] | (v58[19] << 16);
+        }
+        v59 = (void *)(*(int (__thiscall **)(__int16 *))(*(_DWORD *)v58 + 44))(v58);
+        v60 = AbstractType::FindName(v59);
+        *(_BYTE *)(v15 + 63) = 0;
+        *(_DWORD *)(v15 + 36) = v56;
+        strncpy((char *)(v15 + 40), v60, 0x17u);
+      }
+      else
+      {
+        *(_DWORD *)(v15 + 36) = 0;
+        *(_BYTE *)(v15 + 40) = 0;
+      }
+      v15 += 104;
+      ++v52;
+    }
+    v61 = MEMORY[0x8A0370];
+    v83[187] = v78;
+    v62 = v83 + 193;
+    v82 = v83 + 193;
+    do
+    {
+      v62[5] = v15;
+      v63 = 0;
+      v79 = 0;
+      if ( *v61 > 0 )
+      {
+        do
+        {
+          v64 = *(_DWORD **)(*(v61 - 3) + 4 * v63);
+          if ( (*(int (__thiscall **)(_DWORD *))(*v64 + 44))(v64) != 4
+            || (*(int (__stdcall **)(_DWORD *))(v64[1] + 16))(v64 + 1) != -2 )
+          {
+            v65 = v64[39];
+            v66 = v64[40];
+            v86 = v64[41];
+            v84 = (v66 / 10) << 16;
+            *(_DWORD *)v15 = v65 / 2 + v84;
+            *(_WORD *)(v15 + 36) = (*(int (__thiscall **)(_DWORD *))(*v64 + 44))(v64);
+            if ( (*(int (__thiscall **)(_DWORD *))(*v64 + 44))(v64) == 43
+              || (*(int (__thiscall **)(_DWORD *))(*v64 + 44))(v64) == 19 )
+            {
+              *(_DWORD *)(v15 + 4) = -1;
+              *(_BYTE *)(v15 + 8) = 0;
+            }
+            else
+            {
+              v67 = (*(int (__thiscall **)(_DWORD *))(*v64 + 136))(v64);
+              *(_DWORD *)(v15 + 4) = (*(int (__thiscall **)(int))(*(_DWORD *)v67 + 64))(v67);
+              *(_BYTE *)(v15 + 31) = 0;
+              v68 = (*(int (__thiscall **)(_DWORD *))(*v64 + 136))(v64);
+              strncpy((char *)(v15 + 8), (const char *)(v68 + 36), 0x17u);
+            }
+            v69 = (*(int (__thiscall **)(_DWORD *))(*v64 + 60))(v64);
+            if ( v69 )
+              *(_BYTE *)(v15 + 32) = *(_BYTE *)(v69 + 48);
+            else
+              *(_BYTE *)(v15 + 32) = -1;
+            v15 += 40;
+            ++v79;
+          }
+          ++v63;
+        }
+        while ( v63 < *v61 );
+        v62 = v82;
+      }
+      v61 += 6;
+      *v62++ = v79;
+      v82 = v62;
+    }
+    while ( (int)v61 < (int)&MEMORY[0x8A03E8] );
+    v70 = 0;
+    v71 = 0;
+    v83[204] = v15;
+    for ( result = MEMORY[0x87F788]; v71 < MEMORY[0x87F788]; ++v71 )
+    {
+      v72 = (_DWORD *)*((_DWORD *)MEMORY[0x87F77C] + v71);
+      if ( (*(int (__thiscall **)(_DWORD *))(*v72 + 44))(v72) != 4
+        || (*(int (__stdcall **)(_DWORD *))(v72[1] + 16))(v72 + 1) != -2 )
+      {
+        v73 = v72[39];
+        v74 = v72[40];
+        v86 = v72[41];
+        v84 = (v74 / 10) << 16;
+        *(_DWORD *)v15 = v73 / 2 + v84;
+        *(_WORD *)(v15 + 36) = (*(int (__thiscall **)(_DWORD *))(*v72 + 44))(v72);
+        if ( (*(int (__thiscall **)(_DWORD *))(*v72 + 44))(v72) == 43
+          || (*(int (__thiscall **)(_DWORD *))(*v72 + 44))(v72) == 19 )
+        {
+          *(_DWORD *)(v15 + 4) = -1;
+          *(_BYTE *)(v15 + 8) = 0;
+        }
+        else
+        {
+          v75 = (*(int (__thiscall **)(_DWORD *))(*v72 + 136))(v72);
+          *(_DWORD *)(v15 + 4) = (*(int (__thiscall **)(int))(*(_DWORD *)v75 + 64))(v75);
+          *(_BYTE *)(v15 + 31) = 0;
+          v76 = (*(int (__thiscall **)(_DWORD *))(*v72 + 136))(v72);
+          strncpy((char *)(v15 + 8), (const char *)(v76 + 36), 0x17u);
+        }
+        v77 = (*(int (__thiscall **)(_DWORD *))(*v72 + 60))(v72);
+        if ( v77 )
+          *(_BYTE *)(v15 + 32) = *(_BYTE *)(v77 + 48);
+        else
+          *(_BYTE *)(v15 + 32) = -1;
+        v15 += 40;
+        ++v70;
+      }
+      result = MEMORY[0x87F788];
+    }
+    v83[203] = v70;
+  }
+  else
+  {
+    result = Random::State((_DWORD *)MEMORY[0xA8B230] + 134);
+    dword_AFA26C = result;
+  }
+  return result;
+}
 }
 } // namespace gamemd
 

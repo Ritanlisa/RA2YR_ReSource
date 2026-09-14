@@ -552,62 +552,1041 @@ namespace gamemd {
 HRESULT HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// HRESULT __stdcall HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
-// {
-//   int v2; // esi
-//   int i; // edi
-//   int j; // edi
-//   int v5; // ecx
-//   int v6; // eax
-//   int v7; // ecx
-//   int v8; // eax
-//   LPSTREAM v9; // edi
-//   HRESULT result; // eax
-//   int *v11; // ebp
-//   int v12; // ebx
-//   int *v13; // ebp
-//   int v14; // ebx
-//   int v15; // ecx
-//   bool v16; // zf
-//   int v17; // edx
-//   int v18; // ecx
-//   int v19; // eax
-//   int v20; // eax
-//   int v21; // edx
-//   int v22; // eax
-//   int v23; // eax
-//   int v24; // ecx
-//   int v25; // eax
-//   int v26; // eax
-//   int v27; // edx
-//   int v28; // eax
-//   int v29; // eax
-//   int v30; // ecx
-//   int v31; // eax
-//   int v32; // eax
-//   int v33; // edx
-//   int k; // ebp
-//   int v35; // edx
-//   int v36; // edx
-//   int v37; // ecx
-//   int v38; // eax
-//   int v39; // eax
-//   int v40; // edx
-//   int v41; // eax
-//   int m; // ebp
-//   int v43; // eax
-//   int v44; // eax
-//   int v45; // ecx
-//   int v46; // eax
-//   int v47; // eax
-//   int v48; // edx
-//   int v49; // eax
-//   int v50; // eax
-//   int v51; // ecx
-//   int v52; // eax
-//   int v53; ... [63976 chars total]
-// end truncated pseudocode
+HRESULT __stdcall HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
+{
+  int v2; // esi
+  int i; // edi
+  int j; // edi
+  int v5; // ecx
+  int v6; // eax
+  int v7; // ecx
+  int v8; // eax
+  LPSTREAM v9; // edi
+  HRESULT result; // eax
+  int *v11; // ebp
+  int v12; // ebx
+  int *v13; // ebp
+  int v14; // ebx
+  int v15; // ecx
+  bool v16; // zf
+  int v17; // edx
+  int v18; // ecx
+  int v19; // eax
+  int v20; // eax
+  int v21; // edx
+  int v22; // eax
+  int v23; // eax
+  int v24; // ecx
+  int v25; // eax
+  int v26; // eax
+  int v27; // edx
+  int v28; // eax
+  int v29; // eax
+  int v30; // ecx
+  int v31; // eax
+  int v32; // eax
+  int v33; // edx
+  int k; // ebp
+  int v35; // edx
+  int v36; // edx
+  int v37; // ecx
+  int v38; // eax
+  int v39; // eax
+  int v40; // edx
+  int v41; // eax
+  int m; // ebp
+  int v43; // eax
+  int v44; // eax
+  int v45; // ecx
+  int v46; // eax
+  int v47; // eax
+  int v48; // edx
+  int v49; // eax
+  int v50; // eax
+  int v51; // ecx
+  int v52; // eax
+  int v53; // eax
+  int v54; // edx
+  int v55; // eax
+  int v56; // eax
+  int v57; // ecx
+  int v58; // eax
+  int v59; // eax
+  int v60; // edx
+  int v61; // eax
+  int v62; // eax
+  int v63; // ecx
+  int v64; // eax
+  int v65; // eax
+  int v66; // edx
+  int v67; // eax
+  int v68; // eax
+  int v69; // ecx
+  int v70; // eax
+  int v71; // eax
+  int v72; // edx
+  int v73; // eax
+  int v74; // eax
+  int v75; // ecx
+  int v76; // eax
+  int v77; // eax
+  int v78; // edx
+  int v79; // eax
+  int v80; // eax
+  int v81; // ecx
+  int v82; // eax
+  int v83; // eax
+  int v84; // edx
+  int v85; // eax
+  int v86; // eax
+  int v87; // ecx
+  int v88; // eax
+  int v89; // eax
+  int v90; // edx
+  int v91; // eax
+  int v92; // eax
+  int v93; // ecx
+  int v94; // eax
+  int v95; // eax
+  int v96; // edx
+  int v97; // eax
+  int v98; // eax
+  int v99; // ecx
+  int v100; // eax
+  int v101; // eax
+  int v102; // edx
+  int v103; // eax
+  int v104; // eax
+  int v105; // ecx
+  int v106; // eax
+  int v107; // eax
+  int v108; // edx
+  int v109; // eax
+  _WORD *v110; // ebp
+  int v111; // eax
+  int v112; // ecx
+  int v113; // eax
+  int v114; // eax
+  int v115; // edx
+  int n; // ebp
+  int ii; // ebp
+  int jj; // ebp
+  int kk; // ebp
+  int mm; // ebp
+  int nn; // ebp
+  int i1; // ebp
+  int i2; // ebp
+  int i3; // ebp
+  int i4; // ebp
+  int i5; // ebp
+  int i6; // ebp
+  int i7; // ebp
+  int i8; // ebp
+  int v130; // eax
+  int v131; // [esp+2A4h] [ebp-24h]
+  int v132; // [esp+2A4h] [ebp-24h]
+  int v133; // [esp+2B8h] [ebp-10h] BYREF
+  int v134; // [esp+2BCh] [ebp-Ch] BYREF
+  int v135; // [esp+2C0h] [ebp-8h]
+  int v136; // [esp+2C4h] [ebp-4h] BYREF
+
+  v2 = a1;
+  (*(void (__thiscall **)(int))(*(_DWORD *)(a1 + 80) + 12))(a1 + 80);
+  (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 104) + 12))(v2 + 104);
+  (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 128) + 12))(v2 + 128);
+  (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 152) + 12))(v2 + 152);
+  (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 176) + 12))(v2 + 176);
+  (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 200) + 12))(v2 + 200);
+  (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 224) + 12))(v2 + 224);
+  (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 248) + 12))(v2 + 248);
+  (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 272) + 12))(v2 + 272);
+  (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 296) + 12))(v2 + 296);
+  (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 320) + 12))(v2 + 320);
+  for ( i = *(_DWORD *)(v2 + 380) - 1; i >= 0; --i )
+    __3_YAXPAX_Z(*(void **)(*(_DWORD *)(v2 + 368) + 4 * i));
+  (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 364) + 12))(v2 + 364);
+  for ( j = 0; j < *(_DWORD *)(v2 + 90228); *(_DWORD *)(*(_DWORD *)(v2 + 90216) + 4 * j - 4) = 0 )
+  {
+    v131 = *(_DWORD *)(*(_DWORD *)(v2 + 90216) + 4 * j);
+    if ( (*(int (__stdcall **)(int))(*(_DWORD *)v131 + 8))(v131) )
+    {
+      do
+        v132 = *(_DWORD *)(*(_DWORD *)(v2 + 90216) + 4 * j);
+      while ( (*(int (__stdcall **)(int))(*(_DWORD *)v132 + 8))(v132) );
+    }
+    ++j;
+  }
+  (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 90212) + 12))(v2 + 90212);
+  while ( *(_DWORD *)(v2 + 612) )
+  {
+    v5 = **(_DWORD **)(v2 + 600);
+    if ( v5 )
+      (*(void (__thiscall **)(int, int))(*(_DWORD *)v5 + 32))(v5, 1);
+    v6 = *(_DWORD *)(v2 + 612);
+    if ( v6 > 0 )
+    {
+      v7 = v6 - 1;
+      v8 = 0;
+      for ( *(_DWORD *)(v2 + 612) = v7;
+            v8 < *(_DWORD *)(v2 + 612);
+            *(_DWORD *)(*(_DWORD *)(v2 + 600) + 4 * v8 - 4) = *(_DWORD *)(*(_DWORD *)(v2 + 600) + 4 * v8) )
+      {
+        ++v8;
+      }
+    }
+  }
+  v9 = pStm;
+  result = AbstractClass::SaveLoad_Prefix_0((_DWORD *)v2, (int)pStm);
+  if ( result >= 0 )
+  {
+    if ( v2 )
+      HouseClass::Constructor(v2, (int)&a1);
+    (**(void (__stdcall ***)(int, LPSTREAM))(v2 + 22272))(v2 + 22272, v9);
+    CounterClass::Load((_DWORD *)(v2 + 21760), (int)v9);
+    CounterClass::Load((_DWORD *)(v2 + 21780), (int)v9);
+    CounterClass::Load((_DWORD *)(v2 + 21800), (int)v9);
+    CounterClass::Load((_DWORD *)(v2 + 21820), (int)v9);
+    CounterClass::Load((_DWORD *)(v2 + 21840), (int)v9);
+    CounterClass::Load((_DWORD *)(v2 + 21860), (int)v9);
+    CounterClass::Load((_DWORD *)(v2 + 21880), (int)v9);
+    CounterClass::Load((_DWORD *)(v2 + 21900), (int)v9);
+    CounterClass::Load((_DWORD *)(v2 + 21920), (int)v9);
+    CounterClass::Load((_DWORD *)(v2 + 21940), (int)v9);
+    CounterClass::Load((_DWORD *)(v2 + 21960), (int)v9);
+    CounterClass::Load((_DWORD *)(v2 + 21980), (int)v9);
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 52));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21424));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21428));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21420));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21432));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21436));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21440));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21444));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21448));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21452));
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 21728));
+    v11 = (int *)(v2 + 528);
+    v12 = 12;
+    do
+    {
+      ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v11++);
+      --v12;
+    }
+    while ( v12 );
+    v13 = (int *)(v2 + 22128);
+    v14 = 3;
+    do
+    {
+      HouseClass::RegisterForSwizzleTracking(v13);
+      v13 += 11;
+      --v14;
+    }
+    while ( v14 );
+    v15 = *(_DWORD *)v9->__pad_0;
+    v133 = 0;
+    result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v15 + 12))(v9, &v133, 4, 0);
+    if ( result >= 0 )
+    {
+      v16 = v133-- == 0;
+      if ( v16 )
+      {
+LABEL_31:
+        v22 = *(_DWORD *)v9->__pad_0;
+        v133 = 0;
+        result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v22 + 12))(v9, &v133, 4, 0);
+        if ( result >= 0 )
+        {
+          v16 = v133-- == 0;
+          if ( v16 )
+          {
+LABEL_41:
+            v28 = *(_DWORD *)v9->__pad_0;
+            v133 = 0;
+            result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v28 + 12))(v9, &v133, 4, 0);
+            if ( result >= 0 )
+            {
+              v16 = v133-- == 0;
+              if ( v16 )
+              {
+LABEL_51:
+                for ( k = 0; k < *(_DWORD *)(v2 + 22036); ++k )
+                  ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(_DWORD *)(v2 + 22024) + 8 * k));
+                v35 = *(_DWORD *)v9->__pad_0;
+                v133 = 0;
+                result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v35 + 12))(v9, &v133, 4, 0);
+                if ( result >= 0 )
+                {
+                  v16 = v133-- == 0;
+                  if ( v16 )
+                  {
+LABEL_63:
+                    v41 = *(_DWORD *)(v2 + 22060);
+                    for ( m = 0; m < v41; ++m )
+                    {
+                      ObjectPtr::RegisterForTracking(
+                        (int)&MEMORY[0xB0C110],
+                        (int *)(*(_DWORD *)(v2 + 22048) + 8 * v41 - 8));
+                      v41 = *(_DWORD *)(v2 + 22060);
+                    }
+                    v43 = *(_DWORD *)v9->__pad_0;
+                    v133 = 0;
+                    result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v43 + 12))(v9, &v133, 4, 0);
+                    if ( result >= 0 )
+                    {
+                      v16 = v133-- == 0;
+                      if ( v16 )
+                      {
+LABEL_75:
+                        v49 = *(_DWORD *)v9->__pad_0;
+                        v133 = 0;
+                        result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v49 + 12))(v9, &v133, 4, 0);
+                        if ( result >= 0 )
+                        {
+                          v16 = v133-- == 0;
+                          if ( v16 )
+                          {
+LABEL_85:
+                            v55 = *(_DWORD *)v9->__pad_0;
+                            v133 = 0;
+                            result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v55 + 12))(v9, &v133, 4, 0);
+                            if ( result >= 0 )
+                            {
+                              v16 = v133-- == 0;
+                              if ( v16 )
+                              {
+LABEL_95:
+                                v61 = *(_DWORD *)v9->__pad_0;
+                                v133 = 0;
+                                result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v61 + 12))(
+                                           v9,
+                                           &v133,
+                                           4,
+                                           0);
+                                if ( result >= 0 )
+                                {
+                                  v16 = v133-- == 0;
+                                  if ( v16 )
+                                  {
+LABEL_105:
+                                    v67 = *(_DWORD *)v9->__pad_0;
+                                    v133 = 0;
+                                    result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v67 + 12))(
+                                               v9,
+                                               &v133,
+                                               4,
+                                               0);
+                                    if ( result >= 0 )
+                                    {
+                                      v16 = v133-- == 0;
+                                      if ( v16 )
+                                      {
+LABEL_115:
+                                        v73 = *(_DWORD *)v9->__pad_0;
+                                        v133 = 0;
+                                        result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v73 + 12))(
+                                                   v9,
+                                                   &v133,
+                                                   4,
+                                                   0);
+                                        if ( result >= 0 )
+                                        {
+                                          v16 = v133-- == 0;
+                                          if ( v16 )
+                                          {
+LABEL_125:
+                                            v79 = *(_DWORD *)v9->__pad_0;
+                                            v133 = 0;
+                                            result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v79 + 12))(
+                                                       v9,
+                                                       &v133,
+                                                       4,
+                                                       0);
+                                            if ( result >= 0 )
+                                            {
+                                              v16 = v133-- == 0;
+                                              if ( v16 )
+                                              {
+LABEL_135:
+                                                v85 = *(_DWORD *)v9->__pad_0;
+                                                v133 = 0;
+                                                result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v85 + 12))(
+                                                           v9,
+                                                           &v133,
+                                                           4,
+                                                           0);
+                                                if ( result >= 0 )
+                                                {
+                                                  v16 = v133-- == 0;
+                                                  if ( v16 )
+                                                  {
+LABEL_145:
+                                                    v91 = *(_DWORD *)v9->__pad_0;
+                                                    v133 = 0;
+                                                    result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v91 + 12))(
+                                                               v9,
+                                                               &v133,
+                                                               4,
+                                                               0);
+                                                    if ( result >= 0 )
+                                                    {
+                                                      v16 = v133-- == 0;
+                                                      if ( v16 )
+                                                      {
+LABEL_155:
+                                                        v97 = *(_DWORD *)v9->__pad_0;
+                                                        v133 = 0;
+                                                        result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v97 + 12))(
+                                                                   v9,
+                                                                   &v133,
+                                                                   4,
+                                                                   0);
+                                                        if ( result >= 0 )
+                                                        {
+                                                          v16 = v133-- == 0;
+                                                          if ( v16 )
+                                                          {
+LABEL_165:
+                                                            v103 = *(_DWORD *)v9->__pad_0;
+                                                            v133 = 0;
+                                                            result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v103 + 12))(
+                                                                       v9,
+                                                                       &v133,
+                                                                       4,
+                                                                       0);
+                                                            if ( result >= 0 )
+                                                            {
+                                                              v16 = v133-- == 0;
+                                                              if ( v16 )
+                                                              {
+LABEL_175:
+                                                                v109 = *(_DWORD *)v9->__pad_0;
+                                                                v133 = 0;
+                                                                result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v109 + 12))(
+                                                                           v9,
+                                                                           &v133,
+                                                                           4,
+                                                                           0);
+                                                                if ( result >= 0 )
+                                                                {
+                                                                  v16 = v133-- == 0;
+                                                                  if ( v16 )
+                                                                  {
+LABEL_187:
+                                                                    for ( n = 0; n < *(_DWORD *)(v2 + 612); ++n )
+                                                                      ObjectPtr::RegisterForTracking(
+                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int *)(*(_DWORD *)(v2 + 600) + 4 * n));
+                                                                    for ( ii = 0; ii < *(_DWORD *)(v2 + 72); ++ii )
+                                                                      ObjectPtr::RegisterForTracking(
+                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int *)(*(_DWORD *)(v2 + 60) + 4 * ii));
+                                                                    for ( jj = 0; jj < *(_DWORD *)(v2 + 96); ++jj )
+                                                                      ObjectPtr::RegisterForTracking(
+                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int *)(*(_DWORD *)(v2 + 84) + 4 * jj));
+                                                                    for ( kk = 0; kk < *(_DWORD *)(v2 + 120); ++kk )
+                                                                      ObjectPtr::RegisterForTracking(
+                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int *)(*(_DWORD *)(v2 + 108) + 4 * kk));
+                                                                    for ( mm = 0; mm < *(_DWORD *)(v2 + 144); ++mm )
+                                                                      ObjectPtr::RegisterForTracking(
+                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int *)(*(_DWORD *)(v2 + 132) + 4 * mm));
+                                                                    for ( nn = 0; nn < *(_DWORD *)(v2 + 168); ++nn )
+                                                                      ObjectPtr::RegisterForTracking(
+                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int *)(*(_DWORD *)(v2 + 156) + 4 * nn));
+                                                                    for ( i1 = 0; i1 < *(_DWORD *)(v2 + 192); ++i1 )
+                                                                      ObjectPtr::RegisterForTracking(
+                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int *)(*(_DWORD *)(v2 + 180) + 4 * i1));
+                                                                    for ( i2 = 0; i2 < *(_DWORD *)(v2 + 216); ++i2 )
+                                                                      ObjectPtr::RegisterForTracking(
+                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int *)(*(_DWORD *)(v2 + 204) + 4 * i2));
+                                                                    for ( i3 = 0; i3 < *(_DWORD *)(v2 + 240); ++i3 )
+                                                                      ObjectPtr::RegisterForTracking(
+                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int *)(*(_DWORD *)(v2 + 228) + 4 * i3));
+                                                                    for ( i4 = 0; i4 < *(_DWORD *)(v2 + 264); ++i4 )
+                                                                      ObjectPtr::RegisterForTracking(
+                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int *)(*(_DWORD *)(v2 + 252) + 4 * i4));
+                                                                    for ( i5 = 0; i5 < *(_DWORD *)(v2 + 288); ++i5 )
+                                                                      ObjectPtr::RegisterForTracking(
+                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int *)(*(_DWORD *)(v2 + 276) + 4 * i5));
+                                                                    for ( i6 = 0; i6 < *(_DWORD *)(v2 + 312); ++i6 )
+                                                                      ObjectPtr::RegisterForTracking(
+                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int *)(*(_DWORD *)(v2 + 300) + 4 * i6));
+                                                                    for ( i7 = 0; i7 < *(_DWORD *)(v2 + 336); ++i7 )
+                                                                      ObjectPtr::RegisterForTracking(
+                                                                        (int)&MEMORY[0xB0C110],
+                                                                        (int *)(*(_DWORD *)(v2 + 324) + 4 * i7));
+                                                                    for ( i8 = 0; i8 < *(_DWORD *)(v2 + 380); ++i8 )
+                                                                      ObjectPtr::RegisterForTracking(
+                                                                        (int)&MEMORY[0xB0C110],
+                                                                        *(int **)(*(_DWORD *)(v2 + 368) + 4 * i8));
+                                                                    v130 = *(_DWORD *)v9->__pad_0;
+                                                                    v136 = 0;
+                                                                    result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v130 + 12))(
+                                                                               v9,
+                                                                               &v136,
+                                                                               4,
+                                                                               0);
+                                                                    if ( result >= 0 )
+                                                                    {
+                                                                      if ( v136 )
+                                                                        return OleLoadFromStream(
+                                                                                 v9,
+                                                                                 &iidInterface,
+                                                                                 (LPVOID *)(v2 + 22496));
+                                                                    }
+                                                                  }
+                                                                  else
+                                                                  {
+                                                                    while ( 1 )
+                                                                    {
+                                                                      v110 = __2_YAPAXI_Z(8u);
+                                                                      v111 = *(_DWORD *)v9->__pad_0;
+                                                                      v134 = 0;
+                                                                      result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v111 + 12))(
+                                                                                 v9,
+                                                                                 &v134,
+                                                                                 4,
+                                                                                 0);
+                                                                      if ( result < 0 )
+                                                                        break;
+                                                                      result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)v9->__pad_0 + 12))(
+                                                                                 v9,
+                                                                                 &a1,
+                                                                                 2,
+                                                                                 0);
+                                                                      if ( result < 0 )
+                                                                        break;
+                                                                      result = (*(int (__stdcall **)(LPSTREAM, LPSTREAM *, int, _DWORD))(*(_DWORD *)v9->__pad_0 + 12))(
+                                                                                 v9,
+                                                                                 &pStm,
+                                                                                 2,
+                                                                                 0);
+                                                                      if ( result < 0 )
+                                                                        break;
+                                                                      *(_DWORD *)v110 = v134;
+                                                                      v110[2] = a1;
+                                                                      v110[3] = (_WORD)pStm;
+                                                                      v112 = *(_DWORD *)(v2 + 372);
+                                                                      if ( *(_DWORD *)(v2 + 380) < v112
+                                                                        || (*(_BYTE *)(v2 + 377) || !v112)
+                                                                        && (v113 = *(_DWORD *)(v2 + 384), v113 > 0)
+                                                                        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 364) + 8))(
+                                                                             v2 + 364,
+                                                                             v113 + v112,
+                                                                             0) )
+                                                                      {
+                                                                        v114 = *(_DWORD *)(v2 + 380);
+                                                                        v115 = *(_DWORD *)(v2 + 368);
+                                                                        *(_DWORD *)(v2 + 380) = v114 + 1;
+                                                                        *(_DWORD *)(v115 + 4 * v114) = v110;
+                                                                      }
+                                                                      v16 = v133-- == 0;
+                                                                      if ( v16 )
+                                                                        goto LABEL_187;
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                              else
+                                                              {
+                                                                while ( 1 )
+                                                                {
+                                                                  v104 = *(_DWORD *)v9->__pad_0;
+                                                                  a1 = 0;
+                                                                  result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v104 + 12))(
+                                                                             v9,
+                                                                             &a1,
+                                                                             4,
+                                                                             0);
+                                                                  if ( result < 0 )
+                                                                    break;
+                                                                  v105 = *(_DWORD *)(v2 + 328);
+                                                                  if ( *(_DWORD *)(v2 + 336) < v105
+                                                                    || (*(_BYTE *)(v2 + 333) || !v105)
+                                                                    && (v106 = *(_DWORD *)(v2 + 340), v106 > 0)
+                                                                    && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 320) + 8))(
+                                                                         v2 + 320,
+                                                                         v106 + v105,
+                                                                         0) )
+                                                                  {
+                                                                    v107 = *(_DWORD *)(v2 + 336);
+                                                                    v108 = *(_DWORD *)(v2 + 324);
+                                                                    *(_DWORD *)(v2 + 336) = v107 + 1;
+                                                                    *(_DWORD *)(v108 + 4 * v107) = a1;
+                                                                  }
+                                                                  v16 = v133-- == 0;
+                                                                  if ( v16 )
+                                                                    goto LABEL_175;
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                          else
+                                                          {
+                                                            while ( 1 )
+                                                            {
+                                                              v98 = *(_DWORD *)v9->__pad_0;
+                                                              a1 = 0;
+                                                              result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v98 + 12))(
+                                                                         v9,
+                                                                         &a1,
+                                                                         4,
+                                                                         0);
+                                                              if ( result < 0 )
+                                                                break;
+                                                              v99 = *(_DWORD *)(v2 + 304);
+                                                              if ( *(_DWORD *)(v2 + 312) < v99
+                                                                || (*(_BYTE *)(v2 + 309) || !v99)
+                                                                && (v100 = *(_DWORD *)(v2 + 316), v100 > 0)
+                                                                && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 296) + 8))(
+                                                                     v2 + 296,
+                                                                     v100 + v99,
+                                                                     0) )
+                                                              {
+                                                                v101 = *(_DWORD *)(v2 + 312);
+                                                                v102 = *(_DWORD *)(v2 + 300);
+                                                                *(_DWORD *)(v2 + 312) = v101 + 1;
+                                                                *(_DWORD *)(v102 + 4 * v101) = a1;
+                                                              }
+                                                              v16 = v133-- == 0;
+                                                              if ( v16 )
+                                                                goto LABEL_165;
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                      else
+                                                      {
+                                                        while ( 1 )
+                                                        {
+                                                          v92 = *(_DWORD *)v9->__pad_0;
+                                                          a1 = 0;
+                                                          result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v92 + 12))(
+                                                                     v9,
+                                                                     &a1,
+                                                                     4,
+                                                                     0);
+                                                          if ( result < 0 )
+                                                            break;
+                                                          v93 = *(_DWORD *)(v2 + 280);
+                                                          if ( *(_DWORD *)(v2 + 288) < v93
+                                                            || (*(_BYTE *)(v2 + 285) || !v93)
+                                                            && (v94 = *(_DWORD *)(v2 + 292), v94 > 0)
+                                                            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 272) + 8))(
+                                                                 v2 + 272,
+                                                                 v94 + v93,
+                                                                 0) )
+                                                          {
+                                                            v95 = *(_DWORD *)(v2 + 288);
+                                                            v96 = *(_DWORD *)(v2 + 276);
+                                                            *(_DWORD *)(v2 + 288) = v95 + 1;
+                                                            *(_DWORD *)(v96 + 4 * v95) = a1;
+                                                          }
+                                                          v16 = v133-- == 0;
+                                                          if ( v16 )
+                                                            goto LABEL_155;
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                  else
+                                                  {
+                                                    while ( 1 )
+                                                    {
+                                                      v86 = *(_DWORD *)v9->__pad_0;
+                                                      a1 = 0;
+                                                      result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v86 + 12))(
+                                                                 v9,
+                                                                 &a1,
+                                                                 4,
+                                                                 0);
+                                                      if ( result < 0 )
+                                                        break;
+                                                      v87 = *(_DWORD *)(v2 + 256);
+                                                      if ( *(_DWORD *)(v2 + 264) < v87
+                                                        || (*(_BYTE *)(v2 + 261) || !v87)
+                                                        && (v88 = *(_DWORD *)(v2 + 268), v88 > 0)
+                                                        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 248) + 8))(
+                                                             v2 + 248,
+                                                             v88 + v87,
+                                                             0) )
+                                                      {
+                                                        v89 = *(_DWORD *)(v2 + 264);
+                                                        v90 = *(_DWORD *)(v2 + 252);
+                                                        *(_DWORD *)(v2 + 264) = v89 + 1;
+                                                        *(_DWORD *)(v90 + 4 * v89) = a1;
+                                                      }
+                                                      v16 = v133-- == 0;
+                                                      if ( v16 )
+                                                        goto LABEL_145;
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                              else
+                                              {
+                                                while ( 1 )
+                                                {
+                                                  v80 = *(_DWORD *)v9->__pad_0;
+                                                  a1 = 0;
+                                                  result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v80 + 12))(
+                                                             v9,
+                                                             &a1,
+                                                             4,
+                                                             0);
+                                                  if ( result < 0 )
+                                                    break;
+                                                  v81 = *(_DWORD *)(v2 + 232);
+                                                  if ( *(_DWORD *)(v2 + 240) < v81
+                                                    || (*(_BYTE *)(v2 + 237) || !v81)
+                                                    && (v82 = *(_DWORD *)(v2 + 244), v82 > 0)
+                                                    && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 224) + 8))(
+                                                         v2 + 224,
+                                                         v82 + v81,
+                                                         0) )
+                                                  {
+                                                    v83 = *(_DWORD *)(v2 + 240);
+                                                    v84 = *(_DWORD *)(v2 + 228);
+                                                    *(_DWORD *)(v2 + 240) = v83 + 1;
+                                                    *(_DWORD *)(v84 + 4 * v83) = a1;
+                                                  }
+                                                  v16 = v133-- == 0;
+                                                  if ( v16 )
+                                                    goto LABEL_135;
+                                                }
+                                              }
+                                            }
+                                          }
+                                          else
+                                          {
+                                            while ( 1 )
+                                            {
+                                              v74 = *(_DWORD *)v9->__pad_0;
+                                              a1 = 0;
+                                              result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v74 + 12))(
+                                                         v9,
+                                                         &a1,
+                                                         4,
+                                                         0);
+                                              if ( result < 0 )
+                                                break;
+                                              v75 = *(_DWORD *)(v2 + 208);
+                                              if ( *(_DWORD *)(v2 + 216) < v75
+                                                || (*(_BYTE *)(v2 + 213) || !v75)
+                                                && (v76 = *(_DWORD *)(v2 + 220), v76 > 0)
+                                                && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 200) + 8))(
+                                                     v2 + 200,
+                                                     v76 + v75,
+                                                     0) )
+                                              {
+                                                v77 = *(_DWORD *)(v2 + 216);
+                                                v78 = *(_DWORD *)(v2 + 204);
+                                                *(_DWORD *)(v2 + 216) = v77 + 1;
+                                                *(_DWORD *)(v78 + 4 * v77) = a1;
+                                              }
+                                              v16 = v133-- == 0;
+                                              if ( v16 )
+                                                goto LABEL_125;
+                                            }
+                                          }
+                                        }
+                                      }
+                                      else
+                                      {
+                                        while ( 1 )
+                                        {
+                                          v68 = *(_DWORD *)v9->__pad_0;
+                                          a1 = 0;
+                                          result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v68 + 12))(
+                                                     v9,
+                                                     &a1,
+                                                     4,
+                                                     0);
+                                          if ( result < 0 )
+                                            break;
+                                          v69 = *(_DWORD *)(v2 + 184);
+                                          if ( *(_DWORD *)(v2 + 192) < v69
+                                            || (*(_BYTE *)(v2 + 189) || !v69)
+                                            && (v70 = *(_DWORD *)(v2 + 196), v70 > 0)
+                                            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 176) + 8))(
+                                                 v2 + 176,
+                                                 v70 + v69,
+                                                 0) )
+                                          {
+                                            v71 = *(_DWORD *)(v2 + 192);
+                                            v72 = *(_DWORD *)(v2 + 180);
+                                            *(_DWORD *)(v2 + 192) = v71 + 1;
+                                            *(_DWORD *)(v72 + 4 * v71) = a1;
+                                          }
+                                          v16 = v133-- == 0;
+                                          if ( v16 )
+                                            goto LABEL_115;
+                                        }
+                                      }
+                                    }
+                                  }
+                                  else
+                                  {
+                                    while ( 1 )
+                                    {
+                                      v62 = *(_DWORD *)v9->__pad_0;
+                                      a1 = 0;
+                                      result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v62 + 12))(
+                                                 v9,
+                                                 &a1,
+                                                 4,
+                                                 0);
+                                      if ( result < 0 )
+                                        break;
+                                      v63 = *(_DWORD *)(v2 + 160);
+                                      if ( *(_DWORD *)(v2 + 168) < v63
+                                        || (*(_BYTE *)(v2 + 165) || !v63)
+                                        && (v64 = *(_DWORD *)(v2 + 172), v64 > 0)
+                                        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 152)
+                                                                                               + 8))(
+                                             v2 + 152,
+                                             v64 + v63,
+                                             0) )
+                                      {
+                                        v65 = *(_DWORD *)(v2 + 168);
+                                        v66 = *(_DWORD *)(v2 + 156);
+                                        *(_DWORD *)(v2 + 168) = v65 + 1;
+                                        *(_DWORD *)(v66 + 4 * v65) = a1;
+                                      }
+                                      v16 = v133-- == 0;
+                                      if ( v16 )
+                                        goto LABEL_105;
+                                    }
+                                  }
+                                }
+                              }
+                              else
+                              {
+                                while ( 1 )
+                                {
+                                  v56 = *(_DWORD *)v9->__pad_0;
+                                  a1 = 0;
+                                  result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v56 + 12))(
+                                             v9,
+                                             &a1,
+                                             4,
+                                             0);
+                                  if ( result < 0 )
+                                    break;
+                                  v57 = *(_DWORD *)(v2 + 136);
+                                  if ( *(_DWORD *)(v2 + 144) < v57
+                                    || (*(_BYTE *)(v2 + 141) || !v57)
+                                    && (v58 = *(_DWORD *)(v2 + 148), v58 > 0)
+                                    && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 128) + 8))(
+                                         v2 + 128,
+                                         v58 + v57,
+                                         0) )
+                                  {
+                                    v59 = *(_DWORD *)(v2 + 144);
+                                    v60 = *(_DWORD *)(v2 + 132);
+                                    *(_DWORD *)(v2 + 144) = v59 + 1;
+                                    *(_DWORD *)(v60 + 4 * v59) = a1;
+                                  }
+                                  v16 = v133-- == 0;
+                                  if ( v16 )
+                                    goto LABEL_95;
+                                }
+                              }
+                            }
+                          }
+                          else
+                          {
+                            while ( 1 )
+                            {
+                              v50 = *(_DWORD *)v9->__pad_0;
+                              a1 = 0;
+                              result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v50 + 12))(v9, &a1, 4, 0);
+                              if ( result < 0 )
+                                break;
+                              v51 = *(_DWORD *)(v2 + 112);
+                              if ( *(_DWORD *)(v2 + 120) < v51
+                                || (*(_BYTE *)(v2 + 117) || !v51)
+                                && (v52 = *(_DWORD *)(v2 + 124), v52 > 0)
+                                && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 104) + 8))(
+                                     v2 + 104,
+                                     v52 + v51,
+                                     0) )
+                              {
+                                v53 = *(_DWORD *)(v2 + 120);
+                                v54 = *(_DWORD *)(v2 + 108);
+                                *(_DWORD *)(v2 + 120) = v53 + 1;
+                                *(_DWORD *)(v54 + 4 * v53) = a1;
+                              }
+                              v16 = v133-- == 0;
+                              if ( v16 )
+                                goto LABEL_85;
+                            }
+                          }
+                        }
+                      }
+                      else
+                      {
+                        while ( 1 )
+                        {
+                          v44 = *(_DWORD *)v9->__pad_0;
+                          a1 = 0;
+                          result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v44 + 12))(v9, &a1, 4, 0);
+                          if ( result < 0 )
+                            break;
+                          v45 = *(_DWORD *)(v2 + 88);
+                          if ( *(_DWORD *)(v2 + 96) < v45
+                            || (*(_BYTE *)(v2 + 93) || !v45)
+                            && (v46 = *(_DWORD *)(v2 + 100), v46 > 0)
+                            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 80) + 8))(
+                                 v2 + 80,
+                                 v46 + v45,
+                                 0) )
+                          {
+                            v47 = *(_DWORD *)(v2 + 96);
+                            v48 = *(_DWORD *)(v2 + 84);
+                            *(_DWORD *)(v2 + 96) = v47 + 1;
+                            *(_DWORD *)(v48 + 4 * v47) = a1;
+                          }
+                          v16 = v133-- == 0;
+                          if ( v16 )
+                            goto LABEL_75;
+                        }
+                      }
+                    }
+                  }
+                  else
+                  {
+                    while ( 1 )
+                    {
+                      v36 = *(_DWORD *)v9->__pad_0;
+                      v134 = 0;
+                      LOBYTE(v135) = 0;
+                      result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v36 + 12))(v9, &v134, 8, 0);
+                      if ( result < 0 )
+                        break;
+                      v37 = *(_DWORD *)(v2 + 22052);
+                      if ( *(_DWORD *)(v2 + 22060) < v37
+                        || (*(_BYTE *)(v2 + 22057) || !v37)
+                        && (v38 = *(_DWORD *)(v2 + 22064), v38 > 0)
+                        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 22044) + 8))(
+                             v2 + 22044,
+                             v37 + v38,
+                             0) )
+                      {
+                        v39 = *(_DWORD *)(v2 + 22060);
+                        v40 = *(_DWORD *)(v2 + 22048);
+                        *(_DWORD *)(v2 + 22060) = v39 + 1;
+                        *(_DWORD *)(v40 + 8 * v39) = v134;
+                        *(_DWORD *)(v40 + 8 * v39 + 4) = v135;
+                      }
+                      v16 = v133-- == 0;
+                      if ( v16 )
+                        goto LABEL_63;
+                    }
+                  }
+                }
+              }
+              else
+              {
+                while ( 1 )
+                {
+                  v29 = *(_DWORD *)v9->__pad_0;
+                  v134 = 0;
+                  v135 = 0;
+                  result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v29 + 12))(v9, &v134, 8, 0);
+                  if ( result < 0 )
+                    break;
+                  v30 = *(_DWORD *)(v2 + 22028);
+                  if ( *(_DWORD *)(v2 + 22036) < v30
+                    || (*(_BYTE *)(v2 + 22033) || !v30)
+                    && (v31 = *(_DWORD *)(v2 + 22040), v31 > 0)
+                    && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 22020) + 8))(
+                         v2 + 22020,
+                         v30 + v31,
+                         0) )
+                  {
+                    v32 = *(_DWORD *)(v2 + 22036);
+                    v33 = *(_DWORD *)(v2 + 22024);
+                    *(_DWORD *)(v2 + 22036) = v32 + 1;
+                    *(_DWORD *)(v33 + 8 * v32) = v134;
+                    *(_DWORD *)(v33 + 8 * v32 + 4) = v135;
+                  }
+                  v16 = v133-- == 0;
+                  if ( v16 )
+                    goto LABEL_51;
+                }
+              }
+            }
+          }
+          else
+          {
+            while ( 1 )
+            {
+              v23 = *(_DWORD *)v9->__pad_0;
+              a1 = 0;
+              result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v23 + 12))(v9, &a1, 4, 0);
+              if ( result < 0 )
+                break;
+              v24 = *(_DWORD *)(v2 + 64);
+              if ( *(_DWORD *)(v2 + 72) < v24
+                || (*(_BYTE *)(v2 + 69) || !v24)
+                && (v25 = *(_DWORD *)(v2 + 76), v25 > 0)
+                && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 56) + 8))(
+                     v2 + 56,
+                     v24 + v25,
+                     0) )
+              {
+                v26 = *(_DWORD *)(v2 + 72);
+                v27 = *(_DWORD *)(v2 + 60);
+                *(_DWORD *)(v2 + 72) = v26 + 1;
+                *(_DWORD *)(v27 + 4 * v26) = a1;
+              }
+              v16 = v133-- == 0;
+              if ( v16 )
+                goto LABEL_41;
+            }
+          }
+        }
+      }
+      else
+      {
+        while ( 1 )
+        {
+          v17 = *(_DWORD *)v9->__pad_0;
+          a1 = 0;
+          result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v17 + 12))(v9, &a1, 4, 0);
+          if ( result < 0 )
+            break;
+          v18 = *(_DWORD *)(v2 + 604);
+          if ( *(_DWORD *)(v2 + 612) < v18
+            || (*(_BYTE *)(v2 + 609) || !v18)
+            && (v19 = *(_DWORD *)(v2 + 616), v19 > 0)
+            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 596) + 8))(v2 + 596, v18 + v19, 0) )
+          {
+            v20 = *(_DWORD *)(v2 + 612);
+            v21 = *(_DWORD *)(v2 + 600);
+            *(_DWORD *)(v2 + 612) = v20 + 1;
+            *(_DWORD *)(v21 + 4 * v20) = a1;
+          }
+          v16 = v133-- == 0;
+          if ( v16 )
+            goto LABEL_31;
+        }
+      }
+    }
+  }
+  return result;
+}
+
 }
 } // namespace gamemd
 

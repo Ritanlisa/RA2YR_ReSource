@@ -14,7 +14,6 @@ struct MPCooperative {
     HWND CopyTo();  // 0x5C1A10
     void COMStub();  // 0x5C1CB0
     int InitSession();  // 0x5C1CC0
-    char Write(int a2);  // 0x5C1D80
     char Seek();  // 0x5C1DC0
     int Revert();  // 0x5C1FA0
     char StartGame(int a2, void ** a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10);  // 0x5C2040
@@ -33,11 +32,12 @@ struct MPCooperative {
     char ProcessChat();  // 0x5C4110
     char UpdateMovieScore();  // 0x5C42D0
     void ShowScoreScreen(int a2);  // 0x5C44E0
-    int checkVictory();  // 0x5C4670
     int InitializePlayers();  // 0x5C4CA0
-    char spawnUnits(int a2, void * Block, int a4, short a5, int a6, int a7, unsigned int * a8);  // 0x5C4E90
     unsigned int * processTurnEnd(unsigned int * a2);  // 0x5C4F30
     int finalizeSession();  // 0x696F30
+    char Write(int a2);  // 0x5C1D80
+    int checkVictory();  // 0x5C4670
+    char spawnUnits(int a2, void * Block, int a4, short a5, int a6, int a7, unsigned int * a8);  // 0x5C4E90
     unsigned int * initGame();  // 0x46D330
     char GetMovieScore(CampaignEndScoreClass * aP1);  // 0x49BCA0
     DynamicVector * saveGameState(char a2);  // 0x5C4FC0

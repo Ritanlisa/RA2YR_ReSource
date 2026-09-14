@@ -201,56 +201,645 @@ namespace gamemd {
 char UpdateBullets(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// char __stdcall UpdateBullets(int a1)
-// {
-//   ObjectClass *v1; // ecx
-//   int v2; // edx
-//   ObjectClass *v3; // eax
-//   int v4; // edi
-//   int v5; // eax
-//   bool v6; // al
-//   IUnknown *v7; // edx
-//   int v8; // eax
-//   AnimClass *v9; // ebx
-//   AnimClass *v11; // eax
-//   int edx19; // edx
-//   IUnknown *v13; // ecx
-//   int eax24; // eax
-//   int v14; // ecx
-//   int v15; // edx
-//   int v16; // eax
-//   int v17; // eax
-//   int objectTypeFlags; // ecx
-//   bool v19; // al
-//   IUnknown *v21; // ebx
-//   IUnknown *v22; // edi
-//   int edx34; // edx
-//   int v23; // eax
-//   AnimClass *v25; // edi
-//   AnimClass *v27; // eax
-//   int v26; // ecx
-//   int edx41; // edx
-//   int v28; // eax
-//   IUnknown *v31; // ecx
-//   int v30; // eax
-//   int edi43; // edi
-//   _WORD *v32; // eax
-//   ObjectClass *v35; // ecx
-//   int v34; // eax
-//   int edx50; // edx
-//   int v36; // eax
-//   bool v37; // al
-//   IUnknown *v40; // edx
-//   int v39; // eax
-//   _WORD *eax63; // eax
-//   AnimClass *v43; // edi
-//   AnimClass *v45; // eax
-//   ObjectClass *v46; // ecx
-//   int v44; // eax
-//   double st7_69; // st7
-//   double... [29151 chars total]
-// end truncated pseudocode
+char __stdcall UpdateBullets(int a1)
+{
+  ObjectClass *v1; // ecx
+  int v2; // edx
+  ObjectClass *v3; // eax
+  int v4; // edi
+  int v5; // eax
+  bool v6; // al
+  IUnknown *v7; // edx
+  int v8; // eax
+  AnimClass *v9; // ebx
+  AnimClass *v11; // eax
+  int edx19; // edx
+  IUnknown *v13; // ecx
+  int eax24; // eax
+  int v14; // ecx
+  int v15; // edx
+  int v16; // eax
+  int v17; // eax
+  int objectTypeFlags; // ecx
+  bool v19; // al
+  IUnknown *v21; // ebx
+  IUnknown *v22; // edi
+  int edx34; // edx
+  int v23; // eax
+  AnimClass *v25; // edi
+  AnimClass *v27; // eax
+  int v26; // ecx
+  int edx41; // edx
+  int v28; // eax
+  IUnknown *v31; // ecx
+  int v30; // eax
+  int edi43; // edi
+  _WORD *v32; // eax
+  ObjectClass *v35; // ecx
+  int v34; // eax
+  int edx50; // edx
+  int v36; // eax
+  bool v37; // al
+  IUnknown *v40; // edx
+  int v39; // eax
+  _WORD *eax63; // eax
+  AnimClass *v43; // edi
+  AnimClass *v45; // eax
+  ObjectClass *v46; // ecx
+  int v44; // eax
+  double st7_69; // st7
+  double st6_69; // st6
+  double v47; // st5
+  IUnknown *v51; // ecx
+  int v49; // eax
+  int v50; // edi
+  int ebx82; // ebx
+  _DWORD *v52; // eax
+  int v53; // ecx
+  BuildingTypeClass *v57; // eax
+  double v55; // st7
+  _DWORD *ebx90; // ebx
+  ObjectClass *v61; // ecx
+  int v59; // eax
+  _DWORD *v60; // edi
+  int *eax91a; // eax
+  int v62; // ecx
+  int v63; // eax
+  double v64; // st7
+  double v65; // st7
+  int v66; // ecx
+  int v67; // edx
+  int v68; // eax
+  int v69; // ecx
+  double v70; // st7
+  double v71; // st7
+  double v72; // st7
+  ObjectClass *v75; // ecx
+  int v74; // ebx
+  ObjectClass *v77; // eax
+  int v76; // edx
+  int eax98; // eax
+  int v78; // ecx
+  int v79; // edx
+  ObjectClass *v82; // eax
+  double v81; // st7
+  int *eax100; // eax
+  int v83; // ecx
+  double v84; // st7
+  int v85; // ecx
+  _DWORD *v86; // ebx
+  BuildingTypeClass *v88; // eax
+  int ecx102; // ecx
+  double v89; // st7
+  double v90; // st7
+  double v91; // st7
+  double v92; // st6
+  double v93; // st7
+  IUnknown *v94; // edx
+  int v95; // eax
+  AnimClass *v96; // edi
+  AnimClass *v98; // eax
+  int edx118; // edx
+  int v99; // eax
+  double aP0; // st7
+  int v101; // edx
+  ObjectClass *v103; // eax
+  double st7_120a; // st7
+  double v104; // st7
+  double v105; // st7
+  int v106; // ebx
+  double v107; // st7
+  VectorClass **v108; // eax
+  ObjectClass *v111; // ecx
+  VectorClass *v110; // eax
+  __int128 _8; // [esp+8h] [ebp-B8h]
+  double aP0_4; // [esp+10h] [ebp-B0h]
+  ObjectClass *v113; // [esp+28h] [ebp-98h]
+  ObjectClass *v115; // [esp+28h] [ebp-98h]
+  ObjectClass *v116; // [esp+28h] [ebp-98h]
+  ObjectClass *desiredFacing; // [esp+2Ch] [ebp-94h] BYREF
+  double desiredFacing_4; // [esp+30h] [ebp-90h]
+  ObjectClass *v119; // [esp+38h] [ebp-88h]
+  double var84_4; // [esp+40h] [ebp-80h]
+  IUnknown *v121; // [esp+48h] [ebp-78h]
+  double var74_4; // [esp+50h] [ebp-70h] BYREF
+  ObjectClass *v123; // [esp+58h] [ebp-68h]
+  double var64_4; // [esp+60h] [ebp-60h] BYREF
+  CoordStruct v124; // [esp+68h] [ebp-58h] BYREF
+  int v125; // [esp+74h] [ebp-4Ch] BYREF
+  int v126; // [esp+78h] [ebp-48h]
+  int v127; // [esp+7Ch] [ebp-44h]
+  IUnknown *v128[3]; // [esp+84h] [ebp-3Ch] BYREF
+  CoordStruct v129; // [esp+90h] [ebp-30h] BYREF
+  int v130[3]; // [esp+9Ch] [ebp-24h] BYREF
+  CoordStruct v131; // [esp+A8h] [ebp-18h] BYREF
+  CoordStruct aP2; // [esp+B4h] [ebp-Ch] BYREF
+
+  v1 = *(ObjectClass **)(a1 + 8);
+  v2 = *(_DWORD *)&v1[10].__pad_0[12];
+  if ( v2 == *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1248) )
+  {
+    v3 = (ObjectClass *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1200);
+LABEL_6:
+    v113 = v3;
+    v4 = (int)v3;
+    goto LABEL_7;
+  }
+  if ( v2 != *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1352) )
+  {
+    v3 = (ObjectClass *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1252);
+    goto LABEL_6;
+  }
+  v4 = *(_DWORD *)&stru_87C374.__pad_579C[22224] + 1304;
+  v113 = (ObjectClass *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1304);
+LABEL_7:
+  switch ( *(_DWORD *)(a1 + 60) )
+  {
+    case 1:
+      *(_DWORD *)(a1 + 68) = 0;
+      *(_DWORD *)(a1 + 72) = 0;
+      v5 = *(_DWORD *)(*(_DWORD *)(a1 + 8) + 724);
+      v6 = v5 && VeterancyStruct::IsElite((float *)(v5 + 336));
+      *(_BYTE *)(a1 + 77) = v6;
+      if ( *(_DWORD *)(v4 + 48) != *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1352) )
+      {
+        *(_BYTE *)(a1 + 76) = 1;
+LABEL_23:
+        LODWORD(var84_4) = *(_DWORD *)(a1 + 44);
+        if ( !LODWORD(var84_4) )
+          goto LABEL_29;
+        v13 = *(IUnknown **)(a1 + 32);
+        eax24 = *(_DWORD *)(a1 + 40);
+        if ( v13 != (IUnknown *)-1 )
+        {
+          v14 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (_DWORD)v13;
+          if ( v14 >= eax24 )
+            eax24 = 0;
+          else
+            eax24 -= v14;
+        }
+        if ( (double)(LODWORD(var84_4) - eax24) / (double)SLODWORD(var84_4) == 1.0 )
+        {
+LABEL_29:
+          v15 = v126;
+          v16 = -(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1352) != *(_DWORD *)(v4 + 48));
+          LOBYTE(v16) = v16 & 0xFC;
+          *(_DWORD *)(a1 + 60) = v16 + 6;
+          v17 = *(_DWORD *)(v4 + 4);
+          *(_DWORD *)(a1 + 32) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+          *(_DWORD *)(a1 + 36) = v15;
+          *(_DWORD *)(a1 + 40) = v17;
+          *(_DWORD *)(a1 + 44) = v17;
+        }
+        goto LABEL_111;
+      }
+      v7 = *(IUnknown **)(a1 + 48);
+      v8 = *(_DWORD *)(a1 + 56);
+      if ( v7 == (IUnknown *)-1 )
+        goto LABEL_16;
+      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (int)v7 >= v8 )
+        goto LABEL_17;
+      v8 -= *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (_DWORD)v7;
+LABEL_16:
+      if ( !v8 )
+      {
+LABEL_17:
+        v9 = (AnimClass *)__2_YAPAXI_Z(0x1C8u);
+        if ( v9 )
+        {
+          aP2 = *(CoordStruct *)(*(_DWORD *)(a1 + 8) + 156);
+          v11 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620.__pad_579C[15344]);
+          AnimClass::ctor(
+            (void **)v9,
+            *(CoordStruct **)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * (_DWORD)v11),
+            &aP2,
+            (CoordStruct *)2,
+            (CoordStruct *)1,
+            (void *)0x600,
+            (void *)0xFFFFFFF6,
+            0);
+        }
+        edx19 = v126;
+        *(_DWORD *)(a1 + 48) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+        *(_DWORD *)(a1 + 52) = edx19;
+        *(_DWORD *)(a1 + 56) = 24;
+      }
+      if ( *(_BYTE *)(a1 + 76) )
+      {
+        (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(a1 + 8) + 292))(*(_DWORD *)(a1 + 8), 0);
+        *(_BYTE *)(a1 + 76) = 0;
+        Targeting::Readd(*(IUnknown **)(a1 + 8));
+        (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(a1 + 8) + 292))(*(_DWORD *)(a1 + 8), 1);
+      }
+      goto LABEL_23;
+    case 2:
+      *(_DWORD *)(a1 + 68) = 0;
+      *(_DWORD *)(a1 + 72) = 0;
+      v36 = *(_DWORD *)(*(_DWORD *)(a1 + 8) + 724);
+      v37 = v36 && VeterancyStruct::IsElite((float *)(v36 + 336));
+      *(_BYTE *)(a1 + 77) = v37;
+      LODWORD(var84_4) = *(_DWORD *)(a1 + 44);
+      if ( !LODWORD(var84_4) )
+        goto LABEL_63;
+      v40 = *(IUnknown **)(a1 + 32);
+      v39 = *(_DWORD *)(a1 + 40);
+      if ( v40 != (IUnknown *)-1 )
+      {
+        if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (int)v40 >= v39 )
+          v39 = 0;
+        else
+          v39 -= *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (_DWORD)v40;
+      }
+      LODWORD(desiredFacing_4) = LODWORD(var84_4) - v39;
+      if ( (double)(LODWORD(var84_4) - v39) / (double)SLODWORD(var84_4) != 1.0 )
+      {
+        st7_69 = *(float *)&v113->__pad_0[8] * 1.570796326794897;
+        st6_69 = *(float *)&v113->__pad_0[12] * 1.570796326794897;
+        LODWORD(desiredFacing_4) = *(_DWORD *)(a1 + 44);
+        if ( LODWORD(desiredFacing_4) )
+        {
+          v51 = *(IUnknown **)(a1 + 32);
+          v49 = *(_DWORD *)(a1 + 40);
+          if ( v51 != (IUnknown *)-1 )
+          {
+            if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (int)v51 >= v49 )
+              v49 = 0;
+            else
+              v49 -= *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (_DWORD)v51;
+          }
+          LODWORD(var64_4) = LODWORD(desiredFacing_4) - v49;
+          v47 = (double)(LODWORD(desiredFacing_4) - v49) / (double)SLODWORD(desiredFacing_4);
+        }
+        else
+        {
+          v47 = 1.0;
+        }
+        *(float *)(a1 + 80) = (st6_69 - st7_69) * v47 + st7_69;
+      }
+      else
+      {
+LABEL_63:
+        *(float *)(a1 + 80) = *(float *)&v113->__pad_0[12] * 1.570796326794897;
+        *(_DWORD *)(a1 + 60) = 3;
+        eax63 = (_WORD *)(*(int (__thiscall **)(_DWORD, IUnknown **))(**(_DWORD **)(a1 + 8) + 756))(
+                           *(_DWORD *)(a1 + 8),
+                           v128);
+        if ( *eax63 == word_B04E18 && eax63[1] == word_B04E1A )
+          GadgetGrid::InsertItem(&stru_87C374.__pad_579C[23928], *(ObjectClass **)(a1 + 8));
+        v43 = (AnimClass *)__2_YAPAXI_Z(0x1C8u);
+        if ( v43 )
+        {
+          v129 = *(CoordStruct *)(*(_DWORD *)(a1 + 8) + 156);
+          v45 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620.__pad_579C[15344]);
+          AnimClass::ctor(
+            (void **)v43,
+            *(CoordStruct **)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * (_DWORD)v45),
+            &v129,
+            (CoordStruct *)2,
+            (CoordStruct *)1,
+            (void *)0x600,
+            (void *)0xFFFFFFF6,
+            0);
+        }
+        v46 = *(ObjectClass **)(a1 + 8);
+        v124 = *(CoordStruct *)v46->location;
+        v44 = (*(int (__thiscall **)(ObjectClass *))(*(_DWORD *)v46->__pad_0 + 132))(v46);
+        StartAudioControllerAt(*(AudioController **)(v44 + 1324), (int)&v124, 0);
+      }
+      goto LABEL_111;
+    case 3:
+      if ( !*(_BYTE *)(a1 + 76) )
+      {
+        (*(void (__thiscall **)(ObjectClass *, _DWORD))(*(_DWORD *)v1->__pad_0 + 292))(v1, 0);
+        *(_BYTE *)(a1 + 76) = 1;
+        Targeting::Readd(*(IUnknown **)(a1 + 8));
+        (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(a1 + 8) + 292))(*(_DWORD *)(a1 + 8), 1);
+      }
+      *(double *)(a1 + 68) = *(float *)(v4 + 24) + *(double *)(a1 + 68);
+      if ( (double)*(int *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 132))(*(_DWORD *)(a1 + 8)) + 1656) < *(double *)(a1 + 68) )
+        *(double *)(a1 + 68) = (double)*(int *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 132))(*(_DWORD *)(a1 + 8))
+                                              + 1656);
+      if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 456))(*(_DWORD *)(a1 + 8)) >= *(_DWORD *)(v4 + 28) )
+      {
+        *(_DWORD *)(a1 + 60) = 4;
+        v50 = *(_DWORD *)(a1 + 20);
+        ebx82 = *(_DWORD *)(a1 + 24);
+        v52 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(a1 + 8) + 72))(*(_DWORD *)(a1 + 8), &v125);
+        v53 = *v52 - v50;
+        v57 = (BuildingTypeClass *)(v52[1] - ebx82);
+        desiredFacing_4 = COERCE_DOUBLE(__PAIR64__((unsigned int)v57, v53));
+        v55 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)(int)v57 * (double)(int)v57 + (double)v53 * (double)v53));
+        *(_DWORD *)(a1 + 84) = Math::RoundToInt(v55);
+      }
+      goto LABEL_111;
+    case 4:
+      if ( (*(int (__thiscall **)(ObjectClass *))(*(_DWORD *)v1->__pad_0 + 456))(v1) <= 0 )
+      {
+        TechnoClass::CalculateDamage(a1 - 4);
+        return 0;
+      }
+      *(double *)(a1 + 68) = *(float *)(v4 + 24) + *(double *)(a1 + 68);
+      if ( (double)*(int *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 132))(*(_DWORD *)(a1 + 8)) + 1656) < *(double *)(a1 + 68) )
+        *(double *)(a1 + 68) = (double)*(int *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 132))(*(_DWORD *)(a1 + 8))
+                                              + 1656);
+      if ( *(_BYTE *)(v4 + 44) && *(_DWORD *)(a1 + 84) )
+      {
+        ebx90 = (_DWORD *)(a1 - 4);
+        if ( BulletClass::ComputeImpactTrajectory(a1 - 4, v4) )
+          return 0;
+        v61 = *(ObjectClass **)(a1 + 8);
+        v59 = *(_DWORD *)(a1 + 20);
+        v60 = (_DWORD *)(a1 + 20);
+        HIDWORD(desiredFacing_4) = *(_DWORD *)(a1 + 24);
+        LODWORD(desiredFacing_4) = v59;
+        eax91a = (int *)(*(int (__thiscall **)(ObjectClass *, int *))(*(_DWORD *)v61->__pad_0 + 72))(v61, &v125);
+        v62 = *eax91a;
+        v63 = eax91a[1];
+        LODWORD(var84_4) = v62 - LODWORD(desiredFacing_4);
+        HIDWORD(var84_4) = v63 - HIDWORD(desiredFacing_4);
+        v64 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
+                                            (double)(v63 - HIDWORD(desiredFacing_4))
+                                          * (double)(v63 - HIDWORD(desiredFacing_4))
+                                          + (double)(v62 - LODWORD(desiredFacing_4))
+                                          * (double)(v62 - LODWORD(desiredFacing_4))));
+        LODWORD(desiredFacing_4) = Math::RoundToInt(v64);
+        v65 = (double)SLODWORD(desiredFacing_4) / (double)*(int *)(a1 + 84);
+        v66 = *(_DWORD *)(ebx90[3] + 156);
+        v67 = *(_DWORD *)(ebx90[3] + 160);
+        v119 = *(ObjectClass **)(ebx90[3] + 164);
+        v68 = ebx90[6] - v66;
+        v69 = ebx90[7] - v67;
+        v127 = ebx90[8] - (_DWORD)v119;
+        var84_4 = v65;
+        var74_4 = 1.0 - v65;
+        LODWORD(desiredFacing_4) = v69 * v69 + v68 * v68;
+        v70 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)SLODWORD(desiredFacing_4)));
+        if ( v70 <= 0.0 )
+          v71 = -1.570796326794897;
+        else
+          v71 = Math::ArcTan((double)v127 / v70);
+        *(float *)(a1 + 80) = *(float *)&v113->__pad_0[12] * var84_4 * 1.570796326794897 + v71 * var74_4;
+      }
+      else
+      {
+        if ( *(float *)(a1 + 80) > 0.0 )
+        {
+          v72 = *(float *)(a1 + 80) - *(float *)(v4 + 16);
+          *(float *)(a1 + 80) = v72;
+          if ( v72 < 0.0 )
+            *(_DWORD *)(a1 + 80) = 0;
+        }
+        v60 = (_DWORD *)(a1 + 20);
+        var74_4 = *(double *)(a1 + 20);
+        v75 = *(ObjectClass **)(a1 + 8);
+        v123 = *(ObjectClass **)(a1 + 28);
+        v125 = v75->location[0];
+        v126 = v75->location[1];
+        v74 = v75->location[2] - (_DWORD)v123;
+        LODWORD(var84_4) = v75->location[0];
+        v77 = (ObjectClass *)v75->location[2];
+        HIDWORD(var84_4) = v75->location[1];
+        v76 = *(_DWORD *)v75->__pad_0;
+        v121 = (IUnknown *)v77;
+        eax98 = (*(int (__thiscall **)(ObjectClass *, int *))(v76 + 72))(v75, &v125);
+        v78 = *(_DWORD *)eax98 - LODWORD(var74_4);
+        v79 = *(_DWORD *)(eax98 + 4);
+        v82 = *(ObjectClass **)(eax98 + 8);
+        LODWORD(desiredFacing_4) = v78;
+        HIDWORD(desiredFacing_4) = v79 - HIDWORD(var74_4);
+        v119 = (ObjectClass *)((char *)v82 - (char *)v121);
+        v81 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
+                                            (double)((char *)v82 - (char *)v121) * (double)((char *)v82 - (char *)v121)
+                                          + (double)(v79 - HIDWORD(var74_4)) * (double)(v79 - HIDWORD(var74_4))
+                                          + (double)v78 * (double)v78));
+        if ( (int)Math::RoundToInt(v81) <= v74 )
+          *(_DWORD *)(a1 + 60) = 5;
+      }
+      eax100 = (int *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(a1 + 8) + 72))(*(_DWORD *)(a1 + 8), &v125);
+      v83 = *eax100;
+      LODWORD(desiredFacing_4) = *v60;
+      LODWORD(var84_4) = v83;
+      *((double *)&_8 + 1) = (double)SLODWORD(desiredFacing_4) - (double)v83;
+      *(double *)&_8 = (double)eax100[1] - (double)(int)v60[1];
+      v84 = Math::CalcAngle((AbstractClass *)_8, *(double *)((char *)&_8 + 4));
+      LOWORD(desiredFacing_4) = Math::RoundToInt((v84 - 1.570796326794897) * -10430.06004058427);
+      v85 = *(_DWORD *)(a1 + 8);
+      desiredFacing = (ObjectClass *)LODWORD(desiredFacing_4);
+      FacingClass::Update((FacingClass *)(v85 + 904), (DirStruct *)&desiredFacing);
+LABEL_111:
+      if ( !(*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)a1 + 128))(a1) )
+        goto LABEL_119;
+      v94 = *(IUnknown **)(a1 + 48);
+      v95 = *(_DWORD *)(a1 + 56);
+      if ( v94 == (IUnknown *)-1 )
+        goto LABEL_115;
+      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (int)v94 >= v95 )
+        goto LABEL_116;
+      v95 -= *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (_DWORD)v94;
+LABEL_115:
+      if ( !v95 )
+      {
+LABEL_116:
+        v96 = (AnimClass *)__2_YAPAXI_Z(0x1C8u);
+        if ( v96 )
+        {
+          v124 = *(CoordStruct *)(*(_DWORD *)(a1 + 8) + 156);
+          v98 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620.__pad_579C[15348]);
+          AnimClass::ctor(
+            (void **)v96,
+            *(CoordStruct **)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * (_DWORD)v98),
+            &v124,
+            0,
+            (CoordStruct *)1,
+            (void *)0x600,
+            0,
+            0);
+        }
+        edx118 = v126;
+        *(_DWORD *)(a1 + 48) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+        *(_DWORD *)(a1 + 52) = edx118;
+        *(_DWORD *)(a1 + 56) = 3;
+      }
+LABEL_119:
+      if ( *(double *)(a1 + 68) > 0.0 )
+      {
+        desiredFacing = (ObjectClass *)Math::RoundToInt(*(double *)(a1 + 68));
+        v99 = *(_DWORD *)(a1 - 4 + 12) + 156;
+        desiredFacing_4 = (double)(int)desiredFacing;
+        aP0 = *(float *)(a1 - 4 + 84);
+        v101 = *(_DWORD *)(v99 + 4);
+        LODWORD(var84_4) = *(_DWORD *)v99;
+        v103 = *(ObjectClass **)(v99 + 8);
+        HIDWORD(var84_4) = v101;
+        v121 = (IUnknown *)v103;
+        st7_120a = Math::ArcTan2((IUnknown *)LODWORD(aP0));
+        LODWORD(var64_4) = Math::RoundToInt(st7_120a * desiredFacing_4);
+        desiredFacing = (ObjectClass *)(*(__int16 *)ProgressTimer::GetValue(
+                                                      (_WORD *)(*(_DWORD *)(a1 - 4 + 12) + 904),
+                                                      (IUnknown *)v128)
+                                      - 0x3FFF);
+        *(double *)&v128[1] = (double)(int)desiredFacing * -0.00009587672516830327;
+        var64_4 = (double)SLODWORD(var64_4);
+        var74_4 = (double)SHIDWORD(var84_4);
+        v104 = Math::SinCos(v128[1]);
+        desiredFacing = (ObjectClass *)Math::RoundToInt(var74_4 - v104 * var64_4);
+        v105 = Math::ArcTan2(v128[1]);
+        v106 = Math::RoundToInt(v105 * var64_4 + (double)SLODWORD(var84_4));
+        aP0_4 = *(float *)(a1 - 4 + 84);
+        v129.Y = (int)desiredFacing;
+        v129.Z = (int)v121;
+        v107 = Math::SinCos((IUnknown *)LODWORD(aP0_4));
+        v124.Z = Math::RoundToInt(v107 * desiredFacing_4 + (double)(int)v121);
+        v124.X = v106;
+        v124.Y = v129.Y;
+        LOWORD(v116) = v106 / 256;
+        HIWORD(v116) = v129.Y / 256;
+        desiredFacing = v116;
+        if ( LayerClass::CoordinatesLegal(&stru_87C374.__pad_14B0[8132], (IUnknown *)&desiredFacing) )
+          (*(void (__thiscall **)(_DWORD, CoordStruct *))(**(_DWORD **)(a1 + 8) + 436))(*(_DWORD *)(a1 + 8), &v124);
+        v108 = (VectorClass **)(*(int (__thiscall **)(_DWORD, IUnknown **))(**(_DWORD **)(a1 + 8) + 440))(
+                                 *(_DWORD *)(a1 + 8),
+                                 v128);
+        v111 = *(ObjectClass **)(a1 + 8);
+        v110 = *v108;
+        desiredFacing = (ObjectClass *)v110;
+        if ( (_WORD)v110 != *(_WORD *)v111[8].__pad_0 || HIWORD(desiredFacing) != *(_WORD *)&v111[8].__pad_0[2] )
+        {
+          if ( v111->isAliveFlag )
+            Coord::ToGridIndex(
+              &stru_87C374.__pad_579C[23928],
+              (VectorClass *)v111,
+              *(VectorClass **)v111[8].__pad_0,
+              v110);
+        }
+        if ( *(int *)(*(_DWORD *)(a1 + 8) + 108) <= 0 )
+          TechnoClass::CalculateDamage(a1 - 4);
+      }
+      return (*(char (__stdcall **)(int))(*(_DWORD *)a1 + 16))(a1);
+    case 5:
+      v86 = (_DWORD *)(a1 - 4);
+      if ( BulletClass::ComputeImpactTrajectory(a1 - 4, v4) )
+        return 0;
+      v88 = (BuildingTypeClass *)(v86[6] - *(_DWORD *)(v86[3] + 156));
+      ecx102 = v86[7] - *(_DWORD *)(v86[3] + 160);
+      v127 = v86[8] - *(_DWORD *)(v86[3] + 164);
+      LODWORD(desiredFacing_4) = (_DWORD)v88 * (_DWORD)v88 + ecx102 * ecx102;
+      v89 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)SLODWORD(desiredFacing_4)));
+      if ( v89 <= 0.0 )
+        v90 = -1.570796326794897;
+      else
+        v90 = Math::ArcTan((double)v127 / v89);
+      v91 = v90 - *(float *)(a1 + 80);
+      v92 = v91;
+      if ( v91 < 0.0 )
+        v92 = -v91;
+      if ( v92 <= *(float *)&v113->uniqueId )
+      {
+        *(float *)(a1 + 80) = *(float *)(a1 + 80) + v91;
+      }
+      else
+      {
+        if ( v91 >= 0.0 )
+          v93 = *(float *)&v113->uniqueId + *(float *)(a1 + 80);
+        else
+          v93 = *(float *)(a1 + 80) - *(float *)&v113->uniqueId;
+        *(float *)(a1 + 80) = v93;
+      }
+      goto LABEL_111;
+    case 6:
+      objectTypeFlags = v1[4].objectTypeFlags;
+      v19 = objectTypeFlags && VeterancyStruct::IsElite((float *)(objectTypeFlags + 336));
+      v21 = (IUnknown *)(a1 + 48);
+      *(_BYTE *)(a1 + 77) = v19;
+      v22 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
+      edx34 = *(_DWORD *)(a1 + 48);
+      v23 = *(_DWORD *)(a1 + 56);
+      if ( edx34 == -1 )
+        goto LABEL_37;
+      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - edx34 >= v23 )
+        goto LABEL_38;
+      v23 -= *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - edx34;
+LABEL_37:
+      if ( !v23 )
+      {
+LABEL_38:
+        v25 = (AnimClass *)__2_YAPAXI_Z(0x1C8u);
+        if ( v25 )
+        {
+          v131 = *(CoordStruct *)(*(_DWORD *)(a1 + 8) + 156);
+          v27 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620.__pad_579C[15344]);
+          AnimClass::ctor(
+            (void **)v25,
+            *(CoordStruct **)(*(_DWORD *)&stru_89E138.__pad_1600D[15] + 4 * (_DWORD)v27),
+            &v131,
+            (CoordStruct *)2,
+            (CoordStruct *)1,
+            (void *)0x600,
+            (void *)0xFFFFFFF6,
+            0);
+        }
+        v21->field_0 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+        *(_DWORD *)(a1 + 52) = v126;
+        *(_DWORD *)(a1 + 56) = 24;
+        v22 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
+      }
+      v26 = *(_DWORD *)(a1 + 8) + 156;
+      LODWORD(var74_4) = *(_DWORD *)v26;
+      edx41 = *(_DWORD *)(a1 + 44);
+      v28 = *(_DWORD *)(v26 + 4);
+      LODWORD(desiredFacing_4) = edx41;
+      HIDWORD(var74_4) = v28;
+      v123 = *(ObjectClass **)(v26 + 8);
+      if ( !edx41 )
+        goto LABEL_47;
+      v31 = *(IUnknown **)(a1 + 32);
+      v30 = *(_DWORD *)(a1 + 40);
+      if ( v31 != (IUnknown *)-1 )
+      {
+        edi43 = (char *)v22 - (char *)v31;
+        if ( edi43 >= v30 )
+          v30 = 0;
+        else
+          v30 -= edi43;
+      }
+      LODWORD(var84_4) = edx41 - v30;
+      if ( (double)(edx41 - v30) / (double)SLODWORD(desiredFacing_4) != 1.0 )
+      {
+        v123 = (ObjectClass *)((char *)v123 + v113->abstractFlags);
+        LOWORD(v115) = SLODWORD(var74_4) / 256;
+        HIWORD(v115) = SHIDWORD(var74_4) / 256;
+        LODWORD(var64_4) = v115;
+        if ( LayerClass::CoordinatesLegal(&stru_87C374.__pad_14B0[8132], (IUnknown *)&var64_4) )
+          (*(void (__thiscall **)(_DWORD, double *))(**(_DWORD **)(a1 + 8) + 436))(*(_DWORD *)(a1 + 8), &var74_4);
+      }
+      else
+      {
+LABEL_47:
+        *(float *)(a1 + 80) = *(float *)&v113->__pad_0[12] * 1.570796326794897;
+        v32 = (_WORD *)(*(int (__thiscall **)(_DWORD, IUnknown **))(**(_DWORD **)(a1 + 8) + 756))(
+                         *(_DWORD *)(a1 + 8),
+                         &v128[1]);
+        if ( *v32 == word_B04E18 && v32[1] == word_B04E1A )
+        {
+          v35 = *(ObjectClass **)(a1 + 8);
+          v130[0] = v35->location[0];
+          v130[1] = v35->location[1];
+          v130[2] = v35->location[2];
+          v34 = (*(int (__thiscall **)(ObjectClass *))(*(_DWORD *)v35->__pad_0 + 132))(v35);
+          StartAudioControllerAt(*(AudioController **)(v34 + 1324), (int)v130, 0);
+          GadgetGrid::InsertItem(&stru_87C374.__pad_579C[23928], *(ObjectClass **)(a1 + 8));
+        }
+        edx50 = v126;
+        v21->field_0 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+        *(_DWORD *)(a1 + 52) = edx50;
+        *(_DWORD *)(a1 + 56) = 0;
+        *(_DWORD *)(a1 + 60) = 3;
+      }
+      goto LABEL_111;
+    default:
+      goto LABEL_111;
+  }
+}
 }
 } // namespace gamemd
 

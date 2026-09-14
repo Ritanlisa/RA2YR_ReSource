@@ -1362,50 +1362,729 @@ namespace gamemd {
 void TeamClass::Update(TechnoClass * aP0, unsigned int * a1, int j)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// void TeamClass::Update(TechnoClass *aP0, _DWORD *a1, int j)
-// {
-//   int v3; // ecx
-//   int *countObjects; // ebp
-//   int jj; // edi
-//   TeamClass *esi1; // esi
-//   TimerStruct *v4; // edx
-//   int eax2; // eax
-//   FootClass *v6; // eax
-//   int v10; // eax
-//   FootClass *v8; // ecx
-//   int i; // edi
-//   char cl48; // cl
-//   char stepCompleted; // al
-//   char v15; // bl
-//   ScriptClass *v13; // ecx
-//   int *Entry; // eax
-//   int v18; // ecx
-//   FootClass *n; // edi
-//   int eax71; // eax
-//   FootClass *ii; // edi
-//   int eax77; // eax
-//   FootClass *v20; // edi
-//   FootClass *v24; // ebp
-//   CellClass *v22; // eax
-//   AbstractClass *MapSpawnCell; // eax
-//   FootClass *m; // edi
-//   FootClass *v25; // edi
-//   FootClass *nextTeamMember; // ebp
-//   int v30; // ebx
-//   int Owner; // eax
-//   int eax107; // eax
-//   int v33; // ebp
-//   FootClass *k; // edi
-//   ScriptClass *v32; // ecx
-//   AbstractClass *eax116; // eax
-//   AbstractClass *eax117; // eax
-//   FootClass *v35; // edi
-//   FootClass *v36; // edi
-//   FootClass *v37; // edi
-//   _DWORD *v41; // eax
-//   FootClass *v39; //... [28491 chars total]
-// end truncated pseudocode
+void TeamClass::Update(TechnoClass *aP0, _DWORD *a1, int j)
+{
+  int v3; // ecx
+  int *countObjects; // ebp
+  int jj; // edi
+  TeamClass *esi1; // esi
+  TimerStruct *v4; // edx
+  int eax2; // eax
+  FootClass *v6; // eax
+  int v10; // eax
+  FootClass *v8; // ecx
+  int i; // edi
+  char cl48; // cl
+  char stepCompleted; // al
+  char v15; // bl
+  ScriptClass *v13; // ecx
+  int *Entry; // eax
+  int v18; // ecx
+  FootClass *n; // edi
+  int eax71; // eax
+  FootClass *ii; // edi
+  int eax77; // eax
+  FootClass *v20; // edi
+  FootClass *v24; // ebp
+  CellClass *v22; // eax
+  AbstractClass *MapSpawnCell; // eax
+  FootClass *m; // edi
+  FootClass *v25; // edi
+  FootClass *nextTeamMember; // ebp
+  int v30; // ebx
+  int Owner; // eax
+  int eax107; // eax
+  int v33; // ebp
+  FootClass *k; // edi
+  ScriptClass *v32; // ecx
+  AbstractClass *eax116; // eax
+  AbstractClass *eax117; // eax
+  FootClass *v35; // edi
+  FootClass *v36; // edi
+  FootClass *v37; // edi
+  _DWORD *v41; // eax
+  FootClass *v39; // edi
+  char cl148; // cl
+  int edx153; // edx
+  _DWORD *eax161; // eax
+  FootClass *v43; // edi
+  FootClass *v44; // edi
+  FootClass *v45; // eax
+  FootClass *v46; // edi
+  char v50; // al
+  FootClass *v51; // ebp
+  FootClass *v49; // edi
+  char v53; // al
+  FootClass *v54; // ebp
+  FootClass *v52; // edi
+  char v56; // al
+  FootClass *v57; // ebp
+  FootClass *v55; // edi
+  char v59; // al
+  FootClass *v60; // ebp
+  FootClass *v58; // edi
+  char v62; // al
+  FootClass *v63; // ebp
+  TeamClass *aP2; // [esp+10h] [ebp-28h] BYREF
+  _DWORD v65[2]; // [esp+14h] [ebp-24h] BYREF
+  int GroundHeight; // [esp+1Ch] [ebp-1Ch]
+  int v67; // [esp+20h] [ebp-18h] BYREF
+  AbstractClass *v68; // [esp+24h] [ebp-14h]
+  _BYTE v69[12]; // [esp+2Ch] [ebp-Ch] BYREF
+
+  esi1 = (TeamClass *)v3;
+  if ( *(_BYTE *)(v3 + 131) )
+  {
+    v4 = *(TimerStruct **)(v3 + 100);
+    eax2 = *(_DWORD *)(v3 + 108);
+    if ( v4 != (TimerStruct *)-1 )
+    {
+      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (int)v4 >= eax2 )
+      {
+LABEL_6:
+        *(_BYTE *)(v3 + 131) = 0;
+        goto LABEL_7;
+      }
+      eax2 -= *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - (_DWORD)v4;
+    }
+    if ( eax2 )
+      return;
+    goto LABEL_6;
+  }
+LABEL_7:
+  if ( *(_BYTE *)(v3 + 125) && !TeamClass::UpdateReadinessState((void *)v3) )
+    return;
+  if ( !esi1->TeamClass_field_7F )
+    goto LABEL_224;
+  if ( esi1->TeamClass_field_7A )
+    SelectTeamProductionBuilding((int)esi1);
+  if ( !esi1->TeamClass_field_7F )
+  {
+LABEL_224:
+    if ( esi1->unknown79 || esi1->unknown77 )
+    {
+      v6 = (FootClass *)esi1->firstUnit;
+      esi1->TeamClass_field_7F = 1;
+      esi1->spawnStatus = 1;
+      for ( esi1->TeamClass_field_7A = 0; v6; v6 = (FootClass *)v6->nextTeamMember )
+      {
+        if ( esi1->TeamClass_field_7B || esi1->unknown77 )
+          v6->isTeamLeader = 1;
+      }
+      SetLandTypeMap((_DWORD *)esi1->currentScript);
+      esi1->stepCompleted = 1;
+    }
+  }
+  if ( esi1->TeamClass_field_7B || esi1->TeamClass_field_7F || !esi1->spawnCell || !esi1->unknown38 )
+    TeamClass::FindClosestEnemy((int)esi1, (AbstractClass *)&esi1->spawnCell, (AbstractClass *)&esi1->unknown38);
+  if ( (!esi1->TeamClass_field_7F || !esi1->unknown79 && *((_BYTE *)esi1->buildingType + 171))
+    && (!(unsigned __int8)House::IsCurrentPlayer((#375 *)esi1->owner) || !esi1->spawnStatus) )
+  {
+    jj = 0;
+    v10 = *((_DWORD *)esi1->buildingType + 57);
+    if ( *(int *)(v10 + 156) > 0 )
+    {
+      countObjects = esi1->countObjects;
+      do
+      {
+        if ( *countObjects < *(_DWORD *)(v10 + 8 * jj + 164) )
+          TeamClass::RecruitMember(esi1, jj);
+        ++jj;
+        ++countObjects;
+        v10 = *((_DWORD *)esi1->buildingType + 57);
+      }
+      while ( jj < *(_DWORD *)(v10 + 156) );
+    }
+  }
+  v8 = (FootClass *)esi1->firstUnit;
+  if ( !v8 )
+  {
+    if ( esi1->spawnStatus
+      || *(_DWORD *)&HouseClass_Player.__pad_5568[8068]
+      && (jj = *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4496),
+          *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - esi1->creationFrame > jj) )
+    {
+      if ( esi1->unknown82 )
+      {
+        for ( i = 0; i < *(int *)&stru_89E138.__pad_579C[67588]; ++i )
+        {
+          if ( TeamClass::Update_0(
+                 *(void ***)(*(_DWORD *)&stru_89E138.__pad_579C[67576] + 4 * i),
+                 23,
+                 0,
+                 *(IUnknown **)&stru_B05488.__pad_579C[15652],
+                 0,
+                 0) )
+          {
+            --i;
+            if ( !*(_DWORD *)&stru_89E138.__pad_579C[67588] )
+              break;
+          }
+        }
+      }
+LABEL_112:
+      if ( esi1 )
+        (*(void (__thiscall **)(TeamClass *, int))(*(_DWORD *)esi1->__pad_0 + 32))(esi1, 1);
+      return;
+    }
+    goto LABEL_49;
+  }
+  if ( !(*(unsigned __int8 (__thiscall **)(FootClass *))(*(_DWORD *)v8->__pad_0 + 472))(v8) )
+  {
+LABEL_49:
+    cl48 = 0;
+    goto LABEL_50;
+  }
+  cl48 = 1;
+LABEL_50:
+  if ( !esi1->TeamClass_field_7F )
+  {
+LABEL_91:
+    TeamClass::UpdateMembers((int)esi1);
+    return;
+  }
+  if ( esi1->TeamClass_field_7B || esi1->TeamClass_field_7A || cl48 )
+  {
+    esi1->TeamClass_field_7B = HouseClass::EvaluateTarget((int)esi1) == 0;
+    return;
+  }
+  stepCompleted = esi1->stepCompleted;
+  v15 = 0;
+  LOBYTE(aP2) = 0;
+  if ( stepCompleted )
+  {
+    v15 = 1;
+    esi1->stepCompleted = 0;
+    v13 = (ScriptClass *)esi1->currentScript;
+    LOBYTE(aP2) = 1;
+    TeamClass::Check(v13);
+    for ( jj = (int)esi1->firstUnit; jj; jj = *(_DWORD *)(jj + 1496) )
+    {
+      if ( *((_BYTE *)esi1->buildingType + 244)
+        && *(int *)((*(int (__thiscall **)(int))(*(_DWORD *)jj + 132))(jj) + 1504) > 0 )
+      {
+        if ( *(_DWORD *)(jj + 536) )
+          Debug::Log();
+      }
+      else
+      {
+        TechnoClass::SetFocus((_DWORD *)jj, 0);
+      }
+    }
+    if ( !SessionClass::SetField((_DWORD *)esi1->currentScript) )
+      goto LABEL_112;
+    TeamClass::SelectMember((int)esi1, 0);
+    esi1->focus = 0;
+  }
+  else if ( !esi1->focus )
+  {
+    esi1->focus = esi1->queuedFocus;
+  }
+  if ( esi1->unknown81 )
+  {
+    v15 = 1;
+    LOBYTE(aP2) = 1;
+    esi1->unknown81 = 0;
+    TeamClass::SelectMember((int)esi1, 0);
+    esi1->focus = 0;
+  }
+  Entry = SessionClass::GetEntry((_DWORD *)esi1->currentScript, (IUnknown *)v65);
+  v67 = *Entry;
+  v18 = Entry[1];
+  v68 = (AbstractClass *)v18;
+  switch ( v67 )
+  {
+    case 0:
+      TeamClass::CoordinateSuperWeaponAttack((int)esi1, (ScriptClass *)&v67, (int)aP2);
+      return;
+    case 1:
+      TeamClass::SelectWaypointTarget((int)esi1, (TeamClass *)&v67, (char)aP2);
+      return;
+    case 3:
+      TeamClass::MoveTeamToWaypoint((int **)esi1, (ScriptClass *)&v67, aP2);
+      return;
+    case 4:
+      if ( !v15 )
+        goto LABEL_91;
+      LOWORD(aP2) = v18 % 128;
+      HIWORD(aP2) = v18 / 128;
+      MapSpawnCell = (AbstractClass *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP2);
+      goto LABEL_90;
+    case 5:
+      if ( v15 )
+      {
+        esi1->guardAreaTimer[0] = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+        esi1->guardAreaTimer[1] = (int)v68;
+        esi1->guardAreaTimer[2] = 15 * v18;
+      }
+      HouseClass::EvaluateTarget((int)esi1);
+      if ( !CDTimerClass::TimeRemaining(esi1->guardAreaTimer) )
+        esi1->stepCompleted = 1;
+      return;
+    case 6:
+      TeamClass::SetField11((_DWORD *)esi1->currentScript, (ScriptClass *)(v18 - 2));
+      esi1->stepCompleted = 1;
+      return;
+    case 7:
+      HouseClass::CheckWinCondition(HouseClass_Player.field_0, 0);
+      esi1->stepCompleted = 1;
+      return;
+    case 8:
+      DispatchTeamOrders((ObjectClass **)esi1, (int)&v67, (int)aP2);
+      return;
+    case 9:
+      TechnoClass::ProcessBorderTower((int)esi1, v15, jj, (int)&v67, (int)aP2);
+      return;
+    case 10:
+      TeamClass::AssignAttackTarget((int)esi1, (TeamClass *)&v67, (IUnknown *)aP2);
+      return;
+    case 11:
+      Mission::AssignTeamMemberMissions((int)esi1, (ScriptClass *)&v67, (int)aP2);
+      return;
+    case 12:
+      ScenarioClass::SetGlobalToByID(*(_BYTE **)&HouseClass_Player.__pad_5568[8060], v18, 1);
+      goto LABEL_82;
+    case 13:
+      v36 = (FootClass *)esi1->firstUnit;
+      if ( !v36 )
+        goto LABEL_82;
+      while ( 1 )
+      {
+        (*(void (__thiscall **)(FootClass *, int))(*(_DWORD *)v36->__pad_0 + 1312))(v36, v18);
+        v36 = (FootClass *)v36->nextTeamMember;
+        if ( !v36 )
+          break;
+        v18 = (int)v68;
+      }
+      esi1->stepCompleted = 1;
+      return;
+    case 14:
+      AssignTeamProductionFacilities((int **)esi1, (ScriptClass *)&v67, (int)aP2);
+      return;
+    case 15:
+      TeamClass::AssignMemberToCoordinator((int)esi1, (ScriptClass *)&v67, aP2);
+      return;
+    case 16:
+      TeamClass::MoveToCellAndAttack(esi1, (ScriptClass *)&v67, (char)aP2);
+      return;
+    case 17:
+      v32 = (ScriptClass *)esi1->currentScript;
+      if ( v32 )
+        (*(void (__thiscall **)(ScriptClass *, int))(*(_DWORD *)v32->__pad_0 + 32))(v32, 1);
+      eax116 = (AbstractClass *)__2_YAPAXI_Z(0x30u);
+      if ( eax116 )
+      {
+        eax117 = ScriptClass::Construct(eax116, *((AbstractClass **)unk_8B41CC + (_DWORD)v68));
+        esi1->currentScript = eax117;
+        SetLandTypeMap(eax117);
+      }
+      else
+      {
+        esi1->currentScript = 0;
+        SetLandTypeMap(0);
+      }
+      return;
+    case 18:
+      eax107 = __2_YAPAXI_Z(0xA0u);
+      if ( eax107 )
+        v33 = MissionClass::Construct(
+                eax107,
+                *(AbstractClass **)(*(_DWORD *)&HouseClass_Player.__pad_5568[23024] + 4 * (_DWORD)v68),
+                (AbstractClass *)esi1->owner,
+                0);
+      else
+        v33 = 0;
+      for ( k = (FootClass *)esi1->firstUnit; k; k = (FootClass *)esi1->firstUnit )
+      {
+        TeamClass::LiberateMember_Start((int)esi1, (IUnknown *)k, 0xFFFFFFFF, 0);
+        TeamClass::AddMember(v33, (IUnknown *)k, 0);
+      }
+      goto LABEL_112;
+    case 19:
+      v35 = (FootClass *)esi1->firstUnit;
+      if ( !v35 )
+        goto LABEL_82;
+      do
+      {
+        (*(void (__thiscall **)(FootClass *))(*(_DWORD *)v35->__pad_0 + 1304))(v35);
+        v35 = (FootClass *)v35->nextTeamMember;
+      }
+      while ( v35 );
+      esi1->stepCompleted = 1;
+      return;
+    case 20:
+      v25 = (FootClass *)esi1->firstUnit;
+      if ( v25 )
+      {
+        while ( 1 )
+        {
+          nextTeamMember = (FootClass *)v25->nextTeamMember;
+          v30 = *(_DWORD *)v25->__pad_0;
+          Owner = HouseClass::FindOwner((void *)v18);
+          (*(void (__thiscall **)(FootClass *, int, int))(v30 + 980))(v25, Owner, 1);
+          v25 = nextTeamMember;
+          if ( !nextTeamMember )
+            break;
+          v18 = (int)v68;
+        }
+      }
+      esi1->stepCompleted = 1;
+      return;
+    case 21:
+      for ( m = (FootClass *)esi1->firstUnit; m; m = (FootClass *)m->nextTeamMember )
+        (*(void (__thiscall **)(FootClass *, char *, int, _DWORD))(*(_DWORD *)m->__pad_0 + 372))(
+          m,
+          &stru_B05488.__pad_579C[15684],
+          1,
+          0);
+      esi1->stepCompleted = 1;
+      return;
+    case 22:
+      if ( !v15 )
+        goto LABEL_91;
+      v22 = (CellClass *)esi1->spawnCell;
+      if ( !v22 )
+        v22 = (CellClass *)esi1->firstUnit;
+      MapSpawnCell = (AbstractClass *)FindMapSpawnCell(&stru_87C374.__pad_14B0[8132], (FootClass *)v22);
+LABEL_90:
+      TeamClass::SelectMember((int)esi1, MapSpawnCell);
+      goto LABEL_91;
+    case 23:
+      HouseClass::CheckDefeat(HouseClass_Player.field_0, 0);
+      esi1->stepCompleted = 1;
+      return;
+    case 24:
+      goto LABEL_74;
+    case 25:
+      PlayVocClass(v18, 0x2000, 1.0, 0);
+      esi1->stepCompleted = 1;
+      return;
+    case 26:
+      Movie::PlayWrapper(v18, (int)countObjects, jj, 1, 1, 1);
+      esi1->stepCompleted = 1;
+      return;
+    case 27:
+      Theme::QueueSong((int)&g_BuildingTypeClass_Count, (IUnknown *)v18);
+      esi1->stepCompleted = 1;
+      return;
+    case 28:
+      v37 = (FootClass *)esi1->firstUnit;
+      if ( !v37 )
+        goto LABEL_82;
+      do
+      {
+        v41 = (_DWORD *)(*(int (__thiscall **)(FootClass *, _BYTE *))(*(_DWORD *)v37->__pad_0 + 72))(v37, v69);
+        LOWORD(aP2) = *v41 / 256;
+        HIWORD(aP2) = v41[1] / 256;
+        v65[0] = aP2;
+        MapClass::TriggerEVA((IUnknown *)v65);
+        v37 = (FootClass *)v37->nextTeamMember;
+      }
+      while ( v37 );
+      esi1->stepCompleted = 1;
+      return;
+    case 29:
+      *((_BYTE *)esi1->owner + 494) = 1;
+      esi1->stepCompleted = 1;
+      return;
+    case 30:
+      *((_DWORD *)esi1->owner + 148) = 4;
+      esi1->stepCompleted = 1;
+      return;
+    case 31:
+      do
+      {
+        v39 = (FootClass *)esi1->firstUnit;
+        cl148 = 0;
+        if ( !v39 )
+        {
+LABEL_82:
+          esi1->stepCompleted = 1;
+          return;
+        }
+        do
+        {
+          if ( v39->health > 0 && v39->isAliveFlag && v39->isOnMap && !v39->inLimbo )
+          {
+            edx153 = *(_DWORD *)v39->__pad_0;
+            v65[0] = v39->health;
+            (*(void (__thiscall **)(FootClass *, _DWORD *, _DWORD, _DWORD, _DWORD, int, _DWORD, _DWORD))(edx153 + 364))(
+              v39,
+              v65,
+              0,
+              *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 4008),
+              0,
+              1,
+              0,
+              0);
+            cl148 = 1;
+          }
+          v39 = (FootClass *)v39->nextTeamMember;
+        }
+        while ( v39 );
+      }
+      while ( cl148 );
+      esi1->stepCompleted = 1;
+      return;
+    case 32:
+      if ( LightningStorm::IsActive() )
+        goto LABEL_82;
+      LightningStorm::Start(
+        (int)v68,
+        *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 6036),
+        *(int *)&stru_B05488.__pad_579C[15652],
+        0);
+      esi1->stepCompleted = 1;
+      return;
+    case 33:
+      if ( !LightningStorm::IsActive() )
+        goto LABEL_82;
+      LightningStorm::End();
+      esi1->stepCompleted = 1;
+      return;
+    case 34:
+      eax161 = (_DWORD *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)esi1->spawnCell + 72))(
+                           esi1->spawnCell,
+                           v69);
+      v65[0] = *eax161;
+      v65[1] = eax161[1];
+      GroundHeight = eax161[2];
+      GroundHeight = Cell::GetGroundHeight((IUnknown *)v65);
+      if ( (*((_DWORD *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v65) + 80) & 0x100) != 0
+        || (*((_DWORD *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v65) + 80) & 0x400) != 0 )
+      {
+        GroundHeight += *(_DWORD *)&stru_B05488.__pad_579C[15736];
+      }
+      TacticalClass::SetPosition(*(_DWORD **)&stru_87C374.__pad_579C[22548], (IUnknown *)v65, v68);
+      esi1->stepCompleted = 1;
+      return;
+    case 35:
+      TeamClass::DisbandTeam(&stru_87C374.__pad_14B0[8132], 0);
+      esi1->stepCompleted = 1;
+      return;
+    case 36:
+      MapClass::ClearShroud(&stru_87C374.__pad_14B0[8132], 0);
+      esi1->stepCompleted = 1;
+      return;
+    case 37:
+      v20 = (FootClass *)esi1->firstUnit;
+      if ( v20 )
+      {
+        do
+        {
+          v24 = (FootClass *)v20->nextTeamMember;
+          (*(void (__thiscall **)(FootClass *))(*(_DWORD *)v20->__pad_0 + 212))(v20);
+          (*(void (__thiscall **)(FootClass *))(*(_DWORD *)v20->__pad_0 + 248))(v20);
+          v20 = v24;
+        }
+        while ( v24 );
+      }
+      esi1->stepCompleted = 1;
+      return;
+    case 38:
+      ScenarioClass::SetGlobalToByID(*(_BYTE **)&HouseClass_Player.__pad_5568[8060], v18, 0);
+      goto LABEL_82;
+    case 39:
+      ScenarioClass::SetLocalToByID(*(_BYTE **)&HouseClass_Player.__pad_5568[8060], v18, 1);
+      esi1->stepCompleted = 1;
+      return;
+    case 40:
+      ScenarioClass::SetLocalToByID(*(_BYTE **)&HouseClass_Player.__pad_5568[8060], v18, 0);
+      esi1->stepCompleted = 1;
+      return;
+    case 41:
+      v43 = (FootClass *)esi1->firstUnit;
+      if ( !v43 )
+        goto LABEL_82;
+      do
+      {
+        (*(void (__thiscall **)(FootClass *))(*(_DWORD *)v43->__pad_0 + 1308))(v43);
+        v43 = (FootClass *)v43->nextTeamMember;
+      }
+      while ( v43 );
+      esi1->stepCompleted = 1;
+      return;
+    case 42:
+      TeamClass::SyncMemberFacing((int)esi1, (int)&v67, (int)aP2);
+      return;
+    case 43:
+      v44 = (FootClass *)esi1->firstUnit;
+      if ( !v44 )
+        goto LABEL_82;
+      break;
+    case 44:
+      for ( n = (FootClass *)esi1->firstUnit; n; n = (FootClass *)n->nextTeamMember )
+      {
+        if ( (*(int (__thiscall **)(FootClass *))(*(_DWORD *)n->__pad_0 + 44))(n) == 1 )
+        {
+          eax71 = (*(int (__thiscall **)(FootClass *))(*(_DWORD *)n->__pad_0 + 132))(n);
+          if ( !_strcmpi((const void *)(eax71 + 36), &stru_830620.__pad_579C[53272]) )
+            *(_DWORD *)&n[1].__pad_0[4] = *(_DWORD *)&g_UnitTypeCount2->__pad_0[4
+                                                                              * BuildingTypeClass::FindIndex(&stru_830620.__pad_579C[53264])];
+        }
+      }
+LABEL_74:
+      esi1->stepCompleted = 1;
+      return;
+    case 45:
+      for ( ii = (FootClass *)esi1->firstUnit; ii; ii = (FootClass *)ii->nextTeamMember )
+      {
+        if ( (*(int (__thiscall **)(FootClass *))(*(_DWORD *)ii->__pad_0 + 44))(ii) == 1 )
+        {
+          eax77 = (*(int (__thiscall **)(FootClass *))(*(_DWORD *)ii->__pad_0 + 132))(ii);
+          if ( !_strcmpi((const void *)(eax77 + 36), &stru_830620.__pad_579C[53264]) )
+            *(_DWORD *)&ii[1].__pad_0[4] = *(_DWORD *)&g_UnitTypeCount2->__pad_0[4
+                                                                               * BuildingTypeClass::FindIndex(&stru_830620.__pad_579C[53272])];
+        }
+      }
+      esi1->stepCompleted = 1;
+      return;
+    case 46:
+      TeamClass::SelectAreaAttackTarget((int)esi1, (ScriptClass *)&v67, aP2);
+      return;
+    case 47:
+      TeamClass::ProcessTeamMovement((int *)esi1->__pad_0, (int)&v67, (int)aP2);
+      return;
+    case 48:
+      SelectTeamMembers(esi1, (ScriptClass *)&v67, (int)aP2);
+      return;
+    case 49:
+      esi1->stepCompleted = 1;
+      esi1->achievedGreatSuccess = 1;
+      return;
+    case 50:
+      if ( !v15 )
+        return;
+      v45 = (FootClass *)esi1->firstUnit;
+      if ( !v45 )
+        goto LABEL_82;
+      do
+      {
+        v45->animation[1] = v18;
+        v45 = (FootClass *)v45->nextTeamMember;
+      }
+      while ( v45 );
+      esi1->stepCompleted = 1;
+      return;
+    case 51:
+      TeamClass::PlayMemberAnimation((int)esi1, (ScriptClass *)&v67, (char)aP2);
+      return;
+    case 52:
+      if ( v15 )
+      {
+        RevealTechnoClassRadarEvent((int)esi1->firstUnit, v18);
+        esi1->stepCompleted = 1;
+      }
+      return;
+    case 53:
+      DeployTeamMembersAtStart((int)esi1, (ScriptClass *)&v67, (char)aP2);
+      return;
+    case 54:
+      TeamClass::SelectDeploymentTarget((int *)esi1->__pad_0, (int)&v67, (char)aP2);
+      return;
+    case 55:
+      ProcessAISuperWeaponSelection((int *)esi1->__pad_0, (ScriptClass *)&v67, (int)aP2);
+      return;
+    case 56:
+      SuperWeapon::DispatchTeam((int)esi1, (ScriptClass *)&v67, (int)aP2);
+      return;
+    case 57:
+      TeamClass::CheckMemberSuperWeapon((int)esi1, (int)&v67, (int)aP2);
+      return;
+    case 58:
+      TeamClass::SelectBestMember(esi1, (ScriptClass *)&v67, (int)aP2);
+      return;
+    case 59:
+      TeamClass::SelectAttackTarget((int)esi1, (ScriptClass *)&v67, (char)aP2);
+      return;
+    case 60:
+      v46 = (FootClass *)esi1->firstUnit;
+      if ( !v46 )
+        goto LABEL_82;
+      do
+      {
+        v50 = (*(int (__thiscall **)(FootClass *))(*(_DWORD *)v46->__pad_0 + 828))(v46);
+        v51 = (FootClass *)v46->nextTeamMember;
+        if ( v50 )
+          TeamClass::LiberateMember_Start((int)esi1, (IUnknown *)v46, 0xFFFFFFFF, (AbstractClass *)1);
+        v46 = v51;
+      }
+      while ( v51 );
+      esi1->stepCompleted = 1;
+      return;
+    case 61:
+      v49 = (FootClass *)esi1->firstUnit;
+      if ( !v49 )
+        goto LABEL_82;
+      do
+      {
+        v53 = (*(int (__thiscall **)(FootClass *))(*(_DWORD *)v49->__pad_0 + 836))(v49);
+        v54 = (FootClass *)v49->nextTeamMember;
+        if ( v53 )
+          TeamClass::LiberateMember_Start((int)esi1, (IUnknown *)v49, 0xFFFFFFFF, (AbstractClass *)1);
+        v49 = v54;
+      }
+      while ( v54 );
+      esi1->stepCompleted = 1;
+      return;
+    case 62:
+      v52 = (FootClass *)esi1->firstUnit;
+      if ( !v52 )
+        goto LABEL_82;
+      do
+      {
+        v56 = (*(int (__thiscall **)(FootClass *))(*(_DWORD *)v52->__pad_0 + 832))(v52);
+        v57 = (FootClass *)v52->nextTeamMember;
+        if ( v56 )
+          TeamClass::LiberateMember_Start((int)esi1, (IUnknown *)v52, 0xFFFFFFFF, (AbstractClass *)1);
+        v52 = v57;
+      }
+      while ( v57 );
+      esi1->stepCompleted = 1;
+      return;
+    case 63:
+      v55 = (FootClass *)esi1->firstUnit;
+      if ( !v55 )
+        goto LABEL_82;
+      do
+      {
+        v59 = (*(int (__thiscall **)(FootClass *))(*(_DWORD *)v55->__pad_0 + 840))(v55);
+        v60 = (FootClass *)v55->nextTeamMember;
+        if ( v59 )
+          TeamClass::LiberateMember_Start((int)esi1, (IUnknown *)v55, 0xFFFFFFFF, (AbstractClass *)1);
+        v55 = v60;
+      }
+      while ( v60 );
+      esi1->stepCompleted = 1;
+      return;
+    case 64:
+      v58 = (FootClass *)esi1->firstUnit;
+      if ( !v58 )
+        goto LABEL_82;
+      do
+      {
+        v62 = (*(int (__thiscall **)(FootClass *))(*(_DWORD *)v58->__pad_0 + 844))(v58);
+        v63 = (FootClass *)v58->nextTeamMember;
+        if ( v62 )
+          TeamClass::LiberateMember_Start((int)esi1, (IUnknown *)v58, 0xFFFFFFFF, (AbstractClass *)1);
+        v58 = v63;
+      }
+      while ( v63 );
+      esi1->stepCompleted = 1;
+      return;
+    default:
+      return;
+  }
+  while ( *(_DWORD *)((*(int (__thiscall **)(FootClass *))(*(_DWORD *)v44->__pad_0 + 132))(v44) + 1504) <= *(_DWORD *)&v44->inAirFlag )
+  {
+    v44 = (FootClass *)v44->nextTeamMember;
+    if ( !v44 )
+    {
+      esi1->stepCompleted = 1;
+      return;
+    }
+  }
+}
 }
 } // namespace gamemd
 

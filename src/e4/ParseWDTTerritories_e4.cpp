@@ -52,18 +52,3 @@ unsigned int * E4Recv_76AAF0::sub_76AAF0()
 }
 }
 } // namespace gamemd
-
-// 0x76B790
-namespace gamemd {
-rc_ptr * E4Recv_76B790::ParseWDTTerritories_Parse_76B790(int a2)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__thiscall ParseWDTTerritories_Parse_76B790(rc_ptr_base *this, int a2)
-{
-  ComPtr::Constructor(this); /*0x76b793*/
-  this->vfptr = &vt_rc_ptr_WDTTerritory; /*0x76b79f*/
-  ComPtr::Set(this, a2); /*0x76b7a5*/
-  return (rc_ptr *)this; /*0x76b7ac*/
-}
-}
-} // namespace gamemd

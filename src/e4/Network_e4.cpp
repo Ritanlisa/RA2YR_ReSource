@@ -3673,58 +3673,641 @@ namespace gamemd {
 void Network::QueueProcessingLoop()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// void Network::QueueProcessingLoop()
-// {
-//   CellStruct *v0; // eax
-//   char *v1; // ebp
-//   IUnknown *v2; // ecx
-//   int v3; // esi
-//   int v4; // ebx
-//   bool v5; // zf
-//   unsigned int v6; // esi
-//   unsigned int v7; // eax
-//   _DWORD *TextBufferEntry; // esi
-//   char *v9; // edi
-//   _DWORD *v10; // eax
-//   int v11; // edx
-//   _DWORD *v12; // eax
-//   int v13; // ecx
-//   CellStruct *v14; // esi
-//   char v15; // bl
-//   wchar_t *v16; // eax
-//   wchar_t *v17; // eax
-//   wchar_t *v18; // eax
-//   wchar_t *v19; // eax
-//   int *v20; // edx
-//   int v21; // esi
-//   int v22; // esi
-//   int v23; // ecx
-//   int v24; // edx
-//   int v25; // eax
-//   int v26; // esi
-//   int v27; // eax
-//   int v28; // eax
-//   int updated; // esi
-//   unsigned int v30; // ebx
-//   int v31; // edi
-//   unsigned int *v32; // ebp
-//   unsigned int v33; // esi
-//   int v34; // ebp
-//   int v35; // edi
-//   int v36; // edx
-//   int v37; // ecx
-//   int v38; // eax
-//   int v39; // esi
-//   char v40; // al
-//   int v41; // edx
-//   char *v42; // edi
-//   int v43; // eax
-//   char *v44; // edi
-//   int v45; // eax
-//   int v46; // esi
-// ... [26472 chars total]
-// end truncated pseudocode
+void Network::QueueProcessingLoop()
+{
+  CellStruct *v0; // eax
+  char *v1; // ebp
+  IUnknown *v2; // ecx
+  int v3; // esi
+  int v4; // ebx
+  bool v5; // zf
+  unsigned int v6; // esi
+  unsigned int v7; // eax
+  _DWORD *TextBufferEntry; // esi
+  char *v9; // edi
+  _DWORD *v10; // eax
+  int v11; // edx
+  _DWORD *v12; // eax
+  int v13; // ecx
+  CellStruct *v14; // esi
+  char v15; // bl
+  wchar_t *v16; // eax
+  wchar_t *v17; // eax
+  wchar_t *v18; // eax
+  wchar_t *v19; // eax
+  int *v20; // edx
+  int v21; // esi
+  int v22; // esi
+  int v23; // ecx
+  int v24; // edx
+  int v25; // eax
+  int v26; // esi
+  int v27; // eax
+  int v28; // eax
+  int updated; // esi
+  unsigned int v30; // ebx
+  int v31; // edi
+  unsigned int *v32; // ebp
+  unsigned int v33; // esi
+  int v34; // ebp
+  int v35; // edi
+  int v36; // edx
+  int v37; // ecx
+  int v38; // eax
+  int v39; // esi
+  char v40; // al
+  int v41; // edx
+  char *v42; // edi
+  int v43; // eax
+  char *v44; // edi
+  int v45; // eax
+  int v46; // esi
+  int v47; // eax
+  IUnknown *v48; // esi
+  wchar_t *v49; // eax
+  wchar_t *v50; // eax
+  wchar_t *v51; // eax
+  wchar_t *v52; // eax
+  IUnknown *v53; // edx
+  IUnknown *v54; // eax
+  wchar_t *StringCSF; // [esp-10h] [ebp-ACh]
+  wchar_t *v56; // [esp-10h] [ebp-ACh]
+  wchar_t *v57; // [esp-10h] [ebp-ACh]
+  wchar_t *v58; // [esp-10h] [ebp-ACh]
+  wchar_t *v59; // [esp-10h] [ebp-ACh]
+  wchar_t *v60; // [esp-10h] [ebp-ACh]
+  wchar_t *v61; // [esp-10h] [ebp-ACh]
+  wchar_t *v62; // [esp-10h] [ebp-ACh]
+  int v63; // [esp+0h] [ebp-9Ch]
+  int v64; // [esp+10h] [ebp-8Ch]
+  int v65; // [esp+14h] [ebp-88h]
+  char *v66; // [esp+18h] [ebp-84h]
+  char *v67; // [esp+1Ch] [ebp-80h]
+  unsigned __int8 v68; // [esp+20h] [ebp-7Ch]
+  CampaignScore *v69; // [esp+24h] [ebp-78h]
+  _BYTE v70[108]; // [esp+2Ch] [ebp-70h] BYREF
+  __int16 v71; // [esp+98h] [ebp-4h]
+  char v72; // [esp+9Ah] [ebp-2h]
+
+  v0 = *(CellStruct **)&HouseClass_Player.__pad_5568[8068];
+  if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 5 )
+    return;
+  if ( (byte_AFA268 & 1) == 0 )
+  {
+    byte_AFA268 |= 1u;
+    dword_AFA450 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
+    dword_AFA458 = 0;
+    atexit(nullsub_32);
+    v0 = *(CellStruct **)&HouseClass_Player.__pad_5568[8068];
+  }
+  if ( (int)v0 < 3 || (int)v0 > 4 )
+  {
+    v67 = *(char **)&HouseClass_Player.__pad_5568[22464];
+    v64 = *(_DWORD *)&HouseClass_Player.__pad_5568[22468] - 14;
+    v1 = &HouseClass_Player.__pad_5568[22460];
+  }
+  else
+  {
+    v67 = &HouseClass_Player.__pad_5568[17758];
+    v64 = *(_DWORD *)&HouseClass_Player.__pad_5568[18316];
+    v1 = &HouseClass_Player.__pad_5568[22284];
+  }
+  v66 = v1;
+  ComputeNetworkFrameCRC();
+  v2 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
+  v3 = (int)*(&g_MatrixTransformState + 6395);
+  v4 = *(_DWORD *)&HouseClass_Player.__pad_5568[9732];
+  v5 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248] == 0;
+  dword_B04474[(unsigned __int8)HouseClass_Player.__pad_5568[23248]] = (int)*(&g_MatrixTransformState + 6395);
+  if ( !v5 && !v4 )
+  {
+    if ( ((unsigned __int8)v2 & 0x7F) == 0 )
+    {
+      v6 = (*(int (__thiscall **)(char *))(*(_DWORD *)v1 + 48))(v1);
+      switch ( *(_DWORD *)&HouseClass_Player.__pad_5568[18664] )
+      {
+        case 0:
+          goto LABEL_15;
+        case 1:
+          v6 += v6 >> 1;
+          goto LABEL_15;
+        case 2:
+          v6 *= 2;
+          goto LABEL_15;
+        case 3:
+          v6 *= 3;
+LABEL_15:
+          Debug::Log();
+          break;
+        default:
+          break;
+      }
+      v7 = 8 * v6 + 15;
+      if ( v7 < 0x78 )
+        v7 = 120;
+      (*(void (__thiscall **)(char *, unsigned int, int, unsigned int, _DWORD))(*(_DWORD *)v1 + 52))(
+        v1,
+        v6 + 10,
+        -1,
+        v7,
+        0);
+      if ( dword_B04874 )
+      {
+        Network_Process();
+        TextBufferEntry = (_DWORD *)GetTextBufferEntry(4);
+        Network::validateConnection(TextBufferEntry, 0, 23);
+        Debug::Printf(*(IUnknown **)&HouseClass_Player.__pad_5568[8876]);
+        Mouse::HideWindow();
+      }
+      v70[0] = 33;
+      *(_DWORD *)&v70[3] = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+      *(_WORD *)&v70[7] = *(_DWORD *)&HouseClass_Player.__pad_5568[8876]
+                        / *(_DWORD *)&HouseClass_Player.__pad_5568[8880];
+      v70[2] = *(_BYTE *)(HouseClass_Player.field_0 + 48);
+      if ( Networking_LastEventIndex < 128 )
+      {
+        v9 = &g_NetworkPacketIndex[111 * Networking_NextPacketIndex];
+        qmemcpy(v9, v70, 0x6Cu);
+        v9 += 108;
+        *(_WORD *)v9 = v71;
+        v9[2] = v72;
+        g_CrateSystemState[Networking_NextPacketIndex] = timeGetTime();
+        Networking_NextPacketIndex = ((_BYTE)Networking_NextPacketIndex + 1) & 0x7F;
+        ++Networking_LastEventIndex;
+      }
+      *(_DWORD *)&HouseClass_Player.__pad_5568[8876] = 0;
+      *(_DWORD *)&HouseClass_Player.__pad_5568[8880] = 0;
+      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4
+        && (*(_WORD *)&HouseClass_Player.__pad_5568[23248] & 0x7FF) == 0 )
+      {
+        (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)v1 + 44))(v1, 0);
+      }
+    }
+    goto LABEL_59;
+  }
+  v10 = &unk_AFA35C;
+  do
+  {
+    *(v10 - 1) = -1;
+    *v10 = 0;
+    v10[1] = 0;
+    v10[2] = 0;
+    v10[4] = 0;
+    v10[3] = 20;
+    v10 += 6;
+  }
+  while ( (int)v10 < (int)&dword_AFA404 );
+  dword_AFA450 = v2;
+  v11 = 0;
+  dword_AFA454 = v69;
+  dword_AFA458 = (int)&v2->__pad_FC[4];
+  LOWORD(dword_AFA400) = 0;
+  memset(dword_B04474, 0, sizeof(dword_B04474));
+  memset(dword_AFA42C, 0, sizeof(dword_AFA42C));
+  dword_B04884 = 0;
+  dword_B04888 = 0;
+  byte_B0488C = 0;
+  byte_B0488D = 0;
+  byte_B04878 = 0;
+  memset(dword_AFA338, 0, sizeof(dword_AFA338));
+  do
+  {
+    v12 = (CoordStruct **)((char *)&g_MatrixTransformState + v11 + 25324);
+    v13 = 8;
+    do
+    {
+      *v12 = 0;
+      v12 += 8;
+      --v13;
+    }
+    while ( v13 );
+    v11 += 4;
+  }
+  while ( v11 < 32 );
+  if ( v4 )
+    *(_DWORD *)&HouseClass_Player.__pad_5568[21748] = *(_DWORD *)&HouseClass_Player.__pad_5568[9736] == 0 ? v3 : 0;
+  dword_B0487C = 0;
+  *(&g_MatrixTransformState + 7694) = (CoordStruct *)Timer::GetTicks();
+  *(&g_MatrixTransformState + 7695) = (CoordStruct *)v69;
+  SendNetworkFrameSync((int *)v1, (__int16)dword_AFA400);
+  v14 = (CellStruct *)QueueNetworkProcessor(
+                        (CellStruct *)1,
+                        (int *)v1,
+                        *(_DWORD *)&stru_830620.__pad_579C[16 * *(_DWORD *)&HouseClass_Player.__pad_5568[8068] + 5508],
+                        *(_DWORD *)&stru_830620.__pad_579C[16 * *(_DWORD *)&HouseClass_Player.__pad_5568[8068] + 5512],
+                        *(ScenarioClass **)&stru_830620.__pad_579C[16 * *(_DWORD *)&HouseClass_Player.__pad_5568[8068]
+                                                                 + 5520],
+                        (int)v67,
+                        (__int16)dword_AFA400,
+                        &dword_AFA358);
+  if ( v14 )
+  {
+    if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 )
+      Timer::UpdateDelta();
+    v15 = 1;
+    ++*(_DWORD *)&HouseClass_Player.__pad_5568[18432];
+    if ( v14 == (CellStruct *)7 )
+    {
+      StringCSF = GetStringCSF(g_Str_TXT_OK, 0, &stru_830620.__pad_579C[5860], 1036);
+      v16 = GetStringCSF(g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, &stru_830620.__pad_579C[5860], 1036);
+      Dialog::ShowMessageBox((int)v16, StringCSF, 0, 0, 0, v63);
+      goto LABEL_46;
+    }
+    if ( v14 == (CellStruct *)2 )
+    {
+      v56 = GetStringCSF(g_Str_TXT_OK, 0, &stru_830620.__pad_579C[5860], 1039);
+      v17 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[5832], 0, &stru_830620.__pad_579C[5860], 1039);
+      Dialog::ShowMessageBox((int)v17, v56, 0, 0, 0, v63);
+      goto LABEL_46;
+    }
+    if ( v14 == (CellStruct *)3 )
+    {
+      v57 = GetStringCSF(g_Str_TXT_OK, 0, &stru_830620.__pad_579C[5860], 1042);
+      v18 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[5816], 0, &stru_830620.__pad_579C[5860], 1042);
+      Dialog::ShowMessageBox((int)v18, v57, 0, 0, 0, v63);
+      goto LABEL_46;
+    }
+    if ( v14 != (CellStruct *)8 )
+    {
+      if ( v14 != (CellStruct *)9 )
+        goto LABEL_46;
+      v58 = GetStringCSF(g_Str_TXT_OK, 0, &stru_830620.__pad_579C[5860], 1048);
+      v19 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[5796], 0, &stru_830620.__pad_579C[5860], 1048);
+      Dialog::ShowMessageBox((int)v19, v58, 0, 0, 0, v63);
+    }
+    v15 = 0;
+LABEL_46:
+    --*(_DWORD *)&HouseClass_Player.__pad_5568[18432];
+    *(_DWORD *)&HouseClass_Player.__pad_5568[9732] = 0;
+    *(_DWORD *)&HouseClass_Player.__pad_5568[9736] = 0;
+    HouseClass_Player.__pad_5568[22252] = 0;
+    if ( !dword_B04874 )
+      goto LABEL_48;
+    goto LABEL_47;
+  }
+  v20 = &dword_AFA358;
+  memset(&HouseClass_Player.__pad_5568[18632], 0, 0x1Cu);
+  do
+  {
+    *v20 = 0;
+    v20 += 6;
+  }
+  while ( (int)v20 < (int)&dword_AFA400 );
+  (*(void (__thiscall **)(char *, int))(*(_DWORD *)v1 + 44))(v1, 1);
+  if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8088] == 2
+    && *(_DWORD *)&HouseClass_Player.__pad_5568[23248] != *(_DWORD *)&HouseClass_Player.__pad_5568[8864]
+                                                        * ((unsigned int)(*(_DWORD *)&HouseClass_Player.__pad_5568[8864]
+                                                                        + *(_DWORD *)&HouseClass_Player.__pad_5568[23248]
+                                                                        - 1)
+                                                         / *(_DWORD *)&HouseClass_Player.__pad_5568[8864]) )
+  {
+    (*(void (__fastcall **)(char *, unsigned int))(*(_DWORD *)v1 + 4))(
+      v1,
+      (unsigned int)(*(_DWORD *)&HouseClass_Player.__pad_5568[8864] + *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - 1)
+    % *(_DWORD *)&HouseClass_Player.__pad_5568[8864]);
+    if ( dword_B04874 )
+      Mouse::HideWindow();
+  }
+  if ( *(_DWORD *)&HouseClass_Player.__pad_5568[9732] )
+  {
+    *(_DWORD *)&HouseClass_Player.__pad_5568[9736] = 0;
+    *(_DWORD *)&HouseClass_Player.__pad_5568[9732] = 0;
+  }
+LABEL_59:
+  if ( SessionClass::IsValidHouse((int)&HouseClass_Player.__pad_5568[8068], 0)
+    && (*(_DWORD *)&HouseClass_Player.__pad_5568[8888]
+     || *(_DWORD *)&HouseClass_Player.__pad_5568[8892]
+     || !HouseClass_Player.__pad_5568[23248]) )
+  {
+    v21 = (unsigned __int16)dword_AFA400;
+    v70[0] = 0;
+    Debug::Log();
+    if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8888] || *(_DWORD *)&HouseClass_Player.__pad_5568[8892] )
+    {
+      Debug::Log();
+      *(_WORD *)&v70[7] = *(_WORD *)&HouseClass_Player.__pad_5568[8892];
+      *(_WORD *)&v70[9] = *(_WORD *)&HouseClass_Player.__pad_5568[8888];
+      v70[0] = 32;
+      v70[11] = *(_DWORD *)&HouseClass_Player.__pad_5568[8892] > 0x1Eu ? 10 : 5;
+      v70[2] = *(_BYTE *)(HouseClass_Player.field_0 + 48);
+      *(_DWORD *)&v70[3] = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+      if ( Networking_LastEventIndex < 128 )
+      {
+        v44 = &g_NetworkPacketIndex[111 * Networking_NextPacketIndex];
+        qmemcpy(v44, v70, 0x6Cu);
+        v44 += 108;
+        *(_WORD *)v44 = v71;
+        v44[2] = v72;
+        g_CrateSystemState[Networking_NextPacketIndex] = timeGetTime();
+        Networking_NextPacketIndex = ((_BYTE)Networking_NextPacketIndex + 1) & 0x7F;
+        ++Networking_LastEventIndex;
+      }
+      *(_DWORD *)&HouseClass_Player.__pad_5568[8888] = 0;
+      *(_DWORD *)&HouseClass_Player.__pad_5568[8892] = 0;
+    }
+    else if ( v21 >= 5 )
+    {
+      v22 = 0;
+      v23 = 0;
+      if ( *(int *)&HouseClass_Player.__pad_5568[18384] <= 0 )
+      {
+LABEL_73:
+        v26 = 60;
+LABEL_76:
+        v65 = v26;
+        if ( *(_DWORD *)&HouseClass_Player.__pad_5568[22700] )
+        {
+          if ( *(_DWORD *)&HouseClass_Player.__pad_5568[22700] == 1 )
+            v28 = 45;
+          else
+            v28 = 60 / *(_DWORD *)&HouseClass_Player.__pad_5568[22700];
+        }
+        else
+        {
+          v28 = 60;
+        }
+        if ( v26 >= v28 )
+          v65 = v28;
+        if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 && HouseClass_Player.__pad_5568[18668] )
+        {
+          updated = Network::updateLatency(v1);
+          v30 = 0;
+          v31 = 0;
+          if ( (*(int (__thiscall **)(char *))(*(_DWORD *)v1 + 16))(v1) > 0 )
+          {
+            v32 = (unsigned int *)&unk_AFA368;
+            do
+            {
+              if ( v30 <= *v32 )
+                v30 = *v32;
+              ++v31;
+              v32 += 6;
+            }
+            while ( v31 < (*(int (__thiscall **)(char *))(*(_DWORD *)v66 + 16))(v66) );
+          }
+          v33 = v30 + updated;
+        }
+        else
+        {
+          v33 = (*(int (__thiscall **)(char *))(*(_DWORD *)v1 + 48))(v1);
+        }
+        v34 = (*(int (__thiscall **)(char *))(*(_DWORD *)v66 + 48))(v66);
+        v68 = HouseClass_Player.__pad_5568[8864];
+        if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 )
+          v68 = v65 <= 30 ? 5 : 10;
+        v35 = 0;
+        if ( v33 )
+        {
+          switch ( *(_DWORD *)&HouseClass_Player.__pad_5568[18664] )
+          {
+            case 0:
+              goto LABEL_99;
+            case 1:
+              v33 += v33 >> 1;
+              v35 = 10;
+              v34 += v34 / 2;
+              goto LABEL_99;
+            case 2:
+              v33 *= 2;
+              v34 *= 2;
+              v35 = 20;
+              goto LABEL_99;
+            case 3:
+              v33 *= 3;
+              v34 *= 3;
+              v35 = 30;
+LABEL_99:
+              Debug::Log();
+              break;
+            default:
+              break;
+          }
+        }
+        v36 = v35 + v65 * v33 / 0x78;
+        if ( v36 > *(int *)&HouseClass_Player.__pad_5568[8860]
+          && v36 >= v68 + *(_DWORD *)&HouseClass_Player.__pad_5568[8860] )
+        {
+          v36 = v68 + *(_DWORD *)&HouseClass_Player.__pad_5568[8860];
+        }
+        v37 = v68;
+        v38 = (v36 + v37 - 1) / v37;
+        v39 = v68 * v38;
+        if ( v37 * v38 <= 3 * v37 )
+          v39 = 3 * v68;
+        if ( v39 >= v68 * ((v68 + 249) / v68) )
+          v39 = v68 * ((v68 + 249) / v68);
+        *(_DWORD *)&v70[3] = *(_DWORD *)&HouseClass_Player.__pad_5568[23248];
+        *(_WORD *)&v70[7] = v65;
+        v40 = *(_BYTE *)(HouseClass_Player.field_0 + 48);
+        v70[0] = 32;
+        v41 = **(_DWORD **)&HouseClass_Player.__pad_5568[8060];
+        v70[2] = v40;
+        v70[11] = v68;
+        *(_WORD *)&v70[9] = v39 + ((v41 & 0x1000) != 0 ? 0xA : 0);
+        if ( Networking_LastEventIndex < 128 )
+        {
+          v42 = &g_NetworkPacketIndex[111 * Networking_NextPacketIndex];
+          qmemcpy(v42, v70, 0x6Cu);
+          v42 += 108;
+          *(_WORD *)v42 = v71;
+          v42[2] = v72;
+          g_CrateSystemState[Networking_NextPacketIndex] = timeGetTime();
+          Networking_NextPacketIndex = ((_BYTE)Networking_NextPacketIndex + 1) & 0x7F;
+          ++Networking_LastEventIndex;
+        }
+        v43 = 8 * v34 + 15;
+        if ( v43 < 120 )
+          v43 = 120;
+        (*(void (__thiscall **)(char *, int, int, int, _DWORD))(*(_DWORD *)v66 + 52))(v66, v34 + 10, -1, v43, 0);
+        v1 = v66;
+      }
+      else
+      {
+        v24 = *(_DWORD *)&HouseClass_Player.__pad_5568[18372];
+        while ( 1 )
+        {
+          v25 = *(_DWORD *)(*(_DWORD *)v24 + 115);
+          if ( v25 == -1 )
+            break;
+          if ( v25 > v22 )
+            v22 = *(_DWORD *)(*(_DWORD *)v24 + 115);
+          ++v23;
+          v24 += 4;
+          if ( v23 >= *(int *)&HouseClass_Player.__pad_5568[18384] )
+          {
+            if ( !v22 )
+              goto LABEL_73;
+            v27 = 1000 / v22;
+            v26 = 1;
+            if ( v27 >= 1 )
+              v26 = v27;
+            goto LABEL_76;
+          }
+        }
+      }
+    }
+  }
+  if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8088] != 2
+    || *(_DWORD *)&HouseClass_Player.__pad_5568[23248] == *(_DWORD *)&HouseClass_Player.__pad_5568[8864]
+                                                        * ((unsigned int)(*(_DWORD *)&HouseClass_Player.__pad_5568[8864]
+                                                                        + *(_DWORD *)&HouseClass_Player.__pad_5568[23248]
+                                                                        - 1)
+                                                         / *(_DWORD *)&HouseClass_Player.__pad_5568[8864]) )
+  {
+    v45 = (unsigned __int16)BuildNetworkEventPacket(
+                              (int)v1,
+                              (int)v67,
+                              v64,
+                              *(int *)&HouseClass_Player.__pad_5568[8860],
+                              (__int16)dword_AFA400);
+    LOWORD(dword_AFA400) = v45 + (_WORD)dword_AFA400;
+    if ( v45 )
+      Debug::Log();
+    if ( !*(_DWORD *)&HouseClass_Player.__pad_5568[23248] )
+    {
+      if ( !dword_B04874 )
+        return;
+      goto LABEL_162;
+    }
+    v46 = *(_DWORD *)&stru_830620.__pad_579C[16 * *(_DWORD *)&HouseClass_Player.__pad_5568[8068] + 5516];
+    if ( 3 * (*(int (__thiscall **)(char *))(*(_DWORD *)v1 + 48))(v1) <= v46 )
+      v47 = v46;
+    else
+      v47 = 3 * (*(int (__thiscall **)(char *))(*(_DWORD *)v1 + 48))(v1);
+    v48 = (IUnknown *)QueueNetworkProcessor(
+                        0,
+                        (int *)v1,
+                        180,
+                        v47,
+                        *(ScenarioClass **)&stru_830620.__pad_579C[16 * *(_DWORD *)&HouseClass_Player.__pad_5568[8068]
+                                                                 + 5520],
+                        (int)v67,
+                        (__int16)dword_AFA400,
+                        &dword_AFA358);
+    if ( !v48 )
+    {
+      if ( (HouseClass_Player.__pad_5568[17220] & 1) != 0 )
+        Network_Process_64D9E0();
+      if ( Network::ProcessEventList((int)v1, (int *)&dword_AFA450, (int)&dword_AFA358) )
+      {
+        v53 = (IUnknown *)dword_8B41F8;
+        if ( dword_8B41F8 )
+        {
+          v54 = (IUnknown *)word_8B41FC;
+          do
+          {
+            if ( (*((_BYTE *)&unk_8B4205 + 111 * (_DWORD)v54) & 1) == 0
+              && *(int *)&HouseClass_Player.__pad_5568[23248] <= *(_DWORD *)((char *)&unk_8B4207 + 111 * (_DWORD)v54) )
+            {
+              break;
+            }
+            if ( !v53 )
+              break;
+            v54 = (IUnknown *)(((_WORD)v54 + 1) & 0x3FFF);
+            v53 = (IUnknown *)((char *)v53 - 1);
+            word_8B41FC = v54;
+            dword_8B41F8 = v53;
+          }
+          while ( v53 );
+        }
+        if ( dword_B04874 )
+          goto LABEL_162;
+        return;
+      }
+      Debug::Log();
+      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 )
+        Timer::UpdateDelta();
+      *(_DWORD *)&HouseClass_Player.__pad_5568[9732] = 0;
+      *(_DWORD *)&HouseClass_Player.__pad_5568[9736] = 0;
+      HouseClass_Player.__pad_5568[22252] = 0;
+      if ( dword_B04874 )
+        Mouse::HideWindow();
+      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 )
+      {
+        stru_B05488.__pad_579C[4436] = 1;
+        goto LABEL_152;
+      }
+LABEL_154:
+      MouseClass::LoadCursors();
+      ToggleDisplayMode(0);
+      return;
+    }
+    Debug::Log();
+    if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 )
+      Timer::UpdateDelta();
+    v15 = 1;
+    ++*(_DWORD *)&HouseClass_Player.__pad_5568[18432];
+    if ( v48 == (IUnknown *)7 )
+    {
+      v59 = GetStringCSF(g_Str_TXT_OK, 0, &stru_830620.__pad_579C[5860], 1194);
+      v49 = GetStringCSF(g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, &stru_830620.__pad_579C[5860], 1194);
+      Dialog::ShowMessageBox((int)v49, v59, 0, 0, 0, v63);
+      goto LABEL_141;
+    }
+    if ( v48 == (IUnknown *)2 )
+    {
+      v60 = GetStringCSF(g_Str_TXT_OK, 0, &stru_830620.__pad_579C[5860], 1198);
+      v50 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[5832], 0, &stru_830620.__pad_579C[5860], 1198);
+      Dialog::ShowMessageBox((int)v50, v60, 0, 0, 0, v63);
+      goto LABEL_141;
+    }
+    if ( v48 == (IUnknown *)3 )
+    {
+      v61 = GetStringCSF(g_Str_TXT_OK, 0, &stru_830620.__pad_579C[5860], 1202);
+      v51 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[5816], 0, &stru_830620.__pad_579C[5860], 1202);
+      Dialog::ShowMessageBox((int)v51, v61, 0, 0, 0, v63);
+      goto LABEL_141;
+    }
+    if ( v48 != (IUnknown *)8 )
+    {
+      if ( v48 != (IUnknown *)9 )
+        goto LABEL_141;
+      v62 = GetStringCSF(g_Str_TXT_OK, 0, &stru_830620.__pad_579C[5860], 1210);
+      v52 = GetStringCSF((wchar_t *)&stru_830620.__pad_579C[5796], 0, &stru_830620.__pad_579C[5860], 1210);
+      Dialog::ShowMessageBox((int)v52, v62, 0, 0, 0, v63);
+    }
+    v15 = 0;
+LABEL_141:
+    --*(_DWORD *)&HouseClass_Player.__pad_5568[18432];
+    *(_DWORD *)&HouseClass_Player.__pad_5568[9732] = 0;
+    *(_DWORD *)&HouseClass_Player.__pad_5568[9736] = 0;
+    HouseClass_Player.__pad_5568[22252] = 0;
+    if ( !dword_B04874 )
+    {
+LABEL_48:
+      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 )
+      {
+        stru_B05488.__pad_579C[4436] = 1;
+        if ( !v15 )
+        {
+LABEL_153:
+          HouseClass_Player.__pad_5568[9742] = 1;
+          Timer::UpdateDelta();
+          ProcessGameResults(0);
+          goto LABEL_154;
+        }
+LABEL_152:
+        HouseClass_Player.__pad_5568[9741] = 1;
+        goto LABEL_153;
+      }
+      goto LABEL_154;
+    }
+LABEL_47:
+    Mouse::HideWindow();
+    goto LABEL_48;
+  }
+  (*(void (__fastcall **)(char *, unsigned int))(*(_DWORD *)v1 + 4))(
+    v1,
+    (unsigned int)(*(_DWORD *)&HouseClass_Player.__pad_5568[8864] + *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - 1)
+  % *(_DWORD *)&HouseClass_Player.__pad_5568[8864]);
+  if ( dword_B04874 )
+  {
+    Mouse::HideWindow();
+    if ( dword_B04874 )
+LABEL_162:
+      Mouse::HideWindow();
+  }
+}
 }
 } // namespace gamemd
 

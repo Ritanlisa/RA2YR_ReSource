@@ -280,51 +280,634 @@ namespace gamemd {
 char AnimTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
-// {
-//   char Bool_Overwrite; // al
-//   int v5; // eax
-//   int Int_Overwrite; // eax
-//   int v7; // eax
-//   AnimTypeClass *v8; // ebp
-//   AnimTypeClass *v9; // eax
-//   int v10; // edx
-//   int *v11; // eax
-//   RandomStruct *v12; // ecx
-//   int v13; // eax
-//   double Double_Overwrite; // st7
-//   INIClass *v15; // eax
-//   double v16; // st7
-//   INIClass *edx20a; // edx
-//   double v18; // st7
-//   CCINIClass *v17; // eax
-//   int v20; // eax
-//   AnimTypeClass *v21; // ebp
-//   AnimTypeClass *v22; // eax
-//   char v23; // al
-//   char v24; // cl
-//   char v25; // al
-//   int v26; // eax
-//   OverlayTypeClass *v27; // ebp
-//   OverlayTypeClass *v28; // eax
-//   char v29; // cl
-//   char v30; // al
-//   char v31; // al
-//   INIClass *v32; // ecx
-//   int v33; // eax
-//   int v34; // eax
-//   int v35; // ebp
-//   int Index; // eax
-//   int v37; // eax
-//   int v38; // ebp
-//   int v39; // eax
-//   AnimTypeClass *v40; // ebp
-//   int ebp40; // ebp
-//   _DWORD *v42; // eax
-//   AnimTypeClass *v41; // eax
-//   AnimTypeClass *v44;... [25702 chars total]
-// end truncated pseudocode
+char __thiscall AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
+{
+  char Bool_Overwrite; // al
+  int v5; // eax
+  int Int_Overwrite; // eax
+  int v7; // eax
+  AnimTypeClass *v8; // ebp
+  AnimTypeClass *v9; // eax
+  int v10; // edx
+  int *v11; // eax
+  RandomStruct *v12; // ecx
+  int v13; // eax
+  double Double_Overwrite; // st7
+  INIClass *v15; // eax
+  double v16; // st7
+  INIClass *edx20a; // edx
+  double v18; // st7
+  CCINIClass *v17; // eax
+  int v20; // eax
+  AnimTypeClass *v21; // ebp
+  AnimTypeClass *v22; // eax
+  char v23; // al
+  char v24; // cl
+  char v25; // al
+  int v26; // eax
+  OverlayTypeClass *v27; // ebp
+  OverlayTypeClass *v28; // eax
+  char v29; // cl
+  char v30; // al
+  char v31; // al
+  INIClass *v32; // ecx
+  int v33; // eax
+  int v34; // eax
+  int v35; // ebp
+  int Index; // eax
+  int v37; // eax
+  int v38; // ebp
+  int v39; // eax
+  AnimTypeClass *v40; // ebp
+  int ebp40; // ebp
+  _DWORD *v42; // eax
+  AnimTypeClass *v41; // eax
+  AnimTypeClass *v44; // ebp
+  int ebp51; // ebp
+  _DWORD *v46; // eax
+  AnimTypeClass *v45; // eax
+  AnimTypeClass *v48; // ebp
+  int ebp62; // ebp
+  _DWORD *v50; // eax
+  AnimTypeClass *v49; // eax
+  int v52; // eax
+  int v53; // ebp
+  int v54; // eax
+  char v55; // al
+  char v56; // cl
+  char v57; // al
+  int *v58; // eax
+  int v59; // ecx
+  int v60; // edi
+  int eax77; // eax
+  int v62; // eax
+  RandomStruct *v61; // eax
+  RandomStruct *v65; // [esp-Ch] [ebp-C4h]
+  RandomStruct *v64; // [esp-Ch] [ebp-C4h]
+  char _FFFFFFF4a; // [esp-Ch] [ebp-C4h]
+  RandomStruct *v66; // [esp-Ch] [ebp-C4h]
+  RandomStruct *v67; // [esp-Ch] [ebp-C4h]
+  char _FFFFFFF4b; // [esp-Ch] [ebp-C4h]
+  char v71; // [esp-Ch] [ebp-C4h]
+  ObjectClass *v70; // [esp+8h] [ebp-B0h] BYREF
+  int aP4_4; // [esp+Ch] [ebp-ACh]
+  RandomStruct aP1; // [esp+10h] [ebp-A8h] BYREF
+  INIClass Source[2]; // [esp+18h] [ebp-A0h] BYREF
+  char Destination[32]; // [esp+98h] [ebp-20h] BYREF
+
+  INIClass::ResetSection(a2);
+  if ( !ObjectTypeClass::LoadFromINI((char *)this, (CCINIClass *)a2) )
+    return 0;
+  Bool_Overwrite = INIClass::ReadBool_Overwrite(
+                     (int)a2,
+                     (unsigned __int8 *)(this + 36),
+                     &unk_818660,
+                     this->Shadow);
+  if ( Bool_Overwrite != this->Shadow )
+  {
+    this->Shadow = Bool_Overwrite;
+    if ( Bool_Overwrite )
+      *(int *)(this + 704) /= 2;
+    else
+      this->End *= 2;
+    v5 = this->End;
+    if ( this->LoopEnd > v5 )
+      this->LoopEnd = v5;
+  }
+  if ( (unsigned char)this->ImageFile )
+  {
+    if ( !this->Image )
+    {
+      this->Theater = INIClass::ReadBool_Overwrite(
+                                 (int)&MEMORY[0x87F8E4].__pad_5568[9012],
+                                 (unsigned __int8 *)(this + 36),
+                                 &unk_818658,
+                                 this->Theater);
+      this->NewTheater = INIClass::ReadBool_Overwrite(
+                                 (int)&MEMORY[0x87F8E4].__pad_5568[9012],
+                                 (unsigned __int8 *)(this + 36),
+                                 &unk_81864C,
+                                 this->NewTheater);
+    }
+    (*(void (__thiscall **)(int, int))(*(_DWORD *)this + 160))(this, -1);
+  }
+  this->Layer = AnimTypeClass::ReadINIString(
+                              a2,
+                              (unsigned __int8 *)(this + 36),
+                              byte_818644,
+                              this->Layer);
+  this->AltPalette = INIClass::ReadBool_Overwrite(
+                             (int)&MEMORY[0x87F8E4].__pad_5568[9012],
+                             (unsigned __int8 *)(this + 36),
+                             &unk_818638,
+                             this->AltPalette);
+  this->DoubleThick = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             &unk_81862C,
+                             this->DoubleThick);
+  this->Flat = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             &unk_818624,
+                             this->Flat);
+  this->Flamer = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             &unk_81861C,
+                             this->Flamer);
+  this->Normalized = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             &unk_818610,
+                             this->Normalized);
+  this->Translucent = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             &unk_818604,
+                             this->Translucent);
+  this->Scorch = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             &unk_8185FC,
+                             this->Scorch);
+  this->Crater = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             &unk_8185F4,
+                             this->Crater);
+  this->ForceBigCraters = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             (CCINIClass *)stru_81859C.__pad_48,
+                             this->ForceBigCraters);
+  this->Sticky = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             &stru_816E3C,
+                             this->Sticky);
+  this->PingPong = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             (CCINIClass *)&stru_81859C.INIClass_field_3C,
+                             this->PingPong);
+  this->Reverse = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             (CCINIClass *)&stru_81859C.needsSave_flag,
+                             this->Reverse);
+  this->PsiWarning = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             (CCINIClass *)&stru_81859C.__pad_20[8],
+                             this->PsiWarning);
+  this->TiberiumChainReaction = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             (CCINIClass *)stru_81859C.sectionHead,
+                             this->TiberiumChainReaction);
+  Int_Overwrite = INIClass::ReadInt_Overwrite(
+                    (int)a2,
+                    (unsigned __int8 *)(this + 36),
+                    (CCINIClass *)&stru_81859C.headNode[1],
+                    (INIClass *)0xFFFFFFFF);
+  if ( Int_Overwrite != -1 )
+  {
+    if ( Int_Overwrite <= 0 )
+      v7 = 0;
+    else
+      v7 = 900 / Int_Overwrite;
+    this->Rate = v7;
+  }
+  *(double *)(this + 680) = INIClass::ReadDouble_Overwrite(
+                              (int)a2,
+                              (INIClass *)(this + 36),
+                              (unsigned __int8 *)&stru_81859C,
+                              (INIClass *)this->Damage);
+  this->Start = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (unsigned __int8 *)(this + 36),
+                              &unk_818594,
+                              *(INIClass **)(this + 692));
+  this->End = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (unsigned __int8 *)(this + 36),
+                              &unk_818590,
+                              *(INIClass **)(this + 704));
+  this->LoopStart = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (unsigned __int8 *)(this + 36),
+                              &unk_818584,
+                              *(INIClass **)(this + 696));
+  this->LoopEnd = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (unsigned __int8 *)(this + 36),
+                              &unk_81857C,
+                              *(INIClass **)(this + 700));
+  this->LoopCount = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (unsigned __int8 *)(this + 36),
+                              &unk_818570,
+                              *(INIClass **)(this + 708));
+  v8 = *(AnimTypeClass **)(this + 712);
+  if ( INIClass::GetString(
+         a2,
+         (INIClass *)(this + 36),
+         &unk_818568,
+         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         Source,
+         128) )
+  {
+    v9 = globalHelper_028F70(Source[0].__pad_0, (int)&MEMORY[0x89F690].__pad_579C[62244]);
+  }
+  else
+  {
+    v9 = v8;
+  }
+  this->Next = v9;
+  this->DetailLevel = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (unsigned __int8 *)(this + 36),
+                              &unk_81855C,
+                              *(INIClass **)(this + 724));
+  this->TranslucencyDetailLevel = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (unsigned __int8 *)(this + 36),
+                              &unk_818544,
+                              *(INIClass **)(this + 728));
+  v10 = this->RandomLoopDelay.Max;
+  v70 = *(ObjectClass **)(this + 732);
+  aP4_4 = v10;
+  v11 = INIClass::ReadPoint2D_Overwrite(a2, &aP1, (INIClass *)(this + 36), &unk_818534, (RandomStruct *)&v70);
+  v12 = (RandomStruct *)*v11;
+  v13 = v11[1];
+  this->RandomLoopDelay = v12;
+  this->RandomLoopDelay.Max = v13;
+  this->Translucency = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (unsigned __int8 *)(this + 36),
+                              &unk_818524,
+                              *(INIClass **)(this + 748));
+  this->IsTiberium = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             (CCINIClass *)&stru_8184C8.unknown50,
+                             this->IsTiberium);
+  this->HideIfNoOre = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             (CCINIClass *)&stru_8184C8.__pad_41[3],
+                             this->HideIfNoOre);
+  this->YSortAdjust = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (unsigned __int8 *)(this + 36),
+                              (CCINIClass *)&stru_8184C8.unknown38,
+                              *(INIClass **)(this + 832));
+  Double_Overwrite = INIClass::ReadDouble_Overwrite(
+                       (int)a2,
+                       (INIClass *)(this + 36),
+                       (unsigned __int8 *)&stru_8184C8.INIClass_field_2C,
+                       (INIClass *)this->Elasticity);
+  v15 = *(INIClass **)(this + 808);
+  *(double *)(this + 784) = Double_Overwrite;
+  v16 = INIClass::ReadDouble_Overwrite((int)a2, (INIClass *)(this + 36), (unsigned __int8 *)stru_8184C8.__pad_20, v15);
+  edx20a = *(INIClass **)(this + 792);
+  *(double *)(this + 808) = v16;
+  v18 = INIClass::ReadDouble_Overwrite(
+          (int)a2,
+          (INIClass *)(this + 36),
+          (unsigned __int8 *)&stru_8184C8.sectionHead[2],
+          edx20a);
+  v17 = *(CCINIClass **)(this + 844);
+  *(double *)(this + 792) = v18;
+  v20 = INIClass::ReadInt_Overwrite(
+          (int)a2,
+          (unsigned __int8 *)(this + 36),
+          (CCINIClass *)&stru_8184C8.headNode[1],
+          (INIClass *)v17);
+  v21 = *(AnimTypeClass **)(this + 752);
+  this->MakeInfantry = v20;
+  if ( INIClass::GetString(
+         a2,
+         (INIClass *)(this + 36),
+         (unsigned __int8 *)&stru_8184C8,
+         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         Source,
+         128) )
+  {
+    v22 = globalHelper_028F70(Source[0].__pad_0, (int)&MEMORY[0x89F690].__pad_579C[62244]);
+  }
+  else
+  {
+    v22 = v21;
+  }
+  v65 = *(RandomStruct **)(this + 756);
+  this->Spawns = v22;
+  this->SpawnCount = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (unsigned __int8 *)(this + 36),
+                              &unk_8184BC,
+                              (INIClass *)v65);
+  v23 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_8184B0, this->IsMeteor);
+  v24 = this->IsVeins;
+  this->IsMeteor = v23;
+  v25 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_8184A8, v24);
+  v64 = *(RandomStruct **)(this + 828);
+  this->IsVeins = v25;
+  v26 = INIClass::ReadInt_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_818490, (INIClass *)v64);
+  v27 = *(OverlayTypeClass **)(this + 824);
+  this->TiberiumSpreadRadius = v26;
+  if ( INIClass::GetString(
+         a2,
+         (INIClass *)(this + 36),
+         &unk_81847C,
+         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         Source,
+         128) )
+  {
+    v28 = BuildingTypeClass::FindOrCreate2(Source[0].__pad_0);
+  }
+  else
+  {
+    v28 = v27;
+  }
+  v29 = this->IsAnimatedTiberium;
+  this->TiberiumSpawnType = v28;
+  v30 = INIClass::ReadBool_Overwrite(
+          (int)a2,
+          (unsigned __int8 *)(this + 36),
+          (CCINIClass *)&stru_818424.__pad_41[3],
+          v29);
+  _FFFFFFF4a = this->ShouldFogRemove;
+  this->IsAnimatedTiberium = v30;
+  this->ShouldFogRemove = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             (CCINIClass *)&stru_818424.needsSave_flag,
+                             _FFFFFFF4a);
+  v31 = INIClass::ReadBool_Overwrite(
+          (int)a2,
+          (unsigned __int8 *)(this + 36),
+          (CCINIClass *)&stru_818424.__pad_20[4],
+          this->IsFlamingGuy);
+  v32 = *(INIClass **)(this + 848);
+  this->IsFlamingGuy = v31;
+  v33 = INIClass::ReadInt_Overwrite(
+          (int)a2,
+          (unsigned __int8 *)(this + 36),
+          (CCINIClass *)&stru_818424.sectionHead[1],
+          v32);
+  v66 = *(RandomStruct **)(this + 836);
+  this->RunningFrames = v33;
+  this->YDrawOffset = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (unsigned __int8 *)(this + 36),
+                              (CCINIClass *)&stru_818424.headNode[1],
+                              (INIClass *)v66);
+  v34 = INIClass::ReadInt_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &stru_818424, *(INIClass **)(this + 840));
+  v35 = this->Report;
+  this->ZAdjust = v34;
+  if ( !INIClass::GetString(
+          a2,
+          (INIClass *)(this + 36),
+          &unk_818418,
+          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+          Source,
+          128)
+    || (Index = VocClass::FindIndex(Source), Index == -1) )
+  {
+    Index = v35;
+  }
+  this->Report = Index;
+  if ( Index == -1 )
+  {
+    if ( !INIClass::GetString(
+            a2,
+            (INIClass *)(this + 36),
+            &unk_818410,
+            (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+            Source,
+            128)
+      || (v37 = VocClass::FindIndex(Source), v37 == -1) )
+    {
+      v37 = -1;
+    }
+    this->Report = v37;
+  }
+  v38 = this->StopSound;
+  if ( !INIClass::GetString(
+          a2,
+          (INIClass *)(this + 36),
+          &unk_818404,
+          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+          Source,
+          128)
+    || (v39 = VocClass::FindIndex(Source), v39 == -1) )
+  {
+    v39 = v38;
+  }
+  v40 = *(AnimTypeClass **)(this + 768);
+  this->StopSound = v39;
+  if ( INIClass::GetString(
+         a2,
+         (INIClass *)(this + 36),
+         &unk_8183F8,
+         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         Source,
+         128) )
+  {
+    if ( !_strcmpi((char *)&stru_817460.sectionHead[1], Source[0].__pad_0) || !_strcmpi(g_Str_none, Source[0].__pad_0) )
+      goto LABEL_46;
+    ebp40 = 0;
+    if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] > 0 )
+    {
+      while ( _strcmpi(
+                (char *)(*(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp40) + 36),
+                Source[0].__pad_0) )
+      {
+        if ( ++ebp40 >= *(int *)&MEMORY[0x89F690].__pad_579C[62260] )
+          goto LABEL_43;
+      }
+      v41 = *(AnimTypeClass **)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp40);
+      goto LABEL_47;
+    }
+LABEL_43:
+    v42 = (_DWORD *)__2_YAPAXI_Z(0x378u);
+    if ( v42 )
+      v41 = (AnimTypeClass *)AnimTypeClass::Construct(v42, (AbstractClass *)Source);
+    else
+LABEL_46:
+      v41 = 0;
+LABEL_47:
+    v40 = v41;
+  }
+  this->BounceAnim = v40;
+  v44 = *(AnimTypeClass **)(this + 772);
+  if ( !INIClass::GetString(
+          a2,
+          (INIClass *)(this + 36),
+          &unk_8183EC,
+          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+          Source,
+          128) )
+  {
+    v45 = v44;
+    goto LABEL_59;
+  }
+  if ( !_strcmpi((char *)&stru_817460.sectionHead[1], Source[0].__pad_0) || !_strcmpi(g_Str_none, Source[0].__pad_0) )
+  {
+LABEL_57:
+    v45 = 0;
+    goto LABEL_59;
+  }
+  ebp51 = 0;
+  if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] <= 0 )
+  {
+LABEL_54:
+    v46 = (_DWORD *)__2_YAPAXI_Z(0x378u);
+    if ( v46 )
+    {
+      v45 = (AnimTypeClass *)AnimTypeClass::Construct(v46, (AbstractClass *)Source);
+      goto LABEL_59;
+    }
+    goto LABEL_57;
+  }
+  while ( _strcmpi(
+            (char *)(*(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp51) + 36),
+            Source[0].__pad_0) )
+  {
+    if ( ++ebp51 >= *(int *)&MEMORY[0x89F690].__pad_579C[62260] )
+      goto LABEL_54;
+  }
+  v45 = *(AnimTypeClass **)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp51);
+LABEL_59:
+  v48 = *(AnimTypeClass **)(this + 776);
+  this->ExpireAnim = v45;
+  if ( INIClass::GetString(
+         a2,
+         (INIClass *)(this + 36),
+         &unk_8183E0,
+         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         Source,
+         128) )
+  {
+    if ( !_strcmpi((char *)&stru_817460.sectionHead[1], Source[0].__pad_0) || !_strcmpi(g_Str_none, Source[0].__pad_0) )
+      goto LABEL_68;
+    ebp62 = 0;
+    if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] > 0 )
+    {
+      while ( _strcmpi(
+                (char *)(*(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp62) + 36),
+                Source[0].__pad_0) )
+      {
+        if ( ++ebp62 >= *(int *)&MEMORY[0x89F690].__pad_579C[62260] )
+          goto LABEL_65;
+      }
+      v49 = *(AnimTypeClass **)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp62);
+      goto LABEL_70;
+    }
+LABEL_65:
+    v50 = (_DWORD *)__2_YAPAXI_Z(0x378u);
+    if ( v50 )
+      v49 = (AnimTypeClass *)AnimTypeClass::Construct(v50, (AbstractClass *)Source);
+    else
+LABEL_68:
+      v49 = 0;
+  }
+  else
+  {
+    v49 = v48;
+  }
+LABEL_70:
+  v67 = *(RandomStruct **)(this + 780);
+  this->TrailerAnim = v49;
+  this->TrailerSeperation = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (unsigned __int8 *)(this + 36),
+                              &unk_8183CC,
+                              (INIClass *)v67);
+  v52 = INIClass::ReadInt_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_8183BC, *(INIClass **)(this + 820));
+  v53 = this->Warhead;
+  this->DamageRadius = v52;
+  if ( INIClass::GetString(
+         a2,
+         (INIClass *)(this + 36),
+         &unk_8183B4,
+         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         Source,
+         128) )
+  {
+    v54 = WarheadTypeClass::FindOrCreate(Source[0].__pad_0);
+  }
+  else
+  {
+    v54 = v53;
+  }
+  _FFFFFFF4b = this->Bouncer;
+  this->Warhead = v54;
+  this->Bouncer = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             &unk_8183AC,
+                             _FFFFFFF4b);
+  v55 = INIClass::ReadBool_Overwrite(
+          (int)a2,
+          (unsigned __int8 *)(this + 36),
+          (CCINIClass *)&aP3.unknown50,
+          this->Tiled);
+  v56 = this->ShouldUseCellDrawer;
+  this->Tiled = v55;
+  v57 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), (CCINIClass *)&aP3.INIClass_field_3C, v56);
+  v71 = this->UseNormalLight;
+  this->ShouldUseCellDrawer = v57;
+  this->UseNormalLight = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (unsigned __int8 *)(this + 36),
+                             (CCINIClass *)&aP3.INIClass_field_2C,
+                             v71);
+  if ( INIClass::GetString(
+         a2,
+         (INIClass *)(this + 36),
+         (unsigned __int8 *)&aP3.sectionCount,
+         0,
+         (INIClass *)Destination,
+         32) )
+  {
+    this->SpawnsParticle = BuildingTypeClass::FindOrCreateEx(Destination);
+  }
+  this->NumParticles = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (unsigned __int8 *)(this + 36),
+                              (CCINIClass *)&aP3.headNode[2],
+                              *(INIClass **)(this + 720));
+  v70 = (ObjectClass *)-1;
+  aP4_4 = -1;
+  v58 = INIClass::ReadPoint2D_Overwrite(a2, &aP1, (INIClass *)(this + 36), &aP3, (RandomStruct *)&v70);
+  v59 = *v58;
+  v60 = v58[1];
+  if ( *v58 != -1 )
+  {
+    if ( v59 <= 0 )
+      eax77 = 0;
+    else
+      eax77 = 900 / v59;
+    this->RandomRate = eax77;
+  }
+  if ( v60 != -1 )
+  {
+    if ( v60 <= 0 )
+      v62 = 0;
+    else
+      v62 = 900 / v60;
+    this->RandomRate.Max = v62;
+  }
+  if ( *(int *)(this + 744) < 0 )
+    this->RandomRate.Max = 0;
+  v61 = *(RandomStruct **)(this + 744);
+  if ( this->RandomRate > (int)v61 )
+    this->RandomRate = v61;
+  return 1;
+}
 }
 } // namespace gamemd
 

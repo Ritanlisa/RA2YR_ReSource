@@ -3,57 +3,566 @@
 #include "e4/e4_globals.hpp"
 
 // 0x5FB320
-int HotkeyOptions::DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
+int HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// int __stdcall HotkeyOptions_DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
-// {
-//   int result; // eax
-//   HWND v5; // edi
-//   LRESULT v6; // eax
-//   LRESULT v7; // edi
-//   HWND v8; // ebx
-//   LPARAM v9; // eax
-//   signed int v10; // eax
-//   int v11; // ebx
-//   char v12; // dl
-//   void *v13; // ecx
-//   char v14; // al
-//   unsigned __int16 v15; // bx
-//   HWND v16; // eax
-//   HWND v17; // eax
-//   HWND (__stdcall *v18)(HWND, int); // edi
-//   HWND v19; // ebx
-//   HWND v20; // ebx
-//   LPARAM v21; // edi
-//   const wchar_t *v22; // eax
-//   LPARAM v23; // eax
-//   LRESULT v24; // eax
-//   HWND v25; // eax
-//   HWND v26; // eax
-//   HWND v27; // edi
-//   HWND v28; // eax
-//   HWND v29; // eax
-//   __int16 v30; // ax
-//   int v31; // edi
-//   size_t v32; // eax
-//   _DWORD *v33; // edx
-//   int v34; // esi
-//   _DWORD *v35; // ebx
-//   int v36; // ecx
-//   int v37; // ecx
-//   _DWORD *v38; // ebx
-//   int v39; // esi
-//   _DWORD *v40; // eax
-//   wchar_t *v41; // esi
-//   HWND v42; // eax
-//   size_t v43; // eax
-//   signed int m; // esi
-//   char *v45; // eax
-//   HWND v46; // edi
-//   LRESUL... [20000 chars total]
-// end truncated pseudocode
+int __stdcall HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
+{
+  int result; // eax
+  int v5; // edi
+  int v6; // eax
+  int v7; // edi
+  int v8; // ebx
+  int v9; // eax
+  int v10; // eax
+  int v11; // ebx
+  char v12; // dl
+  void *v13; // ecx
+  char v14; // al
+  __int16 v15; // bx
+  int v16; // eax
+  int v17; // eax
+  HWND (__stdcall *v18)(HWND, int); // edi
+  int v19; // ebx
+  int v20; // ebx
+  int v21; // edi
+  const #72 *v22; // eax
+  int v23; // eax
+  int v24; // eax
+  int v25; // eax
+  int v26; // eax
+  int v27; // edi
+  int v28; // eax
+  int v29; // eax
+  __int16 v30; // ax
+  int v31; // edi
+  int v32; // eax
+  _DWORD *v33; // edx
+  int v34; // esi
+  _DWORD *v35; // ebx
+  int v36; // ecx
+  int v37; // ecx
+  _DWORD *v38; // ebx
+  int v39; // esi
+  int *v40; // eax
+  _DWORD *v41; // esi
+  int v42; // eax
+  int v43; // eax
+  int m; // esi
+  char *v45; // eax
+  int v46; // edi
+  int v47; // eax
+  int v48; // eax
+  __int16 v49; // ax
+  int v50; // edi
+  int v51; // edi
+  #72 *StringCSF; // eax
+  int v53; // edx
+  int v54; // esi
+  char v55; // al
+  int v56; // esi
+  int v57; // eax
+  int v58; // eax
+  int v59; // ecx
+  int j; // eax
+  _DWORD *v61; // eax
+  int v62; // eax
+  int v63; // eax
+  int v64; // ecx
+  int k; // eax
+  _DWORD *v66; // eax
+  int v67; // eax
+  int v68; // edi
+  int v69; // esi
+  int v70; // eax
+  int v71; // eax
+  int v72; // [esp-8h] [ebp-134h]
+  _DWORD *v73; // [esp+10h] [ebp-11Ch]
+  int v74; // [esp+10h] [ebp-11Ch]
+  int v75; // [esp+10h] [ebp-11Ch]
+  int v76; // [esp+10h] [ebp-11Ch]
+  int i; // [esp+10h] [ebp-11Ch]
+  __int64 v78; // [esp+14h] [ebp-118h] BYREF
+  void *v79[3]; // [esp+1Ch] [ebp-110h] BYREF
+  _DWORD v80[10]; // [esp+28h] [ebp-104h] BYREF
+  char v81; // [esp+50h] [ebp-DCh]
+  int v82; // [esp+54h] [ebp-D8h]
+  int v83; // [esp+58h] [ebp-D4h]
+  char v84; // [esp+5Ch] [ebp-D0h]
+  _BYTE v85[12]; // [esp+74h] [ebp-B8h] BYREF
+  int v86; // [esp+80h] [ebp-ACh]
+  int v87[9]; // [esp+88h] [ebp-A4h] BYREF
+  _BYTE lParam[128]; // [esp+ACh] [ebp-80h] BYREF
+
+  result = BaseDialogProc(hWnd, a2, a3, a4); /*0x5fb34c*/
+  if ( result ) /*0x5fb353*/
+    return result; /*0x5fb353*/
+  v73 = (_DWORD *)((int (__stdcall *)(int, int))GetWindowLongA)(hWnd, 8); /*0x5fb368*/
+  if ( a2 > 0x466 ) /*0x5fb36c*/
+  {
+    if ( a2 == 1127 ) /*0x5fbe06*/
+    {
+      v68 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1223); /*0x5fbe4f*/
+      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v68, 331, 0, 0); /*0x5fbe59*/
+      for ( i = 0; i < dword_87F5D8[36]; ++i ) /*0x5fbe6a*/
+      {
+        v69 = *(_DWORD *)(dword_87F5D8[33] + 4 * i); /*0x5fbe76*/
+        v70 = (*(int (__thiscall **)(int))(*(_DWORD *)v69 + 12))(v69); /*0x5fbe7d*/
+        if ( ((int (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v68, 1214, 0, v70) == -1 ) /*0x5fbe8e*/
+        {
+          v71 = (*(int (__thiscall **)(int))(*(_DWORD *)v69 + 12))(v69); /*0x5fbe94*/
+          ((void (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v68, 1218, 0, v71); /*0x5fbea0*/
+        }
+      }
+      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v68, 334, 0, 0); /*0x5fbebf*/
+      dword_832D8C = -1; /*0x5fbecb*/
+      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1124, 0, 0); /*0x5fbed5*/
+      return 1; /*0x5fbed5*/
+    }
+    if ( a2 == 1175 ) /*0x5fbe0b*/
+    {
+      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1127, 0, 0); /*0x5fbe26*/
+      return 0; /*0x5fbe38*/
+    }
+    return 0; /*0x5fbe0b*/
+  }
+  if ( a2 == 1126 ) /*0x5fb372*/
+  {
+    v46 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1224); /*0x5fbacc*/
+    v47 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v46, 392, 0, 0); /*0x5fbad6*/
+    if ( v47 == -1 ) /*0x5fbadb*/
+      return 1; /*0x5fbadb*/
+    v76 = ((int (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v46, 409, v47, 0); /*0x5fbaf2*/
+    v48 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1229); /*0x5fbaf6*/
+    v49 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v48, 1026, 0, 0); /*0x5fbb02*/
+    v50 = (unsigned __int8)v49; /*0x5fbb0a*/
+    if ( (v49 & 0x400) != 0 ) /*0x5fbb13*/
+      v50 = (unsigned __int8)v49 | 0x400; /*0x5fbb15*/
+    if ( (v49 & 0x200) != 0 ) /*0x5fbb1e*/
+      v50 |= 0x200u; /*0x5fbb20*/
+    if ( (v49 & 0x100) != 0 ) /*0x5fbb29*/
+      v50 |= 0x100u; /*0x5fbb2b*/
+    if ( (v49 & 0x800) != 0 ) /*0x5fbb34*/
+      v50 = 0; /*0x5fbb36*/
+    if ( sub_48BB40(v76, v50) ) /*0x5fbb3e*/
+    {
+      if ( sub_48BB60(v50) ) /*0x5fbb66*/
+      {
+        v53 = dword_87F5D8[43]; /*0x5fbbac*/
+        v54 = 0; /*0x5fbbb4*/
+        if ( dword_87F5D8[43] > 0 ) /*0x5fbbb8*/
+        {
+          while ( 1 ) /*0x5fbbbe*/
+          {
+            v55 = dword_87F5D8[45]; /*0x5fbbbe*/
+            if ( !LOBYTE(dword_87F5D8[45]) ) /*0x5fbbc5*/
+            {
+              qsort((void *)dword_87F5D8[42], v53, 8, CompareFuncInt); /*0x5fbbd6*/
+              v53 = dword_87F5D8[43]; /*0x5fbbdb*/
+              v55 = 1; /*0x5fbbe1*/
+              dword_87F5D8[46] = 0; /*0x5fbbe6*/
+              LOBYTE(dword_87F5D8[45]) = 1; /*0x5fbbec*/
+            }
+            if ( *(_DWORD *)(dword_87F5D8[42] + 8 * v54 + 4) == v76 ) /*0x5fbbff*/
+              break; /*0x5fbbff*/
+            if ( ++v54 >= v53 ) /*0x5fbc04*/
+              goto LABEL_127; /*0x5fbc04*/
+          }
+          v56 = *(_DWORD *)(dword_87F5D8[42] + 8 * v54); /*0x5fbc0b*/
+          if ( v53 ) /*0x5fbc11*/
+          {
+            if ( !v55 ) /*0x5fbc19*/
+            {
+              qsort((void *)dword_87F5D8[42], v53, 8, CompareFuncInt); /*0x5fbc24*/
+              v53 = dword_87F5D8[43]; /*0x5fbc29*/
+              dword_87F5D8[46] = 0; /*0x5fbc32*/
+              LOBYTE(dword_87F5D8[45]) = 1; /*0x5fbc38*/
+            }
+            LODWORD(v78) = v56; /*0x5fbc4a*/
+            v57 = HotkeyOptions_Helper(dword_87F5D8[42], v53, (int *)&v78); /*0x5fbc4e*/
+            if ( !v57 || (v58 = (v57 - dword_87F5D8[42]) >> 3, v58 == -1) ) /*0x5fbc63*/
+            {
+              v53 = dword_87F5D8[43]; /*0x5fbcc1*/
+            }
+            else
+            {
+              v59 = v58 + 1; /*0x5fbc65*/
+              for ( j = dword_87F5D8[43]; v59 < dword_87F5D8[43]; j = dword_87F5D8[43] ) /*0x5fbc6f*/
+              {
+                v61 = (_DWORD *)(dword_87F5D8[42] + 8 * v59++); /*0x5fbc77*/
+                *(v61 - 2) = *v61; /*0x5fbc7d*/
+                *(v61 - 1) = v61[1]; /*0x5fbc83*/
+              }
+              dword_87F5D8[43] = j - 1; /*0x5fbc98*/
+              *(_DWORD *)(dword_87F5D8[42] + 8 * dword_87F5D8[43]) = 0; /*0x5fbc9d*/
+              *(_DWORD *)(dword_87F5D8[42] + 8 * dword_87F5D8[43] + 4) = 0; /*0x5fbcaf*/
+              dword_87F5D8[46] = 0; /*0x5fbcb3*/
+              v53 = dword_87F5D8[43]; /*0x5fbcb9*/
+            }
+          }
+        }
+LABEL_127:
+        if ( v50 ) /*0x5fbcc9*/
+        {
+          if ( v53 ) /*0x5fbcd1*/
+          {
+            if ( !LOBYTE(dword_87F5D8[45]) ) /*0x5fbcde*/
+            {
+              qsort((void *)dword_87F5D8[42], v53, 8, CompareFuncInt); /*0x5fbcef*/
+              v53 = dword_87F5D8[43]; /*0x5fbcf4*/
+              dword_87F5D8[46] = 0; /*0x5fbcfd*/
+              LOBYTE(dword_87F5D8[45]) = 1; /*0x5fbd03*/
+            }
+            LODWORD(v78) = v50; /*0x5fbd15*/
+            v62 = HotkeyOptions_Helper(dword_87F5D8[42], v53, (int *)&v78); /*0x5fbd19*/
+            if ( !v62 || (v63 = (v62 - dword_87F5D8[42]) >> 3, v63 == -1) ) /*0x5fbd2e*/
+            {
+              v53 = dword_87F5D8[43]; /*0x5fbd8c*/
+            }
+            else
+            {
+              v64 = v63 + 1; /*0x5fbd30*/
+              for ( k = dword_87F5D8[43]; v64 < dword_87F5D8[43]; k = dword_87F5D8[43] ) /*0x5fbd3a*/
+              {
+                v66 = (_DWORD *)(dword_87F5D8[42] + 8 * v64++); /*0x5fbd42*/
+                *(v66 - 2) = *v66; /*0x5fbd48*/
+                *(v66 - 1) = v66[1]; /*0x5fbd4e*/
+              }
+              dword_87F5D8[43] = k - 1; /*0x5fbd63*/
+              *(_DWORD *)(dword_87F5D8[42] + 8 * dword_87F5D8[43]) = 0; /*0x5fbd68*/
+              *(_DWORD *)(dword_87F5D8[42] + 8 * dword_87F5D8[43] + 4) = 0; /*0x5fbd7a*/
+              dword_87F5D8[46] = 0; /*0x5fbd7e*/
+              v53 = dword_87F5D8[43]; /*0x5fbd84*/
+            }
+          }
+          v67 = dword_87F5D8[44]; /*0x5fbd92*/
+          if ( v53 + 1 > dword_87F5D8[44] ) /*0x5fbd9c*/
+          {
+            if ( !dword_87F5D8[44] ) /*0x5fbda0*/
+              v67 = 10; /*0x5fbda2*/
+            if ( !KeyboardConfig::ReleaseBuffer((int)&dword_87F5D8[42], v67) ) /*0x5fbdb4*/
+              return 1; /*0x5fbdb4*/
+            v53 = dword_87F5D8[43]; /*0x5fbdba*/
+          }
+          *(_DWORD *)(dword_87F5D8[42] + 8 * v53) = v50; /*0x5fbdc5*/
+          *(_DWORD *)(dword_87F5D8[42] + 8 * dword_87F5D8[43]++ + 4) = v76; /*0x5fbdda*/
+          LOBYTE(dword_87F5D8[45]) = 0; /*0x5fbdea*/
+          return 1; /*0x5fbdfd*/
+        }
+        return 1; /*0x5fbcc9*/
+      }
+      v51 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1597); /*0x5fbb7c*/
+      StringCSF = GetStringCSF((#72 *)aErrorCannotrem, 0, g_Str_File_Options_CPP, 1012); /*0x5fbb8a*/
+    }
+    else
+    {
+      v51 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1597); /*0x5fbb54*/
+      StringCSF = GetStringCSF((#72 *)aErrorCannotmap, 0, g_Str_File_Options_CPP, 1004); /*0x5fbb62*/
+    }
+    ((void (__stdcall *)(int, int, _DWORD, #72 *))SendMessageA)(v51, 1202, 0, StringCSF); /*0x5fbb98*/
+    return 1; /*0x5fbba9*/
+  }
+  if ( a2 != 273 ) /*0x5fb37e*/
+  {
+    if ( a2 == 1124 ) /*0x5fb38a*/
+    {
+      v18 = GetDlgItem; /*0x5fb4ec*/
+      v19 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1223); /*0x5fb502*/
+      if ( ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v19, 327, 0, 0) != dword_832D8C ) /*0x5fb514*/
+      {
+        dword_832D8C = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v19, 327, 0, 0); /*0x5fb52d*/
+        ((void (__stdcall *)(int, int, int, _BYTE *))SendMessageA)(v19, 1203, 64, lParam); /*0x5fb53b*/
+        v20 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1224); /*0x5fb547*/
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v20, 388, 0, 0); /*0x5fb551*/
+        v75 = 0; /*0x5fb55a*/
+        if ( dword_87F5D8[36] > 0 ) /*0x5fb562*/
+        {
+          do /*0x5fb5bf*/
+          {
+            v21 = *(_DWORD *)(dword_87F5D8[33] + 4 * v75); /*0x5fb575*/
+            v22 = (const #72 *)(*(int (__thiscall **)(int))(*(_DWORD *)v21 + 12))(v21); /*0x5fb57d*/
+            if ( !_wcsicmp(v22, (const #72 *)lParam) ) /*0x5fb581*/
+            {
+              v23 = (*(int (__thiscall **)(int))(*(_DWORD *)v21 + 8))(v21); /*0x5fb591*/
+              v24 = ((int (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v20, 1229, 0, v23); /*0x5fb59d*/
+              if ( v24 != -1 ) /*0x5fb5a2*/
+                ((void (__stdcall *)(int, int, int, int))SendMessageA)(v20, 410, v24, v21); /*0x5fb5ac*/
+            }
+            ++v75; /*0x5fb5bb*/
+          }
+          while ( v75 < dword_87F5D8[36] ); /*0x5fb5bf*/
+          v18 = GetDlgItem; /*0x5fb5c1*/
+        }
+        v25 = ((int (__stdcall *)(int, int))v18)(hWnd, 1227); /*0x5fb5cd*/
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v25, 1202, 0, &MEMORY[0x87F7E8][8147]); /*0x5fb5dc*/
+        v26 = ((int (__stdcall *)(int, int))v18)(hWnd, 1596); /*0x5fb5e4*/
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v26, 1202, 0, &MEMORY[0x87F7E8][8147]); /*0x5fb5f3*/
+        v27 = ((int (__stdcall *)(int, int))v18)(hWnd, 1595); /*0x5fb602*/
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v27, 1202, 0, &MEMORY[0x87F7E8][8147]); /*0x5fb60c*/
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v27, 390, 0, 0); /*0x5fb618*/
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1125, 0, 0); /*0x5fb624*/
+        return 1; /*0x5fb635*/
+      }
+      return 1; /*0x5fb514*/
+    }
+    if ( a2 == 1125 ) /*0x5fb391*/
+    {
+      v5 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1224); /*0x5fb3ab*/
+      v6 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v5, 392, 0, 0); /*0x5fb3b5*/
+      if ( v6 != -1 ) /*0x5fb3ba*/
+      {
+        v7 = ((int (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v5, 409, v6, 0); /*0x5fb3d1*/
+        v8 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1227); /*0x5fb3d9*/
+        v9 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 16))(v7); /*0x5fb3df*/
+        ((void (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v8, 1202, 0, v9); /*0x5fb3eb*/
+        v10 = dword_87F5D8[43]; /*0x5fb3ed*/
+        v11 = 0; /*0x5fb3f2*/
+        LOWORD(v74) = 0; /*0x5fb3f6*/
+        if ( dword_87F5D8[43] > 0 ) /*0x5fb3fa*/
+        {
+          v12 = dword_87F5D8[45]; /*0x5fb3fc*/
+          v13 = (void *)dword_87F5D8[42]; /*0x5fb402*/
+          while ( 1 ) /*0x5fb408*/
+          {
+            if ( !v12 ) /*0x5fb40a*/
+            {
+              qsort(v13, v10, 8, CompareFuncInt); /*0x5fb415*/
+              v10 = dword_87F5D8[43]; /*0x5fb41a*/
+              v13 = (void *)dword_87F5D8[42]; /*0x5fb41f*/
+              v12 = 1; /*0x5fb425*/
+              dword_87F5D8[46] = 0; /*0x5fb42a*/
+              LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb434*/
+            }
+            if ( *((_DWORD *)v13 + 2 * v11 + 1) == v7 ) /*0x5fb43e*/
+              break; /*0x5fb43e*/
+            if ( ++v11 >= v10 ) /*0x5fb443*/
+              goto LABEL_16; /*0x5fb443*/
+          }
+          v74 = *((_DWORD *)v13 + 2 * v11); /*0x5fb44a*/
+        }
+LABEL_16:
+        LODWORD(v78) = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1596); /*0x5fb44e*/
+        v14 = 0; /*0x5fb464*/
+        if ( (v74 & 0x400) != 0 ) /*0x5fb469*/
+          v14 = 4; /*0x5fb46b*/
+        if ( (v74 & 0x200) != 0 ) /*0x5fb473*/
+          v14 |= 2u; /*0x5fb475*/
+        if ( (v74 & 0x100) != 0 ) /*0x5fb47a*/
+          v14 |= 1u; /*0x5fb47c*/
+        if ( (v74 & 0x1000) != 0 ) /*0x5fb481*/
+          v14 |= 8u; /*0x5fb483*/
+        HIBYTE(v15) = v14; /*0x5fb48e*/
+        LOBYTE(v15) = v74; /*0x5fb490*/
+        FormatHotkeyDisplayString(v15, (#72 *)lParam); /*0x5fb494*/
+        ((void (__stdcall *)(_DWORD, int, _DWORD, _BYTE *))SendMessageA)(v78, 1202, 0, lParam); /*0x5fb4ad*/
+        v16 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1229); /*0x5fb4b5*/
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v16, 1025, 0, 0); /*0x5fb4c1*/
+        v17 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1595); /*0x5fb4c9*/
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v17, 1202, 0, &MEMORY[0x87F7E8][8147]); /*0x5fb4d8*/
+        return 1; /*0x5fb4e9*/
+      }
+      return 1; /*0x5fb3ba*/
+    }
+    return 0; /*0x5fbe19*/
+  }
+  if ( (unsigned __int16)a3 > 0x4CDu ) /*0x5fb644*/
+  {
+    if ( (unsigned __int16)a3 == 1231 ) /*0x5fb8df*/
+    {
+      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1126, 0, 0); /*0x5fba96*/
+      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1125, 0, 0); /*0x5fbaa2*/
+      return 1; /*0x5fbab3*/
+    }
+    if ( (unsigned __int16)a3 == 1232 ) /*0x5fb8e6*/
+    {
+      if ( !HIWORD(a3) ) /*0x5fba05*/
+      {
+        Debug::Log(); /*0x5fba13*/
+        CCFileClass::Construct(v79, aKeyboardmdIni); /*0x5fba24*/
+        FileClass::Delete((#56 *)v79); /*0x5fba2d*/
+        KeyboardConfig::LoadINI(); /*0x5fba32*/
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1127, 0, 0); /*0x5fba41*/
+        v79[0] = &CCFileClass::`vftable'; /*0x5fba4b*/
+        v86 = 0; /*0x5fba53*/
+        Vector::Clear((int)v85); /*0x5fba5e*/
+        v79[0] = &off_7E1668; /*0x5fba67*/
+        BufferIOFileClass::Dtor(v79); /*0x5fba6f*/
+        return 1; /*0x5fba83*/
+      }
+    }
+    else if ( (unsigned __int16)a3 == 1670 && !HIWORD(a3) ) /*0x5fb8f7*/
+    {
+      v79[1] = 0; /*0x5fb906*/
+      v79[2] = 0; /*0x5fb90a*/
+      GenericList::Constructor(v80); /*0x5fb90e*/
+      v80[0] = &List<INIClass::INISection *>::`vftable'; /*0x5fb919*/
+      memset(&v80[7], 0, 12); /*0x5fb921*/
+      v81 = 0; /*0x5fb92d*/
+      v82 = 0; /*0x5fb932*/
+      v83 = 0; /*0x5fb936*/
+      v84 = 0; /*0x5fb93a*/
+      v79[0] = &CCINIClass_Vtable; /*0x5fb93f*/
+      INIClass::ClearSection((int)v79, 0, 0); /*0x5fb947*/
+      v43 = dword_87F5D8[43]; /*0x5fb94c*/
+      for ( m = 0; m < dword_87F5D8[43]; ++m ) /*0x5fb955*/
+      {
+        if ( !LOBYTE(dword_87F5D8[45]) ) /*0x5fb95f*/
+        {
+          qsort((void *)dword_87F5D8[42], v43, 8, CompareFuncInt); /*0x5fb970*/
+          dword_87F5D8[46] = 0; /*0x5fb978*/
+          LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb97e*/
+        }
+        v72 = *(_DWORD *)(dword_87F5D8[42] + 8 * m); /*0x5fb992*/
+        v45 = (char *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(dword_87F5D8[42] + 8 * m + 4) + 4))(*(_DWORD *)(dword_87F5D8[42] + 8 * m + 4)); /*0x5fb995*/
+        INIClass::SetInt((char *)v79, (unsigned __int8 *)g_INI_Key_Hotkey, v45, v72, 0); /*0x5fb9a2*/
+        v43 = dword_87F5D8[43]; /*0x5fb9a7*/
+      }
+      RawFileClass::Construct(v87, (int)aKeyboardmdIni_0); /*0x5fb9bd*/
+      INIClass::WriteDigest((char *)v79, (int)v87, 0); /*0x5fb9cf*/
+      *v73 = 1; /*0x5fb9d8*/
+      RawFileClass::Dtor(v87); /*0x5fb9e5*/
+      HashTable::DestroyHashTableINIClass(v79); /*0x5fb9ee*/
+      return 1; /*0x5fba02*/
+    }
+    return 1; /*0x5fb8fa*/
+  }
+  if ( (unsigned __int16)a3 != 1229 ) /*0x5fb64a*/
+  {
+    if ( (unsigned __int16)a3 == 2 ) /*0x5fb653*/
+    {
+      if ( !HIWORD(a3) ) /*0x5fb6d4*/
+      {
+        KeyboardConfig::LoadINI(); /*0x5fb6dd*/
+        *v73 = 2; /*0x5fb6e9*/
+        return 1; /*0x5fb6fb*/
+      }
+    }
+    else if ( (unsigned __int16)a3 == 1223 ) /*0x5fb65a*/
+    {
+      if ( HIWORD(a3) == 1 ) /*0x5fb6af*/
+      {
+        ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1124, 0, 0); /*0x5fb6bf*/
+        return 1; /*0x5fb6d1*/
+      }
+    }
+    else if ( (unsigned __int16)a3 == 1224 && HIWORD(a3) == 1 ) /*0x5fb669*/
+    {
+      ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1125, 0, 0); /*0x5fb679*/
+      v28 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1229); /*0x5fb685*/
+      if ( v28 ) /*0x5fb68d*/
+      {
+        ((void (__stdcall *)(int))SetFocus)(v28); /*0x5fb694*/
+        return 1; /*0x5fb6a6*/
+      }
+    }
+    return 1; /*0x5fb68d*/
+  }
+  if ( HIWORD(a3) != 768 ) /*0x5fb707*/
+    return 1; /*0x5fbed7*/
+  v29 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1597); /*0x5fb713*/
+  ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v29, 1202, 0, &MEMORY[0x87F7E8][8147]); /*0x5fb72c*/
+  v30 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(a4, 1026, 0, 0); /*0x5fb738*/
+  v31 = (unsigned __int8)v30; /*0x5fb740*/
+  if ( (v30 & 0x400) != 0 ) /*0x5fb749*/
+    v31 = (unsigned __int8)v30 | 0x400; /*0x5fb74b*/
+  if ( (v30 & 0x200) != 0 ) /*0x5fb754*/
+    v31 |= 0x200u; /*0x5fb756*/
+  if ( (v30 & 0x100) != 0 ) /*0x5fb75f*/
+    v31 |= 0x100u; /*0x5fb761*/
+  if ( (v30 & 0x800) != 0 ) /*0x5fb76a*/
+    v31 = 0; /*0x5fb76c*/
+  v32 = dword_87F5D8[43]; /*0x5fb76e*/
+  if ( !dword_87F5D8[43] ) /*0x5fb775*/
+    goto LABEL_81; /*0x5fb775*/
+  v33 = (_DWORD *)dword_87F5D8[46]; /*0x5fb77b*/
+  if ( !dword_87F5D8[46] || *(_DWORD *)dword_87F5D8[46] != v31 ) /*0x5fb787*/
+  {
+    if ( !LOBYTE(dword_87F5D8[45]) ) /*0x5fb795*/
+    {
+      qsort((void *)dword_87F5D8[42], dword_87F5D8[43], 8, CompareFuncInt); /*0x5fb7a6*/
+      dword_87F5D8[46] = 0; /*0x5fb7ae*/
+      LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb7b8*/
+    }
+    v34 = dword_87F5D8[43]; /*0x5fb7bf*/
+    v35 = (_DWORD *)dword_87F5D8[42]; /*0x5fb7c5*/
+    if ( dword_87F5D8[43] <= 0 ) /*0x5fb7cd*/
+      goto LABEL_81; /*0x5fb7cd*/
+    while ( 1 ) /*0x5fb7da*/
+    {
+      v36 = v35[2 * (v34 / 2)]; /*0x5fb7da*/
+      v33 = &v35[2 * (v34 / 2)]; /*0x5fb7dd*/
+      if ( v36 <= v31 ) /*0x5fb7e2*/
+      {
+        if ( v36 == v31 ) /*0x5fb7e8*/
+        {
+          if ( !v33 ) /*0x5fb7ff*/
+            goto LABEL_81; /*0x5fb7ff*/
+          v32 = dword_87F5D8[43]; /*0x5fb805*/
+          dword_87F5D8[46] = &v35[2 * (v34 / 2)]; /*0x5fb80a*/
+          break; /*0x5fb80a*/
+        }
+        v35 = v33 + 2; /*0x5fb7ed*/
+        v34 += -1 - v34 / 2; /*0x5fb7f2*/
+      }
+      else
+      {
+        v34 /= 2; /*0x5fb7e4*/
+      }
+      if ( v34 <= 0 ) /*0x5fb7f6*/
+        goto LABEL_81; /*0x5fb7f6*/
+    }
+  }
+  if ( !v32 ) /*0x5fb812*/
+    goto LABEL_79; /*0x5fb812*/
+  if ( v33 && *v33 == v31 ) /*0x5fb81a*/
+  {
+LABEL_85:
+    v40 = v33 + 1; /*0x5fb8d5*/
+    goto LABEL_80; /*0x5fb8d8*/
+  }
+  if ( !LOBYTE(dword_87F5D8[45]) ) /*0x5fb828*/
+  {
+    qsort((void *)dword_87F5D8[42], v32, 8, CompareFuncInt); /*0x5fb839*/
+    dword_87F5D8[46] = 0; /*0x5fb841*/
+    LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb84b*/
+  }
+  v37 = dword_87F5D8[43]; /*0x5fb852*/
+  v38 = (_DWORD *)dword_87F5D8[42]; /*0x5fb858*/
+  if ( dword_87F5D8[43] <= 0 ) /*0x5fb860*/
+    goto LABEL_79; /*0x5fb860*/
+  while ( 1 ) /*0x5fb869*/
+  {
+    v39 = v38[2 * (v37 / 2)]; /*0x5fb869*/
+    v33 = &v38[2 * (v37 / 2)]; /*0x5fb86c*/
+    if ( v39 <= v31 ) /*0x5fb871*/
+      break; /*0x5fb871*/
+    v37 /= 2; /*0x5fb873*/
+LABEL_78:
+    if ( v37 <= 0 ) /*0x5fb885*/
+      goto LABEL_79; /*0x5fb885*/
+  }
+  if ( v39 != v31 ) /*0x5fb877*/
+  {
+    v38 = v33 + 2; /*0x5fb879*/
+    v37 += -1 - v37 / 2; /*0x5fb881*/
+    goto LABEL_78; /*0x5fb881*/
+  }
+  if ( v33 ) /*0x5fb8cd*/
+  {
+    dword_87F5D8[46] = &v38[2 * (v37 / 2)]; /*0x5fb8cf*/
+    goto LABEL_85; /*0x5fb8cf*/
+  }
+LABEL_79:
+  v40 = &dword_A8ED54[239290]; /*0x5fb887*/
+LABEL_80:
+  v41 = (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)*v40 + 8))(*v40); /*0x5fb88c*/
+  if ( !v41 ) /*0x5fb897*/
+LABEL_81:
+    v41 = &MEMORY[0x87F7E8][8147]; /*0x5fb899*/
+  v42 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1595); /*0x5fb8a4*/
+  ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v42, 1202, 0, v41); /*0x5fb8b3*/
+  return 1; /*0x5fb4da*/
+}
 }
 
 // 0x5FC120

@@ -983,23 +983,6 @@ LABEL_10:
 }
 } // namespace gamemd
 
-// 0x5C1D80
-namespace gamemd {
-char MPCooperative::Write(int a2)
-{
-{
-    char *v2;
-    if ( Game_PlayerCount == 2 )
-  {
-    v2 = this->coopSaveFileName;
-    if ( v2 )
-    String::AssignWideToChar(v2, *(char **)Game_PlayerInfoArray, *(char **)(Game_PlayerInfoArray + 4));
-  }
-    return ScenarioClass::MissionStubReturnZero2(a2);
-}
-}
-} // namespace gamemd
-
 // 0x5C1DC0
 namespace gamemd {
 char MPCooperative::Seek()
@@ -2822,33 +2805,6 @@ void __thiscall MPCooperative::sub_5C44E0(int *this, int a2)
 }
 } // namespace gamemd
 
-// 0x5C4670
-namespace gamemd {
-int MPCooperative::checkVictory()
-{
-{
-    int v2;
-    int v3;
-    int v5;
-    int v6;
-    int v7;
-    v2 = 0;
-    v3 = this->coopSaveFileName;
-    if ( !v3 )
-    return 0;
-    MPCooperative::GetMovieScore(v3, &v5);
-    Movie::GetState(this->coopSaveFileName, &v6);
-    if ( v5 == v6 )
-  {
-    Movie::GetSectionID(this->coopSaveFileName, &v7);
-    v2 = 1 << v7;
-    Debug::Log();
-  }
-    return v2;
-}
-}
-} // namespace gamemd
-
 // 0x5C4CA0
 namespace gamemd {
 int MPCooperative::InitializePlayers()
@@ -2931,31 +2887,6 @@ LABEL_16:
     while ( v2 < result ); /*0x5c4e7b*/
   }
   return result; /*0x5c4e83*/
-}
-}
-} // namespace gamemd
-
-// 0x5C4E90
-namespace gamemd {
-char MPCooperative::spawnUnits(int a2, void * Block, int a4, short a5, int a6, int a7, unsigned int * a8)
-{
-{
-    *a8 = 0;
-    if ( this->coopSaveFileName )
-  {
-    if ( Block )
-    {
-    if ( HIBYTE(a5) )
-    __3_YAXPAX_Z(Block);
-    }
-    return 1;
-  }
-    else
-  {
-    if ( Block && HIBYTE(a5) )
-    __3_YAXPAX_Z(Block);
-    return 0;
-  }
 }
 }
 } // namespace gamemd
@@ -3105,6 +3036,23 @@ int sub_5C1980()
 }
 } // namespace gamemd
 
+// 0x5C1D80
+namespace gamemd {
+char MPCooperative::Write(int a2)
+{
+{
+    char *v2;
+    if ( Game_PlayerCount == 2 )
+  {
+    v2 = this->coopSaveFileName;
+    if ( v2 )
+    String::AssignWideToChar(v2, *(char **)Game_PlayerInfoArray, *(char **)(Game_PlayerInfoArray + 4));
+  }
+    return ScenarioClass::MissionStubReturnZero2(a2);
+}
+}
+} // namespace gamemd
+
 // 0x5C21A0
 namespace gamemd {
 HWND MPCooperative::CheckReady(HWND hDlg)
@@ -3200,6 +3148,58 @@ namespace gamemd {
 int MPCooperative::COMStub_Ret2()
 {
 return 2;
+}
+} // namespace gamemd
+
+// 0x5C4670
+namespace gamemd {
+int MPCooperative::checkVictory()
+{
+{
+    int v2;
+    int v3;
+    int v5;
+    int v6;
+    int v7;
+    v2 = 0;
+    v3 = this->coopSaveFileName;
+    if ( !v3 )
+    return 0;
+    MPCooperative::GetMovieScore(v3, &v5);
+    Movie::GetState(this->coopSaveFileName, &v6);
+    if ( v5 == v6 )
+  {
+    Movie::GetSectionID(this->coopSaveFileName, &v7);
+    v2 = 1 << v7;
+    Debug::Log();
+  }
+    return v2;
+}
+}
+} // namespace gamemd
+
+// 0x5C4E90
+namespace gamemd {
+char MPCooperative::spawnUnits(int a2, void * Block, int a4, short a5, int a6, int a7, unsigned int * a8)
+{
+{
+    *a8 = 0;
+    if ( this->coopSaveFileName )
+  {
+    if ( Block )
+    {
+    if ( HIBYTE(a5) )
+    __3_YAXPAX_Z(Block);
+    }
+    return 1;
+  }
+    else
+  {
+    if ( Block && HIBYTE(a5) )
+    __3_YAXPAX_Z(Block);
+    return 0;
+  }
+}
 }
 } // namespace gamemd
 

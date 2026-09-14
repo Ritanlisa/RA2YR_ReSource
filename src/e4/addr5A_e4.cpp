@@ -2817,49 +2817,1477 @@ namespace gamemd {
 unsigned int * InitializePathData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// (v3 export truncated pseudocode — commented out; live version via get_context)
-// _DWORD *InitializePathData()
-// {
-//   int v0; // eax
-//   int v1; // ebp
-//   int v2; // eax
-//   int v3; // eax
-//   int v4; // ebp
-//   int v5; // eax
-//   rc_ptr_base *v6; // eax
-//   rc_ptr_base *v7; // eax
-//   rc_ptr_base *v8; // eax
-//   rc_ptr_base *v9; // eax
-//   rc_ptr_base *v10; // eax
-//   rc_ptr_base *v11; // eax
-//   rc_ptr_base *v12; // eax
-//   rc_ptr_base *v13; // eax
-//   rc_ptr_base *v14; // eax
-//   rc_ptr_base *v15; // eax
-//   rc_ptr_base *v16; // eax
-//   rc_ptr_base *v17; // eax
-//   rc_ptr_base *v18; // eax
-//   rc_ptr_base *v19; // eax
-//   rc_ptr_base *v20; // eax
-//   rc_ptr_base *v21; // eax
-//   rc_ptr_base *v22; // eax
-//   rc_ptr_base *v23; // eax
-//   rc_ptr_base *v24; // eax
-//   rc_ptr_base *v25; // eax
-//   rc_ptr_base *v26; // eax
-//   rc_ptr_base *v27; // eax
-//   rc_ptr_base *v28; // eax
-//   rc_ptr_base *v29; // eax
-//   rc_ptr_base *v30; // eax
-//   rc_ptr_base *v31; // eax
-//   rc_ptr_base *v32; // eax
-//   rc_ptr_base *v33; // eax
-//   rc_ptr_base *v34; // eax
-//   rc_ptr_base *v35; // eax
-//   rc_ptr_base *v36; // eax
-//   rc_ptr_base *v37; // eax
-//   rc_pt... [53007 chars total]
-// end truncated pseudocode
+_DWORD *InitializePathData()
+{
+  int v0; // eax
+  int v1; // ebp
+  int v2; // eax
+  int v3; // eax
+  int v4; // ebp
+  int v5; // eax
+  rc_ptr_base *v6; // eax
+  rc_ptr_base *v7; // eax
+  rc_ptr_base *v8; // eax
+  rc_ptr_base *v9; // eax
+  rc_ptr_base *v10; // eax
+  rc_ptr_base *v11; // eax
+  rc_ptr_base *v12; // eax
+  rc_ptr_base *v13; // eax
+  rc_ptr_base *v14; // eax
+  rc_ptr_base *v15; // eax
+  rc_ptr_base *v16; // eax
+  rc_ptr_base *v17; // eax
+  rc_ptr_base *v18; // eax
+  rc_ptr_base *v19; // eax
+  rc_ptr_base *v20; // eax
+  rc_ptr_base *v21; // eax
+  rc_ptr_base *v22; // eax
+  rc_ptr_base *v23; // eax
+  rc_ptr_base *v24; // eax
+  rc_ptr_base *v25; // eax
+  rc_ptr_base *v26; // eax
+  rc_ptr_base *v27; // eax
+  rc_ptr_base *v28; // eax
+  rc_ptr_base *v29; // eax
+  rc_ptr_base *v30; // eax
+  rc_ptr_base *v31; // eax
+  rc_ptr_base *v32; // eax
+  rc_ptr_base *v33; // eax
+  rc_ptr_base *v34; // eax
+  rc_ptr_base *v35; // eax
+  rc_ptr_base *v36; // eax
+  rc_ptr_base *v37; // eax
+  rc_ptr_base *v38; // eax
+  rc_ptr_base *v39; // eax
+  rc_ptr_base *v40; // eax
+  rc_ptr_base *v41; // eax
+  rc_ptr_base *v42; // eax
+  rc_ptr_base *v43; // eax
+  rc_ptr_base *v44; // eax
+  rc_ptr_base *v45; // eax
+  rc_ptr_base *v46; // eax
+  rc_ptr_base *v47; // eax
+  rc_ptr_base *v48; // eax
+  rc_ptr_base *v49; // eax
+  rc_ptr_base *v50; // eax
+  rc_ptr_base *v51; // eax
+  void *v52; // eax
+  TechnoTypeClass *vfptr; // eax
+  void *v54; // eax
+  TechnoTypeClass *v55; // eax
+  void *v56; // eax
+  TechnoTypeClass *v57; // eax
+  void *v58; // eax
+  TechnoTypeClass *v59; // eax
+  void *v60; // eax
+  TechnoTypeClass *v61; // eax
+  rc_ptr_base *v62; // eax
+  void *v63; // eax
+  TechnoTypeClass *v64; // eax
+  rc_ptr_base *v65; // eax
+  void *v66; // eax
+  TechnoTypeClass *v67; // eax
+  rc_ptr_base *v68; // eax
+  void *v69; // eax
+  TechnoTypeClass *v70; // eax
+  void *v71; // eax
+  TechnoTypeClass *v72; // eax
+  rc_ptr_base *v73; // eax
+  void *v74; // eax
+  TechnoTypeClass *v75; // eax
+  void *v76; // eax
+  TechnoTypeClass *v77; // eax
+  void *v78; // eax
+  TechnoTypeClass *v79; // eax
+  void *v80; // eax
+  TechnoTypeClass *v81; // eax
+  void *v82; // eax
+  TechnoTypeClass *v83; // eax
+  void *v84; // eax
+  TechnoTypeClass *v85; // eax
+  void *v86; // eax
+  TechnoTypeClass *v87; // eax
+  void *v88; // eax
+  TechnoTypeClass *v89; // eax
+  void *v90; // eax
+  rc_ptr_base *v91; // eax
+  void *v92; // eax
+  rc_ptr_base *v93; // eax
+  void *v94; // eax
+  rc_ptr_base *v95; // eax
+  void *v96; // eax
+  rc_ptr_base *v97; // eax
+  void *v98; // eax
+  rc_ptr_base *v99; // eax
+  void *v100; // eax
+  rc_ptr_base *v101; // eax
+  void *v102; // eax
+  TechnoTypeClass *v103; // eax
+  void *v104; // eax
+  TechnoTypeClass *v105; // eax
+  void *v106; // eax
+  TechnoTypeClass *v107; // eax
+  void *v108; // eax
+  TechnoTypeClass *v109; // eax
+  void *v110; // eax
+  TechnoTypeClass *v111; // eax
+  void *v112; // eax
+  rc_ptr_base *v113; // eax
+  rc_ptr_base *v114; // eax
+  rc_ptr_base *v115; // ecx
+  rc_ptr_base *v116; // edx
+  rc_ptr_base *v118; // [esp+14h] [ebp-20h] BYREF
+  int v119; // [esp+18h] [ebp-1Ch]
+  rc_ptr_base *v120; // [esp+1Ch] [ebp-18h] BYREF
+  int v121; // [esp+20h] [ebp-14h]
+  rc_ptr_base aP2; // [esp+24h] [ebp-10h] BYREF
+  int v123; // [esp+28h] [ebp-Ch]
+  rc_ptr_base aP1; // [esp+2Ch] [ebp-8h] BYREF
+  int v125; // [esp+30h] [ebp-4h]
+
+  v118 = (rc_ptr_base *)2;
+  dword_ABE378 = 0;
+  dword_ABE370[0] = 2;
+  v0 = __2_YAPAXI_Z(0x10u);
+  v1 = v0;
+  if ( v0 )
+  {
+    Array::ForEach(v0, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v2 = v1;
+  }
+  else
+  {
+    v2 = 0;
+  }
+  dword_ABE374 = (TechnoTypeClass *)v2;
+  *(_DWORD *)v2 = 0;
+  *(_DWORD *)(v2 + 4) = 0;
+  *(_DWORD *)&dword_ABE374->vtable0[8] = v118;
+  *(_DWORD *)&dword_ABE374->vtable0[12] = 1;
+  v118 = 0;
+  dword_ABE384 = 0;
+  dword_ABE37C = 2;
+  v3 = __2_YAPAXI_Z(0x10u);
+  v4 = v3;
+  if ( v3 )
+  {
+    Array::ForEach(v3, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v5 = v4;
+  }
+  else
+  {
+    v5 = 0;
+  }
+  dword_ABE380 = (TechnoTypeClass *)v5;
+  *(_DWORD *)v5 = v118;
+  *(_DWORD *)(v5 + 4) = 0;
+  *(_DWORD *)&dword_ABE380->vtable0[8] = 1;
+  LOWORD(v120) = 1;
+  *(_DWORD *)&dword_ABE380->vtable0[12] = 2;
+  HIWORD(v120) = 1;
+  dword_ABE390 = 0;
+  dword_ABE388 = 2;
+  v6 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v118 = v6;
+  if ( v6 )
+  {
+    Array::ForEach((int)v6, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v7 = v118;
+  }
+  else
+  {
+    v7 = 0;
+  }
+  dword_ABE38C = (TechnoTypeClass *)v7;
+  v7->vfptr = 0;
+  v7[1].vfptr = 0;
+  *(_DWORD *)&dword_ABE38C->vtable0[8] = v120;
+  *(_DWORD *)&dword_ABE38C->vtable0[12] = 3;
+  v118 = 0;
+  dword_ABE39C = 0;
+  dword_ABE394 = 2;
+  v8 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v8;
+  if ( v8 )
+  {
+    Array::ForEach((int)v8, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v9 = v120;
+  }
+  else
+  {
+    v9 = 0;
+  }
+  dword_ABE398 = (TechnoTypeClass *)v9;
+  v9->vfptr = v118;
+  v9[1].vfptr = 0;
+  *(_DWORD *)&dword_ABE398->vtable0[8] = 1;
+  *(_DWORD *)&dword_ABE398->vtable0[12] = 5;
+  v118 = 0;
+  dword_ABE3A8 = 0;
+  dword_ABE3A0 = 2;
+  v10 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v10;
+  if ( v10 )
+  {
+    Array::ForEach((int)v10, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v11 = v120;
+  }
+  else
+  {
+    v11 = 0;
+  }
+  dword_ABE3A4 = (TechnoTypeClass *)v11;
+  v11->vfptr = v118;
+  v11[1].vfptr = 0;
+  *(_DWORD *)&dword_ABE3A4->vtable0[8] = 0;
+  *(_DWORD *)&dword_ABE3A4->vtable0[12] = 6;
+  v118 = (rc_ptr_base *)1;
+  dword_ABE3B4 = 0;
+  dword_ABE3AC = 2;
+  v12 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v12;
+  if ( v12 )
+  {
+    Array::ForEach((int)v12, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v13 = v120;
+  }
+  else
+  {
+    v13 = 0;
+  }
+  dword_ABE3B0 = (TechnoTypeClass *)v13;
+  v13->vfptr = v118;
+  v13[1].vfptr = 0;
+  *(_DWORD *)&dword_ABE3B0->vtable0[8] = 65537;
+  *(_DWORD *)&dword_ABE3B0->vtable0[12] = 7;
+  v118 = (rc_ptr_base *)1;
+  dword_ABE3C0 = 0;
+  dword_ABE3B8 = 2;
+  v14 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v14;
+  if ( v14 )
+  {
+    Array::ForEach((int)v14, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v15 = v120;
+  }
+  else
+  {
+    v15 = 0;
+  }
+  dword_ABE3BC = (TechnoTypeClass *)v15;
+  v15->vfptr = v118;
+  v15[1].vfptr = (void *)1;
+  *(_DWORD *)&dword_ABE3BC->vtable0[8] = 65537;
+  *(_DWORD *)&dword_ABE3BC->vtable0[12] = 2;
+  v118 = (rc_ptr_base *)1;
+  dword_ABE3CC = 0;
+  dword_ABE3C4 = 2;
+  v16 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v16;
+  if ( v16 )
+  {
+    Array::ForEach((int)v16, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v17 = v120;
+  }
+  else
+  {
+    v17 = 0;
+  }
+  dword_ABE3C8 = (TechnoTypeClass *)v17;
+  v17->vfptr = v118;
+  v17[1].vfptr = (void *)1;
+  *(_DWORD *)&dword_ABE3C8->vtable0[8] = 65537;
+  *(_DWORD *)&dword_ABE3C8->vtable0[12] = 3;
+  v118 = (rc_ptr_base *)1;
+  dword_ABE3D8 = 0;
+  dword_ABE3D0 = 2;
+  v18 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v18;
+  if ( v18 )
+  {
+    Array::ForEach((int)v18, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v19 = v120;
+  }
+  else
+  {
+    v19 = 0;
+  }
+  dword_ABE3D4 = (TechnoTypeClass *)v19;
+  v19->vfptr = v118;
+  v19[1].vfptr = (void *)1;
+  *(_DWORD *)&dword_ABE3D4->vtable0[8] = 0x10000;
+  *(_DWORD *)&dword_ABE3D4->vtable0[12] = 4;
+  v118 = (rc_ptr_base *)1;
+  dword_ABE3E4 = 0;
+  dword_ABE3DC = 2;
+  v20 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v20;
+  if ( v20 )
+  {
+    Array::ForEach((int)v20, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v21 = v120;
+  }
+  else
+  {
+    v21 = 0;
+  }
+  dword_ABE3E0 = (TechnoTypeClass *)v21;
+  v21->vfptr = v118;
+  v21[1].vfptr = (void *)1;
+  *(_DWORD *)&dword_ABE3E0->vtable0[8] = 0;
+  *(_DWORD *)&dword_ABE3E0->vtable0[12] = 6;
+  v118 = (rc_ptr_base *)2;
+  dword_ABE3F0 = 0;
+  dword_ABE3E8 = 2;
+  v22 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v22;
+  if ( v22 )
+  {
+    Array::ForEach((int)v22, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v23 = v120;
+  }
+  else
+  {
+    v23 = 0;
+  }
+  dword_ABE3EC = (TechnoTypeClass *)v23;
+  v23->vfptr = v118;
+  v23[1].vfptr = (void *)1;
+  *(_DWORD *)&dword_ABE3EC->vtable0[8] = 65537;
+  *(_DWORD *)&dword_ABE3EC->vtable0[12] = 7;
+  v118 = (rc_ptr_base *)2;
+  dword_ABE3FC = 0;
+  dword_ABE3F4 = 2;
+  v24 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v24;
+  if ( v24 )
+  {
+    Array::ForEach((int)v24, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v25 = v120;
+  }
+  else
+  {
+    v25 = 0;
+  }
+  dword_ABE3F8 = (TechnoTypeClass *)v25;
+  v25->vfptr = v118;
+  v25[1].vfptr = (void *)1;
+  *(_DWORD *)&dword_ABE3F8->vtable0[8] = 0;
+  *(_DWORD *)&dword_ABE3F8->vtable0[12] = 0;
+  v118 = (rc_ptr_base *)1;
+  dword_ABE408 = 0;
+  dword_ABE400 = 2;
+  v26 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v26;
+  if ( v26 )
+  {
+    Array::ForEach((int)v26, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v27 = v120;
+  }
+  else
+  {
+    v27 = 0;
+  }
+  dword_ABE404 = (TechnoTypeClass *)v27;
+  v27->vfptr = v118;
+  v27[1].vfptr = (void *)2;
+  *(_DWORD *)&dword_ABE404->vtable0[8] = 131073;
+  *(_DWORD *)&dword_ABE404->vtable0[12] = 3;
+  v118 = (rc_ptr_base *)1;
+  dword_ABE414 = 0;
+  dword_ABE40C = 2;
+  v28 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v28;
+  if ( v28 )
+  {
+    Array::ForEach((int)v28, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v29 = v120;
+  }
+  else
+  {
+    v29 = 0;
+  }
+  dword_ABE410 = (TechnoTypeClass *)v29;
+  v29->vfptr = v118;
+  v29[1].vfptr = (void *)2;
+  *(_DWORD *)&dword_ABE410->vtable0[8] = 0x10000;
+  *(_DWORD *)&dword_ABE410->vtable0[12] = 4;
+  v118 = (rc_ptr_base *)1;
+  dword_ABE420 = 0;
+  dword_ABE418 = 2;
+  v30 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v30;
+  if ( v30 )
+  {
+    Array::ForEach((int)v30, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v31 = v120;
+  }
+  else
+  {
+    v31 = 0;
+  }
+  dword_ABE41C = (TechnoTypeClass *)v31;
+  v31->vfptr = v118;
+  v31[1].vfptr = (void *)2;
+  *(_DWORD *)&dword_ABE41C->vtable0[8] = 1;
+  *(_DWORD *)&dword_ABE41C->vtable0[12] = 5;
+  v118 = (rc_ptr_base *)1;
+  dword_ABE42C = 0;
+  dword_ABE424 = 2;
+  v32 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v32;
+  if ( v32 )
+  {
+    Array::ForEach((int)v32, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v33 = v120;
+  }
+  else
+  {
+    v33 = 0;
+  }
+  dword_ABE428 = (TechnoTypeClass *)v33;
+  v33->vfptr = v118;
+  v33[1].vfptr = (void *)2;
+  *(_DWORD *)&dword_ABE428->vtable0[8] = 65537;
+  *(_DWORD *)&dword_ABE428->vtable0[12] = 7;
+  v118 = (rc_ptr_base *)65538;
+  dword_ABE438 = 0;
+  dword_ABE430 = 2;
+  v34 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v34;
+  if ( v34 )
+  {
+    Array::ForEach((int)v34, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v35 = v120;
+  }
+  else
+  {
+    v35 = 0;
+  }
+  dword_ABE434 = (TechnoTypeClass *)v35;
+  v35->vfptr = v118;
+  v35[1].vfptr = (void *)3;
+  *(_DWORD *)&dword_ABE434->vtable0[8] = 0x10000;
+  *(_DWORD *)&dword_ABE434->vtable0[12] = 4;
+  v118 = (rc_ptr_base *)65537;
+  dword_ABE444 = 0;
+  dword_ABE43C = 2;
+  v36 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v36;
+  if ( v36 )
+  {
+    Array::ForEach((int)v36, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v37 = v120;
+  }
+  else
+  {
+    v37 = 0;
+  }
+  dword_ABE440 = (TechnoTypeClass *)v37;
+  v37->vfptr = v118;
+  v37[1].vfptr = (void *)3;
+  *(_DWORD *)&dword_ABE440->vtable0[8] = 1;
+  *(_DWORD *)&dword_ABE440->vtable0[12] = 5;
+  v118 = (rc_ptr_base *)65537;
+  dword_ABE450 = 0;
+  dword_ABE448 = 2;
+  v38 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v38;
+  if ( v38 )
+  {
+    Array::ForEach((int)v38, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v39 = v120;
+  }
+  else
+  {
+    v39 = 0;
+  }
+  dword_ABE44C = (TechnoTypeClass *)v39;
+  v39->vfptr = v118;
+  v39[1].vfptr = (void *)3;
+  *(_DWORD *)&dword_ABE44C->vtable0[8] = 0;
+  *(_DWORD *)&dword_ABE44C->vtable0[12] = 6;
+  v118 = (rc_ptr_base *)65537;
+  dword_ABE45C = 0;
+  dword_ABE454 = 2;
+  v40 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v40;
+  if ( v40 )
+  {
+    Array::ForEach((int)v40, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v41 = v120;
+  }
+  else
+  {
+    v41 = 0;
+  }
+  dword_ABE458 = (TechnoTypeClass *)v41;
+  v41->vfptr = v118;
+  v41[1].vfptr = (void *)4;
+  *(_DWORD *)&dword_ABE458->vtable0[8] = 1;
+  *(_DWORD *)&dword_ABE458->vtable0[12] = 5;
+  v118 = (rc_ptr_base *)0x10000;
+  dword_ABE468 = 0;
+  dword_ABE460 = 2;
+  v42 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v42;
+  if ( v42 )
+  {
+    Array::ForEach((int)v42, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v43 = v120;
+  }
+  else
+  {
+    v43 = 0;
+  }
+  dword_ABE464 = (TechnoTypeClass *)v43;
+  v43->vfptr = v118;
+  v43[1].vfptr = (void *)4;
+  *(_DWORD *)&dword_ABE464->vtable0[8] = 0;
+  *(_DWORD *)&dword_ABE464->vtable0[12] = 6;
+  v118 = (rc_ptr_base *)0x10000;
+  dword_ABE474 = 0;
+  dword_ABE46C = 2;
+  v44 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v44;
+  if ( v44 )
+  {
+    Array::ForEach((int)v44, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v45 = v120;
+  }
+  else
+  {
+    v45 = 0;
+  }
+  dword_ABE470 = (TechnoTypeClass *)v45;
+  v45->vfptr = v118;
+  v45[1].vfptr = (void *)4;
+  *(_DWORD *)&dword_ABE470->vtable0[8] = 65537;
+  *(_DWORD *)&dword_ABE470->vtable0[12] = 7;
+  v118 = (rc_ptr_base *)65537;
+  dword_ABE480 = 0;
+  dword_ABE478 = 2;
+  v46 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v46;
+  if ( v46 )
+  {
+    Array::ForEach((int)v46, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v47 = v120;
+  }
+  else
+  {
+    v47 = 0;
+  }
+  dword_ABE47C = (TechnoTypeClass *)v47;
+  v47->vfptr = v118;
+  v47[1].vfptr = (void *)5;
+  *(_DWORD *)&dword_ABE47C->vtable0[8] = 65537;
+  *(_DWORD *)&dword_ABE47C->vtable0[12] = 7;
+  v118 = (rc_ptr_base *)0x10000;
+  dword_ABE48C = 0;
+  dword_ABE484 = 2;
+  v48 = (rc_ptr_base *)__2_YAPAXI_Z(0x10u);
+  v120 = v48;
+  if ( v48 )
+  {
+    Array::ForEach((int)v48, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v49 = v120;
+  }
+  else
+  {
+    v49 = 0;
+  }
+  dword_ABE488 = (TechnoTypeClass *)v49;
+  v49->vfptr = v118;
+  v49[1].vfptr = (void *)6;
+  *(_DWORD *)&dword_ABE488->vtable0[8] = 65537;
+  LOWORD(aP2.vfptr) = 0;
+  *(_DWORD *)&dword_ABE488->vtable0[12] = 7;
+  HIWORD(aP2.vfptr) = 1;
+  v118 = 0;
+  dword_ABE498 = 0;
+  dword_ABE490 = 3;
+  v50 = (rc_ptr_base *)__2_YAPAXI_Z(0x18u);
+  v120 = v50;
+  if ( v50 )
+  {
+    Array::ForEach((int)v50, 8, 3, (int (__thiscall *)(int))Cell::Clear);
+    v51 = v120;
+  }
+  else
+  {
+    v51 = 0;
+  }
+  dword_ABE494 = (TechnoTypeClass *)v51;
+  v51->vfptr = v118;
+  v51[1].vfptr = 0;
+  *(_DWORD *)&dword_ABE494->vtable0[8] = 1;
+  *(_DWORD *)&dword_ABE494->vtable0[12] = 2;
+  dword_ABE494->uniqueId = (int)aP2.vfptr;
+  LOWORD(v118) = 0;
+  dword_ABE494->abstractFlags = 4;
+  HIWORD(v118) = 1;
+  v120 = (rc_ptr_base *)1;
+  dword_ABE4A4 = 0;
+  dword_ABE49C = 3;
+  v52 = (void *)__2_YAPAXI_Z(0x18u);
+  aP2.vfptr = v52;
+  if ( v52 )
+  {
+    Array::ForEach((int)v52, 8, 3, (int (__thiscall *)(int))Cell::Clear);
+    vfptr = (TechnoTypeClass *)aP2.vfptr;
+  }
+  else
+  {
+    vfptr = 0;
+  }
+  dword_ABE4A0 = vfptr;
+  *(_DWORD *)vfptr->vtable0 = v120;
+  *(_DWORD *)&vfptr->vtable0[4] = 2;
+  *(_DWORD *)&dword_ABE4A0->vtable0[8] = v118;
+  LOWORD(v118) = 0;
+  *(_DWORD *)&dword_ABE4A0->vtable0[12] = 4;
+  dword_ABE4A0->uniqueId = 0;
+  dword_ABE4A0->abstractFlags = 6;
+  HIWORD(v118) = 1;
+  v120 = 0;
+  dword_ABE4B0 = 0;
+  dword_ABE4A8 = 3;
+  v54 = (void *)__2_YAPAXI_Z(0x18u);
+  aP2.vfptr = v54;
+  if ( v54 )
+  {
+    Array::ForEach((int)v54, 8, 3, (int (__thiscall *)(int))Cell::Clear);
+    v55 = (TechnoTypeClass *)aP2.vfptr;
+  }
+  else
+  {
+    v55 = 0;
+  }
+  dword_ABE4AC = v55;
+  *(_DWORD *)v55->vtable0 = v120;
+  *(_DWORD *)&v55->vtable0[4] = 0;
+  *(_DWORD *)&dword_ABE4AC->vtable0[8] = v118;
+  LOWORD(v118) = 1;
+  *(_DWORD *)&dword_ABE4AC->vtable0[12] = 4;
+  dword_ABE4AC->uniqueId = 0;
+  dword_ABE4AC->abstractFlags = 6;
+  HIWORD(v118) = 0;
+  v120 = 0;
+  dword_ABE4BC = 0;
+  dword_ABE4B4 = 3;
+  v56 = (void *)__2_YAPAXI_Z(0x18u);
+  aP2.vfptr = v56;
+  if ( v56 )
+  {
+    Array::ForEach((int)v56, 8, 3, (int (__thiscall *)(int))Cell::Clear);
+    v57 = (TechnoTypeClass *)aP2.vfptr;
+  }
+  else
+  {
+    v57 = 0;
+  }
+  dword_ABE4B8 = v57;
+  *(_DWORD *)v57->vtable0 = v120;
+  *(_DWORD *)&v57->vtable0[4] = 0;
+  *(_DWORD *)&dword_ABE4B8->vtable0[8] = v118;
+  LOWORD(aP1.vfptr) = 0;
+  *(_DWORD *)&dword_ABE4B8->vtable0[12] = 2;
+  HIWORD(aP1.vfptr) = 0;
+  dword_ABE4B8->uniqueId = 0;
+  dword_ABE4B8->abstractFlags = 6;
+  v118 = (rc_ptr_base *)1;
+  v120 = 0;
+  dword_ABE4C8 = 0;
+  dword_ABE4C0 = 4;
+  v58 = (void *)__2_YAPAXI_Z(0x20u);
+  aP2.vfptr = v58;
+  if ( v58 )
+  {
+    Array::ForEach((int)v58, 8, 4, (int (__thiscall *)(int))Cell::Clear);
+    v59 = (TechnoTypeClass *)aP2.vfptr;
+  }
+  else
+  {
+    v59 = 0;
+  }
+  dword_ABE4C4 = v59;
+  *(_DWORD *)v59->vtable0 = v120;
+  *(_DWORD *)&v59->vtable0[4] = 0;
+  *(_DWORD *)&dword_ABE4C4->vtable0[8] = v118;
+  LOWORD(v118) = 1;
+  *(_DWORD *)&dword_ABE4C4->vtable0[12] = 2;
+  HIWORD(v118) = 1;
+  dword_ABE4C4->uniqueId = 0x10000;
+  LOWORD(v120) = 2;
+  dword_ABE4C4->abstractFlags = 4;
+  HIWORD(v120) = 2;
+  dword_ABE4C4->nextArrayIndex = (int)aP1.vfptr;
+  LOWORD(aP2.vfptr) = 2;
+  dword_ABE4C4->referenceCount = 6;
+  HIWORD(aP2.vfptr) = 0;
+  dword_ABE4D4 = 0;
+  dword_ABE4CC = 3;
+  v60 = (void *)__2_YAPAXI_Z(0x18u);
+  aP1.vfptr = v60;
+  if ( v60 )
+  {
+    Array::ForEach((int)v60, 8, 3, (int (__thiscall *)(int))Cell::Clear);
+    v61 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v61 = 0;
+  }
+  dword_ABE4D0 = v61;
+  *(rc_ptr_base *)v61->vtable0 = aP2;
+  *(_DWORD *)&v61->vtable0[4] = 1;
+  *(_DWORD *)&dword_ABE4D0->vtable0[8] = v120;
+  LOWORD(v120) = 1;
+  *(_DWORD *)&dword_ABE4D0->vtable0[12] = 3;
+  v62 = v118;
+  LOWORD(v118) = 2;
+  dword_ABE4D0->uniqueId = (int)v62;
+  HIWORD(v118) = 2;
+  dword_ABE4D0->abstractFlags = 5;
+  HIWORD(v120) = 1;
+  aP2.vfptr = (void *)65537;
+  dword_ABE4E0 = 0;
+  dword_ABE4D8 = 3;
+  v63 = (void *)__2_YAPAXI_Z(0x18u);
+  aP1.vfptr = v63;
+  if ( v63 )
+  {
+    Array::ForEach((int)v63, 8, 3, (int (__thiscall *)(int))Cell::Clear);
+    v64 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v64 = 0;
+  }
+  dword_ABE4DC = v64;
+  *(rc_ptr_base *)v64->vtable0 = aP2;
+  *(_DWORD *)&v64->vtable0[4] = 7;
+  *(_DWORD *)&dword_ABE4DC->vtable0[8] = v120;
+  LOWORD(v120) = 1;
+  *(_DWORD *)&dword_ABE4DC->vtable0[12] = 5;
+  v65 = v118;
+  LOWORD(v118) = 1;
+  dword_ABE4DC->uniqueId = (int)v65;
+  HIWORD(v118) = 1;
+  dword_ABE4DC->abstractFlags = 3;
+  HIWORD(v120) = 1;
+  aP2.vfptr = (void *)2;
+  dword_ABE4EC = 0;
+  dword_ABE4E4 = 3;
+  v66 = (void *)__2_YAPAXI_Z(0x18u);
+  aP1.vfptr = v66;
+  if ( v66 )
+  {
+    Array::ForEach((int)v66, 8, 3, (int (__thiscall *)(int))Cell::Clear);
+    v67 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v67 = 0;
+  }
+  dword_ABE4E8 = v67;
+  *(rc_ptr_base *)v67->vtable0 = aP2;
+  *(_DWORD *)&v67->vtable0[4] = 1;
+  *(_DWORD *)&dword_ABE4E8->vtable0[8] = v120;
+  LOWORD(v120) = 2;
+  *(_DWORD *)&dword_ABE4E8->vtable0[12] = 7;
+  v68 = v118;
+  LOWORD(v118) = 2;
+  dword_ABE4E8->uniqueId = (int)v68;
+  HIWORD(v118) = 2;
+  dword_ABE4E8->abstractFlags = 5;
+  HIWORD(v120) = 0;
+  aP2.vfptr = (void *)65537;
+  dword_ABE4F8 = 0;
+  dword_ABE4F0 = 3;
+  v69 = (void *)__2_YAPAXI_Z(0x18u);
+  aP1.vfptr = v69;
+  if ( v69 )
+  {
+    Array::ForEach((int)v69, 8, 3, (int (__thiscall *)(int))Cell::Clear);
+    v70 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v70 = 0;
+  }
+  dword_ABE4F4 = v70;
+  *(rc_ptr_base *)v70->vtable0 = aP2;
+  *(_DWORD *)&v70->vtable0[4] = 7;
+  *(_DWORD *)&dword_ABE4F4->vtable0[8] = v120;
+  *(_DWORD *)&dword_ABE4F4->vtable0[12] = 1;
+  dword_ABE4F4->uniqueId = (int)v118;
+  LOWORD(v118) = 2;
+  dword_ABE4F4->abstractFlags = 3;
+  HIWORD(v118) = 0;
+  v120 = (rc_ptr_base *)65537;
+  aP2.vfptr = (void *)65537;
+  dword_ABE504 = 0;
+  dword_ABE4FC = 4;
+  v71 = (void *)__2_YAPAXI_Z(0x20u);
+  aP1.vfptr = v71;
+  if ( v71 )
+  {
+    Array::ForEach((int)v71, 8, 4, (int (__thiscall *)(int))Cell::Clear);
+    v72 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v72 = 0;
+  }
+  dword_ABE500 = v72;
+  *(rc_ptr_base *)v72->vtable0 = aP2;
+  *(_DWORD *)&v72->vtable0[4] = 7;
+  *(_DWORD *)&dword_ABE500->vtable0[8] = v120;
+  LOWORD(v120) = 3;
+  *(_DWORD *)&dword_ABE500->vtable0[12] = 5;
+  v73 = v118;
+  LOWORD(v118) = 0;
+  dword_ABE500->uniqueId = (int)v73;
+  HIWORD(v118) = 2;
+  dword_ABE500->abstractFlags = 1;
+  HIWORD(v120) = 2;
+  dword_ABE500->nextArrayIndex = 131074;
+  LOWORD(aP2.vfptr) = 3;
+  dword_ABE500->referenceCount = 3;
+  HIWORD(aP2.vfptr) = 0;
+  dword_ABE510 = 0;
+  dword_ABE508 = 3;
+  v74 = (void *)__2_YAPAXI_Z(0x18u);
+  aP1.vfptr = v74;
+  if ( v74 )
+  {
+    Array::ForEach((int)v74, 8, 3, (int (__thiscall *)(int))Cell::Clear);
+    v75 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v75 = 0;
+  }
+  dword_ABE50C = v75;
+  *(rc_ptr_base *)v75->vtable0 = aP2;
+  *(_DWORD *)&v75->vtable0[4] = 1;
+  *(_DWORD *)&dword_ABE50C->vtable0[8] = v120;
+  LOWORD(v120) = 1;
+  *(_DWORD *)&dword_ABE50C->vtable0[12] = 2;
+  HIWORD(v120) = 2;
+  dword_ABE50C->uniqueId = (int)v118;
+  LOWORD(aP2.vfptr) = 3;
+  dword_ABE50C->abstractFlags = 6;
+  HIWORD(aP2.vfptr) = 0;
+  dword_ABE51C = 0;
+  dword_ABE514 = 2;
+  v76 = (void *)__2_YAPAXI_Z(0x10u);
+  aP1.vfptr = v76;
+  if ( v76 )
+  {
+    Array::ForEach((int)v76, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v77 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v77 = 0;
+  }
+  dword_ABE518 = v77;
+  *(rc_ptr_base *)v77->vtable0 = aP2;
+  *(_DWORD *)&v77->vtable0[4] = 1;
+  *(_DWORD *)&dword_ABE518->vtable0[8] = v120;
+  LOWORD(v120) = 1;
+  *(_DWORD *)&dword_ABE518->vtable0[12] = 5;
+  HIWORD(v120) = 2;
+  aP2.vfptr = (void *)3;
+  dword_ABE528 = 0;
+  dword_ABE520 = 2;
+  v78 = (void *)__2_YAPAXI_Z(0x10u);
+  aP1.vfptr = v78;
+  if ( v78 )
+  {
+    Array::ForEach((int)v78, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v79 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v79 = 0;
+  }
+  dword_ABE524 = v79;
+  *(rc_ptr_base *)v79->vtable0 = aP2;
+  *(_DWORD *)&v79->vtable0[4] = 1;
+  *(_DWORD *)&dword_ABE524->vtable0[8] = v120;
+  LOWORD(v120) = 1;
+  *(_DWORD *)&dword_ABE524->vtable0[12] = 5;
+  HIWORD(v120) = 2;
+  aP2.vfptr = (void *)3;
+  dword_ABE534 = 0;
+  dword_ABE52C = 2;
+  v80 = (void *)__2_YAPAXI_Z(0x10u);
+  aP1.vfptr = v80;
+  if ( v80 )
+  {
+    Array::ForEach((int)v80, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v81 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v81 = 0;
+  }
+  dword_ABE530 = v81;
+  *(rc_ptr_base *)v81->vtable0 = aP2;
+  *(_DWORD *)&v81->vtable0[4] = 1;
+  *(_DWORD *)&dword_ABE530->vtable0[8] = v120;
+  LOWORD(v120) = 1;
+  *(_DWORD *)&dword_ABE530->vtable0[12] = 5;
+  HIWORD(v120) = 2;
+  aP2.vfptr = (void *)3;
+  dword_ABE540 = 0;
+  dword_ABE538 = 2;
+  v82 = (void *)__2_YAPAXI_Z(0x10u);
+  aP1.vfptr = v82;
+  if ( v82 )
+  {
+    Array::ForEach((int)v82, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v83 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v83 = 0;
+  }
+  dword_ABE53C = v83;
+  *(rc_ptr_base *)v83->vtable0 = aP2;
+  *(_DWORD *)&v83->vtable0[4] = 1;
+  *(_DWORD *)&dword_ABE53C->vtable0[8] = v120;
+  LOWORD(v120) = 1;
+  *(_DWORD *)&dword_ABE53C->vtable0[12] = 5;
+  HIWORD(v120) = 1;
+  aP2.vfptr = (void *)2;
+  dword_ABE54C = 0;
+  dword_ABE544 = 2;
+  v84 = (void *)__2_YAPAXI_Z(0x10u);
+  aP1.vfptr = v84;
+  if ( v84 )
+  {
+    Array::ForEach((int)v84, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v85 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v85 = 0;
+  }
+  dword_ABE548 = v85;
+  *(rc_ptr_base *)v85->vtable0 = aP2;
+  *(_DWORD *)&v85->vtable0[4] = 1;
+  *(_DWORD *)&dword_ABE548->vtable0[8] = v120;
+  LOWORD(v120) = 1;
+  *(_DWORD *)&dword_ABE548->vtable0[12] = 5;
+  HIWORD(v120) = 0;
+  aP2.vfptr = (void *)1;
+  dword_ABE558 = 0;
+  dword_ABE550 = 2;
+  v86 = (void *)__2_YAPAXI_Z(0x10u);
+  aP1.vfptr = v86;
+  if ( v86 )
+  {
+    Array::ForEach((int)v86, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v87 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v87 = 0;
+  }
+  dword_ABE554 = v87;
+  *(rc_ptr_base *)v87->vtable0 = aP2;
+  *(_DWORD *)&v87->vtable0[4] = 1;
+  *(_DWORD *)&dword_ABE554->vtable0[8] = v120;
+  LOWORD(v120) = 1;
+  *(_DWORD *)&dword_ABE554->vtable0[12] = 5;
+  HIWORD(v120) = 0;
+  aP2.vfptr = (void *)1;
+  dword_ABE564 = 0;
+  dword_ABE55C = 2;
+  v88 = (void *)__2_YAPAXI_Z(0x10u);
+  aP1.vfptr = v88;
+  if ( v88 )
+  {
+    Array::ForEach((int)v88, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v89 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v89 = 0;
+  }
+  dword_ABE560 = v89;
+  *(rc_ptr_base *)v89->vtable0 = aP2;
+  *(_DWORD *)&v89->vtable0[4] = 1;
+  *(_DWORD *)&dword_ABE560->vtable0[8] = v120;
+  LOWORD(aP2.vfptr) = 1;
+  *(_DWORD *)&dword_ABE560->vtable0[12] = 5;
+  HIWORD(aP2.vfptr) = 2;
+  dword_ABE570 = 0;
+  dword_ABE568 = (IUnknown *)1;
+  v90 = (void *)__2_YAPAXI_Z(8u);
+  aP1.vfptr = v90;
+  if ( v90 )
+  {
+    Array::ForEach((int)v90, 8, 1, (int (__thiscall *)(int))Cell::Clear);
+    v91 = (rc_ptr_base *)aP1.vfptr;
+  }
+  else
+  {
+    v91 = 0;
+  }
+  dword_ABE56C = (int)v91;
+  v91->vfptr = aP2.vfptr;
+  v91[1].vfptr = (void *)5;
+  aP2.vfptr = (void *)65537;
+  dword_ABE57C = 0;
+  dword_ABE574 = (IUnknown *)1;
+  v92 = (void *)__2_YAPAXI_Z(8u);
+  aP1.vfptr = v92;
+  if ( v92 )
+  {
+    Array::ForEach((int)v92, 8, 1, (int (__thiscall *)(int))Cell::Clear);
+    v93 = (rc_ptr_base *)aP1.vfptr;
+  }
+  else
+  {
+    v93 = 0;
+  }
+  dword_ABE578 = (int)v93;
+  v93->vfptr = aP2.vfptr;
+  v93[1].vfptr = (void *)5;
+  aP2.vfptr = (void *)65537;
+  dword_ABE588 = 0;
+  dword_ABE580 = (IUnknown *)1;
+  v94 = (void *)__2_YAPAXI_Z(8u);
+  aP1.vfptr = v94;
+  if ( v94 )
+  {
+    Array::ForEach((int)v94, 8, 1, (int (__thiscall *)(int))Cell::Clear);
+    v95 = (rc_ptr_base *)aP1.vfptr;
+  }
+  else
+  {
+    v95 = 0;
+  }
+  dword_ABE584 = (int)v95;
+  v95->vfptr = aP2.vfptr;
+  v95[1].vfptr = (void *)5;
+  aP2.vfptr = (void *)3;
+  dword_ABE594 = 0;
+  dword_ABE58C = (IUnknown *)1;
+  v96 = (void *)__2_YAPAXI_Z(8u);
+  aP1.vfptr = v96;
+  if ( v96 )
+  {
+    Array::ForEach((int)v96, 8, 1, (int (__thiscall *)(int))Cell::Clear);
+    v97 = (rc_ptr_base *)aP1.vfptr;
+  }
+  else
+  {
+    v97 = 0;
+  }
+  dword_ABE590 = (int)v97;
+  v97->vfptr = aP2.vfptr;
+  v97[1].vfptr = (void *)1;
+  aP2.vfptr = (void *)2;
+  dword_ABE5A0 = 0;
+  dword_ABE598 = (IUnknown *)1;
+  v98 = (void *)__2_YAPAXI_Z(8u);
+  aP1.vfptr = v98;
+  if ( v98 )
+  {
+    Array::ForEach((int)v98, 8, 1, (int (__thiscall *)(int))Cell::Clear);
+    v99 = (rc_ptr_base *)aP1.vfptr;
+  }
+  else
+  {
+    v99 = 0;
+  }
+  dword_ABE59C = (int)v99;
+  v99->vfptr = aP2.vfptr;
+  v99[1].vfptr = (void *)1;
+  aP2.vfptr = (void *)2;
+  dword_ABE5AC = 0;
+  dword_ABE5A4 = (IUnknown *)1;
+  v100 = (void *)__2_YAPAXI_Z(8u);
+  aP1.vfptr = v100;
+  if ( v100 )
+  {
+    Array::ForEach((int)v100, 8, 1, (int (__thiscall *)(int))Cell::Clear);
+    v101 = (rc_ptr_base *)aP1.vfptr;
+  }
+  else
+  {
+    v101 = 0;
+  }
+  dword_ABE5A8 = (int)v101;
+  v101->vfptr = aP2.vfptr;
+  v101[1].vfptr = (void *)1;
+  v120 = (rc_ptr_base *)65537;
+  aP2.vfptr = (void *)4;
+  dword_ABE5B8 = 0;
+  dword_ABE5B0 = 2;
+  v102 = (void *)__2_YAPAXI_Z(0x10u);
+  aP1.vfptr = v102;
+  if ( v102 )
+  {
+    Array::ForEach((int)v102, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v103 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v103 = 0;
+  }
+  dword_ABE5B4 = v103;
+  *(rc_ptr_base *)v103->vtable0 = aP2;
+  *(_DWORD *)&v103->vtable0[4] = 1;
+  *(_DWORD *)&dword_ABE5B4->vtable0[8] = v120;
+  LOWORD(v120) = 1;
+  *(_DWORD *)&dword_ABE5B4->vtable0[12] = 5;
+  HIWORD(v120) = 3;
+  v119 = 5;
+  aP2.vfptr = (void *)2;
+  dword_ABE5C4 = 0;
+  dword_ABE5BC = 2;
+  v104 = (void *)__2_YAPAXI_Z(0x10u);
+  aP1.vfptr = v104;
+  if ( v104 )
+  {
+    Array::ForEach((int)v104, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v105 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v105 = 0;
+  }
+  dword_ABE5C0 = v105;
+  *(rc_ptr_base *)v105->vtable0 = aP2;
+  *(_DWORD *)&v105->vtable0[4] = 1;
+  *(_DWORD *)&dword_ABE5C0->vtable0[8] = v120;
+  LOWORD(v120) = 3;
+  *(_DWORD *)&dword_ABE5C0->vtable0[12] = v119;
+  dword_ABE5C8 = 0;
+  dword_ABE5CC = 0;
+  HIWORD(v120) = 0;
+  aP2.vfptr = 0;
+  dword_ABE5DC = 0;
+  dword_ABE5D4 = 2;
+  v106 = (void *)__2_YAPAXI_Z(0x10u);
+  aP1.vfptr = v106;
+  if ( v106 )
+  {
+    Array::ForEach((int)v106, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v107 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v107 = 0;
+  }
+  dword_ABE5D8 = v107;
+  *(rc_ptr_base *)v107->vtable0 = aP2;
+  *(_DWORD *)&v107->vtable0[4] = 6;
+  *(_DWORD *)&dword_ABE5D8->vtable0[8] = v120;
+  LOWORD(v120) = 3;
+  *(_DWORD *)&dword_ABE5D8->vtable0[12] = 2;
+  HIWORD(v120) = 0;
+  aP2.vfptr = 0;
+  dword_ABE5E8 = 0;
+  dword_ABE5E0 = 2;
+  v108 = (void *)__2_YAPAXI_Z(0x10u);
+  aP1.vfptr = v108;
+  if ( v108 )
+  {
+    Array::ForEach((int)v108, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v109 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v109 = 0;
+  }
+  dword_ABE5E4 = v109;
+  *(rc_ptr_base *)v109->vtable0 = aP2;
+  *(_DWORD *)&v109->vtable0[4] = 6;
+  *(_DWORD *)&dword_ABE5E4->vtable0[8] = v120;
+  LOWORD(v120) = 3;
+  *(_DWORD *)&dword_ABE5E4->vtable0[12] = 2;
+  HIWORD(v120) = 0;
+  aP2.vfptr = 0;
+  dword_ABE5F4 = 0;
+  dword_ABE5EC = 2;
+  v110 = (void *)__2_YAPAXI_Z(0x10u);
+  aP1.vfptr = v110;
+  if ( v110 )
+  {
+    Array::ForEach((int)v110, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v111 = (TechnoTypeClass *)aP1.vfptr;
+  }
+  else
+  {
+    v111 = 0;
+  }
+  dword_ABE5F0 = v111;
+  *(rc_ptr_base *)v111->vtable0 = aP2;
+  *(_DWORD *)&v111->vtable0[4] = 6;
+  *(_DWORD *)&dword_ABE5F0->vtable0[8] = v120;
+  LOWORD(v120) = 3;
+  *(_DWORD *)&dword_ABE5F0->vtable0[12] = 2;
+  HIWORD(v120) = 0;
+  aP2.vfptr = 0;
+  dword_ABE600 = 0;
+  dword_ABE5F8 = 2;
+  v112 = (void *)__2_YAPAXI_Z(0x10u);
+  aP1.vfptr = v112;
+  if ( v112 )
+  {
+    Array::ForEach((int)v112, 8, 2, (int (__thiscall *)(int))Cell::Clear);
+    v113 = (rc_ptr_base *)aP1.vfptr;
+  }
+  else
+  {
+    v113 = 0;
+  }
+  dword_ABE5FC = (int)v113;
+  v113->vfptr = aP2.vfptr;
+  v113[1].vfptr = (void *)6;
+  LOWORD(aP1.vfptr) = 2;
+  *(_DWORD *)(dword_ABE5FC + 8) = v120;
+  HIWORD(aP1.vfptr) = 0;
+  *(_DWORD *)(dword_ABE5FC + 12) = 2;
+  v114 = (rc_ptr_base *)aP1.vfptr;
+  aP1.vfptr = 0;
+  aP2.vfptr = v114;
+  v123 = 2;
+  v125 = 6;
+  WaypointPath::Constructor(dword_ABE604, &aP1, &aP2);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 1, 0);
+  v121 = 2;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 6;
+  WaypointPath::Constructor(dword_ABE610, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v121 = 2;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 6;
+  WaypointPath::Constructor(dword_ABE61C, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v121 = 2;
+  v115 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 6;
+  v118 = v115;
+  WaypointPath::Constructor(dword_ABE628, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 0);
+  v123 = 6;
+  ListNode::Alloc(dword_ABE634, &aP2);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 0);
+  v123 = 6;
+  ListNode::Alloc(dword_ABE640, &aP2);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 1);
+  v123 = 6;
+  ListNode::Alloc(dword_ABE64C, &aP2);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 2, 0);
+  v123 = 2;
+  ListNode::Alloc(dword_ABE658, &aP2);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 1, 0);
+  v123 = 2;
+  ListNode::Alloc(dword_ABE664, &aP2);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 1, 0);
+  v123 = 2;
+  ListNode::Alloc(dword_ABE670, &aP2);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 3, 1);
+  v121 = 2;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 6;
+  WaypointPath::Constructor(dword_ABE67C, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 3, 0);
+  v121 = 2;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 1);
+  v119 = 6;
+  WaypointPath::Constructor(dword_ABE688, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  dword_ABE694 = 0;
+  dword_ABE698 = 0;
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 3, 3);
+  v121 = 3;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v119 = 7;
+  WaypointPath::Constructor(dword_ABE6A0, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 3, 3);
+  v121 = 3;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v119 = 7;
+  WaypointPath::Constructor(dword_ABE6AC, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v116 = *(rc_ptr_base **)CellStruct::Set(&aP1, 3, 3);
+  v121 = 3;
+  v120 = v116;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v119 = 7;
+  WaypointPath::Constructor(dword_ABE6B8, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 3, 3);
+  v121 = 3;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v119 = 7;
+  WaypointPath::Constructor(dword_ABE6C4, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 2, 2);
+  v121 = 3;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v119 = 7;
+  WaypointPath::Constructor(dword_ABE6D0, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 1, 1);
+  v121 = 3;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v119 = 7;
+  WaypointPath::Constructor(dword_ABE6DC, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 1, 1);
+  v121 = 3;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v119 = 7;
+  WaypointPath::Constructor(dword_ABE6E8, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 1, 1);
+  v123 = 7;
+  ListNode::Alloc(dword_ABE6F4, &aP2);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 1, 1);
+  v123 = 7;
+  ListNode::Alloc(dword_ABE700, &aP2);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 1, 1);
+  v123 = 7;
+  ListNode::Alloc(dword_ABE70C, &aP2);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 3, 3);
+  v123 = 3;
+  ListNode::Alloc(dword_ABE718, &aP2);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 1, 2);
+  v123 = 3;
+  ListNode::Alloc(dword_ABE724, &aP2);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 2, 2);
+  v123 = 3;
+  ListNode::Alloc(dword_ABE730, &aP2);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 4, 2);
+  v121 = 3;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v119 = 7;
+  WaypointPath::Constructor(dword_ABE73C, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 2, 4);
+  v121 = 3;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v119 = 7;
+  WaypointPath::Constructor(dword_ABE748, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  dword_ABE754 = 0;
+  dword_ABE758 = 0;
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 3);
+  v121 = 4;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 0;
+  WaypointPath::Constructor(dword_ABE760, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 3);
+  v121 = 4;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 0;
+  WaypointPath::Constructor(dword_ABE76C, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 3);
+  v121 = 4;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 0;
+  WaypointPath::Constructor(dword_ABE778, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 3);
+  v121 = 4;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 0;
+  WaypointPath::Constructor(dword_ABE784, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 2);
+  v121 = 4;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 0;
+  WaypointPath::Constructor(dword_ABE790, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 1);
+  v121 = 4;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 0;
+  WaypointPath::Constructor(dword_ABE79C, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v121 = 4;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 0;
+  WaypointPath::Constructor(dword_ABE7A8, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v121 = 4;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 0;
+  WaypointPath::Constructor(dword_ABE7B4, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 3);
+  v123 = 4;
+  ListNode::Alloc(dword_ABE7C0, &aP2);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 2);
+  v123 = 4;
+  ListNode::Alloc(dword_ABE7CC, &aP2);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 2);
+  v123 = 4;
+  ListNode::Alloc(dword_ABE7D8, &aP2);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 0);
+  v123 = 0;
+  ListNode::Alloc(dword_ABE7E4, &aP2);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 0);
+  v123 = 0;
+  ListNode::Alloc(dword_ABE7F0, &aP2);
+  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 0);
+  v123 = 0;
+  ListNode::Alloc(dword_ABE7FC, &aP2);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 3);
+  v121 = 4;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 0);
+  v119 = 0;
+  WaypointPath::Constructor(dword_ABE808, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 1, 3);
+  v121 = 4;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 0;
+  WaypointPath::Constructor(dword_ABE814, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  dword_ABE820 = 0;
+  dword_ABE824 = 0;
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v121 = 2;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 6;
+  WaypointPath::Constructor(dword_ABE82C, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v121 = 2;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 6;
+  WaypointPath::Constructor(dword_ABE838, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v121 = 4;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 0;
+  WaypointPath::Constructor(dword_ABE844, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v121 = 4;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 0;
+  WaypointPath::Constructor(dword_ABE850, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v121 = 2;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 6;
+  WaypointPath::Constructor(dword_ABE85C, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v121 = 2;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 6;
+  WaypointPath::Constructor(dword_ABE868, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v121 = 4;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 0;
+  WaypointPath::Constructor(dword_ABE874, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v121 = 4;
+  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v119 = 0;
+  return WaypointPath::Constructor(dword_ABE880, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
+}
+
 }
 } // namespace gamemd
 

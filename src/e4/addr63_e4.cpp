@@ -760,6 +760,8 @@ void __thiscall sub_631F30(PixelFXClass *this)
 // 0x632A70
 namespace ra2 {
 namespace game {
+int ObjectClass::sub_632A70(int a2, int a3, ObjectClass * aP3)
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_632A70(ObjectClass *this, int a2, int a3, ObjectClass *aP3)
 {
@@ -770,6 +772,7 @@ int __thiscall sub_632A70(ObjectClass *this, int a2, int a3, ObjectClass *aP3)
   LOBYTE(result) = *(_DWORD *)this->__pad_0 | 1; /*0x632a8c*/
   *(_DWORD *)this->__pad_0 = result; /*0x632a8e*/
   return result; /*0x632a90*/
+}
 }
 } // namespace game
 } // namespace ra2

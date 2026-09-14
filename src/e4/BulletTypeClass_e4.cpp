@@ -576,16 +576,6 @@ int __stdcall BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 }
 }
 
-// 0x46C820
-int BulletTypeClass::GetWarhead(int a2, int a3)
-{
-    int result;
-    result = a2;
-    if ( a2 == this->ROT )
-        this->ROT = 0;
-    return result;
-}
-
 // 0x46C890
 BulletTypeClass * BulletTypeClass::ddtor(char a2)
 {
@@ -904,6 +894,16 @@ int BulletTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   a2[2] = 1610654892;
   a2[3] = -1252326136;
   return 0;
+}
+
+// 0x46C820
+int BulletTypeClass::GetWarhead(int a2, int a3)
+{
+    int result;
+    result = a2;
+    if ( a2 == this->ROT )
+        this->ROT = 0;
+    return result;
 }
 
 // 0x46C850
