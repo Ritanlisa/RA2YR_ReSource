@@ -146,13 +146,14 @@ python tools/mcp_translate_server.py --http 13399
 
 ## 地址对应现状（2026-09-14 G8 会话后）
 
-- 函数注解审计：matched **10,071** / missing with known address **0** /
-  addr mismatch **0** / unknown in signals **1,702**（helper/别名形态，翻译时甄别）。
+- 函数注解审计：matched **9,831** / missing with known address **0** /
+  addr mismatch **6**（同名函数地址歧义挂账，G9 波 2 记录）/ unknown in signals
+  **1,706**（helper/别名形态，翻译时甄别）。
 - 全局变量注解审计：annotated **13,582** / missing **0**。
   审计器已跳过 `[IDA decompile]` 伪码块、inline ASM 操作数，以及**已在别处
   有注解声明的同名命中**（G8 后两遍扫描——舰队译文体保留的 IDA 局部声明
   `CHAR Buffer[1024];` 影射已注解全局，无注解义务）。
-- `signals.json` 当前 MCP completed **10,350** / pending **6,541**；
+- `signals.json` 当前 MCP completed **11,665** / pending **4,624**（G9 后）；
   `_by_name` 与主表函数名集合一致，0 missing / 0 extra / 0 name conflicts。
 - `member_lookup.json` 1,304 类（G8 后）；BuildingTypeClass 3800 区段已按
   IDA til 重排，get_context 不再对该区段发出已知坏区警告。

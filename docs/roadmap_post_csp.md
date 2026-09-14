@@ -4,10 +4,16 @@
 > 本文档是此基线上的完整后续工作分解。前情：AGENTS.md「最近完成」各条目、
 > `docs/coverage.md`、memory `type-infer-oop-rebuild-roadmap`。
 >
-> **执行状态首查表（2026-09-14 G8 会话更新：证据补全 + 471 桶全量舰队波 +2,026）**：
+> **执行状态首查表（2026-09-14 G9 会话更新：证据补全 RTTI 容器族 + 舰队两波 +1,309）**：
 >
 > | 任务 | 状态 | 摘要 |
 > |---|---|---|
+> | **G9 证据补全** | ✅ **完成（2026-09-14，提交 5494bf60 + 重锚，IDA 全程离线）** | **RTTI 容器族回填 76 类 306 成员**（owner 考古链 addr→vtable_signatures→rtti_vtable_class 离线贯通；证据=RTTI vtable 家族统一/vt-install 体内证据/til 短名别名，继承层级取最派生；三重冲突守卫 member_lookup 既有/til 语义名/class_layouts 父链）；**signals._member_by_name 全量同步 +814 名**（修复 TypeList::Count 解析到全局 0xB79BE0 的 resolver fallback bug——G2 时代只进 member_lookup 的类从此可验证）；**vt_ 全局 +23**（RTTI 主表地址直读，vftable-ref 主根因）；DataGlobal +4；til 语义 +7 |
+> | **G9 舰队修复五连** | ✅ 同上提交 | ①**THIS_CAST_PAREN G7 双括号 bug**（`*(CAST *)(this + N)` 单括号形态从未匹配——residual-this-cast 696 的真根因）；②**foreign-receiver 旁路+逆映射**（缓存接收者命名 Block/a1 → IDA 侧成员事件恒 0，翻译必须无 this-> token——G6-G8 gap2 低 PASS 率隐藏成分）；③hoist 双变体仲裁（no-hoist alt 经 swap_body 直驱）；④memory-chain 词汇；⑤raw-this-residue 守卫精确化（deref 上下文追踪）；g_by_addr 无尺寸数组正则（G8 遗留）。试点 MSPCXAnim 36/38、TypeList 70/71（修复后 100%） |
+> | **G9 OO refresh** | ✅ rewritten 5,684 / unmapped 5,365；9,802 已译记录字节级保留（5494bf60） | 同上提交 |
+> | **G9 舰队波 1** | ✅ **completed 10,456 → 11,591（+1,235 全 CFG 验证，提交 ffedee1a + 重锚）** | 544 桶全量直驱 48.5 分钟（含试点）；6 括号坏块 HEAD 外科恢复（swap_body 吃外层闭合的根因修复 = deficit 加固）；波后注解 6 补齐、一致性 69/3 基线 |
+> | **G9 舰队波 2 + 外科轮** | ✅ **completed 11,591 → 11,665（+74，提交 8c3c3be5 + 重锚）** | sigfix2 def 参数外科 84 + defix free-this 下划线 def 成员化 54（thunk 族）+ v3 截断占位块 ida_cache 重建 7（53 无缓存=v4 截断不播种留待 IDA 回线）；波后注解 15 补齐（6 mismatch=同名函数地址歧义挂账） |
+> | **G9 后续队列** | 🔴 | 剩余 4,624 pending 构成：too-long 1,771（语义翻译/分块）+ raw-this-residue ~525（真类无名区 A1/B4）+ **FAIL-recycle ~350**（do/while+LABEL 复杂体，规则生成器天花板，波 1/2 实证）+ vftable-ref 141（模板嵌套渲染/非 this 目标长尾）+ hash-type 144 + ternary 109 + 截断 53 + param-mismatch 残余 ~70 |
 > | **G8 证据补全** | ✅ **完成（2026-09-14，提交 b18839c2 + 重锚）** | **全局 dry-scan 体系**（.omo/g8_dryscan.py：全部 pending 块 translate() 试生成 + skip 归因聚合）；**vtable 槽位 +65/35 类**（仅主表 col_offset==0 直读 + 函数名须属本类或 class_layouts 祖先链；56 诚实拒绝；2 非法标识符名剔除）；**47 全局**（使用形态类型化：字符串实参→unsigned char[]/标量算术→int/索引→int[4]/字节→char/RTDynamicCast→void*；stru_815F54 成员访问型移除保诚实 skip）；**14 til 语义成员**（InfantryClass Type@1728 等；field_*/__pad_* 按 G7 政策跳过）；槽位头声明同步 65 处（G6 变参先例）；**裁决：RulesClass/SessionClass 等 44 无 vtable 槽位类 = T19 误归属向量族 operator=（slot@12=Clear 形态），保持 skip 防 member_lookup 语义错位假 PASS（A2 owner 考古债）** |
 > | **G8 OO refresh** | ✅ rewritten 6,289 / unmapped 5,468；7,785 已译记录字节级保留（b18839c2） | 同上提交 |
 > | **G8 舰队波 1** | ✅ **completed 8,324 → 10,323（+1,999 全 CFG 验证，提交 65d17fe4 + 重锚）** | **471 桶全量直驱（61 分钟）**：replaced 2,504 / PASS 2,023 / FAIL 481 自动回滚（80.8%）；**g5_fleet 两守卫上线**（gap2 高 FAIL 诊断产物）：param-mismatch（def 签名 vs 伪码参数名错位，#50 族）+ raw-this-residue（区间内无名成员裸 this+N，cpp 侧 0 事件恒 FAIL）——system/gap2 生成浪费 49→7 清零；波后括号 HEAD-delta 0 新增、注解 18 缺失补齐后 10,071/0/0、一致性 69/3 基线 |
@@ -19,7 +25,7 @@
 > | **G5 舰队波** | ✅ **completed 2,477 → 3,736（+1,259 全 CFG 验证）** | g5_fleet.py 直驱（fleetA 规则泛化）：addr7C **414**/addr40 245/addr77 209/addr72 149/addr4E 96/addr49 46/gap2 ~91（Gap2Recv 机制首批）；PASS 率 addr 桶 97-100%、gap2 59%；生成器加固（三元/memory-chain/断词/残留 cast 跳过 + signals↔extern 同步 1,330）；波后括号零新增/审计基线维持 |
 > | **G4 证据补全轮** | ✅ 完成（2026-09-10，72175ec7） | vtable_offsets +208 类 + 639 vt_ 全局 + CRT 87 全局 + #26 FactoryClass 破案 |
 > | **G3 舰队波 1** | ✅ +1,360（VectorClass 桶） | 直驱范式确立 |
-> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP pending **6,541**；completed **10,350**（G8 波 2 后）。续波队列 = A1 成员命名（raw-this-residue 1,451 解锁前置）→ too-long 语义翻译/分块 → param-mismatch 参数数错配 hpp 手术 → vftable-ref/memory-chain 词汇扩展 |
+> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP pending **4,624**；completed **11,665**（G9 波 2 后）。续波队列 = A1 成员命名（raw-this-residue 525）→ too-long 语义翻译/分块 → FAIL-recycle 复杂体词汇 → vftable-ref 长尾 |
 > | B1 apply_sigs 550 失败 | ✅ 完成 | fail=0，914 处 return/param 编辑落盘 |
 > | B2 mass_type 1 失败 | ✅ 完成 | CRT RTTI 折叠体池级过滤 |
 > | B3 枚举通道 | ✅ 完成 | 5 枚举声明 + 8 成员 + 2 参数回填 |
@@ -27,11 +33,10 @@
 > | hpp-impl 存量债务 | ✅ 迁移完成 | 1,765 → 0 违规 |
 > | **构建红线（编译层）** | ✅ **恢复** | 2,874 → **0 编译错误**；链接产出 `build_win/Debug/gamemd.exe`（1.5MB，/FORCE:UNRESOLVED 容忍 682 历史未解析 stub 债） |
 > | **构建红线（gate 层）** | ✅ **3/3（重锚后）** | 用户裁决 v2：未完成翻译保留为 **IDA 原始反编译活代码块**（不再使用 `#if 0`）；存量编译错误按基线裁决允许 |
-> | **最终目标债（翻译积压）** | 🔴 **核心主线** | MCP pending **15,705**；completed **2,476**（G4 + 波 1，全 CFG 双射）。**舰队规模化已实证**：单 agent 单桶 ~1.7h / +1,339（VectorClass 形态桶）；续波队列 = 波 2 三桶（任务书就绪）→ #50 gap2 签名重生成（534）→ #53 CellClass 布局考古（解锁 ~70）|
 > | **ra2-translate MCP 工具集** | ✅ **已上线** | 22 工具全流程 MCP 化（翻译/重命名/错误追踪/0xADDR 注解维护）；HTTP 常驻 `127.0.0.1:13399/mcp` + stdio 双模式；官方 SDK 客户端冒烟全过（见 `docs/mcp_tools.md`）；09-08 补全局注解审计的伪码块/ASM 行跳过 |
-> | A1 成员语义命名 | 🔶 **进行中（污染优先）** | 09-06 武器槽/军衔谓词 7 函数 + 09-07 污染清偿轮 12 函数改名 + **09-08 大轮：member_lookup BuildingTypeClass 3800 区段 til 对齐清偿（0 残留）+ 20 hpp sub_ 滞留名 + 9 Method_ 对齐 + 12 owner 冲突裁决**；成员语义命名主体未展开 |
+> | A1 成员语义命名 | 🔶 **进行中（污染优先）** | 09-06 武器槽/军衔谓词 7 函数 + 09-07 污染清偿轮 12 函数改名 + **09-08 大轮：member_lookup BuildingTypeClass 3800 区段 til 对齐清偿（0 残留）+ 20 hpp sub_ 滞留名 + 9 Method_ 对齐 + 12 owner 冲突裁决**；成员语义命名主体未展开；**G9 容器族回填 76 类是首批规模化落地（RTTI 证据链）** |
 > | A2 sub_* Pass 3 命名 | ⬜ 未开始 | |
-> | A5 T14/T19 类型与 owner 污染排查 | 🔶 **进行中** | 快照扫描 320 个标量指针 this；09-07 清偿 owner/命名污染 + **09-08：signals/_by_name 同步缺口全修复（0 missing/0 extra）、receiver 候选 4 高置信 live 复核（Coord::GetCoords 出参修正，type_map 侧债记 issue #11）**；剩余 TechnoTypeClass 中段布局、AnimClass 中段成员与 tiberium/C4/draw-position 函数待考古 |
+> | A5 T14/T19 类型与 owner 污染排查 | 🔶 **进行中** | 快照扫描 320 个标量指针 this；09-07 清偿 owner/命名污染 + **09-08：signals/_by_name 同步缺口全修复（0 missing/0 extra）、receiver 候选 4 高置信 live 复核（Coord::GetCoords 出参修正，type_map 侧债记 issue #11）**；剩余 TechnoTypeClass 中段布局、AnimClass 中段成员与 tiberium/C4/draw-position 函数待考古；**G9 owner 考古链（addr→vtable_signatures→rtti_vtable_class）为 A2 提供离线证据基座** |
 > > | B4 零观测 struct 考古 | ⬜ 未开始（可选） | 与 TechnoClass/TechnoTypeClass 中段布局和类型侧 Weapon 数组债务相互关联 |
 > | B5 池外 thiscall | ⬜ 未开始（可选） | |
 > | C1-C4 批量翻译 | 🔶 **进行中（机械收割前端 + A1 前置）** | completed 39 → **919**（pending 17,263）。G1 机械收割 524（A 全局 getter 50 / C 常量 174 / P 直通 2 / E 净化直排 298，全 CFG 双射 PASS）；手动批次实证 BuildingClass 卡 issue #4、VectorClass mega 桶卡 vtable 身份债——**A1/A2 命名轮是剩余主体的前置**。收割器已修复 E6 行号漂移 bug（地址注解定位 + 现算 span），`.omo/e7_harvest*.py` 带全部防护可续跑 |
@@ -96,7 +101,7 @@
 | ida-artifact 门控空转 | 1 | `tools/check_pointer_arithmetic.py` 为**空文件**（f5da6e4f 起所有可达版本皆空）——三重门控之一从未真正检查。需用户裁决恢复实现（部分功能由 code-standards 的 AST ptr-arithmetic 检查覆盖，但那是 diff-scoped 非全量） |
 
 
-## 0. 当前基线（2026-09-13 G7 会话刷新）
+## 0. 当前基线（2026-09-14 G9 会话刷新）
 
 | 维度 | 数值 |
 |---|---|
@@ -110,11 +115,11 @@
 | 反编译 | 19,067 函数全部可反编译 |
 | 快照 | **full_export v4**（09-13 重导出，mega-blob 区 live 归一化；⚠ 截断 ~100 个 + gap2 内 25 块标记保留，翻译时 get_context live 拉取）；v3 归档 full_export_v3_20260913 |
 | **src 函数体覆盖** | ~17,870 / 19,133（93.5%；src/e4 内已译 **798** / pending 13,837） |
-| **MCP completed** | **8,324**（G3-G7 舰队波累计 + 历史真翻译；全部 CFG 验证口径） |
-| **MCP pending** | **8,600**（真实总账；gap2 已换 v4 活码，generator-ready 3,805；剩余主体 = too-long 1,990 + 核心类无名区 residual） |
+| **MCP completed** | **11,665**（G3-G9 舰队波累计 + 历史真翻译；全部 CFG 验证口径） |
+| **MCP pending** | **4,624**（G9 两波后；剩余 = too-long 1,771 + raw-this-residue 525 + FAIL-recycle ~350 + 词汇长尾） |
 | 待命名 | sub_* 残留 5,468（其中 3,590 需反编译上下文命名）——A2 |
 | 命名不一致 | 69 raw / **3 normalized**（基线维持；raw 增量系 typed 真类类限定自愈型） |
-| 基线/标签 | auto-fill-baseline = **3ff45951**（G7 波 1；重锚不清账） |
+| 基线/标签 | auto-fill-baseline = **8c3c3be5**（G9 波 2；重锚不清账） |
 
 **关键认知**：类型体系的工作重心已从"推断"转移到"消费"——快照里
 19K 函数的伪代码现在带着 this 类型、~19.7K 个类型化局部变量和结构化
@@ -1934,3 +1939,83 @@ memory-chain（14）/goto-switch CRT 状态机主导，规则生成器天花板�
 3. **param-mismatch 116**：参数数错配需 def+hpp 双手术（e4 hpp 声明同步）。
 4. **vftable-ref 275 / memory-chain 245 / free-this 75**：小词汇扩展或人工。
 5. **44 误归属向量族 + TActionClass@144 等**：A2 owner 考古（T19 命名修正）。
+
+---
+
+## 执行日志 — 2026-09-14 G9 会话：RTTI 容器族证据 + 舰队修复五连 + 两波（completed 10,350 → 11,665）
+
+用户指令四段式（G4/G5/G8 同款）：IDA MCP + CSP 结果补全签名/类/全局 → OO 语法
+替换 → 提交重锚 → RA2MCP 舰队翻译。**IDA 全程离线**——证据链全部离线化
+（v4 快照播种 ida_cache + vtable_signatures + rtti_vtable_class + til 合并数据）。
+
+### 证据补全（提交 5494bf60 + 重锚）
+
+| 项 | 产出 | 机制 |
+|---|---|---|
+| **owner 考古链** | addr → vtable_signatures → rtti_vtable_class 全链离线贯通 | raw-this-residue 1,467 分类：VT-OWNER-DIFF 429（T19 误归属，RTTI 揭示真身=`?$DynamicVectorClass@...` 模板实例）+ NO-VT 454（ctor/helper）+ MATCH 82 |
+| **容器族回填** | **76 类 306 成员**（Items/Capacity/IsInitialized/IsAllocated/Count/CapacityIncrement） | 证据三源：RTTI vtable 家族统一 / 体内 vt-install 符号 / til 短名别名（DynamicVector/Vector）；**继承层级归并**（{VectorClass,DynamicVectorClass} 混合 → 最派生家族——基子对象 vtable 属正常形态）；冲突守卫三重（member_lookup 既有 / til 语义名 / class_layouts 父链——FootClass@4 被 AbstractClass vtable1 拦截）；vtable_offsets 家族表同步拷贝 |
+| **_member_by_name 全量同步** | +814 名 / 170 类 | **修复 resolver fallback bug**：TypeList::Count 落到全局 0xB79BE0（CRTStreamCount 同名）→ 块事件错位 FAIL——G2 时代只进 member_lookup 的容器类从此可验证 |
+| vt_ 全局 | +23 符号（vt_CellClass/vt_HouseClass/vt_UnitClass...） | RTTI 主表地址直读（vftable-ref 275 主根因 = G4 只声明了 639 模板实例） |
+| DataGlobal | +4（使用形态类型化） | 839D10 字符串实参→unsigned char[]；A8DB48/A8DB60/89A308 标量算术→int |
+| til 语义 | +7（Surface Width/Height@4/8、RawFileClass FileTimeDateLo@20 等） | owner-match 无名池 |
+
+### 舰队修复五连（g5_fleet.py，全部 FAIL 自动回滚护航下实证）
+
+1. **THIS_CAST_PAREN G7 双括号 bug**：G7 版正则要求 `*((` 双括号形态，v4 渲染的
+   `*(_DWORD *)(this + N)` 单括号形态从未匹配——**residual-this-cast 696 的真根因**
+   （此前被 lint 兜底 skip 掩盖）。修复为与验证器 _IDA_CAST_PAREN 1:1 镜像。
+2. **foreign-receiver 旁路 + 逆映射**：ida_cache 接收者命名为 Block/a1 时，IDA 侧
+   成员/派发事件恒 0（正则全是 this 基）——翻译必须无 this-> token：成员/派发重写
+   全旁路 + 预重写块 `this->Name` 逆映射回裸形态（布局偏移/类型 or field_0xNN 后缀）。
+   **G6-G8 gap2 低 PASS 率（52-81%）的隐藏成分**。试点 MSPCXAnim 9/9。
+3. **hoist 双变体仲裁**：for-init hoist 对部分渲染修块序、对另一些造块序（G4 Agent A
+   已知）——alt(no-hoist) 变体 swap_body 直驱 + 复验采纳（replace_body 只认 pending
+   状态，已译函数需文件手术）。
+4. **memory-chain 词汇**：`MEMORY[A][idx]` → `DataGlobal_A[idx]`（事件两侧归约为
+   全局访问，索引算术无事件）；`->?` 破损渲染守卫。
+5. **raw-this-residue 守卫精确化**：deref 上下文追踪（ctx.residues）替代文本扫描——
+   非解引用 cast（`v3 = (_DWORD *)(this+4);`）两侧 0 事件可透传；cast 列表扩展
+   （unsigned int/_QWORD/__int64 ×4、unsigned __int16 ×2——注意 _QWORD 验证器按 ×4）。
+
+另：g_by_addr 无尺寸数组正则修复（G8 的 `[]` 声明舰队不可见）；residual-this-cast
+lint 移除（cast 列表 ⊇ 验证器后剩余形态双侧 0 事件）；swap_body/rollback 括号
+deficit 加固（波 1 的 6 个坏块根因 = swap 吃外层闭合，HEAD 外科恢复 + 加固）。
+
+### OO refresh + 舰队波
+
+- **refresh**：rewritten 5,684 / unmapped 5,365；9,802 已译记录字节级保留。
+- **波 1（ffedee1a）**：544 桶全量 48.5 分钟，+1,218 全 CFG 验证；试点桶 PASS
+  77-100%。波后注解 6 补齐、一致性 69/3 基线、括号仅基线 -1。
+- **外科轮**：sigfix2（def 参数对齐伪码声明 84——G8 sigfix 的参数数错配清偿）+
+  defix（free-this 下划线 def 成员化 54，thunk 族 `// attributes: thunk`）+
+  v3 截断占位块 ida_cache 重建 7（53 无缓存 = v4 截断不播种，留待 IDA 回线）。
+- **波 2（8c3c3be5）**：177 桶 +76；addr 桶 FAIL-recycle（do/while+LABEL 复杂体
+  复跑全灭——规则生成器天花板再次实证，非回归）。波后注解 15 补齐
+  （6 mismatch = 同名函数地址歧义挂账不动）。
+
+### 度量变化（本会话）
+
+| 指标 | 会话前 | 会话后 |
+|---|---|---|
+| MCP completed | 10,350 | **11,665**（+1,315：证据解锁 + 两波全 CFG 验证） |
+| MCP pending | 6,541 | **4,624** |
+| member_lookup | 1,311 类 | +76 类 306 容器语义成员 |
+| signals._member_by_name | ~1,300 类 | **+814 名（resolver fallback bug 修复）** |
+| vt_ 全局符号 | 639+23(G8) | **+23（G9 RTTI 直读）** |
+| generator-ready | 429 | 峰值 2,069（证据+修复后）→ 收割后 ~0 |
+| 一致性 | 69/3 | 69/3（基线维持） |
+| 注解 | 10,071/0/0 | 9,831/0/6（6 mismatch=同名歧义挂账） |
+| auto-fill-baseline | f933b53f | **8c3c3be5**（三次重锚：5494bf60 → ffedee1a → 8c3c3be5；重锚不清账） |
+
+### 遗留与下一步（G9 后续队列）
+
+1. **too-long 1,771**：语义翻译（LLM 手动批次/agent 舰队）或分块策略——机械面已尽。
+2. **raw-this-residue ~525**：真类无名区（TActionClass@144/68、CCFileClass@100、
+   Cell@56 等）——A1 成员语义命名 / B4 字段级考古前置。
+3. **FAIL-recycle ~350**：do/while+LABEL/HIWORD-BYTE1 内在函数/指针算术链复杂体
+   ——需要逐形态词汇或语义翻译。
+4. **vftable-ref 141**：模板嵌套渲染/非 this 目标长尾；**截断 53**：IDA 回线后
+   get_context live 拉取重建。
+5. **hash-type 144 / ternary 109 / param-mismatch ~70**：小词汇或 def/hpp 手术。
+6. **A2 owner 考古**：G9 的 RTTI owner 考古链（离线）可批量纠正 T19 误归属命名
+   （44 向量族 + VT-OWNER-DIFF 清单在 .omo/g9_owner.json）。

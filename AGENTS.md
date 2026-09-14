@@ -185,7 +185,7 @@ cmake --build build_linux
 | 编译错误 / 警告 | **0 / 0** (gamemd 来自 _generated/ 和主要模块) |
 | symbol-locked | **symbols-locked-v2** — 全部 19,067 函数 1:1:1 映射 (IDA↔signals↔hpp)，0 naming mismatches |
 | completed (符号定义) | **19,133 / 19,133 (100%)** — 所有函数在 IDA/signals.json/hpp 中有名称和地址 |
-| translated (完整IDA对照) | **10,350** — MCP completed 口径（G3-G8 舰队波 + E5 校准 + G1 收割 + 历史真翻译，全 CFG 验证）；pending **6,541**；2026-09-14 G8 会话（证据补全 + 471 桶全量舰队波 +2,026 + sigfix 签名对齐，详见 docs/roadmap_post_csp.md G8 执行日志） |
+| translated (完整IDA对照) | **11,665** — MCP completed 口径（G3-G9 舰队波 + E5 校准 + G1 收割 + 历史真翻译，全 CFG 验证）；pending **4,624**；2026-09-14 G9 会话（RTTI 容器族回填 76 类 + 舰队修复五连 + 两波 +1,315，IDA 全程离线，详见 docs/roadmap_post_csp.md G9 执行日志） |
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
 | sub_* 残留 | **5,468** — 函数级别 (非类成员)，0 已翻译 |
@@ -879,6 +879,10 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-09-14 (G9)**: RTTI 容器族证据补全 + 舰队修复五连 + 两波（提交 5494bf60/ffedee1a/8c3c3be5，三次重锚）
+  - **G9 证据**：owner 考古链离线贯通（addr→vtable_signatures→rtti_vtable_class）；容器族回填 76 类 306 成员（RTTI 家族统一 + 三重冲突守卫）；signals._member_by_name 全量同步 +814（修复 TypeList::Count→全局 0xB79BE0 的 resolver fallback bug）；vt_ +23（RTTI 主表直读）；DataGlobal +4；til +7
+  - **G9 修复**：THIS_CAST_PAREN G7 双括号 bug（residual-this-cast 696 真根因）；foreign-receiver 旁路+逆映射（缓存 Block 命名 → IDA 侧 0 事件对称，G6-G8 gap2 低 PASS 率隐藏成分）；hoist 双变体仲裁；memory-chain 词汇；守卫精确化；swap/rollback 括号 deficit 加固
+  - **G9 舰队**：refresh 5,684 rewritten/9,802 保留；波 1（544 桶）+1,218；sigfix2/defix/截断重建外科 +76；pending 6,541 → **4,624**；试点桶 PASS 77-100%
 - **2026-09-09 (F+G1)**: Phase F 证据补全执行 + G1 机械收割（提交 1eeb4bea + adf32f61，auto-fill-baseline 重锚）
   - **F 线**：偏移→OO 重写 1,869→9,215；"幽灵类"反转 = til 真实结构缺 layouts 键 → class_layouts 1,033→1,281 类（til 导出 247 新类 + 4,578 填洞 + 容器语义 138 实例）；重写器升级（继承链 own 区段防护 / member_types 嵌套解析 / w1-w2 load 截断）；til-pad 伪条目清除 175；E3 前向声明 bug 修复
   - **G1**：completed 406→919（A getter 50 / C 常量 174 / P 直通 2 / E 净化直排 298，全 CFG 双射）；收割器行号漂移 bug 修复（E6 两轮根因）；free-form-this / return-this 两起事故干净回滚重放
