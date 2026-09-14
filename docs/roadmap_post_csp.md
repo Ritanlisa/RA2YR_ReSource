@@ -8,7 +8,7 @@
 >
 > | 任务 | 状态 | 摘要 |
 > |---|---|---|
-> | **G9 证据补全** | ✅ **完成（2026-09-14，提交 5494bf60 + 重锚，IDA 全程离线）** | **RTTI 容器族回填 76 类 306 成员**（owner 考古链 addr→vtable_signatures→rtti_vtable_class 离线贯通；证据=RTTI vtable 家族统一/vt-install 体内证据/til 短名别名，继承层级取最派生；三重冲突守卫 member_lookup 既有/til 语义名/class_layouts 父链）；**signals._member_by_name 全量同步 +814 名**（修复 TypeList::Count 解析到全局 0xB79BE0 的 resolver fallback bug——G2 时代只进 member_lookup 的类从此可验证）；**vt_ 全局 +23**（RTTI 主表地址直读，vftable-ref 主根因）；DataGlobal +4；til 语义 +7 |
+> | **G9 证据补全** | ✅ **完成（2026-09-14，提交 5494bf60 + 重锚，IDA 会话当时离线——连接状态非持久，使用前必须当场探测，见 G9 日志注记）** | **RTTI 容器族回填 76 类 306 成员**（owner 考古链 addr→vtable_signatures→rtti_vtable_class 离线贯通；证据=RTTI vtable 家族统一/vt-install 体内证据/til 短名别名，继承层级取最派生；三重冲突守卫 member_lookup 既有/til 语义名/class_layouts 父链）；**signals._member_by_name 全量同步 +814 名**（修复 TypeList::Count 解析到全局 0xB79BE0 的 resolver fallback bug——G2 时代只进 member_lookup 的类从此可验证）；**vt_ 全局 +23**（RTTI 主表地址直读，vftable-ref 主根因）；DataGlobal +4；til 语义 +7 |
 > | **G9 舰队修复五连** | ✅ 同上提交 | ①**THIS_CAST_PAREN G7 双括号 bug**（`*(CAST *)(this + N)` 单括号形态从未匹配——residual-this-cast 696 的真根因）；②**foreign-receiver 旁路+逆映射**（缓存接收者命名 Block/a1 → IDA 侧成员事件恒 0，翻译必须无 this-> token——G6-G8 gap2 低 PASS 率隐藏成分）；③hoist 双变体仲裁（no-hoist alt 经 swap_body 直驱）；④memory-chain 词汇；⑤raw-this-residue 守卫精确化（deref 上下文追踪）；g_by_addr 无尺寸数组正则（G8 遗留）。试点 MSPCXAnim 36/38、TypeList 70/71（修复后 100%） |
 > | **G9 OO refresh** | ✅ rewritten 5,684 / unmapped 5,365；9,802 已译记录字节级保留（5494bf60） | 同上提交 |
 > | **G9 舰队波 1** | ✅ **completed 10,456 → 11,591（+1,235 全 CFG 验证，提交 ffedee1a + 重锚）** | 544 桶全量直驱 48.5 分钟（含试点）；6 括号坏块 HEAD 外科恢复（swap_body 吃外层闭合的根因修复 = deficit 加固）；波后注解 6 补齐、一致性 69/3 基线 |
@@ -1948,6 +1948,15 @@ memory-chain（14）/goto-switch CRT 状态机主导，规则生成器天花板�
 替换 → 提交重锚 → RA2MCP 舰队翻译。**IDA 全程离线**——证据链全部离线化
 （v4 快照播种 ida_cache + vtable_signatures + rtti_vtable_class + til 合并数据）。
 
+> **⚠ IDA 连接状态注记（用户指令 2026-09-14）**：上文"IDA 全程离线"仅反映
+> G9 会话当时的状态记录，**不构成对未来状态的断言**。IDA 连接
+> （127.0.0.1:13337）随时可能在离线↔在线之间双向切换（IDA 可能无效）——
+> **任何需要 IDA 的操作执行前必须当场探测连接**（`curl -m 5
+> http://127.0.0.1:13337/` 或短超时 MCP 调用），不得以本文档、先前会话日志、
+> 甚至本会话早前的探测结果为据。下文所有"留待 IDA 回线"的挂账项
+> （53 个 v4 截断块重建、NOCACHE completed 复验、rename debt 重放、
+> til 权威布局核对）同理：先探测——在线即做并落盘缓存，离线保持挂账不臆造。
+
 ### 证据补全（提交 5494bf60 + 重锚）
 
 | 项 | 产出 | 机制 |
@@ -2014,8 +2023,9 @@ deficit 加固（波 1 的 6 个坏块根因 = swap 吃外层闭合，HEAD 外�
    Cell@56 等）——A1 成员语义命名 / B4 字段级考古前置。
 3. **FAIL-recycle ~350**：do/while+LABEL/HIWORD-BYTE1 内在函数/指针算术链复杂体
    ——需要逐形态词汇或语义翻译。
-4. **vftable-ref 141**：模板嵌套渲染/非 this 目标长尾；**截断 53**：IDA 回线后
-   get_context live 拉取重建。
+4. **vftable-ref 141**：模板嵌套渲染/非 this 目标长尾；**截断 53**：执行前先
+   当场探测 IDA 连接（状态非持久）——在线即 `get_context` live 拉取重建并回填
+   ida_cache，离线保持挂账。
 5. **hash-type 144 / ternary 109 / param-mismatch ~70**：小词汇或 def/hpp 手术。
 6. **A2 owner 考古**：G9 的 RTTI owner 考古链（离线）可批量纠正 T19 误归属命名
    （44 向量族 + VT-OWNER-DIFF 清单在 .omo/g9_owner.json）。

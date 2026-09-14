@@ -53,6 +53,26 @@ python tools/mcp_translate_server.py --http 13399
 服务器从自身路径推导项目根，无需 cwd。IDA 在线（127.0.0.1:13337）
 时自动增强成员映射（til 权威布局）；离线时快照 + member_lookup 回退。
 
+## IDA 连接状态检查（每次使用前强制，2026-09-14 用户指令）
+
+IDA MCP（`127.0.0.1:13337`）的连接状态**非持久，IDA 可能无效**：
+可能从离线变为在线，也可能从在线变为离线——任何时刻得出的"离线"
+或"在线"结论都会过期。规则：
+
+- **需要 IDA 的操作执行前，必须当场探测连接**：`curl -m 5 http://127.0.0.1:13337/`
+  或一次短超时的廉价 MCP 调用。涉及操作：live 反编译 / get_context live 拉取 /
+  til 权威成员布局 / rename_symbol IDA 同步 / 类型回写（mass_type/apply_sigs/t14 系）/
+  idb_save / v4 截断块重建 / NOCACHE completed 复验。
+- **不得以任何先前记录为据**——会话日志写"IDA 全程离线"（如 G9）只反映
+  当时状态；同理，本会话早段探测到的"在线"不担保之后的调用仍在线。
+- **在线**：立即使用 live 数据（til 为成员布局权威），并把结果落到本地
+  （ida_cache 回填 / member_lookup 刷新 / idb_save），供后续离线会话消费；
+  rename 走四方同步。
+- **离线**：自动回退快照 + member_lookup（管线不中断）；rename 写
+  `.omo/rename_debt.json` 记账，恢复连接后 `--replay-debt` 补同步；
+  verify 使用 ida_cache（v4 播种可离线验证）；挂账项（截断块重建等）
+  保持挂账，不臆造。
+
 ## 工具清单（22 个）
 
 ### 翻译流水线

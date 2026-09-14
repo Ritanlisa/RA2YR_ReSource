@@ -829,7 +829,7 @@ python tools/type_infer/auto_name.py
 
 ## 项目环境信息
 
-- IDA 连接：`127.0.0.1:13337`（gamemd.exe.i64）
+- IDA 连接：`127.0.0.1:13337`（gamemd.exe.i64）——**连接状态非持久，IDA 可能无效**：随时可能在离线↔在线之间双向切换。任何需要 IDA 的操作（live 反编译/get_context、til 权威成员布局、rename_symbol IDA 同步、类型回写、idb_save、v4 截断块重建）**执行前必须当场探测连接**（`curl -m 5 http://127.0.0.1:13337/` 或一次短超时 MCP 调用），**不得以先前会话记录、文档记载、甚至本会话早前的探测结果为据**。在线→立即用 live 数据（til 为权威）并落盘缓存供离线消费；离线→走快照 + member_lookup 回退并记账（rename debt 等），管线不中断
 - BINK SDK 分析：`127.0.0.1:13338`（binkw32.dll）
 - 工作目录：`D:\RA2YR_ReSource\`
 - 游戏目录：`D:\RA2MD\`
