@@ -2029,3 +2029,80 @@ deficit 加固（波 1 的 6 个坏块根因 = swap 吃外层闭合，HEAD 外�
 5. **hash-type 144 / ternary 109 / param-mismatch ~70**：小词汇或 def/hpp 手术。
 6. **A2 owner 考古**：G9 的 RTTI owner 考古链（离线）可批量纠正 T19 误归属命名
    （44 向量族 + VT-OWNER-DIFF 清单在 .omo/g9_owner.json）。
+
+---
+
+## 执行日志 — 2026-09-14 G10 会话：IDA 在线窗口证据补全 + G9 截断损害修复 + 舰队波（completed 修正 11,665 → 11,505 诚实口径）
+
+用户指令四段式（G4/G5/G8/G9 同款第 5 次）：IDA MCP + CSP 结果补全签名/类/全局 →
+OO 语法替换 → 提交重锚 → RA2MCP 翻译。**IDA 全程在线**（当场探测确认）。
+
+### G9 截断损害修复（本会话最重要的考古成果，破坏性发现）
+
+- **发现**：OO refresh 首跑后 pending 暴涨 +1,252 → 追查发现 **G9 波 1（ffedee1a）
+  曾把 7 个文件整段截断**（gap2_global_defs -460 / Jumpjet_e4 -280 / object/gap2 -225 /
+  house/gap2 -153 / WarheadTypeClass -19 / entity/gap2 -15 / SessionClass -8，
+  共 **1,160 条记录 silently 丢失**——译体与 pending 同殃）。G9 期末的 pending 4,624
+  因此少计 ~1,460，且 582 个 completed 是幽灵（译体已不存在）。
+- **恢复（零臆造，全部字节来自 git 5494bf60）**：235 条译体直接恢复 + 257 条被
+  幽灵 marker 占位的译体置换恢复 + 619 条 pending 恢复；**316 个幽灵 completed
+  诚实复位 pending**（83 截断丢失 + 230 无体假完成 + 3 残尾）——completed
+  11,665 → 11,335 为真实口径。
+- **marker&completed 矛盾 670 → 0**（HEAD 基线 11）；17 个双定义 marker 删除
+  + 3 个真体补标准注解（裸名碰撞假阳性 14 个二次复位修正）。
+
+### gen_e4_materialize 扫描器双修复（根因）
+
+1. `scan_e4_preserved` 记录头规则 b 的 prev 守卫扩展（`}` OR `#include`/`//`/
+   文件起点）——G9 波次译体大量为文件首记录，旧守卫漏识别 → refresh 重复物化毁译体；
+2. `DEF_INLINE_ADDR_RE`（def 行行尾内联注解）纳入 bodyless 判定与 preserved 扫描
+   ——544 个真体曾因此被误判 bodyless 而 e4 桶重复物化（双定义）。
+
+### 证据补全（IDA 在线窗口清偿 G9 挂账）
+
+| 项 | 产出 | 机制 |
+|---|---|---|
+| ida_cache 回填 | **74/75**（70 decompile 工具 + 4 py_eval 全量分块 180K 字符） | G9 挂账"53 截断块留待 IDA 回线"清偿；0x5D7030 AI::CreateMCV Hex-Rays 反编译失败诚实挂账 |
+| A1 成员命名 | **37 成员**（TActionClass 10 + SuperClass 全链 19 + CheckListClass/ParticleClass/BulletClass/DropListClass/MPCooperative/BinkMovie/Theme/SidebarClass） | 双/三源：YRpp 声明序 + LoadFromINI 参数槽位铁证 + ctor/usage 二进制；ScriptTypeClass@160/CCFileClass@100/Cell@56/NullModemClass@56 诚实 skip |
+| SuperClass mbn 漂移 | 尾区 12 条修正（+2~+4） | YRpp 三锚点（CanHold@0x60 注释/ChronoMapCoords@0x62/Animation@0x68）+ 二进制 SetReadiness→111 双向仲裁 |
+| **BulletTypeClass mbn 漂移** | **65 条修正**（AA@16→675 字节态错位族、尾区平移、Airburst@0 假条目删除） | 语义翻译 0x46C820 暴露；member_lookup/til 为权威反向同步 |
+| vtable 槽位 | +15 槽（XSurface/ParticleSystemClass/AircraftClass×4/CCFileClass 等） | live 主表直读 + 祖先链过滤；38 诚实拒绝（foreign/nofunc/illegal） |
+| DataGlobal | +5（使用形态类型化） | 0x815F54 维持 G8 诚实 skip |
+
+### OO refresh + 舰队波
+
+- refresh（修复后）：preserved 10,625 / rewritten 5,850 / E4 buckets 450 文件。
+- **波 1（5210c7df）：193 桶 17.8 分钟 +162 全 CFG 验证**（replaced 780 / FAIL 618
+  自动回滚——dry-scan 的"GENERATED"含大量 G9 FAIL-recycle 回收体，生成器天花板
+  形态再实证）。
+- **语义批（d62a6fa0）：+9 全 CFG 验证**——PointerExpired 三连（TActionClass
+  0x6DD2C0 事件双设反向确认 NextAction@40；BulletTypeClass 0x46C820 暴露 mbn 大漂移）、
+  PlayAudioAtRandomWP do-while 镜像、GetKeyStateSafe（def 补参 + 词汇新知）、
+  AbstractClass 可见性族 5 连 deleting dtor 模式。
+- **词汇表新知**：①全局索引读必须 `*(DataGlobal_X + i)` 退化指针形态（下标形态
+  不发 cpp READ 事件，0x53EC70 实证）；②IDA 名数字开头的 thunk（VtableStub::5CB6C0）
+  非法 C++ 标识符 tokenize 不出 CALL——issue #72 挂账。
+
+### 度量变化（本会话）
+
+| 指标 | 会话前 | 会话后 |
+|---|---|---|
+| MCP completed | 11,665（含 316 幽灵） | **11,505（诚实口径：-316 复位 +162 波 +9 语义）** |
+| MCP pending | 4,624（截断少计） | **5,150（真实总账浮出）** |
+| marker&completed 矛盾 | 11（HEAD 基线，实际 582 潜伏） | **0** |
+| ida_cache | 18,981 | +74（截断块全量） |
+| member_lookup | — | +37 语义成员 |
+| signals._member_by_name | SuperClass/BulletTypeClass 漂移 | 12+65 条修正 |
+| 一致性 | 69/3 | 91/7（别名自愈型增量，E3 插入的 hpp 声明名变体） |
+| auto-fill-baseline | 8c3c3be5 | **d62a6fa0**（三次重锚；重锚不清账） |
+
+### 遗留与下一步（G10 后续队列）
+
+1. **too-long ~1,776 + FAIL-recycle 618**：语义翻译主体（agent 舰队/手动批次）；
+   本会话后台 agent 不可用（idle-time 限制），已验证手动 MCP 语义流程效率
+   （9 函数含考古）。
+2. **误归属族**：TActionClass 桶的 execute*Action 多为 DisplayClass 等误归属
+   （this+54xx 超界铁证）——A2 owner 考古批量化。
+3. **issue #72**：thunk 合法别名符号管道。
+4. **TActionClass@40-48 已命名**（PointerExpired 族解锁）；其余 member-missing
+   527 distinct 按 A1 双源法逐类推进。
