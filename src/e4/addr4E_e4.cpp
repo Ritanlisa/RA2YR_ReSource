@@ -1963,15 +1963,13 @@ void __cdecl sub_4E7620()
 namespace gamemd {
 int unknown_libname_13()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// Microsoft VisualC 2-14/net runtime
-void __cdecl unknown_libname_13()
+    void __cdecl unknown_libname_13()
 {
-  MEMORY[0xA8E7B0][0] = &vt_RandomStraw; /*0x66170d*/
-  MEMORY[0xA8E7B0][3] = 0; /*0x661713*/
-  MEMORY[0xA8E7B0][4] = 0; /*0x661716*/
-  memset(&MEMORY[0xA8E7B0][5], 0, 0x100u); /*0x661719*/
-  Straw::Dtor(MEMORY[0xA8E7B0]); /*0x66171d*/
+    g_MixFile_LoadCount[0] = &vt_RandomStraw;
+    g_MixFile_LoadCount[3] = 0;
+    g_MixFile_LoadCount[4] = 0;
+    memset(&g_MixFile_LoadCount[5], 0, 0x100u);
+    Straw::Dtor(g_MixFile_LoadCount);
 }
 }
 } // namespace gamemd

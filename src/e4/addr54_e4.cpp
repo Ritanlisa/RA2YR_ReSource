@@ -151,11 +151,9 @@ LABEL_12:
 namespace gamemd {
 int sub_543E00()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_543E00()
 {
-  unk_AA105C[0] = 0; /*0x543e02*/
-  return 0; /*0x543e0e*/
+    DataGlobal_AA105C[0] = 0;
+    return 0;
 }
 }
 } // namespace gamemd

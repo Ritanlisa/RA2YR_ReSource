@@ -628,26 +628,23 @@ LABEL_17:
 namespace gamemd {
 void TacticalClass::CleanupResources()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void TacticalClass_CleanupResources()
 {
-  int v0; // edi
-  void **v1; // esi
-
-  ObjectClass::CleanupSidebarResources(); /*0x6d0272*/
-  v0 = 0; /*0x6d0277*/
-  v1 = (void **)&MEMORY[0xB0C148]; /*0x6d0279*/
-  do /*0x6d02aa*/
+    int v0;
+    void **v1;
+    ObjectClass::CleanupSidebarResources();
+    v0 = 0;
+    v1 = (void **)&DataGlobal_B0C148;
+    do
   {
-    if ( MEMORY[0xB0CBDC][v0] ) /*0x6d027e*/
+    if ( DataGlobal_B0CBDC[v0] )
     {
-      __3_YAXPAX_Z(*v1); /*0x6d028b*/
-      MEMORY[0xB0CBDC][v0] = 0; /*0x6d0293*/
+    __3_YAXPAX_Z(*v1);
+    DataGlobal_B0CBDC[v0] = 0;
     }
-    *v1++ = 0; /*0x6d029a*/
-    ++v0; /*0x6d02a3*/
+    *v1++ = 0;
+    ++v0;
   }
-  while ( (int)v1 < (int)&MEMORY[0xB0C1AC] ); /*0x6d02aa*/
+    while ( (int)v1 < (int)&DataGlobal_B0C1AC );
 }
 }
 } // namespace gamemd

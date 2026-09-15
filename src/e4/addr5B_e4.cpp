@@ -461,66 +461,63 @@ int __stdcall GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, u
 namespace gamemd {
 HWND E4Recv_5B57D0::sub_5B57D0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall sub_5B57D0(HWND *this)
 {
-  HWND result; // eax
-  HWND v3; // esi
-  char *v4; // eax
-  unsigned int v5; // edi
-  HWND v6; // esi
-  int (__usercall *v7)@<eax>(char@<cf>, char@<zf>); // edi
-  HWND v8; // [esp-8h] [ebp-518h]
-  int v9; // [esp+0h] [ebp-510h] BYREF
-  wchar_t *Format; // [esp+10h] [ebp-500h]
-  _DWORD v11[62]; // [esp+14h] [ebp-4FCh] BYREF
-  __int16 v12; // [esp+10Ch] [ebp-404h]
-  wchar_t lParam[256]; // [esp+110h] [ebp-400h] BYREF
-  wchar_t Buffer[256]; // [esp+310h] [ebp-200h] BYREF
-
-  result = GetDlgItem(*this, 1344); /*0x5b57ea*/
-  v3 = result; /*0x5b57ec*/
-  if ( result ) /*0x5b57f0*/
+    HWND result;
+    HWND v3;
+    char *v4;
+    unsigned int v5;
+    HWND v6;
+    int (__usercall *v7)@<eax>(char@<cf>, char@<zf>);
+    HWND v8;
+    int v9;
+    wchar_t *Format;
+    int v11[62];
+    short v12;
+    wchar_t lParam[256];
+    wchar_t Buffer[256];
+    result = GetDlgItem(*(void**)this, 1344);
+    v3 = result;
+    if ( result )
   {
-    SendMessageA(result, 0x4B3u, 0x100u, (LPARAM)lParam); /*0x5b580f*/
-    SendMessageA(v3, 0x4B2u, 0, (LPARAM)&MEMORY[0x887734]); /*0x5b581e*/
-    result = (HWND)wcslen(lParam); /*0x5b5828*/
-    if ( result ) /*0x5b5832*/
+    SendMessageA(result, 0x4B3u, 0x100u, (LPARAM)lParam);
+    SendMessageA(v3, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString);
+    result = (HWND)wcslen(lParam);
+    if ( result )
     {
-      if ( lParam[0] != 13 ) /*0x5b5841*/
+    if ( lParam[0] != 13 )
       {
-        WideString::Trim(lParam); /*0x5b584e*/
-        result = (HWND)lParam; /*0x5b5853*/
-        if ( &v9 != (int *)-272 ) /*0x5b585c*/
+    WideString::Trim(lParam);
+    result = (HWND)lParam;
+    if ( &v9 != (int *)-272 )
         {
-          memset(v11, 0, sizeof(v11)); /*0x5b5871*/
-          v12 = 0; /*0x5b5873*/
-          v11[0] = 104; /*0x5b587f*/
-          strcpy((char *)&v11[1], MEMORY[0xA8B380]); /*0x5b589d*/
-          LOBYTE(v11[6]) = MEMORY[0xA8B394]; /*0x5b58b2*/
-          wcscpy((wchar_t *)((char *)&v11[6] + 1), lParam); /*0x5b58b6*/
-          Stream::WriteBlock((int)&MEMORY[0xA8EA70], (int)v11, 250, 1); /*0x5b58cf*/
-          Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x5b58d9*/
-          v4 = CharToWideString(MEMORY[0xA8B380]); /*0x5b58e3*/
-          v5 = MEMORY[0xA8B394]; /*0x5b58ea*/
-          v8 = *this; /*0x5b58f5*/
-          Format = (wchar_t *)v4; /*0x5b58f6*/
-          result = GetDlgItem(v8, 1343); /*0x5b58fa*/
-          v6 = result; /*0x5b58fc*/
-          if ( result ) /*0x5b5900*/
+    memset(v11, 0, sizeof(v11));
+    v12 = 0;
+    v11[0] = 104;
+    strcpy((char *)&v11[1], g_GameSetupBuffer);
+    LOBYTE(v11[6]) = g_TauntCommandState;
+    wcscpy((wchar_t *)((char *)&v11[6] + 1), lParam);
+    Stream::WriteBlock((int)&g_EventManager, (int)v11, 250, 1);
+    Stream::ReadPacket((int)&g_EventManager);
+    v4 = CharToWideString(g_GameSetupBuffer);
+    v5 = g_TauntCommandState;
+    v8 = *(void**)this;
+    Format = (wchar_t *)v4;
+    result = GetDlgItem(v8, 1343);
+    v6 = result;
+    if ( result )
           {
-            if ( v5 >= 8 ) /*0x5b5904*/
-              v7 = Math::InitDegToRad; /*0x5b5914*/
-            else
-              v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))MEMORY[0x8316A8][v5]; /*0x5b590b*/
-            swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam); /*0x5b5934*/
-            return (HWND)DrawDialogText((LPARAM)v7, Buffer, v6); /*0x5b5946*/
+    if ( v5 >= 8 )
+    v7 = Math::InitDegToRad;
+    else
+    v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))DataGlobal_8316A8[v5];
+    swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam);
+    return (HWND)DrawDialogText((LPARAM)v7, Buffer, v6);
           }
         }
       }
     }
   }
-  return result; /*0x5b594b*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -658,40 +655,37 @@ LABEL_33:
 namespace gamemd {
 void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5B6DA0(HWND *this, wchar_t *Source)
 {
-  char *v3; // eax
-  unsigned int v4; // edi
-  HWND DlgItem; // esi
-  int (__usercall *v6)@<eax>(char@<cf>, char@<zf>); // edi
-  wchar_t *Format; // [esp+10h] [ebp-300h]
-  _DWORD v8[62]; // [esp+14h] [ebp-2FCh] BYREF
-  __int16 v9; // [esp+10Ch] [ebp-204h]
-  wchar_t Buffer[256]; // [esp+110h] [ebp-200h] BYREF
-
-  if ( Source ) /*0x5b6db5*/
+    char *v3;
+    unsigned int v4;
+    HWND DlgItem;
+    int (__usercall *v6)@<eax>(char@<cf>, char@<zf>);
+    wchar_t *Format;
+    int v8[62];
+    short v9;
+    wchar_t Buffer[256];
+    if ( Source )
   {
-    memset(v8, 0, sizeof(v8)); /*0x5b6dca*/
-    v9 = 0; /*0x5b6dcc*/
-    v8[0] = 104; /*0x5b6dd8*/
-    strcpy((char *)&v8[1], MEMORY[0xA8B380]); /*0x5b6df4*/
-    LOBYTE(v8[6]) = MEMORY[0xA8B394]; /*0x5b6e04*/
-    wcscpy((wchar_t *)((char *)&v8[6] + 1), Source); /*0x5b6e08*/
-    Stream::WriteBlock((int)&MEMORY[0xA8EA70], (int)v8, 250, 1); /*0x5b6e21*/
-    Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x5b6e2b*/
-    v3 = CharToWideString(MEMORY[0xA8B380]); /*0x5b6e35*/
-    v4 = MEMORY[0xA8B394]; /*0x5b6e3d*/
-    Format = (wchar_t *)v3; /*0x5b6e49*/
-    DlgItem = GetDlgItem(*this, 1343); /*0x5b6e53*/
-    if ( DlgItem ) /*0x5b6e57*/
+    memset(v8, 0, sizeof(v8));
+    v9 = 0;
+    v8[0] = 104;
+    strcpy((char *)&v8[1], g_GameSetupBuffer);
+    LOBYTE(v8[6]) = g_TauntCommandState;
+    wcscpy((wchar_t *)((char *)&v8[6] + 1), Source);
+    Stream::WriteBlock((int)&g_EventManager, (int)v8, 250, 1);
+    Stream::ReadPacket((int)&g_EventManager);
+    v3 = CharToWideString(g_GameSetupBuffer);
+    v4 = g_TauntCommandState;
+    Format = (wchar_t *)v3;
+    DlgItem = GetDlgItem(*(void**)this, 1343);
+    if ( DlgItem )
     {
-      if ( v4 >= 8 ) /*0x5b6e5b*/
-        v6 = Math::InitDegToRad; /*0x5b6e6b*/
-      else
-        v6 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))MEMORY[0x8316A8][v4]; /*0x5b6e62*/
-      swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, Source); /*0x5b6e84*/
-      DrawDialogText((LPARAM)v6, Buffer, DlgItem); /*0x5b6e96*/
+    if ( v4 >= 8 )
+    v6 = Math::InitDegToRad;
+    else
+    v6 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))DataGlobal_8316A8[v4];
+    swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, Source);
+    DrawDialogText((LPARAM)v6, Buffer, DlgItem);
     }
   }
 }
@@ -702,67 +696,64 @@ void __thiscall sub_5B6DA0(HWND *this, wchar_t *Source)
 namespace gamemd {
 HWND E4Recv_5B9250::sub_5B9250()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall sub_5B9250(HWND *this)
 {
-  HWND result; // eax
-  HWND v3; // esi
-  char *v4; // eax
-  unsigned int v5; // edi
-  HWND v6; // esi
-  int (__usercall *v7)@<eax>(char@<cf>, char@<zf>); // edi
-  HWND v8; // [esp-8h] [ebp-518h]
-  int v9; // [esp+0h] [ebp-510h] BYREF
-  wchar_t *Format; // [esp+10h] [ebp-500h]
-  _DWORD v11[62]; // [esp+14h] [ebp-4FCh] BYREF
-  __int16 v12; // [esp+10Ch] [ebp-404h]
-  wchar_t lParam[256]; // [esp+110h] [ebp-400h] BYREF
-  wchar_t Buffer[256]; // [esp+310h] [ebp-200h] BYREF
-
-  memset(lParam, 0, sizeof(lParam)); /*0x5b9270*/
-  result = GetDlgItem(*this, 1344); /*0x5b927a*/
-  v3 = result; /*0x5b927c*/
-  if ( result ) /*0x5b9280*/
+    HWND result;
+    HWND v3;
+    char *v4;
+    unsigned int v5;
+    HWND v6;
+    int (__usercall *v7)@<eax>(char@<cf>, char@<zf>);
+    HWND v8;
+    int v9;
+    wchar_t *Format;
+    int v11[62];
+    short v12;
+    wchar_t lParam[256];
+    wchar_t Buffer[256];
+    memset(lParam, 0, sizeof(lParam));
+    result = GetDlgItem(*(void**)this, 1344);
+    v3 = result;
+    if ( result )
   {
-    SendMessageA(result, 0x4B3u, 0x100u, (LPARAM)lParam); /*0x5b929f*/
-    SendMessageA(v3, 0x4B2u, 0, (LPARAM)&MEMORY[0x887734]); /*0x5b92ae*/
-    result = (HWND)wcslen(lParam); /*0x5b92b8*/
-    if ( result ) /*0x5b92c2*/
+    SendMessageA(result, 0x4B3u, 0x100u, (LPARAM)lParam);
+    SendMessageA(v3, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString);
+    result = (HWND)wcslen(lParam);
+    if ( result )
     {
-      if ( lParam[0] != 13 ) /*0x5b92d1*/
+    if ( lParam[0] != 13 )
       {
-        WideString::Trim(lParam); /*0x5b92de*/
-        result = (HWND)lParam; /*0x5b92e3*/
-        if ( &v9 != (int *)-272 ) /*0x5b92ec*/
+    WideString::Trim(lParam);
+    result = (HWND)lParam;
+    if ( &v9 != (int *)-272 )
         {
-          memset(v11, 0, sizeof(v11)); /*0x5b9301*/
-          v12 = 0; /*0x5b9303*/
-          v11[0] = 104; /*0x5b930f*/
-          strcpy((char *)&v11[1], MEMORY[0xA8B380]); /*0x5b932d*/
-          LOBYTE(v11[6]) = MEMORY[0xA8B394]; /*0x5b9342*/
-          wcscpy((wchar_t *)((char *)&v11[6] + 1), lParam); /*0x5b9346*/
-          Stream::WriteBlock((int)&MEMORY[0xA8EA70], (int)v11, 250, 1); /*0x5b935f*/
-          Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x5b9369*/
-          v4 = CharToWideString(MEMORY[0xA8B380]); /*0x5b9373*/
-          v5 = MEMORY[0xA8B394]; /*0x5b937a*/
-          v8 = *this; /*0x5b9385*/
-          Format = (wchar_t *)v4; /*0x5b9386*/
-          result = GetDlgItem(v8, 1343); /*0x5b938a*/
-          v6 = result; /*0x5b938c*/
-          if ( result ) /*0x5b9390*/
+    memset(v11, 0, sizeof(v11));
+    v12 = 0;
+    v11[0] = 104;
+    strcpy((char *)&v11[1], g_GameSetupBuffer);
+    LOBYTE(v11[6]) = g_TauntCommandState;
+    wcscpy((wchar_t *)((char *)&v11[6] + 1), lParam);
+    Stream::WriteBlock((int)&g_EventManager, (int)v11, 250, 1);
+    Stream::ReadPacket((int)&g_EventManager);
+    v4 = CharToWideString(g_GameSetupBuffer);
+    v5 = g_TauntCommandState;
+    v8 = *(void**)this;
+    Format = (wchar_t *)v4;
+    result = GetDlgItem(v8, 1343);
+    v6 = result;
+    if ( result )
           {
-            if ( v5 >= 8 ) /*0x5b9394*/
-              v7 = Math::InitDegToRad; /*0x5b93a4*/
-            else
-              v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))MEMORY[0x8316A8][v5]; /*0x5b939b*/
-            swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam); /*0x5b93c4*/
-            return (HWND)DrawDialogText((LPARAM)v7, Buffer, v6); /*0x5b93d6*/
+    if ( v5 >= 8 )
+    v7 = Math::InitDegToRad;
+    else
+    v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))DataGlobal_8316A8[v5];
+    swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam);
+    return (HWND)DrawDialogText((LPARAM)v7, Buffer, v6);
           }
         }
       }
     }
   }
-  return result; /*0x5b93db*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -771,24 +762,21 @@ HWND __thiscall sub_5B9250(HWND *this)
 namespace gamemd {
 void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5BAA80(HWND *this, wchar_t *Format, unsigned int a3, int a4)
 {
-  HWND DlgItem; // edi
-  int (__usercall *v5)@<eax>(char@<cf>, char@<zf>); // esi
-  wchar_t Buffer[256]; // [esp+8h] [ebp-200h] BYREF
-
-  if ( a4 ) /*0x5baa91*/
+    HWND DlgItem;
+    int (__usercall *v5)@<eax>(char@<cf>, char@<zf>);
+    wchar_t Buffer[256];
+    if ( a4 )
   {
-    DlgItem = GetDlgItem(*this, 1343); /*0x5baaa1*/
-    if ( DlgItem ) /*0x5baaa5*/
+    DlgItem = GetDlgItem(*(void**)this, 1343);
+    if ( DlgItem )
     {
-      if ( a3 >= 8 ) /*0x5baab1*/
-        v5 = Math::InitDegToRad; /*0x5baac1*/
-      else
-        v5 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))MEMORY[0x8316A8][a3]; /*0x5baab8*/
-      swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, a4); /*0x5baada*/
-      DrawDialogText((LPARAM)v5, Buffer, DlgItem); /*0x5baae9*/
+    if ( a3 >= 8 )
+    v5 = Math::InitDegToRad;
+    else
+    v5 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))DataGlobal_8316A8[a3];
+    swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, a4);
+    DrawDialogText((LPARAM)v5, Buffer, DlgItem);
     }
   }
 }

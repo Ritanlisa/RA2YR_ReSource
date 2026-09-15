@@ -259,14 +259,12 @@ LABEL_16:
 namespace gamemd {
 int sub_585EE0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_585EE0()
 {
-  dword_ABD460[0] = 0; /*0x585ef6*/
-  dword_ABD464 = 4; /*0x585f17*/
-  dword_ABD468 = 0x40000; /*0x585f2b*/
-  dword_ABD46C = 262148; /*0x585f31*/
-  return 4; /*0x585f38*/
+    DataGlobal_ABD460[0] = 0;
+    DataGlobal_ABD464 = 4;
+    DataGlobal_ABD468 = 0x40000;
+    DataGlobal_ABD46C = 262148;
+    return 4;
 }
 }
 } // namespace gamemd
@@ -748,55 +746,52 @@ LABEL_24:
 namespace gamemd {
 int sub_5889F0(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_5889F0(int a1, int a2)
 {
-  int *v2; // ebx
-  int *v3; // edi
-  char v4; // dl
-  int *v5; // esi
-  int v6; // ecx
-  int v7; // eax
-  int v9; // [esp+10h] [ebp-1Ch]
-  int v10; // [esp+14h] [ebp-18h]
-  int v11; // [esp+18h] [ebp-14h]
-  int v12; // [esp+1Ch] [ebp-10h]
-  int v13; // [esp+20h] [ebp-Ch]
-
-  v13 = -1; /*0x588a01*/
-  v12 = 0; /*0x588a09*/
-  v10 = 0; /*0x588a0d*/
-  v2 = dword_82A594; /*0x588a11*/
-  do /*0x588aa9*/
+    int *v2;
+    int *v3;
+    char v4;
+    int *v5;
+    int v6;
+    int v7;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    v13 = -1;
+    v12 = 0;
+    v10 = 0;
+    v2 = DataGlobal_82A594;
+    do
   {
-    v3 = &dword_82A594[8 * a2]; /*0x588a28*/
-    v4 = 1; /*0x588a2e*/
-    v9 = 0; /*0x588a30*/
-    v5 = &dword_82A594[8 * a1]; /*0x588a34*/
-    v11 = 8; /*0x588a3a*/
-    do /*0x588a7c*/
+    v3 = &DataGlobal_82A594[8 * a2];
+    v4 = 1;
+    v9 = 0;
+    v5 = &DataGlobal_82A594[8 * a1];
+    v11 = 8;
+    do
     {
-      v6 = *v3; /*0x588a44*/
-      v7 = *v2; /*0x588a46*/
-      if ( (*v5 == 2 || v6 == 2) && v7 == 1 ) /*0x588a55*/
-        v4 = 0; /*0x588a57*/
-      if ( *v5 == v7 && v6 == v7 && v7 == 1 ) /*0x588a64*/
-        ++v9; /*0x588a66*/
-      ++v5; /*0x588a6e*/
-      ++v3; /*0x588a71*/
-      ++v2; /*0x588a74*/
-      --v11; /*0x588a78*/
+    v6 = *v3;
+    v7 = *v2;
+    if ( (*v5 == 2 || v6 == 2) && v7 == 1 )
+    v4 = 0;
+    if ( *v5 == v7 && v6 == v7 && v7 == 1 )
+    ++v9;
+    ++v5;
+    ++v3;
+    ++v2;
+    --v11;
     }
-    while ( v11 ); /*0x588a7c*/
-    if ( v4 && v9 > v12 ) /*0x588a8c*/
+    while ( v11 );
+    if ( v4 && v9 > v12 )
     {
-      v12 = v9; /*0x588a8e*/
-      v13 = v10; /*0x588a96*/
+    v12 = v9;
+    v13 = v10;
     }
-    ++v10; /*0x588aa5*/
+    ++v10;
   }
-  while ( (int)v2 < (int)dword_82A734 ); /*0x588aa9*/
-  return v13; /*0x588ab3*/
+    while ( (int)v2 < (int)DataGlobal_82A734 );
+    return v13;
 }
 }
 } // namespace gamemd

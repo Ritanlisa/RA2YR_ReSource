@@ -426,22 +426,19 @@ _DWORD *__fastcall TechnoClass_GatherFiltered(unsigned __int8 (__fastcall *a1)(i
 namespace gamemd {
 int sub_732110(int a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_732110(int a1, int (__fastcall *a2)(_DWORD, int), int a3)
 {
-  int v4; // esi
-  int v6; // ebx
-  int result; // eax
-
-  v4 = 0; /*0x732116*/
-  v6 = *(_DWORD *)(a1 + 16); /*0x73211a*/
-  if ( v6 > 0 ) /*0x73211f*/
+    int v4;
+    int v6;
+    int result;
+    v4 = 0;
+    v6 = *(int *)(a1 + 16);
+    if ( v6 > 0 )
   {
-    do /*0x732130*/
-      result = a2(*(_DWORD *)(*(_DWORD *)(a1 + 4) + 4 * v4++), a3); /*0x73212b*/
-    while ( v4 < v6 ); /*0x732130*/
+    do
+    result = a2(*(int *)(*(int *)(a1 + 4) + 4 * v4++), a3);
+    while ( v4 < v6 );
   }
-  return result; /*0x732132*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -450,29 +447,21 @@ int __fastcall sub_732110(int a1, int (__fastcall *a2)(_DWORD, int), int a3)
 namespace gamemd {
 int sub_732140(int a1, unsigned char (__fastcall *a2)(int, int) a2, void (__fastcall *a3)(int, int) a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_732140(
-        int a1,
-        unsigned __int8 (__fastcall *a2)(int, int),
-        void (__fastcall *a3)(int, int),
-        int a4,
-        int a5)
 {
-  int result; // eax
-  int v7; // edi
-  int v9; // esi
-  int i; // [esp+Ch] [ebp-4h]
-
-  result = *(_DWORD *)(a1 + 16); /*0x732146*/
-  v7 = 0; /*0x732149*/
-  for ( i = result; v7 < i; ++v7 ) /*0x732153*/
+    int result;
+    int v7;
+    int v9;
+    int i;
+    result = *(int *)(a1 + 16);
+    v7 = 0;
+    for ( i = result; v7 < i; ++v7 )
   {
-    v9 = *(_DWORD *)(*(_DWORD *)(a1 + 4) + 4 * v7); /*0x73215d*/
-    if ( a2(v9, a4) ) /*0x732162*/
-      a3(v9, a5); /*0x73216e*/
-    result = i; /*0x732172*/
+    v9 = *(int *)(*(int *)(a1 + 4) + 4 * v7);
+    if ( a2(v9, a4) )
+    a3(v9, a5);
+    result = i;
   }
-  return result; /*0x73217c*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -481,22 +470,19 @@ int __fastcall sub_732140(
 namespace gamemd {
 char sub_732190(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_732190(int a1, unsigned __int8 (__fastcall *a2)(_DWORD, int), int a3)
 {
-  int v4; // esi
-  int v6; // ebp
-
-  v4 = 0; /*0x732196*/
-  v6 = *(_DWORD *)(a1 + 16); /*0x73219a*/
-  if ( v6 <= 0 ) /*0x73219f*/
-    return 1; /*0x7321b6*/
-  while ( a2(*(_DWORD *)(*(_DWORD *)(a1 + 4) + 4 * v4), a3) ) /*0x7321af*/
+    int v4;
+    int v6;
+    v4 = 0;
+    v6 = *(int *)(a1 + 16);
+    if ( v6 <= 0 )
+    return 1;
+    while ( a2(*(int *)(*(int *)(a1 + 4) + 4 * v4), a3) )
   {
-    if ( ++v4 >= v6 ) /*0x7321b4*/
-      return 1; /*0x7321b4*/
+    if ( ++v4 >= v6 )
+    return 1;
   }
-  return 0; /*0x7321b6*/
+    return 0;
 }
 }
 } // namespace gamemd
@@ -505,22 +491,19 @@ char __fastcall sub_732190(int a1, unsigned __int8 (__fastcall *a2)(_DWORD, int)
 namespace gamemd {
 char sub_7321D0(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_7321D0(int a1, unsigned __int8 (__fastcall *a2)(_DWORD, int), int a3)
 {
-  int v4; // esi
-  int v6; // ebp
-
-  v4 = 0; /*0x7321d6*/
-  v6 = *(_DWORD *)(a1 + 16); /*0x7321da*/
-  if ( v6 <= 0 ) /*0x7321df*/
-    return 0; /*0x7321f6*/
-  while ( !a2(*(_DWORD *)(*(_DWORD *)(a1 + 4) + 4 * v4), a3) ) /*0x7321ef*/
+    int v4;
+    int v6;
+    v4 = 0;
+    v6 = *(int *)(a1 + 16);
+    if ( v6 <= 0 )
+    return 0;
+    while ( !a2(*(int *)(*(int *)(a1 + 4) + 4 * v4), a3) )
   {
-    if ( ++v4 >= v6 ) /*0x7321f4*/
-      return 0; /*0x7321f4*/
+    if ( ++v4 >= v6 )
+    return 0;
   }
-  return 1; /*0x7321f6*/
+    return 1;
 }
 }
 } // namespace gamemd
@@ -1761,13 +1744,11 @@ LABEL_39:
 namespace gamemd {
 int sub_7345E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7345E0()
 {
-  *(_DWORD *)&MEMORY[0xB13EB0][104] = 0; /*0x7345e2*/
-  *(_DWORD *)&MEMORY[0xB13EB0][108] = 0; /*0x7345e7*/
-  *(_DWORD *)&MEMORY[0xB13EB0][112] = 0; /*0x7345ec*/
-  return 0; /*0x7345f1*/
+    *(int *)&DataGlobal_B13EB0[104] = 0;
+    *(int *)&DataGlobal_B13EB0[108] = 0;
+    *(int *)&DataGlobal_B13EB0[112] = 0;
+    return 0;
 }
 }
 } // namespace gamemd

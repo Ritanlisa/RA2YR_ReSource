@@ -431,40 +431,37 @@ char *sub_7318F0()
 namespace gamemd {
 int sub_63A120(char a1, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_63A120(char a1, char a2)
 {
-  int v2; // esi
-  int result; // eax
-  wchar_t *v4; // ecx
-  wchar_t *StringCSF; // eax
-
-  if ( a2 ) /*0x63a123*/
-    v2 = a1 == 0; /*0x63a12c*/
-  else
-    v2 = 2; /*0x63a130*/
-  if ( a1 ) /*0x63a137*/
-    result = MEMORY[0xAC4BF4][v2] + 1; /*0x63a140*/
-  else
-    result = 1; /*0x63a143*/
-  if ( MEMORY[0xAC4BF4][v2] < result ) /*0x63a153*/
+    int v2;
+    int result;
+    wchar_t *v4;
+    wchar_t *StringCSF;
+    if ( a2 )
+    v2 = a1 == 0;
+    else
+    v2 = 2;
+    if ( a1 )
+    result = DataGlobal_AC4BF4[v2] + 1;
+    else
+    result = 1;
+    if ( DataGlobal_AC4BF4[v2] < result )
   {
-    if ( a2 ) /*0x63a157*/
+    if ( a2 )
     {
-      if ( a1 ) /*0x63a165*/
-        v4 = (wchar_t *)MEMORY[0x836CD0]; /*0x63a169*/
-      else
-        v4 = (wchar_t *)MEMORY[0x836CB4]; /*0x63a172*/
+    if ( a1 )
+    v4 = (wchar_t *)DataGlobal_836CD0;
+    else
+    v4 = (wchar_t *)DataGlobal_836CB4;
     }
     else
     {
-      v4 = MEMORY[0x836C9C]; /*0x63a185*/
+    v4 = DataGlobal_836C9C;
     }
-    StringCSF = GetStringCSF(v4, 0, MEMORY[0x836BD4], 3233); /*0x63a18a*/
-    result = AddMessageListPlayerMessage(StringCSF, 480); /*0x63a196*/
-    ++MEMORY[0xAC4BF4][v2]; /*0x63a19b*/
+    StringCSF = GetStringCSF(v4, 0, g_Str_File_PlanMgr_cpp, 3233);
+    result = AddMessageListPlayerMessage(StringCSF, 480);
+    ++DataGlobal_AC4BF4[v2];
   }
-  return result; /*0x63a1a2*/
+    return result;
 }
 }
 } // namespace gamemd

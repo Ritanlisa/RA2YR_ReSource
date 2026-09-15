@@ -844,7 +844,11 @@ def find_cpp_function(func_name):
     def_pattern = re.compile(
         rf'^\s*(?:namespace\s+\w+\s*\{{\s*)*(?:inline\s+)?[\w\s*&<>:\-]+\s+'
         rf'{class_prefix}{re.escape(method_name)}'
-        r'\s*\([^)]*\)\s*(?:const\s*)?(?:\{|$)')
+        # G12: one level of nested parens in the parameter list — function-
+        # pointer params (`int (__thiscall *a4)(int)`) made `[^)]*` stop at the
+        # inner `)`, so the name lookup failed and by_addr fallback grabbed a
+        # stale annotated stub elsewhere (Array::ForEach 0x4068F0 precedent).
+        r'\s*\((?:[^()]|\([^()]*\))*\)\s*(?:const\s*)?(?:\{|$)')
     ctor_re = _ctor_def_re(class_name, method_name)
     hint = method_name[1:] if method_name.startswith("~") else method_name
     ctor_hint = class_name if ctor_re is not None else None

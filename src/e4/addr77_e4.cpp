@@ -416,20 +416,17 @@ int sub_775B30()
 namespace gamemd {
 int sub_775B50(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, int a3, LONG * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_775B50(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), int a3, LONG *a4)
 {
-  ObjectClass *DialogParamA; // esi
-  LONG bottom; // ecx
-  struct tagRECT Rect; // [esp+4h] [ebp-10h] BYREF
-
-  DialogParamA = (ObjectClass *)CreateDialogParamA(g_hInstance, (LPCSTR)a1, 0, a2, 0); /*0x775b70*/
-  GetClientRect((HWND)DialogParamA, &Rect); /*0x775b74*/
-  DestroyWindow((HWND)DialogParamA); /*0x775b7b*/
-  bottom = Rect.bottom; /*0x775b89*/
-  *a4 = Rect.right; /*0x775b8e*/
-  a4[1] = bottom; /*0x775b90*/
-  return 1; /*0x775b8d*/
+    ObjectClass *DialogParamA;
+    LONG bottom;
+    struct tagRECT Rect;
+    DialogParamA = (ObjectClass *)CreateDialogParamA(g_hInstance, (LPCSTR)a1, 0, a2, 0);
+    GetClientRect((HWND)DialogParamA, &Rect);
+    DestroyWindow((HWND)DialogParamA);
+    bottom = Rect.bottom;
+    *a4 = Rect.right;
+    *((int*)(a4) + 1) = bottom;
+    return 1;
 }
 }
 } // namespace gamemd

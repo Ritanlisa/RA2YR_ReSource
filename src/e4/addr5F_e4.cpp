@@ -459,22 +459,19 @@ _DWORD *__fastcall sub_5F66A0(_DWORD *a1, int a2)
 namespace gamemd {
 void TheaterObjectTypeClassSpecificID(char * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall TheaterObjectTypeClassSpecificID(char *a1, int a2)
 {
-  char v2; // al
-  char v3; // bl
-
-  if ( a2 != -1 ) /*0x5f96b4*/
+    char v2;
+    char v3;
+    if ( a2 != -1 )
   {
-    v2 = *a1; /*0x5f96b6*/
-    v3 = a1[1]; /*0x5f96b8*/
-    if ( *a1 >= 65 && v2 <= 90 ) /*0x5f96c1*/
-      v2 += 32; /*0x5f96c3*/
-    if ( v3 >= 65 && v3 <= 90 ) /*0x5f96cd*/
-      v3 += 32; /*0x5f96cf*/
-    if ( (v2 == 103 || v2 == 110 || v2 == 99 || v2 == 121) && (v3 == 97 || v3 == 116) ) /*0x5f96ea*/
-      a1[1] = byte_7E1BCE[112 * a2]; /*0x5f96fe*/
+    v2 = *a1;
+    v3 = *((int*)(a1) + 1);
+    if ( *a1 >= 65 && v2 <= 90 )
+    v2 += 32;
+    if ( v3 >= 65 && v3 <= 90 )
+    v3 += 32;
+    if ( (v2 == 103 || v2 == 110 || v2 == 99 || v2 == 121) && (v3 == 97 || v3 == 116) )
+    *((int*)(a1) + 1) = DataGlobal_7E1BCE[112 * a2];
   }
 }
 }

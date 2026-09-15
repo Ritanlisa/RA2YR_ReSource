@@ -1683,25 +1683,23 @@ FILE *sub_48E0B0()
 namespace gamemd {
 int sub_48E480()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_48E480()
 {
-  MEMORY[0x89E9F0][0] = 128; /*0x48e489*/
-  MEMORY[0x89E9F4][0] = 128; /*0x48e493*/
-  MEMORY[0x89E9FC] = 64; /*0x48e49b*/
-  MEMORY[0x89EA00] = 64; /*0x48e4a5*/
-  MEMORY[0x89EA08] = 192; /*0x48e4ab*/
-  MEMORY[0x89EA0C] = 64; /*0x48e4b0*/
-  MEMORY[0x89EA14] = 64; /*0x48e4bd*/
-  MEMORY[0x89E9F8][0] = 0; /*0x48e4c4*/
-  MEMORY[0x89EA04] = 0; /*0x48e4ca*/
-  MEMORY[0x89EA10] = 0; /*0x48e4d0*/
-  MEMORY[0x89EA18] = 192; /*0x48e4d6*/
-  MEMORY[0x89EA1C] = 0; /*0x48e4dc*/
-  MEMORY[0x89EA20] = 192; /*0x48e4e2*/
-  MEMORY[0x89EA24] = 192; /*0x48e4e7*/
-  MEMORY[0x89EA28] = 0; /*0x48e4ed*/
-  return 192; /*0x48e4f3*/
+    DataGlobal_89E9F0[0] = 128;
+    DataGlobal_89E9F4[0] = 128;
+    DataGlobal_89E9FC = 64;
+    DataGlobal_89EA00 = 64;
+    DataGlobal_89EA08 = 192;
+    DataGlobal_89EA0C = 64;
+    DataGlobal_89EA14 = 64;
+    DataGlobal_89E9F8[0] = 0;
+    DataGlobal_89EA04 = 0;
+    DataGlobal_89EA10 = 0;
+    DataGlobal_89EA18 = 192;
+    DataGlobal_89EA1C = 0;
+    DataGlobal_89EA20 = 192;
+    DataGlobal_89EA24 = 192;
+    DataGlobal_89EA28 = 0;
+    return 192;
 }
 }
 } // namespace gamemd

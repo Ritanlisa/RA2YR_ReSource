@@ -416,45 +416,42 @@ void __thiscall sub_7A0DD0(const char *this)
 namespace gamemd {
 void INIClass::SetGameOptionsPing()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall SetGameOptionsPing(INIClass *this)
 {
-  int v1; // edx
-  int v2; // ebp
-  int i; // edi
-  char *v5; // ecx
-  HWND GameUI; // ecx
-
-  v2 = v1; /*0x7a0ea3*/
-  Debug::Log(); /*0x7a0eaf*/
-  for ( i = 0; i < 8; ++i ) /*0x7a0eb7*/
+    int v1;
+    int v2;
+    int i;
+    char *v5;
+    HWND GameUI;
+    v2 = v1;
+    Debug::Log();
+    for ( i = 0; i < 8; ++i )
   {
-    v5 = (char *)*(&MEMORY[0xA8DA90] + i); /*0x7a0eb9*/
-    if ( v5 ) /*0x7a0ec2*/
+    v5 = (char *)*(&g_NetworkPlayerName + i);
+    if ( v5 )
     {
-      if ( !strcmp(ToWideStringChar(v5), this->__pad_0) ) /*0x7a0ed1*/
+    if ( !strcmp(ToWideStringChar(v5), this->__pad_0) )
       {
-        dword_B76440[i] = v2; /*0x7a0ef8*/
-        GameUI = (HWND)Dialog::FindGameUI(); /*0x7a0f04*/
-        if ( GameUI ) /*0x7a0f08*/
+    DataGlobal_B76440[i] = v2;
+    GameUI = (HWND)Dialog::FindGameUI();
+    if ( GameUI )
         {
-          if ( v2 >= 0 ) /*0x7a0f0c*/
+    if ( v2 >= 0 )
           {
-            if ( v2 >= 300 ) /*0x7a0f18*/
+    if ( v2 >= 300 )
             {
-              if ( v2 >= 500 ) /*0x7a0f24*/
-                UpdateLobbyGraphicsWOL(GameUI, i, 2); /*0x7a0f2e*/
-              else
-                UpdateLobbyGraphicsWOL(GameUI, i, 1); /*0x7a0f28*/
+    if ( v2 >= 500 )
+    UpdateLobbyGraphicsWOL(GameUI, i, 2);
+    else
+    UpdateLobbyGraphicsWOL(GameUI, i, 1);
             }
-            else
+    else
             {
-              UpdateLobbyGraphicsWOL(GameUI, i, 0); /*0x7a0f1c*/
+    UpdateLobbyGraphicsWOL(GameUI, i, 0);
             }
           }
-          else
+    else
           {
-            UpdateLobbyGraphicsWOL(GameUI, i, -1); /*0x7a0f10*/
+    UpdateLobbyGraphicsWOL(GameUI, i, -1);
           }
         }
       }

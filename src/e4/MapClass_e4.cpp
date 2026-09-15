@@ -370,21 +370,18 @@ bool __thiscall MapClass::SetScrollMode(int this, MouseClass *aP1)
 // 0x4F42F0
 int MapClass::MarkForRedraw(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MapClass_MarkForRedraw(_DWORD *this, int a2)
 {
-  int result; // eax
-
-  if ( MEMORY[0x887324] ) /*0x4f42f7*/
-    BYTE1(MEMORY[0x887324][863].__tail_0) = 1; /*0x4f42f9*/
-  result = a2; /*0x4f4300*/
-  if ( a2 ) /*0x4f4306*/
+    int result;
+    if ( g_TacticalClass_Instance )
+    BYTE1(g_TacticalClass_Instance[863].__tail_0) = 1;
+    result = a2;
+    if ( a2 )
   {
-    if ( *(this + 3) != 2 ) /*0x4f430c*/
-      *(this + 3) = a2; /*0x4f430e*/
-    return MapClass::IncrementRedrawCounter(&MEMORY[0x87F7E8]); /*0x4f4316*/
+    if ( this->IsInitialized != 2 )
+    this->IsInitialized = a2;
+    return MapClass::IncrementRedrawCounter(&DataGlobal_87F7E8);
   }
-  return result; /*0x4f431b*/
+    return result;
 }
 }
 

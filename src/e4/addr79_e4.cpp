@@ -335,20 +335,17 @@ int __fastcall sub_793B30(char a1, const char *a2)
 namespace gamemd {
 int E4Recv_793CD0::sub_793CD0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_793CD0(void *this)
 {
-  DWORD Ticks; // eax
-  DWORD *v2; // ecx
-  DWORD v4; // [esp+4h] [ebp-8h]
-
-  MEMORY[0xA8E1A4][MEMORY[0xA8E224]] = (int)this; /*0x793cd8*/
-  Ticks = Timer::GetTicks(); /*0x793ce3*/
-  v2 = (DWORD *)(12 * MEMORY[0xA8E224] + 11067844); /*0x793cf6*/
-  *v2 = Ticks; /*0x793cfd*/
-  v2[1] = v4; /*0x793d03*/
-  v2[2] = 1200; /*0x793d06*/
-  return ++MEMORY[0xA8E224]; /*0x793d14*/
+    DWORD Ticks;
+    DWORD *v2;
+    DWORD v4;
+    DataGlobal_A8E1A4[DataGlobal_A8E224] = (int)this;
+    Ticks = Timer::GetTicks();
+    v2 = (DWORD *)(12 * DataGlobal_A8E224 + 11067844);
+    *v2 = Ticks;
+    v2[1] = v4;
+    v2[2] = 1200;
+    return ++DataGlobal_A8E224;
 }
 }
 } // namespace gamemd

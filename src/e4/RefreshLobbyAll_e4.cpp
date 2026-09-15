@@ -11,20 +11,17 @@
 namespace gamemd {
 void sub_7A0E50()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7A0E50()
 {
-  int i; // esi
-  wchar_t *v1; // ecx
-  char *v2; // eax
-
-  for ( i = 0; i < 8; ++i ) /*0x7a0e51*/
+    int i;
+    wchar_t *v1;
+    char *v2;
+    for ( i = 0; i < 8; ++i )
   {
-    v1 = *(wchar_t **)((char *)&MEMORY[0xA8DA90] + i * 4); /*0x7a0e53*/
-    if ( !v1 || !IsKnownPointer(v1) ) /*0x7a0e5d*/
-      dword_B76440[i] = -1; /*0x7a0e66*/
-    v2 = ToWideStringChar(*(char **)((char *)&MEMORY[0xA8DA90] + i * 4)); /*0x7a0e76*/
-    SetGameOptionsPing(v2, dword_B76440[i]); /*0x7a0e83*/
+    v1 = *(wchar_t **)((char *)&g_NetworkPlayerName + i * 4);
+    if ( !v1 || !IsKnownPointer(v1) )
+    DataGlobal_B76440[i] = -1;
+    v2 = ToWideStringChar(*(char **)((char *)&g_NetworkPlayerName + i * 4));
+    SetGameOptionsPing(v2, DataGlobal_B76440[i]);
   }
 }
 }

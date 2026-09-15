@@ -6,40 +6,36 @@
 // 0x4A0630
 int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int, int *) a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ConnectionPointClass::_vt05(int a1, int (__stdcall ***a2)(_DWORD, int, int *), int *a3)
 {
-  int v4; // ecx
-  int v5; // eax
-  int v6; // eax
-  int v7; // edx
-  int v8; // [esp+14h] [ebp-8h] BYREF
-  int v9; // [esp+18h] [ebp-4h]
-
-  if ( !a2 || !a3 ) /*0x4a0648*/
-    return -2147467261; /*0x4a06ec*/
-  v9 = AbstractClass::updateAITimer(MEMORY[0xA8B230]); /*0x4a0661*/
-  if ( (**a2)(a2, a1 + 4, &v8) < 0 ) /*0x4a0671*/
-    return -2147220990; /*0x4a0675*/
-  v4 = *(_DWORD *)(a1 + 36); /*0x4a0681*/
-  if ( *(_DWORD *)(a1 + 44) >= v4 ) /*0x4a068c*/
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    if ( !a2 || !a3 )
+    return -2147467261;
+    v9 = AbstractClass::updateAITimer(g_ScenarioClass_Instance);
+    if ( (**a2)(a2, a1 + 4, &v8) < 0 )
+    return -2147220990;
+    v4 = *(int *)(a1 + 36);
+    if ( *(int *)(a1 + 44) >= v4 )
   {
-    if ( !*(_BYTE *)(a1 + 41) && v4 ) /*0x4a0697*/
-      return -2147220991; /*0x4a0697*/
-    v5 = *(_DWORD *)(a1 + 48); /*0x4a0699*/
-    if ( v5 <= 0 /*0x4a06a9*/
-      || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(a1 + 28) + 8))(a1 + 28, v4 + v5, 0) )
+    if ( !*(char *)(a1 + 41) && v4 )
+    return -2147220991;
+    v5 = *(int *)(a1 + 48);
+    if ( v5 <= 0 || !(*(unsigned char (__thiscall **)(int, int, int))(*(int *)(a1 + 28) + 8))(a1 + 28, v4 + v5, 0) )
     {
-      return -2147220991; /*0x4a06de*/
+    return -2147220991;
     }
   }
-  v6 = *(_DWORD *)(a1 + 44); /*0x4a06b0*/
-  v7 = *(_DWORD *)(a1 + 32); /*0x4a06b3*/
-  *(_DWORD *)(a1 + 44) = v6 + 1; /*0x4a06ba*/
-  *(_DWORD *)(v7 + 8 * v6) = v8; /*0x4a06c1*/
-  *(_DWORD *)(v7 + 8 * v6 + 4) = v9; /*0x4a06c9*/
-  *a3 = v9; /*0x4a06d1*/
-  return 0; /*0x4a0673*/
+    v6 = *(int *)(a1 + 44);
+    v7 = *(int *)(a1 + 32);
+    *(int *)(a1 + 44) = v6 + 1;
+    *(int *)(v7 + 8 * v6) = v8;
+    *(int *)(v7 + 8 * v6 + 4) = v9;
+    *a3 = v9;
+    return 0;
 }
 }
 

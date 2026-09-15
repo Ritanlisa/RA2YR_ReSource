@@ -1345,30 +1345,27 @@ HRESULT __thiscall SuperWeapon_CreateNukePayload(int *this)
 } }
 // 0x44D760
 namespace gamemd { int BuildingClass::PushScriptAction() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::PushScriptAction(#377 *this)
 {
-  int result; // eax
-  _DWORD *v3; // eax
-  int v4; // [esp+8h] [ebp-10h] BYREF
-  _BYTE v5[12]; // [esp+Ch] [ebp-Ch] BYREF
-  int v6; // [esp+1Ch] [ebp+4h]
-  int v7; // [esp+1Ch] [ebp+4h]
-
-  result = v6; /*0x44d760*/
-  if ( v6 ) /*0x44d76c*/
+    int result;
+    int *v3;
+    int v4;
+    char v5[12];
+    int v6;
+    int v7;
+    result = v6;
+    if ( v6 )
   {
-    result = House::IsHumanPlayer(*((#375 **)this + 135)); /*0x44d774*/
-    if ( (_BYTE)result ) /*0x44d77b*/
+    result = House::IsHumanPlayer(*((HouseClass **)(this) + 135));
+    if ( (char)result )
     {
-      v3 = (_DWORD *)(*(int (__thiscall **)(#377 *, _BYTE *, _DWORD))(*(_DWORD *)this + 76))(this, v5, 0); /*0x44d788*/
-      LOWORD(v7) = *v3 / 256; /*0x44d79b*/
-      HIWORD(v7) = v3[1] / 256; /*0x44d7b3*/
-      v4 = v7; /*0x44d7bc*/
-      return ScriptActionQueue::PushNext(&v4); /*0x44d7c0*/
+    v3 = (int *)this->ClearPointerRefs(v5, 0);
+    LOWORD(v7) = *v3 / 256;
+    HIWORD(v7) = v3[1] / 256;
+    v4 = v7;
+    return ScriptActionQueue::PushNext(&v4);
     }
   }
-  return result; /*0x44d7c5*/
+    return result;
 }
 } }
 // 0x459FF0

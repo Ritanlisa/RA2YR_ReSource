@@ -3612,7 +3612,8 @@ LABEL_26:
   }
   return result; /*0x656ab3*/
 }
-} }
+}
+}
 // 0x656AC0
 namespace gamemd { int SidebarClass::Save(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)

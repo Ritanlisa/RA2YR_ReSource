@@ -133,22 +133,19 @@ double __cdecl Math_Sin(double a1)
 namespace gamemd {
 double Math::ArcTan(double a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double __cdecl Math_ArcTan(double a1)
 {
-  int v2; // eax
-  double result; // st7
-  float v4; // [esp+4h] [ebp+4h]
-
-  v4 = a1; /*0x4cade4*/
-  v2 = abs32(Math::RoundToInt(a1 / flt_8650B8)); /*0x4cadf6*/
-  if ( v2 >= 4097 ) /*0x4cadfd*/
-    result = 1.5707964; /*0x4cae08*/
-  else
-    result = MEMORY[0x8610B4][v2]; /*0x4cadff*/
-  if ( v4 < 0.0 ) /*0x4cae1d*/
-    return -result; /*0x4cae1f*/
-  return result; /*0x4cae21*/
+    int v2;
+    double result;
+    float v4;
+    v4 = a1;
+    v2 = abs32(Math::RoundToInt(a1 / DataGlobal_8650B8));
+    if ( v2 >= 4097 )
+    result = 1.5707964;
+    else
+    result = DataGlobal_8610B4[v2];
+    if ( v4 < 0.0 )
+    return -result;
+    return result;
 }
 }
 } // namespace gamemd

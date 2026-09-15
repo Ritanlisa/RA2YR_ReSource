@@ -3354,29 +3354,26 @@ char GenerateLightningStormGlow()
 namespace gamemd {
 int sub_53D9F0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_53D9F0(int a1)
 {
-  int v2; // edi
-  _DWORD *v3; // esi
-  int *v4; // eax
-  int result; // eax
-  int v6; // [esp+Ch] [ebp-8h] BYREF
-
-  dword_A9FAE8[0] = 0; /*0x53d9f3*/
-  unk_AA0150 = a1; /*0x53da02*/
-  v2 = 1; /*0x53da08*/
-  v3 = &unk_A9FAEC; /*0x53da0d*/
-  do /*0x53da34*/
+    int v2;
+    int *v3;
+    int *v4;
+    int result;
+    int v6;
+    DataGlobal_A9FAE8[0] = 0;
+    DataGlobal_AA0150 = a1;
+    v2 = 1;
+    v3 = &DataGlobal_A9FAEC;
+    do
   {
-    v4 = ComputeSpiralOffset(&v6, v2); /*0x53da18*/
-    ++v3; /*0x53da1f*/
-    result = *v4 + a1 * v4[1]; /*0x53da28*/
-    ++v2; /*0x53da2a*/
-    *(v3 - 1) = result; /*0x53da2b*/
+    v4 = ComputeSpiralOffset(&v6, v2);
+    ++v3;
+    result = *v4 + a1 * v4[1];
+    ++v2;
+    *(v3 - 1) = result;
   }
-  while ( (int)v3 < (int)&unk_A9FF6C ); /*0x53da34*/
-  return result; /*0x53da36*/
+    while ( (int)v3 < (int)&DataGlobal_A9FF6C );
+    return result;
 }
 }
 } // namespace gamemd
@@ -3717,10 +3714,8 @@ LABEL_65:
 namespace gamemd {
 void sub_53F2F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_53F2F0()
 {
-  *(double *)&unk_AA047C[132] = 0.0174532925199433 * 90.0; /*0x53f2fc*/
+    *(double *)&DataGlobal_AA047C[132] = 0.0174532925199433 * 90.0;
 }
 }
 } // namespace gamemd

@@ -1930,12 +1930,10 @@ LABEL_12:
 namespace gamemd {
 int sub_4A86E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_4A86E0()
 {
-  GadgetClass::Construct(MEMORY[0x8A06F8], 0, 0, 0, 0, 127, 1); /*0x4a86f1*/
-  MEMORY[0x8A06F8][0] = (int)&vt_DisplayClass_TacticalClass; /*0x4a86fb*/
-  return atexit(sub_4A8710); /*0x4a870b*/
+    GadgetClass::Construct(DataGlobal_8A06F8, 0, 0, 0, 0, 127, 1);
+    DataGlobal_8A06F8[0] = (int)&vt_DisplayClass_TacticalClass;
+    return atexit(sub_4A8710);
 }
 }
 } // namespace gamemd

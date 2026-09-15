@@ -19,31 +19,28 @@
 namespace gamemd {
 void * sub_6D0F10()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void *sub_6D0F10()
 {
-  int v0; // esi
-  int *v1; // edi
-  void *result; // eax
-  bool v3; // cl
-  bool v4; // [esp+Bh] [ebp-101h] BYREF
-  char Buffer[256]; // [esp+Ch] [ebp-100h] BYREF
-
-  v4 = 0; /*0x6d0f18*/
-  v0 = 0; /*0x6d0f1d*/
-  v1 = MEMORY[0xB0C148]; /*0x6d0f1f*/
-  do /*0x6d0f5a*/
+    int v0;
+    int *v1;
+    void *result;
+    bool v3;
+    bool v4;
+    char Buffer[256];
+    v4 = 0;
+    v0 = 0;
+    v1 = DataGlobal_B0C148;
+    do
   {
-    sprintf(Buffer, MEMORY[0x842828], v0); /*0x6d0f2f*/
-    result = LoadFileSHP(Buffer, &v4); /*0x6d0f3f*/
-    v3 = v4; /*0x6d0f44*/
-    *v1 = (int)result; /*0x6d0f48*/
-    MEMORY[0xB0CBDC][v0] = v3; /*0x6d0f4a*/
-    ++v1; /*0x6d0f50*/
-    ++v0; /*0x6d0f53*/
+    sprintf(Buffer, DataGlobal_842828, v0);
+    result = LoadFileSHP(Buffer, &v4);
+    v3 = v4;
+    *v1 = (int)result;
+    DataGlobal_B0CBDC[v0] = v3;
+    ++v1;
+    ++v0;
   }
-  while ( (int)v1 < (int)&MEMORY[0xB0C1AC] ); /*0x6d0f5a*/
-  return result; /*0x6d0f5c*/
+    while ( (int)v1 < (int)&DataGlobal_B0C1AC );
+    return result;
 }
 }
 } // namespace gamemd

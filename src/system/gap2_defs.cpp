@@ -1348,8 +1348,6 @@ BOOL __thiscall FileClass::Load(int *this, CDFileClass *aP1)
 } }
 // 0x473E50
 namespace gamemd { int CCFileClass::Destru_vt14() {
-namespace gamemd { int CCFileClass::Destru_vt14() {
-{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CCFileClass::Destru_vt14(HANDLE *this)
 {
@@ -1386,8 +1384,7 @@ int __thiscall CCFileClass::Destru_vt14(HANDLE *this)
   return v5; /*0x473eef*/
 }
 }
-} // namespace gamemd
-
+}
 // 0x473F00
 namespace gamemd { int CCFileClass::Destru_vt15(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -12168,7 +12165,8 @@ LABEL_143:
   Straw::Dtor(v94); /*0x5263fe*/
   return 0; /*0x525d76*/
 }
-} }
+}
+}
 // 0x526420
 namespace gamemd { int INIClass::SaveToPipe(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)

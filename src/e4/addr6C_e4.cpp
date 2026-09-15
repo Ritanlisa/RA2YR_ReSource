@@ -1806,10 +1806,8 @@ int __cdecl globalHelper_0CF320(_DWORD *a1, _DWORD *a2)
 namespace gamemd {
 void sub_6CFD20(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall sub_6CFD20(int a1, int a2)
 {
-  MEMORY[0xB0CB78][a1] = a2; /*0x6cfd20*/
+    g_ObjectTrackingPool[a1] = a2;
 }
 }
 } // namespace gamemd

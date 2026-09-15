@@ -6,17 +6,14 @@
 namespace gamemd {
 int sub_5DB6F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5DB6F0()
 {
-  int result; // eax
-
-  result = WinMainSetup_Setup_5DB6F0_Setup(); /*0x5db6f1*/
-  MEMORY[0xA8D610][0] = 0; /*0x5db700*/
-  if ( MEMORY[0x887628] ) /*0x5db707*/
-    result = (**(int (__thiscall ***)(int, int))MEMORY[0x887628])(MEMORY[0x887628], 1); /*0x5db70d*/
-  MEMORY[0x887628] = 0; /*0x5db70f*/
-  return result; /*0x5db715*/
+    int result;
+    result = WinMainSetup_Setup_5DB6F0_Setup();
+    g_CurrentPlayerName[0] = 0;
+    if ( g_NetworkInterface )
+    result = (**(int (__thiscall ***)(int, int))g_NetworkInterface)(g_NetworkInterface, 1);
+    g_NetworkInterface = 0;
+    return result;
 }
 }
 } // namespace gamemd

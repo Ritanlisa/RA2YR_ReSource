@@ -843,23 +843,20 @@ LABEL_10:
 namespace gamemd {
 unsigned int * sub_58BB00(unsigned int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall sub_58BB00(_DWORD *a1, int a2)
 {
-  _DWORD *result; // eax
-
-  result = a1; /*0x58bb02*/
-  if ( a2 < 0 || a2 >= dword_ABED0C ) /*0x58bb0c*/
+    int *result;
+    result = a1;
+    if ( a2 < 0 || a2 >= DataGlobal_ABED0C )
   {
-    *a1 = 0; /*0x58bb26*/
-    a1[1] = 0; /*0x58bb28*/
+    *a1 = 0;
+    *((int*)(a1) + 1) = 0;
   }
-  else
+    else
   {
-    *a1 = dword_ABE328[2 * a2]; /*0x58bb15*/
-    a1[1] = dword_ABE32C[2 * a2]; /*0x58bb1e*/
+    *a1 = DataGlobal_ABE328[2 * a2];
+    *((int*)(a1) + 1) = DataGlobal_ABE32C[2 * a2];
   }
-  return result; /*0x58bb21*/
+    return result;
 }
 }
 } // namespace gamemd

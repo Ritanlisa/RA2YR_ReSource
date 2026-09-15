@@ -98,61 +98,52 @@ LABEL_9:
 namespace gamemd {
 HWND E4Recv_696AE0::sub_696AE0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall sub_696AE0(int this)
 {
-  HWND DlgItem; // edi
-  HWND result; // eax
-  HWND v4; // ebp
-  char *v5; // esi
-  LRESULT v6; // edi
-  int v7; // eax
-  char *v8; // [esp+10h] [ebp-8h]
-
-  DlgItem = GetDlgItem(*(HWND *)this, 1629); /*0x696b05*/
-  result = GetDlgItem(*(HWND *)this, 1630); /*0x696b07*/
-  v4 = result; /*0x696b0b*/
-  if ( DlgItem ) /*0x696b0d*/
+    HWND DlgItem;
+    HWND result;
+    HWND v4;
+    char *v5;
+    LRESULT v6;
+    int v7;
+    char *v8;
+    DlgItem = GetDlgItem(*(HWND *)this, 1629);
+    result = GetDlgItem(*(HWND *)this, 1630);
+    v4 = result;
+    if ( DlgItem )
   {
-    if ( result ) /*0x696b15*/
+    if ( result )
     {
-      v5 = (char *)(this + 8); /*0x696b21*/
-      SendMessageA(DlgItem, 0x4B5u, 0x80u, (LPARAM)v5); /*0x696b30*/
-      SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&MEMORY[0x889F64]); /*0x696b3f*/
-      String::Trim(v5); /*0x696b43*/
-      result = 0; /*0x696b4d*/
-      if ( strlen(v5) ) /*0x696b4f*/
+    v5 = (char *)(this + 8);
+    SendMessageA(DlgItem, 0x4B5u, 0x80u, (LPARAM)v5);
+    SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer);
+    String::Trim(v5);
+    result = 0;
+    if ( strlen(v5) )
       {
-        _strupr(v5); /*0x696b5b*/
-        v6 = SendMessageA(v4, 0x4C4u, 0xFFFFFFFF, (LPARAM)v5); /*0x696b6e*/
-        if ( v6 == -1 ) /*0x696b73*/
+    _strupr(v5);
+    v6 = SendMessageA(v4, 0x4C4u, 0xFFFFFFFF, (LPARAM)v5);
+    if ( v6 == -1 )
         {
-          v8 = (char *)__2_YAPAXI_Z(0x29u); /*0x696b8c*/
-          strcpy(v8, v5); /*0x696ba2*/
-          result = (HWND)SendMessageA(v4, 0x4C8u, 0, (LPARAM)v8); /*0x696bb1*/
-          v6 = (LRESULT)result; /*0x696bb3*/
-          if ( result == HWND_MESSAGE|0x2 ) /*0x696bb8*/
-            return result; /*0x696bb8*/
-          if ( MEMORY[0xA8DB5C] < MEMORY[0xA8DB54] /*0x696bf1*/
-            || (MEMORY[0xA8DB59] || !MEMORY[0xA8DB54])
-            && MEMORY[0xA8DB60] > 0
-            && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xA8DB4C] + 8))(
-                 &MEMORY[0xA8DB4C],
-                 MEMORY[0xA8DB54] + MEMORY[0xA8DB60],
-                 0) )
+    v8 = (char *)__2_YAPAXI_Z(0x29u);
+    strcpy(v8, v5);
+    result = (HWND)SendMessageA(v4, 0x4C8u, 0, (LPARAM)v8);
+    v6 = (LRESULT)result;
+    if ( result == HWND_MESSAGE|0x2 )
+    return result;
+    if ( DataGlobal_A8DB5C < DataGlobal_A8DB54 || (DataGlobal_A8DB59 || !DataGlobal_A8DB54) && DataGlobal_A8DB60 > 0 && (*(unsigned char (__thiscall **)(int *, int, int))(DataGlobal_A8DB4C + 8))( &DataGlobal_A8DB4C, DataGlobal_A8DB54 + DataGlobal_A8DB60, 0) )
           {
-            v7 = MEMORY[0xA8DB5C]++; /*0x696c02*/
-            *(_DWORD *)(MEMORY[0xA8DB50] + 4 * v7) = v8; /*0x696c11*/
+    v7 = DataGlobal_A8DB5C++;
+    *(int *)(DataGlobal_A8DB50 + 4 * v7) = v8;
           }
         }
-        SendMessageA(v4, 0x186u, v6, 0); /*0x696c1d*/
-        SendMessageA(v4, 0x197u, v6, 0); /*0x696c28*/
-        *(_DWORD *)(this + 152) = v6; /*0x696c2e*/
-        return (HWND)this; /*0x696c2a*/
+    SendMessageA(v4, 0x186u, v6, 0);
+    SendMessageA(v4, 0x197u, v6, 0);
+    this->M152 = v6;
+    return (HWND)this;
       }
     }
   }
-  return result; /*0x696c34*/
+    return result;
 }
 }
 } // namespace gamemd

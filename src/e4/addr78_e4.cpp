@@ -2170,52 +2170,49 @@ int __cdecl sub_7830C0(signed int *a1, signed int *a2)
 namespace gamemd {
 int sub_7831A0(signed int * a1, signed int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl sub_7831A0(signed int *a1, signed int *a2)
 {
-  signed int v2; // eax
-  int v3; // eax
-  signed int v5; // eax
-  signed int v6; // ecx
-  signed int v7; // eax
-  signed int v8; // eax
-  _BYTE v9[108]; // [esp+4h] [ebp-D8h] BYREF
-  _BYTE v10[108]; // [esp+70h] [ebp-6Ch] BYREF
-
-  v2 = a1[2]; /*0x7831aa*/
-  if ( v2 == a2[2] ) /*0x7831b8*/
+    signed int v2;
+    int v3;
+    signed int v5;
+    signed int v6;
+    signed int v7;
+    signed int v8;
+    char v9[108];
+    char v10[108];
+    v2 = *((int*)(a1) + 2);
+    if ( v2 == *((int*)(a2) + 2) )
   {
-    v5 = a1[1]; /*0x7831c9*/
-    v6 = a2[1]; /*0x7831cc*/
-    if ( v5 <= v6 ) /*0x7831d1*/
+    v5 = *((int*)(a1) + 1);
+    v6 = *((int*)(a2) + 1);
+    if ( v5 <= v6 )
     {
-      if ( v5 >= v6 ) /*0x7831de*/
+    if ( v5 >= v6 )
       {
-        memset(v10, 0, sizeof(v10)); /*0x7831fb*/
-        memset(v9, 0, sizeof(v9)); /*0x78320c*/
-        v7 = *a1; /*0x78320e*/
-        if ( *a1 >= 0 && v7 < (int)g_WOL_State ) /*0x78321c*/
-          qmemcpy(v10, &g_WOL_ConnectionFlags[3 * v7], sizeof(v10)); /*0x783230*/
-        v8 = *a2; /*0x783232*/
-        if ( *a2 >= 0 && v8 < (int)g_WOL_State ) /*0x78323a*/
-          qmemcpy(v9, &g_WOL_ConnectionFlags[3 * v8], sizeof(v9)); /*0x78324e*/
-        return _strcmpi(&v10[36], &v9[36]); /*0x78325d*/
+    memset(v10, 0, sizeof(v10));
+    memset(v9, 0, sizeof(v9));
+    v7 = *a1;
+    if ( *a1 >= 0 && v7 < (int)g_WOL_State )
+    qmemcpy(v10, &g_WOL_ConnectionFlags[3 * v7], sizeof(v10));
+    v8 = *a2;
+    if ( *a2 >= 0 && v8 < (int)g_WOL_State )
+    qmemcpy(v9, &g_WOL_ConnectionFlags[3 * v8], sizeof(v9));
+    return _strcmpi(&v10[36], &v9[36]);
       }
-      else
+    else
       {
-        return 1; /*0x7831e0*/
+    return 1;
       }
     }
     else
     {
-      return -1; /*0x7831d3*/
+    return -1;
     }
   }
-  else
+    else
   {
-    v3 = -(v2 != 0); /*0x7831bc*/
-    LOBYTE(v3) = v3 & 0xFE; /*0x7831bf*/
-    return v3 + 1; /*0x7831c1*/
+    v3 = -(v2 != 0);
+    LOBYTE(v3) = v3 & 0xFE;
+    return v3 + 1;
   }
 }
 }

@@ -1489,30 +1489,27 @@ char __userpurge Game::DumpMultiplayerGameInfo@<al>(int this@<ecx>, CellStruct *
 namespace gamemd {
 char Game::LoadMultiplayerScoreAssets()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Game::LoadMultiplayerScoreAssets(void *this)
 {
-  char result; // al
-  char *v3; // ecx
-
-  result = MEMORY[0xB0FBB8]; /*0x72d730*/
-  if ( !MEMORY[0xB0FBB8] ) /*0x72d73a*/
+    char result;
+    char *v3;
+    result = DataGlobal_B0FBB8;
+    if ( !DataGlobal_B0FBB8 )
   {
-    Game::shutdownGame(this); /*0x72d73c*/
-    if ( this ) /*0x72d743*/
+    Game::shutdownGame(this);
+    if ( this )
     {
-      v3 = MEMORY[0x844BD8][0]; /*0x72d74d*/
-      if ( this != (void *)1 ) /*0x72d756*/
-        v3 = MEMORY[0x844BDC]; /*0x72d758*/
+    v3 = DataGlobal_844BD8[0];
+    if ( this != (void *)1 )
+    v3 = DataGlobal_844BDC;
     }
     else
     {
-      v3 = MEMORY[0x844BD4][0]; /*0x72d745*/
+    v3 = DataGlobal_844BD4[0];
     }
-    result = LoadPaletteSimple(v3, &MEMORY[0xB0FBB0], &MEMORY[0xB0FBB4]); /*0x72d768*/
-    MEMORY[0xB0FBB8] = 1; /*0x72d76d*/
+    result = LoadPaletteSimple(v3, &DataGlobal_B0FBB0, &DataGlobal_B0FBB4);
+    DataGlobal_B0FBB8 = 1;
   }
-  return result; /*0x72d774*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -1951,50 +1948,41 @@ LABEL_118:
 namespace gamemd {
 int Game::CreateAIPlayer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Game_CreateAIPlayer()
 {
-  _BYTE *v0; // eax
-  _BYTE *v1; // esi
-  int v2; // eax
-  int v3; // eax
-  int result; // eax
-  int v5; // [esp+8h] [ebp-Ch] BYREF
-  _BYTE v6[2]; // [esp+Ch] [ebp-8h] BYREF
-  char v7[6]; // [esp+Eh] [ebp-6h] BYREF
-
-  v0 = __2_YAPAXI_Z(0x85u); /*0x796dea*/
-  v1 = v0; /*0x796def*/
-  if ( v0 ) /*0x796df8*/
-    Waypoint::InitInvalid(v0 + 40); /*0x796dfd*/
-  else
-    v1 = 0; /*0x796e04*/
-  BulkCharToWide(v1, (unsigned __int8 *)aOlCruddy, -1); /*0x796e0f*/
-  *(_DWORD *)(v1 + 123) = -1; /*0x796e1f*/
-  *(_DWORD *)(v1 + 75) = 0; /*0x796e26*/
-  *(_DWORD *)(v1 + 83) = 3; /*0x796e29*/
-  v5 = 0; /*0x796e33*/
-  v7[3] = 0; /*0x796e37*/
-  strcpy(v7, "QR"); /*0x796e44*/
-  v6[1] = 2; /*0x796e49*/
-  v6[0] = 10; /*0x796e4e*/
-  NetworkID::Assign((_DWORD *)v1 + 10, &v5, (int)v6, 0); /*0x796e53*/
-  if ( MEMORY[0xA8DA84] < MEMORY[0xA8DA7C] /*0x796e8c*/
-    || (MEMORY[0xA8DA81] || !MEMORY[0xA8DA7C])
-    && MEMORY[0xA8DA88] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xA8DA74] + 8))(
-         &MEMORY[0xA8DA74],
-         MEMORY[0xA8DA7C] + MEMORY[0xA8DA88],
-         0) )
+    char *v0;
+    char *v1;
+    int v2;
+    int v3;
+    int result;
+    int v5;
+    char v6[2];
+    char v7[6];
+    v0 = __2_YAPAXI_Z(0x85u);
+    v1 = v0;
+    if ( v0 )
+    Waypoint::InitInvalid(v0 + 40);
+    else
+    v1 = 0;
+    BulkCharToWide(v1, (unsigned char *)aOlCruddy, -1);
+    *(int *)(v1 + 123) = -1;
+    *(int *)(v1 + 75) = 0;
+    *(int *)(v1 + 83) = 3;
+    v5 = 0;
+    v7[3] = 0;
+    strcpy(v7, "QR");
+    v6[1] = 2;
+    v6[0] = 10;
+    NetworkID::Assign((int *)(v1) + 10, &v5, (int)v6, 0);
+    if ( Game_PlayerCount < DataGlobal_A8DA7C || (DataGlobal_A8DA81 || !DataGlobal_A8DA7C) && DataGlobal_A8DA88 > 0 && (*(unsigned char (__thiscall **)(int *, int, int))(g_PlayerInfoCount + 8))( &g_PlayerInfoCount, DataGlobal_A8DA7C + DataGlobal_A8DA88, 0) )
   {
-    v2 = MEMORY[0xA8DA84]++; /*0x796e99*/
-    *(_DWORD *)(MEMORY[0xA8DA78] + 4 * v2) = v1; /*0x796ea8*/
+    v2 = Game_PlayerCount++;
+    *(int *)(Game_PlayerInfoArray + 4 * v2) = v1;
   }
-  v3 = MEMORY[0xA8B54C]; /*0x796eab*/
-  dword_B7790C[MEMORY[0xA8B54C]] = 100; /*0x796eb2*/
-  result = v3 + 1; /*0x796ebd*/
-  MEMORY[0xA8B54C] = result; /*0x796ebe*/
-  return result; /*0x796eb0*/
+    v3 = g_ScenarioLoadFlags;
+    DataGlobal_B7790C[g_ScenarioLoadFlags] = 100;
+    result = v3 + 1;
+    g_ScenarioLoadFlags = result;
+    return result;
 }
 }
 } // namespace gamemd
@@ -2003,51 +1991,42 @@ int Game_CreateAIPlayer()
 namespace gamemd {
 int Game::CreateAIPlayer_Potato()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int Game_CreateAIPlayer_Potato()
 {
-  _BYTE *v0; // eax
-  _BYTE *v1; // esi
-  int v2; // eax
-  int v3; // eax
-  int result; // eax
-  int v5; // [esp+8h] [ebp-Ch] BYREF
-  _BYTE v6[3]; // [esp+Ch] [ebp-8h] BYREF
-  char v7[5]; // [esp+Fh] [ebp-5h] BYREF
-
-  v0 = __2_YAPAXI_Z(0x85u); /*0x796eda*/
-  v1 = v0; /*0x796edf*/
-  if ( v0 ) /*0x796ee8*/
-    Waypoint::InitInvalid(v0 + 40); /*0x796eed*/
-  else
-    v1 = 0; /*0x796ef4*/
-  BulkCharToWide(v1, (unsigned __int8 *)aPotato, -1); /*0x796eff*/
-  *(_DWORD *)(v1 + 123) = -1; /*0x796f0f*/
-  *(_DWORD *)(v1 + 75) = 0; /*0x796f16*/
-  *(_DWORD *)(v1 + 83) = 0; /*0x796f19*/
-  v5 = 0; /*0x796f1f*/
-  v7[2] = 0; /*0x796f23*/
-  strcpy(v7, "a"); /*0x796f2b*/
-  v6[2] = 20; /*0x796f30*/
-  v6[1] = 2; /*0x796f35*/
-  v6[0] = 10; /*0x796f3a*/
-  NetworkID::Assign((_DWORD *)v1 + 10, &v5, (int)v6, 0); /*0x796f3f*/
-  if ( MEMORY[0xA8DA84] < MEMORY[0xA8DA7C] /*0x796f78*/
-    || (MEMORY[0xA8DA81] || !MEMORY[0xA8DA7C])
-    && MEMORY[0xA8DA88] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(MEMORY[0xA8DA74] + 8))(
-         &MEMORY[0xA8DA74],
-         MEMORY[0xA8DA7C] + MEMORY[0xA8DA88],
-         0) )
+    char *v0;
+    char *v1;
+    int v2;
+    int v3;
+    int result;
+    int v5;
+    char v6[3];
+    char v7[5];
+    v0 = __2_YAPAXI_Z(0x85u);
+    v1 = v0;
+    if ( v0 )
+    Waypoint::InitInvalid(v0 + 40);
+    else
+    v1 = 0;
+    BulkCharToWide(v1, (unsigned char *)aPotato, -1);
+    *(int *)(v1 + 123) = -1;
+    *(int *)(v1 + 75) = 0;
+    *(int *)(v1 + 83) = 0;
+    v5 = 0;
+    v7[2] = 0;
+    strcpy(v7, "a");
+    v6[2] = 20;
+    v6[1] = 2;
+    v6[0] = 10;
+    NetworkID::Assign((int *)(v1) + 10, &v5, (int)v6, 0);
+    if ( Game_PlayerCount < DataGlobal_A8DA7C || (DataGlobal_A8DA81 || !DataGlobal_A8DA7C) && DataGlobal_A8DA88 > 0 && (*(unsigned char (__thiscall **)(int *, int, int))(g_PlayerInfoCount + 8))( &g_PlayerInfoCount, DataGlobal_A8DA7C + DataGlobal_A8DA88, 0) )
   {
-    v2 = MEMORY[0xA8DA84]++; /*0x796f85*/
-    *(_DWORD *)(MEMORY[0xA8DA78] + 4 * v2) = v1; /*0x796f94*/
+    v2 = Game_PlayerCount++;
+    *(int *)(Game_PlayerInfoArray + 4 * v2) = v1;
   }
-  v3 = MEMORY[0xA8B54C]; /*0x796f97*/
-  dword_B7790C[MEMORY[0xA8B54C]] = 100; /*0x796f9e*/
-  result = v3 + 1; /*0x796fa9*/
-  MEMORY[0xA8B54C] = result; /*0x796faa*/
-  return result; /*0x796f9c*/
+    v3 = g_ScenarioLoadFlags;
+    DataGlobal_B7790C[g_ScenarioLoadFlags] = 100;
+    result = v3 + 1;
+    g_ScenarioLoadFlags = result;
+    return result;
 }
 }
 } // namespace gamemd

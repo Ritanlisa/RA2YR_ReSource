@@ -569,12 +569,10 @@ int __cdecl sub_652630(_DWORD *a1, _DWORD *a2)
 namespace gamemd {
 int sub_652870()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_652870()
 {
-  GadgetClass::Construct(MEMORY[0xB04A10], 0, 0, 0, 0, 159, 1); /*0x652884*/
-  MEMORY[0xB04A10][0] = (int)&vt_RadarClass_RTacticalClass; /*0x65288e*/
-  return atexit(sub_6528A0); /*0x65289e*/
+    GadgetClass::Construct(DataGlobal_B04A10, 0, 0, 0, 0, 159, 1);
+    DataGlobal_B04A10[0] = (int)&vt_RadarClass_RTacticalClass;
+    return atexit(sub_6528A0);
 }
 }
 } // namespace gamemd

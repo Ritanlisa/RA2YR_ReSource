@@ -229,29 +229,24 @@ void __thiscall ParticleClass::AdjustHeight(ParticleClass *this)
 namespace gamemd {
 int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ParticleClass::LoadParticleData(void *this, ObjectClass *aP1, int aP1a)
 {
-  int result; // eax
-
-  result = BuildingClass::SaveLoad_Register((#374 *)this); /*0x62d7ab*/
-  if ( result >= 0 ) /*0x62d7b2*/
+    int result;
+    result = BuildingClass::SaveLoad_Register((AnimClass *)this);
+    if ( result >= 0 )
   {
-    if ( aP1 ) /*0x62d7b6*/
+    if ( aP1 )
     {
-      ObjectClass::Init(aP1, (AbstractClass *)&aP1a); /*0x62d7bf*/
-      *(_DWORD *)aP1->__pad_0 = &ParticleClass::`vftable'; /*0x62d7c4*/
-      *(_DWORD *)&aP1->__pad_0[4] = &ParticleClass::`vftable'; /*0x62d7ca*/
-      *(_DWORD *)&aP1->__pad_0[8] = &ParticleClass::`vftable'; /*0x62d7d1*/
-      *(_DWORD *)&aP1->__pad_0[12] = &vt_ParticleClass; /*0x62d7d8*/
+    ObjectClass::Init(aP1, (AbstractClass *)&aP1a);
+    *(int *)aP1->__pad_0 = (unsigned int)vt_ParticleClass;
+    *(int *)&aP1->__pad_0[4] = (unsigned int)vt_ParticleClass;
+    *(int *)&aP1->__pad_0[8] = (unsigned int)vt_ParticleClass;
+    *(int *)&aP1->__pad_0[12] = &vt_ParticleClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]); /*0x62d7eb*/
-    ObjectPtr::RegisterForTracking( /*0x62d7fc*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP1[1].spawnStatus);
-    return 0; /*0x62d801*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP1[1].spawnStatus);
+    return 0;
   }
-  return result; /*0x62d803*/
+    return result;
 }
 }
 } // namespace gamemd

@@ -997,35 +997,32 @@ int __fastcall InitializeAudioOcclusion(IUnknown *aP0, _DWORD *a1, _DWORD *a2)
 namespace gamemd {
 int sub_754740(int a1, int a2, unsigned int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_754740(int a1, int a2, unsigned int a3, int a4)
 {
-  int result; // eax
-  char *v5; // esi
-  int v6; // edx
-  char *v7; // edi
-
-  if ( a1 < 0 || a2 < 0 || (int)(a1 + a3) > 255 || (result = a2 + a4, a2 + a4 > 255) ) /*0x754763*/
+    int result;
+    char *v5;
+    int v6;
+    char *v7;
+    if ( a1 < 0 || a2 < 0 || (int)(a1 + a3) > 255 || (result = a2 + a4, a2 + a4 > 255) )
   {
-    memset(MEMORY[0xB2FF78], 0, 0x10000u); /*0x7547ac*/
-    return 0; /*0x7547a5*/
+    memset(g_VoxelRenderBuffer, 0, 0x10000u);
+    return 0;
   }
-  else if ( a2 <= result ) /*0x754767*/
+    else if ( a2 <= result )
   {
-    v5 = &MEMORY[0xB2FF78][256 * a2 + a1]; /*0x754773*/
-    v6 = a4 + 1; /*0x75477a*/
-    do /*0x754797*/
+    v5 = &g_VoxelRenderBuffer[256 * a2 + a1];
+    v6 = a4 + 1;
+    do
     {
-      result = 0; /*0x75477e*/
-      memset(v5, 0, 4 * (a3 >> 2)); /*0x754787*/
-      v7 = &v5[4 * (a3 >> 2)]; /*0x754787*/
-      v5 += 256; /*0x75478b*/
-      --v6; /*0x754794*/
-      memset(v7, 0, a3 & 3); /*0x754795*/
+    result = 0;
+    memset(v5, 0, 4 * (a3 >> 2));
+    v7 = &v5[4 * (a3 >> 2)];
+    v5 += 256;
+    --v6;
+    memset(v7, 0, a3 & 3);
     }
-    while ( v6 ); /*0x754797*/
+    while ( v6 );
   }
-  return result; /*0x75479b*/
+    return result;
 }
 }
 } // namespace gamemd

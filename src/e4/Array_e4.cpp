@@ -7,25 +7,22 @@
 namespace gamemd {
 int Array::ForEach(AbstractClass * aP0, int a2, IUnknown * aP2, int (__thiscall *a4)(int) a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall Array::ForEach(AbstractClass *aP0, int a2, IUnknown *aP2, int (__thiscall *a4)(int))
 {
-  int result; // eax
-  IUnknown *v6; // edi
-
-  result = (int)&aP2[-1].__tail_1602E[1]; /*0x4068f4*/
-  if ( (int)&aP2[-1].__tail_1602E[1] >= 0 ) /*0x4068f5*/
+    int result;
+    IUnknown *v6;
+    result = (int)&aP2[-1].__tail_1602E[1];
+    if ( (int)&aP2[-1].__tail_1602E[1] >= 0 )
   {
-    v6 = aP2; /*0x406907*/
-    do /*0x406911*/
+    v6 = aP2;
+    do
     {
-      result = a4((int)aP0); /*0x40690c*/
-      aP0 = (AbstractClass *)((char *)aP0 + a2); /*0x40690e*/
-      v6 = (IUnknown *)((char *)v6 - 1); /*0x406910*/
+    result = a4((int)aP0);
+    aP0 = (AbstractClass *)((char *)(aP0) + a2);
+    v6 = (IUnknown *)((char *)v6 - 1);
     }
-    while ( v6 ); /*0x406911*/
+    while ( v6 );
   }
-  return result; /*0x406917*/
+    return result;
 }
 }
 } // namespace gamemd
@@ -34,27 +31,24 @@ int __stdcall Array::ForEach(AbstractClass *aP0, int a2, IUnknown *aP2, int (__t
 namespace gamemd {
 int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (__thiscall *a4)(int) a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall Array::ForEachReverse(ObjectClass *aP0, int a2, int a3, int (__thiscall *a4)(int))
 {
-  char *v4; // esi
-  int result; // eax
-  int v6; // edi
-
-  v4 = &aP0->__pad_0[a3 * a2]; /*0x40afe3*/
-  result = a3 - 1; /*0x40afe5*/
-  if ( a3 - 1 >= 0 ) /*0x40afe6*/
+    char *v4;
+    int result;
+    int v6;
+    v4 = &aP0->__pad_0[a3 * a2];
+    result = a3 - 1;
+    if ( a3 - 1 >= 0 )
   {
-    v6 = a3; /*0x40afee*/
-    do /*0x40aff8*/
+    v6 = a3;
+    do
     {
-      v4 -= a2; /*0x40aff1*/
-      result = a4((int)v4); /*0x40aff5*/
-      --v6; /*0x40aff7*/
+    v4 -= a2;
+    result = a4((int)v4);
+    --v6;
     }
-    while ( v6 ); /*0x40aff8*/
+    while ( v6 );
   }
-  return result; /*0x40affc*/
+    return result;
 }
 }
 } // namespace gamemd

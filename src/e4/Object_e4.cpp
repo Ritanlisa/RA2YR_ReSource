@@ -433,25 +433,22 @@ OverlayClass *__thiscall Object::SpawnAtCell(void *this, IUnknown *aP1, IUnknown
 namespace gamemd {
 int Object::LoadObject(ObjectClass * aP1, int aP1a)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Object::LoadObject(void *this, ObjectClass *aP1, int aP1a)
 {
-  ObjectClass *Register; // edi
-
-  Register = (ObjectClass *)BuildingClass::SaveLoad_Register((#374 *)this); /*0x5fd901*/
-  if ( (int)Register >= 0 ) /*0x5fd905*/
+    ObjectClass *Register;
+    Register = (ObjectClass *)BuildingClass::SaveLoad_Register((AnimClass *)this);
+    if ( (int)Register >= 0 )
   {
-    if ( aP1 ) /*0x5fd909*/
+    if ( aP1 )
     {
-      ObjectClass::Init(aP1, (AbstractClass *)&aP1a); /*0x5fd912*/
-      *(_DWORD *)aP1->__pad_0 = &OverlayClass::`vftable'; /*0x5fd917*/
-      *(_DWORD *)&aP1->__pad_0[4] = &OverlayClass::`vftable'; /*0x5fd91d*/
-      *(_DWORD *)&aP1->__pad_0[8] = &OverlayClass::`vftable'; /*0x5fd924*/
-      *(_DWORD *)&aP1->__pad_0[12] = &vt_OverlayClass; /*0x5fd92b*/
+    ObjectClass::Init(aP1, (AbstractClass *)&aP1a);
+    *(int *)aP1->__pad_0 = (unsigned int)vt_OverlayClass;
+    *(int *)&aP1->__pad_0[4] = (unsigned int)vt_OverlayClass;
+    *(int *)&aP1->__pad_0[8] = (unsigned int)vt_OverlayClass;
+    *(int *)&aP1->__pad_0[12] = &vt_OverlayClass;
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]); /*0x5fd93e*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]);
   }
-  return (int)Register->__pad_0; /*0x5fd945*/
+    return (int)Register->__pad_0;
 }
 }
 } // namespace gamemd

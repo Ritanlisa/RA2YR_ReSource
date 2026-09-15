@@ -64,13 +64,11 @@ int __thiscall Mouse::SetBounds(int this, IUnknown *aP1)
 namespace gamemd {
 SHORT Mouse::GetKeyState()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-SHORT __thiscall Mouse::GetKeyState(unsigned __int8 this)
 {
-  if ( unk_AA0444 ) /*0x53ec97*/
-    return unk_AA0168[this]; /*0x53eca7*/
-  else
-    return GetAsyncKeyState(this); /*0x53ec9a*/
+    if ( g_StreamBufferState )
+    return DataGlobal_AA0168[this];
+    else
+    return GetAsyncKeyState(this);
 }
 }
 } // namespace gamemd

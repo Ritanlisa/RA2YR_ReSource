@@ -636,11 +636,20 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
                 i += 1
                 continue
 
-            # -- array subscript  IDENT[...]  -> base ADDRESS, NO read --------
-            #    (IDA renders a variable-indexed member array as a local pointer
-            #    walk and drops the read; `Upgrades[slot]` (member 1516) is dropped
-            #    on BOTH sides. The `[...]` body tokenizes normally afterwards.)
+            # -- array subscript  IDENT[...] ----------------------------------
+            #    G12: a GLOBAL-typed base DOES emit — IDA's `MEMORY[A][idx]`
+            #    (mega-blob element access) extracts READ/WRITE(global,A) and
+            #    the old blanket drop fabricated a one-sided 0-event cpp side
+            #    (every memory-chain translation could never verify). MEMBER
+            #    and local bases keep the drop: IDA renders those as local
+            #    pointer walks with no event (`Upgrades[slot]` precedent).
+            #    The `[...]` body tokenizes normally afterwards.
             if _is_op(nxt, "["):
+                gkind, gval = bare_resolver.resolve(val)
+                if gkind == "global":
+                    hits.append((t.pos, _tok_end(t),
+                                 write_global(gval) if _is_write(text, _tok_end(t))
+                                 else read_global(gval)))
                 i += 1
                 continue
 

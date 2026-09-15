@@ -3201,37 +3201,34 @@ LRESULT __fastcall GetComboBoxSelectedDefault(SkirmishDialog *aP0, int nIDDlgIte
 namespace gamemd {
 int Lobby_SelectCountry(HWND a1, void * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Lobby_SelectCountry(HWND a1, void *a2)
 {
-  LRESULT Selected; // edi
-  int result; // eax
-  int v5; // ecx
-
-  Selected = GetComboBoxSelected(a1, (int)a2, -1); /*0x5e9b6d*/
-  result = CountryCombo::IDToIndex(a2); /*0x5e9b6f*/
-  if ( result == MEMORY[0xA8DA8C] ) /*0x5e9b7a*/
+    LRESULT Selected;
+    int result;
+    int v5;
+    Selected = GetComboBoxSelected(a1, (int)a2, -1);
+    result = CountryCombo::IDToIndex(a2);
+    if ( result == g_NetworkPlayerCount )
   {
-    SessionClass::AssignSide(&MEMORY[0xA8B238], Selected, 0); /*0x5e9b84*/
-    result = MEMORY[0xA8DA84]; /*0x5e9b89*/
-    if ( MEMORY[0xA8DA84] ) /*0x5e9b90*/
-      return SessionClass::SetPlayerOption(*(_DWORD *)MEMORY[0xA8DA78], Selected); /*0x5e9b9a*/
+    SessionClass::AssignSide(&g_GameMode_Current, Selected, 0);
+    result = Game_PlayerCount;
+    if ( Game_PlayerCount )
+    return SessionClass::SetPlayerOption(*(int *)Game_PlayerInfoArray, Selected);
   }
-  else
+    else
   {
-    v5 = *(&MEMORY[0xA8DA90] + result); /*0x5e9ba2*/
-    if ( v5 && (v5 == MEMORY[0xAC11A4] || v5 == MEMORY[0xAC11A8] || v5 == MEMORY[0xAC11AC]) ) /*0x5e9bc3*/
+    v5 = *(&g_NetworkPlayerName + result);
+    if ( v5 && (v5 == g_Lobby_PlayerTeam || v5 == g_Lobby_PlayerSide || v5 == g_Lobby_PlayerColor) )
     {
-      MEMORY[0xA8B29C][result] = Selected; /*0x5e9bc5*/
+    g_CampaignPlayerArray[result] = Selected;
     }
     else
     {
-      MEMORY[0xA8B29C][result] = -1; /*0x5e9bcf*/
-      MEMORY[0xA8B27C][result] = -1; /*0x5e9bda*/
-      MEMORY[0xA8B2BC][result] = -1; /*0x5e9be5*/
+    g_CampaignPlayerArray[result] = -1;
+    DataGlobal_A8B27C[result] = -1;
+    g_CampaignConfig[result] = -1;
     }
   }
-  return result; /*0x5e9b9f*/
+    return result;
 }
 }
 } // namespace gamemd

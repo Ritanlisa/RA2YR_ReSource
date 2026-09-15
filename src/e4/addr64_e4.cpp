@@ -32,16 +32,14 @@ _DWORD *__thiscall unknown_libname_27(_DWORD *this)
 namespace gamemd {
 void sub_6429A0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_6429A0()
 {
-  MEMORY[0xAC4F58][0] = (int)&vt_ProgressScreenClass; /*0x6429a5*/
-  if ( MEMORY[0xAC4FB0] ) /*0x6429b1*/
+    g_UIManager[0] = (int)&vt_ProgressScreenClass;
+    if ( DataGlobal_AC4FB0 )
   {
-    __3_YAXPAX_Z(MEMORY[0xAC4FAC]); /*0x6429b9*/
-    MEMORY[0xAC4FB0] = 0; /*0x6429c1*/
+    __3_YAXPAX_Z(DataGlobal_AC4FAC);
+    DataGlobal_AC4FB0 = 0;
   }
-  MEMORY[0xAC4FAC] = 0; /*0x6429c8*/
+    DataGlobal_AC4FAC = 0;
 }
 }
 } // namespace gamemd
