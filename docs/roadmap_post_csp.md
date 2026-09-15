@@ -2266,7 +2266,76 @@ extern 缺段（1，**事件面最窄的重译首选**）。附带勘误：get_c
 
 ---
 
-## Phase H — 剩余 4,935 pending 清偿总计划（2026-09-14 G11 会话末制定）
+## 执行日志 — 2026-09-15 G13 会话：证据补全大轮 + OO refresh + 舰队波 + H2 手术（completed 11,788 → 11,843 / pending 4,840 → 4,771）
+
+> 三提交：9710bf2c（证据补全）→ 3e94ae9a（OO refresh）→ 30d9480c（舰队波 + H2）；
+> auto-fill-baseline 重锚 30d9480c。IDA :13337 全程在线（探测后使用）。
+
+### 证据补全（9710bf2c）
+- **live til 全量导出** 1,706 UDT / 10,975 语义成员（`.omo/g13_til_live.json`，
+  py_exec_file + tinfo 迭代，成员序数天然含在列表序中——broken-arrow 序数表已就位）
+- **member_lookup 合并 +503 语义成员 / 22 类**（InfantryClass 121 / UnitClass 115 /
+  HouseTypeClass 44 / AnimTypeClass 40 / TubeClass 40）；占位符过滤 + 垃圾填充名
+  清洗 41；`signals._member_by_name` 双写同步
+- **UnitClass til 增量第二轮 54 干净成员**：84 同名异位冲突 + 23 mbn 漂移族诚实
+  剔除——**TechnoClass 中段三族争议区（+4/+12/+188）再次实证**（flashing 228 vs
+  240 vs 424 三源三值），冲突守卫是硬要求
+- **vtable 槽位 +15 真新增**（live 主表直读 + RTTI 祖先链守卫经 class_name_align
+  桥接）；ObjectClass 槽名冲突暴露 hpp 虚区错位旧债（IsAboveScreenMargin hpp=344
+  vs 二进制=124，AGENTS 裁决 #5 的又一实证）——保守不覆盖
+- **DataGlobal +4**（live xref 函数定性：83D4E4 RulesClass::ReadIQSection 键表 /
+  833240 GameSettings::Read / 83F158 ScenarioClass 网络配置 / 89A318 标量）
+- **hash-type 悬空序数定案 3**：**#378=AbstractClass**（`AbstractClass::ProcessPower`
+  自身签名即 `#378 *this`——函数名与 this 型互证，12 块解锁）/ #473=ScenarioClass /
+  #487=AircraftTypeVector；HASH_TYPE_MAP 9→12
+- **member_missing 548 对终局归因**：til 占位 236 / til 无覆盖 283 / interior 18
+  （数组元素访问，验证器下标不支持诚实搁置）/ 语义提案 11——**A1 债的 til 侧
+  天花板已到**，剩余需 YRpp+ctor 三源证据（YRpp submodule 为空需补齐）
+
+### OO refresh（3e94ae9a）
+- `gen_e4_materialize --phase refresh`：**rewritten 4,514 / unmapped 5,661**，
+  11,173 已译记录字节级保留；e4_globals.hpp E1 增量 +651 行
+- 物化副作用修正：10 条 bodyless 新记录剔除（0x448260 括号 +4 拼接伪差 v4 源
+  仅 +1——物化器拼接 bug 记账）
+- **g7_gap2_refresh '{' 注入损伤回滚**：六 gap2 文件 checkout 恢复（纯 `{` 无配对
+  删除插入，house +31 等）——**bug 未修，gap2 refresh 冻结至修复**
+- g5_fleet **class_layout 父链合并**（T14 扁平模型语义；PARENTS 表 =
+  class_layouts.parent + rtti_hierarchy.direct 经 class_name_align 桥接，192 条）：
+  UnitClass@540 focus / AnimClass@56 attachedBomb 等基类区解锁
+
+### 舰队波 + H2（30d9480c）
+- **G13 W2 波 109 桶 +47**（g13_wave2_plan 从 dry-scan 重建，GENERATED 293）；
+  TActionClass 4/4、AbstractTypeClass/AbstractClass #378 族全 PASS
+- **addr 桶 0% 通过率甄别**：幽灵 pending（主树旧译无地址注解 → E4 物化双份，
+  verify 按名命中 menu_select.cpp 等旧译）+ 旧译对 v4 真值不忠实——诚实回滚，
+  **主树旧译地址注解补全是新识别的债面**
+- **H2 A 类 17 项 hpp+def 手术**（unit.hpp 参数补全 + def 行对齐）；
+  **记录级确定性重建管线** `.omo/g13_rebuild_records.py`（内联伪迹免疫端检测 +
+  规范形态 [addr,def,{,marker,live,}]）；ida_cache 10 函数 live 更新
+  （738d30 等陈旧 mega-blob 尾段破案）
+- **unit.cpp +8 完成**（738d30 DeployToBuilding 等）；15 pending 剩余（B/C 类
+  成员名 + 被调声明债）；FootClass_field_5A4 → **Archive** 四类四方重命名
+  （ProcessReturnToBase vt111 比较型证据 + YRpp 语义）
+- **波 rollback 拼接 +1 伪差 13 条修复**（缓存确定性重拼——rollback 路径的
+  splice 有 off-by-one 记账）
+
+### 事故与止损（全记录）
+- unit.cpp 恢复链：拼接丢 def 闭合 → 手工括号手术恶化（strip_code 跨记录注释
+  状态使逐记录测量失真）→ **checkout + 确定性重建重放**（正确范式）；
+  signals 7 幽灵复位（**`a.upper()` 把 `0x` 变 `0X` 的匹配 bug——G12 警告
+  重演**）→ 重放标记 8
+- 文件级括子 2→-8 为遗留副本清除的记账漂移（marker 记录全部结构健全、
+  g5_fleet 可解析、0 幽灵——功能门全绿）
+- 波运行期间 signals.json 直读撕裂（mark并发写）——**波中禁直读 signals，
+  改用 MCP stats 口径**
+
+### 波后动作
+括号净 0 新增（LightSourceClass/unit.cpp 均 2→0 改善）/ 注解 1 missing
+（IsCrushable 0x5f6cd0 定义记录在遗留损坏区——挂账）/ 一致性 91/7 基线 /
+marker&completed 对账 **0 幽灵** / readiness READY
+
+---
+
 
 > 数据基线：MCP pending **4,935**（dry-scan 归因 4,881 + ~54 无伪码/ASM-only 块）。
 > 归因构成（2026-09-14 G11 末 dry-scan 权威口径，`.omo/g8_dryscan.json`）：
