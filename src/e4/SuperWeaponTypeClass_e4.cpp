@@ -322,91 +322,6 @@ LABEL_16:
 }
 } // namespace gamemd
 
-// 0x6CE5B0
-namespace gamemd {
-int SuperWeaponTypeClass::SuperWeaponTypeClass(ObjectClass * aP1)
-{
-{
-    int v3;
-    AbstractTypeClass::Constructor(this, (AbstractClass *)aP1);
-    this->WeaponType = 0;
-    this->RechargeVoice = -1;
-    this->ChargingVoice = -1;
-    this->ImpatientVoice = -1;
-    this->SuspendVoice = -1;
-    this->RechargeTime = 4500;
-    this->Type = -1;
-    this->SidebarImage = 0;
-    this->ActionValue = 0;
-    this->SpecialSound = -1;
-    this->StartSound = -1;
-    this->AuxBuilding = 0;
-    this->SidebarImageFile = 0;
-    this->FlashSidebarTabFrames = -1;
-    this->PreDependent = -1;
-    this->UseChargeDrain = 0;
-    this->IsPowered = 1;
-    this->DisableableFromShell = 0;
-    this->AIDefendAgainst = 0;
-    this->PreClick = 0;
-    this->PostClick = 0;
-    this->ShowTimer = 0;
-    this->ManualControl = 0;
-    this->Range = 0;
-    this->LineMultiplier = 0;
-    *(void**)this = vt_SuperWeaponTypeClass;
-    this->vtable1 = (unsigned int)vt_SuperWeaponTypeClass;
-    this->vtable2 = (unsigned int)vt_SuperWeaponTypeClass;
-    this->vtable3 = &vt_SuperWeaponTypeClass;
-    AbstractClass::GenerateUniqueID(this + 4);
-    this->ArrayIndex = *(int *)&g_NetworkPlayerBuffer.__pad_BC0[324];
-    if ( *(int *)&g_NetworkPlayerBuffer.__pad_BC0[324] < *(int *)&g_NetworkPlayerBuffer.__pad_BC0[316] || (g_NetworkPlayerBuffer.__pad_BC0[321] || !*(int *)&g_NetworkPlayerBuffer.__pad_BC0[316]) && *(int *)&g_NetworkPlayerBuffer.__pad_BC0[328] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&g_NetworkPlayerBuffer.__pad_BC0[308] + 8))( &g_NetworkPlayerBuffer.__pad_BC0[308], *(int *)&g_NetworkPlayerBuffer.__pad_BC0[316] + *(int *)&g_NetworkPlayerBuffer.__pad_BC0[328], 0) )
-  {
-    v3 = (*(int *)&g_NetworkPlayerBuffer.__pad_BC0[324])++;
-    *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_BC0[312] + 4 * v3) = this;
-  }
-    if ( this + 36 != this + 204 )
-    qmemcpy((void *)(this + 204), (const void *)(this + 36), 0x19u);
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x6CE800
-namespace gamemd {
-int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
-{
-{
-    int result;
-    int v3;
-    char v4;
-    char Buffer[512];
-    result = AbstractClass::SaveLoad_Prefix_0((int *)a1, a2);
-    if ( result >= 0 )
-  {
-    if ( a1 )
-    {
-    AbstractTypeClass::Init(a1, (int)&v4);
-    *(int *)(a1 + 184) = 0;
-    *(int *)a1 = (unsigned int)vt_SuperWeaponTypeClass;
-    *(int *)(a1 + 4) = (unsigned int)vt_SuperWeaponTypeClass;
-    *(int *)(a1 + 8) = (unsigned int)vt_SuperWeaponTypeClass;
-    *(int *)(a1 + 12) = &vt_SuperWeaponTypeClass;
-    }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 156));
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 200));
-    _makepath(Buffer, 0, 0, (const char *)(a1 + 204), Ext);
-    v3 = SearchMIXFile(Buffer, 0);
-    *(int *)(a1 + 184) = v3;
-    if ( !v3 )
-    *(int *)(a1 + 184) = SearchMIXFile(g_Str_File_XXICON_SHP, 0);
-    return 0;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6CEA20
 namespace gamemd {
 char SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
@@ -854,6 +769,56 @@ int SuperWeaponTypeClass::FindByName()
 }
 } // namespace gamemd
 
+// 0x6CE5B0
+namespace gamemd {
+int SuperWeaponTypeClass::SuperWeaponTypeClass(ObjectClass * aP1)
+{
+{
+    int v3;
+    AbstractTypeClass::Constructor(this, (AbstractClass *)aP1);
+    this->WeaponType = 0;
+    this->RechargeVoice = -1;
+    this->ChargingVoice = -1;
+    this->ImpatientVoice = -1;
+    this->SuspendVoice = -1;
+    this->RechargeTime = 4500;
+    this->Type = -1;
+    this->SidebarImage = 0;
+    this->ActionValue = 0;
+    this->SpecialSound = -1;
+    this->StartSound = -1;
+    this->AuxBuilding = 0;
+    this->SidebarImageFile = 0;
+    this->FlashSidebarTabFrames = -1;
+    this->PreDependent = -1;
+    this->UseChargeDrain = 0;
+    this->IsPowered = 1;
+    this->DisableableFromShell = 0;
+    this->AIDefendAgainst = 0;
+    this->PreClick = 0;
+    this->PostClick = 0;
+    this->ShowTimer = 0;
+    this->ManualControl = 0;
+    this->Range = 0;
+    this->LineMultiplier = 0;
+    *(void**)this = vt_SuperWeaponTypeClass;
+    this->vtable1 = (unsigned int)vt_SuperWeaponTypeClass;
+    this->vtable2 = (unsigned int)vt_SuperWeaponTypeClass;
+    this->vtable3 = &vt_SuperWeaponTypeClass;
+    AbstractClass::GenerateUniqueID(this + 4);
+    this->ArrayIndex = *(int *)&g_NetworkPlayerBuffer.__pad_BC0[324];
+    if ( *(int *)&g_NetworkPlayerBuffer.__pad_BC0[324] < *(int *)&g_NetworkPlayerBuffer.__pad_BC0[316] || (g_NetworkPlayerBuffer.__pad_BC0[321] || !*(int *)&g_NetworkPlayerBuffer.__pad_BC0[316]) && *(int *)&g_NetworkPlayerBuffer.__pad_BC0[328] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&g_NetworkPlayerBuffer.__pad_BC0[308] + 8))( &g_NetworkPlayerBuffer.__pad_BC0[308], *(int *)&g_NetworkPlayerBuffer.__pad_BC0[316] + *(int *)&g_NetworkPlayerBuffer.__pad_BC0[328], 0) )
+  {
+    v3 = (*(int *)&g_NetworkPlayerBuffer.__pad_BC0[324])++;
+    *(int *)(*(int *)&g_NetworkPlayerBuffer.__pad_BC0[312] + 4 * v3) = this;
+  }
+    if ( this + 36 != this + 204 )
+    qmemcpy((void *)(this + 204), (const void *)(this + 36), 0x19u);
+    return this;
+}
+}
+} // namespace gamemd
+
 // 0x6CE7C0
 namespace gamemd {
 int SuperWeaponTypeClass::SD_vt03(int a1, unsigned int * a2)
@@ -865,6 +830,41 @@ int SuperWeaponTypeClass::SD_vt03(int a1, unsigned int * a2)
   a2[2] = 1610668216;
   a2[3] = -318126072;
   return 0;
+}
+} // namespace gamemd
+
+// 0x6CE800
+namespace gamemd {
+int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
+{
+{
+    int result;
+    int v3;
+    char v4;
+    char Buffer[512];
+    result = AbstractClass::SaveLoad_Prefix_0((int *)a1, a2);
+    if ( result >= 0 )
+  {
+    if ( a1 )
+    {
+    AbstractTypeClass::Init(a1, (int)&v4);
+    *(int *)(a1 + 184) = 0;
+    *(int *)a1 = (unsigned int)vt_SuperWeaponTypeClass;
+    *(int *)(a1 + 4) = (unsigned int)vt_SuperWeaponTypeClass;
+    *(int *)(a1 + 8) = (unsigned int)vt_SuperWeaponTypeClass;
+    *(int *)(a1 + 12) = &vt_SuperWeaponTypeClass;
+    }
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 156));
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 200));
+    _makepath(Buffer, 0, 0, (const char *)(a1 + 204), Ext);
+    v3 = SearchMIXFile(Buffer, 0);
+    *(int *)(a1 + 184) = v3;
+    if ( !v3 )
+    *(int *)(a1 + 184) = SearchMIXFile(g_Str_File_XXICON_SHP, 0);
+    return 0;
+  }
+    return result;
+}
 }
 } // namespace gamemd
 

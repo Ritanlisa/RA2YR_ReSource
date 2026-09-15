@@ -1121,58 +1121,6 @@ CommBufferClass *__thiscall sub_48B0E0(CommBufferClass *this, int a2, int a3, si
 }
 } // namespace gamemd
 
-// 0x48B1F0
-namespace gamemd {
-void CommBufferClass::sub_48B1F0()
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    CCINIClass *v5;
-    int v6;
-    int v7;
-    CCINIClass *v8;
-    v2 = 0;
-    v3 = *(int *)&this->__pad_0[4];
-    *(int *)this->__pad_0 = &vt_CommBufferClass;
-    if ( v3 > 0 )
-  {
-    v4 = 0;
-    do
-    {
-    __3_YAXPAX_Z(*(void **)(this->field_24 + v4 * 4 + 20));
-    v5 = (CCINIClass *)this->field_24;
-    if ( v5->sectionHead[v4 + 3] )
-    __3_YAXPAX_Z((void *)v5->sectionHead[v4 + 3]);
-    ++v2;
-    v4 += 9;
-    }
-    while ( v2 < *(int *)&this->__pad_0[4] );
-  }
-    v6 = 0;
-    if ( this->field_8 > 0 )
-  {
-    v7 = 0;
-    do
-    {
-    __3_YAXPAX_Z(*(void **)(this->field_34 + v7 * 4 + 12));
-    v8 = (CCINIClass *)this->field_34;
-    if ( v8->sectionHead[v7 + 1] )
-    __3_YAXPAX_Z((void *)v8->sectionHead[v7 + 1]);
-    ++v6;
-    v7 += 6;
-    }
-    while ( v6 < this->field_8 );
-  }
-    __3_YAXPAX_Z((void *)this->field_24);
-    __3_YAXPAX_Z((void *)this->field_34);
-    __3_YAXPAX_Z(*(void **)&this->__pad_28[8]);
-    __3_YAXPAX_Z(*((void **)(this) + 16));
-}
-}
-} // namespace gamemd
-
 // 0x48BB60
 namespace gamemd {
 bool sub_48BB60(int a1)
@@ -1675,31 +1623,6 @@ FILE *sub_48E0B0()
     }
   }
   return result; /*0x48e26c*/
-}
-}
-} // namespace gamemd
-
-// 0x48E480
-namespace gamemd {
-int sub_48E480()
-{
-{
-    DataGlobal_89E9F0[0] = 128;
-    DataGlobal_89E9F4[0] = 128;
-    DataGlobal_89E9FC = 64;
-    DataGlobal_89EA00 = 64;
-    DataGlobal_89EA08 = 192;
-    DataGlobal_89EA0C = 64;
-    DataGlobal_89EA14 = 64;
-    DataGlobal_89E9F8[0] = 0;
-    DataGlobal_89EA04 = 0;
-    DataGlobal_89EA10 = 0;
-    DataGlobal_89EA18 = 192;
-    DataGlobal_89EA1C = 0;
-    DataGlobal_89EA20 = 192;
-    DataGlobal_89EA24 = 192;
-    DataGlobal_89EA28 = 0;
-    return 192;
 }
 }
 } // namespace gamemd
@@ -2364,6 +2287,58 @@ int sub_48B0C0()
 }
 } // namespace gamemd
 
+// 0x48B1F0
+namespace gamemd {
+void CommBufferClass::sub_48B1F0()
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    CCINIClass *v5;
+    int v6;
+    int v7;
+    CCINIClass *v8;
+    v2 = 0;
+    v3 = *(int *)&this->__pad_0[4];
+    *(int *)this->__pad_0 = &vt_CommBufferClass;
+    if ( v3 > 0 )
+  {
+    v4 = 0;
+    do
+    {
+    __3_YAXPAX_Z(*(void **)(this->field_24 + v4 * 4 + 20));
+    v5 = (CCINIClass *)this->field_24;
+    if ( v5->sectionHead[v4 + 3] )
+    __3_YAXPAX_Z((void *)v5->sectionHead[v4 + 3]);
+    ++v2;
+    v4 += 9;
+    }
+    while ( v2 < *(int *)&this->__pad_0[4] );
+  }
+    v6 = 0;
+    if ( this->field_8 > 0 )
+  {
+    v7 = 0;
+    do
+    {
+    __3_YAXPAX_Z(*(void **)(this->field_34 + v7 * 4 + 12));
+    v8 = (CCINIClass *)this->field_34;
+    if ( v8->sectionHead[v7 + 1] )
+    __3_YAXPAX_Z((void *)v8->sectionHead[v7 + 1]);
+    ++v6;
+    v7 += 6;
+    }
+    while ( v6 < this->field_8 );
+  }
+    __3_YAXPAX_Z((void *)this->field_24);
+    __3_YAXPAX_Z((void *)this->field_34);
+    __3_YAXPAX_Z(*(void **)&this->__pad_28[8]);
+    __3_YAXPAX_Z(*((void **)(this) + 16));
+}
+}
+} // namespace gamemd
+
 // 0x48BB00
 namespace gamemd {
 ObjectClass * E4Recv_48BB00::sub_48BB00(char a2)
@@ -2951,6 +2926,31 @@ int sub_48E460()
     DataGlobal_89EC08 = 128;
     DataGlobal_89EC0C = 128;
     return 128;
+}
+}
+} // namespace gamemd
+
+// 0x48E480
+namespace gamemd {
+int sub_48E480()
+{
+{
+    DataGlobal_89E9F0[0] = 128;
+    DataGlobal_89E9F4[0] = 128;
+    DataGlobal_89E9FC = 64;
+    DataGlobal_89EA00 = 64;
+    DataGlobal_89EA08 = 192;
+    DataGlobal_89EA0C = 64;
+    DataGlobal_89EA14 = 64;
+    DataGlobal_89E9F8[0] = 0;
+    DataGlobal_89EA04 = 0;
+    DataGlobal_89EA10 = 0;
+    DataGlobal_89EA18 = 192;
+    DataGlobal_89EA1C = 0;
+    DataGlobal_89EA20 = 192;
+    DataGlobal_89EA24 = 192;
+    DataGlobal_89EA28 = 0;
+    return 192;
 }
 }
 } // namespace gamemd

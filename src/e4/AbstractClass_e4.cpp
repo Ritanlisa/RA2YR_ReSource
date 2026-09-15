@@ -3,19 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 
-// 0x4101F0
-namespace gamemd {
-void AbstractClass::DTOR()
-{
-{
-    *(void**)this = vt_AbstractClass;
-    this->vtable1 = (unsigned int)vt_AbstractClass;
-    this->vtable2 = (unsigned int)vt_AbstractClass;
-    this->vtable3 = &vt_AbstractClass;
-}
-}
-} // namespace gamemd
-
 // 0x426A80
 namespace gamemd {
 int AbstractClass::getMapCoords()
@@ -350,23 +337,6 @@ void ***__userpurge RemoveObjectFromHouse@<eax>(_DWORD *a1@<ecx>, int a2@<edi>, 
 }
 } // namespace gamemd
 
-// 0x5B3A60
-namespace gamemd {
-MissionClass * AbstractClass::getWeaponRange(char a2)
-{
-{
-    *(void**)this = vt_MissionClass;
-    *(this + 1) = (unsigned int)vt_MissionClass;
-    *(this + 2) = (unsigned int)vt_MissionClass;
-    *(this + 3) = &vt_MissionClass;
-    ObjectClass::Dtor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (MissionClass *)this;
-}
-}
-} // namespace gamemd
-
 // 0x5C03D0
 namespace gamemd {
 int AbstractClass_getPathDirection()
@@ -661,6 +631,19 @@ int AbstractClass::initVtableBase()
     DataGlobal_887660 = 0;
     DataGlobal_887662 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4101F0
+namespace gamemd {
+void AbstractClass::DTOR()
+{
+{
+    *(void**)this = vt_AbstractClass;
+    this->vtable1 = (unsigned int)vt_AbstractClass;
+    this->vtable2 = (unsigned int)vt_AbstractClass;
+    this->vtable3 = &vt_AbstractClass;
 }
 }
 } // namespace gamemd
@@ -1498,6 +1481,23 @@ namespace gamemd {
 int AbstractClass::COMStub_Ret450_151()
 {
 return 450;
+}
+} // namespace gamemd
+
+// 0x5B3A60
+namespace gamemd {
+MissionClass * AbstractClass::getWeaponRange(char a2)
+{
+{
+    *(void**)this = vt_MissionClass;
+    *(this + 1) = (unsigned int)vt_MissionClass;
+    *(this + 2) = (unsigned int)vt_MissionClass;
+    *(this + 3) = &vt_MissionClass;
+    ObjectClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (MissionClass *)this;
+}
 }
 } // namespace gamemd
 

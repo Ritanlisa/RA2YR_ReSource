@@ -10,16 +10,6 @@
 #include "e4/classes/E4Recv_479740_e4.hpp"
 #include "e4/classes/E4Recv_47AA00_e4.hpp"
 
-// 0x470C30
-namespace gamemd {
-void E4Recv_470C30::sub_470C30()
-{
-{
-    this->vfptr = &vt_CampaignEndScoreClass;
-}
-}
-} // namespace gamemd
-
 // 0x472A80
 namespace gamemd {
 void CaptureManagerClass__vt_03_()
@@ -1391,6 +1381,16 @@ _WORD *__stdcall RenderFogOfWarOverlay(int a1, int *a2, unsigned int a3)
     }
   }
   return result; /*0x47f478*/
+}
+}
+} // namespace gamemd
+
+// 0x470C30
+namespace gamemd {
+void E4Recv_470C30::sub_470C30()
+{
+{
+    this->vfptr = &vt_CampaignEndScoreClass;
 }
 }
 } // namespace gamemd

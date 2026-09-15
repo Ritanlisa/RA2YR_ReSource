@@ -5497,18 +5497,6 @@ void __thiscall j_Exception_Destructor(void *this)
 }
 } // namespace gamemd
 
-// 0x7CA9CC
-namespace gamemd {
-exception * E4Recv_7CA9CC::sub_7CA9CC(struct exception * a1)
-{
-{
-    __0exception_QAE_ABV0__Z((exception *)this, a1);
-    this->vfptr = &vt_bad_typeid;
-    return (exception *)this;
-}
-}
-} // namespace gamemd
-
 // 0x7CAA00
 namespace gamemd {
 int j_Exception_Destructor_2()
@@ -14436,6 +14424,18 @@ exception * E4Recv_7CA9B4::sub_7CA9B4(struct exception * a2)
     __0exception_QAE_ABV0__Z(this, a2);
     *(int *)this = &vt_non_rtti_object;
     return this;
+}
+}
+} // namespace gamemd
+
+// 0x7CA9CC
+namespace gamemd {
+exception * E4Recv_7CA9CC::sub_7CA9CC(struct exception * a1)
+{
+{
+    __0exception_QAE_ABV0__Z((exception *)this, a1);
+    this->vfptr = &vt_bad_typeid;
+    return (exception *)this;
 }
 }
 } // namespace gamemd

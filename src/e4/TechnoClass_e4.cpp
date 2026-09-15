@@ -1031,6 +1031,8 @@ int __stdcall TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3,
 // 0x70D0D0
 namespace ra2 {
 namespace game {
+bool TechnoClass::HasVoiceResponse(int weaponIndex)
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall TechnoTypeClass::HasVoiceResponse(TechnoClass *this, int weaponIndex)
 {
@@ -1045,6 +1047,7 @@ bool __thiscall TechnoTypeClass::HasVoiceResponse(TechnoClass *this, int weaponI
     return 1; /*0x70d11c*/
   return VeterancyStruct::IsElite((float *)v3->__pad_0) /*0x70d142*/
       && (*(_BYTE *)(v4 + weaponIndex + 668) || *(_BYTE *)(v4 + weaponIndex + 686));
+}
 }
 } // namespace game
 } // namespace ra2

@@ -2,22 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x5DB6F0
-namespace gamemd {
-int sub_5DB6F0()
-{
-{
-    int result;
-    result = WinMainSetup_Setup_5DB6F0_Setup();
-    g_CurrentPlayerName[0] = 0;
-    if ( g_NetworkInterface )
-    result = (**(int (__thiscall ***)(int, int))g_NetworkInterface)(g_NetworkInterface, 1);
-    g_NetworkInterface = 0;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6BB8E0
 namespace gamemd {
 int WinMainSetup_Setup_6BB8E0()
@@ -198,6 +182,22 @@ void sub_5BE940()
     DataGlobal_ABF2DC = 0;
   }
     DataGlobal_ABF294 = 0;
+}
+}
+} // namespace gamemd
+
+// 0x5DB6F0
+namespace gamemd {
+int sub_5DB6F0()
+{
+{
+    int result;
+    result = WinMainSetup_Setup_5DB6F0_Setup();
+    g_CurrentPlayerName[0] = 0;
+    if ( g_NetworkInterface )
+    result = (**(int (__thiscall ***)(int, int))g_NetworkInterface)(g_NetworkInterface, 1);
+    g_NetworkInterface = 0;
+    return result;
 }
 }
 } // namespace gamemd

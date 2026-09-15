@@ -839,28 +839,6 @@ LABEL_10:
 }
 } // namespace gamemd
 
-// 0x58BB00
-namespace gamemd {
-unsigned int * sub_58BB00(unsigned int * a1, int a2)
-{
-{
-    int *result;
-    result = a1;
-    if ( a2 < 0 || a2 >= DataGlobal_ABED0C )
-  {
-    *a1 = 0;
-    *((int*)(a1) + 1) = 0;
-  }
-    else
-  {
-    *a1 = DataGlobal_ABE328[2 * a2];
-    *((int*)(a1) + 1) = DataGlobal_ABE32C[2 * a2];
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x59BAB0
 namespace gamemd {
 int Map_Helper_59BAB0()
@@ -1905,6 +1883,28 @@ bool sub_578D80(int a1, unsigned int a2)
 }
 } // namespace gamemd
 
+// 0x58BB00
+namespace gamemd {
+unsigned int * sub_58BB00(unsigned int * a1, int a2)
+{
+{
+    int *result;
+    result = a1;
+    if ( a2 < 0 || a2 >= DataGlobal_ABED0C )
+  {
+    *a1 = 0;
+    *((int*)(a1) + 1) = 0;
+  }
+    else
+  {
+    *a1 = DataGlobal_ABE328[2 * a2];
+    *((int*)(a1) + 1) = DataGlobal_ABE32C[2 * a2];
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x58CE90
 namespace gamemd {
 void sub_58CE90()
@@ -2702,6 +2702,7 @@ int Map_WorldDominationTour_20::Read(int a2)
     return result;
 }
 } // namespace gamemd
+}
 
 // 0x769FC0
 namespace gamemd {

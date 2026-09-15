@@ -122,49 +122,6 @@ int __thiscall ParasiteClass::_vt13(int this, int *a2)
 } // namespace game
 } // namespace ra2
 
-// 0x6295B0
-namespace ra2 {
-namespace game {
-int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
-{
-{
-    int result;
-    int v3;
-    IUnknown *v4;
-    int v5;
-    result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)a0, aP1);
-    v3 = result;
-    if ( result >= 0 )
-  {
-    if ( a0 )
-    {
-    AbstractClass::InitVtables(a0, (IUnknown *)&aP1);
-    v4 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
-    *((int*)(a0) + 13) = 0;
-    *((int*)(a0) + 11) = (int)v4;
-    *((int*)(a0) + 14) = *(int *)&HouseClass_Player.__pad_5568[23248];
-    *((int*)(a0) + 16) = 0;
-    *a0 = (int)(unsigned int)vt_ParasiteClass;
-    a0[1] = (unsigned int)vt_ParasiteClass;
-    a0[2] = (unsigned int)vt_ParasiteClass;
-    *((int*)(a0) + 3) = (int)&vt_ParasiteClass;
-    }
-    if ( *((int*)(a0) + 17) && (*(int *)&DataGlobal_B05488.__pad_579C[18852] < *(int *)&DataGlobal_B05488.__pad_579C[18844] || (DataGlobal_B05488.__pad_579C[18849] || !*(int *)&DataGlobal_B05488.__pad_579C[18844]) && *(int *)&DataGlobal_B05488.__pad_579C[18856] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 8))( &DataGlobal_B05488.__pad_579C[18836], *(int *)&DataGlobal_B05488.__pad_579C[18844] + *(int *)&DataGlobal_B05488.__pad_579C[18856], 0)) )
-    {
-    v5 = (*(int *)&DataGlobal_B05488.__pad_579C[18852])++;
-    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18840] + 4 * v5) = a0;
-    }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)(a0 + 9));
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)(a0 + 10));
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)(a0 + 17));
-    return v3;
-  }
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x6297F0
 namespace ra2 {
 namespace game {
@@ -1143,6 +1100,49 @@ LABEL_50:
       *(this + 302) = 0; /*0x62c38d*/
   }
   return result; /*0x62c37b*/
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x6295B0
+namespace ra2 {
+namespace game {
+int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
+{
+{
+    int result;
+    int v3;
+    IUnknown *v4;
+    int v5;
+    result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)a0, aP1);
+    v3 = result;
+    if ( result >= 0 )
+  {
+    if ( a0 )
+    {
+    AbstractClass::InitVtables(a0, (IUnknown *)&aP1);
+    v4 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
+    *((int*)(a0) + 13) = 0;
+    *((int*)(a0) + 11) = (int)v4;
+    *((int*)(a0) + 14) = *(int *)&HouseClass_Player.__pad_5568[23248];
+    *((int*)(a0) + 16) = 0;
+    *a0 = (int)(unsigned int)vt_ParasiteClass;
+    a0[1] = (unsigned int)vt_ParasiteClass;
+    a0[2] = (unsigned int)vt_ParasiteClass;
+    *((int*)(a0) + 3) = (int)&vt_ParasiteClass;
+    }
+    if ( *((int*)(a0) + 17) && (*(int *)&DataGlobal_B05488.__pad_579C[18852] < *(int *)&DataGlobal_B05488.__pad_579C[18844] || (DataGlobal_B05488.__pad_579C[18849] || !*(int *)&DataGlobal_B05488.__pad_579C[18844]) && *(int *)&DataGlobal_B05488.__pad_579C[18856] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 8))( &DataGlobal_B05488.__pad_579C[18836], *(int *)&DataGlobal_B05488.__pad_579C[18844] + *(int *)&DataGlobal_B05488.__pad_579C[18856], 0)) )
+    {
+    v5 = (*(int *)&DataGlobal_B05488.__pad_579C[18852])++;
+    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18840] + 4 * v5) = a0;
+    }
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)(a0 + 9));
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)(a0 + 10));
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)(a0 + 17));
+    return v3;
+  }
+    return result;
 }
 }
 } // namespace game

@@ -690,17 +690,6 @@ char __fastcall sub_5D6000(HWND hWnd, int a2)
 }
 } // namespace gamemd
 
-// 0x5D7580
-namespace gamemd {
-unsigned int * E4Recv_5D7580::sub_5D7580()
-{
-{
-    this->vfptr = &vt_MultiplayerGameMode_InitializerBase;
-    return &this->vfptr;
-}
-}
-} // namespace gamemd
-
 // 0x5D7590
 namespace gamemd {
 int LoadMultiplayerModesList(AbstractClass * a1, int edx0)
@@ -967,16 +956,6 @@ LABEL_50:
   Vector::Clear((int)v21); /*0x5d7ca4*/
   aP3.location[2] = (int)&off_7E1668; /*0x5d7cb0*/
   return BufferIOFileClass::Dtor(&aP3.location[2]); /*0x5d7cc0*/
-}
-}
-} // namespace gamemd
-
-// 0x5D7CD0
-namespace gamemd {
-void E4Recv_5D7CD0::sub_5D7CD0()
-{
-{
-    this->vfptr = &vt_MultiplayerGameMode_InitializerBase;
 }
 }
 } // namespace gamemd
@@ -2621,6 +2600,27 @@ int sub_5D7550(int a1)
 {
 {
     return *(int *)(*(int *)&HouseClass_Array->__pad_0[4 * a1] + 90204);
+}
+}
+} // namespace gamemd
+
+// 0x5D7580
+namespace gamemd {
+unsigned int * E4Recv_5D7580::sub_5D7580()
+{
+{
+    this->vfptr = &vt_MultiplayerGameMode_InitializerBase;
+    return &this->vfptr;
+}
+}
+} // namespace gamemd
+
+// 0x5D7CD0
+namespace gamemd {
+void E4Recv_5D7CD0::sub_5D7CD0()
+{
+{
+    this->vfptr = &vt_MultiplayerGameMode_InitializerBase;
 }
 }
 } // namespace gamemd

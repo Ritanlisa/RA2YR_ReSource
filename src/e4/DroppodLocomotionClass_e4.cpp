@@ -183,6 +183,18 @@ char __stdcall DroppodLocomotionClass::ILoco_Process(int a1)
 }
 } // namespace gamemd
 
+// 0x4B6200
+int DropPodLocomotionClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1247291205;
+  a2[1] = 298948665;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
+}
+
 // 0x4B6240
 HRESULT DropPodLocomotionClass::BeginMove(int * a1, int * pStm)
 {
@@ -212,36 +224,6 @@ HRESULT DropPodLocomotionClass::BeginMove(int * a1, int * pStm)
     *v5 = 0;
     return OleLoadFromStream(v2, &IID_ILocomotion, v5);
 }
-}
-
-// 0x4B66F0
-DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(char a2)
-{
-{
-    ILocomotion *v3;
-    *(void**)this = (unsigned int)vt_DropPodLocomotionClass;
-    *(this + 1) = (unsigned int)vt_DropPodLocomotionClass;
-    *(this + 6) = (ILocomotion *)&vt_DropPodLocomotionClass;
-    v3 = *(this + 11);
-    if ( v3 )
-    (*(void (__stdcall **)(ILocomotion *))(*(int *)(v3) + 8))(v3);
-    LocomotionClass::Construct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DropPodLocomotionClass *)this;
-}
-}
-
-// 0x4B6200
-int DropPodLocomotionClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1247291205;
-  a2[1] = 298948665;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
 }
 
 // 0x4B62C0
@@ -307,4 +289,22 @@ HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
 int DropPodLocomotionClass::StubReturn48()
 {
 return 48;
+}
+
+// 0x4B66F0
+DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(char a2)
+{
+{
+    ILocomotion *v3;
+    *(void**)this = (unsigned int)vt_DropPodLocomotionClass;
+    *(this + 1) = (unsigned int)vt_DropPodLocomotionClass;
+    *(this + 6) = (ILocomotion *)&vt_DropPodLocomotionClass;
+    v3 = *(this + 11);
+    if ( v3 )
+    (*(void (__stdcall **)(ILocomotion *))(*(int *)(v3) + 8))(v3);
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DropPodLocomotionClass *)this;
+}
 }

@@ -244,24 +244,6 @@ int __thiscall ParticleSystemTypeClass::_vt13(int this, int *a2)
 }
 } // namespace gamemd
 
-// 0x6447E0
-namespace gamemd {
-int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
-{
-{
-    if ( ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1) >= 0 && aP0 )
-  {
-    ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_ParticleSystemTypeClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_ParticleSystemTypeClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_ParticleSystemTypeClass;
-    *(int *)&aP0->__pad_0[12] = &vt_ParticleSystemTypeClass;
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x644960
 namespace gamemd {
 ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
@@ -345,6 +327,24 @@ int ParticleSystemTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   a2[2] = 1610642049;
   a2[3] = -1252326136;
   return 0;
+}
+} // namespace gamemd
+
+// 0x6447E0
+namespace gamemd {
+int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
+{
+{
+    if ( ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1) >= 0 && aP0 )
+  {
+    ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_ParticleSystemTypeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_ParticleSystemTypeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_ParticleSystemTypeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_ParticleSystemTypeClass;
+  }
+    return 0;
+}
 }
 } // namespace gamemd
 

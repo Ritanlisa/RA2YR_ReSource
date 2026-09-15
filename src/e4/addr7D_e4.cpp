@@ -5777,58 +5777,6 @@ LCID GetLcidFromDefault()
 }
 } // namespace gamemd
 
-// 0x7D7491
-namespace gamemd {
-int crtGetLocaleInfoA_16(LCID Locale, LCTYPE LCType, LPSTR lpLCData, int cchData)
-{
-{
-    int v4;
-    int v5;
-    int v6;
-    unsigned int v7;
-    const char *v9;
-    v4 = 0;
-    v5 = 26;
-    while ( 1 )
-  {
-    v6 = (v5 + v4) / 2;
-    v7 = DataGlobal_87CC40[11 * v6];
-    if ( Locale == v7 )
-    break;
-    if ( Locale >= v7 )
-    v4 = v6 + 1;
-    else
-    v5 = v6 - 1;
-    if ( v4 > v5 )
-    return GetLocaleInfoA(Locale, LCType, lpLCData, cchData);
-  }
-    switch ( LCType )
-  {
-    case 1u: v9 = &DataGlobal_87CC44[44 * v6];
-    break;
-    case 3u: v9 = (char *)&DataGlobal_87CC50 + 44 * v6;
-    break;
-    case 7u: v9 = (char *)&DataGlobal_87CC58 + 44 * v6;
-    break;
-    case 0xBu: v9 = (char *)&DataGlobal_87CC5C + 44 * v6;
-    break;
-    case 0x1001u: v9 = (&DataGlobal_87CC4C)[11 * v6];
-    break;
-    case 0x1002u: v9 = (&DataGlobal_87CC54)[11 * v6];
-    break;
-    case 0x1004u: v9 = &DataGlobal_87CC64[44 * v6];
-    break;
-    default: return GetLocaleInfoA(Locale, LCType, lpLCData, cchData);
-  }
-    if ( !v9 || cchData < 1 )
-    return GetLocaleInfoA(Locale, LCType, lpLCData, cchData);
-    strncpy(lpLCData, v9, cchData - 1);
-    lpLCData[cchData - 1] = 0;
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x7D75E0
 namespace gamemd {
 void * memset(void * a0, int Val, AbstractClass * aP2)
@@ -13883,6 +13831,58 @@ BOOL IsThisWindowsNT()
     struct _OSVERSIONINFOA VersionInformation;
     VersionInformation.dwOSVersionInfoSize = 148;
     return GetVersionExA(&VersionInformation) && VersionInformation.dwPlatformId == 2;
+}
+}
+} // namespace gamemd
+
+// 0x7D7491
+namespace gamemd {
+int crtGetLocaleInfoA_16(LCID Locale, LCTYPE LCType, LPSTR lpLCData, int cchData)
+{
+{
+    int v4;
+    int v5;
+    int v6;
+    unsigned int v7;
+    const char *v9;
+    v4 = 0;
+    v5 = 26;
+    while ( 1 )
+  {
+    v6 = (v5 + v4) / 2;
+    v7 = DataGlobal_87CC40[11 * v6];
+    if ( Locale == v7 )
+    break;
+    if ( Locale >= v7 )
+    v4 = v6 + 1;
+    else
+    v5 = v6 - 1;
+    if ( v4 > v5 )
+    return GetLocaleInfoA(Locale, LCType, lpLCData, cchData);
+  }
+    switch ( LCType )
+  {
+    case 1u: v9 = &DataGlobal_87CC44[44 * v6];
+    break;
+    case 3u: v9 = (char *)&DataGlobal_87CC50 + 44 * v6;
+    break;
+    case 7u: v9 = (char *)&DataGlobal_87CC58 + 44 * v6;
+    break;
+    case 0xBu: v9 = (char *)&DataGlobal_87CC5C + 44 * v6;
+    break;
+    case 0x1001u: v9 = (&DataGlobal_87CC4C)[11 * v6];
+    break;
+    case 0x1002u: v9 = (&DataGlobal_87CC54)[11 * v6];
+    break;
+    case 0x1004u: v9 = &DataGlobal_87CC64[44 * v6];
+    break;
+    default: return GetLocaleInfoA(Locale, LCType, lpLCData, cchData);
+  }
+    if ( !v9 || cchData < 1 )
+    return GetLocaleInfoA(Locale, LCType, lpLCData, cchData);
+    strncpy(lpLCData, v9, cchData - 1);
+    lpLCData[cchData - 1] = 0;
+    return 1;
 }
 }
 } // namespace gamemd

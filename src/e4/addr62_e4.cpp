@@ -1942,27 +1942,6 @@ AbstractClass *__fastcall GetDialogText(HWND hWnd, void **a2)
 }
 } // namespace gamemd
 
-// 0x624080
-namespace gamemd {
-unsigned int * E4Recv_624080::sub_624080()
-{
-{
-    this->vfptr = &vt_OwnerDraw_DialogControl;
-    return &this->vfptr;
-}
-}
-} // namespace gamemd
-
-// 0x624090
-namespace gamemd {
-void E4Recv_624090::sub_624090()
-{
-{
-    this->vfptr = &vt_OwnerDraw_DialogControl;
-}
-}
-} // namespace gamemd
-
 // 0x6241F0
 namespace gamemd {
 int Dialog_Run(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM a3)
@@ -2749,6 +2728,27 @@ LRESULT GetListBoxItemText(ObjectClass * aP0, WPARAM wParam, void ** a2)
     String::Assign_Alt(a2, v6);
     __3_YAXPAX_Z(v6);
     return v7;
+}
+}
+} // namespace gamemd
+
+// 0x624080
+namespace gamemd {
+unsigned int * E4Recv_624080::sub_624080()
+{
+{
+    this->vfptr = &vt_OwnerDraw_DialogControl;
+    return &this->vfptr;
+}
+}
+} // namespace gamemd
+
+// 0x624090
+namespace gamemd {
+void E4Recv_624090::sub_624090()
+{
+{
+    this->vfptr = &vt_OwnerDraw_DialogControl;
 }
 }
 } // namespace gamemd

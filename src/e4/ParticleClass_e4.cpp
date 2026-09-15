@@ -225,6 +225,30 @@ void __thiscall ParticleClass::AdjustHeight(ParticleClass *this)
 }
 } // namespace gamemd
 
+// 0x62D710
+namespace gamemd {
+int * ParticleClass::CheckDrawFlags(int a1)
+{
+{
+    if ( (DataGlobal_AC4998 & 1) == 0 )
+  {
+    DataGlobal_AC4998 |= 1u;
+    DataGlobal_AC49D0 = 2147450879;
+    atexit(nullsub_214);
+  }
+    return &DataGlobal_AC49D0;
+}
+}
+} // namespace gamemd
+
+// 0x62D770
+namespace gamemd {
+int ParticleClass::CheckStateFlag()
+{
+return 3;
+}
+} // namespace gamemd
+
 // 0x62D7A0
 namespace gamemd {
 int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
@@ -248,30 +272,6 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
   }
     return result;
 }
-}
-} // namespace gamemd
-
-// 0x62D710
-namespace gamemd {
-int * ParticleClass::CheckDrawFlags(int a1)
-{
-{
-    if ( (DataGlobal_AC4998 & 1) == 0 )
-  {
-    DataGlobal_AC4998 |= 1u;
-    DataGlobal_AC49D0 = 2147450879;
-    atexit(nullsub_214);
-  }
-    return &DataGlobal_AC49D0;
-}
-}
-} // namespace gamemd
-
-// 0x62D770
-namespace gamemd {
-int ParticleClass::CheckStateFlag()
-{
-return 3;
 }
 } // namespace gamemd
 

@@ -5,10 +5,10 @@ namespace gamemd {
 struct DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode {
     void* vfptr;  // minimal E2 declaration
     BOOL HashEntryCompare(unsigned char * a2);  // 0x517590
-    unsigned int * Destructor(char a2);  // 0x6244A0
-    unsigned int * Destructor_0(char a2);  // 0x6244C0
     char SetCapacity_0(int a2, char * a3);  // 0x6284A0
     char Remove(CCINIClass * aP1, unsigned char * a2);  // 0x628BB0
+    unsigned int * Destructor(char a2);  // 0x6244A0
+    unsigned int * Destructor_0(char a2);  // 0x6244C0
     void Clear_627D20();  // 0x627D20
     void Clear_627D80();  // 0x627D80
     char SetCapacity(int a2, unsigned int * a3);  // 0x627F90

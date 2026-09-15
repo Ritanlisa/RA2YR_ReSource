@@ -88,28 +88,6 @@ int __thiscall sub_554830(int this)
 }
 }
 
-// 0x5550C0
-int LightSourceClass::Write(AbstractClass * aP0, int aP1)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
-    if ( result >= 0 )
-  {
-    if ( aP0 )
-    {
-    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_LightSourceClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_LightSourceClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_LightSourceClass;
-    *(int *)&aP0->__pad_0[12] = &vt_LightSourceClass;
-    }
-    return 0;
-  }
-    return result;
-}
-}
-
 // 0x555150
 LightSourceClass * LightSourceClass::CopyTo(char a2)
 {
@@ -165,6 +143,28 @@ int LightSourceClass::ddtor(int a1, unsigned int * a2)
   a2[2] = 1610642561;
   a2[3] = -1252326136;
   return 0;
+}
+
+// 0x5550C0
+int LightSourceClass::Write(AbstractClass * aP0, int aP1)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( result >= 0 )
+  {
+    if ( aP0 )
+    {
+    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_LightSourceClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_LightSourceClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_LightSourceClass;
+    *(int *)&aP0->__pad_0[12] = &vt_LightSourceClass;
+    }
+    return 0;
+  }
+    return result;
+}
 }
 
 // 0x555110

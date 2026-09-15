@@ -351,35 +351,6 @@ void *__thiscall sub_5FEDE0(int this)
 }
 }
 
-// 0x5FEF30
-OverlayTypeClass * OverlayTypeClass::ddtor(char a2)
-{
-{
-    int v3;
-    void **v5;
-    *(void**)this = vt_OverlayTypeClass;
-    *(this + 1) = (unsigned int)vt_OverlayTypeClass;
-    *(this + 2) = (unsigned int)vt_OverlayTypeClass;
-    *(this + 3) = &vt_OverlayTypeClass;
-    AbstractClass::AnnounceExpiredPointer(this, 1);
-    v5 = this;
-    v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_A83D80 + 16))(&DataGlobal_A83D80, &v5);
-    if ( v3 != -1 && v3 < g_ObjectTypeConfig && v3 < --g_ObjectTypeConfig )
-  {
-    do
-    {
-    ++v3;
-    *(int *)&g_BuildingTypeClass_Array->vtable0[4 * v3 - 4] = *(int *)&g_BuildingTypeClass_Array->vtable0[4 * v3];
-    }
-    while ( v3 < g_ObjectTypeConfig );
-  }
-    ObjectTypeClass::Destruct((int)this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (OverlayTypeClass *)this;
-}
-}
-
 // 0x6440A0
 unsigned int * OverlayTypeClass::Construct(ObjectClass * aP1)
 {
@@ -652,5 +623,34 @@ int OverlayTypeClass::GetAuxField()
 {
 {
     return this->LandType;
+}
+}
+
+// 0x5FEF30
+OverlayTypeClass * OverlayTypeClass::ddtor(char a2)
+{
+{
+    int v3;
+    void **v5;
+    *(void**)this = vt_OverlayTypeClass;
+    *(this + 1) = (unsigned int)vt_OverlayTypeClass;
+    *(this + 2) = (unsigned int)vt_OverlayTypeClass;
+    *(this + 3) = &vt_OverlayTypeClass;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    v5 = this;
+    v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_A83D80 + 16))(&DataGlobal_A83D80, &v5);
+    if ( v3 != -1 && v3 < g_ObjectTypeConfig && v3 < --g_ObjectTypeConfig )
+  {
+    do
+    {
+    ++v3;
+    *(int *)&g_BuildingTypeClass_Array->vtable0[4 * v3 - 4] = *(int *)&g_BuildingTypeClass_Array->vtable0[4 * v3];
+    }
+    while ( v3 < g_ObjectTypeConfig );
+  }
+    ObjectTypeClass::Destruct((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (OverlayTypeClass *)this;
 }
 }

@@ -28,22 +28,6 @@ _DWORD *__thiscall unknown_libname_27(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x6429A0
-namespace gamemd {
-void sub_6429A0()
-{
-{
-    g_UIManager[0] = (int)&vt_ProgressScreenClass;
-    if ( DataGlobal_AC4FB0 )
-  {
-    __3_YAXPAX_Z(DataGlobal_AC4FAC);
-    DataGlobal_AC4FB0 = 0;
-  }
-    DataGlobal_AC4FAC = 0;
-}
-}
-} // namespace gamemd
-
 // 0x645B60
 namespace gamemd {
 ObjectClass * E4Recv_645B60::sub_645B60()
@@ -3937,6 +3921,22 @@ int sub_642980()
 {
     sub_6429E0(g_UIManager);
     return atexit(sub_6429A0);
+}
+}
+} // namespace gamemd
+
+// 0x6429A0
+namespace gamemd {
+void sub_6429A0()
+{
+{
+    g_UIManager[0] = (int)&vt_ProgressScreenClass;
+    if ( DataGlobal_AC4FB0 )
+  {
+    __3_YAXPAX_Z(DataGlobal_AC4FAC);
+    DataGlobal_AC4FB0 = 0;
+  }
+    DataGlobal_AC4FAC = 0;
 }
 }
 } // namespace gamemd

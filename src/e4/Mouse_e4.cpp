@@ -60,19 +60,6 @@ int __thiscall Mouse::SetBounds(int this, IUnknown *aP1)
 }
 } // namespace gamemd
 
-// 0x53EC90
-namespace gamemd {
-SHORT Mouse::GetKeyState()
-{
-{
-    if ( g_StreamBufferState )
-    return DataGlobal_AA0168[this];
-    else
-    return GetAsyncKeyState(this);
-}
-}
-} // namespace gamemd
-
 // 0x5BDC80
 namespace gamemd {
 char Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
@@ -200,6 +187,19 @@ void __thiscall Mouse::DrawCursor(_DWORD *this, IUnknown *aP1, WWMouseClass *aP2
     BlitterDrawSHP(v9); /*0x7b9516*/
     Vector::Clear((int)v17); /*0x7b951f*/
   }
+}
+}
+} // namespace gamemd
+
+// 0x53EC90
+namespace gamemd {
+SHORT Mouse::GetKeyState()
+{
+{
+    if ( g_StreamBufferState )
+    return DataGlobal_AA0168[this];
+    else
+    return GetAsyncKeyState(this);
 }
 }
 } // namespace gamemd

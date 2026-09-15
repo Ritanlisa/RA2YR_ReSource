@@ -1001,17 +1001,6 @@ LABEL_68:
 }
 } // namespace gamemd
 
-// 0x76AB90
-namespace gamemd {
-void E4Recv_76AB90::sub_76AB90()
-{
-{
-    this->vfptr = &vt_WDTTerritory;
-    ReferenceCounted::Constructor(this);
-}
-}
-} // namespace gamemd
-
 // 0x76B7B0
 namespace gamemd {
 unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
@@ -2620,6 +2609,17 @@ int sub_76AA90()
     DataGlobal_B72920 = 0;
     DataGlobal_B72924 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x76AB90
+namespace gamemd {
+void E4Recv_76AB90::sub_76AB90()
+{
+{
+    this->vfptr = &vt_WDTTerritory;
+    ReferenceCounted::Constructor(this);
 }
 }
 } // namespace gamemd

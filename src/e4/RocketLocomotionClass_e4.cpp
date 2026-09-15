@@ -34,6 +34,18 @@ int __thiscall RocketLocomotionClass::RocketLocomotionClass(int this)
 }
 }
 
+// 0x6633D0
+int RocketLocomotionClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1212901530;
+  a2[1] = 299099510;
+  a2[2] = 268491163;
+  a2[3] = -399534261;
+  return 0;
+}
+
 // 0x663410
 int RocketLocomotionClass::BeginMove(int * a1, int * a2)
 {
@@ -56,18 +68,6 @@ int RocketLocomotionClass::BeginMove(int * a1, int * a2)
   }
     return result;
 }
-}
-
-// 0x6633D0
-int RocketLocomotionClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -1212901530;
-  a2[1] = 299099510;
-  a2[2] = 268491163;
-  a2[3] = -399534261;
-  return 0;
 }
 
 // 0x6635B0

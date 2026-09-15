@@ -750,58 +750,6 @@ char __thiscall sub_52A610(char *this, void *a2)
 }
 } // namespace gamemd
 
-// 0x52AAF0
-namespace gamemd {
-void E4Recv_52AAF0::sub_52AAF0()
-{
-{
-    CCINIClass *v2;
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    void *v7;
-    v2 = (CCINIClass *)this->field_C;
-    *(int *)this->__pad_0 = &vt_INIClass_INIEntry;
-    free(v2);
-    v7 = (void *)this->field_10;
-    this->field_C = 0;
-    free(v7);
-    v3 = *(int *)this->__pad_14;
-    this->field_10 = 0;
-    if ( v3 )
-  {
-    do
-    {
-    free(**(void ***)this->__pad_14);
-    v4 = *(int *)(*(int *)this->__pad_14 + 4);
-    __3_YAXPAX_Z(*(void **)this->__pad_14);
-    *(int *)this->__pad_14 = v4;
-    }
-    while ( v4 );
-  }
-    free((void *)this->field_18);
-    this->field_18 = 0;
-    *(int *)this->__pad_0 = &vt_GenericNode;
-    if ( this )
-  {
-    v5 = *(int *)&this->__pad_0[4];
-    if ( v5 )
-    {
-    v6 = *(int *)&this->__pad_0[8];
-    if ( v6 )
-      {
-    *(int *)(v6 + 4) = v5;
-    *(int *)(*(int *)&this->__pad_0[4] + 8) = *(int *)&this->__pad_0[8];
-    *(int *)&this->__pad_0[8] = 0;
-    *(int *)&this->__pad_0[4] = 0;
-      }
-    }
-  }
-}
-}
-} // namespace gamemd
-
 // 0x52B720
 namespace gamemd {
 int CompareFunc4Int(unsigned int * a1, unsigned int * a2)
@@ -3255,6 +3203,58 @@ int E4Recv_526950::sub_526950()
 {
 {
     return this->M44;
+}
+}
+} // namespace gamemd
+
+// 0x52AAF0
+namespace gamemd {
+void E4Recv_52AAF0::sub_52AAF0()
+{
+{
+    CCINIClass *v2;
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    void *v7;
+    v2 = (CCINIClass *)this->field_C;
+    *(int *)this->__pad_0 = &vt_INIClass_INIEntry;
+    free(v2);
+    v7 = (void *)this->field_10;
+    this->field_C = 0;
+    free(v7);
+    v3 = *(int *)this->__pad_14;
+    this->field_10 = 0;
+    if ( v3 )
+  {
+    do
+    {
+    free(**(void ***)this->__pad_14);
+    v4 = *(int *)(*(int *)this->__pad_14 + 4);
+    __3_YAXPAX_Z(*(void **)this->__pad_14);
+    *(int *)this->__pad_14 = v4;
+    }
+    while ( v4 );
+  }
+    free((void *)this->field_18);
+    this->field_18 = 0;
+    *(int *)this->__pad_0 = &vt_GenericNode;
+    if ( this )
+  {
+    v5 = *(int *)&this->__pad_0[4];
+    if ( v5 )
+    {
+    v6 = *(int *)&this->__pad_0[8];
+    if ( v6 )
+      {
+    *(int *)(v6 + 4) = v5;
+    *(int *)(*(int *)&this->__pad_0[4] + 8) = *(int *)&this->__pad_0[8];
+    *(int *)&this->__pad_0[8] = 0;
+    *(int *)&this->__pad_0[4] = 0;
+      }
+    }
+  }
 }
 }
 } // namespace gamemd

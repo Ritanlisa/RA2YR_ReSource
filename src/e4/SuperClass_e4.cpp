@@ -2121,41 +2121,6 @@ LABEL_180:
 }
 } // namespace gamemd
 
-// 0x6CDEF0
-namespace gamemd {
-int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
-{
-{
-    int result;
-    int v3;
-    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
-    if ( result >= 0 )
-  {
-    if ( aP0 )
-    {
-    AbstractClass::Constructor(aP0);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_SuperClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_SuperClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_SuperClass;
-    *(int *)&aP0->__pad_0[12] = &vt_SuperClass;
-    }
-    if ( aP0[2].NeedsSaveOrLink && (*(int *)&DataGlobal_B05488.__pad_579C[18852] < *(int *)&DataGlobal_B05488.__pad_579C[18844] || (DataGlobal_B05488.__pad_579C[18849] || !*(int *)&DataGlobal_B05488.__pad_579C[18844]) && *(int *)&DataGlobal_B05488.__pad_579C[18856] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 8))( &DataGlobal_B05488.__pad_579C[18836], *(int *)&DataGlobal_B05488.__pad_579C[18844] + *(int *)&DataGlobal_B05488.__pad_579C[18856], 0)) )
-    {
-    v3 = (*(int *)&DataGlobal_B05488.__pad_579C[18852])++;
-    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18840] + 4 * v3) = aP0;
-    }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].NeedsSaveOrLink);
-    *(int *)aP0[2].__pad_0 = 0;
-    *(int *)&aP0[2].__pad_0[4] = 0;
-    return 0;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6CE020
 namespace gamemd {
 int SuperClass::PowerDrainUpdate(int * a2)
@@ -2466,6 +2431,41 @@ int SuperClass::ddtor(int a1, unsigned int * a2)
   a2[2] = 268461211;
   a2[3] = -399534261;
   return 0;
+}
+} // namespace gamemd
+
+// 0x6CDEF0
+namespace gamemd {
+int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
+{
+{
+    int result;
+    int v3;
+    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( result >= 0 )
+  {
+    if ( aP0 )
+    {
+    AbstractClass::Constructor(aP0);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_SuperClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_SuperClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_SuperClass;
+    *(int *)&aP0->__pad_0[12] = &vt_SuperClass;
+    }
+    if ( aP0[2].NeedsSaveOrLink && (*(int *)&DataGlobal_B05488.__pad_579C[18852] < *(int *)&DataGlobal_B05488.__pad_579C[18844] || (DataGlobal_B05488.__pad_579C[18849] || !*(int *)&DataGlobal_B05488.__pad_579C[18844]) && *(int *)&DataGlobal_B05488.__pad_579C[18856] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488.__pad_579C[18836] + 8))( &DataGlobal_B05488.__pad_579C[18836], *(int *)&DataGlobal_B05488.__pad_579C[18844] + *(int *)&DataGlobal_B05488.__pad_579C[18856], 0)) )
+    {
+    v3 = (*(int *)&DataGlobal_B05488.__pad_579C[18852])++;
+    *(int *)(*(int *)&DataGlobal_B05488.__pad_579C[18840] + 4 * v3) = aP0;
+    }
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].NeedsSaveOrLink);
+    *(int *)aP0[2].__pad_0 = 0;
+    *(int *)&aP0[2].__pad_0[4] = 0;
+    return 0;
+  }
+    return result;
+}
 }
 } // namespace gamemd
 

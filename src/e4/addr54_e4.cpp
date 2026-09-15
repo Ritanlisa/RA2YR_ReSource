@@ -147,17 +147,6 @@ LABEL_12:
 }
 } // namespace gamemd
 
-// 0x543E00
-namespace gamemd {
-int sub_543E00()
-{
-{
-    DataGlobal_AA105C[0] = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x544E70
 namespace gamemd {
 int SurfaceClass_CreatePrimary(int a1, int a2, int a3)
@@ -2696,6 +2685,17 @@ long long sub_543DD0()
     result = Math::RoundToInt((double)(4 * DataGlobal_ABC550) + 0.5);
     DataGlobal_ABC2BC = result;
     return result;
+}
+}
+} // namespace gamemd
+
+// 0x543E00
+namespace gamemd {
+int sub_543E00()
+{
+{
+    DataGlobal_AA105C[0] = 0;
+    return 0;
 }
 }
 } // namespace gamemd

@@ -1897,24 +1897,6 @@ char __thiscall Tactical::DrawOverlay(_DWORD *this, int *a1, BuildingTypeClass *
 }
 } // namespace gamemd
 
-// 0x6DC470
-namespace gamemd {
-Tactical * Tactical::UpdateView(char a2)
-{
-{
-    *(void**)this = vt_Tactical;
-    *(this + 1) = (unsigned int)vt_Tactical;
-    *(this + 2) = (unsigned int)vt_Tactical;
-    *(this + 3) = &vt_Tactical;
-    g_TacticalClass_Instance = 0;
-    AbstractClass::DTOR(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (Tactical *)this;
-}
-}
-} // namespace gamemd
-
 // 0x6E4A80
 namespace gamemd {
 int Tactical_42::FindItem(unsigned int * a2)
@@ -2101,6 +2083,24 @@ namespace gamemd {
 int Tactical::StubReturn3608()
 {
 return 3608;
+}
+} // namespace gamemd
+
+// 0x6DC470
+namespace gamemd {
+Tactical * Tactical::UpdateView(char a2)
+{
+{
+    *(void**)this = vt_Tactical;
+    *(this + 1) = (unsigned int)vt_Tactical;
+    *(this + 2) = (unsigned int)vt_Tactical;
+    *(this + 3) = &vt_Tactical;
+    g_TacticalClass_Instance = 0;
+    AbstractClass::DTOR(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (Tactical *)this;
+}
 }
 } // namespace gamemd
 

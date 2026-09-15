@@ -170,30 +170,6 @@ int __thiscall SmudgeTypeClass::_vt13(int this, int *a2)
 }
 }
 
-// 0x6B5850
-int SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
-{
-{
-    int result;
-    result = ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1);
-    if ( result >= 0 )
-  {
-    if ( aP0 )
-    {
-    ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_SmudgeTypeClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_SmudgeTypeClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_SmudgeTypeClass;
-    *(int *)&aP0->__pad_0[12] = &vt_SmudgeTypeClass;
-    }
-    VoxelAnimType::LoadAnim(aP0->__pad_0);
-    ObjectTypeClass::Load2DArt(aP0->__pad_0);
-    return 0;
-  }
-    return result;
-}
-}
-
 // 0x6B6160
 SmudgeTypeClass * SmudgeTypeClass::ddtor(void ** this, AbstractClass * a2, char a3)
 {
@@ -271,6 +247,30 @@ SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
     return UnitClass::Create(v3, this, (AbstractClass *)&DataGlobal_B05488.__pad_579C[2948], -1);
     else
     return 0;
+}
+}
+
+// 0x6B5850
+int SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
+{
+{
+    int result;
+    result = ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1);
+    if ( result >= 0 )
+  {
+    if ( aP0 )
+    {
+    ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_SmudgeTypeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_SmudgeTypeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_SmudgeTypeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_SmudgeTypeClass;
+    }
+    VoxelAnimType::LoadAnim(aP0->__pad_0);
+    ObjectTypeClass::Load2DArt(aP0->__pad_0);
+    return 0;
+  }
+    return result;
 }
 }
 

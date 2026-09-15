@@ -115,61 +115,6 @@ LABEL_7:
 }
 } // namespace gamemd
 
-// 0x46D000
-namespace gamemd {
-int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1);
-    if ( result >= 0 )
-  {
-    if ( aP0 )
-    {
-    AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_CampaignClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_CampaignClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_CampaignClass;
-    *(int *)&aP0->__pad_0[12] = &vt_CampaignClass;
-    }
-    return 0;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x46D090
-namespace gamemd {
-CampaignClass * CampaignClass::DTOR(char a2)
-{
-{
-    int v3;
-    void **v5;
-    *(void**)this = vt_CampaignClass;
-    *(this + 1) = (unsigned int)vt_CampaignClass;
-    *(this + 2) = (unsigned int)vt_CampaignClass;
-    *(this + 3) = &vt_CampaignClass;
-    AbstractClass::AnnounceExpiredPointer(this, 1);
-    v5 = this;
-    v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_A83CF8 + 16))(&DataGlobal_A83CF8, &v5);
-    if ( v3 != -1 && v3 < g_UnitTypeInitState && v3 < --g_UnitTypeInitState )
-  {
-    do
-    {
-    ++v3;
-    *((int *)(g_CampaignTypeArray) + v3 - 1) = *((int *)(g_CampaignTypeArray) + v3);
-    }
-    while ( v3 < g_UnitTypeInitState );
-  }
-    AbstractTypeClass::Dtor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (CampaignClass *)this;
-}
-}
-} // namespace gamemd
-
 // 0x49C5A0
 namespace gamemd {
 char CampaignClass::SaveProgress()
@@ -390,6 +335,30 @@ int CampaignClass::ddtor(int a1, unsigned int * a2)
 }
 } // namespace gamemd
 
+// 0x46D000
+namespace gamemd {
+int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1);
+    if ( result >= 0 )
+  {
+    if ( aP0 )
+    {
+    AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_CampaignClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_CampaignClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_CampaignClass;
+    *(int *)&aP0->__pad_0[12] = &vt_CampaignClass;
+    }
+    return 0;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x46D050
 namespace gamemd {
 int CampaignClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
@@ -417,5 +386,36 @@ namespace gamemd {
 int CampaignClass::StubReturn10()
 {
 return 10;
+}
+} // namespace gamemd
+
+// 0x46D090
+namespace gamemd {
+CampaignClass * CampaignClass::DTOR(char a2)
+{
+{
+    int v3;
+    void **v5;
+    *(void**)this = vt_CampaignClass;
+    *(this + 1) = (unsigned int)vt_CampaignClass;
+    *(this + 2) = (unsigned int)vt_CampaignClass;
+    *(this + 3) = &vt_CampaignClass;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    v5 = this;
+    v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_A83CF8 + 16))(&DataGlobal_A83CF8, &v5);
+    if ( v3 != -1 && v3 < g_UnitTypeInitState && v3 < --g_UnitTypeInitState )
+  {
+    do
+    {
+    ++v3;
+    *((int *)(g_CampaignTypeArray) + v3 - 1) = *((int *)(g_CampaignTypeArray) + v3);
+    }
+    while ( v3 < g_UnitTypeInitState );
+  }
+    AbstractTypeClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (CampaignClass *)this;
+}
 }
 } // namespace gamemd

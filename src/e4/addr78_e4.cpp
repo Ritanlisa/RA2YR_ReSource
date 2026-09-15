@@ -2166,58 +2166,6 @@ int __cdecl sub_7830C0(signed int *a1, signed int *a2)
 }
 } // namespace gamemd
 
-// 0x7831A0
-namespace gamemd {
-int sub_7831A0(signed int * a1, signed int * a2)
-{
-{
-    signed int v2;
-    int v3;
-    signed int v5;
-    signed int v6;
-    signed int v7;
-    signed int v8;
-    char v9[108];
-    char v10[108];
-    v2 = *((int*)(a1) + 2);
-    if ( v2 == *((int*)(a2) + 2) )
-  {
-    v5 = *((int*)(a1) + 1);
-    v6 = *((int*)(a2) + 1);
-    if ( v5 <= v6 )
-    {
-    if ( v5 >= v6 )
-      {
-    memset(v10, 0, sizeof(v10));
-    memset(v9, 0, sizeof(v9));
-    v7 = *a1;
-    if ( *a1 >= 0 && v7 < (int)g_WOL_State )
-    qmemcpy(v10, &g_WOL_ConnectionFlags[3 * v7], sizeof(v10));
-    v8 = *a2;
-    if ( *a2 >= 0 && v8 < (int)g_WOL_State )
-    qmemcpy(v9, &g_WOL_ConnectionFlags[3 * v8], sizeof(v9));
-    return _strcmpi(&v10[36], &v9[36]);
-      }
-    else
-      {
-    return 1;
-      }
-    }
-    else
-    {
-    return -1;
-    }
-  }
-    else
-  {
-    v3 = -(v2 != 0);
-    LOBYTE(v3) = v3 & 0xFE;
-    return v3 + 1;
-  }
-}
-}
-} // namespace gamemd
-
 // 0x783270
 namespace gamemd {
 void SortWOLPlayerList(char a1)
@@ -5991,6 +5939,58 @@ int sub_781CF0(const void * a1, const void ** a2)
     v3 = -(v2 != 0);
     LOBYTE(v3) = v3 & 0xFE;
     return v3 + 1;
+}
+}
+} // namespace gamemd
+
+// 0x7831A0
+namespace gamemd {
+int sub_7831A0(signed int * a1, signed int * a2)
+{
+{
+    signed int v2;
+    int v3;
+    signed int v5;
+    signed int v6;
+    signed int v7;
+    signed int v8;
+    char v9[108];
+    char v10[108];
+    v2 = *((int*)(a1) + 2);
+    if ( v2 == *((int*)(a2) + 2) )
+  {
+    v5 = *((int*)(a1) + 1);
+    v6 = *((int*)(a2) + 1);
+    if ( v5 <= v6 )
+    {
+    if ( v5 >= v6 )
+      {
+    memset(v10, 0, sizeof(v10));
+    memset(v9, 0, sizeof(v9));
+    v7 = *a1;
+    if ( *a1 >= 0 && v7 < (int)g_WOL_State )
+    qmemcpy(v10, &g_WOL_ConnectionFlags[3 * v7], sizeof(v10));
+    v8 = *a2;
+    if ( *a2 >= 0 && v8 < (int)g_WOL_State )
+    qmemcpy(v9, &g_WOL_ConnectionFlags[3 * v8], sizeof(v9));
+    return _strcmpi(&v10[36], &v9[36]);
+      }
+    else
+      {
+    return 1;
+      }
+    }
+    else
+    {
+    return -1;
+    }
+  }
+    else
+  {
+    v3 = -(v2 != 0);
+    LOBYTE(v3) = v3 & 0xFE;
+    return v3 + 1;
+  }
 }
 }
 } // namespace gamemd

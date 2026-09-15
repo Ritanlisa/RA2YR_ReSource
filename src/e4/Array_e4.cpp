@@ -3,56 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Array_e4.hpp"
 
-// 0x4068F0
-namespace gamemd {
-int Array::ForEach(AbstractClass * aP0, int a2, IUnknown * aP2, int (__thiscall *a4)(int) a4)
-{
-{
-    int result;
-    IUnknown *v6;
-    result = (int)&aP2[-1].__tail_1602E[1];
-    if ( (int)&aP2[-1].__tail_1602E[1] >= 0 )
-  {
-    v6 = aP2;
-    do
-    {
-    result = a4((int)aP0);
-    aP0 = (AbstractClass *)((char *)(aP0) + a2);
-    v6 = (IUnknown *)((char *)v6 - 1);
-    }
-    while ( v6 );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x40AFD0
-namespace gamemd {
-int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (__thiscall *a4)(int) a4)
-{
-{
-    char *v4;
-    int result;
-    int v6;
-    v4 = &aP0->__pad_0[a3 * a2];
-    result = a3 - 1;
-    if ( a3 - 1 >= 0 )
-  {
-    v6 = a3;
-    do
-    {
-    v4 -= a2;
-    result = a4((int)v4);
-    --v6;
-    }
-    while ( v6 );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x557AC0
 namespace gamemd {
 int Array::GetClamped(CheckListClass * aP1)
@@ -337,6 +287,56 @@ char __thiscall Array::InsertElement(int *this, const void *a1, ObjectClass *aP2
     qmemcpy(v14, a1, 0x10Cu); /*0x7ad917*/
   ++*this; /*0x7ad91e*/
   return 1; /*0x7ad91b*/
+}
+}
+} // namespace gamemd
+
+// 0x4068F0
+namespace gamemd {
+int Array::ForEach(AbstractClass * aP0, int a2, IUnknown * aP2, int (__thiscall *a4)(int) a4)
+{
+{
+    int result;
+    IUnknown *v6;
+    result = (int)&aP2[-1].__tail_1602E[1];
+    if ( (int)&aP2[-1].__tail_1602E[1] >= 0 )
+  {
+    v6 = aP2;
+    do
+    {
+    result = a4((int)aP0);
+    aP0 = (AbstractClass *)((char *)(aP0) + a2);
+    v6 = (IUnknown *)((char *)v6 - 1);
+    }
+    while ( v6 );
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x40AFD0
+namespace gamemd {
+int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (__thiscall *a4)(int) a4)
+{
+{
+    char *v4;
+    int result;
+    int v6;
+    v4 = &aP0->__pad_0[a3 * a2];
+    result = a3 - 1;
+    if ( a3 - 1 >= 0 )
+  {
+    v6 = a3;
+    do
+    {
+    v4 -= a2;
+    result = a4((int)v4);
+    --v6;
+    }
+    while ( v6 );
+  }
+    return result;
 }
 }
 } // namespace gamemd

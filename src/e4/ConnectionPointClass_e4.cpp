@@ -3,42 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/ConnectionPointClass_9_e4.hpp"
 
-// 0x4A0630
-int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int, int *) a2, int * a3)
-{
-{
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    if ( !a2 || !a3 )
-    return -2147467261;
-    v9 = AbstractClass::updateAITimer(g_ScenarioClass_Instance);
-    if ( (**a2)(a2, a1 + 4, &v8) < 0 )
-    return -2147220990;
-    v4 = *(int *)(a1 + 36);
-    if ( *(int *)(a1 + 44) >= v4 )
-  {
-    if ( !*(char *)(a1 + 41) && v4 )
-    return -2147220991;
-    v5 = *(int *)(a1 + 48);
-    if ( v5 <= 0 || !(*(unsigned char (__thiscall **)(int, int, int))(*(int *)(a1 + 28) + 8))(a1 + 28, v4 + v5, 0) )
-    {
-    return -2147220991;
-    }
-  }
-    v6 = *(int *)(a1 + 44);
-    v7 = *(int *)(a1 + 32);
-    *(int *)(a1 + 44) = v6 + 1;
-    *(int *)(v7 + 8 * v6) = v8;
-    *(int *)(v7 + 8 * v6 + 4) = v9;
-    *a3 = v9;
-    return 0;
-}
-}
-
 // 0x4A0760
 int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
 {
@@ -190,6 +154,42 @@ char __thiscall ConnectionPointClass_9_::_vt02(void *this, int a2, _DWORD *a3)
 }
 }
 } // namespace gamemd
+
+// 0x4A0630
+int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int, int *) a2, int * a3)
+{
+{
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    if ( !a2 || !a3 )
+    return -2147467261;
+    v9 = AbstractClass::updateAITimer(g_ScenarioClass_Instance);
+    if ( (**a2)(a2, a1 + 4, &v8) < 0 )
+    return -2147220990;
+    v4 = *(int *)(a1 + 36);
+    if ( *(int *)(a1 + 44) >= v4 )
+  {
+    if ( !*(char *)(a1 + 41) && v4 )
+    return -2147220991;
+    v5 = *(int *)(a1 + 48);
+    if ( v5 <= 0 || !(*(unsigned char (__thiscall **)(int, int, int))(*(int *)(a1 + 28) + 8))(a1 + 28, v4 + v5, 0) )
+    {
+    return -2147220991;
+    }
+  }
+    v6 = *(int *)(a1 + 44);
+    v7 = *(int *)(a1 + 32);
+    *(int *)(a1 + 44) = v6 + 1;
+    *(int *)(v7 + 8 * v6) = v8;
+    *(int *)(v7 + 8 * v6 + 4) = v9;
+    *a3 = v9;
+    return 0;
+}
+}
 
 // 0x4A0700
 int ConnectionPointClass::EnumConnections(int a1, int a2)

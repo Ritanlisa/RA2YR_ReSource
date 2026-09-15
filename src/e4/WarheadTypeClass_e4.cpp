@@ -207,59 +207,6 @@ char *__thiscall WarheadTypeClass::parseVerses(INISection_INIClass *this)
 }
 }
 
-// 0x52AD50
-void * WarheadTypeClass::parseModifiers(char a2)
-{
-{
-    CCINIClass *v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    void *v9;
-    v3 = (CCINIClass *)this->field_C;
-    *(int *)this->__pad_0 = &vt_INIClass_INIEntry;
-    free(v3);
-    v9 = (void *)this->field_10;
-    this->field_C = 0;
-    free(v9);
-    v4 = *(int *)this->__pad_14;
-    this->field_10 = 0;
-    if ( v4 )
-  {
-    do
-    {
-    free(**(void ***)this->__pad_14);
-    v5 = *(int *)(*(int *)this->__pad_14 + 4);
-    __3_YAXPAX_Z(*(void **)this->__pad_14);
-    *(int *)this->__pad_14 = v5;
-    }
-    while ( v5 );
-  }
-    free((void *)this->field_18);
-    this->field_18 = 0;
-    *(int *)this->__pad_0 = &vt_GenericNode;
-    if ( this )
-  {
-    v6 = *(int *)&this->__pad_0[4];
-    if ( v6 )
-    {
-    v7 = *(int *)&this->__pad_0[8];
-    if ( v7 )
-      {
-    *(int *)(v7 + 4) = v6;
-    *(int *)(*(int *)&this->__pad_0[4] + 8) = *(int *)&this->__pad_0[8];
-    *(int *)&this->__pad_0[8] = 0;
-    *(int *)&this->__pad_0[4] = 0;
-      }
-    }
-  }
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
-}
-
 // 0x52AFC0
 GenericList * WarheadTypeClass::ReadParticleSystems(char a2)
 {
@@ -1437,6 +1384,59 @@ int WarheadTypeClass::Init(unsigned int * a2)
     return -1;
   }
     return result;
+}
+
+// 0x52AD50
+void * WarheadTypeClass::parseModifiers(char a2)
+{
+{
+    CCINIClass *v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    void *v9;
+    v3 = (CCINIClass *)this->field_C;
+    *(int *)this->__pad_0 = &vt_INIClass_INIEntry;
+    free(v3);
+    v9 = (void *)this->field_10;
+    this->field_C = 0;
+    free(v9);
+    v4 = *(int *)this->__pad_14;
+    this->field_10 = 0;
+    if ( v4 )
+  {
+    do
+    {
+    free(**(void ***)this->__pad_14);
+    v5 = *(int *)(*(int *)this->__pad_14 + 4);
+    __3_YAXPAX_Z(*(void **)this->__pad_14);
+    *(int *)this->__pad_14 = v5;
+    }
+    while ( v5 );
+  }
+    free((void *)this->field_18);
+    this->field_18 = 0;
+    *(int *)this->__pad_0 = &vt_GenericNode;
+    if ( this )
+  {
+    v6 = *(int *)&this->__pad_0[4];
+    if ( v6 )
+    {
+    v7 = *(int *)&this->__pad_0[8];
+    if ( v7 )
+      {
+    *(int *)(v7 + 4) = v6;
+    *(int *)(*(int *)&this->__pad_0[4] + 8) = *(int *)&this->__pad_0[8];
+    *(int *)&this->__pad_0[8] = 0;
+    *(int *)&this->__pad_0[4] = 0;
+      }
+    }
+  }
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this;
+}
 }
 
 // 0x52AE00

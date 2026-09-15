@@ -2973,50 +2973,6 @@ char *__thiscall sub_49E7C0(char *this, char a2)
 }
 } // namespace gamemd
 
-// 0x49F2F0
-namespace gamemd {
-int sub_49F2F0()
-{
-{
-    Direction_X_Offsets[0] = -65536;
-    DataGlobal_89F68C = -65535;
-    g_CellDirectionOffsets = 1;
-    DataGlobal_89F694 = 65537;
-    DataGlobal_89F69C = 0x1FFFF;
-    g_DirectionOffsetPool = 0x10000;
-    Direction_Y_Offsets = 0xFFFF;
-    DataGlobal_89F6A4 = -1;
-    return -1;
-}
-}
-} // namespace gamemd
-
-// 0x49F3A0
-namespace gamemd {
-int sub_49F3A0()
-{
-{
-    DataGlobal_89F6DC[0] = -256;
-    DataGlobal_89F6E4 = -256;
-    DataGlobal_89F6D8[0] = 0;
-    DataGlobal_89F6EC = 0;
-    DataGlobal_89F6E0 = 256;
-    DataGlobal_89F6E8 = 256;
-    DataGlobal_89F6F0 = 256;
-    DataGlobal_89F6F4 = 256;
-    DataGlobal_89F6FC = 256;
-    DataGlobal_89F704 = 256;
-    DataGlobal_89F6F8 = 0;
-    DataGlobal_89F70C = 0;
-    DataGlobal_89F700 = -256;
-    DataGlobal_89F708 = -256;
-    DataGlobal_89F710 = -256;
-    DataGlobal_89F714 = -256;
-    return -256;
-}
-}
-} // namespace gamemd
-
 // 0x491100
 namespace gamemd {
 int sub_491100(ObjectClass * aP0, char a2, int a3, ObjectClass * aP3, short a5, char a6, short a7)
@@ -6208,6 +6164,50 @@ int sub_49F2D0()
     DataGlobal_89F6B0 = 0;
     DataGlobal_89F6B4 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x49F2F0
+namespace gamemd {
+int sub_49F2F0()
+{
+{
+    Direction_X_Offsets[0] = -65536;
+    DataGlobal_89F68C = -65535;
+    g_CellDirectionOffsets = 1;
+    DataGlobal_89F694 = 65537;
+    DataGlobal_89F69C = 0x1FFFF;
+    g_DirectionOffsetPool = 0x10000;
+    Direction_Y_Offsets = 0xFFFF;
+    DataGlobal_89F6A4 = -1;
+    return -1;
+}
+}
+} // namespace gamemd
+
+// 0x49F3A0
+namespace gamemd {
+int sub_49F3A0()
+{
+{
+    DataGlobal_89F6DC[0] = -256;
+    DataGlobal_89F6E4 = -256;
+    DataGlobal_89F6D8[0] = 0;
+    DataGlobal_89F6EC = 0;
+    DataGlobal_89F6E0 = 256;
+    DataGlobal_89F6E8 = 256;
+    DataGlobal_89F6F0 = 256;
+    DataGlobal_89F6F4 = 256;
+    DataGlobal_89F6FC = 256;
+    DataGlobal_89F704 = 256;
+    DataGlobal_89F6F8 = 0;
+    DataGlobal_89F70C = 0;
+    DataGlobal_89F700 = -256;
+    DataGlobal_89F708 = -256;
+    DataGlobal_89F710 = -256;
+    DataGlobal_89F714 = -256;
+    return -256;
 }
 }
 } // namespace gamemd

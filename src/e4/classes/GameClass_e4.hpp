@@ -11,7 +11,6 @@ struct GameClass {
     int FrameLoop(int a2);  // 0x5D2410
     int FindOpenSlot();  // 0x5D6370
     int GetRelatedObject();  // 0x631D30
-    unsigned int * saveGameState(char a2);  // 0x631F40
     Pipe * WriteEncryptedStream(BombClass * Src, signed int aP2);  // 0x632DC0
     int ReadEncryptedStream(char * a2, signed int Size);  // 0x633130
     bool initPlayerData(const char ** a2);  // 0x69AE10
@@ -20,6 +19,7 @@ struct GameClass {
     short ReadVersionFile2();  // 0x74FA20
     void ReadVersionString();  // 0x74FC80
     int processNetworkPacket(void * Src, signed int Size);  // 0x7BA3C0
+    unsigned int * saveGameState(char a2);  // 0x631F40
     int * initDisplay(char a2);  // 0x4AECA0
     void InitDifficultyButtons();  // 0x5E8AE0
     PKPipe * validateGameFile(char a2);  // 0x632FF0

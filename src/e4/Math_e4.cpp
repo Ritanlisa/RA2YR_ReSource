@@ -129,27 +129,6 @@ double __cdecl Math_Sin(double a1)
 }
 } // namespace gamemd
 
-// 0x4CADE0
-namespace gamemd {
-double Math::ArcTan(double a1)
-{
-{
-    int v2;
-    double result;
-    float v4;
-    v4 = a1;
-    v2 = abs32(Math::RoundToInt(a1 / DataGlobal_8650B8));
-    if ( v2 >= 4097 )
-    result = 1.5707964;
-    else
-    result = DataGlobal_8610B4[v2];
-    if ( v4 < 0.0 )
-    return -result;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x4CAE30
 namespace gamemd {
 int Math_CalcAngle()
@@ -390,6 +369,27 @@ double Math::ArcTan2_Table(double a1)
 {
 {
     return 1.570796326794897 - *((float *)&DataGlobal_859094 - Math::RoundToInt((a1 + 1.0) * -2048.0));
+}
+}
+} // namespace gamemd
+
+// 0x4CADE0
+namespace gamemd {
+double Math::ArcTan(double a1)
+{
+{
+    int v2;
+    double result;
+    float v4;
+    v4 = a1;
+    v2 = abs32(Math::RoundToInt(a1 / DataGlobal_8650B8));
+    if ( v2 >= 4097 )
+    result = 1.5707964;
+    else
+    result = DataGlobal_8610B4[v2];
+    if ( v4 < 0.0 )
+    return -result;
+    return result;
 }
 }
 } // namespace gamemd

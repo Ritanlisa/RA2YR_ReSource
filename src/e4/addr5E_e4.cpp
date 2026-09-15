@@ -3197,42 +3197,6 @@ LRESULT __fastcall GetComboBoxSelectedDefault(SkirmishDialog *aP0, int nIDDlgIte
 }
 } // namespace gamemd
 
-// 0x5E9B60
-namespace gamemd {
-int Lobby_SelectCountry(HWND a1, void * a2)
-{
-{
-    LRESULT Selected;
-    int result;
-    int v5;
-    Selected = GetComboBoxSelected(a1, (int)a2, -1);
-    result = CountryCombo::IDToIndex(a2);
-    if ( result == g_NetworkPlayerCount )
-  {
-    SessionClass::AssignSide(&g_GameMode_Current, Selected, 0);
-    result = Game_PlayerCount;
-    if ( Game_PlayerCount )
-    return SessionClass::SetPlayerOption(*(int *)Game_PlayerInfoArray, Selected);
-  }
-    else
-  {
-    v5 = *(&g_NetworkPlayerName + result);
-    if ( v5 && (v5 == g_Lobby_PlayerTeam || v5 == g_Lobby_PlayerSide || v5 == g_Lobby_PlayerColor) )
-    {
-    g_CampaignPlayerArray[result] = Selected;
-    }
-    else
-    {
-    g_CampaignPlayerArray[result] = -1;
-    DataGlobal_A8B27C[result] = -1;
-    g_CampaignConfig[result] = -1;
-    }
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x5E9C00
 namespace gamemd {
 int Player_AssignColor(HWND hDlg, void * nIDDlgItem)
@@ -5570,6 +5534,42 @@ BOOL sub_5E9AA0(HWND hDlg, int nIDDlgItem, int a3)
     SendDlgItemMessageA(hDlg, nIDDlgItem, 0x14Eu, v5, 0);
   }
     return ShowWindow(hWnd, 5);
+}
+}
+} // namespace gamemd
+
+// 0x5E9B60
+namespace gamemd {
+int Lobby_SelectCountry(HWND a1, void * a2)
+{
+{
+    LRESULT Selected;
+    int result;
+    int v5;
+    Selected = GetComboBoxSelected(a1, (int)a2, -1);
+    result = CountryCombo::IDToIndex(a2);
+    if ( result == g_NetworkPlayerCount )
+  {
+    SessionClass::AssignSide(&g_GameMode_Current, Selected, 0);
+    result = Game_PlayerCount;
+    if ( Game_PlayerCount )
+    return SessionClass::SetPlayerOption(*(int *)Game_PlayerInfoArray, Selected);
+  }
+    else
+  {
+    v5 = *(&g_NetworkPlayerName + result);
+    if ( v5 && (v5 == g_Lobby_PlayerTeam || v5 == g_Lobby_PlayerSide || v5 == g_Lobby_PlayerColor) )
+    {
+    g_CampaignPlayerArray[result] = Selected;
+    }
+    else
+    {
+    g_CampaignPlayerArray[result] = -1;
+    DataGlobal_A8B27C[result] = -1;
+    g_CampaignConfig[result] = -1;
+    }
+  }
+    return result;
 }
 }
 } // namespace gamemd

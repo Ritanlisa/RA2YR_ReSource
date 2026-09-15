@@ -412,55 +412,6 @@ void __thiscall sub_7A0DD0(const char *this)
 }
 } // namespace gamemd
 
-// 0x7A0EA0
-namespace gamemd {
-void INIClass::SetGameOptionsPing()
-{
-{
-    int v1;
-    int v2;
-    int i;
-    char *v5;
-    HWND GameUI;
-    v2 = v1;
-    Debug::Log();
-    for ( i = 0; i < 8; ++i )
-  {
-    v5 = (char *)*(&g_NetworkPlayerName + i);
-    if ( v5 )
-    {
-    if ( !strcmp(ToWideStringChar(v5), this->__pad_0) )
-      {
-    DataGlobal_B76440[i] = v2;
-    GameUI = (HWND)Dialog::FindGameUI();
-    if ( GameUI )
-        {
-    if ( v2 >= 0 )
-          {
-    if ( v2 >= 300 )
-            {
-    if ( v2 >= 500 )
-    UpdateLobbyGraphicsWOL(GameUI, i, 2);
-    else
-    UpdateLobbyGraphicsWOL(GameUI, i, 1);
-            }
-    else
-            {
-    UpdateLobbyGraphicsWOL(GameUI, i, 0);
-            }
-          }
-    else
-          {
-    UpdateLobbyGraphicsWOL(GameUI, i, -1);
-          }
-        }
-      }
-    }
-  }
-}
-}
-} // namespace gamemd
-
 // 0x7A1060
 namespace gamemd {
 char WOL_ProcessPingRequests()
@@ -1815,6 +1766,55 @@ int sub_7A0D10()
     }
   }
     return result;
+}
+}
+} // namespace gamemd
+
+// 0x7A0EA0
+namespace gamemd {
+void INIClass::SetGameOptionsPing()
+{
+{
+    int v1;
+    int v2;
+    int i;
+    char *v5;
+    HWND GameUI;
+    v2 = v1;
+    Debug::Log();
+    for ( i = 0; i < 8; ++i )
+  {
+    v5 = (char *)*(&g_NetworkPlayerName + i);
+    if ( v5 )
+    {
+    if ( !strcmp(ToWideStringChar(v5), this->__pad_0) )
+      {
+    DataGlobal_B76440[i] = v2;
+    GameUI = (HWND)Dialog::FindGameUI();
+    if ( GameUI )
+        {
+    if ( v2 >= 0 )
+          {
+    if ( v2 >= 300 )
+            {
+    if ( v2 >= 500 )
+    UpdateLobbyGraphicsWOL(GameUI, i, 2);
+    else
+    UpdateLobbyGraphicsWOL(GameUI, i, 1);
+            }
+    else
+            {
+    UpdateLobbyGraphicsWOL(GameUI, i, 0);
+            }
+          }
+    else
+          {
+    UpdateLobbyGraphicsWOL(GameUI, i, -1);
+          }
+        }
+      }
+    }
+  }
 }
 }
 } // namespace gamemd

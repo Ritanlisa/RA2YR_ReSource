@@ -120,69 +120,6 @@ int __thiscall BombClass::_vt13(int this, int *a2)
 } // namespace game
 } // namespace ra2
 
-// 0x438B40
-namespace ra2 {
-namespace game {
-int BombClass::Write(AbstractClass * aP0, int aP1)
-{
-{
-    AbstractClass *Prefix_0;
-    Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
-    if ( (int)Prefix_0 >= 0 )
-  {
-    if ( aP0 )
-    {
-    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_BombClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_BombClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_BombClass;
-    *(int *)&aP0->__pad_0[12] = &vt_BombClass;
-    }
-    AudioController::Init(&aP0[1].nextArrayIndex);
-    *(int *)&aP0[2].__pad_0[12] = 0;
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
-  }
-    return (int)Prefix_0->__pad_0;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x4393F0
-namespace ra2 {
-namespace game {
-BombClass * BombClass::CopyTo(char a2)
-{
-{
-    int v3;
-    int *v5;
-    *(void**)this = vt_BombClass;
-    *(this + 1) = (unsigned int)vt_BombClass;
-    *(this + 2) = (unsigned int)vt_BombClass;
-    *(this + 3) = &vt_BombClass;
-    AudioFileClass::Release(this + 15);
-    v5 = this;
-    v3 = (*(int (__thiscall **)(int *, int **))(DataGlobal_89C668 + 16))(&DataGlobal_89C668, &v5);
-    if ( v3 != -1 && v3 < DataGlobal_89C678 && v3 < --DataGlobal_89C678 )
-  {
-    do
-    {
-    ++v3;
-    *((int *)(DataGlobal_89C66C) + v3 - 1) = *((int *)(DataGlobal_89C66C) + v3);
-    }
-    while ( v3 < DataGlobal_89C678 );
-  }
-    AbstractClass::DTOR(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BombClass *)this;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x438550
 namespace ra2 {
 namespace game {
@@ -230,6 +167,36 @@ int BombClass::ddtor(int a1, unsigned int * a2)
 } // namespace game
 } // namespace ra2
 
+// 0x438B40
+namespace ra2 {
+namespace game {
+int BombClass::Write(AbstractClass * aP0, int aP1)
+{
+{
+    AbstractClass *Prefix_0;
+    Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( (int)Prefix_0 >= 0 )
+  {
+    if ( aP0 )
+    {
+    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_BombClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_BombClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_BombClass;
+    *(int *)&aP0->__pad_0[12] = &vt_BombClass;
+    }
+    AudioController::Init(&aP0[1].nextArrayIndex);
+    *(int *)&aP0[2].__pad_0[12] = 0;
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
+  }
+    return (int)Prefix_0->__pad_0;
+}
+}
+} // namespace game
+} // namespace ra2
+
 // 0x438BD0
 namespace ra2 {
 namespace game {
@@ -237,6 +204,39 @@ int BombClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 {
     return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x4393F0
+namespace ra2 {
+namespace game {
+BombClass * BombClass::CopyTo(char a2)
+{
+{
+    int v3;
+    int *v5;
+    *(void**)this = vt_BombClass;
+    *(this + 1) = (unsigned int)vt_BombClass;
+    *(this + 2) = (unsigned int)vt_BombClass;
+    *(this + 3) = &vt_BombClass;
+    AudioFileClass::Release(this + 15);
+    v5 = this;
+    v3 = (*(int (__thiscall **)(int *, int **))(DataGlobal_89C668 + 16))(&DataGlobal_89C668, &v5);
+    if ( v3 != -1 && v3 < DataGlobal_89C678 && v3 < --DataGlobal_89C678 )
+  {
+    do
+    {
+    ++v3;
+    *((int *)(DataGlobal_89C66C) + v3 - 1) = *((int *)(DataGlobal_89C66C) + v3);
+    }
+    while ( v3 < DataGlobal_89C678 );
+  }
+    AbstractClass::DTOR(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (BombClass *)this;
 }
 }
 } // namespace game

@@ -38,24 +38,6 @@ int __thiscall FlyLocomotionClass::LocomotionClass(int this)
 }
 }
 
-// 0x4CFCC0
-int FlyLocomotionClass::BeginMove(int * a1, int * a2)
-{
-{
-    int result;
-    result = SwizzleManager::SaveLoad(a1, a2);
-    if ( result >= 0 )
-  {
-    if ( a1 )
-    {
-    *a1 = (int)(unsigned int)vt_FlyLocomotionClass;
-    *((int*)(a1) + 1) = (int)&vt_FlyLocomotionClass;
-    }
-  }
-    return result;
-}
-}
-
 // 0x4CFE80
 void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
 {
@@ -200,6 +182,24 @@ int FlyLocomotionClass::ddtor(int a1, unsigned int * a2)
   a2[2] = -1610610249;
   a2[3] = -777003740;
   return 0;
+}
+
+// 0x4CFCC0
+int FlyLocomotionClass::BeginMove(int * a1, int * a2)
+{
+{
+    int result;
+    result = SwizzleManager::SaveLoad(a1, a2);
+    if ( result >= 0 )
+  {
+    if ( a1 )
+    {
+    *a1 = (int)(unsigned int)vt_FlyLocomotionClass;
+    *((int*)(a1) + 1) = (int)&vt_FlyLocomotionClass;
+    }
+  }
+    return result;
+}
 }
 
 // 0x4D0390

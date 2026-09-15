@@ -254,38 +254,6 @@ _DWORD *__thiscall sub_4A0380(_DWORD *this, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x4A0450
-namespace gamemd {
-void E4Recv_4A0450::sub_4A0450()
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    void *v5;
-    int v6;
-    v2 = 0;
-    for ( *(void**)this = &vt_EnumConnectionsClass; v2 < this->M20; ++v2 )
-  {
-    v6 = *(int *)(this->M8 + 8 * v2);
-    (*(void (__stdcall **)(int))(*(int *)(v6) + 8))(v6);
-  }
-    v3 = this->M4;
-    v4 = this + 1;
-    (*(void (__thiscall **)(int *))(v3 + 12))(v4);
-    v5 = (void *)v4[1];
-    *v4 = &vt_VectorClass_tagCONNECTDATA;
-    if ( v5 && *((char *)(v4) + 13) )
-  {
-    __3_YAXPAX_Z(v5);
-    v4[1] = 0;
-  }
-    *((char *)(v4) + 13) = 0;
-    v4[2] = 0;
-}
-}
-} // namespace gamemd
-
 // 0x4A0B20
 int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
 {
@@ -357,38 +325,6 @@ int __stdcall EnumConnectionPointsClass::_vt06(_DWORD *a1, _DWORD *a2)
   return 0; /*0x4a0b2c*/
 }
 }
-
-// 0x4A0DB0
-namespace gamemd {
-void E4Recv_4A0DB0::sub_4A0DB0()
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    void *v5;
-    int v6;
-    v2 = 0;
-    for ( *(void**)this = &vt_EnumConnectionPointsClass; v2 < this->M28; ++v2 )
-  {
-    v6 = *(int *)(this->M16 + 4 * v2);
-    (*(void (__stdcall **)(int))(*(int *)(v6) + 8))(v6);
-  }
-    v3 = this->M12;
-    v4 = this + 3;
-    (*(void (__thiscall **)(int *))(v3 + 12))(v4);
-    v5 = (void *)v4[1];
-    *v4 = &vt_VectorClass_IConnectionPoint;
-    if ( v5 && *((char *)(v4) + 13) )
-  {
-    __3_YAXPAX_Z(v5);
-    v4[1] = 0;
-  }
-    *((char *)(v4) + 13) = 0;
-    v4[2] = 0;
-}
-}
-} // namespace gamemd
 
 // 0x4A2370
 namespace gamemd {
@@ -1926,18 +1862,6 @@ LABEL_12:
 }
 } // namespace gamemd
 
-// 0x4A86E0
-namespace gamemd {
-int sub_4A86E0()
-{
-{
-    GadgetClass::Construct(DataGlobal_8A06F8, 0, 0, 0, 0, 127, 1);
-    DataGlobal_8A06F8[0] = (int)&vt_DisplayClass_TacticalClass;
-    return atexit(sub_4A8710);
-}
-}
-} // namespace gamemd
-
 // 0x4A8EB0
 namespace gamemd {
 char GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown * aP3)
@@ -2932,6 +2856,38 @@ LABEL_17:
 }
 } // namespace gamemd
 
+// 0x4A0450
+namespace gamemd {
+void E4Recv_4A0450::sub_4A0450()
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    void *v5;
+    int v6;
+    v2 = 0;
+    for ( *(void**)this = &vt_EnumConnectionsClass; v2 < this->M20; ++v2 )
+  {
+    v6 = *(int *)(this->M8 + 8 * v2);
+    (*(void (__stdcall **)(int))(*(int *)(v6) + 8))(v6);
+  }
+    v3 = this->M4;
+    v4 = this + 1;
+    (*(void (__thiscall **)(int *))(v3 + 12))(v4);
+    v5 = (void *)v4[1];
+    *v4 = &vt_VectorClass_tagCONNECTDATA;
+    if ( v5 && *((char *)(v4) + 13) )
+  {
+    __3_YAXPAX_Z(v5);
+    v4[1] = 0;
+  }
+    *((char *)(v4) + 13) = 0;
+    v4[2] = 0;
+}
+}
+} // namespace gamemd
+
 // 0x4A08D0
 namespace gamemd {
 void E4Recv_4A08D0::sub_4A08D0()
@@ -3021,6 +2977,38 @@ unsigned int * E4Recv_4A0CE0::sub_4A0CE0(unsigned int * a2)
     (*(void (__stdcall **)(int))(*(int *)(v10) + 4))(v10);
   }
     return this;
+}
+}
+} // namespace gamemd
+
+// 0x4A0DB0
+namespace gamemd {
+void E4Recv_4A0DB0::sub_4A0DB0()
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    void *v5;
+    int v6;
+    v2 = 0;
+    for ( *(void**)this = &vt_EnumConnectionPointsClass; v2 < this->M28; ++v2 )
+  {
+    v6 = *(int *)(this->M16 + 4 * v2);
+    (*(void (__stdcall **)(int))(*(int *)(v6) + 8))(v6);
+  }
+    v3 = this->M12;
+    v4 = this + 3;
+    (*(void (__thiscall **)(int *))(v3 + 12))(v4);
+    v5 = (void *)v4[1];
+    *v4 = &vt_VectorClass_IConnectionPoint;
+    if ( v5 && *((char *)(v4) + 13) )
+  {
+    __3_YAXPAX_Z(v5);
+    v4[1] = 0;
+  }
+    *((char *)(v4) + 13) = 0;
+    v4[2] = 0;
 }
 }
 } // namespace gamemd
@@ -4564,6 +4552,18 @@ void sub_4A8680()
     }
     while ( v1 );
   }
+}
+}
+} // namespace gamemd
+
+// 0x4A86E0
+namespace gamemd {
+int sub_4A86E0()
+{
+{
+    GadgetClass::Construct(DataGlobal_8A06F8, 0, 0, 0, 0, 127, 1);
+    DataGlobal_8A06F8[0] = (int)&vt_DisplayClass_TacticalClass;
+    return atexit(sub_4A8710);
 }
 }
 } // namespace gamemd

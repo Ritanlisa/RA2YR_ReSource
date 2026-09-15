@@ -455,28 +455,6 @@ _DWORD *__fastcall sub_5F66A0(_DWORD *a1, int a2)
 }
 } // namespace gamemd
 
-// 0x5F96B0
-namespace gamemd {
-void TheaterObjectTypeClassSpecificID(char * a1, int a2)
-{
-{
-    char v2;
-    char v3;
-    if ( a2 != -1 )
-  {
-    v2 = *a1;
-    v3 = *((int*)(a1) + 1);
-    if ( *a1 >= 65 && v2 <= 90 )
-    v2 += 32;
-    if ( v3 >= 65 && v3 <= 90 )
-    v3 += 32;
-    if ( (v2 == 103 || v2 == 110 || v2 == 99 || v2 == 121) && (v3 == 97 || v3 == 116) )
-    *((int*)(a1) + 1) = DataGlobal_7E1BCE[112 * a2];
-  }
-}
-}
-} // namespace gamemd
-
 // 0x5FBEF0
 namespace gamemd {
 char sub_5FBEF0()
@@ -1578,6 +1556,28 @@ namespace gamemd {
 void nullsub_207()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x5F96B0
+namespace gamemd {
+void TheaterObjectTypeClassSpecificID(char * a1, int a2)
+{
+{
+    char v2;
+    char v3;
+    if ( a2 != -1 )
+  {
+    v2 = *a1;
+    v3 = *((int*)(a1) + 1);
+    if ( *a1 >= 65 && v2 <= 90 )
+    v2 += 32;
+    if ( v3 >= 65 && v3 <= 90 )
+    v3 += 32;
+    if ( (v2 == 103 || v2 == 110 || v2 == 99 || v2 == 121) && (v3 == 97 || v3 == 116) )
+    *((int*)(a1) + 1) = DataGlobal_7E1BCE[112 * a2];
+  }
+}
 }
 } // namespace gamemd
 

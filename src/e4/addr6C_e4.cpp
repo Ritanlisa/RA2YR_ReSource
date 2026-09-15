@@ -1802,16 +1802,6 @@ int __cdecl globalHelper_0CF320(_DWORD *a1, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x6CFD20
-namespace gamemd {
-void sub_6CFD20(int a1, int a2)
-{
-{
-    g_ObjectTrackingPool[a1] = a2;
-}
-}
-} // namespace gamemd
-
 // 0x6CFD60
 namespace gamemd {
 unsigned int * sub_6CFD60(unsigned int * a1, int a2)
@@ -3580,6 +3570,16 @@ void sub_6CFC60()
     DataGlobal_B0C1AC |= 4u;
     ShapeButtonClass::Destructor((int)DataGlobal_B0CC40);
   }
+}
+}
+} // namespace gamemd
+
+// 0x6CFD20
+namespace gamemd {
+void sub_6CFD20(int a1, int a2)
+{
+{
+    g_ObjectTrackingPool[a1] = a2;
 }
 }
 } // namespace gamemd

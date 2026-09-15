@@ -2314,19 +2314,6 @@ char __thiscall ObjectClass_FindPlacementPosition(_DWORD *this, int a2, int a3, 
 } // namespace game
 } // namespace ra2
 
-// 0x72A660
-namespace ra2 {
-namespace game {
-int ObjectClass::setTarget(int a2)
-{
-{
-    *(int *)&this->__pad_2C[4] = a2;
-    return a2;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x746CB0
 namespace gamemd {
 int ObjectClass_GetTypeVt40_2()
@@ -2375,22 +2362,6 @@ int __thiscall sub_74CD60(_WORD *this)
       return 0; /*0x74cd97*/
   }
   return *((_DWORD *)MEMORY[0xB1D294] + v1); /*0x74cd9e*/
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x7A2E70
-namespace ra2 {
-namespace game {
-unsigned int * ObjectClass::loc_7A2E70(char a2)
-{
-{
-    this->vfptr = &vt_SimpleWonlineDialogControl;
-    OwnerDrawControl::InitVtable((DialogControl_OwnerDraw *)this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return &this->vfptr;
 }
 }
 } // namespace game
@@ -2707,6 +2678,19 @@ int ObjectClass::FindOwner(unsigned int * a0, AnimClass * aP1)
 } // namespace game
 } // namespace ra2
 
+// 0x72A660
+namespace ra2 {
+namespace game {
+int ObjectClass::setTarget(int a2)
+{
+{
+    *(int *)&this->__pad_2C[4] = a2;
+    return a2;
+}
+}
+} // namespace game
+} // namespace ra2
+
 // 0x72A670
 namespace ra2 {
 namespace game {
@@ -2733,3 +2717,19 @@ int ObjectClass::j_Game_ProcessIdle()
 }
 }
 } // namespace gamemd
+
+// 0x7A2E70
+namespace ra2 {
+namespace game {
+unsigned int * ObjectClass::loc_7A2E70(char a2)
+{
+{
+    this->vfptr = &vt_SimpleWonlineDialogControl;
+    OwnerDrawControl::InitVtable((DialogControl_OwnerDraw *)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
+}
+}
+} // namespace game
+} // namespace ra2

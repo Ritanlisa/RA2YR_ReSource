@@ -7,26 +7,6 @@
 #include "e4/classes/E4Recv_5EACD0_e4.hpp"
 #include "e4/classes/E4Recv_5EAEE0_e4.hpp"
 
-// 0x7A0E50
-namespace gamemd {
-void sub_7A0E50()
-{
-{
-    int i;
-    wchar_t *v1;
-    char *v2;
-    for ( i = 0; i < 8; ++i )
-  {
-    v1 = *(wchar_t **)((char *)&g_NetworkPlayerName + i * 4);
-    if ( !v1 || !IsKnownPointer(v1) )
-    DataGlobal_B76440[i] = -1;
-    v2 = ToWideStringChar(*(char **)((char *)&g_NetworkPlayerName + i * 4));
-    SetGameOptionsPing(v2, DataGlobal_B76440[i]);
-  }
-}
-}
-} // namespace gamemd
-
 // 0x5E8D40
 namespace gamemd {
 int sub_5E8D40()
@@ -124,6 +104,26 @@ int sub_5EAA70(int a1)
     return -2;
   }
     return SessionClass::GetOption2(*(&g_NetworkPlayerName + a1));
+}
+}
+} // namespace gamemd
+
+// 0x7A0E50
+namespace gamemd {
+void sub_7A0E50()
+{
+{
+    int i;
+    wchar_t *v1;
+    char *v2;
+    for ( i = 0; i < 8; ++i )
+  {
+    v1 = *(wchar_t **)((char *)&g_NetworkPlayerName + i * 4);
+    if ( !v1 || !IsKnownPointer(v1) )
+    DataGlobal_B76440[i] = -1;
+    v2 = ToWideStringChar(*(char **)((char *)&g_NetworkPlayerName + i * 4));
+    SetGameOptionsPing(v2, DataGlobal_B76440[i]);
+  }
 }
 }
 } // namespace gamemd

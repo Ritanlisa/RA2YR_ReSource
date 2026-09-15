@@ -3171,42 +3171,6 @@ char __thiscall sub_6EBF50(int this)
 }
 } // namespace gamemd
 
-// 0x6EC450
-namespace gamemd {
-int TeamClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
-    if ( result >= 0 )
-  {
-    if ( aP0 )
-    {
-    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
-    __4type_info_AAEAAV0_ABV0__Z(&aP0[2].referenceCount, (int)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_TeamClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TeamClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TeamClass;
-    *(int *)&aP0->__pad_0[12] = &vt_TeamClass;
-    }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[3].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[12]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].abstractFlags);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].referenceCount);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].uniqueId);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].nextArrayIndex);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[12]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].NeedsSaveOrLink);
-    return 0;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6EC5A0
 namespace gamemd {
 int TeamClass::PowerDrainUpdate(int * a2)
@@ -3768,6 +3732,42 @@ char TeamClass::WakeUpAllMembers()
   {
     result = (*(int (__thiscall **)(int, int))(*(int *)(i) + 968))(i, 0);
     *(char *)(i + 1672) = 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x6EC450
+namespace gamemd {
+int TeamClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( result >= 0 )
+  {
+    if ( aP0 )
+    {
+    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
+    __4type_info_AAEAAV0_ABV0__Z(&aP0[2].referenceCount, (int)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_TeamClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TeamClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TeamClass;
+    *(int *)&aP0->__pad_0[12] = &vt_TeamClass;
+    }
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[3].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[12]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].abstractFlags);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].referenceCount);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].uniqueId);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].nextArrayIndex);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[12]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].NeedsSaveOrLink);
+    return 0;
   }
     return result;
 }

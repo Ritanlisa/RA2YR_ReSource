@@ -12,30 +12,6 @@
 #include "e4/classes/E4Recv_721D10_e4.hpp"
 #include "e4/classes/E4Recv_728A00_e4.hpp"
 
-// 0x40D1B0
-namespace gamemd {
-void sub_40D1B0()
-{
-{
-    int *v0;
-    int v1;
-    DataGlobal_87F7E8.field_0 = (struct IUnknownVtbl *)(unsigned int)vt_MouseClass;
-    DataGlobal_884D00 = (int)&vt_MouseClass;
-    v0 = &DataGlobal_884B84;
-    v1 = 4;
-    do
-  {
-    v0 -= 997;
-    Array::ForEachReverse((int)(v0 + 20), 52, 75, (int (__thiscall *)(int))nullsub_56);
-    nullsub_57(v0);
-    --v1;
-  }
-    while ( v1 );
-    RadarClass::Destruct(&DataGlobal_87F7E8);
-}
-}
-} // namespace gamemd
-
 // 0x6F19B0
 namespace gamemd {
 int SmallFunc_6F19B0(char * a1, int a2)
@@ -89,6 +65,30 @@ LABEL_11:
     i = (CCINIClass *)((char *)i + 1); /*0x6f1a8e*/
   }
   return result; /*0x6f1aa2*/
+}
+}
+} // namespace gamemd
+
+// 0x40D1B0
+namespace gamemd {
+void sub_40D1B0()
+{
+{
+    int *v0;
+    int v1;
+    DataGlobal_87F7E8.field_0 = (struct IUnknownVtbl *)(unsigned int)vt_MouseClass;
+    DataGlobal_884D00 = (int)&vt_MouseClass;
+    v0 = &DataGlobal_884B84;
+    v1 = 4;
+    do
+  {
+    v0 -= 997;
+    Array::ForEachReverse((int)(v0 + 20), 52, 75, (int (__thiscall *)(int))nullsub_56);
+    nullsub_57(v0);
+    --v1;
+  }
+    while ( v1 );
+    RadarClass::Destruct(&DataGlobal_87F7E8);
 }
 }
 } // namespace gamemd

@@ -2,6 +2,31 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
+// 0x5D89F0
+unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int a2, int a3)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall VectorClass_Constructor_MultiplayerGameMode(_DWORD *this, int a2, int a3)
+{
+  *(this + 1) = 0; /*0x5d89fb*/
+  *(this + 2) = a2; /*0x5d89fe*/
+  *((_BYTE *)this + 12) = 1; /*0x5d8a01*/
+  *((_BYTE *)this + 13) = 0; /*0x5d8a05*/
+  *this = &vt_VectorClass_MultiplayerGameMode; /*0x5d8a08*/
+  if ( a2 ) /*0x5d8a0e*/
+  {
+    if ( a3 ) /*0x5d8a16*/
+    {
+      *(this + 1) = a3; /*0x5d8a18*/
+      return this; /*0x5d8a1e*/
+    }
+    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x5d8a2d*/
+    *((_BYTE *)this + 13) = 1; /*0x5d8a30*/
+  }
+  return this; /*0x5d8a1d*/
+}
+}
+
 // 0x5D7F20
 MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
 {
@@ -37,30 +62,5 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (MultiplayerGameMode *)this;
-}
-}
-
-// 0x5D89F0
-unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int a2, int a3)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall VectorClass_Constructor_MultiplayerGameMode(_DWORD *this, int a2, int a3)
-{
-  *(this + 1) = 0; /*0x5d89fb*/
-  *(this + 2) = a2; /*0x5d89fe*/
-  *((_BYTE *)this + 12) = 1; /*0x5d8a01*/
-  *((_BYTE *)this + 13) = 0; /*0x5d8a05*/
-  *this = &vt_VectorClass_MultiplayerGameMode; /*0x5d8a08*/
-  if ( a2 ) /*0x5d8a0e*/
-  {
-    if ( a3 ) /*0x5d8a16*/
-    {
-      *(this + 1) = a3; /*0x5d8a18*/
-      return this; /*0x5d8a1e*/
-    }
-    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x5d8a2d*/
-    *((_BYTE *)this + 13) = 1; /*0x5d8a30*/
-  }
-  return this; /*0x5d8a1d*/
 }
 }

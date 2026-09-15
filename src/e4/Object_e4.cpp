@@ -429,30 +429,6 @@ OverlayClass *__thiscall Object::SpawnAtCell(void *this, IUnknown *aP1, IUnknown
 }
 } // namespace gamemd
 
-// 0x5FD8F0
-namespace gamemd {
-int Object::LoadObject(ObjectClass * aP1, int aP1a)
-{
-{
-    ObjectClass *Register;
-    Register = (ObjectClass *)BuildingClass::SaveLoad_Register((AnimClass *)this);
-    if ( (int)Register >= 0 )
-  {
-    if ( aP1 )
-    {
-    ObjectClass::Init(aP1, (AbstractClass *)&aP1a);
-    *(int *)aP1->__pad_0 = (unsigned int)vt_OverlayClass;
-    *(int *)&aP1->__pad_0[4] = (unsigned int)vt_OverlayClass;
-    *(int *)&aP1->__pad_0[8] = (unsigned int)vt_OverlayClass;
-    *(int *)&aP1->__pad_0[12] = &vt_OverlayClass;
-    }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]);
-  }
-    return (int)Register->__pad_0;
-}
-}
-} // namespace gamemd
-
 // 0x5FD970
 namespace gamemd {
 void Object::HandleAction(int * a2, int * a3)
@@ -1799,6 +1775,30 @@ char Object::CheckState(IUnknown * aP1, int a3)
     return 0;
     else
     return ObjectClass::Deploy((#374 *)this);
+}
+}
+} // namespace gamemd
+
+// 0x5FD8F0
+namespace gamemd {
+int Object::LoadObject(ObjectClass * aP1, int aP1a)
+{
+{
+    ObjectClass *Register;
+    Register = (ObjectClass *)BuildingClass::SaveLoad_Register((AnimClass *)this);
+    if ( (int)Register >= 0 )
+  {
+    if ( aP1 )
+    {
+    ObjectClass::Init(aP1, (AbstractClass *)&aP1a);
+    *(int *)aP1->__pad_0 = (unsigned int)vt_OverlayClass;
+    *(int *)&aP1->__pad_0[4] = (unsigned int)vt_OverlayClass;
+    *(int *)&aP1->__pad_0[8] = (unsigned int)vt_OverlayClass;
+    *(int *)&aP1->__pad_0[12] = &vt_OverlayClass;
+    }
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]);
+  }
+    return (int)Register->__pad_0;
 }
 }
 } // namespace gamemd

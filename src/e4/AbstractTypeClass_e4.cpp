@@ -78,25 +78,6 @@ LABEL_9:
 }
 }
 
-// 0x410960
-int AbstractTypeClass::Init(AbstractTypeClass * aP1)
-{
-{
-    char v3;
-    AbstractClass::InitVtables((int *)this, (int)aP1);
-    v3 = (unsigned char)this->UINameLabel;
-    *(void**)this = vt_AbstractTypeClass;
-    this->vtable1 = (unsigned int)vt_AbstractTypeClass;
-    this->vtable2 = (unsigned int)vt_AbstractTypeClass;
-    this->vtable3 = &vt_AbstractTypeClass;
-    if ( v3 )
-    this->UIName = GetStringCSF((wchar_t *)(this + 61), 0, DataGlobal_817830, 127);
-    else
-    this->UIName = &DataGlobal_87F8E4.__pad_5568[10472];
-    return this;
-}
-}
-
 // 0x4109C0
 int AbstractTypeClass::Dtor()
 {
@@ -230,6 +211,25 @@ AbstractTypeClass *__thiscall AbstractTypeClass::ddtor(_DWORD *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x410ca4*/
     __3_YAXPAX_Z(this); /*0x410ca7*/
   return (AbstractTypeClass *)this; /*0x410cb1*/
+}
+}
+
+// 0x410960
+int AbstractTypeClass::Init(AbstractTypeClass * aP1)
+{
+{
+    char v3;
+    AbstractClass::InitVtables((int *)this, (int)aP1);
+    v3 = (unsigned char)this->UINameLabel;
+    *(void**)this = vt_AbstractTypeClass;
+    this->vtable1 = (unsigned int)vt_AbstractTypeClass;
+    this->vtable2 = (unsigned int)vt_AbstractTypeClass;
+    this->vtable3 = &vt_AbstractTypeClass;
+    if ( v3 )
+    this->UIName = GetStringCSF((wchar_t *)(this + 61), 0, DataGlobal_817830, 127);
+    else
+    this->UIName = &DataGlobal_87F8E4.__pad_5568[10472];
+    return this;
 }
 }
 

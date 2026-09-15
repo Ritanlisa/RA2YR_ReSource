@@ -152,6 +152,18 @@ bool __stdcall JumpjetLocomotionClass::sub_6A3F50(int a1, int a2, int a3, int a4
 }
 }
 
+// 0x75C640
+int WalkLocomotionClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1247291204;
+  a2[1] = 298948665;
+  a2[2] = -1610610249;
+  a2[3] = -777003740;
+  return 0;
+}
+
 // 0x75C680
 HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
 {
@@ -181,36 +193,6 @@ HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
     *v5 = 0;
     return OleLoadFromStream(v2, &IID_ILocomotion, v5);
 }
-}
-
-// 0x75CBE0
-WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
-{
-{
-    ILocomotion *v3;
-    *(void**)this = (unsigned int)vt_WalkLocomotionClass;
-    *(this + 1) = (unsigned int)vt_WalkLocomotionClass;
-    *(this + 6) = (ILocomotion *)&vt_WalkLocomotionClass;
-    v3 = *(this + 14);
-    if ( v3 )
-    (*(void (__stdcall **)(ILocomotion *))(*(int *)(v3) + 8))(v3);
-    LocomotionClass::Construct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (WalkLocomotionClass *)this;
-}
-}
-
-// 0x75C640
-int WalkLocomotionClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1247291204;
-  a2[1] = 298948665;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
 }
 
 // 0x75C700
@@ -272,4 +254,22 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
 int WalkLocomotionClass::StubReturn60()
 {
 return 60;
+}
+
+// 0x75CBE0
+WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
+{
+{
+    ILocomotion *v3;
+    *(void**)this = (unsigned int)vt_WalkLocomotionClass;
+    *(this + 1) = (unsigned int)vt_WalkLocomotionClass;
+    *(this + 6) = (ILocomotion *)&vt_WalkLocomotionClass;
+    v3 = *(this + 14);
+    if ( v3 )
+    (*(void (__stdcall **)(ILocomotion *))(*(int *)(v3) + 8))(v3);
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (WalkLocomotionClass *)this;
+}
 }

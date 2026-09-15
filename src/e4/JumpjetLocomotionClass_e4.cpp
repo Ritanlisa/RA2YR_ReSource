@@ -2037,37 +2037,6 @@ int __stdcall JumpjetLocomotionClass::sub_54B4D0(int a1)
 }
 }
 
-// 0x54B750
-HRESULT JumpjetLocomotionClass::InitClass(int * a1, int * pStm)
-{
-{
-    IStream *v2;
-    int v3;
-    int v4;
-    LPVOID *v5;
-    v2 = (IStream *)pStm;
-    v3 = SwizzleManager::SaveLoad(a1, pStm);
-    if ( v3 < 0 )
-    return v3;
-    if ( a1 )
-  {
-    *((int*)(a1) + 37) = 0;
-    *a1 = (int)(unsigned int)vt_JumpjetLocomotionClass;
-    a1[1] = (unsigned int)vt_JumpjetLocomotionClass;
-    *((int*)(a1) + 6) = (int)&vt_JumpjetLocomotionClass;
-  }
-    v2->__pad_0->Read(v2, &pStm, 1, 0);
-    if ( !(char)pStm )
-    return v3;
-    v4 = *((int*)(a1) + 37);
-    v5 = (LPVOID *)(a1 + 37);
-    if ( v4 )
-    (*(void (__stdcall **)(int))(*(int *)(v4) + 8))(v4);
-    *v5 = 0;
-    return OleLoadFromStream(v2, &IID_ILocomotion, v5);
-}
-}
-
 // 0x54D6D0
 int * JumpjetLocomotionClass::ProcessLanding(int * a2, unsigned int * a3)
 {
@@ -2219,24 +2188,6 @@ float *__stdcall JumpjetLocomotionClass::sub_54DCC0(signed int a1, float *a2, _D
     qmemcpy(a2, v12, 0x30u); /*0x54df39*/
     return a2; /*0x54df30*/
   }
-}
-}
-
-// 0x54DFA0
-JumpjetLocomotionClass * JumpjetLocomotionClass::ProcessAttach(char a2)
-{
-{
-    int v3;
-    *(void**)this = vt_JumpjetLocomotionClass;
-    *(this + 1) = (int)(unsigned int)vt_JumpjetLocomotionClass;
-    *(this + 6) = (int)&vt_JumpjetLocomotionClass;
-    v3 = *(this + 37);
-    if ( v3 )
-    (*(void (__stdcall **)(int))(*(int *)(v3) + 8))(v3);
-    LocomotionClass::Construct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (JumpjetLocomotionClass *)this;
 }
 }
 
@@ -2723,43 +2674,6 @@ LABEL_5:
   if ( result > 0 ) /*0x719c4e*/
     a1[14] = ++result; /*0x719c51*/
   return result; /*0x719c54*/
-}
-}
-
-// 0x719CA0
-HRESULT JumpjetLocomotionClass::InitMultiFieldArray_0(int * a1, int * pStm)
-{
-{
-    IStream *v2;
-    int v3;
-    wchar_t *v4;
-    int v5;
-    LPVOID *v6;
-    v2 = (IStream *)pStm;
-    v3 = SwizzleManager::SaveLoad(a1, pStm);
-    if ( v3 < 0 )
-    return v3;
-    if ( a1 )
-  {
-    *a1 = (int)(unsigned int)vt_LocomotionClass;
-    *((int*)(a1) + 1) = (int)&vt_LocomotionClass;
-    v4 = g_CurrentFrame;
-    *((int*)(a1) + 17) = 0;
-    *((int*)(a1) + 15) = (int)v4;
-    *((int*)(a1) + 18) = 0;
-    *a1 = (int)(unsigned int)vt_TeleportLocomotionClass;
-    a1[1] = (unsigned int)vt_TeleportLocomotionClass;
-    *((int*)(a1) + 6) = (int)&vt_TeleportLocomotionClass;
-  }
-    v2->__pad_0->Read(v2, &pStm, 1, 0);
-    if ( !(char)pStm )
-    return v3;
-    v5 = *((int*)(a1) + 18);
-    v6 = (LPVOID *)(a1 + 18);
-    if ( v5 )
-    (*(void (__stdcall **)(int))(*(int *)(v5) + 8))(v5);
-    *v6 = 0;
-    return OleLoadFromStream(v2, &IID_ILocomotion, v6);
 }
 }
 
@@ -4526,6 +4440,37 @@ int JumpjetLocomotionClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0;
 }
 
+// 0x54B750
+HRESULT JumpjetLocomotionClass::InitClass(int * a1, int * pStm)
+{
+{
+    IStream *v2;
+    int v3;
+    int v4;
+    LPVOID *v5;
+    v2 = (IStream *)pStm;
+    v3 = SwizzleManager::SaveLoad(a1, pStm);
+    if ( v3 < 0 )
+    return v3;
+    if ( a1 )
+  {
+    *((int*)(a1) + 37) = 0;
+    *a1 = (int)(unsigned int)vt_JumpjetLocomotionClass;
+    a1[1] = (unsigned int)vt_JumpjetLocomotionClass;
+    *((int*)(a1) + 6) = (int)&vt_JumpjetLocomotionClass;
+  }
+    v2->__pad_0->Read(v2, &pStm, 1, 0);
+    if ( !(char)pStm )
+    return v3;
+    v4 = *((int*)(a1) + 37);
+    v5 = (LPVOID *)(a1 + 37);
+    if ( v4 )
+    (*(void (__stdcall **)(int))(*(int *)(v4) + 8))(v4);
+    *v5 = 0;
+    return OleLoadFromStream(v2, &IID_ILocomotion, v5);
+}
+}
+
 // 0x54B7E0
 HRESULT JumpjetLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
 {
@@ -4864,6 +4809,24 @@ BOOL JumpjetLocomotionClass::ShortFunc_54DF70(int a1)
 int JumpjetLocomotionClass::CheckAttachStatus()
 {
 return 152;
+}
+
+// 0x54DFA0
+JumpjetLocomotionClass * JumpjetLocomotionClass::ProcessAttach(char a2)
+{
+{
+    int v3;
+    *(void**)this = vt_JumpjetLocomotionClass;
+    *(this + 1) = (int)(unsigned int)vt_JumpjetLocomotionClass;
+    *(this + 6) = (int)&vt_JumpjetLocomotionClass;
+    v3 = *(this + 37);
+    if ( v3 )
+    (*(void (__stdcall **)(int))(*(int *)(v3) + 8))(v3);
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (JumpjetLocomotionClass *)this;
+}
 }
 
 // 0x54DFF0
@@ -6215,6 +6178,43 @@ int JumpjetLocomotionClass::StubReturnZero_17(int a1, unsigned int * a2)
   a2[2] = -1610610249;
   a2[3] = -777003740;
   return 0;
+}
+
+// 0x719CA0
+HRESULT JumpjetLocomotionClass::InitMultiFieldArray_0(int * a1, int * pStm)
+{
+{
+    IStream *v2;
+    int v3;
+    wchar_t *v4;
+    int v5;
+    LPVOID *v6;
+    v2 = (IStream *)pStm;
+    v3 = SwizzleManager::SaveLoad(a1, pStm);
+    if ( v3 < 0 )
+    return v3;
+    if ( a1 )
+  {
+    *a1 = (int)(unsigned int)vt_LocomotionClass;
+    *((int*)(a1) + 1) = (int)&vt_LocomotionClass;
+    v4 = g_CurrentFrame;
+    *((int*)(a1) + 17) = 0;
+    *((int*)(a1) + 15) = (int)v4;
+    *((int*)(a1) + 18) = 0;
+    *a1 = (int)(unsigned int)vt_TeleportLocomotionClass;
+    a1[1] = (unsigned int)vt_TeleportLocomotionClass;
+    *((int*)(a1) + 6) = (int)&vt_TeleportLocomotionClass;
+  }
+    v2->__pad_0->Read(v2, &pStm, 1, 0);
+    if ( !(char)pStm )
+    return v3;
+    v5 = *((int*)(a1) + 18);
+    v6 = (LPVOID *)(a1 + 18);
+    if ( v5 )
+    (*(void (__stdcall **)(int))(*(int *)(v5) + 8))(v5);
+    *v6 = 0;
+    return OleLoadFromStream(v2, &IID_ILocomotion, v6);
+}
 }
 
 // 0x719D40

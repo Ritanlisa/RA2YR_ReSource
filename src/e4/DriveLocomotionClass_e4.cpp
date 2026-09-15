@@ -33,24 +33,6 @@ HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
 }
 }
 
-// 0x4B4D00
-DriveLocomotionClass * DriveLocomotionClass::ProcessMove(char a2)
-{
-{
-    ILocomotion *v3;
-    *(void**)this = (unsigned int)vt_DriveLocomotionClass;
-    *(this + 1) = (ILocomotion *)&vt_DriveLocomotionClass;
-    *(this + 6) = (ILocomotion *)&vt_DriveLocomotionClass_2;
-    v3 = *(this + 26);
-    if ( v3 )
-    (*(void (__stdcall **)(ILocomotion *))(*(int *)(v3) + 8))(v3);
-    LocomotionClass::Construct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DriveLocomotionClass *)this;
-}
-}
-
 // 0x4AF800
 HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
 {
@@ -122,4 +104,22 @@ int DriveLocomotionClass::ddtor(int a1, unsigned int * a2)
 int DriveLocomotionClass::StubReturn112()
 {
 return 112;
+}
+
+// 0x4B4D00
+DriveLocomotionClass * DriveLocomotionClass::ProcessMove(char a2)
+{
+{
+    ILocomotion *v3;
+    *(void**)this = (unsigned int)vt_DriveLocomotionClass;
+    *(this + 1) = (ILocomotion *)&vt_DriveLocomotionClass;
+    *(this + 6) = (ILocomotion *)&vt_DriveLocomotionClass_2;
+    v3 = *(this + 26);
+    if ( v3 )
+    (*(void (__stdcall **)(ILocomotion *))(*(int *)(v3) + 8))(v3);
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (DriveLocomotionClass *)this;
+}
 }

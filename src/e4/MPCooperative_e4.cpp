@@ -3,20 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/MPCooperative_e4.hpp"
 
-// 0x470C00
-namespace gamemd {
-unsigned int * MPCooperative::startGame()
-{
-{
-    this->vfptr = &vt_CampaignEndScoreClass;
-    DataGlobal_89E008 = -1;
-    DataGlobal_89E020 = 0;
-    DataGlobal_89DFD4 = 0;
-    return &this->vfptr;
-}
-}
-} // namespace gamemd
-
 // 0x49B660
 namespace gamemd {
 int MPCooperative::processTurn(char * a2, char * a3)
@@ -2981,6 +2967,20 @@ unsigned int * MPCooperative::initGame()
     DataGlobal_89E050 = 0;
     DataGlobal_81B1E8 = -1;
     return this;
+}
+}
+} // namespace gamemd
+
+// 0x470C00
+namespace gamemd {
+unsigned int * MPCooperative::startGame()
+{
+{
+    this->vfptr = &vt_CampaignEndScoreClass;
+    DataGlobal_89E008 = -1;
+    DataGlobal_89E020 = 0;
+    DataGlobal_89DFD4 = 0;
+    return &this->vfptr;
 }
 }
 } // namespace gamemd

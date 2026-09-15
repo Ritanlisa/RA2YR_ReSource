@@ -225,59 +225,6 @@ char __stdcall sub_6E4090(int a1, int a2, int a3, int a4)
 }
 } // namespace gamemd
 
-// 0x6E8000
-namespace gamemd {
-unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
-{
-{
-    int *result;
-    int *v3;
-    int v4;
-    int v5;
-    int v6;
-    result = this;
-    this->M8 = &vt_INoticeSink;
-    this->M12 = &vt_INoticeSource;
-    this->M16 = *(int *)(a2 + 16);
-    this->M20 = *(char *)(a2 + 20);
-    this->M24 = *(int *)(a2 + 24);
-    this->M28 = *(int *)(a2 + 28);
-    this->M32 = *(char *)(a2 + 32);
-    *(void**)this = vt_AbstractClass;
-    this->M4 = (unsigned int)vt_AbstractClass;
-    this->M8 = (unsigned int)vt_AbstractClass;
-    this->M12 = &vt_AbstractClass;
-    qmemcpy(this + 9, (const void *)(a2 + 36), 0x19u);
-    qmemcpy((char *)(this) + 61, (const void *)(a2 + 61), 0x20u);
-    this->M96 = *(int *)(a2 + 96);
-    qmemcpy(this + 25, (const void *)(a2 + 100), 0x31u);
-    *(void**)this = vt_TaskForceClass;
-    this->M4 = (unsigned int)vt_TaskForceClass;
-    this->M8 = (unsigned int)vt_TaskForceClass;
-    this->M12 = &vt_TaskForceClass;
-    v3 = this + 41;
-    result[38] = *(int *)(a2 + 152);
-    result[39] = *(int *)(a2 + 156);
-    v4 = result[39];
-    result[40] = *(int *)(a2 + 160);
-    v5 = 0;
-    if ( v4 > 0 )
-  {
-    v6 = a2 - (int)result;
-    do
-    {
-    ++v5;
-    *v3 = *(int *)((char *)(v3) + v6);
-    v3[1] = *(int *)((char *)(v3) + v6 + 4);
-    v3 += 2;
-    }
-    while ( v5 < result[39] );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6EC250
 namespace gamemd {
 int sub_6EC250(int a1, int a2)
@@ -1716,6 +1663,59 @@ int sub_6E7E60()
     DataGlobal_B0E8C0 = 0;
     DataGlobal_B0E8C4 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x6E8000
+namespace gamemd {
+unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
+{
+{
+    int *result;
+    int *v3;
+    int v4;
+    int v5;
+    int v6;
+    result = this;
+    this->M8 = &vt_INoticeSink;
+    this->M12 = &vt_INoticeSource;
+    this->M16 = *(int *)(a2 + 16);
+    this->M20 = *(char *)(a2 + 20);
+    this->M24 = *(int *)(a2 + 24);
+    this->M28 = *(int *)(a2 + 28);
+    this->M32 = *(char *)(a2 + 32);
+    *(void**)this = vt_AbstractClass;
+    this->M4 = (unsigned int)vt_AbstractClass;
+    this->M8 = (unsigned int)vt_AbstractClass;
+    this->M12 = &vt_AbstractClass;
+    qmemcpy(this + 9, (const void *)(a2 + 36), 0x19u);
+    qmemcpy((char *)(this) + 61, (const void *)(a2 + 61), 0x20u);
+    this->M96 = *(int *)(a2 + 96);
+    qmemcpy(this + 25, (const void *)(a2 + 100), 0x31u);
+    *(void**)this = vt_TaskForceClass;
+    this->M4 = (unsigned int)vt_TaskForceClass;
+    this->M8 = (unsigned int)vt_TaskForceClass;
+    this->M12 = &vt_TaskForceClass;
+    v3 = this + 41;
+    result[38] = *(int *)(a2 + 152);
+    result[39] = *(int *)(a2 + 156);
+    v4 = result[39];
+    result[40] = *(int *)(a2 + 160);
+    v5 = 0;
+    if ( v4 > 0 )
+  {
+    v6 = a2 - (int)result;
+    do
+    {
+    ++v5;
+    *v3 = *(int *)((char *)(v3) + v6);
+    v3[1] = *(int *)((char *)(v3) + v6 + 4);
+    v3 += 2;
+    }
+    while ( v5 < result[39] );
+  }
+    return result;
 }
 }
 } // namespace gamemd

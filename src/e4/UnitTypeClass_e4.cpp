@@ -442,66 +442,6 @@ char __userpurge UnitTypeClass::LoadFromINI@<al>(int a1@<ecx>, double a2@<st0>, 
 }
 } // namespace gamemd
 
-// 0x748010
-int UnitTypeClass::LoadFromINI2(int a1, int a2)
-{
-{
-    int result;
-    char v3;
-    char Buffer[260];
-    result = TechnoTypeClass::SaveLoad_Prefix(a1, a2);
-    if ( result >= 0 )
-  {
-    if ( a1 )
-    {
-    TechnoTypeClass::Construct(a1, (int)&v3);
-    *(int *)a1 = (unsigned int)vt_UnitTypeClass;
-    *(int *)(a1 + 4) = (unsigned int)vt_UnitTypeClass;
-    *(int *)(a1 + 8) = (unsigned int)vt_UnitTypeClass;
-    *(int *)(a1 + 12) = &vt_UnitTypeClass;
-    }
-    VoxelAnimType::LoadAnim((char *)a1);
-    ObjectTypeClass::Load2DArt((char *)a1);
-    if ( *(int *)(a1 + 3672) )
-    {
-    _makepath(Buffer, 0, 0, (const char *)(a1 + 3678), Ext);
-    *(int *)(a1 + 3672) = SearchMIXFile(Buffer, 0);
-    }
-    return 0;
-  }
-    return result;
-}
-}
-
-// 0x748190
-UnitTypeClass * UnitTypeClass::ddtor(char a2)
-{
-{
-    int v3;
-    void **v5;
-    *(void**)this = vt_UnitTypeClass;
-    *(this + 1) = (unsigned int)vt_UnitTypeClass;
-    *(this + 2) = (unsigned int)vt_UnitTypeClass;
-    *(this + 3) = &vt_UnitTypeClass;
-    AbstractClass::AnnounceExpiredPointer(this, 1);
-    v5 = this;
-    v3 = (*(int (__thiscall **)(int *, void ***))(UnitTypeClass_Array + 16))(&UnitTypeClass_Array, &v5);
-    if ( v3 != -1 && v3 < g_CrateCount && v3 < --g_CrateCount )
-  {
-    do
-    {
-    ++v3;
-    *((int *)(g_UnitTypeCount2) + v3 - 1) = *((int *)(g_UnitTypeCount2) + v3);
-    }
-    while ( v3 < g_CrateCount );
-  }
-    TechnoTypeClass::DTOR((int)this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (UnitTypeClass *)this;
-}
-}
-
 // 0x74B960
 VoxelAnimTypeClass * UnitTypeClass::FindOrCreate()
 {
@@ -643,6 +583,37 @@ int UnitTypeClass::PowerDrainUpdate(int * a2)
 }
 }
 
+// 0x748010
+int UnitTypeClass::LoadFromINI2(int a1, int a2)
+{
+{
+    int result;
+    char v3;
+    char Buffer[260];
+    result = TechnoTypeClass::SaveLoad_Prefix(a1, a2);
+    if ( result >= 0 )
+  {
+    if ( a1 )
+    {
+    TechnoTypeClass::Construct(a1, (int)&v3);
+    *(int *)a1 = (unsigned int)vt_UnitTypeClass;
+    *(int *)(a1 + 4) = (unsigned int)vt_UnitTypeClass;
+    *(int *)(a1 + 8) = (unsigned int)vt_UnitTypeClass;
+    *(int *)(a1 + 12) = &vt_UnitTypeClass;
+    }
+    VoxelAnimType::LoadAnim((char *)a1);
+    ObjectTypeClass::Load2DArt((char *)a1);
+    if ( *(int *)(a1 + 3672) )
+    {
+    _makepath(Buffer, 0, 0, (const char *)(a1 + 3678), Ext);
+    *(int *)(a1 + 3672) = SearchMIXFile(Buffer, 0);
+    }
+    return 0;
+  }
+    return result;
+}
+}
+
 // 0x7480B0
 int UnitTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
 {
@@ -672,5 +643,34 @@ int UnitTypeClass::GetAuxField()
 {
 {
     return this->ArrayIndex;
+}
+}
+
+// 0x748190
+UnitTypeClass * UnitTypeClass::ddtor(char a2)
+{
+{
+    int v3;
+    void **v5;
+    *(void**)this = vt_UnitTypeClass;
+    *(this + 1) = (unsigned int)vt_UnitTypeClass;
+    *(this + 2) = (unsigned int)vt_UnitTypeClass;
+    *(this + 3) = &vt_UnitTypeClass;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    v5 = this;
+    v3 = (*(int (__thiscall **)(int *, void ***))(UnitTypeClass_Array + 16))(&UnitTypeClass_Array, &v5);
+    if ( v3 != -1 && v3 < g_CrateCount && v3 < --g_CrateCount )
+  {
+    do
+    {
+    ++v3;
+    *((int *)(g_UnitTypeCount2) + v3 - 1) = *((int *)(g_UnitTypeCount2) + v3);
+    }
+    while ( v3 < g_CrateCount );
+  }
+    TechnoTypeClass::DTOR((int)this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (UnitTypeClass *)this;
 }
 }

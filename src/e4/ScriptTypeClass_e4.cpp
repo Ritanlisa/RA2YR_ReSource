@@ -2,6 +2,20 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
+// 0x691D50
+namespace gamemd {
+int ScriptTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = 1123264071;
+  a2[1] = 298977161;
+  a2[2] = 1610655148;
+  a2[3] = -1252326136;
+  return 0;
+}
+} // namespace gamemd
+
 // 0x691D90
 namespace gamemd {
 int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
@@ -23,6 +37,36 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
   }
     return result;
 }
+}
+} // namespace gamemd
+
+// 0x691DE0
+namespace gamemd {
+int ScriptTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
+    if ( result >= 0 )
+    return 0;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x691F70
+namespace gamemd {
+int ScriptTypeClass::GetTypeIdentifier()
+{
+return 27;
+}
+} // namespace gamemd
+
+// 0x691F80
+namespace gamemd {
+int ScriptTypeClass::GetObjectSize()
+{
+return 564;
 }
 } // namespace gamemd
 
@@ -54,50 +98,6 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2)
     __3_YAXPAX_Z(this);
     return (ScriptTypeClass *)this;
 }
-}
-} // namespace gamemd
-
-// 0x691D50
-namespace gamemd {
-int ScriptTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1123264071;
-  a2[1] = 298977161;
-  a2[2] = 1610655148;
-  a2[3] = -1252326136;
-  return 0;
-}
-} // namespace gamemd
-
-// 0x691DE0
-namespace gamemd {
-int ScriptTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x691F70
-namespace gamemd {
-int ScriptTypeClass::GetTypeIdentifier()
-{
-return 27;
-}
-} // namespace gamemd
-
-// 0x691F80
-namespace gamemd {
-int ScriptTypeClass::GetObjectSize()
-{
-return 564;
 }
 } // namespace gamemd
 

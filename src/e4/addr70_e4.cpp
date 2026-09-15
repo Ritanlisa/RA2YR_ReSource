@@ -12,50 +12,6 @@
 #include "e4/classes/E4Recv_70FE40_e4.hpp"
 #include "e4/classes/E4Recv_70FE50_e4.hpp"
 
-// 0x7011A0
-namespace gamemd {
-int E4Recv_7011A0::sub_7011A0()
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int *v6;
-    char *v7;
-    int v8;
-    double v9;
-    int v10;
-    int v11;
-    int v12;
-    int v13;
-    double v14;
-    char v15[12];
-    if ( this->Vf84() )
-    return 0;
-    v3 = g_RulesClass_Instance[1].?[11];
-    if ( !v3 )
-    return 0;
-    v4 = g_RulesClass_Instance[1].?[0];
-    v5 = *(void**)this;
-    LODWORD(v14) = g_RulesClass_Instance[1].?[13];
-    HIDWORD(v14) = v4;
-    v6 = (int *)(*(int (__thiscall **)(int *, char *))(v5 + 72))(this, v15);
-    LOWORD(v12) = *v6 / 256;
-    HIWORD(v12) = v6[1] / 256;
-    v13 = v12;
-    v7 = (char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v13);
-    v8 = ScenarioClass::CalcMinShroudLevel(&DataGlobal_87F7E8);
-    v9 = (double)((v7[283] - v8) / v3) * v14;
-    if ( v9 >= *(double *)&g_RulesClass_Instance[1].?[1] )
-    v9 = *(double *)&g_RulesClass_Instance[1].?[1];
-    v10 = DataGlobal_B0EB34 * v7[283];
-    v11 = Math::RoundToInt(v9);
-    Math::Sqrt((double)(v10 * v10 + (v11 << 8) * (v11 << 8)));
-    return Math::RoundToInt(v9);
-}
-}
-} // namespace gamemd
-
 // 0x7049C0
 namespace gamemd {
 char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a5, int a6, int a7, char a8, char a9)
@@ -1000,6 +956,50 @@ DWORD __fastcall TechnoClass_RevealRadarEvent(int a1, int a2)
     MEMORY[0xB0EA78] = 0; /*0x70f1c2*/
   }
   return result; /*0x70f18f*/
+}
+}
+} // namespace gamemd
+
+// 0x7011A0
+namespace gamemd {
+int E4Recv_7011A0::sub_7011A0()
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    int *v6;
+    char *v7;
+    int v8;
+    double v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    double v14;
+    char v15[12];
+    if ( this->Vf84() )
+    return 0;
+    v3 = g_RulesClass_Instance[1].?[11];
+    if ( !v3 )
+    return 0;
+    v4 = g_RulesClass_Instance[1].?[0];
+    v5 = *(void**)this;
+    LODWORD(v14) = g_RulesClass_Instance[1].?[13];
+    HIDWORD(v14) = v4;
+    v6 = (int *)(*(int (__thiscall **)(int *, char *))(v5 + 72))(this, v15);
+    LOWORD(v12) = *v6 / 256;
+    HIWORD(v12) = v6[1] / 256;
+    v13 = v12;
+    v7 = (char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v13);
+    v8 = ScenarioClass::CalcMinShroudLevel(&DataGlobal_87F7E8);
+    v9 = (double)((v7[283] - v8) / v3) * v14;
+    if ( v9 >= *(double *)&g_RulesClass_Instance[1].?[1] )
+    v9 = *(double *)&g_RulesClass_Instance[1].?[1];
+    v10 = DataGlobal_B0EB34 * v7[283];
+    v11 = Math::RoundToInt(v9);
+    Math::Sqrt((double)(v10 * v10 + (v11 << 8) * (v11 << 8)));
+    return Math::RoundToInt(v9);
 }
 }
 } // namespace gamemd

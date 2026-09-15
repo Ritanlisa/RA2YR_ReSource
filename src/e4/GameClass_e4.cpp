@@ -268,19 +268,6 @@ int __thiscall GameClass_GetRelatedObject(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x631F40
-namespace gamemd {
-unsigned int * GameClass::saveGameState(char a2)
-{
-{
-    this->vfptr = &vt_PixelFXClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return &this->vfptr;
-}
-}
-} // namespace gamemd
-
 // 0x632DC0
 namespace gamemd {
 Pipe * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
@@ -725,6 +712,19 @@ wchar_t * GameClass::GetDifficultyString()
     if ( this == (void *)g_Lobby_MaxPlayers )
     return GetStringCSF(DataGlobal_831CCC, 0, g_Str_File_netshare_cpp, 4958);
     return GetStringCSF(DataGlobal_831CBC, 0, g_Str_File_netshare_cpp, 4960);
+}
+}
+} // namespace gamemd
+
+// 0x631F40
+namespace gamemd {
+unsigned int * GameClass::saveGameState(char a2)
+{
+{
+    this->vfptr = &vt_PixelFXClass;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
 }
 }
 } // namespace gamemd

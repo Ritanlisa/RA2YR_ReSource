@@ -255,20 +255,6 @@ LABEL_16:
 }
 } // namespace gamemd
 
-// 0x585EE0
-namespace gamemd {
-int sub_585EE0()
-{
-{
-    DataGlobal_ABD460[0] = 0;
-    DataGlobal_ABD464 = 4;
-    DataGlobal_ABD468 = 0x40000;
-    DataGlobal_ABD46C = 262148;
-    return 4;
-}
-}
-} // namespace gamemd
-
 // 0x585F40
 namespace gamemd {
 int InterpolateTerrainLighting(int a1, MouseClass * aP1, int a3, int a4)
@@ -738,60 +724,6 @@ LABEL_24:
     result = i + 2; /*0x588935*/
   }
   return result; /*0x58894c*/
-}
-}
-} // namespace gamemd
-
-// 0x5889F0
-namespace gamemd {
-int sub_5889F0(int a1, int a2)
-{
-{
-    int *v2;
-    int *v3;
-    char v4;
-    int *v5;
-    int v6;
-    int v7;
-    int v9;
-    int v10;
-    int v11;
-    int v12;
-    int v13;
-    v13 = -1;
-    v12 = 0;
-    v10 = 0;
-    v2 = DataGlobal_82A594;
-    do
-  {
-    v3 = &DataGlobal_82A594[8 * a2];
-    v4 = 1;
-    v9 = 0;
-    v5 = &DataGlobal_82A594[8 * a1];
-    v11 = 8;
-    do
-    {
-    v6 = *v3;
-    v7 = *v2;
-    if ( (*v5 == 2 || v6 == 2) && v7 == 1 )
-    v4 = 0;
-    if ( *v5 == v7 && v6 == v7 && v7 == 1 )
-    ++v9;
-    ++v5;
-    ++v3;
-    ++v2;
-    --v11;
-    }
-    while ( v11 );
-    if ( v4 && v9 > v12 )
-    {
-    v12 = v9;
-    v13 = v10;
-    }
-    ++v10;
-  }
-    while ( (int)v2 < (int)DataGlobal_82A734 );
-    return v13;
 }
 }
 } // namespace gamemd
@@ -1341,6 +1273,74 @@ char sub_58EF10()
     }
   }
   return 1; /*0x58f0ac*/
+}
+}
+} // namespace gamemd
+
+// 0x585EE0
+namespace gamemd {
+int sub_585EE0()
+{
+{
+    DataGlobal_ABD460[0] = 0;
+    DataGlobal_ABD464 = 4;
+    DataGlobal_ABD468 = 0x40000;
+    DataGlobal_ABD46C = 262148;
+    return 4;
+}
+}
+} // namespace gamemd
+
+// 0x5889F0
+namespace gamemd {
+int sub_5889F0(int a1, int a2)
+{
+{
+    int *v2;
+    int *v3;
+    char v4;
+    int *v5;
+    int v6;
+    int v7;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    v13 = -1;
+    v12 = 0;
+    v10 = 0;
+    v2 = DataGlobal_82A594;
+    do
+  {
+    v3 = &DataGlobal_82A594[8 * a2];
+    v4 = 1;
+    v9 = 0;
+    v5 = &DataGlobal_82A594[8 * a1];
+    v11 = 8;
+    do
+    {
+    v6 = *v3;
+    v7 = *v2;
+    if ( (*v5 == 2 || v6 == 2) && v7 == 1 )
+    v4 = 0;
+    if ( *v5 == v7 && v6 == v7 && v7 == 1 )
+    ++v9;
+    ++v5;
+    ++v3;
+    ++v2;
+    --v11;
+    }
+    while ( v11 );
+    if ( v4 && v9 > v12 )
+    {
+    v12 = v9;
+    v13 = v10;
+    }
+    ++v10;
+  }
+    while ( (int)v2 < (int)DataGlobal_82A734 );
+    return v13;
 }
 }
 } // namespace gamemd

@@ -415,73 +415,6 @@ char sub_55FC80()
 }
 } // namespace gamemd
 
-// 0x5FA4A0
-namespace gamemd {
-void Options::SetScoreVolume(float volume, int pad)
-{
-{
-    double v4;
-    int v5;
-    int v6;
-    if ( volume >= 1.0 )
-    v4 = 1.0;
-    else
-    v4 = volume;
-    *(float *)&this->__pad_34[12] = v4;
-    v5 = Math::RoundToInt(v4 * 16384.0);
-    EndBufferMixer(*(int **)&DataGlobal_87C374.__pad_14B0[3872], v5);
-    v6 = Math::RoundToInt(*(float *)&this->__pad_34[12] * 255.0);
-    GameSettings::SetScoreVolume(&g_BuildingTypeClass_Count, v6);
-    Debug::Log();
-}
-}
-} // namespace gamemd
-
-// 0x5FA510
-namespace gamemd {
-void Options::SetSoundVolume(float volume, int pad)
-{
-{
-    double v3;
-    int v4;
-    if ( volume >= 1.0 )
-    v3 = 1.0;
-    else
-    v3 = volume;
-    *(float *)&this->__pad_34[4] = v3;
-    v4 = Math::RoundToInt(v3 * 16384.0);
-    EndBufferMixer(*(int **)&DataGlobal_87C374.__pad_14B0[3876], v4);
-    if ( (char)pad )
-    PlayVocClass(*(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 1808), 0x2000, 1.0, 0);
-    Debug::Log();
-}
-}
-} // namespace gamemd
-
-// 0x5FA590
-namespace gamemd {
-void Options::SetVoiceVolume(float volume, int pad)
-{
-{
-    double v4;
-    int v5;
-    int v6;
-    if ( volume >= 1.0 )
-    v4 = 1.0;
-    else
-    v4 = volume;
-    *(float *)&this->__pad_34[8] = v4;
-    v5 = Math::RoundToInt(v4 * 255.0);
-    ThemeClass::GetField(v5);
-    v6 = Math::RoundToInt(*(float *)&this->__pad_34[8] * 16384.0);
-    EndBufferMixer(*(int **)&DataGlobal_87C374.__pad_14B0[3868], v6);
-    if ( (char)pad )
-    PlayVocClass(*(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 1808), 0x2000, *(float *)&this->__pad_34[8], 0);
-    Debug::Log();
-}
-}
-} // namespace gamemd
-
 // 0x6244E0
 namespace gamemd {
 int Options::DeleteAndZero()
@@ -869,6 +802,73 @@ HWND Options::InitDialogControls()
     }
   }
     return result;
+}
+}
+} // namespace gamemd
+
+// 0x5FA4A0
+namespace gamemd {
+void Options::SetScoreVolume(float volume, int pad)
+{
+{
+    double v4;
+    int v5;
+    int v6;
+    if ( volume >= 1.0 )
+    v4 = 1.0;
+    else
+    v4 = volume;
+    *(float *)&this->__pad_34[12] = v4;
+    v5 = Math::RoundToInt(v4 * 16384.0);
+    EndBufferMixer(*(int **)&DataGlobal_87C374.__pad_14B0[3872], v5);
+    v6 = Math::RoundToInt(*(float *)&this->__pad_34[12] * 255.0);
+    GameSettings::SetScoreVolume(&g_BuildingTypeClass_Count, v6);
+    Debug::Log();
+}
+}
+} // namespace gamemd
+
+// 0x5FA510
+namespace gamemd {
+void Options::SetSoundVolume(float volume, int pad)
+{
+{
+    double v3;
+    int v4;
+    if ( volume >= 1.0 )
+    v3 = 1.0;
+    else
+    v3 = volume;
+    *(float *)&this->__pad_34[4] = v3;
+    v4 = Math::RoundToInt(v3 * 16384.0);
+    EndBufferMixer(*(int **)&DataGlobal_87C374.__pad_14B0[3876], v4);
+    if ( (char)pad )
+    PlayVocClass(*(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 1808), 0x2000, 1.0, 0);
+    Debug::Log();
+}
+}
+} // namespace gamemd
+
+// 0x5FA590
+namespace gamemd {
+void Options::SetVoiceVolume(float volume, int pad)
+{
+{
+    double v4;
+    int v5;
+    int v6;
+    if ( volume >= 1.0 )
+    v4 = 1.0;
+    else
+    v4 = volume;
+    *(float *)&this->__pad_34[8] = v4;
+    v5 = Math::RoundToInt(v4 * 255.0);
+    ThemeClass::GetField(v5);
+    v6 = Math::RoundToInt(*(float *)&this->__pad_34[8] * 16384.0);
+    EndBufferMixer(*(int **)&DataGlobal_87C374.__pad_14B0[3868], v6);
+    if ( (char)pad )
+    PlayVocClass(*(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 1808), 0x2000, *(float *)&this->__pad_34[8], 0);
+    Debug::Log();
 }
 }
 } // namespace gamemd

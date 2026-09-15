@@ -68,27 +68,6 @@ void __thiscall sub_771890(_DWORD *this)
 }
 } // namespace gamemd
 
-// 0x773590
-namespace gamemd {
-char AnimClass::sub_773590(int a2, int a3)
-{
-{
-    void **v4;
-    *(int *)&this->__pad_40C[4] = a2;
-    Debug::Log();
-    v4 = &this->field_8;
-    if ( CoCreateInstance(&DataGlobal_7F7C60, 0, 1u, &DataGlobal_7F7C30, &this->field_8) >= 0 )
-  {
-    Debug::Log();
-    (*(void (__stdcall **)(void *, AnimClass *))(*(int *)*v4 + 20))(*v4, this);
-    (*(void (__stdcall **)(void *, int, int))(*(int *)*v4 + 12))(*v4, a2, a3);
-    (*(void (__stdcall **)(void *, int))(*(int *)*v4 + 60))(*v4, 1);
-  }
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x7741C0
 namespace gamemd {
 HKEY E4Recv_7741C0::FindRegistrySubKey()
@@ -408,25 +387,6 @@ int sub_775B30()
 int sub_775B30()
 {
   return dword_B72F4C; /*0x775b35*/
-}
-}
-} // namespace gamemd
-
-// 0x775B50
-namespace gamemd {
-int sub_775B50(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, int a3, LONG * a4)
-{
-{
-    ObjectClass *DialogParamA;
-    LONG bottom;
-    struct tagRECT Rect;
-    DialogParamA = (ObjectClass *)CreateDialogParamA(g_hInstance, (LPCSTR)a1, 0, a2, 0);
-    GetClientRect((HWND)DialogParamA, &Rect);
-    DestroyWindow((HWND)DialogParamA);
-    bottom = Rect.bottom;
-    *a4 = Rect.right;
-    *((int*)(a4) + 1) = bottom;
-    return 1;
 }
 }
 } // namespace gamemd
@@ -4468,6 +4428,27 @@ unsigned int * sub_773450(int a1, int a2)
 }
 } // namespace gamemd
 
+// 0x773590
+namespace gamemd {
+char AnimClass::sub_773590(int a2, int a3)
+{
+{
+    void **v4;
+    *(int *)&this->__pad_40C[4] = a2;
+    Debug::Log();
+    v4 = &this->field_8;
+    if ( CoCreateInstance(&DataGlobal_7F7C60, 0, 1u, &DataGlobal_7F7C30, &this->field_8) >= 0 )
+  {
+    Debug::Log();
+    (*(void (__stdcall **)(void *, AnimClass *))(*(int *)*v4 + 20))(*v4, this);
+    (*(void (__stdcall **)(void *, int, int))(*(int *)*v4 + 12))(*v4, a2, a3);
+    (*(void (__stdcall **)(void *, int))(*(int *)*v4 + 60))(*v4, 1);
+  }
+    return 1;
+}
+}
+} // namespace gamemd
+
 // 0x7738A0
 namespace gamemd {
 BOOL E4Recv_7738A0::sub_7738A0(const char * cbData, LPBYTE lpData, const char * Type)
@@ -4632,6 +4613,25 @@ namespace gamemd {
 INT_PTR sub_775B40(HWND a1, UINT a2, WPARAM a3, LPARAM a4)
 {
 return 0;
+}
+} // namespace gamemd
+
+// 0x775B50
+namespace gamemd {
+int sub_775B50(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, int a3, LONG * a4)
+{
+{
+    ObjectClass *DialogParamA;
+    LONG bottom;
+    struct tagRECT Rect;
+    DialogParamA = (ObjectClass *)CreateDialogParamA(g_hInstance, (LPCSTR)a1, 0, a2, 0);
+    GetClientRect((HWND)DialogParamA, &Rect);
+    DestroyWindow((HWND)DialogParamA);
+    bottom = Rect.bottom;
+    *a4 = Rect.right;
+    *((int*)(a4) + 1) = bottom;
+    return 1;
+}
 }
 } // namespace gamemd
 

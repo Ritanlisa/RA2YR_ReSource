@@ -975,48 +975,6 @@ int __stdcall CaptureManagerClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int 
 } // namespace game
 } // namespace ra2
 
-// 0x4729C0
-namespace ra2 {
-namespace game {
-CaptureManagerClass * CaptureManagerClass::ddtor(char a2)
-{
-{
-    int v3;
-    void *v4;
-    int *v6;
-    *(void**)this = vt_CaptureManagerClass;
-    *(this + 1) = (unsigned int)vt_CaptureManagerClass;
-    *(this + 2) = (unsigned int)vt_CaptureManagerClass;
-    *(this + 3) = &vt_CaptureManagerClass;
-    v6 = this;
-    v3 = (*(int (__thiscall **)(int *, int **))(DataGlobal_89E0F0 + 16))(&DataGlobal_89E0F0, &v6);
-    if ( v3 != -1 && v3 < DataGlobal_89E100 && v3 < --DataGlobal_89E100 )
-  {
-    do
-    {
-    ++v3;
-    *((int *)(DataGlobal_89E0F4) + v3 - 1) = *((int *)(DataGlobal_89E0F4) + v3);
-    }
-    while ( v3 < DataGlobal_89E100 );
-  }
-    v4 = (void *)*(this + 10);
-    *(this + 9) = &vt_VectorClass_ControlNode;
-    if ( v4 && *((char *)(this) + 49) )
-  {
-    __3_YAXPAX_Z(v4);
-    *(this + 10) = 0;
-  }
-    *((char *)(this) + 49) = 0;
-    *(this + 11) = 0;
-    AbstractClass::DTOR(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (CaptureManagerClass *)this;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x472B40
 namespace ra2 {
 namespace game {
@@ -1314,6 +1272,48 @@ namespace game {
 int CaptureManagerClass::GetTypeIdentifier()
 {
 return 66;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x4729C0
+namespace ra2 {
+namespace game {
+CaptureManagerClass * CaptureManagerClass::ddtor(char a2)
+{
+{
+    int v3;
+    void *v4;
+    int *v6;
+    *(void**)this = vt_CaptureManagerClass;
+    *(this + 1) = (unsigned int)vt_CaptureManagerClass;
+    *(this + 2) = (unsigned int)vt_CaptureManagerClass;
+    *(this + 3) = &vt_CaptureManagerClass;
+    v6 = this;
+    v3 = (*(int (__thiscall **)(int *, int **))(DataGlobal_89E0F0 + 16))(&DataGlobal_89E0F0, &v6);
+    if ( v3 != -1 && v3 < DataGlobal_89E100 && v3 < --DataGlobal_89E100 )
+  {
+    do
+    {
+    ++v3;
+    *((int *)(DataGlobal_89E0F4) + v3 - 1) = *((int *)(DataGlobal_89E0F4) + v3);
+    }
+    while ( v3 < DataGlobal_89E100 );
+  }
+    v4 = (void *)*(this + 10);
+    *(this + 9) = &vt_VectorClass_ControlNode;
+    if ( v4 && *((char *)(this) + 49) )
+  {
+    __3_YAXPAX_Z(v4);
+    *(this + 10) = 0;
+  }
+    *((char *)(this) + 49) = 0;
+    *(this + 11) = 0;
+    AbstractClass::DTOR(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (CaptureManagerClass *)this;
+}
 }
 } // namespace game
 } // namespace ra2

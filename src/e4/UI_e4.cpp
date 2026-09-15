@@ -427,45 +427,6 @@ char *sub_7318F0()
 }
 } // namespace gamemd
 
-// 0x63A120
-namespace gamemd {
-int sub_63A120(char a1, char a2)
-{
-{
-    int v2;
-    int result;
-    wchar_t *v4;
-    wchar_t *StringCSF;
-    if ( a2 )
-    v2 = a1 == 0;
-    else
-    v2 = 2;
-    if ( a1 )
-    result = DataGlobal_AC4BF4[v2] + 1;
-    else
-    result = 1;
-    if ( DataGlobal_AC4BF4[v2] < result )
-  {
-    if ( a2 )
-    {
-    if ( a1 )
-    v4 = (wchar_t *)DataGlobal_836CD0;
-    else
-    v4 = (wchar_t *)DataGlobal_836CB4;
-    }
-    else
-    {
-    v4 = DataGlobal_836C9C;
-    }
-    StringCSF = GetStringCSF(v4, 0, g_Str_File_PlanMgr_cpp, 3233);
-    result = AddMessageListPlayerMessage(StringCSF, 480);
-    ++DataGlobal_AC4BF4[v2];
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6D0E60
 namespace gamemd {
 void sub_6D0E60()
@@ -1243,6 +1204,45 @@ char sub_6379C0()
     result = PlayVocClass(g_RulesClass_Instance->MindClearedSound, 0x2000, 1.0, 0);
     if ( DataGlobal_AC4B80 )
     return (**(int (__thiscall ***)(int, int, int))DataGlobal_AC4B80)(DataGlobal_AC4B80, 4551, 0);
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x63A120
+namespace gamemd {
+int sub_63A120(char a1, char a2)
+{
+{
+    int v2;
+    int result;
+    wchar_t *v4;
+    wchar_t *StringCSF;
+    if ( a2 )
+    v2 = a1 == 0;
+    else
+    v2 = 2;
+    if ( a1 )
+    result = DataGlobal_AC4BF4[v2] + 1;
+    else
+    result = 1;
+    if ( DataGlobal_AC4BF4[v2] < result )
+  {
+    if ( a2 )
+    {
+    if ( a1 )
+    v4 = (wchar_t *)DataGlobal_836CD0;
+    else
+    v4 = (wchar_t *)DataGlobal_836CB4;
+    }
+    else
+    {
+    v4 = DataGlobal_836C9C;
+    }
+    StringCSF = GetStringCSF(v4, 0, g_Str_File_PlanMgr_cpp, 3233);
+    result = AddMessageListPlayerMessage(StringCSF, 480);
+    ++DataGlobal_AC4BF4[v2];
   }
     return result;
 }

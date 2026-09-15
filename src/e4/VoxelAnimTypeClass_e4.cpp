@@ -463,37 +463,6 @@ int __thiscall VoxelAnimTypeClass::_vt13(int this, int *a2)
 }
 } // namespace gamemd
 
-// 0x74B810
-namespace gamemd {
-int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
-{
-{
-    int result;
-    result = ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1);
-    if ( result >= 0 )
-  {
-    if ( aP0 )
-    {
-    ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_VoxelAnimTypeClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_VoxelAnimTypeClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_VoxelAnimTypeClass;
-    *(int *)&aP0->__pad_0[12] = &vt_VoxelAnimTypeClass;
-    }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)aP0[1].Name);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[19]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[23]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[27]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[3]);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].Name[4]);
-    VoxelAnimType::LoadAnim(aP0->__pad_0);
-    return 0;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x74BA30
 namespace gamemd {
 VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(char a2)
@@ -556,6 +525,37 @@ int VoxelAnimTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   a2[2] = 1610642049;
   a2[3] = -1252326136;
   return 0;
+}
+} // namespace gamemd
+
+// 0x74B810
+namespace gamemd {
+int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
+{
+{
+    int result;
+    result = ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1);
+    if ( result >= 0 )
+  {
+    if ( aP0 )
+    {
+    ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_VoxelAnimTypeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_VoxelAnimTypeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_VoxelAnimTypeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_VoxelAnimTypeClass;
+    }
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)aP0[1].Name);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[19]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[23]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[27]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].UINameLabel[3]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].Name[4]);
+    VoxelAnimType::LoadAnim(aP0->__pad_0);
+    return 0;
+  }
+    return result;
+}
 }
 } // namespace gamemd
 

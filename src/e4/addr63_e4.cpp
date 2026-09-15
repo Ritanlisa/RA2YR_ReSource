@@ -745,33 +745,6 @@ int __stdcall NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3
 }
 } // namespace gamemd
 
-// 0x631F30
-namespace gamemd {
-void E4Recv_631F30::sub_631F30()
-{
-{
-    this->vfptr = &vt_PixelFXClass;
-}
-}
-} // namespace gamemd
-
-// 0x632A70
-namespace ra2 {
-namespace game {
-int ObjectClass::sub_632A70(int a2, int a3, ObjectClass * aP3)
-{
-{
-    int result;
-    sub_5C8E40(this, a2, a3, aP3, 64);
-    result = *(int *)this->__pad_0;
-    LOBYTE(result) = *(int *)this->__pad_0 | 1;
-    *(int *)this->__pad_0 = result;
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x633AB0
 namespace gamemd {
 int sub_633AB0()
@@ -3526,6 +3499,16 @@ int E4Recv_631F10::sub_631F10(int a2, int a3)
 }
 } // namespace gamemd
 
+// 0x631F30
+namespace gamemd {
+void E4Recv_631F30::sub_631F30()
+{
+{
+    this->vfptr = &vt_PixelFXClass;
+}
+}
+} // namespace gamemd
+
 // 0x631FC0
 namespace gamemd {
 int E4Recv_631FC0::sub_631FC0(ObjectClass * aP1)
@@ -3579,6 +3562,23 @@ void * E4Recv_632A20::sub_632A20(void * a2, const void * a3)
 }
 }
 } // namespace gamemd
+
+// 0x632A70
+namespace ra2 {
+namespace game {
+int ObjectClass::sub_632A70(int a2, int a3, ObjectClass * aP3)
+{
+{
+    int result;
+    sub_5C8E40(this, a2, a3, aP3, 64);
+    result = *(int *)this->__pad_0;
+    LOBYTE(result) = *(int *)this->__pad_0 | 1;
+    *(int *)this->__pad_0 = result;
+    return result;
+}
+}
+} // namespace game
+} // namespace ra2
 
 // 0x632AC0
 namespace gamemd {

@@ -331,25 +331,6 @@ int __fastcall sub_793B30(char a1, const char *a2)
 }
 } // namespace gamemd
 
-// 0x793CD0
-namespace gamemd {
-int E4Recv_793CD0::sub_793CD0()
-{
-{
-    DWORD Ticks;
-    DWORD *v2;
-    DWORD v4;
-    DataGlobal_A8E1A4[DataGlobal_A8E224] = (int)this;
-    Ticks = Timer::GetTicks();
-    v2 = (DWORD *)(12 * DataGlobal_A8E224 + 11067844);
-    *v2 = Ticks;
-    v2[1] = v4;
-    v2[2] = 1200;
-    return ++DataGlobal_A8E224;
-}
-}
-} // namespace gamemd
-
 // 0x793D20
 namespace gamemd {
 char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
@@ -6855,6 +6836,25 @@ int sub_793A70(void * a1, unsigned short a2)
     }
   }
     return result;
+}
+}
+} // namespace gamemd
+
+// 0x793CD0
+namespace gamemd {
+int E4Recv_793CD0::sub_793CD0()
+{
+{
+    DWORD Ticks;
+    DWORD *v2;
+    DWORD v4;
+    DataGlobal_A8E1A4[DataGlobal_A8E224] = (int)this;
+    Ticks = Timer::GetTicks();
+    v2 = (DWORD *)(12 * DataGlobal_A8E224 + 11067844);
+    *v2 = Ticks;
+    v2[1] = v4;
+    v2[2] = 1200;
+    return ++DataGlobal_A8E224;
 }
 }
 } // namespace gamemd

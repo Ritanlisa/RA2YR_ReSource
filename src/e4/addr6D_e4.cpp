@@ -15,36 +15,6 @@
 #include "e4/classes/E4Recv_6DC420_e4.hpp"
 #include "e4/classes/LWCViewClass_e4.hpp"
 
-// 0x6D0F10
-namespace gamemd {
-void * sub_6D0F10()
-{
-{
-    int v0;
-    int *v1;
-    void *result;
-    bool v3;
-    bool v4;
-    char Buffer[256];
-    v4 = 0;
-    v0 = 0;
-    v1 = DataGlobal_B0C148;
-    do
-  {
-    sprintf(Buffer, DataGlobal_842828, v0);
-    result = LoadFileSHP(Buffer, &v4);
-    v3 = v4;
-    *v1 = (int)result;
-    DataGlobal_B0CBDC[v0] = v3;
-    ++v1;
-    ++v0;
-  }
-    while ( (int)v1 < (int)&DataGlobal_B0C1AC );
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6D1130
 namespace gamemd {
 int sub_6D1130()
@@ -69,21 +39,6 @@ int sub_6D1130()
   MEMORY[0xB0CC60] = 5; /*0x6d11c2*/
   Rect_Point::Set(MEMORY[0xB0CC40], *(_DWORD *)MEMORY[0xB0FC64], *((_DWORD *)MEMORY[0xB0FC64] + 1)); /*0x6d11e2*/
   return ShapeButton::SetShape((int)MEMORY[0xB0CC40], (int)v0, 0, 0); /*0x6d11f4*/
-}
-}
-} // namespace gamemd
-
-// 0x6D1E80
-namespace gamemd {
-void E4Recv_6D1E80::sub_6D1E80()
-{
-{
-    *(void**)this = vt_Tactical;
-    this->M4 = (unsigned int)vt_Tactical;
-    this->M8 = (unsigned int)vt_Tactical;
-    this->M12 = &vt_Tactical;
-    g_TacticalClass_Instance = 0;
-    AbstractClass::DTOR(this);
 }
 }
 } // namespace gamemd
@@ -183,6 +138,36 @@ namespace gamemd {
 void nullsub_236()
 {
   ;
+}
+} // namespace gamemd
+
+// 0x6D0F10
+namespace gamemd {
+void * sub_6D0F10()
+{
+{
+    int v0;
+    int *v1;
+    void *result;
+    bool v3;
+    bool v4;
+    char Buffer[256];
+    v4 = 0;
+    v0 = 0;
+    v1 = DataGlobal_B0C148;
+    do
+  {
+    sprintf(Buffer, DataGlobal_842828, v0);
+    result = LoadFileSHP(Buffer, &v4);
+    v3 = v4;
+    *v1 = (int)result;
+    DataGlobal_B0CBDC[v0] = v3;
+    ++v1;
+    ++v0;
+  }
+    while ( (int)v1 < (int)&DataGlobal_B0C1AC );
+    return result;
+}
 }
 } // namespace gamemd
 
@@ -502,6 +487,21 @@ void sub_6D1BF0()
 {
 {
     LightningStorm_CloudHeightFactor = DataGlobal_B0CD78 / (Math::SinCos(DataGlobal_B0CD88) * 60.0);
+}
+}
+} // namespace gamemd
+
+// 0x6D1E80
+namespace gamemd {
+void E4Recv_6D1E80::sub_6D1E80()
+{
+{
+    *(void**)this = vt_Tactical;
+    this->M4 = (unsigned int)vt_Tactical;
+    this->M8 = (unsigned int)vt_Tactical;
+    this->M12 = &vt_Tactical;
+    g_TacticalClass_Instance = 0;
+    AbstractClass::DTOR(this);
 }
 }
 } // namespace gamemd

@@ -1959,21 +1959,6 @@ void __cdecl sub_4E7620()
 }
 } // namespace gamemd
 
-// 0x4E7D30
-namespace gamemd {
-int unknown_libname_13()
-{
-    void __cdecl unknown_libname_13()
-{
-    g_MixFile_LoadCount[0] = &vt_RandomStraw;
-    g_MixFile_LoadCount[3] = 0;
-    g_MixFile_LoadCount[4] = 0;
-    memset(&g_MixFile_LoadCount[5], 0, 0x100u);
-    Straw::Dtor(g_MixFile_LoadCount);
-}
-}
-} // namespace gamemd
-
 // 0x4E7EA0
 namespace gamemd {
 char * sub_4E7EA0()
@@ -4869,6 +4854,21 @@ int sub_4E7D10()
 {
     sub_6616B0(g_MixFile_LoadCount);
     return atexit(unknown_libname_13);
+}
+}
+} // namespace gamemd
+
+// 0x4E7D30
+namespace gamemd {
+int unknown_libname_13()
+{
+    void __cdecl unknown_libname_13()
+{
+    g_MixFile_LoadCount[0] = &vt_RandomStraw;
+    g_MixFile_LoadCount[3] = 0;
+    g_MixFile_LoadCount[4] = 0;
+    memset(&g_MixFile_LoadCount[5], 0, 0x100u);
+    Straw::Dtor(g_MixFile_LoadCount);
 }
 }
 } // namespace gamemd

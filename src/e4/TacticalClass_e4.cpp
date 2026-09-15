@@ -624,31 +624,6 @@ LABEL_17:
 }
 } // namespace gamemd
 
-// 0x6D0270
-namespace gamemd {
-void TacticalClass::CleanupResources()
-{
-{
-    int v0;
-    void **v1;
-    ObjectClass::CleanupSidebarResources();
-    v0 = 0;
-    v1 = (void **)&DataGlobal_B0C148;
-    do
-  {
-    if ( DataGlobal_B0CBDC[v0] )
-    {
-    __3_YAXPAX_Z(*v1);
-    DataGlobal_B0CBDC[v0] = 0;
-    }
-    *v1++ = 0;
-    ++v0;
-  }
-    while ( (int)v1 < (int)&DataGlobal_B0C1AC );
-}
-}
-} // namespace gamemd
-
 // 0x6D04F0
 namespace gamemd {
 int TacticalClass_BuildCommandBar()
@@ -1917,6 +1892,31 @@ int TacticalClass::SetPositionThunk(MouseClass * aP0)
 {
 {
     return Tactical::SetTacticalPosition(*(int *)&DataGlobal_87C374.__pad_579C[22548], (IUnknown *)aP0);
+}
+}
+} // namespace gamemd
+
+// 0x6D0270
+namespace gamemd {
+void TacticalClass::CleanupResources()
+{
+{
+    int v0;
+    void **v1;
+    ObjectClass::CleanupSidebarResources();
+    v0 = 0;
+    v1 = (void **)&DataGlobal_B0C148;
+    do
+  {
+    if ( DataGlobal_B0CBDC[v0] )
+    {
+    __3_YAXPAX_Z(*v1);
+    DataGlobal_B0CBDC[v0] = 0;
+    }
+    *v1++ = 0;
+    ++v0;
+  }
+    while ( (int)v1 < (int)&DataGlobal_B0C1AC );
 }
 }
 } // namespace gamemd

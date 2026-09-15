@@ -2,92 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x41D380
-namespace ra2 {
-namespace game {
-int AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    int v11;
-    int v12;
-    int v13;
-    int v14;
-    AbstractClass::Constructor((AbstractClass *)this);
-    *(void**)this = vt_AirstrikeClass;
-    this->vtable1 = (unsigned int)vt_AirstrikeClass;
-    this->vtable2 = (unsigned int)vt_AirstrikeClass;
-    this->vtable3 = &vt_AirstrikeClass;
-    if ( *(int *)&DataGlobal_87F8E4.__pad_5568[20860] < *(int *)&DataGlobal_87F8E4.__pad_5568[20852] || (DataGlobal_87F8E4.__pad_5568[20857] || !*(int *)&DataGlobal_87F8E4.__pad_5568[20852]) && *(int *)&DataGlobal_87F8E4.__pad_5568[20864] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_87F8E4.__pad_5568[20844] + 8))( &DataGlobal_87F8E4.__pad_5568[20844], *(int *)&DataGlobal_87F8E4.__pad_5568[20852] + *(int *)&DataGlobal_87F8E4.__pad_5568[20864], 0) )
-  {
-    v3 = (*(int *)&DataGlobal_87F8E4.__pad_5568[20860])++;
-    *(int *)(*(int *)&DataGlobal_87F8E4.__pad_5568[20848] + 4 * v3) = this;
-  }
-    this->AirstrikeClass_field_3C = 0;
-    this->owner = aP1;
-    this->AirstrikeClass_field_3D = 0;
-    v4 = (*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 132))(aP1);
-    v5 = this->owner;
-    this->AirstrikeClass_field_24 = *(int *)(v4 + 1564);
-    v6 = (*(int (__thiscall **)(int))(*(int *)(v5) + 132))(v5);
-    v7 = this->owner;
-    this->AirstrikeClass_field_28 = *(int *)(v6 + 1568);
-    v8 = (*(int (__thiscall **)(int))(*(int *)(v7) + 132))(v7);
-    v9 = this->owner;
-    this->AirstrikeClass_field_44 = *(int *)(v8 + 1580);
-    v10 = (*(int (__thiscall **)(int))(*(int *)(v9) + 132))(v9);
-    v11 = this->owner;
-    this->AirstrikeClass_field_48 = *(int *)(v10 + 1584);
-    v12 = (*(int (__thiscall **)(int))(*(int *)(v11) + 132))(v11);
-    v13 = this->owner;
-    this->AirstrikeClass_field_54 = *(int *)(v12 + 1572);
-    v14 = *(int *)((*(int (__thiscall **)(int))(*(int *)(v13) + 132))(v13) + 1576);
-    this->AirstrikeClass_field_5C = 0;
-    this->AirstrikeClass_field_58 = v14;
-    this->AirstrikeClass_field_50 = 0;
-    return this;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x41D6F0
-namespace ra2 {
-namespace game {
-int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
-{
-{
-    AbstractClass *Prefix_0;
-    Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
-    if ( (int)Prefix_0 >= 0 )
-  {
-    if ( aP0 )
-    {
-    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_AirstrikeClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_AirstrikeClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AirstrikeClass;
-    *(int *)&aP0->__pad_0[12] = &vt_AirstrikeClass;
-    }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[8]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[12]);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].uniqueId);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].abstractFlags);
-  }
-    return (int)Prefix_0->__pad_0;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x41D860
 namespace ra2 {
 namespace game {
@@ -422,6 +336,62 @@ LABEL_9:
 } // namespace game
 } // namespace ra2
 
+// 0x41D380
+namespace ra2 {
+namespace game {
+int AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    int v14;
+    AbstractClass::Constructor((AbstractClass *)this);
+    *(void**)this = vt_AirstrikeClass;
+    this->vtable1 = (unsigned int)vt_AirstrikeClass;
+    this->vtable2 = (unsigned int)vt_AirstrikeClass;
+    this->vtable3 = &vt_AirstrikeClass;
+    if ( *(int *)&DataGlobal_87F8E4.__pad_5568[20860] < *(int *)&DataGlobal_87F8E4.__pad_5568[20852] || (DataGlobal_87F8E4.__pad_5568[20857] || !*(int *)&DataGlobal_87F8E4.__pad_5568[20852]) && *(int *)&DataGlobal_87F8E4.__pad_5568[20864] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_87F8E4.__pad_5568[20844] + 8))( &DataGlobal_87F8E4.__pad_5568[20844], *(int *)&DataGlobal_87F8E4.__pad_5568[20852] + *(int *)&DataGlobal_87F8E4.__pad_5568[20864], 0) )
+  {
+    v3 = (*(int *)&DataGlobal_87F8E4.__pad_5568[20860])++;
+    *(int *)(*(int *)&DataGlobal_87F8E4.__pad_5568[20848] + 4 * v3) = this;
+  }
+    this->AirstrikeClass_field_3C = 0;
+    this->owner = aP1;
+    this->AirstrikeClass_field_3D = 0;
+    v4 = (*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 132))(aP1);
+    v5 = this->owner;
+    this->AirstrikeClass_field_24 = *(int *)(v4 + 1564);
+    v6 = (*(int (__thiscall **)(int))(*(int *)(v5) + 132))(v5);
+    v7 = this->owner;
+    this->AirstrikeClass_field_28 = *(int *)(v6 + 1568);
+    v8 = (*(int (__thiscall **)(int))(*(int *)(v7) + 132))(v7);
+    v9 = this->owner;
+    this->AirstrikeClass_field_44 = *(int *)(v8 + 1580);
+    v10 = (*(int (__thiscall **)(int))(*(int *)(v9) + 132))(v9);
+    v11 = this->owner;
+    this->AirstrikeClass_field_48 = *(int *)(v10 + 1584);
+    v12 = (*(int (__thiscall **)(int))(*(int *)(v11) + 132))(v11);
+    v13 = this->owner;
+    this->AirstrikeClass_field_54 = *(int *)(v12 + 1572);
+    v14 = *(int *)((*(int (__thiscall **)(int))(*(int *)(v13) + 132))(v13) + 1576);
+    this->AirstrikeClass_field_5C = 0;
+    this->AirstrikeClass_field_58 = v14;
+    this->AirstrikeClass_field_50 = 0;
+    return this;
+}
+}
+} // namespace game
+} // namespace ra2
+
 // 0x41D6E0
 namespace ra2 {
 namespace game {
@@ -429,6 +399,36 @@ int AirstrikeClass::Stat(AbstractClass * aP1)
 {
 {
     return AbstractClass::ProcessPower((#378 *)this);
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x41D6F0
+namespace ra2 {
+namespace game {
+int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
+{
+{
+    AbstractClass *Prefix_0;
+    Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( (int)Prefix_0 >= 0 )
+  {
+    if ( aP0 )
+    {
+    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_AirstrikeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_AirstrikeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AirstrikeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_AirstrikeClass;
+    }
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[8]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].__pad_0[12]);
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].uniqueId);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].abstractFlags);
+  }
+    return (int)Prefix_0->__pad_0;
 }
 }
 } // namespace game

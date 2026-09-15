@@ -16,29 +16,6 @@ int __thiscall AlphaShapeClass::SD_vt13(int this, int a2)
 }
 }
 
-// 0x420DE0
-int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
-{
-{
-    AbstractClass *Prefix_0;
-    Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
-    if ( (int)Prefix_0 >= 0 )
-  {
-    if ( aP0 )
-    {
-    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_AlphaShapeClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_AlphaShapeClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AlphaShapeClass;
-    *(int *)&aP0->__pad_0[12] = &vt_AlphaShapeClass;
-    }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
-    aP0[1].abstractFlags = 0;
-  }
-    return (int)Prefix_0->__pad_0;
-}
-}
-
 // 0x420E40
 int AlphaShapeClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 {
@@ -107,5 +84,28 @@ AlphaShapeClass *__thiscall AlphaShapeClass::SDDTOR(_DWORD *this, char a2)
   if ( (a2 & 1) != 0 ) /*0x4217ed*/
     __3_YAXPAX_Z(this); /*0x4217f0*/
   return (AlphaShapeClass *)this; /*0x4217fa*/
+}
+}
+
+// 0x420DE0
+int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
+{
+{
+    AbstractClass *Prefix_0;
+    Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( (int)Prefix_0 >= 0 )
+  {
+    if ( aP0 )
+    {
+    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_AlphaShapeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_AlphaShapeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AlphaShapeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_AlphaShapeClass;
+    }
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
+    aP0[1].abstractFlags = 0;
+  }
+    return (int)Prefix_0->__pad_0;
 }
 }

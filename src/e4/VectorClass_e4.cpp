@@ -358,61 +358,6 @@ char __thiscall VectorClass_Cell::_vt02(void *this, int a2, _DWORD *a3)
 }
 } // namespace gamemd
 
-// 0x5EF190
-namespace gamemd {
-int VectorClass_cptr_MultiMission::j_vt09(unsigned char * a1, signed int a3, int a4, int a5, int a6, int a7)
-{
-{
-    short *v8;
-    signed int v9;
-    unsigned int *v10;
-    unsigned int v11;
-    int v12;
-    if ( *(int *)&this->__pad_0[76] == -1 )
-    return 0;
-    v8 = (short *)this->field_50;
-    *v8 = -9539;
-    v8[1] = a3;
-    v8[2] = -8529;
-    qmemcpy((void *)(this->field_50 + 6), a1, a3);
-    v9 = 0;
-    v10 = (unsigned int *)(this->field_50 + a3 + 6);
-    v11 = 0;
-    if ( a3 > 0 )
-  {
-    do
-    {
-    v12 = a1[v9++] + (v11 >> 31);
-    v11 = v12 + 2 * v11;
-    }
-    while ( v9 < a3 );
-    v10 = (unsigned int *)(this->field_50 + a3 + 6);
-  }
-    *v10 = v11;
-    *(char *)(a3 + 10 + this->field_50) = 13;
-    WinModemClass::WriteSerial((int)g_ClipboardBuffer, (LPCVOID)this->field_50, (WinModemClass *)(a3 + 11));
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x5EF290
-namespace gamemd {
-unsigned int * VectorClass_cptr_MultiMission::j_vt00(char a2)
-{
-{
-    IPXConnClass *v3;
-    v3 = (IPXConnClass *)this->field_50;
-    *(int *)this->__pad_0 = &vt_NullModemConnClass;
-    __3_YAXPAX_Z(v3);
-    ConnectionClass::dtor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this->__pad_0;
-}
-}
-} // namespace gamemd
-
 // 0x4E0840
 namespace gamemd {
 char VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Release(int a2, int * a3)
@@ -1436,20 +1381,6 @@ char __thiscall VectorClass_ptr_PlanningBranchClass::_vt02(void *this, int a2, _
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x63e132*/
     return 1; /*0x63e138*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x76B6C0
-namespace gamemd {
-unsigned int * VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(char a2)
-{
-{
-    this->vfptr = &vt_WDTTerritory;
-    ReferenceCounted::Constructor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return &this->vfptr;
 }
 }
 } // namespace gamemd
@@ -29315,6 +29246,61 @@ DynamicVector * VectorClass_cptr_MultiMission::Constructor(unsigned int * Block,
 }
 } // namespace gamemd
 
+// 0x5EF190
+namespace gamemd {
+int VectorClass_cptr_MultiMission::j_vt09(unsigned char * a1, signed int a3, int a4, int a5, int a6, int a7)
+{
+{
+    short *v8;
+    signed int v9;
+    unsigned int *v10;
+    unsigned int v11;
+    int v12;
+    if ( *(int *)&this->__pad_0[76] == -1 )
+    return 0;
+    v8 = (short *)this->field_50;
+    *v8 = -9539;
+    v8[1] = a3;
+    v8[2] = -8529;
+    qmemcpy((void *)(this->field_50 + 6), a1, a3);
+    v9 = 0;
+    v10 = (unsigned int *)(this->field_50 + a3 + 6);
+    v11 = 0;
+    if ( a3 > 0 )
+  {
+    do
+    {
+    v12 = a1[v9++] + (v11 >> 31);
+    v11 = v12 + 2 * v11;
+    }
+    while ( v9 < a3 );
+    v10 = (unsigned int *)(this->field_50 + a3 + 6);
+  }
+    *v10 = v11;
+    *(char *)(a3 + 10 + this->field_50) = 13;
+    WinModemClass::WriteSerial((int)g_ClipboardBuffer, (LPCVOID)this->field_50, (WinModemClass *)(a3 + 11));
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x5EF290
+namespace gamemd {
+unsigned int * VectorClass_cptr_MultiMission::j_vt00(char a2)
+{
+{
+    IPXConnClass *v3;
+    v3 = (IPXConnClass *)this->field_50;
+    *(int *)this->__pad_0 = &vt_NullModemConnClass;
+    __3_YAXPAX_Z(v3);
+    ConnectionClass::dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return this->__pad_0;
+}
+}
+} // namespace gamemd
+
 // 0x5F9B00
 namespace gamemd {
 void VectorClass_ptr_ObjectTypeClass::Destroy()
@@ -38845,6 +38831,20 @@ DynamicVector * VectorClass_ptr_WaypointPathClass::Constructor_VectorClass_Waypo
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
+}
+}
+} // namespace gamemd
+
+// 0x76B6C0
+namespace gamemd {
+unsigned int * VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(char a2)
+{
+{
+    this->vfptr = &vt_WDTTerritory;
+    ReferenceCounted::Constructor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
 }
 }
 } // namespace gamemd

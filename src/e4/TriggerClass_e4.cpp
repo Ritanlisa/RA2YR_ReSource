@@ -145,6 +145,20 @@ LABEL_16:
 }
 } // namespace gamemd
 
+// 0x726820
+namespace gamemd {
+int TriggerClass::ddtor(int a1, unsigned int * a2)
+{
+  if ( !a2 )
+    return -2147467261;
+  *a2 = -1070787184;
+  a2[1] = 298977834;
+  a2[2] = 1610655660;
+  a2[3] = -1252326136;
+  return 0;
+}
+} // namespace gamemd
+
 // 0x726860
 namespace gamemd {
 int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
@@ -169,20 +183,6 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
   }
     return result;
 }
-}
-} // namespace gamemd
-
-// 0x726820
-namespace gamemd {
-int TriggerClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -1070787184;
-  a2[1] = 298977834;
-  a2[2] = 1610655660;
-  a2[3] = -1252326136;
-  return 0;
 }
 } // namespace gamemd
 

@@ -565,18 +565,6 @@ int __cdecl sub_652630(_DWORD *a1, _DWORD *a2)
 }
 } // namespace gamemd
 
-// 0x652870
-namespace gamemd {
-int sub_652870()
-{
-{
-    GadgetClass::Construct(DataGlobal_B04A10, 0, 0, 0, 0, 159, 1);
-    DataGlobal_B04A10[0] = (int)&vt_RadarClass_RTacticalClass;
-    return atexit(sub_6528A0);
-}
-}
-} // namespace gamemd
-
 // 0x653FA0
 namespace gamemd {
 int RenderScoreboardSidebar()
@@ -2941,6 +2929,18 @@ int sub_652850()
     DataGlobal_B049E8 = 128;
     DataGlobal_B049EC = 128;
     return 128;
+}
+}
+} // namespace gamemd
+
+// 0x652870
+namespace gamemd {
+int sub_652870()
+{
+{
+    GadgetClass::Construct(DataGlobal_B04A10, 0, 0, 0, 0, 159, 1);
+    DataGlobal_B04A10[0] = (int)&vt_RadarClass_RTacticalClass;
+    return atexit(sub_6528A0);
 }
 }
 } // namespace gamemd

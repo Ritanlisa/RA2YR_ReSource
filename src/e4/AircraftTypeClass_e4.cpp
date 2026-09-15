@@ -142,31 +142,6 @@ char __userpurge AircraftTypeClass::vt_25_@<al>(int a1@<ecx>, double a2@<st0>, u
 }
 } // namespace gamemd
 
-// 0x41CE20
-int AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
-{
-{
-    int result;
-    result = TechnoTypeClass::SaveLoad_Prefix(aP0, aP1);
-    if ( result >= 0 )
-  {
-    if ( aP0 )
-    {
-    TechnoTypeClass::Construct((int)aP0, (ObjectTypeClass *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_AircraftTypeClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_AircraftTypeClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AircraftTypeClass;
-    *(int *)&aP0->__pad_0[12] = &vt_AircraftTypeClass;
-    }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[5].ChargerBarrels[6]);
-    VoxelAnimType::LoadAnim(aP0->__pad_0);
-    ObjectTypeClass::Load2DArt(aP0->__pad_0);
-    return 0;
-  }
-    return result;
-}
-}
-
 // 0x41CFE0
 AircraftTypeClass * AircraftTypeClass::ddtor(char a2)
 {
@@ -260,6 +235,31 @@ int AircraftTypeClass::PowerDrainUpdate(int * a2)
     LOBYTE(v7) = this->Fighter;
     Power::FlagProcess(a2, v7);
     return Power::TimerProcess(this->ArrayIndex);
+}
+}
+
+// 0x41CE20
+int AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
+{
+{
+    int result;
+    result = TechnoTypeClass::SaveLoad_Prefix(aP0, aP1);
+    if ( result >= 0 )
+  {
+    if ( aP0 )
+    {
+    TechnoTypeClass::Construct((int)aP0, (ObjectTypeClass *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_AircraftTypeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_AircraftTypeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AircraftTypeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_AircraftTypeClass;
+    }
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[5].ChargerBarrels[6]);
+    VoxelAnimType::LoadAnim(aP0->__pad_0);
+    ObjectTypeClass::Load2DArt(aP0->__pad_0);
+    return 0;
+  }
+    return result;
 }
 }
 

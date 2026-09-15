@@ -33,24 +33,6 @@ HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
 }
 }
 
-// 0x6A42B0
-ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
-{
-{
-    ILocomotion *v3;
-    *(void**)this = (unsigned int)vt_ShipLocomotionClass;
-    *(this + 1) = (ILocomotion *)&vt_ShipLocomotionClass;
-    *(this + 6) = (ILocomotion *)&vt_ShipLocomotionClass_2;
-    v3 = *(this + 26);
-    if ( v3 )
-    (*(void (__stdcall **)(ILocomotion *))(*(int *)(v3) + 8))(v3);
-    LocomotionClass::Construct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (ShipLocomotionClass *)this;
-}
-}
-
 // 0x69EF10
 HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
 {
@@ -122,4 +104,22 @@ int ShipLocomotionClass::ddtor(int a1, unsigned int * a2)
 int ShipLocomotionClass::StubReturn112()
 {
 return 112;
+}
+
+// 0x6A42B0
+ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
+{
+{
+    ILocomotion *v3;
+    *(void**)this = (unsigned int)vt_ShipLocomotionClass;
+    *(this + 1) = (ILocomotion *)&vt_ShipLocomotionClass;
+    *(this + 6) = (ILocomotion *)&vt_ShipLocomotionClass_2;
+    v3 = *(this + 26);
+    if ( v3 )
+    (*(void (__stdcall **)(ILocomotion *))(*(int *)(v3) + 8))(v3);
+    LocomotionClass::Construct(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (ShipLocomotionClass *)this;
+}
 }

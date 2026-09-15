@@ -3350,34 +3350,6 @@ char GenerateLightningStormGlow()
 }
 } // namespace gamemd
 
-// 0x53D9F0
-namespace gamemd {
-int sub_53D9F0(int a1)
-{
-{
-    int v2;
-    int *v3;
-    int *v4;
-    int result;
-    int v6;
-    DataGlobal_A9FAE8[0] = 0;
-    DataGlobal_AA0150 = a1;
-    v2 = 1;
-    v3 = &DataGlobal_A9FAEC;
-    do
-  {
-    v4 = ComputeSpiralOffset(&v6, v2);
-    ++v3;
-    result = *v4 + a1 * v4[1];
-    ++v2;
-    *(v3 - 1) = result;
-  }
-    while ( (int)v3 < (int)&DataGlobal_A9FF6C );
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x53DE00
 namespace gamemd {
 int InitializeAudioStreaming(int a1, int a2)
@@ -3706,16 +3678,6 @@ LABEL_65:
     if ( !wRemoveMsg ) /*0x53eb81*/
       PeekMessageA(lpMsg, a2, wMsgFilterMin, wMsgFilterMax, 1u); /*0x53eb99*/
   }
-}
-}
-} // namespace gamemd
-
-// 0x53F2F0
-namespace gamemd {
-void sub_53F2F0()
-{
-{
-    *(double *)&DataGlobal_AA047C[132] = 0.0174532925199433 * 90.0;
 }
 }
 } // namespace gamemd
@@ -4667,6 +4629,34 @@ int * ComputeSpiralOffset(int * a1, int a2)
 }
 } // namespace gamemd
 
+// 0x53D9F0
+namespace gamemd {
+int sub_53D9F0(int a1)
+{
+{
+    int v2;
+    int *v3;
+    int *v4;
+    int result;
+    int v6;
+    DataGlobal_A9FAE8[0] = 0;
+    DataGlobal_AA0150 = a1;
+    v2 = 1;
+    v3 = &DataGlobal_A9FAEC;
+    do
+  {
+    v4 = ComputeSpiralOffset(&v6, v2);
+    ++v3;
+    result = *v4 + a1 * v4[1];
+    ++v2;
+    *(v3 - 1) = result;
+  }
+    while ( (int)v3 < (int)&DataGlobal_A9FF6C );
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x53DDE0
 namespace gamemd {
 int sub_53DDE0()
@@ -4848,6 +4838,16 @@ void sub_53F2D0()
 {
 {
     DataGlobal_AA0538 = 0.0174532925199433 * 60.0;
+}
+}
+} // namespace gamemd
+
+// 0x53F2F0
+namespace gamemd {
+void sub_53F2F0()
+{
+{
+    *(double *)&DataGlobal_AA047C[132] = 0.0174532925199433 * 90.0;
 }
 }
 } // namespace gamemd

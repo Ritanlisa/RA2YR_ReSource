@@ -298,31 +298,6 @@ int __fastcall ObjectTypeClass_LoadTheaterSHP(int a1)
 }
 } // namespace gamemd
 
-// 0x71FF20
-namespace gamemd {
-int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4, int aP5, char a9, ShapeButtonClass * aP9)
-{
-{
-    ControlClass *Instance;
-    ToggleClass::Construct( (int)this, (ControlClass *)aP1, (ControlClass *)aP2, (ControlClass *)aP3, (ControlClass *)aP4, (ControlClass *)aP5);
-    this->__pad_0[53] = (char)aP9;
-    this->__pad_0[52] = a9;
-    this->field_38 = a3;
-    this->M60 = a4;
-    *(int *)this->__pad_0 = &vt_TextButtonClass;
-    if ( aP4 == -1 || aP5 == -1 )
-  {
-    Instance = (ControlClass *)TextRenderer::GetInstance();
-    if ( aP4 == -1 )
-    *(int *)&this->__pad_0[20] = Text::MeasureWidth(this->field_38, 0) + 8;
-    if ( aP5 == -1 )
-    *(int *)&this->__pad_0[24] = Instance[1].ControlClass_field_0x0C + 2;
-  }
-    return (int)this->__pad_0;
-}
-}
-} // namespace gamemd
-
 // 0x7108E0
 namespace gamemd {
 void sub_7108E0()
@@ -1440,6 +1415,31 @@ int sub_71FF00()
     DataGlobal_B0F1F0 = 0;
     DataGlobal_B0F1F4 = 0;
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x71FF20
+namespace gamemd {
+int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4, int aP5, char a9, ShapeButtonClass * aP9)
+{
+{
+    ControlClass *Instance;
+    ToggleClass::Construct( (int)this, (ControlClass *)aP1, (ControlClass *)aP2, (ControlClass *)aP3, (ControlClass *)aP4, (ControlClass *)aP5);
+    this->__pad_0[53] = (char)aP9;
+    this->__pad_0[52] = a9;
+    this->field_38 = a3;
+    this->M60 = a4;
+    *(int *)this->__pad_0 = &vt_TextButtonClass;
+    if ( aP4 == -1 || aP5 == -1 )
+  {
+    Instance = (ControlClass *)TextRenderer::GetInstance();
+    if ( aP4 == -1 )
+    *(int *)&this->__pad_0[20] = Text::MeasureWidth(this->field_38, 0) + 8;
+    if ( aP5 == -1 )
+    *(int *)&this->__pad_0[24] = Instance[1].ControlClass_field_0x0C + 2;
+  }
+    return (int)this->__pad_0;
 }
 }
 } // namespace gamemd

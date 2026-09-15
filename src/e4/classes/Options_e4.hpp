@@ -8,9 +8,6 @@ struct Options {
     bool PrepareSaveLoadDlg();  // 0x558840
     void Screen_Save();  // 0x55FAA0
     char Screen_Dialog();  // 0x55FC80
-    void SetScoreVolume(float volume, int pad);  // 0x5FA4A0
-    void SetSoundVolume(float volume, int pad);  // 0x5FA510
-    void SetVoiceVolume(float volume, int pad);  // 0x5FA590
     int DeleteAndZero();  // 0x6244E0
     char EnsureCapacity();  // 0x6248A0
     char GrowBuffer();  // 0x6253B0
@@ -18,6 +15,9 @@ struct Options {
     void * DestroyComposite(char a2);  // 0x625560
     int * RebuildDropdownList(ObjectClass * aP1);  // 0x6255F0
     char SaveOptionValue();  // 0x625A20
+    void SetScoreVolume(float volume, int pad);  // 0x5FA4A0
+    void SetSoundVolume(float volume, int pad);  // 0x5FA510
+    void SetVoiceVolume(float volume, int pad);  // 0x5FA590
     HWND InitDialogControls();  // 0x4F1720
     int DialogProc(CCINIClass hWnd);  // 0x618D40
     void ClearComboBoxes();  // 0x624460

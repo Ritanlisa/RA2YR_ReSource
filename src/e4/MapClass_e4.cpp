@@ -367,24 +367,6 @@ bool __thiscall MapClass::SetScrollMode(int this, MouseClass *aP1)
 }
 }
 
-// 0x4F42F0
-int MapClass::MarkForRedraw(int a2)
-{
-{
-    int result;
-    if ( g_TacticalClass_Instance )
-    BYTE1(g_TacticalClass_Instance[863].__tail_0) = 1;
-    result = a2;
-    if ( a2 )
-  {
-    if ( this->IsInitialized != 2 )
-    this->IsInitialized = a2;
-    return MapClass::IncrementRedrawCounter(&DataGlobal_87F7E8);
-  }
-    return result;
-}
-}
-
 // 0x506D50
 int MapClass::CalcVisibleCellRange(int a1, int a2, VectorClass * aP2, int * a3)
 {
@@ -4551,6 +4533,24 @@ int MapClass::GetScrollMode()
     result = this->MapClass_field_0x11A0;
     if ( !result )
     return 0;
+    return result;
+}
+}
+
+// 0x4F42F0
+int MapClass::MarkForRedraw(int a2)
+{
+{
+    int result;
+    if ( g_TacticalClass_Instance )
+    BYTE1(g_TacticalClass_Instance[863].__tail_0) = 1;
+    result = a2;
+    if ( a2 )
+  {
+    if ( this->IsInitialized != 2 )
+    this->IsInitialized = a2;
+    return MapClass::IncrementRedrawCounter(&DataGlobal_87F7E8);
+  }
     return result;
 }
 }

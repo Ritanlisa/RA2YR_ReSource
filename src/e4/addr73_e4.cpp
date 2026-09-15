@@ -422,92 +422,6 @@ _DWORD *__fastcall TechnoClass_GatherFiltered(unsigned __int8 (__fastcall *a1)(i
 }
 } // namespace gamemd
 
-// 0x732110
-namespace gamemd {
-int sub_732110(int a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
-{
-{
-    int v4;
-    int v6;
-    int result;
-    v4 = 0;
-    v6 = *(int *)(a1 + 16);
-    if ( v6 > 0 )
-  {
-    do
-    result = a2(*(int *)(*(int *)(a1 + 4) + 4 * v4++), a3);
-    while ( v4 < v6 );
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x732140
-namespace gamemd {
-int sub_732140(int a1, unsigned char (__fastcall *a2)(int, int) a2, void (__fastcall *a3)(int, int) a3, int a4, int a5)
-{
-{
-    int result;
-    int v7;
-    int v9;
-    int i;
-    result = *(int *)(a1 + 16);
-    v7 = 0;
-    for ( i = result; v7 < i; ++v7 )
-  {
-    v9 = *(int *)(*(int *)(a1 + 4) + 4 * v7);
-    if ( a2(v9, a4) )
-    a3(v9, a5);
-    result = i;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x732190
-namespace gamemd {
-char sub_732190(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, int a3)
-{
-{
-    int v4;
-    int v6;
-    v4 = 0;
-    v6 = *(int *)(a1 + 16);
-    if ( v6 <= 0 )
-    return 1;
-    while ( a2(*(int *)(*(int *)(a1 + 4) + 4 * v4), a3) )
-  {
-    if ( ++v4 >= v6 )
-    return 1;
-  }
-    return 0;
-}
-}
-} // namespace gamemd
-
-// 0x7321D0
-namespace gamemd {
-char sub_7321D0(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, int a3)
-{
-{
-    int v4;
-    int v6;
-    v4 = 0;
-    v6 = *(int *)(a1 + 16);
-    if ( v6 <= 0 )
-    return 0;
-    while ( !a2(*(int *)(*(int *)(a1 + 4) + 4 * v4), a3) )
-  {
-    if ( ++v4 >= v6 )
-    return 0;
-  }
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x732770
 namespace gamemd {
 BOOL TechnoClass_StepCleanupIfHuman(int a1, void * a2)
@@ -1740,19 +1654,6 @@ LABEL_39:
 }
 } // namespace gamemd
 
-// 0x7345E0
-namespace gamemd {
-int sub_7345E0()
-{
-{
-    *(int *)&DataGlobal_B13EB0[104] = 0;
-    *(int *)&DataGlobal_B13EB0[108] = 0;
-    *(int *)&DataGlobal_B13EB0[112] = 0;
-    return 0;
-}
-}
-} // namespace gamemd
-
 // 0x734E60
 namespace gamemd {
 wchar_t * GetStringCSF(wchar_t * Format, unsigned int * a2, CampaignScore * aP3, int a4)
@@ -2228,6 +2129,92 @@ wchar_t * FillUnitTooltipUI(wchar_t * Destination, wchar_t * Source)
 }
 } // namespace gamemd
 
+// 0x732110
+namespace gamemd {
+int sub_732110(int a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
+{
+{
+    int v4;
+    int v6;
+    int result;
+    v4 = 0;
+    v6 = *(int *)(a1 + 16);
+    if ( v6 > 0 )
+  {
+    do
+    result = a2(*(int *)(*(int *)(a1 + 4) + 4 * v4++), a3);
+    while ( v4 < v6 );
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x732140
+namespace gamemd {
+int sub_732140(int a1, unsigned char (__fastcall *a2)(int, int) a2, void (__fastcall *a3)(int, int) a3, int a4, int a5)
+{
+{
+    int result;
+    int v7;
+    int v9;
+    int i;
+    result = *(int *)(a1 + 16);
+    v7 = 0;
+    for ( i = result; v7 < i; ++v7 )
+  {
+    v9 = *(int *)(*(int *)(a1 + 4) + 4 * v7);
+    if ( a2(v9, a4) )
+    a3(v9, a5);
+    result = i;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x732190
+namespace gamemd {
+char sub_732190(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, int a3)
+{
+{
+    int v4;
+    int v6;
+    v4 = 0;
+    v6 = *(int *)(a1 + 16);
+    if ( v6 <= 0 )
+    return 1;
+    while ( a2(*(int *)(*(int *)(a1 + 4) + 4 * v4), a3) )
+  {
+    if ( ++v4 >= v6 )
+    return 1;
+  }
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7321D0
+namespace gamemd {
+char sub_7321D0(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, int a3)
+{
+{
+    int v4;
+    int v6;
+    v4 = 0;
+    v6 = *(int *)(a1 + 16);
+    if ( v6 <= 0 )
+    return 0;
+    while ( !a2(*(int *)(*(int *)(a1 + 4) + 4 * v4), a3) )
+  {
+    if ( ++v4 >= v6 )
+    return 0;
+  }
+    return 1;
+}
+}
+} // namespace gamemd
+
 // 0x7325C0
 namespace gamemd {
 BOOL E4Recv_7325C0::sub_7325C0()
@@ -2377,6 +2364,19 @@ int sub_7345D0()
 {
     DataGlobal_B0FE90 = 0;
     DataGlobal_B0FE92 = 0;
+    return 0;
+}
+}
+} // namespace gamemd
+
+// 0x7345E0
+namespace gamemd {
+int sub_7345E0()
+{
+{
+    *(int *)&DataGlobal_B13EB0[104] = 0;
+    *(int *)&DataGlobal_B13EB0[108] = 0;
+    *(int *)&DataGlobal_B13EB0[112] = 0;
     return 0;
 }
 }

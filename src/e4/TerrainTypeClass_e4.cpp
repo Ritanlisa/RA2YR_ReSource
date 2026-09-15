@@ -332,31 +332,6 @@ int __thiscall TerrainTypeClass::_vt13(int this, int *a2)
 }
 }
 
-// 0x71E1D0
-int TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
-{
-{
-    int result;
-    result = ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1);
-    if ( result >= 0 )
-  {
-    if ( aP0 )
-    {
-    ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_TerrainTypeClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TerrainTypeClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TerrainTypeClass;
-    *(int *)&aP0->__pad_0[12] = &vt_TerrainTypeClass;
-    }
-    VoxelAnimType::LoadAnim(aP0->__pad_0);
-    ObjectTypeClass::Load2DArt(aP0->__pad_0);
-    *(int *)aP0[1].__pad_24 = 40 * *(int *)&aP0[1].__pad_0[4] + 11595200;
-    return 0;
-  }
-    return result;
-}
-}
-
 // 0x71E2A0
 TerrainTypeClass * TerrainTypeClass::FindOrCreate()
 {
@@ -504,6 +479,31 @@ unsigned int * TerrainTypeClass::GetWidth(unsigned int * a1, int * a2)
     *((int*)(a1) + 1) = v6;
     *((int*)(a1) + 2) = v3;
     return a1;
+}
+}
+
+// 0x71E1D0
+int TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
+{
+{
+    int result;
+    result = ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1);
+    if ( result >= 0 )
+  {
+    if ( aP0 )
+    {
+    ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_TerrainTypeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TerrainTypeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TerrainTypeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_TerrainTypeClass;
+    }
+    VoxelAnimType::LoadAnim(aP0->__pad_0);
+    ObjectTypeClass::Load2DArt(aP0->__pad_0);
+    *(int *)aP0[1].__pad_24 = 40 * *(int *)&aP0[1].__pad_0[4] + 11595200;
+    return 0;
+  }
+    return result;
 }
 }
 

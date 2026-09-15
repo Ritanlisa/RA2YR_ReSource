@@ -277,31 +277,6 @@ int __thiscall TagTypeClass::_vt13(int this, int *a2)
 }
 } // namespace gamemd
 
-// 0x6E6410
-namespace gamemd {
-int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1);
-    if ( result >= 0 )
-  {
-    if ( aP0 )
-    {
-    AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_TagTypeClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TagTypeClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TagTypeClass;
-    *(int *)&aP0->__pad_0[12] = &vt_TagTypeClass;
-    }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
-    return 0;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6E64B0
 namespace gamemd {
 int TagTypeClass::GetAuxField()
@@ -356,6 +331,31 @@ int TagTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   a2[2] = 1610655148;
   a2[3] = -1252326136;
   return 0;
+}
+} // namespace gamemd
+
+// 0x6E6410
+namespace gamemd {
+int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
+{
+{
+    int result;
+    result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1);
+    if ( result >= 0 )
+  {
+    if ( aP0 )
+    {
+    AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_TagTypeClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TagTypeClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TagTypeClass;
+    *(int *)&aP0->__pad_0[12] = &vt_TagTypeClass;
+    }
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[8]);
+    return 0;
+  }
+    return result;
+}
 }
 } // namespace gamemd
 

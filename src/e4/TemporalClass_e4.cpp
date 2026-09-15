@@ -84,37 +84,6 @@ _DWORD *__thiscall TemporalClass::TemporalClass(_DWORD *this, TechnoClass *aP1)
 } // namespace game
 } // namespace ra2
 
-// 0x71A660
-namespace ra2 {
-namespace game {
-int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
-{
-{
-    AbstractClass *Prefix_0;
-    Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
-    if ( (int)Prefix_0 >= 0 )
-  {
-    if ( aP0 )
-    {
-    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_TemporalClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TemporalClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TemporalClass;
-    *(int *)&aP0->__pad_0[12] = &vt_TemporalClass;
-    }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].referenceCount);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].NeedsSaveOrLink);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].abstractFlags);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].nextArrayIndex);
-  }
-    return (int)Prefix_0->__pad_0;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x71A760
 namespace ra2 {
 namespace game {
@@ -401,6 +370,37 @@ int TemporalClass::SetTarget(AbstractClass * aP1)
 {
 {
     return AbstractClass::ProcessPower((#378 *)this);
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x71A660
+namespace ra2 {
+namespace game {
+int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
+{
+{
+    AbstractClass *Prefix_0;
+    Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
+    if ( (int)Prefix_0 >= 0 )
+  {
+    if ( aP0 )
+    {
+    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
+    *(int *)aP0->__pad_0 = (unsigned int)vt_TemporalClass;
+    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TemporalClass;
+    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TemporalClass;
+    *(int *)&aP0->__pad_0[12] = &vt_TemporalClass;
+    }
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].__pad_0[4]);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].referenceCount);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].NeedsSaveOrLink);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].abstractFlags);
+    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488.__pad_579C[5356], (MouseClass *)&aP0[1].nextArrayIndex);
+  }
+    return (int)Prefix_0->__pad_0;
 }
 }
 } // namespace game

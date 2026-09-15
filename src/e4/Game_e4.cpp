@@ -1485,35 +1485,6 @@ char __userpurge Game::DumpMultiplayerGameInfo@<al>(int this@<ecx>, CellStruct *
 }
 } // namespace gamemd
 
-// 0x72D730
-namespace gamemd {
-char Game::LoadMultiplayerScoreAssets()
-{
-{
-    char result;
-    char *v3;
-    result = DataGlobal_B0FBB8;
-    if ( !DataGlobal_B0FBB8 )
-  {
-    Game::shutdownGame(this);
-    if ( this )
-    {
-    v3 = DataGlobal_844BD8[0];
-    if ( this != (void *)1 )
-    v3 = DataGlobal_844BDC;
-    }
-    else
-    {
-    v3 = DataGlobal_844BD4[0];
-    }
-    result = LoadPaletteSimple(v3, &DataGlobal_B0FBB0, &DataGlobal_B0FBB4);
-    DataGlobal_B0FBB8 = 1;
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x77E430
 namespace gamemd {
 void Game::EncodeGameSetupState()
@@ -1944,93 +1915,6 @@ LABEL_118:
 }
 } // namespace gamemd
 
-// 0x796DE0
-namespace gamemd {
-int Game::CreateAIPlayer()
-{
-{
-    char *v0;
-    char *v1;
-    int v2;
-    int v3;
-    int result;
-    int v5;
-    char v6[2];
-    char v7[6];
-    v0 = __2_YAPAXI_Z(0x85u);
-    v1 = v0;
-    if ( v0 )
-    Waypoint::InitInvalid(v0 + 40);
-    else
-    v1 = 0;
-    BulkCharToWide(v1, (unsigned char *)aOlCruddy, -1);
-    *(int *)(v1 + 123) = -1;
-    *(int *)(v1 + 75) = 0;
-    *(int *)(v1 + 83) = 3;
-    v5 = 0;
-    v7[3] = 0;
-    strcpy(v7, "QR");
-    v6[1] = 2;
-    v6[0] = 10;
-    NetworkID::Assign((int *)(v1) + 10, &v5, (int)v6, 0);
-    if ( Game_PlayerCount < DataGlobal_A8DA7C || (DataGlobal_A8DA81 || !DataGlobal_A8DA7C) && DataGlobal_A8DA88 > 0 && (*(unsigned char (__thiscall **)(int *, int, int))(g_PlayerInfoCount + 8))( &g_PlayerInfoCount, DataGlobal_A8DA7C + DataGlobal_A8DA88, 0) )
-  {
-    v2 = Game_PlayerCount++;
-    *(int *)(Game_PlayerInfoArray + 4 * v2) = v1;
-  }
-    v3 = g_ScenarioLoadFlags;
-    DataGlobal_B7790C[g_ScenarioLoadFlags] = 100;
-    result = v3 + 1;
-    g_ScenarioLoadFlags = result;
-    return result;
-}
-}
-} // namespace gamemd
-
-// 0x796ED0
-namespace gamemd {
-int Game::CreateAIPlayer_Potato()
-{
-{
-    char *v0;
-    char *v1;
-    int v2;
-    int v3;
-    int result;
-    int v5;
-    char v6[3];
-    char v7[5];
-    v0 = __2_YAPAXI_Z(0x85u);
-    v1 = v0;
-    if ( v0 )
-    Waypoint::InitInvalid(v0 + 40);
-    else
-    v1 = 0;
-    BulkCharToWide(v1, (unsigned char *)aPotato, -1);
-    *(int *)(v1 + 123) = -1;
-    *(int *)(v1 + 75) = 0;
-    *(int *)(v1 + 83) = 0;
-    v5 = 0;
-    v7[2] = 0;
-    strcpy(v7, "a");
-    v6[2] = 20;
-    v6[1] = 2;
-    v6[0] = 10;
-    NetworkID::Assign((int *)(v1) + 10, &v5, (int)v6, 0);
-    if ( Game_PlayerCount < DataGlobal_A8DA7C || (DataGlobal_A8DA81 || !DataGlobal_A8DA7C) && DataGlobal_A8DA88 > 0 && (*(unsigned char (__thiscall **)(int *, int, int))(g_PlayerInfoCount + 8))( &g_PlayerInfoCount, DataGlobal_A8DA7C + DataGlobal_A8DA88, 0) )
-  {
-    v2 = Game_PlayerCount++;
-    *(int *)(Game_PlayerInfoArray + 4 * v2) = v1;
-  }
-    v3 = g_ScenarioLoadFlags;
-    DataGlobal_B7790C[g_ScenarioLoadFlags] = 100;
-    result = v3 + 1;
-    g_ScenarioLoadFlags = result;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x7A2230
 namespace gamemd {
 void Game_Setup(CCINIClass * aP0, CCINIClass * aP1, char * Buffera, char * a3)
@@ -2443,6 +2327,35 @@ int Game::readIniSettings()
 }
 } // namespace gamemd
 
+// 0x72D730
+namespace gamemd {
+char Game::LoadMultiplayerScoreAssets()
+{
+{
+    char result;
+    char *v3;
+    result = DataGlobal_B0FBB8;
+    if ( !DataGlobal_B0FBB8 )
+  {
+    Game::shutdownGame(this);
+    if ( this )
+    {
+    v3 = DataGlobal_844BD8[0];
+    if ( this != (void *)1 )
+    v3 = DataGlobal_844BDC;
+    }
+    else
+    {
+    v3 = DataGlobal_844BD4[0];
+    }
+    result = LoadPaletteSimple(v3, &DataGlobal_B0FBB0, &DataGlobal_B0FBB4);
+    DataGlobal_B0FBB8 = 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x72D830
 namespace gamemd {
 void * Game::shutdownGame()
@@ -2523,6 +2436,93 @@ int sub_74D450(int a1)
     sprintf(Buffer, DataGlobal_846118, (const char *)&DataGlobal_7E1BC6 + 112 * a1);
     result = SearchMIXFile(Buffer, 0);
     DataGlobal_B1D2EC = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x796DE0
+namespace gamemd {
+int Game::CreateAIPlayer()
+{
+{
+    char *v0;
+    char *v1;
+    int v2;
+    int v3;
+    int result;
+    int v5;
+    char v6[2];
+    char v7[6];
+    v0 = __2_YAPAXI_Z(0x85u);
+    v1 = v0;
+    if ( v0 )
+    Waypoint::InitInvalid(v0 + 40);
+    else
+    v1 = 0;
+    BulkCharToWide(v1, (unsigned char *)aOlCruddy, -1);
+    *(int *)(v1 + 123) = -1;
+    *(int *)(v1 + 75) = 0;
+    *(int *)(v1 + 83) = 3;
+    v5 = 0;
+    v7[3] = 0;
+    strcpy(v7, "QR");
+    v6[1] = 2;
+    v6[0] = 10;
+    NetworkID::Assign((int *)(v1) + 10, &v5, (int)v6, 0);
+    if ( Game_PlayerCount < DataGlobal_A8DA7C || (DataGlobal_A8DA81 || !DataGlobal_A8DA7C) && DataGlobal_A8DA88 > 0 && (*(unsigned char (__thiscall **)(int *, int, int))(g_PlayerInfoCount + 8))( &g_PlayerInfoCount, DataGlobal_A8DA7C + DataGlobal_A8DA88, 0) )
+  {
+    v2 = Game_PlayerCount++;
+    *(int *)(Game_PlayerInfoArray + 4 * v2) = v1;
+  }
+    v3 = g_ScenarioLoadFlags;
+    DataGlobal_B7790C[g_ScenarioLoadFlags] = 100;
+    result = v3 + 1;
+    g_ScenarioLoadFlags = result;
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x796ED0
+namespace gamemd {
+int Game::CreateAIPlayer_Potato()
+{
+{
+    char *v0;
+    char *v1;
+    int v2;
+    int v3;
+    int result;
+    int v5;
+    char v6[3];
+    char v7[5];
+    v0 = __2_YAPAXI_Z(0x85u);
+    v1 = v0;
+    if ( v0 )
+    Waypoint::InitInvalid(v0 + 40);
+    else
+    v1 = 0;
+    BulkCharToWide(v1, (unsigned char *)aPotato, -1);
+    *(int *)(v1 + 123) = -1;
+    *(int *)(v1 + 75) = 0;
+    *(int *)(v1 + 83) = 0;
+    v5 = 0;
+    v7[2] = 0;
+    strcpy(v7, "a");
+    v6[2] = 20;
+    v6[1] = 2;
+    v6[0] = 10;
+    NetworkID::Assign((int *)(v1) + 10, &v5, (int)v6, 0);
+    if ( Game_PlayerCount < DataGlobal_A8DA7C || (DataGlobal_A8DA81 || !DataGlobal_A8DA7C) && DataGlobal_A8DA88 > 0 && (*(unsigned char (__thiscall **)(int *, int, int))(g_PlayerInfoCount + 8))( &g_PlayerInfoCount, DataGlobal_A8DA7C + DataGlobal_A8DA88, 0) )
+  {
+    v2 = Game_PlayerCount++;
+    *(int *)(Game_PlayerInfoArray + 4 * v2) = v1;
+  }
+    v3 = g_ScenarioLoadFlags;
+    DataGlobal_B7790C[g_ScenarioLoadFlags] = 100;
+    result = v3 + 1;
+    g_ScenarioLoadFlags = result;
     return result;
 }
 }

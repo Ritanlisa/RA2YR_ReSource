@@ -5437,19 +5437,6 @@ LPVOID sub_7A2730()
 }
 } // namespace gamemd
 
-// 0x646DF0
-namespace gamemd {
-DWORD sub_646DF0(int a1)
-{
-{
-    DWORD result;
-    result = timeGetTime();
-    DataGlobal_AFA36C[6 * a1] = result;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x53F540
 namespace gamemd {
 int sub_53F540()
@@ -5473,53 +5460,6 @@ int sub_53F540()
     unk_AA05A8 = 0; /*0x53f59d*/
   }
   return 0; /*0x53f575*/
-}
-}
-} // namespace gamemd
-
-// 0x796FC0
-namespace gamemd {
-int sub_796FC0()
-{
-{
-    char *v0;
-    char *v1;
-    int v2;
-    int v3;
-    int result;
-    int v5;
-    char v6[8];
-    v0 = __2_YAPAXI_Z(0x85u);
-    v1 = v0;
-    if ( v0 )
-    Waypoint::InitInvalid(v0 + 40);
-    else
-    v1 = 0;
-    BulkCharToWide(v1, (unsigned char *)aPotatotoo, -1);
-    *(int *)(v1 + 123) = -1;
-    *(int *)(v1 + 75) = 1;
-    *(int *)(v1 + 83) = 2;
-    v6[1] = 2;
-    v5 = 0;
-    v6[5] = 0;
-    v6[4] = 0;
-    v6[3] = -6;
-    v6[2] = 80;
-    v6[0] = 10;
-    NetworkID::Assign((int *)(v1) + 10, &v5, (int)v6, 0);
-    if ( Game_PlayerCount < DataGlobal_A8DA7C || (DataGlobal_A8DA81 || !DataGlobal_A8DA7C) && DataGlobal_A8DA88 > 0 && (*(unsigned char (__thiscall **)(int *, int, int))(g_PlayerInfoCount + 8))( &g_PlayerInfoCount, DataGlobal_A8DA7C + DataGlobal_A8DA88, 0) )
-  {
-    v2 = Game_PlayerCount++;
-    *(int *)(Game_PlayerInfoArray + 4 * v2) = v1;
-  }
-    v3 = g_ScenarioLoadFlags;
-    DataGlobal_B7790C[g_ScenarioLoadFlags] = 100;
-    g_ScenarioLoadFlags = v3 + 1;
-    g_NetworkRematchObject = *((int *)(v1) + 10);
-    result = *((int *)(v1) + 11);
-    DataGlobal_A8BB20 = result;
-    DataGlobal_A8BB24 = *((int *)(v1) + 12);
-    return result;
 }
 }
 } // namespace gamemd
@@ -5685,36 +5625,6 @@ LABEL_5:
     }
   }
   return result; /*0x64ae23*/
-}
-}
-} // namespace gamemd
-
-// 0x652110
-namespace gamemd {
-char * sub_652110(int a1, int a2)
-{
-{
-    char *result;
-    int v4;
-    unsigned int v5;
-    result = (char *)g_GameMode_Current[0];
-    if ( g_GameMode_Current[0] == 4 )
-  {
-    v4 = *(int *)(a1 + 24 * a2);
-    if ( g_Network_IsHosting )
-    v5 = ((unsigned int)DataGlobal_A8E2D4 >> 1)
-    + (*(int *)(a1 + 24 * a2 + 16) >> 1)
-    - (int)Math::RoundToInt(-60.0 / ((double)(int)DataGlobal_A8B558 / (double)(unsigned int)g_ScenarioLoadState)) / 2;
-    else
-    v5 = (unsigned int)IPXManagerClass::CheckStatus(g_NetworkManager, a2) >> 1;
-    result = (char *)g_CurrentFrame - v5 * (unsigned int)DataGlobal_ABCD44 / 0x3C - v4;
-    DataGlobal_A8DB7C[a2] = (int)result;
-  }
-    else
-  {
-    DataGlobal_A8DB7C[a2] = 0;
-  }
-    return result;
 }
 }
 } // namespace gamemd
@@ -6330,6 +6240,19 @@ BOOL Network_Start(HWND hWnd, LPARAM lParam)
 }
 } // namespace gamemd
 
+// 0x646DF0
+namespace gamemd {
+DWORD sub_646DF0(int a1)
+{
+{
+    DWORD result;
+    result = timeGetTime();
+    DataGlobal_AFA36C[6 * a1] = result;
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x64B410
 namespace gamemd {
 int sub_64B410(int a1, int * a2)
@@ -6450,6 +6373,36 @@ int sub_64D9E0()
       }
     result = g_GameInitState;
     }
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x652110
+namespace gamemd {
+char * sub_652110(int a1, int a2)
+{
+{
+    char *result;
+    int v4;
+    unsigned int v5;
+    result = (char *)g_GameMode_Current[0];
+    if ( g_GameMode_Current[0] == 4 )
+  {
+    v4 = *(int *)(a1 + 24 * a2);
+    if ( g_Network_IsHosting )
+    v5 = ((unsigned int)DataGlobal_A8E2D4 >> 1)
+    + (*(int *)(a1 + 24 * a2 + 16) >> 1)
+    - (int)Math::RoundToInt(-60.0 / ((double)(int)DataGlobal_A8B558 / (double)(unsigned int)g_ScenarioLoadState)) / 2;
+    else
+    v5 = (unsigned int)IPXManagerClass::CheckStatus(g_NetworkManager, a2) >> 1;
+    result = (char *)g_CurrentFrame - v5 * (unsigned int)DataGlobal_ABCD44 / 0x3C - v4;
+    DataGlobal_A8DB7C[a2] = (int)result;
+  }
+    else
+  {
+    DataGlobal_A8DB7C[a2] = 0;
   }
     return result;
 }
@@ -6684,6 +6637,53 @@ char Network::IsLobbyFeature()
     return BYTE1(DataGlobal_B76B30) & 1;
     else
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x796FC0
+namespace gamemd {
+int sub_796FC0()
+{
+{
+    char *v0;
+    char *v1;
+    int v2;
+    int v3;
+    int result;
+    int v5;
+    char v6[8];
+    v0 = __2_YAPAXI_Z(0x85u);
+    v1 = v0;
+    if ( v0 )
+    Waypoint::InitInvalid(v0 + 40);
+    else
+    v1 = 0;
+    BulkCharToWide(v1, (unsigned char *)aPotatotoo, -1);
+    *(int *)(v1 + 123) = -1;
+    *(int *)(v1 + 75) = 1;
+    *(int *)(v1 + 83) = 2;
+    v6[1] = 2;
+    v5 = 0;
+    v6[5] = 0;
+    v6[4] = 0;
+    v6[3] = -6;
+    v6[2] = 80;
+    v6[0] = 10;
+    NetworkID::Assign((int *)(v1) + 10, &v5, (int)v6, 0);
+    if ( Game_PlayerCount < DataGlobal_A8DA7C || (DataGlobal_A8DA81 || !DataGlobal_A8DA7C) && DataGlobal_A8DA88 > 0 && (*(unsigned char (__thiscall **)(int *, int, int))(g_PlayerInfoCount + 8))( &g_PlayerInfoCount, DataGlobal_A8DA7C + DataGlobal_A8DA88, 0) )
+  {
+    v2 = Game_PlayerCount++;
+    *(int *)(Game_PlayerInfoArray + 4 * v2) = v1;
+  }
+    v3 = g_ScenarioLoadFlags;
+    DataGlobal_B7790C[g_ScenarioLoadFlags] = 100;
+    g_ScenarioLoadFlags = v3 + 1;
+    g_NetworkRematchObject = *((int *)(v1) + 10);
+    result = *((int *)(v1) + 11);
+    DataGlobal_A8BB20 = result;
+    DataGlobal_A8BB24 = *((int *)(v1) + 12);
+    return result;
 }
 }
 } // namespace gamemd

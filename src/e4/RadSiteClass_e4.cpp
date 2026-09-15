@@ -50,6 +50,22 @@ _DWORD *__thiscall sub_65B1E0(_DWORD *this)
 }
 } // namespace gamemd
 
+// 0x65B3A0
+namespace gamemd {
+int RadSiteClass::StubReturn116()
+{
+return 116;
+}
+} // namespace gamemd
+
+// 0x65B3C0
+namespace gamemd {
+int RadSiteClass::StubReturn69()
+{
+return 69;
+}
+} // namespace gamemd
+
 // 0x65B3D0
 namespace gamemd {
 int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
@@ -77,22 +93,6 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
   }
     return (int)Prefix_0->__pad_0;
 }
-}
-} // namespace gamemd
-
-// 0x65B3A0
-namespace gamemd {
-int RadSiteClass::StubReturn116()
-{
-return 116;
-}
-} // namespace gamemd
-
-// 0x65B3C0
-namespace gamemd {
-int RadSiteClass::StubReturn69()
-{
-return 69;
 }
 } // namespace gamemd
 

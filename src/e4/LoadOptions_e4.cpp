@@ -60,33 +60,6 @@ char __stdcall LoadOptions::_vt02(LPCCH lpMultiByteStr, wchar_t *Source)
 }
 } // namespace gamemd
 
-// 0x55A0D0
-namespace gamemd {
-LoadOptions * LoadOptions::QueryInterface(char a2)
-{
-{
-    int v3;
-    void *v4;
-    v3 = 0;
-    for ( *(int *)this = &vt_LoadOptionsClass; v3 < *(int *)(this + 48); ++v3 )
-    __3_YAXPAX_Z(*(void **)(*((int *)(this) + 9) + 4 * v3));
-    (*(void (__thiscall **)(char *))(*((int *)(this) + 8) + 12))(this + 32);
-    v4 = (void *)*((int *)(this) + 9);
-    *((int *)(this) + 8) = &vt_VectorClass_FileEntryClass;
-    if ( v4 && *(this + 45) )
-  {
-    __3_YAXPAX_Z(v4);
-    *((int *)(this) + 9) = 0;
-  }
-    *(this + 45) = 0;
-    *((int *)(this) + 10) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (LoadOptions *)this;
-}
-}
-} // namespace gamemd
-
 // 0x67FD20
 namespace gamemd {
 char LoadOptions_Load(LPCCH lpMultiByteStr, int a2)
@@ -214,6 +187,33 @@ wchar_t * LoadOptions::Close()
 {
 {
     return GetStringCSF(aTxtGameWasSave, 0, g_Str_File_LoadDlg_CPP, 1234);
+}
+}
+} // namespace gamemd
+
+// 0x55A0D0
+namespace gamemd {
+LoadOptions * LoadOptions::QueryInterface(char a2)
+{
+{
+    int v3;
+    void *v4;
+    v3 = 0;
+    for ( *(int *)this = &vt_LoadOptionsClass; v3 < *(int *)(this + 48); ++v3 )
+    __3_YAXPAX_Z(*(void **)(*((int *)(this) + 9) + 4 * v3));
+    (*(void (__thiscall **)(char *))(*((int *)(this) + 8) + 12))(this + 32);
+    v4 = (void *)*((int *)(this) + 9);
+    *((int *)(this) + 8) = &vt_VectorClass_FileEntryClass;
+    if ( v4 && *(this + 45) )
+  {
+    __3_YAXPAX_Z(v4);
+    *((int *)(this) + 9) = 0;
+  }
+    *(this + 45) = 0;
+    *((int *)(this) + 10) = 0;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (LoadOptions *)this;
 }
 }
 } // namespace gamemd

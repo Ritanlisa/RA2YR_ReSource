@@ -1331,15 +1331,6 @@ void __thiscall sub_406530(AbstractTypeClass *this)
 }
 }
 
-// 0x406540
-void AbstractTypeClass::sub_406540()
-{
-{
-    int v1;
-    *(int *)&this->UINameLabel[3] = v1;
-}
-}
-
 // 0x406570
 int AbstractTypeClass::sub_406570()
 {
@@ -1370,102 +1361,6 @@ int __thiscall sub_406570(AbstractTypeClass *this)
     *((_DWORD *)this + 79) = 0; /*0x4065b1*/
   }
   return result; /*0x4065b0*/
-}
-}
-
-// 0x4065C0
-void AbstractTypeClass::sub_4065C0()
-{
-{
-    int v1;
-    this->abstractFlags = v1;
-}
-}
-
-// 0x4065D0
-void AbstractTypeClass::sub_4065D0()
-{
-{
-    int v1;
-    *(int *)&this->UINameLabel[11] = v1;
-}
-}
-
-// 0x4065E0
-void AbstractTypeClass::sub_4065E0()
-{
-{
-    int v1;
-    *(int *)&this->UINameLabel[19] = v1;
-}
-}
-
-// 0x4065F0
-int AbstractTypeClass::sub_4065F0(int a2)
-{
-{
-    *(int *)&this->UINameLabel[23] = a2;
-    return a2;
-}
-}
-
-// 0x406600
-int AbstractTypeClass::sub_406600()
-{
-{
-    int v1;
-    int v3;
-    *(int *)&this->UINameLabel[27] = v1;
-    *(int *)&this->UINameLabel[31] = v3;
-    return v3;
-}
-}
-
-// 0x406610
-int AbstractTypeClass::sub_406610()
-{
-{
-    void *v1;
-    int v3;
-    this->UIName = v1;
-    *(int *)this->Name = v3;
-    return v3;
-}
-}
-
-// 0x406620
-int AbstractTypeClass::sub_406620()
-{
-{
-    int v1;
-    int result;
-    if ( v1 <= 100 )
-  {
-    if ( v1 >= 0 )
-    {
-    *(int *)&this->Name[4] = v1;
-    }
-    else
-    {
-    *(int *)&this->Name[4] = 0;
-    return 0;
-    }
-  }
-    else
-  {
-    *(int *)&this->Name[4] = 100;
-    return 100;
-  }
-    return result;
-}
-}
-
-// 0x406640
-void AbstractTypeClass::sub_406640()
-{
-{
-    int v1;
-    *(int *)&this->UINameLabel[15] = v1;
 }
 }
 
@@ -4290,6 +4185,15 @@ int E4Recv_406310::sub_406310()
 }
 } // namespace gamemd
 
+// 0x406540
+void AbstractTypeClass::sub_406540()
+{
+{
+    int v1;
+    *(int *)&this->UINameLabel[3] = v1;
+}
+}
+
 // 0x406550
 int AbstractTypeClass::sub_406550()
 {
@@ -4299,6 +4203,102 @@ int AbstractTypeClass::sub_406550()
     p_nextArrayIndex = &this->nextArrayIndex;
     EndBufferMixer(&this->nextArrayIndex, v1);
     return AudioMixer::PlaySample(p_nextArrayIndex);
+}
+}
+
+// 0x4065C0
+void AbstractTypeClass::sub_4065C0()
+{
+{
+    int v1;
+    this->abstractFlags = v1;
+}
+}
+
+// 0x4065D0
+void AbstractTypeClass::sub_4065D0()
+{
+{
+    int v1;
+    *(int *)&this->UINameLabel[11] = v1;
+}
+}
+
+// 0x4065E0
+void AbstractTypeClass::sub_4065E0()
+{
+{
+    int v1;
+    *(int *)&this->UINameLabel[19] = v1;
+}
+}
+
+// 0x4065F0
+int AbstractTypeClass::sub_4065F0(int a2)
+{
+{
+    *(int *)&this->UINameLabel[23] = a2;
+    return a2;
+}
+}
+
+// 0x406600
+int AbstractTypeClass::sub_406600()
+{
+{
+    int v1;
+    int v3;
+    *(int *)&this->UINameLabel[27] = v1;
+    *(int *)&this->UINameLabel[31] = v3;
+    return v3;
+}
+}
+
+// 0x406610
+int AbstractTypeClass::sub_406610()
+{
+{
+    void *v1;
+    int v3;
+    this->UIName = v1;
+    *(int *)this->Name = v3;
+    return v3;
+}
+}
+
+// 0x406620
+int AbstractTypeClass::sub_406620()
+{
+{
+    int v1;
+    int result;
+    if ( v1 <= 100 )
+  {
+    if ( v1 >= 0 )
+    {
+    *(int *)&this->Name[4] = v1;
+    }
+    else
+    {
+    *(int *)&this->Name[4] = 0;
+    return 0;
+    }
+  }
+    else
+  {
+    *(int *)&this->Name[4] = 100;
+    return 100;
+  }
+    return result;
+}
+}
+
+// 0x406640
+void AbstractTypeClass::sub_406640()
+{
+{
+    int v1;
+    *(int *)&this->UINameLabel[15] = v1;
 }
 }
 

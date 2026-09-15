@@ -185,32 +185,6 @@ BOOL __thiscall sub_517590(_BYTE *this, _BYTE *a2)
 }
 } // namespace gamemd
 
-// 0x6244A0
-namespace gamemd {
-unsigned int * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor(char a2)
-{
-{
-    this->vfptr = &vt_OwnerDraw_DialogControl;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return &this->vfptr;
-}
-}
-} // namespace gamemd
-
-// 0x6244C0
-namespace gamemd {
-unsigned int * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_0(char a2)
-{
-{
-    this->vfptr = &vt_OwnerDraw_DialogControl;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return &this->vfptr;
-}
-}
-} // namespace gamemd
-
 // 0x6284A0
 namespace gamemd {
 char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity_0(int a2, char * a3)
@@ -1624,6 +1598,32 @@ DynamicVector * DynamicVectorClass_ptr_NodeNameType::Add(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
+}
+}
+} // namespace gamemd
+
+// 0x6244A0
+namespace gamemd {
+unsigned int * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor(char a2)
+{
+{
+    this->vfptr = &vt_OwnerDraw_DialogControl;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
+}
+}
+} // namespace gamemd
+
+// 0x6244C0
+namespace gamemd {
+unsigned int * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_0(char a2)
+{
+{
+    this->vfptr = &vt_OwnerDraw_DialogControl;
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return &this->vfptr;
 }
 }
 } // namespace gamemd

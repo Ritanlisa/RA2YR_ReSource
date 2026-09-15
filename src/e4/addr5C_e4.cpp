@@ -150,17 +150,6 @@ _DWORD *__fastcall Movie_Create(int a1, int a2, int *a3)
 }
 } // namespace gamemd
 
-// 0x5C0E10
-namespace gamemd {
-void E4Recv_5C0E10::sub_5C0E10()
-{
-{
-    this->vfptr = &vt_MultiplayerBattle;
-    MultiplayerGameMode::Dtor(this);
-}
-}
-} // namespace gamemd
-
 // 0x5C17B0
 namespace gamemd {
 char MPCooperative___vt07(int a2)
@@ -229,17 +218,6 @@ char __thiscall MPCooperative::_vt07(int *this, int a2)
     return 1; /*0x5c188f*/
   }
   return v3; /*0x5c17dc*/
-}
-}
-} // namespace gamemd
-
-// 0x5C5D20
-namespace gamemd {
-void E4Recv_5C5D20::sub_5C5D20()
-{
-{
-    this->vfptr = &vt_FreeForAll;
-    MultiplayerGameMode::Dtor(this);
 }
 }
 } // namespace gamemd
@@ -3236,6 +3214,17 @@ void E4Recv_5C0630::sub_5C0630()
 }
 } // namespace gamemd
 
+// 0x5C0E10
+namespace gamemd {
+void E4Recv_5C0E10::sub_5C0E10()
+{
+{
+    this->vfptr = &vt_MultiplayerBattle;
+    MultiplayerGameMode::Dtor(this);
+}
+}
+} // namespace gamemd
+
 // 0x5C10F0
 namespace gamemd {
 void sub_5C10F0()
@@ -3567,6 +3556,17 @@ int sub_5C5CC0()
     DataGlobal_ABF500 = 128;
     DataGlobal_ABF504 = 128;
     return 128;
+}
+}
+} // namespace gamemd
+
+// 0x5C5D20
+namespace gamemd {
+void E4Recv_5C5D20::sub_5C5D20()
+{
+{
+    this->vfptr = &vt_FreeForAll;
+    MultiplayerGameMode::Dtor(this);
 }
 }
 } // namespace gamemd

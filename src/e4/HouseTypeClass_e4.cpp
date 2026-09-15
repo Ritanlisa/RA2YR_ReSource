@@ -680,67 +680,6 @@ int __userpurge HouseTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, i
 }
 } // namespace gamemd
 
-// 0x512760
-namespace gamemd {
-HouseTypeClass * HouseTypeClass::Destructor(char a2)
-{
-{
-    int v3;
-    UnitTypeClass *v4;
-    void *v5;
-    void *v6;
-    void **v8;
-    *(void**)this = vt_HouseTypeClass;
-    *(this + 1) = (unsigned int)vt_HouseTypeClass;
-    *(this + 2) = (unsigned int)vt_HouseTypeClass;
-    *(this + 3) = &vt_HouseTypeClass;
-    AbstractClass::AnnounceExpiredPointer(this, 1);
-    v8 = this;
-    v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_A83C98 + 16))(&DataGlobal_A83C98, &v8);
-    if ( v3 != -1 && v3 < g_SuperWeaponTypeArray && v3 < --g_SuperWeaponTypeArray )
-  {
-    do
-    {
-    ++v3;
-    *((int *)(g_SuperWeaponTypeCount) + v3 - 1) = *((int *)(g_SuperWeaponTypeCount) + v3);
-    }
-    while ( v3 < g_SuperWeaponTypeArray );
-  }
-    v4 = (UnitTypeClass *)*(this + 98);
-    *(this + 97) = &vt_VectorClass_AircraftTypeClass_const;
-    if ( v4 && *((char *)(this) + 401) )
-  {
-    __3_YAXPAX_Z(v4);
-    *(this + 98) = 0;
-  }
-    *((char *)(this) + 401) = 0;
-    *(this + 99) = 0;
-    v5 = *(this + 91);
-    *(this + 90) = &vt_VectorClass_UnitTypeClass_const;
-    if ( v5 && *((char *)(this) + 373) )
-  {
-    __3_YAXPAX_Z(v5);
-    *(this + 91) = 0;
-  }
-    *((char *)(this) + 373) = 0;
-    *(this + 92) = 0;
-    v6 = *(this + 84);
-    *(this + 83) = &vt_VectorClass_InfantryTypeClass_const;
-    if ( v6 && *((char *)(this) + 345) )
-  {
-    __3_YAXPAX_Z(v6);
-    *(this + 84) = 0;
-  }
-    *((char *)(this) + 345) = 0;
-    *(this + 85) = 0;
-    AbstractTypeClass::Dtor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (HouseTypeClass *)this;
-}
-}
-} // namespace gamemd
-
 // 0x512960
 namespace gamemd {
 unsigned int * HouseTypeClass::readStartUnit()
@@ -1284,6 +1223,67 @@ namespace gamemd {
 int HouseTypeClass::Release(int a1)
 {
 return 1;
+}
+} // namespace gamemd
+
+// 0x512760
+namespace gamemd {
+HouseTypeClass * HouseTypeClass::Destructor(char a2)
+{
+{
+    int v3;
+    UnitTypeClass *v4;
+    void *v5;
+    void *v6;
+    void **v8;
+    *(void**)this = vt_HouseTypeClass;
+    *(this + 1) = (unsigned int)vt_HouseTypeClass;
+    *(this + 2) = (unsigned int)vt_HouseTypeClass;
+    *(this + 3) = &vt_HouseTypeClass;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    v8 = this;
+    v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_A83C98 + 16))(&DataGlobal_A83C98, &v8);
+    if ( v3 != -1 && v3 < g_SuperWeaponTypeArray && v3 < --g_SuperWeaponTypeArray )
+  {
+    do
+    {
+    ++v3;
+    *((int *)(g_SuperWeaponTypeCount) + v3 - 1) = *((int *)(g_SuperWeaponTypeCount) + v3);
+    }
+    while ( v3 < g_SuperWeaponTypeArray );
+  }
+    v4 = (UnitTypeClass *)*(this + 98);
+    *(this + 97) = &vt_VectorClass_AircraftTypeClass_const;
+    if ( v4 && *((char *)(this) + 401) )
+  {
+    __3_YAXPAX_Z(v4);
+    *(this + 98) = 0;
+  }
+    *((char *)(this) + 401) = 0;
+    *(this + 99) = 0;
+    v5 = *(this + 91);
+    *(this + 90) = &vt_VectorClass_UnitTypeClass_const;
+    if ( v5 && *((char *)(this) + 373) )
+  {
+    __3_YAXPAX_Z(v5);
+    *(this + 91) = 0;
+  }
+    *((char *)(this) + 373) = 0;
+    *(this + 92) = 0;
+    v6 = *(this + 84);
+    *(this + 83) = &vt_VectorClass_InfantryTypeClass_const;
+    if ( v6 && *((char *)(this) + 345) )
+  {
+    __3_YAXPAX_Z(v6);
+    *(this + 84) = 0;
+  }
+    *((char *)(this) + 345) = 0;
+    *(this + 85) = 0;
+    AbstractTypeClass::Dtor(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (HouseTypeClass *)this;
+}
 }
 } // namespace gamemd
 
