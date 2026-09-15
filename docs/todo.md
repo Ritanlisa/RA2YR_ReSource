@@ -27,7 +27,7 @@
 | 构建状态 | **Release** 0 errors, .syhks00 section 已生成 |
 | 导出函数 | 3 (SyringeHandshake, PostProcStub, mismatch_counter) |
 | JSON函数数据库 | 19,067条目, 12,613已命名, 分类完成 |
-| **已完成函数** | **11,696** (faithful IDA translations, completed:true, 全 CFG 验证；G11 口径：+202 舰队波 +1 语义批 −10 截断假完成复位) — pending 4,935；**清偿计划 = docs/roadmap_post_csp.md「Phase H」**（H1 收割 319 → H2 A1 命名 → H3 机械 ~210 → H4 波 2 → H5 语义翻译主体 2,365 → H6 词汇 → H7 owner 考古；M1~M4 到 0） |
+| **已完成函数** | **11,788** (faithful IDA translations, completed:true, 全 CFG 验证；G12 口径：+92 H1 舰队波——验证器双修复后) — pending 4,840；**清偿计划 = docs/roadmap_post_csp.md「Phase H」**（H1 收割 319 → H2 A1 命名 → H3 机械 ~210 → H4 波 2 → H5 语义翻译主体 2,365 → H6 词汇 → H7 owner 考古；M1~M4 到 0） |
 | **REVERSE标记** | **~32** (跨14个源文件) — 2 Inject 活跃, 13 个 Capture 模式, 39 个 None 模式 |
 | **依赖验证** | 39函数→10K唯一被调用者 (callee_map.json) |
 | **Capture 模式** | **稳定** (13 hooks, Release 构建, 多局测试无崩溃) |

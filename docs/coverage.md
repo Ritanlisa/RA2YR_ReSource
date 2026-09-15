@@ -2,15 +2,15 @@
 
 > ⚠ 本文档的子系统细节（vtable 解码、类覆盖清单）为早期考证快照，仍然有效；
 > **当前总体进度以 `AGENTS.md` 状态表和 `docs/roadmap_post_csp.md` 执行日志为权威**
-> （2026-09-14 G10 口径：MCP completed 11,696 / pending 4,935——**诚实口径**，
+> （2026-09-15 G12 口径：MCP completed 11,788 / pending 4,840——**诚实口径**，
 > 含 G9 截断损害修复：316 幽灵 completed 复位，全 CFG 验证）。
 
 ## 翻译总进度（G10 会话后，2026-09-14）
 
 | 指标 | 数值 |
 |--------|-------|
-| MCP completed | **11,696**（诚实口径：G9 期末 11,665 含 316 幽灵已复位；G10 净增 = 舰队波 +162 + 语义批 +9，全 CFG 双射验证） |
-| MCP pending | **4,935**（真实总账——G9 的 4,624 因 G9 波 1 截断少计 ~1,460；构成：too-long ~1,776 / FAIL-recycle 618 / raw-this-residue ~500 / 其余长尾） |
+| MCP completed | **11,788**（诚实口径：G11 末 11,696 + G12 H1 舰队波 +92 全 CFG 验证——验证器对称性双修复[下标全局事件/fn-ptr 嵌套括号]护航） |
+| MCP pending | **4,840**（hash-type 175 已解锁 96% 待收割；unit.cpp 35 声明债记账 issue #73-#107；构成见 roadmap「Phase H」+ G12 日志） |
 | marker&completed 矛盾 | **0**（G10 对账修复；G9 曾潜伏 582） |
 | src 函数体覆盖 | ~17,870 / 19,133（93.5%；未翻译函数以 IDA 原始反编译活代码块占位，裁决 v2） |
 | 偏移→OO 重写 | rewritten 5,850 / unmapped 4,558（G10 refresh 口径） |

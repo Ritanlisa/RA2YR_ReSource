@@ -154,7 +154,7 @@ IDA MCP（`127.0.0.1:13337`）的连接状态**非持久，IDA 可能无效**：
 - `efv_cpp_events.py` 已排除函数定义签名被误识别为 PascalCase 自调用的情况；
   `Func(...) {` / `Func(...) const {` 不再生成伪造的 `CALL(Func)` 事件。
 - 修改共享 verifier/event extractor 后，必须用退出码回归已 completed 函数
-  （抽样回归先例：G5 119/120 PASS）。completed 池现约 11,505 个（G10 诚实口径），
+  （抽样回归先例：G5 119/120、G12 118/120）。completed 池现约 11,788 个（G12 诚实口径），
   全量回归改抽样 + 按桶回归。
 - MCP HTTP 常驻服务不会热加载 Python 源码。修改服务器后需重启服务；否则本地
   直跑结果与 HTTP 工具返回可能暂时不一致。
@@ -173,8 +173,8 @@ IDA MCP（`127.0.0.1:13337`）的连接状态**非持久，IDA 可能无效**：
   审计器已跳过 `[IDA decompile]` 伪码块、inline ASM 操作数，以及**已在别处
   有注解声明的同名命中**（G8 后两遍扫描——舰队译文体保留的 IDA 局部声明
   `CHAR Buffer[1024];` 影射已注解全局，无注解义务）。
-- `signals.json` 当前 MCP completed **11,696** / pending **4,935**（G11 口径：
-  G10 的 11,505 + 202 舰队波 + 1 语义批 − 10 个 G10 截断假完成复位——G10 的
+- `signals.json` 当前 MCP completed **11,788** / pending **4,840**（G12 口径：
+  G11 的 11,696 + 92 H1 舰队波——验证器下标全局事件/fn-ptr 嵌套括号双修复后；G10 的
   HTTP 回填有 23 条 cache 本身被输出预算截断，对截断真值验证通过的完成是假
   阳性；marker&completed 对账 = 0）；`_by_name` 与主表函数名集合一致。
 - `member_lookup.json` 1,651 类（G11 后；vt_ 符号 515 新增入 e4_globals/signals）；**注意
