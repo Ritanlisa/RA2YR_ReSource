@@ -185,7 +185,7 @@ cmake --build build_linux
 | 编译错误 / 警告 | **0 / 0** (gamemd 来自 _generated/ 和主要模块) |
 | symbol-locked | **symbols-locked-v2** — 全部 19,067 函数 1:1:1 映射 (IDA↔signals↔hpp)，0 naming mismatches |
 | completed (符号定义) | **19,133 / 19,133 (100%)** — 所有函数在 IDA/signals.json/hpp 中有名称和地址 |
-| translated (完整IDA对照) | **11,696** — MCP completed 诚实口径（G11 会话：+202 舰队波全 CFG + 1 语义批 − 10 个 G10 截断假完成诚实复位）；pending **4,935**；2026-09-14 G11 会话（IDA 在线：截断块 60→0 全修复 + vt_ 符号 +515 + 验证器对称性七连——vt_ 0 事件/til this->Name 镜像/元素派发 ×4/goto 守卫，详见 docs/roadmap_post_csp.md G11 执行日志） |
+| translated (完整IDA对照) | **11,788** — MCP completed 诚实口径（G12 会话：+92 H1 舰队波全 CFG + 验证器对称性双修复[下标全局事件/fn-ptr 嵌套括号] + hash-type 175 悬空序数破案 96% + 中断波事故链完整止损）；pending **4,840**；2026-09-15 G12 会话（IDA 在线：#374-377/#72/#381 等序数定案 + CCFileClass FileBuffer + G11 遗留损坏记录 cache 权威重建 + unit.cpp 35 函数声明债精确记账 issue #73-#107，详见 docs/roadmap_post_csp.md G12 执行日志） |
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
 | sub_* 残留 | **5,468** — 函数级别 (非类成员)，0 已翻译 |

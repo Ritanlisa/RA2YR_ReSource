@@ -2188,6 +2188,84 @@ OO 语法替换 → 提交重锚 → RA2MCP 翻译。**IDA 全程在线**（当�
 
 ---
 
+## 执行日志 — 2026-09-15 G12 会话：验证器对称性双修复 + hash-type 破案 + H1 舰队波 + 中断波事故链（completed 11,696 → 11,788）
+
+用户指令四段式（第 7 次，G4/G5/G8/G9/G10/G11 同款）：IDA MCP + CSP 结果补全签名/类/全局 →
+OO 语法替换 → 提交重锚 → RA2MCP 翻译。**IDA 全程在线**（当场探测确认，uptime 3.4h）。
+
+### 证据补全（提交 389356d9 + 重锚）
+
+| 项 | 产出 | 机制 |
+|---|---|---|
+| **hash-type 175 悬空序数破案** | **HASH_TYPE_MAP 9 项**（#374=AnimClass/#375=HouseClass/#376=BuildingTypeClass/#377=BuildingClass/#72=wchar_t/#381=RulesClass/#56=LPCSTR/#122=u_short/#355=exception） | til live 批查（374-380 为**悬空 ordinal**——get_numbered_type 失败、无名无实体）+ 使用上下文铁证（Destruct 自身 this/HouseClass_Array 元素/DemolishBridge receiver）；**#378 异义挂账**（ProcessPower this 调用方异构：BombClass/FoggedObject/HouseClass——A2 考古）；覆盖 ~96% 实例 |
+| A1 成员命名 | CCFileClass@88=`FileBuffer` | ctor 0x473A80 `Buffer::Init(this+88,0,0)` 嵌入子对象铁证（G2 容器族同型）；**til 尺寸 84 系截断错模型**（真 ≥108）；+100/+104=Buffer+12/16（Buffer::Init 只命名 +0 指针/+4 尺寸/+8 IsAllocated——余下 B4） |
+| broken-arrow 考古 | 72 块定性 | `->?[N]` 为 **IDB 侧 til 无名成员序数渲染**（live 重现 v4 同形态——路线图"live 重取置换"方案证伪）；修复需 til 序数表导出 + 验证器 `this->?[N]` 序数形态对称扩展（G11 til 直渲同型范式）——挂 H2/H6 |
+
+### 验证器对称性双修复（H1 波 0% 全灭的根因链）
+
+首跑 0/319 全灭 → 逐层归因（completed 池抽样回归 118/120，2 回归 stash 对照定位后随修复消除）：
+
+1. **下标全局事件**（efv_cpp_events）：`DataGlobal_X[i]` 下标分支对 global 基类发
+   READ/WRITE（IDA 侧 `MEMORY[A][idx]` 恒发事件；旧 blanket-drop 制造单侧 0 事件——
+   **G9 memory-chain 词汇从未真正通过验证的根因**，所有下标形态函数 completed=0 实证）；
+   member/local 基类保持丢弃（`Upgrades[slot]` 既有对称）。
+2. **def_pattern 嵌套括号**（verify_execution_flow）：函数指针参数
+   `int (__thiscall *a4)(int)` 使 `[^)]*` 内层截断 → 名字查找失败 → by_addr 回退
+   命中旧假存根（Array::ForEach 0x4068F0 init_game.cpp 假存根抢占实证；
+   **3,200 个陈旧注解与 pending 记录双注解为存量债**——本会话只修正则）。
+3. **g5_fleet 回滚大小写**：`// 0x447E90` vs 文件小写头严格匹配失败 → building.cpp
+   7 个失败译文滞留未回滚（改大小写不敏感）。
+4. **记录 span 走查边界**：重复 def 头使括号平衡永不归零 → 旧走查吞掉文件尾部
+   （G9/G12 两代吞尾同根因；跨下一记录头 = 损坏记录拒做手术）。
+
+### H1 舰队波与事故链（如实记录）
+
+- **修复后重跑：+101 全 CFG 验证**（addr72 0→24、addr4C 0→13）。
+- **autofix 事故**：波后括号修复脚本把伪码内部 `// 0x...` 锚点行误判为记录头 →
+  6 文件 vandalize（插入 300+ 垃圾括号行）→ 完整止损：restore + 确定性重放 +
+  **84 幽灵逐个裁决**（83 假幽灵验证 PASS 重标 / 1 FAIL 从 cache 重建 pending /
+  2 无 namespace 形态补判）。
+- **G11 遗留损坏清偿**：六文件重复 def/失衡记录 15+ 处从 ida_cache 权威重建为
+  规范 pending 块（house 12,700 行 G10-G11 损坏堆积区规范化 -3,700 行）；
+  `0X` 大写头事故（G4 教训重演）当场发现修正；0x696AE0 陈旧重复记录删除。
+- **净账**：completed 11,696 → **11,788**（+92：101 波 - 6 中断损失 + 复位差）；
+  六文件 0 失衡；注解 10,151/0/0；一致性 91/7 基线；marker&completed 对账 0 幽灵。
+
+### H5 前台 agent 试点（unit.cpp 桶）
+
+0 PASS / **35 全部精确记账**（issue #73-#107）——**unit.cpp 是 header-pipeline
+前置桶**的实证：①hpp 声明全无参 vs IDA 原型 1-5 参（16 函数）②member_lookup↔hpp
+双体系脱节（radioContact@248 等仅 member_lookup 有名，9 函数）③被调未声明
+（WinAPI::Wrapper/Float::Accumulate/Power::TimerProcess 等，6 函数）④接收者语义
+矛盾（UnloadPassengers +0xAC int32 当指针，1）⑤块数据损坏（1）⑥B1D0xx 全局
+extern 缺段（1，**事件面最窄的重译首选**）。附带勘误：get_context member_map
+空类名 bug、Random::Range/LinkedList::Pop 实已声明。
+
+### 度量变化（本会话）
+
+| 指标 | 会话前 | 会话后 |
+|---|---|---|
+| MCP completed | 11,696 | **11,788**（+92 全 CFG 验证） |
+| MCP pending | 4,935 | **4,840** |
+| hash-type skip | 175 | **~10**（#378 18 + 长尾；96% 解锁待收割） |
+| 验证器对称形态 | 下标全局 0 事件 / fn-ptr 签名失明 | 双修复（回归 118/120→全绿） |
+| issue 池 | 52 | **87**（+35 unit.cpp 精确记账） |
+| 六 gap2 文件 | G11 遗留损坏 | 0 失衡（cache 权威重建） |
+| auto-fill-baseline | 1c8eef89 | **389356d9**（重锚不清账） |
+
+### 遗留与下一步（G12 后续队列）
+
+1. **hash-type 解锁收割**：~165 块现可生成（GENERATED 重分类）——直接 g5_fleet 直驱。
+2. **OO refresh 本会话未跑**：G11 refresh 产生重复 def 头的管线根因未查——下次
+   refresh 前先 root-cause（防再生成损坏记录）。
+3. **H2 前置清单已账面化**：unit.cpp 35 函数的 hpp 签名/成员双体系/声明缺口
+   （issue #73-#107）= A1/A2 的精确工作队列。
+4. **broken-arrow 72 块**：til 序数表导出 + 验证器 `->?[N]` 对称扩展（半会话）。
+5. **后台 agent 仍不可用**（idle-time 限制，G10 同款）；前台 agent 有效但核心类
+   桶被声明债阻塞——优先收割机械面（hash-type/addr 桶）+ H2 声明补全。
+
+---
+
 ## Phase H — 剩余 4,935 pending 清偿总计划（2026-09-14 G11 会话末制定）
 
 > 数据基线：MCP pending **4,935**（dry-scan 归因 4,881 + ~54 无伪码/ASM-only 块）。
