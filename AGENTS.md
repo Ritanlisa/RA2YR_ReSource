@@ -189,7 +189,7 @@ cmake --build build_linux
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
 | sub_* 残留 | **5,468** — 函数级别 (非类成员)，0 已翻译 |
-| 命名一致性 | 91 raw / 7 normalized（G12 实测维持基线；增量均为别名自愈型 + E3 hpp 声明名变体，翻译时自然吸收） |
+| 命名一致性 | 91 raw / 7 normalized（G13 实测维持基线；增量均为别名自愈型 + E3 hpp 声明名变体，翻译时自然吸收） |
 | REVERSE 标记 | ~32（2 Inject 活跃, 39 None） |
 | 幂等自动判定 | Phase 1+2 完成: TRUE 31%, FALSE 36%, UNCERTAIN 33% |
 | 源文件 | ~130 .hpp + ~135 .cpp (~110,000 行) |
@@ -1150,9 +1150,9 @@ python tools/type_infer/auto_name.py
 ## 下一会话快速接手指引
 
 1. 看 `docs/coverage.md` 了解整体进度（**1,120 IDA 类全部完成 header，0 unknown_**）
-2. 看 `docs/roadmap_post_csp.md` G12 执行日志 +「Phase H」——当前主线 = 剩余 4,840 pending 清偿（H1 机械收割 / H2 A1 命名与声明补全 / H5 语义翻译）
+2. 看 `docs/roadmap_post_csp.md` G13 执行日志 +「Phase H」——当前主线 = 剩余 4,771 pending 清偿（H2 B/C 类残留 = unit.cpp 15 pending + 成员名/被调声明债 / H5 语义翻译主体 2,365 / H6 词汇专项）
 3. 看 `git log -10` 了解最近改动；`auto-fill-baseline` tag = 门控 diff 基线（重锚不清账）
-4. 下一波直接可跑：hash-type 解锁的 ~165 块 g5_fleet 直驱（`.omo/g12_fleet_driver.py` 范式）；unit.cpp 35 函数声明债清单 = issue #73-#107（H2 精确工作队列）
+4. 下一波入口：dry-scan 重建波计划（`python .omo/g8_dryscan.py` → GENERATED 余额直驱，`.omo/g12_fleet_driver.py` 范式，交接单 `.omo/g14_handoff.md`）；unit.cpp 15 pending B/C 类债 = issue #94-#107 残余（A 类 17 项 G13 已清偿）
 5. 看 `injectFunctionTest/comparisonResult.log` 了解最新 Capture 数据
 6. 任何崩溃分析：先满足"故障排除最低标准"6 项，缺一项不下结论
 7. IDA 连接非持久：任何 IDA 操作前当场探测（`curl -m 5 http://127.0.0.1:13337/`）

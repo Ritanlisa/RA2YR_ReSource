@@ -2,21 +2,25 @@
 
 > ⚠ 本文档的子系统细节（vtable 解码、类覆盖清单）为早期考证快照，仍然有效；
 > **当前总体进度以 `AGENTS.md` 状态表和 `docs/roadmap_post_csp.md` 执行日志为权威**
-> （2026-09-15 G12 口径：MCP completed 11,788 / pending 4,840——**诚实口径**，
-> 含 G9 截断损害修复：316 幽灵 completed 复位，全 CFG 验证）。
+> （2026-09-15 G13 口径：MCP completed **11,843** / pending **4,771**——**诚实口径**，
+> 全 CFG 验证；G13 = 证据补全大轮 + OO refresh + 舰队波 + H2 手术）。
 
-## 翻译总进度（G10 会话后，2026-09-14）
+## 翻译总进度（G13 会话后，2026-09-15）
+
+## 翻译总进度（G13 会话后，2026-09-15）
 
 | 指标 | 数值 |
 |--------|-------|
-| MCP completed | **11,788**（诚实口径：G11 末 11,696 + G12 H1 舰队波 +92 全 CFG 验证——验证器对称性双修复[下标全局事件/fn-ptr 嵌套括号]护航） |
-| MCP pending | **4,840**（hash-type 175 已解锁 96% 待收割；unit.cpp 35 声明债记账 issue #73-#107；构成见 roadmap「Phase H」+ G12 日志） |
-| marker&completed 矛盾 | **0**（G10 对账修复；G9 曾潜伏 582） |
-| src 函数体覆盖 | ~17,870 / 19,133（93.5%；未翻译函数以 IDA 原始反编译活代码块占位，裁决 v2） |
-| 偏移→OO 重写 | rewritten 5,850 / unmapped 4,558（G10 refresh 口径） |
-| vtable_offsets | 398 类（槽位→方法名真值，验证器权威） |
-| member_lookup | 1,651 类（G10 A1 +37 语义成员：TActionClass 全链/SuperClass 全链等） |
-| signals.globals | 12,910 地址（DataGlobal / vt_ / CRT 批产含） |
+| MCP completed | **11,843**（诚实口径：G12 末 11,788 + G13 舰队波 109 桶 +47 + H2 unit.cpp +8，全 CFG 验证） |
+| MCP pending | **4,771**（构成：too-long 2,037 + goto 352 + raw-this 619 + ternary 133 等，见 roadmap「Phase H」+ G13 日志；hash-type 已全清） |
+| marker&completed 矛盾 | **0**（G13 终态对账） |
+| src 函数体覆盖 | ~17,880 / 19,133（93.5%；未翻译函数以 IDA 原始反编译活代码块占位，裁决 v2） |
+| 偏移→OO 重写 | rewritten 4,514 / unmapped 5,661（G13 refresh 口径，分母随已译体退出波动） |
+| vtable_offsets | 398+ 类（G13 +15 真新增槽位：ObjectClass 124/172/308/336/436、InfantryClass 288、TechnoClass 1012 等） |
+| member_lookup | 1,651 类（G13 til 全量导出合并 +503 语义成员 / 22 类：InfantryClass 121、UnitClass 115、HouseTypeClass 44…；FootClass@1444=Archive 重命名） |
+| signals.globals | 13,432+ 地址（G13 DataGlobal +4：83D4E4/89A318/833240/83F158） |
+| HASH_TYPE_MAP | 12 条（G13 +3：#378=AbstractClass、#473=ScenarioClass、#487=AircraftTypeVector——hash-type 类全部清零） |
+| unit.hpp 声明 | A 类 17 项参数补全（G13 hpp+def 手术，issue #73-#93 A 类清偿） |
 
 ## 编译状态
 

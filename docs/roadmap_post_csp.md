@@ -4,10 +4,15 @@
 > 本文档是此基线上的完整后续工作分解。前情：AGENTS.md「最近完成」各条目、
 > `docs/coverage.md`、memory `type-infer-oop-rebuild-roadmap`。
 >
-> **执行状态首查表（2026-09-14 G9 会话更新：证据补全 RTTI 容器族 + 舰队两波 +1,309）**：
+> **执行状态首查表（2026-09-15 G13 会话更新：证据补全 til 全量导出 + OO refresh + 舰队波 + H2 手术）**：
 >
 > | 任务 | 状态 | 摘要 |
 > |---|---|---|
+> | **G13 证据补全** | ✅ **完成（2026-09-15，提交 9710bf2c）** | **live til 全量导出 1,706 UDT / 10,975 语义成员**（.omo/g13_til_live.json，兼作 broken-arrow 序数表）；**member_lookup 合并 +503 语义成员 / 22 类**（占位符过滤 + 同名异位冲突 84 整批剔除 + mbn 漂移族 23 规避——TechnoClass 中段三族争议区再实证）；**vtable 槽位 +15**（RTTI 祖先链守卫经 class_name_align 桥接）；**DataGlobal +4**（live xref 定性）；**hash 序数定案 3**（#378=AbstractClass 签名互证法——12 块解锁，HASH_TYPE_MAP 9→12） |
+> | **G13 OO refresh** | ✅ **rewritten 4,514 / unmapped 5,661；11,173 已译记录保留（3e94ae9a）** | e4 侧 refresh；g5_fleet class_layout 父链合并（PARENTS = layouts + rtti 直读桥接，192 条）；**g7_gap2_refresh '{' 注入 bug 回滚冻结**（六 gap2 文件 checkout，bug 未修） |
+> | **G13 舰队波 + H2** | ✅ **completed 11,788 → 11,843（30d9480c）** | 109 桶 +47 全 CFG；**H2 A 类 17 项 hpp+def 手术 + unit.cpp +8**（记录级确定性重建管线 .omo/g13_rebuild_records.py：伪迹免疫端检测）；FootClass_field_5A4→Archive 四方重命名；波 rollback 13 条 +1 伪差缓存重拼修复；**事故链全记录**（0X 大写化 bug 重演 / 波中禁直读 signals） |
+> | **G13 新识别债面** | 🔴 | 主树旧译缺地址注解 → E4 双份物化幽灵 pending（addr 桶 0% 通过率真因）；YRpp submodule 为空（A1 三源证据腿缺失）；IsCrushable 0x5f6cd0 遗留损坏区挂账 |
+> | **G9 证据补全** | ✅ **完成（2026-09-14，提交 5494bf60 + 重锚，IDA 会话当时离线——连接状态非持久，使用前必须当场探测，见 G9 日志注记）** | **RTTI 容器族回填 76 类 306 成员**（owner 考古链 addr→vtable_signatures→rtti_vtable_class 离线贯通；证据=RTTI vtable 家族统一/vt-install 体内证据/til 短名别名，继承层级取最派生；三重冲突守卫 member_lookup 既有/til 语义名/class_layouts 父链）；**signals._member_by_name 全量同步 +814 名**（修复 TypeList::Count 解析到全局 0xB79BE0 的 resolver fallback bug——G2 时代只进 member_lookup 的类从此可验证）；**vt_ 全局 +23**（RTTI 主表地址直读，vftable-ref 主根因）；DataGlobal +4；til 语义 +7 |
 > | **G9 证据补全** | ✅ **完成（2026-09-14，提交 5494bf60 + 重锚，IDA 会话当时离线——连接状态非持久，使用前必须当场探测，见 G9 日志注记）** | **RTTI 容器族回填 76 类 306 成员**（owner 考古链 addr→vtable_signatures→rtti_vtable_class 离线贯通；证据=RTTI vtable 家族统一/vt-install 体内证据/til 短名别名，继承层级取最派生；三重冲突守卫 member_lookup 既有/til 语义名/class_layouts 父链）；**signals._member_by_name 全量同步 +814 名**（修复 TypeList::Count 解析到全局 0xB79BE0 的 resolver fallback bug——G2 时代只进 member_lookup 的类从此可验证）；**vt_ 全局 +23**（RTTI 主表地址直读，vftable-ref 主根因）；DataGlobal +4；til 语义 +7 |
 > | **G9 舰队修复五连** | ✅ 同上提交 | ①**THIS_CAST_PAREN G7 双括号 bug**（`*(CAST *)(this + N)` 单括号形态从未匹配——residual-this-cast 696 的真根因）；②**foreign-receiver 旁路+逆映射**（缓存接收者命名 Block/a1 → IDA 侧成员事件恒 0，翻译必须无 this-> token——G6-G8 gap2 低 PASS 率隐藏成分）；③hoist 双变体仲裁（no-hoist alt 经 swap_body 直驱）；④memory-chain 词汇；⑤raw-this-residue 守卫精确化（deref 上下文追踪）；g_by_addr 无尺寸数组正则（G8 遗留）。试点 MSPCXAnim 36/38、TypeList 70/71（修复后 100%） |
 > | **G9 OO refresh** | ✅ rewritten 5,684 / unmapped 5,365；9,802 已译记录字节级保留（5494bf60） | 同上提交 |
@@ -101,7 +106,7 @@
 | ida-artifact 门控空转 | 1 | `tools/check_pointer_arithmetic.py` 为**空文件**（f5da6e4f 起所有可达版本皆空）——三重门控之一从未真正检查。需用户裁决恢复实现（部分功能由 code-standards 的 AST ptr-arithmetic 检查覆盖，但那是 diff-scoped 非全量） |
 
 
-## 0. 当前基线（2026-09-14 G9 会话刷新）
+## 0. 当前基线（2026-09-15 G13 会话刷新）
 
 | 维度 | 数值 |
 |---|---|
@@ -109,17 +114,17 @@
 | 类类型变量 | 138,884（this 10,767 / SSA 103,821 / 栈槽 10,193 / 成员 8,203 / 参数 3,992 / 全局 1,781 / 返回 127） |
 | TOP 矛盾 | **0**（verify_csp 七通道 ALL PASS） |
 | IDB 落盘 | this 签名 ~9,840 / 局部变量 ~19,695 / 参数+返回 1,419 / 全局 449 |
-| til struct | 1,474（1,252 全布局 + 20 观测建 + 202 最小 vfptr） |
+| til struct | 1,706 UDT 全量导出（G13 live 快照 .omo/g13_til_live.json，10,975 语义成员） |
 | **class_layouts** | **1,281 类**（F1：+247 til 导入 + 4,578 填洞 + 138 容器语义 + til-pad 伪条目清除 175） |
-| **偏移重写** | **rewritten 6,300 / unmapped 5,472**（v4 refresh 口径；分母随已译体退出） |
+| **偏移重写** | **rewritten 4,514 / unmapped 5,661**（G13 refresh 口径；分母随已译体退出） |
 | 反编译 | 19,067 函数全部可反编译 |
 | 快照 | **full_export v4**（09-13 重导出，mega-blob 区 live 归一化；⚠ 截断 ~100 个 + gap2 内 25 块标记保留，翻译时 get_context live 拉取）；v3 归档 full_export_v3_20260913 |
-| **src 函数体覆盖** | ~17,870 / 19,133（93.5%；src/e4 内已译 **798** / pending 13,837） |
-| **MCP completed** | **11,665**（G3-G9 舰队波累计 + 历史真翻译；全部 CFG 验证口径） |
-| **MCP pending** | **4,624**（G9 两波后；剩余 = too-long 1,771 + raw-this-residue 525 + FAIL-recycle ~350 + 词汇长尾） |
+| **src 函数体覆盖** | ~17,880 / 19,133（93.5%；未译以 IDA 原码活代码块占位） |
+| **MCP completed** | **11,843**（G3-G13 舰队波累计 + 历史真翻译；全部 CFG 验证口径） |
+| **MCP pending** | **4,771**（G13 后；构成 = too-long 2,037 + goto 352 + raw-this 619 + ternary 133 + param-mismatch ~110 + 长尾；hash-type 已清零） |
 | 待命名 | sub_* 残留 5,468（其中 3,590 需反编译上下文命名）——A2 |
-| 命名不一致 | 69 raw / **3 normalized**（基线维持；raw 增量系 typed 真类类限定自愈型） |
-| 基线/标签 | auto-fill-baseline = **8c3c3be5**（G9 波 2；重锚不清账） |
+| 命名不一致 | 91 raw / **7 normalized**（基线维持；增量均为别名自愈型） |
+| 基线/标签 | auto-fill-baseline = **30d9480c**（G13 舰队波+H2；重锚不清账） |
 
 **关键认知**：类型体系的工作重心已从"推断"转移到"消费"——快照里
 19K 函数的伪代码现在带着 this 类型、~19.7K 个类型化局部变量和结构化
@@ -2360,7 +2365,7 @@ marker&completed 对账 **0 幽灵** / readiness READY
 | 波 | 内容 | 前置 | 方法 | 预期净增 | 估时 |
 |---|---|---|---|---|---|
 | **H1 即时收割** | 319 GENERATED 直驱 | 无 | g5_fleet 直驱（`.omo/g11_fleet_driver.py` 现成） | +80~150 | 1 波 ~15 min |
-| **H2 A1 命名轮** | 529 distinct 成员（头部：CCFileClass@100/Cell@56/CheckListClass@280/LayerClass@244/NullModemClass@56…；G10 跳过名单逐一复核） | 无（快照消费为主，IDA 在线增强） | 三源证据表 → rename_symbol 四方同步 → member_lookup/_member_by_name 双体系 | 解锁 #2 全部 605 + #11 member 长尾 | 2-3 会话 |
+| **H2 A1 命名轮** | 529 distinct 成员（头部：CCFileClass@100/Cell@56/CheckListClass@280/LayerClass@244/NullModemClass@56…；G10 跳过名单逐一复核）——**G13 后 til 侧天花板已到**（til 占位 236/无覆盖 283/interior 18 诚实搁置），剩余需 YRpp+ctor 三源证据 | 无（快照消费为主，IDA 在线增强）；**YRpp submodule 为空需先补齐** | 三源证据表 → rename_symbol 四方同步 → member_lookup/_member_by_name 双体系 | 解锁 #2 全部 605 + #11 member 长尾 | 2-3 会话 |
 | **H3 机械小 Fry** | param-mismatch ~110 + free-this 46 + IDA-ism 24 + broken-arrow 31（live） | IDA 在线（broken-arrow/部分签名） | sigfix/defix 脚本化批产 + live 重取 | +120~180 | 1 会话 |
 | **H4 舰队波 2** | H2/H3 解锁块直驱（raw-this 605 + member ~150） | H2+H3 | g5_fleet 直驱 | +250~400 | 1-2 波 |
 | **H5 语义翻译主线** | too-long 2,037 + goto 328 = **2,365**（持久主体） | 无硬前置（H2 提升可读性） | **agent 舰队 MCP 全流程**（G3 范式：3 agent 分桶 + CFG 双射规则书 + FAIL 自动回滚）；优先序 = 调用频次 × 类核心度（building.cpp 71 / TechnoClass 族 / 工厂生产链 → UI/INI/网络）；手动批 G10 实测 ~9/会话含考古，agent 舰队 G3 实测 +118/波 | 每波 +60~120 | **主体 ≈ 15-25 会话** |

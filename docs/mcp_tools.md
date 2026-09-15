@@ -154,7 +154,7 @@ IDA MCP（`127.0.0.1:13337`）的连接状态**非持久，IDA 可能无效**：
 - `efv_cpp_events.py` 已排除函数定义签名被误识别为 PascalCase 自调用的情况；
   `Func(...) {` / `Func(...) const {` 不再生成伪造的 `CALL(Func)` 事件。
 - 修改共享 verifier/event extractor 后，必须用退出码回归已 completed 函数
-  （抽样回归先例：G5 119/120、G12 118/120）。completed 池现约 11,788 个（G12 诚实口径），
+  （抽样回归先例：G5 119/120、G12 118/120）。completed 池现约 11,843 个（G13 诚实口径），
   全量回归改抽样 + 按桶回归。
 - MCP HTTP 常驻服务不会热加载 Python 源码。修改服务器后需重启服务；否则本地
   直跑结果与 HTTP 工具返回可能暂时不一致。
@@ -164,20 +164,21 @@ IDA MCP（`127.0.0.1:13337`）的连接状态**非持久，IDA 可能无效**：
 - 常驻 HTTP 服务按 `member_lookup.json` mtime 失效缓存；修改服务器源码后仍需重启服务，源码不会热加载。
 - 隔离回归：`python tools/test_rename_symbol.py`；MCP heavy smoke 会验证真实含 `::` 的 dry-run。
 
-## 地址对应现状（2026-09-14 G10 会话后）
+## 地址对应现状（2026-09-15 G13 会话后）
 
-- 函数注解审计：matched **10,175** / missing with known address **0** /
-  addr mismatch **0**（G9 波 2 的 6 个同名歧义已随 marker&completed 对账清零）/
-  unknown in signals **1,706**（helper/别名形态，翻译时甄别）。
+- 函数注解审计：matched **10,157** / missing with known address **1**
+  （IsCrushable 0x5f6cd0 定义记录在 unit.cpp 遗留损坏区，挂账）/
+  addr mismatch **0** / unknown in signals **1,697**（helper/别名形态，翻译时甄别）。
 - 全局变量注解审计：annotated **13,582+** / missing **0**。
   审计器已跳过 `[IDA decompile]` 伪码块、inline ASM 操作数，以及**已在别处
   有注解声明的同名命中**（G8 后两遍扫描——舰队译文体保留的 IDA 局部声明
   `CHAR Buffer[1024];` 影射已注解全局，无注解义务）。
-- `signals.json` 当前 MCP completed **11,788** / pending **4,840**（G12 口径：
-  G11 的 11,696 + 92 H1 舰队波——验证器下标全局事件/fn-ptr 嵌套括号双修复后；G10 的
-  HTTP 回填有 23 条 cache 本身被输出预算截断，对截断真值验证通过的完成是假
-  阳性；marker&completed 对账 = 0）；`_by_name` 与主表函数名集合一致。
-- `member_lookup.json` 1,651 类（G11 后；vt_ 符号 515 新增入 e4_globals/signals）；**注意
+- `signals.json` 当前 MCP completed **11,843** / pending **4,771**（G13 口径：
+  G12 的 11,788 + 47 舰队波 109 桶 + 8 H2 unit.cpp 手术——记录级确定性重建
+  管线护航；marker&completed 对账 = 0）；`_by_name` 与主表函数名集合一致。
+- `member_lookup.json` 1,651 类（G13 后：til 全量导出合并 +503 语义成员 / 22 类，
+  源标 `g13-til-live`；**合并守卫 = 占位符过滤 + 同名异位冲突整批剔除 + mbn 漂移族
+  规避**——TechnoClass 中段 +4/+12/+188 三族争议区三源三值再实证）；**注意
   `signals._member_by_name` 是 resolver 消费的独立体系**，与 member_lookup
   漂移不同步会错解析（G10 曾修正 BulletTypeClass 65 条）；BuildingTypeClass
   3800 区段已按 IDA til 重排，get_context 不再对该区段发出已知坏区警告。
