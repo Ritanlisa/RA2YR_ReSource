@@ -15266,3 +15266,7 @@ extern void* vt_WWMouseClass;  // data: 0x7F7B2C
 extern void* vt_type_info;  // data: 0x7F9594
 extern void* vt__com_error;  // data: 0x7FA498
 extern wchar_t DataGlobal_AC4D30[32904];  // data: 0xAC4D30
+extern char DataGlobal_83D4E4[37228];  // data: 0x83D4E4  (RulesINI IQ-section key table)
+extern int DataGlobal_89A318;  // data: 0x89A318  (CellClass setOverlayType matrix scalar)
+extern char DataGlobal_833240[78864];  // data: 0x833240  (GameSettings::Read INI key table)
+extern char DataGlobal_83F158[29944];  // data: 0x83F158  (ScenarioClass network config key table)
