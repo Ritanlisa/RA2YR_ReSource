@@ -14628,24 +14628,21 @@ retn
 
 // 0x5B6EB0
 namespace gamemd { void Gap2Recv_5B6EB0::UI_Setup(void* Format, unsigned int a3, int a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5B6EB0(HWND *this, wchar_t *Format, unsigned int a3, int a4)
 {
-  HWND DlgItem; // edi
-  int (__usercall *v5)@<eax>(char@<cf>, char@<zf>); // esi
-  wchar_t Buffer[256]; // [esp+8h] [ebp-200h] BYREF
-
-  if ( a4 ) /*0x5b6ec1*/
+    HWND DlgItem;
+    int (__usercall *v5)@<eax>(char@<cf>, char@<zf>);
+    wchar_t Buffer[256];
+    if ( a4 )
   {
-    DlgItem = GetDlgItem(*this, 1343); /*0x5b6ed1*/
-    if ( DlgItem ) /*0x5b6ed5*/
+    DlgItem = GetDlgItem(*(void**)this, 1343);
+    if ( DlgItem )
     {
-      if ( a3 >= 8 ) /*0x5b6ee1*/
-        v5 = Math::InitDegToRad; /*0x5b6ef1*/
-      else
-        v5 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))MEMORY[0x8316A8][a3]; /*0x5b6ee8*/
-      swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, a4); /*0x5b6f0a*/
-      DrawDialogText((LPARAM)v5, Buffer, DlgItem); /*0x5b6f19*/
+    if ( a3 >= 8 )
+    v5 = Math::InitDegToRad;
+    else
+    v5 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))DataGlobal_8316A8[a3];
+    swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, a4);
+    DrawDialogText((LPARAM)v5, Buffer, DlgItem);
     }
   }
 }

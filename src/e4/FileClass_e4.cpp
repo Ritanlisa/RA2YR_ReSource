@@ -346,20 +346,16 @@ int __thiscall FileClass_Close(_DWORD *this)
 // 0x76F020
 int FileClass::GetState()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall FileClass::GetState(_DWORD *this)
 {
-  return *(this + 1); /*0x76f023*/
+    return this->FilePointer;
 }
 }
 
 // 0x76F070
 int FileClass::SetState()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall FileClass::SetState(_DWORD *this)
 {
-  return *(this + 1); /*0x76f073*/
+    return this->FilePointer;
 }
 }
 

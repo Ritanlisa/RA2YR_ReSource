@@ -7,10 +7,8 @@
 namespace gamemd {
 int AbstractClass::getMapCoords()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractClass::sub_426A80(unsigned __int16 *this)
 {
-  return *(this + 81); /*0x426a89*/
+    return this->buildtimeDefensesMult;
 }
 }
 } // namespace gamemd

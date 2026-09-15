@@ -2125,38 +2125,35 @@ LABEL_180:
 namespace gamemd {
 int SuperClass::PowerDrainUpdate(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SuperClass::_vt13(int this, int *a2)
 {
-  int v3; // eax
-  int v4; // ecx
-  int v5; // edx
-  int v6; // edx
-  int v7; // eax
-  int result; // eax
-  int v9; // eax
-
-  v3 = AbstractClass::ProcessPower((#378 *)this); /*0x6ce029*/
-  LOBYTE(v3) = *(_BYTE *)(this + 109); /*0x6ce02e*/
-  Power::FlagProcess(a2, v3); /*0x6ce034*/
-  LOBYTE(v4) = *(_BYTE *)(this + 110); /*0x6ce039*/
-  Power::FlagProcess(a2, v4); /*0x6ce03f*/
-  LOBYTE(v5) = *(_BYTE *)(this + 111); /*0x6ce044*/
-  Power::FlagProcess(a2, v5); /*0x6ce04a*/
-  Power::TimerProcess(this->SuperClass_field_0x78); /*0x6ce055*/
-  Power::TimerProcess(this->SuperClass_field_0x7C); /*0x6ce060*/
-  LOBYTE(v6) = (unsigned char)this->SuperClass_field_0x60; /*0x6ce065*/
-  v7 = Power::FlagProcess(a2, v6); /*0x6ce06b*/
-  LOBYTE(v7) = (unsigned char)this->SuperClass_field_0x6C; /*0x6ce070*/
-  Power::FlagProcess(a2, v7); /*0x6ce076*/
-  result = this->SuperClass_field_0x68; /*0x6ce07b*/
-  if ( result ) /*0x6ce080*/
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int result;
+    int v9;
+    v3 = AbstractClass::ProcessPower((AbstractClass *)this);
+    LOBYTE(v3) = this->Granted;
+    Power::FlagProcess(a2, v3);
+    LOBYTE(v4) = this->OneTime;
+    Power::FlagProcess(a2, v4);
+    LOBYTE(v5) = this->IsCharged;
+    Power::FlagProcess(a2, v5);
+    Power::TimerProcess(this->SuperClass_field_0x78);
+    Power::TimerProcess(this->SuperClass_field_0x7C);
+    LOBYTE(v6) = (unsigned char)this->SuperClass_field_0x60;
+    v7 = Power::FlagProcess(a2, v6);
+    LOBYTE(v7) = (unsigned char)this->SuperClass_field_0x6C;
+    Power::FlagProcess(a2, v7);
+    result = this->SuperClass_field_0x68;
+    if ( result )
   {
-    Power::TimerProcess(*(unsigned __int8 *)(result + 405)); /*0x6ce08d*/
-    v9 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->SuperClass_field_0x68 + 4) + 16))(this->SuperClass_field_0x68 + 4); /*0x6ce09c*/
-    return Power::TimerProcess(v9); /*0x6ce0a2*/
+    Power::TimerProcess(*(unsigned char *)(result + 405));
+    v9 = (*(int (__stdcall **)(int))(*(int *)(this->SuperClass_field_0x68 + 4) + 16))(this->SuperClass_field_0x68 + 4);
+    return Power::TimerProcess(v9);
   }
-  return result; /*0x6ce0a7*/
+    return result;
 }
 }
 } // namespace gamemd

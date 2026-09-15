@@ -473,19 +473,16 @@ char __thiscall DSurface_RestoreIfLost(int *this)
 // 0x4BB080
 int DSurface::BlitPart(int a2, int a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DSurface_BlitPart(int *this, int a2, int a3, int a4, int a5, int a6)
 {
-  int v7; // ebx
-  int v8; // eax
-  int v9; // eax
-  _BYTE v11[28]; // [esp+Ch] [ebp-20h] BYREF
-  _BYTE v12[4]; // [esp+28h] [ebp-4h] BYREF
-
-  v7 = *this; /*0x4bb098*/
-  v8 = (*(int (__thiscall **)(int, _BYTE *, int, int, int))(*(_DWORD *)a3 + 120))(a3, v11, a4, a5, a6); /*0x4bb0a6*/
-  v9 = (*(int (__thiscall **)(int *, _BYTE *, int, int, int))(*this + 120))(this, v12, a5, a3, v8); /*0x4bb0b9*/
-  return (*(int (__thiscall **)(int *, int))(v7 + 12))(this, v9); /*0x4bb0c2*/
+    int v7;
+    int v8;
+    int v9;
+    char v11[28];
+    char v12[4];
+    v7 = *(void**)this;
+    v8 = (*(int (__thiscall **)(int, char *, int, int, int))(*(int *)(a3) + 120))(a3, v11, a4, a5, a6);
+    v9 = this->GetRect(v12, a5, a3, v8);
+    return (*(int (__thiscall **)(int *, int))(v7 + 12))(this, v9);
 }
 }
 

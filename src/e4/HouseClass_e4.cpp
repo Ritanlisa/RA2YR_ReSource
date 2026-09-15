@@ -153,11 +153,9 @@ int __stdcall HouseClass_RevealShroudForAllies(char a1, int a2)
 namespace gamemd {
 unsigned int * HouseClass::vt_placeholder_09()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall HouseClass_24_::sub_4F2B40(_DWORD *this)
 {
-  ++*(this + 2); /*0x4f2b42*/
-  return this; /*0x4f2b45*/
+    ++this->vtable2;
+    return this;
 }
 }
 } // namespace gamemd
@@ -166,11 +164,9 @@ _DWORD *__thiscall HouseClass_24_::sub_4F2B40(_DWORD *this)
 namespace gamemd {
 unsigned int * HouseClass::vt_placeholder_10()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall HouseClass_24_::sub_4F2B50(_DWORD *this)
 {
-  --*(this + 2); /*0x4f2b52*/
-  return this; /*0x4f2b55*/
+    --this->vtable2;
+    return this;
 }
 }
 } // namespace gamemd

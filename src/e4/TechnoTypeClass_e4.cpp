@@ -1572,17 +1572,15 @@ int __thiscall TechnoTypeClass::SaveLoad_Prefix_0(
 // 0x717AF0
 unsigned int * TechnoTypeClass::Constructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_717AF0(_DWORD *this)
 {
-  *(this + 1) = 0; /*0x717af4*/
-  *(this + 2) = 0; /*0x717af7*/
-  *((_BYTE *)this + 12) = 1; /*0x717afa*/
-  *((_BYTE *)this + 13) = 0; /*0x717afe*/
-  *(this + 5) = 10; /*0x717b01*/
-  *(this + 4) = 0; /*0x717b08*/
-  *this = &vt_TypeList_ParticleSystemTypeClass_const; /*0x717b0b*/
-  return this; /*0x717b11*/
+    this->vtable1 = 0;
+    this->vtable2 = 0;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    this->abstractFlags = 10;
+    this->uniqueId = 0;
+    *(void**)this = &vt_TypeList_ParticleSystemTypeClass_const;
+    return this;
 }
 }
 

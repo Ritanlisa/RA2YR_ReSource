@@ -1004,25 +1004,23 @@ _DWORD *__thiscall sub_49ECD0(_DWORD *this, int a2, int a3)
 } }
 // 0x49F090
 namespace gamemd { void* CampaignClass::Constructor_0(int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_49F090(_DWORD *this, int a2, int a3)
 {
-  *(this + 1) = 0; /*0x49f09b*/
-  *(this + 2) = a2; /*0x49f09e*/
-  *((_BYTE *)this + 12) = 1; /*0x49f0a1*/
-  *((_BYTE *)this + 13) = 0; /*0x49f0a5*/
-  *this = &vt_VectorClass_DynamicVectorClass_char; /*0x49f0a8*/
-  if ( a2 ) /*0x49f0ae*/
+    this->vtable1 = 0;
+    this->vtable2 = a2;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_DynamicVectorClass_char;
+    if ( a2 )
   {
-    if ( a3 ) /*0x49f0b6*/
+    if ( a3 )
     {
-      *(this + 1) = a3; /*0x49f0b8*/
-      return this; /*0x49f0be*/
+    this->vtable1 = a3;
+    return this;
     }
-    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x49f0cd*/
-    *((_BYTE *)this + 13) = 1; /*0x49f0d0*/
+    this->vtable1 = __2_YAPAXI_Z(4 * a2);
+    this->IsAllocated = 1;
   }
-  return this; /*0x49f0bd*/
+    return this;
 }
 } }
 // 0x509610
@@ -1279,11 +1277,9 @@ AbstractClass *__thiscall ScriptClass::Construct(AbstractClass *this, AbstractCl
 } }
 // 0x6914E0
 namespace gamemd { int ScriptClass::PowerDrainUpdate(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ScriptClass::_vt13(int this, int a2)
 {
-  AbstractClass::ProcessPower((#378 *)this); /*0x6914e9*/
-  return Power::TimerProcess(*(_DWORD *)(this + 44)); /*0x6914f9*/
+    AbstractClass::ProcessPower((AbstractClass *)this);
+    return Power::TimerProcess(this->idxCurrentLine);
 }
 } }
 // 0x6916B0

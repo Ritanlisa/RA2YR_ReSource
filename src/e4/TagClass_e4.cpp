@@ -217,24 +217,21 @@ LABEL_45:
 namespace gamemd {
 int TagClass::ProcessTag(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TagClass::_vt13(int this, int *a2)
 {
-  int v3; // eax
-  int v4; // eax
-  int v5; // eax
-
-  AbstractClass::ProcessPower((#378 *)this); /*0x6e56e9*/
-  v3 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->buildingType + 4) + 16))(this->buildingType + 4); /*0x6e56f7*/
-  Power::TimerProcess(v3); /*0x6e56fd*/
-  v4 = this->firstTrigger; /*0x6e5702*/
-  if ( v4 ) /*0x6e5707*/
+    int v3;
+    int v4;
+    int v5;
+    AbstractClass::ProcessPower((AbstractClass *)this);
+    v3 = (*(int (__stdcall **)(int))(*(int *)(this->buildingType + 4) + 16))(this->buildingType + 4);
+    Power::TimerProcess(v3);
+    v4 = this->firstTrigger;
+    if ( v4 )
   {
-    v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x6e5710*/
-    v4 = Power::TimerProcess(v5); /*0x6e5716*/
+    v5 = (*(int (__stdcall **)(int))(*(int *)(v4 + 4) + 16))(v4 + 4);
+    v4 = Power::TimerProcess(v5);
   }
-  LOBYTE(v4) = this->destroyed; /*0x6e571b*/
-  return Power::FlagProcess(a2, v4); /*0x6e5726*/
+    LOBYTE(v4) = this->destroyed;
+    return Power::FlagProcess(a2, v4);
 }
 }
 } // namespace gamemd

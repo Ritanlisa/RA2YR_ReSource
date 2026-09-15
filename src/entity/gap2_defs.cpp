@@ -1261,25 +1261,19 @@ _DWORD *__thiscall AnimClass::InitRotation(
 
 // 0x447E00
 namespace gamemd { int AnimClass::initAnimation() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::DistanceToTarget(#377 *this)
 {
-  _DWORD *v2; // esi
-  _DWORD *v3; // eax
-  double v4; // st7
-  int v6; // [esp+28h] [ebp-1Ch]
-  _BYTE v7[12]; // [esp+2Ch] [ebp-18h] BYREF
-  _BYTE v8[12]; // [esp+38h] [ebp-Ch] BYREF
-  int v9; // [esp+48h] [ebp+4h]
-
-  v2 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v9 + 72))(v9, v7); /*0x447e1a*/
-  v3 = (_DWORD *)(*(int (__thiscall **)(#377 *, _BYTE *, int))(*(_DWORD *)this + 168))(this, v8, v9); /*0x447e24*/
-  v6 = v3[2] - v2[2]; /*0x447e48*/
-  v4 = Math::Sqrt( /*0x447e74*/
-         (double)(*v3 - *v2) * (double)(*v3 - *v2)
-       + (double)v6 * (double)v6
-       + (double)(v3[1] - v2[1]) * (double)(v3[1] - v2[1]));
-  return Math::RoundToInt(v4); /*0x447e81*/
+    int *v2;
+    int *v3;
+    double v4;
+    int v6;
+    char v7[12];
+    char v8[12];
+    int v9;
+    v2 = (int *)(*(int (__thiscall **)(int, char *))(*(int *)(v9) + 72))(v9, v7);
+    v3 = (int *)this->GetCoords_Alt(v8, v9);
+    v6 = v3[2] - v2[2];
+    v4 = Math::Sqrt( (double)(*v3 - *v2) * (double)(*v3 - *v2) + (double)v6 * (double)v6 + (double)(v3[1] - v2[1]) * (double)(v3[1] - v2[1]));
+    return Math::RoundToInt(v4);
 }
 } }
 

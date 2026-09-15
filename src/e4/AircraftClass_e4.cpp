@@ -335,17 +335,14 @@ LABEL_36:
 namespace gamemd {
 int AircraftClass::CanEnterCell(short * a1, IUnknown * aP2, InfantryClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AircraftClass::CanEnterCell(int this, __int16 *a1, IUnknown *aP2, InfantryClass *aP3)
 {
-  int v6; // edi
-
-  if ( !(unsigned __int8)House::IsHumanPlayer(*(#375 **)(this + 540)) ) /*0x417f89*/
-    return 0; /*0x417f92*/
-  v6 = FootClass::HandleCursorWithCheck((int *)this, a1, aP2, aP3); /*0x417faf*/
-  if ( v6 == 5 && !*(_DWORD *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 1016))(this, 0) ) /*0x417fc2*/
-    return 0; /*0x417fc7*/
-  return v6; /*0x417f94*/
+    int v6;
+    if ( !(unsigned char)House::IsHumanPlayer(*(HouseClass **)(this + 540)) )
+    return 0;
+    v6 = FootClass::HandleCursorWithCheck((int *)this, a1, aP2, aP3);
+    if ( v6 == 5 && !*(int *)this->SelectWeaponSlot(0) )
+    return 0;
+    return v6;
 }
 }
 } // namespace gamemd
@@ -395,15 +392,12 @@ int __thiscall AircraftClass::ValidateLandingCell(int this, _DWORD *a2, int a3, 
 namespace gamemd {
 char * AircraftClass::CheckLandingClearance(int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall AircraftClass::_vt93(_DWORD *this, int a2, int a3, int a4)
 {
-  char *result; // eax
-
-  result = MissionClass::GetMissionControl(this); /*0x41a593*/
-  if ( result[9] ) /*0x41a598*/
-    return (char *)(*(int (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1156))(this, 0, 1); /*0x41a5a7*/
-  return result; /*0x41a5ad*/
+    char *result;
+    result = MissionClass::GetMissionControl(this);
+    if ( result[9] )
+    return (char *)this->sub_4176F0(0, 1);
+    return result;
 }
 }
 } // namespace gamemd

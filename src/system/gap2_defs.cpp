@@ -1287,10 +1287,8 @@ int __thiscall CCFileClass_GetSize(int *this)
 } }
 // 0x473CD0
 namespace gamemd { bool CCFileClass::Destru_vt06() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall CCFileClass::Destru_vt06(int this)
 {
-  return *(_DWORD *)(this + 88) || BufferIOFileClass::Read(this); /*0x473cd7*/
+    return this->FileBuffer || BufferIOFileClass::Read(this);
 }
 } }
 // 0x473D10
@@ -4421,37 +4419,34 @@ int __thiscall CellClass::_vt18(#378 *this)
 } }
 // 0x486890
 namespace gamemd { int CellClass::CheckProperty() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CellClass::_vt22(#378 *this)
 {
-  int v1; // esi
-  int *v2; // eax
-  int v3; // ecx
-  int v4; // edx
-  int v5; // eax
-  _DWORD *v7; // ecx
-  _BYTE v8[12]; // [esp+4h] [ebp-Ch] BYREF
-  _DWORD *v9; // [esp+14h] [ebp+4h]
-
-  if ( (*((_DWORD *)this + 80) & 0x100) != 0 ) /*0x48689d*/
+    int v1;
+    int *v2;
+    int v3;
+    int v4;
+    int v5;
+    int *v7;
+    char v8[12];
+    int *v9;
+    if ( (this->flags & 0x100) != 0 )
   {
-    v1 = MEMORY[0x89E7B4]; /*0x4868a1*/
-    v2 = (int *)(*(int (__thiscall **)(#378 *, _BYTE *))(*(_DWORD *)this + 72))(this, v8); /*0x4868ad*/
-    v3 = *v2; /*0x4868b0*/
-    v4 = v2[1]; /*0x4868b2*/
-    v5 = v1 + v2[2]; /*0x4868b8*/
-    *v9 = v3; /*0x4868c0*/
-    v9[1] = v4; /*0x4868c2*/
-    v9[2] = v5; /*0x4868c5*/
-    return (int)v9; /*0x4868c8*/
+    v1 = DataGlobal_89E7B4;
+    v2 = (int *)this->GetOccupier(v8);
+    v3 = *v2;
+    v4 = v2[1];
+    v5 = v1 + v2[2];
+    *v9 = v3;
+    v9[1] = v4;
+    v9[2] = v5;
+    return (int)v9;
   }
-  else
+    else
   {
-    v7 = (_DWORD *)(*(int (__thiscall **)(#378 *, _BYTE *))(*(_DWORD *)this + 72))(this, v8); /*0x4868dc*/
-    *v9 = *v7; /*0x4868e6*/
-    v9[1] = v7[1]; /*0x4868eb*/
-    v9[2] = v7[2]; /*0x4868f2*/
-    return (int)v9; /*0x4868de*/
+    v7 = (int *)this->GetOccupier(v8);
+    *v9 = *v7;
+    v9[1] = v7[1];
+    v9[2] = v7[2];
+    return (int)v9;
   }
 }
 } }

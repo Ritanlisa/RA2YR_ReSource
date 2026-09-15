@@ -1370,20 +1370,17 @@ namespace gamemd { int BuildingClass::PushScriptAction() {
 } }
 // 0x459FF0
 namespace gamemd { void BuildingClass::initBuildingData() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall BuildingClass::sub_459FF0(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x459ff6*/
-  *(_DWORD *)(this + 16) = 0; /*0x459ff9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x45a000*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->uniqueId = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x45a006*/
-    *(_DWORD *)(this + 4) = 0; /*0x45a00e*/
+    __3_YAXPAX_Z(v2);
+    this->vtable1 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x45a011*/
-  *(_DWORD *)(this + 8) = 0; /*0x45a014*/
+    this->IsAllocated = 0;
+    this->vtable2 = 0;
 }
 } }
 // 0x45A020

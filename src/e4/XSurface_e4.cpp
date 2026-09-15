@@ -5,22 +5,18 @@
 // 0x411560
 int XSurface::Lock(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall XSurface_Lock(_DWORD *this, int a2, int a3)
 {
-  ++*(this + 3); /*0x411564*/
-  return 0; /*0x411569*/
+    ++this->LockCount;
+    return 0;
 }
 }
 
 // 0x411570
 char XSurface::Unlock()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall XSurface_Unlock(_DWORD *this)
 {
-  --*(this + 3); /*0x411574*/
-  return 1; /*0x411579*/
+    --this->LockCount;
+    return 1;
 }
 }
 

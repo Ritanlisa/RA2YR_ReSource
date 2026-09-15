@@ -118,26 +118,23 @@ int __thiscall sub_474F50(unsigned __int8 ***this, unsigned __int8 *a2, unsigned
 // 0x5F61A0
 void ObjectTypeClass::ReleaseWaveAndString()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall ObjectTypeClass_ReleaseWaveAndString(int *this)
 {
-  void *v2; // edi
-  void **v3; // edi
-
-  v2 = (void *)*this; /*0x5f61a4*/
-  if ( *this ) /*0x5f61a4*/
+    void *v2;
+    void **v3;
+    v2 = (void *)*(void**)this;
+    if ( *(void**)this )
   {
-    WaveClass::Destroy(*this); /*0x5f61ac*/
-    __3_YAXPAX_Z(v2); /*0x5f61b2*/
+    WaveClass::Destroy(*(void**)this);
+    __3_YAXPAX_Z(v2);
   }
-  v3 = (void **)*(this + 1); /*0x5f61ba*/
-  *this = 0; /*0x5f61bd*/
-  if ( v3 ) /*0x5f61c5*/
+    v3 = (void **)this->unused_9B;
+    *(void**)this = 0;
+    if ( v3 )
   {
-    String::Release(v3); /*0x5f61c9*/
-    __3_YAXPAX_Z(v3); /*0x5f61cf*/
+    String::Release(v3);
+    __3_YAXPAX_Z(v3);
   }
-  *(this + 1) = 0; /*0x5f61d7*/
+    this->unused_9B = 0;
 }
 }
 
@@ -5135,16 +5132,13 @@ int __thiscall ObjectTypeClass::loadTypeMember_57179D0(_DWORD *this, WeaponTypeC
 // 0x717A50
 int ObjectTypeClass::loadTypeMember_5717A50(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_717A50(_DWORD *this, int a2)
 {
-  int result; // eax
-
-  result = a2; /*0x717a50*/
-  if ( a2 <= 0 ) /*0x717a56*/
-    result = 1; /*0x717a58*/
-  *(this + 1) = result; /*0x717a5d*/
-  return result; /*0x717a60*/
+    int result;
+    result = a2;
+    if ( a2 <= 0 )
+    result = 1;
+    this->unused_9B = result;
+    return result;
 }
 }
 

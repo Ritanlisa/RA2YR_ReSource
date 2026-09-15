@@ -360,18 +360,15 @@ retn    4
 } } }
 // 0x4104F0
 namespace ra2 { namespace game { int AbstractClass::GetCoordsEx() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractClass::GetCoordsEx(#374 *this)
 {
-  _DWORD *v1; // ecx
-  _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
-  _DWORD *v4; // [esp+14h] [ebp+4h]
-
-  v1 = (_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *))(*(_DWORD *)this + 72))(this, v3); /*0x4104fe*/
-  *v4 = *v1; /*0x410508*/
-  v4[1] = v1[1]; /*0x41050d*/
-  v4[2] = v1[2]; /*0x410514*/
-  return (int)v4; /*0x410510*/
+    int *v1;
+    char v3[12];
+    int *v4;
+    v1 = (int *)this->GetExitCoords(v3);
+    *v4 = *v1;
+    v4[1] = v1[1];
+    v4[2] = v1[2];
+    return (int)v4;
 }
 } } }
 // 0x4105A0
@@ -648,34 +645,28 @@ namespace ra2 { namespace game { int TechnoClass::updateROFTimer() {
 } } }
 // 0x41BDD0
 namespace ra2 { namespace game { int ObjectClass::GetCoordsThunk1() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::GetCoordsThunk1(#374 *this)
 {
-  _DWORD *v1; // ecx
-  _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
-  _DWORD *v4; // [esp+14h] [ebp+4h]
-
-  v1 = (_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *))(*(_DWORD *)this + 72))(this, v3); /*0x41bdde*/
-  *v4 = *v1; /*0x41bde8*/
-  v4[1] = v1[1]; /*0x41bded*/
-  v4[2] = v1[2]; /*0x41bdf4*/
-  return (int)v4; /*0x41bdf0*/
+    int *v1;
+    char v3[12];
+    int *v4;
+    v1 = (int *)this->Delete(v3);
+    *v4 = *v1;
+    v4[1] = v1[1];
+    v4[2] = v1[2];
+    return (int)v4;
 }
 } } }
 // 0x41BE30
 namespace ra2 { namespace game { int ObjectClass::GetCoordsThunk3() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::GetCoordsThunk3(#374 *this)
 {
-  _DWORD *v1; // ecx
-  _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
-  _DWORD *v4; // [esp+14h] [ebp+4h]
-
-  v1 = (_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *))(*(_DWORD *)this + 72))(this, v3); /*0x41be3e*/
-  *v4 = *v1; /*0x41be48*/
-  v4[1] = v1[1]; /*0x41be4d*/
-  v4[2] = v1[2]; /*0x41be54*/
-  return (int)v4; /*0x41be50*/
+    int *v1;
+    char v3[12];
+    int *v4;
+    v1 = (int *)this->Delete(v3);
+    *v4 = *v1;
+    v4[1] = v1[1];
+    v4[2] = v1[2];
+    return (int)v4;
 }
 } } }
 // 0x41BEA0
@@ -877,24 +868,21 @@ char __thiscall ObjectClass::CleanupAirstrikeTarget(int this, AudioController *a
 } } }
 // 0x4263D0
 namespace ra2 { namespace game { int ObjectClass::GetDrawPosition() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::GetDrawPosition(#374 *this)
 {
-  int *v1; // eax
-  int v2; // ecx
-  int v3; // edx
-  int v4; // eax
-  _BYTE v6[12]; // [esp+8h] [ebp-Ch] BYREF
-  _DWORD *v7; // [esp+18h] [ebp+4h]
-
-  v1 = (int *)(*(int (__thiscall **)(#374 *, _BYTE *))(*(_DWORD *)this + 72))(this, v6); /*0x4263dc*/
-  v2 = *v1; /*0x4263e3*/
-  v3 = v1[1]; /*0x4263e5*/
-  v4 = v1[2]; /*0x4263e8*/
-  *v7 = v2; /*0x4263f0*/
-  v7[1] = v3; /*0x4263f2*/
-  v7[2] = v4 + 50; /*0x4263f5*/
-  return (int)v7; /*0x4263fa*/
+    int *v1;
+    int v2;
+    int v3;
+    int v4;
+    char v6[12];
+    int *v7;
+    v1 = (int *)this->Delete(v6);
+    v2 = *v1;
+    v3 = v1[1];
+    v4 = v1[2];
+    *v7 = v2;
+    v7[1] = v3;
+    v7[2] = v4 + 50;
+    return (int)v7;
 }
 } } }
 // 0x431A30
@@ -6161,25 +6149,22 @@ int __thiscall ObjectClass::CalcDrawRect(#374 *this)
 
 // 0x5F5320
 namespace ra2 { namespace game { int ObjectClass::ProcessInputKey() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::ProcessInputKey(#374 *this)
 {
-  double v2; // [esp+0h] [ebp-8h]
-  int v3; // [esp+10h] [ebp+8h]
-
-  if ( v3 == 13 ) /*0x5f532a*/
+    double v2;
+    int v3;
+    if ( v3 == 13 )
   {
-    (*(void (__thiscall **)(#374 *, int))(*(_DWORD *)this + 292))(this, 2); /*0x5f5374*/
+    this->GetCoords(2);
   }
-  else
+    else
   {
-    if ( v3 != 34 ) /*0x5f532f*/
-      return 0; /*0x5f5336*/
-    v2 = (double)*((int *)this + 27); /*0x5f533e*/
-    if ( v2 / (double)*(int *)((*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 136))(this) + 160) >= *(double *)&MEMORY[0x8871E0][1].? ) /*0x5f5363*/
-      return 10; /*0x5f536d*/
+    if ( v3 != 34 )
+    return 0;
+    v2 = (double)this->health;
+    if ( v2 / (double)*(int *)(this->COMStub_Return0_34() + 160) >= *(double *)&g_RulesClass_Instance[1].? )
+    return 10;
   }
-  return 1; /*0x5f5333*/
+    return 1;
 }
 } } }
 
@@ -6351,19 +6336,16 @@ int __thiscall ObjectClass::GetOrCreateResHandle(#374 *this)
 
 // 0x5F5C20
 namespace ra2 { namespace game { int ObjectClass::Fire() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::Fire(#374 *this)
 {
-  int *v2; // edi
-  int v3; // ebx
-  int v5; // [esp-4h] [ebp-10h]
-  int v6; // [esp+10h] [ebp+4h]
-  int v7; // [esp+14h] [ebp+8h]
-
-  v2 = (int *)(*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 136))(this); /*0x5f5c2f*/
-  v3 = *v2; /*0x5f5c33*/
-  v5 = (*(int (__thiscall **)(#374 *))(*(_DWORD *)this + 60))(this); /*0x5f5c3c*/
-  return (*(int (__thiscall **)(int *, int, int, _DWORD, int))(v3 + 148))(v2, v6, v7, 0, v5); /*0x5f5c4d*/
+    int *v2;
+    int v3;
+    int v5;
+    int v6;
+    int v7;
+    v2 = (int *)this->COMStub_Return0_34();
+    v3 = *v2;
+    v5 = this->GetMember06();
+    return (*(int (__thiscall **)(int *, int, int, int, int))(v3 + 148))(v2, v6, v7, 0, v5);
 }
 } } }
 
@@ -6570,19 +6552,16 @@ namespace ra2 { namespace game { int ObjectClass::GetCellCoords() {
 
 // 0x5F69C0
 namespace ra2 { namespace game { int ObjectClass::CoordToCell() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::CoordToCell(#374 *this)
 {
-  _DWORD *v1; // eax
-  int v3; // [esp+8h] [ebp-10h]
-  _BYTE v4[12]; // [esp+Ch] [ebp-Ch] BYREF
-  _DWORD *v5; // [esp+1Ch] [ebp+4h]
-
-  v1 = (_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *, _DWORD))(*(_DWORD *)this + 76))(this, v4, 0); /*0x5f69cc*/
-  LOWORD(v3) = *v1 / 256; /*0x5f69df*/
-  HIWORD(v3) = v1[1] / 256; /*0x5f69f3*/
-  *v5 = v3; /*0x5f6a00*/
-  return (int)v5; /*0x5f6a02*/
+    int *v1;
+    int v3;
+    char v4[12];
+    int *v5;
+    v1 = (int *)this->IsReady(v4, 0);
+    LOWORD(v3) = *v1 / 256;
+    HIWORD(v3) = v1[1] / 256;
+    *v5 = v3;
+    return (int)v5;
 }
 } } }
 
@@ -6688,18 +6667,15 @@ int __thiscall AbstractClass::_vt79(#374 *this)
 
 // 0x5F6C80
 namespace ra2 { namespace game { int ObjectClass::GetCoords_Alt() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::GetCoords_Alt(#374 *this)
 {
-  _DWORD *v1; // ecx
-  _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
-  _DWORD *v4; // [esp+14h] [ebp+4h]
-
-  v1 = (_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *))(*(_DWORD *)this + 72))(this, v3); /*0x5f6c8e*/
-  *v4 = *v1; /*0x5f6c98*/
-  v4[1] = v1[1]; /*0x5f6c9d*/
-  v4[2] = v1[2]; /*0x5f6ca4*/
-  return (int)v4; /*0x5f6ca0*/
+    int *v1;
+    char v3[12];
+    int *v4;
+    v1 = (int *)this->Delete(v3);
+    *v4 = *v1;
+    v4[1] = v1[1];
+    v4[2] = v1[2];
+    return (int)v4;
 }
 } } }
 
@@ -9833,17 +9809,12 @@ char __thiscall TechnoClass_DrawTargetLine(int *this)
 
 // 0x7010D0
 namespace ra2 { namespace game { int TechnoClass::HasValidWeapon() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass::HasValidWeapon(#377 *this)
 {
-  int result; // eax
-
-  LOBYTE(result) = !*((_BYTE *)this + 456) /*0x70110d*/
-                && (result = House::IsHumanPlayer(*((#375 **)this + 135)), (_BYTE)result)
-                && (result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 1012))(this)) != 0
-                && *(_DWORD *)result
-                && (result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 892))(this), !(_BYTE)result);
-  return result; /*0x70110f*/
+    int result;
+    LOBYTE(result) = !this->isDeactivated
+    && (result = House::IsHumanPlayer(*((HouseClass **)(this) + 135)), (char)result)
+    && (result = this->GetPoweredWeaponSlot()) != 0 && *(int *)result && (result = this->HasPassengers(), !(char)result);
+    return result;
 }
 } } }
 
@@ -11341,19 +11312,15 @@ namespace ra2 { namespace game { int TechnoClass::applyEMPulseDamage() {
 
 // 0x70DD70
 namespace ra2 { namespace game { int ObjectClass::CheckTypeFlag1681() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::CheckTypeFlag1681(#377 *this)
 {
-  return *(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 1681) == 0; /*0x70dd87*/
+    return *(char *)(this->Constructor_BitFont() + 1681) == 0;
 }
 } } }
 
 // 0x70DDA0
 namespace ra2 { namespace game { int ObjectClass::CheckTypeFlag1681_2() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::CheckTypeFlag1681_2(#377 *this)
 {
-  return *(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 1681) == 0; /*0x70ddb7*/
+    return *(char *)(this->Constructor_BitFont() + 1681) == 0;
 }
 } } }
 
@@ -11369,15 +11336,12 @@ retn
 
 // 0x70E120
 namespace ra2 { namespace game { int TechnoClass::Vt249to254() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass::Vt249to254(#377 *this)
 {
-  int v2; // edi
-  int v3; // eax
-
-  v2 = *(_DWORD *)this; /*0x70e124*/
-  v3 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 996))(this); /*0x70e126*/
-  return (*(int (__thiscall **)(#377 *, int))(v2 + 1016))(this, v3); /*0x70e135*/
+    int v2;
+    int v3;
+    v2 = *(int *)this;
+    v3 = this->CheckTypeFlag1681();
+    return (*(int (__thiscall **)(BuildingClass *, int))(v2 + 1016))(this, v3);
 }
 } } }
 

@@ -553,42 +553,39 @@ int __thiscall sub_7667F0(unsigned __int8 *this)
 namespace gamemd {
 wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t **__thiscall sub_767320(const char **this, wchar_t **a2, int a3, const wchar_t **a4)
 {
-  int v5; // eax
-  char **v6; // eax
-  const wchar_t **v7; // esi
-  char *v8; // eax
-  wchar_t **v9; // eax
-  char *v11; // eax
-  wchar_t *v12; // eax
-  wchar_t *StringCSF; // [esp-8h] [ebp-10h]
-  void *v14; // [esp+4h] [ebp-4h] BYREF
-
-  v5 = (*((int (__thiscall **)(const char **, int))*this + 5))(this, a3); /*0x76732d*/
-  v6 = FromStringInt((char **)&v14, v5); /*0x767336*/
-  ConcatStringAlloc((char **)&a3, this + 4, v6); /*0x767343*/
-  DeleteAndZero(&v14); /*0x76734c*/
-  v7 = a4; /*0x767351*/
-  if ( WideString::Length(a4) ) /*0x767357*/
+    int v5;
+    char **v6;
+    const wchar_t **v7;
+    char *v8;
+    wchar_t **v9;
+    char *v11;
+    wchar_t *v12;
+    wchar_t *StringCSF;
+    void *v14;
+    v5 = this->Vf20(a3);
+    v6 = FromStringInt((char **)&v14, v5);
+    ConcatStringAlloc((char **)&a3, this + 4, v6);
+    DeleteAndZero(&v14);
+    v7 = a4;
+    if ( WideString::Length(a4) )
   {
-    WideString::Assign((wchar_t **)&a4, (wchar_t *)MEMORY[0x8423D8]); /*0x76736a*/
-    v8 = String::GetOrEmpty((char **)&a3); /*0x76737a*/
-    StringCSF = GetStringCSF((wchar_t *)v8, 0, g_Str_File_WDTGameOptions_cpp, 22); /*0x76738c*/
-    v9 = ConcatWString((wchar_t **)&v14, v7, (const wchar_t **)&a4); /*0x767399*/
-    WideString::AssignConcat((const wchar_t **)v9, a2, StringCSF); /*0x7673a0*/
-    DeleteAndZero::Alt(&v14); /*0x7673a9*/
-    DeleteAndZero::Alt((void **)&a4); /*0x7673b2*/
+    WideString::Assign((wchar_t **)&a4, (wchar_t *)Control);
+    v8 = String::GetOrEmpty((char **)&a3);
+    StringCSF = GetStringCSF((wchar_t *)v8, 0, g_Str_File_WDTGameOptions_cpp, 22);
+    v9 = ConcatWString((wchar_t **)&v14, v7, (const wchar_t **)&a4);
+    WideString::AssignConcat((const wchar_t **)v9, a2, StringCSF);
+    DeleteAndZero::Alt(&v14);
+    DeleteAndZero::Alt((void **)&a4);
   }
-  else
+    else
   {
-    v11 = String::GetOrEmpty((char **)&a3); /*0x7673d3*/
-    v12 = GetStringCSF((wchar_t *)v11, 0, g_Str_File_WDTGameOptions_cpp, 25); /*0x7673dc*/
-    WideString::Assign(a2, v12); /*0x7673e8*/
+    v11 = String::GetOrEmpty((char **)&a3);
+    v12 = GetStringCSF((wchar_t *)v11, 0, g_Str_File_WDTGameOptions_cpp, 25);
+    WideString::Assign(a2, v12);
   }
-  DeleteAndZero((void **)&a3); /*0x7673bb*/
-  return a2; /*0x7673c3*/
+    DeleteAndZero((void **)&a3);
+    return a2;
 }
 }
 } // namespace gamemd

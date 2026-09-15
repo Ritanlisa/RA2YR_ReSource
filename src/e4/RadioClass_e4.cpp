@@ -53,30 +53,27 @@ namespace ra2 {
 namespace game {
 int RadioClass::ExecuteAction(TimerStruct * aP1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RadioClass::ExecuteAction(int this, TimerStruct *aP1, IUnknown *aP2)
 {
-  BaseClass *result; // eax
-  int i; // ecx
-  int v6; // eax
-  TimerStruct *v7; // edx
-  _DWORD *v8; // eax
-
-  Object::Unlink((#374 *)this); /*0x65aacf*/
-  result = *(BaseClass **)(this + 232); /*0x65aad4*/
-  for ( i = 0; i < (int)result; ++i ) /*0x65aade*/
+    BaseClass *result;
+    int i;
+    int v6;
+    TimerStruct *v7;
+    int *v8;
+    Object::Unlink((AnimClass *)this);
+    result = *(BaseClass **)(this + 232);
+    for ( i = 0; i < (int)result; ++i )
   {
-    v6 = *(_DWORD *)(this + 228); /*0x65aae0*/
-    v7 = *(TimerStruct **)(v6 + 4 * i); /*0x65aae6*/
-    v8 = (_DWORD *)(v6 + 4 * i); /*0x65aae9*/
-    if ( v7 == aP1 ) /*0x65aaee*/
+    v6 = this->flashing;
+    v7 = *(TimerStruct **)(v6 + 4 * i);
+    v8 = (int *)(v6 + 4 * i);
+    if ( v7 == aP1 )
     {
-      if ( (_BYTE)aP2 ) /*0x65aaf2*/
-        *v8 = 0; /*0x65aaf4*/
+    if ( (char)aP2 )
+    *v8 = 0;
     }
-    result = *(BaseClass **)(this + 232); /*0x65aafa*/
+    result = *(BaseClass **)(this + 232);
   }
-  return (int)result; /*0x65ab05*/
+    return (int)result;
 }
 }
 } // namespace game

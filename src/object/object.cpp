@@ -71,56 +71,6 @@ int __thiscall ObjectClass::Remove(#374 *this)
   }
   return result;
 }
-
-/* ASM:
-push    ecx
-push    esi
-mov     esi, ecx
-mov     al, [esi+83h]
-test    al, al
-jz      short loc_5F4518
-mov     edx, ds:0A8ECB8h
-lea     eax, [esp+8+var_4]
-push    eax
-mov     ecx, 0A8ECB8h
-mov     [esp+0Ch+var_4], esi
-call    dword ptr [edx+10h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_5F44F7
-mov     ecx, ds:0A8ECC8h
-cmp     eax, ecx
-jge     short loc_5F44F7
-dec     ecx
-cmp     eax, ecx
-mov     ds:0A8ECC8h, ecx
-jge     short loc_5F44F7
-
-loc_5F44DF:                             ; CODE XREF: ObjectClass__Remove+55↓j
-mov     ecx, ds:0A8ECBCh
-inc     eax
-mov     edx, [ecx+eax*4]
-mov     [ecx+eax*4-4], edx
-mov     ecx, ds:0A8ECC8h
-cmp     eax, ecx
-jl      short loc_5F44DF
-
-loc_5F44F7:                             ; CODE XREF: ObjectClass__Remove+28↑j
-; ObjectClass__Remove+32↑j ...
-mov     ecx, 87F7E8h
-mov     byte ptr [esi+83h], 0
-call    MapClass__GetScrollMode
-cmp     eax, esi
-jnz     short loc_5F4518
-push    0
-mov     ecx, 87F7E8h
-call    MapClass__SetScrollMode
-
-loc_5F4518:                             ; CODE XREF: ObjectClass__Remove+C↑j
-; ObjectClass__Remove+6A↑j
-pop     esi
-pop     ecx
-retn
-*/
 }
 
 // IDA: 0x5F65F0 -- ObjectClass::Destroy (146B)

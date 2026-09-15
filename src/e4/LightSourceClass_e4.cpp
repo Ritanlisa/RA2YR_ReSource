@@ -91,37 +91,34 @@ int __thiscall sub_554830(int this)
 // 0x555150
 LightSourceClass * LightSourceClass::CopyTo(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-LightSourceClass *__thiscall LightSourceClass::CopyTo(void **this, char a2)
 {
-  int v3; // eax
-  void **v5; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &LightSourceClass::`vftable'; /*0x555156*/
-  *(this + 1) = &LightSourceClass::`vftable'; /*0x55515c*/
-  *(this + 2) = &LightSourceClass::`vftable'; /*0x555163*/
-  *(this + 3) = &vt_LightSourceClass; /*0x55516a*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x555171*/
-  v5 = this; /*0x555186*/
-  v3 = ((int (__thiscall *)(DynamicVector **, void ***))dword_ABCA10->field_10)(&dword_ABCA10, &v5); /*0x55518a*/
-  if ( v3 != -1 && v3 < g_BridgeCellPool && v3 < --g_BridgeCellPool ) /*0x5551a5*/
+    int v3;
+    void **v5;
+    *(void**)this = vt_LightSourceClass;
+    *(this + 1) = (unsigned int)vt_LightSourceClass;
+    *(this + 2) = (unsigned int)vt_LightSourceClass;
+    *(this + 3) = &vt_LightSourceClass;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    v5 = this;
+    v3 = ((int (__thiscall *)(DynamicVector **, void ***))DataGlobal_ABCA10->field_10)(&DataGlobal_ABCA10, &v5);
+    if ( v3 != -1 && v3 < g_BridgeCellPool && v3 < --g_BridgeCellPool )
   {
-    do /*0x5551bd*/
+    do
     {
-      ++v3; /*0x5551ad*/
-      *(_DWORD *)&dword_ABCA14->__pad_0[4 * v3 - 4] = *(_DWORD *)&dword_ABCA14->__pad_0[4 * v3]; /*0x5551b1*/
+    ++v3;
+    *(int *)&DataGlobal_ABCA14->__pad_0[4 * v3 - 4] = *(int *)&DataGlobal_ABCA14->__pad_0[4 * v3];
     }
-    while ( v3 < g_BridgeCellPool ); /*0x5551bd*/
+    while ( v3 < g_BridgeCellPool );
   }
-  if ( this->Activated ) /*0x5551bf*/
+    if ( *(char *)(this + 72) )
   {
-    this->Activated = 0; /*0x5551ca*/
-    TacticalClass::ScrollView(this, 0); /*0x5551ce*/
+    *(char *)(this + 72) = 0;
+    TacticalClass::ScrollView(this, 0);
   }
-  AbstractClass::DTOR(this); /*0x5551d5*/
-  if ( (a2 & 1) != 0 ) /*0x5551df*/
-    __3_YAXPAX_Z(this); /*0x5551e2*/
-  return (LightSourceClass *)this; /*0x5551ec*/
+    AbstractClass::DTOR(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (LightSourceClass *)this;
 }
 }
 

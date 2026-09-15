@@ -2090,44 +2090,6 @@ int __thiscall InfantryClass::ComputeDeploySpeedFactor(int this)
   }
   return v2;
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-call    TechnoClass__ComputeSpeedFactorEx
-mov     ecx, eax
-mov     al, [esi+6DBh]
-test    al, al
-jz      short loc_521DC5
-mov     eax, [esi+6C0h]
-mov     dl, [eax+0EBDh]
-test    dl, dl
-jz      short loc_521DBC
-mov     eax, 55555555h
-pop     esi
-imul    ecx
-sub     edx, ecx
-sar     edx, 1
-mov     eax, edx
-shr     eax, 1Fh
-add     edx, eax
-add     ecx, edx
-mov     eax, ecx
-retn
-; ---------------------------------------------------------------------------
-
-loc_521DBC:                             ; CODE XREF: InfantryClass__ComputeDeploySpeedFactor+22↑j
-mov     eax, ecx
-cdq
-sub     eax, edx
-sar     eax, 1
-add     ecx, eax
-
-loc_521DC5:                             ; CODE XREF: InfantryClass__ComputeDeploySpeedFactor+12↑j
-mov     eax, ecx
-pop     esi
-retn
-*/
 }
 
 // 0x5218e0
@@ -8023,43 +7985,6 @@ int __thiscall InfantryClass::InitProductionLimits(int this)
   }
   return result;
 }
-
-/* ASM:
-mov     eax, [ecx+6C0h]
-mov     dl, [eax+0D30h]
-test    dl, dl
-jz      short loc_5227E5
-mov     eax, [ecx+21Ch]
-mov     byte ptr [ecx+1D8h], 1
-mov     [ecx+51Ch], eax
-mov     eax, [eax+1E8h]
-test    eax, eax
-jnz     short loc_5227C0
-mov     edx, ds:8871E0h
-mov     eax, [edx+0D58h]
-mov     [ecx+518h], eax
-retn
-; ---------------------------------------------------------------------------
-
-loc_5227C0:                             ; CODE XREF: InfantryClass__InitProductionLimits+2B↑j
-mov     edx, ds:8871E0h
-cmp     eax, 1
-jnz     short loc_5227D8
-mov     eax, [edx+0D5Ch]
-mov     [ecx+518h], eax
-retn
-; ---------------------------------------------------------------------------
-
-loc_5227D8:                             ; CODE XREF: InfantryClass__InitProductionLimits+49↑j
-mov     eax, [edx+0D60h]
-mov     [ecx+518h], eax
-retn
-; ---------------------------------------------------------------------------
-
-loc_5227E5:                             ; CODE XREF: InfantryClass__InitProductionLimits+E↑j
-mov     byte ptr [ecx+1D8h], 0
-retn
-*/
 }
 
 // 0x522640

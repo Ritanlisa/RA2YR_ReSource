@@ -7,18 +7,15 @@ namespace ra2 {
 namespace game {
 int ObjectClass::GetCoordsThunk2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::GetCoordsThunk2(#374 *this)
 {
-  _DWORD *v1; // ecx
-  _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
-  _DWORD *v4; // [esp+14h] [ebp+4h]
-
-  v1 = (_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *))(*(_DWORD *)this + 72))(this, v3); /*0x41be0e*/
-  *v4 = *v1; /*0x41be18*/
-  v4[1] = v1[1]; /*0x41be1d*/
-  v4[2] = v1[2]; /*0x41be24*/
-  return (int)v4; /*0x41be20*/
+    int *v1;
+    char v3[12];
+    int *v4;
+    v1 = (int *)this->Delete(v3);
+    *v4 = *v1;
+    v4[1] = v1[1];
+    v4[2] = v1[2];
+    return (int)v4;
 }
 }
 } // namespace game
@@ -1727,19 +1724,16 @@ namespace ra2 {
 namespace game {
 int ObjectClass::GetCell()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectClass::GetCell(#374 *this)
 {
-  _DWORD *v1; // eax
-  int v3; // [esp+8h] [ebp-14h]
-  int v4; // [esp+Ch] [ebp-10h] BYREF
-  _BYTE v5[12]; // [esp+10h] [ebp-Ch] BYREF
-
-  v1 = (_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *, _DWORD))(*(_DWORD *)this + 76))(this, v5, 0); /*0x5f6a1c*/
-  LOWORD(v3) = *v1 / 256; /*0x5f6a2f*/
-  HIWORD(v3) = v1[1] / 256; /*0x5f6a48*/
-  v4 = v3; /*0x5f6a56*/
-  return (int)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v4); /*0x5f6a5f*/
+    int *v1;
+    int v3;
+    int v4;
+    char v5[12];
+    v1 = (int *)this->IsReady(v5, 0);
+    LOWORD(v3) = *v1 / 256;
+    HIWORD(v3) = v1[1] / 256;
+    v4 = v3;
+    return (int)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v4);
 }
 }
 } // namespace game

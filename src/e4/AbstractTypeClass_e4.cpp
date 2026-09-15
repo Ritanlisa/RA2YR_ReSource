@@ -173,13 +173,11 @@ char __thiscall AbstractTypeClass::LoadFromINI(int this, AbstractTypeClass *aP1)
 // 0x410BE0
 int AbstractTypeClass::ProcessPower(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractTypeClass::ProcessPower(char *this, AbstractClass *aP1)
 {
-  AbstractClass::ProcessPower((#378 *)this); /*0x410be9*/
-  Checksum::AddString((unsigned int *)aP1, (AbstractClass *)this + 1); /*0x410bf4*/
-  Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this + 100)); /*0x410bff*/
-  return Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this + 61)); /*0x410c0f*/
+    AbstractClass::ProcessPower((AbstractClass *)this);
+    Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this) + 1);
+    Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this + 100));
+    return Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this + 61));
 }
 }
 

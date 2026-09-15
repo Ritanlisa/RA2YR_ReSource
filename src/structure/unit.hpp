@@ -67,50 +67,50 @@ public:
     int UnloadPassengers(int placementType);  // 0x6B4BE0
     int ProcessExitQueue();  // 0x6B7230
     int CreateUnloadPlacementCraters(CellStruct* cell);  // 0x6B6080
-    int GetExitCell();  // 0x54E3B0
+    int GetExitCell(AbstractClass* aP1, AbstractClass* aP2);  // 0x54E3B0
 
     // === Phase 3: Deploy ===
     int Deploy();  // 0x7192F0
     int DeployToBuilding();  // 0x738D30
     int SimpleDeployerDeploy();  // 0x739AC0
     int SimpleDeployerUndeploy();  // 0x739CD0
-    int MissionDispatch();  // 0x737430
+    int MissionDispatch(int* a2, int a3, int* a4);  // 0x737430
 
     // === Phase 3: Movement ===
     virtual int CalcMoveTarget();  // 0x7359F0
-    virtual int AssignDestination_SyncLog();  // 0x741970
-    virtual int ApproachTarget_DisallowMoving();  // 0x7414E0
+    virtual int AssignDestination_SyncLog(__int64 a2);  // 0x741970
+    virtual int ApproachTarget_DisallowMoving(char a2);  // 0x7414E0
     int UpdateRotation_TurretFacing_EMP();  // 0x736990
     int Scatter(CellStruct* threatPos, bool a3, bool a4);  // 0x743A50
-    int IsCellBlockedByBridge();  // 0x458A00
-    int CompareCoordinateMagnitude();  // 0x4D03D0
-    int processEnterTarget();  // 0x7178B0
+    int IsCellBlockedByBridge(void* aP1);  // 0x458A00
+    int CompareCoordinateMagnitude(short* a2);  // 0x4D03D0
+    int processEnterTarget(int a2);  // 0x7178B0
     int CheckForNearbyEnemies();  // 0x7468C0
     int OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, CellStruct* sourceCell, int a8, bool a9, void* a10);  // 0x737C90
 
     // === Phase 3: Weapon Switching ===
-    int SetTurret();  // 0x70DC70
-    virtual int EvaluateTarget();  // 0x73F0A0
-    bool CanCrushTarget();  // 0x7438F0
+    int SetTurret(unsigned int a2);  // 0x70DC70
+    virtual int EvaluateTarget(int a2, int a3, int a4, int a5, char a6);  // 0x73F0A0
+    bool CanCrushTarget(TechnoClass* aP1);  // 0x7438F0
     bool IsDeactivated();  // 0x70FBD0 (reads TechnoClass isDeactivated@+0x1C8)
 
     // === Phase 3: Construction & Destruct ===
-    static int Create();  // 0x6B4A50
+    static int Create(void* aP0, void* aP1, int aP2);  // 0x6B4A50
     int ReadINI();  // 0x6B4C80
-    int DestroySmudge();  // 0x6B4FA0
+    int DestroySmudge(char a2);  // 0x6B4FA0
     void Destructor();  // 0x735780
 
     // === Phase 3: Stream & Save ===
-    virtual int LoadFromStream();  // 0x744470
-    virtual int SaveLoadData();  // 0x6B4EA0
-    virtual int SaveState();  // 0x6B4F00
+    virtual int LoadFromStream(void* a0, void* aP1);  // 0x744470
+    virtual int SaveLoadData(ObjectClass* aP1, int aP1a);  // 0x6B4EA0
+    virtual int SaveState(void* aP0, void* a1, void* aP2);  // 0x6B4F00
 
     // === Phase 3: Per-Frame & AI ===
     int PowerDrainUpdate(int a2) override;  // 0x744640
     virtual int PerFrameUpdate();  // 0x746810
-    virtual int HandleTargetDestroyed();  // 0x7446E0
+    virtual int HandleTargetDestroyed(void* a1, void* aP2);  // 0x7446E0
     int CheckStatus();  // 0x6B4F20
-    int ClearTargetRef();  // 0x6B7C60
+    int ClearTargetRef(int a2);  // 0x6B7C60
     int ProcessIdleOrders();  // 0x6B7BB0
     int StubReturn176();  // 0x6B4F30
     int StubReturn29();  // 0x6B4F40

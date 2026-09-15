@@ -4333,9 +4333,9 @@ int AircraftClass::ProcessReturnToBase()
     void *v5;
     int v7;
     int v8;
-    if ( this->FootClass_field_5A4 )
+    if ( this->Archive )
   {
-    if ( this->FootClass_field_5A4 == (unsigned int *)((int (__thiscall *)(unsigned int **))(*(void**)this)[111])(this) )
+    if ( this->Archive == (unsigned int *)((int (__thiscall *)(unsigned int **))(*(void**)this)[111])(this) )
     ((void (__thiscall *)(unsigned int **, int, int))(*(void**)this)[288])(this, 0, 1);
   }
     else
@@ -5633,17 +5633,14 @@ int AircraftClass::GetCursorOverObject()
 // 0x41b920
 int AircraftClass::IsHeightAboveThreshold()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall AircraftClass::_vt21(_BYTE *this)
 {
-  int v1; // eax
-
-  v1 = *((_DWORD *)this + 433);
-  if ( v1 != *(_DWORD *)(MEMORY[0x87F7E8][7806] + 1248) && v1 != *(_DWORD *)(MEMORY[0x87F7E8][7806] + 1300) )
-    return ObjectClass::IsHeightAboveThreshold_0((#374 *)this);
-  if ( !*((_DWORD *)this + 413) )
+    int v1;
+    v1 = this->Type;
+    if ( v1 != *(int *)(DataGlobal_87F7E8[7806] + 1248) && v1 != *(int *)(DataGlobal_87F7E8[7806] + 1300) )
+    return ObjectClass::IsHeightAboveThreshold_0((AnimClass *)this);
+    if ( !this->Locomotor )
     WinAPI::Wrapper(-2147467261);
-  return (*(unsigned __int8 (__stdcall **)(_DWORD))(**((_DWORD **)this + 413) + 128))(*((_DWORD *)this + 413)) != 0;
+    return (*(unsigned char (__stdcall **)(int))(**((int **)(this) + 413) + 128))(this->Locomotor) != 0;
 }
 
 /* ASM:
