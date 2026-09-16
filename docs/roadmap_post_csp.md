@@ -4,10 +4,14 @@
 > 本文档是此基线上的完整后续工作分解。前情：AGENTS.md「最近完成」各条目、
 > `docs/coverage.md`、memory `type-infer-oop-rebuild-roadmap`。
 >
-> **执行状态首查表（2026-09-15 G13 会话更新：证据补全 til 全量导出 + OO refresh + 舰队波 + H2 手术）**：
+> **执行状态首查表（2026-09-16 G14 会话更新：YRpp 腿就位 + A1 命名轮 + align bug 修正 + 舰队两波）**：
 >
 > | 任务 | 状态 | 摘要 |
 > |---|---|---|
+> | **G14 证据补全 + A1 命名轮** | ✅ **完成（2026-09-16，提交 ef0da229）** | **YRpp submodule 修复**（gitlink+浅克隆，A1 三源证据腿就位）；**vtable 槽位 +11**（ObjectClass@124 IsAboveScreenMargin 二进制定案）；**DataGlobal +14**（IQ/GameSettings/WOL 键表 blob 头族 + -1 哨兵族，next-layer 3 波全清）；**A1 成员命名 109 项**（新工具 .omo/g14_a1_yrpp.py：YRpp 声明序+多锚对齐+til 锚定+系统性漂移检测器）；**AnimClass sizeof=456 二进制定案**（vtable 槽 48 mov eax,1C8h——class_layouts 6324/til 90200 双双证伪）；OO refresh rewritten 4,496 |
+> | **G14 align bug 修正** | ✅ **完成（提交 613c0cd7）** | **根因：align() 对 12B TimerStruct/CoordStruct 误 8 对齐 → 链式 +4 位移**；二进制裁决 = TeamClass ctor timer1@88/96、timer2@100/108、Tag@112（12B 步长）；**43/109 已应用项移除+修正版重应用 53 项**（引用排查 25 处全在 pending 伪码、已完成译体零引用——事件对称门控防假完成实证）；Team/Trigger/Weapon -4 漂移族全部消解 |
+> | **G14 舰队两波** | ✅ **completed 11,843 → 11,894 / pending 4,717（0f60d26c + 613c0cd7）** | W1 108 桶 +48；W2 99 桶 +3——**FAIL-recycle 天花板确认**（255 GENERATED 残余全为词汇缺口，规则生成器无新词汇下到顶）；addr7C/7D 0% 维持（CRT/swap 词汇） |
+> | **G14 新增债面** | 🔴 | 漂移族账本 .omo/g14_drift_ledger.txt（33 类三源分歧画像，ctor 裁决候选清单）；addr7C/7D 短排序族词汇专项（H6 候选）；H2 unit.cpp 15 pending 未动；gap2_refresh 冻结维持 |
 > | **G13 证据补全** | ✅ **完成（2026-09-15，提交 9710bf2c）** | **live til 全量导出 1,706 UDT / 10,975 语义成员**（.omo/g13_til_live.json，兼作 broken-arrow 序数表）；**member_lookup 合并 +503 语义成员 / 22 类**（占位符过滤 + 同名异位冲突 84 整批剔除 + mbn 漂移族 23 规避——TechnoClass 中段三族争议区再实证）；**vtable 槽位 +15**（RTTI 祖先链守卫经 class_name_align 桥接）；**DataGlobal +4**（live xref 定性）；**hash 序数定案 3**（#378=AbstractClass 签名互证法——12 块解锁，HASH_TYPE_MAP 9→12） |
 > | **G13 OO refresh** | ✅ **rewritten 4,514 / unmapped 5,661；11,173 已译记录保留（3e94ae9a）** | e4 侧 refresh；g5_fleet class_layout 父链合并（PARENTS = layouts + rtti 直读桥接，192 条）；**g7_gap2_refresh '{' 注入 bug 回滚冻结**（六 gap2 文件 checkout，bug 未修） |
 > | **G13 舰队波 + H2** | ✅ **completed 11,788 → 11,843（30d9480c）** | 109 桶 +47 全 CFG；**H2 A 类 17 项 hpp+def 手术 + unit.cpp +8**（记录级确定性重建管线 .omo/g13_rebuild_records.py：伪迹免疫端检测）；FootClass_field_5A4→Archive 四方重命名；波 rollback 13 条 +1 伪差缓存重拼修复；**事故链全记录**（0X 大写化 bug 重演 / 波中禁直读 signals） |
@@ -106,7 +110,7 @@
 | ida-artifact 门控空转 | 1 | `tools/check_pointer_arithmetic.py` 为**空文件**（f5da6e4f 起所有可达版本皆空）——三重门控之一从未真正检查。需用户裁决恢复实现（部分功能由 code-standards 的 AST ptr-arithmetic 检查覆盖，但那是 diff-scoped 非全量） |
 
 
-## 0. 当前基线（2026-09-15 G13 会话刷新）
+## 0. 当前基线（2026-09-16 G14 会话刷新）
 
 | 维度 | 数值 |
 |---|---|
@@ -116,15 +120,15 @@
 | IDB 落盘 | this 签名 ~9,840 / 局部变量 ~19,695 / 参数+返回 1,419 / 全局 449 |
 | til struct | 1,706 UDT 全量导出（G13 live 快照 .omo/g13_til_live.json，10,975 语义成员） |
 | **class_layouts** | **1,281 类**（F1：+247 til 导入 + 4,578 填洞 + 138 容器语义 + til-pad 伪条目清除 175） |
-| **偏移重写** | **rewritten 4,514 / unmapped 5,661**（G13 refresh 口径；分母随已译体退出） |
+| **偏移重写** | **rewritten 4,468 / unmapped 5,610**（G14 修正版 refresh 口径；分母随已译体退出） |
 | 反编译 | 19,067 函数全部可反编译 |
 | 快照 | **full_export v4**（09-13 重导出，mega-blob 区 live 归一化；⚠ 截断 ~100 个 + gap2 内 25 块标记保留，翻译时 get_context live 拉取）；v3 归档 full_export_v3_20260913 |
 | **src 函数体覆盖** | ~17,880 / 19,133（93.5%；未译以 IDA 原码活代码块占位） |
-| **MCP completed** | **11,843**（G3-G13 舰队波累计 + 历史真翻译；全部 CFG 验证口径） |
-| **MCP pending** | **4,771**（G13 后；构成 = too-long 2,037 + goto 352 + raw-this 619 + ternary 133 + param-mismatch ~110 + 长尾；hash-type 已清零） |
+| **MCP completed** | **11,894**（G3-G14 舰队波累计 + 历史真翻译；全部 CFG 验证口径） |
+| **MCP pending** | **4,717**（G14 后；构成 = too-long ~2,037 + goto ~352 + raw-this ~605 + FAIL-recycle 255（GENERATED 残余=词汇缺口，G14 W2 实证天花板）+ ternary ~132 + param-mismatch ~110 + 长尾） |
 | 待命名 | sub_* 残留 5,468（其中 3,590 需反编译上下文命名）——A2 |
 | 命名不一致 | 91 raw / **7 normalized**（基线维持；增量均为别名自愈型） |
-| 基线/标签 | auto-fill-baseline = **30d9480c**（G13 舰队波+H2；重锚不清账） |
+| 基线/标签 | auto-fill-baseline = **613c0cd7**（G14 align 修正+W2；重锚不清账） |
 
 **关键认知**：类型体系的工作重心已从"推断"转移到"消费"——快照里
 19K 函数的伪代码现在带着 this 类型、~19.7K 个类型化局部变量和结构化
@@ -2340,6 +2344,68 @@ extern 缺段（1，**事件面最窄的重译首选**）。附带勘误：get_c
 marker&completed 对账 **0 幽灵** / readiness READY
 
 ---
+
+## 执行日志 — 2026-09-16 G14 会话：证据补全 + A1 YRpp 命名轮 + align bug 修正 + 舰队两波（completed 11,843 → 11,894 / pending 4,717）
+
+> 三提交：ef0da229（证据补全 + OO refresh）→ 0f60d26c（舰队 W1 +48）→
+> 613c0cd7（align 修正 + W2 +3）；auto-fill-baseline 重锚 613c0cd7。
+> IDA :13337 全程在线（探测后使用）。
+
+### 证据补全（ef0da229）
+- **YRpp submodule 修复**：gitlink 注册 + 浅克隆（Phobos-developers/YRpp，
+  headers 在仓库根）——A1 三源证据的 YRpp 腿就位（交接单基建项 #5）
+- **vtable 槽位 +11**（g13_slot_read/merge 复跑：ObjectClass@124
+  IsAboveScreenMargin 二进制定案 / InfantryClass@1156 ValidatePlacement /
+  AircraftClass@684 等；43 拒绝为 COMDAT 折叠伪影，守卫正确）
+- **DataGlobal +14**（live xref 定性：83D4D8/83D4C0 IQ 键表 blob 头族、
+  8331EC/8331C8/8331A8 GameSettings 键表族、83F150/83F148/83F104 WOL 网络配置
+  键表族、89A318/89A31C/89A320 setOverlayType -1 哨兵族、815F54 音频调试格式
+  blob、8392C0 EVA 消息名 blob、B78160 WWMouse -1 哨兵——next-layer 3 波全清）
+- **A1 成员命名轮（新工具 `.omo/g14_a1_yrpp.py`）**：YRpp 声明序解析 +
+  多锚对齐（S1 声明序 / S2 in-name 偏移锚 field_XX-unknown_XX / S3 sizeof
+  断言 / S4 member_lookup 语义名锚 / S5 class_layouts 尺寸界 + til 锚定 +
+  系统性漂移检测器）；模板基类尺寸解析（VectorClass=16/DynamicVectorClass=24）；
+  占位名前缀过滤；双键双写（canon 键 + Class 键，ml + mbn 双体系）
+- **AnimClass sizeof=456 二进制定案**：vtable 槽 48 `mov eax, 1C8h; ret`
+  （误名 MissionStubReturnZero 实为 Size()）——class_layouts 6324 / til 90200
+  双双证伪为膨胀复合体
+- OO refresh：rewritten 4,496 / 11,200 译体保留；member_missing 543→501
+
+### align bug 发现与修正（613c0cd7，本会话核心事故链）
+- **根因**：`align()` 把 ≥8B 一律 8 对齐——12B TimerStruct/CoordStruct 被
+  8 对齐后链式 +4 位移（TeamClass SuspendTimer 100→104）
+- **二进制裁决链**：TeamClass ctor（vtable 安装者 0x6e8b32，名 MissionClass::
+  Construct）写 timer1@88/96、timer2@100/108、Tag@112 = 12B 步长；YRpp
+  CDTimerClass=TimerStruct<FrameTimer> 别名同为 12B（SysTimerClass 断言 0xC）
+- **影响面**：43/109 已应用项位移（AnimClass 260↔264 族 / BulletClass
+  TargetCoords 312↔320 族 / MapClass outBuffer 24↔40 族）；**引用排查
+  证明 25 处引用全在 pending 伪码、已完成译体零引用**——CFG 事件对称门控
+  使误位项只能 FAIL 回滚，不产假完成（防御体系实证）
+- **修复**：43 项移除（ml+mbn）→ 修正版工具重应用 53 项（til 守卫下重新
+  背书）→ refresh 重跑 → Team/Trigger/Weapon -4 漂移族全部消解
+- **方法论沉淀**：MSVC 自然对齐 = 最大成员对齐（本代码库 ≤4），仅
+  double/__int64 8 对齐；12B 复合结构 4 对齐
+
+### 舰队两波（0f60d26c + 613c0cd7）
+- **W1 108 桶 +48**（300 GENERATED：A1 填充后 286→300）；addr7C/addr7D
+  0% 维持 G13 基线（CRT/swap 词汇缺口）；gap2 三文件括子 delta 为 rollback
+  splice 记账族（parse 健全）
+- **W2 99 桶 +3**——**FAIL-recycle 天花板确认**：255 GENERATED 残余全部为
+  词汇缺口（同块反复生成-验证-回滚），规则生成器无新词汇下已到顶
+- ghost 审裁幂等复跑（82 已收编 / 2 遗留损坏区挂账：0x4a0630/0x4f42f0）
+
+### 波后状态
+括号 balance-delta 文件 **0**（AnimClass 0→4 经修正链自然清零）/ 注解
+1 missing（IsCrushable 挂账维持）/ 一致性 91/7 基线 / readiness 待复跑
+
+### G14 新增债面与下一步
+- **漂移族账本** `.omo/g14_drift_ledger.txt`（33 类三源分歧画像：Cell -36、
+  TerrainType -88/-92、WeaponType -295、BuildingClass 多族）——后续 ctor
+  二进制裁决的候选清单
+- **addr7C/7D 短排序族**（shortsort/swap cdecl 回调词汇）——31 块恒定 FAIL
+  的词汇专项候选（H6）
+- H2 unit.cpp 15 pending 未动（B/C 类债维持）；gap2_refresh '{' bug 未修
+  （冻结维持）；broken-arrow 32 块维持（需 efv 序数词汇 + 用户报备）
 
 
 > 数据基线：MCP pending **4,935**（dry-scan 归因 4,881 + ~54 无伪码/ASM-only 块）。

@@ -185,7 +185,7 @@ cmake --build build_linux
 | 编译错误 / 警告 | **0 / 0** (gamemd 来自 _generated/ 和主要模块) |
 | symbol-locked | **symbols-locked-v2** — 全部 19,067 函数 1:1:1 映射 (IDA↔signals↔hpp)，0 naming mismatches |
 | completed (符号定义) | **19,133 / 19,133 (100%)** — 所有函数在 IDA/signals.json/hpp 中有名称和地址 |
-| translated (完整IDA对照) | **11,843** — MCP completed 诚实口径（G13 会话：+47 舰队波 +8 H2 unit.cpp；证据补全 til 全量导出合并 503 成员 + #378=AbstractClass 定案 + OO refresh 4,514 处 + A 类 17 项 hpp 手术 + Archive 重命名）；pending **4,771**；2026-09-15 G13 会话（详见 docs/roadmap_post_csp.md G13 执行日志） |
+| translated (完整IDA对照) | **11,894** — MCP completed 诚实口径（G14 会话：+48/+3 舰队两波；YRpp submodule 就位 + A1 命名轮 109 项 + align bug 修正 43 误位项 + AnimClass sizeof=456 二进制定案；详见 docs/roadmap_post_csp.md G14 执行日志）；pending **4,717**（FAIL-recycle 255 = GENERATED 残余词汇缺口天花板 G14 实证） |
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
 | sub_* 残留 | **5,468** — 函数级别 (非类成员)，0 已翻译 |
@@ -1150,9 +1150,9 @@ python tools/type_infer/auto_name.py
 ## 下一会话快速接手指引
 
 1. 看 `docs/coverage.md` 了解整体进度（**1,120 IDA 类全部完成 header，0 unknown_**）
-2. 看 `docs/roadmap_post_csp.md` G13 执行日志 +「Phase H」——当前主线 = 剩余 4,771 pending 清偿（H2 B/C 类残留 = unit.cpp 15 pending + 成员名/被调声明债 / H5 语义翻译主体 2,365 / H6 词汇专项）
+2. 看 `docs/roadmap_post_csp.md` G14 执行日志 +「Phase H」——当前主线 = 剩余 4,717 pending 清偿（**GENERATED 已到顶：FAIL-recycle 255 需新词汇**；H5 语义翻译主体 too-long+goto / H6 词汇专项 addr7C 短排序族 / 漂移族 ctor 裁决 `.omo/g14_drift_ledger.txt`）
 3. 看 `git log -10` 了解最近改动；`auto-fill-baseline` tag = 门控 diff 基线（重锚不清账）
-4. 下一波入口：dry-scan 重建波计划（`python .omo/g8_dryscan.py` → GENERATED 余额直驱，`.omo/g12_fleet_driver.py` 范式，交接单 `.omo/g14_handoff.md`）；unit.cpp 15 pending B/C 类债 = issue #94-#107 残余（A 类 17 项 G13 已清偿）
+4. 下一波入口：A1 追加命名（`python .omo/g14_a1_yrpp.py [--apply]`——YRpp 声明序+til 锚定，漂移族已记账）；词汇专项（addr7C/7D swap/shortsort 族）；unit.cpp 15 pending B/C 类债 = issue #94-#107 残余；交接单 `.omo/g15_handoff.md`
 5. 看 `injectFunctionTest/comparisonResult.log` 了解最新 Capture 数据
 6. 任何崩溃分析：先满足"故障排除最低标准"6 项，缺一项不下结论
 7. IDA 连接非持久：任何 IDA 操作前当场探测（`curl -m 5 http://127.0.0.1:13337/`）
