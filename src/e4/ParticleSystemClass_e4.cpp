@@ -5,54 +5,6 @@
 #include "e4/classes/ParticleSystemClass_32__e4.hpp"
 #include "e4/classes/ParticleSystemClass_32_e4.hpp"
 
-// 0x4E8470
-namespace gamemd {
-void ParticleSystemClass::GetClassIdentifier()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->uniqueId = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->vtable1 = 0;
-  }
-    this->IsAllocated = 0;
-    this->vtable2 = 0;
-}
-}
-} // namespace gamemd
-
-// 0x4E84C0
-namespace gamemd {
-int ParticleSystemClass::SaveToINI(int a2)
-{
-{
-    return *(int *)(this->vtable1 + 4 * a2);
-}
-}
-} // namespace gamemd
-
-// 0x4E8780
-namespace gamemd {
-void ParticleSystemClass::initParticleArray()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->uniqueId = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->vtable1 = 0;
-  }
-    this->IsAllocated = 0;
-    this->vtable2 = 0;
-}
-}
-} // namespace gamemd
-
 // 0x62FE60
 namespace gamemd {
 BOOL ParticleSystemClass::Draw()
@@ -118,6 +70,25 @@ unsigned int ParticleSystemClass_32::PointerToIndex(int a2)
 }
 } // namespace gamemd
 
+// 0x4E8470
+namespace gamemd {
+void ParticleSystemClass::GetClassIdentifier()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->uniqueId = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->vtable1 = 0;
+  }
+    this->IsAllocated = 0;
+    this->vtable2 = 0;
+}
+}
+} // namespace gamemd
+
 // 0x4E84A0
 namespace gamemd {
 unsigned int ParticleSystemClass::LoadTypeData(int a2)
@@ -127,6 +98,35 @@ unsigned int ParticleSystemClass::LoadTypeData(int a2)
     return (unsigned int)(a2 - this->vtable1) >> 2;
     else
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4E84C0
+namespace gamemd {
+int ParticleSystemClass::SaveToINI(int a2)
+{
+{
+    return *(int *)(this->vtable1 + 4 * a2);
+}
+}
+} // namespace gamemd
+
+// 0x4E8780
+namespace gamemd {
+void ParticleSystemClass::initParticleArray()
+{
+{
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->uniqueId = 0;
+    if ( v2 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(v2);
+    this->vtable1 = 0;
+  }
+    this->IsAllocated = 0;
+    this->vtable2 = 0;
 }
 }
 } // namespace gamemd

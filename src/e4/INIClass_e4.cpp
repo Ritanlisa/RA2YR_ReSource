@@ -2,23 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x4757D0
-namespace gamemd {
-int INIClass::GetBool(INIClass * aP1, unsigned char * a2, int a4)
-{
-{
-    int result;
-    INIClass Destination[2];
-    if ( !INIClass::GetString(this, aP1, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
-    return a4;
-    result = LookupNameIndex(Destination);
-    if ( result == -1 )
-    return a4;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x526810
 namespace gamemd {
 int INIClass::BinarySearchSection(INIClass * aP1)
@@ -329,22 +312,6 @@ LABEL_36:
 }
 } // namespace gamemd
 
-// 0x529820
-namespace gamemd {
-char INIClass::GetInt(char ** a2, char ** a3, unsigned int * a4)
-{
-{
-    INIClass *v5;
-    INIClass *v6;
-    char Buffer[56];
-    v5 = (INIClass *)String::GetOrEmpty_Alt(a3);
-    v6 = (INIClass *)String::GetOrEmpty_Alt(a2);
-    sprintf(Buffer, g_INI_Key_Digest.__pad_20, *a4, *((int*)(a4) + 1));
-    return INIClass::SetString(this, v6, v5, (INIClass *)Buffer);
-}
-}
-} // namespace gamemd
-
 // 0x535AA0
 namespace gamemd {
 unsigned int * INIClass::INIClass()
@@ -423,6 +390,23 @@ INIClass * INIClass::ReadCoord(double aP1, int a2, INIClass * aP2, int a4)
 }
 } // namespace gamemd
 
+// 0x4757D0
+namespace gamemd {
+int INIClass::GetBool(INIClass * aP1, unsigned char * a2, int a4)
+{
+{
+    int result;
+    INIClass Destination[2];
+    if ( !INIClass::GetString(this, aP1, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
+    return a4;
+    result = LookupNameIndex(Destination);
+    if ( result == -1 )
+    return a4;
+    return result;
+}
+}
+} // namespace gamemd
+
 // 0x526CC0
 namespace gamemd {
 int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2)
@@ -485,6 +469,22 @@ int INIClass::ReadInt(ObjectClass * aP1, ReferenceCounted * aP2, INIClass * aP3)
     v5 = (ObjectClass *)String::GetOrEmpty_Alt((char **)aP2);
     eax1a = (unsigned char *)String::GetOrEmpty_Alt((char **)aP1);
     return INIClass::ReadInt_Overwrite((int)this, eax1a, (CCINIClass *)v5, aP3);
+}
+}
+} // namespace gamemd
+
+// 0x529820
+namespace gamemd {
+char INIClass::GetInt(char ** a2, char ** a3, unsigned int * a4)
+{
+{
+    INIClass *v5;
+    INIClass *v6;
+    char Buffer[56];
+    v5 = (INIClass *)String::GetOrEmpty_Alt(a3);
+    v6 = (INIClass *)String::GetOrEmpty_Alt(a2);
+    sprintf(Buffer, g_INI_Key_Digest.__pad_20, *a4, *((int*)(a4) + 1));
+    return INIClass::SetString(this, v6, v5, (INIClass *)Buffer);
 }
 }
 } // namespace gamemd

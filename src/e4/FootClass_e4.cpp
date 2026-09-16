@@ -101,22 +101,6 @@ void __thiscall FootClass::Destroyed(#375 **this, int a2)
 } // namespace game
 } // namespace ra2
 
-// 0x50DAA0
-namespace ra2 {
-namespace game {
-unsigned int FootClass::checkTurning()
-{
-{
-    unsigned int result;
-    result = this->disguiseCreationFrame;
-    if ( result >= 4 )
-    return 0;
-    return result;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x70F7E0
 namespace ra2 {
 namespace game {
@@ -334,6 +318,22 @@ namespace game {
 void FootClass::Stub(int a1)
 {
   ;
+}
+} // namespace game
+} // namespace ra2
+
+// 0x50DAA0
+namespace ra2 {
+namespace game {
+unsigned int FootClass::checkTurning()
+{
+{
+    unsigned int result;
+    result = this->disguiseCreationFrame;
+    if ( result >= 4 )
+    return 0;
+    return result;
+}
 }
 } // namespace game
 } // namespace ra2

@@ -548,41 +548,35 @@ int __thiscall SidebarClass_SwitchTab(int this, int a2)
 // 0x6AB990
 int SidebarClass::select()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SelectClass_StripClass_SidebarClass::_vt28(int this)
 {
-  int v2; // eax
-  int result; // eax
-
-  SidebarClass::updateStripVisibility((_DWORD *)MEMORY[0x887368]); /*0x6ab99a*/
-  SidebarClass::initializeStrip((_DWORD *)MEMORY[0x887368], 0); /*0x6ab9a7*/
-  v2 = this->SidebarClass_field_0x2C; /*0x6ab9ac*/
-  *(_BYTE *)(this + 52) = 1; /*0x6ab9b1*/
-  *(_BYTE *)(v2 + 60) = 1; /*0x6ab9bb*/
-  result = MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6ab9be*/
-  MEMORY[0x884B8F] = 1; /*0x6ab9c3*/
-  MEMORY[0xB0B518] = 1; /*0x6ab9c9*/
-  return result; /*0x6ab9cf*/
+    int v2;
+    int result;
+    SidebarClass::updateStripVisibility((int *)g_TacticalRender);
+    SidebarClass::initializeStrip((int *)g_TacticalRender, 0);
+    v2 = this->SidebarClass_field_0x2C;
+    this->MovementZones = 1;
+    *(char *)(v2 + 60) = 1;
+    result = MapClass::MarkForRedraw(&DataGlobal_87F7E8, 0);
+    g_CameoRenderFlag = 1;
+    g_TooltipActive = 1;
+    return result;
 }
 }
 
 // 0x6AB9E0
 int SidebarClass::deselect()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SelectClass_StripClass_SidebarClass::_vt29(int this)
 {
-  int v2; // eax
-  int result; // eax
-
-  SidebarClass::updateStripPosition((_DWORD *)MEMORY[0x887368]); /*0x6ab9e9*/
-  v2 = this->SidebarClass_field_0x2C; /*0x6ab9ee*/
-  *(_BYTE *)(this + 52) = 0; /*0x6ab9f1*/
-  *(_BYTE *)(v2 + 60) = 1; /*0x6ab9fc*/
-  result = MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 0); /*0x6aba00*/
-  MEMORY[0x884B8F] = 1; /*0x6aba05*/
-  MEMORY[0xB0B518] = 1; /*0x6aba0c*/
-  return result; /*0x6aba13*/
+    int v2;
+    int result;
+    SidebarClass::updateStripPosition((int *)g_TacticalRender);
+    v2 = this->SidebarClass_field_0x2C;
+    this->MovementZones = 0;
+    *(char *)(v2 + 60) = 1;
+    result = MapClass::MarkForRedraw(&DataGlobal_87F7E8, 0);
+    g_CameoRenderFlag = 1;
+    g_TooltipActive = 1;
+    return result;
 }
 }
 

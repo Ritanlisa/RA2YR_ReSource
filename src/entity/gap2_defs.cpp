@@ -751,10 +751,8 @@ void __thiscall sub_422B80(void *this)
 
 // 0x422BC0
 namespace gamemd { int AnimClass::SetAnimSpeed() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AnimClass::_vt46(int this)
 {
-  return *(_DWORD *)(this + 260) + ObjectClass::GetBoundingSize((#374 *)this); /*0x422bce*/
+    return this->FlamingGuyCoords + ObjectClass::GetBoundingSize((AnimClass *)this);
 }
 } }
 

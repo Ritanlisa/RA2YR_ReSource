@@ -1473,68 +1473,6 @@ void __thiscall BuildingTypeClass_IsPowered(int this)
 }
 }
 
-// 0x478850
-unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
-{
-{
-    char *v4;
-    char *v5;
-    int v6;
-    char *v8;
-    char *v9;
-    int v10;
-    v4 = 0;
-    this->vtable1 = 0;
-    this->vtable2 = a2;
-    this->vtable3 = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_RGBClass;
-    if ( !a2 )
-    return this;
-    if ( !a3 )
-  {
-    v8 = (char *)__2_YAPAXI_Z(3 * a2);
-    if ( v8 )
-    {
-    if ( a2 - 1 >= 0 )
-      {
-    v9 = v8 + 2;
-    v10 = a2;
-    do
-        {
-    *(v9 - 2) = 0;
-    *(v9 - 1) = 0;
-    *v9 = 0;
-    v9 += 3;
-    --v10;
-        }
-    while ( v10 );
-      }
-    v4 = v8;
-    }
-    this->vtable1 = v4;
-    this->IsAllocated = 1;
-    return this;
-  }
-    if ( a2 - 1 >= 0 )
-  {
-    v5 = (char *)(a3 + 2);
-    v6 = a2;
-    do
-    {
-    *(v5 - 2) = 0;
-    *(v5 - 1) = 0;
-    *v5 = 0;
-    v5 += 3;
-    --v6;
-    }
-    while ( v6 );
-  }
-    this->vtable1 = a3;
-    return this;
-}
-}
-
 // 0x50B760
 char BuildingTypeClass::ProcessData(unsigned int * a2, short * a3)
 {
@@ -2426,6 +2364,68 @@ int BuildingTypeClass::FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTy
     return (int)aP3->__pad_0;
   }
     return v4;
+}
+}
+
+// 0x478850
+unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
+{
+{
+    char *v4;
+    char *v5;
+    int v6;
+    char *v8;
+    char *v9;
+    int v10;
+    v4 = 0;
+    this->vtable1 = 0;
+    this->vtable2 = a2;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_RGBClass;
+    if ( !a2 )
+    return this;
+    if ( !a3 )
+  {
+    v8 = (char *)__2_YAPAXI_Z(3 * a2);
+    if ( v8 )
+    {
+    if ( a2 - 1 >= 0 )
+      {
+    v9 = v8 + 2;
+    v10 = a2;
+    do
+        {
+    *(v9 - 2) = 0;
+    *(v9 - 1) = 0;
+    *v9 = 0;
+    v9 += 3;
+    --v10;
+        }
+    while ( v10 );
+      }
+    v4 = v8;
+    }
+    this->vtable1 = v4;
+    this->IsAllocated = 1;
+    return this;
+  }
+    if ( a2 - 1 >= 0 )
+  {
+    v5 = (char *)(a3 + 2);
+    v6 = a2;
+    do
+    {
+    *(v5 - 2) = 0;
+    *(v5 - 1) = 0;
+    *v5 = 0;
+    v5 += 3;
+    --v6;
+    }
+    while ( v6 );
+  }
+    this->vtable1 = a3;
+    return this;
 }
 }
 

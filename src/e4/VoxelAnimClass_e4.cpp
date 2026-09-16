@@ -78,58 +78,6 @@ unsigned int sub_4CAF20()
 }
 } // namespace gamemd
 
-// 0x4D02B0
-namespace gamemd {
-char VoxelAnimClass::UpdateMatrix()
-{
-{
-    int v3;
-    int (__stdcall ***v4)(int, void *, int *);
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    if ( this->objectTypeFlags > Cell::GetGroundHeight(this + 7) + 120 )
-    return 1;
-    v3 = this->vtable3;
-    if ( *(int *)(v3 + 692) && *(int *)(v3 + 764) )
-    return 1;
-    v4 = (int (__stdcall ***)(int, void *, int *))this->vtable3;
-    v8 = 0;
-    if ( !v4 )
-    return 0;
-    v5 = (**v4)(v4, &DataGlobal_822410, &v9);
-    if ( v5 >= 0 )
-  {
-    v7 = v9;
-    Release3COM(&v8);
-    v6 = v7;
-    v8 = v7;
-  }
-    else
-  {
-    Release3COM(&v8);
-    v6 = 0;
-    v8 = 0;
-  }
-    if ( v5 < 0 && v5 != -2147467262 )
-    WinAPI::Wrapper(v5);
-    if ( !v6 )
-    return 0;
-    if ( !(*(int (__stdcall **)(int))(*(int *)(v6) + 32))(v6) )
-  {
-    if ( v8 )
-    (*(void (__stdcall **)(int))(*(int *)(v8) + 8))(v8);
-    return 0;
-  }
-    if ( v8 )
-    (*(void (__stdcall **)(int))(*(int *)(v8) + 8))(v8);
-    return 1;
-}
-}
-} // namespace gamemd
-
 // 0x7499F0
 namespace gamemd {
 int VoxelAnimClass::CleanupMembers()
@@ -183,21 +131,6 @@ int __thiscall VoxelAnimClass::CleanupMembers(#374 *this)
   }
   this->VoxelAnimClass_field_0x104 = 0; /*0x749b02*/
   return ObjectClass::Dtor(this); /*0x749b11*/
-}
-}
-} // namespace gamemd
-
-// 0x749B20
-namespace gamemd {
-int VoxelAnimClass::DrawVoxelFrame(int a2, int a3, int a4)
-{
-{
-    int *v5;
-    char v7[12];
-    v5 = (int *)this->GetCoords(v7);
-    if ( (*((char *)Coord::To_Cell(&DataGlobal_87F7E8, v5) + 300) & 0x10) != 0 )
-    this->needsRedraw = 1;
-    return ObjectClass::CalcDrawRect(this);
 }
 }
 } // namespace gamemd
@@ -533,6 +466,73 @@ float * VoxelAnimClass::QuaternionToMatrix(float * a2)
     v2 = ToQuaternionMatrix(v4, this + 12);
     qmemcpy(a2, v2, 0x30u);
     return a2;
+}
+}
+} // namespace gamemd
+
+// 0x4D02B0
+namespace gamemd {
+char VoxelAnimClass::UpdateMatrix()
+{
+{
+    int v3;
+    int (__stdcall ***v4)(int, void *, int *);
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    if ( this->objectTypeFlags > Cell::GetGroundHeight(this + 7) + 120 )
+    return 1;
+    v3 = this->vtable3;
+    if ( *(int *)(v3 + 692) && *(int *)(v3 + 764) )
+    return 1;
+    v4 = (int (__stdcall ***)(int, void *, int *))this->vtable3;
+    v8 = 0;
+    if ( !v4 )
+    return 0;
+    v5 = (**v4)(v4, &DataGlobal_822410, &v9);
+    if ( v5 >= 0 )
+  {
+    v7 = v9;
+    Release3COM(&v8);
+    v6 = v7;
+    v8 = v7;
+  }
+    else
+  {
+    Release3COM(&v8);
+    v6 = 0;
+    v8 = 0;
+  }
+    if ( v5 < 0 && v5 != -2147467262 )
+    WinAPI::Wrapper(v5);
+    if ( !v6 )
+    return 0;
+    if ( !(*(int (__stdcall **)(int))(*(int *)(v6) + 32))(v6) )
+  {
+    if ( v8 )
+    (*(void (__stdcall **)(int))(*(int *)(v8) + 8))(v8);
+    return 0;
+  }
+    if ( v8 )
+    (*(void (__stdcall **)(int))(*(int *)(v8) + 8))(v8);
+    return 1;
+}
+}
+} // namespace gamemd
+
+// 0x749B20
+namespace gamemd {
+int VoxelAnimClass::DrawVoxelFrame(int a2, int a3, int a4)
+{
+{
+    int *v5;
+    char v7[12];
+    v5 = (int *)this->GetCoords(v7);
+    if ( (*((char *)Coord::To_Cell(&DataGlobal_87F7E8, v5) + 300) & 0x10) != 0 )
+    this->needsRedraw = 1;
+    return ObjectClass::CalcDrawRect(this);
 }
 }
 } // namespace gamemd

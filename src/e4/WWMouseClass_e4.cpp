@@ -2,14 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x7B89F0
-int WWMouseClass::COMStub()
-{
-{
-    return this->IsInitialized;
-}
-}
-
 // 0x7B9040
 unsigned int * WWMouseClass::initSurface()
 {
@@ -284,14 +276,6 @@ void __thiscall WWMouseClass::_vt05(_BYTE *this)
 }
 }
 
-// 0x7BA330
-char WWMouseClass::checkCapture()
-{
-{
-    return this->Count;
-}
-}
-
 // 0x7BA340
 int WWMouseClass::checkRegion()
 {
@@ -299,14 +283,6 @@ int WWMouseClass::checkRegion()
 int __thiscall WWMouseClass::_vt11(_DWORD *this)
 {
   return *(this + 7); /*0x7ba343*/
-}
-}
-
-// 0x7BA350
-int WWMouseClass::checkBounds()
-{
-{
-    return this->XY1;
 }
 }
 
@@ -327,6 +303,14 @@ _DWORD *__thiscall WWMouseClass::_vt13(_DWORD *this, _DWORD *a2)
 }
 }
 
+// 0x7B89F0
+int WWMouseClass::COMStub()
+{
+{
+    return this->IsInitialized;
+}
+}
+
 // 0x7B9D80
 int WWMouseClass::checkVisible()
 {
@@ -343,5 +327,21 @@ MouseClass * WWMouseClass::updateHotspot(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (MouseClass *)this;
+}
+}
+
+// 0x7BA330
+char WWMouseClass::checkCapture()
+{
+{
+    return this->Count;
+}
+}
+
+// 0x7BA350
+int WWMouseClass::checkBounds()
+{
+{
+    return this->XY1;
 }
 }

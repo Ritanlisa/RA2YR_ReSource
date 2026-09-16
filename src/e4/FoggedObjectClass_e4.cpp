@@ -808,39 +808,6 @@ _DWORD *__thiscall FoggedObjectClass::_vt24(_DWORD *this, _DWORD *a2)
 }
 }
 
-// 0x4D29B0
-char FoggedObjectClass::AddRef(int a2)
-{
-{
-    int v2;
-    int v3;
-    int v4;
-    int *v5;
-    int *v6;
-    int v7;
-    v2 = this->vtable2;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = *(int *)(a2 + 4);
-    v5 = (int *)this->vtable1;
-    v6 = (int *)(v4 + 4);
-    v7 = v4 - (int)v5;
-    while ( *v5 == *(int *)((char *)(v5) + v7) && v5[1] == *v6 )
-    {
-    ++v3;
-    v6 += 4;
-    v5 += 4;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
-}
-}
-
 // 0x4D2BC0
 char FoggedObjectClass::ResizeArray(int a2, char * a3)
 {
@@ -1072,6 +1039,39 @@ FoggedObjectClass * FoggedObjectClass::ddtor(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (FoggedObjectClass *)this;
+}
+}
+
+// 0x4D29B0
+char FoggedObjectClass::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int v4;
+    int *v5;
+    int *v6;
+    int v7;
+    v2 = this->vtable2;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = *(int *)(a2 + 4);
+    v5 = (int *)this->vtable1;
+    v6 = (int *)(v4 + 4);
+    v7 = v4 - (int)v5;
+    while ( *v5 == *(int *)((char *)(v5) + v7) && v5[1] == *v6 )
+    {
+    ++v3;
+    v6 += 4;
+    v5 += 4;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
 }
 }
 

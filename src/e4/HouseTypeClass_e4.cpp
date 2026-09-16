@@ -680,63 +680,6 @@ int __userpurge HouseTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, i
 }
 } // namespace gamemd
 
-// 0x512960
-namespace gamemd {
-unsigned int * HouseTypeClass::readStartUnit()
-{
-{
-    this->vtable1 = 0;
-    this->vtable2 = 0;
-    this->vtable3 = 1;
-    this->IsAllocated = 0;
-    this->abstractFlags = 10;
-    this->uniqueId = 0;
-    *(void**)this = &vt_TypeList_AircraftTypeClass_const;
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x512BD0
-namespace gamemd {
-unsigned int * HouseTypeClass::readStartInfantry(InfantryTypeClass * aP1)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    if ( this == (int *)aP1 )
-    return this;
-    this->GetClassIdentifier();
-    v3 = *(int *)&aP1->vtable0[8];
-    this->vtable2 = v3;
-    if ( !v3 )
-  {
-    this->vtable1 = 0;
-    this->IsAllocated = 0;
-    return this;
-  }
-    v4 = __2_YAPAXI_Z(4 * v3);
-    this->vtable1 = v4;
-    if ( !v4 )
-    return this;
-    v5 = this->vtable2;
-    v6 = 0;
-    this->IsAllocated = 1;
-    if ( v5 <= 0 )
-    return this;
-    do
-  {
-    *(int *)(this->vtable1 + 4 * v6) = *(int *)(*(int *)&aP1->vtable0[4] + 4 * v6);
-    ++v6;
-  }
-    while ( v6 < this->vtable2 );
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x513370
 namespace gamemd {
 unsigned int * HouseTypeClass::readBaseDefense(VectorClass * aP1)
@@ -776,169 +719,6 @@ _DWORD *__thiscall HouseTypeClass::readBaseDefense(_DWORD *this, VectorClass *aP
   }
   while ( v6 < *(this + 2) ); /*0x5133c1*/
   return this; /*0x5133c5*/
-}
-}
-} // namespace gamemd
-
-// 0x513560
-namespace gamemd {
-unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
-{
-{
-    this->vtable1 = 0;
-    this->vtable2 = a2;
-    this->vtable3 = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
-    if ( a2 )
-  {
-    if ( a3 )
-    {
-    this->vtable1 = a3;
-    }
-    else
-    {
-    this->vtable1 = __2_YAPAXI_Z(4 * a2);
-    this->IsAllocated = 1;
-    }
-  }
-    *(void**)this = &vt_DynamicVectorClass_AircraftTypeClass_const;
-    this->abstractFlags = 10;
-    this->uniqueId = 0;
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x5136C0
-namespace gamemd {
-char HouseTypeClass::readPowerPlants(TypeList * aP1)
-{
-{
-    int v3;
-    int v4;
-    int v6;
-    int v7;
-    v3 = this->vtable2;
-    if ( this->uniqueId >= v3 )
-  {
-    if ( !this->IsAllocated && v3 )
-    return 0;
-    v4 = this->abstractFlags;
-    if ( v4 <= 0 || !this->Release(v3 + v4, 0) )
-    return 0;
-  }
-    v6 = this->uniqueId;
-    v7 = this->vtable1;
-    this->uniqueId = v6 + 1;
-    *(int *)(v7 + 4 * v6) = aP1->vtable0;
-    return 1;
-}
-}
-} // namespace gamemd
-
-// 0x5137D0
-namespace gamemd {
-unsigned int * HouseTypeClass::readParaDropTypes(VectorClass * aP1)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    this->vtable1 = 0;
-    this->vtable2 = 0;
-    this->vtable3 = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
-    if ( this != (int *)aP1 )
-  {
-    VectorClass::ClearAndFree4((int)this);
-    v3 = aP1->Capacity;
-    this->vtable2 = v3;
-    if ( v3 )
-    {
-    v4 = __2_YAPAXI_Z(4 * v3);
-    this->vtable1 = v4;
-    if ( v4 )
-      {
-    v5 = this->vtable2;
-    v6 = 0;
-    this->IsAllocated = 1;
-    if ( v5 > 0 )
-        {
-    do
-          {
-    *(int *)(this->vtable1 + 4 * v6) = *((int *)aP1->Items + v6);
-    ++v6;
-          }
-    while ( v6 < this->vtable2 );
-        }
-      }
-    }
-    else
-    {
-    this->vtable1 = 0;
-    this->IsAllocated = 0;
-    }
-  }
-    this->uniqueId = aP1[1].vtable0;
-    this->abstractFlags = aP1[1].Items;
-    *(void**)this = &vt_TypeList_AircraftTypeClass_const;
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x513860
-namespace gamemd {
-unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * aP1)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    this->vtable1 = 0;
-    this->vtable2 = 0;
-    this->vtable3 = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_InfantryTypeClass_const;
-    if ( this != (int *)aP1 )
-  {
-    Vector::Cleanup((int)this);
-    v3 = *(int *)&aP1->vtable0[8];
-    this->vtable2 = v3;
-    if ( v3 )
-    {
-    v4 = __2_YAPAXI_Z(4 * v3);
-    this->vtable1 = v4;
-    if ( v4 )
-      {
-    v5 = this->vtable2;
-    v6 = 0;
-    this->IsAllocated = 1;
-    if ( v5 > 0 )
-        {
-    do
-          {
-    *(int *)(this->vtable1 + 4 * v6) = *(int *)(*(int *)&aP1->vtable0[4] + 4 * v6);
-    ++v6;
-          }
-    while ( v6 < this->vtable2 );
-        }
-      }
-    }
-    else
-    {
-    this->vtable1 = 0;
-    this->IsAllocated = 0;
-    }
-  }
-    this->uniqueId = aP1->uniqueId;
-    this->abstractFlags = aP1->abstractFlags;
-    *(void**)this = &vt_DynamicVectorClass_InfantryTypeClass_const;
-    return this;
 }
 }
 } // namespace gamemd
@@ -1313,6 +1093,23 @@ int HouseTypeClass_36::Seek(int a2)
 }
 } // namespace gamemd
 
+// 0x512960
+namespace gamemd {
+unsigned int * HouseTypeClass::readStartUnit()
+{
+{
+    this->vtable1 = 0;
+    this->vtable2 = 0;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    this->abstractFlags = 10;
+    this->uniqueId = 0;
+    *(void**)this = &vt_TypeList_AircraftTypeClass_const;
+    return this;
+}
+}
+} // namespace gamemd
+
 // 0x512990
 namespace gamemd {
 void HouseTypeClass_28::ddtor()
@@ -1417,6 +1214,46 @@ VectorClass * HouseTypeClass_36::Constructor(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
+}
+}
+} // namespace gamemd
+
+// 0x512BD0
+namespace gamemd {
+unsigned int * HouseTypeClass::readStartInfantry(InfantryTypeClass * aP1)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    if ( this == (int *)aP1 )
+    return this;
+    this->GetClassIdentifier();
+    v3 = *(int *)&aP1->vtable0[8];
+    this->vtable2 = v3;
+    if ( !v3 )
+  {
+    this->vtable1 = 0;
+    this->IsAllocated = 0;
+    return this;
+  }
+    v4 = __2_YAPAXI_Z(4 * v3);
+    this->vtable1 = v4;
+    if ( !v4 )
+    return this;
+    v5 = this->vtable2;
+    v6 = 0;
+    this->IsAllocated = 1;
+    if ( v5 <= 0 )
+    return this;
+    do
+  {
+    *(int *)(this->vtable1 + 4 * v6) = *(int *)(*(int *)&aP1->vtable0[4] + 4 * v6);
+    ++v6;
+  }
+    while ( v6 < this->vtable2 );
+    return this;
 }
 }
 } // namespace gamemd
@@ -1637,6 +1474,36 @@ unsigned int HouseTypeClass_36::PointerToIndex(int a2)
 }
 } // namespace gamemd
 
+// 0x513560
+namespace gamemd {
+unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
+{
+{
+    this->vtable1 = 0;
+    this->vtable2 = a2;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
+    if ( a2 )
+  {
+    if ( a3 )
+    {
+    this->vtable1 = a3;
+    }
+    else
+    {
+    this->vtable1 = __2_YAPAXI_Z(4 * a2);
+    this->IsAllocated = 1;
+    }
+  }
+    *(void**)this = &vt_DynamicVectorClass_AircraftTypeClass_const;
+    this->abstractFlags = 10;
+    this->uniqueId = 0;
+    return this;
+}
+}
+} // namespace gamemd
+
 // 0x513610
 namespace gamemd {
 char HouseTypeClass_28::Release(int a2, unsigned int * a3)
@@ -1685,6 +1552,33 @@ char HouseTypeClass_28::Release(int a2, unsigned int * a3)
 }
 } // namespace gamemd
 
+// 0x5136C0
+namespace gamemd {
+char HouseTypeClass::readPowerPlants(TypeList * aP1)
+{
+{
+    int v3;
+    int v4;
+    int v6;
+    int v7;
+    v3 = this->vtable2;
+    if ( this->uniqueId >= v3 )
+  {
+    if ( !this->IsAllocated && v3 )
+    return 0;
+    v4 = this->abstractFlags;
+    if ( v4 <= 0 || !this->Release(v3 + v4, 0) )
+    return 0;
+  }
+    v6 = this->uniqueId;
+    v7 = this->vtable1;
+    this->uniqueId = v6 + 1;
+    *(int *)(v7 + 4 * v6) = aP1->vtable0;
+    return 1;
+}
+}
+} // namespace gamemd
+
 // 0x513710
 namespace gamemd {
 int HouseTypeClass_28::Read(unsigned int * a2)
@@ -1703,6 +1597,112 @@ int HouseTypeClass_28::Read(unsigned int * a2)
     return -1;
   }
     return result;
+}
+} // namespace gamemd
+
+// 0x5137D0
+namespace gamemd {
+unsigned int * HouseTypeClass::readParaDropTypes(VectorClass * aP1)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    this->vtable1 = 0;
+    this->vtable2 = 0;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
+    if ( this != (int *)aP1 )
+  {
+    VectorClass::ClearAndFree4((int)this);
+    v3 = aP1->Capacity;
+    this->vtable2 = v3;
+    if ( v3 )
+    {
+    v4 = __2_YAPAXI_Z(4 * v3);
+    this->vtable1 = v4;
+    if ( v4 )
+      {
+    v5 = this->vtable2;
+    v6 = 0;
+    this->IsAllocated = 1;
+    if ( v5 > 0 )
+        {
+    do
+          {
+    *(int *)(this->vtable1 + 4 * v6) = *((int *)aP1->Items + v6);
+    ++v6;
+          }
+    while ( v6 < this->vtable2 );
+        }
+      }
+    }
+    else
+    {
+    this->vtable1 = 0;
+    this->IsAllocated = 0;
+    }
+  }
+    this->uniqueId = aP1[1].vtable0;
+    this->abstractFlags = aP1[1].Items;
+    *(void**)this = &vt_TypeList_AircraftTypeClass_const;
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x513860
+namespace gamemd {
+unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * aP1)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    this->vtable1 = 0;
+    this->vtable2 = 0;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_InfantryTypeClass_const;
+    if ( this != (int *)aP1 )
+  {
+    Vector::Cleanup((int)this);
+    v3 = *(int *)&aP1->vtable0[8];
+    this->vtable2 = v3;
+    if ( v3 )
+    {
+    v4 = __2_YAPAXI_Z(4 * v3);
+    this->vtable1 = v4;
+    if ( v4 )
+      {
+    v5 = this->vtable2;
+    v6 = 0;
+    this->IsAllocated = 1;
+    if ( v5 > 0 )
+        {
+    do
+          {
+    *(int *)(this->vtable1 + 4 * v6) = *(int *)(*(int *)&aP1->vtable0[4] + 4 * v6);
+    ++v6;
+          }
+    while ( v6 < this->vtable2 );
+        }
+      }
+    }
+    else
+    {
+    this->vtable1 = 0;
+    this->IsAllocated = 0;
+    }
+  }
+    this->uniqueId = aP1->uniqueId;
+    this->abstractFlags = aP1->abstractFlags;
+    *(void**)this = &vt_DynamicVectorClass_InfantryTypeClass_const;
+    return this;
+}
 }
 } // namespace gamemd
 

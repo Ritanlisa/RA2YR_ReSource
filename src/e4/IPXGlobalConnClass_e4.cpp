@@ -2,29 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x5400D0
-int IPXGlobalConnClass::CheckStatus()
-{
-{
-    int v2;
-    int *v3;
-    v2 = 0;
-    v3 = (int *)this->PlayerIndex;
-    if ( (int)v3[14] > 0 )
-  {
-    do
-    {
-    if ( (*(char *)Terrain::GetTileType(v3, v2) & 2) != 0 )
-    PacketQueue::ReleaseEntry((int *)this->PlayerIndex, 0, 0, v2--, 0, 0);
-    v3 = (int *)this->PlayerIndex;
-    ++v2;
-    }
-    while ( v2 < v3[14] );
-  }
-    return 1;
-}
-}
-
 // 0x540110
 void IPXGlobalConnClass::ReceivePacket(int a2)
 {
@@ -93,83 +70,6 @@ LABEL_14:
     v3 = *(_DWORD **)(v2 + 4); /*0x54027b*/
   }
   Debug::Log(); /*0x540296*/
-}
-}
-
-// 0x5402D0
-int IPXGlobalConnClass::Send()
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    int v5;
-    int *v6;
-    int v8;
-    int v9;
-    char v10[12];
-    char v11[1024];
-    v2 = 0;
-    v3 = 0;
-    v4 = (int *)this->PlayerIndex;
-    if ( (int)v4[10] > 0 )
-  {
-    do
-    {
-    v5 = *(int *)Terrain::GetTileIndex(v4, v3);
-    if ( (v5 & 4) != 0 && (v5 & 2) == 0 )
-      {
-    Waypoint::InitInvalid(v10);
-    v6 = (int *)this->PlayerIndex;
-    v8 = 12;
-    PacketQueue::ExtractEntry(v6, v11, &v9, v3--, v10, &v8, 0);
-    ++v2;
-      }
-    v4 = (int *)this->PlayerIndex;
-    ++v3;
-    }
-    while ( v3 < v4[10] );
-  }
-    return v2;
-}
-}
-
-// 0x540340
-int IPXGlobalConnClass::SendPacket(int a2, short a3)
-{
-{
-    int *v4;
-    int v5;
-    int v6;
-    int TileIndex;
-    int v8;
-    int *v9;
-    int v11;
-    int v12;
-    char v13[12];
-    char v14[1024];
-    v4 = (int *)this->PlayerIndex;
-    v5 = 0;
-    v6 = 0;
-    if ( (int)v4[10] <= 0 )
-    return 0;
-    do
-  {
-    TileIndex = Terrain::GetTileIndex(v4, v6);
-    v8 = TileIndex;
-    if ( (*(char *)TileIndex & 2) == 0 && *(int *)(TileIndex + 24) && NetworkID::Compare(*(int *)(TileIndex + 28), a2) && *(short *)(v8 + 32) == a3 )
-    {
-    Waypoint::InitInvalid(v13);
-    v9 = (int *)this->PlayerIndex;
-    v11 = 12;
-    PacketQueue::ExtractEntry(v9, v14, &v12, v6--, v13, &v11, 0);
-    ++v5;
-    }
-    v4 = (int *)this->PlayerIndex;
-    ++v6;
-  }
-    while ( v6 < v4[10] );
-    return v5;
 }
 }
 
@@ -285,6 +185,106 @@ LABEL_13:
       v12);
   }
   return 1; /*0x5405f5*/
+}
+}
+
+// 0x5400D0
+int IPXGlobalConnClass::CheckStatus()
+{
+{
+    int v2;
+    int *v3;
+    v2 = 0;
+    v3 = (int *)this->PlayerIndex;
+    if ( (int)v3[14] > 0 )
+  {
+    do
+    {
+    if ( (*(char *)Terrain::GetTileType(v3, v2) & 2) != 0 )
+    PacketQueue::ReleaseEntry((int *)this->PlayerIndex, 0, 0, v2--, 0, 0);
+    v3 = (int *)this->PlayerIndex;
+    ++v2;
+    }
+    while ( v2 < v3[14] );
+  }
+    return 1;
+}
+}
+
+// 0x5402D0
+int IPXGlobalConnClass::Send()
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    int *v6;
+    int v8;
+    int v9;
+    char v10[12];
+    char v11[1024];
+    v2 = 0;
+    v3 = 0;
+    v4 = (int *)this->PlayerIndex;
+    if ( (int)v4[10] > 0 )
+  {
+    do
+    {
+    v5 = *(int *)Terrain::GetTileIndex(v4, v3);
+    if ( (v5 & 4) != 0 && (v5 & 2) == 0 )
+      {
+    Waypoint::InitInvalid(v10);
+    v6 = (int *)this->PlayerIndex;
+    v8 = 12;
+    PacketQueue::ExtractEntry(v6, v11, &v9, v3--, v10, &v8, 0);
+    ++v2;
+      }
+    v4 = (int *)this->PlayerIndex;
+    ++v3;
+    }
+    while ( v3 < v4[10] );
+  }
+    return v2;
+}
+}
+
+// 0x540340
+int IPXGlobalConnClass::SendPacket(int a2, short a3)
+{
+{
+    int *v4;
+    int v5;
+    int v6;
+    int TileIndex;
+    int v8;
+    int *v9;
+    int v11;
+    int v12;
+    char v13[12];
+    char v14[1024];
+    v4 = (int *)this->PlayerIndex;
+    v5 = 0;
+    v6 = 0;
+    if ( (int)v4[10] <= 0 )
+    return 0;
+    do
+  {
+    TileIndex = Terrain::GetTileIndex(v4, v6);
+    v8 = TileIndex;
+    if ( (*(char *)TileIndex & 2) == 0 && *(int *)(TileIndex + 24) && NetworkID::Compare(*(int *)(TileIndex + 28), a2) && *(short *)(v8 + 32) == a3 )
+    {
+    Waypoint::InitInvalid(v13);
+    v9 = (int *)this->PlayerIndex;
+    v11 = 12;
+    PacketQueue::ExtractEntry(v9, v14, &v12, v6--, v13, &v11, 0);
+    ++v5;
+    }
+    v4 = (int *)this->PlayerIndex;
+    ++v6;
+  }
+    while ( v6 < v4[10] );
+    return v5;
 }
 }
 

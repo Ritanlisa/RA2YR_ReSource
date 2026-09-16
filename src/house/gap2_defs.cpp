@@ -89,35 +89,32 @@ namespace gamemd { int HouseClass::SaveTriggerNodeData(void* a1, void* a2) {
 } }
 // 0x42F180
 namespace gamemd { int BaseClass::ProcessPowerTimer(AbstractClass * aP1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BaseClass::ProcessPowerTimer(int *this, AbstractClass *aP1)
 {
-  int result; // eax
-  int v4; // ebp
-  BaseClass *v5; // edi
-  AbstractClass *v6; // ecx
-  AbstractClass *v7; // eax
-
-  Power::TimerProcess(aP1); /*0x42f18f*/
-  result = *(this + 5); /*0x42f194*/
-  v4 = 0; /*0x42f197*/
-  if ( result > 0 ) /*0x42f19b*/
+    int result;
+    int v4;
+    BaseClass *v5;
+    AbstractClass *v6;
+    AbstractClass *v7;
+    Power::TimerProcess(aP1);
+    result = this->CapacityIncrement;
+    v4 = 0;
+    if ( result > 0 )
   {
-    v5 = 0; /*0x42f19e*/
-    do /*0x42f1d7*/
+    v5 = 0;
+    do
     {
-      Power::TimerProcess(aP1); /*0x42f1a9*/
-      LOWORD(v6) = *(_WORD *)((char *)&v5->baseNodeCount + *(this + 2)); /*0x42f1b1*/
-      v7 = (AbstractClass *)Checksummer::Add_WORD((unsigned int *)aP1, v6); /*0x42f1b9*/
-      LOWORD(v7) = *(_WORD *)((char *)&v5->baseNodeCount + *(this + 2) + 2); /*0x42f1c3*/
-      Checksummer::Add_WORD((unsigned int *)aP1, v7); /*0x42f1c9*/
-      result = *(this + 5); /*0x42f1ce*/
-      ++v4; /*0x42f1d1*/
-      v5 = (BaseClass *)((char *)v5 + 16); /*0x42f1d2*/
+    Power::TimerProcess(aP1);
+    LOWORD(v6) = *(short *)((char *)&v5->baseNodeCount + this->Capacity);
+    v7 = (AbstractClass *)Checksummer::Addshort((unsigned int *)aP1, v6);
+    LOWORD(v7) = *(short *)((char *)&v5->baseNodeCount + this->Capacity + 2);
+    Checksummer::Addshort((unsigned int *)aP1, v7);
+    result = this->CapacityIncrement;
+    ++v4;
+    v5 = (BaseClass *)((char *)(v5) + 16);
     }
-    while ( v4 < result ); /*0x42f1d7*/
+    while ( v4 < result );
   }
-  return result; /*0x42f1da*/
+    return result;
 }
 }
 // 0x42F1E0
@@ -626,39 +623,36 @@ namespace gamemd { int HouseClass::ReadHouseNamesToBitmask(void* a1, void* a2, i
 
 // 0x4752E0
 namespace gamemd { int HouseClass::WriteHouseListToINI(void* aP1, void* a2, int a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall HouseClass::WriteHouseListToINI(char *this, CCINIClass *aP1, char *a2, int a4)
 {
-  char v4; // bl
-  HouseClass *v5; // ebp
-  int v6; // edx
-  IUnknown *v8; // [esp+4h] [ebp-88h]
-  INIClass Source[2]; // [esp+Ch] [ebp-80h] BYREF
-
-  v4 = 0; /*0x4752ee*/
-  Source[0].__pad_0[0] = 0; /*0x4752f6*/
-  if ( !a4 || (int)HouseClass_Count <= 0 ) /*0x475307*/
-    return 1; /*0x475307*/
-  v5 = HouseClass_Array; /*0x47530e*/
-  v8 = HouseClass_Count; /*0x475316*/
-  do /*0x4753a3*/
+    char v4;
+    HouseClass *v5;
+    int v6;
+    IUnknown *v8;
+    INIClass Source[2];
+    v4 = 0;
+    Source[0].__pad_0[0] = 0;
+    if ( !a4 || (int)HouseClass_Count <= 0 )
+    return 1;
+    v5 = HouseClass_Array;
+    v8 = HouseClass_Count;
+    do
   {
-    v6 = *(_DWORD *)v5->__pad_0; /*0x47531a*/
-    if ( ((1 << *(_DWORD *)(*(_DWORD *)v5->__pad_0 + 48)) & a4) != 0 ) /*0x475330*/
+    v6 = *(int *)v5->__pad_0;
+    if ( ((1 << *(int *)(*(int *)v5->__pad_0 + 48)) & a4) != 0 )
     {
-      if ( v4 ) /*0x475334*/
-        strcat(Source[0].__pad_0, MEMORY[0x817F70].__pad_0); /*0x47535b*/
-      strcat(Source[0].__pad_0, (const char *)(v6 + 90100)); /*0x47538a*/
-      v4 = Source[0].__pad_0[0]; /*0x475393*/
+    if ( v4 )
+    strcat(Source[0].__pad_0, Delimiter.__pad_0);
+    strcat(Source[0].__pad_0, (const char *)(v6 + 90100));
+    v4 = Source[0].__pad_0[0];
     }
-    v5 = (HouseClass *)((char *)v5 + 4); /*0x47539b*/
-    v8 = (IUnknown *)((char *)v8 - 1); /*0x47539f*/
+    v5 = (HouseClass *)((char *)(v5) + 4);
+    v8 = (IUnknown *)((char *)v8 - 1);
   }
-  while ( v8 ); /*0x4753a3*/
-  if ( v4 ) /*0x4753ae*/
-    return INIClass::SetString(this, (INIClass *)aP1, (INIClass *)a2, Source); /*0x4753c9*/
-  else
-    return 1; /*0x4753d8*/
+    while ( v8 );
+    if ( v4 )
+    return INIClass::SetString(this, (INIClass *)aP1, (INIClass *)a2, Source);
+    else
+    return 1;
 }
 }
 // 0x475980
@@ -722,24 +716,21 @@ namespace gamemd { bool HouseClass::HasType() {
 
 // 0x48DB80
 namespace gamemd { int HouseClass::FindHouseIndexByName() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass::FindHouseIndexByName(void *this)
 {
-  int v2; // edi
-  const void **v3; // esi
-
-  if ( !this ) /*0x48db87*/
-    return -1; /*0x48dbac*/
-  v2 = 0; /*0x48db89*/
-  v3 = (const void **)&off_7E1B60; /*0x48db8b*/
-  while ( _strcmpi(*v3, this) ) /*0x48db9e*/
+    int v2;
+    const void **v3;
+    if ( !this )
+    return -1;
+    v2 = 0;
+    v3 = (const void **)&DataGlobal_7E1B60;
+    while ( _strcmpi(*v3, this) )
   {
-    ++v3; /*0x48dba0*/
-    ++v2; /*0x48dba3*/
-    if ( (int)v3 >= (int)&dword_7E1B74 ) /*0x48dbaa*/
-      return -1; /*0x48dbaa*/
+    ++v3;
+    ++v2;
+    if ( (int)v3 >= (int)&DataGlobal_7E1B74 )
+    return -1;
   }
-  return v2; /*0x48dbac*/
+    return v2;
 }
 }
 // 0x49F9B0
@@ -8991,25 +8982,22 @@ char __thiscall HouseClass::RegisterGain_0(int this, TechnoClass *aP1, int a3)
 
 // 0x502D30
 namespace gamemd { int HouseClass::FindOwner() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass_FindOwner(void *this)
 {
-  int v1; // edx
-  char *i; // esi
-  int result; // eax
-
-  v1 = 0; /*0x502d39*/
-  if ( HouseClass_Count <= 0 ) /*0x502d3d*/
-    return 0; /*0x502d5a*/
-  for ( i = (char *)HouseClass_Array; ; i += 4 ) /*0x502d3f*/
+    int v1;
+    char *i;
+    int result;
+    v1 = 0;
+    if ( HouseClass_Count <= 0 )
+    return 0;
+    for ( i = (char *)HouseClass_Array; ; i += 4 )
   {
-    result = *(_DWORD *)i; /*0x502d45*/
-    if ( *(void **)(*(_DWORD *)(*(_DWORD *)i + 52) + 184) == this ) /*0x502d50*/
-      break; /*0x502d50*/
-    if ( ++v1 >= HouseClass_Count ) /*0x502d58*/
-      return 0; /*0x502d58*/
+    result = *(int *)i;
+    if ( *(void **)(*(int *)(*(int *)(i) + 52) + 184) == this )
+    break;
+    if ( ++v1 >= HouseClass_Count )
+    return 0;
   }
-  return result; /*0x502d5c*/
+    return result;
 }
 }
 // 0x502D60
@@ -12888,25 +12876,22 @@ namespace gamemd { double HouseClass::GetBuildingDamageMultiplier(void* a2) {
 
 // 0x50C170
 namespace gamemd { int HouseClass::FindByName() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass_FindByName(const char *this)
 {
-  int v1; // edx
-  char *i; // ebp
-  char v4[20]; // [esp+14h] [ebp-14h] BYREF
-
-  v1 = 0; /*0x50c17a*/
-  if ( HouseClass_Count <= 0 ) /*0x50c184*/
-    return -1; /*0x50c1f8*/
-  for ( i = (char *)HouseClass_Array; ; i += 4 ) /*0x50c186*/
+    int v1;
+    char *i;
+    char v4[20];
+    v1 = 0;
+    if ( HouseClass_Count <= 0 )
+    return -1;
+    for ( i = (char *)HouseClass_Array; ; i += 4 )
   {
-    strcpy(v4, (const char *)(*(_DWORD *)i + 90100)); /*0x50c1ad*/
-    if ( !strcmp(v4, this) ) /*0x50c1c4*/
-      break; /*0x50c1c4*/
-    if ( ++v1 >= HouseClass_Count ) /*0x50c1f6*/
-      return -1; /*0x50c1f6*/
+    strcpy(v4, (const char *)(*(int *)(i) + 90100));
+    if ( !strcmp(v4, this) )
+    break;
+    if ( ++v1 >= HouseClass_Count )
+    return -1;
   }
-  return v1; /*0x50c1f8*/
+    return v1;
 }
 }
 // 0x50C210

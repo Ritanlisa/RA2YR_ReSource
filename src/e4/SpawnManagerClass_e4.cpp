@@ -497,38 +497,6 @@ LABEL_20:
 } // namespace game
 } // namespace ra2
 
-// 0x6B83A0
-namespace ra2 {
-namespace game {
-unsigned int * SpawnManagerClass::Constructor_6B83A0(DynamicVector * aP1, DynamicVector * aP2)
-{
-{
-    this->vtable1 = 0;
-    this->vtable2 = aP1;
-    this->vtable3 = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_SpawnManagerClass_SpawnControl;
-    if ( aP1 )
-  {
-    if ( aP2 )
-    {
-    this->vtable1 = aP2;
-    }
-    else
-    {
-    this->vtable1 = __2_YAPAXI_Z(4 * (int)aP1);
-    this->IsAllocated = 1;
-    }
-  }
-    *(void**)this = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl;
-    this->abstractFlags = 10;
-    this->uniqueId = 0;
-    return this;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x6B7ED0
 namespace ra2 {
 namespace game {
@@ -682,6 +650,38 @@ char SpawnManagerClass_25::AddRef(int a2)
 }
 }
 } // namespace gamemd
+
+// 0x6B83A0
+namespace ra2 {
+namespace game {
+unsigned int * SpawnManagerClass::Constructor_6B83A0(DynamicVector * aP1, DynamicVector * aP2)
+{
+{
+    this->vtable1 = 0;
+    this->vtable2 = aP1;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_SpawnManagerClass_SpawnControl;
+    if ( aP1 )
+  {
+    if ( aP2 )
+    {
+    this->vtable1 = aP2;
+    }
+    else
+    {
+    this->vtable1 = __2_YAPAXI_Z(4 * (int)aP1);
+    this->IsAllocated = 1;
+    }
+  }
+    *(void**)this = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl;
+    this->abstractFlags = 10;
+    this->uniqueId = 0;
+    return this;
+}
+}
+} // namespace game
+} // namespace ra2
 
 // 0x6B8400
 namespace gamemd {

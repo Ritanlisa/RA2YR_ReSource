@@ -885,45 +885,6 @@ int __thiscall MapClass_InitCellVector(_DWORD *this)
 }
 }
 
-// 0x565B00
-int MapClass::FreeAllCells()
-{
-{
-    int i;
-    int v3;
-    int j;
-    int v5;
-    int result;
-    for ( i = 0; i < this->MaxWidth; ++i )
-  {
-    v3 = *(int *)(this->MaxLevel + 4 * i);
-    if ( v3 )
-    {
-    *(int *)(v3 + 44) = 0;
-    *(int *)(v3 + 48) = 0;
-    }
-  }
-    for ( j = 0; j < this->MaxWidth; ++j )
-  {
-    v5 = *(int *)(this->MaxLevel + 4 * j);
-    if ( v5 )
-    {
-    (*(void (__thiscall **)(int, int))(*(int *)(v5) + 32))(v5, 1);
-    *(int *)(this->MaxLevel + 4 * j) = 0;
-    }
-  }
-    ReturnFalse2(0, 1);
-    result = this->MaxWidth;
-    if ( result < 0x40000 )
-  {
-    (*(void (__thiscall **)(int *, int, int))(this->TotalValue + 8))(this + 78, 0x40000, 0);
-    for ( result = 0; result < this->MaxWidth; *(int *)(this->MaxLevel + 4 * result - 4) = 0 )
-    ++result;
-  }
-    return result;
-}
-}
-
 // 0x565BC0
 unsigned int * MapClass::InitAllCells()
 {
@@ -4565,6 +4526,45 @@ int MapClass::IsCellPassable(int a1, int a2)
     g_Map_GlobalCellIndex = a2;
   }
     return (v3[75] >> 3) & 1;
+}
+}
+
+// 0x565B00
+int MapClass::FreeAllCells()
+{
+{
+    int i;
+    int v3;
+    int j;
+    int v5;
+    int result;
+    for ( i = 0; i < this->MaxWidth; ++i )
+  {
+    v3 = *(int *)(this->MaxLevel + 4 * i);
+    if ( v3 )
+    {
+    *(int *)(v3 + 44) = 0;
+    *(int *)(v3 + 48) = 0;
+    }
+  }
+    for ( j = 0; j < this->MaxWidth; ++j )
+  {
+    v5 = *(int *)(this->MaxLevel + 4 * j);
+    if ( v5 )
+    {
+    (*(void (__thiscall **)(int, int))(*(int *)(v5) + 32))(v5, 1);
+    *(int *)(this->MaxLevel + 4 * j) = 0;
+    }
+  }
+    ReturnFalse2(0, 1);
+    result = this->MaxWidth;
+    if ( result < 0x40000 )
+  {
+    (*(void (__thiscall **)(int *, int, int))(this->TotalValue + 8))(this + 78, 0x40000, 0);
+    for ( result = 0; result < this->MaxWidth; *(int *)(this->MaxLevel + 4 * result - 4) = 0 )
+    ++result;
+  }
+    return result;
 }
 }
 

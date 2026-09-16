@@ -1012,20 +1012,6 @@ int __stdcall ObjectTypeClass::LoadCleanup(IUnknown *aP0, ObjectTypeClass *aP1)
 }
 }
 
-// 0x5F9B60
-int ObjectTypeClass::FreeLoaderBuffer()
-{
-{
-    __3_YAXPAX_Z(*(void **)this);
-    *(int *)this = 0;
-    this->vtable1 = 0;
-    this->vtable2 = 0;
-    this->vtable3 = 0;
-    this->uniqueId = 0;
-    return 0;
-}
-}
-
 // 0x712040
 int ObjectTypeClass::SelectArtOrAlt()
 {
@@ -5081,53 +5067,6 @@ char __thiscall sub_717820(int this)
 }
 }
 
-// 0x7179D0
-int ObjectTypeClass::loadTypeMember_57179D0(WeaponTypeClass * aP1, CCINIClass * aP2)
-{
-{
-    if ( this != (int *)aP2 )
-  {
-    *(void**)this = *(int *)aP2->__pad_0;
-    this->vtable1 = aP2->headNode[0];
-    this->vtable2 = aP2->headNode[1];
-    this->vtable3 = aP2->headNode[2];
-    this->uniqueId = aP2->sectionHead[0];
-  }
-    *(int *)aP1->__pad_0 = *(void**)this;
-    *(int *)&aP1->__pad_0[4] = this->vtable1;
-    *(int *)&aP1->__pad_0[8] = this->vtable2;
-    *(int *)&aP1->__pad_0[12] = this->vtable3;
-    LOWORD(aP1->uniqueId) = (unsigned short)this->uniqueId;
-    return (int)aP1->__pad_0;
-}
-}
-
-// 0x717A80
-int ObjectTypeClass::loadTypeMember_5717A80(int a2)
-{
-{
-    int result;
-    result = a2;
-    if ( a2 <= 0 )
-    result = 1;
-    this->vtable2 = result;
-    return result;
-}
-}
-
-// 0x717AB0
-int ObjectTypeClass::loadTypeMember_5717AB0(int a2)
-{
-{
-    int result;
-    result = a2;
-    if ( a2 <= 0 )
-    result = 1;
-    this->vtable3 = result;
-    return result;
-}
-}
-
 // 0x717C00
 unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
 {
@@ -5527,6 +5466,20 @@ ObjectTypeClass * ObjectTypeClass::Destru_vt08(char a2)
 }
 }
 
+// 0x5F9B60
+int ObjectTypeClass::FreeLoaderBuffer()
+{
+{
+    __3_YAXPAX_Z(*(void **)this);
+    *(int *)this = 0;
+    this->vtable1 = 0;
+    this->vtable2 = 0;
+    this->vtable3 = 0;
+    this->uniqueId = 0;
+    return 0;
+}
+}
+
 // 0x6E5E70
 int ObjectTypeClass::FindByName()
 {
@@ -5547,6 +5500,27 @@ int ObjectTypeClass::FindByName()
     return 0;
   }
     return v3;
+}
+}
+
+// 0x7179D0
+int ObjectTypeClass::loadTypeMember_57179D0(WeaponTypeClass * aP1, CCINIClass * aP2)
+{
+{
+    if ( this != (int *)aP2 )
+  {
+    *(void**)this = *(int *)aP2->__pad_0;
+    this->vtable1 = aP2->headNode[0];
+    this->vtable2 = aP2->headNode[1];
+    this->vtable3 = aP2->headNode[2];
+    this->uniqueId = aP2->sectionHead[0];
+  }
+    *(int *)aP1->__pad_0 = *(void**)this;
+    *(int *)&aP1->__pad_0[4] = this->vtable1;
+    *(int *)&aP1->__pad_0[8] = this->vtable2;
+    *(int *)&aP1->__pad_0[12] = this->vtable3;
+    LOWORD(aP1->uniqueId) = (unsigned short)this->uniqueId;
+    return (int)aP1->__pad_0;
 }
 }
 
@@ -5580,11 +5554,37 @@ int ObjectTypeClass::loadTypeMember_5717A70()
 }
 }
 
+// 0x717A80
+int ObjectTypeClass::loadTypeMember_5717A80(int a2)
+{
+{
+    int result;
+    result = a2;
+    if ( a2 <= 0 )
+    result = 1;
+    this->vtable2 = result;
+    return result;
+}
+}
+
 // 0x717AA0
 int ObjectTypeClass::loadTypeMember_5717AA0()
 {
 {
     return this->Armor;
+}
+}
+
+// 0x717AB0
+int ObjectTypeClass::loadTypeMember_5717AB0(int a2)
+{
+{
+    int result;
+    result = a2;
+    if ( a2 <= 0 )
+    result = 1;
+    this->vtable3 = result;
+    return result;
 }
 }
 

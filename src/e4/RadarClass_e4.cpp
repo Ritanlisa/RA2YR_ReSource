@@ -2,20 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x4F4220
-namespace gamemd {
-unsigned int * RadarClass::initRadarSurface()
-{
-{
-    this->Items = 0;
-    this->Capacity = 0;
-    this->IsInitialized = 2;
-    *(void**)this = &vt_GScreenClass;
-    return this;
-}
-}
-} // namespace gamemd
-
 // 0x652C00
 namespace gamemd {
 int RadarClass::Destruct()
@@ -356,6 +342,20 @@ LABEL_74:
   v14 = *(const wchar_t **)(v16 + 96); /*0x6a86ed*/
   v15 = (const wchar_t *)v25[24]; /*0x6a86f0*/
   return wcscmp(v14, v15) <= 0; /*0x6a8457*/
+}
+}
+} // namespace gamemd
+
+// 0x4F4220
+namespace gamemd {
+unsigned int * RadarClass::initRadarSurface()
+{
+{
+    this->Items = 0;
+    this->Capacity = 0;
+    this->IsInitialized = 2;
+    *(void**)this = &vt_GScreenClass;
+    return this;
 }
 }
 } // namespace gamemd

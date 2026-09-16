@@ -975,158 +975,6 @@ int __stdcall CaptureManagerClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int 
 } // namespace game
 } // namespace ra2
 
-// 0x472B40
-namespace ra2 {
-namespace game {
-char CaptureManagerClass::AddRef(int a2)
-{
-{
-    int v2;
-    int v3;
-    int *v4;
-    int v5;
-    v2 = this->vtable2;
-    if ( v2 == *(int *)(a2 + 8) )
-  {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = (int *)this->vtable1;
-    v5 = *(int *)(a2 + 4) - (int)v4;
-    while ( *v4 == *(int *)((char *)(v4) + v5) )
-    {
-    ++v3;
-    ++v4;
-    if ( v3 >= v2 )
-    return 1;
-    }
-  }
-    return 0;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x472B80
-namespace ra2 {
-namespace game {
-char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v6;
-    int i;
-    if ( a2 )
-  {
-    this->vtable3 = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->vtable3 = 1;
-    if ( v4 )
-    {
-    if ( this->vtable1 )
-      {
-    v6 = this->vtable2;
-    if ( a2 < v6 )
-    v6 = a2;
-    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->vtable1 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-        {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->vtable1 = 0;
-        }
-      }
-    this->vtable1 = v4;
-    this->vtable2 = a2;
-    this->IsAllocated = a3 == 0;
-    return 1;
-    }
-    else
-    {
-    return 0;
-    }
-  }
-    else
-  {
-    this->GetClassIdentifier();
-    return 1;
-  }
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x472C30
-namespace ra2 {
-namespace game {
-void CaptureManagerClass::Destroy()
-{
-{
-    if ( this->vtable1 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(*(void **)(this + 4));
-    this->vtable1 = 0;
-  }
-    this->IsAllocated = 0;
-    this->vtable2 = 0;
-}
-}
-} // namespace game
-} // namespace ra2
-
-// 0x472CC0
-namespace ra2 {
-namespace game {
-char CaptureManagerClass::Release(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v5;
-    int i;
-    int v7;
-    if ( a2 )
-  {
-    this->vtable3 = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->vtable3 = 1;
-    if ( !v4 )
-    return 0;
-    if ( this->vtable1 )
-    {
-    v5 = this->vtable2;
-    if ( a2 < v5 )
-    v5 = a2;
-    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->vtable1 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-      {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->vtable1 = 0;
-      }
-    }
-    this->vtable1 = v4;
-    this->vtable2 = a2;
-    this->IsAllocated = a3 == 0;
-  }
-    else
-  {
-    this->GetClassIdentifier();
-  }
-    v7 = this->vtable2;
-    if ( v7 < this->uniqueId )
-    this->uniqueId = v7;
-    return 1;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x472D70
 namespace ra2 {
 namespace game {
@@ -1147,33 +995,6 @@ int __thiscall CaptureManagerClass::_vt04(int *this, _DWORD *a2)
       return -1; /*0x472d8d*/
   }
   return result; /*0x472d92*/
-}
-} // namespace game
-} // namespace ra2
-
-// 0x473140
-namespace ra2 {
-namespace game {
-unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
-{
-{
-    this->vtable1 = 0;
-    this->vtable2 = a2;
-    this->vtable3 = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_ControlNode;
-    if ( a2 )
-  {
-    if ( a3 )
-    {
-    this->vtable1 = a3;
-    return this;
-    }
-    this->vtable1 = __2_YAPAXI_Z(4 * a2);
-    this->IsAllocated = 1;
-  }
-    return this;
-}
 }
 } // namespace game
 } // namespace ra2
@@ -1317,6 +1138,108 @@ unsigned int CaptureManagerClass::LoadTypeData(int a2)
 } // namespace game
 } // namespace ra2
 
+// 0x472B40
+namespace ra2 {
+namespace game {
+char CaptureManagerClass::AddRef(int a2)
+{
+{
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->vtable2;
+    if ( v2 == *(int *)(a2 + 8) )
+  {
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->vtable1;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
+    {
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
+    }
+  }
+    return 0;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x472B80
+namespace ra2 {
+namespace game {
+char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
+  {
+    this->vtable3 = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->vtable3 = 1;
+    if ( v4 )
+    {
+    if ( this->vtable1 )
+      {
+    v6 = this->vtable2;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->vtable1 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+        {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->vtable1 = 0;
+        }
+      }
+    this->vtable1 = v4;
+    this->vtable2 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
+    }
+    else
+    {
+    return 0;
+    }
+  }
+    else
+  {
+    this->GetClassIdentifier();
+    return 1;
+  }
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x472C30
+namespace ra2 {
+namespace game {
+void CaptureManagerClass::Destroy()
+{
+{
+    if ( this->vtable1 && this->IsAllocated )
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->vtable1 = 0;
+  }
+    this->IsAllocated = 0;
+    this->vtable2 = 0;
+}
+}
+} // namespace game
+} // namespace ra2
+
 // 0x472C60
 namespace ra2 {
 namespace game {
@@ -1353,6 +1276,56 @@ unsigned int CaptureManagerClass::PointerToIndex(int a2)
     return (unsigned int)(a2 - this->vtable1) >> 2;
     else
     return 0;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x472CC0
+namespace ra2 {
+namespace game {
+char CaptureManagerClass::Release(int a2, unsigned int * a3)
+{
+{
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
+  {
+    this->vtable3 = 0;
+    if ( a3 )
+    v4 = a3;
+    else
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->vtable3 = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->vtable1 )
+    {
+    v5 = this->vtable2;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->vtable1 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
+      {
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->vtable1 = 0;
+      }
+    }
+    this->vtable1 = v4;
+    this->vtable2 = a2;
+    this->IsAllocated = a3 == 0;
+  }
+    else
+  {
+    this->GetClassIdentifier();
+  }
+    v7 = this->vtable2;
+    if ( v7 < this->uniqueId )
+    this->uniqueId = v7;
+    return 1;
 }
 }
 } // namespace game
@@ -1401,6 +1374,33 @@ DynamicVector * CaptureManagerClass::QueryInterface(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x473140
+namespace ra2 {
+namespace game {
+unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
+{
+{
+    this->vtable1 = 0;
+    this->vtable2 = a2;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_ControlNode;
+    if ( a2 )
+  {
+    if ( a3 )
+    {
+    this->vtable1 = a3;
+    return this;
+    }
+    this->vtable1 = __2_YAPAXI_Z(4 * a2);
+    this->IsAllocated = 1;
+  }
+    return this;
 }
 }
 } // namespace game

@@ -9675,63 +9675,46 @@ LABEL_13:
 
 // 0x57B990
 namespace gamemd { char Gap2Recv_57B990::Map_Create_57B990() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_57B990(__int16 *this)
 {
-  unsigned int v1; // eax
-  _DWORD *v2; // eax
-  int v3; // esi
-  unsigned int v4; // eax
-  _DWORD *v5; // eax
-  int v6; // edi
-  char result; // al
-
-  v1 = *this + ((__int16)((unsigned int)(*(_DWORD *)this - 0x10000) >> 16) << 9); /*0x57b9b4*/
-  if ( v1 >= 0x40000 || (v2 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v1)) == 0 ) /*0x57b9c4*/
+    unsigned int v1;
+    int *v2;
+    int v3;
+    unsigned int v4;
+    int *v5;
+    int v6;
+    char result;
+    v1 = *(void**)(this) + ((short)((unsigned int)(*(int *)this - 0x10000) >> 16) << 9);
+    if ( v1 >= 0x40000 || (v2 = *(int **)(g_Shroud_CellArray + 4 * v1)) == 0 )
   {
-    g_Map_GlobalCellIndex = *(_DWORD *)this - 0x10000; /*0x57b9ca*/
-    v2 = g_CellClassArray; /*0x57b9cf*/
+    g_Map_GlobalCellIndex = *(int *)this - 0x10000;
+    v2 = g_CellClassArray;
   }
-  v3 = v2[17]; /*0x57b9dc*/
-  v4 = *this + ((__int16)((unsigned int)(*(_DWORD *)this + 0x10000) >> 16) << 9); /*0x57b9f4*/
-  if ( v4 >= 0x40000 || (v5 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v4)) == 0 ) /*0x57ba04*/
+    v3 = v2[17];
+    v4 = *(void**)(this) + ((short)((unsigned int)(*(int *)(this) + 0x10000) >> 16) << 9);
+    if ( v4 >= 0x40000 || (v5 = *(int **)(g_Shroud_CellArray + 4 * v4)) == 0 )
   {
-    v5 = g_CellClassArray; /*0x57ba0a*/
-    g_Map_GlobalCellIndex = *(_DWORD *)this + 0x10000; /*0x57ba0f*/
+    v5 = g_CellClassArray;
+    g_Map_GlobalCellIndex = *(int *)(this) + 0x10000;
   }
-  v6 = v5[17]; /*0x57ba15*/
-  result = 0; /*0x57ba1b*/
-  switch ( v3 ) /*0x57ba2b*/
+    v6 = v5[17];
+    result = 0;
+    switch ( v3 )
   {
-    case 'W': /*0x57ba2b*/
-    case 'Y': /*0x57ba2b*/
-    case '[': /*0x57ba2b*/
-    case 'a': /*0x57ba2b*/
-      result = 1; /*0x57ba32*/
-      break; /*0x57ba37*/
-    case 'Z': /*0x57ba2b*/
-    case 'e': /*0x57ba2b*/
-      result = 2; /*0x57ba39*/
-      break; /*0x57ba39*/
-    default:
-      break;
+    case 'W': case 'Y': case '[': case 'a': result = 1;
+    break;
+    case 'Z': case 'e': result = 2;
+    break;
+    default: break;
   }
-  switch ( v6 ) /*0x57ba4f*/
+    switch ( v6 )
   {
-    case 'X': /*0x57ba4f*/
-    case 'Y': /*0x57ba4f*/
-    case 'Z': /*0x57ba4f*/
-    case 'c': /*0x57ba4f*/
-      result |= 4u; /*0x57ba56*/
-      break; /*0x57ba59*/
-    case '[': /*0x57ba4f*/
-    case 'e': /*0x57ba4f*/
-      result |= 8u; /*0x57ba5a*/
-      break; /*0x57ba5a*/
-    default:
-      return result;
+    case 'X': case 'Y': case 'Z': case 'c': result |= 4u;
+    break;
+    case '[': case 'e': result |= 8u;
+    break;
+    default: return result;
   }
-  return result; /*0x57ba41*/
+    return result;
 }
 }
 // 0x57CAB0
@@ -14516,24 +14499,21 @@ namespace gamemd { void* Gap2Recv_5AD9F0::Map_Cleanup(int a2, int a3) {
 
 // 0x5B3910
 namespace gamemd { int Gap2Recv_5B3910::LookupWaypointName() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LookupWaypointName(void *this)
 {
-  int v2; // edi
-  const void **v3; // esi
-
-  if ( !this ) /*0x5b3917*/
-    return -1; /*0x5b393c*/
-  v2 = 0; /*0x5b3919*/
-  v3 = (const void **)&off_816CAC; /*0x5b391b*/
-  while ( _strcmpi(*v3, this) ) /*0x5b392e*/
+    int v2;
+    const void **v3;
+    if ( !this )
+    return -1;
+    v2 = 0;
+    v3 = (const void **)&DataGlobal_816CAC;
+    while ( _strcmpi(*v3, this) )
   {
-    ++v3; /*0x5b3930*/
-    ++v2; /*0x5b3933*/
-    if ( (int)v3 >= (int)aSpyplaneOverfl ) /*0x5b393a*/
-      return -1; /*0x5b393a*/
+    ++v3;
+    ++v2;
+    if ( (int)v3 >= (int)aSpyplaneOverfl )
+    return -1;
   }
-  return v2; /*0x5b393c*/
+    return v2;
 }
 }
 // 0x5B6CD0
@@ -15574,37 +15554,34 @@ retn
 
 // 0x5DBEC0
 namespace gamemd { int Gap2Recv_5DBEC0::SendMultiplayerStartSignal_Start() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SendMultiplayerStartSignal_Start(char *this)
 {
-  char *v1; // ebx
-  char *v2; // eax
-  int v4; // edi
-  int v5; // esi
-  char *v6; // eax
-
-  v1 = this; /*0x5dbec1*/
-  if ( !this ) /*0x5dbec7*/
-    v1 = &HouseClass_Player.__pad_5568[8396]; /*0x5dbec9*/
-  v2 = CharToWideString(v1); /*0x5dbed5*/
-  if ( !wcscmp((const wchar_t *)v2, (const wchar_t *)&HouseClass_Player.__pad_5568[17244]) ) /*0x5dbedb*/
-    return 1; /*0x5dbee9*/
-  v4 = -1; /*0x5dbef5*/
-  v5 = 0; /*0x5dbef8*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[18384] <= 0 ) /*0x5dbefc*/
-    return -1; /*0x5dbefc*/
-  do /*0x5dbf23*/
+    char *v1;
+    char *v2;
+    int v4;
+    int v5;
+    char *v6;
+    v1 = this;
+    if ( !this )
+    v1 = &HouseClass_Player.__pad_5568[8396];
+    v2 = CharToWideString(v1);
+    if ( !wcscmp((const wchar_t *)v2, (const wchar_t *)&HouseClass_Player.__pad_5568[17244]) )
+    return 1;
+    v4 = -1;
+    v5 = 0;
+    if ( *(int *)&HouseClass_Player.__pad_5568[18384] <= 0 )
+    return -1;
+    do
   {
-    v6 = ToWideStringChar(*(IUnknown **)(*(_DWORD *)&HouseClass_Player.__pad_5568[18372] + 4 * v5)); /*0x5dbf07*/
-    if ( !_strcmpi(v6, v1) ) /*0x5dbf0d*/
-      v4 = v5; /*0x5dbf19*/
-    ++v5; /*0x5dbf20*/
+    v6 = ToWideStringChar(*(IUnknown **)(*(int *)&HouseClass_Player.__pad_5568[18372] + 4 * v5));
+    if ( !_strcmpi(v6, v1) )
+    v4 = v5;
+    ++v5;
   }
-  while ( v5 < *(int *)&HouseClass_Player.__pad_5568[18384] ); /*0x5dbf23*/
-  if ( v4 == -1 ) /*0x5dbf28*/
-    return -1; /*0x5dbf3c*/
-  else
-    return *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[18372] + 4 * v4) + 119); /*0x5dbf36*/
+    while ( v5 < *(int *)&HouseClass_Player.__pad_5568[18384] );
+    if ( v4 == -1 )
+    return -1;
+    else
+    return *(int *)(*(int *)(*(int *)&HouseClass_Player.__pad_5568[18372] + 4 * v4) + 119);
 }
 }
 // 0x5E23D0
@@ -15665,58 +15642,55 @@ retn    4
 
 // 0x5E9340
 namespace gamemd { int Gap2Recv_5E9340::Audio_Helper() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-INIClass *__thiscall Audio_Helper(void *this)
 {
-  int v2; // ebx
-  INIClass *result; // eax
-  int v4; // edi
-  SessionClass *v5; // esi
-  char *v6; // eax
-
-  if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] == 4 ) /*0x5e934e*/
+    int v2;
+    INIClass *result;
+    int v4;
+    SessionClass *v5;
+    char *v6;
+    if ( *(int *)&HouseClass_Player.__pad_5568[8068] == 4 )
   {
-    if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5e9359*/
-      v2 = 6; /*0x5e9369*/
+    if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() )
+    v2 = 6;
     else
-      v2 = 2; /*0x5e9362*/
+    v2 = 2;
   }
-  else
+    else
   {
-    v2 = 8; /*0x5e9370*/
+    v2 = 8;
   }
-  result = *(INIClass **)&stru_830620.__pad_DFC[648]; /*0x5e9375*/
-  if ( !*(_DWORD *)&stru_830620.__pad_DFC[648] && v2 < 7 ) /*0x5e9381*/
-    ++v2; /*0x5e9383*/
-  v4 = 0; /*0x5e9384*/
-  v5 = (SessionClass *)&HouseClass_Player.__pad_5568[18396]; /*0x5e9386*/
-  while ( 1 ) /*0x5e938b*/
+    result = *(INIClass **)&DataGlobal_830620.__pad_DFC[648];
+    if ( !*(int *)&DataGlobal_830620.__pad_DFC[648] && v2 < 7 )
+    ++v2;
+    v4 = 0;
+    v5 = (SessionClass *)&HouseClass_Player.__pad_5568[18396];
+    while ( 1 )
   {
-    if ( v5->GameMode[0] ) /*0x5e938b*/
+    if ( v5->GameMode[0] )
     {
-      v6 = ToWideStringChar((IUnknown *)v5->GameMode[0]); /*0x5e9391*/
-      result = (INIClass *)_strcmpi(this, v6); /*0x5e9398*/
-      if ( !result ) /*0x5e93a2*/
-        break; /*0x5e93a2*/
+    v6 = ToWideStringChar((IUnknown *)v5->GameMode[0]);
+    result = (INIClass *)_strcmpi(this, v6);
+    if ( !result )
+    break;
     }
-    v5 = (SessionClass *)((char *)v5 + 4); /*0x5e93a4*/
-    ++v4; /*0x5e93a7*/
-    if ( (int)v5 >= (int)&HouseClass_Player.__pad_5568[18428] ) /*0x5e93ae*/
-      return result; /*0x5e93ae*/
+    v5 = (SessionClass *)((char *)(v5) + 4);
+    ++v4;
+    if ( (int)v5 >= (int)&HouseClass_Player.__pad_5568[18428] )
+    return result;
   }
-  result = *(INIClass **)&HouseClass_Player.__pad_5568[4 * v4 + 18396]; /*0x5e93b5*/
-  if ( *(_DWORD *)&result[1].__pad_20[11] == -1 ) /*0x5e93c0*/
+    result = *(INIClass **)&HouseClass_Player.__pad_5568[4 * v4 + 18396];
+    if ( *(int *)&result[1].__pad_20[11] == -1 )
   {
-    *(_DWORD *)&HouseClass_Player.__pad_5568[4 * v4 + 18396] = *(&g_MatrixTransformState + 2281); /*0x5e93c8*/
+    *(int *)&HouseClass_Player.__pad_5568[4 * v4 + 18396] = *(&g_MatrixTransformState + 2281);
   }
-  else
+    else
   {
-    result = (INIClass *)*(&g_MatrixTransformState + 2275); /*0x5e93d4*/
-    if ( v4 >= v2 ) /*0x5e93db*/
-      result = (INIClass *)*(&g_MatrixTransformState + 2276); /*0x5e93dd*/
-    *(_DWORD *)&HouseClass_Player.__pad_5568[4 * v4 + 18396] = result; /*0x5e93e2*/
+    result = (INIClass *)*(&g_MatrixTransformState + 2275);
+    if ( v4 >= v2 )
+    result = (INIClass *)*(&g_MatrixTransformState + 2276);
+    *(int *)&HouseClass_Player.__pad_5568[4 * v4 + 18396] = result;
   }
-  return result; /*0x5e93b0*/
+    return result;
 }
 }
 // 0x5E93F0
@@ -15886,108 +15860,96 @@ namespace gamemd { int Gap2Recv_5EACD0::RefreshLobbyAll_Get_5EACD0() {
 
 // 0x5EADA0
 namespace gamemd { char Gap2Recv_5EADA0::RefreshLobbyAll_Get_5EADA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall RefreshLobbyAll_Get_5EADA0(SessionClass *hDlg)
 {
-  SessionClass *v2; // edi
-  SessionClass *v3; // esi
-  int ResourceID3CSF; // eax
-  CoordStruct *v5; // ecx
-  int v6; // ebx
-  int Option; // eax
-  char result; // al
-
-  v2 = 0; /*0x5eada6*/
-  v3 = (SessionClass *)&HouseClass_Player.__pad_5568[8232]; /*0x5eada8*/
-  do /*0x5eae30*/
+    SessionClass *v2;
+    SessionClass *v3;
+    int ResourceID3CSF;
+    CoordStruct *v5;
+    int v6;
+    int Option;
+    char result;
+    v2 = 0;
+    v3 = (SessionClass *)&HouseClass_Player.__pad_5568[8232];
+    do
   {
-    ResourceID3CSF = GetResourceID3CSF(v2); /*0x5eadaf*/
-    v5 = *(CoordStruct **)&v3->unknown_8AA[7946]; /*0x5eadb4*/
-    v6 = ResourceID3CSF; /*0x5eadba*/
-    if ( v5 /*0x5eadd6*/
-      && (v5 == *(&g_MatrixTransformState + 2277)
-       || v5 == *(&g_MatrixTransformState + 2278)
-       || v5 == *(&g_MatrixTransformState + 2279)) )
+    ResourceID3CSF = GetResourceID3CSF(v2);
+    v5 = *(CoordStruct **)&v3->unknown_8AA[7946];
+    v6 = ResourceID3CSF;
+    if ( v5 && (v5 == *(&g_MatrixTransformState + 2277) || v5 == *(&g_MatrixTransformState + 2278) || v5 == *(&g_MatrixTransformState + 2279)) )
     {
-      Option = v3->GameMode[0]; /*0x5eadd8*/
+    Option = v3->GameMode[0];
     }
-    else if ( v5 == *(&g_MatrixTransformState + 2275) ) /*0x5eade2*/
+    else if ( v5 == *(&g_MatrixTransformState + 2275) )
     {
-      Option = -2; /*0x5eade4*/
+    Option = -2;
     }
-    else if ( v5 == *(&g_MatrixTransformState + 2276) ) /*0x5eadf1*/
+    else if ( v5 == *(&g_MatrixTransformState + 2276) )
     {
-      Option = -2; /*0x5eadf3*/
+    Option = -2;
     }
-    else if ( v5 == *(&g_MatrixTransformState + 2280) ) /*0x5eae00*/
+    else if ( v5 == *(&g_MatrixTransformState + 2280) )
     {
-      Option = -2; /*0x5eae02*/
+    Option = -2;
     }
     else
     {
-      Option = -2; /*0x5eae10*/
-      if ( v5 != *(&g_MatrixTransformState + 2281) ) /*0x5eae15*/
-        Option = SessionClass::GetOption((int)v5); /*0x5eae17*/
+    Option = -2;
+    if ( v5 != *(&g_MatrixTransformState + 2281) )
+    Option = SessionClass::GetOption((int)v5);
     }
-    result = SetupLobbyFactionSlots(hDlg, v6, Option); /*0x5eae21*/
-    v3 = (SessionClass *)((char *)v3 + 4); /*0x5eae26*/
-    v2 = (SessionClass *)((char *)v2 + 1); /*0x5eae29*/
+    result = SetupLobbyFactionSlots(hDlg, v6, Option);
+    v3 = (SessionClass *)((char *)(v3) + 4);
+    v2 = (SessionClass *)((char *)(v2) + 1);
   }
-  while ( (int)v3 < (int)&HouseClass_Player.__pad_5568[8264] ); /*0x5eae30*/
-  return result; /*0x5eae36*/
+    while ( (int)v3 < (int)&HouseClass_Player.__pad_5568[8264] );
+    return result;
 }
 }
 // 0x5EAE40
 namespace gamemd { char Gap2Recv_5EAE40::RefreshLobbyAll_Setup() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall RefreshLobbyAll_Setup(SessionClass *hDlg)
 {
-  char *v2; // edi
-  int *v3; // esi
-  int ResourceID4CSF; // eax
-  CoordStruct *v5; // ecx
-  int v6; // ebx
-  int Option2; // eax
-  bool result; // al
-
-  v2 = 0; /*0x5eae46*/
-  v3 = (int *)&HouseClass_Player.__pad_5568[8264]; /*0x5eae48*/
-  do /*0x5eaed0*/
+    char *v2;
+    int *v3;
+    int ResourceID4CSF;
+    CoordStruct *v5;
+    int v6;
+    int Option2;
+    bool result;
+    v2 = 0;
+    v3 = (int *)&HouseClass_Player.__pad_5568[8264];
+    do
   {
-    ResourceID4CSF = GetResourceID4CSF(v2); /*0x5eae4f*/
-    v5 = (CoordStruct *)v3[2533]; /*0x5eae54*/
-    v6 = ResourceID4CSF; /*0x5eae5a*/
-    if ( v5 /*0x5eae76*/
-      && (v5 == *(&g_MatrixTransformState + 2277)
-       || v5 == *(&g_MatrixTransformState + 2278)
-       || v5 == *(&g_MatrixTransformState + 2279)) )
+    ResourceID4CSF = GetResourceID4CSF(v2);
+    v5 = (CoordStruct *)v3[2533];
+    v6 = ResourceID4CSF;
+    if ( v5 && (v5 == *(&g_MatrixTransformState + 2277) || v5 == *(&g_MatrixTransformState + 2278) || v5 == *(&g_MatrixTransformState + 2279)) )
     {
-      Option2 = *v3; /*0x5eae78*/
+    Option2 = *v3;
     }
-    else if ( v5 == *(&g_MatrixTransformState + 2275) ) /*0x5eae82*/
+    else if ( v5 == *(&g_MatrixTransformState + 2275) )
     {
-      Option2 = -2; /*0x5eae84*/
+    Option2 = -2;
     }
-    else if ( v5 == *(&g_MatrixTransformState + 2276) ) /*0x5eae91*/
+    else if ( v5 == *(&g_MatrixTransformState + 2276) )
     {
-      Option2 = -2; /*0x5eae93*/
+    Option2 = -2;
     }
-    else if ( v5 == *(&g_MatrixTransformState + 2280) ) /*0x5eaea0*/
+    else if ( v5 == *(&g_MatrixTransformState + 2280) )
     {
-      Option2 = -2; /*0x5eaea2*/
+    Option2 = -2;
     }
     else
     {
-      Option2 = -2; /*0x5eaeb0*/
-      if ( v5 != *(&g_MatrixTransformState + 2281) ) /*0x5eaeb5*/
-        Option2 = SessionClass::GetOption2((int)v5); /*0x5eaeb7*/
+    Option2 = -2;
+    if ( v5 != *(&g_MatrixTransformState + 2281) )
+    Option2 = SessionClass::GetOption2((int)v5);
     }
-    result = SetupLobbyPlayerSlots(hDlg, v6, Option2); /*0x5eaec1*/
-    ++v3; /*0x5eaec6*/
-    ++v2; /*0x5eaec9*/
+    result = SetupLobbyPlayerSlots(hDlg, v6, Option2);
+    ++v3;
+    ++v2;
   }
-  while ( (int)v3 < (int)&HouseClass_Player.__pad_5568[8296] ); /*0x5eaed0*/
-  return result; /*0x5eaed6*/
+    while ( (int)v3 < (int)&HouseClass_Player.__pad_5568[8296] );
+    return result;
 }
 }
 // 0x5EAEE0
@@ -16190,121 +16152,115 @@ retn
 
 // 0x5EEF60
 namespace gamemd { void Gap2Recv_5EEF60::String_Process() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5EEF60(_DWORD *this)
 {
-  unsigned int v2; // esi
-  int *v3; // ebp
-  int v4; // edi
-  void *v5; // edi
-  unsigned int v6; // edx
-  int *v7; // edi
-  unsigned int v8; // ebp
-  int v9; // esi
-  int v10; // edx
-  int v11; // ecx
-  int v12; // eax
-  int *v13; // [esp+8h] [ebp-4h]
-
-  v2 = *(this + 2); /*0x5eef65*/
-  if ( v2 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x5eef77*/
+    unsigned int v2;
+    int *v3;
+    int v4;
+    void *v5;
+    unsigned int v6;
+    int *v7;
+    unsigned int v8;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    int *v13;
+    v2 = this->M8;
+    if ( v2 > this->M48 && this->M20 != 1 )
   {
-    v3 = (int *)*this; /*0x5eef80*/
-    v4 = *(this + 3); /*0x5eef83*/
-    v13 = (int *)*this; /*0x5eef86*/
-    *(this + 2) = v2 >> 1; /*0x5eef8c*/
-    *(this + 3) = v4 - 1; /*0x5eef94*/
-    v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x5eef9f*/
-    v6 = 4 * *(this + 2); /*0x5eefa4*/
-    *this = v5; /*0x5eefab*/
-    memset(v5, 0, v6); /*0x5eefb0*/
-    if ( (int)v2 > 0 ) /*0x5eefbb*/
+    v3 = (int *)*(void**)this;
+    v4 = this->M12;
+    v13 = (int *)*(void**)this;
+    this->M8 = v2 >> 1;
+    this->M12 = v4 - 1;
+    v5 = __2_YAPAXI_Z(4 * (v2 >> 1));
+    v6 = 4 *(void**)this->M8;
+    *(void**)this = v5;
+    memset(v5, 0, v6);
+    if ( (int)v2 > 0 )
     {
-      v7 = v3; /*0x5eefbd*/
-      v8 = v2; /*0x5eefbf*/
-      do /*0x5eeff3*/
+    v7 = v3;
+    v8 = v2;
+    do
       {
-        v9 = *v7; /*0x5eefc1*/
-        if ( *v7 ) /*0x5eefc1*/
+    v9 = *v7;
+    if ( *v7 )
         {
-          do /*0x5eefed*/
+    do
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1); /*0x5eefd7*/
-            v11 = *(_DWORD *)(*this + 4 * v10); /*0x5eefdb*/
-            *(_DWORD *)(*this + 4 * v10) = v9; /*0x5eefe1*/
-            v12 = *(_DWORD *)(v9 + 8); /*0x5eefe3*/
-            *(_DWORD *)(v9 + 8) = v11; /*0x5eefe6*/
-            v9 = v12; /*0x5eefe9*/
+    v10 = ((int (__thiscall *)(int))this->M24)(v9) & ((1 << this->M12) - 1);
+    v11 = *(int *)(*(void**)(this) + 4 * v10);
+    *(int *)(*(void**)(this) + 4 * v10) = v9;
+    v12 = *(int *)(v9 + 8);
+    *(int *)(v9 + 8) = v11;
+    v9 = v12;
           }
-          while ( v12 ); /*0x5eefed*/
+    while ( v12 );
         }
-        ++v7; /*0x5eefef*/
-        --v8; /*0x5eeff2*/
+    ++v7;
+    --v8;
       }
-      while ( v8 ); /*0x5eeff3*/
-      v3 = v13; /*0x5eeff5*/
+    while ( v8 );
+    v3 = v13;
     }
-    __3_YAXPAX_Z(v3); /*0x5eeffa*/
+    __3_YAXPAX_Z(v3);
   }
 }
 }
 // 0x5EF010
 namespace gamemd { void Gap2Recv_5EF010::Map_Helper_5EF010() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5EF010(_DWORD *this)
 {
-  int v2; // esi
-  _DWORD *v3; // ebp
-  int v4; // edi
-  void *v5; // edi
-  unsigned int v6; // edx
-  int *v7; // edi
-  int v8; // ebp
-  int v9; // esi
-  int v10; // edx
-  int v11; // ecx
-  int v12; // eax
-  _DWORD *v13; // [esp+4h] [ebp-4h]
-
-  if ( *((_BYTE *)this + 20) != 1 ) /*0x5ef018*/
+    int v2;
+    int *v3;
+    int v4;
+    void *v5;
+    unsigned int v6;
+    int *v7;
+    int v8;
+    int v9;
+    int v10;
+    int v11;
+    int v12;
+    int *v13;
+    if ( this->M20 != 1 )
   {
-    v2 = *(this + 2); /*0x5ef020*/
-    v3 = (_DWORD *)*this; /*0x5ef023*/
-    v4 = *(this + 3) + 1; /*0x5ef02c*/
-    *(this + 2) = 2 * v2; /*0x5ef02d*/
-    v13 = v3; /*0x5ef030*/
-    *(this + 3) = v4; /*0x5ef038*/
-    v5 = __2_YAPAXI_Z(8 * v2); /*0x5ef043*/
-    v6 = 4 * *(this + 2); /*0x5ef048*/
-    *this = v5; /*0x5ef04f*/
-    memset(v5, 0, v6); /*0x5ef054*/
-    if ( v2 > 0 ) /*0x5ef05f*/
+    v2 = this->M8;
+    v3 = (int *)*(void**)this;
+    v4 = this->M12 + 1;
+    this->M8 = 2 * v2;
+    v13 = v3;
+    this->M12 = v4;
+    v5 = __2_YAPAXI_Z(8 * v2);
+    v6 = 4 *(void**)this->M8;
+    *(void**)this = v5;
+    memset(v5, 0, v6);
+    if ( v2 > 0 )
     {
-      v7 = v3; /*0x5ef061*/
-      v8 = v2; /*0x5ef063*/
-      do /*0x5ef097*/
+    v7 = v3;
+    v8 = v2;
+    do
       {
-        v9 = *v7; /*0x5ef065*/
-        if ( *v7 ) /*0x5ef065*/
+    v9 = *v7;
+    if ( *v7 )
         {
-          do /*0x5ef091*/
+    do
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1); /*0x5ef07b*/
-            v11 = *(_DWORD *)(*this + 4 * v10); /*0x5ef07f*/
-            *(_DWORD *)(*this + 4 * v10) = v9; /*0x5ef085*/
-            v12 = *(_DWORD *)(v9 + 8); /*0x5ef087*/
-            *(_DWORD *)(v9 + 8) = v11; /*0x5ef08a*/
-            v9 = v12; /*0x5ef08d*/
+    v10 = ((int (__thiscall *)(int))this->M24)(v9) & ((1 << this->M12) - 1);
+    v11 = *(int *)(*(void**)(this) + 4 * v10);
+    *(int *)(*(void**)(this) + 4 * v10) = v9;
+    v12 = *(int *)(v9 + 8);
+    *(int *)(v9 + 8) = v11;
+    v9 = v12;
           }
-          while ( v12 ); /*0x5ef091*/
+    while ( v12 );
         }
-        ++v7; /*0x5ef093*/
-        --v8; /*0x5ef096*/
+    ++v7;
+    --v8;
       }
-      while ( v8 ); /*0x5ef097*/
-      v3 = v13; /*0x5ef099*/
+    while ( v8 );
+    v3 = v13;
     }
-    __3_YAXPAX_Z(v3); /*0x5ef09e*/
+    __3_YAXPAX_Z(v3);
   }
 }
 }
