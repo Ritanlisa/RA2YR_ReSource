@@ -2506,3 +2506,84 @@ marker&completed 对账 **0 幽灵** / readiness READY
 ### 假完成复位 ×10（诚实口径收紧）
 
 - 全池 exec-flow 验证暴露（G14 align 修正移除 43 误位项后的滞回暴露 + G6 双括号伪码体族）：_flsall/start（G6 双括号伪码体）/ FacingClass::Update+Set_SyncLog / ResultNode::Init / TechnoClass::processExperienceGain+updateVeterancy / JumpjetLocomotionClass::DispatchVirtualCall_2（空体损坏块，手工重建 pending）/ LoadOptions::ClearBuffer —— 全部 completed=false + 伪码块回滚（.omo/g15_rollback.py 新工具：ida_cache 真值回置 + G12 bound 规则）
+
+## 执行日志 — 2026-09-16 G16 会话：vtable 槽裁决 #108/#109 闭环 + TechnoClass 双区段 ctor 重建 + BulletType INI 全表 + OO refresh（completed 11,888 → 11,892 / pending 4,723 → 4,719）
+
+> 提交链：c43938c1（证据+重命名+OO refresh+H5×2）→ 收尾提交。IDA 会话中段转离线
+> （BulletType til 重建中断，#112/#113 记账，恢复脚本 .omo/g16_bt_apply.py 备好）。
+
+### 证据① InfantryClass 链 vtable 槽裁决（issue #108/#109 双闭环）
+
+- **#108**：0x5b35e0 裁决 = `MissionClass::QueueMission`（三重证据：YRpp 声明权威 +
+  MissionClass 表 0x7edcc0+488 直证 + 反编译语义——写 queuedMission@180/missionQueued@184
+  + start_mission 时 (vt+512)→(vt+492) 链）。四方重命名（原 ParticleClass::MissionDispatch）。
+- **MissionClass 虚区全解**（YRpp 序列 + 二进制逐槽验证）：
+  queueMission@488 / nextMission@492（原 AdvanceState）/ forceMission@496（原 SetState）/
+  onMissionChanged@500 / revertMission@504 / hasValidTarget@508（this+176!=-1 语义）/
+  isMissionDone@512（默认 return-1 基桩；Infantry 覆写=CanInitiateDeploy@0x521b60）。
+  vo MissionClass 新 7 条（验证器沿继承链解析，全 Techno 族受益）。
+- **#109**：vfptr+116 = 字节 116 = `GetActionOnObject` 族（Ares 命名权威——
+  TechnoClass_GetActionOnObject_IvanBombsA 等 6 钩子交叉验证）。五实现四方统一：
+  Techno@0x6ffec0（原 HandleCursorClick）/ Foot@0x4dded0（原 InfantryClass::GetCursorOverObject
+  ——owner 误归属纠正）/ Infantry_EMP@0x51e3b0 / Building@0x447210（原 HandleClickEvent）/
+  Aircraft@0x417cc0。hpp 签名补齐（GetActionOnObject_EMP/ValidateTargetAndMove 2 参、
+  FootClass::ValidateMove 3 参——G12 #73 族首批清偿）。
+- vo InfantryClass 三条倒置条目修正（'124':'IsAboveScreenMargin' → IsAboveScreenMargin:124 等）。
+
+### 证据①附带：TechnoClass 双区段四源重建（ctor 0x6F2B40 写图终审）
+
+- **发现**：G15 的 focus=540 裁决被推翻——`SetFocus`(0x70C610, YRpp) 写 this[134]=**536**，
+  `GetOriginalOwner`(0x70F820) 返 this[135]=**540**，ParachuteTo/ShouldBeCloaked 反汇编旁证。
+  真值：**focus@536 / owner@540**；hpp 布局本来就对（alignmentPadding251/27E/27D 命名自洽），
+  是 ml/class_layouts/til 数据层漂移。
+- **区段一 504-792**（YRpp 偏移命名锚 1F8/208/20C/250/272/273/280/2F8 + ctor 全写图核对）：
+  旧模型 640 起 +20 腐蚀（gapRadius@640→620、ammo@784→764、captureManager@720→700），
+  幻影 'Owner'@532 实为 controlGroup(int, ctor=-1)；cloakProgress@548 跨 28B（**ProgressTimer
+  真尺寸 28**——src 定义 8B 是新发现的结构体漂移，#111 记账）。Techno/Foot/Aircraft/Building
+  四行 ml + mbn + class_layouts 全重建；til 经 t14 重声明落盘 ✓。
+- **区段二 448-504**（InitProductionLimits 翻译时暴露）：旧模型 460-492 又 +4 漂移——
+  460=drainTarget/468=drainAnim/**472=isDisguisedFlag(bool)**/476=disguiseCreationFrame/
+  480=infantryBlinkTimer(12)/492=disguiseBlinkTimer(12)。hpp 同样本来就对。
+- **遗留**：#110 TechnoClass 800-1312 尾区（+20 嫌疑，ctor 写图可直接裁决）；
+  #111 ProgressTimer 8B→28B（牵连 5 类 src 布局保真）。
+
+### 证据③ BulletTypeClass INI 全表（DEFER 清偿）
+
+- LoadFromINI@0x46BEE0 活提取 offset↔INI 键全配对：660=airburst 起 22 bool 逐位精确
+  （667=Arcing/669=Level/670=Inviso/672=Ranged/673=noRotate(Rotates 反相)/676=AA/677=AG…）、
+  684=cluster、688/692=airburstWeapon/shrapnelWeapon、712=elasticity(**double, 8 对齐 pad 705-711**
+  ——G15 "float" 判断纠正)、724=Color(**int 索引**——0x474a90 是索引查找器非指针)、
+  728=trailer、756/757/758=animLow/High/Rate、759=flat。总尺寸 760 与神谕精确吻合。
+- **破案**：0x772fa0（InfantryTypeClass::Find）实为 **WeaponTypeClass::Find** 误归属
+  （构造调 WeaponTypeClass::Constructor、分配 0x160=352B=G15 裁决尺寸）——G15 的
+  "YRpp 缺失两个 InfantryType 成员"系误判，YRpp 序列完全正确。
+- 三源落盘（ml/mbn/class_layouts）；til 重建中途 IDA 离线（#112/#113，
+  .omo/g16_bt_apply.py 恢复脚本备好——C 声明文本 + del_named_type + parse_decls 正确路径）。
+
+### OO refresh + 提交重锚（用户主线 ②③）
+
+- `gen_e4_materialize --phase refresh`：rewritten **4,567** / 已译 11,231 保留；
+  括号 infantry.cpp -2 = 双括号修复（本会话 H5 编辑产物）。
+- 提交 c43938c1 + tag auto-fill-baseline 重锚。
+
+### H5 翻译 + 舰队（主线 ④）
+
+- **手动 H5 ×3 全 CFG PASS**：ParachuteTo(0x521760, #108 解锁) / ValidateTargetAndMove
+  (0x51f190, #109 解锁) / InitProductionLimits(0x522780——语义实为间谍伪装初始化，
+  T19 名误导留 A2)。GetProductionLimit(0x522640) focus→owner 纠名复验 PASS。
+- **g5_fleet 词汇升级**：slot_name 补继承链行走（class_layouts PARENTS）——
+  MissionClass 区段槽对 InfantryClass 可解析（修复前 slot@488? 跳过）。
+- 舰队波：infantry.cpp 0（23 pending 全 too-long/raw-residue——机械天花板）；
+  building.cpp +1；aircraft.cpp 0（7 too-long+2 goto）。
+- **净 completed 11,888 → 11,892（+4）/ pending 4,723 → 4,719**。
+
+### 方法论沉淀
+
+- **ctor 写图终审法**（G15 范式推广）：TechnoClass ctor 0x6F2B40 全写图（到 this+327@1308）
+  一次反编译即锁定整类布局——比逐函数考古快一个量级；ml/hpp/til 三方分歧时 hpp 的
+  alignmentPadding 十六进制命名往往是自洽锚点。
+- **CFG 精确镜像要诀**：成员读取次数=事件次数（重复 this->member 产生重复 READ 事件）；
+  未名偏移保持 raw cast 形态（IDA 侧局部解引用零事件=双侧对称）；分支写共享块形状
+  需按 IDA 块图组织（共享 WRITE 用局部变量中转）。
+- **til 直接 udt 构造坑**：pm.size 会被成员 type 尺寸覆盖——char 成员配 int 类型即爆炸；
+  正确路径 = C 声明文本 + del_named_type + idc.parse_decls。

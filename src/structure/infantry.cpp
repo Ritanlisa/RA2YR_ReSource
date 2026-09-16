@@ -4711,124 +4711,6 @@ int __thiscall InfantryClass::ProcessIvanBomb(_DWORD *this)
   else
     return AbstractClass::COMStub_143();
 }
-
-/* ASM:
-push    ecx
-push    ebx
-push    esi
-mov     esi, ecx
-mov     ecx, [esi+6C0h]
-mov     al, [ecx+0EC8h]
-test    al, al
-jz      loc_51F7EE
-mov     eax, [esi+6C4h]
-or      ebx, 0FFFFFFFFh
-cmp     eax, 1Bh
-jz      short loc_51F716
-cmp     eax, 1Ch
-jz      short loc_51F716
-cmp     eax, 1Dh
-jz      short loc_51F716
-cmp     eax, 1Eh
-jnz     short loc_51F738
-
-loc_51F716:                             ; CODE XREF: InfantryClass__ProcessIvanBomb+25↑j
-; InfantryClass__ProcessIvanBomb+2A↑j ...
-cmp     dword ptr [ecx+6C4h], 0FFFFFFFFh
-jg      loc_51F7C9
-mov     eax, [esi]
-push    0
-push    1
-push    1Fh
-mov     ecx, esi
-call    dword ptr [eax+558h]
-jmp     loc_51F7C9
-; ---------------------------------------------------------------------------
-
-loc_51F738:                             ; CODE XREF: InfantryClass__ProcessIvanBomb+34↑j
-mov     edx, [esi]
-push    edi
-push    0
-push    1
-push    1Bh
-mov     ecx, esi
-call    dword ptr [edx+558h]
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+3F0h]
-mov     edi, eax
-mov     ecx, esi
-push    edi
-call    IsNonNullPtr
-test    al, al
-jz      short loc_51F7B5
-mov     ecx, [edi]
-mov     al, [ecx+150h]
-test    al, al
-jz      short loc_51F7B5
-push    offset aDeso    ; "DESO"
-mov     ecx, esi
-call    ObjectClass__StepCleanup
-test    al, al
-jz      short loc_51F792
-mov     edx, [esi+6C0h]
-mov     eax, [edx+0E3Ch]
-mov     ebx, [eax+3D0h]
-inc     ebx
-jmp     short loc_51F7B5
-; ---------------------------------------------------------------------------
-
-loc_51F792:                             ; CODE XREF: InfantryClass__ProcessIvanBomb+9B↑j
-mov     edi, [esi]
-lea     ecx, [esp+10h+var_4]
-push    ecx
-mov     ecx, esi
-call    dword ptr [edi+1B8h]
-push    eax
-mov     ecx, 87F7E8h
-call    CellCoord__To_CellObj
-push    eax
-mov     ecx, esi
-call    dword ptr [edi+3C8h]
-
-loc_51F7B5:                             ; CODE XREF: InfantryClass__ProcessIvanBomb+7F↑j
-; InfantryClass__ProcessIvanBomb+8B↑j ...
-mov     edx, [esi+6C0h]
-pop     edi
-mov     eax, [edx+6C4h]
-cmp     eax, 0FFFFFFFFh
-jle     short loc_51F7C9
-mov     ebx, eax
-
-loc_51F7C9:                             ; CODE XREF: InfantryClass__ProcessIvanBomb+3D↑j
-; InfantryClass__ProcessIvanBomb+53↑j ...
-mov     eax, [esi]
-push    5
-mov     ecx, esi
-call    dword ptr [eax+1F0h]
-mov     edx, [esi]
-push    1
-push    0
-mov     ecx, esi
-call    dword ptr [edx+480h]
-cmp     ebx, 0FFFFFFFFh
-jle     short loc_51F7EE
-mov     eax, ebx
-pop     esi
-pop     ebx
-pop     ecx
-retn
-; ---------------------------------------------------------------------------
-
-loc_51F7EE:                             ; CODE XREF: InfantryClass__ProcessIvanBomb+13↑j
-; InfantryClass__ProcessIvanBomb+106↑j
-mov     ecx, esi
-call    AbstractClass__COMStub_143
-pop     esi
-pop     ebx
-pop     ecx
-retn
-*/
 }
 
 // 0x51f660
@@ -7766,41 +7648,43 @@ int InfantryClass::CaptureAttackerInfo()
 // 0x522780
 int InfantryClass::InitProductionLimits()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x522780
-int __thiscall InfantryClass::InitProductionLimits(int this)
-{
-  int result; // eax
-  int v2; // eax
-  int v3; // eax
+    int result;
+    InfantryTypeClass *v1;
+    HouseClass *v2;
+    int v3;
+    void *v20;
 
-  result = *(_DWORD *)(this + 1728);
-  if ( *(_BYTE *)(result + 3376) )
-  {
-    v2 = *(_DWORD *)(this + 540);
-    *(_BYTE *)(this + 472) = 1;
-    *(_DWORD *)(this + 1308) = v2;
-    v3 = *(_DWORD *)(v2 + 488);
-    if ( v3 )
+    v1 = this->Type;
+    result = (int)v1;
+    if (*(_BYTE *)((char *)v1 + 3376))
     {
-      if ( v3 == 1 )
-        result = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3420);
-      else
-        result = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3424);
-      *(_DWORD *)(this + 1304) = result;
+        v2 = this->owner;
+        this->isDisguisedFlag = 1;
+        this->isDisguisedFlag_as_house = v2;
+        v3 = *(_DWORD *)((char *)v2 + 488);
+        if (v3)
+        {
+            if (v3 == 1)
+                v20 = *(void **)((char *)g_RulesClass_Instance + 3420);
+            else
+                v20 = *(void **)((char *)g_RulesClass_Instance + 3424);
+            this->disguiseAsType = v20;
+            result = (int)v20;
+        }
+        else
+        {
+            v20 = *(void **)((char *)g_RulesClass_Instance + 3416);
+            this->disguiseAsType = v20;
+            result = (int)v20;
+        }
     }
     else
     {
-      result = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3416);
-      *(_DWORD *)(this + 1304) = result;
+        this->isDisguisedFlag = 0;
     }
-  }
-  else
-  {
-    *(_BYTE *)(this + 472) = 0;
-  }
-  return result;
+    return result;
 }
+
 }
 
 // 0x522640
@@ -7809,7 +7693,7 @@ int InfantryClass::GetProductionLimit()
     int result;
     int v4;
 
-    if ( (unsigned __int8)HouseClass::IsAlliedWith((HouseClass *)this->focus, HouseClass_Player) && !a2 )
+    if ( (unsigned __int8)HouseClass::IsAlliedWith(this->owner, HouseClass_Player) && !a2 )
         return (int)this->Type;
     result = (int)this->disguiseAsType;
     if ( !result )

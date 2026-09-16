@@ -13751,78 +13751,21 @@ int __thiscall BuildingClass::HandleSellOrRepair(#377 *this)
   int v6; // eax
   _BYTE v7[12]; // [esp+8h] [ebp-Ch] BYREF
 
-  (*(void (__thiscall **)(#377 *, int))(*(_DWORD *)this + 292))(this, 2);
-  v2 = *(_DWORD *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 160);
-  *((_DWORD *)this + 27) = v2;
-  *((_DWORD *)this + 28) = v2;
-  result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this);
-  if ( result == 6 )
+  (*(void (__thiscall **)(#377 *, int))(*(_DWORD *)this + 292))(this, 2); /*0x70141a*/
+  v2 = *(_DWORD *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 160); /*0x70142a*/
+  *((_DWORD *)this + 27) = v2; /*0x701432*/
+  *((_DWORD *)this + 28) = v2; /*0x701435*/
+  result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this); /*0x70143a*/
+  if ( result == 6 ) /*0x701440*/
   {
-    (*(void (__thiscall **)(#377 *, _DWORD))(*(_DWORD *)this + 412))(this, 0);
-    v4 = BuildingClass::GetHealthRatio((int *)this) <= *(double *)(MEMORY[0x87F7E8][7806] + 5888);
-    globalHelper_051EE0((int)this, v5, v4);
-    v6 = (*(int (__thiscall **)(#377 *, _BYTE *))(*(_DWORD *)this + 72))(this, v7);
-    return StartAudioControllerAt(*(_DWORD *)(MEMORY[0x87F7E8][7806] + 452), v6, 0);
+    (*(void (__thiscall **)(#377 *, _DWORD))(*(_DWORD *)this + 412))(this, 0); /*0x701448*/
+    v4 = BuildingClass::GetHealthRatio((int *)this) <= *(double *)&MEMORY[0x8871E0][1].?; /*0x701465*/
+    globalHelper_051EE0((int)this, v5, v4); /*0x701473*/
+    v6 = (*(int (__thiscall **)(#377 *, _BYTE *))(*(_DWORD *)this + 72))(this, v7); /*0x701483*/
+    return StartAudioControllerAt(MEMORY[0x8871E0]->PsychicRevealActivateSound, v6, 0); /*0x701494*/
   }
-  return result;
+  return result; /*0x701499*/
 }
-
-/* ASM:
-sub     esp, 0Ch
-push    esi
-mov     esi, ecx
-push    2
-mov     eax, [esi]
-call    dword ptr [eax+124h]
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-mov     eax, [eax+0A0h]
-mov     ecx, esi
-mov     [esi+6Ch], eax
-mov     [esi+70h], eax
-mov     eax, [esi]
-call    dword ptr [eax+2Ch]
-cmp     eax, 6
-jnz     short loc_701499
-mov     edx, [esi]
-push    0
-mov     ecx, esi
-call    dword ptr [edx+19Ch]
-mov     ecx, esi
-call    BuildingClass__GetHealthRatio
-mov     eax, ds:8871E0h
-fcomp   qword ptr [eax+1700h]
-fnstsw  ax
-test    ah, 41h
-jz      short loc_70146E
-mov     eax, 1
-jmp     short loc_701470
-; ---------------------------------------------------------------------------
-
-loc_70146E:                             ; CODE XREF: BuildingClass__HandleSellOrRepair+55↑j
-xor     eax, eax
-
-loc_701470:                             ; CODE XREF: BuildingClass__HandleSellOrRepair+5C↑j
-push    eax
-mov     ecx, esi
-call    globalHelper_051EE0
-mov     edx, [esi]
-lea     eax, [esp+10h+var_C]
-push    0
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+48h]
-mov     ecx, ds:8871E0h
-mov     edx, eax
-mov     ecx, [ecx+1C4h]
-call    StartAudioControllerAt
-
-loc_701499:                             ; CODE XREF: BuildingClass__HandleSellOrRepair+30↑j
-pop     esi
-add     esp, 0Ch
-retn
-*/
 }
 
 // IDA 0x44f450: repair mission
@@ -21095,7 +21038,6 @@ int __thiscall BuildingClass::IsInvisible(#377 *this)
   }
   return result; /*0x6f9e27*/
 }
-    return false; // TODO stub - retranslate via C-line pipeline
 }
 
 // 0x452260
@@ -21255,38 +21197,35 @@ retn
 // 0x456640
 void BuildingClass::UpdateDetectionField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt295(#377 *this)
 {
-  char *Field; // ebx
-  int v3; // esi
-  int result; // eax
-  int v5; // ecx
-  int v6; // eax
-  int v7; // edx
-  int v8; // ecx
-  _DWORD v9[2]; // [esp+Ch] [ebp-8h] BYREF
-
-  Field = Diplomacy::GetField((char *)&MEMORY[0x87F7E8], *((_DWORD *)this + 328));
-  v3 = 0;
-  result = *((_DWORD *)Field + 4);
-  if ( result > 0 )
+    char *Field;
+    int v3;
+    int result;
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9[2];
+    Field = Diplomacy::GetField((char *)&DataGlobal_87F7E8, this->Type);
+    v3 = 0;
+    result = *((int *)(Field) + 4);
+    if ( result > 0 )
   {
     do
     {
-      v5 = *((_DWORD *)Field + 1);
-      v6 = *(_DWORD *)(v5 + 8 * v3) + *((_DWORD *)this + 130);
-      v7 = *((_DWORD *)this + 131);
-      v8 = *(_DWORD *)(v5 + 8 * v3 + 4);
-      v9[0] = v6;
-      v9[1] = v7 + v8;
-      FogOfWar::RevealCell((int)&MEMORY[0x87F7E8], v9);
-      result = *((_DWORD *)Field + 4);
-      ++v3;
+    v5 = *((int *)(Field) + 1);
+    v6 = *(int *)(v5 + 8 * v3) + this->currentBurstCount;
+    v7 = this->currentBarrelIndex;
+    v8 = *(int *)(v5 + 8 * v3 + 4);
+    v9[0] = v6;
+    v9[1] = v7 + v8;
+    FogOfWar::RevealCell((int)&DataGlobal_87F7E8, v9);
+    result = *((int *)(Field) + 4);
+    ++v3;
     }
     while ( v3 < result );
   }
-  return result;
+    return result;
 }
 
 /* ASM:
