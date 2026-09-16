@@ -3,42 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/JumpjetLocomotionClass_26_e4.hpp"
 
-// 0x439A10
-double JumpjetLocomotionClass::ComputeVectorLengthMetric()
-{
-{
-    int v2;
-    double v3;
-    int v4;
-    double v5;
-    int GroundHeight;
-    int v7;
-    double v8;
-    int v10;
-    int v11;
-    int v12;
-    int v13;
-    int v14[3];
-    v2 = Math::RoundToInt(this->TurnRate);
-    v3 = this->Speed;
-    v14[0] = v2;
-    v4 = Math::RoundToInt(v3);
-    v5 = this->Climb;
-    v14[1] = v4;
-    v14[2] = Math::RoundToInt(v5);
-    GroundHeight = Cell::GetGroundHeight(v14);
-    v7 = Math::RoundToInt(this->Climb - (double)GroundHeight);
-    v10 = v7;
-    if ( (*((int *)Coord::To_Cell(&DataGlobal_87F7E8, v14) + 80) & 0x100) != 0 && v7 >= DataGlobal_89C76C )
-    v10 = v7 - DataGlobal_89C76C;
-    v11 = Math::RoundToInt(this->Crash);
-    v12 = Math::RoundToInt(this->Height);
-    v13 = Math::RoundToInt((double)v10 * *(double *)(this + 8) + this->Accel);
-    v8 = Math::Sqrt((double)v13 * (double)v13 + (double)v11 * (double)v11 + (double)v12 * (double)v12);
-    return (double)(int)Math::RoundToInt(v8);
-}
-}
-
 // 0x439B00
 int JumpjetLocomotionClass::Update2()
 {
@@ -1635,6 +1599,17 @@ int __stdcall JumpjetLocomotionClass::sub_516BF0(_BYTE *a1)
 }
 }
 
+// 0x516C70
+bool JumpjetLocomotionClass::DispatchVirtualCall_2(int a1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+bool __stdcall JumpjetLocomotionClass::sub_516C70(int a1)
+{
+  return StreamClass::GetDirty(a1) /*0x516c90*/
+      || (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 456))(*(_DWORD *)(a1 + 8)) > 0;
+}
+}
+
 // 0x54AEC0
 char JumpjetLocomotionClass::DispatchLocomotion(unsigned int * a1)
 {
@@ -2953,6 +2928,42 @@ int __thiscall JumpjetLocomotionClass_26_::sub_54EB20(int *this, _DWORD *a2)
 }
 } // namespace gamemd
 
+// 0x439A10
+double JumpjetLocomotionClass::ComputeVectorLengthMetric()
+{
+{
+    int v2;
+    double v3;
+    int v4;
+    double v5;
+    int GroundHeight;
+    int v7;
+    double v8;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    int v14[3];
+    v2 = Math::RoundToInt(this->TurnRate);
+    v3 = this->Speed;
+    v14[0] = v2;
+    v4 = Math::RoundToInt(v3);
+    v5 = this->Climb;
+    v14[1] = v4;
+    v14[2] = Math::RoundToInt(v5);
+    GroundHeight = Cell::GetGroundHeight(v14);
+    v7 = Math::RoundToInt(this->Climb - (double)GroundHeight);
+    v10 = v7;
+    if ( (*((int *)Coord::To_Cell(&DataGlobal_87F7E8, v14) + 80) & 0x100) != 0 && v7 >= DataGlobal_89C76C )
+    v10 = v7 - DataGlobal_89C76C;
+    v11 = Math::RoundToInt(this->Crash);
+    v12 = Math::RoundToInt(this->Height);
+    v13 = Math::RoundToInt((double)v10 * *(double *)(this + 8) + this->Accel);
+    v8 = Math::Sqrt((double)v13 * (double)v13 + (double)v11 * (double)v11 + (double)v12 * (double)v12);
+    return (double)(int)Math::RoundToInt(v8);
+}
+}
+
 // 0x4AF610
 int JumpjetLocomotionClass::LoadLocomotionFromStream(unsigned int * a1, unsigned int * a2)
 {
@@ -4094,73 +4105,6 @@ unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_516320(unsigned in
 char JumpjetLocomotionClass::UpdateFacingDirection_0(int a1, int a2)
 {
 return FacingClass::Update((char *)(a1[2] + 904), &a2);
-}
-
-// 0x516C70
-bool JumpjetLocomotionClass::DispatchVirtualCall_2(int a1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-  return StreamClass::GetDirty(a1) /*0x516c90*/
-      || (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 456))(*(_DWORD *)(a1 + 8)) > 0;
-// 0x516CA0
-char JumpjetLocomotionClass::IsBridgeBlocking(int a1)
-{
-{
-    int Member;
-    int *v3;
-    int *v4;
-    int *v5;
-    int *v6;
-    int v7;
-    int v8;
-    short v9;
-    short v10;
-    short v11;
-    int v12[2];
-    int v13;
-    if ( Team::AllMembersValid(*(int **)(a1 + 8)) )
-  {
-    Member = Team::GetMember(*(int **)(a1 + 8), 0);
-    if ( (*(int (__thiscall **)(int))(*(int *)(Member) + 44))(Member) == 6 )
-    {
-    if ( *(char *)(*(int *)(Team::GetMember(*(int **)(a1 + 8), 0) + 1312) + 5821) )
-    return 0;
-    }
-  }
-    v3 = (int *)(*(int *)(a1 + 8) + 156);
-    v12[0] = *v3;
-    v12[1] = v3[1];
-    v13 = v3[2];
-    v4 = Coord::To_Cell(&DataGlobal_87F7E8, v12);
-    v5 = Cell::IsBridge(v4);
-    if ( v5 && *(char *)(v5[328] + 5821) )
-  {
-    v6 = v5 + 39;
-    v7 = v5[39];
-    v8 = v6[1];
-    v13 = v6[2];
-    LOWORD(v12[0]) = v7 / 256;
-    HIWORD(v12[0]) = v8 / 256;
-    v11 = *(int *)(*(int *)(a1 + 8) + 156) / 256;
-    v9 = v11 - LOWORD(v12[0]);
-    v10 = *(int *)(*(int *)(a1 + 8) + 160) / 256 - HIWORD(v12[0]);
-    if ( v11 == LOWORD(v12[0]) )
-    {
-    if ( v10 == 1 )
-    return 0;
-    }
-    else if ( v9 == 2 )
-    {
-    if ( v10 == 1 )
-    return 0;
-    }
-    else if ( v9 == 3 && v10 == 1 )
-    {
-    return 0;
-    }
-  }
-    return 1;
-}
 }
 
 // 0x516CA0

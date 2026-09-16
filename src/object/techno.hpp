@@ -621,7 +621,7 @@ public:
     virtual int GetThreatValue_0() const;  // 0x5216C0
     virtual int ProcessBorderTower();  // 0x6ED4D0
     virtual int HandleCursor();  // 0x700600
-    virtual int HandleCursorClick();  // 0x6FFEC0
+    virtual int GetActionOnObject();  // 0x6FFEC0
     virtual int ScanAdjacentCells2();
     virtual int ScanNeighborCells();  // 0x703E70
     virtual int IsValidBuildingPlacement();  // 0x704000
@@ -947,7 +947,7 @@ public:
     uint32_t                currentBurstCount;
     uint32_t                currentBarrelIndex;
     IndexBitfield<HouseClass*> displayProductionTo;
-    HouseClass*             Owner;
+    int32_t                 controlGroup;    // 0-9 CTRL+group number (YRpp Group; was misnamed Owner)
     AbstractClass*          focus;
     HouseClass*             owner;
     uint32_t                cloakState;              // CloakState enum

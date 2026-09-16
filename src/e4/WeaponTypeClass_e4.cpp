@@ -155,22 +155,6 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
 }
 }
 
-// 0x771F00
-unsigned int * WeaponTypeClass::loadWeaponProperties(AbstractTypeClass * aP1)
-{
-{
-    AbstractTypeClass::Init((int)this, aP1);
-    this->Report = &vt_TypeList_int;
-    this->DownReport = &vt_TypeList_int;
-    this->Anim = &vt_TypeList_AnimTypeClass_const;
-    *(void**)this = vt_WeaponTypeClass;
-    this->vtable1 = (unsigned int)vt_WeaponTypeClass;
-    this->vtable2 = (unsigned int)vt_WeaponTypeClass;
-    this->vtable3 = &vt_WeaponTypeClass;
-    return this;
-}
-}
-
 // 0x771F50
 int WeaponTypeClass::Destructor()
 {
@@ -229,25 +213,6 @@ int __thiscall sub_771F50(int this)
   this->Report.IsAllocated = 0; /*0x772069*/
   this->Report.Capacity = 0; /*0x77206f*/
   return AbstractTypeClass::Dtor((_DWORD *)this); /*0x77207a*/
-}
-}
-
-// 0x7729F0
-int WeaponTypeClass::CalculateSpeed()
-{
-{
-    int result;
-    double WeatherConBoltExplosion;
-    result = this->Projectile;
-    if ( result && !*(int *)(result + 732) )
-  {
-    WeatherConBoltExplosion = (double)g_RulesClass_Instance[1].?;
-    if ( *(char *)(result + 661) )
-    WeatherConBoltExplosion = RulesClass::GetFiringDistance();
-    result = TechnoClass::ComputeScanRange((void *)this->Range, WeatherConBoltExplosion);
-    this->Speed = result;
-  }
-    return result;
 }
 }
 
@@ -584,6 +549,41 @@ char WeaponTypeClass::ReadVeteranData(unsigned char * a2, char * a3, int a4, int
     if ( Block && HIBYTE(a7) )
     __3_YAXPAX_Z(Block);
     return v13;
+}
+}
+
+// 0x771F00
+unsigned int * WeaponTypeClass::loadWeaponProperties(AbstractTypeClass * aP1)
+{
+{
+    AbstractTypeClass::Init((int)this, aP1);
+    this->Report = &vt_TypeList_int;
+    this->DownReport = &vt_TypeList_int;
+    this->Anim = &vt_TypeList_AnimTypeClass_const;
+    *(void**)this = vt_WeaponTypeClass;
+    this->vtable1 = (unsigned int)vt_WeaponTypeClass;
+    this->vtable2 = (unsigned int)vt_WeaponTypeClass;
+    this->vtable3 = &vt_WeaponTypeClass;
+    return this;
+}
+}
+
+// 0x7729F0
+int WeaponTypeClass::CalculateSpeed()
+{
+{
+    int result;
+    double WeatherConBoltExplosion;
+    result = this->Projectile;
+    if ( result && !*(int *)(result + 732) )
+  {
+    WeatherConBoltExplosion = (double)g_RulesClass_Instance[1].?;
+    if ( *(char *)(result + 661) )
+    WeatherConBoltExplosion = RulesClass::GetFiringDistance();
+    result = TechnoClass::ComputeScanRange((void *)this->Range, WeatherConBoltExplosion);
+    this->Speed = result;
+  }
+    return result;
 }
 }
 

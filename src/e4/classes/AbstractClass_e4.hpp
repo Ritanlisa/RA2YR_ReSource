@@ -6,16 +6,16 @@ struct AbstractClass {
     void* vfptr;  // minimal E2 declaration
     void Initialize(TechnoClass * aP1, TechnoClass * aP2);  // 0x438E70
     bool addRef(unsigned short * a2, int a3);  // 0x464AC0
-    void ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
-    void AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1);  // 0x7258D0
-    int getMapCoords();  // 0x426A80
-    void DTOR();  // 0x4101F0
-    MissionClass * getWeaponRange(char a2);  // 0x5B3A60
     unsigned int * checkVisibility(char a2);  // 0x5D7FD0
     unsigned int * updateVisibilityState(char a2);  // 0x5D8030
     unsigned int * processFogReveal(char a2);  // 0x5D8050
     unsigned int * checkShroudState(char a2);  // 0x5D8070
     unsigned int * updateShroudMap(char a2);  // 0x5D8090
+    void ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
+    void AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1);  // 0x7258D0
+    int getMapCoords();  // 0x426A80
+    void DTOR();  // 0x4101F0
+    MissionClass * getWeaponRange(char a2);  // 0x5B3A60
     DynamicVector * resetScriptState(char a2);  // 0x4CABA0
     void getMissionState();  // 0x4D2930
     unsigned int setMissionState(int a2);  // 0x4D2960

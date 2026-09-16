@@ -756,7 +756,7 @@ int __thiscall AircraftClass::_vt124(int this, int a2)
     case 0x1B: /*0x41ba0b*/
     case 0x1E: /*0x41ba0b*/
     case 0x1F: /*0x41ba0b*/
-      if ( this->owningHouseIndex0 ) /*0x41ba12*/
+      if ( this->airstrike ) /*0x41ba12*/
         goto LABEL_4; /*0x41ba1a*/
       result = a2 - 4; /*0x41ba1c*/
       switch ( a2 ) /*0x41ba2c*/
@@ -796,7 +796,7 @@ int __thiscall AircraftClass::OverrideMission_SyncLog(int this, int a2, int a3, 
     case 0x1B: /*0x41bb4b*/
     case 0x1E: /*0x41bb4b*/
     case 0x1F: /*0x41bb4b*/
-      if ( this->owningHouseIndex0 ) /*0x41bb52*/
+      if ( this->airstrike ) /*0x41bb52*/
         goto LABEL_4; /*0x41bb5a*/
       result = a2 - 4; /*0x41bb5c*/
       switch ( a2 ) /*0x41bb6c*/

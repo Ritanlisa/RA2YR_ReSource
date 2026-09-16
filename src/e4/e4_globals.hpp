@@ -3004,6 +3004,10 @@ extern unsigned char CRTGlobal_B781A8[4];  // data: 0xB781A8
 extern unsigned char CRTGlobal_B781B0[4];  // data: 0xB781B0
 extern unsigned char CRTGlobal_B781C0[4];  // data: 0xB781C0
 extern unsigned char CRTGlobal_B781C4[4];  // data: 0xB781C4
+extern unsigned char CRTGlobal_B781C8[4];  // data: 0xB781C8
+extern unsigned char CRTGlobal_B781CC[4];  // data: 0xB781CC
+extern unsigned char CRTGlobal_B781D0[4];  // data: 0xB781D0
+extern unsigned char CRTGlobal_B781D4[4];  // data: 0xB781D4
 extern unsigned char CRTGlobal_B781D8[4];  // data: 0xB781D8
 extern unsigned char CRTGlobal_B781DC[4];  // data: 0xB781DC
 extern unsigned char CRTGlobal_B781E4[4];  // data: 0xB781E4

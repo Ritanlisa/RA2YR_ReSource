@@ -11956,7 +11956,7 @@ LABEL_122:
 } }
 
 // 0x5B35E0
-namespace gamemd { int ParticleClass::MissionDispatch() {
+namespace gamemd { int MissionClass::QueueMission() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall BuildingClass::MissionDispatch(#377 *this)
 {

@@ -401,7 +401,7 @@ public:
     void SetSlot(int slot);  // 0x717890
     // wrapper: delegates to BuildingClass::SetSlot at 0x717890
     uint32_t GetField184() const;
-    void HandleClickEvent();  // 0x447210
+    virtual int GetActionOnObject();  // 0x447210
     void HandleRepairCursor();  // 0x447540
     static BuildingClass* Create(BuildingTypeClass* type, CoordStruct* pos, HouseClass* owner);  // 0x466000
     static BuildingClass* AllocAndCtor();  // 0x70BF50

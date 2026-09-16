@@ -150,23 +150,6 @@ char __thiscall SmudgeTypeClass::GetSize(int this, unsigned __int8 ***aP1)
 }
 }
 
-// 0x6B57F0
-int SmudgeTypeClass::PowerDrainUpdate(int * a2)
-{
-{
-    int v3;
-    int v4;
-    AbstractTypeClass::ProcessPower((char *)this, a2);
-    Power::TimerProcess(this->ArrayIndex);
-    LOBYTE(v3) = this->Crater;
-    Power::FlagProcess(a2, v3);
-    LOBYTE(v4) = this->Burn;
-    Power::FlagProcess(a2, v4);
-    Power::TimerProcess(this->Width);
-    return Power::TimerProcess(this->Height);
-}
-}
-
 // 0x6B6160
 SmudgeTypeClass * SmudgeTypeClass::ddtor(void ** this, AbstractClass * a2, char a3)
 {
@@ -244,6 +227,23 @@ SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
     return UnitClass::Create(v3, this, (AbstractClass *)&DataGlobal_B05488.__pad_579C[2948], -1);
     else
     return 0;
+}
+}
+
+// 0x6B57F0
+int SmudgeTypeClass::PowerDrainUpdate(int * a2)
+{
+{
+    int v3;
+    int v4;
+    AbstractTypeClass::ProcessPower((char *)this, a2);
+    Power::TimerProcess(this->ArrayIndex);
+    LOBYTE(v3) = this->Crater;
+    Power::FlagProcess(a2, v3);
+    LOBYTE(v4) = this->Burn;
+    Power::FlagProcess(a2, v4);
+    Power::TimerProcess(this->Width);
+    return Power::TimerProcess(this->Height);
 }
 }
 

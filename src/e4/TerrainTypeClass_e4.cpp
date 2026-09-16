@@ -305,30 +305,6 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 }
 }
 
-// 0x71E140
-int TerrainTypeClass::PowerDrainUpdate(int * a2)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    AbstractTypeClass::ProcessPower((char *)this, a2);
-    Power::TimerProcess(this->ArrayIndex);
-    LOBYTE(v3) = this->WaterBound;
-    Power::FlagProcess(a2, v3);
-    LOBYTE(v4) = this->SpawnsTiberium;
-    v5 = Power::FlagProcess(a2, v4);
-    LOBYTE(v5) = this->IsFlammable;
-    Power::FlagProcess(a2, v5);
-    Power::TimerProcess(this->Foundation);
-    LOBYTE(v6) = this->IsAnimated;
-    Power::FlagProcess(a2, v6);
-    Power::TimerProcess(this->AnimationRate);
-    return Checksummer::Add_float((unsigned int *)a2, this->AnimationProbability);
-}
-}
-
 // 0x71E2A0
 TerrainTypeClass * TerrainTypeClass::FindOrCreate()
 {
@@ -476,6 +452,30 @@ unsigned int * TerrainTypeClass::GetWidth(unsigned int * a1, int * a2)
     *((int*)(a1) + 1) = v6;
     *((int*)(a1) + 2) = v3;
     return a1;
+}
+}
+
+// 0x71E140
+int TerrainTypeClass::PowerDrainUpdate(int * a2)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    AbstractTypeClass::ProcessPower((char *)this, a2);
+    Power::TimerProcess(this->ArrayIndex);
+    LOBYTE(v3) = this->WaterBound;
+    Power::FlagProcess(a2, v3);
+    LOBYTE(v4) = this->SpawnsTiberium;
+    v5 = Power::FlagProcess(a2, v4);
+    LOBYTE(v5) = this->IsFlammable;
+    Power::FlagProcess(a2, v5);
+    Power::TimerProcess(this->Foundation);
+    LOBYTE(v6) = this->IsAnimated;
+    Power::FlagProcess(a2, v6);
+    Power::TimerProcess(this->AnimationRate);
+    return Checksummer::Add_float((unsigned int *)a2, this->AnimationProbability);
 }
 }
 

@@ -93,7 +93,7 @@ public:
     virtual int PerFrameUpdate();  // 0x517CC0
     virtual int HandleTargetDestroyed();  // 0x51AA10
     int ProcessUpdate();  // 0x51F250
-    int ValidateTargetAndMove();  // 0x51F190
+    int ValidateTargetAndMove(AbstractClass* target, int flags);  // 0x51F190
     int SetMission();  // 0x728280
     int IdleStateMachine();  // 0x728E30
     int ProcessTunnelMovement();  // 0x7291F0
@@ -114,8 +114,7 @@ public:
 
     // === Phase 3: Cursor & UI ===
     virtual int HandleCursorOverCell();  // 0x51F800
-    virtual int GetCursorOverObject_EMP();  // 0x51E3B0
-    virtual int GetCursorOverObject();  // 0x4DDED0
+    virtual int GetActionOnObject_EMP(AbstractClass* object, int flags);  // 0x51E3B0
     virtual int GetTypePtr();  // 0x51FAF0
     virtual int GetTooltipName();  // 0x51F2C0
     int GetTransformMatrix();  // 0x521D30

@@ -5474,7 +5474,7 @@ int TechnoClass::ProcessBorderTower() { return 0; }
 // 0x700600
 int TechnoClass::HandleCursor() { return 0; }
 // 0x6ffec0
-int TechnoClass::HandleCursorClick() { return 0; }
+int TechnoClass::GetActionOnObject() { return 0; }
 int TechnoClass::ScanAdjacentCells2() { return 0; }
 // 0x703e70
 int TechnoClass::ScanNeighborCells() { return 0; }

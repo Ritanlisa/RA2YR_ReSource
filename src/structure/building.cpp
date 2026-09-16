@@ -23821,7 +23821,7 @@ retn    8
 
 uint32_t BuildingClass::GetField184() const { return BuildingClass_field_544; }
 // 0x447210
-void BuildingClass::HandleClickEvent() {}
+void BuildingClass::GetActionOnObject() {}
 // 0x447540
 void BuildingClass::HandleRepairCursor() {}
 

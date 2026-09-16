@@ -120,7 +120,7 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   *(this + 120) = v7; /*0x6f2cca*/
   *(this + 123) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2cd5*/
   *(this + 125) = 0; /*0x6f2cdb*/
-  *((_BYTE *)this + 504) = 0; /*0x6f2ce1*/
+  this->isTargetedByChrono = 0; /*0x6f2ce1*/
   *(this + 127) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2ced*/
   *(this + 129) = 0; /*0x6f2cf3*/
   *(this + 130) = 0; /*0x6f2cf9*/
@@ -140,7 +140,7 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   *(this + 146) = 0; /*0x6f2d56*/
   *(this + 144) = v8; /*0x6f2d5c*/
   *(this + 147) = 0; /*0x6f2d62*/
-  *((_BYTE *)this + 592) = 0; /*0x6f2d68*/
+  this->isChronosphereImmune = 0; /*0x6f2d68*/
   *(this + 149) = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6908]; /*0x6f2d79*/
   *(this + 150) = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6912]; /*0x6f2d85*/
   *(this + 151) = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6916]; /*0x6f2d93*/
@@ -149,12 +149,12 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   this->gapSuperCharged = 0; /*0x6f2da2*/
   this->isGeneratingGap = 0; /*0x6f2da8*/
   *(this + 155) = 0; /*0x6f2dae*/
-  *((_BYTE *)this + 624) = 0; /*0x6f2db4*/
-  *((_BYTE *)this + 625) = 0; /*0x6f2dba*/
-  *((_BYTE *)this + 626) = 0; /*0x6f2dc0*/
+  this->isBeingWarpedOut = 0; /*0x6f2db4*/
+  this->isWarpingOut = 0; /*0x6f2dba*/
+  this->isWarpEffectActive = 0; /*0x6f2dc0*/
   *(this + 157) = 0; /*0x6f2dc6*/
   *(this + 158) = 0; /*0x6f2dcc*/
-  *((_BYTE *)this + 636) = 0; /*0x6f2dd2*/
+  this->isImmobilized = 0; /*0x6f2dd2*/
   *(this + 160) = 0; /*0x6f2dd8*/
   *(this + 161) = 0; /*0x6f2dde*/
   *(this + 162) = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6908]; /*0x6f2dea*/
@@ -164,10 +164,10 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   *(this + 186) = 0; /*0x6f2e00*/
   *(this + 164) = v9; /*0x6f2e06*/
   *(this + 165) = 0; /*0x6f2e09*/
-  *((_BYTE *)this + 664) = 0; /*0x6f2e0f*/
+  this->isBerserk = 0; /*0x6f2e0f*/
   *(this + 167) = 0; /*0x6f2e15*/
   *(this + 168) = 0; /*0x6f2e1b*/
-  *((_BYTE *)this + 676) = 0; /*0x6f2e21*/
+  this->isUncrushable = 0; /*0x6f2e21*/
   *(this + 170) = 0; /*0x6f2e27*/
   *(this + 171) = 0; /*0x6f2e2d*/
   *(this + 172) = 0; /*0x6f2e33*/
@@ -175,7 +175,7 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   *(this + 174) = 0; /*0x6f2e3f*/
   *(this + 175) = 0; /*0x6f2e45*/
   *(this + 176) = 0; /*0x6f2e4b*/
-  *((_BYTE *)this + 708) = 0; /*0x6f2e51*/
+  this->mindControlledBy_a_unit = 0; /*0x6f2e51*/
   *(this + 178) = 0; /*0x6f2e57*/
   *(this + 179) = 0; /*0x6f2e5d*/
   *(this + 180) = 0; /*0x6f2e63*/
@@ -547,38 +547,38 @@ int __thiscall TechnoClass::DTOR(int this)
     Sidebar::CancelSidebarProductionQueue(v2); /*0x6f452c*/
     this->planningToken = 0; /*0x6f4531*/
   }
-  v3 = this->rockerLinkedUnit; /*0x6f4537*/
+  v3 = this->captureManager; /*0x6f4537*/
   if ( v3 ) /*0x6f453f*/
   {
     (*(void (__thiscall **)(int, int))(*(_DWORD *)v3 + 32))(v3, 1); /*0x6f4545*/
-    this->rockerLinkedUnit = 0; /*0x6f4548*/
+    this->captureManager = 0; /*0x6f4548*/
   }
-  v4 = this->captureManager; /*0x6f454e*/
+  v4 = this->spawnManager; /*0x6f454e*/
   if ( v4 ) /*0x6f4556*/
   {
     (*(void (__thiscall **)(int, int))(*(_DWORD *)v4 + 32))(v4, 1); /*0x6f455c*/
-    this->captureManager = 0; /*0x6f455f*/
+    this->spawnManager = 0; /*0x6f455f*/
   }
   v5 = *(_DWORD **)(this + 728); /*0x6f4565*/
   if ( v5 ) /*0x6f456d*/
   {
     TechnoClass::MutateAll(v5, 0, 0); /*0x6f4571*/
-    v6 = *(_DWORD *)(this + 728); /*0x6f4576*/
+    v6 = this->slaveManager; /*0x6f4576*/
     if ( v6 ) /*0x6f457e*/
       (*(void (__thiscall **)(int, int))(*(_DWORD *)v6 + 32))(v6, 1); /*0x6f4584*/
-    *(_DWORD *)(this + 728) = 0; /*0x6f4587*/
+    this->slaveManager = 0; /*0x6f4587*/
   }
-  v7 = *(_DWORD *)(this + 628); /*0x6f458d*/
+  v7 = this->temporalUsing; /*0x6f458d*/
   if ( v7 ) /*0x6f4595*/
   {
     (*(void (__thiscall **)(int, int))(*(_DWORD *)v7 + 32))(v7, 1); /*0x6f459b*/
-    *(_DWORD *)(this + 628) = 0; /*0x6f459e*/
+    this->temporalUsing = 0; /*0x6f459e*/
   }
   v8 = *(_DWORD **)(this + 660); /*0x6f45a4*/
   if ( v8 && v8[19] == this ) /*0x6f45b1*/
   {
     (*(void (__thiscall **)(_DWORD *, int))(*v8 + 32))(v8, 1); /*0x6f45bb*/
-    this->owningHouseIndex0 = 0; /*0x6f45be*/
+    this->airstrike = 0; /*0x6f45be*/
   }
   AudioFile::Stop((_DWORD *)(this + 1160)); /*0x6f45cd*/
   AudioFileClass::Release((_DWORD *)(this + 1160)); /*0x6f45d4*/
@@ -587,7 +587,7 @@ int __thiscall TechnoClass::DTOR(int this)
   AudioFile::Stop((_DWORD *)(this + 1216)); /*0x6f45f5*/
   AudioFileClass::Release((_DWORD *)(this + 1216)); /*0x6f45fc*/
   AudioFileClass::Release((_DWORD *)(this + 1244)); /*0x6f4607*/
-  this->focus = 0; /*0x6f4610*/
+  this->owner = 0; /*0x6f4610*/
   *(_BYTE *)(this + 1050) = 0; /*0x6f4616*/
   v17 = this; /*0x6f4628*/
   v9 = ((int (__thiscall *)(TechnoClass **, int *))MEMORY[0xA8EC78]->__pad_0[4])(&MEMORY[0xA8EC78], &v17); /*0x6f462c*/
@@ -691,7 +691,7 @@ int __thiscall TechnoClass::RegisterKill(#377 *this)
 
   v27 = 0; /*0x702d46*/
   v2 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this); /*0x702d50*/
-  v3 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v2 + 132))(v2, this->focus); /*0x702d6b*/
+  v3 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v2 + 132))(v2, this->owner); /*0x702d6b*/
   if ( this->isAliveFlag ) /*0x702d6d*/
   {
     v4 = (void **)this->attachedTag; /*0x702d77*/
@@ -749,14 +749,14 @@ int __thiscall TechnoClass::RegisterKill(#377 *this)
         && *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v10 + 132))(v10) + 3214) )
       {
         v11 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v28 + 284) + 132))(*(_DWORD *)(v28 + 284)); /*0x702ecb*/
-        v23 = this->focus; /*0x702eda*/
+        v23 = this->owner; /*0x702eda*/
         v19 = (*(int (__thiscall **)(int))(*(_DWORD *)v11 + 132))(v11); /*0x702ee9*/
         VeterancyStruct::Accumulate((float *)(*(_DWORD *)(v28 + 284) + 336), v19, v23); /*0x702ef0*/
       }
       else if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v28 + 132))(v28) + 3214) )
       {
         v12 = (*(int (__thiscall **)(int))(*(_DWORD *)v28 + 132))(v28); /*0x702f0d*/
-        v24 = this->focus; /*0x702f1c*/
+        v24 = this->owner; /*0x702f1c*/
         v20 = (*(int (__thiscall **)(int))(*(_DWORD *)v12 + 132))(v12); /*0x702f25*/
         VeterancyStruct::Accumulate((float *)(v28 + 336), v20, v24); /*0x702f2c*/
       }
@@ -766,7 +766,7 @@ int __thiscall TechnoClass::RegisterKill(#377 *this)
         if ( v13 && *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v13 + 132))(v13) + 3214) ) /*0x702f5b*/
         {
           v14 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v28 + 724) + 132))(*(_DWORD *)(v28 + 724)); /*0x702f71*/
-          v25 = this->focus; /*0x702f80*/
+          v25 = this->owner; /*0x702f80*/
           v21 = (*(int (__thiscall **)(int))(*(_DWORD *)v14 + 132))(v14); /*0x702f8f*/
           VeterancyStruct::Accumulate((float *)(*(_DWORD *)(v28 + 724) + 336), v21, v25); /*0x702f96*/
         }
@@ -776,11 +776,11 @@ int __thiscall TechnoClass::RegisterKill(#377 *this)
       {
         v15 = (*(int (__thiscall **)(int))(*(_DWORD *)v28 + 44))(v28); /*0x702fb6*/
         v16 = *(_DWORD *)(*(_DWORD *)(v15 == 6 ? v28 + 0x688 : 1672) + 4 * *(_DWORD *)(v15 == 6 ? v28 + 0x69C : 1692));
-        v26 = this->focus; /*0x702fda*/
+        v26 = this->owner; /*0x702fda*/
         v22 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v16 + 1728) + 132))(*(_DWORD *)(v16 + 1728)); /*0x702fe9*/
         VeterancyStruct::Accumulate((float *)(v16 + 336), v22, v26); /*0x702ff0*/
       }
-      *(_DWORD *)(this->focus + 21644) = (*(int (__thiscall **)(int))(*(_DWORD *)v28 + 56))(v28); /*0x703003*/
+      *(_DWORD *)(this->owner + 21644) = (*(int (__thiscall **)(int))(*(_DWORD *)v28 + 56))(v28); /*0x703003*/
       *(_DWORD *)(*(_DWORD *)(v28 + 540) + 21736) += v3; /*0x70300f*/
     }
     result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this) - 1; /*0x70301c*/
@@ -815,7 +815,7 @@ LABEL_59:
               *(_DWORD *)(*((_DWORD *)this + 433) + 3576));
         }
 LABEL_63:
-        ++*(_DWORD *)(this->focus + 21556); /*0x70319d*/
+        ++*(_DWORD *)(this->owner + 21556); /*0x70319d*/
         if ( v28 ) /*0x7031b2*/
         {
           if ( !*(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 3231) ) /*0x7031be*/
@@ -836,7 +836,7 @@ LABEL_67:
         if ( !*(_BYTE *)(result + 562) ) /*0x70303f*/
         {
           if ( *((_DWORD *)this + 335) != -1 ) /*0x703054*/
-            ++*(_DWORD *)(this->focus + 21640); /*0x70305c*/
+            ++*(_DWORD *)(this->owner + 21640); /*0x70305c*/
           if ( v28 && !*(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 3231) ) /*0x703070*/
           {
             HouseClass::IncrementStat( /*0x703093*/

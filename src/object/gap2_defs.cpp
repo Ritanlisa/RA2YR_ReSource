@@ -4852,7 +4852,7 @@ int __thiscall sub_5B2DA0(int this)
 } } }
 
 // 0x5B2FD0
-namespace ra2 { namespace game { int MissionClass::SetState() {
+namespace ra2 { namespace game { int MissionClass::ForceMission() {
 {
     int result;
     int *v2;
@@ -5103,9 +5103,9 @@ LABEL_5:
 } } }
 
 // 0x5B3570
-namespace ra2 { namespace game { int MissionClass::AdvanceState() {
+namespace ra2 { namespace game { int MissionClass::NextMission() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall MissionClass::AdvanceState(#377 *this)
+int __thiscall MissionClass::NextMission(#377 *this)
 {
   int result; // eax
   wchar_t *v2; // eax

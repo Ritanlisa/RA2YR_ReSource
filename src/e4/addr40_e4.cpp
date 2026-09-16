@@ -332,6 +332,23 @@ LABEL_38:
 }
 } // namespace gamemd
 
+// 0x401F80
+namespace gamemd {
+int E4Recv_401F80::_EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall _EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ(
+        Concurrency::details::ContextBase *this)
+{
+  int result; // eax
+
+  result = this->M12 + 1; /*0x401f83*/
+  this->M12 = result; /*0x401f84*/
+  return result; /*0x401f87*/
+}
+}
+} // namespace gamemd
+
 // 0x402990
 namespace gamemd {
 void sub_402990()
@@ -1276,81 +1293,6 @@ LABEL_20:
 }
 }
 } // namespace gamemd
-
-// 0x4064A0
-int AbstractTypeClass::AddSampleVocClass()
-{
-{
-    char *v1;
-    char *v3;
-    unsigned int v5;
-    v3 = v1;
-    if ( this->CellRangefinding == 32 )
-    return 0;
-    if ( g_AudioConfigState && DataGlobal_87E294 )
-  {
-    while ( *v3 == 36 || *v3 == 35 )
-    ++v3;
-    v5 = sub_4015C0(DataGlobal_87E294, v3);
-    if ( v5 != -1 )
-    {
-    *((int *)(this) + (this->CellRangefinding)++ + 45) = v5;
-    return 1;
-    }
-    Debug::Log();
-    *(int *)&this->__pad_0[12] = 0;
-  }
-    return 1;
-}
-}
-
-// 0x406520
-void AbstractTypeClass::sub_406520()
-{
-{
-    int v1;
-    this->TerrainFire = v1;
-}
-}
-
-// 0x406530
-void AbstractTypeClass::sub_406530()
-{
-{
-    int v1;
-    this->DisguiseFakeBlinkTime = v1;
-}
-}
-
-// 0x406570
-int AbstractTypeClass::sub_406570()
-{
-{
-    int v1;
-    int result;
-    this->uniqueId = v1;
-    result = 1;
-    if ( (v1 & 0x20) != 0 )
-  {
-    if ( !this->TerrainFire )
-    this->TerrainFire = 1;
-  }
-    else
-  {
-    this->TerrainFire = 0;
-  }
-    if ( (v1 & 0x40) != 0 )
-  {
-    if ( !this->DisguiseFakeBlinkTime )
-    this->DisguiseFakeBlinkTime = 1;
-  }
-    else
-  {
-    this->DisguiseFakeBlinkTime = 0;
-  }
-    return result;
-}
-}
 
 // 0x406750
 namespace gamemd {
@@ -3386,22 +3328,6 @@ void sub_401B00(int * Block)
 }
 } // namespace gamemd
 
-// 0x401F80
-namespace gamemd {
-int E4Recv_401F80::_EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall _EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ(
-        Concurrency::details::ContextBase *this)
-{
-  int result; // eax
-
-  result = *((_DWORD *)this + 3) + 1; /*0x401f83*/
-  *((_DWORD *)this + 3) = result; /*0x401f84*/
-  return result; /*0x401f87*/
-}
-} // namespace gamemd
-
 // 0x401FB0
 namespace gamemd {
 int sub_401FB0(unsigned int* a1)
@@ -4179,6 +4105,51 @@ int E4Recv_406310::sub_406310()
 }
 } // namespace gamemd
 
+// 0x4064A0
+int AbstractTypeClass::AddSampleVocClass()
+{
+{
+    char *v1;
+    char *v3;
+    unsigned int v5;
+    v3 = v1;
+    if ( this->CellRangefinding == 32 )
+    return 0;
+    if ( g_AudioConfigState && DataGlobal_87E294 )
+  {
+    while ( *v3 == 36 || *v3 == 35 )
+    ++v3;
+    v5 = sub_4015C0(DataGlobal_87E294, v3);
+    if ( v5 != -1 )
+    {
+    *((int *)(this) + (this->CellRangefinding)++ + 45) = v5;
+    return 1;
+    }
+    Debug::Log();
+    *(int *)&this->__pad_0[12] = 0;
+  }
+    return 1;
+}
+}
+
+// 0x406520
+void AbstractTypeClass::sub_406520()
+{
+{
+    int v1;
+    this->TerrainFire = v1;
+}
+}
+
+// 0x406530
+void AbstractTypeClass::sub_406530()
+{
+{
+    int v1;
+    this->DisguiseFakeBlinkTime = v1;
+}
+}
+
 // 0x406540
 void AbstractTypeClass::sub_406540()
 {
@@ -4197,6 +4168,36 @@ int AbstractTypeClass::sub_406550()
     p_nextArrayIndex = &this->nextArrayIndex;
     EndBufferMixer(&this->nextArrayIndex, v1);
     return AudioMixer::PlaySample(p_nextArrayIndex);
+}
+}
+
+// 0x406570
+int AbstractTypeClass::sub_406570()
+{
+{
+    int v1;
+    int result;
+    this->uniqueId = v1;
+    result = 1;
+    if ( (v1 & 0x20) != 0 )
+  {
+    if ( !this->TerrainFire )
+    this->TerrainFire = 1;
+  }
+    else
+  {
+    this->TerrainFire = 0;
+  }
+    if ( (v1 & 0x40) != 0 )
+  {
+    if ( !this->DisguiseFakeBlinkTime )
+    this->DisguiseFakeBlinkTime = 1;
+  }
+    else
+  {
+    this->DisguiseFakeBlinkTime = 0;
+  }
+    return result;
 }
 }
 

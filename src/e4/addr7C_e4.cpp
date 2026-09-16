@@ -4259,6 +4259,22 @@ int (__cdecl *_cfltcvt_init_13())(int, void *Src, int, size_t Size, int)
 }
 } // namespace gamemd
 
+// 0x7C8F96
+namespace gamemd {
+int sub_7C8F96(int a1)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __cdecl sub_7C8F96(int a1)
+{
+  int result; // eax
+
+  result = CRTGlobal_B7819C; /*0x7c8f9a*/
+  CRTGlobal_B7819C = a1; /*0x7c8f9f*/
+  return result; /*0x7c8fa5*/
+}
+}
+} // namespace gamemd
+
 // 0x7C91D0
 namespace gamemd {
 char * strncpy(char * Destination, const char * Source, IUnknown * aP2)
@@ -5912,6 +5928,56 @@ LABEL_7:
   _ftbuf(v5, (int)&File); /*0x7cb181*/
   _unlock_file2(1, &File); /*0x7cb18d*/
   return v1; /*0x7cb197*/
+}
+}
+} // namespace gamemd
+
+// 0x7CB25E
+namespace gamemd {
+int flsall(MouseClass * aP0)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __cdecl flsall(MouseClass *aP0)
+{
+  int v1; // ebx
+  type_info *v2; // edi
+  int i; // esi
+  int v4; // eax
+  int v5; // eax
+  int v6; // ecx
+  int result; // eax
+
+  v1 = 0; /*0x7cb263*/
+  v2 = 0; /*0x7cb265*/
+  _lock(2); /*0x7cb267*/
+  for ( i = 0; i < (int)CRTStreamCount; ++i ) /*0x7cb275*/
+  {
+    v4 = *(_DWORD *)(CRTGlobal_B78BC4 + 4 * i); /*0x7cb27c*/
+    if ( v4 && (*(_BYTE *)(v4 + 12) & 0x83) != 0 ) /*0x7cb287*/
+    {
+      _lock_file2(i, *(_DWORD *)(CRTGlobal_B78BC4 + 4 * i)); /*0x7cb28b*/
+      v5 = *(_DWORD *)(CRTGlobal_B78BC4 + 4 * i); /*0x7cb297*/
+      v6 = *(_DWORD *)(v5 + 12); /*0x7cb29a*/
+      if ( (v6 & 0x83) != 0 ) /*0x7cb2a0*/
+      {
+        if ( aP0 == (MouseClass *)1 ) /*0x7cb2a7*/
+        {
+          if ( _fflush_lk(v5) != -1 ) /*0x7cb2b3*/
+            ++v1; /*0x7cb2b5*/
+        }
+        else if ( !aP0 && (v6 & 2) != 0 && _fflush_lk(*(_DWORD *)(CRTGlobal_B78BC4 + 4 * i)) == -1 ) /*0x7cb2ce*/
+        {
+          v2 = (type_info *)-1; /*0x7cb2d0*/
+        }
+      }
+      _unlock_file2(i, *(_DWORD *)(CRTGlobal_B78BC4 + 4 * i)); /*0x7cb2db*/
+    }
+  }
+  _unlock(2); /*0x7cb2ed*/
+  result = v1; /*0x7cb2f8*/
+  if ( aP0 != (MouseClass *)1 ) /*0x7cb2fa*/
+    return (int)v2; /*0x7cb2fc*/
+  return result; /*0x7cb2fe*/
 }
 }
 } // namespace gamemd
@@ -7982,6 +8048,53 @@ LABEL_6:
     }
   }
   return ((char *)v2 - (char *)aP0) >> 1; /*0x7cd809*/
+}
+}
+} // namespace gamemd
+
+// 0x7CD80F
+namespace gamemd {
+void __noreturn start()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void __noreturn start()
+{
+  DWORD Version; // eax
+  int wShowWindow; // eax
+  HMODULE ModuleHandleA; // eax
+  int v3; // [esp-4h] [ebp-78h]
+  CHAR *lpCmdLine; // [esp+10h] [ebp-64h]
+  int v5; // [esp+14h] [ebp-60h]
+  struct _STARTUPINFOA StartupInfo; // [esp+18h] [ebp-5Ch] BYREF
+  CPPEH_RECORD ms_exc; // [esp+5Ch] [ebp-18h]
+
+  Version = GetVersion(); /*0x7cd835*/
+  CRTGlobal_B781D4 = BYTE1(Version); /*0x7cd83f*/
+  CRTGlobal_B781D0 = (unsigned __int8)Version; /*0x7cd84d*/
+  CRTGlobal_B781CC = BYTE1(Version) + ((unsigned __int8)Version << 8); /*0x7cd858*/
+  CRTGlobal_B781C8 = HIWORD(Version); /*0x7cd861*/
+  if ( !_heap_init(1) ) /*0x7cd868*/
+    fast_error_exit(0x1Cu); /*0x7cd874*/
+  if ( !_mtinit() ) /*0x7cd87a*/
+    fast_error_exit(0x10u); /*0x7cd885*/
+  ms_exc.registration.TryLevel = 0; /*0x7cd88d*/
+  _ioinit(); /*0x7cd890*/
+  CRTGlobal_B78BA8 = (int)GetCommandLineA(); /*0x7cd89b*/
+  MEMORY[0xB78228] = (char *)__crtGetEnvironmentStringsA(); /*0x7cd8a5*/
+  _setargv(); /*0x7cd8aa*/
+  _setenvp(); /*0x7cd8af*/
+  _cinit(); /*0x7cd8b4*/
+  StartupInfo.dwFlags = 0; /*0x7cd8b9*/
+  GetStartupInfoA(&StartupInfo); /*0x7cd8c0*/
+  lpCmdLine = (CHAR *)_wincmdln(); /*0x7cd8cb*/
+  if ( (StartupInfo.dwFlags & 1) != 0 ) /*0x7cd8d2*/
+    wShowWindow = StartupInfo.wShowWindow; /*0x7cd8d4*/
+  else
+    wShowWindow = 10; /*0x7cd8dc*/
+  v3 = wShowWindow; /*0x7cd8dd*/
+  ModuleHandleA = GetModuleHandleA(0); /*0x7cd8e3*/
+  v5 = WinMain(ModuleHandleA, 0, lpCmdLine, v3); /*0x7cd8ef*/
+  exit(v5); /*0x7cd8f3*/
 }
 }
 } // namespace gamemd
@@ -13661,21 +13774,6 @@ void nullsub_268()
 }
 } // namespace gamemd
 
-// 0x7C8F96
-namespace gamemd {
-int sub_7C8F96(int a1)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl sub_7C8F96(int a1)
-{
-  int result; // eax
-
-  result = CRTGlobal_B7819C; /*0x7c8f9a*/
-  CRTGlobal_B7819C = a1; /*0x7c8f9f*/
-  return result; /*0x7c8fa5*/
-}
-} // namespace gamemd
-
 // 0x7C8FB0
 namespace gamemd {
 int __CIpow()
@@ -14686,55 +14784,6 @@ int _flush(MouseClass * aP0)
     aP0->field_0 = (int)v5;
     return v1;
 }
-}
-} // namespace gamemd
-
-// 0x7CB25E
-namespace gamemd {
-int flsall(MouseClass * aP0)
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl flsall(MouseClass *aP0)
-{
-  int v1; // ebx
-  type_info *v2; // edi
-  int i; // esi
-  int v4; // eax
-  int v5; // eax
-  int v6; // ecx
-  int result; // eax
-
-  v1 = 0; /*0x7cb263*/
-  v2 = 0; /*0x7cb265*/
-  _lock(2); /*0x7cb267*/
-  for ( i = 0; i < (int)CRTStreamCount; ++i ) /*0x7cb275*/
-  {
-    v4 = *(_DWORD *)(CRTGlobal_B78BC4 + 4 * i); /*0x7cb27c*/
-    if ( v4 && (*(_BYTE *)(v4 + 12) & 0x83) != 0 ) /*0x7cb287*/
-    {
-      _lock_file2(i, *(_DWORD *)(CRTGlobal_B78BC4 + 4 * i)); /*0x7cb28b*/
-      v5 = *(_DWORD *)(CRTGlobal_B78BC4 + 4 * i); /*0x7cb297*/
-      v6 = *(_DWORD *)(v5 + 12); /*0x7cb29a*/
-      if ( (v6 & 0x83) != 0 ) /*0x7cb2a0*/
-      {
-        if ( aP0 == (MouseClass *)1 ) /*0x7cb2a7*/
-        {
-          if ( _fflush_lk(v5) != -1 ) /*0x7cb2b3*/
-            ++v1; /*0x7cb2b5*/
-        }
-        else if ( !aP0 && (v6 & 2) != 0 && _fflush_lk(*(_DWORD *)(CRTGlobal_B78BC4 + 4 * i)) == -1 ) /*0x7cb2ce*/
-        {
-          v2 = (type_info *)-1; /*0x7cb2d0*/
-        }
-      }
-      _unlock_file2(i, *(_DWORD *)(CRTGlobal_B78BC4 + 4 * i)); /*0x7cb2db*/
-    }
-  }
-  _unlock(2); /*0x7cb2ed*/
-  result = v1; /*0x7cb2f8*/
-  if ( aP0 != (MouseClass *)1 ) /*0x7cb2fa*/
-    return (int)v2; /*0x7cb2fc*/
-  return result; /*0x7cb2fe*/
 }
 } // namespace gamemd
 
@@ -15770,52 +15819,6 @@ size_t strcspn(IUnknown * aP0, const char * Control)
     while ( !_bittest(v7, v2) );
     return v5;
 }
-}
-} // namespace gamemd
-
-// 0x7CD80F
-namespace gamemd {
-void __noreturn start()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __noreturn start()
-{
-  DWORD Version; // eax
-  int wShowWindow; // eax
-  HMODULE ModuleHandleA; // eax
-  int v3; // [esp-4h] [ebp-78h]
-  CHAR *lpCmdLine; // [esp+10h] [ebp-64h]
-  int v5; // [esp+14h] [ebp-60h]
-  struct _STARTUPINFOA StartupInfo; // [esp+18h] [ebp-5Ch] BYREF
-  CPPEH_RECORD ms_exc; // [esp+5Ch] [ebp-18h]
-
-  Version = GetVersion(); /*0x7cd835*/
-  CRTGlobal_B781D4 = BYTE1(Version); /*0x7cd83f*/
-  CRTGlobal_B781D0 = (unsigned __int8)Version; /*0x7cd84d*/
-  CRTGlobal_B781CC = BYTE1(Version) + ((unsigned __int8)Version << 8); /*0x7cd858*/
-  CRTGlobal_B781C8 = HIWORD(Version); /*0x7cd861*/
-  if ( !_heap_init(1) ) /*0x7cd868*/
-    fast_error_exit(0x1Cu); /*0x7cd874*/
-  if ( !_mtinit() ) /*0x7cd87a*/
-    fast_error_exit(0x10u); /*0x7cd885*/
-  ms_exc.registration.TryLevel = 0; /*0x7cd88d*/
-  _ioinit(); /*0x7cd890*/
-  CRTGlobal_B78BA8 = (int)GetCommandLineA(); /*0x7cd89b*/
-  MEMORY[0xB78228] = (char *)__crtGetEnvironmentStringsA(); /*0x7cd8a5*/
-  _setargv(); /*0x7cd8aa*/
-  _setenvp(); /*0x7cd8af*/
-  _cinit(); /*0x7cd8b4*/
-  StartupInfo.dwFlags = 0; /*0x7cd8b9*/
-  GetStartupInfoA(&StartupInfo); /*0x7cd8c0*/
-  lpCmdLine = (CHAR *)_wincmdln(); /*0x7cd8cb*/
-  if ( (StartupInfo.dwFlags & 1) != 0 ) /*0x7cd8d2*/
-    wShowWindow = StartupInfo.wShowWindow; /*0x7cd8d4*/
-  else
-    wShowWindow = 10; /*0x7cd8dc*/
-  v3 = wShowWindow; /*0x7cd8dd*/
-  ModuleHandleA = GetModuleHandleA(0); /*0x7cd8e3*/
-  v5 = WinMain(ModuleHandleA, 0, lpCmdLine, v3); /*0x7cd8ef*/
-  exit(v5); /*0x7cd8f3*/
 }
 } // namespace gamemd
 

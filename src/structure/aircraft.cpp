@@ -4259,7 +4259,7 @@ int __thiscall AircraftClass::_vt122(int this, int a2, int a3)
       }
     default:
 LABEL_4:
-      result = ParticleClass::MissionDispatch((#377 *)this);
+      result = MissionClass::QueueMission((#377 *)this);
       break;
   }
   return result;
@@ -4470,7 +4470,7 @@ int __thiscall AircraftClass::_vt123(#377 *this)
 {
   if ( *((_DWORD *)this + 43) != 30 )
     *((_BYTE *)this + 1746) = 0;
-  return MissionClass::AdvanceState(this);
+  return MissionClass::NextMission(this);
 }
 
 /* ASM:
@@ -5623,7 +5623,7 @@ retn
 // ============================================================
 
 // IDA: 0x417CC0 (GetCursorOverObject, 692B)
-int AircraftClass::GetCursorOverObject()
+int AircraftClass::GetActionOnObject()
 {
     // Get cursor type when hovering over this aircraft
     return 0;

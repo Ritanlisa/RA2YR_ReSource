@@ -4641,17 +4641,14 @@ retn
 // 0x521760
 int InfantryClass::ParachuteTo()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall InfantryClass::ParachuteTo(int this, int a2)
-{
-  if ( !(unsigned __int8)ObjectClass::ParachuteDrop((#374 *)this) ) /*0x521768*/
-    return 0; /*0x5217b4*/
-  if ( (unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540)) ) /*0x521777*/
-    (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 5, 0); /*0x521788*/
-  else
-    (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 15, 0); /*0x521798*/
-  (*(void (__thiscall **)(int, int, int, _DWORD))(*(_DWORD *)this + 1368))(this, 33, 1, 0); /*0x5217a8*/
-  return 1; /*0x5217b0*/
+    if (!(unsigned __int8)ObjectClass::ParachuteDrop(this))
+        return 0;
+    if ((unsigned __int8)this->owner->IsCurrentPlayer())
+        this->queueMission(Mission::Guard, false);
+    else
+        this->queueMission(Mission::Hunt, false);
+    this->ProcessDeployAction(33, true, false);
+    return 1;
 }
 
 // ============================================================
@@ -5042,34 +5039,28 @@ retn    10h
 }
 
 // 0x51f190
-int InfantryClass::ValidateTargetAndMove()
+int InfantryClass::ValidateTargetAndMove(AbstractClass* target, int flags)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x51f190
-char __thiscall InfantryClass::ValidateTargetAndMove(int *this, int a2, int *a3, int a4)
-{
-  int v5; // eax
-
-  v5 = ((__int64 (__thiscall *)(int *, int *, int))*(_DWORD *)(*this + 116))(this, a3, a4);
-  switch ( v5 )
-  {
+    int v5 = this->GetActionOnObject_EMP(target, flags);
+    switch (v5)
+    {
     case 9:
     case 28:
     case 29:
-      v5 = 9;
-      break;
+        v5 = 9;
+        break;
     case 27:
     case 57:
-      v5 = 5;
-      break;
+        v5 = 5;
+        break;
     default:
-      break;
-  }
-  if ( a3 == this && v5 == 5 )
-    return 0;
-  if ( *((_BYTE *)this + 664) )
-    return 0;
-  return FootClass::ValidateMove(this, v5, a3, a4);
+        break;
+    }
+    if (target == this && v5 == 5)
+        return 0;
+    if (this->isBerserk)
+        return 0;
+    return FootClass::ValidateMove(v5, target, flags);
 }
 
 /* ASM:
@@ -7695,14 +7686,14 @@ int InfantryClass::HandleCursorOverCell()
 }
 
 // 0x51e3b0
-int InfantryClass::GetCursorOverObject_EMP()
+int InfantryClass::GetActionOnObject_EMP(AbstractClass* object, int flags)
 {
     // IDA: 0x51E3B0 — EMP cursor over object
     return 0;
 }
 
 // 0x4dded0
-int InfantryClass::GetCursorOverObject()
+int FootClass::GetActionOnObject()
 {
     // IDA: 0x4DDED0 — get cursor type over this object
     return 0;

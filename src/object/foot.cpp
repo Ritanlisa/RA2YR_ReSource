@@ -1719,7 +1719,7 @@ int FootClass::DispatchInput() { return 0; }
 // 0x4d7330
 void FootClass::ProcessDeploy() {}
 // 0x4d74e0
-int FootClass::ValidateMove() { return 0; }
+int FootClass::ValidateMove(int action, AbstractClass* target, int flags) { return 0; }
 // 0x4d82b0
 int FootClass::ValidatePlacement() { return 0; }
 // 0x4d8560

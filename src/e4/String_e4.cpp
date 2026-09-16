@@ -200,6 +200,21 @@ void __thiscall String::TrimLeft(const char **this, ObjectClass *aP1)
 }
 } // namespace gamemd
 
+// 0x7B54B0
+namespace gamemd {
+unsigned int String::Length()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+unsigned int __thiscall String_Length(const char **this)
+{
+  if ( *this ) /*0x7b54b1*/
+    return strlen(*this); /*0x7b54c6*/
+  else
+    return 0; /*0x7b54b7*/
+}
+}
+} // namespace gamemd
+
 // 0x7B57A0
 namespace gamemd {
 char String::Replace(char * SubStr, const char * a3)
@@ -1215,20 +1230,6 @@ char * String::GetOrEmpty_Alt()
     return &g_INI_DefaultBuffer;
     return result;
 }
-}
-} // namespace gamemd
-
-// 0x7B54B0
-namespace gamemd {
-unsigned int String::Length()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall String_Length(const char **this)
-{
-  if ( *this ) /*0x7b54b1*/
-    return strlen(*this); /*0x7b54c6*/
-  else
-    return 0; /*0x7b54b7*/
 }
 } // namespace gamemd
 

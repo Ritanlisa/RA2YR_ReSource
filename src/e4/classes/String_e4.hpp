@@ -11,6 +11,7 @@ struct String {
     int NormalizeNewlines();  // 0x5F3350
     int To_Waypoint();  // 0x763690
     void TrimLeft(ObjectClass * aP1);  // 0x7B51D0
+    unsigned int Length();  // 0x7B54B0
     char Replace(char * SubStr, const char * a3);  // 0x7B57A0
     int Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3);  // 0x7B5F10
     int Tokenize2(int a2, wchar_t * Str, void ** a4);  // 0x7B7A60
@@ -37,7 +38,6 @@ struct String {
     void TrimRight(ObjectClass * aP1);  // 0x7B5230
     char * GetOrEmpty();  // 0x7B5400
     char * GetOrEmpty_Alt();  // 0x7B5440
-    unsigned int Length();  // 0x7B54B0
     char Assign_Bool(const char * a2);  // 0x7B5A40
     void ToLower();  // 0x7B5B30
     char ** ToLowerCopy(ObjectClass * aP1);  // 0x7B5B80

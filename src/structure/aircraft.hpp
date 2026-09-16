@@ -128,7 +128,7 @@ public:
     void Destruct();  // 0x414080
 
     // === Phase 3: Cursor & State ===
-    virtual int GetCursorOverObject();  // 0x417CC0
+    virtual int GetActionOnObject();  // 0x417CC0
     int IsHeightAboveThreshold();  // 0x41B920
     int IsBelowScreen();  // 0x41B980
     int CheckMissionAbort();  // 0x41C1D0
@@ -176,6 +176,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     void* Update(int a1, int a2);  // 0x413f80
     // === FUNCS-MOVE (END) ===
+// --- e4 declarations (BEGIN) ---
+    int GetCursorOverObject(IUnknown * aP1, IUnknown * a3);  // 0x417CC0
+// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

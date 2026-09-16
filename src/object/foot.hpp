@@ -27,6 +27,7 @@ public:
     virtual ~FootClass();  // 0x4D3590
 
     virtual void Destroyed(ObjectClass* killer) override;  // 0x4D98C0
+    virtual int GetActionOnObject();  // 0x4DDED0
     // wrapper: delegates to FootClass::Destroyed at 0x4D98C0
     virtual void onBuildingPlacement(uint32_t a, uint32_t b) override;
 
@@ -144,7 +145,7 @@ public:
     virtual int FindAITarget();  // 0x4D6AA0
     virtual int DispatchInput();  // 0x4D7170
     virtual void ProcessDeploy();  // 0x4d7330
-    virtual int ValidateMove();  // 0x4d74e0
+    virtual int ValidateMove(int action, AbstractClass* target, int flags);  // 0x4d74e0
     virtual int ValidatePlacement();  // 0x4d82b0
     virtual int GetCoords() const; // 0x4D8560
     virtual void UpdateAI();  // 0x4D85D0
