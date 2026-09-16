@@ -46,3 +46,25 @@
 
 注意：TeleportLocomotionClass 表全 362 槽挂 Jumpjet 名——疑似相邻表整体误归属，优先个案裁决。
 108 个 RTTI 未覆盖表需先扩 hierarchy（`anchors/rtti_hierarchy.json` full 图）再审计。
+---
+
+## G16 进展（2026-09-16，方法论验证轮）
+
+已裁决并四方落盘（本文件原"操作范式"全流程验证通过）：
+
+| 槽位 | 裁决 | 证据 |
+|---|---|---|
+| MissionClass 区 488-516（7 槽） | queueMission/nextMission/forceMission/onMissionChanged/revertMission/hasValidTarget/isMissionDone | YRpp MissionClass.h + 0x7edcc0 表直读 + 反编译语义；vo 7 条已入，验证器继承链解析全 Techno 族受益 |
+| 字节 116（Techno 族） | GetActionOnObject 族（Techno 0x6ffec0 / Foot 0x4dded0 / Infantry_EMP 0x51e3b0 / Building 0x447210 / Aircraft 0x417cc0） | Ares 6 钩子交叉命名（Hooks.Passthrough/Cursor/EMP/Deactivated/Trenches） |
+| InfantryClass 倒置条目 ×3 | IsAboveScreenMargin=124（vo 旧错值 344 废）/ ValidatePlacement=1156 / SetState(→forceMission)=496 | 二进制直读修正键值倒置 |
+
+**InfantryClass 真空槽更新**：字节 196（0x41c010，现名 AircraftClass::CheckReloadState
+——Aircraft 名在 Infantry 表 = 误归属嫌疑）与字节 1064 仍无主，H5 词汇前置。
+
+**单表耗时实测**：MissionClass 区段（YRpp 对齐 + 逐槽反编译 + 四方落盘）≈ 25 分钟。
+头部大表（NeuronClass 316 嫌疑）预计需分批——建议每会话 2-3 表 × 头部 20 槽。
+
+**相邻表整体误归属个案**（TeleportLocomotionClass 362 槽全挂 Jumpjet 名）裁决入口：
+表基址相邻性 + RTTI col_offset（MI 次表挂主表名 = find_base 贪婪匹配伪影嫌疑——
+`.omo/g16_slot_audit.py` 的 find_base 是"最近基址 ≤ slot"，次表槽会被吸到前一张表，
+重建 hierarchy 时需先修 audit 脚本再信其输出）。

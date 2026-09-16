@@ -185,7 +185,7 @@ cmake --build build_linux
 | 编译错误 / 警告 | **0 / 0** (gamemd 来自 _generated/ 和主要模块) |
 | symbol-locked | **symbols-locked-v2** — 全部 19,067 函数 1:1:1 映射 (IDA↔signals↔hpp)，0 naming mismatches |
 | completed (符号定义) | **19,133 / 19,133 (100%)** — 所有函数在 IDA/signals.json/hpp 中有名称和地址 |
-| translated (完整IDA对照) | **11,888** — MCP completed 诚实口径（G15 会话：舰队+10/手动 H5+6/假完成复位 −22；漂移族 6 类 ctor 裁决重建（WeaponType 352/TerrainType 700 等）+ A1 四 bug 修复 + OO refresh 4,551 + T8 叶缩放双修；详见 docs/roadmap_post_csp.md G15 执行日志）；pending **4,723** |
+| translated (完整IDA对照) | **11,892** — MCP completed 诚实口径（G16 会话：#108/#109 vtable 槽双闭环（MissionClass 虚区 7 槽 + GetActionOnObject 族五实现）+ TechnoClass 504-792/448-504 双区段 ctor 重建（focus@536/owner@540 定谳）+ BulletType INI 全表 + 手动 H5×3/舰队+1 + OO refresh 4,567；详见 docs/roadmap_post_csp.md G16 执行日志 + docs/g17_prep.md）；pending **4,719** |
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
 | sub_* 残留 | **5,468** — 函数级别 (非类成员)，0 已翻译 |
@@ -1150,9 +1150,9 @@ python tools/type_infer/auto_name.py
 ## 下一会话快速接手指引
 
 1. 看 `docs/coverage.md` 了解整体进度（**1,120 IDA 类全部完成 header，0 unknown_**）
-2. 看 `docs/roadmap_post_csp.md` G15 执行日志 +「Phase H」——当前主线 = 剩余 4,723 pending 清偿（G15 后：gate 3/3 首次全过；假完成复位 ×22 已清偿；**H5 主阻塞 = InfantryClass 链 vtable 槽词汇缺口 issue #108/#109**，审计证据 `.omo/g15_vtable_audit.json`）
+2. 看 `docs/roadmap_post_csp.md` G16 执行日志 + **`docs/g17_prep.md`（G17 准备工作包：P0 BulletType til 恢复 / P1 TechnoClass 尾区 ctor 写图 / P2 H5 infantry 22 队列 / P3 vtable 审计轮）**——当前主线 = 剩余 4,719 pending 清偿（G16 后：**H5 主阻塞已解除**——issue #108/#109 双闭环，MissionClass 虚区 7 槽 + GetActionOnObject 族入 vo，g5_fleet slot_name 已支持继承链行走）
 3. 看 `git log -10` 了解最近改动；`auto-fill-baseline` tag = 门控 diff 基线（重锚不清账）
-4. 下一波入口（按序）：**vtable 槽位审计轮**（交接单 `.omo/g16_handoff.md`「下一会话最高杠杆」；`python .omo/g16_slot_audit.py` 全类扫描）→ 残余假完成清偿（全池 verify 迭代到 0）→ BulletType 尾部 INI 考古（漂移族 DEFER）→ H5 语义翻译手动/舰队波；A1 追加命名 `python .omo/g14_a1_yrpp.py [--apply]`（四 bug 已修可续追加）
+4. 下一波入口（按序，详见 docs/g17_prep.md）：**P0 BulletType til 恢复**（IDA 回线第一件事：`tools/ida_bullettype_fix_g16.py` + idb_save，#112/#113）→ **P1 TechnoClass 800-1312 尾区重建**（#110，ctor 写图转录表在 prep 文档；完成后 A1 复跑解锁）→ **P2 H5 语义翻译**（infantry.cpp 22 队列 + 词汇前置 slot 196/1064）→ **P3 vtable 审计批量轮**（docs/g16_vtable_audit_queue.md 166 表）；A1 追加命名 `python .omo/g14_a1_yrpp.py [--apply]`（TechnoClass REJ 待 P1 解锁）
 5. 看 `injectFunctionTest/comparisonResult.log` 了解最新 Capture 数据
 6. 任何崩溃分析：先满足"故障排除最低标准"6 项，缺一项不下结论
 7. IDA 连接非持久：任何 IDA 操作前当场探测（`curl -m 5 http://127.0.0.1:13337/`）
