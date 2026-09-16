@@ -100,7 +100,7 @@ protected:
     int SD_vt12();  // 0x6CE900
     int SD_vt13(int * a2);  // 0x6CE910
     int SD_vt16();  // 0x6CEA10
-    char SD_vt25(unsigned signed char *** aP1);  // 0x6CEA20
+    char SD_vt25(unsigned char *** aP1);  // 0x6CEA20
     int SD_vt27(int a2, int a3);  // 0x6CEF80
 // --- e4 declarations (END) ---
 };

@@ -15713,7 +15713,7 @@ int _unlink(const char * FileName)
 
 // 0x7CD615
 namespace gamemd {
-int genfname(const unsigned signed char * Buffer)
+int genfname(const unsigned char * Buffer)
 {
 {
     char *v1;

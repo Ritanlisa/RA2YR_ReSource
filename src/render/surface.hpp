@@ -476,7 +476,7 @@ private:
     void * loc_4C1AC0(void * Block, char a2);  // 0x4C1AC0
     int Flip2();  // 0x5D1E50
     int RenderToSurface(ObjectClass * aP1);  // 0x5D1E70
-    int FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned signed char a4);  // 0x621B80
+    int FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned char a4);  // 0x621B80
 // --- e4 declarations (END) ---
 };
 

@@ -5644,7 +5644,7 @@ int sub_40A7B0()
 
 // 0x40ACD0
 namespace gamemd {
-short Coord_MoveByDirection(unsigned signed char a1, int * a2)
+short Coord_MoveByDirection(unsigned char a1, int * a2)
 {
 {
     int v2;

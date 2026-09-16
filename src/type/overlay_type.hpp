@@ -87,7 +87,7 @@ public:
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x5fec10
     // === FUNCS-MOVE (END) ===
 // --- e4 declarations (BEGIN) ---
-    char LoadFromINI(unsigned signed char *** aP1);  // 0x5FE770
+    char LoadFromINI(unsigned char *** aP1);  // 0x5FE770
     int GetClassIdentifier(int a1, unsigned int * a2);  // 0x5FEC30
     int GetTypeIdentifier();  // 0x5FEF00
     int GetObjectSize();  // 0x5FEF10

@@ -2119,7 +2119,7 @@ int sub_7C3690(int a1, int a2)
 
 // 0x7C3710
 namespace gamemd {
-int sub_7C3710(unsigned signed char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4)
+int sub_7C3710(unsigned char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4)
 {
   *a2 = a1[242];
   *a3 = a1[243];

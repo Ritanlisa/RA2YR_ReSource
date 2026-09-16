@@ -153,7 +153,7 @@ public:
     SuperClass*      CurrentSuperWeapon;        // 0x3FD4
 
 protected:
-    SidebarClass() = default; // 0x40D270
+    initButtons2() = default; // 0x40D270
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* SetFlashEntry(int a1, int a2, int a3, void* a4);  // 0x4C6B60
     int MarkTabForRebuild(int a1, int a2, int a3);  // 0x5005B0
