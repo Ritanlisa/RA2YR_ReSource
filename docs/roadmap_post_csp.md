@@ -2401,9 +2401,16 @@ marker&completed 对账 **0 幽灵** / readiness READY
 ### G14 新增债面与下一步
 - **漂移族账本** `.omo/g14_drift_ledger.txt`（33 类三源分歧画像：Cell -36、
   TerrainType -88/-92、WeaponType -295、BuildingClass 多族）——后续 ctor
-  二进制裁决的候选清单
-- **addr7C/7D 短排序族**（shortsort/swap cdecl 回调词汇）——31 块恒定 FAIL
-  的词汇专项候选（H6）
+  二进制裁决的候选清单（ctor 裁决起点 23 类已落盘
+  `.omo/g15_drift_ctors.json`——.omo 不入 git，精华投影如下：
+  WeaponTypeClass Constructor@0x771c70 / BuildingClass ctor@0x43b680 +
+  Construct@0x43b740 / TerrainTypeClass@0x71da80 / CellClass Construct@0x47bbf0 /
+  BulletTypeClass Construct@0x46bbc0 / SmudgeTypeClass@0x6b5260，其余 17 类
+  RadSite/House/Gadget/Locomotion 族/Wave/Tiberium/Script/Campaign/Object/
+  Terrain/Factory/Surface 见 json）
+- **addr7C/7D 短排序族**（shortsort/swap cdecl 回调词汇）——39 个
+  generate-OK-但-verify-FAIL 函数清单已落盘 `.omo/g15_addr7x_targets.json`
+  （addr7C 21 + addr7D 18，含地址+函数名+失败原因）；H6 词汇专项首选入口
 - H2 unit.cpp 15 pending 未动（B/C 类债维持）；gap2_refresh '{' bug 未修
   （冻结维持）；broken-arrow 32 块维持（需 efv 序数词汇 + 用户报备）
 
