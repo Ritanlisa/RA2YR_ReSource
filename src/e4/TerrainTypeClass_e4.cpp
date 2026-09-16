@@ -26,8 +26,8 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
   *(this + 168) = 0; /*0x5447f0*/
   *(this + 170) = 0; /*0x5447f8*/
   *(this + 171) = 0; /*0x5447fe*/
-  this->IsVeinhole = 1; /*0x544804*/
-  *((_BYTE *)this + 689) = 0; /*0x54480b*/
+  this->WaterBound = 1; /*0x544804*/
+  this->SpawnsTiberium = 0; /*0x54480b*/
   *(this + 169) = &vt_DynamicVectorClass_unsigned_short; /*0x544811*/
   *(this + 174) = 10; /*0x54481b*/
   *(this + 173) = 0; /*0x544825*/
@@ -125,11 +125,11 @@ _DWORD *__thiscall TerrainTypeClass::TerrainTypeClass(_DWORD *this, ObjectClass 
   *(this + 171) = 7; /*0x71dabd*/
   *(this + 168) = 0; /*0x71dac7*/
   *(this + 169) = 0; /*0x71dacd*/
-  this->IsVeinhole = 0; /*0x71dad3*/
-  *((_BYTE *)this + 689) = 0; /*0x71dad9*/
-  *((_BYTE *)this + 690) = 0; /*0x71dadf*/
-  *((_BYTE *)this + 691) = 0; /*0x71dae5*/
-  *((_BYTE *)this + 692) = 0; /*0x71daeb*/
+  this->WaterBound = 0; /*0x71dad3*/
+  this->SpawnsTiberium = 0; /*0x71dad9*/
+  this->IsFlammable = 0; /*0x71dadf*/
+  this->IsAnimated = 0; /*0x71dae5*/
+  this->IsVeinhole = 0; /*0x71daeb*/
   *(this + 174) = 0; /*0x71daf1*/
   *this = &TerrainTypeClass::`vftable'; /*0x71daf7*/
   *(this + 1) = &TerrainTypeClass::`vftable'; /*0x71dafd*/
@@ -216,24 +216,24 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                      (int)aP1,
                      (unsigned __int8 *)(this + 36),
                      (CCINIClass *)&stru_830620.__pad_579C[59592],
-                     (unsigned char)this->FoundationData);
-  *(_BYTE *)(this + 692) = Bool_Overwrite; /*0x71defd*/
+                     this->IsVeinhole);
+  this->IsVeinhole = Bool_Overwrite; /*0x71defd*/
   if ( Bool_Overwrite ) /*0x71df03*/
   {
     this->IsLogic = 0; /*0x71df05*/
     this->LegalTarget = 1; /*0x71df0c*/
   }
-  v4 = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &stru_81AE4C, this->IsVeinhole); /*0x71df22*/
-  v5 = *(_BYTE *)(this + 689); /*0x71df27*/
-  this->IsVeinhole = v4; /*0x71df2d*/
+  v4 = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &stru_81AE4C, this->WaterBound); /*0x71df22*/
+  v5 = this->SpawnsTiberium; /*0x71df27*/
+  this->WaterBound = v4; /*0x71df2d*/
   v6 = INIClass::ReadBool_Overwrite( /*0x71df3c*/
          (int)aP1,
          (unsigned __int8 *)(this + 36),
          (CCINIClass *)&stru_830620.__pad_579C[59576],
          v5);
-  aP3_4 = *(_BYTE *)(this + 690); /*0x71df49*/
-  *(_BYTE *)(this + 689) = v6; /*0x71df50*/
-  *(_BYTE *)(this + 690) = INIClass::ReadBool_Overwrite( /*0x71df5b*/
+  aP3_4 = this->IsFlammable; /*0x71df49*/
+  this->SpawnsTiberium = v6; /*0x71df50*/
+  this->IsFlammable = INIClass::ReadBool_Overwrite( /*0x71df5b*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[59564],
@@ -242,11 +242,11 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                   (unsigned __int8 ***)&MEMORY[0x87F8E4].__pad_5568[9012],
                   (unsigned __int8 *)(this + 504),
                   (unsigned __int8 *)g_INI_Key_Foundation,
-                  *(_DWORD *)(this + 664));
+                  this->Foundation);
   v8 = 5 * (_DWORD)v7; /*0x71df7e*/
-  *(_DWORD *)(this + 664) = v7; /*0x71df81*/
+  this->Foundation = v7; /*0x71df81*/
   LOBYTE(v7) = this->Theater; /*0x71df87*/
-  *(_DWORD *)(this + 696) = 8 * v8 + 11595200; /*0x71df96*/
+  this->FoundationData = 8 * v8 + 11595200; /*0x71df96*/
   if ( !(_BYTE)v7 ) /*0x71df9c*/
   {
     _makepath((char *)v23.headNode, 0, 0, (const char *)(this + 504), Ext); /*0x71dfad*/
@@ -265,7 +265,7 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
             (INIClass *)(this + 36),
             (Color *)&stru_830620.__pad_14B0[6744],
             (Color *)(this + 668));
-  v12 = *(_BYTE *)(this + 691); /*0x71e014*/
+  v12 = this->IsAnimated; /*0x71e014*/
   *(_WORD *)(this + 668) = *(_WORD *)Coord; /*0x71e01a*/
   *(_BYTE *)(this + 670) = *(_BYTE *)(Coord + 2); /*0x71e02a*/
   v13 = INIClass::ReadBool_Overwrite( /*0x71e02d*/
@@ -274,14 +274,14 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
           (CCINIClass *)&stru_830620.__pad_579C[59552],
           v12);
   aP3_4a = *(INIClass **)(this + 672); /*0x71e03a*/
-  *(_BYTE *)(this + 691) = v13; /*0x71e041*/
+  this->IsAnimated = v13; /*0x71e041*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x71e047*/
                     (int)aP1,
                     (unsigned __int8 *)(this + 36),
                     (CCINIClass *)&stru_830620.__pad_579C[59536],
                     aP3_4a);
   aP3 = *(float *)(this + 676); /*0x71e04c*/
-  this->AnimationProbability = Int_Overwrite; /*0x71e057*/
+  this->AnimationRate = Int_Overwrite; /*0x71e057*/
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x71e066*/
                        (int)aP1,
                        (INIClass *)(this + 36),
@@ -295,8 +295,8 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
           (CCINIClass *)&stru_830620.__pad_579C[59488],
           (INIClass *)v16);
   v19 = *(INIClass **)(this + 684); /*0x71e085*/
-  this->SnowOccupationBits = v18; /*0x71e08b*/
-  *(_DWORD *)(this + 684) = INIClass::ReadInt_Overwrite( /*0x71e0a0*/
+  this->TemperateOccupationBits = v18; /*0x71e08b*/
+  this->SnowOccupationBits = INIClass::ReadInt_Overwrite( /*0x71e0a0*/
                               (int)aP1,
                               (unsigned __int8 *)(this + 36),
                               (CCINIClass *)&stru_830620.__pad_579C[59468],
@@ -317,18 +317,18 @@ int __thiscall TerrainTypeClass::_vt13(int this, int *a2)
   int v6; // edx
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x71e149*/
-  Power::TimerProcess(this->Foundation); /*0x71e157*/
-  LOBYTE(v3) = this->IsVeinhole; /*0x71e15c*/
+  Power::TimerProcess(this->ArrayIndex); /*0x71e157*/
+  LOBYTE(v3) = this->WaterBound; /*0x71e15c*/
   Power::FlagProcess(a2, v3); /*0x71e165*/
-  LOBYTE(v4) = *(_BYTE *)(this + 689); /*0x71e16a*/
+  LOBYTE(v4) = this->SpawnsTiberium; /*0x71e16a*/
   v5 = Power::FlagProcess(a2, v4); /*0x71e173*/
-  LOBYTE(v5) = *(_BYTE *)(this + 690); /*0x71e178*/
+  LOBYTE(v5) = this->IsFlammable; /*0x71e178*/
   Power::FlagProcess(a2, v5); /*0x71e181*/
-  Power::TimerProcess(*(_DWORD *)(this + 664)); /*0x71e18f*/
-  LOBYTE(v6) = *(_BYTE *)(this + 691); /*0x71e194*/
+  Power::TimerProcess(this->Foundation); /*0x71e18f*/
+  LOBYTE(v6) = this->IsAnimated; /*0x71e194*/
   Power::FlagProcess(a2, v6); /*0x71e19d*/
-  Power::TimerProcess(this->AnimationProbability); /*0x71e1ab*/
-  return Checksummer::Add_float((unsigned int *)a2, this->TemperateOccupationBits); /*0x71e1be*/
+  Power::TimerProcess(this->AnimationRate); /*0x71e1ab*/
+  return Checksummer::Add_float((unsigned int *)a2, this->AnimationProbability); /*0x71e1be*/
 }
 }
 

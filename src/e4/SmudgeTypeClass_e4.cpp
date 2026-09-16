@@ -14,9 +14,9 @@ char *__thiscall SmudgeTypeClass::SmudgeTypeClass(char *this, ObjectClass *aP1)
   CCINIClass *v6; // edx
 
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x6b5269*/
-  this->Width = -1; /*0x6b5277*/
-  this->Height = 1; /*0x6b5281*/
-  *((_DWORD *)this + 167) = 1; /*0x6b5287*/
+  this->ArrayIndex = -1; /*0x6b5277*/
+  this->Width = 1; /*0x6b5281*/
+  this->Height = 1; /*0x6b5287*/
   *(this + 672) = 0; /*0x6b528d*/
   *(this + 673) = 0; /*0x6b5294*/
   *(_DWORD *)this = &SmudgeTypeClass::`vftable'; /*0x6b529b*/
@@ -48,7 +48,7 @@ char *__thiscall SmudgeTypeClass::SmudgeTypeClass(char *this, ObjectClass *aP1)
   if ( (int)v3 <= 0 ) /*0x6b533d*/
   {
 LABEL_11:
-    this->Width = -1; /*0x6b5351*/
+    this->ArrayIndex = -1; /*0x6b5351*/
     return this; /*0x6b535a*/
   }
   else
@@ -61,7 +61,7 @@ LABEL_11:
       if ( v5 >= (int)v3 ) /*0x6b534f*/
         goto LABEL_11; /*0x6b534f*/
     }
-    this->Width = v5; /*0x6b5361*/
+    this->ArrayIndex = v5; /*0x6b5361*/
     return this; /*0x6b5367*/
   }
 }
@@ -121,22 +121,22 @@ char __thiscall SmudgeTypeClass::GetSize(int this, unsigned __int8 ***aP1)
                      (int)aP1,
                      (unsigned __int8 *)(this + 36),
                      &unk_8185F4,
-                     *(_BYTE *)(this + 672));
-  v4 = *(_BYTE *)(this + 673); /*0x6b5710*/
-  *(_BYTE *)(this + 672) = Bool_Overwrite; /*0x6b5716*/
+                     this->Crater);
+  v4 = this->Burn; /*0x6b5710*/
+  this->Crater = Bool_Overwrite; /*0x6b5716*/
   v5 = INIClass::ReadBool_Overwrite( /*0x6b5725*/
          (int)aP1,
          (unsigned __int8 *)(this + 36),
          (CCINIClass *)&stru_830620.__pad_579C[41580],
          v4);
   v7 = *(INIClass **)(this + 664); /*0x6b5732*/
-  *(_BYTE *)(this + 673) = v5; /*0x6b5739*/
-  this->Height = INIClass::ReadInt_Overwrite( /*0x6b5744*/
+  this->Burn = v5; /*0x6b5739*/
+  this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
                               (int)aP1,
                               (unsigned __int8 *)(this + 36),
                               (CCINIClass *)&stru_82BBD0.sectionHead[1],
                               v7);
-  *(_DWORD *)(this + 668) = INIClass::ReadInt_Overwrite( /*0x6b575e*/
+  this->Height = INIClass::ReadInt_Overwrite( /*0x6b575e*/
                               (int)aP1,
                               (unsigned __int8 *)(this + 36),
                               &g_INI_Key_Height,
@@ -160,13 +160,13 @@ int __thiscall SmudgeTypeClass::_vt13(int this, int *a2)
   int v4; // edx
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6b57f9*/
-  Power::TimerProcess(this->Width); /*0x6b5807*/
-  LOBYTE(v3) = *(_BYTE *)(this + 672); /*0x6b580c*/
+  Power::TimerProcess(this->ArrayIndex); /*0x6b5807*/
+  LOBYTE(v3) = this->Crater; /*0x6b580c*/
   Power::FlagProcess(a2, v3); /*0x6b5815*/
-  LOBYTE(v4) = *(_BYTE *)(this + 673); /*0x6b581a*/
+  LOBYTE(v4) = this->Burn; /*0x6b581a*/
   Power::FlagProcess(a2, v4); /*0x6b5823*/
-  Power::TimerProcess(this->Height); /*0x6b5831*/
-  return Power::TimerProcess(*(_DWORD *)(this + 668)); /*0x6b5844*/
+  Power::TimerProcess(this->Width); /*0x6b5831*/
+  return Power::TimerProcess(this->Height); /*0x6b5844*/
 }
 }
 

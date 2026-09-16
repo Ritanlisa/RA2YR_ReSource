@@ -102,39 +102,39 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   *(this + 74) = 0; /*0x771d60*/
   *(this + 75) = 0; /*0x771d78*/
   *(this + 76) = 0x1000000; /*0x771d90*/
-  *((_BYTE *)this + 308) = 0; /*0x771da9*/
-  *((_BYTE *)this + 309) = 0; /*0x771daf*/
-  *((_BYTE *)this + 310) = 0; /*0x771db5*/
-  *((_BYTE *)this + 311) = 1; /*0x771dbb*/
-  *((_BYTE *)this + 312) = 0; /*0x771dc2*/
-  *((_BYTE *)this + 313) = 0; /*0x771dc8*/
-  *((_BYTE *)this + 314) = 0; /*0x771dce*/
-  *((_BYTE *)this + 315) = 0; /*0x771dd4*/
+  this->CellRangefinding = 0; /*0x771da9*/
+  this->FireOnce = 0; /*0x771daf*/
+  this->NeverUse = 0; /*0x771db5*/
+  this->RevealOnFire = 1; /*0x771dbb*/
+  this->TerrainFire = 0; /*0x771dc2*/
+  this->SabotageCursor = 0; /*0x771dc8*/
+  this->MigAttackCursor = 0; /*0x771dce*/
+  this->DisguiseFireOnly = 0; /*0x771dd4*/
   *(this + 79) = 0; /*0x771dda*/
-  *((_BYTE *)this + 320) = 0; /*0x771de0*/
-  *((_BYTE *)this + 321) = 1; /*0x771de6*/
-  *((_BYTE *)this + 322) = 0; /*0x771ded*/
-  *((_BYTE *)this + 323) = 1; /*0x771df3*/
-  *((_BYTE *)this + 324) = 0; /*0x771dfa*/
-  *((_BYTE *)this + 325) = 0; /*0x771e00*/
-  *((_BYTE *)this + 326) = 0; /*0x771e06*/
-  *((_BYTE *)this + 327) = 0; /*0x771e0f*/
-  *((_BYTE *)this + 328) = 0; /*0x771e16*/
-  *((_BYTE *)this + 329) = 0; /*0x771e1c*/
-  *((_BYTE *)this + 330) = 0; /*0x771e22*/
-  *((_BYTE *)this + 331) = 0; /*0x771e28*/
-  *((_BYTE *)this + 332) = 0; /*0x771e2e*/
-  *((_BYTE *)this + 333) = 0; /*0x771e34*/
-  *((_BYTE *)this + 334) = 10; /*0x771e3a*/
-  *((_BYTE *)this + 335) = 0; /*0x771e41*/
-  *((_BYTE *)this + 336) = 0; /*0x771e47*/
-  *((_BYTE *)this + 337) = 0; /*0x771e4d*/
-  *((_BYTE *)this + 338) = 0; /*0x771e53*/
-  *((_BYTE *)this + 339) = 0; /*0x771e59*/
-  *((_BYTE *)this + 340) = 0; /*0x771e5f*/
-  *((_BYTE *)this + 341) = 0; /*0x771e65*/
+  this->InfiniteMindControl = 0; /*0x771de0*/
+  this->FireWhileMoving = 1; /*0x771de6*/
+  this->DrainWeapon = 0; /*0x771ded*/
+  this->FireInTransport = 1; /*0x771df3*/
+  this->Suicide = 0; /*0x771dfa*/
+  this->TurboBoost = 0; /*0x771e00*/
+  this->Supress = 0; /*0x771e06*/
+  this->Camera = 0; /*0x771e0f*/
+  this->Charges = 0; /*0x771e16*/
+  this->IsLaser = 0; /*0x771e1c*/
+  this->DiskLaser = 0; /*0x771e22*/
+  this->IsLine = 0; /*0x771e28*/
+  this->IsBigLaser = 0; /*0x771e2e*/
+  this->IsHouseColor = 0; /*0x771e34*/
+  this->LaserDuration = 10; /*0x771e3a*/
+  this->IonSensitive = 0; /*0x771e41*/
+  this->AreaFire = 0; /*0x771e47*/
+  this->IsElectricBolt = 0; /*0x771e4d*/
+  this->DrawBoltAsLaser = 0; /*0x771e53*/
+  this->IsAlternateColor = 0; /*0x771e59*/
+  this->IsRadBeam = 0; /*0x771e5f*/
+  this->IsRadEruption = 0; /*0x771e65*/
   *(this + 86) = 0; /*0x771e6b*/
-  *((_BYTE *)this + 348) = 0; /*0x771e71*/
+  this->IsMagBeam = 0; /*0x771e71*/
   *this = &WeaponTypeClass::`vftable'; /*0x771e77*/
   *(this + 1) = &WeaponTypeClass::`vftable'; /*0x771e7d*/
   *(this + 2) = &WeaponTypeClass::`vftable'; /*0x771e83*/
@@ -190,8 +190,8 @@ int __thiscall sub_771F50(int this)
   this->vtable2 = &WeaponTypeClass::`vftable'; /*0x771f64*/
   this->vtable3 = &vt_WeaponTypeClass; /*0x771f6b*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x771f72*/
-  this->Damage = 0; /*0x771f7d*/
-  this->ROF = 0; /*0x771f83*/
+  this->Projectile = 0; /*0x771f7d*/
+  this->Warhead = 0; /*0x771f83*/
   v7 = this; /*0x771f95*/
   v2 = (*(int (__thiscall **)(WeaponTypeClass **, int *))&MEMORY[0x887568]->__pad_0[16])(&MEMORY[0x887568], &v7); /*0x771f99*/
   if ( v2 != -1 && v2 < MEMORY[0x887578] && v2 < --MEMORY[0x887578] ) /*0x771fb4*/
@@ -204,32 +204,32 @@ int __thiscall sub_771F50(int this)
     while ( v2 < MEMORY[0x887578] ); /*0x771fcc*/
   }
   v3 = *(void **)(this + 248); /*0x771fce*/
-  *(_DWORD *)(this + 244) = &vt_VectorClass_AnimTypeClass_const; /*0x771fd4*/
-  if ( v3 && this->IsHouseColor ) /*0x771fe2*/
+  this->Anim = &vt_VectorClass_AnimTypeClass_const; /*0x771fd4*/
+  if ( v3 && this->Anim.IsAllocated ) /*0x771fe2*/
   {
     __3_YAXPAX_Z(v3); /*0x771feb*/
-    *(_DWORD *)(this + 248) = 0; /*0x771ff3*/
+    this->Anim.Items = 0; /*0x771ff3*/
   }
-  this->IsHouseColor = 0; /*0x771ff9*/
-  *(_DWORD *)(this + 252) = 0; /*0x771fff*/
+  this->Anim.IsAllocated = 0; /*0x771ff9*/
+  this->Anim.Capacity = 0; /*0x771fff*/
   v4 = *(void **)(this + 220); /*0x772005*/
-  *(_DWORD *)(this + 216) = &vt_VectorClass_int; /*0x77200b*/
-  if ( v4 && this->Spawner ) /*0x772019*/
+  this->DownReport = &vt_VectorClass_int; /*0x77200b*/
+  if ( v4 && this->DownReport.IsAllocated ) /*0x772019*/
   {
     __3_YAXPAX_Z(v4); /*0x772022*/
-    *(_DWORD *)(this + 220) = 0; /*0x77202a*/
+    this->DownReport.Items = 0; /*0x77202a*/
   }
-  this->Spawner = 0; /*0x772030*/
-  *(_DWORD *)(this + 224) = 0; /*0x772036*/
+  this->DownReport.IsAllocated = 0; /*0x772030*/
+  this->DownReport.Capacity = 0; /*0x772036*/
   v5 = *(void **)(this + 192); /*0x77203c*/
-  this->DownReport = &vt_VectorClass_int; /*0x772042*/
-  if ( v5 && *(_BYTE *)(this + 201) ) /*0x772050*/
+  this->Report = &vt_VectorClass_int; /*0x772042*/
+  if ( v5 && this->Report.IsAllocated ) /*0x772050*/
   {
     __3_YAXPAX_Z(v5); /*0x772059*/
-    this->Anim = 0; /*0x772061*/
+    this->Report.Items = 0; /*0x772061*/
   }
-  *(_BYTE *)(this + 201) = 0; /*0x772069*/
-  this->OccupantAnim = 0; /*0x77206f*/
+  this->Report.IsAllocated = 0; /*0x772069*/
+  this->Report.Capacity = 0; /*0x77206f*/
   return AbstractTypeClass::Dtor((_DWORD *)this); /*0x77207a*/
 }
 }
@@ -284,58 +284,58 @@ int __thiscall WeaponTypeClass::ProcessPower(int this, int *a2)
   int v22; // edx
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x772ae9*/
-  Power::TimerProcess(this->Burst); /*0x772af7*/
-  LOBYTE(v3) = *(_BYTE *)(this + 304); /*0x772afc*/
+  Power::TimerProcess(this->AmbientDamage); /*0x772af7*/
+  LOBYTE(v3) = this->IsSonic; /*0x772afc*/
   Power::FlagProcess(a2, v3); /*0x772b05*/
-  LOBYTE(v4) = *(_BYTE *)(this + 325); /*0x772b0a*/
+  LOBYTE(v4) = this->TurboBoost; /*0x772b0a*/
   v5 = Power::FlagProcess(a2, v4); /*0x772b13*/
-  LOBYTE(v5) = *(_BYTE *)(this + 326); /*0x772b18*/
+  LOBYTE(v5) = this->Supress; /*0x772b18*/
   Power::FlagProcess(a2, v5); /*0x772b21*/
-  LOBYTE(v6) = *(_BYTE *)(this + 327); /*0x772b26*/
+  LOBYTE(v6) = this->Camera; /*0x772b26*/
   Power::FlagProcess(a2, v6); /*0x772b2f*/
-  LOBYTE(v7) = *(_BYTE *)(this + 329); /*0x772b34*/
+  LOBYTE(v7) = this->IsLaser; /*0x772b34*/
   v8 = Power::FlagProcess(a2, v7); /*0x772b3d*/
-  LOBYTE(v8) = *(_BYTE *)(this + 333); /*0x772b42*/
+  LOBYTE(v8) = this->IsHouseColor; /*0x772b42*/
   Power::FlagProcess(a2, v8); /*0x772b4b*/
-  Power::TimerProcess(this->Projectile); /*0x772b59*/
-  v9 = this->Damage; /*0x772b5e*/
+  Power::TimerProcess(this->Burst); /*0x772b59*/
+  v9 = this->Projectile; /*0x772b5e*/
   if ( v9 ) /*0x772b66*/
   {
     v10 = (*(int (__stdcall **)(int))(*(_DWORD *)(v9 + 4) + 16))(v9 + 4); /*0x772b6f*/
     Power::TimerProcess(v10); /*0x772b75*/
   }
-  Power::TimerProcess(this->Speed); /*0x772b83*/
-  Power::TimerProcess(this->Warhead); /*0x772b91*/
-  v11 = this->ROF; /*0x772b96*/
+  Power::TimerProcess(this->Damage); /*0x772b83*/
+  Power::TimerProcess(this->Speed); /*0x772b91*/
+  v11 = this->Warhead; /*0x772b96*/
   if ( v11 ) /*0x772b9e*/
   {
     v12 = (*(int (__stdcall **)(int))(*(_DWORD *)(v11 + 4) + 16))(v11 + 4); /*0x772ba7*/
     Power::TimerProcess(v12); /*0x772bad*/
   }
-  Power::TimerProcess(this->Range); /*0x772bbb*/
-  Power::TimerProcess(this->MinimumRange); /*0x772bc9*/
-  Power::TimerProcess(this->OpenToppedAnim); /*0x772bd7*/
-  Power::TimerProcess(*(_DWORD *)(this + 232)); /*0x772be5*/
-  Power::TimerProcess(*(_DWORD *)(this + 260)); /*0x772bf3*/
-  LOBYTE(v13) = *(_BYTE *)(this + 297); /*0x772bf8*/
+  Power::TimerProcess(this->ROF); /*0x772bbb*/
+  Power::TimerProcess(this->Range); /*0x772bc9*/
+  Power::TimerProcess(this->Report.Count); /*0x772bd7*/
+  Power::TimerProcess(this->DownReport.Count); /*0x772be5*/
+  Power::TimerProcess(this->Anim.Count); /*0x772bf3*/
+  LOBYTE(v13) = this->UseFireParticles; /*0x772bf8*/
   v14 = Power::FlagProcess(a2, v13); /*0x772c01*/
-  LOBYTE(v14) = *(_BYTE *)(this + 302); /*0x772c06*/
+  LOBYTE(v14) = this->Lobber; /*0x772c06*/
   Power::FlagProcess(a2, v14); /*0x772c0f*/
-  LOBYTE(v15) = *(_BYTE *)(this + 334); /*0x772c14*/
+  LOBYTE(v15) = this->LaserDuration; /*0x772c14*/
   Power::FinalizeDrain(a2, v15); /*0x772c1d*/
-  LOBYTE(v16) = *(_BYTE *)(this + 332); /*0x772c22*/
+  LOBYTE(v16) = this->IsBigLaser; /*0x772c22*/
   v17 = Power::FlagProcess(a2, v16); /*0x772c2b*/
-  LOBYTE(v17) = *(_BYTE *)(this + 301); /*0x772c30*/
+  LOBYTE(v17) = this->IsRailgun; /*0x772c30*/
   Power::FlagProcess(a2, v17); /*0x772c39*/
-  LOBYTE(v18) = *(_BYTE *)(this + 328); /*0x772c3e*/
+  LOBYTE(v18) = this->Charges; /*0x772c3e*/
   Power::FlagProcess(a2, v18); /*0x772c47*/
-  LOBYTE(v19) = *(_BYTE *)(this + 303); /*0x772c4c*/
+  LOBYTE(v19) = this->Bright; /*0x772c4c*/
   v20 = Power::FlagProcess(a2, v19); /*0x772c55*/
-  LOBYTE(v20) = *(_BYTE *)(this + 298); /*0x772c5a*/
+  LOBYTE(v20) = this->UseSparkParticles; /*0x772c5a*/
   Power::FlagProcess(a2, v20); /*0x772c63*/
-  LOBYTE(v21) = *(_BYTE *)(this + 299); /*0x772c68*/
+  LOBYTE(v21) = this->OmniFire; /*0x772c68*/
   Power::FlagProcess(a2, v21); /*0x772c71*/
-  LOBYTE(v22) = *(_BYTE *)(this + 300); /*0x772c76*/
+  LOBYTE(v22) = this->DistributedWeaponFire; /*0x772c76*/
   return Power::FlagProcess(a2, v22); /*0x772c84*/
 }
 }
@@ -483,30 +483,30 @@ WeaponTypeClass *__thiscall WeaponTypeClass::ddtor(void **this, char a2)
   }
   v4 = *(this + 62); /*0x77316e*/
   *(this + 61) = &vt_VectorClass_AnimTypeClass_const; /*0x773174*/
-  if ( v4 && this->IsHouseColor ) /*0x773182*/
+  if ( v4 && this->Anim.IsAllocated ) /*0x773182*/
   {
     __3_YAXPAX_Z(v4); /*0x77318b*/
     *(this + 62) = 0; /*0x773193*/
   }
-  this->IsHouseColor = 0; /*0x773199*/
+  this->Anim.IsAllocated = 0; /*0x773199*/
   *(this + 63) = 0; /*0x77319f*/
   v5 = *(this + 55); /*0x7731a5*/
   *(this + 54) = &vt_VectorClass_int; /*0x7731ab*/
-  if ( v5 && this->Spawner ) /*0x7731b9*/
+  if ( v5 && this->DownReport.IsAllocated ) /*0x7731b9*/
   {
     __3_YAXPAX_Z(v5); /*0x7731c2*/
     *(this + 55) = 0; /*0x7731ca*/
   }
-  this->Spawner = 0; /*0x7731d0*/
+  this->DownReport.IsAllocated = 0; /*0x7731d0*/
   *(this + 56) = 0; /*0x7731d6*/
   v6 = (DynamicVector *)*(this + 48); /*0x7731dc*/
   *(this + 47) = &vt_VectorClass_int; /*0x7731e2*/
-  if ( v6 && *((_BYTE *)this + 201) ) /*0x7731f0*/
+  if ( v6 && this->Report.IsAllocated ) /*0x7731f0*/
   {
     __3_YAXPAX_Z(v6); /*0x7731f9*/
     *(this + 48) = 0; /*0x773201*/
   }
-  *((_BYTE *)this + 201) = 0; /*0x773209*/
+  this->Report.IsAllocated = 0; /*0x773209*/
   *(this + 49) = 0; /*0x77320f*/
   AbstractTypeClass::Dtor(this); /*0x773215*/
   if ( (a2 & 1) != 0 ) /*0x77321f*/

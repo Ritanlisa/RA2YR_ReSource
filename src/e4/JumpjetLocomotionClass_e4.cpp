@@ -139,8 +139,8 @@ int __thiscall JumpjetLocomotionClass_Update2(char *this)
   v4 = this + 36; /*0x439b1d*/
   v64 = v6; /*0x439b3a*/
   v65 = v8; /*0x439b3e*/
-  v66 = this->Climb; /*0x439b44*/
-  v9 = this->Crash; /*0x439b4a*/
+  v66 = this->Crash; /*0x439b44*/
+  v9 = this->Height; /*0x439b4a*/
   LODWORD(v72) = *(_DWORD *)this; /*0x439b4d*/
   v67 = v9; /*0x439b51*/
   v10 = *((float *)this + 11); /*0x439b58*/
@@ -1360,9 +1360,9 @@ void __thiscall sub_4CE5A0(int this)
     else
     {
       LOWORD(v7) = *ProgressTimer::GetValue((_WORD *)(this->LinkedTo + 904), &v8) /*0x4ce5ee*/
-                 + ((unsigned __int16)this->CurrentState.Players << 8);
+                 + ((unsigned __int16)*(_DWORD *)(this + 84) << 8);
       FacingClass::Set_SyncLog((char *)(this->LinkedTo + 904), &v7); /*0x4ce605*/
-      v2 = this->CurrentState.Players; /*0x4ce60a*/
+      v2 = *(_DWORD *)(this + 84); /*0x4ce60a*/
       v3 = abs32(v2); /*0x4ce612*/
       if ( v3 >= 1 ) /*0x4ce617*/
         v3 = 1; /*0x4ce619*/
@@ -1370,7 +1370,7 @@ void __thiscall sub_4CE5A0(int this)
         v4 = v2 - v3; /*0x4ce62c*/
       else
         v4 = v3 + v2; /*0x4ce622*/
-      this->CurrentState.Players = v4; /*0x4ce624*/
+      *(_DWORD *)(this + 84) = v4; /*0x4ce624*/
     }
   }
 }

@@ -38,10 +38,13 @@ int __thiscall sub_522D20(void *this)
 // 0x522D30
 namespace ra2 {
 namespace game {
+bool SlaveManagerClass::CheckIsOne()
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_522D30(void *this)
 {
   return ((double (__thiscall *)(void *))*(_DWORD *)(*(_DWORD *)this + 692))(this) == 1.0; /*0x522d47*/
+}
 }
 } // namespace game
 } // namespace ra2

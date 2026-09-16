@@ -978,6 +978,8 @@ int __stdcall CaptureManagerClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int 
 // 0x472D70
 namespace ra2 {
 namespace game {
+int CaptureManagerClass::Capture(unsigned int * a2)
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CaptureManagerClass::_vt04(int *this, _DWORD *a2)
 {
@@ -995,6 +997,7 @@ int __thiscall CaptureManagerClass::_vt04(int *this, _DWORD *a2)
       return -1; /*0x472d8d*/
   }
   return result; /*0x472d92*/
+}
 }
 } // namespace game
 } // namespace ra2

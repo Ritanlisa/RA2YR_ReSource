@@ -84,6 +84,8 @@ int __thiscall FootClass::Destruct(void *this)
 // 0x4D98C0
 namespace ra2 {
 namespace game {
+void FootClass::Destroyed(int a2)
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall FootClass::Destroyed(#375 **this, int a2)
 {
@@ -97,6 +99,7 @@ void __thiscall FootClass::Destroyed(#375 **this, int a2)
     if ( CreateTriggerClassIfFarEnough(7, SHIDWORD(v3), *(_DWORD *)v3) ) /*0x4d98fe*/
       VoxClass::FindAndPlay(aEvaUnitlost, -1); /*0x4d9911*/
   }
+}
 }
 } // namespace game
 } // namespace ra2

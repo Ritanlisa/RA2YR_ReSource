@@ -545,41 +545,6 @@ int __thiscall SidebarClass_SwitchTab(int this, int a2)
 }
 }
 
-// 0x6AB990
-int SidebarClass::select()
-{
-{
-    int v2;
-    int result;
-    SidebarClass::updateStripVisibility((int *)g_TacticalRender);
-    SidebarClass::initializeStrip((int *)g_TacticalRender, 0);
-    v2 = this->SidebarClass_field_0x2C;
-    this->MovementZones = 1;
-    *(char *)(v2 + 60) = 1;
-    result = MapClass::MarkForRedraw(&DataGlobal_87F7E8, 0);
-    g_CameoRenderFlag = 1;
-    g_TooltipActive = 1;
-    return result;
-}
-}
-
-// 0x6AB9E0
-int SidebarClass::deselect()
-{
-{
-    int v2;
-    int result;
-    SidebarClass::updateStripPosition((int *)g_TacticalRender);
-    v2 = this->SidebarClass_field_0x2C;
-    this->MovementZones = 0;
-    *(char *)(v2 + 60) = 1;
-    result = MapClass::MarkForRedraw(&DataGlobal_87F7E8, 0);
-    g_CameoRenderFlag = 1;
-    g_TooltipActive = 1;
-    return result;
-}
-}
-
 // 0x6ABD30
 char SidebarClass::LoadResources()
 {
@@ -816,5 +781,40 @@ void SidebarClass::CreateScrollButtons()
     ShapeButton::SetShape((int)DataGlobal_B04910, (int)DataGlobal_B048AC, 0, 0);
     VectorClass_ptr_ConvertClass::MarkDirty(DataGlobal_B04910);
   }
+}
+}
+
+// 0x6AB990
+int SidebarClass::select()
+{
+{
+    int v2;
+    int result;
+    SidebarClass::updateStripVisibility((int *)g_TacticalRender);
+    SidebarClass::initializeStrip((int *)g_TacticalRender, 0);
+    v2 = this->SidebarClass_field_0x2C;
+    this->MovementZones = 1;
+    *(char *)(v2 + 60) = 1;
+    result = MapClass::MarkForRedraw(&DataGlobal_87F7E8, 0);
+    g_CameoRenderFlag = 1;
+    g_TooltipActive = 1;
+    return result;
+}
+}
+
+// 0x6AB9E0
+int SidebarClass::deselect()
+{
+{
+    int v2;
+    int result;
+    SidebarClass::updateStripPosition((int *)g_TacticalRender);
+    v2 = this->SidebarClass_field_0x2C;
+    this->MovementZones = 0;
+    *(char *)(v2 + 60) = 1;
+    result = MapClass::MarkForRedraw(&DataGlobal_87F7E8, 0);
+    g_CameoRenderFlag = 1;
+    g_TooltipActive = 1;
+    return result;
 }
 }
