@@ -2466,10 +2466,13 @@ marker&completed 对账 **0 幽灵** / readiness READY
 5. **中断波恢复协议**：replaced-未验证记录从 ida_cache 重建 pending 块
    （G11 会话 36 块重建流程已脚本化验证）。
 
-## 执行日志 — 2026-09-16 G15 会话：漂移族 ctor 裁决六类重建 + A1 四 bug + 舰队/手动波 + 假完成复位（completed 11,894 → 11,899 / 净 +5）
+## 执行日志 — 2026-09-16 G15 会话：漂移族 ctor 裁决六类重建 + A1 四 bug + 舰队/手动波 + 假完成复位（completed 11,894 → 11,888 / 净 −6，诚实口径收紧；pending 4,723）
 
-> 提交链：bf9baa92（证据+OO refresh 4551+重锚）→ 本波收尾提交。全池 exec-flow
-> 验证首次作为门控回归基线运行，暴露并复位 10 个 G3-G6 代假完成。
+> 提交链：bf9baa92（证据+OO refresh 4551+重锚）→ 7b0ef3c0（舰队+手动+15、
+> 复位×22、T8 叶缩放双修）→ 3afb6a0c（E3 代 unsigned-signed 首批基线语法债
+> 10 处）。**gate 3/3 本会话首次全过**（此前一直被 addr7C 假完成挡在编译前），
+> 编译首次推进到主体 → 基线编译债开始暴露（5,335 全量重建口径，裁决 v2 允许）。
+> 全池 exec-flow 验证首次作为门控回归基线运行，暴露并复位 22 个 G3-G6 代假完成。
 
 ### 漂移族裁决（用户主线 ①：证据补全）
 
@@ -2495,7 +2498,7 @@ marker&completed 对账 **0 幽灵** / readiness READY
 ### 舰队波 + 手动 H5 波（主线 ④）
 
 - g5_fleet 94 桶验证波：**+8**（addr40×4/Jumpjet/Smudge/TerrainType/team-gap2）+ WeaponType 试点 +2 = **+10**；FAIL-recycle 天花板维持（G14 实证一致）
-- **手动 H5 语义翻译 +5**（infantry.cpp 小函数，全 CFG 双射）：HandleTargetDestroyed（Type@1728 证据名）/ ComputeDeploySpeedFactor（Crawling@1755+魔数除3表达式保留）/ ProcessUpdate（SequenceAnim+vfptr112）/ GetDeployWeaponIndex（**broken-arrow `?[0x820/824]` 反汇编解码=TurretWeapon[3/4]，raw 形态双侧零事件对称——通用解法**）/ GetProductionLimit（g_RulesClass_Instance@0x8871E0+难度 BuildLimit 数组 0xD58/C/D60）
+- **手动 H5 语义翻译 +6**（infantry.cpp 小函数，全 CFG 双射）：HandleTargetDestroyed（Type@1728 证据名）/ ComputeDeploySpeedFactor（Crawling@1755+魔数除3表达式保留）/ ProcessUpdate（SequenceAnim+vfptr112）/ GetDeployWeaponIndex（**broken-arrow `?[0x820/824]` 反汇编解码=TurretWeapon[3/4]，raw 形态双侧零事件对称——通用解法**）/ GetProductionLimit（g_RulesClass_Instance@0x8871E0+难度 BuildLimit 数组 0xD58/C/D60）/ ProcessEnterOrRepair（叶修复后 vfptr 1152/496/1368 全对称）
 - **mbn 双体系漂移实证**：focus 在 _member_by_name=544 vs ml/反汇编=540（Infantry/Foot/Techno 三类修正）——G10「mbn 与 member_lookup 双体系漂移」的又一实例
 - **T8 叶缩放 bug 修复**：`*this + N` 裸形态（cast-paren 双指针 `#375 **this`）应 ×4（类型化指针算术；ProcessEnterOrRepair `*this+288`==`call [vfptr+480h]` 反汇编实证）；`*(_DWORD *)this + N` 标量形态不缩放（维持）。回归面实证=0（全池含该形态已完成函数 0 个）
 - 手动波系统发现：**InfantryClass 链 vtable 槽词汇缺口是 H5 主阻塞**（槽 122/488B=现名 ParticleClass::MissionDispatch 误归属嫌疑、槽 49/196B 无名、槽 116 hpp 无声明）——issue #108/#109 记账，需 vtable 槽位审计轮（G4/G5 范式：binary vtable 直读命名 + vo + hpp 虚区声明）
