@@ -2,25 +2,23 @@
 
 > ⚠ 本文档的子系统细节（vtable 解码、类覆盖清单）为早期考证快照，仍然有效；
 > **当前总体进度以 `AGENTS.md` 状态表和 `docs/roadmap_post_csp.md` 执行日志为权威**
-> （2026-09-15 G13 口径：MCP completed **11,843** / pending **4,771**——**诚实口径**，
-> 全 CFG 验证；G13 = 证据补全大轮 + OO refresh + 舰队波 + H2 手术）。
+> （2026-09-16 G14 口径：MCP completed **11,894** / pending **4,717**——**诚实口径**，
+> 全 CFG 验证；G14 = YRpp 腿就位 + A1 命名轮 + align bug 修正 + 舰队两波）。
 
-## 翻译总进度（G13 会话后，2026-09-15）
-
-## 翻译总进度（G13 会话后，2026-09-15）
+## 翻译总进度（G14 会话后，2026-09-16）
 
 | 指标 | 数值 |
 |--------|-------|
-| MCP completed | **11,843**（诚实口径：G12 末 11,788 + G13 舰队波 109 桶 +47 + H2 unit.cpp +8，全 CFG 验证） |
-| MCP pending | **4,771**（构成：too-long 2,037 + goto 352 + raw-this 619 + ternary 133 等，见 roadmap「Phase H」+ G13 日志；hash-type 已全清） |
-| marker&completed 矛盾 | **0**（G13 终态对账） |
+| MCP completed | **11,894**（诚实口径：G13 末 11,843 + G14 舰队 W1 108 桶 +48 + W2 99 桶 +3，全 CFG 验证） |
+| MCP pending | **4,717**（构成：too-long ~2,037 + goto ~352 + raw-this ~605 + **FAIL-recycle 255（GENERATED 残余=词汇缺口，G14 W2 实证天花板）** + ternary ~132 + param-mismatch ~110 等，见 roadmap「Phase H」+ G14 日志；hash-type 已全清） |
+| marker&completed 矛盾 | **0**（G14 终态对账；align bug 43 误位项零假完成——事件对称门控实证） |
 | src 函数体覆盖 | ~17,880 / 19,133（93.5%；未翻译函数以 IDA 原始反编译活代码块占位，裁决 v2） |
-| 偏移→OO 重写 | rewritten 4,514 / unmapped 5,661（G13 refresh 口径，分母随已译体退出波动） |
-| vtable_offsets | 398+ 类（G13 +15 真新增槽位：ObjectClass 124/172/308/336/436、InfantryClass 288、TechnoClass 1012 等） |
-| member_lookup | 1,651 类（G13 til 全量导出合并 +503 语义成员 / 22 类：InfantryClass 121、UnitClass 115、HouseTypeClass 44…；FootClass@1444=Archive 重命名） |
-| signals.globals | 13,432+ 地址（G13 DataGlobal +4：83D4E4/89A318/833240/83F158） |
-| HASH_TYPE_MAP | 12 条（G13 +3：#378=AbstractClass、#473=ScenarioClass、#487=AircraftTypeVector——hash-type 类全部清零） |
-| unit.hpp 声明 | A 类 17 项参数补全（G13 hpp+def 手术，issue #73-#93 A 类清偿） |
+| 偏移→OO 重写 | rewritten 4,468 / unmapped 5,610（G14 修正版 refresh 口径，分母随已译体退出波动） |
+| vtable_offsets | 398+ 类（G14 +11 真新增槽位：ObjectClass@124 IsAboveScreenMargin 二进制定案、InfantryClass@1156 ValidatePlacement、AircraftClass@684 等） |
+| member_lookup | 1,651 类（G14 +118 g14 项修正版：YRpp 声明序+til 锚定；43 误位项已移除；漂移族账本 .omo/g14_drift_ledger.txt 33 类诚实剔除） |
+| signals.globals | 13,453+ 地址（G14 DataGlobal +14+7：IQ/GameSettings/WOL 键表 blob 头族 + -1 哨兵族 + EVA/音频 blob） |
+| HASH_TYPE_MAP | 12 条（G13 定案维持；hash-type 类全部清零） |
+| YRpp submodule | **已修复**（gitlink + 浅克隆，headers 在 YRpp/ 根——A1 三源证据腿就位） |
 
 ## 编译状态
 

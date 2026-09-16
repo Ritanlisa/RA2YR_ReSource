@@ -2430,10 +2430,10 @@ marker&completed 对账 **0 幽灵** / readiness READY
 
 | 波 | 内容 | 前置 | 方法 | 预期净增 | 估时 |
 |---|---|---|---|---|---|
-| **H1 即时收割** | 319 GENERATED 直驱 | 无 | g5_fleet 直驱（`.omo/g11_fleet_driver.py` 现成） | +80~150 | 1 波 ~15 min |
+| **H1 即时收割** | ~~319 GENERATED 直驱~~ **✅ G14 已收割并实证天花板**：剩余 235 GENERATED = FAIL-recycle（同块反复失败），**直驱无增量** | 无 | 预建计划 `.omo/g15_wave_plan.json`（仅作词汇落地后验证波） | +0（需新词汇前置） | — |
 | **H2 A1 命名轮** | 529 distinct 成员（头部：CCFileClass@100/Cell@56/CheckListClass@280/LayerClass@244/NullModemClass@56…；G10 跳过名单逐一复核）——**G13 后 til 侧天花板已到**（til 占位 236/无覆盖 283/interior 18 诚实搁置），剩余需 YRpp+ctor 三源证据 | 无（快照消费为主，IDA 在线增强）；**YRpp submodule 为空需先补齐** | 三源证据表 → rename_symbol 四方同步 → member_lookup/_member_by_name 双体系 | 解锁 #2 全部 605 + #11 member 长尾 | 2-3 会话 |
 | **H3 机械小 Fry** | param-mismatch ~110 + free-this 46 + IDA-ism 24 + broken-arrow 31（live） | IDA 在线（broken-arrow/部分签名） | sigfix/defix 脚本化批产 + live 重取 | +120~180 | 1 会话 |
-| **H4 舰队波 2** | H2/H3 解锁块直驱（raw-this 605 + member ~150） | H2+H3 | g5_fleet 直驱 | +250~400 | 1-2 波 |
+| **H4 舰队波 2** | H2/H3 解锁块直驱（raw-this 585 + member ~150） | H2+H3+**新词汇**（G14 实证：无新词汇直驱 = FAIL-recycle 0 增量） | g5_fleet 直驱 + `.omo/g15_handoff.md` P1/P2 预备材料（漂移族 ctor 起点 23 类 / addr7C 短排序族 39 函数清单） | 视词汇落地量 | 1-2 波 |
 | **H5 语义翻译主线** | too-long 2,037 + goto 328 = **2,365**（持久主体） | 无硬前置（H2 提升可读性） | **agent 舰队 MCP 全流程**（G3 范式：3 agent 分桶 + CFG 双射规则书 + FAIL 自动回滚）；优先序 = 调用频次 × 类核心度（building.cpp 71 / TechnoClass 族 / 工厂生产链 → UI/INI/网络）；手动批 G10 实测 ~9/会话含考古，agent 舰队 G3 实测 +118/波 | 每波 +60~120 | **主体 ≈ 15-25 会话** |
 | **H6 词汇专项** | ternary 124（算术化逐形态）+ hash-type 175（#NN 考古） | IDA 在线（#NN 解析） | 每形态 20 块试点 → PASS≥60% 推广，否则转 H5 手动 | +150~250 | 1-2 会话 |
 | **H7 A2 owner 考古** | slot foreign 95 + 44 向量族误归属 | 无（G9 链离线可用） | RTTI owner 链批量改名（A2） | 间接解锁 | 1 会话（可与 H2 并行） |
