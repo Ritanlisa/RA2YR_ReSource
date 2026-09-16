@@ -153,20 +153,17 @@ char __thiscall SmudgeTypeClass::GetSize(int this, unsigned __int8 ***aP1)
 // 0x6B57F0
 int SmudgeTypeClass::PowerDrainUpdate(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SmudgeTypeClass::_vt13(int this, int *a2)
 {
-  int v3; // ecx
-  int v4; // edx
-
-  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6b57f9*/
-  Power::TimerProcess(this->ArrayIndex); /*0x6b5807*/
-  LOBYTE(v3) = this->Crater; /*0x6b580c*/
-  Power::FlagProcess(a2, v3); /*0x6b5815*/
-  LOBYTE(v4) = this->Burn; /*0x6b581a*/
-  Power::FlagProcess(a2, v4); /*0x6b5823*/
-  Power::TimerProcess(this->Width); /*0x6b5831*/
-  return Power::TimerProcess(this->Height); /*0x6b5844*/
+    int v3;
+    int v4;
+    AbstractTypeClass::ProcessPower((char *)this, a2);
+    Power::TimerProcess(this->ArrayIndex);
+    LOBYTE(v3) = this->Crater;
+    Power::FlagProcess(a2, v3);
+    LOBYTE(v4) = this->Burn;
+    Power::FlagProcess(a2, v4);
+    Power::TimerProcess(this->Width);
+    return Power::TimerProcess(this->Height);
 }
 }
 

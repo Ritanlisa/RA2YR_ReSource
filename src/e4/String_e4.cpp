@@ -1222,12 +1222,13 @@ char * String::GetOrEmpty_Alt()
 namespace gamemd {
 unsigned int String::Length()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+unsigned int __thiscall String_Length(const char **this)
 {
-    if ( *(void**)this )
-    return strlen(*(void**)this);
-    else
-    return 0;
-}
+  if ( *this ) /*0x7b54b1*/
+    return strlen(*this); /*0x7b54c6*/
+  else
+    return 0; /*0x7b54b7*/
 }
 } // namespace gamemd
 

@@ -629,64 +629,79 @@ int CDTimerClass::TimeRemaining()
 // 0x4C9220
 int FacingClass::Update(unsigned int* a1)
 {
-    unsigned short v2 = (unsigned short)DesiredFacing;
-    if (v2 == *(unsigned short*)a1)
-        return 0;
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall FacingClass::Update(FacingClass *this, DirStruct *desiredFacing)
+{
+  __int16 v2; // ax
+  __int16 ROT; // bp
+  int StartTime; // edi
+  int TimeLeft; // edx
+  int v6; // esi
+  int v7; // eax
+  int v8; // edi
+  int v9; // edx
+  __int16 v10; // di
+  IUnknown *v11; // eax
+  DirStruct v12; // edx
+  int v13; // eax
+  CDTimerClass *p_RotationTimer; // ecx
+  IUnknown *v16; // [esp+0h] [ebp-10h]
+  int v17; // [esp+8h] [ebp-8h]
 
-    short rot = (short)ROT;
-    unsigned int v11 = DesiredFacing;
-    if (rot <= 0)
+  v2 = this->DesiredFacing; /*0x4c9224*/
+  if ( LOWORD(this->DesiredFacing) == desiredFacing->Value ) /*0x4c922d*/
+    return 0; /*0x4c92f7*/
+  ROT = this->ROT; /*0x4c9235*/
+  if ( ROT <= 0 ) /*0x4c923e*/
+    goto LABEL_15; /*0x4c923e*/
+  StartTime = this->RotationTimer.StartTime; /*0x4c9240*/
+  TimeLeft = this->RotationTimer.TimeLeft; /*0x4c9243*/
+  if ( StartTime != -1 ) /*0x4c924f*/
+  {
+    if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - StartTime >= TimeLeft ) /*0x4c9257*/
     {
-        // no turn rate: keep the current desired facing (snap path)
+LABEL_15:
+      v11 = (IUnknown *)this->DesiredFacing; /*0x4c92af*/
+      goto LABEL_16; /*0x4c92af*/
     }
-    else
+    TimeLeft -= *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - StartTime; /*0x4c9259*/
+  }
+  if ( !TimeLeft ) /*0x4c925d*/
+    goto LABEL_15; /*0x4c925d*/
+  v6 = (__int16)(v2 - LOWORD(this->StartFacing)); /*0x4c9266*/
+  v7 = abs16(v2 - LOWORD(this->StartFacing)) / ROT; /*0x4c9271*/
+  v16 = (IUnknown *)this->DesiredFacing; /*0x4c9275*/
+  if ( (__int16)v7 > 0 ) /*0x4c927c*/
+  {
+    v8 = this->RotationTimer.StartTime; /*0x4c927e*/
+    v9 = this->RotationTimer.TimeLeft; /*0x4c9281*/
+    if ( v8 != -1 ) /*0x4c9287*/
     {
-        int timeLeft = RotationTimer.TimeLeft;
-        int startTime = RotationTimer.StartTime;
-        if (startTime != -1 && g_CurrentFrame - startTime >= timeLeft)
-        {
-            // rotation window exhausted: snap path
-        }
-        else if (timeLeft == 0)
-        {
-            // nothing left to interpolate: snap path
-        }
-        else
-        {
-            short delta = (short)(v2 - (unsigned short)StartFacing);
-            int deltaAbs = (delta ^ (delta >> 31)) - (delta >> 31);
-            int steps = deltaAbs / rot;
-            unsigned int v16 = DesiredFacing;
-            int frameNow = g_CurrentFrame;
-            if ((short)steps > 0)
-            {
-                int weight = RotationTimer.TimeLeft;
-                int start2 = RotationTimer.StartTime;
-                short v10 = (short)weight;
-                if (start2 != -1)
-                {
-                    v10 = 0;
-                    if (frameNow - start2 < weight)
-                        v10 = (short)(weight - (frameNow - start2));
-                }
-                v16 = (v16 & 0xFFFF0000u) | (unsigned short)(v10 * (delta / (short)steps));
-            }
-            v11 = v16;
-        }
+      if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - v8 >= v9 ) /*0x4c928f*/
+      {
+        v10 = 0; /*0x4c92ab*/
+        goto LABEL_12; /*0x4c92ad*/
+      }
+      LOWORD(v9) = v9 - (*(_WORD *)&HouseClass_Player.__pad_5568[23248] - v8); /*0x4c9291*/
     }
-    StartFacing = v11;
-    unsigned int v12 = *a1;
-    DesiredFacing = v12;
-    int frame = g_CurrentFrame;
-    if (rot > 0)
-    {
-        short d2 = (short)((unsigned short)v12 - (unsigned short)StartFacing);
-        int d2Abs = (d2 ^ (d2 >> 31)) - (d2 >> 31);
-        RotationTimer.StartTime = frame;
-        RotationTimer.pad_04 = 0;  // original stored dead stack garbage
-        RotationTimer.TimeLeft = d2Abs / rot;
-    }
-    return 1;
+    v10 = v9; /*0x4c9293*/
+LABEL_12:
+    LOWORD(v16) = (_WORD)v16 - v10 * (v6 / (__int16)v7); /*0x4c9295*/
+  }
+  v11 = v16; /*0x4c92a5*/
+LABEL_16:
+  this->StartFacing = (unsigned int)v11; /*0x4c92b1*/
+  v12 = *desiredFacing; /*0x4c92bb*/
+  this->DesiredFacing = (unsigned int)*desiredFacing; /*0x4c92bd*/
+  if ( ROT > 0 ) /*0x4c92bf*/
+  {
+    v13 = abs16(v12.Value - LOWORD(this->StartFacing)) / ROT; /*0x4c92da*/
+    p_RotationTimer = &this->RotationTimer; /*0x4c92e0*/
+    p_RotationTimer->StartTime = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x4c92e3*/
+    p_RotationTimer->pad_04 = v17; /*0x4c92e5*/
+    p_RotationTimer->TimeLeft = v13; /*0x4c92e8*/
+  }
+  return 1; /*0x4c92f1*/
 }
 
 // FacingClass - network-sync variant (0x4c9300): step the displayed facing by
@@ -695,57 +710,70 @@ int FacingClass::Update(unsigned int* a1)
 // 0x4C9300
 int FacingClass::Set_SyncLog(unsigned int* a1)
 {
-    unsigned int v11 = DesiredFacing;
-    short v7 = 0;
-    int steps = 0;
-    int timeLeft = 0;
-    int v6 = 0;
-    if ((short)ROT > 0)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall FacingClass::Set_SyncLog(FacingClass *this, DirStruct *desiredFacing)
+{
+  TerrainTypeClass *v3; // ebx
+  int v4; // eax
+  int TimeLeft; // edx
+  int v6; // ebx
+  __int16 v7; // cx
+  unsigned int v8; // ecx
+  CDTimerClass *p_RotationTimer; // esi
+  char result; // al
+  unsigned int v11; // [esp+8h] [ebp-10h]
+  int v12; // [esp+10h] [ebp-8h]
+
+  if ( SLOWORD(this->ROT) > 0 ) /*0x4c930c*/
+  {
+    v3 = (TerrainTypeClass *)&this->RotationTimer; /*0x4c930e*/
+    if ( CDTimerClass::TimeRemaining(&this->RotationTimer.StartTime) ) /*0x4c9313*/
     {
-        if (RotationTimer.TimeRemaining() != 0)
+      v4 = abs16(LOWORD(this->DesiredFacing) - LOWORD(this->StartFacing)) / SLOWORD(this->ROT); /*0x4c9333*/
+      v11 = this->DesiredFacing; /*0x4c9337*/
+      if ( (__int16)v4 <= 0 ) /*0x4c933e*/
+      {
+LABEL_9:
+        LOWORD(v8) = v11; /*0x4c936a*/
+        goto LABEL_12; /*0x4c936f*/
+      }
+      TimeLeft = this->RotationTimer.TimeLeft; /*0x4c9340*/
+      v6 = *(_DWORD *)v3->__pad_0; /*0x4c9343*/
+      if ( v6 != -1 ) /*0x4c9348*/
+      {
+        if ( *(_DWORD *)&HouseClass_Player.__pad_5568[23248] - v6 >= TimeLeft ) /*0x4c9354*/
         {
-            short delta = (short)((unsigned short)DesiredFacing - (unsigned short)StartFacing);
-            int deltaAbs = (delta ^ (delta >> 31)) - (delta >> 31);
-            steps = deltaAbs / (short)ROT;
-            v11 = DesiredFacing;
-            if ((short)steps <= 0)
-            {
-                // no step this frame; keep v11 as-is
-            }
-            else
-            {
-                timeLeft = RotationTimer.TimeLeft;
-                v6 = RotationTimer.StartTime;
-                v7 = (short)timeLeft;  // fallthrough default (unstarted timer)
-                if (v6 != -1)
-                {
-                    int elapsed = g_CurrentFrame - v6;
-                    v7 = 0;  // expired (elapsed >= total) leaves the weight at 0
-                    if (elapsed < timeLeft)
-                        v7 = (short)(timeLeft - elapsed);
-                }
-                v11 = (v11 & 0xFFFF0000u) | (unsigned short)(v7 * (delta / (short)steps));
-            }
+          v7 = 0; /*0x4c9371*/
+          goto LABEL_8; /*0x4c9373*/
         }
+        LOWORD(TimeLeft) = TimeLeft - (*(_WORD *)&HouseClass_Player.__pad_5568[23248] - v6); /*0x4c9356*/
+      }
+      v7 = TimeLeft; /*0x4c9358*/
+LABEL_8:
+      LOWORD(v11) = v11 - v7 * ((__int16)(LOWORD(this->DesiredFacing) - LOWORD(this->StartFacing)) / (__int16)v4); /*0x4c935a*/
+      goto LABEL_9; /*0x4c9365*/
     }
-    int frame = g_CurrentFrame;
-    int result;
-    if ((unsigned short)v11 == *(unsigned short*)a1)
-    {
-        result = 0;
-        RotationTimer.StartTime = frame;
-        RotationTimer.pad_04 = 0;  // dead garbage pad
-    }
-    else
-    {
-        DesiredFacing = *a1;
-        StartFacing = *a1;
-        RotationTimer.StartTime = frame;
-        RotationTimer.pad_04 = 0;
-        result = 1;
-    }
-    RotationTimer.TimeLeft = 0;
-    return result;
+  }
+  v8 = this->DesiredFacing; /*0x4c9375*/
+LABEL_12:
+  if ( (_WORD)v8 == desiredFacing->Value ) /*0x4c937e*/
+  {
+    p_RotationTimer = &this->RotationTimer; /*0x4c93b3*/
+    result = 0; /*0x4c93b6*/
+    p_RotationTimer->StartTime = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x4c93b8*/
+    p_RotationTimer->pad_04 = v12; /*0x4c93ba*/
+  }
+  else
+  {
+    this->DesiredFacing = (unsigned int)*desiredFacing; /*0x4c9382*/
+    this->StartFacing = (unsigned int)*desiredFacing; /*0x4c9386*/
+    p_RotationTimer = &this->RotationTimer; /*0x4c9390*/
+    p_RotationTimer->StartTime = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x4c9393*/
+    p_RotationTimer->pad_04 = v12; /*0x4c9399*/
+    result = 1; /*0x4c939c*/
+  }
+  p_RotationTimer->TimeLeft = 0; /*0x4c939e*/
+  return result; /*0x4c93a1*/
 }
 }
 

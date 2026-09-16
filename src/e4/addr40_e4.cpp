@@ -1280,87 +1280,75 @@ LABEL_20:
 // 0x4064A0
 int AbstractTypeClass::AddSampleVocClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AddSampleVocClass(AbstractTypeClass *this)
 {
-  _BYTE *v1; // edx
-  _BYTE *v3; // esi
-  unsigned int v5; // eax
-
-  v3 = v1; /*0x4064a4*/
-  if ( *((_DWORD *)this + 77) == 32 ) /*0x4064ad*/
-    return 0; /*0x4064b3*/
-  if ( MEMORY[0x87E2A0] && MEMORY[0x87E294] ) /*0x4064c5*/
+    char *v1;
+    char *v3;
+    unsigned int v5;
+    v3 = v1;
+    if ( this->CellRangefinding == 32 )
+    return 0;
+    if ( g_AudioConfigState && DataGlobal_87E294 )
   {
-    while ( *v3 == 36 || *v3 == 35 ) /*0x4064cf*/
-      ++v3; /*0x4064d1*/
-    v5 = sub_4015C0(MEMORY[0x87E294], v3); /*0x4064d6*/
-    if ( v5 != -1 ) /*0x4064de*/
+    while ( *v3 == 36 || *v3 == 35 )
+    ++v3;
+    v5 = sub_4015C0(DataGlobal_87E294, v3);
+    if ( v5 != -1 )
     {
-      *((_DWORD *)this + (*((_DWORD *)this + 77))++ + 45) = v5; /*0x4064e6*/
-      return 1; /*0x406501*/
+    *((int *)(this) + (this->CellRangefinding)++ + 45) = v5;
+    return 1;
     }
-    Debug::Log(); /*0x406508*/
-    *(_DWORD *)&this->__pad_0[12] = 0; /*0x406510*/
+    Debug::Log();
+    *(int *)&this->__pad_0[12] = 0;
   }
-  return 1; /*0x4064af*/
+    return 1;
 }
 }
 
 // 0x406520
 void AbstractTypeClass::sub_406520()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_406520(AbstractTypeClass *this)
 {
-  int v1; // edx
-
-  *((_DWORD *)this + 78) = v1; /*0x406520*/
+    int v1;
+    this->TerrainFire = v1;
 }
 }
 
 // 0x406530
 void AbstractTypeClass::sub_406530()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_406530(AbstractTypeClass *this)
 {
-  int v1; // edx
-
-  *((_DWORD *)this + 79) = v1; /*0x406530*/
+    int v1;
+    this->DisguiseFakeBlinkTime = v1;
 }
 }
 
 // 0x406570
 int AbstractTypeClass::sub_406570()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_406570(AbstractTypeClass *this)
 {
-  int v1; // edx
-  int result; // eax
-
-  this->uniqueId = v1; /*0x406573*/
-  result = 1; /*0x406576*/
-  if ( (v1 & 0x20) != 0 ) /*0x40657b*/
+    int v1;
+    int result;
+    this->uniqueId = v1;
+    result = 1;
+    if ( (v1 & 0x20) != 0 )
   {
-    if ( !*((_DWORD *)this + 78) ) /*0x40657e*/
-      *((_DWORD *)this + 78) = 1; /*0x406589*/
+    if ( !this->TerrainFire )
+    this->TerrainFire = 1;
   }
-  else
+    else
   {
-    *((_DWORD *)this + 78) = 0; /*0x406591*/
+    this->TerrainFire = 0;
   }
-  if ( (v1 & 0x40) != 0 ) /*0x40659e*/
+    if ( (v1 & 0x40) != 0 )
   {
-    if ( !*((_DWORD *)this + 79) ) /*0x4065a0*/
-      *((_DWORD *)this + 79) = 1; /*0x4065aa*/
+    if ( !this->DisguiseFakeBlinkTime )
+    this->DisguiseFakeBlinkTime = 1;
   }
-  else
+    else
   {
-    *((_DWORD *)this + 79) = 0; /*0x4065b1*/
+    this->DisguiseFakeBlinkTime = 0;
   }
-  return result; /*0x4065b0*/
+    return result;
 }
 }
 
@@ -3402,9 +3390,15 @@ void sub_401B00(int * Block)
 namespace gamemd {
 int E4Recv_401F80::_EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ()
 {
-    int result = this->M12 + 1;
-    this->M12 = result;
-    return result;
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall _EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ(
+        Concurrency::details::ContextBase *this)
+{
+  int result; // eax
+
+  result = *((_DWORD *)this + 3) + 1; /*0x401f83*/
+  *((_DWORD *)this + 3) = result; /*0x401f84*/
+  return result; /*0x401f87*/
 }
 } // namespace gamemd
 

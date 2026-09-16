@@ -2073,48 +2073,38 @@ retn    4
 // 0x521d80
 int InfantryClass::ComputeDeploySpeedFactor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x521d80
-int __thiscall InfantryClass::ComputeDeploySpeedFactor(int this)
-{
-  int v2; // ecx
+    int v2;
 
-  v2 = TechnoClass::ComputeSpeedFactorEx((double *)this);
-  if ( *(_BYTE *)(this + 1755) )
-  {
-    if ( *(_BYTE *)(*(_DWORD *)(this + 1728) + 3773) )
-      return ((unsigned int)(((unsigned __int64)(1431655765LL * v2) >> 32) - v2) >> 31)
-           + ((int)(((unsigned __int64)(1431655765LL * v2) >> 32) - v2) >> 1)
-           + v2;
-    v2 += v2 / 2;
-  }
-  return v2;
-}
+    v2 = TechnoClass::ComputeSpeedFactorEx((double *)this);
+    if ( this->Crawling )
+    {
+        if ( *(_BYTE *)((char *)this->Type + 3773) )
+            return ((unsigned int)(((unsigned __int64)(1431655765LL * v2) >> 32) - v2) >> 31)
+                 + ((int)(((unsigned __int64)(1431655765LL * v2) >> 32) - v2) >> 1)
+                 + v2;
+        v2 += v2 / 2;
+    }
+    return v2;
 }
 
 // 0x5218e0
 int InfantryClass::GetDeployWeaponIndex()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5218e0
-int __thiscall InfantryClass::GetDeployWeaponIndex(#377 *this, int a2)
-{
-  int v3; // ecx
-  int v4; // eax
+    InfantryTypeClass *v3;
+    int v4;
 
-  v3 = *((_DWORD *)this + 432);
-  if ( !*(_BYTE *)(v3 + 1708) )
-    return TechnoClass::SelectWeapon(this);
-  v4 = *((_DWORD *)this + 433);
-  if ( v4 == 27 || v4 == 28 || v4 == 29 || v4 == 30 )
-    return *(_DWORD *)(v3 + 1704);
-  if ( !*((_BYTE *)this + 130)
-    || *(_DWORD *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 3408) == -1 )
-  {
-    return 0;
-  }
-  return *(_DWORD *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 3408);
-}
+    v3 = this->Type;
+    if ( !*(_BYTE *)((char *)v3 + 2084) )
+        return TechnoClass::SelectWeapon(this);
+    v4 = this->SequenceAnim;
+    if ( v4 == 27 || v4 == 28 || v4 == 29 || v4 == 30 )
+        return *(_DWORD *)((char *)v3 + 2080);
+    if ( !this->inOpenToppedTransport
+      || *(_DWORD *)((char *)this->Vt34Thunk() + 3408) == -1 )
+    {
+        return 0;
+    }
+    return *(_DWORD *)((char *)this->Vt34Thunk() + 3408);
 
 /* ASM:
 push    esi
@@ -4525,124 +4515,33 @@ retn
 // 0x51f540
 int InfantryClass::ProcessEnterOrRepair()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x51f540
-int __thiscall InfantryClass::ProcessEnterOrRepair(#375 **this)
-{
-  int v2; // ecx
-  _BYTE *v3; // eax
-  int v5; // eax
+    InfantryTypeClass *v3;
+    int v2;
+    int v5;
 
-  if ( !(unsigned __int8)House::IsCurrentPlayer(*(this + 135))
-    && (v2 = (int)*(this + 173)) != 0
-    && (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 44))(v2) == 6
-    && ((v3 = *(this + 432), v3[3774]) || (v3[3764] || v3[3765]) && BuildingClass::CanRepair(*(this + 173), (int)this)) )
-  {
-    (*((void (__thiscall **)(#375 **, _DWORD, int))*this + 288))(this, *(this + 173), 1);
-    (*((void (__thiscall **)(#375 **, int))*this + 124))(this, 8);
-    return 1;
-  }
-  else if ( !(unsigned __int8)House::IsCurrentPlayer(*(this + 135))
-         && ((v5 = (int)*(this + 433), v5 == 27) || v5 == 28 || v5 == 29 || v5 == 30)
-         && !*(this + 173) )
-  {
-    (*((void (__thiscall **)(#375 **, int, _DWORD, _DWORD))*this + 342))(this, 31, 0, 0);
-    return 1;
-  }
-  else
-  {
-    return InfantryClass::ProcessDeploy(this);
-  }
-}
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     ecx, [esi+21Ch] ; this
-call    House__IsCurrentPlayer
-test    al, al
-jnz     short loc_51F5C0
-mov     ecx, [esi+2B4h]
-test    ecx, ecx
-jz      short loc_51F5C0
-mov     eax, [ecx]
-call    dword ptr [eax+2Ch]
-cmp     eax, 6
-jnz     short loc_51F5C0
-mov     eax, [esi+6C0h]
-mov     cl, [eax+0EBEh]
-test    cl, cl
-jnz     short loc_51F59A
-mov     cl, [eax+0EB4h]
-test    cl, cl
-jnz     short loc_51F58A
-mov     cl, [eax+0EB5h]
-test    cl, cl
-jz      short loc_51F5C0
-
-loc_51F58A:                             ; CODE XREF: InfantryClass__ProcessEnterOrRepair+3E↑j
-mov     ecx, [esi+2B4h]
-push    esi
-call    BuildingClass__CanRepair
-test    al, al
-jz      short loc_51F5C0
-
-loc_51F59A:                             ; CODE XREF: InfantryClass__ProcessEnterOrRepair+34↑j
-mov     eax, [esi+2B4h]
-mov     edx, [esi]
-push    1
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+480h]
-mov     edx, [esi]
-push    8
-mov     ecx, esi
-call    dword ptr [edx+1F0h]
-mov     eax, 1
-pop     esi
-retn
-; ---------------------------------------------------------------------------
-
-loc_51F5C0:                             ; CODE XREF: InfantryClass__ProcessEnterOrRepair+10↑j
-; InfantryClass__ProcessEnterOrRepair+1A↑j ...
-mov     ecx, [esi+21Ch] ; this
-call    House__IsCurrentPlayer
-test    al, al
-jnz     short loc_51F60A
-mov     eax, [esi+6C4h]
-cmp     eax, 1Bh
-jz      short loc_51F5E9
-cmp     eax, 1Ch
-jz      short loc_51F5E9
-cmp     eax, 1Dh
-jz      short loc_51F5E9
-cmp     eax, 1Eh
-jnz     short loc_51F60A
-
-loc_51F5E9:                             ; CODE XREF: InfantryClass__ProcessEnterOrRepair+98↑j
-; InfantryClass__ProcessEnterOrRepair+9D↑j ...
-mov     eax, [esi+2B4h]
-test    eax, eax
-jnz     short loc_51F60A
-mov     eax, [esi]
-push    0
-push    0
-push    1Fh
-mov     ecx, esi
-call    dword ptr [eax+558h]
-mov     eax, 1
-pop     esi
-retn
-; ---------------------------------------------------------------------------
-
-loc_51F60A:                             ; CODE XREF: InfantryClass__ProcessEnterOrRepair+8D↑j
-; InfantryClass__ProcessEnterOrRepair+A7↑j ...
-mov     ecx, esi
-call    InfantryClass__ProcessDeploy
-pop     esi
-retn
-*/
-}
+    if ( !(unsigned __int8)House::IsCurrentPlayer((HouseClass *)this->focus)
+      && (v2 = (int)this->sprayOffsetIndex) != 0
+      && (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 44))(v2) == 6
+      && ((v3 = this->Type, *(_BYTE *)((char *)v3 + 2890))
+       || ((*(_BYTE *)((char *)v3 + 2880) || *(_BYTE *)((char *)v3 + 2881))
+// 0x457ce0
+          && BuildingClass::CanRepair((BuildingClass *)this->sprayOffsetIndex, (TechnoClass *)this)) ) )
+    {
+        this->AssignDestination_SyncLog(this->sprayOffsetIndex, 1);
+        this->Draw_Start(8);
+        return 1;
+    }
+    else if ( !(unsigned __int8)House::IsCurrentPlayer((HouseClass *)this->focus)
+           && ((v5 = this->SequenceAnim, v5 == 27) || v5 == 28 || v5 == 29 || v5 == 30)
+           && !this->sprayOffsetIndex )
+    {
+        this->ProcessDeployAction(31, 0, 0);
+        return 1;
+    }
+    else
+    {
+        return InfantryClass::ProcessDeploy(this);
+    }
 
 // 0x522bc0
 bool InfantryClass::CanEnterBuilding()
@@ -4743,63 +4642,16 @@ retn
 int InfantryClass::ParachuteTo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x521760
 char __thiscall InfantryClass::ParachuteTo(int this, int a2)
 {
-  if ( !(unsigned __int8)ObjectClass::ParachuteDrop((#374 *)this) )
-    return 0;
-  if ( (unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540)) )
-    (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 5, 0);
+  if ( !(unsigned __int8)ObjectClass::ParachuteDrop((#374 *)this) ) /*0x521768*/
+    return 0; /*0x5217b4*/
+  if ( (unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540)) ) /*0x521777*/
+    (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 5, 0); /*0x521788*/
   else
-    (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 15, 0);
-  (*(void (__thiscall **)(int, int, int, _DWORD))(*(_DWORD *)this + 1368))(this, 33, 1, 0);
-  return 1;
-}
-
-/* ASM:
-mov     eax, [esp+arg_0]
-push    esi
-mov     esi, ecx
-push    eax
-call    ObjectClass__ParachuteDrop
-test    al, al
-jz      short loc_5217B4
-mov     ecx, [esi+21Ch] ; this
-call    House__IsCurrentPlayer
-test    al, al
-jz      short loc_521790
-mov     edx, [esi]
-push    0
-push    5
-mov     ecx, esi
-call    dword ptr [edx+1E8h]
-jmp     short loc_52179E
-; ---------------------------------------------------------------------------
-
-loc_521790:                             ; CODE XREF: InfantryClass__ParachuteTo+1E↑j
-mov     eax, [esi]
-push    0
-push    0Fh
-mov     ecx, esi
-call    dword ptr [eax+1E8h]
-
-loc_52179E:                             ; CODE XREF: InfantryClass__ParachuteTo+2E↑j
-mov     edx, [esi]
-push    0
-push    1
-push    21h ; '!'
-mov     ecx, esi
-call    dword ptr [edx+558h]
-mov     al, 1
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_5217B4:                             ; CODE XREF: InfantryClass__ParachuteTo+F↑j
-xor     al, al
-pop     esi
-retn    4
-*/
+    (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 15, 0); /*0x521798*/
+  (*(void (__thiscall **)(int, int, int, _DWORD))(*(_DWORD *)this + 1368))(this, 33, 1, 0); /*0x5217a8*/
+  return 1; /*0x5217b0*/
 }
 
 // ============================================================
@@ -5103,56 +4955,29 @@ retn    4
 // 0x51aa10
 int InfantryClass::HandleTargetDestroyed()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x51aa10
-int __thiscall InfantryClass::HandleTargetDestroyed(int *this, int *a2, int *a3)
-{
-  int result; // eax
+    int result;
 
-  result = FootClass::HandleTargetDestroyed(this, a2, a3);
-  if ( (int *)*(this + 432) == a2 )
-    *(this + 432) = 0;
-  return result;
-}
-
-/* ASM:
-mov     eax, [esp+arg_4]
-push    esi
-push    edi
-mov     edi, [esp+8+arg_0]
-push    eax
-mov     esi, ecx
-push    edi
-call    FootClass__HandleTargetDestroyed
-cmp     [esi+6C0h], edi
-jnz     short loc_51AA35
-mov     dword ptr [esi+6C0h], 0
-
-loc_51AA35:                             ; CODE XREF: InfantryClass__HandleTargetDestroyed+19↑j
-pop     edi
-pop     esi
-retn    8
-*/
-}
+    result = FootClass::HandleTargetDestroyed(this, a1, aP2);
+    if ( this->Type == (InfantryTypeClass *)a1 )
+    {
+        this->Type = 0;
+    }
+    return result;
 
 // 0x51f250
 int InfantryClass::ProcessUpdate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall InfantryClass::_vt80(_BYTE *this, int a2, __int16 *a3, __int16 *a4, void **a5)
-{
-  int v6; // eax
+    int v6;
 
-  v6 = *((_DWORD *)this + 433);
-  if ( (v6 == 27 || v6 == 28 || v6 == 29 || v6 == 30)
-    && (*(int (__thiscall **)(_BYTE *, __int16 *, _DWORD, void **))(*(_DWORD *)this + 112))(this, a3, 0, a5) == 2 )
-  {
-    return 0;
-  }
-  if ( *(this + 664) )
-    return 0;
-  return ObjectClass::SpawnInfantry(this, a2, a3, a4, a5);
-}
+    v6 = this->SequenceAnim;
+    if ( (v6 == 27 || v6 == 28 || v6 == 29 || v6 == 30)
+      && this->HandleCursorOverCell(aP2, 0, aP4) == 2 )
+    {
+        return 0;
+    }
+    if ( this->storedTiberium )
+        return 0;
+    return ObjectClass::SpawnInfantry(this, aP1, aP2, aP3, aP4);
 
 /* ASM:
 push    ebx
@@ -7990,30 +7815,25 @@ int __thiscall InfantryClass::InitProductionLimits(int this)
 // 0x522640
 int InfantryClass::GetProductionLimit()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x522640
-int __thiscall InfantryClass::GetProductionLimit(int this, char a2)
-{
-  int result; // eax
-  int v4; // eax
+    int result;
+    int v4;
 
-  if ( (unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(this + 540), (#375 *)MEMORY[0x87F7E8][528729]) && !a2 )
-    return *(_DWORD *)(this + 1728);
-  result = *(_DWORD *)(this + 1304);
-  if ( !result )
-  {
-    if ( !MEMORY[0x87F7E8][528729] )
-      return *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3424);
-    v4 = *(_DWORD *)(MEMORY[0x87F7E8][528729] + 488);
-    if ( !v4 )
-      return *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3416);
-    if ( v4 == 1 )
-      return *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3420);
-    else
-      return *(_DWORD *)(MEMORY[0x87F7E8][7806] + 3424);
-  }
-  return result;
-}
+    if ( (unsigned __int8)HouseClass::IsAlliedWith((HouseClass *)this->focus, HouseClass_Player) && !a2 )
+        return (int)this->Type;
+    result = (int)this->disguiseAsType;
+    if ( !result )
+    {
+        if ( !HouseClass_Player )
+            return *(_DWORD *)((char *)g_RulesClass_Instance + 3416);
+        v4 = *(_DWORD *)((char *)HouseClass_Player + 488);
+        if ( !v4 )
+            return *(_DWORD *)((char *)g_RulesClass_Instance + 3416);
+        if ( v4 == 1 )
+            return *(_DWORD *)((char *)g_RulesClass_Instance + 3420);
+        else
+            return *(_DWORD *)((char *)g_RulesClass_Instance + 3424);
+    }
+    return result;
 
 /* ASM:
 mov     eax, ds:0A83D4Ch

@@ -683,7 +683,16 @@ def make_ida_leaf(this_type, M):
             kind = "WRITE" if _is_write(text, m.end()) else "READ"
             hits.append((m.start(), m.end(), f"{kind}(member,{off})"))
         for m in _IDA_VTABLE.finditer(text):
-            hits.append((m.start(), m.end(), f"CALL(vfptr+{int(m.group(1))})"))
+            # G15 fix: the bare `*this + N` dispatch shape only renders when
+            # this is a typed POINTER-TO-POINTER (`#375 **this`) — `*this` is
+            # then a typed pointer and the +N is element arithmetic (=*4 bytes;
+            # binary-verified: InfantryClass ProcessEnterOrRepair *this+288 ==
+            # call [vfptr+480h]). Scalar `this` renders `*(_DWORD *)this + N`
+            # instead (matched by _IDA_VTABLE_LOCAL, unscaled). Scale only when
+            # this is a pointer type. (0 completed functions carry the bare
+            # shape — regression surface verified empty 2026-09-16.)
+            vt_off = int(m.group(1)) * (4 if str(this_type).strip().endswith('*') else 1)
+            hits.append((m.start(), m.end(), f"CALL(vfptr+{vt_off})"))
         for m in _IDA_VTABLE_LOCAL.finditer(text):
             hits.append((m.start(), m.end(), f"CALL(vfptr+{int(m.group(2))})"))
         for m in _IDA_QUAL_CALL.finditer(text):

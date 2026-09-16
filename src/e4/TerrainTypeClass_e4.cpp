@@ -308,27 +308,24 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 // 0x71E140
 int TerrainTypeClass::PowerDrainUpdate(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TerrainTypeClass::_vt13(int this, int *a2)
 {
-  int v3; // ecx
-  int v4; // edx
-  int v5; // eax
-  int v6; // edx
-
-  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x71e149*/
-  Power::TimerProcess(this->ArrayIndex); /*0x71e157*/
-  LOBYTE(v3) = this->WaterBound; /*0x71e15c*/
-  Power::FlagProcess(a2, v3); /*0x71e165*/
-  LOBYTE(v4) = this->SpawnsTiberium; /*0x71e16a*/
-  v5 = Power::FlagProcess(a2, v4); /*0x71e173*/
-  LOBYTE(v5) = this->IsFlammable; /*0x71e178*/
-  Power::FlagProcess(a2, v5); /*0x71e181*/
-  Power::TimerProcess(this->Foundation); /*0x71e18f*/
-  LOBYTE(v6) = this->IsAnimated; /*0x71e194*/
-  Power::FlagProcess(a2, v6); /*0x71e19d*/
-  Power::TimerProcess(this->AnimationRate); /*0x71e1ab*/
-  return Checksummer::Add_float((unsigned int *)a2, this->AnimationProbability); /*0x71e1be*/
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    AbstractTypeClass::ProcessPower((char *)this, a2);
+    Power::TimerProcess(this->ArrayIndex);
+    LOBYTE(v3) = this->WaterBound;
+    Power::FlagProcess(a2, v3);
+    LOBYTE(v4) = this->SpawnsTiberium;
+    v5 = Power::FlagProcess(a2, v4);
+    LOBYTE(v5) = this->IsFlammable;
+    Power::FlagProcess(a2, v5);
+    Power::TimerProcess(this->Foundation);
+    LOBYTE(v6) = this->IsAnimated;
+    Power::FlagProcess(a2, v6);
+    Power::TimerProcess(this->AnimationRate);
+    return Checksummer::Add_float((unsigned int *)a2, this->AnimationProbability);
 }
 }
 

@@ -6,39 +6,36 @@
 // 0x439A10
 double JumpjetLocomotionClass::ComputeVectorLengthMetric()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall sub_439A10(int this)
 {
-  int v2; // eax
-  double v3; // st7
-  int v4; // eax
-  double v5; // st7
-  int GroundHeight; // eax
-  int v7; // edi
-  double v8; // st7
-  int v10; // [esp+10h] [ebp-1Ch]
-  int v11; // [esp+14h] [ebp-18h]
-  int v12; // [esp+18h] [ebp-14h]
-  int v13; // [esp+1Ch] [ebp-10h]
-  _DWORD v14[3]; // [esp+20h] [ebp-Ch] BYREF
-
-  v2 = Math::RoundToInt(*(float *)(this + 24)); /*0x439a1a*/
-  v3 = *(float *)(this + 28); /*0x439a1f*/
-  v14[0] = v2; /*0x439a22*/
-  v4 = Math::RoundToInt(v3); /*0x439a26*/
-  v5 = *(float *)(this + 32); /*0x439a2b*/
-  v14[1] = v4; /*0x439a2e*/
-  v14[2] = Math::RoundToInt(v5); /*0x439a37*/
-  GroundHeight = Cell::GetGroundHeight(v14); /*0x439a45*/
-  v7 = Math::RoundToInt(*(float *)(this + 32) - (double)GroundHeight); /*0x439a5e*/
-  v10 = v7; /*0x439a66*/
-  if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], v14) + 80) & 0x100) != 0 && v7 >= unk_89C76C ) /*0x439a81*/
-    v10 = v7 - unk_89C76C; /*0x439a85*/
-  v11 = Math::RoundToInt(*(float *)(this + 36)); /*0x439a94*/
-  v12 = Math::RoundToInt(*(float *)(this + 40)); /*0x439aa1*/
-  v13 = Math::RoundToInt((double)v10 * *(double *)(this + 8) + *(float *)(this + 44)); /*0x439ab8*/
-  v8 = Math::Sqrt((double)v13 * (double)v13 + (double)v11 * (double)v11 + (double)v12 * (double)v12); /*0x439adc*/
-  return (double)(int)Math::RoundToInt(v8); /*0x439af2*/
+    int v2;
+    double v3;
+    int v4;
+    double v5;
+    int GroundHeight;
+    int v7;
+    double v8;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    int v14[3];
+    v2 = Math::RoundToInt(this->TurnRate);
+    v3 = this->Speed;
+    v14[0] = v2;
+    v4 = Math::RoundToInt(v3);
+    v5 = this->Climb;
+    v14[1] = v4;
+    v14[2] = Math::RoundToInt(v5);
+    GroundHeight = Cell::GetGroundHeight(v14);
+    v7 = Math::RoundToInt(this->Climb - (double)GroundHeight);
+    v10 = v7;
+    if ( (*((int *)Coord::To_Cell(&DataGlobal_87F7E8, v14) + 80) & 0x100) != 0 && v7 >= DataGlobal_89C76C )
+    v10 = v7 - DataGlobal_89C76C;
+    v11 = Math::RoundToInt(this->Crash);
+    v12 = Math::RoundToInt(this->Height);
+    v13 = Math::RoundToInt((double)v10 * *(double *)(this + 8) + this->Accel);
+    v8 = Math::Sqrt((double)v13 * (double)v13 + (double)v11 * (double)v11 + (double)v12 * (double)v12);
+    return (double)(int)Math::RoundToInt(v8);
 }
 }
 
@@ -4102,8 +4099,9 @@ return FacingClass::Update((char *)(a1[2] + 904), &a2);
 // 0x516C70
 bool JumpjetLocomotionClass::DispatchVirtualCall_2(int a1)
 {
-{
-
+// [IDA decompile] original pseudocode - translation pending (final goal)
+  return StreamClass::GetDirty(a1) /*0x516c90*/
+      || (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 456))(*(_DWORD *)(a1 + 8)) > 0;
 // 0x516CA0
 char JumpjetLocomotionClass::IsBridgeBlocking(int a1)
 {

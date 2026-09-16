@@ -527,88 +527,40 @@ retn    8
 // IDA 0x55A2A0: ClearBuffer
 // 0x55a2a0
 void LoadOptions::ClearBuffer() {
-if ( this->entries && this->owns_memory )
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void __thiscall LoadOptions::sub_55A2A0(int this)
 {
-    operator delete(this->entries);
-    this->entries = nullptr;
-}
-this->owns_memory = 0;
-this->count = 0;
-
-/* ASM:
-push    ebx             ; TODO: classify (grp=blit, sz=0x27)
-push    esi
-mov     esi, ecx
-xor     ebx, ebx
-mov     eax, [esi+4]
-cmp     eax, ebx
-jz      short loc_55A2BE
-cmp     [esi+0Dh], bl
-jz      short loc_55A2BE
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [esi+4], ebx
-
-loc_55A2BE:                             ; CODE XREF: LoadOptions__ClearBuffer+B↑j
-; LoadOptions__ClearBuffer+10↑j
-mov     [esi+0Dh], bl
-mov     [esi+8], ebx
-pop     esi
-pop     ebx
-retn
-*/
+  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x55a2ad*/
+  {
+    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x55a2b3*/
+    *(_DWORD *)(this + 4) = 0; /*0x55a2bb*/
+  }
+  *(_BYTE *)(this + 13) = 0; /*0x55a2be*/
+  *(_DWORD *)(this + 8) = 0; /*0x55a2c1*/
 }
 
 // IDA 0x55A2D0: FindItem — linear search by first dword
 // 0x55a2d0
 int LoadOptions::FindItem(FileEntryClass* const* key) {
-if ( !is_active )
-    return 0;
-int result = 0;
-if ( (int)count <= 0 )
-    return -1;
-for ( FileEntryClass* const* i = entries; *i != *key; ++i )
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall LoadOptions::sub_55A2D0(int this, _DWORD *a2)
 {
-    if ( ++result >= (int)count )
-        return -1;
-}
-return result;
+  int result; // eax
+  int v3; // edx
+  _DWORD *i; // ecx
 
-/* ASM:
-mov     al, [ecx+0Ch]   ; TODO: classify (grp=blit, sz=0x33)
-push    esi
-test    al, al
-jnz     short loc_55A2DE
-xor     eax, eax
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_55A2DE:                             ; CODE XREF: LoadOptions__FindItem+6↑j
-mov     edx, [ecx+8]
-xor     eax, eax
-test    edx, edx
-jle     short loc_55A2FC
-mov     esi, [esp+4+arg_0]
-mov     ecx, [ecx+4]
-mov     esi, [esi]
-
-loc_55A2F0:                             ; CODE XREF: LoadOptions__FindItem+2A↓j
-cmp     [ecx], esi
-jz      short loc_55A2FF
-inc     eax
-add     ecx, 4
-cmp     eax, edx
-jl      short loc_55A2F0
-
-loc_55A2FC:                             ; CODE XREF: LoadOptions__FindItem+15↑j
-or      eax, 0FFFFFFFFh
-
-loc_55A2FF:                             ; CODE XREF: LoadOptions__FindItem+22↑j
-pop     esi
-retn    4
-*/
+  if ( !*(_BYTE *)(this + 12) ) /*0x55a2d0*/
+    return 0; /*0x55a2d8*/
+  v3 = *(_DWORD *)(this + 8); /*0x55a2de*/
+  result = 0; /*0x55a2e1*/
+  if ( v3 <= 0 ) /*0x55a2e5*/
+    return -1; /*0x55a2fc*/
+  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x55a2eb*/
+  {
+    if ( ++result >= v3 ) /*0x55a2fa*/
+      return -1; /*0x55a2fa*/
+  }
+  return result; /*0x55a2da*/
 }
 
 // IDA 0x55A310: PointerToIndex

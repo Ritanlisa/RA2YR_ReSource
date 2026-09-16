@@ -12853,6 +12853,7 @@ bool UnitClass::CanCrushTarget(TechnoClass* aP1)
     char v10[12];
     char v11[12];
     result = (*(char *)(this->Type + 3368) || TechnoClass::HasVoiceResponse((TechnoClass *)this, 17))
+// 0x5f6cd0
     && aP1 && ObjectClass::IsCrushable(aP1, (AbstractClass *)this)
     && (v3 = (int *)(*(int (__thiscall **)(TechnoClass *, char *))(*(int *)aP1->__pad_0 + 72))(aP1, v10), v4 = (int *)this->GetCoords_0(v11), v8 = v4[1] - v3[1], v9 = v4[2] - v3[2], v5 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64( (double)(*v4 - *v3) * (double)(*v4 - *v3) + (double)v9 * (double)v9 + (double)v8 * (double)v8)), (int)Math::RoundToInt(v5) <= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 5928))
     && (!(unsigned char)House::IsCurrentPlayer(*(HouseClass **)(this + 540)) || *(char *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 6123) || *(char *)(this->Type + 3373))

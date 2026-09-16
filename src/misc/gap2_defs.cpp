@@ -22931,31 +22931,21 @@ LABEL_148:
 // 0x50d9c0
       && TechnoClass::processExperienceGain((_DWORD *)*(this + 135)) )
     {
-      v52 = *(_DWORD *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 160) - *(this + 27);
-      if ( HouseClass::GetInfSelfHealStep((_DWORD *)*(this + 135)) >= v52 )
-        InfSelfHealStep = *(_DWORD *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 160) - *(this + 27);
-      else
-        InfSelfHealStep = HouseClass::GetInfSelfHealStep((_DWORD *)*(this + 135));
-      *(this + 27) += InfSelfHealStep;
-    }
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall sub_50D9C0(_DWORD *this)
+{
+  return *(this + 89) > 0; /*0x50d9cd*/
+}
   }
   else if ( !(dword_A8ED54[12] % *(_DWORD *)(MEMORY[0x87F7E8][7806] + 56))
 // 0x50d9d0
          && TechnoClass::updateVeterancy((_DWORD *)*(this + 135)) )
   {
-    v49 = *(_DWORD *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 160) - *(this + 27);
-    v50 = HouseClass::GetUnitSelfHealStep((_DWORD *)*(this + 135)) >= v49
-        ? *(_DWORD *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 160) - *(this + 27)
-        : HouseClass::GetUnitSelfHealStep((_DWORD *)*(this + 135));
-    *(this + 27) += v50;
-    if ( BuildingClass::GetHealthRatio(this) > *(double *)(MEMORY[0x87F7E8][7806] + 5888)
-      || (*(int (__thiscall **)(int *))(*this + 456))(this) < -10 )
-    {
-      v51 = *(this + 196);
-      if ( v51 )
-        (*(void (__thiscall **)(int))(*(_DWORD *)v51 + 248))(v51);
-    }
-  }
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall sub_50D9D0(_DWORD *this)
+{
+  return *(this + 90) > 0; /*0x50d9dd*/
+}
   (*(void (__thiscall **)(int *, _DWORD))(*this + 1040))(this, 0);
   v54 = *(this + 180);
   if ( v54 )

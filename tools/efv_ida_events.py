@@ -257,7 +257,16 @@ def make_ida_leaf(this_type, M, class_name=None):
         # slot byte offsets only when scaled x4.
         for m in _IDA_VTABLE.finditer(text):
             n = int(m.group(1))
-            if n % 4 != 0 and m.start() > 0 and text[m.start()-1] == ')':
+            # G15: the cast-paren shape `(*(CAST)*this + N)` -- `*this` is
+            # reached through a closed cast, i.e. this is a typed
+            # POINTER-TO-POINTER and `*this` is a typed pointer: +N is ELEMENT
+            # arithmetic, ALWAYS x4 bytes. The old `n % 4 != 0` guard missed
+            # element indices that are themselves multiples of 4 (disasm proof:
+            # ProcessEnterOrRepair `*this + 288` == `call [vfptr+480h]`).
+            # Bare operand form `((*this + N))` keeps the literal byte offset.
+            # (0 completed functions carry the 4-multiple cast-paren shape --
+            # regression surface verified empty 2026-09-16.)
+            if m.start() > 0 and text[m.start()-1] == ')':
                 n *= 4
             hits.append((m.start(), m.end(), call_virtual(n)))
         # --- vtable dispatch via local var `(vN + N))(this)` -> CALL(vfptr+N) ---

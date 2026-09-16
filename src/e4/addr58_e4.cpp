@@ -1770,9 +1770,10 @@ void sub_58B640()
 namespace gamemd {
 void sub_58B670()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void sub_58B670()
 {
-    *(double *)&Buffer[40] = Math::ArcTan((double)(2 * DataGlobal_ABED00) / DataGlobal_ABE368);
-}
+  *(double *)&Buffer[40] = Math::ArcTan((double)(2 * dword_ABED00) / dbl_ABE368); /*0x58b692*/
 }
 } // namespace gamemd
 
@@ -1804,12 +1805,13 @@ int sub_58B6D0()
 namespace gamemd {
 int sub_58B6E0()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int sub_58B6E0()
 {
-    *(int *)&Buffer[24] = 0;
-    *(int *)&Buffer[28] = 0;
-    *(int *)&Buffer[32] = 0;
-    return 0;
-}
+  *(_DWORD *)&Buffer[24] = 0; /*0x58b6e2*/
+  *(_DWORD *)&Buffer[28] = 0; /*0x58b6e7*/
+  *(_DWORD *)&Buffer[32] = 0; /*0x58b6ec*/
+  return 0; /*0x58b6f1*/
 }
 } // namespace gamemd
 

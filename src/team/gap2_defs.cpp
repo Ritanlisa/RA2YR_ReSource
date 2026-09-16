@@ -3798,9 +3798,7 @@ namespace gamemd { int TriggerTypeClass::PowerDrainUpdate(int * a2) {
 } }
 // 0x727CC0
 namespace gamemd { int TriggerTypeClass::GetAuxField() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TriggerTypeClass::_vt16(_DWORD *this)
 {
-  return *(this + 38); /*0x727cc6*/
+    return this->ArrayIndex;
 }
 } }

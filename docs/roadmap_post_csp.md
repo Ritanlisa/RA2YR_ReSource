@@ -2465,3 +2465,41 @@ marker&completed 对账 **0 幽灵** / readiness READY
    audit_consistency → marker&completed 对账 → 提交重锚。
 5. **中断波恢复协议**：replaced-未验证记录从 ida_cache 重建 pending 块
    （G11 会话 36 块重建流程已脚本化验证）。
+
+## 执行日志 — 2026-09-16 G15 会话：漂移族 ctor 裁决六类重建 + A1 四 bug + 舰队/手动波 + 假完成复位（completed 11,894 → 11,899 / 净 +5）
+
+> 提交链：bf9baa92（证据+OO refresh 4551+重锚）→ 本波收尾提交。全池 exec-flow
+> 验证首次作为门控回归基线运行，暴露并复位 10 个 G3-G6 代假完成。
+
+### 漂移族裁决（用户主线 ①：证据补全）
+
+- **A1 工具四 bug 修复**（`.omo/g14_a1_yrpp.py`）：
+  1. parse_header 把尾注释含 `(` 的成员行当方法调用丢弃（`int Range; // int(256*ini value)` → -8 链漂移；57 行/15+ 头）
+  2. til `ColorStruct` 是 88B 误名结构（真身 3B R,G,B packed；23 头受影响；88B 假体在 til 无成员引用）
+  3. PROP_RE 类型组不允许 `*`（`DECLARE_PROPERTY(TypeList<AnimTypeClass*>, Anim)` 整行丢 → -28 漂移）
+  4. align() 对 3B 组合体按 4 对齐（MSVC 自然对齐=最大成员；ColorStruct 全 BYTE → 1）
+- **二进制 sizeof 神谕**：live vtable slot-12 `mov eax,imm;ret`（GetObjectSize 范式）扫全部 23 漂移类 → `.omo/g15_ctor_writes.json`（ctor 写入分布 live 提取）+ `.omo/g15_drift_adjudicate.py`（链 vs 神谕 vs ctor 锚三证裁决）
+- **六类重建**（til 重声明+class_layouts+member_lookup+mbn 四源，全部 ctor 锚定）：
+  WeaponType 352（20 锚，TypeList=28B 定案：16+count+cap10+delta；Burst=1 默认/LaserDuration=10/FireInTransport=1 ctor 逐点验证）/
+  TerrainType 700（7/7 全中）/ RadSite 116（12 锚）/ TriggerType 180（5/5，Difficulty[3] 数组性修正）/
+  SmudgeType 676（真 ctor 0x6b5260 5/5）/ Jumpjet 152（av=13，bin 204 证伪）
+- **DEFER 清单**（docs/g15_drift_adjudication.md）：BulletType 760（YRpp 头尾 744-759 缺成员 + Elasticity 声明 double 实为 float——ctor dword@716=0x3FE00000）/ ScriptType 564（链溢 4）/ Campaign 928（零锚+解析疑）/ Wave 576 / Building 1824（G13 争议区）/ Tiberium / Terrain / 各 Loco 零锚
+- **ml 双口径发现**：TypeClass 族（Weapon/Bullet/Terrain…）ml 条目曾是 own 相对坐标污染（与 TechnoClass/CellClass 绝对坐标并存）——六类统一绝对坐标
+- A1 dry 复跑：WeaponType agree=126（原 125 冲突清零）；+10 fills applied（BulletClass/RadarClass 等新解锁）
+
+### OO refresh（用户主线 ②）+ 提交重锚（主线 ③）
+
+- `gen_e4_materialize --phase refresh`：**rewritten 4,551 / unmapped 5,523**，11,236 已译记录字节保留；括号净 delta=0
+- 提交 bf9baa92 + tag auto-fill-baseline 重锚（用户预告场景：refresh 改 pending 伪码块触发 modified-function 门控 → 重锚清账）
+
+### 舰队波 + 手动 H5 波（主线 ④）
+
+- g5_fleet 94 桶验证波：**+8**（addr40×4/Jumpjet/Smudge/TerrainType/team-gap2）+ WeaponType 试点 +2 = **+10**；FAIL-recycle 天花板维持（G14 实证一致）
+- **手动 H5 语义翻译 +5**（infantry.cpp 小函数，全 CFG 双射）：HandleTargetDestroyed（Type@1728 证据名）/ ComputeDeploySpeedFactor（Crawling@1755+魔数除3表达式保留）/ ProcessUpdate（SequenceAnim+vfptr112）/ GetDeployWeaponIndex（**broken-arrow `?[0x820/824]` 反汇编解码=TurretWeapon[3/4]，raw 形态双侧零事件对称——通用解法**）/ GetProductionLimit（g_RulesClass_Instance@0x8871E0+难度 BuildLimit 数组 0xD58/C/D60）
+- **mbn 双体系漂移实证**：focus 在 _member_by_name=544 vs ml/反汇编=540（Infantry/Foot/Techno 三类修正）——G10「mbn 与 member_lookup 双体系漂移」的又一实例
+- **T8 叶缩放 bug 修复**：`*this + N` 裸形态（cast-paren 双指针 `#375 **this`）应 ×4（类型化指针算术；ProcessEnterOrRepair `*this+288`==`call [vfptr+480h]` 反汇编实证）；`*(_DWORD *)this + N` 标量形态不缩放（维持）。回归面实证=0（全池含该形态已完成函数 0 个）
+- 手动波系统发现：**InfantryClass 链 vtable 槽词汇缺口是 H5 主阻塞**（槽 122/488B=现名 ParticleClass::MissionDispatch 误归属嫌疑、槽 49/196B 无名、槽 116 hpp 无声明）——issue #108/#109 记账，需 vtable 槽位审计轮（G4/G5 范式：binary vtable 直读命名 + vo + hpp 虚区声明）
+
+### 假完成复位 ×10（诚实口径收紧）
+
+- 全池 exec-flow 验证暴露（G14 align 修正移除 43 误位项后的滞回暴露 + G6 双括号伪码体族）：_flsall/start（G6 双括号伪码体）/ FacingClass::Update+Set_SyncLog / ResultNode::Init / TechnoClass::processExperienceGain+updateVeterancy / JumpjetLocomotionClass::DispatchVirtualCall_2（空体损坏块，手工重建 pending）/ LoadOptions::ClearBuffer —— 全部 completed=false + 伪码块回滚（.omo/g15_rollback.py 新工具：ida_cache 真值回置 + G12 bound 规则）

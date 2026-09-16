@@ -2016,15 +2016,17 @@ int sub_730950()
 namespace gamemd {
 int AddMessageListPlayerMessage(CellStruct * a1, int a2)
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __fastcall AddMessageListPlayerMessage(CellStruct *a1, int a2)
 {
-    int v2;
-    if ( a2 == -1 )
-    a2 = 240;
-    v2 = 3;
-    if ( HouseClass_Player )
-    v2 = HouseClass_Player[1].field_24;
-    return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, a1, v2, (IUnknown *)0x4046, a2, 1);
-}
+  int v2; // eax
+
+  if ( a2 == -1 ) /*0x730a93*/
+    a2 = 240; /*0x730a95*/
+  v2 = 3; /*0x730aa3*/
+  if ( HouseClass_Player ) /*0x730aa8*/
+    v2 = HouseClass_Player[1].field_24; /*0x730aaa*/
+  return MessageListClass::AddMessage(MEMORY[0xA8BC60], 0, 0, a1, v2, (IUnknown *)0x4046, a2, 1); /*0x730ac9*/
 }
 } // namespace gamemd
 
