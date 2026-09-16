@@ -1476,65 +1476,62 @@ void __thiscall BuildingTypeClass_IsPowered(int this)
 // 0x478850
 unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_478850(_DWORD *this, int a2, int a3)
 {
-  char *v4; // ebx
-  _BYTE *v5; // eax
-  int v6; // ecx
-  char *v8; // eax
-  _BYTE *v9; // ecx
-  int v10; // edx
-
-  v4 = 0; /*0x478859*/
-  *(this + 1) = 0; /*0x47885d*/
-  *(this + 2) = a2; /*0x478860*/
-  *((_BYTE *)this + 12) = 1; /*0x478863*/
-  *((_BYTE *)this + 13) = 0; /*0x478867*/
-  *this = &vt_VectorClass_RGBClass; /*0x47886a*/
-  if ( !a2 ) /*0x478870*/
-    return this; /*0x4788d0*/
-  if ( !a3 ) /*0x478878*/
+    char *v4;
+    char *v5;
+    int v6;
+    char *v8;
+    char *v9;
+    int v10;
+    v4 = 0;
+    this->vtable1 = 0;
+    this->vtable2 = a2;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_RGBClass;
+    if ( !a2 )
+    return this;
+    if ( !a3 )
   {
-    v8 = (char *)__2_YAPAXI_Z(3 * a2); /*0x4788a2*/
-    if ( v8 ) /*0x4788ac*/
+    v8 = (char *)__2_YAPAXI_Z(3 * a2);
+    if ( v8 )
     {
-      if ( a2 - 1 >= 0 ) /*0x4788b3*/
+    if ( a2 - 1 >= 0 )
       {
-        v9 = v8 + 2; /*0x4788b5*/
-        v10 = a2; /*0x4788b8*/
-        do /*0x4788c5*/
+    v9 = v8 + 2;
+    v10 = a2;
+    do
         {
-          *(v9 - 2) = 0; /*0x4788b9*/
-          *(v9 - 1) = 0; /*0x4788bc*/
-          *v9 = 0; /*0x4788bf*/
-          v9 += 3; /*0x4788c1*/
-          --v10; /*0x4788c4*/
+    *(v9 - 2) = 0;
+    *(v9 - 1) = 0;
+    *v9 = 0;
+    v9 += 3;
+    --v10;
         }
-        while ( v10 ); /*0x4788c5*/
+    while ( v10 );
       }
-      v4 = v8; /*0x4788c7*/
+    v4 = v8;
     }
-    *(this + 1) = v4; /*0x4788c9*/
-    *((_BYTE *)this + 13) = 1; /*0x4788cc*/
-    return this; /*0x4788cc*/
+    this->vtable1 = v4;
+    this->IsAllocated = 1;
+    return this;
   }
-  if ( a2 - 1 >= 0 ) /*0x47887f*/
+    if ( a2 - 1 >= 0 )
   {
-    v5 = (_BYTE *)(a3 + 2); /*0x478881*/
-    v6 = a2; /*0x478884*/
-    do /*0x478891*/
+    v5 = (char *)(a3 + 2);
+    v6 = a2;
+    do
     {
-      *(v5 - 2) = 0; /*0x478885*/
-      *(v5 - 1) = 0; /*0x478888*/
-      *v5 = 0; /*0x47888b*/
-      v5 += 3; /*0x47888d*/
-      --v6; /*0x478890*/
+    *(v5 - 2) = 0;
+    *(v5 - 1) = 0;
+    *v5 = 0;
+    v5 += 3;
+    --v6;
     }
-    while ( v6 ); /*0x478891*/
+    while ( v6 );
   }
-  *(this + 1) = a3; /*0x478893*/
-  return this; /*0x478898*/
+    this->vtable1 = a3;
+    return this;
 }
 }
 

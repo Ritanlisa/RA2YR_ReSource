@@ -980,31 +980,28 @@ namespace ra2 {
 namespace game {
 char CaptureManagerClass::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CaptureManagerClass::_vt01(int *this, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  _DWORD *v4; // eax
-  int v5; // ecx
-
-  v2 = *(this + 2); /*0x472b42*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x472b4d*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    v2 = this->vtable2;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x472b4f*/
-    if ( v2 <= 0 ) /*0x472b53*/
-      return 1; /*0x472b73*/
-    v4 = (_DWORD *)*(this + 1); /*0x472b55*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x472b5b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x472b64*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = (int *)this->vtable1;
+    v5 = *(int *)(a2 + 4) - (int)v4;
+    while ( *v4 == *(int *)((char *)(v4) + v5) )
     {
-      ++v3; /*0x472b66*/
-      ++v4; /*0x472b67*/
-      if ( v3 >= v2 ) /*0x472b6c*/
-        return 1; /*0x472b6c*/
+    ++v3;
+    ++v4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x472b6e*/
+    return 0;
 }
 }
 } // namespace game
@@ -1015,50 +1012,47 @@ namespace ra2 {
 namespace game {
 char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CaptureManagerClass::sub_472B80(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x472b8c*/
+    int *v4;
+    int v6;
+    int i;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x472b96*/
-    if ( a3 ) /*0x472b9c*/
-      v4 = a3; /*0x472bb2*/
+    this->vtable3 = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x472bae*/
-    *((_BYTE *)this + 12) = 1; /*0x472bb6*/
-    if ( v4 ) /*0x472bba*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->vtable3 = 1;
+    if ( v4 )
     {
-      if ( this->vtable1 ) /*0x472bc5*/
+    if ( this->vtable1 )
       {
-        v6 = this->vtable2; /*0x472bcc*/
-        if ( a2 < v6 ) /*0x472bd1*/
-          v6 = a2; /*0x472bd3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->vtable1 + 4 * i - 4) ) /*0x472bd9*/
-          ++i; /*0x472bde*/
-        if ( *((_BYTE *)this + 13) ) /*0x472beb*/
+    v6 = this->vtable2;
+    if ( a2 < v6 )
+    v6 = a2;
+    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->vtable1 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x472bf6*/
-          this->vtable1 = 0; /*0x472bfe*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->vtable1 = 0;
         }
       }
-      this->vtable1 = v4; /*0x472c07*/
-      this->vtable2 = a2; /*0x472c0f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x472c12*/
-      return 1; /*0x472c18*/
+    this->vtable1 = v4;
+    this->vtable2 = a2;
+    this->IsAllocated = a3 == 0;
+    return 1;
     }
     else
     {
-      return 0; /*0x472bbf*/
+    return 0;
     }
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x472c22*/
-    return 1; /*0x472c28*/
+    this->GetClassIdentifier();
+    return 1;
   }
 }
 }
@@ -1070,16 +1064,14 @@ namespace ra2 {
 namespace game {
 void CaptureManagerClass::Destroy()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall CaptureManagerClass::sub_472C30(int this)
 {
-  if ( this->vtable1 && *(_BYTE *)(this + 13) ) /*0x472c3d*/
+    if ( this->vtable1 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x472c43*/
-    this->vtable1 = 0; /*0x472c4b*/
+    __3_YAXPAX_Z(*(void **)(this + 4));
+    this->vtable1 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x472c4e*/
-  this->vtable2 = 0; /*0x472c51*/
+    this->IsAllocated = 0;
+    this->vtable2 = 0;
 }
 }
 } // namespace game
@@ -1090,49 +1082,46 @@ namespace ra2 {
 namespace game {
 char CaptureManagerClass::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CaptureManagerClass::_vt02(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x472ccc*/
+    int *v4;
+    int v5;
+    int i;
+    int v7;
+    if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0; /*0x472cd2*/
-    if ( a3 ) /*0x472cd8*/
-      v4 = a3; /*0x472cee*/
+    this->vtable3 = 0;
+    if ( a3 )
+    v4 = a3;
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x472cea*/
-    *((_BYTE *)this + 12) = 1; /*0x472cf2*/
-    if ( !v4 ) /*0x472cf6*/
-      return 0; /*0x472d6a*/
-    if ( this->vtable1 ) /*0x472cf8*/
+    v4 = __2_YAPAXI_Z(4 * a2);
+    this->vtable3 = 1;
+    if ( !v4 )
+    return 0;
+    if ( this->vtable1 )
     {
-      v5 = this->vtable2; /*0x472cff*/
-      if ( a2 < v5 ) /*0x472d04*/
-        v5 = a2; /*0x472d06*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->vtable1 + 4 * i - 4) ) /*0x472d0c*/
-        ++i; /*0x472d11*/
-      if ( *((_BYTE *)this + 13) ) /*0x472d1e*/
+    v5 = this->vtable2;
+    if ( a2 < v5 )
+    v5 = a2;
+    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->vtable1 + 4 * i - 4) )
+    ++i;
+    if ( this->IsAllocated )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x472d29*/
-        this->vtable1 = 0; /*0x472d31*/
+    __3_YAXPAX_Z(*((void **)(this) + 1));
+    this->vtable1 = 0;
       }
     }
-    this->vtable1 = v4; /*0x472d3a*/
-    this->vtable2 = a2; /*0x472d42*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x472d45*/
+    this->vtable1 = v4;
+    this->vtable2 = a2;
+    this->IsAllocated = a3 == 0;
   }
-  else
+    else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x472d4e*/
+    this->GetClassIdentifier();
   }
-  v7 = this->vtable2; /*0x472d51*/
-  if ( v7 < this->uniqueId ) /*0x472d59*/
-    this->uniqueId = v7; /*0x472d5b*/
-  return 1; /*0x472d5e*/
+    v7 = this->vtable2;
+    if ( v7 < this->uniqueId )
+    this->uniqueId = v7;
+    return 1;
 }
 }
 } // namespace game
@@ -1141,8 +1130,6 @@ char __thiscall CaptureManagerClass::_vt02(void *this, int a2, _DWORD *a3)
 // 0x472D70
 namespace ra2 {
 namespace game {
-int CaptureManagerClass::Capture(unsigned int * a2)
-{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CaptureManagerClass::_vt04(int *this, _DWORD *a2)
 {
@@ -1161,7 +1148,6 @@ int __thiscall CaptureManagerClass::_vt04(int *this, _DWORD *a2)
   }
   return result; /*0x472d92*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -1170,25 +1156,23 @@ namespace ra2 {
 namespace game {
 unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_473140(_DWORD *this, int a2, int a3)
 {
-  *(this + 1) = 0; /*0x47314b*/
-  *(this + 2) = a2; /*0x47314e*/
-  *((_BYTE *)this + 12) = 1; /*0x473151*/
-  *((_BYTE *)this + 13) = 0; /*0x473155*/
-  *this = &vt_VectorClass_ControlNode; /*0x473158*/
-  if ( a2 ) /*0x47315e*/
+    this->vtable1 = 0;
+    this->vtable2 = a2;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_ControlNode;
+    if ( a2 )
   {
-    if ( a3 ) /*0x473166*/
+    if ( a3 )
     {
-      *(this + 1) = a3; /*0x473168*/
-      return this; /*0x47316e*/
+    this->vtable1 = a3;
+    return this;
     }
-    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x47317d*/
-    *((_BYTE *)this + 13) = 1; /*0x473180*/
+    this->vtable1 = __2_YAPAXI_Z(4 * a2);
+    this->IsAllocated = 1;
   }
-  return this; /*0x47316d*/
+    return this;
 }
 }
 } // namespace game

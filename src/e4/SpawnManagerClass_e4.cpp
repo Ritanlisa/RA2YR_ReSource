@@ -502,30 +502,28 @@ namespace ra2 {
 namespace game {
 unsigned int * SpawnManagerClass::Constructor_6B83A0(DynamicVector * aP1, DynamicVector * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall SpawnManagerClass::Constructor_6B83A0(_DWORD *this, DynamicVector *aP1, DynamicVector *aP2)
 {
-  *(this + 1) = 0; /*0x6b83a9*/
-  *(this + 2) = aP1; /*0x6b83b0*/
-  *((_BYTE *)this + 12) = 1; /*0x6b83b3*/
-  *((_BYTE *)this + 13) = 0; /*0x6b83b7*/
-  *this = &vt_VectorClass_SpawnManagerClass_SpawnControl; /*0x6b83bb*/
-  if ( aP1 ) /*0x6b83c1*/
+    this->vtable1 = 0;
+    this->vtable2 = aP1;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_SpawnManagerClass_SpawnControl;
+    if ( aP1 )
   {
-    if ( aP2 ) /*0x6b83c9*/
+    if ( aP2 )
     {
-      *(this + 1) = aP2; /*0x6b83cb*/
+    this->vtable1 = aP2;
     }
     else
     {
-      *(this + 1) = __2_YAPAXI_Z(4 * (_DWORD)aP1); /*0x6b83dc*/
-      *((_BYTE *)this + 13) = 1; /*0x6b83df*/
+    this->vtable1 = __2_YAPAXI_Z(4 * (int)aP1);
+    this->IsAllocated = 1;
     }
   }
-  *this = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b83e3*/
-  *(this + 5) = 10; /*0x6b83e9*/
-  *(this + 4) = 0; /*0x6b83f0*/
-  return this; /*0x6b83f9*/
+    *(void**)this = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl;
+    this->abstractFlags = 10;
+    this->uniqueId = 0;
+    return this;
 }
 }
 } // namespace game

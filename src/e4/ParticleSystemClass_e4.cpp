@@ -9,20 +9,17 @@
 namespace gamemd {
 void ParticleSystemClass::GetClassIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall ParticleSystemClass::_vt03(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x4e8476*/
-  this->uniqueId = 0; /*0x4e8479*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x4e8480*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->uniqueId = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x4e8486*/
-    this->vtable1 = 0; /*0x4e848e*/
+    __3_YAXPAX_Z(v2);
+    this->vtable1 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x4e8491*/
-  this->vtable2 = 0; /*0x4e8494*/
+    this->IsAllocated = 0;
+    this->vtable2 = 0;
 }
 }
 } // namespace gamemd
@@ -31,10 +28,8 @@ void __thiscall ParticleSystemClass::_vt03(int this)
 namespace gamemd {
 int ParticleSystemClass::SaveToINI(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ParticleSystemClass::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x4e84ca*/
+    return *(int *)(this->vtable1 + 4 * a2);
 }
 }
 } // namespace gamemd
@@ -43,20 +38,17 @@ int __thiscall ParticleSystemClass::_vt06(_DWORD *this, int a2)
 namespace gamemd {
 void ParticleSystemClass::initParticleArray()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall ParticleSystemClass::sub_4E8780(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x4e8786*/
-  this->uniqueId = 0; /*0x4e8789*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x4e8790*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->uniqueId = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x4e8796*/
-    this->vtable1 = 0; /*0x4e879e*/
+    __3_YAXPAX_Z(v2);
+    this->vtable1 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x4e87a1*/
-  this->vtable2 = 0; /*0x4e87a4*/
+    this->IsAllocated = 0;
+    this->vtable2 = 0;
 }
 }
 } // namespace gamemd

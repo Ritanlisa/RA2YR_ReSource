@@ -6,18 +6,15 @@
 namespace gamemd {
 int INIClass::GetBool(INIClass * aP1, unsigned char * a2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall INIClass::GetBool(unsigned __int8 ***this, INIClass *aP1, unsigned __int8 *a2, int a4)
 {
-  int result; // eax
-  INIClass Destination[2]; // [esp+0h] [ebp-80h] BYREF
-
-  if ( !INIClass::GetString(this, aP1, a2, (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760], Destination, 128) ) /*0x4757f2*/
-    return a4; /*0x4757f2*/
-  result = LookupNameIndex(Destination); /*0x4757ff*/
-  if ( result == -1 ) /*0x475807*/
-    return a4; /*0x475809*/
-  return result; /*0x475810*/
+    int result;
+    INIClass Destination[2];
+    if ( !INIClass::GetString(this, aP1, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
+    return a4;
+    result = LookupNameIndex(Destination);
+    if ( result == -1 )
+    return a4;
+    return result;
 }
 }
 } // namespace gamemd
@@ -336,17 +333,14 @@ LABEL_36:
 namespace gamemd {
 char INIClass::GetInt(char ** a2, char ** a3, unsigned int * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall INIClass::GetInt(char *this, char **a2, char **a3, _DWORD *a4)
 {
-  INIClass *v5; // edi
-  INIClass *v6; // ebx
-  char Buffer[56]; // [esp+Ch] [ebp-38h] BYREF
-
-  v5 = (INIClass *)String::GetOrEmpty_Alt(a3); /*0x529835*/
-  v6 = (INIClass *)String::GetOrEmpty_Alt(a2); /*0x52983c*/
-  sprintf(Buffer, g_INI_Key_Digest.__pad_20, *a4, a4[1]); /*0x529853*/
-  return INIClass::SetString(this, v6, v5, (INIClass *)Buffer); /*0x529869*/
+    INIClass *v5;
+    INIClass *v6;
+    char Buffer[56];
+    v5 = (INIClass *)String::GetOrEmpty_Alt(a3);
+    v6 = (INIClass *)String::GetOrEmpty_Alt(a2);
+    sprintf(Buffer, g_INI_Key_Digest.__pad_20, *a4, *((int*)(a4) + 1));
+    return INIClass::SetString(this, v6, v5, (INIClass *)Buffer);
 }
 }
 } // namespace gamemd

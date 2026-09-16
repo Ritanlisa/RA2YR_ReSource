@@ -1015,16 +1015,14 @@ int __stdcall ObjectTypeClass::LoadCleanup(IUnknown *aP0, ObjectTypeClass *aP1)
 // 0x5F9B60
 int ObjectTypeClass::FreeLoaderBuffer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::FreeLoaderBuffer(int this)
 {
-  __3_YAXPAX_Z(*(void **)this); /*0x5f9b66*/
-  *(_DWORD *)this = 0; /*0x5f9b70*/
-  this->vtable1 = 0; /*0x5f9b72*/
-  this->vtable2 = 0; /*0x5f9b75*/
-  *(_BYTE *)(this + 12) = 0; /*0x5f9b78*/
-  this->uniqueId = 0; /*0x5f9b7b*/
-  return 0; /*0x5f9b7e*/
+    __3_YAXPAX_Z(*(void **)this);
+    *(int *)this = 0;
+    this->vtable1 = 0;
+    this->vtable2 = 0;
+    this->vtable3 = 0;
+    this->uniqueId = 0;
+    return 0;
 }
 }
 
@@ -5086,55 +5084,47 @@ char __thiscall sub_717820(int this)
 // 0x7179D0
 int ObjectTypeClass::loadTypeMember_57179D0(WeaponTypeClass * aP1, CCINIClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::loadTypeMember_57179D0(_DWORD *this, WeaponTypeClass *aP1, CCINIClass *aP2)
 {
-  if ( this != (_DWORD *)aP2 ) /*0x7179d7*/
+    if ( this != (int *)aP2 )
   {
-    *this = *(_DWORD *)aP2->__pad_0; /*0x7179dd*/
-    *(this + 1) = aP2->headNode[0]; /*0x7179e2*/
-    *(this + 2) = aP2->headNode[1]; /*0x7179e8*/
-    *(this + 3) = aP2->headNode[2]; /*0x7179ee*/
-    *((_WORD *)this + 8) = aP2->sectionHead[0]; /*0x7179f5*/
+    *(void**)this = *(int *)aP2->__pad_0;
+    this->vtable1 = aP2->headNode[0];
+    this->vtable2 = aP2->headNode[1];
+    this->vtable3 = aP2->headNode[2];
+    this->uniqueId = aP2->sectionHead[0];
   }
-  *(_DWORD *)aP1->__pad_0 = *this; /*0x717a01*/
-  *(_DWORD *)&aP1->__pad_0[4] = *(this + 1); /*0x717a06*/
-  *(_DWORD *)&aP1->__pad_0[8] = *(this + 2); /*0x717a0c*/
-  *(_DWORD *)&aP1->__pad_0[12] = *(this + 3); /*0x717a12*/
-  LOWORD(aP1->uniqueId) = (unsigned short)this->uniqueId; /*0x717a1a*/
-  return (int)aP1->__pad_0; /*0x717a19*/
+    *(int *)aP1->__pad_0 = *(void**)this;
+    *(int *)&aP1->__pad_0[4] = this->vtable1;
+    *(int *)&aP1->__pad_0[8] = this->vtable2;
+    *(int *)&aP1->__pad_0[12] = this->vtable3;
+    LOWORD(aP1->uniqueId) = (unsigned short)this->uniqueId;
+    return (int)aP1->__pad_0;
 }
 }
 
 // 0x717A80
 int ObjectTypeClass::loadTypeMember_5717A80(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_717A80(_DWORD *this, int a2)
 {
-  int result; // eax
-
-  result = a2; /*0x717a80*/
-  if ( a2 <= 0 ) /*0x717a86*/
-    result = 1; /*0x717a88*/
-  *(this + 2) = result; /*0x717a8d*/
-  return result; /*0x717a90*/
+    int result;
+    result = a2;
+    if ( a2 <= 0 )
+    result = 1;
+    this->vtable2 = result;
+    return result;
 }
 }
 
 // 0x717AB0
 int ObjectTypeClass::loadTypeMember_5717AB0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_717AB0(_DWORD *this, int a2)
 {
-  int result; // eax
-
-  result = a2; /*0x717ab0*/
-  if ( a2 <= 0 ) /*0x717ab6*/
-    result = 1; /*0x717ab8*/
-  *(this + 3) = result; /*0x717abd*/
-  return result; /*0x717ac0*/
+    int result;
+    result = a2;
+    if ( a2 <= 0 )
+    result = 1;
+    this->vtable3 = result;
+    return result;
 }
 }
 

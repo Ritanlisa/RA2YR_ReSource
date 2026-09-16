@@ -5,10 +5,8 @@
 // 0x7B89F0
 int WWMouseClass::COMStub()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WWMouseClass::_vt10(_DWORD *this)
 {
-  return *(this + 3); /*0x7b89f3*/
+    return this->IsInitialized;
 }
 }
 
@@ -289,10 +287,8 @@ void __thiscall WWMouseClass::_vt05(_BYTE *this)
 // 0x7BA330
 char WWMouseClass::checkCapture()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall WWMouseClass::_vt07(_BYTE *this)
 {
-  return *(this + 16); /*0x7ba333*/
+    return this->Count;
 }
 }
 
@@ -309,10 +305,8 @@ int __thiscall WWMouseClass::_vt11(_DWORD *this)
 // 0x7BA350
 int WWMouseClass::checkBounds()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WWMouseClass::_vt12(_DWORD *this)
 {
-  return *(this + 8); /*0x7ba353*/
+    return this->XY1;
 }
 }
 

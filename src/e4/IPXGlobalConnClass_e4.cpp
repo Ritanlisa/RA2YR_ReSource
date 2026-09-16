@@ -5,26 +5,23 @@
 // 0x5400D0
 int IPXGlobalConnClass::CheckStatus()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IPXGlobalConnClass::_vt08(_DWORD *this)
 {
-  int v2; // esi
-  _DWORD *v3; // ecx
-
-  v2 = 0; /*0x5400d4*/
-  v3 = (_DWORD *)*(this + 1); /*0x5400d6*/
-  if ( (int)v3[14] > 0 ) /*0x5400de*/
+    int v2;
+    int *v3;
+    v2 = 0;
+    v3 = (int *)this->PlayerIndex;
+    if ( (int)v3[14] > 0 )
   {
-    do /*0x540104*/
+    do
     {
-      if ( (*(_BYTE *)Terrain::GetTileType(v3, v2) & 2) != 0 ) /*0x5400e9*/
-        PacketQueue::ReleaseEntry((_DWORD *)*(this + 1), 0, 0, v2--, 0, 0); /*0x5400f7*/
-      v3 = (_DWORD *)*(this + 1); /*0x5400fd*/
-      ++v2; /*0x540100*/
+    if ( (*(char *)Terrain::GetTileType(v3, v2) & 2) != 0 )
+    PacketQueue::ReleaseEntry((int *)this->PlayerIndex, 0, 0, v2--, 0, 0);
+    v3 = (int *)this->PlayerIndex;
+    ++v2;
     }
-    while ( v2 < v3[14] ); /*0x540104*/
+    while ( v2 < v3[14] );
   }
-  return 1; /*0x540106*/
+    return 1;
 }
 }
 
@@ -102,86 +99,77 @@ LABEL_14:
 // 0x5402D0
 int IPXGlobalConnClass::Send()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IPXGlobalConnClass::_vt06(_DWORD *this)
 {
-  int v2; // ebx
-  int v3; // esi
-  _DWORD *v4; // ecx
-  int v5; // eax
-  _DWORD *v6; // ecx
-  int v8; // [esp+Ch] [ebp-414h] BYREF
-  int v9; // [esp+10h] [ebp-410h] BYREF
-  _BYTE v10[12]; // [esp+14h] [ebp-40Ch] BYREF
-  _BYTE v11[1024]; // [esp+20h] [ebp-400h] BYREF
-
-  v2 = 0; /*0x5402db*/
-  v3 = 0; /*0x5402dd*/
-  v4 = (_DWORD *)*(this + 1); /*0x5402df*/
-  if ( (int)v4[10] > 0 ) /*0x5402e7*/
+    int v2;
+    int v3;
+    int *v4;
+    int v5;
+    int *v6;
+    int v8;
+    int v9;
+    char v10[12];
+    char v11[1024];
+    v2 = 0;
+    v3 = 0;
+    v4 = (int *)this->PlayerIndex;
+    if ( (int)v4[10] > 0 )
   {
-    do /*0x540332*/
+    do
     {
-      v5 = *(_DWORD *)Terrain::GetTileIndex(v4, v3); /*0x5402ef*/
-      if ( (v5 & 4) != 0 && (v5 & 2) == 0 ) /*0x5402f7*/
+    v5 = *(int *)Terrain::GetTileIndex(v4, v3);
+    if ( (v5 & 4) != 0 && (v5 & 2) == 0 )
       {
-        Waypoint::InitInvalid(v10); /*0x5402fd*/
-        v6 = (_DWORD *)*(this + 1); /*0x54030e*/
-        v8 = 12; /*0x54031c*/
-        PacketQueue::ExtractEntry(v6, v11, &v9, v3--, v10, &v8, 0); /*0x540324*/
-        ++v2; /*0x54032a*/
+    Waypoint::InitInvalid(v10);
+    v6 = (int *)this->PlayerIndex;
+    v8 = 12;
+    PacketQueue::ExtractEntry(v6, v11, &v9, v3--, v10, &v8, 0);
+    ++v2;
       }
-      v4 = (_DWORD *)*(this + 1); /*0x54032b*/
-      ++v3; /*0x54032e*/
+    v4 = (int *)this->PlayerIndex;
+    ++v3;
     }
-    while ( v3 < v4[10] ); /*0x540332*/
+    while ( v3 < v4[10] );
   }
-  return v2; /*0x540334*/
+    return v2;
 }
 }
 
 // 0x540340
 int IPXGlobalConnClass::SendPacket(int a2, short a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IPXGlobalConnClass::_vt16(_DWORD *this, int a2, __int16 a3)
 {
-  _DWORD *v4; // ecx
-  int v5; // ebp
-  int v6; // esi
-  int TileIndex; // eax
-  int v8; // edi
-  _DWORD *v9; // ecx
-  int v11; // [esp+Ch] [ebp-414h] BYREF
-  int v12; // [esp+10h] [ebp-410h] BYREF
-  _BYTE v13[12]; // [esp+14h] [ebp-40Ch] BYREF
-  _BYTE v14[1024]; // [esp+20h] [ebp-400h] BYREF
-
-  v4 = (_DWORD *)*(this + 1); /*0x54034b*/
-  v5 = 0; /*0x54034e*/
-  v6 = 0; /*0x540350*/
-  if ( (int)v4[10] <= 0 ) /*0x540357*/
-    return 0; /*0x5403de*/
-  do /*0x5403cd*/
+    int *v4;
+    int v5;
+    int v6;
+    int TileIndex;
+    int v8;
+    int *v9;
+    int v11;
+    int v12;
+    char v13[12];
+    char v14[1024];
+    v4 = (int *)this->PlayerIndex;
+    v5 = 0;
+    v6 = 0;
+    if ( (int)v4[10] <= 0 )
+    return 0;
+    do
   {
-    TileIndex = Terrain::GetTileIndex(v4, v6); /*0x54035f*/
-    v8 = TileIndex; /*0x540364*/
-    if ( (*(_BYTE *)TileIndex & 2) == 0 /*0x540392*/
-      && *(_DWORD *)(TileIndex + 24)
-      && NetworkID::Compare(*(_DWORD *)(TileIndex + 28), a2)
-      && *(_WORD *)(v8 + 32) == a3 )
+    TileIndex = Terrain::GetTileIndex(v4, v6);
+    v8 = TileIndex;
+    if ( (*(char *)TileIndex & 2) == 0 && *(int *)(TileIndex + 24) && NetworkID::Compare(*(int *)(TileIndex + 28), a2) && *(short *)(v8 + 32) == a3 )
     {
-      Waypoint::InitInvalid(v13); /*0x540398*/
-      v9 = (_DWORD *)*(this + 1); /*0x5403b3*/
-      v11 = 12; /*0x5403b7*/
-      PacketQueue::ExtractEntry(v9, v14, &v12, v6--, v13, &v11, 0); /*0x5403bf*/
-      ++v5; /*0x5403c5*/
+    Waypoint::InitInvalid(v13);
+    v9 = (int *)this->PlayerIndex;
+    v11 = 12;
+    PacketQueue::ExtractEntry(v9, v14, &v12, v6--, v13, &v11, 0);
+    ++v5;
     }
-    v4 = (_DWORD *)*(this + 1); /*0x5403c6*/
-    ++v6; /*0x5403c9*/
+    v4 = (int *)this->PlayerIndex;
+    ++v6;
   }
-  while ( v6 < v4[10] ); /*0x5403cd*/
-  return v5; /*0x5403d2*/
+    while ( v6 < v4[10] );
+    return v5;
 }
 }
 

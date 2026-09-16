@@ -9734,7 +9734,6 @@ char __thiscall sub_57B990(__int16 *this)
   return result; /*0x57ba41*/
 }
 }
-}
 // 0x57CAB0
 namespace gamemd { int Gap2Recv_57CAB0::Map_Create_57CAB0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -14537,7 +14536,6 @@ int __thiscall LookupWaypointName(void *this)
   return v2; /*0x5b393c*/
 }
 }
-}
 // 0x5B6CD0
 namespace gamemd { int Gap2Recv_5B6CD0::Surface_Lock() {
 {
@@ -15609,7 +15607,6 @@ int __thiscall SendMultiplayerStartSignal_Start(char *this)
     return *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[18372] + 4 * v4) + 119); /*0x5dbf36*/
 }
 }
-}
 // 0x5E23D0
 namespace gamemd { char Gap2Recv_5E23D0::Network_Check(int a2) {
 {
@@ -15720,7 +15717,6 @@ INIClass *__thiscall Audio_Helper(void *this)
     *(_DWORD *)&HouseClass_Player.__pad_5568[4 * v4 + 18396] = result; /*0x5e93e2*/
   }
   return result; /*0x5e93b0*/
-}
 }
 }
 // 0x5E93F0
@@ -15941,7 +15937,6 @@ char __thiscall RefreshLobbyAll_Get_5EADA0(SessionClass *hDlg)
   return result; /*0x5eae36*/
 }
 }
-}
 // 0x5EAE40
 namespace gamemd { char Gap2Recv_5EAE40::RefreshLobbyAll_Setup() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -15993,7 +15988,6 @@ bool __thiscall RefreshLobbyAll_Setup(SessionClass *hDlg)
   }
   while ( (int)v3 < (int)&HouseClass_Player.__pad_5568[8296] ); /*0x5eaed0*/
   return result; /*0x5eaed6*/
-}
 }
 }
 // 0x5EAEE0
@@ -16254,7 +16248,6 @@ void __thiscall sub_5EEF60(_DWORD *this)
   }
 }
 }
-}
 // 0x5EF010
 namespace gamemd { void Gap2Recv_5EF010::Map_Helper_5EF010() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -16313,7 +16306,6 @@ void __thiscall sub_5EF010(_DWORD *this)
     }
     __3_YAXPAX_Z(v3); /*0x5ef09e*/
   }
-}
 }
 }
 // 0x5FD2E0

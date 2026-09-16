@@ -6,14 +6,12 @@
 namespace gamemd {
 unsigned int * RadarClass::initRadarSurface()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_4F4220(_DWORD *this)
 {
-  *(this + 1) = 0; /*0x4f4224*/
-  *(this + 2) = 0; /*0x4f4227*/
-  *(this + 3) = 2; /*0x4f422a*/
-  *this = &off_7EA6FC; /*0x4f4231*/
-  return this; /*0x4f4237*/
+    this->Items = 0;
+    this->Capacity = 0;
+    this->IsInitialized = 2;
+    *(void**)this = &vt_GScreenClass;
+    return this;
 }
 }
 } // namespace gamemd

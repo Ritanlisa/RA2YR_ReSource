@@ -684,17 +684,15 @@ int __userpurge HouseTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, i
 namespace gamemd {
 unsigned int * HouseTypeClass::readStartUnit()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_512960(_DWORD *this)
 {
-  *(this + 1) = 0; /*0x512964*/
-  *(this + 2) = 0; /*0x512967*/
-  *((_BYTE *)this + 12) = 1; /*0x51296a*/
-  *((_BYTE *)this + 13) = 0; /*0x51296e*/
-  *(this + 5) = 10; /*0x512971*/
-  *(this + 4) = 0; /*0x512978*/
-  *this = &vt_TypeList_AircraftTypeClass_const; /*0x51297b*/
-  return this; /*0x512981*/
+    this->vtable1 = 0;
+    this->vtable2 = 0;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    this->abstractFlags = 10;
+    this->uniqueId = 0;
+    *(void**)this = &vt_TypeList_AircraftTypeClass_const;
+    return this;
 }
 }
 } // namespace gamemd
@@ -703,41 +701,38 @@ _DWORD *__thiscall sub_512960(_DWORD *this)
 namespace gamemd {
 unsigned int * HouseTypeClass::readStartInfantry(InfantryTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall HouseTypeClass::readStartInfantry(_DWORD *this, InfantryTypeClass *aP1)
 {
-  int v3; // eax
-  int v4; // eax
-  int v5; // ecx
-  int v6; // eax
-
-  if ( this == (_DWORD *)aP1 ) /*0x512bda*/
-    return this; /*0x512bda*/
-  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x512bde*/
-  v3 = *(_DWORD *)&aP1->vtable0[8]; /*0x512be1*/
-  *(this + 2) = v3; /*0x512be6*/
-  if ( !v3 ) /*0x512be9*/
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    if ( this == (int *)aP1 )
+    return this;
+    this->GetClassIdentifier();
+    v3 = *(int *)&aP1->vtable0[8];
+    this->vtable2 = v3;
+    if ( !v3 )
   {
-    *(this + 1) = 0; /*0x512c2a*/
-    *((_BYTE *)this + 13) = 0; /*0x512c31*/
-    return this; /*0x512c35*/
+    this->vtable1 = 0;
+    this->IsAllocated = 0;
+    return this;
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x512bf3*/
-  *(this + 1) = v4; /*0x512bfb*/
-  if ( !v4 ) /*0x512c00*/
-    return this; /*0x512c00*/
-  v5 = *(this + 2); /*0x512c02*/
-  v6 = 0; /*0x512c05*/
-  *((_BYTE *)this + 13) = 1; /*0x512c09*/
-  if ( v5 <= 0 ) /*0x512c0d*/
-    return this; /*0x512c0d*/
-  do /*0x512c21*/
+    v4 = __2_YAPAXI_Z(4 * v3);
+    this->vtable1 = v4;
+    if ( !v4 )
+    return this;
+    v5 = this->vtable2;
+    v6 = 0;
+    this->IsAllocated = 1;
+    if ( v5 <= 0 )
+    return this;
+    do
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->vtable0[4] + 4 * v6); /*0x512c18*/
-    ++v6; /*0x512c1e*/
+    *(int *)(this->vtable1 + 4 * v6) = *(int *)(*(int *)&aP1->vtable0[4] + 4 * v6);
+    ++v6;
   }
-  while ( v6 < *(this + 2) ); /*0x512c21*/
-  return this; /*0x512c25*/
+    while ( v6 < this->vtable2 );
+    return this;
 }
 }
 } // namespace gamemd
@@ -789,30 +784,28 @@ _DWORD *__thiscall HouseTypeClass::readBaseDefense(_DWORD *this, VectorClass *aP
 namespace gamemd {
 unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_513560(_DWORD *this, int a2, int a3)
 {
-  *(this + 1) = 0; /*0x513569*/
-  *(this + 2) = a2; /*0x513570*/
-  *((_BYTE *)this + 12) = 1; /*0x513573*/
-  *((_BYTE *)this + 13) = 0; /*0x513577*/
-  *this = &vt_VectorClass_AircraftTypeClass_const; /*0x51357b*/
-  if ( a2 ) /*0x513581*/
+    this->vtable1 = 0;
+    this->vtable2 = a2;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
+    if ( a2 )
   {
-    if ( a3 ) /*0x513589*/
+    if ( a3 )
     {
-      *(this + 1) = a3; /*0x51358b*/
+    this->vtable1 = a3;
     }
     else
     {
-      *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x51359c*/
-      *((_BYTE *)this + 13) = 1; /*0x51359f*/
+    this->vtable1 = __2_YAPAXI_Z(4 * a2);
+    this->IsAllocated = 1;
     }
   }
-  *this = &vt_DynamicVectorClass_AircraftTypeClass_const; /*0x5135a3*/
-  *(this + 5) = 10; /*0x5135a9*/
-  *(this + 4) = 0; /*0x5135b0*/
-  return this; /*0x5135b9*/
+    *(void**)this = &vt_DynamicVectorClass_AircraftTypeClass_const;
+    this->abstractFlags = 10;
+    this->uniqueId = 0;
+    return this;
 }
 }
 } // namespace gamemd
@@ -821,28 +814,25 @@ _DWORD *__thiscall sub_513560(_DWORD *this, int a2, int a3)
 namespace gamemd {
 char HouseTypeClass::readPowerPlants(TypeList * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall HouseTypeClass::readPowerPlants(_DWORD *this, TypeList *aP1)
 {
-  int v3; // ecx
-  int v4; // eax
-  int v6; // eax
-  int v7; // edx
-
-  v3 = *(this + 2); /*0x5136c3*/
-  if ( *(this + 4) >= v3 ) /*0x5136cb*/
+    int v3;
+    int v4;
+    int v6;
+    int v7;
+    v3 = this->vtable2;
+    if ( this->uniqueId >= v3 )
   {
-    if ( !*((_BYTE *)this + 13) && v3 ) /*0x5136d6*/
-      return 0; /*0x5136d6*/
-    v4 = *(this + 5); /*0x5136d8*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x5136e8*/
-      return 0; /*0x5136ef*/
+    if ( !this->IsAllocated && v3 )
+    return 0;
+    v4 = this->abstractFlags;
+    if ( v4 <= 0 || !this->Release(v3 + v4, 0) )
+    return 0;
   }
-  v6 = *(this + 4); /*0x5136f5*/
-  v7 = *(this + 1); /*0x5136f8*/
-  *(this + 4) = v6 + 1; /*0x5136fe*/
-  *(_DWORD *)(v7 + 4 * v6) = aP1->vtable0; /*0x513708*/
-  return 1; /*0x5136f1*/
+    v6 = this->uniqueId;
+    v7 = this->vtable1;
+    this->uniqueId = v6 + 1;
+    *(int *)(v7 + 4 * v6) = aP1->vtable0;
+    return 1;
 }
 }
 } // namespace gamemd
@@ -851,54 +841,51 @@ char __thiscall HouseTypeClass::readPowerPlants(_DWORD *this, TypeList *aP1)
 namespace gamemd {
 unsigned int * HouseTypeClass::readParaDropTypes(VectorClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall HouseTypeClass::readParaDropTypes(_DWORD *this, VectorClass *aP1)
 {
-  int v3; // eax
-  int v4; // eax
-  int v5; // ecx
-  int v6; // eax
-
-  *(this + 1) = 0; /*0x5137dd*/
-  *(this + 2) = 0; /*0x5137e0*/
-  *((_BYTE *)this + 12) = 1; /*0x5137e3*/
-  *((_BYTE *)this + 13) = 0; /*0x5137e7*/
-  *this = &vt_VectorClass_AircraftTypeClass_const; /*0x5137ea*/
-  if ( this != (_DWORD *)aP1 ) /*0x5137f0*/
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    this->vtable1 = 0;
+    this->vtable2 = 0;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
+    if ( this != (int *)aP1 )
   {
-    VectorClass::ClearAndFree4((int)this); /*0x5137f2*/
-    v3 = aP1->Capacity; /*0x5137f8*/
-    *(this + 2) = v3; /*0x5137fd*/
-    if ( v3 ) /*0x513800*/
+    VectorClass::ClearAndFree4((int)this);
+    v3 = aP1->Capacity;
+    this->vtable2 = v3;
+    if ( v3 )
     {
-      v4 = __2_YAPAXI_Z(4 * v3); /*0x513806*/
-      *(this + 1) = v4; /*0x513810*/
-      if ( v4 ) /*0x513813*/
+    v4 = __2_YAPAXI_Z(4 * v3);
+    this->vtable1 = v4;
+    if ( v4 )
       {
-        v5 = *(this + 2); /*0x513815*/
-        v6 = 0; /*0x513818*/
-        *((_BYTE *)this + 13) = 1; /*0x51381c*/
-        if ( v5 > 0 ) /*0x513820*/
+    v5 = this->vtable2;
+    v6 = 0;
+    this->IsAllocated = 1;
+    if ( v5 > 0 )
         {
-          do /*0x513834*/
+    do
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x51382b*/
-            ++v6; /*0x513831*/
+    *(int *)(this->vtable1 + 4 * v6) = *((int *)aP1->Items + v6);
+    ++v6;
           }
-          while ( v6 < *(this + 2) ); /*0x513834*/
+    while ( v6 < this->vtable2 );
         }
       }
     }
     else
     {
-      *(this + 1) = 0; /*0x513838*/
-      *((_BYTE *)this + 13) = 0; /*0x51383b*/
+    this->vtable1 = 0;
+    this->IsAllocated = 0;
     }
   }
-  *(this + 4) = aP1[1].vtable0; /*0x513841*/
-  *(this + 5) = aP1[1].Items; /*0x513847*/
-  *this = &vt_TypeList_AircraftTypeClass_const; /*0x51384a*/
-  return this; /*0x513852*/
+    this->uniqueId = aP1[1].vtable0;
+    this->abstractFlags = aP1[1].Items;
+    *(void**)this = &vt_TypeList_AircraftTypeClass_const;
+    return this;
 }
 }
 } // namespace gamemd
@@ -907,54 +894,51 @@ _DWORD *__thiscall HouseTypeClass::readParaDropTypes(_DWORD *this, VectorClass *
 namespace gamemd {
 unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall HouseTypeClass::readAllowedUnits(_DWORD *this, InfantryTypeClass *aP1)
 {
-  int v3; // eax
-  int v4; // eax
-  int v5; // ecx
-  int v6; // eax
-
-  *(this + 1) = 0; /*0x51386d*/
-  *(this + 2) = 0; /*0x513870*/
-  *((_BYTE *)this + 12) = 1; /*0x513873*/
-  *((_BYTE *)this + 13) = 0; /*0x513877*/
-  *this = &vt_VectorClass_InfantryTypeClass_const; /*0x51387a*/
-  if ( this != (_DWORD *)aP1 ) /*0x513880*/
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    this->vtable1 = 0;
+    this->vtable2 = 0;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_InfantryTypeClass_const;
+    if ( this != (int *)aP1 )
   {
-    Vector::Cleanup((int)this); /*0x513882*/
-    v3 = *(_DWORD *)&aP1->vtable0[8]; /*0x513888*/
-    *(this + 2) = v3; /*0x51388d*/
-    if ( v3 ) /*0x513890*/
+    Vector::Cleanup((int)this);
+    v3 = *(int *)&aP1->vtable0[8];
+    this->vtable2 = v3;
+    if ( v3 )
     {
-      v4 = __2_YAPAXI_Z(4 * v3); /*0x513896*/
-      *(this + 1) = v4; /*0x5138a0*/
-      if ( v4 ) /*0x5138a3*/
+    v4 = __2_YAPAXI_Z(4 * v3);
+    this->vtable1 = v4;
+    if ( v4 )
       {
-        v5 = *(this + 2); /*0x5138a5*/
-        v6 = 0; /*0x5138a8*/
-        *((_BYTE *)this + 13) = 1; /*0x5138ac*/
-        if ( v5 > 0 ) /*0x5138b0*/
+    v5 = this->vtable2;
+    v6 = 0;
+    this->IsAllocated = 1;
+    if ( v5 > 0 )
         {
-          do /*0x5138c4*/
+    do
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->vtable0[4] + 4 * v6); /*0x5138bb*/
-            ++v6; /*0x5138c1*/
+    *(int *)(this->vtable1 + 4 * v6) = *(int *)(*(int *)&aP1->vtable0[4] + 4 * v6);
+    ++v6;
           }
-          while ( v6 < *(this + 2) ); /*0x5138c4*/
+    while ( v6 < this->vtable2 );
         }
       }
     }
     else
     {
-      *(this + 1) = 0; /*0x5138c8*/
-      *((_BYTE *)this + 13) = 0; /*0x5138cb*/
+    this->vtable1 = 0;
+    this->IsAllocated = 0;
     }
   }
-  *(this + 4) = aP1->uniqueId; /*0x5138d1*/
-  *(this + 5) = aP1->abstractFlags; /*0x5138d7*/
-  *this = &vt_DynamicVectorClass_InfantryTypeClass_const; /*0x5138da*/
-  return this; /*0x5138e2*/
+    this->uniqueId = aP1->uniqueId;
+    this->abstractFlags = aP1->abstractFlags;
+    *(void**)this = &vt_DynamicVectorClass_InfantryTypeClass_const;
+    return this;
 }
 }
 } // namespace gamemd

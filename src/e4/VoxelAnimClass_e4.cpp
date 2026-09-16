@@ -82,53 +82,50 @@ unsigned int sub_4CAF20()
 namespace gamemd {
 char VoxelAnimClass::UpdateMatrix()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_4D02B0(_DWORD *this)
 {
-  int v3; // eax
-  int (__stdcall ***v4)(_DWORD, void *, int *); // eax
-  int v5; // esi
-  int v6; // eax
-  int v7; // edi
-  int v8; // [esp+10h] [ebp-8h] BYREF
-  int v9; // [esp+14h] [ebp-4h] BYREF
-
-  if ( *(this + 9) > Cell::GetGroundHeight(this + 7) + 120 ) /*0x4d02cc*/
-    return 1; /*0x4d02d4*/
-  v3 = *(this + 3); /*0x4d02d5*/
-  if ( *(_DWORD *)(v3 + 692) && *(_DWORD *)(v3 + 764) ) /*0x4d02e2*/
-    return 1; /*0x4d02f2*/
-  v4 = (int (__stdcall ***)(_DWORD, void *, int *))*(this + 3); /*0x4d02f3*/
-  v8 = 0; /*0x4d02f6*/
-  if ( !v4 ) /*0x4d0300*/
-    return 0; /*0x4d0300*/
-  v5 = (**v4)(v4, &unk_822410, &v9); /*0x4d0311*/
-  if ( v5 >= 0 ) /*0x4d0315*/
+    int v3;
+    int (__stdcall ***v4)(int, void *, int *);
+    int v5;
+    int v6;
+    int v7;
+    int v8;
+    int v9;
+    if ( this->objectTypeFlags > Cell::GetGroundHeight(this + 7) + 120 )
+    return 1;
+    v3 = this->vtable3;
+    if ( *(int *)(v3 + 692) && *(int *)(v3 + 764) )
+    return 1;
+    v4 = (int (__stdcall ***)(int, void *, int *))this->vtable3;
+    v8 = 0;
+    if ( !v4 )
+    return 0;
+    v5 = (**v4)(v4, &DataGlobal_822410, &v9);
+    if ( v5 >= 0 )
   {
-    v7 = v9; /*0x4d0329*/
-    Release3COM(&v8); /*0x4d0331*/
-    v6 = v7; /*0x4d0336*/
-    v8 = v7; /*0x4d0339*/
+    v7 = v9;
+    Release3COM(&v8);
+    v6 = v7;
+    v8 = v7;
   }
-  else
+    else
   {
-    Release3COM(&v8); /*0x4d031b*/
-    v6 = 0; /*0x4d0320*/
-    v8 = 0; /*0x4d0322*/
+    Release3COM(&v8);
+    v6 = 0;
+    v8 = 0;
   }
-  if ( v5 < 0 && v5 != -2147467262 ) /*0x4d0347*/
-    WinAPI::Wrapper(v5); /*0x4d034a*/
-  if ( !v6 ) /*0x4d0355*/
-    return 0; /*0x4d0355*/
-  if ( !(*(int (__stdcall **)(int))(*(_DWORD *)v6 + 32))(v6) ) /*0x4d0363*/
+    if ( v5 < 0 && v5 != -2147467262 )
+    WinAPI::Wrapper(v5);
+    if ( !v6 )
+    return 0;
+    if ( !(*(int (__stdcall **)(int))(*(int *)(v6) + 32))(v6) )
   {
-    if ( v8 ) /*0x4d0378*/
-      (*(void (__stdcall **)(int))(*(_DWORD *)v8 + 8))(v8); /*0x4d037d*/
-    return 0; /*0x4d0380*/
+    if ( v8 )
+    (*(void (__stdcall **)(int))(*(int *)(v8) + 8))(v8);
+    return 0;
   }
-  if ( v8 ) /*0x4d0367*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v8 + 8))(v8); /*0x4d036c*/
-  return 1; /*0x4d02d0*/
+    if ( v8 )
+    (*(void (__stdcall **)(int))(*(int *)(v8) + 8))(v8);
+    return 1;
 }
 }
 } // namespace gamemd
@@ -194,16 +191,13 @@ int __thiscall VoxelAnimClass::CleanupMembers(#374 *this)
 namespace gamemd {
 int VoxelAnimClass::DrawVoxelFrame(int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VoxelAnimClass::DrawVoxelFrame(#374 *this, int a2, int a3, int a4)
 {
-  _DWORD *v5; // eax
-  _BYTE v7[12]; // [esp+4h] [ebp-Ch] BYREF
-
-  v5 = (_DWORD *)(*(int (__thiscall **)(#374 *, _BYTE *))(*(_DWORD *)this + 72))(this, v7); /*0x749b2f*/
-  if ( (*((_BYTE *)Coord::To_Cell(&MEMORY[0x87F7E8], v5) + 300) & 0x10) != 0 ) /*0x749b44*/
-    *((_BYTE *)this + 128) = 1; /*0x749b46*/
-  return ObjectClass::CalcDrawRect(this); /*0x749b60*/
+    int *v5;
+    char v7[12];
+    v5 = (int *)this->GetCoords(v7);
+    if ( (*((char *)Coord::To_Cell(&DataGlobal_87F7E8, v5) + 300) & 0x10) != 0 )
+    this->needsRedraw = 1;
+    return ObjectClass::CalcDrawRect(this);
 }
 }
 } // namespace gamemd

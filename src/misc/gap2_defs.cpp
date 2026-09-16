@@ -22352,27 +22352,24 @@ namespace gamemd { int SuperClass::SetFieldX() {
 } }
 // 0x6CE280
 namespace gamemd { void SuperClass::AdvanceCountdown() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_6CE280(int *this)
 {
-  int v1; // esi
-  int v2; // eax
-  char *v3; // edx
-
-  v1 = *this; /*0x6ce281*/
-  if ( *this != -1 ) /*0x6ce286*/
+    int v1;
+    int v2;
+    char *v3;
+    v1 = *(void**)this;
+    if ( *(void**)this != -1 )
   {
-    v2 = *(this + 2); /*0x6ce288*/
-    v3 = (char *)MEMORY[0xA8ED84] - v1; /*0x6ce296*/
-    if ( (int)MEMORY[0xA8ED84] - v1 >= v2 ) /*0x6ce29a*/
+    v2 = this->vtable2;
+    v3 = (char *)g_CurrentFrame - v1;
+    if ( (int)g_CurrentFrame - v1 >= v2 )
     {
-      *(this + 2) = 0; /*0x6ce2ab*/
-      *this = -1; /*0x6ce2ae*/
+    this->vtable2 = 0;
+    *(void**)this = -1;
     }
     else
     {
-      *this = -1; /*0x6ce29e*/
-      *(this + 2) = v2 - (_DWORD)v3; /*0x6ce2a4*/
+    *(void**)this = -1;
+    this->vtable2 = v2 - (int)v3;
     }
   }
 }

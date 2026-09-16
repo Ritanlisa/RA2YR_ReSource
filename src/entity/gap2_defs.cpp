@@ -299,13 +299,11 @@ LABEL_21:
 
 // 0x41C3F0
 namespace gamemd { void BulletClass::NormalizeZeroVector() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_41C3F0(double *this)
 {
-  if ( *this == 0.0 && *(this + 1) == 0.0 && *(this + 2) == 0.0 ) /*0x41c41d*/
+    if ( *(void**)this == 0.0 && this->vtable1 == 0.0 && this->vtable2 == 0.0 )
   {
-    *(_DWORD *)this = 0; /*0x41c41f*/
-    *((_DWORD *)this + 1) = 1079574528; /*0x41c425*/
+    *(int *)this = 0;
+    this->vtable1 = 1079574528;
   }
 }
 } }
@@ -7720,31 +7718,26 @@ void __thiscall BulletClass::SetupVoxelTransform(void *this, int *a2, int *a3)
 
 // 0x468430
 namespace gamemd { int BulletClass::LoseTarget() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall BulletClass::LoseTarget(_DWORD **this)
 {
-  _DWORD *v2; // eax
-  int v4; // [esp+4h] [ebp-14h] BYREF
-  int v5; // [esp+8h] [ebp-10h]
-  _BYTE v6[12]; // [esp+Ch] [ebp-Ch] BYREF
-
-  v2 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(this + 67) + 72))(*(this + 67), v6); /*0x468443*/
-  LOWORD(v5) = *v2 / 256; /*0x468456*/
-  HIWORD(v5) = v2[1] / 256; /*0x46846a*/
-  v4 = v5; /*0x468473*/
-  LOWORD(v2) = MEMORY[0xA8E7AC]; /*0x468477*/
-  if ( MEMORY[0xA8E7AC] /*0x46849b*/
-    || (LOWORD(v2) = (*(int (__thiscall **)(_DWORD))(**(this + 67) + 84))(*(this + 67)), (_BYTE)v2)
-    || (LOWORD(v2) = v4, v4 == dword_89DDF0) )
+    int *v2;
+    int v4;
+    int v5;
+    char v6[12];
+    v2 = (int *)(*(int (__thiscall **)(int, char *))(*(void**)this->Target + 72))(this->Target, v6);
+    LOWORD(v5) = *v2 / 256;
+    HIWORD(v5) = v2[1] / 256;
+    v4 = v5;
+    LOWORD(v2) = IKnowWhatImDoing;
+    if ( IKnowWhatImDoing || (LOWORD(v2) = (*(int (__thiscall **)(int))(*(void**)this->Target + 84))(this->Target), (char)v2) || (LOWORD(v2) = v4, v4 == DataGlobal_89DDF0) )
   {
-    *(this + 67) = 0; /*0x4684c5*/
+    this->Target = 0;
   }
-  else
+    else
   {
-    v2 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v4); /*0x4684b5*/
-    *(this + 67) = v2; /*0x4684ba*/
+    v2 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v4);
+    this->Target = v2;
   }
-  return (__int16)v2; /*0x4684c0*/
+    return (short)v2;
 }
 } }
 
@@ -8446,18 +8439,16 @@ int __thiscall TerrainClass::SetFieldF8(_DWORD *this, int a2)
 
 // 0x4E1100
 namespace gamemd { void* BulletClass::ResetDetonationTimer() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_4E1100(_DWORD *this)
 {
-  *this = MEMORY[0xA8ED84]; /*0x4e1108*/
-  *(this + 2) = 0; /*0x4e110c*/
-  *(this + 3) = MEMORY[0xA8ED84]; /*0x4e1115*/
-  *(this + 5) = 0; /*0x4e1118*/
-  *(this + 6) = 0; /*0x4e111b*/
-  *(this + 7) = 0; /*0x4e111e*/
-  *(this + 8) = 0; /*0x4e1121*/
-  *(this + 9) = 0; /*0x4e1124*/
-  return this; /*0x4e1127*/
+    *(void**)this = g_CurrentFrame;
+    this->vtable2 = 0;
+    this->vtable3 = g_CurrentFrame;
+    this->abstractFlags = 0;
+    this->nextArrayIndex = 0;
+    this->referenceCount = 0;
+    this->needsSave = 0;
+    this->objectTypeFlags = 0;
+    return this;
 }
 } }
 
@@ -12567,38 +12558,35 @@ namespace gamemd { bool ParticleClass::CheckMirrorState(int a1) {
 
 // 0x62D830
 namespace gamemd { int ParticleClass::vt_entry_1E8() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ParticleClass::vt_entry_1E8(int this)
 {
-  int v2; // eax
-  int v3; // eax
-  int v5[2]; // [esp+4h] [ebp-10h] BYREF
-  int v6[2]; // [esp+Ch] [ebp-8h] BYREF
-
-  v2 = *(_DWORD *)(*(_DWORD *)(this + 172) + 788); /*0x62d83c*/
-  if ( v2 >= 0 ) /*0x62d844*/
+    int v2;
+    int v3;
+    int v5[2];
+    int v6[2];
+    v2 = *(int *)(this->Type + 788);
+    if ( v2 >= 0 )
   {
-    if ( v2 <= 1 ) /*0x62d84d*/
-      return *(char *)(this + 302); /*0x62d84d*/
-    if ( v2 == 2 ) /*0x62d856*/
+    if ( v2 <= 1 )
+    return this->StartStateAI;
+    if ( v2 == 2 )
     {
-      Coord::To_Screen(MEMORY[0x887324], (_DWORD *)(this + 244), v6); /*0x62d86e*/
-      Coord::To_Screen(MEMORY[0x887324], (_DWORD *)(this + 232), v5); /*0x62d885*/
-      v3 = CalcMathFacing8(v6, v5); /*0x62d892*/
-      if ( v3 == 2 || v3 == 6 ) /*0x62d89f*/
-        return *(char *)(this + 302) + 2 * *(char *)(*(_DWORD *)(this + 172) + 777); /*0x62d91e*/
-      if ( v3 != 4 && v3 ) /*0x62d8a8*/
+    Coord::To_Screen(g_TacticalClass_Instance, (int *)(this + 244), v6);
+    Coord::To_Screen(g_TacticalClass_Instance, (int *)(this + 232), v5);
+    v3 = CalcMathFacing8(v6, v5);
+    if ( v3 == 2 || v3 == 6 )
+    return this->StartStateAI + 2 * *(char *)(this->Type + 777);
+    if ( v3 != 4 && v3 )
       {
-        if ( v3 == 1 || v3 == 5 ) /*0x62d8b2*/
-          return *(char *)(this + 302) + *(char *)(*(_DWORD *)(this + 172) + 777); /*0x62d8f6*/
-        if ( v3 == 3 || v3 == 7 ) /*0x62d8bc*/
-          return *(char *)(this + 302) + 3 * *(char *)(*(_DWORD *)(this + 172) + 777); /*0x62d8db*/
-        return 0; /*0x62d8bc*/
+    if ( v3 == 1 || v3 == 5 )
+    return this->StartStateAI + *(char *)(this->Type + 777);
+    if ( v3 == 3 || v3 == 7 )
+    return this->StartStateAI + 3 * *(char *)(this->Type + 777);
+    return 0;
       }
-      return *(char *)(this + 302); /*0x62d902*/
+    return this->StartStateAI;
     }
   }
-  return 0; /*0x62d8d2*/
+    return 0;
 }
 } }
 
@@ -13737,41 +13725,38 @@ _DWORD *__thiscall sub_6302A0(_DWORD *this, int a2, int a3)
 
 // 0x65B2F0
 namespace gamemd { void RadSiteClass::Constructor() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall RadSiteClass::Constructor(void **this)
 {
-  _DWORD *v2; // eax
-  AbstractClass *v3; // edx
-  LightSourceClass *v4; // ecx
-  int v5; // eax
-  void **v6; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &RadSiteClass::`vftable'; /*0x65b2fc*/
-  *(this + 1) = &RadSiteClass::`vftable'; /*0x65b303*/
-  *(this + 2) = &RadSiteClass::`vftable'; /*0x65b30a*/
-  *(this + 3) = &vt_RadSiteClass; /*0x65b311*/
-  v2 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)this + 32); /*0x65b318*/
-  TerrainClass::SetFieldF8(v2, 0); /*0x65b321*/
-  LOBYTE(v3) = 1; /*0x65b326*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, v3); /*0x65b32a*/
-  v4 = (LightSourceClass *)*(this + 9); /*0x65b32f*/
-  if ( v4 ) /*0x65b334*/
+    int *v2;
+    AbstractClass *v3;
+    LightSourceClass *v4;
+    int v5;
+    void **v6;
+    *(void**)this = vt_RadSiteClass;
+    this->vtable1 = (unsigned int)vt_RadSiteClass;
+    this->vtable2 = (unsigned int)vt_RadSiteClass;
+    this->vtable3 = &vt_RadSiteClass;
+    v2 = CellCoord::To_CellObj(&DataGlobal_87C374.__pad_14B0[8132], (short *)(this) + 32);
+    TerrainClass::SetFieldF8(v2, 0);
+    LOBYTE(v3) = 1;
+    AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, v3);
+    v4 = (LightSourceClass *)this->LightSource;
+    if ( v4 )
   {
-    (*(void (__thiscall **)(LightSourceClass *, int))(*(_DWORD *)v4->__pad_0 + 32))(v4, 1); /*0x65b33a*/
-    *(this + 9) = 0; /*0x65b33d*/
+    (*(void (__thiscall **)(LightSourceClass *, int))(*(int *)v4->__pad_0 + 32))(v4, 1);
+    this->LightSource = 0;
   }
-  v6 = this; /*0x65b354*/
-  v5 = ((int (__thiscall *)(DynamicVector **, void ***))RadSiteClass_Array->field_10)(&RadSiteClass_Array, &v6); /*0x65b358*/
-  if ( v5 != -1 && v5 < dword_B04BE0 && v5 < --dword_B04BE0 ) /*0x65b373*/
+    v6 = this;
+    v5 = ((int (__thiscall *)(DynamicVector **, void ***))RadSiteClass_Array->field_10)(&RadSiteClass_Array, &v6);
+    if ( v5 != -1 && v5 < DataGlobal_B04BE0 && v5 < --DataGlobal_B04BE0 )
   {
-    do /*0x65b38b*/
+    do
     {
-      ++v5; /*0x65b37b*/
-      *(_DWORD *)&dword_B04BD4->__pad_0[4 * v5 - 4] = *(_DWORD *)&dword_B04BD4->__pad_0[4 * v5]; /*0x65b37f*/
+    ++v5;
+    *(int *)&DataGlobal_B04BD4->__pad_0[4 * v5 - 4] = *(int *)&DataGlobal_B04BD4->__pad_0[4 * v5];
     }
-    while ( v5 < dword_B04BE0 ); /*0x65b38b*/
+    while ( v5 < DataGlobal_B04BE0 );
   }
-  AbstractClass::DTOR(this); /*0x65b38f*/
+    AbstractClass::DTOR(this);
 }
 } }
 
@@ -15311,23 +15296,20 @@ LABEL_7:
 
 // 0x755D10
 namespace gamemd { void WaveClass::Destroy() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall WaveClass_Destroy(int this)
 {
-  void *v2; // eax
-  void *v3; // eax
-
-  if ( *(_DWORD *)(this + 16) ) /*0x755d16*/
-    __3_YAXPAX_Z(*(void **)(this + 16)); /*0x755d1e*/
-  v2 = *(void **)(this + 20); /*0x755d26*/
-  *(_DWORD *)(this + 16) = 0; /*0x755d29*/
-  if ( v2 ) /*0x755d2e*/
-    __3_YAXPAX_Z(v2); /*0x755d31*/
-  v3 = *(void **)(this + 24); /*0x755d39*/
-  *(_DWORD *)(this + 20) = 0; /*0x755d3c*/
-  if ( v3 ) /*0x755d41*/
-    __3_YAXPAX_Z(v3); /*0x755d44*/
-  *(_DWORD *)(this + 24) = 0; /*0x755d4c*/
+    void *v2;
+    void *v3;
+    if ( this->uniqueId )
+    __3_YAXPAX_Z(*(void **)(this + 16));
+    v2 = *(void **)(this + 20);
+    this->uniqueId = 0;
+    if ( v2 )
+    __3_YAXPAX_Z(v2);
+    v3 = *(void **)(this + 24);
+    this->abstractFlags = 0;
+    if ( v3 )
+    __3_YAXPAX_Z(v3);
+    this->nextArrayIndex = 0;
 }
 } }
 

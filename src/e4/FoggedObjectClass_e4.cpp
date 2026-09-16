@@ -811,36 +811,33 @@ _DWORD *__thiscall FoggedObjectClass::_vt24(_DWORD *this, _DWORD *a2)
 // 0x4D29B0
 char FoggedObjectClass::AddRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall FoggedObjectClass::_vt01(int *this, int a2)
 {
-  int v2; // edi
-  int v3; // esi
-  int v4; // edx
-  _DWORD *v5; // eax
-  _DWORD *v6; // ecx
-  int v7; // edx
-
-  v2 = *(this + 2); /*0x4d29bb*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x4d29c0*/
+    int v2;
+    int v3;
+    int v4;
+    int *v5;
+    int *v6;
+    int v7;
+    v2 = this->vtable2;
+    if ( v2 == *(int *)(a2 + 8) )
   {
-    v3 = 0; /*0x4d29c2*/
-    if ( v2 <= 0 ) /*0x4d29c6*/
-      return 1; /*0x4d29f6*/
-    v4 = *(_DWORD *)(a2 + 4); /*0x4d29c8*/
-    v5 = (_DWORD *)*(this + 1); /*0x4d29cb*/
-    v6 = (_DWORD *)(v4 + 4); /*0x4d29ce*/
-    v7 = v4 - (_DWORD)v5; /*0x4d29d1*/
-    while ( *v5 == *(_DWORD *)((char *)v5 + v7) && v5[1] == *v6 ) /*0x4d29e3*/
+    v3 = 0;
+    if ( v2 <= 0 )
+    return 1;
+    v4 = *(int *)(a2 + 4);
+    v5 = (int *)this->vtable1;
+    v6 = (int *)(v4 + 4);
+    v7 = v4 - (int)v5;
+    while ( *v5 == *(int *)((char *)(v5) + v7) && v5[1] == *v6 )
     {
-      ++v3; /*0x4d29e5*/
-      v6 += 4; /*0x4d29e6*/
-      v5 += 4; /*0x4d29e9*/
-      if ( v3 >= v2 ) /*0x4d29ee*/
-        return 1; /*0x4d29ee*/
+    ++v3;
+    v6 += 4;
+    v5 += 4;
+    if ( v3 >= v2 )
+    return 1;
     }
   }
-  return 0; /*0x4d29f0*/
+    return 0;
 }
 }
 

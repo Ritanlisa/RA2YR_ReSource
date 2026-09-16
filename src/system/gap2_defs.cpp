@@ -4979,25 +4979,23 @@ namespace gamemd { int CellClass::CopyTo() {
 } }
 // 0x488080
 namespace gamemd { void* CellClass::clearOccupationFlags(int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_488080(_DWORD *this, int a2, int a3)
 {
-  *(this + 1) = 0; /*0x48808b*/
-  *(this + 2) = a2; /*0x48808e*/
-  *((_BYTE *)this + 12) = 1; /*0x488091*/
-  *((_BYTE *)this + 13) = 0; /*0x488095*/
-  *this = &vt_VectorClass_FoggedObjectClass; /*0x488098*/
-  if ( a2 ) /*0x48809e*/
+    this->vtable1 = 0;
+    this->vtable2 = a2;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    *(void**)this = &vt_VectorClass_FoggedObjectClass;
+    if ( a2 )
   {
-    if ( a3 ) /*0x4880a6*/
+    if ( a3 )
     {
-      *(this + 1) = a3; /*0x4880a8*/
-      return this; /*0x4880ae*/
+    this->vtable1 = a3;
+    return this;
     }
-    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x4880bd*/
-    *((_BYTE *)this + 13) = 1; /*0x4880c0*/
+    this->vtable1 = __2_YAPAXI_Z(4 * a2);
+    this->IsAllocated = 1;
   }
-  return this; /*0x4880ad*/
+    return this;
 }
 } }
 // 0x48DBE0
@@ -15590,18 +15588,15 @@ LABEL_25:
 } }
 // 0x556B30
 namespace gamemd { int TacticalClass::GetField() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TacticalClass::GetField(_DWORD *this)
 {
-  int result; // eax
-
-  result = *(this + 1); /*0x556b30*/
-  if ( result ) /*0x556b37*/
+    int result;
+    result = this->vtable1;
+    if ( result )
   {
-    *(_DWORD *)(result + 168) = 0; /*0x556b39*/
-    *(this + 1) = 0; /*0x556b3f*/
+    *(int *)(result + 168) = 0;
+    this->vtable1 = 0;
   }
-  return result; /*0x556b42*/
+    return result;
 }
 } }
 // 0x55AF40
@@ -29129,20 +29124,17 @@ LABEL_6:
 } }
 // 0x5C0A70
 namespace gamemd { void TacticalClass::ClearVector() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall TacticalClass::ClearVector(int this)
 {
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x5c0a76*/
-  *(_DWORD *)(this + 16) = 0; /*0x5c0a79*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x5c0a80*/
+    void *v2;
+    v2 = *(void **)(this + 4);
+    this->uniqueId = 0;
+    if ( v2 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v2); /*0x5c0a86*/
-    *(_DWORD *)(this + 4) = 0; /*0x5c0a8e*/
+    __3_YAXPAX_Z(v2);
+    this->vtable1 = 0;
   }
-  *(_BYTE *)(this + 13) = 0; /*0x5c0a91*/
-  *(_DWORD *)(this + 8) = 0; /*0x5c0a94*/
+    this->IsAllocated = 0;
+    this->vtable2 = 0;
 }
 } }
 // 0x5C0AA0
