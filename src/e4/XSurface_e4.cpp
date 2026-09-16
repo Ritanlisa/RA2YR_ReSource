@@ -2,24 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x411560
-int XSurface::Lock(int a2, int a3)
-{
-{
-    ++this->LockCount;
-    return 0;
-}
-}
-
-// 0x411570
-char XSurface::Unlock()
-{
-{
-    --this->LockCount;
-    return 1;
-}
-}
-
 // 0x7BA8C0
 int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
 {
@@ -981,6 +963,24 @@ int XSurface::vt_entry_40(int a1)
 char XSurface::entry_68_(int a1, int a2)
 {
 return 1;
+}
+
+// 0x411560
+int XSurface::Lock(int a2, int a3)
+{
+{
+    ++this->LockCount;
+    return 0;
+}
+}
+
+// 0x411570
+char XSurface::Unlock()
+{
+{
+    --this->LockCount;
+    return 1;
+}
 }
 
 // 0x411590

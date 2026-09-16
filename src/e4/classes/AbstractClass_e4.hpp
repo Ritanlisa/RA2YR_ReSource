@@ -4,11 +4,11 @@
 namespace gamemd {
 struct AbstractClass {
     void* vfptr;  // minimal E2 declaration
-    int getMapCoords();  // 0x426A80
     void Initialize(TechnoClass * aP1, TechnoClass * aP2);  // 0x438E70
     bool addRef(unsigned short * a2, int a3);  // 0x464AC0
     void ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
     void AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1);  // 0x7258D0
+    int getMapCoords();  // 0x426A80
     void DTOR();  // 0x4101F0
     MissionClass * getWeaponRange(char a2);  // 0x5B3A60
     unsigned int * checkVisibility(char a2);  // 0x5D7FD0

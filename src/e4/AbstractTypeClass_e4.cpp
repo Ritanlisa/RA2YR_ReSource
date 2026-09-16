@@ -170,17 +170,6 @@ char __thiscall AbstractTypeClass::LoadFromINI(int this, AbstractTypeClass *aP1)
 }
 }
 
-// 0x410BE0
-int AbstractTypeClass::ProcessPower(AbstractClass * aP1)
-{
-{
-    AbstractClass::ProcessPower((AbstractClass *)this);
-    Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this) + 1);
-    Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this + 100));
-    return Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this + 61));
-}
-}
-
 // 0x410C30
 AbstractTypeClass * AbstractTypeClass::ddtor(char a2)
 {
@@ -250,6 +239,17 @@ char AbstractTypeClass::WriteINI(CCINIClass * aP1)
     if ( this->UINameLabel )
     INIClass::SetString(aP1->__pad_0, v3, (INIClass *)&Format.objectTypeFlags, (INIClass *)(this + 61));
     return 1;
+}
+}
+
+// 0x410BE0
+int AbstractTypeClass::ProcessPower(AbstractClass * aP1)
+{
+{
+    AbstractClass::ProcessPower((AbstractClass *)this);
+    Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this) + 1);
+    Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this + 100));
+    return Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this + 61));
 }
 }
 

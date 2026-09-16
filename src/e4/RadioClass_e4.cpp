@@ -48,37 +48,6 @@ int __thiscall RadioClass::ProcessCmd(#374 *this)
 } // namespace game
 } // namespace ra2
 
-// 0x65AAC0
-namespace ra2 {
-namespace game {
-int RadioClass::ExecuteAction(TimerStruct * aP1, IUnknown * aP2)
-{
-{
-    BaseClass *result;
-    int i;
-    int v6;
-    TimerStruct *v7;
-    int *v8;
-    Object::Unlink((AnimClass *)this);
-    result = *(BaseClass **)(this + 232);
-    for ( i = 0; i < (int)result; ++i )
-  {
-    v6 = this->flashing;
-    v7 = *(TimerStruct **)(v6 + 4 * i);
-    v8 = (int *)(v6 + 4 * i);
-    if ( v7 == aP1 )
-    {
-    if ( (char)aP2 )
-    *v8 = 0;
-    }
-    result = *(BaseClass **)(this + 232);
-  }
-    return (int)result;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x65AB10
 namespace ra2 {
 namespace game {
@@ -270,6 +239,37 @@ void __thiscall RadioClass::SetLinkCount(_DWORD *this, int a2)
     }
     while ( v4 < a2 ); /*0x65ae9c*/
   }
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x65AAC0
+namespace ra2 {
+namespace game {
+int RadioClass::ExecuteAction(TimerStruct * aP1, IUnknown * aP2)
+{
+{
+    BaseClass *result;
+    int i;
+    int v6;
+    TimerStruct *v7;
+    int *v8;
+    Object::Unlink((AnimClass *)this);
+    result = *(BaseClass **)(this + 232);
+    for ( i = 0; i < (int)result; ++i )
+  {
+    v6 = this->flashing;
+    v7 = *(TimerStruct **)(v6 + 4 * i);
+    v8 = (int *)(v6 + 4 * i);
+    if ( v7 == aP1 )
+    {
+    if ( (char)aP2 )
+    *v8 = 0;
+    }
+    result = *(BaseClass **)(this + 232);
+  }
+    return (int)result;
 }
 }
 } // namespace game

@@ -88,40 +88,6 @@ int __thiscall sub_554830(int this)
 }
 }
 
-// 0x555150
-LightSourceClass * LightSourceClass::CopyTo(char a2)
-{
-{
-    int v3;
-    void **v5;
-    *(void**)this = vt_LightSourceClass;
-    *(this + 1) = (unsigned int)vt_LightSourceClass;
-    *(this + 2) = (unsigned int)vt_LightSourceClass;
-    *(this + 3) = &vt_LightSourceClass;
-    AbstractClass::AnnounceExpiredPointer(this, 1);
-    v5 = this;
-    v3 = ((int (__thiscall *)(DynamicVector **, void ***))DataGlobal_ABCA10->field_10)(&DataGlobal_ABCA10, &v5);
-    if ( v3 != -1 && v3 < g_BridgeCellPool && v3 < --g_BridgeCellPool )
-  {
-    do
-    {
-    ++v3;
-    *(int *)&DataGlobal_ABCA14->__pad_0[4 * v3 - 4] = *(int *)&DataGlobal_ABCA14->__pad_0[4 * v3];
-    }
-    while ( v3 < g_BridgeCellPool );
-  }
-    if ( *(char *)(this + 72) )
-  {
-    *(char *)(this + 72) = 0;
-    TacticalClass::ScrollView(this, 0);
-  }
-    AbstractClass::DTOR(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (LightSourceClass *)this;
-}
-}
-
 // 0x555070
 int LightSourceClass::Stat(AbstractClass * aP1)
 {
@@ -186,4 +152,38 @@ return 76;
 int LightSourceClass::StubReturn54()
 {
 return 54;
+}
+
+// 0x555150
+LightSourceClass * LightSourceClass::CopyTo(char a2)
+{
+{
+    int v3;
+    void **v5;
+    *(void**)this = vt_LightSourceClass;
+    *(this + 1) = (unsigned int)vt_LightSourceClass;
+    *(this + 2) = (unsigned int)vt_LightSourceClass;
+    *(this + 3) = &vt_LightSourceClass;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    v5 = this;
+    v3 = ((int (__thiscall *)(DynamicVector **, void ***))DataGlobal_ABCA10->field_10)(&DataGlobal_ABCA10, &v5);
+    if ( v3 != -1 && v3 < g_BridgeCellPool && v3 < --g_BridgeCellPool )
+  {
+    do
+    {
+    ++v3;
+    *(int *)&DataGlobal_ABCA14->__pad_0[4 * v3 - 4] = *(int *)&DataGlobal_ABCA14->__pad_0[4 * v3];
+    }
+    while ( v3 < g_BridgeCellPool );
+  }
+    if ( *(char *)(this + 72) )
+  {
+    *(char *)(this + 72) = 0;
+    TacticalClass::ScrollView(this, 0);
+  }
+    AbstractClass::DTOR(this);
+    if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(this);
+    return (LightSourceClass *)this;
+}
 }

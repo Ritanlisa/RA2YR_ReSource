@@ -2121,43 +2121,6 @@ LABEL_180:
 }
 } // namespace gamemd
 
-// 0x6CE020
-namespace gamemd {
-int SuperClass::PowerDrainUpdate(int * a2)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int result;
-    int v9;
-    v3 = AbstractClass::ProcessPower((AbstractClass *)this);
-    LOBYTE(v3) = this->Granted;
-    Power::FlagProcess(a2, v3);
-    LOBYTE(v4) = this->OneTime;
-    Power::FlagProcess(a2, v4);
-    LOBYTE(v5) = this->IsCharged;
-    Power::FlagProcess(a2, v5);
-    Power::TimerProcess(this->SuperClass_field_0x78);
-    Power::TimerProcess(this->SuperClass_field_0x7C);
-    LOBYTE(v6) = (unsigned char)this->SuperClass_field_0x60;
-    v7 = Power::FlagProcess(a2, v6);
-    LOBYTE(v7) = (unsigned char)this->SuperClass_field_0x6C;
-    Power::FlagProcess(a2, v7);
-    result = this->SuperClass_field_0x68;
-    if ( result )
-  {
-    Power::TimerProcess(*(unsigned char *)(result + 405));
-    v9 = (*(int (__stdcall **)(int))(*(int *)(this->SuperClass_field_0x68 + 4) + 16))(this->SuperClass_field_0x68 + 4);
-    return Power::TimerProcess(v9);
-  }
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x6CE0B0
 namespace gamemd {
 int * SuperClass::Reset()
@@ -2495,6 +2458,43 @@ long long SuperClass::ExecuteAction(unsigned int a2, int a3)
   {
     this->SuperClass_field_0x68 = 0;
     this->AnimationGotInvalid = 1;
+  }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x6CE020
+namespace gamemd {
+int SuperClass::PowerDrainUpdate(int * a2)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    int v6;
+    int v7;
+    int result;
+    int v9;
+    v3 = AbstractClass::ProcessPower((AbstractClass *)this);
+    LOBYTE(v3) = this->Granted;
+    Power::FlagProcess(a2, v3);
+    LOBYTE(v4) = this->OneTime;
+    Power::FlagProcess(a2, v4);
+    LOBYTE(v5) = this->IsCharged;
+    Power::FlagProcess(a2, v5);
+    Power::TimerProcess(this->SuperClass_field_0x78);
+    Power::TimerProcess(this->SuperClass_field_0x7C);
+    LOBYTE(v6) = (unsigned char)this->SuperClass_field_0x60;
+    v7 = Power::FlagProcess(a2, v6);
+    LOBYTE(v7) = (unsigned char)this->SuperClass_field_0x6C;
+    Power::FlagProcess(a2, v7);
+    result = this->SuperClass_field_0x68;
+    if ( result )
+  {
+    Power::TimerProcess(*(unsigned char *)(result + 405));
+    v9 = (*(int (__stdcall **)(int))(*(int *)(this->SuperClass_field_0x68 + 4) + 16))(this->SuperClass_field_0x68 + 4);
+    return Power::TimerProcess(v9);
   }
     return result;
 }

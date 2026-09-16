@@ -549,47 +549,6 @@ int __thiscall sub_7667F0(unsigned __int8 *this)
 }
 } // namespace gamemd
 
-// 0x767320
-namespace gamemd {
-wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
-{
-{
-    int v5;
-    char **v6;
-    const wchar_t **v7;
-    char *v8;
-    wchar_t **v9;
-    char *v11;
-    wchar_t *v12;
-    wchar_t *StringCSF;
-    void *v14;
-    v5 = this->Vf20(a3);
-    v6 = FromStringInt((char **)&v14, v5);
-    ConcatStringAlloc((char **)&a3, this + 4, v6);
-    DeleteAndZero(&v14);
-    v7 = a4;
-    if ( WideString::Length(a4) )
-  {
-    WideString::Assign((wchar_t **)&a4, (wchar_t *)Control);
-    v8 = String::GetOrEmpty((char **)&a3);
-    StringCSF = GetStringCSF((wchar_t *)v8, 0, g_Str_File_WDTGameOptions_cpp, 22);
-    v9 = ConcatWString((wchar_t **)&v14, v7, (const wchar_t **)&a4);
-    WideString::AssignConcat((const wchar_t **)v9, a2, StringCSF);
-    DeleteAndZero::Alt(&v14);
-    DeleteAndZero::Alt((void **)&a4);
-  }
-    else
-  {
-    v11 = String::GetOrEmpty((char **)&a3);
-    v12 = GetStringCSF((wchar_t *)v11, 0, g_Str_File_WDTGameOptions_cpp, 25);
-    WideString::Assign(a2, v12);
-  }
-    DeleteAndZero((void **)&a3);
-    return a2;
-}
-}
-} // namespace gamemd
-
 // 0x767EC0
 namespace gamemd {
 void E4Recv_767EC0::sub_767EC0()
@@ -2018,6 +1977,47 @@ int sub_7672E0()
     DataGlobal_B727F0 = 128;
     DataGlobal_B727F4 = 128;
     return 128;
+}
+}
+} // namespace gamemd
+
+// 0x767320
+namespace gamemd {
+wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
+{
+{
+    int v5;
+    char **v6;
+    const wchar_t **v7;
+    char *v8;
+    wchar_t **v9;
+    char *v11;
+    wchar_t *v12;
+    wchar_t *StringCSF;
+    void *v14;
+    v5 = this->Vf20(a3);
+    v6 = FromStringInt((char **)&v14, v5);
+    ConcatStringAlloc((char **)&a3, this + 4, v6);
+    DeleteAndZero(&v14);
+    v7 = a4;
+    if ( WideString::Length(a4) )
+  {
+    WideString::Assign((wchar_t **)&a4, (wchar_t *)Control);
+    v8 = String::GetOrEmpty((char **)&a3);
+    StringCSF = GetStringCSF((wchar_t *)v8, 0, g_Str_File_WDTGameOptions_cpp, 22);
+    v9 = ConcatWString((wchar_t **)&v14, v7, (const wchar_t **)&a4);
+    WideString::AssignConcat((const wchar_t **)v9, a2, StringCSF);
+    DeleteAndZero::Alt(&v14);
+    DeleteAndZero::Alt((void **)&a4);
+  }
+    else
+  {
+    v11 = String::GetOrEmpty((char **)&a3);
+    v12 = GetStringCSF((wchar_t *)v11, 0, g_Str_File_WDTGameOptions_cpp, 25);
+    WideString::Assign(a2, v12);
+  }
+    DeleteAndZero((void **)&a3);
+    return a2;
 }
 }
 } // namespace gamemd

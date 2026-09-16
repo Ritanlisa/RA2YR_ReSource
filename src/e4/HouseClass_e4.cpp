@@ -149,25 +149,64 @@ int __stdcall HouseClass_RevealShroudForAllies(char a1, int a2)
 }
 } // namespace gamemd
 
-// 0x4F2B40
+// 0x4F54A0
 namespace gamemd {
-unsigned int * HouseClass::vt_placeholder_09()
+int HouseClass::Construct(CCINIClass * aP1)
 {
-{
-    ++this->vtable2;
-    return this;
-}
-}
-} // namespace gamemd
-
-// 0x4F2B50
-namespace gamemd {
-unsigned int * HouseClass::vt_placeholder_10()
-{
-{
-    --this->vtable2;
-    return this;
-}
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// (v3 export truncated pseudocode — commented out; live version via get_context)
+// int __thiscall HouseClass::Construct(int this, CCINIClass *aP1)
+// {
+//   IUnknown *v3; // edx
+//   IUnknown *v4; // ecx
+//   IUnknown *v5; // ecx
+//   _DWORD *v6; // esi
+//   int v7; // eax
+//   IUnknown *v8; // ecx
+//   IUnknown *v9; // edx
+//   IUnknown *v10; // edx
+//   int v11; // eax
+//   int v12; // eax
+//   int v13; // eax
+//   int v14; // eax
+//   int v15; // eax
+//   int v16; // eax
+//   int v17; // edi
+//   int v18; // eax
+//   int v19; // ecx
+//   int v20; // edi
+//   int v21; // ecx
+//   int v22; // eax
+//   int v23; // edx
+//   int v24; // esi
+//   int v25; // eax
+//   int v26; // ecx
+//   int v27; // eax
+//   int v28; // edx
+//   int v29; // edi
+//   int v30; // eax
+//   int v31; // ecx
+//   int v32; // edi
+//   int v33; // ecx
+//   int v34; // eax
+//   int v35; // edx
+//   int v36; // ecx
+//   int v37; // esi
+//   int v38; // eax
+//   int v39; // ecx
+//   int v40; // eax
+//   int v41; // edx
+//   int v42; // ecx
+//   IUnknown *v43; // eax
+//   int eax75; // eax
+//   SuperClass *v44; // esi
+//   int v46; // ecx
+//   int v47; // eax
+//   int v48; // eax
+//   int v49; // edx
+//   CCINIClass *v50; // esi
+//   int v51; //... [33044 chars total]
+// end truncated pseudocode
 }
 } // namespace gamemd
 
@@ -1673,6 +1712,64 @@ LABEL_20:
 }
 } // namespace gamemd
 
+// 0x506EF0
+namespace gamemd {
+char HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// (v3 export truncated pseudocode — commented out; live version via get_context)
+// char __thiscall HouseClass::AutoBuildScanAndSort(int this, int a2, _DWORD *a3)
+// {
+//   VectorClass *v4; // edi
+//   int v5; // ebx
+//   AbstractClass *v6; // esi
+//   _DWORD *v7; // ebx
+//   int v8; // eax
+//   _WORD *v9; // eax
+//   int v10; // ecx
+//   int v11; // eax
+//   double v12; // st7
+//   __int16 v13; // ax
+//   int v14; // edi
+//   _DWORD *v15; // edi
+//   int v16; // eax
+//   _DWORD *v17; // esi
+//   int v18; // ecx
+//   int v19; // eax
+//   int v20; // edx
+//   int v21; // ecx
+//   char *v22; // eax
+//   int v23; // esi
+//   _WORD *v24; // eax
+//   __int16 v25; // cx
+//   __int16 v26; // ax
+//   double v27; // st7
+//   __int64 v28; // rax
+//   unsigned int v29; // edi
+//   int v30; // ebx
+//   void **v31; // eax
+//   int v32; // edx
+//   CCINIClass *v33; // ecx
+//   CCINIClass *v34; // edx
+//   int v35; // eax
+//   int *v36; // esi
+//   char *v37; // ecx
+//   bool v38; // cc
+//   int v39; // ecx
+//   void **v40; // eax
+//   ObjectClass *v41; // edx
+//   int v42; // edi
+//   int v43; // ebx
+//   ObjectClass *v44; // ecx
+//   int v45; // esi
+//   int v46; // eax
+//   int v47; // eax
+//   int v48; // ecx
+//   do... [24279 chars total]
+// end truncated pseudocode
+}
+} // namespace gamemd
+
 // 0x508C30
 namespace gamemd {
 char HouseClass::UpdatePower()
@@ -2928,6 +3025,28 @@ unsigned int HouseClass_24::Write(int a2)
     return (unsigned int)(a2 - this->HouseClass_24_field_0x4) >> 2;
     else
     return 0;
+}
+}
+} // namespace gamemd
+
+// 0x4F2B40
+namespace gamemd {
+unsigned int * HouseClass::vt_placeholder_09()
+{
+{
+    ++this->vtable2;
+    return this;
+}
+}
+} // namespace gamemd
+
+// 0x4F2B50
+namespace gamemd {
+unsigned int * HouseClass::vt_placeholder_10()
+{
+{
+    --this->vtable2;
+    return this;
 }
 }
 } // namespace gamemd

@@ -213,29 +213,6 @@ LABEL_45:
 }
 } // namespace gamemd
 
-// 0x6E56E0
-namespace gamemd {
-int TagClass::ProcessTag(int * a2)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    AbstractClass::ProcessPower((AbstractClass *)this);
-    v3 = (*(int (__stdcall **)(int))(*(int *)(this->buildingType + 4) + 16))(this->buildingType + 4);
-    Power::TimerProcess(v3);
-    v4 = this->firstTrigger;
-    if ( v4 )
-  {
-    v5 = (*(int (__stdcall **)(int))(*(int *)(v4 + 4) + 16))(v4 + 4);
-    v4 = Power::TimerProcess(v5);
-  }
-    LOBYTE(v4) = this->destroyed;
-    return Power::FlagProcess(a2, v4);
-}
-}
-} // namespace gamemd
-
 // 0x6E6220
 namespace gamemd {
 char TagClass::HasValidHouse()
@@ -338,6 +315,29 @@ int TagClass::ddtor(int a1, unsigned int * a2)
   a2[2] = 1610655148;
   a2[3] = -1252326136;
   return 0;
+}
+} // namespace gamemd
+
+// 0x6E56E0
+namespace gamemd {
+int TagClass::ProcessTag(int * a2)
+{
+{
+    int v3;
+    int v4;
+    int v5;
+    AbstractClass::ProcessPower((AbstractClass *)this);
+    v3 = (*(int (__stdcall **)(int))(*(int *)(this->buildingType + 4) + 16))(this->buildingType + 4);
+    Power::TimerProcess(v3);
+    v4 = this->firstTrigger;
+    if ( v4 )
+  {
+    v5 = (*(int (__stdcall **)(int))(*(int *)(v4 + 4) + 16))(v4 + 4);
+    v4 = Power::TimerProcess(v5);
+  }
+    LOBYTE(v4) = this->destroyed;
+    return Power::FlagProcess(a2, v4);
+}
 }
 } // namespace gamemd
 

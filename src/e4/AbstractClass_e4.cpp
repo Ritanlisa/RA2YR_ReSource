@@ -3,16 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 
-// 0x426A80
-namespace gamemd {
-int AbstractClass::getMapCoords()
-{
-{
-    return this->buildtimeDefensesMult;
-}
-}
-} // namespace gamemd
-
 // 0x438E70
 namespace gamemd {
 void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
@@ -1117,6 +1107,16 @@ namespace gamemd {
 int AbstractClass::getAltitude()
 {
 return 4;
+}
+} // namespace gamemd
+
+// 0x426A80
+namespace gamemd {
+int AbstractClass::getMapCoords()
+{
+{
+    return this->buildtimeDefensesMult;
+}
 }
 } // namespace gamemd
 

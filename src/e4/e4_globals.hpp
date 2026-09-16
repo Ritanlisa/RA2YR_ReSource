@@ -2,10 +2,21 @@
 #pragma once
 #include <cstdint>
 
+extern char DataGlobal_815F54[172];  // data: 0x815F54  (DumpAudioDeviceDebug format blob: Chan TYPE/STATE)
+extern char DataGlobal_8331A8[79016];  // data: 0x8331A8  (GameSettings key blob head: ShowHidden)
+extern char DataGlobal_8331C8[78984];  // data: 0x8331C8  (GameSettings::Read key blob entry: UnitActionLines)
+extern char DataGlobal_8331EC[78948];  // data: 0x8331EC  (GameSettings::Read key table blob head: SidebarCameoText)
 extern char DataGlobal_833240[78864];  // data: 0x833240  (GameSettings::Read INI key table)
 extern char DataGlobal_833280[78800];  // data: 0x833280
+extern char DataGlobal_8392C0[54160];  // data: 0x8392C0  (EVA message name blob: EVA_IncomingTransmission; RadarClass xref)
+extern char DataGlobal_83B3B4[45724];  // data: 0x83B3B4  (RulesINI blob head: ContainScan/Dest...; ReadDifficultyModifiers xref)
+extern char DataGlobal_83D4C0[37256];  // data: 0x83D4C0  (RulesINI IQ blob head: SellBack/Harvester/AutoCrush)
+extern char DataGlobal_83D4D8[37240];  // data: 0x83D4D8  (RulesINI IQ-section key blob head: AutoCrush; LoadExtras xref)
 extern char DataGlobal_83D4E4[37228];  // data: 0x83D4E4  (RulesINI IQ-section key table)
+extern char DataGlobal_83F104[30016];  // data: 0x83F104  (network config key blob head: Skirmish/LANScrollText)
 extern char DataGlobal_83F120[30000];  // data: 0x83F120
+extern char DataGlobal_83F148[29960];  // data: 0x83F148  (WOL/network config key blob head: SideEx)
+extern char DataGlobal_83F150[29952];  // data: 0x83F150  (WOL/network config key blob head: ColorEx/Handle)
 extern char DataGlobal_83F158[29944];  // data: 0x83F158  (ScenarioClass network config key table)
 extern double DataGlobal_7E1708;  // data: 0x7E1708
 extern double DataGlobal_7E1710;  // data: 0x7E1710
@@ -718,6 +729,8 @@ extern int DataGlobal_89A304[4];  // data: 0x89A304
 extern int DataGlobal_89A308;  // data: 0x89A308
 extern int DataGlobal_89A310;  // data: 0x89A310
 extern int DataGlobal_89A318;  // data: 0x89A318  (CellClass setOverlayType matrix scalar)
+extern int DataGlobal_89A31C;  // data: 0x89A31C  (CellClass setOverlayType -1 sentinel scalar)
+extern int DataGlobal_89A320;  // data: 0x89A320  (CellClass setOverlayType -1 sentinel scalar)
 extern int DataGlobal_89C428;  // data: 0x89C428
 extern int DataGlobal_A8DB3C;  // data: 0xA8DB3C
 extern int DataGlobal_A8DB44;  // data: 0xA8DB44
@@ -727,6 +740,7 @@ extern int DataGlobal_A8DB60;  // data: 0xA8DB60
 extern int DataGlobal_B048D0;  // data: 0xB048D0
 extern int DataGlobal_B048D4;  // data: 0xB048D4
 extern int DataGlobal_B730E8;  // data: 0xB730E8
+extern int DataGlobal_B78160;  // data: 0xB78160  (WWMouseClass::processFrame -1 sentinel scalar)
 extern int Delimiter;  // data: 0x817F70
 extern int Destination;  // data: 0xA8B8E0
 extern int Direction_X_Offsets;  // data: 0x89F688

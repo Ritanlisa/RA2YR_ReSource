@@ -343,22 +343,6 @@ int __thiscall FileClass_Close(_DWORD *this)
 }
 }
 
-// 0x76F020
-int FileClass::GetState()
-{
-{
-    return this->FilePointer;
-}
-}
-
-// 0x76F070
-int FileClass::SetState()
-{
-{
-    return this->FilePointer;
-}
-}
-
 // 0x401950
 unsigned int * FileClass::loc_401950(char a2)
 {
@@ -381,4 +365,20 @@ return 0;
 char FileClass::Stub(int a1)
 {
 return 0;
+}
+
+// 0x76F020
+int FileClass::GetState()
+{
+{
+    return this->FilePointer;
+}
+}
+
+// 0x76F070
+int FileClass::SetState()
+{
+{
+    return this->FilePointer;
+}
 }

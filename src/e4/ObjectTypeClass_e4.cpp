@@ -115,29 +115,6 @@ int __thiscall sub_474F50(unsigned __int8 ***this, unsigned __int8 *a2, unsigned
 }
 }
 
-// 0x5F61A0
-void ObjectTypeClass::ReleaseWaveAndString()
-{
-{
-    void *v2;
-    void **v3;
-    v2 = (void *)*(void**)this;
-    if ( *(void**)this )
-  {
-    WaveClass::Destroy(*(void**)this);
-    __3_YAXPAX_Z(v2);
-  }
-    v3 = (void **)this->unused_9B;
-    *(void**)this = 0;
-    if ( v3 )
-  {
-    String::Release(v3);
-    __3_YAXPAX_Z(v3);
-  }
-    this->unused_9B = 0;
-}
-}
-
 // 0x5F7090
 int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
 {
@@ -5129,19 +5106,6 @@ int __thiscall ObjectTypeClass::loadTypeMember_57179D0(_DWORD *this, WeaponTypeC
 }
 }
 
-// 0x717A50
-int ObjectTypeClass::loadTypeMember_5717A50(int a2)
-{
-{
-    int result;
-    result = a2;
-    if ( a2 <= 0 )
-    result = 1;
-    this->unused_9B = result;
-    return result;
-}
-}
-
 // 0x717A80
 int ObjectTypeClass::loadTypeMember_5717A80(int a2)
 {
@@ -5479,6 +5443,29 @@ int ObjectTypeClass::CreateInstance(CampaignScore * aP1, CampaignScore * aP2)
 }
 }
 
+// 0x5F61A0
+void ObjectTypeClass::ReleaseWaveAndString()
+{
+{
+    void *v2;
+    void **v3;
+    v2 = (void *)*(void**)this;
+    if ( *(void**)this )
+  {
+    WaveClass::Destroy(*(void**)this);
+    __3_YAXPAX_Z(v2);
+  }
+    v3 = (void **)this->unused_9B;
+    *(void**)this = 0;
+    if ( v3 )
+  {
+    String::Release(v3);
+    __3_YAXPAX_Z(v3);
+  }
+    this->unused_9B = 0;
+}
+}
+
 // 0x5F75C0
 unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
 {
@@ -5579,6 +5566,19 @@ int ObjectTypeClass::loadTypeMember_5717A30(int a2)
 {
     *(void**)this = a2;
     return a2;
+}
+}
+
+// 0x717A50
+int ObjectTypeClass::loadTypeMember_5717A50(int a2)
+{
+{
+    int result;
+    result = a2;
+    if ( a2 <= 0 )
+    result = 1;
+    this->unused_9B = result;
+    return result;
 }
 }
 

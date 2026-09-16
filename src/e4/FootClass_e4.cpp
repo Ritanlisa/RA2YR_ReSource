@@ -84,6 +84,8 @@ int __thiscall FootClass::Destruct(void *this)
 // 0x4D98C0
 namespace ra2 {
 namespace game {
+void FootClass::Destroyed(int a2)
+{
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall FootClass::Destroyed(#375 **this, int a2)
 {
@@ -97,6 +99,26 @@ void __thiscall FootClass::Destroyed(#375 **this, int a2)
     if ( CreateTriggerClassIfFarEnough(7, SHIDWORD(v3), *(_DWORD *)v3) ) /*0x4d98fe*/
       VoxClass::FindAndPlay(aEvaUnitlost, -1); /*0x4d9911*/
   }
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x50DAA0
+namespace ra2 {
+namespace game {
+unsigned int FootClass::checkTurning()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+unsigned int __thiscall sub_50DAA0(unsigned int *this)
+{
+  unsigned int result; // eax
+
+  result = *(this + 120); /*0x50daa0*/
+  if ( result >= 4 ) /*0x50daa8*/
+    return 0; /*0x50daaf*/
+  return result; /*0x50dab1*/
+}
 }
 } // namespace game
 } // namespace ra2

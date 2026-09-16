@@ -113,6 +113,126 @@ int __thiscall CCINIClass_GetDB(_DWORD *this)
 }
 } // namespace gamemd
 
+// 0x4741F0
+namespace gamemd {
+int CCINIClass::Load(MultiplayerGameMode * aP1, char a3, char aP2)
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall CCINIClass::Load(_BYTE *this, MultiplayerGameMode *aP1, char a3, char aP2)
+{
+  CCINIClass *v5; // ebp
+  int Base64Data; // eax
+  CCINIClass *v7; // esi
+  bool v8; // zf
+  CCINIClass v10; // [esp+Ch] [ebp-A8h] BYREF
+  int v11[5]; // [esp+A0h] [ebp-14h] BYREF
+
+  v10.headNode[0] = 0; /*0x474213*/
+  v10.headNode[1] = 0; /*0x474217*/
+  v10.headNode[2] = (int)aP1; /*0x47421b*/
+  LOBYTE(v10.sectionHead[0]) = 0; /*0x47421f*/
+  *(_DWORD *)v10.__pad_0 = &vt_FileStraw; /*0x474223*/
+  v5 = (CCINIClass *)INIClass::LoadFile(this, &v10, (INIClass *)aP2); /*0x474230*/
+  *(this + 64) = 0; /*0x474232*/
+  if ( !v5 || !a3 ) /*0x474244*/
+    goto LABEL_7; /*0x474244*/
+  Base64Data = INIClass::GetBase64Data(this, g_INI_Key_Digest.__pad_0, (int)v11, 0x14u); /*0x47425b*/
+  if ( !Base64Data ) /*0x474262*/
+  {
+    v7 = (CCINIClass *)2; /*0x474264*/
+    goto LABEL_8; /*0x474269*/
+  }
+  if ( Base64Data <= 0 ) /*0x47426e*/
+    goto LABEL_7; /*0x47426e*/
+  INIClass::ClearSection((int)this, &g_INI_Key_Digest, 0); /*0x47427d*/
+  memset(&v10.sectionHead[2], 0, 9); /*0x474286*/
+  v10.CCINIClass_field_4C = 0; /*0x474295*/
+  v10.unknown50 = 0; /*0x474299*/
+  v10.unknown38 = 1732584193; /*0x47429d*/
+  v10.INIClass_field_3C = -271733879; /*0x4742a5*/
+  *(_DWORD *)&v10.ownsFile = -1732584194; /*0x4742ad*/
+  *(_DWORD *)&v10.__pad_41[3] = 271733878; /*0x4742b5*/
+  *(_DWORD *)v10.__pad_48 = -1009589776; /*0x4742bd*/
+  v10.sectionHead[1] = (int)&vt_SHAPipe; /*0x4742c5*/
+  INIClass::WriteToString(this, (CCINIClass *)&v10.sectionHead[1]); /*0x4742cd*/
+  SHA1::ComputeThunk(&v10.sectionHead[1], (ObjectClass *)(this + 65)); /*0x4742da*/
+  *(this + 64) = 1; /*0x4742e3*/
+  Pipe::Dtor(&v10.sectionHead[1]); /*0x4742e7*/
+  v8 = memcmp(v11, this + 65, 0x14u) == 0; /*0x4742fa*/
+  v7 = (CCINIClass *)2; /*0x4742fd*/
+  if ( v8 ) /*0x474302*/
+LABEL_7:
+    v7 = v5; /*0x474304*/
+LABEL_8:
+  FileStraw::Destructor((int)&v10); /*0x474306*/
+  return (int)v7->__pad_0; /*0x474311*/
+}
+}
+} // namespace gamemd
+
+// 0x535B30
+namespace gamemd {
+unsigned int * CCINIClass::CCINIClass()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall CCINIClass::Constructor(_DWORD *this)
+{
+  _DWORD *result; // eax
+  _DWORD *v2; // esi
+  _DWORD *v3; // ecx
+  int v4; // ebx
+  int v5; // edi
+  int v6; // edi
+  int v7; // edi
+
+  result = this; /*0x535b30*/
+  v2 = this + 4; /*0x535b36*/
+  v3 = this + 7; /*0x535b39*/
+  result[1] = 0; /*0x535b3c*/
+  result[2] = 0; /*0x535b3f*/
+  v2[1] = 0; /*0x535b42*/
+  v2[2] = 0; /*0x535b45*/
+  *v2 = &vt_GenericNode; /*0x535b48*/
+  v3[1] = 0; /*0x535b4e*/
+  v3[2] = 0; /*0x535b51*/
+  *v3 = &vt_GenericNode; /*0x535b54*/
+  result[3] = &vt_GenericList; /*0x535b5d*/
+  if ( v3 ) /*0x535b64*/
+  {
+    v4 = v3[1]; /*0x535b66*/
+    if ( v4 ) /*0x535b6b*/
+    {
+      v5 = v3[2]; /*0x535b6d*/
+      if ( v5 ) /*0x535b72*/
+      {
+        *(_DWORD *)(v5 + 4) = v4; /*0x535b74*/
+        *(_DWORD *)(v3[1] + 8) = v3[2]; /*0x535b7d*/
+        v3[2] = 0; /*0x535b80*/
+        v3[1] = 0; /*0x535b83*/
+      }
+    }
+  }
+  v6 = v2[1]; /*0x535b86*/
+  v3[2] = v2; /*0x535b89*/
+  v3[1] = v6; /*0x535b8c*/
+  v7 = v2[1]; /*0x535b8f*/
+  if ( v7 ) /*0x535b94*/
+    *(_DWORD *)(v7 + 8) = v3; /*0x535b96*/
+  v2[1] = v3; /*0x535b99*/
+  result[3] = &vt_List_INIClass_INISection; /*0x535b9c*/
+  result[10] = 0; /*0x535ba4*/
+  result[11] = 0; /*0x535ba7*/
+  result[12] = 0; /*0x535baa*/
+  *((_BYTE *)result + 52) = 0; /*0x535bad*/
+  result[14] = 0; /*0x535bb0*/
+  result[15] = 0; /*0x535bb4*/
+  *((_BYTE *)result + 64) = 0; /*0x535bb7*/
+  *result = &CCINIClass_Vtable; /*0x535bba*/
+  return result; /*0x535ba3*/
+}
+}
+} // namespace gamemd
+
 // 0x41F490
 namespace gamemd {
 AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)

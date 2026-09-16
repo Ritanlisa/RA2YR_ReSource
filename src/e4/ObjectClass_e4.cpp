@@ -2,25 +2,6 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 
-// 0x41BE00
-namespace ra2 {
-namespace game {
-int ObjectClass::GetCoordsThunk2()
-{
-{
-    int *v1;
-    char v3[12];
-    int *v4;
-    v1 = (int *)this->Delete(v3);
-    *v4 = *v1;
-    v4[1] = v1[1];
-    v4[2] = v1[2];
-    return (int)v4;
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x483610
 namespace ra2 {
 namespace game {
@@ -1719,26 +1700,6 @@ int __thiscall ObjectClass::UpdateProductionDisplay(#374 *this)
 } // namespace game
 } // namespace ra2
 
-// 0x5F6A10
-namespace ra2 {
-namespace game {
-int ObjectClass::GetCell()
-{
-{
-    int *v1;
-    int v3;
-    int v4;
-    char v5[12];
-    v1 = (int *)this->IsReady(v5, 0);
-    LOWORD(v3) = *v1 / 256;
-    HIWORD(v3) = v1[1] / 256;
-    v4 = v3;
-    return (int)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v4);
-}
-}
-} // namespace game
-} // namespace ra2
-
 // 0x5F6BD0
 namespace ra2 {
 namespace game {
@@ -2387,6 +2348,25 @@ bool ObjectClass::HasLinkedObject(VectorClass * aP0)
 } // namespace game
 } // namespace ra2
 
+// 0x41BE00
+namespace ra2 {
+namespace game {
+int ObjectClass::GetCoordsThunk2()
+{
+{
+    int *v1;
+    char v3[12];
+    int *v4;
+    v1 = (int *)this->Delete(v3);
+    *v4 = *v1;
+    v4[1] = v1[1];
+    v4[2] = v1[2];
+    return (int)v4;
+}
+}
+} // namespace game
+} // namespace ra2
+
 // 0x4264D0
 namespace ra2 {
 namespace game {
@@ -2541,6 +2521,26 @@ int ObjectClass::GetZAboveGround()
     if ( this->onBridge )
     v2 -= DataGlobal_AC13BC;
     return v2;
+}
+}
+} // namespace game
+} // namespace ra2
+
+// 0x5F6A10
+namespace ra2 {
+namespace game {
+int ObjectClass::GetCell()
+{
+{
+    int *v1;
+    int v3;
+    int v4;
+    char v5[12];
+    v1 = (int *)this->IsReady(v5, 0);
+    LOWORD(v3) = *v1 / 256;
+    HIWORD(v3) = v1[1] / 256;
+    v4 = v3;
+    return (int)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v4);
 }
 }
 } // namespace game

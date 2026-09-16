@@ -470,22 +470,6 @@ char __thiscall DSurface_RestoreIfLost(int *this)
 }
 }
 
-// 0x4BB080
-int DSurface::BlitPart(int a2, int a3, int a4, int a5, int a6)
-{
-{
-    int v7;
-    int v8;
-    int v9;
-    char v11[28];
-    char v12[4];
-    v7 = *(void**)this;
-    v8 = (*(int (__thiscall **)(int, char *, int, int, int))(*(int *)(a3) + 120))(a3, v11, a4, a5, a6);
-    v9 = this->GetRect(v12, a5, a3, v8);
-    return (*(int (__thiscall **)(int *, int))(v7 + 12))(this, v9);
-}
-}
-
 // 0x4BB0D0
 char DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSurface * aP5, int a7, char a8)
 {
@@ -5190,6 +5174,22 @@ long long DSurface::ConstructFromHandle()
     result = Math::RoundToInt(v0 * DataGlobal_8A0968 * 0.5);
     DataGlobal_8A0DC8 = result;
     return result;
+}
+}
+
+// 0x4BB080
+int DSurface::BlitPart(int a2, int a3, int a4, int a5, int a6)
+{
+{
+    int v7;
+    int v8;
+    int v9;
+    char v11[28];
+    char v12[4];
+    v7 = *(void**)this;
+    v8 = (*(int (__thiscall **)(int, char *, int, int, int))(*(int *)(a3) + 120))(a3, v11, a4, a5, a6);
+    v9 = this->GetRect(v12, a5, a3, v8);
+    return (*(int (__thiscall **)(int *, int))(v7 + 12))(this, v9);
 }
 }
 

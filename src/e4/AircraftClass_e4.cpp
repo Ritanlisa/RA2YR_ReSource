@@ -331,22 +331,6 @@ LABEL_36:
 }
 } // namespace gamemd
 
-// 0x417F80
-namespace gamemd {
-int AircraftClass::CanEnterCell(short * a1, IUnknown * aP2, InfantryClass * aP3)
-{
-{
-    int v6;
-    if ( !(unsigned char)House::IsHumanPlayer(*(HouseClass **)(this + 540)) )
-    return 0;
-    v6 = FootClass::HandleCursorWithCheck((int *)this, a1, aP2, aP3);
-    if ( v6 == 5 && !*(int *)this->SelectWeaponSlot(0) )
-    return 0;
-    return v6;
-}
-}
-} // namespace gamemd
-
 // 0x4196B0
 namespace gamemd {
 int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5, int a6)
@@ -384,20 +368,6 @@ int __thiscall AircraftClass::ValidateLandingCell(int this, _DWORD *a2, int a3, 
     return 0; /*0x4197ac*/
   else
     return 7; /*0x41979e*/
-}
-}
-} // namespace gamemd
-
-// 0x41A590
-namespace gamemd {
-char * AircraftClass::CheckLandingClearance(int a2, int a3, int a4)
-{
-{
-    char *result;
-    result = MissionClass::GetMissionControl(this);
-    if ( result[9] )
-    return (char *)this->sub_4176F0(0, 1);
-    return result;
 }
 }
 } // namespace gamemd
@@ -871,6 +841,36 @@ char AircraftClass::ValidateMovement(int _10, int * a2, int a4)
     default: result = FootClass::ValidateMove(this, v5, a2, a4);
     break;
   }
+    return result;
+}
+}
+} // namespace gamemd
+
+// 0x417F80
+namespace gamemd {
+int AircraftClass::CanEnterCell(short * a1, IUnknown * aP2, InfantryClass * aP3)
+{
+{
+    int v6;
+    if ( !(unsigned char)House::IsHumanPlayer(*(HouseClass **)(this + 540)) )
+    return 0;
+    v6 = FootClass::HandleCursorWithCheck((int *)this, a1, aP2, aP3);
+    if ( v6 == 5 && !*(int *)this->SelectWeaponSlot(0) )
+    return 0;
+    return v6;
+}
+}
+} // namespace gamemd
+
+// 0x41A590
+namespace gamemd {
+char * AircraftClass::CheckLandingClearance(int a2, int a3, int a4)
+{
+{
+    char *result;
+    result = MissionClass::GetMissionControl(this);
+    if ( result[9] )
+    return (char *)this->sub_4176F0(0, 1);
     return result;
 }
 }

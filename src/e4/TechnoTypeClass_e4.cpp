@@ -1569,21 +1569,6 @@ int __thiscall TechnoTypeClass::SaveLoad_Prefix_0(
 }
 }
 
-// 0x717AF0
-unsigned int * TechnoTypeClass::Constructor()
-{
-{
-    this->vtable1 = 0;
-    this->vtable2 = 0;
-    this->vtable3 = 1;
-    this->IsAllocated = 0;
-    this->abstractFlags = 10;
-    this->uniqueId = 0;
-    *(void**)this = &vt_TypeList_ParticleSystemTypeClass_const;
-    return this;
-}
-}
-
 // 0x41CB50
 char TechnoTypeClass::vt_entry_A0()
 {
@@ -1631,6 +1616,21 @@ TechnoTypeClass * TechnoTypeClass::ddtor(char a2)
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (TechnoTypeClass *)this;
+}
+}
+
+// 0x717AF0
+unsigned int * TechnoTypeClass::Constructor()
+{
+{
+    this->vtable1 = 0;
+    this->vtable2 = 0;
+    this->vtable3 = 1;
+    this->IsAllocated = 0;
+    this->abstractFlags = 10;
+    this->uniqueId = 0;
+    *(void**)this = &vt_TypeList_ParticleSystemTypeClass_const;
+    return this;
 }
 }
 
