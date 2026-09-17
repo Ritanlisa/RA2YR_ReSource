@@ -3508,7 +3508,7 @@ int sub_4E6760()
     DataGlobal_8B4145 = 0;
     DataGlobal_8B4138 = (int)&vt_DynamicVectorClass_TubeClass;
     DataGlobal_8B414C = 10;
-    g_UnitTypeCount = 0;
+    g_Tubes_Count = 0;
     return atexit(sub_4E67A0);
 }
 }

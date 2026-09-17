@@ -2891,3 +2891,103 @@ readiness 无幽灵无双 def；新增 completed 全验（2/2）+ 随机 50 存�
 address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）、#116（W2.3
 清偿完毕）、#118（事件不可见 3 待独立通道）、TechnoClass 中区链边界债
 （RadioClass 228 vs 240，下一轮）。
+
+## 执行日志 — 2026-09-17 G18 准备轮：后续工作计划定稿 + 准备材料备齐（docs/g18_prep.md）
+
+> 纯准备轮，无翻译产出。用户指令：构建后续工作详细计划 + 做好准备 + 更新 md。
+
+- **材料刷新**：infantry.cpp H5 队列 fresh 24（MCP 扫描；较 G17 记载 20 多出 4 个
+  W2 复位小函数——首选入口 0x51faf0(5行)/0x4598a0(8)/**0x484ab0(8，上轮审计假完成
+  specimen 真翻，IDA 真值已在案：this+278 word / [0x8B4148] / this+236==10）**；
+  词汇前置三件：slot 196/1064 + member 1768/3644 + 全局 0x8B4148）。
+- **中区债定位**：ml RadioClass 最深条目 radioLinks@224（4 槽 → 尾界 240）vs
+  til 228，链边界差 12——P1b 中区轮 = RadioClass ctor 写图终审（G16 范式）。
+- **口径差诊断**：stats pending 4,827（marker 块扫描）vs pool 算术 4,920，
+  差 93 = pool-pending 无可识别 pending 块的函数集合（疑 dup-ann 杂交体 +
+  gap2 ns 包裹形态不被 marker 正则识别）——列入小项清偿，不阻塞主线。
+- **W0 池基线**：G18 prep 轮已后台复跑（11,691 completed），结果回填 g18_prep.md W0。
+- 文档接入：AGENTS 接手指引 #2/#4 刷新为 g18_prep 口径。
+
+### G18 准备轮续：W0 全池复跑终值 + dup-ann 家族清偿（同日）
+
+- **W0 复跑（11,691 completed）**：10 FAIL → 定性两类：**dup-ann 杂交体 6 例**
+  （签名裸闭合 + 体被前一函数地址的小写重复注解劫持：0x41BFC0/0x53A130/0x5B2F90/
+  0x5C0EE0/0x773B70/0x7AC4D0）+ **名字错位型 4 例**（0x483710/0x4863A0/0x48B070
+  的 E4Recv 合成类名 vs signals 裸名、0x48A8D0 的 ComputeMathFacingAngle vs
+  Math_ComputeFacingAngle——按名查找失败→by-addr 回退误锚进前函数体→1 块提取，
+  G11 已知假阳性形态）。
+- **当场清偿**：dup-ann 全库模式扫描共 10 例（池 6 + 潜伏 4：nullsub_51/11/130/38），
+  全部体归位 + 删游离重复注解，20 函数复验 PASS，残余扫描归零；annotations_audit
+  双零保持（matched 10,141）。
+- **有效基线：11,687 PASS / 4 FAIL**（全部名字错位型，W0a = 下会话首项：
+  rename_symbol.py 四方同步，不动函数体；清零后全池复跑全 PASS 才提交重锚）。
+- 计划与材料全部入 **docs/g18_prep.md**（H5 fresh 24 队列/词汇前置三件/P3 vtable/
+  P1b RadioClass 中区轮/#118 三例/小项清偿）；AGENTS 接手指引 #2/#4 已刷新。
+
+### G18 准备轮续二：计划扩容（用户新增工作量指令）
+
+- g18_prep.md 新增六个批次 + 工作量总账（**≈12-16 会话**）：E1 全局命名轮
+  （#67-#71 ~351 函数解锁，DataGlobal 批产范式）/ W0b gap2 生成器补 this 重生成
+  （#50/#55，裁决包就绪待用户裁决，~300-550 回收 = 最大单笔）/ H6 ternary ~124 /
+  H7 A2 owner 考古（foreign 95 + 向量族 44）/ H3r 机械 Fry 重盘点（free-this 46 +
+  IDA-ism 24 + broken-arrow 31，param-mismatch 已归零）/ EV T14X B10/B10b 重提取
+  激活（无头副本 ~100s，前置于大规模 refresh）/ P3 扩容（每会话 5-10 表 +
+  rtti_hierarchy 扩 108 表）。
+- 排序原则：W0a → EV（IDA 证据趁早）→ E1/W0b（两大解锁）→ P3/P2 主体 →
+  H6/H7/H3r 并行填充。验收清单已同步。
+
+## 执行日志 — 2026-09-17 G18 首日：W0a 全绿重锚 + EV 激活 + 词汇前置 + H5×5 + P1b 边界
+
+> 用户指令：IDA+CSP 证据补全 → OO 语法批量替换前置 → 提交重锚 tag → RA2MCP
+> pending 翻译（详见 g18_prep 清单）。IDA 全程在线，idat 无头副本并行。
+
+- **W0a 名字错位清零 → 全池首次全绿**：3×E4Recv signals 补类限定
+  （E4Recv_483710/4863A0/48B070）+ 0x48A8D0 ComputeMathFacingAngle→
+  Math_ComputeFacingAngle 四方同步（e4 Math_ 家族约定裁决方向）→ 4/4 单验 PASS
+  → **全池复跑 11,691/11,691 ALL PASS（G15 以来首次零 FAIL 基线）→ 提交重锚
+  auto-fill-baseline**。
+- **小项清偿**：#115/#116/#119/#120 归档（resolution 按 g18_prep 话术）；
+  stats 口径差诊断结论 = **池常数 16,611 为 G15 陈旧账面值、无脚本定义**，
+  活口径 = marker 块扫描 / signals 非完成集（已写 AGENTS 脚注）。
+- **EV T14X 重提取激活**：idat 无头副本（replica i64）EXTRACT_ONLY 跑通，
+  约束 **1,214,077**（+19K，B10/B10b 全激活）→ 引擎重跑收敛（typed eq
+  1,130,674 / TOP=0 保持 / type_map 732,103）→ **verify_csp 七通道 ALL PASS**
+  → class_db 重算落盘。
+- **词汇前置全部落地**（二进制定谳三件 + 额外收获）：
+  - **g_Tubes @0x8B4138 / g_Tubes_Count @0x8B4148**：TubeClass::Construct
+    AddItem 内联解码 + CRT 初始化器 sub_4E6760 双铁证 = 全局
+    DynamicVectorClass<TubeClass*>（vtable/Items/Capacity/2 bool/Count/Growth=10）；
+    **旧名 g_UnitTypeCount 为误名**（真 UnitTypes 数组 = g_UnitTypeCount2@0xA83CE4）；
+    IDA make_data 24B 结构 + make_data 拆 blob 落名。
+  - **slot@196 = TechnoClass::IsDisguised**（0x41C010，return isDisguisedFlag@472）：
+    Techno/Unit/Foot/Infantry/Aircraft/Building 全家族 6 表共指 → Aircraft 旧名
+    误归属，已四方改名 + 旧 e4 镜像误读 drainAnim@468 修正；vo 补 TechnoClass。
+  - slot@1064 = InfantryClass::FindPathToBuilding（真覆写，vo 补条）。
+  - **InfantryClass@1768 = waterState**（0↔1 迁移播 type EnterWater/LeaveWater
+    音效 @0xEA4/0xEA8 定谳；ctor/CancelMovement/MoveToCell 复位 2）。
+  - member@3644 = Sequence（词汇已存在）。
+- **⚠ 发现并修复 signals._member_by_name['InfantryClass'] 镜像污染**（G10 双体系
+  漂移重演）：owner@548/target@712/focus@540 全部漂移（真值 540/692/536，
+  本人反汇编亲证 [esi+21Ch]/[esi+2B4h]）+ 86 条基类区污染条目（spawnManager@548
+  等 UnitClass 词汇喷涂）→ 外科手术修复 + **家族回归 66/66 PASS** 零翻车。
+- **H5 真翻 5 函数全 PASS + mark_completed**（completed 11,691→11,696）：
+  0x484ab0 **CellClass::IsTunnelEntrance**（IDA 名 InfantryClass::IsInBounds 误归属
+  迁类手术：tubeIndex>=0 && < g_Tubes_Count && landType==Tunnel）；
+  0x4598A0 **BuildingClass::CanAbsorbUnits**（误归属迁类：Type->UnitAbsorb||
+  InfantryAbsorb，DrawPips WhatAmI()==6 门控实证）；
+  0x51FAF0 GetTypePtr（vt34 thunk，签名 int→InfantryTypeClass*）；
+  0x51F540 **ProcessEnterOrRepair 三分支真翻**（Infiltrate/Occupier/Assaulter +
+  vt496 ForceMission(Capture) + vt1152 AssignDestination_SyncLog + SequenceAnim
+  {Deploy..Undeploy} 全词汇；**旧半成品误词汇体清除**；教训 = 虚调用必须
+  `this->` 前缀发 vfptr 事件、devirtualized 直调用 Class::Method 限定式）；
+  0x41C010 TechnoClass::IsDisguised（迁类真翻）。
+- **P1b RadioClass 边界债清偿**：ctor 0x65A750 写图终审 = links 212/216/220
+  （3 ptr）+ **radioLinks = 定容 VectorClass<TechnoClass*>（16B，Capacity=1）**
+  224-240 → **尾界 228→240 四源定谳**（class_layouts + til 重建 + idb_save；
+  "4 槽→240"的 ml 判断正确、til 228 为错值；附带实证 TechnoClass 中区 ml
+  228-256 双ffset喷涂污染 = 下轮 P1b 主体）。
+- 签名修复：CanRepair 补 repairer 参、AssignDestination_SyncLog 补 (dest, sync_flag)
+  参（与既有调用点一致化）。
+- **事故记录**：python open('w') latin-1 写含中文注释新文本 → 编码错误中断 →
+  AircraftClass_e4.cpp 截断 0 字节 → git checkout 秒恢复；教训 = **写 latin-1
+  文件前先 s2.encode('latin-1') 验证再 open(w)**。

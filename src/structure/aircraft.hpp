@@ -108,7 +108,6 @@ public:
     int ProcessDockCheck();  // 0x41ADC0
     int UpdateDocking();  // 0x41B9F0
     int CheckDockState();  // 0x41C070
-    int CheckReloadState();  // 0x41C010
     int CheckReloadTimer();  // 0x41C020
 
     // === Phase 3: Per-Frame & AI ===

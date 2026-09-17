@@ -13808,7 +13808,7 @@ void BuildingClass::ProcessRepair() {}
 
 // IDA 0x44f480: can repair - health below max
 // 0x457ce0
-bool BuildingClass::CanRepair() {
+bool BuildingClass::CanRepair(TechnoClass* repairer) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall BuildingClass_CanRepair(_DWORD *this, int a2)
 {
@@ -23975,6 +23975,15 @@ int BuildingClass::AssignTarget_SyncLog(int syncFlag)
     (void)syncFlag;
     int result = 0;
     return result;
+}
+
+// 0x4598A0 (called only when WhatAmI()==AbstractType::Building; DrawPips/RepairBridge gate)
+bool BuildingClass::CanAbsorbUnits()
+{
+    /* IDA truth (live verified):
+       v1 = *(BuildingTypeClass**)(this + 1312);   // this->Type
+       return *(BYTE*)(v1 + 5806) || *(BYTE*)(v1 + 5807);  // UnitAbsorb || InfantryAbsorb */
+    return Type->UnitAbsorb || Type->InfantryAbsorb;
 }
 
 } // namespace gamemd

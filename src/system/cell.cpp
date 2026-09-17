@@ -2,6 +2,8 @@
 #include "object/object.hpp"
 #include "object/techno.hpp"
 
+#include "structure/globals_structure.hpp"  // g_Tubes_Count (global Tubes vector Count @ 0x8B4148)
+
 #include "structure/building.hpp"
 #include "structure/unit.hpp"
 #include "structure/infantry.hpp"
@@ -1372,6 +1374,17 @@ bool CellClass::Tile_Is_NotWater() const { return !Tile_Is_Water(); }
 bool CellClass::Tile_Is_DestroyableCliff() const
 {
     return ((uint32_t)(flags) & 0x08000000) != 0;
+}
+
+// 0x484AB0
+int CellClass::IsTunnelEntrance()
+{
+    /* IDA truth (live verified 2026-09-18):
+       v1 = *(WORD*)(this+278);   // tubeIndex (CellClass own member)
+       return v1 >= 0 && v1 < g_Tubes.Count && *(DWORD*)(this+236) == 10;  // landType == LandType::Tunnel */
+    return tubeIndex >= 0
+        && tubeIndex < (int)g_Tubes_Count
+        && landType == (int)LandType::Tunnel;
 }
 
 } // namespace gamemd

@@ -4596,8 +4596,6 @@ void nullsub_10()
 // 0x4A8EA0
 namespace gamemd {
 void nullsub_11()
-}
-// 0x4a8d40
 {
   ;
 }

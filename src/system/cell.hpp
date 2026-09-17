@@ -156,6 +156,7 @@ public:
     void ProcessColourComponents(int* arg0, int* intensity, int* ambient, int* a5, int* a6, int* tint_r, int* tint_g, int* tint_b);
     // wrapper: delegates to FootClass::updateThreat at 0x70F7E0
     TubeClass* GetTunnel();
+    int IsTunnelEntrance();  // 0x484AB0
     // wrapper: delegates to FootClass::updateThreat at 0x70F7E0
     RectangleStruct* GetContainingRect(RectangleStruct* dest) const;
     const wchar_t* GetUIName() const;  // 0x484FF0

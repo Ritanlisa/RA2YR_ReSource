@@ -53,7 +53,6 @@ public:
     int DeployAnimation();  // 0x514310
     int ComputeDeploySpeedFactor();  // 0x521D80
     int GetDeployWeaponIndex();  // 0x5218E0
-    bool updateDeployAnimation();  // 0x4598A0
 
     // === Phase 3: Firing / Combat ===
     virtual int FireAtTargetPos();  // 0x522600
@@ -102,10 +101,9 @@ public:
     int EvaluateTarget();  // 0x51BF90
     int SelectAutoTarget(unsigned int flags, __int64 a3);  // 0x51E140
     virtual int AssignTarget_SyncLog(int syncFlag) override;  // 0x51B1F0
-    virtual int AssignDestination_SyncLog();  // 0x51AA40
+    virtual int AssignDestination_SyncLog(AbstractClass* dest, int sync_flag);  // 0x51AA40
     int ValidatePlacement();  // 0x51CBA0
     int ValidateAttackPosition();  // 0x484AE0
-    int IsInBounds();  // 0x484AB0
 
     // === Phase 3: Stream & Save ===
     virtual int LoadFromStream();  // 0x521960
@@ -115,7 +113,7 @@ public:
     // === Phase 3: Cursor & UI ===
     virtual int HandleCursorOverCell();  // 0x51F800
     virtual int GetActionOnObject_EMP(AbstractClass* object, int flags);  // 0x51E3B0
-    virtual int GetTypePtr();  // 0x51FAF0
+    virtual InfantryTypeClass* GetTypePtr();  // 0x51FAF0
     virtual int GetTooltipName();  // 0x51F2C0
     int GetTransformMatrix();  // 0x521D30
     int ComputeTransform();  // 0x523250

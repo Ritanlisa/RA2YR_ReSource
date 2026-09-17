@@ -5850,5 +5850,12 @@ int TechnoClass::GetIonCannonValue(AIDifficulty difficulty) const { return 0; }
 DirStruct TechnoClass::getFacing() const { DirStruct ret; getFacing(&ret); return ret; }
 DirStruct TechnoClass::GetRealFacing() const { DirStruct ret; GetRealFacing(&ret); return ret; }
 
+// 0x41C010 (vtable slot 196; shared by all Techno-family primary tables)
+bool TechnoClass::IsDisguised() const
+{
+    /* IDA truth: LOBYTE(result) = *((BYTE*)this + 472); return result; */
+    return isDisguisedFlag;
+}
+
 } // namespace game
 } // namespace ra2

@@ -1943,13 +1943,13 @@ int __thiscall MapClass_ProcessRegion(_DWORD *this)
     {
       if ( !Cell::IsInRange((int *)v5) && !Cell::IsInRange2((int *)v5) ) /*0x56d74c*/
       {
-        if ( InfantryClass::IsInBounds(v5) ) /*0x56d75b*/
+        if ( CellClass::IsTunnelEntrance(v5) ) /*0x56d75b*/
         {
           if ( (NeighbourContent = Cell::GetNeighbourContent((_DWORD *)v5, 2u), /*0x56d7b3*/
-                InfantryClass::IsInBounds((int)NeighbourContent))
-            && (v7 = Cell::GetNeighbourContent((_DWORD *)v5, 6u), InfantryClass::IsInBounds((int)v7))
-            || (v8 = Cell::GetNeighbourContent((_DWORD *)v5, 4u), InfantryClass::IsInBounds((int)v8))
-            && (v9 = Cell::GetNeighbourContent((_DWORD *)v5, 0), InfantryClass::IsInBounds((int)v9)) )
+                CellClass::IsTunnelEntrance((int)NeighbourContent))
+            && (v7 = Cell::GetNeighbourContent((_DWORD *)v5, 6u), CellClass::IsTunnelEntrance((int)v7))
+            || (v8 = Cell::GetNeighbourContent((_DWORD *)v5, 4u), CellClass::IsTunnelEntrance((int)v8))
+            && (v9 = Cell::GetNeighbourContent((_DWORD *)v5, 0), CellClass::IsTunnelEntrance((int)v9)) )
           {
             v42 = *(_DWORD *)(InfantryClass::GetType((__int16 *)v5) + 40); /*0x56d7cd*/
             v10 = Cell::PosToIndex((__int16 *)&v42); /*0x56d7dc*/

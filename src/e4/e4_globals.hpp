@@ -1807,7 +1807,7 @@ extern int g_UnitClassPool;  // data: 0x8B410C
 extern int g_UnitSelectionState;  // data: 0xB1CFB8
 extern int g_UnitTooltipState;  // data: 0xB0FE6C
 extern int g_UnitTypeCount2;  // data: 0xA83CE4
-extern int g_UnitTypeCount;  // data: 0x8B4148
+extern int g_Tubes_Count;  // data: 0x8B4148
 extern int g_UnitTypeInitState;  // data: 0xA83D08
 extern int g_VeinholeMonsterPool;  // data: 0xB1D2F0
 extern int g_VeinholePool;  // data: 0xB1D2A0

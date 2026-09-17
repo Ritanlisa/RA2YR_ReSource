@@ -869,7 +869,7 @@ int ComputeTechnoClassDamageFalloff(int a1, int a2, int a3, int a4);  // 0x48918
 int PlaySoundEffectAt(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x489280
 int GetWarheadVersusMultiplier(int a1, int a2, int a3, int a4);  // 0x48a4f0
 int CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x48a620
-int ComputeMathFacingAngle(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x48a8d0
+int Math_ComputeFacingAngle(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x48a8d0
 int SolveMathTrajectory(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x48a9d0
 bool globalHelper_08ABC0(int a1, int a2, int a3, int a4);  // 0x48abc0
 int sub_48B0C0();  // 0x48b0c0

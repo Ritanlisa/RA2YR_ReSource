@@ -317,8 +317,6 @@ return 0;
 // 0x773B70
 namespace gamemd {
 int WebBrowser::Commit()
-}
-// 0x773b60
 {
 return 0;
 }

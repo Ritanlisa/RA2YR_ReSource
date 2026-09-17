@@ -2291,8 +2291,6 @@ return 1;
 // 0x5C0EE0
 namespace gamemd {
 char ScenarioClass::initTriggers()
-}
-// 0x5c0ed0
 {
 return 1;
 }

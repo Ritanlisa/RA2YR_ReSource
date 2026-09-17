@@ -5536,8 +5536,6 @@ void nullsub_37()
 // 0x6B8B20
 namespace gamemd {
 void nullsub_38()
-}
-// 0x6b8b10
 {
   ;
 }

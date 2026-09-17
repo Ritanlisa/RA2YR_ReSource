@@ -4515,13 +4515,6 @@ int AircraftClass::CheckDockState()
     return 0;
 }
 
-// IDA: 0x41C010 (CheckReloadState, 7B)
-int AircraftClass::CheckReloadState()
-{
-    // Check reload state
-    return 0;
-}
-
 // IDA: 0x41C020 (CheckReloadTimer, 9B)
 int AircraftClass::CheckReloadTimer()
 {

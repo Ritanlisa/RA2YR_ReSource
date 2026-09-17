@@ -232,9 +232,6 @@ return 450;
 namespace ra2 {
 namespace game {
 int MissionClass::Return450L()
-}
-}
-// 0x5b2f50
 {
 return 450;
 }

@@ -2164,18 +2164,6 @@ retn    4
 */
 }
 
-// 0x4598a0
-bool InfantryClass::updateDeployAnimation()
-{
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall InfantryClass::updateDeployAnimation(_DWORD *this)
-{
-  int v1; // eax
-
-  v1 = *(this + 328); /*0x4598a0*/
-  return *(_BYTE *)(v1 + 5806) || *(_BYTE *)(v1 + 5807); /*0x4598bc*/
-}
-}
 // 0x522600
 int __thiscall InfantryClass::FireAtTargetPos(int *this, int a2, int a3, int a4)
 {
@@ -4480,57 +4468,42 @@ retn
 */
 }
 
-// 0x51f540
+// 0x51F540
 int InfantryClass::ProcessEnterOrRepair()
- {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall InfantryClass::ProcessEnterOrRepair(#375 **this)
 {
-  int v2; // ecx
-  _BYTE *v3; // eax
-  int v5; // eax
-
-  if ( !(unsigned __int8)House::IsCurrentPlayer(*(this + 135)) /*0x51f591*/
-    && (v2 = (int)*(this + 173)) != 0
-    && (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 44))(v2) == 6
-    && ((v3 = *(this + 432), v3[3774]) || (v3[3764] || v3[3765]) && BuildingClass::CanRepair(*(this + 173), (int)this)) )
-  {
-    (*((void (__thiscall **)(#375 **, _DWORD, int))*this + 288))(this, *(this + 173), 1); /*0x51f5a7*/
-    (*((void (__thiscall **)(#375 **, int))*this + 124))(this, 8); /*0x51f5b3*/
-    return 1; /*0x51f5b9*/
-  }
-  else if ( !(unsigned __int8)House::IsCurrentPlayer(*(this + 135)) /*0x51f5e9*/
-         && ((v5 = (int)*(this + 433), v5 == 27) || v5 == 28 || v5 == 29 || v5 == 30)
-         && !*(this + 173) )
-  {
-    (*((void (__thiscall **)(#375 **, int, _DWORD, _DWORD))*this + 342))(this, 31, 0, 0); /*0x51f5fd*/
-    return 1; /*0x51f603*/
-  }
-  else
-  {
-    return InfantryClass::ProcessDeploy(this); /*0x51f60c*/
-  }
-}
-}
-       || ((*(_BYTE *)((char *)v3 + 2880) || *(_BYTE *)((char *)v3 + 2881))
-// 0x457ce0
-          && BuildingClass::CanRepair((BuildingClass *)this->sprayOffsetIndex, (TechnoClass *)this)) ) )
+    /* IDA truth (disasm verified):
+       A: !owner->IsCurrentPlayer() && target && target->whatAmI()[vt+0x2C]==6(Building)
+          && (Type->Infiltrate(+3774) || (Type->Occupier(+3764) || Type->Assaulter(+3765))
+              && BuildingClass::CanRepair(target, this))
+          -> vt+1152 AssignDestination_SyncLog(target, 1); vt+496 ForceMission(8=Capture); ret 1
+       B: !owner->IsCurrentPlayer() && SequenceAnim(+1732) in {27 Deploy, 28 Deployed,
+          29 DeployedFire, 30 DeployedIdle} && !target
+          -> vt+1368 ProcessDeployAction(31 Undeploy, 0, 0); ret 1
+       else: tail call InfantryClass::ProcessDeploy (0x4D5350), eax passthrough */
+    if (!this->owner->IsCurrentPlayer()
+        && this->target != nullptr
+        && this->target->whatAmI() == AbstractType::Building
+        && (this->Type->Infiltrate
+            || ((this->Type->Occupier || this->Type->Assaulter)
+                && dynamic_cast<BuildingClass*>(this->target)->CanRepair(this))))
     {
-        this->AssignDestination_SyncLog(this->sprayOffsetIndex, 1);
-        this->Draw_Start(8);
+        this->AssignDestination_SyncLog(this->target, 1);
+        this->forceMission(Mission::Capture);
         return 1;
     }
-    else if ( !(unsigned __int8)House::IsCurrentPlayer((HouseClass *)this->focus)
-           && ((v5 = this->SequenceAnim, v5 == 27) || v5 == 28 || v5 == 29 || v5 == 30)
-           && !this->sprayOffsetIndex )
+    if (!this->owner->IsCurrentPlayer()
+        && (this->SequenceAnim == Sequence::Deploy
+            || this->SequenceAnim == Sequence::Deployed
+            || this->SequenceAnim == Sequence::DeployedFire
+            || this->SequenceAnim == Sequence::DeployedIdle)
+        && !this->target)
     {
-        this->ProcessDeployAction(31, 0, 0);
+        this->ProcessDeployAction((int)Sequence::Undeploy, false, false);
         return 1;
     }
-    else
-    {
-        return InfantryClass::ProcessDeploy(this);
-    }
+    InfantryClass::ProcessDeploy();
+    return 0;
+}
 
 // 0x522bc0
 bool InfantryClass::CanEnterBuilding()
@@ -7493,7 +7466,7 @@ int InfantryClass::AssignTarget_SyncLog(int syncFlag)
 }
 
 // 0x51aa40
-int InfantryClass::AssignDestination_SyncLog()
+int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
 {
     // IDA: 0x51AA40 — assign destination with sync logging
     return 0;
@@ -7511,19 +7484,6 @@ int InfantryClass::ValidateAttackPosition()
 {
     // IDA: 0x484AE0 — validate attack position
     return 0;
-}
-
-// 0x484ab0
-int InfantryClass::IsInBounds()
- {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall InfantryClass_IsInBounds(int this)
-{
-  __int16 v1; // ax
-
-  v1 = *(_WORD *)(this + 278); /*0x484ab0*/
-  return v1 >= 0 && v1 < MEMORY[0x8B4148] && *(_DWORD *)(this + 236) == 10; /*0x484ad7*/
-}
 }
 
 // ============================================================
@@ -7576,14 +7536,11 @@ int FootClass::GetActionOnObject()
     return 0;
 }
 
-// 0x51faf0
-int InfantryClass::GetTypePtr()
- {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall InfantryClass::_vt34(_DWORD *this)
+// 0x51FAF0
+InfantryTypeClass* InfantryClass::GetTypePtr()
 {
-  return *(this + 432); /*0x51faf6*/
-}
+    /* IDA truth: return *(this + 432);  // this[432] dword = byte 1728 = Type */
+    return Type;
 }
 
 // 0x51f2c0

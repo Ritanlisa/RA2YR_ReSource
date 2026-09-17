@@ -118,6 +118,7 @@ public:
     virtual bool canSelfRepair();  // 0x70FB50
     virtual bool shouldBeCloaked() const;  // 0x6FBDC0
     virtual bool shouldNotBeCloaked() const;  // 0x6FBC90
+    virtual bool IsDisguised() const;  // 0x41C010 (vtable slot 196, all Techno-family tables share this impl)
     // wrapper: delegates to TechnoClass::ShouldNotBeCloaked at 0x6FBC90
     virtual DirStruct* getFacing(DirStruct* buffer) const;
     // wrapper: delegates to TechnoClass::ShouldNotBeCloaked at 0x6FBC90

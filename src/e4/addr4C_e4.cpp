@@ -2521,8 +2521,6 @@ void nullsub_129()
 // 0x4C6170
 namespace gamemd {
 void nullsub_130()
-}
-// 0x4c6130
 {
   ;
 }

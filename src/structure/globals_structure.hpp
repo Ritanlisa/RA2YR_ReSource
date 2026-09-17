@@ -13,7 +13,7 @@ namespace gamemd {
 
 extern void* g_UnitClassPool; // data: 0x8B410C
 
-extern uint32_t g_UnitTypeCount; // data: 0x8B4148
+extern uint32_t g_Tubes_Count; // data: 0x8B4148
 
 extern int32_t g_UnitSelectionState; // data: 0xB1CFB8
 

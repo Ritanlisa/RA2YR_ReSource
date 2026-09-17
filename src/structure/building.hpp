@@ -125,6 +125,7 @@ public:
     void DisplayProductionFrame();  // 0x43D030
     bool ProductionCheck();  // 0x4513D0
     bool CanAcceptType(int type_index);  // 0x452670
+    bool CanAbsorbUnits();  // 0x4598A0
     void AddToProductionQueue(int type_index);  // 0x4DA0E0
     void SetProduction(int type_index);  // 0x6395B0
     // wrapper: delegates to BuildingClass::SetProduction at 0x6395B0
@@ -149,7 +150,7 @@ public:
     // Repair
     virtual int Mission_Repair() override;
     void ProcessRepair();  // 0x44B780
-    bool CanRepair();  // 0x457CE0
+    bool CanRepair(TechnoClass* repairer);  // 0x457CE0
     void ToggleRepairMode();  // 0x446FF0
     bool CheckHealthForRepair();  // 0x452630
     bool IsBeingRepairedOrCaptured();  // 0x7105E0

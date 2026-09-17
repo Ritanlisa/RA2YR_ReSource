@@ -1852,8 +1852,6 @@ return 0;
 // 0x41BFC0
 namespace gamemd {
 int TacticalClass::StubReturnFalse8()
-}
-// 0x41bfb0
 {
 return 0;
 }

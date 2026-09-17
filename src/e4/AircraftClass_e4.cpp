@@ -946,18 +946,6 @@ int AircraftClass::CheckStateFlag2()
 }
 } // namespace gamemd
 
-// 0x41C010
-namespace gamemd {
-int AircraftClass::CheckReloadState()
-{
-{
-    int result;
-    LOBYTE(result) = (unsigned char)this->drainAnim;
-    return result;
-}
-}
-} // namespace gamemd
-
 // 0x41C020
 namespace gamemd {
 int AircraftClass::CheckReloadTimer()

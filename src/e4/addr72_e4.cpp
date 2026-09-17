@@ -230,7 +230,7 @@ void sub_728200()
   {
     v2 = (__int16 *)*((_DWORD *)MEMORY[0x8B413C] + v1); /*0x72821e*/
     v3 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v2 + 18); /*0x72822f*/
-    if ( InfantryClass::IsInBounds((int)v3) ) /*0x728233*/
+    if ( CellClass::IsTunnelEntrance((int)v3) ) /*0x728233*/
     {
       v3[139] = ++i; /*0x72825f*/
     }
