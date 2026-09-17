@@ -2,16 +2,19 @@
 
 > ⚠ 本文档的子系统细节（vtable 解码、类覆盖清单）为早期考证快照，仍然有效；
 > **当前总体进度以 `AGENTS.md` 状态表和 `docs/roadmap_post_csp.md` 执行日志为权威**
-> （2026-09-16 G14 口径：MCP completed **11,894** / pending **4,717**——**诚实口径**，
-> 全 CFG 验证；G14 = YRpp 腿就位 + A1 命名轮 + align bug 修正 + 舰队两波）。
+> （2026-09-16 **G16 终态口径**：MCP completed **11,892** / pending **4,719**——**诚实口径**，
+> 全 CFG 验证；G16 = #108/#109 vtable 槽双闭环 + TechnoClass 双区段重建 + BulletType INI 全表 +
+> 手动 H5×3。**G16 末全池 exec-flow 回归：11,891/11,892 PASS**，唯一 FAIL =
+> BulletTypeClass::GetWarhead（ml 旧大写条目残留，G17 P0 修复，见 docs/g17_prep.md））。
 
-## 翻译总进度（G14 会话后，2026-09-16）
+## 翻译总进度（G16 终态 + 体检，2026-09-16）
 
 | 指标 | 数值 |
 |--------|-------|
-| MCP completed | **11,894**（诚实口径：G13 末 11,843 + G14 舰队 W1 108 桶 +48 + W2 99 桶 +3，全 CFG 验证） |
-| MCP pending | **4,717**（构成：too-long ~2,037 + goto ~352 + raw-this ~605 + **FAIL-recycle 255（GENERATED 残余=词汇缺口，G14 W2 实证天花板）** + ternary ~132 + param-mismatch ~110 等，见 roadmap「Phase H」+ G14 日志；hash-type 已全清） |
-| marker&completed 矛盾 | **0**（G14 终态对账；align bug 43 误位项零假完成——事件对称门控实证） |
+| MCP completed | **11,892**（诚实口径：G15 末 11,888 + G16 手动 H5×3 + 舰队 building×1，全 CFG 验证） |
+| MCP pending | **4,719**（构成：too-long/goto H5 主体 ~2,365 + gap2 系统性 ~1,043（#50/#55 等生成器层裁决）+ e4 全局命名阻塞 ~390（#67-#71）+ building.cpp 70（#4/#17/#23）+ FAIL-recycle 255 等，见 roadmap「Phase H」+ G16 日志） |
+| 全池 exec-flow 回归 | **11,891 PASS / 1 FAIL**（2026-09-16 首次全量复跑，46 分钟，`.omo/pool_verify_results.json`；FAIL=0x46C820 GetWarhead，定因 member_lookup BulletTypeClass 旧大写三件套 Color@60/Trailer@64/ROT@68 残留与 G16 真值 724/728/732 并存——P0 顺带清理） |
+| marker&completed 矛盾 | **0**（G13 readiness 全检 READY 持续维持：无幽灵完成/无双 def/tag 同步） |
 | src 函数体覆盖 | ~17,880 / 19,133（93.5%；未翻译函数以 IDA 原始反编译活代码块占位，裁决 v2） |
 | 偏移→OO 重写 | rewritten 4,468 / unmapped 5,610（G14 修正版 refresh 口径，分母随已译体退出波动） |
 | vtable_offsets | 398+ 类（G14 +11 真新增槽位：ObjectClass@124 IsAboveScreenMargin 二进制定案、InfantryClass@1156 ValidatePlacement、AircraftClass@684 等） |

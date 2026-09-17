@@ -2587,3 +2587,94 @@ marker&completed 对账 **0 幽灵** / readiness READY
   需按 IDA 块图组织（共享 WRITE 用局部变量中转）。
 - **til 直接 udt 构造坑**：pm.size 会被成员 type 尺寸覆盖——char 成员配 int 类型即爆炸；
   正确路径 = C 声明文本 + del_named_type + idc.parse_decls。
+
+## 执行日志 — 2026-09-16 体检会话：全池 exec-flow 回归 11,891/1 + 唯一 FAIL 定因 + G17 工作流设计（口径不变：completed 11,892 / pending 4,719）
+
+> 无翻译产出的纯验证轮。首次全量复跑全池 exec-flow 验证（G15 FAIL=0 基线的体检复验），
+> 并将结果与新工具沉淀进 G17 准备包（docs/g17_prep.md 刷新）。
+
+### 全池回归（新工具 `.omo/pool_verify_all.py`）
+
+- 11,892 个 completed 全量并行复验（6 workers，46 分钟）→ **11,891 PASS / 1 FAIL**，
+  结果落盘 `.omo/pool_verify_results.json`。
+- 抽样旁证：G16 窗口净增 4 函数（0x456640 UpdateDetectionField / 0x51f190 /
+  0x521760 / 0x522780）逐一复验 4/4 PASS。
+- 附加体检全绿：readiness READY（tag 同步/无幽灵完成/无双 def/95 波次桶）、
+  注解审计双零（matched 10,168 / missing 0 / mismatch 0）、
+  一致性 85 raw / 16 normalized（基线 91/7，总量 101 vs 98，别名自愈型漂移）、
+  MCP 构建错误 0、issue 台账 91 open（82 debt / 7 blocker / 1 question / 1 bug）。
+
+### 唯一 FAIL 定案：BulletTypeClass::GetWarhead（0x46C820）
+
+- 现象：`BulletTypeClass_e4.cpp:890` translation incomplete。
+- 排除：C++ 体与 hpp 自 G15 起零改动；IDA live 反编译与 ida_cache 逐字节一致
+  （`*(this+182)` = 字节 728）。
+- 定因（事实链）：验证器 C++ 侧成员偏移走 `resolve_member_offset`（**member_lookup
+  解析，非 hpp 推算**）；G15 全池 PASS → 当时 ml 必有 `ROT→728`；G16 BulletType
+  INI 三源落盘后 ml 出现**同名双条目并存**——旧大写 `Color@60/Trailer@64/ROT@68`
+  与真值 `Color@724/trailer@728/rot@732`。resolve('ROT')=68 ≠ 728 → FAIL。
+- 修复归属 **G17 P0b**（g17_prep.md 新增）：清 ml 残留三件套 + 728 位语义裁决
+  （Trailer 指针"等于则清"自洽 → C++ 体 ROT→Trailer 改写；若证据指向 ROT 则
+  重考古 724-736 边界，不得反向硬凑 ml）。**本会话未动代码。**
+
+### pending 4,719 结构盘点（体检口径）
+
+gap2 五件套 ~1,043（#50 签名丢 this / #55 十一类，生成器层裁决）；e4 地址桶
+~390+（#67-#71 全局命名阻塞）；building.cpp 70（#4/#17/#23 布局争议）；
+infantry.cpp 22（P2 队列在手）；主体 = too-long/goto H5（15-25 会话量级）。
+
+### 工作流沉淀（已固化进 docs/g17_prep.md「G17 主循环工作流」）
+
+- 四阶段会话骨架：开场五检 → 证据/布局（IDA 依赖优先）→ 翻译波（手动 3-5/轮；
+  舰队仅在新词汇落地后直驱）→ 收尾六件套（括号 delta / 注解 / 一致性 /
+  幽灵对账 / **新增 completed 全验** / 提交重锚 + 日志记账）。
+- 全池回归改**抽样制**：每会话验新增全量 + 随机 50 抽样；每 3-4 波或每次
+  布局大改（类四源重建）后全池复跑 `pool_verify_all.py`；禁止带 FAIL 提交重锚。
+
+## 执行日志 — 2026-09-16 反hacking审计会话：验证器 READ 盲点实证 + 假完成/破损文本定案 + 修复计划（口径修正：completed 真实下界 ≈ 11,485）
+
+> 用户指令：抽样 completed + IDA-MCP 手动反编译对照，查被绕过的 hacking。
+> 两层方法：①全库作弊特征扫描（#if 0/__asm/goto/bit_cast）——completed 体零违规
+> （__asm×134/goto×4,724 全在合法 pending 占位块）；②分层抽样 15 函数
+> （G16 手动/舰队机械波/gap2/Task-6 代际）逐例 live 反编译对照。
+
+### 向量 A：验证器 STEP3(0) READ 盲点（#114 blocker）
+
+- verbose 实证 0x484ab0：IDA CFG `[READ(member,278), RET, READ(global,0x8B4148),
+  READ(member,236)]` vs C++ `return 0` 体 `[RET]` → STEP3(0) 判 OK——**READ 类
+  事件不在"必须在场外部操作"清单**。READ-only + 单块函数配平凡 return 体即 PASS。
+- **假完成定案（#115）**：铁面 9 个（0x484ab0 IsInBounds 臆造英文注释+return 0、
+  0x406e80 Shutdown、0x4525f0 IsPoweredOn、0x458db0/0x458dd0、0x401190、
+  0x4dba50、0x522cb0、0x659470）+ 28 嫌疑待复核 + 50 诚实平凡 stub（合法）。
+  清单 `.omo/fake_stub_audit.json`（扫描器 audit_fake_stubs.py）。
+  G15 复位 22 时盲点未修，故持续漏网。
+
+### 向量 B：破损文本标 completed（#116 debt）
+
+120 括号不平衡 + 261 签名缺参（独立 ~370）：gap2 五件套 126/addr7C 35/
+CaptureManager 14。机制 = 裁决 v2 编译债豁免 + exec-flow 文本级对比 + 门控类别
+lint 不查编译有效性（重锚豁免非主因——G15 当场门控看到 4837-4844 行 diff 也不报，
+因"未声明标识符/缺括号"不在 11 类别中）。样本亲核：0x51aa10（缺括号+未声明
+a1/aP2，构建日志 C2065/C2143 实锤）、0x522640 GetProductionLimit（G16 复验
+PASS 记账需撤账）、0x452170（this+343 裸算术）。清单 `.omo/completed_body_audit.json`。
+
+### 向量 C：度量假阴性（#117 bug）
+
+MCP stats `last_build_errors` 恒 0：ERROR_RE 要求 MSVC `(行,列)` 双数字格式，
+实际 `(行)` 单数字——**从未匹配任何行**（当日日志 60 error 行匹配 0）。
+"编译错误 0/0"口径存疑，AGENTS/coverage 已加 caveat。
+
+### 干净面（非作弊确证）
+
+getAltitude/COMStub 族（IDA 本身平凡，live 亲证）、GetPlanningToken/
+IsMassSelectable/IsDeactivated/IsRookie/IsActiveOrNext/SetBool 语义忠实；
+StubReturnFalse 族命名诚实。样本中 0x51aa10/0x522640 属向量 B（语义忠实但
+文本破损），非语义造假。
+
+### 修复计划定稿
+
+**docs/audit_repair_plan.md**（git 跟踪）：W1.1 ERROR_RE → W1.2 验证器加固
+（方案 A 平凡体守卫，dry 统计先行，保护文件获批后动）→ W2.1 铁面 9 复位
+（g15_rollback）→ W2.2 复核 28 → W2.3 破损 ~370 分路（R 机械修复/S 复位重翻）
+→ W3 预防（mark_completed 三问自检/波次编译抽检/门控 compile-validity 类别提案/
+度量防回归）。G17 开工顺序：W1.1 → P0/P0b → W1.2 → W2 → P1-P3 主线。

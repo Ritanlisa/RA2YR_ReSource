@@ -1,8 +1,21 @@
-# G17 准备工作包（2026-09-16 G16 会话末备齐）
+# G17 准备工作包（2026-09-16 G16 会话末备齐；同日体检轮刷新）
 
-> 当前态：completed **11,892** / pending **4,719**；HEAD `639e59d6`；
+> 当前态：completed **11,892** / pending **4,719**；HEAD `bbc63aac`（G17 prep 文档提交）；
 > tag `auto-fill-baseline` 与 HEAD 同步。G16 执行日志见 `docs/roadmap_post_csp.md`
 > 文末；本文件是下一会话的**可执行准备材料**（git 跟踪，不依赖 .omo 本地态）。
+>
+> **体检基线（2026-09-16 体检轮）**：全池 exec-flow 回归 **11,891 PASS / 1 FAIL**
+> （首次全量复跑，46 分钟，`.omo/pool_verify_results.json`；驱动 `.omo/pool_verify_all.py`）。
+> 唯一 FAIL = BulletTypeClass::GetWarhead(0x46C820)，定因 member_lookup 旧大写三件套
+> （Color@60/Trailer@64/ROT@68）与 G16 真值（724/728/732）并存——**P0 扩容项，见下**。
+> readiness 全检 READY（无幽灵完成/无双 def/tag 同步）；注解审计双零；
+> 一致性 85 raw / 16 normalized（基线 91/7，别名自愈型漂移，无污染信号）。
+>
+> **⚠ 反hacking审计补充（同日）**：全池 FAIL=0 的含义 = **文本 CFG 双射**，不含
+> 可编译性/非 stub 保证。抽样对照实证：验证器 READ 盲点（#114）+ 假完成 9 铁面
+> +28 嫌疑（#115）+ 破损文本 completed ~370（#116）+ ERROR_RE 恒 0 假阴性（#117）。
+> **修复计划 = `docs/audit_repair_plan.md`（W1 加固 / W2 存量修复 / W3 预防），
+> G17 开工顺序以该文件「与既有计划的关系」节为准。**
 
 ## 使用前提
 
@@ -33,6 +46,75 @@ G16 会话中段 IDA 离线打断 til 重建：活会话已 `del_named_type` 但
 验收：til 里 BulletTypeClass size==760，660=airburst(char)/712=elasticity(double)/
 752=arm(int)/756-759=animLow/High/Rate/flat(char×4)。
 完成后 resolve issue #112 + #113。
+
+### P0b — member_lookup 残留清理 + GetWarhead 复验（体检轮新增，约 10 分钟）
+
+体检发现唯一全池 FAIL 的定案事实链：
+
+1. 验证器 C++ 侧成员偏移**走 member_lookup 解析**（`resolve_member_offset`），
+   不是 hpp 布局推算；IDA 侧 `*(this+182)`（`_DWORD*` this）= 字节 **728**。
+2. G15 全池 FAIL=0 时本函数 PASS → 当时 ml 必有 `ROT→728`；
+   G16「BulletType INI 全表」落盘后 ml 变成**同名双条目并存**：
+   旧大写三件套 `Color@60 / Trailer@64 / ROT@68` + 真值
+   `Color@724 / trailer@728 / rot@732`。resolve('ROT')=68 ≠ 728 → FAIL。
+3. 同名（仅大小写差）双条目必有一假：60/64/68 三条是旧布局残渣。
+
+操作：
+1. ml 的 BulletTypeClass 删除偏移 60/64/68 三条旧条目（class_layouts._member_by_name
+   侧已无大写 ROT，可作旁证）；
+2. **语义裁决（真正的门）**：IDA 访问的 728 在 G16 真值里是 `trailer` 位。
+   若裁决该 dword 确为 Trailer 指针（"等于则清空"语义自洽）→ 把 C++ 体
+   `this->ROT` 改为 `this->Trailer`（hpp 已有该成员，纯函数体编辑）→ 复验；
+   若语义证据指向 ROT → 则 G16 的 724-736 边界（trailer@728/rot@732）需重考古，
+   不得反向硬凑 ml；
+3. `python tools/verify_execution_flow.py 0x46c820` → PASS 后，
+   全池状态回到 FAIL=0，记入 roadmap 日志。
+
+## G17 主循环工作流（体检轮设计定稿）
+
+每会话统一骨架，四阶段：
+
+**阶段 1 — 开场五检（~5 分钟，全零才开工）**
+
+```
+[ ] curl -m 5 http://127.0.0.1:13337/        # IDA 连接探测（在线→P0/P1 类可做；离线→跳到 P2/P3 离线项）
+[ ] python .omo/g13_readiness.py             # tag 同步/幽灵完成/双 def/波次桶
+[ ] MCP annotations_audit                    # missing_with_known_addr 与 addr_mismatch 双零
+[ ] python tools/audit_consistency.py        # 命名一致性（基线 85/16，仅记账不阻塞）
+[ ] git status + git log -3                  # 工作树干净、口径衔接
+```
+
+**阶段 2 — 证据与布局（IDA 依赖项优先，趁在线先做）**
+
+优先序 = 依赖解锁面：P0/P0b（til+ml，恢复全池 FAIL=0）→ P1（TechnoClass 尾区，
+解锁 A1 追加命名）→ P2 词汇前置（slot 196/1064 裁决、member 1768/3644 INI 考古——
+G16 LoadFromINI 范式）。P3 vtable 审计（1-2 表/轮）可穿插在等待/间隙做。
+
+**阶段 3 — 翻译波（主线产出）**
+
+- 手动 H5：3-5 函数/轮（G16 实测节奏，含考古）；入口 = P2 队列表从上往下。
+- 舰队波（可选）：g5_fleet 直驱，仅当本轮落地了**新词汇**（G14 实证：无新词汇
+  直驱 = FAIL-recycle 零增量）；FAIL 块自动回滚 pending，不硬留译体。
+- 每函数过 verify → mark_completed；截断/无缓存真值不得验证。
+
+**阶段 4 — 收尾六件套（缺一不提交）**
+
+```
+[ ] 括号 HEAD-delta（g7 权威口径；e4 已知 8 处 pending 块伪码噪声豁免）
+[ ] MCP annotations_audit（双零）
+[ ] python tools/audit_consistency.py（记账）
+[ ] marker&completed 对账（g13_readiness.py 含此项，必须 0 幽灵）
+[ ] 新增 completed 全量复验（逐个 verify_execution_flow，本会话新增即全验）
+[ ] 提交 + tag auto-fill-baseline 重锚 + roadmap 执行日志记账（completed/pending 口径）
+```
+
+**全池回归节奏（体检轮定案）**：不再每会话全池跑（46 分钟）；改为
+**抽样制**——每会话收尾验"本会话新增 completed 全量 + 随机 50 存量的抽样"；
+**每 3-4 个波次或每布局大改（类重建/四源写入）后全池复跑一次**
+`python .omo/pool_verify_all.py --workers 6`（FAIL 清单逐条定因，禁止带 FAIL 提交重锚）。
+
+**中断恢复协议（既有裁决沿用）**：replaced-未验证记录从 ida_cache 重建 pending 块
+（G11 36 块流程已脚本化验证）；波中禁直读 signals（G13 教训）。
 
 ## P1 — TechnoClass 尾区 800-1312 重建（#110，ctor 写图已全量在手）
 
@@ -132,9 +214,14 @@ InfantryClass 真空槽：字节 196 / 1064（见 P2 词汇前置）。
 
 ```
 [ ] curl :13337 探测
+[ ] 开场五检（readiness / annotations_audit / consistency / git）
+[ ] W1.1 ERROR_RE 修复 + 重启 MCP（docs/audit_repair_plan.md，恢复真实编译计数）
 [ ] P0 BulletType til（tools/ida_bullettype_fix_g16.py + idb_save + resolve #112/#113）
+[ ] P0b ml 残留清理 + GetWarhead 复验（→ 文本级全池回 FAIL=0）
+[ ] W1.2 验证器加固：dry 统计 → 获批 → 实施 → 全池新基线（#114）
+[ ] W2 假完成复位 + 破损文本分路修复（#115/#116，清单在 repair_plan）
 [ ] P1 TechnoClass 尾区（读 YRpp 100-181 + ctor 写图表 → 四源 → t14 --apply → A1 复跑）
 [ ] P2 词汇前置（slot 196/1064 裁决 + member 1768/3644 INI 考古）
 [ ] P2 H5 波（0x51df10 起小函数 ×3-5）
-[ ] 提交 + tag auto-fill-baseline 重锚
+[ ] 收尾六件套 + 新增 completed 全验 + 提交 + tag auto-fill-baseline 重锚
 ```

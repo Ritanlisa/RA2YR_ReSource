@@ -182,14 +182,14 @@ cmake --build build_linux
 | 指标 | 数值 |
 |------|------|
 | 已实现函数（存根） | ~140（~200+ stubs）+ **4,255 sub_* <50B 存根 (Task 17)** + **1,203 sub_* 50-500B 存根 (Task 18)** |
-| 编译错误 / 警告 | **0 / 0** (gamemd 来自 _generated/ 和主要模块) |
+| 编译错误 / 警告 | **0 / 0**（gamemd 来自 _generated/ 和主要模块）——**⚠ #117：该口径存疑**（ERROR_RE 单/双数字格式盲区，stats 恒报 0；实测基线编译债 = 裁决 v2 容忍的 5,335 全量口径，infantry.cpp 单文件 fatal C1003）。修复见 docs/audit_repair_plan.md W1.1 |
 | symbol-locked | **symbols-locked-v2** — 全部 19,067 函数 1:1:1 映射 (IDA↔signals↔hpp)，0 naming mismatches |
 | completed (符号定义) | **19,133 / 19,133 (100%)** — 所有函数在 IDA/signals.json/hpp 中有名称和地址 |
-| translated (完整IDA对照) | **11,892** — MCP completed 诚实口径（G16 会话：#108/#109 vtable 槽双闭环（MissionClass 虚区 7 槽 + GetActionOnObject 族五实现）+ TechnoClass 504-792/448-504 双区段 ctor 重建（focus@536/owner@540 定谳）+ BulletType INI 全表 + 手动 H5×3/舰队+1 + OO refresh 4,567；详见 docs/roadmap_post_csp.md G16 执行日志 + docs/g17_prep.md）；pending **4,719** |
+| translated (完整IDA对照) | **11,892** — MCP completed 诚实口径（G16 会话：#108/#109 vtable 槽双闭环（MissionClass 虚区 7 槽 + GetActionOnObject 族五实现）+ TechnoClass 504-792/448-504 双区段 ctor 重建（focus@536/owner@540 定谳）+ BulletType INI 全表 + 手动 H5×3/舰队+1 + OO refresh 4,567；详见 docs/roadmap_post_csp.md G16 执行日志 + docs/g17_prep.md）；pending **4,719**。**G16 末全池 exec-flow 回归 11,891/11,892 PASS**（唯一 FAIL=BulletTypeClass::GetWarhead，ml 旧大写条目残留定因，G17 P0b 修复）。**⚠ 反hacking审计（#114-#116）**：FAIL=0 = 文本 CFG 双射，不含可编译性/非 stub 保证——假完成 9 铁面 + 28 嫌疑、破损文本 ~370 待修复（**真实下界 ≈ 11,485**，修复计划 docs/audit_repair_plan.md） |
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
 | sub_* 残留 | **5,468** — 函数级别 (非类成员)，0 已翻译 |
-| 命名一致性 | 91 raw / 7 normalized（G13 实测维持基线；增量均为别名自愈型 + E3 hpp 声明名变体，翻译时自然吸收） |
+| 命名一致性 | 85 raw / 16 normalized（2026-09-16 体检实测；G13 基线 91/7，总量 101 vs 98 净漂移 +3，均为别名自愈型 + E3 hpp 声明名变体，翻译时自然吸收） |
 | REVERSE 标记 | ~32（2 Inject 活跃, 39 None） |
 | 幂等自动判定 | Phase 1+2 完成: TRUE 31%, FALSE 36%, UNCERTAIN 33% |
 | 源文件 | ~130 .hpp + ~135 .cpp (~110,000 行) |
@@ -1150,9 +1150,9 @@ python tools/type_infer/auto_name.py
 ## 下一会话快速接手指引
 
 1. 看 `docs/coverage.md` 了解整体进度（**1,120 IDA 类全部完成 header，0 unknown_**）
-2. 看 `docs/roadmap_post_csp.md` G16 执行日志 + **`docs/g17_prep.md`（G17 准备工作包：P0 BulletType til 恢复 / P1 TechnoClass 尾区 ctor 写图 / P2 H5 infantry 22 队列 / P3 vtable 审计轮）**——当前主线 = 剩余 4,719 pending 清偿（G16 后：**H5 主阻塞已解除**——issue #108/#109 双闭环，MissionClass 虚区 7 槽 + GetActionOnObject 族入 vo，g5_fleet slot_name 已支持继承链行走）
+2. 看 `docs/roadmap_post_csp.md` G16 执行日志 + **体检/反hacking审计日志** + **`docs/audit_repair_plan.md`（审计修复计划 W1 加固/W2 存量修复/W3 预防——G17 开工顺序以它为准）** + `docs/g17_prep.md`（准备工作包 + 「G17 主循环工作流」四阶段骨架：P0 BulletType til 恢复 / P0b ml 残留清理 / P1 TechnoClass 尾区 ctor 写图 / P2 H5 infantry 22 队列 / P3 vtable 审计轮）——当前主线 = 剩余 4,719 pending 清偿 + 审计修复（真实下界 ≈ 11,485）。全池基线：11,891/11,892 文本级 PASS（待 W1.2 加固后重建基线）
 3. 看 `git log -10` 了解最近改动；`auto-fill-baseline` tag = 门控 diff 基线（重锚不清账）
-4. 下一波入口（按序，详见 docs/g17_prep.md）：**P0 BulletType til 恢复**（IDA 回线第一件事：`tools/ida_bullettype_fix_g16.py` + idb_save，#112/#113）→ **P1 TechnoClass 800-1312 尾区重建**（#110，ctor 写图转录表在 prep 文档；完成后 A1 复跑解锁）→ **P2 H5 语义翻译**（infantry.cpp 22 队列 + 词汇前置 slot 196/1064）→ **P3 vtable 审计批量轮**（docs/g16_vtable_audit_queue.md 166 表）；A1 追加命名 `python .omo/g14_a1_yrpp.py [--apply]`（TechnoClass REJ 待 P1 解锁）
+4. 下一波入口（按序，详见 docs/g17_prep.md「G17 主循环工作流」）：**P0 BulletType til 恢复**（IDA 回线第一件事：`tools/ida_bullettype_fix_g16.py` + idb_save，#112/#113）→ **P0b ml 残留清理 + GetWarhead(0x46c820) 复验**（清 BulletTypeClass 旧大写三件套 Color@60/Trailer@64/ROT@68 + 728 位语义裁决 → 全池回 FAIL=0）→ **P1 TechnoClass 800-1312 尾区重建**（#110，ctor 写图转录表在 prep 文档；完成后 A1 复跑解锁）→ **P2 H5 语义翻译**（infantry.cpp 22 队列 + 词汇前置 slot 196/1064）→ **P3 vtable 审计批量轮**（docs/g16_vtable_audit_queue.md 166 表）；A1 追加命名 `python .omo/g14_a1_yrpp.py [--apply]`（TechnoClass REJ 待 P1 解锁）。全池回归用 `.omo/pool_verify_all.py`（抽样制：每会话验新增全量，每 3-4 波/布局大改后全池复跑）
 5. 看 `injectFunctionTest/comparisonResult.log` 了解最新 Capture 数据
 6. 任何崩溃分析：先满足"故障排除最低标准"6 项，缺一项不下结论
 7. IDA 连接非持久：任何 IDA 操作前当场探测（`curl -m 5 http://127.0.0.1:13337/`）
