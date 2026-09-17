@@ -4854,9 +4854,11 @@ unsigned int JumpjetLocomotionClass_26::PointerToIndex(int a2)
 // 0x54E8E0
 namespace gamemd {
 int JumpjetLocomotionClass_26::Seek(int a2)
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall JumpjetLocomotionClass_26_::_vt06(_DWORD *this, int a2)
 {
-{
-    return *(int *)(*(this + 1) + 4 * a2);
+  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x54e8ea*/
 }
 }
 } // namespace gamemd
@@ -6009,9 +6011,11 @@ bool JumpjetLocomotionClass::ShortFunc_718080(int a1)
 
 // 0x718090
 bool JumpjetLocomotionClass::ShortFunc_718090()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+bool __thiscall JumpjetLocomotionClass::sub_718090(_DWORD *this)
 {
-{
-    return (*(unsigned char (__stdcall **)(int *))(*(this + 1) + 16))(this + 1) == 0;
+  return (*(unsigned __int8 (__stdcall **)(_DWORD *))(*(this + 1) + 16))(this + 1) == 0; /*0x71809e*/
 }
 }
 

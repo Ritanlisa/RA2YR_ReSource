@@ -12,7 +12,13 @@ int RadSiteClass::objectSize() const { return sizeof(RadSiteClass); }
 // 0x65b4c0
 void RadSiteClass::SetBaseCell(CellStruct* cell) {}
 // 0x65b4b0
-int RadSiteClass::GetSpread() const { return 0; }
+int RadSiteClass::GetSpread() const {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall RadSiteClass::GetSpread(_DWORD *this)
+{
+  return *(this + 17); /*0x65b4b3*/
+}
+}
 // 0x65b4d0
 void RadSiteClass::SetSpread(int cells) {}
 // 0x65b4f0

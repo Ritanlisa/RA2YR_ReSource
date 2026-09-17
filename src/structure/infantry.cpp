@@ -7526,9 +7526,15 @@ int InfantryClass::ValidateAttackPosition()
 
 // 0x484ab0
 int InfantryClass::IsInBounds()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall InfantryClass_IsInBounds(int this)
 {
-    // IDA: 0x484AB0 — check if position is in map bounds
-    return 0;
+  __int16 v1; // ax
+
+  v1 = *(_WORD *)(this + 278); /*0x484ab0*/
+  return v1 >= 0 && v1 < MEMORY[0x8B4148] && *(_DWORD *)(this + 236) == 10; /*0x484ad7*/
+}
 }
 
 // ============================================================
@@ -7583,9 +7589,12 @@ int FootClass::GetActionOnObject()
 
 // 0x51faf0
 int InfantryClass::GetTypePtr()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall InfantryClass::_vt34(_DWORD *this)
 {
-    // IDA: 0x51FAF0 — get type pointer
-    return 0;
+  return *(this + 432); /*0x51faf6*/
+}
 }
 
 // 0x51f2c0

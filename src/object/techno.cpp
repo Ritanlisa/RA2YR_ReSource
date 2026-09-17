@@ -3752,7 +3752,13 @@ int TechnoClass::StubReturn450() { return 0; }
 void TechnoClass::vt_entry_448() {}
 int TechnoClass::sub_54D28C0() { return 0; }
 // 0x5224e0
-int TechnoClass::GetTypeFlag() const { return 0; }
+int TechnoClass::GetTypeFlag() const {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall TechnoClass_GetTypeFlag(_DWORD *this)
+{
+  return *(_BYTE *)(*(this + 432) + 3784); /*0x5224ec*/
+}
+}
 int TechnoClass::sub_5505180() { return 0; }
 // 0x4dff40
 int TechnoClass::FindClosestBuilding() { return -1; }
@@ -3767,15 +3773,39 @@ int TechnoClass::FindBestMovementDirection() { return -1; }
 // 0x4df1a0
 int TechnoClass::vt_entry_4A8() { return 0; }
 // 0x4df1c0
-int TechnoClass::vt_entry_4AC() { return 0; }
+int TechnoClass::vt_entry_4AC() {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall TechnoClass::vt_entry_4AC(_DWORD *this)
+{
+  return *(this + 369) != -1; /*0x4df1ce*/
+}
+}
 // 0x4df1d0
-int TechnoClass::vt_entry_4B0() { return 0; }
+int TechnoClass::vt_entry_4B0() {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall TechnoClass::vt_entry_4B0(_BYTE *this)
+{
+  return *(this + 1489); /*0x4df1d6*/
+}
+}
 // 0x4df1e0
-int TechnoClass::vt_entry_4B4() { return 0; }
+int TechnoClass::vt_entry_4B4() {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall TechnoClass::vt_entry_4B4(_DWORD *this)
+{
+  return *(this + 369); /*0x4df1e6*/
+}
+}
 // 0x4df1f0
 int TechnoClass::vt_entry_4B8() { return 0; }
 // 0x4df310
-int TechnoClass::vt_entry_4C4() { return 0; }
+int TechnoClass::vt_entry_4C4() {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall TechnoClass::vt_entry_4C4(_DWORD *this)
+{
+  return *(this + 369) == 29; /*0x4df31e*/
+}
+}
 // 0x4df320
 int TechnoClass::vt_entry_4C8() { return 0; }
 // 0x4df4b0
@@ -3800,11 +3830,38 @@ int TechnoClass::CanBePermaMC() const { return false; }
 // 0x522910
 int TechnoClass::GarrisonBuilding() { return 0; }
 // 0x522510
-int TechnoClass::IsMission27to30() const { return false; }
+int TechnoClass::IsMission27to30() const {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall TechnoClass_IsMission27to30(_DWORD *this)
+{
+  int v1; // eax
+
+  v1 = *(this + 433); /*0x522510*/
+  return v1 == 27 || v1 == 28 || v1 == 29 || v1 == 30; /*0x52252c*/
+}
+}
 // 0x522a60
 int TechnoClass::HandleSpecialAction() { return 0; }
 // 0x522cb0
-int TechnoClass::IsEnteringOrCapturingStructure() const { return false; }
+int TechnoClass::IsEnteringOrCapturingStructure() const {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall sub_522CB0(_DWORD *this)
+{
+  int v1; // eax
+
+  v1 = *(this + 433); /*0x522cb0*/
+  return v1 == 11 /*0x522cea*/
+      || v1 == 12
+      || v1 == 13
+      || v1 == 14
+      || v1 == 15
+      || v1 == 34
+      || v1 == 35
+      || v1 == 36
+      || v1 == 20
+      || v1 == 21;
+}
+}
 // 0x5f5390
 void TechnoClass::CreateDestructionEffect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -5267,7 +5324,16 @@ int TechnoClass::GetDeployProgressValue() const { return 0; }
 // 0x708bc0
 int TechnoClass::ComputeAverageValue() const { return 0; }
 // 0x708c10
-int TechnoClass::GetGlobalValue() const { return 0; }
+int TechnoClass::GetGlobalValue() const {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall TechnoClass::GetGlobalValue(#377 *this)
+{
+  _DWORD *v2; // [esp+8h] [ebp+8h]
+
+  *v2 = MEMORY[0xB0EA50]; /*0x708c1a*/
+  return 0; /*0x708c1e*/
+}
+}
 // 0x70f850
 int TechnoClass::SetIdleState() { return 0; }
 // 0x70b280
@@ -5303,9 +5369,21 @@ int TechnoClass::SetTargetIfAllowed() { return 0; }
 // 0x700c40
 int TechnoClass::CanReceivePassengers() const { return false; }
 // 0x6f9dc0
-int TechnoClass::GetTarget() const { return 0; }
+int TechnoClass::GetTarget() const {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall TechnoClass::GetTarget(#377 *this)
+{
+  return *((_DWORD *)this + 135); /*0x6f9dc6*/
+}
+}
 // 0x6f9db0
-int TechnoClass::GetID() const { return 0; }
+int TechnoClass::GetID() const {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall TechnoClass::GetID(#377 *this)
+{
+  return *(_DWORD *)(*((_DWORD *)this + 135) + 48); /*0x6f9db9*/
+}
+}
 // 0x717800
 int TechnoClass::GetSightRange() const { return 0; }
 // 0x6f78d0
@@ -5400,7 +5478,13 @@ int TechnoClass::CanDamageTarget() const { return false; }
 // 0x70f010
 int TechnoClass::COMStub_Return0_298() { return 0; }
 // 0x70efd0
-int TechnoClass::HasPassengers() const { return false; }
+int TechnoClass::HasPassengers() const {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall TechnoClass::HasPassengers(#377 *this)
+{
+  return *((_DWORD *)this + 321) > 0; /*0x70efdd*/
+}
+}
 // 0x70f100
 int TechnoClass::COMStub_Return0_307() { return 0; }
 int TechnoClass::sub_70F040() { return 0; }
@@ -5561,7 +5645,13 @@ int TechnoClass::MarkPassengersAsExited() { return 0; }
 // 0x7104a0
 int TechnoClass::ExitedOpenTopped() { return 0; }
 // 0x711eb0
-int TechnoClass::GetMember388() const { return 0; }
+int TechnoClass::GetMember388() const {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall TechnoClass_GetMember388(_DWORD *this)
+{
+  return *(this + 388); /*0x711eb6*/
+}
+}
 int TechnoClass::GetBuildCost2() const { return 0; }
 int TechnoClass::FindBestMatch2() { return -1; }
 // 0x6ec300
@@ -5604,13 +5694,25 @@ int TechnoClass::GetTargetSpeedMultiplier() const { return 0; }
 int TechnoClass::ProcessEnterTransport() { return 0; }
 int TechnoClass::IsCloseEnoughToBuilding2() const { return false; }
 // 0x6ef9e0
-int TechnoClass::IsDeployed() const { return false; }
+int TechnoClass::IsDeployed() const {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+bool __thiscall TechnoClass_IsDeployed(int this)
+{
+  return this && *(_BYTE *)(this + 144) && *(_DWORD *)(this + 108) && (MEMORY[0xA8E7AC] || !*(_BYTE *)(this + 129)); /*0x6efa0a*/
+}
+}
 // 0x704240
 int TechnoClass::CheckAdjacencyFlags() const { return false; }
 // 0x637840
 int TechnoClass::IsProductionChainActive() const { return false; }
 // 0x746db0
-int TechnoClass::HasDeployFlags() const { return false; }
+int TechnoClass::HasDeployFlags() const {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall TechnoClass::HasDeployFlags(_BYTE *this)
+{
+  return *(this + 1761) || *(this + 1762); /*0x746dc6*/
+}
+}
 // 0x638840
 int TechnoClass::RemoveBuildingFromScripts() { return 0; }
 // 0x6f6ca0
@@ -5626,7 +5728,13 @@ int TechnoClass::EnterRepairBuilding() { return 0; }
 // 0x740fd0
 int TechnoClass::CheckUnitFireConstraints() const { return false; }
 // 0x741490
-int TechnoClass::checkTargetValidity() { return 0; }
+int TechnoClass::checkTargetValidity() {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall TechnoClass::sub_741490(_DWORD *this)
+{
+  return *(this + 433); /*0x741496*/
+}
+}
 int TechnoClass::sub_7441B0() { return 0; }
 int TechnoClass::sub_744180() { return 0; }
 int TechnoClass::sub_744210() { return 0; }
@@ -5637,7 +5745,13 @@ int TechnoClass::sub_744100() { return 0; }
 // 0x743190
 int TechnoClass::SelectAutoTargetWithGarrison() { return 0; }
 // 0x746400
-int TechnoClass::processParasiteAttachment() { return 0; }
+int TechnoClass::processParasiteAttachment() {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+bool __thiscall TechnoClass::sub_746400(_DWORD *this)
+{
+  return *(_BYTE *)(*(this + 433) + 3611) == 0; /*0x746415*/
+}
+}
 int TechnoClass::sub_746420() { return 0; }
 int TechnoClass::sub_7464E0() { return 0; }
 int TechnoClass::sub_7465B0() { return 0; }

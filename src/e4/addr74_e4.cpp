@@ -1909,9 +1909,11 @@ void sub_74C3C0()
 // 0x74F3B0
 namespace gamemd {
 int _::Seek(int a2)
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall _::_vt06(_DWORD *this, int a2)
 {
-{
-    return *(int *)(*(this + 1) + 4 * a2);
+  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x74f3ba*/
 }
 }
 } // namespace gamemd

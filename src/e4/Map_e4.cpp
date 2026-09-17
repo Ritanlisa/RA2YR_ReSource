@@ -2573,9 +2573,11 @@ unsigned int * Map_WorldDominationTour_20::Seek(unsigned int * a2, int a3)
 // 0x769D20
 namespace gamemd {
 int Map_WorldDominationTour_28::Seek(int a2)
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall Map_WorldDominationTour_28_::_vt06(_DWORD *this, int a2)
 {
-{
-    return *(int *)(*(this + 1) + 4 * a2);
+  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x769d2a*/
 }
 }
 } // namespace gamemd
@@ -2598,9 +2600,11 @@ unsigned int * Map_WorldDominationTour_43::Seek(unsigned int * a2, int a3)
 // 0x769D60
 namespace gamemd {
 BOOL Map_WorldDominationTour_38::AddRef()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall Map_WorldDominationTour_38_::_vt01(_DWORD *this)
 {
-{
-    return *(this + 2) < *(int *)(*(this + 1) + 8);
+  return *(this + 2) < *(_DWORD *)(*(this + 1) + 8); /*0x769d6d*/
 }
 }
 } // namespace gamemd

@@ -2762,3 +2762,35 @@ StubReturnFalse 族命名诚实。样本中 0x51aa10/0x522640 属向量 B（语�
 - **呈报待批**：方案 A 实施（verify_execution_flow.py 保护文件）——新增
   trivial-stub-mismatch 独立检查（单 return × cpp 0 事件 × IDA 有事件 → FAIL），
   预期全池 FAIL 0→36（= A 格清单即新基线 FAIL 清单 = W2 工作清单），B 格 25 暂不动。
+
+### W1.2 实施（获批后）+ G17 全池新基线 + W2.1 复位执行（同日续）
+
+- **方案 A 落地**（verify_execution_flow.py，用户批准）：新增
+  `_collect_rwcall_events` / `_is_trivial_single_return` 两助手 + cpp_cfg 构建后
+  守卫（IDA 有 READ/WRITE/CALL 事件 × C++ 单 return 0 事件 → FAIL
+  trivial-stub-mismatch，fail-fast 先于结构匹配）；main 的 reason 打印条件放宽。
+- **三连验收**：0x484AB0 FAIL+新 reason；0x46C820 GetWarhead 保持 PASS；
+  0x705D20 GetPlanningToken 保持 PASS。
+- **插曲**：实施前发现验证器文件一度被外部加入同型守卫代码后又还原（时间线与
+  用户审阅批准框预览吻合）——正式实施以 HEAD 态为基，无冲突。
+- **G17 全池新基线**（守卫生效后首次全量，38 分钟）：**11,856 PASS / 36 FAIL**，
+  36 个 FAIL 全部为 trivial-stub-mismatch 且与 dry 统计 A-36 **双向零差**（零误伤
+  零漏网实证）→ `.omo/pool_verify_results.json`。
+- **W2.1 复位执行**（A-36 全员，分诊定案全部走复位而非 R 路）：
+  - 24 个裸 `return 0/false` 假完成（MissionStub×4 / vt_entry×4 / Techno getter
+    族 / IsInBounds / IsEnteringOrCapturingStructure 等）；
+  - 5 个 sub_40xxxx = **#50/#56 e4 自由函数丢 this 族**（IDA 是 `__thiscall
+    _DWORD *this`，C++ 侧接收者物化成了参数 a1——非改写可救，随 #50 系统性修复）；
+  - 7 个 rawcast 族（LoadOptions GetFlag×3 = `(const char*)(this)+0x188` 忠实但
+    违规体，ml@392 区无名；Seek/ShortFunc/AddRef ×4 = 向量 Items 形态无名）——
+    R 路词汇全部缺失，诚实复位；
+  - 执行：`.omo/w21_rollback_batch.py`（dry 36/36 → 实跑 36/36，9 文件，
+    g15 范式体回置 + signals completed=false + note）。
+- **复位后态**：completed **11,892 → 11,856**，pending **4,719 → 4,755**；
+  收尾全绿（9 文件括号 0 不平衡 / 注解审计双零 / 一致性 85/16 基线 / readiness
+  无幽灵无双 def）。#117 resolved（W1.1）。
+- **W2.2 预研台账**（`.omo/w22_pretriage.json`）：B-25 ≈ raw-this-residue 族 22
+  （`*(this+N)` 裸下标忠实体，R 路需 ml 名）+ 真 stub 1（0x5BC450）+ 签名/体
+  不一致 ~7（Seek 族 a2/a3 引用 vs 签名 a1/a2 = #50 丢参族）——下一会话逐例三选一。
+- **遗留**：#114 保持 open（B 格 25 未清）；#115 更新为 A-36 复位完成 + B-25 待办；
+  #116（破损 ~370）/ W2.3 未动；#118（事件不可见 3）待独立检测通道。

@@ -771,11 +771,29 @@ namespace gamemd {
 
 char* LoadOptions::GetDataPtr() { return (char*)(this) + 264; }
 // 0x681120
-uint32_t LoadOptions::GetFlag98() const { return *(const uint32_t*)((const char*)(this) + 0x188); }
+uint32_t LoadOptions::GetFlag98() const {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall sub_681120(_DWORD *this)
+{
+  return *(this + 98); /*0x681126*/
+}
+}
 // 0x681140
-uint32_t LoadOptions::GetFlag99() const { return *(const uint32_t*)((const char*)(this) + 0x18C); }
+uint32_t LoadOptions::GetFlag99() const {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall sub_681140(_DWORD *this)
+{
+  return *(this + 99); /*0x681146*/
+}
+}
 // 0x6812d0
-uint32_t LoadOptions::GetFlag252() const { return *(const uint32_t*)((const char*)(this) + 0x3F0); }
+uint32_t LoadOptions::GetFlag252() const {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall sub_6812D0(_DWORD *this)
+{
+  return *(this + 252); /*0x6812d6*/
+}
+}
 uint32_t LoadOptions::GetMode() const { return mode; }
 void LoadOptions::SetMode(uint32_t m) { mode = m; }
 const char* LoadOptions::GetExtension() const { return extension; }

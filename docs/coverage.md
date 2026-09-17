@@ -2,21 +2,21 @@
 
 > ⚠ 本文档的子系统细节（vtable 解码、类覆盖清单）为早期考证快照，仍然有效；
 > **当前总体进度以 `AGENTS.md` 状态表和 `docs/roadmap_post_csp.md` 执行日志为权威**
-> （2026-09-17 **G17 口径**：MCP completed **11,892** / pending **4,719**——**诚实口径**，
-> 全 CFG 验证。**文本级全池 FAIL=0 已恢复**（G17 P0/P0b：唯一 FAIL GetWarhead 修复，
-> 见 docs/g17_prep.md）；**FAIL=0 = 文本 CFG 双射，不含可编译性/非 stub 保证**——
-> W1.2 dry 统计：A 格假完成候选 36 / B 格近失 25 / 诚实平凡 660 / 有事件体 11,171
-> （`.omo/w12_dry_stats.json`），W2 修复以 A 格 36 为复位清单）。
+> （2026-09-17 **G17 W2.1 复位后口径**：MCP completed **11,856** / pending **4,755**——
+> A 格 36 假完成全部经 W1.2 trivial-stub-mismatch 守卫定罪并回置 pending。
+> **G17 全池新基线：11,856 PASS / 36 FAIL**（守卫生效首次全量，FAIL≡A-36 双向
+> 零差，随后 36 个全部复位）；FAIL=0 现含 READ 盲点守卫口径，仍不含可编译性保证——
+> B 格 25 近失（W2.2）+ 破损文本 ~370（W2.3）+ #118 事件不可见 3 待后续）。
 
-## 翻译总进度（G17 W1.2 dry 后，2026-09-17）
+## 翻译总进度（G17 W2.1 复位后，2026-09-17）
 
 | 指标 | 数值 |
 |--------|-------|
-| MCP completed | **11,892**（诚实口径：G15 末 11,888 + G16 手动 H5×3 + 舰队 building×1，全 CFG 验证） |
-| MCP pending | **4,719**（构成：too-long/goto H5 主体 ~2,365 + gap2 系统性 ~1,043（#50/#55 等生成器层裁决）+ e4 全局命名阻塞 ~390（#67-#71）+ building.cpp 70（#4/#17/#23）+ FAIL-recycle 255 等，见 roadmap「Phase H」+ G16 日志） |
-| 全池 exec-flow 回归 | **11,891 PASS / 1 FAIL → G17 已修复回 11,892/11,892 文本级 PASS**（2026-09-16 首次全量复跑 46 分钟；2026-09-17 G17 P0/P0b 修复唯一 FAIL 0x46C820：til 760B 重建（flat 保留字根因）+ ml 43 条残留清除 + hpp 39 改名 + 728=Trailer 裁决，复验 PASS；全池复跑待 W1.2 加固后建新基线） |
-| W1.2 dry 交叉表 | **A 36 / B 25 / C 660 / D 11,171**（2026-09-17，`.omo/w12_dry_stats.json`；A=平凡体×IDA非平凡=方案 A 潜在 FAIL=W2.1 复位清单；铁面 9 仅 2 坐实、4 真翻译、3 事件不可见 #118；合法样本零误伤） |
-| marker&completed 矛盾 | **0**（G13 readiness 全检 READY 持续维持：无幽灵完成/无双 def/tag 同步） |
+| MCP completed | **11,856**（诚实口径：G17 W2.1 复位 36 假完成（g15_rollback 范式 + signals note）；此前 G16 末 11,892 = G15 末 11,888 + 手动 H5×3 + 舰队 building×1） |
+| MCP pending | **4,755**（= G16 末 4,719 + W2.1 复位 36；构成：too-long/goto H5 主体 ~2,401 + gap2 系统性 ~1,043（#50/#55）+ e4 全局命名阻塞 ~390（#67-#71）+ building.cpp 70（#4/#17/#23）+ FAIL-recycle 255 + W2.1 复位 36 等） |
+| 全池 exec-flow 基线 | **G17 新基线 11,856 PASS / 36 FAIL**（2026-09-17，trivial-stub-mismatch 守卫生效后首次全量 38 分钟；FAIL 集合 ≡ dry 统计 A-36 双向零差 → 全部 36 个当日复位回 pending，`.omo/pool_verify_results.json` + `.omo/w21_rollback_ledger.json`） |
+| W1.2 dry 交叉表 | **A 36（已全部复位）/ B 25（W2.2 待办：raw-this-residue 族 ~22 + 多语句 stub 1 + 签名/体不一致 ~7）/ C 660 / D 11,171**（`.omo/w12_dry_stats.json`；审计铁面 9 仅 2 坐实、4 实为真翻译、3 事件模型不可见 #118） |
+| marker&completed 矛盾 | **0**（G13 readiness 复位后复检：无幽灵完成/无双 def/tag 同步） |
 | src 函数体覆盖 | ~17,880 / 19,133（93.5%；未翻译函数以 IDA 原始反编译活代码块占位，裁决 v2） |
 | 偏移→OO 重写 | rewritten 4,468 / unmapped 5,610（G14 修正版 refresh 口径，分母随已译体退出波动） |
 | vtable_offsets | 398+ 类（G14 +11 真新增槽位：ObjectClass@124 IsAboveScreenMargin 二进制定案、InfantryClass@1156 ValidatePlacement、AircraftClass@684 等） |

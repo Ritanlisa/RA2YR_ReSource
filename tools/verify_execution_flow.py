@@ -1065,6 +1065,78 @@ def _build_cpp_cfg_events(efv, cpp_text, class_name, M, signals):
     return cfg
 
 
+# ---- W1.2 Plan A: trivial-stub guard helpers (#114, user-approved 2026-09-17)
+_COMMENT_STRIP_RE = re.compile(r"/\*.*?\*/|//[^\n]*", re.S)
+
+
+def _collect_rwcall_events(cfg):
+    """块级 READ/WRITE/CALL 事件全集。
+
+    STEP3(0) 的 necessary-ops 收集器不含 READ —— #114 盲点本体；
+    守卫必须直接遍历 cfg 块事件。
+    """
+    ops = set()
+    for bid in cfg.traverse(order="dfs"):
+        for ev in getattr(cfg.get_block(bid), "ordered_events", ()):
+            if ev.startswith(("READ(", "WRITE(", "CALL(")):
+                ops.add(ev)
+    return ops
+
+
+def _is_trivial_single_return(cpp_text):
+    """剥注释与签名后，函数体是否恰为一条 return 语句。
+
+    容忍 gap2 生成器的嵌套双花括号形态。
+    """
+    s = _COMMENT_STRIP_RE.sub("", cpp_text).strip()
+    if not s:
+        return False
+    brace = -1
+    depth = 0
+    for i, ch in enumerate(s):
+        if ch == "{":
+            depth += 1
+            if depth == 1 and brace < 0:
+                brace = i
+        elif ch == "}":
+            depth -= 1
+    if brace < 0 or depth != 0:
+        return False  # 无体或花括号不平衡
+    depth = 0
+    for i in range(brace, len(s)):
+        if s[i] == "{":
+            depth += 1
+        elif s[i] == "}":
+            depth -= 1
+            if depth == 0:
+                s = s[brace + 1:i]
+                break
+    s = s.strip()
+    if not s:
+        return False
+    if s.startswith("{") and s.endswith("}"):
+        s = s[1:-1].strip()
+        if not s:
+            return False
+    stmts, depth, cur = [], 0, []
+    for ch in s:
+        if ch in "([{":
+            depth += 1
+        elif ch in ")]}":
+            depth -= 1
+        if ch == ";" and depth == 0:
+            stmts.append("".join(cur))
+            cur = []
+        else:
+            cur.append(ch)
+    if "".join(cur).strip():
+        return False
+    if len(stmts) != 1:
+        return False
+    st = stmts[0].strip()
+    return st.startswith("return") and len(st) > 6
+
+
 def step3_0_check(efv, ida_cfg, cpp_cfg, M, signals,
                   get_callee=None, element_exempt=STEP3_0_ELEMENT_EXEMPT):
     nec = efv["necessary"]
@@ -1356,6 +1428,22 @@ def verify_single_function(ida_addr, func_name, display_name, M,
 
     # ---- C++ side ----
     cpp_cfg = _build_cpp_cfg_events(efv, cpp_text, class_name, M, signals)
+
+    # ---- W1.2 Plan A: trivial-stub guard (#114 READ blind spot) ----
+    # IDA 侧存在任何 READ/WRITE/CALL 事件而 C++ 体为平凡单 return（0 事件）
+    # → 平凡存根冒充完成（STEP3(0) 对 READ 失明，此守卫独立拦截）。
+    guard_ida = _collect_rwcall_events(ida_cfg)
+    if guard_ida:
+        guard_cpp = _collect_rwcall_events(cpp_cfg)
+        if not guard_cpp and _is_trivial_single_return(cpp_text):
+            if verbose:
+                print("  GUARD      : trivial-stub-mismatch "
+                      "({} IDA event(s) vs trivial return body)"
+                      .format(len(guard_ida)), file=sys.stderr)
+            return False, {"reject": False,
+                           "reason": "trivial-stub-mismatch: trivial single-return "
+                                     "body (0 cpp events) vs {} IDA-side event(s) "
+                                     "(W1.2 Plan A guard)".format(len(guard_ida))}
 
     if verbose:
         print("  C++ source : {}:{}".format(body["file"], body["start_line"] + 1),
@@ -1702,7 +1790,7 @@ def main():
         cpp_loc = f"{cpp_loc.get('file','?')}:{cpp_loc.get('start_line','?')}"
     cpp_loc = cpp_loc or '?'
     print(f"FAIL: {cpp_loc}: {display_name} -- translation incomplete")
-    if info.get("reject") and info.get("reason"):
+    if info.get("reason"):
         print(f"  {info['reason']}")
     sys.exit(1)
 

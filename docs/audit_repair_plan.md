@@ -6,6 +6,14 @@
 > `.omo/fake_stub_audit.json`、`.omo/completed_body_audit.json`。
 > 当前诚实口径：completed 11,892 的真实下界 ≈ **11,485**（−~370 破损 −~37 假完成，并集待精算）。
 
+> **执行状态（2026-09-17 G17 更新）**：W1.1 ✅（#117 resolved，commit 9051f180）
+> → P0/P0b ✅（#112/#113 resolved，文本级 FAIL=0 恢复）→ W1.2 ✅（dry 统计
+> A36/B25/C660/D11171 + 用户批准 + 方案 A 落地 + 全池新基线 11,856 PASS/36 FAIL
+> ≡A-36 双向零差）→ **W2.1 ✅**（A-36 全员复位：裸 return 24 + #50 丢 this 族 5 +
+> rawcast 无名词汇 7；completed 11,856/pending 4,755）→ 下一会话：**W2.2**
+> （B-25 逐例，预研台账 .omo/w22_pretriage.json）→ **W2.3**（破损 ~370 分路）
+> → W2.4（已部分完成：口径修正随 G17 提交）→ 回到 P1-P3 主线。
+
 ## 执行序总览
 
 ```
