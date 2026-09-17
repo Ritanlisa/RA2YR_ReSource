@@ -2622,6 +2622,7 @@ return 0;
 // 0x7AC4D0
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_46(int a1, int a2, int a3)
+}
 // 0x7ac4c0
 {
 return 0;

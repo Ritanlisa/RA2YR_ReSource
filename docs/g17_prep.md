@@ -226,7 +226,7 @@ NeuronClass 316 / AbstractTypeClass 315 / MultiplayerObserverTeam 297 / HouseCla
 **TeleportLocomotionClass 362 槽全挂 Jumpjet 名 = 相邻表整体误归属个案**。
 InfantryClass 真空槽：字节 196 / 1064（见 P2 词汇前置）。
 
-## 快速验收清单（G17 已执行；下一会话入口见下）
+## 快速验收清单（G17 全日执行完毕；下一会话入口见下）
 
 ```
 [x] curl :13337 探测
@@ -235,30 +235,30 @@ InfantryClass 真空槽：字节 196 / 1064（见 P2 词汇前置）。
 [x] P0 BulletType til（#112 resolved；真根因 = flat 是 IDA C 解析器保留字，760B 建成 + idb_save）
 [x] P0b ml 残留清理 43 条 + hpp 39 改名对齐 + GetWarhead 复验 PASS（#113 resolved）
 [x] W1.2 验证器加固（dry 统计 A36/B25/C660/D11171 → 获批 → 方案 A 落地 → 新基线 11,856/36 ≡ A-36 双向零差）
-[x] W2.1 A-36 假完成全员复位（commit 63b2dd35；completed 11,856 / pending 4,755）
-[ ] W2.2 B-25 逐例复核（预研台账 .omo/w22_pretriage.json；真 stub 0x5BC450 优先）
-[ ] W2.3 破损文本 ~370 分路修复（清单 .omo/completed_body_audit.json；R 路/S 路）
-[ ] P1 TechnoClass 尾区（读 YRpp 100-181 + ctor 写图表 → 四源 → t14 --apply → A1 复跑）
-[ ] P2 词汇前置（slot 196/1064 裁决 + member 1768/3644 INI 考古）
-[ ] P2 H5 波（0x51df10 起小函数 ×3-5）
-[ ] 收尾六件套 + 新增 completed 全验 + 提交 + tag auto-fill-baseline 重锚
+[x] W2.1 A-36 假完成全员复位（commit 63b2dd35）
+[x] W2.2 B-25 三选一：复位 24 + 保留 1（0x4E7E30）+ #50 转桶 9（#119）
+[x] W2.3 破损 265 分路：R134 保 + S112 + 杂交体 26（ns 假阳性修正后真实清单；#120）
+[x] P1 TechnoClass 尾区 75 条真值表四源 + til + A1 复核（#110 resolved；残余=中区链边界债）
+[x] P2 词汇前置（InfantryClass@1768 / FootClass@1677 / QueueMission@488 槽 / ammo 镜像清理）
+[x] P2 H5×2（0x51DF10 CancelMovement + 0x51DF60 FireWeaponWithCleanup，均 PASS）
+[x] 收尾六件套 + 抽样 50/50 + 提交 + tag 重锚
 ```
 
-## 下一会话开工清单（W2.2 → W2.3 → P1-P3）
+## 下一会话开工清单（W2 收官后：P2 续 → P3 → 中区轮）
 
-1. **开场五检**（同「G17 主循环工作流」阶段 1；readiness 预期 READY，
-   completed 口径 11,856 / pending 4,755）。
-2. **W2.2 — B-25 逐例三选一**（复位 / 保留记录理由 / 转桶）：
-   - 台账：`.omo/w22_pretriage.json` + 全量体文本见 `.omo/w12_dry_stats.json` B 格；
-   - 构成：raw-this-residue 族 ~22（`*(this+N)` 裸下标忠实体——R 路改 `this->member`
-     需先 ml 补名，无名词汇者复位）+ 真 stub 1（0x5BC450 GetTextBufferEntry，
-     `(void)index; return 0;`——Plan A 漏网型，直接复位）+ 签名/体不一致 ~7
-     （Seek 族体引用 a2/a3 vs 签名 a1/a2 = #50 丢参族，转桶 #50 等系统性修复）；
-   - 复位工具：`.omo/w21_rollback_batch.py` 可改造为接受显式地址清单。
-3. **W2.3 — 破损文本 ~370 分路**：清单 `.omo/completed_body_audit.json`
-   （120 括号不平衡 + 261 签名缺参，并集去重）；R 路（机械修复保 completed，
-   补签名参数/补括号后复验）与 S 路（复位重翻）逐个判定；P0b 同族已清。
-4. **回到 P1-P3 主线**（本文件既有小节；注意 W2 后 pending 口径已重算为 4,755，
-   P2 队列表不受影响）。
+1. **开场五检**（同「G17 主循环工作流」阶段 1；completed 口径 **11,691 /
+   pending 4,920**——W2 全线收官后诚实口径）。
+2. **P2 H5 续波**（infantry.cpp 队列剩余 20 个，从 0x5227f0/0x51f330 起小函数）：
+   - 已验证范式：词汇前置（三源 ml+layouts+signals mbn，hpp 跟随改名）→
+     `get_context` → 语义虚调用（**C++ 侧 vfptr 只认 `this->Method()`——raw cast
+     形恒零事件**，槽词汇缺时二进制直读 vtable 定谳后补 vtable_offsets.json）→
+     verify → mark_completed；
+   - 词汇债清单一批：InfantryTypeClass member@1768/3644 INI 考古（G16 BulletType
+     范式）、slot@196/1064 裁决（P3 vtable 审计交叉）、param-mismatch:a2。
+3. **P3 vtable 审计批量轮**（docs/g16_vtable_audit_queue.md 166 表；
+   NeuronClass 316 / AbstractTypeClass 315 / TeleportLocomotion 362 误归属个案）。
+4. **TechnoClass 中区轮**（新识别债）：RadioClass 链边界 til 228 vs ml 240
+   （flashing 族 delta12 / particles 族 delta20 / YRpp 中区 5 成员 -172）——
+   A1 的 TechnoClass REJ 最后收敛项。
 5. 全池回归节奏照旧：抽样制，每 3-4 波后 `python .omo/pool_verify_all.py --workers 6`
-   （**基线现为 11,856 PASS / 0 FAIL**——守卫生效口径，FAIL 逐条定因禁止带 FAIL 重锚）。
+   （本日会话后建议先跑一次全池建立 W2 收官后新基线）。

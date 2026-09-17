@@ -3346,6 +3346,7 @@ return 1;
 // 0x53A130
 namespace gamemd {
 char HouseClass::IonSensitivesShouldBeOffline()
+}
 // 0x50e350
 {
 return 0;

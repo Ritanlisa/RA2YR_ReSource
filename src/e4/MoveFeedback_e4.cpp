@@ -170,6 +170,7 @@ int MoveFeedback::Draw(unsigned int * a2)
     return result;
 }
 
+}
 // 0x40BCB0
 DynamicVector * MoveFeedback::QueryInterface(char a2)
 {
@@ -281,6 +282,7 @@ int MoveFeedback::FindMoveItem(unsigned int * a2)
     return -1;
   }
     return result;
+}
 }
 
 // 0x40C160

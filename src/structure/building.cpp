@@ -22160,19 +22160,12 @@ BuildingTypeClass* BuildingClass::GetType_Thunk() { return Type; }
 // 0x449a40
 HouseClass* BuildingClass::GetOwnerHouse()
 {
-// 0x449a40
-    int __thiscall BuildingClass::GetOwnerHouse(#377 *(void**)this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall BuildingClass::GetOwnerHouse(#377 *this)
 {
-    return this->UpdateProduction_0();
+  return (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 540))(this);
 }
-
-/* ASM:
-mov     eax, [ecx]
-jmp     dword ptr [eax+21Ch]
-*/
 }
-
-// IDA 0x6347b0: get type entry index
 // 0x6347b0
 int BuildingClass::GetTypeEntry()
 {
@@ -23310,49 +23303,49 @@ void BuildingClass::BeginCrumblingTimer() {}
 // 0x453d60
 void BuildingClass::MarkCellOccupied(int cell_x, int cell_y)
 {
-// 0x453d60
-    int __thiscall BuildingClass::MarkCellOccupied(#377 *(void**)this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall BuildingClass::MarkCellOccupied(#377 *this)
 {
-    int *v1;
-    int *v2;
-    int v3;
-    int result;
-    int *v5;
-    v1 = v5;
-    LOWORD(v5) = *v5 / 256;
-    HIWORD(v5) = v1[1] / 256;
-    v2 = CellCoord::To_CellObj(&MapClass_Instance, (short *)&v5);
-    v3 = v2[73];
-    result = (int)(v2 + 73);
-    LOBYTE(v3) = v3 | 0x80;
-    *(int *)result = v3;
-    return result;
-}
-}
+  _DWORD *v1; // ecx
+  _DWORD *v2; // eax
+  int v3; // ecx
+  int result; // eax
+  _DWORD *v5; // [esp+4h] [ebp+4h] BYREF
 
+  v1 = v5; /*0x453d60*/
+  LOWORD(v5) = *v5 / 256; /*0x453d72*/
+  HIWORD(v5) = v1[1] / 256; /*0x453d8b*/
+  v2 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v5); /*0x453d9d*/
+  v3 = v2[73]; /*0x453da2*/
+  result = (int)(v2 + 73); /*0x453da8*/
+  LOBYTE(v3) = v3 | 0x80; /*0x453dad*/
+  *(_DWORD *)result = v3; /*0x453db0*/
+  return result; /*0x453db2*/
+}
+}
 // 0x453dc0
 void BuildingClass::ClearCellOccupied(int cell_x, int cell_y)
 {
-// 0x453dc0
-    int __thiscall BuildingClass::ClearCellOccupied(#377 *(void**)this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall BuildingClass::ClearCellOccupied(#377 *this)
 {
-    int *v1;
-    int *v2;
-    int v3;
-    int result;
-    int *v5;
-    v1 = v5;
-    LOWORD(v5) = *v5 / 256;
-    HIWORD(v5) = v1[1] / 256;
-    v2 = CellCoord::To_CellObj(&MapClass_Instance, (short *)&v5);
-    v3 = v2[73];
-    result = (int)(v2 + 73);
-    LOBYTE(v3) = v3 & 0x7F;
-    *(int *)result = v3;
-    return result;
-}
-}
+  _DWORD *v1; // ecx
+  _DWORD *v2; // eax
+  int v3; // ecx
+  int result; // eax
+  _DWORD *v5; // [esp+4h] [ebp+4h] BYREF
 
+  v1 = v5; /*0x453dc0*/
+  LOWORD(v5) = *v5 / 256; /*0x453dd2*/
+  HIWORD(v5) = v1[1] / 256; /*0x453deb*/
+  v2 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v5); /*0x453dfd*/
+  v3 = v2[73]; /*0x453e02*/
+  result = (int)(v2 + 73); /*0x453e08*/
+  LOBYTE(v3) = v3 & 0x7F; /*0x453e0d*/
+  *(_DWORD *)result = v3; /*0x453e10*/
+  return result; /*0x453e12*/
+}
+}
 // 0x455980
 void BuildingClass::ScanCircleForTiberium() {}
 // 0x455a80

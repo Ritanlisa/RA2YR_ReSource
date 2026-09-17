@@ -247,6 +247,7 @@ int Dial8Class_48::FindItem(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x4A8030
 namespace gamemd {
 VectorClass * Dial8Class_48::QueryInterface(char a2)

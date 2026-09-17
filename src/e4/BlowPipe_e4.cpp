@@ -322,6 +322,7 @@ int BlowPipe_31::Read(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x63E650
 namespace gamemd {
 char BlowPipe_23::AddRef(int a2)
@@ -523,6 +524,7 @@ int BlowPipe_23::FindItemIndex_0(unsigned int * a2)
     return result;
 }
 } // namespace gamemd
+}
 
 // 0x63EAD0
 namespace gamemd {
@@ -590,6 +592,7 @@ int BlowPipe_23::FindItemIndex_1(unsigned int * a2)
     return -1;
   }
     return result;
+}
 }
 } // namespace gamemd
 

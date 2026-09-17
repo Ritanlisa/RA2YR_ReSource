@@ -15661,9 +15661,11 @@ return 0;
 // 0x7DBC5A
 namespace gamemd {
 int __statfp()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __usercall _statfp@<eax>(__int16 a1@<fpstat>)
 {
-{
-    return a1;
+  return a1; /*0x7dbc66*/
 }
 }
 } // namespace gamemd

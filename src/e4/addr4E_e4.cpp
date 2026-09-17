@@ -2926,26 +2926,29 @@ wchar_t * sub_4E4F30()
 // 0x4E4F50
 namespace gamemd {
 char * _cfltcvt_init()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char *_cfltcvt_init()
 {
-{
-    char *result;
-    *(int *)&g_CellDirectionOffsets.__pad_579C[61700] = a1_2;
-    *(int *)&g_CellDirectionOffsets.__pad_579C[61712] = a2;
-    *(int *)&g_CellDirectionOffsets.__pad_579C[61724] = a3;
-    *(int *)&g_CellDirectionOffsets.__pad_579C[61736] = a4;
-    *(int *)&g_CellDirectionOffsets.__pad_579C[61748] = a5;
-    *(int *)&g_CellDirectionOffsets.__pad_579C[61760] = a6;
-    *(int *)&g_CellDirectionOffsets.__pad_579C[61772] = a7;
-    *(int *)&g_CellDirectionOffsets.__pad_579C[61784] = a8;
-    *(int *)&g_CellDirectionOffsets.__pad_579C[61796] = a0_0;
-    result = &g_CellDirectionOffsets.__pad_579C[61708];
-    do
+  char *result; // eax
+
+  *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61700] = a1_2; /*0x4e4f50*/
+  *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61712] = a2; /*0x4e4f5a*/
+  *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61724] = a3; /*0x4e4f64*/
+  *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61736] = a4; /*0x4e4f6e*/
+  *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61748] = a5; /*0x4e4f78*/
+  *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61760] = a6; /*0x4e4f82*/
+  *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61772] = a7; /*0x4e4f8c*/
+  *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61784] = a8; /*0x4e4f96*/
+  *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61796] = a0_0; /*0x4e4fa0*/
+  result = &MEMORY[0x89F690].__pad_579C[61708]; /*0x4e4faa*/
+  do /*0x4e4fbd*/
   {
-    *(int *)result = -1;
-    result += 12;
+    *(_DWORD *)result = -1; /*0x4e4faf*/
+    result += 12; /*0x4e4fb5*/
   }
-    while ( (int)result < (int)&g_CellDirectionOffsets.__pad_579C[61816] );
-    return result;
+  while ( (int)result < (int)&MEMORY[0x89F690].__pad_579C[61816] ); /*0x4e4fbd*/
+  return result; /*0x4e4fbf*/
 }
 }
 } // namespace gamemd

@@ -5192,19 +5192,22 @@ double E4Recv_5AF3B0::sub_5AF3B0()
 // 0x5AF470
 namespace gamemd {
 double E4Recv_5AF470::sub_5AF470()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+double __thiscall sub_5AF470(IUnknown *this)
 {
-{
-    float *v1;
-    __int128 aP0;
-    int v4[3];
-    float v5[3];
-    v4[0] = 1065353216;
-    v4[1] = 0;
-    v4[2] = 0;
-    v1 = TransformMatrix3x4Point((AbstractClass *)v5, this, (IUnknown *)v4);
-    *((double *)&aP0 + 1) = *v1;
-    *(double *)&aP0 = v1[1];
-    return Math::CalcAngle((AbstractClass *)aP0, *(double *)((char *)&aP0 + 4));
+  float *v1; // eax
+  __int128 aP0; // [esp+0h] [ebp-34h]
+  _DWORD v4[3]; // [esp+1Ch] [ebp-18h] BYREF
+  float v5[3]; // [esp+28h] [ebp-Ch] BYREF
+
+  v4[0] = 1065353216; /*0x5af47e*/
+  v4[1] = 0; /*0x5af486*/
+  v4[2] = 0; /*0x5af48e*/
+  v1 = TransformMatrix3x4Point((AbstractClass *)v5, this, (IUnknown *)v4); /*0x5af496*/
+  *((double *)&aP0 + 1) = *v1; /*0x5af4ae*/
+  *(double *)&aP0 = v1[1]; /*0x5af4c1*/
+  return Math::CalcAngle((AbstractClass *)aP0, *(double *)((char *)&aP0 + 4)); /*0x5af4cc*/
 }
 }
 } // namespace gamemd

@@ -186,22 +186,15 @@ bool LoadOptions::DeleteSaveFile(const char* filename) {
 // IDA 0x5587F0: Run — launch save/load dialog
 // 0x5587f0
 int LoadOptions::Run() {
-// 0x5587f0
-    bool __thiscall LoadOptions::Run(const char **(void**)this)
 {
-    this->Items = (const char *)1;
-    this->IsInitialized = 0;
-    return SaveLoadDialog::DlgProc(this);
+// [IDA decompile] original pseudocode - translation pending (final goal)
+bool __thiscall LoadOptions::Run(const char **this)
+{
+  *(this + 1) = (const char *)1; /*0x5587f0*/
+  *(this + 3) = 0; /*0x5587f7*/
+  return SaveLoadDialog::DlgProc(this);
 }
-
-/* ASM:
-mov     dword ptr [ecx+4], 1
-mov     dword ptr [ecx+0Ch], 0
-jmp     SaveLoadDialog__DlgProc
-*/
 }
-
-// IDA 0x559C20: Check — scan for save files matching extension
 // 0x559c20
 bool LoadOptions::Check() {
 // 0x559c20

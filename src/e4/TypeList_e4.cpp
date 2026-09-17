@@ -237,6 +237,7 @@ int TypeList_cptr_ParticleSystemTypeClass::Remove(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x45A9C0
 namespace gamemd {
 VectorClass * TypeList_Particle::Add(char a2)
@@ -334,6 +335,7 @@ int TypeList::GetSize(unsigned int * a2)
     return -1;
   }
     return result;
+}
 }
 
 // 0x477FC0
@@ -734,6 +736,7 @@ int TypeList_Infantry::GetSize(unsigned int * a2)
     return -1;
   }
     return result;
+}
 }
 } // namespace gamemd
 
@@ -1560,6 +1563,7 @@ int TypeList_VoxelAnim::GetSize(unsigned int * a2)
   }
     return result;
 }
+}
 } // namespace gamemd
 
 // 0x67AE70
@@ -1653,6 +1657,7 @@ int TypeList_VoxelAnim::TypeList_vt04(unsigned int * a2)
     if ( ++result >= v2 )
     return -1;
   }
+}
     return result;
 }
 } // namespace gamemd
@@ -1854,6 +1859,7 @@ int TypeList_cptr_TerrainTypeClass::GetSize(unsigned int * a2)
   {
     if ( ++result >= v2 )
     return -1;
+}
   }
     return result;
 }

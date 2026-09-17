@@ -1268,14 +1268,13 @@ wchar_t * CreateTeamCommand::performAction_78()
 namespace gamemd {
 int CreateTeamCommand::performAction_79()
 {
-// 0x536c00
-    wchar_t *__thiscall CreateTeamCommand::performAction_79(AllToCheerCommandClass *(void**)this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+wchar_t *__thiscall CreateTeamCommand::performAction_79(AllToCheerCommandClass *this)
 {
-    return UI_Create_730F30();
+  return UI_Create_730F30(); /*0x536c05*/
 }
 }
-} // namespace gamemd
-
 // 0x536C10
 namespace gamemd {
 char * CreateTeamCommand::performAction_80()
@@ -1520,14 +1519,13 @@ wchar_t * CreateTeamCommand::performAction_103()
 namespace gamemd {
 int CreateTeamCommand::performAction_104()
 {
-// 0x536ea0
-    int __thiscall CreateTeamCommand::performAction_104(CenterBaseCommandClass *(void**)this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+int __thiscall CreateTeamCommand::performAction_104(CenterBaseCommandClass *this)
 {
-    return TAction::CenterOnStartCoords();
+  return TAction::CenterOnStartCoords(); /*0x536ea5*/
 }
 }
-} // namespace gamemd
-
 // 0x536EB0
 namespace gamemd {
 char * CreateTeamCommand::performAction_105()
@@ -1570,14 +1568,13 @@ wchar_t * CreateTeamCommand::performAction_108()
 namespace gamemd {
 int CreateTeamCommand::performAction_109()
 {
-// 0x536f20
-    char *__thiscall CreateTeamCommand::performAction_109(AllianceCommandClass *(void**)this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+char *__thiscall CreateTeamCommand::performAction_109(AllianceCommandClass *this)
 {
-    return UI_Create_7318F0();
+  return UI_Create_7318F0(); /*0x536f25*/
 }
 }
-} // namespace gamemd
-
 // 0x536F30
 namespace gamemd {
 char * CreateTeamCommand::performAction_110()
@@ -1763,6 +1760,8 @@ int CreateTeamCommand::performAction_128()
 {
 // 0x537130
     unsigned short __thiscall CreateTeamCommand::performAction_128(CenterREventCommandClass *(void**)this)
+}
+}
 {
     return UI_Create_734120();
 }
@@ -1909,6 +1908,8 @@ wchar_t * CreateTeamCommand::performAction_142()
 namespace gamemd {
 int CreateTeamCommand::performAction_143()
 {
+}
+}
 // 0x5372d0
     char __thiscall CreateTeamCommand::performAction_143(OptionsCommandClass *(void**)this)
 {
@@ -3029,15 +3030,25 @@ unsigned int CreateTeamCommand::performAction_240(int a2)
 
 // 0x538750
 namespace gamemd {
-int CreateTeamCommand::performAction_242(unsigned int * a2)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall CreateTeamCommand::sub_538750(int *this, _DWORD *a2)
 {
-{
-    int v2;
-    int result;
-    int *i;
-    v2 = this->Count;
-    result = 0;
-    if ( v2 <= 0 )
+  int v2; // edx
+  int result; // eax
+  _DWORD *i; // ecx
+
+  v2 = *(this + 4); /*0x538750*/
+  result = 0; /*0x538753*/
+  if ( v2 <= 0 ) /*0x538758*/
+    return -1; /*0x53876f*/
+  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x53875e*/
+  {
+    if ( ++result >= v2 ) /*0x53876d*/
+      return -1; /*0x53876d*/
+  }
+  return result; /*0x538772*/
+}
+}
     return -1;
     for ( i = (int *)this->Items; *i != *a2; ++i )
   {

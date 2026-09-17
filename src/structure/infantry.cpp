@@ -2167,37 +2167,15 @@ retn    4
 // 0x4598a0
 bool InfantryClass::updateDeployAnimation()
 {
-// 0x4598a0
-    int __thiscall InfantryClass::updateDeployAnimation(int *(void**)this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall InfantryClass::updateDeployAnimation(_DWORD *this)
 {
-    int v1;
-    v1 = this->FootClass_field_520;
-    return *(char *)(v1 + 5806) || *(char *)(v1 + 5807);
+  int v1; // eax
+
+  v1 = *(this + 328); /*0x4598a0*/
+  return *(_BYTE *)(v1 + 5806) || *(_BYTE *)(v1 + 5807); /*0x4598bc*/
 }
-
-/* ASM:
-mov     eax, [ecx+520h]
-mov     cl, [eax+16AEh]
-test    cl, cl
-jnz     short loc_4598BD
-mov     cl, [eax+16AFh]
-test    cl, cl
-jnz     short loc_4598BD
-xor     eax, eax
-retn
-; ---------------------------------------------------------------------------
-
-loc_4598BD:                             ; CODE XREF: InfantryClass__updateDeployAnimation+E↑j
-; InfantryClass__updateDeployAnimation+18↑j
-mov     eax, 1
-retn
-*/
 }
-
-// ============================================================
-// Phase 3: Firing / Combat
-// ============================================================
-
 // 0x522600
 int __thiscall InfantryClass::FireAtTargetPos(int *this, int a2, int a3, int a4)
 {
@@ -2243,35 +2221,29 @@ retn    0Ch
 // 0x51df60
 int InfantryClass::FireWeaponWithCleanup(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x51df60
-int __thiscall InfantryClass::FireWeaponWithCleanup(#377 *this, int a2, int a3)
-{
-  int v4; // edi
-  int v5; // eax
+    int v4;
 
-  *((_BYTE *)this + 1677) = 0;
-  v4 = TechnoClass::FireWeapon(this);
-  if ( v4 )
-  {
-    if ( !*((_BYTE *)this + 129) )
+    this->unknownBool68D = 0;
+    v4 = TechnoClass::FireWeapon(this);
+    if (v4)
     {
-      if ( *(_BYTE *)(*((_DWORD *)this + 432) + 3775) )
-      {
-        if ( !*((_DWORD *)this + 191) )
+        if (!this->inLimbo)
         {
-          v5 = *(_DWORD *)this;
-          *((_DWORD *)this + 437) = 300;
-          if ( (*(int (__thiscall **)(#377 *))(v5 + 388))(this) == 1
-            || (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 388))(this) == 15 )
-          {
-            (*(void (__thiscall **)(#377 *, int, _DWORD))(*(_DWORD *)this + 488))(this, 5, 0);
-          }
+            if ((_BYTE)this->Type->Fraidycat)
+            {
+                if (!this->ammo)
+                {
+                    this->PanicDurationLeft = 300;
+                    if (this->GetPrimaryOrFallback() == 1
+                        || this->GetPrimaryOrFallback() == 15)
+                    {
+                        this->QueueMission(5, 0);
+                    }
+                }
+            }
         }
-      }
     }
-  }
-  return v4;
+    return v4;
 }
 
 /* ASM:
@@ -3829,17 +3801,13 @@ retn    8
 // 0x51df10
 int InfantryClass::CancelMovement()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x51df10
-int __thiscall InfantryClass::CancelMovement(int this)
-{
-  if ( !*(_DWORD *)(this + 1652) )
-    WinAPI::Wrapper(-2147467261);
-  (*(void (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 172))(*(_DWORD *)(this + 1652));
-  *(_DWORD *)(this + 1768) = 2;
-  *(_BYTE *)(this + 1755) = 0;
-  *(_DWORD *)(this + 1732) = 0;
-  return TechnoClass::CleanupDirection((_BYTE *)this);
+    if (!this->Locomotor)
+        WinAPI::Wrapper(-2147467261);
+    (*(void (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 172))((_DWORD)this->Locomotor);
+    this->unknown_int_6E8 = 2;
+    this->Crawling = 0;
+    this->SequenceAnim = (Sequence)0;
+    return TechnoClass::CleanupDirection(this);
 }
 
 /* ASM:
@@ -4514,15 +4482,36 @@ retn
 
 // 0x51f540
 int InfantryClass::ProcessEnterOrRepair()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall InfantryClass::ProcessEnterOrRepair(#375 **this)
 {
-    InfantryTypeClass *v3;
-    int v2;
-    int v5;
+  int v2; // ecx
+  _BYTE *v3; // eax
+  int v5; // eax
 
-    if ( !(unsigned __int8)House::IsCurrentPlayer((HouseClass *)this->focus)
-      && (v2 = (int)this->sprayOffsetIndex) != 0
-      && (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 44))(v2) == 6
-      && ((v3 = this->Type, *(_BYTE *)((char *)v3 + 2890))
+  if ( !(unsigned __int8)House::IsCurrentPlayer(*(this + 135)) /*0x51f591*/
+    && (v2 = (int)*(this + 173)) != 0
+    && (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 44))(v2) == 6
+    && ((v3 = *(this + 432), v3[3774]) || (v3[3764] || v3[3765]) && BuildingClass::CanRepair(*(this + 173), (int)this)) )
+  {
+    (*((void (__thiscall **)(#375 **, _DWORD, int))*this + 288))(this, *(this + 173), 1); /*0x51f5a7*/
+    (*((void (__thiscall **)(#375 **, int))*this + 124))(this, 8); /*0x51f5b3*/
+    return 1; /*0x51f5b9*/
+  }
+  else if ( !(unsigned __int8)House::IsCurrentPlayer(*(this + 135)) /*0x51f5e9*/
+         && ((v5 = (int)*(this + 433), v5 == 27) || v5 == 28 || v5 == 29 || v5 == 30)
+         && !*(this + 173) )
+  {
+    (*((void (__thiscall **)(#375 **, int, _DWORD, _DWORD))*this + 342))(this, 31, 0, 0); /*0x51f5fd*/
+    return 1; /*0x51f603*/
+  }
+  else
+  {
+    return InfantryClass::ProcessDeploy(this); /*0x51f60c*/
+  }
+}
+}
        || ((*(_BYTE *)((char *)v3 + 2880) || *(_BYTE *)((char *)v3 + 2881))
 // 0x457ce0
           && BuildingClass::CanRepair((BuildingClass *)this->sprayOffsetIndex, (TechnoClass *)this)) ) )

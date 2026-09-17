@@ -7840,6 +7840,7 @@ int RandomMap::Read(unsigned short * a2)
 }
 } // namespace gamemd
 
+}
 // 0x42FBF0
 namespace gamemd {
 DynamicVector * RandomMap::QueryInterface(char a2)

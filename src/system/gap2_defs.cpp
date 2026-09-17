@@ -209,18 +209,22 @@ int __thiscall TacticalClass::_vt132(#377 *this)
 }
 } }
 // 0x41C050
-namespace gamemd { bool TacticalClass::ProcessTick() {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall MiniStub_41c050(_DWORD *this)
 {
-    return *(this + 373) != 0;
+  return *(this + 373) != 0; /*0x41c05d*/
 }
-} }
+}
 // 0x41C150
-namespace gamemd { void* TacticalClass::ProcessTick2(void* a1) {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall MiniStub_41c150(_DWORD *this, _DWORD *a2)
 {
-    *a2 = *(this + 344);
-    return a2;
+  *a2 = *(this + 344); /*0x41c15a*/
+  return a2; /*0x41c15c*/
 }
-} }
+}
 // 0x41C160
 namespace gamemd { int TacticalClass::ProcessTick3(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1084,11 +1088,13 @@ char __thiscall sub_45F1D0(int *this, int *a2, int *a3)
 }
 } }
 // 0x4722C0
-namespace gamemd { bool CellClass::HasContent() {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall CellClass::HasContent(_DWORD *this)
 {
-    return *(this + 13) > 0;
+  return *(this + 13) > 0; /*0x4722ca*/
 }
-} }
+}
 // 0x4733A0
 namespace gamemd { void CellClass::AddObject(void* aP1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1513,7 +1519,7 @@ namespace gamemd { int INIClass::GetPipIdx(void* a1, void* a2, int a3) {
     int v4;
     ObjectClass *v5;
     char Destination[32];
-    INIClass::GetString(this, (INIClass *)aP1, a2, *(&DataGlobal_81B958 + 2 * (int)aP3), (INIClass *)Destination, 32);
+    INIClass::GetString(this, (INIClass *)a1, a2, *(&DataGlobal_81B958 + 2 * (int)a3), (INIClass *)Destination, 32);
     v4 = 0;
     v5 = (ObjectClass *)&DataGlobal_81B958;
     while ( _strcmpi(Destination, *(char **)v5->__pad_0) )
@@ -1535,21 +1541,21 @@ namespace gamemd { int INIClass::GetCoord(int a1, void* a2, void* a3, void* a4) 
     char v10;
     INIClass Buffer;
     INIClass Destination;
-    sprintf( Buffer.__pad_0, (const char *const)&DataGlobal_818994.sectionCount, LOBYTE(aP4->Color_field_00), BYTE1(aP4->Color_field_00), BYTE2(aP4->Color_field_00));
-    if ( INIClass::GetString(this, aP2, (unsigned char *)aP3, &Buffer, &Destination, 64) )
+    sprintf( Buffer.__pad_0, (const char *const)&DataGlobal_818994.sectionCount, LOBYTE(a4->Color_field_00), BYTE1(a4->Color_field_00), BYTE2(a4->Color_field_00));
+    if ( INIClass::GetString(this, a2, (unsigned char *)a3, &Buffer, &Destination, 64) )
   {
     sscanf(Destination.__pad_0, (const char *const)&DataGlobal_818994.sectionCount, &v8, &v10, &v9);
     HIBYTE(v8) = v10;
     v7 = v9;
-    *(short *)aP1->__pad_0 = v8;
-    aP1->__pad_0[2] = v7;
-    return (int)aP1->__pad_0;
+    *(short *)a1->__pad_0 = v8;
+    a1->__pad_0[2] = v7;
+    return (int)a1->__pad_0;
   }
     else
   {
-    *(short *)aP1->__pad_0 = aP4->Color_field_00;
-    aP1->__pad_0[2] = BYTE2(aP4->Color_field_00);
-    return (int)aP1->__pad_0;
+    *(short *)a1->__pad_0 = a4->Color_field_00;
+    a1->__pad_0[2] = BYTE2(a4->Color_field_00);
+    return (int)a1->__pad_0;
   }
 }
 } }
@@ -1571,7 +1577,7 @@ namespace gamemd { int INIEntry::ReadColor(int a1, void* a2, void* a3, void* a4)
     INIClass Buffer;
     INIClass Destination;
     sprintf(Buffer.__pad_0, (const char *const)&DataGlobal_818994.sectionCount, *a4, *((int*)(a4) + 1), *((int*)(a4) + 2));
-    if ( INIClass::GetString(this, (INIClass *)aP2, a3, &Buffer, &Destination, 64) )
+    if ( INIClass::GetString(this, (INIClass *)a2, a3, &Buffer, &Destination, 64) )
   {
     v8 = 0;
     v10 = 0;
@@ -1597,7 +1603,7 @@ namespace gamemd { int INIClass::LookupEnum(void* a1, void* a2, int a3) {
     int v4;
     ObjectClass *v5;
     char Destination[32];
-    INIClass::GetString(this, (INIClass *)aP1, a2, *(&DataGlobal_81B9D8 + 2 * (int)aP3), (INIClass *)Destination, 32);
+    INIClass::GetString(this, (INIClass *)a1, a2, *(&DataGlobal_81B9D8 + 2 * (int)a3), (INIClass *)Destination, 32);
     v4 = 0;
     v5 = (ObjectClass *)&DataGlobal_81B9D8;
     while ( _strcmpi(Destination, *(const void **)v5->__pad_0) )
@@ -1661,10 +1667,10 @@ LABEL_10:
 // 0x475820
 namespace gamemd { int INIClass::SetStringByIndex(void* a1, void* a2, int a3) {
 {
-    if ( aP3 < (CCINIClass *)*(&g_MatrixTransformState + 356) )
-    return INIClass::SetString( this, aP1, (INIClass *)a2, *((INIClass **)&(*(&g_MatrixTransformState + 353))->X + (int)aP3));
+    if ( a3 < (CCINIClass *)*(&g_MatrixTransformState + 356) )
+    return INIClass::SetString( this, a1, (INIClass *)a2, *((INIClass **)&(*(&g_MatrixTransformState + 353))->X + (int)a3));
     else
-    return INIClass::SetString(this, aP1, (INIClass *)a2, (INIClass *)&DataGlobal_817460.sectionHead[1]);
+    return INIClass::SetString(this, a1, (INIClass *)a2, (INIClass *)&DataGlobal_817460.sectionHead[1]);
 }
 } }
 // 0x475870
@@ -1682,17 +1688,17 @@ namespace gamemd { int ScenarioClass::loadMapData(void* a1, void* a2, int a3) {
 {
     INIClass *v5;
     v5 = (INIClass *)ScenarioClass::processEndgame(&g_BuildingTypeClass_Count, (INIClass *)aP1a);
-    return INIClass::SetString(this, (INIClass *)aP1, (INIClass *)a2, v5);
+    return INIClass::SetString(this, (INIClass *)a1, (INIClass *)a2, v5);
 }
 } }
 // 0x4759F0
 namespace gamemd { int INIClass::ReadStringValue(void* a1, void* a2, int a3) {
 {
     INIClass Destination[2];
-    if ( INIClass::GetString(this, (INIClass *)aP1, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
+    if ( INIClass::GetString(this, (INIClass *)a1, a2, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], Destination, 128) )
     return INIClass::readSection(Destination);
     else
-    return (int)aP3->__pad_0;
+    return (int)a3->__pad_0;
 }
 } }
 // 0x475D70
@@ -1804,14 +1810,14 @@ namespace gamemd { int ScenarioClass::SaveIntListToINI(void* a1, void* a2, int a
     memset(&Source[1], 0, 0x1FCu);
     v9 = 0;
     v10 = 0;
-    for ( i = 0; i < aP3->sectionHead[0]; ++i )
+    for ( i = 0; i < a3->sectionHead[0]; ++i )
   {
     if ( Source[0] )
     strcat(Source, (const char *)&DataGlobal_817F40.nextObject);
-    sprintf(Buffer, (ObjectClass *)&DataGlobal_817F40.fallRate, *(INIClass **)(aP3->headNode[0] + 4 * i));
+    sprintf(Buffer, (ObjectClass *)&DataGlobal_817F40.fallRate, *(INIClass **)(a3->headNode[0] + 4 * i));
     strcat(Source, Buffer);
   }
-    return INIClass::SetString(this, aP1, (INIClass *)a2, (INIClass *)Source);
+    return INIClass::SetString(this, a1, (INIClass *)a2, (INIClass *)Source);
 }
 } }
 // 0x476020
@@ -1961,7 +1967,7 @@ namespace gamemd { void* INIClass::GetCoord2(void* a1, void* a2, void* a3, void*
     char *v9;
     int v10;
     INIClass String[8];
-    if ( INIClass::GetString(this, (INIClass *)aP2, a3, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], String, 512) )
+    if ( INIClass::GetString(this, (INIClass *)a2, a3, (INIClass *)&DataGlobal_87F8E4.__pad_5568[20760], String, 512) )
   {
     v5 = strtok(String[0].__pad_0, Delimiter.__pad_0);
     v6 = atoi(v5);
@@ -9113,24 +9119,36 @@ retn
 */
 } }
 // 0x4913F0
-namespace gamemd { void ConvertClass::AddRef(int a1, void* a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void __thiscall ConvertClass::_vt01(
+        _DWORD *this,
+        int a2,
+        unsigned __int8 *a3,
+        int a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9)
 {
-    int v9;
-    unsigned char v12;
-    v9 = a4;
-    if ( a4 > 0 )
+  int v9; // esi
+  unsigned __int8 v12; // [esp+14h] [ebp+Ch]
+
+  v9 = a4; /*0x4913f1*/
+  if ( a4 > 0 ) /*0x4913fa*/
   {
-    do
+    do /*0x491421*/
     {
-    v12 = *a3++;
-    ++a2;
-    --v9;
-    *(char *)(a2 - 1) = *(char *)(v12 + *(this + 1));
+      v12 = *a3++; /*0x49140a*/
+      ++a2; /*0x491419*/
+      --v9; /*0x49141a*/
+      *(_BYTE *)(a2 - 1) = *(_BYTE *)(v12 + *(this + 1)); /*0x49141e*/
     }
-    while ( v9 );
+    while ( v9 ); /*0x491421*/
   }
 }
-} }
+}
 // 0x491460
 namespace gamemd { int ConvertClass::Release(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -9982,17 +10000,17 @@ namespace gamemd { int CellClass::CheckBuildablePair(void* a1, void* a2, int a3,
     int v13;
     if ( a4 == 4 )
     return 1;
-    v8 = CellCoord::To_CellObj(this, (short *)aP1);
+    v8 = CellCoord::To_CellObj(this, (short *)a1);
     result = Cell::IsBuildable((int)v8, a4, 1, 1, (IUnknown *)0xFFFFFFFF, 0, (IUnknown *)0xFFFFFFFF, (IUnknown *)1);
     if ( result )
   {
     v9 = CellCoord::To_CellObj(this, a2);
-    result = Cell::IsBuildable((int)v9, a4, 1, 1, aP4, (IUnknown *)aP5, (IUnknown *)0xFFFFFFFF, (IUnknown *)1);
+    result = Cell::IsBuildable((int)v9, a4, 1, 1, a4, (IUnknown *)a5, (IUnknown *)0xFFFFFFFF, (IUnknown *)1);
     if ( result )
     {
     v12 = 0;
     v13 = 0;
-    v10 = CellCoord::To_CellObj(this, (short *)aP1);
+    v10 = CellCoord::To_CellObj(this, (short *)a1);
     if ( Object::FindClosestObjectCell(v10, (IUnknown *)&v12, 0, 0) )
       {
     return 0;
@@ -10652,10 +10670,10 @@ namespace gamemd { int CellClass::ProcessVisibility(void* a1) {
     int v14;
     IUnknown *v15;
     bool aP1a;
-    result = LayerClass::CoordinatesLegal(this, (IUnknown *)aP1);
+    result = LayerClass::CoordinatesLegal(this, (IUnknown *)a1);
     if ( result )
   {
-    v5 = (IUnknown *)CellCoord::To_CellObj(this, (short *)aP1);
+    v5 = (IUnknown *)CellCoord::To_CellObj(this, (short *)a1);
     v15 = v5;
     v6 = v5->field_140;
     aP1a = (v6 & 3) != 0;
@@ -10667,8 +10685,8 @@ namespace gamemd { int CellClass::ProcessVisibility(void* a1) {
     for ( i = 0; i < 8; ++i )
     {
     v8 = i & 7;
-    LOWORD(v12) = *((short *)&Direction_X_Offsets.field_0 + 2 * v8) + LOWORD(aP1->field_0);
-    HIWORD(v12) = HIWORD(aP1->field_0) + *((short *)&DataGlobal_89F68A + 2 * v8);
+    LOWORD(v12) = *((short *)&Direction_X_Offsets.field_0 + 2 * v8) + LOWORD(a1->field_0);
+    HIWORD(v12) = HIWORD(a1->field_0) + *((short *)&DataGlobal_89F68A + 2 * v8);
     v13 = v12;
     v9 = (IUnknown *)CellCoord::To_CellObj(this, (short *)&v13);
     v14 = v9->field_24;
@@ -12688,9 +12706,9 @@ namespace gamemd { int INIClass::ReadIntList2(void* a1, void* a2) {
     char v8;
     INIClass Buffer;
     char v11;
-    if ( !aP1 )
+    if ( !a1 )
     return 0;
-    INIClass::ClearSection((int)this, aP1, 0);
+    INIClass::ClearSection((int)this, a1, 0);
     v4 = Source;
     for ( i = (INIClass *)1; v4; v4 += v7 )
   {
@@ -12721,7 +12739,7 @@ namespace gamemd { int INIClass::ReadIntList2(void* a1, void* a2) {
     Buffer.__pad_20[v7] = 0;
     }
     String::Trim(Buffer.__pad_20);
-    INIClass::SetString(this, aP1, &Buffer, (INIClass *)Buffer.__pad_20);
+    INIClass::SetString(this, a1, &Buffer, (INIClass *)Buffer.__pad_20);
     i = (INIClass *)((char *)(i) + 1);
   }
     return 1;
@@ -13057,15 +13075,15 @@ namespace gamemd { int INIClass::ReadDouble(void* a1, void* a2, void* a3) {
     if ( !WideCharToMultiByte(0, 0, lpsz, -1, MultiByteStr[0].__pad_0, 128, 0, 0) )
     GetLastError();
     SysFreeString(lpsz);
-    return INIClass::SetString(this, Block, aP2, MultiByteStr);
+    return INIClass::SetString(this, Block, a2, MultiByteStr);
 }
 } }
 // 0x527C10
 namespace gamemd { int INIClass::SetRect(void* a1, void* a2, void* a3) {
 {
     INIClass Buffer;
-    sprintf( Buffer.__pad_0, g_Str_Trace__d__d__d__d, *(int *)aP3->__pad_0, aP3->headNode[0], aP3->headNode[1], aP3->headNode[2]);
-    return INIClass::SetString(this, aP1, (INIClass *)a2, &Buffer);
+    sprintf( Buffer.__pad_0, g_Str_Trace__d__d__d__d, *(int *)a3->__pad_0, a3->headNode[0], a3->headNode[1], a3->headNode[2]);
+    return INIClass::SetString(this, a1, (INIClass *)a2, &Buffer);
 }
 } }
 // 0x527C60
@@ -13351,8 +13369,8 @@ LABEL_28:
 namespace gamemd { int INIClass::ReadDouble3(void* a1, void* a2, int a3) {
 {
     INIClass Buffer[8];
-    sprintf(Buffer[0].__pad_0, (ObjectClass *)&DataGlobal_825BAC.objectTypeFlags, aP3);
-    return INIClass::SetString(this, (INIClass *)aP1, aP2, Buffer);
+    sprintf(Buffer[0].__pad_0, (ObjectClass *)&DataGlobal_825BAC.objectTypeFlags, a3);
+    return INIClass::SetString(this, (INIClass *)a1, a2, Buffer);
 }
 } }
 // 0x5281C0
@@ -13363,7 +13381,7 @@ namespace gamemd { int INIClass::ReadDouble2(void* a1, void* a2, int a3) {
     INIClass Buffer[8];
     v5 = (INIClass *)String::GetOrEmpty_Alt(a2);
     v6 = (INIClass *)String::GetOrEmpty_Alt(a1);
-    sprintf(Buffer[0].__pad_0, (ObjectClass *)&DataGlobal_825BAC.objectTypeFlags, (INIClass *)aP3);
+    sprintf(Buffer[0].__pad_0, (ObjectClass *)&DataGlobal_825BAC.objectTypeFlags, (INIClass *)a3);
     return INIClass::SetString(this, v6, v5, Buffer);
 }
 } }
@@ -13732,7 +13750,7 @@ namespace gamemd { int INIClass::SetStringOrEmpty(void* a1, void* a2, void* a3) 
     INIClass *v5;
     INIClass *v7;
     INIClass *v8;
-    v8 = (INIClass *)String::GetOrEmpty_Alt((char **)aP3);
+    v8 = (INIClass *)String::GetOrEmpty_Alt((char **)a3);
     v7 = (INIClass *)String::GetOrEmpty_Alt(a2);
     v5 = (INIClass *)String::GetOrEmpty_Alt(a1);
     return INIClass::SetString(this, v5, v7, v8);
@@ -13879,23 +13897,23 @@ namespace gamemd { int INIClass::SetWideAsHex(void* a1, void* a2, void* a3) {
     unsigned short v8;
     char *i;
     v4 = 0;
-    if ( aP3 )
+    if ( a3 )
   {
-    v5 = wcslen((const wchar_t *)aP3);
+    v5 = wcslen((const wchar_t *)a3);
     v6 = (INIClass *)__2_YAPAXI_Z(8 * v5 + 1);
     v7 = v6;
     if ( v6 )
     {
     v6->__pad_0[0] = 0;
-    v8 = *(short *)aP3->__pad_0;
-    for ( i = (char *)v7; *(short *)aP3->__pad_0; i = &v7->__pad_0[strlen(v7->__pad_0)] )
+    v8 = *(short *)a3->__pad_0;
+    for ( i = (char *)v7; *(short *)a3->__pad_0; i = &v7->__pad_0[strlen(v7->__pad_0)] )
       {
     _itoa(v8, i, 16);
     strcat(i, (const char *)&DataGlobal_817F40.nextObject);
-    aP3 = (CCINIClass *)((char *)(aP3) + 2);
-    v8 = *(short *)aP3->__pad_0;
+    a3 = (CCINIClass *)((char *)(a3) + 2);
+    v8 = *(short *)a3->__pad_0;
       }
-    v4 = INIClass::SetString(this, aP1, (INIClass *)aP2, v7);
+    v4 = INIClass::SetString(this, a1, (INIClass *)a2, v7);
     __3_YAXPAX_Z(v7);
     }
   }
@@ -14283,10 +14301,10 @@ LABEL_29:
 // 0x529560
 namespace gamemd { int INIClass::SetBool(void* a1, void* a2, int a3) {
 {
-    if ( (char)aP3 )
-    return INIClass::SetString(this, aP1, (INIClass *)a2, (INIClass *)g_Str_no.headNode);
+    if ( (char)a3 )
+    return INIClass::SetString(this, a1, (INIClass *)a2, (INIClass *)g_Str_no.headNode);
     else
-    return INIClass::SetString(this, aP1, (INIClass *)a2, &g_Str_no);
+    return INIClass::SetString(this, a1, (INIClass *)a2, &g_Str_no);
 }
 } }
 // 0x5295A0
@@ -14296,7 +14314,7 @@ namespace gamemd { int INIClass::ReadBool3(void* a1, void* a2, int a3) {
     INIClass *v6;
     v5 = (INIClass *)String::GetOrEmpty_Alt(a2);
     v6 = (INIClass *)String::GetOrEmpty_Alt(a1);
-    if ( (char)aP3 )
+    if ( (char)a3 )
     return INIClass::SetString(this, v6, v5, (INIClass *)&DataGlobal_825BAC.ambientSoundController[4]);
     else
     return INIClass::SetString(this, v6, v5, (INIClass *)&DataGlobal_825BAC.ambientSoundController[3]);
@@ -14437,7 +14455,7 @@ LABEL_30:
 namespace gamemd { int INIEntry::Write2Integers(void* a1, void* a2, void* a3) {
 {
     char Buffer[56];
-    sprintf(Buffer, g_INI_Key_Digest.__pad_20, *(int *)aP3->__pad_0, aP3->headNode[0]);
+    sprintf(Buffer, g_INI_Key_Digest.__pad_20, *(int *)a3->__pad_0, a3->headNode[0]);
     return INIClass::SetString(this, (INIClass *)Block, (INIClass *)a2, (INIClass *)Buffer);
 }
 } }
@@ -14631,8 +14649,8 @@ LABEL_18:
 namespace gamemd { int INIClass::ReadCoord3(void* a1, void* a2, void* a3) {
 {
     char Buffer[56];
-    sprintf(Buffer, (ObjectClass *)&DataGlobal_81898C.objectTypeFlags, *(INIClass **)aP3->__pad_0);
-    return INIClass::SetString(this, Block, aP2, (INIClass *)Buffer);
+    sprintf(Buffer, (ObjectClass *)&DataGlobal_81898C.objectTypeFlags, *(INIClass **)a3->__pad_0);
+    return INIClass::SetString(this, Block, a2, (INIClass *)Buffer);
 }
 } }
 // 0x529C40
@@ -14896,7 +14914,7 @@ LABEL_30:
 namespace gamemd { int INIClass::SaveTimeField(void* a1, void* a2, int a3) {
 {
     char Buffer[32];
-    sprintf(Buffer, DataGlobal_81F0A8, (int)aP3 / 60 / 60 / 60, (int)aP3 / 60 / 60 % 60, (int)aP3 / 60 % 60);
+    sprintf(Buffer, DataGlobal_81F0A8, (int)a3 / 60 / 60 / 60, (int)a3 / 60 / 60 % 60, (int)a3 / 60 % 60);
     return INIClass::SetString(this, (INIClass *)Block, (INIClass *)a2, (INIClass *)Buffer);
 }
 } }
@@ -15088,13 +15106,16 @@ LABEL_9:
 }
 } }
 // 0x52B4D0
-namespace gamemd { bool INIClass::deleteKey(void* a1) {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+bool __thiscall INIClass::deleteKey(_DWORD *this, ObjectClass *aP1)
 {
-    int *v2;
-    v2 = (int *)*(this + 4);
-    return v2 && *v2 == *(int *)aP1->__pad_0;
+  _DWORD *v2; // eax
+
+  v2 = (_DWORD *)*(this + 4); /*0x52b4d0*/
+  return v2 && *v2 == *(_DWORD *)aP1->__pad_0; /*0x52b4e3*/
 }
-} }
+}
 // 0x52B570
 namespace gamemd { int INIClass::mergeSection(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -15780,9 +15801,9 @@ namespace gamemd { void* CellClass::GetScreenCenterOffset(void* a1, void* a2) {
     else
     v7 = v6 - v5;
     v8 = (void *)(*a2 + v5 - v3 - v10);
-    aP1->field_0 = v3 / 2 + (v7 >> 1) - v4;
-    aP1->field_4 = v8;
-    return &aP1->field_0;
+    a1->field_0 = v3 / 2 + (v7 >> 1) - v4;
+    a1->field_4 = v8;
+    return &a1->field_0;
 }
 } }
 // 0x565C10
@@ -18489,7 +18510,7 @@ namespace gamemd { int CellClass::DecompressTerrainData(int a1) {
     char v8[8];
     int v9[10];
     LZOStraw::Constructor(v9, 1, 0x2000);
-    Delegate::Set(v9, (AbstractTypeClass *)aP1);
+    Delegate::Set(v9, (AbstractTypeClass *)a1);
     while ( 1 )
   {
     LCW::Decompress((int)v9, (CCINIClass *)&v7, 4);
@@ -28330,13 +28351,15 @@ namespace gamemd { int CellClass::CopyNeighborData(int a2) {
 }
 } }
 // 0x588C40
-namespace gamemd { void* CellClass::initCellData(void* a1) {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_WORD *__thiscall CellClass::initCellData(_WORD *this, MouseClass *aP1)
 {
-    *(void**)(this) += LOWORD(aP1->field_0);
-    *(this + 1) += HIWORD(aP1->field_0);
-    return this;
+  *this += LOWORD(aP1->field_0); /*0x588c49*/
+  *(this + 1) += HIWORD(aP1->field_0); /*0x588c50*/
+  return this; /*0x588c54*/
 }
-} }
+}
 // 0x589E20
 namespace gamemd { int RadarClass::updateRadarCells(int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -29149,11 +29172,13 @@ unsigned int __thiscall TacticalClass::_vt05(int this, int a2)
 }
 } }
 // 0x5C0AC0
-namespace gamemd { int TacticalClass::ProbeCalling2(int a1) {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall TacticalClass::_vt06(_DWORD *this, int a2)
 {
-    return *(int *)(*(this + 1) + 4 * a2);
+  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x5c0aca*/
 }
-} }
+}
 // 0x5C0AD0
 namespace gamemd { int TacticalClass::CompareVector(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -29906,11 +29931,13 @@ namespace gamemd { int ScenarioClass::validateMap(int a2) {
 }
 } }
 // 0x5D8160
-namespace gamemd { int ScenarioClass::loadTheater(int a1) {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall ScenarioClass::sub_5D8160(_DWORD *this, int a2)
 {
-    return *(int *)(*(this + 1) + 4 * a2);
+  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x5d816a*/
 }
-} }
+}
 // 0x5D8520
 namespace gamemd { int ScenarioClass::setupPlayers(int * a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -30965,10 +30992,10 @@ namespace gamemd { void* ScenarioClass::GetActionCoordsCopy(void* a1) {
     v3 = *ScenarioClassActionCoords;
     v4 = ScenarioClassActionCoords[1];
     v5 = ScenarioClassActionCoords[2];
-    *(int *)aP1->__pad_0 = v3;
-    *(int *)&aP1->__pad_0[4] = v4;
-    *(int *)&aP1->__pad_0[8] = v5;
-    return aP1->__pad_0;
+    *(int *)a1->__pad_0 = v3;
+    *(int *)&a1->__pad_0[4] = v4;
+    *(int *)&a1->__pad_0[8] = v5;
+    return a1->__pad_0;
 }
 } }
 // 0x635120
@@ -31363,12 +31390,12 @@ namespace gamemd { int FactoryClass::RemoveItem(int a1) {
     VectorClass *v3;
     int v4;
     v2 = this->uniqueId;
-    v3 = aP1;
-    if ( (int)aP1 >= v2 )
+    v3 = a1;
+    if ( (int)a1 >= v2 )
     return 0;
     v4 = v2 - 1;
     this->uniqueId = v4;
-    if ( (int)aP1 < v4 )
+    if ( (int)a1 < v4 )
   {
     do
     {
@@ -33883,7 +33910,7 @@ namespace gamemd { int ScenarioClass::GetGlobalStateByID(int a1, void* a2) {
 {
     if ( a2 > 0x31 )
     return 0;
-    LOBYTE(aP2->nextScenario[0]) = *(this + 40 * a2 + a2 + 7344);
+    LOBYTE(a2->nextScenario[0]) = *(this + 40 * a2 + a2 + 7344);
     return 1;
 }
 } }
@@ -33931,9 +33958,9 @@ namespace gamemd { int ScenarioClass::SetLocalToByID(int a1, int a2) {
 // 0x689A00
 namespace gamemd { int ScenarioClass::GetLocalStateByID(int a1, void* a2) {
 {
-    if ( (unsigned int)aP1 >= 0x64 )
+    if ( (unsigned int)a1 >= 0x64 )
     return 0;
-    LOBYTE(aP2->nextScenario[0]) = *(this + 40 * (int)aP1 + (int)aP1 + 9394);
+    LOBYTE(a2->nextScenario[0]) = *(this + 40 * (int)a1 + (int)a1 + 9394);
     return 1;
 }
 } }
@@ -35140,7 +35167,7 @@ namespace gamemd { void* ScenarioClass::Get_Waypoint_Location(void* a1, int a2) 
 // 0x68BCE0
 namespace gamemd { void* ScenarioClass::GetCellFromArray(int a1) {
 {
-    return CellCoord::To_CellObj(&DataGlobal_87F7E8, this + 2 * (int)aP1 + 793);
+    return CellCoord::To_CellObj(&DataGlobal_87F7E8, this + 2 * (int)a1 + 793);
 }
 } }
 // 0x68BD60
@@ -35181,7 +35208,7 @@ namespace gamemd { int ScenarioClass::ReadWaypoints(int a1) {
     do
   {
     wsprintfA(v10, g_Str_Trace__d, v3);
-    Int_Overwrite = INIClass::ReadInt_Overwrite((int)aP1, g_INI_Key_Waypoints, (CCINIClass *)v10, 0);
+    Int_Overwrite = INIClass::ReadInt_Overwrite((int)a1, g_INI_Key_Waypoints, (CCINIClass *)v10, 0);
     v6 = Int_Overwrite;
     if ( Int_Overwrite )
     {
@@ -35218,7 +35245,7 @@ namespace gamemd { int ScenarioClass::Write_Waypoints(void* a1) {
     int v4;
     short *v5;
     CHAR v6[32];
-    result = INIClass::ClearSection((int)aP1, (INIClass *)g_INI_Key_Waypoints, 0);
+    result = INIClass::ClearSection((int)a1, (INIClass *)g_INI_Key_Waypoints, 0);
     v4 = 0;
     v5 = this + 793;
     do
@@ -35226,7 +35253,7 @@ namespace gamemd { int ScenarioClass::Write_Waypoints(void* a1) {
     if ( *(int *)v5 != DataGlobal_B05458 )
     {
     wsprintfA(v6, g_Str_Trace__d, v4);
-    result = INIClass::SetInt(aP1->__pad_0, (INIClass *)g_INI_Key_Waypoints, (INIClass *)v6, *v5 + 1000 * v5[1], 0);
+    result = INIClass::SetInt(a1->__pad_0, (INIClass *)g_INI_Key_Waypoints, (INIClass *)v6, *v5 + 1000 * v5[1], 0);
     }
     ++v4;
     v5 += 2;
@@ -37442,43 +37469,43 @@ namespace gamemd { int ScenarioClass::RevealMapForHouse(void* a1) {
     INIClass *v15;
     v3 = (INIClass *)(*(void**)this >> 6);
     LOBYTE(v3) = (*(void**)this & 0x40) != 0;
-    INIClass::SetBool(aP1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[29252], v3);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[29252], v3);
     v4 = (INIClass *)(*(void**)this >> 7);
     LOBYTE(v4) = (*(void**)this & 0x80) != 0;
-    INIClass::SetBool(aP1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42144], v4);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42144], v4);
     v5 = (INIClass *)(*(void**)this >> 14);
     LOBYTE(v5) = (*(void**)this & 0x4000) != 0;
-    INIClass::SetBool(aP1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[20336], v5);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[20336], v5);
     v6 = (INIClass *)(*(void**)this >> 15);
     LOBYTE(v6) = (*(void**)this & 0x8000) != 0;
-    INIClass::SetBool(aP1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42124], v6);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42124], v6);
     v7 = (INIClass *)(*(void**)this >> 8);
     LOBYTE(v7) = (unsigned char)v7 & 1;
-    INIClass::SetBool(aP1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42112], v7);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42112], v7);
     v8 = (INIClass *)(*(void**)this >> 9);
     LOBYTE(v8) = (*(void**)this & 0x200) != 0;
-    INIClass::SetBool(aP1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42096], v8);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42096], v8);
     v9 = (INIClass *)(*(void**)this >> 10);
     LOBYTE(v9) = (*(void**)this & 0x400) != 0;
-    INIClass::SetBool(aP1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42080], v9);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42080], v9);
     v10 = (INIClass *)(*(void**)this >> 11);
     LOBYTE(v10) = (*(void**)this & 0x800) != 0;
-    INIClass::SetBool(aP1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42064], v10);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42064], v10);
     v11 = (INIClass *)(*(void**)this >> 12);
     LOBYTE(v11) = (*(void**)this & 0x1000) != 0;
-    INIClass::SetBool(aP1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[29116], v11);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[29116], v11);
     v12 = (INIClass *)(*(void**)this >> 5);
     LOBYTE(v12) = (*(void**)this & 0x20) != 0;
-    INIClass::SetBool(aP1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42056], v12);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42056], v12);
     v13 = (INIClass *)(*(void**)this >> 17);
     LOBYTE(v13) = (*(void**)this & 0x20000) != 0;
-    INIClass::SetBool(aP1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42044], v13);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42044], v13);
     v14 = (INIClass *)HIWORD(*(void**)this);
     LOBYTE(v14) = (unsigned char)v14 & 1;
-    INIClass::SetBool(aP1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42032], v14);
+    INIClass::SetBool(a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42032], v14);
     v15 = (INIClass *)(*(void**)this >> 18);
     LOBYTE(v15) = (*(void**)this & 0x40000) != 0;
-    return INIClass::SetBool( aP1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42020], v15);
+    return INIClass::SetBool( a1->__pad_0, *(INIClass **)&DataGlobal_830620.__pad_579C[41996], &DataGlobal_830620.__pad_579C[42020], v15);
 }
 } }
 // 0x6D2420
@@ -38450,7 +38477,7 @@ namespace gamemd { int CCINIClass::IterateNodes(int a1) {
   {
     do
     {
-    result = (*(int (__thiscall **)(int, IUnknown *))(*(int *)(v3) + 968))(v3, aP1);
+    result = (*(int (__thiscall **)(int, IUnknown *))(*(int *)(v3) + 968))(v3, a1);
     v3 = *(int *)(v3 + 48);
     }
     while ( v3 && (*(char *)(v3 + 20) & 4) != 0 );
@@ -38590,14 +38617,16 @@ namespace gamemd { int CCINIClass::LoadTypeFromINI() {
 }
 } }
 // 0x720940
-namespace gamemd { void* ScenarioClass::processEndgame(int a1) {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char *__thiscall ScenarioClass::processEndgame(_DWORD *this, INIClass *aP1)
 {
-    if ( (unsigned int)aP1 >= *(this + 9) )
-    return &DataGlobal_830620.__pad_579C[59828];
-    else
-    return *(char **)(*(this + 6) + 4 * (int)aP1);
+  if ( (unsigned int)aP1 >= *(this + 9) ) /*0x720949*/
+    return &stru_830620.__pad_579C[59828]; /*0x720954*/
+  else
+    return *(char **)(*(this + 6) + 4 * (_DWORD)aP1); /*0x72094e*/
 }
-} }
+}
 // 0x722AB0
 namespace gamemd { int CellClass::ClearCrateStateForAll() {
 {
@@ -40953,29 +40982,12 @@ namespace gamemd { int INIEntry::LookupByName() {
 } }
 // 0x74ffc0
 bool VeterancyStruct::IsRookie() {
-    return (this->Veterancy >= 0.0f) & (this->Veterancy < 1.0f);
-
-/* ASM:
-fld     dword ptr [ecx]
-fcomp   ds:flt_7E1748
-fnstsw  ax
-test    ah, 1
-jnz     short loc_74FFE4
-fld     dword ptr [ecx]
-fcomp   ds:flt_7E2AC8
-fnstsw  ax
-test    ah, 1
-jz      short loc_74FFE4
-mov     eax, 1
-retn
-; ---------------------------------------------------------------------------
-
-loc_74FFE4:                             ; CODE XREF: Crate__initializeCrate+D↑j
-; Crate__initializeCrate+1C↑j
-xor     eax, eax
-retn
-*/
-} }
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall sub_74FFC0(float *this)
+{
+  return *this >= 0.0 && *this < 1.0; /*0x74ffe3*/
+}
+}
 // 0x750080
 namespace gamemd { void Crate::processCratePickup(int a1) {
     this->crate_timer.StartTime = 0;

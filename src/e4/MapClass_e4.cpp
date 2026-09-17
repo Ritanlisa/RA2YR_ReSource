@@ -4980,6 +4980,7 @@ int MapClass::updatePathfindingGrid(unsigned int * a2)
     return result;
 }
 
+}
 // 0x5F60A0
 int MapClass::SetCellOverlayFlag()
 {

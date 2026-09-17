@@ -15030,18 +15030,21 @@ int __thiscall TiberiumClass::_vt13(int this, int *a2)
 } }
 
 // 0x7220A0
-namespace gamemd { int TiberiumClass::SpreadGrowth(int a1, void* a2) {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall TiberiumClass::_vt07(#374 *this, int a2, _DWORD *a3)
 {
-    int result;
-    result = ObjectClass::GetSizeMax(this);
-    if ( result >= 0 )
+  int result; // eax
+
+  result = ObjectClass::GetSizeMax(this); /*0x7220ac*/
+  if ( result >= 0 ) /*0x7220b3*/
   {
-    *a3 += 4 * *(int *)(a2 + 212) + 4;
-    return 0;
+    *a3 += 4 * *(_DWORD *)(a2 + 212) + 4; /*0x7220c6*/
+    return 0; /*0x7220c8*/
   }
-    return result;
+  return result; /*0x7220ca*/
 }
-} }
+}
 
 // 0x722140
 namespace gamemd { int TiberiumClass::UpdateField(int a1, int a2) {

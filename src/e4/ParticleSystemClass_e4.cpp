@@ -274,6 +274,7 @@ int ParticleSystemClass_32::FindItem(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x4EB260
 namespace gamemd {
 char ParticleSystemClass_16::AddRef(int a2)
@@ -608,6 +609,7 @@ int ParticleSystemClass_32::FindParticle2(unsigned int * a2)
     return result;
 }
 } // namespace gamemd
+}
 
 // 0x4EB8A0
 namespace gamemd {
@@ -675,6 +677,7 @@ int ParticleSystemClass_32_::FindElementByValue(unsigned int * a2)
     return -1;
   }
     return result;
+}
 }
 } // namespace gamemd
 

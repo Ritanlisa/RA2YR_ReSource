@@ -2604,12 +2604,14 @@ int sub_43B0E0()
 // 0x43B0F0
 namespace gamemd {
 int sub_43B0F0()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int sub_43B0F0()
 {
-{
-    aP5 = 0;
-    DataGlobal_89C84C = 0;
-    DataGlobal_89C850 = 0;
-    return 0;
+  aP5 = 0; /*0x43b0f2*/
+  unk_89C84C = 0; /*0x43b0f7*/
+  unk_89C850 = 0; /*0x43b0fc*/
+  return 0; /*0x43b101*/
 }
 }
 } // namespace gamemd

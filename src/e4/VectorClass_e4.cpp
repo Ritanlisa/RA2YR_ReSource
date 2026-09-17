@@ -9434,22 +9434,29 @@ this->Capacity = 0;
 // 0x4E0990
 namespace gamemd {
 int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::_vt04(
+        int this,
+        _DWORD *a2)
 {
-if ( !this->IsInitialized )
-    return 0;
-unsigned int* i = (unsigned int *)this->Items;
-int capacity = this->Capacity;
-int result = 0;
-if ( capacity <= 0 )
-    return -1;
-while ( i[0] != a2[0] || i[1] != a2[1] )
-{
-    ++result;
-    i += 2;
-    if ( result >= capacity )
-        return -1;
+  int result; // eax
+  int v3; // edx
+  _DWORD *i; // ecx
+
+  if ( !*(_BYTE *)(this + 12) ) /*0x4e0990*/
+    return 0; /*0x4e099e*/
+  v3 = *(_DWORD *)(this + 8); /*0x4e09a4*/
+  result = 0; /*0x4e09a7*/
+  if ( v3 <= 0 ) /*0x4e09ab*/
+    return -1; /*0x4e09cc*/
+  for ( i = *(_DWORD **)(this + 4); *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x4e09b1*/
+  {
+    if ( ++result >= v3 ) /*0x4e09ca*/
+      return -1; /*0x4e09ca*/
+  }
+  return result; /*0x4e099b*/
 }
-return result;
 }
 } // namespace gamemd
 
@@ -9519,6 +9526,7 @@ int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_Cel
 }
 } // namespace gamemd
 
+}
 // 0x4E0D80
 namespace gamemd {
 VectorClass * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::QueryInterface(char a2)

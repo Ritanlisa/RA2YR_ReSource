@@ -337,6 +337,7 @@ int MSPCXAnim_42::FindIndex_Pair(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x5D0C60
 namespace gamemd {
 char MSPCXAnim_42::AllocCopyData_4B(int a2, unsigned int * a3)
@@ -405,6 +406,7 @@ int MSPCXAnim_42::FindIndex(unsigned int * a2)
     return result;
 }
 } // namespace gamemd
+}
 
 // 0x5D0EC0
 namespace gamemd {
@@ -472,6 +474,7 @@ int MSPCXAnim_42::FindIndex_0(unsigned int * a2)
     return -1;
   }
     return result;
+}
 }
 } // namespace gamemd
 
@@ -675,6 +678,7 @@ int MSPCXAnim_26::Load(unsigned int * a2)
   }
     return result;
 }
+}
 } // namespace gamemd
 
 // 0x5D1200
@@ -875,6 +879,7 @@ int MSPCXAnim_26::FindIndex_0(unsigned int * a2)
     if ( ++result >= v2 )
     return -1;
   }
+}
     return result;
 }
 } // namespace gamemd
@@ -943,6 +948,7 @@ int MSPCXAnim_26::FindIndex_1(unsigned int * a2)
   {
     if ( ++result >= v2 )
     return -1;
+}
   }
     return result;
 }

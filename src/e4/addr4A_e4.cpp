@@ -4055,18 +4055,21 @@ int sub_4A59C0()
 // 0x4A5E50
 namespace gamemd {
 int E4Recv_4A5E50::sub_4A5E50(int a2, AbstractClass * aP2, AbstractClass * aP3)
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall sub_4A5E50(unsigned __int16 *this, int a2, AbstractClass *aP2, AbstractClass *aP3)
 {
-{
-    BitFont *v5;
-    int PixelData;
-    *(int *)aP2->__pad_0 = 0;
-    *(int *)aP3->__pad_0 = 0;
-    v5 = (BitFont *)aP0;
-    if ( !this || !aP0 )
-    return 0;
-    PixelData = FontClass::GetPixelData(aP0, 0x57u);
-    Text::Layout(v5, this, aP2, aP3, (AbstractClass *)(a2 * PixelData));
-    return *(int *)aP3->__pad_0 / v5[2].field_4;
+  BitFont *v5; // esi
+  int PixelData; // eax
+
+  *(_DWORD *)aP2->__pad_0 = 0; /*0x4a5e5e*/
+  *(_DWORD *)aP3->__pad_0 = 0; /*0x4a5e65*/
+  v5 = (BitFont *)aP0; /*0x4a5e6b*/
+  if ( !this || !aP0 ) /*0x4a5e77*/
+    return 0; /*0x4a5ea2*/
+  PixelData = FontClass::GetPixelData(aP0, 0x57u); /*0x4a5e7d*/
+  Text::Layout(v5, this, aP2, aP3, (AbstractClass *)(a2 * PixelData)); /*0x4a5e8d*/
+  return *(_DWORD *)aP3->__pad_0 / v5[2].field_4; /*0x4a5e98*/
 }
 }
 } // namespace gamemd
@@ -4593,6 +4596,7 @@ void nullsub_10()
 // 0x4A8EA0
 namespace gamemd {
 void nullsub_11()
+}
 // 0x4a8d40
 {
   ;

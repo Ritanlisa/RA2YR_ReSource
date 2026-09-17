@@ -920,6 +920,7 @@ int AITriggerTypeClass_40::FindItem(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x420630
 namespace gamemd {
 VectorClass * AITriggerTypeClass_40::QueryInterface(char a2)

@@ -1244,20 +1244,23 @@ int AbstractClass::COMStub_Return0_270()
 // 0x464A70
 namespace gamemd {
 int AbstractClass_queryInterface()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__userpurge AbstractClass::sub_464A70@<eax>(int a1@<esi>, _DWORD *a2, int *a3)
 {
-{
-    int GroundHeight;
-    int v5;
-    int v6;
-    int v7;
-    v5 = *a3;
-    v6 = *((int*)(a3) + 1);
-    v7 = *((int*)(a3) + 2);
-    GroundHeight = Cell::GetGroundHeight(&v5);
-    *a2 = a1;
-    *((int*)(a2) + 1) = v6;
-    *((int*)(a2) + 2) = GroundHeight;
-    return a2;
+  int GroundHeight; // eax
+  int v5; // [esp+4h] [ebp-Ch] BYREF
+  int v6; // [esp+8h] [ebp-8h]
+  int v7; // [esp+Ch] [ebp-4h]
+
+  v5 = *a3; /*0x464a7a*/
+  v6 = a3[1]; /*0x464a8b*/
+  v7 = a3[2]; /*0x464a92*/
+  GroundHeight = Cell::GetGroundHeight(&v5); /*0x464a96*/
+  *a2 = a1; /*0x464aa5*/
+  a2[1] = v6; /*0x464aab*/
+  a2[2] = GroundHeight; /*0x464aaf*/
+  return a2; /*0x464a9f*/
 }
 }
 } // namespace gamemd
@@ -1365,14 +1368,14 @@ int AbstractClass::GetType()
 namespace gamemd {
 int AbstractClass_COMStub_143()
 {
-// 0x4da2b0
-    int AbstractClass::COMStub_143()
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+int AbstractClass::COMStub_143()
 {
-    return IPersistStream::GetMaxSize();
+  return IPersistStream::GetMaxSize();
 }
 }
-} // namespace gamemd
-
+}
 // 0x4DB250
 namespace gamemd {
 void AbstractClass::COMStub_Return0_69(Tactical * aP0, AbstractClass * aP1)

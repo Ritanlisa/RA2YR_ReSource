@@ -3118,30 +3118,41 @@ int sub_753B40()
 // 0x753BF0
 namespace gamemd {
 int sub_753BF0()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char *__userpurge sub_753BF0@<eax>(
+        char a1@<dl>,
+        char a2@<cl>,
+        int a3@<ebx>,
+        int a4@<ebp>,
+        char a5,
+        char a6,
+        char a7,
+        char a8)
 {
-{
-    short *v8;
-    char *result;
-    int v10;
-    int v11;
-    v8 = &DataGlobal_B2D5EC;
-    result = (char *)&DataGlobal_B2FB79;
-    do
+  _WORD *v8; // esi
+  char *result; // eax
+  int v10; // ebx
+  int v11; // ebp
+
+  v8 = &MEMORY[0xB2D5EC]; /*0x753bf6*/
+  result = (char *)&MEMORY[0xB2FB79]; /*0x753bfd*/
+  do /*0x753c4a*/
   {
-    LOBYTE(a3) = (unsigned char)*(result - 1) >> a2;
-    result += 3;
-    ++v8;
-    LOWORD(a4) = (unsigned char)a3;
-    LOWORD(a3) = (unsigned char)((unsigned char)*(result - 2) >> a7);
-    v10 = a3 << a8;
-    v11 = v10 | (a4 << a1);
-    LOWORD(v10) = (unsigned char)((unsigned char)*(result - 3) >> a5);
-    a3 = v10 << a6;
-    a4 = a3 | v11;
-    *(v8 - 1) = a4;
+    LOBYTE(a3) = (unsigned __int8)*(result - 1) >> a2; /*0x753c07*/
+    result += 3; /*0x753c0b*/
+    ++v8; /*0x753c0e*/
+    LOWORD(a4) = (unsigned __int8)a3; /*0x753c11*/
+    LOWORD(a3) = (unsigned __int8)((unsigned __int8)*(result - 2) >> a7); /*0x753c24*/
+    v10 = a3 << a8; /*0x753c28*/
+    v11 = v10 | (a4 << a1); /*0x753c2e*/
+    LOWORD(v10) = (unsigned __int8)((unsigned __int8)*(result - 3) >> a5); /*0x753c39*/
+    a3 = v10 << a6; /*0x753c3d*/
+    a4 = a3 | v11; /*0x753c3f*/
+    *(v8 - 1) = a4; /*0x753c46*/
   }
-    while ( result < DataGlobal_B2FE79 );
-    return result;
+  while ( result < MEMORY[0xB2FE79] ); /*0x753c4a*/
+  return result; /*0x753c4c*/
 }
 }
 } // namespace gamemd

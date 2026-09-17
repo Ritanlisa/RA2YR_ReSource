@@ -12841,18 +12841,44 @@ retn    14h
 // IDA: 0x7438F0 (CanCrushTarget, 339B)
 // 0x7438f0
 bool UnitClass::CanCrushTarget(TechnoClass* aP1)
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+bool __thiscall UnitClass::CanCrushTarget(int this, TechnoClass *aP1)
 {
-{
-    int *v3;
-    int *v4;
-    double v5;
-    int v6;
-    bool result;
-    int v8;
-    int v9;
-    char v10[12];
-    char v11[12];
-    result = (*(char *)(this->Type + 3368) || TechnoClass::HasVoiceResponse((TechnoClass *)this, 17))
+  _DWORD *v3; // edi
+  _DWORD *v4; // eax
+  double v5; // st7
+  int v6; // ecx
+  bool result; // al
+  int v8; // [esp+20h] [ebp-20h]
+  int v9; // [esp+24h] [ebp-1Ch]
+  _BYTE v10[12]; // [esp+28h] [ebp-18h] BYREF
+  _BYTE v11[12]; // [esp+34h] [ebp-Ch] BYREF
+
+  result = (*(_BYTE *)(*(_DWORD *)(this + 1732) + 3368) || TechnoClass::HasVoiceResponse((TechnoClass *)this, 17)) /*0x743a30*/
+        && aP1
+        && ObjectClass::IsCrushable(aP1, (AbstractClass *)this)
+        && (v3 = (_DWORD *)(*(int (__thiscall **)(TechnoClass *, _BYTE *))(*(_DWORD *)aP1->__pad_0 + 72))(aP1, v10),
+            v4 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)this + 72))(this, v11),
+            v8 = v4[1] - v3[1],
+            v9 = v4[2] - v3[2],
+            v5 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
+                                               (double)(*v4 - *v3) * (double)(*v4 - *v3)
+                                             + (double)v9 * (double)v9
+                                             + (double)v8 * (double)v8)),
+            (int)Math::RoundToInt(v5) <= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5928))
+        && (!(unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540))
+         || *(_BYTE *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 6123)
+         || *(_BYTE *)(*(_DWORD *)(this + 1732) + 3373))
+        && (v6 = *(_DWORD *)(this + 540), *(_DWORD *)(v6 + 388) != 2)
+        && ((unsigned __int8)House::IsCurrentPlayer((#375 *)v6)
+         || *(_DWORD *)(*(_DWORD *)(this + 540) + 588) >= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5192))
+        && (*(unsigned __int8 (__thiscall **)(TechnoClass *, _DWORD))(*(_DWORD *)aP1->__pad_0 + 200))(
+             aP1,
+             *(_DWORD *)(this + 540)) == 0;
+  return result; /*0x743a2e*/
+}
+}
 // 0x5f6cd0
     && aP1 && ObjectClass::IsCrushable(aP1, (AbstractClass *)this)
     && (v3 = (int *)(*(int (__thiscall **)(TechnoClass *, char *))(*(int *)aP1->__pad_0 + 72))(aP1, v10), v4 = (int *)this->GetCoords_0(v11), v8 = v4[1] - v3[1], v9 = v4[2] - v3[2], v5 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64( (double)(*v4 - *v3) * (double)(*v4 - *v3) + (double)v9 * (double)v9 + (double)v8 * (double)v8)), (int)Math::RoundToInt(v5) <= *(int *)(*(int *)&DataGlobal_87C374.__pad_579C[22224] + 5928))

@@ -4721,11 +4721,13 @@ float * sub_646110(float * a1, float * a2)
 // 0x646464
 namespace gamemd {
 int sub_646464()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// positive sp value has been detected, the output may be wrong!
+int __userpurge sub_646464@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<esi>, int a4, int a5, int a6, int a7, int a8)
 {
-    int __userpurge sub_646464@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<esi>, int a4, int a5, int a6, int a7, int a8)
-{
-    *(int *)(a2 + 12) = a1;
-    return a3;
+  *(_DWORD *)(a2 + 12) = a1; /*0x646464*/
+  return a3; /*0x64646e*/
 }
 }
 } // namespace gamemd

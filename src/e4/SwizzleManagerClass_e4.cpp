@@ -408,6 +408,7 @@ int SwizzleManagerClass_19::FindItem(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x6CF850
 namespace gamemd {
 VectorClass * SwizzleManagerClass_19::QueryInterface(char a2)

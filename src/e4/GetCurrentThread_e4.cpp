@@ -6,10 +6,11 @@
 namespace gamemd {
 int GetCurrentThread_0()
 {
-// 0x7dcee0
-    HANDLE __stdcall GetCurrentThread::0()
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+HANDLE __stdcall GetCurrentThread::0()
 {
-    return GetCurrentThread();
+  return GetCurrentThread();
 }
 }
-} // namespace gamemd
+}

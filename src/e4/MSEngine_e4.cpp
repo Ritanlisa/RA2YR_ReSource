@@ -515,6 +515,7 @@ int MSEngine::FindItem(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x5AD4D0
 namespace gamemd {
 VectorClass * MSEngine::QueryInterface(char a2)

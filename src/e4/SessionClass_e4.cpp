@@ -2837,6 +2837,7 @@ int SessionClass::Read(unsigned int * a2)
     return result;
 }
 
+}
 // 0x69D460
 VectorClass * SessionClass::validateGame(char a2)
 {

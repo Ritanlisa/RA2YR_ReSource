@@ -399,6 +399,7 @@ int MSFont_18::FindItem(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x5D56A0
 namespace gamemd {
 int MSFont_18::FindPair8(unsigned int * a2)
@@ -419,6 +420,7 @@ int MSFont_18::FindPair8(unsigned int * a2)
     return result;
 }
 } // namespace gamemd
+}
 
 // 0x5D56E0
 namespace gamemd {

@@ -3818,6 +3818,7 @@ char JumpjetLocomotionClass::IsMapCoordVisible()
     return 1;
 }
 
+}
 // 0x4CF830
 unsigned int * JumpjetLocomotionClass::CalculateBobOffset(int a1, unsigned int * a2)
 {
@@ -6050,48 +6051,65 @@ unsigned int * JumpjetLocomotionClass::GetCoordinateConditional(unsigned int * a
 
 // 0x718100
 namespace gamemd {
-int JumpjetLocomotionClass_ProcessFactoryExit()
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__userpurge JumpjetLocomotionClass::sub_718100@<eax>(
+        int a1@<ebx>,
+        int a2@<ebp>,
+        int a3,
+        int a4,
+        int a5,
+        int a6)
 {
-{
-    int *result;
-    char *v7;
-    int *v8;
-    int v9;
-    int v10[3];
-    result = (int *)(*(int (__thiscall **)(int))(**(int **)(a3 + 8) + 892))(*(int *)(a3 + 8));
-    if ( (char)result || (result = (int *)(*(int (__thiscall **)(int))(**(int **)(a3 + 8) + 896))(*(int *)(a3 + 8)), (char)result) || (result = (int *)(*(int (__thiscall **)(int))(**(int **)(a3 + 8) + 468))(*(int *)(a3 + 8)), (char)result) || (result = (int *)(*(int (__thiscall **)(int))(**(int **)(a3 + 8) + 472))(*(int *)(a3 + 8)), (char)result) )
+  _DWORD *result; // eax
+  _BYTE *v7; // ecx
+  _DWORD *v8; // eax
+  int v9; // [esp+0h] [ebp-10h]
+  int v10[3]; // [esp+4h] [ebp-Ch] BYREF
+
+  result = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a3 + 8) + 892))(*(_DWORD *)(a3 + 8)); /*0x71810d*/
+  if ( (_BYTE)result /*0x71814e*/
+    || (result = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a3 + 8) + 896))(*(_DWORD *)(a3 + 8)),
+        (_BYTE)result)
+    || (result = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a3 + 8) + 468))(*(_DWORD *)(a3 + 8)),
+        (_BYTE)result)
+    || (result = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a3 + 8) + 472))(*(_DWORD *)(a3 + 8)),
+        (_BYTE)result) )
   {
-    *(int *)(*(int *)(a3 + 8) + 1444) = 0;
+    *(_DWORD *)(*(_DWORD *)(a3 + 8) + 1444) = 0; /*0x718213*/
   }
-    else
+  else
   {
-    v10[1] = a5;
-    v7 = *(char **)(a3 + 8);
-    v10[0] = a4;
-    v10[2] = a6;
-    if ( v7[504] && (*(int (__thiscall **)(char *))(*(int *)(v7) + 44))(v7) == 15 )
+    v10[1] = a5; /*0x718160*/
+    v7 = *(_BYTE **)(a3 + 8); /*0x718164*/
+    v10[0] = a4; /*0x718167*/
+    v10[2] = a6; /*0x71816b*/
+    if ( v7[504] && (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v7 + 44))(v7) == 15 ) /*0x718181*/
     {
-    v8 = Coord::To_Cell(&DataGlobal_87F7E8, v10);
-    Cell::ApplyDamage(v8, (int)&DataGlobal_B0EBF8, 1, 1, 0);
+      v8 = Coord::To_Cell(&MEMORY[0x87F7E8], v10); /*0x71818d*/
+      Cell::ApplyDamage(v8, (int)&MEMORY[0xB0EBF8], 1, 1, 0); /*0x71819f*/
     }
-    Factory::CalculateExitCell((int *)(a3 - 4), a1, a2, v10, v9, v10[0]);
-    result = (int *)(a3 + 36);
-    if ( *(int *)(a3 + 36) == DataGlobal_B0EBF8 && *(int *)(a3 + 40) == DataGlobal_B0EBFC && *(int *)(a3 + 44) == DataGlobal_B0EC00 )
+    Factory::CalculateExitCell((_DWORD *)(a3 - 4), a1, a2, v10, v9, v10[0]); /*0x7181ac*/
+    result = (_DWORD *)(a3 + 36); /*0x7181ba*/
+    if ( *(_DWORD *)(a3 + 36) == MEMORY[0xB0EBF8] /*0x7181d9*/
+      && *(_DWORD *)(a3 + 40) == MEMORY[0xB0EBFC]
+      && *(_DWORD *)(a3 + 44) == MEMORY[0xB0EC00] )
     {
-    return (int *)(*(int (__thiscall **)(int, int, int))(**(int **)(a3 + 8) + 1152))( *(int *)(a3 + 8), 0, 1);
+      return (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(a3 + 8) + 1152))( /*0x718202*/
+                         *(_DWORD *)(a3 + 8),
+                         0,
+                         1);
     }
     else
     {
-    *(char *)(a3 + 48) = 1;
-    *(int *)(a3 + 24) = *result;
-    *(int *)(a3 + 28) = *(int *)(a3 + 40);
-    *(int *)(a3 + 32) = *(int *)(a3 + 44);
+      *(_BYTE *)(a3 + 48) = 1; /*0x7181db*/
+      *(_DWORD *)(a3 + 24) = *result; /*0x7181e4*/
+      *(_DWORD *)(a3 + 28) = *(_DWORD *)(a3 + 40); /*0x7181e9*/
+      *(_DWORD *)(a3 + 32) = *(_DWORD *)(a3 + 44); /*0x7181ef*/
     }
   }
-    return result;
+  return result; /*0x7181f2*/
 }
 }
-} // namespace gamemd
 
 // 0x718230
 int JumpjetLocomotionClass::ResetMovementState(int a1)

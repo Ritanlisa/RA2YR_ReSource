@@ -59,8 +59,8 @@ namespace gamemd { int HouseClass::SaveTriggerNodeData(void* a1, void* a2) {
     int v9;
     ObjectClass *v10;
     INIClass Buffer[2];
-    INIClass::SetInt(aP1->__pad_0, Block, (char *)&DataGlobal_818994.headNode[2], this->referenceCount, 0);
-    INIClass::SetInt(aP1->__pad_0, Block, DataGlobal_818994.__pad_0, this->abstractFlags, 0);
+    INIClass::SetInt(a1->__pad_0, Block, (char *)&DataGlobal_818994.headNode[2], this->referenceCount, 0);
+    INIClass::SetInt(a1->__pad_0, Block, DataGlobal_818994.__pad_0, this->abstractFlags, 0);
     result = this->abstractFlags;
     v5 = 0;
     if ( result > 0 )
@@ -77,7 +77,7 @@ namespace gamemd { int HouseClass::SaveTriggerNodeData(void* a1, void* a2) {
     sprintf((char *const)&Buffer[0].headNode[2], (const char *const)&DataGlobal_818994.sectionCount, v8, v9, v10);
     else
     sprintf( (char *const)&Buffer[0].headNode[2], &DataGlobal_818994.__pad_20[8], *((int *)(g_TriggerTypeCount) + v8) + 36, v9, v10);
-    INIClass::SetString(aP1->__pad_0, (INIClass *)Block, Buffer, (INIClass *)&Buffer[0].headNode[2]);
+    INIClass::SetString(a1->__pad_0, (INIClass *)Block, Buffer, (INIClass *)&Buffer[0].headNode[2]);
     result = this->abstractFlags;
     v5 = (INIClass *)((char *)(v5) + 1);
     v6 = (INIClass *)((char *)(v6) + 16);
@@ -171,17 +171,20 @@ unsigned int __thiscall BaseClass::_vt05(int this, int a2)
 }
 } }
 // 0x42F3F0
-namespace gamemd { int BaseClass::Seek(int a1, int a2) {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall BaseClass::_vt06(_DWORD *this, int a2, int a3)
 {
-    int v3;
-    v3 = *(this + 1) + 16 * a3;
-    *(int *)a2 = *(int *)v3;
-    *(int *)(a2 + 4) = *(int *)(v3 + 4);
-    *(char *)(a2 + 8) = *(char *)(v3 + 8);
-    *(int *)(a2 + 12) = *(int *)(v3 + 12);
-    return a2;
+  int v3; // edx
+
+  v3 = *(this + 1) + 16 * a3; /*0x42f3fa*/
+  *(_DWORD *)a2 = *(_DWORD *)v3; /*0x42f402*/
+  *(_DWORD *)(a2 + 4) = *(_DWORD *)(v3 + 4); /*0x42f407*/
+  *(_BYTE *)(a2 + 8) = *(_BYTE *)(v3 + 8); /*0x42f40d*/
+  *(_DWORD *)(a2 + 12) = *(_DWORD *)(v3 + 12); /*0x42f413*/
+  return a2; /*0x42f416*/
 }
-} }
+}
 // 0x42F490
 namespace gamemd { int BaseClass::AddRef(int a2) {
 {
@@ -365,29 +368,32 @@ _DWORD *__thiscall BaseNodeClass_Vector_Constructor(_DWORD *this, int a2, int a3
 }
 } }
 // 0x431410
-namespace gamemd { int HouseClass::createStartingUnits(int a1) {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall sub_431410(int *this, int a2)
 {
-    int v3;
-    int v4;
-    int *v5;
-    v3 = this->grindersCount;
-    if ( v3 )
+  int v3; // eax
+  int v4; // esi
+  int *v5; // edi
+
+  v3 = *(this + 24); /*0x431413*/
+  if ( v3 ) /*0x431418*/
   {
-    LOBYTE(v3) = 3 * a2;
-    v4 = 0;
-    v5 = this + 3 * a2;
-    do
+    LOBYTE(v3) = 3 * a2; /*0x431421*/
+    v4 = 0; /*0x431424*/
+    v5 = this + 3 * a2; /*0x431426*/
+    do /*0x43143f*/
     {
-    if ( *v5 )
-    LOBYTE(v3) = Network::SendBeaconDelete(this, a2, v4);
-    ++v4;
-    ++v5;
+      if ( *v5 ) /*0x43142a*/
+        LOBYTE(v3) = Network::SendBeaconDelete(this, a2, v4); /*0x431433*/
+      ++v4; /*0x431438*/
+      ++v5; /*0x431439*/
     }
-    while ( v4 < 3 );
+    while ( v4 < 3 ); /*0x43143f*/
   }
-    return v3;
+  return v3; /*0x431444*/
 }
-} }
+}
 // 0x431700
 namespace gamemd { int HouseClass::Render(int a2, int a3, int a4, int a5, int a6) {
 {

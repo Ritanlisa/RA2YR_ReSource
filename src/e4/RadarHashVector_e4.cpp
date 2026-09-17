@@ -253,6 +253,7 @@ int RadarHashVector::FindItemIndex(unsigned int * a2)
     return result;
 }
 
+}
 // 0x658C60
 char * RadarHashVector::Destructor(char a2)
 {

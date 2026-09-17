@@ -1542,6 +1542,7 @@ int TeamTypeClass_28::FindItem(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x6F2680
 namespace gamemd {
 VectorClass * TeamTypeClass_28::QueryInterface(char a2)

@@ -340,6 +340,7 @@ int LoadOptions::vt04(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x55A410
 namespace gamemd {
 VectorClass * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a2)

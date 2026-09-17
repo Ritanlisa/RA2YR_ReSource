@@ -744,6 +744,7 @@ int IPXInterfaceClass::initSession(unsigned int * a2)
     return result;
 }
 
+}
 // 0x7B2B50
 DynamicVector * IPXInterfaceClass::closeSession(char a2)
 {

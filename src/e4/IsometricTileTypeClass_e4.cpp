@@ -251,6 +251,7 @@ int IsometricTileTypeClass::FindItem(unsigned int * a2)
     return result;
 }
 
+}
 // 0x54A760
 DynamicVector * IsometricTileTypeClass::Constructor(char a2)
 {

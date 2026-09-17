@@ -1385,15 +1385,18 @@ unsigned int unknown::Write(int a2)
 
 // 0x588D30
 int unknown::Seek(int a2, int a3)
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall unknown::_vt06(_DWORD *this, int a2, int a3)
 {
-{
-    int v3;
-    v3 = *(this + 1) + 16 * a3;
-    *(int *)a2 = *(int *)v3;
-    *(int *)(a2 + 4) = *(int *)(v3 + 4);
-    *(char *)(a2 + 8) = *(char *)(v3 + 8);
-    *(int *)(a2 + 12) = *(int *)(v3 + 12);
-    return a2;
+  int v3; // edx
+
+  v3 = *(this + 1) + 16 * a3; /*0x588d3a*/
+  *(_DWORD *)a2 = *(_DWORD *)v3; /*0x588d42*/
+  *(_DWORD *)(a2 + 4) = *(_DWORD *)(v3 + 4); /*0x588d47*/
+  *(_BYTE *)(a2 + 8) = *(_BYTE *)(v3 + 8); /*0x588d4d*/
+  *(_DWORD *)(a2 + 12) = *(_DWORD *)(v3 + 12); /*0x588d53*/
+  return a2; /*0x588d56*/
 }
 }
 

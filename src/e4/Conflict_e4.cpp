@@ -390,6 +390,7 @@ int Conflict_WorldDominationTour_12::Read(int a2)
 }
 } // namespace gamemd
 
+}
 // 0x766DA0
 namespace gamemd {
 unsigned int Conflict_WorldDominationTour_12::Write(int a2)
@@ -423,6 +424,7 @@ int Conflict_WorldDominationTour_12::IndexOf(int a2)
     return result;
 }
 } // namespace gamemd
+}
 
 // 0x766FC0
 namespace gamemd {

@@ -16508,17 +16508,28 @@ void __noreturn _startTwoArgErrorHandling()
 // 0x7CF347
 namespace gamemd {
 int __startOneArgErrorHandling()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+double __usercall _startOneArgErrorHandling@<st0>(
+        int a1@<eax>,
+        int a2@<edx>,
+        int a3@<ecx>,
+        double a4@<st0>,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8)
 {
-{
-    int v9[6];
-    double v10;
-    v9[0] = a1;
-    v10 = a4;
-    v9[1] = a3;
-    v9[2] = a7;
-    v9[3] = a8;
-    _87except(a2, v9, &a5);
-    return v10;
+  _DWORD v9[6]; // [esp+0h] [ebp-20h] BYREF
+  double v10; // [esp+18h] [ebp-8h]
+
+  v9[0] = a1; /*0x7cf34d*/
+  v10 = a4; /*0x7cf350*/
+  v9[1] = a3; /*0x7cf353*/
+  v9[2] = a7; /*0x7cf35c*/
+  v9[3] = a8; /*0x7cf35f*/
+  _87except(a2, v9, &a5); /*0x7cf36b*/
+  return v10; /*0x7cf381*/
 }
 }
 } // namespace gamemd

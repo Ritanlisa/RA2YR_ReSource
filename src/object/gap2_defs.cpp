@@ -623,7 +623,7 @@ LABEL_70:
 // 0x417C80
 namespace ra2 { namespace game { int ObjectClass::vt_entry_140(int a1, void* a2, void* a3, void* a4) {
 {
-    return ObjectClass::SpawnInfantry(this, (FootClass *)aP1, aP2, (FootClass *)a3, (FootClass *)a4);
+    return ObjectClass::SpawnInfantry(this, (FootClass *)a1, a2, (FootClass *)a3, (FootClass *)a4);
 }
 } } }
 // 0x41B5E0
@@ -638,11 +638,13 @@ bool __thiscall MissionClass::vt_entry_200(int this)
 }
 } } }
 // 0x41B9E0
-namespace ra2 { namespace game { int TechnoClass::updateROFTimer() {
+namespace ra2 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall TechnoClass::sub_41B9E0(_BYTE *this)
 {
-    return *(this + 1749);
+  return *(this + 1749); /*0x41b9e6*/
 }
-} } }
+}
 // 0x41BDD0
 namespace ra2 { namespace game { int ObjectClass::GetCoordsThunk1() {
 {
@@ -3057,7 +3059,7 @@ namespace ra2 { namespace game { int AbstractClass::clearRefCount(void* a1, int 
     v4 = __2_YAPAXI_Z(0x720u);
     if ( !v4 )
     return 0;
-    v5 = BuildingClass::Construct(v4, this, aP2);
+    v5 = BuildingClass::Construct(v4, this, a2);
     if ( !v5 )
     return 0;
     v8[2] = 0;
@@ -3298,11 +3300,13 @@ int __thiscall AbstractClass::sub_465960(int this)
 }
 } } }
 // 0x46B270
-namespace ra2 { namespace game { int TechnoClass::updateHealthBar() {
+namespace ra2 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall sub_46B270(_DWORD *this)
 {
-    return *(this + 76);
+  return *(this + 76); /*0x46b276*/
 }
-} } }
+}
 // 0x471F90
 namespace ra2 { namespace game { int ObjectClass::RemoveFromPointerList(int a2) {
 {
@@ -3533,11 +3537,30 @@ namespace ra2 { namespace game { int AbstractClass::readFactoryINI(void* a1, voi
 }
 } } }
 // 0x4915E0
-namespace ra2 { namespace game { int AbstractClass::writeFactoryINI(int a1, int a2, int a3, int a4, int a5, int a6, int a7) {
+namespace ra2 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall AbstractClass::writeFactoryINI(
+        BlitTransZRemapXlat_E *this,
+        int a2,
+        int a3,
+        int a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8)
 {
-    return (*((int (__thiscall **)(BlitTransZRemapXlat_E *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
+  return (*((int (__thiscall **)(BlitTransZRemapXlat_E *, int, int, int, int, int, int, int, _DWORD))this->vfptr + 1))( /*0x49160a*/
+           this,
+           a2,
+           a3,
+           a4,
+           a5,
+           a6,
+           a7,
+           a8,
+           0);
 }
-} } }
+}
 // 0x491610
 namespace ra2 { namespace game { int AbstractClass::resetFactoryState(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
 {
@@ -3594,8 +3617,8 @@ int __thiscall sub_4A50F0(int this)
 // 0x4C9470
 namespace ra2 { namespace game { void* TechnoClass::GetWeaponType(void* a1) {
 {
-    *(int *)aP1->__pad_0 = *(void**)this;
-    return aP1->__pad_0;
+    *(int *)a1->__pad_0 = *(void**)this;
+    return a1->__pad_0;
 }
 } } }
 // 0x4CA130

@@ -3523,6 +3523,7 @@ int MPCooperative::validatePlayerAction(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x5C53D0
 namespace gamemd {
 char MPCooperative::processTeamChat(int a2, unsigned int * a3)
@@ -3694,6 +3695,7 @@ int MPCooperative::handlePlayerReady(unsigned int * a2)
     return result;
 }
 } // namespace gamemd
+}
 
 // 0x5C5850
 namespace gamemd {

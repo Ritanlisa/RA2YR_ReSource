@@ -196,6 +196,7 @@ int Vector::Find(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x76F0B0
 namespace gamemd {
 BOOL Vector::HasCapacity()

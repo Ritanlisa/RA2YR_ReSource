@@ -1544,46 +1544,49 @@ int sub_764A00()
 namespace ra2 {
 namespace game {
 GenericNode * ObjectClass::sub_764A20()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+GenericNode *__thiscall sub_764A20(ObjectClass *this)
 {
-{
-    GenericNode *Int;
-    ReferenceCounted aP2;
-    void *v5[4];
-    int v6[3];
-    int v7[6];
-    char v8;
-    int v9;
-    int v10;
-    int v11[22];
-    BufferIOFile::Constructor(v11, aWdthistIni_0);
-    if ( File::IsReady(v11, 0) )
+  GenericNode *Int; // esi
+  ReferenceCounted aP2; // [esp+8h] [ebp-9Ch] BYREF
+  void *v5[4]; // [esp+Ch] [ebp-98h] BYREF
+  _DWORD v6[3]; // [esp+1Ch] [ebp-88h] BYREF
+  _DWORD v7[6]; // [esp+28h] [ebp-7Ch] BYREF
+  char v8; // [esp+40h] [ebp-64h]
+  int v9; // [esp+44h] [ebp-60h]
+  int v10; // [esp+48h] [ebp-5Ch]
+  _DWORD v11[22]; // [esp+4Ch] [ebp-58h] BYREF
+
+  BufferIOFile::Constructor(v11, aWdthistIni_0); /*0x764a33*/
+  if ( File::IsReady(v11, 0) ) /*0x764a3f*/
   {
-    v5[1] = 0;
-    v5[2] = 0;
-    GenericNode::Constructor(v6);
-    GenericNode::Constructor(v7);
-    LinkedList::Prepend(v6, (int)v7);
-    v5[3] = (unsigned int)vt_List_INIClass_INISection;
-    memset(&v7[3], 0, 12);
-    v8 = 0;
-    v9 = 0;
-    v10 = 0;
-    v5[0] = (unsigned int)vt_INIClass;
-    FileStraw::Open(v5, (int)v11, 0);
-    CCFileClass::Close(v11);
-    String::Assign((char **)&aP2, g_INI_Key_CampaignID);
-    Int = (GenericNode *)INIClass::ReadInt(v5, this, &aP2, (INIClass *)0xFFFFFFFF);
-    DeleteAndZero((int)&aP2);
-    HashTable::DestroyHashTableINIClass(v5);
-    v11[0] = &DataGlobal_7E1668;
-    BufferIOFileClass::Dtor(v11);
-    return Int;
+    v5[1] = 0; /*0x764a50*/
+    v5[2] = 0; /*0x764a54*/
+    GenericNode::Constructor(v6); /*0x764a58*/
+    GenericNode::Constructor(v7); /*0x764a61*/
+    LinkedList::Prepend(v6, (int)v7); /*0x764a77*/
+    v5[3] = &vt_List_INIClass_INISection; /*0x764a80*/
+    memset(&v7[3], 0, 12); /*0x764a8e*/
+    v8 = 0; /*0x764a9a*/
+    v9 = 0; /*0x764a9e*/
+    v10 = 0; /*0x764aa2*/
+    v5[0] = &vt_INIClass; /*0x764aa6*/
+    FileStraw::Open(v5, (int)v11, 0); /*0x764aae*/
+    CCFileClass::Close(v11); /*0x764ab7*/
+    String::Assign((char **)&aP2, g_INI_Key_CampaignID); /*0x764ac5*/
+    Int = (GenericNode *)INIClass::ReadInt(v5, this, &aP2, (INIClass *)0xFFFFFFFF); /*0x764adf*/
+    DeleteAndZero((int)&aP2); /*0x764ae1*/
+    HashTable::DestroyHashTableINIClass(v5); /*0x764aea*/
+    v11[0] = &off_7E1668; /*0x764af3*/
+    BufferIOFileClass::Dtor(v11); /*0x764afb*/
+    return Int; /*0x764b00*/
   }
-    else
+  else
   {
-    v11[0] = &DataGlobal_7E1668;
-    BufferIOFileClass::Dtor(v11);
-    return (GenericNode *)-1;
+    v11[0] = &off_7E1668; /*0x764b0f*/
+    BufferIOFileClass::Dtor(v11); /*0x764b17*/
+    return (GenericNode *)-1; /*0x764b1c*/
   }
 }
 }

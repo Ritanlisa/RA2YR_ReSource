@@ -1433,58 +1433,61 @@ int * E4Recv_643670::UI_Render_643670()
 // 0x6AC480
 namespace gamemd {
 char sub_6AC480(int a1, int * a2, unsigned int * a3, int a4)
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __fastcall sub_6AC480(int a1, int *a2, _DWORD *a3, int a4)
 {
-{
-    char result;
-    int v5;
-    int v6;
-    int BuildingAnimByName;
-    int v8;
-    int v9;
-    int v10;
-    int v11;
-    int v12;
-    short *v13;
-    char v14[4];
-    int v15;
-    int v16;
-    int v17;
-    short v18;
-    unsigned char v19;
-    int v20;
-    int v21[4];
-    result = DataGlobal_884B8C;
-    v15 = a1;
-    if ( DataGlobal_884B8C )
+  char result; // al
+  int v5; // ebx
+  int v6; // edi
+  int BuildingAnimByName; // eax
+  int v8; // eax
+  int v9; // esi
+  int v10; // ebp
+  int v11; // edx
+  int v12; // ecx
+  _WORD *v13; // ebp
+  _BYTE v14[4]; // [esp+0h] [ebp-30h] BYREF
+  int v15; // [esp+4h] [ebp-2Ch]
+  int v16; // [esp+8h] [ebp-28h] BYREF
+  int v17; // [esp+Ch] [ebp-24h] BYREF
+  __int16 v18; // [esp+10h] [ebp-20h]
+  unsigned __int8 v19; // [esp+12h] [ebp-1Eh]
+  int v20; // [esp+18h] [ebp-18h]
+  _DWORD v21[4]; // [esp+20h] [ebp-10h] BYREF
+
+  result = MEMORY[0x884B8C]; /*0x6ac483*/
+  v15 = a1; /*0x6ac488*/
+  if ( MEMORY[0x884B8C] ) /*0x6ac48e*/
   {
-    if ( a1 )
+    if ( a1 ) /*0x6ac496*/
     {
-    v5 = *((int*)(a2) + 1);
-    v6 = aP0;
-    v20 = *a2;
-    BuildingAnimByName = FindBuildingAnimByName(DataGlobal_836ED8, 1);
-    v8 = Color::ConvertToRGB((unsigned char *)(BuildingAnimByName + 776), (int)v14);
-    v18 = *(short *)v8;
-    v19 = *(char *)(v8 + 2);
-    v9 = ((unsigned char)v18 >> g_BitShift_Green_0 << g_BitShift_Red)
-    | (HIBYTE(v18) >> g_BitMask_Blue << g_BitMask_Green)
-    | (v19 >> g_BitMask_Red << g_BitShift_Blue);
-    v10 = *((int*)(a3) + 2);
-    v11 = *((int*)(a3) + 1);
-    v21[0] = *a3;
-    v12 = *((int*)(a3) + 3);
-    v21[1] = v11;
-    v21[3] = v11 + v12;
-    v21[2] = v21[0] + v10;
-    Char::Swap((char *)v6, 1);
-    TextGroup::SetRect((int *)v6, v21);
-    Property::Set((short *)v6, v9);
-    v13 = (short *)v15;
-    Text::Layout((int *)v6, (unsigned short *)v15, &v17, &v16, a4);
-    return Font::Print(v6, DSurface_Sidebar, v13, v20, *(int *)(v6 + 28) - v16 + v5, a4, 0, 0, 0, 0);
+      v5 = a2[1]; /*0x6ac49f*/
+      v6 = aP0; /*0x6ac4a5*/
+      v20 = *a2; /*0x6ac4b5*/
+      BuildingAnimByName = FindBuildingAnimByName(MEMORY[0x836ED8], 1); /*0x6ac4b9*/
+      v8 = Color::ConvertToRGB((unsigned __int8 *)(BuildingAnimByName + 776), (int)v14); /*0x6ac4c9*/
+      v18 = *(_WORD *)v8; /*0x6ac4d7*/
+      v19 = *(_BYTE *)(v8 + 2); /*0x6ac4e1*/
+      v9 = ((unsigned __int8)v18 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x6ac52e*/
+         | (HIBYTE(v18) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
+         | (v19 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
+      v10 = a3[2]; /*0x6ac536*/
+      v11 = a3[1]; /*0x6ac539*/
+      v21[0] = *a3; /*0x6ac53c*/
+      v12 = a3[3]; /*0x6ac542*/
+      v21[1] = v11; /*0x6ac547*/
+      v21[3] = v11 + v12; /*0x6ac54b*/
+      v21[2] = v21[0] + v10; /*0x6ac551*/
+      Char::Swap((_BYTE *)v6, 1); /*0x6ac555*/
+      TextGroup::SetRect((_DWORD *)v6, v21); /*0x6ac561*/
+      Property::Set((_WORD *)v6, v9); /*0x6ac569*/
+      v13 = (_WORD *)v15; /*0x6ac57a*/
+      Text::Layout((_DWORD *)v6, (unsigned __int16 *)v15, &v17, &v16, a4); /*0x6ac584*/
+      return Font::Print(v6, MEMORY[0x887300], v13, v20, *(_DWORD *)(v6 + 28) - v16 + v5, a4, 0, 0, 0, 0); /*0x6ac5b2*/
     }
   }
-    return result;
+  return result; /*0x6ac5bb*/
 }
 }
 } // namespace gamemd

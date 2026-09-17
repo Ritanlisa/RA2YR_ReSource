@@ -1213,6 +1213,7 @@ int SlaveManagerClass_25::Read(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x6B1980
 namespace gamemd {
 DynamicVector * SlaveManagerClass_25::QueryInterface(char a2)

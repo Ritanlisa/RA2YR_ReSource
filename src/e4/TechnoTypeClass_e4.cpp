@@ -1581,14 +1581,14 @@ char TechnoTypeClass::vt_entry_A0()
 namespace gamemd {
 int TechnoTypeClass::CanAttackMove_IgnoreWeapon_0()
 {
-// 0x5247c0
-    bool __thiscall TechnoTypeClass::CanAttackMove_IgnoreWeapon_0(int this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+bool __thiscall TechnoTypeClass::CanAttackMove_IgnoreWeapon_0(int this)
 {
-    return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
+  return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
 }
 }
-} // namespace gamemd
-
+}
 // 0x711E90
 bool TechnoTypeClass::CanAttackMove_IgnoreWeapon()
 {
@@ -1703,10 +1703,11 @@ char TechnoTypeClass::RemoveItem(int a2)
 namespace gamemd {
 int TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0()
 {
-// 0x7473d0
-    bool __thiscall TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0(int this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+bool __thiscall TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0(int this)
 {
-    return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
+  return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
 }
 }
-} // namespace gamemd
+}

@@ -333,6 +333,7 @@ int RocketLocomotionClass_17::Launch(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x664A70
 namespace gamemd {
 VectorClass * RocketLocomotionClass_17::Constructor(char a2)

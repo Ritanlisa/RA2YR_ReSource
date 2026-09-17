@@ -167,7 +167,7 @@ public:
     bool               InfantryClass_field_bool_6DD;
     uint32_t           InfantryClass_field_6E0;
     bool               ShouldDeploy;
-    int32_t            InfantryClass_field_int_6E8;
+    int32_t            unknown_int_6E8;
     uint32_t           unused_6EC;
 
 protected:

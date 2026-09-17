@@ -2723,6 +2723,7 @@ void nullsub_8()
 // 0x48DED0
 namespace gamemd {
 void nullsub_51()
+}
 // 0x48db70
 {
   ;

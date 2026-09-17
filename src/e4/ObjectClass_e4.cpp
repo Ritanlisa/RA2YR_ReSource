@@ -2421,26 +2421,26 @@ int ObjectClass::updateStateFlags()
 namespace gamemd {
 int ObjectClass::InputThunkA()
 {
-// 0x4e14a0
-    int __thiscall ObjectClass::InputThunkA(int *(void**)this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+int __thiscall ObjectClass::InputThunkA(_DWORD *this)
 {
-    return ObjectClass::GetWidth(this);
+  return ObjectClass::GetWidth(this);
 }
 }
-} // namespace gamemd
-
+}
 // 0x4E14B0
 namespace gamemd {
 int ObjectClass::InputThunkB()
 {
-// 0x4e14b0
-    int __thiscall ObjectClass::InputThunkB(int *(void**)this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+int __thiscall ObjectClass::InputThunkB(_DWORD *this)
 {
-    return ObjectClass::GetHeight(this);
+  return ObjectClass::GetHeight(this);
 }
 }
-} // namespace gamemd
-
+}
 // 0x556620
 namespace ra2 {
 namespace game {
@@ -2704,14 +2704,14 @@ unsigned int * ObjectClass::clearTarget(char a2)
 namespace gamemd {
 int ObjectClass::j_Game_ProcessIdle()
 {
-// 0x77d200
-    char __thiscall ObjectClass::j_Game_ProcessIdle(SimpleWonlineDialogControl *(void**)this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+char __thiscall ObjectClass::j_Game_ProcessIdle(SimpleWonlineDialogControl *this)
 {
-    return Game::ProcessIdle((CreateGameDialogControl *)this);
+  return Game::ProcessIdle((CreateGameDialogControl *)this);
 }
 }
-} // namespace gamemd
-
+}
 // 0x7A2E70
 namespace ra2 {
 namespace game {

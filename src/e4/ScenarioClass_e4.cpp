@@ -2291,6 +2291,7 @@ return 1;
 // 0x5C0EE0
 namespace gamemd {
 char ScenarioClass::initTriggers()
+}
 // 0x5c0ed0
 {
 return 1;
@@ -2413,14 +2414,14 @@ return 1;
 namespace gamemd {
 int ScenarioClass_ClearFlag_0()
 {
-// 0x5ca7f0
-    char ScenarioClass::ClearFlag_0()
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+char ScenarioClass::ClearFlag_0()
 {
-    return ScenarioClass::ClearFlag();
+  return ScenarioClass::ClearFlag();
 }
 }
-} // namespace gamemd
-
+}
 // 0x5CEB60
 namespace gamemd {
 MSAnim * ScenarioClass::checkWinningConditions(char a2)

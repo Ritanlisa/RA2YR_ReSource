@@ -644,6 +644,7 @@ int DynamicVectorClass_uint::GetSize(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x42DB10
 namespace gamemd {
 VectorClass * DynamicVectorClass_uint::Destructor(char a2)
@@ -949,6 +950,7 @@ int DynamicVectorClass_PAD::GetSize(unsigned int * a2)
     return result;
 }
 } // namespace gamemd
+}
 
 // 0x49EB50
 namespace gamemd {
@@ -1149,6 +1151,7 @@ int DynamicVectorClass_PAD::FindItemIndex(unsigned int * a2)
     return -1;
   }
     return result;
+}
 }
 } // namespace gamemd
 
@@ -1409,6 +1412,7 @@ int DynamicVectorClass_SubzoneConn::GetSize(unsigned int * a2)
   }
     return result;
 }
+}
 } // namespace gamemd
 
 // 0x5AC900
@@ -1576,6 +1580,7 @@ int DynamicVectorClass_ptr_NodeNameType::GetSize(unsigned int * a2)
     if ( ++result >= v2 )
     return -1;
   }
+}
     return result;
 }
 } // namespace gamemd
@@ -1770,6 +1775,7 @@ int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::FindItemIndex(uns
   {
     if ( ++result >= v2 )
     return -1;
+}
   }
     return result;
 }

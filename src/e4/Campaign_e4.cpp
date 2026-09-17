@@ -302,6 +302,7 @@ int Campaign_WorldDominationTour_16::Read(int a2)
 }
 } // namespace gamemd
 
+}
 // 0x7659D0
 namespace gamemd {
 unsigned int Campaign_WorldDominationTour_16::Write(int a2)

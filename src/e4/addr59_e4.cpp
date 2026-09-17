@@ -1211,14 +1211,14 @@ int E4Recv_5942F0::sub_5942F0(int * a2)
 namespace gamemd {
 int j_Options_GetValue()
 {
-// 0x597d40
-    bool __thiscall j_Options::GetValue(const char **dwNewLong)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+bool __thiscall j_Options::GetValue(const char **dwNewLong)
 {
-    return Options::PrepareSaveLoadDlg(dwNewLong);
+  return Options::PrepareSaveLoadDlg(dwNewLong);
 }
 }
-} // namespace gamemd
-
+}
 // 0x598000
 namespace gamemd {
 double sub_598000()

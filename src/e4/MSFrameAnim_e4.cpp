@@ -287,6 +287,7 @@ int MSFrameAnim::getCurrentFrame(int a2)
 }
 } // namespace gamemd
 
+}
 // 0x76A2B0
 namespace gamemd {
 char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
@@ -355,6 +356,7 @@ int MSFrameAnim::resetAnimation(unsigned int * a2)
     return result;
 }
 } // namespace gamemd
+}
 
 // 0x76A680
 namespace gamemd {

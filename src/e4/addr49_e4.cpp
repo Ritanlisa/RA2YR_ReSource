@@ -6228,30 +6228,30 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
     IUnknown *v13;
     int *result;
     int *v15;
-    IUnknown *aP0[2];
+    IUnknown *a0[2];
     int v17;
     int *v18;
     double v19;
     double v20;
     IUnknown *aP2a;
     v18 = a0;
-    LOWORD(aP0[0]) = 0;
+    LOWORD(a0[0]) = 0;
     v5 = Random::State((int *)(*(int *)&HouseClass_Player.__pad_5568[8060] + 536));
     LOBYTE(v6) = 0;
     HIBYTE(v6) = v5;
     v7 = (IUnknown *)aP1->field_8;
-    *(double *)aP0 = (double)(v6 - 0x3FFF) * -0.00009587672516830327;
+    *(double *)a0 = (double)(v6 - 0x3FFF) * -0.00009587672516830327;
     v19 = (double)aP2;
     v20 = (double)aP1->field_4;
-    v8 = Math::SinCos(aP0[0]);
+    v8 = Math::SinCos(a0[0]);
     aP2a = (IUnknown *)Math::RoundToInt(v20 - v8 * v19);
-    v9 = Math::ArcTan2(aP0[0]);
+    v9 = Math::ArcTan2(a0[0]);
     v10 = (IUnknown *)Math::RoundToInt(v9 * v19 + (double)aP1->field_0);
-    Coord::Subtract(aP0, v10, aP2a, v7);
-    v11 = aP0[1];
+    Coord::Subtract(a0, v10, aP2a, v7);
+    v11 = a0[1];
     v12 = v17;
-    v13 = aP0[0];
-    if ( (unsigned int)((int)aP0[0] / 256) >= 0x200 || (unsigned int)((int)aP0[1] / 256) >= 0x200 )
+    v13 = a0[0];
+    if ( (unsigned int)((int)a0[0] / 256) >= 0x200 || (unsigned int)((int)a0[1] / 256) >= 0x200 )
   {
     v13 = (IUnknown *)aP1->field_0;
     v11 = (IUnknown *)aP1->field_4;

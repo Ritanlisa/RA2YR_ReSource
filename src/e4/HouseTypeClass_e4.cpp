@@ -1357,6 +1357,7 @@ int HouseTypeClass_36::Read(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x5133E0
 namespace gamemd {
 char HouseTypeClass_28::AddRef(int a2)
@@ -1599,6 +1600,7 @@ int HouseTypeClass_28::Read(unsigned int * a2)
     return result;
 }
 } // namespace gamemd
+}
 
 // 0x5137D0
 namespace gamemd {
@@ -1739,18 +1741,21 @@ int HouseTypeClass::readLoadoutData(int a1)
 // 0x6A46D0
 namespace gamemd {
 int HouseTypeClass::Find()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall HouseTypeClass_Find(void *this)
 {
-{
-    int v1;
-    v1 = 0;
-    if ( *(int *)DataGlobal_89E138.__pad_15FF8 <= 0 )
-    return -1;
-    while ( _strcmpi((const void *)(*(int *)(*(int *)&DataGlobal_89E138.__pad_579C[67664] + 4 * v1) + 36), this) )
+  int v1; // esi
+
+  v1 = 0; /*0x6a46d6*/
+  if ( MEMORY[0x8B4130] <= 0 ) /*0x6a46dd*/
+    return -1; /*0x6a4702*/
+  while ( _strcmpi((const void *)(*((_DWORD *)MEMORY[0x8B4124] + v1) + 36), this) ) /*0x6a46f6*/
   {
-    if ( ++v1 >= *(int *)DataGlobal_89E138.__pad_15FF8 )
-    return -1;
+    if ( ++v1 >= MEMORY[0x8B4130] ) /*0x6a4700*/
+      return -1; /*0x6a4700*/
   }
-    return v1;
+  return v1; /*0x6a4702*/
 }
 }
 } // namespace gamemd

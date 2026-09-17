@@ -2585,14 +2585,17 @@ int __thiscall Map_WorldDominationTour_28_::_vt06(_DWORD *this, int a2)
 // 0x769D30
 namespace gamemd {
 unsigned int * Map_WorldDominationTour_43::Seek(unsigned int * a2, int a3)
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall Map_WorldDominationTour_43_::_vt06(_DWORD *this, _DWORD *a2, int a3)
 {
-{
-    int *v3;
-    v3 = (int *)(*(this + 1) + 12 * a3);
-    *a2 = *v3;
-    *((int*)(a2) + 1) = v3[1];
-    *((int*)(a2) + 2) = v3[2];
-    return a2;
+  _DWORD *v3; // edx
+
+  v3 = (_DWORD *)(*(this + 1) + 12 * a3); /*0x769d3b*/
+  *a2 = *v3; /*0x769d46*/
+  a2[1] = v3[1]; /*0x769d4b*/
+  a2[2] = v3[2]; /*0x769d52*/
+  return a2; /*0x769d4e*/
 }
 }
 } // namespace gamemd
@@ -2945,10 +2948,12 @@ unsigned int Map_WorldDominationTour_43::Write(int a2)
 // 0x76A5A0
 namespace gamemd {
 unsigned int * Map_WorldDominationTour_38::Release()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall Map_WorldDominationTour_38_::_vt02(_DWORD *this)
 {
-{
-    ++*(this + 2);
-    return this;
+  ++*(this + 2); /*0x76a5a2*/
+  return this; /*0x76a5a5*/
 }
 }
 } // namespace gamemd
@@ -2956,10 +2961,12 @@ unsigned int * Map_WorldDominationTour_38::Release()
 // 0x76A5B0
 namespace gamemd {
 unsigned int * Map_WorldDominationTour_38::ddtor()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+_DWORD *__thiscall Map_WorldDominationTour_38_::_vt03(_DWORD *this)
 {
-{
-    --*(this + 2);
-    return this;
+  --*(this + 2); /*0x76a5b2*/
+  return this; /*0x76a5b5*/
 }
 }
 } // namespace gamemd

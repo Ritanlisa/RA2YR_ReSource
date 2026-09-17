@@ -1386,6 +1386,7 @@ int WarheadTypeClass::Init(unsigned int * a2)
     return result;
 }
 
+}
 // 0x52AD50
 void * WarheadTypeClass::parseModifiers(char a2)
 {

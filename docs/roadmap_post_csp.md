@@ -2794,3 +2794,100 @@ StubReturnFalse 族命名诚实。样本中 0x51aa10/0x522640 属向量 B（语�
   不一致 ~7（Seek 族 a2/a3 引用 vs 签名 a1/a2 = #50 丢参族）——下一会话逐例三选一。
 - **遗留**：#114 保持 open（B 格 25 未清）；#115 更新为 A-36 复位完成 + B-25 待办；
   #116（破损 ~370）/ W2.3 未动；#118（事件不可见 3）待独立检测通道。
+
+## G17 会话执行日志·续（2026-09-17 下午）：W2.2 + W2.3 + P1 + P2 H5×2
+
+### W2.2 — B-25 逐例三选一（#119）
+
+- **分诊 dump**（`.omo/w22_dump_bodies.py` → `.omo/w22_bodies.json`）：25 个
+  体文本 + IDA 事件对照。关键事实：cpp_ops=0 的根源是 `*(this+N)` 裸下标不被
+  事件化（风格违规），且 IDA 侧 READ 是 W1.2 后唯一浮出的不对称维。
+- **裁决**：复位 24 + 保留 1。
+  - 真 stub 1：0x5BC450（`(void)index; return 0;` Plan A 漏网型——`(void)` 语句
+    使其逃过单 return 判定）；注意该函数在 e4/addr5B（已复位为 pending 站点）
+    与 init_game.cpp（有调用方的 Phase2 脚手架 stub，保留不动）双体并存；
+  - #50 丢参/错名族 9（a2/a3/aP1 未声明：0x41C150/0x42F3F0/0x5C0AC0/0x5D8160/
+    0x724C80 + aP1 型 0x52B4D0/0x588C40/0x720940/0x724FA0）——转桶 #50 记账；
+  - raw-this 无词汇 12（member_lookup 目标偏移全部无名词汇：MouseClass@21860/
+    TechnoClass@1749/304/TacticalClass@1492/1376/CellClass@52/Network@4,16/
+    Map_WDT_38@8/WWMouseClass@12/HouseTypeClass 全局 pad 族）；
+  - 有词汇但误归属 2（0x588D30 unknown::Seek ml@4=m_Position 语义不符、
+    0x769D30 WDT_43::Seek Items@4——R 路会固化垃圾类名，复位待归属定谳）；
+  - 保留 1：0x4E7E30（CRT dynamic initializer 忠实镜像，READ 不对称源于
+    验证器未把 C++ address-of 建模为 READ——记录在案）。
+- **执行**：`.omo/w22_rollback_batch.py`（24/24 OK）+ issue #119 记账。
+- 保留样本 0x4E7E30 印证 #114 家族的另一面：部分"零事件"是验证器词汇缺口
+  而非体缺陷（address-of / 下标全局读写两型，G8/G12 已有同族记账）。
+
+### W2.3 — 破损文本 265 分路（#120）
+
+- **审计器修正**（`.omo/w23_audit_final.py`）：v1 的 undeclared_params=3814 是
+  namespace 形态假阳性（sigtext 在 `namespace X {` 花括号处截断，参数表不可见）；
+  剥离前导 ns 后真实数 147（P-form 69 / N-form 69 / mixed 9）。括号口径维持
+  全窗口平衡（namespace 开闭在单函数窗口内自配对）= 119。并集 265。
+- **分路执行**（`.omo/w23_execute.py`，单遍索引 O(N+M)）：
+  - R-brace 106（+1/+2 尾缺口补 `}`）+ R-rename 39（aPk→ak 字面映射，签名
+    语义名者不入）→ verify 145：**134 PASS 保 completed / 11 FAIL 自动转复位**
+    （translation incomplete 型——补括号后 CFG 真匹配暴露语义缺口）；
+  - S 路 112（缺参无字面目标/mixed = #50 族 + 括号真负差 4）复位；
+  - **dup-ann 杂交体 26**（注解重复出现：手写 def + 内嵌伪码 + 第二注解，
+    任何窗口机必切错；执行器曾按截断窗口追加括号破坏文件级平衡）——
+    `.omo/w23_hybrid_fix.py` 按"首注解→下一不同地址注解"整区替换为 pending 块。
+- **终态**：括号残余 8 = FP 集合（共享 namespace 文件尾闭合吞入窗口的审计
+  假阳性，非真损）；缺参归零；completed **11,832 → 11,689**（W2 合计 −167）。
+- **收尾回归修复**：杂交体清理器对 namespace 形态遗留未闭合 `namespace gamemd {`
+  （17 处）+ W2.2/W2.3 复位工具同型 3 处 → `.omo/w23_close_nsfix.py` 补齐；
+  终扫仅剩 4 个 HEAD 既有噪声（0x57B990/0x7632D0/0x42F180/0x7BA3A0，签名
+  与 HEAD 一致 = 本会话净零新增）。
+
+### P1 — TechnoClass 尾区 880-1312 重建（#110 resolved）
+
+- **真值表 75 条**（`.omo/p1_techno_tail.py`，880→1312 全连续）：三组
+  FacingClass@880/904/928（24B，ctor InitMax/Init 锚）+ currentBurstIndex@952 +
+  targetLaserTimer@956（Rules-init）+ unknown_short_3C8/3CA@968/970 + bool 簇
+  972-981 + TurretRecoil/BarrelRecoil@984/1016（32B {2,1,1,1} ctor 对）+
+  isTether 族 1048-1063 + manipulatedByUnit/chronoWarpedByHouse@1064/1068 +
+  isChronoImmuneFlag/isMouseHovering/shouldBeReselectOnUnlimbo@1072-1074 +
+  previousTeam@1076（ml 互证锚）+ 三组 DV@1088/1112/1136（24B，
+  VectorClass_Techno 布局五字段互证）+ **AudioController 四连@1160/1188/1216/
+  1244——28B 跨距矛盾消解 = AudioController 20B + 2×BOOL 8B** + 尾部
+  1264-1308（ctor -1/-1/Rules 值锚）。
+- **ml 884-1014 旧簇定谳为 -60 漂移残渣**（G16 504-792 修复后搁浅）；
+  alignmentPadding433/43B/4B9/4F9 内嵌十六进制 = YRpp drift-0 互证。
+- **四源写入**：ml 5 类镜像（-81~-92 stale +75）+ class_layouts（offsets +
+  _member_by_name）+ signals._member_by_name + t14_structs --only TechnoClass
+  --apply（declare ok=1 + idb_save）+ til 缓存重导（g13_til_export 1711 UDT）。
+- **A1 复核**：agree 8→39、conflict 26→3、til-drift{20:20,-60:4,-20:1,-172:1}
+  → {20:1,-172:2}——**-60/-20 全消**；ml↔til ≥880 区零偏差。残余 = 中区债
+  （RadioClass 链边界 til 228 vs ml 240 → flashing 族 delta12、particles 族
+  delta20、YRpp 中区 5 成员布局差），非尾区问题。
+- **爆炸半径核查**：旧名引用 12 函数全 PENDING（零 completed 受影响）；
+  techno.hpp 29 处改名对齐 ml 真值名（P0b 先例：hpp 跟随 ml）。
+
+### P2 — H5 手动翻译 ×2 + 词汇前置
+
+- 0x51DF10 CancelMovement（PASS）：Locomotor 空守卫 + vtable+172 槽调用 +
+  unknown_int_6E8=2 / Crawling=0 / SequenceAnim=0 + 尾调 CleanupDirection。
+- 0x51DF60 FireWeaponWithCleanup（PASS）：FireWeapon → Fraidycat × 无弹药 →
+  PanicDurationLeft=300 → GetPrimaryOrFallback()==1||15 → QueueMission(5,0)。
+- **词汇前置**：InfantryClass@1768=unknown_int_6E8（YRpp 亦未名）三源 +
+  infantry.hpp 对齐；FootClass@1677=unknownBool68D（YRpp unknown 0x68D 区）
+  三源 + foot.hpp 对齐（消 field_ 前缀）；**vtable QueueMission@488 槽词汇**
+  补入（0x7EB058+488 → 0x5B35E0 二进制直读定谳，GetPrimaryOrFallback@388
+  已有词汇即时生效）；**清理 InfantryClass 行过期 ammo@600/@784 镜像与
+  signals mbn ammo:784**（真值 TechnoClass@764——过期镜像遮蔽基类解析，
+  `this->ammo` 曾被解析到 784；引用面扫描零 completed 受影响）。
+- **验证器词汇发现**：C++ 侧 vfptr 调用只认 `this->Method()` 形（无 raw-cast
+  识别器）——raw 形式的 vtable 调用在 C++ 侧恒零事件，翻译必须走语义虚调用
+  + vtable_offsets 词汇。
+
+### 收尾（六件套）
+
+括号 HEAD-delta：改动 88 文件，本会话引入的 17 处 ns-未闭合全修复，仅剩
+4 个 HEAD 既有噪声（签名一致）；注解审计双零；一致性 85/16 基线持平；
+readiness 无幽灵无双 def；新增 completed 全验（2/2）+ 随机 50 存量抽样
+50/50 PASS。**终态 completed 11,691 / pending 4,920**（11,856 −167 +2）。
+#119/#120 记账，#110 resolved。遗留：#114（B-25 已清，READ 盲点族仅剩
+address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）、#116（W2.3
+清偿完毕）、#118（事件不可见 3 待独立通道）、TechnoClass 中区链边界债
+（RadioClass 228 vs 240，下一轮）。

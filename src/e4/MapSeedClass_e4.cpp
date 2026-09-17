@@ -772,6 +772,7 @@ int MapSeedClass_18::FindItem(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x5AD430
 namespace gamemd {
 VectorClass * MapSeedClass_18::QueryInterface(char a2)

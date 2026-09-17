@@ -3208,9 +3208,11 @@ ObjectClass * sub_5BC440()
 // 0x5BC450
 namespace gamemd {
 int sub_5BC450(int a1)
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __fastcall sub_5BC450(int a1)
 {
-{
-    return DataGlobal_ABF168[a1];
+  return MEMORY[0xABF168][a1]; /*0x5bc457*/
 }
 }
 } // namespace gamemd

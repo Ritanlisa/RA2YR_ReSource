@@ -6,10 +6,11 @@
 namespace gamemd {
 int GetCurrentProcessId_0()
 {
-// 0x7dcf22
-    DWORD __stdcall GetCurrentProcessId::0()
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+DWORD __stdcall GetCurrentProcessId::0()
 {
-    return GetCurrentProcessId();
+  return GetCurrentProcessId();
 }
 }
-} // namespace gamemd
+}

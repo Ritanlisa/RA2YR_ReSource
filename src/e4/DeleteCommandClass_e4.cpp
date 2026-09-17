@@ -299,6 +299,7 @@ int DeleteCommandClass_28::FindItem(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x53C780
 namespace gamemd {
 VectorClass * DeleteCommandClass_28::QueryInterface(char a2)

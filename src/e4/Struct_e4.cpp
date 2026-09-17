@@ -122,26 +122,26 @@ int Struct::ZeroInit32()
 namespace gamemd {
 int Struct::ZeroInitAndSetup_0()
 {
-// 0x53f4e0
-    int __thiscall Struct::ZeroInitAndSetup_0(int *(void**)this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+int __thiscall Struct::ZeroInitAndSetup_0(_DWORD *this)
 {
-    return Struct::ZeroInitAndSetup(this);
+  return Struct::ZeroInitAndSetup(this);
 }
 }
-} // namespace gamemd
-
+}
 // 0x5EF280
 namespace gamemd {
 int Struct::ZeroInitAndSetup_0_0()
 {
-// 0x5ef280
-    int __thiscall Struct::ZeroInitAndSetup_0_0(NullModemConnClass *(void**)this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+int __thiscall Struct::ZeroInitAndSetup_0_0(NullModemConnClass *this)
 {
-    return Struct::ZeroInitAndSetup(this);
+  return Struct::ZeroInitAndSetup(this);
 }
 }
-} // namespace gamemd
-
+}
 // 0x5F75E0
 unsigned int * Struct::InitTriple256(unsigned int * a1)
 {

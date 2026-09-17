@@ -299,7 +299,7 @@ protected:
     bool               shouldScanForTarget;
     bool               FootClass_field_bool_68B;
     bool               FootClass_field_bool_68C;
-    bool               FootClass_field_bool_68D;
+    bool               unknownBool68D;
     bool               FootClass_field_bool_68E;
     bool               shouldEnterAbsorber;
     bool               shouldEnterOccupiable;

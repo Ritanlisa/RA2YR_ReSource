@@ -752,6 +752,7 @@ int SpawnManagerClass_25::Spawn(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x6B8790
 namespace gamemd {
 DynamicVector * SpawnManagerClass_25::QueryInterface(char a2)

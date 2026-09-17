@@ -2036,10 +2036,12 @@ bool E4Recv_4F4D30::sub_4F4D30(const char * a2)
 // 0x4F4D90
 namespace gamemd {
 int j_Stub_InfiniteLoop()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+void __fastcall __noreturn j_Stub_InfiniteLoop(int a1, int a2)
 {
-    void __fastcall __noreturn j_Stub_InfiniteLoop(int a1, int a2)
-{
-    Stub::InfiniteLoop(a1, a2);
+  Stub::InfiniteLoop(a1, a2); /*0x4f4d90*/
 }
 }
 } // namespace gamemd

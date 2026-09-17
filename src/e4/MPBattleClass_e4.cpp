@@ -56,14 +56,14 @@ unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege
 namespace gamemd {
 int MPBattleClass::vt_entry_18()
 {
-// 0x5ca7d0
-    bool __thiscall MPBattleClass::vt_entry_18(std::codecvt_base *(void**)this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+bool __thiscall MPBattleClass::vt_entry_18(std::codecvt_base *this)
 {
-    return ScenarioClass::createStartingForces(this);
+  return ScenarioClass::createStartingForces(this);
 }
 }
-} // namespace gamemd
-
+}
 // 0x5CACF0
 long long MPBattleClass::isValidMap()
 {

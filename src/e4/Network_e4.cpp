@@ -6412,18 +6412,21 @@ char * sub_652110(int a1, int a2)
 // 0x664390
 namespace gamemd {
 short Network::handleDisconnect(IUnknown * aP1)
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+__int16 __thiscall Network::handleDisconnect(_DWORD *this, IUnknown *aP1)
 {
-{
-    int v3;
-    v3 = 0;
-    if ( (int)*(this + 4) <= 0 )
-    return 0;
-    while ( _strcmpi((char *)(*(int *)(*(this + 1) + 4 * v3) + 1), (char *)aP1) )
+  int v3; // esi
+
+  v3 = 0; /*0x664395*/
+  if ( (int)*(this + 4) <= 0 ) /*0x66439c*/
+    return 0; /*0x6643bf*/
+  while ( _strcmpi((char *)(*(_DWORD *)(*(this + 1) + 4 * v3) + 1), (char *)aP1) ) /*0x6643b5*/
   {
-    if ( ++v3 >= *(this + 4) )
-    return 0;
+    if ( ++v3 >= *(this + 4) ) /*0x6643bd*/
+      return 0; /*0x6643bd*/
   }
-    return *(short *)(*(int *)(*(this + 1) + 4 * v3) + 37);
+  return *(_WORD *)(*(_DWORD *)(*(this + 1) + 4 * v3) + 37); /*0x6643bf*/
 }
 }
 } // namespace gamemd
@@ -6431,12 +6434,14 @@ short Network::handleDisconnect(IUnknown * aP1)
 // 0x6643E0
 namespace gamemd {
 int Network::checkTimeout(int a2)
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall sub_6643E0(_DWORD *this, int a2)
 {
-{
-    if ( a2 >= *(this + 4) )
-    return 0;
-    else
-    return *(int *)(*(this + 1) + 4 * a2) + 1;
+  if ( a2 >= *(this + 4) ) /*0x6643e9*/
+    return 0; /*0x6643f5*/
+  else
+    return *(_DWORD *)(*(this + 1) + 4 * a2) + 1; /*0x6643f1*/
 }
 }
 } // namespace gamemd

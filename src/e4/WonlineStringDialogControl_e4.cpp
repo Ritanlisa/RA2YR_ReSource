@@ -321,6 +321,7 @@ int WonlineStringDialogControl_12::FindItem(unsigned int * a2)
 }
 } // namespace gamemd
 
+}
 // 0x7AD370
 namespace gamemd {
 VectorClass * WonlineStringDialogControl_12::QueryInterface(char a2)

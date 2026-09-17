@@ -861,6 +861,7 @@ int ParticleTypeClass::Init(unsigned char * a2)
 }
 } // namespace gamemd
 
+}
 // 0x6457A0
 namespace gamemd {
 int ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2)

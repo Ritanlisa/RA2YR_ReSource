@@ -158,6 +158,7 @@ int WDTState_4::Read(int a2)
 }
 } // namespace gamemd
 
+}
 // 0x76BC10
 namespace gamemd {
 DynamicVector * WDTState_4::QueryInterface(char a2)

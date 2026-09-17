@@ -747,14 +747,14 @@ char SidebarClass_LoadResources()
 namespace gamemd {
 int SidebarClass::initButtons2()
 {
-// 0x40d270
-    char __thiscall SidebarClass::initButtons2(void *(void**)this)
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// attributes: thunk
+char __thiscall SidebarClass::InitButtons_0(void *this)
 {
-    return SidebarClass::InitButtons(this);
+  return SidebarClass::InitButtons(this);
 }
 }
-} // namespace gamemd
-
+}
 // 0x653010
 void SidebarClass::CreateScrollButtons()
 {

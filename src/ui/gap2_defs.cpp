@@ -21,11 +21,13 @@
 #include "ui/ui_ext.hpp"
 
 // 0x40D280
-namespace gamemd { int MouseClass::ProcessInput() {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall MouseClass::_vt40(_DWORD *this)
 {
-    return *(this + 5465);
+  return *(this + 5465); /*0x40d286*/
 }
-} }
+}
 // 0x40D290
 namespace gamemd { void* MouseClass::InitMouse(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -7050,11 +7052,13 @@ namespace gamemd { int SidebarClass::saveLoadPrefix(int a1) {
 }
 } }
 // 0x6AC5E0
-namespace gamemd { int SidebarClass::saveLoadPrefix2(int a1) {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall SidebarClass_SaveLoad_Prefix_0(int *this, int a2)
 {
-    return SidebarClass::Save(this, a2);
+  return SidebarClass::Save(this, a2); /*0x6ac5ea*/
 }
-} }
+}
 // 0x6AC780
 namespace gamemd { void* SidebarClass::queryInterface(int a2) {
 {
@@ -8127,11 +8131,13 @@ int __thiscall ToolTipManager::_vt02(_DWORD *this, int a2)
 }
 } }
 // 0x724C80
-namespace gamemd { int ToolTipClass::seek(int a1) {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall ToolTipManager_7_::_vt06(_DWORD *this, int a2)
 {
-    return *(int *)(*(this + 1) + 4 * a2);
+  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x724c8a*/
 }
-} }
+}
 // 0x724C90
 namespace gamemd { int ToolTipClass::addRef(int a2) {
 {
@@ -8329,13 +8335,16 @@ namespace gamemd { void* ToolTipClass::compareString(int a2) {
 }
 } }
 // 0x724FA0
-namespace gamemd { bool CommandClass::executeAction(void* a1) {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+bool __thiscall CommandClass::executeAction(_DWORD *this, ObjectClass *aP1)
 {
-    int *v2;
-    v2 = (int *)*(this + 4);
-    return v2 && *v2 == *(int *)aP1->__pad_0;
+  _DWORD *v2; // eax
+
+  v2 = (_DWORD *)*(this + 4); /*0x724fa0*/
+  return v2 && *v2 == *(_DWORD *)aP1->__pad_0; /*0x724fb3*/
 }
-} }
+}
 // 0x724FC0
 namespace gamemd { int CommandClass::BinarySearchAction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -9578,11 +9587,13 @@ int __thiscall WWMouseClass::UpdateCursorMovement(LONG *this)
 }
 } }
 // 0x7BA320
-namespace gamemd { void WWMouseClass::drawCursor() {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall WWMouseClass::_vt02(int *this)
 {
-    return *(this + 3) < 0;
+  return *(this + 3) < 0; /*0x7ba32a*/
 }
-} }
+}
 // 0x7BA380
 namespace gamemd { int WWMouseClass::checkHotspot(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)

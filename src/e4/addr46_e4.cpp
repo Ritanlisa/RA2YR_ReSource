@@ -1205,10 +1205,12 @@ int sub_46D310()
 // 0x46D480
 namespace gamemd {
 int sub_46D480()
+ {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+__int64 __usercall sub_46D480@<edx:eax>(__int64 result@<edx:eax>, int a2@<ecx>)
 {
-{
-    *((char *)&g_GameModeOptionState + a2) = BYTE4(result);
-    return result;
+  *((_BYTE *)&MEMORY[0x89E000] + a2) = BYTE4(result); /*0x46d480*/
+  return result; /*0x46d486*/
 }
 }
 } // namespace gamemd

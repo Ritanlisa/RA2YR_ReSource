@@ -7850,29 +7850,39 @@ LABEL_19:
 }
 } }
 // 0x54F530
-namespace gamemd { char Gap2Recv_54F530::Event_Process(short a2) {
+namespace gamemd {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall Event_Process(_BYTE *this, CCINIClass *aP1)
 {
-    char result;
-    if ( (BYTE1(aP1) & 8) != 0 )
-    return 0;
-    result = (char)aP1;
-    switch ( (char)aP1 )
+  char result; // al
+
+  if ( (BYTE1(aP1) & 8) != 0 ) /*0x54f53a*/
+    return 0; /*0x54f57f*/
+  result = (char)aP1; /*0x54f53c*/
+  switch ( (char)aP1 ) /*0x54f559*/
   {
-    case 8: case 13: case 27: return result;
-    case 10: result = this->M8;
-    if ( result == 13 )
-    result = 0;
-    this->M8 = 0;
-    break;
-    case 35: result = 92;
-    break;
-    case 36: result = 8;
-    break;
-    default: return 0;
+    case 8: /*0x54f559*/
+    case 13: /*0x54f559*/
+    case 27: /*0x54f559*/
+      return result;
+    case 10: /*0x54f559*/
+      result = *(this + 8); /*0x54f56c*/
+      if ( result == 13 ) /*0x54f571*/
+        result = 0; /*0x54f573*/
+      *((_WORD *)this + 4) = 0; /*0x54f575*/
+      break; /*0x54f57c*/
+    case 35: /*0x54f559*/
+      result = 92; /*0x54f566*/
+      break; /*0x54f569*/
+    case 36: /*0x54f559*/
+      result = 8; /*0x54f560*/
+      break; /*0x54f563*/
+    default:
+      return 0;
   }
-    return result;
+  return result; /*0x54f562*/
 }
-} }
+}
 // 0x551A30
 namespace gamemd { int Gap2Recv_551A30::ProcessAutoSave() {
 {
