@@ -2678,3 +2678,87 @@ StubReturnFalse 族命名诚实。样本中 0x51aa10/0x522640 属向量 B（语�
 （g15_rollback）→ W2.2 复核 28 → W2.3 破损 ~370 分路（R 机械修复/S 复位重翻）
 → W3 预防（mark_completed 三问自检/波次编译抽检/门控 compile-validity 类别提案/
 度量防回归）。G17 开工顺序：W1.1 → P0/P0b → W1.2 → W2 → P1-P3 主线。
+
+---
+
+## G17 会话执行日志（2026-09-17）：W1.1 + P0/P0b + W1.2 dry 统计
+
+> 开工顺序按 audit_repair_plan「与既有计划的关系」：W1.1 → P0/P0b → W1.2 dry+获批 → W2 → P1-P3。
+> 本会话完成前三段（W1.2 止步于呈报，保护文件待获批）。
+
+### W1.1 — ERROR_RE 修复（#117 closed 功能面）
+
+- **改动**（`tools/mcp_translate_server.py`，非保护文件）：`ERROR_RE` 列可选
+  `(\d+)(?:,(\d+))?` + 扩展名 `cpp|hpp|h` + `(?:fatal )?error` 计入 fatal C1003。
+  修复前实测匹配 **0 行**（60 行日志全 miss）。
+- **验收三方一致**：stats `last_build_errors=61` / build scope=file infantry.cpp
+  `error_count=61` / 日志 `grep -cE ": (fatal )?error C[0-9]+:" = 61`
+  （= 60 error + 1 fatal C1003 截断；含 hpp 头文件债主体——vector.hpp 34 等）。
+- 13399 HTTP 服务已用新代码重启；ZCode stdio 实例为会话启动时旧代码，build/stats
+  一律走 HTTP。口径修正已同步 AGENTS/coverage（"0/0"撤回）。
+
+### P0 — BulletType til 恢复（#112/#113 resolved，真根因翻案）
+
+- **G16"预期 parse: 2"实为错误码**（parse_decls 返回 0=成功）：声明文本第 759 位
+  成员名 `flat` 是 **IDA C 解析器保留字**（MSVC flat 内存模型，与 `__declspec`
+  同类；单行 `char flat;` 即 2 错误）——二分定位 + 单行逐条实证。G16 活会话从未
+  建成 760B 类型，"盘上仍是 756B"的中断叙事不准确（是从未建成）。
+- 修复：脚本 `flat`→`Flat`（tools/ida_bullettype_fix_g16.py，注释说明）→
+  `parse: 0 size: 760 members: 106`，验收点 660=airburst(char)/712=elasticity(double)/
+  752=arm(int)/756-759=animLow/High/Rate/Flat 全符 → **idb_save**。
+
+### P0b — ml 残留清理 + 728 语义裁决 + GetWarhead 复验（文本级全池回 FAIL=0）
+
+- **ml 手术**（`tools/member_lookup.json` BulletTypeClass，147→104 条）：删 0-95
+  旧布局 PascalCase 残留梯子 **43 条**（含计划点名的 60/64/68；保留 61 UINameLabel/
+  96 UIName 真值）。残留梯子远大于计划预估的三条——整段是旧模型残渣。
+- **方向翻案**：计划假设"ml 对齐 hpp（Trailer 大写）"，实测**相反**——ml/mbn/
+  class_layouts/til 四源已是 G16 camelCase 真值，**hpp 才是过时方**（techno.hpp
+  `AbstractClass* focus;` 先例：hpp 惯例跟随 ml 命名）。ml 是偏移键结构（一偏移
+  一名），mbn 的双大小写模式放不进 ml，故正确手术 = hpp 对齐。
+- **hpp 手术**：`src/type/bullet_type.hpp` 尾区 **39 成员** PascalCase→camelCase
+  （Color/AA/AG 原本一致；1:1 对照 ml g16 own-region 42 条全符）；引用面全扫
+  （排除 /*0x 伪码行 + AnimTypeClass Shadow/Flat/Elasticism 同名异类 + WeaponType
+  Arm 注释）后仅 3 处实引用同步：bullet_type.cpp ×2（noRotate/scaledSpawnDelay）+
+  BulletTypeClass_e4.cpp GetWarhead。
+- **728 位语义裁决**（计划预留的门）：IDA `if (a2 == *(this+182)) *(this+182)=0`
+  = "等于则清空" Detach 语义 → AnimTypeClass* trailer 自洽（int rot 无意义）；
+  class_layouts 728=trailer(AnimTypeClass*)/732=rot 佐证。体改 `this->trailer`
+  （`(int)` 桥接指针比较）。
+- **复验 PASS**（verbose：双侧 READ/WRITE(member,728) 三块 CFG 完全一致）→
+  文本级全池 FAIL=0 恢复（正式全池复跑待 W1.2 加固后建新基线，避免跑两遍）。
+- 编译抽检（W3.1 纪律）：bullet_type.cpp 单文件 36 错全部为既有头文件债
+  （abstract.hpp/vector.hpp 级联），bullet 文件本体 **0 新增错误**。
+
+### W1.2 — dry 统计（不改验证器本体，独立脚本 `.omo/w12_dry_stats.py`）
+
+- **口径**：直接从 cfg 块取 READ/WRITE/CALL 事件（`ordered_events`），不用
+  `collect_external_ops`（它不含 READ = #114 盲点本体——0x484ab0 verbose 实证：
+  事件在块上、STEP3(0) 却判 OK）。平凡体 = 剥签名/注释后单 return 语句 且
+  cpp 侧 0 事件。
+- **全池 11,892 交叉表**（5.5 分钟，ProcessPool×6，`.omo/w12_dry_stats.json`）：
+
+  | 格 | 数量 | 含义 |
+  |---|---|---|
+  | **A** | **36** | 平凡体 × IDA 非平凡 = **方案 A 潜在 FAIL = W2.1 复位清单** |
+  | B | 25 | 多语句无事件体 × IDA 非平凡（方案 A 扩展候选，W2.2 逐例） |
+  | C | 660 | 诚实平凡（双侧平凡，豁免） |
+  | D | 11,171 | 有事件体（方案 A 不触碰） |
+
+- **审计铁面 9 重核**（dry 数据推翻原清单 7/9）：坐实 **2**（0x484AB0 IsInBounds
+  cpp=0/ida=3、0x522CB0 IsEnteringOrCapturingStructure）；**4 实为真翻译体**
+  （0x406E80 Shutdown/0x4525F0 IsPoweredOn/0x458DB0 HasActiveParam/
+  0x458DD0 CheckMissionGuard——cpp 事件齐全，审计清单过时）；**3 事件模型不可见**
+  （0x401190 纯算术经 int 参数接收者、0x4DBA50 虚调用经局部派发、0x659470 写经
+  局部 v2——提取器设计排除形态，双侧 0 事件恒 PASS，#118 记账，方案 A/B 均无法
+  覆盖，需独立检测通道）。
+- **A 格 36 构成**：TechnoClass getter 族 10+（GetTarget 0x6F9DC0 铁面：IDA
+  `return this[135]` vs C++ `return 0;`）+ Building MissionStub 族 4（IDA 读
+  `*(this[328]+5412)` 返回非零）+ LoadOptions GetFlag 族 3（忠实但 raw-cast
+  违规体——Plan A 拦下后强制改成员访问，属 R 路机械修复）+ WDT/Seek 族 +
+  低地址音频族 5 + IsInBounds 等。抽检 3/3 属实。
+- **合法样本零误伤**：GetPlanningToken（single=True 但有 READ 事件）/IsMassSelectable/
+  IsRookie 全部不落 A 格。
+- **呈报待批**：方案 A 实施（verify_execution_flow.py 保护文件）——新增
+  trivial-stub-mismatch 独立检查（单 return × cpp 0 事件 × IDA 有事件 → FAIL），
+  预期全池 FAIL 0→36（= A 格清单即新基线 FAIL 清单 = W2 工作清单），B 格 25 暂不动。

@@ -2,18 +2,20 @@
 
 > ⚠ 本文档的子系统细节（vtable 解码、类覆盖清单）为早期考证快照，仍然有效；
 > **当前总体进度以 `AGENTS.md` 状态表和 `docs/roadmap_post_csp.md` 执行日志为权威**
-> （2026-09-16 **G16 终态口径**：MCP completed **11,892** / pending **4,719**——**诚实口径**，
-> 全 CFG 验证；G16 = #108/#109 vtable 槽双闭环 + TechnoClass 双区段重建 + BulletType INI 全表 +
-> 手动 H5×3。**G16 末全池 exec-flow 回归：11,891/11,892 PASS**，唯一 FAIL =
-> BulletTypeClass::GetWarhead（ml 旧大写条目残留，G17 P0 修复，见 docs/g17_prep.md））。
+> （2026-09-17 **G17 口径**：MCP completed **11,892** / pending **4,719**——**诚实口径**，
+> 全 CFG 验证。**文本级全池 FAIL=0 已恢复**（G17 P0/P0b：唯一 FAIL GetWarhead 修复，
+> 见 docs/g17_prep.md）；**FAIL=0 = 文本 CFG 双射，不含可编译性/非 stub 保证**——
+> W1.2 dry 统计：A 格假完成候选 36 / B 格近失 25 / 诚实平凡 660 / 有事件体 11,171
+> （`.omo/w12_dry_stats.json`），W2 修复以 A 格 36 为复位清单）。
 
-## 翻译总进度（G16 终态 + 体检，2026-09-16）
+## 翻译总进度（G17 W1.2 dry 后，2026-09-17）
 
 | 指标 | 数值 |
 |--------|-------|
 | MCP completed | **11,892**（诚实口径：G15 末 11,888 + G16 手动 H5×3 + 舰队 building×1，全 CFG 验证） |
 | MCP pending | **4,719**（构成：too-long/goto H5 主体 ~2,365 + gap2 系统性 ~1,043（#50/#55 等生成器层裁决）+ e4 全局命名阻塞 ~390（#67-#71）+ building.cpp 70（#4/#17/#23）+ FAIL-recycle 255 等，见 roadmap「Phase H」+ G16 日志） |
-| 全池 exec-flow 回归 | **11,891 PASS / 1 FAIL**（2026-09-16 首次全量复跑，46 分钟，`.omo/pool_verify_results.json`；FAIL=0x46C820 GetWarhead，定因 member_lookup BulletTypeClass 旧大写三件套 Color@60/Trailer@64/ROT@68 残留与 G16 真值 724/728/732 并存——P0 顺带清理） |
+| 全池 exec-flow 回归 | **11,891 PASS / 1 FAIL → G17 已修复回 11,892/11,892 文本级 PASS**（2026-09-16 首次全量复跑 46 分钟；2026-09-17 G17 P0/P0b 修复唯一 FAIL 0x46C820：til 760B 重建（flat 保留字根因）+ ml 43 条残留清除 + hpp 39 改名 + 728=Trailer 裁决，复验 PASS；全池复跑待 W1.2 加固后建新基线） |
+| W1.2 dry 交叉表 | **A 36 / B 25 / C 660 / D 11,171**（2026-09-17，`.omo/w12_dry_stats.json`；A=平凡体×IDA非平凡=方案 A 潜在 FAIL=W2.1 复位清单；铁面 9 仅 2 坐实、4 真翻译、3 事件不可见 #118；合法样本零误伤） |
 | marker&completed 矛盾 | **0**（G13 readiness 全检 READY 持续维持：无幽灵完成/无双 def/tag 同步） |
 | src 函数体覆盖 | ~17,880 / 19,133（93.5%；未翻译函数以 IDA 原始反编译活代码块占位，裁决 v2） |
 | 偏移→OO 重写 | rewritten 4,468 / unmapped 5,610（G14 修正版 refresh 口径，分母随已译体退出波动） |

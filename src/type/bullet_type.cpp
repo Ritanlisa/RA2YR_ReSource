@@ -9,8 +9,8 @@ AbstractType __stdcall BulletTypeClass::whatAmI() const { return AbstractType::B
 int BulletTypeClass::objectSize() const { return 0; }
 bool BulletTypeClass::SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) { return false; }
 ObjectClass* BulletTypeClass::CreateObject(HouseClass* pOwner) { return nullptr; }
-bool BulletTypeClass::Rotates() const { return !this->NoRotate; }
+bool BulletTypeClass::Rotates() const { return !this->noRotate; }
 // 0x46c840
-void BulletTypeClass::SetScaledSpawnDelay(int delay) { this->ScaledSpawnDelay = delay; }
+void BulletTypeClass::SetScaledSpawnDelay(int delay) { this->scaledSpawnDelay = delay; }
 
 } // namespace gamemd

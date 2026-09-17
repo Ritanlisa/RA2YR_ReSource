@@ -892,8 +892,8 @@ int BulletTypeClass::GetWarhead(int a2, int a3)
 {
     int result;
     result = a2;
-    if ( a2 == this->ROT )
-        this->ROT = 0;
+    if ( a2 == (int)this->trailer )
+        this->trailer = 0;
     return result;
 }
 

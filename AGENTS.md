@@ -182,10 +182,10 @@ cmake --build build_linux
 | 指标 | 数值 |
 |------|------|
 | 已实现函数（存根） | ~140（~200+ stubs）+ **4,255 sub_* <50B 存根 (Task 17)** + **1,203 sub_* 50-500B 存根 (Task 18)** |
-| 编译错误 / 警告 | **0 / 0**（gamemd 来自 _generated/ 和主要模块）——**⚠ #117：该口径存疑**（ERROR_RE 单/双数字格式盲区，stats 恒报 0；实测基线编译债 = 裁决 v2 容忍的 5,335 全量口径，infantry.cpp 单文件 fatal C1003）。修复见 docs/audit_repair_plan.md W1.1 |
+| 编译错误 / 警告 | ~~0 / 0~~ **口径已撤回**（#117）。**W1.1 已修复（2026-09-17 G17）**：ERROR_RE 列可选 + hpp/h 扩展名 + fatal 计入，stats/单文件编译恢复真实计数（infantry.cpp TU = 61 = 60 error + 1 fatal C1003 截断；验收三方一致 stats 61 / build 61 / grep 61）。主体债 = 裁决 v2 容忍的 5,335 全量口径 |
 | symbol-locked | **symbols-locked-v2** — 全部 19,067 函数 1:1:1 映射 (IDA↔signals↔hpp)，0 naming mismatches |
 | completed (符号定义) | **19,133 / 19,133 (100%)** — 所有函数在 IDA/signals.json/hpp 中有名称和地址 |
-| translated (完整IDA对照) | **11,892** — MCP completed 诚实口径（G16 会话：#108/#109 vtable 槽双闭环（MissionClass 虚区 7 槽 + GetActionOnObject 族五实现）+ TechnoClass 504-792/448-504 双区段 ctor 重建（focus@536/owner@540 定谳）+ BulletType INI 全表 + 手动 H5×3/舰队+1 + OO refresh 4,567；详见 docs/roadmap_post_csp.md G16 执行日志 + docs/g17_prep.md）；pending **4,719**。**G16 末全池 exec-flow 回归 11,891/11,892 PASS**（唯一 FAIL=BulletTypeClass::GetWarhead，ml 旧大写条目残留定因，G17 P0b 修复）。**⚠ 反hacking审计（#114-#116）**：FAIL=0 = 文本 CFG 双射，不含可编译性/非 stub 保证——假完成 9 铁面 + 28 嫌疑、破损文本 ~370 待修复（**真实下界 ≈ 11,485**，修复计划 docs/audit_repair_plan.md） |
+| translated (完整IDA对照) | **11,892** — MCP completed 诚实口径（G16 会话：#108/#109 vtable 槽双闭环（MissionClass 虚区 7 槽 + GetActionOnObject 族五实现）+ TechnoClass 504-792/448-504 双区段 ctor 重建（focus@536/owner@540 定谳）+ BulletType INI 全表 + 手动 H5×3/舰队+1 + OO refresh 4,567；详见 docs/roadmap_post_csp.md G16 执行日志 + docs/g17_prep.md）；pending **4,719**。**G16 末全池 exec-flow 回归 11,891/11,892 PASS**（唯一 FAIL=BulletTypeClass::GetWarhead——**G17 P0/P0b 已修复（2026-09-17）**：til 760B 重建（真根因 = `flat` 是 IDA C 解析器保留字，G16"parse:2"实为错误码）+ ml 43 条旧布局残留清除 + hpp 尾区 39 成员对齐 G16 真值名 + 728 位裁决 Trailer Detach 语义 → 复验 PASS，文本级全池 FAIL=0 恢复）。**⚠ 反hacking审计（#114-#116）**：FAIL=0 = 文本 CFG 双射，不含可编译性/非 stub 保证——**W1.2 dry 统计已出（G17）**：平凡体×IDA非平凡事件交叉表 = A 格 36 假完成候选 / B 格 25 近失 / 诚实平凡 660 / 有事件体 11,171（`.omo/w12_dry_stats.json`）；审计铁面 9 仅 2 坐实 + 4 实为真翻译 + 3 事件模型不可见（#118）；破损文本 ~370 待修复（真实下界待 W2 精算，修复计划 docs/audit_repair_plan.md） |
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
 | sub_* 残留 | **5,468** — 函数级别 (非类成员)，0 已翻译 |

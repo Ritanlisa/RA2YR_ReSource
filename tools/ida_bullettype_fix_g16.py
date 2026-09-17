@@ -111,7 +111,7 @@ char field_2AA[2]; /* bytes */
   char animLow;
   char animHigh;
   char animRate;
-  char flat;
+  char Flat; /* flat 是 IDA C 解析器保留字（MSVC flat 模型），不可作成员名 */
 };
 """, 0)
 t = idaapi.tinfo_t()

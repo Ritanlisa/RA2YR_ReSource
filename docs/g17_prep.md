@@ -4,12 +4,26 @@
 > tag `auto-fill-baseline` 与 HEAD 同步。G16 执行日志见 `docs/roadmap_post_csp.md`
 > 文末；本文件是下一会话的**可执行准备材料**（git 跟踪，不依赖 .omo 本地态）。
 >
-> **体检基线（2026-09-16 体检轮）**：全池 exec-flow 回归 **11,891 PASS / 1 FAIL**
-> （首次全量复跑，46 分钟，`.omo/pool_verify_results.json`；驱动 `.omo/pool_verify_all.py`）。
-> 唯一 FAIL = BulletTypeClass::GetWarhead(0x46C820)，定因 member_lookup 旧大写三件套
-> （Color@60/Trailer@64/ROT@68）与 G16 真值（724/728/732）并存——**P0 扩容项，见下**。
+> **体检基线（2026-09-16 体检轮；2026-09-17 G17 更新）**：全池 exec-flow 回归
+> **11,891 PASS / 1 FAIL**（首次全量复跑，46 分钟，`.omo/pool_verify_results.json`；
+> 驱动 `.omo/pool_verify_all.py`）。唯一 FAIL = BulletTypeClass::GetWarhead(0x46C820)
+> ——**✅ G17 P0/P0b 已修复（2026-09-17）**：til 760B 重建（真根因 = 声明文本
+> 第 759 位成员名 `flat` 是 IDA C 解析器保留字，单行即 2 个解析错误，G16 记录的
+> "预期 parse: 2"实为错误码而非成功）+ ml 删 0-95 旧布局残留 43 条（保留 61/96）+
+> `src/type/bullet_type.hpp` 尾区 39 成员对齐 G16 camelCase 真值名（hpp 是过时方，
+> 参照 techno.hpp focus 先例）+ 728 位语义裁决（IDA `*(this+182)`"等于则清零"=
+> AnimTypeClass* trailer 的 Detach 语义，对 int rot 无意义）→ 体改 `this->trailer`
+> → 复验 PASS（双侧 READ/WRITE(member,728) CFG 一致）。#112/#113 已 resolve。
 > readiness 全检 READY（无幽灵完成/无双 def/tag 同步）；注解审计双零；
 > 一致性 85 raw / 16 normalized（基线 91/7，别名自愈型漂移，无污染信号）。
+>
+> **W1.2 dry 统计已出（2026-09-17 G17，`.omo/w12_dry_stats.py` 驱动，5.5 分钟）**：
+> 全池 11,892 交叉表 = **A 格 36**（平凡体 × IDA 非平凡 = 方案 A 潜在 FAIL，明细
+> `.omo/w12_dry_stats.json`）/ B 格 25（多语句无事件体近失，W2.2 逐例）/ 诚实平凡
+> 660 / 有事件体 11,171。审计铁面 9 重核：仅 0x484AB0/0x522CB0 坐实；4 个实为
+> 真翻译体；3 个事件模型不可见（0x401190/0x4DBA50/0x659470，#118）。合法样本
+> GetPlanningToken/IsMassSelectable/IsRookie 全部不落 A 格（零误伤）。
+> **W2.1 复位清单以 A 格 36 为准（不再用审计铁面 9 原清单）**。
 >
 > **⚠ 反hacking审计补充（同日）**：全池 FAIL=0 的含义 = **文本 CFG 双射**，不含
 > 可编译性/非 stub 保证。抽样对照实证：验证器 READ 盲点（#114）+ 假完成 9 铁面
