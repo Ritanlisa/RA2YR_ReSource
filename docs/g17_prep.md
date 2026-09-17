@@ -1,8 +1,10 @@
-# G17 准备工作包（2026-09-16 G16 会话末备齐；同日体检轮刷新）
+# G17 准备工作包（2026-09-16 G16 会话末备齐；2026-09-17 G17 前半执行后刷新）
 
-> 当前态：completed **11,892** / pending **4,719**；HEAD `bbc63aac`（G17 prep 文档提交）；
-> tag `auto-fill-baseline` 与 HEAD 同步。G16 执行日志见 `docs/roadmap_post_csp.md`
-> 文末；本文件是下一会话的**可执行准备材料**（git 跟踪，不依赖 .omo 本地态）。
+> 当前态：completed **11,856** / pending **4,755**（W2.1 复位 36 假完成后）；
+> HEAD `63b2dd35`，tag `auto-fill-baseline` 与 HEAD 同步。执行日志见
+> `docs/roadmap_post_csp.md` 文末 G17 节；本文件是下一会话的**可执行准备材料**
+> （git 跟踪，不依赖 .omo 本地态）。**下一会话入口见文末「下一会话开工清单」
+> （W2.2 → W2.3 → P1-P3）**。
 >
 > **体检基线（2026-09-16 体检轮；2026-09-17 G17 更新）**：全池 exec-flow 回归
 > **11,891 PASS / 1 FAIL**（首次全量复跑，46 分钟，`.omo/pool_verify_results.json`；
@@ -224,18 +226,39 @@ NeuronClass 316 / AbstractTypeClass 315 / MultiplayerObserverTeam 297 / HouseCla
 **TeleportLocomotionClass 362 槽全挂 Jumpjet 名 = 相邻表整体误归属个案**。
 InfantryClass 真空槽：字节 196 / 1064（见 P2 词汇前置）。
 
-## 快速验收清单（G17 开工顺序）
+## 快速验收清单（G17 已执行；下一会话入口见下）
 
 ```
-[ ] curl :13337 探测
-[ ] 开场五检（readiness / annotations_audit / consistency / git）
-[ ] W1.1 ERROR_RE 修复 + 重启 MCP（docs/audit_repair_plan.md，恢复真实编译计数）
-[ ] P0 BulletType til（tools/ida_bullettype_fix_g16.py + idb_save + resolve #112/#113）
-[ ] P0b ml 残留清理 + GetWarhead 复验（→ 文本级全池回 FAIL=0）
-[ ] W1.2 验证器加固：dry 统计 → 获批 → 实施 → 全池新基线（#114）
-[ ] W2 假完成复位 + 破损文本分路修复（#115/#116，清单在 repair_plan）
+[x] curl :13337 探测
+[x] 开场五检（readiness / annotations_audit / consistency / git）
+[x] W1.1 ERROR_RE 修复 + 重启 MCP（#117 resolved；三方验收 stats 61 / build 61 / grep 61）
+[x] P0 BulletType til（#112 resolved；真根因 = flat 是 IDA C 解析器保留字，760B 建成 + idb_save）
+[x] P0b ml 残留清理 43 条 + hpp 39 改名对齐 + GetWarhead 复验 PASS（#113 resolved）
+[x] W1.2 验证器加固（dry 统计 A36/B25/C660/D11171 → 获批 → 方案 A 落地 → 新基线 11,856/36 ≡ A-36 双向零差）
+[x] W2.1 A-36 假完成全员复位（commit 63b2dd35；completed 11,856 / pending 4,755）
+[ ] W2.2 B-25 逐例复核（预研台账 .omo/w22_pretriage.json；真 stub 0x5BC450 优先）
+[ ] W2.3 破损文本 ~370 分路修复（清单 .omo/completed_body_audit.json；R 路/S 路）
 [ ] P1 TechnoClass 尾区（读 YRpp 100-181 + ctor 写图表 → 四源 → t14 --apply → A1 复跑）
 [ ] P2 词汇前置（slot 196/1064 裁决 + member 1768/3644 INI 考古）
 [ ] P2 H5 波（0x51df10 起小函数 ×3-5）
 [ ] 收尾六件套 + 新增 completed 全验 + 提交 + tag auto-fill-baseline 重锚
 ```
+
+## 下一会话开工清单（W2.2 → W2.3 → P1-P3）
+
+1. **开场五检**（同「G17 主循环工作流」阶段 1；readiness 预期 READY，
+   completed 口径 11,856 / pending 4,755）。
+2. **W2.2 — B-25 逐例三选一**（复位 / 保留记录理由 / 转桶）：
+   - 台账：`.omo/w22_pretriage.json` + 全量体文本见 `.omo/w12_dry_stats.json` B 格；
+   - 构成：raw-this-residue 族 ~22（`*(this+N)` 裸下标忠实体——R 路改 `this->member`
+     需先 ml 补名，无名词汇者复位）+ 真 stub 1（0x5BC450 GetTextBufferEntry，
+     `(void)index; return 0;`——Plan A 漏网型，直接复位）+ 签名/体不一致 ~7
+     （Seek 族体引用 a2/a3 vs 签名 a1/a2 = #50 丢参族，转桶 #50 等系统性修复）；
+   - 复位工具：`.omo/w21_rollback_batch.py` 可改造为接受显式地址清单。
+3. **W2.3 — 破损文本 ~370 分路**：清单 `.omo/completed_body_audit.json`
+   （120 括号不平衡 + 261 签名缺参，并集去重）；R 路（机械修复保 completed，
+   补签名参数/补括号后复验）与 S 路（复位重翻）逐个判定；P0b 同族已清。
+4. **回到 P1-P3 主线**（本文件既有小节；注意 W2 后 pending 口径已重算为 4,755，
+   P2 队列表不受影响）。
+5. 全池回归节奏照旧：抽样制，每 3-4 波后 `python .omo/pool_verify_all.py --workers 6`
+   （**基线现为 11,856 PASS / 0 FAIL**——守卫生效口径，FAIL 逐条定因禁止带 FAIL 重锚）。
