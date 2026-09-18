@@ -4474,11 +4474,13 @@ int InfantryClass::ProcessEnterOrRepair()
     /* IDA truth (disasm verified):
        A: !owner->IsCurrentPlayer() && target && target->whatAmI()[vt+0x2C]==6(Building)
           && (Type->Infiltrate(+3774) || (Type->Occupier(+3764) || Type->Assaulter(+3765))
+// 0x457ce0
               && BuildingClass::CanRepair(target, this))
           -> vt+1152 AssignDestination_SyncLog(target, 1); vt+496 ForceMission(8=Capture); ret 1
        B: !owner->IsCurrentPlayer() && SequenceAnim(+1732) in {27 Deploy, 28 Deployed,
           29 DeployedFire, 30 DeployedIdle} && !target
           -> vt+1368 ProcessDeployAction(31 Undeploy, 0, 0); ret 1
+// 0x4d5350
        else: tail call InfantryClass::ProcessDeploy (0x4D5350), eax passthrough */
     if (!this->owner->IsCurrentPlayer()
         && this->target != nullptr

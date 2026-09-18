@@ -1150,9 +1150,9 @@ python tools/type_infer/auto_name.py
 ## 下一会话快速接手指引
 
 1. 看 `docs/coverage.md` 了解整体进度（**1,120 IDA 类全部完成 header，0 unknown_**）
-2. 看 `docs/roadmap_post_csp.md` **G18 执行日志（文末）** + **`docs/g18_prep.md`（G18 准备工作包 + 扩容批次 + 工作量总账）**——**G18 首日已清：W0a/EV/小项清偿/P2 词汇前置+H5×5/P1b 边界（详见 G18 日志）**。当前主线 = **E1/W0b（两大解锁，W0b 等用户裁决 (a)/(b)）→ P3/P2 主体 → H6/H7/H3r**。全池基线：**11,691/11,691 ALL PASS（G18 W0a 清零后重锚）+ G18 新增 4 全验 = 11,695**
+2. 看 `docs/roadmap_post_csp.md` **G18 执行日志（文末）** + **`docs/g19_prep.md`（G19 准备工作包：W0 增量提交+池复跑 / 遗留清偿 L1 #122 中区重建·L2 #121·L3/L4 / P2 H5 fresh 20 队列 / 承接批次 E1·W0b·P3·H6·H7·H3r / 小项清偿 / 工作量总账 ≈10-16 会话）**——当前主线 = **W0 → L1/L2（解锁 H5 队列 + 清最大漂移债）→ P2 主体 → E1/W0b（W0b 等用户裁决 (a)/(b)）→ P3 → 并行填充**。全池基线：**11,691 ALL PASS（G18 重锚）+ G18 新增 4 全验 = 11,695**
 3. 看 `git log -10` 了解最近改动；`auto-fill-baseline` tag = 门控 diff 基线（重锚不清账；G18 已重锚）
-4. 下一波入口（按序，详见 docs/g18_prep.md「快速验收清单」）：**E1 全局命名轮**（#67-#71 地址桶 ~350 函数解锁，DataGlobal 批产范式）→ **W0b gap2 重生成（先向用户提交 (a)/(b) 裁决包）** → **P2 H5 续波**（fresh 队列余量：0x51f330/0x5216d0/0x51f3e0 等 19 个，0x51d6f0 ProcessDeployAction 主入口 185 行）→ **P3 vtable 审计批量**（TeleportLocomotionClass 362 槽个案优先；hierarchy 扩展解锁 108 表）→ **P1b 中区轮**（RadioClass 边界已清，剩 TechnoClass 中区 228-256 喷涂重建）。A1 复跑 `python .omo/g14_a1_yrpp.py [--apply]`。全池回归用 `.omo/pool_verify_all.py`（抽样制：每会话验新增全量，每 3-4 波/布局大改后全池复跑；**验证器已带 trivial-stub-mismatch 守卫**——单 return 平凡体 × IDA 有事件 = FAIL）
+4. 下一波入口（按序，详见 docs/g19_prep.md「快速验收清单」）：**W0 开场**（工作树 2 文档增量并入提交 + 全池复跑确认 11,695 全绿）→ **L1 #122 TechnoClass 中区 228-256 重建**（ctor 写图终审法 → 四源 → UnitClass 152 处镜像 → A1 复跑）→ **L2 #121 TechnoType@0xD94 命名落地**（证据已采集）→ 0x51f330 解锁 → **P2 H5 续波**（fresh 20 队列：0x51f330 → 0x5227f0 → 0x5216d0 → 0x521c90；0x736579 先修块地址、0x418e20 先核归属）→ **E1 全局命名轮**（#67-#71 ~351 解锁）→ **W0b gap2 重生成（先向用户提交 (a)/(b) 裁决包）** → **P3 vtable 审计批量**（TeleportLocomotionClass 个案；hierarchy 扩 108 表前置）→ L3/L4（#114 词汇缺口 + #118 三例）→ H6/H7/H3r 并行。A1 复跑 `python .omo/g14_a1_yrpp.py [--apply]`。全池回归用 `.omo/pool_verify_all.py`（抽样制；**验证器已带 trivial-stub-mismatch 守卫**）
 5. 看 `injectFunctionTest/comparisonResult.log` 了解最新 Capture 数据
 6. 任何崩溃分析：先满足"故障排除最低标准"6 项，缺一项不下结论
 7. IDA 连接非持久：任何 IDA 操作前当场探测（`curl -m 5 http://127.0.0.1:13337/`）
