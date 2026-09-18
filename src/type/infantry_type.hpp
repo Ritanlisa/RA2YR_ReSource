@@ -125,6 +125,7 @@ public:
     int GetTypeIdentifier();  // 0x524D40
     int GetObjectSize();  // 0x524D50
     InfantryTypeClass * ddtor(int Block, char a2);  // 0x524D70
+    int DTOR();  // 0x5239D0（删除式析构：4 重 vfptr 安装 + 全局类型数组自摘 + 三向量清理 + 尾调 TechnoTypeClass::DTOR）
 // --- e4 declarations (END) ---
 };
 

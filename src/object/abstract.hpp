@@ -208,7 +208,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int COMStub_Release();  // 0x410310
     int ProcessPower();  // 0x410410
     int IsClean();  // 0x410450
-    int GetCoordsEx();  // 0x4104F0
+    int* GetCoordsEx(int* outBuffer, AbstractClass* source);  // 0x4104F0
     int COMStub_8();  // 0x4105A0
     void* processCleanup(int a1);  // 0x41C490
     void* Create();  // 0x41D300

@@ -22056,7 +22056,7 @@ double BuildingClass::GetHealthRatio() const
 }
 
 // IDA 0x5f5cd0: check health below 50%
-// 0X005f5cd0
+// 0x5f5cd0
 bool BuildingClass::IsHealthLow() { return GetHealthRatio() < 0.5; }
 
 // ============================================================
@@ -23534,7 +23534,7 @@ void BuildingClass::UpdateBunker() {}
 void BuildingClass::EmptyBunker() {}
 
 // IDA 0x452540: make traversable after destruction
-// 0X00452540
+// 0x452540
 void BuildingClass::MakeTraversable()
 {
     if (!Type) return;

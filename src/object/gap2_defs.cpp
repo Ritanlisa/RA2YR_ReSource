@@ -14,6 +14,7 @@
 #include "object/mission.hpp"
 #include "object/object.hpp"
 #include "object/radio.hpp"
+#include "object/radbeam.hpp"
 #include "object/techno.hpp"
 
 // 0x410540
@@ -359,7 +360,7 @@ retn    4
 */
 } } }
 // 0x4104F0
-namespace ra2 { namespace game { int AbstractClass::GetCoordsEx() {
+namespace ra2 { namespace game { int* AbstractClass::GetCoordsEx(int* outBuffer, AbstractClass* source) {
 {
     int *v1;
     char v3[12];
@@ -8520,50 +8521,46 @@ namespace ra2 { namespace game { void* AbstractClass::getTeamIndex(int a2) {
 } } }
 
 // 0x6594A0
-namespace ra2 { namespace game { int TechnoClass::drawPipScale(void* a1) {
-{
-    int *v2;
+namespace ra2 { namespace game { int RadBeam::drawPipScale(int* a2) {
+    // G21 L6: 3 dwords（屏幕坐标）拷入 +0x24；IDA 写经局部 v2 中转，忠实保留
+    int* v2;
     int result;
-    v2 = this + 9;
-    *v2 = *a2;
-    v2[1] = *((int*)(a2) + 1);
-    result = *((int*)(a2) + 2);
+
+    v2 = this->memberAtOffset36;
+    v2[0] = a2[0];
+    v2[1] = a2[1];
+    result = a2[2];
     v2[2] = result;
     return result;
-}
 } } }
 
 // 0x6594C0
-namespace ra2 { namespace game { int TechnoClass::drawSpawnPips(void* a1) {
-{
-    int *v2;
+namespace ra2 { namespace game { int RadBeam::drawSpawnPips(int* a2) {
+    // G21 L6: 3 dwords（屏幕坐标）拷入 +0x30；IDA 写经局部 v2 中转，忠实保留
+    int* v2;
     int result;
-    v2 = this + 12;
-    *v2 = *a2;
-    v2[1] = *((int*)(a2) + 1);
-    result = *((int*)(a2) + 2);
+
+    v2 = this->memberAtOffset48;
+    v2[0] = a2[0];
+    v2[1] = a2[1];
+    result = a2[2];
     v2[2] = result;
     return result;
-}
 } } }
 
 // 0x6594E0
-namespace ra2 { namespace game { int TechnoClass::drawAmmoPips(int a1) {
-{
-    this->ambientSoundController = a2;
+namespace ra2 { namespace game { int RadBeam::drawAmmoPips(int a2) {
+    // G21 L6: 写 +0x3C（调用方传 15）；清除旧半成品的误词汇体（ambientSoundController）
+    this->memberAtOffset60 = a2;
     return a2;
-}
 } } }
 
 // 0x6594F0
-namespace ra2 { namespace game { int TechnoClass::drawTiberiumPips(int a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6594F0(_DWORD *this, int a2, int a3)
-{
-  *(this + 16) = a2; /*0x6594f8*/
-  *(this + 17) = a3; /*0x6594fb*/
-  return a2; /*0x6594fe*/
-}
+namespace ra2 { namespace game { int RadBeam::drawTiberiumPips(int a2, int a3) {
+    // G21 L6: 写 +0x40 / +0x44（调用方传 0 / 0x40500000）
+    this->memberAtOffset64 = a2;
+    this->memberAtOffset68 = a3;
+    return a2;
 } } }
 
 // 0x65A820

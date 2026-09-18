@@ -3049,3 +3049,102 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
 - **新方法论教训（live 缓存漂移）**：`--save-ida` live 刷新会因 til 演化改变渲染形态（`*(ClassType**)(this+N)` typed-cast 不匹配标量正则 / `__pad` 链丢 MEMORY[] 全局事件 / VoiceEnter 类 til 误名吞派发）→ 事件集漂移。处置：pending 函数翻译前以 cpp 块内嵌快照伪码恢复缓存（v4 播种先例；本会话 3 例：0x522340/0x51f3e0/0x51f6e0/0x5200b0）。completed 池函数勿随意 --save-ida。
 - **L3 #114 未动**（规程：动 verify_execution_flow.py 前须用户裁决）；E1/W0b/P3/H6/H7/H3r 未开工。
 - 口径：completed 11,699 → **11,701**（-2 假完成复位 +4 真翻）；pending marker 4,817；门控基线 tag G20 重锚。
+
+## 执行日志 — 2026-09-18 G21 准备轮：G20 完成核查 + 下一步计划定稿（docs/g21_prep.md）
+
+> 用户指令：检查 G20 完成情况 + 制定下一步计划。
+
+- **G20 完成核查（对照 g20_prep 验收清单）**：W0 ✓（全池 11,699 ALL PASS 复验）/
+  **L4 #118 ✓ resolved**（0x401190 KEEP 忠实 / 0x4DBA50+0x659470 假完成复位 →
+  #123/#124 承接）/ P2 ✓ H5×4（MoveToCell / CalculateApproachPath / EnterBuilding /
+  **ProcessIvanBomb——G15 以来坏块手工重建候选首次成功**）+ 词汇 vo×4/mbn/签名手术
+  4 处 + 跳过记账 #125-#127。未消费移交：L3 #114、H5 余 9（含三例处置）、
+  E1/W0b/P3/H6/H7/H3r、小项清偿 3 项。
+- **新计划 docs/g21_prep.md**：W0 池复跑确认 11,701 / **L5 #123 重翻**（词汇已定谳
+  slot76=GetCoordsEx + slot716=CheckTileSeed；阻塞仅 hpp 签名手术 foot.hpp:135 +
+  abstract.hpp:211，先盘调用面）/ **L6 #124 归属考古**（真身=3 字节拷贝 a2→this+32，
+  调用方传 RadBeam 非 TechnoClass）/ **L7 三例处置**（#126 误名纠正 / #125
+  FloatArray@828 仲裁 / #127 goto 拓扑评估）/ L3 #114（需裁决）/ P2 余 9 /
+  承接批次 / 总账 ≈10-15 会话，排序 W0 → L5 → L6/L7 → L3 → P2 → E1/W0b → P3。
+- AGENTS 状态表遗留节收敛（#118 已清 → #123/#124/#125-#127 承接项）+
+  接手指引 #2/#4 → g21_prep。
+
+### G21 准备轮续：准备工作执行 + 计划加量（用户新增指令）
+
+- **L5 调用面盘点 ✅**：CheckTileSeed 2 处 / GetCoordsEx 3 处，零外部调用方——
+  签名手术 = foot.hpp:135 + foot.cpp:1696 + abstract.hpp:211 + gap2_defs.cpp:362
+  四行零波及机械改动，手术文本已备。
+- **L6 考古翻转 #124 ✅（升级为家族案）**：live xref + 反编译实证——draw* 族
+  ≥8 成员（drawSelectionBox/drawPipScale/drawSpawnPips/drawAmmoPips/drawTiberiumPips/
+  drawHealthBar/drawMindControlPips/drawPassengerPips，0x6594xx-0x6595xx）双调用方
+  接收者均为 RadBeam::Create 对象，TechnoClass:: 前缀系误归属（#108 同型）。
+  G21 L6 扩容 = 族四方 rename（RadBeam::draw*）+ #124 重翻。
+- **小项 #1 口径差诊断关闭 ✅**：三层量化（7,311 非完成 code 符号 = 4,817
+  marker-pending + ~2,489 stub/无伪码 + 5 无裸注解）；G18 旧"93"为弃用公式伪差。
+  5 例中 2 例 = G13"0X 大写化+补零"bug 重演（building.cpp:22059/23537）**已修复**，
+  0x65d190 真无注解待补 / 0x750041 中游地址 / 0x7cabfb CRT 排除。
+- **计划加量六条新线**（docs/g21_prep.md「加量批次」）：A CRT/COM 桶处置
+  （两案待裁决，清 10+ blocker）/ B 类型建模裁决包（#21/#22/#25/#59/#77 集中提交）/
+  C #56 签名再物化 65 函数 / D 零散债清扫（#60 ×12 + #62 ×8 + #94 + 0x750041）/
+  E P4 对拍线复启（写 .data Inject 回滚测试，6 月积压）/ F L6 扩容（draw* 族）。
+  **总账 ≈10-15 → ≈14-21 会话**，排序更新 W0→L5→L6→L7→D/E 快赢→三裁决包→P2→E1/W0b→P3。
+
+### G21 准备轮终：W0 池复跑全绿确认
+
+- **11,701 PASS / 0 FAIL**（40 分钟全量，G20 净变动后首次全池确认）——
+  基线全绿维持，`.omo/pool_verify_results.json`；g21_prep.md W0 验收表已回填。
+- 准备工作全部落地：L5 零波及手术方案 / L6 draw* 族 RadBeam 翻转 / 口径差关闭 +
+  0X bug 2 例修复 / 加量六线 A-F（总账 ≈14-21 会话）。
+
+## 执行日志 — 2026-09-18 G21：L5/L6/L7 清偿 + P2×1（completed 11,711）
+
+> 用户指令：证据补全 → OO 语法替换 → 提交+tag 重锚 → RA2MCP 消化 pending（G21 清单序）。
+
+- **L5 #123 ✓ resolved**：签名手术 6 处（foot.hpp:135 CheckTileSeed(int*) 去 const、
+  abstract.hpp:211 GetCoordsEx(int*,AbstractClass*) 返 int*（retn 8 双栈参铁证）、
+  gap2_defs.cpp:362 同步、techno.hpp/techno.cpp GetTargetCellCenter(AbstractClass* a2)）→
+  0x4DBA50 重翻（GetCoordsEx 出参 → /256 截 short <<8+128 坐标变换 → this->CheckTileSeed(v9)）
+  **verify PASS 一次过**（两侧虚调用 known-virtual 抑制对称，准备轮预判成立）。
+- **L6 draw* 族归属裁决 ✓ resolved #124**：live xref 族内复核（8 成员调用方仅
+  CreateFireBeamEffect 0x6FD620 / SpreadRadiationAreaEffect 0x6FD800，接收者均
+  RadBeam::Create 对象，零例外）→ 四方 rename ×8 → RadBeam::draw* + radbeam.hpp 手术
+  （**撤除 e4 误建模 `: public AbstractClass` 继承**——InitState 0x6593F0 无 vtable
+  安装铁证（*this=0 数据清零）；迁入 8 方法真签名 + InitState 写图数据布局
+  sizeof 0xC8）+ techno.hpp 三处误归属声明清除（含 sub_6594*×4 孤儿虚桩）+
+  techno_bodies.cpp 10 参空体遗留清除 + **全族 8/8 翻译完成**（0x659470/490/4A0/4C0/
+  4E0/4F0/540/550，全 verify PASS）+ til RadBeam 重建（18 成员 size 200 精确）+
+  member_lookup/mbn 双体系真值化（旧条目系 e4 继承模型污染）。
+  **新方法论**：IDA 写经局部指针中转（v2=this+N）不产 WRITE 事件 → C++ 侧忠实保留
+  同构局部指针数据流（v2 = this->color; v2[0]=...）实现事件集对称（直接成员写
+  会多出 WRITE(member,#) 盲化令牌 FAIL）。
+- **L7 三例处置 ✓**：#126 归属纠正（live 实证 = InfantryTypeClass 删除式析构：4 重
+  vfptr 安装 0x7EB5E4-610 + InfantryTypes 数组自摘 + 四向量清理 + 尾调
+  TechnoTypeClass::DTOR）→ 四方 rename InfantryTypeClass::DTOR + infantry.hpp:64 错挂
+  移除 + infantry_type.hpp 声明补齐；翻译阻塞（vfptr-install 词汇裁决 #55-F + 3 全局
+  命名）细化移交 **#128**。#127 永久跳过定谳（桶政策，#29/#64/#65 goto 族先例，
+  唯一解锁路径 = 用户特批 goto 形态）。#125 FloatArray@828 未动（下会话 ctor 写图仲裁）。
+- **P2 H5 ×1**：0x521320 **GetIdleTimer 三态真翻 verify PASS 一次过**（非部署态
+  Deployer/DeployFire/UndeployDelay/Archive/missionStartTime+Rules@908 表下标 +
+  GetExitCoords/focus 坐标比对逗号链 + Locomotor COM vt16/vt72 + ShouldDeploy@1764 写；
+  部署态 memberAtOffset3383 分支 GetCellCoords_Alt→To_CellObj→占用率<RadLevel/3 →
+  vt968 局部派发+GetFireError(960)+FireWeaponWithCleanup(972)+AssignTarget_SyncLog(0)；
+  else FindPathToBuilding(1064)）。词汇：vo InfantryClass += GetFireError@960/
+  FireWeaponWithCleanup@972（vtable 0x7EB058 直读）；WeaponTypeClass@344=RadLevel/
+  @336=AreaFire/@297=UseFireParticles、TechnoTypeClass@1732=UndeployDelay、
+  InfantryTypeClass@1708=DeployFire、InfantryClass@1764=ShouldDeploy 词汇消费确认。
+- **0x51C8B0 GetFireError 考古产出（未翻，移交）**：live 反编译 + vtable 直读铁证——
+  **0x6FC0B0（signals 误名 TriggerTypeClass::ReadINI）真身 = TechnoClass 级
+  GetFireError 基类版**（400 行公共开火裁决 0-9 码，尾 vt936 ValidateTarget 派发）；
+  槽 444 = ObjectClass::GetCellCoords@0x5F6960；0x6F3970 TechnoClass::GetValue = 武器
+  均值评估（SelectWeaponSlot→152+164）；0x51C8B0 自身含 goto LABEL_37/64 收缩拓扑
+  （#127 同族）+ 4 个被调未声明（GetValue/ReadINI/StreamClass::Set2(QI 真身)/
+  ComPtr::Release_Alt 已声明）——列为 goto-restructure + 归属考古双料件，下会话处置。
+- **D 清扫部分**：#94 过时关闭（目标块已随后续波次清理，unit.cpp 现 15,365 行）；
+  0x750041 同判（signals-only 中游地址，无 src 现场）。#60/#62 未动（需专项）。
+- **收尾**：全量变更提交 + **tag auto-fill-baseline 重锚（G21）** + AGENTS 状态表
+  11,711 + 接手指引刷新。
+- 口径：completed 11,701 → **11,711**（L5×1 + L6×8 + P2×1）；pending marker 4,817 →
+  **4,813**；issue 净变动 −4（#123/#124/#126/#127/#94 清偿，#128 新增承接）。
+- 未消费移交：P2 余 5（0x51e140 SelectAutoTarget / 0x51dbd0 / 0x51c8b0 goto 族 /
+  0x418e20 / 0x736579 块地址修复）、#125 FloatArray 仲裁、#128 双裁决件、
+  L3/B/A 三裁决包、E1/W0b/P3/H6/H7/H3r、D 余项（#60/#62）。

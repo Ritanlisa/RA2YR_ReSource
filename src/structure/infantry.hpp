@@ -61,7 +61,6 @@ public:
     virtual bool CanAttackTarget(HouseClass* target_house);  // 0x5227F0 (disguised-spy attack permission vs house)
     virtual void PlayIdleAnim(int idle_anim_number) override;
     virtual int ProcessIdleAction();  // 0x51CDB0
-    int ProcessAnimation();  // 0x5239D0
     int GetIdleTimer();  // 0x521320
 
     // === Phase 3: Crawling / Movement ===

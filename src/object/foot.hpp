@@ -132,7 +132,7 @@ public:
     virtual int PostLoadInit();  // 0x4D3540
     virtual int Destru_vt337();  // 0x4D3710
     virtual void UpdateReveal(); // 0x4D3780
-    virtual bool CheckTileSeed() const;  // 0x4D3810
+    virtual bool CheckTileSeed(int* coords);  // 0x4D3810
     virtual int MovementStep();  // 0x4D3920
     virtual int Destru_vt139();  // 0x4D4200
     virtual bool CheckVoiceResponse() const;  // 0x4D4B20

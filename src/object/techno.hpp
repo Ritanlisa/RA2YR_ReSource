@@ -307,8 +307,6 @@ public:
     virtual uint32_t GetDisguiseFlags(uint32_t existingFlags) const;
     // wrapper: delegates to BuildingClass::DrawActionLines at 0x63BE60
     virtual bool isClearlyVisibleTo(HouseClass* house) const;
-    virtual void drawSelectionBox(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, // 0x659470
-        uint32_t a6, uint32_t a7, uint32_t a8, uint32_t a9, uint32_t a10);
     virtual void onSelect(uint32_t a, uint32_t b);
     virtual void DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bool bUnk3) const;  // 0x6f5190
     // wrapper: delegates to TechnoClass::DrawHealthBar at 0x6F5190
@@ -469,14 +467,8 @@ public:
     virtual int FindMatchingUnit();  // 0x5F7900
     virtual int ClearArrays();  // 0x5F99E0
     virtual int ComputeScanRange() const;  // 0x48AB90
-    virtual int drawSelectionBox();  // 0x659470
-    virtual int drawHealthBar();  // 0x659490
-    virtual int sub_6594A0();
-    virtual int sub_6594C0();
-    virtual int sub_6594E0();
-    virtual int sub_6594F0();
-    virtual int drawMindControlPips();  // 0x659540
-    virtual int drawPassengerPips();  // 0x659550
+    // G21 L6: draw* 族 (0x6594xx-0x6595xx) 归属裁决迁出——真 owner = RadBeam
+    // （双调用方接收者均 RadBeam::Create 对象，InitState 无 vtable 安装）
     virtual int ClearScriptPlanningData();  // 0x633D30
     virtual int GetTileAnimationData() const;  // 0x547150
     virtual int MutateAll();  // 0x6B0AE0
@@ -513,7 +505,7 @@ public:
     virtual int SelectRandomTarget();  // 0x708EB0
     virtual int GetSecondaryTargetOrFallback() const;  // 0x709020
     virtual int SetPositionAnimated();  // 0x4DB810
-    virtual int GetTargetCellCenter();  // 0x4DBA50
+    virtual int GetTargetCellCenter(AbstractClass* target);  // 0x4DBA50
     virtual int ComputeSpeedFactor();  // 0x4DAFC0
     virtual int ComputeSpeedFactorEx();  // 0x4DB1A0
     virtual int CleanupDirection();  // 0x4DB260
@@ -1120,10 +1112,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void Find(int a1);  // 0x50E010
     void Process(int a1);  // 0x50E1C0
     bool updateTurretRotation();  // 0x5224F0
-    int drawPipScale(void* a1);  // 0x6594A0
-    int drawSpawnPips(void* a1);  // 0x6594C0
-    int drawAmmoPips(int a1);  // 0x6594E0
-    int drawTiberiumPips(int a1, int a2);  // 0x6594F0
     bool HasAnyMission();  // 0x6E57C0
     void* GetTurretOffset(void* a1, int a2);  // 0x6F3D60
     void* Constructor(int a1);  // 0x6F4300

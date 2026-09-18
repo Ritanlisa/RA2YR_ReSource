@@ -2702,7 +2702,7 @@ int InfantryClass::ProcessIdleAction()
 }
 
 // 0x5239d0
-int InfantryClass::ProcessAnimation()
+int InfantryTypeClass::DTOR()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_5239D0(int this)
@@ -2862,130 +2862,122 @@ retn
 // 0x521320
 int InfantryClass::GetIdleTimer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall InfantryClass_GetIdleTimer(int *this)
 {
-  int v2; // eax
-  int v3; // eax
-  __int16 *v5; // eax
-  #344 *v6; // eax
-  unsigned int NumberOfActiveVirtualProcessors; // edi
-  int v8; // ecx
-  int v9; // edi
-  __int16 *v10; // eax
-  void *v11; // eax
-  char *v12; // eax
-  int v13; // esi
-  char *v14; // eax
-  int v15; // esi
-  #375 *v16; // eax
-  int v17; // eax
-  _DWORD *v18; // eax
-  int v19; // edi
-  int v20; // ebx
-  int *v21; // eax
-  int v22; // kr0C_4
-  int v23; // eax
-  char *MissionControl; // eax
-  int v25; // esi
-  _BYTE v26[4]; // [esp+Ch] [ebp-1Ch] BYREF
-  _BYTE v27[12]; // [esp+10h] [ebp-18h] BYREF
-  _BYTE v28[12]; // [esp+1Ch] [ebp-Ch] BYREF
+    int v2;
+    TechnoClass* v16;
+    int* v18;
+    int v19;
+    int v20;
+    int* v21;
+    int v22;
+    int v23;
+    int v9;
+    __int16* v5;
+    __int16* v10;
+    void* v6;
+    unsigned int NumberOfActiveVirtualProcessors;
+    int v8;
+    void* v11;
+    char* MissionControl;
+    int v13;
+    char* v12;
+    char* v14;
+    int v15;
+    int v25;
+    unsigned char v26[4];
+    unsigned char v27[12];
+    unsigned char v28[12];
 
-  v2 = *(this + 433);
-  if ( v2 != 27 && v2 != 28 && v2 != 29 && v2 != 30 )
-  {
-    v16 = (#375 *)(*(int (__thiscall **)(int *))(*this + 60))(this);
-    if ( !(unsigned __int8)House::IsCurrentPlayer(v16) )
+    v2 = this->SequenceAnim;
+    if ( v2 != 27 && v2 != 28 && v2 != 29 && v2 != 30 )
     {
-      v17 = *(this + 432);
-      if ( *(_BYTE *)(v17 + 3784) )
-      {
-        if ( *(_BYTE *)(v17 + 1708) )
+        v16 = this->GetTarget();
+        if ( !(unsigned __int8)House::IsCurrentPlayer(v16) )
         {
-          if ( *(int *)(v17 + 1732) <= -1
-            && !*(this + 361)
-            && *(this + 48) + *(_DWORD *)(*((_DWORD *)MEMORY[0x8871E0] + 908) + 4 * *(_DWORD *)(*(this + 135) + 388)) < (int)MEMORY[0xA8ED84] )
-          {
-            if ( !*(this + 134)
-              || (v18 = (_DWORD *)(*(int (__thiscall **)(int *, _BYTE *))(*this + 72))(this, v27),
-                  v19 = *v18 / 256,
-                  v20 = v18[1] / 256,
-                  v21 = (int *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)*(this + 134) + 72))(
-                                 *(this + 134),
-                                 v28),
-                  v22 = *v21,
-                  v23 = v21[1] / 256,
-                  (unsigned __int16)(v22 / 256) == (_WORD)v19)
-              && (_WORD)v23 == (_WORD)v20 )
+            if ( this->Type->Deployer )
             {
-              if ( !*(_BYTE *)(*(this + 432) + 3383) )
-              {
-                if ( !*(this + 413) )
-                  WinAPI::Wrapper(-2147467261);
-                if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 16))(*(this + 413)) )
+                if ( this->Type->DeployFire )
                 {
-                  if ( !*(this + 413) )
-                    WinAPI::Wrapper(-2147467261);
-                  (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 72))(*(this + 413));
-                  *((_BYTE *)this + 1764) = 1;
-                  MissionControl = MissionClass::GetMissionControl(this);
-                  v25 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0);
-                  return v25 + Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
+                    if ( this->Type->UndeployDelay <= -1
+                      && !this->Archive
+                      && this->missionStartTime + *(_DWORD *)(*((_DWORD *)g_RulesClass_Instance + 908) + 4 * this->owner->memberAtOffset388) < dword_A8ED54 )
+                    {
+                        if ( !this->focus
+                          || (v18 = this->GetExitCoords(v27),
+                              v19 = *v18 / 256,
+                              v20 = v18[1] / 256,
+                              v21 = (int *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)this->focus + 72))(this->focus, v28),
+                              v22 = *v21,
+                              v23 = v21[1] / 256,
+                              (unsigned __int16)(v22 / 256) == (_WORD)v19)
+                          && (_WORD)v23 == (_WORD)v20 )
+                        {
+                            if ( !this->Type->memberAtOffset3383 )
+                            {
+                                if ( !this->Locomotor )
+                                    WinAPI::Wrapper(-2147467261);
+                                if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 16))((_DWORD)this->Locomotor) )
+                                {
+                                    if ( !this->Locomotor )
+                                        WinAPI::Wrapper(-2147467261);
+                                    (*(void (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 72))((_DWORD)this->Locomotor);
+                                    this->ShouldDeploy = 1;
+                                    MissionControl = MissionClass::GetMissionControl(this);
+                                    v25 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0);
+                                    return v25 + Random::Range((int *)g_ScenarioClass_Instance + 134, 0, 2);
+                                }
+                                else
+                                {
+                                    this->ProcessDeployAction(27, 0, 0);
+                                    return *(int *)((char *)this->Type->Sequence + 976);
+                                }
+                            }
+                        }
+                    }
                 }
-                else
-                {
-                  (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 1368))(this, 27, 0, 0);
-                  return *(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 976);
-                }
-              }
             }
-          }
         }
-      }
+        return -1;
     }
-    return -1;
-  }
-  v3 = *(this + 432);
-  if ( *(int *)(v3 + 1732) > -1 )
-  {
-    (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 1368))(this, 31, 0, 0);
-    return *(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 1120);
-  }
-  if ( !*(_BYTE *)(v3 + 1708) )
-    return -1;
-  if ( *(_BYTE *)(v3 + 3383) )
-  {
-    v5 = (__int16 *)(*(int (__thiscall **)(int *, _BYTE *))(*this + 440))(this, v26);
-    v6 = (#344 *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v5);
-    NumberOfActiveVirtualProcessors = _GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ(v6);
-    v8 = *(_DWORD *)(*(_DWORD *)(*(int (__thiscall **)(int *, int))(*this + 1016))(this, 1) + 344);
-    if ( !NumberOfActiveVirtualProcessors || CellClass::GetOccupiedRatio(NumberOfActiveVirtualProcessors) < v8 / 3 )
+    if ( this->Type->UndeployDelay > -1 )
     {
-      v9 = *this;
-      v10 = (__int16 *)(*(int (__thiscall **)(int *, _BYTE *))(*this + 440))(this, v26);
-      v11 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v10);
-      (*(void (__thiscall **)(int *, void *))(v9 + 968))(this, v11);
-      if ( !(*(int (__thiscall **)(int *, _DWORD, int, int))(*this + 960))(this, *(this + 173), 1, 1) )
-      {
-        (*(void (__thiscall **)(int *, _DWORD, int))(*this + 972))(this, *(this + 173), 1);
-        (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
-        (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 1368))(this, 29, 0, 0);
-        return *(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 1048);
-      }
-      (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
+        this->ProcessDeployAction(31, 0, 0);
+        return *(int *)((char *)this->Type->Sequence + 1120);
     }
-    v12 = MissionClass::GetMissionControl(this);
-    v13 = Math::RoundToInt(*((double *)v12 + 2) * 900.0);
-    return v13 + Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 10, 20);
-  }
-  else
-  {
-    (*(void (__thiscall **)(int *))(*this + 1064))(this);
-    v14 = MissionClass::GetMissionControl(this);
-    v15 = Math::RoundToInt(*((double *)v14 + 2) * 900.0);
-    return v15 + Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
-  }
+    if ( !this->Type->DeployFire )
+        return -1;
+    if ( this->Type->memberAtOffset3383 )
+    {
+        v5 = (__int16 *)this->GetCellCoords_Alt((CellStruct *)v26);
+        v6 = CellCoord::To_CellObj((int *)DataGlobal_87F7E8, v5);
+        NumberOfActiveVirtualProcessors = _GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ(v6);
+        v8 = *(int *)((char *)this->SelectWeaponSlot(1) + 344);
+        if ( !NumberOfActiveVirtualProcessors || CellClass::GetOccupiedRatio(NumberOfActiveVirtualProcessors) < v8 / 3 )
+        {
+            v9 = *(int *)this;
+            v10 = (__int16 *)this->GetCellCoords_Alt((CellStruct *)v26);
+            v11 = CellCoord::To_CellObj((int *)DataGlobal_87F7E8, v10);
+            (*(void (__thiscall **)(int *, void *))((int *)v9 + 968))(this, v11);
+            if ( !this->GetFireError((int *)this->target, 1, 1) )
+            {
+                this->FireWeaponWithCleanup((int)this->target, 1);
+                this->AssignTarget_SyncLog(0);
+                this->ProcessDeployAction(29, 0, 0);
+                return *(int *)((char *)this->Type->Sequence + 1048);
+            }
+            this->AssignTarget_SyncLog(0);
+        }
+        v12 = MissionClass::GetMissionControl(this);
+        v13 = Math::RoundToInt(*((double *)v12 + 2) * 900.0);
+        return v13 + Random::Range((int *)g_ScenarioClass_Instance + 134, 10, 20);
+    }
+    else
+    {
+        this->FindPathToBuilding();
+        v14 = MissionClass::GetMissionControl(this);
+        v15 = Math::RoundToInt(*((double *)v14 + 2) * 900.0);
+        return v15 + Random::Range((int *)g_ScenarioClass_Instance + 134, 0, 2);
+    }
 }
 
 /* ASM:

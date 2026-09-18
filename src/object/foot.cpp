@@ -1693,7 +1693,7 @@ int FootClass::Destru_vt337() { return 0; }
 // 0x4d3780
 void FootClass::UpdateReveal() {}
 // 0x4d3810
-bool FootClass::CheckTileSeed() const { return false; }
+bool FootClass::CheckTileSeed(int* coords) { return false; }
 // 0x4d3920
 int FootClass::MovementStep() { return 0; }
 // 0x4d4200

@@ -31969,14 +31969,14 @@ int __thiscall SpreadRadiationAreaEffect(void *this, InfantryClass *aP1)
         v24 += v7; /*0x6fd925*/
         v25 += v8; /*0x6fd92e*/
         v9 = RadBeam::Create((rc_ptr_base *)2); /*0x6fd93b*/
-        TechnoClass::drawSelectionBox((char *)v9, (int)&v12); /*0x6fd940*/
+        RadBeam::drawSelectionBox((char *)v9, (int)&v12); /*0x6fd940*/
         v10 = Random::Range(&MEMORY[0x87F8E4].__pad_5568[7484], (IUnknown *)5, (IUnknown *)0x14); /*0x6fd95f*/
         v19 = Random::Range(&MEMORY[0x87F8E4].__pad_5568[7484], (IUnknown *)0x64, (IUnknown *)0x1F4); /*0x6fd96f*/
         v11 = Random::Range(&MEMORY[0x87F8E4].__pad_5568[7484], 0, (IUnknown *)0x14); /*0x6fd97f*/
-        TechnoClass::drawPipScale(v9, &v27); /*0x6fd981*/
-        TechnoClass::drawSpawnPips(v9, &v24); /*0x6fd98d*/
-        TechnoClass::drawAmmoPips(v9, v10); /*0x6fd995*/
-        TechnoClass::drawTiberiumPips( /*0x6fd9a6*/
+        RadBeam::drawPipScale(v9, &v27); /*0x6fd981*/
+        RadBeam::drawSpawnPips(v9, &v24); /*0x6fd98d*/
+        RadBeam::drawAmmoPips(v9, v10); /*0x6fd995*/
+        RadBeam::drawTiberiumPips( /*0x6fd9a6*/
           v9,
           COERCE_UNSIGNED_INT64((double)v19),
           HIDWORD(COERCE_UNSIGNED_INT64((double)v19)));

@@ -1,4 +1,5 @@
 #include "object/techno.hpp"
+#include "object/radbeam.hpp"
 #include "structure/building.hpp"
 #include "type/building_type.hpp"
 
@@ -4590,30 +4591,34 @@ int TechnoClass::ClearArrays() { return 0; }
 // 0x48ab90
 int TechnoClass::ComputeScanRange() const { return 0; }
 // 0x659470
-int TechnoClass::drawSelectionBox() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TechnoClass::drawSelectionBox(char *this, int a2)
-{
-  char *v2; // ecx
-  char result; // al
+char RadBeam::drawSelectionBox(uint8_t* a2) {
+    // G21 L6: 3 字节 RGB 拷入 this->color（色表槽 6192/6246/6249），返回末字节；
+    // IDA 写经局部 v2 中转（v2=this+32），C++ 忠实保留同构数据流
+    uint8_t* v2;
+    char result;
 
-  v2 = this + 32; /*0x659474*/
-  *(_WORD *)v2 = *(_WORD *)a2; /*0x65947a*/
-  result = *(_BYTE *)(a2 + 2); /*0x65947d*/
-  v2[2] = result; /*0x659480*/
-  return result; /*0x659483*/
-}
+    v2 = this->color;
+    v2[0] = a2[0];
+    v2[1] = a2[1];
+    result = a2[2];
+    v2[2] = result;
+    return result;
 }
 // 0x659490
-int TechnoClass::drawHealthBar() { return 0; }
-int TechnoClass::sub_6594A0() { return 0; }
-int TechnoClass::sub_6594C0() { return 0; }
-int TechnoClass::sub_6594E0() { return 0; }
-int TechnoClass::sub_6594F0() { return 0; }
+int RadBeam::drawHealthBar(int a2) {
+    this->memberAtOffset12 = a2;
+    return a2;
+}
 // 0x659540
-int TechnoClass::drawMindControlPips() { return 0; }
+int RadBeam::drawMindControlPips(int a2) {
+    this->memberAtOffset84 = a2;
+    return a2;
+}
 // 0x659550
-int TechnoClass::drawPassengerPips() { return 0; }
+char RadBeam::drawPassengerPips(char a2) {
+    this->memberAtOffset88 = a2;
+    return a2;
+}
 // 0x633d30
 int TechnoClass::ClearScriptPlanningData() { return 0; }
 // 0x547150
@@ -5325,27 +5330,23 @@ int TechnoClass::GetSecondaryTargetOrFallback() const { return 0; }
 // 0x4db810
 int TechnoClass::SetPositionAnimated() { return 0; }
 // 0x4dba50
-int TechnoClass::GetTargetCellCenter() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass::GetTargetCellCenter(int *this, int a2)
+int TechnoClass::GetTargetCellCenter(AbstractClass* a2) {
 {
-  int *v3; // edi
-  int v4; // kr04_4
-  int v5; // eax
-  int v6; // edx
-  int v7; // eax
-  _DWORD v9[3]; // [esp+8h] [ebp-18h] BYREF
-  _BYTE v10[12]; // [esp+14h] [ebp-Ch] BYREF
+    int* v3;
+    int v4;
+    int v5;
+    int v6;
+    int v9[3];
+    int v10[3];
 
-  v3 = (int *)(*(int (__thiscall **)(int, _BYTE *, int *))(*(_DWORD *)a2 + 76))(a2, v10, this); /*0x4dba66*/
-  v4 = *v3; /*0x4dba73*/
-  v5 = v3[1]; /*0x4dba75*/
-  v9[2] = 0; /*0x4dba82*/
-  v6 = (__int16)(v5 / 256); /*0x4dba95*/
-  v7 = *this; /*0x4dba98*/
-  v9[0] = ((__int16)(v4 / 256) << 8) + 128; /*0x4dbaa0*/
-  v9[1] = (v6 << 8) + 128; /*0x4dbab4*/
-  return (*(int (__thiscall **)(int *, _DWORD *))(v7 + 716))(this, v9); /*0x4dbabe*/
+    v3 = a2->GetCoordsEx(v10, this);
+    v4 = v3[0];
+    v5 = v3[1];
+    v9[2] = 0;
+    v6 = (short)(v5 / 256);
+    v9[0] = (((short)(v4 / 256)) << 8) + 128;
+    v9[1] = (v6 << 8) + 128;
+    return this->CheckTileSeed(v9);
 }
 }
 // 0x4dafc0
