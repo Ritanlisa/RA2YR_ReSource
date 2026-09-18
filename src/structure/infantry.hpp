@@ -67,7 +67,7 @@ public:
     // === Phase 3: Crawling / Movement ===
     virtual bool CanMoveFreely();  // 0x5216D0
     virtual bool CanMoveThroughCell();  // 0x484D60
-    int MoveToCell();  // 0x51DFF0
+    int MoveToCell(int* a2, int a3);  // 0x51DFF0
     int CancelMovement();  // 0x51DF10
     virtual int CalcMoveTarget();  // 0x51B350
     virtual int FindMoveTarget();  // 0x51D0D0
@@ -120,7 +120,7 @@ public:
     int CheckHealthDiff();  // 0x701140
 
     // === Phase 3: Marking & Passability ===
-    int MarkCellPassability();  // 0x5217C0
+    int MarkCellPassability(int* a2);  // 0x5217C0
     int ClearCellPassability();  // 0x521850
 
     // === Phase 3: Capture & Misc ===
@@ -141,7 +141,7 @@ public:
     int ReleaseInfiltrators();  // 0x70D7A0
     int ProcessTiberiumHarvest();  // 0x522E70
     int RepairBridge();  // 0x519630
-    void CalculateApproachPath() override;  // 0x522340
+    void CalculateApproachPath(char a2) override;  // 0x522340
     bool IsBridgeRepairEnabled();  // 0x5224D0
     int SlaveGiveMoney_RecordBalanceBefore();  // 0x522D50
     void startPanic();  // 0x772AC0

@@ -726,157 +726,6 @@ LABEL_42:
   return v5;
 }
 
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     eax, [esi+6D4h]
-test    eax, eax
-jle     loc_5201DC
-mov     eax, [esi+6C0h]
-mov     cl, [eax+0EBCh]
-test    cl, cl
-jnz     short loc_5200D7
-dec     dword ptr [esi+6D4h]
-
-loc_5200D7:                             ; CODE XREF: InfantryClass__ProcessIdleDeploy+1F↑j
-mov     eax, [esi+6D4h]
-test    eax, eax
-jnz     short loc_52010B
-mov     eax, [esi+2FCh]
-test    eax, eax
-jnz     short loc_52010B
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+2ACh]
-test    al, al
-jz      short loc_52010B
-mov     eax, [esi+6C0h]
-mov     ecx, [eax+684h]
-mov     [esi+2FCh], ecx
-
-loc_52010B:                             ; CODE XREF: InfantryClass__ProcessIdleDeploy+2F↑j
-; InfantryClass__ProcessIdleDeploy+39↑j ...
-mov     al, [esi+6DBh]
-test    al, al
-mov     eax, [esi+6D4h]
-jz      short loc_520160
-cmp     eax, 32h ; '2'
-jge     loc_5201DC
-mov     eax, [esi+6C4h]
-cmp     eax, 1Bh
-jz      loc_5201DC
-cmp     eax, 1Ch
-jz      loc_5201DC
-cmp     eax, 1Dh
-jz      loc_5201DC
-cmp     eax, 1Eh
-jz      loc_5201DC
-mov     edx, [esi]
-push    0
-push    0
-push    7
-mov     ecx, esi
-call    dword ptr [edx+558h]
-jmp     short loc_5201DC
-; ---------------------------------------------------------------------------
-
-loc_520160:                             ; CODE XREF: InfantryClass__ProcessIdleDeploy+69↑j
-cmp     eax, 32h ; '2'
-jl      short loc_5201DC
-mov     eax, [esi+6C4h]
-cmp     eax, 1Bh
-jz      short loc_5201DC
-cmp     eax, 1Ch
-jz      short loc_5201DC
-cmp     eax, 1Dh
-jz      short loc_5201DC
-cmp     eax, 1Eh
-jz      short loc_5201DC
-mov     ecx, [esi+21Ch] ; this
-call    House__IsCurrentPlayer
-test    al, al
-jz      short loc_5201BC
-mov     eax, [esi+5A4h]
-test    eax, eax
-jnz     short loc_5201DC
-mov     eax, [esi+674h]
-test    eax, eax
-jnz     short loc_5201AC
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_5201AC:                             ; CODE XREF: InfantryClass__ProcessIdleDeploy+F0↑j
-mov     eax, [esi+674h]
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+10h]
-test    al, al
-jnz     short loc_5201DC
-
-loc_5201BC:                             ; CODE XREF: InfantryClass__ProcessIdleDeploy+DC↑j
-mov     edx, [esi+6C0h]
-mov     al, [edx+0EBFh]
-test    al, al
-jnz     short loc_5201DC
-mov     eax, [esi]
-push    0
-push    0
-push    5
-mov     ecx, esi
-call    dword ptr [eax+558h]
-
-loc_5201DC:                             ; CODE XREF: InfantryClass__ProcessIdleDeploy+B↑j
-; InfantryClass__ProcessIdleDeploy+6E↑j ...
-mov     ecx, [esi+6C0h]
-mov     al, [ecx+0EBFh]
-test    al, al
-jz      short loc_52025A
-cmp     dword ptr [esi+6D4h], 32h ; '2'
-jle     short loc_52025A
-mov     eax, [esi+6C4h]
-cmp     eax, 1Bh
-jz      short loc_52025A
-cmp     eax, 1Ch
-jz      short loc_52025A
-cmp     eax, 1Dh
-jz      short loc_52025A
-cmp     eax, 1Eh
-jz      short loc_52025A
-mov     al, [esi+8Dh]
-test    al, al
-jnz     short loc_52025A
-mov     eax, [esi+674h]
-test    eax, eax
-jnz     short loc_52022D
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_52022D:                             ; CODE XREF: InfantryClass__ProcessIdleDeploy+171↑j
-mov     eax, [esi+674h]
-push    eax
-mov     edx, [eax]
-call    dword ptr [edx+10h]
-test    al, al
-jnz     short loc_52025A
-mov     eax, [esi+5A4h]
-test    eax, eax
-jnz     short loc_52025A
-mov     eax, [esi]
-push    0
-push    1
-push    (offset dword_A8ED54+4ACh)
-mov     ecx, esi
-call    dword ptr [eax+174h]
-
-loc_52025A:                             ; CODE XREF: InfantryClass__ProcessIdleDeploy+13A↑j
-; InfantryClass__ProcessIdleDeploy+143↑j ...
-pop     esi
-retn
-*/
-}
-
 // 0x521b60
 bool InfantryClass::CanInitiateDeploy()
 {
@@ -3593,58 +3442,54 @@ bool InfantryClass::CanMoveThroughCell()
 }
 
 // 0x51dff0
-int InfantryClass::MoveToCell()
+int InfantryClass::MoveToCell(int* a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x51dff0
-char __thiscall InfantryClass::MoveToCell(int this, int *a2, int a3)
-{
-  int *v3; // esi
-  int GroundHeight; // ebx
-  bool v6; // al
-  _DWORD *v7; // eax
-  int *v8; // eax
-  int v9; // ecx
-  char v11; // [esp-Ch] [ebp-30h]
-  int v12; // [esp+Ch] [ebp-18h] BYREF
-  int v13; // [esp+10h] [ebp-14h]
-  int v14; // [esp+14h] [ebp-10h]
-  int v15[3]; // [esp+18h] [ebp-Ch] BYREF
+    int* v3;
+    int GroundHeight;
+    bool v6;
+    int* v7;
+    int* v8;
+    int v9;
+    char v11;
+    int v12;
+    int v13;
+    int v14;
+    int v15[3];
+    short v16[2];
 
-  v3 = a2;
-  GroundHeight = Cell::GetGroundHeight(a2);
-  v12 = *v3;
-  v13 = v3[1];
-  v14 = v3[2];
-  if ( v14 == GroundHeight )
-  {
-    v6 = 1;
-    if ( !MEMORY[0xA8E7AC] )
+    v3 = a2;
+    GroundHeight = Cell::GetGroundHeight(a2);
+    v12 = v3[0];
+    v13 = v3[1];
+    v14 = v3[2];
+    if ( v14 == GroundHeight )
     {
-      LOWORD(a2) = *v3 / 256;
-      HIWORD(a2) = v3[1] / 256;
-      if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (__int16 *)&a2, 1) )
-        v6 = 0;
+        v6 = 1;
+        if ( !IKnowWhatImDoing )
+        {
+            v16[0] = (short)(v3[0] / 256);
+            v16[1] = (short)(v3[1] / 256);
+            if ( LayerClass::IsWithinUsableArea((int*)DataGlobal_87F7E8, v16, 1) )
+                v6 = 0;
+        }
+        v11 = (char)v6;
+        v7 = (int*)Coord::To_Cell((int*)DataGlobal_87F7E8, v3);
+        v8 = (int*)ObjectPlacement::CalcPosition(v7, v15, v3, v11, 0, 0);
+        v12 = v8[0];
+        v9 = v8[1];
+        v13 = v9;
+        if ( v12 == *(int*)&DataGlobal_A8F200 && v9 == *(int*)&DataGlobal_A8F204 && v8[2] == *(int*)&DataGlobal_A8F208 )
+            return 0;
+        v14 = GroundHeight;
     }
-    v11 = v6;
-    v7 = Coord::To_Cell(&MEMORY[0x87F7E8], v3);
-    v8 = ObjectPlacement::CalcPosition(v7, v15, v3, v11, 0, 0);
-    v12 = *v8;
-    v9 = v8[1];
-    v13 = v9;
-    if ( v12 == MEMORY[0xA8F200] && v9 == MEMORY[0xA8F204] && v8[2] == MEMORY[0xA8F208] )
-      return 0;
-    v14 = GroundHeight;
-  }
-  if ( !FootClass::DispatchInput((double *)this, (int)&v12, a3) )
-    return 0;
-  if ( !*(_DWORD *)(*(_DWORD *)(this + 1728) + 1512) )
-    *(_BYTE *)(this + 1051) = 0;
-  if ( v14 <= GroundHeight + MEMORY[0xA8F234] )
-    (*(void (__thiscall **)(int, int *))(*(_DWORD *)this + 240))(this, &v12);
-  *(_DWORD *)(this + 1768) = 2;
-  return 1;
-}
+    if ( !FootClass::DispatchInput(this, &v12, a3) )
+        return 0;
+    if ( !this->Type->Sight )
+        this->isDiscoveredByCurrentPlayer = 0;
+    if ( v14 <= GroundHeight + *(int*)&DataGlobal_A8F234 )
+        this->MarkCellPassability(&v12);
+    this->unknown_int_6E8 = 2;
+    return 1;
 
 /* ASM:
 sub     esp, 18h
@@ -4269,52 +4114,45 @@ retn
 // 0x51f3e0
 int InfantryClass::EnterBuilding()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x51f3e0
-int __thiscall InfantryClass::EnterBuilding(float *this)
-{
-  int v2; // ecx
-  int v3; // eax
-  int v4; // ecx
-  int v6; // ecx
-  _BYTE *v7; // eax
-  int v8; // eax
-  char *MissionControl; // eax
-  int v10; // esi
+    TechnoClass* v2;
+    BuildingClass* v3;
+    BuildingTypeClass* v4;
+    InfantryTypeClass* v7;
+    int v10;
+    void* MissionControl;
 
-  if ( (*(_BYTE *)(*((_DWORD *)this + 432) + 3778) || TechnoClass::HasVoiceResponse(this, 14))
-    && (v2 = *((_DWORD *)this + 173)) != 0
-    && (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 44))(v2) == 6
-    && (v3 = *((_DWORD *)this + 173), v4 = *(_DWORD *)(v3 + 1312), *(_BYTE *)(v4 + 5495))
-    && !*(_BYTE *)(v4 + 5889) )
-  {
-    (*(void (__thiscall **)(float *, int, int))(*(_DWORD *)this + 1152))(this, v3, 1);
-    (*(void (__thiscall **)(float *, int, _DWORD))(*(_DWORD *)this + 488))(this, 17, 0);
-    return 1;
-  }
-  else if ( !(unsigned __int8)House::IsCurrentPlayer(*((#375 **)this + 135))
-         && (v6 = *((_DWORD *)this + 173)) != 0
-         && (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 44))(v6) == 6
-         && ((v7 = (_BYTE *)*((_DWORD *)this + 432), v7[3774])
-          || (v7[3764] || v7[3765]) && BuildingClass::CanRepair(*((_DWORD **)this + 173), (int)this)) )
-  {
-    (*(void (__thiscall **)(float *, _DWORD, int))(*(_DWORD *)this + 1152))(this, *((_DWORD *)this + 173), 1);
-    (*(void (__thiscall **)(float *, int))(*(_DWORD *)this + 496))(this, 8);
-    return 1;
-  }
-  else if ( (unsigned __int8)House::IsCurrentPlayer(*((#375 **)this + 135))
-         && ((v8 = *((_DWORD *)this + 433), v8 == 27) || v8 == 28 || v8 == 29 || v8 == 30) )
-  {
-    (*(void (__thiscall **)(float *))(*(_DWORD *)this + 1064))(this);
-    MissionControl = MissionClass::GetMissionControl(this);
-    v10 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0);
-    return v10 + Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
-  }
-  else
-  {
-    return InfantryClass::ScanTarget((int)this);
-  }
-}
+    if ( (this->Type->C4 || TechnoClass::HasVoiceResponse(this, 14))
+      && (v2 = this->target) != 0
+      && (int)v2->whatAmI() == 6
+      && (v3 = (BuildingClass*)this->target, v4 = v3->Type, v4->CanC4)
+      && !v4->InvisibleInGame )
+    {
+        this->AssignDestination_SyncLog(v3, 1);
+        this->QueueMission(17, 0);
+        return 1;
+    }
+    else if ( !House::IsCurrentPlayer(this->owner)
+           && (v2 = this->target) != 0
+           && (int)v2->whatAmI() == 6
+           && (v7 = this->Type, v7->Infiltrate || (v7->Occupier || v7->Assaulter) && BuildingClass::CanRepair(v2, this)) )
+    {
+        this->AssignDestination_SyncLog(this->target, 1);
+        this->ForceMission(8);
+        return 1;
+    }
+    else if ( House::IsCurrentPlayer(this->owner)
+           && (v10 = this->SequenceAnim, v10 == 27 || v10 == 28 || v10 == 29 || v10 == 30) )
+    {
+        this->FindPathToBuilding();
+        MissionControl = MissionClass::GetMissionControl(this);
+        v10 = Math::RoundToInt(*((double*)MissionControl + 2) * 900.0);
+        return v10 + Random::Range((int*)g_ScenarioClass_Instance + 134, 0, 2);
+    }
+    else
+    {
+        return InfantryClass::ScanTarget(this);
+    }
+
 
 /* ASM:
 push    esi
@@ -4607,59 +4445,55 @@ int InfantryClass::ParachuteTo()
 // 0x51f6e0
 int InfantryClass::ProcessIvanBomb()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x51f6e0
-int __thiscall InfantryClass::ProcessIvanBomb(_DWORD *this)
-{
-  int v2; // ecx
-  int v3; // eax
-  int v4; // ebx
-  int v5; // edi
-  int v6; // edi
-  __int16 *v7; // eax
-  void *v8; // eax
-  int v9; // edx
-  _BYTE v11[4]; // [esp+Ch] [ebp-4h] BYREF
+    InfantryTypeClass* v2;
+    int v3;
+    int v4;
+    int* v5;
+    int v6;
+    __int16* v7;
+    void* v8;
+    InfantryTypeClass* v9;
+    unsigned char v11[4];
 
-  v2 = *(this + 432);
-  if ( !*(_BYTE *)(v2 + 3784) )
-    return AbstractClass::COMStub_143();
-  v3 = *(this + 433);
-  v4 = -1;
-  if ( v3 == 27 || v3 == 28 || v3 == 29 || v3 == 30 )
-  {
-    if ( *(int *)(v2 + 1732) <= -1 )
-      (*(void (__thiscall **)(_DWORD *, int, int, _DWORD))(*this + 1368))(this, 31, 1, 0);
-  }
-  else
-  {
-    (*(void (__thiscall **)(_DWORD *, int, int, _DWORD))(*this + 1368))(this, 27, 1, 0);
-    v5 = (*(int (__thiscall **)(_DWORD *))(*this + 1008))(this);
-    if ( (unsigned __int8)IsNonNullPtr(v5) && *(_BYTE *)(*(_DWORD *)v5 + 336) )
+    v2 = this->Type;
+    if ( !v2->Deployer )
+        return AbstractClass::COMStub_143();
+    v3 = this->SequenceAnim;
+    v4 = -1;
+    if ( v3 == 27 || v3 == 28 || v3 == 29 || v3 == 30 )
     {
-      if ( (unsigned __int8)ObjectClass::StepCleanup(this, aDeso) )
-      {
-        v4 = *(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 976) + 1;
-      }
-      else
-      {
-        v6 = *this;
-        v7 = (__int16 *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(*this + 440))(this, v11);
-        v8 = CellCoord::To_CellObj(MEMORY[0x87F7E8], v7);
-        (*(void (__thiscall **)(_DWORD *, void *))(v6 + 968))(this, v8);
-      }
+        if ( v2->UndeployDelay <= -1 )
+            this->ProcessDeployAction(31, 1, 0);
     }
-    v9 = *(this + 432);
-    if ( *(int *)(v9 + 1732) > -1 )
-      v4 = *(_DWORD *)(v9 + 1732);
-  }
-  (*(void (__thiscall **)(_DWORD *, int))(*this + 496))(this, 5);
-  (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, 0, 1);
-  if ( v4 > -1 )
-    return v4;
-  else
-    return AbstractClass::COMStub_143();
-}
+    else
+    {
+        this->ProcessDeployAction(27, 1, 0);
+        v5 = (int*)this->Vt249to254();
+        if ( IsNonNullPtr(v5) && *(unsigned char*)(*(int**)v5 + 336) )
+        {
+            if ( ObjectClass::StepCleanup(this, "DESO") )
+            {
+                v4 = *(int*)((char*)this->Type->Sequence + 976) + 1;
+            }
+            else
+            {
+                v6 = *(int*)this;
+                v7 = (__int16*)this->GetCellCoords_Alt(v11);
+                v8 = CellCoord::To_CellObj((int*)DataGlobal_87F7E8, v7);
+                (*(void (__thiscall **)(int*, void*))((int*)v6 + 968))(this, v8);
+            }
+        }
+        v9 = this->Type;
+        if ( v9->UndeployDelay > -1 )
+            v4 = v9->UndeployDelay;
+    }
+    this->ForceMission(5);
+    this->AssignDestination_SyncLog(0, 1);
+    if ( v4 > -1 )
+        return v4;
+    else
+        return AbstractClass::COMStub_143();
+
 }
 
 // 0x51f660
@@ -7549,7 +7383,7 @@ int InfantryClass::CheckHealthDiff()
 // ============================================================
 
 // 0x5217c0
-int InfantryClass::MarkCellPassability()
+int InfantryClass::MarkCellPassability(int* a2)
 {
     // IDA: 0x5217C0 — mark cells as passable/unpassable
     return 0;
@@ -7796,73 +7630,71 @@ int InfantryClass::RepairBridge()
 }
 
 // 0x522340
-void InfantryClass::CalculateApproachPath()
+void InfantryClass::CalculateApproachPath(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x522340
-void *__thiscall InfantryClass::CalculateApproachPath(int this, char a2)
-{
-  int v3; // eax
-  #375 *v5; // eax
-  int v6; // eax
-  int v7; // edi
-  char v8; // bl
-  int v9; // eax
-  int v10; // eax
+    int v3;
+    TechnoClass* v5;
+    InfantryTypeClass* v6;
+    int DeployFireWeapon;
+    char v8;
+    WeaponTypeClass* v9;
+    int v10;
 
-  if ( *(_DWORD *)(this + 692) )
-  {
-    v3 = *(_DWORD *)(this + 1732);
-    if ( v3 != 27 && v3 != 28 && v3 != 29 && v3 != 30 )
-      return FootClass::CalculateApproachPath((_DWORD *)this, 0);
-    v5 = (#375 *)(*(int (__thiscall **)(int))(*(_DWORD *)this + 60))(this);
-    if ( !(unsigned __int8)House::IsCurrentPlayer(v5) )
+    if ( this->target )
     {
-      v6 = *(_DWORD *)(this + 1728);
-      if ( *(_BYTE *)(v6 + 3784) )
-      {
-        if ( *(_BYTE *)(v6 + 1708) )
+        v3 = this->SequenceAnim;
+        if ( v3 != 27 && v3 != 28 && v3 != 29 && v3 != 30 )
         {
-          v7 = *(_DWORD *)(v6 + 1704);
-          v8 = (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)this + 936))(this, *(_DWORD *)(this + 692), v7);
-          v9 = *(_DWORD *)(*(int (__thiscall **)(int, int))(*(_DWORD *)this + 1016))(this, v7);
-          if ( v9 )
-          {
-            if ( !*(_BYTE *)(v9 + 336) )
-            {
-              v10 = *(_DWORD *)(this + 1732);
-              if ( v10 == 27 || v10 == 28 || v10 == 29 || v10 == 30 )
-              {
-                if ( !v8 && !a2 )
-                {
-                  (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(*(_DWORD *)this + 1368))(this, 31, 0, 0);
-                  return 0;
-                }
-              }
-              else if ( v8 && !a2 )
-              {
-                if ( !*(_DWORD *)(this + 1652) )
-                  WinAPI::Wrapper(-2147467261);
-                if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 16))(*(_DWORD *)(this + 1652)) )
-                {
-                  (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(*(_DWORD *)this + 1368))(this, 27, 0, 0);
-                  return 0;
-                }
-                if ( !*(_DWORD *)(this + 1652) )
-                  WinAPI::Wrapper(-2147467261);
-                (*(void (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 72))(*(_DWORD *)(this + 1652));
-                *(_BYTE *)(this + 1764) = 1;
-                MissionClass::GetMissionControl((_DWORD *)this);
-                Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, 2);
-              }
-            }
-          }
+            FootClass::CalculateApproachPath(this, 0);
+            return;
         }
-      }
+        v5 = this->GetTarget();
+        if ( !House::IsCurrentPlayer(v5) )
+        {
+            v6 = this->Type;
+            if ( v6->Deployer )
+            {
+                if ( v6->DeployFire )
+                {
+                    DeployFireWeapon = v6->DeployFireWeapon;
+                    v8 = this->ValidateTarget(this->target, DeployFireWeapon);
+                    v9 = this->SelectWeaponSlot(DeployFireWeapon)->WeaponType;
+                    if ( v9 )
+                    {
+                        if ( !v9->AreaFire )
+                        {
+                            v10 = this->SequenceAnim;
+                            if ( v10 == 27 || v10 == 28 || v10 == 29 || v10 == 30 )
+                            {
+                                if ( !v8 && !a2 )
+                                {
+                                    this->ProcessDeployAction(31, 0, 0);
+                                    return;
+                                }
+                            }
+                            else if ( v8 && !a2 )
+                            {
+                                if ( !this->Locomotor )
+                                    WinAPI::Wrapper(-2147467261);
+                                if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 16))((_DWORD)this->Locomotor) )
+                                {
+                                    this->ProcessDeployAction(27, 0, 0);
+                                    return;
+                                }
+                                if ( !this->Locomotor )
+                                    WinAPI::Wrapper(-2147467261);
+                                (*(void (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 72))((_DWORD)this->Locomotor);
+                                this->ShouldDeploy = 1;
+                                MissionClass::GetMissionControl(this);
+                                Random::Range((int*)g_ScenarioClass_Instance + 134, 0, 2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
-  return 0;
-}
+    return;
 
 /* ASM:
 push    ebx

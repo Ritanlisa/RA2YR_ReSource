@@ -3016,3 +3016,36 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   W0b 待裁决、P3+ hierarchy、H6/H7/H3r）/ 小项清偿残余 4 项 / 总账 ≈10-16 会话。
 - 排序 = W0 → L1/L2（解锁 H5 + 清漂移债）→ P2 主体 → E1/W0b（裁决）→ P3 → 并行。
 - AGENTS 接手指引 #2/#4 刷新为 g19_prep 口径。
+
+## 执行日志 — 2026-09-18 G20 准备轮：G19 完成情况核查 + 下一步计划定稿（docs/g20_prep.md）
+
+> 用户指令：检查 G19 完成情况 + 制定下一步计划。
+
+- **G19 完成核查（对照 g19_prep 验收清单）**：W0 ✓（全池 11,695 ALL PASS 复验 +
+  增量并入 09b1c69a + infantry.cpp 注解补齐 ×2——无裸注解小项全清）/ **L1 #122 ✓
+  resolved**（中区真值表四源重建：ctor 写图 + YRpp 锚 + Passengers{count,head}@276 +
+  ProgressTimer 28B 证据收敛，A1 -12 全消，til×7）/ **L2 #121 ✓ resolved**
+  （JumpJet@3476 + Crashable@3477 INI 直证定谳）/ P2 ✓（H5×4：CanMoveFreely /
+  FindPathToBuilding / CanAttackTarget / PowerDrainUpdate=checksum 序列化）。
+  未消费移交：L3 #114、L4 #118、H5 余量 16、E1/W0b/P3/H6/H7/H3r、小项清偿 3 项。
+- **新计划 docs/g20_prep.md**：W0 池复跑确认 11,699 / L3/L4 / P2 fresh 16 队列 /
+  承接批次（E1 ~351、W0b 待裁决、P3+ hierarchy、H6/H7/H3r/A1）/ 小项清偿残余 3 /
+  总账 ≈9-14 会话，排序 W0 → L3/L4 → P2 → E1/W0b → P3 → 并行。
+- AGENTS 状态表 translated 行刷新至 11,699 G19 口径；接手指引 #2/#4 → g20_prep。
+
+## 执行日志 — 2026-09-18 晚 G20：W0 全绿复验 + L4 假完成清偿 + H5 真翻×4（completed 11,701）
+
+> 用户指令：证据补全 → OO 语法替换 → 提交+tag 重锚 → RA2MCP 消化 pending（G20 清单序）。
+
+- **W0 ✓**：全池复跑 `pool_verify_all.py --workers 6` → **11,699 PASS / 0 FAIL**（3591s；基线确认含 G19 新增 4）。AGENTS 状态表/接手指引刷新至 G20 口径。
+- **L4 #118 ✓ resolved**：三例 live 人工对照——0x401190 KEEP（addr40_e4.cpp:3168 忠实魔数除法 1374389535=2^37/36）；0x4DBA50 GetTargetCellCenter FAKE（`return 0` vs GetCoordsEx@slot76+坐标变换+CheckTileSeed@slot716）→ 复位 pending；0x659470 drawSelectionBox FAKE（`return 0` vs 3 字节拷贝 this+32，接收者 RadBeam 归属存疑）→ 复位 pending。台账 `.omo/g20_l4_rollback_ledger.json`；后续 #123（hpp 双签名手术待盘）/#124（A2 owner 考古）。
+- **P2 H5 ✓×4**（infantry.cpp，全 verify PASS + mark_completed）：
+  - 0x51dff0 MoveToCell——IKnowWhatImDoing@0xA8E7AC / A8F200 三元组比对 / vt+240 MarkCellPassability；签名手术 MoveToCell(int*,int)+MarkCellPassability(int*)+DispatchInput(int*,int)。
+  - 0x522340 CalculateApproachPath——vt60 GetTarget/vt936 ValidateTarget/vt1016 SelectWeaponSlot/vt1368 ProcessDeployAction 四派发 + Locomotor COM 原始形态；签名手术 CalculateApproachPath(char a2) 三文件。
+  - 0x51f3e0 EnterBuilding——C4/Infiltrate/Occupier/Assaulter/CanC4/InvisibleInGame 四分支；伪码 ?[N] 为子对象相对渲染（差 884，反汇编 0xEB4/0xEB5/0xEBE 铁证）。
+  - 0x51f6e0 ProcessIvanBomb——StepCleanup("DESO"@0x82557C) + SequenceStruct@976 + vt372 FindMoveTarget 局部派发不对称形态（(v6+968))(this,v8) 不匹配 _IDA_VTABLE_LOCAL）。
+- **词汇新增**：vtable_offsets InfantryClass += GetTarget@60/SelectWeaponSlot@1016/HasActiveParam@684/FindMoveTarget@372（InfantryClass vt=0x7EB058 RTTI 直读）；signals._member_by_name InfantryClass += ammo@764（继承自 TechnoClass）；影响面扫描确认零回归面（无现存 this->GetTarget() 调用点；SelectWeaponSlot 仅 AircraftClass e4 体且未动该类表）。
+- **H5 跳过记账**：#125 0x522d50（FloatArray@828 漂移族：Techno=tiltSidewaysAngle/Foot=currentTargetThreatValues/Infantry 镜像∅，需四源定谳）；#126 0x5239d0（实为 InfantryTypeClass 删除式 dtor：4 重 vfptr 安装= #55-F 词汇缺口 + signals 误名 ProcessAnimation）；#127 0x5200b0（goto LABEL_42 收缩拓扑：复制体+2/标志+1/||链并块三形态均 FAIL，需手工块形重写；其词汇已齐备）。
+- **新方法论教训（live 缓存漂移）**：`--save-ida` live 刷新会因 til 演化改变渲染形态（`*(ClassType**)(this+N)` typed-cast 不匹配标量正则 / `__pad` 链丢 MEMORY[] 全局事件 / VoiceEnter 类 til 误名吞派发）→ 事件集漂移。处置：pending 函数翻译前以 cpp 块内嵌快照伪码恢复缓存（v4 播种先例；本会话 3 例：0x522340/0x51f3e0/0x51f6e0/0x5200b0）。completed 池函数勿随意 --save-ida。
+- **L3 #114 未动**（规程：动 verify_execution_flow.py 前须用户裁决）；E1/W0b/P3/H6/H7/H3r 未开工。
+- 口径：completed 11,699 → **11,701**（-2 假完成复位 +4 真翻）；pending marker 4,817；门控基线 tag G20 重锚。

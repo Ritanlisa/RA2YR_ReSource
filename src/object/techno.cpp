@@ -4590,7 +4590,20 @@ int TechnoClass::ClearArrays() { return 0; }
 // 0x48ab90
 int TechnoClass::ComputeScanRange() const { return 0; }
 // 0x659470
-int TechnoClass::drawSelectionBox() { return 0; }
+int TechnoClass::drawSelectionBox() {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall TechnoClass::drawSelectionBox(char *this, int a2)
+{
+  char *v2; // ecx
+  char result; // al
+
+  v2 = this + 32; /*0x659474*/
+  *(_WORD *)v2 = *(_WORD *)a2; /*0x65947a*/
+  result = *(_BYTE *)(a2 + 2); /*0x65947d*/
+  v2[2] = result; /*0x659480*/
+  return result; /*0x659483*/
+}
+}
 // 0x659490
 int TechnoClass::drawHealthBar() { return 0; }
 int TechnoClass::sub_6594A0() { return 0; }
@@ -5312,7 +5325,29 @@ int TechnoClass::GetSecondaryTargetOrFallback() const { return 0; }
 // 0x4db810
 int TechnoClass::SetPositionAnimated() { return 0; }
 // 0x4dba50
-int TechnoClass::GetTargetCellCenter() { return 0; }
+int TechnoClass::GetTargetCellCenter() {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+int __thiscall TechnoClass::GetTargetCellCenter(int *this, int a2)
+{
+  int *v3; // edi
+  int v4; // kr04_4
+  int v5; // eax
+  int v6; // edx
+  int v7; // eax
+  _DWORD v9[3]; // [esp+8h] [ebp-18h] BYREF
+  _BYTE v10[12]; // [esp+14h] [ebp-Ch] BYREF
+
+  v3 = (int *)(*(int (__thiscall **)(int, _BYTE *, int *))(*(_DWORD *)a2 + 76))(a2, v10, this); /*0x4dba66*/
+  v4 = *v3; /*0x4dba73*/
+  v5 = v3[1]; /*0x4dba75*/
+  v9[2] = 0; /*0x4dba82*/
+  v6 = (__int16)(v5 / 256); /*0x4dba95*/
+  v7 = *this; /*0x4dba98*/
+  v9[0] = ((__int16)(v4 / 256) << 8) + 128; /*0x4dbaa0*/
+  v9[1] = (v6 << 8) + 128; /*0x4dbab4*/
+  return (*(int (__thiscall **)(int *, _DWORD *))(v7 + 716))(this, v9); /*0x4dbabe*/
+}
+}
 // 0x4dafc0
 int TechnoClass::ComputeSpeedFactor() { return 0; }
 // 0x4db1a0

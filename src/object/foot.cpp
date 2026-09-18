@@ -1711,11 +1711,11 @@ int FootClass::Destru_vt319() { return 0; }
 // 0x4d5660
 int FootClass::EnterAttackState() { return 0; }
 // 0x4d5690
-void FootClass::CalculateApproachPath() {}
+void FootClass::CalculateApproachPath(char a2) {}
 // 0x4d6aa0
 int FootClass::FindAITarget() { return -1; }
 // 0x4d7170
-int FootClass::DispatchInput() { return 0; }
+int FootClass::DispatchInput(int* coords, int a3) { return 0; }
 // 0x4d7330
 void FootClass::ProcessDeploy() {}
 // 0x4d74e0

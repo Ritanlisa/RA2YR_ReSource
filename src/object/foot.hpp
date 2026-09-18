@@ -141,9 +141,9 @@ public:
     virtual int PlayCOM_audio();  // 0x4D55C0
     virtual int Destru_vt319();  // 0x4D55F0
     virtual int EnterAttackState();  // 0x4D5660
-    virtual void CalculateApproachPath(); // 0x4D5690
+    virtual void CalculateApproachPath(char a2); // 0x4D5690
     virtual int FindAITarget();  // 0x4D6AA0
-    virtual int DispatchInput();  // 0x4D7170
+    virtual int DispatchInput(int* coords, int a3);  // 0x4D7170
     virtual void ProcessDeploy();  // 0x4d7330
     virtual int ValidateMove(int action, AbstractClass* target, int flags);  // 0x4d74e0
     virtual int ValidatePlacement(int a2, int a3);  // 0x4d82b0 (vt+1156; binary: (this, 0, 1) form)
