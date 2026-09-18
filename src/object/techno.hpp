@@ -603,7 +603,7 @@ public:
     virtual int CheckCellPassable() const; // 0x6F7930
     virtual int CheckCellPassable2() const;  // 0x6F7780
     virtual int CheckCellPassable3() const;  // 0x6F7970
-    virtual int ValidateTarget() const; // 0x6F77B0
+    virtual int ValidateTarget(TechnoClass* target, int weapon_index) const; // 0x6F77B0 (vt+936; binary: (this, target, weapon))
     virtual int GetBridgeDamageMult() const;  // 0x6F79A0
     // wrapper: delegates to TechnoClass::GetBridgeDamageMult at 0x6F79A0
     virtual int CheckAndFireAtTarget2();

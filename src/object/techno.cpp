@@ -5523,7 +5523,7 @@ int TechnoClass::CheckCellPassable2() const { return false; }
 // 0x6f7970
 int TechnoClass::CheckCellPassable3() const { return false; }
 // 0x6f77b0
-int TechnoClass::ValidateTarget() const { return false; }
+int TechnoClass::ValidateTarget(TechnoClass* target, int weapon_index) const { return false; }
 // 0x6f79a0
 int TechnoClass::GetBridgeDamageMult() const { return 0; }
 int TechnoClass::CheckAndFireAtTarget2() { return 0; }

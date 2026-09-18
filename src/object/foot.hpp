@@ -146,7 +146,7 @@ public:
     virtual int DispatchInput();  // 0x4D7170
     virtual void ProcessDeploy();  // 0x4d7330
     virtual int ValidateMove(int action, AbstractClass* target, int flags);  // 0x4d74e0
-    virtual int ValidatePlacement();  // 0x4d82b0
+    virtual int ValidatePlacement(int a2, int a3);  // 0x4d82b0 (vt+1156; binary: (this, 0, 1) form)
     virtual int GetCoords() const; // 0x4D8560
     virtual void UpdateAI();  // 0x4D85D0
     virtual int OverrideMission_SyncLog(); // 0x4D8F40

@@ -112,14 +112,34 @@ P2 主体 → E1/W0b（W0b 等裁决）→ P3 → 并行填充**。
 ## 快速验收清单（G19 开工顺序）
 
 ```
-[ ] curl :13337 探测
-[ ] 开场五检
-[ ] W0 工作树增量并入提交 + 全池复跑确认 11,695 全绿
-[ ] L1 #122 TechnoClass 中区 228-256 重建（ctor 写图 → 四源 → UnitClass 镜像 → A1 复跑）
-[ ] L2 #121 命名落地 → 0x51f330 解锁
-[ ] P2 H5 波 ×3-5（0x51f330 → 0x5227f0 → 0x5216d0 → 0x521c90）
-[ ] E1 全局命名轮（或 W0b 裁决包提交，视用户在场与否）
-[ ] P3 vtable 批量（时间富余）
-[ ] 小项清偿（时间富余）
-[ ] 收尾六件套 + 新增 completed 全验 + 提交 + tag 重锚
+[x] curl :13337 探测（全程在线）
+[x] 开场五检（注解2缺失已补齐→双零；readiness 仅 tag≠HEAD 项）
+[x] W0 工作树增量并入提交(09b1c69a) + 全池复跑 11,695/11,695 ALL PASS（G15 以来首次复验维持全绿）
+[x] L1 #122 TechnoClass 中区重建 → resolved（真值表 25 条 224-396 四源×六家族 + til×7 + A1 agree 37→39/-12 全消；
+    证据链：ctor 0x6F2B40 写图 + YRpp 硬锚 + PassengersClass{count,head}@276 二进制解码 + ProgressTimer 28B Step{1}）
+[x] L2 #121 JumpJet@3476/Crashable@3477 定谳（INI "JumpJet"/"Crashable" 直证 LoadExtras 0x7151ec/0x71520d）→ resolved
+[x] P2 H5 波 ×4 全 PASS：0x5216d0 CanMoveFreely / 0x51f330 FindPathToBuilding / 0x5227f0 CanAttackTarget(HouseClass*) /
+    0x521c90 PowerDrainUpdate（=checksum 序列化）——completed 11,695→11,699
+[ ] E1 全局命名轮（未开工——#67-#71 材料已在案）
+[ ] P3 vtable 批量（未开工）
+[ ] 小项清偿（部分：注解双零达成；其余未动）
+[x] 收尾六件套 + 提交 + tag 重锚
 ```
+
+### G19 执行记录（2026-09-18）
+
+- **词汇新落地**：locationY@160/locationZ@164（CoordStruct 子字段平面词汇——嵌套 `.Y/.Z` 读取在验证器文法下
+  塌缩为外层成员偏移，R160/R164 事件需平面名发射）；panicTimerTimeLeft@1744（Infantry panic 三元组
+  StartTime@1736/TimeLeft@1744 与 PanicDurationLeft@1748 区分）；vo InfantryClass 补词 ×3
+  （SelectAutoTarget=964/GetTypePtr=132/GetExitCoords=72，全部二进制直读定谳）。
+- **签名修复**：CanAttackTarget 补 HouseClass* 参（间谍伪装态攻击阵营许可，disguisedAsHouse 比较铁证）；
+  GetDeployWeaponIndex(int)/ValidateTarget(TechnoClass*,int)/ValidatePlacement(int,int) 按二进制补参。
+- **爆炸半径**：0x44e7b0 GetPowerOutput / 0x4852d0 CreateDestructionCrater 词汇纠偏暴露 FAIL——两者本非
+  completed（Task 6 前验证时代译文），已复位为规范 pending 块；CheckC4Active PASS；**completed 池零回归**。
+- **事故与教训**：① t14_structs 对已存在 til struct 的替换会静默不生效（回验只查尺寸）——del 后需
+  idc.parse_decls 全量重declare（G16 处方重演）；② parse_decl(PT_TYP) 仅解析不落盘；③ typed-this 重拉缓存
+  会把 vfptr 调用塌缩成 member,0 读（劣化——回退 raw this）；④ 未解析名（House::IsAlliedWith）双侧零事件
+  对称可过验，改名解析反而造不对称。
+- **遗留**：A1 残 {20:1,-172:2}=#19 的 424-448 区旧债；hpp ProgressTimer 8B/PassengersClass 8B 编译布局
+  与真值 28B 差异（容忍债，语义访问优先）；0x51f3e0 EnterBuilding/0x51dff0 MoveToCell 已预研未译
+  （证据链在 .omo/g19_p2_drafts.md）。

@@ -693583,6 +693583,24 @@
      "evidence": [
       "type_map_observed"
      ]
+    },
+    "3476": {
+     "name": "JumpJet",
+     "type": "bool",
+     "size": 1,
+     "evidence": [
+      "g19-l2-ini-loadextras-0x7151ec",
+      "class_layouts"
+     ]
+    },
+    "3477": {
+     "name": "Crashable",
+     "type": "bool",
+     "size": 1,
+     "evidence": [
+      "g19-l2-ini-loadextras-0x71520d",
+      "class_layouts"
+     ]
     }
    },
    "csp_methods": 18,

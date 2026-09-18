@@ -2728,37 +2728,31 @@ retn    0Ch
 
 // IDA: 0x5227F0 — checks if target can be attacked (not allied, not cloaked, in range)
 // 0x5227f0
-bool InfantryClass::CanAttackTarget()
+bool InfantryClass::CanAttackTarget(HouseClass* other)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5227f0
-bool __thiscall InfantryClass::CanAttackTarget(#375 **this, #375 *other)
-{
-  _DWORD *v3; // eax
-  _WORD *v4; // ebx
-  #375 *v5; // esi
-  bool result; // al
-  int v7; // [esp+Ch] [ebp-14h]
-  int v8; // [esp+10h] [ebp-10h] BYREF
-  _BYTE v9[12]; // [esp+14h] [ebp-Ch] BYREF
+    bool result;
+    CoordStruct v9;
+    int* v3;
+    short v8[2];
+    CellClass* v4;
+    HouseClass* v5;
 
-  result = 0;
-  if ( (*((unsigned __int8 (__thiscall **)(#375 **))*this + 49))(this) )
-  {
-    v3 = (_DWORD *)(*((int (__thiscall **)(#375 **, _BYTE *))*this + 18))(this, v9);
-    LOWORD(v7) = *v3 / 256;
-    HIWORD(v7) = v3[1] / 256;
-    v8 = v7;
-    v4 = CellCoord::To_CellObj(MEMORY[0x87F7E8], (__int16 *)&v8);
-    if ( !(unsigned __int8)HouseClass::IsAlliedWith(*(this + 135), other)
-      && !HouseClass::HasType(v4, *((_DWORD *)other + 12)) )
+    result = false;
+    if ( this->IsDisguised() )
     {
-      v5 = *(this + 327);
-      if ( v5 == other || !v5 || (unsigned __int8)HouseClass::IsAlliedWith(other, v5) )
-        return 1;
+        v3 = (int*)this->GetExitCoords(&v9);
+        v8[0] = (short)(v3[0] / 256);
+        v8[1] = (short)(v3[1] / 256);
+        v4 = (CellClass*)CellCoord::To_CellObj((int*)DataGlobal_87F7E8, v8);
+        if ( !House::IsAlliedWith(this->owner, other)
+          && !HouseClass::HasType(v4, other->relatedTagsCount) )
+        {
+            v5 = this->disguisedAsHouse;
+            if ( v5 == other || !v5 || House::IsAlliedWith(other, v5) )
+                return true;
+        }
     }
-  }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -3476,37 +3470,33 @@ retn
 // 0x5216d0
 bool InfantryClass::CanMoveFreely()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x5216d0
-char __thiscall InfantryClass::CanMoveFreely(int this)
-{
-  char result; // al
-  unsigned int v3; // eax
+    char result;
 
-  result = TechnoClass::IsTimerExpired((#377 *)this);
-  if ( result )
-  {
-    if ( !*(_DWORD *)(this + 1652) )
-      WinAPI::Wrapper(-2147467261);
-    if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 16))(*(_DWORD *)(this + 1652)) )
+    result = TechnoClass::IsTimerExpired(this);
+    if ( result )
     {
-      return 0;
+        if ( !this->Locomotor )
+            WinAPI::Wrapper(-2147467261);
+        if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 16))((_DWORD)this->Locomotor) )
+        {
+            return 0;
+        }
+        else if ( this->Crawling )
+        {
+            return 0;
+        }
+        else if ( this->unknownBool68D )
+        {
+            return 0;
+        }
+        else
+        {
+            int v3 = (int)this->SequenceAnim;
+            result = v3 != 27 && v3 != 28 && v3 != 29 && v3 != 30 && (v3 < 2 || v3 == 16);
+            return result;
+        }
     }
-    else if ( *(_BYTE *)(this + 1755) )
-    {
-      return 0;
-    }
-    else if ( *(_BYTE *)(this + 1677) )
-    {
-      return 0;
-    }
-    else
-    {
-      v3 = *(_DWORD *)(this + 1732);
-      return v3 != 27 && v3 != 28 && v3 != 29 && v3 != 30 && (v3 < 2 || v3 == 16);
-    }
-  }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -4173,39 +4163,34 @@ retn    4
 // 0x51f330
 int InfantryClass::FindPathToBuilding()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x51f330
-int __thiscall InfantryClass::FindPathToBuilding(int *this)
-{
-  int v2; // eax
-  int v3; // ecx
-  int result; // eax
-  int v5; // edx
-  int v6; // edi
-  _DWORD v7[3]; // [esp+Ch] [ebp-Ch] BYREF
+    int v2;
+    int result;
+    TechnoClass* v3;
+    int v6;
+    int v7[3];
 
-  v2 = (*(int (__thiscall **)(int *, _DWORD))(*this + 740))(this, 0);
-  v3 = *(this + 173);
-  if ( !v3 || (result = (*(int (__thiscall **)(int *, int, int))(*this + 936))(this, v3, v2), !(_BYTE)result) )
-  {
-    if ( (v7[0] = *(this + 39),
-          v7[1] = *(this + 40),
-          v5 = *this,
-          v7[2] = *(this + 41),
-          v6 = (*(int (__thiscall **)(int *, int, _DWORD *, _DWORD))(v5 + 964))(this, 1, v7, 0),
-          (result = *(this + 173)) == 0)
-      && !v6
-      || (result = (*(int (__thiscall **)(int *, int))(*this + 968))(this, v6), !v6) )
+    v2 = this->GetDeployWeaponIndex(0);
+    v3 = (TechnoClass*)this->target;
+    if ( !v3 || (result = this->ValidateTarget(v3, v2), !(_BYTE)result) )
     {
-      if ( *(this + 43) != 5 )
-      {
-        result = (*(int (__thiscall **)(int *))(*this + 132))(this);
-        if ( !*(_BYTE *)(result + 3476) )
-          return (*(int (__thiscall **)(int *, _DWORD, int))(*this + 1156))(this, 0, 1);
-      }
+        v7[0] = this->location.X;
+        v7[1] = this->locationY;
+        v7[2] = this->locationZ;
+        v6 = (*(int (__thiscall **)(int *, int, _DWORD *, _DWORD))(*(int **)this + 964))(this, 1, v7, 0);
+        if ( (result = (int)this->target) == 0 && !v6
+          || (result = this->AssignTarget_SyncLog(v6), !v6) )
+        {
+            if ( this->currentMission != 5 )
+            {
+                InfantryTypeClass* v5;
+                v5 = this->GetTypePtr();
+                result = (int)v5;
+                if ( !v5->JumpJet )
+                    return this->ValidatePlacement(0, 1);
+            }
+        }
     }
-  }
-  return result;
+    return result;
 }
 
 /* ASM:
@@ -4698,41 +4683,27 @@ int InfantryClass::CheckAndApplyBomb()
 // 0x521c90
 int InfantryClass::PowerDrainUpdate(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall InfantryClass_PowerDrainUpdate(int this, int *a2)
-{
-  int v3; // edx
-  int v4; // eax
-  int v5; // edx
-  int v6; // eax
-  int v7; // ecx
-  int v8; // edx
-  int v9; // eax
+    int v3;
+    int v4;
 
-  FootClass::BeginPowerUpdate(a2);
-  Power::TimerProcess(*(_DWORD *)(this + 1732));
-  v3 = *(_DWORD *)(this + 1736);
-  v4 = *(_DWORD *)(this + 1744);
-  if ( v3 != -1 )
-  {
-    if ( (int)MEMORY[0xA8ED84] - v3 >= v4 )
-      v4 = 0;
-    else
-      v4 -= (int)MEMORY[0xA8ED84] - v3;
-  }
-  Power::TimerProcess(v4);
-  Power::TimerProcess(*(_DWORD *)(this + 1748));
-  LOBYTE(v5) = *(_BYTE *)(this + 1753);
-  v6 = Power::FlagProcess(a2, v5);
-  LOBYTE(v6) = *(_BYTE *)(this + 1754);
-  Power::FlagProcess(a2, v6);
-  LOBYTE(v7) = *(_BYTE *)(this + 1755);
-  Power::FlagProcess(a2, v7);
-  LOBYTE(v8) = *(_BYTE *)(this + 1756);
-  v9 = Power::FlagProcess(a2, v8);
-  LOBYTE(v9) = *(_BYTE *)(this + 1757);
-  return Power::FlagProcess(a2, v9);
-}
+    FootClass::BeginPowerUpdate(this, a2);
+    Power::TimerProcess(a2, (int)this->SequenceAnim);
+    v3 = this->InfantryClass_field_timer_6C8.StartTime;
+    v4 = this->panicTimerTimeLeft;
+    if ( v3 != -1 )
+    {
+        if ( g_CurrentFrame - v3 >= v4 )
+            v4 = 0;
+        else
+            v4 -= g_CurrentFrame - v3;
+    }
+    Power::TimerProcess(a2, v4);
+    Power::TimerProcess(a2, (int)this->PanicDurationLeft);
+    Power::FlagProcess(a2, this->Technician);
+    Power::FlagProcess(a2, this->InfantryClass_field_bool_6DA);
+    Power::FlagProcess(a2, this->Crawling);
+    Power::FlagProcess(a2, this->InfantryClass_field_bool_6DC);
+    return Power::FlagProcess(a2, this->InfantryClass_field_bool_6DD);
 
 /* ASM:
 push    esi

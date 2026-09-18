@@ -16104,47 +16104,63 @@ retn    4
 // do-while over Upgrades, two direct calls, multiple returns.  vtable +468 =
 // slot 117 = Mission_Harvest (project header vtable; binary impl IDA-labels GetShroudByte).
 // 0x44e7b0
-int BuildingClass::GetPowerOutput()
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x44e7b0
+int __thiscall BuildingClass::GetPowerOutput(int *this)
 {
-    // IDA 0x44E7B0. PowerBonus@Type+0xEE0, ExtraPowerBonus@Type+0xEE8,
-    // UnitAbsorb/InfantryAbsorb@Type+0x16AE/0x16AF (absorber buildings),
-    // absorbed-count read at this+0x114 (secondaryTurretIndex in current
-    // headers - name pending A1 semantic pass), vtable[117]=IsBeingWarpedOut
-    // (slot-117 override at 0x70C5B0 is til-named GetShroudByte; the bool
-    // consumer + slot identity confirm the warp-out check),
-    // Upgrades[3]@+0x5EC, HasPower@+0x660, UpgradeLevel@+0x702.
-    int power = this->Type->PowerBonus;
-    if (this->IsBeingWarpedOut())
-        return 0;
-    if (this->HasExtraPowerBonus)
-        power += this->Type->ExtraPowerBonus;
-    BuildingTypeClass* type = this->Type;
-    if (type->UnitAbsorb || type->InfantryAbsorb)
+  int v2; // edi
+  int v3; // eax
+  int v4; // eax
+  int v5; // ecx
+  int *v6; // ecx
+  int v7; // edx
+  double HealthRatio; // st7
+  int v10; // [esp+8h] [ebp-4h]
+
+  v2 = *(_DWORD *)(*(this + 328) + 3808); /*0x44e7bd*/
+  v10 = v2; /*0x44e7c3*/
+  if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 468))(this) ) /*0x44e7c7*/
+    return 0; /*0x44e7c7*/
+  if ( *((_BYTE *)this + 1640) ) /*0x44e7d5*/
+  {
+    v2 += *(_DWORD *)(*(this + 328) + 3816); /*0x44e7e5*/
+    v10 = v2; /*0x44e7eb*/
+  }
+  v3 = *(this + 328); /*0x44e7ef*/
+  if ( *(_BYTE *)(v3 + 5806) || *(_BYTE *)(v3 + 5807) ) /*0x44e7ff*/
+  {
+    v4 = *(_DWORD *)(v3 + 3816); /*0x44e809*/
+    if ( v4 > 0 ) /*0x44e811*/
     {
-        int bonus = type->ExtraPowerBonus;
-        if (bonus > 0)
-        {
-            int absorbed = this->secondaryTurretIndex;
-            if (absorbed > 0)
-                power += absorbed * bonus;
-        }
+      v5 = *(this + 69); /*0x44e813*/
+      if ( v5 > 0 ) /*0x44e81b*/
+      {
+        v2 += v5 * v4; /*0x44e820*/
+        v10 = v2; /*0x44e822*/
+      }
     }
-    if (this->UpgradeLevel)
+  }
+  if ( *((_BYTE *)this + 1794) ) /*0x44e826*/
+  {
+    v6 = this + 379; /*0x44e830*/
+    v7 = 3; /*0x44e836*/
+    do /*0x44e84b*/
     {
-        int slot = 0;
-        do
-        {
-            if (Upgrades[slot])
-                power += Upgrades[slot]->PowerBonus;
-            ++slot;
-        }
-        while (slot < 3);
+      if ( *v6 ) /*0x44e83b*/
+        v2 += *(_DWORD *)(*v6 + 3808); /*0x44e841*/
+      ++v6; /*0x44e847*/
+      --v7; /*0x44e84a*/
     }
-    if (power <= 0 || !this->HasPower)
-        return 0;
-    double healthRatio = this->GetHealthRatio();
-    return Math::RoundToInt(healthRatio * (double)power);
+    while ( v7 ); /*0x44e84b*/
+    v10 = v2; /*0x44e84d*/
+  }
+  if ( v2 <= 0 || !*((_BYTE *)this + 1632) ) /*0x44e855*/
+    return 0; /*0x44e874*/
+  HealthRatio = BuildingClass::GetHealthRatio(this); /*0x44e861*/
+  return Math::RoundToInt(HealthRatio * (double)v10); /*0x44e86f*/
 }
+}
+
 
 // IDA 0x44e880: base drain + overpower drain
 // 0x44e880
@@ -23253,45 +23269,25 @@ retn    4
 }
 
 // 0x4852d0
-void BuildingClass::CreateDestructionCrater()
+// [IDA decompile] original pseudocode - translation pending (final goal)
+// 0x4852d0
+char __thiscall sub_4852D0(int this)
 {
-    // objectTypeFlags at offset +0x24 doubles as cell coordinates:
-    // low 16 bits = cell X, high 16 bits = cell Y
-    int16_t cellX = (int16_t)(this->objectTypeFlags & 0xFFFF);
-    int16_t cellY = (int16_t)(this->objectTypeFlags >> 16);
+  int v2; // kr04_4
+  int v3; // kr00_4
+  int v5[2]; // [esp+8h] [ebp-14h] BYREF
+  _DWORD v6[3]; // [esp+10h] [ebp-Ch] BYREF
 
-    // Convert cell coordinates to leptons with rounding: (coord << 8) + 128, then signed-div by 256
-    int32_t leptonX = ((int32_t)(cellX << 8) + 128) / 256;
-    int32_t leptonY = ((int32_t)(cellY << 8) + 128) / 256;
-
-    // Build CoordStruct in leptons (Z = 0)
-    CoordStruct worldLeptons;
-    worldLeptons.X = leptonX << 8;
-    worldLeptons.Y = leptonY << 8;
-    worldLeptons.Z = 0;
-
-    // Convert world leptons to screen coordinates
-    // g_TacticalClass_Instance at 0x887324 holds a TacticalMap pointer (declared void*)
-    Point2D screenCoord;
-    Coord_To_Screen(g_TacticalClass_Instance, worldLeptons, &screenCoord);
-
-    // Height byte at offset +0x11B is the high byte of the behindAnim dword at +0x118
-    int32_t behindAnimVal;
-    memcpy(&behindAnimVal, &this->behindAnim, sizeof(behindAnimVal));
-    int8_t height = (int8_t)(behindAnimVal >> 24);
-
-    // DSurface_ViewBounds at 0x886FA0 is a RectangleStruct { X, Y, W, H }
-    // Copy X,Y as a pair and use Y directly
-    uint32_t viewBoundsXY[2];
-    memcpy(viewBoundsXY, &DSurface_ViewBounds, sizeof(viewBoundsXY));
-    int32_t viewportY = (int32_t)viewBoundsXY[1];
-
-    // Crater position: centered on building's screen position, adjusted for building height
-    int32_t craterX = screenCoord.X - 30;
-    int32_t craterY = viewportY - 15 * (int32_t)height + screenCoord.Y - 15;
-
-    Cell::CreateCrater(craterX, craterY, 60, 30, 0);
+  v2 = (*(__int16 *)(this + 36) << 8) + 128; /*0x4852f9*/
+  v3 = (*(__int16 *)(this + 38) << 8) + 128; /*0x485306*/
+  v6[2] = 0; /*0x485308*/
+  v6[1] = (v3 / 256) << 8; /*0x485312*/
+  v6[0] = (v2 / 256) << 8; /*0x48532c*/
+  Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v6, v5); /*0x485330*/
+  return Cell::CreateCrater(v5[0] - 30, MEMORY[0x87F7E8][7663] - 15 * *(char *)(this + 283) + v5[1] - 15, 60, 30, 0); /*0x485389*/
 }
+}
+
 
 // 0x486e70
 void BuildingClass::CreatePlacementCrater() {}
