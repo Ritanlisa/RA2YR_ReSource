@@ -5793,7 +5793,7 @@ int __thiscall CollectSuperWeaponBuildingTypes(_DWORD *this, int a2, VectorClass
 }
 } }
 // 0x50BA00
-namespace gamemd { long long __int8::ComputeSessionColorVector() {
+namespace gamemd { long long Gap2Recv_BA00::ComputeSessionColorVector() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int64 __thiscall ComputeSessionColorVector(unsigned __int8 *this)
 {
@@ -17097,7 +17097,7 @@ retn    4
 } }
 
 // 0x626120
-namespace gamemd { unsigned char __int8::Render_Helper(unsigned char a2, int a3) {
+namespace gamemd { unsigned char Gap2Recv_6120::Render_Helper(unsigned char a2, int a3) {
 {
     int i;
     unsigned char result;
@@ -19459,7 +19459,7 @@ namespace gamemd { int Gap2Recv_63D480::DrawActionLineSegment(int a2, int a3) {
 } }
 
 // 0x63DAD0
-namespace gamemd { int __int8::PackRGBFromBytes() {
+namespace gamemd { int Gap2Recv_DAD0::PackRGBFromBytes() {
 {
     return (*(void**)this >> g_BitShift_Green_0 << g_BitShift_Red)
     | (*(this + 1) >> g_BitMask_Blue << g_BitMask_Green)

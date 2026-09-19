@@ -107,7 +107,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int LoadParticleData(ObjectClass * aP1, int aP1a);  // 0x62D7A0
     int GetClassIdentifier(int a1, unsigned int * a2);  // 0x62D930
     int GetObjectSize();  // 0x62D970
-    int GetTypeIdentifier();  // 0x62D980
+    int GetTypeIdentifier();
+    void Update();  // 0x62c6e0  // 0x62D980
 // --- e4 declarations (END) ---
 };
 

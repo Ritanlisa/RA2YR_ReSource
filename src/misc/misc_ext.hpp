@@ -1049,7 +1049,10 @@ public:
     void* Validate();  // 0x597fe0
     // === FUNCS-MOVE (END) ===
 // --- e4 declarations (BEGIN) ---
-    char PlaceCityArea(short * a2, short * a3, void * a4);  // 0x591740
+    char PlaceCityArea(short * a2, short * a3, void * a4);
+    char PlaceCityBlockVariant(void* a2, void* a3, void* a4);
+    char PlaceCityBlockDiagonal(void* a2, void* a3, void* a4);
+    char PlaceCityBlockVariant2(void* a2, void* a3, void* a4);  // 0x593af0  // 0x593030  // 0x592af0  // 0x591740
 // --- e4 declarations (END) ---
 };
 // 3 methods in IDA
@@ -5248,7 +5251,8 @@ public:
     int StubReturn264();  // 0x74F320
 // --- e4 declarations (END) ---
 // --- e4 declarations (BEGIN) ---
-    void Update_0x74D7C0();  // 0x74D7C0
+    void Update_0x74D7C0();
+    void UpdateVeinholeMonster();  // 0x74d7c0  // 0x74D7C0
 // --- e4 declarations (END) ---
 };
 // 1 methods in IDA

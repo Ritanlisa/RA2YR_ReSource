@@ -107,6 +107,23 @@ _IDA_VTABLE_INDIRECT = _re.compile(
 # excluded (the dispatch patterns own them).
 _IDA_THIS_NAMED = _re.compile(r'\bthis->(\w+)')
 
+# D1-6 (#128, G22): vtable-install RHS detector. A member write whose RHS is a
+# vtable symbol (`&Cls::`vftable'` / ??_7... / vt_Name) is compiler-generated
+# vptr installation -- not expressible in the single-inheritance C++ source
+# model (no vfptr member; new-symbol gate). G22 dry-run: 0 completed functions
+# carry this shape, so dropping these WRITE events is a baseline no-op.
+_VTABLE_RHS = _re.compile(r'=\s*[^;=]*?(?:`vftable\'|\?\?_7|\bvt_[A-Za-z])')
+
+
+def _is_vtable_write(text, pos):
+    """True when the write starting at `pos` (just past the member access)
+    assigns a vtable symbol."""
+    tail = text[pos:pos + 160]
+    m = _re.match(r'\s*=[^;]{0,120};', tail)
+    if not m:
+        return False
+    return bool(_VTABLE_RHS.search(m.group(0)))
+
 # PROVEN leaf-extraction logic, imported verbatim from the original verifier.
 # `verify_execution_flow.py` is a REVERSE-pipeline protected file: imported,
 # never modified. It has no import-time side effects (loaders are functions,
@@ -319,6 +336,15 @@ def make_ida_leaf(this_type, M, class_name=None):
         # --- return ---
         for m in _RETURN_RE.finditer(text):
             hits.append((m.start(), m.end(), RET))
+
+        # --- D1-6 (#128): vtable-install write exemption (see _VTABLE_RHS) ---
+        filtered = []
+        for (s, e, ev) in hits:
+            if (isinstance(ev, str) and ev.startswith('WRITE(member')
+                    and _is_vtable_write(text, e)):
+                continue
+            filtered.append((s, e, ev))
+        hits = filtered
 
         # position-ordered, overlap-de-duped (longest span wins at a start)
         return _order_hits(hits)

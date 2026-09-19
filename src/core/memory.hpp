@@ -74,6 +74,9 @@ template <typename T>
 // unmatched: no callgraph reference and no git history record
 void GameDeleteArray(T* ptr, std::size_t capacity);
 
+// CRT scalar operator delete (??3_YAXPAX_Z) -- freed buffers in dtor family
+void OperatorDelete(void* p);  // 0x7c8b3d
+
 struct GameDeleter
 {
     template <typename T>
