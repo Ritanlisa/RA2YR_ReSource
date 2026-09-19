@@ -3317,6 +3317,12 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   IPXConnStub@100。
 - **UDP ddtor ✅（11,839）**：广播判定分派（this->AddRef=CALL(vfptr+16)，
   vtable_offsets 槽名考古；AudioQueue::WriteBuffer 8 参直调）。
+- **RulesClass::DTOR 考古（下会话首件）**：587 行=blk0 mega-block（42×
+  VectorClass::Destroy + TryFreeAndClear + Destroy 族 17 调用 + 1×READ(member,?)
+  wildcard）+ 尾部命名成员条件清理块（2876/2844/2776…全 ml 已映射）。
+  关键发现：`&this->?` 行（til 未名成员）被 IDA 提取器跳过（仅 CALL 事件），
+  cpp 侧须同跳过——Destroy 实参用局部中转或不发事件形态；`this->?` 解引用行
+  发 1×READ(member,?) wildcard。转换脚本可模板化：剥 (int) 强转 + ? 行特殊化。
 - **dtor 队列终态分诊（余 15 全部 H5 手动档）**：TechnoClass::DTOR（20 写×12 调大件）/
   AnimFile（成员阵列-heavy）/ IPXManager _vt03（包服务循环=误名实函数）/
   MSFont _vt03（文本绘制）/ GraphicMenuImageItem _vt03（NullGuard+CCFile 链）/
