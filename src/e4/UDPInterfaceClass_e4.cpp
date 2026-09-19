@@ -763,25 +763,9 @@ char __thiscall UDPInterfaceClass_Destru::Bind(void ***this, int a2)
 // 0x7B36C0
 short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int arg4, unsigned char * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall UDPInterfaceClass_Destru::ddtor(
-        void *this,
-        WinsockInterfaceClass *aP1,
-        unsigned int arg4,
-        _BYTE *a3,
-        unsigned int a5,
-        WinsockInterfaceClass *aP5,
-        char a7,
-        __int16 a8)
-{
-  if ( a3 && Network::IsBroadcastAddr(a3) ) /*0x7b36ce*/
-    return (*(__int16 (__thiscall **)(void *, WinsockInterfaceClass *, unsigned int, WinsockInterfaceClass *))(*(_DWORD *)this + 16))( /*0x7b36ea*/
-             this,
-             aP1,
-             arg4,
-             aP5);
-  else
-    return AudioQueue::WriteBuffer((int)this, aP1, arg4, a3, a5, aP5, a7, a8); /*0x7b3713*/
+    if ( a3 && Network::IsBroadcastAddr(a3) )
+        return this->AddRef(aP1, arg4, aP5);
+    return AudioQueue::WriteBuffer(this, aP1, arg4, a3, a5, aP5, a7, a8);
 }
 }
 
