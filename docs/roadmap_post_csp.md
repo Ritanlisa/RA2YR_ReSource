@@ -3399,3 +3399,7 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   ternary/param-mismatch/raw-this-residue——归 H6 专项与 W0b。
 - 词汇：slot@N 跳过 = vtable_offsets 缺条目（'vtNNN': N 名键即解锁），
   member@N = ml 缺条目——两类批量解锁配方已验证可复制。
+
+- **W0 保险：会话 134 标记回归验证 134/134 ALL PASS**（748d42d5→HEAD
+  completed 差集逐个 verify，exit=0 全绿）——本会话全部收割无假完成，
+  dtor 族战役/TClassFactory 量产/双大件全数复核。
