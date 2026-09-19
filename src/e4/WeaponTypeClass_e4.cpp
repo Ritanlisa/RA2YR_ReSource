@@ -414,64 +414,52 @@ int __userpurge WeaponTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, 
 // 0x7730F0
 WeaponTypeClass * WeaponTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-WeaponTypeClass *__thiscall WeaponTypeClass::ddtor(void **this, char a2)
-{
-  int v3; // eax
-  void *v4; // eax
-  void *v5; // eax
-  DynamicVector *v6; // eax
-  WeaponTypeClass *v8; // [esp+8h] [ebp-4h] BYREF
-
-  *this = &WeaponTypeClass::`vftable'; /*0x7730f7*/
-  *(this + 1) = &WeaponTypeClass::`vftable'; /*0x7730fd*/
-  *(this + 2) = &WeaponTypeClass::`vftable'; /*0x773104*/
-  *(this + 3) = &vt_WeaponTypeClass; /*0x77310b*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x773112*/
-  *(this + 40) = 0; /*0x77311d*/
-  *(this + 43) = 0; /*0x773123*/
-  v8 = (WeaponTypeClass *)this; /*0x773135*/
-  v3 = ((int (__thiscall *)(WeaponTypeClass **, WeaponTypeClass **))MEMORY[0x887568]->uniqueId)(&MEMORY[0x887568], &v8); /*0x773139*/
-  if ( v3 != -1 && v3 < MEMORY[0x887578] && v3 < --MEMORY[0x887578] ) /*0x773154*/
-  {
-    do /*0x77316c*/
+    WeaponTypeClass* v8 = this;
+    WeaponTypeClass* blk = this;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    blk->wtField160 = 0;
+    blk->wtField172 = 0;
+    int v3 = WeaponTypeClass_Array.FindItemIndex(&v8);
+    if ( v3 != -1 && v3 < g_WeaponTypePool && v3 < --g_WeaponTypePool )
     {
-      ++v3; /*0x77315c*/
-      *((_DWORD *)MEMORY[0x88756C] + v3 - 1) = *((_DWORD *)MEMORY[0x88756C] + v3); /*0x773160*/
+        do
+        {
+            ++v3;
+            *(g_WeaponTypeConfig + v3 - 1) = *(g_WeaponTypeConfig + v3);
+        }
+        while ( v3 < g_WeaponTypePool );
     }
-    while ( v3 < MEMORY[0x887578] ); /*0x77316c*/
-  }
-  v4 = *(this + 62); /*0x77316e*/
-  *(this + 61) = &vt_VectorClass_AnimTypeClass_const; /*0x773174*/
-  if ( v4 && this->Anim.IsAllocated ) /*0x773182*/
-  {
-    __3_YAXPAX_Z(v4); /*0x77318b*/
-    *(this + 62) = 0; /*0x773193*/
-  }
-  this->Anim.IsAllocated = 0; /*0x773199*/
-  *(this + 63) = 0; /*0x77319f*/
-  v5 = *(this + 55); /*0x7731a5*/
-  *(this + 54) = &vt_VectorClass_int; /*0x7731ab*/
-  if ( v5 && this->DownReport.IsAllocated ) /*0x7731b9*/
-  {
-    __3_YAXPAX_Z(v5); /*0x7731c2*/
-    *(this + 55) = 0; /*0x7731ca*/
-  }
-  this->DownReport.IsAllocated = 0; /*0x7731d0*/
-  *(this + 56) = 0; /*0x7731d6*/
-  v6 = (DynamicVector *)*(this + 48); /*0x7731dc*/
-  *(this + 47) = &vt_VectorClass_int; /*0x7731e2*/
-  if ( v6 && this->Report.IsAllocated ) /*0x7731f0*/
-  {
-    __3_YAXPAX_Z(v6); /*0x7731f9*/
-    *(this + 48) = 0; /*0x773201*/
-  }
-  this->Report.IsAllocated = 0; /*0x773209*/
-  *(this + 49) = 0; /*0x77320f*/
-  AbstractTypeClass::Dtor(this); /*0x773215*/
-  if ( (a2 & 1) != 0 ) /*0x77321f*/
-    __3_YAXPAX_Z(this); /*0x773222*/
-  return (WeaponTypeClass *)this; /*0x77322c*/
+    void *v4 = blk->wtVec248;
+    blk->wtVec244 = nullptr;
+    if ( v4 && blk->wtByte257 )
+    {
+        OperatorDelete(v4);
+        blk->wtVec248 = nullptr;
+    }
+    blk->wtByte257 = 0;
+    blk->wtCap252 = 0;
+    void *v5 = blk->wtVec220;
+    blk->wtVec216 = nullptr;
+    if ( v5 && blk->wtByte229 )
+    {
+        OperatorDelete(v5);
+        blk->wtVec220 = nullptr;
+    }
+    blk->wtByte229 = 0;
+    blk->wtCap224 = 0;
+    void *v6 = blk->wtVec192;
+    blk->wtVec188 = nullptr;
+    if ( v6 && blk->wtByte201 )
+    {
+        OperatorDelete(v6);
+        blk->wtVec192 = nullptr;
+    }
+    blk->wtByte201 = 0;
+    blk->wtCap196 = 0;
+    AbstractTypeClass::Dtor(this);
+    if ( a2 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 
