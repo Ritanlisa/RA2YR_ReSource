@@ -3440,3 +3440,31 @@ RulesClass q 名配方）。
 
 **会话累计**：11,720 → 11,858（+138），W0 回归 134/134 全绿后新增
 试点已标记件待下会话开场复跑。
+
+
+### G23 会话（2026-09-19/20）：W0b 工业化收割 +432 → 12,290（六会话之最）
+
+**转换器工业化**（`.omo/g23_gap2_convert.py` v1.4）：G22 手工配方脚本化，
+正则/缩放直接 import 验证器本体（`_IDA_*` + `_cast_byte_off` +
+`detect_this_type`）——双侧偏移恒同源。配方五修：①CAST_PAREN 字面 N
+（T8 缩放错误的转换侧镜像）②MEMORY/dword 全局名补全（语义名全库扫描→
+DataGlobal_* 兜底+extern 落盘）③vtable 安装写 verbatim（裁决 6 豁免）④
+`this->vt<N/4>` 虚派发+vtable_offsets 名键 ⑤双 ns 闭合归一+def 行 `(` 守卫。
+
+**七 TU 波次**：_gap2 97/113 → system 43/65 → object 94/114 → house 53/71
+→ entity 48/74 → team 25/33 → ui 72/97。累计 converted 433 / PASS 432
+/ 标记 432；ml 播种 500+ 条（合成类 M<off> + 真类 q<HEX> H6 中性名）；
+e4_globals 补 23 extern；vtable_offsets vt 名键若干。
+
+**质量门**：抽样回归 25/25 全绿；中途发现 2 件假完成复发（0x5ad930/
+0x5202f0——643720 修复时的 git 恢复误回退批次 1 转换但标记残留）→
+重转修复 + marker&completed 对账 0 错配定谳。
+
+**失败四类定谳**：goto 图同构（桶排除政策沿用）/ 名字歧义错配
+（验证器按名定位限制，V1 记 g24_prep D2 包）/ ternary CFG 形状（H6）/
+局部接收者虚派发（V2 词汇缺口）。
+
+**口径**：completed 11,858 → **12,290（+432）**；pending 4,722 → 4,157；
+gap2 七 TU 剩余 pending marker 450（goto ~170 为主）。提交 d9c9d430 →
+17047f69，tag auto-fill-baseline 两度重锚。G24 准备包 = docs/g24_prep.md
+（W0b 收尾波 + B 线续推 + 验证器词汇债 D2 三项）。
