@@ -15357,3 +15357,22 @@ extern int DataGlobal_83F384;  // data: 0x83f384
 
 // G23 W0b global completion (auto-generated)
 extern int DataGlobal_A8ED7C;  // data: 0xa8ed7c
+
+// G23 W0b global completion (auto-generated)
+extern int DataGlobal_818A30;  // data: 0x818a30
+extern int DataGlobal_87F8BC;  // data: 0x87f8bc
+extern int DataGlobal_87F8C0;  // data: 0x87f8c0
+extern int DataGlobal_87F8C4;  // data: 0x87f8c4
+extern int DataGlobal_87F8C9;  // data: 0x87f8c9
+extern int DataGlobal_87F8CC;  // data: 0x87f8cc
+extern int DataGlobal_87F8D0;  // data: 0x87f8d0
+
+// G23 W0b global completion (auto-generated)
+extern int DataGlobal_844A2C;  // data: 0x844a2c
+extern int DataGlobal_844A34;  // data: 0x844a34
+extern int DataGlobal_844A3C;  // data: 0x844a3c
+extern int DataGlobal_844A48;  // data: 0x844a48
+
+// G23 W0b global completion (auto-generated)
+extern int DataGlobal_82076C;  // data: 0x82076c
+extern int DataGlobal_B78170;  // data: 0xb78170
