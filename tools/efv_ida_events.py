@@ -117,9 +117,11 @@ _VTABLE_RHS = _re.compile(r'=\s*[^;=]*?(?:`vftable\'|\?\?_7|\bvt_[A-Za-z])')
 
 def _is_vtable_write(text, pos):
     """True when the write starting at `pos` (just past the member access)
-    assigns a vtable symbol."""
+    assigns a vtable symbol. The trailing `;` is OPTIONAL: leaf() runs on
+    per-block fragments (extract_events_into) whose cut may fall before the
+    statement's semicolon."""
     tail = text[pos:pos + 160]
-    m = _re.match(r'\s*=[^;]{0,120};', tail)
+    m = _re.match(r'\s*=[^;]{0,120}', tail)
     if not m:
         return False
     return bool(_VTABLE_RHS.search(m.group(0)))

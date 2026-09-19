@@ -100,6 +100,18 @@ public:
     bool DeployedCrushable;
     bool UseOwnName;
     bool JumpJetTurn;
+    // --- G22 dtor-write-map members (binary offsets 3644-3733; layout debt
+    //     accepted per 09-07 ruling -- verify offsets come from member_lookup) ---
+    void* RecordTable;              // 0xE3C: new(0x5E8) 42x36B records (ctor 0x5236a0)
+    void* DeadBodies_Items;         // TypeList<AnimTypeClass const*> embed @3664
+    int DeadBodies_Capacity;        // @3672
+    unsigned char DeadBodies_FlagByte;   // @3677 (+13 IsAllocated)
+    void* DeathAnims_Items;         // embed @3692
+    int DeathAnims_Capacity;        // @3700
+    unsigned char DeathAnims_FlagByte;   // @3705
+    void* VoiceComment_Items;       // TypeList<int> embed @3720
+    int VoiceComment_Capacity;      // @3728
+    unsigned char VoiceComment_FlagByte; // @3733
     DWORD align_ECC;
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
@@ -128,5 +140,22 @@ public:
     int DTOR();  // 0x5239D0（删除式析构：4 重 vfptr 安装 + 全局类型数组自摘 + 三向量清理 + 尾调 TechnoTypeClass::DTOR）
 // --- e4 declarations (END) ---
 };
+
+// G22 E1: InfantryTypes registry (0xA8E348; ctor register / dtor compaction).
+// Shim struct: binary embed layout (vfptr/Items/Cap/Flags/Count/CapInc); the
+// registry's dynamic type is fixed, so the direct FindItemIndex call targets
+// the same slot-16 implementation the virtual dispatch would reach.
+struct InfantryTypesVector_Shim
+{
+    void* VfptrUnused;
+    InfantryTypeClass** Items;
+    int Capacity;
+    unsigned char FlagsByte[4];
+    int Count;
+    int CapacityIncrement;
+    int FindItemIndex(InfantryTypeClass** item);  // slot16 target (per-T instantiation)
+};
+
+extern InfantryTypesVector_Shim g_InfantryTypes;  // data: 0xA8E348
 
 } // namespace gamemd

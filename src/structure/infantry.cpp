@@ -2702,161 +2702,49 @@ int InfantryClass::ProcessIdleAction()
 }
 
 // 0x5239d0
+// 0x5239d0
 int InfantryTypeClass::DTOR()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5239D0(int this)
-{
-  int v2; // eax
-  void *v3; // eax
-  void *v4; // eax
-  void *v5; // eax
-  int v7; // [esp+8h] [ebp-4h] BYREF
-
-  *(_DWORD *)this = &InfantryTypeClass::`vftable';
-  *(_DWORD *)(this + 4) = &InfantryTypeClass::`vftable';
-  *(_DWORD *)(this + 8) = &InfantryTypeClass::`vftable';
-  *(_DWORD *)(this + 12) = &InfantryTypeClass::`vftable';
-  AbstractClass::AnnounceExpiredPointer((void **)this, 1);
-  v7 = this;
-  v2 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xA8E348] + 16))(&MEMORY[0xA8E348], &v7);
-  if ( v2 != -1 && v2 < MEMORY[0xA8E358] && v2 < --MEMORY[0xA8E358] )
-  {
-    do
+    // 4x vftable installs (this+0/4/8/12): compiler-generated vptr writes --
+    // exempted on the IDA side (D1-6 #128 trivial-vocabulary, G22).
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    InfantryTypeClass* v7 = this;
+    int v2 = g_InfantryTypes.FindItemIndex(&v7);
+    if ( v2 != -1 && v2 < g_InfantryTypes_Count )
     {
-      ++v2;
-      *((_DWORD *)MEMORY[0xA8E34C] + v2 - 1) = *((_DWORD *)MEMORY[0xA8E34C] + v2);
+        --g_InfantryTypes_Count;
+        for ( ; v2 < g_InfantryTypes_Count ; *(g_InfantryTypes_Items + v2 - 1) = *(g_InfantryTypes_Items + v2) )
+        {
+            ++v2;
+        }
     }
-    while ( v2 < MEMORY[0xA8E358] );
-  }
-  __3_YAXPAX_Z(*(void **)(this + 3644));
-  *(_DWORD *)(this + 3644) = 0;
-  v3 = *(void **)(this + 3724);
-  *(_DWORD *)(this + 3720) = &VectorClass<int>::`vftable';
-  if ( v3 && *(_BYTE *)(this + 3733) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(_DWORD *)(this + 3724) = 0;
-  }
-  *(_BYTE *)(this + 3733) = 0;
-  *(_DWORD *)(this + 3728) = 0;
-  v4 = *(void **)(this + 3696);
-  *(_DWORD *)(this + 3692) = &VectorClass<AnimTypeClass const *>::`vftable';
-  if ( v4 && *(_BYTE *)(this + 3705) )
-  {
-    __3_YAXPAX_Z(v4);
-    *(_DWORD *)(this + 3696) = 0;
-  }
-  *(_BYTE *)(this + 3705) = 0;
-  *(_DWORD *)(this + 3700) = 0;
-  v5 = *(void **)(this + 3668);
-  *(_DWORD *)(this + 3664) = &VectorClass<AnimTypeClass const *>::`vftable';
-  if ( v5 && *(_BYTE *)(this + 3677) )
-  {
-    __3_YAXPAX_Z(v5);
-    *(_DWORD *)(this + 3668) = 0;
-  }
-  *(_BYTE *)(this + 3677) = 0;
-  *(_DWORD *)(this + 3672) = 0;
-  return TechnoTypeClass::DTOR(this);
-}
-
-/* ASM:
-push    ecx
-push    ebx
-push    esi
-mov     esi, ecx
-mov     dl, 1
-mov     dword ptr [esi], offset ??_7InfantryTypeClass@@6B@ ; const InfantryTypeClass::`vftable'
-mov     dword ptr [esi+4], offset ??_7InfantryTypeClass@@6B@_0 ; const InfantryTypeClass::`vftable'
-mov     dword ptr [esi+8], offset ??_7InfantryTypeClass@@6B@_1 ; const InfantryTypeClass::`vftable'
-mov     dword ptr [esi+0Ch], offset ??_7InfantryTypeClass@@6B@_2 ; const InfantryTypeClass::`vftable'
-call    AbstractClass__AnnounceExpiredPointer
-mov     edx, ds:0A8E348h
-lea     eax, [esp+0Ch+var_4]
-push    eax
-mov     ecx, 0A8E348h
-mov     [esp+10h+var_4], esi
-call    dword ptr [edx+10h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_523A40
-mov     ecx, ds:0A8E358h
-cmp     eax, ecx
-jge     short loc_523A40
-dec     ecx
-cmp     eax, ecx
-mov     ds:0A8E358h, ecx
-jge     short loc_523A40
-
-loc_523A28:                             ; CODE XREF: InfantryClass__ProcessAnimation+6E↓j
-mov     ecx, ds:0A8E34Ch
-inc     eax
-mov     edx, [ecx+eax*4]
-mov     [ecx+eax*4-4], edx
-mov     ecx, ds:0A8E358h
-cmp     eax, ecx
-jl      short loc_523A28
-
-loc_523A40:                             ; CODE XREF: InfantryClass__ProcessAnimation+41↑j
-; InfantryClass__ProcessAnimation+4B↑j ...
-mov     eax, [esi+0E3Ch]
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-xor     ebx, ebx
-add     esp, 4
-mov     [esi+0E3Ch], ebx
-mov     eax, [esi+0E8Ch]
-cmp     eax, ebx
-mov     dword ptr [esi+0E88h], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
-jz      short loc_523A82
-cmp     [esi+0E95h], bl
-jz      short loc_523A82
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [esi+0E8Ch], ebx
-
-loc_523A82:                             ; CODE XREF: InfantryClass__ProcessAnimation+99↑j
-; InfantryClass__ProcessAnimation+A1↑j
-mov     [esi+0E95h], bl
-mov     [esi+0E90h], ebx
-mov     eax, [esi+0E70h]
-mov     dword ptr [esi+0E6Ch], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-cmp     eax, ebx
-jz      short loc_523AB9
-cmp     [esi+0E79h], bl
-jz      short loc_523AB9
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [esi+0E70h], ebx
-
-loc_523AB9:                             ; CODE XREF: InfantryClass__ProcessAnimation+D0↑j
-; InfantryClass__ProcessAnimation+D8↑j
-mov     [esi+0E79h], bl
-mov     [esi+0E74h], ebx
-mov     eax, [esi+0E54h]
-mov     dword ptr [esi+0E50h], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-cmp     eax, ebx
-jz      short loc_523AF0
-cmp     [esi+0E5Dh], bl
-jz      short loc_523AF0
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [esi+0E54h], ebx
-
-loc_523AF0:                             ; CODE XREF: InfantryClass__ProcessAnimation+107↑j
-; InfantryClass__ProcessAnimation+10F↑j
-mov     ecx, esi
-mov     [esi+0E5Dh], bl
-mov     [esi+0E58h], ebx
-call    TechnoTypeClass__DTOR
-pop     esi
-pop     ebx
-pop     ecx
-retn
-*/
+    OperatorDelete(this->RecordTable);
+    this->RecordTable = nullptr;
+    void* v3 = this->VoiceComment_Items;
+    if ( v3 && this->VoiceComment_FlagByte )
+    {
+        OperatorDelete(v3);
+        this->VoiceComment_Items = nullptr;
+    }
+    this->VoiceComment_FlagByte = 0;
+    this->VoiceComment_Capacity = 0;
+    void* v4 = this->DeathAnims_Items;
+    if ( v4 && this->DeathAnims_FlagByte )
+    {
+        OperatorDelete(v4);
+        this->DeathAnims_Items = nullptr;
+    }
+    this->DeathAnims_FlagByte = 0;
+    this->DeathAnims_Capacity = 0;
+    void* v5 = this->DeadBodies_Items;
+    if ( v5 && this->DeadBodies_FlagByte )
+    {
+        OperatorDelete(v5);
+        this->DeadBodies_Items = nullptr;
+    }
+    this->DeadBodies_FlagByte = 0;
+    this->DeadBodies_Capacity = 0;
+    return TechnoTypeClass::DTOR(this);
 }
 
 // 0x521320
