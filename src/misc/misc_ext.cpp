@@ -459,8 +459,9 @@ void MapSeedClass::AddRef()
 }
 
 // 0x597d50
-void MapSeedClass::ddtor()
+bool MapSeedClass::ddtor(char* lpFileName)
 {
+    return LoadOptions::ddtor(lpFileName);
 }
 
 // 0x597f80

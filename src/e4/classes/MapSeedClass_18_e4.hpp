@@ -8,7 +8,7 @@ struct MapSeedClass_18 {
     int GetCell(int a2);  // 0x5AC510
     char AddRef(int a2);  // 0x5ACA60
     char Release(int a2, unsigned int * a3);  // 0x5ACAA0
-    void ddtor();  // 0x5ACB50
+    bool ddtor(char* lpFileName);  // 0x5ACB50
     char SetCapacity(int a2, unsigned int * a3);  // 0x5ACBE0
     int FindItem(unsigned int * a2);  // 0x5ACC90
     VectorClass * QueryInterface(char a2);  // 0x5AD430
