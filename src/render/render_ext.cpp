@@ -23,7 +23,10 @@ void BlitPlainXlatAlpha_ushort::QueryInterface() {}
 // 0x495730
 void BlitTransLucent25AlphaZReadWarp_ushort::AddRef() {}
 // 0x495840
-void BlitTransLucent25AlphaZReadWarp_ushort::ddtor() {}
+int BlitTransLucent25AlphaZReadWarp_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x495870
 void BlitTransLucent25AlphaZReadWarp_ushort::BlitRect() {}
 // 0x4958a0
@@ -36,7 +39,10 @@ void BlitTransLucent25AlphaZReadWarp_ushort::Blit() {}
 // 0x495f00
 void BlitTransLucent25AlphaZReadWrite_ushort::AddRef() {}
 // 0x496010
-void BlitTransLucent25AlphaZReadWrite_ushort::ddtor() {}
+int BlitTransLucent25AlphaZReadWrite_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x496040
 void BlitTransLucent25AlphaZReadWrite_ushort::BlitRect() {}
 // 0x496070
@@ -49,7 +55,10 @@ void BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Xlat() {}
 // 0x495250
 void BlitTransLucent25AlphaZRead_ushort::AddRef() {}
 // 0x495360
-void BlitTransLucent25AlphaZRead_ushort::ddtor() {}
+int BlitTransLucent25AlphaZRead_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x495390
 void BlitTransLucent25AlphaZRead_ushort::BlitRect() {}
 // 0x4953c0
@@ -78,7 +87,10 @@ void BlitTransLucent25Alpha_ushort::Blit_ZRead_AlphaBlend() {}
 // 0x495590
 void BlitTransLucent50AlphaZReadWarp_ushort::AddRef() {}
 // 0x4956a0
-void BlitTransLucent50AlphaZReadWarp_ushort::ddtor() {}
+int BlitTransLucent50AlphaZReadWarp_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x4956d0
 void BlitTransLucent50AlphaZReadWarp_ushort::BlitRect() {}
 // 0x495700
@@ -91,7 +103,10 @@ void BlitTransLucent50AlphaZReadWarp_ushort::Blit() {}
 // 0x495d60
 void BlitTransLucent50AlphaZReadWrite_ushort::AddRef() {}
 // 0x495e70
-void BlitTransLucent50AlphaZReadWrite_ushort::ddtor() {}
+int BlitTransLucent50AlphaZReadWrite_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x495ea0
 void BlitTransLucent50AlphaZReadWrite_ushort::BlitRect() {}
 // 0x495ed0
@@ -104,7 +119,10 @@ void BlitTransLucent50AlphaZReadWrite_ushort::Blit() {}
 // 0x4950c0
 void BlitTransLucent50AlphaZRead_ushort::AddRef() {}
 // 0x4951c0
-void BlitTransLucent50AlphaZRead_ushort::ddtor() {}
+int BlitTransLucent50AlphaZRead_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x4951f0
 void BlitTransLucent50AlphaZRead_ushort::BlitRect() {}
 // 0x495220
@@ -133,7 +151,10 @@ void BlitTransLucent50Alpha_ushort::Blit() {}
 // 0x4953f0
 void BlitTransLucent75AlphaZReadWarp_ushort::AddRef() {}
 // 0x495500
-void BlitTransLucent75AlphaZReadWarp_ushort::ddtor() {}
+int BlitTransLucent75AlphaZReadWarp_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x495530
 void BlitTransLucent75AlphaZReadWarp_ushort::BlitRect() {}
 // 0x495560
@@ -146,7 +167,10 @@ void BlitTransLucent75AlphaZReadWarp_ushort::Blit() {}
 // 0x495bc0
 void BlitTransLucent75AlphaZReadWrite_ushort::AddRef() {}
 // 0x495cd0
-void BlitTransLucent75AlphaZReadWrite_ushort::ddtor() {}
+int BlitTransLucent75AlphaZReadWrite_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x495d00
 void BlitTransLucent75AlphaZReadWrite_ushort::BlitRect() {}
 // 0x495d30
@@ -159,7 +183,10 @@ void BlitTransLucent75AlphaZReadWrite_ushort::Blit() {}
 // 0x494f20
 void BlitTransLucent75AlphaZRead_ushort::AddRef() {}
 // 0x495030
-void BlitTransLucent75AlphaZRead_ushort::ddtor() {}
+int BlitTransLucent75AlphaZRead_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x495060
 void BlitTransLucent75AlphaZRead_ushort::BlitRect() {}
 // 0x495090
@@ -188,7 +215,10 @@ void BlitTransLucent75Alpha_ushort::Blit() {}
 // 0x4958d0
 void BlitTransXlatAlphaZReadWrite_ushort::AddRef() {}
 // 0x4959c0
-void BlitTransXlatAlphaZReadWrite_ushort::ddtor() {}
+int BlitTransXlatAlphaZReadWrite_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x4959f0
 void BlitTransXlatAlphaZReadWrite_ushort::BlitRect() {}
 // 0x495a20
@@ -214,7 +244,10 @@ void BlitTransXlatAlphaZRead_ushort::BlitAlpha() {}
 // 0x495a50
 void BlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef() {}
 // 0x495b30
-void BlitTransZRemapXlatAlphaZReadWrite_ushort::ddtor() {}
+int BlitTransZRemapXlatAlphaZReadWrite_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x495b60
 void BlitTransZRemapXlatAlphaZReadWrite_ushort::BlitRect() {}
 // 0x495b90
@@ -227,7 +260,10 @@ void BlitTransZRemapXlatAlphaZReadWrite_ushort::Blit() {}
 // 0x494d90
 void BlitTransZRemapXlatAlphaZRead_ushort::AddRef() {}
 // 0x494e90
-void BlitTransZRemapXlatAlphaZRead_ushort::ddtor() {}
+int BlitTransZRemapXlatAlphaZRead_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x494ec0
 void BlitTransZRemapXlatAlphaZRead_ushort::BlitRect() {}
 // 0x494ef0
@@ -240,7 +276,10 @@ void BlitTransZRemapXlatAlphaZRead_ushort::Blit() {}
 // 0x493f30
 void BlitTransZRemapXlatAlpha_ushort::AddRef() {}
 // 0x493ff0
-void BlitTransZRemapXlatAlpha_ushort::ddtor() {}
+int BlitTransZRemapXlatAlpha_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x494020
 void BlitTransZRemapXlatAlpha_ushort::BlitRect() {}
 // 0x494050
