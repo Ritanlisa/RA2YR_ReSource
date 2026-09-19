@@ -3296,6 +3296,14 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   ③off_7F4934 第 4 接口 vtable 安装不在豁免词表（off_ ≠ vt_）→ 事件面对位=
   vtable3 复位写（install 链编译器管理，死存储语义无害）。ml +9 向量成员
   （vecTechno/vecInt/vecAbs 三组 Items/Capacity/IsAllocated）。
+- **SmudgeType/TerrainType ddtor ✅ ×2（11,833）**：fastcall 怪态签名重整
+  （`(void** this, AbstractClass*, char)` → `(AbstractClass*, char)`）+ Image@164
+  清理 + 注册表段未解析名静默对称（InfantryTypeClass 先例泛化：cpp 侧全局解析
+  =signals.globals 名键，hpp extern 不参与→未解析名即静默）。
+- **BuildingLight SDDTOR 挂起**：事件 7 读对位完成（recv×2+count×3+items×2，
+  blob 渲染基址提取），do-while/for 两形态块集均对齐但**边拓扑差**（IDA
+  && 链 cond2 落入 fallthrough 块 vs cpp 三分支链）——需边级规范化迭代，
+  diff 数据留 .omo/bl_blocks.txt。
 - **dtor 队列终态分诊（余 15 全部 H5 手动档）**：TechnoClass::DTOR（20 写×12 调大件）/
   AnimFile（成员阵列-heavy）/ IPXManager _vt03（包服务循环=误名实函数）/
   MSFont _vt03（文本绘制）/ GraphicMenuImageItem _vt03（NullGuard+CCFile 链）/
