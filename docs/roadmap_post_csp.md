@@ -3355,6 +3355,9 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   UnitClass TF=计数增减器（栈参签名手术 int* a2,int a3 全静默）。
   Enum×2 复核：全空签名块的图同构检验下 goto 棱形无法结构化克隆——
   G21 goto 族排除政策终验成立（永久挂起件）。
+- **AnimFile 终验（dtor 队列战役终结）**：LABEL_42/41 跳出扫描环=与 Enum×2
+  同族的 goto 图同构问题，结构化重写不可达——永久挂起。**dtor 族 126 件队列
+  终态：收割 123 / goto 永久挂起 3（AnimFile+Enum×2）**。
 - **dtor 队列终态分诊（余 15 全部 H5 手动档）**：TechnoClass::DTOR（20 写×12 调大件）/
   AnimFile（成员阵列-heavy）/ IPXManager _vt03（包服务循环=误名实函数）/
   MSFont _vt03（文本绘制）/ GraphicMenuImageItem _vt03（NullGuard+CCFile 链）/
