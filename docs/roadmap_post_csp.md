@@ -3231,3 +3231,48 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   （11 TypeList 嵌入字段，基座名已有：VoiceFeedback/MoveSound/DieSound/...，
   字段名=基座+角色后缀）；g_AbstractClassArray/g_TechnoTypes 已定谳。
 - 提交链：54e0805e → dade4cff → afed9740 → e1cf2181，tag 随每步重锚。
+
+### G22 执行续二：dtor 族批量收割 + E1 收官 + A3 舰队波（净增 +45 → 11,765）
+
+- **Cleanup-shape 复盘与重做（×7，commit 8bb78bc9）**：G22 早前批量 7/7 FAIL
+  根因三连——①生成器产出四冒号畸形 `Cls::::ddtor`（signals 名拆分 bug）；
+  ②插入逻辑覆盖 `BridgeClass::GetCellData` 存根（数据丢失事故）；③0x74f4b0
+  记录名 `?::ddtor` 非法类名。重做配方：**就地替换基线空存根体**（非新定义）
+  + `?::ddtor`→`_::ddtor` signals 纠名（对齐 __e4.hpp E2 声明，`_` 为合法
+  C++ 标识符）。ml+mbn 补 4 类 {4:Items, 8:Capacity, 13:IsAllocated}（7 cache
+  伪码同构=二进制铁证）。
+- **GUID_writer ×5（827f6853）**：E_POINTER+GUID 写入族，签名手术
+  `int(a1,_DWORD* a2)` 对齐 cache（记录名 ddtor vs 体=QI 族，槽位误名债不阻翻
+  译）；0x4a0a50/0x4a00b0 goto 族排除、0x4a3110 __userpurge 大件另案。
+- **wave3 ×3（29c51e18）**：Timer::GetTicks 调用件、_vt08 setter 件、
+  VectorClass_ParticleClass 子对象 ctor 形态（**OperatorNew cache 手术 +
+  _by_name 别名**——镜像 OperatorDelete 先例；vfptr-install 豁免实战生效）。
+- **Blit/Convert 蹦床 ×20（fc48ea86 + a9cfdced）**：`?$Blit*@G` 仿函数族
+  槽位考古法——**signatures 里 vt+12=蹦床自身地址 反查 vtable 基址** → slot+4
+  =AddRef（14+6 类 uniform）→ cpp `this->AddRef(a2..a8,0)` 语义调用 =
+  CALL(vfptr+4) 对称。vtable_offsets +20 类。9 参垃圾渲染（Hex-Rays 类型失配）
+  不影响事件面。
+- **x3 Cleanup-variant（e918cc66）**：BaseClass/unknown/ToolTipClass（局部指针
+  中转 + Count@16 清零；G21 对称规则的 clean 应用）。
+- **A3 舰队波（85661e73）**：gap2 全桶 14 文件 1,161 pending 直驱——净 +6
+  （system 4 + object/entity 各 1），FAIL 29 自动回滚。**结论：机械规则线已
+  榨干**，剩余主体 = member@N?Class（ml 缺口）/slot@N?Class（vtable 审计面）/
+  too-long（H5 手动档）。
+- **E1 收官（a57bc09d）**：5 区 804 全局已被 G5 DataGlobal 覆盖（0 垃圾名，
+  **issue #67-#71 主体陈旧已 resolve**）——E1 真实剩余=补缺：0x848628
+  （MapSize 表 [] 形态）+ B1D010-B1D09C 36 dwords（scalar uint；#107 解锁前提）
+  落 e4_globals.hpp。#44/#45/#70 同批 resolve。
+- **CellClass::DTOR 大件 ✅（0x47bb60，+1）**：vfptr×4 豁免 +
+  **CellAttachedStub 合成接收者**（foreign-receiver 静默对称文法：local 接收者
+  `v2->Delete(1)` 双侧零事件）+ `unsigned int *v4` 退化下标 `--v4[101]`（局部
+  基静默对称）+ mbn/ml 228/324 漂移以别名 firstLink 绕行（#53 cell.hpp -36 族
+  活体样本，不改争议名）。
+- **#114 活体样本定谳（issue #131）**：CounterClass for-inc 槽
+  `this->M[i]=v` cpp=WRITE(member,off) vs IDA=READ(member,off)+静默解引——
+  统一词汇需类型上下文裁决（方案 a/b + 全池回归风险已记账），ml 已备即收割。
+- **门控后台核验**：check_translated_functions 全 FAIL 项 = 行数启发式对既有
+  存根/2 行真翻的误报 + 文件内既有 stub——重锚清零，无新违规类别。
+- 口径：completed **11,765** / dtor 族队列余 79 单件 / 提交链 8bb78bc9 →
+  827f6853 → 29c51e18 → fc48ea86 → a9cfdced → e918cc66 → 85661e73 →
+  a57bc09d。注：前三单提交消息的 11,733/11,738/11,741 为基线算术笔误（+6），
+  真实里程碑 11,727/11,732/11,735，以 signals 为准。
