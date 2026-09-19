@@ -3232,7 +3232,7 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   字段名=基座+角色后缀）；g_AbstractClassArray/g_TechnoTypes 已定谳。
 - 提交链：54e0805e → dade4cff → afed9740 → e1cf2181，tag 随每步重锚。
 
-### G22 执行续二：dtor 族批量收割 + E1 收官 + A3 舰队波（净增 +49 → 11,769）
+### G22 执行续二：dtor 族批量收割 + E1 收官 + A3 舰队波（净增 +62 → 11,782）
 
 - **Cleanup-shape 复盘与重做（×7，commit 8bb78bc9）**：G22 早前批量 7/7 FAIL
   根因三连——①生成器产出四冒号畸形 `Cls::::ddtor`（signals 名拆分 bug）；
@@ -3272,7 +3272,16 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   统一词汇需类型上下文裁决（方案 a/b + 全池回归风险已记账），ml 已备即收割。
 - **门控后台核验**：check_translated_functions 全 FAIL 项 = 行数启发式对既有
   存根/2 行真翻的误报 + 文件内既有 stub——重锚清零，无新违规类别。
-- 口径：completed **11,769** / dtor 族队列余 76 单件（79 含 fleet 尾计修正差 -3） / 提交链 8bb78bc9 →
+- **Type 族 SDDTOR ×11（363627dd + 补标 ×2）**：注册表自摘配方定型——
+  ①事件驱动生成（recv×2/count×3/items×2 精确配平）；②声明名走 hpp 真名
+  （g_AnimPoolManager 族/BulletTypeClass_Array/VoxelAnimTypeClass_Array/
+  g_MultiplayerPool——DataGlobal_* 假设名会静默失配）；③**do-while 自回边
+  形态**（G21 for-form 教训的逆方向：IDA 渲染 do-while 时 cpp 必须真 do-while，
+  for-form 反而块错位）；④`Cls *blk = this;` 局部对称（**Block 撞真全局
+  0x87C484 教训**——局部名走小写）；⑤OperatorDelete/OperatorNew cache 手术。
+- 口径：completed **11,782** / dtor 族队列余 64
+  （下一既定批量 = TClassFactory 族 ×13 签名手术：0 参数记录 vs 3 栈参
+  CreateInstance 形态 arg4/a3/v8 + OperatorNew cache 手术） / 提交链 8bb78bc9 →
   827f6853 → 29c51e18 → fc48ea86 → a9cfdced → e918cc66 → 85661e73 →
   a57bc09d。注：前三单提交消息的 11,733/11,738/11,741 为基线算术笔误（+6），
   真实里程碑 11,727/11,732/11,735，以 signals 为准。
