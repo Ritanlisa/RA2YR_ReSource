@@ -15334,3 +15334,26 @@ struct Campaign_WorldDominationTour_24_ { _DWORD* ddtor(); };  // 0x765b50 (G22 
 struct CellAttachedStub { void* vfptr; void Delete(int); };  // 0x47BB60/0x47BB8C receiver stub (G22 CellClass::DTOR)
 
 struct MapSizeOptStub;  // 0x767800 arg chain stub (G22)
+
+// G23 W0b global completion (auto-generated)
+extern int DataGlobal_AFA284;  // data: 0xafa284
+extern int DataGlobal_AFA28C;  // data: 0xafa28c
+extern int DataGlobal_AFA418;  // data: 0xafa418
+
+// G23 W0b global completion (auto-generated)
+extern int DataGlobal_83F068;  // data: 0x83f068
+extern int DataGlobal_83F078;  // data: 0x83f078
+extern int DataGlobal_83F08C;  // data: 0x83f08c
+extern int DataGlobal_83F09C;  // data: 0x83f09c
+extern int DataGlobal_83F0A8;  // data: 0x83f0a8
+extern int DataGlobal_83F0B8;  // data: 0x83f0b8
+extern int DataGlobal_83F0C4;  // data: 0x83f0c4
+extern int DataGlobal_83F0CC;  // data: 0x83f0cc
+extern int DataGlobal_83F0D0;  // data: 0x83f0d0
+extern int DataGlobal_83F0E8;  // data: 0x83f0e8
+extern int DataGlobal_83F0F4;  // data: 0x83f0f4
+extern int DataGlobal_83F100;  // data: 0x83f100
+extern int DataGlobal_83F384;  // data: 0x83f384
+
+// G23 W0b global completion (auto-generated)
+extern int DataGlobal_A8ED7C;  // data: 0xa8ed7c
