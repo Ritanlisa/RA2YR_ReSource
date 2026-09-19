@@ -171,3 +171,24 @@ GetFireError 基类版（400 行公共开火裁决，误名 ReadINI）+ 槽 444=
 [ ] P2 H5 填充（余 11，批量线完成后才做）
 [ ] 收尾六件套 + 净增计数入日志首行 + 提交 + tag 重锚
 ```
+
+
+---
+
+## G22 执行记录（2026-09-19 会话，吞吐台账）
+
+**净增 completed：+0**（归因：本会话为 D1 执行批量解锁线——全部产出为解锁面，
+按配额制第 3 条单独折算）。
+
+| 项 | 结果 |
+|---|---|
+| W0 全池复跑 | ✅ **11,711 PASS / 0 FAIL**（42 分钟，基线全绿维持） |
+| 裁决 1 W0b 执行 | ✅ **_gap2 TU def 层首次全合法**：519 合成类 struct 声明（Gap2Recv_*/Gap2Free_*）+ 5 类内插入（MapSeedClass×3/ParticleClass::Update/VeinholeMonsterClass::Update）+ 3 垃圾类名重命名（`__int8::X` signals 污染 → Gap2Recv_*，signals+cpp+hpp 三方同步）；编译验收：C2653×518 清零，残余错误全部 = pending 块伪码基线债 + include 链债（与其他 gap2 TU 同态）。**535 函数解锁（翻译可推进）**；hpp 重生成脚本 `.omo/g22_gap2_declare.py`（幂等） |
+| 裁决 6 实施 | ✅ efv_ida_events.py leaf() 后置过滤器 `_is_vtable_write`（RHS=`vftable'/??_7/vt_` 的 WRITE(member,N) 丢弃）；dry 统计 completed 零命中 = 基线无风险；W0 与过滤器共存全绿验证 |
+| 裁决 3 dry 统计 | ✅ `.omo/g22_dry_114_128.json`：address-of 形态 865 函数/1,638 处（已在验证通过集=已被处理）；下标形态 114 函数（词汇缺口真面）；#128 vfptr-install completed 零命中 |
+| E1 定向切片 | ✅ g_InfantryTypes(0xA8E348)/Items(0xA8E34C)/Count(0xA8E358) xref 定谳命名（Constructor 注册/39 处 Items 读/41 处 Count 界）+ OperatorDelete(0x7c8b3d ??3_YAXPAX_Z) 命名+memory.hpp 声明 |
+| DTOR×2 翻译 | ⏸ 精确阻塞入 **#129**：①D1-6b vcall-on-global 词汇（FindIndex 槽16 全局接收者）②InfantryTypeClass 尾区四源重建（hpp 指针模型 vs 二进制内嵌 TypeList 冲突，#122 式）③TechnoTypeClass 块已 til 命名态（6b 后即翻）|
+| GetResourceID 族 | 📌 隐藏阻塞（#129）：`this==小整数` 比较需 ptr→int 转换，门禁全禁，两侧零事件但 cpp 不可表达 |
+| B3 重扫 | 📌 粗扫物料（free_this 1276 含伪码 this 噪声/ida_ism 830/byref 1278）——需 G14 sigfix 工具精分类，后置 |
+
+**提交**：54e0805e（计划+裁决）→ dade4cff（D1 执行），tag 两度重锚。

@@ -3192,3 +3192,26 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   InfantryTypeClass::DTOR + TechnoTypeClass::DTOR 同形态。
 - 执行排程：即时=裁决 1 重生成+B1 直驱+裁决 3/6 dry 实施；次会话=裁决 2 台账+
   5 现场仲裁+4 建模复核。g22_prep.md D1 节已重写为定谳记录；AGENTS 接手指引 #4 同步。
+
+## 执行日志 — 2026-09-19 G22 D1 执行会话：裁决1 W0b 落地 + 裁决6 词汇实施 + E1 定向切片（净增 +0，解锁面记账）
+
+> 用户指令"直接开始工作直到全部做完"。按吞吐配额制执行 D1 裁决序。
+> **净增 +0 归因**：本会话产出全部为解锁面（配额制第 3 条折算）——W0b 批量线
+> 535 函数解锁 + #128 第一层词汇 + E1 切片 4 命名。
+
+- **W0**：11,711 PASS / 0 FAIL（42 分钟）——基线全绿维持（过滤器共存验证）。
+- **裁决 1 W0b ✅**：_gap2 TU def 层首次全合法。系统性缺陷实证 = 519 合成类
+  （Gap2Recv_* 等）被 cpp def 引用但全库零声明 + hpp 误发自由声明（C2653×518）。
+  修复 = `.omo/g22_gap2_declare.py`（幂等）：519 struct + 5 类内插入 +
+  3 垃圾类名重命名（`__int8::X` signals 名污染）。成员形态 = thiscall ABI 忠实
+  （this=ECX 隐式）；def 签名已带栈参（#50 实证）。编译验收：C2653 清零，
+  残余 = 伪码基线债（同态）。**535 函数解锁。**
+- **裁决 6 ✅**：efv_ida_events.py `_is_vtable_write` 后置过滤器（WRITE(member,N)
+  RHS 为 vtable 符号时丢弃）；dry 统计 completed 零命中=无风险；W0 共存全绿。
+- **裁决 3 dry**：address-of 865 函数已处理；下标形态 114 函数 = 真缺口面
+  （词汇实施待 DTOR 族后）。
+- **E1 切片**：g_InfantryTypes/Items/Count + OperatorDelete 四命名落地。
+- **DTOR×2 ⏸ #129**：D1-6b vcall-on-global 词汇 spec + InfantryTypeClass 尾区
+  四源重建（hpp 指针模型 vs 内嵌 TypeList 冲突）；TechnoTypeClass 块已 til 命名态。
+- **GetResourceID 族 📌**：this==小整数比较 ptr→int 门禁全禁（#129 独立记账）。
+- 提交：54e0805e（计划+六裁决定谳）→ dade4cff（D1 执行）。
