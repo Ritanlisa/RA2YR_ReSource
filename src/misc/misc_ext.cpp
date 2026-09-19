@@ -2082,8 +2082,69 @@ void MSFont::Create()
 }
 
 // 0x5d3330
-void MSFont::ddtor()
+short MSFont::ddtor(int a2, unsigned short *a3, int a4, int a5, int a6)
 {
+    int v17[2];
+    unsigned int v18[4];
+    unsigned char v19[16];
+    unsigned int v8;
+    unsigned short *v6;
+    int v16;
+    int v9;
+    int v10;
+    int v11;
+    int *v12;
+    char v13;
+    v13 = 0;
+    unsigned int u8 = 0;
+    v6 = a3;
+    v16 = a4;
+    u8 = *a3;
+    if ( *a3 )
+    {
+        do
+        {
+            if ( (unsigned short)u8 == 10 )
+            {
+                u8 = this->lineSpacing + a5;
+                v16 = a4;
+                a5 = u8;
+            }
+            else
+            {
+                if ( (unsigned __int16)u8 > 0x20u )
+                {
+                    char szSrc;
+                    char szDst;
+                    szSrc = *(char *)v6;
+                    CharToOemBuffA(&szSrc, &szDst, 1u);
+                    v9 = szDst - 33;
+                    if ( szDst == 33 )
+                    {
+                        v9 = 0;
+                    }
+                    else if ( v9 >= 216 )
+                    {
+                        v9 = 216;
+                    }
+                    v10 = 3 * v9;
+                    v11 = *Building::GetFoundationSize(v18, 3 * v9 + 2);
+                    v17[1] = a5;
+                    v17[0] = v16 - v11;
+                    v12 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)a2 + 120))(a2, v19);
+                    DrawToSurfaceSHP(a2, this->texHeight, this->texWidth, a6 + v10, v17, v12, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+                    v6 = a3;
+                }
+                u8 = *v6;
+                u8 = this->CharWidth(u8);
+                v16 += u8;
+            }
+            u8 = v6[1];
+            a3 = ++v6;
+        }
+        while ( (unsigned short)u8 );
+    }
+    return u8;
 }
 
 // 0x5cb880
