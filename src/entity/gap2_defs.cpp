@@ -11957,36 +11957,33 @@ LABEL_122:
 
 // 0x5B35E0
 namespace gamemd { int MissionClass::QueueMission() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::MissionDispatch(#377 *this)
 {
-  int result; // eax
-  int v3; // ecx
-  int v4; // ecx
-  int v5; // [esp+8h] [ebp+4h]
-  char v6; // [esp+Ch] [ebp+8h]
-
-  result = v5; /*0x5b35e0*/
-  v3 = *((_DWORD *)this + 43); /*0x5b35e7*/
-  if ( (v3 != 28 || v5 != 5) && v3 != 19 ) /*0x5b35fa*/
+    int result;
+    int v3;
+    int v4;
+    int v5;
+    char v6;
+    result = v5;
+    v3 = this->currentMission;
+    if ( (v3 != 28 || v5 != 5) && v3 != 19 )
   {
-    if ( v5 != -1 ) /*0x5b35ff*/
+    if ( v5 != -1 )
     {
-      if ( v3 != v5 || (v4 = *((_DWORD *)this + 45), v4 != v5) && v4 != -1 ) /*0x5b3612*/
+    if ( v3 != v5 || (v4 = this->queuedMission, v4 != v5) && v4 != -1 )
       {
-        *((_DWORD *)this + 45) = v5; /*0x5b3614*/
-        *((_BYTE *)this + 184) = 0; /*0x5b361a*/
+    this->queuedMission = v5;
+    this->missionQueued = 0;
       }
     }
-    LOBYTE(result) = v6; /*0x5b3621*/
-    if ( v6 ) /*0x5b3627*/
+    LOBYTE(result) = v6;
+    if ( v6 )
     {
-      result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 512))(this); /*0x5b362d*/
-      if ( (_BYTE)result ) /*0x5b3635*/
-        return (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 492))(this); /*0x5b363b*/
+    result = this->isMissionDone();
+    if ( (char)result )
+    return this->nextMission();
     }
   }
-  return result; /*0x5b3641*/
+    return result;
 }
 } }
 

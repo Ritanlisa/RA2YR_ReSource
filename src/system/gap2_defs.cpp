@@ -9151,36 +9151,14 @@ void __thiscall ConvertClass::_vt01(
 }
 // 0x491460
 namespace gamemd { int ConvertClass::Release(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ConvertClass::_vt02(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49148a*/
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
 }
 } }
 // 0x491490
 namespace gamemd { int ConvertClass::Convert(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ConvertClass::_vt04(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4914ba*/
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
 }
 } }
 // 0x49E510
@@ -11209,17 +11187,14 @@ int __thiscall sub_4ADBA0(_DWORD *this, _DWORD *a2)
 } }
 // 0x4AE450
 namespace gamemd { int TacticalClass::Initialize() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4AE450(void *this)
 {
-  int v2; // eax
-
-  TheatreClass::InitView(); /*0x4ae453*/
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x4ae45d*/
-  v2 = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x4ae467*/
-  for ( dword_ABDC84 = 0; v2; v2 = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]) ) /*0x4ae478*/
-    TacticalClass::SetView(v2, 0, 0x10000, 0, 1000, 1000, 1000); /*0x4ae494*/
-  return (*(int (__thiscall **)(void *, int))(*(_DWORD *)this + 56))(this, 1); /*0x4ae4b0*/
+    int v2;
+    TheatreClass::InitView();
+    LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
+    v2 = LayerClass::CellIteratorNext(&DataGlobal_87F7E8);
+    for ( DataGlobal_ABDC84 = 0; v2; v2 = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) )
+    TacticalClass::SetView(v2, 0, 0x10000, 0, 1000, 1000, 1000);
+    return this->computeDistanceSquared(1);
 }
 } }
 // 0x4C6780
@@ -40982,10 +40957,8 @@ namespace gamemd { int INIEntry::LookupByName() {
 } }
 // 0x74ffc0
 bool VeterancyStruct::IsRookie() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_74FFC0(float *this)
 {
-  return *this >= 0.0 && *this < 1.0; /*0x74ffe3*/
+    return *(void**)this >= 0.0 && *(void**)this < 1.0;
 }
 }
 // 0x750080

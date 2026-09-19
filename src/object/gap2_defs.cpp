@@ -9684,34 +9684,27 @@ LABEL_7:
 
 // 0x6FBFA0
 namespace ra2 { namespace game { int TechnoClass::ExecuteMoveCommand() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass::ExecuteMoveCommand(#377 *this)
 {
-  ScreenCaptureCommandClass *result; // eax
-  void **v3; // ecx
-
-  if ( (*((_BYTE *)this + 1051) /*0x6fbfce*/
-     || (unsigned __int8)House::IsHumanPlayer(*((#375 **)this + 135))
-     || (result = (ScreenCaptureCommandClass *)g_hWnd) == 0)
-    && (result = (ScreenCaptureCommandClass *)ObjectClass::HandleSelection(this), (_BYTE)result) )
+    ScreenCaptureCommandClass *result;
+    void **v3;
+    if ( (this->isDiscoveredByCurrentPlayer || (unsigned char)House::IsHumanPlayer(*((HouseClass **)(this) + 135)) || (result = (ScreenCaptureCommandClass *)g_hWnd) == 0) && (result = (ScreenCaptureCommandClass *)ObjectClass::HandleSelection(this), (char)result) )
   {
-    v3 = (void **)*((_DWORD *)this + 13); /*0x6fbfd0*/
-    if ( v3 ) /*0x6fbfd5*/
-      TeamClass::Update_0(v3, 33, (AbstractClass *)this, *(IUnknown **)&MEMORY[0xB077F8].__pad_579C[6844], 0, 0); /*0x6fbfe4*/
-    if ( (unsigned __int8)House::IsHumanPlayer(*((#375 **)this + 135)) /*0x6fc001*/
-      || *(_BYTE *)(*(_DWORD *)(*((_DWORD *)this + 135) + 52) + 422) )
+    v3 = (void **)this->attachedTag;
+    if ( v3 )
+    TeamClass::Update_0(v3, 33, (AbstractClass *)this, *(IUnknown **)&g_OverlayTypeConfig.__pad_579C[6844], 0, 0);
+    if ( (unsigned char)House::IsHumanPlayer(*((HouseClass **)(this) + 135)) || *(char *)(*(int *)(this->owner + 52) + 422) )
     {
-      if ( g_MoveFeedback ) /*0x6fc012*/
-        (*(void (__thiscall **)(#377 *))(*(_DWORD *)this + 864))(this); /*0x6fc018*/
+    if ( g_MoveFeedback )
+    this->SelectRandomTarget();
     }
-    TechnoClass::IsProductionChainActive(this); /*0x6fc020*/
-    LOBYTE(result) = 1; /*0x6fc025*/
+    TechnoClass::IsProductionChainActive(this);
+    LOBYTE(result) = 1;
   }
-  else
+    else
   {
-    LOBYTE(result) = 0; /*0x6fc029*/
+    LOBYTE(result) = 0;
   }
-  return (int)result->__pad_0; /*0x6fc027*/
+    return (int)result->__pad_0;
 }
 } } }
 
