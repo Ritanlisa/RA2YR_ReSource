@@ -39358,3 +39358,15 @@ bool VectorClass_Wstring::SetCapacity(const char ** a2)
 }
 }
 } // namespace gamemd
+
+// 0x74f4b0
+void _::::ddtor()
+{
+    if ( this->Items && this->IsAllocated )
+    {
+        operator delete(this->Items);
+        this->Items = nullptr;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
+}

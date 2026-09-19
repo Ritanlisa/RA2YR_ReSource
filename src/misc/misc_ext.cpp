@@ -1069,9 +1069,16 @@ void BoolVector::Construct()
 {
 }
 
-// 0x42e820
-void BridgeClass::GetCellData()
+// 0x5c56e0
+void CoopCampaignVector::::ddtor()
 {
+    if ( this->Items && this->IsAllocated )
+    {
+        operator delete(this->Items);
+        this->Items = nullptr;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 
 // 0x50e450
@@ -4335,3 +4342,36 @@ NeuronClass::NeuronClass() {}
 
 WorldDominationTour::WorldDominationTour() {}
 } // namespace gamemd
+// 0x40cdc0
+void ObjectVector::::ddtor()
+{
+    if ( this->Items && this->IsAllocated )
+    {
+        operator delete(this->Items);
+        this->Items = nullptr;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
+}
+// 0x42fab0
+void BaseNodeClass_Vector::::ddtor()
+{
+    if ( this->Items && this->IsAllocated )
+    {
+        operator delete(this->Items);
+        this->Items = nullptr;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
+}
+// 0x4e0410
+void AbstractClassVector::::ddtor()
+{
+    if ( this->Items && this->IsAllocated )
+    {
+        operator delete(this->Items);
+        this->Items = nullptr;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
+}
