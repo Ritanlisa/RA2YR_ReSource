@@ -7,7 +7,10 @@ namespace gamemd {
 // 0x493cc0
 void BlitPlainXlatAlpha_ushort::AddRef() {}
 // 0x493d60
-void BlitPlainXlatAlpha_ushort::ddtor() {}
+int BlitPlainXlatAlpha_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x493d90
 void BlitPlainXlatAlpha_ushort::Release() {}
 // 0x493dc0
@@ -59,7 +62,10 @@ void BlitTransLucent25AlphaZRead_ushort::Blit() {}
 // 0x494330
 void BlitTransLucent25Alpha_ushort::AddRef() {}
 // 0x494400
-void BlitTransLucent25Alpha_ushort::ddtor() {}
+int BlitTransLucent25Alpha_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x494430
 void BlitTransLucent25Alpha_ushort::BlitRect() {}
 // 0x494460
@@ -111,7 +117,10 @@ void BlitTransLucent50AlphaZRead_ushort::Blit() {}
 // 0x4941e0
 void BlitTransLucent50Alpha_ushort::AddRef() {}
 // 0x4942a0
-void BlitTransLucent50Alpha_ushort::ddtor() {}
+int BlitTransLucent50Alpha_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x4942d0
 void BlitTransLucent50Alpha_ushort::BlitRect() {}
 // 0x494300
@@ -163,7 +172,10 @@ void BlitTransLucent75AlphaZRead_ushort::Blit() {}
 // 0x494080
 void BlitTransLucent75Alpha_ushort::AddRef() {}
 // 0x494150
-void BlitTransLucent75Alpha_ushort::ddtor() {}
+int BlitTransLucent75Alpha_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
+}
 // 0x494180
 void BlitTransLucent75Alpha_ushort::BlitRect() {}
 // 0x4941b0

@@ -214,20 +214,7 @@ int __thiscall BlitTransXlatAlpha_ushort::_vt01(
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::_vt03(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-{
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x493eca*/
-           this,
-           a2,
-           a3,
-           a4,
-           a5,
-           a6,
-           a7,
-           a8,
-           0);
-}
+    return this->AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
 }
 } // namespace gamemd
 
