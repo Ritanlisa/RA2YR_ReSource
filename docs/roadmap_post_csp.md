@@ -3349,13 +3349,20 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   （`this->vec[6] = &vt_X` 的 [N] 破坏 IDA 豁免正则→真实 WRITE 必须镜像）、
   无下标安装省略（豁免丢弃）；④off_-RHS 写为真实事件保留。587 行最大件
   收割，验证器词汇无任何改动。
+- **MSFont ✅ / CStream ✅ / UnitClass TF ✅（11,843）**：MSFont=文本渲染
+  实函数（CharToOem/字体度量/SHP 绘制 8 事件配平，this->CharWidth=vfptr+4
+  槽名）；CStream=__userpurge 重整（Block 局部全静默+OperatorDelete 手术×4）；
+  UnitClass TF=计数增减器（栈参签名手术 int* a2,int a3 全静默）。
+  Enum×2 复核：全空签名块的图同构检验下 goto 棱形无法结构化克隆——
+  G21 goto 族排除政策终验成立（永久挂起件）。
 - **dtor 队列终态分诊（余 15 全部 H5 手动档）**：TechnoClass::DTOR（20 写×12 调大件）/
   AnimFile（成员阵列-heavy）/ IPXManager _vt03（包服务循环=误名实函数）/
   MSFont _vt03（文本绘制）/ GraphicMenuImageItem _vt03（NullGuard+CCFile 链）/
   BuildingLight SDDTOR（blob-member 渲染 7 读需 struct 型全局词汇）/
   UDP _vt03（8 参签名）/ SmudgeType+TerrainType（fastcall 2 形参怪态）/
   UDP ✅已收 / MapSize ✅已收（合成 MapSizeOptStub 链+globals 名键词汇）/
-  Counter ✅已收 / RulesClass::DTOR ✅已收（587 行最大件）/ AnimFile（187 行
+  Counter ✅已收 / RulesClass::DTOR ✅已收（587 行最大件）/ MSFont ✅已收 /
+  CStream ✅已收 / UnitClass TF ✅已收 / AnimFile（187 行
   goto 播放引擎）/ MSFont（文本渲染）/ CStreamClass（__userpurge）/ Enum×2
   （goto 族）/ UnitClass TF（寄存器参数）——余 7 件均需独立会话档
   （下一既定批量 = TClassFactory 族 ×13 签名手术：0 参数记录 vs 3 栈参
