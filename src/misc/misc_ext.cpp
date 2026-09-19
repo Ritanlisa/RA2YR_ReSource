@@ -181,8 +181,15 @@ void EMPulseClass::Stat()
 }
 
 // 0x4c59f0
-void EMPulseClass::ddtor()
+int EMPulseClass::ddtor(int a1, _DWORD *a2)
 {
+    if ( !a2 )
+        return -2147467261;
+    *a2 = -1205482718;
+    a2[1] = 298983438;
+    a2[2] = 1610656159;
+    a2[3] = 1490328072;
+    return 0;
 }
 
 // 0x4c5a30
@@ -1106,13 +1113,27 @@ void BuildLocationVector::Grow()
 }
 
 // 0x6301a0
-void C07EFB9C::ddtor()
+int C07EFB9C::ddtor(int a1, _DWORD *a2)
 {
+    if ( !a2 )
+        return -2147467261;
+    *a2 = 237448648;
+    a2[1] = 298949647;
+    a2[2] = -1610610249;
+    a2[3] = -777003740;
+    return 0;
 }
 
 // 0x645620
-void C07F0188::ddtor()
+int C07F0188::ddtor(int a1, _DWORD *a2)
 {
+    if ( !a2 )
+        return -2147467261;
+    *a2 = 1883112523;
+    a2[1] = 298979249;
+    a2[2] = 1610642049;
+    a2[3] = -1252326136;
+    return 0;
 }
 
 // 0x744600
@@ -1126,8 +1147,15 @@ void C07F5C70::StubReturn2280()
 }
 
 // 0x746de0
-void C07F5C70::ddtor()
+int C07F5C70::ddtor(int a1, _DWORD *a2)
 {
+    if ( !a2 )
+        return -2147467261;
+    *a2 = 237448650;
+    a2[1] = 298949647;
+    a2[2] = -1610610249;
+    a2[3] = -777003740;
+    return 0;
 }
 
 // 0x746e20
@@ -1326,8 +1354,15 @@ void ConnectionPointClass::Release()
 }
 
 // 0x4a05d0
-void ConnectionPointClass::ddtor()
+int ConnectionPointClass::ddtor(_DWORD *a1, _DWORD *a2)
 {
+    if ( !a2 )
+        return -2147467261;
+    *a2 = a1[1];
+    a2[1] = a1[2];
+    a2[2] = a1[3];
+    a2[3] = a1[4];
+    return 0;
 }
 
 // 0x4a0610
