@@ -3388,3 +3388,14 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   object 140、ui 122、addr7C 119。
 - **dtor 族战役终态**：126 队列 → 123 收割 / 3 goto 永久挂起（AnimFile+
   Enum×2，图同构不可达已终验）。
+
+
+### G22 H6 解锁线：洋葱剥层两轮（+11 → 11,852）
+- **第一轮**：舰队跳过原因中 26 个 (类,偏移) 对 → q 名 ml/mbn 批量入
+  （q 约定中性名，A1 轮可语义化升级）→ 舰队重跑 9 桶 +9
+  （system1/ui2/entity2/core2_2/app1/misc1）。
+- **第二轮**：新暴露层 6 成员+2 槽位（FileClass slot52/CCFileClass slot4
+  vtable_offsets）→ +2（system）。**收益递减确认**：深层 blocker 转移至
+  ternary/param-mismatch/raw-this-residue——归 H6 专项与 W0b。
+- 词汇：slot@N 跳过 = vtable_offsets 缺条目（'vtNNN': N 名键即解锁），
+  member@N = ml 缺条目——两类批量解锁配方已验证可复制。
