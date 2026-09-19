@@ -171,8 +171,9 @@ Phase ε 集成验收（≈2-4 会话）
 
 ## 附：权威源索引
 
-- **双分支总攻计划：`docs/dual_branch_plan.md`**（甲=词汇·批量·解锁线 / 乙=语义·考古·核心线；
-  文件所有权隔离 + signals 单写协议 + A1-A7/B1-B7 分段 + 7,267→0 全量分摊）
+- **分支甲计划：`docs/branch_A_plan.md`**（词汇·批量·解锁线 A1-A7；owns e4/gap2/misc/render/core/_generated+生成器+验证器；无头副本 IDA）
+- **分支乙计划：`docs/branch_B_plan.md`**（语义·考古·核心线 B1-B7；owns structure/object/type 等手写文件；主 IDA live）
+- 互不干扰契约：文件所有权 + signals 单写暂存协议 + 交替重锚（两文档各自自洽）
 
 - 下一会话细节：`docs/g22_prep.md`（吞吐配额制 + D1 集中包 + B1-B5）
 - 历史执行日志：`docs/roadmap_post_csp.md` 文末 G17-G22 节
