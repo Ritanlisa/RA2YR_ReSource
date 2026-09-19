@@ -71,12 +71,8 @@ signed int __thiscall Territory_WorldDominationTour_8_::_vt02(signed int *this)
 namespace gamemd {
 void Territory_WorldDominationTour_8::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Territory_WorldDominationTour_8_::_vt03(_DWORD *this)
-{
-  if ( *(this + 4) == -1 ) /*0x771957*/
-    *(this + 4) = Timer::GetTicks(); /*0x771961*/
-}
+    if ( this->Ticks == -1 )
+        this->Ticks = Timer::GetTicks();
 }
 } // namespace gamemd
 

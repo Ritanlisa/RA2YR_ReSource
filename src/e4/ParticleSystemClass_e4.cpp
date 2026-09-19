@@ -19,10 +19,23 @@ BOOL __thiscall ParticleSystemClass::_vt17(int this)
 
 // 0x630230
 namespace gamemd {
-int ParticleSystemClass_ddtor()
+_DWORD * ParticleSystemClass::ddtor(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// (no pseudocode — ASM-only function)
+    this->Items = 0;
+    this->Capacity = a2;
+    this->IsInitialized = 1;
+    this->IsAllocated = 0;
+    if ( a2 )
+    {
+        if ( a3 )
+        {
+            this->Items = a3;
+            return this;
+        }
+        this->Items = OperatorNew(4 * a2);
+        this->IsAllocated = 1;
+    }
+    return this;
 }
 } // namespace gamemd
 

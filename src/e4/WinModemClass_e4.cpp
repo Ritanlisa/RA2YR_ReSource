@@ -496,11 +496,8 @@ LABEL_21:
 // 0x7754A0
 int WinModemClass::ddtor(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WinModemClass::_vt08(_DWORD *this, int a2)
-{
-  *(this + 25) = a2; /*0x7754a4*/
-  return a2; /*0x7754a7*/
+    this->Member100 = a2;
+    return a2;
 }
 }
 
