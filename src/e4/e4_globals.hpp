@@ -4065,6 +4065,7 @@ extern unsigned char DataGlobal_846710[52];  // data: 0x846710
 extern unsigned char DataGlobal_846728[28];  // data: 0x846728
 extern unsigned char DataGlobal_846740[4];  // data: 0x846740
 extern unsigned char DataGlobal_8467FC[24];  // data: 0x8467FC
+extern unsigned int DataGlobal_848628[];  // data: 0x848628 (MapSize lookup table: index 4*byte+byte)
 extern unsigned char DataGlobal_8487BC;  // data: 0x8487BC
 extern unsigned char DataGlobal_8487BD;  // data: 0x8487BD
 extern unsigned char DataGlobal_8489C0[88];  // data: 0x8489C0
@@ -10846,6 +10847,42 @@ extern unsigned char DataGlobal_B1CFF0[4];  // data: 0xB1CFF0
 extern unsigned char DataGlobal_B1CFF8[4];  // data: 0xB1CFF8
 extern unsigned char DataGlobal_B1D000[4];  // data: 0xB1D000
 extern unsigned char DataGlobal_B1D008[4];  // data: 0xB1D008
+extern unsigned int DataGlobal_B1D010;  // data: 0xB1D010
+extern unsigned int DataGlobal_B1D014;  // data: 0xB1D014
+extern unsigned int DataGlobal_B1D018;  // data: 0xB1D018
+extern unsigned int DataGlobal_B1D01C;  // data: 0xB1D01C
+extern unsigned int DataGlobal_B1D020;  // data: 0xB1D020
+extern unsigned int DataGlobal_B1D024;  // data: 0xB1D024
+extern unsigned int DataGlobal_B1D028;  // data: 0xB1D028
+extern unsigned int DataGlobal_B1D02C;  // data: 0xB1D02C
+extern unsigned int DataGlobal_B1D030;  // data: 0xB1D030
+extern unsigned int DataGlobal_B1D034;  // data: 0xB1D034
+extern unsigned int DataGlobal_B1D038;  // data: 0xB1D038
+extern unsigned int DataGlobal_B1D03C;  // data: 0xB1D03C
+extern unsigned int DataGlobal_B1D040;  // data: 0xB1D040
+extern unsigned int DataGlobal_B1D044;  // data: 0xB1D044
+extern unsigned int DataGlobal_B1D048;  // data: 0xB1D048
+extern unsigned int DataGlobal_B1D04C;  // data: 0xB1D04C
+extern unsigned int DataGlobal_B1D050;  // data: 0xB1D050
+extern unsigned int DataGlobal_B1D054;  // data: 0xB1D054
+extern unsigned int DataGlobal_B1D058;  // data: 0xB1D058
+extern unsigned int DataGlobal_B1D05C;  // data: 0xB1D05C
+extern unsigned int DataGlobal_B1D060;  // data: 0xB1D060
+extern unsigned int DataGlobal_B1D064;  // data: 0xB1D064
+extern unsigned int DataGlobal_B1D068;  // data: 0xB1D068
+extern unsigned int DataGlobal_B1D06C;  // data: 0xB1D06C
+extern unsigned int DataGlobal_B1D070;  // data: 0xB1D070
+extern unsigned int DataGlobal_B1D074;  // data: 0xB1D074
+extern unsigned int DataGlobal_B1D078;  // data: 0xB1D078
+extern unsigned int DataGlobal_B1D07C;  // data: 0xB1D07C
+extern unsigned int DataGlobal_B1D080;  // data: 0xB1D080
+extern unsigned int DataGlobal_B1D084;  // data: 0xB1D084
+extern unsigned int DataGlobal_B1D088;  // data: 0xB1D088
+extern unsigned int DataGlobal_B1D08C;  // data: 0xB1D08C
+extern unsigned int DataGlobal_B1D090;  // data: 0xB1D090
+extern unsigned int DataGlobal_B1D094;  // data: 0xB1D094
+extern unsigned int DataGlobal_B1D098;  // data: 0xB1D098
+extern unsigned int DataGlobal_B1D09C;  // data: 0xB1D09C
 extern unsigned char DataGlobal_B1D0A0[4];  // data: 0xB1D0A0
 extern unsigned char DataGlobal_B1D0A4[4];  // data: 0xB1D0A4
 extern unsigned char DataGlobal_B1D0A8[4];  // data: 0xB1D0A8
@@ -15293,3 +15330,5 @@ extern void* vt_XSurface;  // data: 0x7E2104
 extern wchar_t DataGlobal_AC4D30[32904];  // data: 0xAC4D30
 
 struct Campaign_WorldDominationTour_24_ { _DWORD* ddtor(); };  // 0x765b50 (G22 materialized)
+
+struct CellAttachedStub { void* vfptr; void Delete(int); };  // 0x47BB60/0x47BB8C receiver stub (G22 CellClass::DTOR)

@@ -336,15 +336,11 @@ LABEL_38:
 namespace gamemd {
 int E4Recv_401F80::_EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall _EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ(
-        Concurrency::details::ContextBase *this)
 {
-  int result; // eax
-
-  result = this->M12 + 1; /*0x401f83*/
-  this->M12 = result; /*0x401f84*/
-  return result; /*0x401f87*/
+    int result;
+    result = this->M12 + 1;
+    this->M12 = result;
+    return result;
 }
 }
 } // namespace gamemd

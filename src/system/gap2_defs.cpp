@@ -2775,42 +2775,30 @@ LABEL_6:
 } }
 // 0x47BB60
 namespace gamemd { void CellClass::DTOR() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall CellClass::DTOR(_DWORD *this)
-{
-  void (__thiscall ***v2)(_DWORD, int); // ecx
-  void (__thiscall ***v3)(_DWORD, int); // ecx
-  int v4; // eax
-
-  v2 = (void (__thiscall ***)(_DWORD, int))*(this + 10); /*0x47bb66*/
-  *this = &CellClass::`vftable'; /*0x47bb69*/
-  *(this + 1) = &CellClass::`vftable'; /*0x47bb71*/
-  *(this + 2) = &CellClass::`vftable'; /*0x47bb78*/
-  *(this + 3) = &CellClass::`vftable'; /*0x47bb7f*/
-  if ( v2 ) /*0x47bb86*/
-  {
-    (**v2)(v2, 1); /*0x47bb8c*/
-    *(this + 10) = 0; /*0x47bb8e*/
-  }
-  v3 = (void (__thiscall ***)(_DWORD, int))*(this + 63); /*0x47bb91*/
-  if ( v3 ) /*0x47bb99*/
-  {
-    (**v3)(v3, 1); /*0x47bb9f*/
-    *(this + 63) = 0; /*0x47bba1*/
-  }
-  *(this + 57) = 0; /*0x47bba7*/
-  if ( *(this + 9) != MEMORY[0x89E748] ) /*0x47bbb8*/
-  {
-    v4 = *(this + 13); /*0x47bbc7*/
-    if ( v4 ) /*0x47bbcc*/
+    CellAttachedStub *v2 = this->attached1;
+    if ( v2 )
     {
-      if ( MEMORY[0xA8E9A0] ) /*0x47bbd4*/
-        --*(_DWORD *)(v4 + 404); /*0x47bbd6*/
-      *(this + 13) = 0; /*0x47bbdc*/
+        v2->Delete(1);
+        this->attached1 = 0;
     }
-  }
-  AbstractClass::DTOR(this); /*0x47bbe1*/
-}
+    CellAttachedStub *v3 = this->attached2;
+    if ( v3 )
+    {
+        v3->Delete(1);
+        this->attached2 = 0;
+    }
+    this->firstLink = 0;
+    if ( this->smudgeTypeIndex != *(int *)&DataGlobal_89E748 )
+    {
+        unsigned int *v4 = this->attached3;
+        if ( v4 )
+        {
+            if ( g_WTFMode )
+                --v4[101];
+            this->attached3 = 0;
+        }
+    }
+    AbstractClass::DTOR(this);
 } }
 // 0x47BBF0
 namespace gamemd { void* CellClass::Construct() {
