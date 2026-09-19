@@ -99,48 +99,36 @@ LABEL_5:
 // 0x5415F0
 int IPXManagerClass::ddtor(int a2, int a3, unsigned int * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IPXManagerClass::_vt03(int this, int a2, int a3, _DWORD *a4)
-{
-  int v5; // eax
-  int v6; // ecx
-  int v7; // eax
-  int v8; // ecx
-  int v9; // edx
-  int v10; // edi
-  int v11; // edx
-  int v13; // [esp+10h] [ebp-4h]
-
-  if ( !this->Initialized ) /*0x5415f7*/
-    return 0; /*0x5415f7*/
-  if ( !this->Active ) /*0x5415fe*/
-    return 0; /*0x5415fe*/
-  v5 = *(_DWORD *)(this + 68); /*0x541605*/
-  if ( !v5 ) /*0x54160c*/
-    return 0; /*0x54160c*/
-  if ( *(_DWORD *)(this + 84) >= v5 ) /*0x541611*/
-    *(_DWORD *)(this + 84) = 0; /*0x541613*/
-  v13 = 0; /*0x541618*/
-  if ( v5 <= 0 ) /*0x54161c*/
-    return 0; /*0x541661*/
-  while ( 1 ) /*0x54162b*/
-  {
-    v6 = *(_DWORD *)(this + 4 * *(_DWORD *)(this + 84) + 40); /*0x54162b*/
-    v7 = (*(int (__thiscall **)(int, int, int))(*(_DWORD *)v6 + 16))(v6, a2, a3); /*0x541631*/
-    v8 = *(_DWORD *)(this + 84); /*0x541634*/
-    v9 = *(_DWORD *)(this + 4 * v8++ + 40); /*0x541637*/
-    v10 = *(_DWORD *)(v9 + 100); /*0x54163c*/
-    v11 = *(_DWORD *)(this + 68); /*0x54163f*/
-    *(_DWORD *)(this + 84) = v8; /*0x541644*/
-    if ( v8 >= v11 ) /*0x541647*/
-      *(_DWORD *)(this + 84) = 0; /*0x541649*/
-    if ( v7 ) /*0x541652*/
-      break; /*0x541652*/
-    if ( ++v13 >= v11 ) /*0x54165f*/
-      return 0; /*0x54165f*/
-  }
-  *a4 = v10; /*0x54166f*/
-  return 1; /*0x541661*/
+    if ( !this->Initialized )
+        return 0;
+    if ( !this->Active )
+        return 0;
+    int v5 = this->connCount;
+    if ( !v5 )
+        return 0;
+    if ( this->curConnIndex >= v5 )
+        this->curConnIndex = 0;
+    int v13 = 0;
+    if ( v5 <= 0 )
+        return 0;
+    while ( 1 )
+    {
+        IPXConnStub *v6 = this->connTable[this->curConnIndex];
+        int v7 = v6->vt16(a2, a3);
+        int v8 = this->curConnIndex;
+        IPXConnStub *v9 = this->connTable[v8++];
+        int v10 = v9->connField100;
+        int v11 = this->connCount;
+        this->curConnIndex = v8;
+        if ( v8 >= v11 )
+            this->curConnIndex = 0;
+        if ( v7 )
+            break;
+        if ( ++v13 >= v11 )
+            return 0;
+    }
+    *a4 = v10;
+    return 1;
 }
 }
 
