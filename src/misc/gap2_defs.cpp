@@ -22415,20 +22415,17 @@ char __thiscall sub_6CE320(_DWORD *this, int a2)
 } }
 // 0x6E1C40
 namespace gamemd { int SuperClass::Get(int a1, int a2, int a3, int a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6E1C40(int *this, int a2, int a3, int a4, int a5)
 {
-  int Status; // eax
-
-  SuperClass::StartTimer(*(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * *(this + 36)), 0, 0, 0); /*0x6e1c5d*/
-  *(_BYTE *)(*(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * *(this + 36)) + 96) = 0; /*0x6e1c71*/
-  if ( HouseClass_Player == (#375 *)a2 ) /*0x6e1c7c*/
+    int Status;
+    SuperClass::StartTimer(*(int *)(*(int *)(a2 + 600) + 4 *(void**)this->q090), 0, 0, 0);
+    *(char *)(*(int *)(*(int *)(a2 + 600) + 4 *(void**)this->q090) + 96) = 0;
+    if ( HouseClass_Player == (HouseClass *)a2 )
   {
-    SidebarClass::AddCameo((int *)&MEMORY[0x87F7E8], 31, *(this + 36)); /*0x6e1c8c*/
-    Status = HouseClass::GetStatus((void *)0x1F, 0); /*0x6e1c9e*/
-    Sidebar::ActivateTab((int)&MEMORY[0x87F7E8], Status); /*0x6e1ca9*/
+    SidebarClass::AddCameo((int *)&DataGlobal_87F7E8, 31, this->q090);
+    Status = HouseClass::GetStatus((void *)0x1F, 0);
+    Sidebar::ActivateTab((int)&DataGlobal_87F7E8, Status);
   }
-  return 1; /*0x6e1cae*/
+    return 1;
 }
 } }
 // 0x6F9E50

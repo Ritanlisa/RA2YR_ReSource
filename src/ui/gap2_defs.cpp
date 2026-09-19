@@ -1414,16 +1414,14 @@ int __thiscall CheckListClass::_vt04(int this, int a2)
 } }
 // 0x557F00
 namespace gamemd { int CheckListClass::OnDblClick() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CheckListClass::_vt09(int this)
 {
-  if ( *(_BYTE *)(this + 84) ) /*0x557f03*/
+    if ( this->IsReadOnly )
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 280) + 36))(this + 280); /*0x557f16*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 184) + 36))(this + 184); /*0x557f25*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 88) + 36))(this + 88); /*0x557f2e*/
+    (*(void (__thiscall **)(int))(this->subList3 + 36))(this + 280);
+    (*(void (__thiscall **)(int))(this->subList2 + 36))(this + 184);
+    (*(void (__thiscall **)(int))(this->subList1 + 36))(this + 88);
   }
-  return LinkClass::Destroy((_DWORD *)this); /*0x557f38*/
+    return LinkClass::Destroy((int *)this);
 }
 } }
 // 0x557FB0
@@ -1440,16 +1438,14 @@ int __thiscall CheckListClass::_vt41(_DWORD *this, int a2)
 } }
 // 0x557FD0
 namespace gamemd { void CheckListClass::AddItem() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall CheckListClass::_vt18(int this)
 {
-  if ( *(_BYTE *)(this + 84) ) /*0x557fd3*/
+    if ( this->IsReadOnly )
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 88) + 72))(this + 88); /*0x557fe0*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 184) + 72))(this + 184); /*0x557fef*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)(this + 280) + 72))(this + 280); /*0x557ffe*/
+    (*(void (__thiscall **)(int))(this->subList1 + 72))(this + 88);
+    (*(void (__thiscall **)(int))(this->subList2 + 72))(this + 184);
+    (*(void (__thiscall **)(int))(this->subList3 + 72))(this + 280);
   }
-  VectorClass_ptr_ConvertClass::MarkDirty((_BYTE *)this); /*0x558003*/
+    VectorClass_ptr_ConvertClass::MarkDirty((char *)this);
 }
 } }
 // 0x558060

@@ -147,17 +147,14 @@ int __thiscall EnumConnectionPointsClass::sub_4A1470(int *this, _DWORD *a2)
 } }
 // 0x4E1530
 namespace gamemd { int COMObject::ActivateThunk(int a1, int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall COMObject_ActivateThunk(_BYTE *this, int a2, int a3, int a4)
 {
-  int v4; // edx
-
-  if ( !a2 ) /*0x4e1536*/
-    return 0; /*0x4e154a*/
-  v4 = *(_DWORD *)this; /*0x4e1538*/
-  *(this + 28) = 1; /*0x4e153b*/
-  (*(void (__stdcall **)(int))(v4 + 120))(a2); /*0x4e153f*/
-  return 1; /*0x4e1547*/
+    int v4;
+    if ( !a2 )
+    return 0;
+    v4 = *(int *)this;
+    this->q01C = 1;
+    (*(void (__stdcall **)(int))(v4 + 120))(a2);
+    return 1;
 }
 } }
 // 0x4E1920
@@ -321,10 +318,8 @@ namespace gamemd { void* Rect::Set4(int a2, int a3, int a4, int a5) {
 } }
 // 0x54F6B0
 namespace gamemd { bool EventQueue::CheckPosition() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall EventQueue_CheckPosition(_DWORD *this)
 {
-  return (*(this + 198) + 1) % 256 == *(this + 197); /*0x54f6ce*/
+    return (this->q318 + 1) % 256 == this->q314;
 }
 } }
 // 0x589300

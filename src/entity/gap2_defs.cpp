@@ -800,13 +800,11 @@ int *__thiscall AnimClass::UpdateZAdjust(#374 *this, int *a2)
 
 // 0x422C70
 namespace gamemd { int AnimClass::CheckLayerFlags(int a1, int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall AnimClass::CheckLayerFlags(int this, ObjectClass *aP1, ObjectClass *aP2, int a4)
 {
-  if ( *(_DWORD *)(this + 388) ) /*0x422c70*/
-    return 0; /*0x422c7a*/
-  else
-    return ObjectClass::CalcDrawRect((#374 *)this); /*0x422c8e*/
+    if ( this->q184 )
+    return 0;
+    else
+    return ObjectClass::CalcDrawRect((AnimClass *)this);
 }
 } }
 
@@ -15456,18 +15454,15 @@ int __thiscall sub_75ED30(int this)
 
 // 0x75F610
 namespace gamemd { int WaveClass::UpdateWave(int a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WaveClass::UpdateWave(int this, int a2, ParticleSystemClass *aP2)
 {
-  TechnoClass *result; // eax
-
-  Object::Unlink((#374 *)this); /*0x75f61e*/
-  result = 0; /*0x75f629*/
-  if ( *(_DWORD *)(this + 468) == a2 ) /*0x75f62d*/
-    *(_DWORD *)(this + 468) = 0; /*0x75f62f*/
-  if ( *(_DWORD *)(this + 172) == a2 ) /*0x75f63b*/
-    *(_DWORD *)(this + 172) = 0; /*0x75f63d*/
-  return (int)result->__pad_0; /*0x75f643*/
+    TechnoClass *result;
+    Object::Unlink((AnimClass *)this);
+    result = 0;
+    if ( this->Owner == a2 )
+    this->Owner = 0;
+    if ( this->q0AC == a2 )
+    this->q0AC = 0;
+    return (int)result->__pad_0;
 }
 } }
 

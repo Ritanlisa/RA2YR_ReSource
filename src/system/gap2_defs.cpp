@@ -40960,15 +40960,13 @@ retn    4
 } }
 // 0x759510
 namespace gamemd { int CCFileClass::Cleanup() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CCFileClass_Cleanup(_DWORD *this)
 {
-  System_Cleanup(); /*0x759513*/
-  *++this = &vt_CCFileClass; /*0x75951e*/
-  *(this + 25) = 0; /*0x759524*/
-  Vector::Clear((int)(this + 22)); /*0x75952b*/
-  *this = &off_7E1668; /*0x759532*/
-  return BufferIOFileClass::Dtor(this); /*0x75953d*/
+    System_Cleanup();
+    *++this = &vt_CCFileClass;
+    this->q064 = 0;
+    Vector::Clear((int)(this + 22));
+    *(void**)this = &vt_CDFileClass;
+    return BufferIOFileClass::Dtor(this);
 }
 } }
 // 0x75E4A0
