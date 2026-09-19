@@ -169,7 +169,32 @@ void GraphicMenuImageItem::Load() {}
 void GraphicMenuImageItem::Draw() {}
 
 // 0x4f37a0
-void GraphicMenuImageItem::ddtor() {}
+int GraphicMenuImageItem::ddtor(int a2)
+{
+    int v7[22];
+    unsigned char v8[12];
+    int v9;
+    NullGuard::Call(this, a2);
+    char **v3 = &this->fileName;
+    CCFileClass *v4 = CCFileClass::Construct2(v7, v3);
+    char v5 = v4->vt20(0);
+    v7[0] = &vt_CCFileClass;
+    v9 = 0;
+    Vector::Clear(v8);
+    v7[0] = &off_7E1668;
+    int result = BufferIOFileClass::Dtor(v7);
+    if ( v5 )
+    {
+        result = OperatorNew(0x30u);
+        if ( result )
+        {
+            result = MSVQAnim::ConstructMSVQAnimHidden(result, v3, DSurface_Alternate, a2 + 6, 1);
+            if ( result )
+                return MSEngine::ProcessEvents(a2, (char)result, 300000);
+        }
+    }
+    return result;
+}
 
 // 0x4f3840
 void GraphicMenuImageItem::QueryInterface() {}
