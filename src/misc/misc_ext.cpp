@@ -4592,8 +4592,16 @@ void TClassFactory_UnitClass::GetClassName()
 }
 
 // 0x6c3410
-void TClassFactory_UnitClass::ddtor()
+int TClassFactory_UnitClass::ddtor(int *a2, int a3)
 {
+    int v1 = a2[1];
+    int v2;
+    if ( a3 )
+        v2 = v1 + 1;
+    else
+        v2 = v1 - 1;
+    a2[1] = v2;
+    return 0;
 }
 
 // 0x6c3490

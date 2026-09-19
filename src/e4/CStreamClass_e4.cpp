@@ -83,51 +83,38 @@ LABEL_23:
 
 // 0x4A3110
 namespace gamemd {
-int CStreamClass_ddtor()
+CStreamClass * CStreamClass::ddtor(int a2, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-CStreamClass *__userpurge CStreamClass::ddtor@<eax>(void *Block@<ecx>, ULONG a2@<edi>, char a3)
-{
-  int v4; // eax
-  void *v5; // ecx
-  void *v6; // edx
-  int v7; // eax
-
-  v4 = *((_DWORD *)Block + 2); /*0x4a3116*/
-  *(_DWORD *)Block = &CStreamClass::`vftable'; /*0x4a3119*/
-  *((_DWORD *)Block + 1) = &vt_CStreamClass; /*0x4a3121*/
-  if ( v4 ) /*0x4a3128*/
-  {
-    if ( *((_BYTE *)Block + 17) /*0x4a314b*/
-      && *((int *)Block + 5) > 0
-      && !CStreamClass::IsEmpty((_DWORD *)Block + 2, 0)
-      && *((int *)Block + 5) > 0 )
+    CStreamClass* blk = this;
+    CStreamInner *v4 = blk->streamObj8;
+    if ( v4 )
     {
-      IStream::Read(*((IStream **)Block + 6), *((void **)Block + 5), a2); /*0x4a3154*/
+        if ( blk->byte17 && blk->cbSize20 > 0 && !CStreamClass::IsEmpty(&blk->streamObj8, 0) && blk->cbSize20 > 0 )
+        {
+            IStream::Read(blk->pIStream24, blk->pv20, a2);
+        }
+        if ( blk->streamObj8 && blk->streamObj8->vtRel32(0) >= 0 )
+        {
+            if ( !blk->streamObj8 )
+                WinAPI::Wrapper(-2147467261);
+            blk->streamObj8->vtRel8();
+            blk->streamObj8 = 0;
+        }
     }
-    if ( *((_DWORD *)Block + 2) /*0x4a317b*/
-      && (*(int (__stdcall **)(_DWORD, _DWORD))(**((_DWORD **)Block + 2) + 32))(*((_DWORD *)Block + 2), 0) >= 0 )
-    {
-      if ( !*((_DWORD *)Block + 2) ) /*0x4a317d*/
-        WinAPI::Wrapper(-2147467261); /*0x4a3187*/
-      (*(void (__stdcall **)(_DWORD))(**((_DWORD **)Block + 2) + 8))(*((_DWORD *)Block + 2)); /*0x4a3192*/
-      *((_DWORD *)Block + 2) = 0; /*0x4a3195*/
-    }
-  }
-  __3_YAXPAX_Z(*((void **)Block + 8)); /*0x4a319c*/
-  v5 = (void *)*((_DWORD *)Block + 6); /*0x4a31a1*/
-  *((_DWORD *)Block + 8) = 0; /*0x4a31a4*/
-  __3_YAXPAX_Z(v5); /*0x4a31a8*/
-  v6 = (void *)*((_DWORD *)Block + 7); /*0x4a31ad*/
-  *((_DWORD *)Block + 6) = 0; /*0x4a31b0*/
-  __3_YAXPAX_Z(v6); /*0x4a31b4*/
-  *((_DWORD *)Block + 7) = 0; /*0x4a31b9*/
-  v7 = *((_DWORD *)Block + 2); /*0x4a31bc*/
-  if ( v7 ) /*0x4a31c4*/
-    (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v7 + 8))(*((_DWORD *)Block + 2)); /*0x4a31c9*/
-  if ( (a3 & 1) != 0 ) /*0x4a31d1*/
-    __3_YAXPAX_Z(Block); /*0x4a31d4*/
-  return (CStreamClass *)Block; /*0x4a31de*/
+    OperatorDelete(blk->pv32);
+    void *v5 = blk->pv24;
+    blk->pv32 = 0;
+    OperatorDelete(v5);
+    void *v6 = blk->pv28;
+    blk->pv24 = 0;
+    OperatorDelete(v6);
+    blk->pv28 = 0;
+    CStreamInner *v7 = blk->streamObj8;
+    if ( v7 )
+        v7->vtRel8();
+    if ( a3 & 1 )
+        OperatorDelete(blk);
+    return blk;
 }
 }
 } // namespace gamemd
