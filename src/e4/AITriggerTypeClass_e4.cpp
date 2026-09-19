@@ -636,31 +636,22 @@ int __thiscall AITriggerTypeClass::RegisterFailure(int this)
 // 0x41FFF0
 AITriggerTypeClass * AITriggerTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-AITriggerTypeClass *__thiscall AITriggerTypeClass::ddtor(_DWORD *this, char a2)
-{
-  int v3; // eax
-  _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &AITriggerTypeClass::`vftable'; /*0x41fffd*/
-  *(this + 1) = &AITriggerTypeClass::`vftable'; /*0x420003*/
-  *(this + 2) = &AITriggerTypeClass::`vftable'; /*0x42000a*/
-  *(this + 3) = &vt_AITriggerTypeClass; /*0x420011*/
-  v5 = this; /*0x42001f*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xA8B200] + 16))(&MEMORY[0xA8B200], &v5); /*0x420023*/
-  if ( v3 != -1 && v3 < MEMORY[0xA8B210] && v3 < --MEMORY[0xA8B210] ) /*0x42003e*/
-  {
-    do /*0x420056*/
+    AITriggerTypeClass* v7 = this;
+    AITriggerTypeClass_Array;
+    int v2 = AITriggerTypeClass_Array.FindItemIndex(&v7);
+    if ( v2 != -1 && v2 < g_AnimTypeInitQueue && v2 < --g_AnimTypeInitQueue )
     {
-      ++v3; /*0x420046*/
-      *((_DWORD *)MEMORY[0xA8B204] + v3 - 1) = *((_DWORD *)MEMORY[0xA8B204] + v3); /*0x42004a*/
+        do
+        {
+            ++v2;
+            *(DataGlobal_A8B204 + v2 - 1) = *(DataGlobal_A8B204 + v2);
+        }
+        while ( v2 < g_AnimTypeInitQueue );
     }
-    while ( v3 < MEMORY[0xA8B210] ); /*0x420056*/
-  }
-  AbstractTypeClass::Dtor(this); /*0x42005a*/
-  if ( (a2 & 1) != 0 ) /*0x420064*/
-    __3_YAXPAX_Z(this); /*0x420067*/
-  return (AITriggerTypeClass *)this; /*0x420071*/
+    AbstractTypeClass::Dtor(this);
+    if ( a2 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 

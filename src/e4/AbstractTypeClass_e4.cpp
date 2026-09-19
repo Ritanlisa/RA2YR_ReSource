@@ -173,31 +173,22 @@ char __thiscall AbstractTypeClass::LoadFromINI(int this, AbstractTypeClass *aP1)
 // 0x410C30
 AbstractTypeClass * AbstractTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-AbstractTypeClass *__thiscall AbstractTypeClass::ddtor(_DWORD *this, char a2)
-{
-  int v3; // eax
-  _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &AbstractTypeClass::`vftable'; /*0x410c3d*/
-  *(this + 1) = &AbstractTypeClass::`vftable'; /*0x410c43*/
-  *(this + 2) = &AbstractTypeClass::`vftable'; /*0x410c4a*/
-  *(this + 3) = &vt_AbstractTypeClass; /*0x410c51*/
-  v5 = this; /*0x410c5f*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xA8E968] + 16))(&MEMORY[0xA8E968], &v5); /*0x410c63*/
-  if ( v3 != -1 && v3 < MEMORY[0xA8E978] && v3 < --MEMORY[0xA8E978] ) /*0x410c7e*/
-  {
-    do /*0x410c96*/
+    AbstractTypeClass* v7 = this;
+    DataGlobal_A8E968;
+    int v2 = DataGlobal_A8E968.FindItemIndex(&v7);
+    if ( v2 != -1 && v2 < g_AbstractTypePool && v2 < --g_AbstractTypePool )
     {
-      ++v3; /*0x410c86*/
-      *((_DWORD *)MEMORY[0xA8E96C] + v3 - 1) = *((_DWORD *)MEMORY[0xA8E96C] + v3); /*0x410c8a*/
+        do
+        {
+            ++v2;
+            *(DataGlobal_A8E96C + v2 - 1) = *(DataGlobal_A8E96C + v2);
+        }
+        while ( v2 < g_AbstractTypePool );
     }
-    while ( v3 < MEMORY[0xA8E978] ); /*0x410c96*/
-  }
-  AbstractClass::DTOR(this); /*0x410c9a*/
-  if ( (a2 & 1) != 0 ) /*0x410ca4*/
-    __3_YAXPAX_Z(this); /*0x410ca7*/
-  return (AbstractTypeClass *)this; /*0x410cb1*/
+    AbstractClass::DTOR(this);
+    if ( a2 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 
