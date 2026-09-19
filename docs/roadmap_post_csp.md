@@ -3289,6 +3289,13 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   0x6c3410=GetSize 误名+寄存器参数件）。
 - MapFile::ddtor +1（DynamicVector 元素逆序 DeleteAndZero；this-> vs blk 的
   事件选择取决于 cache this 形参渲染名）
+- **dtor 队列终态分诊（余 15 全部 H5 手动档）**：TechnoClass::DTOR（20 写×12 调大件）/
+  AnimFile（成员阵列-heavy）/ IPXManager _vt03（包服务循环=误名实函数）/
+  MSFont _vt03（文本绘制）/ GraphicMenuImageItem _vt03（NullGuard+CCFile 链）/
+  BuildingLight SDDTOR（blob-member 渲染 7 读需 struct 型全局词汇）/
+  UDP _vt03（8 参签名）/ SmudgeType+TerrainType（fastcall 2 形参怪态）/
+  RulesClass::DTOR（大件）/ CStreamClass（__userpurge）/ EnumConnectionPoints+
+  EnumConnections（goto 族）/ MapSize+Counter（#131 词汇案）/ UnitClass TF（寄存器参数）
   （下一既定批量 = TClassFactory 族 ×13 签名手术：0 参数记录 vs 3 栈参
   CreateInstance 形态 arg4/a3/v8 + OperatorNew cache 手术） / 提交链 8bb78bc9 →
   827f6853 → 29c51e18 → fc48ea86 → a9cfdced → e918cc66 → 85661e73 →
