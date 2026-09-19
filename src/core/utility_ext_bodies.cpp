@@ -333,7 +333,15 @@ void StringTable::Find() {}
 void StringVector::Release() {}
 
 // 0x49ef10
-void StringVector::ddtor() {}
+void StringVector::ddtor() {
+    if ( this->Items && this->IsAllocated )
+    {
+        operator delete(this->Items);
+        this->Items = 0;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
+}
 
 // 0x49ef40
 void StringVector::Add() {}

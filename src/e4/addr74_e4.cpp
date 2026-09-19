@@ -904,17 +904,13 @@ char __thiscall _::_vt02(void *this, int a2, _DWORD *a3)
 namespace gamemd {
 void _::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall _::_vt03(int this)
-{
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x74f4bd*/
-  {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x74f4c3*/
-    *(_DWORD *)(this + 4) = 0; /*0x74f4cb*/
-  }
-  *(_BYTE *)(this + 13) = 0; /*0x74f4ce*/
-  *(_DWORD *)(this + 8) = 0; /*0x74f4d1*/
-}
+    if ( this->Items && this->IsAllocated )
+    {
+        operator delete(this->Items);
+        this->Items = 0;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 } // namespace gamemd
 

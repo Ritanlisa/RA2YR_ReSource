@@ -319,7 +319,15 @@ void FoggedObject_DrawVector::Seek() {}
 // 0x4d2a10
 void FoggedObject_DrawVector::Release() {}
 // 0x4d2b20
-void FoggedObject_DrawVector::ddtor() {}
+void FoggedObject_DrawVector::ddtor() {
+    if ( this->Items && this->IsAllocated )
+    {
+        operator delete(this->Items);
+        this->Items = 0;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
+}
 // 0x4d2b50
 void FoggedObject_DrawVector::Read() {}
 // 0x4d2ba0

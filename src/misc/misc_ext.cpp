@@ -111,6 +111,13 @@ void CoopCampaignVector::Release()
 // 0x5c56e0
 void CoopCampaignVector::ddtor()
 {
+    if ( this->Items && this->IsAllocated )
+    {
+        operator delete(this->Items);
+        this->Items = 0;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 
 // 0x5c5710
@@ -847,6 +854,13 @@ void AbstractClassVector::Release()
 // 0x4e0410
 void AbstractClassVector::ddtor()
 {
+    if ( this->Items && this->IsAllocated )
+    {
+        operator delete(this->Items);
+        this->Items = 0;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 
 // 0x53cb10
@@ -962,6 +976,13 @@ void BaseNodeClass_Vector::Release()
 // 0x42fab0
 void BaseNodeClass_Vector::ddtor()
 {
+    if ( this->Items && this->IsAllocated )
+    {
+        operator delete(this->Items);
+        this->Items = 0;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 
 // 0x42fae0
@@ -2190,6 +2211,13 @@ void ObjectVector::Release()
 // 0x40cdc0
 void ObjectVector::ddtor()
 {
+    if ( this->Items && this->IsAllocated )
+    {
+        operator delete(this->Items);
+        this->Items = 0;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 
 // 0x40cdf0
