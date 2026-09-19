@@ -133,19 +133,14 @@ int __thiscall DisplayClass::_vt07(int this)
 // 0x4A8930
 char DisplayClass::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DisplayClass::_vt08(void *this)
-{
-  char result; // al
-
-  VectorCursor_uint_DynamicVectorClass_uint____13::Get(); /*0x4a8933*/
-  result = MEMORY[0xA8ED6B]; /*0x4a8938*/
-  if ( !MEMORY[0xA8ED6B] ) /*0x4a893f*/
-  {
-    Hash::Reset(MEMORY[0x8A06F8]); /*0x4a8946*/
-    return (*(int (__thiscall **)(void *, int *))(*(_DWORD *)this + 48))(this, MEMORY[0x8A06F8]); /*0x4a8954*/
-  }
-  return result; /*0x4a8957*/
+    VectorCursor_uint_DynamicVectorClass_uint____13::Get();
+    char result = g_ArmageddonMode;
+    if ( !g_ArmageddonMode )
+    {
+        Hash::Reset(DataGlobal_8A06F8);
+        return this->InsertOrdered(DataGlobal_8A06F8);
+    }
+    return result;
 }
 }
 

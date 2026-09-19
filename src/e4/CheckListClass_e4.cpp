@@ -105,16 +105,13 @@ int __thiscall CheckListClass::_vt37(_DWORD *this)
 // 0x557E10
 int CheckListClass::ddtor(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CheckListClass::_vt03(int this, int a2)
-{
-  if ( *(_BYTE *)(this + 84) ) /*0x557e18*/
-  {
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 280) + 12))(this + 280, a2); /*0x557e2c*/
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 184) + 12))(this + 184, a2); /*0x557e3c*/
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 88) + 12))(this + 88, a2); /*0x557e46*/
-  }
-  return LinkedList::InsertAfter((_DWORD *)this, a2); /*0x557e51*/
+    if ( this->IsReadOnly )
+    {
+        this->subList3->Dispatch(a2);
+        this->subList2->Dispatch(a2);
+        this->subList1->Dispatch(a2);
+    }
+    return LinkedList::InsertAfter(this, a2);
 }
 }
 

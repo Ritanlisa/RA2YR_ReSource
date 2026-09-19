@@ -52,13 +52,9 @@ int __thiscall NullModemClass::_vt02(int this, int a2, int a3, int a4, int a5)
 // 0x5F35A0
 int NullModemClass::ddtor(int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NullModemClass::_vt03(int this, int a2, int a3, int a4)
-{
-  if ( *(_DWORD *)(this + 60) ) /*0x5f35a0*/
-    return (*(int (__thiscall **)(_DWORD, int, int))(**(_DWORD **)(this + 56) + 16))(*(_DWORD *)(this + 56), a2, a3); /*0x5f35bb*/
-  else
-    return 0; /*0x5f35a7*/
+    if ( this->linkOpen )
+        return this->linkObject->Dispatch(a2, a3);
+    return 0;
 }
 }
 
