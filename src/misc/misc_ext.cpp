@@ -2925,8 +2925,24 @@ void TClassFactory_AirstrikeClass::GetClassName()
 }
 
 // 0x6c0890
-void TClassFactory_AirstrikeClass::ddtor()
+int TClassFactory_AirstrikeClass::ddtor(void *a2, int a3, _DWORD *a4)
 {
+    _DWORD *v8 = a4;
+    if ( !v8 )
+        return -2147024809;
+    *v8 = 0;
+    if ( a2 )
+        return -2147221232;
+    void *v2 = OperatorNew(96u);
+    if ( !v2 )
+        return -2147024882;
+    void *v6 = AbstractClass::Create(v2);
+    if ( !v6 )
+        return -2147024882;
+    int v5 = v6->vtQI(a3, v8);
+    if ( v5 < 0 )
+        v6->vtRel(1);
+    return v5;
 }
 
 // 0x6c0910
@@ -3073,8 +3089,24 @@ void TClassFactory_BuildingLightClass::GetClassName()
 }
 
 // 0x6c0410
-void TClassFactory_BuildingLightClass::ddtor()
+int TClassFactory_BuildingLightClass::ddtor(void *a2, int a3, _DWORD *a4)
 {
+    _DWORD *v8 = a4;
+    if ( !v8 )
+        return -2147024809;
+    *v8 = 0;
+    if ( a2 )
+        return -2147221232;
+    void *v2 = OperatorNew(232u);
+    if ( !v2 )
+        return -2147024882;
+    void *v6 = BuildingLightClass::CTOR(v2, 0);
+    if ( !v6 )
+        return -2147024882;
+    int v5 = v6->vtQI(a3, v8);
+    if ( v5 < 0 )
+        v6->vtRel(1);
+    return v5;
 }
 
 // 0x6c0490
@@ -3385,8 +3417,24 @@ void TClassFactory_HouseClass::GetClassName()
 }
 
 // 0x6c3e90
-void TClassFactory_HouseClass::ddtor()
+int TClassFactory_HouseClass::ddtor(void *a2, int a3, _DWORD *a4)
 {
+    _DWORD *v8 = a4;
+    if ( !v8 )
+        return -2147024809;
+    *v8 = 0;
+    if ( a2 )
+        return -2147221232;
+    void *v2 = OperatorNew(0x160B8u);
+    if ( !v2 )
+        return -2147024882;
+    void *v6 = HouseClass::Construct(v2, 0);
+    if ( !v6 )
+        return -2147024882;
+    int v5 = v6->vtQI(a3, v8);
+    if ( v5 < 0 )
+        v6->vtRel(1);
+    return v5;
 }
 
 // 0x6c3f10
@@ -3880,8 +3928,24 @@ void TClassFactory_ScriptClass::GetClassName()
 }
 
 // 0x6c1d90
-void TClassFactory_ScriptClass::ddtor()
+int TClassFactory_ScriptClass::ddtor(void *a2, int a3, _DWORD *a4)
 {
+    _DWORD *v8 = a4;
+    if ( !v8 )
+        return -2147024809;
+    *v8 = 0;
+    if ( a2 )
+        return -2147221232;
+    void *v2 = OperatorNew(48u);
+    if ( !v2 )
+        return -2147024882;
+    void *v6 = ScriptClass::Construct(v2, 0);
+    if ( !v6 )
+        return -2147024882;
+    int v5 = v6->vtQI(a3, v8);
+    if ( v5 < 0 )
+        v6->vtRel(1);
+    return v5;
 }
 
 // 0x6c1e10
