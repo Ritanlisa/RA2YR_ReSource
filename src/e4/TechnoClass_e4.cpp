@@ -518,136 +518,105 @@ namespace ra2 {
 namespace game {
 int TechnoClass::DTOR()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass::DTOR(int this)
-{
-  _DWORD *v2; // ecx
-  int v3; // ecx
-  int v4; // ecx
-  _DWORD *v5; // ecx
-  int v6; // ecx
-  int v7; // ecx
-  _DWORD *v8; // ecx
-  int v9; // eax
-  int v10; // eax
-  int v11; // ecx
-  int v12; // ecx
-  void *v13; // eax
-  void *v14; // eax
-  void *v15; // eax
-  int v17; // [esp+18h] [ebp-4h] BYREF
-
-  v2 = *(_DWORD **)(this + 1300); /*0x6f4507*/
-  *(_DWORD *)this = &TechnoClass::`vftable'; /*0x6f450d*/
-  this->vtable1 = &TechnoClass::`vftable'; /*0x6f4515*/
-  this->vtable2 = &vt_TechnoClass; /*0x6f451c*/
-  this->vtable3 = &off_7F4934; /*0x6f4523*/
-  if ( v2 ) /*0x6f452a*/
-  {
-    Sidebar::CancelSidebarProductionQueue(v2); /*0x6f452c*/
-    this->planningToken = 0; /*0x6f4531*/
-  }
-  v3 = this->captureManager; /*0x6f4537*/
-  if ( v3 ) /*0x6f453f*/
-  {
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)v3 + 32))(v3, 1); /*0x6f4545*/
-    this->captureManager = 0; /*0x6f4548*/
-  }
-  v4 = this->spawnManager; /*0x6f454e*/
-  if ( v4 ) /*0x6f4556*/
-  {
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)v4 + 32))(v4, 1); /*0x6f455c*/
-    this->spawnManager = 0; /*0x6f455f*/
-  }
-  v5 = *(_DWORD **)(this + 728); /*0x6f4565*/
-  if ( v5 ) /*0x6f456d*/
-  {
-    TechnoClass::MutateAll(v5, 0, 0); /*0x6f4571*/
-    v6 = this->slaveManager; /*0x6f4576*/
-    if ( v6 ) /*0x6f457e*/
-      (*(void (__thiscall **)(int, int))(*(_DWORD *)v6 + 32))(v6, 1); /*0x6f4584*/
-    this->slaveManager = 0; /*0x6f4587*/
-  }
-  v7 = this->temporalUsing; /*0x6f458d*/
-  if ( v7 ) /*0x6f4595*/
-  {
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)v7 + 32))(v7, 1); /*0x6f459b*/
-    this->temporalUsing = 0; /*0x6f459e*/
-  }
-  v8 = *(_DWORD **)(this + 660); /*0x6f45a4*/
-  if ( v8 && v8[19] == this ) /*0x6f45b1*/
-  {
-    (*(void (__thiscall **)(_DWORD *, int))(*v8 + 32))(v8, 1); /*0x6f45bb*/
-    this->airstrike = 0; /*0x6f45be*/
-  }
-  AudioFile::Stop((_DWORD *)(this + 1160)); /*0x6f45cd*/
-  AudioFileClass::Release((_DWORD *)(this + 1160)); /*0x6f45d4*/
-  AudioFile::Stop((_DWORD *)(this + 1188)); /*0x6f45e1*/
-  AudioFileClass::Release((_DWORD *)(this + 1188)); /*0x6f45e8*/
-  AudioFile::Stop((_DWORD *)(this + 1216)); /*0x6f45f5*/
-  AudioFileClass::Release((_DWORD *)(this + 1216)); /*0x6f45fc*/
-  AudioFileClass::Release((_DWORD *)(this + 1244)); /*0x6f4607*/
-  this->owner = 0; /*0x6f4610*/
-  *(_BYTE *)(this + 1050) = 0; /*0x6f4616*/
-  v17 = this; /*0x6f4628*/
-  v9 = ((int (__thiscall *)(TechnoClass **, int *))MEMORY[0xA8EC78]->__pad_0[4])(&MEMORY[0xA8EC78], &v17); /*0x6f462c*/
-  if ( v9 != -1 ) /*0x6f4633*/
-    FactoryClass::RemoveItem(&MEMORY[0xA8EC78], v9); /*0x6f463b*/
-  v17 = this; /*0x6f4650*/
-  v10 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB0F6C8] + 16))(&MEMORY[0xB0F6C8], &v17); /*0x6f4654*/
-  if ( v10 != -1 ) /*0x6f465a*/
-    DynamicVector::RemoveItem(&MEMORY[0xB0F6C8], v10); /*0x6f4662*/
-  v11 = *(_DWORD *)(this + 300); /*0x6f4667*/
-  if ( v11 ) /*0x6f466f*/
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)v11 + 248))(v11); /*0x6f4673*/
-    *(_DWORD *)(this + 300) = 0; /*0x6f4679*/
-  }
-  v12 = *(_DWORD *)(this + 304); /*0x6f467f*/
-  if ( v12 ) /*0x6f4687*/
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)v12 + 248))(v12); /*0x6f468b*/
-    *(_DWORD *)(this + 304) = 0; /*0x6f4691*/
-  }
-  this->attackedTargets = &vt_VectorClass_AbstractClass; /*0x6f469d*/
-  AbstractClassVector::ddtor(this + 1136); /*0x6f46a3*/
-  v13 = *(void **)(this + 1116); /*0x6f46a8*/
-  this->currentTargets = &vt_VectorClass_AbstractClass; /*0x6f46ae*/
-  if ( v13 && *(_BYTE *)(this + 1125) ) /*0x6f46bc*/
-  {
-    __3_YAXPAX_Z(v13); /*0x6f46c5*/
-    this->attackedTargets = 0; /*0x6f46cd*/
-  }
-  *(_BYTE *)(this + 1125) = 0; /*0x6f46d3*/
-  this->audioController3 = 0; /*0x6f46d9*/
-  v14 = *(void **)(this + 1092); /*0x6f46df*/
-  this->currentTargetThreatValues = &vt_VectorClass_int; /*0x6f46e5*/
-  if ( v14 && this->currentTargetThreatValues.IsAllocated ) /*0x6f46f3*/
-  {
-    __3_YAXPAX_Z(v14); /*0x6f46fc*/
-    this->currentTargetThreatValues.Items = 0; /*0x6f4704*/
-  }
-  this->currentTargetThreatValues.IsAllocated = 0; /*0x6f4710*/
-  this->currentTargetThreatValues.Capacity = 0; /*0x6f4716*/
-  nullsub_69(this + 336); /*0x6f471c*/
-  *(_DWORD *)this = &RadioClass::`vftable'; /*0x6f4721*/
-  this->vtable1 = &RadioClass::`vftable'; /*0x6f4727*/
-  this->vtable2 = &RadioClass::`vftable'; /*0x6f472e*/
-  this->vtable3 = &vt_RadioClass; /*0x6f4735*/
-  v15 = *(void **)(this + 228); /*0x6f473c*/
-  this->radioLinks = &vt_VectorClass_TechnoClass; /*0x6f4742*/
-  if ( v15 && *(_BYTE *)(this + 237) ) /*0x6f4750*/
-  {
-    __3_YAXPAX_Z(v15); /*0x6f4759*/
-    this->flashing = 0; /*0x6f4761*/
-  }
-  *(_BYTE *)(this + 237) = 0; /*0x6f4767*/
-  *(_DWORD *)(this + 232) = 0; /*0x6f476d*/
-  *(_DWORD *)this = &MissionClass::`vftable'; /*0x6f4775*/
-  this->vtable1 = &MissionClass::`vftable'; /*0x6f477b*/
-  this->vtable2 = &MissionClass::`vftable'; /*0x6f4782*/
-  this->vtable3 = &vt_MissionClass; /*0x6f4789*/
-  return ObjectClass::Dtor((_DWORD *)this); /*0x6f4795*/
+    PlanningTokenClass *v2 = this->planningToken;
+    this->vtable3 = 0;
+    if ( v2 )
+    {
+        Sidebar::CancelSidebarProductionQueue(v2);
+        this->planningToken = 0;
+    }
+    CaptureManagerClass *v3 = this->captureManager;
+    if ( v3 )
+    {
+        v3->vtRel32(1);
+        this->captureManager = 0;
+    }
+    SpawnManagerClass *v4 = this->spawnManager;
+    if ( v4 )
+    {
+        v4->vtRel32(1);
+        this->spawnManager = 0;
+    }
+    SlaveManagerClass *v5 = this->slaveManager;
+    if ( v5 )
+    {
+        TechnoClass::MutateAll(v5, 0, 0);
+        SlaveManagerClass *v6 = this->slaveManager;
+        if ( v6 )
+        {
+            v6->vtRel32(1);
+        }
+        this->slaveManager = 0;
+    }
+    TemporalClass *v7 = this->temporalUsing;
+    if ( v7 )
+    {
+        v7->vtRel248();
+        this->temporalUsing = 0;
+    }
+    AirstrikeClass *v8 = this->airstrike;
+    if ( v8 && v8[19] == this )
+    {
+        v8->vtRel32(1);
+        this->airstrike = 0;
+    }
+    AudioFile::Stop(&this->turretRotateSoundController);
+    AudioFileClass::Release(&this->turretRotateSoundController);
+    AudioFile::Stop(&this->gattlingSoundController);
+    AudioFileClass::Release(&this->gattlingSoundController);
+    AudioFile::Stop(&this->unusedGattlingSoundController);
+    AudioFileClass::Release(&this->unusedGattlingSoundController);
+    AudioFileClass::Release(&this->queuedVoiceSoundController);
+    this->owner = 0;
+    this->isOwnedByCurrentPlayer = 0;
+    TechnoClass* v17 = this;
+    TechnoClass_Array;
+    int v9 = TechnoClass_Array.FindItemIndex(&v17);
+    if ( v9 != -1 )
+        FactoryClass::RemoveItem(&TechnoClass_Array, v9);
+    TechnoClass* v17b = this;
+    DataGlobal_B0F6C8;
+    int v10 = DataGlobal_B0F6C8.FindItemIndex(&v17b);
+    if ( v10 != -1 )
+        DynamicVector::RemoveItem(&DataGlobal_B0F6C8, v10);
+    AnimClass *v11 = this->behindAnim;
+    if ( v11 )
+    {
+        v11->vtRel248();
+        this->behindAnim = 0;
+    }
+    AnimClass *v12 = this->deployAnim;
+    if ( v12 )
+    {
+        v12->vtRel248();
+        this->deployAnim = 0;
+    }
+    AbstractClassVector::ddtor(&this->attackedTargets);
+    void *v13 = this->vecAbs_Items;
+    if ( v13 && this->vecAbs_IsAllocated )
+    {
+        OperatorDelete(v13);
+        this->vecAbs_Items = 0;
+    }
+    this->vecAbs_IsAllocated = 0;
+    this->vecAbs_Capacity = 0;
+    void *v14 = this->vecInt_Items;
+    if ( v14 && this->vecInt_IsAllocated )
+    {
+        OperatorDelete(v14);
+        this->vecInt_Items = 0;
+    }
+    this->vecInt_IsAllocated = 0;
+    this->vecInt_Capacity = 0;
+    void *v15 = this->vecTechno_Items;
+    if ( v15 && this->vecTechno_IsAllocated )
+    {
+        OperatorDelete(v15);
+        this->vecTechno_Items = 0;
+    }
+    this->vecTechno_IsAllocated = 0;
+    this->vecTechno_Capacity = 0;
+    return ObjectClass::Dtor(this);
 }
 }
 } // namespace game
