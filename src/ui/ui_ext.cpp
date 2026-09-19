@@ -375,7 +375,17 @@ void ToolTipClass::initString() {} // 0x724AD0
 // 0x724c10
 void ToolTipClass::Destructor() {} // 0x724C10
 // 0x724c30
-void ToolTipClass::ddtor() {} // 0x724C30
+void ToolTipClass::ddtor() {
+    void *v2 = this->Items;
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
+    {
+        operator delete(v2);
+        this->Items = 0;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
+ // 0x724C30
 // 0x724c60
 void ToolTipClass::write() {} // 0x724C60
 

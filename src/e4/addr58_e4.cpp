@@ -731,21 +731,15 @@ LABEL_24:
 // 0x588CE0
 void unknown::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall unknown::_vt03(int this)
-{
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x588ce6*/
-  *(_DWORD *)(this + 16) = 0; /*0x588ce9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x588cf0*/
-  {
-    __3_YAXPAX_Z(v2); /*0x588cf6*/
-    this->m_Position = 0; /*0x588cfe*/
-  }
-  *(_BYTE *)(this + 13) = 0; /*0x588d01*/
-  this->m_Size = 0; /*0x588d04*/
-}
+    void *v2 = this->m_Position;
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
+    {
+        operator delete(v2);
+        this->m_Position = 0;
+    }
+    this->IsAllocated = 0;
+    this->m_Size = 0;
 }
 
 // 0x5896A0

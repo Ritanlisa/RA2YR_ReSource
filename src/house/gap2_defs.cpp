@@ -143,22 +143,16 @@ _DWORD *__thiscall sub_42F1E0(_DWORD *this, int a2)
 } }
 // 0x42F3A0
 namespace gamemd { void BaseClass::ddtor() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall BaseClass::_vt03(int this)
-{
-  void *v2; // eax
-
-  v2 = *(void **)(this + 4); /*0x42f3a6*/
-  *(_DWORD *)(this + 16) = 0; /*0x42f3a9*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x42f3b0*/
-  {
-    __3_YAXPAX_Z(v2); /*0x42f3b6*/
-    *(_DWORD *)(this + 4) = 0; /*0x42f3be*/
-  }
-  *(_BYTE *)(this + 13) = 0; /*0x42f3c1*/
-  *(_DWORD *)(this + 8) = 0; /*0x42f3c4*/
-}
-} }
+    void *v2 = this->Items;
+    this->Count = 0;
+    if ( v2 && this->IsAllocated )
+    {
+        operator delete(v2);
+        this->Items = 0;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
+ }
 // 0x42F3D0
 namespace gamemd { int BaseClass::Write(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
