@@ -2869,8 +2869,24 @@ void TClassFactory_AircraftClass::GetClassName()
 }
 
 // 0x6c3710
-void TClassFactory_AircraftClass::ddtor()
+int TClassFactory_AircraftClass::ddtor(void *a2, int a3, _DWORD *a4)
 {
+    _DWORD *v8 = a4;
+    if ( !v8 )
+        return -2147024809;
+    *v8 = 0;
+    if ( a2 )
+        return -2147221232;
+    void *v2 = OperatorNew(1752u);
+    if ( !v2 )
+        return -2147024882;
+    void *v6 = AircraftClass::Construct(v2, 0, 0);
+    if ( !v6 )
+        return -2147024882;
+    int v5 = v6->vtQI(a3, v8);
+    if ( v5 < 0 )
+        v6->vtRel(1);
+    return v5;
 }
 
 // 0x6c3790
@@ -3021,8 +3037,24 @@ void TClassFactory_BuildingClass::GetClassName()
 }
 
 // 0x6c3590
-void TClassFactory_BuildingClass::ddtor()
+int TClassFactory_BuildingClass::ddtor(void *a2, int a3, _DWORD *a4)
 {
+    _DWORD *v8 = a4;
+    if ( !v8 )
+        return -2147024809;
+    *v8 = 0;
+    if ( a2 )
+        return -2147221232;
+    void *v2 = OperatorNew(1824u);
+    if ( !v2 )
+        return -2147024882;
+    void *v6 = BuildingClass::Construct(v2, 0, 0);
+    if ( !v6 )
+        return -2147024882;
+    int v5 = v6->vtQI(a3, v8);
+    if ( v5 < 0 )
+        v6->vtRel(1);
+    return v5;
 }
 
 // 0x6c3610
@@ -3429,8 +3461,24 @@ void TClassFactory_InfantryClass::GetClassName()
 }
 
 // 0x6c3890
-void TClassFactory_InfantryClass::ddtor()
+int TClassFactory_InfantryClass::ddtor(void *a2, int a3, _DWORD *a4)
 {
+    _DWORD *v8 = a4;
+    if ( !v8 )
+        return -2147024809;
+    *v8 = 0;
+    if ( a2 )
+        return -2147221232;
+    void *v2 = OperatorNew(1776u);
+    if ( !v2 )
+        return -2147024882;
+    void *v6 = InfantryClass::Construct(v2, 0, 0);
+    if ( !v6 )
+        return -2147024882;
+    int v5 = v6->vtQI(a3, v8);
+    if ( v5 < 0 )
+        v6->vtRel(1);
+    return v5;
 }
 
 // 0x6c3910
@@ -3908,8 +3956,24 @@ void TClassFactory_SideClass::GetClassName()
 }
 
 // 0x6bfe10
-void TClassFactory_SideClass::ddtor()
+int TClassFactory_SideClass::ddtor(void *a2, int a3, _DWORD *a4)
 {
+    _DWORD *v8 = a4;
+    if ( !v8 )
+        return -2147024809;
+    *v8 = 0;
+    if ( a2 )
+        return -2147221232;
+    void *v2 = OperatorNew(180u);
+    if ( !v2 )
+        return -2147024882;
+    void *v6 = SideClass::Construct(v2, 0);
+    if ( !v6 )
+        return -2147024882;
+    int v5 = v6->vtQI(a3, v8);
+    if ( v5 < 0 )
+        v6->vtRel(1);
+    return v5;
 }
 
 // 0x6bfe90
@@ -4092,8 +4156,24 @@ void TClassFactory_TagClass::GetClassName()
 }
 
 // 0x6c2090
-void TClassFactory_TagClass::ddtor()
+int TClassFactory_TagClass::ddtor(void *a2, int a3, _DWORD *a4)
 {
+    _DWORD *v8 = a4;
+    if ( !v8 )
+        return -2147024809;
+    *v8 = 0;
+    if ( a2 )
+        return -2147221232;
+    void *v2 = OperatorNew(56u);
+    if ( !v2 )
+        return -2147024882;
+    void *v6 = TeknoClass::GetType(v2, 0);
+    if ( !v6 )
+        return -2147024882;
+    int v5 = v6->vtQI(a3, v8);
+    if ( v5 < 0 )
+        v6->vtRel(1);
+    return v5;
 }
 
 // 0x6c2110
@@ -4132,8 +4212,24 @@ void TClassFactory_TaskForceClass::GetClassName()
 }
 
 // 0x6c2690
-void TClassFactory_TaskForceClass::ddtor()
+int TClassFactory_TaskForceClass::ddtor(void *a2, int a3, _DWORD *a4)
 {
+    _DWORD *v8 = a4;
+    if ( !v8 )
+        return -2147024809;
+    *v8 = 0;
+    if ( a2 )
+        return -2147221232;
+    void *v2 = OperatorNew(212u);
+    if ( !v2 )
+        return -2147024882;
+    void *v6 = TaskForceClass::Construct(v2, 0);
+    if ( !v6 )
+        return -2147024882;
+    int v5 = v6->vtQI(a3, v8);
+    if ( v5 < 0 )
+        v6->vtRel(1);
+    return v5;
 }
 
 // 0x6c2710
@@ -4152,8 +4248,24 @@ void TClassFactory_TeamClass::GetClassName()
 }
 
 // 0x6c2390
-void TClassFactory_TeamClass::ddtor()
+int TClassFactory_TeamClass::ddtor(void *a2, int a3, _DWORD *a4)
 {
+    _DWORD *v8 = a4;
+    if ( !v8 )
+        return -2147024809;
+    *v8 = 0;
+    if ( a2 )
+        return -2147221232;
+    void *v2 = OperatorNew(160u);
+    if ( !v2 )
+        return -2147024882;
+    void *v6 = MissionClass::Construct(v2, 0, 0, 0);
+    if ( !v6 )
+        return -2147024882;
+    int v5 = v6->vtQI(a3, v8);
+    if ( v5 < 0 )
+        v6->vtRel(1);
+    return v5;
 }
 
 // 0x6c2410
@@ -4264,8 +4376,24 @@ void TClassFactory_TiberiumClass::GetClassName()
 }
 
 // 0x6bff90
-void TClassFactory_TiberiumClass::ddtor()
+int TClassFactory_TiberiumClass::ddtor(void *a2, int a3, _DWORD *a4)
 {
+    _DWORD *v8 = a4;
+    if ( !v8 )
+        return -2147024809;
+    *v8 = 0;
+    if ( a2 )
+        return -2147221232;
+    void *v2 = OperatorNew(296u);
+    if ( !v2 )
+        return -2147024882;
+    void *v6 = TiberiumClass::TiberiumClass(v2, 0);
+    if ( !v6 )
+        return -2147024882;
+    int v5 = v6->vtQI(a3, v8);
+    if ( v5 < 0 )
+        v6->vtRel(1);
+    return v5;
 }
 
 // 0x6c0010
@@ -4284,8 +4412,24 @@ void TClassFactory_TriggerClass::GetClassName()
 }
 
 // 0x6c1a90
-void TClassFactory_TriggerClass::ddtor()
+int TClassFactory_TriggerClass::ddtor(void *a2, int a3, _DWORD *a4)
 {
+    _DWORD *v8 = a4;
+    if ( !v8 )
+        return -2147024809;
+    *v8 = 0;
+    if ( a2 )
+        return -2147221232;
+    void *v2 = OperatorNew(72u);
+    if ( !v2 )
+        return -2147024882;
+    void *v6 = TriggerClass::Construct(v2, 0);
+    if ( !v6 )
+        return -2147024882;
+    int v5 = v6->vtQI(a3, v8);
+    if ( v5 < 0 )
+        v6->vtRel(1);
+    return v5;
 }
 
 // 0x6c1b10
