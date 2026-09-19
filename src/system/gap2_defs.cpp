@@ -1352,80 +1352,74 @@ BOOL __thiscall FileClass::Load(int *this, CDFileClass *aP1)
 } }
 // 0x473E50
 namespace gamemd { int CCFileClass::Destru_vt14() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CCFileClass::Destru_vt14(HANDLE *this)
 {
-  int DosTimestamp; // ebx
-  const char *v3; // eax
-  char *v4; // esi
-  int v5; // esi
-  int v7; // [esp+Ch] [ebp-70h] BYREF
-  _DWORD v8[22]; // [esp+10h] [ebp-6Ch] BYREF
-  _DWORD v9[3]; // [esp+68h] [ebp-14h] BYREF
-  int v10; // [esp+74h] [ebp-8h]
-  int v11; // [esp+78h] [ebp-4h]
-
-  v7 = 0; /*0x473e5a*/
-  DosTimestamp = FileClass::GetDosTimestamp(this); /*0x473e63*/
-  if ( DosTimestamp ) /*0x473e67*/
-    return DosTimestamp; /*0x473e67*/
-  v3 = (const char *)(*((int (__thiscall **)(HANDLE *))*this + 1))(this); /*0x473e78*/
-  if ( !LookupFileInfoCache(v3, 0, &v7, 0, 0) ) /*0x473e7f*/
-    return DosTimestamp; /*0x473ef7*/
-  v4 = *(char **)(v7 + 12); /*0x473e90*/
-  BufferIOFile::Init(v8); /*0x473e93*/
-  Buffer::Init(v9, 0, 0); /*0x473e9e*/
-  v10 = 0; /*0x473ead*/
-  v8[0] = &vt_CCFileClass; /*0x473eb1*/
-  v11 = 0; /*0x473eb5*/
-  FileClass::OpenWithCDSearch(v8, v4); /*0x473eb9*/
-  v5 = (*(int (__thiscall **)(_DWORD *))(v8[0] + 56))(v8); /*0x473ecd*/
-  v8[0] = &vt_CCFileClass; /*0x473ecf*/
-  v10 = 0; /*0x473ed3*/
-  Vector::Clear((int)v9); /*0x473ed7*/
-  v8[0] = &off_7E1668; /*0x473ee0*/
-  BufferIOFileClass::Dtor(v8); /*0x473ee8*/
-  return v5; /*0x473eef*/
+    int DosTimestamp;
+    const char *v3;
+    char *v4;
+    int v5;
+    int v7;
+    int v8[22];
+    int v9[3];
+    int v10;
+    int v11;
+    v7 = 0;
+    DosTimestamp = FileClass::GetDosTimestamp(this);
+    if ( DosTimestamp )
+    return DosTimestamp;
+    v3 = (const char *)this->vt004();
+    if ( !LookupFileInfoCache(v3, 0, &v7, 0, 0) )
+    return DosTimestamp;
+    v4 = *(char **)(v7 + 12);
+    BufferIOFile::Init(v8);
+    Buffer::Init(v9, 0, 0);
+    v10 = 0;
+    v8[0] = &vt_CCFileClass;
+    v11 = 0;
+    FileClass::OpenWithCDSearch(v8, v4);
+    v5 = (*(int (__thiscall **)(int *))(v8[0] + 56))(v8);
+    v8[0] = &vt_CCFileClass;
+    v10 = 0;
+    Vector::Clear((int)v9);
+    v8[0] = &vt_CDFileClass;
+    BufferIOFileClass::Dtor(v8);
+    return v5;
 }
 }
 }
 // 0x473F00
 namespace gamemd { int CCFileClass::Destru_vt15(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CCFileClass::Destru_vt15(HANDLE *this, int wFatTime)
 {
-  char v3; // bl
-  const char *v4; // eax
-  char *v5; // esi
-  int v7; // [esp+10h] [ebp-70h] BYREF
-  _DWORD v8[22]; // [esp+14h] [ebp-6Ch] BYREF
-  _DWORD v9[3]; // [esp+6Ch] [ebp-14h] BYREF
-  int v10; // [esp+78h] [ebp-8h]
-  int v11; // [esp+7Ch] [ebp-4h]
-
-  v7 = 0; /*0x473f10*/
-  v3 = FileClass::SetTime(this, wFatTime); /*0x473f19*/
-  if ( !v3 ) /*0x473f1d*/
+    char v3;
+    const char *v4;
+    char *v5;
+    int v7;
+    int v8[22];
+    int v9[3];
+    int v10;
+    int v11;
+    v7 = 0;
+    v3 = FileClass::SetTime(this, wFatTime);
+    if ( !v3 )
   {
-    v4 = (const char *)(*((int (__thiscall **)(HANDLE *))*this + 1))(this); /*0x473f2e*/
-    if ( LookupFileInfoCache(v4, 0, &v7, 0, 0) ) /*0x473f35*/
+    v4 = (const char *)this->vt004();
+    if ( LookupFileInfoCache(v4, 0, &v7, 0, 0) )
     {
-      v5 = *(char **)(v7 + 12); /*0x473f46*/
-      BufferIOFile::Init(v8); /*0x473f49*/
-      Buffer::Init(v9, 0, 0); /*0x473f54*/
-      v10 = 0; /*0x473f5e*/
-      v8[0] = &vt_CCFileClass; /*0x473f62*/
-      v11 = 0; /*0x473f6a*/
-      FileClass::OpenWithCDSearch(v8, v5); /*0x473f71*/
-      v3 = (*(int (__thiscall **)(_DWORD *, int))(v8[0] + 60))(v8, wFatTime); /*0x473f86*/
-      v8[0] = &vt_CCFileClass; /*0x473f88*/
-      v10 = 0; /*0x473f90*/
-      Vector::Clear((int)v9); /*0x473f94*/
-      v8[0] = &off_7E1668; /*0x473f9d*/
-      BufferIOFileClass::Dtor(v8); /*0x473fa5*/
+    v5 = *(char **)(v7 + 12);
+    BufferIOFile::Init(v8);
+    Buffer::Init(v9, 0, 0);
+    v10 = 0;
+    v8[0] = &vt_CCFileClass;
+    v11 = 0;
+    FileClass::OpenWithCDSearch(v8, v5);
+    v3 = (*(int (__thiscall **)(int *, int))(v8[0] + 60))(v8, wFatTime);
+    v8[0] = &vt_CCFileClass;
+    v10 = 0;
+    Vector::Clear((int)v9);
+    v8[0] = &vt_CDFileClass;
+    BufferIOFileClass::Dtor(v8);
     }
   }
-  return v3; /*0x473faa*/
+    return v3;
 }
 } }
 // 0x474320
