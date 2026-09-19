@@ -778,16 +778,11 @@ LABEL_5:
 
 // 0x49FB40
 namespace gamemd { int CounterClass::ddtor() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CounterClass::_vt03(_DWORD *this)
-{
-  int result; // eax
-
-  for ( result = 0; result < *(this + 2); *(_DWORD *)(*(this + 1) + 4 * result - 4) = 0 ) /*0x49fb4a*/
-    ++result; /*0x49fb4f*/
-  *(this + 4) = 0; /*0x49fb5b*/
-  return result; /*0x49fb5e*/
-}
+    int result;
+    for ( result = 0; result < this->Capacity; this->Items[result - 1] = 0 )
+        ++result;
+    this->Count = 0;
+    return result;
 } }
 
 // 0x49FBE0

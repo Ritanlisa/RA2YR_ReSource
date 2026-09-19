@@ -116,37 +116,24 @@ _DWORD *__thiscall BuildingLightClass::FindTarget(_DWORD *this, CCINIClass *aP1)
 namespace gamemd {
 BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BuildingLightClass *__thiscall BuildingLightClass::SDDTOR(#374 *this, char a2)
-{
-  int v3; // eax
-  #374 *v5; // [esp+4h] [ebp-4h] BYREF
-
-  *(_DWORD *)this = &BuildingLightClass::`vftable'; /*0x4370c4*/
-  this->vtable1 = &BuildingLightClass::`vftable'; /*0x4370ca*/
-  this->vtable2 = &BuildingLightClass::`vftable'; /*0x4370d1*/
-  this->vtable3 = &vt_BuildingLightClass; /*0x4370d8*/
-  if ( (unsigned __int8)ObjectClass::Undeploy(this) ) /*0x4370df*/
-    VectorClass::RemoveItem((int *)&MEMORY[0x87F778], (ObjectClass *)this); /*0x4370ee*/
-  v5 = this; /*0x437103*/
-  v3 = (*(int (__thiscall **)(char *, #374 **))(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62308] + 16))( /*0x437107*/
-         &MEMORY[0x89F690].__pad_579C[62308],
-         &v5);
-  if ( v3 != -1 && v3 < *(int *)&MEMORY[0x89F690].__pad_579C[62324] ) /*0x437117*/
-  {
-    --*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62324]; /*0x43711c*/
-    for ( ; /*0x437122*/
-          v3 < *(int *)&MEMORY[0x89F690].__pad_579C[62324];
-          *(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62312] + 4 * v3 - 4) = *(_DWORD *)(*(_DWORD *)&MEMORY[0x89F690].__pad_579C[62312]
-                                                                                               + 4 * v3) )
+    BuildingLightClass* blk = this;
+    if ( ObjectClass::Undeploy(this) )
+        VectorClass::RemoveItem(&g_GameConfigManager, this);
+    BuildingLightClass* v5 = this;
+    int v3 = g_CellDirectionOffsets.FindItemIndex(&v5);
+    if ( v3 != -1 && v3 < g_CellDirectionOffsets )
     {
-      ++v3; /*0x43712a*/
+        --g_CellDirectionOffsets;
+        while ( v3 < g_CellDirectionOffsets )
+        {
+            ++v3;
+            *(g_CellDirectionOffsets + v3 - 1) = *(g_CellDirectionOffsets + v3);
+        }
     }
-  }
-  ObjectClass::Dtor(this); /*0x43713e*/
-  if ( (a2 & 1) != 0 ) /*0x437148*/
-    __3_YAXPAX_Z(this); /*0x43714b*/
-  return (BuildingLightClass *)this; /*0x437155*/
+    ObjectClass::Dtor(this);
+    if ( a2 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 } // namespace gamemd
