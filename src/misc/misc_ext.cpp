@@ -512,8 +512,9 @@ void MapSizeGameOption_WorldDominationTour::Read()
 }
 
 // 0x767800
-void MapSizeGameOption_WorldDominationTour::ddtor()
+int MapSizeGameOption_WorldDominationTour::ddtor(MapSizeOptStub **a2)
 {
+    return DataGlobal_848628[4 * a2[1]->mszByte18 + a2[1]->mszByte19];
 }
 
 // 0x7678c0

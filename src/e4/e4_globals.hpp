@@ -15332,3 +15332,5 @@ extern wchar_t DataGlobal_AC4D30[32904];  // data: 0xAC4D30
 struct Campaign_WorldDominationTour_24_ { _DWORD* ddtor(); };  // 0x765b50 (G22 materialized)
 
 struct CellAttachedStub { void* vfptr; void Delete(int); };  // 0x47BB60/0x47BB8C receiver stub (G22 CellClass::DTOR)
+
+struct MapSizeOptStub;  // 0x767800 arg chain stub (G22)
