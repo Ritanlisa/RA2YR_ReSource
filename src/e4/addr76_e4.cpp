@@ -3558,3 +3558,24 @@ rc_ptr * FindTerritoryWOL(ObjectClass * aP0, int a2, int a3)
 }
 }
 } // namespace gamemd
+
+// 0x765b50
+_DWORD* Campaign_WorldDominationTour_24_::ddtor()
+{
+    --this->RefCount;
+    return this;
+}
+
+// 0x76f190
+_DWORD* VectorCursor::ddtor()
+{
+    --this->RefCount;
+    return this;
+}
+
+// 0x76f170
+_DWORD* Count::ddtor()
+{
+    --this->RefCount;
+    return this;
+}

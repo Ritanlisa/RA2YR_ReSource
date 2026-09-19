@@ -15291,3 +15291,5 @@ extern void* vt_WorldDominationTour_Voices_Anim;  // data: 0x7F7354
 extern void* vt_WWMouseClass;  // data: 0x7F7B2C
 extern void* vt_XSurface;  // data: 0x7E2104
 extern wchar_t DataGlobal_AC4D30[32904];  // data: 0xAC4D30
+
+struct Campaign_WorldDominationTour_24_ { _DWORD* ddtor(); };  // 0x765b50 (G22 materialized)
