@@ -3317,6 +3317,13 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   IPXConnStub@100。
 - **UDP ddtor ✅（11,839）**：广播判定分派（this->AddRef=CALL(vfptr+16)，
   vtable_offsets 槽名考古；AudioQueue::WriteBuffer 8 参直调）。
+- **RulesClass::DTOR 深化准备已落盘（未完，回滚 cpp 保 ml/cache）**：
+  ①250 个 ? 行地址→反汇编→151 偏移全解析（.omo/rules_q_offsets.json）；
+  ②cache 已归一 ?→q 名（139 新名 qXXX 入 ml/mbn，RulesClass 偏移全映射）；
+  ③转换器首版 384 行产生 143 块签名差（IDA 114 vs cpp 139）——根因=被省略的
+  106 条 vt 安装行在 IDA 侧留下分支空块而 cpp 塌缩 + D_partial(LODWORD) 行
+  post-naming 事件行为待精确定义。下会话路径：不省略安装行，改为保留行文本
+  （post-naming 双侧同提取）或以空语句保 CFG；按块类迭代。
 - **RulesClass::DTOR 考古（下会话首件）**：587 行=blk0 mega-block（42×
   VectorClass::Destroy + TryFreeAndClear + Destroy 族 17 调用 + 1×READ(member,?)
   wildcard）+ 尾部命名成员条件清理块（2876/2844/2776…全 ml 已映射）。
