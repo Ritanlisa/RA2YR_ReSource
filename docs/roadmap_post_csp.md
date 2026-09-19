@@ -3317,6 +3317,13 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   IPXConnStub@100。
 - **UDP ddtor ✅（11,839）**：广播判定分派（this->AddRef=CALL(vfptr+16)，
   vtable_offsets 槽名考古；AudioQueue::WriteBuffer 8 参直调）。
+- **RulesClass::DTOR 三/四轮结论（cpp 回滚；ml/cache 数据为准）**：
+  ①off_-RHS 安装行写入是真实 IDA 事件（off_ 不在豁免词表）必须保留——37 缺失
+  由此起；②23 行宽松扫描补齐后全 250 行归一（0 残余）；③四轮出现跨清理块
+  q 名换位（IDA [R2597,W2592…] vs cpp [R328,W324…] 成对互换）——回扫窗口
+  在多 lea 参数组中取错行。**下会话正道：逐清理块配对校验**（IDA 块事件序
+  vs cpp 块事件序成对 diff，块级重指派 q 名），块表与偏移数据全在
+  .omo/rc4.txt+rules_q_offsets2/3.json。
 - **RulesClass::DTOR 二轮迭代结论（cpp 回滚，准备全保留）**：verbatim 策略
   使块数对齐（114=114）且 STEP3 OK——剩余 78 差类 = **两提取器对异形行
   （LODWORD 部分写/下标/解Ref 组合 250 行）的分块行为不同构**。数据全留档：
