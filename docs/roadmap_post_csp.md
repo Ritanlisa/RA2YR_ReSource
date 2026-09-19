@@ -3232,7 +3232,7 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   字段名=基座+角色后缀）；g_AbstractClassArray/g_TechnoTypes 已定谳。
 - 提交链：54e0805e → dade4cff → afed9740 → e1cf2181，tag 随每步重锚。
 
-### G22 执行续二：dtor 族批量收割 + E1 收官 + A3 舰队波（净增 +45 → 11,765）
+### G22 执行续二：dtor 族批量收割 + E1 收官 + A3 舰队波（净增 +49 → 11,769）
 
 - **Cleanup-shape 复盘与重做（×7，commit 8bb78bc9）**：G22 早前批量 7/7 FAIL
   根因三连——①生成器产出四冒号畸形 `Cls::::ddtor`（signals 名拆分 bug）；
@@ -3258,7 +3258,7 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   （system 4 + object/entity 各 1），FAIL 29 自动回滚。**结论：机械规则线已
   榨干**，剩余主体 = member@N?Class（ml 缺口）/slot@N?Class（vtable 审计面）/
   too-long（H5 手动档）。
-- **E1 收官（a57bc09d）**：5 区 804 全局已被 G5 DataGlobal 覆盖（0 垃圾名，
+- **E1 收官（a57bc09d；fleet 尾计修正：addr40 再收 0x401f80 EnterCriticalRegionHelper，issue #66 前提已解，wave 总标记 7 件而非 6）**：5 区 804 全局已被 G5 DataGlobal 覆盖（0 垃圾名，
   **issue #67-#71 主体陈旧已 resolve**）——E1 真实剩余=补缺：0x848628
   （MapSize 表 [] 形态）+ B1D010-B1D09C 36 dwords（scalar uint；#107 解锁前提）
   落 e4_globals.hpp。#44/#45/#70 同批 resolve。
@@ -3272,7 +3272,7 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   统一词汇需类型上下文裁决（方案 a/b + 全池回归风险已记账），ml 已备即收割。
 - **门控后台核验**：check_translated_functions 全 FAIL 项 = 行数启发式对既有
   存根/2 行真翻的误报 + 文件内既有 stub——重锚清零，无新违规类别。
-- 口径：completed **11,765** / dtor 族队列余 79 单件 / 提交链 8bb78bc9 →
+- 口径：completed **11,769** / dtor 族队列余 76 单件（79 含 fleet 尾计修正差 -3） / 提交链 8bb78bc9 →
   827f6853 → 29c51e18 → fc48ea86 → a9cfdced → e918cc66 → 85661e73 →
   a57bc09d。注：前三单提交消息的 11,733/11,738/11,741 为基线算术笔误（+6），
   真实里程碑 11,727/11,732/11,735，以 signals 为准。
