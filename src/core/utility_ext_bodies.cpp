@@ -408,6 +408,10 @@ void VectorCursor_uint_DynamicVectorClass_uint::AddRef() {}
 void VectorCursor_uint_DynamicVectorClass_uint::Release() {}
 
 // 0x4f4000
-void VectorCursor_uint_DynamicVectorClass_uint::ddtor() {}
+_DWORD* VectorCursor_uint_DynamicVectorClass_uint::ddtor()
+{
+    --this->RefCount;
+    return this;
+}
 }
 
