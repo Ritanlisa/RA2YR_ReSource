@@ -400,6 +400,29 @@ void MapFile::LoadDescription()
 // 0x69c500
 void MapFile::ddtor()
 {
+    int v2 = this->Items;
+    this->Count16 = 0;
+    if ( v2 && this->IsAllocated )
+    {
+        int v3 = *(v2 - 4);
+        void *v4 = (void *)(v2 - 4);
+        void **v5 = (void **)(v2 + 4 * v3);
+        int v6 = v3 - 1;
+        if ( v6 >= 0 )
+        {
+            int v7 = v6 + 1;
+            do
+            {
+                DeleteAndZero(--v5);
+                --v7;
+            }
+            while ( v7 );
+        }
+        OperatorDelete(v4);
+        this->Items = 0;
+    }
+    this->IsAllocated = 0;
+    this->Capacity = 0;
 }
 
 // 0x69c560
