@@ -3232,7 +3232,7 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   字段名=基座+角色后缀）；g_AbstractClassArray/g_TechnoTypes 已定谳。
 - 提交链：54e0805e → dade4cff → afed9740 → e1cf2181，tag 随每步重锚。
 
-### G22 执行续二：dtor 族批量收割 + E1 收官 + A3 舰队波（净增 +117 → 11,837）
+### G22 执行续二：dtor 族批量收割 + E1 收官 + A3 舰队波（净增 +119 → 11,839）
 
 - **Cleanup-shape 复盘与重做（×7，commit 8bb78bc9）**：G22 早前批量 7/7 FAIL
   根因三连——①生成器产出四冒号畸形 `Cls::::ddtor`（signals 名拆分 bug）；
@@ -3315,14 +3315,17 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   函数双件（动画装载链 7 调用配平；包轮询连接表轮转）——变量索引访问
   `this + 4*idx + 40` cache 归一 `this->connTable[idx]` 双侧对称 + 合成
   IPXConnStub@100。
+- **UDP ddtor ✅（11,839）**：广播判定分派（this->AddRef=CALL(vfptr+16)，
+  vtable_offsets 槽名考古；AudioQueue::WriteBuffer 8 参直调）。
 - **dtor 队列终态分诊（余 15 全部 H5 手动档）**：TechnoClass::DTOR（20 写×12 调大件）/
   AnimFile（成员阵列-heavy）/ IPXManager _vt03（包服务循环=误名实函数）/
   MSFont _vt03（文本绘制）/ GraphicMenuImageItem _vt03（NullGuard+CCFile 链）/
   BuildingLight SDDTOR（blob-member 渲染 7 读需 struct 型全局词汇）/
   UDP _vt03（8 参签名）/ SmudgeType+TerrainType（fastcall 2 形参怪态）/
-  RulesClass::DTOR（大件）/ CStreamClass（__userpurge）/ EnumConnectionPoints+
-  EnumConnections（goto 族）/ MapSize（参数 artifact 需 header 管道定型 a2 对象类型）/
-  Counter ✅已收 / UnitClass TF（寄存器参数）/ AnimFile（187 行 goto 播放引擎）
+  UDP ✅已收 / MapSize ✅已收（合成 MapSizeOptStub 链+globals 名键词汇）/
+  Counter ✅已收 / RulesClass::DTOR（586 行 200 事件最大件）/ AnimFile（187 行
+  goto 播放引擎）/ MSFont（文本渲染）/ CStreamClass（__userpurge）/ Enum×2
+  （goto 族）/ UnitClass TF（寄存器参数）——余 7 件均需独立会话档
   （下一既定批量 = TClassFactory 族 ×13 签名手术：0 参数记录 vs 3 栈参
   CreateInstance 形态 arg4/a3/v8 + OperatorNew cache 手术） / 提交链 8bb78bc9 →
   827f6853 → 29c51e18 → fc48ea86 → a9cfdced → e918cc66 → 85661e73 →
