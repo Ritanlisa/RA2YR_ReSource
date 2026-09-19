@@ -415,14 +415,3 @@ _DWORD* VectorCursor_uint_DynamicVectorClass_uint::ddtor()
 }
 }
 
-// 0x49ef10
-void StringVector::::ddtor()
-{
-    if ( this->Items && this->IsAllocated )
-    {
-        operator delete(this->Items);
-        this->Items = nullptr;
-    }
-    this->IsAllocated = 0;
-    this->Capacity = 0;
-}

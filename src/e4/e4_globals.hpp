@@ -15293,17 +15293,3 @@ extern void* vt_XSurface;  // data: 0x7E2104
 extern wchar_t DataGlobal_AC4D30[32904];  // data: 0xAC4D30
 
 struct Campaign_WorldDominationTour_24_ { _DWORD* ddtor(); };  // 0x765b50 (G22 materialized)
-
-struct ObjectVector:: { void* ddtor(); };  // 0x40cdc0 (G22)
-
-struct BaseNodeClass_Vector:: { void* ddtor(); };  // 0x42fab0 (G22)
-
-struct StringVector:: { void* ddtor(); };  // 0x49ef10 (G22)
-
-struct FoggedObject_DrawVector:: { void* ddtor(); };  // 0x4d2b20 (G22)
-
-struct AbstractClassVector:: { void* ddtor(); };  // 0x4e0410 (G22)
-
-struct CoopCampaignVector:: { void* ddtor(); };  // 0x5c56e0 (G22)
-
-struct _:: { void* ddtor(); };  // 0x74f4b0 (G22)

@@ -610,14 +610,3 @@ void Voxel_Section::Draw() {}
 void Voxel_Section::Constructor() {}
 
 } // namespace gamemd
-// 0x4d2b20
-void FoggedObject_DrawVector::::ddtor()
-{
-    if ( this->Items && this->IsAllocated )
-    {
-        operator delete(this->Items);
-        this->Items = nullptr;
-    }
-    this->IsAllocated = 0;
-    this->Capacity = 0;
-}
