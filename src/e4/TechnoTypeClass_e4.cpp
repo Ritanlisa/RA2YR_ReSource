@@ -846,169 +846,126 @@ LABEL_5:
 // 0x711AE0
 int TechnoTypeClass::DTOR()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoTypeClass::DTOR(int this)
-{
-  char v2; // al
-  int v3; // eax
-  int v4; // eax
-  void *v5; // eax
-  void *v6; // eax
-  void *v7; // eax
-  void *v8; // eax
-  void *v9; // eax
-  void *v10; // eax
-  void *v11; // eax
-  void *v12; // eax
-  void *v13; // eax
-  void *v14; // eax
-  void *v15; // eax
-  int v17; // [esp+8h] [ebp-4h] BYREF
-
-  v2 = this->CameoAllocated; /*0x711ae7*/
-  *(_DWORD *)this = &TechnoTypeClass::`vftable'; /*0x711aed*/
-  this->vtable1 = &TechnoTypeClass::`vftable'; /*0x711af5*/
-  this->vtable2 = &TechnoTypeClass::`vftable'; /*0x711afc*/
-  this->vtable3 = &vt_TechnoTypeClass; /*0x711b03*/
-  if ( v2 && this->Cameo ) /*0x711b0c*/
-  {
-    __3_YAXPAX_Z(*(void **)(this + 1776)); /*0x711b17*/
-    this->Cameo = 0; /*0x711b1f*/
-    this->CameoAllocated = 0; /*0x711b25*/
-  }
-  if ( this->AltCameoAllocated && this->AltCameo ) /*0x711b33*/
-  {
-    __3_YAXPAX_Z(*(void **)(this + 1808)); /*0x711b3e*/
-    this->AltCameo = 0; /*0x711b46*/
-    this->AltCameoAllocated = 0; /*0x711b4c*/
-  }
-  v17 = this; /*0x711b62*/
-  v3 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v17); /*0x711b66*/
-  if ( v3 != -1 ) /*0x711b6c*/
-    DynamicVector::RemoveItem(&MEMORY[0xB0F670], v3); /*0x711b74*/
-  v17 = this; /*0x711b89*/
-  v4 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xA8EB00] + 16))(&MEMORY[0xA8EB00], &v17); /*0x711b8d*/
-  if ( v4 != -1 ) /*0x711b93*/
-    TechnoTypeClass::RemoveItem(&MEMORY[0xA8EB00], v4); /*0x711b9b*/
-  this->DestroyParticleSystems = &vt_VectorClass_ParticleSystemTypeClass_const; /*0x711ba7*/
-  VectorClass::Cleanup(this + 1940); /*0x711bad*/
-  this->DamageParticleSystems = &vt_VectorClass_ParticleSystemTypeClass_const; /*0x711bb8*/
-  VectorClass::Cleanup(this + 1912); /*0x711bbe*/
-  this->DestroyAnim = &vt_VectorClass_AnimTypeClass_const; /*0x711bc9*/
-  DynamicVectorClass::Destroy_Alt(this + 1864); /*0x711bcf*/
-  this->Explosion = &vt_VectorClass_AnimTypeClass_const; /*0x711bda*/
-  DynamicVectorClass::Destroy_Alt(this + 1836); /*0x711be0*/
-  this->PrerequisiteOverride = &vt_VectorClass_int; /*0x711bf0*/
-  VectorClass::Destroy(this + 1620); /*0x711bf2*/
-  this->Prerequisite = &vt_VectorClass_int; /*0x711bfd*/
-  VectorClass::Destroy(this + 1592); /*0x711bff*/
-  this->DebrisAnims = &vt_VectorClass_AnimTypeClass_const; /*0x711c0a*/
-  DynamicVectorClass::Destroy_Alt(this + 1476); /*0x711c10*/
-  this->DieSound = &vt_VectorClass_int; /*0x711c1b*/
-  VectorClass::Destroy(this + 1296); /*0x711c1d*/
-  this->MoveSound = &vt_VectorClass_int; /*0x711c28*/
-  VectorClass::Destroy(this + 1268); /*0x711c2a*/
-  v5 = *(void **)(this + 1244); /*0x711c2f*/
-  this->VoiceFeedback = &vt_VectorClass_int; /*0x711c35*/
-  if ( v5 && this->VoiceFeedback.IsAllocated ) /*0x711c3f*/
-  {
-    __3_YAXPAX_Z(v5); /*0x711c48*/
-    this->VoiceFeedback.Items = 0; /*0x711c50*/
-  }
-  this->VoiceFeedback.IsAllocated = 0; /*0x711c56*/
-  this->VoiceFeedback.Capacity = 0; /*0x711c5c*/
-  v6 = *(void **)(this + 1216); /*0x711c62*/
-  this->VoiceDie = &vt_VectorClass_int; /*0x711c68*/
-  if ( v6 && this->VoiceDie.IsAllocated ) /*0x711c72*/
-  {
-    __3_YAXPAX_Z(v6); /*0x711c7b*/
-    this->VoiceDie.Items = 0; /*0x711c83*/
-  }
-  this->VoiceDie.IsAllocated = 0; /*0x711c89*/
-  this->VoiceDie.Capacity = 0; /*0x711c8f*/
-  v7 = *(void **)(this + 1188); /*0x711c95*/
-  this->VoiceSpecialAttack = &vt_VectorClass_int; /*0x711c9b*/
-  if ( v7 && this->VoiceSpecialAttack.IsAllocated ) /*0x711ca5*/
-  {
-    __3_YAXPAX_Z(v7); /*0x711cae*/
-    this->VoiceSpecialAttack.Items = 0; /*0x711cb6*/
-  }
-  this->VoiceSpecialAttack.IsAllocated = 0; /*0x711cbc*/
-  this->VoiceSpecialAttack.Capacity = 0; /*0x711cc2*/
-  v8 = *(void **)(this + 1160); /*0x711cc8*/
-  this->VoiceAttack = &vt_VectorClass_int; /*0x711cce*/
-  if ( v8 && this->VoiceAttack.IsAllocated ) /*0x711cd8*/
-  {
-    __3_YAXPAX_Z(v8); /*0x711ce1*/
-    this->VoiceAttack.Items = 0; /*0x711ce9*/
-  }
-  this->VoiceAttack.IsAllocated = 0; /*0x711cef*/
-  this->VoiceAttack.Capacity = 0; /*0x711cf5*/
-  v9 = *(void **)(this + 1132); /*0x711cfb*/
-  this->VoiceMove = &vt_VectorClass_int; /*0x711d01*/
-  if ( v9 && this->VoiceMove.IsAllocated ) /*0x711d0b*/
-  {
-    __3_YAXPAX_Z(v9); /*0x711d14*/
-    this->VoiceMove.Items = 0; /*0x711d1c*/
-  }
-  this->VoiceMove.IsAllocated = 0; /*0x711d22*/
-  this->VoiceMove.Capacity = 0; /*0x711d28*/
-  v10 = *(void **)(this + 1104); /*0x711d2e*/
-  this->VoiceSelectDeactivated = &vt_VectorClass_int; /*0x711d34*/
-  if ( v10 && this->VoiceSelectDeactivated.IsAllocated ) /*0x711d3e*/
-  {
-    __3_YAXPAX_Z(v10); /*0x711d47*/
-    this->VoiceSelectDeactivated.Items = 0; /*0x711d4f*/
-  }
-  this->VoiceSelectDeactivated.IsAllocated = 0; /*0x711d55*/
-  this->VoiceSelectDeactivated.Capacity = 0; /*0x711d5b*/
-  v11 = *(void **)(this + 1076); /*0x711d61*/
-  this->VoiceSelectEnslaved = &vt_VectorClass_int; /*0x711d67*/
-  if ( v11 && this->VoiceSelectEnslaved.IsAllocated ) /*0x711d71*/
-  {
-    __3_YAXPAX_Z(v11); /*0x711d7a*/
-    this->VoiceSelectEnslaved.Items = 0; /*0x711d82*/
-  }
-  this->VoiceSelectEnslaved.IsAllocated = 0; /*0x711d88*/
-  this->VoiceSelectEnslaved.Capacity = 0; /*0x711d8e*/
-  v12 = *(void **)(this + 1048); /*0x711d94*/
-  this->VoiceSelect = &vt_VectorClass_int; /*0x711d9a*/
-  if ( v12 && this->VoiceSelect.IsAllocated ) /*0x711da4*/
-  {
-    __3_YAXPAX_Z(v12); /*0x711dad*/
-    this->VoiceSelect.Items = 0; /*0x711db5*/
-  }
-  this->VoiceSelect.IsAllocated = 0; /*0x711dbb*/
-  this->VoiceSelect.Capacity = 0; /*0x711dc1*/
-  v13 = *(void **)(this + 1004); /*0x711dc7*/
-  this->Dock = &vt_VectorClass_BuildingTypeClass_const; /*0x711dcd*/
-  if ( v13 && this->Dock.IsAllocated ) /*0x711ddb*/
-  {
-    __3_YAXPAX_Z(v13); /*0x711de4*/
-    this->Dock.Items = 0; /*0x711dec*/
-  }
-  this->Dock.IsAllocated = 0; /*0x711df2*/
-  this->Dock.Capacity = 0; /*0x711df8*/
-  v14 = *(void **)(this + 820); /*0x711dfe*/
-  this->DebrisMaximums = &vt_VectorClass_int; /*0x711e04*/
-  if ( v14 && this->DebrisMaximums.IsAllocated ) /*0x711e0f*/
-  {
-    __3_YAXPAX_Z(v14); /*0x711e18*/
-    this->DebrisMaximums.Items = 0; /*0x711e20*/
-  }
-  this->DebrisMaximums.IsAllocated = 0; /*0x711e26*/
-  this->DebrisMaximums.Capacity = 0; /*0x711e2c*/
-  v15 = *(void **)(this + 792); /*0x711e32*/
-  this->DebrisTypes = &vt_VectorClass_VoxelAnimTypeClass_const; /*0x711e38*/
-  if ( v15 && this->DebrisTypes.IsAllocated ) /*0x711e46*/
-  {
-    __3_YAXPAX_Z(v15); /*0x711e4f*/
-    this->DebrisTypes.Items = 0; /*0x711e57*/
-  }
-  this->DebrisTypes.IsAllocated = 0; /*0x711e5f*/
-  this->DebrisTypes.Capacity = 0; /*0x711e65*/
-  return ObjectTypeClass::Destruct(this); /*0x711e70*/
-}
+    // 4x vftable installs: exempted (D1-6 #128 vocabulary)
+    char v2 = this->CameoAllocated;
+    if ( v2 && this->Cameo )
+    {
+        OperatorDelete(this->Cameo);
+        this->Cameo = nullptr;
+        this->CameoAllocated = 0;
+    }
+    if ( this->AltCameoAllocated && this->AltCameo )
+    {
+        OperatorDelete(this->AltCameo);
+        this->AltCameo = nullptr;
+        this->AltCameoAllocated = 0;
+    }
+    void* v17 = this;
+    int v3 = g_AbstractClassArray.FindItemIndex(&v17);
+    if ( v3 != -1 )
+        DynamicVector::RemoveItem(&g_AbstractClassArray, v3);
+    void* v17b = this;
+    int v4 = g_TechnoTypes.FindItemIndex((TechnoTypeClass**)&v17b);
+    if ( v4 != -1 )
+        TechnoTypeClass::RemoveItem(&g_TechnoTypes, v4);
+    VectorClass::Cleanup(this->DestroyParticleSystems_Embed);
+    VectorClass::Cleanup(this->DamageParticleSystems_Embed);
+    DynamicVectorClass::Destroy_Alt(this->DestroyAnim_Embed);
+    DynamicVectorClass::Destroy_Alt(this->Explosion_Embed);
+    VectorClass::Destroy(this->PrerequisiteOverride_Embed);
+    VectorClass::Destroy(this->Prerequisite_Embed);
+    DynamicVectorClass::Destroy_Alt(this->DebrisAnims_Embed);
+    VectorClass::Destroy(this->DieSound_Embed);
+    VectorClass::Destroy(this->MoveSound_Embed);
+    void* v5 = this->VoiceFeedback_Items;
+    if ( v5 && this->VoiceFeedback_FlagByte )
+    {
+        OperatorDelete(v5);
+        this->VoiceFeedback_Items = nullptr;
+    }
+    this->VoiceFeedback_FlagByte = 0;
+    this->VoiceFeedback_Capacity = 0;
+    void* v6 = this->IntList_H_Items;
+    if ( v6 && this->IntList_H_FlagByte )
+    {
+        OperatorDelete(v6);
+        this->IntList_H_Items = nullptr;
+    }
+    this->IntList_H_FlagByte = 0;
+    this->IntList_H_Capacity = 0;
+    void* v7 = this->IntList_G_Items;
+    if ( v7 && this->IntList_G_FlagByte )
+    {
+        OperatorDelete(v7);
+        this->IntList_G_Items = nullptr;
+    }
+    this->IntList_G_FlagByte = 0;
+    this->IntList_G_Capacity = 0;
+    void* v8 = this->IntList_F_Items;
+    if ( v8 && this->IntList_F_FlagByte )
+    {
+        OperatorDelete(v8);
+        this->IntList_F_Items = nullptr;
+    }
+    this->IntList_F_FlagByte = 0;
+    this->IntList_F_Capacity = 0;
+    void* v9 = this->IntList_E_Items;
+    if ( v9 && this->IntList_E_FlagByte )
+    {
+        OperatorDelete(v9);
+        this->IntList_E_Items = nullptr;
+    }
+    this->IntList_E_FlagByte = 0;
+    this->IntList_E_Capacity = 0;
+    void* v10 = this->IntList_D_Items;
+    if ( v10 && this->IntList_D_FlagByte )
+    {
+        OperatorDelete(v10);
+        this->IntList_D_Items = nullptr;
+    }
+    this->IntList_D_FlagByte = 0;
+    this->IntList_D_Capacity = 0;
+    void* v11 = this->IntList_C_Items;
+    if ( v11 && this->IntList_C_FlagByte )
+    {
+        OperatorDelete(v11);
+        this->IntList_C_Items = nullptr;
+    }
+    this->IntList_C_FlagByte = 0;
+    this->IntList_C_Capacity = 0;
+    void* v12 = this->IntList_B_Items;
+    if ( v12 && this->IntList_B_FlagByte )
+    {
+        OperatorDelete(v12);
+        this->IntList_B_Items = nullptr;
+    }
+    this->IntList_B_FlagByte = 0;
+    this->IntList_B_Capacity = 0;
+    void* v13 = this->BuildingTypeList_Items;
+    if ( v13 && this->BuildingTypeList_FlagByte )
+    {
+        OperatorDelete(v13);
+        this->BuildingTypeList_Items = nullptr;
+    }
+    this->BuildingTypeList_FlagByte = 0;
+    this->BuildingTypeList_Capacity = 0;
+    void* v14 = this->IntList_A_Items;
+    if ( v14 && this->IntList_A_FlagByte )
+    {
+        OperatorDelete(v14);
+        this->IntList_A_Items = nullptr;
+    }
+    this->IntList_A_FlagByte = 0;
+    this->IntList_A_Capacity = 0;
+    void* v15 = this->VoxelAnimList_Items;
+    if ( v15 && this->VoxelAnimList_FlagByte )
+    {
+        OperatorDelete(v15);
+        this->VoxelAnimList_Items = nullptr;
+    }
+    this->VoxelAnimList_FlagByte = 0;
+    this->VoxelAnimList_Capacity = 0;
+    return ObjectTypeClass::Destruct(this);
 }
 
 // 0x711F00

@@ -50,6 +50,10 @@ template <typename T>
 class VectorClass
 {
 public:
+    // G22: embed-cleanup helpers (DTOR family callees)
+    static void Cleanup(void* embed);   // 0x45a270
+    static void Destroy(void* embed);   // 0x477d20
+public:
     static_assert(!needs_vector_delete<T>::value || (alignof(T) <= 4),
         "Alignment of T needs to be less than or equal to 4.");
 
@@ -178,6 +182,7 @@ template <typename T>
 class DynamicVectorClass : public VectorClass<T>
 {
 public:
+    static void Destroy_Alt(void* embed);   // 0x5251c0
     // design: constexpr default ctor — base init + Count=0, CapacityIncrement=10
     constexpr DynamicVectorClass() noexcept;
 

@@ -67,6 +67,65 @@ struct WeaponStruct
 class TechnoTypeClass : public ObjectTypeClass
 {
 public:
+    // --- G22 DTOR write-map fields (11 TypeList embeds; binary offsets,
+    //      layout debt accepted per 09-07 ruling; verify via member_lookup) ---
+    unsigned char DestroyParticleSystems_Embed[28];  // 1940
+    unsigned char DamageParticleSystems_Embed[28];   // 1912
+    unsigned char DestroyAnim_Embed[28];             // 1864
+    unsigned char Explosion_Embed[28];               // 1836
+    unsigned char PrerequisiteOverride_Embed[28];    // 1620
+    unsigned char Prerequisite_Embed[28];            // 1592
+    unsigned char DebrisAnims_Embed[28];             // 1476
+    unsigned char DieSound_Embed[28];                // 1296
+    unsigned char MoveSound_Embed[28];               // 1268
+    unsigned char VoiceFeedback_Embed[28];           // 1240
+    unsigned char VoxelAnimList_Embed[28];           // 788
+    unsigned char IntList_A_Embed[28];               // 816
+    unsigned char BuildingTypeList_Embed[28];        // 1000
+    unsigned char IntList_B_Embed[28];               // 1044
+    unsigned char IntList_C_Embed[28];               // 1072
+    unsigned char IntList_D_Embed[28];               // 1100
+    unsigned char IntList_E_Embed[28];               // 1128
+    unsigned char IntList_F_Embed[28];               // 1156
+    unsigned char IntList_G_Embed[28];               // 1184
+    unsigned char IntList_H_Embed[28];               // 1212
+    void* Cameo;                    // 1776
+    unsigned char CameoAllocated;   // 1780
+    void* AltCameo;                 // 1808
+    unsigned char AltCameoAllocated;// 1812
+    void* VoxelAnimList_Items;      // 792
+    int VoxelAnimList_Capacity;     // 796
+    unsigned char VoxelAnimList_FlagByte; // 801
+    void* IntList_A_Items;          // 820
+    int IntList_A_Capacity;         // 824
+    unsigned char IntList_A_FlagByte; // 829
+    void* BuildingTypeList_Items;   // 1004
+    int BuildingTypeList_Capacity;  // 1008
+    unsigned char BuildingTypeList_FlagByte; // 1013
+    void* IntList_B_Items;          // 1048
+    int IntList_B_Capacity;         // 1052
+    unsigned char IntList_B_FlagByte; // 1057
+    void* IntList_C_Items;          // 1076
+    int IntList_C_Capacity;         // 1080
+    unsigned char IntList_C_FlagByte; // 1085
+    void* IntList_D_Items;          // 1104
+    int IntList_D_Capacity;         // 1108
+    unsigned char IntList_D_FlagByte; // 1113
+    void* IntList_E_Items;          // 1132
+    int IntList_E_Capacity;         // 1136
+    unsigned char IntList_E_FlagByte; // 1141
+    void* IntList_F_Items;          // 1160
+    int IntList_F_Capacity;         // 1164
+    unsigned char IntList_F_FlagByte; // 1169
+    void* IntList_G_Items;          // 1188
+    int IntList_G_Capacity;         // 1192
+    unsigned char IntList_G_FlagByte; // 1197
+    void* IntList_H_Items;          // 1216
+    int IntList_H_Capacity;         // 1220
+    unsigned char IntList_H_FlagByte; // 1225
+    void* VoiceFeedback_Items;      // 1244
+    int VoiceFeedback_Capacity;     // 1248
+    unsigned char VoiceFeedback_FlagByte; // 1253
     static constexpr auto MaxWeapons = 18;
 
     static DynamicVectorClass<TechnoTypeClass*>* Array;
@@ -486,5 +545,30 @@ public:
     unsigned int * Constructor();  // 0x717AF0
 // --- e4 declarations (END) ---
 };
+
+// G22: type registries (DTOR self-deregistration; FindItemIndex = slot16)
+struct AbstractRegistry_Shim
+{
+    void* VfptrUnused;
+    void** Items;
+    int Capacity;
+    unsigned char FlagsByte[4];
+    int Count;
+    int CapacityIncrement;
+    int FindItemIndex(void** item);
+};
+extern AbstractRegistry_Shim g_AbstractClassArray;  // data: 0xB0F670
+
+struct TechnoTypesVector_Shim
+{
+    void* VfptrUnused;
+    TechnoTypeClass** Items;
+    int Capacity;
+    unsigned char FlagsByte[4];
+    int Count;
+    int CapacityIncrement;
+    int FindItemIndex(TechnoTypeClass** item);
+};
+extern TechnoTypesVector_Shim g_TechnoTypes;  // data: 0xA8EB00
 
 } // namespace gamemd
