@@ -171,6 +171,9 @@ Phase ε 集成验收（≈2-4 会话）
 
 ## 附：权威源索引
 
+- **双分支总攻计划：`docs/dual_branch_plan.md`**（甲=词汇·批量·解锁线 / 乙=语义·考古·核心线；
+  文件所有权隔离 + signals 单写协议 + A1-A7/B1-B7 分段 + 7,267→0 全量分摊）
+
 - 下一会话细节：`docs/g22_prep.md`（吞吐配额制 + D1 集中包 + B1-B5）
 - 历史执行日志：`docs/roadmap_post_csp.md` 文末 G17-G22 节
 - 审计修复：`docs/audit_repair_plan.md`（W1/W2 已收官）
