@@ -3215,3 +3215,19 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   四源重建（hpp 指针模型 vs 内嵌 TypeList 冲突）；TechnoTypeClass 块已 til 命名态。
 - **GetResourceID 族 📌**：this==小整数比较 ptr→int 门禁全禁（#129 独立记账）。
 - 提交：54e0805e（计划+六裁决定谳）→ dade4cff（D1 执行）。
+
+### G22 执行续：D1-6b 首翻落地（InfantryTypeClass::DTOR，净增 +1）
+
+- **InfantryTypeClass::DTOR(0x5239d0) ✅ completed**：删除式析构真翻（4 重 vfptr
+  安装=豁免词汇、InfantryTypes 注册自摘、RecordTable/三 TypeList 字段清理、
+  尾调 TechnoTypeClass::DTOR），verify 全绿。
+- **新词汇三条（do-while 族解锁钥匙）**：①Hex-Rays 将 do-while 渲染为
+  `for(;;cond;shift)`——cpp 侧必须镜像 for 形态（shift 在 inc 槽）才块对齐；
+  ②cache 归一：`*(void**)/(CCINIClass**)(this+N)` → `*(_DWORD*)(this+N)`、
+  `__3_YAXPAX_Z` → `OperatorDelete`（4 字节读/调用语义保持）；③全局 blob 读
+  （MEMORY[0xA8Exxx]→HouseClass_Player.__pad 渲染）IDA 侧不提取事件 → cpp 侧
+  g_* 保持未解析静默对称（_by_name 不加条目）。
+- **TechnoTypeClass::DTOR(0x711ae0) 前置精确化（#129）**：ml 33 成员缺口
+  （11 TypeList 嵌入字段，基座名已有：VoiceFeedback/MoveSound/DieSound/...，
+  字段名=基座+角色后缀）；g_AbstractClassArray/g_TechnoTypes 已定谳。
+- 提交链：54e0805e → dade4cff → afed9740 → e1cf2181，tag 随每步重锚。
