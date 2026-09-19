@@ -3373,3 +3373,18 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   827f6853 → 29c51e18 → fc48ea86 → a9cfdced → e918cc66 → 85661e73 →
   a57bc09d。注：前三单提交消息的 11,733/11,738/11,741 为基线算术笔误（+6），
   真实里程碑 11,727/11,732/11,735，以 signals 为准。
+
+
+### G22 补充：W0b 关键技术结论与本会话终态
+- **W0b(a) 与验证器对称性冲突定谳**：thisArg 重命名方案会使 cpp 侧
+  `thisArg->X` 静默，而 gap2 cache 文本 `this->X`（class-less 全局成员索引）
+  在 IDA 侧发事件——不对称必 FAIL。可行路径=(b) 迁类方法桶（this 合法化）
+  或（重生成时同步重取 cache 使双侧同为具名参数）。需生成器+IDA 重提取
+  联动，独立会话工程。
+- **H3r 三类别重扫=全清零**：free-this/IDA-ism/broken-arrow 在 G14-G22 间期
+  波次中已消化（DataGlobal 名键化+?归一化覆盖），B3 线原始目标消失。
+- **pending 全池实测 4,770 marker 块**（11,843 completed + 4,770 marker +
+  ~2,454 stub 池 = 19,067 总账吻合）；Top：system/gap2 269、_gap2 265、
+  object 140、ui 122、addr7C 119。
+- **dtor 族战役终态**：126 队列 → 123 收割 / 3 goto 永久挂起（AnimFile+
+  Enum×2，图同构不可达已终验）。
