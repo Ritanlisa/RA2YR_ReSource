@@ -3579,3 +3579,17 @@ _DWORD* Count::ddtor()
     --this->RefCount;
     return this;
 }
+
+// 0x766fb0
+_DWORD* Conflict_WorldDominationTour_26::ddtor()
+{
+    --this->RefCount;
+    return this;
+}
+
+// 0x76a5b0
+_DWORD* Map_WorldDominationTour_38::ddtor()
+{
+    --this->RefCount;
+    return this;
+}
