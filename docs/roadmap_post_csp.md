@@ -3232,7 +3232,7 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   字段名=基座+角色后缀）；g_AbstractClassArray/g_TechnoTypes 已定谳。
 - 提交链：54e0805e → dade4cff → afed9740 → e1cf2181，tag 随每步重锚。
 
-### G22 执行续二：dtor 族批量收割 + E1 收官 + A3 舰队波（净增 +62 → 11,782）
+### G22 执行续二：dtor 族批量收割 + E1 收官 + A3 舰队波（净增 +63 → 11,783）
 
 - **Cleanup-shape 复盘与重做（×7，commit 8bb78bc9）**：G22 早前批量 7/7 FAIL
   根因三连——①生成器产出四冒号畸形 `Cls::::ddtor`（signals 名拆分 bug）；
@@ -3279,7 +3279,8 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   形态**（G21 for-form 教训的逆方向：IDA 渲染 do-while 时 cpp 必须真 do-while，
   for-form 反而块错位）；④`Cls *blk = this;` 局部对称（**Block 撞真全局
   0x87C484 教训**——局部名走小写）；⑤OperatorDelete/OperatorNew cache 手术。
-- 口径：completed **11,782** / dtor 族队列余 64
+- 口径：completed **11,783** / dtor 族队列余 63
+  （WeaponTypeClass 补收 +1；SmudgeType/TerrainType fastcall 签名怪态留待下波）
   （下一既定批量 = TClassFactory 族 ×13 签名手术：0 参数记录 vs 3 栈参
   CreateInstance 形态 arg4/a3/v8 + OperatorNew cache 手术） / 提交链 8bb78bc9 →
   827f6853 → 29c51e18 → fc48ea86 → a9cfdced → e918cc66 → 85661e73 →
