@@ -3343,13 +3343,19 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   关键发现：`&this->?` 行（til 未名成员）被 IDA 提取器跳过（仅 CALL 事件），
   cpp 侧须同跳过——Destroy 实参用局部中转或不发事件形态；`this->?` 解引用行
   发 1×READ(member,?) wildcard。转换脚本可模板化：剥 (int) 强转 + ? 行特殊化。
+- **RulesClass::DTOR ✅（11,840，五轮迭代）**：最终配方=①?成员经反汇编
+  this 寄存器（esi/ecx）扫描定偏移+q%03X 名 ml/mbn 全量映射；②cache 全量
+  归一后 cpp=verbatim（剥地址注释+剥 (int) 强转）；③**下标安装行保留**
+  （`this->vec[6] = &vt_X` 的 [N] 破坏 IDA 豁免正则→真实 WRITE 必须镜像）、
+  无下标安装省略（豁免丢弃）；④off_-RHS 写为真实事件保留。587 行最大件
+  收割，验证器词汇无任何改动。
 - **dtor 队列终态分诊（余 15 全部 H5 手动档）**：TechnoClass::DTOR（20 写×12 调大件）/
   AnimFile（成员阵列-heavy）/ IPXManager _vt03（包服务循环=误名实函数）/
   MSFont _vt03（文本绘制）/ GraphicMenuImageItem _vt03（NullGuard+CCFile 链）/
   BuildingLight SDDTOR（blob-member 渲染 7 读需 struct 型全局词汇）/
   UDP _vt03（8 参签名）/ SmudgeType+TerrainType（fastcall 2 形参怪态）/
   UDP ✅已收 / MapSize ✅已收（合成 MapSizeOptStub 链+globals 名键词汇）/
-  Counter ✅已收 / RulesClass::DTOR（586 行 200 事件最大件）/ AnimFile（187 行
+  Counter ✅已收 / RulesClass::DTOR ✅已收（587 行最大件）/ AnimFile（187 行
   goto 播放引擎）/ MSFont（文本渲染）/ CStreamClass（__userpurge）/ Enum×2
   （goto 族）/ UnitClass TF（寄存器参数）——余 7 件均需独立会话档
   （下一既定批量 = TClassFactory 族 ×13 签名手术：0 参数记录 vs 3 栈参
