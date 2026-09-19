@@ -684,64 +684,53 @@ int __userpurge InfantryTypeClass::SaveLoad_Prefix@<eax>(int a1@<ebx>, _DWORD *a
 // 0x524D70
 InfantryTypeClass * InfantryTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-InfantryTypeClass *__thiscall InfantryTypeClass::ddtor(int this, char a2)
-{
-  int v3; // eax
-  void *v4; // eax
-  void *v5; // eax
-  void *v6; // eax
-  int v8; // [esp+4h] [ebp-4h] BYREF
-
-  *(_DWORD *)this = &InfantryTypeClass::`vftable'; /*0x524d76*/
-  this->vtable1 = &InfantryTypeClass::`vftable'; /*0x524d7c*/
-  this->vtable2 = &InfantryTypeClass::`vftable'; /*0x524d83*/
-  this->vtable3 = &vt_InfantryTypeClass; /*0x524d8a*/
-  AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x524d91*/
-  v8 = this; /*0x524da6*/
-  v3 = (*(int (__thiscall **)(int *, int *))(MEMORY[0xA8E348] + 16))(&MEMORY[0xA8E348], &v8); /*0x524daa*/
-  if ( v3 != -1 && v3 < MEMORY[0xA8E358] && v3 < --MEMORY[0xA8E358] ) /*0x524dc5*/
-  {
-    do /*0x524ddd*/
+    InfantryTypeClass* v7 = this;
+    InfantryTypeClass* blk = this;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    g_InfantryTypes;
+    int v2 = g_InfantryTypes.FindItemIndex(&v7);
+    if ( v2 != -1 && v2 < g_InfantryTypes_Count && v2 < --g_InfantryTypes_Count )
     {
-      ++v3; /*0x524dcd*/
-      *((_DWORD *)MEMORY[0xA8E34C] + v3 - 1) = *((_DWORD *)MEMORY[0xA8E34C] + v3); /*0x524dd1*/
+        do
+        {
+            ++v2;
+            *(g_InfantryTypes_Items + v2 - 1) = *(g_InfantryTypes_Items + v2);
+        }
+        while ( v2 < g_InfantryTypes_Count );
     }
-    while ( v3 < MEMORY[0xA8E358] ); /*0x524ddd*/
-  }
-  __3_YAXPAX_Z(*(void **)(this + 3644)); /*0x524de7*/
-  this->Sequence = 0; /*0x524df1*/
-  v4 = *(void **)(this + 3724); /*0x524df7*/
-  this->VoiceComment = &vt_VectorClass_int; /*0x524dff*/
-  if ( v4 && this->VoiceComment.IsAllocated ) /*0x524e0b*/
-  {
-    __3_YAXPAX_Z(v4); /*0x524e14*/
-    this->VoiceComment.Items = 0; /*0x524e1c*/
-  }
-  this->VoiceComment.IsAllocated = 0; /*0x524e22*/
-  this->VoiceComment.Capacity = 0; /*0x524e28*/
-  v5 = *(void **)(this + 3696); /*0x524e2e*/
-  this->DeathAnims = &vt_VectorClass_AnimTypeClass_const; /*0x524e34*/
-  if ( v5 && this->DeathAnims.IsAllocated ) /*0x524e42*/
-  {
-    __3_YAXPAX_Z(v5); /*0x524e4b*/
-    this->DeathAnims.Items = 0; /*0x524e53*/
-  }
-  this->DeathAnims.IsAllocated = 0; /*0x524e59*/
-  this->DeathAnims.Capacity = 0; /*0x524e5f*/
-  v6 = *(void **)(this + 3668); /*0x524e65*/
-  this->DeadBodies = &vt_VectorClass_AnimTypeClass_const; /*0x524e6b*/
-  if ( v6 && this->DeadBodies.IsAllocated ) /*0x524e79*/
-  {
-    __3_YAXPAX_Z(v6); /*0x524e82*/
-    this->DeadBodies.Items = 0; /*0x524e8a*/
-  }
-  this->DeadBodies.IsAllocated = 0; /*0x524e92*/
-  this->DeadBodies.Capacity = 0; /*0x524e98*/
-  TechnoTypeClass::DTOR(this); /*0x524e9e*/
-  if ( (a2 & 1) != 0 ) /*0x524eaa*/
-    __3_YAXPAX_Z((void *)this); /*0x524ead*/
-  return (InfantryTypeClass *)this; /*0x524eb7*/
+    OperatorDelete(blk->RecordTable);
+    blk->RecordTable = nullptr;
+    void *v3 = blk->VoiceComment_Items;
+    blk->VoiceComment_Base = nullptr;
+    if ( v3 && blk->VoiceComment_FlagByte )
+    {
+        OperatorDelete(v3);
+        blk->VoiceComment_Items = nullptr;
+    }
+    blk->VoiceComment_FlagByte = 0;
+    blk->VoiceComment_Capacity = 0;
+    void *v4 = blk->DeathAnims_Items;
+    blk->DeathAnims_Base = nullptr;
+    if ( v4 && blk->DeathAnims_FlagByte )
+    {
+        OperatorDelete(v4);
+        blk->DeathAnims_Items = nullptr;
+    }
+    blk->DeathAnims_FlagByte = 0;
+    blk->DeathAnims_Capacity = 0;
+    void *v5 = blk->DeadBodies_Items;
+    blk->DeadBodies_Base = nullptr;
+    if ( v5 && blk->DeadBodies_FlagByte )
+    {
+        OperatorDelete(v5);
+        blk->DeadBodies_Items = nullptr;
+    }
+    blk->DeadBodies_FlagByte = 0;
+    blk->DeadBodies_Capacity = 0;
+    TechnoTypeClass::DTOR(this);
+    if ( a2 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 

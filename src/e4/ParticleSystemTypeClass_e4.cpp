@@ -248,32 +248,23 @@ int __thiscall ParticleSystemTypeClass::_vt13(int this, int *a2)
 namespace gamemd {
 ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ParticleSystemTypeClass *__thiscall ParticleSystemTypeClass::ddtor(void **this, char a2)
-{
-  int v3; // eax
-  void **v5; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &ParticleSystemTypeClass::`vftable'; /*0x644966*/
-  *(this + 1) = &ParticleSystemTypeClass::`vftable'; /*0x64496c*/
-  *(this + 2) = &ParticleSystemTypeClass::`vftable'; /*0x644973*/
-  *(this + 3) = &vt_ParticleSystemTypeClass; /*0x64497a*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x644981*/
-  v5 = this; /*0x644996*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA83D68] + 16))(&MEMORY[0xA83D68], &v5); /*0x64499a*/
-  if ( v3 != -1 && v3 < MEMORY[0xA83D78] && v3 < --MEMORY[0xA83D78] ) /*0x6449b5*/
-  {
-    do /*0x6449cd*/
+    ParticleSystemTypeClass* v7 = this;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    DataGlobal_A83D68;
+    int v2 = DataGlobal_A83D68.FindItemIndex(&v7);
+    if ( v2 != -1 && v2 < DataGlobal_A83D78 && v2 < --DataGlobal_A83D78 )
     {
-      ++v3; /*0x6449bd*/
-      *((_DWORD *)MEMORY[0xA83D6C] + v3 - 1) = *((_DWORD *)MEMORY[0xA83D6C] + v3); /*0x6449c1*/
+        do
+        {
+            ++v2;
+            *(DataGlobal_A83D6C + v2 - 1) = *(DataGlobal_A83D6C + v2);
+        }
+        while ( v2 < DataGlobal_A83D78 );
     }
-    while ( v3 < MEMORY[0xA83D78] ); /*0x6449cd*/
-  }
-  ObjectTypeClass::Destruct((int)this); /*0x6449d1*/
-  if ( (a2 & 1) != 0 ) /*0x6449db*/
-    __3_YAXPAX_Z(this); /*0x6449de*/
-  return (ParticleSystemTypeClass *)this; /*0x6449e8*/
+    ObjectTypeClass::Destruct(this);
+    if ( a2 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 } // namespace gamemd

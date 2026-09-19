@@ -1136,43 +1136,33 @@ int __thiscall AnimTypeClass::_vt39(char *this)
 namespace gamemd {
 AnimTypeClass * AnimTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-AnimTypeClass *__thiscall AnimTypeClass::ddtor(_DWORD *this, char a2)
-{
-  int v3; // eax
-  int v4; // eax
-  _DWORD *v6; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &AnimTypeClass::`vftable'; /*0x428ead*/
-  *(this + 1) = &AnimTypeClass::`vftable'; /*0x428eb3*/
-  *(this + 2) = &AnimTypeClass::`vftable'; /*0x428eba*/
-  *(this + 3) = &vt_AnimTypeClass; /*0x428ec1*/
-  v6 = this; /*0x428ecf*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x428ed3*/
-  if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x428eee*/
-  {
-    do /*0x428f06*/
+    AnimTypeClass* v7 = this;
+    g_AnimPoolManager;
+    int v2 = g_AnimPoolManager.FindItemIndex(&v7);
+    if ( v2 != -1 && v2 < g_AnimManager && v2 < --g_AnimManager )
     {
-      ++v3; /*0x428ef6*/
-      *((_DWORD *)MEMORY[0xB0F674] + v3 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v3); /*0x428efa*/
+        do
+        {
+            ++v2;
+            *(g_AnimPoolCount + v2 - 1) = *(g_AnimPoolCount + v2);
+        }
+        while ( v2 < g_AnimManager );
     }
-    while ( v3 < MEMORY[0xB0F680] ); /*0x428f06*/
-  }
-  v6 = this; /*0x428f18*/
-  v4 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0x8B4150] + 16))(&MEMORY[0x8B4150], &v6); /*0x428f1c*/
-  if ( v4 != -1 && v4 < MEMORY[0x8B4160] && v4 < --MEMORY[0x8B4160] ) /*0x428f37*/
-  {
-    do /*0x428f4f*/
+    DataGlobal_8B4150;
+    int v3 = DataGlobal_8B4150.FindItemIndex(&v7);
+    if ( v3 != -1 && v3 < DataGlobal_8B4160 && v3 < --DataGlobal_8B4160 )
     {
-      ++v4; /*0x428f3f*/
-      *((_DWORD *)MEMORY[0x8B4154] + v4 - 1) = *((_DWORD *)MEMORY[0x8B4154] + v4); /*0x428f43*/
+        do
+        {
+            ++v3;
+            *(DataGlobal_8B4154 + v3 - 1) = *(DataGlobal_8B4154 + v3);
+        }
+        while ( v3 < DataGlobal_8B4160 );
     }
-    while ( v4 < MEMORY[0x8B4160] ); /*0x428f4f*/
-  }
-  ObjectTypeClass::Destruct((int)this); /*0x428f53*/
-  if ( (a2 & 1) != 0 ) /*0x428f5d*/
-    __3_YAXPAX_Z(this); /*0x428f60*/
-  return (AnimTypeClass *)this; /*0x428f6a*/
+    ObjectTypeClass::Destruct(this);
+    if ( a2 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 } // namespace gamemd

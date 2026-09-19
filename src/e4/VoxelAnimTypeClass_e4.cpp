@@ -467,49 +467,39 @@ int __thiscall VoxelAnimTypeClass::_vt13(int this, int *a2)
 namespace gamemd {
 VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-VoxelAnimTypeClass *__thiscall VoxelAnimTypeClass::ddtor(void **this, char a2)
-{
-  int v3; // eax
-  int v4; // eax
-  void **v6; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &VoxelAnimTypeClass::`vftable'; /*0x74ba36*/
-  *(this + 1) = &VoxelAnimTypeClass::`vftable'; /*0x74ba3c*/
-  *(this + 2) = &VoxelAnimTypeClass::`vftable'; /*0x74ba43*/
-  *(this + 3) = &vt_VoxelAnimTypeClass; /*0x74ba4a*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x74ba51*/
-  v6 = this; /*0x74ba66*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x74ba6a*/
-  if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x74ba85*/
-  {
-    do /*0x74ba9d*/
+    VoxelAnimTypeClass* v7 = this;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    g_AnimPoolManager;
+    int v2 = g_AnimPoolManager.FindItemIndex(&v7);
+    if ( v2 != -1 && v2 < g_AnimManager && v2 < --g_AnimManager )
     {
-      ++v3; /*0x74ba8d*/
-      *((_DWORD *)MEMORY[0xB0F674] + v3 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v3); /*0x74ba91*/
+        do
+        {
+            ++v2;
+            *(g_AnimPoolCount + v2 - 1) = *(g_AnimPoolCount + v2);
+        }
+        while ( v2 < g_AnimManager );
     }
-    while ( v3 < MEMORY[0xB0F680] ); /*0x74ba9d*/
-  }
-  v6 = this; /*0x74baaf*/
-  v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8EB28] + 16))(&MEMORY[0xA8EB28], &v6); /*0x74bab3*/
-  if ( v4 != -1 && v4 < MEMORY[0xA8EB38] && v4 < --MEMORY[0xA8EB38] ) /*0x74bace*/
-  {
-    do /*0x74bae6*/
+    VoxelAnimTypeClass_Array;
+    int v3 = VoxelAnimTypeClass_Array.FindItemIndex(&v7);
+    if ( v3 != -1 && v3 < g_MultiplayerPool && v3 < --g_MultiplayerPool )
     {
-      ++v4; /*0x74bad6*/
-      *((_DWORD *)MEMORY[0xA8EB2C] + v4 - 1) = *((_DWORD *)MEMORY[0xA8EB2C] + v4); /*0x74bada*/
+        do
+        {
+            ++v3;
+            *(DataGlobal_A8EB2C + v3 - 1) = *(DataGlobal_A8EB2C + v3);
+        }
+        while ( v3 < g_MultiplayerPool );
     }
-    while ( v4 < MEMORY[0xA8EB38] ); /*0x74bae6*/
-  }
-  if ( this->SourceShared ) /*0x74bae8*/
-  {
-    *(this + 44) = 0; /*0x74baf4*/
-    *(this + 45) = 0; /*0x74bafa*/
-  }
-  ObjectTypeClass::Destruct((int)this); /*0x74bb02*/
-  if ( (a2 & 1) != 0 ) /*0x74bb0c*/
-    __3_YAXPAX_Z(this); /*0x74bb0f*/
-  return (VoxelAnimTypeClass *)this; /*0x74bb19*/
+    if ( blk->voxelByte662 )
+    {
+        blk->voxelSlot176 = 0;
+        blk->voxelSlot180 = 0;
+    }
+    ObjectTypeClass::Destruct(this);
+    if ( a2 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 } // namespace gamemd

@@ -679,54 +679,45 @@ int __thiscall ParticleTypeClass::_vt10(_DWORD *this, int a2, int a3)
 namespace gamemd {
 ParticleTypeClass * ParticleTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ParticleTypeClass *__thiscall ParticleTypeClass::ddtor(void **this, char a2)
-{
-  int v3; // eax
-  int v4; // eax
-  void *v5; // eax
-  void **v7; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &ParticleTypeClass::`vftable'; /*0x645956*/
-  *(this + 1) = &ParticleTypeClass::`vftable'; /*0x64595c*/
-  *(this + 2) = &ParticleTypeClass::`vftable'; /*0x645963*/
-  *(this + 3) = &vt_ParticleTypeClass; /*0x64596a*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x645971*/
-  v7 = this; /*0x645986*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v7); /*0x64598a*/
-  if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x6459a5*/
-  {
-    do /*0x6459bd*/
+    ParticleTypeClass* v7 = this;
+    ParticleTypeClass* blk = this;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    g_AnimPoolManager;
+    int v2 = g_AnimPoolManager.FindItemIndex(&v7);
+    if ( v2 != -1 && v2 < g_AnimManager && v2 < --g_AnimManager )
     {
-      ++v3; /*0x6459ad*/
-      *((_DWORD *)MEMORY[0xB0F674] + v3 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v3); /*0x6459b1*/
+        do
+        {
+            ++v2;
+            *(g_AnimPoolCount + v2 - 1) = *(g_AnimPoolCount + v2);
+        }
+        while ( v2 < g_AnimManager );
     }
-    while ( v3 < MEMORY[0xB0F680] ); /*0x6459bd*/
-  }
-  v7 = this; /*0x6459cf*/
-  v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA83D98] + 16))(&MEMORY[0xA83D98], &v7); /*0x6459d3*/
-  if ( v4 != -1 && v4 < MEMORY[0xA83DA8] && v4 < --MEMORY[0xA83DA8] ) /*0x6459ee*/
-  {
-    do /*0x645a06*/
+    DataGlobal_A83D98;
+    int v3 = DataGlobal_A83D98.FindItemIndex(&v7);
+    if ( v3 != -1 && v3 < DataGlobal_A83DA8 && v3 < --DataGlobal_A83DA8 )
     {
-      ++v4; /*0x6459f6*/
-      *((_DWORD *)MEMORY[0xA83D9C] + v4 - 1) = *((_DWORD *)MEMORY[0xA83D9C] + v4); /*0x6459fa*/
+        do
+        {
+            ++v3;
+            *(DataGlobal_A83D9C + v3 - 1) = *(DataGlobal_A83D9C + v3);
+        }
+        while ( v3 < DataGlobal_A83DA8 );
     }
-    while ( v4 < MEMORY[0xA83DA8] ); /*0x645a06*/
-  }
-  v5 = *(this + 175); /*0x645a08*/
-  *(this + 174) = &vt_VectorClass_RGBClass; /*0x645a0e*/
-  if ( v5 && *((_BYTE *)this + 709) ) /*0x645a1c*/
-  {
-    __3_YAXPAX_Z(v5); /*0x645a27*/
-    *(this + 175) = 0; /*0x645a2f*/
-  }
-  *((_BYTE *)this + 709) = 0; /*0x645a3b*/
-  *(this + 176) = 0; /*0x645a42*/
-  ObjectTypeClass::Destruct((int)this); /*0x645a4c*/
-  if ( (a2 & 1) != 0 ) /*0x645a56*/
-    __3_YAXPAX_Z(this); /*0x645a59*/
-  return (ParticleTypeClass *)this; /*0x645a63*/
+    blk->rgbVector->Delete();
+    void *v5 = blk->rgbItems;
+    blk->rgbVector = nullptr;
+    if ( v5 && blk->rgbFlag )
+    {
+        OperatorDelete(v5);
+        blk->rgbItems = nullptr;
+    }
+    blk->rgbFlag = 0;
+    blk->rgbCapacity = 0;
+    ObjectTypeClass::Destruct(this);
+    if ( a2 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 } // namespace gamemd

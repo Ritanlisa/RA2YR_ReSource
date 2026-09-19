@@ -47,43 +47,31 @@ int __thiscall AlphaShapeClass::SD_vt10(int this, int a2, int a3)
 // 0x421730
 AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-AlphaShapeClass *__thiscall AlphaShapeClass::SDDTOR(_DWORD *this, char a2)
-{
-  int v3; // eax
-  int v4; // eax
-  _DWORD *v6; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &AlphaShapeClass::`vftable'; /*0x42173d*/
-  *(this + 1) = &AlphaShapeClass::`vftable'; /*0x421743*/
-  *(this + 2) = &AlphaShapeClass::`vftable'; /*0x42174a*/
-  *(this + 3) = &vt_AlphaShapeClass; /*0x421751*/
-  v6 = this; /*0x42175f*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0x88A0F0] + 16))(&MEMORY[0x88A0F0], &v6); /*0x421763*/
-  if ( v3 != -1 && v3 < MEMORY[0x88A100] && v3 < --MEMORY[0x88A100] ) /*0x42177e*/
-  {
-    do /*0x421796*/
+    AlphaShapeClass* v7 = this;
+    int v2 = DataGlobal_88A0F0.FindItemIndex(&v7);
+    if ( v2 != -1 && v2 < DataGlobal_88A100 && v2 < --DataGlobal_88A100 )
     {
-      ++v3; /*0x421786*/
-      *((_DWORD *)MEMORY[0x88A0F4] + v3 - 1) = *((_DWORD *)MEMORY[0x88A0F4] + v3); /*0x42178a*/
+        do
+        {
+            ++v2;
+            *(DataGlobal_88A0F4 + v2 - 1) = *(DataGlobal_88A0F4 + v2);
+        }
+        while ( v2 < DataGlobal_88A100 );
     }
-    while ( v3 < MEMORY[0x88A100] ); /*0x421796*/
-  }
-  v6 = this; /*0x4217a8*/
-  v4 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0F720] + 16))(&MEMORY[0xB0F720], &v6); /*0x4217ac*/
-  if ( v4 != -1 && v4 < MEMORY[0xB0F730] && v4 < --MEMORY[0xB0F730] ) /*0x4217c7*/
-  {
-    do /*0x4217df*/
+    int v3 = DataGlobal_B0F720.FindItemIndex(&v7);
+    if ( v3 != -1 && v3 < DataGlobal_B0F730 && v3 < --DataGlobal_B0F730 )
     {
-      ++v4; /*0x4217cf*/
-      *((_DWORD *)MEMORY[0xB0F724] + v4 - 1) = *((_DWORD *)MEMORY[0xB0F724] + v4); /*0x4217d3*/
+        do
+        {
+            ++v3;
+            *(DataGlobal_B0F724 + v3 - 1) = *(DataGlobal_B0F724 + v3);
+        }
+        while ( v3 < DataGlobal_B0F730 );
     }
-    while ( v4 < MEMORY[0xB0F730] ); /*0x4217df*/
-  }
-  AbstractClass::DTOR(this); /*0x4217e3*/
-  if ( (a2 & 1) != 0 ) /*0x4217ed*/
-    __3_YAXPAX_Z(this); /*0x4217f0*/
-  return (AlphaShapeClass *)this; /*0x4217fa*/
+    AbstractClass::DTOR(this);
+    if ( a2 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 

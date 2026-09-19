@@ -90,43 +90,34 @@ LABEL_17:
 namespace gamemd {
 WaveClass * WaveClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-WaveClass *__thiscall WaveClass::ddtor(void **this, char a2)
-{
-  int v3; // eax
-  void *v4; // eax
-  void **v6; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &WaveClass::`vftable'; /*0x763206*/
-  *(this + 1) = &WaveClass::`vftable'; /*0x76320c*/
-  *(this + 2) = &vt_WaveClass; /*0x763213*/
-  *(this + 3) = &off_7F6BC8; /*0x76321a*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x763221*/
-  v6 = this; /*0x763236*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8EC38] + 16))(&MEMORY[0xA8EC38], &v6); /*0x76323a*/
-  if ( v3 != -1 && v3 < MEMORY[0xA8EC48] && v3 < --MEMORY[0xA8EC48] ) /*0x763255*/
-  {
-    do /*0x76326d*/
+    WaveClass* v7 = this;
+    WaveClass* blk = this;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    DataGlobal_A8EC38;
+    int v2 = DataGlobal_A8EC38.FindItemIndex(&v7);
+    if ( v2 != -1 && v2 < DataGlobal_A8EC48 && v2 < --DataGlobal_A8EC48 )
     {
-      ++v3; /*0x76325d*/
-      *((_DWORD *)MEMORY[0xA8EC3C] + v3 - 1) = *((_DWORD *)MEMORY[0xA8EC3C] + v3); /*0x763261*/
+        do
+        {
+            ++v2;
+            *(DataGlobal_A8EC3C + v2 - 1) = *(DataGlobal_A8EC3C + v2);
+        }
+        while ( v2 < DataGlobal_A8EC48 );
     }
-    while ( v3 < MEMORY[0xA8EC48] ); /*0x76326d*/
-  }
-  (*((void (__thiscall **)(void **))*(this + 124) + 3))(this + 124); /*0x76327e*/
-  v4 = *(this + 125); /*0x763281*/
-  *(this + 124) = &vt_VectorClass_CellClass; /*0x763284*/
-  if ( v4 && *((_BYTE *)this + 509) ) /*0x76328e*/
-  {
-    __3_YAXPAX_Z(v4); /*0x763296*/
-    *(this + 125) = 0; /*0x76329e*/
-  }
-  *((_BYTE *)this + 509) = 0; /*0x7632a7*/
-  *(this + 126) = 0; /*0x7632ab*/
-  ObjectClass::Dtor(this); /*0x7632b2*/
-  if ( (a2 & 1) != 0 ) /*0x7632be*/
-    __3_YAXPAX_Z(this); /*0x7632c1*/
-  return (WaveClass *)this; /*0x7632cb*/
+    blk->cellVector->Delete();
+    void *v4 = blk->cellItems;
+    blk->cellVector = nullptr;
+    if ( v4 && blk->cellFlag )
+    {
+        OperatorDelete(v4);
+        blk->cellItems = nullptr;
+    }
+    blk->cellFlag = 0;
+    blk->cellCapacity = 0;
+    ObjectClass::Dtor(this);
+    if ( a2 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 } // namespace gamemd

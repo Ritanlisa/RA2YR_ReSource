@@ -644,31 +644,22 @@ int __thiscall SuperWeaponTypeClass::SD_vt27(_DWORD *this, int a2, int a3)
 namespace gamemd {
 SuperWeaponTypeClass * SuperWeaponTypeClass::SDDTOR(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-SuperWeaponTypeClass *__thiscall SuperWeaponTypeClass::SDDTOR(_DWORD *this, char a2)
-{
-  int v3; // eax
-  _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &SuperWeaponTypeClass::`vftable'; /*0x6cefed*/
-  *(this + 1) = &SuperWeaponTypeClass::`vftable'; /*0x6ceff3*/
-  *(this + 2) = &SuperWeaponTypeClass::`vftable'; /*0x6ceffa*/
-  *(this + 3) = &vt_SuperWeaponTypeClass; /*0x6cf001*/
-  v5 = this; /*0x6cf00f*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xA8E330] + 16))(&MEMORY[0xA8E330], &v5); /*0x6cf013*/
-  if ( v3 != -1 && v3 < MEMORY[0xA8E340] && v3 < --MEMORY[0xA8E340] ) /*0x6cf02e*/
-  {
-    do /*0x6cf046*/
+    SuperWeaponTypeClass* v7 = this;
+    DataGlobal_A8E330;
+    int v2 = DataGlobal_A8E330.FindItemIndex(&v7);
+    if ( v2 != -1 && v2 < DataGlobal_A8E340 && v2 < --DataGlobal_A8E340 )
     {
-      ++v3; /*0x6cf036*/
-      *((_DWORD *)MEMORY[0xA8E334] + v3 - 1) = *((_DWORD *)MEMORY[0xA8E334] + v3); /*0x6cf03a*/
+        do
+        {
+            ++v2;
+            *(DataGlobal_A8E334 + v2 - 1) = *(DataGlobal_A8E334 + v2);
+        }
+        while ( v2 < DataGlobal_A8E340 );
     }
-    while ( v3 < MEMORY[0xA8E340] ); /*0x6cf046*/
-  }
-  AbstractTypeClass::Dtor(this); /*0x6cf04a*/
-  if ( (a2 & 1) != 0 ) /*0x6cf054*/
-    __3_YAXPAX_Z(this); /*0x6cf057*/
-  return (SuperWeaponTypeClass *)this; /*0x6cf061*/
+    AbstractTypeClass::Dtor(this);
+    if ( a2 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 } // namespace gamemd

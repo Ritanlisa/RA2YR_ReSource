@@ -145,32 +145,23 @@ char __userpurge AircraftTypeClass::vt_25_@<al>(int a1@<ecx>, double a2@<st0>, u
 // 0x41CFE0
 AircraftTypeClass * AircraftTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-AircraftTypeClass *__thiscall AircraftTypeClass::ddtor(void **this, char a2)
-{
-  int v3; // eax
-  void **v5; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &AircraftTypeClass::`vftable'; /*0x41cfe6*/
-  *(this + 1) = &AircraftTypeClass::`vftable'; /*0x41cfec*/
-  *(this + 2) = &AircraftTypeClass::`vftable'; /*0x41cff3*/
-  *(this + 3) = &vt_AircraftTypeClass; /*0x41cffa*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x41d001*/
-  v5 = this; /*0x41d016*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8B218] + 16))(&MEMORY[0xA8B218], &v5); /*0x41d01a*/
-  if ( v3 != -1 && v3 < MEMORY[0xA8B228] && v3 < --MEMORY[0xA8B228] ) /*0x41d035*/
-  {
-    do /*0x41d04d*/
+    AircraftTypeClass* v7 = this;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    DataGlobal_A8B218;
+    int v2 = DataGlobal_A8B218.FindItemIndex(&v7);
+    if ( v2 != -1 && v2 < DataGlobal_A8B228 && v2 < --DataGlobal_A8B228 )
     {
-      ++v3; /*0x41d03d*/
-      *((_DWORD *)MEMORY[0xA8B21C] + v3 - 1) = *((_DWORD *)MEMORY[0xA8B21C] + v3); /*0x41d041*/
+        do
+        {
+            ++v2;
+            *(DataGlobal_A8B21C + v2 - 1) = *(DataGlobal_A8B21C + v2);
+        }
+        while ( v2 < DataGlobal_A8B228 );
     }
-    while ( v3 < MEMORY[0xA8B228] ); /*0x41d04d*/
-  }
-  TechnoTypeClass::DTOR((int)this); /*0x41d051*/
-  if ( (a2 & 1) != 0 ) /*0x41d05b*/
-    __3_YAXPAX_Z(this); /*0x41d05e*/
-  return (AircraftTypeClass *)this; /*0x41d068*/
+    TechnoTypeClass::DTOR(this);
+    if ( a2 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 

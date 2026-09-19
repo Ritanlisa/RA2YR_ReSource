@@ -931,44 +931,32 @@ int __thiscall TeamTypeClass::_vt16(_DWORD *this)
 namespace gamemd {
 TeamTypeClass * TeamTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TeamTypeClass *__thiscall TeamTypeClass::ddtor(void **this, char a2)
-{
-  int v3; // eax
-  int v4; // eax
-  void **v6; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &TeamTypeClass::`vftable'; /*0x6f20d6*/
-  *(this + 1) = &TeamTypeClass::`vftable'; /*0x6f20dc*/
-  *(this + 2) = &TeamTypeClass::`vftable'; /*0x6f20e3*/
-  *(this + 3) = &vt_TeamTypeClass; /*0x6f20ea*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6f20f1*/
-  v6 = this; /*0x6f2106*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8ECA0] + 16))(&MEMORY[0xA8ECA0], &v6); /*0x6f210a*/
-  if ( v3 != -1 && v3 < MEMORY[0xA8ECB0] && v3 < --MEMORY[0xA8ECB0] ) /*0x6f2125*/
-  {
-    do /*0x6f213d*/
+    TeamTypeClass* v7 = this;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    int v2 = DataGlobal_A8ECA0.FindItemIndex(&v7);
+    if ( v2 != -1 && v2 < DataGlobal_A8ECB0 && v2 < --DataGlobal_A8ECB0 )
     {
-      ++v3; /*0x6f212d*/
-      *((_DWORD *)MEMORY[0xA8ECA4] + v3 - 1) = *((_DWORD *)MEMORY[0xA8ECA4] + v3); /*0x6f2131*/
+        do
+        {
+            ++v2;
+            *(DataGlobal_A8ECA4 + v2 - 1) = *(DataGlobal_A8ECA4 + v2);
+        }
+        while ( v2 < DataGlobal_A8ECB0 );
     }
-    while ( v3 < MEMORY[0xA8ECB0] ); /*0x6f213d*/
-  }
-  v6 = this; /*0x6f214f*/
-  v4 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x6f2153*/
-  if ( v4 != -1 && v4 < MEMORY[0xB0F680] && v4 < --MEMORY[0xB0F680] ) /*0x6f216e*/
-  {
-    do /*0x6f2186*/
+    int v3 = DataGlobal_B0F670.FindItemIndex(&v7);
+    if ( v3 != -1 && v3 < DataGlobal_B0F680 && v3 < --DataGlobal_B0F680 )
     {
-      ++v4; /*0x6f2176*/
-      *((_DWORD *)MEMORY[0xB0F674] + v4 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v4); /*0x6f217a*/
+        do
+        {
+            ++v3;
+            *(DataGlobal_B0F674 + v3 - 1) = *(DataGlobal_B0F674 + v3);
+        }
+        while ( v3 < DataGlobal_B0F680 );
     }
-    while ( v4 < MEMORY[0xB0F680] ); /*0x6f2186*/
-  }
-  AbstractTypeClass::Dtor(this); /*0x6f218a*/
-  if ( (a2 & 1) != 0 ) /*0x6f2194*/
-    __3_YAXPAX_Z(this); /*0x6f2197*/
-  return (TeamTypeClass *)this; /*0x6f21a1*/
+    AbstractTypeClass::Dtor(this);
+    if ( a2 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 } // namespace gamemd

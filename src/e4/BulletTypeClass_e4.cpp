@@ -543,44 +543,34 @@ int __thiscall BulletTypeClass::ProcessPower(int this, int *a2)
 // 0x46C890
 BulletTypeClass * BulletTypeClass::ddtor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BulletTypeClass *__thiscall BulletTypeClass::ddtor(void **this, char a2)
-{
-  int v3; // eax
-  int v4; // eax
-  void **v6; // [esp+4h] [ebp-4h] BYREF
-
-  *this = &BulletTypeClass::`vftable'; /*0x46c896*/
-  *(this + 1) = &BulletTypeClass::`vftable'; /*0x46c89c*/
-  *(this + 2) = &BulletTypeClass::`vftable'; /*0x46c8a3*/
-  *(this + 3) = &vt_BulletTypeClass; /*0x46c8aa*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x46c8b1*/
-  v6 = this; /*0x46c8c6*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x46c8ca*/
-  if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x46c8e5*/
-  {
-    do /*0x46c8fd*/
+    BulletTypeClass* v7 = this;
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    g_AnimPoolManager;
+    int v2 = g_AnimPoolManager.FindItemIndex(&v7);
+    if ( v2 != -1 && v2 < g_AnimManager && v2 < --g_AnimManager )
     {
-      ++v3; /*0x46c8ed*/
-      *((_DWORD *)MEMORY[0xB0F674] + v3 - 1) = *((_DWORD *)MEMORY[0xB0F674] + v3); /*0x46c8f1*/
+        do
+        {
+            ++v2;
+            *(g_AnimPoolCount + v2 - 1) = *(g_AnimPoolCount + v2);
+        }
+        while ( v2 < g_AnimManager );
     }
-    while ( v3 < MEMORY[0xB0F680] ); /*0x46c8fd*/
-  }
-  v6 = this; /*0x46c90f*/
-  v4 = (*(int (__thiscall **)(int *, void ***))(BulletTypeClass_Array + 16))(&BulletTypeClass_Array, &v6); /*0x46c913*/
-  if ( v4 != -1 && v4 < g_BulletTypeInitState && v4 < --g_BulletTypeInitState ) /*0x46c92e*/
-  {
-    do /*0x46c946*/
+    BulletTypeClass_Array;
+    int v3 = BulletTypeClass_Array.FindItemIndex(&v7);
+    if ( v3 != -1 && v3 < g_BulletTypeInitState && v3 < --g_BulletTypeInitState )
     {
-      ++v4; /*0x46c936*/
-      *((_DWORD *)dword_A83C84 + v4 - 1) = *((_DWORD *)dword_A83C84 + v4); /*0x46c93a*/
+        do
+        {
+            ++v3;
+            *(g_BulletTypeTable + v3 - 1) = *(g_BulletTypeTable + v3);
+        }
+        while ( v3 < g_BulletTypeInitState );
     }
-    while ( v4 < g_BulletTypeInitState ); /*0x46c946*/
-  }
-  ObjectTypeClass::Destruct((int)this); /*0x46c94a*/
-  if ( (a2 & 1) != 0 ) /*0x46c954*/
-    __3_YAXPAX_Z(this); /*0x46c957*/
-  return (BulletTypeClass *)this; /*0x46c961*/
+    ObjectTypeClass::Destruct(this);
+    if ( a2 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 
