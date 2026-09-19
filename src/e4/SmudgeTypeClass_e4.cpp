@@ -151,46 +151,29 @@ char __thiscall SmudgeTypeClass::GetSize(int this, unsigned __int8 ***aP1)
 }
 
 // 0x6B6160
-SmudgeTypeClass * SmudgeTypeClass::ddtor(void ** this, AbstractClass * a2, char a3)
+SmudgeTypeClass * SmudgeTypeClass::ddtor(AbstractClass *a2, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-SmudgeTypeClass *__fastcall SmudgeTypeClass::ddtor(void **this, AbstractClass *a2, char a3)
-{
-  CCINIClass *v3; // eax
-  int v5; // eax
-  void **v7; // [esp+4h] [ebp-4h] BYREF
-
-  v3 = (CCINIClass *)*(this + 41); /*0x6b6164*/
-  *this = &SmudgeTypeClass::`vftable'; /*0x6b616a*/
-  *(this + 1) = &SmudgeTypeClass::`vftable'; /*0x6b6172*/
-  *(this + 2) = &SmudgeTypeClass::`vftable'; /*0x6b6179*/
-  *(this + 3) = &vt_SmudgeTypeClass; /*0x6b6180*/
-  if ( v3 ) /*0x6b6187*/
-  {
-    __3_YAXPAX_Z(v3); /*0x6b618a*/
-    *(this + 41) = 0; /*0x6b6192*/
-  }
-  LOBYTE(a2) = 1; /*0x6b619c*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, a2); /*0x6b61a0*/
-  v7 = this; /*0x6b61b5*/
-  v5 = (*(int (__thiscall **)(char *, void ***))(*(_DWORD *)&HouseClass_Player.__pad_5568[22884] + 16))( /*0x6b61b9*/
-         &HouseClass_Player.__pad_5568[22884],
-         &v7);
-  if ( v5 != -1 && v5 < *(int *)&HouseClass_Player.__pad_5568[22900] ) /*0x6b61c9*/
-  {
-    --*(_DWORD *)&HouseClass_Player.__pad_5568[22900]; /*0x6b61ce*/
-    for ( ; /*0x6b61d4*/
-          v5 < *(int *)&HouseClass_Player.__pad_5568[22900];
-          *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22888] + 4 * v5 - 4) = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[22888]
-                                                                                                + 4 * v5) )
+    void *v3 = this->Image;
+    if ( v3 )
     {
-      ++v5; /*0x6b61dc*/
+        OperatorDelete(v3);
+        this->Image = 0;
     }
-  }
-  ObjectTypeClass::Destruct((int)this); /*0x6b61f0*/
-  if ( (a3 & 1) != 0 ) /*0x6b61fa*/
-    __3_YAXPAX_Z(this); /*0x6b61fd*/
-  return (SmudgeTypeClass *)this; /*0x6b6207*/
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    SmudgeTypeClass* v7 = this;
+    int v5 = SmudgeTypeRegistryX.FindItemIndex(&v7);
+    if ( v5 != -1 && v5 < SmudgeTypeRegistryX_Count )
+    {
+        --SmudgeTypeRegistryX_Count;
+        for ( ; v5 < SmudgeTypeRegistryX_Count ; *(SmudgeTypeRegistryX_Items + v5 - 1) = *(SmudgeTypeRegistryX_Items + v5) )
+        {
+            ++v5;
+        }
+    }
+    ObjectTypeClass::Destruct(this);
+    if ( a3 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 

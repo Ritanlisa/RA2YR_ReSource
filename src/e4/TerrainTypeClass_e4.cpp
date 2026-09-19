@@ -335,46 +335,29 @@ LABEL_6:
 }
 
 // 0x71E360
-TerrainTypeClass * TerrainTypeClass::ddtor(void ** this, AbstractClass * a2, char a3)
+TerrainTypeClass * TerrainTypeClass::ddtor(AbstractClass *a2, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-TerrainTypeClass *__fastcall TerrainTypeClass::ddtor(void **this, AbstractClass *a2, char a3)
-{
-  CCINIClass *v3; // eax
-  int v5; // eax
-  void **v7; // [esp+4h] [ebp-4h] BYREF
-
-  v3 = (CCINIClass *)*(this + 41); /*0x71e364*/
-  *this = &TerrainTypeClass::`vftable'; /*0x71e36a*/
-  *(this + 1) = &TerrainTypeClass::`vftable'; /*0x71e372*/
-  *(this + 2) = &TerrainTypeClass::`vftable'; /*0x71e379*/
-  *(this + 3) = &vt_TerrainTypeClass; /*0x71e380*/
-  if ( v3 ) /*0x71e387*/
-  {
-    __3_YAXPAX_Z(v3); /*0x71e38a*/
-    *(this + 41) = 0; /*0x71e392*/
-  }
-  LOBYTE(a2) = 1; /*0x71e39c*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, a2); /*0x71e3a0*/
-  v7 = this; /*0x71e3b5*/
-  v5 = (*(int (__thiscall **)(char *, void ***))(*(_DWORD *)&HouseClass_Player.__pad_5568[20580] + 16))( /*0x71e3b9*/
-         &HouseClass_Player.__pad_5568[20580],
-         &v7);
-  if ( v5 != -1 && v5 < *(int *)&HouseClass_Player.__pad_5568[20596] ) /*0x71e3c9*/
-  {
-    --*(_DWORD *)&HouseClass_Player.__pad_5568[20596]; /*0x71e3ce*/
-    for ( ; /*0x71e3d4*/
-          v5 < *(int *)&HouseClass_Player.__pad_5568[20596];
-          *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20584] + 4 * v5 - 4) = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[20584]
-                                                                                                + 4 * v5) )
+    void *v3 = this->Image;
+    if ( v3 )
     {
-      ++v5; /*0x71e3dc*/
+        OperatorDelete(v3);
+        this->Image = 0;
     }
-  }
-  ObjectTypeClass::Destruct((int)this); /*0x71e3f0*/
-  if ( (a3 & 1) != 0 ) /*0x71e3fa*/
-    __3_YAXPAX_Z(this); /*0x71e3fd*/
-  return (TerrainTypeClass *)this; /*0x71e407*/
+    AbstractClass::AnnounceExpiredPointer(this, 1);
+    TerrainTypeClass* v7 = this;
+    int v5 = SmudgeTypeRegistryX.FindItemIndex(&v7);
+    if ( v5 != -1 && v5 < SmudgeTypeRegistryX_Count )
+    {
+        --SmudgeTypeRegistryX_Count;
+        for ( ; v5 < SmudgeTypeRegistryX_Count ; *(SmudgeTypeRegistryX_Items + v5 - 1) = *(SmudgeTypeRegistryX_Items + v5) )
+        {
+            ++v5;
+        }
+    }
+    ObjectTypeClass::Destruct(this);
+    if ( a3 & 1 )
+        OperatorDelete(this);
+    return this;
 }
 }
 
