@@ -3317,6 +3317,12 @@ address-of/下标全局两型词汇缺口）、#115（复核组清偿完毕）�
   IPXConnStub@100。
 - **UDP ddtor ✅（11,839）**：广播判定分派（this->AddRef=CALL(vfptr+16)，
   vtable_offsets 槽名考古；AudioQueue::WriteBuffer 8 参直调）。
+- **RulesClass::DTOR 二轮迭代结论（cpp 回滚，准备全保留）**：verbatim 策略
+  使块数对齐（114=114）且 STEP3 OK——剩余 78 差类 = **两提取器对异形行
+  （LODWORD 部分写/下标/解Ref 组合 250 行）的分块行为不同构**。数据全留档：
+  .omo/rules_full_disasm.json（748 指令）/rules_q_offsets2.json（精确偏移）/
+  rules_q_lines.json（250 行址）/rc2.txt（全量块表）。下会话路径：按行类
+  （A/B/C/D/E/F/vt 七类）逐类归一化到两提取器同构形式，每类小批验证。
 - **RulesClass::DTOR 深化准备已落盘（未完，回滚 cpp 保 ml/cache）**：
   ①250 个 ? 行地址→反汇编→151 偏移全解析（.omo/rules_q_offsets.json）；
   ②cache 已归一 ?→q 名（139 新名 qXXX 入 ml/mbn，RulesClass 偏移全映射）；
