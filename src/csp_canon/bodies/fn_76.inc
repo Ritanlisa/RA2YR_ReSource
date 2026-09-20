@@ -2,13 +2,13 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x007631F0  WaveClass::GetTypeIdentifier  cls=WaveClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007631F0  WaveClass::GetTypeIdentifier  cls=WaveClass  sig=csp  renamed_refs=0  residual=- ====
 int WaveClass::GetTypeIdentifier()
 {
 return 43;
 }
 
-// ==== BACKFILL 0x00763200  WaveClass::ddtor  cls=WaveClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00763200  WaveClass::ddtor  cls=WaveClass  sig=csp  renamed_refs=0  residual=- ====
 WaveClass * WaveClass::ddtor(char a2)
 {
     WaveClass* v7 = this;
@@ -41,7 +41,7 @@ WaveClass * WaveClass::ddtor(char a2)
     return this;
 }
 
-// ==== BACKFILL 0x00763610  Waypoint::To_String  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00763610  Waypoint::To_String  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 CHAR * Waypoint::To_String(CCINIClass * aP0)
 {
 {
@@ -61,7 +61,7 @@ CHAR * Waypoint::To_String(CCINIClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x00763700  sub_763700  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00763700  sub_763700  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_763700::sub_763700(unsigned int * a2)
 {
 {
@@ -72,13 +72,13 @@ unsigned int * E4Recv_763700::sub_763700(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x00763720  nullsub_84  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00763720  nullsub_84  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_84()
 {
   ;
 }
 
-// ==== BACKFILL 0x00763C00  WaypointPathClass::PowerDrainUpdate  cls=WaypointPathClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00763C00  WaypointPathClass::PowerDrainUpdate  cls=WaypointPathClass  sig=csp  renamed_refs=0  residual=- ====
 int WaypointPathClass::PowerDrainUpdate(int a2)
 {
 {
@@ -88,7 +88,7 @@ int WaypointPathClass::PowerDrainUpdate(int a2)
 }
 }
 
-// ==== BACKFILL 0x00763C30  WaypointPathClass::ddtor  cls=WaypointPathClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00763C30  WaypointPathClass::ddtor  cls=WaypointPathClass  sig=csp  renamed_refs=0  residual=- ====
 int WaypointPathClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -100,7 +100,7 @@ int WaypointPathClass::ddtor(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x00763D90  WaypointPathClass::SaveState  cls=WaypointPathClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00763D90  WaypointPathClass::SaveState  cls=WaypointPathClass  sig=csp  renamed_refs=0  residual=- ====
 int WaypointPathClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 {
@@ -138,19 +138,19 @@ int WaypointPathClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 }
 }
 
-// ==== BACKFILL 0x00763E00  WaypointPathClass::StubReturn64  cls=WaypointPathClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00763E00  WaypointPathClass::StubReturn64  cls=WaypointPathClass  sig=csp  renamed_refs=0  residual=- ====
 int WaypointPathClass::StubReturn64()
 {
 return 64;
 }
 
-// ==== BACKFILL 0x00763E10  WaypointPathClass::StubReturn51  cls=WaypointPathClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00763E10  WaypointPathClass::StubReturn51  cls=WaypointPathClass  sig=csp  renamed_refs=0  residual=- ====
 int WaypointPathClass::StubReturn51()
 {
 return 51;
 }
 
-// ==== BACKFILL 0x00763E20  WaypointPathClass::ProcessEvent  cls=WaypointPathClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00763E20  WaypointPathClass::ProcessEvent  cls=WaypointPathClass  sig=csp  renamed_refs=0  residual=IsAllocated ====
 WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
 {
 {
@@ -189,7 +189,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
 }
 }
 
-// ==== BACKFILL 0x00763EF0  AbstractClass::checkSuperWeaponStatus  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00763EF0  AbstractClass::checkSuperWeaponStatus  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void AbstractClass::checkSuperWeaponStatus() {
 {
     int v2;
@@ -205,7 +205,7 @@ namespace ra2 { namespace game { void AbstractClass::checkSuperWeaponStatus() {
 }
 } } }
 
-// ==== BACKFILL 0x00763F30  AbstractClass::updateSuperWeaponTimer  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00763F30  AbstractClass::updateSuperWeaponTimer  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::updateSuperWeaponTimer(int a1) {
 {
       if ( this->vtable3 )
@@ -215,7 +215,7 @@ namespace ra2 { namespace game { int AbstractClass::updateSuperWeaponTimer(int a
 }
 } } }
 
-// ==== BACKFILL 0x00763FF0  AbstractClass::checkSWTarget  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00763FF0  AbstractClass::checkSWTarget  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* AbstractClass::checkSWTarget(int a2) {
 {
     int v3;
@@ -234,7 +234,7 @@ namespace ra2 { namespace game { void* AbstractClass::checkSWTarget(int a2) {
 }
 } } }
 
-// ==== BACKFILL 0x00764050  AbstractClass::getSWChargeState  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00764050  AbstractClass::getSWChargeState  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* AbstractClass::getSWChargeState(int a2) {
 {
     int v3;
@@ -253,7 +253,7 @@ namespace ra2 { namespace game { void* AbstractClass::getSWChargeState(int a2) {
 }
 } } }
 
-// ==== BACKFILL 0x00764110  AbstractClass::resetSWCharge  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00764110  AbstractClass::resetSWCharge  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::resetSWCharge(int a1, void* a2) {
 {
       int v3;
@@ -369,7 +369,7 @@ namespace ra2 { namespace game { int AbstractClass::resetSWCharge(int a1, void* 
 }
 } } }
 
-// ==== BACKFILL 0x00764220  AbstractClass::processSpecialAbility  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00764220  AbstractClass::processSpecialAbility  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void AbstractClass::processSpecialAbility() {
 {
     int v2;
@@ -384,7 +384,7 @@ namespace ra2 { namespace game { void AbstractClass::processSpecialAbility() {
 }
 } } }
 
-// ==== BACKFILL 0x00764260  AbstractClass::checkSpecialCooldown  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00764260  AbstractClass::checkSpecialCooldown  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::checkSpecialCooldown(void* a1) {
 {
       int result;
@@ -406,7 +406,7 @@ namespace ra2 { namespace game { int AbstractClass::checkSpecialCooldown(void* a
 }
 } } }
 
-// ==== BACKFILL 0x007642B0  AbstractClass::updateSpecialTimer  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007642B0  AbstractClass::updateSpecialTimer  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::updateSpecialTimer(int a1) {
 {
       if ( this->vtable3 )
@@ -416,7 +416,7 @@ namespace ra2 { namespace game { int AbstractClass::updateSpecialTimer(int a1) {
 }
 } } }
 
-// ==== BACKFILL 0x007642E0  AbstractClass::AllocateCoordArray  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007642E0  AbstractClass::AllocateCoordArray  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::AllocateCoordArray(int a1, void* a2) {
 {
       int v3;
@@ -532,7 +532,7 @@ namespace ra2 { namespace game { int AbstractClass::AllocateCoordArray(int a1, v
 }
 } } }
 
-// ==== BACKFILL 0x00764420  AbstractClass::processSpecialEffect  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00764420  AbstractClass::processSpecialEffect  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::processSpecialEffect(void* a2) {
 {
       int v2;
@@ -552,7 +552,7 @@ namespace ra2 { namespace game { int AbstractClass::processSpecialEffect(void* a
 }
 } } }
 
-// ==== BACKFILL 0x00764B30  Audio_Create  cls=rc_ptr  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00764B30  Audio_Create  cls=rc_ptr  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * Audio_Create(rc_ptr_base * a1, const char ** a2, int a3)
 {
 {
@@ -579,7 +579,7 @@ rc_ptr * Audio_Create(rc_ptr_base * a1, const char ** a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x00764FF0  sub_764FF0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00764FF0  sub_764FF0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_764FF0::sub_764FF0(ScoreScreen * aP1)
 {
 {
@@ -587,7 +587,7 @@ int E4Recv_764FF0::sub_764FF0(ScoreScreen * aP1)
 }
 }
 
-// ==== BACKFILL 0x00765380  FindWDTTerritoryClass_Find  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00765380  FindWDTTerritoryClass_Find  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
 {
 {
@@ -616,7 +616,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x00765580  sub_765580  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00765580  sub_765580  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_765580(unsigned int * a1)
 {
 {
@@ -636,7 +636,7 @@ int sub_765580(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x00765710  Campaign_WorldDominationTour_16::Constructor  cls=Campaign_WorldDominationTour  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00765710  Campaign_WorldDominationTour_16::Constructor  cls=Campaign_WorldDominationTour  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * Campaign_WorldDominationTour_16::Constructor(char a2)
 {
 {
@@ -648,7 +648,7 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor(char a2)
 }
 }
 
-// ==== BACKFILL 0x00765740  Campaign_WorldDominationTour_16::Constructor_0  cls=Campaign_WorldDominationTour  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00765740  Campaign_WorldDominationTour_16::Constructor_0  cls=Campaign_WorldDominationTour  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(char a2)
 {
 {
@@ -660,7 +660,7 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(char a2)
 }
 }
 
-// ==== BACKFILL 0x00765790  COMClass::invokeMethod  cls=COMClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00765790  COMClass::invokeMethod  cls=COMClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* COMClass::invokeMethod(int a2) {
 {
     *(void**)this = &vt_rc_ptr_WorldDominationTour_Campaign;
@@ -671,7 +671,7 @@ namespace gamemd { void* COMClass::invokeMethod(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x007657C0  COMClass::getTypeInfo  cls=COMClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007657C0  COMClass::getTypeInfo  cls=COMClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* COMClass::getTypeInfo(int a2) {
 {
     *(void**)this = &vt_rc_ptr_WorldDominationTour_State;
@@ -682,7 +682,7 @@ namespace gamemd { void* COMClass::getTypeInfo(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00765C70  COMClass::releaseInterface  cls=COMClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00765C70  COMClass::releaseInterface  cls=COMClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* COMClass::releaseInterface() {
 {
     ComPtr::Constructor(this);
@@ -691,7 +691,7 @@ namespace gamemd { void* COMClass::releaseInterface() {
 }
 } }
 
-// ==== BACKFILL 0x00765F60  Team_Create_765F60  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00765F60  Team_Create_765F60  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
 {
 {
@@ -721,7 +721,7 @@ rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x00766060  FindWDTTerritoryClass_Find_Find  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00766060  FindWDTTerritoryClass_Find_Find  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_766060::sub_766060()
 {
 {
@@ -734,7 +734,7 @@ int E4Recv_766060::sub_766060()
 }
 }
 
-// ==== BACKFILL 0x00766880  System_Init_766880  cls=rc_ptr  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00766880  System_Init_766880  cls=rc_ptr  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectClass * aP4)
 {
 {
@@ -763,7 +763,7 @@ rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectC
 }
 }
 
-// ==== BACKFILL 0x00766960  Conflict_WorldDominationTour_12::Constructor  cls=Conflict_WorldDominationTour  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00766960  Conflict_WorldDominationTour_12::Constructor  cls=Conflict_WorldDominationTour  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * Conflict_WorldDominationTour_12::Constructor(char a2)
 {
 {
@@ -775,7 +775,7 @@ rc_ptr * Conflict_WorldDominationTour_12::Constructor(char a2)
 }
 }
 
-// ==== BACKFILL 0x00766990  Conflict_WorldDominationTour_12::Constructor_0  cls=Conflict_WorldDominationTour  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00766990  Conflict_WorldDominationTour_12::Constructor_0  cls=Conflict_WorldDominationTour  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * Conflict_WorldDominationTour_12::Constructor_0(char a2)
 {
 {
@@ -787,7 +787,7 @@ rc_ptr * Conflict_WorldDominationTour_12::Constructor_0(char a2)
 }
 }
 
-// ==== BACKFILL 0x007669C0  COMClass::connectPoint  cls=COMClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007669C0  COMClass::connectPoint  cls=COMClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* COMClass::connectPoint(int a2) {
 {
     *(void**)this = &vt_rc_ptr_WorldDominationTour_MapSizeGameOption;
@@ -798,7 +798,7 @@ namespace gamemd { void* COMClass::connectPoint(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00766D30  Conflict_WorldDominationTour_12::ddtor  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00766D30  Conflict_WorldDominationTour_12::ddtor  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 int Conflict_WorldDominationTour_12::ddtor()
 {
 {
@@ -816,7 +816,7 @@ int Conflict_WorldDominationTour_12::ddtor()
 }
 }
 
-// ==== BACKFILL 0x007670D0  Conflict_WorldDominationTour_12::Constructor_3  cls=Conflict_WorldDominationTour  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007670D0  Conflict_WorldDominationTour_12::Constructor_3  cls=Conflict_WorldDominationTour  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * Conflict_WorldDominationTour_12::Constructor_3()
 {
 {
@@ -826,13 +826,13 @@ unsigned int * Conflict_WorldDominationTour_12::Constructor_3()
 }
 }
 
-// ==== BACKFILL 0x00767310  Network_Connect_767310  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00767310  Network_Connect_767310  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_767310(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00767320  sub_767320  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00767320  sub_767320  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
 {
 {
@@ -871,7 +871,7 @@ wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
 }
 }
 
-// ==== BACKFILL 0x00767460  ConstructorWDTFlagOption  cls=rc_ptr  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00767460  ConstructorWDTFlagOption  cls=rc_ptr  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * ConstructorWDTFlagOption(rc_ptr_base * a1, int a2, void * a3, int a4, void * a5, ObjectClass * aP5)
 {
 {
@@ -907,13 +907,13 @@ rc_ptr * ConstructorWDTFlagOption(rc_ptr_base * a1, int a2, void * a3, int a4, v
 }
 }
 
-// ==== BACKFILL 0x00767600  sub_767600  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00767600  sub_767600  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_767600(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007676F0  System_Init_7676F0  cls=rc_ptr  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007676F0  System_Init_7676F0  cls=rc_ptr  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * System_Init_7676F0(rc_ptr_base * a1, int a2)
 {
 {
@@ -938,13 +938,13 @@ rc_ptr * System_Init_7676F0(rc_ptr_base * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x00767800  MapSizeGameOption_WorldDominationTour::ddtor  cls=MapSizeGameOption_WorldDominationTour  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00767800  MapSizeGameOption_WorldDominationTour::ddtor  cls=MapSizeGameOption_WorldDominationTour  sig=csp  renamed_refs=0  residual=- ====
 int MapSizeGameOption_WorldDominationTour::ddtor(MapSizeOptStub **a2)
 {
     return DataGlobal_848628[4 * a2[1]->mszByte18 + a2[1]->mszByte19];
 }
 
-// ==== BACKFILL 0x00767820  GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create  cls=GameOption@WorldDominationTour  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00767820  GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create  cls=GameOption@WorldDominationTour  sig=csp  renamed_refs=0  residual=- ====
 void * GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create(int arg0, void * a2, int arg8, void * a4, ObjectClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -975,7 +975,7 @@ void *__thiscall ConstructorWDTFlagOption_Create(
 }
 }
 
-// ==== BACKFILL 0x00767B00  Team_Create_767B00  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00767B00  Team_Create_767B00  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
 {
 {
@@ -1005,7 +1005,7 @@ rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x00767BB0  ActivateScreenWDT  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00767BB0  ActivateScreenWDT  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int WDT_ActivateScreen(int a1, int a2)
 {
 {
@@ -1014,7 +1014,7 @@ int WDT_ActivateScreen(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x00767C50  COMClass::marshalInterface  cls=COMClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00767C50  COMClass::marshalInterface  cls=COMClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* COMClass::marshalInterface(int a2) {
 {
     *(void**)this = &vt_rc_ptr_WDTState;
@@ -1025,7 +1025,7 @@ namespace gamemd { void* COMClass::marshalInterface(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00767E90  sub_767E90  cls=MSFrameAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00767E90  sub_767E90  cls=MSFrameAnim  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_767E90::sub_767E90()
 {
 {
@@ -1039,7 +1039,7 @@ unsigned int * E4Recv_767E90::sub_767E90()
 }
 }
 
-// ==== BACKFILL 0x00767ED0  MSFrameAnim::Load  cls=MSFrameAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00767ED0  MSFrameAnim::Load  cls=MSFrameAnim  sig=csp  renamed_refs=0  residual=- ====
 char MSFrameAnim::Load(int a1, int * a2)
 {
 {
@@ -1049,7 +1049,7 @@ char MSFrameAnim::Load(int a1, int * a2)
 }
 }
 
-// ==== BACKFILL 0x00767EF0  MSFrameAnim::Draw  cls=MSFrameAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00767EF0  MSFrameAnim::Draw  cls=MSFrameAnim  sig=csp  renamed_refs=0  residual=- ====
 void MSFrameAnim::Draw(int a1, int * a2)
 {
 {
@@ -1088,7 +1088,7 @@ void MSFrameAnim::Draw(int a1, int * a2)
 }
 }
 
-// ==== BACKFILL 0x00767F80  MSFrameAnim::UpdateFrame  cls=MSFrameAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00767F80  MSFrameAnim::UpdateFrame  cls=MSFrameAnim  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * MSFrameAnim::UpdateFrame(unsigned int * a1)
 {
 {
@@ -1100,7 +1100,7 @@ unsigned int * MSFrameAnim::UpdateFrame(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x00767FB0  ConstructWDTSelection_Create_767FB0  cls=rc_ptr  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00767FB0  ConstructWDTSelection_Create_767FB0  cls=rc_ptr  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * ConstructWDTSelection_Create_767FB0(rc_ptr_base * a1, int a2, int a3, ReferenceCounted * aP3)
 {
 {
@@ -1118,7 +1118,7 @@ rc_ptr * ConstructWDTSelection_Create_767FB0(rc_ptr_base * a1, int a2, int a3, R
 }
 }
 
-// ==== BACKFILL 0x00769490  sub_769490  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00769490  sub_769490  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_769490::sub_769490(unsigned int * a2)
 {
 {
@@ -1135,7 +1135,7 @@ unsigned int * E4Recv_769490::sub_769490(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x00769C40  ??0Iostream_init_QAE_XZ_9  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00769C40  ??0Iostream_init_QAE_XZ_9  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 Iostream_init * E4Recv_769C40::__0Iostream_init_QAE_XZ_9()
 {
 {
@@ -1143,7 +1143,7 @@ Iostream_init * E4Recv_769C40::__0Iostream_init_QAE_XZ_9()
 }
 }
 
-// ==== BACKFILL 0x00769D70  Map_Load_769D70  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00769D70  Map_Load_769D70  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * sub_769D70(unsigned int * a1, int a2)
 {
 {
@@ -1154,7 +1154,7 @@ unsigned int * sub_769D70(unsigned int * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x00769D90  MSFrameAnim::resumeAnimation  cls=MSFrameAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00769D90  MSFrameAnim::resumeAnimation  cls=MSFrameAnim  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * MSFrameAnim::resumeAnimation(char a2)
 {
 {
@@ -1166,7 +1166,7 @@ rc_ptr * MSFrameAnim::resumeAnimation(char a2)
 }
 }
 
-// ==== BACKFILL 0x0076A7C0  MSFrameAnim::drawFrame  cls=MSFrameAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076A7C0  MSFrameAnim::drawFrame  cls=MSFrameAnim  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * MSFrameAnim::drawFrame()
 {
 {
@@ -1176,7 +1176,7 @@ unsigned int * MSFrameAnim::drawFrame()
 }
 }
 
-// ==== BACKFILL 0x0076AAF0  ParseWDTTerritories_Parse  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076AAF0  ParseWDTTerritories_Parse  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_76AAF0::sub_76AAF0()
 {
 {
@@ -1223,7 +1223,7 @@ unsigned int * E4Recv_76AAF0::sub_76AAF0()
 }
 }
 
-// ==== BACKFILL 0x0076AB90  sub_76AB90  cls=WDTTerritory  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076AB90  sub_76AB90  cls=WDTTerritory  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_76AB90::sub_76AB90()
 {
 {
@@ -1232,7 +1232,7 @@ void E4Recv_76AB90::sub_76AB90()
 }
 }
 
-// ==== BACKFILL 0x0076ABA0  Audio_Set  cls=rc_ptr  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076ABA0  Audio_Set  cls=rc_ptr  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * Audio_Set(rc_ptr_base * a1, void * a2)
 {
 {
@@ -1250,7 +1250,7 @@ rc_ptr * Audio_Set(rc_ptr_base * a1, void * a2)
 }
 }
 
-// ==== BACKFILL 0x0076ABE0  sub_76ABE0  cls=WDTState  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076ABE0  sub_76ABE0  cls=WDTState  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_76ABE0::sub_76ABE0()
 {
 {
@@ -1301,7 +1301,7 @@ unsigned int * E4Recv_76ABE0::sub_76ABE0()
 }
 }
 
-// ==== BACKFILL 0x0076BC60  WDTState_4::Constructor  cls=WDTState  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076BC60  WDTState_4::Constructor  cls=WDTState  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * WDTState_4::Constructor()
 {
 {
@@ -1311,7 +1311,7 @@ unsigned int * WDTState_4::Constructor()
 }
 }
 
-// ==== BACKFILL 0x0076BE90  Audio_Create_76BE90  cls=rc_ptr  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076BE90  Audio_Create_76BE90  cls=rc_ptr  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * Audio_Create_76BE90(rc_ptr_base * a1, int a2)
 {
 {
@@ -1329,13 +1329,13 @@ rc_ptr * Audio_Create_76BE90(rc_ptr_base * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x0076BFB0  ConstructWDTSelection_Create_76BFB0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076BFB0  ConstructWDTSelection_Create_76BFB0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_76BFB0()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x0076BFE0  Conflict::GetOwnerHouse  cls=Conflict  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x0076BFE0  Conflict::GetOwnerHouse  cls=Conflict  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { namespace wdt { int Conflict::GetOwnerHouse() {
 {
       int v1;
@@ -1348,7 +1348,7 @@ namespace gamemd { namespace wdt { int Conflict::GetOwnerHouse() {
 }
 } } }
 
-// ==== BACKFILL 0x0076D3A0  sub_76D3A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076D3A0  sub_76D3A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_76D3A0::sub_76D3A0(unsigned int * a2)
 {
 {
@@ -1381,7 +1381,7 @@ bool E4Recv_76D3A0::sub_76D3A0(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x0076D470  sub_76D470  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076D470  sub_76D470  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_76D470::sub_76D470(unsigned int * a2)
 {
 {
@@ -1400,7 +1400,7 @@ unsigned int * E4Recv_76D470::sub_76D470(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x0076DED0  sub_76DED0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076DED0  sub_76DED0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_76DED0::sub_76DED0()
 {
 {
@@ -1425,7 +1425,7 @@ int E4Recv_76DED0::sub_76DED0()
 }
 }
 
-// ==== BACKFILL 0x0076DF50  sub_76DF50  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076DF50  sub_76DF50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_76DF50::sub_76DF50()
 {
 {
@@ -1450,7 +1450,7 @@ int E4Recv_76DF50::sub_76DF50()
 }
 }
 
-// ==== BACKFILL 0x0076DFD0  sub_76DFD0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076DFD0  sub_76DFD0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_76DFD0::sub_76DFD0()
 {
 {
@@ -1481,7 +1481,7 @@ void E4Recv_76DFD0::sub_76DFD0()
 }
 }
 
-// ==== BACKFILL 0x0076E090  sub_76E090  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076E090  sub_76E090  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_76E090::sub_76E090()
 {
 {
@@ -1519,7 +1519,7 @@ unsigned int * E4Recv_76E090::sub_76E090()
 }
 }
 
-// ==== BACKFILL 0x0076F000  ComPtr::DestroyWrapper  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076F000  ComPtr::DestroyWrapper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ComPtr::DestroyWrapper(int aP0, ObjectClass * aP1)
 {
 {
@@ -1529,7 +1529,7 @@ int ComPtr::DestroyWrapper(int aP0, ObjectClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0076F020  FileClass::GetState  cls=FileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076F020  FileClass::GetState  cls=FileClass  sig=csp  renamed_refs=0  residual=- ====
 int FileClass::GetState()
 {
 {
@@ -1537,7 +1537,7 @@ int FileClass::GetState()
 }
 }
 
-// ==== BACKFILL 0x0076F060  ComPtr::Territory_Dtor  cls=ComPtr  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076F060  ComPtr::Territory_Dtor  cls=ComPtr  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* ComPtr::Territory_Dtor() {
 {
     *(void**)this = &vt_rc_ptr_WorldDominationTour_Territory;
@@ -1545,7 +1545,7 @@ namespace gamemd { void* ComPtr::Territory_Dtor() {
 }
 } }
 
-// ==== BACKFILL 0x0076F070  FileClass::SetState  cls=FileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076F070  FileClass::SetState  cls=FileClass  sig=csp  renamed_refs=0  residual=- ====
 int FileClass::SetState()
 {
 {
@@ -1553,7 +1553,7 @@ int FileClass::SetState()
 }
 }
 
-// ==== BACKFILL 0x0076F470  ActivateScreenWDT_Create  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076F470  ActivateScreenWDT_Create  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr_base * ActivateScreenWDT_Create(rc_ptr_base * a1, int a2, unsigned int a3)
 {
 {
@@ -1588,7 +1588,7 @@ rc_ptr_base * ActivateScreenWDT_Create(rc_ptr_base * a1, int a2, unsigned int a3
 }
 }
 
-// ==== BACKFILL 0x0076F910  ArtConfig_Read  cls=rc_ptr  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076F910  ArtConfig_Read  cls=rc_ptr  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, ReferenceCounted * Source, char ** a4, ReferenceCounted * aP5)
 {
 {
@@ -1606,7 +1606,7 @@ rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, Reference
 }
 }
 
-// ==== BACKFILL 0x0076FF40  FindTerritoryWOL  cls=rc_ptr  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0076FF40  FindTerritoryWOL  cls=rc_ptr  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * FindTerritoryWOL(ObjectClass * aP0, int a2, int a3)
 {
 {

@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x007010D0  TechnoClass::HasValidWeapon  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007010D0  TechnoClass::HasValidWeapon  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int TechnoClass::HasValidWeapon() {
 {
     int result;
@@ -13,13 +13,13 @@ namespace ra2 { namespace game { int TechnoClass::HasValidWeapon() {
 }
 } } }
 
-// ==== BACKFILL 0x00701190  TacticalClass::StubReturnFalse11  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00701190  TacticalClass::StubReturnFalse11  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 char TacticalClass::StubReturnFalse11()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007011A0  sub_7011A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007011A0  sub_7011A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_7011A0::sub_7011A0()
 {
 {
@@ -61,7 +61,7 @@ int E4Recv_7011A0::sub_7011A0()
 }
 }
 
-// ==== BACKFILL 0x007013A0  MissionClass::OverrideMission_SyncLog  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007013A0  MissionClass::OverrideMission_SyncLog  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int MissionClass::OverrideMission_SyncLog() {
 {
       int v3;
@@ -74,7 +74,7 @@ namespace ra2 { namespace game { int MissionClass::OverrideMission_SyncLog() {
 }
 } } }
 
-// ==== BACKFILL 0x00703CC0  TechnoClass::ScanAdjacentCells  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00703CC0  TechnoClass::ScanAdjacentCells  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 char TechnoClass::ScanAdjacentCells()
 {
 {
@@ -138,7 +138,7 @@ char TechnoClass::ScanAdjacentCells()
 }
 }
 
-// ==== BACKFILL 0x00705D10  BuildingClass::SetPlanningToken  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00705D10  BuildingClass::SetPlanningToken  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 void BuildingClass::SetPlanningToken(ra2::game::PlanningTokenClass* token) {
     // IDA 0x705D10. Writes planningToken@+0x514 (ASM: mov [ecx+514h],eax).
     // The decompiler's "return a2" is the natural eax pass-through of
@@ -153,7 +153,7 @@ retn    4
 */
 }
 
-// ==== BACKFILL 0x00705D20  BuildingClass::GetPlanningToken  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00705D20  BuildingClass::GetPlanningToken  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 ra2::game::PlanningTokenClass* BuildingClass::GetPlanningToken() {
     // IDA 0x705D20. Reads planningToken@+0x514 (ASM: mov eax,[ecx+514h]) - NOT
     // Type(+0x520); the real type getter is GetTypePtr@0x459EE0. Formerly
@@ -167,7 +167,7 @@ retn
 */
 }
 
-// ==== BACKFILL 0x00707CB0  TechnoClass::CleanupAll  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00707CB0  TechnoClass::CleanupAll  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int TechnoClass::CleanupAll(int a1) {
 {
       TechnoClass *result;
@@ -195,13 +195,19 @@ namespace ra2 { namespace game { int TechnoClass::CleanupAll(int a1) {
 }
 } } }
 
-// ==== BACKFILL 0x007099D0  IPersistStream::IsDirty  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00708C10  TechnoClass::GetGlobalValue  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
+int TechnoClass::GetGlobalValue(int* outValue) const {
+*outValue = g_TechnoHouseState;
+return 0;
+}
+
+// ==== BACKFILL 0x007099D0  IPersistStream::IsDirty  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int IPersistStream::IsDirty(int a1, int a2)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00709A20  TechnoClass::COMStub_Return0_287  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00709A20  TechnoClass::COMStub_Return0_287  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::COMStub_Return0_287()
 {
 {
@@ -210,13 +216,13 @@ int TechnoClass::COMStub_Return0_287()
 }
 }
 
-// ==== BACKFILL 0x00709A30  IPersistStream::Stub  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00709A30  IPersistStream::Stub  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 void IPersistStream::Stub(BuildingTypeClass * aP0, int a2)
 {
   ;
 }
 
-// ==== BACKFILL 0x0070C250  IPersistStream::GetSizeMax  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070C250  IPersistStream::GetSizeMax  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int IPersistStream::GetSizeMax(int a0, RadioClass * aP1, int a3)
 {
 {
@@ -225,7 +231,7 @@ int IPersistStream::GetSizeMax(int a0, RadioClass * aP1, int a3)
 }
 }
 
-// ==== BACKFILL 0x0070C5B0  ObjectClass::GetShroudByte  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070C5B0  ObjectClass::GetShroudByte  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::GetShroudByte() {
 {
       int result;
@@ -235,7 +241,7 @@ namespace ra2 { namespace game { int ObjectClass::GetShroudByte() {
 }
 } } }
 
-// ==== BACKFILL 0x0070C5C0  ObjectClass::GetFogByte  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070C5C0  ObjectClass::GetFogByte  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::GetFogByte() {
 {
       int result;
@@ -245,7 +251,7 @@ namespace ra2 { namespace game { int ObjectClass::GetFogByte() {
 }
 } } }
 
-// ==== BACKFILL 0x0070C5D0  ObjectClass::HasSubObject  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070C5D0  ObjectClass::HasSubObject  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::HasSubObject() {
 {
       int result;
@@ -256,7 +262,7 @@ namespace ra2 { namespace game { int ObjectClass::HasSubObject() {
 }
 } } }
 
-// ==== BACKFILL 0x0070C5F0  ObjectClass::IsNotShrouded  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070C5F0  ObjectClass::IsNotShrouded  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::IsNotShrouded() {
 {
       int result;
@@ -266,44 +272,44 @@ namespace ra2 { namespace game { int ObjectClass::IsNotShrouded() {
 }
 } } }
 
-// ==== BACKFILL 0x0070D980  TacticalClass::StubReturnTrue3  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070D980  TacticalClass::StubReturnTrue3  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 void TacticalClass::StubReturnTrue3()
 {
   ;
 }
 
-// ==== BACKFILL 0x0070DC50  TechnoClass::processEMPulse  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070DC50  TechnoClass::processEMPulse  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int TechnoClass::processEMPulse() {
 {
     return *(char *)(this->Vt34Thunk() + 2054);
 }
 } } }
 
-// ==== BACKFILL 0x0070DD70  ObjectClass::CheckTypeFlag1681  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070DD70  ObjectClass::CheckTypeFlag1681  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::CheckTypeFlag1681() {
 {
     return *(char *)(this->Constructor_BitFont() + 1681) == 0;
 }
 } } }
 
-// ==== BACKFILL 0x0070DD90  TechnoClass::vt_entry_3E8  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070DD90  TechnoClass::vt_entry_3E8  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::vt_entry_3E8() { return 0; }
 
-// ==== BACKFILL 0x0070DDA0  ObjectClass::CheckTypeFlag1681_2  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070DDA0  ObjectClass::CheckTypeFlag1681_2  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::CheckTypeFlag1681_2() {
 {
     return *(char *)(this->Constructor_BitFont() + 1681) == 0;
 }
 } } }
 
-// ==== BACKFILL 0x0070DDC0  BuildingClass::checkPlacement  cls=BuildingClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x0070DDC0  BuildingClass::checkPlacement  cls=BuildingClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int BuildingClass::checkPlacement() {
 {
     return this->q13C;
 }
 } }
 
-// ==== BACKFILL 0x0070DE20  sub_70DE20  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070DE20  sub_70DE20  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_70DE20::sub_70DE20(int a2)
 {
 {
@@ -312,7 +318,7 @@ int E4Recv_70DE20::sub_70DE20(int a2)
 }
 }
 
-// ==== BACKFILL 0x0070E120  TechnoClass::Vt249to254  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070E120  TechnoClass::Vt249to254  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int TechnoClass::Vt249to254() {
 {
     int v2;
@@ -323,7 +329,7 @@ namespace ra2 { namespace game { int TechnoClass::Vt249to254() {
 }
 } } }
 
-// ==== BACKFILL 0x0070E240  IsNonNullPtr  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070E240  IsNonNullPtr  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int IsNonNullPtr(int* ptr) {
 return ptr != nullptr && *ptr != 0;
 
@@ -344,7 +350,7 @@ retn    4
 */
 } }
 
-// ==== BACKFILL 0x0070E340  ObjectClass::ResetTimer2  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070E340  ObjectClass::ResetTimer2  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::ResetTimer2() {
 {
     int *v1;
@@ -357,7 +363,7 @@ namespace ra2 { namespace game { int ObjectClass::ResetTimer2() {
 }
 } } }
 
-// ==== BACKFILL 0x0070E360  Techno::StartInvulnerability  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070E360  Techno::StartInvulnerability  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BuildingTypeClass * Techno::StartInvulnerability(BuildingTypeClass * aP1)
 {
 {
@@ -367,10 +373,15 @@ BuildingTypeClass * Techno::StartInvulnerability(BuildingTypeClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0070F010  TechnoClass::COMStub_Return0_298  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070EFD0  TechnoClass::HasPassengers  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
+int TechnoClass::HasPassengers() const {
+return this->empLockRemaining > 0;
+}
+
+// ==== BACKFILL 0x0070F010  TechnoClass::COMStub_Return0_298  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::COMStub_Return0_298() { return 0; }
 
-// ==== BACKFILL 0x0070F020  TechnoClass::StubReturnFalse5  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070F020  TechnoClass::StubReturnFalse5  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::StubReturnFalse5()
 {
 {
@@ -380,7 +391,7 @@ int TechnoClass::StubReturnFalse5()
 }
 }
 
-// ==== BACKFILL 0x0070F030  TechnoClass::StubReturnFalse6  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070F030  TechnoClass::StubReturnFalse6  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::StubReturnFalse6()
 {
 {
@@ -390,16 +401,16 @@ int TechnoClass::StubReturnFalse6()
 }
 }
 
-// ==== BACKFILL 0x0070F040  TechnoClass::checkMovementRestrictions  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070F040  TechnoClass::checkMovementRestrictions  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::checkMovementRestrictions()
 {
 return -1;
 }
 
-// ==== BACKFILL 0x0070F050  TechnoClass::ProcessCellClearance  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070F050  TechnoClass::ProcessCellClearance  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::ProcessCellClearance() { return 0; }
 
-// ==== BACKFILL 0x0070F0B0  TacticalClass::MapSpecialDrawMode  cls=TacticalClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070F0B0  TacticalClass::MapSpecialDrawMode  cls=TacticalClass  sig=csp  renamed_refs=0  residual=- ====
 int TacticalClass::MapSpecialDrawMode(MouseClass * aP1)
 {
 {
@@ -423,7 +434,7 @@ int TacticalClass::MapSpecialDrawMode(MouseClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0070F0E0  TechnoClass::StubReturnFalse7  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070F0E0  TechnoClass::StubReturnFalse7  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::StubReturnFalse7()
 {
 {
@@ -433,7 +444,7 @@ int TechnoClass::StubReturnFalse7()
 }
 }
 
-// ==== BACKFILL 0x0070F0F0  TechnoClass::StubReturnFalse8  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070F0F0  TechnoClass::StubReturnFalse8  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::StubReturnFalse8()
 {
 {
@@ -443,10 +454,10 @@ int TechnoClass::StubReturnFalse8()
 }
 }
 
-// ==== BACKFILL 0x0070F100  TechnoClass::COMStub_Return0_307  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070F100  TechnoClass::COMStub_Return0_307  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::COMStub_Return0_307() { return 0; }
 
-// ==== BACKFILL 0x0070F110  TechnoClass::StubReturnFalse9  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070F110  TechnoClass::StubReturnFalse9  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::StubReturnFalse9()
 {
 {
@@ -456,7 +467,7 @@ int TechnoClass::StubReturnFalse9()
 }
 }
 
-// ==== BACKFILL 0x0070F740  sub_70F740  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070F740  sub_70F740  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_70F740::sub_70F740(int a2)
 {
 {
@@ -470,7 +481,7 @@ int E4Recv_70F740::sub_70F740(int a2)
 }
 }
 
-// ==== BACKFILL 0x0070F820  ObjectClass::GetPriorityTarget  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070F820  ObjectClass::GetPriorityTarget  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::GetPriorityTarget() {
 {
       if ( this->q2C0 )
@@ -481,7 +492,7 @@ namespace ra2 { namespace game { int ObjectClass::GetPriorityTarget() {
 }
 } } }
 
-// ==== BACKFILL 0x0070FBD0  UnitClass::IsDeactivated  cls=UnitClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070FBD0  UnitClass::IsDeactivated  cls=UnitClass  sig=csp  renamed_refs=0  residual=- ====
 bool UnitClass::IsDeactivated()
 // 0x70fbd0
 {
@@ -493,7 +504,7 @@ retn
 */
 }
 
-// ==== BACKFILL 0x0070FE40  sub_70FE40  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070FE40  sub_70FE40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_70FE40::sub_70FE40(int a2)
 {
 {
@@ -502,7 +513,7 @@ int E4Recv_70FE40::sub_70FE40(int a2)
 }
 }
 
-// ==== BACKFILL 0x0070FE50  sub_70FE50  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0070FE50  sub_70FE50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_70FE50::sub_70FE50()
 {
 {

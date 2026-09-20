@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x007A0EA0  SetGameOptionsPing  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007A0EA0  SetGameOptionsPing  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void INIClass::SetGameOptionsPing()
 {
 {
@@ -49,7 +49,7 @@ void INIClass::SetGameOptionsPing()
 }
 }
 
-// ==== BACKFILL 0x007A2110  sub_7A2110  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007A2110  sub_7A2110  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 INT_PTR sub_7A2110(HWND hWnd, UINT a2, WPARAM a3, char * a4)
 {
 {
@@ -101,7 +101,7 @@ INT_PTR sub_7A2110(HWND hWnd, UINT a2, WPARAM a3, char * a4)
 }
 }
 
-// ==== BACKFILL 0x007A2600  sub_7A2600  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007A2600  sub_7A2600  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_7A2600(HWND hWnd, unsigned int a2, int a3, char * a4)
 {
 {
@@ -153,7 +153,7 @@ int sub_7A2600(HWND hWnd, unsigned int a2, int a3, char * a4)
 }
 }
 
-// ==== BACKFILL 0x007A2800  Map_Handle_7A2800  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007A2800  Map_Handle_7A2800  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_7A2800(int a1, char a2, char a3)
 {
 {
@@ -163,7 +163,7 @@ char sub_7A2800(int a1, char a2, char a3)
 }
 }
 
-// ==== BACKFILL 0x007A2F30  System_Init_7A2F30  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007A2F30  System_Init_7A2F30  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int System_Init_7A2F30(int a1, int a2, ObjectClass * aP2)
 {
 {
@@ -202,7 +202,7 @@ int System_Init_7A2F30(int a1, int a2, ObjectClass * aP2)
 }
 }
 
-// ==== BACKFILL 0x007A4070  ComStreamClass::Seek  cls=CNetUtilEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007A4070  ComStreamClass::Seek  cls=CNetUtilEventSink  sig=csp  renamed_refs=0  residual=- ====
 int ComStreamClass::Seek()
 {
 {
@@ -234,7 +234,7 @@ int ComStreamClass::Seek()
 }
 }
 
-// ==== BACKFILL 0x007A40F0  ComStreamClass::ddtor  cls=CNetUtilEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007A40F0  ComStreamClass::ddtor  cls=CNetUtilEventSink  sig=csp  renamed_refs=0  residual=- ====
 int ComStreamClass::ddtor()
 {
 {
@@ -265,7 +265,7 @@ int ComStreamClass::ddtor()
 }
 }
 
-// ==== BACKFILL 0x007A5220  CComObject_CChatEventSink___ATL::DispatchStub_20  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007A5220  CComObject_CChatEventSink___ATL::DispatchStub_20  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::DispatchStub_20(int a1, int a2, const char * a3)
 {
 {
@@ -275,7 +275,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_20(int a1, int a2, const char 
 }
 }
 
-// ==== BACKFILL 0x007A5240  CComObject_CChatEventSink___ATL::GetTypeInfoCount  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007A5240  CComObject_CChatEventSink___ATL::GetTypeInfoCount  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::GetTypeInfoCount(int a1, int a2, int a3)
 {
 {
@@ -291,7 +291,7 @@ int CComObject_CChatEventSink___ATL::GetTypeInfoCount(int a1, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x007A55F0  CComObject_CChatEventSink___ATL::GetIDsOfNames  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007A55F0  CComObject_CChatEventSink___ATL::GetIDsOfNames  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::GetIDsOfNames(int a1, int a2, char * Source)
 {
 {
@@ -312,7 +312,7 @@ int CComObject_CChatEventSink___ATL::GetIDsOfNames(int a1, int a2, char * Source
 }
 }
 
-// ==== BACKFILL 0x007A70E0  CComObject_CChatEventSink___ATL::Disconnect  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007A70E0  CComObject_CChatEventSink___ATL::Disconnect  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::Disconnect(int a1, int a2, int a3, const char * a4)
 {
 {
@@ -324,7 +324,7 @@ int CComObject_CChatEventSink___ATL::Disconnect(int a1, int a2, int a3, const ch
 }
 }
 
-// ==== BACKFILL 0x007AA6A0  CComObject_CChatEventSink___ATL::DispatchStub_18  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AA6A0  CComObject_CChatEventSink___ATL::DispatchStub_18  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::DispatchStub_18(int a1, int a2, int a3)
 {
 {
@@ -334,7 +334,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_18(int a1, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x007AAFB0  CComObject_CChatEventSink___ATL::Unadvise  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AAFB0  CComObject_CChatEventSink___ATL::Unadvise  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::Unadvise(int a1, int a2, const char * a3, const char * a4)
 {
 {
@@ -386,7 +386,7 @@ int CComObject_CChatEventSink___ATL::Unadvise(int a1, int a2, const char * a3, c
 }
 }
 
-// ==== BACKFILL 0x007AB0A0  CComObject_CChatEventSink___ATL::DispatchStub_42  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AB0A0  CComObject_CChatEventSink___ATL::DispatchStub_42  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::DispatchStub_42(int a1, int a2, const char * a3, wchar_t * String)
 {
 {
@@ -440,7 +440,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_42(int a1, int a2, const char 
 }
 }
 
-// ==== BACKFILL 0x007AB170  CComObject_CChatEventSink___ATL::EnumDependents  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AB170  CComObject_CChatEventSink___ATL::EnumDependents  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::EnumDependents(int a1, int a2, int a3, const char * a4, const char * a5)
 {
 {
@@ -492,7 +492,7 @@ int CComObject_CChatEventSink___ATL::EnumDependents(int a1, int a2, int a3, cons
 }
 }
 
-// ==== BACKFILL 0x007AB260  CComObject_CChatEventSink___ATL::DispatchStub_43  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AB260  CComObject_CChatEventSink___ATL::DispatchStub_43  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::DispatchStub_43(int a1, int a2, int a3, const char * a4, wchar_t * String)
 {
 {
@@ -546,19 +546,19 @@ int CComObject_CChatEventSink___ATL::DispatchStub_43(int a1, int a2, int a3, con
 }
 }
 
-// ==== BACKFILL 0x007AB330  CComObject_CChatEventSink___ATL::COMStub_Return0  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AB330  CComObject_CChatEventSink___ATL::COMStub_Return0  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::COMStub_Return0(int a1, int a2, int a3, int a4)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007AB340  CComObject_CChatEventSink___ATL::StubReturnFalse  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AB340  CComObject_CChatEventSink___ATL::StubReturnFalse  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::StubReturnFalse(int a1, int a2, int a3)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007AB350  CComObject_CChatEventSink___ATL::DispatchStub_29  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AB350  CComObject_CChatEventSink___ATL::DispatchStub_29  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::DispatchStub_29(int a1, int a2, __time32_t Time)
 {
 {
@@ -576,7 +576,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_29(int a1, int a2, __time32_t 
 }
 }
 
-// ==== BACKFILL 0x007AB3C0  CComObject_CChatEventSink___ATL::DispatchStub_31  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AB3C0  CComObject_CChatEventSink___ATL::DispatchStub_31  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::DispatchStub_31(int a1, int a2, unsigned char * a3, int a4)
 {
 {
@@ -601,37 +601,37 @@ int CComObject_CChatEventSink___ATL::DispatchStub_31(int a1, int a2, unsigned ch
 }
 }
 
-// ==== BACKFILL 0x007AC4A0  CComObject_CChatEventSink___ATL::DispatchStub_38  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AC4A0  CComObject_CChatEventSink___ATL::DispatchStub_38  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::DispatchStub_38(int a1, int a2, int a3)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007AC4B0  CComObject_CChatEventSink___ATL::DispatchStub_39  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AC4B0  CComObject_CChatEventSink___ATL::DispatchStub_39  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::DispatchStub_39(int a1, int a2, int a3)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007AC4C0  CComObject_CChatEventSink___ATL::DispatchStub_45  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AC4C0  CComObject_CChatEventSink___ATL::DispatchStub_45  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::DispatchStub_45(int a1, int a2, int a3)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007AC4D0  CComObject_CChatEventSink___ATL::DispatchStub_46  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AC4D0  CComObject_CChatEventSink___ATL::DispatchStub_46  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::DispatchStub_46(int a1, int a2, int a3)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007AC4E0  CComObject_CChatEventSink___ATL::DispatchStub_47  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AC4E0  CComObject_CChatEventSink___ATL::DispatchStub_47  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CComObject_CChatEventSink___ATL::DispatchStub_47(int a1, int a2, int a3)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007AC500  HandleLogoutWOL_Handle  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AC500  HandleLogoutWOL_Handle  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_7AC500(int a1)
 {
 {
@@ -689,7 +689,7 @@ int sub_7AC500(int a1)
 }
 }
 
-// ==== BACKFILL 0x007ACB90  StartGameWOL_Start_7ACB90  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007ACB90  StartGameWOL_Start_7ACB90  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_7ACB90::StartGameWOL_Start_7ACB90(IUnknown * aP1, int a3)
 {
 {
@@ -700,7 +700,7 @@ char E4Recv_7ACB90::StartGameWOL_Start_7ACB90(IUnknown * aP1, int a3)
 }
 }
 
-// ==== BACKFILL 0x007ACBD0  ?_Release__NonReentrantLock_details_Concurrency__QAEXXZ_1  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007ACBD0  ?_Release__NonReentrantLock_details_Concurrency__QAEXXZ_1  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_7ACBD0::__Release__NonReentrantLock_details_Concurrency__QAEXXZ_1()
 {
 {
@@ -708,7 +708,7 @@ void E4Recv_7ACBD0::__Release__NonReentrantLock_details_Concurrency__QAEXXZ_1()
 }
 }
 
-// ==== BACKFILL 0x007AD2F0  SessionClass::ResetSystemWOL_Reset  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AD2F0  SessionClass::ResetSystemWOL_Reset  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void ** SessionClass::ResetSystemWOL_Reset(char a2)
 {
 {
@@ -719,7 +719,7 @@ void ** SessionClass::ResetSystemWOL_Reset(char a2)
 }
 }
 
-// ==== BACKFILL 0x007AD330  Object::DtorWithDelete  cls=Object  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AD330  Object::DtorWithDelete  cls=Object  sig=csp  renamed_refs=0  residual=- ====
 SessionClass * Object::DtorWithDelete(char a2)
 {
 {
@@ -730,7 +730,7 @@ SessionClass * Object::DtorWithDelete(char a2)
 }
 }
 
-// ==== BACKFILL 0x007AD350  CChatEventSink::DeleteAndZero  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AD350  CChatEventSink::DeleteAndZero  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * CChatEventSink::DeleteAndZero(char a2)
 {
 {
@@ -741,7 +741,7 @@ ObjectClass * CChatEventSink::DeleteAndZero(char a2)
 }
 }
 
-// ==== BACKFILL 0x007AE730  VectorClass::Shrink  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AE730  VectorClass::Shrink  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 char VectorClass::Shrink()
 {
 {
@@ -772,7 +772,7 @@ char VectorClass::Shrink()
 }
 }
 
-// ==== BACKFILL 0x007AECB0  CChatEventSink::ComputeBucketMask  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AECB0  CChatEventSink::ComputeBucketMask  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 int CChatEventSink::ComputeBucketMask(int a2)
 {
 {
@@ -780,7 +780,7 @@ int CChatEventSink::ComputeBucketMask(int a2)
 }
 }
 
-// ==== BACKFILL 0x007AECD0  QueryNATPortWOL_Helper  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AECD0  QueryNATPortWOL_Helper  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_7AECD0::sub_7AECD0(int a2, int a3)
 {
 {
@@ -803,7 +803,7 @@ unsigned int * E4Recv_7AECD0::sub_7AECD0(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x007AED20  ComStreamClass::writeData  cls=ComStreamClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AED20  ComStreamClass::writeData  cls=ComStreamClass  sig=csp  renamed_refs=0  residual=- ====
 void ** ComStreamClass::writeData(char a2)
 {
 {
@@ -814,7 +814,7 @@ void ** ComStreamClass::writeData(char a2)
 }
 }
 
-// ==== BACKFILL 0x007AEDD0  CChatEventSink::EnsureCapacity  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AEDD0  CChatEventSink::EnsureCapacity  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 char CChatEventSink::EnsureCapacity(int a2)
 {
 {
@@ -859,7 +859,7 @@ char CChatEventSink::EnsureCapacity(int a2)
 }
 }
 
-// ==== BACKFILL 0x007AEEC0  Vector::Grow  cls=Vector  sig=csp  renamed_refs=6 ====
+// ==== BACKFILL 0x007AEEC0  Vector::Grow  cls=Vector  sig=csp  renamed_refs=6  residual=- ====
 char Vector::Grow()
 {
 {
@@ -891,7 +891,7 @@ char Vector::Grow()
 }
 }
 
-// ==== BACKFILL 0x007AF000  DynamicVector::EnsureCapacity  cls=DynamicVector  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x007AF000  DynamicVector::EnsureCapacity  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 char DynamicVector::EnsureCapacity()
 {
 {
@@ -900,7 +900,7 @@ char DynamicVector::EnsureCapacity()
     void *v5;
     int v6;
     v2 = *(void**)this;
-    if ( *(void**)this < this->q004 )
+    if ( *(void**)this < this->Items )
     return 0;
     v4 = 2 * v2;
     v6 = 2 * v2;
@@ -917,13 +917,13 @@ char DynamicVector::EnsureCapacity()
     v4 = v6;
   }
     __3_YAXPAX_Z((void *)this->DynamicVector_field_0x8);
-    this->q004 = v4;
+    this->Items = v4;
     this->DynamicVector_field_0x8 = (int)v5;
     return 1;
 }
 }
 
-// ==== BACKFILL 0x007AF540  WorldDominationFactionDlgProc_Helper  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007AF540  WorldDominationFactionDlgProc_Helper  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_7AF540::sub_7AF540(HWND hWnd, int * a3)
 {
 {

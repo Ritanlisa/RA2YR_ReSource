@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x007C3230  Render_Render_7C3230  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C3230  Render_Render_7C3230  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_7C3230(int a1, int a2, int a3)
 {
 {
@@ -18,7 +18,7 @@ int sub_7C3230(int a1, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x007C3430  Audio_Render_7C3430  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C3430  Audio_Render_7C3430  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Audio_Render_7C3430(DSurface * aP0, int a2, int a3, unsigned int a4)
 {
 {
@@ -40,7 +40,7 @@ int Audio_Render_7C3430(DSurface * aP0, int a2, int a3, unsigned int a4)
 }
 }
 
-// ==== BACKFILL 0x007C35B0  sub_7C35B0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C35B0  sub_7C35B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_7C35B0::sub_7C35B0()
 {
 {
@@ -48,7 +48,7 @@ int E4Recv_7C35B0::sub_7C35B0()
 }
 }
 
-// ==== BACKFILL 0x007C35C0  AbstractClass::finalizeDestruction  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C35C0  AbstractClass::finalizeDestruction  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::finalizeDestruction() {
 {
       unsigned __int16 v1;
@@ -88,7 +88,7 @@ namespace ra2 { namespace game { int AbstractClass::finalizeDestruction() {
 }
 } } }
 
-// ==== BACKFILL 0x007C3670  sub_7C3670  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C3670  sub_7C3670  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_7C3670::sub_7C3670()
 {
 {
@@ -99,7 +99,7 @@ int E4Recv_7C3670::sub_7C3670()
 }
 }
 
-// ==== BACKFILL 0x007C3710  Render_Render_7C3710  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C3710  Render_Render_7C3710  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_7C3710(unsigned char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4)
 {
   *a2 = a1[242];
@@ -108,7 +108,7 @@ int sub_7C3710(unsigned char * a1, unsigned int * a2, unsigned int * a3, unsigne
   return -1;
 }
 
-// ==== BACKFILL 0x007C6064  Timer::ReadTSC  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C6064  Timer::ReadTSC  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned long long Timer::ReadTSC(unsigned int * a1)
 {
 {
@@ -119,7 +119,7 @@ unsigned long long Timer::ReadTSC(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x007C61CF  globalHelper_0C61CF  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C61CF  globalHelper_0C61CF  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_7C61CF(int a1)
 {
 {
@@ -178,7 +178,7 @@ int sub_7C61CF(int a1)
 }
 }
 
-// ==== BACKFILL 0x007C7350  Audio_Render_7C7350  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C7350  Audio_Render_7C7350  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_7C7350(int a1)
 {
 {
@@ -190,7 +190,7 @@ int sub_7C7350(int a1)
 }
 }
 
-// ==== BACKFILL 0x007C8362  FindClose  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8362  FindClose  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FindClose()
 {
     int __stdcall FindClose(HANDLE hFindFile)
@@ -199,7 +199,7 @@ int FindClose()
 }
 }
 
-// ==== BACKFILL 0x007C8368  FindNextFileA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8368  FindNextFileA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FindNextFileA()
 {
     int __stdcall FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileData)
@@ -208,7 +208,7 @@ int FindNextFileA()
 }
 }
 
-// ==== BACKFILL 0x007C836E  FindFirstFileA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C836E  FindFirstFileA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FindFirstFileA()
 {
     HANDLE __stdcall FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFileData)
@@ -217,7 +217,7 @@ int FindFirstFileA()
 }
 }
 
-// ==== BACKFILL 0x007C8374  FormatMessageA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8374  FormatMessageA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FormatMessageA()
 {
     DWORD __stdcall FormatMessageA( DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPSTR lpBuffer, DWORD nSize, va_list *Arguments)
@@ -226,7 +226,7 @@ int FormatMessageA()
 }
 }
 
-// ==== BACKFILL 0x007C8380  SetThreadPriority  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8380  SetThreadPriority  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetThreadPriority()
 {
     int __stdcall SetThreadPriority(HANDLE hThread, int nPriority)
@@ -235,7 +235,7 @@ int SetThreadPriority()
 }
 }
 
-// ==== BACKFILL 0x007C8386  CreateThread  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8386  CreateThread  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CreateThread()
 {
     HANDLE __stdcall CreateThread( LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress, LPVOID lpParameter, DWORD dwCreationFlags, LPDWORD lpThreadId)
@@ -244,7 +244,7 @@ int CreateThread()
 }
 }
 
-// ==== BACKFILL 0x007C838C  InitializeCriticalSection  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C838C  InitializeCriticalSection  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int InitializeCriticalSection()
 {
     void __stdcall InitializeCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
@@ -253,7 +253,7 @@ int InitializeCriticalSection()
 }
 }
 
-// ==== BACKFILL 0x007C8392  Sleep  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8392  Sleep  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Sleep()
 {
     void __stdcall Sleep(DWORD dwMilliseconds)
@@ -262,7 +262,7 @@ int Sleep()
 }
 }
 
-// ==== BACKFILL 0x007C8398  LeaveCriticalSection  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8398  LeaveCriticalSection  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int LeaveCriticalSection()
 {
     void __stdcall LeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
@@ -271,7 +271,7 @@ int LeaveCriticalSection()
 }
 }
 
-// ==== BACKFILL 0x007C839E  EnterCriticalSection  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C839E  EnterCriticalSection  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int EnterCriticalSection()
 {
     void __stdcall EnterCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
@@ -280,7 +280,7 @@ int EnterCriticalSection()
 }
 }
 
-// ==== BACKFILL 0x007C83A4  DeleteCriticalSection  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C83A4  DeleteCriticalSection  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int DeleteCriticalSection()
 {
     void __stdcall DeleteCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
@@ -289,7 +289,7 @@ int DeleteCriticalSection()
 }
 }
 
-// ==== BACKFILL 0x007C83AA  CloseHandle  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C83AA  CloseHandle  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CloseHandle()
 {
     int __stdcall CloseHandle(HANDLE hObject)
@@ -298,7 +298,7 @@ int CloseHandle()
 }
 }
 
-// ==== BACKFILL 0x007C83B0  WaitForSingleObject  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C83B0  WaitForSingleObject  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int WaitForSingleObject()
 {
     DWORD __stdcall WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds)
@@ -307,7 +307,7 @@ int WaitForSingleObject()
 }
 }
 
-// ==== BACKFILL 0x007C83B6  QueryPerformanceFrequency  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C83B6  QueryPerformanceFrequency  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int QueryPerformanceFrequency()
 {
     int __stdcall QueryPerformanceFrequency(LARGE_INTEGER *lpFrequency)
@@ -316,7 +316,7 @@ int QueryPerformanceFrequency()
 }
 }
 
-// ==== BACKFILL 0x007C83BC  QueryPerformanceCounter  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C83BC  QueryPerformanceCounter  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int QueryPerformanceCounter()
 {
     int __stdcall QueryPerformanceCounter(LARGE_INTEGER *lpPerformanceCount)
@@ -325,7 +325,7 @@ int QueryPerformanceCounter()
 }
 }
 
-// ==== BACKFILL 0x007C83C8  InterlockedDecrement  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C83C8  InterlockedDecrement  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int InterlockedDecrement()
 {
     LONG __stdcall InterlockedDecrement(volatile LONG *lpAddend)
@@ -334,7 +334,7 @@ int InterlockedDecrement()
 }
 }
 
-// ==== BACKFILL 0x007C83CE  InterlockedIncrement  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C83CE  InterlockedIncrement  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int InterlockedIncrement()
 {
     LONG __stdcall InterlockedIncrement(volatile LONG *lpAddend)
@@ -343,7 +343,7 @@ int InterlockedIncrement()
 }
 }
 
-// ==== BACKFILL 0x007C83D4  MultiByteToWideChar  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C83D4  MultiByteToWideChar  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int MultiByteToWideChar()
 {
     int __stdcall MultiByteToWideChar( UINT CodePage, DWORD dwFlags, LPCCH lpMultiByteStr, int cbMultiByte, LPWSTR lpWideCharStr, int cchWideChar)
@@ -352,7 +352,7 @@ int MultiByteToWideChar()
 }
 }
 
-// ==== BACKFILL 0x007C83DA  SetFilePointer  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C83DA  SetFilePointer  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetFilePointer()
 {
     DWORD __stdcall SetFilePointer(HANDLE hFile, LONG lDistanceToMove, PLONG lpDistanceToMoveHigh, DWORD dwMoveMethod)
@@ -361,7 +361,7 @@ int SetFilePointer()
 }
 }
 
-// ==== BACKFILL 0x007C83E0  CreateFileA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C83E0  CreateFileA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CreateFileA()
 {
     HANDLE __stdcall CreateFileA( LPCSTR lpFileName, DWORD dwDesiredAccess, DWORD dwShareMode, LPSECURITY_ATTRIBUTES lpSecurityAttributes, DWORD dwCreationDisposition, DWORD dwFlagsAndAttributes, HANDLE hTemplateFile)
@@ -370,7 +370,7 @@ int CreateFileA()
 }
 }
 
-// ==== BACKFILL 0x007C83E6  DeviceIoControl  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C83E6  DeviceIoControl  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int DeviceIoControl()
 {
     int __stdcall DeviceIoControl( HANDLE hDevice, DWORD dwIoControlCode, LPVOID lpInBuffer, DWORD nInBufferSize, LPVOID lpOutBuffer, DWORD nOutBufferSize, LPDWORD lpBytesReturned, LPOVERLAPPED lpOverlapped)
@@ -379,7 +379,7 @@ int DeviceIoControl()
 }
 }
 
-// ==== BACKFILL 0x007C83EC  GetDriveTypeA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C83EC  GetDriveTypeA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetDriveTypeA()
 {
     UINT __stdcall GetDriveTypeA(LPCSTR lpRootPathName)
@@ -388,7 +388,7 @@ int GetDriveTypeA()
 }
 }
 
-// ==== BACKFILL 0x007C83F2  WideCharToMultiByte  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C83F2  WideCharToMultiByte  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int WideCharToMultiByte()
 {
     int __stdcall WideCharToMultiByte( UINT CodePage, DWORD dwFlags, LPCWCH lpWideCharStr, int cchWideChar, LPSTR lpMultiByteStr, int cbMultiByte, LPCCH lpDefaultChar, LPint lpUsedDefaultChar)
@@ -397,7 +397,7 @@ int WideCharToMultiByte()
 }
 }
 
-// ==== BACKFILL 0x007C83F8  GetDiskFreeSpaceA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C83F8  GetDiskFreeSpaceA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetDiskFreeSpaceA()
 {
     int __stdcall GetDiskFreeSpaceA( LPCSTR lpRootPathName, LPDWORD lpSectorsPerCluster, LPDWORD lpBytesPerSector, LPDWORD lpNumberOfFreeClusters, LPDWORD lpTotalNumberOfClusters)
@@ -406,7 +406,7 @@ int GetDiskFreeSpaceA()
 }
 }
 
-// ==== BACKFILL 0x007C83FE  GetProcAddress  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C83FE  GetProcAddress  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetProcAddress()
 {
     FARPROC __stdcall GetProcAddress(HMODULE hModule, LPCSTR lpProcName)
@@ -415,7 +415,7 @@ int GetProcAddress()
 }
 }
 
-// ==== BACKFILL 0x007C8404  GetModuleHandleA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8404  GetModuleHandleA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetModuleHandleA()
 {
     HMODULE __stdcall GetModuleHandleA(LPCSTR lpModuleName)
@@ -424,7 +424,7 @@ int GetModuleHandleA()
 }
 }
 
-// ==== BACKFILL 0x007C840A  CreateMutexA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C840A  CreateMutexA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CreateMutexA()
 {
     HANDLE __stdcall CreateMutexA(LPSECURITY_ATTRIBUTES lpMutexAttributes, int bInitialOwner, LPCSTR lpName)
@@ -433,7 +433,7 @@ int CreateMutexA()
 }
 }
 
-// ==== BACKFILL 0x007C8410  MapViewOfFileEx  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8410  MapViewOfFileEx  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int MapViewOfFileEx()
 {
     LPVOID __stdcall MapViewOfFileEx( HANDLE hFileMappingObject, DWORD dwDesiredAccess, DWORD dwFileOffsetHigh, DWORD dwFileOffsetLow, SIZE_T dwNumberOfBytesToMap, LPVOID lpBaseAddress)
@@ -442,7 +442,7 @@ int MapViewOfFileEx()
 }
 }
 
-// ==== BACKFILL 0x007C8416  SetEvent  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8416  SetEvent  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetEvent()
 {
     int __stdcall SetEvent(HANDLE hEvent)
@@ -451,7 +451,7 @@ int SetEvent()
 }
 }
 
-// ==== BACKFILL 0x007C841C  OpenEventA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C841C  OpenEventA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int OpenEventA()
 {
     HANDLE __stdcall OpenEventA(DWORD dwDesiredAccess, int bInheritHandle, LPCSTR lpName)
@@ -460,7 +460,7 @@ int OpenEventA()
 }
 }
 
-// ==== BACKFILL 0x007C8422  UnmapViewOfFile  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8422  UnmapViewOfFile  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int UnmapViewOfFile()
 {
     int __stdcall UnmapViewOfFile(LPCVOID lpBaseAddress)
@@ -469,7 +469,7 @@ int UnmapViewOfFile()
 }
 }
 
-// ==== BACKFILL 0x007C8428  LockResource  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8428  LockResource  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int LockResource()
 {
     LPVOID __stdcall LockResource(HGLOBAL hResData)
@@ -478,7 +478,7 @@ int LockResource()
 }
 }
 
-// ==== BACKFILL 0x007C842E  LoadResource  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C842E  LoadResource  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int LoadResource()
 {
     HGLOBAL __stdcall LoadResource(HMODULE hModule, HRSRC hResInfo)
@@ -487,7 +487,7 @@ int LoadResource()
 }
 }
 
-// ==== BACKFILL 0x007C8434  FindResourceA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8434  FindResourceA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FindResourceA()
 {
     HRSRC __stdcall FindResourceA(HMODULE hModule, LPCSTR lpName, LPCSTR lpType)
@@ -496,7 +496,7 @@ int FindResourceA()
 }
 }
 
-// ==== BACKFILL 0x007C843A  GetVolumeInformationA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C843A  GetVolumeInformationA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetVolumeInformationA()
 {
     int __stdcall GetVolumeInformationA( LPCSTR lpRootPathName, LPSTR lpVolumeNameBuffer, DWORD nVolumeNameSize, LPDWORD lpVolumeSerialNumber, LPDWORD lpMaximumComponentLength, LPDWORD lpFileSystemFlags, LPSTR lpFileSystemNameBuffer, DWORD nFileSystemNameSize)
@@ -505,7 +505,7 @@ int GetVolumeInformationA()
 }
 }
 
-// ==== BACKFILL 0x007C8440  FreeLibrary  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8440  FreeLibrary  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FreeLibrary()
 {
     int __stdcall FreeLibrary(HMODULE hLibModule)
@@ -514,7 +514,7 @@ int FreeLibrary()
 }
 }
 
-// ==== BACKFILL 0x007C8446  LoadLibraryA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8446  LoadLibraryA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int LoadLibraryA()
 {
     HMODULE __stdcall LoadLibraryA(LPCSTR lpLibFileName)
@@ -523,7 +523,7 @@ int LoadLibraryA()
 }
 }
 
-// ==== BACKFILL 0x007C8458  ExitProcess  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8458  ExitProcess  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ExitProcess()
 {
     void __stdcall __noreturn ExitProcess(UINT uExitCode)
@@ -532,7 +532,7 @@ int ExitProcess()
 }
 }
 
-// ==== BACKFILL 0x007C845E  IsBadReadPtr  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C845E  IsBadReadPtr  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int IsBadReadPtr()
 {
     int __stdcall IsBadReadPtr(const void *lp, UINT_PTR ucb)
@@ -541,7 +541,7 @@ int IsBadReadPtr()
 }
 }
 
-// ==== BACKFILL 0x007C8464  IsBadCodePtr  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8464  IsBadCodePtr  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int IsBadCodePtr()
 {
     int __stdcall IsBadCodePtr(FARPROC lpfn)
@@ -550,7 +550,7 @@ int IsBadCodePtr()
 }
 }
 
-// ==== BACKFILL 0x007C846A  lstrcatA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C846A  lstrcatA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int lstrcatA()
 {
     LPSTR __stdcall lstrcatA(LPSTR lpString1, LPCSTR lpString2)
@@ -559,7 +559,7 @@ int lstrcatA()
 }
 }
 
-// ==== BACKFILL 0x007C8470  lstrlenA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8470  lstrlenA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int lstrlenA()
 {
     int __stdcall lstrlenA(LPCSTR lpString)
@@ -568,7 +568,7 @@ int lstrlenA()
 }
 }
 
-// ==== BACKFILL 0x007C8476  GetModuleFileNameA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8476  GetModuleFileNameA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetModuleFileNameA()
 {
     DWORD __stdcall GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, DWORD nSize)
@@ -577,7 +577,7 @@ int GetModuleFileNameA()
 }
 }
 
-// ==== BACKFILL 0x007C8482  WriteFile  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8482  WriteFile  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int WriteFile()
 {
     int __stdcall WriteFile( HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped)
@@ -586,7 +586,7 @@ int WriteFile()
 }
 }
 
-// ==== BACKFILL 0x007C8488  FlushInstructionCache  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8488  FlushInstructionCache  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FlushInstructionCache()
 {
     int __stdcall FlushInstructionCache(HANDLE hProcess, LPCVOID lpBaseAddress, SIZE_T dwSize)
@@ -595,7 +595,7 @@ int FlushInstructionCache()
 }
 }
 
-// ==== BACKFILL 0x007C848E  VirtualProtect  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C848E  VirtualProtect  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VirtualProtect()
 {
     int __stdcall VirtualProtect(LPVOID lpAddress, SIZE_T dwSize, DWORD flNewProtect, PDWORD lpflOldProtect)
@@ -604,7 +604,7 @@ int VirtualProtect()
 }
 }
 
-// ==== BACKFILL 0x007C8494  VirtualQuery  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8494  VirtualQuery  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VirtualQuery()
 {
     SIZE_T __stdcall VirtualQuery(LPCVOID lpAddress, PMEMORY_BASIC_INFORMATION lpBuffer, SIZE_T dwLength)
@@ -613,7 +613,7 @@ int VirtualQuery()
 }
 }
 
-// ==== BACKFILL 0x007C84A0  GetSystemTime  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84A0  GetSystemTime  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetSystemTime()
 {
     void __stdcall GetSystemTime(LPSYSTEMTIME lpSystemTime)
@@ -622,7 +622,7 @@ int GetSystemTime()
 }
 }
 
-// ==== BACKFILL 0x007C84A6  GlobalMemoryStatus  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84A6  GlobalMemoryStatus  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GlobalMemoryStatus()
 {
     void __stdcall GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer)
@@ -631,7 +631,7 @@ int GlobalMemoryStatus()
 }
 }
 
-// ==== BACKFILL 0x007C84AC  CreateProcessA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84AC  CreateProcessA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CreateProcessA()
 {
     int __stdcall CreateProcessA( LPCSTR lpApplicationName, LPSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes, LPSECURITY_ATTRIBUTES lpThreadAttributes, int bInheritHandles, DWORD dwCreationFlags, LPVOID lpEnvironment, LPCSTR lpCurrentDirectory, LPSTARTUPINFOA lpStartupInfo, LPPROCESS_INFORMATION lpProcessInformation)
@@ -640,7 +640,7 @@ int CreateProcessA()
 }
 }
 
-// ==== BACKFILL 0x007C84B2  DeleteFileA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84B2  DeleteFileA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int DeleteFileA()
 {
     int __stdcall DeleteFileA(LPCSTR lpFileName)
@@ -649,7 +649,7 @@ int DeleteFileA()
 }
 }
 
-// ==== BACKFILL 0x007C84B8  GetTempFileNameA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84B8  GetTempFileNameA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetTempFileNameA()
 {
     UINT __stdcall GetTempFileNameA(LPCSTR lpPathName, LPCSTR lpPrefixString, UINT uUnique, LPSTR lpTempFileName)
@@ -658,7 +658,7 @@ int GetTempFileNameA()
 }
 }
 
-// ==== BACKFILL 0x007C84BE  GetWindowsDirectoryA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84BE  GetWindowsDirectoryA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetWindowsDirectoryA()
 {
     UINT __stdcall GetWindowsDirectoryA(LPSTR lpBuffer, UINT uSize)
@@ -667,7 +667,7 @@ int GetWindowsDirectoryA()
 }
 }
 
-// ==== BACKFILL 0x007C84C4  GetTimeFormatA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84C4  GetTimeFormatA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetTimeFormatA()
 {
     int __stdcall GetTimeFormatA( LCID Locale, DWORD dwFlags, const SYSTEMTIME *lpTime, LPCSTR lpFormat, LPSTR lpTimeStr, int cchTime)
@@ -676,7 +676,7 @@ int GetTimeFormatA()
 }
 }
 
-// ==== BACKFILL 0x007C84CA  GetDateFormatA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84CA  GetDateFormatA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetDateFormatA()
 {
     int __stdcall GetDateFormatA( LCID Locale, DWORD dwFlags, const SYSTEMTIME *lpDate, LPCSTR lpFormat, LPSTR lpDateStr, int cchDate)
@@ -685,7 +685,7 @@ int GetDateFormatA()
 }
 }
 
-// ==== BACKFILL 0x007C84D0  FileTimeToSystemTime  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84D0  FileTimeToSystemTime  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FileTimeToSystemTime()
 {
     int __stdcall FileTimeToSystemTime(const FILETIME *lpFileTime, LPSYSTEMTIME lpSystemTime)
@@ -694,7 +694,7 @@ int FileTimeToSystemTime()
 }
 }
 
-// ==== BACKFILL 0x007C84D6  FileTimeToLocalFileTime  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84D6  FileTimeToLocalFileTime  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FileTimeToLocalFileTime()
 {
     int __stdcall FileTimeToLocalFileTime(const FILETIME *lpFileTime, LPFILETIME lpLocalFileTime)
@@ -703,7 +703,7 @@ int FileTimeToLocalFileTime()
 }
 }
 
-// ==== BACKFILL 0x007C84DC  SystemTimeToFileTime  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84DC  SystemTimeToFileTime  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SystemTimeToFileTime()
 {
     int __stdcall SystemTimeToFileTime(const SYSTEMTIME *lpSystemTime, LPFILETIME lpFileTime)
@@ -712,7 +712,7 @@ int SystemTimeToFileTime()
 }
 }
 
-// ==== BACKFILL 0x007C84E2  CompareFileTime  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84E2  CompareFileTime  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CompareFileTime()
 {
     LONG __stdcall CompareFileTime(const FILETIME *lpFileTime1, const FILETIME *lpFileTime2)
@@ -721,7 +721,7 @@ int CompareFileTime()
 }
 }
 
-// ==== BACKFILL 0x007C84E8  CopyFileA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84E8  CopyFileA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CopyFileA()
 {
     int __stdcall CopyFileA(LPCSTR lpExistingFileName, LPCSTR lpNewFileName, int bFailIfExists)
@@ -730,7 +730,7 @@ int CopyFileA()
 }
 }
 
-// ==== BACKFILL 0x007C84EE  CreateDirectoryA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84EE  CreateDirectoryA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CreateDirectoryA()
 {
     int __stdcall CreateDirectoryA(LPCSTR lpPathName, LPSECURITY_ATTRIBUTES lpSecurityAttributes)
@@ -739,7 +739,7 @@ int CreateDirectoryA()
 }
 }
 
-// ==== BACKFILL 0x007C84F4  MulDiv  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84F4  MulDiv  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int MulDiv()
 {
     int __stdcall MulDiv(int nNumber, int nNumerator, int nDenominator)
@@ -748,7 +748,7 @@ int MulDiv()
 }
 }
 
-// ==== BACKFILL 0x007C84FA  EscapeCommFunction  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C84FA  EscapeCommFunction  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int EscapeCommFunction()
 {
     int __stdcall EscapeCommFunction(HANDLE hFile, DWORD dwFunc)
@@ -757,7 +757,7 @@ int EscapeCommFunction()
 }
 }
 
-// ==== BACKFILL 0x007C8500  ClearCommBreak  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8500  ClearCommBreak  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ClearCommBreak()
 {
     int __stdcall ClearCommBreak(HANDLE hFile)
@@ -766,7 +766,7 @@ int ClearCommBreak()
 }
 }
 
-// ==== BACKFILL 0x007C8506  SetCommBreak  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8506  SetCommBreak  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetCommBreak()
 {
     int __stdcall SetCommBreak(HANDLE hFile)
@@ -775,7 +775,7 @@ int SetCommBreak()
 }
 }
 
-// ==== BACKFILL 0x007C850C  ReadFile  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C850C  ReadFile  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ReadFile()
 {
     int __stdcall ReadFile( HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToRead, LPDWORD lpNumberOfBytesRead, LPOVERLAPPED lpOverlapped)
@@ -784,7 +784,7 @@ int ReadFile()
 }
 }
 
-// ==== BACKFILL 0x007C8512  GetFileSize  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8512  GetFileSize  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetFileSize()
 {
     DWORD __stdcall GetFileSize(HANDLE hFile, LPDWORD lpFileSizeHigh)
@@ -793,7 +793,7 @@ int GetFileSize()
 }
 }
 
-// ==== BACKFILL 0x007C8518  FileTimeToDosDateTime  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8518  FileTimeToDosDateTime  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FileTimeToDosDateTime()
 {
     int __stdcall FileTimeToDosDateTime(const FILETIME *lpFileTime, LPWORD lpFatDate, LPWORD lpFatTime)
@@ -802,7 +802,7 @@ int FileTimeToDosDateTime()
 }
 }
 
-// ==== BACKFILL 0x007C851E  GetFileInformationByHandle  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C851E  GetFileInformationByHandle  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetFileInformationByHandle()
 {
     int __stdcall GetFileInformationByHandle(HANDLE hFile, LPBY_HANDLE_FILE_INFORMATION lpFileInformation)
@@ -811,7 +811,7 @@ int GetFileInformationByHandle()
 }
 }
 
-// ==== BACKFILL 0x007C8524  SetFileTime  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8524  SetFileTime  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetFileTime()
 {
     int __stdcall SetFileTime( HANDLE hFile, const FILETIME *lpCreationTime, const FILETIME *lpLastAccessTime, const FILETIME *lpLastWriteTime)
@@ -820,7 +820,7 @@ int SetFileTime()
 }
 }
 
-// ==== BACKFILL 0x007C852A  DosDateTimeToFileTime  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C852A  DosDateTimeToFileTime  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int DosDateTimeToFileTime()
 {
     int __stdcall DosDateTimeToFileTime(WORD wFatDate, WORD wFatTime, LPFILETIME lpFileTime)
@@ -829,7 +829,7 @@ int DosDateTimeToFileTime()
 }
 }
 
-// ==== BACKFILL 0x007C8530  GetStartupInfoA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8530  GetStartupInfoA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetStartupInfoA()
 {
     void __stdcall GetStartupInfoA(LPSTARTUPINFOA lpStartupInfo)
@@ -838,7 +838,7 @@ int GetStartupInfoA()
 }
 }
 
-// ==== BACKFILL 0x007C8536  TerminateProcess  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8536  TerminateProcess  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int TerminateProcess()
 {
     int __stdcall TerminateProcess(HANDLE hProcess, UINT uExitCode)
@@ -847,7 +847,7 @@ int TerminateProcess()
 }
 }
 
-// ==== BACKFILL 0x007C853C  WaitForMultipleObjects  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C853C  WaitForMultipleObjects  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int WaitForMultipleObjects()
 {
     DWORD __stdcall WaitForMultipleObjects(DWORD nCount, const HANDLE *lpHandles, int bWaitAll, DWORD dwMilliseconds)
@@ -856,7 +856,7 @@ int WaitForMultipleObjects()
 }
 }
 
-// ==== BACKFILL 0x007C8542  lstrcpyA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8542  lstrcpyA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int lstrcpyA()
 {
     LPSTR __stdcall lstrcpyA(LPSTR lpString1, LPCSTR lpString2)
@@ -865,7 +865,7 @@ int lstrcpyA()
 }
 }
 
-// ==== BACKFILL 0x007C8548  SetUnhandledExceptionFilter  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8548  SetUnhandledExceptionFilter  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetUnhandledExceptionFilter()
 {
     LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter)
@@ -874,7 +874,7 @@ int SetUnhandledExceptionFilter()
 }
 }
 
-// ==== BACKFILL 0x007C854E  SetCurrentDirectoryA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C854E  SetCurrentDirectoryA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetCurrentDirectoryA()
 {
     int __stdcall SetCurrentDirectoryA(LPCSTR lpPathName)
@@ -883,7 +883,7 @@ int SetCurrentDirectoryA()
 }
 }
 
-// ==== BACKFILL 0x007C8554  OpenMutexA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8554  OpenMutexA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int OpenMutexA()
 {
     HANDLE __stdcall OpenMutexA(DWORD dwDesiredAccess, int bInheritHandle, LPCSTR lpName)
@@ -892,7 +892,7 @@ int OpenMutexA()
 }
 }
 
-// ==== BACKFILL 0x007C855A  GetFileTime  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C855A  GetFileTime  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetFileTime()
 {
     int __stdcall GetFileTime( HANDLE hFile, LPFILETIME lpCreationTime, LPFILETIME lpLastAccessTime, LPFILETIME lpLastWriteTime)
@@ -901,7 +901,7 @@ int GetFileTime()
 }
 }
 
-// ==== BACKFILL 0x007C8560  GetLogicalDriveStringsA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8560  GetLogicalDriveStringsA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetLogicalDriveStringsA()
 {
     DWORD __stdcall GetLogicalDriveStringsA(DWORD nBufferLength, LPSTR lpBuffer)
@@ -910,7 +910,7 @@ int GetLogicalDriveStringsA()
 }
 }
 
-// ==== BACKFILL 0x007C8566  ClearCommError  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8566  ClearCommError  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ClearCommError()
 {
     int __stdcall ClearCommError(HANDLE hFile, LPDWORD lpErrors, LPCOMSTAT lpStat)
@@ -919,7 +919,7 @@ int ClearCommError()
 }
 }
 
-// ==== BACKFILL 0x007C856C  SetCommTimeouts  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C856C  SetCommTimeouts  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetCommTimeouts()
 {
     int __stdcall SetCommTimeouts(HANDLE hFile, LPCOMMTIMEOUTS lpCommTimeouts)
@@ -928,7 +928,7 @@ int SetCommTimeouts()
 }
 }
 
-// ==== BACKFILL 0x007C8572  SetCommState  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8572  SetCommState  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetCommState()
 {
     int __stdcall SetCommState(HANDLE hFile, LPDCB lpDCB)
@@ -937,7 +937,7 @@ int SetCommState()
 }
 }
 
-// ==== BACKFILL 0x007C8578  GetCommState  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8578  GetCommState  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetCommState()
 {
     int __stdcall GetCommState(HANDLE hFile, LPDCB lpDCB)
@@ -946,7 +946,7 @@ int GetCommState()
 }
 }
 
-// ==== BACKFILL 0x007C857E  CreateEventA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C857E  CreateEventA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CreateEventA()
 {
     HANDLE __stdcall CreateEventA( LPSECURITY_ATTRIBUTES lpEventAttributes, int bManualReset, int bInitialState, LPCSTR lpName)
@@ -955,7 +955,7 @@ int CreateEventA()
 }
 }
 
-// ==== BACKFILL 0x007C8584  PurgeComm  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8584  PurgeComm  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int PurgeComm()
 {
     int __stdcall PurgeComm(HANDLE hFile, DWORD dwFlags)
@@ -964,7 +964,7 @@ int PurgeComm()
 }
 }
 
-// ==== BACKFILL 0x007C858A  SetupComm  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C858A  SetupComm  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetupComm()
 {
     int __stdcall SetupComm(HANDLE hFile, DWORD dwInQueue, DWORD dwOutQueue)
@@ -973,7 +973,7 @@ int SetupComm()
 }
 }
 
-// ==== BACKFILL 0x007C8590  GetCommMask  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8590  GetCommMask  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetCommMask()
 {
     int __stdcall GetCommMask(HANDLE hFile, LPDWORD lpEvtMask)
@@ -982,7 +982,7 @@ int GetCommMask()
 }
 }
 
-// ==== BACKFILL 0x007C8596  ResetEvent  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8596  ResetEvent  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ResetEvent()
 {
     int __stdcall ResetEvent(HANDLE hEvent)
@@ -991,7 +991,7 @@ int ResetEvent()
 }
 }
 
-// ==== BACKFILL 0x007C859C  GetCommModemStatus  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C859C  GetCommModemStatus  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetCommModemStatus()
 {
     int __stdcall GetCommModemStatus(HANDLE hFile, LPDWORD lpModemStat)
@@ -1000,7 +1000,7 @@ int GetCommModemStatus()
 }
 }
 
-// ==== BACKFILL 0x007C85A2  GetOverlappedResult  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C85A2  GetOverlappedResult  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetOverlappedResult()
 {
     int __stdcall GetOverlappedResult( HANDLE hFile, LPOVERLAPPED lpOverlapped, LPDWORD lpNumberOfBytesTransferred, int bWait)
@@ -1009,7 +1009,7 @@ int GetOverlappedResult()
 }
 }
 
-// ==== BACKFILL 0x007C85A8  GetVersionExA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C85A8  GetVersionExA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetVersionExA()
 {
     int __stdcall GetVersionExA(LPOSVERSIONINFOA lpVersionInformation)
@@ -1018,7 +1018,7 @@ int GetVersionExA()
 }
 }
 
-// ==== BACKFILL 0x007C85AE  GetExitCodeProcess  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C85AE  GetExitCodeProcess  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetExitCodeProcess()
 {
     int __stdcall GetExitCodeProcess(HANDLE hProcess, LPDWORD lpExitCode)
@@ -1027,7 +1027,7 @@ int GetExitCodeProcess()
 }
 }
 
-// ==== BACKFILL 0x007C85B4  GetCurrentDirectoryA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C85B4  GetCurrentDirectoryA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetCurrentDirectoryA()
 {
     DWORD __stdcall GetCurrentDirectoryA(DWORD nBufferLength, LPSTR lpBuffer)
@@ -1036,7 +1036,7 @@ int GetCurrentDirectoryA()
 }
 }
 
-// ==== BACKFILL 0x007C85BA  HeapDestroy  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C85BA  HeapDestroy  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int HeapDestroy()
 {
     int __stdcall HeapDestroy(HANDLE hHeap)
@@ -1045,7 +1045,7 @@ int HeapDestroy()
 }
 }
 
-// ==== BACKFILL 0x007C85C0  GetComputerNameA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C85C0  GetComputerNameA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetComputerNameA()
 {
     int __stdcall GetComputerNameA(LPSTR lpBuffer, LPDWORD nSize)
@@ -1054,7 +1054,7 @@ int GetComputerNameA()
 }
 }
 
-// ==== BACKFILL 0x007C85C6  ReleaseMutex  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C85C6  ReleaseMutex  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ReleaseMutex()
 {
     int __stdcall ReleaseMutex(HANDLE hMutex)
@@ -1063,7 +1063,7 @@ int ReleaseMutex()
 }
 }
 
-// ==== BACKFILL 0x007C85CC  GetClientRect  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C85CC  GetClientRect  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetClientRect()
 {
     int __stdcall GetClientRect(HWND hWnd, LPRECT lpRect)
@@ -1072,7 +1072,7 @@ int GetClientRect()
 }
 }
 
-// ==== BACKFILL 0x007C85D2  DispatchMessageA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C85D2  DispatchMessageA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int DispatchMessageA()
 {
     LRESULT __stdcall DispatchMessageA(const MSG *lpMsg)
@@ -1081,7 +1081,7 @@ int DispatchMessageA()
 }
 }
 
-// ==== BACKFILL 0x007C85D8  TranslateMessage  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C85D8  TranslateMessage  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int TranslateMessage()
 {
     int __stdcall TranslateMessage(const MSG *lpMsg)
@@ -1090,7 +1090,7 @@ int TranslateMessage()
 }
 }
 
-// ==== BACKFILL 0x007C85DE  ClientToScreen  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C85DE  ClientToScreen  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ClientToScreen()
 {
     int __stdcall ClientToScreen(HWND hWnd, LPPOINT lpPoint)
@@ -1099,7 +1099,7 @@ int ClientToScreen()
 }
 }
 
-// ==== BACKFILL 0x007C85E4  SetRect  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C85E4  SetRect  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetRect()
 {
     int __stdcall SetRect(LPRECT lprc, int xLeft, int yTop, int xRight, int yBottom)
@@ -1108,7 +1108,7 @@ int SetRect()
 }
 }
 
-// ==== BACKFILL 0x007C85F6  GetDlgItem  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C85F6  GetDlgItem  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetDlgItem()
 {
     HWND __stdcall GetDlgItem(HWND hDlg, int nIDDlgItem)
@@ -1117,7 +1117,7 @@ int GetDlgItem()
 }
 }
 
-// ==== BACKFILL 0x007C85FC  SendMessageA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C85FC  SendMessageA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SendMessageA()
 {
     LRESULT __stdcall SendMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
@@ -1126,7 +1126,7 @@ int SendMessageA()
 }
 }
 
-// ==== BACKFILL 0x007C8602  EnableWindow  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8602  EnableWindow  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int EnableWindow()
 {
     int __stdcall EnableWindow(HWND hWnd, int bEnable)
@@ -1135,7 +1135,7 @@ int EnableWindow()
 }
 }
 
-// ==== BACKFILL 0x007C8608  InvalidateRect  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8608  InvalidateRect  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int InvalidateRect()
 {
     int __stdcall InvalidateRect(HWND hWnd, const RECT *lpRect, int bErase)
@@ -1144,7 +1144,7 @@ int InvalidateRect()
 }
 }
 
-// ==== BACKFILL 0x007C860E  ShowWindow  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C860E  ShowWindow  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ShowWindow()
 {
     int __stdcall ShowWindow(HWND hWnd, int nCmdShow)
@@ -1153,7 +1153,7 @@ int ShowWindow()
 }
 }
 
-// ==== BACKFILL 0x007C8614  SetTimer  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8614  SetTimer  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetTimer()
 {
     UINT_PTR __stdcall SetTimer(HWND hWnd, UINT_PTR nIDEvent, UINT uElapse, TIMERPROC lpTimerFunc)
@@ -1162,7 +1162,7 @@ int SetTimer()
 }
 }
 
-// ==== BACKFILL 0x007C861A  SendDlgItemMessageA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C861A  SendDlgItemMessageA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SendDlgItemMessageA()
 {
     LRESULT __stdcall SendDlgItemMessageA(HWND hDlg, int nIDDlgItem, UINT Msg, WPARAM wParam, LPARAM lParam)
@@ -1171,7 +1171,7 @@ int SendDlgItemMessageA()
 }
 }
 
-// ==== BACKFILL 0x007C8620  KillTimer  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8620  KillTimer  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int KillTimer()
 {
     int __stdcall KillTimer(HWND hWnd, UINT_PTR uIDEvent)
@@ -1180,7 +1180,7 @@ int KillTimer()
 }
 }
 
-// ==== BACKFILL 0x007C8626  ValidateRect  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8626  ValidateRect  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ValidateRect()
 {
     int __stdcall ValidateRect(HWND hWnd, const RECT *lpRect)
@@ -1189,7 +1189,7 @@ int ValidateRect()
 }
 }
 
-// ==== BACKFILL 0x007C862C  GetWindowLongA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C862C  GetWindowLongA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetWindowLongA()
 {
     LONG __stdcall GetWindowLongA(HWND hWnd, int nIndex)
@@ -1198,7 +1198,7 @@ int GetWindowLongA()
 }
 }
 
-// ==== BACKFILL 0x007C8632  SetWindowLongA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8632  SetWindowLongA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetWindowLongA()
 {
     LONG __stdcall SetWindowLongA(HWND hWnd, int nIndex, LONG dwNewLong)
@@ -1207,7 +1207,7 @@ int SetWindowLongA()
 }
 }
 
-// ==== BACKFILL 0x007C8638  UpdateWindow  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8638  UpdateWindow  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int UpdateWindow()
 {
     int __stdcall UpdateWindow(HWND hWnd)
@@ -1216,7 +1216,7 @@ int UpdateWindow()
 }
 }
 
-// ==== BACKFILL 0x007C863E  MessageBoxIndirectA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C863E  MessageBoxIndirectA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int MessageBoxIndirectA()
 {
     int __stdcall MessageBoxIndirectA(const MSGBOXPARAMSA *lpmbp)
@@ -1225,7 +1225,7 @@ int MessageBoxIndirectA()
 }
 }
 
-// ==== BACKFILL 0x007C8644  PeekMessageA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8644  PeekMessageA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int PeekMessageA()
 {
     int __stdcall PeekMessageA(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg)
@@ -1234,7 +1234,7 @@ int PeekMessageA()
 }
 }
 
-// ==== BACKFILL 0x007C864A  MessageBoxA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C864A  MessageBoxA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int MessageBoxA()
 {
     int __stdcall MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType)
@@ -1243,7 +1243,7 @@ int MessageBoxA()
 }
 }
 
-// ==== BACKFILL 0x007C8650  ReleaseDC  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8650  ReleaseDC  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ReleaseDC()
 {
     int __stdcall ReleaseDC(HWND hWnd, HDC hDC)
@@ -1252,7 +1252,7 @@ int ReleaseDC()
 }
 }
 
-// ==== BACKFILL 0x007C8656  GetDC  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8656  GetDC  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetDC()
 {
     HDC __stdcall GetDC(HWND hWnd)
@@ -1261,7 +1261,7 @@ int GetDC()
 }
 }
 
-// ==== BACKFILL 0x007C865C  CloseWindow  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C865C  CloseWindow  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CloseWindow()
 {
     int __stdcall CloseWindow(HWND hWnd)
@@ -1270,7 +1270,7 @@ int CloseWindow()
 }
 }
 
-// ==== BACKFILL 0x007C8662  DefWindowProcA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8662  DefWindowProcA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int DefWindowProcA()
 {
     LRESULT __stdcall DefWindowProcA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
@@ -1279,7 +1279,7 @@ int DefWindowProcA()
 }
 }
 
-// ==== BACKFILL 0x007C866E  EndDialog  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C866E  EndDialog  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int EndDialog()
 {
     int __stdcall EndDialog(HWND hDlg, INT_PTR nResult)
@@ -1288,7 +1288,7 @@ int EndDialog()
 }
 }
 
-// ==== BACKFILL 0x007C8674  SetFocus  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8674  SetFocus  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetFocus()
 {
     HWND __stdcall SetFocus(HWND hWnd)
@@ -1297,7 +1297,7 @@ int SetFocus()
 }
 }
 
-// ==== BACKFILL 0x007C867A  SetDlgItemTextA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C867A  SetDlgItemTextA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetDlgItemTextA()
 {
     int __stdcall SetDlgItemTextA(HWND hDlg, int nIDDlgItem, LPCSTR lpString)
@@ -1306,7 +1306,7 @@ int SetDlgItemTextA()
 }
 }
 
-// ==== BACKFILL 0x007C8680  DialogBoxParamA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8680  DialogBoxParamA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int DialogBoxParamA()
 {
     INT_PTR __stdcall DialogBoxParamA( HINSTANCE hInstance, LPCSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam)
@@ -1315,7 +1315,7 @@ int DialogBoxParamA()
 }
 }
 
-// ==== BACKFILL 0x007C8686  DialogBoxIndirectParamA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8686  DialogBoxIndirectParamA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int DialogBoxIndirectParamA()
 {
     INT_PTR __stdcall DialogBoxIndirectParamA( HINSTANCE hInstance, LPCDLGTEMPLATEA hDialogTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam)
@@ -1324,7 +1324,7 @@ int DialogBoxIndirectParamA()
 }
 }
 
-// ==== BACKFILL 0x007C868C  ShowCursor  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C868C  ShowCursor  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ShowCursor()
 {
     int __stdcall ShowCursor(int bShow)
@@ -1333,7 +1333,7 @@ int ShowCursor()
 }
 }
 
-// ==== BACKFILL 0x007C8692  SetWindowPos  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8692  SetWindowPos  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetWindowPos()
 {
     int __stdcall SetWindowPos(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags)
@@ -1342,7 +1342,7 @@ int SetWindowPos()
 }
 }
 
-// ==== BACKFILL 0x007C8698  DestroyWindow  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8698  DestroyWindow  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int DestroyWindow()
 {
     int __stdcall DestroyWindow(HWND hWnd)
@@ -1351,7 +1351,7 @@ int DestroyWindow()
 }
 }
 
-// ==== BACKFILL 0x007C86AA  SetCapture  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C86AA  SetCapture  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetCapture()
 {
     HWND __stdcall SetCapture(HWND hWnd)
@@ -1360,7 +1360,7 @@ int SetCapture()
 }
 }
 
-// ==== BACKFILL 0x007C86B0  GetDlgCtrlID  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C86B0  GetDlgCtrlID  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetDlgCtrlID()
 {
     int __stdcall GetDlgCtrlID(HWND hWnd)
@@ -1369,7 +1369,7 @@ int GetDlgCtrlID()
 }
 }
 
-// ==== BACKFILL 0x007C86B6  ChildWindowFromPointEx  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C86B6  ChildWindowFromPointEx  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ChildWindowFromPointEx()
 {
     HWND __stdcall ChildWindowFromPointEx(HWND hwnd, POINT pt, UINT flags)
@@ -1378,7 +1378,7 @@ int ChildWindowFromPointEx()
 }
 }
 
-// ==== BACKFILL 0x007C86BC  GetWindowRect  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C86BC  GetWindowRect  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetWindowRect()
 {
     int __stdcall GetWindowRect(HWND hWnd, LPRECT lpRect)
@@ -1387,7 +1387,7 @@ int GetWindowRect()
 }
 }
 
-// ==== BACKFILL 0x007C86C2  GetCursorPos  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C86C2  GetCursorPos  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetCursorPos()
 {
     int __stdcall GetCursorPos(LPPOINT lpPoint)
@@ -1396,7 +1396,7 @@ int GetCursorPos()
 }
 }
 
-// ==== BACKFILL 0x007C86C8  GetKeyState  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C86C8  GetKeyState  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetKeyState()
 {
     SHORT __stdcall GetKeyState(int nVirtKey)
@@ -1405,7 +1405,7 @@ int GetKeyState()
 }
 }
 
-// ==== BACKFILL 0x007C86CE  GetAsyncKeyState  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C86CE  GetAsyncKeyState  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetAsyncKeyState()
 {
     SHORT __stdcall GetAsyncKeyState(int vKey)
@@ -1414,7 +1414,7 @@ int GetAsyncKeyState()
 }
 }
 
-// ==== BACKFILL 0x007C86D4  ToAscii  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C86D4  ToAscii  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ToAscii()
 {
     int __stdcall ToAscii(UINT uVirtKey, UINT uScanCode, const BYTE *lpKeyState, LPWORD lpChar, UINT uFlags)
@@ -1423,7 +1423,7 @@ int ToAscii()
 }
 }
 
-// ==== BACKFILL 0x007C86DA  MapVirtualKeyA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C86DA  MapVirtualKeyA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int MapVirtualKeyA()
 {
     UINT __stdcall MapVirtualKeyA(UINT uCode, UINT uMapType)
@@ -1432,7 +1432,7 @@ int MapVirtualKeyA()
 }
 }
 
-// ==== BACKFILL 0x007C86E0  GetSystemMetrics  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C86E0  GetSystemMetrics  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetSystemMetrics()
 {
     int __stdcall GetSystemMetrics(int nIndex)
@@ -1441,7 +1441,7 @@ int GetSystemMetrics()
 }
 }
 
-// ==== BACKFILL 0x007C86E6  MoveWindow  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C86E6  MoveWindow  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int MoveWindow()
 {
     int __stdcall MoveWindow(HWND hWnd, int X, int Y, int nWidth, int nHeight, int bRepaint)
@@ -1450,7 +1450,7 @@ int MoveWindow()
 }
 }
 
-// ==== BACKFILL 0x007C86EC  AdjustWindowRectEx  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C86EC  AdjustWindowRectEx  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int AdjustWindowRectEx()
 {
     int __stdcall AdjustWindowRectEx(LPRECT lpRect, DWORD dwStyle, int bMenu, DWORD dwExStyle)
@@ -1459,7 +1459,7 @@ int AdjustWindowRectEx()
 }
 }
 
-// ==== BACKFILL 0x007C86F2  GetMenu  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C86F2  GetMenu  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetMenu()
 {
     HMENU __stdcall GetMenu(HWND hWnd)
@@ -1468,7 +1468,7 @@ int GetMenu()
 }
 }
 
-// ==== BACKFILL 0x007C86F8  AdjustWindowRect  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C86F8  AdjustWindowRect  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int AdjustWindowRect()
 {
     int __stdcall AdjustWindowRect(LPRECT lpRect, DWORD dwStyle, int bMenu)
@@ -1477,7 +1477,7 @@ int AdjustWindowRect()
 }
 }
 
-// ==== BACKFILL 0x007C86FE  GetSysColor  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C86FE  GetSysColor  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetSysColor()
 {
     DWORD __stdcall GetSysColor(int nIndex)
@@ -1486,7 +1486,7 @@ int GetSysColor()
 }
 }
 
-// ==== BACKFILL 0x007C8704  CreateDialogParamA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8704  CreateDialogParamA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CreateDialogParamA()
 {
     HWND __stdcall CreateDialogParamA( HINSTANCE hInstance, LPCSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam)
@@ -1495,7 +1495,7 @@ int CreateDialogParamA()
 }
 }
 
-// ==== BACKFILL 0x007C870A  EndPaint  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C870A  EndPaint  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int EndPaint()
 {
     int __stdcall EndPaint(HWND hWnd, const PAINTSTRUCT *lpPaint)
@@ -1504,7 +1504,7 @@ int EndPaint()
 }
 }
 
-// ==== BACKFILL 0x007C8710  BeginPaint  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8710  BeginPaint  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int BeginPaint()
 {
     HDC __stdcall BeginPaint(HWND hWnd, LPPAINTSTRUCT lpPaint)
@@ -1513,7 +1513,7 @@ int BeginPaint()
 }
 }
 
-// ==== BACKFILL 0x007C8716  CharToOemBuffA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8716  CharToOemBuffA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CharToOemBuffA()
 {
     int __stdcall CharToOemBuffA(LPCSTR lpszSrc, LPSTR lpszDst, DWORD cchDstLength)
@@ -1522,7 +1522,7 @@ int CharToOemBuffA()
 }
 }
 
-// ==== BACKFILL 0x007C871C  TranslateAcceleratorA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C871C  TranslateAcceleratorA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int TranslateAcceleratorA()
 {
     int __stdcall TranslateAcceleratorA(HWND hWnd, HACCEL hAccTable, LPMSG lpMsg)
@@ -1531,7 +1531,7 @@ int TranslateAcceleratorA()
 }
 }
 
-// ==== BACKFILL 0x007C8722  IsDialogMessageA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8722  IsDialogMessageA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int IsDialogMessageA()
 {
     int __stdcall IsDialogMessageA(HWND hDlg, LPMSG lpMsg)
@@ -1540,7 +1540,7 @@ int IsDialogMessageA()
 }
 }
 
-// ==== BACKFILL 0x007C8728  GetWindowTextA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8728  GetWindowTextA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetWindowTextA()
 {
     int __stdcall GetWindowTextA(HWND hWnd, LPSTR lpString, int nMaxCount)
@@ -1549,7 +1549,7 @@ int GetWindowTextA()
 }
 }
 
-// ==== BACKFILL 0x007C872E  IsWindowEnabled  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C872E  IsWindowEnabled  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int IsWindowEnabled()
 {
     int __stdcall IsWindowEnabled(HWND hWnd)
@@ -1558,7 +1558,7 @@ int IsWindowEnabled()
 }
 }
 
-// ==== BACKFILL 0x007C8734  GetNextDlgTabItem  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8734  GetNextDlgTabItem  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetNextDlgTabItem()
 {
     HWND __stdcall GetNextDlgTabItem(HWND hDlg, HWND hCtl, int bPrevious)
@@ -1567,7 +1567,7 @@ int GetNextDlgTabItem()
 }
 }
 
-// ==== BACKFILL 0x007C873A  GetParent  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C873A  GetParent  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetParent()
 {
     HWND __stdcall GetParent(HWND hWnd)
@@ -1576,7 +1576,7 @@ int GetParent()
 }
 }
 
-// ==== BACKFILL 0x007C8740  GetClassNameA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8740  GetClassNameA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetClassNameA()
 {
     int __stdcall GetClassNameA(HWND hWnd, LPSTR lpClassName, int nMaxCount)
@@ -1585,7 +1585,7 @@ int GetClassNameA()
 }
 }
 
-// ==== BACKFILL 0x007C8746  EnumChildWindows  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8746  EnumChildWindows  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int EnumChildWindows()
 {
     int __stdcall EnumChildWindows(HWND hWndParent, WNDENUMPROC lpEnumFunc, LPARAM lParam)
@@ -1594,7 +1594,7 @@ int EnumChildWindows()
 }
 }
 
-// ==== BACKFILL 0x007C874C  IsWindowVisible  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C874C  IsWindowVisible  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int IsWindowVisible()
 {
     int __stdcall IsWindowVisible(HWND hWnd)
@@ -1603,7 +1603,7 @@ int IsWindowVisible()
 }
 }
 
-// ==== BACKFILL 0x007C8752  SetForegroundWindow  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8752  SetForegroundWindow  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetForegroundWindow()
 {
     int __stdcall SetForegroundWindow(HWND hWnd)
@@ -1612,7 +1612,7 @@ int SetForegroundWindow()
 }
 }
 
-// ==== BACKFILL 0x007C8758  RegisterClassA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8758  RegisterClassA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RegisterClassA()
 {
     ATOM __stdcall RegisterClassA(const WNDCLASSA *lpWndClass)
@@ -1621,7 +1621,7 @@ int RegisterClassA()
 }
 }
 
-// ==== BACKFILL 0x007C875E  CreateWindowExA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C875E  CreateWindowExA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CreateWindowExA()
 {
     HWND __stdcall CreateWindowExA( DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam)
@@ -1630,7 +1630,7 @@ int CreateWindowExA()
 }
 }
 
-// ==== BACKFILL 0x007C8764  CallWindowProcA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8764  CallWindowProcA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CallWindowProcA()
 {
     LRESULT __stdcall CallWindowProcA(WNDPROC lpPrevWndFunc, HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
@@ -1639,7 +1639,7 @@ int CallWindowProcA()
 }
 }
 
-// ==== BACKFILL 0x007C876A  BringWindowToTop  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C876A  BringWindowToTop  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int BringWindowToTop()
 {
     int __stdcall BringWindowToTop(HWND hWnd)
@@ -1648,7 +1648,7 @@ int BringWindowToTop()
 }
 }
 
-// ==== BACKFILL 0x007C8770  GetWindow  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8770  GetWindow  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetWindow()
 {
     HWND __stdcall GetWindow(HWND hWnd, UINT uCmd)
@@ -1657,7 +1657,7 @@ int GetWindow()
 }
 }
 
-// ==== BACKFILL 0x007C8776  IntersectRect  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8776  IntersectRect  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int IntersectRect()
 {
     int __stdcall IntersectRect(LPRECT lprcDst, const RECT *lprcSrc1, const RECT *lprcSrc2)
@@ -1666,7 +1666,7 @@ int IntersectRect()
 }
 }
 
-// ==== BACKFILL 0x007C877C  WindowFromPoint  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C877C  WindowFromPoint  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int WindowFromPoint()
 {
     HWND __stdcall WindowFromPoint(POINT Point)
@@ -1675,7 +1675,7 @@ int WindowFromPoint()
 }
 }
 
-// ==== BACKFILL 0x007C8782  GetUpdateRect  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8782  GetUpdateRect  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetUpdateRect()
 {
     int __stdcall GetUpdateRect(HWND hWnd, LPRECT lpRect, int bErase)
@@ -1684,7 +1684,7 @@ int GetUpdateRect()
 }
 }
 
-// ==== BACKFILL 0x007C878E  LockWindowUpdate  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C878E  LockWindowUpdate  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int LockWindowUpdate()
 {
     int __stdcall LockWindowUpdate(HWND hWndLock)
@@ -1693,7 +1693,7 @@ int LockWindowUpdate()
 }
 }
 
-// ==== BACKFILL 0x007C8794  ScreenToClient  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8794  ScreenToClient  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ScreenToClient()
 {
     int __stdcall ScreenToClient(HWND hWnd, LPPOINT lpPoint)
@@ -1702,7 +1702,7 @@ int ScreenToClient()
 }
 }
 
-// ==== BACKFILL 0x007C879A  GetKeyNameTextA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C879A  GetKeyNameTextA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetKeyNameTextA()
 {
     int __stdcall GetKeyNameTextA(LONG lParam, LPSTR lpString, int cchSize)
@@ -1711,7 +1711,7 @@ int GetKeyNameTextA()
 }
 }
 
-// ==== BACKFILL 0x007C87A0  CreateDialogIndirectParamA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C87A0  CreateDialogIndirectParamA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CreateDialogIndirectParamA()
 {
     HWND __stdcall CreateDialogIndirectParamA( HINSTANCE hInstance, LPCDLGTEMPLATEA lpTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam)
@@ -1720,7 +1720,7 @@ int CreateDialogIndirectParamA()
 }
 }
 
-// ==== BACKFILL 0x007C87A6  SetCursorPos  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C87A6  SetCursorPos  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetCursorPos()
 {
     int __stdcall SetCursorPos(int X, int Y)
@@ -1729,7 +1729,7 @@ int SetCursorPos()
 }
 }
 
-// ==== BACKFILL 0x007C87AC  FindWindowA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C87AC  FindWindowA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FindWindowA()
 {
     HWND __stdcall FindWindowA(LPCSTR lpClassName, LPCSTR lpWindowName)
@@ -1738,7 +1738,7 @@ int FindWindowA()
 }
 }
 
-// ==== BACKFILL 0x007C87B2  PostQuitMessage  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C87B2  PostQuitMessage  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int PostQuitMessage()
 {
     void __stdcall PostQuitMessage(int nExitCode)
@@ -1747,7 +1747,7 @@ int PostQuitMessage()
 }
 }
 
-// ==== BACKFILL 0x007C87B8  SetCursor  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C87B8  SetCursor  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetCursor()
 {
     HCURSOR __stdcall SetCursor(HCURSOR hCursor)
@@ -1756,7 +1756,7 @@ int SetCursor()
 }
 }
 
-// ==== BACKFILL 0x007C87BE  LoadCursorA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C87BE  LoadCursorA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int LoadCursorA()
 {
     HCURSOR __stdcall LoadCursorA(HINSTANCE hInstance, LPCSTR lpCursorName)
@@ -1765,7 +1765,7 @@ int LoadCursorA()
 }
 }
 
-// ==== BACKFILL 0x007C87C4  ChildWindowFromPoint  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C87C4  ChildWindowFromPoint  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ChildWindowFromPoint()
 {
     HWND __stdcall ChildWindowFromPoint(HWND hWndParent, POINT Point)
@@ -1774,7 +1774,7 @@ int ChildWindowFromPoint()
 }
 }
 
-// ==== BACKFILL 0x007C87CA  WinHelpA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C87CA  WinHelpA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int WinHelpA()
 {
     int __stdcall WinHelpA(HWND hWndMain, LPCSTR lpszHelp, UINT uCommand, ULONG_PTR dwData)
@@ -1783,7 +1783,7 @@ int WinHelpA()
 }
 }
 
-// ==== BACKFILL 0x007C87D6  RedrawWindow  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C87D6  RedrawWindow  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RedrawWindow()
 {
     int __stdcall RedrawWindow(HWND hWnd, const RECT *lprcUpdate, HRGN hrgnUpdate, UINT flags)
@@ -1792,7 +1792,7 @@ int RedrawWindow()
 }
 }
 
-// ==== BACKFILL 0x007C87DC  SetActiveWindow  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C87DC  SetActiveWindow  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetActiveWindow()
 {
     HWND __stdcall SetActiveWindow(HWND hWnd)
@@ -1801,7 +1801,7 @@ int SetActiveWindow()
 }
 }
 
-// ==== BACKFILL 0x007C87E2  RegisterHotKey  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C87E2  RegisterHotKey  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RegisterHotKey()
 {
     int __stdcall RegisterHotKey(HWND hWnd, int id, UINT fsModifiers, UINT vk)
@@ -1810,7 +1810,7 @@ int RegisterHotKey()
 }
 }
 
-// ==== BACKFILL 0x007C87E8  LoadIconA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C87E8  LoadIconA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int LoadIconA()
 {
     HICON __stdcall LoadIconA(HINSTANCE hInstance, LPCSTR lpIconName)
@@ -1819,7 +1819,7 @@ int LoadIconA()
 }
 }
 
-// ==== BACKFILL 0x007C87F4  GetTopWindow  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C87F4  GetTopWindow  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetTopWindow()
 {
     HWND __stdcall GetTopWindow(HWND hWnd)
@@ -1828,7 +1828,7 @@ int GetTopWindow()
 }
 }
 
-// ==== BACKFILL 0x007C87FA  WaitForInputIdle  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C87FA  WaitForInputIdle  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int WaitForInputIdle()
 {
     DWORD __stdcall WaitForInputIdle(HANDLE hProcess, DWORD dwMilliseconds)
@@ -1837,7 +1837,7 @@ int WaitForInputIdle()
 }
 }
 
-// ==== BACKFILL 0x007C8800  CheckDlgButton  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8800  CheckDlgButton  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CheckDlgButton()
 {
     int __stdcall CheckDlgButton(HWND hDlg, int nIDButton, UINT uCheck)
@@ -1846,7 +1846,7 @@ int CheckDlgButton()
 }
 }
 
-// ==== BACKFILL 0x007C8806  IsDlgButtonChecked  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8806  IsDlgButtonChecked  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int IsDlgButtonChecked()
 {
     UINT __stdcall IsDlgButtonChecked(HWND hDlg, int nIDButton)
@@ -1855,7 +1855,7 @@ int IsDlgButtonChecked()
 }
 }
 
-// ==== BACKFILL 0x007C880C  CreateDIBSection  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C880C  CreateDIBSection  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CreateDIBSection()
 {
     HBITMAP __stdcall CreateDIBSection( HDC hdc, const BITMAPINFO *pbmi, UINT usage, void **ppvBits, HANDLE hSection, DWORD offset)
@@ -1864,7 +1864,7 @@ int CreateDIBSection()
 }
 }
 
-// ==== BACKFILL 0x007C8812  DeleteObject  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8812  DeleteObject  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int DeleteObject()
 {
     int __stdcall DeleteObject(HGDIOBJ ho)
@@ -1873,7 +1873,7 @@ int DeleteObject()
 }
 }
 
-// ==== BACKFILL 0x007C8818  GetTextMetricsA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8818  GetTextMetricsA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetTextMetricsA()
 {
     int __stdcall GetTextMetricsA(HDC hdc, LPTEXTMETRICA lptm)
@@ -1882,7 +1882,7 @@ int GetTextMetricsA()
 }
 }
 
-// ==== BACKFILL 0x007C881E  SelectObject  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C881E  SelectObject  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SelectObject()
 {
     HGDIOBJ __stdcall SelectObject(HDC hdc, HGDIOBJ h)
@@ -1891,7 +1891,7 @@ int SelectObject()
 }
 }
 
-// ==== BACKFILL 0x007C8824  CreateFontIndirectA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8824  CreateFontIndirectA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CreateFontIndirectA()
 {
     HFONT __stdcall CreateFontIndirectA(const LOGFONTA *lplf)
@@ -1900,7 +1900,7 @@ int CreateFontIndirectA()
 }
 }
 
-// ==== BACKFILL 0x007C882A  GetDeviceCaps  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C882A  GetDeviceCaps  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetDeviceCaps()
 {
     int __stdcall GetDeviceCaps(HDC hdc, int index)
@@ -1909,7 +1909,7 @@ int GetDeviceCaps()
 }
 }
 
-// ==== BACKFILL 0x007C8830  TextOutA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8830  TextOutA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int TextOutA()
 {
     int __stdcall TextOutA(HDC hdc, int x, int y, LPCSTR lpString, int c)
@@ -1918,7 +1918,7 @@ int TextOutA()
 }
 }
 
-// ==== BACKFILL 0x007C8836  SetTextColor  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8836  SetTextColor  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetTextColor()
 {
     COLORREF __stdcall SetTextColor(HDC hdc, COLORREF color)
@@ -1927,7 +1927,7 @@ int SetTextColor()
 }
 }
 
-// ==== BACKFILL 0x007C883C  SetBkColor  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C883C  SetBkColor  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetBkColor()
 {
     COLORREF __stdcall SetBkColor(HDC hdc, COLORREF color)
@@ -1936,7 +1936,7 @@ int SetBkColor()
 }
 }
 
-// ==== BACKFILL 0x007C8842  SetBkMode  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8842  SetBkMode  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetBkMode()
 {
     int __stdcall SetBkMode(HDC hdc, int mode)
@@ -1945,7 +1945,7 @@ int SetBkMode()
 }
 }
 
-// ==== BACKFILL 0x007C8848  CreateSolidBrush  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8848  CreateSolidBrush  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CreateSolidBrush()
 {
     HBRUSH __stdcall CreateSolidBrush(COLORREF color)
@@ -1954,7 +1954,7 @@ int CreateSolidBrush()
 }
 }
 
-// ==== BACKFILL 0x007C884E  GetTextColor  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C884E  GetTextColor  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetTextColor()
 {
     COLORREF __stdcall GetTextColor(HDC hdc)
@@ -1963,7 +1963,7 @@ int GetTextColor()
 }
 }
 
-// ==== BACKFILL 0x007C8854  GetBkColor  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8854  GetBkColor  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetBkColor()
 {
     COLORREF __stdcall GetBkColor(HDC hdc)
@@ -1972,7 +1972,7 @@ int GetBkColor()
 }
 }
 
-// ==== BACKFILL 0x007C885A  GetBkMode  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C885A  GetBkMode  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetBkMode()
 {
     int __stdcall GetBkMode(HDC hdc)
@@ -1981,7 +1981,7 @@ int GetBkMode()
 }
 }
 
-// ==== BACKFILL 0x007C8860  GetStockObject  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8860  GetStockObject  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetStockObject()
 {
     HGDIOBJ __stdcall GetStockObject(int i)
@@ -1990,7 +1990,7 @@ int GetStockObject()
 }
 }
 
-// ==== BACKFILL 0x007C8866  RestoreDC  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8866  RestoreDC  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RestoreDC()
 {
     int __stdcall RestoreDC(HDC hdc, int nSavedDC)
@@ -1999,7 +1999,7 @@ int RestoreDC()
 }
 }
 
-// ==== BACKFILL 0x007C886C  DPtoLP  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C886C  DPtoLP  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int DPtoLP()
 {
     int __stdcall DPtoLP(HDC hdc, LPPOINT lppt, int c)
@@ -2008,7 +2008,7 @@ int DPtoLP()
 }
 }
 
-// ==== BACKFILL 0x007C8872  SetWindowOrgEx  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8872  SetWindowOrgEx  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetWindowOrgEx()
 {
     int __stdcall SetWindowOrgEx(HDC hdc, int x, int y, LPPOINT lppt)
@@ -2017,7 +2017,7 @@ int SetWindowOrgEx()
 }
 }
 
-// ==== BACKFILL 0x007C8878  SetViewportOrgEx  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8878  SetViewportOrgEx  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetViewportOrgEx()
 {
     int __stdcall SetViewportOrgEx(HDC hdc, int x, int y, LPPOINT lppt)
@@ -2026,7 +2026,7 @@ int SetViewportOrgEx()
 }
 }
 
-// ==== BACKFILL 0x007C887E  ModifyWorldTransform  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C887E  ModifyWorldTransform  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ModifyWorldTransform()
 {
     int __stdcall ModifyWorldTransform(HDC hdc, const XFORM *lpxf, DWORD mode)
@@ -2035,7 +2035,7 @@ int ModifyWorldTransform()
 }
 }
 
-// ==== BACKFILL 0x007C8884  SetGraphicsMode  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8884  SetGraphicsMode  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetGraphicsMode()
 {
     int __stdcall SetGraphicsMode(HDC hdc, int iMode)
@@ -2044,7 +2044,7 @@ int SetGraphicsMode()
 }
 }
 
-// ==== BACKFILL 0x007C888A  SaveDC  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C888A  SaveDC  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SaveDC()
 {
     int __stdcall SaveDC(HDC hdc)
@@ -2053,7 +2053,7 @@ int SaveDC()
 }
 }
 
-// ==== BACKFILL 0x007C8890  RegCloseKey  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8890  RegCloseKey  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RegCloseKey()
 {
     LSTATUS __stdcall RegCloseKey(HKEY hKey)
@@ -2062,7 +2062,7 @@ int RegCloseKey()
 }
 }
 
-// ==== BACKFILL 0x007C8896  RegQueryValueExA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8896  RegQueryValueExA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RegQueryValueExA()
 {
     LSTATUS __stdcall RegQueryValueExA( HKEY hKey, LPCSTR lpValueName, LPDWORD lpReserved, LPDWORD lpType, LPBYTE lpData, LPDWORD lpcbData)
@@ -2071,7 +2071,7 @@ int RegQueryValueExA()
 }
 }
 
-// ==== BACKFILL 0x007C889C  RegOpenKeyExA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C889C  RegOpenKeyExA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RegOpenKeyExA()
 {
     LSTATUS __stdcall RegOpenKeyExA(HKEY hKey, LPCSTR lpSubKey, DWORD ulOptions, REGSAM samDesired, PHKEY phkResult)
@@ -2080,7 +2080,7 @@ int RegOpenKeyExA()
 }
 }
 
-// ==== BACKFILL 0x007C88A2  RegDeleteValueA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88A2  RegDeleteValueA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RegDeleteValueA()
 {
     LSTATUS __stdcall RegDeleteValueA(HKEY hKey, LPCSTR lpValueName)
@@ -2089,7 +2089,7 @@ int RegDeleteValueA()
 }
 }
 
-// ==== BACKFILL 0x007C88A8  RegSetValueExA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88A8  RegSetValueExA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RegSetValueExA()
 {
     LSTATUS __stdcall RegSetValueExA( HKEY hKey, LPCSTR lpValueName, DWORD Reserved, DWORD dwType, const BYTE *lpData, DWORD cbData)
@@ -2098,7 +2098,7 @@ int RegSetValueExA()
 }
 }
 
-// ==== BACKFILL 0x007C88AE  RegCreateKeyExA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88AE  RegCreateKeyExA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RegCreateKeyExA()
 {
     LSTATUS __stdcall RegCreateKeyExA( HKEY hKey, LPCSTR lpSubKey, DWORD Reserved, LPSTR lpClass, DWORD dwOptions, REGSAM samDesired, const LPSECURITY_ATTRIBUTES lpSecurityAttributes, PHKEY phkResult, LPDWORD lpdwDisposition)
@@ -2107,7 +2107,7 @@ int RegCreateKeyExA()
 }
 }
 
-// ==== BACKFILL 0x007C88B4  RegEnumKeyExA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88B4  RegEnumKeyExA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RegEnumKeyExA()
 {
     LSTATUS __stdcall RegEnumKeyExA( HKEY hKey, DWORD dwIndex, LPSTR lpName, LPDWORD lpcchName, LPDWORD lpReserved, LPSTR lpClass, LPDWORD lpcchClass, PFILETIME lpftLastWriteTime)
@@ -2116,7 +2116,7 @@ int RegEnumKeyExA()
 }
 }
 
-// ==== BACKFILL 0x007C88BA  RegDeleteKeyA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88BA  RegDeleteKeyA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RegDeleteKeyA()
 {
     LSTATUS __stdcall RegDeleteKeyA(HKEY hKey, LPCSTR lpSubKey)
@@ -2125,7 +2125,7 @@ int RegDeleteKeyA()
 }
 }
 
-// ==== BACKFILL 0x007C88C0  RegQueryInfoKeyA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88C0  RegQueryInfoKeyA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RegQueryInfoKeyA()
 {
     LSTATUS __stdcall RegQueryInfoKeyA( HKEY hKey, LPSTR lpClass, LPDWORD lpcchClass, LPDWORD lpReserved, LPDWORD lpcSubKeys, LPDWORD lpcbMaxSubKeyLen, LPDWORD lpcbMaxClassLen, LPDWORD lpcValues, LPDWORD lpcbMaxValueNameLen, LPDWORD lpcbMaxValueLen, LPDWORD lpcbSecurityDescriptor, PFILETIME lpftLastWriteTime)
@@ -2134,7 +2134,7 @@ int RegQueryInfoKeyA()
 }
 }
 
-// ==== BACKFILL 0x007C88C6  FindExecutableA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88C6  FindExecutableA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FindExecutableA()
 {
     HINSTANCE __stdcall FindExecutableA(LPCSTR lpFile, LPCSTR lpDirectory, LPSTR lpResult)
@@ -2143,7 +2143,7 @@ int FindExecutableA()
 }
 }
 
-// ==== BACKFILL 0x007C88CC  OleRun  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88CC  OleRun  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int OleRun()
 {
     HRESULT __stdcall OleRun(LPUNKNOWN pUnknown)
@@ -2152,7 +2152,7 @@ int OleRun()
 }
 }
 
-// ==== BACKFILL 0x007C88D2  CoCreateInstance  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88D2  CoCreateInstance  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CoCreateInstance()
 {
     HRESULT __stdcall CoCreateInstance( const IID *const rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext, const IID *const riid, LPVOID *ppv)
@@ -2161,7 +2161,7 @@ int CoCreateInstance()
 }
 }
 
-// ==== BACKFILL 0x007C88D8  OleLoadFromStream  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88D8  OleLoadFromStream  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int OleLoadFromStream()
 {
     HRESULT __stdcall OleLoadFromStream(LPSTREAM pStm, const IID *const iidInterface, LPVOID *ppvObj)
@@ -2170,7 +2170,7 @@ int OleLoadFromStream()
 }
 }
 
-// ==== BACKFILL 0x007C88DE  OleSaveToStream  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88DE  OleSaveToStream  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int OleSaveToStream()
 {
     HRESULT __stdcall OleSaveToStream(LPPERSISTSTREAM pPStm, LPSTREAM pStm)
@@ -2179,7 +2179,7 @@ int OleSaveToStream()
 }
 }
 
-// ==== BACKFILL 0x007C88E4  CLSIDFromString  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88E4  CLSIDFromString  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CLSIDFromString()
 {
     HRESULT __stdcall CLSIDFromString(LPCOLESTR lpsz, LPCLSID pclsid)
@@ -2188,7 +2188,7 @@ int CLSIDFromString()
 }
 }
 
-// ==== BACKFILL 0x007C88EA  StringFromCLSID  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88EA  StringFromCLSID  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int StringFromCLSID()
 {
     HRESULT __stdcall StringFromCLSID(const IID *const rclsid, LPOLESTR *lplpsz)
@@ -2197,7 +2197,7 @@ int StringFromCLSID()
 }
 }
 
-// ==== BACKFILL 0x007C88F0  CoFileTimeNow  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88F0  CoFileTimeNow  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CoFileTimeNow()
 {
     HRESULT __stdcall CoFileTimeNow(FILETIME *lpFileTime)
@@ -2206,7 +2206,7 @@ int CoFileTimeNow()
 }
 }
 
-// ==== BACKFILL 0x007C88F6  StgCreateDocfile  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88F6  StgCreateDocfile  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int StgCreateDocfile()
 {
     HRESULT __stdcall StgCreateDocfile(const WCHAR *pwcsName, DWORD grfMode, DWORD reserved, IStorage **ppstgOpen)
@@ -2215,7 +2215,7 @@ int StgCreateDocfile()
 }
 }
 
-// ==== BACKFILL 0x007C88FC  StgOpenStorage  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C88FC  StgOpenStorage  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int StgOpenStorage()
 {
     HRESULT __stdcall StgOpenStorage( const WCHAR *pwcsName, IStorage *pstgPriority, DWORD grfMode, SNB snbExclude, DWORD reserved, IStorage **ppstgOpen)
@@ -2224,7 +2224,7 @@ int StgOpenStorage()
 }
 }
 
-// ==== BACKFILL 0x007C8902  StringFromGUID2  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8902  StringFromGUID2  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int StringFromGUID2()
 {
     int __stdcall StringFromGUID2(const GUID *const rguid, LPOLESTR lpsz, int cchMax)
@@ -2233,7 +2233,7 @@ int StringFromGUID2()
 }
 }
 
-// ==== BACKFILL 0x007C8908  CoDisconnectObject  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8908  CoDisconnectObject  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CoDisconnectObject()
 {
     HRESULT __stdcall CoDisconnectObject(LPUNKNOWN pUnk, DWORD dwReserved)
@@ -2242,7 +2242,7 @@ int CoDisconnectObject()
 }
 }
 
-// ==== BACKFILL 0x007C890E  CoRegisterClassObject  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C890E  CoRegisterClassObject  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CoRegisterClassObject()
 {
     HRESULT __stdcall CoRegisterClassObject( const IID *const rclsid, LPUNKNOWN pUnk, DWORD dwClsContext, DWORD flags, LPDWORD lpdwRegister)
@@ -2251,7 +2251,7 @@ int CoRegisterClassObject()
 }
 }
 
-// ==== BACKFILL 0x007C8914  OleInitialize  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8914  OleInitialize  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int OleInitialize()
 {
     HRESULT __stdcall OleInitialize(LPVOID pvReserved)
@@ -2260,7 +2260,7 @@ int OleInitialize()
 }
 }
 
-// ==== BACKFILL 0x007C8920  CoRevokeClassObject  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8920  CoRevokeClassObject  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CoRevokeClassObject()
 {
     HRESULT __stdcall CoRevokeClassObject(DWORD dwRegister)
@@ -2269,7 +2269,7 @@ int CoRevokeClassObject()
 }
 }
 
-// ==== BACKFILL 0x007C8926  SysAllocString  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8926  SysAllocString  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SysAllocString()
 {
     BSTR __stdcall SysAllocString(const OLECHAR *psz)
@@ -2278,7 +2278,7 @@ int SysAllocString()
 }
 }
 
-// ==== BACKFILL 0x007C892C  SysFreeString  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C892C  SysFreeString  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SysFreeString()
 {
     void __stdcall SysFreeString(BSTR bstrString)
@@ -2287,7 +2287,7 @@ int SysFreeString()
 }
 }
 
-// ==== BACKFILL 0x007C8932  LoadTypeLib  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8932  LoadTypeLib  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int LoadTypeLib()
 {
     HRESULT __stdcall LoadTypeLib(LPCOLESTR szFile, ITypeLib **pptlib)
@@ -2296,7 +2296,7 @@ int LoadTypeLib()
 }
 }
 
-// ==== BACKFILL 0x007C8938  RevokeActiveObject  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8938  RevokeActiveObject  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RevokeActiveObject()
 {
     HRESULT __stdcall RevokeActiveObject(DWORD dwRegister, void *pvReserved)
@@ -2305,7 +2305,7 @@ int RevokeActiveObject()
 }
 }
 
-// ==== BACKFILL 0x007C893E  RegisterActiveObject  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C893E  RegisterActiveObject  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RegisterActiveObject()
 {
     HRESULT __stdcall RegisterActiveObject(IUnknown *punk, const IID *const rclsid, DWORD dwFlags, DWORD *pdwRegister)
@@ -2314,7 +2314,7 @@ int RegisterActiveObject()
 }
 }
 
-// ==== BACKFILL 0x007C894A  timeEndPeriod  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C894A  timeEndPeriod  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int timeEndPeriod()
 {
     MMRESULT __stdcall timeEndPeriod(UINT uPeriod)
@@ -2323,7 +2323,7 @@ int timeEndPeriod()
 }
 }
 
-// ==== BACKFILL 0x007C8950  timeKillEvent  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8950  timeKillEvent  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int timeKillEvent()
 {
     MMRESULT __stdcall timeKillEvent(UINT uTimerID)
@@ -2332,7 +2332,7 @@ int timeKillEvent()
 }
 }
 
-// ==== BACKFILL 0x007C8956  timeSetEvent  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8956  timeSetEvent  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int timeSetEvent()
 {
     MMRESULT __stdcall timeSetEvent(UINT uDelay, UINT uResolution, LPTIMECALLBACK fptc, DWORD_PTR dwUser, UINT fuEvent)
@@ -2341,7 +2341,7 @@ int timeSetEvent()
 }
 }
 
-// ==== BACKFILL 0x007C895C  timeBeginPeriod  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C895C  timeBeginPeriod  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int timeBeginPeriod()
 {
     MMRESULT __stdcall timeBeginPeriod(UINT uPeriod)
@@ -2350,7 +2350,7 @@ int timeBeginPeriod()
 }
 }
 
-// ==== BACKFILL 0x007C896E  ntohl  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C896E  ntohl  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ntohl()
 {
     u_long __stdcall ntohl(u_long netlong)
@@ -2359,7 +2359,7 @@ int ntohl()
 }
 }
 
-// ==== BACKFILL 0x007C8986  ntoainet  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8986  ntoainet  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ntoainet()
 {
     char *__stdcall ntoainet(struct in_addr in)
@@ -2368,7 +2368,7 @@ int ntoainet()
 }
 }
 
-// ==== BACKFILL 0x007C899E  socket  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C899E  socket  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int socket()
 {
     SOCKET __stdcall socket(int af, int type, int protocol)
@@ -2377,7 +2377,7 @@ int socket()
 }
 }
 
-// ==== BACKFILL 0x007C89AA  recvfrom  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C89AA  recvfrom  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int recvfrom()
 {
     int __stdcall recvfrom(SOCKET s, char *buf, int len, int flags, struct sockaddr *from, int *fromlen)
@@ -2386,7 +2386,7 @@ int recvfrom()
 }
 }
 
-// ==== BACKFILL 0x007C89C2  EnumProtocolsA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C89C2  EnumProtocolsA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int EnumProtocolsA()
 {
     INT __stdcall EnumProtocolsA(LPINT lpiProtocols, LPVOID lpProtocolBuffer, LPDWORD lpdwBufferLength)
@@ -2395,7 +2395,7 @@ int EnumProtocolsA()
 }
 }
 
-// ==== BACKFILL 0x007C89D4  DirectDrawCreate  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C89D4  DirectDrawCreate  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int DirectDrawCreate()
 {
     HRESULT __stdcall DirectDrawCreate(GUID *lpGUID, LPDIRECTDRAW *lplpDD, IUnknown *pUnkOuter)
@@ -2404,7 +2404,7 @@ int DirectDrawCreate()
 }
 }
 
-// ==== BACKFILL 0x007C89DA  DirectSoundCreate  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C89DA  DirectSoundCreate  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int DirectSoundCreate()
 {
     HRESULT __stdcall DirectSoundCreate(LPCGUID pcGuidDevice, LPDIRECTSOUND *ppDS, LPUNKNOWN pUnkOuter)
@@ -2413,7 +2413,7 @@ int DirectSoundCreate()
 }
 }
 
-// ==== BACKFILL 0x007C89EC  GetFileVersionInfoSizeA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C89EC  GetFileVersionInfoSizeA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetFileVersionInfoSizeA()
 {
     DWORD __stdcall GetFileVersionInfoSizeA(LPCSTR lptstrFilename, LPDWORD lpdwHandle)
@@ -2422,7 +2422,7 @@ int GetFileVersionInfoSizeA()
 }
 }
 
-// ==== BACKFILL 0x007C8A8E  ??1type_info_UAE_XZ  cls=type_info  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8A8E  ??1type_info_UAE_XZ  cls=type_info  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_7C8A8E::__1type_info_UAE_XZ()
 {
 {
@@ -2436,7 +2436,7 @@ void E4Recv_7C8A8E::__1type_info_UAE_XZ()
 }
 }
 
-// ==== BACKFILL 0x007C8AB7  ??_Gtype_info_UAEPAXI_Z  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8AB7  ??_Gtype_info_UAEPAXI_Z  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * E4Recv_7C8AB7::___Gtype_info_UAEPAXI_Z(char a2)
 {
 {
@@ -2447,7 +2447,7 @@ ObjectClass * E4Recv_7C8AB7::___Gtype_info_UAEPAXI_Z(char a2)
 }
 }
 
-// ==== BACKFILL 0x007C8AD3  ??8type_info_QBEHABV0__Z  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8AD3  ??8type_info_QBEHABV0__Z  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL E4Recv_7C8AD3::__8type_info_QBEHABV0__Z(int a2)
 {
 {
@@ -2455,7 +2455,7 @@ BOOL E4Recv_7C8AD3::__8type_info_QBEHABV0__Z(int a2)
 }
 }
 
-// ==== BACKFILL 0x007C8AEE  ??9type_info_QBEHABV0__Z  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8AEE  ??9type_info_QBEHABV0__Z  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL E4Recv_7C8AEE::__9type_info_QBEHABV0__Z(int a2)
 {
 {
@@ -2463,7 +2463,7 @@ BOOL E4Recv_7C8AEE::__9type_info_QBEHABV0__Z(int a2)
 }
 }
 
-// ==== BACKFILL 0x007C8B0A  ?before_type_info__QBEHABV1__Z  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8B0A  ?before_type_info__QBEHABV1__Z  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 BOOL E4Recv_7C8B0A::_before_type_info__QBEHABV1__Z(const struct type_info * a2)
 {
 {
@@ -2471,7 +2471,7 @@ BOOL E4Recv_7C8B0A::_before_type_info__QBEHABV1__Z(const struct type_info * a2)
 }
 }
 
-// ==== BACKFILL 0x007C8B29  sub_7C8B29  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8B29  sub_7C8B29  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char * E4Recv_7C8B29::sub_7C8B29()
 {
 {
@@ -2479,7 +2479,7 @@ char * E4Recv_7C8B29::sub_7C8B29()
 }
 }
 
-// ==== BACKFILL 0x007C8B2D  sub_7C8B2D  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8B2D  sub_7C8B2D  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_7C8B2D::sub_7C8B2D(int a2)
 {
 {
@@ -2488,7 +2488,7 @@ unsigned int * E4Recv_7C8B2D::sub_7C8B2D(int a2)
 }
 }
 
-// ==== BACKFILL 0x007C8B38  sub_7C8B38  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8B38  sub_7C8B38  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * E4Recv_7C8B38::sub_7C8B38(int a2)
 {
 {
@@ -2496,7 +2496,7 @@ ObjectClass * E4Recv_7C8B38::sub_7C8B38(int a2)
 }
 }
 
-// ==== BACKFILL 0x007C8B3D  OperatorDelete  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8B3D  OperatorDelete  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void __3_YAXPAX_Z(void * Block)
 {
 {
@@ -2504,7 +2504,7 @@ void __3_YAXPAX_Z(void * Block)
 }
 }
 
-// ==== BACKFILL 0x007C8CEA  _swap  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8CEA  _swap  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char * swap(char * a1, char * a2, int a3)
 {
 char* result = a1;
@@ -2524,7 +2524,7 @@ if ((a1 != a2) && a3)
 return result;
 }
 
-// ==== BACKFILL 0x007C8DF0  _strrchr  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8DF0  _strrchr  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * strrchr(const char * Str, int Ch)
 {
 unsigned int remaining = strlen(Str) + 1;
@@ -2546,13 +2546,13 @@ if (*match == (unsigned char)Ch)
 return 0;
 }
 
-// ==== BACKFILL 0x007C8E17  ??2_YAPAXI_Z  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8E17  ??2_YAPAXI_Z  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int __2_YAPAXI_Z(size_t Size)
 {
 return _nh_malloc(Size, 1);
 }
 
-// ==== BACKFILL 0x007C8EC0  __allmul  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8EC0  __allmul  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned long long _allmul(long long a1, long long a2)
 {
 if ((unsigned int)(a1 >> 32) | (unsigned int)(a2 >> 32))
@@ -2560,7 +2560,7 @@ if ((unsigned int)(a1 >> 32) | (unsigned int)(a2 >> 32))
 return (unsigned int)a2 * (unsigned long long)(unsigned int)a1;
 }
 
-// ==== BACKFILL 0x007C8EF4  _sprintf  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C8EF4  _sprintf  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sprintf(char *const Buffer, ObjectClass * aP1, INIClass * aP2)
 {
 {
@@ -2583,7 +2583,7 @@ int sprintf(char *const Buffer, ObjectClass * aP1, INIClass * aP2)
 }
 }
 
-// ==== BACKFILL 0x007C92D0  __alldiv  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C92D0  __alldiv  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _alldiv(unsigned long long a1, long long a2)
 {
 {
@@ -2639,7 +2639,7 @@ int _alldiv(unsigned long long a1, long long a2)
 }
 }
 
-// ==== BACKFILL 0x007C9380  __aulldiv  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C9380  __aulldiv  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int _aulldiv(unsigned long long a1, long long a2)
 {
 {
@@ -2678,7 +2678,7 @@ unsigned int _aulldiv(unsigned long long a1, long long a2)
 }
 }
 
-// ==== BACKFILL 0x007C93E8  _free  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C93E8  _free  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void free(void * Block)
 {
 {
@@ -2701,7 +2701,7 @@ void free(void * Block)
 }
 }
 
-// ==== BACKFILL 0x007C9430  _malloc  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C9430  _malloc  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void * malloc(AbstractClass * aP0)
 {
 {
@@ -2709,7 +2709,7 @@ void * malloc(AbstractClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007C9442  __nh_malloc  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C9442  __nh_malloc  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _nh_malloc(IUnknown * aP0, int a2)
 {
 if ((unsigned int)aP0 > 0xFFFFFFE0)
@@ -2726,7 +2726,7 @@ while (1)
 return result;
 }
 
-// ==== BACKFILL 0x007C946E  __heap_alloc  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C946E  __heap_alloc  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LPVOID _heap_alloc(IUnknown * aP0)
 {
 {
@@ -2747,7 +2747,7 @@ LPVOID _heap_alloc(IUnknown * aP0)
 }
 }
 
-// ==== BACKFILL 0x007C94BC  Audio_Write  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C94BC  Audio_Write  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 size_t sub_7C94BC(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
 {
 {
@@ -2759,7 +2759,7 @@ size_t sub_7C94BC(void * Buffer, size_t ElementSize, size_t ElementCount, FILE *
 }
 }
 
-// ==== BACKFILL 0x007C95D3  Audio_Write_7C95D3  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C95D3  Audio_Write_7C95D3  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 size_t sub_7C95D3(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
 {
 {
@@ -2771,19 +2771,19 @@ size_t sub_7C95D3(void * Buffer, size_t ElementSize, size_t ElementCount, FILE *
 }
 }
 
-// ==== BACKFILL 0x007C978A  _atexit  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C978A  _atexit  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int atexit(void (__cdecl *Func)())
 {
 return (_onexit((_onexit_t)Func) != 0) - 1;
 }
 
-// ==== BACKFILL 0x007C9BFD  _atoi  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C9BFD  _atoi  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int atoi(const char * String)
 {
 return atol(String);
 }
 
-// ==== BACKFILL 0x007C9DBD  globalHelper_0C9DBD  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C9DBD  globalHelper_0C9DBD  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int globalHelper_0C9DBD(int a1, CCINIClass * aP1, int a3)
 {
 {
@@ -2791,13 +2791,13 @@ int globalHelper_0C9DBD(int a1, CCINIClass * aP1, int a3)
 }
 }
 
-// ==== BACKFILL 0x007C9FD9  _strtoul  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C9FD9  _strtoul  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int strtoul(const char * String, char ** EndPtr, int Radix)
 {
 return strtoxl((unsigned char*)String, (unsigned char**)EndPtr, Radix, 1);
 }
 
-// ==== BACKFILL 0x007C9FF0  __makepath  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007C9FF0  __makepath  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void _makepath(char * Buffer, const char * Drive, const char * Dir, const char * FName, const char * Ext)
 {
 char* out = Buffer;
@@ -2865,7 +2865,7 @@ else
 }
 }
 
-// ==== BACKFILL 0x007CA3C5  _wcsrchr  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA3C5  _wcsrchr  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * wcsrchr(const wchar_t * Str, wchar_t Ch)
 {
 const wchar_t* scan = Str;
@@ -2888,7 +2888,7 @@ match[1] = j;
 return (wchar_t*)match[Ch == *j];
 }
 
-// ==== BACKFILL 0x007CA405  _wcslen  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA405  _wcslen  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 size_t wcslen(const wchar_t * String)
 {
 const wchar_t* scan = String;
@@ -2901,7 +2901,7 @@ if (*String)
 return scan - String - 1;
 }
 
-// ==== BACKFILL 0x007CA422  _wcsncpy  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA422  _wcsncpy  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * wcsncpy(wchar_t * Destination, const wchar_t * Source, size_t MaxCount)
 {
 size_t remaining = MaxCount;
@@ -2941,7 +2941,7 @@ if (MaxCount)
 return Destination;
 }
 
-// ==== BACKFILL 0x007CA45F  _wcscat  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA45F  _wcscat  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * wcscat(wchar_t * Destination, const wchar_t * Source)
 {
 wchar_t* result = Destination;
@@ -2961,7 +2961,7 @@ while (current);
 return result;
 }
 
-// ==== BACKFILL 0x007CA489  _wcscpy  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA489  _wcscpy  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * wcscpy(wchar_t * Destination, const wchar_t * Source)
 {
 const wchar_t* src = Source;
@@ -2982,7 +2982,7 @@ while (1)
 return result;
 }
 
-// ==== BACKFILL 0x007CA530  _sscanf  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA530  _sscanf  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sscanf(const char *const Buffer, const char *const Format, ... a3)
 {
 {
@@ -2997,7 +2997,7 @@ int sscanf(const char *const Buffer, const char *const Format, ... a3)
 }
 }
 
-// ==== BACKFILL 0x007CA564  _swprintf  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA564  _swprintf  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int swprintf(wchar_t *const Buffer, const size_t BufferCount, const wchar_t *const Format, CampaignScore * aP3)
 {
 {
@@ -3024,7 +3024,7 @@ int swprintf(wchar_t *const Buffer, const size_t BufferCount, const wchar_t *con
 }
 }
 
-// ==== BACKFILL 0x007CA5D3  _wcscmp  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA5D3  _wcscmp  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int wcscmp(const wchar_t * String1, const wchar_t * String2)
 {
 const wchar_t* second = String2;
@@ -3045,7 +3045,7 @@ if (result > 0)
 return result;
 }
 
-// ==== BACKFILL 0x007CA610  _strncmp  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA610  _strncmp  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int strncmp(const char * Str1, const char * Str2, size_t MaxCount)
 {
 size_t remaining = MaxCount;
@@ -3089,7 +3089,7 @@ if (MaxCount)
 return (int)remaining;
 }
 
-// ==== BACKFILL 0x007CA75B  _fclose  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA75B  _fclose  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int fclose(MouseClass * aP0)
 {
 {
@@ -3109,7 +3109,7 @@ int fclose(MouseClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007CA78C  __fclose_lk  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA78C  __fclose_lk  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _fclose_lk(MouseClass * aP0)
 {
 {
@@ -3137,7 +3137,7 @@ int _fclose_lk(MouseClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007CA7D8  _fprintf  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA7D8  _fprintf  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int fprintf(MouseClass * aP0, const char *const Format, CellStruct * aP2)
 {
 _lock_file(aP0);
@@ -3148,7 +3148,7 @@ _unlock_file(aP0);
 return written;
 }
 
-// ==== BACKFILL 0x007CA814  __fsopen  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA814  __fsopen  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 FILE * _fsopen(const char * FileName, const char * Mode, int ShFlag)
 {
 {
@@ -3167,13 +3167,13 @@ FILE * _fsopen(const char * FileName, const char * Mode, int ShFlag)
 }
 }
 
-// ==== BACKFILL 0x007CA845  _fopen  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA845  _fopen  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 FILE * fopen(const char * FileName, const char * Mode)
 {
 return _fsopen(FileName, Mode, 64);
 }
 
-// ==== BACKFILL 0x007CA858  _vswprintf  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA858  _vswprintf  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int vswprintf(wchar_t *const Buffer, CampaignScore * aP1, ObjectClass * aP2, SessionClass * aP3)
 {
 {
@@ -3200,7 +3200,7 @@ int vswprintf(wchar_t *const Buffer, CampaignScore * aP1, ObjectClass * aP2, Ses
 }
 }
 
-// ==== BACKFILL 0x007CA8C6  _wcschr  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA8C6  _wcschr  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * wcschr(wchar_t * Str, int Ch)
 {
 while (*Str && *Str != Ch)
@@ -3211,7 +3211,7 @@ match[1] = Str;
 return match[Ch == *Str];
 }
 
-// ==== BACKFILL 0x007CA971  ??0__non_rtti_object_QAE_PBD_Z  cls=__non_rtti_object  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA971  ??0__non_rtti_object_QAE_PBD_Z  cls=__non_rtti_object  sig=csp  renamed_refs=0  residual=- ====
 __non_rtti_object * E4Recv_7CA971::__0__non_rtti_object_QAE_PBD_Z(char * a2)
 {
 {
@@ -3221,7 +3221,7 @@ __non_rtti_object * E4Recv_7CA971::__0__non_rtti_object_QAE_PBD_Z(char * a2)
 }
 }
 
-// ==== BACKFILL 0x007CA993  sub_7CA993  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA993  sub_7CA993  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * sub_7CA993(void * Block, char a2)
 {
 {
@@ -3232,7 +3232,7 @@ ObjectClass * sub_7CA993(void * Block, char a2)
 }
 }
 
-// ==== BACKFILL 0x007CA9B4  sub_7CA9B4  cls=__non_rtti_object  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA9B4  sub_7CA9B4  cls=__non_rtti_object  sig=csp  renamed_refs=0  residual=- ====
 exception * E4Recv_7CA9B4::sub_7CA9B4(struct exception * a2)
 {
 {
@@ -3242,7 +3242,7 @@ exception * E4Recv_7CA9B4::sub_7CA9B4(struct exception * a2)
 }
 }
 
-// ==== BACKFILL 0x007CA9CC  sub_7CA9CC  cls=bad_typeid  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA9CC  sub_7CA9CC  cls=bad_typeid  sig=csp  renamed_refs=0  residual=- ====
 exception * E4Recv_7CA9CC::sub_7CA9CC(struct exception * a1)
 {
 {
@@ -3252,7 +3252,7 @@ exception * E4Recv_7CA9CC::sub_7CA9CC(struct exception * a1)
 }
 }
 
-// ==== BACKFILL 0x007CA9E4  sub_7CA9E4  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CA9E4  sub_7CA9E4  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * sub_7CA9E4(void * Block, char a2)
 {
 {
@@ -3263,7 +3263,7 @@ ObjectClass * sub_7CA9E4(void * Block, char a2)
 }
 }
 
-// ==== BACKFILL 0x007CAA05  ___RTtypeid  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CAA05  ___RTtypeid  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int __RTtypeid(unsigned int * a1)
 {
 {
@@ -3288,7 +3288,7 @@ int __RTtypeid(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x007CAAE4  ___RTDynamicCast  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CAAE4  ___RTDynamicCast  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned char * __RTDynamicCast(IUnknown * aP0, int arg4, struct TypeDescriptor * a2, struct TypeDescriptor * a3, int a5)
 {
 {
@@ -3324,7 +3324,7 @@ unsigned char * __RTDynamicCast(IUnknown * aP0, int arg4, struct TypeDescriptor 
 }
 }
 
-// ==== BACKFILL 0x007CAC13  sub_7CAC13  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CAC13  sub_7CAC13  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * sub_7CAC13(void * Block, char a2)
 {
 {
@@ -3335,7 +3335,7 @@ ObjectClass * sub_7CAC13(void * Block, char a2)
 }
 }
 
-// ==== BACKFILL 0x007CAC34  sub_7CAC34  cls=bad_cast  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CAC34  sub_7CAC34  cls=bad_cast  sig=csp  renamed_refs=0  residual=- ====
 exception * E4Recv_7CAC34::sub_7CAC34(struct exception * a2)
 {
 {
@@ -3345,7 +3345,7 @@ exception * E4Recv_7CAC34::sub_7CAC34(struct exception * a2)
 }
 }
 
-// ==== BACKFILL 0x007CAC4C  ?FindCompleteObject_YAPAXPAPAX_Z  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CAC4C  ?FindCompleteObject_YAPAXPAPAX_Z  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * _FindCompleteObject_YAPAXPAPAX_Z(void ** a1)
 {
 {
@@ -3361,7 +3361,7 @@ char * _FindCompleteObject_YAPAXPAPAX_Z(void ** a1)
 }
 }
 
-// ==== BACKFILL 0x007CAC66  ?FindSITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CAC66  ?FindSITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 const struct _s_RTTIBaseClassDescriptor * _FindSITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z(void * a1, const struct _s_RTTICompleteObjectLocator * a2, struct TypeDescriptor * a3, int a4, struct TypeDescriptor * a5)
 {
 {
@@ -3390,7 +3390,7 @@ const struct _s_RTTIBaseClassDescriptor * _FindSITargetTypeInstance_YAPBU_s_RTTI
 }
 }
 
-// ==== BACKFILL 0x007CAEF1  ?PMDtoOffset_YAHPAXABUPMD___Z  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CAEF1  ?PMDtoOffset_YAHPAXABUPMD___Z  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _PMDtoOffset_YAHPAXABUPMD___Z(char * a1, const struct PMD * a2)
 {
 {
@@ -3404,7 +3404,7 @@ int _PMDtoOffset_YAHPAXABUPMD___Z(char * a1, const struct PMD * a2)
 }
 }
 
-// ==== BACKFILL 0x007CB19C  _fflush  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CB19C  _fflush  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int fflush(MouseClass * aP0)
 {
 {
@@ -3418,7 +3418,7 @@ int fflush(MouseClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007CB1CB  __fflush_lk  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CB1CB  __fflush_lk  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _fflush_lk(int a1)
 {
 {
@@ -3430,7 +3430,7 @@ int _fflush_lk(int a1)
 }
 }
 
-// ==== BACKFILL 0x007CB1F9  __flush  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CB1F9  __flush  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _flush(MouseClass * aP0)
 {
 {
@@ -3469,7 +3469,7 @@ int _flush(MouseClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007CB428  __lock_file2  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CB428  __lock_file2  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void _lock_file2(int a1, int a2)
 {
 {
@@ -3480,7 +3480,7 @@ void _lock_file2(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007CB47A  __unlock_file2  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CB47A  __unlock_file2  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void _unlock_file2(int a1, int a2)
 {
 {
@@ -3491,7 +3491,7 @@ void _unlock_file2(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007CB49D  _srand  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CB49D  _srand  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 IUnknown * srand(IUnknown * aP0)
 {
 {
@@ -3502,7 +3502,7 @@ IUnknown * srand(IUnknown * aP0)
 }
 }
 
-// ==== BACKFILL 0x007CB4AA  _rand  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CB4AA  _rand  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int rand()
 {
 {
@@ -3515,7 +3515,7 @@ int rand()
 }
 }
 
-// ==== BACKFILL 0x007CB4CC  _wcsncmp  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CB4CC  _wcsncmp  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int wcsncmp(const wchar_t * String1, CampaignScore * aP1, size_t MaxCount)
 {
 {
@@ -3543,7 +3543,7 @@ int wcsncmp(const wchar_t * String1, CampaignScore * aP1, size_t MaxCount)
 }
 }
 
-// ==== BACKFILL 0x007CB7BA  _vsprintf  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CB7BA  _vsprintf  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int vsprintf(char *const Buffer, const char *const Format, va_list ArgList)
 {
 {
@@ -3566,7 +3566,7 @@ int vsprintf(char *const Buffer, const char *const Format, va_list ArgList)
 }
 }
 
-// ==== BACKFILL 0x007CB80B  _fgetc  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CB80B  _fgetc  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int fgetc(MouseClass * aP0)
 {
 {
@@ -3581,7 +3581,7 @@ int fgetc(MouseClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007CB8A8  _iswspace  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CB8A8  _iswspace  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int iswspace(wint_t C)
 {
 {
@@ -3589,7 +3589,7 @@ int iswspace(wint_t C)
 }
 }
 
-// ==== BACKFILL 0x007CB8E6  _iswgraph  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CB8E6  _iswgraph  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int iswgraph(wint_t C)
 {
 {
@@ -3597,7 +3597,7 @@ int iswgraph(wint_t C)
 }
 }
 
-// ==== BACKFILL 0x007CB9B8  _wcstol  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CB9B8  _wcstol  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int wcstol(BlowStraw * aP0, wchar_t ** EndPtr, int Radix)
 {
 {
@@ -3605,7 +3605,7 @@ int wcstol(BlowStraw * aP0, wchar_t ** EndPtr, int Radix)
 }
 }
 
-// ==== BACKFILL 0x007CBB8D  __mbsnccnt  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CBB8D  __mbsnccnt  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 size_t _mbsnccnt(const unsigned char * Str, size_t MaxCount)
 {
 {
@@ -3637,7 +3637,7 @@ size_t _mbsnccnt(const unsigned char * Str, size_t MaxCount)
 }
 }
 
-// ==== BACKFILL 0x007CBBDB  _swscanf  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CBBDB  _swscanf  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int swscanf(const wchar_t *const Buffer, CampaignScore * aP1, ... a3)
 {
 {
@@ -3652,7 +3652,7 @@ int swscanf(const wchar_t *const Buffer, CampaignScore * aP1, ... a3)
 }
 }
 
-// ==== BACKFILL 0x007CBC11  Object_Init_7CBC11  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CBC11  Object_Init_7CBC11  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * sub_7CBC11(char * VarName)
 {
 {
@@ -3664,7 +3664,7 @@ char * sub_7CBC11(char * VarName)
 }
 }
 
-// ==== BACKFILL 0x007CBC32  _getenv  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CBC32  _getenv  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * getenv(const char * VarName)
 {
 {
@@ -3693,7 +3693,7 @@ char * getenv(const char * VarName)
 }
 }
 
-// ==== BACKFILL 0x007CBCAF  __itow  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CBCAF  __itow  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * _itow(int Value, wchar_t * Buffer, int Radix)
 {
 {
@@ -3704,7 +3704,7 @@ wchar_t * _itow(int Value, wchar_t * Buffer, int Radix)
 }
 }
 
-// ==== BACKFILL 0x007CBDDC  _exit  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CBDDC  _exit  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void  __noreturn exit(int Code)
 {
 {
@@ -3712,7 +3712,7 @@ void  __noreturn exit(int Code)
 }
 }
 
-// ==== BACKFILL 0x007CBDED  __exit  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CBDED  __exit  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void  __noreturn _exit(int Code)
 {
 {
@@ -3720,7 +3720,7 @@ void  __noreturn _exit(int Code)
 }
 }
 
-// ==== BACKFILL 0x007CBEC1  __lockexit  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CBEC1  __lockexit  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void _lockexit()
 {
 {
@@ -3728,7 +3728,7 @@ void _lockexit()
 }
 }
 
-// ==== BACKFILL 0x007CBF14  __control87  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CBF14  __control87  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int _control87(unsigned int NewValue, unsigned int Mask)
 {
 {
@@ -3739,7 +3739,7 @@ unsigned int _control87(unsigned int NewValue, unsigned int Mask)
 }
 }
 
-// ==== BACKFILL 0x007CBF49  __controlfp  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CBF49  __controlfp  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int _controlfp(unsigned int NewValue, unsigned int Mask)
 {
 {
@@ -3747,7 +3747,7 @@ unsigned int _controlfp(unsigned int NewValue, unsigned int Mask)
 }
 }
 
-// ==== BACKFILL 0x007CBF8A  __abstract_cw  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CBF8A  __abstract_cw  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char _abstract_cw(char a1)
 {
 {
@@ -3767,7 +3767,7 @@ char _abstract_cw(char a1)
 }
 }
 
-// ==== BACKFILL 0x007CC01C  __hw_cw  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CC01C  __hw_cw  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char _hw_cw(int a1)
 {
 {
@@ -3787,7 +3787,7 @@ char _hw_cw(int a1)
 }
 }
 
-// ==== BACKFILL 0x007CC0A5  __abstract_sw  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CC0A5  __abstract_sw  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char _abstract_sw(char a1)
 {
 {
@@ -3807,7 +3807,7 @@ char _abstract_sw(char a1)
 }
 }
 
-// ==== BACKFILL 0x007CC0DC  __global_unwind2  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CC0DC  __global_unwind2  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void _global_unwind2(PVOID TargetFrame)
 {
 {
@@ -3815,7 +3815,7 @@ void _global_unwind2(PVOID TargetFrame)
 }
 }
 
-// ==== BACKFILL 0x007CC0FC  __unwind_handler  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CC0FC  __unwind_handler  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int _unwind_handler(int a1, int a2, int a3, unsigned int * a4)
 {
 {
@@ -3830,7 +3830,7 @@ int _unwind_handler(int a1, int a2, int a3, unsigned int * a4)
 }
 }
 
-// ==== BACKFILL 0x007CC11E  __local_unwind2  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CC11E  __local_unwind2  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _local_unwind2(int a1, int a2)
 {
 {
@@ -3861,7 +3861,7 @@ int _local_unwind2(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007CC1A9  __NLG_Notify1  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CC1A9  __NLG_Notify1  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void _NLG_Notify1(int a1)
 {
 {
@@ -3869,7 +3869,7 @@ void _NLG_Notify1(int a1)
 }
 }
 
-// ==== BACKFILL 0x007CC291  __seh_longjmp_unwind_4  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CC291  __seh_longjmp_unwind_4  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int _seh_longjmp_unwind_4(int a1)
 {
 {
@@ -3877,7 +3877,7 @@ int _seh_longjmp_unwind_4(int a1)
 }
 }
 
-// ==== BACKFILL 0x007CC2AC  _mbstowcs  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CC2AC  _mbstowcs  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 size_t mbstowcs(wchar_t * Dest, const char * Source, size_t MaxCount)
 {
 {
@@ -3900,7 +3900,7 @@ size_t mbstowcs(wchar_t * Dest, const char * Source, size_t MaxCount)
 }
 }
 
-// ==== BACKFILL 0x007CC447  _wcstombs  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CC447  _wcstombs  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 size_t wcstombs(CCINIClass * aP0, ObjectClass * aP1, size_t MaxCount)
 {
 {
@@ -3923,7 +3923,7 @@ size_t wcstombs(CCINIClass * aP0, ObjectClass * aP1, size_t MaxCount)
 }
 }
 
-// ==== BACKFILL 0x007CC653  _wcsncnt  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CC653  _wcsncnt  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int wcsncnt(ObjectClass * aP0, int a2)
 {
 {
@@ -3948,7 +3948,7 @@ int wcsncnt(ObjectClass * aP0, int a2)
 }
 }
 
-// ==== BACKFILL 0x007CC682  _wcsstr  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CC682  _wcsstr  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * wcsstr(CampaignScore * aP0, const wchar_t * SubStr)
 {
 {
@@ -3975,7 +3975,7 @@ wchar_t * wcsstr(CampaignScore * aP0, const wchar_t * SubStr)
 }
 }
 
-// ==== BACKFILL 0x007CCA19  String::Wrapper5to4  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CCA19  String::Wrapper5to4  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int String::Wrapper5to4(CampaignScore * aP0, int a2, int a3, int a4)
 {
 {
@@ -3983,7 +3983,7 @@ int String::Wrapper5to4(CampaignScore * aP0, int a2, int a3, int a4)
 }
 }
 
-// ==== BACKFILL 0x007CCF1D  __store_str  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CCF1D  __store_str  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void _store_str(unsigned char * a1, unsigned int * a2, unsigned int * a3)
 {
 {
@@ -4000,7 +4000,7 @@ void _store_str(unsigned char * a1, unsigned int * a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x007CCF44  __store_num  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CCF44  __store_num  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int _store_num(int a1, unsigned int a2, unsigned int * a3, unsigned int * a4)
 {
 {
@@ -4037,7 +4037,7 @@ int _store_num(int a1, unsigned int a2, unsigned int * a3, unsigned int * a4)
 }
 }
 
-// ==== BACKFILL 0x007CCFB3  __store_number  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CCFB3  __store_number  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char * _store_number(int a1, char ** a2, unsigned int * a3)
 {
 {
@@ -4069,7 +4069,7 @@ char * _store_number(int a1, char ** a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x007CD42B  _remove  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CD42B  _remove  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int remove(const char * FileName)
 {
 {
@@ -4085,7 +4085,7 @@ int remove(const char * FileName)
 }
 }
 
-// ==== BACKFILL 0x007CD455  __unlink  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CD455  __unlink  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _unlink(const char * FileName)
 {
 {
@@ -4093,7 +4093,7 @@ int _unlink(const char * FileName)
 }
 }
 
-// ==== BACKFILL 0x007CD615  _genfname  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CD615  _genfname  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int genfname(const unsigned char * Buffer)
 {
 {
@@ -4110,7 +4110,7 @@ int genfname(const unsigned char * Buffer)
 }
 }
 
-// ==== BACKFILL 0x007CD790  _strcspn  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CD790  _strcspn  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 size_t strcspn(IUnknown * aP0, const char * Control)
 {
 {
@@ -4141,7 +4141,7 @@ size_t strcspn(IUnknown * aP0, const char * Control)
 }
 }
 
-// ==== BACKFILL 0x007CD917  __amsg_exit  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CD917  __amsg_exit  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void  __noreturn _amsg_exit(DWORD NumberOfBytesWritten)
 {
 {
@@ -4152,7 +4152,7 @@ void  __noreturn _amsg_exit(DWORD NumberOfBytesWritten)
 }
 }
 
-// ==== BACKFILL 0x007CD93C  _fast_error_exit  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CD93C  _fast_error_exit  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void  __noreturn fast_error_exit(DWORD NumberOfBytesWritten)
 {
 {
@@ -4163,7 +4163,7 @@ void  __noreturn fast_error_exit(DWORD NumberOfBytesWritten)
 }
 }
 
-// ==== BACKFILL 0x007CD960  __mtinitlocks  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CD960  __mtinitlocks  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void _mtinitlocks()
 {
 {
@@ -4174,7 +4174,7 @@ void _mtinitlocks()
 }
 }
 
-// ==== BACKFILL 0x007CD9F5  __lock  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CD9F5  __lock  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void _lock(int a1)
 {
 {
@@ -4200,7 +4200,7 @@ void _lock(int a1)
 }
 }
 
-// ==== BACKFILL 0x007CDA56  __unlock  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CDA56  __unlock  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void _unlock(int a1)
 {
 {
@@ -4208,7 +4208,7 @@ void _unlock(int a1)
 }
 }
 
-// ==== BACKFILL 0x007CE049  __strcats  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CE049  __strcats  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * _strcats(CCINIClass * aP0, int a2)
 {
 {
@@ -4233,7 +4233,7 @@ char * _strcats(CCINIClass * aP0, int a2)
 }
 }
 
-// ==== BACKFILL 0x007CE06E  ___lc_strtolc  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CE06E  ___lc_strtolc  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int __lc_strtolc(char * a0, IUnknown * aP1)
 {
 {
@@ -4295,7 +4295,7 @@ int __lc_strtolc(char * a0, IUnknown * aP1)
 }
 }
 
-// ==== BACKFILL 0x007CE13A  ___lc_lctostr  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CE13A  ___lc_lctostr  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * __lc_lctostr(char * Destination, char * Source)
 {
 {
@@ -4310,7 +4310,7 @@ char * __lc_lctostr(char * Destination, char * Source)
 }
 }
 
-// ==== BACKFILL 0x007CE9E6  _write_char  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CE9E6  _write_char  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * write_char(int a1, FILE * File, unsigned int * a3)
 {
 {
@@ -4336,7 +4336,7 @@ unsigned int * write_char(int a1, FILE * File, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x007CEA1B  _write_multi_char  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CEA1B  _write_multi_char  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * write_multi_char(int a1, unsigned int * a2, FILE * File, unsigned int * a4)
 {
 {
@@ -4354,7 +4354,7 @@ unsigned int * write_multi_char(int a1, unsigned int * a2, FILE * File, unsigned
 }
 }
 
-// ==== BACKFILL 0x007CEA4C  _write_string  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CEA4C  _write_string  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * write_string(char * a1, unsigned int * a2, FILE * File, unsigned int * a4)
 {
 {
@@ -4374,7 +4374,7 @@ unsigned int * write_string(char * a1, unsigned int * a2, FILE * File, unsigned 
 }
 }
 
-// ==== BACKFILL 0x007CEA84  _get_int_arg  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CEA84  _get_int_arg  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int get_int_arg(unsigned int * a1)
 {
 {
@@ -4383,7 +4383,7 @@ int get_int_arg(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x007CEA91  _get_int64_arg  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CEA91  _get_int64_arg  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 long long get_int64_arg(unsigned int * a1)
 {
 {
@@ -4392,7 +4392,7 @@ long long get_int64_arg(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x007CEC26  __cftoe  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CEC26  __cftoe  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned char * _cftoe(double * a1, unsigned char * a2, int a3, int a4)
 {
 {
@@ -4407,7 +4407,7 @@ unsigned char * _cftoe(double * a1, unsigned char * a2, int a3, int a4)
 }
 }
 
-// ==== BACKFILL 0x007CEC87  __cftoe2  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CEC87  __cftoe2  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned char * _cftoe2(unsigned char * a1, int a2, int a3, int a4, char a5)
 {
 {
@@ -4454,7 +4454,7 @@ unsigned char * _cftoe2(unsigned char * a1, int a2, int a3, int a4, char a5)
 }
 }
 
-// ==== BACKFILL 0x007CED49  __cftof  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CED49  __cftof  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * _cftof(double * a1, char * Src, size_t Size)
 {
 {
@@ -4469,7 +4469,7 @@ char * _cftof(double * a1, char * Src, size_t Size)
 }
 }
 
-// ==== BACKFILL 0x007CEE45  __cftog  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CEE45  __cftog  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * _cftog(double * a1, char * Src, char * Size, int a4)
 {
 {
@@ -4492,7 +4492,7 @@ char * _cftog(double * a1, char * Src, char * Size, int a4)
 }
 }
 
-// ==== BACKFILL 0x007CEF29  __shift  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CEF29  __shift  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void _shift(const char * Src, int a2)
 {
 {
@@ -4505,7 +4505,7 @@ void _shift(const char * Src, int a2)
 }
 }
 
-// ==== BACKFILL 0x007CF64C  __d_inttype  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CF64C  __d_inttype  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _d_inttype(double X)
 {
 {
@@ -4517,7 +4517,7 @@ int _d_inttype(double X)
 }
 }
 
-// ==== BACKFILL 0x007CFECD  ___sbh_alloc_new_group  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007CFECD  ___sbh_alloc_new_group  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int __sbh_alloc_new_group(AbstractClass * aP0)
 {
 {

@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00572230  globalHelper_072230  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00572230  globalHelper_072230  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char globalHelper_072230(ObjectClass * aP0, int a2)
 {
 {
@@ -52,7 +52,7 @@ char globalHelper_072230(ObjectClass * aP0, int a2)
 }
 }
 
-// ==== BACKFILL 0x00572330  globalHelper_072330  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00572330  globalHelper_072330  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char globalHelper_072330(IUnknown * aP0, int a2)
 {
 {
@@ -102,7 +102,7 @@ char globalHelper_072330(IUnknown * aP0, int a2)
 }
 }
 
-// ==== BACKFILL 0x00572B80  CellClass::SetTileType13  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00572B80  CellClass::SetTileType13  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char CellClass::SetTileType13(IUnknown * aP0, int a2)
 {
 {
@@ -155,7 +155,7 @@ char CellClass::SetTileType13(IUnknown * aP0, int a2)
 }
 }
 
-// ==== BACKFILL 0x00572C90  CellClass::SetTileType14  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00572C90  CellClass::SetTileType14  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char CellClass::SetTileType14(IUnknown * aP0, int a2)
 {
 {
@@ -208,7 +208,7 @@ char CellClass::SetTileType14(IUnknown * aP0, int a2)
 }
 }
 
-// ==== BACKFILL 0x005749C0  CellClass::ApplyTerrainModTile  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005749C0  CellClass::ApplyTerrainModTile  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::ApplyTerrainModTile(int a1) {
 {
       MouseClass *v2;
@@ -304,7 +304,7 @@ namespace gamemd { int CellClass::ApplyTerrainModTile(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00578080  Cell::GetGroundHeight  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00578080  Cell::GetGroundHeight  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Cell::GetGroundHeight(IUnknown * aP0)
 {
 {
@@ -330,7 +330,7 @@ int Cell::GetGroundHeight(IUnknown * aP0)
 }
 }
 
-// ==== BACKFILL 0x00578AC0  MapClass::IncrementRedrawCounter  cls=MapClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00578AC0  MapClass::IncrementRedrawCounter  cls=MapClass  sig=csp  renamed_refs=0  residual=- ====
 void MapClass::IncrementRedrawCounter()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -340,7 +340,7 @@ void __thiscall sub_578AC0(_BYTE *this)
 }
 }
 
-// ==== BACKFILL 0x00578B70  sub_578B70  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00578B70  sub_578B70  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_578B70::sub_578B70(short * a2)
 {
 {
@@ -376,7 +376,7 @@ int E4Recv_578B70::sub_578B70(short * a2)
 }
 }
 
-// ==== BACKFILL 0x00578C50  sub_578C50  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00578C50  sub_578C50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_578C50::sub_578C50(unsigned int * a2, int a3)
 {
 {
@@ -398,7 +398,7 @@ unsigned int * E4Recv_578C50::sub_578C50(unsigned int * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x0057A320  MapClass::BuildTileConnectivityGraph  cls=MapClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0057A320  MapClass::BuildTileConnectivityGraph  cls=MapClass  sig=csp  renamed_refs=0  residual=- ====
 int MapClass::BuildTileConnectivityGraph(MapClass * aP1, IUnknown * aP2, IUnknown * aP3)
 {
 {
@@ -455,7 +455,7 @@ int MapClass::BuildTileConnectivityGraph(MapClass * aP1, IUnknown * aP2, IUnknow
 }
 }
 
-// ==== BACKFILL 0x0057B790  MapClass::TriggerEVA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0057B790  MapClass::TriggerEVA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int MapClass::TriggerEVA(IUnknown * aP0)
 {
 {
@@ -499,7 +499,7 @@ int MapClass::TriggerEVA(IUnknown * aP0)
 }
 }
 
-// ==== BACKFILL 0x0057BCF0  CellClass::ApplyTileModification  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0057BCF0  CellClass::ApplyTileModification  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::ApplyTileModification(void* a1) {
 {
       unsigned int v2;
@@ -827,7 +827,7 @@ namespace gamemd { int CellClass::ApplyTileModification(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x0057C2B0  CellClass::ApplyTileModification2  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0057C2B0  CellClass::ApplyTileModification2  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::ApplyTileModification2(void* a1) {
 {
       unsigned int v2;
@@ -1141,7 +1141,7 @@ namespace gamemd { int CellClass::ApplyTileModification2(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x0057CF60  CellClass::ApplyTileModification3  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0057CF60  CellClass::ApplyTileModification3  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::ApplyTileModification3(void* a1) {
 {
       unsigned int v2;
@@ -1469,7 +1469,7 @@ namespace gamemd { int CellClass::ApplyTileModification3(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x0057D530  CellClass::ApplyTileModification4  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0057D530  CellClass::ApplyTileModification4  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::ApplyTileModification4(void* a1) {
 {
       unsigned int v2;
@@ -1778,7 +1778,7 @@ namespace gamemd { int CellClass::ApplyTileModification4(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x0057F200  CellClass::ApplyCliffTileModifications  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0057F200  CellClass::ApplyCliffTileModifications  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void CellClass::ApplyCliffTileModifications(int a1) {
 {
       IUnknown *v2;
@@ -1873,7 +1873,7 @@ namespace gamemd { void CellClass::ApplyCliffTileModifications(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0057F440  CellClass::ApplyTileMod58  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0057F440  CellClass::ApplyTileMod58  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void CellClass::ApplyTileMod58(int a1) {
 {
       IUnknown *v2;

@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x006F03F0  sub_6F03F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F03F0  sub_6F03F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_6F03F0::sub_6F03F0()
 {
 {
@@ -20,19 +20,19 @@ char E4Recv_6F03F0::sub_6F03F0()
 }
 }
 
-// ==== BACKFILL 0x006F0430  TeamClass::StubReturn160  cls=TeamClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F0430  TeamClass::StubReturn160  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
 int TeamClass::StubReturn160()
 {
 return 160;
 }
 
-// ==== BACKFILL 0x006F0440  TeamClass::StubReturn34  cls=TeamClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F0440  TeamClass::StubReturn34  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
 int TeamClass::StubReturn34()
 {
 return 34;
 }
 
-// ==== BACKFILL 0x006F0450  TeamClass::ProcessEvent  cls=TeamClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F0450  TeamClass::ProcessEvent  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* TeamClass::ProcessEvent(int a2) {
 {
     TeamClass::Destructor(this);
@@ -42,7 +42,7 @@ namespace gamemd { void* TeamClass::ProcessEvent(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x006F09C0  TeamClass::CreateOneOf  cls=TeamClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x006F09C0  TeamClass::CreateOneOf  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TeamClass::CreateOneOf(int a1) {
 {
       HouseClass *OwnerHouse;
@@ -65,12 +65,12 @@ namespace gamemd { int TeamClass::CreateOneOf(int a1) {
       }
       if ( !*(_DWORD *)&HouseClass_Player.__pad_5568[21752] )
       {
-        v4 = this->__pad_0B8;
+        v4 = this->q0B8;
         if ( v4 >= 0 )
         {
           if ( *(_DWORD *)&HouseClass_Player.__pad_5568[8068] )
           {
-            if ( TeamClass::CountActiveTeamsForType(OwnerHouse, (ObjectClass *)this) >= this->__pad_0B8 )
+            if ( TeamClass::CountActiveTeamsForType(OwnerHouse, (ObjectClass *)this) >= this->q0B8 )
               return 0;
           }
           else if ( this->q0DC >= v4 )
@@ -87,7 +87,7 @@ namespace gamemd { int TeamClass::CreateOneOf(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x006F0FC0  TeamTypeClass::FindByName  cls=TeamTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F0FC0  TeamTypeClass::FindByName  cls=TeamTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int TeamTypeClass::FindByName()
 {
 {
@@ -106,7 +106,7 @@ int TeamTypeClass::FindByName()
 }
 }
 
-// ==== BACKFILL 0x006F1AB0  TeamTypeClass::ReadScriptData  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F1AB0  TeamTypeClass::ReadScriptData  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 TeamTypeClass * TeamTypeClass::ReadScriptData(char * a1, int a2)
 {
 {
@@ -144,7 +144,7 @@ TeamTypeClass * TeamTypeClass::ReadScriptData(char * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x006F1B90  TeamTypeClass::SaveToINI  cls=TeamTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F1B90  TeamTypeClass::SaveToINI  cls=TeamTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int TeamTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 {
@@ -156,7 +156,7 @@ int TeamTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 }
 }
 
-// ==== BACKFILL 0x006F1BB0  TeamTypeClass::LoadTypeData  cls=TeamTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F1BB0  TeamTypeClass::LoadTypeData  cls=TeamTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 {
 {
@@ -182,7 +182,7 @@ int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 }
 }
 
-// ==== BACKFILL 0x006F1C40  TeamTypeClass::GetClassIdentifier  cls=TeamTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F1C40  TeamTypeClass::GetClassIdentifier  cls=TeamTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int TeamTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -194,7 +194,7 @@ int TeamTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x006F1E20  TriggerClass::EvaluateObjectForTrigger  cls=TriggerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F1E20  TriggerClass::EvaluateObjectForTrigger  cls=TriggerClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { bool TriggerClass::EvaluateObjectForTrigger(int a1, int a2) {
 {
       int queuedMission;
@@ -233,7 +233,7 @@ namespace gamemd { bool TriggerClass::EvaluateObjectForTrigger(int a1, int a2) {
 }
 } }
 
-// ==== BACKFILL 0x006F1F30  TeamTypeClass::FlashAllInstances  cls=TeamTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F1F30  TeamTypeClass::FlashAllInstances  cls=TeamTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int TeamTypeClass::FlashAllInstances(AnimClass * aP1)
 {
 {
@@ -252,7 +252,7 @@ int TeamTypeClass::FlashAllInstances(AnimClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x006F1F70  TeamTypeClass::FindFirstInstance  cls=TeamTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F1F70  TeamTypeClass::FindFirstInstance  cls=TeamTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int TeamTypeClass::FindFirstInstance()
 {
 {
@@ -274,19 +274,19 @@ int TeamTypeClass::FindFirstInstance()
 }
 }
 
-// ==== BACKFILL 0x006F20A0  TeamTypeClass::GetTypeIdentifier  cls=TeamTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F20A0  TeamTypeClass::GetTypeIdentifier  cls=TeamTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int TeamTypeClass::GetTypeIdentifier()
 {
 return 35;
 }
 
-// ==== BACKFILL 0x006F20B0  TeamTypeClass::GetObjectSize  cls=TeamTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F20B0  TeamTypeClass::GetObjectSize  cls=TeamTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int TeamTypeClass::GetObjectSize()
 {
 return 248;
 }
 
-// ==== BACKFILL 0x006F20D0  TeamTypeClass::ddtor  cls=TeamTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F20D0  TeamTypeClass::ddtor  cls=TeamTypeClass  sig=csp  renamed_refs=0  residual=- ====
 TeamTypeClass * TeamTypeClass::ddtor(char a2)
 {
     TeamTypeClass* v7 = this;
@@ -317,7 +317,7 @@ TeamTypeClass * TeamTypeClass::ddtor(char a2)
     return this;
 }
 
-// ==== BACKFILL 0x006F3D60  TechnoClass::GetTurretOffset  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F3D60  TechnoClass::GetTurretOffset  cls=TechnoClass  sig=csp  renamed_refs=0  residual=q005 ====
 namespace ra2 { namespace game { void* TechnoClass::GetTurretOffset(void* a1, int a2) {
 {
       int v4;
@@ -392,7 +392,7 @@ namespace ra2 { namespace game { void* TechnoClass::GetTurretOffset(void* a1, in
 }
 } } }
 
-// ==== BACKFILL 0x006F4500  TechnoClass::DTOR  cls=TechnoClass  sig=csp  renamed_refs=26 ====
+// ==== BACKFILL 0x006F4500  TechnoClass::DTOR  cls=TechnoClass  sig=csp  renamed_refs=20  residual=- ====
 int TechnoClass::DTOR()
 {
     PlanningTokenClass *v2 = this->planningToken;
@@ -470,20 +470,20 @@ int TechnoClass::DTOR()
     }
     AbstractClassVector::ddtor(&this->q470);
     void *v13 = this->attackedTargets;
-    if ( v13 && this->q465 )
+    if ( v13 && this->vecAbs_IsAllocated )
     {
         OperatorDelete(v13);
         this->attackedTargets = 0;
     }
-    this->q465 = 0;
+    this->vecAbs_IsAllocated = 0;
     this->audioController3 = 0;
-    void *v14 = this->q444;
-    if ( v14 && this->q44D )
+    void *v14 = this->vecInt_Items;
+    if ( v14 && this->vecInt_IsAllocated )
     {
         OperatorDelete(v14);
-        this->q444 = 0;
+        this->vecInt_Items = 0;
     }
-    this->q44D = 0;
+    this->vecInt_IsAllocated = 0;
     this->vecInt_Capacity = 0;
     void *v15 = this->flashing;
     if ( v15 && this->vecTechno_IsAllocated )
@@ -496,7 +496,7 @@ int TechnoClass::DTOR()
     return ObjectClass::Dtor(this);
 }
 
-// ==== BACKFILL 0x006F5EF0  DrawTacticalLine3D  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F5EF0  DrawTacticalLine3D  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
 {
 {
@@ -551,7 +551,7 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x006F6030  globalHelper_0F6030  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006F6030  globalHelper_0F6030  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_6F6030(int * a1, unsigned int * a2, int a3)
 {
 {
@@ -578,7 +578,17 @@ int sub_6F6030(int * a1, unsigned int * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x006FBFA0  TechnoClass::ExecuteMoveCommand  cls=TechnoClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x006F9DB0  TechnoClass::GetID  cls=TechnoClass  sig=csp  renamed_refs=1  residual=- ====
+int TechnoClass::GetID() const {
+return this->Owner->relatedTagsCount;
+}
+
+// ==== BACKFILL 0x006F9DC0  TechnoClass::GetTarget  cls=TechnoClass  sig=csp  renamed_refs=1  residual=- ====
+int TechnoClass::GetTarget() const {
+return this->Owner;
+}
+
+// ==== BACKFILL 0x006FBFA0  TechnoClass::ExecuteMoveCommand  cls=TechnoClass  sig=csp  renamed_refs=1  residual=- ====
 namespace ra2 { namespace game { int TechnoClass::ExecuteMoveCommand() {
 {
     ScreenCaptureCommandClass *result;
@@ -604,7 +614,7 @@ namespace ra2 { namespace game { int TechnoClass::ExecuteMoveCommand() {
 }
 } } }
 
-// ==== BACKFILL 0x006FC090  TechnoClass::Vt240Thunk  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006FC090  TechnoClass::Vt240Thunk  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int TechnoClass::Vt240Thunk() {
 {
       int v2;

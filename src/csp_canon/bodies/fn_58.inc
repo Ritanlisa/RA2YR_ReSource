@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00580B20  CellClass::updateLighting  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00580B20  CellClass::updateLighting  cls=CellClass  sig=csp  renamed_refs=0  residual=q002 ====
 namespace gamemd { bool CellClass::updateLighting() {
 {
       unsigned int v1;
@@ -20,7 +20,7 @@ namespace gamemd { bool CellClass::updateLighting() {
 }
 } }
 
-// ==== BACKFILL 0x00580B70  CellClass::applyTileDamage  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00580B70  CellClass::applyTileDamage  cls=CellClass  sig=csp  renamed_refs=0  residual=q002 ====
 namespace gamemd { bool CellClass::applyTileDamage() {
 {
       unsigned int v1;
@@ -38,7 +38,7 @@ namespace gamemd { bool CellClass::applyTileDamage() {
 }
 } }
 
-// ==== BACKFILL 0x00581F50  MapClass::BuildSubzones  cls=MapClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00581F50  MapClass::BuildSubzones  cls=MapClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * MapClass::BuildSubzones()
 {
 {
@@ -57,7 +57,7 @@ unsigned int * MapClass::BuildSubzones()
 }
 }
 
-// ==== BACKFILL 0x00583820  Pathfinding::CheckCliff  cls=Pathfinding  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00583820  Pathfinding::CheckCliff  cls=Pathfinding  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* Pathfinding::CheckCliff(void* a1, void* a2, int a3, int a4) {
 {
       unsigned int v5;
@@ -186,7 +186,7 @@ namespace gamemd { void* Pathfinding::CheckCliff(void* a1, void* a2, int a3, int
 }
 } }
 
-// ==== BACKFILL 0x005855A0  LayerClass::AssignCellOwnership  cls=LayerClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x005855A0  LayerClass::AssignCellOwnership  cls=LayerClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int LayerClass::AssignCellOwnership() {
 {
       _DWORD *v1;
@@ -246,7 +246,7 @@ namespace gamemd { int LayerClass::AssignCellOwnership() {
 }
 } }
 
-// ==== BACKFILL 0x00586360  Cell::IsPassable  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00586360  Cell::IsPassable  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 bool Cell::IsPassable(IUnknown * aP0)
 {
 {
@@ -298,7 +298,7 @@ bool Cell::IsPassable(IUnknown * aP0)
 }
 }
 
-// ==== BACKFILL 0x005864A0  FogOfWar_Get  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005864A0  FogOfWar_Get  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 bool FogOfWar_Get(IUnknown * aP0)
 {
 {
@@ -344,13 +344,13 @@ bool FogOfWar_Get(IUnknown * aP0)
 }
 }
 
-// ==== BACKFILL 0x005865E0  Game::Stub3  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005865E0  Game::Stub3  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char Game::Stub3(IUnknown * aP0)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x005865F0  CellClass::SpiralFindClosest  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005865F0  CellClass::SpiralFindClosest  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CellClass::SpiralFindClosest(IUnknown * aP0, MouseClass * aP1, IUnknown * aP2)
 {
 {
@@ -401,7 +401,7 @@ int CellClass::SpiralFindClosest(IUnknown * aP0, MouseClass * aP1, IUnknown * aP
 }
 }
 
-// ==== BACKFILL 0x00586990  LayerClass::Update_Pathfinding_2  cls=LayerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00586990  LayerClass::Update_Pathfinding_2  cls=LayerClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void LayerClass::Update_Pathfinding_2(int a1) {
 {
       IUnknown *v2;
@@ -467,7 +467,7 @@ namespace gamemd { void LayerClass::Update_Pathfinding_2(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00586E50  HouseClass::ClampToUsableCell  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00586E50  HouseClass::ClampToUsableCell  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* HouseClass::ClampToUsableCell(void* a1, void* a2) {
 {
       int v3;
@@ -555,7 +555,7 @@ namespace gamemd { void* HouseClass::ClampToUsableCell(void* a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x00588990  ScenarioClass::CalcMinShroudLevel  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00588990  ScenarioClass::CalcMinShroudLevel  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::CalcMinShroudLevel() {
 {
       int v1;
@@ -583,7 +583,7 @@ namespace gamemd { int ScenarioClass::CalcMinShroudLevel() {
 }
 } }
 
-// ==== BACKFILL 0x00588AC0  LayerClass::ClearFactoryCellAssignments  cls=LayerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00588AC0  LayerClass::ClearFactoryCellAssignments  cls=LayerClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int LayerClass::ClearFactoryCellAssignments() {
 {
       _DWORD *v1;
@@ -646,7 +646,7 @@ namespace gamemd { int LayerClass::ClearFactoryCellAssignments() {
 }
 } }
 
-// ==== BACKFILL 0x00588BF0  MapClass::Destru_vt04  cls=MapClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00588BF0  MapClass::Destru_vt04  cls=MapClass  sig=csp  renamed_refs=0  residual=- ====
 MapClass * MapClass::Destru_vt04(char a2)
 {
 {
@@ -657,7 +657,7 @@ MapClass * MapClass::Destru_vt04(char a2)
 }
 }
 
-// ==== BACKFILL 0x00588C10  CellClass::CopyNeighborData  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00588C10  CellClass::CopyNeighborData  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::CopyNeighborData(int a2) {
 {
     this->lightConvert = *(int *)(a2 + 16);
@@ -669,7 +669,7 @@ namespace gamemd { int CellClass::CopyNeighborData(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00588C40  CellClass::initCellData  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00588C40  CellClass::initCellData  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 _WORD *__thiscall CellClass::initCellData(_WORD *this, MouseClass *aP1)
 {
   *this += LOWORD(aP1->field_0); /*0x588c49*/
@@ -677,7 +677,7 @@ _WORD *__thiscall CellClass::initCellData(_WORD *this, MouseClass *aP1)
   return this; /*0x588c54*/
 }
 
-// ==== BACKFILL 0x00588C60  CellStruct::Sub  cls=CellStruct  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00588C60  CellStruct::Sub  cls=CellStruct  sig=csp  renamed_refs=0  residual=- ====
 IUnknown * CellStruct::Sub(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -696,24 +696,24 @@ IUnknown *__thiscall CellStruct::Sub(__int16 *this, IUnknown *aP1, IUnknown *aP2
 }
 }
 
-// ==== BACKFILL 0x00588C90  VectorClass::CleanupSubzone  cls=DynamicVector  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x00588C90  VectorClass::CleanupSubzone  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
 void VectorClass::CleanupSubzone()
 {
 {
     void *v2;
-    v2 = this->q004;
+    v2 = this->Items;
     this->DynamicVector_field_0x10 = 0;
     if ( v2 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v2);
-    this->q004 = (void*)(0);
+    this->Items = (void*)(0);
   }
     this->IsAllocated = 0;
     this->DynamicVector_field_0x8 = 0;
 }
 }
 
-// ==== BACKFILL 0x00588DE0  MapClass::initCellVectors  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00588DE0  MapClass::initCellVectors  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 unsigned int MapClass::initCellVectors(int a2)
 {
 {
@@ -724,7 +724,7 @@ unsigned int MapClass::initCellVectors(int a2)
 }
 }
 
-// ==== BACKFILL 0x00589060  MapClass::InitCellVe_vt00  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00589060  MapClass::InitCellVe_vt00  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 VectorClass * MapClass::InitCellVe_vt00(char a2)
 {
 {
@@ -744,7 +744,7 @@ VectorClass * MapClass::InitCellVe_vt00(char a2)
 }
 }
 
-// ==== BACKFILL 0x005894A0  MapClass::allocateCellArrays  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005894A0  MapClass::allocateCellArrays  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 void MapClass::allocateCellArrays()
 {
 {
@@ -758,7 +758,7 @@ void MapClass::allocateCellArrays()
 }
 }
 
-// ==== BACKFILL 0x005894D0  MapClass::FindSubzoneConnectionIndex  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005894D0  MapClass::FindSubzoneConnectionIndex  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 int MapClass::FindSubzoneConnectionIndex(unsigned short * a2)
 {
 {
@@ -780,7 +780,7 @@ int MapClass::FindSubzoneConnectionIndex(unsigned short * a2)
 }
 }
 
-// ==== BACKFILL 0x00589530  MapClass::initSubzoneData  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00589530  MapClass::initSubzoneData  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int MapClass::initSubzoneData(int a2)
 {
 {
@@ -791,7 +791,7 @@ unsigned int MapClass::initSubzoneData(int a2)
 }
 }
 
-// ==== BACKFILL 0x00589CE0  MapClass::InitCellVe_vt02  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00589CE0  MapClass::InitCellVe_vt02  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 char MapClass::InitCellVe_vt02(int a2, unsigned int * a3)
 {
 {
@@ -839,7 +839,7 @@ char MapClass::InitCellVe_vt02(int a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x00589D90  MapClass::InitCellVe_vt03  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00589D90  MapClass::InitCellVe_vt03  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 void MapClass::InitCellVe_vt03()
 {
 {
@@ -853,7 +853,7 @@ void MapClass::InitCellVe_vt03()
 }
 }
 
-// ==== BACKFILL 0x00589DC0  MapClass::InitCellVe_vt04  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00589DC0  MapClass::InitCellVe_vt04  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 int MapClass::InitCellVe_vt04(unsigned int * a2)
 {
 {
@@ -875,7 +875,7 @@ int MapClass::InitCellVe_vt04(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x00589E00  MapClass::InitCellVe_vt05  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00589E00  MapClass::InitCellVe_vt05  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int MapClass::InitCellVe_vt05(int a2)
 {
 {
@@ -886,7 +886,7 @@ unsigned int MapClass::InitCellVe_vt05(int a2)
 }
 }
 
-// ==== BACKFILL 0x0058AC70  VectorClass::ConstructSubzone  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0058AC70  VectorClass::ConstructSubzone  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * VectorClass::ConstructSubzone(int a2, int a3)
 {
 {
@@ -950,7 +950,7 @@ unsigned int * VectorClass::ConstructSubzone(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x0058AD10  VectorClass_USubzoneTrackingStruct::SetCapacity  cls=VectorClass_USubzoneTrackingStruct  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0058AD10  VectorClass_USubzoneTrackingStruct::SetCapacity  cls=VectorClass_USubzoneTrackingStruct  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * VectorClass_USubzoneTrackingStruct::SetCapacity(unsigned int * a2)
 {
 {
@@ -1015,7 +1015,7 @@ unsigned int * VectorClass_USubzoneTrackingStruct::SetCapacity(unsigned int * a2
 }
 }
 
-// ==== BACKFILL 0x0058ADB0  RadarClass::drawRadarTerrain  cls=RadarClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x0058ADB0  RadarClass::drawRadarTerrain  cls=RadarClass  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { void* RadarClass::drawRadarTerrain(int a1, int a2) {
 {
       int v4;
@@ -1083,7 +1083,7 @@ namespace gamemd { void* RadarClass::drawRadarTerrain(int a1, int a2) {
 }
 } }
 
-// ==== BACKFILL 0x0058AE60  RadarClass::RenderJammerRadius  cls=RadarClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0058AE60  RadarClass::RenderJammerRadius  cls=RadarClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { void* RadarClass::RenderJammerRadius(int a1, void* a2) {
 {
       _DWORD *v3;
@@ -1177,7 +1177,7 @@ namespace gamemd { void* RadarClass::RenderJammerRadius(int a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x0058AF80  RadarClass::drawRadarEvents  cls=RadarClass  sig=csp  renamed_refs=6 ====
+// ==== BACKFILL 0x0058AF80  RadarClass::drawRadarEvents  cls=RadarClass  sig=csp  renamed_refs=5  residual=- ====
 namespace gamemd { int RadarClass::drawRadarEvents(void* a1) {
 {
       int v3;
@@ -1193,7 +1193,7 @@ namespace gamemd { int RadarClass::drawRadarEvents(void* a1) {
       {
         if ( !this->q00D && v3 )
           return 0;
-        v4 = this->__pad_014;
+        v4 = this->q014;
         if ( v4 <= 0 || !this->vt2(v3 + v4, 0) )
           return 0;
       }
@@ -1210,7 +1210,7 @@ namespace gamemd { int RadarClass::drawRadarEvents(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x0058BB00  Map_Helper_58BB00  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0058BB00  Map_Helper_58BB00  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * sub_58BB00(unsigned int * a1, int a2)
 {
 {
@@ -1230,7 +1230,7 @@ unsigned int * sub_58BB00(unsigned int * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x0058BE20  sub_58BE20  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0058BE20  sub_58BE20  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_58BE20::sub_58BE20()
 {
 {
@@ -1257,7 +1257,7 @@ unsigned int * E4Recv_58BE20::sub_58BE20()
 }
 }
 
-// ==== BACKFILL 0x0058BEA0  sub_58BEA0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0058BEA0  sub_58BEA0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_58BEA0::sub_58BEA0()
 {
 {
@@ -1303,7 +1303,7 @@ unsigned int * E4Recv_58BEA0::sub_58BEA0()
 }
 }
 
-// ==== BACKFILL 0x0058C100  sub_58C100  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0058C100  sub_58C100  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void sub_58C100()
 {
 {
@@ -1352,7 +1352,7 @@ void sub_58C100()
 }
 }
 
-// ==== BACKFILL 0x0058C320  sub_58C320  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0058C320  sub_58C320  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_58C320::sub_58C320(unsigned int * a2)
 {
 {
@@ -1379,7 +1379,7 @@ unsigned int * E4Recv_58C320::sub_58C320(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x0058C3B0  sub_58C3B0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0058C3B0  sub_58C3B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_58C3B0::sub_58C3B0(unsigned int * a2)
 {
 {
@@ -1423,7 +1423,7 @@ unsigned int * E4Recv_58C3B0::sub_58C3B0(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x0058C4A0  sub_58C4A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0058C4A0  sub_58C4A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_58C4A0::sub_58C4A0(ObjectClass * aP1)
 {
 {
@@ -1466,7 +1466,7 @@ unsigned int * E4Recv_58C4A0::sub_58C4A0(ObjectClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0058C6F0  Memory_Helper_58C6F0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0058C6F0  Memory_Helper_58C6F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
 {
 {
@@ -1505,7 +1505,7 @@ double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
 }
 }
 
-// ==== BACKFILL 0x0058CE90  Map_Helper_58CE90  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0058CE90  Map_Helper_58CE90  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void sub_58CE90()
 {
 {
@@ -1569,7 +1569,7 @@ void sub_58CE90()
 }
 }
 
-// ==== BACKFILL 0x0058CF90  RandomMap::GenerateTerrainForAllCells  cls=RandomMap  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0058CF90  RandomMap::GenerateTerrainForAllCells  cls=RandomMap  sig=csp  renamed_refs=0  residual=- ====
 int RandomMap::GenerateTerrainForAllCells()
 {
 {
@@ -1605,7 +1605,7 @@ int RandomMap::GenerateTerrainForAllCells()
 }
 }
 
-// ==== BACKFILL 0x0058D070  SetLayerDataMap  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0058D070  SetLayerDataMap  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Map_SetLayerData(short * a1, int a2)
 {
 {
@@ -1619,7 +1619,7 @@ int Map_SetLayerData(short * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x0058D120  sub_58D120  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0058D120  sub_58D120  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_58D120::sub_58D120(int a2, int a3)
 {
 {

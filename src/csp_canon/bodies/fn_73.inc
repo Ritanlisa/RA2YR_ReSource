@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00730400  LoadingScreen::FreeResources  cls=LoadingScreen  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00730400  LoadingScreen::FreeResources  cls=LoadingScreen  sig=csp  renamed_refs=0  residual=- ====
 int LoadingScreen::FreeResources()
 {
 {
@@ -66,7 +66,7 @@ int LoadingScreen::FreeResources()
 }
 }
 
-// ==== BACKFILL 0x00730970  WinMainSetup_Setup_730970  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00730970  WinMainSetup_Setup_730970  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_730970()
 {
 {
@@ -80,7 +80,7 @@ int sub_730970()
 }
 }
 
-// ==== BACKFILL 0x007313A0  TacticalClass::ResetView  cls=TacticalClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007313A0  TacticalClass::ResetView  cls=TacticalClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TacticalClass::ResetView() {
 {
       int i;
@@ -123,19 +123,19 @@ namespace gamemd { int TacticalClass::ResetView() {
 }
 } }
 
-// ==== BACKFILL 0x00731CB0  Map_Handle_731CB0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00731CB0  Map_Handle_731CB0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_731CB0()
 {
 return 71;
 }
 
-// ==== BACKFILL 0x00731CC0  Map_Handle_731CC0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00731CC0  Map_Handle_731CC0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_731CC0()
 {
 return 22;
 }
 
-// ==== BACKFILL 0x00731D00  Selection::SetCurrent  cls=Selection  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00731D00  Selection::SetCurrent  cls=Selection  sig=csp  renamed_refs=0  residual=- ====
 void Selection::SetCurrent()
 {
 {
@@ -144,7 +144,7 @@ void Selection::SetCurrent()
 }
 }
 
-// ==== BACKFILL 0x00731D90  FillUnitTooltipUI  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00731D90  FillUnitTooltipUI  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * FillUnitTooltipUI(wchar_t * Destination, wchar_t * Source)
 {
 {
@@ -206,7 +206,7 @@ wchar_t * FillUnitTooltipUI(wchar_t * Destination, wchar_t * Source)
 }
 }
 
-// ==== BACKFILL 0x00732210  SelectFactionThemeMusic_Helper  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00732210  SelectFactionThemeMusic_Helper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_732210(int a1, const char * a2)
 {
 {
@@ -226,7 +226,7 @@ int sub_732210(int a1, const char * a2)
 }
 }
 
-// ==== BACKFILL 0x007325C0  sub_7325C0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007325C0  sub_7325C0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 BOOL E4Recv_7325C0::sub_7325C0()
 {
 {
@@ -235,7 +235,7 @@ BOOL E4Recv_7325C0::sub_7325C0()
 }
 }
 
-// ==== BACKFILL 0x00732600  PlayerClass::UpdateAIUnits  cls=PlayerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00732600  PlayerClass::UpdateAIUnits  cls=PlayerClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int PlayerClass::UpdateAIUnits() {
 {
       int HeightMap;
@@ -340,7 +340,7 @@ namespace gamemd { int PlayerClass::UpdateAIUnits() {
 }
 } }
 
-// ==== BACKFILL 0x00732C30  IDTechnoClassMatches  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00732C30  IDTechnoClassMatches  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char IDTechnoClassMatches(void * a1, int a2)
 {
 {
@@ -359,7 +359,7 @@ char IDTechnoClassMatches(void * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x00733160  AbstractClass::processRadarEvent  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00733160  AbstractClass::processRadarEvent  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void AbstractClass::processRadarEvent() {
 {
       int v2;
@@ -399,7 +399,7 @@ namespace ra2 { namespace game { void AbstractClass::processRadarEvent() {
 }
 } } }
 
-// ==== BACKFILL 0x00733C60  Object_Helper_733C60  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00733C60  Object_Helper_733C60  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL sub_733C60(int a1, const char * a2)
 {
 {
@@ -409,7 +409,7 @@ BOOL sub_733C60(int a1, const char * a2)
 }
 }
 
-// ==== BACKFILL 0x00734250  SidebarClass::registerBuildingType  cls=SidebarClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00734250  SidebarClass::registerBuildingType  cls=SidebarClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int SidebarClass::registerBuildingType() {
 {
       int result;
@@ -423,7 +423,7 @@ namespace gamemd { int SidebarClass::registerBuildingType() {
 }
 } }
 
-// ==== BACKFILL 0x00734270  Selection::ClearGlobals  cls=Selection  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00734270  Selection::ClearGlobals  cls=Selection  sig=csp  renamed_refs=0  residual=- ====
 int Selection::ClearGlobals()
 {
 {
@@ -449,35 +449,35 @@ int Selection::ClearGlobals()
 }
 }
 
-// ==== BACKFILL 0x007342D0  DynamicVector::Constructor_Techno  cls=DynamicVector  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x007342D0  DynamicVector::Constructor_Techno  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
 {
 {
-    this->q004 = 0;
+    this->Items = 0;
     this->DynamicVector_field_0x8 = a2;
-    this->__pad_00C = 1;
+    this->IsInitialized = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_TechnoClass;
     if ( a2 )
   {
     if ( a3 )
     {
-    this->q004 = a3;
+    this->Items = a3;
     }
     else
     {
-    this->q004 = __2_YAPAXI_Z(4 * a2);
+    this->Items = __2_YAPAXI_Z(4 * a2);
     this->IsAllocated = 1;
     }
   }
     *(void**)this = &vt_DynamicVectorClass_TechnoClass;
-    this->__pad_014 = 10;
+    this->CapacityIncrement = 10;
     this->DynamicVector_field_0x10 = 0;
     return this;
 }
 }
 
-// ==== BACKFILL 0x007343E0  TacticalClass::updateScroll  cls=TacticalClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007343E0  TacticalClass::updateScroll  cls=TacticalClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* TacticalClass::updateScroll(int a1, int a2) {
 {
       this->q004 = 0;
@@ -499,7 +499,7 @@ namespace gamemd { void* TacticalClass::updateScroll(int a1, int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00734FE0  WideMessageBox  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00734FE0  WideMessageBox  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int WideMessageBox(CampaignScore * aP0, const WCHAR * a1, LPCWCH lpWideCharStr, UINT uType)
 {
 {
@@ -511,7 +511,7 @@ int WideMessageBox(CampaignScore * aP0, const WCHAR * a1, LPCWCH lpWideCharStr, 
 }
 }
 
-// ==== BACKFILL 0x00735060  BulkCharToWide  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00735060  BulkCharToWide  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned char CharToWide_Bulk(unsigned short * a1, unsigned char * a2, int a3)
 {
 {
@@ -530,7 +530,7 @@ unsigned char CharToWide_Bulk(unsigned short * a1, unsigned char * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x00735090  CopyWideToChar  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00735090  CopyWideToChar  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void WideToChar_Copy(unsigned char * a1, char * a2, int a3)
 {
 {
@@ -549,7 +549,7 @@ void WideToChar_Copy(unsigned char * a1, char * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x007350C0  ToWideStringChar  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007350C0  ToWideStringChar  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * ToWideStringChar(IUnknown * aP0)
 {
 {
@@ -579,7 +579,7 @@ char * ToWideStringChar(IUnknown * aP0)
 }
 }
 
-// ==== BACKFILL 0x00736C10  sub_736C10  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00736C10  sub_736C10  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_736C10::sub_736C10()
 {
 {

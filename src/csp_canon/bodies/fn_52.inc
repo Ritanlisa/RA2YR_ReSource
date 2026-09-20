@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00520260  sub_520260  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00520260  sub_520260  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_520260::sub_520260()
 {
 {
@@ -26,7 +26,7 @@ char E4Recv_520260::sub_520260()
 }
 }
 
-// ==== BACKFILL 0x00521320  InfantryClass::GetIdleTimer  cls=InfantryClass  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x00521320  InfantryClass::GetIdleTimer  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryClass::GetIdleTimer()
 {
 {
@@ -67,7 +67,7 @@ int InfantryClass::GetIdleTimer()
                 {
                     if ( this->Type->UndeployDelay <= -1
                       && !this->Archive
-                      && this->missionStartTime + *(_DWORD *)(*((_DWORD *)g_RulesClass_Instance + 908) + 4 * this->q21C->memberAtOffset388) < dword_A8ED54 )
+                      && this->missionStartTime + *(_DWORD *)(*((_DWORD *)g_RulesClass_Instance + 908) + 4 * this->owner->memberAtOffset388) < dword_A8ED54 )
                     {
                         if ( !this->focus
                           || (v18 = this->GetExitCoords(v27),
@@ -125,9 +125,9 @@ int InfantryClass::GetIdleTimer()
             v10 = (__int16 *)this->GetCellCoords_Alt((CellStruct *)v26);
             v11 = CellCoord::To_CellObj((int *)DataGlobal_87F7E8, v10);
             (*(void (__thiscall **)(int *, void *))((int *)v9 + 968))(this, v11);
-            if ( !this->GetFireError((int *)this->q2B4, 1, 1) )
+            if ( !this->GetFireError((int *)this->target, 1, 1) )
             {
-                this->FireWeaponWithCleanup((int)this->q2B4, 1);
+                this->FireWeaponWithCleanup((int)this->target, 1);
                 this->AssignTarget_SyncLog(0);
                 this->ProcessDeployAction(29, 0, 0);
                 return *(int *)((char *)this->Type->Sequence + 1048);
@@ -471,7 +471,7 @@ retn
 */
 }
 
-// ==== BACKFILL 0x005216D0  InfantryClass::CanMoveFreely  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005216D0  InfantryClass::CanMoveFreely  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 bool InfantryClass::CanMoveFreely()
 {
     char result;
@@ -503,12 +503,12 @@ bool InfantryClass::CanMoveFreely()
     return result;
 }
 
-// ==== BACKFILL 0x00521760  InfantryClass::ParachuteTo  cls=InfantryClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00521760  InfantryClass::ParachuteTo  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryClass::ParachuteTo()
 {
     if (!(unsigned __int8)ObjectClass::ParachuteDrop(this))
         return 0;
-    if ((unsigned __int8)this->q21C->IsCurrentPlayer())
+    if ((unsigned __int8)this->owner->IsCurrentPlayer())
         this->queueMission(Mission::Guard, false);
     else
         this->queueMission(Mission::Hunt, false);
@@ -516,7 +516,7 @@ int InfantryClass::ParachuteTo()
     return 1;
 }
 
-// ==== BACKFILL 0x00521C90  InfantryClass::PowerDrainUpdate  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00521C90  InfantryClass::PowerDrainUpdate  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryClass::PowerDrainUpdate(int a2)
 {
     int v3;
@@ -602,13 +602,13 @@ retn    4
 */
 }
 
-// ==== BACKFILL 0x005220F0  InfantryClass::SetPermanentBerzerk  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005220F0  InfantryClass::SetPermanentBerzerk  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 void InfantryClass::SetPermanentBerzerk()
 {
 PermanentBerzerk = true;
 }
 
-// ==== BACKFILL 0x00522340  InfantryClass::CalculateApproachPath  cls=InfantryClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x00522340  InfantryClass::CalculateApproachPath  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 void InfantryClass::CalculateApproachPath(char a2)
 {
     int v3;
@@ -619,7 +619,7 @@ void InfantryClass::CalculateApproachPath(char a2)
     WeaponTypeClass* v9;
     int v10;
 
-    if ( this->q2B4 )
+    if ( this->target )
     {
         v3 = this->SequenceAnim;
         if ( v3 != 27 && v3 != 28 && v3 != 29 && v3 != 30 )
@@ -636,7 +636,7 @@ void InfantryClass::CalculateApproachPath(char a2)
                 if ( v6->DeployFire )
                 {
                     DeployFireWeapon = v6->DeployFireWeapon;
-                    v8 = this->ValidateTarget(this->q2B4, DeployFireWeapon);
+                    v8 = this->ValidateTarget(this->target, DeployFireWeapon);
                     v9 = this->SelectWeaponSlot(DeployFireWeapon)->WeaponType;
                     if ( v9 )
                     {
@@ -826,7 +826,7 @@ retn    4
 */
 }
 
-// ==== BACKFILL 0x005224D0  InfantryClass::IsBridgeRepairEnabled  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005224D0  InfantryClass::IsBridgeRepairEnabled  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 bool InfantryClass::IsBridgeRepairEnabled()
 // 0x5224d0
 {
@@ -839,35 +839,25 @@ retn
 */
 }
 
-// ==== BACKFILL 0x005224E0  TechnoClass::GetTypeFlag  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005224E0  TechnoClass::GetTypeFlag  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::GetTypeFlag() const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TechnoClass_GetTypeFlag(_DWORD *this)
-{
-  return *(_BYTE *)(*(this + 432) + 3784); /*0x5224ec*/
-}
+return this->q6C0->qEC8;
 }
 
-// ==== BACKFILL 0x005224F0  TechnoClass::updateTurretRotation  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005224F0  TechnoClass::updateTurretRotation  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { bool TechnoClass::updateTurretRotation() {
 {
     return *(int *)(*(this + 432) + 1732) > -1;
 }
 } } }
 
-// ==== BACKFILL 0x00522510  TechnoClass::IsMission27to30  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00522510  TechnoClass::IsMission27to30  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::IsMission27to30() const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall TechnoClass_IsMission27to30(_DWORD *this)
-{
-  int v1; // eax
-
-  v1 = *(this + 433); /*0x522510*/
-  return v1 == 27 || v1 == 28 || v1 == 29 || v1 == 30; /*0x52252c*/
-}
+int v1 = this->q6C4;
+return v1 == 27 || v1 == 28 || v1 == 29 || v1 == 30;
 }
 
-// ==== BACKFILL 0x00522540  sub_522540  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00522540  sub_522540  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_522540::sub_522540()
 {
 {
@@ -875,13 +865,13 @@ char E4Recv_522540::sub_522540()
 }
 }
 
-// ==== BACKFILL 0x00522640  InfantryClass::GetProductionLimit  cls=InfantryClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00522640  InfantryClass::GetProductionLimit  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryClass::GetProductionLimit()
 {
     int result;
     int v4;
 
-    if ( (unsigned __int8)HouseClass::IsAlliedWith(this->q21C, HouseClass_Player) && !a2 )
+    if ( (unsigned __int8)HouseClass::IsAlliedWith(this->owner, HouseClass_Player) && !a2 )
         return (int)this->Type;
     result = (int)this->disguiseAsType;
     if ( !result )
@@ -952,7 +942,7 @@ retn    4
 */
 }
 
-// ==== BACKFILL 0x00522780  InfantryClass::InitProductionLimits  cls=InfantryClass  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x00522780  InfantryClass::InitProductionLimits  cls=InfantryClass  sig=csp  renamed_refs=2  residual=- ====
 int InfantryClass::InitProductionLimits()
 {
     int result;
@@ -965,7 +955,7 @@ int InfantryClass::InitProductionLimits()
     result = (int)v1;
     if (*(_BYTE *)((char *)v1 + 3376))
     {
-        v2 = this->q21C;
+        v2 = this->owner;
         this->q1D8 = 1;
         this->isDisguisedFlag_as_house = v2;
         v3 = *(_DWORD *)((char *)v2 + 488);
@@ -992,7 +982,7 @@ int InfantryClass::InitProductionLimits()
     return result;
 }
 
-// ==== BACKFILL 0x005227F0  InfantryClass::CanAttackTarget  cls=InfantryClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x005227F0  InfantryClass::CanAttackTarget  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 bool InfantryClass::CanAttackTarget(HouseClass* other)
 {
     bool result;
@@ -1009,7 +999,7 @@ bool InfantryClass::CanAttackTarget(HouseClass* other)
         v8[0] = (short)(v3[0] / 256);
         v8[1] = (short)(v3[1] / 256);
         v4 = (CellClass*)CellCoord::To_CellObj((int*)DataGlobal_87F7E8, v8);
-        if ( !House::IsAlliedWith(this->q21C, other)
+        if ( !House::IsAlliedWith(this->owner, other)
           && !HouseClass::HasType(v4, other->relatedTagsCount) )
         {
             v5 = this->disguisedAsHouse;
@@ -1020,7 +1010,7 @@ bool InfantryClass::CanAttackTarget(HouseClass* other)
     return result;
 }
 
-// ==== BACKFILL 0x005228B0  ObjectClass::GetTypeVt40_0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005228B0  ObjectClass::GetTypeVt40_0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int ObjectClass_GetTypeVt40_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1031,7 +1021,7 @@ int __thiscall ObjectClass::GetTypeVt40_0(#377 *this)
 }
 }
 
-// ==== BACKFILL 0x005228C0  ObjectClass::GetTypeVt41_0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005228C0  ObjectClass::GetTypeVt41_0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int ObjectClass_GetTypeVt41_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1042,48 +1032,42 @@ int __thiscall ObjectClass::GetTypeVt41_0(#377 *this)
 }
 }
 
-// ==== BACKFILL 0x00522A50  nullsub_146  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00522A50  nullsub_146  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_146(int a1)
 {
   ;
 }
 
-// ==== BACKFILL 0x00522CB0  TechnoClass::IsEnteringOrCapturingStructure  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00522CB0  TechnoClass::IsEnteringOrCapturingStructure  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::IsEnteringOrCapturingStructure() const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_522CB0(_DWORD *this)
-{
-  int v1; // eax
-
-  v1 = *(this + 433); /*0x522cb0*/
-  return v1 == 11 /*0x522cea*/
-      || v1 == 12
-      || v1 == 13
-      || v1 == 14
-      || v1 == 15
-      || v1 == 34
-      || v1 == 35
-      || v1 == 36
-      || v1 == 20
-      || v1 == 21;
-}
+int missionState = this->q6C4;
+return missionState == 11
+    || missionState == 12
+    || missionState == 13
+    || missionState == 14
+    || missionState == 15
+    || missionState == 34
+    || missionState == 35
+    || missionState == 36
+    || missionState == 20
+    || missionState == 21;
 }
 
-// ==== BACKFILL 0x005232F0  InfantryClass::StubReturn1776  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005232F0  InfantryClass::StubReturn1776  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryClass::StubReturn1776()
 {
     // IDA: 0x5232F0 — vtable[12] stub, returns 1776
     return 1776;
 }
 
-// ==== BACKFILL 0x00523340  InfantryClass::StubReturn15  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00523340  InfantryClass::StubReturn15  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryClass::StubReturn15()
 {
     // IDA: 0x523340 — vtable[11] stub, returns 15
     return 15;
 }
 
-// ==== BACKFILL 0x00523370  InfantryClass::checkBridgeClearance  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00523370  InfantryClass::checkBridgeClearance  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* InfantryClass::checkBridgeClearance(int a2) {
 {
     int v3;
@@ -1100,7 +1084,7 @@ namespace gamemd { void* InfantryClass::checkBridgeClearance(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x005233A0  COMObject::SwapReference  cls=COMObject  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005233A0  COMObject::SwapReference  cls=COMObject  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* COMObject::SwapReference(int a2) {
 {
     int v3;
@@ -1117,7 +1101,7 @@ namespace gamemd { void* COMObject::SwapReference(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00523980  InfantryTypeClass::Constructor_523980  cls=InfantryTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00523980  InfantryTypeClass::Constructor_523980  cls=InfantryTypeClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1135,7 +1119,7 @@ _DWORD *__thiscall InfantryTypeClass::Constructor_523980(_DWORD *this, ObjectTyp
 }
 }
 
-// ==== BACKFILL 0x005239D0  InfantryTypeClass::DTOR  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005239D0  InfantryTypeClass::DTOR  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryTypeClass::DTOR()
 {
     // 4x vftable installs (this+0/4/8/12): compiler-generated vptr writes --
@@ -1180,7 +1164,7 @@ int InfantryTypeClass::DTOR()
     return TechnoTypeClass::DTOR(this);
 }
 
-// ==== BACKFILL 0x00523B10  InfantryTypeClass::ConstructInfantry  cls=InfantryTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00523B10  InfantryTypeClass::ConstructInfantry  cls=InfantryTypeClass  sig=csp  renamed_refs=0  residual=- ====
 InfantryClass * InfantryTypeClass::ConstructInfantry(AbstractClass * ppv)
 {
 {
@@ -1193,7 +1177,7 @@ InfantryClass * InfantryTypeClass::ConstructInfantry(AbstractClass * ppv)
 }
 }
 
-// ==== BACKFILL 0x00523C20  InfantryTypeClass::GetDimensions  cls=InfantryTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00523C20  InfantryTypeClass::GetDimensions  cls=InfantryTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int * InfantryTypeClass::GetDimensions(int a1)
 {
 {
@@ -1208,7 +1192,7 @@ int * InfantryTypeClass::GetDimensions(int a1)
 }
 }
 
-// ==== BACKFILL 0x00523C90  Factory::FindExitCellByName  cls=Factory  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00523C90  Factory::FindExitCellByName  cls=Factory  sig=csp  renamed_refs=0  residual=- ====
 int Factory::FindExitCellByName()
 {
 {
@@ -1229,7 +1213,7 @@ int Factory::FindExitCellByName()
 }
 }
 
-// ==== BACKFILL 0x00524760  InfantryTypeClass::GetDefaultDimensions  cls=InfantryTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00524760  InfantryTypeClass::GetDefaultDimensions  cls=InfantryTypeClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
 {
 {
@@ -1242,7 +1226,7 @@ unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x00524790  InfantryTypeClass::GetGameplayValue  cls=InfantryTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00524790  InfantryTypeClass::GetGameplayValue  cls=InfantryTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryTypeClass::GetGameplayValue()
 {
 {
@@ -1250,13 +1234,13 @@ int InfantryTypeClass::GetGameplayValue()
 }
 }
 
-// ==== BACKFILL 0x005247A0  InfantryTypeClass::StubReturnFalse  cls=InfantryTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005247A0  InfantryTypeClass::StubReturnFalse  cls=InfantryTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryTypeClass::StubReturnFalse()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x005247B0  InfantryTypeClass::j_?do_always_noconv_codecvt_base_std__MBE_NXZ_19  cls=InfantryTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005247B0  InfantryTypeClass::j_?do_always_noconv_codecvt_base_std__MBE_NXZ_19  cls=InfantryTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19()
 {
     bool __thiscall InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19(std::codecvt_base *(void**)this)
@@ -1265,7 +1249,7 @@ int InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19()
 }
 }
 
-// ==== BACKFILL 0x005247D0  InfantryTypeClass::ClampToGroundHeight  cls=InfantryTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005247D0  InfantryTypeClass::ClampToGroundHeight  cls=InfantryTypeClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * InfantryTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
 {
 {
@@ -1288,7 +1272,7 @@ unsigned int * InfantryTypeClass::ClampToGroundHeight(unsigned int * a1, int * a
 }
 }
 
-// ==== BACKFILL 0x00524840  InfantryTypeClass::PowerDrainUpdate  cls=InfantryTypeClass  sig=csp  renamed_refs=17 ====
+// ==== BACKFILL 0x00524840  InfantryTypeClass::PowerDrainUpdate  cls=InfantryTypeClass  sig=csp  renamed_refs=17  residual=- ====
 int InfantryTypeClass::PowerDrainUpdate(int * a2)
 {
 {
@@ -1336,7 +1320,7 @@ int InfantryTypeClass::PowerDrainUpdate(int * a2)
 }
 }
 
-// ==== BACKFILL 0x00524C70  InfantryTypeClass::GetClassIdentifier  cls=InfantryTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00524C70  InfantryTypeClass::GetClassIdentifier  cls=InfantryTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -1348,19 +1332,19 @@ int InfantryTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x00524D40  InfantryTypeClass::GetTypeIdentifier  cls=InfantryTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00524D40  InfantryTypeClass::GetTypeIdentifier  cls=InfantryTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryTypeClass::GetTypeIdentifier()
 {
 return 16;
 }
 
-// ==== BACKFILL 0x00524D50  InfantryTypeClass::GetObjectSize  cls=InfantryTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00524D50  InfantryTypeClass::GetObjectSize  cls=InfantryTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryTypeClass::GetObjectSize()
 {
 return 3792;
 }
 
-// ==== BACKFILL 0x00524D60  InfantryTypeClass::GetAuxField  cls=InfantryTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00524D60  InfantryTypeClass::GetAuxField  cls=InfantryTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryTypeClass::GetAuxField()
 {
 {
@@ -1368,7 +1352,7 @@ int InfantryTypeClass::GetAuxField()
 }
 }
 
-// ==== BACKFILL 0x00524D70  InfantryTypeClass::ddtor  cls=InfantryTypeClass  sig=csp  renamed_refs=8 ====
+// ==== BACKFILL 0x00524D70  InfantryTypeClass::ddtor  cls=InfantryTypeClass  sig=csp  renamed_refs=2  residual=- ====
 InfantryTypeClass * InfantryTypeClass::ddtor(char a2)
 {
     InfantryTypeClass* v7 = this;
@@ -1387,30 +1371,30 @@ InfantryTypeClass * InfantryTypeClass::ddtor(char a2)
     }
     OperatorDelete(blk->qE3C);
     blk->qE3C = nullptr;
-    void *v3 = blk->qE8C;
+    void *v3 = blk->VoiceComment_Items;
     blk->VoiceComment_Base = nullptr;
     if ( v3 && blk->VoiceComment_FlagByte )
     {
         OperatorDelete(v3);
-        blk->qE8C = nullptr;
+        blk->VoiceComment_Items = nullptr;
     }
     blk->VoiceComment_FlagByte = 0;
     blk->VoiceComment_Capacity = 0;
-    void *v4 = blk->qE70;
+    void *v4 = blk->DeathAnims_Items;
     blk->DeathAnims_Base = nullptr;
     if ( v4 && blk->DeathAnims_FlagByte )
     {
         OperatorDelete(v4);
-        blk->qE70 = nullptr;
+        blk->DeathAnims_Items = nullptr;
     }
     blk->DeathAnims_FlagByte = 0;
     blk->DeathAnims_Capacity = 0;
-    void *v5 = blk->qE54;
+    void *v5 = blk->DeadBodies_Items;
     blk->DeadBodies_Base = nullptr;
     if ( v5 && blk->DeadBodies_FlagByte )
     {
         OperatorDelete(v5);
-        blk->qE54 = nullptr;
+        blk->DeadBodies_Items = nullptr;
     }
     blk->DeadBodies_FlagByte = 0;
     blk->DeadBodies_Capacity = 0;
@@ -1420,7 +1404,7 @@ InfantryTypeClass * InfantryTypeClass::ddtor(char a2)
     return this;
 }
 
-// ==== BACKFILL 0x00524EC0  ??0Iostream_init_QAE_XZ_4  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00524EC0  ??0Iostream_init_QAE_XZ_4  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 Iostream_init * E4Recv_524EC0::__0Iostream_init_QAE_XZ_4()
 {
 {
@@ -1428,7 +1412,7 @@ Iostream_init * E4Recv_524EC0::__0Iostream_init_QAE_XZ_4()
 }
 }
 
-// ==== BACKFILL 0x00524FC0  WarheadTypeClass::QueryInterface  cls=TypeList  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00524FC0  WarheadTypeClass::QueryInterface  cls=TypeList  sig=csp  renamed_refs=0  residual=- ====
 TypeList * WarheadTypeClass::QueryInterface(char a2)
 {
 {
@@ -1448,7 +1432,7 @@ TypeList * WarheadTypeClass::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x00525060  VectorClass::CopyDefault  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00525060  VectorClass::CopyDefault  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * VectorClass::CopyDefault(VectorClass * aP1)
 {
 if ( this == aP1 )
@@ -1480,7 +1464,7 @@ while ( i < this->Capacity );
 return (unsigned int *)this;
 }
 
-// ==== BACKFILL 0x00525250  DynamicVectorClass::AnimTypeConstructor  cls=DynamicVectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00525250  DynamicVectorClass::AnimTypeConstructor  cls=DynamicVectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * DynamicVectorClass::AnimTypeConstructor(DynamicVector * aP1, DynamicVector * aP2)
 {
 {
@@ -1508,7 +1492,7 @@ unsigned int * DynamicVectorClass::AnimTypeConstructor(DynamicVector * aP1, Dyna
 }
 }
 
-// ==== BACKFILL 0x005253B0  DynamicVector::Add_Alt4  cls=DynamicVector  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x005253B0  DynamicVector::Add_Alt4  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
 char DynamicVector::Add_Alt4(VectorClass * aP1)
 {
 {
@@ -1521,19 +1505,19 @@ char DynamicVector::Add_Alt4(VectorClass * aP1)
   {
     if ( !this->IsAllocated && v3 )
     return 0;
-    v4 = this->__pad_014;
+    v4 = this->CapacityIncrement;
     if ( v4 <= 0 || !this->SetCapacity((char *)(v3) + v4, 0) )
     return 0;
   }
     v6 = this->DynamicVector_field_0x10;
-    v7 = (VectorClass *)this->q004;
+    v7 = (VectorClass *)this->Items;
     this->DynamicVector_field_0x10 = v6 + 1;
-    *(int *)&v7->__pad_000[4 * v6] = *(int *)aP1->__pad_000;
+    *(int *)&v7->vtable1[4 * v6] = *(int *)aP1->vtable1;
     return 1;
 }
 }
 
-// ==== BACKFILL 0x005255F0  TypeList::AnimTypeCopy  cls=TypeList  sig=csp  renamed_refs=15 ====
+// ==== BACKFILL 0x005255F0  TypeList::AnimTypeCopy  cls=TypeList  sig=csp  renamed_refs=1  residual=- ====
 unsigned int * TypeList::AnimTypeCopy(VectorClass * aP1)
 {
 {
@@ -1541,50 +1525,50 @@ unsigned int * TypeList::AnimTypeCopy(VectorClass * aP1)
     int v4;
     int v5;
     int v6;
-    this->q004 = 0;
-    this->q008 = 0;
-    this->q00C = 1;
+    this->Items = 0;
+    this->Capacity = 0;
+    this->IsInitialized = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_AnimTypeClass_const;
     if ( this != (int *)aP1 )
   {
     DynamicVectorClass::Destroy_Alt((int)this);
-    v3 = aP1->q008;
-    this->q008 = v3;
+    v3 = aP1->Capacity;
+    this->Capacity = v3;
     if ( v3 )
     {
     v4 = __2_YAPAXI_Z(4 * v3);
-    this->q004 = v4;
+    this->Items = v4;
     if ( v4 )
       {
-    v5 = this->q008;
+    v5 = this->Capacity;
     v6 = 0;
     this->IsAllocated = 1;
     if ( v5 > 0 )
         {
     do
           {
-    *(int *)(this->q004 + 4 * v6) = *((int *)aP1->q004 + v6);
+    *(int *)(this->Items + 4 * v6) = *((int *)aP1->Items + v6);
     ++v6;
           }
-    while ( v6 < this->q008 );
+    while ( v6 < this->Capacity );
         }
       }
     }
     else
     {
-    this->q004 = 0;
+    this->Items = 0;
     this->IsAllocated = 0;
     }
   }
-    this->q010 = aP1[1].vtable1;
-    this->q014 = aP1[1].q004;
+    this->Count = aP1[1].vtable1;
+    this->CapacityIncrement = aP1[1].Items;
     *(void**)this = &vt_TypeList_AnimTypeClass_const;
     return this;
 }
 }
 
-// ==== BACKFILL 0x005257C0  INIClass::ClearSection  cls=INIClass  sig=csp  renamed_refs=9 ====
+// ==== BACKFILL 0x005257C0  INIClass::ClearSection  cls=INIClass  sig=csp  renamed_refs=9  residual=- ====
 namespace gamemd { int INIClass::ClearSection(int a1, void* a2) {
 {
       INIClass *v3;
@@ -1710,7 +1694,7 @@ namespace gamemd { int INIClass::ClearSection(int a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x00526420  INIClass::SaveToPipe  cls=INIClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00526420  INIClass::SaveToPipe  cls=INIClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int INIClass::SaveToPipe(int a1) {
 {
       int v2;
@@ -1730,7 +1714,7 @@ namespace gamemd { int INIClass::SaveToPipe(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00526950  sub_526950  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00526950  sub_526950  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_526950::sub_526950()
 {
 {
@@ -1738,7 +1722,7 @@ int E4Recv_526950::sub_526950()
 }
 }
 
-// ==== BACKFILL 0x00526B00  INIClass::ResetSection  cls=INIClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00526B00  INIClass::ResetSection  cls=INIClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int INIClass::ResetSection() {
 {
       this->headNode = 0;
@@ -1747,7 +1731,7 @@ namespace gamemd { int INIClass::ResetSection() {
 }
 } }
 
-// ==== BACKFILL 0x00526CC0  INIClass::GetStringByIndex  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00526CC0  INIClass::GetStringByIndex  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2)
 {
 {
@@ -1797,7 +1781,7 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2)
 }
 }
 
-// ==== BACKFILL 0x00526E80  INIClass::ReadBase64Data  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00526E80  INIClass::ReadBase64Data  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::ReadBase64Data(void* a1, int a2, int a3) {
 {
       INIClass *v5;
@@ -1838,7 +1822,7 @@ namespace gamemd { int INIClass::ReadBase64Data(void* a1, int a2, int a3) {
 }
 } }
 
-// ==== BACKFILL 0x005271C0  INIClass::ReadIntList2  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005271C0  INIClass::ReadIntList2  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::ReadIntList2(void* a1, void* a2) {
 {
     char *v4;
@@ -1888,7 +1872,7 @@ namespace gamemd { int INIClass::ReadIntList2(void* a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x005275C0  INIClass::SetInt  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005275C0  INIClass::SetInt  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::SetInt(void* aP1, void* aP2, int aP3, int a5) {
 {
       ObjectClass *v7;
@@ -1910,7 +1894,7 @@ namespace gamemd { int INIClass::SetInt(void* aP1, void* aP2, int aP3, int a5) {
 }
 } }
 
-// ==== BACKFILL 0x00527640  INIClass::SetIntFormat  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00527640  INIClass::SetIntFormat  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::SetIntFormat(void* a1, void* aP2, int a4, int aP4) {
 {
       INIClass *v6;
@@ -1936,7 +1920,7 @@ namespace gamemd { int INIClass::SetIntFormat(void* a1, void* aP2, int a4, int a
 }
 } }
 
-// ==== BACKFILL 0x005278F0  INIClass::ReadInt  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005278F0  INIClass::ReadInt  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int INIClass::ReadInt(ObjectClass * aP1, ReferenceCounted * aP2, INIClass * aP3)
 {
 {
@@ -1948,7 +1932,7 @@ int INIClass::ReadInt(ObjectClass * aP1, ReferenceCounted * aP2, INIClass * aP3)
 }
 }
 
-// ==== BACKFILL 0x00527B90  INIClass::ReadDouble  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00527B90  INIClass::ReadDouble  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::ReadDouble(void* a1, void* a2, void* a3) {
 {
     LPOLESTR lpsz;
@@ -1962,7 +1946,7 @@ namespace gamemd { int INIClass::ReadDouble(void* a1, void* a2, void* a3) {
 }
 } }
 
-// ==== BACKFILL 0x00527C10  INIClass::SetRect  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00527C10  INIClass::SetRect  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::SetRect(void* a1, void* a2, void* a3) {
 {
     INIClass Buffer;
@@ -1971,7 +1955,7 @@ namespace gamemd { int INIClass::SetRect(void* a1, void* a2, void* a3) {
 }
 } }
 
-// ==== BACKFILL 0x00527C60  INIClass::ReadFloat  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00527C60  INIClass::ReadFloat  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::ReadFloat(void* a1, void* a2, void* a3) {
 {
     INIClass *v5;
@@ -1984,7 +1968,7 @@ namespace gamemd { int INIClass::ReadFloat(void* a1, void* a2, void* a3) {
 }
 } }
 
-// ==== BACKFILL 0x00528170  INIClass::ReadDouble3  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00528170  INIClass::ReadDouble3  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::ReadDouble3(void* a1, void* a2, int a3) {
 {
     INIClass Buffer[8];
@@ -1993,7 +1977,7 @@ namespace gamemd { int INIClass::ReadDouble3(void* a1, void* a2, int a3) {
 }
 } }
 
-// ==== BACKFILL 0x005281C0  INIClass::ReadDouble2  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005281C0  INIClass::ReadDouble2  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::ReadDouble2(void* a1, void* a2, int a3) {
 {
     INIClass *v5;
@@ -2006,7 +1990,7 @@ namespace gamemd { int INIClass::ReadDouble2(void* a1, void* a2, int a3) {
 }
 } }
 
-// ==== BACKFILL 0x005285B0  INIClass::SetDouble  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005285B0  INIClass::SetDouble  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::SetDouble(void* a1, void* a2, double a3) {
 {
     INIClass Buffer[8];
@@ -2015,7 +1999,7 @@ namespace gamemd { int INIClass::SetDouble(void* a1, void* a2, double a3) {
 }
 } }
 
-// ==== BACKFILL 0x00528600  INIClass::GetString2  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00528600  INIClass::GetString2  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::GetString2(void* a1, void* a2, double a3) {
 {
     INIClass *v5;
@@ -2028,7 +2012,7 @@ namespace gamemd { int INIClass::GetString2(void* a1, void* a2, double a3) {
 }
 } }
 
-// ==== BACKFILL 0x005289E0  INIClass::SetStringOrEmpty  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005289E0  INIClass::SetStringOrEmpty  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::SetStringOrEmpty(void* a1, void* a2, void* a3) {
 {
     INIClass *v5;
@@ -2041,7 +2025,7 @@ namespace gamemd { int INIClass::SetStringOrEmpty(void* a1, void* a2, void* a3) 
 }
 } }
 
-// ==== BACKFILL 0x00528E00  INIClass::SetWideAsHex  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00528E00  INIClass::SetWideAsHex  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::SetWideAsHex(void* a1, void* a2, void* a3) {
 {
     char v4;
@@ -2075,7 +2059,7 @@ namespace gamemd { int INIClass::SetWideAsHex(void* a1, void* a2, void* a3) {
 }
 } }
 
-// ==== BACKFILL 0x00529560  INIClass::SetBool  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00529560  INIClass::SetBool  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::SetBool(void* a1, void* a2, int a3) {
 {
     if ( (char)a3 )
@@ -2085,7 +2069,7 @@ namespace gamemd { int INIClass::SetBool(void* a1, void* a2, int a3) {
 }
 } }
 
-// ==== BACKFILL 0x005295A0  INIClass::ReadBool3  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005295A0  INIClass::ReadBool3  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::ReadBool3(void* a1, void* a2, int a3) {
 {
     INIClass *v5;
@@ -2099,7 +2083,7 @@ namespace gamemd { int INIClass::ReadBool3(void* a1, void* a2, int a3) {
 }
 } }
 
-// ==== BACKFILL 0x005297E0  INIEntry::Write2Integers  cls=INIEntry  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005297E0  INIEntry::Write2Integers  cls=INIEntry  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIEntry::Write2Integers(void* a1, void* a2, void* a3) {
 {
     char Buffer[56];
@@ -2108,7 +2092,7 @@ namespace gamemd { int INIEntry::Write2Integers(void* a1, void* a2, void* a3) {
 }
 } }
 
-// ==== BACKFILL 0x00529820  INIClass::GetInt  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00529820  INIClass::GetInt  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 char INIClass::GetInt(char ** a2, char ** a3, unsigned int * a4)
 {
 {
@@ -2122,7 +2106,7 @@ char INIClass::GetInt(char ** a2, char ** a3, unsigned int * a4)
 }
 }
 
-// ==== BACKFILL 0x00529BF0  INIClass::ReadCoord3  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00529BF0  INIClass::ReadCoord3  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::ReadCoord3(void* a1, void* a2, void* a3) {
 {
     char Buffer[56];
@@ -2131,7 +2115,7 @@ namespace gamemd { int INIClass::ReadCoord3(void* a1, void* a2, void* a3) {
 }
 } }
 
-// ==== BACKFILL 0x00529C40  INIClass::ReadCoord2  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00529C40  INIClass::ReadCoord2  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::ReadCoord2(void* a1, void* a2, void* a3) {
 {
     INIClass *v5;
@@ -2144,7 +2128,7 @@ namespace gamemd { int INIClass::ReadCoord2(void* a1, void* a2, void* a3) {
 }
 } }
 
-// ==== BACKFILL 0x0052A040  INIClass::ReadBool2  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052A040  INIClass::ReadBool2  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::ReadBool2(void* a1, void* a2, void* a3) {
 {
     char Buffer[56];
@@ -2153,7 +2137,7 @@ namespace gamemd { int INIClass::ReadBool2(void* a1, void* a2, void* a3) {
 }
 } }
 
-// ==== BACKFILL 0x0052A0A0  INIClass::ReadBool  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052A0A0  INIClass::ReadBool  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::ReadBool(void* a1, void* a2, void* a3) {
 {
     INIClass *v5;
@@ -2166,7 +2150,7 @@ namespace gamemd { int INIClass::ReadBool(void* a1, void* a2, void* a3) {
 }
 } }
 
-// ==== BACKFILL 0x0052A610  sub_52A610  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052A610  sub_52A610  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_52A610::sub_52A610(void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -2184,7 +2168,7 @@ char __thiscall sub_52A610(char *this, void *a2)
 }
 }
 
-// ==== BACKFILL 0x0052A940  INIClass::SaveTimeField  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052A940  INIClass::SaveTimeField  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::SaveTimeField(void* a1, void* a2, int a3) {
 {
     char Buffer[32];
@@ -2193,7 +2177,7 @@ namespace gamemd { int INIClass::SaveTimeField(void* a1, void* a2, int a3) {
 }
 } }
 
-// ==== BACKFILL 0x0052AAF0  sub_52AAF0  cls=INIEntry@INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052AAF0  sub_52AAF0  cls=INIEntry@INIClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_52AAF0::sub_52AAF0()
 {
 {
@@ -2243,7 +2227,7 @@ void E4Recv_52AAF0::sub_52AAF0()
 }
 }
 
-// ==== BACKFILL 0x0052AD50  WarheadTypeClass::parseModifiers  cls=WarheadTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052AD50  WarheadTypeClass::parseModifiers  cls=WarheadTypeClass  sig=csp  renamed_refs=0  residual=- ====
 void * WarheadTypeClass::parseModifiers(char a2)
 {
 {
@@ -2296,7 +2280,7 @@ void * WarheadTypeClass::parseModifiers(char a2)
 }
 }
 
-// ==== BACKFILL 0x0052AE00  WarheadTypeClass::parseAnimations  cls=WarheadTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052AE00  WarheadTypeClass::parseAnimations  cls=WarheadTypeClass  sig=csp  renamed_refs=0  residual=- ====
 WarheadTypeClass * WarheadTypeClass::parseAnimations(char a2)
 {
 {
@@ -2307,7 +2291,7 @@ WarheadTypeClass * WarheadTypeClass::parseAnimations(char a2)
 }
 }
 
-// ==== BACKFILL 0x0052AE20  Delegate::Constructor_GenericNode  cls=GenericNode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052AE20  Delegate::Constructor_GenericNode  cls=GenericNode  sig=csp  renamed_refs=0  residual=- ====
 GenericNode * Delegate::Constructor_GenericNode(char a2)
 {
 {
@@ -2335,7 +2319,7 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
 }
 }
 
-// ==== BACKFILL 0x0052AE70  Delegate::ClearVectorAndStraw  cls=CacheStraw  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052AE70  Delegate::ClearVectorAndStraw  cls=CacheStraw  sig=csp  renamed_refs=0  residual=- ====
 int * Delegate::ClearVectorAndStraw(char a2)
 {
 {
@@ -2347,7 +2331,7 @@ int * Delegate::ClearVectorAndStraw(char a2)
 }
 }
 
-// ==== BACKFILL 0x0052AEA0  Delegate::DestroyStraw  cls=Base64Straw  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052AEA0  Delegate::DestroyStraw  cls=Base64Straw  sig=csp  renamed_refs=0  residual=- ====
 int * Delegate::DestroyStraw(char a2)
 {
 {
@@ -2358,7 +2342,7 @@ int * Delegate::DestroyStraw(char a2)
 }
 }
 
-// ==== BACKFILL 0x0052AEE0  Delegate::DestroyPipe  cls=Base64Pipe  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052AEE0  Delegate::DestroyPipe  cls=Base64Pipe  sig=csp  renamed_refs=0  residual=- ====
 int * Delegate::DestroyPipe(char a2)
 {
 {
@@ -2369,7 +2353,7 @@ int * Delegate::DestroyPipe(char a2)
 }
 }
 
-// ==== BACKFILL 0x0052AF50  INIClass::sectionExists  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052AF50  INIClass::sectionExists  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* INIClass::sectionExists() {
 {
       _DWORD *result;
@@ -2415,7 +2399,7 @@ namespace gamemd { void* INIClass::sectionExists() {
 }
 } }
 
-// ==== BACKFILL 0x0052B080  INIClass::getValue  cls=INIClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0052B080  INIClass::getValue  cls=INIClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { void* INIClass::getValue() {
 {
       *this = 0;
@@ -2427,7 +2411,7 @@ namespace gamemd { void* INIClass::getValue() {
 }
 } }
 
-// ==== BACKFILL 0x0052B4D0  INIClass::deleteKey  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052B4D0  INIClass::deleteKey  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 bool __thiscall INIClass::deleteKey(_DWORD *this, ObjectClass *aP1)
 {
   _DWORD *v2; // eax
@@ -2436,7 +2420,7 @@ bool __thiscall INIClass::deleteKey(_DWORD *this, ObjectClass *aP1)
   return v2 && *v2 == *(_DWORD *)aP1->__pad_0; /*0x52b4e3*/
 }
 
-// ==== BACKFILL 0x0052B570  INIClass::mergeSection  cls=INIClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0052B570  INIClass::mergeSection  cls=INIClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int INIClass::mergeSection(int a1) {
 {
       char *v3;
@@ -2465,7 +2449,7 @@ namespace gamemd { int INIClass::mergeSection(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0052B9B0  BINK::Background_Setup  cls=BINK  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052B9B0  BINK::Background_Setup  cls=BINK  sig=csp  renamed_refs=0  residual=- ====
 HWND BINK::Background_Setup()
 {
 {
@@ -2496,7 +2480,7 @@ HWND BINK::Background_Setup()
 }
 }
 
-// ==== BACKFILL 0x0052D430  ReadModConfigINI  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052D430  ReadModConfigINI  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 INT_PTR ReadModConfigINI(HWND hDlg, UINT a2, WPARAM a3, int * a4)
 {
 {
@@ -2549,7 +2533,7 @@ INT_PTR ReadModConfigINI(HWND hDlg, UINT a2, WPARAM a3, int * a4)
 }
 }
 
-// ==== BACKFILL 0x0052D790  sub_52D790  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0052D790  sub_52D790  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_52D790(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 {

@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00534DE0  ReleaseLoadingResources  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00534DE0  ReleaseLoadingResources  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char ReleaseLoadingResources()
 {
 {
@@ -24,7 +24,7 @@ char ReleaseLoadingResources()
 }
 }
 
-// ==== BACKFILL 0x00535A60  BufferIOFileClass::Destruct  cls=BufferIOFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535A60  BufferIOFileClass::Destruct  cls=BufferIOFileClass  sig=csp  renamed_refs=0  residual=- ====
 int BufferIOFileClass::Destruct()
 {
 {
@@ -33,13 +33,13 @@ int BufferIOFileClass::Destruct()
 }
 }
 
-// ==== BACKFILL 0x00535BD0  CreateTeamCommand::Stub  cls=CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535BD0  CreateTeamCommand::Stub  cls=CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char CreateTeamCommand::Stub(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00535BE0  Map::IsCellFlag  cls=CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535BE0  Map::IsCellFlag  cls=CommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int Map::IsCellFlag(int a1)
 {
 {
@@ -47,13 +47,13 @@ unsigned int Map::IsCellFlag(int a1)
 }
 }
 
-// ==== BACKFILL 0x00535BF0  CreateTeamCommand::Do  cls=CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535BF0  CreateTeamCommand::Do  cls=CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char CreateTeamCommand::Do(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00535C00  CreateTeamCommand::Construct  cls=CreateTeamCommand  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00535C00  CreateTeamCommand::Construct  cls=CreateTeamCommand  sig=csp  renamed_refs=1  residual=- ====
 unsigned int * CreateTeamCommand::Construct(int a2)
 {
 {
@@ -63,7 +63,7 @@ unsigned int * CreateTeamCommand::Construct(int a2)
 }
 }
 
-// ==== BACKFILL 0x00535C20  CreateTeamCommand::AddRef  cls=CreateTeamCommand  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00535C20  CreateTeamCommand::AddRef  cls=CreateTeamCommand  sig=csp  renamed_refs=1  residual=- ====
 ObjectClass * CreateTeamCommand::AddRef()
 {
 {
@@ -72,7 +72,7 @@ ObjectClass * CreateTeamCommand::AddRef()
 }
 }
 
-// ==== BACKFILL 0x00535C40  CreateTeamCommand::Release  cls=CreateTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535C40  CreateTeamCommand::Release  cls=CreateTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::Release()
 {
 {
@@ -85,7 +85,7 @@ wchar_t * CreateTeamCommand::Release()
 }
 }
 
-// ==== BACKFILL 0x00535C70  CreateTeamCommand::ddtor  cls=CreateTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535C70  CreateTeamCommand::ddtor  cls=CreateTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::ddtor()
 {
 {
@@ -93,7 +93,7 @@ wchar_t * CreateTeamCommand::ddtor()
 }
 }
 
-// ==== BACKFILL 0x00535C90  CreateTeamCommand::Read  cls=CreateTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535C90  CreateTeamCommand::Read  cls=CreateTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::Read()
 {
 {
@@ -106,7 +106,7 @@ wchar_t * CreateTeamCommand::Read()
 }
 }
 
-// ==== BACKFILL 0x00535CC0  CreateTeamCommand::Undo  cls=CreateTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535CC0  CreateTeamCommand::Undo  cls=CreateTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 void CreateTeamCommand::Undo(int a2)
 {
 {
@@ -114,7 +114,7 @@ void CreateTeamCommand::Undo(int a2)
 }
 }
 
-// ==== BACKFILL 0x00535CD0  CreateTeamCommand::performAction_0  cls=CreateTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535CD0  CreateTeamCommand::performAction_0  cls=CreateTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 CreateTeamCommand * CreateTeamCommand::performAction_0(char a2)
 {
 {
@@ -125,7 +125,7 @@ CreateTeamCommand * CreateTeamCommand::performAction_0(char a2)
 }
 }
 
-// ==== BACKFILL 0x00535D00  CreateTeamCommand::performAction_1  cls=CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535D00  CreateTeamCommand::performAction_1  cls=CommandClass  sig=csp  renamed_refs=0  residual=- ====
 CommandClass * CreateTeamCommand::performAction_1(char a2)
 {
 {
@@ -136,7 +136,7 @@ CommandClass * CreateTeamCommand::performAction_1(char a2)
 }
 }
 
-// ==== BACKFILL 0x00535D20  CreateTeamCommand::performAction_2  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535D20  CreateTeamCommand::performAction_2  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_2()
 {
 {
@@ -144,7 +144,7 @@ char * CreateTeamCommand::performAction_2()
 }
 }
 
-// ==== BACKFILL 0x00535D30  CreateTeamCommand::performAction_3  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535D30  CreateTeamCommand::performAction_3  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_3()
 {
 {
@@ -152,7 +152,7 @@ wchar_t * CreateTeamCommand::performAction_3()
 }
 }
 
-// ==== BACKFILL 0x00535D50  CreateTeamCommand::performAction_4  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535D50  CreateTeamCommand::performAction_4  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_4()
 {
 {
@@ -160,7 +160,7 @@ wchar_t * CreateTeamCommand::performAction_4()
 }
 }
 
-// ==== BACKFILL 0x00535D70  CreateTeamCommand::performAction_5  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535D70  CreateTeamCommand::performAction_5  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_5()
 {
 {
@@ -168,7 +168,7 @@ wchar_t * CreateTeamCommand::performAction_5()
 }
 }
 
-// ==== BACKFILL 0x00535D90  CreateTeamCommand::performAction_6  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535D90  CreateTeamCommand::performAction_6  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char CreateTeamCommand::performAction_6()
 {
 {
@@ -191,7 +191,7 @@ char CreateTeamCommand::performAction_6()
 }
 }
 
-// ==== BACKFILL 0x00535DE0  CreateTeamCommand::performAction_7  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535DE0  CreateTeamCommand::performAction_7  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_7()
 {
 {
@@ -199,7 +199,7 @@ char * CreateTeamCommand::performAction_7()
 }
 }
 
-// ==== BACKFILL 0x00535DF0  CreateTeamCommand::performAction_8  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535DF0  CreateTeamCommand::performAction_8  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_8()
 {
 {
@@ -207,7 +207,7 @@ wchar_t * CreateTeamCommand::performAction_8()
 }
 }
 
-// ==== BACKFILL 0x00535E10  CreateTeamCommand::performAction_9  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535E10  CreateTeamCommand::performAction_9  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_9()
 {
 {
@@ -215,7 +215,7 @@ wchar_t * CreateTeamCommand::performAction_9()
 }
 }
 
-// ==== BACKFILL 0x00535E30  CreateTeamCommand::performAction_10  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535E30  CreateTeamCommand::performAction_10  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_10()
 {
 {
@@ -223,7 +223,7 @@ wchar_t * CreateTeamCommand::performAction_10()
 }
 }
 
-// ==== BACKFILL 0x00535E50  CreateTeamCommand::performAction_11  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535E50  CreateTeamCommand::performAction_11  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char CreateTeamCommand::performAction_11()
 {
 {
@@ -246,13 +246,13 @@ char CreateTeamCommand::performAction_11()
 }
 }
 
-// ==== BACKFILL 0x00535EA0  CreateTeamCommand::performAction_12  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535EA0  CreateTeamCommand::performAction_12  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_12()
 {
 return aInfantrytab;
 }
 
-// ==== BACKFILL 0x00535EB0  CreateTeamCommand::performAction_13  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535EB0  CreateTeamCommand::performAction_13  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_13()
 {
 {
@@ -260,7 +260,7 @@ wchar_t * CreateTeamCommand::performAction_13()
 }
 }
 
-// ==== BACKFILL 0x00535ED0  CreateTeamCommand::performAction_14  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535ED0  CreateTeamCommand::performAction_14  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_14()
 {
 {
@@ -268,7 +268,7 @@ wchar_t * CreateTeamCommand::performAction_14()
 }
 }
 
-// ==== BACKFILL 0x00535EF0  CreateTeamCommand::performAction_15  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535EF0  CreateTeamCommand::performAction_15  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_15()
 {
 {
@@ -276,7 +276,7 @@ wchar_t * CreateTeamCommand::performAction_15()
 }
 }
 
-// ==== BACKFILL 0x00535F10  CreateTeamCommand::performAction_16  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535F10  CreateTeamCommand::performAction_16  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_16()
 {
 {
@@ -288,13 +288,13 @@ int CreateTeamCommand::performAction_16()
 }
 }
 
-// ==== BACKFILL 0x00535F30  CreateTeamCommand::performAction_17  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535F30  CreateTeamCommand::performAction_17  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_17()
 {
 return aUnittab;
 }
 
-// ==== BACKFILL 0x00535F40  CreateTeamCommand::performAction_18  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535F40  CreateTeamCommand::performAction_18  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_18()
 {
 {
@@ -302,7 +302,7 @@ wchar_t * CreateTeamCommand::performAction_18()
 }
 }
 
-// ==== BACKFILL 0x00535F60  CreateTeamCommand::performAction_19  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535F60  CreateTeamCommand::performAction_19  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_19()
 {
 {
@@ -310,7 +310,7 @@ wchar_t * CreateTeamCommand::performAction_19()
 }
 }
 
-// ==== BACKFILL 0x00535F80  CreateTeamCommand::performAction_20  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535F80  CreateTeamCommand::performAction_20  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_20()
 {
 {
@@ -318,7 +318,7 @@ wchar_t * CreateTeamCommand::performAction_20()
 }
 }
 
-// ==== BACKFILL 0x00535FA0  CreateTeamCommand::performAction_21  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535FA0  CreateTeamCommand::performAction_21  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_21()
 {
 {
@@ -330,7 +330,7 @@ int CreateTeamCommand::performAction_21()
 }
 }
 
-// ==== BACKFILL 0x00535FE0  SelectTeamCommand::AddRef  cls=SelectTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00535FE0  SelectTeamCommand::AddRef  cls=SelectTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * SelectTeamCommand::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -341,7 +341,7 @@ ObjectClass *__thiscall SelectTeamCommand::AddRef(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x00536000  SelectTeamCommand::Release  cls=SelectTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536000  SelectTeamCommand::Release  cls=SelectTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * SelectTeamCommand::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -357,7 +357,7 @@ wchar_t *__thiscall SelectTeamCommand::_vt02(const wchar_t **this)
 }
 }
 
-// ==== BACKFILL 0x00536030  SelectTeamCommand::ddtor  cls=SelectTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536030  SelectTeamCommand::ddtor  cls=SelectTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * SelectTeamCommand::ddtor()
 {
 {
@@ -365,7 +365,7 @@ wchar_t * SelectTeamCommand::ddtor()
 }
 }
 
-// ==== BACKFILL 0x00536050  SelectTeamCommand::Read  cls=SelectTeamCommand  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00536050  SelectTeamCommand::Read  cls=SelectTeamCommand  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { void* SelectTeamCommand::Read() {
 {
       wchar_t *StringCSF;
@@ -378,14 +378,14 @@ namespace gamemd { void* SelectTeamCommand::Read() {
 }
 } }
 
-// ==== BACKFILL 0x00536080  SelectTeamCommand::Do  cls=SelectTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536080  SelectTeamCommand::Do  cls=SelectTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SelectTeamCommand::Do(int a1) {
 {
     return TacticalClass::SetObserverView(*(this + 1));
 }
 } }
 
-// ==== BACKFILL 0x00536090  CreateTeamCommand::performAction_22  cls=SelectTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536090  CreateTeamCommand::performAction_22  cls=SelectTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 SelectTeamCommand * CreateTeamCommand::performAction_22(char a2)
 {
 {
@@ -396,7 +396,7 @@ SelectTeamCommand * CreateTeamCommand::performAction_22(char a2)
 }
 }
 
-// ==== BACKFILL 0x005360D0  AddTeamCommand::AddRef  cls=AddTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005360D0  AddTeamCommand::AddRef  cls=AddTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * AddTeamCommand::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -410,7 +410,7 @@ ObjectClass *__thiscall AddTeamCommand::AddRef(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x005360F0  AddTeamCommand::Release  cls=AddTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005360F0  AddTeamCommand::Release  cls=AddTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * AddTeamCommand::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -426,7 +426,7 @@ wchar_t *__thiscall AddTeamCommand::_vt02(const wchar_t **this)
 }
 }
 
-// ==== BACKFILL 0x00536120  AddTeamCommand::ddtor  cls=AddTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536120  AddTeamCommand::ddtor  cls=AddTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * AddTeamCommand::ddtor()
 {
 {
@@ -434,7 +434,7 @@ wchar_t * AddTeamCommand::ddtor()
 }
 }
 
-// ==== BACKFILL 0x00536140  AddTeamCommand::Read  cls=AddTeamCommand  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00536140  AddTeamCommand::Read  cls=AddTeamCommand  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { void* AddTeamCommand::Read() {
 {
       wchar_t *StringCSF;
@@ -447,14 +447,14 @@ namespace gamemd { void* AddTeamCommand::Read() {
 }
 } }
 
-// ==== BACKFILL 0x00536170  AddTeamCommand::Do  cls=AddTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536170  AddTeamCommand::Do  cls=AddTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int AddTeamCommand::Do(int a1) {
 {
     return SquadClass::SelectAllMembers(*(this + 1));
 }
 } }
 
-// ==== BACKFILL 0x00536180  CreateTeamCommand::performAction_23  cls=AddTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536180  CreateTeamCommand::performAction_23  cls=AddTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 AddTeamCommand * CreateTeamCommand::performAction_23(char a2)
 {
 {
@@ -465,7 +465,7 @@ AddTeamCommand * CreateTeamCommand::performAction_23(char a2)
 }
 }
 
-// ==== BACKFILL 0x005361C0  CenterTeamCommand::AddRef  cls=CenterTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005361C0  CenterTeamCommand::AddRef  cls=CenterTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * CenterTeamCommand::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -476,7 +476,7 @@ ObjectClass *__thiscall CenterTeamCommand::AddRef(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x005361E0  CenterTeamCommand::Release  cls=CenterTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005361E0  CenterTeamCommand::Release  cls=CenterTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CenterTeamCommand::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -492,7 +492,7 @@ wchar_t *__thiscall CenterTeamCommand::_vt02(const wchar_t **this)
 }
 }
 
-// ==== BACKFILL 0x00536210  CSF::GetTeamString  cls=CenterTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536210  CSF::GetTeamString  cls=CenterTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CSF::GetTeamString()
 {
 {
@@ -500,7 +500,7 @@ wchar_t * CSF::GetTeamString()
 }
 }
 
-// ==== BACKFILL 0x00536230  CenterTeamCommand::Read  cls=CenterTeamCommand  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00536230  CenterTeamCommand::Read  cls=CenterTeamCommand  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { void* CenterTeamCommand::Read() {
 {
       wchar_t *StringCSF;
@@ -513,14 +513,14 @@ namespace gamemd { void* CenterTeamCommand::Read() {
 }
 } }
 
-// ==== BACKFILL 0x00536260  CenterTeamCommand::Do  cls=CenterTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536260  CenterTeamCommand::Do  cls=CenterTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CenterTeamCommand::Do(int a1) {
 {
     return TacticalClass::ResetView(*(this + 1));
 }
 } }
 
-// ==== BACKFILL 0x00536270  CreateTeamCommand::performAction_24  cls=CenterTeamCommand  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536270  CreateTeamCommand::performAction_24  cls=CenterTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 CenterTeamCommand * CreateTeamCommand::performAction_24(char a2)
 {
 {
@@ -531,7 +531,7 @@ CenterTeamCommand * CreateTeamCommand::performAction_24(char a2)
 }
 }
 
-// ==== BACKFILL 0x005362B0  TauntCommandClass::AddRef  cls=TauntCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005362B0  TauntCommandClass::AddRef  cls=TauntCommandClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * TauntCommandClass::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -545,7 +545,7 @@ ObjectClass *__thiscall TauntCommandClass::AddRef(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x005362D0  TauntCommandClass::Release  cls=TauntCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005362D0  TauntCommandClass::Release  cls=TauntCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * TauntCommandClass::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -561,7 +561,7 @@ wchar_t *__thiscall TauntCommandClass::_vt02(const wchar_t **this)
 }
 }
 
-// ==== BACKFILL 0x00536300  TauntCommandClass::ddtor  cls=TauntCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536300  TauntCommandClass::ddtor  cls=TauntCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * TauntCommandClass::ddtor()
 {
 {
@@ -569,7 +569,7 @@ wchar_t * TauntCommandClass::ddtor()
 }
 }
 
-// ==== BACKFILL 0x00536320  TauntCommandClass::Read  cls=TauntCommandClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00536320  TauntCommandClass::Read  cls=TauntCommandClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { void* TauntCommandClass::Read() {
 {
       wchar_t *StringCSF;
@@ -582,7 +582,7 @@ namespace gamemd { void* TauntCommandClass::Read() {
 }
 } }
 
-// ==== BACKFILL 0x00536580  CreateTeamCommand::performAction_25  cls=TauntCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536580  CreateTeamCommand::performAction_25  cls=TauntCommandClass  sig=csp  renamed_refs=0  residual=- ====
 TauntCommandClass * CreateTeamCommand::performAction_25(char a2)
 {
 {
@@ -593,7 +593,7 @@ TauntCommandClass * CreateTeamCommand::performAction_25(char a2)
 }
 }
 
-// ==== BACKFILL 0x005365A0  CreateTeamCommand::performAction_26  cls=NextObjectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005365A0  CreateTeamCommand::performAction_26  cls=NextObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_26()
 {
 {
@@ -601,7 +601,7 @@ char * CreateTeamCommand::performAction_26()
 }
 }
 
-// ==== BACKFILL 0x005365B0  CreateTeamCommand::performAction_27  cls=NextObjectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005365B0  CreateTeamCommand::performAction_27  cls=NextObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_27()
 {
 {
@@ -609,7 +609,7 @@ wchar_t * CreateTeamCommand::performAction_27()
 }
 }
 
-// ==== BACKFILL 0x005365D0  CreateTeamCommand::performAction_28  cls=NextObjectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005365D0  CreateTeamCommand::performAction_28  cls=NextObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_28()
 {
 {
@@ -617,7 +617,7 @@ wchar_t * CreateTeamCommand::performAction_28()
 }
 }
 
-// ==== BACKFILL 0x005365F0  CreateTeamCommand::performAction_29  cls=NextObjectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005365F0  CreateTeamCommand::performAction_29  cls=NextObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_29()
 {
 {
@@ -625,7 +625,7 @@ wchar_t * CreateTeamCommand::performAction_29()
 }
 }
 
-// ==== BACKFILL 0x00536610  CreateTeamCommand::performAction_30  cls=NextObjectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536610  CreateTeamCommand::performAction_30  cls=NextObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned char * CreateTeamCommand::performAction_30()
 {
 {
@@ -653,13 +653,13 @@ unsigned char * CreateTeamCommand::performAction_30()
 }
 }
 
-// ==== BACKFILL 0x005366A0  CreateTeamCommand::performAction_31  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005366A0  CreateTeamCommand::performAction_31  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_31()
 {
 return g_INI_Key_PlanningMode;
 }
 
-// ==== BACKFILL 0x005366B0  CreateTeamCommand::performAction_32  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005366B0  CreateTeamCommand::performAction_32  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_32()
 {
 {
@@ -667,7 +667,7 @@ wchar_t * CreateTeamCommand::performAction_32()
 }
 }
 
-// ==== BACKFILL 0x005366D0  CreateTeamCommand::performAction_33  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005366D0  CreateTeamCommand::performAction_33  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_33()
 {
 {
@@ -675,7 +675,7 @@ wchar_t * CreateTeamCommand::performAction_33()
 }
 }
 
-// ==== BACKFILL 0x005366F0  CreateTeamCommand::performAction_34  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005366F0  CreateTeamCommand::performAction_34  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_34()
 {
 {
@@ -683,7 +683,7 @@ wchar_t * CreateTeamCommand::performAction_34()
 }
 }
 
-// ==== BACKFILL 0x00536710  CreateTeamCommand::performAction_35  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536710  CreateTeamCommand::performAction_35  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
 BOOL CreateTeamCommand::performAction_35()
 {
 {
@@ -692,13 +692,13 @@ BOOL CreateTeamCommand::performAction_35()
 }
 }
 
-// ==== BACKFILL 0x00536730  CreateTeamCommand::performAction_36  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536730  CreateTeamCommand::performAction_36  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char CreateTeamCommand::performAction_36()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x00536740  CreateTeamCommand::performAction_37  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536740  CreateTeamCommand::performAction_37  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int CreateTeamCommand::performAction_37()
 {
 {
@@ -707,7 +707,7 @@ unsigned int CreateTeamCommand::performAction_37()
 }
 }
 
-// ==== BACKFILL 0x00536750  CreateTeamCommand::performAction_38  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536750  CreateTeamCommand::performAction_38  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_38()
 {
 {
@@ -719,13 +719,13 @@ int CreateTeamCommand::performAction_38()
 }
 }
 
-// ==== BACKFILL 0x00536770  CreateTeamCommand::performAction_39  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536770  CreateTeamCommand::performAction_39  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_39()
 {
 return aCombatantselec;
 }
 
-// ==== BACKFILL 0x00536780  CreateTeamCommand::performAction_40  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536780  CreateTeamCommand::performAction_40  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_40()
 {
 {
@@ -733,7 +733,7 @@ wchar_t * CreateTeamCommand::performAction_40()
 }
 }
 
-// ==== BACKFILL 0x005367A0  CreateTeamCommand::performAction_41  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005367A0  CreateTeamCommand::performAction_41  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_41()
 {
 {
@@ -741,7 +741,7 @@ wchar_t * CreateTeamCommand::performAction_41()
 }
 }
 
-// ==== BACKFILL 0x005367C0  CreateTeamCommand::performAction_42  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005367C0  CreateTeamCommand::performAction_42  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_42()
 {
 {
@@ -749,7 +749,7 @@ wchar_t * CreateTeamCommand::performAction_42()
 }
 }
 
-// ==== BACKFILL 0x005367E0  CreateTeamCommand::performAction_43  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005367E0  CreateTeamCommand::performAction_43  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_43()
 {
 {
@@ -758,7 +758,7 @@ int CreateTeamCommand::performAction_43()
 }
 }
 
-// ==== BACKFILL 0x005367F0  CreateTeamCommand::performAction_44  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005367F0  CreateTeamCommand::performAction_44  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_44()
 {
 {
@@ -770,13 +770,13 @@ int CreateTeamCommand::performAction_44()
 }
 }
 
-// ==== BACKFILL 0x00536810  CreateTeamCommand::performAction_45  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536810  CreateTeamCommand::performAction_45  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_45()
 {
 return g_INI_Key_TypeSelect;
 }
 
-// ==== BACKFILL 0x00536820  CreateTeamCommand::performAction_46  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536820  CreateTeamCommand::performAction_46  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_46()
 {
 {
@@ -784,7 +784,7 @@ wchar_t * CreateTeamCommand::performAction_46()
 }
 }
 
-// ==== BACKFILL 0x00536840  CreateTeamCommand::performAction_47  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536840  CreateTeamCommand::performAction_47  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_47()
 {
 {
@@ -792,7 +792,7 @@ wchar_t * CreateTeamCommand::performAction_47()
 }
 }
 
-// ==== BACKFILL 0x00536860  CreateTeamCommand::performAction_48  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536860  CreateTeamCommand::performAction_48  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_48()
 {
 {
@@ -800,7 +800,7 @@ wchar_t * CreateTeamCommand::performAction_48()
 }
 }
 
-// ==== BACKFILL 0x00536880  CreateTeamCommand::performAction_49  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536880  CreateTeamCommand::performAction_49  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_49()
 {
 {
@@ -809,13 +809,13 @@ int CreateTeamCommand::performAction_49()
 }
 }
 
-// ==== BACKFILL 0x00536890  CreateTeamCommand::performAction_50  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536890  CreateTeamCommand::performAction_50  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char CreateTeamCommand::performAction_50()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005368A0  CreateTeamCommand::performAction_51  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005368A0  CreateTeamCommand::performAction_51  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int CreateTeamCommand::performAction_51()
 {
 {
@@ -824,7 +824,7 @@ unsigned int CreateTeamCommand::performAction_51()
 }
 }
 
-// ==== BACKFILL 0x005368B0  CreateTeamCommand::performAction_52  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005368B0  CreateTeamCommand::performAction_52  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char CreateTeamCommand::performAction_52()
 {
 {
@@ -836,13 +836,13 @@ char CreateTeamCommand::performAction_52()
 }
 }
 
-// ==== BACKFILL 0x005368D0  CreateTeamCommand::performAction_53  cls=HealthNavCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005368D0  CreateTeamCommand::performAction_53  cls=HealthNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_53()
 {
 return aHealthnav;
 }
 
-// ==== BACKFILL 0x005368E0  CreateTeamCommand::performAction_54  cls=HealthNavCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005368E0  CreateTeamCommand::performAction_54  cls=HealthNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_54()
 {
 {
@@ -850,7 +850,7 @@ wchar_t * CreateTeamCommand::performAction_54()
 }
 }
 
-// ==== BACKFILL 0x00536900  CreateTeamCommand::performAction_55  cls=HealthNavCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536900  CreateTeamCommand::performAction_55  cls=HealthNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_55()
 {
 {
@@ -858,7 +858,7 @@ wchar_t * CreateTeamCommand::performAction_55()
 }
 }
 
-// ==== BACKFILL 0x00536920  CreateTeamCommand::performAction_56  cls=HealthNavCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536920  CreateTeamCommand::performAction_56  cls=HealthNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_56()
 {
 {
@@ -866,7 +866,7 @@ wchar_t * CreateTeamCommand::performAction_56()
 }
 }
 
-// ==== BACKFILL 0x00536940  CreateTeamCommand::performAction_57  cls=HealthNavCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536940  CreateTeamCommand::performAction_57  cls=HealthNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_57()
 {
 {
@@ -875,7 +875,7 @@ int CreateTeamCommand::performAction_57()
 }
 }
 
-// ==== BACKFILL 0x00536950  CreateTeamCommand::performAction_58  cls=HealthNavCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536950  CreateTeamCommand::performAction_58  cls=HealthNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_58()
 {
 {
@@ -887,13 +887,13 @@ int CreateTeamCommand::performAction_58()
 }
 }
 
-// ==== BACKFILL 0x00536970  CreateTeamCommand::performAction_59  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536970  CreateTeamCommand::performAction_59  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_59()
 {
 return aVeterancynav;
 }
 
-// ==== BACKFILL 0x00536980  CreateTeamCommand::performAction_60  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536980  CreateTeamCommand::performAction_60  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_60()
 {
 {
@@ -901,7 +901,7 @@ wchar_t * CreateTeamCommand::performAction_60()
 }
 }
 
-// ==== BACKFILL 0x005369A0  CreateTeamCommand::performAction_61  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005369A0  CreateTeamCommand::performAction_61  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_61()
 {
 {
@@ -909,7 +909,7 @@ wchar_t * CreateTeamCommand::performAction_61()
 }
 }
 
-// ==== BACKFILL 0x005369C0  CreateTeamCommand::performAction_62  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005369C0  CreateTeamCommand::performAction_62  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_62()
 {
 {
@@ -917,7 +917,7 @@ wchar_t * CreateTeamCommand::performAction_62()
 }
 }
 
-// ==== BACKFILL 0x005369E0  CreateTeamCommand::performAction_63  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005369E0  CreateTeamCommand::performAction_63  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_63()
 {
 {
@@ -926,7 +926,7 @@ int CreateTeamCommand::performAction_63()
 }
 }
 
-// ==== BACKFILL 0x005369F0  CreateTeamCommand::performAction_64  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005369F0  CreateTeamCommand::performAction_64  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_64()
 {
 {
@@ -938,13 +938,13 @@ int CreateTeamCommand::performAction_64()
 }
 }
 
-// ==== BACKFILL 0x00536A10  CreateTeamCommand::performAction_65  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536A10  CreateTeamCommand::performAction_65  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_65()
 {
 return aPreviousobject;
 }
 
-// ==== BACKFILL 0x00536A20  CreateTeamCommand::performAction_66  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536A20  CreateTeamCommand::performAction_66  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_66()
 {
 {
@@ -952,7 +952,7 @@ wchar_t * CreateTeamCommand::performAction_66()
 }
 }
 
-// ==== BACKFILL 0x00536A40  CreateTeamCommand::performAction_67  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536A40  CreateTeamCommand::performAction_67  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_67()
 {
 {
@@ -960,7 +960,7 @@ wchar_t * CreateTeamCommand::performAction_67()
 }
 }
 
-// ==== BACKFILL 0x00536A60  CreateTeamCommand::performAction_68  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536A60  CreateTeamCommand::performAction_68  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_68()
 {
 {
@@ -968,7 +968,7 @@ wchar_t * CreateTeamCommand::performAction_68()
 }
 }
 
-// ==== BACKFILL 0x00536A80  CreateTeamCommand::performAction_69  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536A80  CreateTeamCommand::performAction_69  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned char * CreateTeamCommand::performAction_69()
 {
 {
@@ -996,13 +996,13 @@ unsigned char * CreateTeamCommand::performAction_69()
 }
 }
 
-// ==== BACKFILL 0x00536B10  CreateTeamCommand::performAction_70  cls=StopCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536B10  CreateTeamCommand::performAction_70  cls=StopCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_70()
 {
 return aStopobject;
 }
 
-// ==== BACKFILL 0x00536B20  CreateTeamCommand::performAction_71  cls=StopCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536B20  CreateTeamCommand::performAction_71  cls=StopCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_71()
 {
 {
@@ -1010,7 +1010,7 @@ wchar_t * CreateTeamCommand::performAction_71()
 }
 }
 
-// ==== BACKFILL 0x00536B40  CreateTeamCommand::performAction_72  cls=StopCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536B40  CreateTeamCommand::performAction_72  cls=StopCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_72()
 {
 {
@@ -1018,7 +1018,7 @@ wchar_t * CreateTeamCommand::performAction_72()
 }
 }
 
-// ==== BACKFILL 0x00536B60  CreateTeamCommand::performAction_73  cls=StopCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536B60  CreateTeamCommand::performAction_73  cls=StopCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_73()
 {
 {
@@ -1026,7 +1026,7 @@ wchar_t * CreateTeamCommand::performAction_73()
 }
 }
 
-// ==== BACKFILL 0x00536B80  CreateTeamCommand::performAction_74  cls=StopCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536B80  CreateTeamCommand::performAction_74  cls=StopCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand_performAction_74()
 {
     wchar_t *__stdcall CreateTeamCommand::sub_536B80(int a1)
@@ -1035,13 +1035,13 @@ int CreateTeamCommand_performAction_74()
 }
 }
 
-// ==== BACKFILL 0x00536B90  CreateTeamCommand::performAction_75  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536B90  CreateTeamCommand::performAction_75  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_75()
 {
 return aAlltocheer;
 }
 
-// ==== BACKFILL 0x00536BA0  CreateTeamCommand::performAction_76  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536BA0  CreateTeamCommand::performAction_76  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_76()
 {
 {
@@ -1049,7 +1049,7 @@ wchar_t * CreateTeamCommand::performAction_76()
 }
 }
 
-// ==== BACKFILL 0x00536BC0  CreateTeamCommand::performAction_77  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536BC0  CreateTeamCommand::performAction_77  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_77()
 {
 {
@@ -1057,7 +1057,7 @@ wchar_t * CreateTeamCommand::performAction_77()
 }
 }
 
-// ==== BACKFILL 0x00536BE0  CreateTeamCommand::performAction_78  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536BE0  CreateTeamCommand::performAction_78  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_78()
 {
 {
@@ -1065,7 +1065,7 @@ wchar_t * CreateTeamCommand::performAction_78()
 }
 }
 
-// ==== BACKFILL 0x00536C00  CreateTeamCommand::performAction_79  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536C00  CreateTeamCommand::performAction_79  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_79()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1076,13 +1076,13 @@ wchar_t *__thiscall CreateTeamCommand::performAction_79(AllToCheerCommandClass *
 }
 }
 
-// ==== BACKFILL 0x00536C10  CreateTeamCommand::performAction_80  cls=DeployCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536C10  CreateTeamCommand::performAction_80  cls=DeployCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_80()
 {
 return aDeployobject;
 }
 
-// ==== BACKFILL 0x00536C20  CreateTeamCommand::performAction_81  cls=DeployCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536C20  CreateTeamCommand::performAction_81  cls=DeployCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_81()
 {
 {
@@ -1090,7 +1090,7 @@ wchar_t * CreateTeamCommand::performAction_81()
 }
 }
 
-// ==== BACKFILL 0x00536C40  CreateTeamCommand::performAction_82  cls=DeployCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536C40  CreateTeamCommand::performAction_82  cls=DeployCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_82()
 {
 {
@@ -1098,7 +1098,7 @@ wchar_t * CreateTeamCommand::performAction_82()
 }
 }
 
-// ==== BACKFILL 0x00536C60  CreateTeamCommand::performAction_83  cls=DeployCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536C60  CreateTeamCommand::performAction_83  cls=DeployCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_83()
 {
 {
@@ -1106,7 +1106,7 @@ wchar_t * CreateTeamCommand::performAction_83()
 }
 }
 
-// ==== BACKFILL 0x00536C80  CreateTeamCommand::performAction_84  cls=DeployCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536C80  CreateTeamCommand::performAction_84  cls=DeployCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand_performAction_84()
 {
     char __stdcall CreateTeamCommand::sub_536C80(int a1)
@@ -1115,13 +1115,13 @@ int CreateTeamCommand_performAction_84()
 }
 }
 
-// ==== BACKFILL 0x00536C90  CreateTeamCommand::performAction_85  cls=GuardCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536C90  CreateTeamCommand::performAction_85  cls=GuardCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_85()
 {
 return aGuardobject;
 }
 
-// ==== BACKFILL 0x00536CA0  CreateTeamCommand::performAction_86  cls=GuardCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536CA0  CreateTeamCommand::performAction_86  cls=GuardCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_86()
 {
 {
@@ -1129,7 +1129,7 @@ wchar_t * CreateTeamCommand::performAction_86()
 }
 }
 
-// ==== BACKFILL 0x00536CC0  CreateTeamCommand::performAction_87  cls=GuardCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536CC0  CreateTeamCommand::performAction_87  cls=GuardCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_87()
 {
 {
@@ -1137,7 +1137,7 @@ wchar_t * CreateTeamCommand::performAction_87()
 }
 }
 
-// ==== BACKFILL 0x00536CE0  CreateTeamCommand::performAction_88  cls=GuardCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536CE0  CreateTeamCommand::performAction_88  cls=GuardCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_88()
 {
 {
@@ -1145,7 +1145,7 @@ wchar_t * CreateTeamCommand::performAction_88()
 }
 }
 
-// ==== BACKFILL 0x00536D00  CreateTeamCommand::performAction_89  cls=GuardCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536D00  CreateTeamCommand::performAction_89  cls=GuardCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand_performAction_89()
 {
     char __stdcall CreateTeamCommand::sub_536D00(int a1)
@@ -1154,13 +1154,13 @@ int CreateTeamCommand_performAction_89()
 }
 }
 
-// ==== BACKFILL 0x00536D10  CreateTeamCommand::performAction_90  cls=ScatterCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536D10  CreateTeamCommand::performAction_90  cls=ScatterCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_90()
 {
 return aScatterobject;
 }
 
-// ==== BACKFILL 0x00536D20  CreateTeamCommand::performAction_91  cls=ScatterCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536D20  CreateTeamCommand::performAction_91  cls=ScatterCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_91()
 {
 {
@@ -1168,7 +1168,7 @@ wchar_t * CreateTeamCommand::performAction_91()
 }
 }
 
-// ==== BACKFILL 0x00536D40  CreateTeamCommand::performAction_92  cls=ScatterCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536D40  CreateTeamCommand::performAction_92  cls=ScatterCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_92()
 {
 {
@@ -1176,7 +1176,7 @@ wchar_t * CreateTeamCommand::performAction_92()
 }
 }
 
-// ==== BACKFILL 0x00536D60  CreateTeamCommand::performAction_93  cls=ScatterCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536D60  CreateTeamCommand::performAction_93  cls=ScatterCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_93()
 {
 {
@@ -1184,7 +1184,7 @@ wchar_t * CreateTeamCommand::performAction_93()
 }
 }
 
-// ==== BACKFILL 0x00536D80  CreateTeamCommand::performAction_94  cls=ScatterCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536D80  CreateTeamCommand::performAction_94  cls=ScatterCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand_performAction_94()
 {
     wchar_t *__stdcall CreateTeamCommand::sub_536D80(int a1)
@@ -1193,13 +1193,13 @@ int CreateTeamCommand_performAction_94()
 }
 }
 
-// ==== BACKFILL 0x00536D90  CreateTeamCommand::performAction_95  cls=CenterViewCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536D90  CreateTeamCommand::performAction_95  cls=CenterViewCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_95()
 {
 return aCenterview;
 }
 
-// ==== BACKFILL 0x00536DA0  CreateTeamCommand::performAction_96  cls=CenterViewCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536DA0  CreateTeamCommand::performAction_96  cls=CenterViewCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_96()
 {
 {
@@ -1207,7 +1207,7 @@ wchar_t * CreateTeamCommand::performAction_96()
 }
 }
 
-// ==== BACKFILL 0x00536DC0  CreateTeamCommand::performAction_97  cls=CenterViewCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536DC0  CreateTeamCommand::performAction_97  cls=CenterViewCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_97()
 {
 {
@@ -1215,7 +1215,7 @@ wchar_t * CreateTeamCommand::performAction_97()
 }
 }
 
-// ==== BACKFILL 0x00536DE0  CreateTeamCommand::performAction_98  cls=CenterViewCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536DE0  CreateTeamCommand::performAction_98  cls=CenterViewCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_98()
 {
 {
@@ -1223,7 +1223,7 @@ wchar_t * CreateTeamCommand::performAction_98()
 }
 }
 
-// ==== BACKFILL 0x00536E00  CreateTeamCommand::performAction_99  cls=CenterViewCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536E00  CreateTeamCommand::performAction_99  cls=CenterViewCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_99()
 {
 {
@@ -1238,13 +1238,13 @@ wchar_t * CreateTeamCommand::performAction_99()
 }
 }
 
-// ==== BACKFILL 0x00536E30  CreateTeamCommand::performAction_100  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536E30  CreateTeamCommand::performAction_100  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_100()
 {
 return aCenterbase;
 }
 
-// ==== BACKFILL 0x00536E40  CreateTeamCommand::performAction_101  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536E40  CreateTeamCommand::performAction_101  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_101()
 {
 {
@@ -1252,7 +1252,7 @@ wchar_t * CreateTeamCommand::performAction_101()
 }
 }
 
-// ==== BACKFILL 0x00536E60  CreateTeamCommand::performAction_102  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536E60  CreateTeamCommand::performAction_102  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_102()
 {
 {
@@ -1260,7 +1260,7 @@ wchar_t * CreateTeamCommand::performAction_102()
 }
 }
 
-// ==== BACKFILL 0x00536E80  CreateTeamCommand::performAction_103  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536E80  CreateTeamCommand::performAction_103  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_103()
 {
 {
@@ -1268,7 +1268,7 @@ wchar_t * CreateTeamCommand::performAction_103()
 }
 }
 
-// ==== BACKFILL 0x00536EA0  CreateTeamCommand::performAction_104  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536EA0  CreateTeamCommand::performAction_104  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_104()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1279,13 +1279,13 @@ int __thiscall CreateTeamCommand::performAction_104(CenterBaseCommandClass *this
 }
 }
 
-// ==== BACKFILL 0x00536EB0  CreateTeamCommand::performAction_105  cls=AllianceCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536EB0  CreateTeamCommand::performAction_105  cls=AllianceCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_105()
 {
 return aTogglealliance;
 }
 
-// ==== BACKFILL 0x00536EC0  CreateTeamCommand::performAction_106  cls=AllianceCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536EC0  CreateTeamCommand::performAction_106  cls=AllianceCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_106()
 {
 {
@@ -1293,7 +1293,7 @@ wchar_t * CreateTeamCommand::performAction_106()
 }
 }
 
-// ==== BACKFILL 0x00536EE0  CreateTeamCommand::performAction_107  cls=AllianceCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536EE0  CreateTeamCommand::performAction_107  cls=AllianceCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_107()
 {
 {
@@ -1301,7 +1301,7 @@ wchar_t * CreateTeamCommand::performAction_107()
 }
 }
 
-// ==== BACKFILL 0x00536F00  CreateTeamCommand::performAction_108  cls=AllianceCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536F00  CreateTeamCommand::performAction_108  cls=AllianceCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_108()
 {
 {
@@ -1309,7 +1309,7 @@ wchar_t * CreateTeamCommand::performAction_108()
 }
 }
 
-// ==== BACKFILL 0x00536F20  CreateTeamCommand::performAction_109  cls=AllianceCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536F20  CreateTeamCommand::performAction_109  cls=AllianceCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_109()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1320,13 +1320,13 @@ char *__thiscall CreateTeamCommand::performAction_109(AllianceCommandClass *this
 }
 }
 
-// ==== BACKFILL 0x00536F30  CreateTeamCommand::performAction_110  cls=ToggleRepairCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536F30  CreateTeamCommand::performAction_110  cls=ToggleRepairCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_110()
 {
 return aTogglerepair;
 }
 
-// ==== BACKFILL 0x00536F40  CreateTeamCommand::performAction_111  cls=ToggleRepairCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536F40  CreateTeamCommand::performAction_111  cls=ToggleRepairCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_111()
 {
 {
@@ -1334,7 +1334,7 @@ wchar_t * CreateTeamCommand::performAction_111()
 }
 }
 
-// ==== BACKFILL 0x00536F60  CreateTeamCommand::performAction_112  cls=ToggleRepairCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536F60  CreateTeamCommand::performAction_112  cls=ToggleRepairCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_112()
 {
 {
@@ -1342,7 +1342,7 @@ wchar_t * CreateTeamCommand::performAction_112()
 }
 }
 
-// ==== BACKFILL 0x00536F80  CreateTeamCommand::performAction_113  cls=ToggleRepairCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536F80  CreateTeamCommand::performAction_113  cls=ToggleRepairCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_113()
 {
 {
@@ -1350,13 +1350,13 @@ wchar_t * CreateTeamCommand::performAction_113()
 }
 }
 
-// ==== BACKFILL 0x00536FB0  CreateTeamCommand::performAction_114  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536FB0  CreateTeamCommand::performAction_114  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_114()
 {
 return aTogglesell;
 }
 
-// ==== BACKFILL 0x00536FC0  CreateTeamCommand::performAction_115  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536FC0  CreateTeamCommand::performAction_115  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_115()
 {
 {
@@ -1364,7 +1364,7 @@ wchar_t * CreateTeamCommand::performAction_115()
 }
 }
 
-// ==== BACKFILL 0x00536FE0  CreateTeamCommand::performAction_116  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00536FE0  CreateTeamCommand::performAction_116  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_116()
 {
 {
@@ -1372,7 +1372,7 @@ wchar_t * CreateTeamCommand::performAction_116()
 }
 }
 
-// ==== BACKFILL 0x00537000  CreateTeamCommand::performAction_117  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537000  CreateTeamCommand::performAction_117  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_117()
 {
 {
@@ -1380,7 +1380,7 @@ wchar_t * CreateTeamCommand::performAction_117()
 }
 }
 
-// ==== BACKFILL 0x00537020  CreateTeamCommand::performAction_118  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537020  CreateTeamCommand::performAction_118  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char CreateTeamCommand::performAction_118(int a1)
 {
 {
@@ -1388,13 +1388,13 @@ char CreateTeamCommand::performAction_118(int a1)
 }
 }
 
-// ==== BACKFILL 0x00537030  CreateTeamCommand::performAction_119  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537030  CreateTeamCommand::performAction_119  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_119()
 {
 return aPlacebeacon;
 }
 
-// ==== BACKFILL 0x00537040  CreateTeamCommand::performAction_120  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537040  CreateTeamCommand::performAction_120  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_120()
 {
 {
@@ -1402,7 +1402,7 @@ wchar_t * CreateTeamCommand::performAction_120()
 }
 }
 
-// ==== BACKFILL 0x00537060  CreateTeamCommand::performAction_121  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537060  CreateTeamCommand::performAction_121  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_121()
 {
 {
@@ -1410,7 +1410,7 @@ wchar_t * CreateTeamCommand::performAction_121()
 }
 }
 
-// ==== BACKFILL 0x00537080  CreateTeamCommand::performAction_122  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537080  CreateTeamCommand::performAction_122  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_122()
 {
 {
@@ -1418,7 +1418,7 @@ wchar_t * CreateTeamCommand::performAction_122()
 }
 }
 
-// ==== BACKFILL 0x005370A0  CreateTeamCommand::performAction_123  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005370A0  CreateTeamCommand::performAction_123  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_123()
 {
 {
@@ -1433,13 +1433,13 @@ int CreateTeamCommand::performAction_123()
 }
 }
 
-// ==== BACKFILL 0x005370C0  CreateTeamCommand::performAction_124  cls=CenterREventCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005370C0  CreateTeamCommand::performAction_124  cls=CenterREventCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_124()
 {
 return aCenteronradare;
 }
 
-// ==== BACKFILL 0x005370D0  CreateTeamCommand::performAction_125  cls=CenterREventCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005370D0  CreateTeamCommand::performAction_125  cls=CenterREventCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_125()
 {
 {
@@ -1447,7 +1447,7 @@ wchar_t * CreateTeamCommand::performAction_125()
 }
 }
 
-// ==== BACKFILL 0x005370F0  CreateTeamCommand::performAction_126  cls=CenterREventCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005370F0  CreateTeamCommand::performAction_126  cls=CenterREventCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_126()
 {
 {
@@ -1455,7 +1455,7 @@ wchar_t * CreateTeamCommand::performAction_126()
 }
 }
 
-// ==== BACKFILL 0x00537110  CreateTeamCommand::performAction_127  cls=CenterREventCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537110  CreateTeamCommand::performAction_127  cls=CenterREventCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_127()
 {
 {
@@ -1463,13 +1463,13 @@ wchar_t * CreateTeamCommand::performAction_127()
 }
 }
 
-// ==== BACKFILL 0x00537140  CreateTeamCommand::performAction_129  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537140  CreateTeamCommand::performAction_129  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_129()
 {
 return aSidebarup;
 }
 
-// ==== BACKFILL 0x00537150  CreateTeamCommand::performAction_130  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537150  CreateTeamCommand::performAction_130  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_130()
 {
 {
@@ -1477,7 +1477,7 @@ wchar_t * CreateTeamCommand::performAction_130()
 }
 }
 
-// ==== BACKFILL 0x00537170  CreateTeamCommand::performAction_131  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537170  CreateTeamCommand::performAction_131  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_131()
 {
 {
@@ -1485,7 +1485,7 @@ wchar_t * CreateTeamCommand::performAction_131()
 }
 }
 
-// ==== BACKFILL 0x00537190  CreateTeamCommand::performAction_132  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537190  CreateTeamCommand::performAction_132  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_132()
 {
 {
@@ -1493,7 +1493,7 @@ wchar_t * CreateTeamCommand::performAction_132()
 }
 }
 
-// ==== BACKFILL 0x005371B0  CreateTeamCommand::performAction_133  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005371B0  CreateTeamCommand::performAction_133  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char CreateTeamCommand::performAction_133()
 {
 {
@@ -1501,13 +1501,13 @@ char CreateTeamCommand::performAction_133()
 }
 }
 
-// ==== BACKFILL 0x005371D0  CreateTeamCommand::performAction_134  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005371D0  CreateTeamCommand::performAction_134  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_134()
 {
 return aSidebardown;
 }
 
-// ==== BACKFILL 0x005371E0  CreateTeamCommand::performAction_135  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005371E0  CreateTeamCommand::performAction_135  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_135()
 {
 {
@@ -1515,7 +1515,7 @@ wchar_t * CreateTeamCommand::performAction_135()
 }
 }
 
-// ==== BACKFILL 0x00537200  CreateTeamCommand::performAction_136  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537200  CreateTeamCommand::performAction_136  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_136()
 {
 {
@@ -1523,7 +1523,7 @@ wchar_t * CreateTeamCommand::performAction_136()
 }
 }
 
-// ==== BACKFILL 0x00537220  CreateTeamCommand::performAction_137  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537220  CreateTeamCommand::performAction_137  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_137()
 {
 {
@@ -1531,7 +1531,7 @@ wchar_t * CreateTeamCommand::performAction_137()
 }
 }
 
-// ==== BACKFILL 0x00537240  CreateTeamCommand::performAction_138  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537240  CreateTeamCommand::performAction_138  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char CreateTeamCommand::performAction_138()
 {
 {
@@ -1539,7 +1539,7 @@ char CreateTeamCommand::performAction_138()
 }
 }
 
-// ==== BACKFILL 0x00537260  CreateTeamCommand::performAction_139  cls=OptionsCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537260  CreateTeamCommand::performAction_139  cls=OptionsCommandClass  sig=csp  renamed_refs=0  residual=- ====
 CHAR * CreateTeamCommand::performAction_139()
 {
 {
@@ -1547,7 +1547,7 @@ CHAR * CreateTeamCommand::performAction_139()
 }
 }
 
-// ==== BACKFILL 0x00537270  CreateTeamCommand::performAction_140  cls=OptionsCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537270  CreateTeamCommand::performAction_140  cls=OptionsCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_140()
 {
 {
@@ -1555,7 +1555,7 @@ wchar_t * CreateTeamCommand::performAction_140()
 }
 }
 
-// ==== BACKFILL 0x00537290  CreateTeamCommand::performAction_141  cls=OptionsCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537290  CreateTeamCommand::performAction_141  cls=OptionsCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_141()
 {
 {
@@ -1563,7 +1563,7 @@ wchar_t * CreateTeamCommand::performAction_141()
 }
 }
 
-// ==== BACKFILL 0x005372B0  CreateTeamCommand::performAction_142  cls=OptionsCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005372B0  CreateTeamCommand::performAction_142  cls=OptionsCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_142()
 {
 {
@@ -1571,13 +1571,13 @@ wchar_t * CreateTeamCommand::performAction_142()
 }
 }
 
-// ==== BACKFILL 0x005372E0  CreateTeamCommand::performAction_144  cls=View1CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005372E0  CreateTeamCommand::performAction_144  cls=View1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_144()
 {
 return aView1;
 }
 
-// ==== BACKFILL 0x005372F0  CreateTeamCommand::performAction_145  cls=View1CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005372F0  CreateTeamCommand::performAction_145  cls=View1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_145()
 {
 {
@@ -1585,7 +1585,7 @@ wchar_t * CreateTeamCommand::performAction_145()
 }
 }
 
-// ==== BACKFILL 0x00537310  CreateTeamCommand::performAction_146  cls=View1CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537310  CreateTeamCommand::performAction_146  cls=View1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_146()
 {
 {
@@ -1593,7 +1593,7 @@ wchar_t * CreateTeamCommand::performAction_146()
 }
 }
 
-// ==== BACKFILL 0x00537330  CreateTeamCommand::performAction_147  cls=View1CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537330  CreateTeamCommand::performAction_147  cls=View1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_147()
 {
 {
@@ -1601,13 +1601,13 @@ wchar_t * CreateTeamCommand::performAction_147()
 }
 }
 
-// ==== BACKFILL 0x005373D0  CreateTeamCommand::performAction_149  cls=View2CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005373D0  CreateTeamCommand::performAction_149  cls=View2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_149()
 {
 return aView2;
 }
 
-// ==== BACKFILL 0x005373E0  CreateTeamCommand::performAction_150  cls=View2CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005373E0  CreateTeamCommand::performAction_150  cls=View2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_150()
 {
 {
@@ -1615,7 +1615,7 @@ wchar_t * CreateTeamCommand::performAction_150()
 }
 }
 
-// ==== BACKFILL 0x00537400  CreateTeamCommand::performAction_151  cls=View2CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537400  CreateTeamCommand::performAction_151  cls=View2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_151()
 {
 {
@@ -1623,7 +1623,7 @@ wchar_t * CreateTeamCommand::performAction_151()
 }
 }
 
-// ==== BACKFILL 0x00537420  CreateTeamCommand::performAction_152  cls=View2CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537420  CreateTeamCommand::performAction_152  cls=View2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_152()
 {
 {
@@ -1631,13 +1631,13 @@ wchar_t * CreateTeamCommand::performAction_152()
 }
 }
 
-// ==== BACKFILL 0x005374C0  CreateTeamCommand::performAction_154  cls=View3CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005374C0  CreateTeamCommand::performAction_154  cls=View3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_154()
 {
 return aView3;
 }
 
-// ==== BACKFILL 0x005374D0  CreateTeamCommand::performAction_155  cls=View3CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005374D0  CreateTeamCommand::performAction_155  cls=View3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_155()
 {
 {
@@ -1645,7 +1645,7 @@ wchar_t * CreateTeamCommand::performAction_155()
 }
 }
 
-// ==== BACKFILL 0x005374F0  CreateTeamCommand::performAction_156  cls=View3CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005374F0  CreateTeamCommand::performAction_156  cls=View3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_156()
 {
 {
@@ -1653,7 +1653,7 @@ wchar_t * CreateTeamCommand::performAction_156()
 }
 }
 
-// ==== BACKFILL 0x00537510  CreateTeamCommand::performAction_157  cls=View3CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537510  CreateTeamCommand::performAction_157  cls=View3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_157()
 {
 {
@@ -1661,13 +1661,13 @@ wchar_t * CreateTeamCommand::performAction_157()
 }
 }
 
-// ==== BACKFILL 0x005375B0  CreateTeamCommand::performAction_159  cls=View4CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005375B0  CreateTeamCommand::performAction_159  cls=View4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_159()
 {
 return aView4;
 }
 
-// ==== BACKFILL 0x005375C0  CreateTeamCommand::performAction_160  cls=View4CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005375C0  CreateTeamCommand::performAction_160  cls=View4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_160()
 {
 {
@@ -1675,7 +1675,7 @@ wchar_t * CreateTeamCommand::performAction_160()
 }
 }
 
-// ==== BACKFILL 0x005375E0  CreateTeamCommand::performAction_161  cls=View4CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005375E0  CreateTeamCommand::performAction_161  cls=View4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_161()
 {
 {
@@ -1683,7 +1683,7 @@ wchar_t * CreateTeamCommand::performAction_161()
 }
 }
 
-// ==== BACKFILL 0x00537600  CreateTeamCommand::performAction_162  cls=View4CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537600  CreateTeamCommand::performAction_162  cls=View4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_162()
 {
 {
@@ -1691,13 +1691,13 @@ wchar_t * CreateTeamCommand::performAction_162()
 }
 }
 
-// ==== BACKFILL 0x005376A0  CreateTeamCommand::performAction_163  cls=SetView1CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005376A0  CreateTeamCommand::performAction_163  cls=SetView1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_163()
 {
 return aSetview1;
 }
 
-// ==== BACKFILL 0x005376B0  CreateTeamCommand::performAction_164  cls=SetView1CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005376B0  CreateTeamCommand::performAction_164  cls=SetView1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_164()
 {
 {
@@ -1705,7 +1705,7 @@ wchar_t * CreateTeamCommand::performAction_164()
 }
 }
 
-// ==== BACKFILL 0x005376D0  CreateTeamCommand::performAction_165  cls=SetView1CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005376D0  CreateTeamCommand::performAction_165  cls=SetView1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_165()
 {
 {
@@ -1713,7 +1713,7 @@ wchar_t * CreateTeamCommand::performAction_165()
 }
 }
 
-// ==== BACKFILL 0x005376F0  CreateTeamCommand::performAction_166  cls=SetView1CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005376F0  CreateTeamCommand::performAction_166  cls=SetView1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_166()
 {
 {
@@ -1721,7 +1721,7 @@ wchar_t * CreateTeamCommand::performAction_166()
 }
 }
 
-// ==== BACKFILL 0x00537710  CreateTeamCommand::performAction_167  cls=SetView1CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537710  CreateTeamCommand::performAction_167  cls=SetView1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 void * CreateTeamCommand::performAction_167()
 {
 {
@@ -1740,13 +1740,13 @@ void * CreateTeamCommand::performAction_167()
 }
 }
 
-// ==== BACKFILL 0x00537760  CreateTeamCommand::performAction_168  cls=SetView2CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537760  CreateTeamCommand::performAction_168  cls=SetView2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_168()
 {
 return aSetview2;
 }
 
-// ==== BACKFILL 0x00537770  CreateTeamCommand::performAction_169  cls=SetView2CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537770  CreateTeamCommand::performAction_169  cls=SetView2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_169()
 {
 {
@@ -1754,7 +1754,7 @@ wchar_t * CreateTeamCommand::performAction_169()
 }
 }
 
-// ==== BACKFILL 0x00537790  CreateTeamCommand::performAction_170  cls=SetView2CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537790  CreateTeamCommand::performAction_170  cls=SetView2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_170()
 {
 {
@@ -1762,7 +1762,7 @@ wchar_t * CreateTeamCommand::performAction_170()
 }
 }
 
-// ==== BACKFILL 0x005377B0  CreateTeamCommand::performAction_171  cls=SetView2CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005377B0  CreateTeamCommand::performAction_171  cls=SetView2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_171()
 {
 {
@@ -1770,7 +1770,7 @@ wchar_t * CreateTeamCommand::performAction_171()
 }
 }
 
-// ==== BACKFILL 0x005377D0  CreateTeamCommand::performAction_172  cls=SetView2CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005377D0  CreateTeamCommand::performAction_172  cls=SetView2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 void * CreateTeamCommand::performAction_172()
 {
 {
@@ -1789,13 +1789,13 @@ void * CreateTeamCommand::performAction_172()
 }
 }
 
-// ==== BACKFILL 0x00537820  CreateTeamCommand::performAction_173  cls=SetView3CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537820  CreateTeamCommand::performAction_173  cls=SetView3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_173()
 {
 return aSetview3;
 }
 
-// ==== BACKFILL 0x00537830  CreateTeamCommand::performAction_174  cls=SetView3CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537830  CreateTeamCommand::performAction_174  cls=SetView3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_174()
 {
 {
@@ -1803,7 +1803,7 @@ wchar_t * CreateTeamCommand::performAction_174()
 }
 }
 
-// ==== BACKFILL 0x00537850  CreateTeamCommand::performAction_175  cls=SetView3CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537850  CreateTeamCommand::performAction_175  cls=SetView3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_175()
 {
 {
@@ -1811,7 +1811,7 @@ wchar_t * CreateTeamCommand::performAction_175()
 }
 }
 
-// ==== BACKFILL 0x00537870  CreateTeamCommand::performAction_176  cls=SetView3CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537870  CreateTeamCommand::performAction_176  cls=SetView3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_176()
 {
 {
@@ -1819,7 +1819,7 @@ wchar_t * CreateTeamCommand::performAction_176()
 }
 }
 
-// ==== BACKFILL 0x00537890  CreateTeamCommand::performAction_177  cls=SetView3CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537890  CreateTeamCommand::performAction_177  cls=SetView3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 void * CreateTeamCommand::performAction_177()
 {
 {
@@ -1838,13 +1838,13 @@ void * CreateTeamCommand::performAction_177()
 }
 }
 
-// ==== BACKFILL 0x005378E0  CreateTeamCommand::performAction_178  cls=SetView4CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005378E0  CreateTeamCommand::performAction_178  cls=SetView4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_178()
 {
 return aSetview4;
 }
 
-// ==== BACKFILL 0x005378F0  CreateTeamCommand::performAction_179  cls=SetView4CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005378F0  CreateTeamCommand::performAction_179  cls=SetView4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_179()
 {
 {
@@ -1852,7 +1852,7 @@ wchar_t * CreateTeamCommand::performAction_179()
 }
 }
 
-// ==== BACKFILL 0x00537910  CreateTeamCommand::performAction_180  cls=SetView4CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537910  CreateTeamCommand::performAction_180  cls=SetView4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_180()
 {
 {
@@ -1860,7 +1860,7 @@ wchar_t * CreateTeamCommand::performAction_180()
 }
 }
 
-// ==== BACKFILL 0x00537930  CreateTeamCommand::performAction_181  cls=SetView4CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537930  CreateTeamCommand::performAction_181  cls=SetView4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_181()
 {
 {
@@ -1868,7 +1868,7 @@ wchar_t * CreateTeamCommand::performAction_181()
 }
 }
 
-// ==== BACKFILL 0x00537950  CreateTeamCommand::performAction_182  cls=SetView4CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537950  CreateTeamCommand::performAction_182  cls=SetView4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 void * CreateTeamCommand::performAction_182()
 {
 {
@@ -1887,13 +1887,13 @@ void * CreateTeamCommand::performAction_182()
 }
 }
 
-// ==== BACKFILL 0x005379A0  CreateTeamCommand::performAction_183  cls=FollowCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005379A0  CreateTeamCommand::performAction_183  cls=FollowCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_183()
 {
 return aFollow;
 }
 
-// ==== BACKFILL 0x005379B0  CreateTeamCommand::performAction_184  cls=FollowCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005379B0  CreateTeamCommand::performAction_184  cls=FollowCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_184()
 {
 {
@@ -1901,7 +1901,7 @@ wchar_t * CreateTeamCommand::performAction_184()
 }
 }
 
-// ==== BACKFILL 0x005379D0  CreateTeamCommand::performAction_185  cls=FollowCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005379D0  CreateTeamCommand::performAction_185  cls=FollowCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_185()
 {
 {
@@ -1909,7 +1909,7 @@ wchar_t * CreateTeamCommand::performAction_185()
 }
 }
 
-// ==== BACKFILL 0x005379F0  CreateTeamCommand::performAction_186  cls=FollowCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005379F0  CreateTeamCommand::performAction_186  cls=FollowCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_186()
 {
 {
@@ -1917,7 +1917,7 @@ wchar_t * CreateTeamCommand::performAction_186()
 }
 }
 
-// ==== BACKFILL 0x00537A10  CreateTeamCommand::performAction_187  cls=FollowCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537A10  CreateTeamCommand::performAction_187  cls=FollowCommandClass  sig=csp  renamed_refs=0  residual=- ====
 bool CreateTeamCommand::performAction_187()
 {
 {
@@ -1928,7 +1928,7 @@ bool CreateTeamCommand::performAction_187()
 }
 }
 
-// ==== BACKFILL 0x00537A50  Commands::AddRef  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537A50  Commands::AddRef  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * Commands::AddRef()
 {
 {
@@ -1936,13 +1936,13 @@ char * Commands::AddRef()
 }
 }
 
-// ==== BACKFILL 0x00537A60  Commands::ddtor  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537A60  Commands::ddtor  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0  residual=- ====
 const wchar_t * Commands::ddtor()
 {
 return g_INI_Key_De;
 }
 
-// ==== BACKFILL 0x00537A70  Commands::Release  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537A70  Commands::Release  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char ** Commands::Release()
 {
 {
@@ -1950,7 +1950,7 @@ char ** Commands::Release()
 }
 }
 
-// ==== BACKFILL 0x00537A80  Commands::StubReturn8550640  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537A80  Commands::StubReturn8550640  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0  residual=- ====
 _UNKNOWN ** Commands::StubReturn8550640()
 {
 {
@@ -1958,7 +1958,7 @@ _UNKNOWN ** Commands::StubReturn8550640()
 }
 }
 
-// ==== BACKFILL 0x00537A90  Commands::Execute  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537A90  Commands::Execute  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char Commands::Execute()
 {
 {
@@ -1973,25 +1973,25 @@ char Commands::Execute()
 }
 }
 
-// ==== BACKFILL 0x00537AB0  CreateTeamCommand::performAction_188  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537AB0  CreateTeamCommand::performAction_188  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_188()
 {
 return aExtrasynccheck;
 }
 
-// ==== BACKFILL 0x00537AC0  CreateTeamCommand::performAction_189  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537AC0  CreateTeamCommand::performAction_189  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0  residual=- ====
 const wchar_t * CreateTeamCommand::performAction_189()
 {
 return g_INI_Key_De;
 }
 
-// ==== BACKFILL 0x00537AD0  CreateTeamCommand::performAction_190  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537AD0  CreateTeamCommand::performAction_190  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_190()
 {
 return aGameSyncLoggin;
 }
 
-// ==== BACKFILL 0x00537AE0  CreateTeamCommand::performAction_191  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537AE0  CreateTeamCommand::performAction_191  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0  residual=- ====
 _UNKNOWN ** CreateTeamCommand::performAction_191()
 {
 {
@@ -1999,7 +1999,7 @@ _UNKNOWN ** CreateTeamCommand::performAction_191()
 }
 }
 
-// ==== BACKFILL 0x00537AF0  CreateTeamCommand::performAction_192  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537AF0  CreateTeamCommand::performAction_192  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_192()
 {
 {
@@ -2016,7 +2016,7 @@ int CreateTeamCommand::performAction_192()
 }
 }
 
-// ==== BACKFILL 0x00537B40  ScreenCaptureCommandClass::Constructor  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537B40  ScreenCaptureCommandClass::Constructor  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * ScreenCaptureCommandClass::Constructor()
 {
 {
@@ -2025,13 +2025,13 @@ unsigned int * ScreenCaptureCommandClass::Constructor()
 }
 }
 
-// ==== BACKFILL 0x00537B50  ScreenCaptureCommandClass::AddRef  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537B50  ScreenCaptureCommandClass::AddRef  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * ScreenCaptureCommandClass::AddRef()
 {
 return aScreencapture;
 }
 
-// ==== BACKFILL 0x00537B60  ScreenCaptureCommandClass::ddtor  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537B60  ScreenCaptureCommandClass::ddtor  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * ScreenCaptureCommandClass::ddtor()
 {
 {
@@ -2039,7 +2039,7 @@ wchar_t * ScreenCaptureCommandClass::ddtor()
 }
 }
 
-// ==== BACKFILL 0x00537B80  ScreenCaptureCommandClass::Release  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537B80  ScreenCaptureCommandClass::Release  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * ScreenCaptureCommandClass::Release()
 {
 {
@@ -2047,7 +2047,7 @@ wchar_t * ScreenCaptureCommandClass::Release()
 }
 }
 
-// ==== BACKFILL 0x00537BA0  ScreenCaptureCommandClass::Execute  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537BA0  ScreenCaptureCommandClass::Execute  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * ScreenCaptureCommandClass::Execute()
 {
 {
@@ -2055,7 +2055,7 @@ wchar_t * ScreenCaptureCommandClass::Execute()
 }
 }
 
-// ==== BACKFILL 0x00537DD0  PageUserCommandClass::PageUserCommandClass  cls=PageUserCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537DD0  PageUserCommandClass::PageUserCommandClass  cls=PageUserCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * PageUserCommandClass::PageUserCommandClass()
 {
 {
@@ -2064,7 +2064,7 @@ unsigned int * PageUserCommandClass::PageUserCommandClass()
 }
 }
 
-// ==== BACKFILL 0x00537DE0  PageUserCommandClass::AddRef  cls=PageUserCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537DE0  PageUserCommandClass::AddRef  cls=PageUserCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * PageUserCommandClass::AddRef()
 {
 {
@@ -2072,7 +2072,7 @@ char * PageUserCommandClass::AddRef()
 }
 }
 
-// ==== BACKFILL 0x00537DF0  PageUserCommandClass::Release  cls=PageUserCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537DF0  PageUserCommandClass::Release  cls=PageUserCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * PageUserCommandClass::Release()
 {
 {
@@ -2080,7 +2080,7 @@ wchar_t * PageUserCommandClass::Release()
 }
 }
 
-// ==== BACKFILL 0x00537E10  PageUserCommandClass::ddtor  cls=PageUserCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537E10  PageUserCommandClass::ddtor  cls=PageUserCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * PageUserCommandClass::ddtor()
 {
 {
@@ -2088,7 +2088,7 @@ wchar_t * PageUserCommandClass::ddtor()
 }
 }
 
-// ==== BACKFILL 0x00537E30  PageUserCommandClass::Read  cls=PageUserCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537E30  PageUserCommandClass::Read  cls=PageUserCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * PageUserCommandClass::Read()
 {
 {
@@ -2096,7 +2096,7 @@ wchar_t * PageUserCommandClass::Read()
 }
 }
 
-// ==== BACKFILL 0x00537E50  PageUserCommandClass::Do  cls=PageUserCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537E50  PageUserCommandClass::Do  cls=PageUserCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char PageUserCommandClass::Do(int a1)
 {
 {
@@ -2107,7 +2107,7 @@ char PageUserCommandClass::Do(int a1)
 }
 }
 
-// ==== BACKFILL 0x00537E70  CursorPositionCommandClass::Constructor  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537E70  CursorPositionCommandClass::Constructor  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CursorPositionCommandClass::Constructor()
 {
 {
@@ -2116,7 +2116,7 @@ unsigned int * CursorPositionCommandClass::Constructor()
 }
 }
 
-// ==== BACKFILL 0x00537E80  CreateTeamCommand::performAction_193  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537E80  CreateTeamCommand::performAction_193  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_193()
 {
 {
@@ -2124,7 +2124,7 @@ char * CreateTeamCommand::performAction_193()
 }
 }
 
-// ==== BACKFILL 0x00537E90  CreateTeamCommand::performAction_194  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537E90  CreateTeamCommand::performAction_194  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_194()
 {
 {
@@ -2132,7 +2132,7 @@ wchar_t * CreateTeamCommand::performAction_194()
 }
 }
 
-// ==== BACKFILL 0x00537EB0  CreateTeamCommand::performAction_195  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537EB0  CreateTeamCommand::performAction_195  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_195()
 {
 {
@@ -2140,7 +2140,7 @@ wchar_t * CreateTeamCommand::performAction_195()
 }
 }
 
-// ==== BACKFILL 0x00537ED0  CreateTeamCommand::performAction_196  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537ED0  CreateTeamCommand::performAction_196  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_196()
 {
 {
@@ -2148,7 +2148,7 @@ wchar_t * CreateTeamCommand::performAction_196()
 }
 }
 
-// ==== BACKFILL 0x00537EF0  CreateTeamCommand::performAction_197  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537EF0  CreateTeamCommand::performAction_197  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0  residual=- ====
 bool CreateTeamCommand::performAction_197(int a1)
 {
 {
@@ -2159,7 +2159,7 @@ bool CreateTeamCommand::performAction_197(int a1)
 }
 }
 
-// ==== BACKFILL 0x00537F10  DeleteCommandClass::Constructor  cls=DeleteCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537F10  DeleteCommandClass::Constructor  cls=DeleteCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * DeleteCommandClass::Constructor()
 {
 {
@@ -2168,13 +2168,13 @@ unsigned int * DeleteCommandClass::Constructor()
 }
 }
 
-// ==== BACKFILL 0x00537F20  DeleteCommandClass::AddRef  cls=DeleteCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537F20  DeleteCommandClass::AddRef  cls=DeleteCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * DeleteCommandClass::AddRef()
 {
 return aDelete;
 }
 
-// ==== BACKFILL 0x00537F30  DeleteCommandClass::Release  cls=DeleteCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537F30  DeleteCommandClass::Release  cls=DeleteCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * DeleteCommandClass::Release()
 {
 {
@@ -2182,7 +2182,7 @@ wchar_t * DeleteCommandClass::Release()
 }
 }
 
-// ==== BACKFILL 0x00537F50  DeleteCommandClass::ddtor  cls=DeleteCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537F50  DeleteCommandClass::ddtor  cls=DeleteCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * DeleteCommandClass::ddtor()
 {
 {
@@ -2190,7 +2190,7 @@ wchar_t * DeleteCommandClass::ddtor()
 }
 }
 
-// ==== BACKFILL 0x00537F70  DeleteCommandClass::Read  cls=DeleteCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537F70  DeleteCommandClass::Read  cls=DeleteCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * DeleteCommandClass::Read()
 {
 {
@@ -2198,7 +2198,7 @@ wchar_t * DeleteCommandClass::Read()
 }
 }
 
-// ==== BACKFILL 0x00537F90  DeleteCommandClass::Undo  cls=DeleteCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537F90  DeleteCommandClass::Undo  cls=DeleteCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int DeleteCommandClass_Undo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -2209,7 +2209,7 @@ char __stdcall DeleteCommandClass::_vt08(int a1)
 }
 }
 
-// ==== BACKFILL 0x00537FA0  CreateTeamCommand::performAction_198  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537FA0  CreateTeamCommand::performAction_198  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_198(char a2)
 {
 {
@@ -2220,7 +2220,7 @@ std::locale::facet * CreateTeamCommand::performAction_198(char a2)
 }
 }
 
-// ==== BACKFILL 0x00537FC0  CreateTeamCommand::performAction_199  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537FC0  CreateTeamCommand::performAction_199  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_199(char a2)
 {
 {
@@ -2231,7 +2231,7 @@ std::locale::facet * CreateTeamCommand::performAction_199(char a2)
 }
 }
 
-// ==== BACKFILL 0x00537FE0  CreateTeamCommand::performAction_200  cls=FollowCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00537FE0  CreateTeamCommand::performAction_200  cls=FollowCommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_200(char a2)
 {
 {
@@ -2242,7 +2242,7 @@ std::locale::facet * CreateTeamCommand::performAction_200(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538000  CreateTeamCommand::performAction_201  cls=View1CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538000  CreateTeamCommand::performAction_201  cls=View1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_201(char a2)
 {
 {
@@ -2253,7 +2253,7 @@ std::locale::facet * CreateTeamCommand::performAction_201(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538020  CreateTeamCommand::performAction_202  cls=View2CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538020  CreateTeamCommand::performAction_202  cls=View2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_202(char a2)
 {
 {
@@ -2264,7 +2264,7 @@ std::locale::facet * CreateTeamCommand::performAction_202(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538040  CreateTeamCommand::performAction_203  cls=View3CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538040  CreateTeamCommand::performAction_203  cls=View3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_203(char a2)
 {
 {
@@ -2275,7 +2275,7 @@ std::locale::facet * CreateTeamCommand::performAction_203(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538060  CreateTeamCommand::performAction_204  cls=View4CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538060  CreateTeamCommand::performAction_204  cls=View4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_204(char a2)
 {
 {
@@ -2286,7 +2286,7 @@ std::locale::facet * CreateTeamCommand::performAction_204(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538080  CreateTeamCommand::performAction_205  cls=SetView1CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538080  CreateTeamCommand::performAction_205  cls=SetView1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_205(char a2)
 {
 {
@@ -2297,7 +2297,7 @@ std::locale::facet * CreateTeamCommand::performAction_205(char a2)
 }
 }
 
-// ==== BACKFILL 0x005380A0  CreateTeamCommand::performAction_206  cls=SetView2CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005380A0  CreateTeamCommand::performAction_206  cls=SetView2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_206(char a2)
 {
 {
@@ -2308,7 +2308,7 @@ std::locale::facet * CreateTeamCommand::performAction_206(char a2)
 }
 }
 
-// ==== BACKFILL 0x005380C0  CreateTeamCommand::performAction_207  cls=SetView3CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005380C0  CreateTeamCommand::performAction_207  cls=SetView3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_207(char a2)
 {
 {
@@ -2319,7 +2319,7 @@ std::locale::facet * CreateTeamCommand::performAction_207(char a2)
 }
 }
 
-// ==== BACKFILL 0x005380E0  CreateTeamCommand::performAction_208  cls=SetView4CommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005380E0  CreateTeamCommand::performAction_208  cls=SetView4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_208(char a2)
 {
 {
@@ -2330,7 +2330,7 @@ std::locale::facet * CreateTeamCommand::performAction_208(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538100  CreateTeamCommand::performAction_209  cls=OptionsCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538100  CreateTeamCommand::performAction_209  cls=OptionsCommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_209(char a2)
 {
 {
@@ -2341,7 +2341,7 @@ std::locale::facet * CreateTeamCommand::performAction_209(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538120  CreateTeamCommand::performAction_210  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538120  CreateTeamCommand::performAction_210  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_210(char a2)
 {
 {
@@ -2352,7 +2352,7 @@ std::locale::facet * CreateTeamCommand::performAction_210(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538140  CreateTeamCommand::performAction_211  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538140  CreateTeamCommand::performAction_211  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_211(char a2)
 {
 {
@@ -2363,7 +2363,7 @@ std::locale::facet * CreateTeamCommand::performAction_211(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538160  CreateTeamCommand::performAction_212  cls=CenterREventCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538160  CreateTeamCommand::performAction_212  cls=CenterREventCommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_212(char a2)
 {
 {
@@ -2374,7 +2374,7 @@ std::locale::facet * CreateTeamCommand::performAction_212(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538180  CreateTeamCommand::performAction_213  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538180  CreateTeamCommand::performAction_213  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * CreateTeamCommand::performAction_213(char a2)
 {
 {
@@ -2385,7 +2385,7 @@ std::locale::facet * CreateTeamCommand::performAction_213(char a2)
 }
 }
 
-// ==== BACKFILL 0x005381A0  CreateTeamCommand::performAction_214  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005381A0  CreateTeamCommand::performAction_214  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0  residual=- ====
 ToggleSellCommandClass * CreateTeamCommand::performAction_214(char a2)
 {
 {
@@ -2396,7 +2396,7 @@ ToggleSellCommandClass * CreateTeamCommand::performAction_214(char a2)
 }
 }
 
-// ==== BACKFILL 0x005381C0  CreateTeamCommand::performAction_215  cls=ToggleRepairCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005381C0  CreateTeamCommand::performAction_215  cls=ToggleRepairCommandClass  sig=csp  renamed_refs=0  residual=- ====
 ToggleRepairCommandClass * CreateTeamCommand::performAction_215(char a2)
 {
 {
@@ -2407,7 +2407,7 @@ ToggleRepairCommandClass * CreateTeamCommand::performAction_215(char a2)
 }
 }
 
-// ==== BACKFILL 0x005381E0  CreateTeamCommand::performAction_216  cls=AllianceCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005381E0  CreateTeamCommand::performAction_216  cls=AllianceCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CreateTeamCommand::performAction_216(char a2)
 {
 {
@@ -2418,7 +2418,7 @@ unsigned int * CreateTeamCommand::performAction_216(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538200  CreateTeamCommand::performAction_217  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538200  CreateTeamCommand::performAction_217  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CreateTeamCommand::performAction_217(char a2)
 {
 {
@@ -2429,7 +2429,7 @@ unsigned int * CreateTeamCommand::performAction_217(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538220  CreateTeamCommand::performAction_218  cls=CenterViewCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538220  CreateTeamCommand::performAction_218  cls=CenterViewCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CreateTeamCommand::performAction_218(char a2)
 {
 {
@@ -2440,7 +2440,7 @@ unsigned int * CreateTeamCommand::performAction_218(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538240  CreateTeamCommand::performAction_219  cls=ScatterCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538240  CreateTeamCommand::performAction_219  cls=ScatterCommandClass  sig=csp  renamed_refs=0  residual=- ====
 ScatterCommandClass * CreateTeamCommand::performAction_219(char a2)
 {
 {
@@ -2451,7 +2451,7 @@ ScatterCommandClass * CreateTeamCommand::performAction_219(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538260  CreateTeamCommand::performAction_220  cls=GuardCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538260  CreateTeamCommand::performAction_220  cls=GuardCommandClass  sig=csp  renamed_refs=0  residual=- ====
 GuardCommandClass * CreateTeamCommand::performAction_220(char a2)
 {
 {
@@ -2462,7 +2462,7 @@ GuardCommandClass * CreateTeamCommand::performAction_220(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538280  CreateTeamCommand::performAction_221  cls=StopCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538280  CreateTeamCommand::performAction_221  cls=StopCommandClass  sig=csp  renamed_refs=0  residual=- ====
 StopCommandClass * CreateTeamCommand::performAction_221(char a2)
 {
 {
@@ -2473,7 +2473,7 @@ StopCommandClass * CreateTeamCommand::performAction_221(char a2)
 }
 }
 
-// ==== BACKFILL 0x005382A0  CreateTeamCommand::performAction_222  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005382A0  CreateTeamCommand::performAction_222  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CreateTeamCommand::performAction_222(char a2)
 {
 {
@@ -2484,7 +2484,7 @@ unsigned int * CreateTeamCommand::performAction_222(char a2)
 }
 }
 
-// ==== BACKFILL 0x005382C0  CreateTeamCommand::performAction_223  cls=DeployCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005382C0  CreateTeamCommand::performAction_223  cls=DeployCommandClass  sig=csp  renamed_refs=0  residual=- ====
 DeployCommandClass * CreateTeamCommand::performAction_223(char a2)
 {
 {
@@ -2495,7 +2495,7 @@ DeployCommandClass * CreateTeamCommand::performAction_223(char a2)
 }
 }
 
-// ==== BACKFILL 0x005382E0  CreateTeamCommand::performAction_224  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005382E0  CreateTeamCommand::performAction_224  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CreateTeamCommand::performAction_224(char a2)
 {
 {
@@ -2506,7 +2506,7 @@ unsigned int * CreateTeamCommand::performAction_224(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538300  CreateTeamCommand::performAction_225  cls=NextObjectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538300  CreateTeamCommand::performAction_225  cls=NextObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CreateTeamCommand::performAction_225(char a2)
 {
 {
@@ -2517,7 +2517,7 @@ unsigned int * CreateTeamCommand::performAction_225(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538320  CreateTeamCommand::performAction_226  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538320  CreateTeamCommand::performAction_226  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CreateTeamCommand::performAction_226(char a2)
 {
 {
@@ -2528,7 +2528,7 @@ unsigned int * CreateTeamCommand::performAction_226(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538340  CreateTeamCommand::performAction_227  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538340  CreateTeamCommand::performAction_227  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CreateTeamCommand::performAction_227(char a2)
 {
 {
@@ -2539,7 +2539,7 @@ unsigned int * CreateTeamCommand::performAction_227(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538360  CreateTeamCommand::performAction_228  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538360  CreateTeamCommand::performAction_228  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CreateTeamCommand::performAction_228(char a2)
 {
 {
@@ -2550,7 +2550,7 @@ unsigned int * CreateTeamCommand::performAction_228(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538380  CreateTeamCommand::performAction_229  cls=HealthNavCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538380  CreateTeamCommand::performAction_229  cls=HealthNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CreateTeamCommand::performAction_229(char a2)
 {
 {
@@ -2561,7 +2561,7 @@ unsigned int * CreateTeamCommand::performAction_229(char a2)
 }
 }
 
-// ==== BACKFILL 0x005383A0  CreateTeamCommand::performAction_230  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005383A0  CreateTeamCommand::performAction_230  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CreateTeamCommand::performAction_230(char a2)
 {
 {
@@ -2572,7 +2572,7 @@ unsigned int * CreateTeamCommand::performAction_230(char a2)
 }
 }
 
-// ==== BACKFILL 0x005383C0  CreateTeamCommand::performAction_231  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005383C0  CreateTeamCommand::performAction_231  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CreateTeamCommand::performAction_231(char a2)
 {
 {
@@ -2583,7 +2583,7 @@ unsigned int * CreateTeamCommand::performAction_231(char a2)
 }
 }
 
-// ==== BACKFILL 0x005383E0  CreateTeamCommand::performAction_232  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005383E0  CreateTeamCommand::performAction_232  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CreateTeamCommand::performAction_232(char a2)
 {
 {
@@ -2594,7 +2594,7 @@ unsigned int * CreateTeamCommand::performAction_232(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538400  CreateTeamCommand::performAction_233  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538400  CreateTeamCommand::performAction_233  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CreateTeamCommand::performAction_233(char a2)
 {
 {
@@ -2605,7 +2605,7 @@ unsigned int * CreateTeamCommand::performAction_233(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538420  CreateTeamCommand::performAction_234  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538420  CreateTeamCommand::performAction_234  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CreateTeamCommand::performAction_234(char a2)
 {
 {
@@ -2616,7 +2616,7 @@ unsigned int * CreateTeamCommand::performAction_234(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538440  CreateTeamCommand::performAction_235  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538440  CreateTeamCommand::performAction_235  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0  residual=- ====
 ScreenCaptureCommandClass * CreateTeamCommand::performAction_235(char a2)
 {
 {
@@ -2627,7 +2627,7 @@ ScreenCaptureCommandClass * CreateTeamCommand::performAction_235(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538460  CreateTeamCommand::performAction_236  cls=PageUserCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538460  CreateTeamCommand::performAction_236  cls=PageUserCommandClass  sig=csp  renamed_refs=0  residual=- ====
 PageUserCommandClass * CreateTeamCommand::performAction_236(char a2)
 {
 {
@@ -2638,7 +2638,7 @@ PageUserCommandClass * CreateTeamCommand::performAction_236(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538480  CreateTeamCommand::performAction_237  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538480  CreateTeamCommand::performAction_237  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0  residual=- ====
 CursorPositionCommandClass * CreateTeamCommand::performAction_237(char a2)
 {
 {
@@ -2649,7 +2649,7 @@ CursorPositionCommandClass * CreateTeamCommand::performAction_237(char a2)
 }
 }
 
-// ==== BACKFILL 0x005384A0  CreateTeamCommand::performAction_238  cls=DeleteCommandClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005384A0  CreateTeamCommand::performAction_238  cls=DeleteCommandClass  sig=csp  renamed_refs=0  residual=- ====
 DeleteCommandClass * CreateTeamCommand::performAction_238(char a2)
 {
 {
@@ -2660,7 +2660,7 @@ DeleteCommandClass * CreateTeamCommand::performAction_238(char a2)
 }
 }
 
-// ==== BACKFILL 0x005384C0  CreateTeamCommand::performAction_239  cls=DynamicVector  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x005384C0  CreateTeamCommand::performAction_239  cls=DynamicVector  sig=csp  renamed_refs=1  residual=- ====
 void CreateTeamCommand::performAction_239()
 {
 {
@@ -2677,7 +2677,7 @@ void CreateTeamCommand::performAction_239()
 }
 }
 
-// ==== BACKFILL 0x005384F0  CreateTeamCommand::performAction_240  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005384F0  CreateTeamCommand::performAction_240  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 unsigned int CreateTeamCommand::performAction_240(int a2)
 {
 {
@@ -2688,7 +2688,7 @@ unsigned int CreateTeamCommand::performAction_240(int a2)
 }
 }
 
-// ==== BACKFILL 0x00538780  DynamicVector::Add_Alt2  cls=DynamicVector  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x00538780  DynamicVector::Add_Alt2  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 char DynamicVector::Add_Alt2(DynamicVector * aP1)
 {
 {
@@ -2701,19 +2701,19 @@ char DynamicVector::Add_Alt2(DynamicVector * aP1)
   {
     if ( !this->IsAllocated && v3 )
     return 0;
-    v4 = this->__pad_014;
+    v4 = this->CapacityIncrement;
     if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
     return 0;
   }
     v6 = this->DynamicVector_field_0x10;
-    v7 = this->q004;
+    v7 = this->Items;
     this->DynamicVector_field_0x10 = v6 + 1;
     *(int *)(v7 + 4 * v6) = *(int *)aP1->__pad_0;
     return 1;
 }
 }
 
-// ==== BACKFILL 0x00538AE0  CreateTeamCommand::performAction_244  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538AE0  CreateTeamCommand::performAction_244  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 DynamicVector * CreateTeamCommand::performAction_244(char a2)
 {
 {
@@ -2733,7 +2733,7 @@ DynamicVector * CreateTeamCommand::performAction_244(char a2)
 }
 }
 
-// ==== BACKFILL 0x00538C40  sub_538C40  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538C40  sub_538C40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_538C40::sub_538C40()
 {
 {
@@ -2756,7 +2756,7 @@ int E4Recv_538C40::sub_538C40()
 }
 }
 
-// ==== BACKFILL 0x00538CC0  sub_538CC0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538CC0  sub_538CC0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_538CC0::sub_538CC0()
 {
 {
@@ -2778,7 +2778,7 @@ int E4Recv_538CC0::sub_538CC0()
 }
 }
 
-// ==== BACKFILL 0x00538E70  sub_538E70  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00538E70  sub_538E70  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 short E4Recv_538E70::sub_538E70(double a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -2824,7 +2824,7 @@ __int16 __thiscall sub_538E70(void *this, double a2)
 }
 }
 
-// ==== BACKFILL 0x0053A100  LightningStorm::IsActive  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053A100  LightningStorm::IsActive  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char LightningStorm::IsActive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -2834,7 +2834,7 @@ char LightningStorm_IsActive()
 }
 }
 
-// ==== BACKFILL 0x0053AD00  UpdateSurfaceAnimations  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053AD00  UpdateSurfaceAnimations  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int UpdateSurfaceAnimations(int a1, AnimClass * aP1, int a3, int a4)
 {
 {
@@ -2878,7 +2878,7 @@ int UpdateSurfaceAnimations(int a1, AnimClass * aP1, int a3, int a4)
 }
 }
 
-// ==== BACKFILL 0x0053B400  PsyDom::IsActive  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053B400  PsyDom::IsActive  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 bool PsyDom::IsActive()
 {
 {
@@ -2886,7 +2886,7 @@ bool PsyDom::IsActive()
 }
 }
 
-// ==== BACKFILL 0x0053D310  ProcessIonCannonEffect  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053D310  ProcessIonCannonEffect  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void sub_53D310()
 {
 {
@@ -2896,7 +2896,7 @@ void sub_53D310()
 }
 }
 
-// ==== BACKFILL 0x0053D550  WinMainSetup_Setup  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053D550  WinMainSetup_Setup  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_53D550()
 {
 {
@@ -2914,7 +2914,7 @@ int sub_53D550()
 }
 }
 
-// ==== BACKFILL 0x0053D8E0  ComputeSpiralOffset  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053D8E0  ComputeSpiralOffset  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int * ComputeSpiralOffset(int * a1, int a2)
 {
 {
@@ -2969,7 +2969,7 @@ int * ComputeSpiralOffset(int * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x0053D960  GenerateLightningStormGlow_Helper  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053D960  GenerateLightningStormGlow_Helper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_53D960(int a1, int a2)
 {
 {
@@ -2996,7 +2996,7 @@ int sub_53D960(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x0053E070  sub_53E070  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053E070  sub_53E070  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 DWORD sub_53E070(unsigned int * lpThreadParameter)
 {
 {
@@ -3059,7 +3059,7 @@ DWORD sub_53E070(unsigned int * lpThreadParameter)
 }
 }
 
-// ==== BACKFILL 0x0053E420  Object::RemoveObjectArray  cls=Object  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053E420  Object::RemoveObjectArray  cls=Object  sig=csp  renamed_refs=0  residual=- ====
 void ** Object::RemoveObjectArray()
 {
 {
@@ -3090,7 +3090,7 @@ void ** Object::RemoveObjectArray()
 }
 }
 
-// ==== BACKFILL 0x0053E6B0  WinMain_Write_53E6B0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053E6B0  WinMain_Write_53E6B0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void sub_53E6B0()
 {
 {
@@ -3112,7 +3112,7 @@ void sub_53E6B0()
 }
 }
 
-// ==== BACKFILL 0x0053EC70  EventClass::GetKeyStateSafe  cls=EventClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053EC70  EventClass::GetKeyStateSafe  cls=EventClass  sig=csp  renamed_refs=0  residual=- ====
 SHORT EventClass::GetKeyStateSafe(unsigned char nVirtKey)
 {
     if ( g_StreamBufferState )
@@ -3121,7 +3121,7 @@ SHORT EventClass::GetKeyStateSafe(unsigned char nVirtKey)
         return GetKeyState(nVirtKey);
 }
 
-// ==== BACKFILL 0x0053EC90  Mouse::GetKeyState  cls=MouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053EC90  Mouse::GetKeyState  cls=MouseClass  sig=csp  renamed_refs=0  residual=- ====
 SHORT Mouse::GetKeyState()
 {
 {
@@ -3132,7 +3132,7 @@ SHORT Mouse::GetKeyState()
 }
 }
 
-// ==== BACKFILL 0x0053ECE0  NetworkAddress::Assign  cls=NetworkAddress  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053ECE0  NetworkAddress::Assign  cls=NetworkAddress  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * NetworkAddress::Assign(unsigned int * a1, IUnknown * aP2, short a4)
 {
 {
@@ -3155,7 +3155,7 @@ unsigned int * NetworkAddress::Assign(unsigned int * a1, IUnknown * aP2, short a
 }
 }
 
-// ==== BACKFILL 0x0053EDA0  Network::CopyAddress  cls=Network  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053EDA0  Network::CopyAddress  cls=Network  sig=csp  renamed_refs=0  residual=- ====
 char * Network::CopyAddress(unsigned int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -3172,7 +3172,7 @@ char *__thiscall Network_CopyAddress(_DWORD *this, _DWORD *a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x0053EDC0  Network::CopyAddress_Small  cls=Network  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053EDC0  Network::CopyAddress_Small  cls=Network  sig=csp  renamed_refs=0  residual=- ====
 int Network::CopyAddress_Small(IPXManagerClass * aP1)
 {
 {
@@ -3184,7 +3184,7 @@ int Network::CopyAddress_Small(IPXManagerClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0053EDE0  Struct::Copy6Bytes  cls=Struct  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053EDE0  Struct::Copy6Bytes  cls=Struct  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int Struct::Copy6Bytes(IPXManagerClass * aP1) {
 {
     char *v2;
@@ -3197,7 +3197,7 @@ namespace gamemd { int Struct::Copy6Bytes(IPXManagerClass * aP1) {
 }
 } }
 
-// ==== BACKFILL 0x0053F020  sub_53F020  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053F020  sub_53F020  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_53F020::sub_53F020(const char * a2)
 {
 {
@@ -3205,7 +3205,7 @@ bool E4Recv_53F020::sub_53F020(const char * a2)
 }
 }
 
-// ==== BACKFILL 0x0053F050  sub_53F050  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053F050  sub_53F050  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_53F050::sub_53F050(const char * a2)
 {
 {
@@ -3213,7 +3213,7 @@ bool E4Recv_53F050::sub_53F050(const char * a2)
 }
 }
 
-// ==== BACKFILL 0x0053F080  sub_53F080  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053F080  sub_53F080  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_53F080::sub_53F080(const char * a2)
 {
 {
@@ -3221,7 +3221,7 @@ bool E4Recv_53F080::sub_53F080(const char * a2)
 }
 }
 
-// ==== BACKFILL 0x0053F0B0  sub_53F0B0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053F0B0  sub_53F0B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_53F0B0::sub_53F0B0(const char * a2)
 {
 {
@@ -3229,7 +3229,7 @@ bool E4Recv_53F0B0::sub_53F0B0(const char * a2)
 }
 }
 
-// ==== BACKFILL 0x0053F0E0  Network::FormatAddress  cls=Network  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053F0E0  Network::FormatAddress  cls=Network  sig=csp  renamed_refs=0  residual=- ====
 char * Network::FormatAddress(IUnknown * aP1)
 {
 {
@@ -3247,7 +3247,7 @@ char * Network::FormatAddress(IUnknown * aP1)
 }
 }
 
-// ==== BACKFILL 0x0053F1F0  Multiplayer::Screen  cls=Multiplayer  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053F1F0  Multiplayer::Screen  cls=Multiplayer  sig=csp  renamed_refs=0  residual=- ====
 void Multiplayer::Screen()
 {
 {
@@ -3255,7 +3255,7 @@ void Multiplayer::Screen()
 }
 }
 
-// ==== BACKFILL 0x0053F200  Network::SetPort  cls=Network  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053F200  Network::SetPort  cls=Network  sig=csp  renamed_refs=0  residual=- ====
 short Network::SetPort(IPXManagerClass * aP1)
 {
 {
@@ -3269,7 +3269,7 @@ short Network::SetPort(IPXManagerClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0053F4E0  Struct::ZeroInitAndSetup_0  cls=IPXConnClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053F4E0  Struct::ZeroInitAndSetup_0  cls=IPXConnClass  sig=csp  renamed_refs=0  residual=- ====
 int Struct::ZeroInitAndSetup_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -3280,7 +3280,7 @@ int __thiscall Struct::ZeroInitAndSetup_0(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x0053F4F0  Network_Init_53F4F0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053F4F0  Network_Init_53F4F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_53F4F0(short a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
 {
@@ -3296,7 +3296,7 @@ int sub_53F4F0(short a1, int a2, int a3, int a4, int a5, int a6, int a7)
 }
 }
 
-// ==== BACKFILL 0x0053FFA0  TerrainTypeClass::GetTileData  cls=IPXGlobalConnClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0053FFA0  TerrainTypeClass::GetTileData  cls=IPXGlobalConnClass  sig=csp  renamed_refs=0  residual=- ====
 int TerrainTypeClass::GetTileData(AnimClass * aP1, void * a2, signed int * a3, unsigned int * a4, unsigned short * a5, unsigned int * a6)
 {
 {

@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x006D0260  BlowStraw_29::Stub  cls=TabClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D0260  BlowStraw_29::Stub  cls=TabClass  sig=csp  renamed_refs=0  residual=- ====
 int BlowStraw_29_::Stub()
 {
     int __thiscall BlowStraw_29_::Stub(int *(void**)this)
@@ -11,7 +11,7 @@ int BlowStraw_29_::Stub()
 }
 }
 
-// ==== BACKFILL 0x006D0270  TacticalClass::CleanupResources  cls=TabClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D0270  TacticalClass::CleanupResources  cls=TabClass  sig=csp  renamed_refs=0  residual=- ====
 void TacticalClass::CleanupResources()
 {
 {
@@ -34,7 +34,7 @@ void TacticalClass::CleanupResources()
 }
 }
 
-// ==== BACKFILL 0x006D02B0  SidebarClass::LoadButtonSHPs  cls=TabClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D02B0  SidebarClass::LoadButtonSHPs  cls=TabClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SidebarClass::LoadButtonSHPs() {
 {
       int v2;
@@ -84,7 +84,7 @@ namespace gamemd { int SidebarClass::LoadButtonSHPs() {
 }
 } }
 
-// ==== BACKFILL 0x006D03A0  SidebarClass::InitButtons  cls=TabClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D03A0  SidebarClass::InitButtons  cls=TabClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SidebarClass::InitButtons() {
 {
       char result;
@@ -119,7 +119,7 @@ namespace gamemd { int SidebarClass::InitButtons() {
 }
 } }
 
-// ==== BACKFILL 0x006D0EC0  HouseClass::updateFactoryQueue  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D0EC0  HouseClass::updateFactoryQueue  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* HouseClass::updateFactoryQueue() {
 {
       _DWORD *v1;
@@ -140,7 +140,7 @@ namespace gamemd { void* HouseClass::updateFactoryQueue() {
 }
 } }
 
-// ==== BACKFILL 0x006D0F00  ObjectClass::PreDraw  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D0F00  ObjectClass::PreDraw  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::PreDraw() {
 {
       int v1;
@@ -151,7 +151,7 @@ namespace ra2 { namespace game { int ObjectClass::PreDraw() {
 }
 } } }
 
-// ==== BACKFILL 0x006D1570  sub_6D1570  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D1570  sub_6D1570  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_6D1570::sub_6D1570()
 {
 {
@@ -175,7 +175,7 @@ char E4Recv_6D1570::sub_6D1570()
 }
 }
 
-// ==== BACKFILL 0x006D1610  HouseClass::InitDefeatState  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D1610  HouseClass::InitDefeatState  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::InitDefeatState() {
 {
       char result;
@@ -196,7 +196,7 @@ namespace gamemd { int HouseClass::InitDefeatState() {
 }
 } }
 
-// ==== BACKFILL 0x006D1770  MouseClass::ToggleContextGadget  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D1770  MouseClass::ToggleContextGadget  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char MouseClass::ToggleContextGadget(int a1, int a2)
 {
 {
@@ -239,7 +239,7 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x006D1810  Struct::Zero25  cls=Struct  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D1810  Struct::Zero25  cls=Struct  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* Struct::Zero25() {
 {
       *this = 0;
@@ -253,7 +253,7 @@ namespace gamemd { void* Struct::Zero25() {
 }
 } }
 
-// ==== BACKFILL 0x006D1E80  sub_6D1E80  cls=Tactical  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D1E80  sub_6D1E80  cls=Tactical  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_6D1E80::sub_6D1E80()
 {
 {
@@ -266,7 +266,7 @@ void E4Recv_6D1E80::sub_6D1E80()
 }
 }
 
-// ==== BACKFILL 0x006D1F10  Coord::To_ScreenRaw  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D1F10  Coord::To_ScreenRaw  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int * Coord::To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1)
 {
 {
@@ -284,7 +284,7 @@ int * Coord::To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1)
 }
 }
 
-// ==== BACKFILL 0x006D20E0  ZCoordToScreenY  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D20E0  ZCoordToScreenY  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 long long ZCoordToScreenY(IUnknown * aP0)
 {
 {
@@ -292,7 +292,7 @@ long long ZCoordToScreenY(IUnknown * aP0)
 }
 }
 
-// ==== BACKFILL 0x006D2120  Coord::ScaleToScreenY  cls=Coord  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D2120  Coord::ScaleToScreenY  cls=Coord  sig=csp  renamed_refs=0  residual=- ====
 long long Coord::ScaleToScreenY()
 {
 {
@@ -300,7 +300,7 @@ long long Coord::ScaleToScreenY()
 }
 }
 
-// ==== BACKFILL 0x006D2360  Matrix3x4::TransformCell  cls=Matrix3x4  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D2360  Matrix3x4::TransformCell  cls=Matrix3x4  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2)
 {
 {
@@ -340,7 +340,7 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
 }
 }
 
-// ==== BACKFILL 0x006D2420  TacticalClass::SetPosition  cls=TacticalClass  sig=csp  renamed_refs=8 ====
+// ==== BACKFILL 0x006D2420  TacticalClass::SetPosition  cls=TacticalClass  sig=csp  renamed_refs=8  residual=- ====
 namespace gamemd { int TacticalClass::SetPosition(void* a1, int a2) {
 {
       int v4;
@@ -372,13 +372,13 @@ namespace gamemd { int TacticalClass::SetPosition(void* a1, int a2) {
 }
 } }
 
-// ==== BACKFILL 0x006D2B50  nullsub_238  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D2B50  nullsub_238  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_238(int a1, int a2)
 {
   ;
 }
 
-// ==== BACKFILL 0x006D3870  TacticalClass::ClickFindBuilding  cls=TacticalClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D3870  TacticalClass::ClickFindBuilding  cls=TacticalClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TacticalClass::ClickFindBuilding(void* a1, void* a2, int a3) {
 {
       _DWORD *v5;
@@ -485,7 +485,7 @@ namespace gamemd { int TacticalClass::ClickFindBuilding(void* a1, void* a2, int 
 }
 } }
 
-// ==== BACKFILL 0x006D3AC0  TacticalClass::ClickFindOverlay  cls=TacticalClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D3AC0  TacticalClass::ClickFindOverlay  cls=TacticalClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TacticalClass::ClickFindOverlay(void* a1, void* a2, int a3) {
 {
       _DWORD *v5;
@@ -592,7 +592,7 @@ namespace gamemd { int TacticalClass::ClickFindOverlay(void* a1, void* a2, int a
 }
 } }
 
-// ==== BACKFILL 0x006D4DB0  HouseClass::SetOwnerName  cls=HouseClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x006D4DB0  HouseClass::SetOwnerName  cls=HouseClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { void* HouseClass::SetOwnerName(void* a1, int a2) {
 {
       CampaignScore *result;
@@ -613,7 +613,7 @@ namespace gamemd { void* HouseClass::SetOwnerName(void* a1, int a2) {
 }
 } }
 
-// ==== BACKFILL 0x006D4E00  sub_6D4E00  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D4E00  sub_6D4E00  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_6D4E00::sub_6D4E00()
 {
 {
@@ -622,7 +622,7 @@ void E4Recv_6D4E00::sub_6D4E00()
 }
 }
 
-// ==== BACKFILL 0x006D5030  RadarClass::DrawBlips  cls=RadarClass  sig=csp  renamed_refs=6 ====
+// ==== BACKFILL 0x006D5030  RadarClass::DrawBlips  cls=RadarClass  sig=csp  renamed_refs=3  residual=- ====
 namespace gamemd { int RadarClass::DrawBlips(int a1) {
 {
       AbstractClass *v3;
@@ -737,7 +737,7 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
               v58 = GroundHeight;
               v11 = Coord::To_ScreenRaw(v52, &v56);
               v12 = this->RadarClass_field_0xB0;
-              v13 = this->__pad_0B4;
+              v13 = this->q0B4;
               v48 = (IUnknown *)*v11;
               v51 = v11[1] - v13;
               v48 = (IUnknown *)((char *)v48 - v12 - 30);
@@ -798,7 +798,7 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
             &v53);
           v17 = Coord::To_ScreenRaw(v52, &v53);
           v18 = this->RadarClass_field_0xB0;
-          v19 = this->__pad_0B4;
+          v19 = this->q0B4;
           v48 = (IUnknown *)*v17;
           v20 = v17[1];
           v48 = (IUnknown *)((char *)v48 - v18);
@@ -891,7 +891,7 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
                 v53 = -15360 * (((SHIWORD(v49) << 8) + 128) / 256) / 2 + (v36 >> 1);
                 v38 = v53 / 256 - this->RadarClass_field_0xB0;
                 v52[1] = (7680 * (((SHIWORD(v49) << 8) + 128) / 256) / 2 + (((int)v37 - HIDWORD(v37)) >> 1)) / 256
-                       - this->__pad_0B4;
+                       - this->q0B4;
                 v52[0] = v38 - 30;
                 if ( LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (IUnknown *)&v46) )
                 {
@@ -920,7 +920,7 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x006D6190  ObjectClass::ComputeDelta  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D6190  ObjectClass::ComputeDelta  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* ObjectClass::ComputeDelta(void* a1) {
 {
       int v2;
@@ -934,7 +934,7 @@ namespace ra2 { namespace game { void* ObjectClass::ComputeDelta(void* a1) {
 }
 } } }
 
-// ==== BACKFILL 0x006D6410  Terrain::ClimbCheck  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D6410  Terrain::ClimbCheck  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * Terrain::ClimbCheck(AbstractClass * aP0, AbstractClass * aP1)
 {
 {
@@ -986,7 +986,7 @@ unsigned int * Terrain::ClimbCheck(AbstractClass * aP0, AbstractClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x006D6A90  sub_6D6A90  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D6A90  sub_6D6A90  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 long long sub_6D6A90(unsigned int * a1)
 {
 {
@@ -1001,7 +1001,7 @@ long long sub_6D6A90(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x006D6AD0  CellClass::GetByte284  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D6AD0  CellClass::GetByte284  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CellClass::GetByte284(IUnknown * aP0)
 {
 {
@@ -1009,7 +1009,7 @@ int CellClass::GetByte284(IUnknown * aP0)
 }
 }
 
-// ==== BACKFILL 0x006D84D0  sub_6D84D0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D84D0  sub_6D84D0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int * sub_6D84D0(int * a1, int * a2)
 {
 {
@@ -1036,7 +1036,7 @@ int * sub_6D84D0(int * a1, int * a2)
 }
 }
 
-// ==== BACKFILL 0x006D8640  ClampCoordMap  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D8640  ClampCoordMap  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char ClampCoordMap(AbstractClass * aP0)
 {
 {
@@ -1085,7 +1085,7 @@ char ClampCoordMap(AbstractClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x006D97D0  TacticalClass::FindOverlay  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D97D0  TacticalClass::FindOverlay  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int TacticalClass::FindOverlay(int a1, IUnknown * aP1, IUnknown * aP2)
 {
 {
@@ -1145,7 +1145,7 @@ int TacticalClass::FindOverlay(int a1, IUnknown * aP1, IUnknown * aP2)
 }
 }
 
-// ==== BACKFILL 0x006D9920  TacticalClass::FindBuilding  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D9920  TacticalClass::FindBuilding  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int TacticalClass::FindBuilding(int a1, IUnknown * aP1, IUnknown * aP2)
 {
 {
@@ -1204,7 +1204,7 @@ int TacticalClass::FindBuilding(int a1, IUnknown * aP1, IUnknown * aP2)
 }
 }
 
-// ==== BACKFILL 0x006D9A50  Render_Render_6D9A50  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D9A50  Render_Render_6D9A50  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_6D9A50(int a1, int a2, int a3, int a4)
 {
 {
@@ -1239,7 +1239,7 @@ int sub_6D9A50(int a1, int a2, int a3, int a4)
 }
 }
 
-// ==== BACKFILL 0x006D9F80  TacticalClass::InitScrollBounds  cls=TacticalClass  sig=csp  renamed_refs=6 ====
+// ==== BACKFILL 0x006D9F80  TacticalClass::InitScrollBounds  cls=TacticalClass  sig=csp  renamed_refs=6  residual=- ====
 namespace gamemd { int TacticalClass::InitScrollBounds(void* a1) {
 {
       int result;
@@ -1261,7 +1261,7 @@ namespace gamemd { int TacticalClass::InitScrollBounds(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x006D9FC0  TacticalClass::UpdateScrollMaxBounds  cls=TacticalClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x006D9FC0  TacticalClass::UpdateScrollMaxBounds  cls=TacticalClass  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { int TacticalClass::UpdateScrollMaxBounds(void* a1) {
 {
       int result;
@@ -1276,7 +1276,7 @@ namespace gamemd { int TacticalClass::UpdateScrollMaxBounds(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x006D9FF0  PlayerClass::ProcessOccupancyUpdate  cls=PlayerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006D9FF0  PlayerClass::ProcessOccupancyUpdate  cls=PlayerClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int PlayerClass::ProcessOccupancyUpdate(void* a1) {
 {
       int result;
@@ -1317,7 +1317,7 @@ namespace gamemd { int PlayerClass::ProcessOccupancyUpdate(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x006DA080  PlayerClass::HasOccupiedCell  cls=PlayerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006DA080  PlayerClass::HasOccupiedCell  cls=PlayerClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int PlayerClass::HasOccupiedCell() {
 {
       int v1;
@@ -1375,7 +1375,7 @@ namespace gamemd { int PlayerClass::HasOccupiedCell() {
 }
 } }
 
-// ==== BACKFILL 0x006DA160  TacticalClass::ResetScrollBounds  cls=TacticalClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x006DA160  TacticalClass::ResetScrollBounds  cls=TacticalClass  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { int TacticalClass::ResetScrollBounds() {
 {
       this->TacticalClass_field_D90 = 0;
@@ -1386,7 +1386,7 @@ namespace gamemd { int TacticalClass::ResetScrollBounds() {
 }
 } }
 
-// ==== BACKFILL 0x006DA360  UI_Move  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006DA360  UI_Move  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * UI_Move(unsigned int * a0, MouseClass * aP1, int a3)
 {
 {
@@ -1395,13 +1395,13 @@ unsigned int * UI_Move(unsigned int * a0, MouseClass * aP1, int a3)
 }
 }
 
-// ==== BACKFILL 0x006DA370  nullsub_239  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006DA370  nullsub_239  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_239(int a1)
 {
   ;
 }
 
-// ==== BACKFILL 0x006DA560  Tactical::ScrollMap  cls=Tactical  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006DA560  Tactical::ScrollMap  cls=Tactical  sig=csp  renamed_refs=0  residual=- ====
 int * Tactical::ScrollMap(Tactical * aP0, int a2)
 {
 {
@@ -1425,7 +1425,7 @@ int * Tactical::ScrollMap(Tactical * aP0, int a2)
 }
 }
 
-// ==== BACKFILL 0x006DBCE0  Tactical::ddtor  cls=Tactical  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006DBCE0  Tactical::ddtor  cls=Tactical  sig=csp  renamed_refs=0  residual=- ====
 int Tactical::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -1437,7 +1437,7 @@ int Tactical::ddtor(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x006DBD20  Tactical::InitMap  cls=Tactical  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006DBD20  Tactical::InitMap  cls=Tactical  sig=csp  renamed_refs=0  residual=- ====
 int Tactical::InitMap(int a1, int a2)
 {
 {
@@ -1494,7 +1494,7 @@ int Tactical::InitMap(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x006DBE00  Tactical::UpdateMapView  cls=Tactical  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006DBE00  Tactical::UpdateMapView  cls=Tactical  sig=csp  renamed_refs=0  residual=- ====
 int Tactical::UpdateMapView(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 {
@@ -1506,7 +1506,7 @@ int Tactical::UpdateMapView(TechnoTypeClass * aP0, int * a1, int aP2)
 }
 }
 
-// ==== BACKFILL 0x006DC430  GetCoordDataMap  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006DC430  GetCoordDataMap  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Map_GetCoordData(int a1)
 {
 {
@@ -1514,19 +1514,19 @@ int Map_GetCoordData(int a1)
 }
 }
 
-// ==== BACKFILL 0x006DC450  Tactical::StubReturn56  cls=Tactical  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006DC450  Tactical::StubReturn56  cls=Tactical  sig=csp  renamed_refs=0  residual=- ====
 int Tactical::StubReturn56()
 {
 return 56;
 }
 
-// ==== BACKFILL 0x006DC460  Tactical::StubReturn3608  cls=Tactical  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006DC460  Tactical::StubReturn3608  cls=Tactical  sig=csp  renamed_refs=0  residual=- ====
 int Tactical::StubReturn3608()
 {
 return 3608;
 }
 
-// ==== BACKFILL 0x006DC470  Tactical::UpdateView  cls=Tactical  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006DC470  Tactical::UpdateView  cls=Tactical  sig=csp  renamed_refs=0  residual=- ====
 Tactical * Tactical::UpdateView(char a2)
 {
 {
@@ -1542,7 +1542,7 @@ Tactical * Tactical::UpdateView(char a2)
 }
 }
 
-// ==== BACKFILL 0x006DC4E0  VectorClass_UDirtyAreaStruct::Destroy  cls=VectorClass_UDirtyAreaStruct  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006DC4E0  VectorClass_UDirtyAreaStruct::Destroy  cls=VectorClass_UDirtyAreaStruct  sig=csp  renamed_refs=0  residual=- ====
 void VectorClass_UDirtyAreaStruct::Destroy()
 {
 {
@@ -1559,7 +1559,7 @@ void VectorClass_UDirtyAreaStruct::Destroy()
 }
 }
 
-// ==== BACKFILL 0x006DC510  VectorClass_UDirtyAreaStruct::GetItemIndex  cls=VectorClass_UDirtyAreaStruct  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006DC510  VectorClass_UDirtyAreaStruct::GetItemIndex  cls=VectorClass_UDirtyAreaStruct  sig=csp  renamed_refs=0  residual=- ====
 unsigned int VectorClass_UDirtyAreaStruct::GetItemIndex(int a2)
 {
 {
@@ -1570,7 +1570,7 @@ unsigned int VectorClass_UDirtyAreaStruct::GetItemIndex(int a2)
 }
 }
 
-// ==== BACKFILL 0x006DC970  VectorClass_UDirtyAreaStruct::FindItemIndex  cls=VectorClass_UDirtyAreaStruct  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006DC970  VectorClass_UDirtyAreaStruct::FindItemIndex  cls=VectorClass_UDirtyAreaStruct  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_UDirtyAreaStruct::FindItemIndex(int a2)
 {
 {
@@ -1594,7 +1594,7 @@ int VectorClass_UDirtyAreaStruct::FindItemIndex(int a2)
 }
 }
 
-// ==== BACKFILL 0x006DD2C0  TActionClass::ExecuteAction  cls=TActionClass  sig=csp  renamed_refs=9 ====
+// ==== BACKFILL 0x006DD2C0  TActionClass::ExecuteAction  cls=TActionClass  sig=csp  renamed_refs=9  residual=- ====
 int TActionClass::ExecuteAction(int a2, int a3)
 {
     TActionClass* v3;

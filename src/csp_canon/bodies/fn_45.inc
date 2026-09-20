@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00451690  BuildingClass::ClearSuperWeaponAnim  cls=BuildingClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x00451690  BuildingClass::ClearSuperWeaponAnim  cls=BuildingClass  sig=csp  renamed_refs=2  residual=- ====
 char BuildingClass::ClearSuperWeaponAnim()
 {
 {
@@ -44,7 +44,7 @@ char BuildingClass::ClearSuperWeaponAnim()
 }
 }
 
-// ==== BACKFILL 0x00451750  BuildingClass::PlayUpgradeAnim  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00451750  BuildingClass::PlayUpgradeAnim  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 void BuildingClass::PlayUpgradeAnim(int a2, int a3, int a4, void * a5)
 {
 {
@@ -131,7 +131,7 @@ retn    10h
 */
 }
 
-// ==== BACKFILL 0x004517D0  sub_4517D0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004517D0  sub_4517D0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4517D0::sub_4517D0()
 {
 {
@@ -182,7 +182,7 @@ int E4Recv_4517D0::sub_4517D0()
 }
 }
 
-// ==== BACKFILL 0x00451EE0  globalHelper_051EE0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00451EE0  globalHelper_051EE0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void globalHelper_051EE0(int a1, int a2, IUnknown * aP4)
 {
 {
@@ -229,7 +229,7 @@ void globalHelper_051EE0(int a1, int a2, IUnknown * aP4)
 }
 }
 
-// ==== BACKFILL 0x00452170  BuildingClass::SetConnectedBuildingMission  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00452170  BuildingClass::SetConnectedBuildingMission  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 void BuildingClass::SetConnectedBuildingMission(int a2)
 {
 {
@@ -291,10 +291,10 @@ retn    4
 */
 }
 
-// ==== BACKFILL 0x00452250  FootClass::StubReturn0  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00452250  FootClass::StubReturn0  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 int FootClass::StubReturn0() { return 0; }
 
-// ==== BACKFILL 0x004525F0  BuildingClass::IsPoweredOn  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004525F0  BuildingClass::IsPoweredOn  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::IsPoweredOn()
 {
 {
@@ -305,7 +305,7 @@ bool BuildingClass::IsPoweredOn()
     return false; // TODO stub - retranslate via C-line pipeline
 }
 
-// ==== BACKFILL 0x00452630  BuildingClass::CheckHealthForRepair  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00452630  BuildingClass::CheckHealthForRepair  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::CheckHealthForRepair() {
     // IDA 0x452630, vtable slot 37. health@+0x6C (ASM: mov eax,[esi+6Ch]),
     // Type@+0x520, ClickRepairable@Type+0x157A; vtable[+128] = slot 32 =
@@ -378,7 +378,7 @@ retn
 */
 }
 
-// ==== BACKFILL 0x00452670  BuildingClass::CanAcceptType  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00452670  BuildingClass::CanAcceptType  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::CanAcceptType(int a2, int a3)
 {
 {
@@ -456,7 +456,7 @@ retn    8
 */
 }
 
-// ==== BACKFILL 0x004528A0  sub_4528A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004528A0  sub_4528A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_4528A0::sub_4528A0(int a2)
 {
 {
@@ -486,7 +486,7 @@ bool E4Recv_4528A0::sub_4528A0(int a2)
 }
 }
 
-// ==== BACKFILL 0x00453D60  BuildingClass::MarkCellOccupied  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00453D60  BuildingClass::MarkCellOccupied  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 void BuildingClass::MarkCellOccupied(int cell_x, int cell_y)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -510,7 +510,7 @@ int __thiscall BuildingClass::MarkCellOccupied(#377 *this)
 }
 }
 
-// ==== BACKFILL 0x00453DC0  BuildingClass::ClearCellOccupied  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00453DC0  BuildingClass::ClearCellOccupied  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 void BuildingClass::ClearCellOccupied(int cell_x, int cell_y)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -534,7 +534,7 @@ int __thiscall BuildingClass::ClearCellOccupied(#377 *this)
 }
 }
 
-// ==== BACKFILL 0x00454250  MissionClass::IsProducing  cls=BuildingClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00454250  MissionClass::IsProducing  cls=BuildingClass  sig=csp  renamed_refs=1  residual=- ====
 namespace ra2 { namespace game { int MissionClass::IsProducing() {
 {
       int result;
@@ -544,13 +544,13 @@ namespace ra2 { namespace game { int MissionClass::IsProducing() {
 }
 } } }
 
-// ==== BACKFILL 0x00454CE0  nullsub_5  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00454CE0  nullsub_5  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_5()
 {
   ;
 }
 
-// ==== BACKFILL 0x00455C20  ObjectClass::GetScreenCoords  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00455C20  ObjectClass::GetScreenCoords  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::GetScreenCoords() {
 {
       int *v2;
@@ -631,7 +631,7 @@ namespace ra2 { namespace game { int ObjectClass::GetScreenCoords() {
 }
 } } }
 
-// ==== BACKFILL 0x00455DA0  BuildingClass::CheckSpecialUpdateFlags  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00455DA0  BuildingClass::CheckSpecialUpdateFlags  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 void BuildingClass::CheckSpecialUpdateFlags()
 {
 {
@@ -667,7 +667,7 @@ retn
 */
 }
 
-// ==== BACKFILL 0x00455DD0  globalHelper_055DD0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00455DD0  globalHelper_055DD0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * sub_455DD0(int a1, unsigned int * a2)
 {
 {
@@ -724,7 +724,7 @@ unsigned int * sub_455DD0(int a1, unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x00456640  BuildingClass::UpdateDetectionField  cls=BuildingClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00456640  BuildingClass::UpdateDetectionField  cls=BuildingClass  sig=csp  renamed_refs=1  residual=- ====
 void BuildingClass::UpdateDetectionField()
 {
 {
@@ -745,7 +745,7 @@ void BuildingClass::UpdateDetectionField()
     {
     v5 = *((int *)(Field) + 1);
     v6 = *(int *)(v5 + 8 * v3) + this->currentBurstCount;
-    v7 = this->currentBurstCount;
+    v7 = this->q20C;
     v8 = *(int *)(v5 + 8 * v3 + 4);
     v9[0] = v6;
     v9[1] = v7 + v8;
@@ -803,7 +803,7 @@ retn
 */
 }
 
-// ==== BACKFILL 0x004566B0  BuildingClass::GetPowerFrame  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004566B0  BuildingClass::GetPowerFrame  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 int BuildingClass::GetPowerFrame()
 {
     BuildingTypeClass* type = this->Type;                 // v2 = *(this + 1312)  [Type]
@@ -843,7 +843,7 @@ int BuildingClass::GetPowerFrame()
     return result;
 }
 
-// ==== BACKFILL 0x004575B0  HouseClass::Add  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004575B0  HouseClass::Add  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::Add() {
 {
       char i;
@@ -863,7 +863,7 @@ namespace gamemd { int HouseClass::Add() {
 }
 } }
 
-// ==== BACKFILL 0x00457620  BuildingClass::IsFactorySelectable  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00457620  BuildingClass::IsFactorySelectable  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::IsFactorySelectable()
 // 0x457620
 {
@@ -875,7 +875,7 @@ jmp     BuildingClass__Is1x1AndUndeployable_BuildingMassSelectable
 */
 }
 
-// ==== BACKFILL 0x00457630  BuildingClass::SWAvailable  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00457630  BuildingClass::SWAvailable  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::SWAvailable()
 {
     // IDA 0x457630. SuperWeapon@Type+0x16F0, SWTypes array @0xA83CBC,
@@ -899,7 +899,7 @@ bool BuildingClass::SWAvailable()
     return false;
 }
 
-// ==== BACKFILL 0x00457A10  sub_457A10  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00457A10  sub_457A10  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_457A10::sub_457A10()
 {
 {
@@ -921,16 +921,12 @@ char E4Recv_457A10::sub_457A10()
 }
 }
 
-// ==== BACKFILL 0x004581F0  BuildingClass::MissionStubReturnZero6  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004581F0  BuildingClass::MissionStubReturnZero6  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 int  BuildingClass::MissionStubReturnZero6() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt258(#377 *this)
-{
-  return *((_DWORD *)this + 421); /*0x4581f6*/
-}
+return this->q694;
 }
 
-// ==== BACKFILL 0x00458A00  UnitClass::IsCellBlockedByBridge  cls=UnitClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00458A00  UnitClass::IsCellBlockedByBridge  cls=UnitClass  sig=csp  renamed_refs=0  residual=- ====
 int UnitClass::IsCellBlockedByBridge(void* aP1)
 {
 {
@@ -951,7 +947,7 @@ int UnitClass::IsCellBlockedByBridge(void* aP1)
 }
 }
 
-// ==== BACKFILL 0x00458DB0  BuildingClass::HasActiveParam  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00458DB0  BuildingClass::HasActiveParam  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::HasActiveParam()
 {
     // Binary: virtual self-dispatch through vtable slot 256 (+1024) =
@@ -963,7 +959,7 @@ bool BuildingClass::HasActiveParam()
     return TechnoClass::HasActiveParam();
 }
 
-// ==== BACKFILL 0x00458DD0  BuildingClass::CheckMissionGuard  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00458DD0  BuildingClass::CheckMissionGuard  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::CheckMissionGuard() {
     // IDA 0x458DD0, BuildingClass vtable slot 256 (IDA name BuildingClass::_vt256).
     // Type@+0x520 (ASM: mov eax,[ecx+520h]); CanBeOccupied@Type+0x157B,
@@ -997,34 +993,22 @@ retn
 */
 }
 
-// ==== BACKFILL 0x00459870  BuildingClass::MissionStubReturnZero  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459870  BuildingClass::MissionStubReturnZero  cls=BuildingClass  sig=csp  renamed_refs=1  residual=- ====
 int  BuildingClass::MissionStubReturnZero() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt181(#377 *this)
-{
-  return *(_DWORD *)(*((_DWORD *)this + 328) + 5412); /*0x45987c*/
-}
+return this->Type->q1524;
 }
 
-// ==== BACKFILL 0x00459880  BuildingClass::MissionStubReturnZero2  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459880  BuildingClass::MissionStubReturnZero2  cls=BuildingClass  sig=csp  renamed_refs=1  residual=- ====
 int  BuildingClass::MissionStubReturnZero2() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt182(#377 *this)
-{
-  return *(_DWORD *)(*((_DWORD *)this + 328) + 5416); /*0x45988c*/
-}
+return this->Type->q1528;
 }
 
-// ==== BACKFILL 0x00459890  BuildingClass::MissionStubReturnZero3  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459890  BuildingClass::MissionStubReturnZero3  cls=BuildingClass  sig=csp  renamed_refs=1  residual=- ====
 int  BuildingClass::MissionStubReturnZero3() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt183(#377 *this)
-{
-  return *(_DWORD *)(*((_DWORD *)this + 328) + 5420); /*0x45989c*/
-}
+return this->Type->q152C;
 }
 
-// ==== BACKFILL 0x00459C00  BuildingClass::IsMassSelectable  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459C00  BuildingClass::IsMassSelectable  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::IsMassSelectable()
 // 0x459c00
 {
@@ -1052,16 +1036,16 @@ retn
 */
 }
 
-// ==== BACKFILL 0x00459D80  BuildingClass::StubReturnFalse  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459D80  BuildingClass::StubReturnFalse  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::StubReturnFalse()   { return false; }
 
-// ==== BACKFILL 0x00459D90  TechnoClass::MissionStubReturnZero4  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459D90  TechnoClass::MissionStubReturnZero4  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::MissionStubReturnZero4() { return 0; }
 
-// ==== BACKFILL 0x00459DA0  BuildingClass::MissionStubReturnZero5  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459DA0  BuildingClass::MissionStubReturnZero5  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int  BuildingClass::MissionStubReturnZero5() { return 0; }
 
-// ==== BACKFILL 0x00459DB0  BuildingClass::ClearLimpetCheck  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459DB0  BuildingClass::ClearLimpetCheck  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 TechnoClass * BuildingClass::ClearLimpetCheck()
 {
 {
@@ -1071,7 +1055,7 @@ TechnoClass * BuildingClass::ClearLimpetCheck()
 }
 }
 
-// ==== BACKFILL 0x00459DC0  AbstractClass::COMStub_Return0_190  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459DC0  AbstractClass::COMStub_Return0_190  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Return0_190()
 {
 {
@@ -1080,10 +1064,10 @@ int AbstractClass::COMStub_Return0_190()
 }
 }
 
-// ==== BACKFILL 0x00459DD0  TechnoClass::StubReturnFalse2  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459DD0  TechnoClass::StubReturnFalse2  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 bool TechnoClass::StubReturnFalse2() { return false; }
 
-// ==== BACKFILL 0x00459DE0  AbstractClass::COMStub_Return0_205  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459DE0  AbstractClass::COMStub_Return0_205  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Return0_205()
 {
 {
@@ -1092,28 +1076,28 @@ int AbstractClass::COMStub_Return0_205()
 }
 }
 
-// ==== BACKFILL 0x00459DF0  BuildingClass::StubReturnFalse3  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459DF0  BuildingClass::StubReturnFalse3  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::StubReturnFalse3()  { return false; }
 
-// ==== BACKFILL 0x00459E00  BuildingClass::StubReturnFalse4  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459E00  BuildingClass::StubReturnFalse4  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::StubReturnFalse4()  { return false; }
 
-// ==== BACKFILL 0x00459E10  BuildingClass::StubReturnFalse10  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459E10  BuildingClass::StubReturnFalse10  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::StubReturnFalse10() { return false; }
 
-// ==== BACKFILL 0x00459E20  BuildingClass::StubReturnFalse11  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459E20  BuildingClass::StubReturnFalse11  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::StubReturnFalse11() { return false; }
 
-// ==== BACKFILL 0x00459E30  BuildingClass::StubReturnFalse12  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459E30  BuildingClass::StubReturnFalse12  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::StubReturnFalse12() { return false; }
 
-// ==== BACKFILL 0x00459E40  BuildingClass::StubReturnFalse13  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459E40  BuildingClass::StubReturnFalse13  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::StubReturnFalse13() { return false; }
 
-// ==== BACKFILL 0x00459E50  BuildingClass::StubReturnFalse14  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459E50  BuildingClass::StubReturnFalse14  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 bool BuildingClass::StubReturnFalse14() { return false; }
 
-// ==== BACKFILL 0x00459E60  AbstractClass::COMStub_Return0_270  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459E60  AbstractClass::COMStub_Return0_270  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Return0_270()
 {
 {
@@ -1122,13 +1106,13 @@ int AbstractClass::COMStub_Return0_270()
 }
 }
 
-// ==== BACKFILL 0x00459E70  BuildingClass::Mission_Guard  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459E70  BuildingClass::Mission_Guard  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 int BuildingClass::Mission_Guard()
 {
 return 1824;
 }
 
-// ==== BACKFILL 0x00459ED0  BuildingClass::GetTypeField60  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459ED0  BuildingClass::GetTypeField60  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 const wchar_t* BuildingClass::GetTypeField60()
 // 0x459ed0
 {
@@ -1141,10 +1125,10 @@ retn
 */
 }
 
-// ==== BACKFILL 0x00459EE0  BuildingClass::GetTypePtr  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459EE0  BuildingClass::GetTypePtr  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 BuildingTypeClass* BuildingClass::GetTypePtr() { return Type; }
 
-// ==== BACKFILL 0x00459FF0  BuildingClass::initBuildingData  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00459FF0  BuildingClass::initBuildingData  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void BuildingClass::initBuildingData() {
 {
     void *v2;
@@ -1160,7 +1144,7 @@ namespace gamemd { void BuildingClass::initBuildingData() {
 }
 } }
 
-// ==== BACKFILL 0x0045A020  BuildingClass::updateFactoryProduction  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045A020  BuildingClass::updateFactoryProduction  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int BuildingClass::updateFactoryProduction(int a2) {
 {
     if ( this->vtable3 )
@@ -1170,7 +1154,7 @@ namespace gamemd { int BuildingClass::updateFactoryProduction(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x0045A050  Stream::GetChecked  cls=Stream  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045A050  Stream::GetChecked  cls=Stream  sig=csp  renamed_refs=0  residual=- ====
 int Stream::GetChecked()
 {
 {
@@ -1180,7 +1164,7 @@ int Stream::GetChecked()
 }
 }
 
-// ==== BACKFILL 0x0045A130  Rect::Construct  cls=Rect  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045A130  Rect::Construct  cls=Rect  sig=csp  renamed_refs=0  residual=- ====
 AbstractClass * Rect::Construct(IUnknown * aP1, AbstractClass * aP2, AbstractClass * aP3)
 {
 {
@@ -1192,7 +1176,7 @@ AbstractClass * Rect::Construct(IUnknown * aP1, AbstractClass * aP2, AbstractCla
 }
 }
 
-// ==== BACKFILL 0x0045A170  CellClass::SetField2C  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045A170  CellClass::SetField2C  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::SetField2C() {
 {
     int result;
@@ -1203,7 +1187,7 @@ namespace gamemd { int CellClass::SetField2C() {
 }
 } }
 
-// ==== BACKFILL 0x0045A270  VectorClass::Cleanup  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045A270  VectorClass::Cleanup  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 void VectorClass::Cleanup()
 {
 if ( this->Items && this->IsAllocated )
@@ -1215,7 +1199,7 @@ this->IsAllocated = 0;
 this->Capacity = 0;
 }
 
-// ==== BACKFILL 0x0045A420  FootClass::Release  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045A420  FootClass::Release  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int FootClass::Release(int a1, void* a2) {
 {
       _DWORD *v4;
@@ -1263,7 +1247,7 @@ namespace ra2 { namespace game { int FootClass::Release(int a1, void* a2) {
 }
 } } }
 
-// ==== BACKFILL 0x0045A500  FootClass::GetSize  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045A500  FootClass::GetSize  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int FootClass::GetSize(int * a2) {
 {
     int result;
@@ -1284,7 +1268,7 @@ namespace ra2 { namespace game { int FootClass::GetSize(int * a2) {
 }
 } } }
 
-// ==== BACKFILL 0x0045A610  BuildingClass::FindInPointerArray  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045A610  BuildingClass::FindInPointerArray  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 int BuildingClass::FindInPointerArray(unsigned int * a2)
 {
 {
@@ -1304,7 +1288,7 @@ int BuildingClass::FindInPointerArray(unsigned int * a2)
 }
 } // namespace gamemd
 
-// ==== BACKFILL 0x0045AA60  FootClass::QueryInterface  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045AA60  FootClass::QueryInterface  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* FootClass::QueryInterface(int a2) {
 {
     void *v3;
@@ -1323,7 +1307,7 @@ namespace ra2 { namespace game { void* FootClass::QueryInterface(int a2) {
 }
 } } }
 
-// ==== BACKFILL 0x0045AD80  VectorClass::ConstructorWithVtable  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045AD80  VectorClass::ConstructorWithVtable  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * VectorClass::ConstructorWithVtable(TechnoTypeClass * aP1, TechnoTypeClass * aP2)
 {
 {
@@ -1346,7 +1330,7 @@ unsigned int * VectorClass::ConstructorWithVtable(TechnoTypeClass * aP1, TechnoT
 }
 }
 
-// ==== BACKFILL 0x0045ADD0  DynamicVector::RemoveItem  cls=DynamicVector  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0045ADD0  DynamicVector::RemoveItem  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 char DynamicVector::RemoveItem(IUnknown * aP1)
 {
 {
@@ -1364,7 +1348,7 @@ char DynamicVector::RemoveItem(IUnknown * aP1)
     do
     {
     v3 = (IUnknown *)((char *)(v3) + 1);
-    *(int *)(this->q004 + 4 * (int)v3 - 4) = *(int *)(this->q004 + 4 * (int)v3);
+    *(int *)(this->Items + 4 * (int)v3 - 4) = *(int *)(this->Items + 4 * (int)v3);
     }
     while ( (int)v3 < this->DynamicVector_field_0x10 );
   }
@@ -1372,7 +1356,7 @@ char DynamicVector::RemoveItem(IUnknown * aP1)
 }
 }
 
-// ==== BACKFILL 0x0045AE10  Vector::RemoveAt  cls=Vector  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x0045AE10  Vector::RemoveAt  cls=Vector  sig=csp  renamed_refs=5  residual=- ====
 char Vector::RemoveAt(AbstractClass * aP1)
 {
 {
@@ -1398,7 +1382,7 @@ char Vector::RemoveAt(AbstractClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0045DD50  sub_45DD50  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045DD50  sub_45DD50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_45DD50::sub_45DD50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1420,7 +1404,7 @@ int __thiscall sub_45DD50(void *this)
 }
 }
 
-// ==== BACKFILL 0x0045E7B0  BuildingTypeClass::FindIndexByName  cls=BuildingTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045E7B0  BuildingTypeClass::FindIndexByName  cls=BuildingTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int BuildingTypeClass::FindIndexByName()
 {
 {
@@ -1439,7 +1423,7 @@ int BuildingTypeClass::FindIndexByName()
 }
 }
 
-// ==== BACKFILL 0x0045E800  AbstractClass::clearRefCount  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045E800  AbstractClass::clearRefCount  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::clearRefCount(void* a1, int a2) {
 {
     int v4;
@@ -1460,7 +1444,7 @@ namespace ra2 { namespace game { int AbstractClass::clearRefCount(void* a1, int 
 }
 } } }
 
-// ==== BACKFILL 0x0045E880  AbstractClass::addRefCount  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045E880  AbstractClass::addRefCount  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::addRefCount(int a1) {
 {
     int v3;
@@ -1472,7 +1456,7 @@ namespace ra2 { namespace game { int AbstractClass::addRefCount(int a1) {
 }
 } } }
 
-// ==== BACKFILL 0x0045E8B0  sub_45E8B0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045E8B0  sub_45E8B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_45E8B0::sub_45E8B0(int a2, int a3, int a4, int a5)
 {
 {
@@ -1487,7 +1471,7 @@ int E4Recv_45E8B0::sub_45E8B0(int a2, int a3, int a4, int a5)
 }
 }
 
-// ==== BACKFILL 0x0045E8F0  ProcessDataCCFileClass  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045E8F0  ProcessDataCCFileClass  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char sub_45E8F0()
 {
 {
@@ -1529,7 +1513,7 @@ char sub_45E8F0()
 }
 }
 
-// ==== BACKFILL 0x0045EBD0  AbstractClass::checkPointer  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045EBD0  AbstractClass::checkPointer  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* AbstractClass::checkPointer(void* a1) {
 {
       _DWORD *FoundationSize;
@@ -1555,7 +1539,7 @@ namespace ra2 { namespace game { void* AbstractClass::checkPointer(void* a1) {
 }
 } } }
 
-// ==== BACKFILL 0x0045EC20  AbstractClass::validatePointer  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045EC20  AbstractClass::validatePointer  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* AbstractClass::validatePointer(int a1) {
 {
     int *result;
@@ -1572,31 +1556,31 @@ namespace ra2 { namespace game { void* AbstractClass::validatePointer(int a1) {
 }
 } } }
 
-// ==== BACKFILL 0x0045EC90  BuildingTypeClass::GetFoundationWidth  cls=BuildingTypeClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x0045EC90  BuildingTypeClass::GetFoundationWidth  cls=BuildingTypeClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { short BuildingTypeClass::GetFoundationWidth() const {
 {
-    return DataGlobal_8192B8[this->DeployingAnim];
+    return DataGlobal_8192B8[this->qEF0];
 }
 } }
 
-// ==== BACKFILL 0x0045ECA0  BuildingTypeClass::GetFoundationHeight  cls=BuildingTypeClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0045ECA0  BuildingTypeClass::GetFoundationHeight  cls=BuildingTypeClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { short BuildingTypeClass::GetFoundationHeight(IUnknown * aP1) const {
 {
     if ( (char)aP1 && this->Bib )
-    return DataGlobal_819310[this->DeployingAnim] + 1;
+    return DataGlobal_819310[this->qEF0] + 1;
     else
-    return DataGlobal_819310[this->DeployingAnim];
+    return DataGlobal_819310[this->qEF0];
 }
 } }
 
-// ==== BACKFILL 0x0045ECE0  BuildingTypeClass::GetMaxPips  cls=BuildingTypeClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0045ECE0  BuildingTypeClass::GetMaxPips  cls=BuildingTypeClass  sig=csp  renamed_refs=2  residual=- ====
 int BuildingTypeClass::GetMaxPips()
 {
 {
     int result;
     int v2;
     int v3;
-    result = 60 * DataGlobal_8192B8[this->DeployingAnim] / 8;
+    result = 60 * DataGlobal_8192B8[this->qEF0] / 8;
     if ( this->PipScale == 2 )
   {
     if ( this->Weeder )
@@ -1634,7 +1618,7 @@ int BuildingTypeClass::GetMaxPips()
 }
 }
 
-// ==== BACKFILL 0x0045ED50  AbstractClass::removePointer  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045ED50  AbstractClass::removePointer  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::removePointer() {
 {
       int Member388;
@@ -1660,7 +1644,7 @@ namespace ra2 { namespace game { int AbstractClass::removePointer() {
 }
 } } }
 
-// ==== BACKFILL 0x0045EDD0  AbstractClass::addPointer  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0045EDD0  AbstractClass::addPointer  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::addPointer(int a1) {
 {
       int v4;
@@ -1686,7 +1670,7 @@ namespace ra2 { namespace game { int AbstractClass::addPointer(int a1) {
 }
 } } }
 
-// ==== BACKFILL 0x0045F040  AbstractClass::LoadTypeFile  cls=AbstractClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0045F040  AbstractClass::LoadTypeFile  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::LoadTypeFile() {
 {
       int result;
@@ -1711,7 +1695,7 @@ namespace ra2 { namespace game { int AbstractClass::LoadTypeFile() {
           this->q0A4 = EntireFile;
           if ( EntireFile )
           {
-            this->__pad_0A8 = 1;
+            this->q0A8 = 1;
           }
           else
           {
@@ -1721,7 +1705,7 @@ namespace ra2 { namespace game { int AbstractClass::LoadTypeFile() {
             v4 = CCFileClass::ReadEntireFile(v8);
             this->q0A4 = v4;
             if ( v4 )
-              this->__pad_0A8 = 1;
+              this->q0A8 = 1;
             v8[0] = &vt_CCFileClass;
             v10 = 0;
             Vector::Clear((int)v9);

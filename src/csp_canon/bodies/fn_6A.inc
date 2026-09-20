@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x006A04C0  sub_6A04C0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A04C0  sub_6A04C0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
 {
 {
@@ -49,7 +49,7 @@ char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
 }
 }
 
-// ==== BACKFILL 0x006A05C0  JumpjetLocomotionClass::UpdateFacingDirection_2  cls=ShipLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A05C0  JumpjetLocomotionClass::UpdateFacingDirection_2  cls=ShipLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 char JumpjetLocomotionClass::UpdateFacingDirection_2(int a1, int a2)
 {
 {
@@ -57,13 +57,13 @@ char JumpjetLocomotionClass::UpdateFacingDirection_2(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x006A3E50  JumpjetLocomotionClass::SmallStub_6A3E50  cls=ShipLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A3E50  JumpjetLocomotionClass::SmallStub_6A3E50  cls=ShipLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::SmallStub_6A3E50(int a1)
 {
 return 2;
 }
 
-// ==== BACKFILL 0x006A3E60  ShipLocomotionClass::ddtor  cls=ShipLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A3E60  ShipLocomotionClass::ddtor  cls=ShipLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int ShipLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -75,13 +75,13 @@ int ShipLocomotionClass::ddtor(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x006A3EA0  JumpjetLocomotionClass::StubReturnZero_14  cls=ShipLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A3EA0  JumpjetLocomotionClass::StubReturnZero_14  cls=ShipLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::StubReturnZero_14(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x006A3EB0  JumpjetLocomotionClass::DispatchCheckState_6A3EB0  cls=ShipLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A3EB0  JumpjetLocomotionClass::DispatchCheckState_6A3EB0  cls=ShipLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::DispatchCheckState_6A3EB0(TunnelLocomotionClass * aP0)
 {
 {
@@ -89,7 +89,7 @@ int JumpjetLocomotionClass::DispatchCheckState_6A3EB0(TunnelLocomotionClass * aP
 }
 }
 
-// ==== BACKFILL 0x006A3F00  JumpjetLocomotionClass::MoveToChecked_0  cls=ShipLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A3F00  JumpjetLocomotionClass::MoveToChecked_0  cls=ShipLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 char JumpjetLocomotionClass::MoveToChecked_0(ShipLocomotionClass * aP0, int a2)
 {
 {
@@ -103,7 +103,7 @@ char JumpjetLocomotionClass::MoveToChecked_0(ShipLocomotionClass * aP0, int a2)
 }
 }
 
-// ==== BACKFILL 0x006A4210  JumpjetLocomotionClass::SetByteField_1  cls=ShipLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A4210  JumpjetLocomotionClass::SetByteField_1  cls=ShipLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::SetByteField_1(int a1)
 {
 {
@@ -112,7 +112,7 @@ int JumpjetLocomotionClass::SetByteField_1(int a1)
 }
 }
 
-// ==== BACKFILL 0x006A4220  JumpjetLocomotionClass::SetByteField_2  cls=ShipLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A4220  JumpjetLocomotionClass::SetByteField_2  cls=ShipLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::SetByteField_2(int a1)
 {
 {
@@ -121,7 +121,7 @@ int JumpjetLocomotionClass::SetByteField_2(int a1)
 }
 }
 
-// ==== BACKFILL 0x006A4230  JumpjetLocomotionClass::SmallStub_6A4230  cls=ShipLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A4230  JumpjetLocomotionClass::SmallStub_6A4230  cls=ShipLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::SmallStub_6A4230(int a1)
 {
 {
@@ -129,7 +129,7 @@ int JumpjetLocomotionClass::SmallStub_6A4230(int a1)
 }
 }
 
-// ==== BACKFILL 0x006A4240  JumpjetLocomotionClass::SmallStub_6A4240  cls=ShipLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A4240  JumpjetLocomotionClass::SmallStub_6A4240  cls=ShipLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::SmallStub_6A4240(int a1)
 {
 {
@@ -137,7 +137,7 @@ int JumpjetLocomotionClass::SmallStub_6A4240(int a1)
 }
 }
 
-// ==== BACKFILL 0x006A4250  JumpjetLocomotionClass::SmallStub_6A4250  cls=ShipLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A4250  JumpjetLocomotionClass::SmallStub_6A4250  cls=ShipLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::SmallStub_6A4250(int a1)
 {
 {
@@ -145,7 +145,7 @@ int JumpjetLocomotionClass::SmallStub_6A4250(int a1)
 }
 }
 
-// ==== BACKFILL 0x006A4280  JumpjetLocomotionClass::GetLinkedLocomotorPointer_0  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A4280  JumpjetLocomotionClass::GetLinkedLocomotorPointer_0  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 BOOL JumpjetLocomotionClass::GetLinkedLocomotorPointer_0(int a1)
 {
 {
@@ -153,13 +153,13 @@ BOOL JumpjetLocomotionClass::GetLinkedLocomotorPointer_0(int a1)
 }
 }
 
-// ==== BACKFILL 0x006A42A0  ShipLocomotionClass::StubReturn112  cls=ShipLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A42A0  ShipLocomotionClass::StubReturn112  cls=ShipLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int ShipLocomotionClass::StubReturn112()
 {
 return 112;
 }
 
-// ==== BACKFILL 0x006A42B0  ShipLocomotionClass::ProcessMove  cls=ShipLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A42B0  ShipLocomotionClass::ProcessMove  cls=ShipLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
 {
 {
@@ -177,7 +177,7 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
 }
 }
 
-// ==== BACKFILL 0x006A4300  JumpjetLocomotionClass::SmallStub_6A4300  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A4300  JumpjetLocomotionClass::SmallStub_6A4300  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::SmallStub_6A4300(int a1, const void * a2, int * a3)
 {
 {
@@ -185,7 +185,7 @@ int JumpjetLocomotionClass::SmallStub_6A4300(int a1, const void * a2, int * a3)
 }
 }
 
-// ==== BACKFILL 0x006A4310  JumpjetLocomotionClass::SmallStub_6A4310  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A4310  JumpjetLocomotionClass::SmallStub_6A4310  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LONG JumpjetLocomotionClass::SmallStub_6A4310(int a1)
 {
 {
@@ -193,7 +193,7 @@ LONG JumpjetLocomotionClass::SmallStub_6A4310(int a1)
 }
 }
 
-// ==== BACKFILL 0x006A4320  JumpjetLocomotionClass::SmallStub_6A4320  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A4320  JumpjetLocomotionClass::SmallStub_6A4320  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LONG JumpjetLocomotionClass::SmallStub_6A4320(int a1)
 {
 {
@@ -201,7 +201,7 @@ LONG JumpjetLocomotionClass::SmallStub_6A4320(int a1)
 }
 }
 
-// ==== BACKFILL 0x006A4740  SideClass::ddtor  cls=SideClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A4740  SideClass::ddtor  cls=SideClass  sig=csp  renamed_refs=0  residual=- ====
 int SideClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -213,7 +213,7 @@ int SideClass::ddtor(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x006A48A0  SideClass::SaveLoad_Prefix_0  cls=SideClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A48A0  SideClass::SaveLoad_Prefix_0  cls=SideClass  sig=csp  renamed_refs=0  residual=- ====
 int SideClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 {
@@ -234,19 +234,19 @@ int SideClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 }
 }
 
-// ==== BACKFILL 0x006A4910  SideClass::StubReturn180  cls=SideClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A4910  SideClass::StubReturn180  cls=SideClass  sig=csp  renamed_refs=0  residual=- ====
 int SideClass::StubReturn180()
 {
 return 180;
 }
 
-// ==== BACKFILL 0x006A4920  SideClass::StubReturn28  cls=SideClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A4920  SideClass::StubReturn28  cls=SideClass  sig=csp  renamed_refs=0  residual=- ====
 int SideClass::StubReturn28()
 {
 return 28;
 }
 
-// ==== BACKFILL 0x006A4E60  TabClass::initTabData  cls=SidebarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A4E60  TabClass::initTabData  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* TabClass::initTabData() {
 {
       char *v2;
@@ -294,13 +294,13 @@ namespace gamemd { void* TabClass::initTabData() {
 }
 } }
 
-// ==== BACKFILL 0x006A4FF0  nullsub_36  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A4FF0  nullsub_36  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_36(IUnknown * aP0)
 {
   ;
 }
 
-// ==== BACKFILL 0x006A5000  ObjectClass::processDamage  cls=SidebarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A5000  ObjectClass::processDamage  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
 int ObjectClass::processDamage()
 {
 {
@@ -319,7 +319,7 @@ int ObjectClass::processDamage()
 }
 }
 
-// ==== BACKFILL 0x006A5F20  SidebarClass::UpdateCameoProductionState  cls=SidebarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A5F20  SidebarClass::UpdateCameoProductionState  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SidebarClass::UpdateCameoProductionState(void* a1) {
 {
       int v3;
@@ -409,7 +409,7 @@ namespace gamemd { int SidebarClass::UpdateCameoProductionState(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x006A60E0  SuperWeapon::UpdateTargetRedrawState  cls=SuperWeapon  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A60E0  SuperWeapon::UpdateTargetRedrawState  cls=SuperWeapon  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* SuperWeapon::UpdateTargetRedrawState(void* a1) {
 {
       wchar_t *result;
@@ -431,7 +431,7 @@ namespace gamemd { void* SuperWeapon::UpdateTargetRedrawState(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x006A6140  Sidebar::FindProductionType  cls=Sidebar  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A6140  Sidebar::FindProductionType  cls=Sidebar  sig=csp  renamed_refs=0  residual=- ====
 char Sidebar::FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4)
 {
 {
@@ -480,7 +480,7 @@ char Sidebar::FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4)
 }
 }
 
-// ==== BACKFILL 0x006A7D20  HouseClass::UpdateAllProductionTabs  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A7D20  HouseClass::UpdateAllProductionTabs  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::UpdateAllProductionTabs() {
 {
       char v2;
@@ -514,7 +514,7 @@ namespace gamemd { int HouseClass::UpdateAllProductionTabs() {
 }
 } }
 
-// ==== BACKFILL 0x006A80A0  TabClass::updateTabProduction  cls=TabClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x006A80A0  TabClass::updateTabProduction  cls=TabClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { void* TabClass::updateTabProduction(int a1) {
 {
       _BYTE *result;
@@ -583,7 +583,7 @@ namespace gamemd { void* TabClass::updateTabProduction(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x006A81B0  HouseClass::ClearProductionQueue  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006A81B0  HouseClass::ClearProductionQueue  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* HouseClass::ClearProductionQueue() {
 {
       _DWORD *result;
@@ -624,7 +624,7 @@ namespace gamemd { void* HouseClass::ClearProductionQueue() {
 }
 } }
 
-// ==== BACKFILL 0x006A8220  SidebarClass::InitCameoGrid  cls=SidebarClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x006A8220  SidebarClass::InitCameoGrid  cls=SidebarClass  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { int SidebarClass::InitCameoGrid(int a1) {
 {
       int v2;
@@ -671,7 +671,7 @@ namespace gamemd { int SidebarClass::InitCameoGrid(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x006A8330  SidebarClass::RefreshCameoGrid  cls=SidebarClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x006A8330  SidebarClass::RefreshCameoGrid  cls=SidebarClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int SidebarClass::RefreshCameoGrid() {
 {
       int v2;
@@ -702,7 +702,7 @@ namespace gamemd { int SidebarClass::RefreshCameoGrid() {
 }
 } }
 
-// ==== BACKFILL 0x006A83E0  SidebarClass::sortCameoList  cls=SidebarClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x006A83E0  SidebarClass::sortCameoList  cls=SidebarClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int SidebarClass::sortCameoList() {
 {
     int i;
@@ -713,7 +713,7 @@ namespace gamemd { int SidebarClass::sortCameoList() {
 }
 } }
 
-// ==== BACKFILL 0x006AACE0  sub_6AACE0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006AACE0  sub_6AACE0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_6AACE0::sub_6AACE0(int a2, int a3)
 {
 {
@@ -723,7 +723,7 @@ int E4Recv_6AACE0::sub_6AACE0(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x006ABA40  ObjectClass::checkHealth  cls=SBGadgetClass@SidebarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006ABA40  ObjectClass::checkHealth  cls=SBGadgetClass@SidebarClass  sig=csp  renamed_refs=0  residual=- ====
 int ObjectClass::checkHealth()
 {
 {
@@ -732,7 +732,7 @@ int ObjectClass::checkHealth()
 }
 }
 
-// ==== BACKFILL 0x006ABA60  sub_6ABA60  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006ABA60  sub_6ABA60  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_6ABA60::sub_6ABA60(int a2, int a3, int a4)
 {
 {
@@ -756,14 +756,14 @@ char E4Recv_6ABA60::sub_6ABA60(int a2, int a3, int a4)
 }
 }
 
-// ==== BACKFILL 0x006ABAC0  PlayerClass::HasPlayers  cls=PlayerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006ABAC0  PlayerClass::HasPlayers  cls=PlayerClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { bool PlayerClass::HasPlayers() {
 {
       return this->q054 > 0;
 }
 } }
 
-// ==== BACKFILL 0x006ABC60  HouseClass::GetStatus  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006ABC60  HouseClass::GetStatus  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseClass::GetStatus(IUnknown * aP1)
 {
 {
@@ -780,7 +780,7 @@ int HouseClass::GetStatus(IUnknown * aP1)
 }
 }
 
-// ==== BACKFILL 0x006ABCD0  globalHelper_0ABCD0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006ABCD0  globalHelper_0ABCD0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_6ABCD0(int a1, int a2, int a3)
 {
 {
@@ -794,7 +794,7 @@ int sub_6ABCD0(int a1, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x006AC7A0  ObjectClass::updateAnimation  cls=SBGadgetClass@SidebarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006AC7A0  ObjectClass::updateAnimation  cls=SBGadgetClass@SidebarClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * ObjectClass::updateAnimation(char a2)
 {
 {
@@ -805,13 +805,13 @@ unsigned int * ObjectClass::updateAnimation(char a2)
 }
 }
 
-// ==== BACKFILL 0x006AC7C0  TabClass::drawTabBackground  cls=TabClass  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x006AC7C0  TabClass::drawTabBackground  cls=TabClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int TabClass::drawTabBackground() {
 {
       IUnknown *v2;
 
       this->TabClass_field_0x14 = 0;
-      this->__pad_018 = 0;
+      this->q018 = 0;
       v2 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248];
       this->q024 = 0;
       this->TabClass_field_0x1C = v2;
@@ -821,7 +821,7 @@ namespace gamemd { int TabClass::drawTabBackground() {
 }
 } }
 
-// ==== BACKFILL 0x006AC7F0  ObjectClass::DestructWithRadar  cls=SidebarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006AC7F0  ObjectClass::DestructWithRadar  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* ObjectClass::DestructWithRadar(int a2) {
 {
     char *v3;
@@ -842,7 +842,7 @@ namespace ra2 { namespace game { void* ObjectClass::DestructWithRadar(int a2) {
 }
 } } }
 
-// ==== BACKFILL 0x006AC870  SidebarClass::initButtons  cls=SidebarClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x006AC870  SidebarClass::initButtons  cls=SidebarClass  sig=csp  renamed_refs=3  residual=- ====
 namespace gamemd { void* SidebarClass::initButtons() {
 {
       wchar_t *v2;
@@ -853,12 +853,12 @@ namespace gamemd { void* SidebarClass::initButtons() {
       this->q010 = 0;
       this->SidebarClass_field_0x8 = v2;
       this->SidebarClass_field_0x14 = 0;
-      this->__pad_018 = 1;
+      this->q018 = 1;
       return this;
 }
 } }
 
-// ==== BACKFILL 0x006ADDF0  Skirmish_Setup_6ADDF0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006ADDF0  Skirmish_Setup_6ADDF0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void sub_6ADDF0(HWND a1, int a2, int a3)
 {
 {
@@ -909,7 +909,7 @@ void sub_6ADDF0(HWND a1, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x006AF650  SlaveManagerClass::CreateSlave  cls=SlaveManagerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006AF650  SlaveManagerClass::CreateSlave  cls=SlaveManagerClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * SlaveManagerClass::CreateSlave(wchar_t ** a2)
 {
 {

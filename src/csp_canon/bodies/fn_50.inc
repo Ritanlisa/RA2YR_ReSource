@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00500200  BuildingPlacement::FindPosition  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00500200  BuildingPlacement::FindPosition  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknown a3)
 {
 {
@@ -47,7 +47,7 @@ unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknow
 }
 }
 
-// ==== BACKFILL 0x00500300  CellClass::ScanOccupiers  cls=CellClass  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x00500300  CellClass::ScanOccupiers  cls=CellClass  sig=csp  renamed_refs=5  residual=- ====
 namespace gamemd { void* CellClass::ScanOccupiers(void* a1) {
 {
       _DWORD *v3;
@@ -146,7 +146,7 @@ namespace gamemd { void* CellClass::ScanOccupiers(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x00500510  HouseClass::GetBuildLimit  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00500510  HouseClass::GetBuildLimit  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::GetBuildLimit(int a1, int a2, int a3) {
 {
     int result;
@@ -173,7 +173,7 @@ namespace gamemd { int HouseClass::GetBuildLimit(int a1, int a2, int a3) {
 }
 } }
 
-// ==== BACKFILL 0x00500700  SidebarClass::getTypeProductionCount  cls=SidebarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00500700  SidebarClass::getTypeProductionCount  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SidebarClass::getTypeProductionCount(int a1, int a2, int a3) {
 {
       char result;
@@ -210,7 +210,7 @@ namespace gamemd { int SidebarClass::getTypeProductionCount(int a1, int a2, int 
 }
 } }
 
-// ==== BACKFILL 0x005009B0  HouseClass::LoadTypeList  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005009B0  HouseClass::LoadTypeList  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::LoadTypeList() {
 {
       CCINIClass *v2;
@@ -317,7 +317,7 @@ namespace gamemd { int HouseClass::LoadTypeList() {
 }
 } }
 
-// ==== BACKFILL 0x00501160  CCINIClass::WriteHouses  cls=CCINIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00501160  CCINIClass::WriteHouses  cls=CCINIClass  sig=csp  renamed_refs=0  residual=- ====
 IUnknown * CCINIClass::WriteHouses()
 {
 {
@@ -349,7 +349,7 @@ IUnknown * CCINIClass::WriteHouses()
 }
 }
 
-// ==== BACKFILL 0x00501210  HouseClass::SaveToINI  cls=HouseClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00501210  HouseClass::SaveToINI  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::SaveToINI(void* a1) {
 {
       INIClass *v4;
@@ -364,7 +364,7 @@ namespace gamemd { int HouseClass::SaveToINI(void* a1) {
       INIClass::SetString(aP1->__pad_0, (INIClass *)Block, &g_INI_Key_Country, (INIClass *)(this->relatedTagsCapacity + 36));
       INIClass::SetInt(aP1->__pad_0, (unsigned __int8 *)Block, aTechlevel[0].__pad_0, this->q1D4, 0);
       INIClass::SetInt(aP1->__pad_0, (unsigned __int8 *)Block, aCredits[0].__pad_0, this->q1DC / 100, 0);
-      INIClass::SetInt(aP1->__pad_0, (unsigned __int8 *)Block, g_INI_Key_IQ.__pad_0, this->__pad_1D0, 0);
+      INIClass::SetInt(aP1->__pad_0, (unsigned __int8 *)Block, g_INI_Key_IQ.__pad_0, this->q1D0, 0);
       HouseClass::updateBuildingProduction(aP1->__pad_0, (INIClass *)Block, aEdge, *(CCINIClass **)(this + 480));
       LOBYTE(v4) = this->playerControl;
       INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, (char *)&g_INI_Key_IQ.unknown50, v4);
@@ -395,7 +395,7 @@ namespace gamemd { int HouseClass::SaveToINI(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x005013A0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::ScalarDeletingDestructor  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005013A0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::ScalarDeletingDestructor  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::ScalarDeletingDestructor(unsigned int * a1)
 {
 {
@@ -415,7 +415,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::ScalarDeletingDestructor(uns
 }
 }
 
-// ==== BACKFILL 0x00501AA0  sub_501AA0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00501AA0  sub_501AA0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * sub_501AA0(unsigned int * a1, int a2, int a3)
 {
 {
@@ -424,7 +424,7 @@ unsigned int * sub_501AA0(unsigned int * a1, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x005024F0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005024F0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer(int a1, unsigned int * a2)
 {
 {
@@ -446,7 +446,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer(int a1
 }
 }
 
-// ==== BACKFILL 0x00502550  VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer_0  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00502550  VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer_0  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer_0(int a1, const void * a2, unsigned int * a3)
 {
 {
@@ -474,7 +474,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer_0(int 
 }
 }
 
-// ==== BACKFILL 0x00502A80  HouseClass::RegisterGain_0  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00502A80  HouseClass::RegisterGain_0  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::RegisterGain_0(void* a1, int a2) {
 {
       int v4;
@@ -585,7 +585,7 @@ namespace gamemd { int HouseClass::RegisterGain_0(void* a1, int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00502D60  HouseClass::UpdatePowerTimers  cls=HouseClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x00502D60  HouseClass::UpdatePowerTimers  cls=HouseClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int HouseClass::UpdatePowerTimers(void* a1) {
 {
       int v3;
@@ -605,12 +605,12 @@ namespace gamemd { int HouseClass::UpdatePowerTimers(void* a1) {
       Power::TimerProcess(this->q184);
       Power::TimerProcess(*(_DWORD *)(this->relatedTagsCapacity + 184));
       Checksummer::Add_double(this->q188, this->q18C);
-      Checksummer::Add_double(this->q190, this->__pad_194);
+      Checksummer::Add_double(this->q190, this->q194);
       Checksummer::Add_double(this->q198, this->q19C);
       Checksummer::Add_double(this->q1A0, this->q1A4);
       Checksummer::Add_double(this->q1A8, this->q1AC);
       Checksummer::Add_double(this->q1B0, this->q1B4);
-      Checksummer::Add_double(this->__pad_1B8, this->q1BC);
+      Checksummer::Add_double(this->q1B8, this->q1BC);
       Checksummer::Add_double(this->q1C0, this->q1C4);
       v3 = Checksummer::Add_double(this->q1C8, this->q1CC);
       LOBYTE(v3) = this->currentPlayer;
@@ -678,7 +678,7 @@ namespace gamemd { int HouseClass::UpdatePowerTimers(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x00504740  HouseClass::EnsurePlanningPathExists  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00504740  HouseClass::EnsurePlanningPathExists  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::EnsurePlanningPathExists(int a1) {
 {
     int result;
@@ -702,7 +702,7 @@ namespace gamemd { int HouseClass::EnsurePlanningPathExists(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00505180  TechnoClass::checkBuildLimit  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00505180  TechnoClass::checkBuildLimit  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void TechnoClass::checkBuildLimit() {
 {
       char v2;
@@ -723,7 +723,7 @@ namespace ra2 { namespace game { void TechnoClass::checkBuildLimit() {
 }
 } } }
 
-// ==== BACKFILL 0x00505FD0  globalHelper_005FD0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00505FD0  globalHelper_005FD0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int globalHelper_005FD0(int a1, int * a2, int a3, int a4)
 {
 {
@@ -752,7 +752,7 @@ int globalHelper_005FD0(int a1, int * a2, int a3, int a4)
 }
 }
 
-// ==== BACKFILL 0x00507D70  HouseClass::CollectInfantryBuildCandidates  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00507D70  HouseClass::CollectInfantryBuildCandidates  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::CollectInfantryBuildCandidates(int a1, int a2) {
 {
       char v4;
@@ -875,7 +875,7 @@ namespace gamemd { int HouseClass::CollectInfantryBuildCandidates(int a1, int a2
 }
 } }
 
-// ==== BACKFILL 0x00507F60  HouseClass::CollectAircraftBuildCandidates  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00507F60  HouseClass::CollectAircraftBuildCandidates  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::CollectAircraftBuildCandidates(int a1, int a2) {
 {
       char v4;
@@ -998,7 +998,7 @@ namespace gamemd { int HouseClass::CollectAircraftBuildCandidates(int a1, int a2
 }
 } }
 
-// ==== BACKFILL 0x00509130  HouseClass::AcquiredThreatNode  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00509130  HouseClass::AcquiredThreatNode  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 void HouseClass::AcquiredThreatNode()
 {
 {
@@ -1006,7 +1006,7 @@ void HouseClass::AcquiredThreatNode()
 }
 }
 
-// ==== BACKFILL 0x005092F0  sub_5092F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005092F0  sub_5092F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseClass::sub_5092F0(int a2)
 {
 {
@@ -1039,7 +1039,7 @@ int HouseClass::sub_5092F0(int a2)
 }
 }
 
-// ==== BACKFILL 0x005093C0  sub_5093C0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005093C0  sub_5093C0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5093C0::sub_5093C0(int a2)
 {
 {
@@ -1062,7 +1062,7 @@ int E4Recv_5093C0::sub_5093C0(int a2)
 }
 }
 
-// ==== BACKFILL 0x00509400  HouseClass::UpdateFogVisibility  cls=HouseClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00509400  HouseClass::UpdateFogVisibility  cls=HouseClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int HouseClass::UpdateFogVisibility() {
 {
       int result;
@@ -1167,7 +1167,7 @@ namespace gamemd { int HouseClass::UpdateFogVisibility() {
 }
 } }
 
-// ==== BACKFILL 0x005095D0  TeamClass::CountActiveTeamsForType  cls=TeamClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005095D0  TeamClass::CountActiveTeamsForType  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
 int TeamClass::CountActiveTeamsForType(ObjectClass * aP1)
 {
 {
@@ -1194,7 +1194,7 @@ int TeamClass::CountActiveTeamsForType(ObjectClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x00509610  TriggerClass::ValidateTeamTriggerConditions  cls=TriggerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00509610  TriggerClass::ValidateTeamTriggerConditions  cls=TriggerClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TriggerClass::ValidateTeamTriggerConditions(int aP1) {
 {
     ObjectClass *v2;
@@ -1247,7 +1247,7 @@ namespace gamemd { int TriggerClass::ValidateTeamTriggerConditions(int aP1) {
 }
 } }
 
-// ==== BACKFILL 0x00509B20  HouseClass::Find  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00509B20  HouseClass::Find  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void HouseClass::Find(int a1) {
 {
       bool v3;
@@ -1286,7 +1286,7 @@ namespace gamemd { void HouseClass::Find(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00509C10  HouseClass::FireStoredSW  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00509C10  HouseClass::FireStoredSW  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void HouseClass::FireStoredSW(int a1) {
 {
       bool v3;
@@ -1325,13 +1325,13 @@ namespace gamemd { void HouseClass::FireStoredSW(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00509CC0  nullsub_144  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00509CC0  nullsub_144  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_144(int a1)
 {
   ;
 }
 
-// ==== BACKFILL 0x00509CD0  HouseClass::Fire_ParaDrop  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00509CD0  HouseClass::Fire_ParaDrop  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::Fire_ParaDrop(int a2) {
 {
       HouseClass *v2;
@@ -1409,7 +1409,7 @@ namespace gamemd { int HouseClass::Fire_ParaDrop(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00509E00  HouseClass::Fire_LightningStorm  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00509E00  HouseClass::Fire_LightningStorm  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::Fire_LightningStorm(int a1) {
 {
       char result;
@@ -1449,7 +1449,7 @@ namespace gamemd { int HouseClass::Fire_LightningStorm(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00509F60  HouseClass::Fire_GenMutator  cls=HouseClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00509F60  HouseClass::Fire_GenMutator  cls=HouseClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int HouseClass::Fire_GenMutator(int a1) {
 {
       __int16 v2;
@@ -1555,7 +1555,7 @@ namespace gamemd { int HouseClass::Fire_GenMutator(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0050A150  HouseClass::Fire_PsyDom  cls=HouseClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x0050A150  HouseClass::Fire_PsyDom  cls=HouseClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int HouseClass::Fire_PsyDom(int a1) {
 {
       __int16 v3;
@@ -1665,7 +1665,7 @@ namespace gamemd { int HouseClass::Fire_PsyDom(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0050A350  HouseClass::FireSuperWeaponAtBestTarget  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050A350  HouseClass::FireSuperWeaponAtBestTarget  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::FireSuperWeaponAtBestTarget(int a1) {
 {
       int TileData;
@@ -1739,7 +1739,7 @@ namespace gamemd { int HouseClass::FireSuperWeaponAtBestTarget(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0050A490  HouseClass::RecordCratePlacement  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050A490  HouseClass::RecordCratePlacement  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::RecordCratePlacement(void* a1) {
 {
       int Type;
@@ -1804,7 +1804,7 @@ namespace gamemd { int HouseClass::RecordCratePlacement(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x0050B840  HouseClass::GetColor  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050B840  HouseClass::GetColor  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::GetColor() {
 {
       int v2;
@@ -1842,7 +1842,7 @@ namespace gamemd { int HouseClass::GetColor() {
 }
 } }
 
-// ==== BACKFILL 0x0050B920  globalHelper_00B920  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050B920  globalHelper_00B920  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void sub_50B920(int a1, int a2, int a3)
 {
 {
@@ -1887,7 +1887,7 @@ void sub_50B920(int a1, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x0050BD10  HouseClass::ReshroudMap  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050BD10  HouseClass::ReshroudMap  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 char HouseClass::ReshroudMap()
 {
 {
@@ -1899,7 +1899,7 @@ char HouseClass::ReshroudMap()
 }
 }
 
-// ==== BACKFILL 0x0050BF60  HouseClass::CalculateCostMultipliers  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050BF60  HouseClass::CalculateCostMultipliers  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::CalculateCostMultipliers() {
 {
       int result;
@@ -1928,7 +1928,7 @@ namespace gamemd { int HouseClass::CalculateCostMultipliers() {
 }
 } }
 
-// ==== BACKFILL 0x0050C0A0  HouseClass::GetBuildingDamageMultiplier  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050C0A0  HouseClass::GetBuildingDamageMultiplier  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { double HouseClass::GetBuildingDamageMultiplier(void* a2) {
 {
     double result;
@@ -1952,7 +1952,7 @@ namespace gamemd { double HouseClass::GetBuildingDamageMultiplier(void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x0050C160  sub_50C160  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050C160  sub_50C160  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 double E4Recv_50C160::sub_50C160()
 {
 {
@@ -1960,7 +1960,7 @@ double E4Recv_50C160::sub_50C160()
 }
 }
 
-// ==== BACKFILL 0x0050C8C0  HouseClass::NotifyImpactWater  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050C8C0  HouseClass::NotifyImpactWater  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::NotifyImpactWater() {
 {
     int v1;
@@ -1977,7 +1977,7 @@ namespace gamemd { int HouseClass::NotifyImpactWater() {
 }
 } }
 
-// ==== BACKFILL 0x0050D250  CellClass::IterateOccupiers  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050D250  CellClass::IterateOccupiers  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::IterateOccupiers(int a1) {
 {
       int v3;
@@ -2001,7 +2001,7 @@ namespace gamemd { int CellClass::IterateOccupiers(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0050D290  TActionClass::executeAttackAction  cls=TActionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050D290  TActionClass::executeAttackAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
 int TActionClass::executeAttackAction(int a2)
 {
 {
@@ -2019,7 +2019,7 @@ int TActionClass::executeAttackAction(int a2)
 }
 }
 
-// ==== BACKFILL 0x0050D9E0  HouseClass::GetInfSelfHealStep  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050D9E0  HouseClass::GetInfSelfHealStep  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseClass::GetInfSelfHealStep()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -2029,7 +2029,7 @@ int __thiscall HouseClass::GetInfSelfHealStep(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x0050D9F0  HouseClass::GetUnitSelfHealStep  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050D9F0  HouseClass::GetUnitSelfHealStep  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseClass::GetUnitSelfHealStep()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -2039,7 +2039,7 @@ int __thiscall HouseClass::GetUnitSelfHealStep(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x0050DA40  sub_50DA40  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050DA40  sub_50DA40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_50DA40::sub_50DA40(int a2)
 {
 {
@@ -2048,7 +2048,7 @@ int E4Recv_50DA40::sub_50DA40(int a2)
 }
 }
 
-// ==== BACKFILL 0x0050DA80  HouseClass::GetTransitionCount  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050DA80  HouseClass::GetTransitionCount  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::GetTransitionCount() {
 {
     unsigned int result;
@@ -2059,7 +2059,7 @@ namespace gamemd { int HouseClass::GetTransitionCount() {
 }
 } }
 
-// ==== BACKFILL 0x0050DAA0  FootClass::checkTurning  cls=FootClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x0050DAA0  FootClass::checkTurning  cls=FootClass  sig=csp  renamed_refs=1  residual=- ====
 unsigned int FootClass::checkTurning()
 {
 {
@@ -2071,7 +2071,7 @@ unsigned int FootClass::checkTurning()
 }
 }
 
-// ==== BACKFILL 0x0050DEF0  HouseClass::GetCurrentOption  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050DEF0  HouseClass::GetCurrentOption  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* HouseClass::GetCurrentOption(void* aP1) {
 {
       if ( this->baseCenter == *(_WORD *)&HouseClass_Player.__pad_5568[23780]
@@ -2088,7 +2088,7 @@ namespace gamemd { void* HouseClass::GetCurrentOption(void* aP1) {
 }
 } }
 
-// ==== BACKFILL 0x0050DF30  HouseClass::GetStartCoords  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050DF30  HouseClass::GetStartCoords  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* HouseClass::GetStartCoords(void* aP1) {
 {
       ObjectClass *v2;
@@ -2126,7 +2126,7 @@ namespace gamemd { void* HouseClass::GetStartCoords(void* aP1) {
 }
 } }
 
-// ==== BACKFILL 0x0050E000  HouseClass::SetMapSeed  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050E000  HouseClass::SetMapSeed  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::SetMapSeed(int a1) {
 {
     this->baseSpawnCell = aP1;
@@ -2134,7 +2134,7 @@ namespace gamemd { int HouseClass::SetMapSeed(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0050E1B0  HouseClass::GainedPoweredCenter  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050E1B0  HouseClass::GainedPoweredCenter  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 BOOL HouseClass::GainedPoweredCenter(int a2)
 {
 {
@@ -2142,25 +2142,25 @@ BOOL HouseClass::GainedPoweredCenter(int a2)
 }
 }
 
-// ==== BACKFILL 0x0050E340  HouseClass::COMStub_Ret1_1  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050E340  HouseClass::COMStub_Ret1_1  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseClass::COMStub_Ret1_1(int a1)
 {
 return 1;
 }
 
-// ==== BACKFILL 0x0050E350  HouseClass::COMStub_Ret1_2  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050E350  HouseClass::COMStub_Ret1_2  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseClass::COMStub_Ret1_2(int a1)
 {
 return 1;
 }
 
-// ==== BACKFILL 0x0050E360  AbstractClass::computeMovementCost  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050E360  AbstractClass::computeMovementCost  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::computeMovementCost()
 {
 return 13;
 }
 
-// ==== BACKFILL 0x0050E370  AbstractClass::checkPassability  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050E370  AbstractClass::checkPassability  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::checkPassability()
 {
 {
@@ -2168,7 +2168,7 @@ int AbstractClass::checkPassability()
 }
 }
 
-// ==== BACKFILL 0x0050E380  AbstractClass::getMovementSpeed  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050E380  AbstractClass::getMovementSpeed  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* AbstractClass::getMovementSpeed(int a2) {
 {
     HouseClass::Destruct((int)this);
@@ -2178,7 +2178,7 @@ namespace ra2 { namespace game { void* AbstractClass::getMovementSpeed(int a2) {
 }
 } } }
 
-// ==== BACKFILL 0x0050E430  HouseClass::processRadar  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050E430  HouseClass::processRadar  cls=HouseClass  sig=csp  renamed_refs=0  residual=q001,q002 ====
 namespace gamemd { int HouseClass::processRadar(int a1, int a2, int a3) {
 {
       *this = a2;
@@ -2188,7 +2188,7 @@ namespace gamemd { int HouseClass::processRadar(int a1, int a2, int a3) {
 }
 } }
 
-// ==== BACKFILL 0x0050E470  CellStruct::Equals  cls=CellStruct  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050E470  CellStruct::Equals  cls=CellStruct  sig=csp  renamed_refs=0  residual=- ====
 BOOL CellStruct::Equals(unsigned short * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -2198,7 +2198,7 @@ BOOL __thiscall CellStruct_Equals(_WORD *this, _WORD *a2)
 }
 }
 
-// ==== BACKFILL 0x0050E5D0  AbstractClass::getTargetCoordinates  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050E5D0  AbstractClass::getTargetCoordinates  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void AbstractClass::getTargetCoordinates() {
 {
     void *v2;
@@ -2214,7 +2214,7 @@ namespace ra2 { namespace game { void AbstractClass::getTargetCoordinates() {
 }
 } } }
 
-// ==== BACKFILL 0x0050E600  AbstractClass::setTargetCoordinates  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050E600  AbstractClass::setTargetCoordinates  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::setTargetCoordinates(int a1) {
 {
       if ( this->vtable3 )
@@ -2224,7 +2224,7 @@ namespace ra2 { namespace game { int AbstractClass::setTargetCoordinates(int a1)
 }
 } } }
 
-// ==== BACKFILL 0x0050E640  VectorClass_ptr_BuildChoiceClass_int_ouseClass::Destroy_0  cls=VectorClass_ptr_BuildChoiceClass_int_ouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050E640  VectorClass_ptr_BuildChoiceClass_int_ouseClass::Destroy_0  cls=VectorClass_ptr_BuildChoiceClass_int_ouseClass  sig=csp  renamed_refs=0  residual=- ====
 void VectorClass_ptr_BuildChoiceClass_int_ouseClass::Destroy_0()
 {
 {
@@ -2241,7 +2241,7 @@ void VectorClass_ptr_BuildChoiceClass_int_ouseClass::Destroy_0()
 }
 }
 
-// ==== BACKFILL 0x0050E670  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_1  cls=VectorClass_ptr_BuildChoiceClass_int_ouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050E670  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_1  cls=VectorClass_ptr_BuildChoiceClass_int_ouseClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_1(int a2)
 {
 {
@@ -2252,7 +2252,7 @@ unsigned int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_1(int 
 }
 }
 
-// ==== BACKFILL 0x0050EB70  VectorClass::InsertAt  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050EB70  VectorClass::InsertAt  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 char VectorClass::InsertAt(IUnknown * aP1, int a3)
 {
 {
@@ -2282,7 +2282,7 @@ char VectorClass::InsertAt(IUnknown * aP1, int a3)
 }
 }
 
-// ==== BACKFILL 0x0050F3A0  AbstractClass::evaluateTarget  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050F3A0  AbstractClass::evaluateTarget  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::evaluateTarget(int a1, void* a2) {
 {
       int v3;
@@ -2386,7 +2386,7 @@ namespace ra2 { namespace game { int AbstractClass::evaluateTarget(int a1, void*
 }
 } } }
 
-// ==== BACKFILL 0x0050F4A0  AbstractClass::selectBestTarget  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050F4A0  AbstractClass::selectBestTarget  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::selectBestTarget(int a2) {
 {
       int v2;
@@ -2406,7 +2406,7 @@ namespace ra2 { namespace game { int AbstractClass::selectBestTarget(int a2) {
 }
 } } }
 
-// ==== BACKFILL 0x0050F710  VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_1  cls=VectorClass_ptr_BuildChoiceClass_int_ouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050F710  VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_1  cls=VectorClass_ptr_BuildChoiceClass_int_ouseClass  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_1(unsigned int * a2)
 {
 {
@@ -2426,7 +2426,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_1(unsigned int
 }
 }
 
-// ==== BACKFILL 0x0050F830  VectorClass::ClearAndFree3  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0050F830  VectorClass::ClearAndFree3  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 void VectorClass::ClearAndFree3()
 {
 if ( this->Items && this->IsAllocated )

@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00792BE0  ShowUIMessage  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00792BE0  ShowUIMessage  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char ShowUIMessage(MPCooperative * a1, wchar_t ** a2, char a3)
 {
 {
@@ -50,7 +50,7 @@ char ShowUIMessage(MPCooperative * a1, wchar_t ** a2, char a3)
 }
 }
 
-// ==== BACKFILL 0x00793120  sub_793120  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00793120  sub_793120  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_793120::sub_793120()
 {
 {
@@ -76,7 +76,7 @@ bool E4Recv_793120::sub_793120()
 }
 }
 
-// ==== BACKFILL 0x00793A10  UI_Setup_793A10  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00793A10  UI_Setup_793A10  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * UI_Setup_793A10(void * a1, short a2)
 {
 {
@@ -103,7 +103,7 @@ ObjectClass * UI_Setup_793A10(void * a1, short a2)
 }
 }
 
-// ==== BACKFILL 0x00793CD0  sub_793CD0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00793CD0  sub_793CD0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_793CD0::sub_793CD0()
 {
 {
@@ -120,7 +120,7 @@ int E4Recv_793CD0::sub_793CD0()
 }
 }
 
-// ==== BACKFILL 0x00796DE0  Game::CreateAIPlayer  cls=Game  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00796DE0  Game::CreateAIPlayer  cls=Game  sig=csp  renamed_refs=0  residual=- ====
 int Game::CreateAIPlayer()
 {
 {
@@ -161,7 +161,7 @@ int Game::CreateAIPlayer()
 }
 }
 
-// ==== BACKFILL 0x00796ED0  Game::CreateAIPlayer_Potato  cls=Game  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00796ED0  Game::CreateAIPlayer_Potato  cls=Game  sig=csp  renamed_refs=0  residual=- ====
 int Game::CreateAIPlayer_Potato()
 {
 {
@@ -203,7 +203,7 @@ int Game::CreateAIPlayer_Potato()
 }
 }
 
-// ==== BACKFILL 0x00796FC0  Network_Init_796FC0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00796FC0  Network_Init_796FC0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_796FC0()
 {
 {
@@ -248,7 +248,7 @@ int sub_796FC0()
 }
 }
 
-// ==== BACKFILL 0x007982A0  Network_Delete  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007982A0  Network_Delete  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void Network_Delete(int a1, int a2, SessionClass * aP2)
 {
 {
@@ -270,7 +270,7 @@ void Network_Delete(int a1, int a2, SessionClass * aP2)
 }
 }
 
-// ==== BACKFILL 0x00799D30  RunWOLMainLoop_Init  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00799D30  RunWOLMainLoop_Init  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_799D30()
 {
 {
@@ -333,7 +333,7 @@ int sub_799D30()
 }
 }
 
-// ==== BACKFILL 0x0079AE00  sub_79AE00  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0079AE00  sub_79AE00  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_79AE00(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 {

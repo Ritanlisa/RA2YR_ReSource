@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00464A70  AbstractClass::queryInterface  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00464A70  AbstractClass::queryInterface  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass_queryInterface()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -24,7 +24,7 @@ _DWORD *__userpurge AbstractClass::sub_464A70@<eax>(int a1@<esi>, _DWORD *a2, in
 }
 }
 
-// ==== BACKFILL 0x00464AC0  AbstractClass::addRef  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00464AC0  AbstractClass::addRef  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 bool AbstractClass::addRef(unsigned short * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -34,7 +34,7 @@ bool __thiscall AbstractClass::sub_464AC0(int this, _WORD *a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x00464AF0  BuildingTypeClass::GetSizeInLeptons  cls=BuildingTypeClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x00464AF0  BuildingTypeClass::GetSizeInLeptons  cls=BuildingTypeClass  sig=csp  renamed_refs=2  residual=- ====
 unsigned int * BuildingTypeClass::GetSizeInLeptons(unsigned int * a2)
 {
 {
@@ -42,7 +42,7 @@ unsigned int * BuildingTypeClass::GetSizeInLeptons(unsigned int * a2)
     int v3;
     int v4;
     int v5;
-    v2 = this->DeployingAnim;
+    v2 = this->qEF0;
     v3 = DataGlobal_89DDB8 *(void**)this->DeployingAnimLoaded;
     v2 *= 4;
     v4 = *(int *)((char *)(DataGlobal_8192B8) + v2);
@@ -54,7 +54,7 @@ unsigned int * BuildingTypeClass::GetSizeInLeptons(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x00464B30  BuildingTypeClass::UpdatePower  cls=BuildingTypeClass  sig=csp  renamed_refs=11 ====
+// ==== BACKFILL 0x00464B30  BuildingTypeClass::UpdatePower  cls=BuildingTypeClass  sig=csp  renamed_refs=11  residual=- ====
 int BuildingTypeClass::UpdatePower()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -128,7 +128,7 @@ int __thiscall BuildingTypeClass::UpdatePower(#376 *this)
   Power::TimerProcess(this->BuildingAnimFrame_6); /*0x464be8*/
   Power::TimerProcess(this->BuildingAnim_0x15); /*0x464bf6*/
   Power::TimerProcess(this->Upgrades); /*0x464c04*/
-  Power::TimerProcess(this->DeployingAnim); /*0x464c12*/
+  Power::TimerProcess(this->qEF0); /*0x464c12*/
   Power::TimerProcess(this->DeployingAnimLoaded); /*0x464c20*/
   Power::TimerProcess(this->UnderDoorAnim); /*0x464c2e*/
   Power::TimerProcess(this->UnderDoorAnimLoaded); /*0x464c3c*/
@@ -253,7 +253,7 @@ int __thiscall BuildingTypeClass::UpdatePower(#376 *this)
 }
 }
 
-// ==== BACKFILL 0x00465300  BuildingTypeClass::SaveLoad_Prefix_0  cls=BuildingTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00465300  BuildingTypeClass::SaveLoad_Prefix_0  cls=BuildingTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int BuildingTypeClass::SaveLoad_Prefix_0()
 {
 {
@@ -295,7 +295,7 @@ int BuildingTypeClass::SaveLoad_Prefix_0()
 }
 }
 
-// ==== BACKFILL 0x00465380  BuildingTypeClass::GetClassIdentifier  cls=BuildingTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00465380  BuildingTypeClass::GetClassIdentifier  cls=BuildingTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int BuildingTypeClass::GetClassIdentifier()
 {
 {
@@ -310,19 +310,19 @@ int BuildingTypeClass::GetClassIdentifier()
 }
 }
 
-// ==== BACKFILL 0x00465910  AbstractClass::releaseRef  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00465910  AbstractClass::releaseRef  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 char AbstractClass::releaseRef()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00465920  AbstractClass::finalRelease  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00465920  AbstractClass::finalRelease  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 char AbstractClass::finalRelease()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00465960  AbstractClass::LoadTheaterSHP  cls=AbstractClass  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x00465960  AbstractClass::LoadTheaterSHP  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::LoadTheaterSHP() {
 {
       int result;
@@ -362,18 +362,18 @@ namespace ra2 { namespace game { int AbstractClass::LoadTheaterSHP() {
           if ( EntireFile )
           {
             v4 = 1;
-            this->__pad_E04 = 1;
+            this->qE04 = 1;
             v5 = EntireFile[3] / 2;
             v6 = v5;
             if ( this->q16B7 )
             {
-              v5 = this->__pad_16F8 + 1;
+              v5 = this->q16F8 + 1;
               v6 = v5;
             }
             if ( v5 > 0 )
               v4 = Math::RoundToInt(*(double *)&g_RulesClass_Instance[1].GUIBuildSound * 900.0 / (double)v6);
             this->qF04 = 0;
-            this->__pad_F08 = v5;
+            this->qF08 = v5;
             this->qF0C = v4;
           }
           v10[0] = &vt_CCFileClass;
@@ -388,20 +388,20 @@ namespace ra2 { namespace game { int AbstractClass::LoadTheaterSHP() {
 }
 } } }
 
-// ==== BACKFILL 0x00465CB0  nullsub_7  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00465CB0  nullsub_7  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_7()
 {
   ;
 }
 
-// ==== BACKFILL 0x00465D70  BuildingClass::processPowerState  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00465D70  BuildingClass::processPowerState  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int BuildingClass::processPowerState() {
 {
       return this->qEDC;
 }
 } }
 
-// ==== BACKFILL 0x00465D80  ??0Iostream_init_QAE_XZ_2  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00465D80  ??0Iostream_init_QAE_XZ_2  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 Iostream_init * E4Recv_465D80::__0Iostream_init_QAE_XZ_2()
 {
 {
@@ -409,19 +409,19 @@ Iostream_init * E4Recv_465D80::__0Iostream_init_QAE_XZ_2()
 }
 }
 
-// ==== BACKFILL 0x00465D90  BuildingTypeClass::GetTypeIdentifier  cls=BuildingTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00465D90  BuildingTypeClass::GetTypeIdentifier  cls=BuildingTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int BuildingTypeClass::GetTypeIdentifier()
 {
 return 7;
 }
 
-// ==== BACKFILL 0x00465DA0  BuildingTypeClass::GetObjectSize  cls=BuildingTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00465DA0  BuildingTypeClass::GetObjectSize  cls=BuildingTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int BuildingTypeClass::GetObjectSize()
 {
 return 6040;
 }
 
-// ==== BACKFILL 0x00465DB0  BuildingTypeClass::GetAuxField  cls=BuildingTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00465DB0  BuildingTypeClass::GetAuxField  cls=BuildingTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int BuildingTypeClass::GetAuxField()
 {
 {
@@ -429,7 +429,7 @@ int BuildingTypeClass::GetAuxField()
 }
 }
 
-// ==== BACKFILL 0x00465DC0  BuildingTypeClass::ddtor  cls=BuildingTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00465DC0  BuildingTypeClass::ddtor  cls=BuildingTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int BuildingTypeClass::ddtor()
 {
 {
@@ -441,7 +441,7 @@ int BuildingTypeClass::ddtor()
 }
 }
 
-// ==== BACKFILL 0x00466660  BulletClass::CalculateSpreadAngle  cls=BulletClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00466660  BulletClass::CalculateSpreadAngle  cls=BulletClass  sig=csp  renamed_refs=0  residual=- ====
 int * BulletClass::CalculateSpreadAngle(int a1)
 {
 {
@@ -455,7 +455,7 @@ int * BulletClass::CalculateSpreadAngle(int a1)
 }
 }
 
-// ==== BACKFILL 0x00468090  BulletClass::SetupVoxelTransform  cls=BulletClass  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x00468090  BulletClass::SetupVoxelTransform  cls=BulletClass  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
 {
       int v4;
@@ -494,7 +494,7 @@ namespace gamemd { void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
                                           !Game::Stub3((int)&v25)) )
       {
         v4 = this->BulletClass_field_0xAC;
-        if ( !*(_BYTE *)(v4 + 670) && !this->__pad_158 )
+        if ( !*(_BYTE *)(v4 + 670) && !this->q158 )
         {
           if ( *(_BYTE *)(v4 + 566) )
           {
@@ -593,7 +593,7 @@ namespace gamemd { void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x00468430  BulletClass::LoseTarget  cls=BulletClass  sig=csp  renamed_refs=6 ====
+// ==== BACKFILL 0x00468430  BulletClass::LoseTarget  cls=BulletClass  sig=csp  renamed_refs=6  residual=- ====
 namespace gamemd { int BulletClass::LoseTarget() {
 {
     int *v2;
@@ -618,7 +618,7 @@ namespace gamemd { int BulletClass::LoseTarget() {
 }
 } }
 
-// ==== BACKFILL 0x004684E0  BulletClass::ProcessImpact  cls=BulletClass  sig=csp  renamed_refs=7 ====
+// ==== BACKFILL 0x004684E0  BulletClass::ProcessImpact  cls=BulletClass  sig=csp  renamed_refs=7  residual=- ====
 namespace gamemd { int BulletClass::ProcessImpact(void* a1, void* a2) {
 {
       char *v3;
@@ -693,7 +693,7 @@ namespace gamemd { int BulletClass::ProcessImpact(void* a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x00468B90  BulletClass::UpdateFlightPath  cls=BulletClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00468B90  BulletClass::UpdateFlightPath  cls=BulletClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int BulletClass::UpdateFlightPath() {
 {
     int v1;
@@ -703,7 +703,7 @@ namespace gamemd { int BulletClass::UpdateFlightPath() {
 }
 } }
 
-// ==== BACKFILL 0x0046AE70  BulletClass::SaveLoad_Prefix  cls=BulletClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046AE70  BulletClass::SaveLoad_Prefix  cls=BulletClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int BulletClass::SaveLoad_Prefix(void* a1, int a2) {
 {
       int result;
@@ -748,7 +748,7 @@ namespace gamemd { int BulletClass::SaveLoad_Prefix(void* a1, int a2) {
 }
 } }
 
-// ==== BACKFILL 0x0046AFB0  BulletClass::SaveLoad_Prefix_0  cls=BulletClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046AFB0  BulletClass::SaveLoad_Prefix_0  cls=BulletClass  sig=csp  renamed_refs=0  residual=- ====
 int BulletClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 {
@@ -756,7 +756,7 @@ int BulletClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 }
 }
 
-// ==== BACKFILL 0x0046AFD0  BulletClass::CheckTargetValidity  cls=BulletClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046AFD0  BulletClass::CheckTargetValidity  cls=BulletClass  sig=csp  renamed_refs=0  residual=- ====
 LONG BulletClass::CheckTargetValidity(int a1)
 {
 {
@@ -765,7 +765,7 @@ LONG BulletClass::CheckTargetValidity(int a1)
 }
 }
 
-// ==== BACKFILL 0x0046AFF0  BulletClass::ValidateTarget  cls=BulletClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046AFF0  BulletClass::ValidateTarget  cls=BulletClass  sig=csp  renamed_refs=0  residual=- ====
 LONG BulletClass::ValidateTarget(volatile LONG * a1)
 {
 {
@@ -778,7 +778,7 @@ LONG BulletClass::ValidateTarget(volatile LONG * a1)
 }
 }
 
-// ==== BACKFILL 0x0046B050  CreateUIObjectCOM  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046B050  CreateUIObjectCOM  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LPVOID CreateUIObjectCOM(IUnknown * aP0, AbstractClass * aP1, AbstractClass * aP2, AbstractClass * aP3, AbstractClass * aP4, int a6, AbstractClass * aP7)
 {
 {
@@ -793,7 +793,7 @@ LPVOID CreateUIObjectCOM(IUnknown * aP0, AbstractClass * aP1, AbstractClass * aP
 }
 }
 
-// ==== BACKFILL 0x0046B0C0  BulletClass::RenderVoxelBullet  cls=BulletClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046B0C0  BulletClass::RenderVoxelBullet  cls=BulletClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int BulletClass::RenderVoxelBullet(int a1, void* a2, void* a3, void* a4, int a5, int a6, int a7) {
 {
       _DWORD *v8;
@@ -868,7 +868,7 @@ namespace gamemd { int BulletClass::RenderVoxelBullet(int a1, void* a2, void* a3
 }
 } }
 
-// ==== BACKFILL 0x0046B280  BulletClass::InitScalable  cls=BulletClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0046B280  BulletClass::InitScalable  cls=BulletClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int BulletClass::InitScalable() {
 {
     int v2;
@@ -885,7 +885,7 @@ namespace gamemd { int BulletClass::InitScalable() {
 }
 } }
 
-// ==== BACKFILL 0x0046B310  SuperWeapon::CreateNukePayload  cls=SuperWeapon  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046B310  SuperWeapon::CreateNukePayload  cls=SuperWeapon  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SuperWeapon::CreateNukePayload() {
 {
       int v2;
@@ -967,19 +967,19 @@ namespace gamemd { int SuperWeapon::CreateNukePayload() {
 }
 } }
 
-// ==== BACKFILL 0x0046B540  BulletClass::MissionStubReturnZero  cls=BulletClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046B540  BulletClass::MissionStubReturnZero  cls=BulletClass  sig=csp  renamed_refs=0  residual=- ====
 int BulletClass::MissionStubReturnZero()
 {
 return 352;
 }
 
-// ==== BACKFILL 0x0046B550  BulletClass::MissionStubReturnZero2  cls=BulletClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046B550  BulletClass::MissionStubReturnZero2  cls=BulletClass  sig=csp  renamed_refs=0  residual=- ====
 int BulletClass::MissionStubReturnZero2()
 {
 return 8;
 }
 
-// ==== BACKFILL 0x0046B560  BulletClass::PowerDrainProcess  cls=BulletClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046B560  BulletClass::PowerDrainProcess  cls=BulletClass  sig=csp  renamed_refs=0  residual=- ====
 int BulletClass::PowerDrainProcess(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -991,7 +991,7 @@ int BulletClass::PowerDrainProcess(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x0046B5A0  BulletClass::CheckEndOfSequence  cls=BulletClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x0046B5A0  BulletClass::CheckEndOfSequence  cls=BulletClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int BulletClass::CheckEndOfSequence(int a1) {
 {
       this->BulletClass_field_0x10C = a2;
@@ -999,14 +999,14 @@ namespace gamemd { int BulletClass::CheckEndOfSequence(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0046B5B0  BulletClass::CheckMissionAbort  cls=BulletClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x0046B5B0  BulletClass::CheckMissionAbort  cls=BulletClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int BulletClass::CheckMissionAbort() {
 {
     return this->BulletClass_field_0xAC;
 }
 } }
 
-// ==== BACKFILL 0x0046B5C0  BulletClass::CheckActionStatus  cls=BulletClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046B5C0  BulletClass::CheckActionStatus  cls=BulletClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* BulletClass::CheckActionStatus(int a2) {
 {
     BulletClass::Dtor(this);
@@ -1016,7 +1016,7 @@ namespace gamemd { void* BulletClass::CheckActionStatus(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x0046B5E0  VectorClass_ptr_BulletClass::Destroy  cls=VectorClass_ptr_BulletClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046B5E0  VectorClass_ptr_BulletClass::Destroy  cls=VectorClass_ptr_BulletClass  sig=csp  renamed_refs=0  residual=- ====
 void VectorClass_ptr_BulletClass::Destroy()
 {
 {
@@ -1033,7 +1033,7 @@ void VectorClass_ptr_BulletClass::Destroy()
 }
 }
 
-// ==== BACKFILL 0x0046B610  VectorClass_ptr_BulletClass::GetItemIndex  cls=VectorClass_ptr_BulletClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046B610  VectorClass_ptr_BulletClass::GetItemIndex  cls=VectorClass_ptr_BulletClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int VectorClass_ptr_BulletClass::GetItemIndex(int a2)
 {
 {
@@ -1044,7 +1044,7 @@ unsigned int VectorClass_ptr_BulletClass::GetItemIndex(int a2)
 }
 }
 
-// ==== BACKFILL 0x0046B7E0  VectorClass_ptr_BulletClass::SetCapacity  cls=VectorClass_ptr_BulletClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046B7E0  VectorClass_ptr_BulletClass::SetCapacity  cls=VectorClass_ptr_BulletClass  sig=csp  renamed_refs=0  residual=- ====
 char VectorClass_ptr_BulletClass::SetCapacity(int a2, unsigned int * a3)
 {
 {
@@ -1090,7 +1090,7 @@ char VectorClass_ptr_BulletClass::SetCapacity(int a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x0046B890  VectorClass_ptr_BulletClass::FindItemIndex  cls=VectorClass_ptr_BulletClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046B890  VectorClass_ptr_BulletClass::FindItemIndex  cls=VectorClass_ptr_BulletClass  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BulletClass::FindItemIndex(unsigned int * a2)
 {
 {
@@ -1110,7 +1110,7 @@ int VectorClass_ptr_BulletClass::FindItemIndex(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x0046B960  BulletClass::AddVector3  cls=BulletClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x0046B960  BulletClass::AddVector3  cls=BulletClass  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { void* BulletClass::AddVector3(void* a1) {
 {
       *this = *a2 + *this;
@@ -1120,7 +1120,7 @@ namespace gamemd { void* BulletClass::AddVector3(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x0046B990  VectorClass_ptr_BulletClass::GetItem  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046B990  VectorClass_ptr_BulletClass::GetItem  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LONG VectorClass_ptr_BulletClass::GetItem(int a1)
 {
 {
@@ -1128,7 +1128,7 @@ LONG VectorClass_ptr_BulletClass::GetItem(int a1)
 }
 }
 
-// ==== BACKFILL 0x0046B9A0  VectorClass_ptr_BulletClass::GetItem_0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046B9A0  VectorClass_ptr_BulletClass::GetItem_0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LONG VectorClass_ptr_BulletClass::GetItem_0(int a1)
 {
 {
@@ -1136,7 +1136,7 @@ LONG VectorClass_ptr_BulletClass::GetItem_0(int a1)
 }
 }
 
-// ==== BACKFILL 0x0046C4F0  BulletTypeClass::GetROF  cls=BulletTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046C4F0  BulletTypeClass::GetROF  cls=BulletTypeClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * BulletTypeClass::GetROF(unsigned int * a1, int * a2)
 {
 {
@@ -1159,7 +1159,7 @@ unsigned int * BulletTypeClass::GetROF(unsigned int * a1, int * a2)
 }
 }
 
-// ==== BACKFILL 0x0046C560  BulletTypeClass::ProcessPower  cls=BulletTypeClass  sig=csp  renamed_refs=18 ====
+// ==== BACKFILL 0x0046C560  BulletTypeClass::ProcessPower  cls=BulletTypeClass  sig=csp  renamed_refs=18  residual=- ====
 int BulletTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1222,7 +1222,7 @@ int __thiscall BulletTypeClass::ProcessPower(int this, int *a2)
 }
 }
 
-// ==== BACKFILL 0x0046C6A0  BulletTypeClass::SaveLoad_Prefix  cls=BulletTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046C6A0  BulletTypeClass::SaveLoad_Prefix  cls=BulletTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 {
 {
@@ -1249,7 +1249,7 @@ int BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 }
 }
 
-// ==== BACKFILL 0x0046C730  BulletTypeClass::SaveLoad_Prefix_0  cls=BulletTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046C730  BulletTypeClass::SaveLoad_Prefix_0  cls=BulletTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int BulletTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
 {
@@ -1261,7 +1261,7 @@ int BulletTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * 
 }
 }
 
-// ==== BACKFILL 0x0046C750  BulletTypeClass::GetClassIdentifier  cls=BulletTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046C750  BulletTypeClass::GetClassIdentifier  cls=BulletTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int BulletTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -1273,7 +1273,7 @@ int BulletTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x0046C820  BulletTypeClass::GetWarhead  cls=BulletTypeClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0046C820  BulletTypeClass::GetWarhead  cls=BulletTypeClass  sig=csp  renamed_refs=2  residual=- ====
 int BulletTypeClass::GetWarhead(int a2, int a3)
 {
     int result;
@@ -1283,31 +1283,31 @@ int BulletTypeClass::GetWarhead(int a2, int a3)
     return result;
 }
 
-// ==== BACKFILL 0x0046C850  BulletTypeClass::GetTypeIdentifier  cls=BulletTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046C850  BulletTypeClass::GetTypeIdentifier  cls=BulletTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int BulletTypeClass::GetTypeIdentifier()
 {
 return 9;
 }
 
-// ==== BACKFILL 0x0046C860  BulletTypeClass::GetObjectSize  cls=BulletTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046C860  BulletTypeClass::GetObjectSize  cls=BulletTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int BulletTypeClass::GetObjectSize()
 {
 return 760;
 }
 
-// ==== BACKFILL 0x0046C870  BulletTypeClass::Stub  cls=BulletTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046C870  BulletTypeClass::Stub  cls=BulletTypeClass  sig=csp  renamed_refs=0  residual=- ====
 char BulletTypeClass::Stub(int a1, int a2)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x0046C880  BulletTypeClass::StubReturnFalse  cls=BulletTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046C880  BulletTypeClass::StubReturnFalse  cls=BulletTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int BulletTypeClass::StubReturnFalse(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x0046C890  BulletTypeClass::ddtor  cls=BulletTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046C890  BulletTypeClass::ddtor  cls=BulletTypeClass  sig=csp  renamed_refs=0  residual=- ====
 BulletTypeClass * BulletTypeClass::ddtor(char a2)
 {
     BulletTypeClass* v7 = this;
@@ -1340,7 +1340,7 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2)
     return this;
 }
 
-// ==== BACKFILL 0x0046CCD0  CampaignClass::GetMapData  cls=CampaignClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046CCD0  CampaignClass::GetMapData  cls=CampaignClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CampaignClass::GetMapData(void* a1) {
 {
       int Int_Overwrite;
@@ -1384,7 +1384,7 @@ namespace gamemd { int CampaignClass::GetMapData(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x0046CF80  CampaignClass::ddtor  cls=CampaignClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046CF80  CampaignClass::ddtor  cls=CampaignClass  sig=csp  renamed_refs=0  residual=- ====
 int CampaignClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -1396,7 +1396,7 @@ int CampaignClass::ddtor(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x0046CFC0  CampaignClass::Stat  cls=CampaignClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046CFC0  CampaignClass::Stat  cls=CampaignClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CampaignClass::Stat(void* a1) {
 {
       AbstractTypeClass::ProcessPower((char *)this, a2);
@@ -1406,7 +1406,7 @@ namespace gamemd { int CampaignClass::Stat(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x0046D000  CampaignClass::Write  cls=CampaignClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046D000  CampaignClass::Write  cls=CampaignClass  sig=csp  renamed_refs=0  residual=- ====
 int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
 {
 {
@@ -1428,7 +1428,7 @@ int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
 }
 }
 
-// ==== BACKFILL 0x0046D050  CampaignClass::Seek  cls=CampaignClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046D050  CampaignClass::Seek  cls=CampaignClass  sig=csp  renamed_refs=0  residual=- ====
 int CampaignClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 {
@@ -1440,19 +1440,19 @@ int CampaignClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 }
 }
 
-// ==== BACKFILL 0x0046D070  CampaignClass::StubReturn928  cls=CampaignClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046D070  CampaignClass::StubReturn928  cls=CampaignClass  sig=csp  renamed_refs=0  residual=- ====
 int CampaignClass::StubReturn928()
 {
 return 928;
 }
 
-// ==== BACKFILL 0x0046D080  CampaignClass::StubReturn10  cls=CampaignClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046D080  CampaignClass::StubReturn10  cls=CampaignClass  sig=csp  renamed_refs=0  residual=- ====
 int CampaignClass::StubReturn10()
 {
 return 10;
 }
 
-// ==== BACKFILL 0x0046D090  CampaignClass::DTOR  cls=CampaignClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046D090  CampaignClass::DTOR  cls=CampaignClass  sig=csp  renamed_refs=0  residual=- ====
 CampaignClass * CampaignClass::DTOR(char a2)
 {
 {
@@ -1481,7 +1481,7 @@ CampaignClass * CampaignClass::DTOR(char a2)
 }
 }
 
-// ==== BACKFILL 0x0046D330  MPCooperative::initGame  cls=MPCooperative  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x0046D330  MPCooperative::initGame  cls=MPCooperative  sig=csp  renamed_refs=1  residual=- ====
 unsigned int * MPCooperative::initGame()
 {
 {
@@ -1493,7 +1493,7 @@ unsigned int * MPCooperative::initGame()
 }
 }
 
-// ==== BACKFILL 0x0046D350  sub_46D350  cls=CampaignScore  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046D350  sub_46D350  cls=CampaignScore  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_46D350::sub_46D350()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1503,7 +1503,7 @@ void __thiscall sub_46D350(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x0046D480  sub_46D480  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046D480  sub_46D480  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_46D480()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1514,7 +1514,7 @@ __int64 __usercall sub_46D480@<edx:eax>(__int64 result@<edx:eax>, int a2@<ecx>)
 }
 }
 
-// ==== BACKFILL 0x0046D490  sub_46D490  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046D490  sub_46D490  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_46D490::sub_46D490()
 {
 {
@@ -1522,7 +1522,7 @@ char E4Recv_46D490::sub_46D490()
 }
 }
 
-// ==== BACKFILL 0x0046D810  sub_46D810  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0046D810  sub_46D810  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_46D810()
 {
 {

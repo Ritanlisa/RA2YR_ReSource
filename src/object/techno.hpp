@@ -511,7 +511,7 @@ public:
     virtual int CleanupDirection();  // 0x4DB260
     virtual int GetDeployProgressValue() const;  // 0x740F80
     virtual int ComputeAverageValue() const;  // 0x708BC0
-    virtual int GetGlobalValue() const;  // 0x708C10
+    virtual int GetGlobalValue(int* outValue) const;  // 0x708C10
     virtual int SetIdleState();  // 0x70F850
     virtual int ComputeAimVector();  // 0x70B280
     virtual int RevealAreaConditional();  // 0x70B1D0

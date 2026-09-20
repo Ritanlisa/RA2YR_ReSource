@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00401000  AudioMixer::Init  cls=AudioMixer  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00401000  AudioMixer::Init  cls=AudioMixer  sig=csp  renamed_refs=0  residual=- ====
 int AudioMixer::Init()
 {
 {
@@ -16,7 +16,7 @@ int AudioMixer::Init()
 }
 }
 
-// ==== BACKFILL 0x00401080  Audio::InitChannels  cls=Audio  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00401080  Audio::InitChannels  cls=Audio  sig=csp  renamed_refs=0  residual=- ====
 int Audio::InitChannels()
 {
 {
@@ -26,7 +26,7 @@ int Audio::InitChannels()
 }
 }
 
-// ==== BACKFILL 0x004010C0  EndFrameAudioMixer  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004010C0  EndFrameAudioMixer  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int AudioMixer_EndFrame(int * a1, unsigned int * a2)
 {
 {
@@ -51,7 +51,7 @@ int AudioMixer_EndFrame(int * a1, unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x00401170  ObjectClass::ClearFlags2  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00401170  ObjectClass::ClearFlags2  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::ClearFlags2() {
 {
     *(void**)this &= ~2u;
@@ -61,7 +61,7 @@ namespace ra2 { namespace game { int ObjectClass::ClearFlags2() {
 }
 } } }
 
-// ==== BACKFILL 0x004015C0  sub_4015C0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004015C0  sub_4015C0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int sub_4015C0(int a1, const void * a2)
 {
 {
@@ -74,7 +74,7 @@ unsigned int sub_4015C0(int a1, const void * a2)
 }
 }
 
-// ==== BACKFILL 0x004018C0  sub_4018C0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004018C0  sub_4018C0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_4018C0(int a1, int a2, int a3)
 {
 {
@@ -94,7 +94,7 @@ int sub_4018C0(int a1, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x00401940  ObjectClass::GetMember06  cls=RawFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00401940  ObjectClass::GetMember06  cls=RawFileClass  sig=csp  renamed_refs=0  residual=- ====
 int ObjectClass::GetMember06()
 {
 {
@@ -102,7 +102,7 @@ int ObjectClass::GetMember06()
 }
 }
 
-// ==== BACKFILL 0x00401980  CCFileClass::Destru_vt08  cls=CCFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00401980  CCFileClass::Destru_vt08  cls=CCFileClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CCFileClass::Destru_vt08(int a1, int a2) {
     this->SetFileName((const char*)a1);
     return (int)this->Open((FileAccessMode)a2);
@@ -125,7 +125,7 @@ retn    8
 */
 } }
 
-// ==== BACKFILL 0x004019A0  CCFileClass::Destru_vt00  cls=CCFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004019A0  CCFileClass::Destru_vt00  cls=CCFileClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* CCFileClass::Destru_vt00(int a2) {
 {
     *(void**)this = &vt_CCFileClass;
@@ -139,7 +139,7 @@ namespace gamemd { void* CCFileClass::Destru_vt00(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00401B00  sub_401B00  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00401B00  sub_401B00  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void sub_401B00(int * Block)
 {
 {
@@ -183,7 +183,7 @@ void sub_401B00(int * Block)
 }
 }
 
-// ==== BACKFILL 0x00401F80  ?EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00401F80  ?EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_401F80::_EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ()
 {
 {
@@ -194,7 +194,7 @@ int E4Recv_401F80::_EnterCriticalRegionHelper_ContextBase_details_Concurrency__U
 }
 }
 
-// ==== BACKFILL 0x00401FB0  sub_401FB0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00401FB0  sub_401FB0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_401FB0(unsigned int* a1)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -204,7 +204,7 @@ int __thiscall sub_401FB0(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x00401FC0  sub_401FC0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00401FC0  sub_401FC0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_401FC0(int * Block)
 {
 {
@@ -222,7 +222,7 @@ int sub_401FC0(int * Block)
 }
 }
 
-// ==== BACKFILL 0x00402020  sub_402020  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00402020  sub_402020  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_402020(unsigned int* a1)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -232,7 +232,7 @@ int __thiscall sub_402020(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x00402040  AudioController::Constructor  cls=AudioController  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00402040  AudioController::Constructor  cls=AudioController  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* AudioController::Constructor() {
 {
       int *v2;
@@ -277,7 +277,7 @@ namespace ra2 { namespace game { void* AudioController::Constructor() {
 }
 } } }
 
-// ==== BACKFILL 0x00402220  ObjectClass::Cleanup  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00402220  ObjectClass::Cleanup  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::Cleanup() {
 {
     int v2;
@@ -316,7 +316,7 @@ namespace ra2 { namespace game { int ObjectClass::Cleanup() {
 }
 } } }
 
-// ==== BACKFILL 0x004022C0  AudioController::AdvanceQueue  cls=AudioController  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004022C0  AudioController::AdvanceQueue  cls=AudioController  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AudioController::AdvanceQueue() {
 {
       int (*v2)(void); // eax
@@ -359,7 +359,7 @@ namespace ra2 { namespace game { int AudioController::AdvanceQueue() {
 }
 } } }
 
-// ==== BACKFILL 0x00402330  AudioController::UpdatePlayback  cls=AudioController  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00402330  AudioController::UpdatePlayback  cls=AudioController  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AudioController::UpdatePlayback() {
 {
       _DWORD *v2;
@@ -409,7 +409,7 @@ namespace ra2 { namespace game { int AudioController::UpdatePlayback() {
 }
 } } }
 
-// ==== BACKFILL 0x004023F0  AudioController::CleanupStream  cls=AudioController  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004023F0  AudioController::CleanupStream  cls=AudioController  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AudioController::CleanupStream() {
 {
       int v2;
@@ -429,7 +429,7 @@ namespace ra2 { namespace game { int AudioController::CleanupStream() {
 }
 } } }
 
-// ==== BACKFILL 0x00402430  sub_402430  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00402430  sub_402430  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_402430(unsigned int* a1)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -439,7 +439,7 @@ int __thiscall sub_402430(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x00402440  sub_402440  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00402440  sub_402440  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void * sub_402440(int a1, int a2)
 {
 {
@@ -460,7 +460,7 @@ void * sub_402440(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x00402550  AudioStream::Destructor  cls=AudioStream  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00402550  AudioStream::Destructor  cls=AudioStream  sig=csp  renamed_refs=0  residual=- ====
 void AudioStream::Destructor()
 {
 {
@@ -479,7 +479,7 @@ void AudioStream::Destructor()
 }
 }
 
-// ==== BACKFILL 0x004026B0  AudioStream::Stop  cls=AudioStream  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004026B0  AudioStream::Stop  cls=AudioStream  sig=csp  renamed_refs=0  residual=- ====
 int AudioStream::Stop()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -489,7 +489,7 @@ int __thiscall AudioStream_Stop(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x004026C0  sub_4026C0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004026C0  sub_4026C0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4026C0::sub_4026C0()
 {
 {
@@ -499,7 +499,7 @@ int E4Recv_4026C0::sub_4026C0()
 }
 }
 
-// ==== BACKFILL 0x004026F0  AudioStream::ReleaseChannel  cls=AudioStream  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004026F0  AudioStream::ReleaseChannel  cls=AudioStream  sig=csp  renamed_refs=0  residual=- ====
 int AudioStream::ReleaseChannel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -511,7 +511,7 @@ int __thiscall AudioStream_ReleaseChannel(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x00402790  BindChannelAudioStream  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00402790  BindChannelAudioStream  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void AudioStream_BindChannel(unsigned int * a1, unsigned int * a2)
 {
 {
@@ -544,7 +544,7 @@ void AudioStream_BindChannel(unsigned int * a1, unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x00402800  AudioStream::CheckFormatChanged  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00402800  AudioStream::CheckFormatChanged  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int AudioStream::CheckFormatChanged(int a1, const void * a2)
 {
 {
@@ -566,7 +566,7 @@ int AudioStream::CheckFormatChanged(int a1, const void * a2)
 }
 }
 
-// ==== BACKFILL 0x00402850  sub_402850  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00402850  sub_402850  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_402850::sub_402850()
 {
 {
@@ -576,7 +576,7 @@ int E4Recv_402850::sub_402850()
 }
 }
 
-// ==== BACKFILL 0x004028B0  AudioStream::InitListAndCounters  cls=AudioStream  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004028B0  AudioStream::InitListAndCounters  cls=AudioStream  sig=csp  renamed_refs=0  residual=- ====
 int AudioStream::InitListAndCounters()
 {
 {
@@ -595,7 +595,7 @@ int AudioStream::InitListAndCounters()
 }
 }
 
-// ==== BACKFILL 0x00402940  sub_402940  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00402940  sub_402940  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_402940()
 {
 {
@@ -609,7 +609,7 @@ int sub_402940()
 }
 }
 
-// ==== BACKFILL 0x00402EF0  sub_402EF0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00402EF0  sub_402EF0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_402EF0::sub_402EF0()
 {
 {
@@ -634,7 +634,7 @@ void E4Recv_402EF0::sub_402EF0()
 }
 }
 
-// ==== BACKFILL 0x00403490  ?GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00403490  ?GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 struct Concurrency::ISchedulerProxy * E4Recv_403490::_GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ()
 {
 {
@@ -642,7 +642,7 @@ struct Concurrency::ISchedulerProxy * E4Recv_403490::_GetSchedulerProxy_Schedule
 }
 }
 
-// ==== BACKFILL 0x004034A0  ?GetIScheduler_SchedulerBase_details_Concurrency__QAEPAUIScheduler_3_XZ  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004034A0  ?GetIScheduler_SchedulerBase_details_Concurrency__QAEPAUIScheduler_3_XZ  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 struct Concurrency::IScheduler * E4Recv_4034A0::_GetIScheduler_SchedulerBase_details_Concurrency__QAEPAUIScheduler_3_XZ()
 {
 {
@@ -650,7 +650,7 @@ struct Concurrency::IScheduler * E4Recv_4034A0::_GetIScheduler_SchedulerBase_det
 }
 }
 
-// ==== BACKFILL 0x00403530  AudioQueue::PreallocateChannels  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00403530  AudioQueue::PreallocateChannels  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int AudioQueue::PreallocateChannels(unsigned int * a1, int a2)
 {
 {
@@ -681,7 +681,7 @@ int AudioQueue::PreallocateChannels(unsigned int * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x004035B0  sub_4035B0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004035B0  sub_4035B0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_4035B0(int a1, int * a2)
 {
 {
@@ -692,7 +692,7 @@ int sub_4035B0(int a1, int * a2)
 }
 }
 
-// ==== BACKFILL 0x004035D0  AudioQueue::IteratorNext  cls=AudioQueue  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004035D0  AudioQueue::IteratorNext  cls=AudioQueue  sig=csp  renamed_refs=0  residual=- ====
 int * AudioQueue::IteratorNext()
 {
 {
@@ -704,7 +704,7 @@ int * AudioQueue::IteratorNext()
 }
 }
 
-// ==== BACKFILL 0x00403810  sub_403810  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00403810  sub_403810  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_403810(int (**a1)(void))
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -714,7 +714,7 @@ int __thiscall sub_403810(int (**this)(void))
 }
 }
 
-// ==== BACKFILL 0x004038E0  sub_4038E0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004038E0  sub_4038E0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_4038E0(unsigned long long* a1, unsigned long long a2)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -724,7 +724,7 @@ BOOL __thiscall sub_4038E0(_QWORD *this, __int64 a2)
 }
 }
 
-// ==== BACKFILL 0x004039C0  sub_4039C0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004039C0  sub_4039C0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_4039C0(int a1, char * a2)
 {
 {
@@ -753,7 +753,7 @@ int sub_4039C0(int a1, char * a2)
 }
 }
 
-// ==== BACKFILL 0x00404DD0  Audio::FlushChannel  cls=Audio  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00404DD0  Audio::FlushChannel  cls=Audio  sig=csp  renamed_refs=0  residual=- ====
 int Audio::FlushChannel()
 {
 {
@@ -767,7 +767,7 @@ int Audio::FlushChannel()
 }
 }
 
-// ==== BACKFILL 0x00405130  sub_405130  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00405130  sub_405130  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_405130::sub_405130()
 {
 {
@@ -778,7 +778,7 @@ int E4Recv_405130::sub_405130()
 }
 }
 
-// ==== BACKFILL 0x00405140  sub_405140  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00405140  sub_405140  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 double E4Recv_405140::sub_405140()
 {
 {
@@ -789,7 +789,7 @@ double E4Recv_405140::sub_405140()
 }
 }
 
-// ==== BACKFILL 0x00405160  sub_405160  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00405160  sub_405160  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_405160::sub_405160()
 {
 {
@@ -800,7 +800,7 @@ int E4Recv_405160::sub_405160()
 }
 }
 
-// ==== BACKFILL 0x00405170  VocClass::GetSampleName  cls=VocClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00405170  VocClass::GetSampleName  cls=VocClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* VocClass::GetSampleName() {
 {
     char *result;
@@ -811,7 +811,7 @@ namespace gamemd { void* VocClass::GetSampleName() {
 }
 } }
 
-// ==== BACKFILL 0x004052E0  sub_4052E0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004052E0  sub_4052E0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4052E0::sub_4052E0()
 {
 {
@@ -823,7 +823,7 @@ int E4Recv_4052E0::sub_4052E0()
 }
 }
 
-// ==== BACKFILL 0x004053E0  sub_4053E0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004053E0  sub_4053E0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4053E0::sub_4053E0()
 {
 {
@@ -843,7 +843,7 @@ int E4Recv_4053E0::sub_4053E0()
 }
 }
 
-// ==== BACKFILL 0x00405430  sub_405430  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00405430  sub_405430  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_405430::sub_405430()
 {
 {
@@ -873,7 +873,7 @@ int E4Recv_405430::sub_405430()
 }
 }
 
-// ==== BACKFILL 0x00405490  sub_405490  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00405490  sub_405490  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_405490()
 {
 int sub_405490(unsigned int * this_)
@@ -882,7 +882,7 @@ return this_[86];
 }
 }
 
-// ==== BACKFILL 0x004059F0  sub_4059F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004059F0  sub_4059F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4059F0::sub_4059F0()
 {
 {
@@ -891,7 +891,7 @@ int E4Recv_4059F0::sub_4059F0()
 }
 }
 
-// ==== BACKFILL 0x00405A00  sub_405A00  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00405A00  sub_405A00  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_405A00::sub_405A00()
 {
 {
@@ -937,7 +937,7 @@ int E4Recv_405A00::sub_405A00()
 }
 }
 
-// ==== BACKFILL 0x00405BE0  AudioController::Init  cls=AudioController  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x00405BE0  AudioController::Init  cls=AudioController  sig=csp  renamed_refs=3  residual=- ====
 namespace ra2 { namespace game { int AudioController::Init() {
 {
       this->AudioController_field_0C = &DataGlobal_87E294;
@@ -948,7 +948,7 @@ namespace ra2 { namespace game { int AudioController::Init() {
 }
 } } }
 
-// ==== BACKFILL 0x004060F0  SetAudioSource  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004060F0  SetAudioSource  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void SetAudioSource(AudioMixer * aP0, unsigned int * a1, int a3)
 {
 {
@@ -967,7 +967,7 @@ void SetAudioSource(AudioMixer * aP0, unsigned int * a1, int a3)
 }
 }
 
-// ==== BACKFILL 0x00406170  VocClass::Check  cls=VocClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00406170  VocClass::Check  cls=VocClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int VocClass::Check() {
 {
       if ( g_AudioConfigState && *(int **)(this + 12) == &DataGlobal_87E294 )
@@ -977,7 +977,7 @@ namespace gamemd { int VocClass::Check() {
 }
 } }
 
-// ==== BACKFILL 0x004061D0  AudioMixer::PlayBuffer  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004061D0  AudioMixer::PlayBuffer  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int AudioMixer::PlayBuffer(unsigned int * a1, unsigned int a2)
 {
 {
@@ -1001,7 +1001,7 @@ int AudioMixer::PlayBuffer(unsigned int * a1, unsigned int a2)
 }
 }
 
-// ==== BACKFILL 0x004062C0  sub_4062C0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004062C0  sub_4062C0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4062C0::sub_4062C0(unsigned int a2, int a3)
 {
 {
@@ -1011,7 +1011,7 @@ int E4Recv_4062C0::sub_4062C0(unsigned int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x00406310  sub_406310  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00406310  sub_406310  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_406310::sub_406310()
 {
 {
@@ -1019,7 +1019,7 @@ int E4Recv_406310::sub_406310()
 }
 }
 
-// ==== BACKFILL 0x004064A0  AbstractTypeClass::AddSampleVocClass  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004064A0  AbstractTypeClass::AddSampleVocClass  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int AbstractTypeClass::AddSampleVocClass()
 {
 {
@@ -1046,7 +1046,7 @@ int AbstractTypeClass::AddSampleVocClass()
 }
 }
 
-// ==== BACKFILL 0x00406570  AbstractTypeClass::sub_406570  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00406570  AbstractTypeClass::sub_406570  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int AbstractTypeClass::sub_406570()
 {
 {
@@ -1076,7 +1076,7 @@ int AbstractTypeClass::sub_406570()
 }
 }
 
-// ==== BACKFILL 0x004065F0  AbstractTypeClass::sub_4065F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004065F0  AbstractTypeClass::sub_4065F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractTypeClass::sub_4065F0(int a2)
 {
 {
@@ -1085,7 +1085,7 @@ int AbstractTypeClass::sub_4065F0(int a2)
 }
 }
 
-// ==== BACKFILL 0x00406600  AbstractTypeClass::sub_406600  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00406600  AbstractTypeClass::sub_406600  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int AbstractTypeClass::sub_406600()
 {
 {
@@ -1097,7 +1097,7 @@ int AbstractTypeClass::sub_406600()
 }
 }
 
-// ==== BACKFILL 0x00406610  AbstractTypeClass::sub_406610  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00406610  AbstractTypeClass::sub_406610  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int AbstractTypeClass::sub_406610()
 {
 {
@@ -1109,7 +1109,7 @@ int AbstractTypeClass::sub_406610()
 }
 }
 
-// ==== BACKFILL 0x00406670  sub_406670  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00406670  sub_406670  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int * sub_406670(void * a1, int a2)
 {
 {
@@ -1153,7 +1153,7 @@ int * sub_406670(void * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x00406760  sub_406760  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00406760  sub_406760  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void * E4Recv_406760::sub_406760(void (__thiscall *this)(char *) a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1174,7 +1174,7 @@ void *__thiscall sub_406760(void (__thiscall *this)(char *))
 }
 }
 
-// ==== BACKFILL 0x004067D0  sub_4067D0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004067D0  sub_4067D0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL sub_4067D0(char * a1, unsigned int * a2)
 {
 {
@@ -1198,7 +1198,7 @@ BOOL sub_4067D0(char * a1, unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x00406820  sub_406820  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00406820  sub_406820  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL sub_406820(unsigned int * a1, char * a2)
 {
 {
@@ -1222,13 +1222,13 @@ BOOL sub_406820(unsigned int * a1, char * a2)
 }
 }
 
-// ==== BACKFILL 0x004068E0  Debug::Log  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004068E0  Debug::Log  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void Debug::Log()
 {
   ;
 }
 
-// ==== BACKFILL 0x004068F0  Array::ForEach  cls=Array  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004068F0  Array::ForEach  cls=Array  sig=csp  renamed_refs=0  residual=- ====
 int Array::ForEach(AbstractClass * aP0, int a2, IUnknown * aP2, int (__thiscall *a4)(int) a4)
 {
 {
@@ -1250,7 +1250,7 @@ int Array::ForEach(AbstractClass * aP0, int a2, IUnknown * aP2, int (__thiscall 
 }
 }
 
-// ==== BACKFILL 0x00406D40  Audio::Shutdown  cls=Audio  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00406D40  Audio::Shutdown  cls=Audio  sig=csp  renamed_refs=0  residual=- ====
 void Audio::Shutdown()
 {
 {
@@ -1286,7 +1286,7 @@ void Audio::Shutdown()
 }
 }
 
-// ==== BACKFILL 0x00406F00  sub_406F00  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00406F00  sub_406F00  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_406F00()
 {
 {
@@ -1305,7 +1305,7 @@ int sub_406F00()
 }
 }
 
-// ==== BACKFILL 0x00407000  Audio::IsSoundEnabled  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407000  Audio::IsSoundEnabled  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL Audio::IsSoundEnabled()
 {
 {
@@ -1313,7 +1313,7 @@ BOOL Audio::IsSoundEnabled()
 }
 }
 
-// ==== BACKFILL 0x00407010  Audio::GetEnabled  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407010  Audio::GetEnabled  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void * Audio::GetEnabled()
 {
 {
@@ -1321,7 +1321,7 @@ void * Audio::GetEnabled()
 }
 }
 
-// ==== BACKFILL 0x00407060  sub_407060  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407060  sub_407060  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_407060::sub_407060()
 {
 {
@@ -1329,7 +1329,7 @@ int E4Recv_407060::sub_407060()
 }
 }
 
-// ==== BACKFILL 0x00407070  Audio::GetFlag  cls=Audio  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407070  Audio::GetFlag  cls=Audio  sig=csp  renamed_refs=0  residual=- ====
 int Audio::GetFlag()
 {
 {
@@ -1337,7 +1337,7 @@ int Audio::GetFlag()
 }
 }
 
-// ==== BACKFILL 0x00407100  SetupSampleAudioMixer  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407100  SetupSampleAudioMixer  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetupSampleAudioMixer(int * a0, ObjectClass * aP1)
 {
 {
@@ -1358,7 +1358,7 @@ int SetupSampleAudioMixer(int * a0, ObjectClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x00407150  EndBufferMixer  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407150  EndBufferMixer  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int EndBufferMixer(VolumeStruct* volume, int scaledVolume)
 {
 int result = volume->Volume | 1;
@@ -1367,7 +1367,7 @@ volume->ScaledVolume = scaledVolume << 16;
 return result;
 }
 
-// ==== BACKFILL 0x00407160  sub_407160  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407160  sub_407160  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_407160(VolumeStruct* volume)
 {
 int result = volume->Volume | 1;
@@ -1375,7 +1375,7 @@ volume->Volume = result;
 return result;
 }
 
-// ==== BACKFILL 0x00407170  RequestBufferMixer  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407170  RequestBufferMixer  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RequestBufferMixer(VolumeStruct* volume, int rate)
 {
 int result = volume->ScaledVolume;
@@ -1393,7 +1393,7 @@ volume->ScaledVolume = rate << 16;
 return result;
 }
 
-// ==== BACKFILL 0x004071A0  SetRateMixerSample  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004071A0  SetRateMixerSample  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetRateMixerSample(unsigned int * a0, int a2, unsigned int a3, ObjectClass * aP3)
 {
 {
@@ -1404,7 +1404,7 @@ int SetRateMixerSample(unsigned int * a0, int a2, unsigned int a3, ObjectClass *
 }
 }
 
-// ==== BACKFILL 0x004072B0  sub_4072B0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004072B0  sub_4072B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4072B0::sub_4072B0()
 {
 {
@@ -1412,7 +1412,7 @@ int E4Recv_4072B0::sub_4072B0()
 }
 }
 
-// ==== BACKFILL 0x004073B0  SaveGame::CountLinkedList  cls=SaveGame  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004073B0  SaveGame::CountLinkedList  cls=SaveGame  sig=csp  renamed_refs=0  residual=- ====
 int SaveGame::CountLinkedList()
 {
 {
@@ -1425,7 +1425,7 @@ int SaveGame::CountLinkedList()
 }
 }
 
-// ==== BACKFILL 0x004073C0  AudioQueue::GetNext  cls=AudioQueue  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004073C0  AudioQueue::GetNext  cls=AudioQueue  sig=csp  renamed_refs=0  residual=- ====
 int AudioQueue::GetNext()
 {
 {
@@ -1442,7 +1442,7 @@ int AudioQueue::GetNext()
 }
 }
 
-// ==== BACKFILL 0x004073E0  AudioQueue::GetNextAlt  cls=AudioQueue  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004073E0  AudioQueue::GetNextAlt  cls=AudioQueue  sig=csp  renamed_refs=0  residual=- ====
 int AudioQueue::GetNextAlt()
 {
 {
@@ -1459,7 +1459,7 @@ int AudioQueue::GetNextAlt()
 }
 }
 
-// ==== BACKFILL 0x00407420  InsertAfterDListNode  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407420  InsertAfterDListNode  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int DListNode_InsertAfter(int a1, unsigned int * a2)
 {
 {
@@ -1473,7 +1473,7 @@ int DListNode_InsertAfter(int a1, unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x00407440  InsertBeforeLinkedList  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407440  InsertBeforeLinkedList  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int LinkedList_InsertBefore(int * a1, int * a2)
 {
 {
@@ -1487,7 +1487,7 @@ int LinkedList_InsertBefore(int * a1, int * a2)
 }
 }
 
-// ==== BACKFILL 0x00407450  LinkedList::Init  cls=LinkedList  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407450  LinkedList::Init  cls=LinkedList  sig=csp  renamed_refs=0  residual=- ====
 int LinkedList::Init()
 {
 {
@@ -1501,7 +1501,7 @@ int LinkedList::Init()
 }
 }
 
-// ==== BACKFILL 0x00407520  LinkedList::Next  cls=LinkedList  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407520  LinkedList::Next  cls=LinkedList  sig=csp  renamed_refs=0  residual=- ====
 int * LinkedList::Next()
 {
 {
@@ -1518,7 +1518,7 @@ int * LinkedList::Next()
 }
 }
 
-// ==== BACKFILL 0x00407530  PushFrontLinkedListAlt  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407530  PushFrontLinkedListAlt  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int LinkedList_PushFront_Alt(unsigned int * a1, int a2)
 {
 {
@@ -1528,7 +1528,7 @@ int LinkedList_PushFront_Alt(unsigned int * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x00407680  StartAddress  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407680  StartAddress  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 DWORD StartAddress(unsigned int * lpThreadParameter)
 {
 {
@@ -1585,7 +1585,7 @@ DWORD StartAddress(unsigned int * lpThreadParameter)
 }
 }
 
-// ==== BACKFILL 0x00407860  AudioStream::Constructor  cls=AudioStream  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407860  AudioStream::Constructor  cls=AudioStream  sig=csp  renamed_refs=0  residual=- ====
 char * AudioStream::Constructor(unsigned long long a2)
 {
 {
@@ -1635,7 +1635,7 @@ char * AudioStream::Constructor(unsigned long long a2)
 }
 }
 
-// ==== BACKFILL 0x00407F80  sub_407F80  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00407F80  sub_407F80  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_407F80::sub_407F80()
 {
 {
@@ -1646,7 +1646,7 @@ int E4Recv_407F80::sub_407F80()
 }
 }
 
-// ==== BACKFILL 0x00408000  AudioMixer::ProcessAudioFrame  cls=AudioMixer  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x00408000  AudioMixer::ProcessAudioFrame  cls=AudioMixer  sig=csp  renamed_refs=3  residual=- ====
 namespace gamemd { void AudioMixer::ProcessAudioFrame() {
 {
       int v2;
@@ -1674,7 +1674,7 @@ namespace gamemd { void AudioMixer::ProcessAudioFrame() {
 }
 } }
 
-// ==== BACKFILL 0x00408070  Audio::IsSoundPlaying  cls=Audio  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408070  Audio::IsSoundPlaying  cls=Audio  sig=csp  renamed_refs=0  residual=- ====
 int Audio::IsSoundPlaying()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1684,7 +1684,7 @@ int __thiscall Audio_IsSoundPlaying(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x00408080  SetAudioFileName  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408080  SetAudioFileName  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * SetAudioFileName(int a1, const char * a2)
 {
 {
@@ -1695,7 +1695,7 @@ char * SetAudioFileName(int a1, const char * a2)
 }
 }
 
-// ==== BACKFILL 0x004080A0  sub_4080A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004080A0  sub_4080A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char * E4Recv_4080A0::sub_4080A0()
 {
 {
@@ -1703,7 +1703,7 @@ char * E4Recv_4080A0::sub_4080A0()
 }
 }
 
-// ==== BACKFILL 0x004080B0  sub_4080B0  cls=UnitTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004080B0  sub_4080B0  cls=UnitTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4080B0::sub_4080B0()
 {
 {
@@ -1711,7 +1711,7 @@ int E4Recv_4080B0::sub_4080B0()
 }
 }
 
-// ==== BACKFILL 0x004080C0  ThemeClass::RequestBuffer  cls=ThemeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004080C0  ThemeClass::RequestBuffer  cls=ThemeClass  sig=csp  renamed_refs=0  residual=- ====
 int ThemeClass::RequestBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1721,7 +1721,7 @@ int __thiscall ThemeClass_RequestBuffer(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x00408140  ThemeClass::GetValue  cls=ThemeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408140  ThemeClass::GetValue  cls=ThemeClass  sig=csp  renamed_refs=0  residual=- ====
 long long ThemeClass::GetValue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1731,7 +1731,7 @@ __int64 __thiscall sub_408140(_QWORD *this)
 }
 }
 
-// ==== BACKFILL 0x00408410  sub_408410  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408410  sub_408410  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_408410()
 {
 {
@@ -1751,7 +1751,7 @@ int sub_408410()
 }
 }
 
-// ==== BACKFILL 0x00408460  sub_408460  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408460  sub_408460  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * sub_408460(size_t Size)
 {
 {
@@ -1775,7 +1775,7 @@ unsigned int * sub_408460(size_t Size)
 }
 }
 
-// ==== BACKFILL 0x00408500  sub_408500  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408500  sub_408500  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_408500(int a1, unsigned int * a2)
 {
 {
@@ -1788,20 +1788,20 @@ int sub_408500(int a1, unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x00408520  AudioController::GetOffset  cls=AudioController  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408520  AudioController::GetOffset  cls=AudioController  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AudioController::GetOffset() {
 {
     return Queue::GetNext(this + 2);
 }
 } } }
 
-// ==== BACKFILL 0x00408530  nullsub_2  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408530  nullsub_2  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_2()
 {
   ;
 }
 
-// ==== BACKFILL 0x00408540  Audio::CalcRate  cls=Audio  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408540  Audio::CalcRate  cls=Audio  sig=csp  renamed_refs=0  residual=- ====
 int Audio::CalcRate(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1811,7 +1811,7 @@ int __thiscall Audio_CalcRate(_DWORD *this, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x004085A0  Struct::ZeroInit32  cls=Struct  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004085A0  Struct::ZeroInit32  cls=Struct  sig=csp  renamed_refs=0  residual=- ====
 int Struct::ZeroInit32()
 {
 {
@@ -1820,7 +1820,7 @@ int Struct::ZeroInit32()
 }
 }
 
-// ==== BACKFILL 0x004085B0  sub_4085B0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004085B0  sub_4085B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4085B0::sub_4085B0()
 {
 {
@@ -1838,7 +1838,7 @@ int E4Recv_4085B0::sub_4085B0()
 }
 }
 
-// ==== BACKFILL 0x004085E0  sub_4085E0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004085E0  sub_4085E0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void sub_4085E0(unsigned int * a1, int a2, int a3)
 {
 {
@@ -1849,7 +1849,7 @@ void sub_4085E0(unsigned int * a1, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x00408970  sub_408970  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408970  sub_408970  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_408970::sub_408970()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1947,7 +1947,7 @@ int __thiscall sub_408970(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x00408A70  AudioMixer::SetupChannels  cls=AudioMixer  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x00408A70  AudioMixer::SetupChannels  cls=AudioMixer  sig=csp  renamed_refs=3  residual=- ====
 namespace gamemd { int AudioMixer::SetupChannels() {
 {
       int *v1;
@@ -2017,7 +2017,7 @@ namespace gamemd { int AudioMixer::SetupChannels() {
 }
 } }
 
-// ==== BACKFILL 0x00408B10  sub_408B10  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408B10  sub_408B10  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_408B10(unsigned int * a1, int * a2)
 {
 {
@@ -2035,7 +2035,7 @@ char sub_408B10(unsigned int * a1, int * a2)
 }
 }
 
-// ==== BACKFILL 0x00408B40  sub_408B40  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408B40  sub_408B40  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_408B40(unsigned int * a1, int a2, int a3, size_t Size)
 {
 {
@@ -2091,7 +2091,7 @@ int sub_408B40(unsigned int * a1, int a2, int a3, size_t Size)
 }
 }
 
-// ==== BACKFILL 0x00408D30  sub_408D30  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408D30  sub_408D30  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_408D30::sub_408D30()
 {
 {
@@ -2099,7 +2099,7 @@ int E4Recv_408D30::sub_408D30()
 }
 }
 
-// ==== BACKFILL 0x00408D40  sub_408D40  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408D40  sub_408D40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_408D40::sub_408D40()
 {
 {
@@ -2107,7 +2107,7 @@ int E4Recv_408D40::sub_408D40()
 }
 }
 
-// ==== BACKFILL 0x00408D50  AudioStream::GetChannel  cls=AudioStream  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408D50  AudioStream::GetChannel  cls=AudioStream  sig=csp  renamed_refs=0  residual=- ====
 int AudioStream::GetChannel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -2117,7 +2117,7 @@ int __thiscall Accessor_408d50(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x00408EC0  sub_408EC0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408EC0  sub_408EC0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_408EC0::sub_408EC0()
 {
 {
@@ -2125,7 +2125,7 @@ int E4Recv_408EC0::sub_408EC0()
 }
 }
 
-// ==== BACKFILL 0x00408ED0  sub_408ED0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408ED0  sub_408ED0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_408ED0::sub_408ED0()
 {
 {
@@ -2133,7 +2133,7 @@ int E4Recv_408ED0::sub_408ED0()
 }
 }
 
-// ==== BACKFILL 0x00408EE0  BufferedAudioStreamRead  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00408EE0  BufferedAudioStreamRead  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int BufferedAudioStreamRead(AudioStream * a1, AudioStream * a2, signed int a3)
 {
 {
@@ -2177,7 +2177,7 @@ int BufferedAudioStreamRead(AudioStream * a1, AudioStream * a2, signed int a3)
 }
 }
 
-// ==== BACKFILL 0x004090F0  sub_4090F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004090F0  sub_4090F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4090F0::sub_4090F0()
 {
 {
@@ -2185,7 +2185,7 @@ int E4Recv_4090F0::sub_4090F0()
 }
 }
 
-// ==== BACKFILL 0x00409310  AudioStream::ReadStreamAndReturn  cls=AudioStream  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00409310  AudioStream::ReadStreamAndReturn  cls=AudioStream  sig=csp  renamed_refs=0  residual=- ====
 int AudioStream::ReadStreamAndReturn()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -2196,7 +2196,7 @@ int __thiscall sub_409310(int *this)
 }
 }
 
-// ==== BACKFILL 0x00409320  Audio::GetSampleSize  cls=Audio  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00409320  Audio::GetSampleSize  cls=Audio  sig=csp  renamed_refs=0  residual=- ====
 int Audio::GetSampleSize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -2206,7 +2206,7 @@ int __thiscall Audio_GetSampleSize(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x00409330  sub_409330  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00409330  sub_409330  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_409330::sub_409330()
 {
 {
@@ -2214,7 +2214,7 @@ int E4Recv_409330::sub_409330()
 }
 }
 
-// ==== BACKFILL 0x00409360  sub_409360  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00409360  sub_409360  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_409360()
 {
 {
@@ -2235,7 +2235,7 @@ int sub_409360()
 }
 }
 
-// ==== BACKFILL 0x004093B0  Audio::Callback  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004093B0  Audio::Callback  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Audio::Callback()
 {
 {
@@ -2246,7 +2246,7 @@ int Audio::Callback()
 }
 }
 
-// ==== BACKFILL 0x00409470  sub_409470  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00409470  sub_409470  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_409470::sub_409470()
 {
 {
@@ -2289,7 +2289,7 @@ int E4Recv_409470::sub_409470()
 }
 }
 
-// ==== BACKFILL 0x0040A2D0  sub_40A2D0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040A2D0  sub_40A2D0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_40A2D0::sub_40A2D0()
 {
 {
@@ -2323,7 +2323,7 @@ int E4Recv_40A2D0::sub_40A2D0()
 }
 }
 
-// ==== BACKFILL 0x0040A7A0  Audio::GetDirectSound  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040A7A0  Audio::GetDirectSound  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LPDIRECTSOUND Audio::GetDirectSound()
 {
 {
@@ -2331,7 +2331,7 @@ LPDIRECTSOUND Audio::GetDirectSound()
 }
 }
 
-// ==== BACKFILL 0x0040ACD0  MoveCoordByDirection  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040ACD0  MoveCoordByDirection  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 short Coord_MoveByDirection(unsigned char a1, int * a2)
 {
 {
@@ -2382,7 +2382,7 @@ short Coord_MoveByDirection(unsigned char a1, int * a2)
 }
 }
 
-// ==== BACKFILL 0x0040AFD0  Array::ForEachReverse  cls=Array  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040AFD0  Array::ForEachReverse  cls=Array  sig=csp  renamed_refs=0  residual=- ====
 int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (__thiscall *a4)(int) a4)
 {
 {
@@ -2406,7 +2406,7 @@ int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (__thiscall *a4
 }
 }
 
-// ==== BACKFILL 0x0040B010  sub_40B010  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040B010  sub_40B010  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void ** sub_40B010(void ** Block, char a2)
 {
 {
@@ -2445,7 +2445,7 @@ void ** sub_40B010(void ** Block, char a2)
 }
 }
 
-// ==== BACKFILL 0x0040B180  VectorClass::Release  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040B180  VectorClass::Release  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 char VectorClass::Release(int a2, char * a3)
 {
 int newCapacity = a2;
@@ -2538,7 +2538,7 @@ else
 }
 }
 
-// ==== BACKFILL 0x0040B270  VectorClass::Cleanup5  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040B270  VectorClass::Cleanup5  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 void VectorClass::Cleanup5()
 {
 if ( this->Items && this->IsAllocated )
@@ -2550,7 +2550,7 @@ this->IsAllocated = 0;
 this->Capacity = 0;
 }
 
-// ==== BACKFILL 0x0040B2A0  VectorClass::GetSize  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040B2A0  VectorClass::GetSize  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass::GetSize(unsigned int * a2)
 {
 if ( !this->IsInitialized )
@@ -2570,7 +2570,7 @@ while ( *i != *a2 )
 return result;
 }
 
-// ==== BACKFILL 0x0040B2E0  VectorClass::GetCapacity  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040B2E0  VectorClass::GetCapacity  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int VectorClass::GetCapacity(int a2)
 {
 if ( this->IsInitialized )
@@ -2579,7 +2579,7 @@ else
     return 0;
 }
 
-// ==== BACKFILL 0x0040B300  VectorClass::QueryInterface  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040B300  VectorClass::QueryInterface  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 VectorClass * VectorClass::QueryInterface(unsigned int * Block, char a2)
 {
     void* v3 = (void*)*(Block + 1);
@@ -2597,7 +2597,7 @@ VectorClass * VectorClass::QueryInterface(unsigned int * Block, char a2)
     return (VectorClass *)Block;
 }
 
-// ==== BACKFILL 0x0040BD00  EventClass::resetEvent  cls=EventClass  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x0040BD00  EventClass::resetEvent  cls=EventClass  sig=csp  renamed_refs=5  residual=- ====
 unsigned int * EventClass::resetEvent(BuildingClass * aP1, BuildingClass * aP2)
 {
 {
@@ -2620,7 +2620,7 @@ unsigned int * EventClass::resetEvent(BuildingClass * aP1, BuildingClass * aP2)
 }
 }
 
-// ==== BACKFILL 0x0040CC00  VectorClass_ptr_IsometricTileClass::GetItem  cls=LogicClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040CC00  VectorClass_ptr_IsometricTileClass::GetItem  cls=LogicClass  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_IsometricTileClass::GetItem()
 {
 {
@@ -2628,12 +2628,12 @@ int VectorClass_ptr_IsometricTileClass::GetItem()
 }
 }
 
-// ==== BACKFILL 0x0040CC10  GenericVector::StubReturnFalse  cls=LogicClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040CC10  GenericVector::StubReturnFalse  cls=LogicClass  sig=csp  renamed_refs=0  residual=- ====
 void GenericVector::StubReturnFalse()
 {
 }
 
-// ==== BACKFILL 0x0040CC20  VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_ObjectClass___  cls=LogicClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040CC20  VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_ObjectClass___  cls=LogicClass  sig=csp  renamed_refs=0  residual=- ====
 LogicClass * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_ObjectClass___(char a2)
 {
 {
@@ -2653,41 +2653,41 @@ LogicClass * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_ObjectC
 }
 }
 
-// ==== BACKFILL 0x0040CC70  VectorClass_ptr_IsometricTileClass::TryFreeAndClear  cls=DynamicVector  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x0040CC70  VectorClass_ptr_IsometricTileClass::TryFreeAndClear  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
 void VectorClass_ptr_IsometricTileClass::TryFreeAndClear()
 {
 {
     void *v2;
-    v2 = this->q004;
+    v2 = this->Items;
     this->DynamicVector_field_0x10 = 0;
     if ( v2 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v2);
-    this->q004 = (void*)(0);
+    this->Items = (void*)(0);
   }
     this->IsAllocated = 0;
     this->DynamicVector_field_0x8 = 0;
 }
 }
 
-// ==== BACKFILL 0x0040CCA0  VectorClass_ptr_IsometricTileClass::GetPtrOffset  cls=DynamicVector  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0040CCA0  VectorClass_ptr_IsometricTileClass::GetPtrOffset  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 unsigned int VectorClass_ptr_IsometricTileClass::GetPtrOffset(int a2)
 {
 {
-    if ( this->__pad_00C )
-    return (unsigned int)(a2 - this->q004) >> 2;
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
     else
     return 0;
 }
 }
 
-// ==== BACKFILL 0x0040CCC0  VectorClass::GetAt  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040CCC0  VectorClass::GetAt  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass::GetAt(int a2)
 {
 return this->Items[a2];
 }
 
-// ==== BACKFILL 0x0040CF00  VectorClass_ptr_IsometricTileClass::FindValue  cls=DynamicVector  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0040CF00  VectorClass_ptr_IsometricTileClass::FindValue  cls=DynamicVector  sig=csp  renamed_refs=1  residual=- ====
 int VectorClass_ptr_IsometricTileClass::FindValue(unsigned int * a2)
 {
 {
@@ -2698,7 +2698,7 @@ int VectorClass_ptr_IsometricTileClass::FindValue(unsigned int * a2)
     result = 0;
     if ( v2 <= 0 )
     return -1;
-    for ( i = (int*)this->q004; *i != *a2; ++i )
+    for ( i = (int*)this->Items; *i != *a2; ++i )
   {
     if ( ++result >= v2 )
     return -1;
@@ -2707,10 +2707,10 @@ int VectorClass_ptr_IsometricTileClass::FindValue(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x0040D250  DisplayClass::vt_entry_AC  cls=DisplayClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040D250  DisplayClass::vt_entry_AC  cls=DisplayClass  sig=csp  renamed_refs=0  residual=- ====
 void DisplayClass::vt_entry_AC(uint32_t unk) {}
 
-// ==== BACKFILL 0x0040D270  SidebarClass::initButtons2  cls=SidebarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040D270  SidebarClass::initButtons2  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
 int SidebarClass::initButtons2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -2721,13 +2721,13 @@ char __thiscall SidebarClass::InitButtons_0(void *this)
 }
 }
 
-// ==== BACKFILL 0x0040D300  nullsub_57  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040D300  nullsub_57  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_57()
 {
   ;
 }
 
-// ==== BACKFILL 0x0040E320  GenericNode::Constructor  cls=GenericNode  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x0040E320  GenericNode::Constructor  cls=GenericNode  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { void* GenericNode::Constructor() {
 {
       this->Previous = 0;
@@ -2737,7 +2737,7 @@ namespace gamemd { void* GenericNode::Constructor() {
 }
 } }
 
-// ==== BACKFILL 0x0040E340  LinkedList::Prepend  cls=LinkedList  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040E340  LinkedList::Prepend  cls=LinkedList  sig=csp  renamed_refs=0  residual=- ====
 int LinkedList::Prepend(int a2)
 {
 {
@@ -2773,7 +2773,7 @@ int LinkedList::Prepend(int a2)
 }
 }
 
-// ==== BACKFILL 0x0040E390  GenericNode::sub_40E390  cls=GenericNode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040E390  GenericNode::sub_40E390  cls=GenericNode  sig=csp  renamed_refs=0  residual=- ====
 GenericNode * GenericNode::sub_40E390(char a2)
 {
 {
@@ -2801,7 +2801,7 @@ GenericNode * GenericNode::sub_40E390(char a2)
 }
 }
 
-// ==== BACKFILL 0x0040E4A0  sub_40E4A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0040E4A0  sub_40E4A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * sub_40E4A0(void ** Block, char a2)
 {
 {

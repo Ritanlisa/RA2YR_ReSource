@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00490400  sub_490400  cls=ConvertClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00490400  sub_490400  cls=ConvertClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_490400::sub_490400()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -34,7 +34,7 @@ int __thiscall sub_490400(int this)
 }
 }
 
-// ==== BACKFILL 0x00491100  sub_491100  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00491100  sub_491100  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_491100(ObjectClass * aP0, char a2, int a3, ObjectClass * aP3, short a5, char a6, short a7)
 {
 {
@@ -138,7 +138,7 @@ int E4Recv_491360::sub_491360(int a2, int a3, int a4, int a5, int a6, int a7, in
 }
 }
 
-// ==== BACKFILL 0x004914C0  AbstractClass::getFactoryCount  cls=BlitTransXlat  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004914C0  AbstractClass::getFactoryCount  cls=BlitTransXlat  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::getFactoryCount(void* a1, void* a2, int a3, int a4, int a5, int a6, int a7, int a8) {
 {
     unsigned char result;
@@ -164,28 +164,28 @@ namespace ra2 { namespace game { int AbstractClass::getFactoryCount(void* a1, vo
 }
 } } }
 
-// ==== BACKFILL 0x00491500  AbstractClass::getFactoryIndex  cls=BlitTransXlat  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00491500  AbstractClass::getFactoryIndex  cls=BlitTransXlat  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::getFactoryIndex(int a1, int a2, int a3, int a4, int a5, int a6, int a7) {
 {
     return this->COMStub_AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
 }
 } } }
 
-// ==== BACKFILL 0x00491530  AbstractClass::setFactoryState  cls=BlitTransXlat  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00491530  AbstractClass::setFactoryState  cls=BlitTransXlat  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::setFactoryState(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
 {
     return this->COMStub_AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
 }
 } } }
 
-// ==== BACKFILL 0x00491560  AbstractClass::checkFactoryQueue  cls=BlitTransXlat  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00491560  AbstractClass::checkFactoryQueue  cls=BlitTransXlat  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::checkFactoryQueue(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
 {
     return this->COMStub_AddRef(a2, a3, a4, a5, a6, a7, a8, 0);
 }
 } } }
 
-// ==== BACKFILL 0x00491590  AbstractClass::readFactoryINI  cls=?$BlitTransZRemapXlat@E  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00491590  AbstractClass::readFactoryINI  cls=?$BlitTransZRemapXlat@E  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::readFactoryINI(void* a1, void* a2, int a3, int a4, int a5, int a6, int a7, int a8) {
 {
     int v9;
@@ -213,14 +213,14 @@ namespace ra2 { namespace game { int AbstractClass::readFactoryINI(void* a1, voi
 }
 } } }
 
-// ==== BACKFILL 0x00491610  AbstractClass::resetFactoryState  cls=?$BlitTransZRemapXlat@E  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00491610  AbstractClass::resetFactoryState  cls=?$BlitTransZRemapXlat@E  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::resetFactoryState(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
 {
     return (*((int (__thiscall **)(BlitTransZRemapXlat_E *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
 } } }
 
-// ==== BACKFILL 0x00491640  AbstractClass::validateFactory  cls=?$BlitTransZRemapXlat@E  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00491640  AbstractClass::validateFactory  cls=?$BlitTransZRemapXlat@E  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::validateFactory(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
 {
     return (*((int (__thiscall **)(BlitTransZRemapXlat_E *, int, int, int, int, int, int, int, int))this->vfptr + 1))( this, a2, a3, a4, a5, a6, a7, a8, 0);
@@ -3126,7 +3126,7 @@ BlitTransXlat * E4Recv_499CA0::___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
 }
 }
 
-// ==== BACKFILL 0x00499CC0  AbstractClass::getTileIndex  cls=Blitter  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00499CC0  AbstractClass::getTileIndex  cls=Blitter  sig=csp  renamed_refs=0  residual=- ====
 Blitter * AbstractClass::getTileIndex(char a2)
 {
 {
@@ -3137,7 +3137,7 @@ Blitter * AbstractClass::getTileIndex(char a2)
 }
 }
 
-// ==== BACKFILL 0x00499CE0  AbstractClass::setTileIndex  cls=BlitPlainXlat  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00499CE0  AbstractClass::setTileIndex  cls=BlitPlainXlat  sig=csp  renamed_refs=0  residual=- ====
 BlitPlainXlat * AbstractClass::setTileIndex(char a2)
 {
 {
@@ -3148,7 +3148,7 @@ BlitPlainXlat * AbstractClass::setTileIndex(char a2)
 }
 }
 
-// ==== BACKFILL 0x00499D00  AbstractClass::getOverlayType  cls=BlitTransXlat  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00499D00  AbstractClass::getOverlayType  cls=BlitTransXlat  sig=csp  renamed_refs=0  residual=- ====
 BlitTransXlat * AbstractClass::getOverlayType(char a2)
 {
 {
@@ -3159,7 +3159,7 @@ BlitTransXlat * AbstractClass::getOverlayType(char a2)
 }
 }
 
-// ==== BACKFILL 0x00499D20  AbstractClass::setOverlayFlags  cls=?$BlitTransZRemapXlat@E  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00499D20  AbstractClass::setOverlayFlags  cls=?$BlitTransZRemapXlat@E  sig=csp  renamed_refs=0  residual=- ====
 std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 {
 {
@@ -3203,7 +3203,7 @@ RLEBlitTransXlat * E4Recv_499D80::___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
 }
 }
 
-// ==== BACKFILL 0x00499DA0  AbstractClass::clearOverlayFlags  cls=RLEBlitter  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00499DA0  AbstractClass::clearOverlayFlags  cls=RLEBlitter  sig=csp  renamed_refs=0  residual=- ====
 RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 {
 {
@@ -3720,7 +3720,7 @@ std::locale::facet * E4Recv_49A980::___Gfacet_locale_std__UAEPAXI_Z_69(char a2)
 }
 }
 
-// ==== BACKFILL 0x0049B610  MissionClass::Init  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049B610  MissionClass::Init  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* MissionClass::Init() {
 {
       this->abstractFlags = -2;
@@ -3747,7 +3747,7 @@ namespace ra2 { namespace game { void* MissionClass::Init() {
 }
 } } }
 
-// ==== BACKFILL 0x0049B720  Array::Cleanup  cls=Array  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049B720  Array::Cleanup  cls=Array  sig=csp  renamed_refs=0  residual=- ====
 void Array::Cleanup()
 {
 {
@@ -3764,7 +3764,7 @@ void Array::Cleanup()
 }
 }
 
-// ==== BACKFILL 0x0049BC80  Movie::GetSectionID  cls=Movie  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049BC80  Movie::GetSectionID  cls=Movie  sig=csp  renamed_refs=0  residual=- ====
 char Movie::GetSectionID(unsigned int * a2)
 {
 {
@@ -3775,7 +3775,7 @@ char Movie::GetSectionID(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x0049BCA0  MPCooperative::GetMovieScore  cls=MPCooperative  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049BCA0  MPCooperative::GetMovieScore  cls=MPCooperative  sig=csp  renamed_refs=0  residual=- ====
 char MPCooperative::GetMovieScore(CampaignEndScoreClass * aP1)
 {
 {
@@ -3786,7 +3786,7 @@ char MPCooperative::GetMovieScore(CampaignEndScoreClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0049BCC0  Movie::GetState  cls=Movie  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049BCC0  Movie::GetState  cls=Movie  sig=csp  renamed_refs=0  residual=- ====
 char Movie::GetState(CCINIClass * aP1)
 {
 {
@@ -3797,7 +3797,7 @@ char Movie::GetState(CCINIClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0049D070  Array::GetElementAt  cls=Array  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049D070  Array::GetElementAt  cls=Array  sig=csp  renamed_refs=0  residual=- ====
 char Array::GetElementAt(unsigned int * a2, int a3)
 {
 {
@@ -3821,7 +3821,7 @@ char Array::GetElementAt(unsigned int * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x0049D9F0  SideClass::FindByName  cls=SideClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049D9F0  SideClass::FindByName  cls=SideClass  sig=csp  renamed_refs=0  residual=- ====
 int SideClass::FindByName()
 {
 {
@@ -3846,7 +3846,7 @@ int SideClass::FindByName()
 }
 }
 
-// ==== BACKFILL 0x0049DA60  sub_49DA60  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049DA60  sub_49DA60  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_49DA60::sub_49DA60()
 {
 {
@@ -3905,7 +3905,7 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
 }
 }
 
-// ==== BACKFILL 0x0049E4F0  CampaignClass::GetValue  cls=CampaignClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049E4F0  CampaignClass::GetValue  cls=CampaignClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CampaignClass::GetValue(void* a1) {
 {
       if ( !this->q060 )
@@ -3915,7 +3915,7 @@ namespace gamemd { int CampaignClass::GetValue(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x0049E510  INIClass::ClearContents  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049E510  INIClass::ClearContents  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* INIClass::ClearContents() {
 {
       int v2;
@@ -4066,7 +4066,7 @@ namespace gamemd { void* INIClass::ClearContents() {
 }
 } }
 
-// ==== BACKFILL 0x0049EA10  Node::Init  cls=Node  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049EA10  Node::Init  cls=Node  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * Node::Init()
 {
 {
@@ -4079,7 +4079,7 @@ unsigned int * Node::Init()
 }
 }
 
-// ==== BACKFILL 0x0049F090  CampaignClass::Constructor_0  cls=CampaignClass  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x0049F090  CampaignClass::Constructor_0  cls=CampaignClass  sig=csp  renamed_refs=5  residual=IsAllocated ====
 namespace gamemd { void* CampaignClass::Constructor_0(int a2, int a3) {
 {
     this->vtable2 = 0;
@@ -4101,7 +4101,7 @@ namespace gamemd { void* CampaignClass::Constructor_0(int a2, int a3) {
 }
 } }
 
-// ==== BACKFILL 0x0049F2F0  sub_49F2F0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049F2F0  sub_49F2F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_49F2F0()
 {
 {
@@ -4117,7 +4117,7 @@ int sub_49F2F0()
 }
 }
 
-// ==== BACKFILL 0x0049F420  RandomCoordScatter  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049F420  RandomCoordScatter  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
 {
 {
@@ -4175,7 +4175,7 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
 }
 }
 
-// ==== BACKFILL 0x0049F550  globalHelper_09F550  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049F550  globalHelper_09F550  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 IUnknown * globalHelper_09F550(int * a1, IUnknown * a2, int a3)
 {
 {
@@ -4200,7 +4200,7 @@ IUnknown * globalHelper_09F550(int * a1, IUnknown * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x0049F8B0  WinMain::CleanupResource  cls=WinMain  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049F8B0  WinMain::CleanupResource  cls=WinMain  sig=csp  renamed_refs=0  residual=- ====
 LSTATUS WinMain::CleanupResource()
 {
 {
@@ -4223,7 +4223,7 @@ LSTATUS WinMain::CleanupResource()
 }
 }
 
-// ==== BACKFILL 0x0049FAE0  DynamicVector::GetOrGrow  cls=DynamicVector  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x0049FAE0  DynamicVector::GetOrGrow  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 int DynamicVector::GetOrGrow(DynamicVector * aP1)
 {
 {
@@ -4231,18 +4231,18 @@ int DynamicVector::GetOrGrow(DynamicVector * aP1)
     int i;
     v3 = this->DynamicVector_field_0x8;
     if ( (int)aP1 < v3 )
-    return *(int *)(this->q004 + 4 * (int)aP1);
+    return *(int *)(this->Items + 4 * (int)aP1);
     if ( this->SetCapacity((char *)&aP1->field_8 + 2, 0) )
   {
-    for ( i = v3; i < this->DynamicVector_field_0x8; *(int *)(this->q004 + 4 * i - 4) = 0 )
+    for ( i = v3; i < this->DynamicVector_field_0x8; *(int *)(this->Items + 4 * i - 4) = 0 )
     ++i;
-    return *(int *)(this->q004 + 4 * (int)aP1);
+    return *(int *)(this->Items + 4 * (int)aP1);
   }
     return 0;
 }
 }
 
-// ==== BACKFILL 0x0049FB60  VectorClass::GetCount  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049FB60  VectorClass::GetCount  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass::GetCount()
 {
 {
@@ -4250,7 +4250,7 @@ int VectorClass::GetCount()
 }
 }
 
-// ==== BACKFILL 0x0049FCE0  CounterClass::QueryInterface  cls=CounterClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0049FCE0  CounterClass::QueryInterface  cls=CounterClass  sig=csp  renamed_refs=0  residual=- ====
 CounterClass * CounterClass::QueryInterface(char a2)
 {
 {

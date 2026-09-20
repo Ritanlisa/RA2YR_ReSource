@@ -206,7 +206,7 @@ public:
 
     // Capture / Occupancy / Infiltration
     int ProcessCapture() override;  // 0x712130
-    void CaptureBuilding();  // 0x44D5D0
+    bool CaptureBuilding(HouseClass* newOwner);  // 0x44D5D0
     void Capture();  // 0x4FCE80
     void DisableTemporal();  // 0x4521C0
     void Infiltrate();  // 0x4571E0

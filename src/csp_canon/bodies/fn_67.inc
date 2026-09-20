@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00672280  RulesClass::readCrateRules  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00672280  RulesClass::readCrateRules  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 int RulesClass::readCrateRules()
 {
 {
@@ -24,7 +24,7 @@ int RulesClass::readCrateRules()
 }
 }
 
-// ==== BACKFILL 0x006722F0  RulesClass::LoadCountries  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006722F0  RulesClass::LoadCountries  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int RulesClass::LoadCountries() {
 {
     int KeyCount;
@@ -45,7 +45,7 @@ namespace gamemd { int RulesClass::LoadCountries() {
 }
 } }
 
-// ==== BACKFILL 0x00672360  CCINIClass::LoadBuildingTypes  cls=CCINIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00672360  CCINIClass::LoadBuildingTypes  cls=CCINIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CCINIClass::LoadBuildingTypes() {
 {
     int KeyCount;
@@ -66,7 +66,7 @@ namespace gamemd { int CCINIClass::LoadBuildingTypes() {
 }
 } }
 
-// ==== BACKFILL 0x006723D0  RulesClass::readRadiation  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006723D0  RulesClass::readRadiation  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 int RulesClass::readRadiation()
 {
 {
@@ -88,7 +88,7 @@ int RulesClass::readRadiation()
 }
 }
 
-// ==== BACKFILL 0x006725F0  RulesClass::ReadSidesList  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006725F0  RulesClass::ReadSidesList  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 int RulesClass::ReadSidesList()
 {
 {
@@ -110,7 +110,7 @@ int RulesClass::ReadSidesList()
 }
 }
 
-// ==== BACKFILL 0x00672660  RulesClass::LoadBuildingTypes  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00672660  RulesClass::LoadBuildingTypes  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int RulesClass::LoadBuildingTypes() {
 {
     int KeyCount;
@@ -131,7 +131,7 @@ namespace gamemd { int RulesClass::LoadBuildingTypes() {
 }
 } }
 
-// ==== BACKFILL 0x006726D0  CCINIClass::LoadTypeList  cls=CCINIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006726D0  CCINIClass::LoadTypeList  cls=CCINIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CCINIClass::LoadTypeList() {
 {
     int KeyCount;
@@ -152,7 +152,7 @@ namespace gamemd { int CCINIClass::LoadTypeList() {
 }
 } }
 
-// ==== BACKFILL 0x00672740  RulesClass::ReadSideData  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00672740  RulesClass::ReadSideData  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int RulesClass::ReadSideData() {
 {
     int KeyCount;
@@ -179,7 +179,7 @@ namespace gamemd { int RulesClass::ReadSideData() {
 }
 } }
 
-// ==== BACKFILL 0x006727D0  FactoryClass::LoadType  cls=FactoryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006727D0  FactoryClass::LoadType  cls=FactoryClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int FactoryClass::LoadType() {
 {
     int KeyCount;
@@ -200,7 +200,7 @@ namespace gamemd { int FactoryClass::LoadType() {
 }
 } }
 
-// ==== BACKFILL 0x006728B0  RulesClass::LoadAnimTypes  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006728B0  RulesClass::LoadAnimTypes  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int RulesClass::LoadAnimTypes() {
 {
     int KeyCount;
@@ -221,7 +221,7 @@ namespace gamemd { int RulesClass::LoadAnimTypes() {
 }
 } }
 
-// ==== BACKFILL 0x00672920  CCINIClass::LoadUnitTypes  cls=CCINIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00672920  CCINIClass::LoadUnitTypes  cls=CCINIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CCINIClass::LoadUnitTypes() {
 {
     int KeyCount;
@@ -242,7 +242,7 @@ namespace gamemd { int CCINIClass::LoadUnitTypes() {
 }
 } }
 
-// ==== BACKFILL 0x00672990  WarheadTypeClass::LoadType  cls=WarheadTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00672990  WarheadTypeClass::LoadType  cls=WarheadTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int WarheadTypeClass::LoadType()
 {
 {
@@ -264,7 +264,7 @@ int WarheadTypeClass::LoadType()
 }
 }
 
-// ==== BACKFILL 0x00672A00  RulesClass::readColors  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00672A00  RulesClass::readColors  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int RulesClass::readColors() {
 {
     int KeyCount;
@@ -285,7 +285,7 @@ namespace gamemd { int RulesClass::readColors() {
 }
 } }
 
-// ==== BACKFILL 0x00672A70  CCINIClass::ReadBuildingSettings  cls=CCINIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00672A70  CCINIClass::ReadBuildingSettings  cls=CCINIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CCINIClass::ReadBuildingSettings() {
 {
     int KeyCount;
@@ -306,7 +306,7 @@ namespace gamemd { int CCINIClass::ReadBuildingSettings() {
 }
 } }
 
-// ==== BACKFILL 0x00672AE0  RulesClass::ReadMultiplayerDefaults  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00672AE0  RulesClass::ReadMultiplayerDefaults  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
 {
       int result;
@@ -1190,7 +1190,7 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
 }
 } }
 
-// ==== BACKFILL 0x00674240  RulesClass::ReadIQSection  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00674240  RulesClass::ReadIQSection  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int RulesClass::ReadIQSection() {
 {
       int result;
@@ -1277,7 +1277,7 @@ namespace gamemd { int RulesClass::ReadIQSection() {
 }
 } }
 
-// ==== BACKFILL 0x00674500  RulesClass::sub_674500  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00674500  RulesClass::sub_674500  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int RulesClass::sub_674500()
 {
 {
@@ -1291,7 +1291,7 @@ int RulesClass::sub_674500()
 }
 }
 
-// ==== BACKFILL 0x00674650  SidebarClass::ReadButtonList  cls=SidebarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00674650  SidebarClass::ReadButtonList  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SidebarClass::ReadButtonList() {
 {
     char *v1;
@@ -1337,7 +1337,7 @@ namespace gamemd { int SidebarClass::ReadButtonList() {
 }
 } }
 
-// ==== BACKFILL 0x00674730  RulesClass::SaveLoad_Prefix  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00674730  RulesClass::SaveLoad_Prefix  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int RulesClass::SaveLoad_Prefix(void* a1) {
 {
       int *v2;
@@ -1634,7 +1634,7 @@ namespace gamemd { int RulesClass::SaveLoad_Prefix(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x00679D90  GameConfig::ComputeHash  cls=GameConfig  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00679D90  GameConfig::ComputeHash  cls=GameConfig  sig=csp  renamed_refs=0  residual=- ====
 int GameConfig::ComputeHash()
 {
 {
@@ -1689,7 +1689,7 @@ int GameConfig::ComputeHash()
 }
 }
 
-// ==== BACKFILL 0x00679F70  VectorClass::Dtor  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00679F70  VectorClass::Dtor  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 void VectorClass::Dtor()
 {
 {
@@ -1706,24 +1706,24 @@ void VectorClass::Dtor()
 }
 }
 
-// ==== BACKFILL 0x0067A030  TypeList::InfantryCleanup  cls=TypeList  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x0067A030  TypeList::InfantryCleanup  cls=TypeList  sig=csp  renamed_refs=0  residual=- ====
 void TypeList::InfantryCleanup()
 {
 {
     void *v2;
-    v2 = (void *)this->q004;
+    v2 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_InfantryTypeClass_const;
     if ( v2 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v2);
-    this->q004 = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    this->q008 = 0;
+    this->Capacity = 0;
 }
 }
 
-// ==== BACKFILL 0x0067A090  TypeList::CopyFull  cls=TypeList  sig=csp  renamed_refs=13 ====
+// ==== BACKFILL 0x0067A090  TypeList::CopyFull  cls=TypeList  sig=csp  renamed_refs=1  residual=- ====
 int * TypeList::CopyFull(VectorClass * aP1)
 {
 {
@@ -1734,42 +1734,42 @@ int * TypeList::CopyFull(VectorClass * aP1)
     if ( this != (int *)aP1 )
   {
     this->Clear();
-    v3 = aP1->q008;
-    this->q008 = v3;
+    v3 = aP1->Capacity;
+    this->Capacity = v3;
     if ( v3 )
     {
     v4 = __2_YAPAXI_Z(4 * v3);
-    this->q004 = v4;
+    this->Items = v4;
     if ( v4 )
       {
-    v5 = this->q008;
+    v5 = this->Capacity;
     v6 = 0;
     this->IsAllocated = 1;
     if ( v5 > 0 )
         {
     do
           {
-    *(int *)(this->q004 + 4 * v6) = *((int *)aP1->q004 + v6);
+    *(int *)(this->Items + 4 * v6) = *((int *)aP1->Items + v6);
     ++v6;
           }
-    while ( v6 < this->q008 );
+    while ( v6 < this->Capacity );
         }
       }
     }
     else
     {
-    this->q004 = 0;
+    this->Items = 0;
     this->IsAllocated = 0;
     }
   }
-    this->q010 = (int)aP1[1].vtable1;
-    this->q014 = (int)aP1[1].q004;
-    this->unknown_18 = aP1[1].q008;
+    this->Count = (int)aP1[1].vtable1;
+    this->CapacityIncrement = (int)aP1[1].Items;
+    this->unknown_18 = aP1[1].Capacity;
     return this;
 }
 }
 
-// ==== BACKFILL 0x0067A110  TypeList::CopyAircraft  cls=TypeList  sig=csp  renamed_refs=13 ====
+// ==== BACKFILL 0x0067A110  TypeList::CopyAircraft  cls=TypeList  sig=csp  renamed_refs=1  residual=- ====
 int * TypeList::CopyAircraft(VectorClass * aP1)
 {
 {
@@ -1780,42 +1780,42 @@ int * TypeList::CopyAircraft(VectorClass * aP1)
     if ( this != (int *)aP1 )
   {
     this->Clear();
-    v3 = aP1->q008;
-    this->q008 = v3;
+    v3 = aP1->Capacity;
+    this->Capacity = v3;
     if ( v3 )
     {
     v4 = __2_YAPAXI_Z(4 * v3);
-    this->q004 = v4;
+    this->Items = v4;
     if ( v4 )
       {
-    v5 = this->q008;
+    v5 = this->Capacity;
     v6 = 0;
     this->IsAllocated = 1;
     if ( v5 > 0 )
         {
     do
           {
-    *(int *)(this->q004 + 4 * v6) = *((int *)aP1->q004 + v6);
+    *(int *)(this->Items + 4 * v6) = *((int *)aP1->Items + v6);
     ++v6;
           }
-    while ( v6 < this->q008 );
+    while ( v6 < this->Capacity );
         }
       }
     }
     else
     {
-    this->q004 = 0;
+    this->Items = 0;
     this->IsAllocated = 0;
     }
   }
-    this->q010 = (int)aP1[1].vtable1;
-    this->q014 = (int)aP1[1].q004;
-    this->unknown_18 = aP1[1].q008;
+    this->Count = (int)aP1[1].vtable1;
+    this->CapacityIncrement = (int)aP1[1].Items;
+    this->unknown_18 = aP1[1].Capacity;
     return this;
 }
 }
 
-// ==== BACKFILL 0x0067A290  TypeList::CopyInfantry  cls=TypeList  sig=csp  renamed_refs=8 ====
+// ==== BACKFILL 0x0067A290  TypeList::CopyInfantry  cls=TypeList  sig=csp  renamed_refs=0  residual=- ====
 int * TypeList::CopyInfantry(CCINIClass * aP1)
 {
 {
@@ -1827,56 +1827,56 @@ int * TypeList::CopyInfantry(CCINIClass * aP1)
   {
     this->Clear();
     v3 = aP1->headNode[1];
-    this->q008 = v3;
+    this->Capacity = v3;
     if ( v3 )
     {
     v4 = __2_YAPAXI_Z(4 * v3);
-    this->q004 = v4;
+    this->Items = v4;
     if ( v4 )
       {
-    v5 = this->q008;
+    v5 = this->Capacity;
     v6 = 0;
     this->IsAllocated = 1;
     if ( v5 > 0 )
         {
     do
           {
-    *(int *)(this->q004 + 4 * v6) = *(int *)(aP1->headNode[0] + 4 * v6);
+    *(int *)(this->Items + 4 * v6) = *(int *)(aP1->headNode[0] + 4 * v6);
     ++v6;
           }
-    while ( v6 < this->q008 );
+    while ( v6 < this->Capacity );
         }
       }
     }
     else
     {
-    this->q004 = 0;
+    this->Items = 0;
     this->IsAllocated = 0;
     }
   }
-    this->q010 = aP1->sectionHead[0];
-    this->q014 = aP1->sectionHead[1];
+    this->Count = aP1->sectionHead[0];
+    this->CapacityIncrement = aP1->sectionHead[1];
     this->unknown_18 = aP1->sectionHead[2];
     return this;
 }
 }
 
-// ==== BACKFILL 0x0067A390  TypeList::VoxelAnimConstructor  cls=TypeList  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x0067A390  TypeList::VoxelAnimConstructor  cls=TypeList  sig=csp  renamed_refs=0  residual=- ====
 CCINIClass * TypeList::VoxelAnimConstructor()
 {
 {
-    this->q004 = 0;
-    this->q008 = 0;
-    this->q00C = 1;
+    this->Items = 0;
+    this->Capacity = 0;
+    this->IsInitialized = 1;
     this->IsAllocated = 0;
-    this->q014 = 10;
-    this->q010 = 0;
+    this->CapacityIncrement = 10;
+    this->Count = 0;
     *(void**)this = &vt_TypeList_VoxelAnimTypeClass_const;
     return (CCINIClass *)this;
 }
 }
 
-// ==== BACKFILL 0x0067A3C0  RulesClass::readTerrainTypes  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067A3C0  RulesClass::readTerrainTypes  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 int RulesClass::readTerrainTypes(TechnoTypeClass * aP1)
 {
 {
@@ -1897,22 +1897,22 @@ int RulesClass::readTerrainTypes(TechnoTypeClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0067A4F0  TypeList::Construct  cls=TypeList  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x0067A4F0  TypeList::Construct  cls=TypeList  sig=csp  renamed_refs=0  residual=- ====
 DynamicVector * TypeList::Construct()
 {
 {
-    this->q004 = 0;
-    this->q008 = 0;
-    this->q00C = 1;
+    this->Items = 0;
+    this->Capacity = 0;
+    this->IsInitialized = 1;
     this->IsAllocated = 0;
-    this->q014 = 10;
-    this->q010 = 0;
+    this->CapacityIncrement = 10;
+    this->Count = 0;
     *(void**)this = &vt_TypeList_int;
     return (DynamicVector *)this;
 }
 }
 
-// ==== BACKFILL 0x0067A520  DynamicVector::Read  cls=DynamicVector  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x0067A520  DynamicVector::Read  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
 int DynamicVector::Read(TechnoTypeClass * aP1)
 {
 {
@@ -1920,35 +1920,35 @@ int DynamicVector::Read(TechnoTypeClass * aP1)
     int result;
     int i;
     int v6;
-    v3 = *(int *)aP1->__pad_000;
+    v3 = *(int *)aP1->vtable1;
     v6 = this->DynamicVector_field_0x10;
     (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
     result = v6;
     for ( i = 0; i < v6; ++i )
   {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->__pad_000 + 16))( aP1, this->q004 + 4 * i, 4, 0);
+    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable1 + 16))( aP1, this->Items + 4 * i, 4, 0);
     result = v6;
   }
     return result;
 }
 }
 
-// ==== BACKFILL 0x0067A600  TypeList::ConstructSmudge  cls=TypeList  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x0067A600  TypeList::ConstructSmudge  cls=TypeList  sig=csp  renamed_refs=0  residual=- ====
 CCINIClass * TypeList::ConstructSmudge()
 {
 {
-    this->q004 = 0;
-    this->q008 = 0;
-    this->q00C = 1;
+    this->Items = 0;
+    this->Capacity = 0;
+    this->IsInitialized = 1;
     this->IsAllocated = 0;
-    this->q014 = 10;
-    this->q010 = 0;
+    this->CapacityIncrement = 10;
+    this->Count = 0;
     *(void**)this = &vt_TypeList_SmudgeTypeClass_const;
     return (CCINIClass *)this;
 }
 }
 
-// ==== BACKFILL 0x0067A630  VectorClass::LoadStream  cls=VectorClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0067A630  VectorClass::LoadStream  cls=VectorClass  sig=csp  renamed_refs=2  residual=- ====
 int VectorClass::LoadStream(TechnoTypeClass * aP1)
 {
 {
@@ -1969,7 +1969,7 @@ int VectorClass::LoadStream(TechnoTypeClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0067A6E0  DynamicVector::Read_Alt  cls=DynamicVector  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x0067A6E0  DynamicVector::Read_Alt  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
 int DynamicVector::Read_Alt(TechnoTypeClass * aP1)
 {
 {
@@ -1977,20 +1977,20 @@ int DynamicVector::Read_Alt(TechnoTypeClass * aP1)
     int result;
     int i;
     int v6;
-    v3 = *(int *)aP1->__pad_000;
+    v3 = *(int *)aP1->vtable1;
     v6 = this->DynamicVector_field_0x10;
     (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
     result = v6;
     for ( i = 0; i < v6; ++i )
   {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->__pad_000 + 16))( aP1, this->q004 + 4 * i, 4, 0);
+    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable1 + 16))( aP1, this->Items + 4 * i, 4, 0);
     result = v6;
   }
     return result;
 }
 }
 
-// ==== BACKFILL 0x0067A730  RulesClass::readSmudgeTypes  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067A730  RulesClass::readSmudgeTypes  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 int RulesClass::readSmudgeTypes()
 {
 {
@@ -1998,7 +1998,7 @@ int RulesClass::readSmudgeTypes()
 }
 }
 
-// ==== BACKFILL 0x0067A7C0  RulesClass::readOverlayTypes  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067A7C0  RulesClass::readOverlayTypes  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 int RulesClass::readOverlayTypes()
 {
 {
@@ -2006,7 +2006,7 @@ int RulesClass::readOverlayTypes()
 }
 }
 
-// ==== BACKFILL 0x0067A7D0  RulesClass::readAnimations  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067A7D0  RulesClass::readAnimations  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 int RulesClass::readAnimations(TechnoTypeClass * aP1)
 {
 {
@@ -2027,22 +2027,22 @@ int RulesClass::readAnimations(TechnoTypeClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0067A820  TypeList::InfantryConstructor  cls=TypeList  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x0067A820  TypeList::InfantryConstructor  cls=TypeList  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * TypeList::InfantryConstructor()
 {
 {
-    this->q004 = 0;
-    this->q008 = 0;
-    this->q00C = 1;
+    this->Items = 0;
+    this->Capacity = 0;
+    this->IsInitialized = 1;
     this->IsAllocated = 0;
-    this->q014 = 10;
-    this->q010 = 0;
+    this->CapacityIncrement = 10;
+    this->Count = 0;
     *(void**)this = &vt_TypeList_InfantryTypeClass_const;
     return this;
 }
 }
 
-// ==== BACKFILL 0x0067A850  VectorClass::SaveLoad  cls=VectorClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0067A850  VectorClass::SaveLoad  cls=VectorClass  sig=csp  renamed_refs=2  residual=- ====
 int VectorClass::SaveLoad(TechnoTypeClass * aP1)
 {
 {
@@ -2063,7 +2063,7 @@ int VectorClass::SaveLoad(TechnoTypeClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0067A8A0  RulesClass::readWarheads  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067A8A0  RulesClass::readWarheads  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 int RulesClass::readWarheads()
 {
 {
@@ -2071,7 +2071,7 @@ int RulesClass::readWarheads()
 }
 }
 
-// ==== BACKFILL 0x0067A8E0  RulesClass::readParticleSystems  cls=RulesClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067A8E0  RulesClass::readParticleSystems  cls=RulesClass  sig=csp  renamed_refs=0  residual=- ====
 int RulesClass::readParticleSystems(TechnoTypeClass * aP1)
 {
 {
@@ -2092,7 +2092,7 @@ int RulesClass::readParticleSystems(TechnoTypeClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0067AA80  VectorClass::CopyAssign  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067AA80  VectorClass::CopyAssign  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * VectorClass::CopyAssign(VectorClass * aP1)
 {
 if ( this == aP1 )
@@ -2124,35 +2124,35 @@ while ( i < this->Capacity );
 return (unsigned int *)this;
 }
 
-// ==== BACKFILL 0x0067AC70  DynamicVector::Constructor_VoxelAnim  cls=DynamicVector  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x0067AC70  DynamicVector::Constructor_VoxelAnim  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
 {
 {
-    this->q004 = 0;
+    this->Items = 0;
     this->DynamicVector_field_0x8 = a2;
-    this->__pad_00C = 1;
+    this->IsInitialized = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_VoxelAnimTypeClass_const;
     if ( a2 )
   {
     if ( a3 )
     {
-    this->q004 = a3;
+    this->Items = a3;
     }
     else
     {
-    this->q004 = __2_YAPAXI_Z(4 * a2);
+    this->Items = __2_YAPAXI_Z(4 * a2);
     this->IsAllocated = 1;
     }
   }
     *(void**)this = &vt_DynamicVectorClass_VoxelAnimTypeClass_const;
-    this->__pad_014 = 10;
+    this->CapacityIncrement = 10;
     this->DynamicVector_field_0x10 = 0;
     return this;
 }
 }
 
-// ==== BACKFILL 0x0067AD80  DynamicVector::Add2  cls=DynamicVector  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x0067AD80  DynamicVector::Add2  cls=DynamicVector  sig=csp  renamed_refs=1  residual=- ====
 char DynamicVector::Add2(VectorClass * aP1)
 {
 {
@@ -2165,19 +2165,19 @@ char DynamicVector::Add2(VectorClass * aP1)
   {
     if ( !this->IsAllocated && v3 )
     return 0;
-    v4 = this->__pad_014;
+    v4 = this->CapacityIncrement;
     if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
     return 0;
   }
     v6 = this->DynamicVector_field_0x10;
-    v7 = this->q004;
+    v7 = this->Items;
     this->DynamicVector_field_0x10 = v6 + 1;
-    *(int *)(v7 + 4 * v6) = *(int *)aP1->__pad_000;
+    *(int *)(v7 + 4 * v6) = *(int *)aP1->vtable1;
     return 1;
 }
 }
 
-// ==== BACKFILL 0x0067AE00  VectorClass::CopySmudge  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067AE00  VectorClass::CopySmudge  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * VectorClass::CopySmudge(CCINIClass * aP1)
 {
 VectorClass* source = (VectorClass *)aP1;
@@ -2210,7 +2210,7 @@ while ( i < this->Capacity );
 return (unsigned int *)this;
 }
 
-// ==== BACKFILL 0x0067AF60  VectorClass::ClearAndFree  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067AF60  VectorClass::ClearAndFree  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 void VectorClass::ClearAndFree()
 {
 if ( this->Items && this->IsAllocated )
@@ -2222,7 +2222,7 @@ this->IsAllocated = 0;
 this->Capacity = 0;
 }
 
-// ==== BACKFILL 0x0067B180  VectorClass::CopyBuilding  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067B180  VectorClass::CopyBuilding  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * VectorClass::CopyBuilding(VectorClass * aP1)
 {
 if ( this == aP1 )
@@ -2254,7 +2254,7 @@ while ( i < this->Capacity );
 return (unsigned int *)this;
 }
 
-// ==== BACKFILL 0x0067B500  SmallFunc_67B500  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067B500  SmallFunc_67B500  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, int a4)
 {
 {
@@ -2266,7 +2266,7 @@ int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, 
 }
 }
 
-// ==== BACKFILL 0x0067BAC0  GetINIClassInt  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067BAC0  GetINIClassInt  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int a4)
 {
 {
@@ -2278,7 +2278,7 @@ InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigne
 }
 }
 
-// ==== BACKFILL 0x0067BCE0  SmallFunc_67BCE0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067BCE0  SmallFunc_67BCE0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int a4)
 {
 {
@@ -2290,7 +2290,7 @@ BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsig
 }
 }
 
-// ==== BACKFILL 0x0067BD30  GetINIClassKeyword  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067BD30  GetINIClassKeyword  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 AircraftTypeClass * GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int a4)
 {
 {
@@ -2302,7 +2302,7 @@ AircraftTypeClass * GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, uns
 }
 }
 
-// ==== BACKFILL 0x0067BD80  SmallFunc_67BD80  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067BD80  SmallFunc_67BD80  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsigned char * a2, int a4)
 {
 {
@@ -2314,7 +2314,7 @@ TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsig
 }
 }
 
-// ==== BACKFILL 0x0067C1F0  TypeList::CopyVoxelAnim  cls=TypeList  sig=csp  renamed_refs=15 ====
+// ==== BACKFILL 0x0067C1F0  TypeList::CopyVoxelAnim  cls=TypeList  sig=csp  renamed_refs=1  residual=- ====
 unsigned int * TypeList::CopyVoxelAnim(VectorClass * aP1)
 {
 {
@@ -2322,50 +2322,50 @@ unsigned int * TypeList::CopyVoxelAnim(VectorClass * aP1)
     int v4;
     int v5;
     int v6;
-    this->q004 = 0;
-    this->q008 = 0;
-    this->q00C = 1;
+    this->Items = 0;
+    this->Capacity = 0;
+    this->IsInitialized = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_VoxelAnimTypeClass_const;
     if ( this != (int *)aP1 )
   {
     Vector::Cleanup2((int)this);
-    v3 = aP1->q008;
-    this->q008 = v3;
+    v3 = aP1->Capacity;
+    this->Capacity = v3;
     if ( v3 )
     {
     v4 = __2_YAPAXI_Z(4 * v3);
-    this->q004 = v4;
+    this->Items = v4;
     if ( v4 )
       {
-    v5 = this->q008;
+    v5 = this->Capacity;
     v6 = 0;
     this->IsAllocated = 1;
     if ( v5 > 0 )
         {
     do
           {
-    *(int *)(this->q004 + 4 * v6) = *((int *)aP1->q004 + v6);
+    *(int *)(this->Items + 4 * v6) = *((int *)aP1->Items + v6);
     ++v6;
           }
-    while ( v6 < this->q008 );
+    while ( v6 < this->Capacity );
         }
       }
     }
     else
     {
-    this->q004 = 0;
+    this->Items = 0;
     this->IsAllocated = 0;
     }
   }
-    this->q010 = aP1[1].vtable1;
-    this->q014 = aP1[1].q004;
+    this->Count = aP1[1].vtable1;
+    this->CapacityIncrement = aP1[1].Items;
     *(void**)this = &vt_TypeList_VoxelAnimTypeClass_const;
     return this;
 }
 }
 
-// ==== BACKFILL 0x0067C360  DynamicVector::RemoveAt  cls=DynamicVector  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0067C360  DynamicVector::RemoveAt  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 char DynamicVector::RemoveAt(int a2)
 {
 {
@@ -2383,7 +2383,7 @@ char DynamicVector::RemoveAt(int a2)
     do
     {
     ++v3;
-    *(int *)(this->q004 + 4 * v3 - 4) = *(int *)(this->q004 + 4 * v3);
+    *(int *)(this->Items + 4 * v3 - 4) = *(int *)(this->Items + 4 * v3);
     }
     while ( v3 < this->DynamicVector_field_0x10 );
   }
@@ -2391,7 +2391,7 @@ char DynamicVector::RemoveAt(int a2)
 }
 }
 
-// ==== BACKFILL 0x0067C3F0  DynamicVector::RemoveAt2  cls=DynamicVector  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0067C3F0  DynamicVector::RemoveAt2  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 char DynamicVector::RemoveAt2(int a2)
 {
 {
@@ -2409,7 +2409,7 @@ char DynamicVector::RemoveAt2(int a2)
     do
     {
     ++v3;
-    *(int *)(this->q004 + 4 * v3 - 4) = *(int *)(this->q004 + 4 * v3);
+    *(int *)(this->Items + 4 * v3 - 4) = *(int *)(this->Items + 4 * v3);
     }
     while ( v3 < this->DynamicVector_field_0x10 );
   }
@@ -2417,7 +2417,7 @@ char DynamicVector::RemoveAt2(int a2)
 }
 }
 
-// ==== BACKFILL 0x0067C690  Stream::ReadOLEObjects  cls=Stream  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067C690  Stream::ReadOLEObjects  cls=Stream  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int Stream::ReadOLEObjects() {
 {
     HRESULT result;
@@ -2448,7 +2448,7 @@ namespace gamemd { int Stream::ReadOLEObjects() {
 }
 } }
 
-// ==== BACKFILL 0x0067FDD0  ComPtr::ReleaseSimple  cls=ComPtr  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067FDD0  ComPtr::ReleaseSimple  cls=ComPtr  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ComPtr::ReleaseSimple() {
 {
     int result;
@@ -2459,7 +2459,7 @@ namespace gamemd { int ComPtr::ReleaseSimple() {
 }
 } }
 
-// ==== BACKFILL 0x0067FDE0  Game::readIniSettings  cls=Game  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067FDE0  Game::readIniSettings  cls=Game  sig=csp  renamed_refs=0  residual=- ====
 int Game::readIniSettings()
 {
 {
@@ -2471,7 +2471,7 @@ int Game::readIniSettings()
 }
 }
 
-// ==== BACKFILL 0x0067FDF0  SaveGame_Start  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067FDF0  SaveGame_Start  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start(LPSTREAM pStm, int a2)
 {
 {
@@ -2515,7 +2515,7 @@ HRESULT SaveGame_Start(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x0067FE70  SaveGame_Start_67FE70  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067FE70  SaveGame_Start_67FE70  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_67FE70(LPSTREAM pStm, int a2)
 {
 {
@@ -2559,7 +2559,7 @@ HRESULT SaveGame_Start_67FE70(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x0067FEF0  SaveGame_Start_67FEF0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067FEF0  SaveGame_Start_67FEF0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_67FEF0(LPSTREAM pStm, int a2)
 {
 {
@@ -2603,7 +2603,7 @@ HRESULT SaveGame_Start_67FEF0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x0067FF70  SaveGame_Start_67FF70  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067FF70  SaveGame_Start_67FF70  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_67FF70(LPSTREAM pStm, int a2)
 {
 {
@@ -2647,7 +2647,7 @@ HRESULT SaveGame_Start_67FF70(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x0067FFF0  SaveGame_Start_67FFF0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0067FFF0  SaveGame_Start_67FFF0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_67FFF0(LPSTREAM pStm, int a2)
 {
 {

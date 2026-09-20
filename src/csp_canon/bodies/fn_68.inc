@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00680070  SaveGame_Start_680070  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680070  SaveGame_Start_680070  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680070(LPSTREAM pStm, int a2)
 {
 {
@@ -46,7 +46,7 @@ HRESULT SaveGame_Start_680070(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x006800F0  SaveGame_Start_6800F0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006800F0  SaveGame_Start_6800F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_6800F0(LPSTREAM pStm, int a2)
 {
 {
@@ -90,7 +90,7 @@ HRESULT SaveGame_Start_6800F0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680170  SaveGame_Start_680170  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680170  SaveGame_Start_680170  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680170(LPSTREAM pStm, int a2)
 {
 {
@@ -134,7 +134,7 @@ HRESULT SaveGame_Start_680170(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x006801F0  SaveGame_Start_6801F0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006801F0  SaveGame_Start_6801F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_6801F0(LPSTREAM pStm, int a2)
 {
 {
@@ -178,7 +178,7 @@ HRESULT SaveGame_Start_6801F0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680270  SaveGame_Start_680270  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680270  SaveGame_Start_680270  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680270(LPSTREAM pStm, int a2)
 {
 {
@@ -222,7 +222,7 @@ HRESULT SaveGame_Start_680270(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x006802F0  SaveGame_Start_6802F0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006802F0  SaveGame_Start_6802F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_6802F0(LPSTREAM pStm, int a2)
 {
 {
@@ -266,7 +266,7 @@ HRESULT SaveGame_Start_6802F0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680370  SaveGame_Start_680370  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680370  SaveGame_Start_680370  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680370(LPSTREAM pStm, int a2)
 {
 {
@@ -310,7 +310,7 @@ HRESULT SaveGame_Start_680370(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x006803F0  SaveGame_Start_6803F0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006803F0  SaveGame_Start_6803F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_6803F0(LPSTREAM pStm, int a2)
 {
 {
@@ -354,7 +354,7 @@ HRESULT SaveGame_Start_6803F0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680470  SaveGame_Start_680470  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680470  SaveGame_Start_680470  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680470(LPSTREAM pStm, int a2)
 {
 {
@@ -398,7 +398,7 @@ HRESULT SaveGame_Start_680470(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x006804F0  SaveGame_Start_6804F0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006804F0  SaveGame_Start_6804F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_6804F0(LPSTREAM pStm, int a2)
 {
 {
@@ -442,7 +442,7 @@ HRESULT SaveGame_Start_6804F0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680570  SaveGame_Start_680570  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680570  SaveGame_Start_680570  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680570(LPSTREAM pStm, int a2)
 {
 {
@@ -486,7 +486,7 @@ HRESULT SaveGame_Start_680570(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x006805F0  SaveGame_Start_6805F0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006805F0  SaveGame_Start_6805F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_6805F0(LPSTREAM pStm, int a2)
 {
 {
@@ -530,7 +530,7 @@ HRESULT SaveGame_Start_6805F0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680670  SaveGame_Start_680670  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680670  SaveGame_Start_680670  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680670(LPSTREAM pStm, int a2)
 {
 {
@@ -574,7 +574,7 @@ HRESULT SaveGame_Start_680670(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x006806F0  SaveGame_Start_6806F0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006806F0  SaveGame_Start_6806F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_6806F0(LPSTREAM pStm, int a2)
 {
 {
@@ -618,7 +618,7 @@ HRESULT SaveGame_Start_6806F0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680770  SaveGame_Start_680770  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680770  SaveGame_Start_680770  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680770(LPSTREAM pStm, int a2)
 {
 {
@@ -662,7 +662,7 @@ HRESULT SaveGame_Start_680770(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x006807F0  SaveGame_Start_6807F0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006807F0  SaveGame_Start_6807F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_6807F0(LPSTREAM pStm, int a2)
 {
 {
@@ -706,7 +706,7 @@ HRESULT SaveGame_Start_6807F0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680870  SaveGame_Start_680870  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680870  SaveGame_Start_680870  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680870(LPSTREAM pStm, int a2)
 {
 {
@@ -750,7 +750,7 @@ HRESULT SaveGame_Start_680870(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x006808F0  SaveGame_Start_6808F0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006808F0  SaveGame_Start_6808F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_6808F0(LPSTREAM pStm, int a2)
 {
 {
@@ -794,7 +794,7 @@ HRESULT SaveGame_Start_6808F0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680970  SaveGame_Start_680970  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680970  SaveGame_Start_680970  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680970(LPSTREAM pStm, int a2)
 {
 {
@@ -838,7 +838,7 @@ HRESULT SaveGame_Start_680970(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x006809F0  SaveGame_Start_6809F0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006809F0  SaveGame_Start_6809F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_6809F0(LPSTREAM pStm, int a2)
 {
 {
@@ -882,7 +882,7 @@ HRESULT SaveGame_Start_6809F0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680A70  SaveGame_Start_680A70  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680A70  SaveGame_Start_680A70  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680A70(LPSTREAM pStm, int a2)
 {
 {
@@ -926,7 +926,7 @@ HRESULT SaveGame_Start_680A70(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680AF0  SaveGame_Start_680AF0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680AF0  SaveGame_Start_680AF0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680AF0(LPSTREAM pStm, int a2)
 {
 {
@@ -970,7 +970,7 @@ HRESULT SaveGame_Start_680AF0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680B70  SaveGame_Start_680B70  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680B70  SaveGame_Start_680B70  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680B70(LPSTREAM pStm, int a2)
 {
 {
@@ -1014,7 +1014,7 @@ HRESULT SaveGame_Start_680B70(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680BF0  SaveGame_Start_680BF0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680BF0  SaveGame_Start_680BF0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680BF0(LPSTREAM pStm, int a2)
 {
 {
@@ -1058,7 +1058,7 @@ HRESULT SaveGame_Start_680BF0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680C70  SaveGame_Start_680C70  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680C70  SaveGame_Start_680C70  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680C70(LPSTREAM pStm, int a2)
 {
 {
@@ -1102,7 +1102,7 @@ HRESULT SaveGame_Start_680C70(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680CF0  SaveGame_Start_680CF0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680CF0  SaveGame_Start_680CF0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680CF0(LPSTREAM pStm, int a2)
 {
 {
@@ -1146,7 +1146,7 @@ HRESULT SaveGame_Start_680CF0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680D70  SaveGame_Start_680D70  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680D70  SaveGame_Start_680D70  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680D70(LPSTREAM pStm, int a2)
 {
 {
@@ -1190,7 +1190,7 @@ HRESULT SaveGame_Start_680D70(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680DF0  SaveGame_Start_680DF0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680DF0  SaveGame_Start_680DF0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680DF0(LPSTREAM pStm, int a2)
 {
 {
@@ -1234,7 +1234,7 @@ HRESULT SaveGame_Start_680DF0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680E70  SaveGame_Start_680E70  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680E70  SaveGame_Start_680E70  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680E70(LPSTREAM pStm, int a2)
 {
 {
@@ -1278,7 +1278,7 @@ HRESULT SaveGame_Start_680E70(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00680EF0  SaveGame_Start_680EF0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00680EF0  SaveGame_Start_680EF0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HRESULT SaveGame_Start_680EF0(LPSTREAM pStm, int a2)
 {
 {
@@ -1322,7 +1322,7 @@ HRESULT SaveGame_Start_680EF0(LPSTREAM pStm, int a2)
 }
 }
 
-// ==== BACKFILL 0x00681070  sub_681070  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00681070  sub_681070  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_681070::sub_681070()
 {
 {
@@ -1330,7 +1330,7 @@ int E4Recv_681070::sub_681070()
 }
 }
 
-// ==== BACKFILL 0x00681090  ReadPointerFromECX3  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00681090  ReadPointerFromECX3  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_681090::ReadPointerFromECX3()
 {
 {
@@ -1338,7 +1338,7 @@ int E4Recv_681090::ReadPointerFromECX3()
 }
 }
 
-// ==== BACKFILL 0x006810C0  ?raw_name_type_info__QBEPBDXZ  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006810C0  ?raw_name_type_info__QBEPBDXZ  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 const char * E4Recv_6810C0::_raw_name_type_info__QBEPBDXZ()
 {
 {
@@ -1346,7 +1346,7 @@ const char * E4Recv_6810C0::_raw_name_type_info__QBEPBDXZ()
 }
 }
 
-// ==== BACKFILL 0x00681100  LoadOptions::GetData  cls=LoadOptions  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00681100  LoadOptions::GetData  cls=LoadOptions  sig=csp  renamed_refs=0  residual=- ====
 char * LoadOptions::GetData()
 {
 {
@@ -1354,7 +1354,17 @@ char * LoadOptions::GetData()
 }
 }
 
-// ==== BACKFILL 0x00681180  sub_681180  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00681120  LoadOptions::GetFlag98  cls=LoadOptions  sig=csp  renamed_refs=0  residual=- ====
+uint32_t LoadOptions::GetFlag98() const {
+return this->q188;
+}
+
+// ==== BACKFILL 0x00681140  LoadOptions::GetFlag99  cls=LoadOptions  sig=csp  renamed_refs=0  residual=- ====
+uint32_t LoadOptions::GetFlag99() const {
+return this->q18C;
+}
+
+// ==== BACKFILL 0x00681180  sub_681180  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char * E4Recv_681180::sub_681180()
 {
 {
@@ -1362,7 +1372,7 @@ char * E4Recv_681180::sub_681180()
 }
 }
 
-// ==== BACKFILL 0x006811B0  sub_6811B0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006811B0  sub_6811B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char * E4Recv_6811B0::sub_6811B0()
 {
 {
@@ -1370,7 +1380,7 @@ char * E4Recv_6811B0::sub_6811B0()
 }
 }
 
-// ==== BACKFILL 0x006811F0  sub_6811F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006811F0  sub_6811F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char * E4Recv_6811F0::sub_6811F0()
 {
 {
@@ -1378,7 +1388,7 @@ char * E4Recv_6811F0::sub_6811F0()
 }
 }
 
-// ==== BACKFILL 0x00681220  sub_681220  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00681220  sub_681220  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_681220::sub_681220(unsigned int * a2)
 {
 {
@@ -1388,7 +1398,7 @@ unsigned int * E4Recv_681220::sub_681220(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x00681260  sub_681260  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00681260  sub_681260  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_681260::sub_681260(unsigned int * a2)
 {
 {
@@ -1398,7 +1408,7 @@ unsigned int * E4Recv_681260::sub_681260(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x006812A0  sub_6812A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006812A0  sub_6812A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_6812A0::sub_6812A0(unsigned int * a2)
 {
 {
@@ -1408,7 +1418,12 @@ unsigned int * E4Recv_6812A0::sub_6812A0(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x006822F0  Map_Read_6822F0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006812D0  LoadOptions::GetFlag252  cls=LoadOptions  sig=csp  renamed_refs=0  residual=- ====
+uint32_t LoadOptions::GetFlag252() const {
+return this->q3F0;
+}
+
+// ==== BACKFILL 0x006822F0  Map_Read_6822F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_6822F0(int a1, int a2, LPSTR lpMultiByteStr)
 {
 {
@@ -1450,7 +1465,7 @@ int sub_6822F0(int a1, int a2, LPSTR lpMultiByteStr)
 }
 }
 
-// ==== BACKFILL 0x006823D0  Map_Read_6823D0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006823D0  Map_Read_6823D0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_6823D0(int a1, int a2, wchar_t * Destination)
 {
 {
@@ -1492,7 +1507,7 @@ int sub_6823D0(int a1, int a2, wchar_t * Destination)
 }
 }
 
-// ==== BACKFILL 0x00682570  PropertyReadScenarioCOM  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00682570  PropertyReadScenarioCOM  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int COM_Property_ReadScenario(int a1, int a2, unsigned int * a3)
 {
 {
@@ -1534,7 +1549,7 @@ int COM_Property_ReadScenario(int a1, int a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x00682D30  ReadBufferCOM  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00682D30  ReadBufferCOM  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int COM_ReadBuffer(int a1, int a2, unsigned int * a3)
 {
 {
@@ -1583,7 +1598,7 @@ int COM_ReadBuffer(int a1, int a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x00683000  ScenarioClass::LookupMethod  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00683000  ScenarioClass::LookupMethod  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* ScenarioClass::LookupMethod() {
 {
     int v1;
@@ -1601,7 +1616,7 @@ namespace gamemd { void* ScenarioClass::LookupMethod() {
 }
 } }
 
-// ==== BACKFILL 0x00683030  COMObject::ValidatePtr  cls=COMObject  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00683030  COMObject::ValidatePtr  cls=COMObject  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int COMObject::ValidatePtr() {
 {
     if ( !*(int *)this )
@@ -1610,12 +1625,12 @@ namespace gamemd { int COMObject::ValidatePtr() {
 }
 } }
 
-// ==== BACKFILL 0x00683560  ScenarioClass::ReadINIEntry  cls=ScenarioClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00683560  ScenarioClass::ReadINIEntry  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::ReadINIEntry(int a1) {
 {
       SeedInitRNG((_DWORD *)(this + 536), 0);
       this->q620 = Timer::GetTicks();
-      this->__pad_628 = 0;
+      this->q628 = 0;
       TechnoTypeVector::Construct((_DWORD *)(this + 13524), 0, 0);
       *(_DWORD *)(this + 13524) = &vt_TypeList_TechnoTypeClass;
       DynamicVectorClass::Construct((_DWORD *)(this + 13552), 0, 0);
@@ -1630,7 +1645,7 @@ namespace gamemd { int ScenarioClass::ReadINIEntry(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00683610  ScenarioClass::InitTimer  cls=ScenarioClass  sig=csp  renamed_refs=17 ====
+// ==== BACKFILL 0x00683610  ScenarioClass::InitTimer  cls=ScenarioClass  sig=csp  renamed_refs=13  residual=- ====
 namespace gamemd { void* ScenarioClass::InitTimer() {
 {
       int Ticks;
@@ -1682,16 +1697,16 @@ namespace gamemd { void* ScenarioClass::InitTimer() {
       v10 = (_DWORD *)(this + 1568);
       this->q620 = v8;
       this->q624 = v9;
-      this->__pad_628 = 0;
+      this->q628 = 0;
       if ( this->q620 != -1 )
       {
-        v23 = this->__pad_628;
+        v23 = this->q628;
         v11 = Timer::GetTicks(this + 1572) - *v10;
         if ( v11 >= v23 )
           v12 = 0;
         else
           v12 = v23 - v11;
-        this->__pad_628 = v12;
+        this->q628 = v12;
         *v10 = -1;
       }
       this->ScenarioClass_field_62C = 0;
@@ -1810,7 +1825,7 @@ namespace gamemd { void* ScenarioClass::InitTimer() {
       this->q358C = 0;
       this->q3590 = 0;
       this->q359C = 10000;
-      this->__pad_35A0 = 0;
+      this->q35A0 = 0;
       this->ScenarioClass_field_35A2 = 0;
       this->parTimeEasy = 3600;
       this->parTimeMedium = 3600;
@@ -1843,7 +1858,7 @@ namespace gamemd { void* ScenarioClass::InitTimer() {
 }
 } }
 
-// ==== BACKFILL 0x00686700  ScenarioClass::SetFileName  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00686700  ScenarioClass::SetFileName  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* ScenarioClass::SetFileName(void* a1) {
 {
       ObjectClass *result;
@@ -1858,7 +1873,7 @@ namespace gamemd { void* ScenarioClass::SetFileName(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x00689310  ScenarioClass::SaveLoad_Prefix  cls=ScenarioClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x00689310  ScenarioClass::SaveLoad_Prefix  cls=ScenarioClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int ScenarioClass::SaveLoad_Prefix(int * a2) {
 {
       DWORD *v3;
@@ -1913,7 +1928,7 @@ namespace gamemd { int ScenarioClass::SaveLoad_Prefix(int * a2) {
 }
 } }
 
-// ==== BACKFILL 0x006896C0  ScenarioClass::SetCountryFlag  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006896C0  ScenarioClass::SetCountryFlag  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::SetCountryFlag(const char * a2, char a3) {
 {
     unsigned int v3;
@@ -1940,7 +1955,7 @@ namespace gamemd { int ScenarioClass::SetCountryFlag(const char * a2, char a3) {
 }
 } }
 
-// ==== BACKFILL 0x00689760  ScenarioClass::GetGlobalStateByID  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00689760  ScenarioClass::GetGlobalStateByID  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::GetGlobalStateByID(int a1, void* a2) {
 {
     if ( a2 > 0x31 )
@@ -1950,7 +1965,7 @@ namespace gamemd { int ScenarioClass::GetGlobalStateByID(int a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x00689790  sub_689790  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00689790  sub_689790  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_689790::sub_689790(const char * a2, unsigned char * a3)
 {
 {
@@ -1969,7 +1984,7 @@ char E4Recv_689790::sub_689790(const char * a2, unsigned char * a3)
 }
 }
 
-// ==== BACKFILL 0x00689820  sub_689820  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00689820  sub_689820  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_689820::sub_689820(const char * a2)
 {
 {
@@ -1985,7 +2000,7 @@ int E4Recv_689820::sub_689820(const char * a2)
 }
 }
 
-// ==== BACKFILL 0x00689880  ScenarioClass::ReadGlobalVariables  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00689880  ScenarioClass::ReadGlobalVariables  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::ReadGlobalVariables(ScenarioClass * aP1) {
 {
     int KeyCount;
@@ -2011,7 +2026,7 @@ namespace gamemd { int ScenarioClass::ReadGlobalVariables(ScenarioClass * aP1) {
 }
 } }
 
-// ==== BACKFILL 0x00689960  sub_689960  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00689960  sub_689960  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_689960::sub_689960(const char * a2, char a3)
 {
 {
@@ -2039,7 +2054,7 @@ char E4Recv_689960::sub_689960(const char * a2, char a3)
 }
 }
 
-// ==== BACKFILL 0x00689A00  ScenarioClass::GetLocalStateByID  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00689A00  ScenarioClass::GetLocalStateByID  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::GetLocalStateByID(int a1, void* a2) {
 {
     if ( (unsigned int)a1 >= 0x64 )
@@ -2049,7 +2064,7 @@ namespace gamemd { int ScenarioClass::GetLocalStateByID(int a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x00689A30  sub_689A30  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00689A30  sub_689A30  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_689A30::sub_689A30(const char * a2, unsigned char * a3)
 {
 {
@@ -2068,7 +2083,7 @@ char E4Recv_689A30::sub_689A30(const char * a2, unsigned char * a3)
 }
 }
 
-// ==== BACKFILL 0x00689AC0  sub_689AC0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00689AC0  sub_689AC0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_689AC0::sub_689AC0(const char * a2)
 {
 {
@@ -2084,7 +2099,7 @@ int E4Recv_689AC0::sub_689AC0(const char * a2)
 }
 }
 
-// ==== BACKFILL 0x00689B20  ScenarioClass::ReadLocalVariables  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00689B20  ScenarioClass::ReadLocalVariables  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::ReadLocalVariables(CCINIClass * aP1) {
 {
       ScenarioClass *v2;
@@ -2143,7 +2158,7 @@ namespace gamemd { int ScenarioClass::ReadLocalVariables(CCINIClass * aP1) {
 }
 } }
 
-// ==== BACKFILL 0x0068B8A0  sub_68B8A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068B8A0  sub_68B8A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 long long E4Recv_68B8A0::sub_68B8A0()
 {
 {
@@ -2170,7 +2185,7 @@ long long E4Recv_68B8A0::sub_68B8A0()
 }
 }
 
-// ==== BACKFILL 0x0068BCB0  AbstractClass::updateAITimer  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068BCB0  AbstractClass::updateAITimer  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::updateAITimer() {
 {
       int result;
@@ -2181,17 +2196,17 @@ namespace ra2 { namespace game { int AbstractClass::updateAITimer() {
 }
 } } }
 
-// ==== BACKFILL 0x0068BCC0  ScenarioClass::Get_Waypoint_Location  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068BCC0  ScenarioClass::Get_Waypoint_Location  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* ScenarioClass::Get_Waypoint_Location(void* a1, int a2) { return nullptr; } }
 
-// ==== BACKFILL 0x0068BCE0  ScenarioClass::GetCellFromArray  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068BCE0  ScenarioClass::GetCellFromArray  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* ScenarioClass::GetCellFromArray(int a1) {
 {
     return CellCoord::To_CellObj(&DataGlobal_87F7E8, this + 2 * (int)a1 + 793);
 }
 } }
 
-// ==== BACKFILL 0x0068BD00  Cell::GetWorldCoords  cls=Cell  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068BD00  Cell::GetWorldCoords  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * Cell::GetWorldCoords(unsigned int * a2, int a3)
 {
 {
@@ -2215,7 +2230,7 @@ unsigned int * Cell::GetWorldCoords(unsigned int * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x0068BD60  ScenarioClass::ClearAllWaypoints  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068BD60  ScenarioClass::ClearAllWaypoints  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* ScenarioClass::ClearAllWaypoints() {
 {
     int *result;
@@ -2232,14 +2247,14 @@ namespace gamemd { void* ScenarioClass::ClearAllWaypoints() {
 }
 } }
 
-// ==== BACKFILL 0x0068BD80  ScenarioClass::Is_Waypoint_Valid  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068BD80  ScenarioClass::Is_Waypoint_Valid  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { bool ScenarioClass::Is_Waypoint_Valid(unsigned int a2) {
 {
     return a2 <= 0x2BD && *(int *)(this + 4 * a2 + 1586) != DataGlobal_B05458;
 }
 } }
 
-// ==== BACKFILL 0x0068BDC0  ScenarioClass::ReadWaypoints  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068BDC0  ScenarioClass::ReadWaypoints  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::ReadWaypoints(int a1) {
 {
     int v3;
@@ -2286,7 +2301,7 @@ namespace gamemd { int ScenarioClass::ReadWaypoints(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0068BE90  ScenarioClass::Write_Waypoints  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068BE90  ScenarioClass::Write_Waypoints  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::Write_Waypoints(void* a1) {
 {
     char result;
@@ -2311,7 +2326,7 @@ namespace gamemd { int ScenarioClass::Write_Waypoints(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x0068BF30  ScenarioClass::Set_Default_Waypoint  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068BF30  ScenarioClass::Set_Default_Waypoint  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::Set_Default_Waypoint(int a2) {
 {
     *(int *)(this + 4 * a2 + 1586) = DataGlobal_B05458;
@@ -2319,7 +2334,7 @@ namespace gamemd { int ScenarioClass::Set_Default_Waypoint(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x0068BF50  ScenarioClass::Set_Waypoint  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068BF50  ScenarioClass::Set_Waypoint  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::Set_Waypoint(int a1, int a2) {
     this->waypoints[a1].X = (short)(unsigned short)a2;
     this->waypoints[a1].Y = (short)((unsigned int)a2 >> 16);
@@ -2333,7 +2348,7 @@ retn    8
 */
 } }
 
-// ==== BACKFILL 0x0068C710  FontClass::InitMetrics  cls=FontClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068C710  FontClass::InitMetrics  cls=FontClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* FontClass::InitMetrics(void* a1, int a2, int a3, int a4, int a5, int a6) {
 {
       int v8;
@@ -2396,7 +2411,7 @@ namespace gamemd { void* FontClass::InitMetrics(void* a1, int a2, int a3, int a4
 }
 } }
 
-// ==== BACKFILL 0x0068CA50  FindBuildingAnimByName  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068CA50  FindBuildingAnimByName  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FindBuildingAnimByName(AbstractClass * aP0, int a2)
 {
 {
@@ -2423,7 +2438,7 @@ int FindBuildingAnimByName(AbstractClass * aP0, int a2)
 }
 }
 
-// ==== BACKFILL 0x0068CAB0  Network_Assign  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068CAB0  Network_Assign  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Network_Assign(void * a1, int a2)
 {
 {
@@ -2447,7 +2462,7 @@ int Network_Assign(void * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x0068ED80  Render_Get  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068ED80  Render_Get  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Render_Get(ScoreScreen * aP0)
 {
 {
@@ -2506,7 +2521,7 @@ int Render_Get(ScoreScreen * aP0)
 }
 }
 
-// ==== BACKFILL 0x0068F8A0  sub_68F8A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068F8A0  sub_68F8A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_68F8A0::sub_68F8A0()
 {
 {
@@ -2570,7 +2585,7 @@ int E4Recv_68F8A0::sub_68F8A0()
 }
 }
 
-// ==== BACKFILL 0x0068FB10  sub_68FB10  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0068FB10  sub_68FB10  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_68FB10::sub_68FB10(unsigned int * a2, int a3, size_t BufferCount, wchar_t * Format, wchar_t * a6, int a7, int a8)
 {
 {

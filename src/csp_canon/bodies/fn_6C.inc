@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x006C0025  nullsub_114  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C0025  nullsub_114  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_114(int a1, int a2)
 {
   ;
@@ -1224,7 +1224,7 @@ int E4Recv_6C6050::CreateTClassFactory_AlphaShapeClass()
 }
 }
 
-// ==== BACKFILL 0x006C6400  DynamicVector::Add  cls=DynamicVector  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x006C6400  DynamicVector::Add  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 char DynamicVector::Add(DynamicVector * aP1)
 {
 {
@@ -1237,19 +1237,19 @@ char DynamicVector::Add(DynamicVector * aP1)
   {
     if ( !this->IsAllocated && v3 )
     return 0;
-    v4 = this->__pad_014;
+    v4 = this->CapacityIncrement;
     if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
     return 0;
   }
     v6 = this->DynamicVector_field_0x10;
-    v7 = this->q004;
+    v7 = this->Items;
     this->DynamicVector_field_0x10 = v6 + 1;
     *(int *)(v7 + 4 * v6) = *(int *)aP1->__pad_0;
     return 1;
 }
 }
 
-// ==== BACKFILL 0x006C6540  sub_6C6540  cls=StaticButtonClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C6540  sub_6C6540  cls=StaticButtonClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int aP1, ControlClass * aP5, int aP3, int aP4)
 {
 {
@@ -1272,7 +1272,7 @@ unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int a
 }
 }
 
-// ==== BACKFILL 0x006C6880  StaticButtonClass::QueryInterface  cls=StaticButtonClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C6880  StaticButtonClass::QueryInterface  cls=StaticButtonClass  sig=csp  renamed_refs=0  residual=- ====
 StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
 {
 {
@@ -1289,7 +1289,7 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x006C8840  sub_6C8840  cls=rc_ptr  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C8840  sub_6C8840  cls=rc_ptr  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * E4Recv_6C8840::sub_6C8840(char a2)
 {
 {
@@ -1301,7 +1301,7 @@ rc_ptr * E4Recv_6C8840::sub_6C8840(char a2)
 }
 }
 
-// ==== BACKFILL 0x006C8900  sub_6C8900  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C8900  sub_6C8900  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_6C8900::sub_6C8900()
 {
 {
@@ -1329,7 +1329,7 @@ char E4Recv_6C8900::sub_6C8900()
 }
 }
 
-// ==== BACKFILL 0x006C89B0  sub_6C89B0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C89B0  sub_6C89B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_6C89B0::sub_6C89B0(size_t Size)
 {
 {
@@ -1342,7 +1342,7 @@ unsigned int * E4Recv_6C89B0::sub_6C89B0(size_t Size)
 }
 }
 
-// ==== BACKFILL 0x006C89E0  Buffer::AppendCellData  cls=Buffer  sig=csp  renamed_refs=8 ====
+// ==== BACKFILL 0x006C89E0  Buffer::AppendCellData  cls=Buffer  sig=csp  renamed_refs=8  residual=- ====
 int Buffer::AppendCellData(AbstractClass * aP1, int a3)
 {
 {
@@ -1401,7 +1401,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
 }
 }
 
-// ==== BACKFILL 0x006C8B10  sub_6C8B10  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C8B10  sub_6C8B10  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
 {
 {
@@ -1456,7 +1456,7 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
 }
 }
 
-// ==== BACKFILL 0x006C8C40  Timer::GetTicks  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C8C40  Timer::GetTicks  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 DWORD Timer::GetTicks()
 {
 {
@@ -1464,7 +1464,7 @@ DWORD Timer::GetTicks()
 }
 }
 
-// ==== BACKFILL 0x006C8E70  ??0Iostream_init_QAE_XZ_5  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C8E70  ??0Iostream_init_QAE_XZ_5  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 Iostream_init * E4Recv_6C8E70::__0Iostream_init_QAE_XZ_5()
 {
 {
@@ -1472,7 +1472,7 @@ Iostream_init * E4Recv_6C8E70::__0Iostream_init_QAE_XZ_5()
 }
 }
 
-// ==== BACKFILL 0x006C9600  AbstractClass::GetTotalValue  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C9600  AbstractClass::GetTotalValue  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::GetTotalValue() {
 {
     int v1;
@@ -1500,7 +1500,7 @@ namespace ra2 { namespace game { int AbstractClass::GetTotalValue() {
 }
 } } }
 
-// ==== BACKFILL 0x006C9690  Float::Accumulate  cls=Float  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C9690  Float::Accumulate  cls=Float  sig=csp  renamed_refs=0  residual=- ====
 float Float::Accumulate(float value, int index)
 {
 {
@@ -1511,7 +1511,7 @@ float Float::Accumulate(float value, int index)
 }
 }
 
-// ==== BACKFILL 0x006C96B0  Float::SubtractClamped  cls=Float  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C96B0  Float::SubtractClamped  cls=Float  sig=csp  renamed_refs=0  residual=- ====
 double Float::SubtractClamped(BuildingTypeClass * aP1, IUnknown * aP2)
 {
 {
@@ -1532,7 +1532,7 @@ double Float::SubtractClamped(BuildingTypeClass * aP1, IUnknown * aP2)
 }
 }
 
-// ==== BACKFILL 0x006C96E0  sub_6C96E0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C96E0  sub_6C96E0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_6C96E0::sub_6C96E0(unsigned int * a2, int a3)
 {
 {
@@ -1569,7 +1569,7 @@ unsigned int * E4Recv_6C96E0::sub_6C96E0(unsigned int * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x006C9780  sub_6C9780  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C9780  sub_6C9780  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_6C9780::sub_6C9780(unsigned int * a2, float * a3)
 {
 {
@@ -1604,7 +1604,7 @@ unsigned int * E4Recv_6C9780::sub_6C9780(unsigned int * a2, float * a3)
 }
 }
 
-// ==== BACKFILL 0x006C97E0  HouseClass::ComputeResourceDelta  cls=HouseClass  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x006C97E0  HouseClass::ComputeResourceDelta  cls=HouseClass  sig=csp  renamed_refs=3  residual=- ====
 namespace gamemd { void* HouseClass::ComputeResourceDelta(void* a2, int a3) {
 {
     float *v3;
@@ -1628,7 +1628,7 @@ namespace gamemd { void* HouseClass::ComputeResourceDelta(void* a2, int a3) {
 }
 } }
 
-// ==== BACKFILL 0x006C9820  FirstFloatPositive  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C9820  FirstFloatPositive  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Float_FirstPositive(float * a1)
 {
 {
@@ -1645,7 +1645,7 @@ int Float_FirstPositive(float * a1)
 }
 }
 
-// ==== BACKFILL 0x006C9940  sub_6C9940  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C9940  sub_6C9940  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_6C9940::sub_6C9940(char a2, char a3, unsigned char a4)
 {
 {
@@ -1659,7 +1659,7 @@ int E4Recv_6C9940::sub_6C9940(char a2, char a3, unsigned char a4)
 }
 }
 
-// ==== BACKFILL 0x006C9960  sub_6C9960  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C9960  sub_6C9960  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_6C9960::sub_6C9960(wchar_t * String)
 {
 {
@@ -1681,7 +1681,7 @@ void E4Recv_6C9960::sub_6C9960(wchar_t * String)
 }
 }
 
-// ==== BACKFILL 0x006C99D0  BinkMovie::CreateSurfaceTracker  cls=BinkMovie  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C99D0  BinkMovie::CreateSurfaceTracker  cls=BinkMovie  sig=csp  renamed_refs=0  residual=- ====
 int * BinkMovie::CreateSurfaceTracker()
 {
 {
@@ -1725,7 +1725,7 @@ int * BinkMovie::CreateSurfaceTracker()
 }
 }
 
-// ==== BACKFILL 0x006C9AC0  sub_6C9AC0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C9AC0  sub_6C9AC0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_6C9AC0::sub_6C9AC0()
 {
 {
@@ -1742,13 +1742,13 @@ unsigned int * E4Recv_6C9AC0::sub_6C9AC0()
 }
 }
 
-// ==== BACKFILL 0x006C9F00  nullsub_40  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006C9F00  nullsub_40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_40()
 {
   ;
 }
 
-// ==== BACKFILL 0x006CA5A0  sub_6CA5A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CA5A0  sub_6CA5A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int E4Recv_6CA5A0::sub_6CA5A0()
 {
 {
@@ -1780,7 +1780,7 @@ unsigned int E4Recv_6CA5A0::sub_6CA5A0()
 }
 }
 
-// ==== BACKFILL 0x006CB3A0  SuperClass::CreateChronoAnim  cls=SuperClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x006CB3A0  SuperClass::CreateChronoAnim  cls=SuperClass  sig=csp  renamed_refs=1  residual=- ====
 void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int a4)
 {
 {
@@ -1830,14 +1830,14 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
 }
 }
 
-// ==== BACKFILL 0x006CB4D0  SuperClass::SetOnHold  cls=SuperClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x006CB4D0  SuperClass::SetOnHold  cls=SuperClass  sig=csp  renamed_refs=2  residual=- ====
 char SuperClass::SetOnHold(CoordStruct * aP1)
 {
 {
     IUnknown *v3;
     int v4;
     int v5;
-    if ( !this->q06D || this->q06E || (char)aP1 == (unsigned char)this->SuperClass_field_0x70 || !(unsigned char)this->SuperClass_field_0x60 )
+    if ( !this->Granted || this->OneTime || (char)aP1 == (unsigned char)this->SuperClass_field_0x70 || !(unsigned char)this->SuperClass_field_0x60 )
   {
     return 0;
   }
@@ -1866,16 +1866,16 @@ char SuperClass::SetOnHold(CoordStruct * aP1)
 }
 }
 
-// ==== BACKFILL 0x006CB820  SuperClass::SetReadiness  cls=SuperClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x006CB820  SuperClass::SetReadiness  cls=SuperClass  sig=csp  renamed_refs=0  residual=- ====
 char SuperClass::SetReadiness(char a2)
 {
 {
-    this->q06F = a2;
+    this->IsCharged = a2;
     return a2;
 }
 }
 
-// ==== BACKFILL 0x006CBCA0  SuperWeapon::UpdateSuperWeaponReadyState  cls=SuperWeapon  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CBCA0  SuperWeapon::UpdateSuperWeaponReadyState  cls=SuperWeapon  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SuperWeapon::UpdateSuperWeaponReadyState(int a1) {
 {
       int v3;
@@ -2000,13 +2000,13 @@ namespace gamemd { int SuperWeapon::UpdateSuperWeaponReadyState(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x006CC070  nullsub_231  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CC070  nullsub_231  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_231()
 {
   ;
 }
 
-// ==== BACKFILL 0x006CC280  SuperClass::SetRechargeTime  cls=SuperClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x006CC280  SuperClass::SetRechargeTime  cls=SuperClass  sig=csp  renamed_refs=1  residual=- ====
 int SuperClass::SetRechargeTime(int a2)
 {
 {
@@ -2015,7 +2015,7 @@ int SuperClass::SetRechargeTime(int a2)
 }
 }
 
-// ==== BACKFILL 0x006CC290  SuperClass::ResetRechargeTime  cls=SuperClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x006CC290  SuperClass::ResetRechargeTime  cls=SuperClass  sig=csp  renamed_refs=1  residual=- ====
 void SuperClass::ResetRechargeTime()
 {
 {
@@ -2023,7 +2023,7 @@ void SuperClass::ResetRechargeTime()
 }
 }
 
-// ==== BACKFILL 0x006CC2B0  SuperClass::NameReadiness  cls=SuperClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x006CC2B0  SuperClass::NameReadiness  cls=SuperClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * SuperClass::NameReadiness()
 {
 {
@@ -2055,14 +2055,14 @@ wchar_t * SuperClass::NameReadiness()
   }
     else
   {
-    if ( !this->q06F )
+    if ( !this->IsCharged )
     return 0;
     return GetStringCSF(g_Str_TXT_READY, 0, g_Str_File_Super_CPP, 944);
   }
 }
 }
 
-// ==== BACKFILL 0x006CC360  SuperClass::CanFire  cls=SuperClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x006CC360  SuperClass::CanFire  cls=SuperClass  sig=csp  renamed_refs=0  residual=- ====
 char SuperClass::CanFire()
 {
 {
@@ -2070,25 +2070,25 @@ char SuperClass::CanFire()
     return 0;
     if ( *(char *)(this->SuperClass_field_0x28 + 229) )
     return this->SuperClass_field_0x7C != 0;
-    return this->q06F;
+    return this->IsCharged;
 }
 }
 
-// ==== BACKFILL 0x006CDE80  nullsub_235  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CDE80  nullsub_235  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_235(int a1, int a2)
 {
   ;
 }
 
-// ==== BACKFILL 0x006CDE90  SuperClass::ShouldDrawProgress  cls=SuperClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x006CDE90  SuperClass::ShouldDrawProgress  cls=SuperClass  sig=csp  renamed_refs=0  residual=- ====
 bool SuperClass::ShouldDrawProgress()
 {
 {
-    return *(char *)(this->SuperClass_field_0x28 + 229) || this->q06F == 0;
+    return *(char *)(this->SuperClass_field_0x28 + 229) || this->IsCharged == 0;
 }
 }
 
-// ==== BACKFILL 0x006CDEB0  SuperClass::ddtor  cls=SuperClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CDEB0  SuperClass::ddtor  cls=SuperClass  sig=csp  renamed_refs=0  residual=- ====
 int SuperClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -2100,7 +2100,7 @@ int SuperClass::ddtor(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x006CDEF0  SuperClass::LoadFromStream  cls=SuperClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CDEF0  SuperClass::LoadFromStream  cls=SuperClass  sig=csp  renamed_refs=0  residual=- ====
 int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
 {
 {
@@ -2133,7 +2133,7 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
 }
 }
 
-// ==== BACKFILL 0x006CDFD0  SuperClass::SaveState  cls=SuperClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CDFD0  SuperClass::SaveState  cls=SuperClass  sig=csp  renamed_refs=0  residual=- ====
 int SuperClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 {
@@ -2145,7 +2145,7 @@ int SuperClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 }
 }
 
-// ==== BACKFILL 0x006CDFF0  SuperClass::ExecuteAction  cls=SuperClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x006CDFF0  SuperClass::ExecuteAction  cls=SuperClass  sig=csp  renamed_refs=1  residual=- ====
 long long SuperClass::ExecuteAction(unsigned int a2, int a3)
 {
 {
@@ -2164,7 +2164,7 @@ long long SuperClass::ExecuteAction(unsigned int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x006CE020  SuperClass::PowerDrainUpdate  cls=SuperClass  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x006CE020  SuperClass::PowerDrainUpdate  cls=SuperClass  sig=csp  renamed_refs=0  residual=- ====
 int SuperClass::PowerDrainUpdate(int * a2)
 {
 {
@@ -2176,11 +2176,11 @@ int SuperClass::PowerDrainUpdate(int * a2)
     int result;
     int v9;
     v3 = AbstractClass::ProcessPower((AbstractClass *)this);
-    LOBYTE(v3) = this->q06D;
+    LOBYTE(v3) = this->Granted;
     Power::FlagProcess(a2, v3);
-    LOBYTE(v4) = this->q06E;
+    LOBYTE(v4) = this->OneTime;
     Power::FlagProcess(a2, v4);
-    LOBYTE(v5) = this->q06F;
+    LOBYTE(v5) = this->IsCharged;
     Power::FlagProcess(a2, v5);
     Power::TimerProcess(this->SuperClass_field_0x78);
     Power::TimerProcess(this->SuperClass_field_0x7C);
@@ -2199,7 +2199,7 @@ int SuperClass::PowerDrainUpdate(int * a2)
 }
 }
 
-// ==== BACKFILL 0x006CE1A0  SuperClass::ShouldFlashTab  cls=SuperClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x006CE1A0  SuperClass::ShouldFlashTab  cls=SuperClass  sig=csp  renamed_refs=0  residual=- ====
 bool SuperClass::ShouldFlashTab()
 {
 {
@@ -2213,7 +2213,7 @@ bool SuperClass::ShouldFlashTab()
     if ( !this->SuperClass_field_0x7C )
     return 0;
   }
-    else if ( !this->q06F )
+    else if ( !this->IsCharged )
   {
     return 0;
   }
@@ -2224,25 +2224,25 @@ bool SuperClass::ShouldFlashTab()
 }
 }
 
-// ==== BACKFILL 0x006CE1F0  AbstractClass::updateTargetTracking  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CE1F0  AbstractClass::updateTargetTracking  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::updateTargetTracking(int a1)
 {
 return 57;
 }
 
-// ==== BACKFILL 0x006CE200  SuperClass::StubReturn57  cls=SuperClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CE200  SuperClass::StubReturn57  cls=SuperClass  sig=csp  renamed_refs=0  residual=- ====
 int SuperClass::StubReturn57()
 {
 return 57;
 }
 
-// ==== BACKFILL 0x006CE210  SuperClass::StubReturn128  cls=SuperClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CE210  SuperClass::StubReturn128  cls=SuperClass  sig=csp  renamed_refs=0  residual=- ====
 int SuperClass::StubReturn128()
 {
 return 128;
 }
 
-// ==== BACKFILL 0x006CE220  SuperClass::ProcessEvent  cls=SuperClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CE220  SuperClass::ProcessEvent  cls=SuperClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* SuperClass::ProcessEvent(int a2) {
 {
     SuperClass::CleanupMembers((int)this);
@@ -2252,7 +2252,7 @@ namespace gamemd { void* SuperClass::ProcessEvent(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x006CE270  SuperClass::SetFieldX  cls=SuperClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CE270  SuperClass::SetFieldX  cls=SuperClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SuperClass::SetFieldX() {
 {
     int result;
@@ -2263,7 +2263,7 @@ namespace gamemd { int SuperClass::SetFieldX() {
 }
 } }
 
-// ==== BACKFILL 0x006CE280  SuperClass::AdvanceCountdown  cls=SuperClass  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x006CE280  SuperClass::AdvanceCountdown  cls=SuperClass  sig=csp  renamed_refs=3  residual=- ====
 namespace gamemd { void SuperClass::AdvanceCountdown() {
 {
     int v1;
@@ -2288,7 +2288,7 @@ namespace gamemd { void SuperClass::AdvanceCountdown() {
 }
 } }
 
-// ==== BACKFILL 0x006CE2C0  SuperClass::SetCurrentFrame  cls=SuperClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CE2C0  SuperClass::SetCurrentFrame  cls=SuperClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* SuperClass::SetCurrentFrame() {
 {
     wchar_t *result;
@@ -2301,7 +2301,7 @@ namespace gamemd { void* SuperClass::SetCurrentFrame() {
 }
 } }
 
-// ==== BACKFILL 0x006CE2D0  VectorClass::RemoveAt  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CE2D0  VectorClass::RemoveAt  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 char VectorClass::RemoveAt(int a2)
 {
 {
@@ -2321,7 +2321,7 @@ char VectorClass::RemoveAt(int a2)
 }
 }
 
-// ==== BACKFILL 0x006CE320  SuperClass::RemoveFromPointerArray  cls=SuperClass  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x006CE320  SuperClass::RemoveFromPointerArray  cls=SuperClass  sig=csp  renamed_refs=5  residual=- ====
 namespace gamemd { int SuperClass::RemoveFromPointerArray(int a1) {
 {
       int v2;
@@ -2347,7 +2347,7 @@ namespace gamemd { int SuperClass::RemoveFromPointerArray(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x006CE570  sub_6CE570  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CE570  sub_6CE570  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * E4Recv_6CE570::sub_6CE570()
 {
 {
@@ -2366,22 +2366,22 @@ ObjectClass * E4Recv_6CE570::sub_6CE570()
 }
 }
 
-// ==== BACKFILL 0x006CE5B0  SuperWeaponTypeClass::SuperWeaponTypeClass  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=11 ====
+// ==== BACKFILL 0x006CE5B0  SuperWeaponTypeClass::SuperWeaponTypeClass  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=13  residual=- ====
 int SuperWeaponTypeClass::SuperWeaponTypeClass(ObjectClass * aP1)
 {
 {
     int v3;
     AbstractTypeClass::Constructor(this, (AbstractClass *)aP1);
-    this->__pad_004 = 0;
-    this->RechargeVoice = -1;
-    this->ChargingVoice = -1;
+    this->vtable2 = 0;
+    this->vtable3 = -1;
+    this->vtable4 = -1;
     this->uniqueId = -1;
     this->abstractFlags = -1;
     this->nextArrayIndex = 4500;
     this->referenceCount = -1;
     this->NeedsSaveOrLink = 0;
     this->ActionValue = 0;
-    this->__pad_028 = -1;
+    this->SpecialSound = -1;
     this->StartSound = -1;
     this->AuxBuilding = 0;
     this->SidebarImageFile = 0;
@@ -2389,7 +2389,7 @@ int SuperWeaponTypeClass::SuperWeaponTypeClass(ObjectClass * aP1)
     this->PreDependent = -1;
     this->UseChargeDrain = 0;
     this->IsPowered = 1;
-    this->__pad_038 = 0;
+    this->DisableableFromShell = 0;
     this->AIDefendAgainst = 0;
     this->PreClick = 0;
     this->PostClick = 0;
@@ -2398,9 +2398,9 @@ int SuperWeaponTypeClass::SuperWeaponTypeClass(ObjectClass * aP1)
     this->Range = 0;
     this->LineMultiplier = 0;
     *(void**)this = vt_SuperWeaponTypeClass;
-    this->__pad_004 = (unsigned int)vt_SuperWeaponTypeClass;
     this->vtable2 = (unsigned int)vt_SuperWeaponTypeClass;
-    this->vtable3 = &vt_SuperWeaponTypeClass;
+    this->vtable3 = (unsigned int)vt_SuperWeaponTypeClass;
+    this->vtable4 = &vt_SuperWeaponTypeClass;
     AbstractClass::GenerateUniqueID(this + 4);
     this->vtable1 = *(int *)&g_NetworkPlayerBuffer.__pad_BC0[324];
     if ( *(int *)&g_NetworkPlayerBuffer.__pad_BC0[324] < *(int *)&g_NetworkPlayerBuffer.__pad_BC0[316] || (g_NetworkPlayerBuffer.__pad_BC0[321] || !*(int *)&g_NetworkPlayerBuffer.__pad_BC0[316]) && *(int *)&g_NetworkPlayerBuffer.__pad_BC0[328] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&g_NetworkPlayerBuffer.__pad_BC0[308] + 8))( &g_NetworkPlayerBuffer.__pad_BC0[308], *(int *)&g_NetworkPlayerBuffer.__pad_BC0[316] + *(int *)&g_NetworkPlayerBuffer.__pad_BC0[328], 0) )
@@ -2414,7 +2414,7 @@ int SuperWeaponTypeClass::SuperWeaponTypeClass(ObjectClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x006CE7C0  SuperWeaponTypeClass::SD_vt03  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CE7C0  SuperWeaponTypeClass::SD_vt03  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int SuperWeaponTypeClass::SD_vt03(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -2426,7 +2426,7 @@ int SuperWeaponTypeClass::SD_vt03(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x006CE800  SuperWeaponTypeClass::SaveLoad_Prefix  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CE800  SuperWeaponTypeClass::SaveLoad_Prefix  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 {
@@ -2459,7 +2459,7 @@ int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x006CE8D0  SuperWeaponTypeClass::SaveLoad_Prefix_0  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CE8D0  SuperWeaponTypeClass::SaveLoad_Prefix_0  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int SuperWeaponTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 {
@@ -2471,19 +2471,19 @@ int SuperWeaponTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int
 }
 }
 
-// ==== BACKFILL 0x006CE8F0  SuperWeaponTypeClass::SD_vt11  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CE8F0  SuperWeaponTypeClass::SD_vt11  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int SuperWeaponTypeClass::SD_vt11()
 {
 return 32;
 }
 
-// ==== BACKFILL 0x006CE900  SuperWeaponTypeClass::SD_vt12  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CE900  SuperWeaponTypeClass::SD_vt12  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int SuperWeaponTypeClass::SD_vt12()
 {
 return 256;
 }
 
-// ==== BACKFILL 0x006CE910  SuperWeaponTypeClass::SD_vt13  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=6 ====
+// ==== BACKFILL 0x006CE910  SuperWeaponTypeClass::SD_vt13  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=7  residual=- ====
 int SuperWeaponTypeClass::SD_vt13(int * a2)
 {
 {
@@ -2497,13 +2497,13 @@ int SuperWeaponTypeClass::SD_vt13(int * a2)
     AbstractTypeClass::ProcessPower((char *)this, a2);
     Power::TimerProcess(this->vtable1);
     Power::TimerProcess(this->ActionValue);
-    Power::TimerProcess(this->RechargeVoice);
-    Power::TimerProcess(this->ChargingVoice);
+    Power::TimerProcess(this->vtable3);
+    Power::TimerProcess(this->vtable4);
     Power::TimerProcess(this->uniqueId);
     v3 = Power::TimerProcess(this->abstractFlags);
     LOBYTE(v3) = this->IsPowered;
     Power::FlagProcess(a2, v3);
-    LOBYTE(v4) = this->__pad_038;
+    LOBYTE(v4) = this->DisableableFromShell;
     Power::FlagProcess(a2, v4);
     LOBYTE(v5) = this->PreClick;
     v6 = Power::FlagProcess(a2, v5);
@@ -2521,7 +2521,7 @@ int SuperWeaponTypeClass::SD_vt13(int * a2)
 }
 }
 
-// ==== BACKFILL 0x006CEA10  SuperWeaponTypeClass::SD_vt16  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x006CEA10  SuperWeaponTypeClass::SD_vt16  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=1  residual=- ====
 int SuperWeaponTypeClass::SD_vt16()
 {
 {
@@ -2529,7 +2529,7 @@ int SuperWeaponTypeClass::SD_vt16()
 }
 }
 
-// ==== BACKFILL 0x006CEFE0  SuperWeaponTypeClass::SDDTOR  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CEFE0  SuperWeaponTypeClass::SDDTOR  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=0  residual=- ====
 SuperWeaponTypeClass * SuperWeaponTypeClass::SDDTOR(char a2)
 {
     SuperWeaponTypeClass* v7 = this;
@@ -2550,7 +2550,7 @@ SuperWeaponTypeClass * SuperWeaponTypeClass::SDDTOR(char a2)
     return this;
 }
 
-// ==== BACKFILL 0x006CF490  SwizzleManagerClass::Add  cls=SwizzleManagerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CF490  SwizzleManagerClass::Add  cls=SwizzleManagerClass  sig=csp  renamed_refs=0  residual=- ====
 int SwizzleManagerClass::Add(SwizzleManagerClass * aP0, SwizzleManagerClass * aP1, unsigned int * a2)
 {
 {
@@ -2561,31 +2561,31 @@ int SwizzleManagerClass::Add(SwizzleManagerClass * aP0, SwizzleManagerClass * aP
 }
 }
 
-// ==== BACKFILL 0x006CF4B0  SwizzleManagerClass::AddRef  cls=SwizzleManagerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CF4B0  SwizzleManagerClass::AddRef  cls=SwizzleManagerClass  sig=csp  renamed_refs=0  residual=- ====
 int SwizzleManagerClass::AddRef(int a1)
 {
 return 1;
 }
 
-// ==== BACKFILL 0x006CF4C0  SwizzleManagerClass::Release  cls=SwizzleManagerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CF4C0  SwizzleManagerClass::Release  cls=SwizzleManagerClass  sig=csp  renamed_refs=0  residual=- ====
 int SwizzleManagerClass::Release(int a1)
 {
 return 1;
 }
 
-// ==== BACKFILL 0x006CF4D0  SwizzleManagerClass::Remove  cls=SwizzleManagerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CF4D0  SwizzleManagerClass::Remove  cls=SwizzleManagerClass  sig=csp  renamed_refs=0  residual=- ====
 int SwizzleManagerClass::Remove(int a1, int a2, int a3)
 {
 return -2147467263;
 }
 
-// ==== BACKFILL 0x006CF4E0  SwizzleManagerClass::Lookup  cls=SwizzleManagerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CF4E0  SwizzleManagerClass::Lookup  cls=SwizzleManagerClass  sig=csp  renamed_refs=0  residual=- ====
 int SwizzleManagerClass::Lookup(int a1, int a2, int a3, int a4)
 {
 return -2147467263;
 }
 
-// ==== BACKFILL 0x006CF8F0  sub_6CF8F0  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CF8F0  sub_6CF8F0  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
 {
 {
@@ -2649,7 +2649,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x006CFCC0  SidebarClass::findEntryIndexByName  cls=SidebarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CFCC0  SidebarClass::findEntryIndexByName  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SidebarClass::findEntryIndexByName() {
 {
     int v1;
@@ -2667,7 +2667,7 @@ namespace gamemd { int SidebarClass::findEntryIndexByName() {
 }
 } }
 
-// ==== BACKFILL 0x006CFD20  globalHelper_0CFD20  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CFD20  globalHelper_0CFD20  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void sub_6CFD20(int a1, int a2)
 {
 {
@@ -2675,7 +2675,7 @@ void sub_6CFD20(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x006CFE10  sub_6CFE10  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006CFE10  sub_6CFE10  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_6CFE10::sub_6CFE10()
 {
 {

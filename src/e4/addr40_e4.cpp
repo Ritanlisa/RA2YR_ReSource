@@ -1294,11 +1294,7 @@ LABEL_20:
 namespace gamemd {
 int sub_406750()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_406750()
-{
-  return dword_816108; /*0x406755*/
-}
+return DataGlobal_816108;
 }
 } // namespace gamemd
 

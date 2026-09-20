@@ -1,4 +1,5 @@
 #include "object/techno.hpp"
+#include "object/globals_object.hpp"
 #include "object/radbeam.hpp"
 #include "structure/building.hpp"
 #include "type/building_type.hpp"
@@ -3819,23 +3820,17 @@ return v1 == 27 || v1 == 28 || v1 == 29 || v1 == 30;
 int TechnoClass::HandleSpecialAction() { return 0; }
 // 0x522cb0
 int TechnoClass::IsEnteringOrCapturingStructure() const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_522CB0(_DWORD *this)
-{
-  int v1; // eax
-
-  v1 = *(this + 433); /*0x522cb0*/
-  return v1 == 11 /*0x522cea*/
-      || v1 == 12
-      || v1 == 13
-      || v1 == 14
-      || v1 == 15
-      || v1 == 34
-      || v1 == 35
-      || v1 == 36
-      || v1 == 20
-      || v1 == 21;
-}
+int missionState = this->q6C4;
+return missionState == 11
+    || missionState == 12
+    || missionState == 13
+    || missionState == 14
+    || missionState == 15
+    || missionState == 34
+    || missionState == 35
+    || missionState == 36
+    || missionState == 20
+    || missionState == 21;
 }
 // 0x5f5390
 void TechnoClass::CreateDestructionEffect() {
@@ -5334,15 +5329,9 @@ int TechnoClass::GetDeployProgressValue() const { return 0; }
 // 0x708bc0
 int TechnoClass::ComputeAverageValue() const { return 0; }
 // 0x708c10
-int TechnoClass::GetGlobalValue() const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass::GetGlobalValue(#377 *this)
-{
-  _DWORD *v2; // [esp+8h] [ebp+8h]
-
-  *v2 = MEMORY[0xB0EA50]; /*0x708c1a*/
-  return 0; /*0x708c1e*/
-}
+int TechnoClass::GetGlobalValue(int* outValue) const {
+*outValue = g_TechnoHouseState;
+return 0;
 }
 // 0x70f850
 int TechnoClass::SetIdleState() { return 0; }

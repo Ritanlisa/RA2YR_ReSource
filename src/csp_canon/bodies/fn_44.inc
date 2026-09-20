@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x004436F0  ObjectClass::HandleRallyPointCommand  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004436F0  ObjectClass::HandleRallyPointCommand  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::HandleRallyPointCommand() {
 {
       int result;
@@ -71,7 +71,7 @@ namespace ra2 { namespace game { int ObjectClass::HandleRallyPointCommand() {
 }
 } } }
 
-// ==== BACKFILL 0x00445F80  SuperWeapon::CreateUnits  cls=BuildingClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x00445F80  SuperWeapon::CreateUnits  cls=BuildingClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int SuperWeapon::CreateUnits() {
 {
       int v2;
@@ -153,7 +153,7 @@ namespace gamemd { int SuperWeapon::CreateUnits() {
 }
 } }
 
-// ==== BACKFILL 0x00449410  BuildingClass::GetBoundingSizeExt  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00449410  BuildingClass::GetBoundingSizeExt  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 int __thiscall BuildingClass::GetBoundingSizeExt(#377 *this)
 {
   return (*(_BYTE *)(*((_DWORD *)this + 328) + 5829) != 0 ? 0x20 : 0)
@@ -161,7 +161,7 @@ int __thiscall BuildingClass::GetBoundingSizeExt(#377 *this)
        + ObjectClass::GetBoundingSize(this);
 }
 
-// ==== BACKFILL 0x0044B760  AbstractClass::COMStub_133  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0044B760  AbstractClass::COMStub_133  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass_COMStub_133()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -172,7 +172,7 @@ int __thiscall AbstractClass::COMStub_133(#377 *this)
 }
 }
 
-// ==== BACKFILL 0x0044B770  AbstractClass::COMStub_137  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0044B770  AbstractClass::COMStub_137  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass_COMStub_137()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -183,7 +183,7 @@ int __thiscall AbstractClass::COMStub_137(#377 *this)
 }
 }
 
-// ==== BACKFILL 0x0044D700  BuildingClass::GetAmmoCountScaled  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0044D700  BuildingClass::GetAmmoCountScaled  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 int BuildingClass::GetAmmoCountScaled()
 {
     // IDA 0x44D700. Type@+0x520, PipScale@+0x3D4, HasTiberiumAmmo@+0x16BC,
@@ -198,7 +198,7 @@ int BuildingClass::GetAmmoCountScaled()
     return Math::RoundToInt((double)maxPips * repairRatio);
 }
 
-// ==== BACKFILL 0x0044D760  BuildingClass::PushScriptAction  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0044D760  BuildingClass::PushScriptAction  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int BuildingClass::PushScriptAction() {
 {
     int result;
@@ -224,7 +224,7 @@ namespace gamemd { int BuildingClass::PushScriptAction() {
 }
 } }
 
-// ==== BACKFILL 0x0044F640  BuildingClass::GetFactoryPosition  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0044F640  BuildingClass::GetFactoryPosition  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 CoordStruct* BuildingClass::GetFactoryPosition(CoordStruct* out) const {
 BuildingTypeClass* buildingType = this->Type;
 CoordStruct* coords = &this->location;
@@ -305,7 +305,7 @@ retn    8
     return {}; // TODO stub - translate quarantined IDA block above
 }
 
-// ==== BACKFILL 0x0044F6E0  sub_44F6E0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0044F6E0  sub_44F6E0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
 {
 {
@@ -341,7 +341,7 @@ unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x0044FE60  sub_44FE60  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0044FE60  sub_44FE60  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int INIClass::sub_44FE60()
 {
 {

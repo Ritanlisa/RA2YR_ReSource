@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00620720  DrawScrollArrowUI  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00620720  DrawScrollArrowUI  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void DrawScrollArrowUI(int * a0, unsigned int * a1, ObjectClass * aP2, int a4, char a5)
 {
 {
@@ -51,7 +51,7 @@ void DrawScrollArrowUI(int * a0, unsigned int * a1, ObjectClass * aP2, int a4, c
 }
 }
 
-// ==== BACKFILL 0x00620F60  Surface_Render  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00620F60  Surface_Render  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Surface_Render(ObjectClass * aP0, unsigned short * a1, int * yTop, unsigned char * a3, int aP1, int a6)
 {
 {
@@ -79,7 +79,7 @@ int Surface_Render(ObjectClass * aP0, unsigned short * a1, int * yTop, unsigned 
 }
 }
 
-// ==== BACKFILL 0x00622800  Dialog::Show  cls=Dialog  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00622800  Dialog::Show  cls=Dialog  sig=csp  renamed_refs=0  residual=- ====
 HWND Dialog::Show()
 {
 {
@@ -89,7 +89,7 @@ HWND Dialog::Show()
 }
 }
 
-// ==== BACKFILL 0x00623120  Dialog::PumpMessages  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00623120  Dialog::PumpMessages  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char Dialog::PumpMessages()
 {
 {
@@ -106,7 +106,7 @@ char Dialog::PumpMessages()
 }
 }
 
-// ==== BACKFILL 0x00623170  UI_Connect  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00623170  UI_Connect  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL UI_Connect(HWND hWnd, LONG a2, LONG a3)
 {
 {
@@ -137,7 +137,7 @@ BOOL UI_Connect(HWND hWnd, LONG a2, LONG a3)
 }
 }
 
-// ==== BACKFILL 0x006232B0  sub_6232B0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006232B0  sub_6232B0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_6232B0(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 {
@@ -161,7 +161,7 @@ int sub_6232B0(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 }
 }
 
-// ==== BACKFILL 0x00623310  Network_Start  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00623310  Network_Start  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL Network_Start(HWND hWnd, LPARAM lParam)
 {
 {
@@ -172,7 +172,7 @@ BOOL Network_Start(HWND hWnd, LPARAM lParam)
 }
 }
 
-// ==== BACKFILL 0x006235B0  sub_6235B0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006235B0  sub_6235B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_6235B0::sub_6235B0(wchar_t * Format)
 {
 {
@@ -194,7 +194,7 @@ void E4Recv_6235B0::sub_6235B0(wchar_t * Format)
 }
 }
 
-// ==== BACKFILL 0x00623CD0  CD::CreateDialog  cls=CD  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00623CD0  CD::CreateDialog  cls=CD  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { bool CD::CreateDialog() {
 {
     ObjectClass *Dialog;
@@ -224,7 +224,7 @@ namespace gamemd { bool CD::CreateDialog() {
 }
 } }
 
-// ==== BACKFILL 0x00623DA0  sub_623DA0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00623DA0  sub_623DA0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_623DA0(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 {
@@ -242,7 +242,7 @@ int sub_623DA0(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 }
 }
 
-// ==== BACKFILL 0x00623EA0  GetEditControlText  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00623EA0  GetEditControlText  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LRESULT GetEditControlText(HWND hWnd, void ** a2)
 {
 {
@@ -266,7 +266,7 @@ LRESULT GetEditControlText(HWND hWnd, void ** a2)
 }
 }
 
-// ==== BACKFILL 0x00623F00  GetListBoxItemText  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00623F00  GetListBoxItemText  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LRESULT GetListBoxItemText(ObjectClass * aP0, WPARAM wParam, void ** a2)
 {
 {
@@ -284,7 +284,7 @@ LRESULT GetListBoxItemText(ObjectClass * aP0, WPARAM wParam, void ** a2)
 }
 }
 
-// ==== BACKFILL 0x00623F60  UI_Assign_623F60  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00623F60  UI_Assign_623F60  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LRESULT UI_Assign_623F60(HWND hWnd, WPARAM wParam, void ** a3)
 {
 {
@@ -302,7 +302,7 @@ LRESULT UI_Assign_623F60(HWND hWnd, WPARAM wParam, void ** a3)
 }
 }
 
-// ==== BACKFILL 0x00623FC0  OptionsDlgProcWOL_Assign  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00623FC0  OptionsDlgProcWOL_Assign  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LRESULT OptionsDlgProcWOL_Assign(ObjectClass * aP0, WPARAM wParam, void ** a2)
 {
 {
@@ -320,7 +320,7 @@ LRESULT OptionsDlgProcWOL_Assign(ObjectClass * aP0, WPARAM wParam, void ** a2)
 }
 }
 
-// ==== BACKFILL 0x00624020  MainLobbyDlgProcWOL_Assign  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00624020  MainLobbyDlgProcWOL_Assign  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LRESULT MainLobbyDlgProcWOL_Assign(HWND hWnd, WPARAM wParam, void ** a3)
 {
 {
@@ -338,7 +338,7 @@ LRESULT MainLobbyDlgProcWOL_Assign(HWND hWnd, WPARAM wParam, void ** a3)
 }
 }
 
-// ==== BACKFILL 0x00624080  sub_624080  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00624080  sub_624080  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_624080::sub_624080()
 {
 {
@@ -347,7 +347,7 @@ unsigned int * E4Recv_624080::sub_624080()
 }
 }
 
-// ==== BACKFILL 0x00624090  sub_624090  cls=DialogControl@OwnerDraw  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00624090  sub_624090  cls=DialogControl@OwnerDraw  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_624090::sub_624090()
 {
 {
@@ -355,7 +355,7 @@ void E4Recv_624090::sub_624090()
 }
 }
 
-// ==== BACKFILL 0x006241C0  ObjectClass::Release  cls=SimpleDialogControl@OwnerDraw  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006241C0  ObjectClass::Release  cls=SimpleDialogControl@OwnerDraw  sig=csp  renamed_refs=0  residual=- ====
 char ObjectClass::Release()
 {
 {
@@ -363,7 +363,7 @@ char ObjectClass::Release()
 }
 }
 
-// ==== BACKFILL 0x006241D0  ObjectClass::GetMember01  cls=SimpleDialogControl@OwnerDraw  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006241D0  ObjectClass::GetMember01  cls=SimpleDialogControl@OwnerDraw  sig=csp  renamed_refs=0  residual=- ====
 int ObjectClass::GetMember01()
 {
 {
@@ -371,7 +371,45 @@ int ObjectClass::GetMember01()
 }
 }
 
-// ==== BACKFILL 0x00624460  Options::ClearComboBoxes  cls=Options  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006242B0  sub_6242B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+bool E4Recv_6242B0::sub_6242B0()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+bool __thiscall sub_6242B0(HWND this)
+{
+  int v2; // eax
+  HWND v3; // edi
+  HWND hWnda; // [esp+Ch] [ebp-84h] BYREF
+  CHAR ClassName[128]; // [esp+10h] [ebp-80h] BYREF
+
+  hWnda = this; /*0x6242c4*/
+  GetClassNameA(this, ClassName, 128); /*0x6242c8*/
+  if ( !strcmp(ClassName, MEMORY[0x833728]) ) /*0x6242df*/
+    return 1; /*0x62430a*/
+  if ( !strcmp(ClassName, MEMORY[0x833720]) ) /*0x624325*/
+    return 1; /*0x624350*/
+  if ( !strcmp(ClassName, MEMORY[0x833718]) /*0x6243c1*/
+    && MEMORY[0xAC1B04]
+    && (v2 = *((_DWORD *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&hWnda) & ((1 << MEMORY[0xAC1B0C]) - 1)))) != 0 )
+  {
+    v3 = hWnda; /*0x6243c3*/
+    while ( *(HWND *)v2 != hWnda ) /*0x6243c9*/
+    {
+      v2 = *(_DWORD *)(v2 + 516); /*0x6243cb*/
+      if ( !v2 ) /*0x6243d3*/
+        return !strcmp(ClassName, MEMORY[0x83370C]) && (GetWindowLongA(v3, -16) & 3) != 3; /*0x6243d3*/
+    }
+    return *(_DWORD *)(v2 + 108) == 1; /*0x6243e8*/
+  }
+  else
+  {
+    v3 = hWnda; /*0x6243f2*/
+    return !strcmp(ClassName, MEMORY[0x83370C]) && (GetWindowLongA(v3, -16) & 3) != 3; /*0x624445*/
+  }
+}
+}
+
+// ==== BACKFILL 0x00624460  Options::ClearComboBoxes  cls=Options  sig=csp  renamed_refs=0  residual=- ====
 void Options::ClearComboBoxes()
 {
 {
@@ -380,7 +418,7 @@ void Options::ClearComboBoxes()
 }
 }
 
-// ==== BACKFILL 0x006247D0  Struct::WideStringCopy  cls=Struct  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006247D0  Struct::WideStringCopy  cls=Struct  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* Struct::WideStringCopy(int a1) {
 {
       *this = *(wchar_t **)aP1->__pad_0;
@@ -393,7 +431,7 @@ namespace gamemd { void* Struct::WideStringCopy(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00624810  DynamicVector::GrowCapacity  cls=DynamicVector  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x00624810  DynamicVector::GrowCapacity  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 char DynamicVector::GrowCapacity()
 {
 {
@@ -403,7 +441,7 @@ char DynamicVector::GrowCapacity()
     const void *v6;
     int v7;
     v2 = *(void**)this;
-    if ( *(void**)this < this->q004 )
+    if ( *(void**)this < this->Items )
     return 0;
     v4 = 2 * v2;
     if ( 2 * v2 < 10 )
@@ -415,13 +453,13 @@ char DynamicVector::GrowCapacity()
     if ( v6 )
     qmemcpy(v5, v6, 24 * *(void**)this);
     __3_YAXPAX_Z((void *)this->DynamicVector_field_0x8);
-    this->q004 = v4;
+    this->Items = v4;
     this->DynamicVector_field_0x8 = v7;
     return 1;
 }
 }
 
-// ==== BACKFILL 0x00625070  HashTable::ComputeHash  cls=HashTable  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00625070  HashTable::ComputeHash  cls=HashTable  sig=csp  renamed_refs=0  residual=- ====
 int HashTable::ComputeHash(int a2)
 {
 {
@@ -429,7 +467,7 @@ int HashTable::ComputeHash(int a2)
 }
 }
 
-// ==== BACKFILL 0x00625990  ComboBoxOwnerDraw::GrowBuffer  cls=ComboBoxOwnerDraw  sig=csp  renamed_refs=6 ====
+// ==== BACKFILL 0x00625990  ComboBoxOwnerDraw::GrowBuffer  cls=ComboBoxOwnerDraw  sig=csp  renamed_refs=6  residual=- ====
 namespace gamemd { int ComboBoxOwnerDraw::GrowBuffer() {
 {
       int v2;
@@ -461,7 +499,7 @@ namespace gamemd { int ComboBoxOwnerDraw::GrowBuffer() {
 }
 } }
 
-// ==== BACKFILL 0x00625AE0  LinkedList::PushFront  cls=LinkedList  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00625AE0  LinkedList::PushFront  cls=LinkedList  sig=csp  renamed_refs=0  residual=- ====
 int LinkedList::PushFront(IUnknown * aP1)
 {
 {
@@ -471,7 +509,7 @@ int LinkedList::PushFront(IUnknown * aP1)
 }
 }
 
-// ==== BACKFILL 0x00626020  sub_626020  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00626020  sub_626020  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char * E4Recv_626020::sub_626020(int a2)
 {
 {
@@ -508,7 +546,7 @@ char * E4Recv_626020::sub_626020(int a2)
 }
 }
 
-// ==== BACKFILL 0x00626070  sub_626070  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00626070  sub_626070  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void * E4Recv_626070::sub_626070(const void * a2)
 {
 {
@@ -532,7 +570,7 @@ void * E4Recv_626070::sub_626070(const void * a2)
 }
 }
 
-// ==== BACKFILL 0x006260A0  sub_6260A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006260A0  sub_6260A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_6260A0::sub_6260A0(const void * a2)
 {
 {
@@ -540,7 +578,7 @@ bool E4Recv_6260A0::sub_6260A0(const void * a2)
 }
 }
 
-// ==== BACKFILL 0x006260D0  Block::Copy  cls=Block  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006260D0  Block::Copy  cls=Block  sig=csp  renamed_refs=0  residual=- ====
 void * Block::Copy(const void * a2)
 {
 {
@@ -552,7 +590,7 @@ void * Block::Copy(const void * a2)
 }
 }
 
-// ==== BACKFILL 0x006260F0  sub_6260F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006260F0  sub_6260F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned char E4Recv_6260F0::sub_6260F0(ObjectClass * aP1)
 {
 {
@@ -570,7 +608,7 @@ unsigned char E4Recv_6260F0::sub_6260F0(ObjectClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x00626170  sub_626170  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00626170  sub_626170  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned char E4Recv_626170::sub_626170(ObjectClass * aP1, int a3)
 {
 {
@@ -586,7 +624,7 @@ unsigned char E4Recv_626170::sub_626170(ObjectClass * aP1, int a3)
 }
 }
 
-// ==== BACKFILL 0x006261B0  sub_6261B0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006261B0  sub_6261B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned char E4Recv_6261B0::sub_6261B0(ObjectClass * aP1, int a3, int a4)
 {
 {
@@ -603,7 +641,7 @@ unsigned char E4Recv_6261B0::sub_6261B0(ObjectClass * aP1, int a3, int a4)
 }
 }
 
-// ==== BACKFILL 0x00626200  Palette::FindClosestColor  cls=Palette  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00626200  Palette::FindClosestColor  cls=Palette  sig=csp  renamed_refs=0  residual=- ====
 int Palette::FindClosestColor(int a2)
 {
 {
@@ -632,7 +670,7 @@ int Palette::FindClosestColor(int a2)
 }
 }
 
-// ==== BACKFILL 0x00626250  sub_626250  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00626250  sub_626250  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_626250::sub_626250(const char * a2, int a3)
 {
 {
@@ -642,7 +680,7 @@ int E4Recv_626250::sub_626250(const char * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x00626290  sub_626290  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00626290  sub_626290  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_626290::sub_626290()
 {
 {
@@ -674,7 +712,7 @@ void E4Recv_626290::sub_626290()
 }
 }
 
-// ==== BACKFILL 0x006262F0  sub_6262F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006262F0  sub_6262F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_6262F0::sub_6262F0(int a2)
 {
 {
@@ -713,7 +751,7 @@ int E4Recv_6262F0::sub_6262F0(int a2)
 }
 }
 
-// ==== BACKFILL 0x00626370  FileSystem::mountDrive  cls=FileSystem  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00626370  FileSystem::mountDrive  cls=FileSystem  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void FileSystem::mountDrive() {
 {
       int v2;
@@ -745,7 +783,7 @@ namespace gamemd { void FileSystem::mountDrive() {
 }
 } }
 
-// ==== BACKFILL 0x00627170  FileSystem::findFile  cls=FileSystem  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00627170  FileSystem::findFile  cls=FileSystem  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* FileSystem::findFile() {
 {
       _DWORD *v1;
@@ -852,7 +890,7 @@ namespace gamemd { void* FileSystem::findFile() {
 }
 } }
 
-// ==== BACKFILL 0x006274F0  sub_6274F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006274F0  sub_6274F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_6274F0::sub_6274F0(ObjectClass * aP1)
 {
 {
@@ -883,7 +921,7 @@ int E4Recv_6274F0::sub_6274F0(ObjectClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x00628740  FileSystem::readFile  cls=FileSystem  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00628740  FileSystem::readFile  cls=FileSystem  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int FileSystem::readFile() {
 {
       this->q00C = 1;
@@ -897,7 +935,7 @@ namespace gamemd { int FileSystem::readFile() {
 }
 } }
 
-// ==== BACKFILL 0x00628B00  sub_628B00  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00628B00  sub_628B00  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
 {
 {
@@ -960,7 +998,7 @@ unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
 }
 }
 
-// ==== BACKFILL 0x00628DF0  VectorClass::ConstructHSV  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00628DF0  VectorClass::ConstructHSV  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * VectorClass::ConstructHSV(int a2, int a3)
 {
 {
@@ -1022,7 +1060,7 @@ unsigned int * VectorClass::ConstructHSV(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x00628ED0  FileSystem::writeFile  cls=FileSystem  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00628ED0  FileSystem::writeFile  cls=FileSystem  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* FileSystem::writeFile(int a1, void* a2) {
 {
       int v3;
@@ -1082,7 +1120,7 @@ namespace gamemd { void* FileSystem::writeFile(int a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x006293E0  AbstractClass::ProcessData  cls=AbstractClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x006293E0  AbstractClass::ProcessData  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void AbstractClass::ProcessData() {
 {
       int v2;
@@ -1095,7 +1133,7 @@ namespace ra2 { namespace game { void AbstractClass::ProcessData() {
       *(_DWORD *)(this + 4) = &ParasiteClass::`vftable';
       *(_DWORD *)(this + 8) = &ParasiteClass::`vftable';
       *(_DWORD *)(this + 12) = &vt_ParasiteClass;
-      this->__pad_04C = 0;
+      this->q04C = 0;
       this->q050 = 0;
       this->q048 = 0;
       if ( v2 )
@@ -1133,7 +1171,7 @@ namespace ra2 { namespace game { void AbstractClass::ProcessData() {
 }
 } } }
 
-// ==== BACKFILL 0x006295B0  ParasiteClass::LoadParasite  cls=ParasiteClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006295B0  ParasiteClass::LoadParasite  cls=ParasiteClass  sig=csp  renamed_refs=0  residual=- ====
 int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
 {
 {
@@ -1172,7 +1210,7 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x006296B0  ParasiteClass::SaveParasite  cls=ParasiteClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006296B0  ParasiteClass::SaveParasite  cls=ParasiteClass  sig=csp  renamed_refs=0  residual=- ====
 int ParasiteClass::SaveParasite(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 {
@@ -1180,7 +1218,7 @@ int ParasiteClass::SaveParasite(TechnoTypeClass * aP0, int * a1, int aP2)
 }
 }
 
-// ==== BACKFILL 0x006296D0  ParasiteClass::ddtor  cls=ParasiteClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006296D0  ParasiteClass::ddtor  cls=ParasiteClass  sig=csp  renamed_refs=0  residual=- ====
 int ParasiteClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -1192,7 +1230,7 @@ int ParasiteClass::ddtor(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x00629710  sub_629710  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00629710  sub_629710  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_629710::sub_629710()
 {
 {
@@ -1202,7 +1240,7 @@ int E4Recv_629710::sub_629710()
 }
 }
 
-// ==== BACKFILL 0x0062A8E0  ParasiteClass::CanInfect  cls=ParasiteClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062A8E0  ParasiteClass::CanInfect  cls=ParasiteClass  sig=csp  renamed_refs=0  residual=- ====
 bool ParasiteClass::CanInfect(unsigned int * a2)
 {
 {
@@ -1245,13 +1283,197 @@ bool ParasiteClass::CanInfect(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x0062AF50  ParasiteClass::StubReturn88  cls=ParasiteClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062AF50  ParasiteClass::StubReturn88  cls=ParasiteClass  sig=csp  renamed_refs=0  residual=- ====
 int ParasiteClass::StubReturn88() const { return 88; }
 
-// ==== BACKFILL 0x0062AF60  ParasiteClass::StubReturn67  cls=ParasiteClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062AF60  ParasiteClass::StubReturn67  cls=ParasiteClass  sig=csp  renamed_refs=0  residual=- ====
 int ParasiteClass::StubReturn67() const { return 67; }
 
-// ==== BACKFILL 0x0062BB20  ObjectClass::ProcessUpdate  cls=ObjectClass  sig=csp  renamed_refs=7 ====
+// ==== BACKFILL 0x0062B5E0  ParticleClass::Construct  cls=ParticleClass  sig=csp  renamed_refs=30  residual=- ====
+namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
+{
+      BuildingTypeClass *v6;
+      double v7;
+      int v8;
+      float *v9;
+      AbstractClass *v10;
+      double v11;
+      double v12;
+      _BYTE *v13;
+      int v14;
+      int v15;
+      __int16 v16;
+      double v17;
+      float v18;
+      IUnknown *v19;
+      BuildingTypeClass *v20;
+      int v21;
+      double v22;
+      int v23;
+      int v24;
+      _BYTE *v25;
+      AbstractClass *v27;
+      void *v28;
+      float v29;
+      int v30;
+      IUnknown *v31;
+      BuildingTypeClass *v32;
+      float aP1a;
+
+      ObjectClass::ctor((_DWORD *)this);
+      this->ParticleClass_field_0xAC = aP1;
+      this->q0B0 = 0;
+      this->q0B1 = 0;
+      this->q0B2 = 0;
+      this->ParticleClass_field_0xB8 = 0;
+      this->ParticleClass_field_0xB4 = 0;
+      this->ParticleClass_field_0xBC = 0;
+      v6 = (BuildingTypeClass *)aP3;
+      this->ParticleClass_field_0xC0 = 0;
+      this->ParticleClass_field_0xC4 = 0;
+      this->ParticleClass_field_0xC8 = 0;
+      this->ParticleClass_field_0xCC = 0;
+      this->ParticleClass_field_0xD0 = 0;
+      this->q0D4 = -1082130432;
+      this->ParticleClass_field_0xD8 = 0;
+      this->ParticleClass_field_0xDC = 0;
+      this->ParticleClass_field_0xE0 = 0;
+      this->q0E4 = *(_DWORD *)(this->ParticleClass_field_0xAC + 764);
+      this->q0E8 = *(_DWORD *)v6->vtable1;
+      this->q0EC = *(_DWORD *)&v6->vtable1[4];
+      this->q0F0 = *(_DWORD *)&v6->vtable1[8];
+      this->q0F4 = *(_DWORD *)aP2->__pad_0;
+      this->q0F8 = *(_DWORD *)&aP2->field_2[2];
+      this->q0FC = aP2->field_8;
+      *(_QWORD *)(this + 256) = *((_QWORD *)&g_MatrixTransformState + 2937);
+      this->q108 = *(&g_MatrixTransformState + 5876);
+      v7 = (double)(*(_DWORD *)&v6->vtable1[8] - (unsigned int)aP2->field_8);
+      v8 = *(_DWORD *)&v6->vtable1[4] - *(_DWORD *)&aP2->field_2[2];
+      v9 = (float *)(this + 268);
+      v10 = (AbstractClass *)aP4;
+      this->q10C = (float)(*(_DWORD *)v6->vtable1 - *(_DWORD *)aP2->__pad_0);
+      this->ParticleSystem = (float)v8;
+      this->RemainingEC = v7;
+      v11 = (double)(int)aP2->field_8;
+      v12 = (double)*(int *)&aP2->field_2[2];
+      this->StateAIAdvance = (float)*(int *)aP2->__pad_0;
+      this->q11C = v12;
+      this->q120 = v11;
+      this->ParticleClass_field_0x124 = v10;
+      v13 = *(_BYTE **)(this + 172);
+      LOBYTE(v8) = v13[779];
+      this->q12D = 0;
+      this->q12C = v8;
+      this->StartStateAI = v13[778];
+      this->Translucency = v13[756];
+      this->q130 = 0;
+      this->q131 = 0;
+      *(_DWORD *)this = &ParticleClass::`vftable';
+      *(_DWORD *)(this + 4) = &ParticleClass::`vftable';
+      *(_DWORD *)(this + 8) = &ParticleClass::`vftable';
+      *(_DWORD *)(this + 12) = &vt_ParticleClass;
+      AbstractClass::GenerateUniqueID(this + 4);
+      if ( *(int *)&HouseClass_Player.__pad_74[24] < *(int *)&HouseClass_Player.__pad_74[16]
+        || (HouseClass_Player.__pad_74[21] || !*(_DWORD *)&HouseClass_Player.__pad_74[16])
+        && *(int *)&HouseClass_Player.__pad_74[28] > 0
+        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player.__pad_74[8] + 8))(
+             &HouseClass_Player.__pad_74[8],
+             *(_DWORD *)&HouseClass_Player.__pad_74[28] + *(_DWORD *)&HouseClass_Player.__pad_74[16],
+             0) )
+      {
+        v14 = (*(_DWORD *)&HouseClass_Player.__pad_74[24])++;
+        *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_74[12] + 4 * v14) = this;
+      }
+      if ( *(_DWORD *)(this->ParticleClass_field_0xAC + 788) == 1 )
+        this->q0E4 = (double)(Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536)) % 2)
+                               + this->q0E4;
+      v15 = this->ParticleClass_field_0xAC;
+      this->q12A = *(_WORD *)(v15 + 732);
+      if ( *(_DWORD *)(v15 + 788) == 4 )
+        v16 = *(_WORD *)(this->ParticleClass_field_0xAC + 736)
+            + abs32(Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536)) % 10);
+      else
+        v16 = *(_WORD *)(this->ParticleClass_field_0xAC + 736)
+            + abs32(
+                Random::State((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536))
+              % *(_DWORD *)(this->ParticleClass_field_0xAC + 736));
+      this->q128 = v16;
+      v28 = aP2->field_8;
+      if ( (int)v28 <= Cell::GetGroundHeight((IUnknown *)aP2) )
+        Cell::GetGroundHeight((IUnknown *)aP2);
+      ObjectClass::SetPosition((#374 *)this);
+      v17 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
+                                          *v9 * *v9
+                                        + this->ParticleSystem * this->ParticleSystem
+                                        + this->RemainingEC * this->RemainingEC));
+      if ( v17 == 0.0 )
+      {
+        v18 = *v9;
+        v19 = *(IUnknown **)(this + 272);
+        v20 = *(BuildingTypeClass **)(this + 276);
+      }
+      else
+      {
+        v29 = *v9 / v17;
+        v18 = v29;
+        *(float *)&v31 = this->ParticleSystem / v17;
+        v19 = v31;
+        *(float *)&v32 = this->RemainingEC / v17;
+        v20 = v32;
+      }
+      *v9 = v18;
+      this->ParticleSystem = v19;
+      this->RemainingEC = v20;
+      if ( *(_BYTE *)(this->ParticleClass_field_0xAC + 783) )
+      {
+        v30 = *(_DWORD *)aP2->__pad_0 - *(_DWORD *)aP3->__pad_0;
+        v21 = *(_DWORD *)&aP2->field_2[2] - *(_DWORD *)&aP3->__pad_0[4];
+        *(float *)&aP3 = (float)(int)abs32(Math::RoundToInt(*v9 * this->q0E4));
+        aP1a = (float)(int)abs32(Math::RoundToInt(this->ParticleSystem * this->q0E4));
+        v22 = 9999.0;
+        if ( *(float *)&aP3 > 0.000001 )
+          v22 = (double)(int)abs32(v30) / *(float *)&aP3;
+        if ( aP1a > 0.000001 )
+        {
+          *(float *)&aP3 = (double)(int)abs32(v21) / aP1a;
+          if ( v22 >= *(float *)&aP3 )
+            v22 = *(float *)&aP3;
+        }
+        aP3 = (AbstractClass *)(*(char *)(this->ParticleClass_field_0xAC + 780) + 1);
+        this->q12C = Math::RoundToInt(v22);
+      }
+      v23 = this->ParticleClass_field_0xAC;
+      if ( *(int *)(v23 + 712) > 0 )
+      {
+        if ( *(_BYTE *)(v23 + 724)
+          || *(_BYTE *)(v23 + 725)
+          || *(_BYTE *)(v23 + 726)
+          || *(_BYTE *)(v23 + 727)
+          || *(_BYTE *)(v23 + 728)
+          || *(_BYTE *)(v23 + 729) )
+        {
+          *(float *)&v27 = (double)Random::Range(
+                                     (_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536),
+                                     0,
+                                     (IUnknown *)0x7FFFFFFE)
+                         * 4.656612877414201e-10;
+          v25 = Color::Lerp2(&aP3, this->ParticleClass_field_0xAC + 724, this->ParticleClass_field_0xAC + 727, *(float *)&v27);
+          this->q0B0 = *(_WORD *)v25;
+          this->q0B2 = v25[2];
+        }
+        else
+        {
+          v24 = *(_DWORD *)(v23 + 700);
+          this->q0B0 = *(_WORD *)v24;
+          this->q0B2 = *(_BYTE *)(v24 + 2);
+        }
+      }
+      ObjectClass::Deploy((#374 *)this);
+      return (ParticleClass *)this;
+}
+} }
+
+// ==== BACKFILL 0x0062BB20  ObjectClass::ProcessUpdate  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::ProcessUpdate() {
 {
       int v2;
@@ -1266,22 +1488,22 @@ namespace ra2 { namespace game { int ObjectClass::ProcessUpdate() {
       this->q0BC = 0;
       this->q0C0 = 0;
       this->q0C4 = 0;
-      this->__pad_0C8 = 0;
+      this->q0C8 = 0;
       this->q0CC = 0;
-      this->__pad_0D0 = 0;
+      this->q0D0 = 0;
       this->q0D4 = -1082130432;
-      this->__pad_0D8 = 0;
+      this->q0D8 = 0;
       this->q0DC = 0;
-      this->__pad_0E0 = 0;
+      this->q0E0 = 0;
       this->q0E4 = 0;
       this->q0E8 = DataGlobal_AC49D8;
       this->q0EC = DataGlobal_AC49DC;
-      this->__pad_0F0 = DataGlobal_AC49E0;
+      this->q0F0 = DataGlobal_AC49E0;
       this->q0F4 = DataGlobal_AC49D8;
       this->q0F8 = DataGlobal_AC49DC;
       this->q0FC = DataGlobal_AC49E0;
       this->q100 = DataGlobal_AC49D8;
-      this->__pad_104 = DataGlobal_AC49DC;
+      this->q104 = DataGlobal_AC49DC;
       this->q108 = DataGlobal_AC49E0;
       this->q10C = 0;
       this->q110 = 0;
@@ -1289,7 +1511,7 @@ namespace ra2 { namespace game { int ObjectClass::ProcessUpdate() {
       this->q118 = 0;
       this->q11C = 0;
       this->q120 = 0;
-      this->__pad_124 = 0;
+      this->q124 = 0;
       this->q12C = 0;
       this->q12D = 0;
       this->q12E = 0;
@@ -1315,7 +1537,143 @@ namespace ra2 { namespace game { int ObjectClass::ProcessUpdate() {
 }
 } } }
 
-// ==== BACKFILL 0x0062CE40  ParticleClass::Dispatch  cls=ParticleClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x0062C3A0  ParticleClass::UpdateParticlePhysics  cls=ParticleClass  sig=csp  renamed_refs=7  residual=- ====
+namespace gamemd { void ParticleClass::UpdateParticlePhysics() {
+{
+      double v2;
+      float v3;
+      int v4;
+      double v5;
+      float v6;
+      double v7;
+      float v8;
+      float v9;
+      int v10;
+      double v11;
+      int v12;
+      int v13;
+      float v14;
+      float v15;
+      float v16;
+      int v17;
+      float v18;
+      float v19;
+
+      v2 = this->q10C;
+      v3 = this->q0E4;
+      v18 = this->ParticleSystem;
+      v19 = this->RemainingEC;
+      v14 = v2 * v3;
+      v15 = v18 * v3;
+      v16 = v19 * v3;
+      this->q0E4 = ((double)Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2147483646)
+                             * 4.656612877414201e-10
+                             - 0.5)
+                            * 0.1
+                            + this->q0E4;
+      this->StateAIAdvance = v14 + this->StateAIAdvance;
+      this->q11C = v15 + this->q11C;
+      this->q120 = v16 + this->q120;
+      v4 = Math::RoundToInt(this->StateAIAdvance);
+      v5 = this->q11C;
+      v17 = v4;
+      LODWORD(v6) = Math::RoundToInt(v5);
+      v7 = this->q120;
+      v18 = v6;
+      LODWORD(v8) = Math::RoundToInt(v7);
+      v9 = *(float *)this;
+      v19 = v8;
+      (*(void (__thiscall **)(void *, int *))(LODWORD(v9) + 436))(this, &v17);
+      v13 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2147483646);
+      v10 = this->ParticleClass_field_0xAC;
+      v11 = (double)v13 * 4.656612877414201e-10 * 0.05 + *(double *)(v10 + 688) + *((double *)this + 23);
+      *((double *)this + 23) = v11;
+      if ( v11 > 1.0 )
+      {
+        v12 = this->ParticleClass_field_0xB4;
+        if ( v12 >= *(_DWORD *)(v10 + 712) - 2 )
+        {
+          this->ParticleClass_field_0xB8 = 0;
+          this->ParticleClass_field_0xBC = 1072693248;
+        }
+        else
+        {
+          this->ParticleClass_field_0xB8 = 0;
+          this->ParticleClass_field_0xB4 = v12 + 1;
+          this->ParticleClass_field_0xBC = 0;
+        }
+      }
+}
+} }
+
+// ==== BACKFILL 0x0062C540  ParticleClass::UpdateAnimationDrift  cls=ParticleClass  sig=csp  renamed_refs=14  residual=- ====
+namespace gamemd { void ParticleClass::UpdateAnimationDrift() {
+{
+      int v2;
+      int v3;
+      int v4;
+      _DWORD *v5;
+      int v6;
+      int v7;
+      int v8;
+      int v9;
+      int v10;
+
+      if ( ((unsigned __int8)g_CurrentFrame & 1) != 0 )
+      {
+        if ( (abs32(Random::State((_DWORD *)g_ScenarioClass_Instance + 134)) & 3) == 0 )
+        {
+          v2 = 0;
+          v3 = 0;
+          v4 = Random::State((_DWORD *)g_ScenarioClass_Instance + 134);
+          v5 = (char *)g_ScenarioClass_Instance + 536;
+          if ( (abs32(v4) & 1) != 0 )
+            v3 = (int)abs32(Random::State(v5)) % 3 - 1;
+          else
+            v2 = (int)abs32(Random::State(v5)) % 3 - 1;
+          v6 = v2 + this->ParticleClass_field_0xC0;
+          v7 = v3 + this->ParticleClass_field_0xC4;
+          this->ParticleClass_field_0xC0 = v6;
+          this->ParticleClass_field_0xC4 = v7;
+          if ( v6 >= -5 )
+          {
+            if ( v6 > 5 )
+              this->ParticleClass_field_0xC0 = 5;
+          }
+          else
+          {
+            this->ParticleClass_field_0xC0 = -5;
+          }
+          v8 = this->ParticleClass_field_0xC4;
+          if ( v8 >= -5 )
+          {
+            if ( v8 > 5 )
+              this->ParticleClass_field_0xC4 = 5;
+          }
+          else
+          {
+            this->ParticleClass_field_0xC4 = -5;
+          }
+        }
+        this->ParticleClass_field_0xC8 = 0;
+      }
+      v9 = this->ParticleClass_field_0xAC;
+      if ( this->StartStateAI < *(_BYTE *)(v9 + 777) )
+      {
+        v10 = *(_DWORD *)(this->ParticleClass_field_0xAC + 736)
+            - *(unsigned __int16 *)(this + 296)
+            + (*(int (__stdcall **)(int))(this->vtable2 + 16))(this + 4);
+        if ( !(v10 % (*(char *)(v9 + 779) + ((*(int (__stdcall **)(int))(this->vtable2 + 16))(this + 4) & 1))) )
+          ++this->StartStateAI;
+        if ( this->StartStateAI == *(_BYTE *)(v9 + 777) && *(_BYTE *)(v9 + 776) )
+          this->q131 = 1;
+      }
+      if ( this->q0E4 > 3.0 )
+        this->q0E4 = this->q0E4 - *(float *)(v9 + 768);
+}
+} }
+
+// ==== BACKFILL 0x0062CE40  ParticleClass::Dispatch  cls=ParticleClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int ParticleClass::Dispatch() {
 {
       int result;
@@ -1341,13 +1699,13 @@ namespace gamemd { int ParticleClass::Dispatch() {
         default:
           break;
       }
-      if ( !--this->__pad_128 )
+      if ( !--this->q128 )
         this->q131 = 1;
       return result;
 }
 } }
 
-// ==== BACKFILL 0x0062D510  sub_62D510  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062D510  sub_62D510  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_62D510::sub_62D510()
 {
 {
@@ -1397,14 +1755,14 @@ int E4Recv_62D510::sub_62D510()
 }
 }
 
-// ==== BACKFILL 0x0062D6F0  ParticleClass::CheckMirrorState  cls=ParticleClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062D6F0  ParticleClass::CheckMirrorState  cls=ParticleClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { bool ParticleClass::CheckMirrorState(int a1) {
 {
     return (unsigned char)ObjectClass::UpdateProductionDisplay((#374 *)this) != 0;
 }
 } }
 
-// ==== BACKFILL 0x0062D710  ParticleClass::CheckDrawFlags  cls=ParticleClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062D710  ParticleClass::CheckDrawFlags  cls=ParticleClass  sig=csp  renamed_refs=0  residual=- ====
 int * ParticleClass::CheckDrawFlags(int a1)
 {
 {
@@ -1418,13 +1776,13 @@ int * ParticleClass::CheckDrawFlags(int a1)
 }
 }
 
-// ==== BACKFILL 0x0062D770  ParticleClass::CheckStateFlag  cls=ParticleClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062D770  ParticleClass::CheckStateFlag  cls=ParticleClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleClass::CheckStateFlag()
 {
 return 3;
 }
 
-// ==== BACKFILL 0x0062D7A0  ParticleClass::LoadParticleData  cls=ParticleClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062D7A0  ParticleClass::LoadParticleData  cls=ParticleClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
 {
 {
@@ -1448,7 +1806,7 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
 }
 }
 
-// ==== BACKFILL 0x0062D810  ParticleClass::CheckCollisionFlags  cls=ParticleClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062D810  ParticleClass::CheckCollisionFlags  cls=ParticleClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleClass::CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 {
@@ -1459,7 +1817,7 @@ int ParticleClass::CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2)
 }
 }
 
-// ==== BACKFILL 0x0062D830  ParticleClass::vt_entry_1E8  cls=ParticleClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x0062D830  ParticleClass::vt_entry_1E8  cls=ParticleClass  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { int ParticleClass::vt_entry_1E8() {
 {
     int v2;
@@ -1493,7 +1851,7 @@ namespace gamemd { int ParticleClass::vt_entry_1E8() {
 }
 } }
 
-// ==== BACKFILL 0x0062D930  ParticleClass::GetClassIdentifier  cls=ParticleClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062D930  ParticleClass::GetClassIdentifier  cls=ParticleClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -1505,26 +1863,248 @@ int ParticleClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x0062D970  ParticleClass::GetObjectSize  cls=ParticleClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062D970  ParticleClass::GetObjectSize  cls=ParticleClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleClass::GetObjectSize()
 {
 return 312;
 }
 
-// ==== BACKFILL 0x0062D980  ParticleClass::GetTypeIdentifier  cls=ParticleClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062D980  ParticleClass::GetTypeIdentifier  cls=ParticleClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleClass::GetTypeIdentifier()
 {
 return 22;
 }
 
-// ==== BACKFILL 0x0062D990  ParticleClass::Stub  cls=ParticleClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x0062D990  ParticleClass::Stub  cls=ParticleClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int ParticleClass::Stub() {
 {
     return this->ParticleClass_field_0xAC;
 }
 } }
 
-// ==== BACKFILL 0x0062E280  ParticleSystemClass::CreateBuildingLight  cls=ParticleSystemClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062D9A0  ParticleClass::UpdateParticle  cls=ParticleClass  sig=csp  renamed_refs=1  residual=- ====
+namespace gamemd { void* ParticleClass::UpdateParticle(int a1) {
+{
+      AbstractClass *v3;
+      int v4;
+      void **v6;
+
+      *this = &ParticleClass::`vftable';
+      *(this + 1) = &ParticleClass::`vftable';
+      *(this + 2) = &ParticleClass::`vftable';
+      *(this + 3) = &vt_ParticleClass;
+      ObjectClass::Undeploy((#374 *)this);
+      LOBYTE(v3) = 1;
+      AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, v3);
+      this->ParticleClass_field_0xAC = 0;
+      v6 = this;
+      v4 = (*(int (__thiscall **)(char *, void ***))(*(_DWORD *)&HouseClass_Player.__pad_74[8] + 16))(
+             &HouseClass_Player.__pad_74[8],
+             &v6);
+      if ( v4 != -1 && v4 < *(int *)&HouseClass_Player.__pad_74[24] )
+      {
+        --*(_DWORD *)&HouseClass_Player.__pad_74[24];
+        for ( ;
+              v4 < *(int *)&HouseClass_Player.__pad_74[24];
+              *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_74[12] + 4 * v4 - 4) = *(_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_74[12]
+                                                                                               + 4 * v4) )
+        {
+          ++v4;
+        }
+      }
+      ObjectClass::Dtor(this);
+      if ( (a2 & 1) != 0 )
+        __3_YAXPAX_Z(this);
+      return (ParticleClass *)this;
+}
+} }
+
+// ==== BACKFILL 0x0062DC50  ParticleSystemClass::Constructor  cls=ParticleSystemClass  sig=csp  renamed_refs=2  residual=- ====
+namespace gamemd { int ParticleSystemClass::Constructor(int a1, void* a2, int a3, void* a4, void* a5, int a6) {
+{
+      int *v8;
+      int v9;
+      ParticleSystemTypeClass *v10;
+      int v11;
+      int *v12;
+      IUnknown *v13;
+      _DWORD *v14;
+      TechnoClass *v15;
+      int v16;
+      int v17;
+      int v18;
+      _DWORD *v19;
+      int v20;
+      int v21;
+      int v22;
+      _BYTE v24[12];
+
+      ObjectClass::ctor((_DWORD *)this);
+      this->Type = aP1;
+      v8 = (int *)(this + 212);
+      this->SpawnDistanceToOwner = 0;
+      this->q0B4 = 0;
+      this->q0B8 = 0;
+      this->TargetCoords = 0;
+      this->q0C4 = 0;
+      this->q0C8 = 1;
+      this->q0C9 = 0;
+      *(_DWORD *)(this + 188) = &vt_DynamicVectorClass_ParticleClass;
+      this->Target = 10;
+      this->Owner = 0;
+      *(_QWORD *)(this + 212) = *((_QWORD *)&(&g_MatrixTransformState)[492] + 1);
+      v9 = (int)*(&g_MatrixTransformState + 5908);
+      v10 = *(ParticleSystemTypeClass **)(this + 172);
+      this->SpotlightRadius = 0;
+      this->SparkSpawnFrames = v9;
+      this->TimeToDie = 0;
+      this->q0E8 = (float)v10->field_29C;
+      this->q0EC = v10->field_2B8;
+      this->q0F0 = v10->field_300;
+      this->q0F4 = 29;
+      this->q0F8 = 0;
+      this->ParticleSystemClass_field_bool_F9 = 0;
+      this->OwnerHouse = 0;
+      *(_DWORD *)this = &ParticleSystemClass::`vftable';
+      *(_DWORD *)(this + 4) = &ParticleSystemClass::`vftable';
+      *(_DWORD *)(this + 8) = &vt_ParticleSystemClass;
+      this->vtable4 = &off_7EFB70;
+      AbstractClass::GenerateUniqueID(this + 4);
+      if ( g_GameCleanupState < DataGlobal_A80210
+        || (DataGlobal_A80215 || !DataGlobal_A80210)
+        && DataGlobal_A8021C > 0
+        && ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))DataGlobal_A80208->field_8)(
+             &DataGlobal_A80208,
+             DataGlobal_A80210 + DataGlobal_A8021C,
+             0) )
+      {
+        v11 = g_GameCleanupState++;
+        *(_DWORD *)&DataGlobal_A8020C->__pad_0[4 * v11] = this;
+      }
+      (*(void (__thiscall **)(int))(this->Particles + 12))(this + 188);
+      this->OwnerHouse = aP6;
+      if ( aP3 )
+      {
+        v12 = (int *)(*(int (__thiscall **)(IUnknown *, _BYTE *))(aP3->field_0 + 72))(aP3, v24);
+        *v8 = *v12;
+        this->Lifetime = v12[1];
+        this->SparkSpawnFrames = v12[2];
+        v13 = (IUnknown *)(*(int (__thiscall **)(IUnknown *, _BYTE *))(aP3->field_0 + 72))(aP3, v24);
+        if ( (*((_DWORD *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], v13) + 80) & 0x100) != 0
+          && (*(int (__thiscall **)(IUnknown *))(aP3->field_0 + 44))(aP3) == 11 )
+        {
+          this->SparkSpawnFrames += *(&g_MatrixTransformState + 5919);
+        }
+      }
+      else
+      {
+        *v8 = aP5->field_0;
+        this->Lifetime = aP5->field_4;
+        this->SparkSpawnFrames = aP5->field_8;
+      }
+      if ( aP4 )
+      {
+        this->SpotlightRadius = aP4;
+        v14 = AbstractClass::IsTechnoType(aP4);
+        if ( v14 )
+          this->TimeToDie = v14[173];
+      }
+      else
+      {
+        this->SpotlightRadius = 0;
+        this->TimeToDie = aP3;
+      }
+      ObjectClass::Deploy((#374 *)this);
+      v15 = *(TechnoClass **)(this + 224);
+      if ( v15 )
+      {
+        v16 = this->location;
+        v17 = this->q0A0;
+        v18 = this->q0A4;
+        v19 = (_DWORD *)(*(int (__thiscall **)(TechnoClass *, _BYTE *))(*(_DWORD *)v15->__pad_0 + 72))(v15, v24);
+        v20 = v19[2];
+        v21 = v17 - v19[1];
+        this->SpawnDistanceToOwner = v16 - *v19;
+        this->q0B4 = v21;
+        this->q0B8 = v18 - v20;
+      }
+      if ( *(int *)&stru_B05488.__pad_579C[19212] < *(int *)&stru_B05488.__pad_579C[19204]
+        || (stru_B05488.__pad_579C[19209] || !*(_DWORD *)&stru_B05488.__pad_579C[19204])
+        && *(int *)&stru_B05488.__pad_579C[19216] > 0
+        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488.__pad_579C[19196] + 8))(
+             &stru_B05488.__pad_579C[19196],
+             *(_DWORD *)&stru_B05488.__pad_579C[19216] + *(_DWORD *)&stru_B05488.__pad_579C[19204],
+             0) )
+      {
+        v22 = (*(_DWORD *)&stru_B05488.__pad_579C[19212])++;
+        *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[19200] + 4 * v22) = this;
+      }
+      return (ParticleSystemClass *)this;
+}
+} }
+
+// ==== BACKFILL 0x0062DF20  ParticleClass::ProcessCreation  cls=ParticleSystemClass  sig=csp  renamed_refs=10  residual=- ====
+namespace gamemd { int ParticleClass::ProcessCreation() {
+{
+      int v2;
+      int v3;
+      int v4;
+      int v5;
+
+      ObjectClass::ctor((_DWORD *)this);
+      this->Type = 0;
+      this->Velocity = 0;
+      this->q0C4 = 0;
+      this->q0C8 = 1;
+      this->q0C9 = 0;
+      *(_DWORD *)(this + 188) = &vt_DynamicVectorClass_ParticleClass;
+      this->Target = 10;
+      this->Owner = 0;
+      this->SpawnFrames = DataGlobal_AC4A58;
+      this->Lifetime = DataGlobal_AC4A5C;
+      v2 = DataGlobal_AC4A60;
+      this->SpotlightRadius = 0;
+      this->TimeToDie = 0;
+      this->SparkSpawnFrames = v2;
+      v3 = this->Particles;
+      this->q0E8 = 0;
+      this->q0EC = 0;
+      this->q0F0 = 0;
+      this->q0F4 = 0;
+      this->q0F8 = 0;
+      this->ParticleSystemClass_field_bool_F9 = 0;
+      *(_DWORD *)this = &ParticleSystemClass::`vftable';
+      *(_DWORD *)(this + 4) = &ParticleSystemClass::`vftable';
+      *(_DWORD *)(this + 8) = &vt_ParticleSystemClass;
+      this->vtable4 = &off_7EFB70;
+      (*(void (**)(void))(v3 + 12))();
+      if ( g_GameCleanupState < DataGlobal_A80210
+        || (DataGlobal_A80215 || !DataGlobal_A80210)
+        && DataGlobal_A8021C > 0
+        && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(DataGlobal_A80208 + 8))(
+             &DataGlobal_A80208,
+             DataGlobal_A80210 + DataGlobal_A8021C,
+             0) )
+      {
+        v4 = g_GameCleanupState++;
+        *((_DWORD *)DataGlobal_A8020C + v4) = this;
+      }
+      if ( g_AlphaShapePool < DataGlobal_B0F728
+        || (DataGlobal_B0F72D || !DataGlobal_B0F728)
+        && DataGlobal_B0F734 > 0
+        && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(AbstractClass_Array + 8))(
+             &AbstractClass_Array,
+             DataGlobal_B0F728 + DataGlobal_B0F734,
+             0) )
+      {
+        v5 = g_AlphaShapePool++;
+        *((_DWORD *)DataGlobal_B0F724 + v5) = this;
+      }
+      return this;
+}
+} }
+
+// ==== BACKFILL 0x0062E280  ParticleSystemClass::CreateBuildingLight  cls=ParticleSystemClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void ParticleSystemClass::CreateBuildingLight(int a1, int a2) {
 {
       ParticleSystemTypeClass *v4;
@@ -1573,7 +2153,7 @@ namespace gamemd { void ParticleSystemClass::CreateBuildingLight(int a1, int a2)
 }
 } }
 
-// ==== BACKFILL 0x0062E380  ParticleSystemClass::CreateParticle  cls=ParticleSystemClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062E380  ParticleSystemClass::CreateParticle  cls=ParticleSystemClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ParticleSystemClass::CreateParticle(void* a1, void* a2) {
 {
       int v4;
@@ -1615,7 +2195,7 @@ namespace gamemd { int ParticleSystemClass::CreateParticle(void* a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x0062E4C0  ParticleClass::CreateInstance  cls=ParticleClass  sig=csp  renamed_refs=9 ====
+// ==== BACKFILL 0x0062E4C0  ParticleClass::CreateInstance  cls=ParticleClass  sig=csp  renamed_refs=9  residual=- ====
 namespace gamemd { int ParticleClass::CreateInstance(void* a1, float a2, int a3) {
 {
       int v5;
@@ -1684,7 +2264,7 @@ namespace gamemd { int ParticleClass::CreateInstance(void* a1, float a2, int a3)
 }
 } }
 
-// ==== BACKFILL 0x0062E650  ScenarioClass::DestroyAndClearVector  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062E650  ScenarioClass::DestroyAndClearVector  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void ScenarioClass::DestroyAndClearVector() {
 {
       int i;
@@ -1719,7 +2299,97 @@ namespace gamemd { void ScenarioClass::DestroyAndClearVector() {
 }
 } }
 
-// ==== BACKFILL 0x0062F230  ParticleSystemClass::SpawnParticle  cls=ParticleSystemClass  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x0062E6D0  ParticleSystemClass::UpdateAllParticles  cls=ParticleSystemClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { void ParticleSystemClass::UpdateAllParticles() {
+{
+      int v1;
+      int i;
+      int v3;
+      int v4;
+      int v5;
+      _DWORD *v6;
+      int v7;
+      int v8;
+      int v9;
+      int v10;
+      int v11;
+      int v12;
+      int v13;
+      void *v14;
+      int v15;
+      int v16;
+      int v17;
+      int v18;
+      int v19;
+      _DWORD *v20;
+      int j;
+      _DWORD v23[3];
+
+      v1 = this;
+      for ( i = this->Owner - 1; i >= 0; --i )
+        ParticleClass::Dispatch(*(_DWORD *)(*(_DWORD *)(v1 + 192) + 4 * i));
+      v3 = *(_DWORD *)(v1 + 204) - 1;
+      for ( j = v3; v3 >= 0; j = v3 )
+      {
+        v4 = *(_DWORD *)(v1 + 192);
+        v5 = *(_DWORD *)(v4 + 4 * v3);
+        if ( *(_BYTE *)(v5 + 305) )
+        {
+          v6 = *(_DWORD **)(v5 + 172);
+          v7 = v6[196];
+          if ( v7 != -1 )
+          {
+            v8 = *((_DWORD *)g_BuildingProductionQueue + v7);
+            v9 = *(_DWORD *)(v5 + 156) + v6[165];
+            v10 = v6[166];
+            v11 = *(_DWORD *)(v5 + 160);
+            v12 = v6[167];
+            v23[0] = v9;
+            v13 = *(_DWORD *)(v5 + 164);
+            v23[1] = v11 + v10;
+            v23[2] = v13 + v12;
+            v14 = __2_YAPAXI_Z(0x138u);
+            v1 = this;
+            if ( v14 )
+            {
+              v15 = ParticleClass::Construct((int)v14, v8, v23, COERCE_FLOAT(&DataGlobal_AC4A58), this);
+              if ( v15 )
+              {
+                v16 = this->q0C4;
+                if ( this->Owner < v16
+                  || (this->q0C9 || !v16)
+                  && (v17 = this->Target, v17 > 0)
+                  && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->Particles + 8))(
+                       this + 188,
+                       v16 + v17,
+                       0) )
+                {
+                  v18 = this->Owner;
+                  v19 = this->TargetCoords;
+                  this->Owner = v18 + 1;
+                  *(_DWORD *)(v19 + 4 * v18) = v15;
+                }
+                *(_DWORD *)(v15 + 228) = *(_DWORD *)(v5 + 228);
+                v20 = (_DWORD *)(v15 + 192);
+                *v20 = *(_DWORD *)(v5 + 192);
+                v20[1] = *(_DWORD *)(v5 + 196);
+                v20[2] = *(_DWORD *)(v5 + 200);
+              }
+            }
+          }
+          (*(void (__thiscall **)(int))(*(_DWORD *)v5 + 248))(v5);
+          v3 = j;
+        }
+        else
+        {
+          ParticleClass::AdjustHeight(*(float **)(v4 + 4 * v3));
+        }
+        --v3;
+      }
+}
+} }
+
+// ==== BACKFILL 0x0062F230  ParticleSystemClass::SpawnParticle  cls=ParticleSystemClass  sig=csp  renamed_refs=5  residual=- ====
 namespace gamemd { int ParticleSystemClass::SpawnParticle() {
 {
       int v2;
@@ -2091,7 +2761,7 @@ namespace gamemd { int ParticleSystemClass::SpawnParticle() {
 }
 } }
 
-// ==== BACKFILL 0x0062FD60  ParticleSystemClass::Update  cls=ParticleSystemClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062FD60  ParticleSystemClass::Update  cls=ParticleSystemClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ParticleSystemClass::Update() {
 {
       int v2;
@@ -2152,8 +2822,59 @@ namespace gamemd { int ParticleSystemClass::Update() {
 }
 } }
 
-// ==== BACKFILL 0x0062FE80  ParticleSystemClass::StubReturn2  cls=ParticleSystemClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0062FE60  ParticleSystemClass::Draw  cls=ParticleSystemClass  sig=csp  renamed_refs=0  residual=- ====
+BOOL ParticleSystemClass::Draw()
+{
+// [IDA decompile] original pseudocode - translation pending (final goal)
+BOOL __thiscall ParticleSystemClass::_vt17(int this)
+{
+  return *(_BYTE *)(this + 248) && !this->Owner; /*0x62fe79*/
+}
+}
+
+// ==== BACKFILL 0x0062FE80  ParticleSystemClass::StubReturn2  cls=ParticleSystemClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleSystemClass::StubReturn2()
 {
 return 2;
 }
+
+// ==== BACKFILL 0x0062FE90  ParticleSystemClass::UpdateSystem  cls=ParticleSystemClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd { int ParticleSystemClass::UpdateSystem(int a1, int a2) {
+{
+      DynamicVector *v4;
+      int v5;
+      int v6;
+      int v7;
+      ParticleSystemTypeClass *result;
+
+      Object::Unlink((#374 *)this);
+      v4 = *(DynamicVector **)(this + 188);
+      a3 = (int)aP1;
+      v5 = ((int (__thiscall *)(int, int *))v4->field_10)(this + 188, &a3);
+      if ( v5 != -1 )
+      {
+        v6 = this->Owner;
+        if ( v5 < v6 )
+        {
+          v7 = v6 - 1;
+          for ( this->Owner = v7;
+                v5 < this->Owner;
+                *(_DWORD *)(this->TargetCoords + 4 * v5 - 4) = *(_DWORD *)(this->TargetCoords + 4 * v5) )
+          {
+            ++v5;
+          }
+        }
+      }
+      result = 0;
+      if ( aP1 == *(IUnknown **)(this + 172) )
+        this->Type = 0;
+      if ( aP1 == *(IUnknown **)(this + 228) )
+        this->TimeToDie = 0;
+      if ( aP1 == *(IUnknown **)(this + 224) )
+      {
+        this->q0F8 = 1;
+        this->SpotlightRadius = 0;
+      }
+      return (int)result;
+}
+} }

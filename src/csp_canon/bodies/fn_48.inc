@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00480180  DSurface::Process  cls=DSurface  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00480180  DSurface::Process  cls=DSurface  sig=csp  renamed_refs=0  residual=- ====
 void DSurface::Process(IUnknown * aP1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -30,7 +30,7 @@ void __thiscall DSurface::Process(int this, IUnknown *aP1, int *a2)
 }
 }
 
-// ==== BACKFILL 0x00480A30  CellClass::GetCoords  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00480A30  CellClass::GetCoords  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* CellClass::GetCoords(void* aP1) {
 {
     ObjectClass *v2;
@@ -51,7 +51,7 @@ namespace gamemd { void* CellClass::GetCoords(void* aP1) {
 }
 } }
 
-// ==== BACKFILL 0x00481870  CellClass::SetThreatBounds  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00481870  CellClass::SetThreatBounds  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::SetThreatBounds(int aP1, int a3) {
 {
       int v3;
@@ -74,7 +74,7 @@ namespace gamemd { int CellClass::SetThreatBounds(int aP1, int a3) {
 }
 } }
 
-// ==== BACKFILL 0x004818E0  ObjectClass::UpdateTiberiumGrowth  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004818E0  ObjectClass::UpdateTiberiumGrowth  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::UpdateTiberiumGrowth(int a1) {
 {
       int v3;
@@ -131,7 +131,7 @@ namespace ra2 { namespace game { int ObjectClass::UpdateTiberiumGrowth(int a1) {
 }
 } } }
 
-// ==== BACKFILL 0x00483480  CellClass::DamageAllObjects  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00483480  CellClass::DamageAllObjects  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::DamageAllObjects() {
 {
     int *i;
@@ -143,7 +143,7 @@ namespace gamemd { int CellClass::DamageAllObjects() {
 }
 } }
 
-// ==== BACKFILL 0x00483610  ObjectClass::processPointerInvalid  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00483610  ObjectClass::processPointerInvalid  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int ObjectClass::processPointerInvalid()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -153,7 +153,174 @@ int __thiscall sub_483610(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x00483710  E4Recv_483710::sub_483710  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00483620  BuildingClass::IsTiberiumCollectorEligible  cls=BuildingClass  sig=csp  renamed_refs=1  residual=- ====
+bool BuildingClass::IsTiberiumCollectorEligible() {
+if (!*((_BYTE*)g_ScenarioClass_Instance + 13478))
+    return false;
+int storageTypeIndex = FindBuildingByTiberiumType(this->q044);
+if (storageTypeIndex == -1)
+    return false;
+int storageType = ((int*)BuildingClass_InstanceArray)[storageTypeIndex];
+if (this->q11C)
+    return false;
+if ((unsigned char)this->q11E < *(unsigned int*)(storageType + 228) - 1)
+    return *(double*)(storageType + 176) >= 0.00001;
+return false;
+
+/* ASM:
+mov     eax, ds:0A8B230h
+push    esi
+mov     esi, ecx
+mov     cl, [eax+34A6h]
+test    cl, cl
+jnz     short loc_483636
+xor     al, al
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_483636:                             ; CODE XREF: BuildingClass__IsTiberiumCollectorEligible+10↑j
+mov     ecx, [esi+44h]
+call    FindBuildingByTiberiumType
+cmp     eax, 0FFFFFFFFh
+jnz     short loc_483647
+xor     al, al
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_483647:                             ; CODE XREF: BuildingClass__IsTiberiumCollectorEligible+21↑j
+mov     ecx, dword_A8ED54+80798h
+mov     eax, [ecx+eax*4]
+mov     cl, [esi+11Ch]
+test    cl, cl
+jz      short loc_48365E
+xor     al, al
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_48365E:                             ; CODE XREF: BuildingClass__IsTiberiumCollectorEligible+38↑j
+mov     ecx, [eax+0E4h]
+xor     edx, edx
+mov     dl, [esi+11Eh]
+dec     ecx
+cmp     edx, ecx
+jl      short loc_483675
+xor     al, al
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_483675:                             ; CODE XREF: BuildingClass__IsTiberiumCollectorEligible+4F↑j
+fld     qword ptr [eax+0B0h]
+fcomp   ds:dbl_7E3810
+fnstsw  ax
+test    ah, 1
+jz      short loc_48368C
+xor     al, al
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_48368C:                             ; CODE XREF: BuildingClass__IsTiberiumCollectorEligible+66↑j
+mov     al, 1
+pop     esi
+retn
+*/
+}
+
+// ==== BACKFILL 0x00483690  BuildingClass::IsTiberiumSiloEligible  cls=BuildingClass  sig=csp  renamed_refs=2  residual=- ====
+bool BuildingClass::IsTiberiumSiloEligible() {
+if (*(char*)g_ScenarioClass_Instance >= 0)
+    return false;
+int storageTypeIndex = FindBuildingByTiberiumType(this->q044);
+if (storageTypeIndex == -1)
+    return false;
+int storageType = ((int*)BuildingClass_InstanceArray)[storageTypeIndex];
+if ((unsigned char)this->q11E <= storageTypeIndex / 2)
+    return false;
+if (this->q11C)
+    return false;
+if (*(double*)(storageType + 160) >= 0.00001)
+    return this->flashing == 0;
+return false;
+
+/* ASM:
+mov     eax, ds:0A8B230h
+push    esi
+mov     esi, ecx
+push    edi
+test    byte ptr [eax], 80h
+jnz     short loc_4836A3
+pop     edi
+xor     al, al
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_4836A3:                             ; CODE XREF: BuildingClass__IsTiberiumSiloEligible+C↑j
+mov     ecx, [esi+44h]
+call    FindBuildingByTiberiumType
+mov     edi, eax
+cmp     edi, 0FFFFFFFFh
+jnz     short loc_4836B7
+pop     edi
+xor     al, al
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_4836B7:                             ; CODE XREF: BuildingClass__IsTiberiumSiloEligible+20↑j
+mov     eax, edi
+xor     ecx, ecx
+mov     cl, [esi+11Eh]
+cdq
+sub     eax, edx
+sar     eax, 1
+cmp     ecx, eax
+jg      short loc_4836CF
+pop     edi
+xor     al, al
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_4836CF:                             ; CODE XREF: BuildingClass__IsTiberiumSiloEligible+38↑j
+mov     al, [esi+11Ch]
+test    al, al
+jz      short loc_4836DE
+pop     edi
+xor     al, al
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_4836DE:                             ; CODE XREF: BuildingClass__IsTiberiumSiloEligible+47↑j
+mov     edx, dword_A8ED54+80798h
+mov     eax, [edx+edi*4]
+fld     qword ptr [eax+0A0h]
+fcomp   ds:dbl_7E3810
+fnstsw  ax
+test    ah, 1
+jz      short loc_4836FF
+pop     edi
+xor     al, al
+pop     esi
+retn
+; ---------------------------------------------------------------------------
+
+loc_4836FF:                             ; CODE XREF: BuildingClass__IsTiberiumSiloEligible+68↑j
+mov     eax, [esi+0E4h]
+pop     edi
+test    eax, eax
+setz    al
+pop     esi
+retn
+*/
+}
+
+// ==== BACKFILL 0x00483710  E4Recv_483710::sub_483710  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_483710::sub_483710()
 {
 {
@@ -175,7 +342,7 @@ char E4Recv_483710::sub_483710()
 }
 }
 
-// ==== BACKFILL 0x00483780  CellClass::SpawnTiberiumTree  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00483780  CellClass::SpawnTiberiumTree  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::SpawnTiberiumTree(int a1) {
 {
       int BuildingByTiberiumType;
@@ -244,7 +411,7 @@ namespace gamemd { int CellClass::SpawnTiberiumTree(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00483C10  CellClass::SaveLoad_Prefix_0  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00483C10  CellClass::SaveLoad_Prefix_0  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::SaveLoad_Prefix_0() {
 {
     int result;
@@ -277,7 +444,7 @@ namespace gamemd { int CellClass::SaveLoad_Prefix_0() {
 }
 } }
 
-// ==== BACKFILL 0x00484A80  sub_484A80  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00484A80  sub_484A80  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_484A80(int a1)
 {
 {
@@ -286,7 +453,7 @@ int sub_484A80(int a1)
 }
 }
 
-// ==== BACKFILL 0x00484AB0  CellClass::IsTunnelEntrance  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00484AB0  CellClass::IsTunnelEntrance  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int CellClass::IsTunnelEntrance()
 {
     /* IDA truth (live verified 2026-09-18):
@@ -297,13 +464,13 @@ int CellClass::IsTunnelEntrance()
         && landType == (int)LandType::Tunnel;
 }
 
-// ==== BACKFILL 0x00484F10  globalHelper_084F10  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00484F10  globalHelper_084F10  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_484F10(int a1)
 {
 return 1;
 }
 
-// ==== BACKFILL 0x00484F20  InfantryClass::GetType  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00484F20  InfantryClass::GetType  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int InfantryClass::GetType() {
 {
       __int16 v1;
@@ -316,7 +483,7 @@ namespace gamemd { int InfantryClass::GetType() {
 }
 } }
 
-// ==== BACKFILL 0x00484F50  sub_484F50  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00484F50  sub_484F50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_484F50::sub_484F50()
 {
 {
@@ -366,7 +533,7 @@ int E4Recv_484F50::sub_484F50()
 }
 }
 
-// ==== BACKFILL 0x00485060  Cell::IsValidHeight  cls=Cell  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00485060  Cell::IsValidHeight  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
 BOOL Cell::IsValidHeight()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -379,7 +546,7 @@ BOOL __thiscall Cell_IsValidHeight(int *this)
 }
 }
 
-// ==== BACKFILL 0x00485200  CellClass::ddtor  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00485200  CellClass::ddtor  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::ddtor() {
 {
     int *v2;
@@ -393,7 +560,7 @@ namespace gamemd { int CellClass::ddtor() {
 }
 } }
 
-// ==== BACKFILL 0x00485240  ObjectClass::SetMember09  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00485240  ObjectClass::SetMember09  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* ObjectClass::SetMember09(void* a1) {
 {
     this->objectTypeFlags = *a2;
@@ -401,7 +568,7 @@ namespace ra2 { namespace game { void* ObjectClass::SetMember09(void* a1) {
 }
 } } }
 
-// ==== BACKFILL 0x00485250  ObjectClass::SetTriggerTarget  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00485250  ObjectClass::SetTriggerTarget  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int ObjectClass::SetTriggerTarget(int a2) {
 {
     int v3;
@@ -425,7 +592,7 @@ namespace ra2 { namespace game { int ObjectClass::SetTriggerTarget(int a2) {
 }
 } } }
 
-// ==== BACKFILL 0x004852D0  BuildingClass::CreateDestructionCrater  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004852D0  BuildingClass::CreateDestructionCrater  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 char __thiscall sub_4852D0(int this)
 {
   int v2; // kr04_4
@@ -442,7 +609,7 @@ char __thiscall sub_4852D0(int this)
   return Cell::CreateCrater(v5[0] - 30, MEMORY[0x87F7E8][7663] - 15 * *(char *)(this + 283) + v5[1] - 15, 60, 30, 0); /*0x485389*/
 }
 
-// ==== BACKFILL 0x00485460  BuildingClass::CheckAdjacentCells  cls=BuildingClass  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x00485460  BuildingClass::CheckAdjacentCells  cls=BuildingClass  sig=csp  renamed_refs=3  residual=- ====
 namespace gamemd { int BuildingClass::CheckAdjacentCells() {
 {
       int v2;
@@ -515,7 +682,7 @@ namespace gamemd { int BuildingClass::CheckAdjacentCells() {
 }
 } }
 
-// ==== BACKFILL 0x00486380  Cell::IsEmpty  cls=Cell  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00486380  Cell::IsEmpty  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
 bool Cell::IsEmpty()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -528,7 +695,7 @@ bool __thiscall Cell_IsEmpty(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x004863A0  E4Recv_4863A0::sub_4863A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004863A0  E4Recv_4863A0::sub_4863A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_4863A0::sub_4863A0()
 {
 {
@@ -538,7 +705,7 @@ bool E4Recv_4863A0::sub_4863A0()
 }
 }
 
-// ==== BACKFILL 0x004865B0  CellClass::IsTerrainType  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004865B0  CellClass::IsTerrainType  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { bool CellClass::IsTerrainType() {
 {
     int v1;
@@ -547,7 +714,7 @@ namespace gamemd { bool CellClass::IsTerrainType() {
 }
 } }
 
-// ==== BACKFILL 0x00486650  CellClass::InMapDataRange  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00486650  CellClass::InMapDataRange  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { bool CellClass::InMapDataRange() {
 {
     int v1;
@@ -556,7 +723,7 @@ namespace gamemd { bool CellClass::InMapDataRange() {
 }
 } }
 
-// ==== BACKFILL 0x00486670  CellClass::InBounds  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00486670  CellClass::InBounds  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { bool CellClass::InBounds() {
 {
     int v1;
@@ -565,7 +732,7 @@ namespace gamemd { bool CellClass::InBounds() {
 }
 } }
 
-// ==== BACKFILL 0x004866D0  sub_4866D0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004866D0  sub_4866D0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_4866D0::sub_4866D0()
 {
 {
@@ -575,7 +742,7 @@ bool E4Recv_4866D0::sub_4866D0()
 }
 }
 
-// ==== BACKFILL 0x004866F0  sub_4866F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004866F0  sub_4866F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_4866F0::sub_4866F0()
 {
 {
@@ -585,7 +752,7 @@ bool E4Recv_4866F0::sub_4866F0()
 }
 }
 
-// ==== BACKFILL 0x00486730  Value::InRange  cls=Value  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00486730  Value::InRange  cls=Value  sig=csp  renamed_refs=0  residual=- ====
 bool Value::InRange()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -598,7 +765,7 @@ bool __thiscall Value_InRange(int *this)
 }
 }
 
-// ==== BACKFILL 0x00486790  RandomMap::Check  cls=RandomMap  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00486790  RandomMap::Check  cls=RandomMap  sig=csp  renamed_refs=0  residual=- ====
 bool RandomMap::Check()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -611,7 +778,7 @@ bool __thiscall sub_486790(int *this)
 }
 }
 
-// ==== BACKFILL 0x004867B0  Cell::IsShore  cls=Cell  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004867B0  Cell::IsShore  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
 bool Cell::IsShore()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -624,7 +791,7 @@ bool __thiscall Cell_IsShore(int *this)
 }
 }
 
-// ==== BACKFILL 0x004867E0  CellClass::GetCellType  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004867E0  CellClass::GetCellType  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::GetCellType() {
 {
       int result;
@@ -635,7 +802,7 @@ namespace gamemd { int CellClass::GetCellType() {
 }
 } }
 
-// ==== BACKFILL 0x00486840  CellClass::GetOccupier  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00486840  CellClass::GetOccupier  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::GetOccupier() {
 {
       int v1;
@@ -656,7 +823,7 @@ namespace gamemd { int CellClass::GetOccupier() {
 }
 } }
 
-// ==== BACKFILL 0x00486890  CellClass::CheckProperty  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00486890  CellClass::CheckProperty  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::CheckProperty() {
 {
     int v1;
@@ -690,7 +857,7 @@ namespace gamemd { int CellClass::CheckProperty() {
 }
 } }
 
-// ==== BACKFILL 0x00486900  CellClass::IsActiveOrNext  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00486900  CellClass::IsActiveOrNext  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { bool CellClass::IsActiveOrNext() {
 {
     int v1;
@@ -699,7 +866,7 @@ namespace gamemd { bool CellClass::IsActiveOrNext() {
 }
 } }
 
-// ==== BACKFILL 0x00486A70  CellClass::CreateFoggedObjects  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00486A70  CellClass::CreateFoggedObjects  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::CreateFoggedObjects() {
 {
       int v1;
@@ -789,7 +956,7 @@ namespace gamemd { int CellClass::CreateFoggedObjects() {
 }
 } }
 
-// ==== BACKFILL 0x00486BF0  CellClass::UpdateZone  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00486BF0  CellClass::UpdateZone  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* CellClass::UpdateZone() {
 {
     int i;
@@ -813,7 +980,7 @@ namespace gamemd { void* CellClass::UpdateZone() {
 }
 } }
 
-// ==== BACKFILL 0x00486C50  CellClass::ClearCellContents  cls=CellClass  sig=csp  renamed_refs=6 ====
+// ==== BACKFILL 0x00486C50  CellClass::ClearCellContents  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::ClearCellContents() {
 {
       int result;
@@ -835,12 +1002,12 @@ namespace gamemd { int CellClass::ClearCellContents() {
       int v18;
       _DWORD v19[4];
 
-      result = this->q028;
+      result = this->attached1;
       if ( result )
       {
         for ( i = *(_DWORD *)(result + 16) - 1; i >= 0; --i )
         {
-          v15 = *(_DWORD **)(*(_DWORD *)(this->q028 + 4) + 4 * i);
+          v15 = *(_DWORD **)(*(_DWORD *)(this->attached1 + 4) + 4 * i);
           if ( CellClass::recalcPassability((int)v15) )
           {
             for ( j = (__int16 *)CellClass::recalcPassability((int)v15); ; j += 2 )
@@ -881,17 +1048,17 @@ namespace gamemd { int CellClass::ClearCellContents() {
           if ( v15 )
             (*(void (__thiscall **)(_DWORD *, int))(*v15 + 32))(v15, 1);
         }
-        result = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q028 + 12))(this->q028);
-        v14 = (int (__thiscall ***)(_DWORD, int))this->q028;
+        result = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->attached1 + 12))(this->attached1);
+        v14 = (int (__thiscall ***)(_DWORD, int))this->attached1;
         if ( v14 )
           result = (**v14)(v14, 1);
-        this->q028 = 0;
+        this->attached1 = 0;
       }
       return result;
 }
 } }
 
-// ==== BACKFILL 0x00486D90  sub_486D90  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00486D90  sub_486D90  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_486D90::sub_486D90(char a2)
 {
 {
@@ -933,7 +1100,7 @@ int E4Recv_486D90::sub_486D90(char a2)
 }
 }
 
-// ==== BACKFILL 0x004870B0  Cell::HasOccupierBit  cls=Cell  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004870B0  Cell::HasOccupierBit  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
 BOOL Cell::HasOccupierBit(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -943,7 +1110,7 @@ BOOL __thiscall Cell::HasOccupierBit(_DWORD *this, IUnknown *aP1)
 }
 }
 
-// ==== BACKFILL 0x004870D0  Cell::IsPassableOffset  cls=Cell  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004870D0  Cell::IsPassableOffset  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
 BOOL Cell::IsPassableOffset(IUnknown * aP1)
 {
 {
@@ -951,7 +1118,7 @@ BOOL Cell::IsPassableOffset(IUnknown * aP1)
 }
 }
 
-// ==== BACKFILL 0x00487110  BuildingClass::checkOccupant  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487110  BuildingClass::checkOccupant  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* BuildingClass::checkOccupant(int a2) {
 {
     this->spawnStatus |= 1 << a2;
@@ -959,7 +1126,7 @@ namespace gamemd { void* BuildingClass::checkOccupant(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00487130  BuildingClass::updateOccupiedState  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487130  BuildingClass::updateOccupiedState  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* BuildingClass::updateOccupiedState(int a2) {
 {
     this->spawnStatus &= ~(1 << a2);
@@ -967,13 +1134,13 @@ namespace gamemd { void* BuildingClass::updateOccupiedState(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00487150  FootClass::checkTerrainSpeed  cls=FootClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487150  FootClass::checkTerrainSpeed  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
 int FootClass::checkTerrainSpeed() { return 0; }
 
-// ==== BACKFILL 0x00487160  FootClass::updateLocomotion  cls=FootClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487160  FootClass::updateLocomotion  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
 int FootClass::updateLocomotion() { return 0; }
 
-// ==== BACKFILL 0x00487170  BuildingClass::processGarrison  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487170  BuildingClass::processGarrison  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int BuildingClass::processGarrison(int a2) {
 {
     ++*(this + a2 + 86);
@@ -981,7 +1148,7 @@ namespace gamemd { int BuildingClass::processGarrison(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00487180  BuildingClass::evaulateDefense  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487180  BuildingClass::evaulateDefense  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int BuildingClass::evaulateDefense(int a2) {
 {
     --*(this + a2 + 86);
@@ -989,7 +1156,7 @@ namespace gamemd { int BuildingClass::evaulateDefense(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00487190  Crate::FindPlacement  cls=Crate  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487190  Crate::FindPlacement  cls=Crate  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int Crate::FindPlacement(int a1, int a2) {
 {
       ObjectClass *v4;
@@ -1244,7 +1411,7 @@ namespace gamemd { int Crate::FindPlacement(int a1, int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00487950  CellClass::QuickPassable  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487950  CellClass::QuickPassable  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 bool CellClass::QuickPassable() const
 {
 {
@@ -1296,7 +1463,7 @@ retn
     return false; // TODO stub - translate quarantined IDA block above
 }
 
-// ==== BACKFILL 0x004879B0  sub_4879B0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004879B0  sub_4879B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_4879B0::sub_4879B0()
 {
 {
@@ -1317,7 +1484,7 @@ char E4Recv_4879B0::sub_4879B0()
 }
 }
 
-// ==== BACKFILL 0x00487C10  BuildingClass::CheckC4Active  cls=BuildingClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x00487C10  BuildingClass::CheckC4Active  cls=BuildingClass  sig=csp  renamed_refs=4  residual=- ====
 bool BuildingClass::CheckC4Active() {
 {
     int *v3;
@@ -1388,7 +1555,7 @@ retn
 */
 }
 
-// ==== BACKFILL 0x00487C70  TerrainClass::SetFieldF8  cls=TerrainClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487C70  TerrainClass::SetFieldF8  cls=TerrainClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TerrainClass::SetFieldF8(int a1) {
 {
       this->q0F8 = a2;
@@ -1396,7 +1563,7 @@ namespace gamemd { int TerrainClass::SetFieldF8(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00487C80  ?GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487C80  ?GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int E4Recv_487C80::_GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ()
 {
 {
@@ -1404,14 +1571,14 @@ unsigned int E4Recv_487C80::_GetNumberOfActiveVirtualProcessors_SchedulerBase_de
 }
 }
 
-// ==== BACKFILL 0x00487CE0  CellClass::RadLevel_Increase  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487CE0  CellClass::RadLevel_Increase  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void CellClass::RadLevel_Increase(double a1) {
 {
     this->cloakedByHouses = a2 + this->cloakedByHouses;
 }
 } }
 
-// ==== BACKFILL 0x00487D00  CellClass::RadLevel_Decrease  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487D00  CellClass::RadLevel_Decrease  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void CellClass::RadLevel_Decrease(double a1) {
 {
       double v2;
@@ -1430,7 +1597,7 @@ namespace gamemd { void CellClass::RadLevel_Decrease(double a1) {
 }
 } }
 
-// ==== BACKFILL 0x00487D50  Cell::GetSlopeIndex  cls=Cell  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487D50  Cell::GetSlopeIndex  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
 int Cell::GetSlopeIndex()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1440,7 +1607,7 @@ int __thiscall Cell_GetSlopeIndex(int this)
 }
 }
 
-// ==== BACKFILL 0x00487D70  CellClass::AttachObject  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487D70  CellClass::AttachObject  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::AttachObject(int a2) {
 {
       int v3;
@@ -1473,7 +1640,7 @@ namespace gamemd { int CellClass::AttachObject(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00487DF0  Cell::IsBridge2  cls=Cell  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487DF0  Cell::IsBridge2  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
 bool Cell::IsBridge2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1483,25 +1650,25 @@ bool __thiscall Cell_IsBridge2(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x00487E50  AbstractClass::compareType  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487E50  AbstractClass::compareType  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::compareType(int a1)
 {
 return 11;
 }
 
-// ==== BACKFILL 0x00487E60  CellClass::StubReturn11  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487E60  CellClass::StubReturn11  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 int CellClass::StubReturn11()
 {
 return 11;
 }
 
-// ==== BACKFILL 0x00487E70  CellClass::StubReturn328  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487E70  CellClass::StubReturn328  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 int CellClass::StubReturn328()
 {
 return 328;
 }
 
-// ==== BACKFILL 0x00487E80  CellClass::CopyTo  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487E80  CellClass::CopyTo  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::CopyTo() {
 {
     char v3;
@@ -1512,7 +1679,7 @@ namespace gamemd { int CellClass::CopyTo() {
 }
 } }
 
-// ==== BACKFILL 0x00487EA0  NeighborCoord  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487EA0  NeighborCoord  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * Coord_Neighbor(unsigned int * a1, unsigned short * a2, char a3)
 {
 {
@@ -1528,7 +1695,7 @@ unsigned int * Coord_Neighbor(unsigned int * a1, unsigned short * a2, char a3)
 }
 }
 
-// ==== BACKFILL 0x00487EE0  Bounds::Subtract  cls=Bounds  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00487EE0  Bounds::Subtract  cls=Bounds  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * Bounds::Subtract(IUnknown * aP1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1553,7 +1720,7 @@ _DWORD *__thiscall Bounds::Subtract(int *this, IUnknown *aP1, _DWORD *a2)
 }
 }
 
-// ==== BACKFILL 0x00488080  CellClass::clearOccupationFlags  cls=CellClass  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x00488080  CellClass::clearOccupationFlags  cls=CellClass  sig=csp  renamed_refs=5  residual=IsAllocated ====
 namespace gamemd { void* CellClass::clearOccupationFlags(int a2, int a3) {
 {
     this->vtable2 = 0;
@@ -1575,7 +1742,7 @@ namespace gamemd { void* CellClass::clearOccupationFlags(int a2, int a3) {
 }
 } }
 
-// ==== BACKFILL 0x00488210  sub_488210  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00488210  sub_488210  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_488210::sub_488210(unsigned int a2, unsigned int * a3, int a4)
 {
 {
@@ -1592,7 +1759,7 @@ int E4Recv_488210::sub_488210(unsigned int a2, unsigned int * a3, int a4)
 }
 }
 
-// ==== BACKFILL 0x00488280  sub_488280  cls=CheckListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00488280  sub_488280  cls=CheckListClass  sig=csp  renamed_refs=0  residual=- ====
 CheckListClass * E4Recv_488280::sub_488280(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
 {
 {
@@ -1603,7 +1770,7 @@ CheckListClass * E4Recv_488280::sub_488280(ListClass * aP1, int a3, int a4, List
 }
 }
 
-// ==== BACKFILL 0x004884A0  CheckListClass::GetItem  cls=CheckListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004884A0  CheckListClass::GetItem  cls=CheckListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CheckListClass::GetItem(int a1, void* a2, int a3) {
 {
       int v6;
@@ -1637,7 +1804,7 @@ namespace gamemd { int CheckListClass::GetItem(int a1, void* a2, int a3) {
 }
 } }
 
-// ==== BACKFILL 0x004886A0  ObjectClass::GetStateFlag  cls=GadgetClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004886A0  ObjectClass::GetStateFlag  cls=GadgetClass  sig=csp  renamed_refs=0  residual=- ====
 char ObjectClass::GetStateFlag()
 {
 {
@@ -1645,7 +1812,7 @@ char ObjectClass::GetStateFlag()
 }
 }
 
-// ==== BACKFILL 0x004886B0  CheckListClass::COMStub  cls=ListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004886B0  CheckListClass::COMStub  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
 int CheckListClass::COMStub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1655,21 +1822,21 @@ int __thiscall CheckListClass::_vt37(_DWORD *this)
 }
 }
 
-// ==== BACKFILL 0x004886C0  CheckListClass::SelectItem  cls=CheckListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004886C0  CheckListClass::SelectItem  cls=CheckListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CheckListClass::SelectItem(int a1) {
 {
     return ListClass::RemoveItem(this, a2);
 }
 } }
 
-// ==== BACKFILL 0x004886D0  CheckListClass::SetFocus  cls=CheckListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004886D0  CheckListClass::SetFocus  cls=CheckListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CheckListClass::SetFocus(int a1) {
 {
     return ColorListClass::Clear(this, a2);
 }
 } }
 
-// ==== BACKFILL 0x004886E0  CheckListClass::QueryInterface  cls=CheckListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004886E0  CheckListClass::QueryInterface  cls=CheckListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* CheckListClass::QueryInterface(int a2) {
 {
     CCINIClass *Clamped;
@@ -1687,7 +1854,7 @@ namespace gamemd { void* CheckListClass::QueryInterface(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00488760  sub_488760  cls=ColorListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00488760  sub_488760  cls=ColorListClass  sig=csp  renamed_refs=0  residual=- ====
 ColorListClass * E4Recv_488760::sub_488760(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
 {
 {
@@ -1706,7 +1873,7 @@ ColorListClass * E4Recv_488760::sub_488760(ListClass * aP1, int a3, int a4, List
 }
 }
 
-// ==== BACKFILL 0x004887F0  sub_4887F0  cls=ColorListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004887F0  sub_4887F0  cls=ColorListClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4887F0::sub_4887F0()
 {
 {
@@ -1731,7 +1898,7 @@ int E4Recv_4887F0::sub_4887F0()
 }
 }
 
-// ==== BACKFILL 0x00488EE0  ColorListClass::GetColor  cls=ColorListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00488EE0  ColorListClass::GetColor  cls=ColorListClass  sig=csp  renamed_refs=0  residual=- ====
 int ColorListClass::GetColor(int a2)
 {
 {
@@ -1739,7 +1906,7 @@ int ColorListClass::GetColor(int a2)
 }
 }
 
-// ==== BACKFILL 0x00488F00  ColorListClass::QueryInterface  cls=ColorListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00488F00  ColorListClass::QueryInterface  cls=ColorListClass  sig=csp  renamed_refs=0  residual=- ====
 ColorListClass * ColorListClass::QueryInterface(char a2)
 {
 {
@@ -1767,13 +1934,13 @@ ColorListClass * ColorListClass::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x00489270  CellChainReact  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00489270  CellChainReact  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void CellChainReact()
 {
   ;
 }
 
-// ==== BACKFILL 0x0048A4F0  GetWarheadVersusMultiplier  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048A4F0  GetWarheadVersusMultiplier  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetWarheadVersusMultiplier(CoordStruct * aP0, BuildingTypeClass * aP1, CoordStruct * aP2, BulletClass * aP3)
 {
 {
@@ -1811,7 +1978,7 @@ int GetWarheadVersusMultiplier(CoordStruct * aP0, BuildingTypeClass * aP1, Coord
 }
 }
 
-// ==== BACKFILL 0x0048A8D0  Math_ComputeFacingAngle  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048A8D0  Math_ComputeFacingAngle  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char Math_ComputeFacingAngle(char a1, int a2, int a3, int a4, double a5, unsigned int * a6)
 {
 {
@@ -1840,7 +2007,7 @@ char Math_ComputeFacingAngle(char a1, int a2, int a3, int a4, double a5, unsigne
 }
 }
 
-// ==== BACKFILL 0x0048ABC0  globalHelper_08ABC0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048ABC0  globalHelper_08ABC0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 bool globalHelper_08ABC0(IUnknown * aP0, int a2, int a3, double a4)
 {
 {
@@ -1870,7 +2037,7 @@ bool globalHelper_08ABC0(IUnknown * aP0, int a2, int a3, double a4)
 }
 }
 
-// ==== BACKFILL 0x0048ACE0  Return::HRESULT_Fail  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048ACE0  Return::HRESULT_Fail  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Return::HRESULT_Fail(BulletClass * aP0, int a2, int a3)
 {
 {
@@ -1878,7 +2045,7 @@ int Return::HRESULT_Fail(BulletClass * aP0, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x0048B070  E4Recv_48B070::sub_48B070  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048B070  E4Recv_48B070::sub_48B070  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_48B070::sub_48B070(int a2, int a3)
 {
 {
@@ -1901,7 +2068,7 @@ unsigned int * E4Recv_48B070::sub_48B070(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x0048B1F0  sub_48B1F0  cls=CommBufferClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048B1F0  sub_48B1F0  cls=CommBufferClass  sig=csp  renamed_refs=0  residual=- ====
 void CommBufferClass::sub_48B1F0()
 {
 {
@@ -1951,7 +2118,7 @@ void CommBufferClass::sub_48B1F0()
 }
 }
 
-// ==== BACKFILL 0x0048B720  Terrain::GetTileIndex  cls=Terrain  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048B720  Terrain::GetTileIndex  cls=Terrain  sig=csp  renamed_refs=0  residual=- ====
 int Terrain::GetTileIndex(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1963,7 +2130,7 @@ int __thiscall Terrain_GetTileIndex(_DWORD *this, int a2)
 }
 }
 
-// ==== BACKFILL 0x0048B9E0  Terrain::GetTileType  cls=Terrain  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048B9E0  Terrain::GetTileType  cls=Terrain  sig=csp  renamed_refs=0  residual=- ====
 int Terrain::GetTileType(AnimClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1975,7 +2142,7 @@ int __thiscall Terrain::GetTileType(_DWORD *this, AnimClass *aP1)
 }
 }
 
-// ==== BACKFILL 0x0048BA80  CellClass::GetBridgeIndex  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048BA80  CellClass::GetBridgeIndex  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 int CellClass::GetBridgeIndex()
 {
 {
@@ -1983,7 +2150,7 @@ int CellClass::GetBridgeIndex()
 }
 }
 
-// ==== BACKFILL 0x0048BAA0  Rect::SetRedraw  cls=Rect  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048BAA0  Rect::SetRedraw  cls=Rect  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int Rect::SetRedraw(int a1) {
 {
       int result;
@@ -2006,7 +2173,7 @@ namespace gamemd { int Rect::SetRedraw(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0048BB00  sub_48BB00  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048BB00  sub_48BB00  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * E4Recv_48BB00::sub_48BB00(char a2)
 {
 {
@@ -2017,13 +2184,13 @@ ObjectClass * E4Recv_48BB00::sub_48BB00(char a2)
 }
 }
 
-// ==== BACKFILL 0x0048C590  ConnectionClass::StubReturnFalse  cls=ConnectionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048C590  ConnectionClass::StubReturnFalse  cls=ConnectionClass  sig=csp  renamed_refs=0  residual=- ====
 int ConnectionClass::StubReturnFalse()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x0048DBE0  ScenarioClass::FindTerrainTypeIndex  cls=ScenarioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048DBE0  ScenarioClass::FindTerrainTypeIndex  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::FindTerrainTypeIndex() {
 {
     ObjectClass *v2;
@@ -2041,7 +2208,7 @@ namespace gamemd { int ScenarioClass::FindTerrainTypeIndex() {
 }
 } }
 
-// ==== BACKFILL 0x0048DC90  MapClass::UnselectAll_ClearLimboLaunchers  cls=MapClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048DC90  MapClass::UnselectAll_ClearLimboLaunchers  cls=MapClass  sig=csp  renamed_refs=0  residual=- ====
 int MapClass::UnselectAll_ClearLimboLaunchers()
 {
 {
@@ -2077,7 +2244,7 @@ int MapClass::UnselectAll_ClearLimboLaunchers()
 }
 }
 
-// ==== BACKFILL 0x0048DE70  INIClass::readSection  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048DE70  INIClass::readSection  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int INIClass::readSection() {
 {
       int v2;
@@ -2098,13 +2265,13 @@ namespace gamemd { int INIClass::readSection() {
 }
 } }
 
-// ==== BACKFILL 0x0048DED0  nullsub_51  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048DED0  nullsub_51  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_51()
 {
   ;
 }
 
-// ==== BACKFILL 0x0048DF80  OverlayTypeClass::LookupByName  cls=OverlayTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048DF80  OverlayTypeClass::LookupByName  cls=OverlayTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int OverlayTypeClass::LookupByName()
 {
 {
@@ -2125,7 +2292,7 @@ int OverlayTypeClass::LookupByName()
 }
 }
 
-// ==== BACKFILL 0x0048DFD0  sub_48DFD0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048DFD0  sub_48DFD0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * sub_48DFD0(unsigned int a1)
 {
 {
@@ -2136,7 +2303,7 @@ char * sub_48DFD0(unsigned int a1)
 }
 }
 
-// ==== BACKFILL 0x0048DFF0  ObjectTypeClass::loadTypeMember_48DFF0  cls=ObjectTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048DFF0  ObjectTypeClass::loadTypeMember_48DFF0  cls=ObjectTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int ObjectTypeClass::loadTypeMember_48DFF0()
 {
 {
@@ -2157,7 +2324,7 @@ int ObjectTypeClass::loadTypeMember_48DFF0()
 }
 }
 
-// ==== BACKFILL 0x0048E030  sub_48E030  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048E030  sub_48E030  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * sub_48E030(unsigned int a1)
 {
 {
@@ -2168,7 +2335,7 @@ char * sub_48E030(unsigned int a1)
 }
 }
 
-// ==== BACKFILL 0x0048E090  globalHelper_08E090  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048E090  globalHelper_08E090  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * sub_48E090(unsigned int a1)
 {
 {
@@ -2179,7 +2346,7 @@ char * sub_48E090(unsigned int a1)
 }
 }
 
-// ==== BACKFILL 0x0048E650  CheckListClass::StubReturnFalse  cls=GadgetClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0048E650  CheckListClass::StubReturnFalse  cls=GadgetClass  sig=csp  renamed_refs=0  residual=- ====
 void CheckListClass::StubReturnFalse(int a1, int a2, int a3)
 {
   ;

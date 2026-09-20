@@ -12910,42 +12910,21 @@ void BuildingClass::ProcessSell()
 // IDA 0x4494c0: can be sold check
 // 0x4494c0
 bool BuildingClass::CanBeSold() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x4494c0
-int __thiscall BuildingClass::CanBeSold(#377 *this)
-{
-  int result; // eax
-
-  result = ObjectClass::HasLocation(this);
-  if ( (_BYTE)result )
-    goto LABEL_11;
-  result = *((_DWORD *)this + 328);
-  if ( *(_BYTE *)(result + 5497) )
-    goto LABEL_11;
-  if ( *((_BYTE *)this + 1769) )
-  {
-    result = *((_DWORD *)this + 333);
-    if ( result )
-    {
-      result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 388))(this);
-      if ( result != 19 )
-      {
-        result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 388))(this);
-        if ( result != 18 )
-        {
-          LOBYTE(result) = 1;
-          return result;
+if (ObjectClass::HasLocation(this))
+    return false;
+if (this->q520->Unsellable)
+    return false;
+if (this->q6E9) {
+    if (this->q534) {
+        if (this->GetCurrentMission() != 19) {
+            if (this->GetCurrentMission() != 18)
+                return true;
         }
-      }
     }
-  }
-  if ( !*(_BYTE *)(*((_DWORD *)this + 328) + 5824) || *(_BYTE *)(*((_DWORD *)this + 135) + 506) )
-LABEL_11:
-    LOBYTE(result) = 0;
-  else
-    LOBYTE(result) = 1;
-  return result;
 }
+if (!this->q520->FirestormWall || this->owner->firestormActive)
+    return false;
+return true;
 
 /* ASM:
 push    esi
@@ -13809,38 +13788,28 @@ void BuildingClass::ProcessRepair() {}
 // IDA 0x44f480: can repair - health below max
 // 0x457ce0
 bool BuildingClass::CanRepair(TechnoClass* repairer) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall BuildingClass_CanRepair(_DWORD *this, int a2)
-{
-  int v3; // eax
-  int v4; // eax
-  int v5; // eax
-  int v6; // eax
-  _BYTE v8[12]; // [esp+8h] [ebp-Ch] BYREF
-
-  if ( !a2 )
-    return 0;
-  if ( !*(_BYTE *)(*(this + 328) + 5499) )
-    return 0;
-  v3 = *(this + 43);
-  if ( v3 == 18 )
-    return 0;
-  if ( v3 == 19 )
-    return 0;
-  v4 = (*(int (__thiscall **)(_DWORD *, _BYTE *))(*this + 72))(this, v8);
-  if ( !(unsigned __int8)IsCoordVisibleMap(v4) || (*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 468))(this) )
-    return 0;
-  v5 = *(_DWORD *)(a2 + 1728);
-  if ( !*(_BYTE *)(v5 + 3764) )
-    return *(_BYTE *)(v5 + 3765)
-        && !Object::IsAlliedWithObjectHouse((_DWORD *)*(this + 135), a2)
-        && (*(int (__thiscall **)(_DWORD *))(*this + 1032))(this);
-  v6 = *(this + 135);
-  return (v6 == *(_DWORD *)(a2 + 540) || *(_BYTE *)(*(_DWORD *)(v6 + 52) + 422))
-      && (*(int (__thiscall **)(_DWORD *))(*this + 1032))(this) != *(_DWORD *)(*(this + 328) + 5504)
-      && !(unsigned __int8)BuildingClass::IsHealthLow(this)
-      && !(unsigned __int8)BuildingClass::IsBeingRepairedOrCaptured(a2);
-}
+if (!repairer)
+    return false;
+if (!this->q520->CanBeOccupied)
+    return false;
+if (this->currentMission == 18)
+    return false;
+if (this->currentMission == 19)
+    return false;
+CoordStruct exitCoords;
+CoordStruct* coords = this->GetExitCoords(&exitCoords);
+if (!IsCoordVisibleMap(&DataGlobal_87F7E8[0], coords) || this->MissionDispatch())
+    return false;
+int typeEntry = *((int*)repairer + 432);
+if (!*(unsigned char*)(typeEntry + 3764))
+    return *(unsigned char*)(typeEntry + 3765)
+        && !Object::IsAlliedWithObjectHouse(this->owner, repairer)
+        && this->MissionStubReturnZero6();
+HouseClass* ownerHouse = this->owner;
+return (ownerHouse == repairer->owner || *(unsigned char*)(*((int*)ownerHouse + 13) + 422))
+    && this->MissionStubReturnZero6() != this->q520->MaxNumberOccupants
+    && !BuildingClass::IsHealthLow(this)
+    && !BuildingClass::IsBeingRepairedOrCaptured(repairer);
 
 /* ASM:
 sub     esp, 0Ch
@@ -17876,44 +17845,25 @@ int BuildingClass::ProcessCapture() { return 0; }
 
 // IDA 0x44c960: capture this building
 // 0x44d5d0
-void BuildingClass::CaptureBuilding() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x44d5d0
-int __thiscall BuildingClass::CaptureBuilding(#377 *this)
-{
-  int result; // eax
-  #375 *v3; // [esp+Ch] [ebp+4h]
-
-  if ( TechnoClass::SetHouseFlag(this, v3) )
-  {
-    if ( !MEMORY[0xA8E7AC] )
-    {
-      *(_DWORD *)(*((_DWORD *)this + 135) + 620) = *(_DWORD *)(*((_DWORD *)this + 328) + 3576);
-      *(_BYTE *)(*((_DWORD *)this + 135) + 582) = 1;
-    }
-    *(_BYTE *)(*((_DWORD *)this + 135) + 508) = 1;
-    if ( !Team::AllMembersValid((int *)this)
-      && (unsigned __int8)House::IsCurrentPlayer(*((#375 **)this + 135))
-      && (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 388))(this) != 18
-      && *((_DWORD *)this + 45) != 18
-      || !Team::AllMembersValid((int *)this)
-      && (result = House::IsCurrentPlayer(*((#375 **)this + 135)), !(_BYTE)result)
-      && v3 == *((#375 **)this + 135)
-      && (result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 388))(this), result != 18) )
-    {
-      result = (*(int (__thiscall **)(#377 *, _DWORD))(*(_DWORD *)this + 1244))(this, 0);
-    }
-    LOBYTE(result) = 1;
-  }
-  else
-  {
-    LOBYTE(result) = 0;
-  }
-  return result;
+bool BuildingClass::CaptureBuilding(HouseClass* newOwner) {
+if (!TechnoClass::SetHouseFlag(this, newOwner))
+    return false;
+if (!g_IKnowWhatImDoing) {
+    this->owner->lastBuiltVehicleType = this->q520->ArrayIndex;
+    this->owner->unknownBool246 = 1;
 }
+this->owner->recheckTechTree = 1;
+if ((!Team::AllMembersValid(this) && House::IsCurrentPlayer(this->owner)
+        && this->GetCurrentMission() != 18 && this->queuedMission != 18)
+    || (!Team::AllMembersValid(this) && !House::IsCurrentPlayer(this->owner)
+        && newOwner == this->owner && this->GetCurrentMission() != 18))
+{
+    this->CreateUnits();
+}
+return true;
 }
 // 0x4fce80
-void BuildingClass::Capture() { CaptureBuilding(); }
+void BuildingClass::Capture() { CaptureBuilding(nullptr); }
 
 // IDA 0x4521c0: disable temporal effect
 // 0x4521c0
@@ -19641,45 +19591,15 @@ int __thiscall BuildingClass::GetFacingToTarget(#377 *this)
 // IDA 0x44d7d0: get target facing (delegates to GetFacingToTarget)
 // 0x44d7d0
 int BuildingClass::GetTargetFacing() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x44d7d0
-int __thiscall BuildingClass::GetTargetFacing(#377 *this)
-{
-  unsigned int v2; // ecx
-  __int16 v4; // dx
-  unsigned int v5; // ecx
-  int v6; // edx
-  int v7; // [esp+4h] [ebp-4h] BYREF
-  _DWORD *v8; // [esp+Ch] [ebp+4h]
-
-  if ( *((_DWORD *)this + 173) )
-  {
-    if ( !(*(unsigned __int8 (__thiscall **)(#377 *))(*(_DWORD *)this + 1020))(this)
-      || *(_BYTE *)(*((_DWORD *)this + 328) + 5829) )
-    {
-      v6 = *(_DWORD *)(*(int (__thiscall **)(#377 *, int *, _DWORD))(*(_DWORD *)this + 1256))(
-                        this,
-                        &v7,
-                        *((_DWORD *)this + 173));
-      *v8 = v6;
-      return (int)v8;
-    }
-    else
-    {
-      v5 = *ProgressTimer::GetValue((_WORD *)this + 452, &v7);
-      *(_WORD *)v8 = ((((v5 >> 10) + 1) >> 1) & 0x1F) << 11;
-      return (int)v8;
-    }
-  }
-  else
-  {
-    v2 = *ProgressTimer::GetValue((_WORD *)this + 452, &v7);
-    LOBYTE(v4) = 0;
-    HIBYTE(v4) = ((v2 >> 7) + 1) >> 1;
-    *(_WORD *)v8 = v4;
-    return (int)v8;
-  }
+int angleOut;
+if (this->target) {
+    if (!this->HasOccupantAudio() || this->q520->TurretAnimIsVoxel)
+        return this->GetTurretAngle(&angleOut, this->target);
+    unsigned int progress = *ProgressTimer::GetValue(&this->primaryFacing, &angleOut);
+    return ((((progress >> 10) + 1) >> 1) & 0x1F) << 11;
 }
+unsigned int progress = *ProgressTimer::GetValue(&this->primaryFacing, &angleOut);
+return (((progress >> 7) + 1) >> 1) << 8;
 }
 // 0x44abd0
 void BuildingClass::FireLaser() {}
@@ -23350,24 +23270,17 @@ void BuildingClass::UpdateTerrainEffect() {}
 // IDA 0x483620: check if eligible for tiberium collection
 // 0x483620
 bool BuildingClass::IsTiberiumCollectorEligible() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_483620(int this)
-{
-  int BuildingByTiberiumType; // eax
-  int v4; // eax
-
-  if ( !*(_BYTE *)(MEMORY[0x87F7E8][536210] + 13478) )
-    return 0;
-  BuildingByTiberiumType = FindBuildingByTiberiumType(*(_DWORD *)(this + 68));
-  if ( BuildingByTiberiumType == -1 )
-    return 0;
-  v4 = *(_DWORD *)(dword_A8ED54[131558] + 4 * BuildingByTiberiumType);
-  if ( *(_BYTE *)(this + 284) )
-    return 0;
-  if ( *(unsigned __int8 *)(this + 286) < *(_DWORD *)(v4 + 228) - 1 )
-    return *(double *)(v4 + 176) >= 0.00001;
-  return 0;
-}
+if (!*((_BYTE*)g_ScenarioClass_Instance + 13478))
+    return false;
+int storageTypeIndex = FindBuildingByTiberiumType(this->q044);
+if (storageTypeIndex == -1)
+    return false;
+int storageType = ((int*)BuildingClass_InstanceArray)[storageTypeIndex];
+if (this->transporter)
+    return false;
+if ((unsigned char)this->q11E < *(unsigned int*)(storageType + 228) - 1)
+    return *(double*)(storageType + 176) >= 0.00001;
+return false;
 
 /* ASM:
 mov     eax, ds:0A8B230h
@@ -23435,24 +23348,19 @@ retn
 // IDA 0x483690: check if eligible for tiberium storage
 // 0x483690
 bool BuildingClass::IsTiberiumSiloEligible() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_483690(int this)
-{
-  int BuildingByTiberiumType; // edi
-
-  if ( *(char *)MEMORY[0x87F7E8][536210] >= 0 )
-    return 0;
-  BuildingByTiberiumType = FindBuildingByTiberiumType(*(_DWORD *)(this + 68));
-  if ( BuildingByTiberiumType == -1 )
-    return 0;
-  if ( *(unsigned __int8 *)(this + 286) <= BuildingByTiberiumType / 2 )
-    return 0;
-  if ( *(_BYTE *)(this + 284) )
-    return 0;
-  if ( *(double *)(*(_DWORD *)(dword_A8ED54[131558] + 4 * BuildingByTiberiumType) + 160) >= 0.00001 )
-    return *(_DWORD *)(this + 228) == 0;
-  return 0;
-}
+if (*(char*)g_ScenarioClass_Instance >= 0)
+    return false;
+int storageTypeIndex = FindBuildingByTiberiumType(this->q044);
+if (storageTypeIndex == -1)
+    return false;
+int storageType = ((int*)BuildingClass_InstanceArray)[storageTypeIndex];
+if ((unsigned char)this->q11E <= storageTypeIndex / 2)
+    return false;
+if (this->transporter)
+    return false;
+if (*(double*)(storageType + 160) >= 0.00001)
+    return this->q0E4 == 0;
+return false;
 
 /* ASM:
 mov     eax, ds:0A8B230h
@@ -23870,37 +23778,23 @@ void BuildingClass::DisguiseDetectorActivate(CellStruct cell) {}
 void BuildingClass::DisguiseDetectorDeactivate(CellStruct cell) {}
 // 0x480110
 Point2D BuildingClass::CalcDrawPos() const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BuildingClass_CalcDrawPos(int this, _DWORD *a2)
-{
-  int *v3; // eax
-  int v4; // edx
-  int v5; // ecx
-  unsigned __int8 v6; // al
-  int v8; // ecx
-  _BYTE v9[8]; // [esp+4h] [ebp-8h] BYREF
-
-  v3 = (int *)globalHelper_0FDCC0(v9, *(_DWORD *)(this + 68));
-  v4 = *v3;
-  v5 = v3[1];
-  if ( *(char *)(this + 320) >= 0 )
-  {
-    if ( *(_DWORD *)(this + 68) == 239 )
-LABEL_6:
-      v5 -= 15;
-  }
-  else
-  {
-    v6 = *(_BYTE *)(this + 286);
-    v5 -= 16;
-    if ( v6 >= 9u && v6 <= 0x11u )
-      goto LABEL_6;
-  }
-  v8 = MEMORY[0x886FA4] - 15 * *(char *)(this + 283) + v5;
-  *a2 = v4 + 30;
-  a2[1] = v8 + 15;
-  return a2;
+Point2D out;
+int* baseCoords = globalHelper_0FDCC0((int*)&out, this->q044);
+int baseX = baseCoords[0];
+int baseY = baseCoords[1];
+if ((char)this->gattlingStage >= 0) {
+    if (this->q044 == 239)
+        baseY -= 15;
+} else {
+    unsigned int gateStage = this->q11E;
+    baseY -= 16;
+    if (gateStage >= 9 && gateStage <= 0x11)
+        baseY -= 15;
 }
+int drawY = *(int*)&DataGlobal_87F8E4[14104] - 15 * (char)this->q11B + baseY;
+out.X = baseX + 30;
+out.Y = drawY + 15;
+return out;
 /* ASM:
 sub     esp, 8
 push    esi

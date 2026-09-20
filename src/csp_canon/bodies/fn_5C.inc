@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x005C0080  Entity_Load  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0080  Entity_Load  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_5C0080(char ** a1, unsigned char * a2)
 {
 {
@@ -16,7 +16,7 @@ char sub_5C0080(char ** a1, unsigned char * a2)
 }
 }
 
-// ==== BACKFILL 0x005C0280  AbstractClass::checkLOS  cls=VQMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0280  AbstractClass::checkLOS  cls=VQMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void AbstractClass::checkLOS(int a1) {
 {
     int *v2;
@@ -41,7 +41,7 @@ namespace ra2 { namespace game { void AbstractClass::checkLOS(int a1) {
 }
 } } }
 
-// ==== BACKFILL 0x005C02C0  AbstractClass::computePathCost  cls=VQMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C02C0  AbstractClass::computePathCost  cls=VQMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::computePathCost() {
 {
     char result;
@@ -52,7 +52,7 @@ namespace ra2 { namespace game { int AbstractClass::computePathCost() {
 }
 } } }
 
-// ==== BACKFILL 0x005C02E0  AbstractClass::validatePathNode  cls=VQMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C02E0  AbstractClass::validatePathNode  cls=VQMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 char AbstractClass::validatePathNode()
 {
 {
@@ -60,7 +60,7 @@ char AbstractClass::validatePathNode()
 }
 }
 
-// ==== BACKFILL 0x005C02F0  AbstractClass::processPathNode  cls=VQMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C02F0  AbstractClass::processPathNode  cls=VQMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::processPathNode() {
 {
     char **v1;
@@ -75,13 +75,13 @@ namespace ra2 { namespace game { int AbstractClass::processPathNode() {
 }
 } } }
 
-// ==== BACKFILL 0x005C0330  nullsub_176  cls=VQMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0330  nullsub_176  cls=VQMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_176()
 {
   ;
 }
 
-// ==== BACKFILL 0x005C0340  AbstractClass::computePathDistance  cls=VQMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0340  AbstractClass::computePathDistance  cls=VQMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::computePathDistance(int a2, int a3) {
 {
     int *v3;
@@ -101,14 +101,14 @@ namespace ra2 { namespace game { int AbstractClass::computePathDistance(int a2, 
 }
 } } }
 
-// ==== BACKFILL 0x005C0380  AbstractClass::checkPathEnd  cls=VQMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0380  AbstractClass::checkPathEnd  cls=VQMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::checkPathEnd(int a1) {
 {
     return AbstractClass::getTotalValue(*(int **)(this->uniqueId + 72), a2);
 }
 } } }
 
-// ==== BACKFILL 0x005C03A0  AbstractClass::finalizePath  cls=VQMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C03A0  AbstractClass::finalizePath  cls=VQMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void AbstractClass::finalizePath(int a1) {
 {
     AbstractClass::finalizeConstruction(*(void**)this->uniqueId);
@@ -116,13 +116,13 @@ namespace ra2 { namespace game { void AbstractClass::finalizePath(int a1) {
 }
 } } }
 
-// ==== BACKFILL 0x005C03C0  AbstractClass::resetPathState  cls=VQMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C03C0  AbstractClass::resetPathState  cls=VQMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::resetPathState()
 {
 return 33;
 }
 
-// ==== BACKFILL 0x005C0540  BinkMovieHandle::?  cls=BinkMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0540  BinkMovieHandle::?  cls=BinkMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 int BinkMovieHandle::_vt03(unsigned char a2)
 {
 {
@@ -130,7 +130,7 @@ int BinkMovieHandle::_vt03(unsigned char a2)
 }
 }
 
-// ==== BACKFILL 0x005C0550  BinkMovieHandle::InitFromFile  cls=BinkMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0550  BinkMovieHandle::InitFromFile  cls=BinkMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 int BinkMovieHandle::InitFromFile()
 {
 {
@@ -142,7 +142,7 @@ int BinkMovieHandle::InitFromFile()
 }
 }
 
-// ==== BACKFILL 0x005C0570  BinkMovieHandle::COMStub  cls=BinkMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0570  BinkMovieHandle::COMStub  cls=BinkMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 BOOL BinkMovieHandle::COMStub()
 {
 {
@@ -150,7 +150,7 @@ BOOL BinkMovieHandle::COMStub()
 }
 }
 
-// ==== BACKFILL 0x005C0580  BinkMovieHandle::AddRef  cls=BinkMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0580  BinkMovieHandle::AddRef  cls=BinkMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 bool BinkMovieHandle::AddRef()
 {
 {
@@ -158,7 +158,7 @@ bool BinkMovieHandle::AddRef()
 }
 }
 
-// ==== BACKFILL 0x005C0590  BinkMovieHandle::Release  cls=BinkMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0590  BinkMovieHandle::Release  cls=BinkMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 int BinkMovieHandle::Release()
 {
 {
@@ -172,7 +172,7 @@ int BinkMovieHandle::Release()
 }
 }
 
-// ==== BACKFILL 0x005C05A0  BinkMovieHandle::Pause  cls=BinkMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C05A0  BinkMovieHandle::Pause  cls=BinkMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 int BinkMovieHandle::Pause(int a2, int a3)
 {
 {
@@ -180,7 +180,7 @@ int BinkMovieHandle::Pause(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x005C05C0  BinkMovieHandle::RenderLoop  cls=BinkMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C05C0  BinkMovieHandle::RenderLoop  cls=BinkMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 int BinkMovieHandle::RenderLoop(int a2)
 {
 {
@@ -188,7 +188,7 @@ int BinkMovieHandle::RenderLoop(int a2)
 }
 }
 
-// ==== BACKFILL 0x005C05D0  BinkMovieHandle::AdjustSurfaceFormat  cls=BinkMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C05D0  BinkMovieHandle::AdjustSurfaceFormat  cls=BinkMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 int BinkMovieHandle::AdjustSurfaceFormat(int a2)
 {
 {
@@ -196,7 +196,7 @@ int BinkMovieHandle::AdjustSurfaceFormat(int a2)
 }
 }
 
-// ==== BACKFILL 0x005C05E0  BinkMovieHandle::BlitToTarget  cls=BinkMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C05E0  BinkMovieHandle::BlitToTarget  cls=BinkMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 unsigned int BinkMovieHandle::BlitToTarget()
 {
 {
@@ -204,7 +204,7 @@ unsigned int BinkMovieHandle::BlitToTarget()
 }
 }
 
-// ==== BACKFILL 0x005C05F0  BinkMovieHandle::Close  cls=BinkMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C05F0  BinkMovieHandle::Close  cls=BinkMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * BinkMovieHandle::Close()
 {
 {
@@ -212,7 +212,7 @@ unsigned int * BinkMovieHandle::Close()
 }
 }
 
-// ==== BACKFILL 0x005C0630  sub_5C0630  cls=MovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0630  sub_5C0630  cls=MovieHandle  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5C0630::sub_5C0630()
 {
 {
@@ -220,7 +220,7 @@ void E4Recv_5C0630::sub_5C0630()
 }
 }
 
-// ==== BACKFILL 0x005C0640  Render_Play  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0640  Render_Play  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_5C0640(const char * a1, char * a2, int a3)
 {
 {
@@ -269,7 +269,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x005C09B0  AbstractClass::processCombatState  cls=VQMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C09B0  AbstractClass::processCombatState  cls=VQMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* AbstractClass::processCombatState(int a2) {
 {
     AbstractClass **v3;
@@ -306,7 +306,7 @@ namespace ra2 { namespace game { void* AbstractClass::processCombatState(int a2)
 }
 } } }
 
-// ==== BACKFILL 0x005C0A30  BinkMovieHandle::QueryInterface  cls=BinkMovieHandle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0A30  BinkMovieHandle::QueryInterface  cls=BinkMovieHandle  sig=csp  renamed_refs=0  residual=- ====
 BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
 {
 {
@@ -325,7 +325,7 @@ BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x005C0A70  TacticalClass::ClearVector  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0A70  TacticalClass::ClearVector  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void TacticalClass::ClearVector() {
 {
     void *v2;
@@ -341,7 +341,7 @@ namespace gamemd { void TacticalClass::ClearVector() {
 }
 } }
 
-// ==== BACKFILL 0x005C0AA0  TacticalClass::ProbeCalling  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0AA0  TacticalClass::ProbeCalling  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TacticalClass::ProbeCalling(int a1) {
 {
       if ( this->q00C )
@@ -351,7 +351,7 @@ namespace gamemd { int TacticalClass::ProbeCalling(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x005C0B10  AbstractClass::checkCombatFlags  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0B10  AbstractClass::checkCombatFlags  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::checkCombatFlags(int a2, void* a3) {
 {
     int *v4;
@@ -398,7 +398,7 @@ namespace ra2 { namespace game { int AbstractClass::checkCombatFlags(int a2, voi
 }
 } } }
 
-// ==== BACKFILL 0x005C0BC0  AbstractClass::processDamageEvent  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0BC0  AbstractClass::processDamageEvent  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void AbstractClass::processDamageEvent() {
 {
     if ( this->vtable1 && this->IsAllocated )
@@ -411,7 +411,7 @@ namespace ra2 { namespace game { void AbstractClass::processDamageEvent() {
 }
 } } }
 
-// ==== BACKFILL 0x005C0BF0  AbstractClass::applyDamageEffects  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0BF0  AbstractClass::applyDamageEffects  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::applyDamageEffects(void* a1) {
 {
       int result;
@@ -433,7 +433,7 @@ namespace ra2 { namespace game { int AbstractClass::applyDamageEffects(void* a1)
 }
 } } }
 
-// ==== BACKFILL 0x005C0C30  AbstractClass::checkDamageThreshold  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0C30  AbstractClass::checkDamageThreshold  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::checkDamageThreshold(int a1) {
 {
       if ( this->vtable3 )
@@ -443,7 +443,7 @@ namespace ra2 { namespace game { int AbstractClass::checkDamageThreshold(int a1)
 }
 } } }
 
-// ==== BACKFILL 0x005C0C50  TacticalClass::ReallocVector  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0C50  TacticalClass::ReallocVector  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TacticalClass::ReallocVector(int a1, void* a2) {
 {
       _DWORD *v4;
@@ -489,7 +489,7 @@ namespace gamemd { int TacticalClass::ReallocVector(int a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x005C0D00  TacticalClass::FindInVector  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0D00  TacticalClass::FindInVector  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TacticalClass::FindInVector(void* a1) {
 {
       int v2;
@@ -509,7 +509,7 @@ namespace gamemd { int TacticalClass::FindInVector(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x005C0D30  AbstractClass::processDeathEvent  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0D30  AbstractClass::processDeathEvent  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* AbstractClass::processDeathEvent(int a2) {
 {
     void *v3;
@@ -528,7 +528,7 @@ namespace ra2 { namespace game { void* AbstractClass::processDeathEvent(int a2) 
 }
 } } }
 
-// ==== BACKFILL 0x005C0DD0  MPBattleClass::initGame  cls=MPBattleClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0DD0  MPBattleClass::initGame  cls=MPBattleClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * aP2, const char ** a3, MultiplayerBattle * aP4, char aP5, MultiplayerBattle * aP6)
 {
 {
@@ -538,7 +538,7 @@ unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * 
 }
 }
 
-// ==== BACKFILL 0x005C0E10  sub_5C0E10  cls=MultiplayerBattle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0E10  sub_5C0E10  cls=MultiplayerBattle  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5C0E10::sub_5C0E10()
 {
 {
@@ -547,49 +547,49 @@ void E4Recv_5C0E10::sub_5C0E10()
 }
 }
 
-// ==== BACKFILL 0x005C0E20  ScenarioClass::initUnits  cls=MultiplayerBattle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0E20  ScenarioClass::initUnits  cls=MultiplayerBattle  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::initUnits()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005C0E30  ScenarioClass::StubReturnFalse  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0E30  ScenarioClass::StubReturnFalse  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::StubReturnFalse()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x005C0E40  ScenarioClass::StubReturnFalse2  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0E40  ScenarioClass::StubReturnFalse2  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::StubReturnFalse2()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x005C0E50  ScenarioClass::StubReturnFalse3  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0E50  ScenarioClass::StubReturnFalse3  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::StubReturnFalse3(int a1)
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005C0E60  ScenarioClass::StubReturnTrue  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0E60  ScenarioClass::StubReturnTrue  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 void ScenarioClass::StubReturnTrue()
 {
   ;
 }
 
-// ==== BACKFILL 0x005C0E70  ScenarioClass::StubReturnTrue2  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0E70  ScenarioClass::StubReturnTrue2  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 void ScenarioClass::StubReturnTrue2()
 {
   ;
 }
 
-// ==== BACKFILL 0x005C0E80  ScenarioClass::StubReturnFalse4  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0E80  ScenarioClass::StubReturnFalse4  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 void ScenarioClass::StubReturnFalse4(int a1)
 {
   ;
 }
 
-// ==== BACKFILL 0x005C0E90  Memory::FreeConditional  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0E90  Memory::FreeConditional  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char Memory::FreeConditional(int a1, int a2, void * Block, int a4, short a5, int a6, int a7, int a8, int a9)
 {
 {
@@ -599,85 +599,85 @@ char Memory::FreeConditional(int a1, int a2, void * Block, int a4, short a5, int
 }
 }
 
-// ==== BACKFILL 0x005C0ED0  ScenarioClass::StubReturnFalse5  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0ED0  ScenarioClass::StubReturnFalse5  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::StubReturnFalse5(int a1, int a2, int a3)
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005C0EE0  ScenarioClass::initTriggers  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0EE0  ScenarioClass::initTriggers  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::initTriggers()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005C0EF0  ScenarioClass::StubReturnFalse6  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0EF0  ScenarioClass::StubReturnFalse6  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 void ScenarioClass::StubReturnFalse6(int a1, int a2)
 {
   ;
 }
 
-// ==== BACKFILL 0x005C0F00  ScenarioClass::StubReturnFalse7  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0F00  ScenarioClass::StubReturnFalse7  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 void ScenarioClass::StubReturnFalse7(int a1)
 {
   ;
 }
 
-// ==== BACKFILL 0x005C0F10  ScenarioClass::StubReturnTrue3  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0F10  ScenarioClass::StubReturnTrue3  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 void ScenarioClass::StubReturnTrue3()
 {
   ;
 }
 
-// ==== BACKFILL 0x005C0F20  ScenarioClass::StubReturnTrue4  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0F20  ScenarioClass::StubReturnTrue4  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 void ScenarioClass::StubReturnTrue4()
 {
   ;
 }
 
-// ==== BACKFILL 0x005C0F30  ScenarioClass::initTeams  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0F30  ScenarioClass::initTeams  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 int ScenarioClass::initTeams()
 {
 return -1;
 }
 
-// ==== BACKFILL 0x005C0F40  ScenarioClass::StubReturnTrue5  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0F40  ScenarioClass::StubReturnTrue5  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 void ScenarioClass::StubReturnTrue5()
 {
   ;
 }
 
-// ==== BACKFILL 0x005C0F50  ScenarioClass::StubReturnFalse8  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0F50  ScenarioClass::StubReturnFalse8  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 void ScenarioClass::StubReturnFalse8(int a1)
 {
   ;
 }
 
-// ==== BACKFILL 0x005C0F60  ScenarioClass::StubReturnFalse9  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0F60  ScenarioClass::StubReturnFalse9  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 void ScenarioClass::StubReturnFalse9(int a1)
 {
   ;
 }
 
-// ==== BACKFILL 0x005C0F70  ScenarioClass::StubReturnFalse10  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0F70  ScenarioClass::StubReturnFalse10  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::StubReturnFalse10()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x005C0F80  ScenarioClass::StubReturnTrue6  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0F80  ScenarioClass::StubReturnTrue6  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 void ScenarioClass::StubReturnTrue6()
 {
   ;
 }
 
-// ==== BACKFILL 0x005C0F90  ScenarioClass::StubReturnTrue7  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0F90  ScenarioClass::StubReturnTrue7  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 void ScenarioClass::StubReturnTrue7()
 {
   ;
 }
 
-// ==== BACKFILL 0x005C0FA0  Memory::FreeConditional2  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0FA0  Memory::FreeConditional2  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char Memory::FreeConditional2(int a1, void * Block, int a3, short a4, int a5, int a6, int a7)
 {
 {
@@ -687,19 +687,19 @@ char Memory::FreeConditional2(int a1, void * Block, int a3, short a4, int a5, in
 }
 }
 
-// ==== BACKFILL 0x005C0FC0  ScenarioClass::StubReturnFalse11  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0FC0  ScenarioClass::StubReturnFalse11  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 int ScenarioClass::StubReturnFalse11()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x005C0FD0  ScenarioClass::initWaypoints  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0FD0  ScenarioClass::initWaypoints  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::initWaypoints()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005C0FE0  ScenarioClass::initAI  cls=MultiplayerBattle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C0FE0  ScenarioClass::initAI  cls=MultiplayerBattle  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* ScenarioClass::initAI(int a2) {
 {
     this->vfptr = &vt_MultiplayerBattle;
@@ -710,7 +710,7 @@ namespace gamemd { void* ScenarioClass::initAI(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x005C1980  MPCooperative_Copy  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C1980  MPCooperative_Copy  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_5C1980()
 {
 {
@@ -744,7 +744,7 @@ int sub_5C1980()
 }
 }
 
-// ==== BACKFILL 0x005C1D80  MPCooperative::Write  cls=MPCooperative  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x005C1D80  MPCooperative::Write  cls=MPCooperative  sig=csp  renamed_refs=1  residual=- ====
 char MPCooperative::Write(int a2)
 {
 {
@@ -759,7 +759,7 @@ char MPCooperative::Write(int a2)
 }
 }
 
-// ==== BACKFILL 0x005C21A0  MPCooperative::CheckReady  cls=MPCooperative  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C21A0  MPCooperative::CheckReady  cls=MPCooperative  sig=csp  renamed_refs=0  residual=- ====
 HWND MPCooperative::CheckReady(HWND hDlg)
 {
 {
@@ -771,7 +771,7 @@ HWND MPCooperative::CheckReady(HWND hDlg)
 }
 }
 
-// ==== BACKFILL 0x005C2500  Campaign::SetupMovie  cls=Campaign  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C2500  Campaign::SetupMovie  cls=Campaign  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { namespace wdt { void Campaign::SetupMovie() {
 {
       HWND v2;
@@ -867,7 +867,7 @@ namespace gamemd { namespace wdt { void Campaign::SetupMovie() {
 }
 } } }
 
-// ==== BACKFILL 0x005C2640  MPCooperative::Clone  cls=MPCooperative  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C2640  MPCooperative::Clone  cls=MPCooperative  sig=csp  renamed_refs=0  residual=- ====
 void MPCooperative::Clone(HWND hDlg)
 {
 {
@@ -887,7 +887,7 @@ void MPCooperative::Clone(HWND hDlg)
 }
 }
 
-// ==== BACKFILL 0x005C2CB0  MPCooperative::ValidateSettings  cls=MPCooperative  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C2CB0  MPCooperative::ValidateSettings  cls=MPCooperative  sig=csp  renamed_refs=0  residual=- ====
 char MPCooperative::ValidateSettings()
 {
 {
@@ -899,7 +899,7 @@ char MPCooperative::ValidateSettings()
 }
 }
 
-// ==== BACKFILL 0x005C2CE0  MPCooperative::SaveSettings  cls=MPCooperative  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C2CE0  MPCooperative::SaveSettings  cls=MPCooperative  sig=csp  renamed_refs=0  residual=- ====
 int MPCooperative::SaveSettings(HWND hWnd, int a3)
 {
 {
@@ -907,7 +907,7 @@ int MPCooperative::SaveSettings(HWND hWnd, int a3)
 }
 }
 
-// ==== BACKFILL 0x005C36F0  MPCooperative::j_?do_always_noconv_codecvt_base_std__MBE_NXZ_17  cls=MPCooperative  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C36F0  MPCooperative::j_?do_always_noconv_codecvt_base_std__MBE_NXZ_17  cls=MPCooperative  sig=csp  renamed_refs=0  residual=- ====
 int MPCooperative::j__do_always_noconv_codecvt_base_std__MBE_NXZ_17()
 {
     bool __thiscall MPCooperative::j__do_always_noconv_codecvt_base_std__MBE_NXZ_17(std::codecvt_base *(void**)this)
@@ -916,13 +916,13 @@ int MPCooperative::j__do_always_noconv_codecvt_base_std__MBE_NXZ_17()
 }
 }
 
-// ==== BACKFILL 0x005C3700  MPCooperative::StubReturnFalse  cls=MPCooperative  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C3700  MPCooperative::StubReturnFalse  cls=MPCooperative  sig=csp  renamed_refs=0  residual=- ====
 char MPCooperative::StubReturnFalse()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x005C3F30  MPCooperative::Cleanup  cls=MPCooperative  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C3F30  MPCooperative::Cleanup  cls=MPCooperative  sig=csp  renamed_refs=0  residual=- ====
 int MPCooperative::Cleanup()
 {
 {
@@ -942,13 +942,13 @@ int MPCooperative::Cleanup()
 }
 }
 
-// ==== BACKFILL 0x005C42C0  MPCooperative::COMStub_Ret2  cls=MPCooperative  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C42C0  MPCooperative::COMStub_Ret2  cls=MPCooperative  sig=csp  renamed_refs=0  residual=- ====
 int MPCooperative::COMStub_Ret2()
 {
 return 2;
 }
 
-// ==== BACKFILL 0x005C4670  MPCooperative::checkVictory  cls=MPCooperative  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x005C4670  MPCooperative::checkVictory  cls=MPCooperative  sig=csp  renamed_refs=3  residual=- ====
 int MPCooperative::checkVictory()
 {
 {
@@ -973,7 +973,7 @@ int MPCooperative::checkVictory()
 }
 }
 
-// ==== BACKFILL 0x005C4E90  MPCooperative::spawnUnits  cls=MPCooperative  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x005C4E90  MPCooperative::spawnUnits  cls=MPCooperative  sig=csp  renamed_refs=1  residual=- ====
 char MPCooperative::spawnUnits(int a2, void * Block, int a4, short a5, int a6, int a7, unsigned int * a8)
 {
 {
@@ -996,25 +996,25 @@ char MPCooperative::spawnUnits(int a2, void * Block, int a4, short a5, int a6, i
 }
 }
 
-// ==== BACKFILL 0x005C4EE0  MPCooperative::assignResources  cls=MPCooperative  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C4EE0  MPCooperative::assignResources  cls=MPCooperative  sig=csp  renamed_refs=0  residual=- ====
 char MPCooperative::assignResources()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005C4EF0  MPCooperative::setUpAlliances  cls=MPCooperative  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C4EF0  MPCooperative::setUpAlliances  cls=MPCooperative  sig=csp  renamed_refs=0  residual=- ====
 char MPCooperative::setUpAlliances()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005C4F00  MPCooperative::initTurnOrder  cls=MPCooperative  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C4F00  MPCooperative::initTurnOrder  cls=MPCooperative  sig=csp  renamed_refs=0  residual=- ====
 char MPCooperative::initTurnOrder()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x005C4FC0  MPCooperative::saveGameState  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C4FC0  MPCooperative::saveGameState  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 DynamicVector * MPCooperative::saveGameState(char a2)
 {
 {
@@ -1034,7 +1034,7 @@ DynamicVector * MPCooperative::saveGameState(char a2)
 }
 }
 
-// ==== BACKFILL 0x005C5010  MPCooperative::loadGameState  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C5010  MPCooperative::loadGameState  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 void MPCooperative::loadGameState()
 {
 {
@@ -1051,7 +1051,7 @@ void MPCooperative::loadGameState()
 }
 }
 
-// ==== BACKFILL 0x005C5040  MPCooperative::syncPlayers  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C5040  MPCooperative::syncPlayers  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 unsigned int MPCooperative::syncPlayers(int a2)
 {
 {
@@ -1062,7 +1062,7 @@ unsigned int MPCooperative::syncPlayers(int a2)
 }
 }
 
-// ==== BACKFILL 0x005C50D0  MPCooperative::processPlayerInput  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C50D0  MPCooperative::processPlayerInput  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 void MPCooperative::processPlayerInput()
 {
 {
@@ -1079,7 +1079,7 @@ void MPCooperative::processPlayerInput()
 }
 }
 
-// ==== BACKFILL 0x005C5100  MPCooperative::updateGameClock  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C5100  MPCooperative::updateGameClock  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 unsigned int MPCooperative::updateGameClock(int a2)
 {
 {
@@ -1090,7 +1090,7 @@ unsigned int MPCooperative::updateGameClock(int a2)
 }
 }
 
-// ==== BACKFILL 0x005C5170  MPCooperative::Release  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C5170  MPCooperative::Release  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 char MPCooperative::Release(int a2, unsigned int * a3)
 {
 {
@@ -1138,7 +1138,7 @@ char MPCooperative::Release(int a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x005C5220  MPCooperative::ddtor  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C5220  MPCooperative::ddtor  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 void MPCooperative::ddtor()
 {
 {
@@ -1152,7 +1152,7 @@ void MPCooperative::ddtor()
 }
 }
 
-// ==== BACKFILL 0x005C5250  MPCooperative::checkTimeout  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C5250  MPCooperative::checkTimeout  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 int MPCooperative::checkTimeout(unsigned int * a2)
 {
 {
@@ -1174,7 +1174,7 @@ int MPCooperative::checkTimeout(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x005C5290  MPCooperative::handleDisconnect  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C5290  MPCooperative::handleDisconnect  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int MPCooperative::handleDisconnect(int a2)
 {
 {
@@ -1185,7 +1185,7 @@ unsigned int MPCooperative::handleDisconnect(int a2)
 }
 }
 
-// ==== BACKFILL 0x005C52B0  MPCooperative::migrateHost  cls=DynamicVector  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x005C52B0  MPCooperative::migrateHost  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 char MPCooperative::migrateHost(int a2, unsigned int * a3)
 {
 {
@@ -1195,12 +1195,12 @@ char MPCooperative::migrateHost(int a2, unsigned int * a3)
     int v7;
     if ( a2 )
   {
-    this->__pad_00C = 0;
+    this->IsInitialized = 0;
     if ( a3 )
     v4 = a3;
     else
     v4 = __2_YAPAXI_Z(4 * a2);
-    this->__pad_00C = 1;
+    this->IsInitialized = 1;
     if ( !v4 )
     return 0;
     if ( this->MPCooperative_field_0x4 )
@@ -1231,7 +1231,7 @@ char MPCooperative::migrateHost(int a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x005C5360  MPCooperative::validatePlayerAction  cls=DynamicVector  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x005C5360  MPCooperative::validatePlayerAction  cls=DynamicVector  sig=csp  renamed_refs=1  residual=- ====
 int MPCooperative::validatePlayerAction(unsigned int * a2)
 {
 {
@@ -1242,7 +1242,7 @@ int MPCooperative::validatePlayerAction(unsigned int * a2)
     result = 0;
     if ( v2 <= 0 )
     return -1;
-    for ( i = (int *)this->q004; *i != *a2; ++i )
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
     if ( ++result >= v2 )
     return -1;
@@ -1251,7 +1251,7 @@ int MPCooperative::validatePlayerAction(unsigned int * a2)
 }
 } // namespace gamemd
 
-// ==== BACKFILL 0x005C53D0  MPCooperative::processTeamChat  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C53D0  MPCooperative::processTeamChat  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 char MPCooperative::processTeamChat(int a2, unsigned int * a3)
 {
 {
@@ -1299,7 +1299,7 @@ char MPCooperative::processTeamChat(int a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x005C5480  MPCooperative::updateScoreBoard  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C5480  MPCooperative::updateScoreBoard  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 void MPCooperative::updateScoreBoard()
 {
 {
@@ -1313,7 +1313,7 @@ void MPCooperative::updateScoreBoard()
 }
 }
 
-// ==== BACKFILL 0x005C54B0  MPCooperative::processAITurn  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C54B0  MPCooperative::processAITurn  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 int MPCooperative::processAITurn(unsigned int * a2)
 {
 {
@@ -1335,7 +1335,7 @@ int MPCooperative::processAITurn(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x005C54F0  MPCooperative::evaluateAIStrategy  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C54F0  MPCooperative::evaluateAIStrategy  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int MPCooperative::evaluateAIStrategy(int a2)
 {
 {
@@ -1346,7 +1346,7 @@ unsigned int MPCooperative::evaluateAIStrategy(int a2)
 }
 }
 
-// ==== BACKFILL 0x005C5770  MPCooperative::broadcastMessage  cls=DynamicVector  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x005C5770  MPCooperative::broadcastMessage  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 char MPCooperative::broadcastMessage(int a2, unsigned int * a3)
 {
 {
@@ -1356,12 +1356,12 @@ char MPCooperative::broadcastMessage(int a2, unsigned int * a3)
     int v7;
     if ( a2 )
   {
-    this->__pad_00C = 0;
+    this->IsInitialized = 0;
     if ( a3 )
     v4 = a3;
     else
     v4 = __2_YAPAXI_Z(4 * a2);
-    this->__pad_00C = 1;
+    this->IsInitialized = 1;
     if ( !v4 )
     return 0;
     if ( this->MPCooperative_field_0x4 )
@@ -1392,7 +1392,7 @@ char MPCooperative::broadcastMessage(int a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x005C5820  MPCooperative::handlePlayerReady  cls=DynamicVector  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x005C5820  MPCooperative::handlePlayerReady  cls=DynamicVector  sig=csp  renamed_refs=1  residual=- ====
 int MPCooperative::handlePlayerReady(unsigned int * a2)
 {
 {
@@ -1403,7 +1403,7 @@ int MPCooperative::handlePlayerReady(unsigned int * a2)
     result = 0;
     if ( v2 <= 0 )
     return -1;
-    for ( i = (int *)this->q004; *i != *a2; ++i )
+    for ( i = (int *)this->Items; *i != *a2; ++i )
   {
     if ( ++result >= v2 )
     return -1;
@@ -1412,7 +1412,7 @@ int MPCooperative::handlePlayerReady(unsigned int * a2)
 }
 } // namespace gamemd
 
-// ==== BACKFILL 0x005C5850  MPCooperative::verifyGameIntegrity  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C5850  MPCooperative::verifyGameIntegrity  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 VectorClass * MPCooperative::verifyGameIntegrity(char a2)
 {
 {
@@ -1432,7 +1432,7 @@ VectorClass * MPCooperative::verifyGameIntegrity(char a2)
 }
 }
 
-// ==== BACKFILL 0x005C58A0  MPCooperative::processVote  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C58A0  MPCooperative::processVote  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 VectorClass * MPCooperative::processVote(char a2)
 {
 {
@@ -1452,7 +1452,7 @@ VectorClass * MPCooperative::processVote(char a2)
 }
 }
 
-// ==== BACKFILL 0x005C5990  MPCooperative::tallyVotes  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C5990  MPCooperative::tallyVotes  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 DynamicVector * MPCooperative::tallyVotes(char a2)
 {
 {
@@ -1472,7 +1472,7 @@ DynamicVector * MPCooperative::tallyVotes(char a2)
 }
 }
 
-// ==== BACKFILL 0x005C59E0  MPCooperative::applyVoteResult  cls=MPCooperative  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x005C59E0  MPCooperative::applyVoteResult  cls=MPCooperative  sig=csp  renamed_refs=5  residual=- ====
 unsigned int * MPCooperative::applyVoteResult(int a2, int a3)
 {
 {
@@ -1495,7 +1495,7 @@ unsigned int * MPCooperative::applyVoteResult(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x005C5A30  AbstractClass::updateAnimationState  cls=AbstractClass  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x005C5A30  AbstractClass::updateAnimationState  cls=AbstractClass  sig=csp  renamed_refs=5  residual=IsAllocated ====
 namespace ra2 { namespace game { void* AbstractClass::updateAnimationState(int aP1, int aP2) {
 {
     this->vtable2 = 0;
@@ -1517,7 +1517,7 @@ namespace ra2 { namespace game { void* AbstractClass::updateAnimationState(int a
 }
 } } }
 
-// ==== BACKFILL 0x005C5A80  CoopCampaignVector::Construct  cls=CoopCampaignVector  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x005C5A80  CoopCampaignVector::Construct  cls=CoopCampaignVector  sig=csp  renamed_refs=5  residual=- ====
 unsigned int * CoopCampaignVector::Construct(MultiplayerGameMode * aP1, MultiplayerGameMode * aP2)
 {
 {
@@ -1540,7 +1540,7 @@ unsigned int * CoopCampaignVector::Construct(MultiplayerGameMode * aP1, Multipla
 }
 }
 
-// ==== BACKFILL 0x005C5CE0  MPBattleClass::MPFreeForAllClass  cls=MPBattleClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C5CE0  MPBattleClass::MPFreeForAllClass  cls=MPBattleClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll * aP2, const char ** a3, FreeForAll * aP4, char aP5, FreeForAll * aP6)
 {
 {
@@ -1550,7 +1550,7 @@ unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll 
 }
 }
 
-// ==== BACKFILL 0x005C5D20  sub_5C5D20  cls=FreeForAll  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C5D20  sub_5C5D20  cls=FreeForAll  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5C5D20::sub_5C5D20()
 {
 {
@@ -1559,13 +1559,13 @@ void E4Recv_5C5D20::sub_5C5D20()
 }
 }
 
-// ==== BACKFILL 0x005C5E30  ScenarioClass::processTriggerEvents  cls=FreeForAll  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C5E30  ScenarioClass::processTriggerEvents  cls=FreeForAll  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::processTriggerEvents()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005C5E40  ScenarioClass::executeTriggerActions  cls=FreeForAll  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C5E40  ScenarioClass::executeTriggerActions  cls=FreeForAll  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* ScenarioClass::executeTriggerActions(int a2) {
 {
     this->vfptr = &vt_FreeForAll;
@@ -1576,7 +1576,7 @@ namespace gamemd { void* ScenarioClass::executeTriggerActions(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x005C6080  sub_5C6080  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C6080  sub_5C6080  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5C6080(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 {
@@ -1592,7 +1592,7 @@ int sub_5C6080(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 }
 }
 
-// ==== BACKFILL 0x005C6150  MPBattleClass::MPManBattleClass  cls=MPBattleClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C6150  MPBattleClass::MPManBattleClass  cls=MPBattleClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerManBattle * aP2, const char ** a3, MultiplayerManBattle * aP4, char aP5, MultiplayerManBattle * aP6)
 {
 {
@@ -1602,7 +1602,7 @@ unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerM
 }
 }
 
-// ==== BACKFILL 0x005C6190  sub_5C6190  cls=MultiplayerManBattle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C6190  sub_5C6190  cls=MultiplayerManBattle  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5C6190::sub_5C6190()
 {
 {
@@ -1611,7 +1611,7 @@ void E4Recv_5C6190::sub_5C6190()
 }
 }
 
-// ==== BACKFILL 0x005C61A0  MultiplayerManBattle::QueryInterface  cls=MultiplayerManBattle  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C61A0  MultiplayerManBattle::QueryInterface  cls=MultiplayerManBattle  sig=csp  renamed_refs=0  residual=- ====
 MultiplayerManBattle * MultiplayerManBattle::QueryInterface(char a2)
 {
 {
@@ -1623,13 +1623,13 @@ MultiplayerManBattle * MultiplayerManBattle::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x005C61E0  Hash_Check_5C61E0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C61E0  Hash_Check_5C61E0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5C61E0()
 {
 return 3511;
 }
 
-// ==== BACKFILL 0x005C62B0  EncodeVarInt  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C62B0  EncodeVarInt  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VarInt_Encode(int a1, unsigned char * a2, int a3)
 {
 {
@@ -1686,7 +1686,7 @@ int VarInt_Encode(int a1, unsigned char * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x005C6490  EncodeVarInt_Helper  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C6490  EncodeVarInt_Helper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5C6490(unsigned char * a1, char * a2, int a3)
 {
 {
@@ -1717,7 +1717,7 @@ int sub_5C6490(unsigned char * a1, char * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x005C65B0  BigInt_Helper  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C65B0  BigInt_Helper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5C65B0(int * a1, int a2)
 {
 {
@@ -1734,7 +1734,7 @@ int sub_5C65B0(int * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x005C6940  InitArrayWithValue  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C6940  InitArrayWithValue  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int InitArrayWithValue(unsigned int * a0, int a2, AbstractClass * aP2)
 {
 {
@@ -1744,7 +1744,7 @@ int InitArrayWithValue(unsigned int * a0, int a2, AbstractClass * aP2)
 }
 }
 
-// ==== BACKFILL 0x005C69E0  CompareBigIntLE  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C69E0  CompareBigIntLE  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CompareBigIntLE(int a1, int a2, int a3)
 {
 {
@@ -1778,7 +1778,7 @@ int CompareBigIntLE(int a1, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x005C6A30  Crypto_Helper  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C6A30  Crypto_Helper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 bool Crypto_Helper(unsigned int * a0, unsigned int * a1, unsigned int * a2, Crypto * aP3, int a5)
 {
 {
@@ -1805,7 +1805,7 @@ bool Crypto_Helper(unsigned int * a0, unsigned int * a1, unsigned int * a2, Cryp
 }
 }
 
-// ==== BACKFILL 0x005C6AA0  sub_5C6AA0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C6AA0  sub_5C6AA0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 bool sub_5C6AA0(unsigned int * a1, unsigned int * a2, int a3, bool a4, int a5)
 {
 {
@@ -1834,7 +1834,7 @@ bool sub_5C6AA0(unsigned int * a1, unsigned int * a2, int a3, bool a4, int a5)
 }
 }
 
-// ==== BACKFILL 0x005C6B60  DecodeAudioSampleWord  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C6B60  DecodeAudioSampleWord  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned char DecodeAudioSampleWord(int a1, unsigned short * a2, unsigned short a3, unsigned char a4, int a5)
 {
 {
@@ -1861,7 +1861,7 @@ unsigned char DecodeAudioSampleWord(int a1, unsigned short * a2, unsigned short 
 }
 }
 
-// ==== BACKFILL 0x005C6D90  sub_5C6D90  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C6D90  sub_5C6D90  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5C6D90(int a1, unsigned short * a2, short a3, int a4)
 {
 {
@@ -1888,7 +1888,7 @@ int sub_5C6D90(int a1, unsigned short * a2, short a3, int a4)
 }
 }
 
-// ==== BACKFILL 0x005C7DB0  Math_Compute  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C7DB0  Math_Compute  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void sub_5C7DB0(unsigned short * a1, unsigned short * a2, unsigned short a3, int a4)
 {
 {
@@ -1920,7 +1920,7 @@ void sub_5C7DB0(unsigned short * a1, unsigned short * a2, unsigned short a3, int
 }
 }
 
-// ==== BACKFILL 0x005C8470  sub_5C8470  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C8470  sub_5C8470  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int E4Recv_5C8470::sub_5C8470()
 {
 {
@@ -1932,7 +1932,7 @@ unsigned int E4Recv_5C8470::sub_5C8470()
 }
 }
 
-// ==== BACKFILL 0x005C8DD0  ValidateRSAKey_Helper  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C8DD0  ValidateRSAKey_Helper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_5C8DD0(unsigned int * a1, int a2, int a3, int a4)
 {
 {
@@ -1950,7 +1950,7 @@ char sub_5C8DD0(unsigned int * a1, int a2, int a3, int a4)
 }
 }
 
-// ==== BACKFILL 0x005C93E0  MPBattleClass::MPMegawealthClass  cls=MPBattleClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C93E0  MPBattleClass::MPMegawealthClass  cls=MPBattleClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, MPCooperative * aP4, char aP5, int aP6)
 {
 {
@@ -1960,7 +1960,7 @@ unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar
 }
 }
 
-// ==== BACKFILL 0x005C9420  sub_5C9420  cls=Megawealth  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C9420  sub_5C9420  cls=Megawealth  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5C9420::sub_5C9420()
 {
 {
@@ -1969,7 +1969,7 @@ void E4Recv_5C9420::sub_5C9420()
 }
 }
 
-// ==== BACKFILL 0x005C9700  Scenario::ResetDisplayArrays  cls=Scenario  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005C9700  Scenario::ResetDisplayArrays  cls=Scenario  sig=csp  renamed_refs=0  residual=- ====
 void * Scenario::ResetDisplayArrays()
 {
 {
@@ -1980,7 +1980,7 @@ void * Scenario::ResetDisplayArrays()
 }
 }
 
-// ==== BACKFILL 0x005CA630  MPBattleClass::MPSiegeClass  cls=MPBattleClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CA630  MPBattleClass::MPSiegeClass  cls=MPBattleClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege * aP2, const char ** a3, MultiplayerSiege * aP4, char aP5, MultiplayerSiege * aP6)
 {
 {
@@ -1990,7 +1990,7 @@ unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege
 }
 }
 
-// ==== BACKFILL 0x005CA670  sub_5CA670  cls=MultiplayerSiege  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CA670  sub_5CA670  cls=MultiplayerSiege  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5CA670::sub_5CA670()
 {
 {
@@ -1999,7 +1999,7 @@ void E4Recv_5CA670::sub_5CA670()
 }
 }
 
-// ==== BACKFILL 0x005CA7D0  MPBattleClass::vt_entry_18  cls=MultiplayerSiege  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CA7D0  MPBattleClass::vt_entry_18  cls=MultiplayerSiege  sig=csp  renamed_refs=0  residual=- ====
 int MPBattleClass::vt_entry_18()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -2010,13 +2010,13 @@ bool __thiscall MPBattleClass::vt_entry_18(std::codecvt_base *this)
 }
 }
 
-// ==== BACKFILL 0x005CA7E0  MultiplayerSiege::StubReturnFalse  cls=MultiplayerSiege  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CA7E0  MultiplayerSiege::StubReturnFalse  cls=MultiplayerSiege  sig=csp  renamed_refs=0  residual=- ====
 char MultiplayerSiege::StubReturnFalse()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x005CA9B0  MultiplayerSiege::CheckStatus  cls=MultiplayerSiege  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CA9B0  MultiplayerSiege::CheckStatus  cls=MultiplayerSiege  sig=csp  renamed_refs=0  residual=- ====
 char MultiplayerSiege::CheckStatus(int a1)
 {
 {
@@ -2080,7 +2080,7 @@ char MultiplayerSiege::CheckStatus(int a1)
 }
 }
 
-// ==== BACKFILL 0x005CAAC0  MultiplayerSiege::GetResult  cls=MultiplayerSiege  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CAAC0  MultiplayerSiege::GetResult  cls=MultiplayerSiege  sig=csp  renamed_refs=0  residual=- ====
 char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
 {
 {
@@ -2136,7 +2136,7 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
 }
 }
 
-// ==== BACKFILL 0x005CABD0  MultiplayerSiege::QueryInterface  cls=MultiplayerSiege  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CABD0  MultiplayerSiege::QueryInterface  cls=MultiplayerSiege  sig=csp  renamed_refs=0  residual=- ====
 MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
 {
 {
@@ -2148,7 +2148,7 @@ MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x005CAE60  sub_5CAE60  cls=MultiplayerSiegeDefenderTeam  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CAE60  sub_5CAE60  cls=MultiplayerSiegeDefenderTeam  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5CAE60::sub_5CAE60()
 {
 {
@@ -2157,7 +2157,7 @@ void E4Recv_5CAE60::sub_5CAE60()
 }
 }
 
-// ==== BACKFILL 0x005CAF00  sub_5CAF00  cls=MultiplayerSiegeAttackerTeam  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CAF00  sub_5CAF00  cls=MultiplayerSiegeAttackerTeam  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5CAF00::sub_5CAF00()
 {
 {
@@ -2166,7 +2166,7 @@ void E4Recv_5CAF00::sub_5CAF00()
 }
 }
 
-// ==== BACKFILL 0x005CAF70  sub_5CAF70  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CAF70  sub_5CAF70  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 DWORD E4Recv_5CAF70::sub_5CAF70()
 {
 {
@@ -2186,7 +2186,7 @@ DWORD E4Recv_5CAF70::sub_5CAF70()
 }
 }
 
-// ==== BACKFILL 0x005CB3A0  MPBattleClass::MPUnholyAllianceClass  cls=MPBattleClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CB3A0  MPBattleClass::MPUnholyAllianceClass  cls=MPBattleClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyAlliance * aP2, const char ** a3, UnholyAlliance * aP4, char aP5, UnholyAlliance * aP6)
 {
 {
@@ -2196,7 +2196,7 @@ unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyA
 }
 }
 
-// ==== BACKFILL 0x005CB3E0  sub_5CB3E0  cls=UnholyAlliance  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CB3E0  sub_5CB3E0  cls=UnholyAlliance  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5CB3E0::sub_5CB3E0()
 {
 {
@@ -2205,7 +2205,7 @@ void E4Recv_5CB3E0::sub_5CB3E0()
 }
 }
 
-// ==== BACKFILL 0x005CB3F0  UnholyAlliance::Read  cls=UnholyAlliance  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CB3F0  UnholyAlliance::Read  cls=UnholyAlliance  sig=csp  renamed_refs=0  residual=- ====
 char UnholyAlliance::Read()
 {
 {
@@ -2214,7 +2214,7 @@ char UnholyAlliance::Read()
 }
 }
 
-// ==== BACKFILL 0x005CB400  UnholyAlliance::Write  cls=UnholyAlliance  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CB400  UnholyAlliance::Write  cls=UnholyAlliance  sig=csp  renamed_refs=0  residual=- ====
 BOOL UnholyAlliance::Write(MPCooperative * aP0)
 {
 {
@@ -2222,7 +2222,7 @@ BOOL UnholyAlliance::Write(MPCooperative * aP0)
 }
 }
 
-// ==== BACKFILL 0x005CB430  UnholyAlliance::Seek  cls=UnholyAlliance  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CB430  UnholyAlliance::Seek  cls=UnholyAlliance  sig=csp  renamed_refs=0  residual=- ====
 char UnholyAlliance::Seek()
 {
 {
@@ -2231,7 +2231,7 @@ char UnholyAlliance::Seek()
 }
 }
 
-// ==== BACKFILL 0x005CB6C0  VtableStub::5CB6C0  cls=VtableStub  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CB6C0  VtableStub::5CB6C0  cls=VtableStub  sig=csp  renamed_refs=0  residual=- ====
 int VtableStub::5CB6C0()
 {
 {
@@ -2239,7 +2239,7 @@ int VtableStub::5CB6C0()
 }
 }
 
-// ==== BACKFILL 0x005CC550  ScenarioClass::DrawPlacementPreview  cls=MSOverlayAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CC550  ScenarioClass::DrawPlacementPreview  cls=MSOverlayAnim  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void ScenarioClass::DrawPlacementPreview(int a1, void* a2) {
 {
       char v4;
@@ -2328,7 +2328,7 @@ namespace gamemd { void ScenarioClass::DrawPlacementPreview(int a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x005CC6C0  ScenarioClass::DrawSHPFrameToSurface  cls=MSOverlayAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CC6C0  ScenarioClass::DrawSHPFrameToSurface  cls=MSOverlayAnim  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void ScenarioClass::DrawSHPFrameToSurface(int a1) {
 {
       unsigned int v3;
@@ -2371,20 +2371,20 @@ namespace gamemd { void ScenarioClass::DrawSHPFrameToSurface(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x005CC740  ScenarioClass::updateTiberiumGrowth  cls=MSOverlayAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CC740  ScenarioClass::updateTiberiumGrowth  cls=MSOverlayAnim  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { bool ScenarioClass::updateTiberiumGrowth() {
 {
       return !this->q00C || this->q040 >= 4u;
 }
 } }
 
-// ==== BACKFILL 0x005CCA10  nullsub_189  cls=MSBinkAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CCA10  nullsub_189  cls=MSBinkAnim  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_189(int a1)
 {
   ;
 }
 
-// ==== BACKFILL 0x005CD320  MSVQAnim::Stub  cls=MSVQAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CD320  MSVQAnim::Stub  cls=MSVQAnim  sig=csp  renamed_refs=0  residual=- ====
 char MSVQAnim::Stub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -2394,7 +2394,7 @@ char __thiscall MSVQAnim::_vt07(_BYTE *this)
 }
 }
 
-// ==== BACKFILL 0x005CD570  sub_5CD570  cls=MSAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CD570  sub_5CD570  cls=MSAnim  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int * a6, int a7, int a8, char a9, char a10)
 {
 {
@@ -2448,7 +2448,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
 }
 }
 
-// ==== BACKFILL 0x005CE330  sub_5CE330  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CE330  sub_5CE330  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5CE330::sub_5CE330(const wchar_t ** a2)
 {
 {
@@ -2472,7 +2472,7 @@ int E4Recv_5CE330::sub_5CE330(const wchar_t ** a2)
 }
 }
 
-// ==== BACKFILL 0x005CE3A0  sub_5CE3A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CE3A0  sub_5CE3A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
 {
 {
@@ -2528,7 +2528,7 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
 }
 }
 
-// ==== BACKFILL 0x005CEAB0  MSPCXAnim::Stub  cls=MSPCXAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CEAB0  MSPCXAnim::Stub  cls=MSPCXAnim  sig=csp  renamed_refs=0  residual=- ====
 char MSPCXAnim::Stub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -2538,13 +2538,13 @@ char __thiscall MSPCXAnim::_vt07(_BYTE *this)
 }
 }
 
-// ==== BACKFILL 0x005CEB40  AbstractClass::COMStub_Return0_7  cls=MSAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CEB40  AbstractClass::COMStub_Return0_7  cls=MSAnim  sig=csp  renamed_refs=0  residual=- ====
 char AbstractClass::COMStub_Return0_7()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x005CEB50  MSOverlayAnim::StubReturnFalse  cls=MSAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CEB50  MSOverlayAnim::StubReturnFalse  cls=MSAnim  sig=csp  renamed_refs=0  residual=- ====
 void MSOverlayAnim::StubReturnFalse(int a1)
 {
 {
@@ -2552,7 +2552,7 @@ void MSOverlayAnim::StubReturnFalse(int a1)
 }
 }
 
-// ==== BACKFILL 0x005CEB60  ScenarioClass::checkWinningConditions  cls=MSAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CEB60  ScenarioClass::checkWinningConditions  cls=MSAnim  sig=csp  renamed_refs=0  residual=- ====
 MSAnim * ScenarioClass::checkWinningConditions(char a2)
 {
 {
@@ -2563,7 +2563,7 @@ MSAnim * ScenarioClass::checkWinningConditions(char a2)
 }
 }
 
-// ==== BACKFILL 0x005CEB80  MSOverlayAnim::QueryInterface  cls=MSShapeAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CEB80  MSOverlayAnim::QueryInterface  cls=MSShapeAnim  sig=csp  renamed_refs=0  residual=- ====
 MSShapeAnim * MSOverlayAnim::QueryInterface(char a2)
 {
 {
@@ -2583,7 +2583,7 @@ MSShapeAnim * MSOverlayAnim::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x005CEC20  ScenarioClass::processCrates  cls=MSOverlayAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CEC20  ScenarioClass::processCrates  cls=MSOverlayAnim  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* ScenarioClass::processCrates(int a2) {
 {
     void *v3;
@@ -2602,7 +2602,7 @@ namespace gamemd { void* ScenarioClass::processCrates(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x005CECB0  MSVQAnim::QueryInterface  cls=MSVQAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CECB0  MSVQAnim::QueryInterface  cls=MSVQAnim  sig=csp  renamed_refs=0  residual=- ====
 MSVQAnim * MSVQAnim::QueryInterface(char a2)
 {
 {
@@ -2631,7 +2631,7 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x005CED10  MSBitPrintAnim::QueryInterface  cls=MSBitPrintAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CED10  MSBitPrintAnim::QueryInterface  cls=MSBitPrintAnim  sig=csp  renamed_refs=0  residual=- ====
 MSBitPrintAnim * MSBitPrintAnim::QueryInterface(char a2)
 {
 {
@@ -2644,7 +2644,7 @@ MSBitPrintAnim * MSBitPrintAnim::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x005CED70  MSPCXAnim::QueryInterface  cls=MSPCXAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CED70  MSPCXAnim::QueryInterface  cls=MSPCXAnim  sig=csp  renamed_refs=0  residual=- ====
 MSPCXAnim * MSPCXAnim::QueryInterface(char a2)
 {
 {
@@ -2660,7 +2660,7 @@ MSPCXAnim * MSPCXAnim::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x005CF760  CampaignClass::DeleteAndZero  cls=CampaignClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CF760  CampaignClass::DeleteAndZero  cls=CampaignClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CampaignClass::DeleteAndZero(void* aP1) {
 {
     ObjectClass *v2;
@@ -2693,7 +2693,7 @@ namespace gamemd { int CampaignClass::DeleteAndZero(void* aP1) {
 }
 } }
 
-// ==== BACKFILL 0x005CF810  CampaignClass::Check  cls=CampaignClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CF810  CampaignClass::Check  cls=CampaignClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CampaignClass::Check(int a2) {
 {
     if ( this->uniqueId > (int)a2 )
@@ -2703,7 +2703,7 @@ namespace gamemd { int CampaignClass::Check(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x005CF840  sub_5CF840  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005CF840  sub_5CF840  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 const char ** E4Recv_5CF840::sub_5CF840(MapSelect * aP1)
 {
 {

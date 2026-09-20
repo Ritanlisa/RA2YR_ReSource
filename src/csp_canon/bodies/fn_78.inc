@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00780A00  FormatLocaleStringWOL  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00780A00  FormatLocaleStringWOL  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t ** WOL_FormatLocaleString(wchar_t ** a1, int a2)
 {
 {
@@ -25,7 +25,7 @@ wchar_t ** WOL_FormatLocaleString(wchar_t ** a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x00781090  WOLobby_Get  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00781090  WOLobby_Get  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
 {
 {
@@ -52,7 +52,7 @@ CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
 }
 }
 
-// ==== BACKFILL 0x00786390  LoginFlowWOL_Reset  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00786390  LoginFlowWOL_Reset  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_786390()
 {
 {
@@ -95,7 +95,7 @@ int sub_786390()
 }
 }
 
-// ==== BACKFILL 0x00786E70  sub_786E70  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00786E70  sub_786E70  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_786E70::sub_786E70()
 {
 {
@@ -129,7 +129,7 @@ int E4Recv_786E70::sub_786E70()
 }
 }
 
-// ==== BACKFILL 0x0078ABF0  ChatMessageWOL  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0078ABF0  ChatMessageWOL  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 short WOL_ChatMessage(char a1, wchar_t * a2)
 {
 {

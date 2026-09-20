@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x007B0390  FindWDTTerritoryClass  cls=rc_ptr  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B0390  FindWDTTerritoryClass  cls=rc_ptr  sig=csp  renamed_refs=0  residual=- ====
 rc_ptr * FindWDTTerritoryClass(rc_ptr_base * a1, int a2)
 {
 {
@@ -36,49 +36,49 @@ rc_ptr * FindWDTTerritoryClass(rc_ptr_base * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007B0430  ?do_always_noconv_codecvt_base_std__MBE_NXZ_23  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B0430  ?do_always_noconv_codecvt_base_std__MBE_NXZ_23  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char _do_always_noconv_codecvt_base_std__MBE_NXZ_23()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x007B1720  IPXInterfaceClass::StubReturnFalse  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B1720  IPXInterfaceClass::StubReturnFalse  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 void IPXInterfaceClass::StubReturnFalse(int a1, int a2)
 {
   ;
 }
 
-// ==== BACKFILL 0x007B1730  IPXInterfaceClass::GetQueueSize  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B1730  IPXInterfaceClass::GetQueueSize  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 void IPXInterfaceClass::GetQueueSize()
 {
   ;
 }
 
-// ==== BACKFILL 0x007B1740  IPXInterfaceClass::COMStub_Return0  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B1740  IPXInterfaceClass::COMStub_Return0  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 int IPXInterfaceClass::COMStub_Return0()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007B1750  IPXInterfaceClass::Send  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B1750  IPXInterfaceClass::Send  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 int IPXInterfaceClass::Send(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007B1770  IPXInterfaceClass::COMStub_Return1  cls=IPXInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B1770  IPXInterfaceClass::COMStub_Return1  cls=IPXInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 int IPXInterfaceClass::COMStub_Return1()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x007B1780  IPXInterfaceClass::COMStub_Ret1139  cls=IPXInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B1780  IPXInterfaceClass::COMStub_Ret1139  cls=IPXInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 int IPXInterfaceClass::COMStub_Ret1139(int a1)
 {
 return 1139;
 }
 
-// ==== BACKFILL 0x007B1790  IPXInterfaceClass::QueryInterface  cls=IPXInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B1790  IPXInterfaceClass::QueryInterface  cls=IPXInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 IPXInterfaceClass * IPXInterfaceClass::QueryInterface(char a2)
 {
 {
@@ -89,7 +89,7 @@ IPXInterfaceClass * IPXInterfaceClass::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x007B1FD0  IPXInterfaceClass::SetAddress  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B1FD0  IPXInterfaceClass::SetAddress  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 int IPXInterfaceClass::SetAddress(unsigned int * a1)
 {
 {
@@ -124,7 +124,7 @@ int IPXInterfaceClass::SetAddress(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x007B2050  Winsock::VerifyCRC  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B2050  Winsock::VerifyCRC  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 char Winsock::VerifyCRC(int a1)
 {
 {
@@ -162,7 +162,7 @@ char Winsock::VerifyCRC(int a1)
 }
 }
 
-// ==== BACKFILL 0x007B25E0  IPXInterfaceClass::GetAddress  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B25E0  IPXInterfaceClass::GetAddress  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 int IPXInterfaceClass::GetAddress(SOCKET s)
 {
 {
@@ -176,7 +176,7 @@ int IPXInterfaceClass::GetAddress(SOCKET s)
 }
 }
 
-// ==== BACKFILL 0x007B26D0  IPXInterfaceClass::ReceivePacket  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B26D0  IPXInterfaceClass::ReceivePacket  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 char IPXInterfaceClass::ReceivePacket(char * name, AnimClass * aP1)
 {
 {
@@ -194,7 +194,7 @@ char IPXInterfaceClass::ReceivePacket(char * name, AnimClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x007B2720  SessionClass::SetInstance  cls=SessionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B2720  SessionClass::SetInstance  cls=SessionClass  sig=csp  renamed_refs=0  residual=- ====
 void SessionClass::SetInstance()
 {
 {
@@ -202,31 +202,31 @@ void SessionClass::SetInstance()
 }
 }
 
-// ==== BACKFILL 0x007B2740  WinsockInterfaceClass::Destru_vt13  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B2740  WinsockInterfaceClass::Destru_vt13  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 int WinsockInterfaceClass::Destru_vt13()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007B2750  WinsockInterfaceClass::Destru_vt14  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B2750  WinsockInterfaceClass::Destru_vt14  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 int WinsockInterfaceClass::Destru_vt14(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007B2760  WinsockInterfaceClass::Destru_vt15  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B2760  WinsockInterfaceClass::Destru_vt15  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 char WinsockInterfaceClass::Destru_vt15(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007B2770  WinsockInterfaceClass::Destru_vt16  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B2770  WinsockInterfaceClass::Destru_vt16  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 int WinsockInterfaceClass::Destru_vt16(int a1, int a2, int a3, int a4)
 {
 return 1;
 }
 
-// ==== BACKFILL 0x007B2780  WinsockInterfaceClass::Destru_vt00  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B2780  WinsockInterfaceClass::Destru_vt00  cls=WinsockInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
 {
 {
@@ -276,7 +276,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
 }
 }
 
-// ==== BACKFILL 0x007B36C0  UDPInterfaceClass_Destru::ddtor  cls=UDPInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B36C0  UDPInterfaceClass_Destru::ddtor  cls=UDPInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int arg4, unsigned char * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
 {
     if ( a3 && Network::IsBroadcastAddr(a3) )
@@ -284,7 +284,7 @@ short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int 
     return AudioQueue::WriteBuffer(this, aP1, arg4, a3, a5, aP5, a7, a8);
 }
 
-// ==== BACKFILL 0x007B39D0  sub_7B39D0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B39D0  sub_7B39D0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_7B39D0::sub_7B39D0(unsigned int * a2, short a3)
 {
 {
@@ -308,13 +308,13 @@ char E4Recv_7B39D0::sub_7B39D0(unsigned int * a2, short a3)
 }
 }
 
-// ==== BACKFILL 0x007B40F0  UDPInterfaceClass_Destru::COMStub_Ret2  cls=UDPInterfaceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B40F0  UDPInterfaceClass_Destru::COMStub_Ret2  cls=UDPInterfaceClass  sig=csp  renamed_refs=0  residual=- ====
 int UDPInterfaceClass_Destru::COMStub_Ret2()
 {
 return 2;
 }
 
-// ==== BACKFILL 0x007B46F0  DeleteAndZero  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B46F0  DeleteAndZero  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_7B46F0::DeleteAndZero()
 {
 {
@@ -324,7 +324,7 @@ void E4Recv_7B46F0::DeleteAndZero()
 }
 }
 
-// ==== BACKFILL 0x007B4860  VectorClass_Wstring::SetCapacity  cls=VectorClass_Wstring  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B4860  VectorClass_Wstring::SetCapacity  cls=VectorClass_Wstring  sig=csp  renamed_refs=0  residual=- ====
 bool VectorClass_Wstring::SetCapacity(const char ** a2)
 {
 {
@@ -338,7 +338,7 @@ bool VectorClass_Wstring::SetCapacity(const char ** a2)
 }
 }
 
-// ==== BACKFILL 0x007B4AC0  sub_7B4AC0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B4AC0  sub_7B4AC0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_7B4AC0::sub_7B4AC0(size_t Count, char * Source)
 {
 {
@@ -363,7 +363,7 @@ char E4Recv_7B4AC0::sub_7B4AC0(size_t Count, char * Source)
 }
 }
 
-// ==== BACKFILL 0x007B4B50  sub_7B4B50  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B4B50  sub_7B4B50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_7B4B50::sub_7B4B50(char ** a2)
 {
 {
@@ -411,7 +411,7 @@ char E4Recv_7B4B50::sub_7B4B50(char ** a2)
 }
 }
 
-// ==== BACKFILL 0x007B50F0  sub_7B50F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B50F0  sub_7B50F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_7B50F0::sub_7B50F0(char a2)
 {
 {
@@ -445,7 +445,7 @@ char E4Recv_7B50F0::sub_7B50F0(char a2)
 }
 }
 
-// ==== BACKFILL 0x007B5360  sub_7B5360  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B5360  sub_7B5360  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_7B5360::sub_7B5360(int Size)
 {
 {
@@ -462,7 +462,7 @@ void E4Recv_7B5360::sub_7B5360(int Size)
 }
 }
 
-// ==== BACKFILL 0x007B53B0  sub_7B53B0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B53B0  sub_7B53B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int E4Recv_7B53B0::sub_7B53B0(ObjectClass * aP1, size_t Count)
 {
 {
@@ -481,7 +481,7 @@ unsigned int E4Recv_7B53B0::sub_7B53B0(ObjectClass * aP1, size_t Count)
 }
 }
 
-// ==== BACKFILL 0x007B5410  sub_7B5410  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B5410  sub_7B5410  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_7B5410::sub_7B5410(unsigned int a2)
 {
 {
@@ -494,7 +494,7 @@ char E4Recv_7B5410::sub_7B5410(unsigned int a2)
 }
 }
 
-// ==== BACKFILL 0x007B54D0  sub_7B54D0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B54D0  sub_7B54D0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_7B54D0::sub_7B54D0(const char * Src, unsigned int a3)
 {
 {
@@ -533,7 +533,7 @@ char E4Recv_7B54D0::sub_7B54D0(const char * Src, unsigned int a3)
 }
 }
 
-// ==== BACKFILL 0x007B5640  sub_7B5640  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B5640  sub_7B5640  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_7B5640::sub_7B5640(char a2, unsigned int a3)
 {
 {
@@ -586,7 +586,7 @@ char E4Recv_7B5640::sub_7B5640(char a2, unsigned int a3)
 }
 }
 
-// ==== BACKFILL 0x007B5C50  sub_7B5C50  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B5C50  sub_7B5C50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_7B5C50::sub_7B5C50()
 {
 {
@@ -601,7 +601,7 @@ void E4Recv_7B5C50::sub_7B5C50()
 }
 }
 
-// ==== BACKFILL 0x007B5CA0  sub_7B5CA0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B5CA0  sub_7B5CA0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char ** E4Recv_7B5CA0::sub_7B5CA0(char ** a2)
 {
 {
@@ -633,7 +633,7 @@ char ** E4Recv_7B5CA0::sub_7B5CA0(char ** a2)
 }
 }
 
-// ==== BACKFILL 0x007B5E30  CChatEventSink::EncodeString  cls=CChatEventSink  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B5E30  CChatEventSink::EncodeString  cls=CChatEventSink  sig=csp  renamed_refs=0  residual=- ====
 char CChatEventSink::EncodeString(char a2)
 {
 {
@@ -683,7 +683,7 @@ char CChatEventSink::EncodeString(char a2)
 }
 }
 
-// ==== BACKFILL 0x007B6280  ??1_Timevec_std__QAE_XZ  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B6280  ??1_Timevec_std__QAE_XZ  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_7B6280::__1_Timevec_std__QAE_XZ()
 {
 {
@@ -691,7 +691,7 @@ void E4Recv_7B6280::__1_Timevec_std__QAE_XZ()
 }
 }
 
-// ==== BACKFILL 0x007B6290  FromStringInt  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B6290  FromStringInt  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char ** FromStringInt(IUnknown * aP0, int a2)
 {
 {
@@ -713,7 +713,7 @@ char ** FromStringInt(IUnknown * aP0, int a2)
 }
 }
 
-// ==== BACKFILL 0x007B6320  FormatStringInt  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B6320  FormatStringInt  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char ** FormatStringInt(INIClass * aP0, MPCooperative * aP1, ObjectClass * aP2)
 {
 {
@@ -736,7 +736,7 @@ char ** FormatStringInt(INIClass * aP0, MPCooperative * aP1, ObjectClass * aP2)
 }
 }
 
-// ==== BACKFILL 0x007B6630  ValidateStringContains  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B6630  ValidateStringContains  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 bool String_ValidateContains(const char ** a1, const char * a2, char * Control)
 {
 {
@@ -744,7 +744,7 @@ bool String_ValidateContains(const char ** a1, const char * a2, char * Control)
 }
 }
 
-// ==== BACKFILL 0x007B69F0  sub_7B69F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B69F0  sub_7B69F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_7B69F0::sub_7B69F0(size_t Count, wchar_t * Source)
 {
 {
@@ -769,7 +769,7 @@ char E4Recv_7B69F0::sub_7B69F0(size_t Count, wchar_t * Source)
 }
 }
 
-// ==== BACKFILL 0x007B6A60  sub_7B6A60  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B6A60  sub_7B6A60  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_7B6A60::sub_7B6A60(ObjectClass * aP1)
 {
 {
@@ -798,7 +798,7 @@ char E4Recv_7B6A60::sub_7B6A60(ObjectClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x007B6EE0  sub_7B6EE0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B6EE0  sub_7B6EE0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 short E4Recv_7B6EE0::sub_7B6EE0(const wchar_t ** a2)
 {
 {
@@ -826,7 +826,7 @@ short E4Recv_7B6EE0::sub_7B6EE0(const wchar_t ** a2)
 }
 }
 
-// ==== BACKFILL 0x007B70B0  sub_7B70B0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B70B0  sub_7B70B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 size_t E4Recv_7B70B0::sub_7B70B0(ObjectClass * aP1, size_t Count)
 {
 {
@@ -858,7 +858,7 @@ size_t E4Recv_7B70B0::sub_7B70B0(ObjectClass * aP1, size_t Count)
 }
 }
 
-// ==== BACKFILL 0x007B7110  MSPrintAnim::GetCharAt  cls=MSPrintAnim  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B7110  MSPrintAnim::GetCharAt  cls=MSPrintAnim  sig=csp  renamed_refs=0  residual=- ====
 wchar_t MSPrintAnim::GetCharAt(size_t a2)
 {
 {
@@ -869,7 +869,7 @@ wchar_t MSPrintAnim::GetCharAt(size_t a2)
 }
 }
 
-// ==== BACKFILL 0x007B7DD0  FormatWideString  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B7DD0  FormatWideString  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 CampaignScore * FormatWideString(wchar_t ** a1, const wchar_t * a2)
 {
 {
@@ -892,7 +892,7 @@ CampaignScore * FormatWideString(wchar_t ** a1, const wchar_t * a2)
 }
 }
 
-// ==== BACKFILL 0x007B7E40  WDTGame_Helper  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B7E40  WDTGame_Helper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t ** WDTGame_Helper(CampaignScore * aP0, const wchar_t * a1, wchar_t * Format)
 {
 {
@@ -917,7 +917,7 @@ wchar_t ** WDTGame_Helper(CampaignScore * aP0, const wchar_t * a1, wchar_t * For
 }
 }
 
-// ==== BACKFILL 0x007B7ED0  CharStringToWide  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B7ED0  CharStringToWide  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t ** CharStringToWide(ObjectClass * aP0, const char ** a1)
 {
 {
@@ -961,7 +961,7 @@ wchar_t ** CharStringToWide(ObjectClass * aP0, const char ** a1)
 }
 }
 
-// ==== BACKFILL 0x007B7F90  ToWideStringCharAlt  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B7F90  ToWideStringCharAlt  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char ** sub_7B7F90(char ** a1, const wchar_t ** a2)
 {
 {
@@ -1005,7 +1005,7 @@ char ** sub_7B7F90(char ** a1, const wchar_t ** a2)
 }
 }
 
-// ==== BACKFILL 0x007B8090  FormatWideStringPrefix  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B8090  FormatWideStringPrefix  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t ** FormatWideStringPrefix(CampaignScore * aP0, const wchar_t * a1, wchar_t ** a2)
 {
 {
@@ -1055,7 +1055,7 @@ wchar_t ** FormatWideStringPrefix(CampaignScore * aP0, const wchar_t * a1, wchar
 }
 }
 
-// ==== BACKFILL 0x007B8170  ConcatWString  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B8170  ConcatWString  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t ** ConcatWString(GameSetup * aP0, const wchar_t ** a1, const wchar_t ** a2)
 {
 {
@@ -1107,7 +1107,7 @@ wchar_t ** ConcatWString(GameSetup * aP0, const wchar_t ** a1, const wchar_t ** 
 }
 }
 
-// ==== BACKFILL 0x007B8250  sub_7B8250  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B8250  sub_7B8250  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_7B8250::sub_7B8250(wchar_t * Control)
 {
 {
@@ -1119,7 +1119,7 @@ bool E4Recv_7B8250::sub_7B8250(wchar_t * Control)
 }
 }
 
-// ==== BACKFILL 0x007B82E0  Game_Set  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B82E0  Game_Set  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char ** sub_7B82E0(char ** a1, const wchar_t ** a2)
 {
 {
@@ -1160,7 +1160,7 @@ char ** sub_7B82E0(char ** a1, const wchar_t ** a2)
 }
 }
 
-// ==== BACKFILL 0x007B83E0  UI_Setup_7B83E0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B83E0  UI_Setup_7B83E0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t ** sub_7B83E0(wchar_t ** a1, const char ** a2)
 {
 {
@@ -1206,7 +1206,7 @@ wchar_t ** sub_7B83E0(wchar_t ** a1, const char ** a2)
 }
 }
 
-// ==== BACKFILL 0x007B8610  sub_7B8610  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B8610  sub_7B8610  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 DWORD sub_7B8610(unsigned int * lpThreadParameter)
 {
 {
@@ -1236,7 +1236,7 @@ DWORD sub_7B8610(unsigned int * lpThreadParameter)
 }
 }
 
-// ==== BACKFILL 0x007B8960  MouseClass::CalcConfiningRect  cls=MouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B8960  MouseClass::CalcConfiningRect  cls=MouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void MouseClass::CalcConfiningRect() {
 {
     int *v1;
@@ -1270,7 +1270,7 @@ namespace gamemd { void MouseClass::CalcConfiningRect() {
 }
 } }
 
-// ==== BACKFILL 0x007B89F0  WWMouseClass::COMStub  cls=WWMouseClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x007B89F0  WWMouseClass::COMStub  cls=WWMouseClass  sig=csp  renamed_refs=1  residual=- ====
 int WWMouseClass::COMStub()
 {
 {
@@ -1278,7 +1278,7 @@ int WWMouseClass::COMStub()
 }
 }
 
-// ==== BACKFILL 0x007B8E80  WWMouseClass::initCursorState  cls=WWMouseClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x007B8E80  WWMouseClass::initCursorState  cls=WWMouseClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { void* WWMouseClass::initCursorState(void* a1) {
 {
       int v3;
@@ -1305,12 +1305,12 @@ namespace gamemd { void* WWMouseClass::initCursorState(void* a1) {
           Debug::Log();
         FoundationSize = Building::GetFoundationSize(v14, this->WWMouseClass_field_0x8);
         v9 = *FoundationSize;
-        v10 = this->__pad_014;
+        v10 = this->q014;
         v11 = this->q018;
         v12 = FoundationSize[1];
         v6 = FoundationSize[2];
         v15 = FoundationSize[3];
-        v3 = v10 - this->__pad_03C + v9;
+        v3 = v10 - this->q03C + v9;
         v5 = v11 - this->XY2 + v12;
         ReleaseMutex(hMutex);
         v7 = v15;
@@ -1323,7 +1323,7 @@ namespace gamemd { void* WWMouseClass::initCursorState(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x007B8F30  WWMouseClass::updateCursorRect  cls=WWMouseClass  sig=csp  renamed_refs=10 ====
+// ==== BACKFILL 0x007B8F30  WWMouseClass::updateCursorRect  cls=WWMouseClass  sig=csp  renamed_refs=7  residual=- ====
 namespace gamemd { int WWMouseClass::updateCursorRect() {
 {
       int v2;
@@ -1361,18 +1361,18 @@ namespace gamemd { int WWMouseClass::updateCursorRect() {
               Debug::Log();
             FoundationSize = Building::GetFoundationSize(v20, this->WWMouseClass_field_0x8);
             v8 = *FoundationSize;
-            v9 = this->__pad_014;
+            v9 = this->q014;
             v10 = this->q018;
             v11 = FoundationSize[1];
             v5 = FoundationSize[2];
             v19 = FoundationSize[3];
-            v3 = v9 - this->__pad_03C + v8;
+            v3 = v9 - this->q03C + v8;
             v4 = v10 - this->XY2 + v11;
             ReleaseMutex(hMutex);
             v6 = v19;
           }
           v12 = v3 + this->WWMouseClass_field_0x2C;
-          this->__pad_048 = v3;
+          this->q048 = v3;
           v17[0] = v12;
           this->q04C = v4;
           v18[0] = 0;
@@ -1400,7 +1400,7 @@ namespace gamemd { int WWMouseClass::updateCursorRect() {
 }
 } }
 
-// ==== BACKFILL 0x007B9690  WWMouseClass::renderDragSelectionRect  cls=WWMouseClass  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x007B9690  WWMouseClass::renderDragSelectionRect  cls=WWMouseClass  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { bool WWMouseClass::renderDragSelectionRect() {
 {
       int v2;
@@ -1425,7 +1425,7 @@ namespace gamemd { bool WWMouseClass::renderDragSelectionRect() {
             v4 = this->q04C;
             v5 = this->q054;
             v6 = this->q050;
-            v10[0] = this->WWMouseClass_field_0x2C + this->__pad_048;
+            v10[0] = this->WWMouseClass_field_0x2C + this->q048;
             v7 = this->WWMouseClass_field_0x30;
             v9[0] = 0;
             v9[1] = 0;
@@ -1442,7 +1442,7 @@ namespace gamemd { bool WWMouseClass::renderDragSelectionRect() {
 }
 } }
 
-// ==== BACKFILL 0x007B9750  WWMouseClass::showCursor  cls=WWMouseClass  sig=csp  renamed_refs=15 ====
+// ==== BACKFILL 0x007B9750  WWMouseClass::showCursor  cls=WWMouseClass  sig=csp  renamed_refs=12  residual=- ====
 namespace gamemd { int WWMouseClass::showCursor() {
 {
       int result;
@@ -1490,9 +1490,9 @@ namespace gamemd { int WWMouseClass::showCursor() {
                 v17 = *FoundationSize;
                 v18 = FoundationSize[1];
                 v19 = FoundationSize[2];
-                v5 = this->__pad_03C;
+                v5 = this->q03C;
                 v20 = FoundationSize[3];
-                v6 = this->__pad_014 - v5;
+                v6 = this->q014 - v5;
                 v7 = this->XY2;
                 v17 += v6;
                 v18 += this->q018 - v7;
@@ -1503,7 +1503,7 @@ namespace gamemd { int WWMouseClass::showCursor() {
               v10 = v19;
               v11 = v20;
               v21[0] = v17;
-              this->__pad_048 = v17;
+              this->q048 = v17;
               v21[2] = v10;
               v21[3] = v11;
               this->q04C = v9;
@@ -1541,14 +1541,14 @@ namespace gamemd { int WWMouseClass::showCursor() {
 }
 } }
 
-// ==== BACKFILL 0x007B9D70  WWMouseClass::checkStatus  cls=WWMouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B9D70  WWMouseClass::checkStatus  cls=WWMouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int WWMouseClass::checkStatus(int a1, int a2, int a3, int a4) {
 {
     return this->hideCursor();
 }
 } }
 
-// ==== BACKFILL 0x007B9D80  WWMouseClass::checkVisible  cls=WWMouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B9D80  WWMouseClass::checkVisible  cls=WWMouseClass  sig=csp  renamed_refs=0  residual=- ====
 int WWMouseClass::checkVisible()
 {
 {
@@ -1556,7 +1556,7 @@ int WWMouseClass::checkVisible()
 }
 }
 
-// ==== BACKFILL 0x007B9D90  WWMouseClass::processFrame  cls=WWMouseClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x007B9D90  WWMouseClass::processFrame  cls=WWMouseClass  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { void WWMouseClass::processFrame() {
 {
       int v3;
@@ -1580,7 +1580,7 @@ namespace gamemd { void WWMouseClass::processFrame() {
 }
 } }
 
-// ==== BACKFILL 0x007B9DF0  sub_7B9DF0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007B9DF0  sub_7B9DF0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_7B9DF0::sub_7B9DF0(LONG * a2, LONG * a3)
 {
 {
@@ -1594,7 +1594,7 @@ int E4Recv_7B9DF0::sub_7B9DF0(LONG * a2, LONG * a3)
 }
 }
 
-// ==== BACKFILL 0x007B9E30  WWMouseClass::FlipCursorBuffer  cls=WWMouseClass  sig=csp  renamed_refs=14 ====
+// ==== BACKFILL 0x007B9E30  WWMouseClass::FlipCursorBuffer  cls=WWMouseClass  sig=csp  renamed_refs=10  residual=- ====
 namespace gamemd { bool WWMouseClass::FlipCursorBuffer() {
 {
       DWORD (__stdcall *v4)(HANDLE, DWORD); // edi
@@ -1624,7 +1624,7 @@ namespace gamemd { bool WWMouseClass::FlipCursorBuffer() {
       v4 = WaitForSingleObject;
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 )
         Debug::Log();
-      if ( a2 != this->__pad_014 || a3 != this->q018 || a4 )
+      if ( a2 != this->q014 || a3 != this->q018 || a4 )
       {
         if ( ((unsigned __int8 (__thiscall *)(IUnknown **))(*this)->field_1C)(this)
           && !((unsigned __int8 (__thiscall *)(IUnknown **))(*this)->field_8)(this)
@@ -1643,7 +1643,7 @@ namespace gamemd { bool WWMouseClass::FlipCursorBuffer() {
                 v8 = (int)this->q04C;
                 v9 = this->q050;
                 v10 = this->q054;
-                v25 = (int)this->__pad_048 + (_DWORD)this->WWMouseClass_field_0x2C;
+                v25 = (int)this->q048 + (_DWORD)this->WWMouseClass_field_0x2C;
                 v11 = (char *)this->WWMouseClass_field_0x30 + v8;
                 v21 = 0;
                 v22 = 0;
@@ -1665,7 +1665,7 @@ namespace gamemd { bool WWMouseClass::FlipCursorBuffer() {
           }
           ReleaseMutex(hMutex);
         }
-        this->__pad_014 = a2;
+        this->q014 = a2;
         v12 = *this;
         this->q018 = a3;
         if ( ((unsigned __int8 (__thiscall *)(IUnknown **))v12->field_1C)(this)
@@ -1678,7 +1678,7 @@ namespace gamemd { bool WWMouseClass::FlipCursorBuffer() {
           {
             inited = (IUnknown **)WWMouseClass::initCursorState((unsigned int *)this, &v25);
             v14 = (int)this->WWMouseClass_field_0x2C;
-            this->__pad_048 = *inited;
+            this->q048 = *inited;
             this->q04C = inited[1];
             this->q050 = inited[2];
             this->q054 = inited[3];
@@ -1713,7 +1713,7 @@ namespace gamemd { bool WWMouseClass::FlipCursorBuffer() {
 }
 } }
 
-// ==== BACKFILL 0x007BA300  WWMouseClass::updateHotspot  cls=MouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BA300  WWMouseClass::updateHotspot  cls=MouseClass  sig=csp  renamed_refs=0  residual=- ====
 MouseClass * WWMouseClass::updateHotspot(char a2)
 {
 {
@@ -1724,7 +1724,7 @@ MouseClass * WWMouseClass::updateHotspot(char a2)
 }
 }
 
-// ==== BACKFILL 0x007BA330  WWMouseClass::checkCapture  cls=WWMouseClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x007BA330  WWMouseClass::checkCapture  cls=WWMouseClass  sig=csp  renamed_refs=1  residual=- ====
 char WWMouseClass::checkCapture()
 {
 {
@@ -1732,7 +1732,7 @@ char WWMouseClass::checkCapture()
 }
 }
 
-// ==== BACKFILL 0x007BA350  WWMouseClass::checkBounds  cls=WWMouseClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x007BA350  WWMouseClass::checkBounds  cls=WWMouseClass  sig=csp  renamed_refs=1  residual=- ====
 int WWMouseClass::checkBounds()
 {
 {
@@ -1740,7 +1740,7 @@ int WWMouseClass::checkBounds()
 }
 }
 
-// ==== BACKFILL 0x007BA380  WWMouseClass::checkHotspot  cls=WWMouseClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x007BA380  WWMouseClass::checkHotspot  cls=WWMouseClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int WWMouseClass::checkHotspot(int a1, int a2) {
 {
       this->WWMouseClass_field_0x1C = a2;
@@ -1749,43 +1749,43 @@ namespace gamemd { int WWMouseClass::checkHotspot(int a1, int a2) {
 }
 } }
 
-// ==== BACKFILL 0x007BAB30  XSurface::entry_4C_  cls=XSurface  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BAB30  XSurface::entry_4C_  cls=XSurface  sig=csp  renamed_refs=0  residual=- ====
 int XSurface::entry_4C_(int a1, int a2, int a3, int a4, int a5, int a6)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007BAB40  XSurface::entry_50_  cls=XSurface  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BAB40  XSurface::entry_50_  cls=XSurface  sig=csp  renamed_refs=0  residual=- ====
 char XSurface::entry_50_(int a1, int a2, int a3, int a4)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007BAB50  XSurface::entry_34_  cls=XSurface  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BAB50  XSurface::entry_34_  cls=XSurface  sig=csp  renamed_refs=0  residual=- ====
 char XSurface::entry_34_(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007BAB60  XSurface::entry_38_  cls=XSurface  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BAB60  XSurface::entry_38_  cls=XSurface  sig=csp  renamed_refs=0  residual=- ====
 char XSurface::entry_38_(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007BAB70  XSurface::entry_3C_  cls=XSurface  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BAB70  XSurface::entry_3C_  cls=XSurface  sig=csp  renamed_refs=0  residual=- ====
 int XSurface_entry_3C_()
 {
   return 0;
 }
 
-// ==== BACKFILL 0x007BAB80  XSurface::entry_40_  cls=XSurface  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BAB80  XSurface::entry_40_  cls=XSurface  sig=csp  renamed_refs=0  residual=- ====
 char XSurface::entry_40_(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007BADC0  XSurface::DrawRectEx  cls=XSurface  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BADC0  XSurface::DrawRectEx  cls=XSurface  sig=csp  renamed_refs=0  residual=- ====
 char XSurface::DrawRectEx(int a2, unsigned int * a3, int a4)
 {
 {
@@ -1816,7 +1816,7 @@ char XSurface::DrawRectEx(int a2, unsigned int * a3, int a4)
 }
 }
 
-// ==== BACKFILL 0x007BB340  XSurface::entry_1C_  cls=XSurface  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BB340  XSurface::entry_1C_  cls=XSurface  sig=csp  renamed_refs=0  residual=- ====
 char XSurface::entry_1C_(int a1, int a2, int a3)
 {
 return 0;
@@ -2026,7 +2026,7 @@ int E4Recv_7BC920::sub_7BC920(int a2, int a3, int a4, int a5, int a6, int a7, in
 }
 }
 
-// ==== BACKFILL 0x007BCA50  sub_7BCA50  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BCA50  sub_7BCA50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_7BCA50::sub_7BCA50(int a2, int a3, int a4, int a5, int a6)
 {
 {
@@ -2071,7 +2071,7 @@ int E4Recv_7BCA50::sub_7BCA50(int a2, int a3, int a4, int a5, int a6)
 }
 }
 
-// ==== BACKFILL 0x007BCAE0  Stream::GetField  cls=Stream  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BCAE0  Stream::GetField  cls=Stream  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int Stream::GetField() {
 {
       int (__thiscall ***v1)(_DWORD, int); // ecx
@@ -2084,7 +2084,7 @@ namespace gamemd { int Stream::GetField() {
 }
 } }
 
-// ==== BACKFILL 0x007BCAF0  sub_7BCAF0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BCAF0  sub_7BCAF0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * sub_7BCAF0(char * a1, int a2, unsigned short a3)
 {
 {
@@ -2116,14 +2116,14 @@ char * sub_7BCAF0(char * a1, int a2, unsigned short a3)
 }
 }
 
-// ==== BACKFILL 0x007BE640  Stream::CopyFromTemplate  cls=Stream  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BE640  Stream::CopyFromTemplate  cls=Stream  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void Stream::CopyFromTemplate() {
 {
     qmemcpy(this, &DataGlobal_84E738, 0x88u);
 }
 } }
 
-// ==== BACKFILL 0x007BE940  sub_7BE940  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BE940  sub_7BE940  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_7BE940(int a1, int * a2)
 {
 {
@@ -2180,7 +2180,7 @@ char sub_7BE940(int a1, int * a2)
 }
 }
 
-// ==== BACKFILL 0x007BEA40  sub_7BEA40  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BEA40  sub_7BEA40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_7BEA40::sub_7BEA40()
 {
 {
@@ -2200,7 +2200,7 @@ int E4Recv_7BEA40::sub_7BEA40()
 }
 }
 
-// ==== BACKFILL 0x007BF0B0  sub_7BF0B0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BF0B0  sub_7BF0B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_7BF0B0::sub_7BF0B0()
 {
 {
@@ -2240,7 +2240,7 @@ int E4Recv_7BF0B0::sub_7BF0B0()
 }
 }
 
-// ==== BACKFILL 0x007BF140  sub_7BF140  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BF140  sub_7BF140  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_7BF140::sub_7BF140()
 {
 {
@@ -2261,7 +2261,7 @@ int E4Recv_7BF140::sub_7BF140()
 }
 }
 
-// ==== BACKFILL 0x007BF190  sub_7BF190  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007BF190  sub_7BF190  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_7BF190::sub_7BF190()
 {
 {

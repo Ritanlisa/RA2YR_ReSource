@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00550000  Game::loadCampaignData  cls=Game  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00550000  Game::loadCampaignData  cls=Game  sig=csp  renamed_refs=0  residual=- ====
 int Game::loadCampaignData()
 {
 {
@@ -34,7 +34,7 @@ int Game::loadCampaignData()
 }
 }
 
-// ==== BACKFILL 0x00550240  Helper_550240  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00550240  Helper_550240  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char sub_550240()
 {
 {
@@ -47,7 +47,7 @@ char sub_550240()
 }
 }
 
-// ==== BACKFILL 0x00551630  WebBrowser::OpenURL  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00551630  WebBrowser::OpenURL  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 bool WebBrowser::OpenURL()
 {
 {
@@ -83,7 +83,7 @@ bool WebBrowser::OpenURL()
 }
 }
 
-// ==== BACKFILL 0x00551B20  LayerClass::Save  cls=LayerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00551B20  LayerClass::Save  cls=LayerClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int LayerClass::Save(void* a1) {
 {
       RadarClass *v2;
@@ -128,7 +128,7 @@ namespace gamemd { int LayerClass::Save(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x00554280  Render_Render_554280  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00554280  Render_Render_554280  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Render_Render_554280(unsigned short * a0, AbstractClass * aP1, int * a2, unsigned short a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -156,7 +156,7 @@ int __fastcall Render_Render_554280(unsigned __int16 *a0, AbstractClass *aP1, in
 }
 }
 
-// ==== BACKFILL 0x00554AA0  TacticalClass::UpdateScrollTarget  cls=TacticalClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00554AA0  TacticalClass::UpdateScrollTarget  cls=TacticalClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int TacticalClass::UpdateScrollTarget(int a1, int a2, int a3, int a4, int a5) {
 {
       int v6;
@@ -175,7 +175,7 @@ namespace gamemd { int TacticalClass::UpdateScrollTarget(int a1, int a2, int a3,
 }
 } }
 
-// ==== BACKFILL 0x00554AF0  TacticalClass::ScrollView  cls=TacticalClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x00554AF0  TacticalClass::ScrollView  cls=TacticalClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int TacticalClass::ScrollView(int a1) {
 {
       char result;
@@ -296,7 +296,7 @@ namespace gamemd { int TacticalClass::ScrollView(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00555070  LightSourceClass::Stat  cls=LightSourceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00555070  LightSourceClass::Stat  cls=LightSourceClass  sig=csp  renamed_refs=0  residual=- ====
 int LightSourceClass::Stat(AbstractClass * aP1)
 {
 {
@@ -304,7 +304,7 @@ int LightSourceClass::Stat(AbstractClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x00555080  LightSourceClass::ddtor  cls=LightSourceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00555080  LightSourceClass::ddtor  cls=LightSourceClass  sig=csp  renamed_refs=0  residual=- ====
 int LightSourceClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -316,7 +316,7 @@ int LightSourceClass::ddtor(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x005550C0  LightSourceClass::Write  cls=LightSourceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005550C0  LightSourceClass::Write  cls=LightSourceClass  sig=csp  renamed_refs=0  residual=- ====
 int LightSourceClass::Write(AbstractClass * aP0, int aP1)
 {
 {
@@ -338,7 +338,7 @@ int LightSourceClass::Write(AbstractClass * aP0, int aP1)
 }
 }
 
-// ==== BACKFILL 0x00555110  LightSourceClass::Seek  cls=LightSourceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00555110  LightSourceClass::Seek  cls=LightSourceClass  sig=csp  renamed_refs=0  residual=- ====
 int LightSourceClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 {
@@ -350,19 +350,19 @@ int LightSourceClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 }
 }
 
-// ==== BACKFILL 0x00555130  LightSourceClass::StubReturn76  cls=LightSourceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00555130  LightSourceClass::StubReturn76  cls=LightSourceClass  sig=csp  renamed_refs=0  residual=- ====
 int LightSourceClass::StubReturn76()
 {
 return 76;
 }
 
-// ==== BACKFILL 0x00555140  LightSourceClass::StubReturn54  cls=LightSourceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00555140  LightSourceClass::StubReturn54  cls=LightSourceClass  sig=csp  renamed_refs=0  residual=- ====
 int LightSourceClass::StubReturn54()
 {
 return 54;
 }
 
-// ==== BACKFILL 0x00555150  LightSourceClass::CopyTo  cls=LightSourceClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00555150  LightSourceClass::CopyTo  cls=LightSourceClass  sig=csp  renamed_refs=0  residual=- ====
 LightSourceClass * LightSourceClass::CopyTo(char a2)
 {
 {
@@ -396,7 +396,7 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
 }
 }
 
-// ==== BACKFILL 0x00555AC0  QuantizeColorRGB  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00555AC0  QuantizeColorRGB  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int * Color_QuantizeRGB(int * a1, int * a2, int * a3)
 {
 {
@@ -445,7 +445,7 @@ int * Color_QuantizeRGB(int * a1, int * a2, int * a3)
 }
 }
 
-// ==== BACKFILL 0x00556510  sub_556510  cls=LightConvertClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00556510  sub_556510  cls=LightConvertClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_556510::sub_556510()
 {
 {
@@ -454,7 +454,7 @@ int E4Recv_556510::sub_556510()
 }
 }
 
-// ==== BACKFILL 0x00556520  sub_556520  cls=LightConvertClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00556520  sub_556520  cls=LightConvertClass  sig=csp  renamed_refs=0  residual=- ====
 LightConvertClass * E4Recv_556520::sub_556520(char a2)
 {
 {
@@ -466,7 +466,7 @@ LightConvertClass * E4Recv_556520::sub_556520(char a2)
 }
 }
 
-// ==== BACKFILL 0x00556620  ObjectClass::GetWidth  cls=LinkClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00556620  ObjectClass::GetWidth  cls=LinkClass  sig=csp  renamed_refs=0  residual=- ====
 int ObjectClass::GetWidth()
 {
 {
@@ -474,13 +474,13 @@ int ObjectClass::GetWidth()
 }
 }
 
-// ==== BACKFILL 0x00556630  ObjectClass::GetHeight  cls=LinkClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00556630  ObjectClass::GetHeight  cls=LinkClass  sig=csp  renamed_refs=0  residual=- ====
 int ObjectClass::GetHeight() const
 {
     return location.Z;
 }
 
-// ==== BACKFILL 0x00556670  LinkedList::FindNext  cls=LinkClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00556670  LinkedList::FindNext  cls=LinkClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * LinkedList::FindNext()
 {
 {
@@ -501,7 +501,7 @@ unsigned int * LinkedList::FindNext()
 }
 }
 
-// ==== BACKFILL 0x00556B30  TacticalClass::GetField  cls=TacticalClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00556B30  TacticalClass::GetField  cls=TacticalClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TacticalClass::GetField() {
 {
     int result;
@@ -515,7 +515,7 @@ namespace gamemd { int TacticalClass::GetField() {
 }
 } }
 
-// ==== BACKFILL 0x00556B50  ObjectClass::updateMissionState  cls=ObjectClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00556B50  ObjectClass::updateMissionState  cls=ObjectClass  sig=csp  renamed_refs=1  residual=- ====
 int ObjectClass::updateMissionState(int a2)
 {
 {
@@ -528,7 +528,7 @@ int ObjectClass::updateMissionState(int a2)
 }
 }
 
-// ==== BACKFILL 0x00556D40  Render_Render_556D40  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00556D40  Render_Render_556D40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void sub_556D40()
 {
 {
@@ -563,7 +563,7 @@ void sub_556D40()
 }
 }
 
-// ==== BACKFILL 0x00556DF0  Game_Destroy  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00556DF0  Game_Destroy  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void sub_556DF0()
 {
 {
@@ -608,7 +608,7 @@ void sub_556DF0()
 }
 }
 
-// ==== BACKFILL 0x00557570  CheckListClass::RemoveItem  cls=ListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00557570  CheckListClass::RemoveItem  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CheckListClass::RemoveItem(int a1, int a2) {
 {
       int v3;
@@ -641,7 +641,7 @@ namespace gamemd { int CheckListClass::RemoveItem(int a1, int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00557800  ListClass::Destru_vt43  cls=ListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00557800  ListClass::Destru_vt43  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ListClass::Destru_vt43(int a1) {
 {
       int result;
@@ -659,7 +659,7 @@ namespace gamemd { int ListClass::Destru_vt43(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00557A20  CheckListClass::SetItemState  cls=ListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00557A20  CheckListClass::SetItemState  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CheckListClass::SetItemState(int a1) {
 {
       int v3;
@@ -680,7 +680,7 @@ namespace gamemd { int CheckListClass::SetItemState(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00557A70  CheckListClass::OnKeyUp  cls=ListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00557A70  CheckListClass::OnKeyUp  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CheckListClass::OnKeyUp(int a1) {
 {
       int v3;
@@ -701,14 +701,14 @@ namespace gamemd { int CheckListClass::OnKeyUp(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00557B00  CheckListClass::GetItemCount  cls=ListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00557B00  CheckListClass::GetItemCount  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CheckListClass::GetItemCount() {
 {
       return this->q16C;
 }
 } }
 
-// ==== BACKFILL 0x00557BE0  GadgetClass::InitControls  cls=ListClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00557BE0  GadgetClass::InitControls  cls=ListClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int GadgetClass::InitControls() {
 {
       int v2;
@@ -737,7 +737,7 @@ namespace gamemd { int GadgetClass::InitControls() {
 }
 } }
 
-// ==== BACKFILL 0x00557CB0  CheckListClass::GetItemData  cls=ListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00557CB0  CheckListClass::GetItemData  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CheckListClass::GetItemData() {
 {
       int v2;
@@ -755,7 +755,7 @@ namespace gamemd { int CheckListClass::GetItemData() {
 }
 } }
 
-// ==== BACKFILL 0x00557D10  CheckListClass::KillFocus  cls=ListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00557D10  CheckListClass::KillFocus  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CheckListClass::KillFocus(int a1) {
 {
       this->q030 = a2;
@@ -763,7 +763,7 @@ namespace gamemd { int CheckListClass::KillFocus(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00557D20  ListClass::Destru_vt50  cls=ListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00557D20  ListClass::Destru_vt50  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* ListClass::Destru_vt50(int a1, int a2, int a3, int a4, int a5) {
 {
       int v7;
@@ -814,7 +814,7 @@ namespace gamemd { void* ListClass::Destru_vt50(int a1, int a2, int a3, int a4, 
 }
 } }
 
-// ==== BACKFILL 0x00557E10  CheckListClass::ddtor  cls=ListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00557E10  CheckListClass::ddtor  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
 int CheckListClass::ddtor(int a2)
 {
     if ( this->IsReadOnly )
@@ -826,7 +826,7 @@ int CheckListClass::ddtor(int a2)
     return LinkedList::InsertAfter(this, a2);
 }
 
-// ==== BACKFILL 0x00557E60  CheckListClass::HitTest  cls=ListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00557E60  CheckListClass::HitTest  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* CheckListClass::HitTest(int a1) {
 {
       if ( this->IsReadOnly )
@@ -839,7 +839,7 @@ namespace gamemd { void* CheckListClass::HitTest(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00557EB0  CheckListClass::Draw  cls=ListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00557EB0  CheckListClass::Draw  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CheckListClass::Draw(int a1) {
 {
       LinkedList::Append((_DWORD *)this, a2);
@@ -853,7 +853,7 @@ namespace gamemd { int CheckListClass::Draw(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00557F00  CheckListClass::OnDblClick  cls=ListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00557F00  CheckListClass::OnDblClick  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CheckListClass::OnDblClick() {
 {
     if ( this->IsReadOnly )
@@ -866,7 +866,7 @@ namespace gamemd { int CheckListClass::OnDblClick() {
 }
 } }
 
-// ==== BACKFILL 0x00557FD0  CheckListClass::AddItem  cls=ListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00557FD0  CheckListClass::AddItem  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void CheckListClass::AddItem() {
 {
     if ( this->IsReadOnly )
@@ -879,7 +879,7 @@ namespace gamemd { void CheckListClass::AddItem() {
 }
 } }
 
-// ==== BACKFILL 0x00558060  ListClass::Destru_vt00  cls=ListClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00558060  ListClass::Destru_vt00  cls=ListClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* ListClass::Destru_vt00(int a2) {
 {
     char v3;
@@ -916,7 +916,7 @@ namespace gamemd { void* ListClass::Destru_vt00(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x005581A0  sub_5581A0  cls=GaugeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005581A0  sub_5581A0  cls=GaugeClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5581A0::sub_5581A0(GaugeClass * aP1)
 {
 {
@@ -932,7 +932,7 @@ int E4Recv_5581A0::sub_5581A0(GaugeClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x005584F0  sub_5584F0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005584F0  sub_5584F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 size_t sub_5584F0(char * a1, void * a2)
 {
 {
@@ -957,7 +957,7 @@ size_t sub_5584F0(char * a1, void * a2)
 }
 }
 
-// ==== BACKFILL 0x00558840  Options::PrepareSaveLoadDlg  cls=Options  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00558840  Options::PrepareSaveLoadDlg  cls=Options  sig=csp  renamed_refs=0  residual=- ====
 bool Options::PrepareSaveLoadDlg()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -969,7 +969,7 @@ bool __thiscall sub_558840(const char **this)
 }
 }
 
-// ==== BACKFILL 0x005588E0  sub_5588E0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005588E0  sub_5588E0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LRESULT sub_5588E0(HWND hDlg, int a2, HWND hWnd, int a4)
 {
 {
@@ -1018,7 +1018,7 @@ LRESULT sub_5588E0(HWND hDlg, int a2, HWND hWnd, int a4)
 }
 }
 
-// ==== BACKFILL 0x00558A30  sub_558A30  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00558A30  sub_558A30  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_558A30(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
 {
@@ -1074,7 +1074,7 @@ int sub_558A30(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 }
 }
 
-// ==== BACKFILL 0x00558B90  sub_558B90  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00558B90  sub_558B90  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_558B90(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
 {
@@ -1116,7 +1116,7 @@ int sub_558B90(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 }
 }
 
-// ==== BACKFILL 0x00558CB0  sub_558CB0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00558CB0  sub_558CB0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_558CB0(HWND hWnd, unsigned int a2, unsigned int a3, int * a4)
 {
 {
@@ -1166,7 +1166,7 @@ int sub_558CB0(HWND hWnd, unsigned int a2, unsigned int a3, int * a4)
 }
 }
 
-// ==== BACKFILL 0x005595F0  sub_5595F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005595F0  sub_5595F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5595F0::sub_5595F0(char * Buffer)
 {
 {
@@ -1192,7 +1192,7 @@ int E4Recv_5595F0::sub_5595F0(char * Buffer)
 }
 }
 
-// ==== BACKFILL 0x00559EB0  LoadOptions::ddtor  cls=LoadOptions  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00559EB0  LoadOptions::ddtor  cls=LoadOptions  sig=csp  renamed_refs=0  residual=- ====
 bool LoadOptions::ddtor(LPCSTR lpFileName)
 {
 {
@@ -1200,7 +1200,7 @@ bool LoadOptions::ddtor(LPCSTR lpFileName)
 }
 }
 
-// ==== BACKFILL 0x00559ED0  LoadOptions::Read  cls=LoadOptions  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00559ED0  LoadOptions::Read  cls=LoadOptions  sig=csp  renamed_refs=0  residual=- ====
 char LoadOptions::Read(wchar_t * Destination, int a2)
 {
 {
@@ -1246,7 +1246,7 @@ char LoadOptions::Read(wchar_t * Destination, int a2)
 }
 }
 
-// ==== BACKFILL 0x0055A050  LoadOptions::Write  cls=LoadOptions  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055A050  LoadOptions::Write  cls=LoadOptions  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * LoadOptions::Write()
 {
 {
@@ -1254,7 +1254,7 @@ wchar_t * LoadOptions::Write()
 }
 }
 
-// ==== BACKFILL 0x0055A070  LoadOptions::Seek  cls=LoadOptions  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055A070  LoadOptions::Seek  cls=LoadOptions  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * LoadOptions::Seek()
 {
 {
@@ -1262,7 +1262,7 @@ wchar_t * LoadOptions::Seek()
 }
 }
 
-// ==== BACKFILL 0x0055A090  LoadOptions::Open  cls=LoadOptions  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055A090  LoadOptions::Open  cls=LoadOptions  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * LoadOptions::Open()
 {
 {
@@ -1270,7 +1270,7 @@ wchar_t * LoadOptions::Open()
 }
 }
 
-// ==== BACKFILL 0x0055A0B0  LoadOptions::Close  cls=LoadOptions  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055A0B0  LoadOptions::Close  cls=LoadOptions  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * LoadOptions::Close()
 {
 {
@@ -1278,7 +1278,7 @@ wchar_t * LoadOptions::Close()
 }
 }
 
-// ==== BACKFILL 0x0055A0D0  LoadOptions::QueryInterface  cls=LoadOptions  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055A0D0  LoadOptions::QueryInterface  cls=LoadOptions  sig=csp  renamed_refs=0  residual=- ====
 LoadOptions * LoadOptions::QueryInterface(char a2)
 {
 {
@@ -1303,7 +1303,7 @@ LoadOptions * LoadOptions::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x0055A710  StreamClass::ResetPosition  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055A710  StreamClass::ResetPosition  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int StreamClass::ResetPosition(LocomotionClass * aP0, int a2)
 {
 {
@@ -1313,7 +1313,7 @@ int StreamClass::ResetPosition(LocomotionClass * aP0, int a2)
 }
 }
 
-// ==== BACKFILL 0x0055A730  Turret::GetTransform  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055A730  Turret::GetTransform  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
 {
 {
@@ -1341,7 +1341,7 @@ float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x0055A8C0  ObjectClass::ComputeScreenYOffset  cls=IUnknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055A8C0  ObjectClass::ComputeScreenYOffset  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * ObjectClass::ComputeScreenYOffset(BuildingTypeClass * aP0, unsigned int * a1)
 {
 {
@@ -1355,7 +1355,7 @@ unsigned int * ObjectClass::ComputeScreenYOffset(BuildingTypeClass * aP0, unsign
 }
 }
 
-// ==== BACKFILL 0x0055A8F0  StreamClass::SetDirty  cls=IUnknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055A8F0  StreamClass::SetDirty  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 int StreamClass::SetDirty(unsigned char * a1)
 {
 {
@@ -1364,7 +1364,7 @@ int StreamClass::SetDirty(unsigned char * a1)
 }
 }
 
-// ==== BACKFILL 0x0055A910  StreamClass::ClearDirty  cls=IUnknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055A910  StreamClass::ClearDirty  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 int StreamClass::ClearDirty(unsigned char * a1)
 {
 {
@@ -1373,7 +1373,7 @@ int StreamClass::ClearDirty(unsigned char * a1)
 }
 }
 
-// ==== BACKFILL 0x0055A930  StreamClass::GetDirty  cls=IUnknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055A930  StreamClass::GetDirty  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 char StreamClass::GetDirty(int a1)
 {
 {
@@ -1381,13 +1381,13 @@ char StreamClass::GetDirty(int a1)
 }
 }
 
-// ==== BACKFILL 0x0055A940  JumpjetLocomotionClass::MissionStub  cls=IUnknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055A940  JumpjetLocomotionClass::MissionStub  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 char JumpjetLocomotionClass::MissionStub(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x0055A950  COM::AddRef  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055A950  COM::AddRef  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 LONG COM::AddRef(int a1)
 {
 {
@@ -1396,7 +1396,7 @@ LONG COM::AddRef(int a1)
 }
 }
 
-// ==== BACKFILL 0x0055A970  COM::ReleaseRef  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055A970  COM::ReleaseRef  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 LONG COM::ReleaseRef(volatile LONG * a1)
 {
 {
@@ -1409,7 +1409,7 @@ LONG COM::ReleaseRef(volatile LONG * a1)
 }
 }
 
-// ==== BACKFILL 0x0055AA60  LoadIPersistStream  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AA60  LoadIPersistStream  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int IPersistStream_Load(int * a1, int * a2, int a3)
 {
 {
@@ -1441,7 +1441,7 @@ int IPersistStream_Load(int * a1, int * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x0055AB40  COMObject::GetStringValue  cls=IUnknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AB40  COMObject::GetStringValue  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 int COMObject::GetStringValue(int a1, unsigned int * a2)
 {
 {
@@ -1453,7 +1453,7 @@ int COMObject::GetStringValue(int a1, unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x0055AB70  JumpjetLocomotionClass::MissionStub2  cls=IUnknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AB70  JumpjetLocomotionClass::MissionStub2  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 char JumpjetLocomotionClass::MissionStub2(int a1, int a2)
 {
 {
@@ -1461,31 +1461,31 @@ char JumpjetLocomotionClass::MissionStub2(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x0055AB80  JumpjetLocomotionClass::MissionStub3  cls=IUnknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AB80  JumpjetLocomotionClass::MissionStub3  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 char JumpjetLocomotionClass::MissionStub3(int a1, int a2)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x0055AB90  JumpjetLocomotionClass::Stub10  cls=IUnknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AB90  JumpjetLocomotionClass::Stub10  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 void JumpjetLocomotionClass::Stub10(int a1)
 {
   ;
 }
 
-// ==== BACKFILL 0x0055ABA0  JumpjetLocomotionClass::StubReturnFalse  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055ABA0  JumpjetLocomotionClass::StubReturnFalse  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::StubReturnFalse(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x0055ABB0  JumpjetLocomotionClass::CheckState  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055ABB0  JumpjetLocomotionClass::CheckState  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::CheckState(TunnelLocomotionClass * aP0)
 {
 return 2;
 }
 
-// ==== BACKFILL 0x0055ABC0  JumpjetLocomotionClass::CheckState2  cls=IUnknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055ABC0  JumpjetLocomotionClass::CheckState2  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::CheckState2(int a1, int a2)
 
 // 0x55ABE0
@@ -1494,7 +1494,7 @@ char JumpjetLocomotionClass::MissionStub4(int a1)
 return 1;
 }
 
-// ==== BACKFILL 0x0055ABD0  COMObject::ReturnZeroPos  cls=IUnknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055ABD0  COMObject::ReturnZeroPos  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * COMObject::ReturnZeroPos(int a1, unsigned int * a2)
 {
 {
@@ -1504,7 +1504,7 @@ unsigned int * COMObject::ReturnZeroPos(int a1, unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x0055ABE0  JumpjetLocomotionClass::MissionStub4  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055ABE0  JumpjetLocomotionClass::MissionStub4  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 char JumpjetLocomotionClass::MissionStub4(int a1)
 {
 {
@@ -1512,55 +1512,55 @@ char JumpjetLocomotionClass::MissionStub4(int a1)
 }
 }
 
-// ==== BACKFILL 0x0055ABF0  JumpjetLocomotionClass::MissionStub5  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055ABF0  JumpjetLocomotionClass::MissionStub5  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::MissionStub5(int a1, int a2)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x0055AC00  JumpjetLocomotionClass::Stub11  cls=IUnknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AC00  JumpjetLocomotionClass::Stub11  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 void JumpjetLocomotionClass::Stub11(int a1, int a2, int a3, int a4)
 {
   ;
 }
 
-// ==== BACKFILL 0x0055AC10  JumpjetLocomotionClass::Stub12  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AC10  JumpjetLocomotionClass::Stub12  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 void JumpjetLocomotionClass::Stub12(int a1, int a2, int a3, int a4, int a5)
 {
   ;
 }
 
-// ==== BACKFILL 0x0055AC20  JumpjetLocomotionClass::Stub13  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AC20  JumpjetLocomotionClass::Stub13  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 void JumpjetLocomotionClass::Stub13(int a1)
 {
   ;
 }
 
-// ==== BACKFILL 0x0055AC30  JumpjetLocomotionClass::Stub14  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AC30  JumpjetLocomotionClass::Stub14  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 void JumpjetLocomotionClass::Stub14(int a1, int a2)
 {
   ;
 }
 
-// ==== BACKFILL 0x0055AC40  nullsub_164  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AC40  nullsub_164  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_164(int a1)
 {
   ;
 }
 
-// ==== BACKFILL 0x0055AC50  JumpjetLocomotionClass::Stub15  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AC50  JumpjetLocomotionClass::Stub15  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 void JumpjetLocomotionClass::Stub15(int a1, int a2, int a3, int a4)
 {
   ;
 }
 
-// ==== BACKFILL 0x0055AC60  JumpjetLocomotionClass::StubReturnTrue_3  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AC60  JumpjetLocomotionClass::StubReturnTrue_3  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 char JumpjetLocomotionClass::StubReturnTrue_3(int a1)
 {
 return 1;
 }
 
-// ==== BACKFILL 0x0055AC70  JumpjetLocomotionClass::GetGlobalCoordinate  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AC70  JumpjetLocomotionClass::GetGlobalCoordinate  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * JumpjetLocomotionClass::GetGlobalCoordinate(int a1, unsigned int * a2)
 {
 {
@@ -1575,7 +1575,7 @@ unsigned int * JumpjetLocomotionClass::GetGlobalCoordinate(int a1, unsigned int 
 }
 }
 
-// ==== BACKFILL 0x0055ACA0  COMObject::GetCoord3D  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055ACA0  COMObject::GetCoord3D  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * COMObject::GetCoord3D(int a1, unsigned int * a2)
 {
 {
@@ -1592,31 +1592,31 @@ unsigned int * COMObject::GetCoord3D(int a1, unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x0055ACD0  JumpjetLocomotionClass::StubReturnZero_11  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055ACD0  JumpjetLocomotionClass::StubReturnZero_11  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 char JumpjetLocomotionClass::StubReturnZero_11(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x0055ACE0  JumpjetLocomotionClass::Stub16  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055ACE0  JumpjetLocomotionClass::Stub16  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 void JumpjetLocomotionClass::Stub16(int a1, int a2)
 {
   ;
 }
 
-// ==== BACKFILL 0x0055ACF0  JumpjetLocomotionClass::MissionStub10  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055ACF0  JumpjetLocomotionClass::MissionStub10  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::MissionStub10(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x0055AD00  JumpjetLocomotionClass::MissionStub11  cls=IUnknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AD00  JumpjetLocomotionClass::MissionStub11  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::MissionStub11(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x0055AD10  COMObject::GetSpecialValue  cls=IUnknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AD10  COMObject::GetSpecialValue  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 int COMObject::GetSpecialValue(int a1)
 {
 {
@@ -1624,14 +1624,14 @@ int COMObject::GetSpecialValue(int a1)
 }
 }
 
-// ==== BACKFILL 0x0055AF40  RadarClass::SetGlobal  cls=RadarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055AF40  RadarClass::SetGlobal  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void RadarClass::SetGlobal() {
 {
     DataGlobal_829FF4 = (int)this;
 }
 } }
 
-// ==== BACKFILL 0x0055B880  Array::RemoveItemByValue  cls=LogicClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055B880  Array::RemoveItemByValue  cls=LogicClass  sig=csp  renamed_refs=0  residual=- ====
 void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
 {
 {
@@ -1680,7 +1680,7 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
 }
 }
 
-// ==== BACKFILL 0x0055BAA0  ObjectClass::SetDeployState  cls=LogicClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055BAA0  ObjectClass::SetDeployState  cls=LogicClass  sig=csp  renamed_refs=0  residual=- ====
 char ObjectClass::SetDeployState(ObjectClass * aP0, char a2)
 {
 {
@@ -1694,7 +1694,7 @@ char ObjectClass::SetDeployState(ObjectClass * aP0, char a2)
 }
 }
 
-// ==== BACKFILL 0x0055BAE0  VectorClass::RemoveItem  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055BAE0  VectorClass::RemoveItem  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass::RemoveItem(ObjectClass * aP1)
 {
 {
@@ -1723,29 +1723,29 @@ int VectorClass::RemoveItem(ObjectClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x0055BB40  ScenarioClass::ProcessAmbientEffects  cls=ScenarioClass  sig=csp  renamed_refs=6 ====
+// ==== BACKFILL 0x0055BB40  ScenarioClass::ProcessAmbientEffects  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* ScenarioClass::ProcessAmbientEffects(int a2, int a3) {
 {
-    this->q004 = 0;
-    this->q008 = a2;
+    this->Items = 0;
+    this->Capacity = a2;
     this->IsInitialized = 1;
-    this->q00D = 0;
+    this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_TeamClass;
     if ( a2 )
   {
     if ( a3 )
     {
-    this->q004 = a3;
+    this->Items = a3;
     return this;
     }
-    this->q004 = __2_YAPAXI_Z(4 * a2);
-    this->q00D = 1;
+    this->Items = __2_YAPAXI_Z(4 * a2);
+    this->IsAllocated = 1;
   }
     return this;
 }
 } }
 
-// ==== BACKFILL 0x0055BB90  WriteCompressionBlock  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055BB90  WriteCompressionBlock  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int WriteCompressionBlock(Pipe * aP0, BlowStraw * aP1, CCINIClass * aP2, int * a3, int a5)
 {
 {
@@ -1794,7 +1794,7 @@ int WriteCompressionBlock(Pipe * aP0, BlowStraw * aP1, CCINIClass * aP2, int * a
 }
 }
 
-// ==== BACKFILL 0x0055F6C0  SyncDelay::Check  cls=SyncDelay  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055F6C0  SyncDelay::Check  cls=SyncDelay  sig=csp  renamed_refs=0  residual=- ====
 bool SyncDelay::Check(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1807,7 +1807,7 @@ bool __thiscall sub_55F6C0(_DWORD *this, _DWORD *a2)
 }
 }
 
-// ==== BACKFILL 0x0055F980  sub_55F980  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0055F980  sub_55F980  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_55F980(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 {

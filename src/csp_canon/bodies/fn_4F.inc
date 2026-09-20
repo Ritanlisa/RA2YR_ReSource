@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x004F1720  Options::InitDialogControls  cls=Options  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F1720  Options::InitDialogControls  cls=Options  sig=csp  renamed_refs=0  residual=- ====
 HWND Options::InitDialogControls()
 {
 {
@@ -54,7 +54,7 @@ HWND Options::InitDialogControls()
 }
 }
 
-// ==== BACKFILL 0x004F1B80  sub_4F1B80  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F1B80  sub_4F1B80  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_4F1B80()
 {
 {
@@ -108,7 +108,7 @@ int sub_4F1B80()
 }
 }
 
-// ==== BACKFILL 0x004F2280  sub_4F2280  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F2280  sub_4F2280  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4F2280::sub_4F2280(int a2, int a3)
 {
 {
@@ -129,7 +129,7 @@ int E4Recv_4F2280::sub_4F2280(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x004F26E0  sub_4F26E0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F26E0  sub_4F26E0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4F26E0::sub_4F26E0(int a2)
 {
 {
@@ -158,7 +158,7 @@ int E4Recv_4F26E0::sub_4F26E0(int a2)
 }
 }
 
-// ==== BACKFILL 0x004F2770  sub_4F2770  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F2770  sub_4F2770  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4F2770::sub_4F2770(int a2)
 {
 {
@@ -187,7 +187,7 @@ int E4Recv_4F2770::sub_4F2770(int a2)
 }
 }
 
-// ==== BACKFILL 0x004F28C0  HouseClass::vt_placeholder_07  cls=VectorCursor  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F28C0  HouseClass::vt_placeholder_07  cls=VectorCursor  sig=csp  renamed_refs=0  residual=- ====
 VectorCursor * HouseClass::vt_placeholder_07(char a2)
 {
 {
@@ -198,7 +198,7 @@ VectorCursor * HouseClass::vt_placeholder_07(char a2)
 }
 }
 
-// ==== BACKFILL 0x004F2B40  HouseClass::vt_placeholder_09  cls=VectorCursor  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F2B40  HouseClass::vt_placeholder_09  cls=VectorCursor  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * HouseClass::vt_placeholder_09()
 {
 {
@@ -207,7 +207,7 @@ unsigned int * HouseClass::vt_placeholder_09()
 }
 }
 
-// ==== BACKFILL 0x004F2B50  HouseClass::vt_placeholder_10  cls=VectorCursor  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F2B50  HouseClass::vt_placeholder_10  cls=VectorCursor  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * HouseClass::vt_placeholder_10()
 {
 {
@@ -216,7 +216,7 @@ unsigned int * HouseClass::vt_placeholder_10()
 }
 }
 
-// ==== BACKFILL 0x004F2C00  sub_4F2C00  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F2C00  sub_4F2C00  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_4F2C00::sub_4F2C00(int a2, int a3)
 {
 {
@@ -239,7 +239,7 @@ unsigned int * E4Recv_4F2C00::sub_4F2C00(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x004F2F10  sub_4F2F10  cls=GraphicMenuAnimItem  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F2F10  sub_4F2F10  cls=GraphicMenuAnimItem  sig=csp  renamed_refs=0  residual=- ====
 int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, GraphicMenuAnimItem * aP3, int * a4, GraphicMenuAnimItem * aP5, char ** a6, GraphicMenuAnimItem * aP7, GraphicMenuAnimItem * aP8)
 {
 {
@@ -296,7 +296,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, Gr
 }
 }
 
-// ==== BACKFILL 0x004F3460  sub_4F3460  cls=GraphicMenuImageItem  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F3460  sub_4F3460  cls=GraphicMenuImageItem  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3, ReferenceCounted * aP4, const char ** a5, ReferenceCounted * aP6, const char ** a7, ReferenceCounted * aP8, const char ** a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -403,7 +403,7 @@ int __thiscall sub_4F3460(
 }
 }
 
-// ==== BACKFILL 0x004F37A0  GraphicMenuImageItem::ddtor  cls=GraphicMenuImageItem  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F37A0  GraphicMenuImageItem::ddtor  cls=GraphicMenuImageItem  sig=csp  renamed_refs=0  residual=- ====
 int GraphicMenuImageItem::ddtor(int a2)
 {
     int v7[22];
@@ -431,7 +431,7 @@ int GraphicMenuImageItem::ddtor(int a2)
     return result;
 }
 
-// ==== BACKFILL 0x004F3A90  State::SetIfChanged  cls=State  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x004F3A90  State::SetIfChanged  cls=State  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { namespace wdt { int State::SetIfChanged(int a1) {
 {
       int result;
@@ -448,13 +448,13 @@ namespace gamemd { namespace wdt { int State::SetIfChanged(int a1) {
 }
 } } }
 
-// ==== BACKFILL 0x004F3AD0  GraphicMenuAnimItem::StubReturnFalse  cls=GraphicMenuItem  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F3AD0  GraphicMenuAnimItem::StubReturnFalse  cls=GraphicMenuItem  sig=csp  renamed_refs=0  residual=- ====
 void GraphicMenuAnimItem::StubReturnFalse() {}
 
-// ==== BACKFILL 0x004F3AE0  GraphicMenuAnimItem::Stub  cls=GraphicMenuItem  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F3AE0  GraphicMenuAnimItem::Stub  cls=GraphicMenuItem  sig=csp  renamed_refs=0  residual=- ====
 void GraphicMenuAnimItem::Stub() {}
 
-// ==== BACKFILL 0x004F3C40  sub_4F3C40  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F3C40  sub_4F3C40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
 {
 {
@@ -507,19 +507,19 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
 }
 }
 
-// ==== BACKFILL 0x004F4220  RadarClass::initRadarSurface  cls=RadarClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x004F4220  RadarClass::initRadarSurface  cls=RadarClass  sig=csp  renamed_refs=3  residual=- ====
 unsigned int * RadarClass::initRadarSurface()
 {
 {
     this->RadarClass_field_0x4 = 0;
     this->RadarClass_field_0x8 = 0;
-    this->IsInitialized = 2;
+    this->q00C = 2;
     *(void**)this = &vt_GScreenClass;
     return this;
 }
 }
 
-// ==== BACKFILL 0x004F4240  COMObject::QueryInterface  cls=GScreenClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F4240  COMObject::QueryInterface  cls=GScreenClass  sig=csp  renamed_refs=0  residual=- ====
 int COMObject::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
 {
@@ -533,7 +533,7 @@ int COMObject::QueryInterface(int a1, const void * a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x004F42A0  VectorCursor_uint_DynamicVectorClass_uint____13::Add  cls=GScreenClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F42A0  VectorCursor_uint_DynamicVectorClass_uint____13::Add  cls=GScreenClass  sig=csp  renamed_refs=0  residual=- ====
 void VectorCursor_uint_DynamicVectorClass_uint____13::Add()
 {
 {
@@ -541,7 +541,7 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Add()
 }
 }
 
-// ==== BACKFILL 0x004F42B0  COMObject::DtorSequence  cls=GScreenClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F42B0  COMObject::DtorSequence  cls=GScreenClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int COMObject::DtorSequence(int a1) {
 {
       this->vt7();
@@ -549,7 +549,7 @@ namespace gamemd { int COMObject::DtorSequence(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x004F42E0  VectorCursor_uint_DynamicVectorClass_uint____13::Get  cls=GScreenClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F42E0  VectorCursor_uint_DynamicVectorClass_uint____13::Get  cls=GScreenClass  sig=csp  renamed_refs=0  residual=- ====
 void VectorCursor_uint_DynamicVectorClass_uint____13::Get()
 {
 {
@@ -557,7 +557,7 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Get()
 }
 }
 
-// ==== BACKFILL 0x004F42F0  MapClass::MarkForRedraw  cls=GScreenClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F42F0  MapClass::MarkForRedraw  cls=GScreenClass  sig=csp  renamed_refs=0  residual=- ====
 int MapClass::MarkForRedraw(int a2)
 {
 {
@@ -575,7 +575,7 @@ int MapClass::MarkForRedraw(int a2)
 }
 }
 
-// ==== BACKFILL 0x004F43F0  COMObject::IsSameType  cls=GScreenClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F43F0  COMObject::IsSameType  cls=GScreenClass  sig=csp  renamed_refs=0  residual=- ====
 bool COMObject::IsSameType(GScreenClass * aP0)
 {
 {
@@ -583,7 +583,7 @@ bool COMObject::IsSameType(GScreenClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x004F4450  Tactical::SelectObject  cls=GScreenClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F4450  Tactical::SelectObject  cls=GScreenClass  sig=csp  renamed_refs=0  residual=- ====
 char Tactical::SelectObject(int a2)
 {
 {
@@ -598,7 +598,7 @@ char Tactical::SelectObject(int a2)
 }
 }
 
-// ==== BACKFILL 0x004F4C00  AbstractClass::getHouseHandle  cls=GScreenClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F4C00  AbstractClass::getHouseHandle  cls=GScreenClass  sig=csp  renamed_refs=0  residual=- ====
 GScreenClass * AbstractClass::getHouseHandle(char a2)
 {
 {
@@ -609,7 +609,7 @@ GScreenClass * AbstractClass::getHouseHandle(char a2)
 }
 }
 
-// ==== BACKFILL 0x004F4C20  Byte::Zero  cls=Byte  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F4C20  Byte::Zero  cls=Byte  sig=csp  renamed_refs=0  residual=- ====
 unsigned char * Byte::Zero()
 {
 {
@@ -618,7 +618,7 @@ unsigned char * Byte::Zero()
 }
 }
 
-// ==== BACKFILL 0x004F4D30  sub_4F4D30  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F4D30  sub_4F4D30  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_4F4D30::sub_4F4D30(const char * a2)
 {
 {
@@ -626,7 +626,7 @@ bool E4Recv_4F4D30::sub_4F4D30(const char * a2)
 }
 }
 
-// ==== BACKFILL 0x004F6830  HouseClass::QueryInterface  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F6830  HouseClass::QueryInterface  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseClass::QueryInterface(CCINIClass * aP0, const void * a1, unsigned int * a2)
 {
 {
@@ -673,7 +673,7 @@ int HouseClass::QueryInterface(CCINIClass * aP0, const void * a1, unsigned int *
 }
 }
 
-// ==== BACKFILL 0x004F6910  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F6910  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 bool VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex(int a1)
 {
 {
@@ -681,7 +681,7 @@ bool VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex(int a1)
 }
 }
 
-// ==== BACKFILL 0x004F6930  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F6930  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void * VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_0(int a2)
 {
 {
@@ -692,7 +692,7 @@ void * VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_0(int a2)
 }
 }
 
-// ==== BACKFILL 0x004F6950  VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F6950  VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BSTR VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex(int a1)
 {
 {
@@ -702,7 +702,7 @@ BSTR VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex(int a1)
 }
 }
 
-// ==== BACKFILL 0x004F6990  VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_0  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F6990  VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_0  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 long long VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_0(int a1)
 {
 {
@@ -714,7 +714,7 @@ long long VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_0(int a1
 }
 }
 
-// ==== BACKFILL 0x004F69D0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::Destroy  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F69D0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::Destroy  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::Destroy(int a1)
 {
 {
@@ -724,7 +724,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::Destroy(int a1)
 }
 }
 
-// ==== BACKFILL 0x004F6A00  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F6A00  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem(int a1)
 {
 {
@@ -732,7 +732,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem(int a1)
 }
 }
 
-// ==== BACKFILL 0x004F6A10  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_0  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F6A10  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_0  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_0(int a1)
 {
 {
@@ -740,7 +740,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_0(int a1)
 }
 }
 
-// ==== BACKFILL 0x004F6E60  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_1  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F6E60  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_1  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_1(int a1)
 {
 {
@@ -748,7 +748,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_1(int a1)
 }
 }
 
-// ==== BACKFILL 0x004F7850  sub_4F7850  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F7850  sub_4F7850  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_4F7850::sub_4F7850()
 {
 {
@@ -761,7 +761,7 @@ unsigned int * E4Recv_4F7850::sub_4F7850()
 }
 }
 
-// ==== BACKFILL 0x004F9370  HouseClass::Update  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F9370  HouseClass::Update  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::Update() {
 {
     int v2;
@@ -793,7 +793,7 @@ namespace gamemd { int HouseClass::Update() {
 }
 } }
 
-// ==== BACKFILL 0x004F9610  HouseClass::GiveTiberium_Storage  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F9610  HouseClass::GiveTiberium_Storage  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 double HouseClass::GiveTiberium_Storage(AbstractClass * aP1, BuildingClass * aP2)
 {
 {
@@ -803,7 +803,7 @@ double HouseClass::GiveTiberium_Storage(AbstractClass * aP1, BuildingClass * aP2
 }
 }
 
-// ==== BACKFILL 0x004F9670  sub_4F9670  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F9670  sub_4F9670  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4F9670::sub_4F9670()
 {
 {
@@ -846,7 +846,7 @@ int E4Recv_4F9670::sub_4F9670()
 }
 }
 
-// ==== BACKFILL 0x004F9700  FactoryClass::AccumulateCreditsProgress  cls=FactoryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F9700  FactoryClass::AccumulateCreditsProgress  cls=FactoryClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void FactoryClass::AccumulateCreditsProgress(int a2, int a3) {
 {
     int v3;
@@ -869,7 +869,7 @@ namespace gamemd { void FactoryClass::AccumulateCreditsProgress(int a2, int a3) 
 }
 } }
 
-// ==== BACKFILL 0x004F9750  BuildingClass::checkRepairEligibility  cls=BuildingClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F9750  BuildingClass::checkRepairEligibility  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { double BuildingClass::checkRepairEligibility(HouseClass* pHouse) {
 {
     float *v1;
@@ -881,7 +881,7 @@ namespace gamemd { double BuildingClass::checkRepairEligibility(HouseClass* pHou
 }
 } }
 
-// ==== BACKFILL 0x004F9950  HouseClass::AddPower  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F9950  HouseClass::AddPower  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::AddPower(int a1) {
 {
     this->balance += aP1;
@@ -889,7 +889,7 @@ namespace gamemd { int HouseClass::AddPower(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x004F9970  HouseClass::UpdateAllSilos  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F9970  HouseClass::UpdateAllSilos  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 char HouseClass::UpdateAllSilos(int a2, int a3)
 {
 {
@@ -931,7 +931,7 @@ char HouseClass::UpdateAllSilos(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x004F9B50  HouseClass::MakeAlly  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004F9B50  HouseClass::MakeAlly  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseClass::MakeAlly(int a2, char a3)
 {
 {
@@ -939,7 +939,7 @@ int HouseClass::MakeAlly(int a2, char a3)
 }
 }
 
-// ==== BACKFILL 0x004FA210  sub_4FA210  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FA210  sub_4FA210  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4FA210::sub_4FA210(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1010,7 +1010,7 @@ int __thiscall sub_4FA210(void *this, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x004FA2E0  HouseClass::SetThreat_Bounds  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FA2E0  HouseClass::SetThreat_Bounds  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::SetThreat_Bounds(int a1, int a2) {
 {
       int v3;
@@ -1051,7 +1051,7 @@ namespace gamemd { int HouseClass::SetThreat_Bounds(int a1, int a2) {
 }
 } }
 
-// ==== BACKFILL 0x004FAD20  SuperWeapon::SelectSuperWeaponTarget  cls=SuperWeapon  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FAD20  SuperWeapon::SelectSuperWeaponTarget  cls=SuperWeapon  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SuperWeapon::SelectSuperWeaponTarget(int a1) {
 {
       int v3;
@@ -1112,7 +1112,7 @@ namespace gamemd { int SuperWeapon::SelectSuperWeaponTarget(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x004FAE50  SuperWeapon::FireSuperWeaponHouseClass  cls=SuperWeapon  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FAE50  SuperWeapon::FireSuperWeaponHouseClass  cls=SuperWeapon  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SuperWeapon::FireSuperWeaponHouseClass(int a1, int a2) {
 {
       int v4;
@@ -1151,7 +1151,7 @@ namespace gamemd { int SuperWeapon::FireSuperWeaponHouseClass(int a1, int a2) {
 }
 } }
 
-// ==== BACKFILL 0x004FAF00  SuperWeapon::EvaluateAITarget  cls=SuperWeapon  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FAF00  SuperWeapon::EvaluateAITarget  cls=SuperWeapon  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SuperWeapon::EvaluateAITarget(int a1, void* a2) {
 {
       int v4;
@@ -1241,7 +1241,7 @@ namespace gamemd { int SuperWeapon::EvaluateAITarget(int a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x004FB6B0  HouseClass::ProcessPromotionSound  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FB6B0  HouseClass::ProcessPromotionSound  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::ProcessPromotionSound(void* a1) {
 {
       int ScoreAnimSound;
@@ -1317,7 +1317,7 @@ namespace gamemd { int HouseClass::ProcessPromotionSound(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x004FB920  HouseClass::SDDTORAllAndTriggers  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FB920  HouseClass::SDDTORAllAndTriggers  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * HouseClass::SDDTORAllAndTriggers()
 {
 {
@@ -1374,7 +1374,7 @@ unsigned int * HouseClass::SDDTORAllAndTriggers()
 }
 }
 
-// ==== BACKFILL 0x004FBD00  sub_4FBD00  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FBD00  sub_4FBD00  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_4FBD00::sub_4FBD00(int a2)
 {
 {
@@ -1405,7 +1405,7 @@ char E4Recv_4FBD00::sub_4FBD00(int a2)
 }
 }
 
-// ==== BACKFILL 0x004FBF60  HouseClass::DroppedFlag  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FBF60  HouseClass::DroppedFlag  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 char HouseClass::DroppedFlag(UnitClass * aP1, int a3)
 {
 {
@@ -1434,7 +1434,7 @@ char HouseClass::DroppedFlag(UnitClass * aP1, int a3)
 }
 }
 
-// ==== BACKFILL 0x004FC060  HouseClass::PickedUpFlag  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FC060  HouseClass::PickedUpFlag  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 char HouseClass::PickedUpFlag(ObjectClass * aP1, char a3)
 {
 {
@@ -1447,7 +1447,7 @@ char HouseClass::PickedUpFlag(ObjectClass * aP1, char a3)
 }
 }
 
-// ==== BACKFILL 0x004FC6D0  HouseClass::ClearLowPowerTargets  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FC6D0  HouseClass::ClearLowPowerTargets  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::ClearLowPowerTargets() {
 {
       int result;
@@ -1496,7 +1496,7 @@ namespace gamemd { int HouseClass::ClearLowPowerTargets() {
 }
 } }
 
-// ==== BACKFILL 0x004FCE00  sub_4FCE00  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FCE00  sub_4FCE00  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4FCE00::sub_4FCE00(ObjectClass * aP1, int a3, ObjectClass * aP3)
 {
 {
@@ -1510,7 +1510,7 @@ int E4Recv_4FCE00::sub_4FCE00(ObjectClass * aP1, int a3, ObjectClass * aP3)
 }
 }
 
-// ==== BACKFILL 0x004FCE30  HouseClass::GetPowerRatio  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FCE30  HouseClass::GetPowerRatio  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { double HouseClass::GetPowerRatio() {
 {
     int v1;
@@ -1525,7 +1525,7 @@ namespace gamemd { double HouseClass::GetPowerRatio() {
 }
 } }
 
-// ==== BACKFILL 0x004FD120  sub_4FD120  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FD120  sub_4FD120  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * sub_4FD120(unsigned int * a1, int a2)
 {
 {
@@ -1536,7 +1536,7 @@ unsigned int * sub_4FD120(unsigned int * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x004FEEE0  HouseClass::AIInfantryProduction  cls=HouseClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x004FEEE0  HouseClass::AIInfantryProduction  cls=HouseClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int HouseClass::AIInfantryProduction() {
 {
       AbstractClass *v1;
@@ -1687,7 +1687,7 @@ namespace gamemd { int HouseClass::AIInfantryProduction() {
 }
 } }
 
-// ==== BACKFILL 0x004FF210  HouseClass::AIAircraftProduction  cls=HouseClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x004FF210  HouseClass::AIAircraftProduction  cls=HouseClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int HouseClass::AIAircraftProduction() {
 {
       AbstractClass *v1;
@@ -1836,13 +1836,13 @@ namespace gamemd { int HouseClass::AIAircraftProduction() {
 }
 } }
 
-// ==== BACKFILL 0x004FF540  nullsub_100  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FF540  nullsub_100  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_100(int a1)
 {
   ;
 }
 
-// ==== BACKFILL 0x004FF550  HouseClass::DecrementUnitCount  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FF550  HouseClass::DecrementUnitCount  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::DecrementUnitCount(void* a1) {
 {
       int v3;
@@ -1920,7 +1920,7 @@ namespace gamemd { int HouseClass::DecrementUnitCount(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x004FFD50  sub_4FFD50  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FFD50  sub_4FFD50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4FFD50::sub_4FFD50(int a2)
 {
 {
@@ -1933,7 +1933,7 @@ int E4Recv_4FFD50::sub_4FFD50(int a2)
 }
 }
 
-// ==== BACKFILL 0x004FFD90  sub_4FFD90  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x004FFD90  sub_4FFD90  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_4FFD90::sub_4FFD90(short * a2)
 {
 {

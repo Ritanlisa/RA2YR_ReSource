@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00510220  AbstractClass::updateThreatMap  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510220  AbstractClass::updateThreatMap  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* AbstractClass::updateThreatMap(int a2) {
 {
     void *v3;
@@ -21,7 +21,7 @@ namespace ra2 { namespace game { void* AbstractClass::updateThreatMap(int a2) {
 }
 } } }
 
-// ==== BACKFILL 0x00510460  HouseClass::updatePowerState  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510460  HouseClass::updatePowerState  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* HouseClass::updatePowerState(int a2) {
 {
     char *v2;
@@ -43,7 +43,7 @@ namespace gamemd { void* HouseClass::updatePowerState(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00510550  VectorClass::BuildingConstructor  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510550  VectorClass::BuildingConstructor  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * VectorClass::BuildingConstructor(int a2, int a3)
 {
 {
@@ -66,7 +66,7 @@ unsigned int * VectorClass::BuildingConstructor(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x005105A0  VectorClass::BuildingTypeConstructor  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005105A0  VectorClass::BuildingTypeConstructor  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * VectorClass::BuildingTypeConstructor(TechnoTypeClass * aP1, TechnoTypeClass * aP2)
 {
 {
@@ -89,7 +89,7 @@ unsigned int * VectorClass::BuildingTypeConstructor(TechnoTypeClass * aP1, Techn
 }
 }
 
-// ==== BACKFILL 0x00510820  HouseClass::processAIEvents  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510820  HouseClass::processAIEvents  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::processAIEvents(int a1) {
 {
     int v2;
@@ -114,7 +114,7 @@ namespace gamemd { int HouseClass::processAIEvents(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00510A20  AbstractClass::saveToStream  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510A20  AbstractClass::saveToStream  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::saveToStream(int a1, const void * a2, unsigned int * a3)
 {
 {
@@ -122,7 +122,7 @@ int AbstractClass::saveToStream(int a1, const void * a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x00510A30  AbstractClass::loadFromStream  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510A30  AbstractClass::loadFromStream  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::loadFromStream(int a1)
 {
 {
@@ -130,7 +130,7 @@ int AbstractClass::loadFromStream(int a1)
 }
 }
 
-// ==== BACKFILL 0x00510A40  AbstractClass::computeSize  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510A40  AbstractClass::computeSize  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::computeSize(int a1)
 {
 {
@@ -138,7 +138,7 @@ int AbstractClass::computeSize(int a1)
 }
 }
 
-// ==== BACKFILL 0x00510A50  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510A50  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2(int a1, const void * a2, unsigned int * a3)
 {
 {
@@ -146,7 +146,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2(int a1, const void
 }
 }
 
-// ==== BACKFILL 0x00510A60  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_3  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510A60  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_3  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_3(int a1)
 {
 {
@@ -154,7 +154,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_3(int a1)
 }
 }
 
-// ==== BACKFILL 0x00510A70  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_4  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510A70  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_4  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_4(int a1)
 {
 {
@@ -162,7 +162,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_4(int a1)
 }
 }
 
-// ==== BACKFILL 0x00510A80  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_5  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510A80  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_5  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_5(int a1, const void * a2, unsigned int * a3)
 {
 {
@@ -170,7 +170,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_5(int a1, const void
 }
 }
 
-// ==== BACKFILL 0x00510A90  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_6  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510A90  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_6  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_6(int a1)
 {
 {
@@ -178,7 +178,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_6(int a1)
 }
 }
 
-// ==== BACKFILL 0x00510AA0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_7  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510AA0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_7  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_7(int a1)
 {
 {
@@ -186,7 +186,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_7(int a1)
 }
 }
 
-// ==== BACKFILL 0x00510AB0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_8  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510AB0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_8  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_8(int a1)
 {
 {
@@ -194,7 +194,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_8(int a1)
 }
 }
 
-// ==== BACKFILL 0x00510AC0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510AC0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BSTR VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9(int a1)
 {
 {
@@ -202,7 +202,7 @@ BSTR VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9(int a1)
 }
 }
 
-// ==== BACKFILL 0x00510AD0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_10  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510AD0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_10  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_10(int a1, const void * a2, unsigned int * a3)
 {
 {
@@ -210,7 +210,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_10(int a1, const voi
 }
 }
 
-// ==== BACKFILL 0x00510AE0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_11  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510AE0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_11  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_11(int a1)
 {
 {
@@ -218,7 +218,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_11(int a1)
 }
 }
 
-// ==== BACKFILL 0x00510AF0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_12  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510AF0  VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_12  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_12(int a1)
 {
 {
@@ -226,7 +226,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_12(int a1)
 }
 }
 
-// ==== BACKFILL 0x00510E10  FormatHouseClassPlayerName  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00510E10  FormatHouseClassPlayerName  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int HouseClass_FormatPlayerName(int a1, unsigned char * a2, int a3)
 {
 {
@@ -266,7 +266,7 @@ unsigned int HouseClass_FormatPlayerName(int a1, unsigned char * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x00511650  HouseTypeClass::loadVeteranWeapons  cls=HouseTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00511650  HouseTypeClass::loadVeteranWeapons  cls=HouseTypeClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -284,7 +284,7 @@ _DWORD *__thiscall HouseTypeClass::loadVeteranWeapons(_DWORD *this, HouseTypeCla
 }
 }
 
-// ==== BACKFILL 0x005117D0  SuperWeaponTypeClass::FindByName  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005117D0  SuperWeaponTypeClass::FindByName  cls=SuperWeaponTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int SuperWeaponTypeClass::FindByName()
 {
 {
@@ -309,7 +309,7 @@ int SuperWeaponTypeClass::FindByName()
 }
 }
 
-// ==== BACKFILL 0x00512170  HouseTypeClass::ProcessPower  cls=HouseTypeClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x00512170  HouseTypeClass::ProcessPower  cls=HouseTypeClass  sig=csp  renamed_refs=4  residual=- ====
 int HouseTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -337,13 +337,13 @@ int __thiscall HouseTypeClass::ProcessPower(int this, int *a2)
 }
 }
 
-// ==== BACKFILL 0x00512280  HouseTypeClass::StubReturnFalse  cls=HouseTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00512280  HouseTypeClass::StubReturnFalse  cls=HouseTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseTypeClass::StubReturnFalse(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00512570  HouseTypeClass::LoadHouse  cls=HouseTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00512570  HouseTypeClass::LoadHouse  cls=HouseTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseTypeClass::LoadHouse(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -353,7 +353,7 @@ int HouseTypeClass::LoadHouse(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x005125A0  HouseTypeClass::QueryInterface  cls=HouseTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005125A0  HouseTypeClass::QueryInterface  cls=HouseTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseTypeClass::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
 {
@@ -382,7 +382,7 @@ int HouseTypeClass::QueryInterface(int a1, const void * a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x00512640  HouseTypeClass::GetClassIdentifier  cls=HouseTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00512640  HouseTypeClass::GetClassIdentifier  cls=HouseTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -394,39 +394,39 @@ int HouseTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x00512710  HouseTypeClass::GetTypeIdentifier  cls=HouseTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00512710  HouseTypeClass::GetTypeIdentifier  cls=HouseTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseTypeClass::GetTypeIdentifier()
 {
 return 14;
 }
 
-// ==== BACKFILL 0x00512720  HouseTypeClass::GetObjectSize  cls=HouseTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00512720  HouseTypeClass::GetObjectSize  cls=HouseTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseTypeClass::GetObjectSize()
 {
 return 432;
 }
 
-// ==== BACKFILL 0x00512730  HouseTypeClass::loadBuildLimits  cls=HouseTypeClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00512730  HouseTypeClass::loadBuildLimits  cls=HouseTypeClass  sig=csp  renamed_refs=1  residual=- ====
 unsigned int HouseTypeClass::loadBuildLimits()
 {
 {
-    return this->__pad_00C;
+    return this->vtable4;
 }
 }
 
-// ==== BACKFILL 0x00512740  HouseTypeClass::AddRef  cls=HouseTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00512740  HouseTypeClass::AddRef  cls=HouseTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseTypeClass::AddRef(int a1)
 {
 return 1;
 }
 
-// ==== BACKFILL 0x00512750  HouseTypeClass::Release  cls=HouseTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00512750  HouseTypeClass::Release  cls=HouseTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int HouseTypeClass::Release(int a1)
 {
 return 1;
 }
 
-// ==== BACKFILL 0x00512760  HouseTypeClass::Destructor  cls=HouseTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00512760  HouseTypeClass::Destructor  cls=HouseTypeClass  sig=csp  renamed_refs=0  residual=- ====
 HouseTypeClass * HouseTypeClass::Destructor(char a2)
 {
 {
@@ -485,13 +485,13 @@ HouseTypeClass * HouseTypeClass::Destructor(char a2)
 }
 }
 
-// ==== BACKFILL 0x00512960  HouseTypeClass::readStartUnit  cls=HouseTypeClass  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x00512960  HouseTypeClass::readStartUnit  cls=HouseTypeClass  sig=csp  renamed_refs=3  residual=IsAllocated ====
 unsigned int * HouseTypeClass::readStartUnit()
 {
 {
-    this->__pad_004 = 0;
+    this->vtable2 = 0;
     this->vtable3 = 0;
-    this->__pad_00C = 1;
+    this->vtable4 = 1;
     this->IsAllocated = 0;
     this->abstractFlags = 10;
     this->uniqueId = 0;
@@ -500,7 +500,7 @@ unsigned int * HouseTypeClass::readStartUnit()
 }
 }
 
-// ==== BACKFILL 0x00512BD0  HouseTypeClass::readStartInfantry  cls=HouseTypeClass  sig=csp  renamed_refs=8 ====
+// ==== BACKFILL 0x00512BD0  HouseTypeClass::readStartInfantry  cls=HouseTypeClass  sig=csp  renamed_refs=8  residual=IsAllocated ====
 unsigned int * HouseTypeClass::readStartInfantry(InfantryTypeClass * aP1)
 {
 {
@@ -515,12 +515,12 @@ unsigned int * HouseTypeClass::readStartInfantry(InfantryTypeClass * aP1)
     this->vtable3 = v3;
     if ( !v3 )
   {
-    this->__pad_004 = 0;
+    this->vtable2 = 0;
     this->IsAllocated = 0;
     return this;
   }
     v4 = __2_YAPAXI_Z(4 * v3);
-    this->__pad_004 = v4;
+    this->vtable2 = v4;
     if ( !v4 )
     return this;
     v5 = this->vtable3;
@@ -530,7 +530,7 @@ unsigned int * HouseTypeClass::readStartInfantry(InfantryTypeClass * aP1)
     return this;
     do
   {
-    *(int *)(this->__pad_004 + 4 * v6) = *(int *)(*(int *)&aP1->vtable1[4] + 4 * v6);
+    *(int *)(this->vtable2 + 4 * v6) = *(int *)(*(int *)&aP1->vtable1[4] + 4 * v6);
     ++v6;
   }
     while ( v6 < this->vtable3 );
@@ -538,7 +538,7 @@ unsigned int * HouseTypeClass::readStartInfantry(InfantryTypeClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x00512FA0  VectorClass::CopyConstructor  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00512FA0  VectorClass::CopyConstructor  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * VectorClass::CopyConstructor(InfantryTypeClass * aP1)
 {
 VectorClass* source = (VectorClass *)aP1;
@@ -571,7 +571,7 @@ while ( i < this->Capacity );
 return (unsigned int *)this;
 }
 
-// ==== BACKFILL 0x005132F0  VectorClass::PushBack  cls=VectorClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x005132F0  VectorClass::PushBack  cls=VectorClass  sig=csp  renamed_refs=2  residual=- ====
 char VectorClass::PushBack(VectorClass * aP1)
 {
 {
@@ -596,7 +596,7 @@ char VectorClass::PushBack(VectorClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x005134D0  VectorClass::ClearAndFree4  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005134D0  VectorClass::ClearAndFree4  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 void VectorClass::ClearAndFree4()
 {
 if ( this->Items && this->IsAllocated )
@@ -608,24 +608,24 @@ this->IsAllocated = 0;
 this->Capacity = 0;
 }
 
-// ==== BACKFILL 0x00513560  HouseTypeClass::readDefaultAlly  cls=HouseTypeClass  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x00513560  HouseTypeClass::readDefaultAlly  cls=HouseTypeClass  sig=csp  renamed_refs=5  residual=IsAllocated ====
 unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
 {
 {
-    this->__pad_004 = 0;
+    this->vtable2 = 0;
     this->vtable3 = a2;
-    this->__pad_00C = 1;
+    this->vtable4 = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
     if ( a2 )
   {
     if ( a3 )
     {
-    this->__pad_004 = a3;
+    this->vtable2 = a3;
     }
     else
     {
-    this->__pad_004 = __2_YAPAXI_Z(4 * a2);
+    this->vtable2 = __2_YAPAXI_Z(4 * a2);
     this->IsAllocated = 1;
     }
   }
@@ -636,7 +636,7 @@ unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x005136C0  HouseTypeClass::readPowerPlants  cls=HouseTypeClass  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x005136C0  HouseTypeClass::readPowerPlants  cls=HouseTypeClass  sig=csp  renamed_refs=3  residual=IsAllocated ====
 char HouseTypeClass::readPowerPlants(TypeList * aP1)
 {
 {
@@ -654,14 +654,14 @@ char HouseTypeClass::readPowerPlants(TypeList * aP1)
     return 0;
   }
     v6 = this->uniqueId;
-    v7 = this->__pad_004;
+    v7 = this->vtable2;
     this->uniqueId = v6 + 1;
     *(int *)(v7 + 4 * v6) = aP1->vtable1;
     return 1;
 }
 }
 
-// ==== BACKFILL 0x00513740  TypeList::CopyConstructor  cls=TypeList  sig=csp  renamed_refs=15 ====
+// ==== BACKFILL 0x00513740  TypeList::CopyConstructor  cls=TypeList  sig=csp  renamed_refs=1  residual=- ====
 unsigned int * TypeList::CopyConstructor(VectorClass * aP1)
 {
 {
@@ -669,50 +669,50 @@ unsigned int * TypeList::CopyConstructor(VectorClass * aP1)
     int v4;
     int v5;
     int v6;
-    this->q004 = 0;
-    this->q008 = 0;
-    this->q00C = 1;
+    this->Items = 0;
+    this->Capacity = 0;
+    this->IsInitialized = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_UnitTypeClass_const;
     if ( this != (int *)aP1 )
   {
     Vector::Destructor((int)this);
-    v3 = aP1->q008;
-    this->q008 = v3;
+    v3 = aP1->Capacity;
+    this->Capacity = v3;
     if ( v3 )
     {
     v4 = __2_YAPAXI_Z(4 * v3);
-    this->q004 = v4;
+    this->Items = v4;
     if ( v4 )
       {
-    v5 = this->q008;
+    v5 = this->Capacity;
     v6 = 0;
     this->IsAllocated = 1;
     if ( v5 > 0 )
         {
     do
           {
-    *(int *)(this->q004 + 4 * v6) = *((int *)aP1->q004 + v6);
+    *(int *)(this->Items + 4 * v6) = *((int *)aP1->Items + v6);
     ++v6;
           }
-    while ( v6 < this->q008 );
+    while ( v6 < this->Capacity );
         }
       }
     }
     else
     {
-    this->q004 = 0;
+    this->Items = 0;
     this->IsAllocated = 0;
     }
   }
-    this->q010 = aP1[1].vtable1;
-    this->q014 = aP1[1].q004;
+    this->Count = aP1[1].vtable1;
+    this->CapacityIncrement = aP1[1].Items;
     *(void**)this = &vt_TypeList_UnitTypeClass_const;
     return this;
 }
 }
 
-// ==== BACKFILL 0x005137D0  HouseTypeClass::readParaDropTypes  cls=HouseTypeClass  sig=csp  renamed_refs=10 ====
+// ==== BACKFILL 0x005137D0  HouseTypeClass::readParaDropTypes  cls=HouseTypeClass  sig=csp  renamed_refs=10  residual=IsAllocated ====
 unsigned int * HouseTypeClass::readParaDropTypes(VectorClass * aP1)
 {
 {
@@ -720,9 +720,9 @@ unsigned int * HouseTypeClass::readParaDropTypes(VectorClass * aP1)
     int v4;
     int v5;
     int v6;
-    this->__pad_004 = 0;
+    this->vtable2 = 0;
     this->vtable3 = 0;
-    this->__pad_00C = 1;
+    this->vtable4 = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
     if ( this != (int *)aP1 )
@@ -733,7 +733,7 @@ unsigned int * HouseTypeClass::readParaDropTypes(VectorClass * aP1)
     if ( v3 )
     {
     v4 = __2_YAPAXI_Z(4 * v3);
-    this->__pad_004 = v4;
+    this->vtable2 = v4;
     if ( v4 )
       {
     v5 = this->vtable3;
@@ -743,7 +743,7 @@ unsigned int * HouseTypeClass::readParaDropTypes(VectorClass * aP1)
         {
     do
           {
-    *(int *)(this->__pad_004 + 4 * v6) = *((int *)aP1->Items + v6);
+    *(int *)(this->vtable2 + 4 * v6) = *((int *)aP1->Items + v6);
     ++v6;
           }
     while ( v6 < this->vtable3 );
@@ -752,7 +752,7 @@ unsigned int * HouseTypeClass::readParaDropTypes(VectorClass * aP1)
     }
     else
     {
-    this->__pad_004 = 0;
+    this->vtable2 = 0;
     this->IsAllocated = 0;
     }
   }
@@ -763,7 +763,7 @@ unsigned int * HouseTypeClass::readParaDropTypes(VectorClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x00513860  HouseTypeClass::readAllowedUnits  cls=HouseTypeClass  sig=csp  renamed_refs=11 ====
+// ==== BACKFILL 0x00513860  HouseTypeClass::readAllowedUnits  cls=HouseTypeClass  sig=csp  renamed_refs=11  residual=IsAllocated ====
 unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * aP1)
 {
 {
@@ -771,9 +771,9 @@ unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * aP1)
     int v4;
     int v5;
     int v6;
-    this->__pad_004 = 0;
+    this->vtable2 = 0;
     this->vtable3 = 0;
-    this->__pad_00C = 1;
+    this->vtable4 = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_InfantryTypeClass_const;
     if ( this != (int *)aP1 )
@@ -784,7 +784,7 @@ unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * aP1)
     if ( v3 )
     {
     v4 = __2_YAPAXI_Z(4 * v3);
-    this->__pad_004 = v4;
+    this->vtable2 = v4;
     if ( v4 )
       {
     v5 = this->vtable3;
@@ -794,7 +794,7 @@ unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * aP1)
         {
     do
           {
-    *(int *)(this->__pad_004 + 4 * v6) = *(int *)(*(int *)&aP1->vtable1[4] + 4 * v6);
+    *(int *)(this->vtable2 + 4 * v6) = *(int *)(*(int *)&aP1->vtable1[4] + 4 * v6);
     ++v6;
           }
     while ( v6 < this->vtable3 );
@@ -803,7 +803,7 @@ unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * aP1)
     }
     else
     {
-    this->__pad_004 = 0;
+    this->vtable2 = 0;
     this->IsAllocated = 0;
     }
   }
@@ -814,7 +814,7 @@ unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x005139E0  HouseTypeClass::readBaseDefenses  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005139E0  HouseTypeClass::readBaseDefenses  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int HouseTypeClass::readBaseDefenses(int a1, const void * a2, unsigned int * a3)
 {
 {
@@ -822,7 +822,7 @@ int HouseTypeClass::readBaseDefenses(int a1, const void * a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x005139F0  HouseTypeClass::readAiBuildLists  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005139F0  HouseTypeClass::readAiBuildLists  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int HouseTypeClass::readAiBuildLists(int a1)
 {
 {
@@ -830,7 +830,7 @@ int HouseTypeClass::readAiBuildLists(int a1)
 }
 }
 
-// ==== BACKFILL 0x00513A00  HouseTypeClass::readLoadoutData  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00513A00  HouseTypeClass::readLoadoutData  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int HouseTypeClass::readLoadoutData(int a1)
 {
 {
@@ -838,7 +838,7 @@ int HouseTypeClass::readLoadoutData(int a1)
 }
 }
 
-// ==== BACKFILL 0x00513CB0  SaveGame::WriteObject  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00513CB0  SaveGame::WriteObject  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int SaveGame::WriteObject(int a1, int a2)
 {
 {
@@ -853,7 +853,7 @@ int SaveGame::WriteObject(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x00513D00  sub_513D00  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00513D00  sub_513D00  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_513D00::sub_513D00()
 {
 {
@@ -863,7 +863,7 @@ void E4Recv_513D00::sub_513D00()
 }
 }
 
-// ==== BACKFILL 0x005142A0  JumpjetLocomotionClass::ComputeAudio3DRotation_0  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005142A0  JumpjetLocomotionClass::ComputeAudio3DRotation_0  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 float * JumpjetLocomotionClass::ComputeAudio3DRotation_0(int a1, float * a2, unsigned int * a3)
 {
 {
@@ -882,7 +882,7 @@ float * JumpjetLocomotionClass::ComputeAudio3DRotation_0(int a1, float * a2, uns
 }
 }
 
-// ==== BACKFILL 0x00514C30  JumpjetLocomotionClass::HasScoreDisplayChanged  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00514C30  JumpjetLocomotionClass::HasScoreDisplayChanged  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 BOOL JumpjetLocomotionClass::HasScoreDisplayChanged(unsigned int * a1)
 {
 {
@@ -890,7 +890,7 @@ BOOL JumpjetLocomotionClass::HasScoreDisplayChanged(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x00514C80  JumpjetLocomotionClass::ComputeFloatExpression_2  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00514C80  JumpjetLocomotionClass::ComputeFloatExpression_2  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 BOOL JumpjetLocomotionClass::ComputeFloatExpression_2(int a1)
 {
 {
@@ -898,7 +898,7 @@ BOOL JumpjetLocomotionClass::ComputeFloatExpression_2(int a1)
 }
 }
 
-// ==== BACKFILL 0x00514CB0  JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00514CB0  JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0(unsigned int * a1, unsigned int * a2)
 {
 {
@@ -925,7 +925,7 @@ unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0(unsigned in
 }
 }
 
-// ==== BACKFILL 0x00514D10  JumpjetLocomotionClass::HasScoreDisplayChanged_514D10  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00514D10  JumpjetLocomotionClass::HasScoreDisplayChanged_514D10  cls=JumpjetLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_514D10(unsigned int * a1, unsigned int * a2)
 {
 {
@@ -960,7 +960,7 @@ unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_514D10(unsigned in
 }
 }
 
-// ==== BACKFILL 0x00516320  JumpjetLocomotionClass::HasScoreDisplayChanged_516320  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00516320  JumpjetLocomotionClass::HasScoreDisplayChanged_516320  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_516320(unsigned int * a1)
 {
 {
@@ -978,13 +978,13 @@ unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_516320(unsigned in
 }
 }
 
-// ==== BACKFILL 0x00516370  JumpjetLocomotionClass::UpdateFacingDirection_0  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00516370  JumpjetLocomotionClass::UpdateFacingDirection_0  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 char JumpjetLocomotionClass::UpdateFacingDirection_0(int a1, int a2)
 {
 return FacingClass::Update((char *)(a1[2] + 904), &a2);
 }
 
-// ==== BACKFILL 0x005163B0  MovementAI::MarkOccupiedPathCell  cls=MovementAI  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x005163B0  MovementAI::MarkOccupiedPathCell  cls=MovementAI  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int MovementAI::MarkOccupiedPathCell() {
 {
       int v2;
@@ -1029,7 +1029,7 @@ namespace gamemd { int MovementAI::MarkOccupiedPathCell() {
 }
 } }
 
-// ==== BACKFILL 0x00516C70  JumpjetLocomotionClass::DispatchVirtualCall_2  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00516C70  JumpjetLocomotionClass::DispatchVirtualCall_2  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 bool JumpjetLocomotionClass::DispatchVirtualCall_2(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1040,7 +1040,7 @@ bool __stdcall JumpjetLocomotionClass::sub_516C70(int a1)
 }
 }
 
-// ==== BACKFILL 0x00516CA0  JumpjetLocomotionClass::IsBridgeBlocking  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00516CA0  JumpjetLocomotionClass::IsBridgeBlocking  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 char JumpjetLocomotionClass::IsBridgeBlocking(int a1)
 {
 {
@@ -1101,7 +1101,7 @@ char JumpjetLocomotionClass::IsBridgeBlocking(int a1)
 }
 }
 
-// ==== BACKFILL 0x00516E10  JumpjetLocomotionClass::TryMoveToAdjacentCell  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00516E10  JumpjetLocomotionClass::TryMoveToAdjacentCell  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 char JumpjetLocomotionClass::TryMoveToAdjacentCell(unsigned int a1, unsigned int a2)
 {
 {
@@ -1165,7 +1165,7 @@ char JumpjetLocomotionClass::TryMoveToAdjacentCell(unsigned int a1, unsigned int
 }
 }
 
-// ==== BACKFILL 0x00516FC0  JumpjetLocomotionClass::RandomizeLocomotionParam  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00516FC0  JumpjetLocomotionClass::RandomizeLocomotionParam  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 char JumpjetLocomotionClass::RandomizeLocomotionParam(HoverLocomotionClass * aP0, HoverLocomotionClass * aP1)
 {
 {
@@ -1179,7 +1179,7 @@ char JumpjetLocomotionClass::RandomizeLocomotionParam(HoverLocomotionClass * aP0
 }
 }
 
-// ==== BACKFILL 0x00517070  HoverLocomotionClass::ddtor  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00517070  HoverLocomotionClass::ddtor  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int HoverLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
 {
@@ -1193,7 +1193,7 @@ int HoverLocomotionClass::ddtor(int a1, unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x005170B0  HoverLocomotionClass::BeginMove  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005170B0  HoverLocomotionClass::BeginMove  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int HoverLocomotionClass::BeginMove(int a1, int * a2)
 {
 {
@@ -1211,13 +1211,13 @@ int HoverLocomotionClass::BeginMove(int a1, int * a2)
 }
 }
 
-// ==== BACKFILL 0x00517100  JumpjetLocomotionClass::SmallStub_517100  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00517100  JumpjetLocomotionClass::SmallStub_517100  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::SmallStub_517100(int a1)
 {
 return 2;
 }
 
-// ==== BACKFILL 0x00517110  sub_517110  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00517110  sub_517110  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_517110::sub_517110()
 {
 {
@@ -1248,7 +1248,7 @@ int E4Recv_517110::sub_517110()
 }
 }
 
-// ==== BACKFILL 0x005171C0  JumpjetLocomotionClass::DispatchVirtualCall_3  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005171C0  JumpjetLocomotionClass::DispatchVirtualCall_3  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::DispatchVirtualCall_3(unsigned int * a1, int a2)
 {
 {
@@ -1271,7 +1271,7 @@ int JumpjetLocomotionClass::DispatchVirtualCall_3(unsigned int * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x00517210  JumpjetLocomotionClass::IsPositionWithinThreshold  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00517210  JumpjetLocomotionClass::IsPositionWithinThreshold  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 bool JumpjetLocomotionClass::IsPositionWithinThreshold(int a1, int a2, int a3, int a4)
 {
 {
@@ -1290,13 +1290,13 @@ bool JumpjetLocomotionClass::IsPositionWithinThreshold(int a1, int a2, int a3, i
 }
 }
 
-// ==== BACKFILL 0x005172B0  HoverLocomotionClass::StubReturn120  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005172B0  HoverLocomotionClass::StubReturn120  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int HoverLocomotionClass::StubReturn120()
 {
 return 120;
 }
 
-// ==== BACKFILL 0x005172C0  HoverLocomotionClass::ProcessMove  cls=HoverLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005172C0  HoverLocomotionClass::ProcessMove  cls=HoverLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 HoverLocomotionClass * HoverLocomotionClass::ProcessMove(char a2)
 {
 {
@@ -1309,7 +1309,7 @@ HoverLocomotionClass * HoverLocomotionClass::ProcessMove(char a2)
 }
 }
 
-// ==== BACKFILL 0x005172F0  LocomotionClass::ProcessMove  cls=LocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005172F0  LocomotionClass::ProcessMove  cls=LocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 LocomotionClass * LocomotionClass::ProcessMove(char a2)
 {
 {
@@ -1320,7 +1320,7 @@ LocomotionClass * LocomotionClass::ProcessMove(char a2)
 }
 }
 
-// ==== BACKFILL 0x00517440  Color::ConvertToRGB  cls=Color  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00517440  Color::ConvertToRGB  cls=Color  sig=csp  renamed_refs=0  residual=- ====
 int Color::ConvertToRGB(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1359,7 +1359,7 @@ int __thiscall Color_ConvertToRGB(unsigned __int8 *this, int a2)
 }
 }
 
-// ==== BACKFILL 0x00517590  DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare  cls=DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00517590  DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare  cls=DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode  sig=csp  renamed_refs=0  residual=- ====
 BOOL DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1369,14 +1369,14 @@ BOOL __thiscall sub_517590(_BYTE *this, _BYTE *a2)
 }
 }
 
-// ==== BACKFILL 0x005176A0  InfantryClass::SetField6  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005176A0  InfantryClass::SetField6  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { bool InfantryClass::SetField6() {
 {
     return (*(void**)this & 1) == 0;
 }
 } }
 
-// ==== BACKFILL 0x005176D0  sub_5176D0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005176D0  sub_5176D0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_5176D0::sub_5176D0(BYTE Data)
 {
 {
@@ -1417,7 +1417,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
 }
 }
 
-// ==== BACKFILL 0x0051AA10  InfantryClass::HandleTargetDestroyed  cls=InfantryClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x0051AA10  InfantryClass::HandleTargetDestroyed  cls=InfantryClass  sig=csp  renamed_refs=2  residual=- ====
 int InfantryClass::HandleTargetDestroyed()
 {
     int result;
@@ -1440,7 +1440,7 @@ int InfantryClass::ProcessUpdate()
     {
         return 0;
     }
-    if ( this->storedTiberium )
+    if ( this->q350 )
         return 0;
     return ObjectClass::SpawnInfantry(this, aP1, aP2, aP3, aP4);
 
@@ -1598,7 +1598,7 @@ retn    0Ch
 */
 }
 
-// ==== BACKFILL 0x0051DF10  InfantryClass::CancelMovement  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0051DF10  InfantryClass::CancelMovement  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryClass::CancelMovement()
 {
     if (!this->Locomotor)
@@ -1610,7 +1610,7 @@ int InfantryClass::CancelMovement()
     return TechnoClass::CleanupDirection(this);
 }
 
-// ==== BACKFILL 0x0051DF60  InfantryClass::FireWeaponWithCleanup  cls=InfantryClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x0051DF60  InfantryClass::FireWeaponWithCleanup  cls=InfantryClass  sig=csp  renamed_refs=1  residual=- ====
 int InfantryClass::FireWeaponWithCleanup(int a2, int a3)
 {
     int v4;
@@ -1638,7 +1638,7 @@ int InfantryClass::FireWeaponWithCleanup(int a2, int a3)
     return v4;
 }
 
-// ==== BACKFILL 0x0051DFF0  InfantryClass::MoveToCell  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0051DFF0  InfantryClass::MoveToCell  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryClass::MoveToCell(int* a2, int a3)
 {
     int* v3;
@@ -1818,7 +1818,7 @@ retn    8
 */
 }
 
-// ==== BACKFILL 0x0051F330  InfantryClass::FindPathToBuilding  cls=InfantryClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x0051F330  InfantryClass::FindPathToBuilding  cls=InfantryClass  sig=csp  renamed_refs=2  residual=- ====
 int InfantryClass::FindPathToBuilding()
 {
     int v2;
@@ -1828,14 +1828,14 @@ int InfantryClass::FindPathToBuilding()
     int v7[3];
 
     v2 = this->GetDeployWeaponIndex(0);
-    v3 = (TechnoClass*)this->q2B4;
+    v3 = (TechnoClass*)this->target;
     if ( !v3 || (result = this->ValidateTarget(v3, v2), !(_BYTE)result) )
     {
         v7[0] = this->location.X;
         v7[1] = this->q0A0;
         v7[2] = this->q0A4;
         v6 = (*(int (__thiscall **)(int *, int, _DWORD *, _DWORD))(*(int **)this + 964))(this, 1, v7, 0);
-        if ( (result = (int)this->q2B4) == 0 && !v6
+        if ( (result = (int)this->target) == 0 && !v6
           || (result = this->AssignTarget_SyncLog(v6), !v6) )
         {
             if ( this->currentMission != 5 )
@@ -1851,7 +1851,7 @@ int InfantryClass::FindPathToBuilding()
     return result;
 }
 
-// ==== BACKFILL 0x0051F3E0  InfantryClass::EnterBuilding  cls=InfantryClass  sig=csp  renamed_refs=6 ====
+// ==== BACKFILL 0x0051F3E0  InfantryClass::EnterBuilding  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryClass::EnterBuilding()
 {
     TechnoClass* v2;
@@ -1862,25 +1862,25 @@ int InfantryClass::EnterBuilding()
     void* MissionControl;
 
     if ( (this->Type->C4 || TechnoClass::HasVoiceResponse(this, 14))
-      && (v2 = this->q2B4) != 0
+      && (v2 = this->target) != 0
       && (int)v2->whatAmI() == 6
-      && (v3 = (BuildingClass*)this->q2B4, v4 = v3->Type, v4->CanC4)
+      && (v3 = (BuildingClass*)this->target, v4 = v3->Type, v4->CanC4)
       && !v4->InvisibleInGame )
     {
         this->AssignDestination_SyncLog(v3, 1);
         this->QueueMission(17, 0);
         return 1;
     }
-    else if ( !House::IsCurrentPlayer(this->q21C)
-           && (v2 = this->q2B4) != 0
+    else if ( !House::IsCurrentPlayer(this->owner)
+           && (v2 = this->target) != 0
            && (int)v2->whatAmI() == 6
            && (v7 = this->Type, v7->Infiltrate || (v7->Occupier || v7->Assaulter) && BuildingClass::CanRepair(v2, this)) )
     {
-        this->AssignDestination_SyncLog(this->q2B4, 1);
+        this->AssignDestination_SyncLog(this->target, 1);
         this->ForceMission(8);
         return 1;
     }
-    else if ( House::IsCurrentPlayer(this->q21C)
+    else if ( House::IsCurrentPlayer(this->owner)
            && (v10 = this->SequenceAnim, v10 == 27 || v10 == 28 || v10 == 29 || v10 == 30) )
     {
         this->FindPathToBuilding();
@@ -2031,7 +2031,7 @@ retn
 */
 }
 
-// ==== BACKFILL 0x0051F540  InfantryClass::ProcessEnterOrRepair  cls=InfantryClass  sig=csp  renamed_refs=7 ====
+// ==== BACKFILL 0x0051F540  InfantryClass::ProcessEnterOrRepair  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryClass::ProcessEnterOrRepair()
 {
     /* IDA truth (disasm verified):
@@ -2045,23 +2045,23 @@ int InfantryClass::ProcessEnterOrRepair()
           -> vt+1368 ProcessDeployAction(31 Undeploy, 0, 0); ret 1
 // 0x4d5350
        else: tail call InfantryClass::ProcessDeploy (0x4D5350), eax passthrough */
-    if (!this->q21C->IsCurrentPlayer()
-        && this->q2B4 != nullptr
-        && this->q2B4->whatAmI() == AbstractType::Building
+    if (!this->owner->IsCurrentPlayer()
+        && this->target != nullptr
+        && this->target->whatAmI() == AbstractType::Building
         && (this->Type->Infiltrate
             || ((this->Type->Occupier || this->Type->Assaulter)
-                && dynamic_cast<BuildingClass*>(this->q2B4)->CanRepair(this))))
+                && dynamic_cast<BuildingClass*>(this->target)->CanRepair(this))))
     {
-        this->AssignDestination_SyncLog(this->q2B4, 1);
+        this->AssignDestination_SyncLog(this->target, 1);
         this->forceMission(Mission::Capture);
         return 1;
     }
-    if (!this->q21C->IsCurrentPlayer()
+    if (!this->owner->IsCurrentPlayer()
         && (this->SequenceAnim == Sequence::Deploy
             || this->SequenceAnim == Sequence::Deployed
             || this->SequenceAnim == Sequence::DeployedFire
             || this->SequenceAnim == Sequence::DeployedIdle)
-        && !this->q2B4)
+        && !this->target)
     {
         this->ProcessDeployAction((int)Sequence::Undeploy, false, false);
         return 1;
@@ -2070,7 +2070,7 @@ int InfantryClass::ProcessEnterOrRepair()
     return 0;
 }
 
-// ==== BACKFILL 0x0051F6E0  InfantryClass::ProcessIvanBomb  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0051F6E0  InfantryClass::ProcessIvanBomb  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 int InfantryClass::ProcessIvanBomb()
 {
     InfantryTypeClass* v2;
@@ -2124,7 +2124,7 @@ int InfantryClass::ProcessIvanBomb()
 
 }
 
-// ==== BACKFILL 0x0051FAF0  InfantryClass::GetTypePtr  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0051FAF0  InfantryClass::GetTypePtr  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 InfantryTypeClass* InfantryClass::GetTypePtr()
 {
     /* IDA truth: return *(this + 432);  // this[432] dword = byte 1728 = Type */

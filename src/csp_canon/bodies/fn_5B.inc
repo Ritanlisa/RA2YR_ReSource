@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x005B0060  JumpjetLocomotionClass::ShortFunc_5B0060  cls=MechLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B0060  JumpjetLocomotionClass::ShortFunc_5B0060  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::ShortFunc_5B0060(int a1)
 {
 {
@@ -11,7 +11,7 @@ int JumpjetLocomotionClass::ShortFunc_5B0060(int a1)
 }
 }
 
-// ==== BACKFILL 0x005B0080  JumpjetLocomotionClass::ConvertCoordToCell_1  cls=MechLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B0080  JumpjetLocomotionClass::ConvertCoordToCell_1  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::ConvertCoordToCell_1(int a1, int aP1, IUnknown * aP2, IUnknown * aP3)
 {
 {
@@ -50,7 +50,7 @@ int JumpjetLocomotionClass::ConvertCoordToCell_1(int a1, int aP1, IUnknown * aP2
 }
 }
 
-// ==== BACKFILL 0x005B0120  JumpjetLocomotionClass::SyncMatrixTransformState  cls=MechLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B0120  JumpjetLocomotionClass::SyncMatrixTransformState  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::SyncMatrixTransformState(int a1)
 {
 {
@@ -67,7 +67,7 @@ int JumpjetLocomotionClass::SyncMatrixTransformState(int a1)
 }
 }
 
-// ==== BACKFILL 0x005B0170  JumpjetLocomotionClass::UpdateFacingDirection_1  cls=MechLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B0170  JumpjetLocomotionClass::UpdateFacingDirection_1  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 char JumpjetLocomotionClass::UpdateFacingDirection_1(int a1, int a2)
 {
 {
@@ -75,7 +75,7 @@ char JumpjetLocomotionClass::UpdateFacingDirection_1(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x005B01A0  JumpjetLocomotionClass::InitMultiFieldArray  cls=MechLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B01A0  JumpjetLocomotionClass::InitMultiFieldArray  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::InitMultiFieldArray(unsigned int * a1, int a2, int a3, int a4)
 {
 {
@@ -86,7 +86,7 @@ int JumpjetLocomotionClass::InitMultiFieldArray(unsigned int * a1, int a2, int a
 }
 }
 
-// ==== BACKFILL 0x005B1960  MechLocomotionClass::ddtor  cls=MechLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B1960  MechLocomotionClass::ddtor  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
 {
@@ -100,7 +100,7 @@ int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x005B19A0  MechLocomotionClass::BeginMove  cls=MechLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B19A0  MechLocomotionClass::BeginMove  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int MechLocomotionClass::BeginMove(int * a1, int * a2)
 {
 {
@@ -118,13 +118,13 @@ int MechLocomotionClass::BeginMove(int * a1, int * a2)
 }
 }
 
-// ==== BACKFILL 0x005B19D0  JumpjetLocomotionClass::SmallStub_5B19D0  cls=MechLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B19D0  JumpjetLocomotionClass::SmallStub_5B19D0  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::SmallStub_5B19D0(int a1)
 {
 return 2;
 }
 
-// ==== BACKFILL 0x005B19E0  JumpjetLocomotionClass::StubReturnTrue_4  cls=MechLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B19E0  JumpjetLocomotionClass::StubReturnTrue_4  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 bool JumpjetLocomotionClass::StubReturnTrue_4(InfantryClass * aP0)
 {
 {
@@ -136,7 +136,7 @@ bool JumpjetLocomotionClass::StubReturnTrue_4(InfantryClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x005B1A50  JumpjetLocomotionClass::DispatchVirtualCall_5  cls=MechLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B1A50  JumpjetLocomotionClass::DispatchVirtualCall_5  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::DispatchVirtualCall_5(unsigned int * a1, int a2)
 {
 {
@@ -159,7 +159,7 @@ int JumpjetLocomotionClass::DispatchVirtualCall_5(unsigned int * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x005B1AA0  JumpjetLocomotionClass::IsPositionWithinThreshold_0  cls=MechLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B1AA0  JumpjetLocomotionClass::IsPositionWithinThreshold_0  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 bool JumpjetLocomotionClass::IsPositionWithinThreshold_0(int a1, int a2, int a3, int a4)
 {
 {
@@ -178,13 +178,13 @@ bool JumpjetLocomotionClass::IsPositionWithinThreshold_0(int a1, int a2, int a3,
 }
 }
 
-// ==== BACKFILL 0x005B1B40  MechLocomotionClass::StubReturn52  cls=MechLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B1B40  MechLocomotionClass::StubReturn52  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int MechLocomotionClass::StubReturn52()
 {
 return 52;
 }
 
-// ==== BACKFILL 0x005B1B50  MechLocomotionClass::ProcessMove  cls=MechLocomotionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B1B50  MechLocomotionClass::ProcessMove  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
 {
 {
@@ -197,7 +197,7 @@ MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
 }
 }
 
-// ==== BACKFILL 0x005B1D90  sub_5B1D90  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B1D90  sub_5B1D90  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 double * E4Recv_5B1D90::sub_5B1D90()
 {
 {
@@ -223,7 +223,7 @@ double * E4Recv_5B1D90::sub_5B1D90()
 }
 }
 
-// ==== BACKFILL 0x005B2930  Movement::Check  cls=Movement  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2930  Movement::Check  cls=Movement  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * Movement::Check(unsigned int * a2, unsigned short * a3)
 {
 {
@@ -233,7 +233,7 @@ unsigned int * Movement::Check(unsigned int * a2, unsigned short * a3)
 }
 }
 
-// ==== BACKFILL 0x005B2950  Math::Sub16  cls=Math  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2950  Math::Sub16  cls=Math  sig=csp  renamed_refs=0  residual=- ====
 IUnknown * Math::Sub16(BuildingTypeClass * aP1, IUnknown * aP2)
 {
 {
@@ -243,7 +243,7 @@ IUnknown * Math::Sub16(BuildingTypeClass * aP1, IUnknown * aP2)
 }
 }
 
-// ==== BACKFILL 0x005B2970  Movement::DivideAndStoreScaled  cls=Movement  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2970  Movement::DivideAndStoreScaled  cls=Movement  sig=csp  renamed_refs=0  residual=- ====
 int * Movement::DivideAndStoreScaled(int * a2, int a3)
 {
 {
@@ -253,7 +253,7 @@ int * Movement::DivideAndStoreScaled(int * a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x005B2990  Math::Abs16Cmp  cls=Math  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2990  Math::Abs16Cmp  cls=Math  sig=csp  renamed_refs=0  residual=- ====
 bool Math::Abs16Cmp(IUnknown * aP1, IUnknown * aP2)
 {
 {
@@ -261,7 +261,7 @@ bool Math::Abs16Cmp(IUnknown * aP1, IUnknown * aP2)
 }
 }
 
-// ==== BACKFILL 0x005B29C0  Movement::CompareAbsCoords  cls=Movement  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B29C0  Movement::CompareAbsCoords  cls=Movement  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int Movement::CompareAbsCoords(void* a2, void* a3) {
 {
     short v3;
@@ -286,7 +286,7 @@ namespace gamemd { int Movement::CompareAbsCoords(void* a2, void* a3) {
 }
 } }
 
-// ==== BACKFILL 0x005B2A30  Movement::UpdateLocomotion  cls=Movement  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2A30  Movement::UpdateLocomotion  cls=Movement  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void Movement::UpdateLocomotion(void* a1) {
 {
       double v3;
@@ -310,7 +310,7 @@ namespace gamemd { void Movement::UpdateLocomotion(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x005B2DA0  RadioClass::Constructor  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2DA0  RadioClass::Constructor  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int RadioClass::Constructor() {
 {
       #72 *v2; // ecx
@@ -334,166 +334,166 @@ namespace ra2 { namespace game { int RadioClass::Constructor() {
 }
 } } }
 
-// ==== BACKFILL 0x005B2E10  MissionClass::Return450A  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2E10  MissionClass::Return450A  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450A()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2E20  MissionClass::Return450B  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2E20  MissionClass::Return450B  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450B()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2E30  MissionClass::Return450C  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2E30  MissionClass::Return450C  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450C()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2E40  TechnoClass::StubReturn450  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2E40  TechnoClass::StubReturn450  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::StubReturn450() { return 0; }
 
-// ==== BACKFILL 0x005B2E50  IPersistStream::StubReturn450  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2E50  IPersistStream::StubReturn450  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int IPersistStream::StubReturn450()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2E60  AbstractClass::COMStub_Ret450_134  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2E60  AbstractClass::COMStub_Ret450_134  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Ret450_134()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2E70  TechnoClass::CheckState1  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2E70  TechnoClass::CheckState1  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::CheckState1() const { return false; }
 
-// ==== BACKFILL 0x005B2E80  TechnoClass::CheckState2  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2E80  TechnoClass::CheckState2  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::CheckState2() const { return false; }
 
-// ==== BACKFILL 0x005B2E90  AircraftClass::CheckMissionStatus  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2E90  AircraftClass::CheckMissionStatus  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::CheckMissionStatus()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2EA0  AbstractClass::COMStub_Ret450_138  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2EA0  AbstractClass::COMStub_Ret450_138  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Ret450_138()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2EB0  AbstractClass::COMStub_Ret450_139  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2EB0  AbstractClass::COMStub_Ret450_139  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Ret450_139()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2EC0  AbstractClass::COMStub_Ret450_140  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2EC0  AbstractClass::COMStub_Ret450_140  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Ret450_140()
 {
   return 450;
 }
 
-// ==== BACKFILL 0x005B2ED0  MissionClass::Return450D  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2ED0  MissionClass::Return450D  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450D()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2EE0  MissionClass::Return450E  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2EE0  MissionClass::Return450E  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450E()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2EF0  IPersistStream::GetMaxSize  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2EF0  IPersistStream::GetMaxSize  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int IPersistStream::GetMaxSize()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2F00  AbstractClass::COMStub_Ret450_144  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2F00  AbstractClass::COMStub_Ret450_144  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Ret450_144()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2F10  MissionClass::Return450G  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2F10  MissionClass::Return450G  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450G()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2F20  MissionClass::Return450H  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2F20  MissionClass::Return450H  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450H()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2F30  AircraftClass::CheckMissionStatus2  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2F30  AircraftClass::CheckMissionStatus2  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::CheckMissionStatus2()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2F40  MissionClass::Return450I  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2F40  MissionClass::Return450I  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450I()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2F50  MissionClass::Return450J  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2F50  MissionClass::Return450J  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450J()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2F60  AbstractClass::COMStub_Ret450_150  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2F60  AbstractClass::COMStub_Ret450_150  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Ret450_150()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2F70  AbstractClass::COMStub_Ret450_151  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2F70  AbstractClass::COMStub_Ret450_151  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Ret450_151()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2F80  MissionClass::Return450K  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2F80  MissionClass::Return450K  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450K()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2F90  MissionClass::Return450L  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2F90  MissionClass::Return450L  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450L()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2FA0  MissionClass::Return450F  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2FA0  MissionClass::Return450F  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450F()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2FB0  MissionClass::Return450M  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2FB0  MissionClass::Return450M  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450M()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2FC0  MissionClass::Return450N  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2FC0  MissionClass::Return450N  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450N()
 {
 return 450;
 }
 
-// ==== BACKFILL 0x005B2FD0  MissionClass::ForceMission  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B2FD0  MissionClass::ForceMission  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int MissionClass::ForceMission() {
 {
     int result;
@@ -519,7 +519,7 @@ namespace ra2 { namespace game { int MissionClass::ForceMission() {
 }
 } } }
 
-// ==== BACKFILL 0x005B3040  MissionClass::GetPrimaryOrFallback  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B3040  MissionClass::GetPrimaryOrFallback  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int ra2::game::MissionClass::GetPrimaryOrFallback() {
     int result = this->currentMission;
     if ( result == -1 )
@@ -537,7 +537,7 @@ retn
 */
 }
 
-// ==== BACKFILL 0x005B3570  MissionClass::NextMission  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B3570  MissionClass::NextMission  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int MissionClass::NextMission() {
 {
       int result;
@@ -568,7 +568,7 @@ namespace ra2 { namespace game { int MissionClass::NextMission() {
 }
 } } }
 
-// ==== BACKFILL 0x005B35E0  MissionClass::QueueMission  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B35E0  MissionClass::QueueMission  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int MissionClass::QueueMission() {
 {
     int result;
@@ -600,7 +600,7 @@ namespace gamemd { int MissionClass::QueueMission() {
 }
 } }
 
-// ==== BACKFILL 0x005B3650  AbstractClass::COMStub_125  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B3650  AbstractClass::COMStub_125  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::COMStub_125(int a1, int a2, int a3) {
 {
     int result;
@@ -625,7 +625,7 @@ namespace ra2 { namespace game { int AbstractClass::COMStub_125(int a1, int a2, 
 }
 } } }
 
-// ==== BACKFILL 0x005B36B0  AbstractClass::COMStub_126  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B36B0  AbstractClass::COMStub_126  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::COMStub_126() {
 {
     int v1;
@@ -639,7 +639,7 @@ namespace ra2 { namespace game { int AbstractClass::COMStub_126() {
 }
 } } }
 
-// ==== BACKFILL 0x005B3700  MissionClass::FindName  cls=MissionClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x005B3700  MissionClass::FindName  cls=MissionClass  sig=csp  renamed_refs=2  residual=q005,q006,q007,q009 ====
 namespace ra2 { namespace game { void* MissionClass::FindName() {
 {
       this->vtable2 = 0;
@@ -657,7 +657,7 @@ namespace ra2 { namespace game { void* MissionClass::FindName() {
 }
 } } }
 
-// ==== BACKFILL 0x005B3950  FromNameIndex  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B3950  FromNameIndex  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * Name_FromIndex(int a1)
 {
 {
@@ -668,7 +668,7 @@ char * Name_FromIndex(int a1)
 }
 }
 
-// ==== BACKFILL 0x005B3970  AbstractClass::COMStub_13  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B3970  AbstractClass::COMStub_13  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::COMStub_13(int a1) {
 {
     HouseClass::ProcessPower((#374 *)this);
@@ -681,14 +681,14 @@ namespace ra2 { namespace game { int AbstractClass::COMStub_13(int a1) {
 }
 } } }
 
-// ==== BACKFILL 0x005B3A00  MissionClass::GetMissionControl  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B3A00  MissionClass::GetMissionControl  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* MissionClass::GetMissionControl() {
 {
     return (char *)&DataGlobal_A8E3A8 + 32 *(void**)this->currentMission;
 }
 } } }
 
-// ==== BACKFILL 0x005B3A10  MissionClass::HasValidTarget  cls=MissionClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B3A10  MissionClass::HasValidTarget  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::HasValidTarget()
 {
 {
@@ -696,7 +696,7 @@ int MissionClass::HasValidTarget()
 }
 }
 
-// ==== BACKFILL 0x005B3A50  IPersistStream::StubReturnFalse  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B3A50  IPersistStream::StubReturnFalse  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int IPersistStream::StubReturnFalse()
 {
 {
@@ -705,7 +705,7 @@ int IPersistStream::StubReturnFalse()
 }
 }
 
-// ==== BACKFILL 0x005B3A60  AbstractClass::getWeaponRange  cls=AbstractClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B3A60  AbstractClass::getWeaponRange  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 MissionClass * AbstractClass::getWeaponRange(char a2)
 {
 {
@@ -720,7 +720,7 @@ MissionClass * AbstractClass::getWeaponRange(char a2)
 }
 }
 
-// ==== BACKFILL 0x005B3E90  sub_5B3E90  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B3E90  sub_5B3E90  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_5B3E90::sub_5B3E90()
 {
 {
@@ -748,7 +748,7 @@ char E4Recv_5B3E90::sub_5B3E90()
 }
 }
 
-// ==== BACKFILL 0x005B3F50  sub_5B3F50  cls=MixFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B3F50  sub_5B3F50  cls=MixFileClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5B3F50::sub_5B3F50()
 {
 {
@@ -808,7 +808,7 @@ void E4Recv_5B3F50::sub_5B3F50()
 }
 }
 
-// ==== BACKFILL 0x005B4350  sub_5B4350  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B4350  sub_5B4350  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5B4350::sub_5B4350()
 {
 {
@@ -827,19 +827,19 @@ int E4Recv_5B4350::sub_5B4350()
 }
 }
 
-// ==== BACKFILL 0x005B43E0  ?do_always_noconv_codecvt_base_std__MBE_NXZ_7  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B43E0  ?do_always_noconv_codecvt_base_std__MBE_NXZ_7  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char _do_always_noconv_codecvt_base_std__MBE_NXZ_7()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005B43F0  ReturnTrue  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B43F0  ReturnTrue  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char ReturnTrue(AnimClass * aP0)
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005B4400  sub_5B4400  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B4400  sub_5B4400  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5B4400::sub_5B4400()
 {
 {
@@ -850,7 +850,7 @@ void E4Recv_5B4400::sub_5B4400()
 }
 }
 
-// ==== BACKFILL 0x005B4590  MixFileClass::LinkIntoPool  cls=MixFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B4590  MixFileClass::LinkIntoPool  cls=MixFileClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void MixFileClass::LinkIntoPool() {
 {
     int v1;
@@ -873,7 +873,7 @@ namespace gamemd { void MixFileClass::LinkIntoPool() {
 }
 } }
 
-// ==== BACKFILL 0x005B4610  MixFileClass::UnlinkFromPool  cls=MixFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B4610  MixFileClass::UnlinkFromPool  cls=MixFileClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* MixFileClass::UnlinkFromPool(int a2) {
 {
     COMObject::Release(this);
@@ -883,7 +883,7 @@ namespace gamemd { void* MixFileClass::UnlinkFromPool(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x005B56F0  Game::processStartup  cls=Game  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B56F0  Game::processStartup  cls=Game  sig=csp  renamed_refs=0  residual=- ====
 void Game::processStartup()
 {
 {
@@ -916,7 +916,7 @@ void Game::processStartup()
 }
 }
 
-// ==== BACKFILL 0x005B57D0  sub_5B57D0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B57D0  sub_5B57D0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 HWND E4Recv_5B57D0::sub_5B57D0()
 {
 {
@@ -979,7 +979,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
 }
 }
 
-// ==== BACKFILL 0x005B5960  sub_5B5960  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B5960  sub_5B5960  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_5B5960::sub_5B5960()
 {
 {
@@ -1002,7 +1002,7 @@ char E4Recv_5B5960::sub_5B5960()
 }
 }
 
-// ==== BACKFILL 0x005B5A50  sub_5B5A50  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B5A50  sub_5B5A50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_5B5A50::sub_5B5A50(char a2)
 {
 {
@@ -1026,7 +1026,7 @@ char E4Recv_5B5A50::sub_5B5A50(char a2)
 }
 }
 
-// ==== BACKFILL 0x005B5E90  Network::SendSettingsRequest  cls=Network  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B5E90  Network::SendSettingsRequest  cls=Network  sig=csp  renamed_refs=0  residual=- ====
 int Network::SendSettingsRequest()
 {
 {
@@ -1043,7 +1043,7 @@ int Network::SendSettingsRequest()
 }
 }
 
-// ==== BACKFILL 0x005B6DA0  sub_5B6DA0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B6DA0  sub_5B6DA0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
 {
 {
@@ -1082,7 +1082,7 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
 }
 }
 
-// ==== BACKFILL 0x005B9250  sub_5B9250  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B9250  sub_5B9250  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 HWND E4Recv_5B9250::sub_5B9250()
 {
 {
@@ -1146,7 +1146,7 @@ HWND E4Recv_5B9250::sub_5B9250()
 }
 }
 
-// ==== BACKFILL 0x005B93F0  sub_5B93F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B93F0  sub_5B93F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_5B93F0::sub_5B93F0()
 {
 {
@@ -1173,7 +1173,7 @@ char E4Recv_5B93F0::sub_5B93F0()
 }
 }
 
-// ==== BACKFILL 0x005B9450  sub_5B9450  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B9450  sub_5B9450  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int E4Recv_5B9450::sub_5B9450()
 {
 {
@@ -1199,7 +1199,7 @@ unsigned int E4Recv_5B9450::sub_5B9450()
 }
 }
 
-// ==== BACKFILL 0x005B94C0  sub_5B94C0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005B94C0  sub_5B94C0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_5B94C0::sub_5B94C0(char a2)
 {
 {
@@ -1223,7 +1223,7 @@ char E4Recv_5B94C0::sub_5B94C0(char a2)
 }
 }
 
-// ==== BACKFILL 0x005BA660  Game::BuildGameSetupPacket  cls=Game  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BA660  Game::BuildGameSetupPacket  cls=Game  sig=csp  renamed_refs=0  residual=- ====
 int Game::BuildGameSetupPacket()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1302,7 +1302,7 @@ int __thiscall BuildGameSetupPacket(int this)
 }
 }
 
-// ==== BACKFILL 0x005BA970  NetworkGameSetup::SendGameSetupPacket  cls=NetworkGameSetup  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BA970  NetworkGameSetup::SendGameSetupPacket  cls=NetworkGameSetup  sig=csp  renamed_refs=0  residual=- ====
 void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
 {
 {
@@ -1341,7 +1341,7 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
 }
 }
 
-// ==== BACKFILL 0x005BAA80  sub_5BAA80  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BAA80  sub_5BAA80  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
 {
 {
@@ -1364,7 +1364,7 @@ void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
 }
 }
 
-// ==== BACKFILL 0x005BB560  NetworkGameSetup::DeleteComPtr  cls=NetworkGameSetup  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BB560  NetworkGameSetup::DeleteComPtr  cls=NetworkGameSetup  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * NetworkGameSetup::DeleteComPtr(char a2)
 {
 {
@@ -1375,7 +1375,7 @@ unsigned int * NetworkGameSetup::DeleteComPtr(char a2)
 }
 }
 
-// ==== BACKFILL 0x005BB580  Network_Find  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BB580  Network_Find  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HKEY sub_5BB580(HKEY a1, const CHAR * a2, const char * a3)
 {
 {
@@ -1433,7 +1433,7 @@ HKEY sub_5BB580(HKEY a1, const CHAR * a2, const char * a3)
 }
 }
 
-// ==== BACKFILL 0x005BC4D0  sub_5BC4D0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BC4D0  sub_5BC4D0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char sub_5BC4D0()
 {
 {
@@ -1478,7 +1478,7 @@ char sub_5BC4D0()
 }
 }
 
-// ==== BACKFILL 0x005BCB90  sub_5BCB90  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BCB90  sub_5BCB90  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * E4Recv_5BCB90::sub_5BCB90(int a2)
 {
 {
@@ -1520,7 +1520,7 @@ ObjectClass * E4Recv_5BCB90::sub_5BCB90(int a2)
 }
 }
 
-// ==== BACKFILL 0x005BCC30  sub_5BCC30  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BCC30  sub_5BCC30  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5BCC30::sub_5BCC30()
 {
 {
@@ -1528,7 +1528,7 @@ int E4Recv_5BCC30::sub_5BCC30()
 }
 }
 
-// ==== BACKFILL 0x005BCC60  sub_5BCC60  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BCC60  sub_5BCC60  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5BCC60::sub_5BCC60(int a2, int a3, int a4, int a5)
 {
 {
@@ -1540,7 +1540,7 @@ int E4Recv_5BCC60::sub_5BCC60(int a2, int a3, int a4, int a5)
 }
 }
 
-// ==== BACKFILL 0x005BCCE0  sub_5BCCE0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BCCE0  sub_5BCCE0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_5BCCE0::sub_5BCCE0()
 {
 {
@@ -1548,7 +1548,7 @@ char E4Recv_5BCCE0::sub_5BCCE0()
 }
 }
 
-// ==== BACKFILL 0x005BD1F0  Debug::Printf  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BD1F0  Debug::Printf  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char Debug::Printf()
 {
 {
@@ -1568,7 +1568,7 @@ char Debug::Printf()
 }
 }
 
-// ==== BACKFILL 0x005BD2E0  sub_5BD2E0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BD2E0  sub_5BD2E0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_5BD2E0::sub_5BD2E0(ObjectClass * aP1, int a3, int a4, int a5)
 {
 {
@@ -1588,7 +1588,7 @@ char E4Recv_5BD2E0::sub_5BD2E0(ObjectClass * aP1, int a3, int a4, int a5)
 }
 }
 
-// ==== BACKFILL 0x005BD360  Debug_Helper  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BD360  Debug_Helper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char Debug_Helper(ObjectClass * aP0)
 {
 {
@@ -1606,7 +1606,7 @@ char Debug_Helper(ObjectClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x005BD560  sub_5BD560  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BD560  sub_5BD560  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_5BD560::sub_5BD560()
 {
 {
@@ -1618,7 +1618,7 @@ unsigned int * E4Recv_5BD560::sub_5BD560()
 }
 }
 
-// ==== BACKFILL 0x005BDA40  sub_5BDA40  cls=MouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BDA40  sub_5BDA40  cls=MouseClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned char * E4Recv_5BDA40::sub_5BDA40()
 {
 {
@@ -1633,7 +1633,7 @@ unsigned char * E4Recv_5BDA40::sub_5BDA40()
 }
 }
 
-// ==== BACKFILL 0x005BDAB0  MouseClass::SetPosition  cls=MouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BDAB0  MouseClass::SetPosition  cls=MouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int MouseClass::SetPosition(int a1) {
 {
       char result;
@@ -1678,7 +1678,7 @@ namespace gamemd { int MouseClass::SetPosition(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x005BDB90  System_Handle  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BDB90  System_Handle  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5BDB90(int a1, char a2)
 {
 {
@@ -1692,7 +1692,7 @@ int sub_5BDB90(int a1, char a2)
 }
 }
 
-// ==== BACKFILL 0x005BDF30  MouseClass::LoadTypeData  cls=MouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BDF30  MouseClass::LoadTypeData  cls=MouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* MouseClass::LoadTypeData() {
 {
     void *result;
@@ -1703,7 +1703,7 @@ namespace gamemd { void* MouseClass::LoadTypeData() {
 }
 } }
 
-// ==== BACKFILL 0x005BDF50  MouseClass::HandleClick  cls=MouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BDF50  MouseClass::HandleClick  cls=MouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int MouseClass::HandleClick() {
 {
       HouseClass::InitSubsystems((_BYTE *)this);
@@ -1713,7 +1713,7 @@ namespace gamemd { int MouseClass::HandleClick() {
 }
 } }
 
-// ==== BACKFILL 0x005BE970  Render_Render_5BE970  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BE970  Render_Render_5BE970  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5BE970(int a1)
 {
 {
@@ -1721,7 +1721,7 @@ int sub_5BE970(int a1)
 }
 }
 
-// ==== BACKFILL 0x005BE990  Render_Render_5BE990  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BE990  Render_Render_5BE990  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5BE990(int a1)
 {
 {
@@ -1729,7 +1729,7 @@ int sub_5BE990(int a1)
 }
 }
 
-// ==== BACKFILL 0x005BE9B0  MouseClass::drawCursor  cls=MouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BE9B0  MouseClass::drawCursor  cls=MouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* MouseClass::drawCursor(int a1) {
 {
       UI_Init((int)this, a2);
@@ -1740,7 +1740,7 @@ namespace gamemd { void* MouseClass::drawCursor(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x005BE9E0  BlowStraw_29::Read  cls=TabClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BE9E0  BlowStraw_29::Read  cls=TabClass  sig=csp  renamed_refs=0  residual=- ====
 TabClass * BlowStraw_29::Read(char a2)
 {
 {
@@ -1762,7 +1762,7 @@ TabClass * BlowStraw_29::Read(char a2)
 }
 }
 
-// ==== BACKFILL 0x005BEA30  MouseClass::loadCursor  cls=MouseClass  sig=csp  renamed_refs=7 ====
+// ==== BACKFILL 0x005BEA30  MouseClass::loadCursor  cls=MouseClass  sig=csp  renamed_refs=7  residual=- ====
 namespace gamemd { void* MouseClass::loadCursor(int a2, int a3) {
 {
     void *v4;
@@ -1793,7 +1793,7 @@ namespace gamemd { void* MouseClass::loadCursor(int a2, int a3) {
 }
 } }
 
-// ==== BACKFILL 0x005BECC0  sub_5BECC0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BECC0  sub_5BECC0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5BECC0::sub_5BECC0()
 {
 {
@@ -1831,7 +1831,7 @@ int E4Recv_5BECC0::sub_5BECC0()
 }
 }
 
-// ==== BACKFILL 0x005BF360  sub_5BF360  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BF360  sub_5BF360  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5BF360::sub_5BF360()
 {
 {
@@ -1842,7 +1842,7 @@ int E4Recv_5BF360::sub_5BF360()
 }
 }
 
-// ==== BACKFILL 0x005BF500  AsyncIO::Read  cls=AsyncIO  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BF500  AsyncIO::Read  cls=AsyncIO  sig=csp  renamed_refs=0  residual=- ====
 int AsyncIO::Read()
 {
 {
@@ -1854,7 +1854,7 @@ int AsyncIO::Read()
 }
 }
 
-// ==== BACKFILL 0x005BF8B0  sub_5BF8B0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005BF8B0  sub_5BF8B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_5BF8B0()
 {
 {

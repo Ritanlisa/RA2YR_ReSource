@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x006403A0  PowerClass::getDrain  cls=PowerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006403A0  PowerClass::getDrain  cls=PowerClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int PowerClass::getDrain() {
 {
       int v1;
@@ -38,7 +38,7 @@ namespace gamemd { int PowerClass::getDrain() {
 }
 } }
 
-// ==== BACKFILL 0x00640450  PowerClass::getAvailable  cls=PowerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00640450  PowerClass::getAvailable  cls=PowerClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* PowerClass::getAvailable(int a1) {
 {
       wchar_t *StringCSF;
@@ -55,7 +55,7 @@ namespace gamemd { void* PowerClass::getAvailable(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x006404B0  PowerClass::Initialize  cls=PowerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006404B0  PowerClass::Initialize  cls=PowerClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* PowerClass::Initialize(int a2) {
 {
     RadarClass::Destruct(this);
@@ -65,7 +65,7 @@ namespace gamemd { void* PowerClass::Initialize(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x006429E0  sub_6429E0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006429E0  sub_6429E0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_6429E0::sub_6429E0()
 {
 {
@@ -91,7 +91,7 @@ unsigned int * E4Recv_6429E0::sub_6429E0()
 }
 }
 
-// ==== BACKFILL 0x00642B10  Scenario::SetDword32  cls=Scenario  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00642B10  Scenario::SetDword32  cls=Scenario  sig=csp  renamed_refs=0  residual=- ====
 int Scenario::SetDword32(int a2)
 {
 {
@@ -100,7 +100,7 @@ int Scenario::SetDword32(int a2)
 }
 }
 
-// ==== BACKFILL 0x00642DF0  Scenario::SetDword30  cls=Scenario  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00642DF0  Scenario::SetDword30  cls=Scenario  sig=csp  renamed_refs=0  residual=- ====
 int Scenario::SetDword30(int a2)
 {
 {
@@ -109,7 +109,7 @@ int Scenario::SetDword30(int a2)
 }
 }
 
-// ==== BACKFILL 0x00642E00  UI_Render  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00642E00  UI_Render  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_642E00::UI_Render()
 {
 {
@@ -126,7 +126,7 @@ unsigned int * E4Recv_642E00::UI_Render()
 }
 }
 
-// ==== BACKFILL 0x00642E40  UI_Render_642E40  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00642E40  UI_Render_642E40  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_642E40::UI_Render_642E40()
 {
 {
@@ -153,7 +153,7 @@ int E4Recv_642E40::UI_Render_642E40()
 }
 }
 
-// ==== BACKFILL 0x00642E80  UI_Render_642E80  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00642E80  UI_Render_642E80  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_642E80(int * a1, unsigned int * a2)
 {
 {
@@ -180,7 +180,7 @@ int sub_642E80(int * a1, unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x00642FF0  sub_642FF0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00642FF0  sub_642FF0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_642FF0(int a1, int a2, char a3)
 {
 {
@@ -226,7 +226,7 @@ int sub_642FF0(int a1, int a2, char a3)
 }
 }
 
-// ==== BACKFILL 0x006430C0  sub_6430C0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006430C0  sub_6430C0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_6430C0(char a1)
 {
 {
@@ -274,7 +274,7 @@ int sub_6430C0(char a1)
 }
 }
 
-// ==== BACKFILL 0x006431C0  sub_6431C0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006431C0  sub_6431C0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_6431C0(char a1)
 {
 {
@@ -327,7 +327,7 @@ int sub_6431C0(char a1)
 }
 }
 
-// ==== BACKFILL 0x006432C0  sub_6432C0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006432C0  sub_6432C0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_6432C0(char a1)
 {
 {
@@ -391,7 +391,7 @@ int sub_6432C0(char a1)
 }
 }
 
-// ==== BACKFILL 0x006435B0  sub_6435B0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006435B0  sub_6435B0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_6435B0(int a1, int a2, int a3)
 {
 {
@@ -428,7 +428,7 @@ char sub_6435B0(int a1, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x00643670  UI_Render_643670  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00643670  UI_Render_643670  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int * E4Recv_643670::UI_Render_643670()
 {
 {
@@ -468,7 +468,7 @@ int * E4Recv_643670::UI_Render_643670()
 }
 }
 
-// ==== BACKFILL 0x006447A0  ParticleSystemTypeClass::GetClassIdentifier  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006447A0  ParticleSystemTypeClass::GetClassIdentifier  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleSystemTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -480,7 +480,7 @@ int ParticleSystemTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x006447E0  ParticleSystemTypeClass::SaveLoad_Prefix  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006447E0  ParticleSystemTypeClass::SaveLoad_Prefix  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 {
 {
@@ -496,7 +496,7 @@ int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 }
 }
 
-// ==== BACKFILL 0x00644830  ParticleSystemTypeClass::SaveLoad_Prefix_0  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00644830  ParticleSystemTypeClass::SaveLoad_Prefix_0  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleSystemTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
 {
@@ -505,7 +505,7 @@ int ParticleSystemTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectType
 }
 }
 
-// ==== BACKFILL 0x00644850  sub_644850  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00644850  sub_644850  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * E4Recv_644850::sub_644850()
 {
 {
@@ -524,31 +524,31 @@ ObjectClass * E4Recv_644850::sub_644850()
 }
 }
 
-// ==== BACKFILL 0x00644920  ParticleSystemTypeClass::GetObjectSize  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00644920  ParticleSystemTypeClass::GetObjectSize  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleSystemTypeClass::GetObjectSize()
 {
 return 784;
 }
 
-// ==== BACKFILL 0x00644930  ParticleSystemTypeClass::GetTypeIdentifier  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00644930  ParticleSystemTypeClass::GetTypeIdentifier  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleSystemTypeClass::GetTypeIdentifier()
 {
 return 25;
 }
 
-// ==== BACKFILL 0x00644940  ParticleSystemTypeClass::Stub  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00644940  ParticleSystemTypeClass::Stub  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0  residual=- ====
 char ParticleSystemTypeClass::Stub(int a1, int a2)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00644950  ParticleSystemTypeClass::StubReturnFalse  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00644950  ParticleSystemTypeClass::StubReturnFalse  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleSystemTypeClass::StubReturnFalse(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00644960  ParticleSystemTypeClass::ddtor  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00644960  ParticleSystemTypeClass::ddtor  cls=ParticleSystemTypeClass  sig=csp  renamed_refs=0  residual=- ====
 ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
 {
     ParticleSystemTypeClass* v7 = this;
@@ -570,7 +570,7 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
     return this;
 }
 
-// ==== BACKFILL 0x00645620  C07F0188::ddtor  cls=ParticleTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00645620  C07F0188::ddtor  cls=ParticleTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int C07F0188::ddtor(int a1, _DWORD *a2)
 {
     if ( !a2 )
@@ -582,7 +582,7 @@ int C07F0188::ddtor(int a1, _DWORD *a2)
     return 0;
 }
 
-// ==== BACKFILL 0x006457A0  ParticleTypeClass::SaveLoad_Prefix_0  cls=ParticleTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006457A0  ParticleTypeClass::SaveLoad_Prefix_0  cls=ParticleTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2)
 {
 {
@@ -618,7 +618,7 @@ int ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2
 }
 }
 
-// ==== BACKFILL 0x006458D0  sub_6458D0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006458D0  sub_6458D0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * E4Recv_6458D0::sub_6458D0()
 {
 {
@@ -637,31 +637,31 @@ ObjectClass * E4Recv_6458D0::sub_6458D0()
 }
 }
 
-// ==== BACKFILL 0x00645910  ParticleTypeClass::GetObjectSize  cls=ParticleTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00645910  ParticleTypeClass::GetObjectSize  cls=ParticleTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleTypeClass::GetObjectSize()
 {
 return 792;
 }
 
-// ==== BACKFILL 0x00645920  ParticleTypeClass::GetTypeIdentifier  cls=ParticleTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00645920  ParticleTypeClass::GetTypeIdentifier  cls=ParticleTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleTypeClass::GetTypeIdentifier()
 {
 return 23;
 }
 
-// ==== BACKFILL 0x00645930  ParticleTypeClass::Stub  cls=ParticleTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00645930  ParticleTypeClass::Stub  cls=ParticleTypeClass  sig=csp  renamed_refs=0  residual=- ====
 char ParticleTypeClass::Stub(int a1, int a2)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00645940  ParticleTypeClass::StubReturnFalse  cls=ParticleTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00645940  ParticleTypeClass::StubReturnFalse  cls=ParticleTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int ParticleTypeClass::StubReturnFalse(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00645950  ParticleTypeClass::ddtor  cls=ParticleTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00645950  ParticleTypeClass::ddtor  cls=ParticleTypeClass  sig=csp  renamed_refs=0  residual=- ====
 ParticleTypeClass * ParticleTypeClass::ddtor(char a2)
 {
     ParticleTypeClass* v7 = this;
@@ -705,7 +705,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2)
     return this;
 }
 
-// ==== BACKFILL 0x00645B10  AbstractClass::getTeamIndex  cls=DynamicVector  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00645B10  AbstractClass::getTeamIndex  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { void* AbstractClass::getTeamIndex(int a2) {
 {
     void *v3;
@@ -724,7 +724,7 @@ namespace ra2 { namespace game { void* AbstractClass::getTeamIndex(int a2) {
 }
 } } }
 
-// ==== BACKFILL 0x00645CD0  sub_645CD0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00645CD0  sub_645CD0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_645CD0::sub_645CD0(float a2)
 {
 {
@@ -735,7 +735,7 @@ void E4Recv_645CD0::sub_645CD0(float a2)
 }
 }
 
-// ==== BACKFILL 0x00645D00  Function::645D00  cls=Function  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00645D00  Function::645D00  cls=Function  sig=csp  renamed_refs=0  residual=- ====
 int Function::645D00(int a2)
 {
 {
@@ -743,7 +743,7 @@ int Function::645D00(int a2)
 }
 }
 
-// ==== BACKFILL 0x00645ED0  QuaternionMathMultiply  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00645ED0  QuaternionMathMultiply  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 float * QuaternionMathMultiply(ObjectClass * aP0, float * a1, float * a2)
 {
 {
@@ -796,7 +796,7 @@ float * QuaternionMathMultiply(ObjectClass * aP0, float * a1, float * a2)
 }
 }
 
-// ==== BACKFILL 0x006460C0  sub_6460C0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006460C0  sub_6460C0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 float * sub_6460C0(float * a0, ObjectClass * aP1)
 {
 {
@@ -816,7 +816,7 @@ float * sub_6460C0(float * a0, ObjectClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x00646480  FromQuaternionAxisAngle  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00646480  FromQuaternionAxisAngle  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 float * Quaternion_FromAxisAngle(float * a1, float * a2, float a3)
 {
 {
@@ -871,7 +871,7 @@ float * Quaternion_FromAxisAngle(float * a1, float * a2, float a3)
 }
 }
 
-// ==== BACKFILL 0x00646980  ToQuaternionMatrix  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00646980  ToQuaternionMatrix  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 float * Quaternion_ToMatrix(float * a1, float * a2)
 {
 {
@@ -913,7 +913,7 @@ float * Quaternion_ToMatrix(float * a1, float * a2)
 }
 }
 
-// ==== BACKFILL 0x00646D00  sub_646D00  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00646D00  sub_646D00  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_646D00::sub_646D00()
 {
 {
@@ -927,7 +927,7 @@ unsigned int * E4Recv_646D00::sub_646D00()
 }
 }
 
-// ==== BACKFILL 0x0064AAA0  sub_64AAA0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0064AAA0  sub_64AAA0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 LRESULT E4Recv_64AAA0::sub_64AAA0()
 {
 {
@@ -942,7 +942,7 @@ LRESULT E4Recv_64AAA0::sub_64AAA0()
 }
 }
 
-// ==== BACKFILL 0x0064B410  Network_Process_64B410  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0064B410  Network_Process_64B410  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_64B410(int a1, int * a2)
 {
 {
@@ -990,7 +990,7 @@ int sub_64B410(int a1, int * a2)
 }
 }
 
-// ==== BACKFILL 0x0064D990  Network_Process_64D990  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0064D990  Network_Process_64D990  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void sub_64D990()
 {
 {
@@ -1016,7 +1016,7 @@ void sub_64D990()
 }
 }
 
-// ==== BACKFILL 0x0064D9E0  Network_Process_64D9E0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0064D9E0  Network_Process_64D9E0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_64D9E0()
 {
 {
@@ -1062,7 +1062,7 @@ int sub_64D9E0()
 }
 }
 
-// ==== BACKFILL 0x0064DE80  ComputeHash  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0064DE80  ComputeHash  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Hash_Compute(unsigned int * a1, int a2)
 {
   result = a2 + (*a1 >> 31) + 2 * *a1;

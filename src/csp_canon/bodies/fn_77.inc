@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00770850  sub_770850  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00770850  sub_770850  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_770850::sub_770850(unsigned int * a1, char ** a2, int a4, ObjectClass * aP4)
 {
 {
@@ -55,7 +55,7 @@ void E4Recv_770850::sub_770850(unsigned int * a1, char ** a2, int a4, ObjectClas
 }
 }
 
-// ==== BACKFILL 0x00770970  sub_770970  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00770970  sub_770970  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
 {
 {
@@ -102,7 +102,7 @@ char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
 }
 }
 
-// ==== BACKFILL 0x00770A50  sub_770A50  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00770A50  sub_770A50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
 {
 {
@@ -149,7 +149,7 @@ char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
 }
 }
 
-// ==== BACKFILL 0x00770B30  sub_770B30  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00770B30  sub_770B30  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_770B30::sub_770B30(int a2, void ** a3)
 {
 {
@@ -197,7 +197,7 @@ char E4Recv_770B30::sub_770B30(int a2, void ** a3)
 }
 }
 
-// ==== BACKFILL 0x00770C10  Map_Remove  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00770C10  Map_Remove  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_770C10(int a1, int a2, void ** a3)
 {
 {
@@ -242,7 +242,7 @@ char sub_770C10(int a1, int a2, void ** a3)
 }
 }
 
-// ==== BACKFILL 0x00770CE0  Map_Remove_770CE0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00770CE0  Map_Remove_770CE0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_770CE0(int a1, int a2, char ** a3)
 {
 {
@@ -272,7 +272,7 @@ char sub_770CE0(int a1, int a2, char ** a3)
 }
 }
 
-// ==== BACKFILL 0x00770F10  sub_770F10  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00770F10  sub_770F10  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_770F10::sub_770F10(int a2, int a3, void ** a4)
 {
 {
@@ -317,7 +317,7 @@ char E4Recv_770F10::sub_770F10(int a2, int a3, void ** a4)
 }
 }
 
-// ==== BACKFILL 0x00770FE0  sub_770FE0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00770FE0  sub_770FE0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_770FE0::sub_770FE0(int a2, int a3, void ** a4)
 {
 {
@@ -362,7 +362,7 @@ char E4Recv_770FE0::sub_770FE0(int a2, int a3, void ** a4)
 }
 }
 
-// ==== BACKFILL 0x007710B0  INIClass::ReadTokenizedPair  cls=INIClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007710B0  INIClass::ReadTokenizedPair  cls=INIClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void INIClass::ReadTokenizedPair(void* a1, void* a2, void* a3, int a4, void* a5) {
 {
       Selection_WorldDominationTour *v7;
@@ -468,7 +468,7 @@ namespace gamemd { void INIClass::ReadTokenizedPair(void* a1, void* a2, void* a3
 }
 } }
 
-// ==== BACKFILL 0x00771710  sub_771710  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00771710  sub_771710  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_771710::sub_771710()
 {
 {
@@ -504,7 +504,7 @@ int E4Recv_771710::sub_771710()
 }
 }
 
-// ==== BACKFILL 0x007717A0  sub_7717A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007717A0  sub_7717A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 DWORD E4Recv_7717A0::sub_7717A0()
 {
 {
@@ -525,7 +525,7 @@ DWORD E4Recv_7717A0::sub_7717A0()
 }
 }
 
-// ==== BACKFILL 0x00771850  sub_771850  cls=Anim@Voices@WorldDominationTour  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00771850  sub_771850  cls=Anim@Voices@WorldDominationTour  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_771850::sub_771850(int a2)
 {
 {
@@ -540,7 +540,7 @@ unsigned int * E4Recv_771850::sub_771850(int a2)
 }
 }
 
-// ==== BACKFILL 0x007719E0  sub_7719E0  cls=DynamicVectorClass_uint  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007719E0  sub_7719E0  cls=DynamicVectorClass_uint  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_7719E0::sub_7719E0()
 {
 {
@@ -555,7 +555,7 @@ int E4Recv_7719E0::sub_7719E0()
 }
 }
 
-// ==== BACKFILL 0x00771A00  sub_771A00  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00771A00  sub_771A00  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_771A00::sub_771A00()
 {
 {
@@ -572,7 +572,7 @@ void E4Recv_771A00::sub_771A00()
 }
 }
 
-// ==== BACKFILL 0x00771F00  WeaponTypeClass::loadWeaponProperties  cls=WeaponTypeClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x00771F00  WeaponTypeClass::loadWeaponProperties  cls=WeaponTypeClass  sig=csp  renamed_refs=6  residual=- ====
 unsigned int * WeaponTypeClass::loadWeaponProperties(AbstractTypeClass * aP1)
 {
 {
@@ -581,14 +581,14 @@ unsigned int * WeaponTypeClass::loadWeaponProperties(AbstractTypeClass * aP1)
     this->q0D8 = &vt_TypeList_int;
     this->InfiniteMindControl = &vt_TypeList_AnimTypeClass_const;
     *(void**)this = vt_WeaponTypeClass;
-    this->__pad_004 = (unsigned int)vt_WeaponTypeClass;
     this->vtable2 = (unsigned int)vt_WeaponTypeClass;
-    this->vtable3 = &vt_WeaponTypeClass;
+    this->vtable3 = (unsigned int)vt_WeaponTypeClass;
+    this->vtable4 = &vt_WeaponTypeClass;
     return this;
 }
 }
 
-// ==== BACKFILL 0x007729F0  WeaponTypeClass::CalculateSpeed  cls=WeaponTypeClass  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x007729F0  WeaponTypeClass::CalculateSpeed  cls=WeaponTypeClass  sig=csp  renamed_refs=3  residual=- ====
 int WeaponTypeClass::CalculateSpeed()
 {
 {
@@ -607,7 +607,7 @@ int WeaponTypeClass::CalculateSpeed()
 }
 }
 
-// ==== BACKFILL 0x00772AC0  InfantryClass::startPanic  cls=InfantryClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00772AC0  InfantryClass::startPanic  cls=InfantryClass  sig=csp  renamed_refs=0  residual=- ====
 void InfantryClass::startPanic()
 {
 {
@@ -634,7 +634,7 @@ retn
 */
 }
 
-// ==== BACKFILL 0x00772C90  WeaponTypeClass::GetClassIdentifier  cls=WeaponTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00772C90  WeaponTypeClass::GetClassIdentifier  cls=WeaponTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int WeaponTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -646,19 +646,19 @@ int WeaponTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x007730D0  WeaponTypeClass::GetObjectSize  cls=WeaponTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007730D0  WeaponTypeClass::GetObjectSize  cls=WeaponTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int WeaponTypeClass::GetObjectSize()
 {
 return 352;
 }
 
-// ==== BACKFILL 0x007730E0  WeaponTypeClass::GetTypeIdentifier  cls=WeaponTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007730E0  WeaponTypeClass::GetTypeIdentifier  cls=WeaponTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int WeaponTypeClass::GetTypeIdentifier()
 {
 return 49;
 }
 
-// ==== BACKFILL 0x007730F0  WeaponTypeClass::ddtor  cls=WeaponTypeClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007730F0  WeaponTypeClass::ddtor  cls=WeaponTypeClass  sig=csp  renamed_refs=0  residual=- ====
 WeaponTypeClass * WeaponTypeClass::ddtor(char a2)
 {
     WeaponTypeClass* v8 = this;
@@ -709,7 +709,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(char a2)
     return this;
 }
 
-// ==== BACKFILL 0x00773590  sub_773590  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773590  sub_773590  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char AnimClass::sub_773590(int a2, int a3)
 {
 {
@@ -728,7 +728,7 @@ char AnimClass::sub_773590(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x007738A0  sub_7738A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007738A0  sub_7738A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 BOOL E4Recv_7738A0::sub_7738A0(const char * cbData, LPBYTE lpData, const char * Type)
 {
 {
@@ -749,7 +749,7 @@ BOOL E4Recv_7738A0::sub_7738A0(const char * cbData, LPBYTE lpData, const char * 
 }
 }
 
-// ==== BACKFILL 0x00773970  sub_773970  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773970  sub_773970  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL sub_773970(BYTE * Type, DWORD cbData)
 {
 {
@@ -774,7 +774,7 @@ BOOL sub_773970(BYTE * Type, DWORD cbData)
 }
 }
 
-// ==== BACKFILL 0x00773A40  WebBrowser::QueryInterface  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773A40  WebBrowser::QueryInterface  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::QueryInterface()
 {
 {
@@ -790,7 +790,7 @@ int WebBrowser::QueryInterface()
 }
 }
 
-// ==== BACKFILL 0x00773AA0  WebBrowser::AddRef  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773AA0  WebBrowser::AddRef  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::AddRef()
 {
 {
@@ -802,7 +802,7 @@ int WebBrowser::AddRef()
 }
 }
 
-// ==== BACKFILL 0x00773AB0  WebBrowser::Release  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773AB0  WebBrowser::Release  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::Release()
 {
 {
@@ -820,7 +820,7 @@ int WebBrowser::Release()
 }
 }
 
-// ==== BACKFILL 0x00773AD0  WebBrowser::?  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773AD0  WebBrowser::?  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser___vt03()
 {
 {
@@ -833,13 +833,13 @@ int WebBrowser___vt03()
 }
 }
 
-// ==== BACKFILL 0x00773B00  WebBrowser::COMStub_Return0  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773B00  WebBrowser::COMStub_Return0  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::COMStub_Return0()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00773B10  WebBrowser::Write  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773B10  WebBrowser::Write  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::Write()
 {
 {
@@ -851,55 +851,55 @@ int WebBrowser::Write()
 }
 }
 
-// ==== BACKFILL 0x00773B40  WebBrowser::StubReturnFalse  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773B40  WebBrowser::StubReturnFalse  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::StubReturnFalse()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00773B50  WebBrowser::SetSize  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773B50  WebBrowser::SetSize  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::SetSize()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00773B60  WebBrowser::CopyTo  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773B60  WebBrowser::CopyTo  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::CopyTo()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00773B70  WebBrowser::Commit  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773B70  WebBrowser::Commit  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::Commit()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00773B80  WebBrowser::Revert  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773B80  WebBrowser::Revert  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::Revert()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00773B90  WebBrowser::LockRegion  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773B90  WebBrowser::LockRegion  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::LockRegion()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00773BA0  WebBrowser::UnlockRegion  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773BA0  WebBrowser::UnlockRegion  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::UnlockRegion()
 {
 return -2147467259;
 }
 
-// ==== BACKFILL 0x00773BB0  WebBrowser::Stat  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773BB0  WebBrowser::Stat  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::Stat()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00773BC0  WebBrowser::Clone  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773BC0  WebBrowser::Clone  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::Clone()
 {
 {
@@ -930,7 +930,7 @@ int WebBrowser::Clone()
 }
 }
 
-// ==== BACKFILL 0x00773D20  WebBrowser::Navigate  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773D20  WebBrowser::Navigate  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::Navigate()
 {
 {
@@ -939,7 +939,7 @@ int WebBrowser::Navigate()
 }
 }
 
-// ==== BACKFILL 0x00773D40  WebBrowser::GoBack  cls=WebBrowser  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773D40  WebBrowser::GoBack  cls=WebBrowser  sig=csp  renamed_refs=0  residual=- ====
 int WebBrowser::GoBack()
 {
 {
@@ -973,7 +973,7 @@ int WebBrowser::GoBack()
 }
 }
 
-// ==== BACKFILL 0x00773E30  sub_773E30  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00773E30  sub_773E30  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_773E30(HWND hWndParent, unsigned int a2, int a3, unsigned int a4)
 {
 {
@@ -994,14 +994,14 @@ int sub_773E30(HWND hWndParent, unsigned int a2, int a3, unsigned int a4)
 }
 }
 
-// ==== BACKFILL 0x007754A0  WinModemClass::ddtor  cls=WinModemClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x007754A0  WinModemClass::ddtor  cls=WinModemClass  sig=csp  renamed_refs=0  residual=- ====
 int WinModemClass::ddtor(int a2)
 {
-    this->q064 = a2;
+    this->Member100 = a2;
     return a2;
 }
 
-// ==== BACKFILL 0x00775610  WinModemClass::QueryInterface  cls=WinModemClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00775610  WinModemClass::QueryInterface  cls=WinModemClass  sig=csp  renamed_refs=0  residual=- ====
 WinModemClass * WinModemClass::QueryInterface(char a2)
 {
 {
@@ -1022,7 +1022,7 @@ WinModemClass * WinModemClass::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x007759B0  Dialog::FindByPtr  cls=Dialog  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007759B0  Dialog::FindByPtr  cls=Dialog  sig=csp  renamed_refs=0  residual=- ====
 int Dialog::FindByPtr()
 {
 {
@@ -1040,13 +1040,13 @@ int Dialog::FindByPtr()
 }
 }
 
-// ==== BACKFILL 0x00775B40  sub_775B40  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00775B40  sub_775B40  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 INT_PTR sub_775B40(HWND a1, UINT a2, WPARAM a3, LPARAM a4)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x00775B50  sub_775B50  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00775B50  sub_775B50  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_775B50(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, int a3, LONG * a4)
 {
 {
@@ -1063,7 +1063,7 @@ int sub_775B50(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LP
 }
 }
 
-// ==== BACKFILL 0x00775BA0  Dialog::GetField  cls=Dialog  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00775BA0  Dialog::GetField  cls=Dialog  sig=csp  renamed_refs=0  residual=- ====
 BOOL Dialog::GetField()
 {
 {
@@ -1072,7 +1072,7 @@ BOOL Dialog::GetField()
 }
 }
 
-// ==== BACKFILL 0x00776670  sub_776670  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00776670  sub_776670  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char sub_776670(LPARAM lParam)
 {
 {
@@ -1107,7 +1107,7 @@ char sub_776670(LPARAM lParam)
 }
 }
 
-// ==== BACKFILL 0x007767F0  sub_7767F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007767F0  sub_7767F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int E4Recv_7767F0::sub_7767F0()
 {
 {
@@ -1126,7 +1126,7 @@ unsigned int E4Recv_7767F0::sub_7767F0()
 }
 }
 
-// ==== BACKFILL 0x007768F0  LoadWOLSettings  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007768F0  LoadWOLSettings  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL sub_7768F0(HWND hWnd, LPARAM a2)
 {
 {
@@ -1172,7 +1172,7 @@ BOOL sub_7768F0(HWND hWnd, LPARAM a2)
 }
 }
 
-// ==== BACKFILL 0x00776B40  SaveWOLUISettings  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00776B40  SaveWOLUISettings  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL SaveWOLUISettings(HWND hWnd, char * a2)
 {
 {
@@ -1221,7 +1221,7 @@ BOOL SaveWOLUISettings(HWND hWnd, char * a2)
 }
 }
 
-// ==== BACKFILL 0x00776D80  Window::ClampToScreen  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00776D80  Window::ClampToScreen  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char Window::ClampToScreen(int * a1)
 {
 {
@@ -1261,7 +1261,7 @@ char Window::ClampToScreen(int * a1)
 }
 }
 
-// ==== BACKFILL 0x00776E10  FindListBoxItem  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00776E10  FindListBoxItem  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LRESULT FindListBoxItem(HWND hWnd, LRESULT wParam, int a3)
 {
 {
@@ -1278,7 +1278,7 @@ LRESULT FindListBoxItem(HWND hWnd, LRESULT wParam, int a3)
 }
 }
 
-// ==== BACKFILL 0x00776EB0  sub_776EB0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00776EB0  sub_776EB0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void * E4Recv_776EB0::sub_776EB0()
 {
 {
@@ -1313,7 +1313,7 @@ void * E4Recv_776EB0::sub_776EB0()
 }
 }
 
-// ==== BACKFILL 0x00777060  Dialog::RestoreParent  cls=Dialog  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00777060  Dialog::RestoreParent  cls=Dialog  sig=csp  renamed_refs=0  residual=- ====
 HWND Dialog::RestoreParent()
 {
 {
@@ -1325,7 +1325,7 @@ HWND Dialog::RestoreParent()
 }
 }
 
-// ==== BACKFILL 0x00777AC0  Time::FormatDate  cls=Time  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00777AC0  Time::FormatDate  cls=Time  sig=csp  renamed_refs=0  residual=- ====
 int Time::FormatDate()
 {
 {
@@ -1338,7 +1338,7 @@ int Time::FormatDate()
 }
 }
 
-// ==== BACKFILL 0x00777F90  sub_777F90  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00777F90  sub_777F90  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 LONG sub_777F90(HWND hWnd)
 {
 {
@@ -1376,7 +1376,7 @@ LONG sub_777F90(HWND hWnd)
 }
 }
 
-// ==== BACKFILL 0x007781A0  DisableIME  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007781A0  DisableIME  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HIMC IME_Disable()
 {
 {
@@ -1384,7 +1384,7 @@ HIMC IME_Disable()
 }
 }
 
-// ==== BACKFILL 0x007784A0  CCToolTip::QueryInterface  cls=CCToolTip  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007784A0  CCToolTip::QueryInterface  cls=CCToolTip  sig=csp  renamed_refs=0  residual=- ====
 CCToolTip * CCToolTip::QueryInterface(char a2)
 {
 {
@@ -1396,7 +1396,7 @@ CCToolTip * CCToolTip::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x00779690  LoadAccountInfoWOL_Load  cls=ReferenceCounted  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00779690  LoadAccountInfoWOL_Load  cls=ReferenceCounted  sig=csp  renamed_refs=0  residual=- ====
 void * E4Recv_779690::LoadAccountInfoWOL_Load(ReferenceCounted * aP1, ObjectClass * aP2, ReferenceCounted * aP3, ReferenceCounted * aP4, int a6, ObjectClass * aP6, ReferenceCounted * aP7, ReferenceCounted * aP8, ReferenceCounted * aP9, ReferenceCounted * aP10, ReferenceCounted * aP11, ReferenceCounted * aP12, ReferenceCounted * aP13, ReferenceCounted * aP14)
 {
 {
@@ -1422,7 +1422,7 @@ void * E4Recv_779690::LoadAccountInfoWOL_Load(ReferenceCounted * aP1, ObjectClas
 }
 }
 
-// ==== BACKFILL 0x0077A8D0  MainLobbyDlgProcWOL_Get  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0077A8D0  MainLobbyDlgProcWOL_Get  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void MainLobbyDlgProcWOL_Get(HWND hDlg, char a2)
 {
 {
@@ -1469,7 +1469,7 @@ void MainLobbyDlgProcWOL_Get(HWND hDlg, char a2)
 }
 }
 
-// ==== BACKFILL 0x0077D1F0  ConnectAndLoginWOL_Connect  cls=SimpleWonlineDialogControl  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0077D1F0  ConnectAndLoginWOL_Connect  cls=SimpleWonlineDialogControl  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_77D1F0::ConnectAndLoginWOL_Connect()
 {
 {
@@ -1478,7 +1478,7 @@ void E4Recv_77D1F0::ConnectAndLoginWOL_Connect()
 }
 }
 
-// ==== BACKFILL 0x0077D240  sub_77D240  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0077D240  sub_77D240  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_77D240::sub_77D240()
 {
 {
@@ -1507,7 +1507,7 @@ int E4Recv_77D240::sub_77D240()
 }
 }
 
-// ==== BACKFILL 0x0077D350  sub_77D350  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0077D350  sub_77D350  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 BOOL sub_77D350(ObjectClass * String1)
 {
 {
@@ -1522,7 +1522,7 @@ BOOL sub_77D350(ObjectClass * String1)
 }
 }
 
-// ==== BACKFILL 0x0077D3A0  sub_77D3A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0077D3A0  sub_77D3A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 BOOL sub_77D3A0(ObjectClass * String1)
 {
 {
@@ -1537,7 +1537,7 @@ BOOL sub_77D3A0(ObjectClass * String1)
 }
 }
 
-// ==== BACKFILL 0x0077E7A0  GameConfig::BuildChecksum  cls=GameConfig  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0077E7A0  GameConfig::BuildChecksum  cls=GameConfig  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int GameConfig::BuildChecksum() {
 {
     int v2;
@@ -1562,7 +1562,7 @@ namespace gamemd { int GameConfig::BuildChecksum() {
 }
 } }
 
-// ==== BACKFILL 0x0077E820  ParseStringCommaInts  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0077E820  ParseStringCommaInts  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void ** ParseStringCommaInts(char * String, int * a2, int * a3, int * a4, int * a5, int * a6, void ** a7)
 {
 {

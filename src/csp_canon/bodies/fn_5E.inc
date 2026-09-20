@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x005E26C0  Dialog::FindGameUI  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E26C0  Dialog::FindGameUI  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Dialog::FindGameUI()
 {
 {
@@ -22,7 +22,7 @@ int Dialog::FindGameUI()
 }
 }
 
-// ==== BACKFILL 0x005E2700  Dialog::ShowMessage  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E2700  Dialog::ShowMessage  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HWND Dialog::ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ... a4)
 {
 {
@@ -62,7 +62,7 @@ HWND Dialog::ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectC
 }
 }
 
-// ==== BACKFILL 0x005E2790  Dialog::ShowStatusText  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E2790  Dialog::ShowStatusText  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HWND Dialog::ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignScore * aP2)
 {
 {
@@ -100,7 +100,7 @@ HWND Dialog::ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignSco
 }
 }
 
-// ==== BACKFILL 0x005E29A0  UI_Draw  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E29A0  UI_Draw  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LRESULT UI_Draw(HWND hWnd, wchar_t * Source, DropListClass * Count, LPARAM lParam)
 {
 {
@@ -137,7 +137,7 @@ LRESULT UI_Draw(HWND hWnd, wchar_t * Source, DropListClass * Count, LPARAM lPara
 }
 }
 
-// ==== BACKFILL 0x005E2E40  sub_5E2E40  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E2E40  sub_5E2E40  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 INT_PTR sub_5E2E40(HWND hWnd, UINT a2, WPARAM a3, char * a4)
 {
 {
@@ -169,7 +169,7 @@ INT_PTR sub_5E2E40(HWND hWnd, UINT a2, WPARAM a3, char * a4)
 }
 }
 
-// ==== BACKFILL 0x005E2F60  Dialog::ShowPlayerName  cls=Dialog  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E2F60  Dialog::ShowPlayerName  cls=Dialog  sig=csp  renamed_refs=0  residual=- ====
 LRESULT Dialog::ShowPlayerName()
 {
 {
@@ -179,7 +179,7 @@ LRESULT Dialog::ShowPlayerName()
 }
 }
 
-// ==== BACKFILL 0x005E35A0  sub_5E35A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E35A0  sub_5E35A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char sub_5E35A0()
 {
 {
@@ -205,7 +205,7 @@ char sub_5E35A0()
 }
 }
 
-// ==== BACKFILL 0x005E3630  Network_Create  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E3630  Network_Create  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char sub_5E3630()
 {
 {
@@ -240,7 +240,7 @@ char sub_5E3630()
 }
 }
 
-// ==== BACKFILL 0x005E3720  Network::SendOptionsGame  cls=Network  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E3720  Network::SendOptionsGame  cls=Network  sig=csp  renamed_refs=0  residual=- ====
 int Network::SendOptionsGame()
 {
 {
@@ -279,7 +279,7 @@ int Network::SendOptionsGame()
 }
 }
 
-// ==== BACKFILL 0x005E3850  WOLobby_Play  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E3850  WOLobby_Play  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int INIClass::WOLobby_Play()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -336,7 +336,7 @@ int __thiscall WOLobby_Play(INIClass *this)
 }
 }
 
-// ==== BACKFILL 0x005E70D0  SkirmishSetup_Setup_5E70D0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E70D0  SkirmishSetup_Setup_5E70D0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 WPARAM SkirmishSetup_Setup_5E70D0(HWND hDlg, int a2)
 {
 {
@@ -364,7 +364,7 @@ WPARAM SkirmishSetup_Setup_5E70D0(HWND hDlg, int a2)
 }
 }
 
-// ==== BACKFILL 0x005E84D0  GameConfig::ComputeCRC  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E84D0  GameConfig::ComputeCRC  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * GameConfig::ComputeCRC()
 {
 {
@@ -420,7 +420,7 @@ char * GameConfig::ComputeCRC()
 }
 }
 
-// ==== BACKFILL 0x005E8760  Settings::CheckString  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E8760  Settings::CheckString  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL Settings::CheckString()
 {
 {
@@ -430,7 +430,7 @@ BOOL Settings::CheckString()
 }
 }
 
-// ==== BACKFILL 0x005E8A20  WinMainSetup_Setup_5DB6F0_Setup  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E8A20  WinMainSetup_Setup_5DB6F0_Setup  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5E8A20()
 {
 {
@@ -473,7 +473,7 @@ int sub_5E8A20()
 }
 }
 
-// ==== BACKFILL 0x005E8BF0  Player::FindByName  cls=Player  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E8BF0  Player::FindByName  cls=Player  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * Player::FindByName()
 {
 {
@@ -510,7 +510,7 @@ wchar_t * Player::FindByName()
 }
 }
 
-// ==== BACKFILL 0x005E9290  NetworkLobby::CheckLobbyConditions  cls=NetworkLobby  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E9290  NetworkLobby::CheckLobbyConditions  cls=NetworkLobby  sig=csp  renamed_refs=0  residual=- ====
 char NetworkLobby::CheckLobbyConditions()
 {
 {
@@ -559,7 +559,7 @@ char NetworkLobby::CheckLobbyConditions()
 }
 }
 
-// ==== BACKFILL 0x005E9440  Player::IsObserver  cls=Player  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E9440  Player::IsObserver  cls=Player  sig=csp  renamed_refs=0  residual=- ====
 BOOL Player::IsObserver()
 {
 {
@@ -567,7 +567,7 @@ BOOL Player::IsObserver()
 }
 }
 
-// ==== BACKFILL 0x005E9470  NetworkLobby::IsValidPlayerName  cls=NetworkLobby  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E9470  NetworkLobby::IsValidPlayerName  cls=NetworkLobby  sig=csp  renamed_refs=0  residual=- ====
 BOOL NetworkLobby::IsValidPlayerName()
 {
 {
@@ -575,7 +575,7 @@ BOOL NetworkLobby::IsValidPlayerName()
 }
 }
 
-// ==== BACKFILL 0x005E94D0  Hash_Check_5E94D0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E94D0  Hash_Check_5E94D0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5E94D0()
 {
 {
@@ -596,7 +596,7 @@ int sub_5E94D0()
 }
 }
 
-// ==== BACKFILL 0x005E9510  NetworkLobby::CheckMinPlayers  cls=NetworkLobby  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E9510  NetworkLobby::CheckMinPlayers  cls=NetworkLobby  sig=csp  renamed_refs=0  residual=- ====
 bool NetworkLobby::CheckMinPlayers()
 {
 {
@@ -620,7 +620,7 @@ bool NetworkLobby::CheckMinPlayers()
 }
 }
 
-// ==== BACKFILL 0x005E9560  GameOption::CheckDuplicate  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E9560  GameOption::CheckDuplicate  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char GameOption::CheckDuplicate()
 {
 {
@@ -635,7 +635,7 @@ char GameOption::CheckDuplicate()
 }
 }
 
-// ==== BACKFILL 0x005E9580  Hash_Check_5E9580  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E9580  Hash_Check_5E9580  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char sub_5E9580()
 {
 {
@@ -663,7 +663,7 @@ char sub_5E9580()
 }
 }
 
-// ==== BACKFILL 0x005E96A0  NetworkLobby::CheckPlayerNameValid  cls=NetworkLobby  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E96A0  NetworkLobby::CheckPlayerNameValid  cls=NetworkLobby  sig=csp  renamed_refs=0  residual=- ====
 char NetworkLobby::CheckPlayerNameValid()
 {
 {
@@ -698,7 +698,7 @@ char NetworkLobby::CheckPlayerNameValid()
 }
 }
 
-// ==== BACKFILL 0x005E9720  NetworkLobby::CheckPlayerNames  cls=NetworkLobby  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E9720  NetworkLobby::CheckPlayerNames  cls=NetworkLobby  sig=csp  renamed_refs=0  residual=- ====
 char NetworkLobby::CheckPlayerNames()
 {
 {
@@ -733,7 +733,7 @@ char NetworkLobby::CheckPlayerNames()
 }
 }
 
-// ==== BACKFILL 0x005E9950  Dialog::MapPlayerIDToIndex  cls=Dialog  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E9950  Dialog::MapPlayerIDToIndex  cls=Dialog  sig=csp  renamed_refs=0  residual=- ====
 int Dialog::MapPlayerIDToIndex()
 {
 {
@@ -758,7 +758,7 @@ int Dialog::MapPlayerIDToIndex()
 }
 }
 
-// ==== BACKFILL 0x005E99C0  GameClass::GetDifficultyString  cls=GameClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E99C0  GameClass::GetDifficultyString  cls=GameClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * GameClass::GetDifficultyString()
 {
 {
@@ -778,7 +778,7 @@ wchar_t * GameClass::GetDifficultyString()
 }
 }
 
-// ==== BACKFILL 0x005E9B60  SelectLobbyCountry  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005E9B60  SelectLobbyCountry  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Lobby_SelectCountry(HWND a1, void * a2)
 {
 {
@@ -812,7 +812,7 @@ int Lobby_SelectCountry(HWND a1, void * a2)
 }
 }
 
-// ==== BACKFILL 0x005ED370  Session::StartGame  cls=Session  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005ED370  Session::StartGame  cls=Session  sig=csp  renamed_refs=0  residual=- ====
 int Session::StartGame()
 {
 {
@@ -840,7 +840,7 @@ int Session::StartGame()
 }
 }
 
-// ==== BACKFILL 0x005EDD00  ReadChatMessage  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005EDD00  ReadChatMessage  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t ** ReadChatMessage(wchar_t ** a1, HWND a2)
 {
 {
@@ -884,7 +884,7 @@ wchar_t ** ReadChatMessage(wchar_t ** a1, HWND a2)
 }
 }
 
-// ==== BACKFILL 0x005EDEF0  GetPlayerTypeString  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005EDEF0  GetPlayerTypeString  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char ** Player_GetTypeString(char ** a1, wchar_t * a2)
 {
 {
@@ -929,7 +929,7 @@ char ** Player_GetTypeString(char ** a1, wchar_t * a2)
 }
 }
 
-// ==== BACKFILL 0x005EDFC0  NetworkLobby::DeleteAndZero  cls=NetworkLobby  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005EDFC0  NetworkLobby::DeleteAndZero  cls=NetworkLobby  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * NetworkLobby::DeleteAndZero()
 {
 {
@@ -992,7 +992,7 @@ wchar_t * NetworkLobby::DeleteAndZero()
 }
 }
 
-// ==== BACKFILL 0x005EE200  UpdateObserveButtonWOL  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005EE200  UpdateObserveButtonWOL  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5EE200::UpdateObserveButtonWOL()
 {
 {
@@ -1048,7 +1048,7 @@ void E4Recv_5EE200::UpdateObserveButtonWOL()
 }
 }
 
-// ==== BACKFILL 0x005EE6A0  NetworkLobby::UpdateLabels  cls=NetworkLobby  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005EE6A0  NetworkLobby::UpdateLabels  cls=NetworkLobby  sig=csp  renamed_refs=0  residual=- ====
 void NetworkLobby::UpdateLabels()
 {
 {
@@ -1075,7 +1075,7 @@ void NetworkLobby::UpdateLabels()
 }
 }
 
-// ==== BACKFILL 0x005EED00  VectorClass::Cleanup3  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005EED00  VectorClass::Cleanup3  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 void VectorClass::Cleanup3()
 {
 if ( this->Items && this->IsAllocated )
@@ -1087,7 +1087,7 @@ this->IsAllocated = 0;
 this->Capacity = 0;
 }
 
-// ==== BACKFILL 0x005EF190  VectorClass_cptr_MultiMission::j_vt09  cls=NullModemConnClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005EF190  VectorClass_cptr_MultiMission::j_vt09  cls=NullModemConnClass  sig=csp  renamed_refs=0  residual=- ====
 int VectorClass_cptr_MultiMission::j_vt09(unsigned char * a1, signed int a3, int a4, int a5, int a6, int a7)
 {
 {
@@ -1123,7 +1123,7 @@ int VectorClass_cptr_MultiMission::j_vt09(unsigned char * a1, signed int a3, int
 }
 }
 
-// ==== BACKFILL 0x005EF280  Struct::ZeroInitAndSetup_0_0  cls=NullModemConnClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005EF280  Struct::ZeroInitAndSetup_0_0  cls=NullModemConnClass  sig=csp  renamed_refs=0  residual=- ====
 int Struct::ZeroInitAndSetup_0_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1134,7 +1134,7 @@ int __thiscall Struct::ZeroInitAndSetup_0_0(NullModemConnClass *this)
 }
 }
 
-// ==== BACKFILL 0x005EF290  VectorClass_cptr_MultiMission::j_vt00  cls=NullModemConnClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005EF290  VectorClass_cptr_MultiMission::j_vt00  cls=NullModemConnClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * VectorClass_cptr_MultiMission::j_vt00(char a2)
 {
 {
@@ -1149,7 +1149,7 @@ unsigned int * VectorClass_cptr_MultiMission::j_vt00(char a2)
 }
 }
 
-// ==== BACKFILL 0x005EFF00  sub_5EFF00  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005EFF00  sub_5EFF00  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5EFF00(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
 {
 {
@@ -1175,7 +1175,7 @@ int sub_5EFF00(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
 }
 }
 
-// ==== BACKFILL 0x005EFF70  Network::handleTimeout  cls=Network  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005EFF70  Network::handleTimeout  cls=Network  sig=csp  renamed_refs=0  residual=- ====
 HWND Network::handleTimeout()
 {
 {

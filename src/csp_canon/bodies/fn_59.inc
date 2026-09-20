@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x005942F0  sub_5942F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005942F0  sub_5942F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5942F0::sub_5942F0(int * a2)
 {
 {
@@ -62,7 +62,7 @@ int E4Recv_5942F0::sub_5942F0(int * a2)
 }
 }
 
-// ==== BACKFILL 0x00595BC0  CCFileClass::Load  cls=CCFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00595BC0  CCFileClass::Load  cls=CCFileClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CCFileClass::Load() {
 {
       HWND Dialog;
@@ -120,13 +120,13 @@ namespace gamemd { int CCFileClass::Load() {
 }
 } }
 
-// ==== BACKFILL 0x00597D50  MapSeedClass::ddtor  cls=MapSeedClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00597D50  MapSeedClass::ddtor  cls=MapSeedClass  sig=csp  renamed_refs=0  residual=- ====
 bool MapSeedClass::ddtor(char* lpFileName)
 {
     return LoadOptions::ddtor(lpFileName);
 }
 
-// ==== BACKFILL 0x00597FA0  MapSeedClass::GetCell  cls=MapSeedClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00597FA0  MapSeedClass::GetCell  cls=MapSeedClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * MapSeedClass::GetCell()
 {
 {
@@ -134,7 +134,7 @@ wchar_t * MapSeedClass::GetCell()
 }
 }
 
-// ==== BACKFILL 0x00597FC0  MapSeedClass::SetCell  cls=MapSeedClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00597FC0  MapSeedClass::SetCell  cls=MapSeedClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * MapSeedClass::SetCell()
 {
 {
@@ -142,7 +142,7 @@ wchar_t * MapSeedClass::SetCell()
 }
 }
 
-// ==== BACKFILL 0x00597FE0  MapSeedClass::Validate  cls=MapSeedClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00597FE0  MapSeedClass::Validate  cls=MapSeedClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * MapSeedClass::Validate()
 {
 {
@@ -150,7 +150,7 @@ wchar_t * MapSeedClass::Validate()
 }
 }
 
-// ==== BACKFILL 0x00598030  Range_RandomInt  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00598030  Range_RandomInt  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 long long Range_RandomInt(MouseClass * aP0, MapClass * aP1)
 {
 {
@@ -173,7 +173,7 @@ long long Range_RandomInt(MouseClass * aP0, MapClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x005980A0  sub_5980A0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005980A0  sub_5980A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_5980A0::sub_5980A0(int a2)
 {
 {
@@ -185,7 +185,7 @@ unsigned int * E4Recv_5980A0::sub_5980A0(int a2)
 }
 }
 
-// ==== BACKFILL 0x0059B940  Map_Helper_59B940  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0059B940  Map_Helper_59B940  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 double Map_Helper_59B940(MapResourceClass * aP0, short * a1, MapResourceClass * aP2, MapResourceClass * aP3, float a5, MapResourceClass * aP5)
 {
 {
@@ -243,7 +243,7 @@ double Map_Helper_59B940(MapResourceClass * aP0, short * a1, MapResourceClass * 
 }
 }
 
-// ==== BACKFILL 0x0059D480  sub_59D480  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0059D480  sub_59D480  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 double sub_59D480(short * a1, short * a2, int a3)
 {
 {

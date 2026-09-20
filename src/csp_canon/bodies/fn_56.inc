@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00561350  sub_561350  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00561350  sub_561350  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_561350(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 {
@@ -39,7 +39,7 @@ int sub_561350(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 }
 }
 
-// ==== BACKFILL 0x00565090  RadarClass::RenderMapPreview  cls=MapClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00565090  RadarClass::RenderMapPreview  cls=MapClass  sig=csp  renamed_refs=3  residual=- ====
 namespace gamemd { int RadarClass::RenderMapPreview() {
 {
       _DWORD *v2;
@@ -83,20 +83,20 @@ namespace gamemd { int RadarClass::RenderMapPreview() {
         --v5;
       }
       while ( v5 );
-      this->q1160 = 0;
-      this->q1164 = 0;
+      this->MapClass_field_0x1160 = 0;
+      this->MapClass_field_0x1164 = 0;
       this->q1168 = 1;
       this->q1169 = 0;
       *(_DWORD *)(this + 4444) = &vt_DynamicVectorClass_Cell;
       this->q1170 = 10;
-      this->q116C = 0;
+      this->MapClass_field_0x116C = 0;
       *(_DWORD *)this = &vt_MapClass;
       this->q148 = 13;
       return this;
 }
 } }
 
-// ==== BACKFILL 0x00565190  RadarClass::Render  cls=RadarClass  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x00565190  RadarClass::Render  cls=RadarClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { void* RadarClass::Render(int a1) {
 {
       _DWORD *v3;
@@ -111,7 +111,7 @@ namespace gamemd { void* RadarClass::Render(int a1) {
       v3 = this + 80;
       *(_DWORD *)this = &off_7EA6FC;
       this->RadarClass_field_0x10 = 0;
-      this->__pad_014 = 0;
+      this->q014 = 0;
       RadarClass::drawRadarTerrain((_DWORD *)this + 20, 0, 0);
       *v3 = &DynamicVectorClass<ZoneConnectionClass>::`vftable';
       v3[5] = 10;
@@ -166,12 +166,12 @@ namespace gamemd { void* RadarClass::Render(int a1) {
         --v11;
       }
       while ( v11 );
-      this->__pad_014 = 0;
+      this->q014 = 0;
       return this;
 }
 } }
 
-// ==== BACKFILL 0x005654E0  sub_5654E0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005654E0  sub_5654E0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_5654E0::sub_5654E0(unsigned int * a2, int * a3)
 {
 {
@@ -194,7 +194,7 @@ unsigned int * E4Recv_5654E0::sub_5654E0(unsigned int * a2, int * a3)
 }
 }
 
-// ==== BACKFILL 0x00565520  CellClass::GetScreenCenterOffset  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00565520  CellClass::GetScreenCenterOffset  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* CellClass::GetScreenCenterOffset(void* a1, void* a2) {
 {
     int v3;
@@ -220,7 +220,7 @@ namespace gamemd { void* CellClass::GetScreenCenterOffset(void* a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x00565610  sub_565610  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00565610  sub_565610  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_565610::sub_565610(unsigned int * a2, short * a3)
 {
 {
@@ -245,7 +245,7 @@ unsigned int * E4Recv_565610::sub_565610(unsigned int * a2, short * a3)
 }
 }
 
-// ==== BACKFILL 0x005656D0  MapClass::IsCellPassable  cls=MapClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005656D0  MapClass::IsCellPassable  cls=MapClass  sig=csp  renamed_refs=0  residual=- ====
 int MapClass::IsCellPassable(int a1, int a2)
 {
 {
@@ -261,7 +261,7 @@ int MapClass::IsCellPassable(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x005657E0  Cell::Exists  cls=Cell  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005657E0  Cell::Exists  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
 bool Cell::Exists(MouseClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -271,7 +271,7 @@ bool __thiscall Cell::Exists(_DWORD *this, MouseClass *aP1)
 }
 }
 
-// ==== BACKFILL 0x00565B00  MapClass::FreeAllCells  cls=MapClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x00565B00  MapClass::FreeAllCells  cls=MapClass  sig=csp  renamed_refs=4  residual=- ====
 int MapClass::FreeAllCells()
 {
 {
@@ -310,7 +310,7 @@ int MapClass::FreeAllCells()
 }
 }
 
-// ==== BACKFILL 0x00567110  CellClass::BuildPathfindingGraph  cls=CellClass  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x00567110  CellClass::BuildPathfindingGraph  cls=CellClass  sig=csp  renamed_refs=5  residual=- ====
 namespace gamemd { void* CellClass::BuildPathfindingGraph() {
 {
       int v2;
@@ -383,7 +383,7 @@ namespace gamemd { void* CellClass::BuildPathfindingGraph() {
 }
 } }
 
-// ==== BACKFILL 0x00568300  LayerClass::CoordinatesLegal  cls=LayerClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00568300  LayerClass::CoordinatesLegal  cls=LayerClass  sig=csp  renamed_refs=0  residual=- ====
 bool LayerClass::CoordinatesLegal(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -400,7 +400,7 @@ bool __thiscall LayerClass::CoordinatesLegal(_DWORD *this, IUnknown *aP1)
 }
 }
 
-// ==== BACKFILL 0x00568350  Tactical::IsCellVisible  cls=Tactical  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00568350  Tactical::IsCellVisible  cls=Tactical  sig=csp  renamed_refs=0  residual=- ====
 bool Tactical::IsCellVisible(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -417,7 +417,7 @@ bool __thiscall Tactical::IsCellVisible(_DWORD *this, IUnknown *aP1)
 }
 }
 
-// ==== BACKFILL 0x0056AE40  sub_56AE40  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056AE40  sub_56AE40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_56AE40::sub_56AE40(int a2)
 {
 {
@@ -467,7 +467,7 @@ int E4Recv_56AE40::sub_56AE40(int a2)
 }
 }
 
-// ==== BACKFILL 0x0056AF40  sub_56AF40  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056AF40  sub_56AF40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char * E4Recv_56AF40::sub_56AF40(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -548,7 +548,7 @@ char *__thiscall sub_56AF40(int *this, int a2)
 }
 }
 
-// ==== BACKFILL 0x0056B0F0  sub_56B0F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056B0F0  sub_56B0F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_56B0F0::sub_56B0F0(int * a2)
 {
 {
@@ -606,7 +606,7 @@ int E4Recv_56B0F0::sub_56B0F0(int * a2)
 }
 }
 
-// ==== BACKFILL 0x0056B250  sub_56B250  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056B250  sub_56B250  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_56B250::sub_56B250(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -680,7 +680,7 @@ int __thiscall sub_56B250(int *this, int a2)
 }
 }
 
-// ==== BACKFILL 0x0056B5A0  CellClass::LoadTerrainTiles  cls=CellClass  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x0056B5A0  CellClass::LoadTerrainTiles  cls=CellClass  sig=csp  renamed_refs=3  residual=- ====
 namespace gamemd { int CellClass::LoadTerrainTiles(int a1) {
 {
       int i;
@@ -752,7 +752,7 @@ namespace gamemd { int CellClass::LoadTerrainTiles(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0056B780  CellClass::CreateOverlay  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056B780  CellClass::CreateOverlay  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::CreateOverlay(int a1) {
 {
     unsigned int v3;
@@ -798,7 +798,7 @@ namespace gamemd { int CellClass::CreateOverlay(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0056B8A0  CellClass::DecompressRawCellData  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056B8A0  CellClass::DecompressRawCellData  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::DecompressRawCellData(int a1) {
 {
     int v2;
@@ -843,7 +843,7 @@ namespace gamemd { int CellClass::DecompressRawCellData(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0056B9A0  CellClass::DecompressTerrainDataSimple  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056B9A0  CellClass::DecompressTerrainDataSimple  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::DecompressTerrainDataSimple(int a1) {
 {
     unsigned int v3;
@@ -889,7 +889,7 @@ namespace gamemd { int CellClass::DecompressTerrainDataSimple(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0056BAC0  CellClass::DecompressTerrainData  cls=CellClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056BAC0  CellClass::DecompressTerrainData  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::DecompressTerrainData(int a1) {
 {
     unsigned int v3;
@@ -937,7 +937,7 @@ namespace gamemd { int CellClass::DecompressTerrainData(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0056BC50  Cell::PosToLinearIndex  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056BC50  Cell::PosToLinearIndex  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Cell::PosToLinearIndex(IUnknown * aP0)
 {
 {
@@ -945,7 +945,7 @@ int Cell::PosToLinearIndex(IUnknown * aP0)
 }
 }
 
-// ==== BACKFILL 0x0056BCD0  CellClass::GetTileData  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056BCD0  CellClass::GetTileData  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CellClass::GetTileData(IUnknown * aP0, IUnknown * aP1)
 {
 {
@@ -961,7 +961,7 @@ int CellClass::GetTileData(IUnknown * aP0, IUnknown * aP1)
 }
 }
 
-// ==== BACKFILL 0x0056C020  CellClass::CreateBuildingCrater  cls=CellClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x0056C020  CellClass::CreateBuildingCrater  cls=CellClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int CellClass::CreateBuildingCrater(void* a1) {
 {
       int v2;
@@ -1073,7 +1073,7 @@ namespace gamemd { int CellClass::CreateBuildingCrater(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x0056CB80  Cell::DecodeFlags  cls=Cell  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056CB80  Cell::DecodeFlags  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
 int Cell::DecodeFlags()
 {
 {
@@ -1081,7 +1081,7 @@ int Cell::DecodeFlags()
 }
 }
 
-// ==== BACKFILL 0x0056D430  Cell::CoordToIndex  cls=Cell  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056D430  Cell::CoordToIndex  cls=Cell  sig=csp  renamed_refs=0  residual=- ====
 int Cell::CoordToIndex(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -1091,7 +1091,7 @@ int __thiscall Cell::CoordToIndex(_DWORD *this, IUnknown *aP1)
 }
 }
 
-// ==== BACKFILL 0x0056ED40  globalHelper_06ED40  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056ED40  globalHelper_06ED40  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char globalHelper_06ED40(IUnknown * aP0, int a2)
 {
 {
@@ -1141,7 +1141,7 @@ char globalHelper_06ED40(IUnknown * aP0, int a2)
 }
 }
 
-// ==== BACKFILL 0x0056EE40  globalHelper_06EE40  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056EE40  globalHelper_06EE40  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char globalHelper_06EE40(IUnknown * aP0, int a2)
 {
 {
@@ -1191,7 +1191,7 @@ char globalHelper_06EE40(IUnknown * aP0, int a2)
 }
 }
 
-// ==== BACKFILL 0x0056F690  globalHelper_06F690  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056F690  globalHelper_06F690  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char globalHelper_06F690(IUnknown * aP0, IUnknown * aP1)
 {
 {
@@ -1244,7 +1244,7 @@ char globalHelper_06F690(IUnknown * aP0, IUnknown * aP1)
 }
 }
 
-// ==== BACKFILL 0x0056F7A0  globalHelper_06F7A0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0056F7A0  globalHelper_06F7A0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_56F7A0(unsigned short * a1, int a2)
 {
 {

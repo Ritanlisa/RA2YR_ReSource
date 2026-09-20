@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x007D06E8  __callnewh  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D06E8  __callnewh  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _callnewh(IUnknown * aP0)
 {
 {
@@ -10,7 +10,7 @@ int _callnewh(IUnknown * aP0)
 }
 }
 
-// ==== BACKFILL 0x007D07DF  __read  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D07DF  __read  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _read(int FileHandle, void * DstBuf, unsigned int MaxCharCount)
 {
 {
@@ -31,7 +31,7 @@ int _read(int FileHandle, void * DstBuf, unsigned int MaxCharCount)
 }
 }
 
-// ==== BACKFILL 0x007D0D55  __write  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D0D55  __write  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _write(int FileHandle, CCINIClass * aP1, unsigned int MaxCharCount)
 {
 {
@@ -52,7 +52,7 @@ int _write(int FileHandle, CCINIClass * aP1, unsigned int MaxCharCount)
 }
 }
 
-// ==== BACKFILL 0x007D107D  __msize  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D107D  __msize  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 size_t _msize(CCINIClass * aP0)
 {
 {
@@ -72,7 +72,7 @@ size_t _msize(CCINIClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007D12E6  _strncnt  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D12E6  _strncnt  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned char * strncnt(const unsigned char * String, int Count)
 {
 const unsigned char* scan = String;
@@ -93,7 +93,7 @@ else
     return (unsigned char *)(scan - String);
 }
 
-// ==== BACKFILL 0x007D13F8  __initptd  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D13F8  __initptd  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _initptd(int a1)
 {
 {
@@ -103,7 +103,7 @@ int _initptd(int a1)
 }
 }
 
-// ==== BACKFILL 0x007D140B  __getptd  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D140B  __getptd  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * _getptd()
 {
 {
@@ -129,7 +129,7 @@ unsigned int * _getptd()
 }
 }
 
-// ==== BACKFILL 0x007D151E  __fltin2  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D151E  __fltin2  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _fltin2(int a1, int a2)
 {
 {
@@ -165,7 +165,7 @@ int _fltin2(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007D161B  __dosmaperr  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D161B  __dosmaperr  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int * _dosmaperr(unsigned int a1)
 {
 {
@@ -209,13 +209,13 @@ int * _dosmaperr(unsigned int a1)
 }
 }
 
-// ==== BACKFILL 0x007D1697  ___doserrno  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D1697  ___doserrno  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * __doserrno()
 {
 return (unsigned int *)(_getptd() + 12);
 }
 
-// ==== BACKFILL 0x007D16A0  __mbsdec  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D16A0  __mbsdec  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned char * _mbsdec(const unsigned char * Start, const unsigned char * Pos)
 {
 {
@@ -242,7 +242,7 @@ unsigned char * _mbsdec(const unsigned char * Start, const unsigned char * Pos)
 }
 }
 
-// ==== BACKFILL 0x007D2169  _fgetc_0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D2169  _fgetc_0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int fgetc_0(FILE * Stream)
 {
 {
@@ -252,7 +252,7 @@ int fgetc_0(FILE * Stream)
 }
 }
 
-// ==== BACKFILL 0x007D2183  __un_inc  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D2183  __un_inc  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _un_inc(int Character, FILE * Stream)
 {
 if (Character != -1)
@@ -260,7 +260,7 @@ if (Character != -1)
 return Character;
 }
 
-// ==== BACKFILL 0x007D219A  __whiteout  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D219A  __whiteout  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _whiteout(unsigned int * a1, FILE * Stream)
 {
 int current;
@@ -273,7 +273,7 @@ while (isspace(current));
 return current;
 }
 
-// ==== BACKFILL 0x007D290B  _write_char_0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D290B  _write_char_0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * write_char_0(wchar_t WCh, FILE * File, unsigned int * a3)
 {
 bool failed = (unsigned __int16)_putwc_lk(WCh, File) == 0xFFFF;
@@ -285,7 +285,7 @@ else
 return result;
 }
 
-// ==== BACKFILL 0x007D292B  _write_multi_char_0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D292B  _write_multi_char_0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * write_multi_char_0(wchar_t WCh, unsigned int * a2, FILE * File, unsigned int * a4)
 {
 {
@@ -303,7 +303,7 @@ unsigned int * write_multi_char_0(wchar_t WCh, unsigned int * a2, FILE * File, u
 }
 }
 
-// ==== BACKFILL 0x007D295C  _write_string_0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D295C  _write_string_0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * write_string_0(wchar_t * a1, unsigned int * a2, FILE * File, unsigned int * a4)
 {
 {
@@ -323,7 +323,7 @@ unsigned int * write_string_0(wchar_t * a1, unsigned int * a2, FILE * File, unsi
 }
 }
 
-// ==== BACKFILL 0x007D2995  _get_int_arg_0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D2995  _get_int_arg_0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int get_int_arg_0(ObjectClass * aP0)
 {
 {
@@ -332,7 +332,7 @@ int get_int_arg_0(ObjectClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007D29A2  _get_int64_arg_0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D29A2  _get_int64_arg_0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 long long get_int64_arg_0(ObjectClass * aP0)
 {
 {
@@ -341,7 +341,7 @@ long long get_int64_arg_0(ObjectClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007D2A74  __close  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D2A74  __close  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _close(int FileHandle)
 {
 {
@@ -362,7 +362,7 @@ int _close(int FileHandle)
 }
 }
 
-// ==== BACKFILL 0x007D2AD1  __close_lk  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D2AD1  __close_lk  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _close_lk(int FileHandle)
 {
 {
@@ -386,7 +386,7 @@ int _close_lk(int FileHandle)
 }
 }
 
-// ==== BACKFILL 0x007D2B54  __freebuf  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D2B54  __freebuf  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _freebuf(MouseClass * aP0)
 {
 {
@@ -405,7 +405,7 @@ int _freebuf(MouseClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007D2B7F  __stbuf  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D2B7F  __stbuf  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _stbuf(int a1)
 {
 {
@@ -449,7 +449,7 @@ int _stbuf(int a1)
 }
 }
 
-// ==== BACKFILL 0x007D2C0C  __ftbuf  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D2C0C  __ftbuf  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _ftbuf(int a1, int a2)
 {
 {
@@ -469,7 +469,7 @@ int _ftbuf(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007D2E6E  sub_7D2E6E  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D2E6E  sub_7D2E6E  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 {
 {
@@ -480,7 +480,7 @@ unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 }
 }
 
-// ==== BACKFILL 0x007D2E7F  sub_7D2E7F  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D2E7F  sub_7D2E7F  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * E4Recv_7D2E7F::sub_7D2E7F(char a2)
 {
 {
@@ -491,7 +491,7 @@ ObjectClass * E4Recv_7D2E7F::sub_7D2E7F(char a2)
 }
 }
 
-// ==== BACKFILL 0x007D2E9B  ??0exception_QAE_ABQBD_Z  cls=exception  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D2E9B  ??0exception_QAE_ABQBD_Z  cls=exception  sig=csp  renamed_refs=0  residual=- ====
 exception * E4Recv_7D2E9B::__0exception_QAE_ABQBD_Z(const char ** a2)
 {
 {
@@ -508,7 +508,7 @@ exception * E4Recv_7D2E9B::__0exception_QAE_ABQBD_Z(const char ** a2)
 }
 }
 
-// ==== BACKFILL 0x007D2ED8  ??0exception_QAE_ABV0__Z  cls=exception  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D2ED8  ??0exception_QAE_ABV0__Z  cls=exception  sig=csp  renamed_refs=0  residual=- ====
 exception * E4Recv_7D2ED8::__0exception_QAE_ABV0__Z(const struct exception * a2)
 {
 {
@@ -534,7 +534,7 @@ exception * E4Recv_7D2ED8::__0exception_QAE_ABV0__Z(const struct exception * a2)
 }
 }
 
-// ==== BACKFILL 0x007D2F22  ??4exception_QAEAAV0_ABV0__Z  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D2F22  ??4exception_QAEAAV0_ABV0__Z  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * E4Recv_7D2F22::__4exception_QAEAAV0_ABV0__Z(struct exception * a2)
 {
 {
@@ -547,7 +547,7 @@ ObjectClass * E4Recv_7D2F22::__4exception_QAEAAV0_ABV0__Z(struct exception * a2)
 }
 }
 
-// ==== BACKFILL 0x007D2F57  ?what_exception__UBEPBDXZ  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D2F57  ?what_exception__UBEPBDXZ  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 const char * E4Recv_7D2F57::_what_exception__UBEPBDXZ()
 {
 {
@@ -559,7 +559,7 @@ const char * E4Recv_7D2F57::_what_exception__UBEPBDXZ()
 }
 }
 
-// ==== BACKFILL 0x007D2F64  __CxxThrowException_8  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D2F64  __CxxThrowException_8  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void  __noreturn _CxxThrowException_8(void * pExceptionObject, _ThrowInfo * pThrowInfo)
 {
 {
@@ -571,7 +571,7 @@ void  __noreturn _CxxThrowException_8(void * pExceptionObject, _ThrowInfo * pThr
 }
 }
 
-// ==== BACKFILL 0x007D3374  _calloc  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D3374  _calloc  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void * calloc(size_t Count, size_t Size)
 {
 {
@@ -614,7 +614,7 @@ void * calloc(size_t Count, size_t Size)
 }
 }
 
-// ==== BACKFILL 0x007D362F  _getSystemCP  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D362F  _getSystemCP  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 UINT getSystemCP(UINT a1)
 {
 {
@@ -634,7 +634,7 @@ UINT getSystemCP(UINT a1)
 }
 }
 
-// ==== BACKFILL 0x007D3679  _CPtoLCID  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D3679  _CPtoLCID  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CPtoLCID(int a1)
 {
 switch (a1)
@@ -651,7 +651,7 @@ case 950:
 return 0;
 }
 
-// ==== BACKFILL 0x007D3982  _towupper  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D3982  _towupper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wint_t towupper(wint_t C)
 {
 {
@@ -685,7 +685,7 @@ wint_t towupper(wint_t C)
 }
 }
 
-// ==== BACKFILL 0x007D39F6  _towupper_0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D39F6  _towupper_0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wint_t towupper_0(wint_t C)
 {
 {
@@ -720,13 +720,13 @@ wint_t towupper_0(wint_t C)
 }
 }
 
-// ==== BACKFILL 0x007D4596  fgetwc  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D4596  fgetwc  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int fgetwc(FILE * File)
 {
 return _getwc_lk(File);
 }
 
-// ==== BACKFILL 0x007D45A1  __un_inc_0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D45A1  __un_inc_0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _un_inc_0(short MbCh, int a2)
 {
 {
@@ -737,7 +737,7 @@ int _un_inc_0(short MbCh, int a2)
 }
 }
 
-// ==== BACKFILL 0x007D45BA  __whiteout_0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D45BA  __whiteout_0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wint_t _whiteout_0(unsigned int * a1, FILE * File)
 {
 {
@@ -752,7 +752,7 @@ wint_t _whiteout_0(unsigned int * a1, FILE * File)
 }
 }
 
-// ==== BACKFILL 0x007D45DF  __mbsnbicoll  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D45DF  __mbsnbicoll  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _mbsnbicoll(const unsigned char * Str1, const unsigned char * Str2, size_t MaxCount)
 {
 {
@@ -767,7 +767,7 @@ int _mbsnbicoll(const unsigned char * Str1, const unsigned char * Str2, size_t M
 }
 }
 
-// ==== BACKFILL 0x007D468C  __itoa  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D468C  __itoa  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * _itoa(int Value, char * Buffer, int Radix)
 {
 if (Radix == 10 && Value < 0)
@@ -777,7 +777,7 @@ else
 return Buffer;
 }
 
-// ==== BACKFILL 0x007D46B9  _xtoa  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D46B9  _xtoa  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char xtoa(unsigned int a1, char * a2, unsigned int a3, int a4)
 {
 char* out = a2;
@@ -823,7 +823,7 @@ while (start < back);
 return result;
 }
 
-// ==== BACKFILL 0x007D4715  __ltoa  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D4715  __ltoa  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * _ltoa(int Value, char * Buffer, int Radix)
 {
 int isNegative = 0;
@@ -833,14 +833,14 @@ xtoa(Value, Buffer, Radix, isNegative);
 return Buffer;
 }
 
-// ==== BACKFILL 0x007D473F  __ultoa  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D473F  __ultoa  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * _ultoa(unsigned int Value, char * Buffer, int Radix)
 {
 xtoa(Value, Buffer, Radix, 0);
 return Buffer;
 }
 
-// ==== BACKFILL 0x007D475A  __i64toa  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D475A  __i64toa  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * _i64toa(long long Value, char * Buffer, int Radix)
 {
 int isNegative = 0;
@@ -850,7 +850,7 @@ x64toa_20(Value, Buffer, Radix, isNegative);
 return Buffer;
 }
 
-// ==== BACKFILL 0x007D478B  _x64toa_20  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D478B  _x64toa_20  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * x64toa_20(unsigned long long a1, char * a2, unsigned int a3, int a4)
 {
 char* out = a2;
@@ -896,14 +896,14 @@ while (result < back);
 return result;
 }
 
-// ==== BACKFILL 0x007D4811  __ui64toa  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D4811  __ui64toa  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * _ui64toa(unsigned long long Value, char * Buffer, int Radix)
 {
 x64toa_20(Value, Buffer, Radix, 0);
 return Buffer;
 }
 
-// ==== BACKFILL 0x007D49AE  _ctrlevent_capture_4  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D49AE  _ctrlevent_capture_4  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL ctrlevent_capture_4(DWORD CtrlType)
 {
 {
@@ -947,7 +947,7 @@ BOOL ctrlevent_capture_4(DWORD CtrlType)
 }
 }
 
-// ==== BACKFILL 0x007D4B92  _siglookup  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D4B92  _siglookup  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int siglookup(int a1, unsigned int a2)
 {
 {
@@ -965,13 +965,13 @@ unsigned int siglookup(int a1, unsigned int a2)
 }
 }
 
-// ==== BACKFILL 0x007D4BD8  ___pxcptinfoptrs  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D4BD8  ___pxcptinfoptrs  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void ** __pxcptinfoptrs()
 {
 return (void **)(_getptd() + 84);
 }
 
-// ==== BACKFILL 0x007D4BF0  _strcpy  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D4BF0  _strcpy  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * strcpy(IUnknown * aP0, const char * Source)
 {
 {
@@ -979,7 +979,7 @@ char * strcpy(IUnknown * aP0, const char * Source)
 }
 }
 
-// ==== BACKFILL 0x007D4FAB  __isindst  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D4FAB  __isindst  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _isindst(CampaignScore * aP0)
 {
 {
@@ -991,7 +991,7 @@ int _isindst(CampaignScore * aP0)
 }
 }
 
-// ==== BACKFILL 0x007D52B8  _gmtime  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D52B8  _gmtime  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 struct tm * gmtime(CampaignScore * aP0)
 {
 {
@@ -1066,7 +1066,7 @@ struct tm * gmtime(CampaignScore * aP0)
 }
 }
 
-// ==== BACKFILL 0x007D53C2  __access  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D53C2  __access  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _access(const char * FileName, int AccessMode)
 {
 DWORD FileAttributesA = GetFileAttributesA(FileName);
@@ -1085,7 +1085,7 @@ if ((FileAttributesA & 1) != 0 && (AccessMode & 2) != 0)
 return 0;
 }
 
-// ==== BACKFILL 0x007D5408  __strdup  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D5408  __strdup  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * _strdup(INIClass * aP0)
 {
 {
@@ -1098,7 +1098,7 @@ char * _strdup(INIClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007D5433  __open  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D5433  __open  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _open(const char * FileName, int OpenFlag, ... a3)
 {
 {
@@ -1110,7 +1110,7 @@ int _open(const char * FileName, int OpenFlag, ... a3)
 }
 }
 
-// ==== BACKFILL 0x007D5719  GetCurrentProcessId  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D5719  GetCurrentProcessId  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetCurrentProcessId()
 {
     DWORD __stdcall GetCurrentProcessId()
@@ -1119,7 +1119,7 @@ int GetCurrentProcessId()
 }
 }
 
-// ==== BACKFILL 0x007D57FE  _asctime  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D57FE  _asctime  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * asctime(const struct tm * Tm)
 {
 {
@@ -1175,7 +1175,7 @@ char * asctime(const struct tm * Tm)
 }
 }
 
-// ==== BACKFILL 0x007D58C8  _store_dt  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D58C8  _store_dt  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned char * store_dt(unsigned char * a1, int a2)
 {
   *a1 = a2 / 10 + 48;
@@ -1183,7 +1183,7 @@ unsigned char * store_dt(unsigned char * a1, int a2)
   return a1 + 2;
 }
 
-// ==== BACKFILL 0x007D58F0  __XcptFilter  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D58F0  __XcptFilter  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LONG _XcptFilter(ObjectClass * aP0, struct _EXCEPTION_POINTERS * ExceptionInfo)
 {
 {
@@ -1263,7 +1263,7 @@ LONG _XcptFilter(ObjectClass * aP0, struct _EXCEPTION_POINTERS * ExceptionInfo)
 }
 }
 
-// ==== BACKFILL 0x007D5A2E  _xcptlookup  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D5A2E  _xcptlookup  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * xcptlookup(ObjectClass * aP0, unsigned int * a1)
 {
 {
@@ -1281,7 +1281,7 @@ unsigned int * xcptlookup(ObjectClass * aP0, unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x007D5F31  __NMSG_WRITE  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D5F31  __NMSG_WRITE  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int * _NMSG_WRITE(DWORD NumberOfBytesWritten)
 {
 {
@@ -1343,7 +1343,7 @@ int * _NMSG_WRITE(DWORD NumberOfBytesWritten)
 }
 }
 
-// ==== BACKFILL 0x007D6146  __get_lc_time  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D6146  __get_lc_time  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _get_lc_time(CCINIClass * aP0)
 {
 {
@@ -1441,7 +1441,7 @@ int _get_lc_time(CCINIClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007D6494  __free_lc_time  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D6494  __free_lc_time  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void _free_lc_time(CCINIClass * aP0)
 {
 {
@@ -1494,7 +1494,7 @@ void _free_lc_time(CCINIClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007D67F9  _fix_grouping  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D67F9  _fix_grouping  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char fix_grouping(CCINIClass * aP0)
 {
 {
@@ -1528,7 +1528,7 @@ char fix_grouping(CCINIClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007D68FB  __get_lc_lconv  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D68FB  __get_lc_lconv  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _get_lc_lconv(CCINIClass * aP0)
 {
 {
@@ -1569,7 +1569,7 @@ int _get_lc_lconv(CCINIClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007D6A1D  _fix_grouping_0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D6A1D  _fix_grouping_0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char fix_grouping_0(char * a1)
 {
 char* scan = a1;
@@ -1602,7 +1602,7 @@ for (; *scan; result = *scan)
 return result;
 }
 
-// ==== BACKFILL 0x007D6A54  __free_lc_lconv  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D6A54  __free_lc_lconv  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void _free_lc_lconv(CCINIClass * aP0)
 {
 {
@@ -1622,7 +1622,7 @@ void _free_lc_lconv(CCINIClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007D6CF0  _strpbrk  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D6CF0  _strpbrk  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * strpbrk(const char * Str, const char * Control)
 {
 char* result = 0;
@@ -1650,7 +1650,7 @@ while (1)
 return result;
 }
 
-// ==== BACKFILL 0x007D6EA7  _TranslateName  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D6EA7  _TranslateName  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int TranslateName(int a1, int a2, char ** a3)
 {
 {
@@ -1681,7 +1681,7 @@ int TranslateName(int a1, int a2, char ** a3)
 }
 }
 
-// ==== BACKFILL 0x007D7374  _ProcessCodePage  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7374  _ProcessCodePage  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ProcessCodePage(char * String)
 {
 {
@@ -1706,7 +1706,7 @@ int ProcessCodePage(char * String)
 }
 }
 
-// ==== BACKFILL 0x007D73DA  _TestDefaultCountry  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D73DA  _TestDefaultCountry  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int TestDefaultCountry(short a1)
 {
 {
@@ -1721,7 +1721,7 @@ int TestDefaultCountry(short a1)
 }
 }
 
-// ==== BACKFILL 0x007D73F9  _TestDefaultLanguage  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D73F9  _TestDefaultLanguage  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL TestDefaultLanguage(int a1, int a2)
 {
 {
@@ -1746,7 +1746,7 @@ BOOL TestDefaultLanguage(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007D7491  _crtGetLocaleInfoA_16  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7491  _crtGetLocaleInfoA_16  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int crtGetLocaleInfoA_16(LCID Locale, LCTYPE LCType, LPSTR lpLCData, int cchData)
 {
 {
@@ -1796,7 +1796,7 @@ int crtGetLocaleInfoA_16(LCID Locale, LCTYPE LCType, LPSTR lpLCData, int cchData
 }
 }
 
-// ==== BACKFILL 0x007D7577  _LcidFromHexString  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7577  _LcidFromHexString  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int LcidFromHexString(char * a1)
 {
 int result = 0;
@@ -1820,7 +1820,7 @@ for (;; result = current + 16 * (result + 268435453))
 return result;
 }
 
-// ==== BACKFILL 0x007D75B0  _GetPrimaryLen  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D75B0  _GetPrimaryLen  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetPrimaryLen(char * a1)
 {
 int result = 0;
@@ -1835,7 +1835,7 @@ for (;; ++result)
 return result;
 }
 
-// ==== BACKFILL 0x007D7638  __lseek  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7638  __lseek  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _lseek(int FileHandle, int Offset, int Origin)
 {
 {
@@ -1856,7 +1856,7 @@ int _lseek(int FileHandle, int Offset, int Origin)
 }
 }
 
-// ==== BACKFILL 0x007D769D  __lseek_lk  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D769D  __lseek_lk  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 DWORD _lseek_lk(int FileHandle, LONG lDistanceToMove, DWORD dwMoveMethod)
 {
 {
@@ -1884,7 +1884,7 @@ DWORD _lseek_lk(int FileHandle, LONG lDistanceToMove, DWORD dwMoveMethod)
 }
 }
 
-// ==== BACKFILL 0x007D7710  __getbuf  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7710  __getbuf  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int _getbuf(MouseClass * aP0)
 {
 {
@@ -1911,7 +1911,7 @@ int _getbuf(MouseClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x007D7754  __isatty  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7754  __isatty  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _isatty(int FileHandle)
 {
 {
@@ -1922,7 +1922,7 @@ int _isatty(int FileHandle)
 }
 }
 
-// ==== BACKFILL 0x007D777D  _wctomb  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D777D  _wctomb  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int wctomb(char * MbCh, wchar_t WCh)
 {
 {
@@ -1945,7 +1945,7 @@ int wctomb(char * MbCh, wchar_t WCh)
 }
 }
 
-// ==== BACKFILL 0x007D7840  __aullrem  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7840  __aullrem  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned long long _aullrem(unsigned long long a1, long long a2)
 {
 {
@@ -1986,7 +1986,7 @@ unsigned long long _aullrem(unsigned long long a1, long long a2)
 }
 }
 
-// ==== BACKFILL 0x007D78B5  __ZeroTail  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D78B5  __ZeroTail  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _ZeroTail(int a1, int a2)
 {
 {
@@ -2007,7 +2007,7 @@ int _ZeroTail(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007D78FE  __IncMan  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D78FE  __IncMan  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _IncMan(int a1, int a2)
 {
 {
@@ -2033,7 +2033,7 @@ int _IncMan(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007D7954  __RoundMan  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7954  __RoundMan  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _RoundMan(int a1, int a2)
 {
 {
@@ -2064,7 +2064,7 @@ int _RoundMan(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007D79E0  __CopyMan  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D79E0  __CopyMan  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * _CopyMan(int a1, unsigned int * a2)
 {
 {
@@ -2083,7 +2083,7 @@ unsigned int * _CopyMan(int a1, unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x007D79FB  __FillZeroMan  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D79FB  __FillZeroMan  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _FillZeroMan(unsigned int * a1)
 {
   *a1 = 0;
@@ -2092,7 +2092,7 @@ int _FillZeroMan(unsigned int * a1)
   return 0;
 }
 
-// ==== BACKFILL 0x007D7A07  __IsZeroMan  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7A07  __IsZeroMan  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _IsZeroMan(unsigned int * a1)
 {
 {
@@ -2109,7 +2109,7 @@ int _IsZeroMan(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x007D7A22  __ShrMan  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7A22  __ShrMan  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int * _ShrMan(int * a1, int a2)
 {
 {
@@ -2156,7 +2156,7 @@ int * _ShrMan(int * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007D7C1B  Fltin2_Helper  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7C1B  Fltin2_Helper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_7D7C1B(int a1, int a2)
 {
 {
@@ -2164,7 +2164,7 @@ int sub_7D7C1B(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007D7C31  Fassign_Helper_7D7D1C_Helper  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7C31  Fassign_Helper_7D7D1C_Helper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_7D7C31(int a1, int a2)
 {
 {
@@ -2172,7 +2172,7 @@ int sub_7D7C31(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007D7C47  __ld12told  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7C47  __ld12told  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _ld12told(unsigned short * a1, int a2)
 {
 {
@@ -2213,7 +2213,7 @@ int _ld12told(unsigned short * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007D7CC1  Fassign_Helper  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7CC1  Fassign_Helper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_7D7CC1(int a1, int a2)
 {
 {
@@ -2223,7 +2223,7 @@ int sub_7D7CC1(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007D7D1C  Fassign_Helper_7D7D1C  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7D1C  Fassign_Helper_7D7D1C  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_7D7D1C(int a1, int a2)
 {
 {
@@ -2233,7 +2233,7 @@ int sub_7D7D1C(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007D7D49  __fptostr  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7D49  __fptostr  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * _fptostr(BlowStraw * aP0, char * a1, int a3)
 {
 {
@@ -2294,7 +2294,7 @@ char * _fptostr(BlowStraw * aP0, char * a1, int a3)
 }
 }
 
-// ==== BACKFILL 0x007D7DC0  __fltout2  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D7DC0  __fltout2  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * _fltout2(char a1, int a2, unsigned int * a3, char * Destination)
 {
 {
@@ -2321,7 +2321,7 @@ unsigned int * _fltout2(char a1, int a2, unsigned int * a3, char * Destination)
 }
 }
 
-// ==== BACKFILL 0x007D8D3B  __set_exp  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D8D3B  __set_exp  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 double _set_exp(double a1, short a2)
 {
 {
@@ -2332,7 +2332,7 @@ double _set_exp(double a1, short a2)
 }
 }
 
-// ==== BACKFILL 0x007D8DC8  __sptype  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D8DC8  __sptype  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _sptype(int a1, int a2)
 {
 {
@@ -2353,7 +2353,7 @@ int _sptype(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007D8EF5  __copysign  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D8EF5  __copysign  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 double _copysign(double Number, double Sign)
 {
 {
@@ -2364,7 +2364,7 @@ double _copysign(double Number, double Sign)
 }
 }
 
-// ==== BACKFILL 0x007D930F  __fpclass  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D930F  __fpclass  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _fpclass(double X)
 {
 {
@@ -2407,7 +2407,7 @@ int _fpclass(double X)
 }
 }
 
-// ==== BACKFILL 0x007D94C4  __set_osfhnd  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D94C4  __set_osfhnd  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _set_osfhnd(int a1, HANDLE hHandle)
 {
 {
@@ -2443,7 +2443,7 @@ int _set_osfhnd(int a1, HANDLE hHandle)
 }
 }
 
-// ==== BACKFILL 0x007D9540  __free_osfhnd  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D9540  __free_osfhnd  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int _free_osfhnd(int a1)
 {
 {
@@ -2480,7 +2480,7 @@ int _free_osfhnd(int a1)
 }
 }
 
-// ==== BACKFILL 0x007D95BF  __get_osfhandle  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D95BF  __get_osfhandle  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 intptr_t _get_osfhandle(int FileHandle)
 {
 {
@@ -2497,7 +2497,7 @@ intptr_t _get_osfhandle(int FileHandle)
 }
 }
 
-// ==== BACKFILL 0x007D96A8  __lock_fhandle  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D96A8  __lock_fhandle  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void _lock_fhandle(int a1)
 {
 {
@@ -2519,7 +2519,7 @@ void _lock_fhandle(int a1)
 }
 }
 
-// ==== BACKFILL 0x007D9707  __unlock_fhandle  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D9707  __unlock_fhandle  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void _unlock_fhandle(int a1)
 {
 {
@@ -2527,7 +2527,7 @@ void _unlock_fhandle(int a1)
 }
 }
 
-// ==== BACKFILL 0x007D9D7F  _mbtowc  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D9D7F  _mbtowc  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int mbtowc(wchar_t * DstCh, const char * SrcCh, size_t SrcSizeInBytes)
 {
 {
@@ -2550,7 +2550,7 @@ int mbtowc(wchar_t * DstCh, const char * SrcCh, size_t SrcSizeInBytes)
 }
 }
 
-// ==== BACKFILL 0x007D9ECF  _ungetc  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D9ECF  _ungetc  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ungetc(int Character, FILE * Stream)
 {
 {
@@ -2562,7 +2562,7 @@ int ungetc(int Character, FILE * Stream)
 }
 }
 
-// ==== BACKFILL 0x007D9EF8  _ungetc_0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D9EF8  _ungetc_0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ungetc_0(int Character, FILE * Stream)
 {
 {
@@ -2601,7 +2601,7 @@ int ungetc_0(int Character, FILE * Stream)
 }
 }
 
-// ==== BACKFILL 0x007D9F66  ?__CxxUnhandledExceptionFilter_YGJPAU_EXCEPTION_POINTERS___Z  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007D9F66  ?__CxxUnhandledExceptionFilter_YGJPAU_EXCEPTION_POINTERS___Z  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LONG ___CxxUnhandledExceptionFilter_YGJPAU_EXCEPTION_POINTERS___Z(struct _EXCEPTION_POINTERS * ExceptionInfo)
 {
 {
@@ -2618,7 +2618,7 @@ LONG ___CxxUnhandledExceptionFilter_YGJPAU_EXCEPTION_POINTERS___Z(struct _EXCEPT
 }
 }
 
-// ==== BACKFILL 0x007DA4BF  _wcsncnt_0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DA4BF  _wcsncnt_0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int wcsncnt_0(CampaignScore * aP0, int a2)
 {
 {
@@ -2646,7 +2646,7 @@ int wcsncnt_0(CampaignScore * aP0, int a2)
 }
 }
 
-// ==== BACKFILL 0x007DA9A2  _strncnt_0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DA9A2  _strncnt_0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned char * strncnt_0(unsigned char * a1, int a2)
 {
 {
@@ -2671,7 +2671,7 @@ unsigned char * strncnt_0(unsigned char * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x007DAB54  _findenv  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DAB54  _findenv  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int findenv(unsigned char * Str1, size_t MaxCount)
 {
 {
@@ -2699,7 +2699,7 @@ int findenv(unsigned char * Str1, size_t MaxCount)
 }
 }
 
-// ==== BACKFILL 0x007DABAC  _copy_environ  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DABAC  _copy_environ  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * copy_environ(unsigned int * a1)
 {
 {
@@ -2742,7 +2742,7 @@ unsigned int * copy_environ(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x007DAE25  __ismbblead  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DAE25  __ismbblead  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _ismbblead(unsigned int Ch)
 {
 {
@@ -2750,7 +2750,7 @@ int _ismbblead(unsigned int Ch)
 }
 }
 
-// ==== BACKFILL 0x007DB066  ___addl  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DB066  ___addl  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int __addl(unsigned int a1, unsigned int a2, unsigned int * a3)
 {
 {
@@ -2765,7 +2765,7 @@ int __addl(unsigned int a1, unsigned int a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x007DB087  ___add_12  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DB087  ___add_12  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int __add_12(unsigned int * a1, unsigned int * a2)
 {
 {
@@ -2777,7 +2777,7 @@ int __add_12(unsigned int * a1, unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x007DB0E5  ___shl_12  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DB0E5  ___shl_12  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * __shl_12(unsigned int * a1)
 {
 {
@@ -2796,7 +2796,7 @@ unsigned int * __shl_12(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x007DB113  ___shr_12  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DB113  ___shr_12  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int * __shr_12(int * a1)
 {
 {
@@ -2813,7 +2813,7 @@ int * __shr_12(int * a1)
 }
 }
 
-// ==== BACKFILL 0x007DB140  ___mtold12  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DB140  ___mtold12  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 short __mtold12(char * a1, int a2, int a3)
 {
 {
@@ -2872,7 +2872,7 @@ short __mtold12(char * a1, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x007DB49A  __handle_qnan1  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DB49A  __handle_qnan1  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 double _handle_qnan1(int a1, double a2, int a3)
 {
 {
@@ -2889,7 +2889,7 @@ double _handle_qnan1(int a1, double a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x007DB4EE  __handle_qnan2  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DB4EE  __handle_qnan2  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 double _handle_qnan2(int a1, double a2, double a3, int a4)
 {
 {
@@ -2909,7 +2909,7 @@ double _handle_qnan2(int a1, double a2, double a3, int a4)
 }
 }
 
-// ==== BACKFILL 0x007DB54E  __except1  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DB54E  __except1  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 double _except1(DWORD dwExceptionCode, int a2, double a3, double a4, int a5)
 {
 {
@@ -2938,7 +2938,7 @@ double _except1(DWORD dwExceptionCode, int a2, double a3, double a4, int a5)
 }
 }
 
-// ==== BACKFILL 0x007DB5E6  __except2  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DB5E6  __except2  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 double _except2(DWORD dwExceptionCode, int a2, double a3, double a4, double a5, int a6)
 {
 {
@@ -2972,7 +2972,7 @@ double _except2(DWORD dwExceptionCode, int a2, double a3, double a4, double a5, 
 }
 }
 
-// ==== BACKFILL 0x007DBB55  __umatherr  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DBB55  __umatherr  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 double _umatherr(int Value, int a2, int a3, int a4, int a5, int a6, double a7, int a8)
 {
 {
@@ -2992,7 +2992,7 @@ double _umatherr(int Value, int a2, int a3, int a4, int a5, int a6, double a7, i
 }
 }
 
-// ==== BACKFILL 0x007DBBDD  __set_errno  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DBBDD  __set_errno  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 errno_t _set_errno(int Value)
 {
 {
@@ -3012,7 +3012,7 @@ errno_t _set_errno(int Value)
 }
 }
 
-// ==== BACKFILL 0x007DBC05  __get_fname  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DBC05  __get_fname  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 _UNKNOWN ** _get_fname(int a1)
 {
 {
@@ -3031,7 +3031,7 @@ _UNKNOWN ** _get_fname(int a1)
 }
 }
 
-// ==== BACKFILL 0x007DBC2A  __errcode  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DBC2A  __errcode  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _errcode(char a1)
 {
 {
@@ -3047,25 +3047,25 @@ int _errcode(char a1)
 }
 }
 
-// ==== BACKFILL 0x007DBC57  ReturnNull5  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DBC57  ReturnNull5  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ReturnNull5()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x007DBC77  __ctrlfp  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DBC77  __ctrlfp  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _ctrlfp(short a1)
 {
 return a1;
 }
 
-// ==== BACKFILL 0x007DBC9A  __set_statfp  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DBC9A  __set_statfp  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void _set_statfp()
 {
   ;
 }
 
-// ==== BACKFILL 0x007DC0F6  ___multtenpow12  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DC0F6  ___multtenpow12  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void __multtenpow12(unsigned short * a1, int a2, int a3)
 {
 {
@@ -3111,7 +3111,7 @@ void __multtenpow12(unsigned short * a1, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x007DC1AA  ?_ValidateExecute_YAHP6GHXZ_Z  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DC1AA  ?_ValidateExecute_YAHP6GHXZ_Z  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL __ValidateExecute_YAHP6GHXZ_Z(FARPROC lpfn)
 {
 {
@@ -3119,13 +3119,13 @@ BOOL __ValidateExecute_YAHP6GHXZ_Z(FARPROC lpfn)
 }
 }
 
-// ==== BACKFILL 0x007DC72B  nullsub_271  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DC72B  nullsub_271  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_271(int a1)
 {
   ;
 }
 
-// ==== BACKFILL 0x007DCD9C  ThrowErrorCOM  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCD9C  ThrowErrorCOM  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void  __noreturn COM_ThrowError(int a1, int a2, int a3)
 {
 {
@@ -3135,7 +3135,7 @@ void  __noreturn COM_ThrowError(int a1, int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x007DCDF2  sub_7DCDF2  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCDF2  sub_7DCDF2  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * E4Recv_7DCDF2::sub_7DCDF2(char a2)
 {
 {
@@ -3146,7 +3146,7 @@ ObjectClass * E4Recv_7DCDF2::sub_7DCDF2(char a2)
 }
 }
 
-// ==== BACKFILL 0x007DCE62  HeapFree  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCE62  HeapFree  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int HeapFree()
 {
     int __stdcall HeapFree(HANDLE hHeap, DWORD dwFlags, LPVOID lpMem)
@@ -3155,7 +3155,7 @@ int HeapFree()
 }
 }
 
-// ==== BACKFILL 0x007DCE68  HeapAlloc  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCE68  HeapAlloc  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int HeapAlloc()
 {
     LPVOID __stdcall HeapAlloc(HANDLE hHeap, DWORD dwFlags, SIZE_T dwBytes)
@@ -3164,7 +3164,7 @@ int HeapAlloc()
 }
 }
 
-// ==== BACKFILL 0x007DCE6E  GetTimeZoneInformation  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCE6E  GetTimeZoneInformation  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetTimeZoneInformation()
 {
     DWORD __stdcall GetTimeZoneInformation(LPTIME_ZONE_INFORMATION lpTimeZoneInformation)
@@ -3173,7 +3173,7 @@ int GetTimeZoneInformation()
 }
 }
 
-// ==== BACKFILL 0x007DCE74  GetLocalTime  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCE74  GetLocalTime  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetLocalTime()
 {
     void __stdcall GetLocalTime(LPSYSTEMTIME lpSystemTime)
@@ -3182,7 +3182,7 @@ int GetLocalTime()
 }
 }
 
-// ==== BACKFILL 0x007DCE7A  RtlUnwind  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCE7A  RtlUnwind  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RtlUnwind()
 {
     void __stdcall RtlUnwind(PVOID TargetFrame, PVOID TargetIp, PEXCEPTION_RECORD ExceptionRecord, PVOID ReturnValue)
@@ -3191,7 +3191,7 @@ int RtlUnwind()
 }
 }
 
-// ==== BACKFILL 0x007DCE8C  FatalAppExitA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCE8C  FatalAppExitA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FatalAppExitA()
 {
     void __stdcall __noreturn FatalAppExitA(UINT uAction, LPCSTR lpMessageText)
@@ -3200,7 +3200,7 @@ int FatalAppExitA()
 }
 }
 
-// ==== BACKFILL 0x007DCE92  HeapCreate  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCE92  HeapCreate  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int HeapCreate()
 {
     HANDLE __stdcall HeapCreate(DWORD flOptions, SIZE_T dwInitialSize, SIZE_T dwMaximumSize)
@@ -3209,7 +3209,7 @@ int HeapCreate()
 }
 }
 
-// ==== BACKFILL 0x007DCE98  VirtualFree  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCE98  VirtualFree  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VirtualFree()
 {
     int __stdcall VirtualFree(LPVOID lpAddress, SIZE_T dwSize, DWORD dwFreeType)
@@ -3218,7 +3218,7 @@ int VirtualFree()
 }
 }
 
-// ==== BACKFILL 0x007DCE9E  VirtualAlloc  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCE9E  VirtualAlloc  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VirtualAlloc()
 {
     LPVOID __stdcall VirtualAlloc(LPVOID lpAddress, SIZE_T dwSize, DWORD flAllocationType, DWORD flProtect)
@@ -3227,7 +3227,7 @@ int VirtualAlloc()
 }
 }
 
-// ==== BACKFILL 0x007DCEA4  HeapReAlloc  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCEA4  HeapReAlloc  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int HeapReAlloc()
 {
     LPVOID __stdcall HeapReAlloc(HANDLE hHeap, DWORD dwFlags, LPVOID lpMem, SIZE_T dwBytes)
@@ -3236,7 +3236,7 @@ int HeapReAlloc()
 }
 }
 
-// ==== BACKFILL 0x007DCEAA  IsBadWritePtr  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCEAA  IsBadWritePtr  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int IsBadWritePtr()
 {
     int __stdcall IsBadWritePtr(LPVOID lp, UINT_PTR ucb)
@@ -3245,7 +3245,7 @@ int IsBadWritePtr()
 }
 }
 
-// ==== BACKFILL 0x007DCEB0  HeapSize  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCEB0  HeapSize  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int HeapSize()
 {
     SIZE_T __stdcall HeapSize(HANDLE hHeap, DWORD dwFlags, LPCVOID lpMem)
@@ -3254,7 +3254,7 @@ int HeapSize()
 }
 }
 
-// ==== BACKFILL 0x007DCEB6  LCMapStringA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCEB6  LCMapStringA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int LCMapStringA()
 {
     int __stdcall LCMapStringA(LCID Locale, DWORD dwMapFlags, LPCSTR lpSrcStr, int cchSrc, LPSTR lpDestStr, int cchDest)
@@ -3263,7 +3263,7 @@ int LCMapStringA()
 }
 }
 
-// ==== BACKFILL 0x007DCEBC  LCMapStringW  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCEBC  LCMapStringW  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int LCMapStringW()
 {
     int __stdcall LCMapStringW(LCID Locale, DWORD dwMapFlags, LPCWSTR lpSrcStr, int cchSrc, LPWSTR lpDestStr, int cchDest)
@@ -3272,7 +3272,7 @@ int LCMapStringW()
 }
 }
 
-// ==== BACKFILL 0x007DCEC2  TlsSetValue  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCEC2  TlsSetValue  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int TlsSetValue()
 {
     int __stdcall TlsSetValue(DWORD dwTlsIndex, LPVOID lpTlsValue)
@@ -3281,7 +3281,7 @@ int TlsSetValue()
 }
 }
 
-// ==== BACKFILL 0x007DCECE  TlsFree  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCECE  TlsFree  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int TlsFree()
 {
     int __stdcall TlsFree(DWORD dwTlsIndex)
@@ -3290,7 +3290,7 @@ int TlsFree()
 }
 }
 
-// ==== BACKFILL 0x007DCED4  SetLastError  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCED4  SetLastError  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetLastError()
 {
     void __stdcall SetLastError(DWORD dwErrCode)
@@ -3299,7 +3299,7 @@ int SetLastError()
 }
 }
 
-// ==== BACKFILL 0x007DCEDA  TlsGetValue  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCEDA  TlsGetValue  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int TlsGetValue()
 {
     LPVOID __stdcall TlsGetValue(DWORD dwTlsIndex)
@@ -3308,7 +3308,7 @@ int TlsGetValue()
 }
 }
 
-// ==== BACKFILL 0x007DCEE6  RaiseException  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCEE6  RaiseException  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int RaiseException()
 {
     void __stdcall RaiseException( DWORD dwExceptionCode, DWORD dwExceptionFlags, DWORD nNumberOfArguments, const ULONG_PTR *lpArguments)
@@ -3317,7 +3317,7 @@ int RaiseException()
 }
 }
 
-// ==== BACKFILL 0x007DCEEC  FlushFileBuffers  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCEEC  FlushFileBuffers  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FlushFileBuffers()
 {
     int __stdcall FlushFileBuffers(HANDLE hFile)
@@ -3326,7 +3326,7 @@ int FlushFileBuffers()
 }
 }
 
-// ==== BACKFILL 0x007DCEF2  SetHandleCount  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCEF2  SetHandleCount  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetHandleCount()
 {
     UINT __stdcall SetHandleCount(UINT uNumber)
@@ -3335,7 +3335,7 @@ int SetHandleCount()
 }
 }
 
-// ==== BACKFILL 0x007DCEF8  GetStdHandle  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCEF8  GetStdHandle  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetStdHandle()
 {
     HANDLE __stdcall GetStdHandle(DWORD nStdHandle)
@@ -3344,7 +3344,7 @@ int GetStdHandle()
 }
 }
 
-// ==== BACKFILL 0x007DCEFE  GetFileType  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCEFE  GetFileType  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetFileType()
 {
     DWORD __stdcall GetFileType(HANDLE hFile)
@@ -3353,7 +3353,7 @@ int GetFileType()
 }
 }
 
-// ==== BACKFILL 0x007DCF04  GetCPInfo  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF04  GetCPInfo  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetCPInfo()
 {
     int __stdcall GetCPInfo(UINT CodePage, LPCPINFO lpCPInfo)
@@ -3362,7 +3362,7 @@ int GetCPInfo()
 }
 }
 
-// ==== BACKFILL 0x007DCF16  SetConsoleCtrlHandler  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF16  SetConsoleCtrlHandler  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetConsoleCtrlHandler()
 {
     int __stdcall SetConsoleCtrlHandler(PHANDLER_ROUTINE HandlerRoutine, int Add)
@@ -3371,7 +3371,7 @@ int SetConsoleCtrlHandler()
 }
 }
 
-// ==== BACKFILL 0x007DCF1C  GetFileAttributesA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF1C  GetFileAttributesA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetFileAttributesA()
 {
     DWORD __stdcall GetFileAttributesA(LPCSTR lpFileName)
@@ -3380,7 +3380,7 @@ int GetFileAttributesA()
 }
 }
 
-// ==== BACKFILL 0x007DCF28  UnhandledExceptionFilter  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF28  UnhandledExceptionFilter  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int UnhandledExceptionFilter()
 {
     LONG __stdcall UnhandledExceptionFilter(struct _EXCEPTION_POINTERS *ExceptionInfo)
@@ -3389,7 +3389,7 @@ int UnhandledExceptionFilter()
 }
 }
 
-// ==== BACKFILL 0x007DCF2E  FreeEnvironmentStringsA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF2E  FreeEnvironmentStringsA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FreeEnvironmentStringsA()
 {
     int __stdcall FreeEnvironmentStringsA(LPCH penv)
@@ -3398,7 +3398,7 @@ int FreeEnvironmentStringsA()
 }
 }
 
-// ==== BACKFILL 0x007DCF34  FreeEnvironmentStringsW  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF34  FreeEnvironmentStringsW  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int FreeEnvironmentStringsW()
 {
     int __stdcall FreeEnvironmentStringsW(LPWCH penv)
@@ -3407,7 +3407,7 @@ int FreeEnvironmentStringsW()
 }
 }
 
-// ==== BACKFILL 0x007DCF46  IsValidLocale  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF46  IsValidLocale  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int IsValidLocale()
 {
     int __stdcall IsValidLocale(LCID Locale, DWORD dwFlags)
@@ -3416,7 +3416,7 @@ int IsValidLocale()
 }
 }
 
-// ==== BACKFILL 0x007DCF4C  IsValidCodePage  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF4C  IsValidCodePage  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int IsValidCodePage()
 {
     int __stdcall IsValidCodePage(UINT CodePage)
@@ -3425,7 +3425,7 @@ int IsValidCodePage()
 }
 }
 
-// ==== BACKFILL 0x007DCF52  GetLocaleInfoA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF52  GetLocaleInfoA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetLocaleInfoA()
 {
     int __stdcall GetLocaleInfoA(LCID Locale, LCTYPE LCType, LPSTR lpLCData, int cchData)
@@ -3434,7 +3434,7 @@ int GetLocaleInfoA()
 }
 }
 
-// ==== BACKFILL 0x007DCF58  EnumSystemLocalesA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF58  EnumSystemLocalesA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int EnumSystemLocalesA()
 {
     int __stdcall EnumSystemLocalesA(LOCALE_ENUMPROCA lpLocaleEnumProc, DWORD dwFlags)
@@ -3443,7 +3443,7 @@ int EnumSystemLocalesA()
 }
 }
 
-// ==== BACKFILL 0x007DCF64  SetStdHandle  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF64  SetStdHandle  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetStdHandle()
 {
     int __stdcall SetStdHandle(DWORD nStdHandle, HANDLE hHandle)
@@ -3452,7 +3452,7 @@ int SetStdHandle()
 }
 }
 
-// ==== BACKFILL 0x007DCF6A  GetStringTypeA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF6A  GetStringTypeA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetStringTypeA()
 {
     int __stdcall GetStringTypeA(LCID Locale, DWORD dwInfoType, LPCSTR lpSrcStr, int cchSrc, LPWORD lpCharType)
@@ -3461,7 +3461,7 @@ int GetStringTypeA()
 }
 }
 
-// ==== BACKFILL 0x007DCF70  GetStringTypeW  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF70  GetStringTypeW  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetStringTypeW()
 {
     int __stdcall GetStringTypeW(DWORD dwInfoType, LPCWCH lpSrcStr, int cchSrc, LPWORD lpCharType)
@@ -3470,7 +3470,7 @@ int GetStringTypeW()
 }
 }
 
-// ==== BACKFILL 0x007DCF76  CompareStringA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF76  CompareStringA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CompareStringA()
 {
     int __stdcall CompareStringA( LCID Locale, DWORD dwCmpFlags, PCNZCH lpString1, int cchCount1, PCNZCH lpString2, int cchCount2)
@@ -3479,7 +3479,7 @@ int CompareStringA()
 }
 }
 
-// ==== BACKFILL 0x007DCF7C  CompareStringW  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF7C  CompareStringW  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CompareStringW()
 {
     int __stdcall CompareStringW( LCID Locale, DWORD dwCmpFlags, PCNZWCH lpString1, int cchCount1, PCNZWCH lpString2, int cchCount2)
@@ -3488,7 +3488,7 @@ int CompareStringW()
 }
 }
 
-// ==== BACKFILL 0x007DCF82  SetEnvironmentVariableA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF82  SetEnvironmentVariableA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetEnvironmentVariableA()
 {
     int __stdcall SetEnvironmentVariableA(LPCSTR lpName, LPCSTR lpValue)
@@ -3497,7 +3497,7 @@ int SetEnvironmentVariableA()
 }
 }
 
-// ==== BACKFILL 0x007DCF88  SetEndOfFile  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF88  SetEndOfFile  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetEndOfFile()
 {
     int __stdcall SetEndOfFile(HANDLE hFile)
@@ -3506,7 +3506,7 @@ int SetEndOfFile()
 }
 }
 
-// ==== BACKFILL 0x007DCF8E  GetLocaleInfoW  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF8E  GetLocaleInfoW  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetLocaleInfoW()
 {
     int __stdcall GetLocaleInfoW(LCID Locale, LCTYPE LCType, LPWSTR lpLCData, int cchData)
@@ -3515,7 +3515,7 @@ int GetLocaleInfoW()
 }
 }
 
-// ==== BACKFILL 0x007DCF94  lstrlenW  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF94  lstrlenW  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int lstrlenW()
 {
     int __stdcall lstrlenW(LPCWSTR lpString)
@@ -3524,7 +3524,7 @@ int lstrlenW()
 }
 }
 
-// ==== BACKFILL 0x007DCF9A  LocalFree  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCF9A  LocalFree  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int LocalFree()
 {
     HLOCAL __stdcall LocalFree(HLOCAL hMem)
@@ -3533,7 +3533,7 @@ int LocalFree()
 }
 }
 
-// ==== BACKFILL 0x007DCFA0  GetErrorInfo  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCFA0  GetErrorInfo  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetErrorInfo()
 {
     HRESULT __stdcall GetErrorInfo(ULONG dwReserved, IErrorInfo **pperrinfo)
@@ -3542,7 +3542,7 @@ int GetErrorInfo()
 }
 }
 
-// ==== BACKFILL 0x007DCFA6  SetErrorInfo  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCFA6  SetErrorInfo  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetErrorInfo()
 {
     HRESULT __stdcall SetErrorInfo(ULONG dwReserved, IErrorInfo *perrinfo)
@@ -3551,7 +3551,7 @@ int SetErrorInfo()
 }
 }
 
-// ==== BACKFILL 0x007DCFAC  VariantChangeType  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCFAC  VariantChangeType  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VariantChangeType()
 {
     HRESULT __stdcall VariantChangeType(VARIANTARG *pvargDest, const VARIANTARG *pvarSrc, USHORT wFlags, VARTYPE vt)
@@ -3560,7 +3560,7 @@ int VariantChangeType()
 }
 }
 
-// ==== BACKFILL 0x007DCFB2  CreateErrorInfo  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCFB2  CreateErrorInfo  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int CreateErrorInfo()
 {
     HRESULT __stdcall CreateErrorInfo(ICreateErrorInfo **pperrinfo)
@@ -3569,7 +3569,7 @@ int CreateErrorInfo()
 }
 }
 
-// ==== BACKFILL 0x007DCFB8  VariantClear  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCFB8  VariantClear  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VariantClear()
 {
     HRESULT __stdcall VariantClear(VARIANTARG *pvarg)
@@ -3578,7 +3578,7 @@ int VariantClear()
 }
 }
 
-// ==== BACKFILL 0x007DCFBE  VariantInit  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DCFBE  VariantInit  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int VariantInit()
 {
     void __stdcall VariantInit(VARIANTARG *pvarg)
@@ -3587,7 +3587,7 @@ int VariantInit()
 }
 }
 
-// ==== BACKFILL 0x007DD0F8  __wcsicmp  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DD0F8  __wcsicmp  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _wcsicmp(const wchar_t * String1, const wchar_t * String2)
 {
 {
@@ -3655,7 +3655,7 @@ int _wcsicmp(const wchar_t * String1, const wchar_t * String2)
 }
 }
 
-// ==== BACKFILL 0x007DD434  __getextendedkeycode  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DD434  __getextendedkeycode  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned char * _getextendedkeycode(int a1)
 {
 {
@@ -3719,7 +3719,7 @@ unsigned char * _getextendedkeycode(int a1)
 }
 }
 
-// ==== BACKFILL 0x007DD4F4  __cwprintf  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DD4F4  __cwprintf  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _cwprintf(const wchar_t *const Format, ... a2)
 {
 {
@@ -3729,7 +3729,7 @@ int _cwprintf(const wchar_t *const Format, ... a2)
 }
 }
 
-// ==== BACKFILL 0x007DDC32  _write_char_1  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DDC32  _write_char_1  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * write_char_1(int a1, unsigned int * a2)
 {
 {
@@ -3745,7 +3745,7 @@ unsigned int * write_char_1(int a1, unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x007DDC4C  _write_multi_char_1  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DDC4C  _write_multi_char_1  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * write_multi_char_1(int a1, unsigned int * a2, unsigned int * a3)
 {
 {
@@ -3763,7 +3763,7 @@ unsigned int * write_multi_char_1(int a1, unsigned int * a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x007DDC78  _write_string_1  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DDC78  _write_string_1  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * write_string_1(char * a1, unsigned int * a2, unsigned int * a3)
 {
 {
@@ -3783,7 +3783,7 @@ unsigned int * write_string_1(char * a1, unsigned int * a2, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x007DDCAB  _get_int_arg_1  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DDCAB  _get_int_arg_1  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int get_int_arg_1(unsigned int * a1)
 {
 {
@@ -3792,7 +3792,7 @@ int get_int_arg_1(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x007DDCB8  _get_int64_arg_1  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DDCB8  _get_int64_arg_1  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 long long get_int64_arg_1(unsigned int * a1)
 {
 {
@@ -3801,7 +3801,7 @@ long long get_int64_arg_1(unsigned int * a1)
 }
 }
 
-// ==== BACKFILL 0x007DDE13  __wcsdup  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DDE13  __wcsdup  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * _wcsdup(CampaignScore * aP0)
 {
 {
@@ -3814,7 +3814,7 @@ wchar_t * _wcsdup(CampaignScore * aP0)
 }
 }
 
-// ==== BACKFILL 0x007DDE50  __strrev  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DDE50  __strrev  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * _strrev(IUnknown * aP0)
 {
 {
@@ -3838,7 +3838,7 @@ char * _strrev(IUnknown * aP0)
 }
 }
 
-// ==== BACKFILL 0x007DDE80  __wcsnicmp  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DDE80  __wcsnicmp  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _wcsnicmp(ObjectClass * aP0, const wchar_t * String2, size_t MaxCount)
 {
 {
@@ -3919,7 +3919,7 @@ int _wcsnicmp(ObjectClass * aP0, const wchar_t * String2, size_t MaxCount)
 }
 }
 
-// ==== BACKFILL 0x007DDF78  __filelength  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DDF78  __filelength  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _filelength(int FileHandle)
 {
 {
@@ -3948,7 +3948,7 @@ int _filelength(int FileHandle)
 }
 }
 
-// ==== BACKFILL 0x007DE07C  _towlower_0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DE07C  _towlower_0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wint_t towlower_0(wint_t C)
 {
 {
@@ -3983,7 +3983,7 @@ wint_t towlower_0(wint_t C)
 }
 }
 
-// ==== BACKFILL 0x007DE17D  __putch  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DE17D  __putch  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int _putch(int Ch)
 {
 {
@@ -4000,7 +4000,7 @@ int _putch(int Ch)
 }
 }
 
-// ==== BACKFILL 0x007DE1C2  ReadConsoleInputA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DE1C2  ReadConsoleInputA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int ReadConsoleInputA()
 {
     int __stdcall ReadConsoleInputA( HANDLE hConsoleInput, PINPUT_RECORD lpBuffer, DWORD nLength, LPDWORD lpNumberOfEventsRead)
@@ -4009,7 +4009,7 @@ int ReadConsoleInputA()
 }
 }
 
-// ==== BACKFILL 0x007DE1C8  SetConsoleMode  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DE1C8  SetConsoleMode  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int SetConsoleMode()
 {
     int __stdcall SetConsoleMode(HANDLE hConsoleHandle, DWORD dwMode)
@@ -4018,7 +4018,7 @@ int SetConsoleMode()
 }
 }
 
-// ==== BACKFILL 0x007DE1CE  GetConsoleMode  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DE1CE  GetConsoleMode  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetConsoleMode()
 {
     int __stdcall GetConsoleMode(HANDLE hConsoleHandle, LPDWORD lpMode)
@@ -4027,7 +4027,7 @@ int GetConsoleMode()
 }
 }
 
-// ==== BACKFILL 0x007DE1D4  PeekConsoleInputA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DE1D4  PeekConsoleInputA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int PeekConsoleInputA()
 {
     int __stdcall PeekConsoleInputA( HANDLE hConsoleInput, PINPUT_RECORD lpBuffer, DWORD nLength, LPDWORD lpNumberOfEventsRead)
@@ -4036,7 +4036,7 @@ int PeekConsoleInputA()
 }
 }
 
-// ==== BACKFILL 0x007DE1DA  GetNumberOfConsoleInputEvents  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DE1DA  GetNumberOfConsoleInputEvents  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int GetNumberOfConsoleInputEvents()
 {
     int __stdcall GetNumberOfConsoleInputEvents(HANDLE hConsoleInput, LPDWORD lpNumberOfEvents)
@@ -4045,7 +4045,7 @@ int GetNumberOfConsoleInputEvents()
 }
 }
 
-// ==== BACKFILL 0x007DE1E0  WriteConsoleA  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x007DE1E0  WriteConsoleA  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int WriteConsoleA()
 {
     int __stdcall WriteConsoleA( HANDLE hConsoleOutput, const void *lpBuffer, DWORD nNumberOfCharsToWrite, LPDWORD lpNumberOfCharsWritten, LPVOID lpReserved)

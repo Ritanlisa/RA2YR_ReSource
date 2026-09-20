@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00600660  ReadPointerFromECX  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00600660  ReadPointerFromECX  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 ObjectClass * E4Recv_600660::ReadPointerFromECX()
 {
 {
@@ -10,7 +10,7 @@ ObjectClass * E4Recv_600660::ReadPointerFromECX()
 }
 }
 
-// ==== BACKFILL 0x00602AE0  Dialog::IsSpecialTemplate  cls=Dialog  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00602AE0  Dialog::IsSpecialTemplate  cls=Dialog  sig=csp  renamed_refs=0  residual=- ====
 BOOL Dialog::IsSpecialTemplate()
 {
 {
@@ -18,7 +18,7 @@ BOOL Dialog::IsSpecialTemplate()
 }
 }
 
-// ==== BACKFILL 0x00603DB0  Diplomacy_Helper  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00603DB0  Diplomacy_Helper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
 {
 {
@@ -26,7 +26,7 @@ LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
 }
 }
 
-// ==== BACKFILL 0x00603DD0  globalHelper_003DD0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00603DD0  globalHelper_003DD0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LRESULT globalHelper_003DD0(HWND hWnd, unsigned char a2)
 {
 {
@@ -34,7 +34,7 @@ LRESULT globalHelper_003DD0(HWND hWnd, unsigned char a2)
 }
 }
 
-// ==== BACKFILL 0x00603F00  UI_Assign  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00603F00  UI_Assign  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM a3, LPARAM a4)
 {
 {
@@ -50,7 +50,7 @@ wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM a3, LPARAM a4)
 }
 }
 
-// ==== BACKFILL 0x00603F60  WOLobby_Setup  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00603F60  WOLobby_Setup  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM a3)
 {
 {
@@ -66,7 +66,7 @@ wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM a3)
 }
 }
 
-// ==== BACKFILL 0x0060AA60  sub_60AA60  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0060AA60  sub_60AA60  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL sub_60AA60(HWND hWnd, LPARAM a2)
 {
 {
@@ -78,7 +78,7 @@ BOOL sub_60AA60(HWND hWnd, LPARAM a2)
 }
 }
 
-// ==== BACKFILL 0x0060AAA0  Dialog::EnumAndCleanup  cls=Dialog  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0060AAA0  Dialog::EnumAndCleanup  cls=Dialog  sig=csp  renamed_refs=0  residual=- ====
 BOOL Dialog::EnumAndCleanup()
 {
 {
@@ -86,7 +86,7 @@ BOOL Dialog::EnumAndCleanup()
 }
 }
 
-// ==== BACKFILL 0x0060B740  sub_60B740  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0060B740  sub_60B740  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 BOOL E4Recv_60B740::sub_60B740()
 {
 {
@@ -100,7 +100,7 @@ BOOL E4Recv_60B740::sub_60B740()
 }
 }
 
-// ==== BACKFILL 0x0060CBA0  CampaignScore::LookupDialogHash  cls=CampaignScore  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0060CBA0  CampaignScore::LookupDialogHash  cls=CampaignScore  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CampaignScore::LookupDialogHash() {
 {
       int result;
@@ -128,7 +128,7 @@ namespace gamemd { int CampaignScore::LookupDialogHash() {
 }
 } }
 
-// ==== BACKFILL 0x0060CC00  CampaignScore::FindDialogTemplate  cls=CampaignScore  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0060CC00  CampaignScore::FindDialogTemplate  cls=CampaignScore  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CampaignScore::FindDialogTemplate() {
 {
       int result;
@@ -156,7 +156,7 @@ namespace gamemd { int CampaignScore::FindDialogTemplate() {
 }
 } }
 
-// ==== BACKFILL 0x0060D380  Campaign::Screen  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0060D380  Campaign::Screen  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LONG Campaign::Screen(char a1)
 {
 {
@@ -193,7 +193,7 @@ LONG Campaign::Screen(char a1)
 }
 }
 
-// ==== BACKFILL 0x0060D450  DialogClass::RegisterWinClasses  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0060D450  DialogClass::RegisterWinClasses  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 ATOM DialogClass::RegisterWinClasses()
 {
 {
@@ -225,7 +225,7 @@ ATOM DialogClass::RegisterWinClasses()
 }
 }
 
-// ==== BACKFILL 0x0060D520  sub_60D520  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0060D520  sub_60D520  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 LRESULT sub_60D520(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
 {
@@ -233,7 +233,7 @@ LRESULT sub_60D520(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 }
 }
 
-// ==== BACKFILL 0x0060F320  Dialog::SubclassEditControl  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0060F320  Dialog::SubclassEditControl  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM a2)
 {
 {

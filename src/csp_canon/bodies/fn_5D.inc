@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x005D0580  j_DeleteAndZero  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D0580  j_DeleteAndZero  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int j_DeleteAndZero()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -13,13 +13,13 @@ void __thiscall j_DeleteAndZero(void **this)
 }
 }
 
-// ==== BACKFILL 0x005D0590  nullsub_24  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D0590  nullsub_24  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_24()
 {
   ;
 }
 
-// ==== BACKFILL 0x005D25D0  sub_5D25D0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D25D0  sub_5D25D0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -56,7 +56,7 @@ char __thiscall sub_5D25D0(int this, char *Source, int a3)
 }
 }
 
-// ==== BACKFILL 0x005D2650  sub_5D2650  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D2650  sub_5D2650  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5D2650::sub_5D2650(void * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -85,12 +85,12 @@ void __thiscall sub_5D2650(_DWORD *this, void *a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x005D26F0  MSEngine_Destru::Release  cls=MSEngine  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D26F0  MSEngine_Destru::Release  cls=MSEngine  sig=csp  renamed_refs=0  residual=- ====
 void MSEngine_Destru::Release()
 {
 }
 
-// ==== BACKFILL 0x005D30C0  sub_5D30C0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D30C0  sub_5D30C0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
 {
 {
@@ -146,7 +146,7 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
 }
 }
 
-// ==== BACKFILL 0x005D3330  MSFont::ddtor  cls=MSFont  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x005D3330  MSFont::ddtor  cls=MSFont  sig=csp  renamed_refs=2  residual=- ====
 short MSFont::ddtor(int a2, unsigned short *a3, int a4, int a5, int a6)
 {
     int v17[2];
@@ -212,7 +212,7 @@ short MSFont::ddtor(int a2, unsigned short *a3, int a4, int a5, int a6)
     return u8;
 }
 
-// ==== BACKFILL 0x005D3450  MSFont::QueryInterface  cls=MSFont  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D3450  MSFont::QueryInterface  cls=MSFont  sig=csp  renamed_refs=0  residual=- ====
 MSFont * MSFont::QueryInterface(char a2)
 {
 {
@@ -223,7 +223,7 @@ MSFont * MSFont::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x005D36A0  sub_5D36A0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D36A0  sub_5D36A0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5D36A0(HWND hWnd, unsigned int a2, unsigned int a3, int * a4)
 {
 {
@@ -266,7 +266,7 @@ int sub_5D36A0(HWND hWnd, unsigned int a2, unsigned int a3, int * a4)
 }
 }
 
-// ==== BACKFILL 0x005D4AD0  TacticalClass::processInput  cls=TacticalClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D4AD0  TacticalClass::processInput  cls=TacticalClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int TacticalClass::processInput(int a1) {
 {
       AnimClass *v2;
@@ -292,7 +292,7 @@ namespace gamemd { int TacticalClass::processInput(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x005D4F20  sub_5D4F20  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D4F20  sub_5D4F20  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5D4F20::sub_5D4F20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -315,7 +315,7 @@ int __thiscall sub_5D4F20(const char *this)
 }
 }
 
-// ==== BACKFILL 0x005D5850  MSEngine::DestroyData  cls=MSEngine  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D5850  MSEngine::DestroyData  cls=MSEngine  sig=csp  renamed_refs=0  residual=- ====
 void MSEngine::DestroyData()
 {
 {
@@ -324,19 +324,19 @@ void MSEngine::DestroyData()
 }
 }
 
-// ==== BACKFILL 0x005D5860  nullsub_192  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D5860  nullsub_192  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_192(int a1)
 {
   ;
 }
 
-// ==== BACKFILL 0x005D5DB0  ScenarioClass::MissionStubReturnZero  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D5DB0  ScenarioClass::MissionStubReturnZero  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 int ScenarioClass::MissionStubReturnZero()
 {
 return -2;
 }
 
-// ==== BACKFILL 0x005D5DC0  Dialog::GetModeNeg2  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D5DC0  Dialog::GetModeNeg2  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 int Dialog::GetModeNeg2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -346,7 +346,7 @@ int __thiscall Dialog_GetModeNeg2(_BYTE *this)
 }
 }
 
-// ==== BACKFILL 0x005D5DD0  Dialog::GetMode3  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D5DD0  Dialog::GetMode3  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 int Dialog::GetMode3()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -356,7 +356,7 @@ int __thiscall Dialog_GetMode3(_BYTE *this)
 }
 }
 
-// ==== BACKFILL 0x005D5DE0  GameMode::IsValid  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D5DE0  GameMode::IsValid  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 bool GameMode::IsValid(unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -366,7 +366,7 @@ bool __thiscall GameMode_IsValid(_BYTE *this, unsigned int a2)
 }
 }
 
-// ==== BACKFILL 0x005D62C0  PlayerClass::AssignPlayerIndex  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D62C0  PlayerClass::AssignPlayerIndex  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char PlayerClass::AssignPlayerIndex()
 {
 {
@@ -382,31 +382,31 @@ char PlayerClass::AssignPlayerIndex()
 }
 }
 
-// ==== BACKFILL 0x005D6310  ScenarioClass::MissionStubReturnZero2  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D6310  ScenarioClass::MissionStubReturnZero2  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::MissionStubReturnZero2(MPCooperative * aP0)
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005D6320  ScenarioClass::saveGame  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D6320  ScenarioClass::saveGame  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::saveGame()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005D6330  ScenarioClass::loadGame  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D6330  ScenarioClass::loadGame  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::loadGame()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005D6340  ScenarioClass::createStartingForces  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D6340  ScenarioClass::createStartingForces  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::createStartingForces()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005D6350  DialogClass::GetFlag  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D6350  DialogClass::GetFlag  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char DialogClass::GetFlag()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -416,13 +416,13 @@ char __thiscall DialogClass_GetFlag(_BYTE *this)
 }
 }
 
-// ==== BACKFILL 0x005D6360  MPCooperative::Stub  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D6360  MPCooperative::Stub  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char MPCooperative::Stub()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x005D6430  ScenarioClass::dispatchEvents  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D6430  ScenarioClass::dispatchEvents  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 int ScenarioClass_dispatchEvents()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -433,7 +433,7 @@ int ScenarioClass::dispatchEvents()
 }
 }
 
-// ==== BACKFILL 0x005D6790  ScenarioClass::ClearFlag  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D6790  ScenarioClass::ClearFlag  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::ClearFlag()
 {
 {
@@ -445,13 +445,13 @@ char ScenarioClass::ClearFlag()
 }
 }
 
-// ==== BACKFILL 0x005D67A0  ScenarioClass::MissionStubReturnZero4  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D67A0  ScenarioClass::MissionStubReturnZero4  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::MissionStubReturnZero4(int a1)
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005D67B0  GameConfig::Constructor  cls=GameConfig  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D67B0  GameConfig::Constructor  cls=GameConfig  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* GameConfig::Constructor() {
 {
     char **v1;
@@ -504,7 +504,7 @@ namespace gamemd { void* GameConfig::Constructor() {
 }
 } }
 
-// ==== BACKFILL 0x005D7550  sub_5D7550  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D7550  sub_5D7550  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5D7550(int a1)
 {
 {
@@ -512,13 +512,13 @@ int sub_5D7550(int a1)
 }
 }
 
-// ==== BACKFILL 0x005D7570  ScenarioClass::processAI  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D7570  ScenarioClass::processAI  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 char ScenarioClass::processAI()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x005D7580  sub_5D7580  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D7580  sub_5D7580  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_5D7580::sub_5D7580()
 {
 {
@@ -527,7 +527,7 @@ unsigned int * E4Recv_5D7580::sub_5D7580()
 }
 }
 
-// ==== BACKFILL 0x005D7CD0  sub_5D7CD0  cls=InitializerBase@MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D7CD0  sub_5D7CD0  cls=InitializerBase@MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5D7CD0::sub_5D7CD0()
 {
 {
@@ -535,7 +535,7 @@ void E4Recv_5D7CD0::sub_5D7CD0()
 }
 }
 
-// ==== BACKFILL 0x005D7F20  MultiplayerGameMode::QueryInterface  cls=MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D7F20  MultiplayerGameMode::QueryInterface  cls=MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
 {
 {
@@ -573,7 +573,7 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
 }
 }
 
-// ==== BACKFILL 0x005D7FF0  ??_Gfacet_locale_std__UAEPAXI_Z_127  cls=InitializerBase@MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D7FF0  ??_Gfacet_locale_std__UAEPAXI_Z_127  cls=InitializerBase@MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_5D7FF0::___Gfacet_locale_std__UAEPAXI_Z_127(char a2)
 {
 {
@@ -584,7 +584,7 @@ unsigned int * E4Recv_5D7FF0::___Gfacet_locale_std__UAEPAXI_Z_127(char a2)
 }
 }
 
-// ==== BACKFILL 0x005D8010  ??_Gfacet_locale_std__UAEPAXI_Z_128  cls=InitializerBase@MultiplayerGameMode  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D8010  ??_Gfacet_locale_std__UAEPAXI_Z_128  cls=InitializerBase@MultiplayerGameMode  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_5D8010::___Gfacet_locale_std__UAEPAXI_Z_128(char a2)
 {
 {
@@ -595,7 +595,7 @@ unsigned int * E4Recv_5D8010::___Gfacet_locale_std__UAEPAXI_Z_128(char a2)
 }
 }
 
-// ==== BACKFILL 0x005D80B0  ScenarioClass::sub_5D80B0  cls=DynamicVector  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x005D80B0  ScenarioClass::sub_5D80B0  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
 void ScenarioClass::sub_5D80B0()
 {
 {
@@ -605,24 +605,24 @@ void ScenarioClass::sub_5D80B0()
     if ( v2 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v2);
-    this->q004 = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
     this->DynamicVector_field_0x8 = 0;
 }
 }
 
-// ==== BACKFILL 0x005D80E0  ScenarioClass::deallocateCells  cls=DynamicVector  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x005D80E0  ScenarioClass::deallocateCells  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::deallocateCells(int a2) {
 {
-    if ( this->__pad_00C )
-    return (unsigned int)(a2 - this->q004) >> 2;
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
     else
     return 0;
 }
 } }
 
-// ==== BACKFILL 0x005D8110  ScenarioClass::resetScenarioData  cls=DynamicVector  sig=csp  renamed_refs=3 ====
+// ==== BACKFILL 0x005D8110  ScenarioClass::resetScenarioData  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { void ScenarioClass::resetScenarioData() {
 {
     void *v2;
@@ -631,24 +631,24 @@ namespace gamemd { void ScenarioClass::resetScenarioData() {
     if ( v2 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v2);
-    this->q004 = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
     this->DynamicVector_field_0x8 = 0;
 }
 } }
 
-// ==== BACKFILL 0x005D8140  ScenarioClass::validateMap  cls=DynamicVector  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x005D8140  ScenarioClass::validateMap  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::validateMap(int a2) {
 {
-    if ( this->__pad_00C )
-    return (unsigned int)(a2 - this->q004) >> 2;
+    if ( this->IsInitialized )
+    return (unsigned int)(a2 - this->Items) >> 2;
     else
     return 0;
 }
 } }
 
-// ==== BACKFILL 0x005D8170  MPBattleClass::MPBattleClass  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D8170  MPBattleClass::MPBattleClass  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * MPBattleClass::MPBattleClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
 {
@@ -661,7 +661,7 @@ unsigned int * MPBattleClass::MPBattleClass(const wchar_t ** a1, const wchar_t *
 }
 }
 
-// ==== BACKFILL 0x005D81B0  Helper_5D81B0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D81B0  Helper_5D81B0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * sub_5D81B0(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
 {
@@ -674,7 +674,7 @@ unsigned int * sub_5D81B0(const wchar_t ** a1, const wchar_t ** a2, const char *
 }
 }
 
-// ==== BACKFILL 0x005D81F0  AbstractClass::processRevealArea  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D81F0  AbstractClass::processRevealArea  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * AbstractClass::processRevealArea(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
 {
@@ -687,7 +687,7 @@ unsigned int * AbstractClass::processRevealArea(const wchar_t ** a1, const wchar
 }
 }
 
-// ==== BACKFILL 0x005D8230  AbstractClass::computeRevealRadius  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D8230  AbstractClass::computeRevealRadius  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * AbstractClass::computeRevealRadius(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
 {
@@ -700,7 +700,7 @@ unsigned int * AbstractClass::computeRevealRadius(const wchar_t ** a1, const wch
 }
 }
 
-// ==== BACKFILL 0x005D8270  AbstractClass::applyRevealToCell  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D8270  AbstractClass::applyRevealToCell  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * AbstractClass::applyRevealToCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
 {
@@ -713,7 +713,7 @@ unsigned int * AbstractClass::applyRevealToCell(const wchar_t ** a1, const wchar
 }
 }
 
-// ==== BACKFILL 0x005D82B0  AbstractClass::checkRevealCell  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D82B0  AbstractClass::checkRevealCell  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * AbstractClass::checkRevealCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, int a5, int a6)
 {
 {
@@ -726,7 +726,7 @@ unsigned int * AbstractClass::checkRevealCell(const wchar_t ** a1, const wchar_t
 }
 }
 
-// ==== BACKFILL 0x005D8520  ScenarioClass::setupPlayers  cls=DynamicVector  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x005D8520  ScenarioClass::setupPlayers  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::setupPlayers(int * a2) {
 {
       int v2;
@@ -737,7 +737,7 @@ namespace gamemd { int ScenarioClass::setupPlayers(int * a2) {
       result = 0;
       if ( v2 <= 0 )
         return -1;
-      for ( i = (_DWORD *)this->q004; *i != *a2; ++i )
+      for ( i = (_DWORD *)this->Items; *i != *a2; ++i )
       {
         if ( ++result >= v2 )
           return -1;
@@ -746,7 +746,7 @@ namespace gamemd { int ScenarioClass::setupPlayers(int * a2) {
 }
 } }
 
-// ==== BACKFILL 0x005D8640  VectorClass::ddtor  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D8640  VectorClass::ddtor  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 void VectorClass::ddtor()
 {
 if ( this->Items && this->IsAllocated )
@@ -758,7 +758,7 @@ this->IsAllocated = 0;
 this->Capacity = 0;
 }
 
-// ==== BACKFILL 0x005D8670  ScenarioClass::initLocalVariables  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D8670  ScenarioClass::initLocalVariables  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::initLocalVariables(int * a2) {
 {
     int result;
@@ -779,7 +779,7 @@ namespace gamemd { int ScenarioClass::initLocalVariables(int * a2) {
 }
 } }
 
-// ==== BACKFILL 0x005D86B0  ScenarioClass::setGameSpeed  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D86B0  ScenarioClass::setGameSpeed  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::setGameSpeed(int a2) {
 {
     if ( this->IsInitialized )
@@ -789,7 +789,7 @@ namespace gamemd { int ScenarioClass::setGameSpeed(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x005D87E0  ScenarioClass::distributeStartingUnits  cls=DynamicVector  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x005D87E0  ScenarioClass::distributeStartingUnits  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int ScenarioClass::distributeStartingUnits(int * a2) {
 {
       int v2;
@@ -800,7 +800,7 @@ namespace gamemd { int ScenarioClass::distributeStartingUnits(int * a2) {
       result = 0;
       if ( v2 <= 0 )
         return -1;
-      for ( i = (_DWORD *)this->q004; *i != *a2; ++i )
+      for ( i = (_DWORD *)this->Items; *i != *a2; ++i )
       {
         if ( ++result >= v2 )
           return -1;
@@ -809,7 +809,7 @@ namespace gamemd { int ScenarioClass::distributeStartingUnits(int * a2) {
 }
 } }
 
-// ==== BACKFILL 0x005D8C90  PlayerClass::IsValidIndex  cls=MultiplayerTeam  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D8C90  PlayerClass::IsValidIndex  cls=MultiplayerTeam  sig=csp  renamed_refs=0  residual=- ====
 bool PlayerClass::IsValidIndex(int a1)
 {
 {
@@ -817,7 +817,7 @@ bool PlayerClass::IsValidIndex(int a1)
 }
 }
 
-// ==== BACKFILL 0x005D8FB0  sub_5D8FB0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D8FB0  sub_5D8FB0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_5D8FB0::sub_5D8FB0()
 {
 {
@@ -829,7 +829,7 @@ unsigned int * E4Recv_5D8FB0::sub_5D8FB0()
 }
 }
 
-// ==== BACKFILL 0x005D8FC0  ?_Release__NonReentrantLock_details_Concurrency__QAEXXZ  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D8FC0  ?_Release__NonReentrantLock_details_Concurrency__QAEXXZ  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_5D8FC0::__Release__NonReentrantLock_details_Concurrency__QAEXXZ()
 {
 {
@@ -837,7 +837,7 @@ void E4Recv_5D8FC0::__Release__NonReentrantLock_details_Concurrency__QAEXXZ()
 }
 }
 
-// ==== BACKFILL 0x005D8FD0  CCFileClass::WriteINIString  cls=CCFileClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x005D8FD0  CCFileClass::WriteINIString  cls=CCFileClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void CCFileClass::WriteINIString() {
 {
     char v2;
@@ -850,7 +850,7 @@ namespace gamemd { void CCFileClass::WriteINIString() {
     {
     RawFileClass::Construct(v3, (int)g_Str_File_RA2MD_INI);
     INIClass::SetInt((char *)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_MultiPlayer, g_INI_Key_FirewallSettings, *(void**)this, 0);
-    INIClass::SetInt((char *)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_MultiPlayer, g_INI_Key_FirewallDelta, this->__pad_008, 0);
+    INIClass::SetInt((char *)&CCINIClass_INI_RA2MD, (unsigned char *)g_INI_Key_MultiPlayer, g_INI_Key_FirewallDelta, this->FileSize, 0);
     INIClass::WriteDigest(&CCINIClass_INI_RA2MD, (int)v3, 0);
     RawFileClass::Dtor(v3);
     }
@@ -858,7 +858,7 @@ namespace gamemd { void CCFileClass::WriteINIString() {
 }
 } }
 
-// ==== BACKFILL 0x005D90E0  Network::QueryAddress  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D90E0  Network::QueryAddress  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char Network::QueryAddress(IPXManagerClass * aP0, int a2, int a3, char a4)
 {
 {
@@ -902,7 +902,7 @@ char Network::QueryAddress(IPXManagerClass * aP0, int a2, int a3, char a4)
 }
 }
 
-// ==== BACKFILL 0x005D9220  Network::WaitForPacket  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005D9220  Network::WaitForPacket  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 short Network::WaitForPacket(int a1, int a2)
 {
 {
@@ -962,7 +962,7 @@ short Network::WaitForPacket(int a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x005DA040  Network_Connect  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005DA040  Network_Connect  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5DA040(char a1)
 {
 {
@@ -982,7 +982,7 @@ int sub_5DA040(char a1)
 }
 }
 
-// ==== BACKFILL 0x005DA080  NetworkLobby::GetPlayerCount  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005DA080  NetworkLobby::GetPlayerCount  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int NetworkLobby::GetPlayerCount(char a1)
 {
 {
@@ -1000,7 +1000,7 @@ int NetworkLobby::GetPlayerCount(char a1)
 }
 }
 
-// ==== BACKFILL 0x005DAB80  sub_5DAB80  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005DAB80  sub_5DAB80  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5DAB80::sub_5DAB80()
 {
 {
@@ -1016,7 +1016,7 @@ int E4Recv_5DAB80::sub_5DAB80()
 }
 }
 
-// ==== BACKFILL 0x005DAF30  PlayerSkirmishSlotHandler_Handle  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005DAF30  PlayerSkirmishSlotHandler_Handle  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void sub_5DAF30()
 {
 {
@@ -1040,7 +1040,7 @@ void sub_5DAF30()
 }
 }
 
-// ==== BACKFILL 0x005DB650  Map_Handle  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005DB650  Map_Handle  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_5DB650(int a1, char a2, char a3)
 {
 {
@@ -1050,7 +1050,7 @@ char sub_5DB650(int a1, char a2, char a3)
 }
 }
 
-// ==== BACKFILL 0x005DB6F0  WinMainSetup_Setup_5DB6F0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005DB6F0  WinMainSetup_Setup_5DB6F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_5DB6F0()
 {
 {
@@ -1064,7 +1064,7 @@ int sub_5DB6F0()
 }
 }
 
-// ==== BACKFILL 0x005DC170  NetworkLobby::ValidateSerialNumber  cls=NetworkLobby  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005DC170  NetworkLobby::ValidateSerialNumber  cls=NetworkLobby  sig=csp  renamed_refs=0  residual=- ====
 char NetworkLobby::ValidateSerialNumber()
 {
 {
@@ -1112,7 +1112,7 @@ char NetworkLobby::ValidateSerialNumber()
 }
 }
 
-// ==== BACKFILL 0x005DE360  SendNetworkLobbyChatMessage  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x005DE360  SendNetworkLobbyChatMessage  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char SendNetworkLobbyChatMessage(HWND hWnd, LPARAM a2, int a3)
 {
 {

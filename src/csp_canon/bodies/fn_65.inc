@@ -2,7 +2,7 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x00652960  RadarClass::Construct  cls=RadarClass  sig=csp  renamed_refs=36 ====
+// ==== BACKFILL 0x00652960  RadarClass::Construct  cls=RadarClass  sig=csp  renamed_refs=32  residual=- ====
 namespace gamemd { void* RadarClass::Construct() {
 {
       int v2;
@@ -68,17 +68,17 @@ namespace gamemd { void* RadarClass::Construct() {
       }
       while ( v5 );
       this->RadarClass_field_0x1488 = 0;
-      this->__pad_148C = 1;
+      this->q148C = 1;
       this->RadarClass_field_0x1490 = 0;
       this->RadarClass_field_0x1494 = 0;
       this->RadarClass_field_0x1498 = 0;
       this->RadarClass_field_0x149C = DataGlobal_B048B0;
-      this->__pad_14A0 = DataGlobal_B048B4;
+      this->q14A0 = DataGlobal_B048B4;
       this->RadarClass_field_0x14A4 = DataGlobal_B048B8;
       v6 = DataGlobal_B048BC;
       this->RadarClass_field_0x14AC = 0;
       this->RadarClass_field_0x14B0 = 0;
-      this->__pad_14A8 = v6;
+      this->q14A8 = v6;
       this->RadarClass_field_0x14B4 = 0;
       this->q14BC = 0;
       this->q14BD = 0;
@@ -92,7 +92,7 @@ namespace gamemd { void* RadarClass::Construct() {
       v7 = DataGlobal_B048BC;
       this->RadarClass_field_0x14FC = 0;
       this->q14E8 = v7;
-      this->__pad_1500 = Timer::GetTicks();
+      this->q1500 = Timer::GetTicks();
       this->RadarClass_field_0x1508 = 0;
       *this = &vt_RadarClass;
       v8 = __2_YAPAXI_Z(0x10u);
@@ -147,7 +147,7 @@ namespace gamemd { void* RadarClass::Construct() {
 }
 } }
 
-// ==== BACKFILL 0x00652CD0  sub_652CD0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00652CD0  sub_652CD0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_652CD0::sub_652CD0()
 {
 {
@@ -156,7 +156,7 @@ void E4Recv_652CD0::sub_652CD0()
 }
 }
 
-// ==== BACKFILL 0x00652D90  RadarClass::Destru_vt50  cls=RadarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00652D90  RadarClass::Destru_vt50  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 void RadarClass::Destru_vt50()
 {
 {
@@ -175,7 +175,7 @@ void RadarClass::Destru_vt50()
 }
 }
 
-// ==== BACKFILL 0x00652DE0  RadarClass::Destru_vt07  cls=RadarClass  sig=csp  renamed_refs=6 ====
+// ==== BACKFILL 0x00652DE0  RadarClass::Destru_vt07  cls=RadarClass  sig=csp  renamed_refs=6  residual=- ====
 namespace gamemd { void RadarClass::Destru_vt07() {
 {
       int v2;
@@ -196,7 +196,7 @@ namespace gamemd { void RadarClass::Destru_vt07() {
 }
 } }
 
-// ==== BACKFILL 0x00653010  SidebarClass::CreateScrollButtons  cls=RadarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00653010  SidebarClass::CreateScrollButtons  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 void SidebarClass::CreateScrollButtons()
 {
 {
@@ -225,13 +225,13 @@ void SidebarClass::CreateScrollButtons()
 }
 }
 
-// ==== BACKFILL 0x00653750  nullsub_220  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00653750  nullsub_220  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_220(int a1, int a2)
 {
   ;
 }
 
-// ==== BACKFILL 0x00653F50  CellClass::DrawWrapper  cls=RadarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00653F50  CellClass::DrawWrapper  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 void CellClass::DrawWrapper(void* a1, int a2, int a3, int a4)
 // 0x653f50
 {
@@ -250,7 +250,7 @@ retn    10h
 */
 }
 
-// ==== BACKFILL 0x00653F70  TacticalClass::SetPositionThunk  cls=RadarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00653F70  TacticalClass::SetPositionThunk  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 int TacticalClass::SetPositionThunk(MouseClass * aP0)
 {
 {
@@ -258,7 +258,7 @@ int TacticalClass::SetPositionThunk(MouseClass * aP0)
 }
 }
 
-// ==== BACKFILL 0x00654EA0  RadarClass::UpdateBlips  cls=RadarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00654EA0  RadarClass::UpdateBlips  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int RadarClass::UpdateBlips(int a1, void* a2) {
 {
       _DWORD *v3;
@@ -368,7 +368,7 @@ namespace gamemd { int RadarClass::UpdateBlips(int a1, void* a2) {
 }
 } }
 
-// ==== BACKFILL 0x00655990  RadarClass::Process  cls=RadarClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00655990  RadarClass::Process  cls=RadarClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { int RadarClass::Process() {
 {
       int v1;
@@ -449,7 +449,7 @@ namespace gamemd { int RadarClass::Process() {
 }
 } }
 
-// ==== BACKFILL 0x00655A90  TacticalClass::FreeResources  cls=TacticalClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00655A90  TacticalClass::FreeResources  cls=TacticalClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void TacticalClass::FreeResources() {
 {
       void (__thiscall ***v2)(_DWORD, int); // ecx
@@ -489,7 +489,7 @@ namespace gamemd { void TacticalClass::FreeResources() {
 }
 } }
 
-// ==== BACKFILL 0x00655B20  RadarClass::InitializeHashTable  cls=RadarClass  sig=csp  renamed_refs=9 ====
+// ==== BACKFILL 0x00655B20  RadarClass::InitializeHashTable  cls=RadarClass  sig=csp  renamed_refs=9  residual=- ====
 namespace gamemd { void RadarClass::InitializeHashTable() {
 {
       _DWORD *v2;
@@ -571,7 +571,7 @@ namespace gamemd { void RadarClass::InitializeHashTable() {
 }
 } }
 
-// ==== BACKFILL 0x006563B0  RadarClass::UpdateFoundationShapesCustom  cls=RadarClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x006563B0  RadarClass::UpdateFoundationShapesCustom  cls=RadarClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int RadarClass::UpdateFoundationShapesCustom() {
 {
       float *v1;
@@ -694,7 +694,7 @@ namespace gamemd { int RadarClass::UpdateFoundationShapesCustom() {
 }
 } }
 
-// ==== BACKFILL 0x00656580  Diplomacy::GetField  cls=Diplomacy  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00656580  Diplomacy::GetField  cls=Diplomacy  sig=csp  renamed_refs=0  residual=- ====
 char * Diplomacy::GetField(BuildingTypeClass * aP1)
 {
 {
@@ -702,7 +702,7 @@ char * Diplomacy::GetField(BuildingTypeClass * aP1)
 }
 }
 
-// ==== BACKFILL 0x00656DF0  HouseClass::SetRadarVisibility  cls=HouseClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00656DF0  HouseClass::SetRadarVisibility  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void HouseClass::SetRadarVisibility(int a1) {
 {
       if ( this->q14D8 != a2 )
@@ -717,7 +717,7 @@ namespace gamemd { void HouseClass::SetRadarVisibility(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x00656E50  RadarClass::IsActiveMode  cls=RadarClass  sig=csp  renamed_refs=2 ====
+// ==== BACKFILL 0x00656E50  RadarClass::IsActiveMode  cls=RadarClass  sig=csp  renamed_refs=2  residual=- ====
 namespace gamemd { int RadarClass::IsActiveMode() {
 {
       int result;
@@ -731,7 +731,7 @@ namespace gamemd { int RadarClass::IsActiveMode() {
 }
 } }
 
-// ==== BACKFILL 0x00656E90  RadarClass::SetFlag  cls=RadarClass  sig=csp  renamed_refs=1 ====
+// ==== BACKFILL 0x00656E90  RadarClass::SetFlag  cls=RadarClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { bool RadarClass::SetFlag() {
 {
       char v2;
@@ -747,7 +747,7 @@ namespace gamemd { bool RadarClass::SetFlag() {
 }
 } }
 
-// ==== BACKFILL 0x006578F0  TacticalClass::ProcessChronoEffect  cls=TacticalClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006578F0  TacticalClass::ProcessChronoEffect  cls=TacticalClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void TacticalClass::ProcessChronoEffect() {
 {
       int v2;
@@ -797,7 +797,7 @@ namespace gamemd { void TacticalClass::ProcessChronoEffect() {
 }
 } }
 
-// ==== BACKFILL 0x00658770  RadarClass::Destru_vt33  cls=RadarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00658770  RadarClass::Destru_vt33  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* RadarClass::Destru_vt33(int a1) {
     return DisplayClass::Draw(a1);
 
@@ -809,7 +809,7 @@ retn    4
 */
 } }
 
-// ==== BACKFILL 0x00658780  TacticalClass::renderOverlay  cls=RTacticalClass@RadarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00658780  TacticalClass::renderOverlay  cls=RTacticalClass@RadarClass  sig=csp  renamed_refs=0  residual=- ====
 void TacticalClass::renderOverlay(int * Block, char a2)
 {
 {
@@ -836,7 +836,7 @@ retn    4
 */
 }
 
-// ==== BACKFILL 0x006587A0  RadarClass::Destru_vt04  cls=RadarClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006587A0  RadarClass::Destru_vt04  cls=RadarClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* RadarClass::Destru_vt04(int a2) {
 {
     int *v3;
@@ -889,7 +889,7 @@ namespace gamemd { void* RadarClass::Destru_vt04(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x00658D60  VectorClass::PointConstructor  cls=VectorClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00658D60  VectorClass::PointConstructor  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * VectorClass::PointConstructor(MapClass * aP1, MapClass * aP2)
 {
 {
@@ -920,7 +920,7 @@ unsigned int * VectorClass::PointConstructor(MapClass * aP1, MapClass * aP2)
 }
 }
 
-// ==== BACKFILL 0x00659470  RadBeam::drawSelectionBox  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00659470  RadBeam::drawSelectionBox  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 char RadBeam::drawSelectionBox(uint8_t* a2) {
     // G21 L6: 3 字节 RGB 拷入 this->color（色表槽 6192/6246/6249），返回末字节；
     // IDA 写经局部 v2 中转（v2=this+32），C++ 忠实保留同构数据流
@@ -935,13 +935,13 @@ char RadBeam::drawSelectionBox(uint8_t* a2) {
     return result;
 }
 
-// ==== BACKFILL 0x00659490  RadBeam::drawHealthBar  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00659490  RadBeam::drawHealthBar  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int RadBeam::drawHealthBar(int a2) {
     this->memberAtOffset12 = a2;
     return a2;
 }
 
-// ==== BACKFILL 0x006594A0  RadBeam::drawPipScale  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006594A0  RadBeam::drawPipScale  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int RadBeam::drawPipScale(int* a2) {
     // G21 L6: 3 dwords（屏幕坐标）拷入 +0x24；IDA 写经局部 v2 中转，忠实保留
     int* v2;
@@ -955,7 +955,7 @@ namespace ra2 { namespace game { int RadBeam::drawPipScale(int* a2) {
     return result;
 } } }
 
-// ==== BACKFILL 0x006594C0  RadBeam::drawSpawnPips  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006594C0  RadBeam::drawSpawnPips  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int RadBeam::drawSpawnPips(int* a2) {
     // G21 L6: 3 dwords（屏幕坐标）拷入 +0x30；IDA 写经局部 v2 中转，忠实保留
     int* v2;
@@ -969,14 +969,14 @@ namespace ra2 { namespace game { int RadBeam::drawSpawnPips(int* a2) {
     return result;
 } } }
 
-// ==== BACKFILL 0x006594E0  RadBeam::drawAmmoPips  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006594E0  RadBeam::drawAmmoPips  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int RadBeam::drawAmmoPips(int a2) {
     // G21 L6: 写 +0x3C（调用方传 15）；清除旧半成品的误词汇体（ambientSoundController）
     this->memberAtOffset60 = a2;
     return a2;
 } } }
 
-// ==== BACKFILL 0x006594F0  RadBeam::drawTiberiumPips  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006594F0  RadBeam::drawTiberiumPips  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int RadBeam::drawTiberiumPips(int a2, int a3) {
     // G21 L6: 写 +0x40 / +0x44（调用方传 0 / 0x40500000）
     this->memberAtOffset64 = a2;
@@ -984,7 +984,7 @@ namespace ra2 { namespace game { int RadBeam::drawTiberiumPips(int a2, int a3) {
     return a2;
 } } }
 
-// ==== BACKFILL 0x00659510  SpreadRadiationAreaEffect_Helper  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00659510  SpreadRadiationAreaEffect_Helper  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_659510::sub_659510(int a2, int a3)
 {
 {
@@ -994,7 +994,7 @@ int E4Recv_659510::sub_659510(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x00659530  SpreadRadiationAreaEffect_Helper_659530  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00659530  SpreadRadiationAreaEffect_Helper_659530  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_659530::sub_659530(int a2)
 {
 {
@@ -1003,19 +1003,19 @@ int E4Recv_659530::sub_659530(int a2)
 }
 }
 
-// ==== BACKFILL 0x00659540  RadBeam::drawMindControlPips  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00659540  RadBeam::drawMindControlPips  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int RadBeam::drawMindControlPips(int a2) {
     this->memberAtOffset84 = a2;
     return a2;
 }
 
-// ==== BACKFILL 0x00659550  RadBeam::drawPassengerPips  cls=TechnoClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00659550  RadBeam::drawPassengerPips  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 char RadBeam::drawPassengerPips(char a2) {
     this->memberAtOffset88 = a2;
     return a2;
 }
 
-// ==== BACKFILL 0x00659560  sub_659560  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00659560  sub_659560  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_659560::sub_659560()
 {
 {
@@ -1023,7 +1023,7 @@ void E4Recv_659560::sub_659560()
 }
 }
 
-// ==== BACKFILL 0x00659570  sub_659570  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00659570  sub_659570  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_659570::sub_659570()
 {
 {
@@ -1031,7 +1031,7 @@ char E4Recv_659570::sub_659570()
 }
 }
 
-// ==== BACKFILL 0x006599C0  sub_6599C0  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x006599C0  sub_6599C0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_6599C0::sub_6599C0()
 {
 {
@@ -1048,7 +1048,7 @@ void E4Recv_6599C0::sub_6599C0()
 }
 }
 
-// ==== BACKFILL 0x00659A30  sub_659A30  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x00659A30  sub_659A30  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 short E4Recv_659A30::sub_659A30()
 {
 {
@@ -1090,7 +1090,7 @@ short E4Recv_659A30::sub_659A30()
 }
 }
 
-// ==== BACKFILL 0x0065AAC0  RadioClass::ExecuteAction  cls=RadioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065AAC0  RadioClass::ExecuteAction  cls=RadioClass  sig=csp  renamed_refs=0  residual=- ====
 int RadioClass::ExecuteAction(TimerStruct * aP1, IUnknown * aP2)
 {
 {
@@ -1117,7 +1117,7 @@ int RadioClass::ExecuteAction(TimerStruct * aP1, IUnknown * aP2)
 }
 }
 
-// ==== BACKFILL 0x0065AC40  RadioClass::SaveState  cls=RadioClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065AC40  RadioClass::SaveState  cls=RadioClass  sig=csp  renamed_refs=0  residual=- ====
 int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
 {
 {
@@ -1154,7 +1154,7 @@ int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
 }
 }
 
-// ==== BACKFILL 0x0065B2F0  RadSiteClass::Constructor  cls=RadSiteClass  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x0065B2F0  RadSiteClass::Constructor  cls=RadSiteClass  sig=csp  renamed_refs=6  residual=- ====
 namespace gamemd { void RadSiteClass::Constructor() {
 {
     int *v2;
@@ -1163,9 +1163,9 @@ namespace gamemd { void RadSiteClass::Constructor() {
     int v5;
     void **v6;
     *(void**)this = vt_RadSiteClass;
-    this->__pad_004 = (unsigned int)vt_RadSiteClass;
     this->vtable2 = (unsigned int)vt_RadSiteClass;
-    this->vtable3 = &vt_RadSiteClass;
+    this->vtable3 = (unsigned int)vt_RadSiteClass;
+    this->vtable4 = &vt_RadSiteClass;
     v2 = CellCoord::To_CellObj(&DataGlobal_87C374.__pad_14B0[8132], (short *)(this) + 32);
     TerrainClass::SetFieldF8(v2, 0);
     LOBYTE(v3) = 1;
@@ -1191,26 +1191,26 @@ namespace gamemd { void RadSiteClass::Constructor() {
 }
 } }
 
-// ==== BACKFILL 0x0065B3A0  RadSiteClass::StubReturn116  cls=RadSiteClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065B3A0  RadSiteClass::StubReturn116  cls=RadSiteClass  sig=csp  renamed_refs=0  residual=- ====
 int RadSiteClass::StubReturn116()
 {
 return 116;
 }
 
-// ==== BACKFILL 0x0065B3B0  RadSiteClass::PowerDrainUpdate  cls=RadSiteClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065B3B0  RadSiteClass::PowerDrainUpdate  cls=RadSiteClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int RadSiteClass::PowerDrainUpdate(int a1) {
 {
     return AbstractClass::ProcessPower((#378 *)this);
 }
 } }
 
-// ==== BACKFILL 0x0065B3C0  RadSiteClass::StubReturn69  cls=RadSiteClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065B3C0  RadSiteClass::StubReturn69  cls=RadSiteClass  sig=csp  renamed_refs=0  residual=- ====
 int RadSiteClass::StubReturn69()
 {
 return 69;
 }
 
-// ==== BACKFILL 0x0065B3D0  RadSiteClass::SaveLoad_Prefix  cls=RadSiteClass  sig=csp  renamed_refs=7 ====
+// ==== BACKFILL 0x0065B3D0  RadSiteClass::SaveLoad_Prefix  cls=RadSiteClass  sig=csp  renamed_refs=7  residual=- ====
 int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
 {
 {
@@ -1238,7 +1238,7 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
 }
 }
 
-// ==== BACKFILL 0x0065B450  RadSiteClass::SaveLoad_Prefix_0  cls=RadSiteClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065B450  RadSiteClass::SaveLoad_Prefix_0  cls=RadSiteClass  sig=csp  renamed_refs=0  residual=- ====
 int RadSiteClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 {
@@ -1246,7 +1246,7 @@ int RadSiteClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 }
 }
 
-// ==== BACKFILL 0x0065B470  RadSiteClass::ddtor  cls=RadSiteClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065B470  RadSiteClass::ddtor  cls=RadSiteClass  sig=csp  renamed_refs=0  residual=- ====
 int RadSiteClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 )
@@ -1258,7 +1258,7 @@ int RadSiteClass::ddtor(int a1, unsigned int * a2)
   return 0;
 }
 
-// ==== BACKFILL 0x0065BED0  RadSiteClass::ProcessEvent  cls=RadSiteClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065BED0  RadSiteClass::ProcessEvent  cls=RadSiteClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* RadSiteClass::ProcessEvent(int a2) {
 {
     RadSiteClass::Constructor(this);
@@ -1268,7 +1268,7 @@ namespace gamemd { void* RadSiteClass::ProcessEvent(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x0065C2E0  AbstractClass::checkTeamMembership  cls=RAMFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065C2E0  AbstractClass::checkTeamMembership  cls=RAMFileClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::checkTeamMembership() {
 {
       if ( this->vt6() )
@@ -1278,13 +1278,13 @@ namespace ra2 { namespace game { int AbstractClass::checkTeamMembership() {
 }
 } } }
 
-// ==== BACKFILL 0x0065C320  AbstractClass::updateTeamState  cls=RAMFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065C320  AbstractClass::updateTeamState  cls=RAMFileClass  sig=csp  renamed_refs=0  residual=- ====
 char AbstractClass::updateTeamState()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x0065C330  AbstractClass::processTeamOrder  cls=RAMFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065C330  AbstractClass::processTeamOrder  cls=RAMFileClass  sig=csp  renamed_refs=0  residual=- ====
 char AbstractClass::processTeamOrder()
 {
 {
@@ -1292,14 +1292,14 @@ char AbstractClass::processTeamOrder()
 }
 }
 
-// ==== BACKFILL 0x0065C340  AbstractClass::dispatchTeamEvent  cls=RAMFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065C340  AbstractClass::dispatchTeamEvent  cls=RAMFileClass  sig=csp  renamed_refs=0  residual=- ====
 namespace ra2 { namespace game { int AbstractClass::dispatchTeamEvent(int a2, int a3) {
 {
       return this->vt7(a3);
 }
 } } }
 
-// ==== BACKFILL 0x0065C4A0  AbstractClass::checkTeamObjective  cls=RAMFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065C4A0  AbstractClass::checkTeamObjective  cls=RAMFileClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::checkTeamObjective()
 {
 {
@@ -1307,7 +1307,7 @@ int AbstractClass::checkTeamObjective()
 }
 }
 
-// ==== BACKFILL 0x0065C540  AbstractClass::resetTeamState  cls=RAMFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065C540  AbstractClass::resetTeamState  cls=RAMFileClass  sig=csp  renamed_refs=0  residual=- ====
 void AbstractClass::resetTeamState()
 {
 {
@@ -1315,7 +1315,7 @@ void AbstractClass::resetTeamState()
 }
 }
 
-// ==== BACKFILL 0x0065C550  nullsub_0_5  cls=RAMFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065C550  nullsub_0_5  cls=RAMFileClass  sig=csp  renamed_refs=0  residual=- ====
 char * RAMFileClass::nullsub_0_5()
 {
 {
@@ -1323,37 +1323,37 @@ char * RAMFileClass::nullsub_0_5()
 }
 }
 
-// ==== BACKFILL 0x0065C570  nullsub_0_7  cls=RAMFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065C570  nullsub_0_7  cls=RAMFileClass  sig=csp  renamed_refs=0  residual=- ====
 int nullsub_0_7()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x0065C580  nullsub_0_8  cls=RAMFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065C580  nullsub_0_8  cls=RAMFileClass  sig=csp  renamed_refs=0  residual=- ====
 char nullsub_0_8()
 {
 return 1;
 }
 
-// ==== BACKFILL 0x0065C590  nullsub_0_9  cls=RAMFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065C590  nullsub_0_9  cls=RAMFileClass  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_0_9()
 {
   ;
 }
 
-// ==== BACKFILL 0x0065C5F0  FileClass::StubReturnFalse  cls=FileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065C5F0  FileClass::StubReturnFalse  cls=FileClass  sig=csp  renamed_refs=0  residual=- ====
 int FileClass::StubReturnFalse()
 {
 return 0;
 }
 
-// ==== BACKFILL 0x0065C600  FileClass::Stub  cls=FileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065C600  FileClass::Stub  cls=FileClass  sig=csp  renamed_refs=0  residual=- ====
 char FileClass::Stub(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x0065C610  AbstractClass::processAITrigger  cls=FileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065C610  AbstractClass::processAITrigger  cls=FileClass  sig=csp  renamed_refs=0  residual=- ====
 FileClass * AbstractClass::processAITrigger(char a2)
 {
 {
@@ -1364,7 +1364,7 @@ FileClass * AbstractClass::processAITrigger(char a2)
 }
 }
 
-// ==== BACKFILL 0x0065C890  sub_65C890  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065C890  sub_65C890  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * E4Recv_65C890::sub_65C890(int a2, int a3)
 {
 {
@@ -1374,7 +1374,7 @@ unsigned int * E4Recv_65C890::sub_65C890(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x0065CA00  RawFileClass::Dtor  cls=RawFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065CA00  RawFileClass::Dtor  cls=RawFileClass  sig=csp  renamed_refs=0  residual=- ====
 void RawFileClass::Dtor()
 {
 {
@@ -1403,13 +1403,13 @@ void RawFileClass::Dtor()
 }
 }
 
-// ==== BACKFILL 0x0065CA70  BufferIOFileClass::StubReturnFalse  cls=RawFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065CA70  BufferIOFileClass::StubReturnFalse  cls=RawFileClass  sig=csp  renamed_refs=0  residual=- ====
 void BufferIOFileClass::StubReturnFalse(int a1, int a2, int a3)
 {
   ;
 }
 
-// ==== BACKFILL 0x0065CAC0  FileClass::SetName  cls=RawFileClass  sig=csp  renamed_refs=5 ====
+// ==== BACKFILL 0x0065CAC0  FileClass::SetName  cls=RawFileClass  sig=csp  renamed_refs=5  residual=- ====
 namespace gamemd { void* FileClass::SetName(void* a1) {
 {
       void *v3;
@@ -1441,7 +1441,7 @@ namespace gamemd { void* FileClass::SetName(void* a1) {
 }
 } }
 
-// ==== BACKFILL 0x0065CB30  RawFileClass::Close  cls=RawFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065CB30  RawFileClass::Close  cls=RawFileClass  sig=csp  renamed_refs=0  residual=- ====
 int RawFileClass::Close(int a2, int a3)
 {
 {
@@ -1450,7 +1450,7 @@ int RawFileClass::Close(int a2, int a3)
 }
 }
 
-// ==== BACKFILL 0x0065D1F0  FileClass::GetDosTimestamp  cls=RawFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065D1F0  FileClass::GetDosTimestamp  cls=RawFileClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int FileClass::GetDosTimestamp() {
 {
     WORD FatDate[2];
@@ -1463,7 +1463,7 @@ namespace gamemd { int FileClass::GetDosTimestamp() {
 }
 } }
 
-// ==== BACKFILL 0x0065D240  FileClass::SetTime  cls=RawFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065D240  FileClass::SetTime  cls=RawFileClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { bool FileClass::SetTime(int a1) {
 {
     void *v3;
@@ -1476,7 +1476,7 @@ namespace gamemd { bool FileClass::SetTime(int a1) {
 }
 } }
 
-// ==== BACKFILL 0x0065D3A0  RawFileClass::QueryInterface  cls=RawFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065D3A0  RawFileClass::QueryInterface  cls=RawFileClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* RawFileClass::QueryInterface(int a2) {
 {
     int v3;
@@ -1507,7 +1507,7 @@ namespace gamemd { void* RawFileClass::QueryInterface(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x0065D420  RawFileClass::Write  cls=RawFileClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065D420  RawFileClass::Write  cls=RawFileClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { bool RawFileClass::Write() {
     return this->Handle != INVALID_HANDLE_VALUE;
 
@@ -1520,7 +1520,7 @@ retn
 */
 } }
 
-// ==== BACKFILL 0x0065D480  ComPtr::Set  cls=ComPtr  sig=csp  renamed_refs=4 ====
+// ==== BACKFILL 0x0065D480  ComPtr::Set  cls=ComPtr  sig=csp  renamed_refs=4  residual=- ====
 namespace gamemd { int ComPtr::Set(int a2) {
 {
       int v3;
@@ -1542,22 +1542,22 @@ namespace gamemd { int ComPtr::Set(int a2) {
 }
 } }
 
-// ==== BACKFILL 0x0065D660  ReferenceCounted::Constructor  cls=ReferenceCounted  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065D660  ReferenceCounted::Constructor  cls=ReferenceCounted  sig=csp  renamed_refs=0  residual=- ====
 void ReferenceCounted::Constructor() {}
 
-// ==== BACKFILL 0x0065D690  VtableStub::RetZero_eax_35  cls=ReferenceCounted  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065D690  VtableStub::RetZero_eax_35  cls=ReferenceCounted  sig=csp  renamed_refs=0  residual=- ====
 char VtableStub::RetZero_eax_35(int a1)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x0065E650  sub_65E650  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065E650  sub_65E650  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_65E650(int a1, int a2, int a3)
 {
 return 0;
 }
 
-// ==== BACKFILL 0x0065EAB0  globalHelper_05EAB0  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065EAB0  globalHelper_05EAB0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int globalHelper_05EAB0(unsigned int * a0, int a2, IUnknown * aP2, int a4, int a5, int a6)
 {
 {
@@ -1619,7 +1619,7 @@ int globalHelper_05EAB0(unsigned int * a0, int a2, IUnknown * aP2, int a4, int a
 }
 }
 
-// ==== BACKFILL 0x0065F710  sub_65F710  cls=unknown  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065F710  sub_65F710  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_65F710(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
 {
@@ -1645,7 +1645,7 @@ int sub_65F710(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 }
 }
 
-// ==== BACKFILL 0x0065FB60  sub_65FB60  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065FB60  sub_65FB60  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_65FB60::sub_65FB60()
 {
 {
@@ -1653,7 +1653,7 @@ void E4Recv_65FB60::sub_65FB60()
 }
 }
 
-// ==== BACKFILL 0x0065FD50  WinMainSetup_Setup_65FD50  cls=ObjectClass  sig=csp  renamed_refs=0 ====
+// ==== BACKFILL 0x0065FD50  WinMainSetup_Setup_65FD50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void sub_65FD50()
 {
 {
