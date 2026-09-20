@@ -190,6 +190,14 @@ cmake --build build_linux
 - 下一步（第 6 步后半，LLM/RA2MCP 阶段）：在 csp_canon 基底上补锚/重命名/
   优化/对拍/complete；**不再以旧 completed 计数（12,794）为进度口径**，
   以 manifest sig=csp + 对拍 Same 为准。
+- **RA2MCP 已补齐第 6 步闭环工具（28 个，2026-09-20）**：`sig_lookup`
+  （签名溯源）/ `backfill_accounts`（回填账）/ `backfill_get`（回填体）/
+  `canon_regen`（改名/补锚后三段一键重生成）/ `csp_anchor`（CSP 增量求解
+  补锚主通道）/ `compare_parse`（对拍账解析）。冒烟
+  `tools/csp_export/smoke_step6_tools.py [--heavy]` 全 PASS。
+  **生成器在 `tools/csp_export/*.py`（已入库）——禁止手改生成物，改生成器
+  后 `canon_regen` 重跑。**
+
 - **✅ 第 6 步 RA2MCP 首轮已完成（2026-09-20 G26）**：纯 RA2MCP 循环
   （next_batch→get_context→翻译→replace_body→verify_function→mark_completed）
   18 函数全 PASS，**净增 +8 → completed 12,856**，~10 件 HEAD 假完成修复为真体，
