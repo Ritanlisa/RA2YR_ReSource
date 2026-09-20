@@ -221,6 +221,46 @@ needs-retranslation 桶），暴露并修复 RA2MCP 缺口 9 项：
    的向量模型件）→ member_set+重翻；真实双模型冲突（如 CampaignClass
    scenario[512] vs 向量头）→ 归属 xref 裁决后再翻。
 
+6. **指针类型纪律（最高优先——Agent 最常见翻译错误）**：
+
+   **规则：IDA 伪码声明 `_DWORD *v2` → C++ 翻译必须声明为指针类型
+   （如 `unsigned int *v2` / `INILinkNode *v2`），禁止写成 `int v2` 后
+   用强转 `*(int *)v2` 解引用。**
+
+   **为什么这最重要**：
+   - 把指针写成 `int` 会导致 CFG 提取器把 `*(int *)v2` 解析为**虚假的
+     member 事件**（如 READ(member,8)/READ(member,4)），产生额外 CFG 块，
+     verify 必 FAIL。
+   - 正确使用指针类型后，提取器识别为**局部指针解引用 → 零事件**，
+     与 IDA 侧对称，verify 自然 PASS。
+   - **门控报 FAIL 时，Agent 应首先检查自己是否把指针写成了 int/整数，
+     而不是认为门控出错或验证器有限制。**
+
+   **正确示范**（INIClass::deleteKey 0x52B4D0）：
+   ```
+   IDA: _DWORD *v2 = (_DWORD *)*(this + 4);
+        return v2 && *v2 == *(DWORD *)aP1;
+
+   ✅ 正确 C++：
+      unsigned int *v2 = this->sectionHead;
+      return v2 != 0 && *v2 == *aP1;
+   → CFG: 1 块, READ(member,16)+RET, PASS
+
+   ❌ 错误 C++（导致 6 块 vs 1 块 FAIL）：
+      int v2 = this->sectionHead;
+      return v2 != 0 && *(int *)v2 == *(int *)aP1;
+   → int 上的解引用被提取器误解析为 member/global 事件
+   ```
+
+   **判定流程**：
+   1. 看伪码声明 `_DWORD *v2` / `void *v2` → C++ 用指针类型
+   2. `char v2` / `int v2`（无星号）→ C++ 用对应标量类型
+   3. verify FAIL 时：先用 `--verbose` 看 C++ CFG 是否多出虚假事件
+   4. 虚假事件中 READ(member,N)/WRITE(member,N) 的 N 看起来像被错误
+      缩放/解引用 → 检查是否有指针被写成了整数
+   5. 只有确认翻译无类型错误后才考虑是验证器问题（绝大多数 FAIL
+      是翻译问题，不是门控问题）
+
 ### 实战后的 RA2MCP 工具面（29 个）
 sig_lookup / backfill_accounts / backfill_get / canon_regen(async) /
 csp_anchor(async) / compare_parse / member_set(批量) / reopen / job_status

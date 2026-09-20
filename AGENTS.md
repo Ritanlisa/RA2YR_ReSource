@@ -362,6 +362,27 @@ Phase 4: 清理
 
 **违规 = 翻译不合格，整个批次驳回。**
 
+### 指针类型纪律（最高优先——verify FAIL 首查项）
+
+**规则：IDA 伪码声明 `_DWORD *v2` → C++ 必须声明为指针类型，禁止写成 `int v2` 后强转解引用。**
+
+```
+❌ 错误:  int v2 = this->sectionHead;
+          return v2 != 0 && *(int *)v2 == *(int *)aP1;
+  → CFG 提取器把 *(int *)v2 解析为虚假 member 事件 → 多出块 → FAIL
+
+✅ 正确:  unsigned int *v2 = this->sectionHead;
+          return v2 != 0 && *v2 == *aP1;
+  → 局部指针解引用 = 零事件, 与 IDA 侧对称 → PASS
+```
+
+**verify FAIL 时排查顺序**：
+1. `--verbose` 看 C++ CFG 是否多出虚假 READ/WRITE(member,N) 事件
+2. 多出的 N 看起来像缩放/解引用产物 → 检查指针是否被写成整数
+3. 只有排除翻译类型错误后才考虑是验证器问题
+
+**此项是 Agent 翻译 FAIL 的最常见原因**——不是门控出错。
+
 ### 跨 namespace 枚举桥接
 
 同一枚举在两个 namespace 需用 `static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::X))` 桥接，不应在局部添加 `using` 声明（会与另一 namespace 冲突产生歧义）。
