@@ -12909,75 +12909,30 @@ void BuildingClass::ProcessSell()
 
 // IDA 0x4494c0: can be sold check
 // 0x4494c0
-bool BuildingClass::CanBeSold() {
-if (ObjectClass::HasLocation(this))
-    return false;
-if (this->q520->Unsellable)
-    return false;
-if (this->q6E9) {
-    if (this->q534) {
-        if (this->GetCurrentMission() != 19) {
-            if (this->GetCurrentMission() != 18)
-                return true;
+bool BuildingClass::CanBeSold()
+{
+bool result;
+if (ObjectClass::HasLocation(this)) {
+    result = false;
+} else {
+    if (this->q520->Unsellable) {
+        result = false;
+    } else {
+        if (this->q6E9) {
+            if (this->q534) {
+                if (this->GetCurrentMission() != 19) {
+                    if (this->GetCurrentMission() != 18)
+                        return true;
+                }
+            }
         }
+        if (!this->q520->FirestormWall || this->owner->firestormActive)
+            result = false;
+        else
+            result = true;
     }
 }
-if (!this->q520->FirestormWall || this->owner->firestormActive)
-    return false;
-return true;
-
-/* ASM:
-push    esi
-mov     esi, ecx
-call    ObjectClass__HasLocation
-test    al, al
-jnz     short loc_449536
-mov     eax, [esi+520h]
-mov     cl, [eax+1579h]
-test    cl, cl
-jnz     short loc_449536
-mov     al, [esi+6E9h]
-test    al, al
-jz      short loc_449512
-mov     eax, [esi+534h]
-test    eax, eax
-jz      short loc_449512
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+184h]
-cmp     eax, 13h
-jz      short loc_449512
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+184h]
-cmp     eax, 12h
-jz      short loc_449512
-mov     al, 1
-pop     esi
-retn
-; ---------------------------------------------------------------------------
-
-loc_449512:                             ; CODE XREF: BuildingClass__CanBeSold+24↑j
-; BuildingClass__CanBeSold+2E↑j ...
-mov     ecx, [esi+520h]
-mov     al, [ecx+16C0h]
-test    al, al
-jz      short loc_449536
-mov     edx, [esi+21Ch]
-mov     al, [edx+1FAh]
-test    al, al
-jnz     short loc_449536
-mov     al, 1
-pop     esi
-retn
-; ---------------------------------------------------------------------------
-
-loc_449536:                             ; CODE XREF: BuildingClass__CanBeSold+A↑j
-; BuildingClass__CanBeSold+1A↑j ...
-xor     al, al
-pop     esi
-retn
-*/
+return result;
 }
 // 0x44f5c0
 bool BuildingClass::CanBeSoldCheck() { return CanBeSold(); }
@@ -17845,22 +17800,30 @@ int BuildingClass::ProcessCapture() { return 0; }
 
 // IDA 0x44c960: capture this building
 // 0x44d5d0
-bool BuildingClass::CaptureBuilding(HouseClass* newOwner) {
-if (!TechnoClass::SetHouseFlag(this, newOwner))
-    return false;
-if (!g_IKnowWhatImDoing) {
-    this->owner->lastBuiltVehicleType = this->q520->ArrayIndex;
-    this->owner->unknownBool246 = 1;
-}
-this->owner->recheckTechTree = 1;
-if ((!Team::AllMembersValid(this) && House::IsCurrentPlayer(this->owner)
-        && this->GetCurrentMission() != 18 && this->queuedMission != 18)
-    || (!Team::AllMembersValid(this) && !House::IsCurrentPlayer(this->owner)
-        && newOwner == this->owner && this->GetCurrentMission() != 18))
+bool BuildingClass::CaptureBuilding(HouseClass* newOwner)
 {
-    this->CreateUnits();
+bool result;
+if (TechnoClass::SetHouseFlag(this, newOwner)) {
+    if (!g_IKnowWhatImDoing) {
+        this->owner->lastBuiltVehicleType = this->q520->ArrayIndex;
+        this->owner->unknownBool246 = 1;
+    }
+    HouseClass* ownerHouse = this->owner;
+    ownerHouse->recheckTechTree = 1;
+    if (!Team::AllMembersValid(this)
+        && House::IsCurrentPlayer(ownerHouse)
+        && this->GetCurrentMission() != 18
+        && this->queuedMission != 18
+        || !Team::AllMembersValid(this)
+        && !House::IsCurrentPlayer(ownerHouse)
+        && newOwner == ownerHouse
+        && this->GetCurrentMission() != 18)
+        this->CreateUnits();
+    result = true;
+} else {
+    result = false;
 }
-return true;
+return result;
 }
 // 0x4fce80
 void BuildingClass::Capture() { CaptureBuilding(nullptr); }
@@ -19621,199 +19584,36 @@ int BuildingClass::GetAmmoCountScaled()
 
 // IDA 0x44d780: get fire error
 // 0x447f10
-int BuildingClass::GetFireError() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-// 0x447f10
-int __thiscall BuildingClass::GetFireError(#377 *this)
+int BuildingClass::GetFireError()
 {
-  int v2; // eax
-  int v4; // edx
-  int INI; // ebp
-  int v6; // edi
-  int v7; // ebx
-  _DWORD *Value; // eax
-  __int16 v9; // dx
-  _BYTE *v10; // [esp+10h] [ebp+4h]
-  int v11; // [esp+14h] [ebp+8h]
-  int v12; // [esp+18h] [ebp+Ch] BYREF
-
-  v2 = *((_DWORD *)this + 328);
-  if ( *(_BYTE *)(v2 + 5499)
-    && (!*(_BYTE *)(v2 + 5500) || !(*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 1032))(this))
-    || (unsigned __int8)ObjectClass::HasLocation(this) )
-  {
+BuildingTypeClass* typePtr = this->q520;
+if (((typePtr->CanBeOccupied && !typePtr->CanOccupyFire)) && !this->MissionStubReturnZero6() || ObjectClass::HasLocation(this))
     return 5;
-  }
-  if ( *(_BYTE *)(*((_DWORD *)this + 328) + 5827) )
+if (this->q520->EMPulseCannon)
     return 6;
-  if ( (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 388))(this) == 19
-    || (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 388))(this) == 18 )
-  {
+if (this->GetCurrentMission() == 19 || this->GetCurrentMission() == 18)
     return 5;
-  }
-  if ( !(*(unsigned __int8 (__thiscall **)(#377 *))(*(_DWORD *)this + 848))(this) )
+if (!this->IsPoweredActive())
     return 6;
-  if ( *((_DWORD *)this + 453) )
+if (this->DelayBeforeFiring)
     return 3;
-  INI = TriggerTypeClass::ReadINI(this, v4, v10, v11, v12);
-  if ( INI )
-    return INI;
-  if ( !(*(unsigned __int8 (__thiscall **)(#377 *))(*(_DWORD *)this + 1020))(this) )
-    return INI;
-  v6 = *(_DWORD *)(*(int (__thiscall **)(#377 *, int *, _BYTE *))(*(_DWORD *)this + 1256))(this, &v12, v10);
-  v7 = *(_BYTE *)(*((_DWORD *)this + 328) + 5829) != 0 ? 0 : 8;
-  Value = ProgressTimer::GetValue((_WORD *)this + 452, &v12);
-  LOBYTE(v9) = 0;
-  HIBYTE(v9) = v7;
-  if ( abs16(v9) >= (int)abs16(*(_WORD *)Value - v6) )
-    return INI;
-  else
-    return 2;
-}
-
-/* ASM:
-push    ebp
-push    esi
-mov     esi, ecx
-push    edi
-mov     eax, [esi+520h]
-mov     cl, [eax+157Bh]
-test    cl, cl
-jz      short loc_447F45
-mov     cl, [eax+157Ch]
-test    cl, cl
-jz      loc_44805A
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+408h]
-test    eax, eax
-jz      loc_44805A
-
-loc_447F45:                             ; CODE XREF: BuildingClass__GetFireError+13↑j
-mov     ecx, esi
-call    ObjectClass__HasLocation
-test    al, al
-jnz     loc_44805A
-mov     ecx, [esi+520h]
-mov     al, [ecx+16C3h]
-test    al, al
-jz      short loc_447F6F
-pop     edi
-pop     esi
-mov     eax, 6
-pop     ebp
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_447F6F:                             ; CODE XREF: BuildingClass__GetFireError+52↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+184h]
-cmp     eax, 13h
-jz      loc_44805A
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+184h]
-cmp     eax, 12h
-jz      loc_44805A
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+350h]
-test    al, al
-jnz     short loc_447FAE
-pop     edi
-pop     esi
-mov     eax, 6
-pop     ebp
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_447FAE:                             ; CODE XREF: BuildingClass__GetFireError+91↑j
-mov     eax, [esi+714h]
-test    eax, eax
-jz      short loc_447FC3
-pop     edi
-pop     esi
-mov     eax, 3
-pop     ebp
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_447FC3:                             ; CODE XREF: BuildingClass__GetFireError+A6↑j
-mov     eax, [esp+0Ch+arg_8]
-mov     ecx, [esp+0Ch+arg_4]
-mov     edi, [esp+0Ch+arg_0]
-push    eax
-push    ecx
-push    edi
-mov     ecx, esi
-call    TriggerTypeClass__ReadINI
-mov     ebp, eax
-test    ebp, ebp
-jnz     short loc_448052
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+3FCh]
-test    al, al
-jz      short loc_448052
-mov     eax, [esi]
-push    ebx
-lea     ecx, [esp+10h+arg_8]
-push    edi
-push    ecx
-mov     ecx, esi
-call    dword ptr [eax+4E8h]
-mov     edx, [esi+520h]
-mov     edi, [eax]
-lea     eax, [esp+10h+arg_8]
-lea     ecx, [esi+388h]
-mov     bl, [edx+16C5h]
-push    eax
-neg     bl
-sbb     ebx, ebx
-and     ebx, 0FFFFFFF8h
-add     ebx, 8
-call    ProgressTimer__GetValue
-mov     cx, [eax]
-xor     edx, edx
-mov     dh, bl
-sub     cx, di
-movsx   eax, dx
-cdq
-mov     esi, eax
-pop     ebx
-movsx   eax, cx
-xor     esi, edx
-sub     esi, edx
-cdq
-xor     eax, edx
-sub     eax, edx
-cmp     esi, eax
-jge     short loc_448052
-pop     edi
-pop     esi
-mov     eax, 2
-pop     ebp
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_448052:                             ; CODE XREF: BuildingClass__GetFireError+CD↑j
-; BuildingClass__GetFireError+DB↑j ...
-pop     edi
-mov     eax, ebp
-pop     esi
-pop     ebp
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_44805A:                             ; CODE XREF: BuildingClass__GetFireError+1D↑j
-; BuildingClass__GetFireError+2F↑j ...
-pop     edi
-pop     esi
-mov     eax, 5
-pop     ebp
-retn    0Ch
-*/
+int occupyHeightArg;
+int delayedArg;
+int fireError = TriggerTypeClass::ReadINI(this, occupyHeightArg, delayedArg);
+if (fireError)
+    return fireError;
+if (!this->HasOccupantAudio())
+    return fireError;
+int angleOut;
+int effectArg;
+int turretAngle = this->GetTurretAngle(&angleOut, effectArg);
+int angleLimit = this->q520->TurretAnimIsVoxel != 0 ? 0 : 8;
+short facingOut;
+int* facingValue = ProgressTimer::GetValue((ProgressTimer*)((char*)this + 904), &facingOut);
+short facingDelta = (short)(angleLimit << 8);
+if (abs16(facingDelta) >= (int)abs16((int)*(unsigned short*)facingValue - turretAngle))
+    return fireError;
+return 2;
 }
 // 0x456e00
 void BuildingClass::AcquireTarget() {}
@@ -21874,15 +21674,27 @@ retn
 // 0x480110
 Point2D* BuildingClass::CalcDrawPos(Point2D* out) const
 {
-    if (!out) return out;
-    if (!Type) {
-        out->X = 30; out->Y = 15;
-        return out;
+Point2D out;
+int* baseCoords = globalHelper_0FDCC0((int*)&out, this->q044);
+int baseX = baseCoords[0];
+int baseY = baseCoords[1];
+if ((char)this->gattlingStage >= 0) {
+    if (this->q044 == 239)
+        baseY -= 15;
+    else {
     }
-    // Calculate from location using isometric projection
-    out->X = (location.X - location.Y) >> 8;
-    out->Y = ((location.X + location.Y) >> 9) - (location.Z >> 8);
-    return out;
+} else {
+    unsigned int gateStage = this->q11E;
+    baseY -= 16;
+    if (gateStage >= 9 && gateStage <= 0x11)
+        baseY -= 15;
+    else {
+    }
+}
+int drawY = *(int*)&DataGlobal_87F8E4[14104] - 15 * (char)this->q11B + baseY;
+out.X = baseX + 30;
+out.Y = drawY + 15;
+return out;
 }
 
 // 0x43d290
