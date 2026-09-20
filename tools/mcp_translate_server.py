@@ -777,7 +777,12 @@ def replace_pseudocode(entry, new_body, dry_run):
                 "stripped_signature": stripped_note,
                 "old_preview": old_block[:600], "new_preview": new_body[:600]}
     if gap2_def:
-        new_body = gap2_def + chr(10) + new_body
+        nb = new_body.strip()
+        if nb.startswith('{'):
+            nb = nb[1:]
+        if nb.endswith('}'):
+            nb = nb[:-1]
+        new_body = gap2_def + chr(10) + nb + chr(10) + '}'
     lines[marker_idx:end + 1] = new_body.split(chr(10))
     p.write_bytes("\n".join(lines).encode("latin-1"))
     annotation = None

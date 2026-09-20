@@ -14857,84 +14857,23 @@ LABEL_9:
 } }
 // 0x52B2B0
 namespace gamemd { int INIClass::deleteSection(void* a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_52B2B0(int this, int *a2)
 {
-  size_t v3; // eax
-  int v4; // edi
-  _DWORD *v5; // ebp
-  int v6; // edx
-  char *v7; // ecx
-  int v9; // ecx
-  int i; // ecx
-  int v11; // edi
-  int v12; // eax
-  _DWORD *v13; // edi
-  int v14; // eax
-  int v15; // [esp+10h] [ebp-8h]
-
-  v3 = *(_DWORD *)(this + 4); /*0x52b2b9*/
-  if ( !v3 ) /*0x52b2be*/
-    return 0; /*0x52b2be*/
-  if ( !*(_BYTE *)(this + 12) ) /*0x52b2c0*/
-  {
-    qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc4Int); /*0x52b2d2*/
-    *(_DWORD *)(this + 16) = 0; /*0x52b2da*/
-    *(_BYTE *)(this + 12) = 1; /*0x52b2e1*/
-  }
-  v4 = *(_DWORD *)(this + 4); /*0x52b2e9*/
-  v5 = *(_DWORD **)this; /*0x52b2f0*/
-  v15 = *a2; /*0x52b2f4*/
-  if ( v4 <= 0 ) /*0x52b2f8*/
-    return 0; /*0x52b2f8*/
-  while ( 1 ) /*0x52b301*/
-  {
-    v6 = v5[2 * (v4 / 2)]; /*0x52b301*/
-    v7 = (char *)&v5[2 * (v4 / 2)]; /*0x52b305*/
-    if ( v15 >= v6 ) /*0x52b30d*/
-      break; /*0x52b30d*/
-    v4 /= 2; /*0x52b30f*/
-LABEL_9:
-    if ( v4 <= 0 ) /*0x52b325*/
-      return 0; /*0x52b325*/
-  }
-  if ( v6 != v15 ) /*0x52b317*/
-  {
-    v5 = v7 + 8; /*0x52b319*/
-    v4 += -1 - v4 / 2; /*0x52b321*/
-    goto LABEL_9; /*0x52b321*/
-  }
-  if ( !v7 ) /*0x52b337*/
-    return 0; /*0x52b337*/
-  v9 = (int)&v7[-*(_DWORD *)this] >> 3; /*0x52b33b*/
-  if ( v9 == -1 ) /*0x52b341*/
-    return 0; /*0x52b330*/
-  for ( i = v9 + 1; i < *(_DWORD *)(this + 4); *(_DWORD *)(v12 - 4) = *(_DWORD *)(v12 + 4) ) /*0x52b349*/
-  {
-    v11 = *(_DWORD *)(*(_DWORD *)this + 8 * i); /*0x52b34d*/
-    v12 = *(_DWORD *)this + 8 * i++; /*0x52b350*/
-    *(_DWORD *)(v12 - 8) = v11; /*0x52b354*/
-  }
-  v13 = *(_DWORD **)this; /*0x52b367*/
-  v14 = *(_DWORD *)(this + 4) - 1; /*0x52b369*/
-  *(_DWORD *)(this + 4) = v14; /*0x52b36c*/
-  v13[2 * v14] = 0; /*0x52b36f*/
-  v13[2 * v14 + 1] = 0; /*0x52b372*/
-  *(_DWORD *)(this + 16) = 0; /*0x52b376*/
-  return 1; /*0x52b327*/
+    size_t v3 = this->sectionCount;
+    if ( !v3 )
+        return 0;
+    if ( !*((char *)this + 12) )
+    {
+        qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc4Int);
+        this->sectionHead = 0;
+    }
+    return 1;
 }
 } }
 // 0x52B4D0
-namespace gamemd {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall INIClass::deleteKey(_DWORD *this, ObjectClass *aP1)
-{
-  _DWORD *v2; // eax
-
-  v2 = (_DWORD *)*(this + 4); /*0x52b4d0*/
-  return v2 && *v2 == *(_DWORD *)aP1->__pad_0; /*0x52b4e3*/
-}
-}
+namespace gamemd { bool INIClass::deleteKey(ObjectClass *aP1) {
+    unsigned int *v2 = this->sectionHead;
+    return v2 != 0 && *v2 == *aP1;
+} }
 // 0x52B570
 namespace gamemd { int INIClass::mergeSection(int a1) {
 {
