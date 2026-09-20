@@ -74,15 +74,22 @@
 ### 第 6 步 — 回填 ✅（机械部分完成；RA2MCP 重加工归后续 LLM 阶段）
 - 工具：`tools/csp_export/backfill_completed.py`（单遍体索引 18,095 +
   逐函数机械分类 + 成员名偏移映射改写，仅 `->`/`.` 令牌词边界替换）。
-- **回填三账（12,794 completed）**：
+- **回填账（12,862 completed 终态）**：
 
 | 账目 | 数量 | 含义 |
 |------|------|------|
-| direct | 4,894 | CSP 锚定且成员名已合规（含 CSP 自由函数），体原样入基底 |
-| renamed | 420 | 成员名按 old偏移→new偏移 机械改写（renamed_refs 逐函数记录）|
-| downgrade | 4,875 | sig=ida-proto 未锚定——降级，待 CSP 增量求解补锚 |
-| no-cls | 2,256 | sig=csp 但带 `::` 名而无类锚——签名真值缺口，待 CSP 对账 |
-| no-body | 349 | 树内未索引到体（注解形态长尾）|
+| direct | 4,995 | CSP 锚定且成员名合规（含 CSP 自由函数），体原样入基底 |
+| renamed | 326 | 成员名按 old偏移→new偏移 机械改写完成 |
+| needs-retranslation | 27 | 旧扁平向量模型成员（IsAllocated@0xD 等）与二进制 vptr 槽冲突——旧翻译建在错误布局上，名字迁移无意义，显式留给第 6 步 RA2MCP 重翻 |
+| downgrade | 4,901 | sig=ida-proto 未锚定——降级，待 CSP 增量求解补锚 |
+| no-cls | 2,256 | sig=cps 但带 `::` 名而无类锚——签名真值缺口 |
+| no-body | 357 | 树内未索引到体 |
+
+- **迁移可行性审计（机械化，终态）**：5,070 体 / 3,335 类成员令牌逐令牌对账
+  新成员表——**不可迁移仅 27（0.5%）且全部显式入账**；342→107→27 的收敛
+  过程中纠正了审计自身两处方法论错误（① vtable 命名位移 315 例为审计假
+  阳性——回填体已是新名而审计误用旧链解释；② 新成员表静默缺行=生成器
+  未并集旧 ml 链偏移，已修并重跑）。
 
 - 产物：`src/csp_canon/bodies/fn_00..3E.inc` 63 桶（direct+renamed 回填体，
   函数头带 `BACKFILL 0xADDR cls sig renamed_refs`）、
