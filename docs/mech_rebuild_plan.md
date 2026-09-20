@@ -189,3 +189,40 @@ CSP 求解(第1步, 唯一类型权威)
 4. **收割机理审计**：bodyless 函数 verify PASS 定界后重启 G25 收割续跑。
 5. **签名缺口补锚**：downgrade 4,875 + no-cls 2,256 经 CSP 增量求解器补锚
    （已知边界 3 的落实）。
+
+
+## 第 6 步实战测试报告（02869633）
+
+以 Agent 视角实跑第 6 步闭环三件（0x473140 / 0x4E01F0 / 0x4E0700，
+needs-retranslation 桶），暴露并修复 RA2MCP 缺口 9 项：
+
+| # | 缺口 | 处置 |
+|---|------|------|
+| ⑥ 重翻译无入口（replace_body 只收 pending） | ✅ 新增 `reopen` 工具（completed→pending，ida_cache 复原伪码）|
+| ⑦ pending 索引缓存 reopen 后不失效 | ✅ `invalidate_pending_index()` + signals mtime 入 stamp |
+| ⑨ mark 无重验防护（reopen 后未过验可标记） | ✅ mark 拒绝 reopened 未过验；verify PASS 自动清除 |
+| ⑧ resolve_target 地址不做归一化（0x004E01F0≠0x4e01f0） | ✅ int 归一比较 |
+| #139 build/verify 同步阻塞超时 | ✅ 通用异步 job 框架（build/verify/canon_regen/csp_anchor 支持 async=true + job_status）|
+| #138 get_context 不查 canon 权威表 | ✅ member_map 并入 csp-canon 源 + manifest sig/cls 溯源 |
+| #137 issues_list 无过滤刷屏 | ✅ status/kind/target 过滤 + limit + summary |
+| #140 member_set 无批量 | ✅ entries 数组模式 |
+| 证据录入通道缺失 | ✅ `member_set` 工具（member_types 权威锚 + ml/mbn 同步）+ 生成器证据覆盖优先规则 |
+
+### 实战沉淀的方法论
+1. **G21 局部中转规则的方向性**：cache `this+N` 直写 ⇒ cpp 必须 `this->M`
+   （局部 `blk[]` 双侧静默丢事件）；cache 经局部中转 ⇒ cpp 同构局部。判断依据 = cache 文本形态。
+2. **证据覆盖优先**：member_types 权威锚（ctor 写图/xref 铁证）> 投票派生的
+   vtable 归属——CaptureManagerClass 4-vtable 误归属被构造铁证推翻。
+3. **变体类（Cls_42）成员双录**：cpp def 类名是变体时，成员证据须同时录
+   canon 类与变体类，否则解析落全局。
+4. **槽名考古**：vtable_signatures 缺类时，IDA 在线直读 vtable 内存
+   （base+slot*4 → 函数名）补 vtable_offsets。
+5. **needs-retranslation 三态分诊**：可证据覆盖（如 FoggedObject/CaptureManager
+   的向量模型件）→ member_set+重翻；真实双模型冲突（如 CampaignClass
+   scenario[512] vs 向量头）→ 归属 xref 裁决后再翻。
+
+### 实战后的 RA2MCP 工具面（29 个）
+sig_lookup / backfill_accounts / backfill_get / canon_regen(async) /
+csp_anchor(async) / compare_parse / member_set(批量) / reopen / job_status
+——第 6 步全循环（补锚→证据→重翻→验证→改名→重生成→标记→对拍账）单服务器
+闭环，无绕行路径。
