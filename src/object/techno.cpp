@@ -3754,11 +3754,7 @@ void TechnoClass::vt_entry_448() {}
 int TechnoClass::sub_54D28C0() { return 0; }
 // 0x5224e0
 int TechnoClass::GetTypeFlag() const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TechnoClass_GetTypeFlag(_DWORD *this)
-{
-  return *(_BYTE *)(*(this + 432) + 3784); /*0x5224ec*/
-}
+return this->q6C0->qEC8;
 }
 int TechnoClass::sub_5505180() { return 0; }
 // 0x4dff40
@@ -3775,37 +3771,21 @@ int TechnoClass::FindBestMovementDirection() { return -1; }
 int TechnoClass::vt_entry_4A8() { return 0; }
 // 0x4df1c0
 int TechnoClass::vt_entry_4AC() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall TechnoClass::vt_entry_4AC(_DWORD *this)
-{
-  return *(this + 369) != -1; /*0x4df1ce*/
-}
+return this->q5C4 != -1;
 }
 // 0x4df1d0
 int TechnoClass::vt_entry_4B0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TechnoClass::vt_entry_4B0(_BYTE *this)
-{
-  return *(this + 1489); /*0x4df1d6*/
-}
+return this->q5D1;
 }
 // 0x4df1e0
 int TechnoClass::vt_entry_4B4() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass::vt_entry_4B4(_DWORD *this)
-{
-  return *(this + 369); /*0x4df1e6*/
-}
+return this->q5C4;
 }
 // 0x4df1f0
 int TechnoClass::vt_entry_4B8() { return 0; }
 // 0x4df310
 int TechnoClass::vt_entry_4C4() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall TechnoClass::vt_entry_4C4(_DWORD *this)
-{
-  return *(this + 369) == 29; /*0x4df31e*/
-}
+return this->q5C4 == 29;
 }
 // 0x4df320
 int TechnoClass::vt_entry_4C8() { return 0; }
@@ -3832,14 +3812,8 @@ int TechnoClass::CanBePermaMC() const { return false; }
 int TechnoClass::GarrisonBuilding() { return 0; }
 // 0x522510
 int TechnoClass::IsMission27to30() const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall TechnoClass_IsMission27to30(_DWORD *this)
-{
-  int v1; // eax
-
-  v1 = *(this + 433); /*0x522510*/
-  return v1 == 27 || v1 == 28 || v1 == 29 || v1 == 30; /*0x52252c*/
-}
+int v1 = this->q6C4;
+return v1 == 27 || v1 == 28 || v1 == 29 || v1 == 30;
 }
 // 0x522a60
 int TechnoClass::HandleSpecialAction() { return 0; }
@@ -5406,19 +5380,11 @@ int TechnoClass::SetTargetIfAllowed() { return 0; }
 int TechnoClass::CanReceivePassengers() const { return false; }
 // 0x6f9dc0
 int TechnoClass::GetTarget() const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass::GetTarget(#377 *this)
-{
-  return *((_DWORD *)this + 135); /*0x6f9dc6*/
-}
+return this->owner;
 }
 // 0x6f9db0
 int TechnoClass::GetID() const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass::GetID(#377 *this)
-{
-  return *(_DWORD *)(*((_DWORD *)this + 135) + 48); /*0x6f9db9*/
-}
+return this->owner->relatedTagsCount;
 }
 // 0x717800
 int TechnoClass::GetSightRange() const { return 0; }
@@ -5515,11 +5481,7 @@ int TechnoClass::CanDamageTarget() const { return false; }
 int TechnoClass::COMStub_Return0_298() { return 0; }
 // 0x70efd0
 int TechnoClass::HasPassengers() const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass::HasPassengers(#377 *this)
-{
-  return *((_DWORD *)this + 321) > 0; /*0x70efdd*/
-}
+return this->empLockRemaining > 0;
 }
 // 0x70f100
 int TechnoClass::COMStub_Return0_307() { return 0; }
@@ -5682,11 +5644,7 @@ int TechnoClass::MarkPassengersAsExited() { return 0; }
 int TechnoClass::ExitedOpenTopped() { return 0; }
 // 0x711eb0
 int TechnoClass::GetMember388() const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass_GetMember388(_DWORD *this)
-{
-  return *(this + 388); /*0x711eb6*/
-}
+return this->q610;
 }
 int TechnoClass::GetBuildCost2() const { return 0; }
 int TechnoClass::FindBestMatch2() { return -1; }
@@ -5731,11 +5689,7 @@ int TechnoClass::ProcessEnterTransport() { return 0; }
 int TechnoClass::IsCloseEnoughToBuilding2() const { return false; }
 // 0x6ef9e0
 int TechnoClass::IsDeployed() const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall TechnoClass_IsDeployed(int this)
-{
-  return this && *(_BYTE *)(this + 144) && *(_DWORD *)(this + 108) && (MEMORY[0xA8E7AC] || !*(_BYTE *)(this + 129)); /*0x6efa0a*/
-}
+return this && this->cloakDelayTimer && this->airstrikeTimer && (g_IKnowWhatImDoing || !this->q204);
 }
 // 0x704240
 int TechnoClass::CheckAdjacencyFlags() const { return false; }
@@ -5743,11 +5697,7 @@ int TechnoClass::CheckAdjacencyFlags() const { return false; }
 int TechnoClass::IsProductionChainActive() const { return false; }
 // 0x746db0
 int TechnoClass::HasDeployFlags() const {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall TechnoClass::HasDeployFlags(_BYTE *this)
-{
-  return *(this + 1761) || *(this + 1762); /*0x746dc6*/
-}
+return this->q6E1 || this->q6E2;
 }
 // 0x638840
 int TechnoClass::RemoveBuildingFromScripts() { return 0; }
@@ -5765,11 +5715,7 @@ int TechnoClass::EnterRepairBuilding() { return 0; }
 int TechnoClass::CheckUnitFireConstraints() const { return false; }
 // 0x741490
 int TechnoClass::checkTargetValidity() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass::sub_741490(_DWORD *this)
-{
-  return *(this + 433); /*0x741496*/
-}
+return this->q6C4;
 }
 int TechnoClass::sub_7441B0() { return 0; }
 int TechnoClass::sub_744180() { return 0; }
@@ -5782,11 +5728,7 @@ int TechnoClass::sub_744100() { return 0; }
 int TechnoClass::SelectAutoTargetWithGarrison() { return 0; }
 // 0x746400
 int TechnoClass::processParasiteAttachment() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall TechnoClass::sub_746400(_DWORD *this)
-{
-  return *(_BYTE *)(*(this + 433) + 3611) == 0; /*0x746415*/
-}
+return this->q6C4->qE1B == 0;
 }
 int TechnoClass::sub_746420() { return 0; }
 int TechnoClass::sub_7464E0() { return 0; }

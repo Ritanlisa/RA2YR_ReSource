@@ -1,6 +1,13 @@
 > ⚠️ **已作废（2026-09-20）**：本工作包所属的旧 fleet/H5 管线已被
 > 六步 CSP 机械重建取代（`docs/mech_rebuild_plan.md`）。不要执行本包；
 > 当前阶段 = 第 6 步 RA2MCP（csp_canon 基底补锚/重命名/对拍）。
+>
+> **G26 收尾记录（2026-09-20）**：第 6 步 RA2MCP 首轮已完成——18 函数翻译+
+> 验证全 PASS、净增 +8 → completed 12,856、~10 件 HEAD 假完成修复、
+> pending 3,979。原「G26 工作分解」中：收割续跑已停并清除检查点（bodyless
+> 函数 verify PASS 机理未定界，防假完成）；其余项移交 G27
+> （docs/g27_prep.md）。执行详情 = docs/mech_rebuild_plan.md
+> 「第 6 步 RA2MCP 阶段执行记录」。
 
 # G26 准备工作包（2026-09-20，G25 词汇解锁会话后续）
 

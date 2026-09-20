@@ -190,6 +190,13 @@ cmake --build build_linux
 - 下一步（第 6 步后半，LLM/RA2MCP 阶段）：在 csp_canon 基底上补锚/重命名/
   优化/对拍/complete；**不再以旧 completed 计数（12,794）为进度口径**，
   以 manifest sig=csp + 对拍 Same 为准。
+- **✅ 第 6 步 RA2MCP 首轮已完成（2026-09-20 G26）**：纯 RA2MCP 循环
+  （next_batch→get_context→翻译→replace_body→verify_function→mark_completed）
+  18 函数全 PASS，**净增 +8 → completed 12,856**，~10 件 HEAD 假完成修复为真体，
+  pending 3,979；机制与语义发现、教训全记录 =
+  `docs/mech_rebuild_plan.md`「第 6 步 RA2MCP 阶段执行记录」。
+  **下一步 = docs/g27_prep.md**（hpp 声明补齐 → 循环批量化 → 命名轮 →
+  收割机理审计 → 签名缺口补锚）。
 - 归档：tag `archive/pre-mech-rebuild`（旧树全量快照，completed 12,793）。
 
 ## 当前状态
@@ -200,7 +207,7 @@ cmake --build build_linux
 | 编译错误 / 警告 | ~~0 / 0~~ **口径已撤回**（#117）。**W1.1 已修复（2026-09-17 G17）**：ERROR_RE 列可选 + hpp/h 扩展名 + fatal 计入，stats/单文件编译恢复真实计数（infantry.cpp TU = 61 = 60 error + 1 fatal C1003 截断；验收三方一致 stats 61 / build 61 / grep 61）。主体债 = 裁决 v2 容忍的 5,335 全量口径 |
 | symbol-locked | **symbols-locked-v2** — 全部 19,067 函数 1:1:1 映射 (IDA↔signals↔hpp)，0 naming mismatches |
 | completed (符号定义) | **19,133 / 19,133 (100%)** — 所有函数在 IDA/signals.json/hpp 中有名称和地址 |
-| translated (完整IDA对照) | **12,793** — MCP completed 诚实口径（G24 末 12,437，**含 6 件假完成→真基线 12,431** + **G25 净增 +356**：验证器三层词汇解锁——①裸名全局（IDA 侧 _IDA_NAMED_GLOBAL 扫描 hpp 注解名，审计 0 completed 回归面/5,199 pending 上side；0x4fae50 首收）②伪码局部遮蔽（CFG.locals_hint 槽：签名参数+提升声明收集，normalize 传播；`#373` 哈希类型名/`void**` 双星正则坑；0x435be0 局部 Block 撞全局实证）③ternary 扁平化（efv_cpp_cfg _LOWER_TERNARY_ENABLED=False——Hex-Rays 只在机器码无分支时渲染 ternary，cpp 菱形降级凭空多 2 块；依赖件 0x410260 手译改 if/else）+ 转换器 v1.7 _TERNARY_RE branchless；H6 四件全收（588990/4faf00/435be0/4fae50）；**主收割 g25_pending_reverify.py：3,922 pending 重验证 3400 检查/370 新 PASS，余 522 断点续跑**；#133 定案=mbn 1,835 条 str 值归一 int（mlq 6 件假完成转真）；66 幽灵长键删除；回归 25/25+149/150+120/120+60/60 全绿（1 FAIL=0x76df50 既有债 #135）；遗留 #134 幻影族注册/#132 B 族双解引用派发/**globals 证据缺口 1,367 名 cpp Resolver 盲区（g25_globals_sync.py 待 --apply，G26 首位）**）。G25 日志=docs/roadmap_post_csp.md 文末；G26 计划=docs/g26_prep.md。前段：**12,437（G24 末）** — W0b 收尾波 +147：D1-6 CPP 镜像 + 转换器 v1.5/v1.6 ml 漂移防护 + 五新 TU 扩容，gap2 14 TU 管线榨干。
+| translated (完整IDA对照) | **12,856** — **G26 首轮（2026-09-20）：第 6 步 RA2MCP 循环 18 函数翻译+验证全 PASS、净增 +8、~10 件 HEAD 假完成修复为真体、pending 3,979；机制/语义发现见 docs/mech_rebuild_plan.md 第 6 步执行记录；下一步 docs/g27_prep.md**。前史：**12,793（G25 末）** MCP completed 诚实口径（G24 末 12,437，**含 6 件假完成→真基线 12,431** + **G25 净增 +356**：验证器三层词汇解锁——①裸名全局（IDA 侧 _IDA_NAMED_GLOBAL 扫描 hpp 注解名，审计 0 completed 回归面/5,199 pending 上side；0x4fae50 首收）②伪码局部遮蔽（CFG.locals_hint 槽：签名参数+提升声明收集，normalize 传播；`#373` 哈希类型名/`void**` 双星正则坑；0x435be0 局部 Block 撞全局实证）③ternary 扁平化（efv_cpp_cfg _LOWER_TERNARY_ENABLED=False——Hex-Rays 只在机器码无分支时渲染 ternary，cpp 菱形降级凭空多 2 块；依赖件 0x410260 手译改 if/else）+ 转换器 v1.7 _TERNARY_RE branchless；H6 四件全收（588990/4faf00/435be0/4fae50）；**主收割 g25_pending_reverify.py：3,922 pending 重验证 3400 检查/370 新 PASS，余 522 断点续跑**；#133 定案=mbn 1,835 条 str 值归一 int（mlq 6 件假完成转真）；66 幽灵长键删除；回归 25/25+149/150+120/120+60/60 全绿（1 FAIL=0x76df50 既有债 #135）；遗留 #134 幻影族注册/#132 B 族双解引用派发/**globals 证据缺口 1,367 名 cpp Resolver 盲区（g25_globals_sync.py 待 --apply）**）。G25 日志=docs/roadmap_post_csp.md 文末。前段：**12,437（G24 末）** — W0b 收尾波 +147：D1-6 CPP 镜像 + 转换器 v1.5/v1.6 ml 漂移防护 + 五新 TU 扩容，gap2 14 TU 管线榨干。 |
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
 | sub_* 残留 | **5,468** — 函数级别 (非类成员)，0 已翻译 |
@@ -1165,10 +1172,10 @@ python tools/type_infer/auto_name.py
 
 ## 下一会话快速接手指引
 
-0. **【最高优先】先读 `docs/mech_rebuild_plan.md`——机械重建 1-5 步 + 回填已完成，当前阶段 = 第 6 步 RA2MCP（在 csp_canon 基底上补锚 7,131 签名缺口/重命名/对拍）。G26 及此前 fleet/H5 配额管线已被取代，不要恢复执行。**
+0. **【最高优先】先读 `docs/mech_rebuild_plan.md`——机械重建 1-5 步 + 回填已完成，当前阶段 = 第 6 步 RA2MCP。G26 首轮已执行（18 函数翻译验证全 PASS、净增 +8 → completed 12,856、~10 件假完成修复，执行记录 = mech_rebuild_plan.md「第 6 步 RA2MCP 阶段执行记录」）。G27 计划 = `docs/g27_prep.md`（hpp 声明补齐 → RA2MCP 循环批量化 → 命名轮 → 收割机理审计 → 签名缺口补锚）。G26 及此前 fleet/H5 配额管线已被取代，不要恢复执行。**
 
 1. 看 `docs/coverage.md` 了解整体进度（**1,120 IDA 类全部完成 header，0 unknown_**）
-2. 看 **`docs/branch_A_plan.md`+`docs/branch_B_plan.md`（已合并执行：单代理按 甲段→乙段 时间盒轮转，全部 pending 7,267→0）** + **`docs/master_plan.md`（总计划·单一权威：pending 全景 / 七族 22 线 / Phase α-ε / M0-M4 / 验收门）** + `docs/roadmap_post_csp.md` **G25 执行日志（文末）** + **`docs/g26_prep.md`（G26 准备工作包：①收割续跑 522 件（g25_pending_reverify.py 断点）②globals 1,367 证据同步（g25_globals_sync.py --apply + 0x674000 复测 + 三轮收割）③#135 0x76df50 体提取二分 ④#134 幻影族 signals 注册 ⑤B 族双解引用派发（先修 0x5233d0 误归属）⑥no_def ~46 与 #134 合并）**——配额制延续（每会话首要产出 = ≥1 条批量解锁线）。全池基线：**12,793（G25 末；验证器三层词汇解锁——裸名全局/伪码局部遮蔽/ternary 扁平化——+ 全池重验证收割 370 新 PASS；#133 定案 mbn 1,835 str→int，G24 真基线 12,431；余 522 pending 断点续跑）**
+2. 看 **`docs/master_plan.md`（总计划·单一权威）** + **`docs/mech_rebuild_plan.md`（六步机械重建 + 第 6 步 RA2MCP 执行记录——当前权威工作文档）** + **`docs/g27_prep.md`（下一步工作包）**。全池基线：**12,856（G26 首轮；第 6 步 RA2MCP 循环启动，pending 3,979）**
 3. 看 `git log -10` 了解最近改动；`auto-fill-baseline` tag = 门控 diff 基线（重锚不清账；G21 已重锚）
 4. 下一波入口（按序，详见 docs/g22_prep.md「快速验收清单」+「D1 裁决集中包」节）：**W0 全池复跑确认 11,711 全绿** → **D1 六裁决已定谳（09-18 用户授权自行裁决，不再等拍板）**：①W0b=(a) 重生成补 ECX（(b) 迁类桶转 E2 语义轮）②CRT=分治（排除台账先行 + FILE/RTTI 定义跟进）③#114=退化指针统一词汇（dry 统计先行）④B=继承/子对象建模，#25/#59 转 H7，#77 现场复核 ⑤#125=FootClass own 区归属+类型采信（命名证据轮终审）⑥#128=定向豁免词汇（ctor 锚佐证 WRITE(vfptr-install)）→ **执行序：裁决 1 重生成 → B1 E1 舰队直驱 → 裁决 3+6 dry 统计+实施 → 裁决 2 台账 → 裁决 5 现场仲裁 → 裁决 4 建模复核** → **B3 H3r / B2 P3 / B4 H6 / B5 #56** → **P2 H5 填充**（fresh 11：0x51d6f0/0x51c8b0-goto 双料件/0x51e140/0x51dbd0/0x51bf90 等）。A1 复跑 `python .omo/g14_a1_yrpp.py [--apply]`。全池回归用 `.omo/pool_verify_all.py`（抽样制；**验证器已带 trivial-stub-mismatch 守卫**）。**吞吐纪律：日志首行记净增 completed，单会话 <15 归因**。G20/G21 教训：live --save-ida 刷新会因 til 演化丢事件（typed-cast/pad-chain 渲染），pending 函数翻译前以 cpp 块内嵌快照伪码恢复缓存（v4 播种先例）；**IDA 写经局部指针中转（v2=this+N）不发 WRITE 事件——C++ 侧须同构保留局部指针数据流（v2=this->m; v2[0]=...），直接成员写会多出盲化令牌 FAIL（G21 L6 新知）**
 5. 看 `injectFunctionTest/comparisonResult.log` 了解最新 Capture 数据

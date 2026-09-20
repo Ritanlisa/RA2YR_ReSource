@@ -125,3 +125,60 @@ CSP 求解(第1步, 唯一类型权威)
 | `anchors/csp_canon_members.json` | 成员唯一权威表 |
 | `anchors/backfill_manifest.json` | 回填逐函数账 |
 | tag `archive/pre-mech-rebuild` | 重建前全量归档 |
+
+## 第 6 步 RA2MCP 阶段执行记录（2026-09-20 G26 首轮）
+
+> 纯 RA2MCP 循环：`next_batch → get_context → 语义 C++ 翻译 → replace_body →
+> verify_function → mark_completed`。无自定义脚本直驱、无旧转换器路径。
+
+### 账目
+
+| 项 | 值 |
+|---|---|
+| 翻译+验证 | **18 函数**（techno.cpp 14 + building.cpp 4），verify 18/18 PASS |
+| 净增 completed | **+8**（12,848 → 12,856） |
+| 假完成修复 | **~10 件**（HEAD 中 completed=true 但树内体仍为伪码——vt_entry_4AC/4B0/4B4/4C4、GetTypeFlag 等；证实 HEAD 口径含假完成） |
+| pending | 3,988 → 3,979 |
+| issue 新增 | #135（0x708c10 出参签名不匹配）、#136（get_context member_map `_BYTE this` 缩放 bug） |
+
+### 机制验证（本轮打通）
+
+1. **链式成员访问**：`this->q6C4->qE1B` 经 ml 条目 `type: 'UnitTypeClass *'`
+   解析，verify PASS——ml 类型字段是 cpp 侧链式事件的解析依据。
+2. **偏移缩放权威**：翻译前必须跑验证器同源
+   `detect_this_type + _this_mult`（0x746db0 `_BYTE *this` → 偏移 1761/1762，
+   get_context member_map 报 7044/7048 是错的 → #136）。
+3. **成员注册通道**：缺失偏移经 ml+mbn 双侧注册（` .omo/g26_member_check.py
+   --reg`），q<HEX> 中性名 + 显式 size（字节读 size=1）。
+4. **同文件批量替换**：replace_body 必须用 `0xADDR` 形态顺序执行（file:line
+   形态并行调用会因行位移全部失配）。
+
+### 语义发现（挂命名轮 + 误归属复核）
+
+| 函数 | 发现 |
+|---|---|
+| TechnoClass::GetTarget (0x6f9dc0) | 实读 `owner@540`（G16 ctor 真值），IDA 名疑错 |
+| TechnoClass::GetID (0x6f9db0) | 实读 `owner->relatedTagsCount@48`，IDA 名疑错 |
+| TechnoClass::HasPassengers (0x70efd0) | 实读 `empLockRemaining@1284`（g17-p1 ctor+yrpp），IDA 名错 |
+| TechnoClass::GetTypeFlag (0x5224e0) | `+1728`（=FootClass 尾，UnitClass own 区首）解引用 → Unit 级 byte@3784 |
+| ml airstrikeTimer@432 | 与 GetTypeFlag 指针解引用矛盾，但 IsDeployed dword@432 又合 timer 语义——疑似误归属族（G8 型），待 vtable 证据定谳 |
+
+### 已知边界（本轮如实记录）
+
+- q 名成员（17 条 ml+mbn 注册）**尚无 hpp 声明**——techno.cpp 本就在基线编译债
+  中（file build 53 errors 全为既有 hpp 债，C1003@41 行截断，未及翻译行）；
+  hpp 声明补齐 = G27 首项。
+- 收割脚本对 bodyless 函数（downgrade/no-cls 账）verify PASS 的机理未定界，
+  G25 收割检查点已清除，重跑前须先审计（防假完成复发）。
+
+## 下一步计划（G27，详见 docs/g27_prep.md）
+
+1. **hpp 声明补齐**：q 名成员 17 条经 IDA→header pipeline 补进
+   techno.hpp/building.hpp（解锁本轮翻译函数的编译）。
+2. **RA2MCP 循环批量化**：同引擎 module 直驱 + 逐件 verify + mark
+   （G24 范式），覆盖 3,979 pending 的琐碎/小函数桶（~1,278 件）。
+3. **命名轮 A1**：q 名语义升级（rename_symbol 四方）+ 上表 5 项语义发现的
+   vtable 证据复核。
+4. **收割机理审计**：bodyless 函数 verify PASS 定界后重启 G25 收割续跑。
+5. **签名缺口补锚**：downgrade 4,875 + no-cls 2,256 经 CSP 增量求解器补锚
+   （已知边界 3 的落实）。

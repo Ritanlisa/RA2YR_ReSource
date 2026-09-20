@@ -23804,37 +23804,21 @@ bool BuildingClass::StubReturnFalse13() { return false; }
 bool BuildingClass::StubReturnFalse14() { return false; }
 // 0x459870
 int  BuildingClass::MissionStubReturnZero() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt181(#377 *this)
-{
-  return *(_DWORD *)(*((_DWORD *)this + 328) + 5412); /*0x45987c*/
-}
+return this->q520->q1524;
 }
 // 0x459880
 int  BuildingClass::MissionStubReturnZero2() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt182(#377 *this)
-{
-  return *(_DWORD *)(*((_DWORD *)this + 328) + 5416); /*0x45988c*/
-}
+return this->q520->q1528;
 }
 // 0x459890
 int  BuildingClass::MissionStubReturnZero3() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt183(#377 *this)
-{
-  return *(_DWORD *)(*((_DWORD *)this + 328) + 5420); /*0x45989c*/
-}
+return this->q520->q152C;
 }
 // 0x459da0
 int  BuildingClass::MissionStubReturnZero5() { return 0; }
 // 0x4581f0
 int  BuildingClass::MissionStubReturnZero6() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::_vt258(#377 *this)
-{
-  return *((_DWORD *)this + 421); /*0x4581f6*/
-}
+return this->q694;
 }
 
 void BuildingClass::sub_465D70()  {}
