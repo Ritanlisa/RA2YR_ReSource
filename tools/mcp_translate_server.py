@@ -762,7 +762,9 @@ def replace_pseudocode(entry, new_body, dry_run):
                 "would_replace_lines": [marker_idx + 1, end + 1],
                 "stripped_signature": stripped_note,
                 "old_preview": old_block[:600], "new_preview": new_body[:600]}
-    lines[marker_idx:end + 1] = new_body.split("\n")
+    if gap2_def:
+        new_body = gap2_def + chr(10) + new_body
+    lines[marker_idx:end + 1] = new_body.split(chr(10))
     p.write_bytes("\n".join(lines).encode("latin-1"))
     annotation = None
     if entry.get("address"):
@@ -846,8 +848,10 @@ def tool_get_context(target):
         try:
             man = json.loads((PROJECT_ROOT / "anchors"
                               / "csp_canon_manifest.json")
-                             .read_text(encoding="utf-8")).get(
-                                 entry["address"])
+                             .read_text(encoding="utf-8"))
+            _a = entry.get("address") or ""
+            _ai = int(_a, 16) if _a.startswith("0x") else 0
+            man = man.get("0x%08X" % _ai) if _ai else None
             if man:
                 result["canon"] = {"sig": man.get("sig"),
                                    "cls": man.get("cls")}
@@ -855,6 +859,12 @@ def tool_get_context(target):
             pass
     if code:
         cls = entry.get("class") or ""
+        # fall back to csp_canon manifest cls (covers e4/gap2 flat names
+        # where _enclosing_function can't detect the class)
+        if not cls and result.get("canon", {}).get("cls"):
+            cls = result["canon"]["cls"]
+            entry["class"] = cls
+            result["class"] = cls
         offs = pseudocode_offsets(code)
         til = ida_til_members(cls, min(offs), max(offs)) if offs else None
         til_map = dict(til) if til else {}
@@ -1385,6 +1395,53 @@ def tool_reopen(target):
                     "mark_completed"}
 
 
+def tool_reconcile_accounts(dry_run=True, limit=100):
+    """Marker&completed reconciliation: find functions marked completed but
+    still carrying a pending pseudocode block in the tree (phantom
+    completions), optionally clear them. Mechanical; re-runnable."""
+    marker = ("// [IDA decompile] original pseudocode - translation "
+              "pending (final goal)")
+    addr_re = re.compile(r"^// 0x([0-9A-Fa-f]{6,8})\s*\r?$")
+    sig = json.loads(SIGNALS.read_text(encoding="utf-8"))
+    completed = {a for a, s in sig["symbols"].items()
+                 if isinstance(s, dict) and s.get("completed")
+                 and a.lower().startswith("0x")}
+    tree_pending = set()
+    cur = None
+    for f in SRC.rglob("*.cpp"):
+        try:
+            text = f.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        if marker not in text:
+            continue
+        for ln in text.split("\n"):
+            m = addr_re.match(ln)
+            if m:
+                cur = "0x" + m.group(1).lstrip("0").lower()
+                continue
+            if marker in ln and cur:
+                tree_pending.add(cur)
+                cur = None
+    phantoms = sorted(completed & tree_pending)
+    out = {"phantom_count": len(phantoms), "dry_run": dry_run,
+           "phantoms": phantoms[:limit]}
+    if not dry_run:
+        n = 0
+        for a in phantoms:
+            sym = sig["symbols"].get(a)
+            if isinstance(sym, dict) and sym.get("completed"):
+                sym["completed"] = False
+                sym["translated"] = False
+                sym["phantom_cleared"] = "marker&completed reconcile"
+                n += 1
+        SIGNALS.write_text(json.dumps(sig, ensure_ascii=False, indent=2),
+                           encoding="utf-8")
+        out["cleared"] = n
+        invalidate_pending_index()
+    return {"ok": True, **out}
+
+
 def tool_issues_add(description, target=None, kind="debt"):
     st = load_state()
     iss = {"id": st["next_issue_id"], "description": description,
@@ -1686,6 +1743,14 @@ TOOLS = [
      "inputSchema": {"type": "object",
                      "properties": {"target": {"type": "string"}},
                      "required": ["target"]}},
+    {"name": "reconcile_accounts",
+     "description": "marker&completed 对账：找出 signals=completed 但树内仍带 pending 伪码块的幻影完成并（dry_run=false 时）清降为 pending。防假完成守卫的定期巡检。",
+     "inputSchema": {"type": "object",
+                     "properties": {"dry_run": {"type": "boolean",
+                                                "default": True},
+                                    "limit": {"type": "integer",
+                                              "default": 100}},
+                     "required": []}},
     {"name": "stats",
      "description": "工作台统计：待翻译数/分布、completed 集、issue 计数、最近构建状态。",
      "inputSchema": {"type": "object", "properties": {}, "required": []}},
@@ -1780,6 +1845,9 @@ def dispatch_tool(name, a):
                                a.get("overwrite", False))
     if name == "reopen":
         return tool_reopen(a["target"])
+    if name == "reconcile_accounts":
+        return tool_reconcile_accounts(a.get("dry_run", True),
+                                       a.get("limit", 100))
     if name == "stats":
         return tool_stats()
     raise ValueError(f"unknown tool: {name}")

@@ -1052,13 +1052,9 @@ namespace gamemd { int TacticalClass::initTacticalMap(void* a1, void* a2) {
 }
 } }
 // 0x4722C0
-namespace gamemd {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall CellClass::HasContent(_DWORD *this)
-{
-  return *(this + 13) > 0; /*0x4722ca*/
-}
-}
+namespace gamemd { BOOL CellClass::HasContent() {
+    return this->attached3 > 0;
+} }
 // 0x4733A0
 namespace gamemd { void CellClass::AddObject(void* aP1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
