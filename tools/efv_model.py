@@ -334,11 +334,16 @@ class CFG:
     graph safely even with back-edges (each block visited once).
     """
 
-    __slots__ = ("entry_id", "blocks")
+    __slots__ = ("entry_id", "blocks", "locals_hint")
 
     def __init__(self, entry_id, blocks=None):
         self.entry_id = entry_id
         self.blocks = dict(blocks) if blocks else {}
+        # G25: pseudocode-local names (decl lines + signature params), set by
+        # efv_ida_cfg.build_ida_cfg so the IDA leaf can shadow same-named
+        # globals in the bare-named-global scan (mirror of the cpp side's
+        # locals_set shadowing). None for C++ cfgs (unused there).
+        self.locals_hint = None
 
     # -- construction --------------------------------------------------------
 

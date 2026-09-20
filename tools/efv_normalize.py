@@ -153,6 +153,10 @@ def _copy_cfg(cfg):
     new = CFG(cfg.entry_id)
     for bid, b in cfg.blocks.items():
         new.add_block(Block(bid, list(b.ordered_events), list(b.successors)))
+    # G25: carry the IDA pseudocode-locals hint through normalization so the
+    # bare-named-global scan keeps its shadowing after cfg copies.
+    if getattr(cfg, "locals_hint", None) is not None:
+        new.locals_hint = cfg.locals_hint
     return new
 
 

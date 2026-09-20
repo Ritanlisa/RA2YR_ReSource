@@ -818,7 +818,63 @@ def build_ida_cfg(pseudocode_text):
 
     parser = _Parser(text[brace + 1:])       # parse the function body
     stmts = parser.parse_statements()
-    return _Builder().build(stmts)
+    cfg = _Builder().build(stmts)
+    # G25: pseudocode-local names (signature params + hoisted decl lines) for
+    # the IDA leaf's bare-named-global shadowing (cpp-side locals_set mirror).
+    cfg.locals_hint = _collect_pseudocode_locals(text, brace)
+    return cfg
+
+
+# G25: Hex-Rays hoists every local to the top of the body (C89 style) as
+# `type name;` / `type name[N];` lines; parameters sit in the signature's
+# paren list before the body `{`. A pseudocode local CAN collide with an
+# hpp-annotated global name (0x435be0: local `Block` vs global Block@0x87C484)
+# — without this set the bare-global scan would fabricate one-sided events.
+_LOCAL_DECL_LINE = re.compile(
+    r'^\s*(?:const\s+|unsigned\s+|signed\s+|struct\s+|enum\s+|union\s+|__\w+\s+)*'
+    r'[#\w\*]+(?:\s+[#\w\*]+)*?\s+\**\s*(\w+)\s*(?:\[[^\]]*\])?\s*;\s*(?://.*)?$')
+_C_KEYWORDS = frozenset((
+    "int", "char", "void", "long", "short", "float", "double", "unsigned",
+    "signed", "const", "struct", "enum", "union", "return", "break",
+    "continue", "goto", "switch", "case", "default", "if", "else", "while",
+    "for", "do", "this", "true", "false", "sizeof", "static", "volatile",
+    "_DWORD", "_BYTE", "_WORD", "_QWORD", "BOOL", "DWORD", "WORD", "BYTE",
+))
+
+
+def _collect_pseudocode_locals(text, brace):
+    """Signature params + hoisted local-decl names from `text` (precleaned)."""
+    out = set()
+    # signature params: identifiers immediately before `,` / `)` inside the
+    # signature's parenthesized list (text before the body-opening `{`)
+    sig = text[:brace]
+    last_paren = sig.rfind("(")
+    if last_paren >= 0:
+        depth = 0
+        for i in range(last_paren, len(sig)):
+            if sig[i] == "(":
+                depth += 1
+            elif sig[i] == ")":
+                depth -= 1
+                if depth == 0:
+                    for m in re.finditer(r'\b([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?\s*(?=[,)])',
+                                         sig[last_paren + 1:i]):
+                        nm = m.group(1)
+                        if nm not in _C_KEYWORDS:
+                            out.add(nm)
+                    break
+    # hoisted decls: consecutive decl lines from the top of the body
+    # (blank lines do not interrupt; the first non-decl statement does)
+    for line in text[brace + 1:].splitlines():
+        if not line.strip():
+            continue
+        m = _LOCAL_DECL_LINE.match(line)
+        if not m:
+            break
+        nm = m.group(1)
+        if nm not in _C_KEYWORDS:
+            out.add(nm)
+    return out
 
 
 # ============================================================

@@ -3516,3 +3516,56 @@ mlq_conflict 6）+ 新五 TU 余 30（goto 24 + regparam 5 + no_def 5）。
 **口径**：completed 12,290 → **12,437（+147）**；G25 准备包 =
 docs/g25_prep.md（H6 ternary 专项 + #133 对账 + #56 再物化 + no_def
 重生成裁决 1b）。
+
+### G25 会话（2026-09-20）：验证器三层词汇解锁 + 全池重验证收割 → 12,793
+
+**会话主题**：从 #133 mlq 对账入手，实证打穿 exec-flow 验证器三处双侧
+不对称词汇，随后全池 pending 重验证收割（旧 FAIL 体零重转换直接 PASS）。
+
+**#133 定案（G24 假完成诚实化）**：mlq_conflict 6 件根因 =
+signals._member_by_name **1,835 条字符串值**旧格式（新格式 int）——
+`ml_add` 的 `mbn.get(nm) == off` 比较在 str 值上恒 False → 强制 q 名
+播种 → 撞已有 str 值 → 返回 None。归一 int 后 6 件真转换 PASS。
+**G24 的 12,437 含 6 件假完成（标记在、翻译无），真基线 12,431**。
+
+**三层词汇修复**（全部在非保护 efv 模块，verify_execution_flow.py 本体
+零改动；改动前缓存审计=回归面必查纪律）：
+- **裸名全局**（efv_ida_events）：IDA 侧只认 g_/dword_/MEMORY/`*(T*)0x`
+  四形态，hpp 注解名（HouseClass_Player 等）零事件，cpp 侧 clang 词法
+  对任何全局 DeclRefExpr 产 READ。审计：0 completed 含此形态（零回归
+  面）/ 5,199 pending 含（上行空间）。同 span 与四形态命中经
+  _order_hits 重叠去重，无双发。
+- **伪码局部遮蔽**（efv_ida_cfg._collect_pseudocode_locals +
+  CFG.locals_hint 新槽 + efv_normalize._copy_cfg 传播）：签名参数 + 提升
+  声明行收集；0x435be0 局部 `Block` 撞全局 Block@0x87C484 实证。两个
+  正则坑：IDA `#373` 哈希类型名含 `#`、`void **ppv` 双星——字类须
+  `[#\w\*]+` + `\**`。
+- **ternary 扁平化**（efv_cpp_cfg._LOWER_TERNARY_ENABLED=False + 转换器
+  v1.7 _TERNARY_RE branchless）：Hex-Rays 只在机器码无分支（cmov/setcc）
+  时渲染 ternary → IDA CFG 恒单块持双臂事件；cpp cfg 的 If 菱形降级凭空
+  多 2 块（0x4faf00：IDA 单 8 事件块 vs cpp 4 块菱形）。依赖菱形的 3 件
+  completed 中 2 件天然兼容、0x410260 手译 ternary 改 if/else 后 PASS。
+
+**H6 试点全收**：0x588990（branchless 转换器）/0x4faf00/0x435be0/
+0x4fae50 四件 PASS+标记。#132 A 族余件按同词汇在收割中自行消化。
+
+**主收割**（g25_pending_reverify.py，结果断点续跑）：全池 3,922 pending
+重验证，**3400 检查 / 370 新 PASS**，余 522 件 G26 续跑（结果文件保留）。
+completed **12,437 → 12,793（净增 +356）**。
+
+**signals 卫生**：66 个 `0X00405b50` 长格式幽灵键（与短键全重复）删除；
+#134 新记账（TacticalClass::ProcessTick/2/3 = 0x41C050/41C150/41C160
+IDA live 实证，signals 无条目 → mark 结构性不可能，幻影族扩展）。
+
+**Globals 证据缺口（G26 首位）**：hpp `// data:` 注解 14,767 vs
+signals.globals 13,443——**1,367 个 DataGlobal_XXX 名 cpp Resolver 盲区**
+（0x674000 实证：入口两读丢失 → normalize 吞块 → entry=1）。同步脚本
+.omo/g25_globals_sync.py 已备（--apply 待跑+复测+三轮收割）。
+
+**回归**：G24 标记 25/25 + 词汇后 149/150（1 FAIL=0x76df50 既有债，HEAD
+signals 二分排除本会话，G20-G24 间 addr76_e4.cpp 体提取边界破坏，#135）
++ 120/120 + 终态 60/60 全绿。
+
+**遗留**：#135（0x76df50 体提取既有债）/#134（幻影族注册）/#132 B 族
+（双解引用派发，先修 0x5233d0 InfantryClass 误归属）/no_def ~46 块
+（多数为幻影 signals，与 #134 合并）。G26 准备包 = docs/g26_prep.md。

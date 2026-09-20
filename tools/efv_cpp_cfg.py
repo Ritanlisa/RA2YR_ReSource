@@ -718,11 +718,25 @@ class _TokParser:
 # Ternary lowering : `... C ? A : B ...` -> If diamond
 # ============================================================
 
+# G25 H6: see _lower_ternary's docstring — linear (flattened) is the faithful
+# mirror of Hex-Rays' branchless-ternary rendering; the diamond lowering is
+# kept switchable for rollback/bisect purposes.
+_LOWER_TERNARY_ENABLED = False
+
 def _lower_ternary(txt, is_return):
     """If `txt` contains a depth-0 `?:` ternary in the assignment RHS / return
     expression / as a bare expression statement, return an `If` node forming a
     condition DIAMOND (no body duplication: each arm is a distinct statement).
-    Returns None if there is no cleanly-splittable top-level ternary."""
+    Returns None if there is no cleanly-splittable top-level ternary.
+
+    G25 H6: disabled by default. Hex-Rays only renders `c ? a : b` when the
+    machine code is BRANCHLESS (cmov/setcc/arith), so the IDA CFG always
+    carries a ternary as ONE linear block holding BOTH arms' events; lowering
+    the cpp ternary into a diamond fabricates block structure the binary does
+    not have (0x4faf00: IDA single 8-event block vs a 4-block cpp diamond).
+    The faithful mirror is linear."""
+    if not _LOWER_TERNARY_ENABLED:
+        return None
     toks = tokenize(txt)
     if not toks:
         return None

@@ -107,6 +107,14 @@ _IDA_VTABLE_INDIRECT = _re.compile(
 # excluded (the dispatch patterns own them).
 _IDA_THIS_NAMED = _re.compile(r'\bthis->(\w+)')
 
+# G25: bare identifier that may name an hpp-annotated data global. The
+# lookbehind mirrors the cpp chained-access exclusion (`X.Name`, `X->Name`,
+# `X::Name` never fire). Emission is gated on _resolve_global (global_to_addr
+# from `extern ...; // data: 0xADDR` annotations) + callee-position skip -- see
+# the leaf() scan below. Same-span hits on g_/dword_ names collapse in
+# _order_hits (longest-first, overlap-de-dup), so no double emission.
+_IDA_NAMED_GLOBAL = _re.compile(r'(?<![\w:>.])([A-Za-z_][A-Za-z0-9_]+)\b')
+
 # D1-6 (#128, G22): vtable-install RHS detector. A member write whose RHS is a
 # vtable symbol (`&Cls::`vftable'` / ??_7... / vt_Name) is compiler-generated
 # vptr installation -- not expressible in the single-inheritance C++ source
@@ -197,7 +205,7 @@ def get_maps():
 # IDA leaf extractor (PORTED — builds events via efv_model builders)
 # ============================================================
 
-def make_ida_leaf(this_type, M, class_name=None):
+def make_ida_leaf(this_type, M, class_name=None, shadowed_names=None):
     """Return `leaf(fragment_text) -> list[event_str]`.
 
     A faithful port of `verify_execution_flow.make_ida_leaf`: same regexes,
@@ -210,6 +218,7 @@ def make_ida_leaf(this_type, M, class_name=None):
     type (e.g. `"int"` / `"_DWORD"` / `"_BYTE"`) detected by `detect_this_type`.
     """
     mult = _this_mult(this_type)
+    shadowed = shadowed_names or frozenset()
 
     def leaf(text):
         hits = []  # (start, end_of_span, event_str)
@@ -334,6 +343,28 @@ def make_ida_leaf(this_type, M, class_name=None):
             if DATA_SECTION_START <= addr <= DATA_SECTION_END:
                 ev = write_global(addr) if _is_write(text, m.end()) else read_global(addr)
                 hits.append((m.start(), m.end(), ev))
+        # --- G25: bare named globals. hpp-annotated data globals carry no
+        #     g_/dword_/MEMORY/ptr-cast prefix, so the four scans above never
+        #     fire -- while the cpp token walk reads ANY global DeclRefExpr
+        #     (comparison operands like `this == HouseClass_Player`, loop
+        #     bounds `&Name[-1].tail[1]`, `Name->m` chains, global-typed
+        #     subscript bases per the G12 MEMORY[A][idx] symmetry). Mirror of
+        #     the cpp bare-IDENT rule: resolve via global_to_addr; callee
+        #     position (`(` follows) is skipped (cpp consumes calls first);
+        #     chained members are excluded by the lookbehind; write/read via
+        #     the same _is_write. Cache audit 2026-09-20: 0 completed
+        #     functions carry the form (no regression surface), 5199 pending. ---
+        for m in _IDA_NAMED_GLOBAL.finditer(text):
+            nm = m.group(1)
+            if nm in shadowed:
+                continue  # G25: pseudocode local shadows the same-named global
+            addr = _resolve_global(nm, M)
+            if addr is None:
+                continue
+            if text[m.end():m.end() + 2].lstrip().startswith('('):
+                continue
+            ev = write_global(addr) if _is_write(text, m.end()) else read_global(addr)
+            hits.append((m.start(), m.end(), ev))
 
         # --- return ---
         for m in _RETURN_RE.finditer(text):
@@ -374,7 +405,8 @@ def extract_events_into(cfg, this_type, maps=None, class_name=None):
     """
     if maps is None:
         maps = get_maps()
-    leaf = make_ida_leaf(this_type, maps, class_name=class_name)
+    leaf = make_ida_leaf(this_type, maps, class_name=class_name,
+                         shadowed_names=getattr(cfg, "locals_hint", None))
     for block in cfg:
         events = []
         for fragment in block.ordered_events:

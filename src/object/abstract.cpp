@@ -39,8 +39,13 @@ HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
     *ppv = this;
   if ( !memcmp(&iid, &IID_IPersist, 0x10u) )
     *ppv = this;
-  if ( !memcmp(&iid, &IID_IRTTITypeInfo, 0x10u) )
-    *ppv = this ? (IRTTITypeInfo*)this : 0;  // MI interface subobject @ +4
+  if ( !memcmp(&iid, &IID_IRTTITypeInfo, 0x10u) ) {
+    // MI interface subobject @ +4
+    if ( this )
+      *ppv = (IRTTITypeInfo*)this;
+    else
+      *ppv = 0;
+  }
   if ( !*ppv )
     return E_NOINTERFACE;
   this->COMStub_AddRef();  // vtable[0][1] @0x7E1F54 -> 0x410300 (indirect dispatch)
