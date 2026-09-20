@@ -196,7 +196,7 @@ __int64 Movement::CalcVelocity(
   *(_QWORD *)&v82[0] = __PAIR64__(v42, v41); /*0x5b23de*/
   *(_QWORD *)&v80[0] = __PAIR64__(v12[1], v44); /*0x5b23e9*/
   v45 = Coord2D::Sub(v80, &aP1, (IUnknown *)v82); /*0x5b23ff*/
-  Vector::2DMagnitudeMath(v45); /*0x5b2406*/
+  Vector::TwoDMagnitudeMath(v45); /*0x5b2406*/
   v46 = aP0->field_8; /*0x5b240b*/
   esi11a = v12[2]; /*0x5b240e*/
   edx11c = aP0->field_4; /*0x5b2411*/

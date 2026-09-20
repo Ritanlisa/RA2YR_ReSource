@@ -18979,7 +18979,7 @@ LABEL_17:
         v41 = v10; /*0x63c8c3*/
         v42 = v11; /*0x63c8c7*/
         v19 = Coord2D::Sub(&v41, v50, &v38); /*0x63c8cb*/
-        Vector::2DMagnitudeMath(v19); /*0x63c8d2*/
+        Vector::TwoDMagnitudeMath(v19); /*0x63c8d2*/
         if ( v20 >= 37 ) /*0x63c8da*/
         {
           v21 = (v41 + v38) / 2 - 10; /*0x63c90a*/
@@ -21485,15 +21485,15 @@ char __thiscall RenderGradientTrapezoid(float *this)
     case 2: /*0x660070*/
     case 0xB: /*0x660070*/
     case 0xC: /*0x660070*/
-      v4 = Palette::6BitTo16Bit(&v37, 255, 255, 0); /*0x66009b*/
+      v4 = Palette::SixBitTo16Bit(&v37, 255, 255, 0); /*0x66009b*/
       goto LABEL_6; /*0x66009b*/
     case 5: /*0x660070*/
-      v5 = Palette::6BitTo16Bit(&aP2.__pad_0[8], 0, 255, 255); /*0x6600b2*/
+      v5 = Palette::SixBitTo16Bit(&aP2.__pad_0[8], 0, 255, 255); /*0x6600b2*/
       v2 = *(_WORD *)v5; /*0x6600b4*/
       v3 = v5[2]; /*0x6600b7*/
       break; /*0x6600ba*/
     default:
-      v4 = Palette::6BitTo16Bit(&aP2, 0, 0, 0); /*0x6600c6*/
+      v4 = Palette::SixBitTo16Bit(&aP2, 0, 0, 0); /*0x6600c6*/
 LABEL_6:
       v6 = v4; /*0x6600cb*/
       v2 = *(_WORD *)v4; /*0x6600cd*/
@@ -21516,15 +21516,15 @@ LABEL_6:
     case 2: /*0x6600eb*/
     case 11: /*0x6600eb*/
     case 12: /*0x6600eb*/
-      v10 = Palette::6BitTo16Bit(&aP2, 128, 128, 0); /*0x660115*/
+      v10 = Palette::SixBitTo16Bit(&aP2, 128, 128, 0); /*0x660115*/
       goto LABEL_12; /*0x660115*/
     case 5: /*0x6600eb*/
-      v11 = Palette::6BitTo16Bit(&aP2.__pad_0[8], 0, 128, 128); /*0x66012c*/
+      v11 = Palette::SixBitTo16Bit(&aP2.__pad_0[8], 0, 128, 128); /*0x66012c*/
       v8 = *(_WORD *)v11; /*0x66012e*/
       v9 = v11[2]; /*0x660131*/
       break; /*0x660134*/
     default:
-      v10 = Palette::6BitTo16Bit(&v37, 0, 0, 0); /*0x660140*/
+      v10 = Palette::SixBitTo16Bit(&v37, 0, 0, 0); /*0x660140*/
 LABEL_12:
       v12 = v10; /*0x660145*/
       v8 = *(_WORD *)v10; /*0x660147*/
@@ -31473,7 +31473,7 @@ namespace gamemd { int Gap2Recv_729580::FindUnitPlacementTarget() {
       v31 = v3;
       HIDWORD(v27) = this->M32 - v30;
       LODWORD(v27) = v4 - v29;
-      Vector::2DMagnitudeMath((int *)&v27);
+      Vector::TwoDMagnitudeMath((int *)&v27);
       if ( v5 >= 20 )
       {
         LODWORD(v27) = this->M28 - v29;

@@ -1058,7 +1058,7 @@ int __fastcall FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a
   v21 = v19[1] - v12; /*0x4cf171*/
   LODWORD(v60) = v20 - v11; /*0x4cf173*/
   v61 = v21; /*0x4cf17b*/
-  Vector::2DMagnitudeMath((int *)&v60); /*0x4cf17f*/
+  Vector::TwoDMagnitudeMath((int *)&v60); /*0x4cf17f*/
   v23 = (int)v22; /*0x4cf184*/
   v56 = v22; /*0x4cf18c*/
   if ( !v55 || !(*(int (__stdcall **)(int))(*(_DWORD *)v55 + 32))(v55) ) /*0x4cf197*/
@@ -1080,7 +1080,7 @@ int __fastcall FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a
     v31 = v29[1] - v25; /*0x4cf1fc*/
     LODWORD(v60) = v30 - v24; /*0x4cf1fe*/
     v61 = v31; /*0x4cf206*/
-    Vector::2DMagnitudeMath((int *)&v60); /*0x4cf20a*/
+    Vector::TwoDMagnitudeMath((int *)&v60); /*0x4cf20a*/
     if ( v32 > 768 /*0x4cf248*/
       || (LOWORD(v58) = 0x2000,
           LOWORD(v57) = v28 - *(_WORD *)ProgressTimer::GetValue((_WORD *)*v6 + 452, &v60),

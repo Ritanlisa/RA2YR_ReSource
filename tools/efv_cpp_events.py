@@ -137,11 +137,17 @@ from verify_execution_flow import (
     get_vtable_byte_offset,   # method name -> vtable byte offset (index*4), base-first chain
     _resolve_call,            # "Class::Method" / "Func" -> int addr (or None)
     _is_write,                # is the access at text[end] the target of `= ` ?
-    _order_hits,              # position-ordered, overlap-de-duped event list
+    _order_hits,              # position-ordered, overlap de-duped event list
     Maps,                     # symbol-table container
     load_all_maps,            # functions.json + signals.json + globals + vtable parse
     SKIP_NAMES,               # keywords / CRT / intrinsics that never make an event
 )
+# D1-6 (#128, G24): vtable-install write exemption -- MIRROR of the IDA-side
+# post-filter. `this->vfptr = (unsigned int)vt_X;` installs a vptr (compiler-
+# generated); the IDA side drops the WRITE (efv_ida_events D1-6 filter, G22),
+# so the cpp side must stay silent too or every faithful ctor translation
+# carries a one-sided WRITE(member,0) (TClassFactory family, 0x6C0DC0 et al).
+from efv_ida_events import _is_vtable_write
 
 __all__ = [
     "extract_events_into",
@@ -658,6 +664,17 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
             if ev is not None:
                 hits.append((t.pos, _tok_end(t), ev))
             i += 1
+
+        # --- D1-6 (#128, G24): vtable-install write exemption (mirror of the
+        # IDA-side post-filter -- see the import note above). Same regex, same
+        # WRITE(member) shape, applied to the cpp side's token hits. ---
+        filtered = []
+        for (s, e, ev) in hits:
+            if (isinstance(ev, str) and ev.startswith('WRITE(member')
+                    and _is_vtable_write(text, e)):
+                continue
+            filtered.append((s, e, ev))
+        hits = filtered
 
         return _order_hits(hits)
 

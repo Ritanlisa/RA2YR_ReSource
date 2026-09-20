@@ -131,7 +131,7 @@ public:
     Palette() = default;
 
     // IDA 0x4355B0
-    // wrapper: delegates to Palette::6BitTo16Bit at 0x4355B0
+    // wrapper: delegates to Palette::SixBitTo16Bit at 0x4355B0
     static uint16_t SixBitTo16Bit(int32_t r, int32_t g, int32_t b);
     // IDA 0x4355B0 area
     static int32_t FindClosestColor(uint8_t r, uint8_t g, uint8_t b);  // 0x626200

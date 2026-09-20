@@ -3468,3 +3468,51 @@ e4_globals 补 23 extern；vtable_offsets vt 名键若干。
 gap2 七 TU 剩余 pending marker 450（goto ~170 为主）。提交 d9c9d430 →
 17047f69，tag auto-fill-baseline 两度重锚。G24 准备包 = docs/g24_prep.md
 （W0b 收尾波 + B 线续推 + 验证器词汇债 D2 三项）。
+
+
+### G24 会话（2026-09-20）：W0b 收尾波 + D1-6 CPP 镜像 + 漂移防护 → 12,437
+
+**会话净增 +147**（12,290 → 12,437，全部带 G24 注记）。
+
+**W0 复跑揪出假完成族**：抽样 25 中 3 FAIL 集中于 `_gap2` TClassFactory
+构造族——根因 = D1 裁决⑥（#128 vtable 安装写豁免）只在 IDA 侧落地
+（efv_ida_events G22），CPP 侧缺镜像：IDA 侧 RHS `` `vftable' `` 豁免丢
+WRITE，CPP 侧 `this->vfptr = (unsigned int)vt_X` 照发 WRITE(member,0)
+→ 单侧事件必 FAIL。**修复 = efv_cpp_events.py 引入 `_is_vtable_write`
+后置过滤器（同正则同 WRITE(member) 形态）**；全族转 PASS；回归 40/40
+全绿零误伤（豁免仅在 RHS 为 vtable 符号时静默，与 IDA 侧对称）。
+
+**W0b 收尾波（新 TU 扩容）**：G23 七 TU 之外发现五个未波及 gap2 TU
+（core 10 / core_2 23 / misc 27 / structure 30 / wdt 4 = 94 marker）+
+system TU 全范围重扫（v1.5 派发修复后可再收尾部块）。波次：
+wdt 4/4 → core 8/8 → core_2 21/22 → misc 16+1 → structure 14/18 →
+system 77/92。**七 G23 TU 复扫全为 goto/no_def/regparam（管线已榨干）**。
+
+**转换器三升级（v1.5/v1.6）**：
+- v1.5a `*this + N` 裸解引用派发形态（0x435be0 实证，IDA 侧同发
+  CALL(vfptr+N) 而旧过滤器只认 `*(_DWORD *)this` 接收者）；
+- v1.6 **ml 漂移防护**：ml_add 交叉校验 signals._member_by_name——
+  BuildingClass Occupants ml=1648 vs mbn=1668（G15 漂移族遗产）等
+  语义名错位会使转换体采信错名→事件错位；不一致时改播 q<HEX> 中性名
+  并**双侧登记**（ml+mbn 同源，resolver 即时可见）；
+- 写盘 newline='\n' 修复（write_text 默认 CRLF 污染；autocrlf=true 下
+  无提交影响但工作区噪声）。
+
+**数字开头名清偿（#72 族两件）**：`Palette::6BitTo16Bit`→`SixBitTo16Bit`
+（0x4355b0）、`Vector::2DMagnitudeMath`→`TwoDMagnitudeMath`（0x4c1b50）
+四方改名 + IDA 落盘 + idb_save——cpp 分词器对数字开头名不产 CALL 事件，
+0x668bf0 由此解锁 PASS+标记。剩余 VtableStub::NNN 族仍挂 #72。
+
+**对账与回归**：marker&completed 对账 = 本会话 21 件 converted-but-
+unmarked（FAIL 件沿用 G23 惯例保持转换文本）+ 22 件旧债（G5-G9 波次
+遗留）；最终抽样回归 40/40 全绿。
+
+**遗留记账**：#132（A 族 H6 ternary 14 件 / B 族双解引用派发词汇
+0x5233d0+0x7ae5d0 / C 族 RulesClass 大件 0x66d530）；#133（mlq_conflict
+6 件 = mbn q 名错位旧播种，对账清理后重跑即收）。gap2 全 TU 待收 =
+七 TU 450 marker（goto ~170 永久跳过 + no_def ~46 需裁决 1 重生成 +
+mlq_conflict 6）+ 新五 TU 余 30（goto 24 + regparam 5 + no_def 5）。
+
+**口径**：completed 12,290 → **12,437（+147）**；G25 准备包 =
+docs/g25_prep.md（H6 ternary 专项 + #133 对账 + #56 再物化 + no_def
+重生成裁决 1b）。

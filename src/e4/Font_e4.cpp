@@ -148,7 +148,7 @@ LABEL_4:
             goto LABEL_73; /*0x434ddd*/
           if ( v19 < (int)aP9 ) /*0x434de7*/
           {
-            v22 = (ObjectClass *)Palette::6BitTo16Bit( /*0x434e2e*/
+            v22 = (ObjectClass *)Palette::SixBitTo16Bit( /*0x434e2e*/
                                    &v44,
                                    (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124],
                                    (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140],

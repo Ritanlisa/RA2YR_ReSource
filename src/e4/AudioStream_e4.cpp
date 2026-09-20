@@ -756,9 +756,9 @@ char __thiscall AudioStream::DrawWaveform(
     v73[1] = v21 - v81; /*0x4bebeb*/
     v74 = (_WORD *)((char *)v20 - (char *)v76); /*0x4bebfb*/
     v75 = v21 - v77; /*0x4bebff*/
-    Vector::2DMagnitudeMath((int *)&v74); /*0x4bec07*/
+    Vector::TwoDMagnitudeMath((int *)&v74); /*0x4bec07*/
     v97 = v22; /*0x4bec10*/
-    Vector::2DMagnitudeMath(v73); /*0x4bec17*/
+    Vector::TwoDMagnitudeMath(v73); /*0x4bec17*/
     v24 = abs32(Math::RoundToInt((double)v23 / (double)v97 * (double)(v19 - v15))); /*0x4bec4d*/
     if ( v19 >= v15 ) /*0x4bec51*/
       aP3a = (IUnknown *)(v19 - v24); /*0x4bec62*/
@@ -771,9 +771,9 @@ char __thiscall AudioStream::DrawWaveform(
     v74 = (_WORD *)((char *)aP1a - (char *)v76); /*0x4bec97*/
     v76 = (MouseClass *)((char *)v20 - (char *)v76); /*0x4bec9b*/
     v77 = v21 - v77; /*0x4bec9f*/
-    Vector::2DMagnitudeMath((int *)&v76); /*0x4beca3*/
+    Vector::TwoDMagnitudeMath((int *)&v76); /*0x4beca3*/
     v98 = v25; /*0x4becac*/
-    Vector::2DMagnitudeMath((int *)&v74); /*0x4becb3*/
+    Vector::TwoDMagnitudeMath((int *)&v74); /*0x4becb3*/
     v27 = abs32(Math::RoundToInt((double)v26 / (double)v98 * (double)(v19 - v15))); /*0x4bece9*/
     if ( v15 <= v19 ) /*0x4beced*/
       aP2a = (IUnknown *)(v15 + v27); /*0x4becfc*/

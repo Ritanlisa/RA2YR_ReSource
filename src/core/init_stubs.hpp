@@ -50,7 +50,7 @@ int TimerGetTicks();  // 0x6C8C40
 // IDA 0x54F720 -- Timer::PumpMessages
 void TimerPumpMessages(void* bink_player);  // 0x54F720
 
-// IDA 0x4355B0 -- Palette::6BitTo16Bit (6-bit RGB -> 16-bit packed color)
+// IDA 0x4355B0 -- Palette::SixBitTo16Bit (6-bit RGB -> 16-bit packed color)
 int Palette6BitTo16Bit(int r, int g, int b);
 
 // IDA 0x4B9BD0 -- Struct::Zero3 (zero-fill 3 bytes)

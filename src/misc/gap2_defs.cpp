@@ -27,113 +27,107 @@ namespace gamemd { void* VocClass::GetSampleName() {
 } }
 // 0x406170
 namespace gamemd { int VocClass::Check() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_406170(int this)
 {
-  if ( MEMORY[0x87E2A0] && *(int **)(this + 12) == &MEMORY[0x87E294] ) /*0x406180*/
-    return *(_DWORD *)(this + 8); /*0x406182*/
-  else
-    return 0; /*0x406186*/
+      if ( g_AudioConfigState && *(int **)(this + 12) == &DataGlobal_87E294 )
+        return this->q008;
+      else
+        return 0;
 }
 } }
 // 0x408000
 namespace gamemd { void AudioMixer::ProcessAudioFrame() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_408000(int this)
 {
-  int v2; // eax
-  int v3; // eax
+      int v2;
+      int v3;
 
-  if ( *(_DWORD *)(this + 128) ) /*0x408003*/
-  {
-    v2 = *(_DWORD *)(this + 128) - 1; /*0x408013*/
-    *(_DWORD *)(this + 128) = v2; /*0x408016*/
-    if ( v2 < 0 ) /*0x40801c*/
-      *(_DWORD *)(this + 128) = 0; /*0x40801e*/
-    if ( !*(_DWORD *)(this + 128) && *(_DWORD *)(this + 20) ) /*0x408032*/
-    {
-      EnterCriticalSection(&MEMORY[0x87E7F8]); /*0x40803e*/
-      v3 = *(_DWORD *)(this + 12); /*0x408044*/
-      if ( (v3 & 2) != 0 ) /*0x408049*/
+      if ( this->q080 )
       {
-        LOBYTE(v3) = v3 & 0xFC | 1; /*0x40804d*/
-        *(_DWORD *)(this + 12) = v3; /*0x40804f*/
+        v2 = this->q080 - 1;
+        this->q080 = v2;
+        if ( v2 < 0 )
+          this->q080 = 0;
+        if ( !this->q080 && this->q014 )
+        {
+          EnterCriticalSection(&CriticalSection);
+          v3 = this->q00C;
+          if ( (v3 & 2) != 0 )
+          {
+            LOBYTE(v3) = v3 & 0xFC | 1;
+            this->q00C = v3;
+          }
+          AudioChannel::ActivatePlay(*(_DWORD **)(this + 20));
+          LeaveCriticalSection(&CriticalSection);
+        }
       }
-      AudioChannel::ActivatePlay(*(_DWORD **)(this + 20)); /*0x408055*/
-      LeaveCriticalSection(&MEMORY[0x87E7F8]); /*0x40805f*/
-    }
-  }
 }
 } }
 // 0x408A70
 namespace gamemd { int AudioMixer::SetupChannels() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_408A70(int *this)
 {
-  int *v1; // edi
-  int v2; // ebx
-  int *v3; // eax
-  _DWORD *v4; // edx
-  int v5; // esi
-  int *v6; // esi
-  int v7; // edx
-  _DWORD *v8; // eax
-  int result; // eax
+      int *v1;
+      int v2;
+      int *v3;
+      _DWORD *v4;
+      int v5;
+      int *v6;
+      int v7;
+      _DWORD *v8;
+      int result;
 
-  v1 = (int *)*(this + 1); /*0x408a7c*/
-  if ( v1 == this + 1 ) /*0x408a81*/
-  {
-    v1 = 0; /*0x408a85*/
-  }
-  else
-  {
-    v2 = 0; /*0x408a89*/
-    if ( v1 ) /*0x408a8d*/
-    {
-      v3 = (int *)*(this + 1); /*0x408a8f*/
-      do /*0x408ab2*/
+      v1 = (int *)this->q004;
+      if ( v1 == this + 1 )
       {
-        v4 = v3 + 9; /*0x408a91*/
-        v5 = 2; /*0x408a94*/
-        do /*0x408aa8*/
-        {
-          *(v4 - 1) = v3[6]; /*0x408a9c*/
-          *v4 = v3[7]; /*0x408aa2*/
-          v4 += 2; /*0x408aa4*/
-          --v5; /*0x408aa7*/
-        }
-        while ( v5 ); /*0x408aa8*/
-        v3[13] = v2; /*0x408aaa*/
-        v3 = (int *)*v3; /*0x408aad*/
-        ++v2; /*0x408aaf*/
+        v1 = 0;
       }
-      while ( v3 != this + 1 ); /*0x408ab2*/
-    }
-  }
-  v6 = this + 19; /*0x408aba*/
-  v7 = 2; /*0x408abd*/
-  v8 = this + 19; /*0x408ac2*/
-  do /*0x408afe*/
-  {
-    *(v8 - 3) = v1; /*0x408ac4*/
-    *v8 = -1001; /*0x408ac7*/
-    v8[1] = *v8; /*0x408acf*/
-    *(v8 - 1) = 0; /*0x408ad4*/
-    *(v8 - 2) = 0; /*0x408ad7*/
-    *(v8 - 10) = v1; /*0x408ada*/
-    if ( v1 ) /*0x408add*/
-      *(v8 - 12) = v1[2 * *(v8 - 8) + 8]; /*0x408ae6*/
-    else
-      *(v8 - 12) = 0; /*0x408aeb*/
-    *(v8 - 11) = 0; /*0x408aee*/
-    *(v8 - 9) &= ~1u; /*0x408af7*/
-    v8 += 16; /*0x408afa*/
-    --v7; /*0x408afd*/
-  }
-  while ( v7 ); /*0x408afe*/
-  result = *v6 + *(this + 5); /*0x408b05*/
-  *v6 = result; /*0x408b07*/
-  return result; /*0x408b09*/
+      else
+      {
+        v2 = 0;
+        if ( v1 )
+        {
+          v3 = (int *)this->q004;
+          do
+          {
+            v4 = v3 + 9;
+            v5 = 2;
+            do
+            {
+              *(v4 - 1) = v3[6];
+              *v4 = v3[7];
+              v4 += 2;
+              --v5;
+            }
+            while ( v5 );
+            v3[13] = v2;
+            v3 = (int *)*v3;
+            ++v2;
+          }
+          while ( v3 != this + 1 );
+        }
+      }
+      v6 = this + 19;
+      v7 = 2;
+      v8 = this + 19;
+      do
+      {
+        *(v8 - 3) = v1;
+        *v8 = -1001;
+        v8[1] = *v8;
+        *(v8 - 1) = 0;
+        *(v8 - 2) = 0;
+        *(v8 - 10) = v1;
+        if ( v1 )
+          *(v8 - 12) = v1[2 * *(v8 - 8) + 8];
+        else
+          *(v8 - 12) = 0;
+        *(v8 - 11) = 0;
+        *(v8 - 9) &= ~1u;
+        v8 += 16;
+        --v7;
+      }
+      while ( v7 );
+      result = *v6 + this->q014;
+      *v6 = result;
+      return result;
 }
 } }
 // 0x514F70
@@ -1999,48 +1993,46 @@ retn    4
 } }
 // 0x5163B0
 namespace gamemd { int MovementAI::MarkOccupiedPathCell() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_5163B0(_DWORD *this)
 {
-  int v2; // eax
-  int v3; // ecx
-  int v4; // ecx
-  _DWORD *v5; // eax
-  double v6; // st7
-  int v7; // eax
-  _DWORD *v9; // ecx
-  int v10; // [esp+18h] [ebp-14h]
-  int v11; // [esp+1Ch] [ebp-10h]
-  _BYTE v12[12]; // [esp+20h] [ebp-Ch] BYREF
+      int v2;
+      int v3;
+      int v4;
+      _DWORD *v5;
+      double v6;
+      int v7;
+      _DWORD *v9;
+      int v10;
+      int v11;
+      _BYTE v12[12];
 
-  if ( !(*(unsigned __int8 (__stdcall **)(_DWORD *))(*(this + 1) + 16))(this + 1) ) /*0x5163bd*/
-    return 0; /*0x5163bd*/
-  v2 = *(this + 3); /*0x5163c8*/
-  if ( *(_DWORD *)(v2 + 1504) == -1 ) /*0x5163d2*/
-    return 0; /*0x5163d2*/
-  v3 = *(_DWORD *)(v2 + 1444); /*0x5163d8*/
-  if ( v3 && (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3) == 1 /*0x516405*/
-    || (v4 = *(_DWORD *)(*(this + 3) + 1444)) != 0 && (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 15 )
-  {
-    v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)*(this + 3) + 72))(*(this + 3), v12); /*0x516415*/
-    v10 = v5[1] - *(this + 7); /*0x516436*/
-    v11 = v5[2] - *(this + 8); /*0x51643a*/
-    v6 = Math::Sqrt( /*0x516463*/
-           (double)(*v5 - *(this + 6)) * (double)(*v5 - *(this + 6))
-         + (double)v10 * (double)v10
-         + (double)v11 * (double)v11);
-    v7 = (int)Math::RoundToInt(v6) / 256; /*0x516479*/
-    if ( v7 < 24 ) /*0x51647f*/
-    {
-      *(_DWORD *)(*(this + 3) + 4 * v7 + 1504) = -1; /*0x516485*/
-      return 1; /*0x516495*/
-    }
-  }
-  v9 = (_DWORD *)*(this + 3); /*0x516496*/
-  if ( !v9[173] || !(*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*v9 + 940))(v9, v9[173]) ) /*0x5164a6*/
-    return 0; /*0x5164c4*/
-  *(_DWORD *)(*(this + 3) + 1504) = -1; /*0x5164b4*/
-  return 1; /*0x516484*/
+      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD *))(this->q004 + 16))(this + 1) )
+        return 0;
+      v2 = this->m_State;
+      if ( *(_DWORD *)(v2 + 1504) == -1 )
+        return 0;
+      v3 = *(_DWORD *)(v2 + 1444);
+      if ( v3 && (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3) == 1
+        || (v4 = *(_DWORD *)(this->m_State + 1444)) != 0 && (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 15 )
+      {
+        v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)this->m_State + 72))(this->m_State, v12);
+        v10 = v5[1] - this->q01C;
+        v11 = v5[2] - this->q020;
+        v6 = Math::Sqrt(
+               (double)(*v5 - this->q018) * (double)(*v5 - this->q018)
+             + (double)v10 * (double)v10
+             + (double)v11 * (double)v11);
+        v7 = (int)Math::RoundToInt(v6) / 256;
+        if ( v7 < 24 )
+        {
+          *(_DWORD *)(this->m_State + 4 * v7 + 1504) = -1;
+          return 1;
+        }
+      }
+      v9 = (_DWORD *)this->m_State;
+      if ( !v9[173] || !(*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*v9 + 940))(v9, v9[173]) )
+        return 0;
+      *(_DWORD *)(this->m_State + 1504) = -1;
+      return 1;
 }
 } }
 // 0x5164D0
@@ -2364,132 +2356,130 @@ LABEL_28:
 } }
 // 0x583820
 namespace gamemd { void* Pathfinding::CheckCliff(void* a1, void* a2, int a3, int a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Pathfinding::CheckCliff(int *this, _DWORD *a1, __int16 *a2, int a4, MouseClass *aP4)
 {
-  unsigned int v5; // eax
-  _DWORD *v6; // eax
-  _DWORD *v7; // ecx
-  char *NeighbourContent; // ebx
-  int v10; // eax
-  char *v11; // edi
-  unsigned int v12; // esi
-  int v13; // edx
-  MouseClass *v14; // ebp
-  int v15; // esi
-  _WORD *v16; // ecx
-  int v17; // edi
-  TagClass *i; // esi
-  int v19; // eax
-  int v20; // edx
-  TagClass *v21; // [esp+0h] [ebp-28h]
-  _DWORD *v22; // [esp+4h] [ebp-24h]
-  int v23; // [esp+4h] [ebp-24h]
-  TagClass *v24; // [esp+8h] [ebp-20h]
-  _DWORD v26[6]; // [esp+10h] [ebp-18h] BYREF
+      unsigned int v5;
+      _DWORD *v6;
+      _DWORD *v7;
+      char *NeighbourContent;
+      int v10;
+      char *v11;
+      unsigned int v12;
+      int v13;
+      MouseClass *v14;
+      int v15;
+      _WORD *v16;
+      int v17;
+      TagClass *i;
+      int v19;
+      int v20;
+      TagClass *v21;
+      _DWORD *v22;
+      int v23;
+      TagClass *v24;
+      _DWORD v26[6];
 
-  v5 = *a2 + (a2[1] << 9); /*0x583835*/
-  if ( v5 < 0x40000 && (v6 = *(_DWORD **)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_3C[4] + 4 * v5)) != 0 ) /*0x58384b*/
-  {
-    v7 = v6; /*0x58384d*/
-  }
-  else
-  {
-    v7 = g_CellClassArray; /*0x583853*/
-    g_Map_GlobalCellIndex = *(IUnknown **)a2; /*0x583858*/
-  }
-  if ( (v7[80] & 0x100) != 0 ) /*0x583870*/
-  {
-    NeighbourContent = (char *)v7; /*0x58388a*/
-    v10 = -((v7[80] & 0x800) != 0); /*0x58388e*/
-    v11 = (char *)v7; /*0x583890*/
-    LOBYTE(v10) = v10 & 0xFE; /*0x583892*/
-    v22 = v7 + 80; /*0x583894*/
-    v21 = (TagClass *)(v7 + 80); /*0x58389b*/
-    v12 = v10 + 4; /*0x58389f*/
-    a2 = (__int16 *)g_MapSeedState; /*0x5838a6*/
-    v24 = g_MapSeedState; /*0x5838aa*/
-    do /*0x58396c*/
-    {
-      if ( (*v22 & 0x100) != 0 ) /*0x5838bd*/
+      v5 = *a2 + (a2[1] << 9);
+      if ( v5 < 0x40000 && (v6 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4.__pad_3C[4] + 4 * v5)) != 0 )
       {
-        NeighbourContent = (char *)Cell::GetNeighbourContent(NeighbourContent, v12); /*0x5838c7*/
-        v22 = NeighbourContent + 320; /*0x5838d8*/
-        if ( (*((_DWORD *)NeighbourContent + 80) & 0x100) == 0 /*0x5838fb*/
-          && (Cell::IsInRange((int *)NeighbourContent) || Cell::IsInRange2((int *)NeighbourContent))
-          && *((_DWORD *)NeighbourContent + 59) != 3 )
-        {
-          a2 = (__int16 *)*((_DWORD *)NeighbourContent + 9); /*0x583900*/
-        }
+        v7 = v6;
       }
-      if ( (*(_DWORD *)v21->__pad_0 & 0x100) != 0 ) /*0x58390d*/
+      else
       {
-        v11 = (char *)Cell::GetNeighbourContent(v11, ((_BYTE)v12 - 4) & 7); /*0x583917*/
-        v21 = (TagClass *)(v11 + 320); /*0x583928*/
-        if ( (*((_DWORD *)v11 + 80) & 0x100) == 0 /*0x58394b*/
-          && (Cell::IsInRange((int *)v11) || Cell::IsInRange2((int *)v11))
-          && *((_DWORD *)v11 + 59) != 3 )
-        {
-          v24 = (TagClass *)*((_DWORD *)v11 + 9); /*0x583950*/
-        }
+        v7 = g_CellClassArray;
+        g_Map_GlobalCellIndex = *(IUnknown **)a2;
       }
-    }
-    while ( (*(_DWORD *)v21->__pad_0 & 0x100) != 0 || (*v22 & 0x100) != 0 ); /*0x58396c*/
-    v13 = ((_BYTE)v12 + 2) & 7; /*0x583979*/
-    v26[0] = a2; /*0x58397c*/
-    v14 = aP4; /*0x583983*/
-    v15 = ((_BYTE)v12 - 2) & 7; /*0x58399b*/
-    LOWORD(v23) = *((_WORD *)&MEMORY[0x89F688].field_0 + 2 * v13) + (_WORD)a2; /*0x58399e*/
-    HIWORD(v23) = HIWORD(a2) + *((_WORD *)&MEMORY[0x89F68A] + 2 * v13); /*0x5839aa*/
-    v26[1] = v23; /*0x5839b3*/
-    v16 = (_WORD *)(4 * v15 + 9041544); /*0x5839b7*/
-    LOWORD(a2) = (_WORD)a2 + *((_WORD *)&MEMORY[0x89F688].field_0 + 2 * v15); /*0x5839cb*/
-    HIWORD(a2) += *((_WORD *)&MEMORY[0x89F68A] + 2 * v15); /*0x5839d7*/
-    LOWORD(v15) = *((_WORD *)&MEMORY[0x89F688].field_0 + 2 * v13); /*0x5839e0*/
-    v26[2] = a2; /*0x5839e3*/
-    v26[3] = v24; /*0x5839ee*/
-    LOWORD(a2) = (_WORD)v24 + v15; /*0x5839f2*/
-    HIWORD(a2) = HIWORD(v24) + *((_WORD *)&MEMORY[0x89F68A] + 2 * v13); /*0x583a03*/
-    v26[4] = a2; /*0x583a0c*/
-    LOWORD(v15) = *v16; /*0x583a10*/
-    LOWORD(v16) = HIWORD(v24) + v16[1]; /*0x583a1a*/
-    LOWORD(a2) = (_WORD)v24 + v15; /*0x583a1d*/
-    HIWORD(a2) = (_WORD)v16; /*0x583a22*/
-    v26[5] = a2; /*0x583a2b*/
-    v17 = 0; /*0x583a2f*/
-    for ( i = (TagClass *)v26; ; i = (TagClass *)((char *)i + 4) ) /*0x583a31*/
-    {
-      a2 = *(__int16 **)i->__pad_0; /*0x583a43*/
-      if ( LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (IUnknown *)&a2, (TechnoClass *)1) ) /*0x583a47*/
+      if ( (v7[80] & 0x100) != 0 )
       {
-        v19 = (__int16)a2 + SHIWORD(a2) * (*(this + 62) + *(this + 61) + 1); /*0x583a73*/
-        if ( v19 >= 0 ) /*0x583a75*/
+        NeighbourContent = (char *)v7;
+        v10 = -((v7[80] & 0x800) != 0);
+        v11 = (char *)v7;
+        LOBYTE(v10) = v10 & 0xFE;
+        v22 = v7 + 80;
+        v21 = (TagClass *)(v7 + 80);
+        v12 = v10 + 4;
+        a2 = (__int16 *)g_MapSeedState;
+        v24 = g_MapSeedState;
+        do
         {
-          v20 = *(this + 27); /*0x583a7b*/
-          if ( v19 >= v20 ) /*0x583a80*/
-            v19 = v20 - 1; /*0x583a82*/
+          if ( (*v22 & 0x100) != 0 )
+          {
+            NeighbourContent = (char *)Cell::GetNeighbourContent(NeighbourContent, v12);
+            v22 = NeighbourContent + 320;
+            if ( (*((_DWORD *)NeighbourContent + 80) & 0x100) == 0
+              && (Cell::IsInRange((int *)NeighbourContent) || Cell::IsInRange2((int *)NeighbourContent))
+              && *((_DWORD *)NeighbourContent + 59) != 3 )
+            {
+              a2 = (__int16 *)*((_DWORD *)NeighbourContent + 9);
+            }
+          }
+          if ( (*(_DWORD *)v21->__pad_0 & 0x100) != 0 )
+          {
+            v11 = (char *)Cell::GetNeighbourContent(v11, ((_BYTE)v12 - 4) & 7);
+            v21 = (TagClass *)(v11 + 320);
+            if ( (*((_DWORD *)v11 + 80) & 0x100) == 0
+              && (Cell::IsInRange((int *)v11) || Cell::IsInRange2((int *)v11))
+              && *((_DWORD *)v11 + 59) != 3 )
+            {
+              v24 = (TagClass *)*((_DWORD *)v11 + 9);
+            }
+          }
         }
-        else
+        while ( (*(_DWORD *)v21->__pad_0 & 0x100) != 0 || (*v22 & 0x100) != 0 );
+        v13 = ((_BYTE)v12 + 2) & 7;
+        v26[0] = a2;
+        v14 = aP4;
+        v15 = ((_BYTE)v12 - 2) & 7;
+        LOWORD(v23) = *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v13) + (_WORD)a2;
+        HIWORD(v23) = HIWORD(a2) + *((_WORD *)&DataGlobal_89F68A + 2 * v13);
+        v26[1] = v23;
+        v16 = (_WORD *)(4 * v15 + 9041544);
+        LOWORD(a2) = (_WORD)a2 + *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v15);
+        HIWORD(a2) += *((_WORD *)&DataGlobal_89F68A + 2 * v15);
+        LOWORD(v15) = *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v13);
+        v26[2] = a2;
+        v26[3] = v24;
+        LOWORD(a2) = (_WORD)v24 + v15;
+        HIWORD(a2) = HIWORD(v24) + *((_WORD *)&DataGlobal_89F68A + 2 * v13);
+        v26[4] = a2;
+        LOWORD(v15) = *v16;
+        LOWORD(v16) = HIWORD(v24) + v16[1];
+        LOWORD(a2) = (_WORD)v24 + v15;
+        HIWORD(a2) = (_WORD)v16;
+        v26[5] = a2;
+        v17 = 0;
+        for ( i = (TagClass *)v26; ; i = (TagClass *)((char *)i + 4) )
         {
-          v19 = 0; /*0x583a77*/
+          a2 = *(__int16 **)i->__pad_0;
+          if ( LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (IUnknown *)&a2, (TechnoClass *)1) )
+          {
+            v19 = (__int16)a2 + SHIWORD(a2) * (this->q0F8 + this->q0F4 + 1);
+            if ( v19 >= 0 )
+            {
+              v20 = this->q06C;
+              if ( v19 >= v20 )
+                v19 = v20 - 1;
+            }
+            else
+            {
+              v19 = 0;
+            }
+            if ( (MouseClass *)*(__int16 *)(this->q070 + 2 * (a4 + 4 * v19 + v19)) == v14 )
+              break;
+          }
+          if ( ++v17 >= 6 )
+          {
+            *a1 = g_MapSeedState;
+            return a1;
+          }
         }
-        if ( (MouseClass *)*(__int16 *)(*(this + 28) + 2 * (a4 + 4 * v19 + v19)) == v14 ) /*0x583a97*/
-          break; /*0x583a97*/
+        *a1 = a2;
+        return a1;
       }
-      if ( ++v17 >= 6 ) /*0x583aa0*/
+      else
       {
-        *a1 = g_MapSeedState; /*0x583aaf*/
-        return a1; /*0x583ab5*/
+        *a1 = v7[9];
+        return a1;
       }
-    }
-    *a1 = a2; /*0x583abf*/
-    return a1; /*0x583ab8*/
-  }
-  else
-  {
-    *a1 = v7[9]; /*0x58387c*/
-    return a1; /*0x583872*/
-  }
 }
 } }
 // 0x5B29C0
@@ -2518,9802 +2508,4266 @@ namespace gamemd { int Movement::CompareAbsCoords(void* a2, void* a3) {
 } }
 // 0x5B2A30
 namespace gamemd { void Movement::UpdateLocomotion(void* a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Movement::UpdateLocomotion(double *this, IUnknown *aP1)
 {
-  double v3; // st7
-  double v4; // st7
-  double v5; // [esp+18h] [ebp-10h]
-  double v6; // [esp+20h] [ebp-8h]
+      double v3;
+      double v4;
+      double v5;
+      double v6;
 
-  v3 = Math::Sqrt(*this * *this + *(this + 1) * *(this + 1)); /*0x5b2a57*/
-  v4 = Math::CalcAngle(*(this + 2), v3); /*0x5b2a72*/
-  v5 = (double)((__int16)Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427) - 0x3FFF) /*0x5b2aa2*/
-     * -0.00009587672516830327;
-  v6 = Math::Sqrt(*(this + 2) * *(this + 2) + *this * *this + *(this + 1) * *(this + 1)); /*0x5b2acc*/
-  if ( v5 != 0.0 ) /*0x5b2ae2*/
-  {
-    *this = *this / Math::ArcTan2(v5); /*0x5b2af7*/
-    *(this + 1) = *(this + 1) / Math::ArcTan2(v5); /*0x5b2b04*/
-  }
-  *this = Math::ArcTan2((double)(SLOWORD(aP1->field_0) - 0x3FFF) * -0.00009587672516830327) * *this; /*0x5b2b2e*/
-  *(this + 1) = Math::ArcTan2((double)(SLOWORD(aP1->field_0) - 0x3FFF) * -0.00009587672516830327) * *(this + 1); /*0x5b2b51*/
-  *(this + 2) = Math::SinCos((double)(SLOWORD(aP1->field_0) - 0x3FFF) * -0.00009587672516830327) * v6; /*0x5b2b7b*/
+      v3 = Math::Sqrt(*this * *this + this->q004 * this->q004);
+      v4 = Math::CalcAngle(this->q008, v3);
+      v5 = (double)((__int16)Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427) - 0x3FFF)
+         * -0.00009587672516830327;
+      v6 = Math::Sqrt(this->q008 * this->q008 + *this * *this + this->q004 * this->q004);
+      if ( v5 != 0.0 )
+      {
+        *this = *this / Math::ArcTan2(v5);
+        this->q004 = this->q004 / Math::ArcTan2(v5);
+      }
+      *this = Math::ArcTan2((double)(SLOWORD(aP1->field_0) - 0x3FFF) * -0.00009587672516830327) * *this;
+      this->q004 = Math::ArcTan2((double)(SLOWORD(aP1->field_0) - 0x3FFF) * -0.00009587672516830327) * this->q004;
+      this->q008 = Math::SinCos((double)(SLOWORD(aP1->field_0) - 0x3FFF) * -0.00009587672516830327) * v6;
 }
 } }
 // 0x668BF0
 namespace gamemd { int RulesClass::Addition() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RulesClass::Addition(RulesClass *this)
 {
-  CCINIClass *v1; // esi
-  int v3; // ebx
-  char *v4; // ebp
-  unsigned __int8 *v5; // eax
-  int Coord; // eax
-  char *v7; // edx
-  char v8; // cl
-  bool v9; // cc
-  int v10; // ebp
-  int i; // ebx
-  unsigned __int8 *v12; // eax
-  int v13; // ebp
-  int j; // ebx
-  unsigned __int8 *v15; // eax
-  int v16; // ebp
-  int k; // ebx
-  unsigned __int8 *v18; // eax
-  int v19; // ebp
-  int m; // ebx
-  unsigned __int8 *v21; // eax
-  int v22; // ebp
-  int n; // ebx
-  unsigned __int8 *v24; // eax
-  int v25; // ebp
-  int ii; // ebx
-  unsigned __int8 *v27; // eax
-  char v29[4]; // [esp+10h] [ebp-2Ch] BYREF
-  unsigned __int8 *StringByIndex; // [esp+14h] [ebp-28h]
-  int KeyCount; // [esp+18h] [ebp-24h]
-  char Destination[32]; // [esp+1Ch] [ebp-20h] BYREF
-  RulesClass *v33; // [esp+40h] [ebp+4h] BYREF
+      char *v1;
+      int v3;
+      char *v4;
+      unsigned __int8 *v5;
+      int Coord;
+      char *v7;
+      char v8;
+      bool v9;
+      int v10;
+      int i;
+      unsigned __int8 *v12;
+      int v13;
+      int j;
+      unsigned __int8 *v15;
+      int v16;
+      int k;
+      unsigned __int8 *v18;
+      int v19;
+      int m;
+      unsigned __int8 *v21;
+      int v22;
+      int n;
+      unsigned __int8 *v24;
+      int v25;
+      int ii;
+      unsigned __int8 *v27;
+      char v29[4];
+      unsigned __int8 *StringByIndex;
+      int KeyCount;
+      char Destination[32];
+      #381 *v33; // [esp+40h] [ebp+4h] BYREF
 
-  v1 = (CCINIClass *)v33; /*0x668bf6*/
-  RulesClass::ReadColors(this); /*0x668bfe*/
-  if ( INIEntry::Exists(v1, (unsigned __int8 *)MEMORY[0x839E50], 0) ) /*0x668c0d*/
-  {
-    v3 = 0; /*0x668c24*/
-    KeyCount = INIClass::GetKeyCount(v1->__pad_0, (unsigned __int8 *)MEMORY[0x839E50]); /*0x668c26*/
-    if ( KeyCount > 0 ) /*0x668c2c*/
-    {
-      v4 = (char *)this + 6260; /*0x668c2e*/
-      do /*0x668c89*/
+      v1 = (char *)v33;
+      RulesClass::ReadColors(this);
+      if ( (unsigned __int8)INIEntry::Exists(aColoradd, 0) )
       {
-        StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex( /*0x668c4d*/
-                                             v1->__pad_0,
-                                             (unsigned __int8 *)MEMORY[0x839E50],
-                                             v3);
-        v5 = Palette::6BitTo16Bit(&v33, 0, 0, 0); /*0x668c51*/
-        Coord = INIClass::GetCoord( /*0x668c6a*/
-                  (unsigned __int8 ***)v1,
-                  (int)v29,
-                  (unsigned __int8 *)MEMORY[0x839E50],
-                  StringByIndex,
-                  v5);
-        v7 = v4; /*0x668c71*/
-        ++v3; /*0x668c73*/
-        v4 += 3; /*0x668c74*/
-        v8 = *(_BYTE *)(Coord + 2); /*0x668c7a*/
-        *(_WORD *)v7 = *(_WORD *)Coord; /*0x668c7d*/
-        v9 = v3 < KeyCount; /*0x668c84*/
-        v7[2] = v8; /*0x668c86*/
+        v3 = 0;
+        KeyCount = INIClass::GetKeyCount(v1, (unsigned __int8 *)aColoradd);
+        if ( KeyCount > 0 )
+        {
+          v4 = (char *)this + 6260;
+          do
+          {
+            StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)aColoradd, v3);
+            v5 = Palette::SixBitTo16Bit(&v33, 0, 0, 0);
+            Coord = INIClass::GetCoord((unsigned __int8 ***)v1, (int)v29, (unsigned __int8 *)aColoradd, StringByIndex, v5);
+            v7 = v4;
+            ++v3;
+            v4 += 3;
+            v8 = *(_BYTE *)(Coord + 2);
+            *(_WORD *)v7 = *(_WORD *)Coord;
+            v9 = v3 < KeyCount;
+            v7[2] = v8;
+          }
+          while ( v9 );
+        }
       }
-      while ( v9 ); /*0x668c89*/
-    }
-  }
-  v10 = INIClass::GetKeyCount(v1->__pad_0, (unsigned __int8 *)MEMORY[0x839E28]); /*0x668c98*/
-  for ( i = 0; i < v10; ++i ) /*0x668c9e*/
-  {
-    v12 = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, (unsigned __int8 *)MEMORY[0x839E28], i); /*0x668cb6*/
-    if ( INIClass::GetString( /*0x668cc4*/
-           (unsigned __int8 ***)v1,
-           (unsigned __int8 *)MEMORY[0x839E28],
-           v12,
-           &MEMORY[0x889F64],
-           Destination,
-           32) )
-    {
-      WeaponTypeClass::Create(Destination); /*0x668cd1*/
-    }
-  }
-  RulesClass::ReadDataList(this); /*0x668cde*/
-  v13 = INIClass::GetKeyCount(v1->__pad_0, (unsigned __int8 *)MEMORY[0x839DA8]); /*0x668cf1*/
-  for ( j = 0; j < v13; ++j ) /*0x668cf7*/
-  {
-    v15 = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, (unsigned __int8 *)MEMORY[0x839DA8], j); /*0x668d0e*/
-    if ( INIClass::GetString( /*0x668d1d*/
-           (unsigned __int8 ***)v1,
-           (unsigned __int8 *)MEMORY[0x839DA8],
-           v15,
-           &MEMORY[0x889F64],
-           Destination,
-           32) )
-    {
-      BuildingTypeClass::FindOrCreate2(Destination); /*0x668d2a*/
-    }
-  }
-  v16 = INIClass::GetKeyCount(v1->__pad_0, (unsigned __int8 *)MEMORY[0x839DEC]); /*0x668d42*/
-  for ( k = 0; k < v16; ++k ) /*0x668d48*/
-  {
-    v18 = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, (unsigned __int8 *)MEMORY[0x839DEC], k); /*0x668d60*/
-    if ( INIClass::GetString( /*0x668d6f*/
-           (unsigned __int8 ***)v1,
-           (unsigned __int8 *)MEMORY[0x839DEC],
-           v18,
-           &MEMORY[0x889F64],
-           Destination,
-           32) )
-    {
-      WeaponTypeClass::Process(Destination); /*0x668d7c*/
-    }
-  }
-  v19 = INIClass::GetKeyCount(v1->__pad_0, (unsigned __int8 *)MEMORY[0x83A0D0]); /*0x668d92*/
-  for ( m = 0; m < v19; ++m ) /*0x668d98*/
-  {
-    v21 = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, (unsigned __int8 *)MEMORY[0x83A0D0], m); /*0x668dae*/
-    if ( INIClass::GetString( /*0x668dbb*/
-           (unsigned __int8 ***)v1,
-           (unsigned __int8 *)MEMORY[0x83A0D0],
-           v21,
-           &MEMORY[0x889F64],
-           Destination,
-           32) )
-    {
-      WarheadTypeClass::FindOrCreate(Destination); /*0x668dc8*/
-    }
-  }
-  v22 = INIClass::GetKeyCount(v1->__pad_0, (unsigned __int8 *)MEMORY[0x839DB8]); /*0x668de0*/
-  for ( n = 0; n < v22; ++n ) /*0x668de6*/
-  {
-    v24 = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, (unsigned __int8 *)MEMORY[0x839DB8], n); /*0x668dfd*/
-    if ( INIClass::GetString( /*0x668e0c*/
-           (unsigned __int8 ***)v1,
-           (unsigned __int8 *)MEMORY[0x839DB8],
-           v24,
-           &MEMORY[0x889F64],
-           Destination,
-           32) )
-    {
-      FactoryClass::FindOrCreate(Destination); /*0x668e19*/
-    }
-  }
-  v25 = INIClass::GetKeyCount(v1->__pad_0, (unsigned __int8 *)MEMORY[0x839DCC]); /*0x668e31*/
-  for ( ii = 0; ii < v25; ++ii ) /*0x668e37*/
-  {
-    v27 = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, (unsigned __int8 *)MEMORY[0x839DCC], ii); /*0x668e4f*/
-    if ( INIClass::GetString( /*0x668e5e*/
-           (unsigned __int8 ***)v1,
-           (unsigned __int8 *)MEMORY[0x839DCC],
-           v27,
-           &MEMORY[0x889F64],
-           Destination,
-           32) )
-    {
-      TerrainTypeClass::FindOrCreate(Destination); /*0x668e6b*/
-    }
-  }
-  RulesClass::LoadBuildingTypes(this); /*0x668e78*/
-  CCINIClass::LoadBuildingTypes(this); /*0x668e80*/
-  RulesClass::readRadiation(this); /*0x668e88*/
-  RulesClass::readCrateRules(this); /*0x668e90*/
-  RulesClass::LoadAnimTypes(this); /*0x668e98*/
-  CCINIClass::LoadUnitTypes(this); /*0x668ea0*/
-  RulesClass::readColors(this); /*0x668ea8*/
-  CCINIClass::ReadBuildingSettings(this); /*0x668eb0*/
-  RulesClass::readDifficulty(this); /*0x668eb8*/
-  Dialog::ReadMultiplayerDialogSettings(this); /*0x668ec0*/
-  RulesClass::ReadMultiplayerDefaults(this); /*0x668ec8*/
-  RulesClass::ReadPowerupsSection(this); /*0x668ed0*/
-  RulesClass::LoadSpeedTypes(this); /*0x668ed8*/
-  RulesClass::ReadIQSection(this); /*0x668ee0*/
-  RulesClass::LoadFromINI(this); /*0x668ee8*/
-  SideClass::LoadAllFromINI((int)v1); /*0x668ef0*/
-  INIClass::ReadDifficultyModifiers((RulesClass *)v1); /*0x668f02*/
-  INIClass::ReadDifficultyModifiers((RulesClass *)v1); /*0x668f14*/
-  INIClass::ReadDifficultyModifiers((RulesClass *)v1); /*0x668f26*/
-  ReadCrateRulesINI(this); /*0x668f2e*/
-  Rules::ReadCombatINI(this); /*0x668f36*/
-  RulesClass::ReadCountryList(this); /*0x668f3e*/
-  RulesClass::readAudioVisual(this); /*0x668f46*/
-  RulesClass::readSpecialWeapons(this); /*0x668f4e*/
-  Rules::ReadMiscINI(this); /*0x668f56*/
-  RulesClass::LoadSpecialWeapons(this); /*0x668f5e*/
-  SmallFunc_721D10(v1->__pad_0); /*0x668f65*/
-  return SidebarClass::ReadButtonList(this); /*0x668f86*/
+      v10 = INIClass::GetKeyCount(v1, (unsigned __int8 *)aCountries);
+      for ( i = 0; i < v10; ++i )
+      {
+        v12 = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)aCountries, i);
+        if ( INIClass::GetString(
+               (unsigned __int8 ***)v1,
+               (unsigned __int8 *)aCountries,
+               v12,
+               &g_INI_DefaultBuffer,
+               Destination,
+               32) )
+        {
+          WeaponTypeClass::Create(Destination);
+        }
+      }
+      RulesClass::ReadDataList(this);
+      v13 = INIClass::GetKeyCount(v1, (unsigned __int8 *)aOverlaytypes);
+      for ( j = 0; j < v13; ++j )
+      {
+        v15 = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)aOverlaytypes, j);
+        if ( INIClass::GetString(
+               (unsigned __int8 ***)v1,
+               (unsigned __int8 *)aOverlaytypes,
+               v15,
+               &g_INI_DefaultBuffer,
+               Destination,
+               32) )
+        {
+          BuildingTypeClass::FindOrCreate2(Destination);
+        }
+      }
+      v16 = INIClass::GetKeyCount(v1, (unsigned __int8 *)aSuperweapontyp);
+      for ( k = 0; k < v16; ++k )
+      {
+        v18 = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)aSuperweapontyp, k);
+        if ( INIClass::GetString(
+               (unsigned __int8 ***)v1,
+               (unsigned __int8 *)aSuperweapontyp,
+               v18,
+               &g_INI_DefaultBuffer,
+               Destination,
+               32) )
+        {
+          WeaponTypeClass::Process(Destination);
+        }
+      }
+      v19 = INIClass::GetKeyCount(v1, (unsigned __int8 *)g_INI_Key_Warheads);
+      for ( m = 0; m < v19; ++m )
+      {
+        v21 = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)g_INI_Key_Warheads, m);
+        if ( INIClass::GetString(
+               (unsigned __int8 ***)v1,
+               (unsigned __int8 *)g_INI_Key_Warheads,
+               v21,
+               &g_INI_DefaultBuffer,
+               Destination,
+               32) )
+        {
+          WarheadTypeClass::FindOrCreate(Destination);
+        }
+      }
+      v22 = INIClass::GetKeyCount(v1, (unsigned __int8 *)aSmudgetypes);
+      for ( n = 0; n < v22; ++n )
+      {
+        v24 = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)aSmudgetypes, n);
+        if ( INIClass::GetString(
+               (unsigned __int8 ***)v1,
+               (unsigned __int8 *)aSmudgetypes,
+               v24,
+               &g_INI_DefaultBuffer,
+               Destination,
+               32) )
+        {
+          FactoryClass::FindOrCreate(Destination);
+        }
+      }
+      v25 = INIClass::GetKeyCount(v1, (unsigned __int8 *)aTerraintypes);
+      for ( ii = 0; ii < v25; ++ii )
+      {
+        v27 = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)aTerraintypes, ii);
+        if ( INIClass::GetString(
+               (unsigned __int8 ***)v1,
+               (unsigned __int8 *)aTerraintypes,
+               v27,
+               &g_INI_DefaultBuffer,
+               Destination,
+               32) )
+        {
+          TerrainTypeClass::FindOrCreate(Destination);
+        }
+      }
+      RulesClass::LoadBuildingTypes(this);
+      CCINIClass::LoadBuildingTypes(this);
+      RulesClass::readRadiation(this);
+      RulesClass::readCrateRules(this);
+      RulesClass::LoadAnimTypes(this);
+      CCINIClass::LoadUnitTypes(this);
+      RulesClass::readColors(this);
+      CCINIClass::ReadBuildingSettings(this);
+      RulesClass::readDifficulty(this);
+      Dialog::ReadMultiplayerDialogSettings(this);
+      RulesClass::ReadMultiplayerDefaults(this);
+      RulesClass::ReadPowerupsSection(this);
+      RulesClass::LoadSpeedTypes(this);
+      RulesClass::ReadIQSection(this);
+      RulesClass::LoadFromINI(this);
+      SideClass::LoadAllFromINI(v1);
+      INIClass::ReadDifficultyModifiers((#381 *)v1);
+      INIClass::ReadDifficultyModifiers((#381 *)v1);
+      INIClass::ReadDifficultyModifiers((#381 *)v1);
+      ReadCrateRulesINI(this);
+      Rules::ReadCombatINI(this);
+      RulesClass::ReadCountryList(this);
+      RulesClass::readAudioVisual(this);
+      RulesClass::readSpecialWeapons(this);
+      Rules::ReadMiscINI(this);
+      RulesClass::LoadSpecialWeapons(this);
+      SmallFunc_721D10(v1);
+      return SidebarClass::ReadButtonList(this);
 }
 } }
 // 0x668FB0
 namespace gamemd { int RulesClass::LoadSpecialWeapons() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RulesClass::LoadSpecialWeapons(RulesClass *this)
 {
-  int result; // eax
-  int SellBack; // ebx
-  int v4; // eax
-  int AIBaseSpacing; // ebx
-  int v6; // eax
-  int v7; // ebx
-  int v8; // eax
-  int v9; // ebx
-  int v10; // eax
-  int v11; // ebx
-  int v12; // eax
-  int v13; // ebx
-  int v14; // eax
-  int v15; // ebx
-  int v16; // eax
-  int i; // esi
-  char Destination[128]; // [esp+8h] [ebp-80h] BYREF
-  unsigned __int8 ***v19; // [esp+8Ch] [ebp+4h]
+      int result;
+      int SellBack;
+      int v4;
+      int AIBaseSpacing;
+      int v6;
+      int v7;
+      int v8;
+      int v9;
+      int v10;
+      int v11;
+      int v12;
+      int v13;
+      int v14;
+      int v15;
+      int v16;
+      int i;
+      char Destination[128];
+      unsigned __int8 ***v19;
 
-  result = INIClass::BinarySearchSection((int)v19, (unsigned __int8 *)MEMORY[0x839EB4]); /*0x668fc9*/
-  if ( result ) /*0x668fd5*/
-  {
-    SellBack = this->?; /*0x668fe2*/
-    if ( INIClass::GetString( /*0x668fff*/
-           v19,
-           (unsigned __int8 *)MEMORY[0x839EB4],
-           (unsigned __int8 *)MEMORY[0x83A144],
-           &MEMORY[0x889F64],
-           Destination,
-           128) )
-    {
-      v4 = WarheadTypeClass::FindOrCreate(Destination); /*0x66900c*/
-    }
-    else
-    {
-      v4 = SellBack; /*0x669013*/
-    }
-    this->? = v4; /*0x669015*/
-    AIBaseSpacing = this->?; /*0x669021*/
-    if ( INIClass::GetString( /*0x66903e*/
-           v19,
-           (unsigned __int8 *)MEMORY[0x839EB4],
-           (unsigned __int8 *)MEMORY[0x83A134],
-           &MEMORY[0x889F64],
-           Destination,
-           128) )
-    {
-      v6 = ObjectTypeClass::FindOrCreate(Destination); /*0x66904b*/
-    }
-    else
-    {
-      v6 = AIBaseSpacing; /*0x669052*/
-    }
-    v7 = this->?[0]; /*0x669054*/
-    this->? = v6; /*0x669063*/
-    if ( INIClass::GetString( /*0x66907c*/
-           v19,
-           (unsigned __int8 *)MEMORY[0x839EB4],
-           (unsigned __int8 *)MEMORY[0x83A128],
-           &MEMORY[0x889F64],
-           Destination,
-           128) )
-    {
-      v8 = ObjectTypeClass::FindOrCreate(Destination); /*0x669089*/
-    }
-    else
-    {
-      v8 = v7; /*0x669090*/
-    }
-    v9 = this->?[1]; /*0x669092*/
-    this->?[0] = v8; /*0x6690a1*/
-    if ( INIClass::GetString( /*0x6690bb*/
-           v19,
-           (unsigned __int8 *)MEMORY[0x839EB4],
-           (unsigned __int8 *)MEMORY[0x83A118],
-           &MEMORY[0x889F64],
-           Destination,
-           128) )
-    {
-      v10 = WarheadTypeClass::FindOrCreate(Destination); /*0x6690c8*/
-    }
-    else
-    {
-      v10 = v9; /*0x6690cf*/
-    }
-    this->?[1] = v10; /*0x6690d1*/
-    v11 = this->?[2]; /*0x6690dd*/
-    if ( INIClass::GetString( /*0x6690fa*/
-           v19,
-           (unsigned __int8 *)MEMORY[0x839EB4],
-           (unsigned __int8 *)MEMORY[0x83A100],
-           &MEMORY[0x889F64],
-           Destination,
-           128) )
-    {
-      v12 = WarheadTypeClass::FindOrCreate(Destination); /*0x669107*/
-    }
-    else
-    {
-      v12 = v11; /*0x66910e*/
-    }
-    v13 = this->?[3]; /*0x669110*/
-    this->?[2] = v12; /*0x66911f*/
-    if ( INIClass::GetString( /*0x669138*/
-           v19,
-           (unsigned __int8 *)MEMORY[0x839EB4],
-           (unsigned __int8 *)MEMORY[0x83A0F0],
-           &MEMORY[0x889F64],
-           Destination,
-           128) )
-    {
-      v14 = WarheadTypeClass::FindOrCreate(Destination); /*0x669145*/
-    }
-    else
-    {
-      v14 = v13; /*0x66914c*/
-    }
-    v15 = this->?[4]; /*0x66914e*/
-    this->?[3] = v14; /*0x66915d*/
-    if ( INIClass::GetString( /*0x669177*/
-           v19,
-           (unsigned __int8 *)MEMORY[0x839EB4],
-           (unsigned __int8 *)MEMORY[0x83A0DC],
-           &MEMORY[0x889F64],
-           Destination,
-           128) )
-    {
-      v16 = ObjectTypeClass::FindOrCreate(Destination); /*0x669184*/
-    }
-    else
-    {
-      v16 = v15; /*0x66918b*/
-    }
-    this->?[4] = v16; /*0x66918d*/
-    result = MEMORY[0x8874D0]; /*0x669193*/
-    for ( i = 0; i < MEMORY[0x8874D0]; ++i ) /*0x66919d*/
-    {
-      (*(void (__thiscall **)(_DWORD, unsigned __int8 ***))(**((_DWORD **)MEMORY[0x8874C4] + i) + 100))( /*0x6691aa*/
-        *((_DWORD *)MEMORY[0x8874C4] + i),
-        v19);
-      result = MEMORY[0x8874D0]; /*0x6691ad*/
-    }
-    LOBYTE(result) = 1; /*0x6691b8*/
-  }
-  else
-  {
-    LOBYTE(result) = 0; /*0x6691c5*/
-  }
-  return result; /*0x6691b7*/
+      result = INIClass::BinarySearchSection((int)v19, (unsigned __int8 *)DataGlobal_839EB4);
+      if ( result )
+      {
+        SellBack = this->?;
+        if ( INIClass::GetString(
+               v19,
+               (unsigned __int8 *)DataGlobal_839EB4,
+               (unsigned __int8 *)DataGlobal_83A144,
+               &g_INI_DefaultBuffer,
+               Destination,
+               128) )
+        {
+          v4 = WarheadTypeClass::FindOrCreate(Destination);
+        }
+        else
+        {
+          v4 = SellBack;
+        }
+        this->? = v4;
+        AIBaseSpacing = this->?;
+        if ( INIClass::GetString(
+               v19,
+               (unsigned __int8 *)DataGlobal_839EB4,
+               (unsigned __int8 *)DataGlobal_83A134,
+               &g_INI_DefaultBuffer,
+               Destination,
+               128) )
+        {
+          v6 = ObjectTypeClass::FindOrCreate(Destination);
+        }
+        else
+        {
+          v6 = AIBaseSpacing;
+        }
+        v7 = this->?[0];
+        this->? = v6;
+        if ( INIClass::GetString(
+               v19,
+               (unsigned __int8 *)DataGlobal_839EB4,
+               (unsigned __int8 *)DataGlobal_83A128,
+               &g_INI_DefaultBuffer,
+               Destination,
+               128) )
+        {
+          v8 = ObjectTypeClass::FindOrCreate(Destination);
+        }
+        else
+        {
+          v8 = v7;
+        }
+        v9 = this->?[1];
+        this->?[0] = v8;
+        if ( INIClass::GetString(
+               v19,
+               (unsigned __int8 *)DataGlobal_839EB4,
+               (unsigned __int8 *)DataGlobal_83A118,
+               &g_INI_DefaultBuffer,
+               Destination,
+               128) )
+        {
+          v10 = WarheadTypeClass::FindOrCreate(Destination);
+        }
+        else
+        {
+          v10 = v9;
+        }
+        this->?[1] = v10;
+        v11 = this->?[2];
+        if ( INIClass::GetString(
+               v19,
+               (unsigned __int8 *)DataGlobal_839EB4,
+               (unsigned __int8 *)DataGlobal_83A100,
+               &g_INI_DefaultBuffer,
+               Destination,
+               128) )
+        {
+          v12 = WarheadTypeClass::FindOrCreate(Destination);
+        }
+        else
+        {
+          v12 = v11;
+        }
+        v13 = this->?[3];
+        this->?[2] = v12;
+        if ( INIClass::GetString(
+               v19,
+               (unsigned __int8 *)DataGlobal_839EB4,
+               (unsigned __int8 *)DataGlobal_83A0F0,
+               &g_INI_DefaultBuffer,
+               Destination,
+               128) )
+        {
+          v14 = WarheadTypeClass::FindOrCreate(Destination);
+        }
+        else
+        {
+          v14 = v13;
+        }
+        v15 = this->?[4];
+        this->?[3] = v14;
+        if ( INIClass::GetString(
+               v19,
+               (unsigned __int8 *)DataGlobal_839EB4,
+               (unsigned __int8 *)DataGlobal_83A0DC,
+               &g_INI_DefaultBuffer,
+               Destination,
+               128) )
+        {
+          v16 = ObjectTypeClass::FindOrCreate(Destination);
+        }
+        else
+        {
+          v16 = v15;
+        }
+        this->?[4] = v16;
+        result = g_WarheadTypePool;
+        for ( i = 0; i < g_WarheadTypePool; ++i )
+        {
+          (*(void (__thiscall **)(_DWORD, unsigned __int8 ***))(**((_DWORD **)DataGlobal_8874C4 + i) + 100))(
+            *((_DWORD *)DataGlobal_8874C4 + i),
+            v19);
+          result = g_WarheadTypePool;
+        }
+        LOBYTE(result) = 1;
+      }
+      else
+      {
+        LOBYTE(result) = 0;
+      }
+      return result;
 }
 } }
 // 0x66CF70
 namespace gamemd { int RulesClass::ReadCountryList() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_66CF70(RulesClass *this)
 {
-  int result; // eax
-  int Int_Overwrite; // eax
-  int v4; // edx
-  int v5; // eax
-  int v6; // ecx
-  int v7; // eax
-  int v8; // edx
-  double Double_Overwrite; // st7
-  double v10; // rax
-  double v11; // st7
-  double v12; // rax
-  int Coord; // eax
-  int v14; // ebx
-  double v15; // [esp-Ch] [ebp-98h]
-  _BYTE v16[4]; // [esp+8h] [ebp-84h] BYREF
-  char Destination[128]; // [esp+Ch] [ebp-80h] BYREF
-  unsigned __int8 ***v18; // [esp+90h] [ebp+4h]
+      int result;
+      int Int_Overwrite;
+      int v4;
+      int v5;
+      int v6;
+      int v7;
+      int v8;
+      double Double_Overwrite;
+      double v10;
+      double v11;
+      double v12;
+      int Coord;
+      int v14;
+      double v15;
+      _BYTE v16[4];
+      char Destination[128];
+      unsigned __int8 ***v18;
 
-  result = INIClass::BinarySearchSection((int)v18, (unsigned __int8 *)MEMORY[0x839E80]); /*0x66cf89*/
-  if ( result ) /*0x66cf95*/
-  {
-    *((_DWORD *)this + 1537) = INIClass::ReadInt_Overwrite( /*0x66cfb6*/
-                                 (int)v18,
-                                 (unsigned __int8 *)MEMORY[0x839E80],
-                                 (unsigned __int8 *)MEMORY[0x83B330],
-                                 *((_DWORD *)this + 1537));
-    Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x66cfd1*/
-                      (int)v18,
-                      (unsigned __int8 *)MEMORY[0x839E80],
-                      (unsigned __int8 *)MEMORY[0x83B31C],
-                      *((_DWORD *)this + 1538));
-    v4 = *((_DWORD *)this + 1539); /*0x66cfd6*/
-    *((_DWORD *)this + 1538) = Int_Overwrite; /*0x66cfdc*/
-    v5 = INIClass::ReadInt_Overwrite( /*0x66cff0*/
-           (int)v18,
-           (unsigned __int8 *)MEMORY[0x839E80],
-           (unsigned __int8 *)MEMORY[0x83B310],
-           v4);
-    v6 = *((_DWORD *)this + 1540); /*0x66cff5*/
-    *((_DWORD *)this + 1539) = v5; /*0x66cffb*/
-    *((_DWORD *)this + 1540) = INIClass::ReadInt_Overwrite( /*0x66d015*/
-                                 (int)v18,
-                                 (unsigned __int8 *)MEMORY[0x839E80],
-                                 (unsigned __int8 *)MEMORY[0x83B300],
-                                 v6);
-    v7 = INIClass::ReadInt_Overwrite( /*0x66d030*/
-           (int)v18,
-           (unsigned __int8 *)MEMORY[0x839E80],
-           (unsigned __int8 *)MEMORY[0x83B2F0],
-           *((_DWORD *)this + 1541));
-    v8 = *((_DWORD *)this + 1543); /*0x66d035*/
-    *((_DWORD *)this + 1541) = v7; /*0x66d03b*/
-    HIDWORD(v15) = v8; /*0x66d04d*/
-    LODWORD(v15) = *((_DWORD *)this + 1542); /*0x66d04e*/
-    Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x66d057*/
-                         (int)v18,
-                         (unsigned __int8 *)MEMORY[0x839E80],
-                         (unsigned __int8 *)MEMORY[0x83B2E0],
-                         v15);
-    v10 = *((double *)this + 772); /*0x66d062*/
-    *((double *)this + 771) = Double_Overwrite; /*0x66d068*/
-    v11 = INIClass::ReadDouble_Overwrite( /*0x66d07e*/
-            (int)v18,
-            (unsigned __int8 *)MEMORY[0x839E80],
-            (unsigned __int8 *)MEMORY[0x83B2D0],
-            v10);
-    v12 = *((double *)this + 773); /*0x66d089*/
-    *((double *)this + 772) = v11; /*0x66d08f*/
-    *((double *)this + 773) = INIClass::ReadDouble_Overwrite( /*0x66d0aa*/
-                                (int)v18,
-                                (unsigned __int8 *)MEMORY[0x839E80],
-                                (unsigned __int8 *)MEMORY[0x83B2C0],
-                                v12);
-    Coord = INIClass::GetCoord( /*0x66d0ca*/
-              v18,
-              (int)v16,
-              (unsigned __int8 *)MEMORY[0x839E80],
-              (unsigned __int8 *)MEMORY[0x83B2B4],
-              (unsigned __int8 *)this + 6192);
-    *((_WORD *)this + 3096) = *(_WORD *)Coord; /*0x66d0d2*/
-    *((_BYTE *)this + 6194) = *(_BYTE *)(Coord + 2); /*0x66d0e1*/
-    v14 = *((_DWORD *)this + 1549); /*0x66d0ea*/
-    if ( INIClass::GetString( /*0x66d0fe*/
-           v18,
-           (unsigned __int8 *)MEMORY[0x839E80],
-           (unsigned __int8 *)MEMORY[0x83B2A4],
-           &MEMORY[0x889F64],
-           Destination,
-           128) )
-    {
-      result = WarheadTypeClass::FindOrCreate(Destination); /*0x66d10b*/
-      *((_DWORD *)this + 1549) = result; /*0x66d111*/
-    }
-    else
-    {
-      result = v14; /*0x66d124*/
-      *((_DWORD *)this + 1549) = v14; /*0x66d127*/
-    }
-    LOBYTE(result) = 1; /*0x66d118*/
-  }
-  else
-  {
-    LOBYTE(result) = 0; /*0x66d13b*/
-  }
-  return result; /*0x66d117*/
+      result = INIClass::BinarySearchSection((int)v18, (unsigned __int8 *)DataGlobal_839E80);
+      if ( result )
+      {
+        this->q1804 = INIClass::ReadInt_Overwrite(
+                                     (int)v18,
+                                     (unsigned __int8 *)DataGlobal_839E80,
+                                     (unsigned __int8 *)DataGlobal_83B330,
+                                     this->q1804);
+        Int_Overwrite = INIClass::ReadInt_Overwrite(
+                          (int)v18,
+                          (unsigned __int8 *)DataGlobal_839E80,
+                          (unsigned __int8 *)DataGlobal_83B31C,
+                          this->q1808);
+        v4 = this->OreTwinkleChance;
+        this->q1808 = Int_Overwrite;
+        v5 = INIClass::ReadInt_Overwrite(
+               (int)v18,
+               (unsigned __int8 *)DataGlobal_839E80,
+               (unsigned __int8 *)DataGlobal_83B310,
+               v4);
+        v6 = this->OreTwinkle;
+        this->OreTwinkleChance = v5;
+        this->OreTwinkle = INIClass::ReadInt_Overwrite(
+                                     (int)v18,
+                                     (unsigned __int8 *)DataGlobal_839E80,
+                                     (unsigned __int8 *)DataGlobal_83B300,
+                                     v6);
+        v7 = INIClass::ReadInt_Overwrite(
+               (int)v18,
+               (unsigned __int8 *)DataGlobal_839E80,
+               (unsigned __int8 *)DataGlobal_83B2F0,
+               this->ColorAdd);
+        v8 = this->q181C;
+        this->ColorAdd = v7;
+        HIDWORD(v15) = v8;
+        LODWORD(v15) = this->q1818;
+        Double_Overwrite = INIClass::ReadDouble_Overwrite(
+                             (int)v18,
+                             (unsigned __int8 *)DataGlobal_839E80,
+                             (unsigned __int8 *)DataGlobal_83B2E0,
+                             v15);
+        v10 = *((double *)this + 772);
+        *((double *)this + 771) = Double_Overwrite;
+        v11 = INIClass::ReadDouble_Overwrite(
+                (int)v18,
+                (unsigned __int8 *)DataGlobal_839E80,
+                (unsigned __int8 *)DataGlobal_83B2D0,
+                v10);
+        v12 = *((double *)this + 773);
+        *((double *)this + 772) = v11;
+        *((double *)this + 773) = INIClass::ReadDouble_Overwrite(
+                                    (int)v18,
+                                    (unsigned __int8 *)DataGlobal_839E80,
+                                    (unsigned __int8 *)DataGlobal_83B2C0,
+                                    v12);
+        Coord = INIClass::GetCoord(
+                  v18,
+                  (int)v16,
+                  (unsigned __int8 *)DataGlobal_839E80,
+                  (unsigned __int8 *)DataGlobal_83B2B4,
+                  (unsigned __int8 *)this + 6192);
+        this->q1830 = *(_WORD *)Coord;
+        this->q1832 = *(_BYTE *)(Coord + 2);
+        v14 = this->q1834;
+        if ( INIClass::GetString(
+               v18,
+               (unsigned __int8 *)DataGlobal_839E80,
+               (unsigned __int8 *)DataGlobal_83B2A4,
+               &g_INI_DefaultBuffer,
+               Destination,
+               128) )
+        {
+          result = WarheadTypeClass::FindOrCreate(Destination);
+          this->q1834 = result;
+        }
+        else
+        {
+          result = v14;
+          this->q1834 = v14;
+        }
+        LOBYTE(result) = 1;
+      }
+      else
+      {
+        LOBYTE(result) = 0;
+      }
+      return result;
 }
 } }
 // 0x66D530
 namespace gamemd { int RulesClass::LoadFromINI() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RulesClass_LoadFromINI(#381 *this)
 {
-  __int64 v1; // st7
-  int result; // eax
-  char *i; // eax
-  int v5; // ebx
-  int v6; // eax
-  int BarrelExplode; // ebx
-  int v8; // eax
-  char *j; // eax
-  float RadarEventSpeed; // ebx
-  float v11; // eax
-  int InfantryHeadPop; // ebx
-  int v13; // eax
-  int FlamingInfantry; // ebx
-  int v15; // eax
-  char *k; // eax
-  char *m; // eax
-  char *n; // eax
-  char *ii; // eax
-  int WeatherConBoltExplosion; // ebx
-  int v21; // eax
-  int DominatorWarhead; // ebx
-  int v23; // eax
-  char *jj; // eax
-  char *kk; // eax
-  int WeaponNullifyAnim; // ebx
-  int v27; // eax
-  int AtmosphereEntry; // ebx
-  int v29; // eax
-  int v30; // ebx
-  int v31; // eax
-  int v32; // ebx
-  int v33; // eax
-  int Int_Overwrite; // eax
-  int v35; // ebx
-  int v36; // eax
-  int v37; // ebx
-  int v38; // eax
-  int v39; // ebx
-  int v40; // eax
-  int v41; // ebx
-  int v42; // eax
-  int v43; // ebx
-  int v44; // eax
-  int v45; // ebx
-  int v46; // eax
-  int v47; // ebx
-  int v48; // eax
-  int v49; // ebx
-  int v50; // eax
-  int v51; // ebx
-  int v52; // eax
-  int v53; // ebx
-  int v54; // eax
-  int v55; // ebx
-  int v56; // eax
-  int InfantryNuked; // ebx
-  int v58; // eax
-  int InfantryVirus; // ebx
-  int v60; // eax
-  int InfantryBrute; // ebx
-  int v62; // eax
-  int InfantryMutate; // ebx
-  int v64; // eax
-  int Behind; // ebx
-  int v66; // eax
-  int v67; // ebx
-  int v68; // eax
-  int v69; // ebx
-  int v70; // eax
-  int AITriggerSuccessWeightDelta; // ebx
-  int v72; // eax
-  float FallingDamageMultiplier; // ebx
-  float v74; // eax
-  int Technician; // ebx
-  int v76; // eax
-  int v77; // ebx
-  int v78; // eax
-  int v79; // ebx
-  int v80; // eax
-  int v81; // ebx
-  int v82; // eax
-  int LargeVisceroid; // ebx
-  int Alt; // eax
-  int SmallVisceroid; // ebx
-  int v86; // eax
-  int TiberiumHeal; // eax
-  _DWORD *v88; // ebx
-  int v89; // eax
-  _DWORD *v90; // ebx
-  int v91; // eax
-  _DWORD *v92; // ebx
-  int v93; // eax
-  _DWORD *v94; // ebx
-  int v95; // eax
-  _DWORD *v96; // ebx
-  int v97; // eax
-  _DWORD *v98; // ebx
-  int v99; // eax
-  int v100; // ecx
-  double v101; // st7
-  double v102; // st7
-  double v103; // st7
-  double v104; // st7
-  int v105; // ecx
-  int v106; // ecx
-  int v107; // eax
-  int VeteranRatio_high; // ebx
-  int v109; // eax
-  int VeteranSpeed; // eax
-  int VeteranArmor; // eax
-  int TunnelSpeed; // eax
-  int GameForming; // eax
-  int VeteranCap; // eax
-  int CloakSound; // edx
-  int GameClosed; // edx
-  int SystemError; // edx
-  int ShellButtonSlideSound; // edx
-  int WallBuildSpeedCoefficient; // edx
-  int ChargeToDrainRatio; // edx
-  int TrackedUphill; // edx
-  int TrackedDownhill; // edx
-  int WheeledUphill; // edx
-  char *mm; // eax
-  int v125; // eax
-  int RadarOn; // ebx
-  int v127; // eax
-  int RadarOff; // ebx
-  int v129; // eax
-  int TeslaCharge; // edx
-  int GenericClick; // edx
-  int BuildingDamageSound; // edx
-  int PlayerJoined; // ecx
-  int GDIPowerPlant; // ecx
-  int NodAdvancedPower; // ecx
-  int v136; // ecx
-  int v137; // ecx
-  int v138; // eax
-  char *nn; // eax
-  int v140; // ebx
-  int v141; // eax
-  int v142; // ebx
-  int v143; // eax
-  int v144; // ebx
-  int v145; // eax
-  int v146; // ebx
-  int v147; // eax
-  int v148; // ebx
-  int v149; // eax
-  char *i1; // eax
-  int v151; // ebx
-  int v152; // eax
-  int v153; // ebx
-  int v154; // eax
-  int v155; // ebx
-  int v156; // eax
-  int v157; // ebx
-  int v158; // eax
-  int v159; // ebx
-  int v160; // eax
-  char *i2; // eax
-  char *i3; // eax
-  int v163; // eax
-  int *InfantryTypeList; // eax
-  int v165; // eax
-  int *BuildingTypeList; // eax
-  int v167; // ebx
-  int v168; // ebx
-  double v169; // st7
-  double v170; // st7
-  int *IntList; // eax
-  int *v172; // eax
-  int v173; // edx
-  int *v174; // eax
-  int *v175; // eax
-  int *v176; // eax
-  int *v177; // eax
-  double v178; // st7
-  int *v179; // eax
-  int *v180; // eax
-  int *v181; // eax
-  int *v182; // eax
-  int *v183; // eax
-  int *v184; // eax
-  int *v185; // eax
-  int *v186; // eax
-  int *v187; // eax
-  int *v188; // eax
-  int *v189; // eax
-  double v190; // st7
-  int *v191; // eax
-  int *v192; // eax
-  int *v193; // eax
-  int *v194; // eax
-  int *v195; // eax
-  int *v196; // eax
-  int *v197; // eax
-  int *v198; // eax
-  int *v199; // eax
-  int *v200; // eax
-  int *v201; // eax
-  int *v202; // eax
-  int *v203; // eax
-  int *v204; // eax
-  int *v205; // eax
-  int *v206; // eax
-  int *v207; // eax
-  int *v208; // eax
-  int *v209; // eax
-  int *v210; // eax
-  int *v211; // eax
-  int *v212; // eax
-  int *v213; // eax
-  int *v214; // eax
-  int *v215; // eax
-  int *v216; // eax
-  int *v217; // eax
-  int BerserkColor; // eax
-  float DirectRockingCoefficient; // eax
-  int v220; // eax
-  int v221; // edx
-  int v222; // ecx
-  int v223; // ecx
-  int v224; // ecx
-  int v225; // ecx
-  int v226; // ecx
-  int v227; // eax
-  int v228; // eax
-  int v229; // eax
-  int v230; // eax
-  int v231; // eax
-  int v232; // ecx
-  int v233; // ecx
-  int v234; // ecx
-  double ZoomInFactor_high; // st7
-  double MinLowPowerProductionSpeed; // st7
-  double MaxLowPowerProductionSpeed; // st7
-  double LowPowerPenaltyModifier; // st7
-  double MultipleFactory_low; // st7
-  double v240; // st7
-  double v241; // st7
-  double v242; // st7
-  double v243; // st7
-  double DropPodAngle_low; // st7
-  double v245; // st7
-  double v246; // st7
-  double v247; // st7
-  double v248; // st7
-  double HoverAcceleration_high; // st7
-  double v250; // st7
-  int v251; // eax
-  int v252; // eax
-  int v253; // eax
-  int v254; // ecx
-  int v255; // ecx
-  int BridgeVoxelMax; // ecx
-  int TireVoxelDebris; // ecx
-  int AITriggerFailureWeightDelta; // ecx
-  int AITriggerTrackRecordCoefficient; // ecx
-  int VeinholeMonsterStrength; // ecx
-  double v261; // st7
-  double v262; // st7
-  int *v263; // eax
-  int *v264; // eax
-  int *v265; // eax
-  double RadarEventRotationSpeed; // st7
-  int SavourDelay; // eax
-  int Players; // eax
-  int BaseDefenseDelay; // eax
-  int SuspendPriority; // eax
-  int SuspendDelay; // eax
-  int SurvivorRate; // eax
-  int AlliedSurvivorDivisor; // eax
-  int ThirdSurvivorDivisor; // eax
-  int ReloadRate; // eax
-  int AutocreateTime; // eax
-  int BuildupTime; // eax
-  int v278; // eax
-  double v279; // st7
-  double v280; // st7
-  double v281; // st7
-  void **v282; // [esp-14h] [ebp-ECh] BYREF
-  void *v283; // [esp-10h] [ebp-E8h]
-  int v284; // [esp-Ch] [ebp-E4h]
-  int v285; // [esp-8h] [ebp-E0h]
-  int v286; // [esp-4h] [ebp-DCh]
-  int v287[5]; // [esp+0h] [ebp-D8h]
-  int v288; // [esp+18h] [ebp-C0h] BYREF
-  void *v289; // [esp+1Ch] [ebp-BCh]
-  char v290; // [esp+25h] [ebp-B3h]
-  __int64 v291; // [esp+34h] [ebp-A4h] BYREF
-  void **v292; // [esp+3Ch] [ebp-9Ch] BYREF
-  void *Block; // [esp+40h] [ebp-98h]
-  char v294; // [esp+49h] [ebp-8Fh]
-  int v295; // [esp+4Ch] [ebp-8Ch]
-  float v296; // [esp+50h] [ebp-88h]
-  int v297; // [esp+54h] [ebp-84h]
-  char String[128]; // [esp+58h] [ebp-80h] BYREF
-  unsigned __int8 ***v299; // [esp+E0h] [ebp+8h]
+      int result;
+      AbstractClass *i;
+      AnimTypeClass *v4;
+      AnimTypeClass *v5;
+      int MaxWaypointPathLength;
+      AnimTypeClass *v7;
+      ObjectClass *j;
+      ParticleSystemTypeClass *BarrelParticle;
+      ParticleSystemTypeClass *v10;
+      AnimTypeClass *InfantryMutate;
+      AnimTypeClass *v12;
+      AnimTypeClass *InfantryBrute;
+      AnimTypeClass *v14;
+      AbstractClass *k;
+      AbstractClass *m;
+      AbstractClass *n;
+      AbstractClass *ii;
+      AnimTypeClass *v19;
+      AnimTypeClass *v20;
+      AnimTypeClass *v21;
+      AnimTypeClass *v22;
+      AbstractClass *jj;
+      AbstractClass *kk;
+      AnimTypeClass *v25;
+      AnimTypeClass *v26;
+      int v27;
+      int v28;
+      AnimTypeClass *v29;
+      AnimTypeClass *v30;
+      AnimTypeClass *v31;
+      AnimTypeClass *v32;
+      int Int_Overwrite;
+      AnimTypeClass *v34;
+      AnimTypeClass *v35;
+      AnimTypeClass *v36;
+      AnimTypeClass *v37;
+      AnimTypeClass *v38;
+      AnimTypeClass *v39;
+      AnimTypeClass *v40;
+      AnimTypeClass *v41;
+      AnimTypeClass *v42;
+      AnimTypeClass *v43;
+      AnimTypeClass *v44;
+      AnimTypeClass *v45;
+      AnimTypeClass *v46;
+      AnimTypeClass *v47;
+      AnimTypeClass *v48;
+      AnimTypeClass *v49;
+      AnimTypeClass *v50;
+      AnimTypeClass *v51;
+      AnimTypeClass *v52;
+      AnimTypeClass *v53;
+      AnimTypeClass *v54;
+      AnimTypeClass *v55;
+      AnimTypeClass *Behind;
+      AnimTypeClass *v57;
+      AnimTypeClass *v58;
+      AnimTypeClass *v59;
+      AnimTypeClass *v60;
+      AnimTypeClass *v61;
+      AnimTypeClass *v62;
+      AnimTypeClass *v63;
+      AnimTypeClass *v64;
+      AnimTypeClass *v65;
+      AnimTypeClass *v66;
+      AnimTypeClass *v67;
+      AnimTypeClass *v68;
+      AnimTypeClass *v69;
+      AnimTypeClass *v70;
+      AnimTypeClass *v71;
+      int v72;
+      AnimTypeClass *v73;
+      int v74;
+      AnimTypeClass *v75;
+      int v76;
+      AnimTypeClass *v77;
+      AnimTypeClass *v78;
+      AnimTypeClass *v79;
+      AnimTypeClass *v80;
+      AnimTypeClass *v81;
+      UnitTypeClass *LargeVisceroid;
+      UnitTypeClass *Alt;
+      UnitTypeClass *SmallVisceroid;
+      UnitTypeClass *v85;
+      INIClass *aP3;
+      CCINIClass *v87;
+      _DWORD *vtable0;
+      CCINIClass *v89;
+      _DWORD *v90;
+      CCINIClass *v91;
+      _DWORD *v92;
+      CCINIClass *v93;
+      _DWORD *v94;
+      CCINIClass *v95;
+      _DWORD *v96;
+      CCINIClass *v97;
+      _DWORD *v98;
+      INIClass *v99;
+      INIClass *v100;
+      INIClass *v101;
+      INIClass *v102;
+      WeaponTypeClass *DropPodWeapon;
+      WeaponTypeClass *v104;
+      INIClass *v105;
+      double Double_Overwrite;
+      INIClass *v107;
+      INIClass *v108;
+      INIClass *v109;
+      INIClass *v110;
+      INIClass *v111;
+      INIClass *v112;
+      INIClass *v113;
+      INIClass *GameForming;
+      INIClass *PlayerJoined;
+      INIClass *Construction;
+      INIClass *v117;
+      INIClass *v118;
+      INIClass *v119;
+      ObjectClass *mm;
+      int v121;
+      int v122;
+      VoxelAnimTypeClass *v123;
+      int v124;
+      VoxelAnimTypeClass *v125;
+      INIClass *v126;
+      INIClass *v127;
+      INIClass *v128;
+      INIClass *v129;
+      INIClass *WindDirection;
+      INIClass *FlightLevel;
+      INIClass *NoParachuteMaxFallRate;
+      INIClass *GDIGateOne;
+      int v134;
+      char *nn;
+      BuildingTypeClass *FlameDamage;
+      BuildingTypeClass *v137;
+      BuildingTypeClass *FlameDamage2;
+      BuildingTypeClass *v139;
+      BuildingTypeClass *NukeWarhead;
+      BuildingTypeClass *v141;
+      BuildingTypeClass *NukeProjectile;
+      BuildingTypeClass *v143;
+      BuildingTypeClass *NukeDown;
+      BuildingTypeClass *v145;
+      char *i1;
+      BuildingTypeClass *V3EliteWarhead;
+      BuildingTypeClass *v148;
+      BuildingTypeClass *DMislEliteWarhead;
+      BuildingTypeClass *v150;
+      BuildingTypeClass *CMislEliteWarhead;
+      BuildingTypeClass *v152;
+      BuildingTypeClass *IvanWarhead;
+      BuildingTypeClass *v154;
+      UnitTypeClass *v155;
+      UnitTypeClass *v156;
+      INIClass *i2;
+      INIClass *i3;
+      int *CountryName;
+      InfantryTypeClass *INIClassInfantryTypeList;
+      int *BuildingTypes;
+      VectorClass *BuildingTypeList;
+      VectorClass *Warheads;
+      char *v164;
+      VectorClass *IntList;
+      VectorClass *v166;
+      INIClass *v167;
+      VectorClass *v168;
+      VectorClass *v169;
+      VectorClass *v170;
+      VectorClass *v171;
+      VectorClass *v172;
+      VectorClass *v173;
+      VectorClass *v174;
+      VectorClass *v175;
+      VectorClass *v176;
+      VectorClass *v177;
+      VectorClass *v178;
+      VectorClass *v179;
+      VectorClass *v180;
+      VectorClass *v181;
+      VectorClass *v182;
+      VectorClass *v183;
+      VectorClass *v184;
+      VectorClass *v185;
+      VectorClass *v186;
+      VectorClass *v187;
+      InfantryTypeClass *v188;
+      VectorClass *v189;
+      InfantryTypeClass *v190;
+      VectorClass *v191;
+      InfantryTypeClass *v192;
+      VectorClass *v193;
+      InfantryTypeClass *v194;
+      VectorClass *v195;
+      InfantryTypeClass *v196;
+      VectorClass *v197;
+      VectorClass *v198;
+      VectorClass *v199;
+      VectorClass *v200;
+      VectorClass *v201;
+      VectorClass *v202;
+      VectorClass *v203;
+      VectorClass *v204;
+      VectorClass *v205;
+      VectorClass *v206;
+      VectorClass *v207;
+      VectorClass *v208;
+      VectorClass *v209;
+      INIClass *v210;
+      INIClass *v211;
+      INIClass *v212;
+      INIClass *v213;
+      INIClass *v214;
+      INIClass *v215;
+      INIClass *v216;
+      INIClass *v217;
+      INIClass *v218;
+      INIClass *LightningDamage;
+      INIClass *v220;
+      INIClass *v221;
+      INIClass *v222;
+      INIClass *v223;
+      INIClass *v224;
+      INIClass *CloseEnough;
+      INIClass *RelaxedStray;
+      double v227;
+      double v228;
+      double v229;
+      double v230;
+      INIClass *WallTower;
+      INIClass *v232;
+      INIClass *v233;
+      INIClass *v234;
+      INIClass *v235;
+      INIClass *v236;
+      INIClass *v237;
+      INIClass *v238;
+      INIClass *v239;
+      INIClass *v240;
+      VectorClass *v241;
+      VectorClass *v242;
+      VectorClass *v243;
+      INIClass *v244;
+      INIClass *v245;
+      INIClass *v246;
+      INIClass *v247;
+      INIClass *v248;
+      INIClass *v249;
+      INIClass *v250;
+      INIClass *v251;
+      INIClass *v252;
+      INIClass *v253;
+      INIClass *v254;
+      int *TypeList;
+      double v256;
+      VectorClass v257;
+      _BYTE v258[12];
+      INIClass *aP3_8;
+      int aP3_12;
+      VectorClass *v288;
+      void *aP0_4;
+      char aP0_13;
+      VectorClass aP0_28;
+      char aP0_49;
+      void *aP0_52;
+      void *aP0_56;
+      void *aP0_60;
+      INIClass String[2];
+      unsigned __int8 ***a0;
 
-  result = INIClass::BinarySearchSection((int)v299, (unsigned __int8 *)g_INI_Key_General);
-  if ( result )
-  {
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aDamagefiretype,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
-      v288 = (int)&TypeList<AnimTypeClass const *>::`vftable';
-      for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) )
+      result = INIClass::BinarySearchSection((int)a0, &g_INI_Key_General);
+      if ( result )
       {
-        if ( !*i )
-          break;
-        LODWORD(v291) = AnimTypeClass::FindOrCreate(i);
-        if ( (_DWORD)v291 )
-          DynamicVector::Add_Alt4(&v288, &v291);
-      }
-      TypeList::AnimTypeCopy(&v292, &v288);
-      v288 = (int)&VectorClass<AnimTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy_Alt((int)&v288);
-    }
-    else
-    {
-      TypeList::AnimTypeCopy(&v292, (_DWORD *)this + 168);
-    }
-    VectorClass::CopyDefault((_DWORD *)this + 168, &v292);
-    *((_DWORD *)this + 172) = v295;
-    *((float *)this + 173) = v296;
-    *((_DWORD *)this + 174) = v297;
-    v292 = &VectorClass<AnimTypeClass const *>::`vftable';
-    if ( Block && v294 )
-      __3_YAXPAX_Z(Block);
-    v5 = *((_DWORD *)this + 1564);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aOretwinkle,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v6 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v6 = v5;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 1564) = v6;
-    BarrelExplode = *((_DWORD *)this + 21);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aBarrelexplode,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v8 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v8 = BarrelExplode;
-    }
-    *((_DWORD *)this + 21) = v8;
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aBarreldebris,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      DynamicVector::Constructor_VoxelAnim(&v288, 0, 0);
-      v288 = (int)&TypeList<VoxelAnimTypeClass const *>::`vftable';
-      for ( j = strtok(String, Delimiter); j; j = strtok(0, Delimiter) )
-      {
-        if ( !*j )
-          break;
-        LODWORD(v291) = UnitTypeClass::FindOrCreate(j);
-        if ( (_DWORD)v291 )
-          DynamicVector::Add2(&v288, &v291);
-      }
-      TypeList::CopyVoxelAnim(&v292, &v288);
-      v288 = (int)&VectorClass<VoxelAnimTypeClass const *>::`vftable';
-      Vector::Cleanup2((int)&v288);
-    }
-    else
-    {
-      TypeList::CopyVoxelAnim(&v292, (_DWORD *)this + 22);
-    }
-    ((void (__stdcall *)(void ***))VectorClass::CopyAssign)(&v292);
-    *((_DWORD *)this + 26) = v295;
-    *((float *)this + 27) = v296;
-    *((_DWORD *)this + 28) = v297;
-    v292 = &VectorClass<VoxelAnimTypeClass const *>::`vftable';
-    if ( Block && v294 )
-      __3_YAXPAX_Z(Block);
-    RadarEventSpeed = *((float *)this + 29);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aBarrelparticle,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v11 = COERCE_FLOAT((int)BuildingTypeClass::LoadOrGet(String));
-    }
-    else
-    {
-      v11 = RadarEventSpeed;
-    }
-    *((float *)this + 29) = v11;
-    InfantryHeadPop = *((_DWORD *)this + 38);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aNuketakeoff,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v13 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v13 = InfantryHeadPop;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 38) = v13;
-    FlamingInfantry = *((_DWORD *)this + 37);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aWake,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v15 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v15 = FlamingInfantry;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 37) = v15;
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aDroppod,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
-      v288 = (int)&TypeList<AnimTypeClass const *>::`vftable';
-      for ( k = strtok(String, Delimiter); k; k = strtok(0, Delimiter) )
-      {
-        if ( !*k )
-          break;
-        LODWORD(v291) = AnimTypeClass::FindOrCreate(k);
-        if ( (_DWORD)v291 )
-          DynamicVector::Add_Alt4(&v288, &v291);
-      }
-      TypeList::AnimTypeCopy(&v292, &v288);
-      v288 = (int)&VectorClass<AnimTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy_Alt((int)&v288);
-    }
-    else
-    {
-      TypeList::AnimTypeCopy(&v292, (_DWORD *)this + 65);
-    }
-    VectorClass::CopyDefault((_DWORD *)this + 65, &v292);
-    *((_DWORD *)this + 69) = v295;
-    *((float *)this + 70) = v296;
-    *((_DWORD *)this + 71) = v297;
-    v292 = &VectorClass<AnimTypeClass const *>::`vftable';
-    if ( Block && v294 )
-      __3_YAXPAX_Z(Block);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aDeadbodies,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
-      v288 = (int)&TypeList<AnimTypeClass const *>::`vftable';
-      for ( m = strtok(String, Delimiter); m; m = strtok(0, Delimiter) )
-      {
-        if ( !*m )
-          break;
-        LODWORD(v291) = AnimTypeClass::FindOrCreate(m);
-        if ( (_DWORD)v291 )
-          DynamicVector::Add_Alt4(&v288, &v291);
-      }
-      TypeList::AnimTypeCopy(&v292, &v288);
-      v288 = (int)&VectorClass<AnimTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy_Alt((int)&v288);
-    }
-    else
-    {
-      TypeList::AnimTypeCopy(&v292, (_DWORD *)this + 72);
-    }
-    VectorClass::CopyDefault((_DWORD *)this + 72, &v292);
-    *((_DWORD *)this + 76) = v295;
-    *((float *)this + 77) = v296;
-    *((_DWORD *)this + 78) = v297;
-    v292 = &VectorClass<AnimTypeClass const *>::`vftable';
-    if ( Block && v294 )
-      __3_YAXPAX_Z(Block);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aMetallicdebris,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
-      v288 = (int)&TypeList<AnimTypeClass const *>::`vftable';
-      for ( n = strtok(String, Delimiter); n; n = strtok(0, Delimiter) )
-      {
-        if ( !*n )
-          break;
-        LODWORD(v291) = AnimTypeClass::FindOrCreate(n);
-        if ( (_DWORD)v291 )
-          DynamicVector::Add_Alt4(&v288, &v291);
-      }
-      TypeList::AnimTypeCopy(&v292, &v288);
-      v288 = (int)&VectorClass<AnimTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy_Alt((int)&v288);
-    }
-    else
-    {
-      TypeList::AnimTypeCopy(&v292, (_DWORD *)this + 79);
-    }
-    VectorClass::CopyDefault((_DWORD *)this + 79, &v292);
-    *((_DWORD *)this + 83) = v295;
-    *((float *)this + 84) = v296;
-    *((_DWORD *)this + 85) = v297;
-    v292 = &VectorClass<AnimTypeClass const *>::`vftable';
-    if ( Block && v294 )
-      __3_YAXPAX_Z(Block);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aBridgeexplosio,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
-      v288 = (int)&TypeList<AnimTypeClass const *>::`vftable';
-      for ( ii = strtok(String, Delimiter); ii; ii = strtok(0, Delimiter) )
-      {
-        if ( !*ii )
-          break;
-        LODWORD(v291) = AnimTypeClass::FindOrCreate(ii);
-        if ( (_DWORD)v291 )
-          DynamicVector::Add_Alt4(&v288, &v291);
-      }
-      TypeList::AnimTypeCopy(&v292, &v288);
-      v288 = (int)&VectorClass<AnimTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy_Alt((int)&v288);
-    }
-    else
-    {
-      TypeList::AnimTypeCopy(&v292, (_DWORD *)this + 86);
-    }
-    VectorClass::CopyDefault((_DWORD *)this + 86, &v292);
-    *((_DWORD *)this + 90) = v295;
-    *((float *)this + 91) = v296;
-    *((_DWORD *)this + 92) = v297;
-    v292 = &VectorClass<AnimTypeClass const *>::`vftable';
-    if ( Block && v294 )
-      __3_YAXPAX_Z(Block);
-    WeatherConBoltExplosion = *((_DWORD *)this + 166);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aIonblast,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v21 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v21 = WeatherConBoltExplosion;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 166) = v21;
-    DominatorWarhead = *((_DWORD *)this + 167);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aIonbeam,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v23 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v23 = DominatorWarhead;
-    }
-    *((_DWORD *)this + 167) = v23;
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aWeatherconclou,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
-      v288 = (int)&TypeList<AnimTypeClass const *>::`vftable';
-      for ( jj = strtok(String, Delimiter); jj; jj = strtok(0, Delimiter) )
-      {
-        if ( !*jj )
-          break;
-        LODWORD(v291) = AnimTypeClass::FindOrCreate(jj);
-        if ( (_DWORD)v291 )
-          DynamicVector::Add_Alt4(&v288, &v291);
-      }
-      TypeList::AnimTypeCopy(&v292, &v288);
-      v288 = (int)&VectorClass<AnimTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy_Alt((int)&v288);
-    }
-    else
-    {
-      TypeList::AnimTypeCopy(&v292, (_DWORD *)this + 175);
-    }
-    VectorClass::CopyDefault((_DWORD *)this + 175, &v292);
-    *((_DWORD *)this + 179) = v295;
-    *((float *)this + 180) = v296;
-    *((_DWORD *)this + 181) = v297;
-    v292 = &VectorClass<AnimTypeClass const *>::`vftable';
-    if ( Block && v294 )
-      __3_YAXPAX_Z(Block);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aWeatherconbolt,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
-      v288 = (int)&TypeList<AnimTypeClass const *>::`vftable';
-      for ( kk = strtok(String, Delimiter); kk; kk = strtok(0, Delimiter) )
-      {
-        if ( !*kk )
-          break;
-        LODWORD(v291) = AnimTypeClass::FindOrCreate(kk);
-        if ( (_DWORD)v291 )
-          DynamicVector::Add_Alt4(&v288, &v291);
-      }
-      TypeList::AnimTypeCopy(&v292, &v288);
-      v288 = (int)&VectorClass<AnimTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy_Alt((int)&v288);
-    }
-    else
-    {
-      TypeList::AnimTypeCopy(&v292, (_DWORD *)this + 182);
-    }
-    VectorClass::CopyDefault((_DWORD *)this + 182, &v292);
-    *((_DWORD *)this + 186) = v295;
-    *((float *)this + 187) = v296;
-    *((_DWORD *)this + 188) = v297;
-    v292 = &VectorClass<AnimTypeClass const *>::`vftable';
-    if ( Block && v294 )
-      __3_YAXPAX_Z(Block);
-    WeaponNullifyAnim = *((_DWORD *)this + 189);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aWeatherconbolt_0,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v27 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v27 = WeaponNullifyAnim;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 189) = v27;
-    AtmosphereEntry = *((_DWORD *)this + 190);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aDominatorwarhe,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v29 = WarheadTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v29 = AtmosphereEntry;
-    }
-    *((_DWORD *)this + 190) = v29;
-    v30 = *((_DWORD *)this + 191);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aDominatorfirst,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v31 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v31 = v30;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 191) = v31;
-    v32 = *((_DWORD *)this + 192);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aDominatorsecon,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v33 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v33 = v32;
-    }
-    *((_DWORD *)this + 192) = v33;
-    *((_DWORD *)this + 193) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aDominatorfirea,
-                                *((_DWORD *)this + 193));
-    *((_DWORD *)this + 194) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aDominatorcaptu,
-                                *((_DWORD *)this + 194));
-    Int_Overwrite = ((int (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                      g_INI_Key_General,
-                      aDominatordamag,
-                      *((_DWORD *)this + 195));
-    v287[1] = 128;
-    *((_DWORD *)this + 195) = Int_Overwrite;
-    v35 = *((_DWORD *)this + 204);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aChronoplacemen,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v36 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v36 = v35;
-    }
-    *((_DWORD *)this + 204) = v36;
-    v37 = *((_DWORD *)this + 205);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aChronobeam,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v38 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v38 = v37;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 205) = v38;
-    v39 = *((_DWORD *)this + 202);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aChronoblast,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v40 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v40 = v39;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 202) = v40;
-    v41 = *((_DWORD *)this + 203);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aChronoblastdes,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v42 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v42 = v41;
-    }
-    *((_DWORD *)this + 203) = v42;
-    v43 = *((_DWORD *)this + 206);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aWarpin,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v44 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v44 = v43;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 206) = v44;
-    v45 = *((_DWORD *)this + 207);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aWarpout,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v46 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v46 = v45;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 207) = v46;
-    v47 = *((_DWORD *)this + 208);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aWarpaway,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v48 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v48 = v47;
-    }
-    *((_DWORD *)this + 208) = v48;
-    v49 = *((_DWORD *)this + 210);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aIroncurtaininv,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v50 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v50 = v49;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 210) = v50;
-    v51 = *((_DWORD *)this + 211);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aForceshieldinv,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v52 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v52 = v51;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 211) = v52;
-    v53 = *((_DWORD *)this + 212);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aWeaponnullifya,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v54 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v54 = v53;
-    }
-    *((_DWORD *)this + 212) = v54;
-    v55 = *((_DWORD *)this + 209);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aChronosparkle1,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v56 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v56 = v55;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 209) = v56;
-    InfantryNuked = *((_DWORD *)this + 39);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aInfantryexplod,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v58 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v58 = InfantryNuked;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 39) = v58;
-    InfantryVirus = *((_DWORD *)this + 40);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aFlaminginfantr,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v60 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v60 = InfantryVirus;
-    }
-    *((_DWORD *)this + 40) = v60;
-    InfantryBrute = *((_DWORD *)this + 41);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aInfantryheadpo,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v62 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v62 = InfantryBrute;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 41) = v62;
-    InfantryMutate = *((_DWORD *)this + 42);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aInfantrynuked,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v64 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v64 = InfantryMutate;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 42) = v64;
-    Behind = *((_DWORD *)this + 43);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aInfantryvirus,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v66 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v66 = Behind;
-    }
-    *((_DWORD *)this + 43) = v66;
-    v67 = *((_DWORD *)this + 44);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aInfantrybrute,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v68 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v68 = v67;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 44) = v68;
-    v69 = *((_DWORD *)this + 45);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aInfantrymutate,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v70 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v70 = v69;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 45) = v70;
-    AITriggerSuccessWeightDelta = *((_DWORD *)this + 46);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aBehind,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v72 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v72 = AITriggerSuccessWeightDelta;
-    }
-    *((_DWORD *)this + 46) = v72;
-    FallingDamageMultiplier = *((float *)this + 749);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aMoveflash,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v74 = COERCE_FLOAT((int)AnimTypeClass::FindOrCreate(String));
-    }
-    else
-    {
-      v74 = FallingDamageMultiplier;
-    }
-    v287[1] = 128;
-    *((float *)this + 749) = v74;
-    Technician = *((_DWORD *)this + 751);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aParachute,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v76 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v76 = Technician;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 751) = v76;
-    v77 = *((_DWORD *)this + 750);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aBombparachute,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v78 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v78 = v77;
-    }
-    *((_DWORD *)this + 750) = v78;
-    v79 = *((_DWORD *)this + 1311);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aDropzoneanim,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v80 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v80 = v79;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 1311) = v80;
-    v81 = *((_DWORD *)this + 1533);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aEmpulsesparkle,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v82 = (int)AnimTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v82 = v81;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 1533) = v82;
-    LargeVisceroid = *((_DWORD *)this + 4);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aLargevisceroid,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      Alt = BuildingTypeClass::FindOrCreateAlt(String);
-    }
-    else
-    {
-      Alt = LargeVisceroid;
-    }
-    *((_DWORD *)this + 4) = Alt;
-    SmallVisceroid = *((_DWORD *)this + 5);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aSmallvisceroid,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v86 = BuildingTypeClass::FindOrCreateAlt(String);
-    }
-    else
-    {
-      v86 = SmallVisceroid;
-    }
-    *((_DWORD *)this + 5) = v86;
-    TiberiumHeal = *((_DWORD *)this + 10);
-    v287[1] = *((_DWORD *)this + 11);
-    v287[0] = TiberiumHeal;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aTiberiumheal,
-      *(double *)v287);
-    *((double *)this + 5) = *(double *)&v1;
-    *((_DWORD *)this + 12) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                               g_INI_Key_General,
-                               aSelfhealinfant,
-                               *((_DWORD *)this + 12));
-    *((_DWORD *)this + 13) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                               g_INI_Key_General,
-                               aSelfhealinfant_0,
-                               *((_DWORD *)this + 13));
-    *((_DWORD *)this + 14) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                               g_INI_Key_General,
-                               aSelfhealunitfr,
-                               *((_DWORD *)this + 14));
-    *((_DWORD *)this + 15) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                               g_INI_Key_General,
-                               aSelfhealunitam,
-                               *((_DWORD *)this + 15));
-    LODWORD(v291) = (char *)this + 856;
-    IntVector::Copy(&v282, (_DWORD *)this + 214);
-    v88 = LoadBuildingTypeClassPrerequisites(
-            &v288,
-            v299,
-            (unsigned __int8 *)g_INI_Key_General,
-            (unsigned __int8 *)aPrerequisitepo,
-            &TypeList<int>::`vftable',
-            (int)v283,
-            v284,
-            v285,
-            *(_DWORD *)(v291 + 16),
-            *(_DWORD *)(v291 + 20),
-            v287[1]);
-    LODWORD(v291) = (char *)this + 856;
-    TypeList::Copy((_DWORD *)this + 214, v88);
-    v89 = v291;
-    *(_DWORD *)(v291 + 16) = v88[4];
-    *(_DWORD *)(v89 + 20) = v88[5];
-    *(_DWORD *)(v89 + 24) = v88[6];
-    v288 = (int)&VectorClass<int>::`vftable';
-    if ( v289 && v290 )
-      __3_YAXPAX_Z(v289);
-    IntVector::Copy(&v282, (_DWORD *)this + 221);
-    v90 = LoadBuildingTypeClassPrerequisites(
-            &v288,
-            v299,
-            (unsigned __int8 *)g_INI_Key_General,
-            (unsigned __int8 *)aPrerequisitefa,
-            &TypeList<int>::`vftable',
-            (int)v283,
-            v284,
-            v285,
-            *((_DWORD *)this + 225),
-            *((_DWORD *)this + 226),
-            v287[1]);
-    LODWORD(v291) = (char *)this + 884;
-    TypeList::Copy((_DWORD *)this + 221, v90);
-    v91 = v291;
-    *(_DWORD *)(v291 + 16) = v90[4];
-    *(_DWORD *)(v91 + 20) = v90[5];
-    *(_DWORD *)(v91 + 24) = v90[6];
-    v288 = (int)&VectorClass<int>::`vftable';
-    if ( v289 && v290 )
-      __3_YAXPAX_Z(v289);
-    IntVector::Copy(&v282, (_DWORD *)this + 228);
-    v92 = LoadBuildingTypeClassPrerequisites(
-            &v288,
-            v299,
-            (unsigned __int8 *)g_INI_Key_General,
-            (unsigned __int8 *)aPrerequisiteba,
-            &TypeList<int>::`vftable',
-            (int)v283,
-            v284,
-            v285,
-            *((_DWORD *)this + 232),
-            *((_DWORD *)this + 233),
-            v287[1]);
-    LODWORD(v291) = (char *)this + 912;
-    TypeList::Copy((_DWORD *)this + 228, v92);
-    v93 = v291;
-    *(_DWORD *)(v291 + 16) = v92[4];
-    *(_DWORD *)(v93 + 20) = v92[5];
-    *(_DWORD *)(v93 + 24) = v92[6];
-    v288 = (int)&VectorClass<int>::`vftable';
-    if ( v289 && v290 )
-      __3_YAXPAX_Z(v289);
-    IntVector::Copy(&v282, (_DWORD *)this + 235);
-    v94 = LoadBuildingTypeClassPrerequisites(
-            &v288,
-            v299,
-            (unsigned __int8 *)g_INI_Key_General,
-            (unsigned __int8 *)aPrerequisitera,
-            &TypeList<int>::`vftable',
-            (int)v283,
-            v284,
-            v285,
-            *((_DWORD *)this + 239),
-            *((_DWORD *)this + 240),
-            v287[1]);
-    LODWORD(v291) = (char *)this + 940;
-    TypeList::Copy((_DWORD *)this + 235, v94);
-    v95 = v291;
-    *(_DWORD *)(v291 + 16) = v94[4];
-    *(_DWORD *)(v95 + 20) = v94[5];
-    *(_DWORD *)(v95 + 24) = v94[6];
-    v288 = (int)&VectorClass<int>::`vftable';
-    if ( v289 && v290 )
-      __3_YAXPAX_Z(v289);
-    IntVector::Copy(&v282, (_DWORD *)this + 242);
-    v96 = LoadBuildingTypeClassPrerequisites(
-            &v288,
-            v299,
-            (unsigned __int8 *)g_INI_Key_General,
-            (unsigned __int8 *)aPrerequisitete,
-            &TypeList<int>::`vftable',
-            (int)v283,
-            v284,
-            v285,
-            *((_DWORD *)this + 246),
-            *((_DWORD *)this + 247),
-            v287[1]);
-    LODWORD(v291) = (char *)this + 968;
-    TypeList::Copy((_DWORD *)this + 242, v96);
-    v97 = v291;
-    *(_DWORD *)(v291 + 16) = v96[4];
-    *(_DWORD *)(v97 + 20) = v96[5];
-    *(_DWORD *)(v97 + 24) = v96[6];
-    v288 = (int)&VectorClass<int>::`vftable';
-    if ( v289 && v290 )
-      __3_YAXPAX_Z(v289);
-    IntVector::Copy(&v282, (_DWORD *)this + 249);
-    v98 = LoadBuildingTypeClassPrerequisites(
-            &v288,
-            v299,
-            (unsigned __int8 *)g_INI_Key_General,
-            (unsigned __int8 *)aPrerequisitepr,
-            &TypeList<int>::`vftable',
-            (int)v283,
-            v284,
-            v285,
-            *((_DWORD *)this + 253),
-            *((_DWORD *)this + 254),
-            v287[1]);
-    LODWORD(v291) = (char *)this + 996;
-    TypeList::Copy((_DWORD *)this + 249, v98);
-    v99 = v291;
-    *(_DWORD *)(v291 + 16) = v98[4];
-    *(_DWORD *)(v99 + 20) = v98[5];
-    *(_DWORD *)(v99 + 24) = v98[6];
-    v288 = (int)&VectorClass<int>::`vftable';
-    if ( v289 && v290 )
-      __3_YAXPAX_Z(v289);
-    v100 = *((_DWORD *)this + 340);
-    v287[1] = *((_DWORD *)this + 341);
-    v287[0] = v100;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aZoominfactor,
-      *(double *)v287);
-    *((double *)this + 170) = *(double *)&v1;
-    *((_BYTE *)this + 6126) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aRevealbyheight,
-                                *((_BYTE *)this + 6126));
-    *((_BYTE *)this + 6127) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aAllowshroudeds,
-                                *((_BYTE *)this + 6127));
-    *((_DWORD *)this + 61) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                               g_INI_Key_General,
-                               aAircraftfogrev,
-                               *((_DWORD *)this + 61));
-    v101 = *((float *)this + 348);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aMinlowpowerpro,
-      v101);
-    *((float *)this + 348) = v101;
-    v102 = *((float *)this + 349);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aMaxlowpowerpro,
-      v102);
-    *((float *)this + 349) = v102;
-    v103 = *((float *)this + 350);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aLowpowerpenalt,
-      v103);
-    *((float *)this + 350) = v103;
-    v104 = *((float *)this + 351);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aMultiplefactor,
-      v104);
-    *((float *)this + 351) = v104;
-    *((_DWORD *)this + 352) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aMaximumcheerra,
-                                *((_DWORD *)this + 352));
-    v105 = *((_DWORD *)this + 354);
-    v287[1] = *((_DWORD *)this + 355);
-    v287[0] = v105;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aTreeflammabili,
-      *(double *)v287);
-    *((double *)this + 177) = v104;
-    v106 = *((_DWORD *)this + 358);
-    v287[1] = *((_DWORD *)this + 359);
-    v287[0] = v106;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aMissilerotvar,
-      *(double *)v287);
-    *((double *)this + 179) = v104;
-    *((_DWORD *)this + 360) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aMissilesafetya,
-                                *((_DWORD *)this + 360));
-    v107 = *((_DWORD *)this + 356);
-    v287[1] = *((_DWORD *)this + 357);
-    v287[0] = v107;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aMissilespeedva,
-      *(double *)v287);
-    *((double *)this + 178) = v104;
-    VeteranRatio_high = *((_DWORD *)this + 361);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aDroppodweapon,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v109 = InfantryTypeClass::Find(String);
-    }
-    else
-    {
-      v109 = VeteranRatio_high;
-    }
-    *((_DWORD *)this + 361) = v109;
-    *((_DWORD *)this + 362) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aDroppodheight,
-                                *((_DWORD *)this + 362));
-    *((_DWORD *)this + 363) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aDroppodspeed,
-                                *((_DWORD *)this + 363));
-    VeteranSpeed = *((_DWORD *)this + 364);
-    v287[1] = *((_DWORD *)this + 365);
-    v287[0] = VeteranSpeed;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aDroppodangle,
-      *(double *)v287);
-    *((double *)this + 182) = v104;
-    if ( v104 >= 1.178097245096172 )
-      v104 = 1.178097245096172;
-    *((double *)this + 182) = v104;
-    if ( v104 <= 0.3926990816987241 )
-      v104 = 0.3926990816987241;
-    *((double *)this + 182) = v104;
-    VeteranArmor = *((_DWORD *)this + 368);
-    v287[1] = *((_DWORD *)this + 369);
-    v287[0] = VeteranArmor;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aCrewescape,
-      *(double *)v287);
-    *((double *)this + 184) = v104;
-    TunnelSpeed = *((_DWORD *)this + 8);
-    v287[1] = *((_DWORD *)this + 9);
-    v287[0] = TunnelSpeed;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aTunnelspeed,
-      *(double *)v287);
-    *((double *)this + 4) = v104;
-    GameForming = *((_DWORD *)this + 380);
-    v287[1] = *((_DWORD *)this + 381);
-    v287[0] = GameForming;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aHoverdampen,
-      *(double *)v287);
-    *((double *)this + 190) = v104;
-    VeteranCap = *((_DWORD *)this + 372);
-    v287[1] = *((_DWORD *)this + 373);
-    v287[0] = VeteranCap;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aHoverbob,
-      *(double *)v287);
-    *((double *)this + 186) = v104;
-    *((_DWORD *)this + 371) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aHoverheight,
-                                *((_DWORD *)this + 371));
-    CloakSound = *((_DWORD *)this + 374);
-    v287[1] = *((_DWORD *)this + 375);
-    v287[0] = CloakSound;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aHoverboost,
-      *(double *)v287);
-    *((double *)this + 187) = v104;
-    GameClosed = *((_DWORD *)this + 376);
-    v287[1] = *((_DWORD *)this + 377);
-    v287[0] = GameClosed;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aHoveraccelerat,
-      *(double *)v287);
-    *((double *)this + 188) = v104;
-    SystemError = *((_DWORD *)this + 378);
-    v287[1] = *((_DWORD *)this + 379);
-    v287[0] = SystemError;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aHoverbrake,
-      *(double *)v287);
-    *((double *)this + 189) = v104;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aVeteranratio,
-      *((double *)this + 205));
-    *((double *)this + 205) = v104;
-    ShellButtonSlideSound = *((_DWORD *)this + 412);
-    v287[1] = *((_DWORD *)this + 413);
-    v287[0] = ShellButtonSlideSound;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aVeterancombat,
-      *(double *)v287);
-    *((double *)this + 206) = v104;
-    WallBuildSpeedCoefficient = *((_DWORD *)this + 414);
-    v287[1] = *((_DWORD *)this + 415);
-    v287[0] = WallBuildSpeedCoefficient;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aVeteranspeed,
-      *(double *)v287);
-    *((double *)this + 207) = v104;
-    ChargeToDrainRatio = *((_DWORD *)this + 416);
-    v287[1] = *((_DWORD *)this + 417);
-    v287[0] = ChargeToDrainRatio;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aVeteransight,
-      *(double *)v287);
-    *((double *)this + 208) = v104;
-    TrackedUphill = *((_DWORD *)this + 418);
-    v287[1] = *((_DWORD *)this + 419);
-    v287[0] = TrackedUphill;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aVeteranarmor,
-      *(double *)v287);
-    *((double *)this + 209) = v104;
-    TrackedDownhill = *((_DWORD *)this + 420);
-    v287[1] = *((_DWORD *)this + 421);
-    v287[0] = TrackedDownhill;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aVeteranrof,
-      *(double *)v287);
-    *((double *)this + 210) = v104;
-    WheeledUphill = *((_DWORD *)this + 422);
-    v287[1] = *((_DWORD *)this + 423);
-    v287[0] = WheeledUphill;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aVeterancap,
-      *(double *)v287);
-    *((double *)this + 211) = v104;
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aExplosivevoxel,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      DynamicVector::Constructor_VoxelAnim(&v288, 0, 0);
-      v288 = (int)&TypeList<VoxelAnimTypeClass const *>::`vftable';
-      for ( mm = strtok(String, Delimiter); mm; mm = strtok(0, Delimiter) )
-      {
-        if ( !*mm )
-          break;
-        LODWORD(v291) = UnitTypeClass::FindOrCreate(mm);
-        if ( (_DWORD)v291 )
-          DynamicVector::Add2(&v288, &v291);
-      }
-      TypeList::CopyVoxelAnim(&v292, &v288);
-      v288 = (int)&VectorClass<VoxelAnimTypeClass const *>::`vftable';
-      Vector::Cleanup2((int)&v288);
-    }
-    else
-    {
-      TypeList::CopyVoxelAnim(&v292, (_DWORD *)this + 384);
-    }
-    ((void (__stdcall *)(void ***))VectorClass::CopyAssign)(&v292);
-    *((_DWORD *)this + 388) = v295;
-    *((float *)this + 389) = v296;
-    *((_DWORD *)this + 390) = v297;
-    v292 = &VectorClass<VoxelAnimTypeClass const *>::`vftable';
-    if ( Block && v294 )
-      __3_YAXPAX_Z(Block);
-    v125 = ((int (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-             g_INI_Key_General,
-             aBridgevoxelmax,
-             *((_DWORD *)this + 393));
-    v287[1] = 128;
-    *((_DWORD *)this + 393) = v125;
-    RadarOn = *((_DWORD *)this + 391);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aTirevoxeldebri,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v127 = UnitTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v127 = RadarOn;
-    }
-    *((_DWORD *)this + 391) = v127;
-    RadarOff = *((_DWORD *)this + 392);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aScrapvoxeldebr,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v129 = UnitTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v129 = RadarOff;
-    }
-    *((_DWORD *)this + 392) = v129;
-    *((_DWORD *)this + 394) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aCloakingstages,
-                                *((_DWORD *)this + 394));
-    TeslaCharge = *((_DWORD *)this + 396);
-    v287[1] = *((_DWORD *)this + 397);
-    v287[0] = TeslaCharge;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aShipsinkingwei,
-      *(double *)v287);
-    *((double *)this + 198) = v104;
-    GenericClick = *((_DWORD *)this + 398);
-    v287[1] = *((_DWORD *)this + 399);
-    v287[0] = GenericClick;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aIcecrackingwei,
-      *(double *)v287);
-    *((double *)this + 199) = v104;
-    BuildingDamageSound = *((_DWORD *)this + 400);
-    v287[1] = *((_DWORD *)this + 401);
-    v287[0] = BuildingDamageSound;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aIcebreakingwei,
-      *(double *)v287);
-    *((double *)this + 200) = v104;
-    *((_BYTE *)this + 1636) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aCliffbackimpas,
-                                *((char *)this + 1636));
-    PlayerJoined = *((_DWORD *)this + 382);
-    v287[1] = *((_DWORD *)this + 383);
-    v287[0] = PlayerJoined;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aPlacementdelay,
-      *(double *)v287);
-    *((double *)this + 191) = v104;
-    GDIPowerPlant = *((_DWORD *)this + 474);
-    v287[1] = *((_DWORD *)this + 475);
-    v287[0] = GDIPowerPlant;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aTrackeduphill,
-      *(double *)v287);
-    *((double *)this + 237) = v104;
-    NodAdvancedPower = *((_DWORD *)this + 476);
-    v287[1] = *((_DWORD *)this + 477);
-    v287[0] = NodAdvancedPower;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aTrackeddownhil,
-      *(double *)v287);
-    *((double *)this + 238) = v104;
-    v136 = *((_DWORD *)this + 478);
-    v287[1] = *((_DWORD *)this + 479);
-    v287[0] = v136;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aWheeleduphill,
-      *(double *)v287);
-    *((double *)this + 239) = v104;
-    v137 = *((_DWORD *)this + 480);
-    v287[1] = *((_DWORD *)this + 481);
-    v287[0] = v137;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aWheeleddownhil,
-      *(double *)v287);
-    *((double *)this + 240) = v104;
-    *((_DWORD *)this + 491) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aWinddirection,
-                                *((_DWORD *)this + 491));
-    *((_DWORD *)this + 492) = INIClass::ReadCoord(
-                                v104,
-                                (int)g_INI_Key_General,
-                                (int)aCamerarange,
-                                *((_DWORD *)this + 492));
-    *((_DWORD *)this + 493) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aFlightlevel,
-                                *((_DWORD *)this + 493));
-    *((_DWORD *)this + 494) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aParachutemaxfa,
-                                *((_DWORD *)this + 494));
-    v138 = ((int (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-             g_INI_Key_General,
-             aNoparachutemax,
-             *((_DWORD *)this + 495));
-    v287[1] = 128;
-    *((_DWORD *)this + 495) = v138;
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aRepairbay,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      DynamicVectorClass::BuildingTypeConstructor(&v288, 0, 0);
-      v288 = (int)&TypeList<BuildingTypeClass const *>::`vftable';
-      for ( nn = strtok(String, Delimiter); nn; nn = strtok(0, Delimiter) )
-      {
-        if ( !*nn )
-          break;
-        LODWORD(v291) = BuildingTypeClass::FindOrCreate(nn);
-        if ( (_DWORD)v291 )
-          DynamicVector::Add_Alt3(&v288, &v291);
-      }
-      TypeList::BuildingTypeCopy(&v292, &v288);
-      v288 = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)&v288);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(&v292, (_DWORD *)this + 532);
-    }
-    VectorClass::CopyBuilding((_DWORD *)this + 532, &v292);
-    *((_DWORD *)this + 536) = v295;
-    *((float *)this + 537) = v296;
-    *((_DWORD *)this + 538) = v297;
-    v292 = &VectorClass<BuildingTypeClass const *>::`vftable';
-    if ( Block && v294 )
-      __3_YAXPAX_Z(Block);
-    v140 = *((_DWORD *)this + 539);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aGdigateone,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v141 = BuildingTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v141 = v140;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 539) = v141;
-    v142 = *((_DWORD *)this + 540);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aGdigatetwo,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v143 = BuildingTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v143 = v142;
-    }
-    *((_DWORD *)this + 540) = v143;
-    v144 = *((_DWORD *)this + 541);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aNodgateone,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v145 = BuildingTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v145 = v144;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 541) = v145;
-    v146 = *((_DWORD *)this + 542);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aNodgatetwo,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v147 = BuildingTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v147 = v146;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 542) = v147;
-    v148 = *((_DWORD *)this + 543);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aWalltower,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v149 = BuildingTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v149 = v148;
-    }
-    *((_DWORD *)this + 543) = v149;
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aShipyard,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      DynamicVectorClass::BuildingTypeConstructor(&v288, 0, 0);
-      v288 = (int)&TypeList<BuildingTypeClass const *>::`vftable';
-      for ( i1 = strtok(String, Delimiter); i1; i1 = strtok(0, Delimiter) )
-      {
-        if ( !*i1 )
-          break;
-        LODWORD(v291) = BuildingTypeClass::FindOrCreate(i1);
-        if ( (_DWORD)v291 )
-          DynamicVector::Add_Alt3(&v288, &v291);
-      }
-      TypeList::BuildingTypeCopy(&v292, &v288);
-      v288 = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)&v288);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(&v292, (_DWORD *)this + 544);
-    }
-    VectorClass::CopyBuilding((_DWORD *)this + 544, &v292);
-    *((_DWORD *)this + 548) = v295;
-    *((float *)this + 549) = v296;
-    *((_DWORD *)this + 550) = v297;
-    v292 = &VectorClass<BuildingTypeClass const *>::`vftable';
-    if ( Block && v294 )
-      __3_YAXPAX_Z(Block);
-    v151 = *((_DWORD *)this + 551);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aGdipowerplant,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v152 = BuildingTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v152 = v151;
-    }
-    *((_DWORD *)this + 551) = v152;
-    v153 = *((_DWORD *)this + 552);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aNodregularpowe,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v154 = BuildingTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v154 = v153;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 552) = v154;
-    v155 = *((_DWORD *)this + 553);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aNodadvancedpow,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v156 = BuildingTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v156 = v155;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 553) = v156;
-    v157 = *((_DWORD *)this + 554);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aThirdpowerplan,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      v158 = BuildingTypeClass::FindOrCreate(String);
-    }
-    else
-    {
-      v158 = v157;
-    }
-    *((_DWORD *)this + 554) = v158;
-    v159 = *((_DWORD *)this + 256);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aPrerequisitepr_0,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      v160 = BuildingTypeClass::FindOrCreateAlt(String);
-    }
-    else
-    {
-      v160 = v159;
-    }
-    v287[1] = 128;
-    *((_DWORD *)this + 256) = v160;
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aBaseunit,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           v287[1]) )
-    {
-      UnitTypeVector::Construct(&v288, 0, 0);
-      v288 = (int)&TypeList<UnitTypeClass const *>::`vftable';
-      for ( i2 = strtok(String, Delimiter); i2; i2 = strtok(0, Delimiter) )
-      {
-        if ( !*i2 )
-          break;
-        LODWORD(v291) = BuildingTypeClass::FindOrCreateAlt(i2);
-        if ( (_DWORD)v291 )
-          VectorClass::PushBack(&v288, &v291);
-      }
-      TypeList::CopyConstructor(&v292, &v288);
-      v288 = (int)&VectorClass<UnitTypeClass const *>::`vftable';
-      Vector::Destructor((int)&v288);
-    }
-    else
-    {
-      TypeList::CopyConstructor(&v292, (_DWORD *)this + 712);
-    }
-    VectorClass::CopyConstructor((_DWORD *)this + 712, &v292);
-    *((_DWORD *)this + 716) = v295;
-    *((float *)this + 717) = v296;
-    *((_DWORD *)this + 718) = v297;
-    v292 = &VectorClass<UnitTypeClass const *>::`vftable';
-    if ( Block && v294 )
-      __3_YAXPAX_Z(Block);
-    if ( INIClass::GetString(
-           v299,
-           (unsigned __int8 **)g_INI_Key_General,
-           (unsigned __int8 *)aHarvesterunit,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      UnitTypeVector::Construct(&v288, 0, 0);
-      v288 = (int)&TypeList<UnitTypeClass const *>::`vftable';
-      for ( i3 = strtok(String, Delimiter); i3; i3 = strtok(0, Delimiter) )
-      {
-        if ( !*i3 )
-          break;
-        LODWORD(v291) = BuildingTypeClass::FindOrCreateAlt(i3);
-        if ( (_DWORD)v291 )
-          VectorClass::PushBack(&v288, &v291);
-      }
-      TypeList::CopyConstructor(&v292, &v288);
-      v288 = (int)&VectorClass<UnitTypeClass const *>::`vftable';
-      Vector::Destructor((int)&v288);
-    }
-    else
-    {
-      TypeList::CopyConstructor(&v292, (_DWORD *)this + 719);
-    }
-    VectorClass::CopyConstructor((_DWORD *)this + 719, &v292);
-    *((_DWORD *)this + 723) = v295;
-    *((float *)this + 724) = v296;
-    *((_DWORD *)this + 725) = v297;
-    v292 = &VectorClass<UnitTypeClass const *>::`vftable';
-    if ( Block )
-    {
-      if ( v294 )
-        __3_YAXPAX_Z(Block);
-    }
-    v163 = ((int (__stdcall *)(char *, char *, char *))HouseTypeClass::ReadCountryName)(
-             g_INI_Key_General,
-             aPadaircraft,
-             (char *)this + 2904);
-    ((void (__stdcall *)(int))RulesClass::readSuperWeaponTypes)(v163);
-    RulesClass::readCountries(&v288);
-    *((_DWORD *)this + 761) = GetINIClassInt(
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aParatrooper,
-                                *((_DWORD *)this + 761));
-    InfantryTypeList = (int *)ReadINIClassInfantryTypeList(
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[29084],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
+          v288 = (VectorClass *)&vt_TypeList_AnimTypeClass_const;
+          for ( i = (AbstractClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
+                i;
+                i = (AbstractClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+          {
+            if ( !i->__pad_0[0] )
+              break;
+            aP0_28.vtable0 = AnimTypeClass::FindOrCreate(i);
+            if ( aP0_28.vtable0 )
+              DynamicVector::Add_Alt4(&v288, &aP0_28);
+          }
+          TypeList::AnimTypeCopy(&aP0_28.Capacity, (VectorClass *)&v288);
+          v288 = (VectorClass *)&vt_VectorClass_AnimTypeClass_const;
+          DynamicVectorClass::Destroy_Alt((int)&v288);
+        }
+        else
+        {
+          TypeList::AnimTypeCopy(&aP0_28.Capacity, (VectorClass *)&this->__pad_240[96]);
+        }
+        VectorClass::CopyDefault(&this->__pad_240[96], (VectorClass *)&aP0_28.Capacity);
+        *(_DWORD *)&this->__pad_240[112] = aP0_52;
+        *(_DWORD *)&this->__pad_240[116] = aP0_56;
+        *(_DWORD *)&this->__pad_240[120] = aP0_60;
+        aP0_28.Capacity = (int)&vt_VectorClass_AnimTypeClass_const;
+        if ( *(_DWORD *)&aP0_28.IsInitialized && aP0_49 )
+          __3_YAXPAX_Z(*(void **)&aP0_28.IsInitialized);
+        v4 = (AnimTypeClass *)this->q1870;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[29072],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v5 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v5 = v4;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        this->q1870 = v5;
+        MaxWaypointPathLength = this->MaxWaypointPathLength;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[29056],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v7 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v7 = (AnimTypeClass *)MaxWaypointPathLength;
+        }
+        this->MaxWaypointPathLength = (int)v7;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[29040],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          DynamicVector::Constructor_VoxelAnim(&v288, 0, 0);
+          v288 = (VectorClass *)&vt_TypeList_VoxelAnimTypeClass_const;
+          for ( j = (ObjectClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
+                j;
+                j = (ObjectClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+          {
+            if ( !j->__pad_0[0] )
+              break;
+            aP0_28.vtable0 = UnitTypeClass::FindOrCreate(j);
+            if ( aP0_28.vtable0 )
+              DynamicVector::Add2(&v288, &aP0_28);
+          }
+          TypeList::CopyVoxelAnim(&aP0_28.Capacity, (VectorClass *)&v288);
+          v288 = (VectorClass *)&vt_VectorClass_VoxelAnimTypeClass_const;
+          Vector::Cleanup2((int)&v288);
+        }
+        else
+        {
+          TypeList::CopyVoxelAnim(&aP0_28.Capacity, (VectorClass *)&this->RadarEventColorSpeed);
+        }
+        VectorClass::CopyAssign(&this->RadarEventColorSpeed, (VectorClass *)&aP0_28.Capacity);
+        this->DropPodPuff = aP0_52;
+        this->BarrelExplode = aP0_56;
+        this->BarrelDebris[0] = (int)aP0_60;
+        aP0_28.Capacity = (int)&vt_VectorClass_VoxelAnimTypeClass_const;
+        if ( *(_DWORD *)&aP0_28.IsInitialized && aP0_49 )
+          __3_YAXPAX_Z(*(void **)&aP0_28.IsInitialized);
+        BarrelParticle = (ParticleSystemTypeClass *)this->BarrelParticle;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[29024],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v10 = BuildingTypeClass::LoadOrGet((ObjectClass *)String);
+        }
+        else
+        {
+          v10 = BarrelParticle;
+        }
+        this->BarrelParticle = v10;
+        InfantryMutate = (AnimTypeClass *)this->InfantryMutate;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[29012],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v12 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v12 = InfantryMutate;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        this->InfantryMutate = v12;
+        InfantryBrute = (AnimTypeClass *)this->InfantryBrute;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[29004],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v14 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v14 = InfantryBrute;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        this->InfantryBrute = v14;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28996],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
+          v288 = (VectorClass *)&vt_TypeList_AnimTypeClass_const;
+          for ( k = (AbstractClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
+                k;
+                k = (AbstractClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+          {
+            if ( !k->__pad_0[0] )
+              break;
+            aP0_28.vtable0 = AnimTypeClass::FindOrCreate(k);
+            if ( aP0_28.vtable0 )
+              DynamicVector::Add_Alt4(&v288, &aP0_28);
+          }
+          TypeList::AnimTypeCopy(&aP0_28.Capacity, (VectorClass *)&v288);
+          v288 = (VectorClass *)&vt_VectorClass_AnimTypeClass_const;
+          DynamicVectorClass::Destroy_Alt((int)&v288);
+        }
+        else
+        {
+          TypeList::AnimTypeCopy(&aP0_28.Capacity, (VectorClass *)&this->GUICloseSound);
+        }
+        VectorClass::CopyDefault(&this->GUICloseSound, (VectorClass *)&aP0_28.Capacity);
+        this->GUIComboOpenSound = (int)aP0_52;
+        this->GUIComboCloseSound = (int)aP0_56;
+        this->GUICheckboxSound = (int)aP0_60;
+        aP0_28.Capacity = (int)&vt_VectorClass_AnimTypeClass_const;
+        if ( *(_DWORD *)&aP0_28.IsInitialized && aP0_49 )
+          __3_YAXPAX_Z(*(void **)&aP0_28.IsInitialized);
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               &DataGlobal_825A20,
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
+          v288 = (VectorClass *)&vt_TypeList_AnimTypeClass_const;
+          for ( m = (AbstractClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
+                m;
+                m = (AbstractClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+          {
+            if ( !m->__pad_0[0] )
+              break;
+            aP0_28.vtable0 = AnimTypeClass::FindOrCreate(m);
+            if ( aP0_28.vtable0 )
+              DynamicVector::Add_Alt4(&v288, &aP0_28);
+          }
+          TypeList::AnimTypeCopy(&aP0_28.Capacity, (VectorClass *)&v288);
+          v288 = (VectorClass *)&vt_VectorClass_AnimTypeClass_const;
+          DynamicVectorClass::Destroy_Alt((int)&v288);
+        }
+        else
+        {
+          TypeList::AnimTypeCopy(&aP0_28.Capacity, (VectorClass *)&this->ScoreAnimSound);
+        }
+        VectorClass::CopyDefault(&this->ScoreAnimSound, (VectorClass *)&aP0_28.Capacity);
+        this->BuildingAbandonedSound = (int)aP0_52;
+        this->BuildingRepairedSound = (int)aP0_56;
+        this->CheerSound = (int)aP0_60;
+        aP0_28.Capacity = (int)&vt_VectorClass_AnimTypeClass_const;
+        if ( *(_DWORD *)&aP0_28.IsInitialized && aP0_49 )
+          __3_YAXPAX_Z(*(void **)&aP0_28.IsInitialized);
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28980],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
+          v288 = (VectorClass *)&vt_TypeList_AnimTypeClass_const;
+          for ( n = (AbstractClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
+                n;
+                n = (AbstractClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+          {
+            if ( !n->__pad_0[0] )
+              break;
+            aP0_28.vtable0 = AnimTypeClass::FindOrCreate(n);
+            if ( aP0_28.vtable0 )
+              DynamicVector::Add_Alt4(&v288, &aP0_28);
+          }
+          TypeList::AnimTypeCopy(&aP0_28.Capacity, (VectorClass *)&v288);
+          v288 = (VectorClass *)&vt_VectorClass_AnimTypeClass_const;
+          DynamicVectorClass::Destroy_Alt((int)&v288);
+        }
+        else
+        {
+          TypeList::AnimTypeCopy(&aP0_28.Capacity, (VectorClass *)&this->PlaceBeaconSound);
+        }
+        VectorClass::CopyDefault(&this->PlaceBeaconSound, (VectorClass *)&aP0_28.Capacity);
+        this->ExecutePlanSound = (int)aP0_52;
+        this->EndPlanningModeSound = (int)aP0_56;
+        this->CrateMoneySound = (int)aP0_60;
+        aP0_28.Capacity = (int)&vt_VectorClass_AnimTypeClass_const;
+        if ( *(_DWORD *)&aP0_28.IsInitialized && aP0_49 )
+          __3_YAXPAX_Z(*(void **)&aP0_28.IsInitialized);
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28960],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
+          v288 = (VectorClass *)&vt_TypeList_AnimTypeClass_const;
+          for ( ii = (AbstractClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
+                ii;
+                ii = (AbstractClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+          {
+            if ( !ii->__pad_0[0] )
+              break;
+            aP0_28.vtable0 = AnimTypeClass::FindOrCreate(ii);
+            if ( aP0_28.vtable0 )
+              DynamicVector::Add_Alt4(&v288, &aP0_28);
+          }
+          TypeList::AnimTypeCopy(&aP0_28.Capacity, (VectorClass *)&v288);
+          v288 = (VectorClass *)&vt_VectorClass_AnimTypeClass_const;
+          DynamicVectorClass::Destroy_Alt((int)&v288);
+        }
+        else
+        {
+          TypeList::AnimTypeCopy(&aP0_28.Capacity, (VectorClass *)&this->CrateRevealSound);
+        }
+        VectorClass::CopyDefault(&this->CrateRevealSound, (VectorClass *)&aP0_28.Capacity);
+        this->CrateUnitSound = (int)aP0_52;
+        this->CratePromoteSound = (int)aP0_56;
+        this->ImpactWaterSound = (int)aP0_60;
+        aP0_28.Capacity = (int)&vt_VectorClass_AnimTypeClass_const;
+        if ( *(_DWORD *)&aP0_28.IsInitialized && aP0_49 )
+          __3_YAXPAX_Z(*(void **)&aP0_28.IsInitialized);
+        v19 = *(AnimTypeClass **)&this->__pad_240[88];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28948],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v20 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v20 = v19;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_240[88] = v20;
+        v21 = *(AnimTypeClass **)&this->__pad_240[92];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28940],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v22 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v22 = v21;
+        }
+        *(_DWORD *)&this->__pad_240[92] = v22;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28920],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
+          v288 = (VectorClass *)&vt_TypeList_AnimTypeClass_const;
+          for ( jj = (AbstractClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
+                jj;
+                jj = (AbstractClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+          {
+            if ( !jj->__pad_0[0] )
+              break;
+            aP0_28.vtable0 = AnimTypeClass::FindOrCreate(jj);
+            if ( aP0_28.vtable0 )
+              DynamicVector::Add_Alt4(&v288, &aP0_28);
+          }
+          TypeList::AnimTypeCopy(&aP0_28.Capacity, (VectorClass *)&v288);
+          v288 = (VectorClass *)&vt_VectorClass_AnimTypeClass_const;
+          DynamicVectorClass::Destroy_Alt((int)&v288);
+        }
+        else
+        {
+          TypeList::AnimTypeCopy(&aP0_28.Capacity, (VectorClass *)&this->__pad_240[124]);
+        }
+        VectorClass::CopyDefault(&this->__pad_240[124], (VectorClass *)&aP0_28.Capacity);
+        *(_DWORD *)&this->__pad_240[140] = aP0_52;
+        *(_DWORD *)&this->__pad_240[144] = aP0_56;
+        *(_DWORD *)&this->__pad_240[148] = aP0_60;
+        aP0_28.Capacity = (int)&vt_VectorClass_AnimTypeClass_const;
+        if ( *(_DWORD *)&aP0_28.IsInitialized && aP0_49 )
+          __3_YAXPAX_Z(*(void **)&aP0_28.IsInitialized);
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28904],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          DynamicVectorClass::AnimTypeConstructor(&v288, 0, 0);
+          v288 = (VectorClass *)&vt_TypeList_AnimTypeClass_const;
+          for ( kk = (AbstractClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
+                kk;
+                kk = (AbstractClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+          {
+            if ( !kk->__pad_0[0] )
+              break;
+            aP0_28.vtable0 = AnimTypeClass::FindOrCreate(kk);
+            if ( aP0_28.vtable0 )
+              DynamicVector::Add_Alt4(&v288, &aP0_28);
+          }
+          TypeList::AnimTypeCopy(&aP0_28.Capacity, (VectorClass *)&v288);
+          v288 = (VectorClass *)&vt_VectorClass_AnimTypeClass_const;
+          DynamicVectorClass::Destroy_Alt((int)&v288);
+        }
+        else
+        {
+          TypeList::AnimTypeCopy(&aP0_28.Capacity, (VectorClass *)&this->__pad_240[152]);
+        }
+        VectorClass::CopyDefault(&this->__pad_240[152], (VectorClass *)&aP0_28.Capacity);
+        *(_DWORD *)&this->__pad_240[168] = aP0_52;
+        *(_DWORD *)&this->__pad_240[172] = aP0_56;
+        *(_DWORD *)&this->__pad_240[176] = aP0_60;
+        aP0_28.Capacity = (int)&vt_VectorClass_AnimTypeClass_const;
+        if ( *(_DWORD *)&aP0_28.IsInitialized && aP0_49 )
+          __3_YAXPAX_Z(*(void **)&aP0_28.IsInitialized);
+        v25 = *(AnimTypeClass **)&this->__pad_240[180];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28880],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v26 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v26 = v25;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_240[180] = v26;
+        v27 = *(_DWORD *)&this->__pad_240[184];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28860],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v28 = WarheadTypeClass::FindOrCreate((ObjectClass *)String);
+        }
+        else
+        {
+          v28 = v27;
+        }
+        *(_DWORD *)&this->__pad_240[184] = v28;
+        v29 = *(AnimTypeClass **)&this->__pad_240[188];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28840],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v30 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v30 = v29;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_240[188] = v30;
+        v31 = *(AnimTypeClass **)&this->__pad_240[192];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28820],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v32 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v32 = v31;
+        }
+        *(_DWORD *)&this->__pad_240[192] = v32;
+        *(_DWORD *)&this->__pad_240[196] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[28792],
+                                             *(INIClass **)&this->__pad_240[196]);
+        *(_DWORD *)&this->__pad_240[200] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[28768],
+                                             *(INIClass **)&this->__pad_240[200]);
+        Int_Overwrite = INIClass::ReadInt_Overwrite(
+                          (int)a0,
+                          (unsigned __int8 *)&g_INI_Key_General,
+                          (CCINIClass *)&stru_830620.__pad_579C[28752],
+                          *(INIClass **)&this->__pad_240[204]);
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_240[204] = Int_Overwrite;
+        v34 = *(AnimTypeClass **)&this->__pad_240[240];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28736],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v35 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v35 = v34;
+        }
+        *(_DWORD *)&this->__pad_240[240] = v35;
+        v36 = *(AnimTypeClass **)&this->__pad_240[244];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28724],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v37 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v37 = v36;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_240[244] = v37;
+        v38 = *(AnimTypeClass **)&this->__pad_240[232];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28712],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v39 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v39 = v38;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_240[232] = v39;
+        v40 = *(AnimTypeClass **)&this->__pad_240[236];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28696],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v41 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v41 = v40;
+        }
+        *(_DWORD *)&this->__pad_240[236] = v41;
+        v42 = *(AnimTypeClass **)&this->__pad_240[248];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28688],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v43 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v43 = v42;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_240[248] = v43;
+        v44 = *(AnimTypeClass **)&this->__pad_240[252];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28680],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v45 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v45 = v44;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_240[252] = v45;
+        v46 = *(AnimTypeClass **)&this->__pad_240[256];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28668],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v47 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v47 = v46;
+        }
+        *(_DWORD *)&this->__pad_240[256] = v47;
+        v48 = *(AnimTypeClass **)&this->__pad_240[264];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28644],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v49 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v49 = v48;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_240[264] = v49;
+        v50 = *(AnimTypeClass **)&this->__pad_240[268];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28620],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v51 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v51 = v50;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_240[268] = v51;
+        v52 = *(AnimTypeClass **)&this->__pad_240[272];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28600],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v53 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v53 = v52;
+        }
+        *(_DWORD *)&this->__pad_240[272] = v53;
+        v54 = *(AnimTypeClass **)&this->__pad_240[260];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28584],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v55 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v55 = v54;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_240[260] = v55;
+        Behind = (AnimTypeClass *)this->Behind;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28568],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v57 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v57 = Behind;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        this->Behind = v57;
+        v58 = *(AnimTypeClass **)this->__pad_A0;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28552],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v59 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v59 = v58;
+        }
+        *(_DWORD *)this->__pad_A0 = v59;
+        v60 = *(AnimTypeClass **)&this->__pad_A0[4];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28536],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v61 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v61 = v60;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_A0[4] = v61;
+        v62 = *(AnimTypeClass **)&this->__pad_A0[8];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28520],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v63 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v63 = v62;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_A0[8] = v63;
+        v64 = *(AnimTypeClass **)&this->__pad_A0[12];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28504],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v65 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v65 = v64;
+        }
+        *(_DWORD *)&this->__pad_A0[12] = v65;
+        v66 = *(AnimTypeClass **)&this->__pad_A0[16];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28488],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v67 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v67 = v66;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_A0[16] = v67;
+        v68 = *(AnimTypeClass **)&this->__pad_A0[20];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28472],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v69 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v69 = v68;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_A0[20] = v69;
+        v70 = *(AnimTypeClass **)&this->__pad_A0[24];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28464],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v71 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v71 = v70;
+        }
+        *(_DWORD *)&this->__pad_A0[24] = v71;
+        v72 = this->Normal[6];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28452],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v73 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v73 = (AnimTypeClass *)v72;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        this->Normal[6] = (int)v73;
+        v74 = this->Normal[8];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28440],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v75 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v75 = (AnimTypeClass *)v74;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        this->Normal[8] = (int)v75;
+        v76 = this->Normal[7];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28424],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v77 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v77 = (AnimTypeClass *)v76;
+        }
+        this->Normal[7] = (int)v77;
+        v78 = *(AnimTypeClass **)&this->__pad_C3C[2112];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28408],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v79 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v79 = v78;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_C3C[2112] = v79;
+        v80 = *(AnimTypeClass **)&this->AlliedWallTransparency;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28392],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v81 = AnimTypeClass::FindOrCreate((AbstractClass *)String);
+        }
+        else
+        {
+          v81 = v80;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->AlliedWallTransparency = v81;
+        LargeVisceroid = (UnitTypeClass *)this->LargeVisceroid;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28376],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          Alt = BuildingTypeClass::FindOrCreateAlt(String);
+        }
+        else
+        {
+          Alt = LargeVisceroid;
+        }
+        this->LargeVisceroid = Alt;
+        SmallVisceroid = (UnitTypeClass *)this->SmallVisceroid;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[28360],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v85 = BuildingTypeClass::FindOrCreateAlt(String);
+        }
+        else
+        {
+          v85 = SmallVisceroid;
+        }
+        this->SmallVisceroid = v85;
+        aP3 = (INIClass *)this->TiberiumHeal[0];
+        *(_DWORD *)&v258[8] = this->TiberiumHeal[1];
+        *(double *)this->TiberiumHeal = INIClass::ReadDouble_Overwrite(
+                                          (int)a0,
+                                          &g_INI_Key_General,
+                                          (unsigned __int8 *)&stru_830620.__pad_579C[28344],
+                                          aP3);
+        this->SelfHealInfantryFrames = INIClass::ReadInt_Overwrite(
+                                         (int)a0,
+                                         (unsigned __int8 *)&g_INI_Key_General,
+                                         (CCINIClass *)&stru_830620.__pad_579C[28320],
+                                         (INIClass *)this->SelfHealInfantryFrames);
+        this->SelfHealInfantryAmount = INIClass::ReadInt_Overwrite(
+                                         (int)a0,
+                                         (unsigned __int8 *)&g_INI_Key_General,
+                                         (CCINIClass *)&stru_830620.__pad_579C[28296],
+                                         (INIClass *)this->SelfHealInfantryAmount);
+        this->SelfHealUnitFrames = INIClass::ReadInt_Overwrite(
+                                     (int)a0,
+                                     (unsigned __int8 *)&g_INI_Key_General,
+                                     (CCINIClass *)&stru_830620.__pad_579C[28276],
+                                     (INIClass *)this->SelfHealUnitFrames);
+        this->SelfHealUnitAmount = INIClass::ReadInt_Overwrite(
+                                     (int)a0,
+                                     (unsigned __int8 *)&g_INI_Key_General,
+                                     (CCINIClass *)&stru_830620.__pad_579C[28256],
+                                     (INIClass *)this->SelfHealUnitAmount);
+        aP0_28.vtable0 = &this->__pad_240[280];
+        IntVector::Copy(&v257, (VectorClass *)&this->__pad_240[280]);
+        *(_DWORD *)v258 = *((_DWORD *)aP0_28.vtable0 + 4);
+        *(_DWORD *)&v258[4] = *((_DWORD *)aP0_28.vtable0 + 5);
+        v257.vtable0 = &vt_TypeList_int;
+        v87 = (CCINIClass *)LoadBuildingTypeClassPrerequisites(
+                              &v288,
+                              a0,
+                              &g_INI_Key_General,
+                              (unsigned __int8 *)&stru_830620.__pad_579C[28236],
+                              v257);
+        aP0_28.vtable0 = &this->__pad_240[280];
+        TypeList::Copy(&this->__pad_240[280], v87);
+        vtable0 = aP0_28.vtable0;
+        *((_DWORD *)aP0_28.vtable0 + 4) = v87->sectionHead[0];
+        vtable0[5] = v87->sectionHead[1];
+        vtable0[6] = v87->sectionHead[2];
+        v288 = (VectorClass *)&vt_VectorClass_int;
+        if ( aP0_4 && aP0_13 )
+          __3_YAXPAX_Z(aP0_4);
+        IntVector::Copy(&v257, (VectorClass *)&this->__pad_240[308]);
+        *(_DWORD *)v258 = *(_DWORD *)&this->__pad_240[324];
+        *(_DWORD *)&v258[4] = *(_DWORD *)&this->__pad_240[328];
+        v257.vtable0 = &vt_TypeList_int;
+        v89 = (CCINIClass *)LoadBuildingTypeClassPrerequisites(
+                              &v288,
+                              a0,
+                              &g_INI_Key_General,
+                              (unsigned __int8 *)&stru_830620.__pad_579C[28216],
+                              v257);
+        aP0_28.vtable0 = &this->__pad_240[308];
+        TypeList::Copy(&this->__pad_240[308], v89);
+        v90 = aP0_28.vtable0;
+        *((_DWORD *)aP0_28.vtable0 + 4) = v89->sectionHead[0];
+        v90[5] = v89->sectionHead[1];
+        v90[6] = v89->sectionHead[2];
+        v288 = (VectorClass *)&vt_VectorClass_int;
+        if ( aP0_4 && aP0_13 )
+          __3_YAXPAX_Z(aP0_4);
+        IntVector::Copy(&v257, (VectorClass *)&this->__pad_240[336]);
+        *(_DWORD *)v258 = *(_DWORD *)&this->__pad_240[352];
+        *(_DWORD *)&v258[4] = *(_DWORD *)&this->__pad_240[356];
+        v257.vtable0 = &vt_TypeList_int;
+        v91 = (CCINIClass *)LoadBuildingTypeClassPrerequisites(
+                              &v288,
+                              a0,
+                              &g_INI_Key_General,
+                              (unsigned __int8 *)&stru_830620.__pad_579C[28192],
+                              v257);
+        aP0_28.vtable0 = &this->__pad_240[336];
+        TypeList::Copy(&this->__pad_240[336], v91);
+        v92 = aP0_28.vtable0;
+        *((_DWORD *)aP0_28.vtable0 + 4) = v91->sectionHead[0];
+        v92[5] = v91->sectionHead[1];
+        v92[6] = v91->sectionHead[2];
+        v288 = (VectorClass *)&vt_VectorClass_int;
+        if ( aP0_4 && aP0_13 )
+          __3_YAXPAX_Z(aP0_4);
+        IntVector::Copy(&v257, (VectorClass *)&this->__pad_240[364]);
+        *(_DWORD *)v258 = *(_DWORD *)&this->__pad_240[380];
+        *(_DWORD *)&v258[4] = *(_DWORD *)&this->__pad_240[384];
+        v257.vtable0 = &vt_TypeList_int;
+        v93 = (CCINIClass *)LoadBuildingTypeClassPrerequisites(
+                              &v288,
+                              a0,
+                              &g_INI_Key_General,
+                              (unsigned __int8 *)&stru_830620.__pad_579C[28172],
+                              v257);
+        aP0_28.vtable0 = &this->__pad_240[364];
+        TypeList::Copy(&this->__pad_240[364], v93);
+        v94 = aP0_28.vtable0;
+        *((_DWORD *)aP0_28.vtable0 + 4) = v93->sectionHead[0];
+        v94[5] = v93->sectionHead[1];
+        v94[6] = v93->sectionHead[2];
+        v288 = (VectorClass *)&vt_VectorClass_int;
+        if ( aP0_4 && aP0_13 )
+          __3_YAXPAX_Z(aP0_4);
+        IntVector::Copy(&v257, (VectorClass *)&this->__pad_240[392]);
+        *(_DWORD *)v258 = *(_DWORD *)&this->__pad_240[408];
+        *(_DWORD *)&v258[4] = *(_DWORD *)&this->__pad_240[412];
+        v257.vtable0 = &vt_TypeList_int;
+        v95 = (CCINIClass *)LoadBuildingTypeClassPrerequisites(
+                              &v288,
+                              a0,
+                              &g_INI_Key_General,
+                              (unsigned __int8 *)&stru_830620.__pad_579C[28152],
+                              v257);
+        aP0_28.vtable0 = &this->__pad_240[392];
+        TypeList::Copy(&this->__pad_240[392], v95);
+        v96 = aP0_28.vtable0;
+        *((_DWORD *)aP0_28.vtable0 + 4) = v95->sectionHead[0];
+        v96[5] = v95->sectionHead[1];
+        v96[6] = v95->sectionHead[2];
+        v288 = (VectorClass *)&vt_VectorClass_int;
+        if ( aP0_4 && aP0_13 )
+          __3_YAXPAX_Z(aP0_4);
+        IntVector::Copy(&v257, (VectorClass *)&this->__pad_240[420]);
+        *(_DWORD *)v258 = *(_DWORD *)&this->__pad_240[436];
+        *(_DWORD *)&v258[4] = *(_DWORD *)&this->__pad_240[440];
+        v257.vtable0 = &vt_TypeList_int;
+        v97 = (CCINIClass *)LoadBuildingTypeClassPrerequisites(
+                              &v288,
+                              a0,
+                              &g_INI_Key_General,
+                              (unsigned __int8 *)&stru_830620.__pad_579C[28132],
+                              v257);
+        aP0_28.vtable0 = &this->__pad_240[420];
+        TypeList::Copy(&this->__pad_240[420], v97);
+        v98 = aP0_28.vtable0;
+        *((_DWORD *)aP0_28.vtable0 + 4) = v97->sectionHead[0];
+        v98[5] = v97->sectionHead[1];
+        v98[6] = v97->sectionHead[2];
+        v288 = (VectorClass *)&vt_VectorClass_int;
+        if ( aP0_4 && aP0_13 )
+          __3_YAXPAX_Z(aP0_4);
+        v99 = *(INIClass **)&this->__pad_240[784];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_240[788];
+        *(double *)&this->__pad_240[784] = INIClass::ReadDouble_Overwrite(
+                                             (int)a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[28116],
+                                             v99);
+        BYTE2(this->ElevationBonusCap[0]) = INIClass::ReadBool_Overwrite(
+                                              (int)a0,
+                                              (unsigned __int8 *)&g_INI_Key_General,
+                                              (CCINIClass *)&stru_830620.__pad_579C[28100],
+                                              BYTE2(this->ElevationBonusCap[0]));
+        HIBYTE(this->ElevationBonusCap[0]) = INIClass::ReadBool_Overwrite(
+                                               (int)a0,
+                                               (unsigned __int8 *)&g_INI_Key_General,
+                                               (CCINIClass *)&stru_830620.__pad_579C[28068],
+                                               HIBYTE(this->ElevationBonusCap[0]));
+        this->GUIMainButtonSound = INIClass::ReadInt_Overwrite(
+                                     (int)a0,
+                                     (unsigned __int8 *)&g_INI_Key_General,
+                                     (CCINIClass *)&stru_830620.__pad_579C[28048],
+                                     (INIClass *)this->GUIMainButtonSound);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[816];
+        *(float *)&this->__pad_240[816] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[28020],
+                                            *(INIClass **)&v258[4]);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[820];
+        *(float *)&this->__pad_240[820] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[27992],
+                                            *(INIClass **)&v258[4]);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[824];
+        *(float *)&this->__pad_240[824] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[27968],
+                                            *(INIClass **)&v258[4]);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[828];
+        *(float *)&this->__pad_240[828] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[27952],
+                                            *(INIClass **)&v258[4]);
+        *(_DWORD *)&this->__pad_240[832] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[27932],
+                                             *(INIClass **)&this->__pad_240[832]);
+        v100 = (INIClass *)this->TreeFlammability[0];
+        *(_DWORD *)&v258[8] = this->TreeFlammability[1];
+        *(double *)this->TreeFlammability = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[27912],
+                                              v100);
+        v101 = (INIClass *)this->MissileROTVar[0];
+        *(_DWORD *)&v258[8] = this->MissileROTVar[1];
+        *(double *)this->MissileROTVar = INIClass::ReadDouble_Overwrite(
+                                           (int)a0,
+                                           &g_INI_Key_General,
+                                           (unsigned __int8 *)&stru_830620.__pad_579C[27896],
+                                           v101);
+        this->MissileSafetyAltitude = INIClass::ReadInt_Overwrite(
+                                        (int)a0,
+                                        (unsigned __int8 *)&g_INI_Key_General,
+                                        (CCINIClass *)&stru_830620.__pad_579C[27872],
+                                        (INIClass *)this->MissileSafetyAltitude);
+        v102 = (INIClass *)this->MissileSpeedVar[0];
+        *(_DWORD *)&v258[8] = this->MissileSpeedVar[1];
+        *(double *)this->MissileSpeedVar = INIClass::ReadDouble_Overwrite(
+                                             (int)a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[27856],
+                                             v102);
+        DropPodWeapon = (WeaponTypeClass *)this->DropPodWeapon;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27840],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v104 = InfantryTypeClass::Find((ObjectClass *)String);
+        }
+        else
+        {
+          v104 = DropPodWeapon;
+        }
+        this->DropPodWeapon = v104;
+        this->DropPodHeight = INIClass::ReadInt_Overwrite(
+                                (int)a0,
+                                (unsigned __int8 *)&g_INI_Key_General,
+                                (CCINIClass *)&stru_830620.__pad_579C[27824],
+                                (INIClass *)this->DropPodHeight);
+        this->DropPodSpeed = INIClass::ReadInt_Overwrite(
+                               (int)a0,
+                               (unsigned __int8 *)&g_INI_Key_General,
+                               (CCINIClass *)&stru_830620.__pad_579C[27808],
+                               (INIClass *)this->DropPodSpeed);
+        v105 = (INIClass *)this->DropPodAngle[0];
+        *(_DWORD *)&v258[8] = this->DropPodAngle[1];
+        Double_Overwrite = INIClass::ReadDouble_Overwrite(
+                             (int)a0,
+                             &g_INI_Key_General,
+                             (unsigned __int8 *)&stru_830620.__pad_579C[27792],
+                             v105);
+        *(double *)this->DropPodAngle = Double_Overwrite;
+        if ( Double_Overwrite >= 1.178097245096172 )
+          Double_Overwrite = 1.178097245096172;
+        *(double *)this->DropPodAngle = Double_Overwrite;
+        if ( Double_Overwrite <= 0.3926990816987241 )
+          Double_Overwrite = 0.3926990816987241;
+        *(double *)this->DropPodAngle = Double_Overwrite;
+        v107 = (INIClass *)this->CrewEscape[0];
+        *(_DWORD *)&v258[8] = this->CrewEscape[1];
+        *(double *)this->CrewEscape = INIClass::ReadDouble_Overwrite(
+                                        (int)a0,
+                                        &g_INI_Key_General,
+                                        (unsigned __int8 *)&stru_830620.__pad_579C[27780],
+                                        v107);
+        v108 = (INIClass *)this->TunnelSpeed[0];
+        *(_DWORD *)&v258[8] = this->TunnelSpeed[1];
+        *(double *)this->TunnelSpeed = INIClass::ReadDouble_Overwrite(
+                                         (int)a0,
+                                         &g_INI_Key_General,
+                                         (unsigned __int8 *)&stru_830620.__pad_579C[27768],
+                                         v108);
+        v109 = (INIClass *)this->HoverDampen[0];
+        *(_DWORD *)&v258[8] = this->HoverDampen[1];
+        *(double *)this->HoverDampen = INIClass::ReadDouble_Overwrite(
+                                         (int)a0,
+                                         &g_INI_Key_General,
+                                         (unsigned __int8 *)&stru_830620.__pad_579C[27756],
+                                         v109);
+        v110 = (INIClass *)this->HoverBob[0];
+        *(_DWORD *)&v258[8] = this->HoverBob[1];
+        *(double *)this->HoverBob = INIClass::ReadDouble_Overwrite(
+                                      (int)a0,
+                                      &g_INI_Key_General,
+                                      (unsigned __int8 *)&stru_830620.__pad_579C[27744],
+                                      v110);
+        this->HoverHeight = INIClass::ReadInt_Overwrite(
+                              (int)a0,
+                              (unsigned __int8 *)&g_INI_Key_General,
+                              (CCINIClass *)&stru_830620.__pad_579C[27732],
+                              (INIClass *)this->HoverHeight);
+        v111 = (INIClass *)this->HoverBoost[0];
+        *(_DWORD *)&v258[8] = this->HoverBoost[1];
+        *(double *)this->HoverBoost = INIClass::ReadDouble_Overwrite(
+                                        (int)a0,
+                                        &g_INI_Key_General,
+                                        (unsigned __int8 *)&stru_830620.__pad_579C[27720],
+                                        v111);
+        v112 = (INIClass *)this->HoverAcceleration[0];
+        *(_DWORD *)&v258[8] = this->HoverAcceleration[1];
+        *(double *)this->HoverAcceleration = INIClass::ReadDouble_Overwrite(
+                                               (int)a0,
+                                               &g_INI_Key_General,
+                                               (unsigned __int8 *)&stru_830620.__pad_579C[27700],
+                                               v112);
+        v113 = (INIClass *)this->HoverBrake[0];
+        *(_DWORD *)&v258[8] = this->HoverBrake[1];
+        *(double *)this->HoverBrake = INIClass::ReadDouble_Overwrite(
+                                        (int)a0,
+                                        &g_INI_Key_General,
+                                        (unsigned __int8 *)&stru_830620.__pad_579C[27688],
+                                        v113);
+        *(_DWORD *)&v258[8] = this->OptionsChanged;
+        *(double *)&this->SystemError = INIClass::ReadDouble_Overwrite(
+                                          (int)a0,
+                                          &g_INI_Key_General,
+                                          (unsigned __int8 *)&stru_830620.__pad_579C[27672],
+                                          (INIClass *)this->SystemError);
+        GameForming = (INIClass *)this->GameForming;
+        *(_DWORD *)&v258[8] = this->PlayerLeft;
+        *(double *)&this->GameForming = INIClass::ReadDouble_Overwrite(
+                                          (int)a0,
+                                          &g_INI_Key_General,
+                                          (unsigned __int8 *)&stru_830620.__pad_579C[27656],
+                                          GameForming);
+        PlayerJoined = (INIClass *)this->PlayerJoined;
+        *(_DWORD *)&v258[8] = this->MessageCharTyped;
+        *(double *)&this->PlayerJoined = INIClass::ReadDouble_Overwrite(
+                                           (int)a0,
+                                           &g_INI_Key_General,
+                                           (unsigned __int8 *)&stru_830620.__pad_579C[27640],
+                                           PlayerJoined);
+        Construction = (INIClass *)this->Construction;
+        *(_DWORD *)&v258[8] = this->CreditTicks[0];
+        *(double *)&this->Construction = INIClass::ReadDouble_Overwrite(
+                                           (int)a0,
+                                           &g_INI_Key_General,
+                                           (unsigned __int8 *)&stru_830620.__pad_579C[27624],
+                                           Construction);
+        v117 = (INIClass *)this->CreditTicks[1];
+        *(_DWORD *)&v258[8] = this->CreditTicks[2];
+        *(double *)&this->CreditTicks[1] = INIClass::ReadDouble_Overwrite(
+                                             (int)a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[27608],
+                                             v117);
+        v118 = (INIClass *)this->CreditTicks[3];
+        *(_DWORD *)&v258[8] = this->CreditTicks[4];
+        *(double *)&this->CreditTicks[3] = INIClass::ReadDouble_Overwrite(
+                                             (int)a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[27596],
+                                             v118);
+        v119 = (INIClass *)this->CreditTicks[5];
+        *(_DWORD *)&v258[8] = this->BuildingDieSound;
+        *(double *)&this->CreditTicks[5] = INIClass::ReadDouble_Overwrite(
+                                             (int)a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[27584],
+                                             v119);
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27560],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          DynamicVector::Constructor_VoxelAnim(&v288, 0, 0);
+          v288 = (VectorClass *)&vt_TypeList_VoxelAnimTypeClass_const;
+          for ( mm = (ObjectClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
+                mm;
+                mm = (ObjectClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+          {
+            if ( !mm->__pad_0[0] )
+              break;
+            aP0_28.vtable0 = UnitTypeClass::FindOrCreate(mm);
+            if ( aP0_28.vtable0 )
+              DynamicVector::Add2(&v288, &aP0_28);
+          }
+          TypeList::CopyVoxelAnim(&aP0_28.Capacity, (VectorClass *)&v288);
+          v288 = (VectorClass *)&vt_VectorClass_VoxelAnimTypeClass_const;
+          Vector::Cleanup2((int)&v288);
+        }
+        else
+        {
+          TypeList::CopyVoxelAnim(&aP0_28.Capacity, (VectorClass *)&this->CloakingStages);
+        }
+        VectorClass::CopyAssign(&this->CloakingStages, (VectorClass *)&aP0_28.Capacity);
+        this->IceCrackingWeight[0] = (int)aP0_52;
+        this->IceCrackingWeight[1] = (int)aP0_56;
+        this->IceBreakingWeight[0] = (int)aP0_60;
+        aP0_28.Capacity = (int)&vt_VectorClass_VoxelAnimTypeClass_const;
+        if ( *(_DWORD *)&aP0_28.IsInitialized && aP0_49 )
+          __3_YAXPAX_Z(*(void **)&aP0_28.IsInitialized);
+        v121 = INIClass::ReadInt_Overwrite(
+                 (int)a0,
+                 (unsigned __int8 *)&g_INI_Key_General,
+                 (CCINIClass *)&stru_830620.__pad_579C[27544],
+                 (INIClass *)this->VeteranRatio[1]);
+        *(_DWORD *)&v258[8] = 128;
+        this->VeteranRatio[1] = v121;
+        v122 = this->IceBreakingWeight[1];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27528],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v123 = UnitTypeClass::FindOrCreate((ObjectClass *)String);
+        }
+        else
+        {
+          v123 = (VoxelAnimTypeClass *)v122;
+        }
+        this->IceBreakingWeight[1] = (int)v123;
+        v124 = this->VeteranRatio[0];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27508],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v125 = UnitTypeClass::FindOrCreate((ObjectClass *)String);
+        }
+        else
+        {
+          v125 = (VoxelAnimTypeClass *)v124;
+        }
+        this->VeteranRatio[0] = (int)v125;
+        this->VeteranCombat[0] = INIClass::ReadInt_Overwrite(
+                                   (int)a0,
+                                   (unsigned __int8 *)&g_INI_Key_General,
+                                   (CCINIClass *)&stru_830620.__pad_579C[27492],
+                                   (INIClass *)this->VeteranCombat[0]);
+        v126 = (INIClass *)this->VeteranSpeed[0];
+        *(_DWORD *)&v258[8] = this->VeteranSpeed[1];
+        *(double *)this->VeteranSpeed = INIClass::ReadDouble_Overwrite(
+                                          (int)a0,
+                                          &g_INI_Key_General,
+                                          (unsigned __int8 *)&stru_830620.__pad_579C[27472],
+                                          v126);
+        v127 = (INIClass *)this->VeteranSight[0];
+        *(_DWORD *)&v258[8] = this->VeteranSight[1];
+        *(double *)this->VeteranSight = INIClass::ReadDouble_Overwrite(
+                                          (int)a0,
+                                          &g_INI_Key_General,
+                                          (unsigned __int8 *)&stru_830620.__pad_579C[27452],
+                                          v127);
+        v128 = (INIClass *)this->VeteranArmor[0];
+        *(_DWORD *)&v258[8] = this->VeteranArmor[1];
+        *(double *)this->VeteranArmor = INIClass::ReadDouble_Overwrite(
+                                          (int)a0,
+                                          &g_INI_Key_General,
+                                          (unsigned __int8 *)&stru_830620.__pad_579C[27432],
+                                          v128);
+        LOBYTE(this->IncomingMessage) = INIClass::ReadInt_Overwrite(
+                                          (int)a0,
+                                          (unsigned __int8 *)&g_INI_Key_General,
+                                          (CCINIClass *)&stru_830620.__pad_579C[27408],
+                                          (INIClass *)SLOBYTE(this->IncomingMessage));
+        v129 = (INIClass *)this->PlacementDelay[0];
+        *(_DWORD *)&v258[8] = this->PlacementDelay[1];
+        *(double *)this->PlacementDelay = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[27392],
+                                            v129);
+        WindDirection = (INIClass *)this->WindDirection;
+        *(_DWORD *)&v258[8] = this->CameraRange;
+        *(double *)&this->WindDirection = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[27376],
+                                            WindDirection);
+        FlightLevel = (INIClass *)this->FlightLevel;
+        *(_DWORD *)&v258[8] = this->ParachuteMaxFallRate;
+        *(double *)&this->FlightLevel = INIClass::ReadDouble_Overwrite(
+                                          (int)a0,
+                                          &g_INI_Key_General,
+                                          (unsigned __int8 *)&stru_830620.__pad_579C[27360],
+                                          FlightLevel);
+        NoParachuteMaxFallRate = (INIClass *)this->NoParachuteMaxFallRate;
+        *(_DWORD *)&v258[8] = this->BuildingDrop;
+        *(double *)&this->NoParachuteMaxFallRate = INIClass::ReadDouble_Overwrite(
+                                                     (int)a0,
+                                                     &g_INI_Key_General,
+                                                     (unsigned __int8 *)&stru_830620.__pad_579C[27344],
+                                                     NoParachuteMaxFallRate);
+        GDIGateOne = (INIClass *)this->GDIGateOne;
+        *(_DWORD *)&v258[8] = this->GDIGateTwo;
+        *(double *)&this->GDIGateOne = INIClass::ReadDouble_Overwrite(
+                                         (int)a0,
+                                         &g_INI_Key_General,
+                                         (unsigned __int8 *)&stru_830620.__pad_579C[27328],
+                                         GDIGateOne);
+        this->BuildNavalYard[0] = INIClass::ReadInt_Overwrite(
+                                    (int)a0,
+                                    (unsigned __int8 *)&g_INI_Key_General,
+                                    (CCINIClass *)&stru_830620.__pad_579C[27312],
+                                    (INIClass *)this->BuildNavalYard[0]);
+        *(_DWORD *)&v258[8] = this->GDIWallDefense[0];
+        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[27300];
+        *(_DWORD *)v258 = &g_INI_Key_General;
+        this->GDIWallDefense[0] = (int)INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
+        this->GDIWallDefense[1] = INIClass::ReadInt_Overwrite(
+                                    (int)a0,
+                                    (unsigned __int8 *)&g_INI_Key_General,
+                                    (CCINIClass *)&stru_830620.__pad_579C[27288],
+                                    (INIClass *)this->GDIWallDefense[1]);
+        this->GDIWallDefenseCoefficient[0] = INIClass::ReadInt_Overwrite(
+                                               (int)a0,
+                                               (unsigned __int8 *)&g_INI_Key_General,
+                                               (CCINIClass *)&stru_830620.__pad_579C[27264],
+                                               (INIClass *)this->GDIWallDefenseCoefficient[0]);
+        v134 = INIClass::ReadInt_Overwrite(
+                 (int)a0,
+                 (unsigned __int8 *)&g_INI_Key_General,
+                 (CCINIClass *)&stru_830620.__pad_579C[27240],
+                 (INIClass *)this->GDIWallDefenseCoefficient[1]);
+        *(_DWORD *)&v258[8] = 128;
+        this->GDIWallDefenseCoefficient[1] = v134;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27228],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          DynamicVectorClass::BuildingTypeConstructor(&v288, 0, 0);
+          v288 = (VectorClass *)&vt_TypeList_BuildingTypeClass_const;
+          for ( nn = strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
+                nn;
+                nn = strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+          {
+            if ( !*nn )
+              break;
+            aP0_28.vtable0 = BuildingTypeClass::FindOrCreate(nn);
+            if ( aP0_28.vtable0 )
+              DynamicVector::Add_Alt3(&v288, &aP0_28);
+          }
+          TypeList::BuildingTypeCopy(&aP0_28.Capacity, (VectorClass *)&v288);
+          v288 = (VectorClass *)&vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)&v288);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(&aP0_28.Capacity, (VectorClass *)&this->ChronoHarvTooFarDistance);
+        }
+        VectorClass::CopyBuilding(&this->ChronoHarvTooFarDistance, (VectorClass *)&aP0_28.Capacity);
+        this->AlliedCrew = aP0_52;
+        this->SovietCrew = aP0_56;
+        this->ThirdCrew = aP0_60;
+        aP0_28.Capacity = (int)&vt_VectorClass_BuildingTypeClass_const;
+        if ( *(_DWORD *)&aP0_28.IsInitialized && aP0_49 )
+          __3_YAXPAX_Z(*(void **)&aP0_28.IsInitialized);
+        FlameDamage = (BuildingTypeClass *)this->FlameDamage;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27216],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v137 = BuildingTypeClass::FindOrCreate(String[0].__pad_0);
+        }
+        else
+        {
+          v137 = FlameDamage;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        this->FlameDamage = v137;
+        FlameDamage2 = (BuildingTypeClass *)this->FlameDamage2;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27204],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v139 = BuildingTypeClass::FindOrCreate(String[0].__pad_0);
+        }
+        else
+        {
+          v139 = FlameDamage2;
+        }
+        this->FlameDamage2 = v139;
+        NukeWarhead = (BuildingTypeClass *)this->NukeWarhead;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27192],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v141 = BuildingTypeClass::FindOrCreate(String[0].__pad_0);
+        }
+        else
+        {
+          v141 = NukeWarhead;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        this->NukeWarhead = v141;
+        NukeProjectile = (BuildingTypeClass *)this->NukeProjectile;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27180],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v143 = BuildingTypeClass::FindOrCreate(String[0].__pad_0);
+        }
+        else
+        {
+          v143 = NukeProjectile;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        this->NukeProjectile = v143;
+        NukeDown = (BuildingTypeClass *)this->NukeDown;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27168],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v145 = BuildingTypeClass::FindOrCreate(String[0].__pad_0);
+        }
+        else
+        {
+          v145 = NukeDown;
+        }
+        this->NukeDown = v145;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27156],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          DynamicVectorClass::BuildingTypeConstructor(&v288, 0, 0);
+          v288 = (VectorClass *)&vt_TypeList_BuildingTypeClass_const;
+          for ( i1 = strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
+                i1;
+                i1 = strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+          {
+            if ( !*i1 )
+              break;
+            aP0_28.vtable0 = BuildingTypeClass::FindOrCreate(i1);
+            if ( aP0_28.vtable0 )
+              DynamicVector::Add_Alt3(&v288, &aP0_28);
+          }
+          TypeList::BuildingTypeCopy(&aP0_28.Capacity, (VectorClass *)&v288);
+          v288 = (VectorClass *)&vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)&v288);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(&aP0_28.Capacity, (VectorClass *)&this->MutateWarhead);
+        }
+        VectorClass::CopyBuilding(&this->MutateWarhead, (VectorClass *)&aP0_28.Capacity);
+        this->V3Warhead = aP0_52;
+        this->DMislWarhead = aP0_56;
+        this->CMislWarhead = aP0_60;
+        aP0_28.Capacity = (int)&vt_VectorClass_BuildingTypeClass_const;
+        if ( *(_DWORD *)&aP0_28.IsInitialized && aP0_49 )
+          __3_YAXPAX_Z(*(void **)&aP0_28.IsInitialized);
+        V3EliteWarhead = (BuildingTypeClass *)this->V3EliteWarhead;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27140],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v148 = BuildingTypeClass::FindOrCreate(String[0].__pad_0);
+        }
+        else
+        {
+          v148 = V3EliteWarhead;
+        }
+        this->V3EliteWarhead = v148;
+        DMislEliteWarhead = (BuildingTypeClass *)this->DMislEliteWarhead;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27124],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v150 = BuildingTypeClass::FindOrCreate(String[0].__pad_0);
+        }
+        else
+        {
+          v150 = DMislEliteWarhead;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        this->DMislEliteWarhead = v150;
+        CMislEliteWarhead = (BuildingTypeClass *)this->CMislEliteWarhead;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27104],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v152 = BuildingTypeClass::FindOrCreate(String[0].__pad_0);
+        }
+        else
+        {
+          v152 = CMislEliteWarhead;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        this->CMislEliteWarhead = v152;
+        IvanWarhead = (BuildingTypeClass *)this->IvanWarhead;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27088],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          v154 = BuildingTypeClass::FindOrCreate(String[0].__pad_0);
+        }
+        else
+        {
+          v154 = IvanWarhead;
+        }
+        this->IvanWarhead = v154;
+        v155 = *(UnitTypeClass **)&this->__pad_240[448];
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27060],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          v156 = BuildingTypeClass::FindOrCreateAlt(String);
+        }
+        else
+        {
+          v156 = v155;
+        }
+        *(_DWORD *)&v258[8] = 128;
+        *(_DWORD *)&this->__pad_240[448] = v156;
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27048],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               *(int *)&v258[8]) )
+        {
+          UnitTypeVector::Construct(&v288, 0, 0);
+          v288 = (VectorClass *)&vt_TypeList_UnitTypeClass_const;
+          for ( i2 = (INIClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
+                i2;
+                i2 = (INIClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+          {
+            if ( !i2->__pad_0[0] )
+              break;
+            aP0_28.vtable0 = BuildingTypeClass::FindOrCreateAlt(i2);
+            if ( aP0_28.vtable0 )
+              VectorClass::PushBack(&v288, &aP0_28);
+          }
+          TypeList::CopyConstructor(&aP0_28.Capacity, (VectorClass *)&v288);
+          v288 = (VectorClass *)&vt_VectorClass_UnitTypeClass_const;
+          Vector::Destructor((int)&v288);
+        }
+        else
+        {
+          TypeList::CopyConstructor(&aP0_28.Capacity, (VectorClass *)&this->ThirdSurvivorDivisor);
+        }
+        VectorClass::CopyConstructor(&this->ThirdSurvivorDivisor, (InfantryTypeClass *)&aP0_28.Capacity);
+        this->AutocreateTime[1] = (int)aP0_52;
+        this->BuildupTime[0] = (int)aP0_56;
+        this->BuildupTime[1] = (int)aP0_60;
+        aP0_28.Capacity = (int)&vt_VectorClass_UnitTypeClass_const;
+        if ( *(_DWORD *)&aP0_28.IsInitialized && aP0_49 )
+          __3_YAXPAX_Z(*(void **)&aP0_28.IsInitialized);
+        if ( INIClass::GetString(
+               a0,
+               &g_INI_Key_General,
+               (unsigned __int8 *)&stru_830620.__pad_579C[27032],
+               (INIClass *)&stru_87C374.__pad_579C[33876],
+               String,
+               128) )
+        {
+          UnitTypeVector::Construct(&v288, 0, 0);
+          v288 = (VectorClass *)&vt_TypeList_UnitTypeClass_const;
+          for ( i3 = (INIClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
+                i3;
+                i3 = (INIClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject) )
+          {
+            if ( !i3->__pad_0[0] )
+              break;
+            aP0_28.vtable0 = BuildingTypeClass::FindOrCreateAlt(i3);
+            if ( aP0_28.vtable0 )
+              VectorClass::PushBack(&v288, &aP0_28);
+          }
+          TypeList::CopyConstructor(&aP0_28.Capacity, (VectorClass *)&v288);
+          v288 = (VectorClass *)&vt_VectorClass_UnitTypeClass_const;
+          Vector::Destructor((int)&v288);
+        }
+        else
+        {
+          TypeList::CopyConstructor(&aP0_28.Capacity, (VectorClass *)&this->HarvesterLoadRate);
+        }
+        VectorClass::CopyConstructor(&this->HarvesterLoadRate, (InfantryTypeClass *)&aP0_28.Capacity);
+        this->Easy[0] = (int)aP0_52;
+        this->Easy[1] = (int)aP0_56;
+        this->Easy[2] = (int)aP0_60;
+        aP0_28.Capacity = (int)&vt_VectorClass_UnitTypeClass_const;
+        if ( *(_DWORD *)&aP0_28.IsInitialized )
+        {
+          if ( aP0_49 )
+            __3_YAXPAX_Z(*(void **)&aP0_28.IsInitialized);
+        }
+        CountryName = (int *)HouseTypeClass::ReadCountryName(
+                               (int)&v288,
+                               a0,
+                               &g_INI_Key_General,
+                               (unsigned __int8 *)&stru_830620.__pad_579C[27020],
+                               &this->Easy[3]);
+        RulesClass::readSuperWeaponTypes(&this->Easy[3], CountryName);
+        RulesClass::readCountries(&v288);
+        this->Normal[18] = (int)GetINIClassInt(
+                                  a0,
+                                  &g_INI_Key_General,
+                                  (unsigned __int8 *)&stru_830620.__pad_579C[27008],
+                                  this->Normal[18]);
+        INIClassInfantryTypeList = ReadINIClassInfantryTypeList(
+                                     (INIClass *)&v288,
+                                     a0,
+                                     &g_INI_Key_General,
+                                     aSecretinfantry,
+                                     &this->__pad_C3C[196]);
+        TypeList::CopyInfantry((int *)&this->__pad_C3C[196], (CCINIClass *)INIClassInfantryTypeList);
+        TypeList::InfantryCleanup(&v288);
+        BuildingTypes = (int *)BuildingClass::LoadBuildingTypes(
+                                 (int)&v288,
+                                 a0,
+                                 &g_INI_Key_General,
+                                 (unsigned __int8 *)&stru_830620.__pad_579C[26996],
+                                 &this->__pad_C3C[224]);
+        RulesClass::readAircraftTypes((int *)&this->__pad_C3C[224], BuildingTypes);
+        RulesClass::readInfantryTypes(&v288);
+        BuildingTypeList = (VectorClass *)ReadINIClassBuildingTypeList(
+                                            (INIClass *)&v288,
+                                            a0,
+                                            (VectorClass *)&g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[26980],
+                                            &this->__pad_C3C[252]);
+        TypeList::CopyAircraft((int *)&this->__pad_C3C[252], BuildingTypeList);
+        RulesClass::readMaximums(&v288);
+        Warheads = (VectorClass *)RulesClass::readWarheads(&this->__pad_C3C[196]);
+        v164 = (char *)Warheads + RulesClass::readOverlayTypes(&this->__pad_C3C[224]);
+        *(_DWORD *)&this->__pad_C3C[280] = &v164[RulesClass::readSmudgeTypes(&this->__pad_C3C[252])];
+        this->Difficult[0] = INIClass::ReadInt_Overwrite(
+                               (int)a0,
+                               (unsigned __int8 *)&g_INI_Key_General,
+                               (CCINIClass *)&stru_830620.__pad_579C[26968],
+                               (INIClass *)this->Difficult[0]);
+        this->Difficult[1] = INIClass::ReadInt_Overwrite(
+                               (int)a0,
+                               (unsigned __int8 *)&g_INI_Key_General,
+                               (CCINIClass *)&stru_830620.__pad_579C[26948],
+                               (INIClass *)this->Difficult[1]);
+        this->Difficult[2] = INIClass::ReadInt_Overwrite(
+                               (int)a0,
+                               (unsigned __int8 *)&g_INI_Key_General,
+                               (CCINIClass *)&stru_830620.__pad_579C[26924],
+                               (INIClass *)this->Difficult[2]);
+        LOBYTE(this->Difficult[3]) = INIClass::ReadBool_Overwrite(
+                                       (int)a0,
+                                       (unsigned __int8 *)&g_INI_Key_General,
+                                       (CCINIClass *)&stru_830620.__pad_579C[26908],
+                                       this->Difficult[3]);
+        this->Difficult[4] = INIClass::ReadInt_Overwrite(
+                               (int)a0,
+                               (unsigned __int8 *)&g_INI_Key_General,
+                               (CCINIClass *)&stru_830620.__pad_579C[26888],
+                               (INIClass *)this->Difficult[4]);
+        this->Difficult[5] = INIClass::ReadInt_Overwrite(
+                               (int)a0,
+                               (unsigned __int8 *)&g_INI_Key_General,
+                               (CCINIClass *)&stru_830620.__pad_579C[26868],
+                               (INIClass *)this->Difficult[5]);
+        *(_DWORD *)&this->__pad_C3C[284] = GetINIClassInt(
+                                             a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[26852],
+                                             *(_DWORD *)&this->__pad_C3C[284]);
+        *(_DWORD *)&this->__pad_C3C[288] = GetINIClassInt(
+                                             a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[26836],
+                                             *(_DWORD *)&this->__pad_C3C[288]);
+        *(_DWORD *)&this->__pad_C3C[292] = GetINIClassInt(
+                                             a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[26820],
+                                             *(_DWORD *)&this->__pad_C3C[292]);
+        *(_DWORD *)&this->__pad_C3C[296] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[26800],
+                                             *(INIClass **)&this->__pad_C3C[296]);
+        *(double *)&v258[4] = *(float *)&this->__pad_C3C[300];
+        *(float *)&this->__pad_C3C[300] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[26776],
+                                            *(INIClass **)&v258[4]);
+        this->__pad_C3C[304] = INIClass::ReadBool_Overwrite(
+                                 (int)a0,
+                                 (unsigned __int8 *)&g_INI_Key_General,
+                                 (CCINIClass *)&stru_830620.__pad_579C[26752],
+                                 this->__pad_C3C[304]);
+        *(double *)&v258[4] = *(float *)&this->__pad_C3C[768];
+        *(float *)&this->__pad_C3C[768] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[26736],
+                                            *(INIClass **)&v258[4]);
+        *(_DWORD *)&this->__pad_C3C[820] = GetINIClassInt(
+                                             a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&DataGlobal_82596C,
+                                             *(_DWORD *)&this->__pad_C3C[820]);
+        *(_DWORD *)&this->__pad_C3C[816] = GetINIClassInt(
+                                             a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[26724],
+                                             *(_DWORD *)&this->__pad_C3C[816]);
+        *(_DWORD *)&this->__pad_C3C[824] = GetINIClassInt(
+                                             a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[26716],
+                                             *(_DWORD *)&this->__pad_C3C[824]);
+        *(_DWORD *)&this->__pad_C3C[828] = GetINIClassInt(
+                                             a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[26704],
+                                             *(_DWORD *)&this->__pad_C3C[828]);
+        *(_DWORD *)&this->__pad_C3C[832] = GetINIClassInt(
+                                             a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[26692],
+                                             *(_DWORD *)&this->__pad_C3C[832]);
+        *(_DWORD *)&this->__pad_C3C[836] = GetINIClassInt(
+                                             a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[26680],
+                                             *(_DWORD *)&this->__pad_C3C[836]);
+        BYTE1(this->ElevationIncrement) = INIClass::ReadBool_Overwrite(
+                                            (int)a0,
+                                            (unsigned __int8 *)&g_INI_Key_General,
+                                            (CCINIClass *)&stru_830620.__pad_579C[26664],
+                                            BYTE1(this->ElevationIncrement));
+        LOBYTE(this->ElevationIncrementBonus[0]) = INIClass::ReadBool_Overwrite(
+                                                     (int)a0,
+                                                     (unsigned __int8 *)&g_INI_Key_General,
+                                                     (CCINIClass *)&stru_830620.__pad_579C[26648],
+                                                     this->ElevationIncrementBonus[0]);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1308]);
+        IntList = (VectorClass *)INIClass::ReadIntList(
+                                   a0,
+                                   (int)&v288,
+                                   &g_INI_Key_General,
+                                   (unsigned __int8 *)&stru_830620.__pad_579C[26636],
+                                   (void **)v257.vtable0,
+                                   v257.Items,
+                                   v257.Capacity,
+                                   *(__int16 *)&v257.IsInitialized,
+                                   *(int *)v258,
+                                   *(int *)&v258[4],
+                                   *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1308], IntList);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1336]);
+        v166 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
                                 (int)&v288,
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aSecretinfantry,
-                                (_DWORD *)this + 832);
-    TypeList::CopyInfantry((int *)this + 832, InfantryTypeList);
-    TypeList::InfantryCleanup(&v288);
-    v165 = ((int (__stdcall *)(char *, char *, char *))BuildingClass::LoadBuildingTypes)(
-             g_INI_Key_General,
-             aSecretunits,
-             (char *)this + 3356);
-    ((void (__stdcall *)(int))RulesClass::readAircraftTypes)(v165);
-    RulesClass::readInfantryTypes(&v288);
-    BuildingTypeList = (int *)ReadINIClassBuildingTypeList(
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[26620],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1336], v166);
+        VectorClass::Dtor(&v288);
+        *(_DWORD *)&this->__pad_C3C[1732] = INIClass::ReadInt_Overwrite(
+                                              (int)a0,
+                                              (unsigned __int8 *)&g_INI_Key_General,
+                                              (CCINIClass *)&stru_830620.__pad_579C[26584],
+                                              *(INIClass **)&this->__pad_C3C[1732]);
+        v167 = *(INIClass **)&this->__pad_C3C[1964];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1968];
+        *(double *)&this->__pad_C3C[1964] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[26552],
+                                              v167);
+        BYTE1(this->ElevationBonusCap[1]) = INIClass::ReadBool_Overwrite(
+                                              (int)a0,
+                                              (unsigned __int8 *)&g_INI_Key_General,
+                                              (CCINIClass *)&stru_830620.__pad_579C[26532],
+                                              BYTE1(this->ElevationBonusCap[1]));
+        BYTE2(this->ElevationBonusCap[1]) = INIClass::ReadBool_Overwrite(
+                                              (int)a0,
+                                              (unsigned __int8 *)&g_INI_Key_General,
+                                              (CCINIClass *)&stru_830620.__pad_579C[26516],
+                                              BYTE2(this->ElevationBonusCap[1]));
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1972]);
+        v168 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
                                 (int)&v288,
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aSecretbuilding,
-                                (_DWORD *)this + 846);
-    TypeList::CopyAircraft((int *)this + 846, BuildingTypeList);
-    RulesClass::readMaximums(&v288);
-    v167 = RulesClass::readWarheads((_DWORD *)this + 832);
-    v168 = RulesClass::readOverlayTypes((_DWORD *)this + 839) + v167;
-    *((_DWORD *)this + 853) = RulesClass::readSmudgeTypes((_DWORD *)this + 846) + v168;
-    *((_DWORD *)this + 763) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aChronodelay,
-                                *((_DWORD *)this + 763));
-    *((_DWORD *)this + 764) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aChronoreinfdel,
-                                *((_DWORD *)this + 764));
-    *((_DWORD *)this + 765) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aChronodistance,
-                                *((_DWORD *)this + 765));
-    *((_BYTE *)this + 3064) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aChronotrigger,
-                                *((_BYTE *)this + 3064));
-    *((_DWORD *)this + 767) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aChronominimumd,
-                                *((_DWORD *)this + 767));
-    *((_DWORD *)this + 768) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aChronorangemin,
-                                *((_DWORD *)this + 768));
-    *((_DWORD *)this + 854) = GetINIClassInt(
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aAllieddisguise,
-                                *((_DWORD *)this + 854));
-    *((_DWORD *)this + 855) = GetINIClassInt(
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aSovietdisguise,
-                                *((_DWORD *)this + 855));
-    *((_DWORD *)this + 856) = GetINIClassInt(
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aThirddisguise,
-                                *((_DWORD *)this + 856));
-    *((_DWORD *)this + 857) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aSpypowerblacko,
-                                *((_DWORD *)this + 857));
-    v169 = *((float *)this + 858);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aSpymoneystealp,
-      v169);
-    *((float *)this + 858) = v169;
-    *((_BYTE *)this + 3436) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aAttackcursoron,
-                                *((_BYTE *)this + 3436));
-    v170 = *((float *)this + 975);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aPurifierbonus,
-      v170);
-    *((float *)this + 975) = v170;
-    *((_DWORD *)this + 988) = GetINIClassInt(
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aEngineer,
-                                *((_DWORD *)this + 988));
-    *((_DWORD *)this + 987) = GetINIClassInt(
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aTechnician,
-                                *((_DWORD *)this + 987));
-    *((_DWORD *)this + 989) = GetINIClassInt(
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aPilot,
-                                *((_DWORD *)this + 989));
-    *((_DWORD *)this + 990) = GetINIClassInt(
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aAlliedcrew,
-                                *((_DWORD *)this + 990));
-    *((_DWORD *)this + 991) = GetINIClassInt(
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aSovietcrew,
-                                *((_DWORD *)this + 991));
-    *((_DWORD *)this + 992) = GetINIClassInt(
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aThirdcrew,
-                                *((_DWORD *)this + 992));
-    *((_BYTE *)this + 6113) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aCurleyshuffle,
-                                *((_BYTE *)this + 6113));
-    *((_BYTE *)this + 6116) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aFinediffcontro,
-                                *((_BYTE *)this + 6116));
-    VectorClass::Copy(&v282, (_DWORD *)this + 1110);
-    IntList = (int *)INIClass::ReadIntList(
-                       v299,
-                       (int)&v288,
-                       (unsigned __int8 *)g_INI_Key_General,
-                       (unsigned __int8 *)aTeamdelays,
-                       v282,
-                       v283,
-                       v284,
-                       v285,
-                       v286,
-                       v287[0],
-                       v287[1]);
-    TypeList::CopyFull((int *)this + 1110, IntList);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1117);
-    v172 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAihatedelays,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1117, v172);
-    VectorClass::Dtor(&v288);
-    *((_DWORD *)this + 1216) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aAialternatepro,
-                                 *((_DWORD *)this + 1216));
-    v173 = *((_DWORD *)this + 1274);
-    v287[1] = *((_DWORD *)this + 1275);
-    v287[0] = v173;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aAiuseturbineup,
-      *(double *)v287);
-    *((double *)this + 637) = v170;
-    *((_BYTE *)this + 6129) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aNodaibuildswal,
-                                *((_BYTE *)this + 6129));
-    *((_BYTE *)this + 6130) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aAibuildswalls,
-                                *((_BYTE *)this + 6130));
-    VectorClass::Copy(&v282, (_DWORD *)this + 1276);
-    v174 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aFillearliestte,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1276, v174);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1252);
-    v175 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aMinimumaidefen,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1252, v175);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1259);
-    v176 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aMaximumaidefen,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1259, v176);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1266);
-    v177 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aTotalaiteamcap,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1266, v177);
-    VectorClass::Dtor(&v288);
-    *((_BYTE *)this + 6131) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aUsemindefenser,
-                                *((_BYTE *)this + 6131));
-    *((_DWORD *)this + 1124) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aDissolveunfill,
-                                 *((_DWORD *)this + 1124));
-    *((_DWORD *)this + 861) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aAisafedistance,
-                                *((_DWORD *)this + 861));
-    v178 = *((float *)this + 860);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aAiminorsuperre,
-      v178);
-    *((float *)this + 860) = v178;
-    *((_DWORD *)this + 862) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aHarvestertoofa,
-                                *((_DWORD *)this + 862));
-    *((_DWORD *)this + 863) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aChronoharvtoof,
-                                *((_DWORD *)this + 863));
-    VectorClass::Copy(&v282, (_DWORD *)this + 864);
-    v179 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAlliedbasedefe,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 864, v179);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 871);
-    v180 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aSovietbasedefe,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 871, v180);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 878);
-    v181 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aThirdbasedefen,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 878, v181);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 885);
-    v182 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAipickwalldefe,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 885, v182);
-    VectorClass::Dtor(&v288);
-    *((_DWORD *)this + 892) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aAirestrictrepl,
-                                *((_DWORD *)this + 892));
-    *((_DWORD *)this + 893) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aThreatperoccup,
-                                *((_DWORD *)this + 893));
-    *((_DWORD *)this + 894) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aApproachtarget,
-                                *((_DWORD *)this + 894));
-    *((_DWORD *)this + 895) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aCampaignmoneyd,
-                                *((_DWORD *)this + 895));
-    *((_DWORD *)this + 896) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aCampaignmoneyd_0,
-                                *((_DWORD *)this + 896));
-    *((_DWORD *)this + 897) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aGuardareatarge,
-                                *((_DWORD *)this + 897));
-    *((_DWORD *)this + 898) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aNormaltargetin,
-                                *((_DWORD *)this + 898));
-    *((_DWORD *)this + 899) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aAinavalyardadj,
-                                *((_DWORD *)this + 899));
-    VectorClass::Copy(&v282, (_DWORD *)this + 900);
-    v183 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aDisableddisgui,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 900, v183);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 907);
-    v184 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAiautodeployfr,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 907, v184);
-    VectorClass::Dtor(&v288);
-    *((_DWORD *)this + 914) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aMaximumbuildin,
-                                *((_DWORD *)this + 914));
-    *((_DWORD *)this + 1502) = INIClass::ReadCoord(
-                                 v178,
-                                 (int)g_INI_Key_General,
-                                 (int)aTiberiumshorts,
-                                 *((_DWORD *)this + 1502));
-    *((_DWORD *)this + 1503) = INIClass::ReadCoord(
-                                 v178,
-                                 (int)g_INI_Key_General,
-                                 (int)aTiberiumlongsc,
-                                 *((_DWORD *)this + 1503));
-    *((_DWORD *)this + 1504) = INIClass::ReadCoord(
-                                 v178,
-                                 (int)g_INI_Key_General,
-                                 (int)aSlaveminershor,
-                                 *((_DWORD *)this + 1504));
-    *((_DWORD *)this + 1505) = INIClass::ReadCoord(
-                                 v178,
-                                 (int)g_INI_Key_General,
-                                 (int)aSlaveminerslav,
-                                 *((_DWORD *)this + 1505));
-    *((_DWORD *)this + 1506) = INIClass::ReadCoord(
-                                 v178,
-                                 (int)g_INI_Key_General,
-                                 (int)aSlaveminerlong,
-                                 *((_DWORD *)this + 1506));
-    *((_DWORD *)this + 1507) = INIClass::ReadCoord(
-                                 v178,
-                                 (int)g_INI_Key_General,
-                                 (int)aSlaveminerscan,
-                                 *((_DWORD *)this + 1507));
-    *((_DWORD *)this + 1508) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aSlaveminerkick,
-                                 *((_DWORD *)this + 1508));
-    VectorClass::Copy(&v282, (_DWORD *)this + 945);
-    v185 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAisuperdefense,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 945, v185);
-    VectorClass::Dtor(&v288);
-    *((_DWORD *)this + 952) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aAisuperdefense_0,
-                                *((_DWORD *)this + 952));
-    *((_DWORD *)this + 953) = INIClass::ReadCoord(
-                                v178,
-                                (int)g_INI_Key_General,
-                                (int)aAisuperdefense_1,
-                                *((_DWORD *)this + 953));
-    VectorClass::Copy(&v282, (_DWORD *)this + 915);
-    v186 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAicapturenorma,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 915, v186);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 922);
-    v187 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAicapturewound,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 922, v187);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 929);
-    v188 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAicapturelowpo,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 929, v188);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 936);
-    v189 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAicapturelowmo,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 936, v189);
-    VectorClass::Dtor(&v288);
-    *((_DWORD *)this + 943) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aAicapturelowmo_0,
-                                *((_DWORD *)this + 943));
-    v190 = *((float *)this + 944);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aAicapturewound_0,
-      v190);
-    *((float *)this + 944) = v190;
-    VectorClass::Copy(&v282, (_DWORD *)this + 1217);
-    v191 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aMultiplayeraic,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1217, v191);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1224);
-    v192 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAivirtualpurif,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1224, v192);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1231);
-    v193 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAislaveminernu,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1231, v193);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1238);
-    v194 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aHarvestersperr,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1238, v194);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1245);
-    v195 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAiextrarefiner,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1245, v195);
-    VectorClass::Dtor(&v288);
-    v196 = (int *)ReadINIClassInfantryTypeList(
-                    (int)&v288,
-                    v299,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAmerparadropin,
-                    (_DWORD *)this + 769);
-    TypeList::CopyInfantry((int *)this + 769, v196);
-    TypeList::InfantryCleanup(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 776);
-    v197 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAmerparadropnu,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 776, v197);
-    VectorClass::Dtor(&v288);
-    v198 = (int *)ReadINIClassInfantryTypeList(
-                    (int)&v288,
-                    v299,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAllyparadropin,
-                    (_DWORD *)this + 783);
-    TypeList::CopyInfantry((int *)this + 783, v198);
-    TypeList::InfantryCleanup(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 790);
-    v199 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAllyparadropnu,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 790, v199);
-    VectorClass::Dtor(&v288);
-    v200 = (int *)ReadINIClassInfantryTypeList(
-                    (int)&v288,
-                    v299,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aSovparadropinf,
-                    (_DWORD *)this + 797);
-    TypeList::CopyInfantry((int *)this + 797, v200);
-    TypeList::InfantryCleanup(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 804);
-    v201 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aSovparadropnum,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 804, v201);
-    VectorClass::Dtor(&v288);
-    v202 = (int *)ReadINIClassInfantryTypeList(
-                    (int)&v288,
-                    v299,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aYuriparadropin,
-                    (_DWORD *)this + 811);
-    TypeList::CopyInfantry((int *)this + 811, v202);
-    TypeList::InfantryCleanup(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 818);
-    v203 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aYuriparadropnu,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 818, v203);
-    VectorClass::Dtor(&v288);
-    v204 = (int *)ReadINIClassInfantryTypeList(
-                    (int)&v288,
-                    v299,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAnimtoinfantry,
-                    (_DWORD *)this + 825);
-    TypeList::CopyInfantry((int *)this + 825, v204);
-    TypeList::InfantryCleanup(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1125);
-    v205 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAiioncannoncon,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1125, v205);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1132);
-    v206 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAiioncannonwar,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1132, v206);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1139);
-    v207 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAiioncannonpow,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1139, v207);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1146);
-    v208 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAiioncannontec,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1146, v208);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1153);
-    v209 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAiioncannoneng,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1153, v209);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1160);
-    v210 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAiioncannonthi,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1160, v210);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1167);
-    v211 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAiioncannonhar,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1167, v211);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1174);
-    v212 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAiioncannonmcv,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1174, v212);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1181);
-    v213 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAiioncannonapc,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1181, v213);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1188);
-    v214 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAiioncannonbas,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1188, v214);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1195);
-    v215 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAiioncannonplu,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1195, v215);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1202);
-    v216 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAiioncannonhel,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1202, v216);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 1209);
-    v217 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aAiioncannontem,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 1209, v217);
-    VectorClass::Dtor(&v288);
-    BerserkColor = *((_DWORD *)this + 1284);
-    v287[1] = *((_DWORD *)this + 1285);
-    v287[0] = BerserkColor;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aCloakdelay,
-      *(double *)v287);
-    *((double *)this + 642) = v190;
-    DirectRockingCoefficient = *((float *)this + 1286);
-    v287[1] = *((_DWORD *)this + 1287);
-    *(float *)v287 = DirectRockingCoefficient;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aGamespeedbias,
-      *(double *)v287);
-    *((double *)this + 643) = v190;
-    v220 = *((_DWORD *)this + 1288);
-    v287[1] = *((_DWORD *)this + 1289);
-    v287[0] = v220;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aBasebias,
-      *(double *)v287);
-    *((double *)this + 644) = v190;
-    *((_BYTE *)this + 6120) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aSeparateaircra,
-                                *((_BYTE *)this + 6120));
-    v221 = *((_DWORD *)this + 1334);
-    v287[1] = *((_DWORD *)this + 1335);
-    v287[0] = v221;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aBasedefensedel,
-      *(double *)v287);
-    *((double *)this + 667) = v190;
-    *((_DWORD *)this + 1336) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aSuspendpriorit,
-                                 *((_DWORD *)this + 1336));
-    v222 = *((_DWORD *)this + 1338);
-    v287[1] = *((_DWORD *)this + 1339);
-    v287[0] = v222;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aSuspenddelay,
-      *(double *)v287);
-    *((double *)this + 669) = v190;
-    v223 = *((_DWORD *)this + 1340);
-    v287[1] = *((_DWORD *)this + 1341);
-    v287[0] = v223;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aSurvivorrate,
-      *(double *)v287);
-    *((double *)this + 670) = v190;
-    *((_DWORD *)this + 1342) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aAlliedsurvivor,
-                                 *((_DWORD *)this + 1342));
-    *((_DWORD *)this + 1343) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aSovietsurvivor,
-                                 *((_DWORD *)this + 1343));
-    *((_DWORD *)this + 1344) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aThirdsurvivord,
-                                 *((_DWORD *)this + 1344));
-    v224 = *((_DWORD *)this + 1346);
-    v287[1] = *((_DWORD *)this + 1347);
-    v287[0] = v224;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aReloadrate,
-      *(double *)v287);
-    *((double *)this + 673) = v190;
-    v225 = *((_DWORD *)this + 1350);
-    v287[1] = *((_DWORD *)this + 1351);
-    v287[0] = v225;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aBuilduptime,
-      *(double *)v287);
-    *((double *)this + 675) = v190;
-    v226 = *((_DWORD *)this + 1354);
-    v287[1] = *((_DWORD *)this + 1355);
-    v287[0] = v226;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aHarvesterdumpr,
-      *(double *)v287);
-    *((double *)this + 677) = v190;
-    *((_DWORD *)this + 1352) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aHarvesterloadr,
-                                 *((_DWORD *)this + 1352));
-    v227 = *((_DWORD *)this + 1490);
-    v287[1] = *((_DWORD *)this + 1491);
-    v287[0] = v227;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aBuildspeed,
-      *(double *)v287);
-    *((double *)this + 745) = v190;
-    v228 = *((_DWORD *)this + 1452);
-    v287[1] = *((_DWORD *)this + 1453);
-    v287[0] = v228;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aDamagedelay,
-      *(double *)v287);
-    *((double *)this + 726) = v190;
-    v229 = *((_DWORD *)this + 1422);
-    v287[1] = *((_DWORD *)this + 1423);
-    v287[0] = v229;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aGrowthrate,
-      *(double *)v287);
-    *((double *)this + 711) = v190;
-    v230 = *((_DWORD *)this + 1486);
-    v287[1] = *((_DWORD *)this + 1487);
-    v287[0] = v230;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aRefundpercent,
-      *(double *)v287);
-    *((double *)this + 743) = v190;
-    v231 = *((_DWORD *)this + 1460);
-    v287[1] = *((_DWORD *)this + 1461);
-    v287[0] = v231;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aRepairpercent,
-      *(double *)v287);
-    *((double *)this + 730) = v190;
-    *((_DWORD *)this + 1459) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aRepairstep,
-                                 *((_DWORD *)this + 1459));
-    *((_DWORD *)this + 1462) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aIrepairstep,
-                                 *((_DWORD *)this + 1462));
-    v232 = *((_DWORD *)this + 1464);
-    v287[1] = *((_DWORD *)this + 1465);
-    v287[0] = v232;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aRepairrate,
-      *(double *)v287);
-    *((double *)this + 732) = v190;
-    v233 = *((_DWORD *)this + 1466);
-    v287[1] = *((_DWORD *)this + 1467);
-    v287[0] = v233;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aUrepairrate,
-      *(double *)v287);
-    *((double *)this + 733) = v190;
-    v234 = *((_DWORD *)this + 1468);
-    v287[1] = *((_DWORD *)this + 1469);
-    v287[0] = v234;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aIrepairrate,
-      *(double *)v287);
-    *((double *)this + 734) = v190;
-    *((_DWORD *)this + 1479) = INIClass::ReadCoord(v190, (int)g_INI_Key_General, (int)aStray, *((_DWORD *)this + 1479));
-    *((_DWORD *)this + 1480) = INIClass::ReadCoord(
-                                 v190,
-                                 (int)g_INI_Key_General,
-                                 (int)aRelaxedstray,
-                                 *((_DWORD *)this + 1480));
-    *((_DWORD *)this + 1481) = INIClass::ReadCoord(
-                                 v190,
-                                 (int)g_INI_Key_General,
-                                 (int)aGuardmodestray,
-                                 *((_DWORD *)this + 1481));
-    *((_DWORD *)this + 1478) = INIClass::ReadCoord(
-                                 v190,
-                                 (int)g_INI_Key_General,
-                                 (int)aCloseenough,
-                                 *((_DWORD *)this + 1478));
-    *((_BYTE *)this + 6114) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aBlendedfog,
-                                *((_BYTE *)this + 6114));
-    *((_DWORD *)this + 6) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                              g_INI_Key_General,
-                              aAttackingaircr,
-                              *((_DWORD *)this + 6));
-    *((_DWORD *)this + 1455) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aLeptonspersigh,
-                                 *((_DWORD *)this + 1455));
-    *((_DWORD *)this + 1442) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aTiberiumtransm,
-                                 *((_DWORD *)this + 1442));
-    *((_DWORD *)this + 1509) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aLightningdefer,
-                                 *((_DWORD *)this + 1509));
-    *((_DWORD *)this + 1510) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aLightningdamag,
-                                 *((_DWORD *)this + 1510));
-    *((_DWORD *)this + 1511) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aLightningstorm,
-                                 *((_DWORD *)this + 1511));
-    *((_DWORD *)this + 1512) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aLightninghitde,
-                                 *((_DWORD *)this + 1512));
-    *((_DWORD *)this + 1513) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aLightningscatt,
-                                 *((_DWORD *)this + 1513));
-    *((_DWORD *)this + 1514) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aLightningcells,
-                                 *((_DWORD *)this + 1514));
-    *((_DWORD *)this + 1515) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aLightningsepar,
-                                 *((_DWORD *)this + 1515));
-    *((_DWORD *)this + 1517) = SmallFunc_67B500(
-                                 v299,
-                                 (unsigned __int8 *)g_INI_Key_General,
-                                 (unsigned __int8 *)aLightningwarhe,
-                                 *((_DWORD *)this + 1517));
-    *((_BYTE *)this + 6064) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aLightningprint,
-                                *((_BYTE *)this + 6064));
-    *((_DWORD *)this + 1518) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aForceshieldrad,
-                                 *((_DWORD *)this + 1518));
-    *((_DWORD *)this + 1519) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aForceshielddur,
-                                 *((_DWORD *)this + 1519));
-    *((_DWORD *)this + 1520) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aForceshieldbla,
-                                 *((_DWORD *)this + 1520));
-    *((_DWORD *)this + 1521) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aForceshieldpla,
-                                 *((_DWORD *)this + 1521));
-    *((_BYTE *)this + 6088) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aMutateexplosio_0,
-                                *((_BYTE *)this + 6088));
-    *((_DWORD *)this + 294) = SmallFunc_67BCE0(
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aPrismtype,
-                                *((_DWORD *)this + 294));
-    ZoomInFactor_high = (double)*((int *)this + 295);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aPrismsupportmo,
-      ZoomInFactor_high);
-    *((_DWORD *)this + 295) = Math::RoundToInt(ZoomInFactor_high * 100.0);
-    *((_DWORD *)this + 296) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aPrismsupportma,
-                                *((_DWORD *)this + 296));
-    *((_DWORD *)this + 297) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aPrismsupportde,
-                                *((_DWORD *)this + 297));
-    *((_DWORD *)this + 298) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aPrismsupportdu,
-                                *((_DWORD *)this + 298));
-    *((_DWORD *)this + 299) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aPrismsupporthe,
-                                *((_DWORD *)this + 299));
-    *((_DWORD *)this + 300) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aV3rocketpausef,
-                                *((_DWORD *)this + 300));
-    *((_DWORD *)this + 301) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aV3rockettiltfr,
-                                *((_DWORD *)this + 301));
-    MinLowPowerProductionSpeed = *((float *)this + 302);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aV3rocketpitchi,
-      MinLowPowerProductionSpeed);
-    *((float *)this + 302) = MinLowPowerProductionSpeed;
-    MaxLowPowerProductionSpeed = *((float *)this + 303);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aV3rocketpitchf,
-      MaxLowPowerProductionSpeed);
-    *((float *)this + 303) = MaxLowPowerProductionSpeed;
-    LowPowerPenaltyModifier = *((float *)this + 304);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aV3rocketturnra,
-      LowPowerPenaltyModifier);
-    *((float *)this + 304) = LowPowerPenaltyModifier;
-    MultipleFactory_low = (double)*((int *)this + 305);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aV3rocketraiser,
-      MultipleFactory_low);
-    *((_DWORD *)this + 305) = Math::RoundToInt(MultipleFactory_low);
-    v240 = *((float *)this + 306);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aV3rocketaccele,
-      v240);
-    *((float *)this + 306) = v240;
-    *((_DWORD *)this + 307) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aV3rocketaltitu,
-                                *((_DWORD *)this + 307));
-    *((_DWORD *)this + 308) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aV3rocketdamage,
-                                *((_DWORD *)this + 308));
-    *((_DWORD *)this + 309) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aV3rocketelited,
-                                *((_DWORD *)this + 309));
-    *((_DWORD *)this + 310) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aV3rocketbodyle,
-                                *((_DWORD *)this + 310));
-    *((_BYTE *)this + 1244) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aV3rocketlazycu,
-                                *((_BYTE *)this + 1244));
-    *((_DWORD *)this + 312) = GetINIClassKeyword(
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aV3rockettype,
-                                *((_DWORD *)this + 312));
-    *((_DWORD *)this + 313) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aDmislpausefram,
-                                *((_DWORD *)this + 313));
-    *((_DWORD *)this + 314) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aDmisltiltframe,
-                                *((_DWORD *)this + 314));
-    v241 = *((float *)this + 315);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aDmislpitchinit,
-      v241);
-    *((float *)this + 315) = v241;
-    v242 = *((float *)this + 316);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aDmislpitchfina,
-      v242);
-    *((float *)this + 316) = v242;
-    v243 = *((float *)this + 317);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aDmislturnrate,
-      v243);
-    *((float *)this + 317) = v243;
-    DropPodAngle_low = (double)*((int *)this + 318);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aDmislraiserate,
-      DropPodAngle_low);
-    *((_DWORD *)this + 318) = Math::RoundToInt(DropPodAngle_low);
-    v245 = *((float *)this + 319);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aDmislaccelerat,
-      v245);
-    *((float *)this + 319) = v245;
-    *((_DWORD *)this + 320) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aDmislaltitude,
-                                *((_DWORD *)this + 320));
-    *((_DWORD *)this + 321) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aDmisldamage,
-                                *((_DWORD *)this + 321));
-    *((_DWORD *)this + 322) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aDmislelitedama,
-                                *((_DWORD *)this + 322));
-    *((_DWORD *)this + 323) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aDmislbodylengt,
-                                *((_DWORD *)this + 323));
-    *((_BYTE *)this + 1296) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aDmisllazycurve,
-                                *((_BYTE *)this + 1296));
-    *((_DWORD *)this + 325) = GetINIClassKeyword(
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aDmisltype,
-                                *((_DWORD *)this + 325));
-    *((_DWORD *)this + 326) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aCmislpausefram,
-                                *((_DWORD *)this + 326));
-    *((_DWORD *)this + 327) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aCmisltiltframe,
-                                *((_DWORD *)this + 327));
-    v246 = *((float *)this + 328);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aCmislpitchinit,
-      v246);
-    *((float *)this + 328) = v246;
-    v247 = *((float *)this + 329);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aCmislpitchfina,
-      v247);
-    *((float *)this + 329) = v247;
-    v248 = *((float *)this + 330);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aCmislturnrate,
-      v248);
-    *((float *)this + 330) = v248;
-    HoverAcceleration_high = (double)*((int *)this + 331);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aCmislraiserate,
-      HoverAcceleration_high);
-    *((_DWORD *)this + 331) = Math::RoundToInt(HoverAcceleration_high);
-    v250 = *((float *)this + 319);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aCmislaccelerat,
-      v250);
-    *((float *)this + 332) = v250;
-    *((_DWORD *)this + 333) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aCmislaltitude,
-                                *((_DWORD *)this + 333));
-    *((_DWORD *)this + 334) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aCmisldamage,
-                                *((_DWORD *)this + 334));
-    *((_DWORD *)this + 335) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aCmislelitedama,
-                                *((_DWORD *)this + 335));
-    *((_DWORD *)this + 336) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aCmislbodylengt,
-                                *((_DWORD *)this + 336));
-    *((_BYTE *)this + 1348) = ((_DWORD (__stdcall *)(char *, char *, char))INIClass::ReadBool_Overwrite)(
-                                g_INI_Key_General,
-                                aCmisllazycurve,
-                                *((_BYTE *)this + 1348));
-    *((_DWORD *)this + 338) = GetINIClassKeyword(
-                                v299,
-                                (unsigned __int8 *)g_INI_Key_General,
-                                (unsigned __int8 *)aCmisltype,
-                                *((_DWORD *)this + 338));
-    *((_DWORD *)this + 339) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aParadropradius,
-                                *((_DWORD *)this + 339));
-    *((_DWORD *)this + 482) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aSpotlightmovem,
-                                *((_DWORD *)this + 482));
-    *((_DWORD *)this + 483) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aSpotlightlocat,
-                                *((_DWORD *)this + 483));
-    v251 = *((_DWORD *)this + 484);
-    v287[1] = *((_DWORD *)this + 485);
-    v287[0] = v251;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aSpotlightspeed,
-      *(double *)v287);
-    *((double *)this + 242) = v250;
-    v252 = *((_DWORD *)this + 486);
-    v287[1] = *((_DWORD *)this + 487);
-    v287[0] = v252;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aSpotlightaccel,
-      *(double *)v287);
-    *((double *)this + 243) = v250;
-    v253 = *((_DWORD *)this + 488);
-    v287[1] = *((_DWORD *)this + 489);
-    v287[0] = v253;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aSpotlightangle,
-      *(double *)v287);
-    *((double *)this + 244) = v250;
-    *((_DWORD *)this + 490) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aSpotlightradiu,
-                                *((_DWORD *)this + 490));
-    *((_DWORD *)this + 395) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                g_INI_Key_General,
-                                aRevealtriggerr,
-                                *((_DWORD *)this + 395));
-    v254 = *((_DWORD *)this + 472);
-    v287[1] = *((_DWORD *)this + 473);
-    v287[0] = v254;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aChargetodrainr,
-      *(double *)v287);
-    *((double *)this + 236) = v250;
-    v255 = *((_DWORD *)this + 470);
-    v287[1] = *((_DWORD *)this + 471);
-    v287[0] = v255;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aWallbuildspeed,
-      *(double *)v287);
-    *((double *)this + 235) = v250;
-    BridgeVoxelMax = *((_DWORD *)this + 344);
-    v287[1] = *((_DWORD *)this + 345);
-    v287[0] = BridgeVoxelMax;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aConditionyello_0,
-      *(double *)v287);
-    *((double *)this + 172) = v250;
-    TireVoxelDebris = *((_DWORD *)this + 342);
-    v287[1] = *((_DWORD *)this + 343);
-    v287[0] = TireVoxelDebris;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aConditionredsp,
-      *(double *)v287);
-    *((double *)this + 171) = v250;
-    AITriggerFailureWeightDelta = *((_DWORD *)this + 48);
-    v287[1] = *((_DWORD *)this + 49);
-    v287[0] = AITriggerFailureWeightDelta;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aAitriggersucce,
-      *(double *)v287);
-    *((double *)this + 24) = v250;
-    AITriggerTrackRecordCoefficient = *((_DWORD *)this + 50);
-    v287[1] = *((_DWORD *)this + 51);
-    v287[0] = AITriggerTrackRecordCoefficient;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aAitriggerfailu,
-      *(double *)v287);
-    *((double *)this + 25) = v250;
-    VeinholeMonsterStrength = *((_DWORD *)this + 52);
-    v287[1] = *((_DWORD *)this + 53);
-    v287[0] = VeinholeMonsterStrength;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aAitriggertrack,
-      *(double *)v287);
-    *((double *)this + 26) = v250;
-    *((_DWORD *)this + 1524) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aWeedcapacity,
-                                 *((_DWORD *)this + 1524));
-    *((_DWORD *)this + 34) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                               g_INI_Key_General,
-                               aFlashframetime,
-                               *((_DWORD *)this + 34));
-    *((_DWORD *)this + 35) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                               g_INI_Key_General,
-                               aRadarcombatfla,
-                               *((_DWORD *)this + 35));
-    v261 = *((float *)this + 32);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aRadareventspee,
-      v261);
-    *((float *)this + 32) = v261;
-    v262 = *((float *)this + 33);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aRadareventrota,
-      v262);
-    *((float *)this + 33) = v262;
-    VectorClass::Copy(&v282, (_DWORD *)this + 271);
-    v263 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aRadareventsupp,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 271, v263);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 278);
-    v264 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aRadareventvisi,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 278, v264);
-    VectorClass::Dtor(&v288);
-    VectorClass::Copy(&v282, (_DWORD *)this + 285);
-    v265 = (int *)INIClass::ReadIntList(
-                    v299,
-                    (int)&v288,
-                    (unsigned __int8 *)g_INI_Key_General,
-                    (unsigned __int8 *)aRadareventdura,
-                    v282,
-                    v283,
-                    v284,
-                    v285,
-                    v286,
-                    v287[0],
-                    v287[1]);
-    TypeList::CopyFull((int *)this + 285, v265);
-    VectorClass::Dtor(&v288);
-    *((_DWORD *)this + 31) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                               g_INI_Key_General,
-                               aRadareventminr,
-                               *((_DWORD *)this + 31));
-    RadarEventRotationSpeed = *((float *)this + 30);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aRadareventcolo,
-      RadarEventRotationSpeed);
-    *((float *)this + 30) = RadarEventRotationSpeed;
-    SavourDelay = *((_DWORD *)this + 1040);
-    v287[1] = *((_DWORD *)this + 1041);
-    v287[0] = SavourDelay;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aMyeffectivenes,
-      *(double *)v287);
-    *((double *)this + 520) = RadarEventRotationSpeed;
-    Players = *((_DWORD *)this + 1042);
-    v287[1] = *((_DWORD *)this + 1043);
-    v287[0] = Players;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aTargeteffectiv,
-      *(double *)v287);
-    *((double *)this + 521) = RadarEventRotationSpeed;
-    BaseDefenseDelay = *((_DWORD *)this + 1044);
-    v287[1] = *((_DWORD *)this + 1045);
-    v287[0] = BaseDefenseDelay;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aTargetspecialt,
-      *(double *)v287);
-    *((double *)this + 522) = RadarEventRotationSpeed;
-    SuspendPriority = *((_DWORD *)this + 1046);
-    v287[1] = *((_DWORD *)this + 1047);
-    v287[0] = SuspendPriority;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aTargetstrength,
-      *(double *)v287);
-    *((double *)this + 523) = RadarEventRotationSpeed;
-    SuspendDelay = *((_DWORD *)this + 1048);
-    v287[1] = *((_DWORD *)this + 1049);
-    v287[0] = SuspendDelay;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aTargetdistance,
-      *(double *)v287);
-    *((double *)this + 524) = RadarEventRotationSpeed;
-    SurvivorRate = *((_DWORD *)this + 1050);
-    v287[1] = *((_DWORD *)this + 1051);
-    v287[0] = SurvivorRate;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aDumbmyeffectiv,
-      *(double *)v287);
-    *((double *)this + 525) = RadarEventRotationSpeed;
-    AlliedSurvivorDivisor = *((_DWORD *)this + 1052);
-    v287[1] = *((_DWORD *)this + 1053);
-    v287[0] = AlliedSurvivorDivisor;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aDumbtargeteffe,
-      *(double *)v287);
-    *((double *)this + 526) = RadarEventRotationSpeed;
-    ThirdSurvivorDivisor = *((_DWORD *)this + 1054);
-    v287[1] = *((_DWORD *)this + 1055);
-    v287[0] = ThirdSurvivorDivisor;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aDumbtargetspec,
-      *(double *)v287);
-    *((double *)this + 527) = RadarEventRotationSpeed;
-    ReloadRate = *((_DWORD *)this + 1056);
-    v287[1] = *((_DWORD *)this + 1057);
-    v287[0] = ReloadRate;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aDumbtargetstre,
-      *(double *)v287);
-    *((double *)this + 528) = RadarEventRotationSpeed;
-    AutocreateTime = *((_DWORD *)this + 1058);
-    v287[1] = *((_DWORD *)this + 1059);
-    v287[0] = AutocreateTime;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aDumbtargetdist,
-      *(double *)v287);
-    *((double *)this + 529) = RadarEventRotationSpeed;
-    BuildupTime = *((_DWORD *)this + 1060);
-    v287[1] = *((_DWORD *)this + 1061);
-    v287[0] = BuildupTime;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aEnemyhousethre,
-      *(double *)v287);
-    *((double *)this + 530) = RadarEventRotationSpeed;
-    *((_DWORD *)this + 54) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                               g_INI_Key_General,
-                               aVeinholemonste,
-                               *((_DWORD *)this + 54));
-    *((_DWORD *)this + 55) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                               g_INI_Key_General,
-                               aMaxveinholegro,
-                               *((_DWORD *)this + 55));
-    *((_DWORD *)this + 56) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                               g_INI_Key_General,
-                               aVeinholegrowth,
-                               *((_DWORD *)this + 56));
-    *((_DWORD *)this + 57) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                               g_INI_Key_General,
-                               aVeinholeshrink,
-                               *((_DWORD *)this + 57));
-    *((_DWORD *)this + 59) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                               g_INI_Key_General,
-                               aVeindamage,
-                               *((_DWORD *)this + 59));
-    *((_DWORD *)this + 1021) = SmallFunc_67BD80(
-                                 v299,
-                                 (unsigned __int8 *)g_INI_Key_General,
-                                 (unsigned __int8 *)aVeinholetypecl,
-                                 *((_DWORD *)this + 1021));
-    v278 = ((int (__stdcall *)(char *, char *, char *))RulesClass::LoadTypeList)(
-             g_INI_Key_General,
-             aDefaultmiraged,
-             (char *)this + 4088);
-    ((void (__stdcall *)(int))RulesClass::readBuildingTypes)(v278);
-    RulesClass::readVehicleTypes(&v288);
-    *((_DWORD *)this + 1029) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aInfantryblinkd,
-                                 *((_DWORD *)this + 1029));
-    *((_DWORD *)this + 60) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                               g_INI_Key_General,
-                               aMaximumqueuedo,
-                               *((_DWORD *)this + 60));
-    *((_DWORD *)this + 36) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                               g_INI_Key_General,
-                               aMaxwaypointpat,
-                               *((_DWORD *)this + 36));
-    *((_DWORD *)this + 1105) = ((_DWORD (__stdcall *)(char *, char *, _DWORD))INIClass::ReadInt_Overwrite)(
-                                 g_INI_Key_General,
-                                 aTreestrength,
-                                 *((_DWORD *)this + 1105));
-    v279 = *((float *)this + 1534);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aEngineercaptur,
-      v279);
-    *((float *)this + 1534) = v279;
-    v280 = *((float *)this + 1535);
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aEngineercaptur,
-      v280);
-    *((float *)this + 1535) = v280;
-    v291 = *((unsigned int *)this + 1536);
-    v281 = (double)v291 * 0.016666668;
-    ((void (__stdcall *)(int, int, double))INIClass::ReadDouble_Overwrite)(
-      (int)g_INI_Key_General,
-      (int)aTalkbubbletime,
-      v281);
-    result = Math::RoundToInt(v281 * 60.0);
-    *((_DWORD *)this + 1536) = result;
-    LOBYTE(result) = 1;
-  }
-  else
-  {
-    LOBYTE(result) = 0;
-  }
-  return result;
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[26488],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1972], v168);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1876]);
+        v169 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[26464],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1876], v169);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1904]);
+        v170 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[26440],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1904], v170);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1932]);
+        v171 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[26424],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1932], v171);
+        VectorClass::Dtor(&v288);
+        HIBYTE(this->ElevationBonusCap[1]) = INIClass::ReadBool_Overwrite(
+                                               (int)a0,
+                                               (unsigned __int8 *)&g_INI_Key_General,
+                                               (CCINIClass *)&stru_830620.__pad_579C[26404],
+                                               HIBYTE(this->ElevationBonusCap[1]));
+        *(_DWORD *)&this->__pad_C3C[1364] = INIClass::ReadInt_Overwrite(
+                                              (int)a0,
+                                              (unsigned __int8 *)&g_INI_Key_General,
+                                              (CCINIClass *)&stru_830620.__pad_579C[26376],
+                                              *(INIClass **)&this->__pad_C3C[1364]);
+        *(_DWORD *)&this->__pad_C3C[312] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[26360],
+                                             *(INIClass **)&this->__pad_C3C[312]);
+        *(double *)&v258[4] = *(float *)&this->__pad_C3C[308];
+        *(float *)&this->__pad_C3C[308] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[26332],
+                                            *(INIClass **)&v258[4]);
+        *(_DWORD *)&this->__pad_C3C[316] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[26308],
+                                             *(INIClass **)&this->__pad_C3C[316]);
+        *(_DWORD *)&this->__pad_C3C[320] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[26280],
+                                             *(INIClass **)&this->__pad_C3C[320]);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[324]);
+        v172 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[26256],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[324], v172);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[352]);
+        v173 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[26232],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[352], v173);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[380]);
+        v174 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[26208],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[380], v174);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[408]);
+        v175 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[26180],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[408], v175);
+        VectorClass::Dtor(&v288);
+        *(_DWORD *)&this->__pad_C3C[436] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[26156],
+                                             *(INIClass **)&this->__pad_C3C[436]);
+        *(_DWORD *)&this->__pad_C3C[440] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[26136],
+                                             *(INIClass **)&this->__pad_C3C[440]);
+        *(_DWORD *)&this->__pad_C3C[444] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[26104],
+                                             *(INIClass **)&this->__pad_C3C[444]);
+        *(_DWORD *)&this->__pad_C3C[448] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[26080],
+                                             *(INIClass **)&this->__pad_C3C[448]);
+        *(_DWORD *)&this->__pad_C3C[452] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[26056],
+                                             *(INIClass **)&this->__pad_C3C[452]);
+        *(_DWORD *)&this->__pad_C3C[456] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[26032],
+                                             *(INIClass **)&this->__pad_C3C[456]);
+        *(_DWORD *)&this->__pad_C3C[460] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[26008],
+                                             *(INIClass **)&this->__pad_C3C[460]);
+        *(_DWORD *)&this->__pad_C3C[464] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[25984],
+                                             *(INIClass **)&this->__pad_C3C[464]);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[468]);
+        v176 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25948],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[468], v176);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[496]);
+        v177 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25924],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[496], v177);
+        VectorClass::Dtor(&v288);
+        *(_DWORD *)&this->__pad_C3C[524] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[25888],
+                                             *(INIClass **)&this->__pad_C3C[524]);
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->MutateExplosion;
+        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[25868];
+        *(_DWORD *)v258 = &g_INI_Key_General;
+        *(_DWORD *)&this->MutateExplosion = INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
+        *(_DWORD *)&v258[8] = this->CollapseChance;
+        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[25848];
+        *(_DWORD *)v258 = &g_INI_Key_General;
+        this->CollapseChance = (int)INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
+        *(_DWORD *)&v258[8] = this->WeedCapacity;
+        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[25828];
+        *(_DWORD *)v258 = &g_INI_Key_General;
+        this->WeedCapacity = (int)INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
+        *(float *)&v258[8] = this->ExtraUnitLight;
+        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[25808];
+        *(_DWORD *)v258 = &g_INI_Key_General;
+        LODWORD(this->ExtraUnitLight) = INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
+        *(float *)&v258[8] = this->ExtraInfantryLight;
+        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[25788];
+        *(_DWORD *)v258 = &g_INI_Key_General;
+        LODWORD(this->ExtraInfantryLight) = INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
+        *(float *)&v258[8] = this->ExtraAircraftLight;
+        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[25760];
+        *(_DWORD *)v258 = &g_INI_Key_General;
+        LODWORD(this->ExtraAircraftLight) = INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
+        *(_DWORD *)&this->Paranoid = INIClass::ReadInt_Overwrite(
+                                       (int)a0,
+                                       (unsigned __int8 *)&g_INI_Key_General,
+                                       (CCINIClass *)&stru_830620.__pad_579C[25732],
+                                       *(INIClass **)&this->Paranoid);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[648]);
+        v178 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25704],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[648], v178);
+        VectorClass::Dtor(&v288);
+        *(_DWORD *)&this->__pad_C3C[676] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[25680],
+                                             *(INIClass **)&this->__pad_C3C[676]);
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[680];
+        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[25656];
+        *(_DWORD *)v258 = &g_INI_Key_General;
+        *(_DWORD *)&this->__pad_C3C[680] = INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[528]);
+        v179 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25640],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[528], v179);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[556]);
+        v180 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25620],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[556], v180);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[584]);
+        v181 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25600],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[584], v181);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[612]);
+        v182 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25580],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[612], v182);
+        VectorClass::Dtor(&v288);
+        *(_DWORD *)&this->__pad_C3C[640] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[25556],
+                                             *(INIClass **)&this->__pad_C3C[640]);
+        *(double *)&v258[4] = *(float *)&this->__pad_C3C[644];
+        *(float *)&this->__pad_C3C[644] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[25532],
+                                            *(INIClass **)&v258[4]);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1736]);
+        v183 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25516],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1736], v183);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1764]);
+        v184 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25496],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1764], v184);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1792]);
+        v185 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25476],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1792], v185);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1820]);
+        v186 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25452],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1820], v186);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1848]);
+        v187 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25432],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1848], v187);
+        VectorClass::Dtor(&v288);
+        v188 = ReadINIClassInfantryTypeList(
+                 (INIClass *)&v288,
+                 a0,
+                 &g_INI_Key_General,
+                 (unsigned __int8 *)&stru_830620.__pad_579C[25416],
+                 &this->Difficult[6]);
+        TypeList::CopyInfantry(&this->Difficult[6], (CCINIClass *)v188);
+        TypeList::InfantryCleanup(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->Difficult[13]);
+        v189 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25400],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull(&this->Difficult[13], v189);
+        VectorClass::Dtor(&v288);
+        v190 = ReadINIClassInfantryTypeList(
+                 (INIClass *)&v288,
+                 a0,
+                 &g_INI_Key_General,
+                 (unsigned __int8 *)&stru_830620.__pad_579C[25384],
+                 this->__pad_C3C);
+        TypeList::CopyInfantry((int *)this->__pad_C3C, (CCINIClass *)v190);
+        TypeList::InfantryCleanup(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[28]);
+        v191 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25368],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[28], v191);
+        VectorClass::Dtor(&v288);
+        v192 = ReadINIClassInfantryTypeList(
+                 (INIClass *)&v288,
+                 a0,
+                 &g_INI_Key_General,
+                 (unsigned __int8 *)&stru_830620.__pad_579C[25352],
+                 &this->__pad_C3C[56]);
+        TypeList::CopyInfantry((int *)&this->__pad_C3C[56], (CCINIClass *)v192);
+        TypeList::InfantryCleanup(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[84]);
+        v193 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25336],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[84], v193);
+        VectorClass::Dtor(&v288);
+        v194 = ReadINIClassInfantryTypeList(
+                 (INIClass *)&v288,
+                 a0,
+                 &g_INI_Key_General,
+                 (unsigned __int8 *)&stru_830620.__pad_579C[25320],
+                 &this->__pad_C3C[112]);
+        TypeList::CopyInfantry((int *)&this->__pad_C3C[112], (CCINIClass *)v194);
+        TypeList::InfantryCleanup(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[140]);
+        v195 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25304],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[140], v195);
+        VectorClass::Dtor(&v288);
+        v196 = ReadINIClassInfantryTypeList(
+                 (INIClass *)&v288,
+                 a0,
+                 &g_INI_Key_General,
+                 (unsigned __int8 *)&stru_830620.__pad_579C[25288],
+                 &this->__pad_C3C[168]);
+        TypeList::CopyInfantry((int *)&this->__pad_C3C[168], (CCINIClass *)v196);
+        TypeList::InfantryCleanup(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1368]);
+        v197 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25264],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1368], v197);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1396]);
+        v198 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25236],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1396], v198);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1424]);
+        v199 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25212],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1424], v199);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1452]);
+        v200 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25184],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1452], v200);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1480]);
+        v201 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25156],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1480], v201);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1508]);
+        v202 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25132],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1508], v202);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1536]);
+        v203 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25104],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1536], v203);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1564]);
+        v204 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25084],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1564], v204);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1592]);
+        v205 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25064],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1592], v205);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1620]);
+        v206 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25036],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1620], v206);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1648]);
+        v207 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[25012],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1648], v207);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1676]);
+        v208 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[24988],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1676], v208);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_C3C[1704]);
+        v209 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[24964],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_C3C[1704], v209);
+        VectorClass::Dtor(&v288);
+        v210 = *(INIClass **)&this->__pad_C3C[2004];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2008];
+        *(double *)&this->__pad_C3C[2004] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[24952],
+                                              v210);
+        v211 = *(INIClass **)&this->__pad_C3C[2012];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2016];
+        *(double *)&this->__pad_C3C[2012] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[24936],
+                                              v211);
+        v212 = *(INIClass **)&this->__pad_C3C[2020];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2024];
+        *(double *)&this->__pad_C3C[2020] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[24924],
+                                              v212);
+        LOBYTE(this->ElevationIncrementBonus[1]) = INIClass::ReadBool_Overwrite(
+                                                     (int)a0,
+                                                     (unsigned __int8 *)&g_INI_Key_General,
+                                                     (CCINIClass *)&stru_830620.__pad_579C[24904],
+                                                     this->ElevationIncrementBonus[1]);
+        v213 = *(INIClass **)&this->__pad_C3C[2204];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2208];
+        *(double *)&this->__pad_C3C[2204] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[24884],
+                                              v213);
+        *(_DWORD *)&this->__pad_C3C[2212] = INIClass::ReadInt_Overwrite(
+                                              (int)a0,
+                                              (unsigned __int8 *)&g_INI_Key_General,
+                                              (CCINIClass *)&stru_830620.__pad_579C[24868],
+                                              *(INIClass **)&this->__pad_C3C[2212]);
+        v214 = *(INIClass **)&this->__pad_C3C[2220];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2224];
+        *(double *)&this->__pad_C3C[2220] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[24852],
+                                              v214);
+        v215 = *(INIClass **)&this->__pad_C3C[2228];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2232];
+        *(double *)&this->__pad_C3C[2228] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[24836],
+                                              v215);
+        *(_DWORD *)&this->__pad_C3C[2236] = INIClass::ReadInt_Overwrite(
+                                              (int)a0,
+                                              (unsigned __int8 *)&g_INI_Key_General,
+                                              (CCINIClass *)&stru_830620.__pad_579C[24812],
+                                              *(INIClass **)&this->__pad_C3C[2236]);
+        *(_DWORD *)&this->__pad_C3C[2240] = INIClass::ReadInt_Overwrite(
+                                              (int)a0,
+                                              (unsigned __int8 *)&g_INI_Key_General,
+                                              (CCINIClass *)&stru_830620.__pad_579C[24788],
+                                              *(INIClass **)&this->__pad_C3C[2240]);
+        *(_DWORD *)&this->__pad_C3C[2244] = INIClass::ReadInt_Overwrite(
+                                              (int)a0,
+                                              (unsigned __int8 *)&g_INI_Key_General,
+                                              (CCINIClass *)&stru_830620.__pad_579C[24764],
+                                              *(INIClass **)&this->__pad_C3C[2244]);
+        v216 = *(INIClass **)&this->__pad_C3C[2252];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2256];
+        *(double *)&this->__pad_C3C[2252] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[24752],
+                                              v216);
+        v217 = *(INIClass **)&this->__pad_C3C[2268];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2272];
+        *(double *)&this->__pad_C3C[2268] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[24740],
+                                              v217);
+        v218 = *(INIClass **)&this->__pad_C3C[2284];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[2288];
+        *(double *)&this->__pad_C3C[2284] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[24720],
+                                              v218);
+        *(_DWORD *)&this->__pad_C3C[2276] = INIClass::ReadInt_Overwrite(
+                                              (int)a0,
+                                              (unsigned __int8 *)&g_INI_Key_General,
+                                              (CCINIClass *)&stru_830620.__pad_579C[24700],
+                                              *(INIClass **)&this->__pad_C3C[2276]);
+        LightningDamage = (INIClass *)this->LightningDamage;
+        *(_DWORD *)&v258[8] = this->LightningStormDuration;
+        *(double *)&this->LightningDamage = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[24688],
+                                              LightningDamage);
+        v220 = (INIClass *)this->RepairPercent[1];
+        *(_DWORD *)&v258[8] = this->IRepairStep;
+        *(double *)&this->RepairPercent[1] = INIClass::ReadDouble_Overwrite(
+                                               (int)a0,
+                                               &g_INI_Key_General,
+                                               (unsigned __int8 *)&stru_830620.__pad_579C[24676],
+                                               v220);
+        v221 = (INIClass *)this->GrowthRate[0];
+        *(_DWORD *)&v258[8] = this->GrowthRate[1];
+        *(double *)this->GrowthRate = INIClass::ReadDouble_Overwrite(
+                                        (int)a0,
+                                        &g_INI_Key_General,
+                                        (unsigned __int8 *)&stru_830620.__pad_579C[24664],
+                                        v221);
+        v222 = (INIClass *)this->MovieTime[1];
+        *(_DWORD *)&v258[8] = this->TiberiumShortScan;
+        *(double *)&this->MovieTime[1] = INIClass::ReadDouble_Overwrite(
+                                           (int)a0,
+                                           &g_INI_Key_General,
+                                           (unsigned __int8 *)&stru_830620.__pad_579C[24648],
+                                           v222);
+        v223 = (INIClass *)this->ConditionYellow[0];
+        *(_DWORD *)&v258[8] = this->ConditionYellow[1];
+        *(double *)this->ConditionYellow = INIClass::ReadDouble_Overwrite(
+                                             (int)a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[24632],
+                                             v223);
+        this->IRepairRate[1] = INIClass::ReadInt_Overwrite(
+                                 (int)a0,
+                                 (unsigned __int8 *)&g_INI_Key_General,
+                                 (CCINIClass *)&stru_830620.__pad_579C[24620],
+                                 (INIClass *)this->IRepairRate[1]);
+        this->ConditionRed[0] = INIClass::ReadInt_Overwrite(
+                                  (int)a0,
+                                  (unsigned __int8 *)&g_INI_Key_General,
+                                  (CCINIClass *)&stru_830620.__pad_579C[24608],
+                                  (INIClass *)this->ConditionRed[0]);
+        v224 = (INIClass *)this->IdleActionFrequency[0];
+        *(_DWORD *)&v258[8] = this->IdleActionFrequency[1];
+        *(double *)this->IdleActionFrequency = INIClass::ReadDouble_Overwrite(
+                                                 (int)a0,
+                                                 &g_INI_Key_General,
+                                                 (unsigned __int8 *)&stru_830620.__pad_579C[24596],
+                                                 v224);
+        CloseEnough = (INIClass *)this->CloseEnough;
+        *(_DWORD *)&v258[8] = this->Stray;
+        *(double *)&this->CloseEnough = INIClass::ReadDouble_Overwrite(
+                                          (int)a0,
+                                          &g_INI_Key_General,
+                                          (unsigned __int8 *)&stru_830620.__pad_579C[24584],
+                                          CloseEnough);
+        RelaxedStray = (INIClass *)this->RelaxedStray;
+        *(_DWORD *)&v258[8] = this->GuardModeStray;
+        *(double *)&this->RelaxedStray = INIClass::ReadDouble_Overwrite(
+                                           (int)a0,
+                                           &g_INI_Key_General,
+                                           (unsigned __int8 *)&stru_830620.__pad_579C[24572],
+                                           RelaxedStray);
+        *(_DWORD *)&v258[8] = this->C4Delay[0];
+        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[24564];
+        *(_DWORD *)v258 = &g_INI_Key_General;
+        this->C4Delay[0] = (int)INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
+        *(_DWORD *)&v258[8] = this->C4Delay[1];
+        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[24548];
+        *(_DWORD *)v258 = &g_INI_Key_General;
+        this->C4Delay[1] = (int)INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
+        *(_DWORD *)&v258[8] = this->CreditReserve;
+        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[24532];
+        *(_DWORD *)v258 = &g_INI_Key_General;
+        this->CreditReserve = (int)INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
+        *(_DWORD *)&v258[8] = this->BuildSpeed[1];
+        *(_DWORD *)&v258[4] = &stru_830620.__pad_579C[24520];
+        *(_DWORD *)v258 = &g_INI_Key_General;
+        this->BuildSpeed[1] = (int)INIClass::ReadCoord(*(double *)v258, *(int *)&v258[8], aP3_8, aP3_12);
+        BYTE2(this->ElevationIncrement) = INIClass::ReadBool_Overwrite(
+                                            (int)a0,
+                                            (unsigned __int8 *)&g_INI_Key_General,
+                                            (CCINIClass *)&stru_830620.__pad_579C[24508],
+                                            BYTE2(this->ElevationIncrement));
+        this->AttackingAircraftSightRange = INIClass::ReadInt_Overwrite(
+                                              (int)a0,
+                                              (unsigned __int8 *)&g_INI_Key_General,
+                                              (CCINIClass *)&stru_830620.__pad_579C[24480],
+                                              (INIClass *)this->AttackingAircraftSightRange);
+        this->RepairRate[1] = INIClass::ReadInt_Overwrite(
+                                (int)a0,
+                                (unsigned __int8 *)&g_INI_Key_General,
+                                (CCINIClass *)&stru_830620.__pad_579C[24456],
+                                (INIClass *)this->RepairRate[1]);
+        this->SpeakDelay[1] = INIClass::ReadInt_Overwrite(
+                                (int)a0,
+                                (unsigned __int8 *)&g_INI_Key_General,
+                                (CCINIClass *)&stru_830620.__pad_579C[24432],
+                                (INIClass *)this->SpeakDelay[1]);
+        *(_DWORD *)&this->FineDiffControl = INIClass::ReadInt_Overwrite(
+                                              (int)a0,
+                                              (unsigned __int8 *)&g_INI_Key_General,
+                                              (CCINIClass *)&stru_830620.__pad_579C[24412],
+                                              *(INIClass **)&this->FineDiffControl);
+        *(_DWORD *)&this->SeparateAircraft = INIClass::ReadInt_Overwrite(
+                                               (int)a0,
+                                               (unsigned __int8 *)&g_INI_Key_General,
+                                               (CCINIClass *)&stru_830620.__pad_579C[24396],
+                                               *(INIClass **)&this->SeparateAircraft);
+        *(_DWORD *)&this->PlayerReturnFire = INIClass::ReadInt_Overwrite(
+                                               (int)a0,
+                                               (unsigned __int8 *)&g_INI_Key_General,
+                                               (CCINIClass *)&stru_830620.__pad_579C[24372],
+                                               *(INIClass **)&this->PlayerReturnFire);
+        *(_DWORD *)&this->ShroudGrow = INIClass::ReadInt_Overwrite(
+                                         (int)a0,
+                                         (unsigned __int8 *)&g_INI_Key_General,
+                                         (CCINIClass *)&stru_830620.__pad_579C[24352],
+                                         *(INIClass **)&this->ShroudGrow);
+        LODWORD(this->EngineerCaptureLevel) = INIClass::ReadInt_Overwrite(
+                                                (int)a0,
+                                                (unsigned __int8 *)&g_INI_Key_General,
+                                                (CCINIClass *)&stru_830620.__pad_579C[24328],
+                                                (INIClass *)LODWORD(this->EngineerCaptureLevel));
+        LODWORD(this->TalkBubbleTime) = INIClass::ReadInt_Overwrite(
+                                          (int)a0,
+                                          (unsigned __int8 *)&g_INI_Key_General,
+                                          (CCINIClass *)&stru_830620.__pad_579C[24308],
+                                          (INIClass *)LODWORD(this->TalkBubbleTime));
+        this->RadDurationMultiple = INIClass::ReadInt_Overwrite(
+                                      (int)a0,
+                                      (unsigned __int8 *)&g_INI_Key_General,
+                                      (CCINIClass *)&stru_830620.__pad_579C[24288],
+                                      (INIClass *)this->RadDurationMultiple);
+        this->RadLevelMax = SmallFunc_67B500(
+                              a0,
+                              &g_INI_Key_General,
+                              (unsigned __int8 *)&stru_830620.__pad_579C[24268],
+                              this->RadLevelMax);
+        LOBYTE(this->RadApplicationDelay) = INIClass::ReadBool_Overwrite(
+                                              (int)a0,
+                                              (unsigned __int8 *)&g_INI_Key_General,
+                                              (CCINIClass *)&stru_830620.__pad_579C[24248],
+                                              this->RadApplicationDelay);
+        this->RadLevelDelay = INIClass::ReadInt_Overwrite(
+                                (int)a0,
+                                (unsigned __int8 *)&g_INI_Key_General,
+                                (CCINIClass *)&stru_830620.__pad_579C[24228],
+                                (INIClass *)this->RadLevelDelay);
+        this->RadLightDelay = INIClass::ReadInt_Overwrite(
+                                (int)a0,
+                                (unsigned __int8 *)&g_INI_Key_General,
+                                (CCINIClass *)&stru_830620.__pad_579C[24208],
+                                (INIClass *)this->RadLightDelay);
+        this->RadLevelFactor[0] = INIClass::ReadInt_Overwrite(
+                                    (int)a0,
+                                    (unsigned __int8 *)&g_INI_Key_General,
+                                    (CCINIClass *)&stru_830620.__pad_579C[24180],
+                                    (INIClass *)this->RadLevelFactor[0]);
+        this->RadLevelFactor[1] = INIClass::ReadInt_Overwrite(
+                                    (int)a0,
+                                    (unsigned __int8 *)&g_INI_Key_General,
+                                    (CCINIClass *)&stru_830620.__pad_579C[24148],
+                                    (INIClass *)this->RadLevelFactor[1]);
+        LOBYTE(this->RadLightFactor[0]) = INIClass::ReadBool_Overwrite(
+                                            (int)a0,
+                                            (unsigned __int8 *)&g_INI_Key_General,
+                                            (CCINIClass *)&stru_830620.__pad_579C[24132],
+                                            this->RadLightFactor[0]);
+        *(_DWORD *)&this->__pad_240[600] = SmallFunc_67BCE0(
+                                             a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[24120],
+                                             *(_DWORD *)&this->__pad_240[600]);
+        *(double *)&v258[4] = (double)*(int *)&this->__pad_240[604];
+        v227 = INIClass::ReadDouble_Overwrite(
+                 (int)a0,
+                 &g_INI_Key_General,
+                 (unsigned __int8 *)&stru_830620.__pad_579C[24096],
+                 *(INIClass **)&v258[4]);
+        *(_DWORD *)&this->__pad_240[604] = Math::RoundToInt(v227 * 100.0);
+        *(_DWORD *)&this->__pad_240[608] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[24080],
+                                             *(INIClass **)&this->__pad_240[608]);
+        *(_DWORD *)&this->__pad_240[612] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[24060],
+                                             *(INIClass **)&this->__pad_240[612]);
+        *(_DWORD *)&this->__pad_240[616] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[24036],
+                                             *(INIClass **)&this->__pad_240[616]);
+        *(_DWORD *)&this->__pad_240[620] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[24016],
+                                             *(INIClass **)&this->__pad_240[620]);
+        *(_DWORD *)&this->__pad_240[624] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23996],
+                                             *(INIClass **)&this->__pad_240[624]);
+        *(_DWORD *)&this->__pad_240[628] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23976],
+                                             *(INIClass **)&this->__pad_240[628]);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[632];
+        *(float *)&this->__pad_240[632] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[23952],
+                                            *(INIClass **)&v258[4]);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[636];
+        *(float *)&this->__pad_240[636] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[23932],
+                                            *(INIClass **)&v258[4]);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[640];
+        *(float *)&this->__pad_240[640] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[23912],
+                                            *(INIClass **)&v258[4]);
+        *(double *)&v258[4] = (double)*(int *)&this->__pad_240[644];
+        v228 = INIClass::ReadDouble_Overwrite(
+                 (int)a0,
+                 &g_INI_Key_General,
+                 (unsigned __int8 *)&stru_830620.__pad_579C[23892],
+                 *(INIClass **)&v258[4]);
+        *(_DWORD *)&this->__pad_240[644] = Math::RoundToInt(v228);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[648];
+        *(float *)&this->__pad_240[648] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[23868],
+                                            *(INIClass **)&v258[4]);
+        *(_DWORD *)&this->__pad_240[652] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23848],
+                                             *(INIClass **)&this->__pad_240[652]);
+        *(_DWORD *)&this->__pad_240[656] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23832],
+                                             *(INIClass **)&this->__pad_240[656]);
+        *(_DWORD *)&this->__pad_240[660] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23812],
+                                             *(INIClass **)&this->__pad_240[660]);
+        *(_DWORD *)&this->__pad_240[664] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23792],
+                                             *(INIClass **)&this->__pad_240[664]);
+        this->__pad_240[668] = INIClass::ReadBool_Overwrite(
+                                 (int)a0,
+                                 (unsigned __int8 *)&g_INI_Key_General,
+                                 (CCINIClass *)&stru_830620.__pad_579C[23772],
+                                 this->__pad_240[668]);
+        *(_DWORD *)&this->__pad_240[672] = GetINIClassKeyword(
+                                             a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[23756],
+                                             *(_DWORD *)&this->__pad_240[672]);
+        *(_DWORD *)&this->__pad_240[676] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23736],
+                                             *(INIClass **)&this->__pad_240[676]);
+        *(_DWORD *)&this->__pad_240[680] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23720],
+                                             *(INIClass **)&this->__pad_240[680]);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[684];
+        *(float *)&this->__pad_240[684] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[23700],
+                                            *(INIClass **)&v258[4]);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[688];
+        *(float *)&this->__pad_240[688] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[23684],
+                                            *(INIClass **)&v258[4]);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[692];
+        *(float *)&this->__pad_240[692] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[23668],
+                                            *(INIClass **)&v258[4]);
+        *(double *)&v258[4] = (double)*(int *)&this->__pad_240[696];
+        v229 = INIClass::ReadDouble_Overwrite(
+                 (int)a0,
+                 &g_INI_Key_General,
+                 (unsigned __int8 *)&stru_830620.__pad_579C[23652],
+                 *(INIClass **)&v258[4]);
+        *(_DWORD *)&this->__pad_240[696] = Math::RoundToInt(v229);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[700];
+        *(float *)&this->__pad_240[700] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[23632],
+                                            *(INIClass **)&v258[4]);
+        *(_DWORD *)&this->__pad_240[704] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23616],
+                                             *(INIClass **)&this->__pad_240[704]);
+        *(_DWORD *)&this->__pad_240[708] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23604],
+                                             *(INIClass **)&this->__pad_240[708]);
+        *(_DWORD *)&this->__pad_240[712] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23584],
+                                             *(INIClass **)&this->__pad_240[712]);
+        *(_DWORD *)&this->__pad_240[716] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23568],
+                                             *(INIClass **)&this->__pad_240[716]);
+        this->__pad_240[720] = INIClass::ReadBool_Overwrite(
+                                 (int)a0,
+                                 (unsigned __int8 *)&g_INI_Key_General,
+                                 (CCINIClass *)&stru_830620.__pad_579C[23552],
+                                 this->__pad_240[720]);
+        *(_DWORD *)&this->__pad_240[724] = GetINIClassKeyword(
+                                             a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[23540],
+                                             *(_DWORD *)&this->__pad_240[724]);
+        *(_DWORD *)&this->__pad_240[728] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23520],
+                                             *(INIClass **)&this->__pad_240[728]);
+        *(_DWORD *)&this->__pad_240[732] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23504],
+                                             *(INIClass **)&this->__pad_240[732]);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[736];
+        *(float *)&this->__pad_240[736] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[23484],
+                                            *(INIClass **)&v258[4]);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[740];
+        *(float *)&this->__pad_240[740] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[23468],
+                                            *(INIClass **)&v258[4]);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[744];
+        *(float *)&this->__pad_240[744] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[23452],
+                                            *(INIClass **)&v258[4]);
+        *(double *)&v258[4] = (double)*(int *)&this->__pad_240[748];
+        v230 = INIClass::ReadDouble_Overwrite(
+                 (int)a0,
+                 &g_INI_Key_General,
+                 (unsigned __int8 *)&stru_830620.__pad_579C[23436],
+                 *(INIClass **)&v258[4]);
+        *(_DWORD *)&this->__pad_240[748] = Math::RoundToInt(v230);
+        *(double *)&v258[4] = *(float *)&this->__pad_240[700];
+        *(float *)&this->__pad_240[752] = INIClass::ReadDouble_Overwrite(
+                                            (int)a0,
+                                            &g_INI_Key_General,
+                                            (unsigned __int8 *)&stru_830620.__pad_579C[23416],
+                                            *(INIClass **)&v258[4]);
+        *(_DWORD *)&this->__pad_240[756] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23400],
+                                             *(INIClass **)&this->__pad_240[756]);
+        *(_DWORD *)&this->__pad_240[760] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23388],
+                                             *(INIClass **)&this->__pad_240[760]);
+        *(_DWORD *)&this->__pad_240[764] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23368],
+                                             *(INIClass **)&this->__pad_240[764]);
+        *(_DWORD *)&this->__pad_240[768] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23352],
+                                             *(INIClass **)&this->__pad_240[768]);
+        this->__pad_240[772] = INIClass::ReadBool_Overwrite(
+                                 (int)a0,
+                                 (unsigned __int8 *)&g_INI_Key_General,
+                                 (CCINIClass *)&stru_830620.__pad_579C[23336],
+                                 this->__pad_240[772]);
+        *(_DWORD *)&this->__pad_240[776] = GetINIClassKeyword(
+                                             a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[23324],
+                                             *(_DWORD *)&this->__pad_240[776]);
+        *(_DWORD *)&this->__pad_240[780] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[23308],
+                                             *(INIClass **)&this->__pad_240[780]);
+        this->NodGateOne = (void *)INIClass::ReadInt_Overwrite(
+                                     (int)a0,
+                                     (unsigned __int8 *)&g_INI_Key_General,
+                                     (CCINIClass *)&stru_830620.__pad_579C[23284],
+                                     (INIClass *)this->NodGateOne);
+        this->NodGateTwo = (void *)INIClass::ReadInt_Overwrite(
+                                     (int)a0,
+                                     (unsigned __int8 *)&g_INI_Key_General,
+                                     (CCINIClass *)&stru_830620.__pad_579C[23260],
+                                     (INIClass *)this->NodGateTwo);
+        WallTower = (INIClass *)this->WallTower;
+        *(_DWORD *)&v258[8] = this->BuildConst[0];
+        *(double *)&this->WallTower = INIClass::ReadDouble_Overwrite(
+                                        (int)a0,
+                                        &g_INI_Key_General,
+                                        (unsigned __int8 *)&stru_830620.__pad_579C[23244],
+                                        WallTower);
+        v232 = (INIClass *)this->BuildPower[0];
+        *(_DWORD *)&v258[8] = this->BuildRefinery[0];
+        *(double *)this->BuildPower = INIClass::ReadDouble_Overwrite(
+                                        (int)a0,
+                                        &g_INI_Key_General,
+                                        (unsigned __int8 *)&stru_830620.__pad_579C[23220],
+                                        v232);
+        v233 = (INIClass *)this->BuildBarracks[0];
+        *(_DWORD *)&v258[8] = this->BuildTech[0];
+        *(double *)this->BuildBarracks = INIClass::ReadDouble_Overwrite(
+                                           (int)a0,
+                                           &g_INI_Key_General,
+                                           (unsigned __int8 *)&stru_830620.__pad_579C[23204],
+                                           v233);
+        this->BuildWeapons[0] = INIClass::ReadInt_Overwrite(
+                                  (int)a0,
+                                  (unsigned __int8 *)&g_INI_Key_General,
+                                  (CCINIClass *)&stru_830620.__pad_579C[23188],
+                                  (INIClass *)this->BuildWeapons[0]);
+        this->VeteranCombat[1] = INIClass::ReadInt_Overwrite(
+                                   (int)a0,
+                                   (unsigned __int8 *)&g_INI_Key_General,
+                                   (CCINIClass *)&stru_830620.__pad_579C[23168],
+                                   (INIClass *)this->VeteranCombat[1]);
+        v234 = (INIClass *)this->ChargeToDrainRatio[0];
+        *(_DWORD *)&v258[8] = this->ChargeToDrainRatio[1];
+        *(double *)this->ChargeToDrainRatio = INIClass::ReadDouble_Overwrite(
+                                                (int)a0,
+                                                &g_INI_Key_General,
+                                                (unsigned __int8 *)&stru_830620.__pad_579C[23148],
+                                                v234);
+        v235 = (INIClass *)this->WallBuildSpeedCoefficient[0];
+        *(_DWORD *)&v258[8] = this->WallBuildSpeedCoefficient[1];
+        *(double *)this->WallBuildSpeedCoefficient = INIClass::ReadDouble_Overwrite(
+                                                       (int)a0,
+                                                       &g_INI_Key_General,
+                                                       (unsigned __int8 *)&stru_830620.__pad_579C[23120],
+                                                       v235);
+        v236 = *(INIClass **)&this->__pad_240[800];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_240[804];
+        *(double *)&this->__pad_240[800] = INIClass::ReadDouble_Overwrite(
+                                             (int)a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[23084],
+                                             v236);
+        v237 = *(INIClass **)&this->__pad_240[792];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_240[796];
+        *(double *)&this->__pad_240[792] = INIClass::ReadDouble_Overwrite(
+                                             (int)a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[23052],
+                                             v237);
+        v238 = (INIClass *)this->AITriggerSuccessWeightDelta[0];
+        *(_DWORD *)&v258[8] = this->AITriggerSuccessWeightDelta[1];
+        *(double *)this->AITriggerSuccessWeightDelta = INIClass::ReadDouble_Overwrite(
+                                                         (int)a0,
+                                                         &g_INI_Key_General,
+                                                         (unsigned __int8 *)&stru_830620.__pad_579C[23024],
+                                                         v238);
+        v239 = (INIClass *)this->AITriggerFailureWeightDelta[0];
+        *(_DWORD *)&v258[8] = this->AITriggerFailureWeightDelta[1];
+        *(double *)this->AITriggerFailureWeightDelta = INIClass::ReadDouble_Overwrite(
+                                                         (int)a0,
+                                                         &g_INI_Key_General,
+                                                         (unsigned __int8 *)&stru_830620.__pad_579C[22996],
+                                                         v239);
+        v240 = (INIClass *)this->AITriggerTrackRecordCoefficient[0];
+        *(_DWORD *)&v258[8] = this->AITriggerTrackRecordCoefficient[1];
+        *(double *)this->AITriggerTrackRecordCoefficient = INIClass::ReadDouble_Overwrite(
+                                                             (int)a0,
+                                                             &g_INI_Key_General,
+                                                             (unsigned __int8 *)&stru_830620.__pad_579C[22964],
+                                                             v240);
+        this->RadTintFactor[0] = INIClass::ReadInt_Overwrite(
+                                   (int)a0,
+                                   (unsigned __int8 *)&g_INI_Key_General,
+                                   (CCINIClass *)&stru_830620.__pad_579C[22948],
+                                   (INIClass *)this->RadTintFactor[0]);
+        this->InfantryHeadPop = (void *)INIClass::ReadInt_Overwrite(
+                                          (int)a0,
+                                          (unsigned __int8 *)&g_INI_Key_General,
+                                          (CCINIClass *)&stru_830620.__pad_579C[22932],
+                                          (INIClass *)this->InfantryHeadPop);
+        this->InfantryNuked = (void *)INIClass::ReadInt_Overwrite(
+                                        (int)a0,
+                                        (unsigned __int8 *)&g_INI_Key_General,
+                                        (CCINIClass *)&stru_830620.__pad_579C[22908],
+                                        (INIClass *)this->InfantryNuked);
+        *(double *)&v258[4] = *(float *)&this->InfantryExplode;
+        *(float *)&this->InfantryExplode = INIClass::ReadDouble_Overwrite(
+                                             (int)a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[22892],
+                                             *(INIClass **)&v258[4]);
+        *(double *)&v258[4] = *(float *)&this->FlamingInfantry;
+        *(float *)&this->FlamingInfantry = INIClass::ReadDouble_Overwrite(
+                                             (int)a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[22868],
+                                             *(INIClass **)&v258[4]);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_240[508]);
+        v241 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[22836],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_240[508], v241);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_240[536]);
+        v242 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[22804],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_240[536], v242);
+        VectorClass::Dtor(&v288);
+        VectorClass::Copy(&v257, (VectorClass *)&this->__pad_240[564]);
+        v243 = (VectorClass *)INIClass::ReadIntList(
+                                a0,
+                                (int)&v288,
+                                &g_INI_Key_General,
+                                (unsigned __int8 *)&stru_830620.__pad_579C[22784],
+                                (void **)v257.vtable0,
+                                v257.Items,
+                                v257.Capacity,
+                                *(__int16 *)&v257.IsInitialized,
+                                *(int *)v258,
+                                *(int *)&v258[4],
+                                *(int *)&v258[8]);
+        TypeList::CopyFull((int *)&this->__pad_240[564], v243);
+        VectorClass::Dtor(&v288);
+        this->NukeTakeOff = (void *)INIClass::ReadInt_Overwrite(
+                                      (int)a0,
+                                      (unsigned __int8 *)&g_INI_Key_General,
+                                      (CCINIClass *)&stru_830620.__pad_579C[22764],
+                                      (INIClass *)this->NukeTakeOff);
+        *(double *)&v258[4] = *(float *)&this->Wake;
+        *(float *)&this->Wake = INIClass::ReadDouble_Overwrite(
+                                  (int)a0,
+                                  &g_INI_Key_General,
+                                  (unsigned __int8 *)&stru_830620.__pad_579C[22740],
+                                  *(INIClass **)&v258[4]);
+        v244 = *(INIClass **)&this->__pad_C3C[1028];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1032];
+        *(double *)&this->__pad_C3C[1028] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[22704],
+                                              v244);
+        v245 = *(INIClass **)&this->__pad_C3C[1036];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1040];
+        *(double *)&this->__pad_C3C[1036] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[22664],
+                                              v245);
+        v246 = *(INIClass **)&this->__pad_C3C[1044];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1048];
+        *(double *)&this->__pad_C3C[1044] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[22624],
+                                              v246);
+        v247 = *(INIClass **)&this->__pad_C3C[1052];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1056];
+        *(double *)&this->__pad_C3C[1052] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[22588],
+                                              v247);
+        v248 = *(INIClass **)&this->__pad_C3C[1060];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1064];
+        *(double *)&this->__pad_C3C[1060] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[22552],
+                                              v248);
+        v249 = *(INIClass **)&this->__pad_C3C[1068];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1072];
+        *(double *)&this->__pad_C3C[1068] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[22520],
+                                              v249);
+        v250 = *(INIClass **)&this->__pad_C3C[1076];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1080];
+        *(double *)&this->__pad_C3C[1076] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[22484],
+                                              v250);
+        v251 = *(INIClass **)&this->__pad_C3C[1084];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1088];
+        *(double *)&this->__pad_C3C[1084] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[22448],
+                                              v251);
+        v252 = *(INIClass **)&this->__pad_C3C[1092];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1096];
+        *(double *)&this->__pad_C3C[1092] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[22416],
+                                              v252);
+        v253 = *(INIClass **)&this->__pad_C3C[1100];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1104];
+        *(double *)&this->__pad_C3C[1100] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[22384],
+                                              v253);
+        v254 = *(INIClass **)&this->__pad_C3C[1108];
+        *(_DWORD *)&v258[8] = *(_DWORD *)&this->__pad_C3C[1112];
+        *(double *)&this->__pad_C3C[1108] = INIClass::ReadDouble_Overwrite(
+                                              (int)a0,
+                                              &g_INI_Key_General,
+                                              (unsigned __int8 *)&stru_830620.__pad_579C[22360],
+                                              v254);
+        this->MaximumQueuedObjects = INIClass::ReadInt_Overwrite(
+                                       (int)a0,
+                                       (unsigned __int8 *)&g_INI_Key_General,
+                                       (CCINIClass *)&stru_830620.__pad_579C[22336],
+                                       (INIClass *)this->MaximumQueuedObjects);
+        this->AircraftFogReveal = INIClass::ReadInt_Overwrite(
+                                    (int)a0,
+                                    (unsigned __int8 *)&g_INI_Key_General,
+                                    (CCINIClass *)&stru_830620.__pad_579C[22316],
+                                    (INIClass *)this->AircraftFogReveal);
+        this->DigSound = INIClass::ReadInt_Overwrite(
+                           (int)a0,
+                           (unsigned __int8 *)&g_INI_Key_General,
+                           (CCINIClass *)&stru_830620.__pad_579C[22296],
+                           (INIClass *)this->DigSound);
+        this->CreateUnitSound = INIClass::ReadInt_Overwrite(
+                                  (int)a0,
+                                  (unsigned __int8 *)&g_INI_Key_General,
+                                  (CCINIClass *)&stru_830620.__pad_579C[22276],
+                                  (INIClass *)this->CreateUnitSound);
+        this->CreateAircraftSound = INIClass::ReadInt_Overwrite(
+                                      (int)a0,
+                                      (unsigned __int8 *)&g_INI_Key_General,
+                                      (CCINIClass *)&stru_830620.__pad_579C[22264],
+                                      (INIClass *)this->CreateAircraftSound);
+        *(_DWORD *)&this->__pad_C3C[952] = SmallFunc_67BD80(
+                                             a0,
+                                             &g_INI_Key_General,
+                                             (unsigned __int8 *)&stru_830620.__pad_579C[22244],
+                                             *(_DWORD *)&this->__pad_C3C[952]);
+        TypeList = (int *)RulesClass::LoadTypeList(
+                            (int)&v288,
+                            a0,
+                            &g_INI_Key_General,
+                            (unsigned __int8 *)&stru_830620.__pad_579C[22220],
+                            &this->__pad_C3C[956]);
+        RulesClass::readBuildingTypes((int *)&this->__pad_C3C[956], TypeList);
+        RulesClass::readVehicleTypes(&v288);
+        *(_DWORD *)&this->__pad_C3C[984] = INIClass::ReadInt_Overwrite(
+                                             (int)a0,
+                                             (unsigned __int8 *)&g_INI_Key_General,
+                                             (CCINIClass *)&stru_830620.__pad_579C[22192],
+                                             *(INIClass **)&this->__pad_C3C[984]);
+        this->BaseUnderAttackSound = INIClass::ReadInt_Overwrite(
+                                       (int)a0,
+                                       (unsigned __int8 *)&g_INI_Key_General,
+                                       (CCINIClass *)&stru_830620.__pad_579C[22168],
+                                       (INIClass *)this->BaseUnderAttackSound);
+        this->InfantryVirus = (void *)INIClass::ReadInt_Overwrite(
+                                        (int)a0,
+                                        (unsigned __int8 *)&g_INI_Key_General,
+                                        (CCINIClass *)&stru_830620.__pad_579C[22144],
+                                        (INIClass *)this->InfantryVirus);
+        *(_DWORD *)&this->__pad_C3C[1288] = INIClass::ReadInt_Overwrite(
+                                              (int)a0,
+                                              (unsigned __int8 *)&g_INI_Key_General,
+                                              (CCINIClass *)&stru_830620.__pad_579C[22128],
+                                              *(INIClass **)&this->__pad_C3C[1288]);
+        *(double *)&v258[4] = *(float *)this->WallPenetratorThreshold;
+        *(float *)this->WallPenetratorThreshold = INIClass::ReadDouble_Overwrite(
+                                                    (int)a0,
+                                                    &g_INI_Key_General,
+                                                    (unsigned __int8 *)&stru_830620.__pad_579C[22104],
+                                                    *(INIClass **)&v258[4]);
+        *(double *)&v258[4] = *(float *)&this->WallPenetratorThreshold[1];
+        *(float *)&this->WallPenetratorThreshold[1] = INIClass::ReadDouble_Overwrite(
+                                                        (int)a0,
+                                                        &g_INI_Key_General,
+                                                        (unsigned __int8 *)&stru_830620.__pad_579C[22104],
+                                                        *(INIClass **)&v258[4]);
+        *(_QWORD *)&aP0_28.vtable0 = *(unsigned int *)this->LocalRadarColor;
+        *(double *)&v258[4] = (double)*(__int64 *)&aP0_28.vtable0 * 0.016666668;
+        v256 = INIClass::ReadDouble_Overwrite(
+                 (int)a0,
+                 &g_INI_Key_General,
+                 (unsigned __int8 *)&stru_830620.__pad_579C[22088],
+                 *(INIClass **)&v258[4]);
+        result = Math::RoundToInt(v256 * 60.0);
+        *(_DWORD *)this->LocalRadarColor = result;
+        LOBYTE(result) = 1;
+      }
+      else
+      {
+        LOBYTE(result) = 0;
+      }
+      return result;
 }
-
-/* ASM:
-Block           = dword ptr -98h
-var_8F          = byte ptr -8Fh
-var_8C          = dword ptr -8Ch
-var_88          = dword ptr -88h
-var_84          = dword ptr -84h
-String          = byte ptr -80h
-arg_0           = dword ptr  8
-
-push    ebp
-mov     ebp, esp
-and     esp, 0FFFFFFF8h
-sub     esp, 0C4h
-mov     eax, ds:off_7F0C9C ; "General"
-push    ebx
-push    esi
-push    edi
-mov     edi, [ebp+arg_0]
-mov     esi, ecx
-push    eax
-mov     ecx, edi
-call    INIClass__BinarySearchSection
-test    eax, eax
-setnz   al
-test    al, al
-jz      loc_671E8E
-mov     edx, ds:off_7F0C9C ; "General"
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aDamagefiretype ; "DamageFireTypes"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_66D609
-push    0
-push    0
-lea     ecx, [esp+0D8h+var_C0]
-call    DynamicVectorClass__AnimTypeConstructor
-lea     eax, [esp+0D0h+String]
-push    offset Delimiter ; ","
-push    eax             ; String
-mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVAnimTypeClass@@@@6B@ ; const TypeList<AnimTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_66D5E8
-
-loc_66D5B3:                             ; CODE XREF: RulesClass__LoadFromINI+B6↓j
-cmp     byte ptr [eax], 0
-jz      short loc_66D5E8
-mov     ecx, eax        ; Source
-call    AnimTypeClass__FindOrCreate
-test    eax, eax
-mov     dword ptr [esp+0D0h+var_A4], eax
-jz      short loc_66D5D5
-lea     ecx, [esp+0D0h+var_A4]
-push    ecx
-lea     ecx, [esp+0D4h+var_C0]
-call    DynamicVector__Add_Alt4
-
-loc_66D5D5:                             ; CODE XREF: RulesClass__LoadFromINI+95↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_66D5B3
-
-loc_66D5E8:                             ; CODE XREF: RulesClass__LoadFromINI+81↑j
-; RulesClass__LoadFromINI+86↑j
-lea     edx, [esp+0D0h+var_C0]
-lea     ecx, [esp+0D0h+var_9C]
-push    edx
-call    TypeList__AnimTypeCopy
-lea     ecx, [esp+0D0h+var_C0]
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy_Alt
-jmp     short loc_66D619
-; ---------------------------------------------------------------------------
-
-loc_66D609:                             ; CODE XREF: RulesClass__LoadFromINI+52↑j
-lea     eax, [esi+2A0h]
-lea     ecx, [esp+0D0h+var_9C]
-push    eax
-call    TypeList__AnimTypeCopy
-
-loc_66D619:                             ; CODE XREF: RulesClass__LoadFromINI+D7↑j
-lea     ecx, [esp+0D0h+var_9C]
-lea     ebx, [esi+2A0h]
-push    ecx
-mov     ecx, ebx
-call    VectorClass__CopyDefault
-mov     edx, [esp+0D0h+var_8C]
-mov     [ebx+10h], edx
-mov     eax, [esp+0D0h+var_88]
-mov     [ebx+14h], eax
-mov     ecx, [esp+0D0h+var_84]
-mov     [ebx+18h], ecx
-mov     eax, [esp+0D0h+Block]
-test    eax, eax
-mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-jz      short loc_66D661
-mov     cl, [esp+0D0h+var_8F]
-test    cl, cl
-jz      short loc_66D661
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66D661:                             ; CODE XREF: RulesClass__LoadFromINI+11E↑j
-; RulesClass__LoadFromINI+126↑j
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+1870h]
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aOretwinkle ; "OreTwinkle"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66D697
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66D699
-; ---------------------------------------------------------------------------
-
-loc_66D697:                             ; CODE XREF: RulesClass__LoadFromINI+15A↑j
-mov     eax, ebx
-
-loc_66D699:                             ; CODE XREF: RulesClass__LoadFromINI+165↑j
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+1870h], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+54h]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aBarrelexplode ; "BarrelExplode"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66D6D3
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66D6D5
-; ---------------------------------------------------------------------------
-
-loc_66D6D3:                             ; CODE XREF: RulesClass__LoadFromINI+196↑j
-mov     eax, ebx
-
-loc_66D6D5:                             ; CODE XREF: RulesClass__LoadFromINI+1A1↑j
-mov     [esi+54h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aBarreldebris ; "BarrelDebris"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_66D783
-push    0
-push    0
-lea     ecx, [esp+0D8h+var_C0]
-call    DynamicVector__Constructor_VoxelAnim
-lea     edx, [esp+0D0h+String]
-push    offset Delimiter ; ","
-push    edx             ; String
-mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVVoxelAnimTypeClass@@@@6B@ ; const TypeList<VoxelAnimTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_66D762
-
-loc_66D72D:                             ; CODE XREF: RulesClass__LoadFromINI+230↓j
-cmp     byte ptr [eax], 0
-jz      short loc_66D762
-mov     ecx, eax        ; Source
-call    UnitTypeClass__FindOrCreate
-test    eax, eax
-mov     dword ptr [esp+0D0h+var_A4], eax
-jz      short loc_66D74F
-lea     eax, [esp+0D0h+var_A4]
-lea     ecx, [esp+0D0h+var_C0]
-push    eax
-call    DynamicVector__Add2
-
-loc_66D74F:                             ; CODE XREF: RulesClass__LoadFromINI+20F↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_66D72D
-
-loc_66D762:                             ; CODE XREF: RulesClass__LoadFromINI+1FB↑j
-; RulesClass__LoadFromINI+200↑j
-lea     ecx, [esp+0D0h+var_C0]
-push    ecx
-lea     ecx, [esp+0D4h+var_9C]
-call    TypeList__CopyVoxelAnim
-lea     ecx, [esp+0D0h+var_C0]
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVVoxelAnimTypeClass@@@@6B@ ; const VectorClass<VoxelAnimTypeClass const *>::`vftable'
-call    Vector__Cleanup2
-jmp     short loc_66D790
-; ---------------------------------------------------------------------------
-
-loc_66D783:                             ; CODE XREF: RulesClass__LoadFromINI+1CC↑j
-lea     edx, [esi+58h]
-lea     ecx, [esp+0D0h+var_9C]
-push    edx
-call    TypeList__CopyVoxelAnim
-
-loc_66D790:                             ; CODE XREF: RulesClass__LoadFromINI+251↑j
-lea     ebx, [esi+58h]
-lea     eax, [esp+0D0h+var_9C]
-push    eax
-mov     ecx, ebx
-call    VectorClass__CopyAssign
-mov     ecx, [esp+0D0h+var_8C]
-mov     [ebx+10h], ecx
-mov     edx, [esp+0D0h+var_88]
-mov     [ebx+14h], edx
-mov     eax, [esp+0D0h+var_84]
-mov     [ebx+18h], eax
-mov     eax, [esp+0D0h+Block]
-test    eax, eax
-mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVVoxelAnimTypeClass@@@@6B@ ; const VectorClass<VoxelAnimTypeClass const *>::`vftable'
-jz      short loc_66D7D5
-mov     cl, [esp+0D0h+var_8F]
-test    cl, cl
-jz      short loc_66D7D5
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66D7D5:                             ; CODE XREF: RulesClass__LoadFromINI+292↑j
-; RulesClass__LoadFromINI+29A↑j
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+74h]
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aBarrelparticle ; "BarrelParticle"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66D809
-lea     ecx, [esp+0D0h+String] ; Source
-call    BuildingTypeClass__LoadOrGet
-jmp     short loc_66D80B
-; ---------------------------------------------------------------------------
-
-loc_66D809:                             ; CODE XREF: RulesClass__LoadFromINI+2CC↑j
-mov     eax, ebx
-
-loc_66D80B:                             ; CODE XREF: RulesClass__LoadFromINI+2D7↑j
-mov     [esi+74h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+98h]
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aNuketakeoff ; "NukeTakeOff"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66D845
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66D847
-; ---------------------------------------------------------------------------
-
-loc_66D845:                             ; CODE XREF: RulesClass__LoadFromINI+308↑j
-mov     eax, ebx
-
-loc_66D847:                             ; CODE XREF: RulesClass__LoadFromINI+313↑j
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+98h], eax
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+94h]
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aWake    ; "Wake"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66D883
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66D885
-; ---------------------------------------------------------------------------
-
-loc_66D883:                             ; CODE XREF: RulesClass__LoadFromINI+346↑j
-mov     eax, ebx
-
-loc_66D885:                             ; CODE XREF: RulesClass__LoadFromINI+351↑j
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+94h], eax
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aDroppod ; "DropPod"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_66D936
-push    0
-push    0
-lea     ecx, [esp+0D8h+var_C0]
-call    DynamicVectorClass__AnimTypeConstructor
-lea     eax, [esp+0D0h+String]
-push    offset Delimiter ; ","
-push    eax             ; String
-mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVAnimTypeClass@@@@6B@ ; const TypeList<AnimTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_66D915
-
-loc_66D8E0:                             ; CODE XREF: RulesClass__LoadFromINI+3E3↓j
-cmp     byte ptr [eax], 0
-jz      short loc_66D915
-mov     ecx, eax        ; Source
-call    AnimTypeClass__FindOrCreate
-test    eax, eax
-mov     dword ptr [esp+0D0h+var_A4], eax
-jz      short loc_66D902
-lea     ecx, [esp+0D0h+var_A4]
-push    ecx
-lea     ecx, [esp+0D4h+var_C0]
-call    DynamicVector__Add_Alt4
-
-loc_66D902:                             ; CODE XREF: RulesClass__LoadFromINI+3C2↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_66D8E0
-
-loc_66D915:                             ; CODE XREF: RulesClass__LoadFromINI+3AE↑j
-; RulesClass__LoadFromINI+3B3↑j
-lea     edx, [esp+0D0h+var_C0]
-lea     ecx, [esp+0D0h+var_9C]
-push    edx
-call    TypeList__AnimTypeCopy
-lea     ecx, [esp+0D0h+var_C0]
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy_Alt
-jmp     short loc_66D946
-; ---------------------------------------------------------------------------
-
-loc_66D936:                             ; CODE XREF: RulesClass__LoadFromINI+37F↑j
-lea     eax, [esi+104h]
-lea     ecx, [esp+0D0h+var_9C]
-push    eax
-call    TypeList__AnimTypeCopy
-
-loc_66D946:                             ; CODE XREF: RulesClass__LoadFromINI+404↑j
-lea     ecx, [esp+0D0h+var_9C]
-lea     ebx, [esi+104h]
-push    ecx
-mov     ecx, ebx
-call    VectorClass__CopyDefault
-mov     edx, [esp+0D0h+var_8C]
-mov     [ebx+10h], edx
-mov     eax, [esp+0D0h+var_88]
-mov     [ebx+14h], eax
-mov     ecx, [esp+0D0h+var_84]
-mov     [ebx+18h], ecx
-mov     eax, [esp+0D0h+Block]
-test    eax, eax
-mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-jz      short loc_66D98E
-mov     cl, [esp+0D0h+var_8F]
-test    cl, cl
-jz      short loc_66D98E
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66D98E:                             ; CODE XREF: RulesClass__LoadFromINI+44B↑j
-; RulesClass__LoadFromINI+453↑j
-mov     eax, ds:off_7F0C9C ; "General"
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aDeadbodies ; "DeadBodies"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_66DA38
-push    0
-push    0
-lea     ecx, [esp+0D8h+var_C0]
-call    DynamicVectorClass__AnimTypeConstructor
-lea     ecx, [esp+0D0h+String]
-push    offset Delimiter ; ","
-push    ecx             ; String
-mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVAnimTypeClass@@@@6B@ ; const TypeList<AnimTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_66DA17
-
-loc_66D9E2:                             ; CODE XREF: RulesClass__LoadFromINI+4E5↓j
-cmp     byte ptr [eax], 0
-jz      short loc_66DA17
-mov     ecx, eax        ; Source
-call    AnimTypeClass__FindOrCreate
-test    eax, eax
-mov     dword ptr [esp+0D0h+var_A4], eax
-jz      short loc_66DA04
-lea     edx, [esp+0D0h+var_A4]
-lea     ecx, [esp+0D0h+var_C0]
-push    edx
-call    DynamicVector__Add_Alt4
-
-loc_66DA04:                             ; CODE XREF: RulesClass__LoadFromINI+4C4↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_66D9E2
-
-loc_66DA17:                             ; CODE XREF: RulesClass__LoadFromINI+4B0↑j
-; RulesClass__LoadFromINI+4B5↑j
-lea     eax, [esp+0D0h+var_C0]
-lea     ecx, [esp+0D0h+var_9C]
-push    eax
-call    TypeList__AnimTypeCopy
-lea     ecx, [esp+0D0h+var_C0]
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy_Alt
-jmp     short loc_66DA48
-; ---------------------------------------------------------------------------
-
-loc_66DA38:                             ; CODE XREF: RulesClass__LoadFromINI+481↑j
-lea     ecx, [esi+120h]
-push    ecx
-lea     ecx, [esp+0D4h+var_9C]
-call    TypeList__AnimTypeCopy
-
-loc_66DA48:                             ; CODE XREF: RulesClass__LoadFromINI+506↑j
-lea     ebx, [esi+120h]
-lea     edx, [esp+0D0h+var_9C]
-push    edx
-mov     ecx, ebx
-call    VectorClass__CopyDefault
-mov     eax, [esp+0D0h+var_8C]
-mov     [ebx+10h], eax
-mov     ecx, [esp+0D0h+var_88]
-mov     [ebx+14h], ecx
-mov     edx, [esp+0D0h+var_84]
-mov     [ebx+18h], edx
-mov     eax, [esp+0D0h+Block]
-test    eax, eax
-mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-jz      short loc_66DA90
-mov     cl, [esp+0D0h+var_8F]
-test    cl, cl
-jz      short loc_66DA90
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66DA90:                             ; CODE XREF: RulesClass__LoadFromINI+54D↑j
-; RulesClass__LoadFromINI+555↑j
-mov     ecx, ds:off_7F0C9C ; "General"
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aMetallicdebris ; "MetallicDebris"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_66DB3B
-push    0
-push    0
-lea     ecx, [esp+0D8h+var_C0]
-call    DynamicVectorClass__AnimTypeConstructor
-lea     edx, [esp+0D0h+String]
-push    offset Delimiter ; ","
-push    edx             ; String
-mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVAnimTypeClass@@@@6B@ ; const TypeList<AnimTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_66DB1A
-
-loc_66DAE5:                             ; CODE XREF: RulesClass__LoadFromINI+5E8↓j
-cmp     byte ptr [eax], 0
-jz      short loc_66DB1A
-mov     ecx, eax        ; Source
-call    AnimTypeClass__FindOrCreate
-test    eax, eax
-mov     dword ptr [esp+0D0h+var_A4], eax
-jz      short loc_66DB07
-lea     eax, [esp+0D0h+var_A4]
-lea     ecx, [esp+0D0h+var_C0]
-push    eax
-call    DynamicVector__Add_Alt4
-
-loc_66DB07:                             ; CODE XREF: RulesClass__LoadFromINI+5C7↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_66DAE5
-
-loc_66DB1A:                             ; CODE XREF: RulesClass__LoadFromINI+5B3↑j
-; RulesClass__LoadFromINI+5B8↑j
-lea     ecx, [esp+0D0h+var_C0]
-push    ecx
-lea     ecx, [esp+0D4h+var_9C]
-call    TypeList__AnimTypeCopy
-lea     ecx, [esp+0D0h+var_C0]
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy_Alt
-jmp     short loc_66DB4B
-; ---------------------------------------------------------------------------
-
-loc_66DB3B:                             ; CODE XREF: RulesClass__LoadFromINI+584↑j
-lea     edx, [esi+13Ch]
-lea     ecx, [esp+0D0h+var_9C]
-push    edx
-call    TypeList__AnimTypeCopy
-
-loc_66DB4B:                             ; CODE XREF: RulesClass__LoadFromINI+609↑j
-lea     ebx, [esi+13Ch]
-lea     eax, [esp+0D0h+var_9C]
-push    eax
-mov     ecx, ebx
-call    VectorClass__CopyDefault
-mov     ecx, [esp+0D0h+var_8C]
-mov     [ebx+10h], ecx
-mov     edx, [esp+0D0h+var_88]
-mov     [ebx+14h], edx
-mov     eax, [esp+0D0h+var_84]
-mov     [ebx+18h], eax
-mov     eax, [esp+0D0h+Block]
-test    eax, eax
-mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-jz      short loc_66DB93
-mov     cl, [esp+0D0h+var_8F]
-test    cl, cl
-jz      short loc_66DB93
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66DB93:                             ; CODE XREF: RulesClass__LoadFromINI+650↑j
-; RulesClass__LoadFromINI+658↑j
-mov     edx, ds:off_7F0C9C ; "General"
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aBridgeexplosio ; "BridgeExplosions"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_66DC3E
-push    0
-push    0
-lea     ecx, [esp+0D8h+var_C0]
-call    DynamicVectorClass__AnimTypeConstructor
-lea     eax, [esp+0D0h+String]
-push    offset Delimiter ; ","
-push    eax             ; String
-mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVAnimTypeClass@@@@6B@ ; const TypeList<AnimTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_66DC1D
-
-loc_66DBE8:                             ; CODE XREF: RulesClass__LoadFromINI+6EB↓j
-cmp     byte ptr [eax], 0
-jz      short loc_66DC1D
-mov     ecx, eax        ; Source
-call    AnimTypeClass__FindOrCreate
-test    eax, eax
-mov     dword ptr [esp+0D0h+var_A4], eax
-jz      short loc_66DC0A
-lea     ecx, [esp+0D0h+var_A4]
-push    ecx
-lea     ecx, [esp+0D4h+var_C0]
-call    DynamicVector__Add_Alt4
-
-loc_66DC0A:                             ; CODE XREF: RulesClass__LoadFromINI+6CA↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_66DBE8
-
-loc_66DC1D:                             ; CODE XREF: RulesClass__LoadFromINI+6B6↑j
-; RulesClass__LoadFromINI+6BB↑j
-lea     edx, [esp+0D0h+var_C0]
-lea     ecx, [esp+0D0h+var_9C]
-push    edx
-call    TypeList__AnimTypeCopy
-lea     ecx, [esp+0D0h+var_C0]
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy_Alt
-jmp     short loc_66DC4E
-; ---------------------------------------------------------------------------
-
-loc_66DC3E:                             ; CODE XREF: RulesClass__LoadFromINI+687↑j
-lea     eax, [esi+158h]
-lea     ecx, [esp+0D0h+var_9C]
-push    eax
-call    TypeList__AnimTypeCopy
-
-loc_66DC4E:                             ; CODE XREF: RulesClass__LoadFromINI+70C↑j
-lea     ecx, [esp+0D0h+var_9C]
-lea     ebx, [esi+158h]
-push    ecx
-mov     ecx, ebx
-call    VectorClass__CopyDefault
-mov     edx, [esp+0D0h+var_8C]
-mov     [ebx+10h], edx
-mov     eax, [esp+0D0h+var_88]
-mov     [ebx+14h], eax
-mov     ecx, [esp+0D0h+var_84]
-mov     [ebx+18h], ecx
-mov     eax, [esp+0D0h+Block]
-test    eax, eax
-mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-jz      short loc_66DC96
-mov     cl, [esp+0D0h+var_8F]
-test    cl, cl
-jz      short loc_66DC96
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66DC96:                             ; CODE XREF: RulesClass__LoadFromINI+753↑j
-; RulesClass__LoadFromINI+75B↑j
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+298h]
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aIonblast ; "IonBlast"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66DCCC
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66DCCE
-; ---------------------------------------------------------------------------
-
-loc_66DCCC:                             ; CODE XREF: RulesClass__LoadFromINI+78F↑j
-mov     eax, ebx
-
-loc_66DCCE:                             ; CODE XREF: RulesClass__LoadFromINI+79A↑j
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+298h], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+29Ch]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aIonbeam ; "IonBeam"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66DD0B
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66DD0D
-; ---------------------------------------------------------------------------
-
-loc_66DD0B:                             ; CODE XREF: RulesClass__LoadFromINI+7CE↑j
-mov     eax, ebx
-
-loc_66DD0D:                             ; CODE XREF: RulesClass__LoadFromINI+7D9↑j
-mov     [esi+29Ch], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aWeatherconclou ; "WeatherConClouds"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_66DDBE
-push    0
-push    0
-lea     ecx, [esp+0D8h+var_C0]
-call    DynamicVectorClass__AnimTypeConstructor
-lea     edx, [esp+0D0h+String]
-push    offset Delimiter ; ","
-push    edx             ; String
-mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVAnimTypeClass@@@@6B@ ; const TypeList<AnimTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_66DD9D
-
-loc_66DD68:                             ; CODE XREF: RulesClass__LoadFromINI+86B↓j
-cmp     byte ptr [eax], 0
-jz      short loc_66DD9D
-mov     ecx, eax        ; Source
-call    AnimTypeClass__FindOrCreate
-test    eax, eax
-mov     dword ptr [esp+0D0h+var_A4], eax
-jz      short loc_66DD8A
-lea     eax, [esp+0D0h+var_A4]
-lea     ecx, [esp+0D0h+var_C0]
-push    eax
-call    DynamicVector__Add_Alt4
-
-loc_66DD8A:                             ; CODE XREF: RulesClass__LoadFromINI+84A↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_66DD68
-
-loc_66DD9D:                             ; CODE XREF: RulesClass__LoadFromINI+836↑j
-; RulesClass__LoadFromINI+83B↑j
-lea     ecx, [esp+0D0h+var_C0]
-push    ecx
-lea     ecx, [esp+0D4h+var_9C]
-call    TypeList__AnimTypeCopy
-lea     ecx, [esp+0D0h+var_C0]
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy_Alt
-jmp     short loc_66DDCE
-; ---------------------------------------------------------------------------
-
-loc_66DDBE:                             ; CODE XREF: RulesClass__LoadFromINI+807↑j
-lea     edx, [esi+2BCh]
-lea     ecx, [esp+0D0h+var_9C]
-push    edx
-call    TypeList__AnimTypeCopy
-
-loc_66DDCE:                             ; CODE XREF: RulesClass__LoadFromINI+88C↑j
-lea     ebx, [esi+2BCh]
-lea     eax, [esp+0D0h+var_9C]
-push    eax
-mov     ecx, ebx
-call    VectorClass__CopyDefault
-mov     ecx, [esp+0D0h+var_8C]
-mov     [ebx+10h], ecx
-mov     edx, [esp+0D0h+var_88]
-mov     [ebx+14h], edx
-mov     eax, [esp+0D0h+var_84]
-mov     [ebx+18h], eax
-mov     eax, [esp+0D0h+Block]
-test    eax, eax
-mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-jz      short loc_66DE16
-mov     cl, [esp+0D0h+var_8F]
-test    cl, cl
-jz      short loc_66DE16
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66DE16:                             ; CODE XREF: RulesClass__LoadFromINI+8D3↑j
-; RulesClass__LoadFromINI+8DB↑j
-mov     edx, ds:off_7F0C9C ; "General"
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aWeatherconbolt ; "WeatherConBolts"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_66DEC1
-push    0
-push    0
-lea     ecx, [esp+0D8h+var_C0]
-call    DynamicVectorClass__AnimTypeConstructor
-lea     eax, [esp+0D0h+String]
-push    offset Delimiter ; ","
-push    eax             ; String
-mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVAnimTypeClass@@@@6B@ ; const TypeList<AnimTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_66DEA0
-
-loc_66DE6B:                             ; CODE XREF: RulesClass__LoadFromINI+96E↓j
-cmp     byte ptr [eax], 0
-jz      short loc_66DEA0
-mov     ecx, eax        ; Source
-call    AnimTypeClass__FindOrCreate
-test    eax, eax
-mov     dword ptr [esp+0D0h+var_A4], eax
-jz      short loc_66DE8D
-lea     ecx, [esp+0D0h+var_A4]
-push    ecx
-lea     ecx, [esp+0D4h+var_C0]
-call    DynamicVector__Add_Alt4
-
-loc_66DE8D:                             ; CODE XREF: RulesClass__LoadFromINI+94D↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_66DE6B
-
-loc_66DEA0:                             ; CODE XREF: RulesClass__LoadFromINI+939↑j
-; RulesClass__LoadFromINI+93E↑j
-lea     edx, [esp+0D0h+var_C0]
-lea     ecx, [esp+0D0h+var_9C]
-push    edx
-call    TypeList__AnimTypeCopy
-lea     ecx, [esp+0D0h+var_C0]
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy_Alt
-jmp     short loc_66DED1
-; ---------------------------------------------------------------------------
-
-loc_66DEC1:                             ; CODE XREF: RulesClass__LoadFromINI+90A↑j
-lea     eax, [esi+2D8h]
-lea     ecx, [esp+0D0h+var_9C]
-push    eax
-call    TypeList__AnimTypeCopy
-
-loc_66DED1:                             ; CODE XREF: RulesClass__LoadFromINI+98F↑j
-lea     ecx, [esp+0D0h+var_9C]
-lea     ebx, [esi+2D8h]
-push    ecx
-mov     ecx, ebx
-call    VectorClass__CopyDefault
-mov     edx, [esp+0D0h+var_8C]
-mov     [ebx+10h], edx
-mov     eax, [esp+0D0h+var_88]
-mov     [ebx+14h], eax
-mov     ecx, [esp+0D0h+var_84]
-mov     [ebx+18h], ecx
-mov     eax, [esp+0D0h+Block]
-test    eax, eax
-mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVAnimTypeClass@@@@6B@ ; const VectorClass<AnimTypeClass const *>::`vftable'
-jz      short loc_66DF19
-mov     cl, [esp+0D0h+var_8F]
-test    cl, cl
-jz      short loc_66DF19
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66DF19:                             ; CODE XREF: RulesClass__LoadFromINI+9D6↑j
-; RulesClass__LoadFromINI+9DE↑j
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+2F4h]
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aWeatherconbolt_0 ; "WeatherConBoltExplosion"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66DF4F
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66DF51
-; ---------------------------------------------------------------------------
-
-loc_66DF4F:                             ; CODE XREF: RulesClass__LoadFromINI+A12↑j
-mov     eax, ebx
-
-loc_66DF51:                             ; CODE XREF: RulesClass__LoadFromINI+A1D↑j
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+2F4h], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+2F8h]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aDominatorwarhe ; "DominatorWarhead"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66DF8E
-lea     ecx, [esp+0D0h+String] ; Source
-call    WarheadTypeClass__FindOrCreate
-jmp     short loc_66DF90
-; ---------------------------------------------------------------------------
-
-loc_66DF8E:                             ; CODE XREF: RulesClass__LoadFromINI+A51↑j
-mov     eax, ebx
-
-loc_66DF90:                             ; CODE XREF: RulesClass__LoadFromINI+A5C↑j
-mov     [esi+2F8h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+2FCh]
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aDominatorfirst ; "DominatorFirstAnim"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66DFCD
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66DFCF
-; ---------------------------------------------------------------------------
-
-loc_66DFCD:                             ; CODE XREF: RulesClass__LoadFromINI+A90↑j
-mov     eax, ebx
-
-loc_66DFCF:                             ; CODE XREF: RulesClass__LoadFromINI+A9B↑j
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+2FCh], eax
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+300h]
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aDominatorsecon ; "DominatorSecondAnim"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E00B
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E00D
-; ---------------------------------------------------------------------------
-
-loc_66E00B:                             ; CODE XREF: RulesClass__LoadFromINI+ACE↑j
-mov     eax, ebx
-
-loc_66E00D:                             ; CODE XREF: RulesClass__LoadFromINI+AD9↑j
-mov     [esi+300h], eax
-mov     ecx, [esi+304h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aDominatorfirea ; "DominatorFireAtPercentage"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+304h], eax
-mov     eax, [esi+308h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aDominatorcaptu ; "DominatorCaptureRange"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+308h], eax
-mov     edx, [esi+30Ch]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aDominatordamag ; "DominatorDamage"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+30Ch], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+330h]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aChronoplacemen ; "ChronoPlacement"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E0A9
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E0AB
-; ---------------------------------------------------------------------------
-
-loc_66E0A9:                             ; CODE XREF: RulesClass__LoadFromINI+B6C↑j
-mov     eax, ebx
-
-loc_66E0AB:                             ; CODE XREF: RulesClass__LoadFromINI+B77↑j
-mov     [esi+330h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+334h]
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aChronobeam ; "ChronoBeam"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E0E8
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E0EA
-; ---------------------------------------------------------------------------
-
-loc_66E0E8:                             ; CODE XREF: RulesClass__LoadFromINI+BAB↑j
-mov     eax, ebx
-
-loc_66E0EA:                             ; CODE XREF: RulesClass__LoadFromINI+BB6↑j
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+334h], eax
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+328h]
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aChronoblast ; "ChronoBlast"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E126
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E128
-; ---------------------------------------------------------------------------
-
-loc_66E126:                             ; CODE XREF: RulesClass__LoadFromINI+BE9↑j
-mov     eax, ebx
-
-loc_66E128:                             ; CODE XREF: RulesClass__LoadFromINI+BF4↑j
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+328h], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+32Ch]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aChronoblastdes ; "ChronoBlastDest"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E165
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E167
-; ---------------------------------------------------------------------------
-
-loc_66E165:                             ; CODE XREF: RulesClass__LoadFromINI+C28↑j
-mov     eax, ebx
-
-loc_66E167:                             ; CODE XREF: RulesClass__LoadFromINI+C33↑j
-mov     [esi+32Ch], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+338h]
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aWarpin  ; "WarpIn"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E1A4
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E1A6
-; ---------------------------------------------------------------------------
-
-loc_66E1A4:                             ; CODE XREF: RulesClass__LoadFromINI+C67↑j
-mov     eax, ebx
-
-loc_66E1A6:                             ; CODE XREF: RulesClass__LoadFromINI+C72↑j
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+338h], eax
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+33Ch]
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aWarpout ; "WarpOut"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E1E2
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E1E4
-; ---------------------------------------------------------------------------
-
-loc_66E1E2:                             ; CODE XREF: RulesClass__LoadFromINI+CA5↑j
-mov     eax, ebx
-
-loc_66E1E4:                             ; CODE XREF: RulesClass__LoadFromINI+CB0↑j
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+33Ch], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+340h]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aWarpaway ; "WarpAway"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E221
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E223
-; ---------------------------------------------------------------------------
-
-loc_66E221:                             ; CODE XREF: RulesClass__LoadFromINI+CE4↑j
-mov     eax, ebx
-
-loc_66E223:                             ; CODE XREF: RulesClass__LoadFromINI+CEF↑j
-mov     [esi+340h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+348h]
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aIroncurtaininv ; "IronCurtainInvokeAnim"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E260
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E262
-; ---------------------------------------------------------------------------
-
-loc_66E260:                             ; CODE XREF: RulesClass__LoadFromINI+D23↑j
-mov     eax, ebx
-
-loc_66E262:                             ; CODE XREF: RulesClass__LoadFromINI+D2E↑j
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+348h], eax
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+34Ch]
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aForceshieldinv ; "ForceShieldInvokeAnim"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E29E
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E2A0
-; ---------------------------------------------------------------------------
-
-loc_66E29E:                             ; CODE XREF: RulesClass__LoadFromINI+D61↑j
-mov     eax, ebx
-
-loc_66E2A0:                             ; CODE XREF: RulesClass__LoadFromINI+D6C↑j
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+34Ch], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+350h]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aWeaponnullifya ; "WeaponNullifyAnim"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E2DD
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E2DF
-; ---------------------------------------------------------------------------
-
-loc_66E2DD:                             ; CODE XREF: RulesClass__LoadFromINI+DA0↑j
-mov     eax, ebx
-
-loc_66E2DF:                             ; CODE XREF: RulesClass__LoadFromINI+DAB↑j
-mov     [esi+350h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+344h]
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aChronosparkle1 ; "ChronoSparkle1"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E31C
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E31E
-; ---------------------------------------------------------------------------
-
-loc_66E31C:                             ; CODE XREF: RulesClass__LoadFromINI+DDF↑j
-mov     eax, ebx
-
-loc_66E31E:                             ; CODE XREF: RulesClass__LoadFromINI+DEA↑j
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+344h], eax
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+9Ch]
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aInfantryexplod ; "InfantryExplode"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E35A
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E35C
-; ---------------------------------------------------------------------------
-
-loc_66E35A:                             ; CODE XREF: RulesClass__LoadFromINI+E1D↑j
-mov     eax, ebx
-
-loc_66E35C:                             ; CODE XREF: RulesClass__LoadFromINI+E28↑j
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+9Ch], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+0A0h]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aFlaminginfantr ; "FlamingInfantry"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E399
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E39B
-; ---------------------------------------------------------------------------
-
-loc_66E399:                             ; CODE XREF: RulesClass__LoadFromINI+E5C↑j
-mov     eax, ebx
-
-loc_66E39B:                             ; CODE XREF: RulesClass__LoadFromINI+E67↑j
-mov     [esi+0A0h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+0A4h]
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aInfantryheadpo ; "InfantryHeadPop"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E3D8
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E3DA
-; ---------------------------------------------------------------------------
-
-loc_66E3D8:                             ; CODE XREF: RulesClass__LoadFromINI+E9B↑j
-mov     eax, ebx
-
-loc_66E3DA:                             ; CODE XREF: RulesClass__LoadFromINI+EA6↑j
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+0A4h], eax
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+0A8h]
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aInfantrynuked ; "InfantryNuked"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E416
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E418
-; ---------------------------------------------------------------------------
-
-loc_66E416:                             ; CODE XREF: RulesClass__LoadFromINI+ED9↑j
-mov     eax, ebx
-
-loc_66E418:                             ; CODE XREF: RulesClass__LoadFromINI+EE4↑j
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+0A8h], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+0ACh]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aInfantryvirus ; "InfantryVirus"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E455
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E457
-; ---------------------------------------------------------------------------
-
-loc_66E455:                             ; CODE XREF: RulesClass__LoadFromINI+F18↑j
-mov     eax, ebx
-
-loc_66E457:                             ; CODE XREF: RulesClass__LoadFromINI+F23↑j
-mov     [esi+0ACh], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+0B0h]
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aInfantrybrute ; "InfantryBrute"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E494
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E496
-; ---------------------------------------------------------------------------
-
-loc_66E494:                             ; CODE XREF: RulesClass__LoadFromINI+F57↑j
-mov     eax, ebx
-
-loc_66E496:                             ; CODE XREF: RulesClass__LoadFromINI+F62↑j
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+0B0h], eax
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+0B4h]
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aInfantrymutate ; "InfantryMutate"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E4D2
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E4D4
-; ---------------------------------------------------------------------------
-
-loc_66E4D2:                             ; CODE XREF: RulesClass__LoadFromINI+F95↑j
-mov     eax, ebx
-
-loc_66E4D4:                             ; CODE XREF: RulesClass__LoadFromINI+FA0↑j
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+0B4h], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+0B8h]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aBehind  ; "Behind"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E511
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E513
-; ---------------------------------------------------------------------------
-
-loc_66E511:                             ; CODE XREF: RulesClass__LoadFromINI+FD4↑j
-mov     eax, ebx
-
-loc_66E513:                             ; CODE XREF: RulesClass__LoadFromINI+FDF↑j
-mov     [esi+0B8h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+0BB4h]
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aMoveflash ; "MoveFlash"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E550
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E552
-; ---------------------------------------------------------------------------
-
-loc_66E550:                             ; CODE XREF: RulesClass__LoadFromINI+1013↑j
-mov     eax, ebx
-
-loc_66E552:                             ; CODE XREF: RulesClass__LoadFromINI+101E↑j
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+0BB4h], eax
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+0BBCh]
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aParachute ; "Parachute"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E58E
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E590
-; ---------------------------------------------------------------------------
-
-loc_66E58E:                             ; CODE XREF: RulesClass__LoadFromINI+1051↑j
-mov     eax, ebx
-
-loc_66E590:                             ; CODE XREF: RulesClass__LoadFromINI+105C↑j
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+0BBCh], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+0BB8h]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aBombparachute ; "BombParachute"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E5CD
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E5CF
-; ---------------------------------------------------------------------------
-
-loc_66E5CD:                             ; CODE XREF: RulesClass__LoadFromINI+1090↑j
-mov     eax, ebx
-
-loc_66E5CF:                             ; CODE XREF: RulesClass__LoadFromINI+109B↑j
-mov     [esi+0BB8h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+147Ch]
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aDropzoneanim ; "DropZoneAnim"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E60C
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E60E
-; ---------------------------------------------------------------------------
-
-loc_66E60C:                             ; CODE XREF: RulesClass__LoadFromINI+10CF↑j
-mov     eax, ebx
-
-loc_66E60E:                             ; CODE XREF: RulesClass__LoadFromINI+10DA↑j
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+147Ch], eax
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+17F4h]
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aEmpulsesparkle ; "EMPulseSparkles"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E64A
-lea     ecx, [esp+0D0h+String] ; Source
-call    AnimTypeClass__FindOrCreate
-jmp     short loc_66E64C
-; ---------------------------------------------------------------------------
-
-loc_66E64A:                             ; CODE XREF: RulesClass__LoadFromINI+110D↑j
-mov     eax, ebx
-
-loc_66E64C:                             ; CODE XREF: RulesClass__LoadFromINI+1118↑j
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+17F4h], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+10h]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aLargevisceroid ; "LargeVisceroid"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E686
-lea     ecx, [esp+0D0h+String] ; Source
-call    BuildingTypeClass__FindOrCreateAlt
-jmp     short loc_66E688
-; ---------------------------------------------------------------------------
-
-loc_66E686:                             ; CODE XREF: RulesClass__LoadFromINI+1149↑j
-mov     eax, ebx
-
-loc_66E688:                             ; CODE XREF: RulesClass__LoadFromINI+1154↑j
-mov     [esi+10h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+14h]
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aSmallvisceroid ; "SmallVisceroid"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66E6BF
-lea     ecx, [esp+0D0h+String] ; Source
-call    BuildingTypeClass__FindOrCreateAlt
-jmp     short loc_66E6C1
-; ---------------------------------------------------------------------------
-
-loc_66E6BF:                             ; CODE XREF: RulesClass__LoadFromINI+1182↑j
-mov     eax, ebx
-
-loc_66E6C1:                             ; CODE XREF: RulesClass__LoadFromINI+118D↑j
-mov     [esi+14h], eax
-mov     edx, [esi+2Ch]
-mov     eax, [esi+28h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aTiberiumheal ; "TiberiumHeal"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+28h]
-mov     edx, [esi+30h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aSelfhealinfant ; "SelfHealInfantryFrames"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+30h], eax
-mov     ecx, [esi+34h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aSelfhealinfant_0 ; "SelfHealInfantryAmount"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+34h], eax
-mov     eax, [esi+38h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aSelfhealunitfr ; "SelfHealUnitFrames"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+38h], eax
-mov     edx, [esi+3Ch]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aSelfhealunitam ; "SelfHealUnitAmount"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-sub     esp, 1Ch
-mov     [esi+3Ch], eax
-lea     eax, [esi+358h]
-mov     ebx, esp
-push    eax
-mov     ecx, ebx
-mov     dword ptr [esp+0F0h+var_A4], eax
-call    IntVector__Copy
-mov     eax, dword ptr [esp+0ECh+var_A4]
-push    offset aPrerequisitepo ; "PrerequisitePower"
-mov     ecx, [eax+10h]
-mov     [ebx+10h], ecx
-mov     edx, [eax+14h]
-mov     [ebx+14h], edx
-mov     dword ptr [ebx], offset ??_7?$DynamicVectorClass@H@@6B@ ; const DynamicVectorClass<int>::`vftable'
-mov     dword ptr [ebx], offset ??_7?$TypeList@H@@6B@ ; const TypeList<int>::`vftable'
-mov     eax, ds:off_7F0C9C ; "General"
-push    eax
-mov     edx, edi
-lea     ecx, [esp+0F4h+var_C0]
-call    LoadBuildingTypeClassPrerequisites
-mov     ebx, eax
-lea     ecx, [esi+358h]
-push    ebx
-mov     dword ptr [esp+0D4h+var_A4], ecx
-call    TypeList__Copy
-mov     eax, dword ptr [esp+0D0h+var_A4]
-mov     ecx, [ebx+10h]
-mov     [eax+10h], ecx
-mov     edx, [ebx+14h]
-mov     [eax+14h], edx
-mov     ecx, [ebx+18h]
-mov     [eax+18h], ecx
-mov     eax, [esp+0D0h+var_BC]
-test    eax, eax
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
-jz      short loc_66E7DA
-mov     cl, [esp+0D0h+var_B3]
-test    cl, cl
-jz      short loc_66E7DA
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66E7DA:                             ; CODE XREF: RulesClass__LoadFromINI+1297↑j
-; RulesClass__LoadFromINI+129F↑j
-sub     esp, 1Ch
-lea     eax, [esi+374h]
-mov     ebx, esp
-push    eax
-mov     ecx, ebx
-call    IntVector__Copy
-mov     edx, [esi+384h]
-lea     eax, [esi+374h]
-mov     [ebx+10h], edx
-push    offset aPrerequisitefa ; "PrerequisiteFactory"
-mov     eax, [eax+14h]
-mov     edx, edi
-mov     [ebx+14h], eax
-mov     dword ptr [ebx], offset ??_7?$DynamicVectorClass@H@@6B@ ; const DynamicVectorClass<int>::`vftable'
-mov     dword ptr [ebx], offset ??_7?$TypeList@H@@6B@ ; const TypeList<int>::`vftable'
-mov     ecx, ds:off_7F0C9C ; "General"
-push    ecx
-lea     ecx, [esp+0F4h+var_C0]
-call    LoadBuildingTypeClassPrerequisites
-mov     ebx, eax
-lea     ecx, [esi+374h]
-push    ebx
-mov     dword ptr [esp+0D4h+var_A4], ecx
-call    TypeList__Copy
-mov     eax, dword ptr [esp+0D0h+var_A4]
-mov     edx, [ebx+10h]
-mov     [eax+10h], edx
-mov     ecx, [ebx+14h]
-mov     [eax+14h], ecx
-mov     edx, [ebx+18h]
-mov     [eax+18h], edx
-mov     eax, [esp+0D0h+var_BC]
-test    eax, eax
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
-jz      short loc_66E86E
-mov     cl, [esp+0D0h+var_B3]
-test    cl, cl
-jz      short loc_66E86E
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66E86E:                             ; CODE XREF: RulesClass__LoadFromINI+132B↑j
-; RulesClass__LoadFromINI+1333↑j
-sub     esp, 1Ch
-lea     eax, [esi+390h]
-mov     ebx, esp
-push    eax
-mov     ecx, ebx
-call    IntVector__Copy
-mov     ecx, [esi+3A0h]
-lea     eax, [esi+390h]
-mov     [ebx+10h], ecx
-push    offset aPrerequisiteba ; "PrerequisiteBarracks"
-mov     edx, [eax+14h]
-lea     ecx, [esp+0F0h+var_C0]
-mov     [ebx+14h], edx
-mov     dword ptr [ebx], offset ??_7?$DynamicVectorClass@H@@6B@ ; const DynamicVectorClass<int>::`vftable'
-mov     dword ptr [ebx], offset ??_7?$TypeList@H@@6B@ ; const TypeList<int>::`vftable'
-mov     eax, ds:off_7F0C9C ; "General"
-push    eax
-mov     edx, edi
-call    LoadBuildingTypeClassPrerequisites
-mov     ebx, eax
-lea     ecx, [esi+390h]
-push    ebx
-mov     dword ptr [esp+0D4h+var_A4], ecx
-call    TypeList__Copy
-mov     eax, dword ptr [esp+0D0h+var_A4]
-mov     ecx, [ebx+10h]
-mov     [eax+10h], ecx
-mov     edx, [ebx+14h]
-mov     [eax+14h], edx
-mov     ecx, [ebx+18h]
-mov     [eax+18h], ecx
-mov     eax, [esp+0D0h+var_BC]
-test    eax, eax
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
-jz      short loc_66E901
-mov     cl, [esp+0D0h+var_B3]
-test    cl, cl
-jz      short loc_66E901
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66E901:                             ; CODE XREF: RulesClass__LoadFromINI+13BE↑j
-; RulesClass__LoadFromINI+13C6↑j
-sub     esp, 1Ch
-lea     eax, [esi+3ACh]
-mov     ebx, esp
-push    eax
-mov     ecx, ebx
-call    IntVector__Copy
-mov     edx, [esi+3BCh]
-lea     eax, [esi+3ACh]
-mov     [ebx+10h], edx
-push    offset aPrerequisitera ; "PrerequisiteRadar"
-mov     eax, [eax+14h]
-mov     edx, edi
-mov     [ebx+14h], eax
-mov     dword ptr [ebx], offset ??_7?$DynamicVectorClass@H@@6B@ ; const DynamicVectorClass<int>::`vftable'
-mov     dword ptr [ebx], offset ??_7?$TypeList@H@@6B@ ; const TypeList<int>::`vftable'
-mov     ecx, ds:off_7F0C9C ; "General"
-push    ecx
-lea     ecx, [esp+0F4h+var_C0]
-call    LoadBuildingTypeClassPrerequisites
-mov     ebx, eax
-lea     ecx, [esi+3ACh]
-push    ebx
-mov     dword ptr [esp+0D4h+var_A4], ecx
-call    TypeList__Copy
-mov     eax, dword ptr [esp+0D0h+var_A4]
-mov     edx, [ebx+10h]
-mov     [eax+10h], edx
-mov     ecx, [ebx+14h]
-mov     [eax+14h], ecx
-mov     edx, [ebx+18h]
-mov     [eax+18h], edx
-mov     eax, [esp+0D0h+var_BC]
-test    eax, eax
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
-jz      short loc_66E995
-mov     cl, [esp+0D0h+var_B3]
-test    cl, cl
-jz      short loc_66E995
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66E995:                             ; CODE XREF: RulesClass__LoadFromINI+1452↑j
-; RulesClass__LoadFromINI+145A↑j
-sub     esp, 1Ch
-lea     eax, [esi+3C8h]
-mov     ebx, esp
-push    eax
-mov     ecx, ebx
-call    IntVector__Copy
-mov     ecx, [esi+3D8h]
-lea     eax, [esi+3C8h]
-mov     [ebx+10h], ecx
-push    offset aPrerequisitete ; "PrerequisiteTech"
-mov     edx, [eax+14h]
-lea     ecx, [esp+0F0h+var_C0]
-mov     [ebx+14h], edx
-mov     dword ptr [ebx], offset ??_7?$DynamicVectorClass@H@@6B@ ; const DynamicVectorClass<int>::`vftable'
-mov     dword ptr [ebx], offset ??_7?$TypeList@H@@6B@ ; const TypeList<int>::`vftable'
-mov     eax, ds:off_7F0C9C ; "General"
-push    eax
-mov     edx, edi
-call    LoadBuildingTypeClassPrerequisites
-mov     ebx, eax
-lea     ecx, [esi+3C8h]
-push    ebx
-mov     dword ptr [esp+0D4h+var_A4], ecx
-call    TypeList__Copy
-mov     eax, dword ptr [esp+0D0h+var_A4]
-mov     ecx, [ebx+10h]
-mov     [eax+10h], ecx
-mov     edx, [ebx+14h]
-mov     [eax+14h], edx
-mov     ecx, [ebx+18h]
-mov     [eax+18h], ecx
-mov     eax, [esp+0D0h+var_BC]
-test    eax, eax
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
-jz      short loc_66EA28
-mov     cl, [esp+0D0h+var_B3]
-test    cl, cl
-jz      short loc_66EA28
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66EA28:                             ; CODE XREF: RulesClass__LoadFromINI+14E5↑j
-; RulesClass__LoadFromINI+14ED↑j
-sub     esp, 1Ch
-lea     eax, [esi+3E4h]
-mov     ebx, esp
-push    eax
-mov     ecx, ebx
-call    IntVector__Copy
-mov     edx, [esi+3F4h]
-lea     eax, [esi+3E4h]
-mov     [ebx+10h], edx
-push    offset aPrerequisitepr ; "PrerequisiteProc"
-mov     eax, [eax+14h]
-mov     edx, edi
-mov     [ebx+14h], eax
-mov     dword ptr [ebx], offset ??_7?$DynamicVectorClass@H@@6B@ ; const DynamicVectorClass<int>::`vftable'
-mov     dword ptr [ebx], offset ??_7?$TypeList@H@@6B@ ; const TypeList<int>::`vftable'
-mov     ecx, ds:off_7F0C9C ; "General"
-push    ecx
-lea     ecx, [esp+0F4h+var_C0]
-call    LoadBuildingTypeClassPrerequisites
-mov     ebx, eax
-lea     ecx, [esi+3E4h]
-push    ebx
-mov     dword ptr [esp+0D4h+var_A4], ecx
-call    TypeList__Copy
-mov     eax, dword ptr [esp+0D0h+var_A4]
-mov     edx, [ebx+10h]
-mov     [eax+10h], edx
-mov     ecx, [ebx+14h]
-mov     [eax+14h], ecx
-mov     edx, [ebx+18h]
-mov     [eax+18h], edx
-mov     eax, [esp+0D0h+var_BC]
-test    eax, eax
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
-jz      short loc_66EABC
-mov     cl, [esp+0D0h+var_B3]
-test    cl, cl
-jz      short loc_66EABC
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66EABC:                             ; CODE XREF: RulesClass__LoadFromINI+1579↑j
-; RulesClass__LoadFromINI+1581↑j
-mov     eax, [esi+554h]
-mov     ecx, [esi+550h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aZoominfactor ; "ZoomInFactor"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+550h]
-mov     al, [esi+17EEh]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aRevealbyheight ; "RevealByHeight"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     [esi+17EEh], al
-mov     dl, [esi+17EFh]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aAllowshroudeds ; "AllowShroudedSubteranneanMoves"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     [esi+17EFh], al
-mov     ecx, [esi+0F4h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aAircraftfogrev ; "AircraftFogReveal"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0F4h], eax
-mov     eax, ds:off_7F0C9C ; "General"
-fld     dword ptr [esi+570h]
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aMinlowpowerpro ; "MinLowPowerProductionSpeed"
-push    eax             ; int
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+570h]
-fld     dword ptr [esi+574h]
-mov     ecx, ds:off_7F0C9C ; "General"
-sub     esp, 8
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aMaxlowpowerpro ; "MaxLowPowerProductionSpeed"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+574h]
-fld     dword ptr [esi+578h]
-mov     edx, ds:off_7F0C9C ; "General"
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aLowpowerpenalt ; "LowPowerPenaltyModifier"
-push    edx             ; int
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+578h]
-fld     dword ptr [esi+57Ch]
-mov     eax, ds:off_7F0C9C ; "General"
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aMultiplefactor ; "MultipleFactory"
-push    eax             ; int
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+57Ch]
-mov     ecx, [esi+580h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aMaximumcheerra ; "MaximumCheerRate"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+580h], eax
-mov     eax, [esi+58Ch]
-mov     ecx, [esi+588h]
-push    eax
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx             ; double
-push    offset aTreeflammabili ; "TreeFlammability"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+588h]
-mov     eax, [esi+59Ch]
-mov     ecx, [esi+598h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aMissilerotvar ; "MissileROTVar"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+598h]
-mov     eax, [esi+5A0h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aMissilesafetya ; "MissileSafetyAltitude"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+5A0h], eax
-mov     edx, [esi+594h]
-mov     eax, [esi+590h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aMissilespeedva ; "MissileSpeedVar"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+590h]
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+5A4h]
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aDroppodweapon ; "DropPodWeapon"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66ECBF
-lea     ecx, [esp+0D0h+String] ; Source
-call    InfantryTypeClass__Find
-jmp     short loc_66ECC1
-; ---------------------------------------------------------------------------
-
-loc_66ECBF:                             ; CODE XREF: RulesClass__LoadFromINI+1782↑j
-mov     eax, ebx
-
-loc_66ECC1:                             ; CODE XREF: RulesClass__LoadFromINI+178D↑j
-mov     [esi+5A4h], eax
-mov     ecx, [esi+5A8h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aDroppodheight ; "DropPodHeight"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+5A8h], eax
-mov     eax, [esi+5ACh]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aDroppodspeed ; "DropPodSpeed"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+5ACh], eax
-mov     edx, [esi+5B4h]
-mov     eax, [esi+5B0h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aDroppodangle ; "DropPodAngle"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fst     qword ptr [esi+5B0h]
-fld     st
-fcomp   ds:dbl_7F0DC0
-fnstsw  ax
-test    ah, 1
-jz      short loc_66ED3F
-jmp     short loc_66ED47
-; ---------------------------------------------------------------------------
-
-loc_66ED3F:                             ; CODE XREF: RulesClass__LoadFromINI+180B↑j
-fstp    st
-fld     ds:dbl_7F0DC0
-
-loc_66ED47:                             ; CODE XREF: RulesClass__LoadFromINI+180D↑j
-fst     qword ptr [esi+5B0h]
-fld     st
-fcomp   ds:dbl_7ED8A0
-fnstsw  ax
-test    ah, 41h
-jnz     short loc_66ED5E
-jmp     short loc_66ED66
-; ---------------------------------------------------------------------------
-
-loc_66ED5E:                             ; CODE XREF: RulesClass__LoadFromINI+182A↑j
-fstp    st
-fld     ds:dbl_7ED8A0
-
-loc_66ED66:                             ; CODE XREF: RulesClass__LoadFromINI+182C↑j
-fstp    qword ptr [esi+5B0h]
-mov     edx, [esi+5C4h]
-mov     eax, [esi+5C0h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aCrewescape ; "CrewEscape"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+5C0h]
-mov     edx, [esi+24h]
-mov     eax, [esi+20h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aTunnelspeed ; "TunnelSpeed"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+20h]
-mov     edx, [esi+5F4h]
-mov     eax, [esi+5F0h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aHoverdampen ; "HoverDampen"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+5F0h]
-mov     edx, [esi+5D4h]
-mov     eax, [esi+5D0h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aHoverbob ; "HoverBob"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+5D0h]
-mov     edx, [esi+5CCh]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aHoverheight ; "HoverHeight"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+5CCh], eax
-mov     ecx, [esi+5DCh]
-mov     edx, [esi+5D8h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    ecx
-push    edx             ; double
-push    offset aHoverboost ; "HoverBoost"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+5D8h]
-mov     ecx, [esi+5E4h]
-mov     edx, [esi+5E0h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    ecx
-push    edx             ; double
-push    offset aHoveraccelerat ; "HoverAcceleration"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+5E0h]
-mov     ecx, [esi+5ECh]
-mov     edx, [esi+5E8h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    ecx
-push    edx             ; double
-push    offset aHoverbrake ; "HoverBrake"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+5E8h]
-mov     ecx, [esi+66Ch]
-push    ecx
-mov     edx, [esi+668h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx             ; double
-push    offset aVeteranratio ; "VeteranRatio"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+668h]
-mov     ecx, [esi+674h]
-mov     edx, [esi+670h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    ecx
-push    edx             ; double
-push    offset aVeterancombat ; "VeteranCombat"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+670h]
-mov     ecx, [esi+67Ch]
-mov     edx, [esi+678h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    ecx
-push    edx             ; double
-push    offset aVeteranspeed ; "VeteranSpeed"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+678h]
-mov     ecx, [esi+684h]
-mov     edx, [esi+680h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    ecx
-push    edx             ; double
-push    offset aVeteransight ; "VeteranSight"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+680h]
-mov     ecx, [esi+68Ch]
-mov     edx, [esi+688h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    ecx
-push    edx             ; double
-push    offset aVeteranarmor ; "VeteranArmor"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+688h]
-mov     ecx, [esi+694h]
-mov     edx, [esi+690h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    ecx
-push    edx             ; double
-push    offset aVeteranrof ; "VeteranROF"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+690h]
-mov     ecx, [esi+69Ch]
-mov     edx, [esi+698h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    ecx
-push    edx             ; double
-push    offset aVeterancap ; "VeteranCap"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+698h]
-mov     edx, ds:off_7F0C9C ; "General"
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aExplosivevoxel ; "ExplosiveVoxelDebris"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_66F045
-push    0
-push    0
-lea     ecx, [esp+0D8h+var_C0]
-call    DynamicVector__Constructor_VoxelAnim
-lea     eax, [esp+0D0h+String]
-push    offset Delimiter ; ","
-push    eax             ; String
-mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVVoxelAnimTypeClass@@@@6B@ ; const TypeList<VoxelAnimTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_66F024
-
-loc_66EFEF:                             ; CODE XREF: RulesClass__LoadFromINI+1AF2↓j
-cmp     byte ptr [eax], 0
-jz      short loc_66F024
-mov     ecx, eax        ; Source
-call    UnitTypeClass__FindOrCreate
-test    eax, eax
-mov     dword ptr [esp+0D0h+var_A4], eax
-jz      short loc_66F011
-lea     ecx, [esp+0D0h+var_A4]
-push    ecx
-lea     ecx, [esp+0D4h+var_C0]
-call    DynamicVector__Add2
-
-loc_66F011:                             ; CODE XREF: RulesClass__LoadFromINI+1AD1↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_66EFEF
-
-loc_66F024:                             ; CODE XREF: RulesClass__LoadFromINI+1ABD↑j
-; RulesClass__LoadFromINI+1AC2↑j
-lea     edx, [esp+0D0h+var_C0]
-lea     ecx, [esp+0D0h+var_9C]
-push    edx
-call    TypeList__CopyVoxelAnim
-lea     ecx, [esp+0D0h+var_C0]
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVVoxelAnimTypeClass@@@@6B@ ; const VectorClass<VoxelAnimTypeClass const *>::`vftable'
-call    Vector__Cleanup2
-jmp     short loc_66F055
-; ---------------------------------------------------------------------------
-
-loc_66F045:                             ; CODE XREF: RulesClass__LoadFromINI+1A8E↑j
-lea     eax, [esi+600h]
-lea     ecx, [esp+0D0h+var_9C]
-push    eax
-call    TypeList__CopyVoxelAnim
-
-loc_66F055:                             ; CODE XREF: RulesClass__LoadFromINI+1B13↑j
-lea     ecx, [esp+0D0h+var_9C]
-lea     ebx, [esi+600h]
-push    ecx
-mov     ecx, ebx
-call    VectorClass__CopyAssign
-mov     edx, [esp+0D0h+var_8C]
-mov     [ebx+10h], edx
-mov     eax, [esp+0D0h+var_88]
-mov     [ebx+14h], eax
-mov     ecx, [esp+0D0h+var_84]
-mov     [ebx+18h], ecx
-mov     eax, [esp+0D0h+Block]
-test    eax, eax
-mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVVoxelAnimTypeClass@@@@6B@ ; const VectorClass<VoxelAnimTypeClass const *>::`vftable'
-jz      short loc_66F09D
-mov     cl, [esp+0D0h+var_8F]
-test    cl, cl
-jz      short loc_66F09D
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66F09D:                             ; CODE XREF: RulesClass__LoadFromINI+1B5A↑j
-; RulesClass__LoadFromINI+1B62↑j
-mov     edx, [esi+624h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aBridgevoxelmax ; "BridgeVoxelMax"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+624h], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+61Ch]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aTirevoxeldebri ; "TireVoxelDebris"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66F0F3
-lea     ecx, [esp+0D0h+String] ; Source
-call    UnitTypeClass__FindOrCreate
-jmp     short loc_66F0F5
-; ---------------------------------------------------------------------------
-
-loc_66F0F3:                             ; CODE XREF: RulesClass__LoadFromINI+1BB6↑j
-mov     eax, ebx
-
-loc_66F0F5:                             ; CODE XREF: RulesClass__LoadFromINI+1BC1↑j
-mov     [esi+61Ch], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+620h]
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aScrapvoxeldebr ; "ScrapVoxelDebris"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66F132
-lea     ecx, [esp+0D0h+String] ; Source
-call    UnitTypeClass__FindOrCreate
-jmp     short loc_66F134
-; ---------------------------------------------------------------------------
-
-loc_66F132:                             ; CODE XREF: RulesClass__LoadFromINI+1BF5↑j
-mov     eax, ebx
-
-loc_66F134:                             ; CODE XREF: RulesClass__LoadFromINI+1C00↑j
-mov     [esi+620h], eax
-mov     edx, [esi+628h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aCloakingstages ; "CloakingStages"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+628h], eax
-mov     ecx, [esi+634h]
-mov     edx, [esi+630h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    ecx
-push    edx             ; double
-push    offset aShipsinkingwei ; "ShipSinkingWeight"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+630h]
-mov     ecx, [esi+63Ch]
-mov     edx, [esi+638h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    ecx
-push    edx             ; double
-push    offset aIcecrackingwei ; "IceCrackingWeight"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+638h]
-mov     ecx, [esi+644h]
-mov     edx, [esi+640h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    ecx
-push    edx             ; double
-push    offset aIcebreakingwei ; "IceBreakingWeight"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+640h]
-movsx   ecx, byte ptr [esi+664h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aCliffbackimpas ; "CliffBackImpassability"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+664h], al
-mov     eax, [esi+5FCh]
-mov     ecx, [esi+5F8h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aPlacementdelay ; "PlacementDelay"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+5F8h]
-mov     eax, [esi+76Ch]
-mov     ecx, [esi+768h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aTrackeduphill ; "TrackedUphill"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+768h]
-mov     eax, [esi+774h]
-mov     ecx, [esi+770h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aTrackeddownhil ; "TrackedDownhill"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+770h]
-mov     eax, [esi+77Ch]
-mov     ecx, [esi+778h]
-push    eax
-push    ecx             ; double
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aWheeleduphill ; "WheeledUphill"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+778h]
-mov     eax, [esi+784h]
-mov     ecx, [esi+780h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aWheeleddownhil ; "WheeledDownhill"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+780h]
-mov     eax, [esi+7ACh]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aWinddirection ; "WindDirection"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+7ACh], eax
-mov     edx, [esi+7B0h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aCamerarange ; "CameraRange"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadCoord
-mov     [esi+7B0h], eax
-mov     ecx, [esi+7B4h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aFlightlevel ; "FlightLevel"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+7B4h], eax
-mov     eax, [esi+7B8h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aParachutemaxfa ; "ParachuteMaxFallRate"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+7B8h], eax
-mov     edx, [esi+7BCh]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aNoparachutemax ; "NoParachuteMaxFallRate"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+7BCh], eax
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aRepairbay ; "RepairBay"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_66F3F8
-push    0
-push    0
-lea     ecx, [esp+0D8h+var_C0]
-call    DynamicVectorClass__BuildingTypeConstructor
-lea     eax, [esp+0D0h+String]
-push    offset Delimiter ; ","
-push    eax             ; String
-mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVBuildingTypeClass@@@@6B@ ; const TypeList<BuildingTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_66F3D7
-
-loc_66F3A2:                             ; CODE XREF: RulesClass__LoadFromINI+1EA5↓j
-cmp     byte ptr [eax], 0
-jz      short loc_66F3D7
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     dword ptr [esp+0D0h+var_A4], eax
-jz      short loc_66F3C4
-lea     ecx, [esp+0D0h+var_A4]
-push    ecx
-lea     ecx, [esp+0D4h+var_C0]
-call    DynamicVector__Add_Alt3
-
-loc_66F3C4:                             ; CODE XREF: RulesClass__LoadFromINI+1E84↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_66F3A2
-
-loc_66F3D7:                             ; CODE XREF: RulesClass__LoadFromINI+1E70↑j
-; RulesClass__LoadFromINI+1E75↑j
-lea     edx, [esp+0D0h+var_C0]
-lea     ecx, [esp+0D0h+var_9C]
-push    edx
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0D0h+var_C0]
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_66F408
-; ---------------------------------------------------------------------------
-
-loc_66F3F8:                             ; CODE XREF: RulesClass__LoadFromINI+1E41↑j
-lea     eax, [esi+850h]
-lea     ecx, [esp+0D0h+var_9C]
-push    eax
-call    TypeList__BuildingTypeCopy
-
-loc_66F408:                             ; CODE XREF: RulesClass__LoadFromINI+1EC6↑j
-lea     ecx, [esp+0D0h+var_9C]
-lea     ebx, [esi+850h]
-push    ecx
-mov     ecx, ebx
-call    VectorClass__CopyBuilding
-mov     edx, [esp+0D0h+var_8C]
-mov     [ebx+10h], edx
-mov     eax, [esp+0D0h+var_88]
-mov     [ebx+14h], eax
-mov     ecx, [esp+0D0h+var_84]
-mov     [ebx+18h], ecx
-mov     eax, [esp+0D0h+Block]
-test    eax, eax
-mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-jz      short loc_66F450
-mov     cl, [esp+0D0h+var_8F]
-test    cl, cl
-jz      short loc_66F450
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66F450:                             ; CODE XREF: RulesClass__LoadFromINI+1F0D↑j
-; RulesClass__LoadFromINI+1F15↑j
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+86Ch]
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aGdigateone ; "GDIGateOne"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66F486
-lea     ecx, [esp+0D0h+String] ; Source
-call    BuildingTypeClass__FindOrCreate
-jmp     short loc_66F488
-; ---------------------------------------------------------------------------
-
-loc_66F486:                             ; CODE XREF: RulesClass__LoadFromINI+1F49↑j
-mov     eax, ebx
-
-loc_66F488:                             ; CODE XREF: RulesClass__LoadFromINI+1F54↑j
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+86Ch], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+870h]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aGdigatetwo ; "GDIGateTwo"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66F4C5
-lea     ecx, [esp+0D0h+String] ; Source
-call    BuildingTypeClass__FindOrCreate
-jmp     short loc_66F4C7
-; ---------------------------------------------------------------------------
-
-loc_66F4C5:                             ; CODE XREF: RulesClass__LoadFromINI+1F88↑j
-mov     eax, ebx
-
-loc_66F4C7:                             ; CODE XREF: RulesClass__LoadFromINI+1F93↑j
-mov     [esi+870h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+874h]
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aNodgateone ; "NodGateOne"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66F504
-lea     ecx, [esp+0D0h+String] ; Source
-call    BuildingTypeClass__FindOrCreate
-jmp     short loc_66F506
-; ---------------------------------------------------------------------------
-
-loc_66F504:                             ; CODE XREF: RulesClass__LoadFromINI+1FC7↑j
-mov     eax, ebx
-
-loc_66F506:                             ; CODE XREF: RulesClass__LoadFromINI+1FD2↑j
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+874h], eax
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+878h]
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aNodgatetwo ; "NodGateTwo"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66F542
-lea     ecx, [esp+0D0h+String] ; Source
-call    BuildingTypeClass__FindOrCreate
-jmp     short loc_66F544
-; ---------------------------------------------------------------------------
-
-loc_66F542:                             ; CODE XREF: RulesClass__LoadFromINI+2005↑j
-mov     eax, ebx
-
-loc_66F544:                             ; CODE XREF: RulesClass__LoadFromINI+2010↑j
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+878h], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+87Ch]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aWalltower ; "WallTower"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66F581
-lea     ecx, [esp+0D0h+String] ; Source
-call    BuildingTypeClass__FindOrCreate
-jmp     short loc_66F583
-; ---------------------------------------------------------------------------
-
-loc_66F581:                             ; CODE XREF: RulesClass__LoadFromINI+2044↑j
-mov     eax, ebx
-
-loc_66F583:                             ; CODE XREF: RulesClass__LoadFromINI+204F↑j
-mov     [esi+87Ch], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aShipyard ; "Shipyard"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_66F634
-push    0
-push    0
-lea     ecx, [esp+0D8h+var_C0]
-call    DynamicVectorClass__BuildingTypeConstructor
-lea     edx, [esp+0D0h+String]
-push    offset Delimiter ; ","
-push    edx             ; String
-mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVBuildingTypeClass@@@@6B@ ; const TypeList<BuildingTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_66F613
-
-loc_66F5DE:                             ; CODE XREF: RulesClass__LoadFromINI+20E1↓j
-cmp     byte ptr [eax], 0
-jz      short loc_66F613
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     dword ptr [esp+0D0h+var_A4], eax
-jz      short loc_66F600
-lea     eax, [esp+0D0h+var_A4]
-lea     ecx, [esp+0D0h+var_C0]
-push    eax
-call    DynamicVector__Add_Alt3
-
-loc_66F600:                             ; CODE XREF: RulesClass__LoadFromINI+20C0↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_66F5DE
-
-loc_66F613:                             ; CODE XREF: RulesClass__LoadFromINI+20AC↑j
-; RulesClass__LoadFromINI+20B1↑j
-lea     ecx, [esp+0D0h+var_C0]
-push    ecx
-lea     ecx, [esp+0D4h+var_9C]
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0D0h+var_C0]
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_66F644
-; ---------------------------------------------------------------------------
-
-loc_66F634:                             ; CODE XREF: RulesClass__LoadFromINI+207D↑j
-lea     edx, [esi+880h]
-lea     ecx, [esp+0D0h+var_9C]
-push    edx
-call    TypeList__BuildingTypeCopy
-
-loc_66F644:                             ; CODE XREF: RulesClass__LoadFromINI+2102↑j
-lea     ebx, [esi+880h]
-lea     eax, [esp+0D0h+var_9C]
-push    eax
-mov     ecx, ebx
-call    VectorClass__CopyBuilding
-mov     ecx, [esp+0D0h+var_8C]
-mov     [ebx+10h], ecx
-mov     edx, [esp+0D0h+var_88]
-mov     [ebx+14h], edx
-mov     eax, [esp+0D0h+var_84]
-mov     [ebx+18h], eax
-mov     eax, [esp+0D0h+Block]
-test    eax, eax
-mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-jz      short loc_66F68C
-mov     cl, [esp+0D0h+var_8F]
-test    cl, cl
-jz      short loc_66F68C
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66F68C:                             ; CODE XREF: RulesClass__LoadFromINI+2149↑j
-; RulesClass__LoadFromINI+2151↑j
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+89Ch]
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aGdipowerplant ; "GDIPowerPlant"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66F6C3
-lea     ecx, [esp+0D0h+String] ; Source
-call    BuildingTypeClass__FindOrCreate
-jmp     short loc_66F6C5
-; ---------------------------------------------------------------------------
-
-loc_66F6C3:                             ; CODE XREF: RulesClass__LoadFromINI+2186↑j
-mov     eax, ebx
-
-loc_66F6C5:                             ; CODE XREF: RulesClass__LoadFromINI+2191↑j
-mov     [esi+89Ch], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+8A0h]
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aNodregularpowe ; "NodRegularPower"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66F702
-lea     ecx, [esp+0D0h+String] ; Source
-call    BuildingTypeClass__FindOrCreate
-jmp     short loc_66F704
-; ---------------------------------------------------------------------------
-
-loc_66F702:                             ; CODE XREF: RulesClass__LoadFromINI+21C5↑j
-mov     eax, ebx
-
-loc_66F704:                             ; CODE XREF: RulesClass__LoadFromINI+21D0↑j
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+8A0h], eax
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+8A4h]
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aNodadvancedpow ; "NodAdvancedPower"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66F740
-lea     ecx, [esp+0D0h+String] ; Source
-call    BuildingTypeClass__FindOrCreate
-jmp     short loc_66F742
-; ---------------------------------------------------------------------------
-
-loc_66F740:                             ; CODE XREF: RulesClass__LoadFromINI+2203↑j
-mov     eax, ebx
-
-loc_66F742:                             ; CODE XREF: RulesClass__LoadFromINI+220E↑j
-lea     ecx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+8A4h], eax
-mov     edx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+8A8h]
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aThirdpowerplan ; "ThirdPowerPlant"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66F77F
-lea     ecx, [esp+0D0h+String] ; Source
-call    BuildingTypeClass__FindOrCreate
-jmp     short loc_66F781
-; ---------------------------------------------------------------------------
-
-loc_66F77F:                             ; CODE XREF: RulesClass__LoadFromINI+2242↑j
-mov     eax, ebx
-
-loc_66F781:                             ; CODE XREF: RulesClass__LoadFromINI+224D↑j
-mov     [esi+8A8h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-mov     ebx, [esi+400h]
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aPrerequisitepr_0 ; "PrerequisiteProcAlternate"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_66F7BE
-lea     ecx, [esp+0D0h+String] ; Source
-call    BuildingTypeClass__FindOrCreateAlt
-jmp     short loc_66F7C0
-; ---------------------------------------------------------------------------
-
-loc_66F7BE:                             ; CODE XREF: RulesClass__LoadFromINI+2281↑j
-mov     eax, ebx
-
-loc_66F7C0:                             ; CODE XREF: RulesClass__LoadFromINI+228C↑j
-lea     edx, [esp+0D0h+String]
-push    80h             ; Count
-mov     [esi+400h], eax
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aBaseunit ; "BaseUnit"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_66F870
-push    0
-push    0
-lea     ecx, [esp+0D8h+var_C0]
-call    UnitTypeVector__Construct
-lea     ecx, [esp+0D0h+String]
-push    offset Delimiter ; ","
-push    ecx             ; String
-mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVUnitTypeClass@@@@6B@ ; const TypeList<UnitTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_66F84F
-
-loc_66F81A:                             ; CODE XREF: RulesClass__LoadFromINI+231D↓j
-cmp     byte ptr [eax], 0
-jz      short loc_66F84F
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreateAlt
-test    eax, eax
-mov     dword ptr [esp+0D0h+var_A4], eax
-jz      short loc_66F83C
-lea     edx, [esp+0D0h+var_A4]
-lea     ecx, [esp+0D0h+var_C0]
-push    edx
-call    VectorClass__PushBack
-
-loc_66F83C:                             ; CODE XREF: RulesClass__LoadFromINI+22FC↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_66F81A
-
-loc_66F84F:                             ; CODE XREF: RulesClass__LoadFromINI+22E8↑j
-; RulesClass__LoadFromINI+22ED↑j
-lea     eax, [esp+0D0h+var_C0]
-lea     ecx, [esp+0D0h+var_9C]
-push    eax
-call    TypeList__CopyConstructor
-lea     ecx, [esp+0D0h+var_C0]
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVUnitTypeClass@@@@6B@ ; const VectorClass<UnitTypeClass const *>::`vftable'
-call    Vector__Destructor
-jmp     short loc_66F880
-; ---------------------------------------------------------------------------
-
-loc_66F870:                             ; CODE XREF: RulesClass__LoadFromINI+22B9↑j
-lea     ecx, [esi+0B20h]
-push    ecx
-lea     ecx, [esp+0D4h+var_9C]
-call    TypeList__CopyConstructor
-
-loc_66F880:                             ; CODE XREF: RulesClass__LoadFromINI+233E↑j
-lea     ebx, [esi+0B20h]
-lea     edx, [esp+0D0h+var_9C]
-push    edx
-mov     ecx, ebx
-call    VectorClass__CopyConstructor
-mov     eax, [esp+0D0h+var_8C]
-mov     [ebx+10h], eax
-mov     ecx, [esp+0D0h+var_88]
-mov     [ebx+14h], ecx
-mov     edx, [esp+0D0h+var_84]
-mov     [ebx+18h], edx
-mov     eax, [esp+0D0h+Block]
-test    eax, eax
-mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVUnitTypeClass@@@@6B@ ; const VectorClass<UnitTypeClass const *>::`vftable'
-jz      short loc_66F8C8
-mov     cl, [esp+0D0h+var_8F]
-test    cl, cl
-jz      short loc_66F8C8
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66F8C8:                             ; CODE XREF: RulesClass__LoadFromINI+2385↑j
-; RulesClass__LoadFromINI+238D↑j
-mov     ecx, ds:off_7F0C9C ; "General"
-lea     eax, [esp+0D0h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aHarvesterunit ; "HarvesterUnit"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_66F973
-push    0
-push    0
-lea     ecx, [esp+0D8h+var_C0]
-call    UnitTypeVector__Construct
-lea     edx, [esp+0D0h+String]
-push    offset Delimiter ; ","
-push    edx             ; String
-mov     [esp+0D8h+var_C0], offset ??_7?$TypeList@PBVUnitTypeClass@@@@6B@ ; const TypeList<UnitTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_66F952
-
-loc_66F91D:                             ; CODE XREF: RulesClass__LoadFromINI+2420↓j
-cmp     byte ptr [eax], 0
-jz      short loc_66F952
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreateAlt
-test    eax, eax
-mov     dword ptr [esp+0D0h+var_A4], eax
-jz      short loc_66F93F
-lea     eax, [esp+0D0h+var_A4]
-lea     ecx, [esp+0D0h+var_C0]
-push    eax
-call    VectorClass__PushBack
-
-loc_66F93F:                             ; CODE XREF: RulesClass__LoadFromINI+23FF↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_66F91D
-
-loc_66F952:                             ; CODE XREF: RulesClass__LoadFromINI+23EB↑j
-; RulesClass__LoadFromINI+23F0↑j
-lea     ecx, [esp+0D0h+var_C0]
-push    ecx
-lea     ecx, [esp+0D4h+var_9C]
-call    TypeList__CopyConstructor
-lea     ecx, [esp+0D0h+var_C0]
-mov     [esp+0D0h+var_C0], offset ??_7?$VectorClass@PBVUnitTypeClass@@@@6B@ ; const VectorClass<UnitTypeClass const *>::`vftable'
-call    Vector__Destructor
-jmp     short loc_66F983
-; ---------------------------------------------------------------------------
-
-loc_66F973:                             ; CODE XREF: RulesClass__LoadFromINI+23BC↑j
-lea     edx, [esi+0B3Ch]
-lea     ecx, [esp+0D0h+var_9C]
-push    edx
-call    TypeList__CopyConstructor
-
-loc_66F983:                             ; CODE XREF: RulesClass__LoadFromINI+2441↑j
-lea     ebx, [esi+0B3Ch]
-lea     eax, [esp+0D0h+var_9C]
-push    eax
-mov     ecx, ebx
-call    VectorClass__CopyConstructor
-mov     ecx, [esp+0D0h+var_8C]
-mov     [ebx+10h], ecx
-mov     edx, [esp+0D0h+var_88]
-mov     [ebx+14h], edx
-mov     eax, [esp+0D0h+var_84]
-mov     [ebx+18h], eax
-mov     eax, [esp+0D0h+Block]
-test    eax, eax
-mov     [esp+0D0h+var_9C], offset ??_7?$VectorClass@PBVUnitTypeClass@@@@6B@ ; const VectorClass<UnitTypeClass const *>::`vftable'
-jz      short loc_66F9CB
-mov     cl, [esp+0D0h+var_8F]
-test    cl, cl
-jz      short loc_66F9CB
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-
-loc_66F9CB:                             ; CODE XREF: RulesClass__LoadFromINI+2488↑j
-; RulesClass__LoadFromINI+2490↑j
-mov     ecx, ds:off_7F0C9C ; "General"
-lea     ebx, [esi+0B58h]
-push    ebx
-push    offset aPadaircraft ; "PadAircraft"
-push    ecx
-mov     edx, edi
-lea     ecx, [esp+0DCh+var_C0]
-call    HouseTypeClass__ReadCountryName
-push    eax
-mov     ecx, ebx
-call    RulesClass__readSuperWeaponTypes
-lea     ecx, [esp+0D0h+var_C0]
-call    RulesClass__readCountries
-mov     edx, [esi+0BE4h]
-mov     ecx, edi
-push    edx
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aParatrooper ; "Paratrooper"
-call    GetINIClassInt
-lea     ebx, [esi+0D00h]
-mov     [esi+0BE4h], eax
-mov     eax, ds:off_7F0C9C ; "General"
-push    ebx
-push    offset aSecretinfantry ; "SecretInfantry"
-push    eax
-mov     edx, edi
-lea     ecx, [esp+0DCh+var_C0]
-call    ReadINIClassInfantryTypeList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyInfantry
-lea     ecx, [esp+0D0h+var_C0]
-call    TypeList__InfantryCleanup
-mov     ecx, ds:off_7F0C9C ; "General"
-lea     eax, [esi+0D1Ch]
-push    eax
-push    offset aSecretunits ; "SecretUnits"
-push    ecx
-mov     edx, edi
-lea     ecx, [esp+0DCh+var_C0]
-call    BuildingClass__LoadBuildingTypes
-push    eax
-lea     ecx, [esi+0D1Ch]
-call    RulesClass__readAircraftTypes
-lea     ecx, [esp+0D0h+var_C0]
-call    RulesClass__readInfantryTypes
-mov     edx, ds:off_7F0C9C ; "General"
-lea     eax, [esi+0D38h]
-push    eax
-push    offset aSecretbuilding ; "SecretBuildings"
-push    edx
-mov     edx, edi
-lea     ecx, [esp+0DCh+var_C0]
-call    ReadINIClassBuildingTypeList
-push    eax
-lea     ecx, [esi+0D38h]
-call    TypeList__CopyAircraft
-lea     ecx, [esp+0D0h+var_C0]
-call    RulesClass__readMaximums
-mov     ecx, ebx
-call    RulesClass__readWarheads
-lea     ecx, [esi+0D1Ch]
-mov     ebx, eax
-call    RulesClass__readOverlayTypes
-lea     ecx, [esi+0D38h]
-add     ebx, eax
-call    RulesClass__readSmudgeTypes
-add     ebx, eax
-mov     [esi+0D54h], ebx
-mov     eax, [esi+0BECh]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aChronodelay ; "ChronoDelay"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0BECh], eax
-mov     edx, [esi+0BF0h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aChronoreinfdel ; "ChronoReinfDelay"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0BF0h], eax
-mov     ecx, [esi+0BF4h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aChronodistance ; "ChronoDistanceFactor"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0BF4h], eax
-mov     al, [esi+0BF8h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aChronotrigger ; "ChronoTrigger"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     [esi+0BF8h], al
-mov     edx, [esi+0BFCh]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aChronominimumd ; "ChronoMinimumDelay"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0BFCh], eax
-mov     ecx, [esi+0C00h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aChronorangemin ; "ChronoRangeMinimum"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0C00h], eax
-mov     eax, [esi+0D58h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aAllieddisguise ; "AlliedDisguise"
-mov     ecx, edi
-call    GetINIClassInt
-mov     [esi+0D58h], eax
-mov     ecx, [esi+0D5Ch]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aSovietdisguise ; "SovietDisguise"
-mov     ecx, edi
-call    GetINIClassInt
-mov     [esi+0D5Ch], eax
-mov     edx, [esi+0D60h]
-push    edx
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aThirddisguise ; "ThirdDisguise"
-mov     ecx, edi
-call    GetINIClassInt
-mov     [esi+0D60h], eax
-mov     eax, [esi+0D64h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aSpypowerblacko ; "SpyPowerBlackout"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0D64h], eax
-mov     edx, ds:off_7F0C9C ; "General"
-fld     dword ptr [esi+0D68h]
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aSpymoneystealp ; "SpyMoneyStealPercent"
-push    edx             ; int
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+0D68h]
-mov     al, [esi+0D6Ch]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aAttackcursoron ; "AttackCursorOnDisguise"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     [esi+0D6Ch], al
-mov     edx, ds:off_7F0C9C ; "General"
-fld     dword ptr [esi+0F3Ch]
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aPurifierbonus ; "PurifierBonus"
-push    edx             ; char
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+0F3Ch]
-mov     eax, [esi+0F70h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aEngineer ; "Engineer"
-mov     ecx, edi
-call    GetINIClassInt
-mov     [esi+0F70h], eax
-mov     ecx, [esi+0F6Ch]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aTechnician ; "Technician"
-mov     ecx, edi
-call    GetINIClassInt
-mov     [esi+0F6Ch], eax
-mov     edx, [esi+0F74h]
-push    edx
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aPilot   ; "Pilot"
-mov     ecx, edi
-call    GetINIClassInt
-mov     [esi+0F74h], eax
-mov     eax, [esi+0F78h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aAlliedcrew ; "AlliedCrew"
-mov     ecx, edi
-call    GetINIClassInt
-mov     [esi+0F78h], eax
-mov     ecx, [esi+0F7Ch]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aSovietcrew ; "SovietCrew"
-mov     ecx, edi
-call    GetINIClassInt
-mov     [esi+0F7Ch], eax
-mov     edx, [esi+0F80h]
-push    edx
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aThirdcrew ; "ThirdCrew"
-mov     ecx, edi
-call    GetINIClassInt
-mov     [esi+0F80h], eax
-mov     al, [esi+17E1h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aCurleyshuffle ; "CurleyShuffle"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     [esi+17E1h], al
-mov     dl, [esi+17E4h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx             ; int
-push    offset aFinediffcontro ; "FineDiffControl"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-sub     esp, 1Ch
-lea     ebx, [esi+1158h]
-mov     ecx, esp
-mov     [esi+17E4h], al
-push    ebx
-call    VectorClass__Copy
-mov     ecx, ds:off_7F0C9C ; "General"
-push    offset aTeamdelays ; "TeamDelays"
-lea     edx, [esp+0F0h+var_C0]
-push    ecx             ; int
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+1174h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aAihatedelays ; "AIHateDelays"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-mov     edx, [esi+1300h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aAialternatepro ; "AIAlternateProductionCreditCutoff"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+1300h], eax
-mov     ecx, [esi+13ECh]
-mov     edx, [esi+13E8h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    ecx
-push    edx             ; double
-push    offset aAiuseturbineup ; "AIUseTurbineUpgradeProbability"
-push    eax             ; char
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+13E8h]
-mov     cl, [esi+17F1h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aNodaibuildswal ; "NodAIBuildsWalls"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     [esi+17F1h], al
-mov     al, [esi+17F2h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax             ; int
-push    offset aAibuildswalls ; "AIBuildsWalls"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-sub     esp, 1Ch
-lea     ebx, [esi+13F0h]
-mov     ecx, esp
-mov     [esi+17F2h], al
-push    ebx
-call    VectorClass__Copy
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aFillearliestte ; "FillEarliestTeamProbability"
-lea     eax, [esp+0F0h+var_C0]
-push    edx             ; int
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+1390h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     ecx, ds:off_7F0C9C ; "General"
-push    offset aMinimumaidefen ; "MinimumAIDefensiveTeams"
-push    ecx             ; int
-lea     edx, [esp+0F4h+var_C0]
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+13ACh]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aMaximumaidefen ; "MaximumAIDefensiveTeams"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+13C8h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aTotalaiteamcap ; "TotalAITeamCap"
-lea     eax, [esp+0F0h+var_C0]
-push    edx             ; int
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-mov     cl, [esi+17F3h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aUsemindefenser ; "UseMinDefenseRule"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     [esi+17F3h], al
-mov     eax, [esi+1190h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aDissolveunfill ; "DissolveUnfilledTeamDelay"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+1190h], eax
-mov     edx, [esi+0D74h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aAisafedistance ; "AISafeDistance"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0D74h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-fld     dword ptr [esi+0D70h]
-sub     esp, 8
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aAiminorsuperre ; "AIMinorSuperReadyPercent"
-push    ecx             ; char
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+0D70h]
-mov     edx, [esi+0D78h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aHarvestertoofa ; "HarvesterTooFarDistance"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0D78h], eax
-mov     ecx, [esi+0D7Ch]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx             ; int
-push    offset aChronoharvtoof ; "ChronoHarvTooFarDistance"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-sub     esp, 1Ch
-lea     ebx, [esi+0D80h]
-mov     ecx, esp
-mov     [esi+0D7Ch], eax
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aAlliedbasedefe ; "AlliedBaseDefenseCounts"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+0D9Ch]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aSovietbasedefe ; "SovietBaseDefenseCounts"
-lea     eax, [esp+0F0h+var_C0]
-push    edx             ; int
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+0DB8h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     ecx, ds:off_7F0C9C ; "General"
-push    offset aThirdbasedefen ; "ThirdBaseDefenseCounts"
-lea     edx, [esp+0F0h+var_C0]
-push    ecx             ; int
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+0DD4h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aAipickwalldefe ; "AIPickWallDefensePercent"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-mov     edx, [esi+0DF0h]
-push    edx
-push    offset aAirestrictrepl ; "AIRestrictReplaceTime"
-mov     eax, ds:off_7F0C9C ; "General"
-mov     ecx, edi
-push    eax
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0DF0h], eax
-mov     ecx, [esi+0DF4h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aThreatperoccup ; "ThreatPerOccupant"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0DF4h], eax
-mov     eax, [esi+0DF8h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aApproachtarget ; "ApproachTargetResetMultiplier"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0DF8h], eax
-mov     edx, [esi+0DFCh]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aCampaignmoneyd ; "CampaignMoneyDeltaEasy"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0DFCh], eax
-mov     ecx, [esi+0E00h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aCampaignmoneyd_0 ; "CampaignMoneyDeltaHard"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0E00h], eax
-mov     eax, [esi+0E04h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aGuardareatarge ; "GuardAreaTargetingDelay"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0E04h], eax
-mov     edx, [esi+0E08h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aNormaltargetin ; "NormalTargetingDelay"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0E08h], eax
-mov     ecx, [esi+0E0Ch]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx             ; int
-push    offset aAinavalyardadj ; "AINavalYardAdjacency"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-sub     esp, 1Ch
-lea     ebx, [esi+0E10h]
-mov     ecx, esp
-mov     [esi+0E0Ch], eax
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aDisableddisgui ; "DisabledDisguiseDetectionPercent"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+0E2Ch]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aAiautodeployfr ; "AIAutoDeployFrameDelay"
-lea     eax, [esp+0F0h+var_C0]
-push    edx             ; int
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-mov     ecx, [esi+0E48h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aMaximumbuildin ; "MaximumBuildingPlacementFailures"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0E48h], eax
-mov     eax, [esi+1778h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aTiberiumshorts ; "TiberiumShortScan"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadCoord
-mov     [esi+1778h], eax
-mov     edx, [esi+177Ch]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aTiberiumlongsc ; "TiberiumLongScan"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadCoord
-mov     [esi+177Ch], eax
-mov     ecx, [esi+1780h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aSlaveminershor ; "SlaveMinerShortScan"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadCoord
-mov     [esi+1780h], eax
-mov     eax, [esi+1784h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aSlaveminerslav ; "SlaveMinerSlaveScan"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadCoord
-mov     [esi+1784h], eax
-mov     edx, [esi+1788h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aSlaveminerlong ; "SlaveMinerLongScan"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadCoord
-mov     [esi+1788h], eax
-mov     ecx, [esi+178Ch]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aSlaveminerscan ; "SlaveMinerScanCorrection"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadCoord
-mov     [esi+178Ch], eax
-mov     eax, [esi+1790h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax             ; int
-push    offset aSlaveminerkick ; "SlaveMinerKickFrameDelay"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-sub     esp, 1Ch
-mov     [esi+1790h], eax
-lea     ebx, [esi+0EC4h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aAisuperdefense ; "AISuperDefenseProbability"
-lea     eax, [esp+0F0h+var_C0]
-push    edx             ; int
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-mov     ecx, [esi+0EE0h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aAisuperdefense_0 ; "AISuperDefenseFrames"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0EE0h], eax
-mov     eax, [esi+0EE4h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax             ; int
-push    offset aAisuperdefense_1 ; "AISuperDefenseDistance"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadCoord
-sub     esp, 1Ch
-lea     ebx, [esi+0E4Ch]
-mov     ecx, esp
-mov     [esi+0EE4h], eax
-push    ebx
-call    VectorClass__Copy
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aAicapturenorma ; "AICaptureNormal"
-lea     eax, [esp+0F0h+var_C0]
-push    edx             ; int
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+0E68h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     ecx, ds:off_7F0C9C ; "General"
-push    offset aAicapturewound ; "AICaptureWounded"
-lea     edx, [esp+0F0h+var_C0]
-push    ecx             ; int
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+0E84h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aAicapturelowpo ; "AICaptureLowPower"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+0EA0h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aAicapturelowmo ; "AICaptureLowMoney"
-lea     eax, [esp+0F0h+var_C0]
-push    edx             ; int
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-mov     ecx, [esi+0EBCh]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx             ; int
-push    offset aAicapturelowmo_0 ; "AICaptureLowMoneyMark"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0EBCh], eax
-mov     eax, ds:off_7F0C9C ; "General"
-fld     dword ptr [esi+0EC0h]
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; int
-push    offset aAicapturewound_0 ; "AICaptureWoundedMark"
-push    eax             ; char
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+0EC0h]
-sub     esp, 1Ch
-lea     ebx, [esi+1304h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     ecx, ds:off_7F0C9C ; "General"
-push    offset aMultiplayeraic ; "MultiplayerAICM"
-lea     edx, [esp+0F0h+var_C0]
-push    ecx             ; int
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+1320h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aAivirtualpurif ; "AIVirtualPurifiers"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+133Ch]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aAislaveminernu ; "AISlaveMinerNumber"
-lea     eax, [esp+0F0h+var_C0]
-push    edx             ; int
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+1358h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     ecx, ds:off_7F0C9C ; "General"
-push    offset aHarvestersperr ; "HarvestersPerRefinery"
-lea     edx, [esp+0F0h+var_C0]
-push    ecx             ; int
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+1374h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aAiextrarefiner ; "AIExtraRefineries"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-mov     edx, ds:off_7F0C9C ; "General"
-lea     ebx, [esi+0C04h]
-push    ebx
-push    offset aAmerparadropin ; "AmerParaDropInf"
-push    edx             ; int
-mov     edx, edi
-lea     ecx, [esp+0DCh+var_C0]
-call    ReadINIClassInfantryTypeList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyInfantry
-lea     ecx, [esp+0D0h+var_C0]
-call    TypeList__InfantryCleanup
-sub     esp, 1Ch
-lea     ebx, [esi+0C20h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aAmerparadropnu ; "AmerParaDropNum"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-mov     edx, ds:off_7F0C9C ; "General"
-lea     ebx, [esi+0C3Ch]
-push    ebx
-push    offset aAllyparadropin ; "AllyParaDropInf"
-push    edx             ; int
-mov     edx, edi
-lea     ecx, [esp+0DCh+var_C0]
-call    ReadINIClassInfantryTypeList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyInfantry
-lea     ecx, [esp+0D0h+var_C0]
-call    TypeList__InfantryCleanup
-sub     esp, 1Ch
-lea     ebx, [esi+0C58h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aAllyparadropnu ; "AllyParaDropNum"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-mov     edx, ds:off_7F0C9C ; "General"
-lea     ebx, [esi+0C74h]
-push    ebx
-push    offset aSovparadropinf ; "SovParaDropInf"
-push    edx             ; int
-mov     edx, edi
-lea     ecx, [esp+0DCh+var_C0]
-call    ReadINIClassInfantryTypeList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyInfantry
-lea     ecx, [esp+0D0h+var_C0]
-call    TypeList__InfantryCleanup
-sub     esp, 1Ch
-lea     ebx, [esi+0C90h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aSovparadropnum ; "SovParaDropNum"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-mov     edx, ds:off_7F0C9C ; "General"
-lea     ebx, [esi+0CACh]
-push    ebx
-push    offset aYuriparadropin ; "YuriParaDropInf"
-push    edx             ; int
-mov     edx, edi
-lea     ecx, [esp+0DCh+var_C0]
-call    ReadINIClassInfantryTypeList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyInfantry
-lea     ecx, [esp+0D0h+var_C0]
-call    TypeList__InfantryCleanup
-sub     esp, 1Ch
-lea     ebx, [esi+0CC8h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aYuriparadropnu ; "YuriParaDropNum"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-mov     edx, ds:off_7F0C9C ; "General"
-lea     ebx, [esi+0CE4h]
-push    ebx
-push    offset aAnimtoinfantry ; "AnimToInfantry"
-push    edx             ; int
-mov     edx, edi
-lea     ecx, [esp+0DCh+var_C0]
-call    ReadINIClassInfantryTypeList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyInfantry
-lea     ecx, [esp+0D0h+var_C0]
-call    TypeList__InfantryCleanup
-sub     esp, 1Ch
-lea     ebx, [esi+1194h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aAiioncannoncon ; "AIIonCannonConYardValue"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+11B0h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aAiioncannonwar ; "AIIonCannonWarFactoryValue"
-lea     eax, [esp+0F0h+var_C0]
-push    edx             ; int
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+11CCh]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     ecx, ds:off_7F0C9C ; "General"
-push    offset aAiioncannonpow ; "AIIonCannonPowerValue"
-lea     edx, [esp+0F0h+var_C0]
-push    ecx             ; int
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+11E8h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aAiioncannontec ; "AIIonCannonTechCenterValue"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+1204h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aAiioncannoneng ; "AIIonCannonEngineerValue"
-lea     eax, [esp+0F0h+var_C0]
-push    edx             ; int
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+1220h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     ecx, ds:off_7F0C9C ; "General"
-push    offset aAiioncannonthi ; "AIIonCannonThiefValue"
-lea     edx, [esp+0F0h+var_C0]
-push    ecx             ; int
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+123Ch]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aAiioncannonhar ; "AIIonCannonHarvesterValue"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+1258h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aAiioncannonmcv ; "AIIonCannonMCVValue"
-lea     eax, [esp+0F0h+var_C0]
-push    edx             ; int
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+1274h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     ecx, ds:off_7F0C9C ; "General"
-push    offset aAiioncannonapc ; "AIIonCannonAPCValue"
-lea     edx, [esp+0F0h+var_C0]
-push    ecx             ; int
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+1290h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aAiioncannonbas ; "AIIonCannonBaseDefenseValue"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+12ACh]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aAiioncannonplu ; "AIIonCannonPlugValue"
-lea     eax, [esp+0F0h+var_C0]
-push    edx             ; int
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+12C8h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     ecx, ds:off_7F0C9C ; "General"
-push    offset aAiioncannonhel ; "AIIonCannonHelipadValue"
-lea     edx, [esp+0F0h+var_C0]
-push    ecx             ; int
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+12E4h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aAiioncannontem ; "AIIonCannonTempleValue"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-mov     edx, [esi+1414h]
-mov     eax, [esi+1410h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aCloakdelay ; "CloakDelay"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1410h]
-mov     edx, [esi+141Ch]
-mov     eax, [esi+1418h]
-push    edx
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax             ; double
-push    offset aGamespeedbias ; "GameSpeedBias"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1418h]
-mov     edx, [esi+1424h]
-mov     eax, [esi+1420h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aBasebias ; "BaseBias"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1420h]
-mov     dl, [esi+17E8h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aSeparateaircra ; "SeparateAircraft"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     [esi+17E8h], al
-mov     ecx, [esi+14DCh]
-mov     edx, [esi+14D8h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    ecx
-push    edx             ; double
-push    offset aBasedefensedel ; "BaseDefenseDelay"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+14D8h]
-mov     ecx, [esi+14E0h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aSuspendpriorit ; "SuspendPriority"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+14E0h], eax
-mov     eax, [esi+14ECh]
-mov     ecx, [esi+14E8h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aSuspenddelay ; "SuspendDelay"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+14E8h]
-mov     eax, [esi+14F4h]
-mov     ecx, [esi+14F0h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aSurvivorrate ; "SurvivorRate"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+14F0h]
-mov     eax, [esi+14F8h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aAlliedsurvivor ; "AlliedSurvivorDivisor"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+14F8h], eax
-mov     edx, [esi+14FCh]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aSovietsurvivor ; "SovietSurvivorDivisor"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+14FCh], eax
-mov     ecx, [esi+1500h]
-push    ecx
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aThirdsurvivord ; "ThirdSurvivorDivisor"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+1500h], eax
-mov     eax, [esi+150Ch]
-mov     ecx, [esi+1508h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aReloadrate ; "ReloadRate"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1508h]
-mov     eax, [esi+151Ch]
-mov     ecx, [esi+1518h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aBuilduptime ; "BuildupTime"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1518h]
-mov     eax, [esi+152Ch]
-mov     ecx, [esi+1528h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aHarvesterdumpr ; "HarvesterDumpRate"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1528h]
-mov     eax, [esi+1520h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aHarvesterloadr ; "HarvesterLoadRate"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+1520h], eax
-mov     edx, [esi+174Ch]
-mov     eax, [esi+1748h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aBuildspeed ; "BuildSpeed"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1748h]
-mov     edx, [esi+16B4h]
-mov     eax, [esi+16B0h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aDamagedelay ; "DamageDelay"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+16B0h]
-mov     edx, [esi+163Ch]
-mov     eax, [esi+1638h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aGrowthrate ; "GrowthRate"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1638h]
-mov     edx, [esi+173Ch]
-mov     eax, [esi+1738h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aRefundpercent ; "RefundPercent"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1738h]
-mov     edx, [esi+16D4h]
-mov     eax, [esi+16D0h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aRepairpercent ; "RepairPercent"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+16D0h]
-mov     edx, [esi+16CCh]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aRepairstep ; "RepairStep"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+16CCh], eax
-mov     ecx, [esi+16D8h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aIrepairstep ; "IRepairStep"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+16D8h], eax
-mov     eax, [esi+16E4h]
-mov     ecx, [esi+16E0h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aRepairrate ; "RepairRate"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+16E0h]
-mov     eax, [esi+16ECh]
-mov     ecx, [esi+16E8h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aUrepairrate ; "URepairRate"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+16E8h]
-mov     eax, [esi+16F4h]
-mov     ecx, [esi+16F0h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aIrepairrate ; "IRepairRate"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+16F0h]
-mov     eax, [esi+171Ch]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aStray   ; "Stray"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadCoord
-mov     [esi+171Ch], eax
-mov     edx, [esi+1720h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aRelaxedstray ; "RelaxedStray"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadCoord
-mov     [esi+1720h], eax
-mov     ecx, [esi+1724h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aGuardmodestray ; "GuardModeStray"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadCoord
-mov     [esi+1724h], eax
-mov     eax, [esi+1718h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aCloseenough ; "CloseEnough"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadCoord
-mov     [esi+1718h], eax
-mov     dl, [esi+17E2h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aBlendedfog ; "BlendedFog"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     [esi+17E2h], al
-mov     ecx, [esi+18h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aAttackingaircr ; "AttackingAircraftSightRange"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+18h], eax
-mov     eax, [esi+16BCh]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aLeptonspersigh ; "LeptonsPerSightIncrease"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+16BCh], eax
-mov     edx, [esi+1688h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aTiberiumtransm ; "TiberiumTransmogrify"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+1688h], eax
-mov     ecx, [esi+1794h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aLightningdefer ; "LightningDeferment"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+1794h], eax
-mov     eax, [esi+1798h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aLightningdamag ; "LightningDamage"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+1798h], eax
-mov     edx, [esi+179Ch]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aLightningstorm ; "LightningStormDuration"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+179Ch], eax
-mov     ecx, [esi+17A0h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aLightninghitde ; "LightningHitDelay"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+17A0h], eax
-mov     eax, [esi+17A4h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aLightningscatt ; "LightningScatterDelay"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+17A4h], eax
-mov     edx, [esi+17A8h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aLightningcells ; "LightningCellSpread"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+17A8h], eax
-mov     ecx, [esi+17ACh]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aLightningsepar ; "LightningSeparation"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+17ACh], eax
-mov     eax, [esi+17B4h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aLightningwarhe ; "LightningWarhead"
-mov     ecx, edi
-call    SmallFunc_67B500
-mov     [esi+17B4h], eax
-mov     cl, [esi+17B0h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aLightningprint ; "LightningPrintText"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     [esi+17B0h], al
-mov     eax, [esi+17B8h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aForceshieldrad ; "ForceShieldRadius"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+17B8h], eax
-mov     edx, [esi+17BCh]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aForceshielddur ; "ForceShieldDuration"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+17BCh], eax
-mov     ecx, [esi+17C0h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aForceshieldbla ; "ForceShieldBlackoutDuration"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+17C0h], eax
-mov     eax, [esi+17C4h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aForceshieldpla ; "ForceShieldPlayFadeSoundTime"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+17C4h], eax
-mov     dl, [esi+17C8h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aMutateexplosio_0 ; "MutateExplosion"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     [esi+17C8h], al
-mov     ecx, [esi+498h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aPrismtype ; "PrismType"
-mov     ecx, edi
-call    SmallFunc_67BCE0
-mov     [esi+498h], eax
-sub     esp, 8
-fild    dword ptr [esi+49Ch]
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aPrismsupportmo ; "PrismSupportModifier"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fmul    ds:dbl_7E2AC0
-call    Math__RoundToInt
-mov     [esi+49Ch], eax
-mov     eax, [esi+4A0h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aPrismsupportma ; "PrismSupportMax"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+4A0h], eax
-mov     edx, [esi+4A4h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aPrismsupportde ; "PrismSupportDelay"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+4A4h], eax
-mov     ecx, [esi+4A8h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aPrismsupportdu ; "PrismSupportDuration"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+4A8h], eax
-mov     eax, [esi+4ACh]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aPrismsupporthe ; "PrismSupportHeight"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+4ACh], eax
-mov     edx, [esi+4B0h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aV3rocketpausef ; "V3RocketPauseFrames"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+4B0h], eax
-mov     ecx, [esi+4B4h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aV3rockettiltfr ; "V3RocketTiltFrames"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+4B4h], eax
-mov     eax, ds:off_7F0C9C ; "General"
-fld     dword ptr [esi+4B8h]
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aV3rocketpitchi ; "V3RocketPitchInitial"
-push    eax             ; int
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+4B8h]
-fld     dword ptr [esi+4BCh]
-mov     ecx, ds:off_7F0C9C ; "General"
-sub     esp, 8
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aV3rocketpitchf ; "V3RocketPitchFinal"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+4BCh]
-fld     dword ptr [esi+4C0h]
-mov     edx, ds:off_7F0C9C ; "General"
-sub     esp, 8
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aV3rocketturnra ; "V3RocketTurnRate"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+4C0h]
-fild    dword ptr [esi+4C4h]
-mov     eax, ds:off_7F0C9C ; "General"
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aV3rocketraiser ; "V3RocketRaiseRate"
-push    eax             ; int
-call    INIClass__ReadDouble_Overwrite
-call    Math__RoundToInt
-mov     [esi+4C4h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-fld     dword ptr [esi+4C8h]
-sub     esp, 8
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aV3rocketaccele ; "V3RocketAcceleration"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+4C8h]
-mov     edx, [esi+4CCh]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aV3rocketaltitu ; "V3RocketAltitude"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+4CCh], eax
-mov     ecx, [esi+4D0h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aV3rocketdamage ; "V3RocketDamage"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+4D0h], eax
-mov     eax, [esi+4D4h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aV3rocketelited ; "V3RocketEliteDamage"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+4D4h], eax
-mov     edx, [esi+4D8h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aV3rocketbodyle ; "V3RocketBodyLength"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+4D8h], eax
-mov     cl, [esi+4DCh]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aV3rocketlazycu ; "V3RocketLazyCurve"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     [esi+4DCh], al
-mov     eax, [esi+4E0h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aV3rockettype ; "V3RocketType"
-mov     ecx, edi
-call    GetINIClassKeyword
-mov     [esi+4E0h], eax
-mov     ecx, [esi+4E4h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aDmislpausefram ; "DMislPauseFrames"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+4E4h], eax
-mov     eax, [esi+4E8h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aDmisltiltframe ; "DMislTiltFrames"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+4E8h], eax
-mov     edx, ds:off_7F0C9C ; "General"
-fld     dword ptr [esi+4ECh]
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aDmislpitchinit ; "DMislPitchInitial"
-push    edx             ; int
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+4ECh]
-fld     dword ptr [esi+4F0h]
-mov     eax, ds:off_7F0C9C ; "General"
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aDmislpitchfina ; "DMislPitchFinal"
-push    eax             ; int
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+4F0h]
-fld     dword ptr [esi+4F4h]
-mov     ecx, ds:off_7F0C9C ; "General"
-sub     esp, 8
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aDmislturnrate ; "DMislTurnRate"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+4F4h]
-fild    dword ptr [esi+4F8h]
-mov     edx, ds:off_7F0C9C ; "General"
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aDmislraiserate ; "DMislRaiseRate"
-push    edx             ; int
-call    INIClass__ReadDouble_Overwrite
-call    Math__RoundToInt
-mov     [esi+4F8h], eax
-mov     eax, ds:off_7F0C9C ; "General"
-fld     dword ptr [esi+4FCh]
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aDmislaccelerat ; "DMislAcceleration"
-push    eax             ; int
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+4FCh]
-mov     ecx, [esi+500h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aDmislaltitude ; "DMislAltitude"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+500h], eax
-mov     eax, [esi+504h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aDmisldamage ; "DMislDamage"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+504h], eax
-mov     edx, [esi+508h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aDmislelitedama ; "DMislEliteDamage"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+508h], eax
-mov     ecx, [esi+50Ch]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aDmislbodylengt ; "DMislBodyLength"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+50Ch], eax
-mov     al, [esi+510h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aDmisllazycurve ; "DMislLazyCurve"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     [esi+510h], al
-mov     edx, [esi+514h]
-push    edx
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aDmisltype ; "DMislType"
-mov     ecx, edi
-call    GetINIClassKeyword
-mov     [esi+514h], eax
-mov     eax, [esi+518h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aCmislpausefram ; "CMislPauseFrames"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+518h], eax
-mov     edx, [esi+51Ch]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aCmisltiltframe ; "CMislTiltFrames"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+51Ch], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-fld     dword ptr [esi+520h]
-sub     esp, 8
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aCmislpitchinit ; "CMislPitchInitial"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+520h]
-fld     dword ptr [esi+524h]
-mov     edx, ds:off_7F0C9C ; "General"
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aCmislpitchfina ; "CMislPitchFinal"
-push    edx             ; int
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+524h]
-fld     dword ptr [esi+528h]
-mov     eax, ds:off_7F0C9C ; "General"
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aCmislturnrate ; "CMislTurnRate"
-push    eax             ; int
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+528h]
-fild    dword ptr [esi+52Ch]
-mov     ecx, ds:off_7F0C9C ; "General"
-sub     esp, 8
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aCmislraiserate ; "CMislRaiseRate"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-call    Math__RoundToInt
-mov     [esi+52Ch], eax
-mov     edx, ds:off_7F0C9C ; "General"
-fld     dword ptr [esi+4FCh]
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aCmislaccelerat ; "CMislAcceleration"
-push    edx             ; int
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+530h]
-mov     eax, [esi+534h]
-push    eax
-push    offset aCmislaltitude ; "CMislAltitude"
-mov     ecx, ds:off_7F0C9C ; "General"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+534h], eax
-mov     edx, [esi+538h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aCmisldamage ; "CMislDamage"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+538h], eax
-mov     ecx, [esi+53Ch]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aCmislelitedama ; "CMislEliteDamage"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+53Ch], eax
-mov     eax, [esi+540h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aCmislbodylengt ; "CMislBodyLength"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+540h], eax
-mov     dl, [esi+544h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aCmisllazycurve ; "CMislLazyCurve"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     [esi+544h], al
-mov     ecx, [esi+548h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aCmisltype ; "CMislType"
-mov     ecx, edi
-call    GetINIClassKeyword
-mov     [esi+548h], eax
-mov     edx, [esi+54Ch]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aParadropradius ; "ParadropRadius"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+54Ch], eax
-mov     ecx, [esi+788h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aSpotlightmovem ; "SpotlightMovementRadius"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+788h], eax
-mov     eax, [esi+78Ch]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aSpotlightlocat ; "SpotlightLocationRadius"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+78Ch], eax
-mov     edx, [esi+794h]
-mov     eax, [esi+790h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aSpotlightspeed ; "SpotlightSpeed"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+790h]
-mov     edx, [esi+79Ch]
-mov     eax, [esi+798h]
-push    edx
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax             ; double
-push    offset aSpotlightaccel ; "SpotlightAcceleration"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+798h]
-mov     edx, [esi+7A4h]
-mov     eax, [esi+7A0h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aSpotlightangle ; "SpotlightAngle"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+7A0h]
-mov     edx, [esi+7A8h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aSpotlightradiu ; "SpotlightRadius"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+7A8h], eax
-mov     ecx, [esi+62Ch]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aRevealtriggerr ; "RevealTriggerRadius"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+62Ch], eax
-mov     eax, [esi+764h]
-mov     ecx, [esi+760h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aChargetodrainr ; "ChargeToDrainRatio"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+760h]
-mov     eax, [esi+75Ch]
-mov     ecx, [esi+758h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aWallbuildspeed ; "WallBuildSpeedCoefficient"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+758h]
-mov     eax, [esi+564h]
-mov     ecx, [esi+560h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aConditionyello_0 ; "ConditionYellowSparkingProbability"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+560h]
-mov     eax, [esi+55Ch]
-mov     ecx, [esi+558h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aConditionredsp ; "ConditionRedSparkingProbability"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+558h]
-mov     eax, [esi+0C4h]
-mov     ecx, [esi+0C0h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aAitriggersucce ; "AITriggerSuccessWeightDelta"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+0C0h]
-mov     eax, [esi+0CCh]
-mov     ecx, [esi+0C8h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aAitriggerfailu ; "AITriggerFailureWeightDelta"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+0C8h]
-mov     eax, [esi+0D4h]
-mov     ecx, [esi+0D0h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    ecx             ; double
-push    offset aAitriggertrack ; "AITriggerTrackRecordCoefficient"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+0D0h]
-mov     eax, [esi+17D0h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aWeedcapacity ; "WeedCapacity"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+17D0h], eax
-mov     edx, [esi+88h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aFlashframetime ; "FlashFrameTime"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+88h], eax
-mov     ecx, [esi+8Ch]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx             ; int
-push    offset aRadarcombatfla ; "RadarCombatFlashTime"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+8Ch], eax
-mov     eax, ds:off_7F0C9C ; "General"
-fld     dword ptr [esi+80h]
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aRadareventspee ; "RadarEventSpeed"
-push    eax             ; int
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+80h]
-fld     dword ptr [esi+84h]
-mov     ecx, ds:off_7F0C9C ; "General"
-sub     esp, 8
-fstp    qword ptr [esp+0D8h+var_D8] ; int
-push    offset aRadareventrota ; "RadarEventRotationSpeed"
-push    ecx             ; char
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+84h]
-sub     esp, 1Ch
-lea     ebx, [esi+43Ch]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     edx, ds:off_7F0C9C ; "General"
-push    offset aRadareventsupp ; "RadarEventSuppressionDistances"
-lea     eax, [esp+0F0h+var_C0]
-push    edx             ; int
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+458h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     ecx, ds:off_7F0C9C ; "General"
-push    offset aRadareventvisi ; "RadarEventVisibilityDurations"
-lea     edx, [esp+0F0h+var_C0]
-push    ecx             ; int
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax             ; int
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-sub     esp, 1Ch
-lea     ebx, [esi+474h]
-mov     ecx, esp
-push    ebx
-call    VectorClass__Copy
-mov     eax, ds:off_7F0C9C ; "General"
-push    offset aRadareventdura ; "RadarEventDurations"
-lea     ecx, [esp+0F0h+var_C0]
-push    eax             ; int
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyFull
-lea     ecx, [esp+0D0h+var_C0]
-call    VectorClass__Dtor
-mov     edx, [esi+7Ch]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aRadareventminr ; "RadarEventMinRadius"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+7Ch], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-fld     dword ptr [esi+78h]
-sub     esp, 8
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aRadareventcolo ; "RadarEventColorSpeed"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+78h]
-mov     edx, [esi+1044h]
-mov     eax, [esi+1040h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aMyeffectivenes ; "MyEffectivenessCoefficientDefault"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1040h]
-mov     edx, [esi+104Ch]
-mov     eax, [esi+1048h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aTargeteffectiv ; "TargetEffectivenessCoefficientDefault"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1048h]
-mov     edx, [esi+1054h]
-mov     eax, [esi+1050h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aTargetspecialt ; "TargetSpecialThreatCoefficientDefault"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1050h]
-mov     edx, [esi+105Ch]
-mov     eax, [esi+1058h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aTargetstrength ; "TargetStrengthCoefficientDefault"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1058h]
-mov     edx, [esi+1064h]
-mov     eax, [esi+1060h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aTargetdistance ; "TargetDistanceCoefficientDefault"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1060h]
-mov     edx, [esi+106Ch]
-mov     eax, [esi+1068h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aDumbmyeffectiv ; "DumbMyEffectivenessCoefficient"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1068h]
-mov     edx, [esi+1074h]
-mov     eax, [esi+1070h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aDumbtargeteffe ; "DumbTargetEffectivenessCoefficient"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1070h]
-mov     edx, [esi+107Ch]
-mov     eax, [esi+1078h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aDumbtargetspec ; "DumbTargetSpecialThreatCoefficient"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1078h]
-mov     edx, [esi+1084h]
-mov     eax, [esi+1080h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aDumbtargetstre ; "DumbTargetStrengthCoefficient"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1080h]
-mov     edx, [esi+108Ch]
-mov     eax, [esi+1088h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aDumbtargetdist ; "DumbTargetDistanceCoefficient"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1088h]
-mov     edx, [esi+1094h]
-mov     eax, [esi+1090h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    edx
-push    eax             ; double
-push    offset aEnemyhousethre ; "EnemyHouseThreatBonus"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1090h]
-mov     edx, [esi+0D8h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aVeinholemonste ; "VeinholeMonsterStrength"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0D8h], eax
-mov     ecx, [esi+0DCh]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aMaxveinholegro ; "MaxVeinholeGrowth"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0DCh], eax
-mov     eax, [esi+0E0h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aVeinholegrowth ; "VeinholeGrowthRate"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0E0h], eax
-mov     edx, [esi+0E4h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aVeinholeshrink ; "VeinholeShrinkRate"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0E4h], eax
-mov     ecx, [esi+0ECh]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aVeindamage ; "VeinDamage"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0ECh], eax
-mov     eax, [esi+0FF4h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aVeinholetypecl ; "VeinholeTypeClass"
-mov     ecx, edi
-call    SmallFunc_67BD80
-lea     ebx, [esi+0FF8h]
-mov     [esi+0FF4h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-push    ebx
-push    offset aDefaultmiraged ; "DefaultMirageDisguises"
-push    ecx
-mov     edx, edi
-lea     ecx, [esp+0DCh+var_C0]
-call    RulesClass__LoadTypeList
-push    eax
-mov     ecx, ebx
-call    RulesClass__readBuildingTypes
-lea     ecx, [esp+0D0h+var_C0]
-call    RulesClass__readVehicleTypes
-mov     edx, [esi+1014h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aInfantryblinkd ; "InfantryBlinkDisguiseTime"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+1014h], eax
-mov     ecx, [esi+0F0h]
-mov     edx, ds:off_7F0C9C ; "General"
-push    ecx
-push    offset aMaximumqueuedo ; "MaximumQueuedObjects"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0F0h], eax
-mov     eax, [esi+90h]
-mov     ecx, ds:off_7F0C9C ; "General"
-push    eax
-push    offset aMaxwaypointpat ; "MaxWaypointPathLength"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+90h], eax
-mov     edx, [esi+1144h]
-mov     eax, ds:off_7F0C9C ; "General"
-push    edx
-push    offset aTreestrength ; "TreeStrength"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+1144h], eax
-mov     ecx, ds:off_7F0C9C ; "General"
-fld     dword ptr [esi+17F8h]
-sub     esp, 8
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aEngineercaptur ; "EngineerCaptureLevel"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+17F8h]
-fld     dword ptr [esi+17FCh]
-mov     edx, ds:off_7F0C9C ; "General"
-sub     esp, 8
-mov     ecx, edi
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aEngineercaptur ; "EngineerCaptureLevel"
-push    edx             ; int
-call    INIClass__ReadDouble_Overwrite
-fstp    dword ptr [esi+17FCh]
-mov     eax, [esi+1800h]
-add     esi, 1800h
-mov     dword ptr [esp+0D0h+var_A4], eax
-mov     dword ptr [esp+0D0h+var_A4+4], 0
-fild    [esp+0D0h+var_A4]
-mov     ecx, ds:off_7F0C9C ; "General"
-sub     esp, 8
-fmul    ds:flt_7F0DB8
-fstp    qword ptr [esp+0D8h+var_D8] ; double
-push    offset aTalkbubbletime ; "TalkBubbleTime"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fmul    ds:dbl_7E1728
-call    Math__RoundToInt
-mov     [esi], eax
-mov     al, 1
-pop     edi
-pop     esi
-pop     ebx
-mov     esp, ebp
-pop     ebp
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_671E8E:                             ; CODE XREF: RulesClass__LoadFromINI+28↑j
-pop     edi
-pop     esi
-xor     al, al
-pop     ebx
-mov     esp, ebp
-pop     ebp
-retn    4
-*/
 } }
 // 0x6722F0
 namespace gamemd { int RulesClass::LoadCountries() {
@@ -12551,2839 +7005,1351 @@ namespace gamemd { int RulesClass::readColors() {
 } }
 // 0x672AE0
 namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Rules::ReadBuildingsINI(#381 *this)
 {
-  int result; // eax
-  char *i; // eax
-  int v4; // edx
-  int v5; // eax
-  char *j; // eax
-  char *k; // eax
-  char *m; // eax
-  char *n; // eax
-  char *ii; // eax
-  char *jj; // eax
-  char *kk; // eax
-  char *mm; // eax
-  int v14; // ecx
-  char *nn; // eax
-  char *i1; // eax
-  char *i2; // eax
-  char *i3; // eax
-  char *i4; // eax
-  char *i5; // eax
-  int v21; // ecx
-  int *INIClassBuildingTypeList; // eax
-  int *v23; // eax
-  int *v24; // eax
-  int *v25; // eax
-  int Int_Overwrite; // eax
-  unsigned int v27; // ecx
-  unsigned int v28; // edx
-  double Double_Overwrite; // st7
-  int v30; // ecx
-  int v31; // eax
-  int v32; // edx
-  int v33; // eax
-  int v34; // ecx
-  int v35; // eax
-  int v36; // ecx
-  double v37; // st7
-  int v38; // eax
-  int v39; // eax
-  double v40; // rax
-  double v41; // st7
-  int v42; // edx
-  int v43; // eax
-  int v44; // ecx
-  int v45; // edx
-  double v46; // st7
-  int v47; // ecx
-  int v48; // eax
-  int v49; // ecx
-  double v50; // st7
-  int v51; // eax
-  int v52; // eax
-  double v53; // rax
-  double v54; // st7
-  int v55; // edx
-  int v56; // eax
-  int v57; // ecx
-  int v58; // edx
-  double v59; // st7
-  int v60; // ecx
-  int v61; // eax
-  int v62; // ecx
-  double v63; // st7
-  int v64; // eax
-  int v65; // eax
-  double v66; // rax
-  double v67; // st7
-  int v68; // edx
-  int v69; // eax
-  char v70; // cl
-  char Bool_Overwrite; // al
-  double v72; // rax
-  double v73; // st7
-  int v74; // edx
-  int v75; // eax
-  int v76; // ecx
-  int MaximumBuildingPlacementFailures; // edx
-  double v78; // st7
-  int v79; // ecx
-  int v80; // edx
-  double v81; // st7
-  int v82; // ecx
-  int v83; // edx
-  double v84; // st7
-  int v85; // ecx
-  int v86; // edx
-  double v87; // st7
-  int v88; // ecx
-  void **v89[3]; // [esp-1Ch] [ebp-E4h] BYREF
-  __int16 v90; // [esp-10h] [ebp-D8h]
-  int v91; // [esp-Ch] [ebp-D4h]
-  double v92; // [esp-8h] [ebp-D0h]
-  void ***IntList; // [esp+Ch] [ebp-BCh] BYREF
-  int v94[6]; // [esp+10h] [ebp-B8h] BYREF
-  int v95; // [esp+28h] [ebp-A0h]
-  _DWORD v96[6]; // [esp+2Ch] [ebp-9Ch] BYREF
-  int v97; // [esp+44h] [ebp-84h]
-  char String[128]; // [esp+48h] [ebp-80h] BYREF
-  unsigned __int8 ***v99; // [esp+D0h] [ebp+8h]
+      int result;
+      char *i;
+      int v4;
+      int v5;
+      char *j;
+      char *k;
+      char *m;
+      char *n;
+      char *ii;
+      char *jj;
+      char *kk;
+      char *mm;
+      int v14;
+      char *nn;
+      char *i1;
+      char *i2;
+      char *i3;
+      char *i4;
+      char *i5;
+      int v21;
+      int *INIClassBuildingTypeList;
+      int *v23;
+      int *v24;
+      int *v25;
+      int Int_Overwrite;
+      unsigned int v27;
+      unsigned int v28;
+      double Double_Overwrite;
+      int v30;
+      int v31;
+      int v32;
+      int v33;
+      int v34;
+      int v35;
+      int v36;
+      double v37;
+      int v38;
+      int v39;
+      double v40;
+      double v41;
+      int v42;
+      int v43;
+      int v44;
+      int v45;
+      double v46;
+      int v47;
+      int v48;
+      int v49;
+      double v50;
+      int v51;
+      int v52;
+      double v53;
+      double v54;
+      int v55;
+      int v56;
+      int v57;
+      int v58;
+      double v59;
+      int v60;
+      int v61;
+      int v62;
+      double v63;
+      int v64;
+      int v65;
+      double v66;
+      double v67;
+      int v68;
+      int v69;
+      char v70;
+      char Bool_Overwrite;
+      double v72;
+      double v73;
+      int v74;
+      int v75;
+      int v76;
+      int MaximumBuildingPlacementFailures;
+      double v78;
+      int v79;
+      int v80;
+      double v81;
+      int v82;
+      int v83;
+      double v84;
+      int v85;
+      int v86;
+      double v87;
+      int v88;
+      void **v89[3];
+      __int16 v90;
+      int v91;
+      double v92;
+      void ***IntList;
+      int v94[6];
+      int v95;
+      _DWORD v96[6];
+      int v97;
+      char String[128];
+      unsigned __int8 ***v99;
 
-  result = INIClass::BinarySearchSection((int)v99, (unsigned __int8 *)aAi);
-  if ( result )
-  {
-    if ( INIClass::GetString(
-           v99,
-           (unsigned __int8 **)aAi,
-           (unsigned __int8 *)aBuildconst,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      DynamicVectorClass::BuildingTypeConstructor(v94, 0, 0);
-      v94[0] = (int)&TypeList<BuildingTypeClass const *>::`vftable';
-      for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) )
+      result = INIClass::BinarySearchSection((int)v99, (unsigned __int8 *)DataGlobal_839DA4);
+      if ( result )
       {
-        if ( !*i )
-          break;
-        IntList = (void ***)BuildingTypeClass::FindOrCreate(i);
-        if ( IntList )
-          DynamicVector::Add_Alt3(v94, &IntList);
-      }
-      TypeList::BuildingTypeCopy(v96, v94);
-      v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)v94);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(v96, (_DWORD *)this + 555);
-    }
-    VectorClass::CopyBuilding((_DWORD *)this + 555, v96);
-    v4 = v96[4];
-    v5 = v96[5];
-    *((_DWORD *)this + 561) = v97;
-    *((_DWORD *)this + 559) = v4;
-    *((_DWORD *)this + 560) = v5;
-    v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
-    DynamicVectorClass::Destroy((int)v96);
-    if ( INIClass::GetString(
-           v99,
-           (unsigned __int8 **)aAi,
-           (unsigned __int8 *)aBuildpower,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      DynamicVectorClass::BuildingTypeConstructor(v94, 0, 0);
-      v94[0] = (int)&TypeList<BuildingTypeClass const *>::`vftable';
-      for ( j = strtok(String, Delimiter); j; j = strtok(0, Delimiter) )
-      {
-        if ( !*j )
-          break;
-        IntList = (void ***)BuildingTypeClass::FindOrCreate(j);
-        if ( IntList )
-          DynamicVector::Add_Alt3(v94, &IntList);
-      }
-      TypeList::BuildingTypeCopy(v96, v94);
-      v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)v94);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(v96, (_DWORD *)this + 562);
-    }
-    DynamicVector::Copy((_DWORD *)this + 562, v96);
-    *((_DWORD *)this + 568) = v97;
-    v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
-    DynamicVectorClass::Destroy((int)v96);
-    if ( INIClass::GetString(
-           v99,
-           (unsigned __int8 **)aAi,
-           (unsigned __int8 *)aBuildrefinery,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      DynamicVectorClass::BuildingTypeConstructor(v94, 0, 0);
-      v94[0] = (int)&TypeList<BuildingTypeClass const *>::`vftable';
-      for ( k = strtok(String, Delimiter); k; k = strtok(0, Delimiter) )
-      {
-        if ( !*k )
-          break;
-        IntList = (void ***)BuildingTypeClass::FindOrCreate(k);
-        if ( IntList )
-          DynamicVector::Add_Alt3(v94, &IntList);
-      }
-      TypeList::BuildingTypeCopy(v96, v94);
-      v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)v94);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(v96, (_DWORD *)this + 569);
-    }
-    DynamicVector::Copy((_DWORD *)this + 569, v96);
-    *((_DWORD *)this + 575) = v97;
-    v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
-    DynamicVectorClass::Destroy((int)v96);
-    if ( INIClass::GetString(
-           v99,
-           (unsigned __int8 **)aAi,
-           (unsigned __int8 *)aBuildbarracks,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      DynamicVectorClass::BuildingTypeConstructor(v94, 0, 0);
-      v94[0] = (int)&TypeList<BuildingTypeClass const *>::`vftable';
-      for ( m = strtok(String, Delimiter); m; m = strtok(0, Delimiter) )
-      {
-        if ( !*m )
-          break;
-        IntList = (void ***)BuildingTypeClass::FindOrCreate(m);
-        if ( IntList )
-          DynamicVector::Add_Alt3(v94, &IntList);
-      }
-      TypeList::BuildingTypeCopy(v96, v94);
-      v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)v94);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(v96, (_DWORD *)this + 576);
-    }
-    DynamicVector::Copy((_DWORD *)this + 576, v96);
-    v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
-    *((_DWORD *)this + 582) = v97;
-    DynamicVectorClass::Destroy((int)v96);
-    if ( INIClass::GetString(
-           v99,
-           (unsigned __int8 **)aAi,
-           (unsigned __int8 *)aBuildtech,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      TypeList::BuildingTypeConstructor(v96);
-      for ( n = strtok(String, Delimiter); n; n = strtok(0, Delimiter) )
-      {
-        if ( !*n )
-          break;
-        IntList = (void ***)BuildingTypeClass::FindOrCreate(n);
-        if ( IntList )
-          DynamicVector::Add_Alt3(v96, &IntList);
-      }
-      TypeList::BuildingTypeCopy(v94, v96);
-      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)v96);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 583);
-    }
-    DynamicVector::Copy((_DWORD *)this + 583, v94);
-    *((_DWORD *)this + 589) = v95;
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    DynamicVectorClass::Destroy((int)v94);
-    if ( INIClass::GetString(
-           v99,
-           (unsigned __int8 **)aAi,
-           (unsigned __int8 *)aBuildweapons,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      TypeList::BuildingTypeConstructor(v96);
-      for ( ii = strtok(String, Delimiter); ii; ii = strtok(0, Delimiter) )
-      {
-        if ( !*ii )
-          break;
-        IntList = (void ***)BuildingTypeClass::FindOrCreate(ii);
-        if ( IntList )
-          DynamicVector::Add_Alt3(v96, &IntList);
-      }
-      TypeList::BuildingTypeCopy(v94, v96);
-      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)v96);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 590);
-    }
-    DynamicVector::Copy((_DWORD *)this + 590, v94);
-    *((_DWORD *)this + 596) = v95;
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    DynamicVectorClass::Destroy((int)v94);
-    if ( INIClass::GetString(
-           v99,
-           (unsigned __int8 **)aAi,
-           (unsigned __int8 *)aAlliedbasedefe_0,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      TypeList::BuildingTypeConstructor(v96);
-      for ( jj = strtok(String, Delimiter); jj; jj = strtok(0, Delimiter) )
-      {
-        if ( !*jj )
-          break;
-        IntList = (void ***)BuildingTypeClass::FindOrCreate(jj);
-        if ( IntList )
-          DynamicVector::Add_Alt3(v96, &IntList);
-      }
-      TypeList::BuildingTypeCopy(v94, v96);
-      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)v96);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 597);
-    }
-    DynamicVector::Copy((_DWORD *)this + 597, v94);
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    *((_DWORD *)this + 603) = v95;
-    DynamicVectorClass::Destroy((int)v94);
-    if ( INIClass::GetString(
-           v99,
-           (unsigned __int8 **)aAi,
-           (unsigned __int8 *)aSovietbasedefe_0,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      TypeList::BuildingTypeConstructor(v96);
-      for ( kk = strtok(String, Delimiter); kk; kk = strtok(0, Delimiter) )
-      {
-        if ( !*kk )
-          break;
-        IntList = (void ***)BuildingTypeClass::FindOrCreate(kk);
-        if ( IntList )
-          DynamicVector::Add_Alt3(v96, &IntList);
-      }
-      TypeList::BuildingTypeCopy(v94, v96);
-      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)v96);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 604);
-    }
-    DynamicVector::Copy((_DWORD *)this + 604, v94);
-    *((_DWORD *)this + 610) = v95;
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    DynamicVectorClass::Destroy((int)v94);
-    if ( INIClass::GetString(
-           v99,
-           (unsigned __int8 **)aAi,
-           (unsigned __int8 *)aThirdbasedefen_0,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      TypeList::BuildingTypeConstructor(v96);
-      for ( mm = strtok(String, Delimiter); mm; mm = strtok(0, Delimiter) )
-      {
-        if ( !*mm )
-          break;
-        IntList = (void ***)BuildingTypeClass::FindOrCreate(mm);
-        if ( IntList )
-          DynamicVector::Add_Alt3(v96, &IntList);
-      }
-      TypeList::BuildingTypeCopy(v94, v96);
-      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)v96);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 611);
-    }
-    DynamicVector::Copy((_DWORD *)this + 611, v94);
-    *((_DWORD *)this + 617) = v95;
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    DynamicVectorClass::Destroy((int)v94);
-    IntList = v89;
-    DynamicVectorClass::Copy(v89, (_DWORD *)this + 618);
-    *IntList = &TypeList<int>::`vftable';
-    IntList = (void ***)INIClass::ReadIntList(
-                          v99,
-                          (int)v94,
-                          (unsigned __int8 *)aAi,
-                          (unsigned __int8 *)aAiforcepredict,
-                          v89[0],
-                          v89[1],
-                          (int)v89[2],
-                          v90,
-                          v91,
-                          SLODWORD(v92),
-                          SHIDWORD(v92));
-    Rules::CopyDataArray((_DWORD *)this + 618, IntList);
-    v14 = (int)IntList[6];
-    v94[0] = (int)&VectorClass<int>::`vftable';
-    *((_DWORD *)this + 624) = v14;
-    VectorClass::Destroy((int)v94);
-    if ( INIClass::GetString(
-           v99,
-           (unsigned __int8 **)aAi,
-           (unsigned __int8 *)aBuilddefense,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      TypeList::BuildingTypeConstructor(v96);
-      for ( nn = strtok(String, Delimiter); nn; nn = strtok(0, Delimiter) )
-      {
-        if ( !*nn )
-          break;
-        IntList = (void ***)BuildingTypeClass::FindOrCreate(nn);
-        if ( IntList )
-          DynamicVector::Add_Alt3(v96, &IntList);
-      }
-      TypeList::BuildingTypeCopy(v94, v96);
-      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)v96);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 625);
-    }
-    DynamicVector::Copy((_DWORD *)this + 625, v94);
-    *((_DWORD *)this + 631) = v95;
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    DynamicVectorClass::Destroy((int)v94);
-    if ( INIClass::GetString(
-           v99,
-           (unsigned __int8 **)aAi,
-           (unsigned __int8 *)aBuildpdefense,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      TypeList::BuildingTypeConstructor(v96);
-      for ( i1 = strtok(String, Delimiter); i1; i1 = strtok(0, Delimiter) )
-      {
-        if ( !*i1 )
-          break;
-        IntList = (void ***)BuildingTypeClass::FindOrCreate(i1);
-        if ( IntList )
-          DynamicVector::Add_Alt3(v96, &IntList);
-      }
-      TypeList::BuildingTypeCopy(v94, v96);
-      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)v96);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 632);
-    }
-    DynamicVector::Copy((_DWORD *)this + 632, v94);
-    *((_DWORD *)this + 638) = v95;
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    DynamicVectorClass::Destroy((int)v94);
-    if ( INIClass::GetString(
-           v99,
-           (unsigned __int8 **)aAi,
-           (unsigned __int8 *)aBuildaa,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      TypeList::BuildingTypeConstructor(v96);
-      for ( i2 = strtok(String, Delimiter); i2; i2 = strtok(0, Delimiter) )
-      {
-        if ( !*i2 )
-          break;
-        IntList = (void ***)BuildingTypeClass::FindOrCreate(i2);
-        if ( IntList )
-          DynamicVector::Add_Alt3(v96, &IntList);
-      }
-      TypeList::BuildingTypeCopy(v94, v96);
-      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)v96);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 639);
-    }
-    DynamicVector::Copy((_DWORD *)this + 639, v94);
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    *((_DWORD *)this + 645) = v95;
-    DynamicVectorClass::Destroy((int)v94);
-    if ( INIClass::GetString(
-           v99,
-           (unsigned __int8 **)aAi,
-           (unsigned __int8 *)aBuildhelipad,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      TypeList::BuildingTypeConstructor(v96);
-      for ( i3 = strtok(String, Delimiter); i3; i3 = strtok(0, Delimiter) )
-      {
-        if ( !*i3 )
-          break;
-        IntList = (void ***)BuildingTypeClass::FindOrCreate(i3);
-        if ( IntList )
-          DynamicVector::Add_Alt3(v96, &IntList);
-      }
-      TypeList::BuildingTypeCopy(v94, v96);
-      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)v96);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 646);
-    }
-    DynamicVector::Copy((_DWORD *)this + 646, v94);
-    *((_DWORD *)this + 652) = v95;
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    DynamicVectorClass::Destroy((int)v94);
-    if ( INIClass::GetString(
-           v99,
-           (unsigned __int8 **)aAi,
-           (unsigned __int8 *)aBuildradar,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      TypeList::BuildingTypeConstructor(v96);
-      for ( i4 = strtok(String, Delimiter); i4; i4 = strtok(0, Delimiter) )
-      {
-        if ( !*i4 )
-          break;
-        IntList = (void ***)BuildingTypeClass::FindOrCreate(i4);
-        if ( IntList )
-          DynamicVector::Add_Alt3(v96, &IntList);
-      }
-      TypeList::BuildingTypeCopy(v94, v96);
-      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)v96);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 653);
-    }
-    DynamicVector::Copy((_DWORD *)this + 653, v94);
-    *((_DWORD *)this + 659) = v95;
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    DynamicVectorClass::Destroy((int)v94);
-    if ( INIClass::GetString(
-           v99,
-           (unsigned __int8 **)aAi,
-           (unsigned __int8 *)aConcretewalls,
-           (char *)&MEMORY[0x87F7E8][10719],
-           String,
-           128) )
-    {
-      TypeList::BuildingTypeConstructor(v96);
-      for ( i5 = strtok(String, Delimiter); i5; i5 = strtok(0, Delimiter) )
-      {
-        if ( !*i5 )
-          break;
-        IntList = (void ***)BuildingTypeClass::FindOrCreate(i5);
-        if ( IntList )
-          DynamicVector::Add_Alt3(v96, &IntList);
-      }
-      TypeList::BuildingTypeCopy(v94, v96);
-      v96[0] = &VectorClass<BuildingTypeClass const *>::`vftable';
-      DynamicVectorClass::Destroy((int)v96);
-    }
-    else
-    {
-      TypeList::BuildingTypeCopy(v94, (_DWORD *)this + 660);
-    }
-    DynamicVector::Copy((_DWORD *)this + 660, v94);
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    *((_DWORD *)this + 666) = v95;
-    DynamicVectorClass::Destroy((int)v94);
-    IntList = (void ***)ReadINIClassBuildingTypeList(
-                          (int)v94,
-                          v99,
-                          (unsigned __int8 *)aAi,
-                          (unsigned __int8 *)aNsgates,
-                          (_DWORD *)this + 667);
-    DynamicVector::Copy((_DWORD *)this + 667, IntList);
-    v21 = (int)IntList[6];
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    *((_DWORD *)this + 673) = v21;
-    DynamicVectorClass::Destroy((int)v94);
-    INIClassBuildingTypeList = (int *)ReadINIClassBuildingTypeList(
-                                        (int)v94,
-                                        v99,
-                                        (unsigned __int8 *)aAi,
-                                        (unsigned __int8 *)aEwgates,
-                                        (_DWORD *)this + 674);
-    TypeList::CopyAircraft((int *)this + 674, INIClassBuildingTypeList);
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    DynamicVectorClass::Destroy((int)v94);
-    v23 = (int *)ReadINIClassBuildingTypeList(
-                   (int)v94,
-                   v99,
-                   (unsigned __int8 *)aAi,
-                   (unsigned __int8 *)aBuildnavalyard,
-                   (_DWORD *)this + 681);
-    TypeList::CopyAircraft((int *)this + 681, v23);
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    DynamicVectorClass::Destroy((int)v94);
-    v24 = (int *)ReadINIClassBuildingTypeList(
-                   (int)v94,
-                   v99,
-                   (unsigned __int8 *)aAi,
-                   (unsigned __int8 *)aBuilddummy,
-                   (_DWORD *)this + 688);
-    TypeList::CopyAircraft((int *)this + 688, v24);
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    DynamicVectorClass::Destroy((int)v94);
-    v25 = (int *)ReadINIClassBuildingTypeList(
-                   (int)v94,
-                   v99,
-                   (unsigned __int8 *)aAi,
-                   (unsigned __int8 *)aNeutraltechbui,
-                   (_DWORD *)this + 695);
-    TypeList::CopyAircraft((int *)this + 695, v25);
-    v94[0] = (int)&VectorClass<BuildingTypeClass const *>::`vftable';
-    DynamicVectorClass::Destroy((int)v94);
-    *((double *)this + 532) = INIClass::ReadDouble_Overwrite(
-                                (int)v99,
-                                (unsigned __int8 *)aAi,
-                                (unsigned __int8 *)aAttackinterval,
-                                *((double *)this + 532));
-    *((double *)this + 533) = INIClass::ReadDouble_Overwrite(
-                                (int)v99,
-                                (unsigned __int8 *)aAi,
-                                (unsigned __int8 *)aAttackdelay,
-                                *((double *)this + 533));
-    *((double *)this + 554) = INIClass::ReadDouble_Overwrite(
-                                (int)v99,
-                                (unsigned __int8 *)aAi,
-                                (unsigned __int8 *)aPatrolscan,
-                                *((double *)this + 554));
-    *((_DWORD *)this + 1494) = INIClass::ReadInt_Overwrite(
-                                 (int)v99,
-                                 (unsigned __int8 *)aAi,
-                                 (unsigned __int8 *)aCreditreserve,
-                                 *((_DWORD *)this + 1494));
-    *((double *)this + 748) = INIClass::ReadDouble_Overwrite(
-                                (int)v99,
-                                (unsigned __int8 *)aAi,
-                                (unsigned __int8 *)aPathdelay,
-                                *((double *)this + 748));
-    Int_Overwrite = INIClass::ReadInt_Overwrite(
-                      (int)v99,
-                      (unsigned __int8 *)aAi,
-                      (unsigned __int8 *)aBlockagepathde,
-                      *((_DWORD *)this + 1498));
-    v27 = *((_DWORD *)this + 1349);
-    v28 = *((_DWORD *)this + 1348);
-    *((_DWORD *)this + 1498) = Int_Overwrite;
-    Double_Overwrite = INIClass::ReadDouble_Overwrite(
-                         (int)v99,
-                         (unsigned __int8 *)aAi,
-                         (unsigned __int8 *)aAutocreatetime,
-                         COERCE_DOUBLE(__PAIR64__(v27, v28)));
-    v30 = *((_DWORD *)this + 1102);
-    *((double *)this + 674) = Double_Overwrite;
-    *((_DWORD *)this + 1102) = INIClass::ReadInt_Overwrite(
-                                 (int)v99,
-                                 (unsigned __int8 *)aAi,
-                                 (unsigned __int8 *)aInfantryreserv,
-                                 v30);
-    v31 = INIClass::ReadInt_Overwrite(
-            (int)v99,
-            (unsigned __int8 *)aAi,
-            (unsigned __int8 *)aInfantrybasemu,
-            *((_DWORD *)this + 1103));
-    v32 = *((_DWORD *)this + 1101);
-    *((_DWORD *)this + 1103) = v31;
-    v33 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aPowersurplus, v32);
-    v34 = *((_DWORD *)this + 1100);
-    *((_DWORD *)this + 1101) = v33;
-    v35 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aBasesizeadd, v34);
-    v36 = *((_DWORD *)this + 1098);
-    *((_DWORD *)this + 1100) = v35;
-    HIDWORD(v92) = *((_DWORD *)this + 1099);
-    LODWORD(v92) = v36;
-    v37 = INIClass::ReadDouble_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aRefineryratio, v92);
-    v38 = *((_DWORD *)this + 1097);
-    *((double *)this + 549) = v37;
-    v39 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aRefinerylimit, v38);
-    HIDWORD(v40) = *((_DWORD *)this + 1095);
-    *((_DWORD *)this + 1097) = v39;
-    LODWORD(v40) = *((_DWORD *)this + 1094);
-    v41 = INIClass::ReadDouble_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aBarracksratio, v40);
-    v42 = *((_DWORD *)this + 1096);
-    *((double *)this + 547) = v41;
-    v43 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aBarrackslimit, v42);
-    v44 = *((_DWORD *)this + 1091);
-    v45 = *((_DWORD *)this + 1090);
-    *((_DWORD *)this + 1096) = v43;
-    v46 = INIClass::ReadDouble_Overwrite(
-            (int)v99,
-            (unsigned __int8 *)aAi,
-            (unsigned __int8 *)aWarratio,
-            COERCE_DOUBLE(__PAIR64__(v44, v45)));
-    v47 = *((_DWORD *)this + 1092);
-    *((double *)this + 545) = v46;
-    v48 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aWarlimit, v47);
-    v49 = *((_DWORD *)this + 1086);
-    *((_DWORD *)this + 1092) = v48;
-    HIDWORD(v92) = *((_DWORD *)this + 1087);
-    LODWORD(v92) = v49;
-    v50 = INIClass::ReadDouble_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aDefenseratio, v92);
-    v51 = *((_DWORD *)this + 1088);
-    *((double *)this + 543) = v50;
-    v52 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aDefenselimit, v51);
-    HIDWORD(v53) = *((_DWORD *)this + 1083);
-    *((_DWORD *)this + 1088) = v52;
-    LODWORD(v53) = *((_DWORD *)this + 1082);
-    v54 = INIClass::ReadDouble_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aAaratio, v53);
-    v55 = *((_DWORD *)this + 1084);
-    *((double *)this + 541) = v54;
-    v56 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aAalimit, v55);
-    v57 = *((_DWORD *)this + 1079);
-    v58 = *((_DWORD *)this + 1078);
-    *((_DWORD *)this + 1084) = v56;
-    v59 = INIClass::ReadDouble_Overwrite(
-            (int)v99,
-            (unsigned __int8 *)aAi,
-            (unsigned __int8 *)aTeslaratio,
-            COERCE_DOUBLE(__PAIR64__(v57, v58)));
-    v60 = *((_DWORD *)this + 1080);
-    *((double *)this + 539) = v59;
-    v61 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aTeslalimit, v60);
-    v62 = *((_DWORD *)this + 1074);
-    *((_DWORD *)this + 1080) = v61;
-    HIDWORD(v92) = *((_DWORD *)this + 1075);
-    LODWORD(v92) = v62;
-    v63 = INIClass::ReadDouble_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aHelipadratio, v92);
-    v64 = *((_DWORD *)this + 1076);
-    *((double *)this + 537) = v63;
-    v65 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aHelipadlimit, v64);
-    HIDWORD(v66) = *((_DWORD *)this + 1071);
-    *((_DWORD *)this + 1076) = v65;
-    LODWORD(v66) = *((_DWORD *)this + 1070);
-    v67 = INIClass::ReadDouble_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aAirstripratio, v66);
-    v68 = *((_DWORD *)this + 1072);
-    *((double *)this + 535) = v67;
-    v69 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aAirstriplimit, v68);
-    v70 = *((_BYTE *)this + 6115);
-    *((_DWORD *)this + 1072) = v69;
-    *((_BYTE *)this + 6115) = INIClass::ReadBool_Overwrite(
-                                v99,
-                                (unsigned __int8 *)aAi,
-                                (unsigned __int8 *)aCompeasybonus,
-                                v70);
-    Bool_Overwrite = INIClass::ReadBool_Overwrite(
+        if ( INIClass::GetString(
+               v99,
+               (unsigned __int8 *)DataGlobal_839DA4,
+               (unsigned __int8 *)DataGlobal_83D4A0,
+               &g_INI_DefaultBuffer,
+               String,
+               128) )
+        {
+          DynamicVectorClass::BuildingTypeConstructor(v94, 0, 0);
+          v94[0] = (int)&vt_TypeList_BuildingTypeClass_const;
+          for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) )
+          {
+            if ( !*i )
+              break;
+            IntList = (void ***)BuildingTypeClass::FindOrCreate(i);
+            if ( IntList )
+              DynamicVector::Add_Alt3(v94, &IntList);
+          }
+          TypeList::BuildingTypeCopy(v96, v94);
+          v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)v94);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(v96, &this->IvanWarhead[1]);
+        }
+        VectorClass::CopyBuilding(&this->IvanWarhead[1], v96);
+        v4 = v96[4];
+        v5 = v96[5];
+        this->CanDetonateTimeBomb[3] = v97;
+        this->CanDetonateTimeBomb[1] = v4;
+        this->CanDetonateTimeBomb[2] = v5;
+        v96[0] = &vt_VectorClass_BuildingTypeClass_const;
+        DynamicVectorClass::Destroy((int)v96);
+        if ( INIClass::GetString(
+               v99,
+               (unsigned __int8 *)DataGlobal_839DA4,
+               (unsigned __int8 *)DataGlobal_83D494,
+               &g_INI_DefaultBuffer,
+               String,
+               128) )
+        {
+          DynamicVectorClass::BuildingTypeConstructor(v94, 0, 0);
+          v94[0] = (int)&vt_TypeList_BuildingTypeClass_const;
+          for ( j = strtok(String, Delimiter); j; j = strtok(0, Delimiter) )
+          {
+            if ( !*j )
+              break;
+            IntList = (void ***)BuildingTypeClass::FindOrCreate(j);
+            if ( IntList )
+              DynamicVector::Add_Alt3(v94, &IntList);
+          }
+          TypeList::BuildingTypeCopy(v96, v94);
+          v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)v94);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(v96, &this->CHRONOSK_SHP);
+        }
+        DynamicVector::Copy(&this->CHRONOSK_SHP, v96);
+        LODWORD(this->?) = v97;
+        v96[0] = &vt_VectorClass_BuildingTypeClass_const;
+        DynamicVectorClass::Destroy((int)v96);
+        if ( INIClass::GetString(
+               v99,
+               (unsigned __int8 *)DataGlobal_839DA4,
+               (unsigned __int8 *)DataGlobal_83D484,
+               &g_INI_DefaultBuffer,
+               String,
+               128) )
+        {
+          DynamicVectorClass::BuildingTypeConstructor(v94, 0, 0);
+          v94[0] = (int)&vt_TypeList_BuildingTypeClass_const;
+          for ( k = strtok(String, Delimiter); k; k = strtok(0, Delimiter) )
+          {
+            if ( !*k )
+              break;
+            IntList = (void ***)BuildingTypeClass::FindOrCreate(k);
+            if ( IntList )
+              DynamicVector::Add_Alt3(v94, &IntList);
+          }
+          TypeList::BuildingTypeCopy(v96, v94);
+          v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)v94);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(v96, (_DWORD *)&this->? + 1);
+        }
+        DynamicVector::Copy((_DWORD *)&this->? + 1, v96);
+        this->?[3] = v97;
+        v96[0] = &vt_VectorClass_BuildingTypeClass_const;
+        DynamicVectorClass::Destroy((int)v96);
+        if ( INIClass::GetString(
+               v99,
+               (unsigned __int8 *)DataGlobal_839DA4,
+               (unsigned __int8 *)DataGlobal_83D474,
+               &g_INI_DefaultBuffer,
+               String,
+               128) )
+        {
+          DynamicVectorClass::BuildingTypeConstructor(v94, 0, 0);
+          v94[0] = (int)&vt_TypeList_BuildingTypeClass_const;
+          for ( m = strtok(String, Delimiter); m; m = strtok(0, Delimiter) )
+          {
+            if ( !*m )
+              break;
+            IntList = (void ***)BuildingTypeClass::FindOrCreate(m);
+            if ( IntList )
+              DynamicVector::Add_Alt3(v94, &IntList);
+          }
+          TypeList::BuildingTypeCopy(v96, v94);
+          v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)v94);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(v96, this->?);
+        }
+        DynamicVector::Copy(this->?, v96);
+        v96[0] = &vt_VectorClass_BuildingTypeClass_const;
+        this->?[2] = v97;
+        DynamicVectorClass::Destroy((int)v96);
+        if ( INIClass::GetString(
+               v99,
+               (unsigned __int8 *)DataGlobal_839DA4,
+               (unsigned __int8 *)DataGlobal_83D468,
+               &g_INI_DefaultBuffer,
+               String,
+               128) )
+        {
+          TypeList::BuildingTypeConstructor(v96);
+          for ( n = strtok(String, Delimiter); n; n = strtok(0, Delimiter) )
+          {
+            if ( !*n )
+              break;
+            IntList = (void ***)BuildingTypeClass::FindOrCreate(n);
+            if ( IntList )
+              DynamicVector::Add_Alt3(v96, &IntList);
+          }
+          TypeList::BuildingTypeCopy(v94, v96);
+          v96[0] = &vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)v96);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(v94, &this->?[3]);
+        }
+        DynamicVector::Copy(&this->?[3], v94);
+        this->?[1] = v95;
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        DynamicVectorClass::Destroy((int)v94);
+        if ( INIClass::GetString(
+               v99,
+               (unsigned __int8 *)DataGlobal_839DA4,
+               (unsigned __int8 *)DataGlobal_83D458,
+               &g_INI_DefaultBuffer,
+               String,
+               128) )
+        {
+          TypeList::BuildingTypeConstructor(v96);
+          for ( ii = strtok(String, Delimiter); ii; ii = strtok(0, Delimiter) )
+          {
+            if ( !*ii )
+              break;
+            IntList = (void ***)BuildingTypeClass::FindOrCreate(ii);
+            if ( IntList )
+              DynamicVector::Add_Alt3(v96, &IntList);
+          }
+          TypeList::BuildingTypeCopy(v94, v96);
+          v96[0] = &vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)v96);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(v94, &this->?[2]);
+        }
+        DynamicVector::Copy(&this->?[2], v94);
+        this->? = v95;
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        DynamicVectorClass::Destroy((int)v94);
+        if ( INIClass::GetString(
+               v99,
+               (unsigned __int8 *)DataGlobal_839DA4,
+               (unsigned __int8 *)DataGlobal_83D444,
+               &g_INI_DefaultBuffer,
+               String,
+               128) )
+        {
+          TypeList::BuildingTypeConstructor(v96);
+          for ( jj = strtok(String, Delimiter); jj; jj = strtok(0, Delimiter) )
+          {
+            if ( !*jj )
+              break;
+            IntList = (void ***)BuildingTypeClass::FindOrCreate(jj);
+            if ( IntList )
+              DynamicVector::Add_Alt3(v96, &IntList);
+          }
+          TypeList::BuildingTypeCopy(v94, v96);
+          v96[0] = &vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)v96);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(v94, this->?);
+        }
+        DynamicVector::Copy(this->?, v94);
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        this->? = v95;
+        DynamicVectorClass::Destroy((int)v94);
+        if ( INIClass::GetString(
+               v99,
+               (unsigned __int8 *)DataGlobal_839DA4,
+               (unsigned __int8 *)DataGlobal_83D430,
+               &g_INI_DefaultBuffer,
+               String,
+               128) )
+        {
+          TypeList::BuildingTypeConstructor(v96);
+          for ( kk = strtok(String, Delimiter); kk; kk = strtok(0, Delimiter) )
+          {
+            if ( !*kk )
+              break;
+            IntList = (void ***)BuildingTypeClass::FindOrCreate(kk);
+            if ( IntList )
+              DynamicVector::Add_Alt3(v96, &IntList);
+          }
+          TypeList::BuildingTypeCopy(v94, v96);
+          v96[0] = &vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)v96);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(v94, &this->MyEffectivenessCoefficientDefault);
+        }
+        DynamicVector::Copy(&this->MyEffectivenessCoefficientDefault, v94);
+        this->TargetStrengthCoefficientDefault = v95;
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        DynamicVectorClass::Destroy((int)v94);
+        if ( INIClass::GetString(
+               v99,
+               (unsigned __int8 *)DataGlobal_839DA4,
+               (unsigned __int8 *)DataGlobal_83D41C,
+               &g_INI_DefaultBuffer,
+               String,
+               128) )
+        {
+          TypeList::BuildingTypeConstructor(v96);
+          for ( mm = strtok(String, Delimiter); mm; mm = strtok(0, Delimiter) )
+          {
+            if ( !*mm )
+              break;
+            IntList = (void ***)BuildingTypeClass::FindOrCreate(mm);
+            if ( IntList )
+              DynamicVector::Add_Alt3(v96, &IntList);
+          }
+          TypeList::BuildingTypeCopy(v94, v96);
+          v96[0] = &vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)v96);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(v94, this->?);
+        }
+        DynamicVector::Copy(this->?, v94);
+        this->?[2] = v95;
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        DynamicVectorClass::Destroy((int)v94);
+        IntList = v89;
+        DynamicVectorClass::Copy(v89, &this->?[3]);
+        *IntList = &vt_TypeList_int;
+        IntList = (void ***)INIClass::ReadIntList(
+                              v99,
+                              (int)v94,
+                              (unsigned __int8 *)DataGlobal_839DA4,
+                              (unsigned __int8 *)DataGlobal_83D404,
+                              v89[0],
+                              v89[1],
+                              (int)v89[2],
+                              v90,
+                              v91,
+                              SLODWORD(v92),
+                              SHIDWORD(v92));
+        Rules::CopyDataArray(&this->?[3], IntList);
+        v14 = (int)IntList[6];
+        v94[0] = (int)&vt_VectorClass_int;
+        this->?[1] = v14;
+        VectorClass::Destroy((int)v94);
+        if ( INIClass::GetString(
+               v99,
+               (unsigned __int8 *)DataGlobal_839DA4,
+               (unsigned __int8 *)DataGlobal_83D3F4,
+               &g_INI_DefaultBuffer,
+               String,
+               128) )
+        {
+          TypeList::BuildingTypeConstructor(v96);
+          for ( nn = strtok(String, Delimiter); nn; nn = strtok(0, Delimiter) )
+          {
+            if ( !*nn )
+              break;
+            IntList = (void ***)BuildingTypeClass::FindOrCreate(nn);
+            if ( IntList )
+              DynamicVector::Add_Alt3(v96, &IntList);
+          }
+          TypeList::BuildingTypeCopy(v94, v96);
+          v96[0] = &vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)v96);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(v94, &this->?[2]);
+        }
+        DynamicVector::Copy(&this->?[2], v94);
+        this->?[0] = v95;
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        DynamicVectorClass::Destroy((int)v94);
+        if ( INIClass::GetString(
+               v99,
+               (unsigned __int8 *)DataGlobal_839DA4,
+               (unsigned __int8 *)DataGlobal_83D3E4,
+               &g_INI_DefaultBuffer,
+               String,
+               128) )
+        {
+          TypeList::BuildingTypeConstructor(v96);
+          for ( i1 = strtok(String, Delimiter); i1; i1 = strtok(0, Delimiter) )
+          {
+            if ( !*i1 )
+              break;
+            IntList = (void ***)BuildingTypeClass::FindOrCreate(i1);
+            if ( IntList )
+              DynamicVector::Add_Alt3(v96, &IntList);
+          }
+          TypeList::BuildingTypeCopy(v94, v96);
+          v96[0] = &vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)v96);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(v94, &this->?[1]);
+        }
+        DynamicVector::Copy(&this->?[1], v94);
+        this->AALimit[3] = v95;
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        DynamicVectorClass::Destroy((int)v94);
+        if ( INIClass::GetString(
+               v99,
+               (unsigned __int8 *)DataGlobal_839DA4,
+               (unsigned __int8 *)DataGlobal_83D3DC,
+               &g_INI_DefaultBuffer,
+               String,
+               128) )
+        {
+          TypeList::BuildingTypeConstructor(v96);
+          for ( i2 = strtok(String, Delimiter); i2; i2 = strtok(0, Delimiter) )
+          {
+            if ( !*i2 )
+              break;
+            IntList = (void ***)BuildingTypeClass::FindOrCreate(i2);
+            if ( IntList )
+              DynamicVector::Add_Alt3(v96, &IntList);
+          }
+          TypeList::BuildingTypeCopy(v94, v96);
+          v96[0] = &vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)v96);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(v94, this->WarRatio);
+        }
+        DynamicVector::Copy(this->WarRatio, v94);
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        this->?[2] = v95;
+        DynamicVectorClass::Destroy((int)v94);
+        if ( INIClass::GetString(
+               v99,
+               (unsigned __int8 *)DataGlobal_839DA4,
+               (unsigned __int8 *)DataGlobal_83D3CC,
+               &g_INI_DefaultBuffer,
+               String,
+               128) )
+        {
+          TypeList::BuildingTypeConstructor(v96);
+          for ( i3 = strtok(String, Delimiter); i3; i3 = strtok(0, Delimiter) )
+          {
+            if ( !*i3 )
+              break;
+            IntList = (void ***)BuildingTypeClass::FindOrCreate(i3);
+            if ( IntList )
+              DynamicVector::Add_Alt3(v96, &IntList);
+          }
+          TypeList::BuildingTypeCopy(v94, v96);
+          v96[0] = &vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)v96);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(v94, &this->?[3]);
+        }
+        DynamicVector::Copy(&this->?[3], v94);
+        this->InfantryBaseMult[1] = v95;
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        DynamicVectorClass::Destroy((int)v94);
+        if ( INIClass::GetString(
+               v99,
+               (unsigned __int8 *)DataGlobal_839DA4,
+               (unsigned __int8 *)DataGlobal_83D3C0,
+               &g_INI_DefaultBuffer,
+               String,
+               128) )
+        {
+          TypeList::BuildingTypeConstructor(v96);
+          for ( i4 = strtok(String, Delimiter); i4; i4 = strtok(0, Delimiter) )
+          {
+            if ( !*i4 )
+              break;
+            IntList = (void ***)BuildingTypeClass::FindOrCreate(i4);
+            if ( IntList )
+              DynamicVector::Add_Alt3(v96, &IntList);
+          }
+          TypeList::BuildingTypeCopy(v94, v96);
+          v96[0] = &vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)v96);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(v94, &this->InfantryBaseMult[2]);
+        }
+        DynamicVector::Copy(&this->InfantryBaseMult[2], v94);
+        this->GameSpeedBias = v95;
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        DynamicVectorClass::Destroy((int)v94);
+        if ( INIClass::GetString(
+               v99,
+               (unsigned __int8 *)DataGlobal_839DA4,
+               (unsigned __int8 *)DataGlobal_83D3B0,
+               &g_INI_DefaultBuffer,
+               String,
+               128) )
+        {
+          TypeList::BuildingTypeConstructor(v96);
+          for ( i5 = strtok(String, Delimiter); i5; i5 = strtok(0, Delimiter) )
+          {
+            if ( !*i5 )
+              break;
+            IntList = (void ***)BuildingTypeClass::FindOrCreate(i5);
+            if ( IntList )
+              DynamicVector::Add_Alt3(v96, &IntList);
+          }
+          TypeList::BuildingTypeCopy(v94, v96);
+          v96[0] = &vt_VectorClass_BuildingTypeClass_const;
+          DynamicVectorClass::Destroy((int)v96);
+        }
+        else
+        {
+          TypeList::BuildingTypeCopy(v94, &this->?);
+        }
+        DynamicVector::Copy(&this->?, v94);
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        LODWORD(this->MaxIQLevels) = v95;
+        DynamicVectorClass::Destroy((int)v94);
+        IntList = (void ***)ReadINIClassBuildingTypeList(
+                              (int)v94,
+                              v99,
+                              (unsigned __int8 *)DataGlobal_839DA4,
+                              (unsigned __int8 *)DataGlobal_83D3A8,
+                              &this->SuperWeapons);
+        DynamicVector::Copy(&this->SuperWeapons, IntList);
+        v21 = (int)IntList[6];
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        this->RepairSell[3] = v21;
+        DynamicVectorClass::Destroy((int)v94);
+        INIClassBuildingTypeList = (int *)ReadINIClassBuildingTypeList(
+                                            (int)v94,
+                                            v99,
+                                            (unsigned __int8 *)DataGlobal_839DA4,
+                                            (unsigned __int8 *)DataGlobal_83D3A0,
+                                            this->Aircraft);
+        TypeList::CopyAircraft(this->Aircraft, INIClassBuildingTypeList);
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        DynamicVectorClass::Destroy((int)v94);
+        v23 = (int *)ReadINIClassBuildingTypeList(
+                       (int)v94,
                        v99,
-                       (unsigned __int8 *)aAi,
-                       (unsigned __int8 *)aParanoid,
-                       *((_BYTE *)this + 6112));
-    HIDWORD(v72) = *((_DWORD *)this + 1069);
-    *((_BYTE *)this + 6112) = Bool_Overwrite;
-    LODWORD(v72) = *((_DWORD *)this + 1068);
-    v73 = INIClass::ReadDouble_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aPoweremergency, v72);
-    v74 = *((_DWORD *)this + 1304);
-    *((double *)this + 534) = v73;
-    v75 = INIClass::ReadInt_Overwrite((int)v99, (unsigned __int8 *)aAi, (unsigned __int8 *)aAibasespacing, v74);
-    v76 = *((_DWORD *)this + 703);
-    MaximumBuildingPlacementFailures = *((_DWORD *)this + 702);
-    *((_DWORD *)this + 1304) = v75;
-    v78 = INIClass::ReadDouble_Overwrite(
-            (int)v99,
-            (unsigned __int8 *)aAi,
-            (unsigned __int8 *)aGdiwalldefense,
-            COERCE_DOUBLE(__PAIR64__(v76, MaximumBuildingPlacementFailures)));
-    v79 = *((_DWORD *)this + 705);
-    v80 = *((_DWORD *)this + 704);
-    *((double *)this + 351) = v78;
-    v81 = INIClass::ReadDouble_Overwrite(
-            (int)v99,
-            (unsigned __int8 *)aAi,
-            (unsigned __int8 *)aGdiwalldefense_0,
-            COERCE_DOUBLE(__PAIR64__(v79, v80)));
-    v82 = *((_DWORD *)this + 707);
-    v83 = *((_DWORD *)this + 706);
-    *((double *)this + 352) = v81;
-    v84 = INIClass::ReadDouble_Overwrite(
-            (int)v99,
-            (unsigned __int8 *)aAi,
-            (unsigned __int8 *)aNodbasedefense,
-            COERCE_DOUBLE(__PAIR64__(v82, v83)));
-    v85 = *((_DWORD *)this + 709);
-    v86 = *((_DWORD *)this + 708);
-    *((double *)this + 353) = v84;
-    v87 = INIClass::ReadDouble_Overwrite(
-            (int)v99,
-            (unsigned __int8 *)aAi,
-            (unsigned __int8 *)aGdibasedefense,
-            COERCE_DOUBLE(__PAIR64__(v85, v86)));
-    v88 = *((_DWORD *)this + 711);
-    *((double *)this + 354) = v87;
-    *((_DWORD *)this + 711) = INIClass::ReadInt_Overwrite(
+                       (unsigned __int8 *)DataGlobal_839DA4,
+                       (unsigned __int8 *)DataGlobal_83D390,
+                       &this->SilverCrate[3]);
+        TypeList::CopyAircraft(&this->SilverCrate[3], v23);
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        DynamicVectorClass::Destroy((int)v94);
+        v24 = (int *)ReadINIClassBuildingTypeList(
+                       (int)v94,
+                       v99,
+                       (unsigned __int8 *)DataGlobal_839DA4,
+                       (unsigned __int8 *)DataGlobal_83D384,
+                       &this->MinUnitCount);
+        TypeList::CopyAircraft(&this->MinUnitCount, v24);
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        DynamicVectorClass::Destroy((int)v94);
+        v25 = (int *)ReadINIClassBuildingTypeList(
+                       (int)v94,
+                       v99,
+                       (unsigned __int8 *)DataGlobal_839DA4,
+                       (unsigned __int8 *)DataGlobal_83D36C,
+                       &this->BridgeDestruction[1]);
+        TypeList::CopyAircraft(&this->BridgeDestruction[1], v25);
+        v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
+        DynamicVectorClass::Destroy((int)v94);
+        *(double *)&this->? = INIClass::ReadDouble_Overwrite(
                                 (int)v99,
-                                (unsigned __int8 *)aAi,
-                                (unsigned __int8 *)aMaximumbasedef,
-                                v88);
-    result = INIClass::ReadInt_Overwrite(
-               (int)v99,
-               (unsigned __int8 *)aAi,
-               (unsigned __int8 *)aComputerbasede,
-               *((_DWORD *)this + 710));
-    *((_DWORD *)this + 710) = result;
-    LOBYTE(result) = 1;
-  }
-  else
-  {
-    LOBYTE(result) = 0;
-  }
-  return result;
+                                (unsigned __int8 *)DataGlobal_839DA4,
+                                (unsigned __int8 *)DataGlobal_83D35C,
+                                *(double *)&this->?);
+        *(double *)&this->? = INIClass::ReadDouble_Overwrite(
+                                (int)v99,
+                                (unsigned __int8 *)DataGlobal_839DA4,
+                                (unsigned __int8 *)DataGlobal_83D350,
+                                *(double *)&this->?);
+        *(double *)this->? = INIClass::ReadDouble_Overwrite(
+                               (int)v99,
+                               (unsigned __int8 *)DataGlobal_839DA4,
+                               (unsigned __int8 *)DataGlobal_83D344,
+                               *(double *)this->?);
+        this->LightningCellSpread = INIClass::ReadInt_Overwrite(
+                                     (int)v99,
+                                     (unsigned __int8 *)DataGlobal_839DA4,
+                                     (unsigned __int8 *)DataGlobal_83D334,
+                                     this->LightningCellSpread);
+        *((double *)this + 748) = INIClass::ReadDouble_Overwrite(
+                                    (int)v99,
+                                    (unsigned __int8 *)DataGlobal_839DA4,
+                                    (unsigned __int8 *)DataGlobal_83D328,
+                                    *((double *)this + 748));
+        Int_Overwrite = INIClass::ReadInt_Overwrite(
+                          (int)v99,
+                          (unsigned __int8 *)DataGlobal_839DA4,
+                          (unsigned __int8 *)DataGlobal_83D314,
+                          this->ForceShieldRadius);
+        v27 = this->q1514;
+        v28 = this->q1510;
+        this->ForceShieldRadius = Int_Overwrite;
+        Double_Overwrite = INIClass::ReadDouble_Overwrite(
+                             (int)v99,
+                             (unsigned __int8 *)DataGlobal_839DA4,
+                             (unsigned __int8 *)DataGlobal_83D304,
+                             COERCE_DOUBLE(__PAIR64__(v27, v28)));
+        v30 = this->?[14];
+        *((double *)this + 674) = Double_Overwrite;
+        this->?[14] = INIClass::ReadInt_Overwrite(
+                        (int)v99,
+                        (unsigned __int8 *)DataGlobal_839DA4,
+                        (unsigned __int8 *)DataGlobal_83D2F4,
+                        v30);
+        v31 = INIClass::ReadInt_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D2E0,
+                this->?[15]);
+        v32 = this->?[13];
+        this->?[15] = v31;
+        v33 = INIClass::ReadInt_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D2D0,
+                v32);
+        v34 = this->?[12];
+        this->?[13] = v33;
+        v35 = INIClass::ReadInt_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D2C4,
+                v34);
+        v36 = this->?[10];
+        this->?[12] = v35;
+        HIDWORD(v92) = this->?[11];
+        LODWORD(v92) = v36;
+        v37 = INIClass::ReadDouble_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D2B4,
+                v92);
+        v38 = this->?[9];
+        *(double *)&this->?[10] = v37;
+        v39 = INIClass::ReadInt_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D2A4,
+                v38);
+        HIDWORD(v40) = this->?[7];
+        this->?[9] = v39;
+        LODWORD(v40) = this->?[6];
+        v41 = INIClass::ReadDouble_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D294,
+                v40);
+        v42 = this->?[8];
+        *(double *)&this->?[6] = v41;
+        v43 = INIClass::ReadInt_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D284,
+                v42);
+        v44 = this->?[3];
+        v45 = this->?[2];
+        this->?[8] = v43;
+        v46 = INIClass::ReadDouble_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D278,
+                COERCE_DOUBLE(__PAIR64__(v44, v45)));
+        v47 = this->?[4];
+        *(double *)&this->?[2] = v46;
+        v48 = INIClass::ReadInt_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D26C,
+                v47);
+        v49 = this->?[18];
+        this->?[4] = v48;
+        HIDWORD(v92) = this->?[19];
+        LODWORD(v92) = v49;
+        v50 = INIClass::ReadDouble_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D25C,
+                v92);
+        v51 = this->?[0];
+        *(double *)&this->?[18] = v50;
+        v52 = INIClass::ReadInt_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D24C,
+                v51);
+        HIDWORD(v53) = this->?[15];
+        this->?[0] = v52;
+        LODWORD(v53) = this->?[14];
+        v54 = INIClass::ReadDouble_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D244,
+                v53);
+        v55 = this->?[16];
+        *(double *)&this->?[14] = v54;
+        v56 = INIClass::ReadInt_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D23C,
+                v55);
+        v57 = this->?[11];
+        v58 = this->?[10];
+        this->?[16] = v56;
+        v59 = INIClass::ReadDouble_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D230,
+                COERCE_DOUBLE(__PAIR64__(v57, v58)));
+        v60 = this->?[12];
+        *(double *)&this->?[10] = v59;
+        v61 = INIClass::ReadInt_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D224,
+                v60);
+        v62 = this->?[6];
+        this->?[12] = v61;
+        HIDWORD(v92) = this->?[7];
+        LODWORD(v92) = v62;
+        v63 = INIClass::ReadDouble_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D214,
+                v92);
+        v64 = this->?[8];
+        *(double *)&this->?[6] = v63;
+        v65 = INIClass::ReadInt_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D204,
+                v64);
+        HIDWORD(v66) = this->?[3];
+        this->?[8] = v65;
+        LODWORD(v66) = this->?[2];
+        v67 = INIClass::ReadDouble_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D1F4,
+                v66);
+        v68 = this->?[4];
+        *(double *)&this->?[2] = v67;
+        v69 = INIClass::ReadInt_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D1E4,
+                v68);
+        v70 = this->q17E3;
+        this->?[4] = v69;
+        this->q17E3 = INIClass::ReadBool_Overwrite(
+                                    (int)v99,
+                                    (unsigned __int8 *)DataGlobal_839DA4,
+                                    (unsigned __int8 *)DataGlobal_83D1D4,
+                                    v70);
+        Bool_Overwrite = INIClass::ReadBool_Overwrite(
+                           (int)v99,
+                           (unsigned __int8 *)DataGlobal_839DA4,
+                           (unsigned __int8 *)DataGlobal_83D1C8,
+                           this->ElevationIncrement);
+        HIDWORD(v72) = this->?[1];
+        this->ElevationIncrement = Bool_Overwrite;
+        LODWORD(v72) = this->?[0];
+        v73 = INIClass::ReadDouble_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D1B8,
+                v72);
+        v74 = this->q1460;
+        *(double *)this->? = v73;
+        v75 = INIClass::ReadInt_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D1A8,
+                v74);
+        v76 = this->BaseDefenseDelay[0];
+        MaximumBuildingPlacementFailures = this->?;
+        this->q1460 = v75;
+        v78 = INIClass::ReadDouble_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D198,
+                COERCE_DOUBLE(__PAIR64__(v76, MaximumBuildingPlacementFailures)));
+        v79 = this->BaseDefenseDelay[2];
+        v80 = this->BaseDefenseDelay[1];
+        *(double *)&this->? = v78;
+        v81 = INIClass::ReadDouble_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D17C,
+                COERCE_DOUBLE(__PAIR64__(v79, v80)));
+        v82 = this->?[0];
+        v83 = this->BaseDefenseDelay[3];
+        *(double *)&this->BaseDefenseDelay[1] = v81;
+        v84 = INIClass::ReadDouble_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D160,
+                COERCE_DOUBLE(__PAIR64__(v82, v83)));
+        v85 = this->?[2];
+        v86 = this->?[1];
+        *(double *)&this->BaseDefenseDelay[3] = v84;
+        v87 = INIClass::ReadDouble_Overwrite(
+                (int)v99,
+                (unsigned __int8 *)DataGlobal_839DA4,
+                (unsigned __int8 *)DataGlobal_83D144,
+                COERCE_DOUBLE(__PAIR64__(v85, v86)));
+        v88 = this->SovietSurvivorDivisor[0];
+        *(double *)&this->?[1] = v87;
+        this->SovietSurvivorDivisor[0] = INIClass::ReadInt_Overwrite(
+                                           (int)v99,
+                                           (unsigned __int8 *)DataGlobal_839DA4,
+                                           (unsigned __int8 *)DataGlobal_83D12C,
+                                           v88);
+        result = INIClass::ReadInt_Overwrite(
+                   (int)v99,
+                   (unsigned __int8 *)DataGlobal_839DA4,
+                   (unsigned __int8 *)DataGlobal_83D110,
+                   this->?[3]);
+        this->?[3] = result;
+        LOBYTE(result) = 1;
+      }
+      else
+      {
+        LOBYTE(result) = 0;
+      }
+      return result;
 }
-
-/* ASM:
-String          = byte ptr -80h
-arg_0           = dword ptr  8
-
-push    ebp
-mov     ebp, esp
-and     esp, 0FFFFFFF8h
-sub     esp, 0BCh
-mov     eax, ds:off_7F0CD4 ; "AI"
-push    ebx
-push    esi
-push    edi
-mov     edi, [ebp+arg_0]
-mov     esi, ecx
-push    eax
-mov     ecx, edi
-call    INIClass__BinarySearchSection
-test    eax, eax
-setnz   al
-test    al, al
-jz      loc_673E6C
-mov     edx, ds:off_7F0CD4 ; "AI"
-lea     ecx, [esp+0C8h+String]
-push    80h             ; Count
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aBuildconst ; "BuildConst"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_672BB9
-push    0
-push    0
-lea     ecx, [esp+0D0h+var_B8]
-call    DynamicVectorClass__BuildingTypeConstructor
-lea     eax, [esp+0C8h+String]
-push    offset Delimiter ; ","
-push    eax             ; String
-mov     [esp+0D0h+var_B8], offset ??_7?$TypeList@PBVBuildingTypeClass@@@@6B@ ; const TypeList<BuildingTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_672B98
-
-loc_672B63:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+B6↓j
-cmp     byte ptr [eax], 0
-jz      short loc_672B98
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     [esp+0C8h+var_BC], eax
-jz      short loc_672B85
-lea     ecx, [esp+0C8h+var_BC]
-push    ecx
-lea     ecx, [esp+0CCh+var_B8]
-call    DynamicVector__Add_Alt3
-
-loc_672B85:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+95↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_672B63
-
-loc_672B98:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+81↑j
-; RulesClass__ReadMultiplayerDefaults+86↑j
-lea     edx, [esp+0C8h+var_B8]
-lea     ecx, [esp+0C8h+var_9C]
-push    edx
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0C8h+var_B8]
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_672BC9
-; ---------------------------------------------------------------------------
-
-loc_672BB9:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+52↑j
-lea     eax, [esi+8ACh]
-lea     ecx, [esp+0C8h+var_9C]
-push    eax
-call    TypeList__BuildingTypeCopy
-
-loc_672BC9:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+D7↑j
-lea     ecx, [esp+0C8h+var_9C]
-lea     ebx, [esi+8ACh]
-push    ecx
-mov     ecx, ebx
-call    VectorClass__CopyBuilding
-mov     ecx, [esp+0C8h+var_84]
-mov     edx, [esp+0C8h+var_8C]
-mov     eax, [esp+0C8h+var_88]
-mov     [ebx+18h], ecx
-lea     ecx, [esp+0C8h+var_9C]
-mov     [ebx+10h], edx
-mov     [ebx+14h], eax
-mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-mov     eax, ds:off_7F0CD4 ; "AI"
-lea     edx, [esp+0C8h+String]
-push    80h             ; Count
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aBuildpower ; "BuildPower"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_672CAB
-push    0
-push    0
-lea     ecx, [esp+0D0h+var_B8]
-call    DynamicVectorClass__BuildingTypeConstructor
-lea     ecx, [esp+0C8h+String]
-push    offset Delimiter ; ","
-push    ecx             ; String
-mov     [esp+0D0h+var_B8], offset ??_7?$TypeList@PBVBuildingTypeClass@@@@6B@ ; const TypeList<BuildingTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_672C8A
-
-loc_672C55:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+1A8↓j
-cmp     byte ptr [eax], 0
-jz      short loc_672C8A
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     [esp+0C8h+var_BC], eax
-jz      short loc_672C77
-lea     edx, [esp+0C8h+var_BC]
-lea     ecx, [esp+0C8h+var_B8]
-push    edx
-call    DynamicVector__Add_Alt3
-
-loc_672C77:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+187↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_672C55
-
-loc_672C8A:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+173↑j
-; RulesClass__ReadMultiplayerDefaults+178↑j
-lea     eax, [esp+0C8h+var_B8]
-lea     ecx, [esp+0C8h+var_9C]
-push    eax
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0C8h+var_B8]
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_672CBB
-; ---------------------------------------------------------------------------
-
-loc_672CAB:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+144↑j
-lea     ecx, [esi+8C8h]
-push    ecx
-lea     ecx, [esp+0CCh+var_9C]
-call    TypeList__BuildingTypeCopy
-
-loc_672CBB:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+1C9↑j
-lea     ebx, [esi+8C8h]
-lea     edx, [esp+0C8h+var_9C]
-push    edx
-mov     ecx, ebx
-call    DynamicVector__Copy
-mov     eax, [esp+0C8h+var_84]
-lea     ecx, [esp+0C8h+var_9C]
-mov     [ebx+18h], eax
-mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-mov     edx, ds:off_7F0CD4 ; "AI"
-lea     ecx, [esp+0C8h+String]
-push    80h             ; Count
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aBuildrefinery ; "BuildRefinery"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_672D90
-push    0
-push    0
-lea     ecx, [esp+0D0h+var_B8]
-call    DynamicVectorClass__BuildingTypeConstructor
-lea     eax, [esp+0C8h+String]
-push    offset Delimiter ; ","
-push    eax             ; String
-mov     [esp+0D0h+var_B8], offset ??_7?$TypeList@PBVBuildingTypeClass@@@@6B@ ; const TypeList<BuildingTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_672D6F
-
-loc_672D3A:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+28D↓j
-cmp     byte ptr [eax], 0
-jz      short loc_672D6F
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     [esp+0C8h+var_BC], eax
-jz      short loc_672D5C
-lea     ecx, [esp+0C8h+var_BC]
-push    ecx
-lea     ecx, [esp+0CCh+var_B8]
-call    DynamicVector__Add_Alt3
-
-loc_672D5C:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+26C↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_672D3A
-
-loc_672D6F:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+258↑j
-; RulesClass__ReadMultiplayerDefaults+25D↑j
-lea     edx, [esp+0C8h+var_B8]
-lea     ecx, [esp+0C8h+var_9C]
-push    edx
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0C8h+var_B8]
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_672DA0
-; ---------------------------------------------------------------------------
-
-loc_672D90:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+229↑j
-lea     eax, [esi+8E4h]
-lea     ecx, [esp+0C8h+var_9C]
-push    eax
-call    TypeList__BuildingTypeCopy
-
-loc_672DA0:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+2AE↑j
-lea     ecx, [esp+0C8h+var_9C]
-lea     ebx, [esi+8E4h]
-push    ecx
-mov     ecx, ebx
-call    DynamicVector__Copy
-mov     edx, [esp+0C8h+var_84]
-lea     ecx, [esp+0C8h+var_9C]
-mov     [ebx+18h], edx
-mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-mov     ecx, ds:off_7F0CD4 ; "AI"
-lea     eax, [esp+0C8h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aBuildbarracks ; "BuildBarracks"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      loc_672E75
-push    0
-push    0
-lea     ecx, [esp+0D0h+var_B8]
-call    DynamicVectorClass__BuildingTypeConstructor
-lea     edx, [esp+0C8h+String]
-push    offset Delimiter ; ","
-push    edx             ; String
-mov     [esp+0D0h+var_B8], offset ??_7?$TypeList@PBVBuildingTypeClass@@@@6B@ ; const TypeList<BuildingTypeClass const *>::`vftable'
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_672E54
-
-loc_672E1F:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+372↓j
-cmp     byte ptr [eax], 0
-jz      short loc_672E54
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     [esp+0C8h+var_BC], eax
-jz      short loc_672E41
-lea     eax, [esp+0C8h+var_BC]
-lea     ecx, [esp+0C8h+var_B8]
-push    eax
-call    DynamicVector__Add_Alt3
-
-loc_672E41:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+351↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_672E1F
-
-loc_672E54:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+33D↑j
-; RulesClass__ReadMultiplayerDefaults+342↑j
-lea     ecx, [esp+0C8h+var_B8]
-push    ecx
-lea     ecx, [esp+0CCh+var_9C]
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0C8h+var_B8]
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_672E85
-; ---------------------------------------------------------------------------
-
-loc_672E75:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+30E↑j
-lea     edx, [esi+900h]
-lea     ecx, [esp+0C8h+var_9C]
-push    edx
-call    TypeList__BuildingTypeCopy
-
-loc_672E85:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+393↑j
-lea     ebx, [esi+900h]
-lea     eax, [esp+0C8h+var_9C]
-push    eax
-mov     ecx, ebx
-call    DynamicVector__Copy
-mov     ecx, [esp+0C8h+var_84]
-mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-mov     [ebx+18h], ecx
-lea     ecx, [esp+0C8h+var_9C]
-call    DynamicVectorClass__Destroy
-mov     eax, ds:off_7F0CD4 ; "AI"
-lea     edx, [esp+0C8h+String]
-push    80h             ; Count
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aBuildtech ; "BuildTech"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_672F49
-lea     ecx, [esp+0C8h+var_9C]
-call    TypeList__BuildingTypeConstructor
-lea     ecx, [esp+0C8h+String]
-push    offset Delimiter ; ","
-push    ecx             ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_672F28
-
-loc_672EF3:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+446↓j
-cmp     byte ptr [eax], 0
-jz      short loc_672F28
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     [esp+0C8h+var_BC], eax
-jz      short loc_672F15
-lea     edx, [esp+0C8h+var_BC]
-lea     ecx, [esp+0C8h+var_9C]
-push    edx
-call    DynamicVector__Add_Alt3
-
-loc_672F15:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+425↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_672EF3
-
-loc_672F28:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+411↑j
-; RulesClass__ReadMultiplayerDefaults+416↑j
-lea     eax, [esp+0C8h+var_9C]
-lea     ecx, [esp+0C8h+var_B8]
-push    eax
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0C8h+var_9C]
-mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_672F59
-; ---------------------------------------------------------------------------
-
-loc_672F49:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+3F2↑j
-lea     ecx, [esi+91Ch]
-push    ecx
-lea     ecx, [esp+0CCh+var_B8]
-call    TypeList__BuildingTypeCopy
-
-loc_672F59:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+467↑j
-lea     ebx, [esi+91Ch]
-lea     edx, [esp+0C8h+var_B8]
-push    edx
-mov     ecx, ebx
-call    DynamicVector__Copy
-mov     eax, [esp+0C8h+var_A0]
-lea     ecx, [esp+0C8h+var_B8]
-mov     [ebx+18h], eax
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-mov     edx, ds:off_7F0CD4 ; "AI"
-lea     ecx, [esp+0C8h+String]
-push    80h             ; Count
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aBuildweapons ; "BuildWeapons"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_67301E
-lea     ecx, [esp+0C8h+var_9C]
-call    TypeList__BuildingTypeConstructor
-lea     eax, [esp+0C8h+String]
-push    offset Delimiter ; ","
-push    eax             ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_672FFD
-
-loc_672FC8:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+51B↓j
-cmp     byte ptr [eax], 0
-jz      short loc_672FFD
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     [esp+0C8h+var_BC], eax
-jz      short loc_672FEA
-lea     ecx, [esp+0C8h+var_BC]
-push    ecx
-lea     ecx, [esp+0CCh+var_9C]
-call    DynamicVector__Add_Alt3
-
-loc_672FEA:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+4FA↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_672FC8
-
-loc_672FFD:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+4E6↑j
-; RulesClass__ReadMultiplayerDefaults+4EB↑j
-lea     edx, [esp+0C8h+var_9C]
-lea     ecx, [esp+0C8h+var_B8]
-push    edx
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0C8h+var_9C]
-mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_67302E
-; ---------------------------------------------------------------------------
-
-loc_67301E:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+4C7↑j
-lea     eax, [esi+938h]
-lea     ecx, [esp+0C8h+var_B8]
-push    eax
-call    TypeList__BuildingTypeCopy
-
-loc_67302E:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+53C↑j
-lea     ecx, [esp+0C8h+var_B8]
-lea     ebx, [esi+938h]
-push    ecx
-mov     ecx, ebx
-call    DynamicVector__Copy
-mov     edx, [esp+0C8h+var_A0]
-lea     ecx, [esp+0C8h+var_B8]
-mov     [ebx+18h], edx
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-mov     ecx, ds:off_7F0CD4 ; "AI"
-lea     eax, [esp+0C8h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aAlliedbasedefe_0 ; "AlliedBaseDefenses"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_6730F3
-lea     ecx, [esp+0C8h+var_9C]
-call    TypeList__BuildingTypeConstructor
-lea     edx, [esp+0C8h+String]
-push    offset Delimiter ; ","
-push    edx             ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_6730D2
-
-loc_67309D:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+5F0↓j
-cmp     byte ptr [eax], 0
-jz      short loc_6730D2
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     [esp+0C8h+var_BC], eax
-jz      short loc_6730BF
-lea     eax, [esp+0C8h+var_BC]
-lea     ecx, [esp+0C8h+var_9C]
-push    eax
-call    DynamicVector__Add_Alt3
-
-loc_6730BF:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+5CF↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_67309D
-
-loc_6730D2:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+5BB↑j
-; RulesClass__ReadMultiplayerDefaults+5C0↑j
-lea     ecx, [esp+0C8h+var_9C]
-push    ecx
-lea     ecx, [esp+0CCh+var_B8]
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0C8h+var_9C]
-mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_673103
-; ---------------------------------------------------------------------------
-
-loc_6730F3:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+59C↑j
-lea     edx, [esi+954h]
-lea     ecx, [esp+0C8h+var_B8]
-push    edx
-call    TypeList__BuildingTypeCopy
-
-loc_673103:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+611↑j
-lea     ebx, [esi+954h]
-lea     eax, [esp+0C8h+var_B8]
-push    eax
-mov     ecx, ebx
-call    DynamicVector__Copy
-mov     ecx, [esp+0C8h+var_A0]
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-mov     [ebx+18h], ecx
-lea     ecx, [esp+0C8h+var_B8]
-call    DynamicVectorClass__Destroy
-mov     eax, ds:off_7F0CD4 ; "AI"
-lea     edx, [esp+0C8h+String]
-push    80h             ; Count
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aSovietbasedefe_0 ; "SovietBaseDefenses"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_6731C7
-lea     ecx, [esp+0C8h+var_9C]
-call    TypeList__BuildingTypeConstructor
-lea     ecx, [esp+0C8h+String]
-push    offset Delimiter ; ","
-push    ecx             ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_6731A6
-
-loc_673171:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+6C4↓j
-cmp     byte ptr [eax], 0
-jz      short loc_6731A6
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     [esp+0C8h+var_BC], eax
-jz      short loc_673193
-lea     edx, [esp+0C8h+var_BC]
-lea     ecx, [esp+0C8h+var_9C]
-push    edx
-call    DynamicVector__Add_Alt3
-
-loc_673193:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+6A3↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_673171
-
-loc_6731A6:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+68F↑j
-; RulesClass__ReadMultiplayerDefaults+694↑j
-lea     eax, [esp+0C8h+var_9C]
-lea     ecx, [esp+0C8h+var_B8]
-push    eax
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0C8h+var_9C]
-mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_6731D7
-; ---------------------------------------------------------------------------
-
-loc_6731C7:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+670↑j
-lea     ecx, [esi+970h]
-push    ecx
-lea     ecx, [esp+0CCh+var_B8]
-call    TypeList__BuildingTypeCopy
-
-loc_6731D7:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+6E5↑j
-lea     ebx, [esi+970h]
-lea     edx, [esp+0C8h+var_B8]
-push    edx
-mov     ecx, ebx
-call    DynamicVector__Copy
-mov     eax, [esp+0C8h+var_A0]
-lea     ecx, [esp+0C8h+var_B8]
-mov     [ebx+18h], eax
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-mov     edx, ds:off_7F0CD4 ; "AI"
-lea     ecx, [esp+0C8h+String]
-push    80h             ; Count
-push    ecx             ; int
-push    889F64h         ; int
-push    offset aThirdbasedefen_0 ; "ThirdBaseDefenses"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_67329C
-lea     ecx, [esp+0C8h+var_9C]
-call    TypeList__BuildingTypeConstructor
-lea     eax, [esp+0C8h+String]
-push    offset Delimiter ; ","
-push    eax             ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_67327B
-
-loc_673246:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+799↓j
-cmp     byte ptr [eax], 0
-jz      short loc_67327B
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     [esp+0C8h+var_BC], eax
-jz      short loc_673268
-lea     ecx, [esp+0C8h+var_BC]
-push    ecx
-lea     ecx, [esp+0CCh+var_9C]
-call    DynamicVector__Add_Alt3
-
-loc_673268:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+778↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_673246
-
-loc_67327B:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+764↑j
-; RulesClass__ReadMultiplayerDefaults+769↑j
-lea     edx, [esp+0C8h+var_9C]
-lea     ecx, [esp+0C8h+var_B8]
-push    edx
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0C8h+var_9C]
-mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_6732AC
-; ---------------------------------------------------------------------------
-
-loc_67329C:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+745↑j
-lea     eax, [esi+98Ch]
-lea     ecx, [esp+0C8h+var_B8]
-push    eax
-call    TypeList__BuildingTypeCopy
-
-loc_6732AC:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+7BA↑j
-lea     ecx, [esp+0C8h+var_B8]
-lea     ebx, [esi+98Ch]
-push    ecx             ; int
-mov     ecx, ebx
-call    DynamicVector__Copy
-mov     edx, [esp+0C8h+var_A0]
-lea     ecx, [esp+0C8h+var_B8]
-mov     [ebx+18h], edx
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-sub     esp, 1Ch
-lea     ebx, [esi+9A8h]
-mov     ecx, esp
-push    ebx
-mov     [esp+0E8h+var_BC], ecx
-call    DynamicVectorClass__Copy
-mov     eax, [esp+0E4h+var_BC]
-push    offset aAiforcepredict ; "AIForcePredictionFudge"
-lea     edx, [esp+0E8h+var_B8]
-mov     dword ptr [eax], offset ??_7?$TypeList@H@@6B@ ; const TypeList<int>::`vftable'
-mov     ecx, ds:off_7F0CD4 ; "AI"
-push    ecx             ; int
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadIntList
-push    eax
-mov     ecx, ebx
-mov     [esp+0CCh+var_BC], eax
-call    Rules__CopyDataArray
-mov     eax, [esp+0C8h+var_BC]
-mov     ecx, [eax+18h]
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@H@@6B@ ; const VectorClass<int>::`vftable'
-mov     [ebx+18h], ecx
-lea     ecx, [esp+0C8h+var_B8]
-call    VectorClass__Destroy
-mov     eax, ds:off_7F0CD4 ; "AI"
-lea     edx, [esp+0C8h+String]
-push    80h             ; Count
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aBuilddefense ; "BuildDefense"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_6733CE
-lea     ecx, [esp+0C8h+var_9C]
-call    TypeList__BuildingTypeConstructor
-lea     ecx, [esp+0C8h+String]
-push    offset Delimiter ; ","
-push    ecx             ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_6733AD
-
-loc_673378:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+8CB↓j
-cmp     byte ptr [eax], 0
-jz      short loc_6733AD
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     [esp+0C8h+var_BC], eax
-jz      short loc_67339A
-lea     edx, [esp+0C8h+var_BC]
-lea     ecx, [esp+0C8h+var_9C]
-push    edx
-call    DynamicVector__Add_Alt3
-
-loc_67339A:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+8AA↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_673378
-
-loc_6733AD:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+896↑j
-; RulesClass__ReadMultiplayerDefaults+89B↑j
-lea     eax, [esp+0C8h+var_9C]
-lea     ecx, [esp+0C8h+var_B8]
-push    eax
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0C8h+var_9C]
-mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_6733DE
-; ---------------------------------------------------------------------------
-
-loc_6733CE:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+877↑j
-lea     ecx, [esi+9C4h]
-push    ecx
-lea     ecx, [esp+0CCh+var_B8]
-call    TypeList__BuildingTypeCopy
-
-loc_6733DE:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+8EC↑j
-lea     ebx, [esi+9C4h]
-lea     edx, [esp+0C8h+var_B8]
-push    edx
-mov     ecx, ebx
-call    DynamicVector__Copy
-mov     eax, [esp+0C8h+var_A0]
-lea     ecx, [esp+0C8h+var_B8]
-mov     [ebx+18h], eax
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-mov     edx, ds:off_7F0CD4 ; "AI"
-lea     ecx, [esp+0C8h+String]
-push    80h             ; Count
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aBuildpdefense ; "BuildPDefense"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_6734A3
-lea     ecx, [esp+0C8h+var_9C]
-call    TypeList__BuildingTypeConstructor
-lea     eax, [esp+0C8h+String]
-push    offset Delimiter ; ","
-push    eax             ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_673482
-
-loc_67344D:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+9A0↓j
-cmp     byte ptr [eax], 0
-jz      short loc_673482
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     [esp+0C8h+var_BC], eax
-jz      short loc_67346F
-lea     ecx, [esp+0C8h+var_BC]
-push    ecx
-lea     ecx, [esp+0CCh+var_9C]
-call    DynamicVector__Add_Alt3
-
-loc_67346F:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+97F↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_67344D
-
-loc_673482:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+96B↑j
-; RulesClass__ReadMultiplayerDefaults+970↑j
-lea     edx, [esp+0C8h+var_9C]
-lea     ecx, [esp+0C8h+var_B8]
-push    edx
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0C8h+var_9C]
-mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_6734B3
-; ---------------------------------------------------------------------------
-
-loc_6734A3:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+94C↑j
-lea     eax, [esi+9E0h]
-lea     ecx, [esp+0C8h+var_B8]
-push    eax
-call    TypeList__BuildingTypeCopy
-
-loc_6734B3:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+9C1↑j
-lea     ecx, [esp+0C8h+var_B8]
-lea     ebx, [esi+9E0h]
-push    ecx
-mov     ecx, ebx
-call    DynamicVector__Copy
-mov     edx, [esp+0C8h+var_A0]
-lea     ecx, [esp+0C8h+var_B8]
-mov     [ebx+18h], edx
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-mov     ecx, ds:off_7F0CD4 ; "AI"
-lea     eax, [esp+0C8h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aBuildaa ; "BuildAA"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_673578
-lea     ecx, [esp+0C8h+var_9C]
-call    TypeList__BuildingTypeConstructor
-lea     edx, [esp+0C8h+String]
-push    offset Delimiter ; ","
-push    edx             ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_673557
-
-loc_673522:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+A75↓j
-cmp     byte ptr [eax], 0
-jz      short loc_673557
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     [esp+0C8h+var_BC], eax
-jz      short loc_673544
-lea     eax, [esp+0C8h+var_BC]
-lea     ecx, [esp+0C8h+var_9C]
-push    eax
-call    DynamicVector__Add_Alt3
-
-loc_673544:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+A54↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_673522
-
-loc_673557:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+A40↑j
-; RulesClass__ReadMultiplayerDefaults+A45↑j
-lea     ecx, [esp+0C8h+var_9C]
-push    ecx
-lea     ecx, [esp+0CCh+var_B8]
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0C8h+var_9C]
-mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_673588
-; ---------------------------------------------------------------------------
-
-loc_673578:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+A21↑j
-lea     edx, [esi+9FCh]
-lea     ecx, [esp+0C8h+var_B8]
-push    edx
-call    TypeList__BuildingTypeCopy
-
-loc_673588:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+A96↑j
-lea     ebx, [esi+9FCh]
-lea     eax, [esp+0C8h+var_B8]
-push    eax
-mov     ecx, ebx
-call    DynamicVector__Copy
-mov     ecx, [esp+0C8h+var_A0]
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-mov     [ebx+18h], ecx
-lea     ecx, [esp+0C8h+var_B8]
-call    DynamicVectorClass__Destroy
-mov     eax, ds:off_7F0CD4 ; "AI"
-lea     edx, [esp+0C8h+String]
-push    80h             ; Count
-push    edx             ; Destination
-push    889F64h         ; Source
-push    offset aBuildhelipad ; "BuildHelipad"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_67364C
-lea     ecx, [esp+0C8h+var_9C]
-call    TypeList__BuildingTypeConstructor
-lea     ecx, [esp+0C8h+String]
-push    offset Delimiter ; ","
-push    ecx             ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_67362B
-
-loc_6735F6:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+B49↓j
-cmp     byte ptr [eax], 0
-jz      short loc_67362B
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     [esp+0C8h+var_BC], eax
-jz      short loc_673618
-lea     edx, [esp+0C8h+var_BC]
-lea     ecx, [esp+0C8h+var_9C]
-push    edx
-call    DynamicVector__Add_Alt3
-
-loc_673618:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+B28↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_6735F6
-
-loc_67362B:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+B14↑j
-; RulesClass__ReadMultiplayerDefaults+B19↑j
-lea     eax, [esp+0C8h+var_9C]
-lea     ecx, [esp+0C8h+var_B8]
-push    eax
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0C8h+var_9C]
-mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_67365C
-; ---------------------------------------------------------------------------
-
-loc_67364C:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+AF5↑j
-lea     ecx, [esi+0A18h]
-push    ecx
-lea     ecx, [esp+0CCh+var_B8]
-call    TypeList__BuildingTypeCopy
-
-loc_67365C:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+B6A↑j
-lea     ebx, [esi+0A18h]
-lea     edx, [esp+0C8h+var_B8]
-push    edx
-mov     ecx, ebx
-call    DynamicVector__Copy
-mov     eax, [esp+0C8h+var_A0]
-lea     ecx, [esp+0C8h+var_B8]
-mov     [ebx+18h], eax
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-mov     edx, ds:off_7F0CD4 ; "AI"
-lea     ecx, [esp+0C8h+String]
-push    80h             ; Count
-push    ecx             ; Destination
-push    889F64h         ; Source
-push    offset aBuildradar ; "BuildRadar"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_673721
-lea     ecx, [esp+0C8h+var_9C]
-call    TypeList__BuildingTypeConstructor
-lea     eax, [esp+0C8h+String]
-push    offset Delimiter ; ","
-push    eax             ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_673700
-
-loc_6736CB:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+C1E↓j
-cmp     byte ptr [eax], 0
-jz      short loc_673700
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     [esp+0C8h+var_BC], eax
-jz      short loc_6736ED
-lea     ecx, [esp+0C8h+var_BC]
-push    ecx
-lea     ecx, [esp+0CCh+var_9C]
-call    DynamicVector__Add_Alt3
-
-loc_6736ED:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+BFD↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_6736CB
-
-loc_673700:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+BE9↑j
-; RulesClass__ReadMultiplayerDefaults+BEE↑j
-lea     edx, [esp+0C8h+var_9C]
-lea     ecx, [esp+0C8h+var_B8]
-push    edx
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0C8h+var_9C]
-mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_673731
-; ---------------------------------------------------------------------------
-
-loc_673721:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+BCA↑j
-lea     eax, [esi+0A34h]
-lea     ecx, [esp+0C8h+var_B8]
-push    eax
-call    TypeList__BuildingTypeCopy
-
-loc_673731:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+C3F↑j
-lea     ecx, [esp+0C8h+var_B8]
-lea     ebx, [esi+0A34h]
-push    ecx
-mov     ecx, ebx
-call    DynamicVector__Copy
-mov     edx, [esp+0C8h+var_A0]
-lea     ecx, [esp+0C8h+var_B8]
-mov     [ebx+18h], edx
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-mov     ecx, ds:off_7F0CD4 ; "AI"
-lea     eax, [esp+0C8h+String]
-push    80h             ; Count
-push    eax             ; Destination
-push    889F64h         ; Source
-push    offset aConcretewalls ; "ConcreteWalls"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__GetString
-test    eax, eax
-jz      short loc_6737F6
-lea     ecx, [esp+0C8h+var_9C]
-call    TypeList__BuildingTypeConstructor
-lea     edx, [esp+0C8h+String]
-push    offset Delimiter ; ","
-push    edx             ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jz      short loc_6737D5
-
-loc_6737A0:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+CF3↓j
-cmp     byte ptr [eax], 0
-jz      short loc_6737D5
-mov     ecx, eax        ; Source
-call    BuildingTypeClass__FindOrCreate
-test    eax, eax
-mov     [esp+0C8h+var_BC], eax
-jz      short loc_6737C2
-lea     eax, [esp+0C8h+var_BC]
-lea     ecx, [esp+0C8h+var_9C]
-push    eax
-call    DynamicVector__Add_Alt3
-
-loc_6737C2:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+CD2↑j
-push    offset Delimiter ; ","
-push    0               ; String
-call    _strtok
-add     esp, 8
-test    eax, eax
-jnz     short loc_6737A0
-
-loc_6737D5:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+CBE↑j
-; RulesClass__ReadMultiplayerDefaults+CC3↑j
-lea     ecx, [esp+0C8h+var_9C]
-push    ecx
-lea     ecx, [esp+0CCh+var_B8]
-call    TypeList__BuildingTypeCopy
-lea     ecx, [esp+0C8h+var_9C]
-mov     [esp+0C8h+var_9C], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-jmp     short loc_673806
-; ---------------------------------------------------------------------------
-
-loc_6737F6:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+C9F↑j
-lea     edx, [esi+0A50h]
-lea     ecx, [esp+0C8h+var_B8]
-push    edx
-call    TypeList__BuildingTypeCopy
-
-loc_673806:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+D14↑j
-lea     ebx, [esi+0A50h]
-lea     eax, [esp+0C8h+var_B8]
-push    eax
-mov     ecx, ebx
-call    DynamicVector__Copy
-mov     ecx, [esp+0C8h+var_A0]
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-mov     [ebx+18h], ecx
-lea     ecx, [esp+0C8h+var_B8]
-call    DynamicVectorClass__Destroy
-mov     edx, ds:off_7F0CD4 ; "AI"
-lea     ebx, [esi+0A6Ch]
-push    ebx
-push    offset aNsgates ; "NSGates"
-push    edx
-mov     edx, edi
-lea     ecx, [esp+0D4h+var_B8]
-call    ReadINIClassBuildingTypeList
-push    eax
-mov     ecx, ebx
-mov     [esp+0CCh+var_BC], eax
-call    DynamicVector__Copy
-mov     eax, [esp+0C8h+var_BC]
-mov     ecx, [eax+18h]
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-mov     [ebx+18h], ecx
-lea     ecx, [esp+0C8h+var_B8]
-call    DynamicVectorClass__Destroy
-mov     edx, ds:off_7F0CD4 ; "AI"
-lea     ebx, [esi+0A88h]
-push    ebx
-push    offset aEwgates ; "EWGates"
-push    edx
-mov     edx, edi
-lea     ecx, [esp+0D4h+var_B8]
-call    ReadINIClassBuildingTypeList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyAircraft
-lea     ecx, [esp+0C8h+var_B8]
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-mov     eax, ds:off_7F0CD4 ; "AI"
-lea     ebx, [esi+0AA4h]
-push    ebx
-push    offset aBuildnavalyard ; "BuildNavalYard"
-push    eax
-mov     edx, edi
-lea     ecx, [esp+0D4h+var_B8]
-call    ReadINIClassBuildingTypeList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyAircraft
-lea     ecx, [esp+0C8h+var_B8]
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-mov     ecx, ds:off_7F0CD4 ; "AI"
-lea     ebx, [esi+0AC0h]
-push    ebx
-push    offset aBuilddummy ; "BuildDummy"
-push    ecx
-mov     edx, edi
-lea     ecx, [esp+0D4h+var_B8]
-call    ReadINIClassBuildingTypeList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyAircraft
-lea     ecx, [esp+0C8h+var_B8]
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-mov     edx, ds:off_7F0CD4 ; "AI"
-lea     ebx, [esi+0ADCh]
-push    ebx
-push    offset aNeutraltechbui ; "NeutralTechBuildings"
-push    edx
-mov     edx, edi
-lea     ecx, [esp+0D4h+var_B8]
-call    ReadINIClassBuildingTypeList
-push    eax
-mov     ecx, ebx
-call    TypeList__CopyAircraft
-lea     ecx, [esp+0C8h+var_B8]
-mov     [esp+0C8h+var_B8], offset ??_7?$VectorClass@PBVBuildingTypeClass@@@@6B@ ; const VectorClass<BuildingTypeClass const *>::`vftable'
-call    DynamicVectorClass__Destroy
-mov     eax, [esi+10A4h]
-mov     ecx, [esi+10A0h]
-mov     edx, ds:off_7F0CD4 ; "AI"
-push    eax
-push    ecx             ; double
-push    offset aAttackinterval ; "AttackInterval"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+10A0h]
-mov     eax, [esi+10ACh]
-mov     ecx, [esi+10A8h]
-mov     edx, ds:off_7F0CD4 ; "AI"
-push    eax
-push    ecx             ; double
-push    offset aAttackdelay ; "AttackDelay"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+10A8h]
-mov     eax, [esi+1154h]
-mov     ecx, [esi+1150h]
-mov     edx, ds:off_7F0CD4 ; "AI"
-push    eax
-push    ecx             ; double
-push    offset aPatrolscan ; "PatrolScan"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1150h]
-mov     eax, [esi+1758h]
-mov     ecx, ds:off_7F0CD4 ; "AI"
-push    eax
-push    offset aCreditreserve ; "CreditReserve"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+1758h], eax
-mov     edx, [esi+1764h]
-mov     eax, [esi+1760h]
-mov     ecx, ds:off_7F0CD4 ; "AI"
-push    edx
-push    eax             ; double
-push    offset aPathdelay ; "PathDelay"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-fstp    qword ptr [esi+1760h]
-mov     edx, [esi+1768h]
-mov     eax, ds:off_7F0CD4 ; "AI"
-push    edx
-push    offset aBlockagepathde ; "BlockagePathDelay"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     ecx, [esi+1514h]
-mov     edx, [esi+1510h]
-mov     [esi+1768h], eax
-mov     eax, ds:off_7F0CD4 ; "AI"
-push    ecx
-push    edx             ; double
-push    offset aAutocreatetime ; "AutocreateTime"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-mov     ecx, [esi+1138h]
-fstp    qword ptr [esi+1510h]
-mov     edx, ds:off_7F0CD4 ; "AI"
-push    ecx
-push    offset aInfantryreserv ; "InfantryReserve"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+1138h], eax
-mov     eax, [esi+113Ch]
-mov     ecx, ds:off_7F0CD4 ; "AI"
-push    eax
-push    offset aInfantrybasemu ; "InfantryBaseMult"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     edx, [esi+1134h]
-mov     [esi+113Ch], eax
-mov     eax, ds:off_7F0CD4 ; "AI"
-push    edx
-push    offset aPowersurplus ; "PowerSurplus"
-push    eax
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     ecx, [esi+1130h]
-mov     [esi+1134h], eax
-mov     edx, ds:off_7F0CD4 ; "AI"
-push    ecx
-push    offset aBasesizeadd ; "BaseSizeAdd"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     ecx, [esi+1128h]
-mov     [esi+1130h], eax
-mov     eax, [esi+112Ch]
-mov     edx, ds:off_7F0CD4 ; "AI"
-push    eax
-push    ecx             ; double
-push    offset aRefineryratio ; "RefineryRatio"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-mov     eax, [esi+1124h]
-fstp    qword ptr [esi+1128h]
-mov     ecx, ds:off_7F0CD4 ; "AI"
-push    eax
-push    offset aRefinerylimit ; "RefineryLimit"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     edx, [esi+111Ch]
-mov     [esi+1124h], eax
-mov     eax, [esi+1118h]
-mov     ecx, ds:off_7F0CD4 ; "AI"
-push    edx
-push    eax             ; double
-push    offset aBarracksratio ; "BarracksRatio"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-mov     edx, [esi+1120h]
-mov     ecx, edi
-fstp    qword ptr [esi+1118h]
-mov     eax, ds:off_7F0CD4 ; "AI"
-push    edx
-push    offset aBarrackslimit ; "BarracksLimit"
-push    eax
-call    INIClass__ReadInt_Overwrite
-mov     ecx, [esi+110Ch]
-mov     edx, [esi+1108h]
-mov     [esi+1120h], eax
-mov     eax, ds:off_7F0CD4 ; "AI"
-push    ecx
-push    edx             ; double
-push    offset aWarratio ; "WarRatio"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-mov     ecx, [esi+1110h]
-fstp    qword ptr [esi+1108h]
-mov     edx, ds:off_7F0CD4 ; "AI"
-push    ecx
-push    offset aWarlimit ; "WarLimit"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     ecx, [esi+10F8h]
-mov     [esi+1110h], eax
-mov     eax, [esi+10FCh]
-mov     edx, ds:off_7F0CD4 ; "AI"
-push    eax
-push    ecx             ; double
-push    offset aDefenseratio ; "DefenseRatio"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-mov     eax, [esi+1100h]
-fstp    qword ptr [esi+10F8h]
-mov     ecx, ds:off_7F0CD4 ; "AI"
-push    eax
-push    offset aDefenselimit ; "DefenseLimit"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     edx, [esi+10ECh]
-mov     [esi+1100h], eax
-mov     eax, [esi+10E8h]
-mov     ecx, ds:off_7F0CD4 ; "AI"
-push    edx
-push    eax             ; double
-push    offset aAaratio ; "AARatio"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-mov     edx, [esi+10F0h]
-mov     ecx, edi
-fstp    qword ptr [esi+10E8h]
-mov     eax, ds:off_7F0CD4 ; "AI"
-push    edx
-push    offset aAalimit ; "AALimit"
-push    eax
-call    INIClass__ReadInt_Overwrite
-mov     ecx, [esi+10DCh]
-mov     edx, [esi+10D8h]
-mov     [esi+10F0h], eax
-mov     eax, ds:off_7F0CD4 ; "AI"
-push    ecx
-push    edx             ; double
-push    offset aTeslaratio ; "TeslaRatio"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-mov     ecx, [esi+10E0h]
-fstp    qword ptr [esi+10D8h]
-mov     edx, ds:off_7F0CD4 ; "AI"
-push    ecx
-push    offset aTeslalimit ; "TeslaLimit"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     ecx, [esi+10C8h]
-mov     [esi+10E0h], eax
-mov     eax, [esi+10CCh]
-mov     edx, ds:off_7F0CD4 ; "AI"
-push    eax
-push    ecx             ; double
-push    offset aHelipadratio ; "HelipadRatio"
-push    edx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-mov     eax, [esi+10D0h]
-fstp    qword ptr [esi+10C8h]
-mov     ecx, ds:off_7F0CD4 ; "AI"
-push    eax
-push    offset aHelipadlimit ; "HelipadLimit"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     edx, [esi+10BCh]
-mov     [esi+10D0h], eax
-mov     eax, [esi+10B8h]
-mov     ecx, ds:off_7F0CD4 ; "AI"
-push    edx
-push    eax             ; double
-push    offset aAirstripratio ; "AirstripRatio"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-mov     edx, [esi+10C0h]
-mov     ecx, edi
-fstp    qword ptr [esi+10B8h]
-mov     eax, ds:off_7F0CD4 ; "AI"
-push    edx
-push    offset aAirstriplimit ; "AirstripLimit"
-push    eax
-call    INIClass__ReadInt_Overwrite
-mov     cl, [esi+17E3h]
-mov     [esi+10C0h], eax
-mov     edx, ds:off_7F0CD4 ; "AI"
-push    ecx
-push    offset aCompeasybonus ; "CompEasyBonus"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     [esi+17E3h], al
-mov     al, [esi+17E0h]
-mov     ecx, ds:off_7F0CD4 ; "AI"
-push    eax
-push    offset aParanoid ; "Paranoid"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadBool_Overwrite
-mov     edx, [esi+10B4h]
-mov     [esi+17E0h], al
-mov     eax, [esi+10B0h]
-mov     ecx, ds:off_7F0CD4 ; "AI"
-push    edx
-push    eax             ; double
-push    offset aPoweremergency ; "PowerEmergency"
-push    ecx             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-mov     edx, [esi+1460h]
-mov     ecx, edi
-fstp    qword ptr [esi+10B0h]
-mov     eax, ds:off_7F0CD4 ; "AI"
-push    edx
-push    offset aAibasespacing ; "AIBaseSpacing"
-push    eax
-call    INIClass__ReadInt_Overwrite
-mov     ecx, [esi+0AFCh]
-mov     edx, [esi+0AF8h]
-mov     [esi+1460h], eax
-mov     eax, ds:off_7F0CD4 ; "AI"
-push    ecx
-push    edx             ; double
-push    offset aGdiwalldefense ; "GDIWallDefense"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-mov     ecx, [esi+0B04h]
-mov     edx, [esi+0B00h]
-fstp    qword ptr [esi+0AF8h]
-mov     eax, ds:off_7F0CD4 ; "AI"
-push    ecx
-push    edx             ; double
-push    offset aGdiwalldefense_0 ; "GDIWallDefenseCoefficient"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-mov     ecx, [esi+0B0Ch]
-mov     edx, [esi+0B08h]
-fstp    qword ptr [esi+0B00h]
-mov     eax, ds:off_7F0CD4 ; "AI"
-push    ecx
-push    edx             ; double
-push    offset aNodbasedefense ; "NodBaseDefenseCoefficient"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-mov     ecx, [esi+0B14h]
-mov     edx, [esi+0B10h]
-fstp    qword ptr [esi+0B08h]
-mov     eax, ds:off_7F0CD4 ; "AI"
-push    ecx
-push    edx             ; double
-push    offset aGdibasedefense ; "GDIBaseDefenseCoefficient"
-push    eax             ; int
-mov     ecx, edi
-call    INIClass__ReadDouble_Overwrite
-mov     ecx, [esi+0B1Ch]
-fstp    qword ptr [esi+0B10h]
-mov     edx, ds:off_7F0CD4 ; "AI"
-push    ecx
-push    offset aMaximumbasedef ; "MaximumBaseDefenseValue"
-push    edx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0B1Ch], eax
-mov     eax, [esi+0B18h]
-mov     ecx, ds:off_7F0CD4 ; "AI"
-push    eax
-push    offset aComputerbasede ; "ComputerBaseDefenseResponse"
-push    ecx
-mov     ecx, edi
-call    INIClass__ReadInt_Overwrite
-mov     [esi+0B18h], eax
-mov     al, 1
-pop     edi
-pop     esi
-pop     ebx
-mov     esp, ebp
-pop     ebp
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_673E6C:                             ; CODE XREF: RulesClass__ReadMultiplayerDefaults+28↑j
-pop     edi
-pop     esi
-xor     al, al
-pop     ebx
-mov     esp, ebp
-pop     ebp
-retn    4
-*/
 } }
 // 0x674000
 namespace gamemd { int RulesClass::LoadSpeedTypes() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RulesClass::LoadSpeedTypes(RulesClass *this)
 {
-  double v1; // st7
-  unsigned __int8 **v2; // esi
-  float *v3; // ebx
-  int result; // eax
-  unsigned __int8 *v5; // edx
-  unsigned __int8 *v6; // ecx
-  unsigned __int8 *v7; // eax
-  unsigned __int8 *v8; // edx
-  unsigned __int8 *v9; // ecx
-  unsigned __int8 *v10; // eax
-  unsigned __int8 *v11; // edx
-  int v12; // [esp+10h] [ebp+4h]
+      double v1;
+      unsigned __int8 **v2;
+      float *v3;
+      int result;
+      unsigned __int8 *v5;
+      unsigned __int8 *v6;
+      unsigned __int8 *v7;
+      unsigned __int8 *v8;
+      unsigned __int8 *v9;
+      unsigned __int8 *v10;
+      unsigned __int8 *v11;
+      int v12;
 
-  v2 = (unsigned __int8 **)MEMORY[0x839D68]; /*0x674007*/
-  v3 = (float *)&MEMORY[0x89EA44]; /*0x67400c*/
-  do /*0x67422a*/
-  {
-    result = INIClass::BinarySearchSection(v12, *v2); /*0x674016*/
-    if ( result ) /*0x674022*/
-    {
-      INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Hover, 1.0); /*0x674039*/
-      if ( v1 >= 1.0 ) /*0x674049*/
-        v1 = 1.0; /*0x674063*/
-      else
-        INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Hover, 1.0); /*0x67405c*/
-      v5 = *v2; /*0x674069*/
-      v3[2] = v1; /*0x674070*/
-      INIClass::ReadDouble_Overwrite((int)v5, (int)g_INI_Key_Foot, 1.0); /*0x67407d*/
-      if ( v1 >= 1.0 ) /*0x67408d*/
-        v1 = 1.0; /*0x6740a7*/
-      else
-        INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Foot, 1.0); /*0x6740a0*/
-      v6 = *v2; /*0x6740ad*/
-      *(v3 - 1) = v1; /*0x6740b4*/
-      INIClass::ReadDouble_Overwrite((int)v6, (int)g_INI_Key_Track, 1.0); /*0x6740c1*/
-      if ( v1 >= 1.0 ) /*0x6740d1*/
-        v1 = 1.0; /*0x6740eb*/
-      else
-        INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Track, 1.0); /*0x6740e4*/
-      v7 = *v2; /*0x6740f1*/
-      *v3 = v1; /*0x6740f8*/
-      INIClass::ReadDouble_Overwrite((int)v7, (int)g_INI_Key_Wheel, 1.0); /*0x674104*/
-      if ( v1 >= 1.0 ) /*0x674114*/
-        v1 = 1.0; /*0x67412e*/
-      else
-        INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Wheel, 1.0); /*0x674127*/
-      v8 = *v2; /*0x674134*/
-      v3[1] = v1; /*0x67413b*/
-      v3[3] = 1.0; /*0x674148*/
-      INIClass::ReadDouble_Overwrite((int)v8, (int)g_INI_Key_Float, 1.0); /*0x67414f*/
-      if ( v1 >= 1.0 ) /*0x67415f*/
-        v1 = 1.0; /*0x674179*/
-      else
-        INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Float, 1.0); /*0x674172*/
-      v9 = *v2; /*0x67417f*/
-      v3[4] = v1; /*0x674186*/
-      INIClass::ReadDouble_Overwrite((int)v9, (int)g_INI_Key_Amphibious, 1.0); /*0x674193*/
-      if ( v1 >= 1.0 ) /*0x6741a3*/
-        v1 = 1.0; /*0x6741bd*/
-      else
-        INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Amphibious, 1.0); /*0x6741b6*/
-      v10 = *v2; /*0x6741c3*/
-      v3[5] = v1; /*0x6741ca*/
-      INIClass::ReadDouble_Overwrite((int)v10, (int)g_INI_Key_FloatBeach, 1.0); /*0x6741d7*/
-      if ( v1 >= 1.0 ) /*0x6741e7*/
-        v1 = 1.0; /*0x674201*/
-      else
-        INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_FloatBeach, 1.0); /*0x6741fa*/
-      v11 = *v2; /*0x674207*/
-      v3[6] = v1; /*0x67420b*/
-      result = INIClass::ReadBool_Overwrite(v11, MEMORY[0x83D4B4], 0); /*0x674216*/
-      *((_BYTE *)v3 + 28) = result; /*0x67421b*/
-    }
-    v3 += 9; /*0x67421e*/
-    ++v2; /*0x674221*/
-  }
-  while ( (int)v3 < (int)((float *)&MEMORY[0x89EBF0] + 1) ); /*0x67422a*/
-  LOBYTE(result) = 1; /*0x674232*/
-  return result; /*0x674230*/
+      v2 = (unsigned __int8 **)DataGlobal_839D68;
+      v3 = (float *)&DataGlobal_89EA44;
+      do
+      {
+        result = INIClass::BinarySearchSection(v12, *v2);
+        if ( result )
+        {
+          INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Hover, 1.0);
+          if ( v1 >= 1.0 )
+            v1 = 1.0;
+          else
+            INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Hover, 1.0);
+          v5 = *v2;
+          v3[2] = v1;
+          INIClass::ReadDouble_Overwrite((int)v5, (int)g_INI_Key_Foot, 1.0);
+          if ( v1 >= 1.0 )
+            v1 = 1.0;
+          else
+            INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Foot, 1.0);
+          v6 = *v2;
+          *(v3 - 1) = v1;
+          INIClass::ReadDouble_Overwrite((int)v6, (int)g_INI_Key_Track, 1.0);
+          if ( v1 >= 1.0 )
+            v1 = 1.0;
+          else
+            INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Track, 1.0);
+          v7 = *v2;
+          *v3 = v1;
+          INIClass::ReadDouble_Overwrite((int)v7, (int)g_INI_Key_Wheel, 1.0);
+          if ( v1 >= 1.0 )
+            v1 = 1.0;
+          else
+            INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Wheel, 1.0);
+          v8 = *v2;
+          v3[1] = v1;
+          v3[3] = 1.0;
+          INIClass::ReadDouble_Overwrite((int)v8, (int)g_INI_Key_Float, 1.0);
+          if ( v1 >= 1.0 )
+            v1 = 1.0;
+          else
+            INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Float, 1.0);
+          v9 = *v2;
+          v3[4] = v1;
+          INIClass::ReadDouble_Overwrite((int)v9, (int)g_INI_Key_Amphibious, 1.0);
+          if ( v1 >= 1.0 )
+            v1 = 1.0;
+          else
+            INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_Amphibious, 1.0);
+          v10 = *v2;
+          v3[5] = v1;
+          INIClass::ReadDouble_Overwrite((int)v10, (int)g_INI_Key_FloatBeach, 1.0);
+          if ( v1 >= 1.0 )
+            v1 = 1.0;
+          else
+            INIClass::ReadDouble_Overwrite((int)*v2, (int)g_INI_Key_FloatBeach, 1.0);
+          v11 = *v2;
+          v3[6] = v1;
+          result = INIClass::ReadBool_Overwrite(v11, DataGlobal_83D4B4, 0);
+          *((_BYTE *)v3 + 28) = result;
+        }
+        v3 += 9;
+        ++v2;
+      }
+      while ( (int)v3 < (int)((float *)&DataGlobal_89EBF0 + 1) );
+      LOBYTE(result) = 1;
+      return result;
 }
 } }
 // 0x674240
 namespace gamemd { int RulesClass::ReadIQSection() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_674240(RulesClass *this)
 {
-  int result; // eax
-  int Int_Overwrite; // eax
-  int v4; // edx
-  int v5; // eax
-  int v6; // ecx
-  int v7; // eax
-  int v8; // edx
-  int v9; // eax
-  int v10; // ecx
-  int v11; // eax
-  int v12; // edx
-  int v13; // eax
-  int v14; // ecx
-  int v15; // [esp+Ch] [ebp+4h]
+      int result;
+      int Int_Overwrite;
+      int v4;
+      int v5;
+      int v6;
+      int v7;
+      int v8;
+      int v9;
+      int v10;
+      int v11;
+      int v12;
+      int v13;
+      int v14;
+      int v15;
 
-  result = INIClass::BinarySearchSection(v15, (unsigned __int8 *)g_INI_Key_IQ); /*0x674250*/
-  if ( result ) /*0x67425c*/
-  {
-    *((_DWORD *)this + 1293) = INIClass::ReadInt_Overwrite( /*0x67427c*/
-                                 v15,
-                                 (unsigned __int8 *)g_INI_Key_IQ,
-                                 (unsigned __int8 *)MEMORY[0x83D50C],
-                                 *((_DWORD *)this + 1293));
-    Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x674297*/
-                      v15,
-                      (unsigned __int8 *)g_INI_Key_IQ,
-                      (unsigned __int8 *)MEMORY[0x83D4FC],
-                      *((_DWORD *)this + 1294));
-    v4 = *((_DWORD *)this + 1295); /*0x67429c*/
-    *((_DWORD *)this + 1294) = Int_Overwrite; /*0x6742a2*/
-    v5 = INIClass::ReadInt_Overwrite(v15, (unsigned __int8 *)g_INI_Key_IQ, (unsigned __int8 *)MEMORY[0x83D4F0], v4); /*0x6742b6*/
-    v6 = *((_DWORD *)this + 1296); /*0x6742bb*/
-    *((_DWORD *)this + 1295) = v5; /*0x6742c1*/
-    *((_DWORD *)this + 1296) = INIClass::ReadInt_Overwrite( /*0x6742db*/
-                                 v15,
-                                 (unsigned __int8 *)g_INI_Key_IQ,
-                                 (unsigned __int8 *)stru_81BEBC,
-                                 v6);
-    v7 = INIClass::ReadInt_Overwrite( /*0x6742f6*/
-           v15,
-           (unsigned __int8 *)g_INI_Key_IQ,
-           (unsigned __int8 *)MEMORY[0x83D4E4],
-           *((_DWORD *)this + 1297));
-    v8 = *((_DWORD *)this + 1298); /*0x6742fb*/
-    *((_DWORD *)this + 1297) = v7; /*0x674301*/
-    v9 = INIClass::ReadInt_Overwrite(v15, (unsigned __int8 *)g_INI_Key_IQ, (unsigned __int8 *)MEMORY[0x83D4D8], v8); /*0x674315*/
-    v10 = *((_DWORD *)this + 1299); /*0x67431a*/
-    *((_DWORD *)this + 1298) = v9; /*0x674320*/
-    *((_DWORD *)this + 1299) = INIClass::ReadInt_Overwrite( /*0x67433a*/
-                                 v15,
-                                 (unsigned __int8 *)g_INI_Key_IQ,
-                                 (unsigned __int8 *)stru_82C284,
-                                 v10);
-    v11 = INIClass::ReadInt_Overwrite( /*0x674355*/
-            v15,
-            (unsigned __int8 *)g_INI_Key_IQ,
-            (unsigned __int8 *)MEMORY[0x83B3B4],
-            *((_DWORD *)this + 1300));
-    v12 = *((_DWORD *)this + 1301); /*0x67435a*/
-    *((_DWORD *)this + 1300) = v11; /*0x674360*/
-    v13 = INIClass::ReadInt_Overwrite(v15, (unsigned __int8 *)g_INI_Key_IQ, (unsigned __int8 *)stru_817460, v12); /*0x674374*/
-    v14 = *((_DWORD *)this + 1302); /*0x674379*/
-    *((_DWORD *)this + 1301) = v13; /*0x67437f*/
-    *((_DWORD *)this + 1302) = INIClass::ReadInt_Overwrite( /*0x674399*/
-                                 v15,
-                                 (unsigned __int8 *)g_INI_Key_IQ,
-                                 (unsigned __int8 *)MEMORY[0x83D4CC],
-                                 v14);
-    result = INIClass::ReadInt_Overwrite( /*0x6743b4*/
+      result = INIClass::BinarySearchSection(v15, (unsigned __int8 *)g_INI_Key_IQ);
+      if ( result )
+      {
+        this->q1434 = INIClass::ReadInt_Overwrite(
+                                     v15,
+                                     (unsigned __int8 *)g_INI_Key_IQ,
+                                     (unsigned __int8 *)DataGlobal_83D50C,
+                                     this->q1434);
+        Int_Overwrite = INIClass::ReadInt_Overwrite(
+                          v15,
+                          (unsigned __int8 *)g_INI_Key_IQ,
+                          (unsigned __int8 *)DataGlobal_83D4FC,
+                          this->q1438);
+        v4 = this->q143C;
+        this->q1438 = Int_Overwrite;
+        v5 = INIClass::ReadInt_Overwrite(v15, (unsigned __int8 *)g_INI_Key_IQ, (unsigned __int8 *)DataGlobal_83D4F0, v4);
+        v6 = this->q1440;
+        this->q143C = v5;
+        this->q1440 = INIClass::ReadInt_Overwrite(
+                                     v15,
+                                     (unsigned __int8 *)g_INI_Key_IQ,
+                                     (unsigned __int8 *)stru_81BEBC,
+                                     v6);
+        v7 = INIClass::ReadInt_Overwrite(
                v15,
                (unsigned __int8 *)g_INI_Key_IQ,
-               (unsigned __int8 *)MEMORY[0x83D4C0],
-               *((_DWORD *)this + 1303));
-    *((_DWORD *)this + 1303) = result; /*0x6743b9*/
-    LOBYTE(result) = 1; /*0x6743c0*/
-  }
-  else
-  {
-    LOBYTE(result) = 0; /*0x6743c7*/
-  }
-  return result; /*0x6743bf*/
+               (unsigned __int8 *)DataGlobal_83D4E4,
+               this->q1444);
+        v8 = this->q1448;
+        this->q1444 = v7;
+        v9 = INIClass::ReadInt_Overwrite(v15, (unsigned __int8 *)g_INI_Key_IQ, (unsigned __int8 *)DataGlobal_83D4D8, v8);
+        v10 = this->q144C;
+        this->q1448 = v9;
+        this->q144C = INIClass::ReadInt_Overwrite(
+                                     v15,
+                                     (unsigned __int8 *)g_INI_Key_IQ,
+                                     (unsigned __int8 *)stru_82C284,
+                                     v10);
+        v11 = INIClass::ReadInt_Overwrite(
+                v15,
+                (unsigned __int8 *)g_INI_Key_IQ,
+                (unsigned __int8 *)DataGlobal_83B3B4,
+                this->q1450);
+        v12 = this->q1454;
+        this->q1450 = v11;
+        v13 = INIClass::ReadInt_Overwrite(v15, (unsigned __int8 *)g_INI_Key_IQ, (unsigned __int8 *)stru_817460, v12);
+        v14 = this->q1458;
+        this->q1454 = v13;
+        this->q1458 = INIClass::ReadInt_Overwrite(
+                                     v15,
+                                     (unsigned __int8 *)g_INI_Key_IQ,
+                                     (unsigned __int8 *)DataGlobal_83D4CC,
+                                     v14);
+        result = INIClass::ReadInt_Overwrite(
+                   v15,
+                   (unsigned __int8 *)g_INI_Key_IQ,
+                   (unsigned __int8 *)DataGlobal_83D4C0,
+                   this->q145C);
+        this->q145C = result;
+        LOBYTE(result) = 1;
+      }
+      else
+      {
+        LOBYTE(result) = 0;
+      }
+      return result;
 }
 } }
 // 0x674730
 namespace gamemd { int RulesClass::SaveLoad_Prefix(void* a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RulesClass::SaveLoad_Prefix(_DWORD *this, int *a2)
 {
-  int *v2; // esi
-  int v4; // edx
-  int i; // ebx
-  int v6; // edx
-  int j; // ebx
-  int v8; // edx
-  int k; // ebx
-  int v10; // edx
-  int m; // ebx
-  int v12; // edx
-  int n; // ebx
-  int v14; // edx
-  int ii; // ebx
-  int v16; // edx
-  int jj; // ebx
-  int v18; // edx
-  int kk; // ebx
-  int v20; // edx
-  int mm; // ebx
-  int v22; // edx
-  int nn; // ebx
-  int v24; // edx
-  int i1; // ebx
-  int v26; // edx
-  int i2; // ebx
-  int v28; // edx
-  int i3; // ebx
-  int v30; // edx
-  int i4; // ebx
-  int v32; // edx
-  int i5; // ebx
-  int v34; // edx
-  int i6; // ebx
-  int v36; // edx
-  int i7; // ebx
-  int v38; // edx
-  int i8; // ebx
-  int v40; // edx
-  int i9; // ebx
-  int v42; // edx
-  int i10; // ebx
-  int v44; // edx
-  int i11; // ebx
-  int v46; // edx
-  int i12; // ebx
-  int v48; // edx
-  int i13; // ebx
-  int v50; // edx
-  int i14; // ebx
-  int v52; // edx
-  int i15; // ebx
-  int v54; // edx
-  int i16; // ebx
-  int v56; // edx
-  int i17; // ebx
-  int v58; // edx
-  int i18; // ebx
-  char *v60; // edi
-  int v61; // ebx
-  int result; // eax
+      int *v2;
+      int v4;
+      int i;
+      int v6;
+      int j;
+      int v8;
+      int k;
+      int v10;
+      int m;
+      int v12;
+      int n;
+      int v14;
+      int ii;
+      int v16;
+      int jj;
+      int v18;
+      int kk;
+      int v20;
+      int mm;
+      int v22;
+      int nn;
+      int v24;
+      int i1;
+      int v26;
+      int i2;
+      int v28;
+      int i3;
+      int v30;
+      int i4;
+      int v32;
+      int i5;
+      int v34;
+      int i6;
+      int v36;
+      int i7;
+      int v38;
+      int i8;
+      int v40;
+      int i9;
+      int v42;
+      int i10;
+      int v44;
+      int i11;
+      int v46;
+      int i12;
+      int v48;
+      int i13;
+      int v50;
+      int i14;
+      int v52;
+      int i15;
+      int v54;
+      int i16;
+      int v56;
+      int i17;
+      int v58;
+      int i18;
+      char *v60;
+      int v61;
+      int result;
 
-  v2 = a2; /*0x674732*/
-  (*(void (__stdcall **)(int *, _DWORD *, int, _DWORD))(*a2 + 16))(a2, this, 6336, 0); /*0x674744*/
-  v4 = *v2; /*0x67474d*/
-  a2 = (int *)*(this + 1129); /*0x674759*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v4 + 16))(v2, &a2, 4, 0); /*0x67475d*/
-  for ( i = 0; i < (int)a2; ++i ) /*0x674768*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1126) + 4 * i, 4, 0); /*0x67477b*/
-  v6 = *v2; /*0x67478d*/
-  a2 = (int *)*(this + 1136); /*0x674799*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v6 + 16))(v2, &a2, 4, 0); /*0x67479d*/
-  for ( j = 0; j < (int)a2; ++j ) /*0x6747a8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1133) + 4 * j, 4, 0); /*0x6747bb*/
-  v8 = *v2; /*0x6747cd*/
-  a2 = (int *)*(this + 1143); /*0x6747d9*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v8 + 16))(v2, &a2, 4, 0); /*0x6747dd*/
-  for ( k = 0; k < (int)a2; ++k ) /*0x6747e8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1140) + 4 * k, 4, 0); /*0x6747fb*/
-  v10 = *v2; /*0x67480d*/
-  a2 = (int *)*(this + 1150); /*0x674819*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v10 + 16))(v2, &a2, 4, 0); /*0x67481d*/
-  for ( m = 0; m < (int)a2; ++m ) /*0x674828*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1147) + 4 * m, 4, 0); /*0x67483b*/
-  v12 = *v2; /*0x67484d*/
-  a2 = (int *)*(this + 1157); /*0x674859*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v12 + 16))(v2, &a2, 4, 0); /*0x67485d*/
-  for ( n = 0; n < (int)a2; ++n ) /*0x674868*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1154) + 4 * n, 4, 0); /*0x67487b*/
-  v14 = *v2; /*0x67488d*/
-  a2 = (int *)*(this + 1164); /*0x674899*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v14 + 16))(v2, &a2, 4, 0); /*0x67489d*/
-  for ( ii = 0; ii < (int)a2; ++ii ) /*0x6748a8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1161) + 4 * ii, 4, 0); /*0x6748bb*/
-  v16 = *v2; /*0x6748cd*/
-  a2 = (int *)*(this + 1171); /*0x6748d9*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v16 + 16))(v2, &a2, 4, 0); /*0x6748dd*/
-  for ( jj = 0; jj < (int)a2; ++jj ) /*0x6748e8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1168) + 4 * jj, 4, 0); /*0x6748fb*/
-  v18 = *v2; /*0x67490d*/
-  a2 = (int *)*(this + 1178); /*0x674919*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v18 + 16))(v2, &a2, 4, 0); /*0x67491d*/
-  for ( kk = 0; kk < (int)a2; ++kk ) /*0x674928*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1175) + 4 * kk, 4, 0); /*0x67493b*/
-  v20 = *v2; /*0x67494d*/
-  a2 = (int *)*(this + 1185); /*0x674959*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v20 + 16))(v2, &a2, 4, 0); /*0x67495d*/
-  for ( mm = 0; mm < (int)a2; ++mm ) /*0x674968*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1182) + 4 * mm, 4, 0); /*0x67497b*/
-  v22 = *v2; /*0x67498d*/
-  a2 = (int *)*(this + 1192); /*0x674999*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v22 + 16))(v2, &a2, 4, 0); /*0x67499d*/
-  for ( nn = 0; nn < (int)a2; ++nn ) /*0x6749a8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1189) + 4 * nn, 4, 0); /*0x6749bb*/
-  v24 = *v2; /*0x6749cd*/
-  a2 = (int *)*(this + 1199); /*0x6749d9*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v24 + 16))(v2, &a2, 4, 0); /*0x6749dd*/
-  for ( i1 = 0; i1 < (int)a2; ++i1 ) /*0x6749e8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1196) + 4 * i1, 4, 0); /*0x6749fb*/
-  v26 = *v2; /*0x674a0d*/
-  a2 = (int *)*(this + 1206); /*0x674a19*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v26 + 16))(v2, &a2, 4, 0); /*0x674a1d*/
-  for ( i2 = 0; i2 < (int)a2; ++i2 ) /*0x674a28*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1203) + 4 * i2, 4, 0); /*0x674a3b*/
-  v28 = *v2; /*0x674a4d*/
-  a2 = (int *)*(this + 1213); /*0x674a59*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v28 + 16))(v2, &a2, 4, 0); /*0x674a5d*/
-  for ( i3 = 0; i3 < (int)a2; ++i3 ) /*0x674a68*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1210) + 4 * i3, 4, 0); /*0x674a7b*/
-  v30 = *v2; /*0x674a8d*/
-  a2 = (int *)*(this + 1280); /*0x674a99*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v30 + 16))(v2, &a2, 4, 0); /*0x674a9d*/
-  for ( i4 = 0; i4 < (int)a2; ++i4 ) /*0x674aa8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1277) + 4 * i4, 4, 0); /*0x674abb*/
-  v32 = *v2; /*0x674acd*/
-  a2 = (int *)*(this + 1114); /*0x674ad9*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v32 + 16))(v2, &a2, 4, 0); /*0x674add*/
-  for ( i5 = 0; i5 < (int)a2; ++i5 ) /*0x674ae8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1111) + 4 * i5, 4, 0); /*0x674afb*/
-  v34 = *v2; /*0x674b0d*/
-  a2 = (int *)*(this + 622); /*0x674b19*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v34 + 16))(v2, &a2, 4, 0); /*0x674b1d*/
-  for ( i6 = 0; i6 < (int)a2; ++i6 ) /*0x674b28*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 619) + 4 * i6, 4, 0); /*0x674b3b*/
-  v36 = *v2; /*0x674b4d*/
-  a2 = (int *)*(this + 868); /*0x674b59*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v36 + 16))(v2, &a2, 4, 0); /*0x674b5d*/
-  for ( i7 = 0; i7 < (int)a2; ++i7 ) /*0x674b68*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 865) + 4 * i7, 4, 0); /*0x674b7b*/
-  v38 = *v2; /*0x674b8d*/
-  a2 = (int *)*(this + 875); /*0x674b99*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v38 + 16))(v2, &a2, 4, 0); /*0x674b9d*/
-  for ( i8 = 0; i8 < (int)a2; ++i8 ) /*0x674ba8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 872) + 4 * i8, 4, 0); /*0x674bbb*/
-  v40 = *v2; /*0x674bcd*/
-  a2 = (int *)*(this + 882); /*0x674bd9*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v40 + 16))(v2, &a2, 4, 0); /*0x674bdd*/
-  for ( i9 = 0; i9 < (int)a2; ++i9 ) /*0x674be8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 879) + 4 * i9, 4, 0); /*0x674bfb*/
-  v42 = *v2; /*0x674c0d*/
-  a2 = (int *)*(this + 958); /*0x674c19*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v42 + 16))(v2, &a2, 4, 0); /*0x674c1d*/
-  for ( i10 = 0; i10 < (int)a2; ++i10 ) /*0x674c28*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 955) + 4 * i10, 4, 0); /*0x674c3b*/
-  v44 = *v2; /*0x674c4d*/
-  a2 = (int *)*(this + 965); /*0x674c59*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v44 + 16))(v2, &a2, 4, 0); /*0x674c5d*/
-  for ( i11 = 0; i11 < (int)a2; ++i11 ) /*0x674c68*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 962) + 4 * i11, 4, 0); /*0x674c7b*/
-  v46 = *v2; /*0x674c8d*/
-  a2 = (int *)*(this + 972); /*0x674c99*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v46 + 16))(v2, &a2, 4, 0); /*0x674c9d*/
-  for ( i12 = 0; i12 < (int)a2; ++i12 ) /*0x674ca8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 969) + 4 * i12, 4, 0); /*0x674cbb*/
-  v48 = *v2; /*0x674ccd*/
-  a2 = (int *)*(this + 904); /*0x674cd9*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v48 + 16))(v2, &a2, 4, 0); /*0x674cdd*/
-  for ( i13 = 0; i13 < (int)a2; ++i13 ) /*0x674ce8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 901) + 4 * i13, 4, 0); /*0x674cfb*/
-  v50 = *v2; /*0x674d0d*/
-  a2 = (int *)*(this + 949); /*0x674d19*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v50 + 16))(v2, &a2, 4, 0); /*0x674d1d*/
-  for ( i14 = 0; i14 < (int)a2; ++i14 ) /*0x674d28*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 946) + 4 * i14, 4, 0); /*0x674d3b*/
-  v52 = *v2; /*0x674d4d*/
-  a2 = (int *)*(this + 911); /*0x674d59*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v52 + 16))(v2, &a2, 4, 0); /*0x674d5d*/
-  for ( i15 = 0; i15 < (int)a2; ++i15 ) /*0x674d68*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 908) + 4 * i15, 4, 0); /*0x674d7b*/
-  v54 = *v2; /*0x674d8d*/
-  a2 = (int *)*(this + 889); /*0x674d99*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v54 + 16))(v2, &a2, 4, 0); /*0x674d9d*/
-  for ( i16 = 0; i16 < (int)a2; ++i16 ) /*0x674da8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 886) + 4 * i16, 4, 0); /*0x674dbb*/
-  v56 = *v2; /*0x674dcd*/
-  a2 = (int *)*(this + 1256); /*0x674dd9*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v56 + 16))(v2, &a2, 4, 0); /*0x674ddd*/
-  for ( i17 = 0; i17 < (int)a2; ++i17 ) /*0x674de8*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1253) + 4 * i17, 4, 0); /*0x674dfb*/
-  v58 = *v2; /*0x674e0d*/
-  a2 = (int *)*(this + 1263); /*0x674e19*/
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(v58 + 16))(v2, &a2, 4, 0); /*0x674e1d*/
-  for ( i18 = 0; i18 < (int)a2; ++i18 ) /*0x674e28*/
-    (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, *(this + 1260) + 4 * i18, 4, 0); /*0x674e3b*/
-  DynamicVector::Read(this + 915, v2); /*0x674e4e*/
-  DynamicVector::Read(this + 922, v2); /*0x674e5a*/
-  DynamicVector::Read(this + 929, v2); /*0x674e66*/
-  DynamicVector::Read(this + 936, v2); /*0x674e72*/
-  DynamicVector::Read(this + 1217, v2); /*0x674e7e*/
-  DynamicVector::Read(this + 1224, v2); /*0x674e8a*/
-  DynamicVector::Read(this + 1231, v2); /*0x674e96*/
-  DynamicVector::Read(this + 1238, v2); /*0x674ea2*/
-  DynamicVector::Read(this + 1245, v2); /*0x674eae*/
-  DynamicVector::Read(this + 1266, v2); /*0x674eba*/
-  DynamicVector::Read(this + 1117, v2); /*0x674ec6*/
-  DynamicVector::Read(this + 271, v2); /*0x674ed2*/
-  DynamicVector::Read(this + 278, v2); /*0x674ede*/
-  DynamicVector::Read(this + 285, v2); /*0x674eea*/
-  RulesClass::readTerrainTypes(this + 22, v2); /*0x674ef3*/
-  RulesClass::readTerrainTypes(this + 384, v2); /*0x674eff*/
-  DynamicVector::Read(this + 214, v2); /*0x674f0b*/
-  DynamicVector::Read(this + 221, v2); /*0x674f17*/
-  DynamicVector::Read(this + 228, v2); /*0x674f23*/
-  DynamicVector::Read(this + 235, v2); /*0x674f2f*/
-  DynamicVector::Read(this + 242, v2); /*0x674f3b*/
-  DynamicVector::Read(this + 249, v2); /*0x674f47*/
-  DynamicVector::Read(this + 435, v2); /*0x674f53*/
-  DynamicVector::Read(this + 461, v2); /*0x674f5f*/
-  VectorClass::LoadStream(this + 497, v2); /*0x674f6b*/
-  VectorClass::LoadStream(this + 504, v2); /*0x674f77*/
-  VectorClass::LoadStream(this + 511, v2); /*0x674f83*/
-  VectorClass::LoadStream(this + 518, v2); /*0x674f8f*/
-  VectorClass::LoadStream(this + 525, v2); /*0x674f9b*/
-  DynamicVector::Read_Alt(this + 532, v2); /*0x674fa7*/
-  DynamicVector::Read_Alt(this + 544, v2); /*0x674fb3*/
-  DynamicVector::Read_Alt(this + 555, v2); /*0x674fbf*/
-  DynamicVector::Read_Alt(this + 562, v2); /*0x674fcb*/
-  DynamicVector::Read_Alt(this + 569, v2); /*0x674fd7*/
-  DynamicVector::Read_Alt(this + 576, v2); /*0x674fe3*/
-  DynamicVector::Read_Alt(this + 583, v2); /*0x674fef*/
-  DynamicVector::Read_Alt(this + 590, v2); /*0x674ffb*/
-  DynamicVector::Read_Alt(this + 597, v2); /*0x675007*/
-  DynamicVector::Read_Alt(this + 604, v2); /*0x675013*/
-  DynamicVector::Read_Alt(this + 611, v2); /*0x67501f*/
-  DynamicVector::Read_Alt(this + 625, v2); /*0x67502b*/
-  DynamicVector::Read_Alt(this + 632, v2); /*0x675037*/
-  DynamicVector::Read_Alt(this + 639, v2); /*0x675043*/
-  DynamicVector::Read_Alt(this + 646, v2); /*0x67504f*/
-  DynamicVector::Read_Alt(this + 653, v2); /*0x67505b*/
-  DynamicVector::Read_Alt(this + 660, v2); /*0x675067*/
-  DynamicVector::Read_Alt(this + 667, v2); /*0x675073*/
-  DynamicVector::Read_Alt(this + 674, v2); /*0x67507f*/
-  DynamicVector::Read_Alt(this + 681, v2); /*0x67508b*/
-  DynamicVector::Read_Alt(this + 688, v2); /*0x675097*/
-  DynamicVector::Read_Alt(this + 695, v2); /*0x6750a3*/
-  RulesClass::readAnimations(this + 726, v2); /*0x6750af*/
-  Stream::WriteIntArray(this + 733, v2); /*0x6750bb*/
-  Stream::WriteIntArray(this + 740, v2); /*0x6750c7*/
-  Stream::WriteIntArray(this + 752, v2); /*0x6750d3*/
-  SaveLoad::StreamVector(this + 712, v2); /*0x6750df*/
-  RulesClass::readParticleSystems(this + 1022, v2); /*0x6750eb*/
-  SaveLoad::StreamVector(this + 719, v2); /*0x6750f7*/
-  VectorClass::SaveLoad(this + 832, v2); /*0x675103*/
-  SaveLoad::StreamVector(this + 839, v2); /*0x67510f*/
-  DynamicVector::Read_Alt(this + 846, v2); /*0x67511b*/
-  Stream::WriteIntArray(this + 72, v2); /*0x675127*/
-  Stream::WriteIntArray(this + 65, v2); /*0x675133*/
-  Stream::WriteIntArray(this + 79, v2); /*0x67513f*/
-  Stream::WriteIntArray(this + 86, v2); /*0x67514b*/
-  DynamicVector::Read(this + 402, v2); /*0x675157*/
-  VectorClass::SaveLoad(this + 769, v2); /*0x675163*/
-  DynamicVector::Read(this + 776, v2); /*0x67516f*/
-  VectorClass::SaveLoad(this + 783, v2); /*0x67517b*/
-  DynamicVector::Read(this + 790, v2); /*0x675187*/
-  VectorClass::SaveLoad(this + 797, v2); /*0x675193*/
-  DynamicVector::Read(this + 804, v2); /*0x67519f*/
-  VectorClass::SaveLoad(this + 811, v2); /*0x6751ab*/
-  DynamicVector::Read(this + 818, v2); /*0x6751b7*/
-  VectorClass::SaveLoad(this + 825, v2); /*0x6751c3*/
-  Stream::WriteIntArray(this + 168, v2); /*0x6751cf*/
-  Stream::WriteIntArray(this + 175, v2); /*0x6751db*/
-  Stream::WriteIntArray(this + 182, v2); /*0x6751e7*/
-  v60 = (char *)(this + 1565); /*0x6751ec*/
-  v61 = 16; /*0x6751f2*/
-  do /*0x675203*/
-  {
-    result = RulesClass::readGeneralSection(v60, (int)v2); /*0x6751fa*/
-    v60 += 3; /*0x6751ff*/
-    --v61; /*0x675202*/
-  }
-  while ( v61 ); /*0x675203*/
-  return result; /*0x675205*/
+      v2 = a2;
+      (*(void (__stdcall **)(int *, _DWORD *, int, _DWORD))(*a2 + 16))(a2, this, 6336, 0);
+      v4 = *v2;
+      a2 = (int *)this->q11A4;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v4 + 16))(v2, &a2, 4, 0);
+      for ( i = 0; i < (int)a2; ++i )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q1198 + 4 * i, 4, 0);
+      v6 = *v2;
+      a2 = (int *)this->q11C0;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v6 + 16))(v2, &a2, 4, 0);
+      for ( j = 0; j < (int)a2; ++j )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q11B4 + 4 * j, 4, 0);
+      v8 = *v2;
+      a2 = (int *)this->q11DC;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v8 + 16))(v2, &a2, 4, 0);
+      for ( k = 0; k < (int)a2; ++k )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q11D0 + 4 * k, 4, 0);
+      v10 = *v2;
+      a2 = (int *)this->q11F8;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v10 + 16))(v2, &a2, 4, 0);
+      for ( m = 0; m < (int)a2; ++m )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q11EC + 4 * m, 4, 0);
+      v12 = *v2;
+      a2 = (int *)this->q1214;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v12 + 16))(v2, &a2, 4, 0);
+      for ( n = 0; n < (int)a2; ++n )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q1208 + 4 * n, 4, 0);
+      v14 = *v2;
+      a2 = (int *)this->q1230;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v14 + 16))(v2, &a2, 4, 0);
+      for ( ii = 0; ii < (int)a2; ++ii )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q1224 + 4 * ii, 4, 0);
+      v16 = *v2;
+      a2 = (int *)this->q124C;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v16 + 16))(v2, &a2, 4, 0);
+      for ( jj = 0; jj < (int)a2; ++jj )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q1240 + 4 * jj, 4, 0);
+      v18 = *v2;
+      a2 = (int *)this->q1268;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v18 + 16))(v2, &a2, 4, 0);
+      for ( kk = 0; kk < (int)a2; ++kk )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q125C + 4 * kk, 4, 0);
+      v20 = *v2;
+      a2 = (int *)this->q1284;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v20 + 16))(v2, &a2, 4, 0);
+      for ( mm = 0; mm < (int)a2; ++mm )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q1278 + 4 * mm, 4, 0);
+      v22 = *v2;
+      a2 = (int *)this->q12A0;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v22 + 16))(v2, &a2, 4, 0);
+      for ( nn = 0; nn < (int)a2; ++nn )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q1294 + 4 * nn, 4, 0);
+      v24 = *v2;
+      a2 = (int *)this->q12BC;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v24 + 16))(v2, &a2, 4, 0);
+      for ( i1 = 0; i1 < (int)a2; ++i1 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q12B0 + 4 * i1, 4, 0);
+      v26 = *v2;
+      a2 = (int *)this->q12D8;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v26 + 16))(v2, &a2, 4, 0);
+      for ( i2 = 0; i2 < (int)a2; ++i2 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q12CC + 4 * i2, 4, 0);
+      v28 = *v2;
+      a2 = (int *)this->q12F4;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v28 + 16))(v2, &a2, 4, 0);
+      for ( i3 = 0; i3 < (int)a2; ++i3 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q12E8 + 4 * i3, 4, 0);
+      v30 = *v2;
+      a2 = (int *)this->q1400;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v30 + 16))(v2, &a2, 4, 0);
+      for ( i4 = 0; i4 < (int)a2; ++i4 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q13F4 + 4 * i4, 4, 0);
+      v32 = *v2;
+      a2 = (int *)this->q1168;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v32 + 16))(v2, &a2, 4, 0);
+      for ( i5 = 0; i5 < (int)a2; ++i5 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q115C + 4 * i5, 4, 0);
+      v34 = *v2;
+      a2 = (int *)this->PowerEmergency;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v34 + 16))(v2, &a2, 4, 0);
+      for ( i6 = 0; i6 < (int)a2; ++i6 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q9AC + 4 * i6, 4, 0);
+      v36 = *v2;
+      a2 = (int *)this->qD90;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v36 + 16))(v2, &a2, 4, 0);
+      for ( i7 = 0; i7 < (int)a2; ++i7 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qD84 + 4 * i7, 4, 0);
+      v38 = *v2;
+      a2 = (int *)this->qDAC;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v38 + 16))(v2, &a2, 4, 0);
+      for ( i8 = 0; i8 < (int)a2; ++i8 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qDA0 + 4 * i8, 4, 0);
+      v40 = *v2;
+      a2 = (int *)this->qDC8;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v40 + 16))(v2, &a2, 4, 0);
+      for ( i9 = 0; i9 < (int)a2; ++i9 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qDBC + 4 * i9, 4, 0);
+      v42 = *v2;
+      a2 = (int *)this->qEF8;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v42 + 16))(v2, &a2, 4, 0);
+      for ( i10 = 0; i10 < (int)a2; ++i10 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qEEC + 4 * i10, 4, 0);
+      v44 = *v2;
+      a2 = (int *)this->qF14;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v44 + 16))(v2, &a2, 4, 0);
+      for ( i11 = 0; i11 < (int)a2; ++i11 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qF08 + 4 * i11, 4, 0);
+      v46 = *v2;
+      a2 = (int *)this->qF30;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v46 + 16))(v2, &a2, 4, 0);
+      for ( i12 = 0; i12 < (int)a2; ++i12 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qF24 + 4 * i12, 4, 0);
+      v48 = *v2;
+      a2 = (int *)this->qE20;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v48 + 16))(v2, &a2, 4, 0);
+      for ( i13 = 0; i13 < (int)a2; ++i13 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qE14 + 4 * i13, 4, 0);
+      v50 = *v2;
+      a2 = (int *)this->qED4;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v50 + 16))(v2, &a2, 4, 0);
+      for ( i14 = 0; i14 < (int)a2; ++i14 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qEC8 + 4 * i14, 4, 0);
+      v52 = *v2;
+      a2 = (int *)this->qE3C;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v52 + 16))(v2, &a2, 4, 0);
+      for ( i15 = 0; i15 < (int)a2; ++i15 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qE30 + 4 * i15, 4, 0);
+      v54 = *v2;
+      a2 = (int *)this->qDE4;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v54 + 16))(v2, &a2, 4, 0);
+      for ( i16 = 0; i16 < (int)a2; ++i16 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->qDD8 + 4 * i16, 4, 0);
+      v56 = *v2;
+      a2 = (int *)this->q13A0;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v56 + 16))(v2, &a2, 4, 0);
+      for ( i17 = 0; i17 < (int)a2; ++i17 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q1394 + 4 * i17, 4, 0);
+      v58 = *v2;
+      a2 = (int *)this->q13BC;
+      (*(void (__stdcall **)(int *, int **, int, _DWORD))(v58 + 16))(v2, &a2, 4, 0);
+      for ( i18 = 0; i18 < (int)a2; ++i18 )
+        (*(void (__stdcall **)(int *, int, int, _DWORD))(*v2 + 16))(v2, this->q13B0 + 4 * i18, 4, 0);
+      DynamicVector::Read(this + 915, v2);
+      DynamicVector::Read(this + 922, v2);
+      DynamicVector::Read(this + 929, v2);
+      DynamicVector::Read(this + 936, v2);
+      DynamicVector::Read(this + 1217, v2);
+      DynamicVector::Read(this + 1224, v2);
+      DynamicVector::Read(this + 1231, v2);
+      DynamicVector::Read(this + 1238, v2);
+      DynamicVector::Read(this + 1245, v2);
+      DynamicVector::Read(this + 1266, v2);
+      DynamicVector::Read(this + 1117, v2);
+      DynamicVector::Read(this + 271, v2);
+      DynamicVector::Read(this + 278, v2);
+      DynamicVector::Read(this + 285, v2);
+      RulesClass::readTerrainTypes(this + 22, v2);
+      RulesClass::readTerrainTypes(this + 384, v2);
+      DynamicVector::Read(this + 214, v2);
+      DynamicVector::Read(this + 221, v2);
+      DynamicVector::Read(this + 228, v2);
+      DynamicVector::Read(this + 235, v2);
+      DynamicVector::Read(this + 242, v2);
+      DynamicVector::Read(this + 249, v2);
+      DynamicVector::Read(this + 435, v2);
+      DynamicVector::Read(this + 461, v2);
+      VectorClass::LoadStream(this + 497, v2);
+      VectorClass::LoadStream(this + 504, v2);
+      VectorClass::LoadStream(this + 511, v2);
+      VectorClass::LoadStream(this + 518, v2);
+      VectorClass::LoadStream(this + 525, v2);
+      DynamicVector::Read_Alt(this + 532, v2);
+      DynamicVector::Read_Alt(this + 544, v2);
+      DynamicVector::Read_Alt(this + 555, v2);
+      DynamicVector::Read_Alt(this + 562, v2);
+      DynamicVector::Read_Alt(this + 569, v2);
+      DynamicVector::Read_Alt(this + 576, v2);
+      DynamicVector::Read_Alt(this + 583, v2);
+      DynamicVector::Read_Alt(this + 590, v2);
+      DynamicVector::Read_Alt(this + 597, v2);
+      DynamicVector::Read_Alt(this + 604, v2);
+      DynamicVector::Read_Alt(this + 611, v2);
+      DynamicVector::Read_Alt(this + 625, v2);
+      DynamicVector::Read_Alt(this + 632, v2);
+      DynamicVector::Read_Alt(this + 639, v2);
+      DynamicVector::Read_Alt(this + 646, v2);
+      DynamicVector::Read_Alt(this + 653, v2);
+      DynamicVector::Read_Alt(this + 660, v2);
+      DynamicVector::Read_Alt(this + 667, v2);
+      DynamicVector::Read_Alt(this + 674, v2);
+      DynamicVector::Read_Alt(this + 681, v2);
+      DynamicVector::Read_Alt(this + 688, v2);
+      DynamicVector::Read_Alt(this + 695, v2);
+      RulesClass::readAnimations(this + 726, v2);
+      Stream::WriteIntArray(this + 733, v2);
+      Stream::WriteIntArray(this + 740, v2);
+      Stream::WriteIntArray(this + 752, v2);
+      SaveLoad::StreamVector(this + 712, v2);
+      RulesClass::readParticleSystems(this + 1022, v2);
+      SaveLoad::StreamVector(this + 719, v2);
+      VectorClass::SaveLoad(this + 832, v2);
+      SaveLoad::StreamVector(this + 839, v2);
+      DynamicVector::Read_Alt(this + 846, v2);
+      Stream::WriteIntArray(this + 72, v2);
+      Stream::WriteIntArray(this + 65, v2);
+      Stream::WriteIntArray(this + 79, v2);
+      Stream::WriteIntArray(this + 86, v2);
+      DynamicVector::Read(this + 402, v2);
+      VectorClass::SaveLoad(this + 769, v2);
+      DynamicVector::Read(this + 776, v2);
+      VectorClass::SaveLoad(this + 783, v2);
+      DynamicVector::Read(this + 790, v2);
+      VectorClass::SaveLoad(this + 797, v2);
+      DynamicVector::Read(this + 804, v2);
+      VectorClass::SaveLoad(this + 811, v2);
+      DynamicVector::Read(this + 818, v2);
+      VectorClass::SaveLoad(this + 825, v2);
+      Stream::WriteIntArray(this + 168, v2);
+      Stream::WriteIntArray(this + 175, v2);
+      Stream::WriteIntArray(this + 182, v2);
+      v60 = (char *)(this + 1565);
+      v61 = 16;
+      do
+      {
+        result = RulesClass::readGeneralSection(v60, (int)v2);
+        v60 += 3;
+        --v61;
+      }
+      while ( v61 );
+      return result;
 }
 } }
 // 0x675210
@@ -22388,29 +15354,27 @@ namespace gamemd { void* SuperClass::SetCurrentFrame() {
 } }
 // 0x6CE320
 namespace gamemd { int SuperClass::RemoveFromPointerArray(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6CE320(_DWORD *this, int a2)
 {
-  int v2; // edx
-  int v3; // eax
-  int v4; // edx
+      int v2;
+      int v3;
+      int v4;
 
-  v2 = *(this + 4); /*0x6ce320*/
-  v3 = a2; /*0x6ce323*/
-  if ( a2 >= v2 ) /*0x6ce329*/
-    return 0; /*0x6ce34c*/
-  v4 = v2 - 1; /*0x6ce32b*/
-  *(this + 4) = v4; /*0x6ce32e*/
-  if ( a2 < v4 ) /*0x6ce331*/
-  {
-    do /*0x6ce344*/
-    {
-      ++v3; /*0x6ce337*/
-      *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3); /*0x6ce33b*/
-    }
-    while ( v3 < *(this + 4) ); /*0x6ce344*/
-  }
-  return 1; /*0x6ce349*/
+      v2 = this->q010;
+      v3 = a2;
+      if ( a2 >= v2 )
+        return 0;
+      v4 = v2 - 1;
+      this->q010 = v4;
+      if ( a2 < v4 )
+      {
+        do
+        {
+          ++v3;
+          *(_DWORD *)(this->q004 + 4 * v3 - 4) = *(_DWORD *)(this->q004 + 4 * v3);
+        }
+        while ( v3 < this->q010 );
+      }
+      return 1;
 }
 } }
 // 0x6E1C40
@@ -24849,13 +17813,11 @@ retn
 } }
 // 0x7209B0
 namespace gamemd { int AudioSettings::Check(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_7209B0(_DWORD *this, unsigned int a2)
 {
-  if ( a2 >= *(this + 9) ) /*0x7209b9*/
-    return 0; /*0x7209c9*/
-  else
-    return *(_DWORD *)(*(this + 6) + 4 * a2) + 512; /*0x7209c1*/
+      if ( a2 >= this->q024 )
+        return 0;
+      else
+        return *(_DWORD *)(this->q018 + 4 * a2) + 512;
 }
 } }
 // 0x720BB0
@@ -24964,125 +17926,119 @@ LABEL_47:
 } }
 // 0x720E50
 namespace gamemd { int AudioSettings::ComputeTransform(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_720E50(_DWORD *this, unsigned int a2)
 {
-  if ( a2 >= *(this + 9) ) /*0x720e59*/
-    return 0; /*0x720e6f*/
-  else
-    return Math::RoundToInt(*(float *)(*(_DWORD *)(*(this + 6) + 4 * a2) + 644)); /*0x720e67*/
+      if ( a2 >= this->q024 )
+        return 0;
+      else
+        return Math::RoundToInt(*(float *)(*(_DWORD *)(this->q018 + 4 * a2) + 644));
 }
 } }
 // 0x721140
 namespace gamemd { bool RulesClass::IsTypeBuildable(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall RulesClass::IsTypeBuildable(_DWORD *this, TechnoTypeClass *aP1)
 {
-  int v3; // eax
-  int v4; // ecx
+      int v3;
+      int v4;
 
-  if ( aP1 == (TechnoTypeClass *)-3 || aP1 == (TechnoTypeClass *)-2 ) /*0x721150*/
-    return 1; /*0x721150*/
-  if ( (unsigned int)aP1 >= *(this + 9) ) /*0x721155*/
-    return 0; /*0x721159*/
-  v3 = *(_DWORD *)(*(this + 6) + 4 * (_DWORD)aP1); /*0x72115f*/
-  if ( !*(_BYTE *)(v3 + 650) ) /*0x721162*/
-    return 0; /*0x72116e*/
-  if ( !*(_BYTE *)(v3 + 648) ) /*0x721171*/
-    return 0; /*0x72117d*/
-  if ( HouseClass_Player ) /*0x721188*/
-  {
-    v4 = *(_DWORD *)(v3 + 652); /*0x72118a*/
-    if ( v4 != -1 && *(_DWORD *)(HouseClass_Player->field_34 + 188) != v4 ) /*0x7211a2*/
-      return 0; /*0x7211a6*/
-  }
-  return MEMORY[0xA8B238] || MEMORY[0xA8B230]->techLevel >= *(_DWORD *)(v3 + 640); /*0x7211ce*/
+      if ( aP1 == (TechnoTypeClass *)-3 || aP1 == (TechnoTypeClass *)-2 )
+        return 1;
+      if ( (unsigned int)aP1 >= this->q024 )
+        return 0;
+      v3 = *(_DWORD *)(this->AttackingAircraftSightRange + 4 * (_DWORD)aP1);
+      if ( !*(_BYTE *)(v3 + 650) )
+        return 0;
+      if ( !*(_BYTE *)(v3 + 648) )
+        return 0;
+      if ( HouseClass_Player )
+      {
+        v4 = *(_DWORD *)(v3 + 652);
+        if ( v4 != -1 && *(_DWORD *)(HouseClass_Player->field_34 + 188) != v4 )
+          return 0;
+      }
+      return g_GameMode_Current || g_ScenarioClass_Instance->techLevel >= *(_DWORD *)(v3 + 640);
 }
 } }
 // 0x74E6B0
 namespace gamemd { int RulesClass::Reset() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_74E6B0(int this)
 {
-  _DWORD *v2; // eax
-  int i; // ecx
-  int result; // eax
-  int j; // ebx
-  __int16 *v6; // edi
-  int v7; // ebp
-  int v8; // eax
-  double v9; // st7
-  int v10; // eax
-  _DWORD *v11; // edi
-  unsigned int v12; // ebp
-  unsigned int v13; // ecx
-  unsigned int v14; // edx
-  int v15; // ebx
-  unsigned int v16; // eax
-  float v17; // [esp+1Ch] [ebp-Ch]
-  int v18; // [esp+20h] [ebp-8h]
-  int v19; // [esp+24h] [ebp-4h]
+      _DWORD *v2;
+      int i;
+      int result;
+      int j;
+      __int16 *v6;
+      int v7;
+      int v8;
+      double v9;
+      int v10;
+      _DWORD *v11;
+      unsigned int v12;
+      unsigned int v13;
+      unsigned int v14;
+      int v15;
+      unsigned int v16;
+      float v17;
+      int v18;
+      int v19;
 
-  v2 = *(_DWORD **)(this + 176); /*0x74e6c1*/
-  *(_DWORD *)(this + 172) = 0; /*0x74e6c7*/
-  for ( i = 0; i <= *v2; *(_DWORD *)(v2[2] + 4 * i - 4) = 0 ) /*0x74e6d1*/
-    ++i; /*0x74e6d6*/
-  *v2 = 0; /*0x74e6e1*/
-  *(_DWORD *)(this + 260) = 0; /*0x74e6e8*/
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x74e6ee*/
-  result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x74e6f8*/
-  for ( j = result; result; j = result ) /*0x74e701*/
-  {
-    if ( *(_DWORD *)(j + 68) == 126 && *(_BYTE *)(j + 286) >= 0x30u ) /*0x74e718*/
-    {
-      v6 = (__int16 *)(j + 36); /*0x74e71e*/
-      v7 = Cell::PosToIndex((__int16 *)(j + 36)); /*0x74e728*/
-      if ( v7 >= 0 && v7 < Object::ComputeAllocationSize() ) /*0x74e739*/
+      v2 = *(_DWORD **)(this + 176);
+      this->q0AC = 0;
+      for ( i = 0; i <= *v2; *(_DWORD *)(v2[2] + 4 * i - 4) = 0 )
+        ++i;
+      *v2 = 0;
+      this->GUICloseSound = 0;
+      LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
+      result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8);
+      for ( j = result; result; j = result )
       {
-        if ( *(_BYTE *)(*(_DWORD *)(this + 196) + v7) ) /*0x74e745*/
+        if ( *(_DWORD *)(j + 68) == 126 && *(_BYTE *)(j + 286) >= 0x30u )
         {
-          v8 = *(_DWORD *)(this + 172); /*0x74e755*/
-          if ( v8 < MEMORY[0x8871E0]->AircraftFogReveal ) /*0x74e761*/
+          v6 = (__int16 *)(j + 36);
+          v7 = Cell::PosToIndex((__int16 *)(j + 36));
+          if ( v7 >= 0 && v7 < Object::ComputeAllocationSize() )
           {
-            *(_DWORD *)(*(_DWORD *)(this + 180) + 8 * v8) = *(_DWORD *)v6; /*0x74e772*/
-            v19 = *(__int16 *)(j + 38) - *(__int16 *)(this + 250); /*0x74e78e*/
-            v18 = *v6 - *(__int16 *)(this + 248); /*0x74e792*/
-            v9 = Math::Sqrt((double)v18 * (double)v18 + (double)v19 * (double)v19); /*0x74e7af*/
-            *(float *)(*(_DWORD *)(this + 180) + 8 * *(_DWORD *)(this + 172) + 4) = (float)(int)(1000 /*0x74e7d7*/
-                                                                                               - Math::RoundToInt(v9));
-            v10 = *(_DWORD *)(this + 172); /*0x74e7db*/
-            v11 = *(_DWORD **)(this + 176); /*0x74e7e7*/
-            v12 = *(_DWORD *)(this + 180) + 8 * v10; /*0x74e7ed*/
-            *(_DWORD *)(this + 172) = v10 + 1; /*0x74e7f1*/
-            v13 = *v11 + 1; /*0x74e7fc*/
-            v17 = *(float *)(v12 + 4); /*0x74e7ff*/
-            v14 = v13 >> 1; /*0x74e806*/
-            if ( v13 < v11[1] ) /*0x74e80a*/
+            if ( *(_BYTE *)(this->q0C4 + v7) )
             {
-              for ( ; v13 > 1; v14 >>= 1 ) /*0x74e80f*/
+              v8 = this->q0AC;
+              if ( v8 < g_RulesClass_Instance->AircraftFogReveal )
               {
-                v15 = v11[2]; /*0x74e811*/
-                if ( *(float *)(*(_DWORD *)(v15 + 4 * v14) + 4) <= (double)v17 ) /*0x74e823*/
-                  break; /*0x74e823*/
-                *(_DWORD *)(v15 + 4 * v13) = *(_DWORD *)(v15 + 4 * v14); /*0x74e828*/
-                v13 = v14; /*0x74e82b*/
+                *(_DWORD *)(this->q0B4 + 8 * v8) = *(_DWORD *)v6;
+                v19 = *(__int16 *)(j + 38) - this->q0FA;
+                v18 = *v6 - this->GUIBuildSound;
+                v9 = Math::Sqrt((double)v18 * (double)v18 + (double)v19 * (double)v19);
+                *(float *)(this->q0B4 + 8 * this->q0AC + 4) = (float)(int)(1000
+                                                                                                   - Math::RoundToInt(v9));
+                v10 = this->q0AC;
+                v11 = *(_DWORD **)(this + 176);
+                v12 = this->q0B4 + 8 * v10;
+                this->q0AC = v10 + 1;
+                v13 = *v11 + 1;
+                v17 = *(float *)(v12 + 4);
+                v14 = v13 >> 1;
+                if ( v13 < v11[1] )
+                {
+                  for ( ; v13 > 1; v14 >>= 1 )
+                  {
+                    v15 = v11[2];
+                    if ( *(float *)(*(_DWORD *)(v15 + 4 * v14) + 4) <= (double)v17 )
+                      break;
+                    *(_DWORD *)(v15 + 4 * v13) = *(_DWORD *)(v15 + 4 * v14);
+                    v13 = v14;
+                  }
+                  *(_DWORD *)(v11[2] + 4 * v13) = v12;
+                  v16 = v11[3];
+                  ++*v11;
+                  if ( v12 > v16 )
+                    v11[3] = v12;
+                  if ( v12 < v11[4] )
+                    v11[4] = v12;
+                }
+                ++this->GUICloseSound;
               }
-              *(_DWORD *)(v11[2] + 4 * v13) = v12; /*0x74e837*/
-              v16 = v11[3]; /*0x74e83c*/
-              ++*v11; /*0x74e842*/
-              if ( v12 > v16 ) /*0x74e844*/
-                v11[3] = v12; /*0x74e846*/
-              if ( v12 < v11[4] ) /*0x74e84c*/
-                v11[4] = v12; /*0x74e84e*/
             }
-            ++*(_DWORD *)(this + 260); /*0x74e851*/
           }
         }
+        result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8);
       }
-    }
-    result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x74e85c*/
-  }
-  return result; /*0x74e86b*/
+      return result;
 }
 } }
 // 0x7534E0

@@ -104,23 +104,21 @@ LABEL_8:
 } }
 // 0x47EC40
 namespace gamemd { void* WTFMode::FindObjectByType(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall WTFMode_FindObjectByType(_DWORD *this, char a2)
 {
-  _DWORD *v2; // esi
+      _DWORD *v2;
 
-  if ( !MEMORY[0xA8E9A0] ) /*0x47ec48*/
-    return 0; /*0x47ec48*/
-  v2 = (_DWORD *)(a2 ? *(this + 58) : *(this + 57));
-  if ( !v2 ) /*0x47ec62*/
-    return 0; /*0x47ec77*/
-  while ( (*(int (__thiscall **)(_DWORD *))(*v2 + 44))(v2) != 15 ) /*0x47ec6e*/
-  {
-    v2 = (_DWORD *)v2[12]; /*0x47ec70*/
-    if ( !v2 ) /*0x47ec75*/
-      return 0; /*0x47ec75*/
-  }
-  return v2; /*0x47ec79*/
+      if ( !g_WTFMode )
+        return 0;
+      v2 = (_DWORD *)(a2 ? this->q0E8 : this->q0E4);
+      if ( !v2 )
+        return 0;
+      while ( (*(int (__thiscall **)(_DWORD *))(*v2 + 44))(v2) != 15 )
+      {
+        v2 = (_DWORD *)v2[12];
+        if ( !v2 )
+          return 0;
+      }
+      return v2;
 }
 } }
 // 0x4A31F0
@@ -157,70 +155,66 @@ namespace gamemd { int CStreamClass::PointerToIndex(int a2) {
 } }
 // 0x4A4CB0
 namespace gamemd { int CStreamClass::CopyItems(int a1, void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CStreamClass::sub_4A4CB0(void *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
+      _DWORD *v4;
+      int v5;
+      int i;
+      int v7;
 
-  if ( a2 ) /*0x4a4cbc*/
-  {
-    *((_BYTE *)this + 12) = 0; /*0x4a4cc2*/
-    if ( a3 ) /*0x4a4cc8*/
-      v4 = a3; /*0x4a4cde*/
-    else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4a4cda*/
-    *((_BYTE *)this + 12) = 1; /*0x4a4ce2*/
-    if ( !v4 ) /*0x4a4ce6*/
-      return 0; /*0x4a4d5a*/
-    if ( *((_DWORD *)this + 1) ) /*0x4a4ce8*/
-    {
-      v5 = *((_DWORD *)this + 2); /*0x4a4cef*/
-      if ( a2 < v5 ) /*0x4a4cf4*/
-        v5 = a2; /*0x4a4cf6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4a4cfc*/
-        ++i; /*0x4a4d01*/
-      if ( *((_BYTE *)this + 13) ) /*0x4a4d0e*/
+      if ( a2 )
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a4d19*/
-        *((_DWORD *)this + 1) = 0; /*0x4a4d21*/
+        this->IsInitialized = 0;
+        if ( a3 )
+          v4 = a3;
+        else
+          v4 = __2_YAPAXI_Z(4 * a2);
+        this->IsInitialized = 1;
+        if ( !v4 )
+          return 0;
+        if ( this->Items )
+        {
+          v5 = this->Capacity;
+          if ( a2 < v5 )
+            v5 = a2;
+          for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) )
+            ++i;
+          if ( this->IsAllocated )
+          {
+            __3_YAXPAX_Z(*((void **)this + 1));
+            this->Items = 0;
+          }
+        }
+        this->Items = v4;
+        this->Capacity = a2;
+        this->IsAllocated = a3 == 0;
       }
-    }
-    *((_DWORD *)this + 1) = v4; /*0x4a4d2a*/
-    *((_DWORD *)this + 2) = a2; /*0x4a4d32*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x4a4d35*/
-  }
-  else
-  {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4a4d3e*/
-  }
-  v7 = *((_DWORD *)this + 2); /*0x4a4d41*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x4a4d49*/
-    *((_DWORD *)this + 4) = v7; /*0x4a4d4b*/
-  return 1; /*0x4a4d4e*/
+      else
+      {
+        this->vt3();
+      }
+      v7 = this->Capacity;
+      if ( v7 < this->Count )
+        this->Count = v7;
+      return 1;
 }
 } }
 // 0x4A4D60
 namespace gamemd { int CStreamClass::FindItem(int * a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CStreamClass::sub_4A4D60(int *this, _DWORD *a2)
 {
-  int v2; // edx
-  int result; // eax
-  _DWORD *i; // ecx
+      int v2;
+      int result;
+      _DWORD *i;
 
-  v2 = *(this + 4); /*0x4a4d60*/
-  result = 0; /*0x4a4d63*/
-  if ( v2 <= 0 ) /*0x4a4d68*/
-    return -1; /*0x4a4d7f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x4a4d6e*/
-  {
-    if ( ++result >= v2 ) /*0x4a4d7d*/
-      return -1; /*0x4a4d7d*/
-  }
-  return result; /*0x4a4d82*/
+      v2 = this->Count;
+      result = 0;
+      if ( v2 <= 0 )
+        return -1;
+      for ( i = (_DWORD *)this->Items; *i != *a2; ++i )
+      {
+        if ( ++result >= v2 )
+          return -1;
+      }
+      return result;
 }
 } }
 // 0x4A4DE0
@@ -258,80 +252,74 @@ namespace gamemd { void LoadOptions::vt03() {
 } }
 // 0x5AE6F0
 namespace gamemd { void* Matrix3D::Constructor(float a1, float a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall Matrix3D::Constructor(float *this, AbstractClass *a2, AbstractClass *aP1)
 {
-  AbstractClass *v5; // [esp+0h] [ebp-8h]
+      AbstractClass *v5;
 
-  *(this + 1) = 0.0; /*0x5ae6fa*/
-  *(this + 2) = 0.0; /*0x5ae6fd*/
-  *(this + 3) = 0.0; /*0x5ae700*/
-  *(this + 4) = 0.0; /*0x5ae703*/
-  *(this + 6) = 0.0; /*0x5ae706*/
-  *(this + 7) = 0.0; /*0x5ae709*/
-  *(this + 8) = 0.0; /*0x5ae70c*/
-  *(this + 9) = 0.0; /*0x5ae70f*/
-  *(this + 11) = 0.0; /*0x5ae712*/
-  *this = 1.0; /*0x5ae719*/
-  *(this + 5) = 1.0; /*0x5ae71b*/
-  *(this + 10) = 1.0; /*0x5ae71e*/
-  Matrix2D::Rotate(this, a2); /*0x5ae724*/
-  Matrix3x3::RotateX(this, aP1); /*0x5ae730*/
-  *(float *)&v5 = -*(float *)&a2; /*0x5ae73e*/
-  Matrix2D::Rotate(this, v5); /*0x5ae741*/
-  return (ObjectClass *)this; /*0x5ae748*/
+      this->q004 = 0.0;
+      this->q008 = 0.0;
+      this->q00C = 0.0;
+      this->q010 = 0.0;
+      this->q018 = 0.0;
+      this->q01C = 0.0;
+      this->q020 = 0.0;
+      this->q024 = 0.0;
+      this->q02C = 0.0;
+      *this = 1.0;
+      this->q014 = 1.0;
+      this->q028 = 1.0;
+      Matrix2D::Rotate(this, a2);
+      Matrix3x3::RotateX(this, aP1);
+      *(float *)&v5 = -*(float *)&a2;
+      Matrix2D::Rotate(this, v5);
+      return (ObjectClass *)this;
 }
 } }
 // 0x5AF080
 namespace gamemd { void Matrix3D::RotateZ(float a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Matrix3D::RotateZ(float *this, AbstractClass *aP1)
 {
-  double v2; // kr00_8
-  double v4; // st7
-  double v5; // st6
-  double v6; // st5
-  double v7; // st6
-  double v8; // st5
-  double v9; // st6
-  double v10; // st5
-  float aP1a; // [esp+Ch] [ebp+4h]
+      double v2;
+      double v4;
+      double v5;
+      double v6;
+      double v7;
+      double v8;
+      double v9;
+      double v10;
+      float aP1a;
 
-  v2 = *(float *)&aP1; /*0x5af092*/
-  aP1a = Math::SinCos((IUnknown *)COERCE_UNSIGNED_INT64(*(float *)&aP1)); /*0x5af09f*/
-  v4 = Math::ArcTan2((IUnknown *)LODWORD(v2)); /*0x5af0a5*/
-  v5 = *this; /*0x5af0aa*/
-  v6 = *(this + 2); /*0x5af0ac*/
-  *this = v5 * v4 - v6 * aP1a; /*0x5af0bf*/
-  *(this + 2) = v6 * v4 + v5 * aP1a; /*0x5af0cb*/
-  v7 = *(this + 4); /*0x5af0ce*/
-  v8 = *(this + 6); /*0x5af0d1*/
-  *(this + 4) = v7 * v4 - v8 * aP1a; /*0x5af0e0*/
-  *(this + 6) = v8 * v4 + v7 * aP1a; /*0x5af0ed*/
-  v9 = *(this + 8); /*0x5af0f0*/
-  v10 = *(this + 10); /*0x5af0f3*/
-  *(this + 8) = v9 * v4 - v10 * aP1a; /*0x5af102*/
-  *(this + 10) = v10 * v4 + v9 * aP1a; /*0x5af10f*/
+      v2 = *(float *)&aP1;
+      aP1a = Math::SinCos((IUnknown *)COERCE_UNSIGNED_INT64(*(float *)&aP1));
+      v4 = Math::ArcTan2((IUnknown *)LODWORD(v2));
+      v5 = *this;
+      v6 = this->q008;
+      *this = v5 * v4 - v6 * aP1a;
+      this->q008 = v6 * v4 + v5 * aP1a;
+      v7 = this->q010;
+      v8 = this->q018;
+      this->q010 = v7 * v4 - v8 * aP1a;
+      this->q018 = v8 * v4 + v7 * aP1a;
+      v9 = this->q020;
+      v10 = this->q028;
+      this->q020 = v9 * v4 - v10 * aP1a;
+      this->q028 = v10 * v4 + v9 * aP1a;
 }
 } }
 // 0x5F1BF0
 namespace gamemd { int Stream::WriteBlock(int a1, int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Stream::WriteBlock(int this, CellStruct *aP1, int a3, int a4)
 {
-  int result; // eax
+      int result;
 
-  if ( !*(_DWORD *)(this + 60) ) /*0x5f1bf3*/
-    return 0; /*0x5f1bfa*/
-  result = (*(int (__thiscall **)(_DWORD, CellStruct *, int, int, _DWORD))(**(_DWORD **)(this + 56) + 8))( /*0x5f1c16*/
-             *(_DWORD *)(this + 56),
-             aP1,
-             a3,
-             a4,
-             0);
-  if ( !result ) /*0x5f1c1b*/
-    ++*(_DWORD *)(this + 104); /*0x5f1c1d*/
-  return result; /*0x5f1bfc*/
+      if ( !this->q03C )
+        return 0;
+      result = (*(int (__thiscall **)(_DWORD, CellStruct *, int, int, _DWORD))(**(_DWORD **)(this + 56) + 8))(
+                 this->q038,
+                 aP1,
+                 a3,
+                 a4,
+                 0);
+      if ( !result )
+        ++this->q068;
+      return result;
 }
 } }
 // 0x5F1C60
@@ -480,41 +468,37 @@ namespace gamemd { int Stream::ReadOLEObjects() {
 } }
 // 0x7B0440
 namespace gamemd { void* StreamWrapper::QueryInterface(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall StreamWrapper::QueryInterface(FactionSelectDialogControl_WorldDominationTour *this, char a2)
 {
-  void (__thiscall ***v3)(_DWORD, int); // ecx
-  void (__thiscall ***v4)(_DWORD, int); // ecx
-  void (__thiscall ***v5)(_DWORD, int); // ecx
+      void (__thiscall ***v3)(_DWORD, int); // ecx
+      void (__thiscall ***v4)(_DWORD, int); // ecx
+      void (__thiscall ***v5)(_DWORD, int); // ecx
 
-  v3 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)this + 4); /*0x7b0443*/
-  this->vfptr = &vt_WorldDominationTour_FactionSelectDialogControl; /*0x7b0446*/
-  if ( v3 ) /*0x7b044e*/
-    (**v3)(v3, 1); /*0x7b0454*/
-  v4 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)this + 5); /*0x7b0456*/
-  if ( v4 ) /*0x7b045b*/
-    (**v4)(v4, 1); /*0x7b0461*/
-  v5 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)this + 6); /*0x7b0463*/
-  if ( v5 ) /*0x7b0468*/
-    (**v5)(v5, 1); /*0x7b046e*/
-  OwnerDrawControl::InitVtable((DialogControl_OwnerDraw *)this); /*0x7b0472*/
-  if ( (a2 & 1) != 0 ) /*0x7b047c*/
-    __3_YAXPAX_Z(this); /*0x7b047f*/
-  return &this->vfptr; /*0x7b0489*/
+      v3 = (void (__thiscall ***)(_DWORD, int))this->q010;
+      this->vfptr = &vt_WorldDominationTour_FactionSelectDialogControl;
+      if ( v3 )
+        (**v3)(v3, 1);
+      v4 = (void (__thiscall ***)(_DWORD, int))this->q014;
+      if ( v4 )
+        (**v4)(v4, 1);
+      v5 = (void (__thiscall ***)(_DWORD, int))this->q018;
+      if ( v5 )
+        (**v5)(v5, 1);
+      OwnerDrawControl::InitVtable((DialogControl_OwnerDraw *)this);
+      if ( (a2 & 1) != 0 )
+        __3_YAXPAX_Z(this);
+      return &this->vfptr;
 }
 } }
 // 0x7BCAE0
 namespace gamemd { int Stream::GetField() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Stream::GetField(_DWORD *this)
 {
-  int (__thiscall ***v1)(_DWORD, int); // ecx
-  int result; // eax
+      int (__thiscall ***v1)(_DWORD, int); // ecx
+      int result;
 
-  v1 = (int (__thiscall ***)(_DWORD, int))*(this + 5); /*0x7bcae0*/
-  if ( v1 ) /*0x7bcae5*/
-    return (**v1)(v1, 1); /*0x7bcaeb*/
-  return result; /*0x7bcaed*/
+      v1 = (int (__thiscall ***)(_DWORD, int))this->q014;
+      if ( v1 )
+        return (**v1)(v1, 1);
+      return result;
 }
 } }
 // 0x7BE640

@@ -1181,8 +1181,8 @@ char __fastcall DSurface_DrawLineModulated(
         v87[1] = v21 - HIDWORD(v92); /*0x4bbdb7*/
         v88 = v20 - v90[1]; /*0x4bbdc7*/
         v89 = v21 - v90[2]; /*0x4bbdcb*/
-        v97 = Vector::2DMagnitudeMath(&v88); /*0x4bbddc*/
-        v22 = Vector::2DMagnitudeMath(v87); /*0x4bbde0*/
+        v97 = Vector::TwoDMagnitudeMath(&v88); /*0x4bbddc*/
+        v22 = Vector::TwoDMagnitudeMath(v87); /*0x4bbde0*/
         v23 = abs32(Math::RoundToInt((double)v22 / (double)v97 * (double)(v19 - v15))); /*0x4bbe13*/
         if ( v19 >= v15 ) /*0x4bbe17*/
           v100 = v19 - v23; /*0x4bbe28*/
@@ -1792,8 +1792,8 @@ char __thiscall DSurface_DrawLineFaded(
     v202[1] = v206 - v216; /*0x4bc97d*/
     v209 = v30 - v217; /*0x4bc990*/
     v210 = v206 - v218; /*0x4bc994*/
-    v193 = Vector::2DMagnitudeMath(&v209); /*0x4bc9a8*/
-    v32 = Vector::2DMagnitudeMath(v202); /*0x4bc9ac*/
+    v193 = Vector::TwoDMagnitudeMath(&v209); /*0x4bc9a8*/
+    v32 = Vector::TwoDMagnitudeMath(v202); /*0x4bc9ac*/
     v33 = abs32(Math::RoundToInt((double)v32 / (double)v193 * (double)(v27 - v29))); /*0x4bc9d3*/
     if ( v27 >= v29 ) /*0x4bc9d7*/
       v173 = v27 - v33; /*0x4bc9e5*/
@@ -1808,8 +1808,8 @@ char __thiscall DSurface_DrawLineFaded(
     v210 = v206 - v218; /*0x4bca23*/
     v217 = v30 - v217; /*0x4bca2a*/
     v218 = v31 - v218; /*0x4bca31*/
-    v194 = Vector::2DMagnitudeMath(&v217); /*0x4bca41*/
-    v36 = Vector::2DMagnitudeMath(&v209); /*0x4bca45*/
+    v194 = Vector::TwoDMagnitudeMath(&v217); /*0x4bca41*/
+    v36 = Vector::TwoDMagnitudeMath(&v209); /*0x4bca45*/
     v37 = abs32(Math::RoundToInt((double)v36 / (double)v194 * (double)(v27 - v29))); /*0x4bca6c*/
     if ( v29 <= v27 ) /*0x4bca70*/
       v151 = v29 + v37; /*0x4bca7c*/

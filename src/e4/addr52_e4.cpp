@@ -935,7 +935,7 @@ LABEL_3:
   for ( i = 0; i < 256; ++i )
   {
     esi20 = &stru_87C374.__pad_579C[3 * (i % 256) + 18544];
-    v9 = (ObjectClass *)Palette::6BitTo16Bit(
+    v9 = (ObjectClass *)Palette::SixBitTo16Bit(
                           v89,
                           4 * *esi20,
                           4 * stru_87C374.__pad_579C[3 * (i % 256) + 18545],
@@ -949,7 +949,7 @@ LABEL_3:
   for ( j = 0; j < 256; ++j )
   {
     v14 = &stru_87C374.__pad_579C[3 * (j % 256) + 15472];
-    v13 = (ObjectClass *)Palette::6BitTo16Bit(
+    v13 = (ObjectClass *)Palette::SixBitTo16Bit(
                            v90,
                            4 * *v14,
                            4 * stru_87C374.__pad_579C[3 * (j % 256) + 15473],
@@ -967,7 +967,7 @@ LABEL_3:
   for ( k = 0; k < 256; ++k )
   {
     v19 = &stru_87C374.__pad_579C[3 * (k % 256) + 13936];
-    v17 = (ObjectClass *)Palette::6BitTo16Bit(
+    v17 = (ObjectClass *)Palette::SixBitTo16Bit(
                            v87,
                            4 * *v19,
                            4 * stru_87C374.__pad_579C[3 * (k % 256) + 13937],
@@ -981,7 +981,7 @@ LABEL_3:
   v22 = &stru_B1D188.__pad_579C[53845];
   do
   {
-    v20 = (ObjectClass *)Palette::6BitTo16Bit(v85, *(v22 - 1), *v22, v22[1]);
+    v20 = (ObjectClass *)Palette::SixBitTo16Bit(v85, *(v22 - 1), *v22, v22[1]);
     ecx26 = &stru_87C374.__pad_579C[3 * (v21 % 256) + 19312];
     v22 += 3;
     ++v21;
@@ -1015,7 +1015,7 @@ LABEL_3:
   {
     v24 = (ConvertClass *)(3 * (m % 256));
     v30 = &a0[(_DWORD)v24];
-    v26 = (ObjectClass *)Palette::6BitTo16Bit(
+    v26 = (ObjectClass *)Palette::SixBitTo16Bit(
                            v82,
                            4 * a0[(_DWORD)v24],
                            4 * a0[(_DWORD)v24 + 1],
@@ -1041,7 +1041,7 @@ LABEL_3:
   {
     v29 = (ConvertClass *)(3 * (n % 256));
     v37 = &a0[(_DWORD)v29];
-    v31 = (ObjectClass *)Palette::6BitTo16Bit(
+    v31 = (ObjectClass *)Palette::SixBitTo16Bit(
                            v83,
                            4 * a0[(_DWORD)v29],
                            4 * a0[(_DWORD)v29 + 1],
@@ -1067,7 +1067,7 @@ LABEL_3:
   {
     v34 = (ConvertClass *)(3 * (ii % 256));
     esi41 = &a0[(_DWORD)v34];
-    v36 = (ObjectClass *)Palette::6BitTo16Bit(
+    v36 = (ObjectClass *)Palette::SixBitTo16Bit(
                            v84,
                            4 * a0[(_DWORD)v34],
                            4 * a0[(_DWORD)v34 + 1],
@@ -1093,7 +1093,7 @@ LABEL_3:
   {
     v39 = (ConvertClass *)(3 * (jj % 256));
     v51 = &a0[(_DWORD)v39];
-    v41 = (ObjectClass *)Palette::6BitTo16Bit(
+    v41 = (ObjectClass *)Palette::SixBitTo16Bit(
                            v86,
                            4 * a0[(_DWORD)v39],
                            4 * a0[(_DWORD)v39 + 1],
@@ -1119,7 +1119,7 @@ LABEL_3:
   {
     v44 = (ConvertClass *)(3 * (kk % 256));
     GameDirectoryCD = &a0[(_DWORD)v44];
-    v46 = (ObjectClass *)Palette::6BitTo16Bit(
+    v46 = (ObjectClass *)Palette::SixBitTo16Bit(
                            &v88,
                            4 * a0[(_DWORD)v44],
                            4 * a0[(_DWORD)v44 + 1],
@@ -1147,7 +1147,7 @@ LABEL_3:
     for ( kk = 0; kk < 256; ++kk )
     {
       GameDirectoryCD = (_BYTE *)(*(_DWORD *)&HouseClass_Player.__pad_5568[25820] + 2 * (kk % 256) + kk % 256);
-      v49 = (ObjectClass *)Palette::6BitTo16Bit(
+      v49 = (ObjectClass *)Palette::SixBitTo16Bit(
                              v81,
                              4 * *GameDirectoryCD,
                              4 * GameDirectoryCD[1],

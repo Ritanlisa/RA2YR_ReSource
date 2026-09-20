@@ -1411,7 +1411,7 @@ LABEL_32:
       v73 = v14; /*0x63b817*/
       aP1_32 = *(ObjectClass **)&v68.__pad_0[4]; /*0x63b81b*/
       v20 = Coord2D::Sub(&aP1_28, (AbstractClass *)&aP1, (IUnknown *)&v72); /*0x63b81f*/
-      Vector::2DMagnitudeMath(v20); /*0x63b826*/
+      Vector::TwoDMagnitudeMath(v20); /*0x63b826*/
       if ( v21 >= 37 ) /*0x63b82e*/
       {
         v22 = (IUnknown *)(((int)v72 + (int)aP1_28) / 2 - 10); /*0x63b857*/
@@ -1512,7 +1512,7 @@ LABEL_44:
       aP1 = v32; /*0x63bb1e*/
       v69 = *(_DWORD *)&v68.__pad_0[4]; /*0x63bb22*/
       v40 = Coord2D::Sub(&v68.NeedsSaveOrLink, &v68, (IUnknown *)&aP1); /*0x63bb26*/
-      Vector::2DMagnitudeMath(v40); /*0x63bb2d*/
+      Vector::TwoDMagnitudeMath(v40); /*0x63bb2d*/
       if ( v41 >= 37 ) /*0x63bb35*/
       {
         v42 = (IUnknown *)((int)&aP1->__pad_0[(unsigned int)v68.NeedsSaveOrLink] / 2 - 10); /*0x63bb61*/
