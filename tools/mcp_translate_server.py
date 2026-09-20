@@ -306,6 +306,15 @@ def ida_til_members(class_name, lo, hi, timeout=8):
 
 def pseudocode_offsets(code):
     offs = set()
+    # detect this-type scaling from the prototype line
+    scale = 4  # default _DWORD
+    m0 = re.search(r'\((\w+)\s*\*\s*this\b', code)
+    if m0:
+        w = m0.group(1)
+        scale = {'_BYTE': 1, 'unsigned __int8': 1, 'char': 1,
+                 '_WORD': 2, 'unsigned __int16': 2, 'short': 2,
+                 '_DWORD': 4, 'int': 4, 'unsigned int': 4,
+                 '_QWORD': 8, 'unsigned __int64': 8}.get(w, 4)
     for m in re.finditer(r'\(\s*\w+\s*\*\s*\*\s*\)\s*\(\s*\*?\w+\s*\+\s*(\d+)', code):
         offs.add(int(m.group(1)))
     for m in re.finditer(r'\[\s*\w+\s*\+\s*(\d{3,5})\s*\]', code):
@@ -313,7 +322,7 @@ def pseudocode_offsets(code):
     for m in re.finditer(r'\*\(\s*_BYTE\s*\*\)\s*\w+\s*\+\s*(\d+)', code):
         offs.add(int(m.group(1)))
     for m in re.finditer(r'\bthis\s*\+\s*(\d+)\b', code):
-        offs.add(int(m.group(1)) * 4)
+        offs.add(int(m.group(1)) * scale)
     return sorted(offs)
 
 
@@ -741,6 +750,11 @@ def replace_pseudocode(entry, new_body, dry_run):
     # line ("RetType Class::Method(...) {"), auto-strip it (and its matching
     # trailing '}') — the replacement span keeps the outer real signature, so
     # keeping this line would compile into a double signature (C1003 bait).
+    gap2_def = None
+    if marker_idx > 0:
+        prev_line = lines[marker_idx - 1].strip()
+        if prev_line.startswith("namespace ") and "{" in prev_line and "(" in prev_line:
+            gap2_def = lines[marker_idx - 1]
     stripped_note = None
     fname = (entry.get("function") or "").split("::")[-1]
     nl = new_body.split("\n")
