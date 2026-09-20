@@ -266,3 +266,66 @@ sig_lookup / backfill_accounts / backfill_get / canon_regen(async) /
 csp_anchor(async) / compare_parse / member_set(批量) / reopen / job_status
 ——第 6 步全循环（补锚→证据→重翻→验证→改名→重生成→标记→对拍账）单服务器
 闭环，无绕行路径。
+
+
+## 第 6 步 RA2MCP 阶段执行记录（2026-09-20 G27 第二轮）
+
+> 承 G26 首轮。本轮 = G27 计划项 1（hpp 声明补齐，发现布局陷阱后记账挂起）
+> + 项 2（RA2MCP 循环批量化）主体。会话中用户更新了 RA2MCP（#144 _BYTE 缩放
+> 修复、reopen 工具、pending 索引重建），且有并行会话同步提交（基线 12,856→
+> 12,653 诚实化重算为并行会话所为，非本会话回退）。
+
+### 账目
+
+| 项 | 值 |
+|---|---|
+| 翻译+验证+mark | **13 件净新增 completed**（techno 1 + building 10 + load_options 3 — 全 CFG verify PASS） |
+| 假完成修复 | 1 件（0x522cb0 IsEnteringOrCapturingStructure：completed=true 但体为伪码） |
+| 签名修复 | 2 件：GetGlobalValue(+int* outValue 出参，#135 收口)、CaptureBuilding(→bool(HouseClass* newOwner)，树上 Capture() 旧薄包装经查证 0x4fce80 并不调用 0x44d5d0，属早期误包装，改传 nullptr 保持可编译形状) |
+| pending | 3,979（G26 末口径）→ 3,950（含并行会话改动） |
+| 挂起 | IsFootprintBlocked(0x4578c0) 体已机械忠实替换、verify 差 2 个路由块（IDA goto 拼贴行/列循环 5 路由块 vs for 循环 4 块）——未 mark，留 G28 首批 |
+
+### G27 新增机制结论（CFG 雕形秘籍，G28 直接复用）
+
+1. **验证器 canon = ida_cache 快照伪码**，不是 get_context 的 live 反编译
+   （live 会 CSE 化简：CalcDrawPos 的 0x87F8E4 vs 快照 0x886FA4、GetFireError
+   的 v2 缓存消块）。翻译后以 `python tools/verify_execution_flow.py 0xADDR
+   --verbose` 的 IDA 块转储为对拍基准。
+2. **&& 融合粒度由括号控制**：深度 0（无括号）→ 逐条件分块；括号内 → 融合
+   单块。IDA 侧按二进制基本块分块——同块内的连续测试天然融合（CanOccupyFire
+   测试与 CanBeOccupied 同块消失）。用括号复刻。
+3. **|| 臂失败边汇入下一臂**；IDA 二进制每跳 = 独立块。共享 ret 块用
+   `((A && !B)) && !C || D` 形（arm1 融合 + && 分裂 + || 收尾）或嵌套 if 菱形。
+4. **事件对称性盲区**：IDA 侧 `(#375**)this + N` cast 不产事件（#373 族），
+   cpp 侧 this->X 必产事件 → 用局部中转（ownerHouse->recheckTechTree）消
+   cpp 侧多余 READ；`((char*)this + 904)` cast 形式 cpp 侧同样无事件，可反向
+   利用（ProgressTimer::GetValue 地址取参）。
+5. **canonicalize_branch_polarity 后逐边同构**是判定本体：块数不等 = 必败；
+   事件全对齐仍 FAIL 时逐边查 canonical DAG（--verbose 转储）。
+6. **RA2MCP 更新后**：replace_body 对已替换（translated）函数拒绝 →
+   `reopen 0xADDR` 回 pending 再改；mark 过的直接 reopen 恢复伪码重译。
+7. ml 注册通道照旧：`python .omo/g26_member_check.py --reg <Class> <off> <size> <Name>`
+   （本轮新增 BuildingClass q11B@283/q534@1332/q6E9@1769、LoadOptions
+   q188@392/q18C@396/q3F0@1008）。
+
+### 命名轮（随译做）
+
+- 小驼峰局部命名全量落实（missionState/storageTypeIndex/typePtr/ownerHouse/
+  gateStage/baseCoords/facingDelta 等按实际语义）。
+- 语义发现挂账（G28 定谳）：BuildingClass@1332(q534) 疑为生产/工厂状态指针；
+  @1769(q6E9) 疑为出售相关标志；Tiberium 数组全局 `BuildingClass_InstanceArray`
+  (0xB0F4EC) 疑名错（元素带 double@160/176 + TiberiumClass 布局特征）→
+  rename_symbol 四方同步待证据；0x522cb0 读 1732 与 q6C4 指针类型冲突
+  （同偏移跨类双义，hpp 补声明时须裁决）。
+- q204@516 落在 reloadTimer(TimeLeft) 内部——hpp 声明不可行，须改写访问
+  表达式或修 TimerStruct 布局，G28 裁决。
+
+### G27 计划项对账
+
+| G27 项 | 状态 |
+|---|---|
+| 1 hpp 声明补齐 | **部分**：q204@516 与 reloadTimer 重叠、Unit 级偏移 this 归属两陷阱 → 记账挂起（见上）；q1524 族 AntiAir/AntiArmor/AntiInfantry 已有 hpp 声明无需补 |
+| 2 循环批量化 | **主体完成**：13 件净增 + 雕形秘籍沉淀（吞吐受逐件 CFG 雕形成本限制，见 g28_prep 速率预估） |
+| 3 命名轮 | **随译做** + 语义发现挂账（上表） |
+| 4 收割机理审计 | 未动（G28 项） |
+| 5 签名缺口补锚 | 未动（G28 项） |
