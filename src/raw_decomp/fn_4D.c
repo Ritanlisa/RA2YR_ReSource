@@ -477,9 +477,9 @@ _DWORD *__thiscall sub_4D08B0(_DWORD *this)
   this->q06C = 0; /*0x4d0903*/
   *((_BYTE *)this + 116) = 1; /*0x4d0906*/
   *this = &FoggedObjectClass::`vftable'; /*0x4d0909*/
-  this->vtable2 = &FoggedObjectClass::`vftable'; /*0x4d090f*/
-  this->vtable3 = &FoggedObjectClass::`vftable'; /*0x4d0916*/
-  this->vtable4 = &vt_FoggedObjectClass; /*0x4d091d*/
+  this->Items = &FoggedObjectClass::`vftable'; /*0x4d090f*/
+  this->Capacity = &FoggedObjectClass::`vftable'; /*0x4d0916*/
+  *(this + 3) = &vt_FoggedObjectClass; /*0x4d091d*/
   if ( MEMORY[0x8B3D20] < MEMORY[0x8B3D18] /*0x4d0956*/
     || (MEMORY[0x8B3D1D] || !MEMORY[0x8B3D18])
     && MEMORY[0x8B3D24] > 0

@@ -592,7 +592,7 @@ namespace gamemd { int TacticalClass::ClickFindOverlay(void* a1, void* a2, int a
 }
 } }
 
-// ==== BACKFILL 0x006D4DB0  HouseClass::SetOwnerName  cls=HouseClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x006D4DB0  HouseClass::SetOwnerName  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { void* HouseClass::SetOwnerName(void* a1, int a2) {
 {
       CampaignScore *result;
@@ -604,7 +604,7 @@ namespace gamemd { void* HouseClass::SetOwnerName(void* a1, int a2) {
       }
       else
       {
-        this->vtable5 = 0;
+        this->arrayIndex = 0;
         this->psychicDetectionBuildings = -1;
         this->psychicDetectionBuildings = a3;
         return (wchar_t *)a3;

@@ -1203,7 +1203,7 @@ _BYTE *__thiscall SuperWeaponTypeClass::Construct(_BYTE *this, AbstractClass *aP
   this->buildtimeBuildingsMult = 0; /*0x511404*/
   this->veteranAircraft = -1; /*0x51140a*/
   this->veteranAircraftCount = -1; /*0x511410*/
-  this->suffix_4 = -1; /*0x511416*/
+  this->suffix[4] = -1; /*0x511416*/
   this->wallOwner = 0; /*0x51141c*/
   *((_DWORD *)this + 50) = 0; /*0x511427*/
   this->q0CC = 1072693248; /*0x51142d*/
@@ -1219,29 +1219,29 @@ _BYTE *__thiscall SuperWeaponTypeClass::Construct(_BYTE *this, AbstractClass *aP
   this->q0EC = 1072693248; /*0x511469*/
   this->q0F4 = 1072693248; /*0x51146f*/
   this->q0FC = 1072693248; /*0x511475*/
-  this->q100 = 1065353216; /*0x51148a*/
-  this->q104 = 1065353216; /*0x511490*/
-  this->q108 = 1065353216; /*0x511496*/
-  this->q10C = 1065353216; /*0x51149c*/
-  this->q110 = 1065353216; /*0x5114a2*/
-  this->q114 = 1065353216; /*0x5114a8*/
-  this->q118 = 1065353216; /*0x5114ae*/
-  this->q11C = 1065353216; /*0x5114b4*/
-  this->q120 = 1065353216; /*0x5114ba*/
-  this->q124 = 1065353216; /*0x5114c0*/
-  this->q128 = 1065353216; /*0x5114c6*/
-  this->q12C = 1065353216; /*0x5114cc*/
-  this->q130 = 1065353216; /*0x5114d2*/
-  this->q134 = 1065353216; /*0x5114d8*/
-  this->q138 = 1065353216; /*0x5114de*/
-  this->q13C = 1065353216; /*0x5114e4*/
-  this->q140 = 1065353216; /*0x5114ea*/
-  this->q144 = 1065353216; /*0x5114f0*/
-  this->q148 = 1065353216; /*0x5114f6*/
+  this->armorInfantryMult_e = 1065353216; /*0x51148a*/
+  this->armorUnitsMult_e = 1065353216; /*0x511490*/
+  this->armorAircraftMult_e = 1065353216; /*0x511496*/
+  this->armorBuildingsMult_e = 1065353216; /*0x51149c*/
+  this->armorDefensesMult_e = 1065353216; /*0x5114a2*/
+  this->costInfantryMult_e = 1065353216; /*0x5114a8*/
+  this->costUnitsMult_e = 1065353216; /*0x5114ae*/
+  this->costAircraftMult_e = 1065353216; /*0x5114b4*/
+  this->costBuildingsMult_e = 1065353216; /*0x5114ba*/
+  this->costDefensesMult_e = 1065353216; /*0x5114c0*/
+  this->currentSpeed_infantry_mult_e = 1065353216; /*0x5114c6*/
+  this->currentSpeed_units_mult_e = 1065353216; /*0x5114cc*/
+  this->currentSpeed_aircraft_mult_e = 1065353216; /*0x5114d2*/
+  this->buildtimeInfantryMult_e = 1065353216; /*0x5114d8*/
+  this->buildtimeUnitsMult_e = 1065353216; /*0x5114de*/
+  this->buildtimeAircraftMult_e = 1065353216; /*0x5114e4*/
+  this->buildtimeBuildingsMult_e = 1065353216; /*0x5114ea*/
+  this->buildtimeDefensesMult_e = 1065353216; /*0x5114f0*/
+  this->incomeMult_e = 1065353216; /*0x5114f6*/
   InfantryTypeVector::Construct2((_DWORD *)this + 83, 0, 0); /*0x5114fc*/
-  this->q160 = 10; /*0x511501*/
-  this->q15C = 0; /*0x511508*/
-  this->q14C = &vt_TypeList_InfantryTypeClass_const; /*0x51150b*/
+  this->veteranAircraftCount_e = 10; /*0x511501*/
+  this->veteranAircraft_e = 0; /*0x511508*/
+  this->veteranInfantry_e = &vt_TypeList_InfantryTypeClass_const; /*0x51150b*/
   UnitTypeVector::ConstructUnitTypeVectorClass((_DWORD *)this + 90, 0, 0); /*0x51151b*/
   *((_DWORD *)this + 95) = 10; /*0x511520*/
   *((_DWORD *)this + 94) = 0; /*0x511527*/
@@ -1320,7 +1320,7 @@ LABEL_16:
 _DWORD *__thiscall HouseTypeClass::loadVeteranWeapons(_DWORD *this, HouseTypeClass *aP1)
 {
   AbstractTypeClass::Init((int)this, (AbstractTypeClass *)aP1); /*0x511658*/
-  this->q14C = &vt_TypeList_InfantryTypeClass_const; /*0x51165d*/
+  this->veteranInfantry_e = &vt_TypeList_InfantryTypeClass_const; /*0x51165d*/
   *(this + 90) = &vt_TypeList_UnitTypeClass_const; /*0x511667*/
   this->q184 = &vt_TypeList_AircraftTypeClass_const; /*0x511671*/
   *this = &HouseTypeClass::`vftable'; /*0x51167b*/

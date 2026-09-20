@@ -2844,19 +2844,19 @@ IsometricTileTypeClass * IsometricTileTypeClass::ddtor(char a2)
 unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
 {
 {
-    this->vtable2 = 0;
-    this->vtable3 = a2;
-    this->vtable4 = 1;
+    this->IsometricTileTypeClass_field_0x04 = 0;
+    this->IsometricTileTypeClass_field_0x08 = a2;
+    this->IsometricTileTypeClass_field_0x0C = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_unsigned_short;
     if ( a2 )
   {
     if ( a3 )
     {
-    this->vtable2 = a3;
+    this->IsometricTileTypeClass_field_0x04 = a3;
     return this;
     }
-    this->vtable2 = __2_YAPAXI_Z(4 * a2);
+    this->IsometricTileTypeClass_field_0x04 = __2_YAPAXI_Z(4 * a2);
     this->IsAllocated = 1;
   }
     return this;
@@ -3142,7 +3142,7 @@ int JumpjetLocomotionClass::ConvertCoordToCell_0(int a1)
 }
 }
 
-// ==== BACKFILL 0x0054B980  HouseClass::Set  cls=HouseClass  sig=csp  renamed_refs=6  residual=- ====
+// ==== BACKFILL 0x0054B980  HouseClass::Set  cls=HouseClass  sig=csp  renamed_refs=5  residual=- ====
 char HouseClass::Set()
 {
 {
@@ -3156,7 +3156,7 @@ char HouseClass::Set()
     (*(void (__thiscall **)(int, int, int))(**(int **)(this + 12) + 1348))( this->vtable4, 0, 1072693248);
     Value = ProgressTimer::GetValue((short *)(this->vtable4 + 904), &v6);
     FacingClass::Set_SyncLog((char *)(this + 84), Value);
-    v4 = this->vtable7;
+    v4 = this->relatedTags;
     this->absorbersCapacity = 0;
     this->bunkersCount = 0;
     this->bunkers = 0;

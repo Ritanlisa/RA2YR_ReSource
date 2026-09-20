@@ -1967,7 +1967,7 @@ char __thiscall TechnoClass::sub_522A60(_DWORD *this, int a2, int a3)
     && (v5 = this - 2, Team::AllMembersValid(this - 2)) )
   {
     (*(void (__thiscall **)(_DWORD *, int))(*v5 + 628))(this - 2, 8); /*0x522aa2*/
-    v6 = this->q210; /*0x522aa8*/
+    v6 = this->currentBurstCount_e; /*0x522aa8*/
     if ( !v6 || v6 == *(this + 359) ) /*0x522ab8*/
     {
       FootClass::ClearPathIndex(this - 2); /*0x522ad4*/
@@ -2073,7 +2073,7 @@ int __thiscall sub_522D20(void *this)
 // ==== 0x00522D30  SlaveManagerClass::CheckIsOne  this=TechnoClass  sig=csp ====
 bool __thiscall sub_522D30(void *this)
 {
-  return ((double (__thiscall *)(void *))*(_DWORD *)(this->q2B4)(this) == 1.0; /*0x522d47*/
+  return ((double (__thiscall *)(void *))*(_DWORD *)(this->sprayOffsetIndex_e)(this) == 1.0; /*0x522d47*/
 }
 
 

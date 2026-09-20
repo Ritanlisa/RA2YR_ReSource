@@ -1100,16 +1100,15 @@ namespace gamemd {
 void FoggedObjectClass_42::ClearBuffer()
 {
 {
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->FoggedObjectClass_42_field_0x10 = 0;
+    void *v2 = this->Items;
+    this->Count = 0;
     if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->FoggedObjectClass_42_field_0x4 = 0;
-  }
+    {
+        OperatorDelete(v2);
+        this->Items = 0;
+    }
     this->IsAllocated = 0;
-    this->FoggedObjectClass_42_field_0x8 = 0;
+    this->Capacity = 0;
 }
 }
 } // namespace gamemd
@@ -1275,44 +1274,40 @@ namespace gamemd {
 char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
 {
 {
-    int *v4;
-    int v5;
-    int i;
-    int v7;
     if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( !v4 )
-    return 0;
-    if ( this->FoggedObjectClass_42_field_0x4 )
     {
-    v5 = this->FoggedObjectClass_42_field_0x8;
-    if ( a2 < v5 )
-    v5 = a2;
-    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->FoggedObjectClass_42_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-      {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->FoggedObjectClass_42_field_0x4 = 0;
-      }
+        this->IsInitialized = 0;
+        unsigned int *v4 = a3;
+        if ( !a3 )
+            v4 = (unsigned int *)OperatorNew(4 * a2);
+        this->IsInitialized = 1;
+        if ( !v4 )
+            return 0;
+        if ( this->Items )
+        {
+            int v5 = this->Capacity;
+            if ( a2 < v5 )
+                v5 = a2;
+            int i;
+            for ( i = 0; i < v5; v4[i - 1] = this->Items[i - 1] )
+                ++i;
+            if ( this->IsAllocated )
+            {
+                OperatorDelete(this->Items);
+                this->Items = 0;
+            }
+        }
+        this->Items = v4;
+        this->Capacity = a2;
+        this->IsAllocated = a3 == 0;
     }
-    this->FoggedObjectClass_42_field_0x4 = v4;
-    this->FoggedObjectClass_42_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-  }
     else
-  {
-    this->FindItem();
-  }
-    v7 = this->FoggedObjectClass_42_field_0x8;
-    if ( v7 < this->FoggedObjectClass_42_field_0x10 )
-    this->FoggedObjectClass_42_field_0x10 = v7;
+    {
+        this->GetClassIdentifier();
+    }
+    int v7 = this->Capacity;
+    if ( v7 < this->Count )
+        this->Count = v7;
     return 1;
 }
 }

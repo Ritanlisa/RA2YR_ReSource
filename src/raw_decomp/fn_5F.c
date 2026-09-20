@@ -6741,10 +6741,10 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
       CCFileClass::Construct(v51, Buffer); /*0x5f86d4*/
       if ( CCFileClass::Open(v51, 0) ) /*0x5f86de*/
       {
-        v26 = (WaveClass *)this->q0B8; /*0x5f86eb*/
+        v26 = (WaveClass *)this->BarrelVoxel_e; /*0x5f86eb*/
         if ( v26 ) /*0x5f86f3*/
         {
-          WaveClass::Destroy(this->q0B8); /*0x5f86f7*/
+          WaveClass::Destroy(this->BarrelVoxel_e); /*0x5f86f7*/
           __3_YAXPAX_Z(v26); /*0x5f86fd*/
         }
         v27 = __2_YAPAXI_Z(0x1Cu); /*0x5f8707*/
@@ -6752,7 +6752,7 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
           v28 = File::LoadFileVXL(v27, (int)v51, 0); /*0x5f871b*/
         else
           v28 = 0; /*0x5f8722*/
-        this->q0B8 = v28; /*0x5f8726*/
+        this->BarrelVoxel_e = v28; /*0x5f8726*/
         if ( !v28 || *(_BYTE *)v28 ) /*0x5f872e*/
           v50 = 1; /*0x5f8732*/
         sprintf(Filename, MEMORY[0x832ABC], v2); /*0x5f8745*/
@@ -6808,10 +6808,10 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
       CCFileClass::Construct(v51, Buffer); /*0x5f8310*/
       if ( CCFileClass::Open(v51, 0) ) /*0x5f831a*/
       {
-        v10 = (WaveClass *)this->q0B8; /*0x5f8327*/
+        v10 = (WaveClass *)this->BarrelVoxel_e; /*0x5f8327*/
         if ( v10 ) /*0x5f832f*/
         {
-          WaveClass::Destroy(this->q0B8); /*0x5f8333*/
+          WaveClass::Destroy(this->BarrelVoxel_e); /*0x5f8333*/
           __3_YAXPAX_Z(v10); /*0x5f8339*/
         }
         v11 = __2_YAPAXI_Z(0x1Cu); /*0x5f8343*/
@@ -6819,7 +6819,7 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
           v12 = File::LoadFileVXL(v11, (int)v51, 0); /*0x5f8357*/
         else
           v12 = 0; /*0x5f835e*/
-        this->q0B8 = v12; /*0x5f8362*/
+        this->BarrelVoxel_e = v12; /*0x5f8362*/
         if ( !v12 || *(_BYTE *)v12 ) /*0x5f836a*/
           v50 = 1; /*0x5f836e*/
         sprintf(Filename, MEMORY[0x832AE0], this + 504); /*0x5f8381*/
@@ -6865,10 +6865,10 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
       CCFileClass::Construct(v51, Buffer); /*0x5f84d0*/
       if ( CCFileClass::Open(v51, 0) ) /*0x5f84da*/
       {
-        v17 = (WaveClass *)this->q0B8; /*0x5f84e7*/
+        v17 = (WaveClass *)this->BarrelVoxel_e; /*0x5f84e7*/
         if ( v17 ) /*0x5f84ef*/
         {
-          WaveClass::Destroy(this->q0B8); /*0x5f84f3*/
+          WaveClass::Destroy(this->BarrelVoxel_e); /*0x5f84f3*/
           __3_YAXPAX_Z(v17); /*0x5f84f9*/
         }
         v18 = __2_YAPAXI_Z(0x1Cu); /*0x5f8503*/
@@ -6876,7 +6876,7 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
           v19 = File::LoadFileVXL(v18, (int)v51, 0); /*0x5f8517*/
         else
           v19 = 0; /*0x5f851e*/
-        this->q0B8 = v19; /*0x5f8522*/
+        this->BarrelVoxel_e = v19; /*0x5f8522*/
         if ( !v19 || *(_BYTE *)v19 ) /*0x5f852a*/
           v50 = 1; /*0x5f852e*/
         sprintf(Filename, MEMORY[0x832AD8], this + 504); /*0x5f8541*/
@@ -7020,12 +7020,12 @@ LABEL_123:
     }
     else
     {
-      v44 = (WaveClass *)this->q0B8; /*0x5f8ad5*/
+      v44 = (WaveClass *)this->BarrelVoxel_e; /*0x5f8ad5*/
       if ( v44 ) /*0x5f8add*/
       {
-        WaveClass::Destroy(this->q0B8); /*0x5f8ae1*/
+        WaveClass::Destroy(this->BarrelVoxel_e); /*0x5f8ae1*/
         __3_YAXPAX_Z(v44); /*0x5f8ae7*/
-        this->q0B8 = 0; /*0x5f8aef*/
+        this->BarrelVoxel_e = 0; /*0x5f8aef*/
       }
       v45 = (SomeVoxelCache *)*((_DWORD *)this + 47); /*0x5f8af5*/
       if ( v45 ) /*0x5f8afd*/
@@ -10809,7 +10809,7 @@ _DWORD *__thiscall OverlayTypeClass::OverlayTypeClass(_DWORD *this, ObjectClass 
   CCINIClass *v6; // edx
 
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x5fe259*/
-  this->q2A0 = 1; /*0x5fe265*/
+  this->Strength_e = 1; /*0x5fe265*/
   *(this + 169) = 1; /*0x5fe26b*/
   *((_BYTE *)this + 684) = 1; /*0x5fe271*/
   *((_BYTE *)this + 691) = 1; /*0x5fe277*/

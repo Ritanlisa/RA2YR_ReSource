@@ -36,7 +36,7 @@ _DWORD *__thiscall BuildingTypeClass::GetSizeInLeptons(_DWORD *this, _DWORD *a2)
   int v4; // edx
   int v5; // eax
 
-  v2 = this->qEF0; /*0x464af0*/
+  v2 = this->DeployingAnim_e; /*0x464af0*/
   v3 = unk_89DDB8 * this->DeployingAnimLoaded; /*0x464afc*/
   v2 *= 4; /*0x464b03*/
   v4 = *(int *)((char *)dword_8192B8 + v2); /*0x464b0b*/
@@ -116,17 +116,17 @@ int __thiscall BuildingTypeClass::UpdatePower(#376 *this)
   Power::TimerProcess(this->FoundationOutside); /*0x464bbe*/
   Power::TimerProcess(this->BuildingTypeClass_field_ED8); /*0x464bcc*/
   Power::TimerProcess(this->DoorStages); /*0x464bda*/
-  Power::TimerProcess(this->BuildingAnimFrame_6); /*0x464be8*/
-  Power::TimerProcess(this->BuildingAnim_0x15); /*0x464bf6*/
+  Power::TimerProcess(this->BuildingAnimFrame[6]); /*0x464be8*/
+  Power::TimerProcess(this->BuildingAnim[0x15]); /*0x464bf6*/
   Power::TimerProcess(this->Upgrades); /*0x464c04*/
-  Power::TimerProcess(this->qEF0); /*0x464c12*/
+  Power::TimerProcess(this->DeployingAnim_e); /*0x464c12*/
   Power::TimerProcess(this->DeployingAnimLoaded); /*0x464c20*/
   Power::TimerProcess(this->UnderDoorAnim); /*0x464c2e*/
   Power::TimerProcess(this->UnderDoorAnimLoaded); /*0x464c3c*/
   Power::TimerProcess(this->Rubble); /*0x464c4a*/
   Checksummer::Add_Buffer((unsigned int *)v54, (unsigned __int8 *)this + 3844, 72); /*0x464c5a*/
   Checksummer::Add_Buffer((unsigned int *)v54, (unsigned __int8 *)this + 3916, 1428); /*0x464c6d*/
-  Power::TimerProcess(this->q14E0); /*0x464c7b*/
+  Power::TimerProcess(this->Upgrades_e); /*0x464c7b*/
   v2 = Power::TimerProcess(this->SpecialZOverlayZAdjust); /*0x464c89*/
   LOBYTE(v2) = *((_BYTE *)this + 5454); /*0x464c8e*/
   Power::FlagProcess(v54, v2); /*0x464c97*/
@@ -910,7 +910,7 @@ BOOL __thiscall BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable(_DWOR
   result = 0; /*0x465d68*/
   if ( this->VoiceMove ) /*0x465d40*/
   {
-    v1 = this->qEF0; /*0x465d55*/
+    v1 = this->DeployingAnim_e; /*0x465d55*/
     if ( dword_8192B8[v1] == 1 && dword_819310[v1] == 1 ) /*0x465d66*/
       return 1; /*0x465d48*/
   }
@@ -5205,7 +5205,7 @@ _BYTE *__thiscall BulletTypeClass::Construct(_BYTE *this, ObjectClass *aP1)
   *(this + 676) = 0; /*0x46bc37*/
   *(this + 677) = 1; /*0x46bc3d*/
   this->Color = 3; /*0x46bc44*/
-  this->q2E4 = 3; /*0x46bc4a*/
+  this->ScaledSpawnDelay_e = 3; /*0x46bc4a*/
   *(this + 678) = 0; /*0x46bc50*/
   *(this + 679) = 0; /*0x46bc59*/
   *(this + 680) = 0; /*0x46bc5f*/
@@ -5214,17 +5214,17 @@ _BYTE *__thiscall BulletTypeClass::Construct(_BYTE *this, ObjectClass *aP1)
   this->Cluster = 1; /*0x46bc72*/
   this->AirburstWeapon = 0; /*0x46bc7c*/
   this->ShrapnelWeapon = 0; /*0x46bc82*/
-  this->q2B8 = 0; /*0x46bc88*/
+  this->ShrapnelCount_e = 0; /*0x46bc88*/
   this->DetonationAltitude = 0; /*0x46bc8e*/
   *(this + 704) = 0; /*0x46bc94*/
   this->Acceleration = 1072168960; /*0x46bc9a*/
-  this->q2D4 = 0; /*0x46bca4*/
-  this->q2D8 = 0; /*0x46bcaa*/
-  this->q2DC = 0; /*0x46bcb0*/
-  this->q2E0 = 0; /*0x46bcb6*/
-  this->q2E8 = 0; /*0x46bcbc*/
+  this->Trailer_e = 0; /*0x46bca4*/
+  this->ROT_e = 0; /*0x46bcaa*/
+  this->CourseLockDuration_e = 0; /*0x46bcb0*/
+  this->SpawnDelay_e = 0; /*0x46bcb6*/
+  this->Scalable_e = 0; /*0x46bcbc*/
   *(this + 748) = 0; /*0x46bcc2*/
-  this->q2F0 = 0; /*0x46bcc8*/
+  this->AnimLow_e = 0; /*0x46bcc8*/
   *(this + 756) = 0; /*0x46bcce*/
   *(this + 757) = 0; /*0x46bcd4*/
   *(this + 758) = 0; /*0x46bcda*/
@@ -5716,8 +5716,8 @@ int __thiscall BulletTypeClass::_vt10(_DWORD *this, int a2, int a3)
   int result; // eax
 
   result = a2; /*0x46c820*/
-  if ( a2 == this->q2D8 ) /*0x46c82c*/
-    this->q2D8 = 0; /*0x46c82e*/
+  if ( a2 == this->ROT_e ) /*0x46c82c*/
+    this->ROT_e = 0; /*0x46c82e*/
   return result; /*0x46c838*/
 }
 

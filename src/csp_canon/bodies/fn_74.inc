@@ -385,13 +385,13 @@ int UnitTypeClass::PowerDrainUpdate(int * a2)
     Power::FlagProcess(a2, v6);
     LOBYTE(v7) = this->UnitTypeClass_field_E10;
     v8 = Power::FlagProcess(a2, v7);
-    LOBYTE(v8) = this->qE11;
+    LOBYTE(v8) = this->HasTurret_e;
     Power::FlagProcess(a2, v8);
     LOBYTE(v9) = this->IsTilter;
     Power::FlagProcess(a2, v9);
-    LOBYTE(v10) = this->qE13;
+    LOBYTE(v10) = this->IsSimpleDeployer_e;
     v11 = Power::FlagProcess(a2, v10);
-    LOBYTE(v11) = this->qE15;
+    LOBYTE(v11) = this->UseTurretShadow_e;
     return Power::FlagProcess(a2, v11);
 }
 }

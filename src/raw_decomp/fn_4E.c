@@ -542,30 +542,30 @@ char __thiscall FoggedObjectClass_42_::sub_4E0700(void *this, int a2, _DWORD *a3
     *((_BYTE *)this + 12) = 1; /*0x4e0732*/
     if ( !v4 ) /*0x4e0736*/
       return 0; /*0x4e07aa*/
-    if ( this->vtable2 ) /*0x4e0738*/
+    if ( this->Items ) /*0x4e0738*/
     {
-      v5 = this->vtable3; /*0x4e073f*/
+      v5 = this->Capacity; /*0x4e073f*/
       if ( a2 < v5 ) /*0x4e0744*/
         v5 = a2; /*0x4e0746*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->vtable2 + 4 * i - 4) ) /*0x4e074c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x4e074c*/
         ++i; /*0x4e0751*/
       if ( *((_BYTE *)this + 13) ) /*0x4e075e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e0769*/
-        this->vtable2 = 0; /*0x4e0771*/
+        this->Items = 0; /*0x4e0771*/
       }
     }
-    this->vtable2 = v4; /*0x4e077a*/
-    this->vtable3 = a2; /*0x4e0782*/
+    this->Items = v4; /*0x4e077a*/
+    this->Capacity = a2; /*0x4e0782*/
     *((_BYTE *)this + 13) = a3 == 0; /*0x4e0785*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->vtable4)(this); /*0x4e078e*/
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4e078e*/
   }
-  v7 = this->vtable3; /*0x4e0791*/
-  if ( v7 < this->uniqueId ) /*0x4e0799*/
-    this->uniqueId = v7; /*0x4e079b*/
+  v7 = this->Capacity; /*0x4e0791*/
+  if ( v7 < this->Count ) /*0x4e0799*/
+    this->Count = v7; /*0x4e079b*/
   return 1; /*0x4e079e*/
 }
 
@@ -577,7 +577,7 @@ int __thiscall FoggedObjectClass_42_::sub_4E07B0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->vtable2; /*0x4e07b0*/
+  v2 = this->Items; /*0x4e07b0*/
   result = 0; /*0x4e07b3*/
   if ( v2 <= 0 ) /*0x4e07b8*/
     return -1; /*0x4e07cf*/

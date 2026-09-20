@@ -679,8 +679,8 @@ int __thiscall WaveClass::Update(#374 *this)
       break; /*0x760ff5*/
     case 1: /*0x760f65*/
     case 2: /*0x760f65*/
-      result = this->q1D0 - 6; /*0x760fff*/
-      this->q1D0 = result; /*0x761001*/
+      result = this->LaserIntensity_e - 6; /*0x760fff*/
+      this->LaserIntensity_e = result; /*0x761001*/
       if ( result < 32 ) /*0x76100a*/
         goto LABEL_9; /*0x76100a*/
       break; /*0x76100a*/

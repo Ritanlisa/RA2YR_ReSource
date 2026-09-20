@@ -631,7 +631,7 @@ int __thiscall MissionClass::OverrideMission_SyncLog(#377 *this)
   int v4; // [esp+10h] [ebp+8h]
   TechnoClass *aP3; // [esp+14h] [ebp+Ch]
 
-  this->q2B8 = this->q2B4; /*0x7013bb*/
+  this->isUncrushable_e = this->sprayOffsetIndex_e; /*0x7013bb*/
   AbstractClass::COMStub_125((int)this, v3, v4, aP3); /*0x7013c1*/
   return (*(int (__thiscall **)(#377 *, int))(*(_DWORD *)this + 968))(this, v4); /*0x7013d1*/
 }
@@ -644,7 +644,7 @@ int __thiscall BuildingClass::_vt126(#377 *this)
 
   if ( AbstractClass::COMStub_126((int)this) ) /*0x7013e3*/
   {
-    result = (*(int (__thiscall **)(#377 *, _DWORD))(*(_DWORD *)this + 968))(this, this->q2B8); /*0x7013f7*/
+    result = (*(int (__thiscall **)(#377 *, _DWORD))(*(_DWORD *)this + 968))(this, this->isUncrushable_e); /*0x7013f7*/
     LOBYTE(result) = 1; /*0x7013fd*/
   }
   else
@@ -2653,7 +2653,7 @@ int __thiscall BuildingClass::_vt267(#377 *this)
   _BYTE v6[12]; // [esp+4h] [ebp-Ch] BYREF
   _DWORD *v7; // [esp+14h] [ebp+4h]
 
-  if ( (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 388))(this) == 1 && (v2 = this->q2B4) != 0 ) /*0x705cbb*/
+  if ( (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 388))(this) == 1 && (v2 = this->sprayOffsetIndex_e) != 0 ) /*0x705cbb*/
   {
     v3 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v2 + 88))(v2, v6); /*0x705cc7*/
     *v7 = *v3; /*0x705cd1*/
@@ -5423,10 +5423,10 @@ int __thiscall TechnoClass::BeginFiringSequence(#377 *this)
   this->targetingTimer = MEMORY[0xA8ED84]; /*0x70986c*/
   *((_DWORD *)this + 97) = v10; /*0x7098b0*/
   this->q188 = v2; /*0x7098b6*/
-  if ( this->q2B4 && *((_BYTE *)this + 1292) ) /*0x7098c3*/
+  if ( this->sprayOffsetIndex_e && *((_BYTE *)this + 1292) ) /*0x7098c3*/
   {
-    v3 = (*(int (__thiscall **)(#377 *, _DWORD))(this->spawnManager)(this, this->q2B4); /*0x7098d2*/
-    v4 = (*(int (__thiscall **)(#377 *, _DWORD, int, int))(*(_DWORD *)this + 960))(this, this->q2B4, v3, 1); /*0x7098e6*/
+    v3 = (*(int (__thiscall **)(#377 *, _DWORD))(this->spawnManager)(this, this->sprayOffsetIndex_e); /*0x7098d2*/
+    v4 = (*(int (__thiscall **)(#377 *, _DWORD, int, int))(*(_DWORD *)this + 960))(this, this->sprayOffsetIndex_e, v3, 1); /*0x7098e6*/
     if ( v4 == 6 ) /*0x7098ef*/
     {
       v5 = (_DWORD *)this->captureManager; /*0x7098f1*/
@@ -5442,7 +5442,7 @@ LABEL_11:
       (*(void (__thiscall **)(#377 *, _DWORD))(*(_DWORD *)this + 968))(this, 0); /*0x70990c*/
   }
 LABEL_12:
-  if ( !this->q2B4 )
+  if ( !this->sprayOffsetIndex_e )
   {
     v6 = (*(int (__thiscall **)(#377 *, int, int, _DWORD))(*(_DWORD *)this + 964))(this, v12 & 3, v11, 0); /*0x70993c*/
     if ( *(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 1712) )
@@ -5453,7 +5453,7 @@ LABEL_12:
     {
       if ( v6 ) /*0x709959*/
         (*(void (__thiscall **)(#377 *, int))(*(_DWORD *)this + 968))(this, v6); /*0x709960*/
-      v7 = (*(int (__thiscall **)(#377 *, _DWORD))(this->spawnManager)(this, this->q2B4); /*0x709971*/
+      v7 = (*(int (__thiscall **)(#377 *, _DWORD))(this->spawnManager)(this, this->sprayOffsetIndex_e); /*0x709971*/
       if ( v6 )
         v6 = (*(_BYTE *)(v6 + 20) & 1) != 0 ? v6 : 0;
       v8 = *(_DWORD *)(*(int (__thiscall **)(#377 *, int))(*(_DWORD *)this + 1016))(this, v7); /*0x709992*/
@@ -5461,7 +5461,7 @@ LABEL_12:
         *(_DWORD *)(v6 + 112) -= TechnoClass::ComputeAudioFalloffDamage(this, v6, v8); /*0x7099b5*/
     }
   }
-  return this->q2B4 != 0; /*0x7099c2*/
+  return this->sprayOffsetIndex_e != 0; /*0x7099c2*/
 }
 
 
@@ -7439,7 +7439,7 @@ bool __thiscall TechnoClass_ShouldScanArea(void *this, _DWORD *a2)
   v13 = v12; /*0x70d27c*/
   if ( !LayerClass::IsWithinUsableArea(&MEMORY[0x87F7E8], (__int16 *)&v13, 1) ) /*0x70d286*/
     return 0; /*0x70d40a*/
-  v5 = (*(int (__thiscall **)(void *))(this->q1C8)(this); /*0x70d2a3*/
+  v5 = (*(int (__thiscall **)(void *))(this->airstrikeTintStage_e)(this); /*0x70d2a3*/
   if ( !VeterancyStruct::IsVeteran((float *)this + 84) && !VeterancyStruct::IsElite((float *)this + 84) ) /*0x70d2b9*/
     goto LABEL_17; /*0x70d2b9*/
   v6 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 132))(this); /*0x70d2c7*/
@@ -7868,7 +7868,7 @@ int __thiscall TechnoClass::OnEnterCell(#377 *this)
   }
   else
   {
-    v3 = this->q20C; /*0x70d9e6*/
+    v3 = this->currentBurstCount_e; /*0x70d9e6*/
     v22 = this->currentBurstCount; /*0x70d9ec*/
   }
   v5 = *(_DWORD *)this; /*0x70da2b*/
@@ -7901,7 +7901,7 @@ int __thiscall TechnoClass::OnEnterCell(#377 *this)
   }
   if ( v6 ) /*0x70db08*/
   {
-    v13 = (*(int (__thiscall **)(#377 *))(this->q1C4)(this); /*0x70db10*/
+    v13 = (*(int (__thiscall **)(#377 *))(this->airstrikeTintStage_e)(this); /*0x70db10*/
     v6 = Type::CheckAmbiguity(&MEMORY[0x87F7E8], v13, 1); /*0x70db21*/
     if ( v6 ) /*0x70db25*/
     {
@@ -7917,11 +7917,11 @@ int __thiscall TechnoClass::OnEnterCell(#377 *this)
 LABEL_23:
   if ( *((_BYTE *)this + 129) && v6 ) /*0x70db72*/
     v6 = 0; /*0x70db74*/
-  if ( *((_BYTE *)this + 1059) && (v22 != this->currentBurstCount || v12 != this->q20C || !v6) ) /*0x70db98*/
+  if ( *((_BYTE *)this + 1059) && (v22 != this->currentBurstCount || v12 != this->currentBurstCount_e || !v6) ) /*0x70db98*/
     (*(void (__thiscall **)(#377 *))(*(_DWORD *)this + 1176))(this); /*0x70db9e*/
   this->currentBurstCount = v22; /*0x70dba8*/
   v15 = *((_BYTE *)this + 1059); /*0x70dbae*/
-  this->q20C = v12; /*0x70dbb6*/
+  this->currentBurstCount_e = v12; /*0x70dbb6*/
   if ( !v15 && v6 ) /*0x70dbc0*/
     (*(void (__thiscall **)(#377 *))(*(_DWORD *)this + 1172))(this); /*0x70dbc6*/
   result = this->Owner; /*0x70dbcc*/
@@ -8334,9 +8334,9 @@ int __thiscall TechnoClass::IronCurtain(_DWORD *this, TechnoClass *aP1, int a3, 
   this->q1A4 = 0; /*0x70e2d2*/
   this->q194 = aP1; /*0x70e2d8*/
   if ( (_BYTE)aP3 ) /*0x70e2e2*/
-    this->q1C4 = 1; /*0x70e2e4*/
+    this->airstrikeTintStage_e = 1; /*0x70e2e4*/
   else
-    this->q1C4 = 0; /*0x70e2f4*/
+    this->airstrikeTintStage_e = 0; /*0x70e2f4*/
   return result; /*0x70e2e1*/
 }
 
@@ -9869,7 +9869,7 @@ bool __thiscall TechnoClass::CanSelfRepair(_BYTE *this)
 // ==== 0x0070FBD0  UnitClass::IsDeactivated  this=TechnoClass  sig=csp ====
 char __thiscall UnitClass::IsDeactivated(_BYTE *this)
 {
-  return this->q1C8; /*0x70fbd6*/
+  return this->airstrikeTintStage_e; /*0x70fbd6*/
 }
 
 

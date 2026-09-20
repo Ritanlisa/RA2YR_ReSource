@@ -4765,8 +4765,8 @@ int __thiscall TechnoClass_ApplyIronCurtain(_DWORD *this)
   int v17; // [esp+40h] [ebp-8h]
   int v18; // [esp+44h] [ebp-4h]
 
-  v2 = ObjectClass::ComputeDistance(this->q2B4); /*0x415604*/
-  v3 = this->q2B4; /*0x415606*/
+  v2 = ObjectClass::ComputeDistance(this->sprayOffsetIndex_e); /*0x415604*/
+  v3 = this->sprayOffsetIndex_e; /*0x415606*/
   if ( v3 ) /*0x41560e*/
   {
     if ( *(this + 361) ) /*0x415630*/
@@ -4926,7 +4926,7 @@ int __thiscall TechnoClass::ScatterFromThreat(_DWORD *this)
   char v3; // al
   _DWORD v5[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v2 = (TechnoClass *)this->q2B4; /*0x415966*/
+  v2 = (TechnoClass *)this->sprayOffsetIndex_e; /*0x415966*/
   *((_BYTE *)this + 1746) = 1; /*0x41596c*/
   if ( !v2 || !this->q118 ) /*0x41597b*/
   {
@@ -11478,9 +11478,9 @@ _DWORD *__thiscall AnimTypeClass_Constructor2(_DWORD *this, char *Source)
   this->q104 = 0; /*0x41e3f5*/
   this->q108 = 0; /*0x41e3fb*/
   *this = &AITriggerTypeClass::`vftable'; /*0x41e401*/
-  this->vtable2 = &AITriggerTypeClass::`vftable'; /*0x41e407*/
-  this->vtable3 = &AITriggerTypeClass::`vftable'; /*0x41e40e*/
-  this->vtable4 = &AITriggerTypeClass::`vftable'; /*0x41e415*/
+  this->AITriggerTypeClass_field_0x04 = &AITriggerTypeClass::`vftable'; /*0x41e407*/
+  this->AITriggerTypeClass_field_0x08 = &AITriggerTypeClass::`vftable'; /*0x41e40e*/
+  this->AITriggerTypeClass_field_0x0C = &AITriggerTypeClass::`vftable'; /*0x41e415*/
   memset(this + 57, 0, 0x20u); /*0x41e41c*/
   if ( MEMORY[0xA8B210] < MEMORY[0xA8B208] /*0x41e452*/
     || (MEMORY[0xA8B20D] || !MEMORY[0xA8B208])

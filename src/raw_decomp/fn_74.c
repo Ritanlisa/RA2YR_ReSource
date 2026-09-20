@@ -193,7 +193,7 @@ LABEL_34:
           }
           if ( (int)++v11 >= 8 ) /*0x74099c*/
           {
-            if ( ((double (__thiscall *)(int))*(_DWORD *)(this->q2B4)(this) != 1.0 ) /*0x7409b3*/
+            if ( ((double (__thiscall *)(int))*(_DWORD *)(this->sprayOffsetIndex_e)(this) != 1.0 ) /*0x7409b3*/
               break; /*0x7409b3*/
             if ( !*(_DWORD *)(this + 1652) ) /*0x7409b9*/
               WinAPI::Wrapper(-2147467261); /*0x7409c8*/
@@ -2420,7 +2420,7 @@ LABEL_7:
   }
   if ( (*(int (__thiscall **)(_DWORD *))(*this + 44))(this) == 1 && *((_BYTE *)this + 1745) /*0x743d33*/
     || *(this + 361) && (!(_BYTE)a4 || *((_BYTE *)this + 1711))
-    || this->q2B4 && !(_BYTE)a3 && Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 1, 4) != 1 )
+    || this->sprayOffsetIndex_e && !(_BYTE)a3 && Random::Range((_DWORD *)(MEMORY[0x87F7E8][536210] + 536), 1, 4) != 1 )
   {
     goto LABEL_66; /*0x743d33*/
   }
@@ -2645,7 +2645,7 @@ char __thiscall TechnoClass::sub_744270(_DWORD *this)
     if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->q674 + 128))(this->q674) /*0x74431f*/
       && (*(int (__thiscall **)(_DWORD *))(*this + 456))(this) >= 0
       && (*(int (__thiscall **)(_DWORD *))(*this + 388))(this) != 5
-      && ((*(int (__thiscall **)(_DWORD *))(*this + 388))(this) != 1 || this->q2B4)
+      && ((*(int (__thiscall **)(_DWORD *))(*this + 388))(this) != 1 || this->sprayOffsetIndex_e)
       && !*((_BYTE *)this + 184) )
     {
       return 0; /*0x74431f*/
@@ -4079,7 +4079,7 @@ bool __thiscall BuildingTypeClass::IsPlacementValid(void *this, IUnknown *aP1, I
   int v5; // eax
   IUnknown *v6; // eax
 
-  if ( (*(int (__fastcall **)(void *))(this->q1C8)(this) < 0 /*0x746030*/
+  if ( (*(int (__fastcall **)(void *))(this->airstrikeTintStage_e)(this) < 0 /*0x746030*/
     || !MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (__int16 *)aP1, (__int16 *)aP2, 0, 0, 0, 0) )
   {
     return 1; /*0x746030*/
@@ -8987,9 +8987,9 @@ _DWORD *__thiscall VeinholeMonsterClass::Construct(_DWORD *this, AbstractClass *
   this->q0C0 = 0; /*0x74c433*/
   this->q0B8 = v3; /*0x74c43d*/
   *this = &VeinholeMonsterClass::`vftable'; /*0x74c443*/
-  this->vtable2 = &VeinholeMonsterClass::`vftable'; /*0x74c449*/
-  this->vtable3 = &VeinholeMonsterClass::`vftable'; /*0x74c450*/
-  this->vtable4 = &VeinholeMonsterClass::`vftable'; /*0x74c457*/
+  this->VeinholeMonsterClass_field_0x04 = &VeinholeMonsterClass::`vftable'; /*0x74c449*/
+  this->VeinholeMonsterClass_field_0x08 = &VeinholeMonsterClass::`vftable'; /*0x74c450*/
+  this->VeinholeMonsterClass_field_0x0C = &VeinholeMonsterClass::`vftable'; /*0x74c457*/
   if ( *(int *)&MEMORY[0xB077F8].__pad_579C[66316] < *(int *)&MEMORY[0xB077F8].__pad_579C[66308] /*0x74c493*/
     || (MEMORY[0xB077F8].__pad_579C[66313] || !*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[66308])
     && *(int *)&MEMORY[0xB077F8].__pad_579C[66320] > 0
@@ -9105,9 +9105,9 @@ VeinholeMonsterClass *__thiscall VeinholeMonsterClass::Constructor(void *this, I
   *((_BYTE *)this + 257) = 0; /*0x74c65d*/
   this->q104 = 0; /*0x74c663*/
   *(_DWORD *)this = &VeinholeMonsterClass::`vftable'; /*0x74c669*/
-  this->vtable2 = &VeinholeMonsterClass::`vftable'; /*0x74c66f*/
-  this->vtable3 = &VeinholeMonsterClass::`vftable'; /*0x74c675*/
-  this->vtable4 = &VeinholeMonsterClass::`vftable'; /*0x74c67c*/
+  this->VeinholeMonsterClass_field_0x04 = &VeinholeMonsterClass::`vftable'; /*0x74c66f*/
+  this->VeinholeMonsterClass_field_0x08 = &VeinholeMonsterClass::`vftable'; /*0x74c675*/
+  this->VeinholeMonsterClass_field_0x0C = &VeinholeMonsterClass::`vftable'; /*0x74c67c*/
   AbstractClass::GenerateUniqueID((int)this + 4); /*0x74c683*/
   if ( ObjectClass::IsCellSuitableForPlacement((__int16 *)aP1) ) /*0x74c68a*/
   {

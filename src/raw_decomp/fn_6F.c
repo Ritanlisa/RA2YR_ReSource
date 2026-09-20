@@ -2639,10 +2639,10 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   this->q0F8 = 0; /*0x6f2b5e*/
   *((_BYTE *)this + 252) = 0; /*0x6f2b64*/
   v3 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2b6a*/
-  this->q108 = 0; /*0x6f2b6f*/
-  this->q100 = v3; /*0x6f2b75*/
+  this->transporter_e = 0; /*0x6f2b6f*/
+  this->passengers_e = v3; /*0x6f2b75*/
   this->turretChargeTimer = 0; /*0x6f2b7b*/
-  this->q110 = 1; /*0x6f2b81*/
+  this->currentTurretNumber_e = 1; /*0x6f2b81*/
   *(this + 69) = 0; /*0x6f2b87*/
   this->q118 = 0; /*0x6f2b8d*/
   this->q11C = 0; /*0x6f2b93*/
@@ -2653,7 +2653,7 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   this->deployAnim = 0; /*0x6f2bb8*/
   *((_BYTE *)this + 308) = 0; /*0x6f2bbe*/
   this->currentWeaponSlot = 0; /*0x6f2bc4*/
-  this->q13C = -1; /*0x6f2bca*/
+  this->currentWeaponSlot_e = -1; /*0x6f2bca*/
   this->currentRank = 0; /*0x6f2bd0*/
   this->gattlingStage = 0; /*0x6f2bd6*/
   this->gattlingValue = 0; /*0x6f2be2*/
@@ -2680,7 +2680,7 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   v6 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2c82*/
   this->q1BC = 0; /*0x6f2c88*/
   this->q1B4 = v6; /*0x6f2c8e*/
-  this->q1C4 = 0; /*0x6f2c94*/
+  this->airstrikeTintStage_e = 0; /*0x6f2c94*/
   *((_BYTE *)this + 456) = 0; /*0x6f2c9a*/
   this->forceShielded = 0; /*0x6f2ca0*/
   this->isDeactivated = 0; /*0x6f2ca6*/
@@ -2696,8 +2696,8 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   *(this + 127) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2ced*/
   this->q204 = 0; /*0x6f2cf3*/
   this->currentBurstCount = 0; /*0x6f2cf9*/
-  this->q20C = 0; /*0x6f2cff*/
-  this->q210 = 0; /*0x6f2d05*/
+  this->currentBurstCount_e = 0; /*0x6f2cff*/
+  this->currentBurstCount_e = 0; /*0x6f2d05*/
   this->currentBarrelIndex = -1; /*0x6f2d0f*/
   this->displayProductionTo = 0; /*0x6f2d15*/
   this->Owner = aP1; /*0x6f2d1b*/
@@ -2727,14 +2727,14 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   this->temporalUsing = 0; /*0x6f2dc6*/
   this->temporalTargetingMe = 0; /*0x6f2dcc*/
   *((_BYTE *)this + 636) = 0; /*0x6f2dd2*/
-  this->q280 = 0; /*0x6f2dd8*/
-  this->q284 = 0; /*0x6f2dde*/
+  this->gapRadius_e = 0; /*0x6f2dd8*/
+  this->isBeingWarpedOut_e = 0; /*0x6f2dde*/
   *(this + 162) = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6908]; /*0x6f2dea*/
-  this->q28C = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6912]; /*0x6f2df1*/
+  this->temporalTargetingMe_e = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6912]; /*0x6f2df1*/
   v9 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6916]; /*0x6f2df4*/
   this->spawnManager = 0; /*0x6f2dfa*/
   this->spawnOwner = 0; /*0x6f2e00*/
-  this->q290 = v9; /*0x6f2e06*/
+  this->isImmobilized_e = v9; /*0x6f2e06*/
   this->owningHouseIndex0 = 0; /*0x6f2e09*/
   *((_BYTE *)this + 664) = 0; /*0x6f2e0f*/
   this->chronoDestCoords = 0; /*0x6f2e15*/
@@ -2743,8 +2743,8 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   this->airstrike = 0; /*0x6f2e27*/
   this->isBerserk = 0; /*0x6f2e2d*/
   this->isBerserk_duration_left = 0; /*0x6f2e33*/
-  this->q2B4 = 0; /*0x6f2e39*/
-  this->q2B8 = 0; /*0x6f2e3f*/
+  this->sprayOffsetIndex_e = 0; /*0x6f2e39*/
+  this->isUncrushable_e = 0; /*0x6f2e3f*/
   this->rockerLinkedUnit = 0; /*0x6f2e45*/
   this->locomotorTarget = 0; /*0x6f2e4b*/
   *((_BYTE *)this + 708) = 0; /*0x6f2e51*/
@@ -4343,7 +4343,7 @@ int __thiscall BuildingClass::DrawSelectionBox(#377 *this)
       {
         v25 = v1; /*0x6f6106*/
         v4 = 15; /*0x6f6109*/
-        if ( (*(int (__thiscall **)(#377 *, int))(this->q1C8)(this, v25) < -4 ) /*0x6f6117*/
+        if ( (*(int (__thiscall **)(#377 *, int))(this->airstrikeTintStage_e)(this, v25) < -4 ) /*0x6f6117*/
           v4 = 12; /*0x6f6119*/
         v5 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this); /*0x6f6122*/
         v6 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v5 + 124))(v5, &v41); /*0x6f6134*/
@@ -4486,7 +4486,7 @@ int __thiscall BuildingClass::DrawHealthBar(#377 *this)
 
   if ( (*(int (__thiscall **)(#377 *))(this->fallRate)(this) == 6 )
   {
-    (*(void (__thiscall **)(#377 *))(this->q1C8)(this); /*0x6f64bb*/
+    (*(void (__thiscall **)(#377 *))(this->airstrikeTintStage_e)(this); /*0x6f64bb*/
     v2 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this); /*0x6f64c5*/
     v3 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v2 + 124))(v2, &v50); /*0x6f64d4*/
     v4 = *v3; /*0x6f64d7*/
@@ -4607,7 +4607,7 @@ int __thiscall BuildingClass::DrawHealthBar(#377 *this)
     }
     v23 = 0; /*0x6f6789*/
     if ( (unsigned __int8)HouseClass::IsAlliedWith(*((#375 **)this + 135), HouseClass_Player) /*0x6f67b0*/
-      || ((1 << *(_DWORD *)(*((_DWORD *)HouseClass_Player + 13) + 184)) & this->q210) != 0 )
+      || ((1 << *(_DWORD *)(*((_DWORD *)HouseClass_Player + 13) + 184)) & this->currentBurstCount_e) != 0 )
     {
       v23 = 1; /*0x6f67b2*/
     }
@@ -4733,7 +4733,7 @@ int __thiscall BuildingClass::DrawHealthBar(#377 *this)
         0);
     }
     if ( (unsigned __int8)HouseClass::IsAlliedWith(*((#375 **)this + 135), HouseClass_Player) /*0x6f6a8c*/
-      || (result = this->q210, ((1 << *(_DWORD *)(*((_DWORD *)HouseClass_Player + 13) + 184)) & result) != 0) )
+      || (result = this->currentBurstCount_e, ((1 << *(_DWORD *)(*((_DWORD *)HouseClass_Player + 13) + 184)) & result) != 0) )
     {
       v37 = *v28 - 10; /*0x6f6a96*/
       v51 = v28[1] + 10; /*0x6f6a99*/
@@ -6434,18 +6434,18 @@ char __thiscall MovementAI::Begin(int *this)
   }
   UpdateTechnoIdleTimer(this);
   UpdateTimedStateMachine(this);
-  if ( this->q13C != -1 )
+  if ( this->currentWeaponSlot_e != -1 )
   {
     if ( !AudioSource::Get((int **)this + 311) )
     {
-      ecx7 = this->q13C;
+      ecx7 = this->currentWeaponSlot_e;
       *(this + 317) = ecx7;
       PlayVocClass(ecx7, 0x2000, 1.0, (int)(this + 311));
 LABEL_9:
-      this->q13C = -1;
+      this->currentWeaponSlot_e = -1;
       goto LABEL_10;
     }
-    if ( *(this + 317) == this->q13C )
+    if ( *(this + 317) == this->currentWeaponSlot_e )
       goto LABEL_9;
   }
 LABEL_10:
@@ -7733,8 +7733,8 @@ bool __thiscall TechnoClass::ShouldBeCloaked(void *this)
   if ( v8 ) /*0x6fbedf*/
     return 0; /*0x6fbee9*/
 LABEL_19:
-  if ( this->q2B4 /*0x6fbef9*/
-    && (*(unsigned __int8 (__thiscall **)(void *, _DWORD))(*(_DWORD *)this + 940))(this, this->q2B4) )
+  if ( this->sprayOffsetIndex_e /*0x6fbef9*/
+    && (*(unsigned __int8 (__thiscall **)(void *, _DWORD))(*(_DWORD *)this + 940))(this, this->sprayOffsetIndex_e) )
   {
     return 0; /*0x6fbf0b*/
   }
@@ -7746,13 +7746,13 @@ LABEL_19:
   {
     if ( (int)MEMORY[0xA8ED84] - v9 >= v10 ) /*0x6fbf46*/
       return (!this->isBerserk_duration_left || !this || (*((_BYTE *)this + 20) & 4) == 0 || !*((_BYTE *)this + 1709)) /*0x6fbf46*/
-          && (*(int (__thiscall **)(void *))(this->q1C8)(this) <= 0;
+          && (*(int (__thiscall **)(void *))(this->airstrikeTintStage_e)(this) <= 0;
     v10 -= (int)MEMORY[0xA8ED84] - v9; /*0x6fbf48*/
   }
   if ( v10 ) /*0x6fbf4c*/
     return 0; /*0x6fbf56*/
   return (!this->isBerserk_duration_left || !this || (*((_BYTE *)this + 20) & 4) == 0 || !*((_BYTE *)this + 1709)) /*0x6fbea3*/
-      && (*(int (__thiscall **)(void *))(this->q1C8)(this) <= 0;
+      && (*(int (__thiscall **)(void *))(this->airstrikeTintStage_e)(this) <= 0;
 }
 
 
@@ -8235,7 +8235,7 @@ int __thiscall BuildingClass::_vt232(#377 *this)
 
   (*(void (__thiscall **)(#377 *, _DWORD))(*(_DWORD *)this + 968))(this, 0); /*0x6fcd47*/
   (*(void (__thiscall **)(#377 *, _DWORD, int))(*(_DWORD *)this + 1152))(this, 0, 1); /*0x6fcd55*/
-  (*(void (__thiscall **)(#377 *, int))(this->q280)(this, 3); /*0x6fcd61*/
+  (*(void (__thiscall **)(#377 *, int))(this->gapRadius_e)(this, 3); /*0x6fcd61*/
   if ( !this || (*((_BYTE *)this + 20) & 4) == 0 || !*((_BYTE *)this + 1709) ) /*0x6fcd71*/
   {
     v2 = (_DWORD *)this->captureManager; /*0x6fcd7b*/
@@ -8264,7 +8264,7 @@ char __thiscall TechnoClass_AssignTarget_SyncLog(_DWORD *this, int a2)
   _DWORD v12[3]; // [esp+Ch] [ebp-Ch] BYREF
 
   v3 = a2; /*0x6fcdb8*/
-  v4 = this->q2B4; /*0x6fcdbe*/
+  v4 = this->sprayOffsetIndex_e; /*0x6fcdbe*/
   *((_BYTE *)this + 1292) = 0; /*0x6fcdc4*/
   if ( a2 == v4 ) /*0x6fcdcc*/
     return v4; /*0x6fcdcc*/
@@ -8360,10 +8360,10 @@ LABEL_38:
   v3 = 0; /*0x6fcf36*/
 LABEL_39:
   v10 = this->captureManager; /*0x6fcf38*/
-  this->q2B4 = v3; /*0x6fcf3e*/
+  this->sprayOffsetIndex_e = v3; /*0x6fcf3e*/
   if ( v10 && !v3 ) /*0x6fcf4b*/
     LOBYTE(v4) = SpawnManagerClass::SetTarget(0); /*0x6fcf4e*/
-  if ( !this->q2B4 ) /*0x6fcf53*/
+  if ( !this->sprayOffsetIndex_e ) /*0x6fcf53*/
     this->q3B8 = 0; /*0x6fcf5b*/
   if ( this->fireParticles ) /*0x6fcf61*/
   {

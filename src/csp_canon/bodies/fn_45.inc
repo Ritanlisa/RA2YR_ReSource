@@ -1559,7 +1559,7 @@ namespace ra2 { namespace game { void* AbstractClass::validatePointer(int a1) {
 // ==== BACKFILL 0x0045EC90  BuildingTypeClass::GetFoundationWidth  cls=BuildingTypeClass  sig=csp  renamed_refs=1  residual=- ====
 namespace gamemd { short BuildingTypeClass::GetFoundationWidth() const {
 {
-    return DataGlobal_8192B8[this->qEF0];
+    return DataGlobal_8192B8[this->DeployingAnim_e];
 }
 } }
 
@@ -1567,9 +1567,9 @@ namespace gamemd { short BuildingTypeClass::GetFoundationWidth() const {
 namespace gamemd { short BuildingTypeClass::GetFoundationHeight(IUnknown * aP1) const {
 {
     if ( (char)aP1 && this->Bib )
-    return DataGlobal_819310[this->qEF0] + 1;
+    return DataGlobal_819310[this->DeployingAnim_e] + 1;
     else
-    return DataGlobal_819310[this->qEF0];
+    return DataGlobal_819310[this->DeployingAnim_e];
 }
 } }
 
@@ -1580,7 +1580,7 @@ int BuildingTypeClass::GetMaxPips()
     int result;
     int v2;
     int v3;
-    result = 60 * DataGlobal_8192B8[this->qEF0] / 8;
+    result = 60 * DataGlobal_8192B8[this->DeployingAnim_e] / 8;
     if ( this->PipScale == 2 )
   {
     if ( this->Weeder )

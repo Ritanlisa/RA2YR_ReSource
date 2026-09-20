@@ -12588,19 +12588,19 @@ int __thiscall sub_75F140(_DWORD *this)
   int result; // eax
 
   v2 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887314] + 116))(MEMORY[0x887314]) >> 1; /*0x75f14e*/
-  this->q1AC = -v2; /*0x75f159*/
-  this->q1B0 = 1 - v2; /*0x75f164*/
-  this->q1B8 = v2 + 1; /*0x75f16a*/
-  this->q1BC = v2; /*0x75f176*/
-  this->q1C0 = v2 - 1; /*0x75f17c*/
-  v3 = this->q1CC; /*0x75f182*/
+  this->WaveClass_field_1AC_e = -v2; /*0x75f159*/
+  this->WaveClass_field_1B0_e = 1 - v2; /*0x75f164*/
+  this->WaveClass_field_1B8_e = v2 + 1; /*0x75f16a*/
+  this->WaveClass_field_1BC_e = v2; /*0x75f176*/
+  this->WaveClass_field_1C0_e = v2 - 1; /*0x75f17c*/
+  v3 = this->WaveClass_field_1CC_e; /*0x75f182*/
   v4 = -1 - v2; /*0x75f188*/
   *(this + 130) = 0; /*0x75f18c*/
   *(this + 131) = 0; /*0x75f192*/
   v5 = this + v3 + 107; /*0x75f198*/
-  this->q1B4 = 1; /*0x75f19f*/
-  this->q1C4 = -1; /*0x75f1a9*/
-  this->q1C8 = v4; /*0x75f1b3*/
+  this->WaveClass_field_1B4_e = 1; /*0x75f19f*/
+  this->WaveClass_field_1C4_e = -1; /*0x75f1a9*/
+  this->WaveClass_field_1C8_e = v4; /*0x75f1b3*/
   *(this + 132) = *v5; /*0x75f1bb*/
   this->q214 = *v5; /*0x75f1c3*/
   this->__pad_218 = *v5; /*0x75f1cb*/

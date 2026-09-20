@@ -1536,7 +1536,7 @@ unsigned int * sub_4FD120(unsigned int * a1, int a2)
 }
 }
 
-// ==== BACKFILL 0x004FEEE0  HouseClass::AIInfantryProduction  cls=HouseClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x004FEEE0  HouseClass::AIInfantryProduction  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::AIInfantryProduction() {
 {
       AbstractClass *v1;
@@ -1651,7 +1651,7 @@ namespace gamemd { int HouseClass::AIInfantryProduction() {
                                                                    + 132))(
                       *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer.__pad_BC0[336] + 4 * v15),
                       this);
-              if ( v20 <= (*(int (__stdcall **)(_DWORD *))(this->vtable5 + 24))((_DWORD *)this + 9) )
+              if ( v20 <= (*(int (__stdcall **)(_DWORD *))(this->arrayIndex + 24))((_DWORD *)this + 9) )
               {
                 if ( v22 == -1 || v22 < v16 )
                 {
@@ -1687,7 +1687,7 @@ namespace gamemd { int HouseClass::AIInfantryProduction() {
 }
 } }
 
-// ==== BACKFILL 0x004FF210  HouseClass::AIAircraftProduction  cls=HouseClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x004FF210  HouseClass::AIAircraftProduction  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::AIAircraftProduction() {
 {
       AbstractClass *v1;
@@ -1800,7 +1800,7 @@ namespace gamemd { int HouseClass::AIAircraftProduction() {
               v20 = (*(int (__thiscall **)(_DWORD, AbstractClass *))(**(_DWORD **)&g_AircraftTypeCount->__pad_0[4 * v15] + 132))(
                       *(_DWORD *)&g_AircraftTypeCount->__pad_0[4 * v15],
                       this);
-              if ( v20 <= (*(int (__stdcall **)(_DWORD *))(this->vtable5 + 24))((_DWORD *)this + 9) )
+              if ( v20 <= (*(int (__stdcall **)(_DWORD *))(this->arrayIndex + 24))((_DWORD *)this + 9) )
               {
                 if ( v22 == -1 || v22 < v16 )
                 {

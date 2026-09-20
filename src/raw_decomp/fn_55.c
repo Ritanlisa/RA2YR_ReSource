@@ -7666,8 +7666,8 @@ LoadOptions *__thiscall LoadOptions::LoadOptions(LoadOptions *this)
   *((_DWORD *)v2 + 5) = 10; /*0x55875b*/
   *((_DWORD *)v2 + 4) = 0; /*0x558762*/
   this->Items = 0; /*0x558765*/
-  this->q00C = 0; /*0x558768*/
-  this->q014 = 0; /*0x55876b*/
+  this->field_0C = 0; /*0x558768*/
+  this->field_14 = 0; /*0x55876b*/
   v3 = *(_DWORD *)v2; /*0x55876e*/
   *(_DWORD *)this = &LoadOptionsClass::`vftable'; /*0x558770*/
   this->Capacity = &off_829EA0; /*0x558776*/

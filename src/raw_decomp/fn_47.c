@@ -2172,7 +2172,7 @@ _DWORD *__thiscall sub_473140(_DWORD *this, int a2, int a3)
       this->Items = a3; /*0x473168*/
       return this; /*0x47316e*/
     }
-    this->Items = __2_YAPAXI_Z(4 * a2); /*0x47317d*/
+    this->Items = OperatorNew(4 * a2); /*0x47317d*/
     *((_BYTE *)this + 13) = 1; /*0x473180*/
   }
   return this; /*0x47316d*/
@@ -9080,9 +9080,9 @@ void __thiscall CellClass::DTOR(_DWORD *this)
 
   v2 = (void (__thiscall ***)(_DWORD, int))this->attached1; /*0x47bb66*/
   *this = &CellClass::`vftable'; /*0x47bb69*/
-  this->vtable2 = &CellClass::`vftable'; /*0x47bb71*/
-  this->vtable3 = &CellClass::`vftable'; /*0x47bb78*/
-  this->vtable4 = &CellClass::`vftable'; /*0x47bb7f*/
+  this->foggedObjects = &CellClass::`vftable'; /*0x47bb71*/
+  this->bridgeOwnerCell = &CellClass::`vftable'; /*0x47bb78*/
+  this->unknown30 = &CellClass::`vftable'; /*0x47bb7f*/
   if ( v2 ) /*0x47bb86*/
   {
     (**v2)(v2, 1); /*0x47bb8c*/
@@ -9177,9 +9177,9 @@ _DWORD *__thiscall sub_47BBF0(_DWORD *this)
   this->CellClass_field_13C = 0; /*0x47bd50*/
   this->flags = v3 & 0xFF800000; /*0x47bd56*/
   *this = &CellClass::`vftable'; /*0x47bd5c*/
-  this->vtable2 = &CellClass::`vftable'; /*0x47bd62*/
-  this->vtable3 = &CellClass::`vftable'; /*0x47bd68*/
-  this->vtable4 = &CellClass::`vftable'; /*0x47bd79*/
+  this->foggedObjects = &CellClass::`vftable'; /*0x47bd62*/
+  this->bridgeOwnerCell = &CellClass::`vftable'; /*0x47bd68*/
+  this->unknown30 = &CellClass::`vftable'; /*0x47bd79*/
   memset(this + 31, 0, 0x30u); /*0x47bd80*/
   memset(this + 43, 0, 0x30u); /*0x47bd8d*/
   AbstractClass::GenerateUniqueID(this + 1); /*0x47bd90*/

@@ -6273,28 +6273,28 @@ _DWORD *__thiscall AnimTypeClass::Construct(_DWORD *this, AbstractClass *aP1)
   this->q2AC = 0; /*0x427568*/
   this->Rate = 1; /*0x42756e*/
   this->Start = 0; /*0x427578*/
-  this->q2B8 = 0; /*0x42757e*/
-  this->q2BC = 0; /*0x427584*/
-  this->q2C0 = 0; /*0x42758a*/
-  this->q2C4 = 0; /*0x427590*/
-  this->q2C8 = 0; /*0x427596*/
-  this->q2CC = -1; /*0x42759c*/
+  this->LoopStart_e = 0; /*0x42757e*/
+  this->LoopEnd_e = 0; /*0x427584*/
+  this->End_e = 0; /*0x42758a*/
+  this->LoopCount_e = 0; /*0x427590*/
+  this->Next_e = 0; /*0x427596*/
+  this->SpawnsParticle_e = -1; /*0x42759c*/
   this->NumParticles = 0; /*0x4275a2*/
-  this->q2D4 = 0; /*0x4275a8*/
-  this->q2D8 = 0; /*0x4275ae*/
+  this->DetailLevel_e = 0; /*0x4275a8*/
+  this->TranslucencyDetailLevel_e = 0; /*0x4275ae*/
   *(this + 183) = 0; /*0x4275b4*/
   this->q2E0 = 0; /*0x4275ba*/
   *(this + 185) = 0; /*0x4275c0*/
   this->q2E8 = 0; /*0x4275c6*/
-  this->q2EC = 0; /*0x4275cc*/
-  this->q2F0 = 0; /*0x4275d2*/
-  this->q2F4 = 0; /*0x4275d8*/
-  this->q2F8 = -1; /*0x4275de*/
+  this->Translucency_e = 0; /*0x4275cc*/
+  this->Spawns_e = 0; /*0x4275d2*/
+  this->SpawnCount_e = 0; /*0x4275d8*/
+  this->Report_e = -1; /*0x4275de*/
   this->StopSound = -1; /*0x4275e4*/
   this->BounceAnim = 0; /*0x4275ea*/
-  this->q304 = 0; /*0x4275f0*/
-  this->q308 = 0; /*0x4275f6*/
-  this->q30C = 0; /*0x4275fc*/
+  this->ExpireAnim_e = 0; /*0x4275f0*/
+  this->TrailerAnim_e = 0; /*0x4275f6*/
+  this->TrailerSeperation_e = 0; /*0x4275fc*/
   *(this + 196) = -1610612736; /*0x427602*/
   this->q314 = 1072273817; /*0x42760c*/
   *(this + 198) = 0; /*0x42761b*/
@@ -7365,9 +7365,9 @@ int __thiscall AnimTypeClass::_vt10(_DWORD *this, int a2, int a3)
 {
   int result; // eax
 
-  result = this->q2C8; /*0x428c10*/
+  result = this->Next_e; /*0x428c10*/
   if ( result == a2 ) /*0x428c1c*/
-    this->q2C8 = 0; /*0x428c1e*/
+    this->Next_e = 0; /*0x428c1e*/
   return result; /*0x428c28*/
 }
 

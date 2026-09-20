@@ -14368,13 +14368,13 @@ int __thiscall SuperWeaponTypeClass::SD_vt27(_DWORD *this, int a2, int a3)
   int v4; // eax
 
   if ( this->Type != 10 ) /*0x6cef8b*/
-    return this->q0BC; /*0x6cef8b*/
+    return this->ActionValue_e; /*0x6cef8b*/
   if ( a3
     && (*(int (__thiscall **)(int))(*(_DWORD *)a3 + 44))(a3) == 6
     && (v4 = (*(int (__thiscall **)(int))(*(_DWORD *)a3 + 44))(a3),
         (unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(v4 == 6 ? a3 + 0x21C : 540), HouseClass_Player)) )
   {
-    return this->q0BC; /*0x6cefd3*/
+    return this->ActionValue_e; /*0x6cefd3*/
   }
   else
   {

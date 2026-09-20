@@ -1723,19 +1723,19 @@ _DWORD *__thiscall Bounds::Subtract(int *this, IUnknown *aP1, _DWORD *a2)
 // ==== BACKFILL 0x00488080  CellClass::clearOccupationFlags  cls=CellClass  sig=csp  renamed_refs=5  residual=IsAllocated ====
 namespace gamemd { void* CellClass::clearOccupationFlags(int a2, int a3) {
 {
-    this->vtable2 = 0;
-    this->vtable3 = a2;
-    this->vtable4 = 1;
+    this->foggedObjects = 0;
+    this->bridgeOwnerCell = a2;
+    this->unknown30 = 1;
     this->IsAllocated = 0;
     *(void**)this = &vt_VectorClass_FoggedObjectClass;
     if ( a2 )
   {
     if ( a3 )
     {
-    this->vtable2 = a3;
+    this->foggedObjects = a3;
     return this;
     }
-    this->vtable2 = __2_YAPAXI_Z(4 * a2);
+    this->foggedObjects = __2_YAPAXI_Z(4 * a2);
     this->IsAllocated = 1;
   }
     return this;

@@ -11150,7 +11150,7 @@ LABEL_6:
             v31 = (*(int (__thiscall **)(_DWORD, AbstractClass *))(**(_DWORD **)&g_UnitTypeCount2->__pad_0[4 * v27] + 132))( /*0x4fedde*/
                     *(_DWORD *)&g_UnitTypeCount2->__pad_0[4 * v27],
                     this);
-            if ( v31 <= (*(int (__stdcall **)(_DWORD *))(this->vtable5 + 24))((_DWORD *)this + 9) ) /*0x4fedeb*/
+            if ( v31 <= (*(int (__stdcall **)(_DWORD *))(this->arrayIndex + 24))((_DWORD *)this + 9) ) /*0x4fedeb*/
             {
               if ( v34 == -1 || v34 < v28 ) /*0x4fedf8*/
               {
@@ -11299,7 +11299,7 @@ int __thiscall HouseClass::AIInfantryProduction(AbstractClass *this)
                                                                + 132))(
                   *(_DWORD *)(*(_DWORD *)&MEMORY[0xA8D63C].__pad_BC0[336] + 4 * v15),
                   this);
-          if ( v20 <= (*(int (__stdcall **)(_DWORD *))(this->vtable5 + 24))((_DWORD *)this + 9) ) /*0x4ff115*/
+          if ( v20 <= (*(int (__stdcall **)(_DWORD *))(this->arrayIndex + 24))((_DWORD *)this + 9) ) /*0x4ff115*/
           {
             if ( v22 == -1 || v22 < v16 ) /*0x4ff122*/
             {
@@ -11448,7 +11448,7 @@ int __thiscall HouseClass::AIAircraftProduction(AbstractClass *this)
           v20 = (*(int (__thiscall **)(_DWORD, AbstractClass *))(**(_DWORD **)&MEMORY[0xA8B21C]->__pad_0[4 * v15] + 132))( /*0x4ff438*/
                   *(_DWORD *)&MEMORY[0xA8B21C]->__pad_0[4 * v15],
                   this);
-          if ( v20 <= (*(int (__stdcall **)(_DWORD *))(this->vtable5 + 24))((_DWORD *)this + 9) ) /*0x4ff445*/
+          if ( v20 <= (*(int (__stdcall **)(_DWORD *))(this->arrayIndex + 24))((_DWORD *)this + 9) ) /*0x4ff445*/
           {
             if ( v22 == -1 || v22 < v16 ) /*0x4ff452*/
             {

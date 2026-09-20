@@ -97,7 +97,7 @@ int CaptureManagerClass::GetOriginalOwner(int a2)
 }
 }
 
-// ==== BACKFILL 0x00472330  HouseClass::AssignCivilianToLowPowerTargets  cls=HouseClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x00472330  HouseClass::AssignCivilianToLowPowerTargets  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int HouseClass::AssignCivilianToLowPowerTargets(int a2) {
 {
       int v2;
@@ -125,7 +125,7 @@ namespace gamemd { int HouseClass::AssignCivilianToLowPowerTargets(int a2) {
         return 0;
       for ( j = this->relatedTagsCapacity - 1; j >= 0; --j )
       {
-        v10 = *(_DWORD **)(this->vtable6 + 4 * j);
+        v10 = *(_DWORD **)(this->buildingType + 4 * j);
         if ( *v10 == a2 )
           v10[1] = v8;
       }
@@ -213,25 +213,25 @@ CaptureManagerClass * CaptureManagerClass::ddtor(char a2)
 }
 }
 
-// ==== BACKFILL 0x00473140  CaptureManagerClass::Constructor_473140  cls=CaptureManagerClass  sig=csp  renamed_refs=5  residual=IsAllocated ====
+// ==== BACKFILL 0x00473140  CaptureManagerClass::Constructor_473140  cls=CaptureManagerClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
 {
 {
-    this->vtable2 = 0;
-    this->vtable3 = a2;
-    this->vtable4 = 1;
+    this->Items = 0;
+    this->Capacity = a2;
+    this->IsInitialized = 1;
     this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_ControlNode;
+    *(void **)this = &vt_VectorClass_ControlNode;
     if ( a2 )
-  {
-    if ( a3 )
     {
-    this->vtable2 = a3;
-    return this;
+        if ( a3 )
+        {
+            this->Items = a3;
+            return this;
+        }
+        this->Items = OperatorNew(4 * a2);
+        this->IsAllocated = 1;
     }
-    this->vtable2 = __2_YAPAXI_Z(4 * a2);
-    this->IsAllocated = 1;
-  }
     return this;
 }
 }
@@ -966,7 +966,7 @@ namespace gamemd { int HouseClass::ReadHouseNamesToBitmask(void* a1, void* a2, i
 }
 } }
 
-// ==== BACKFILL 0x004752E0  HouseClass::WriteHouseListToINI  cls=HouseClass  sig=csp  renamed_refs=37  residual=IsAllocated,q00D ====
+// ==== BACKFILL 0x004752E0  HouseClass::WriteHouseListToINI  cls=HouseClass  sig=csp  renamed_refs=36  residual=IsAllocated,q00D ====
 namespace gamemd { int HouseClass::WriteHouseListToINI(void* aP1, void* a2, int a4) {
 {
     char v4;
@@ -1214,7 +1214,7 @@ namespace gamemd { void* HouseClass::initDropshipData() {
     this->vtable3 = 0x7FFFFFFF;
     this->vtable4 = 0;
     this->uniqueId = 0;
-    this->vtable6 = 0;
+    this->buildingType = 0;
     return this;
 }
 } }

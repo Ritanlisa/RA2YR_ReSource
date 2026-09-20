@@ -61,14 +61,14 @@ int E4Recv_7011A0::sub_7011A0()
 }
 }
 
-// ==== BACKFILL 0x007013A0  MissionClass::OverrideMission_SyncLog  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
+// ==== BACKFILL 0x007013A0  MissionClass::OverrideMission_SyncLog  cls=TechnoClass  sig=csp  renamed_refs=2  residual=- ====
 namespace ra2 { namespace game { int MissionClass::OverrideMission_SyncLog() {
 {
       int v3;
       int v4;
       TechnoClass *aP3;
 
-      this->q2B8 = this->q2B4;
+      this->isUncrushable_e = this->sprayOffsetIndex_e;
       AbstractClass::COMStub_125((int)this, v3, v4, aP3);
       return this->vt242(v4);
 }

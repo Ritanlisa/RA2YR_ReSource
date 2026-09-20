@@ -51,20 +51,23 @@ unsigned int AbstractClass::queueMission(int a2)
 }
 }
 
-// ==== BACKFILL 0x004E01F0  FoggedObjectClass_42::ClearBuffer  cls=FoggedObjectClass  sig=csp  renamed_refs=0  residual=IsAllocated ====
+// ==== BACKFILL 0x004E01F0  FoggedObjectClass_42::ClearBuffer  cls=FoggedObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void FoggedObjectClass_42::ClearBuffer()
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+void __thiscall FoggedObjectClass_42_::sub_4E01F0(int this)
 {
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->FoggedObjectClass_42_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
+  void *v2; // eax
+
+  v2 = *(void **)(this + 4); /*0x4e01f6*/
+  *(_DWORD *)(this + 16) = 0; /*0x4e01f9*/
+  if ( v2 && *(_BYTE *)(this + 13) ) /*0x4e0200*/
   {
-    __3_YAXPAX_Z(v2);
-    this->FoggedObjectClass_42_field_0x4 = 0;
+    __3_YAXPAX_Z(v2); /*0x4e0206*/
+    *(_DWORD *)(this + 4) = 0; /*0x4e020e*/
   }
-    this->IsAllocated = 0;
-    this->FoggedObjectClass_42_field_0x8 = 0;
+  *(_BYTE *)(this + 13) = 0; /*0x4e0211*/
+  *(_DWORD *)(this + 8) = 0; /*0x4e0214*/
 }
 }
 
@@ -167,49 +170,52 @@ namespace ra2 { namespace game { int AbstractClass::completeMission(int a2, void
 }
 } } }
 
-// ==== BACKFILL 0x004E0700  FoggedObjectClass_42::SetCapacity  cls=FoggedObjectClass  sig=csp  renamed_refs=0  residual=IsAllocated ====
+// ==== BACKFILL 0x004E0700  FoggedObjectClass_42::SetCapacity  cls=FoggedObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
 {
+// [IDA decompile] original pseudocode - translation pending (final goal)
+char __thiscall FoggedObjectClass_42_::sub_4E0700(void *this, int a2, _DWORD *a3)
 {
-    int *v4;
-    int v5;
-    int i;
-    int v7;
-    if ( a2 )
+  _DWORD *v4; // edi
+  int v5; // ecx
+  int i; // eax
+  int v7; // eax
+
+  if ( a2 ) /*0x4e070c*/
   {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
+    *((_BYTE *)this + 12) = 0; /*0x4e0712*/
+    if ( a3 ) /*0x4e0718*/
+      v4 = a3; /*0x4e072e*/
     else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( !v4 )
-    return 0;
-    if ( this->FoggedObjectClass_42_field_0x4 )
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e072a*/
+    *((_BYTE *)this + 12) = 1; /*0x4e0732*/
+    if ( !v4 ) /*0x4e0736*/
+      return 0; /*0x4e07aa*/
+    if ( *((_DWORD *)this + 1) ) /*0x4e0738*/
     {
-    v5 = this->FoggedObjectClass_42_field_0x8;
-    if ( a2 < v5 )
-    v5 = a2;
-    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->FoggedObjectClass_42_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
+      v5 = *((_DWORD *)this + 2); /*0x4e073f*/
+      if ( a2 < v5 ) /*0x4e0744*/
+        v5 = a2; /*0x4e0746*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4e074c*/
+        ++i; /*0x4e0751*/
+      if ( *((_BYTE *)this + 13) ) /*0x4e075e*/
       {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->FoggedObjectClass_42_field_0x4 = 0;
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e0769*/
+        *((_DWORD *)this + 1) = 0; /*0x4e0771*/
       }
     }
-    this->FoggedObjectClass_42_field_0x4 = v4;
-    this->FoggedObjectClass_42_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
+    *((_DWORD *)this + 1) = v4; /*0x4e077a*/
+    *((_DWORD *)this + 2) = a2; /*0x4e0782*/
+    *((_BYTE *)this + 13) = a3 == 0; /*0x4e0785*/
   }
-    else
+  else
   {
-    this->FindItem();
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4e078e*/
   }
-    v7 = this->FoggedObjectClass_42_field_0x8;
-    if ( v7 < this->FoggedObjectClass_42_field_0x10 )
-    this->FoggedObjectClass_42_field_0x10 = v7;
-    return 1;
+  v7 = *((_DWORD *)this + 2); /*0x4e0791*/
+  if ( v7 < *((_DWORD *)this + 4) ) /*0x4e0799*/
+    *((_DWORD *)this + 4) = v7; /*0x4e079b*/
+  return 1; /*0x4e079e*/
 }
 }
 

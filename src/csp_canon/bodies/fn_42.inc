@@ -1674,7 +1674,7 @@ int E4Recv_429550::COMStub_429550()
 }
 }
 
-// ==== BACKFILL 0x0042A5B0  CellClass::ClearOccupancyGrid  cls=CellClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x0042A5B0  CellClass::ClearOccupancyGrid  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::ClearOccupancyGrid() {
 {
       _DWORD *v1;
@@ -1693,7 +1693,7 @@ namespace gamemd { int CellClass::ClearOccupancyGrid() {
       int v14;
       int v15;
 
-      *(_DWORD *)(this->vtable4 + 1572864) = 0;
+      *(_DWORD *)(this->unknown30 + 1572864) = 0;
       *(_DWORD *)(this->lightConvert + 0x100000) = 0;
       v1 = (_DWORD *)this->isoTileTypeIndex;
       for ( i = 0; i <= *v1; *(_DWORD *)(v1[2] + 4 * i - 4) = 0 )
@@ -1971,10 +1971,10 @@ char sub_42E6C0(int a1)
 return 1;
 }
 
-// ==== BACKFILL 0x0042E6D0  CellClass::setTileIndex  cls=CellClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x0042E6D0  CellClass::setTileIndex  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int CellClass::setTileIndex(int a1) {
 {
-    this->vtable2 += a2;
+    this->foggedObjects += a2;
     *(this + 3) += HIWORD(a2);
     return a2;
 }

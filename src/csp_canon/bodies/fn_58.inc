@@ -212,7 +212,7 @@ namespace gamemd { int LayerClass::AssignCellOwnership() {
         v5 = *(_DWORD *)(i + 68);
         if ( v5 != -1 )
         {
-          if ( *(_BYTE *)(*(_DWORD *)&g_BuildingTypeClass_Array->vtable1[4 * v5] + 680) )
+          if ( *(_BYTE *)(*(_DWORD *)&g_BuildingTypeClass_Array->items[4 * v5] + 680) )
           {
             v6 = -1;
             v7 = 0;

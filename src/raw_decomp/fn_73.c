@@ -5622,7 +5622,7 @@ int __thiscall TechnoClass::UpdateUnitAnimation(#377 *this)
             v5 -= (int)MEMORY[0xA8ED84] - v4; /*0x736d1d*/
         }
         *((_DWORD *)this + 127) = MEMORY[0xA8ED84]; /*0x736d2a*/
-        this->q200 = v7; /*0x736d30*/
+        this->isTargetedByChrono_e = v7; /*0x736d30*/
         this->q204 = v5 + 1; /*0x736d36*/
       }
     }
@@ -7355,7 +7355,7 @@ LABEL_71:
   }
   qmemcpy(v13 + 311, this + 311, 0x1Cu); /*0x739984*/
   SetAudioSource((int)(this + 311), 0, 0); /*0x7399a4*/
-  this->q13C = -1; /*0x7399ac*/
+  this->currentWeaponSlot_e = -1; /*0x7399ac*/
   *(this + 317) = -1; /*0x7399b2*/
   v27 = g_MoveFeedback; /*0x7399b8*/
   g_MoveFeedback = 0; /*0x7399bd*/
@@ -9918,7 +9918,7 @@ char __thiscall sub_73D450(void *this)
   if ( *((_DWORD *)this + 361) ) /*0x73d488*/
     return 1; /*0x73d49d*/
   if ( *(_BYTE *)(this->q6C4 + 3598) /*0x73d4d4*/
-    && ((double (__thiscall *)(void *))*(_DWORD *)(this->q2B4)(this) < 1.0
+    && ((double (__thiscall *)(void *))*(_DWORD *)(this->sprayOffsetIndex_e)(this) < 1.0
     && *((_DWORD *)v2 + 59) == 5 )
   {
     if ( *(_BYTE *)(this->q6C4 + 3599) ) /*0x73d4e0*/
@@ -9927,10 +9927,10 @@ char __thiscall sub_73D450(void *this)
       Float::Accumulate((float *)this + 207, 1.0, 0); /*0x73d4fd*/
       this->q0F8 = 0; /*0x73d502*/
       v4 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 5408); /*0x73d515*/
-      this->q100 = dword_A8ED54[12]; /*0x73d523*/
+      this->passengers_e = dword_A8ED54[12]; /*0x73d523*/
       v4 *= 3; /*0x73d529*/
       this->currentTurretNumber = v15; /*0x73d52c*/
-      this->q108 = v4; /*0x73d52f*/
+      this->transporter_e = v4; /*0x73d52f*/
       this->turretChargeTimer = v4; /*0x73d532*/
       return 1; /*0x73d540*/
     }
@@ -9953,9 +9953,9 @@ char __thiscall sub_73D450(void *this)
       Float::Accumulate((float *)this + 207, v10, v5); /*0x73d5b9*/
       this->q0F8 = 0; /*0x73d5be*/
       v8 = *(_DWORD *)(MEMORY[0x87F7E8][7806] + 5408); /*0x73d5d5*/
-      this->q100 = dword_A8ED54[12]; /*0x73d5e1*/
+      this->passengers_e = dword_A8ED54[12]; /*0x73d5e1*/
       this->currentTurretNumber = v15; /*0x73d5e9*/
-      this->q108 = v8; /*0x73d5ec*/
+      this->transporter_e = v8; /*0x73d5ec*/
       this->turretChargeTimer = v8; /*0x73d5ef*/
       return 1; /*0x73d5fd*/
     }
@@ -9965,9 +9965,9 @@ char __thiscall sub_73D450(void *this)
     this->q0F8 = 0; /*0x73d5fe*/
     v9 = (#72 *)dword_A8ED54[12]; /*0x73d604*/
     this->turretChargeTimer = 0; /*0x73d611*/
-    this->q100 = v9; /*0x73d617*/
+    this->passengers_e = v9; /*0x73d617*/
     this->currentTurretNumber = v15; /*0x73d61d*/
-    this->q108 = 0; /*0x73d620*/
+    this->transporter_e = 0; /*0x73d620*/
   }
   return 0; /*0x73d494*/
 }

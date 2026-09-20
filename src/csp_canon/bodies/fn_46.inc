@@ -42,7 +42,7 @@ unsigned int * BuildingTypeClass::GetSizeInLeptons(unsigned int * a2)
     int v3;
     int v4;
     int v5;
-    v2 = this->qEF0;
+    v2 = this->DeployingAnim_e;
     v3 = DataGlobal_89DDB8 *(void**)this->DeployingAnimLoaded;
     v2 *= 4;
     v4 = *(int *)((char *)(DataGlobal_8192B8) + v2);
@@ -54,7 +54,7 @@ unsigned int * BuildingTypeClass::GetSizeInLeptons(unsigned int * a2)
 }
 }
 
-// ==== BACKFILL 0x00464B30  BuildingTypeClass::UpdatePower  cls=BuildingTypeClass  sig=csp  renamed_refs=11  residual=- ====
+// ==== BACKFILL 0x00464B30  BuildingTypeClass::UpdatePower  cls=BuildingTypeClass  sig=csp  renamed_refs=11  residual=BuildingAnimFrame ====
 int BuildingTypeClass::UpdatePower()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -125,10 +125,10 @@ int __thiscall BuildingTypeClass::UpdatePower(#376 *this)
   Power::TimerProcess(this->FoundationOutside); /*0x464bbe*/
   Power::TimerProcess(this->BuildingTypeClass_field_ED8); /*0x464bcc*/
   Power::TimerProcess(this->DoorStages); /*0x464bda*/
-  Power::TimerProcess(this->BuildingAnimFrame_6); /*0x464be8*/
-  Power::TimerProcess(this->BuildingAnim_0x15); /*0x464bf6*/
+  Power::TimerProcess(this->BuildingAnimFrame[6]); /*0x464be8*/
+  Power::TimerProcess(this->BuildingAnim[0x15]); /*0x464bf6*/
   Power::TimerProcess(this->Upgrades); /*0x464c04*/
-  Power::TimerProcess(this->qEF0); /*0x464c12*/
+  Power::TimerProcess(this->DeployingAnim_e); /*0x464c12*/
   Power::TimerProcess(this->DeployingAnimLoaded); /*0x464c20*/
   Power::TimerProcess(this->UnderDoorAnim); /*0x464c2e*/
   Power::TimerProcess(this->UnderDoorAnimLoaded); /*0x464c3c*/
@@ -1205,18 +1205,18 @@ int __thiscall BulletTypeClass::ProcessPower(int this, int *a2)
   Power::FlagProcess(a2, v12); /*0x46c5f5*/
   LOBYTE(v13) = this->AA; /*0x46c5fa*/
   Power::FlagProcess(a2, v13); /*0x46c603*/
-  LOBYTE(v14) = this->q2A4; /*0x46c608*/
+  LOBYTE(v14) = this->AG_e; /*0x46c608*/
   v15 = Power::FlagProcess(a2, v14); /*0x46c611*/
-  LOBYTE(v15) = this->q2A5; /*0x46c616*/
+  LOBYTE(v15) = this->Degenerates_e; /*0x46c616*/
   Power::FlagProcess(a2, v15); /*0x46c61f*/
-  LOBYTE(v16) = this->q2A6; /*0x46c624*/
+  LOBYTE(v16) = this->Bouncy_e; /*0x46c624*/
   Power::FlagProcess(a2, v16); /*0x46c62d*/
   LOBYTE(v17) = this->AnimPalette; /*0x46c632*/
   Power::FlagProcess(a2, v17); /*0x46c63b*/
   Checksummer::Add_double(this->elasticity, *(_DWORD *)(this + 716)); /*0x46c650*/
   Power::TimerProcess(this->Color); /*0x46c65e*/
-  Power::TimerProcess(this->q2DC); /*0x46c66c*/
-  Power::TimerProcess(this->q2F0); /*0x46c67a*/
+  Power::TimerProcess(this->CourseLockDuration_e); /*0x46c66c*/
+  Power::TimerProcess(this->AnimLow_e); /*0x46c67a*/
   LOBYTE(v18) = this->flat; /*0x46c67f*/
   return Power::FlagProcess(a2, v18); /*0x46c68d*/
 }
@@ -1278,8 +1278,8 @@ int BulletTypeClass::GetWarhead(int a2, int a3)
 {
     int result;
     result = a2;
-    if ( a2 == (int)this->q2D8 )
-        this->q2D8 = 0;
+    if ( a2 == (int)this->ROT_e )
+        this->ROT_e = 0;
     return result;
 }
 

@@ -21,6 +21,7 @@ import json
 import pathlib
 import re
 import subprocess
+import time
 import sys
 import urllib.request
 
@@ -78,9 +79,18 @@ def _read_latin1(path):
 # ============================================================================
 # pending-function index
 # ============================================================================
+def invalidate_pending_index():
+    """Force rebuild on next access (reopen/external writes)."""
+    global _pending_index, _pending_index_stamp
+    _pending_index = None
+    _pending_index_stamp = None
+
+
 def build_pending_index():
     global _pending_index, _pending_index_stamp
     stamp = max((p.stat().st_mtime, str(p)) for p in SRC.rglob("*.cpp"))[0]
+    sig_m = PROJECT_ROOT / "signals.json"
+    stamp = (stamp, sig_m.stat().st_mtime)
     if _pending_index is not None and stamp == _pending_index_stamp:
         return _pending_index
     entries = []
@@ -186,8 +196,11 @@ def resolve_target(target):
     pending = build_pending_index()
     if target.lower().startswith("0x"):
         t = target.lower()
+        ti = int(t, 16)
         for e in pending:
-            if e["address"] == t:
+            ea = (e.get("address") or "").lower()
+            if ea == t or (ea.startswith("0x") and
+                           int(ea, 16) == ti):
                 return e
         ent = signals()["symbols"].get(t)
         if ent:
@@ -380,6 +393,20 @@ def run_verify(addr):
         s = ln.strip()
         if s.startswith(("FAIL:", "missing:", "SKIP")):
             reason += s + " | "
+    if proc.returncode == 0:
+        try:
+            sp = PROJECT_ROOT / "signals.json"
+            sigj = json.loads(sp.read_text(encoding="utf-8"))
+            a = int(str(addr), 16)
+            for k in ("0x%X" % a, "0x%08X" % a):
+                sym = sigj["symbols"].get(k)
+                if sym and sym.get("reopened_from"):
+                    sym["reopened_from"] = None
+                    sym["verified_after_reopen"] = True
+            sp.write_text(json.dumps(sigj, ensure_ascii=False, indent=2),
+                          encoding="utf-8")
+        except Exception:
+            pass
     return {"verdict": "PASS" if proc.returncode == 0 else "FAIL",
             "detail": reason[:500], "exit": proc.returncode,
             "output_tail": "\n".join(out.split("\n")[-12:])}
@@ -815,6 +842,17 @@ def tool_get_context(target):
         except Exception:
             pass
     result["decompile"] = code[:8000] if code else None
+    if entry.get("address"):
+        try:
+            man = json.loads((PROJECT_ROOT / "anchors"
+                              / "csp_canon_manifest.json")
+                             .read_text(encoding="utf-8")).get(
+                                 entry["address"])
+            if man:
+                result["canon"] = {"sig": man.get("sig"),
+                                   "cls": man.get("cls")}
+        except Exception:
+            pass
     if code:
         cls = entry.get("class") or ""
         offs = pseudocode_offsets(code)
@@ -825,9 +863,26 @@ def tool_get_context(target):
         for lo, hi, msg in KNOWN_BAD_MEMBER_ZONES.get(cls, []):
             if any(lo <= o <= hi for o in offs):
                 warnings.append(f"member_lookup {cls}+{lo}..{hi}: {msg}")
+        canon_tab = {}
+        canon_man = {}
+        try:
+            canon_tab = json.loads((PROJECT_ROOT / "anchors"
+                                    / "csp_canon_members.json")
+                                   .read_text(encoding="utf-8")).get(
+                                       cls or "", {}).get("members", {})
+            canon_man = json.loads((PROJECT_ROOT / "anchors"
+                                    / "csp_canon_manifest.json")
+                                   .read_text(encoding="utf-8")).get(
+                                       entry.get("address") or "", {})
+        except Exception:
+            pass
         mapping = {}
         for o in offs:
-            if o in til_map:
+            c = canon_tab.get(str(o))
+            if c and c.get("name"):
+                mapping[o] = {"name": c["name"], "source": "csp-canon",
+                              "size": c.get("size")}
+            elif o in til_map:
                 mapping[o] = {"name": til_map[o], "source": "ida-til"}
             elif str(o) in ml:
                 mapping[o] = {"name": ml[str(o)]["name"],
@@ -852,10 +907,13 @@ def tool_replace_body(target, new_body, dry_run):
     return replace_pseudocode(entry, new_body, dry_run)
 
 
-def tool_verify(target):
+def tool_verify(target, async_mode=False):
     entry = resolve_target(target)
     if entry is None:
         return {"ok": False, "error": f"target not found: {target}"}
+    if async_mode:
+        jid = submit_job("verify", lambda: tool_verify(target, False))
+        return {"ok": True, "job_id": jid, "note": "poll with job_status"}
     addr = entry.get("address")
     if not addr:
         return {"ok": False, "error": "no address; verify needs 0xADDR"}
@@ -871,6 +929,11 @@ def tool_mark_completed(target, note=""):
     e = sig["symbols"].get(key)
     if not e:
         return {"ok": False, "error": f"no signals entry at {key}"}
+    if e.get("reopened_from"):
+        return {"ok": False,
+                "error": ("reopened for retranslation and not verified since; "
+                          "run verify_function (PASS) before mark_completed"),
+                "reopened_from": e.get("reopened_from")}
     e["completed"] = True
     if note:
         e["note"] = note
@@ -968,10 +1031,14 @@ def tool_rename_local(target, old_name, new_name, dry_run):
             "renamed": old_name + " -> " + new_name}
 
 
-def tool_build(scope="file", file=None):
+def tool_build(scope="file", file=None, async_mode=False):
+    if scope == "file" and not file:
+        return {"ok": False, "error": "scope=file requires 'file'"}
+    if async_mode:
+        jid = submit_job("build", lambda: tool_build(scope, file, False))
+        return {"ok": True, "job_id": jid,
+                "note": "poll with job_status"}
     if scope == "file":
-        if not file:
-            return {"ok": False, "error": "scope=file requires 'file'"}
         return compile_single_file(file)
     return run_full_build()
 
@@ -987,7 +1054,47 @@ def tool_get_build_errors(file=None):
     return data
 
 
-# ---------------- step-6 mechanical-rebuild tools (wrappers, no new logic) --
+# ---------------- async job framework (build/verify/regen/anchor) ----------
+import threading
+from concurrent.futures import ThreadPoolExecutor
+
+_JOBS = {}
+_JOBS_LOCK = threading.Lock()
+_JOB_SEQ = [0]
+_JOB_POOL = ThreadPoolExecutor(max_workers=2)
+
+
+def _job_run(job_id, fn):
+    try:
+        result = fn()
+        state, res = "done", result
+    except Exception as e:  # noqa: BLE001 - jobs report any failure
+        state, res = "error", {"error": repr(e)[:400]}
+    with _JOBS_LOCK:
+        _JOBS[job_id]["state"] = state
+        _JOBS[job_id]["result"] = res
+        _JOBS[job_id]["done"] = time.time()
+
+
+def submit_job(kind, fn):
+    with _JOBS_LOCK:
+        _JOB_SEQ[0] += 1
+        jid = "%s-%d" % (kind, _JOB_SEQ[0])
+        _JOBS[jid] = {"kind": kind, "state": "running", "submitted": time.time()}
+        _JOB_POOL.submit(_job_run, jid, fn)
+    return jid
+
+
+def tool_job_status(job_id=None):
+    with _JOBS_LOCK:
+        if job_id:
+            j = _JOBS.get(job_id)
+            if not j:
+                return {"ok": False, "error": "unknown job: %s" % job_id}
+            out = dict(j)
+            return {"ok": True, "job": out}
+    return {"ok": True, "jobs": sorted(_JOBS.keys())}
+
 
 CSP_EXPORT = PROJECT_ROOT / "tools" / "csp_export"
 CANON_MANIFEST = PROJECT_ROOT / "anchors" / "csp_canon_manifest.json"
@@ -1072,10 +1179,13 @@ def tool_backfill_get(target):
             "ok": body is not None}
 
 
-def tool_canon_regen():
+def tool_canon_regen(async_mode=False):
     """Regenerate the mechanical foundation after renames/anchors:
     gen_cpp_canon -> rewrite_member_refs -> backfill_completed. Returns
     per-stage summaries. All three are deterministic re-runnable scripts."""
+    if async_mode:
+        jid = submit_job("canon_regen", tool_canon_regen)
+        return {"ok": True, "job_id": jid, "note": "poll with job_status"}
     stages = []
     for script in ("gen_cpp_canon.py", "rewrite_member_refs.py",
                    "backfill_completed.py"):
@@ -1095,7 +1205,11 @@ def tool_canon_regen():
                      "bodies all re-synced to CSP layer")}
 
 
-def tool_csp_anchor(addrs, timeout=900):
+def tool_csp_anchor(addrs, timeout=900, async_mode=False):
+    if async_mode:
+        jid = submit_job("csp_anchor",
+                         lambda: tool_csp_anchor(addrs, timeout, False))
+        return {"ok": True, "job_id": jid, "note": "poll with job_status"}
     """Run CSP incremental solver for function addresses, then report the
     canon manifest/type_map anchor state per address. Mechanical wrapper."""
     if isinstance(addrs, str):
@@ -1164,7 +1278,7 @@ def tool_compare_parse(path=None):
 
 
 def tool_member_set(cls, offset, name, mtype, size=4, evidence="manual",
-                    overwrite=False):
+                    overwrite=False, entries=None):
     """Mechanical evidence entry into the CSP member layer. Writes
     anchors/member_types.json (authoritative anchor, consumed by
     gen_cpp_canon as override) + tools/member_lookup.json + signals
@@ -1261,6 +1375,7 @@ def tool_reopen(target):
         sym["reopened_from"] = "needs-retranslation"
     sp.write_text(json.dumps(sig, indent=2, ensure_ascii=False) + chr(10),
                   encoding="utf-8")
+    invalidate_pending_index()
     rel = str(path)
     if path.is_absolute():
         rel = str(path.relative_to(PROJECT_ROOT))
@@ -1280,11 +1395,26 @@ def tool_issues_add(description, target=None, kind="debt"):
     return {"ok": True, "issue": iss}
 
 
-def tool_issues_list(include_resolved=False):
+def tool_issues_list(include_resolved=False, status="open", kind=None,
+                     target=None, limit=50, summary=False):
     st = load_state()
     out = [i for i in st["issues"]
-           if include_resolved or i["status"] == "open"]
-    return {"count": len(out), "issues": out}
+           if (include_resolved or i["status"] == "open")]
+    if status and not include_resolved:
+        out = [i for i in out if i["status"] == status]
+    if kind:
+        out = [i for i in out if i.get("kind") == kind]
+    if target:
+        out = [i for i in out if target in (i.get("target") or "")
+               or target in (i.get("description") or "")]
+    counts = {}
+    for i in out:
+        counts[i["status"]] = counts.get(i["status"], 0) + 1
+    if summary:
+        return {"total": len(out), "by_status": counts,
+                "note": "summary=true -> counts only"}
+    return {"count": len(out), "by_status": counts,
+            "issues": out[:limit]}
 
 
 def tool_issues_resolve(iid, resolution=""):
@@ -1384,10 +1514,17 @@ TOOLS = [
                                                 "default": False}},
                      "required": ["target", "new_body"]}},
     {"name": "verify_function",
-     "description": "对单个函数运行 exec-flow CFG 校验（需地址）。返回 PASS/FAIL 与缺失事件。",
+     "description": "对单个函数运行 exec-flow CFG 校验（需地址）。返回 PASS/FAIL 与缺失事件。async=true 时后台执行返回 job_id。",
      "inputSchema": {"type": "object",
-                     "properties": {"target": {"type": "string"}},
+                     "properties": {"target": {"type": "string"},
+                                    "async": {"type": "boolean",
+                                              "default": False}},
                      "required": ["target"]}},
+    {"name": "job_status",
+     "description": "查询异步任务（build/verify/canon_regen/csp_anchor 的 async 模式）状态与结果。",
+     "inputSchema": {"type": "object",
+                     "properties": {"job_id": {"type": "string"}},
+                     "required": []}},
     {"name": "mark_completed",
      "description": "验证通过后将函数标记 completed=true（写入 signals.json，附 note）。",
      "inputSchema": {"type": "object",
@@ -1419,12 +1556,14 @@ TOOLS = [
                                                 "default": False}},
                      "required": ["target", "old_name", "new_name"]}},
     {"name": "build",
-     "description": "编译验证。scope=file 单 TU 快速验证（秒级）；scope=all 全项目 MSBuild（分钟级，错误按文件分组）。",
+     "description": "编译验证。scope=file 单 TU 快速验证（秒级）；scope=all 全项目 MSBuild（分钟级）。async=true 后台执行返回 job_id。",
      "inputSchema": {"type": "object",
                      "properties": {"scope": {"type": "string",
                                               "enum": ["file", "all"],
                                               "default": "file"},
-                                    "file": {"type": "string"}},
+                                    "file": {"type": "string"},
+                                    "async": {"type": "boolean",
+                                              "default": False}},
                      "required": []}},
     {"name": "get_build_errors",
      "description": "读取最近一次构建日志，返回按文件分组的结构化错误。",
@@ -1479,10 +1618,17 @@ TOOLS = [
                                                       "question"]}},
                      "required": ["description"]}},
     {"name": "issues_list",
-     "description": "列出 issue（可含已解决）。",
+     "description": "列出 issue。支持 status/kind/target 过滤 + limit + summary（只返计数）。",
      "inputSchema": {"type": "object",
                      "properties": {"include_resolved": {"type": "boolean",
-                                                        "default": False}},
+                                                         "default": False},
+                                    "status": {"type": "string"},
+                                    "kind": {"type": "string"},
+                                    "target": {"type": "string"},
+                                    "limit": {"type": "integer",
+                                              "default": 50},
+                                    "summary": {"type": "boolean",
+                                                "default": False}},
                      "required": []}},
     {"name": "issues_resolve",
      "description": "解决一条 issue。",
@@ -1531,8 +1677,10 @@ TOOLS = [
                                     "size": {"type": "integer", "default": 4},
                                     "evidence": {"type": "string"},
                                     "overwrite": {"type": "boolean",
-                                                  "default": False}},
-                     "required": ["cls", "offset", "name"]}},
+                                                  "default": False},
+                                    "entries": {"type": "array",
+                                                "items": {"type": "object"}}},
+                     "required": ["cls"]}},
     {"name": "reopen",
      "description": "Step-6 retranslation entry: completed -> pending. Restores IDA pseudocode block from ida_cache and clears completed. Pair with replace_body/verify_function/mark_completed.",
      "inputSchema": {"type": "object",
@@ -1557,7 +1705,9 @@ def dispatch_tool(name, a):
         return tool_replace_body(a["target"], a["new_body"],
                                  a.get("dry_run", False))
     if name == "verify_function":
-        return tool_verify(a["target"])
+        return tool_verify(a["target"], a.get("async", False))
+    if name == "job_status":
+        return tool_job_status(a.get("job_id"))
     if name == "mark_completed":
         return tool_mark_completed(a["target"], a.get("note", ""))
     if name == "function_state":
@@ -1570,7 +1720,8 @@ def dispatch_tool(name, a):
         return tool_rename_local(a["target"], a["old_name"], a["new_name"],
                                  a.get("dry_run", False))
     if name == "build":
-        return tool_build(a.get("scope", "file"), a.get("file"))
+        return tool_build(a.get("scope", "file"), a.get("file"),
+                          a.get("async", False))
     if name == "get_build_errors":
         return tool_get_build_errors(a.get("file"))
     if name == "run_gates":
@@ -1592,7 +1743,10 @@ def dispatch_tool(name, a):
         return tool_issues_add(a["description"], a.get("target"),
                                a.get("kind", "debt"))
     if name == "issues_list":
-        return tool_issues_list(a.get("include_resolved", False))
+        return tool_issues_list(a.get("include_resolved", False),
+                                a.get("status", "open"), a.get("kind"),
+                                a.get("target"), a.get("limit", 50),
+                                a.get("summary", False))
     if name == "issues_resolve":
         return tool_issues_resolve(a["id"], a.get("resolution", ""))
     if name == "sig_lookup":
@@ -1602,12 +1756,24 @@ def dispatch_tool(name, a):
     if name == "backfill_get":
         return tool_backfill_get(a["target"])
     if name == "canon_regen":
-        return tool_canon_regen()
+        return tool_canon_regen(a.get("async", False))
     if name == "csp_anchor":
-        return tool_csp_anchor(a.get("addrs"), a.get("timeout", 900))
+        return tool_csp_anchor(a.get("addrs"), a.get("timeout", 900),
+                               a.get("async", False))
     if name == "compare_parse":
         return tool_compare_parse(a.get("path"))
     if name == "member_set":
+        if a.get("entries"):
+            out = {"ok": True, "applied": [], "errors": []}
+            for en in a["entries"]:
+                r = tool_member_set(a["cls"], en.get("offset"), en.get("name"),
+                                    en.get("mtype", "void*"),
+                                    en.get("size", 4),
+                                    en.get("evidence", a.get("evidence",
+                                                             "manual")),
+                                    a.get("overwrite", False))
+                (out["applied"] if r.get("ok") else out["errors"]).append(r)
+            return out
         return tool_member_set(a["cls"], a["offset"], a["name"],
                                a.get("mtype", "void*"),
                                a.get("size", 4), a.get("evidence", "manual"),

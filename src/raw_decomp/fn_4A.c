@@ -2630,7 +2630,7 @@ _DWORD *__thiscall sub_4A2820(_DWORD *this)
   this->CStreamClass_field_0x1C = __2_YAPAXI_Z(0x10000u); /*0x4a2850*/
   this->CStreamClass_field_0x20 = __2_YAPAXI_Z(0x10000u); /*0x4a285b*/
   *this = &CStreamClass::`vftable'; /*0x4a285e*/
-  this->vtable2 = &vt_CStreamClass; /*0x4a2864*/
+  this->CStreamClass_field_0x04 = &vt_CStreamClass; /*0x4a2864*/
   this->CStreamClass_field_0x24 = 0xFFFF; /*0x4a286b*/
   return this; /*0x4a2874*/
 }
@@ -2647,7 +2647,7 @@ void __thiscall sub_4A2880(void *this)
 
   v2 = this->CStreamClass_field_0x08; /*0x4a2886*/
   *(_DWORD *)this = &CStreamClass::`vftable'; /*0x4a2889*/
-  this->vtable2 = &vt_CStreamClass; /*0x4a2891*/
+  this->CStreamClass_field_0x04 = &vt_CStreamClass; /*0x4a2891*/
   if ( v2 ) /*0x4a2898*/
   {
     if ( *((_BYTE *)this + 17) && *((int *)this + 5) > 0 && this->CStreamClass_field_0x08 ) /*0x4a28aa*/
